@@ -5,7 +5,7 @@ title: Mass Effect 5e
 
 <div class="jumbotron jumbotron-fluid">
     <div class="container text-center">
-        <img src="/assets/images/me5e_logo_notm.png" class="img-fluid" alt="mass effect 5e logo">
+        <img src="{{ site.baseurl }}assets/images/me5e_logo_notm.png" class="img-fluid" alt="mass effect 5e logo">
         <p class="lead mt-3">
             Love Mass Effect? Love the D&D 5th Edition System? Now you can enjoy them both!
         </p>
@@ -44,7 +44,7 @@ title: Mass Effect 5e
             <div class="d-flex justify-content-around">
                 {% for class in site.data.classes %}
                 <a href="/classes/#{{ class.class | slugify }}" class="class-button" data-name={{ class.class }} aria-label="{{ class.class }}">
-                    <img class="class-icon class-icon-xl" src="/assets/images/classes/{{ class.class | slugify }}.svg">
+                    <img class="class-icon class-icon-xl" src="{{ site.baseurl }}assets/images/classes/{{ class.class | slugify }}.svg">
                 </a>
                 {% endfor %}
             </div>
