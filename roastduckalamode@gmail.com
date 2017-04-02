@@ -18,7 +18,7 @@ title: Mass Effect 5e
             <p>Mass Effect 5e takes the Mass Effect universe and maps onto the D&D 5e system. It's entirely experimental
                 and a work in progress.</p>
             <p>
-                Start by reading the <a href="/rules">Rules</a>. For the most part, all 5e rules still apply with some
+                Start by reading the <a href="{{ site.baseurl }}rules">Rules</a>. For the most part, all 5e rules still apply with some
                 minor changes and some new rules added.
             </p>
             <p>The other sections of the site provide the necessary details about race, class, spells, and weapons.</p>
@@ -29,7 +29,7 @@ title: Mass Effect 5e
                 </div>
                 {% for race in site.data.races %}
                     <div class="col-12 col-sm-4 col-md-3 col-lg-2 mt-1">
-                        <a href="/races/#{{ race.race | slugify }}" class="clip-circle" data-name="{{ race.race }}" aria-label="{{ race.race }}">
+                        <a href="{{ site.baseurl }}races/#{{ race.race | slugify }}" class="clip-circle" data-name="{{ race.race }}" aria-label="{{ race.race }}">
                             <img src="{{ race.face }}" alt="{{ race.race }}">
                         </a>
                     </div>
@@ -43,7 +43,7 @@ title: Mass Effect 5e
             </div>
             <div class="d-flex justify-content-around">
                 {% for class in site.data.classes %}
-                <a href="/classes/#{{ class.class | slugify }}" class="class-button" data-name={{ class.class }} aria-label="{{ class.class }}">
+                <a href="{{ site.baseurl }}classes/#{{ class.class | slugify }}" class="class-button" data-name={{ class.class }} aria-label="{{ class.class }}">
                     <img class="class-icon class-icon-xl" src="{{ site.baseurl }}assets/images/classes/{{ class.class | slugify }}.svg">
                 </a>
                 {% endfor %}
