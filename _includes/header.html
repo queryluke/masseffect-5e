@@ -23,38 +23,38 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item {% if page.title == 'Rules' %} active {% endif %}">
-                    <a class="nav-link" href="/rules">Rules {% if page.title == 'Rules' %}<span class="sr-only">(current)</span>{% endif %}</a>
+                    <a class="nav-link" href="{{ site.baseurl }}rules">Rules {% if page.title == 'Rules' %}<span class="sr-only">(current)</span>{% endif %}</a>
                 </li>
                 <li class="nav-item dropdown {% if page.title == 'Races' %} active {% endif %}">
-                    <a class="nav-link dropdown-toggle" href="/races" id="racesLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="{{ site.baseurl }}races" id="racesLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Races
                         {% if page.title == 'Races' %}<span class="sr-only">(current)</span>{% endif %}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="racesLink">
                         {% for race in site.data.races %}
-                        <a class="dropdown-item" href="/races/#{{ race.race | slugify }}">{{ race.race }}</a>
+                        <a class="dropdown-item" href="{{ site.baseurl }}races/#{{ race.race | slugify }}">{{ race.race }}</a>
                         {% endfor %}
                     </div>
                 </li>
                 <li class="nav-item dropdown {% if page.title == 'Classes' %} active {% endif %}">
-                    <a class="nav-link dropdown-toggle" href="/classes" id="classLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="{{ site.baseurl }}classes" id="classLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Classes
                         {% if page.title == 'Classes' %}<span class="sr-only">(current)</span>{% endif %}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="classLink">
                         {% for class in site.data.classes %}
-                        <a class="dropdown-item" href="/classes/#{{ class.class | slugify }}">{{ class.class }}</a>
+                        <a class="dropdown-item" href="{{ site.baseurl }}classes/#{{ class.class | slugify }}">{{ class.class }}</a>
                         {% endfor %}
                     </div>
                 </li>
                 <li class="nav-item {% if page.title == 'Spells' %} active {% endif %}">
-                    <a class="nav-link" href="/spells">Spells {% if page.title == 'Spells' %}<span class="sr-only">(current)</span>{% endif %}</a>
+                    <a class="nav-link" href="{{ site.baseurl }}spells">Spells {% if page.title == 'Spells' %}<span class="sr-only">(current)</span>{% endif %}</a>
                 </li>
                 <li class="nav-item {% if page.title == 'Weapons' %} active {% endif %}">
-                    <a class="nav-link" href="/weapons">Weapons {% if page.title == 'Weapons' %}<span class="sr-only">(current)</span>{% endif %}</a>
+                    <a class="nav-link" href="{{ site.baseurl }}weapons">Weapons {% if page.title == 'Weapons' %}<span class="sr-only">(current)</span>{% endif %}</a>
                 </li>
                 <li class="nav-item {% if page.title == 'Heavy Weapons' %} active {% endif %}">
-                    <a class="nav-link" href="/heavy-weapons">Heavy Weapons {% if page.title == 'Heavy Weapons' %}<span class="sr-only">(current)</span>{% endif %}</a>
+                    <a class="nav-link" href="{{ site.baseurl }}heavy-weapons">Heavy Weapons {% if page.title == 'Heavy Weapons' %}<span class="sr-only">(current)</span>{% endif %}</a>
                 </li>
             </ul>
         </div>
