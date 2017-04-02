@@ -56,7 +56,7 @@ $(function(){
   $('#spell-modal').on('show.bs.modal', function (e) {
     var spell =  $(e.relatedTarget).data('spell');
     $('#spell-modal .modal-title').html(spell);
-    $.getJSON( "{{ site.baseurl }}assets/js/spells.json" , function( result ){
+    $.getJSON( "/masseffect-5e/assets/js/spells.json" , function( result ){
       $.each(result, function(k,v){
         if(v["power"] == spell){
           html = renderSpell(v);
