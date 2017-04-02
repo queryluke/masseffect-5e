@@ -1,0 +1,243 @@
+---
+- subclass: Justicar
+  class: Adept
+  role: balance
+  '2': 'Pure Biotic: Add your proficiency bonus to all biotic damage.'
+  '6': Additional max level spell slot. Gain 2 barrier ticks.
+  '10': Learn <button type="button" class="link" data-spell="Dominate" data-toggle="modal"
+    data-target="#spell-modal">Dominate</button>
+  '14': Targets that would make a saving throw against one of your biotic abilities
+    makes that saving throw at a disadvantage
+  '18': Advance <button type="button" class="link" data-spell="Dominate" data-toggle="modal"
+    data-target="#spell-modal">Dominate</button>
+- subclass: Shaman
+  class: Adept
+  role: heal
+  '2': <button type="button" class="link" data-spell="Healing Surge" data-toggle="modal"
+    data-target="#spell-modal">Healing Surge</button>
+  '6': Increase Barrier Capacity to 6
+  '10': Learn <button type="button" class="link" data-spell="Biotic Sphere" data-toggle="modal"
+    data-target="#spell-modal">Biotic Sphere</button>
+  '14': Advance <button type="button" class="link" data-spell="Healing Surge" data-toggle="modal"
+    data-target="#spell-modal">Healing Surge</button>
+  '18': Advance <button type="button" class="link" data-spell="Biotic Sphere" data-toggle="modal"
+    data-target="#spell-modal">Biotic Sphere</button>
+- subclass: Fury
+  class: Adept
+  role: dps
+  '2': <button type="button" class="link" data-spell="Dark Channel" data-toggle="modal"
+    data-target="#spell-modal">Dark Channel</button>
+  '6': Potent cantrips. If a creature succeeds a saving throw against your damaging
+    cantrip, or you fail an attack role, the target still takes half damage.
+  '10': Learn <button type="button" class="link" data-spell="Dark Sphere" data-toggle="modal"
+    data-target="#spell-modal">Dark Sphere</button>
+  '14': Advance <button type="button" class="link" data-spell="Dark Channel" data-toggle="modal"
+    data-target="#spell-modal">Dark Channel</button>
+  '18': Advance <button type="button" class="link" data-spell="Dark Sphere" data-toggle="modal"
+    data-target="#spell-modal">Dark Sphere</button>
+- subclass: Demolisher
+  class: Engineer
+  role: ranged dps
+  '2': Advanced Weapon Holsters - Your Carry Capacity is equal to your Strength +
+    Your level
+  '6': Grenade Tech only costs you 2 TP
+  '10': Heavy weapon hack - When your heavy weapon runs out of ammo, you can jerry-rig
+    an additional use for 5 TP.
+  '14': Advanced Targeting - You can move slowly while Targeting, you now have a disadvantage
+    to Dexterity saving throws (instead of automatically failing), and creatures attack
+    you without advantage
+  '18': Grenade Tech only costs you 1 TP
+- subclass: Drone Jockey
+  class: Engineer
+  role: balance
+  '2': Learn 1 Drone Type from <button type="button" class="link" data-spell="Drone"
+    data-toggle="modal" data-target="#spell-modal">Drone</button>
+  '6': Learn 1 Drone Type from <button type="button" class="link" data-spell="Drone"
+    data-toggle="modal" data-target="#spell-modal">Drone</button>
+  '10': You can have 2 Drones Active at once
+  '14': Learn 1 Drone Type from <button type="button" class="link" data-spell="Drone"
+    data-toggle="modal" data-target="#spell-modal">Drone</button>
+  '18': You can summon 2 Drones in the same action for the cost of a single drone.
+- subclass: Support
+  class: Engineer
+  role: heal
+  '2': Learn <button type="button" class="link" data-spell="Supply Pylon" data-toggle="modal"
+    data-target="#spell-modal">Supply Pylon</button>
+  '6': Allies within 5m of <button type="button" class="link" data-spell="Supply Pylon"
+    data-toggle="modal" data-target="#spell-modal">Supply Pylon</button> have increased
+    Sheild regen of 1 die type (to a maximum of d20)
+  '10': <button type="button" class="link" data-spell="Supply Pylon" data-toggle="modal"
+    data-target="#spell-modal">Supply Pylon</button> has 2 charges of each supply
+  '14': Each time <button type="button" class="link" data-spell="Supply Pylon" data-toggle="modal"
+    data-target="#spell-modal">Supply Pylon</button> takes damage, it casts a 1TP<button
+    type="button" class="link" data-spell="Overload" data-toggle="modal" data-target="#spell-modal">Overload</button>
+    at it's attacker. DC on this attack is 10.
+  '18': <button type="button" class="link" data-spell="Supply Pylon" data-toggle="modal"
+    data-target="#spell-modal">Supply Pylon</button>has 3 charges of each supply
+- subclass: Ghost
+  class: Infiltrator
+  role: dps
+  '2': Tactical Cloak does not consume tech points, at the cost of your sneak attack
+    die type being reduced to d4
+  '6': Uncanny Dodge -- When an attacker that you can see hits you with an attack,
+    you can use your reaction to halve the attack's damage against you.
+  '10': Learn <button type="button" class="link" data-spell="Shadow Strike" data-toggle="modal"
+    data-target="#spell-modal">Shadow Strike</button>
+  '14': Evasion -- When you are subjected to an effect that allows you to make a Dexterity
+    saving throw to take only half damage, you instead take no damage if you succeed
+    on the saving throw, and only half damage if you fail.
+  '18': Advance <button type="button" class="link" data-spell="Shadow Strike" data-toggle="modal"
+    data-target="#spell-modal">Shadow Strike</button>
+- subclass: Saboteur
+  class: Infiltrator
+  role: control
+  '2': Shadow Broker - You are an operative of the Shadow Broker and your focus is
+    on people and on the influence and secrets they have. Many spies, courtiers, and
+    schemers follow this archetype, leading lives of intrigue. Words are your weapons
+    as often as guns or powers, and secrets and favors are some of your favorite treasures.
+    This information may give you detailed information about a scheme or plot, call
+    in favors, blackmail other characters. Tactically, it might give you access to
+    security cameras, preventing surprise attacks or giving you access to security
+    profiles and learning about enemies you might fight.
+  '6': !binary |-
+    RXllIGZvciBEZXRhaWwgLSBZb3UgY2FuIHVzZSB0aGUgYm9udXMgYWN0aW9u
+    IGdyYW50ZWQgYnkgeW91ciBDdW5uaW5nIEFjdGlvbiBmZWF0dXJlIHRvIG1h
+    a2UgYSBXaXNkb20gKFBlcmNlcHRpb24pIGNoZWNrIHRvIHNwb3QgYSBoaWRk
+    ZW4gY3JlYXR1cmUgb3Igb2JqZWN0LCB0byBtYWtlIGFuIEludGVsbGlnZW5j
+    ZSAoSW52ZXN0aWdhdGlvbikgY2hlY2sgdG8gdW5jb3ZlciBhbmQgZGVjaXBo
+    ZXIgY2x1ZXMsIG9yIHRvIHVzZSBJbnNpZ2h0ZnVsIEZpZ2h0aW5nLiAtLSBJ
+    bnNpZ2h0ZnVsIEZpZ2h0aW5nIC0gWW91IGdhaW4gdGhlIGFiaWxpdHkgdG8g
+    ZGVjaXBoZXIgYW4gb3Bwb25lbnTigJlzIHRhY3RpY3MgYW5kIGRldmVsb3Ag
+    YSBjb3VudGVyIHRvIHRoZW0uIEFzIGFuIGFjdGlvbiAob3IgYXMgYSBib251
+    cyBhY3Rpb24gdXNpbmcgRXllIGZvciBEZXRhaWwpLCB5b3UgbWFrZSBhIFdp
+    c2RvbSAoSW5zaWdodCkgY2hlY2sgYWdhaW5zdCBhIGNyZWF0dXJlIHlvdSBj
+    YW4gc2VlIHRoYXQgaXNu4oCZdCBpbmNhcGFjaXRhdGVkLCBvcHBvc2VkIGJ5
+    IHRoZSB0YXJnZXTigJlzIENoYXJpc21hIChEZWNlcHRpb24pIGNoZWNrLiBJ
+    ZiB5b3Ugc3VjY2VlZCwgeW91IGNhbiBhZGQgeW91ciBTbmVhayBBdHRhY2gg
+    ZGFtYWdlIHRvIHlvdXIgbmV4dCBzdWNjZXNzZnVsbCBtZWxlZSBvciByYW5n
+    ZWQgYXR0YWNrIHdpdGhvdXQgaGF2aW5nIHRvIGNvbWUgb3V0IG9mIFRhY3Rp
+    Y2FsIENsb2FrLiBUaGlzIGJlbmVmaXQgbGFzdHMgZm9yIDEgbWludXRlIG9y
+    IHVudGlsIHlvdSBzdWNjZXNzZnVsbHkgdXNlIEluc2lnaHRmdWwgRmlnaHRp
+    bmcgYWdhaW5zdCBhIGRpZmZlcmVudCB0YXJnZXQu
+  '10': Learn <button type="button" class="link" data-spell="Electric Slash" data-toggle="modal"
+    data-target="#spell-modal">Electric Slash</button>
+  '14': Infiltration - You can unfailingly create false identities for yourself. You
+    can't establish an identity that belongs to someone else. For example, you might
+    establish yourself within mercernary gang to gain access to their supplies or
+    armory, or a rich colonist to gain access to a fancy party. Thereafter, if you
+    adopt the new identity as a disguise, other creatures believe you to be that person
+    until given an obvious reason not to. If you do not have the appropriate time
+    to research an identity, you will at least gain advantage on pursuation rolls.
+  '18': Advance <button type="button" class="link" data-spell="Electric Slash" data-toggle="modal"
+    data-target="#spell-modal">Electric Slash</button>
+- subclass: Operative
+  class: Infiltrator
+  role: survival
+  '2': Master Tactician - You can use the Help action as a bonus action. Additionally,
+    when you use the Help action to aid an ally in attacking a creature, the target
+    of that attack can be within 30 feet of you, rather than 5 feet of you, if the
+    target can see or hear you.
+  '6': Misdirection - you can sometimes cause another creature to suffer an attack
+    meant for you. When you are targeted by an attack while a creature within 5 feet
+    of you is granting you cover against that attack, you can use your reaction to
+    have the attack target that creature instead of you.
+  '10': Learn <button type="button" class="link" data-spell="Repair Matrix" data-toggle="modal"
+    data-target="#spell-modal">Repair Matrix</button>
+  '14': Master Deulist - Your mastery of combat lets you turn failure to success in
+    combat. If you miss with an attack roll, you can choose to roll it again with
+    advantage. Once you do so, you can't use this feature again until you finish a
+    short or long rest.
+  '18': Advance <button type="button" class="link" data-spell="Repair Matrix" data-toggle="modal"
+    data-target="#spell-modal">Repair Matrix</button>
+- subclass: Juggernaut
+  class: Sentinel
+  role: melee dps
+  '2': 
+  '6': 
+  '10': 
+  '14': 
+  '18': 
+- subclass: Bastion
+  class: Sentinel
+  role: tank
+  '2': 
+  '6': 
+  '10': 
+  '14': 
+  '18': 
+- subclass: Paladin
+  class: Sentinel
+  role: tank/heal
+  '2': 
+  '6': 
+  '10': 
+  '14': 
+  '18': 
+- subclass: Havoc
+  class: Soldier
+  role: aoe dps
+  '2': <button type="button" class="link" data-spell="Adrenaline Rush" data-toggle="modal"
+    data-target="#spell-modal">Adrenaline Rush</button> taps into your biotic potential.
+    You can cast <button type="button" class="link" data-spell="Carnage" data-toggle="modal"
+    data-target="#spell-modal">Carnage</button> with your AD
+  '6': You can cast <button type="button" class="link" data-spell="Blade Armor" data-toggle="modal"
+    data-target="#spell-modal">Blade Armor</button> with your AD
+  '10': Learn <button type="button" class="link" data-spell="Havok Strike" data-toggle="modal"
+    data-target="#spell-modal">Havok Strike</button>
+  '14': You can cast <button type="button" class="link" data-spell="Flamer" data-toggle="modal"
+    data-target="#spell-modal">Flamer</button> with your AD
+  '18': Advance <button type="button" class="link" data-spell="Havok Strike" data-toggle="modal"
+    data-target="#spell-modal">Havok Strike</button>
+- subclass: Shock Trooper
+  class: Soldier
+  role: tank / control
+  '2': <button type="button" class="link" data-spell="Hex Shield" data-toggle="modal"
+    data-target="#spell-modal">Hex Shield</button>
+  '6': plus 6 shields
+  '10': Learn <button type="button" class="link" data-spell="Devastator Mode" data-toggle="modal"
+    data-target="#spell-modal">Devastator Mode</button>
+  '14': <button type="button" class="link" data-spell="Siege Pulse" data-toggle="modal"
+    data-target="#spell-modal">Siege Pulse</button>
+  '18': Advance <button type="button" class="link" data-spell="Devastator Mode" data-toggle="modal"
+    data-target="#spell-modal">Devastator Mode</button>
+- subclass: Marksman
+  class: Soldier
+  role: ranged dps
+  '2': <button type="button" class="link" data-spell="Marksman" data-toggle="modal"
+    data-target="#spell-modal">Marksman</button>
+  '6': plus 2 bonus to shooting (stacks with Sniper style)
+  '10': Learn <button type="button" class="link" data-spell="Hawk Missile Launcher"
+    data-toggle="modal" data-target="#spell-modal">Hawk Missile Launcher</button>
+  '14': <button type="button" class="link" data-spell="Ballistic Blades" data-toggle="modal"
+    data-target="#spell-modal">Ballistic Blades</button>
+  '18': Advance <button type="button" class="link" data-spell="Hawk Missile Launcher"
+    data-toggle="modal" data-target="#spell-modal">Hawk Missile Launcher</button>
+- subclass: Protector
+  class: Vanguard
+  role: tank
+  '2': Barrier damage reduction is increased to d8
+  '6': Indominable. You can reroll a saving throw that you fail. If you do so, you
+    must use the new roll, and you can't use this feature again until you finish a
+    long rest.
+  '10': Select 3(2) spells
+  '14': Indominable (2)
+  '18': Barrier damage reduction is increased to d12
+- subclass: Battlemaster
+  class: Vanguard
+  role: balance
+  '2': Max Barrier Ticks increased by 3
+  '6': When you cast your cantrips you can choose either of the advancement options.
+  '10': When you cast your level 1 or less spells, you can choose either of the advancement
+    options
+  '14': Max Barrier Ticks increased by 6
+  '18': When you cast your level 2 or less spells, you can choose either of the advancement
+    options
+- subclass: Cabal
+  class: Vanguard
+  role: spell dps
+  '2': Select 1(1) spell
+  '6': Select 1(2) spell
+  '10': Teleporting Dodge. You can use 3 Barrier ticks to automatically pass a Dexterity
+    saving throw.
+  '14': Select 1(4) spell
+  '18': Select 1(4) spell

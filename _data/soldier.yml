@@ -1,0 +1,140 @@
+---
+- level: '1'
+  proficiency: '2'
+  features: '<button type="button" class="link"  data-toggle="modal" data-target="#ammo-power">Ammo
+    Power</button>: 2, <button type="button" class="link" data-spell="Adrenaline Rush"
+    data-toggle="modal" data-target="#spell-modal">Adrenaline Rush</button>, <button
+    type="button" class="link" data-spell="Concussive Shot" data-toggle="modal" data-target="#spell-modal">Concussive
+    Shot</button>'
+  adrenaline-dice: '2'
+  ammo-powers: '2'
+  grenades: "-"
+- level: '2'
+  proficiency: '2'
+  features: <button type="button" class="link"  data-toggle="modal" data-target="#advanced-weapon-proficiency">Advanced
+    Weapon Proficiency</button>
+  adrenaline-dice: '2'
+  ammo-powers: '2'
+  grenades: "-"
+- level: '3'
+  proficiency: '2'
+  features: Select your Subclass
+  adrenaline-dice: '3'
+  ammo-powers: '2'
+  grenades: "-"
+- level: '4'
+  proficiency: '2'
+  features: <button type="button" class="link"  data-toggle="modal" data-target="#ability-score-improvement">Ability
+    Score Improvement</button>
+  adrenaline-dice: '3'
+  ammo-powers: '2'
+  grenades: "-"
+- level: '5'
+  proficiency: '3'
+  features: '<button type="button" class="link"  data-toggle="modal" data-target="#ammo-power">Ammo
+    Power</button>:1, <button type="button" class="link"  data-toggle="modal" data-target="#soldier-grenades">Soldier
+    Grenades</button>: 2'
+  adrenaline-dice: '3'
+  ammo-powers: '3'
+  grenades: '2'
+- level: '6'
+  proficiency: '3'
+  features: Subclass Feature
+  adrenaline-dice: '4'
+  ammo-powers: '3'
+  grenades: '2'
+- level: '7'
+  proficiency: '3'
+  features: Choose <button type="button" class="link" data-spell="Stimulant Pack"
+    data-toggle="modal" data-target="#spell-modal">Stimulant Pack</button> or <button
+    type="button" class="link" data-spell="Fortification" data-toggle="modal" data-target="#spell-modal">Fortification</button>
+    as an AD power
+  adrenaline-dice: '4'
+  ammo-powers: '3'
+  grenades: '2'
+- level: '8'
+  proficiency: '3'
+  features: <button type="button" class="link"  data-toggle="modal" data-target="#ability-score-improvement">Ability
+    Score Improvement</button>
+  adrenaline-dice: '4'
+  ammo-powers: '3'
+  grenades: '2'
+- level: '9'
+  proficiency: '4'
+  features: <button type="button" class="link"  data-toggle="modal" data-target="#quick-swap">Quick
+    Swap</button>
+  adrenaline-dice: '4'
+  ammo-powers: '3'
+  grenades: '2'
+- level: '10'
+  proficiency: '4'
+  features: Subclass Feature
+  adrenaline-dice: '4'
+  ammo-powers: '3'
+  grenades: '2'
+- level: '11'
+  proficiency: '4'
+  features: <button type="button" class="link"  data-toggle="modal" data-target="#advanced-weapon-proficiency">Advanced
+    Weapon Proficiency</button>
+  adrenaline-dice: '4'
+  ammo-powers: '3'
+  grenades: '3'
+- level: '12'
+  proficiency: '4'
+  features: <button type="button" class="link"  data-toggle="modal" data-target="#ability-score-improvement">Ability
+    Score Improvement</button>
+  adrenaline-dice: '5'
+  ammo-powers: '3'
+  grenades: '3'
+- level: '13'
+  proficiency: '5'
+  features: Your AD type is increased to d6
+  adrenaline-dice: '5'
+  ammo-powers: '3'
+  grenades: '3'
+- level: '14'
+  proficiency: '5'
+  features: Subclass Feature
+  adrenaline-dice: '5'
+  ammo-powers: '3'
+  grenades: '3'
+- level: '15'
+  proficiency: '5'
+  features: '<button type="button" class="link"  data-toggle="modal" data-target="#ammo-power">Ammo
+    Power</button>: 1'
+  adrenaline-dice: '5'
+  ammo-powers: '4'
+  grenades: '3'
+- level: '16'
+  proficiency: '5'
+  features: <button type="button" class="link"  data-toggle="modal" data-target="#ability-score-improvement">Ability
+    Score Improvement</button>
+  adrenaline-dice: '5'
+  ammo-powers: '4'
+  grenades: '4'
+- level: '17'
+  proficiency: '6'
+  features: <button type="button" class="link"  data-toggle="modal" data-target="#quick-reload">Quick
+    Reload</button>
+  adrenaline-dice: '6'
+  ammo-powers: '4'
+  grenades: '4'
+- level: '18'
+  proficiency: '6'
+  features: Subclass Feature
+  adrenaline-dice: '6'
+  ammo-powers: '4'
+  grenades: '4'
+- level: '19'
+  proficiency: '6'
+  features: <button type="button" class="link"  data-toggle="modal" data-target="#ability-score-improvement">Ability
+    Score Improvement</button>
+  adrenaline-dice: '6'
+  ammo-powers: '4'
+  grenades: '4'
+- level: '20'
+  proficiency: '6'
+  features: <button type="button" class="link"  data-toggle="modal" data-target="#overpower">Overpower</button>
+  adrenaline-dice: '8'
+  ammo-powers: '4'
+  grenades: '4'

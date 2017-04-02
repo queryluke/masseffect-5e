@@ -1,0 +1,34 @@
+
+
+{% capture yamlfile %}{{ include.class.class | slugify }}{% endcapture %}
+{% assign headers = site.data[yamlfile][0] %}
+<table class="table table-bordered table-sm table-striped">
+    <thead class="thead-inverse">
+        {% if class.class == "Adept" %}
+        <tr>
+            <th colspan="5"></th>
+            <th colspan="5">Spell Slots per Level</th>
+        </tr>
+        {% endif %}
+        <tr>
+        {% for head in headers %}
+            {% if head[0] != 'id' %}
+                <th>{{ head[0] | replace: '-', ' ' | capitalize}}</th>
+            {% endif %}
+        {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in site.data[yamlfile] %}
+        <tr>
+            {% for col in row %}
+                {% if col[0] != 'id' %}
+                    <td>
+                        {{ col[1] }}
+                    </td>
+                {% endif %}
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

@@ -1,0 +1,29 @@
+{% capture filter %}{{ include.filter | slugify }}{% endcapture %}
+
+{% if filter != '' and filter != nil %}
+    {% assign spells = site.data.spells | where: filter,"x" | sort: 'level' %}
+{% else %}
+    {% assign spells = site.data.spells | sort: 'power' %}
+{% endif  %}
+<table class="table table-bordered table-sm table-striped">
+    <thead class="thead-inverse">
+        <tr>
+            <th>Name</th>
+            <th>Level</th>
+            <th>Classes</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for spell in spells %}
+    <tr>
+        <td>
+            <button type="button" class="link" data-spell="{{ spell.power }}" data-toggle="modal" data-target="#spell-modal">
+                {{ spell.power }}
+            </button>
+        </td>
+        <td>{{ spell.level }}</td>
+        <td>{{ spell.class-list }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>

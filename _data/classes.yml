@@ -1,0 +1,103 @@
+---
+- class: Adept
+  omni-tool: Biotic Burst. On a successful melee attack, the target takes 1d6 damage
+    and is pushed back 3m.
+  hit-die: 1d4
+  hit-points: 3 + your Constitution modifier
+  max-shields: '3'
+  increase-hit-points: 1d4 (or 4) + your Constitution modifier
+  increase-max-shields: 1d4
+  weapon: Heavy Pistol, SMG
+  saving-throw: Intelligence, Wisdom
+  skill: Choose two from History, Insight, Investigation, Medicine, Nature, Preception,
+    and Deception
+  spellcasting-modifier: Wisdom
+  d&d-similarities: Wizard
+  description: Adepts are biotic specialists, capable of disabling and killing enemies
+    with raw biotic power. While they lack advanced combat training, they are the
+    best at defeating enemies without firing a shot. They are outfitted with L5x implants
+    that can spawn a micro-singularity, damaging enemies and pulling them into the
+    air.
+- class: Engineer
+  omni-tool: Backhand (fire)
+  hit-die: 1d6
+  hit-points: 4 + your Constitution modifier
+  max-shields: '5'
+  increase-hit-points: 1d4 (or 2) + your Constitution modifier
+  increase-max-shields: 1d6 (or 3)
+  weapon: Heavy Pistol, SMG, Heavy Weapons
+  saving-throw: Intelligence, Charisma
+  skill: Choose two skills from  Deception, History, Intimidation, Investigation,
+    Medicine, and Nature
+  spellcasting-modifier: Intelligence
+  d&d-similarities: Monk
+  description: Engineers are tech specialists, the only class able to employ combat
+    drones on the battlefield. Engineers are the most effective class at blasting
+    through enemy defenses and disabling opponents.
+- class: Infiltrator
+  omni-tool: Omni-tazer (electric)
+  hit-die: 1d6
+  hit-points: 4 + your Constitution modifier
+  max-shields: '4'
+  increase-hit-points: 1d4 (or 3) + your Constitution modifier
+  increase-max-shields: 1d4 (or 2)
+  weapon: Heavy Pistols, SMGs, Sniper Rifles
+  saving-throw: Intelligence, Dexterity
+  skill: Choose four from Acrobatics, Athletics, Deception, Insight, Intimidation,
+    Investigation, Perception, Persuasion, Sleight of Hand, and Stealth
+  spellcasting-modifier: Dexterity
+  d&d-similarities: Rogue/Monk
+  description: Infiltrators are tech and combat specialists with the unique ability
+    to cloak themselves from visual and technological detection. Deadly at any range,
+    Infiltrators are equipped with a wide variety of weapons, equipment and powers
+    that can take down any enemy.
+- class: Sentinel
+  omni-tool: Dual omni-blade (slashing)
+  hit-die: 1d10
+  hit-points: 6 + your Constitution modifier
+  max-shields: '7'
+  increase-hit-points: 1d8 (or 5) + your Constitution modifier
+  increase-max-shields: 1d6 (or 3)
+  weapon: Assualt Rifles, Heavy Pistols, SMGs
+  saving-throw: Strength, Constitution
+  skill: Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception,
+    and Survival
+  spellcasting-modifier: Charisma
+  d&d-similarities: Paladin
+  description: 
+- class: Soldier
+  omni-tool: Omni-blade. +2 to melee attack roles. On a successful melee attack, target
+    takes 1d8 puncture damage.
+  hit-die: 1d8
+  hit-points: 5 + your Constitution modifier
+  max-shields: '5'
+  increase-hit-points: 1d8 (or 5) + your Constitution modifier
+  increase-max-shields: 1d4 (or 2)
+  weapon: Assualt Rifles, Heavy Pistols, Shotguns, SMGs, Sniper Rifles, Heavy Weapons
+  saving-throw: Wisdom, Strength
+  skill: Choose two from Athletics, Insight, Intimidation, Medicine, Persuasion
+  spellcasting-modifier: Strength
+  d&d-similarities: Barbarian/Fighter
+  description: Soldiers are pure combat specialists. No one is tougher or more effective
+    at taking down enemies with gunfire. Soldiers have the most thorough weapons training
+    and can use all special ammo types. High-level operatives are outfitted with ocular
+    synaptic processors that allow them to focus on targets with lethal accuracy.
+- class: Vanguard
+  omni-tool: Biotic Punch (biotic), You melee attacks can be made on targets within
+    5m. Dash forward 5m, then make a melee attack. On a success, deal 1d6 damage and
+    the target is knocked prone.
+  hit-die: 1d6
+  hit-points: 4 + your Constitution modifier
+  max-shields: '3'
+  increase-hit-points: 1d6 (or 3) + your Constitution modifier
+  increase-max-shields: 1d4
+  weapon: Heavy Pistols, Shotguns, SMGs
+  saving-throw: Wisdom, Dexterity
+  skill: Choose two from Acrobatics, Athletics, History, Insight, and Stealth
+  spellcasting-modifier: Constitution
+  d&d-similarities: Fighter/Wizard
+  description: Vanguards are feared for their high-risk high-reward combat style,
+    closing quickly on enemies and destroying them at close range with weapons and
+    biotic abilities. They are outfitted with L5n implants, enabling them to perform
+    a biotic charge that strikes the opponent with incredible force while bringing
+    the Vanguard in close for close-range combat.

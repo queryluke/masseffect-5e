@@ -1,0 +1,95 @@
+---
+- level: '1'
+  proficiency: '2'
+  features: '<button type="button" class="link"  data-toggle="modal" data-target="#tech-power">Tech
+    Power</button>: 2'
+  tech-points: '2'
+- level: '2'
+  proficiency: '2'
+  features: Select your Subclass
+  tech-points: '3'
+- level: '3'
+  proficiency: '2'
+  features: '<button type="button" class="link"  data-toggle="modal" data-target="#tech-power">Tech
+    Power</button>: 1'
+  tech-points: '5'
+- level: '4'
+  proficiency: '2'
+  features: <button type="button" class="link"  data-toggle="modal" data-target="#ability-score-improvement">Ability
+    Score Improvement</button>
+  tech-points: '6'
+- level: '5'
+  proficiency: '3'
+  features: '<button type="button" class="link"  data-toggle="modal" data-target="#tech-power">Tech
+    Power</button>: 1'
+  tech-points: '8'
+- level: '6'
+  proficiency: '3'
+  features: Subclass Feature
+  tech-points: '9'
+- level: '7'
+  proficiency: '3'
+  features: '<button type="button" class="link"  data-toggle="modal" data-target="#tech-power">Tech
+    Power</button>: 1'
+  tech-points: '11'
+- level: '8'
+  proficiency: '3'
+  features: <button type="button" class="link"  data-toggle="modal" data-target="#ability-score-improvement">Ability
+    Score Improvement</button>
+  tech-points: '12'
+- level: '9'
+  proficiency: '4'
+  features: '<button type="button" class="link"  data-toggle="modal" data-target="#tech-power">Tech
+    Power</button>: 1'
+  tech-points: '14'
+- level: '10'
+  proficiency: '4'
+  features: Subclass Feature
+  tech-points: '15'
+- level: '11'
+  proficiency: '4'
+  features: '<button type="button" class="link"  data-toggle="modal" data-target="#tech-power">Tech
+    Power</button>: 1'
+  tech-points: '17'
+- level: '12'
+  proficiency: '4'
+  features: <button type="button" class="link"  data-toggle="modal" data-target="#ability-score-improvement">Ability
+    Score Improvement</button>
+  tech-points: '18'
+- level: '13'
+  proficiency: '5'
+  features: '<button type="button" class="link"  data-toggle="modal" data-target="#tech-power">Tech
+    Power</button>: 1'
+  tech-points: '20'
+- level: '14'
+  proficiency: '5'
+  features: Subclass Feature
+  tech-points: '21'
+- level: '15'
+  proficiency: '5'
+  features: '<button type="button" class="link"  data-toggle="modal" data-target="#tech-power">Tech
+    Power</button>: 1'
+  tech-points: '23'
+- level: '16'
+  proficiency: '5'
+  features: <button type="button" class="link"  data-toggle="modal" data-target="#ability-score-improvement">Ability
+    Score Improvement</button>
+  tech-points: '24'
+- level: '17'
+  proficiency: '6'
+  features: '<button type="button" class="link"  data-toggle="modal" data-target="#tech-power">Tech
+    Power</button>: 1'
+  tech-points: '26'
+- level: '18'
+  proficiency: '6'
+  features: Subclass feature
+  tech-points: '27'
+- level: '19'
+  proficiency: '6'
+  features: <button type="button" class="link"  data-toggle="modal" data-target="#ability-score-improvement">Ability
+    Score Improvement</button>
+  tech-points: '29'
+- level: '20'
+  proficiency: '6'
+  features: <button type="button" class="link"  data-toggle="modal" data-target="#invention">Invention</button>
+  tech-points: '30'
