@@ -1,4 +1,3 @@
 url: http://queryluke.github.io/masseffect-5e
-baseurl: /masseffect-5e
 sass:
   sass_dir: assets/_scss

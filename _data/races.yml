@@ -264,7 +264,7 @@
   - title: Feat
     text: ''
   armor: None
-  body: "/assets/images/races/yahg_body.png"
+  body: "assets/images/races/yahg_body.png"
   male: 
   female: 
   face: http://vignette2.wikia.nocookie.net/masseffect/images/1/15/Yahg_Character_shot.png
