@@ -23,8 +23,8 @@ def inspect_feature(string, spell = false)
         replacement = replacement.gsub(/\|spell/,'')
         spell = true
       end
-      target = spell ? "spell-modal" : replacement.gsub(" ","-").downcase
-      spellTarget = spell ? 'data-spell="' + replacement + '"': ""
+      target = spell ? "ajaxModal" : replacement.gsub(" ","-").downcase
+      spellTarget = spell ? 'data-id="' + replacement + '" data-key="power" data-type="spells"' : ""
       '<button type="button" class="link" ' + spellTarget + ' data-toggle="modal" data-target="#' + target + '">' + replacement +'</button>'
     end
   end
@@ -161,7 +161,7 @@ def generate_config_file(page, output)
 
 
   puts "working on #{page[:type]}"
-  File.open("_data/#{page[:type]}.json", "wb") {|f| f.write collection.to_json }
+  File.open("data/#{page[:type]}.json", "wb") {|f| f.write JSON.pretty_generate(collection) }
 
 end
 

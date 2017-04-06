@@ -1,1 +1,50 @@
-[{"name":"Cobra Missile Launcher","weight":"14","charge":"4","effect":"Choose a creature within 60m that is not behind cover. Spend a turn Targeting the creature. The creature can use it's action to make a Dexterity saving throw. On a failed save, they continue being targeted. On a successful save, you may switch to another creature not behind cover, or end the Targeting condition. At the start of your turn, if your have a creature targeted, you launch a missle that deals 3d12 damage. Untargeted creatures within 5m of the blast must succeed on a Dexterity saving throw or take 1d12 damage. "},{"name":"Geth Spitfire","weight":"8","charge":"3","effect":"Release a torrent of bullets in a sweeping arc in front of you until the start of your next turn. You are considered to be Targeting until the start of your next turn. Creatures that enter or move within a 20m cone infront of you make a Dexterity saving throw. On a failed save, a creature takes 2d6 shock damage. On a success, a creature takes half damage. Each turn uses a charge."},{"name":"M-451 Firestorm","weight":"8","charge":"10","effect":"Sweep fire across the battlefield. Creatures withing a 5m cone must succeed on a Dexterity saving throw or take 1d8 damage. You can choose to use 2 weapon charges at once to deal 2d8 damage instead."},{"name":"M-560 Hydra","weight":"15","charge":"1","effect":"Choose up to 3 creatures within 60m that you can see and being Targeting those 3 creatures. If you successfully held your targeting for one turn, at the start of your next turn you fire a unique missile at each target. When the missle hits, it deploys 3 shaped charges. The first disrupts any barriers or shields, any barriers or shields the creature has are completely removed. The second charge cripples armor; the creature has their AC reduced by 3 for the remainer of combat. The final charge deal 4d12 damage. The creature can attempt a Constitution saving throw to cut the damage in half."},{"name":"M-597 Landon","weight":"11","charge":"10","effect":"Spend a round Targeting as you sweep the battlefield for all enemies. At the start of your next turn, choose up to 10 enemy creatures and launch a miniature missle at them, dealing 1d8 damage. You cannot target a creature twice. Each missle used consumes a weapon charge."},{"name":"M-920 Cain","weight":"10","charge":"5","effect":"Spend a round Targeting, charging up the Cain's core. At the start of your turn, you can choose to continue targeting to increase the power of the blast. You can continue Targeting as long as the Cain has weapon charges left. When you're ready to release the blast, choose a fixed point within 60m. You release a small nuclear explosion in the area. Roll Xd12 damage, where X is the number of charges used. Any creature within 5m takes double damage. Creatures within 10m take the full damage. Creatures within 20m make a Dexterity saving throw. On a failed save, a creature takes half damage. On a success, a creature takes no damage."},{"name":"Reaper Blackstar","weight":"12","charge":"1","effect":"Choose a creature within 60m that is not behind cover. The target creature makes a Dexterity saving throw.  Spend a turn Targeting the creature. The creature can use it's action to make a Dexterity saving throw. On a failed save, they continue being targeted. On a successful save, you may switch to another creature not behind cover, or end the Targeting condition. At the start of your turn, the targeted creature takes 20 + 2d12 damage."},{"name":"Sync Laser","weight":"9","charge":"2","effect":"Spend a round Targeting a 10m x 20m rectangle, up to 60m away. At the start of your turn, call down an orbital strike. Creatures within the rectangle make a Dexterity saving throw. On a failed save, a creature take 4d12 damage. On a success, a creature takes half damage."}]
+[
+  {
+    "name": "Cobra Missile Launcher",
+    "weight": "14",
+    "charge": "4",
+    "effect": "Choose a creature within 60m that is not behind cover. Spend a turn Targeting the creature. The creature can use it's action to make a Dexterity saving throw. On a failed save, they continue being targeted. On a successful save, you may switch to another creature not behind cover, or end the Targeting condition. At the start of your turn, if your have a creature targeted, you launch a missle that deals 3d12 damage. Untargeted creatures within 5m of the blast must succeed on a Dexterity saving throw or take 1d12 damage. "
+  },
+  {
+    "name": "Geth Spitfire",
+    "weight": "8",
+    "charge": "3",
+    "effect": "Release a torrent of bullets in a sweeping arc in front of you until the start of your next turn. You are considered to be Targeting until the start of your next turn. Creatures that enter or move within a 20m cone infront of you make a Dexterity saving throw. On a failed save, a creature takes 2d6 shock damage. On a success, a creature takes half damage. Each turn uses a charge."
+  },
+  {
+    "name": "M-451 Firestorm",
+    "weight": "8",
+    "charge": "10",
+    "effect": "Sweep fire across the battlefield. Creatures withing a 5m cone must succeed on a Dexterity saving throw or take 1d8 damage. You can choose to use 2 weapon charges at once to deal 2d8 damage instead."
+  },
+  {
+    "name": "M-560 Hydra",
+    "weight": "15",
+    "charge": "1",
+    "effect": "Choose up to 3 creatures within 60m that you can see and being Targeting those 3 creatures. If you successfully held your targeting for one turn, at the start of your next turn you fire a unique missile at each target. When the missle hits, it deploys 3 shaped charges. The first disrupts any barriers or shields, any barriers or shields the creature has are completely removed. The second charge cripples armor; the creature has their AC reduced by 3 for the remainer of combat. The final charge deal 4d12 damage. The creature can attempt a Constitution saving throw to cut the damage in half."
+  },
+  {
+    "name": "M-597 Landon",
+    "weight": "11",
+    "charge": "10",
+    "effect": "Spend a round Targeting as you sweep the battlefield for all enemies. At the start of your next turn, choose up to 10 enemy creatures and launch a miniature missle at them, dealing 1d8 damage. You cannot target a creature twice. Each missle used consumes a weapon charge."
+  },
+  {
+    "name": "M-920 Cain",
+    "weight": "10",
+    "charge": "5",
+    "effect": "Spend a round Targeting, charging up the Cain's core. At the start of your turn, you can choose to continue targeting to increase the power of the blast. You can continue Targeting as long as the Cain has weapon charges left. When you're ready to release the blast, choose a fixed point within 60m. You release a small nuclear explosion in the area. Roll Xd12 damage, where X is the number of charges used. Any creature within 5m takes double damage. Creatures within 10m take the full damage. Creatures within 20m make a Dexterity saving throw. On a failed save, a creature takes half damage. On a success, a creature takes no damage."
+  },
+  {
+    "name": "Reaper Blackstar",
+    "weight": "12",
+    "charge": "1",
+    "effect": "Choose a creature within 60m that is not behind cover. The target creature makes a Dexterity saving throw.  Spend a turn Targeting the creature. The creature can use it's action to make a Dexterity saving throw. On a failed save, they continue being targeted. On a successful save, you may switch to another creature not behind cover, or end the Targeting condition. At the start of your turn, the targeted creature takes 20 + 2d12 damage."
+  },
+  {
+    "name": "Sync Laser",
+    "weight": "9",
+    "charge": "2",
+    "effect": "Spend a round Targeting a 10m x 20m rectangle, up to 60m away. At the start of your turn, call down an orbital strike. Creatures within the rectangle make a Dexterity saving throw. On a failed save, a creature take 4d12 damage. On a success, a creature takes half damage."
+  }
+]

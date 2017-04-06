@@ -85,9 +85,7 @@
             $.getJSON( "{{ site.baseurl }}data/" + dataFile + ".json" , function( result ){
                 $.each(result, function(k,v){
                     if(v[key] == id){
-                        console.log(v);
                         html = renderOptions[dataFile](v);
-                        console.log(html);
                         $('#ajaxModal').find('.modal-body').html(html);
                     }
                 });
@@ -104,6 +102,7 @@
 </footer>
 
 </body>
+{% include feature_modals.html %}
 <div class="modal fade" id="ajaxModal" tabindex="-1" role="dialog" aria-labelledby="ajaxModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">

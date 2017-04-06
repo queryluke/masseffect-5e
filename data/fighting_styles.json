@@ -1,1 +1,32 @@
-[{"name":"Brawler","initial":"add 3 damage to all melee attack damage","advanced":"you have advantage when melee attacking"},{"name":"Dual Weild","initial":"You can weild 2 pistols or SMGs (or combination thereof). Your off-hand weapon always shoots with a disadvantage. You will automatically miss targets out of range.","advanced":"Remove the disadvantage penalty to your off-hand weapon"},{"name":"Fast Fingers","initial":"When you Action surge, if you are weilding a shotgun, you can reload it as a free action. This does not take the place of your Action Surge action.","advanced":"When you Action surge, if you are weilding a shotgun, you can reload AND fire in the order of your choosing. This does not take the place of your Action Surge action."},{"name":"Sawed-off","initial":"You successful shotgun attacks hit 1 additional creature within 2m of the original target. The additional creature takes 1/2 damage.","advanced":"You hit 2 additional creatures."},{"name":"Defense","initial":"plus 1AC, and 3 Shields","advanced":"plus 2AC and 6 sheilds"},{"name":"Protection","initial":"When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. Costs a Barrier tick.","advanced":"If the attack succeeds, the Barrier tick absorbs damage as a normal barrier tick would. If the attack fails, your barrier tick is refunded."}]
+[
+  {
+    "name": "Brawler",
+    "initial": "add 3 damage to all melee attack damage",
+    "advanced": "you have advantage when melee attacking"
+  },
+  {
+    "name": "Dual Weild",
+    "initial": "You can weild 2 pistols or SMGs (or combination thereof). Your off-hand weapon always shoots with a disadvantage. You will automatically miss targets out of range.",
+    "advanced": "Remove the disadvantage penalty to your off-hand weapon"
+  },
+  {
+    "name": "Fast Fingers",
+    "initial": "When you Action surge, if you are weilding a shotgun, you can reload it as a free action. This does not take the place of your Action Surge action.",
+    "advanced": "When you Action surge, if you are weilding a shotgun, you can reload AND fire in the order of your choosing. This does not take the place of your Action Surge action."
+  },
+  {
+    "name": "Sawed-off",
+    "initial": "You successful shotgun attacks hit 1 additional creature within 2m of the original target. The additional creature takes 1/2 damage.",
+    "advanced": "You hit 2 additional creatures."
+  },
+  {
+    "name": "Defense",
+    "initial": "plus 1AC, and 3 Shields",
+    "advanced": "plus 2AC and 6 sheilds"
+  },
+  {
+    "name": "Protection",
+    "initial": "When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. Costs a Barrier tick.",
+    "advanced": "If the attack succeeds, the Barrier tick absorbs damage as a normal barrier tick would. If the attack fails, your barrier tick is refunded."
+  }
+]
