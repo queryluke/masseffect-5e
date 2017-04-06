@@ -17,7 +17,7 @@
     {% for spell in spells %}
     <tr>
         <td>
-            <button type="button" class="link" data-spell="{{ spell.power }}" data-toggle="modal" data-target="#spell-modal">
+            <button type="button" class="link" data-id="{{ spell.power }}" data-key="power" data-type="spells" data-toggle="modal" data-target="#ajaxModal">
                 {{ spell.power }}
             </button>
         </td>

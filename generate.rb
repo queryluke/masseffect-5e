@@ -159,11 +159,9 @@ def generate_config_file(page, output)
     collection << dup_model
   end
 
-  if page[:type] == "spells"
-    File.open("assets/js/spells.json", "wb") {|f| f.write collection.to_json }
-  end
 
-  File.open("_data/#{page[:type]}.yml", "wb") {|f| f.write collection.to_yaml }
+  puts "working on #{page[:type]}"
+  File.open("_data/#{page[:type]}.json", "wb") {|f| f.write collection.to_json }
 
 end
 

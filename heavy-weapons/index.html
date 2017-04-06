@@ -3,12 +3,23 @@ layout: default
 title: Heavy Weapons
 ---
 
-
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12 mt-3">
+        <div class="col-12">
             <h1>Heavy Weapons</h1>
-            {% include heavy_weapon_table.html %}
         </div>
     </div>
+    {% for hw in site.data.heavy_weapons %}
+    <div class="row">
+        <div class="col-12 col-sm-4"></div>
+        <div class="col-12 col-sm-8">
+            <h2>{{ hw.name }}</h2>
+            <ul class="list-inline">
+                <li><strong>Weight:</strong> {{ hw.weight }}</li>
+                <li><strong>Charge:</strong> {{ hw.charge }}</li>
+            </ul>
+            <p>{{ hw.effect }}</p>
+        </div>
+    </div>
+    {% endfor %}
 </div>

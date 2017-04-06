@@ -1,14 +1,13 @@
 ---
-layout: default
+layout: linkedTable
 title: Weapons
+headers:
+    - name
+    - weapon-type
+    - weight
+    - range
+    - rof
+    - heat
+id_attribute: name
+data_file: weapons
 ---
-
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 mt-3">
-            <h1>Weapons</h1>
-            {% include weapon_table.html %}
-        </div>
-    </div>
-</div>
