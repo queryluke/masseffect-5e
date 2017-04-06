@@ -1,0 +1,49 @@
+{% include header.html %}
+
+{% assign race = site.data.races | where: "race", page.race %}
+{% assign race = race[0] %}
+{% capture img-margin %}{% if race.race == 'Volus' %}-10em{% else %}-1.5em{% endif %}{% endcapture %}
+{% capture img %}{% if race.race == 'Yagh' %}{{ site.baseurl }}{% endif %}{{ race.body }}{% endcapture %}
+<div class="container-fluid" id="{{ race.race | slugify }}">
+    <div class="row">
+        <div class="col-sm-4 hidden-xs-down">
+            <img
+                    src="{{ img }}"
+            class="img-fluid"
+            style="margin-top: {{ img-margin }};"
+            alt="{{ race.race }} full body image">
+        </div>
+        <div class="col-12 col-sm-8 mt-4">
+            <h2>{{ race.race }}</h2>
+            {{ content }}
+            <p><a href="http://masseffect.wikia.com/wiki/{{ race.race }}" target="_blank">Read more about {{ race.race }} biology, history, and culture</a></p>
+            <div class="row">
+                <div class="col-12 col-sm-4">
+                    <dl>
+                        <dt>Ability Scores</dt>
+                        <dd>{{ race.increases }}</dd>
+                        <dt>Speed</dt>
+                        <dd>{{ race.speed }}</dd>
+                        <dt>Size</dt>
+                        <dd>{{ race.size }}</dd>
+                        <dt>Armor Proficiency</dt>
+                        <dd>{{ race.armor }}</dd>
+                        <dt>Playable Classes</dt>
+                        <dd>{{ race.available-classes }}</dd>
+                        <dt>Sexy Level</dt>
+                        <dd>{{ race.sexy-level }}</dd>
+                    </dl>
+                </div>
+                <div class="col-12 col-sm-8">
+                    <div class="px-3" style="border-left: solid 3px black">
+                        {% for skill in race.abilities %}
+                        <p style="font-size: .9rem"><strong>{{ skill.title }}</strong>{% if skill.text != '' %}: {{ skill.text }}{% endif %}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include footer.html %}

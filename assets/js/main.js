@@ -10,12 +10,6 @@ $(function(){
     }
   }
 
-  $('.dropdown-item').click(function(){
-    var target = $(this).attr('href');
-    target = target.substring(target.indexOf('#'));
-    showContent(target, target);
-  });
-
   $('.subnav-link').click(function(e){
     e.preventDefault();
     var target = $(this).attr('href');
@@ -41,12 +35,12 @@ $(function(){
     html += '</dl><hr>';
     html += '<p>' + spell['mechanic'] + '</p>';
     html += '<p>' + spell['higher-levels'] + '</p>';
-    if(spell['adv-option-1']){
+    if(spell['adv-option-1'].length && spell['adv-option-1'] != '-'){
       html += '<h4>Advancements</h4>';
       av1 = spell['adv-option-1'].split('-');
       html += '<p><strong>' + av1[0].trim() + '</strong>: ' + av1[1].trim() + '</p>';
     }
-    if(spell['adv-option-2']) {
+    if(spell['adv-option-2'].length && spell['adv-option-2'] != '-') {
       av2 = spell['adv-option-2'].split('-');
       html += '<p><strong>' + av2[0].trim() + '</strong>: ' + av2[1].trim() + '</p>';
     }

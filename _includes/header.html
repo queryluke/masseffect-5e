@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ site.baseurl }}assets/css/main.css">
 </head>
 
-<body class="h-100" style="margin-top: 54px;">
+<body>
 
     <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top" role="navigation">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,7 +32,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="racesLink">
                         {% for race in site.data.races %}
-                        <a class="dropdown-item" href="{{ site.baseurl }}races/#{{ race.race | slugify }}">{{ race.race }}</a>
+                        <a class="dropdown-item" href="{{ site.baseurl }}races/{{ race.race | slugify }}">{{ race.race }}</a>
                         {% endfor %}
                     </div>
                 </li>
@@ -43,7 +43,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="classLink">
                         {% for class in site.data.classes %}
-                        <a class="dropdown-item" href="{{ site.baseurl }}classes/#{{ class.class | slugify }}">{{ class.class }}</a>
+                        <a class="dropdown-item" href="{{ site.baseurl }}classes/{{ class.class | slugify }}">{{ class.class }}</a>
                         {% endfor %}
                     </div>
                 </li>
@@ -59,3 +59,5 @@
             </ul>
         </div>
     </nav>
+
+    <div class="main-content" role="main">

@@ -8,6 +8,11 @@
   font-size: 8rem;
 }
 
+.main-content {
+  min-height: calc(90vh - 5rem);
+  margin-top: 5rem;
+}
+
 .clip-circle img{
   display: block;
   height: 128px;

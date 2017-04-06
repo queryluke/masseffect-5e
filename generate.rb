@@ -128,7 +128,20 @@ def generate_config_file(page, output)
 
     case page[:type]
     when "races"
+      race = dup_model["race"].gsub(" ","-").downcase
+      directory = "races/#{race}"
+      Dir.mkdir(directory) unless File.exists?(directory)
+      File.open("#{directory}/index.html", "w") do |f|
+        f.write("---\nlayout: race\ntitle: Races - #{dup_model["race"]}\nrace: #{dup_model["race"]}\n---")
+      end
       dup_model = config_races(dup_model)
+    when "classes"
+      c = dup_model["class"].gsub(" ","-").downcase
+      directory = "classes/#{c}"
+      Dir.mkdir(directory) unless File.exists?(directory)
+      File.open("#{directory}/index.html", "w") do |f|
+        f.write("---\nlayout: class\ntitle: Classes - #{dup_model["class"]}\nclass: #{dup_model["class"]}\n---")
+      end
     when "subclasses"
       dup_model["2"] = inspect_feature(dup_model["2"], true)
       dup_model["6"] = inspect_feature(dup_model["6"], true)

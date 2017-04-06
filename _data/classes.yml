@@ -1,7 +1,7 @@
 ---
 - class: Adept
-  omni-tool: Biotic Burst. On a successful melee attack, the target takes 1d6 damage
-    and is pushed back 3m.
+  omni-tool: 'Biotic Burst: On a successful melee attack, the target takes 1d6 biotic
+    damage and is pushed backward 3m.'
   hit-die: 1d4
   hit-points: 3 + your Constitution modifier
   max-shields: '3'
@@ -83,9 +83,8 @@
     and can use all special ammo types. High-level operatives are outfitted with ocular
     synaptic processors that allow them to focus on targets with lethal accuracy.
 - class: Vanguard
-  omni-tool: Biotic Punch (biotic), You melee attacks can be made on targets within
-    5m. Dash forward 5m, then make a melee attack. On a success, deal 1d6 damage and
-    the target is knocked prone.
+  omni-tool: 'Biotic Punch:  Dash forward 5m, then make a melee attack. On a success,
+    deal 1d6 biotic damage and gain 1 Barrier Tick.'
   hit-die: 1d6
   hit-points: 4 + your Constitution modifier
   max-shields: '3'

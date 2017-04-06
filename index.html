@@ -27,13 +27,7 @@ title: Mass Effect 5e
                 <div class="col-12">
                     <h2>Races</h2>
                 </div>
-                {% for race in site.data.races %}
-                    <div class="col-12 col-sm-4 col-md-3 col-lg-2 mt-1">
-                        <a href="{{ site.baseurl }}races/#{{ race.race | slugify }}" class="clip-circle" data-name="{{ race.race }}" aria-label="{{ race.race }}">
-                            <img src="{{ race.face }}" alt="{{ race.race }}">
-                        </a>
-                    </div>
-                {% endfor %}
+                {% include race_buttons.html %}
             </div>
 
             <div class="row mt-5">
@@ -41,13 +35,7 @@ title: Mass Effect 5e
                     <h2>Classes</h2>
                 </div>
             </div>
-            <div class="d-flex justify-content-around">
-                {% for class in site.data.classes %}
-                <a href="{{ site.baseurl }}classes/#{{ class.class | slugify }}" class="class-button" data-name={{ class.class }} aria-label="{{ class.class }}">
-                    <img class="class-icon class-icon-xl" src="{{ site.baseurl }}assets/images/classes/{{ class.class | slugify }}.svg">
-                </a>
-                {% endfor %}
-            </div>
+            {% include class_buttons.html %}
         </div>
     </div>
 </div>

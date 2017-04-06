@@ -1,124 +1,4 @@
 ---
-- power: Adrenaline Rush
-  school: Combat
-  level: 0 (AD)
-  die-type: "-"
-  casting-time: 1 action
-  duration: 1 turn
-  range: self
-  dmg-type: "-"
-  mechanic: Accelerate reflexes, granting additional time to take actions. Soldiers
-    start with the power Adrenaline Rush, which is powered by Adrenaline Dice (AD),
-    a d4 die. You regain 1 AD on a short rest, and all your AD on a long rest. On
-    your turn, you can activate Adrenaline Rush as a bonus action. When you activate
-    Adrenaline Rush, choose and execute an available feature or spell. Features explain
-    how the die roll relates to the ability. For spells, the roll of the d4 represents
-    the level at which you cast the spell. For tech powers, the roll counts as the
-    number of tech points you spend to cast the ability. Spells cannot do LESS damage
-    (i.e., rolling a 1 on a level 4 spell), but they have the potential to do more
-    damage. This using the AD is considered the bonus action, you can still take another
-    action this turn.
-  adv-option-1: "-"
-  adv-option-2: "-"
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: 
-  engineer: 
-  soldier: x
-  class-list: Soldier
-- power: AI Hacking
-  school: Tech
-  level: '1'
-  die-type: "-"
-  casting-time: '1 action '
-  duration: 1 minute
-  range: 20m
-  dmg-type: 
-  mechanic: Spend 1 TP per target size and choose an synthetic target within 20m (e.g.
-    1 TP for small, 2TP for medium, 3TP for larger, etc). The target makes an Intelligence
-    saving thow. On a failed save, the target cannot distinguish between friend and
-    foe. They will attack the closest target. Each time the target takes damage, it
-    makes a new Intelligence saving throw. If the saving throw succeeds, the spell
-    ends. If used in a non-combat situation, the target is considered Charmed. You
-    can also use this ability to open locked doors and containers, turn off cameras,
-    essentially, hack any system with a rudimentary AI, these types of hacks do not
-    require TP
-  adv-option-1: Commanding Hack - Take control of the target.
-  adv-option-2: Efficient Hack - All hacking costs 1TP
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: x
-  engineer: x
-  soldier: 
-  class-list: Engineer, Infiltrator
-- power: Annihilation Field
-  school: Biotic
-  level: '4'
-  die-type: d6
-  casting-time: 1 action, additional actions to maintain
-  duration: until not maintained
-  range: aoe on self, 5m
-  dmg-type: biotic
-  mechanic: Spin this fiery effect around you to burn nearby enemies. All creatures
-    within a 5m radius, originating from yourself, must make a Constitution saving
-    throw. On a failure, a creature takes 4d6 damage. On a success, they take half
-    the damage. Each turn you can choose to try and pass a Constitution check and
-    maintain the field. You move at half speed while the field is active.
-  adv-option-1: Centered Annihilation - Attempting to maintain the field does not
-    take your action on successive turns, at the cost of reducing the field's damage
-    to d4
-  adv-option-2: Explosive Annihilation - Instead of attempting to maintain the field,
-    you may shatter the field into powerful projectiles that hit up to six creatures
-    within 20m. Each creature must pass a Dexterity saving throw, or take 4d4 damage.
-    Increase to 5d4 if using a 5th level spell slot. These projectiles can detonate
-    other [Biotic Powers].
-  higher-levels: When you cast this spell using a spell slot of 5 level or higher,
-    the damage increases by 1d6 for each slot level above 4
-  max-tp: 
-  denotates: 
-  primes: x
-  adept: x
-  vanguard: 
-  sentinel: 
-  infiltrator: 
-  engineer: 
-  soldier: 
-  class-list: Adept
-- power: Arc Grenade
-  school: Grenade
-  level: '3'
-  die-type: d6
-  casting-time: 1 action
-  duration: instant
-  range: 10m, 3m
-  dmg-type: shock
-  mechanic: Spend 3 TP or use a 3rd lvl spell slot to target an area within 10m. Creatures
-    within 3m of the target must make a Dexterity saving throw. On a failed save,
-    a creature takes 3d6 damage. On a successful save, a creature takes half as much
-    damage. Arc Grenade deals double damage to shields.
-  adv-option-1: 
-  adv-option-2: 
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: x
-  engineer: x
-  soldier: 
-  class-list: Engineer, Infiltrator
 - power: Armor Piercing Ammo
   school: Ammo
   level: '0'
@@ -142,18 +22,16 @@
   engineer: 
   soldier: x
   class-list: Infiltrator, Soldier
-- power: Balistic Blades
-  school: Combat
-  level: 4 (AD)
-  die-type: d6
+- power: Cryo Ammo
+  school: Ammo
+  level: '0'
+  die-type: "-"
   casting-time: 1 action
-  duration: instant
-  range: 10m
-  dmg-type: puncture
-  mechanic: You eject your omni-tool attack towards a creature or object within 10m.
-    Make a ranged spell attack (using Strength modifier). On a success, roll your
-    AD and deal Xd6 damage, where X is your roll. On a failed attack, you do not use
-    your AD, but you cannot use another Adrenaline Rush this turn.
+  duration: until overridden
+  range: self
+  dmg-type: cryo
+  mechanic: When unprotected enemies are hit by a cryo bullet, the make an easy Strength
+    saving throw. On a failed save, they are Frozen for 1 round.
   adv-option-1: "-"
   adv-option-2: "-"
   higher-levels: ''
@@ -163,10 +41,135 @@
   adept: 
   vanguard: 
   sentinel: 
-  infiltrator: 
+  infiltrator: x
   engineer: 
   soldier: x
-  class-list: Soldier
+  class-list: Infiltrator, Soldier
+- power: Disruptor Ammo
+  school: Ammo
+  level: '0'
+  die-type: "-"
+  casting-time: 1 action
+  duration: until overridden
+  range: self
+  dmg-type: shock
+  mechanic: Plus 4 damage to shields
+  adv-option-1: "-"
+  adv-option-2: "-"
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: x
+  engineer: 
+  soldier: x
+  class-list: Infiltrator, Soldier
+- power: Incendiary Ammo
+  school: Ammo
+  level: '0'
+  die-type: "-"
+  casting-time: 1 action
+  duration: until overridden
+  range: self
+  dmg-type: fire
+  mechanic: Succesful ranged attacks with the weapon have a chance to set the target
+    ablaze. The target it makes a Constitutuion saving throw (DC 10). On a failed
+    save, they take an additional 1d4 damage.
+  adv-option-1: "-"
+  adv-option-2: "-"
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: x
+  engineer: 
+  soldier: x
+  class-list: Infiltrator, Soldier
+- power: Shredder Ammo
+  school: Ammo
+  level: '0'
+  die-type: "-"
+  casting-time: 1 action
+  duration: until overridden
+  range: self
+  dmg-type: slash
+  mechanic: Plus 3 damage to unprotected enemies
+  adv-option-1: "-"
+  adv-option-2: "-"
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: x
+  engineer: 
+  soldier: x
+  class-list: Infiltrator, Soldier
+- power: Warp Ammo
+  school: Ammo
+  level: '0'
+  die-type: "-"
+  casting-time: 1 action
+  duration: until overridden
+  range: self
+  dmg-type: biotic
+  mechanic: Warp bullets strip away additional barrier ticks. A sucessful ranged attack
+    on a target with an active Barrier will strip away 2 Barrier ticks. Warp ammo
+    can also detonate [Biotic Powers].
+  adv-option-1: "-"
+  adv-option-2: "-"
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: x
+  engineer: 
+  soldier: x
+  class-list: Infiltrator, Soldier
+- power: Annihilation Field
+  school: Biotic
+  level: '4'
+  die-type: d8
+  casting-time: 1 action, additional actions to maintain
+  duration: until not maintained
+  range: aoe on self, 5m
+  dmg-type: biotic
+  mechanic: Spin this fiery effect around you to burn nearby enemies. Each creatures
+    within a 5m radius, originating from yourself, make a Constitution saving throw.
+    -- A creature takes 4d8 damage on a failed save or half as much damage on a successful
+    one. A creature must also make the saving throw when it enters the field's space
+    for the first time on a turn or ends its turn there. -- You move at half speed
+    while the field is active. -- Each turn you can use your action to maintain the
+    field by passing a Constitution check (DC 10).
+  adv-option-1: Centered Annihilation - You can automatically pass the Constitution
+    check to maintain the field at the cost of reducing it's damage to d4
+  adv-option-2: Explosive Annihilation - Instead of maintaining the field, you may
+    shatter it into powerful projectiles that hit up to six creatures you can see
+    within 20m. Each creature must pass a Dexterity saving throw, or take 4d4 damage.
+    These projectiles can detonate other powers.
+  higher-levels: When you cast this spell using a spell slot of 5 level or higher,
+    the damage increases by 1d8 for each slot level above 4
+  max-tp: 
+  denotates: 
+  primes: x
+  adept: x
+  vanguard: 
+  sentinel: 
+  infiltrator: 
+  engineer: 
+  soldier: 
+  class-list: Adept
 - power: Barrier
   school: Biotic
   level: '0'
@@ -328,89 +331,6 @@
   engineer: 
   soldier: 
   class-list: Shaman Adept only
-- power: Blade Armor
-  school: Combat
-  level: '2'
-  die-type: d4
-  casting-time: 1 action
-  duration: until consumed
-  range: self
-  dmg-type: puncture
-  mechanic: Reinforce your armor with biotic blades. A Biotic spike protrudes from
-    each of your shoulderguards. Creatures that attack you must make a successful
-    Dexterity saving throw or take 2d4 damage. Or, you may take an extra free action
-    to make a melee attack on a creature within range. On a success, the creature
-    takes 2d4 damage. You can deal damage twice (once with each shoulderguard), then
-    the power dissipates.
-  adv-option-1: Bleeding Blades - Targets hit by your blades take an additional 1d6
-    damage at the start of their next turn.
-  adv-option-2: Explosive Blades - Blades explode, disorienting the target. It takes
-    it's next attack at a disadvantage
-  higher-levels: When you cast this spell using a spell slot of 3 level or higher,
-    the damage increases by 1d4 for each slot level above 2
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: x
-  sentinel: x
-  infiltrator: 
-  engineer: 
-  soldier: "[Havok]"
-  class-list: Sentinel, Havok Soldier only, Vanguard
-- power: Cain Trip Mine
-  school: Tech
-  level: '1'
-  die-type: d12
-  casting-time: 1 action
-  duration: until triggered or disarmed
-  range: self
-  dmg-type: impact
-  mechanic: Spend 2 TP to launch a Cain Trip Mine. The mine affixes to a solid surface
-    and projects a beam tripwire. When the mine explodes, creatures within 3m take
-    2d12 damage. When appropriate, enemies can make a perception check to notice and
-    disarm the mine. A successful ranged attack on the explosive (DC 10) will also
-    set it off. Finally, this power can be used like a grenade, but enemies can pass
-    a Dexterity saving throw to take half damage.
-  adv-option-1: 
-  adv-option-2: 
-  higher-levels: You can spend up to 2 TP.
-  max-tp: '2'
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: 
-  engineer: x
-  soldier: 
-  class-list: Engineer
-- power: Carnage
-  school: Combat
-  level: '1'
-  die-type: d10
-  casting-time: 1 action
-  duration: instant
-  range: 5m
-  dmg-type: slash
-  mechanic: A biotic blast originates outward in a cone up to 5m away. Creatures caught
-    in the blast make Constitution saving throw. On a failed save, a creature takes
-    1d10 damage. On a successful save, the creature takes half the damage.
-  adv-option-1: Rending Carnage - Deal double damage to organic, unprotected targets.
-  adv-option-2: Reducing Carnage - Targets that fail the saving throw have thier AC
-    reduced by 3.
-  higher-levels: When you cast this spell using a spell slot of 2 level or higher,
-    the damage increases by 1d10 for each slot level above 1
-  max-tp: 
-  denotates: x
-  primes: 
-  adept: 
-  vanguard: x
-  sentinel: 
-  infiltrator: 
-  engineer: 
-  soldier: "[Havok]"
-  class-list: Havok Soldier only, Vanguard
 - power: Charge
   school: Biotic
   level: '0'
@@ -438,108 +358,6 @@
   engineer: 
   soldier: 
   class-list: Vanguard
-- power: Cluster Grenade
-  school: Grenade
-  level: '3'
-  die-type: d6
-  casting-time: 1 action
-  duration: instant
-  range: 10m, 3m
-  dmg-type: impact
-  mechanic: Spend 3 TP or use a 3rd lvl spell slot to target an area within 10m. Creatures
-    within 3m of the target must make two consecurtive Dexterity saving throw. On
-    2 failed saves, a creature takes 3d6 damage. On a failure and success, a creature
-    takes half as much damage. On two successes, a creature takes no damage.
-  adv-option-1: 
-  adv-option-2: 
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: x
-  vanguard: 
-  sentinel: 
-  infiltrator: 
-  engineer: 
-  soldier: 
-  class-list: Adept
-- power: Concussive Shot
-  school: Combat
-  level: 0 (AD)
-  die-type: "-"
-  casting-time: 1 action
-  duration: 10 min
-  range: based on weapon
-  dmg-type: impact
-  mechanic: 'You use the additional time provided by your adrenaline rush to swap
-    in a specialzed thermal clip. Roll your AD. Your next shot reduces the target''s
-    shield by that amount BEFORE it does it''s damage. This effect can stack with
-    ammo powers. Additionally, a target hit by the bullet must succedd a Constitution
-    saving throw or be knocked down.You can immediate take a shot as an action or
-    take a different action. The specilized clip will remain in your gun for the next
-    10 minutes. '
-  adv-option-1: "-"
-  adv-option-2: "-"
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: 
-  engineer: 
-  soldier: x
-  class-list: Soldier
-- power: Cryo Ammo
-  school: Ammo
-  level: '0'
-  die-type: "-"
-  casting-time: 1 action
-  duration: until overridden
-  range: self
-  dmg-type: cryo
-  mechanic: When unprotected enemies are hit by a cryo bullet, the make an easy Strength
-    saving throw. On a failed save, they are Frozen for 1 round.
-  adv-option-1: "-"
-  adv-option-2: "-"
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: x
-  engineer: 
-  soldier: x
-  class-list: Infiltrator, Soldier
-- power: Cryo Blast
-  school: Tech
-  level: '1'
-  die-type: "-"
-  casting-time: 1 action
-  duration: instant
-  range: 20m
-  dmg-type: cryo
-  mechanic: Spend XTP and choose a target within 20m. If the target is unprotected,
-    it makes a Strength saving throw. On a failed save the target is Frozen for 1
-    turn. On a success or if the target is protected,it's movement speed is halved.
-    Any creatures within Xx2m have their movement speed halved.
-  adv-option-1: Impact Blast - You focus the blast on the target, sacrificing the
-    AOE slowing effect. But your blast now deals Xd6 damage.
-  adv-option-2: Deep Cryo Blast - The target remains frozen for 3 turns.
-  higher-levels: You can spend up to 5 TP.
-  max-tp: '5'
-  denotates: 
-  primes: x
-  adept: 
-  vanguard: 
-  sentinel: x
-  infiltrator: x
-  engineer: x
-  soldier: 
-  class-list: Engineer, Infiltrator, Sentinel
 - power: Dark Channel
   school: Biotic
   level: '0'
@@ -596,104 +414,6 @@
   engineer: 
   soldier: 
   class-list: Fury Adept only
-- power: Decoy
-  school: Tech
-  level: '1'
-  die-type: "-"
-  casting-time: 1 action
-  duration: "-"
-  range: 10m
-  dmg-type: "-"
-  mechanic: Spend XTP to summon a holographic copy of yourself at a location within
-    10m. Enemies attack your decoy, but intelligent beings can make a perception check.
-    If they succeed, they are not fooled. The decoy lasts for X rounds of combat
-  adv-option-1: Explosive Decoy - You can spend an additional TP and action to detonate
-    your Decoy, dealing 2d6 damage to creatures within 5m
-  adv-option-2: Improved Decoy - Your Decoy becomes so life-like, not even intelligent
-    creatures can tell the difference.
-  higher-levels: You can spend up to 5 TP.
-  max-tp: '5'
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: x
-  engineer: x
-  soldier: 
-  class-list: Engineer, Infiltrator
-- power: Defense Matrix
-  school: Tech
-  level: '1'
-  die-type: 
-  casting-time: 
-  duration: 
-  range: 
-  dmg-type: 
-  mechanic: 
-  adv-option-1: 
-  adv-option-2: 
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: x
-  engineer: x
-  soldier: 
-  class-list: Engineer, Infiltrator
-- power: Devastator Mode
-  school: Combat
-  level: 5 (AD)
-  die-type: "-"
-  casting-time: 1 action
-  duration: instant
-  range: self
-  dmg-type: "-"
-  mechanic: Turn into a powerful turret. Roll your AD and root yourself in place for
-    X turns, where X is your roll. You may swap weapons before rooting. You cannot
-    move and automatically fail any Dexterity saving throws. While Devastator Mode
-    is active, you cannot use any other spells or abilities, you can only shoot. Your
-    shields increase by 2 times X. Heat has no affect on your weapon, i.e., you do
-    not have to reload. You can take 3 shooting actions per turn.
-  adv-option-1: Heavy Devastator - Add 1d4 to each damage roll
-  adv-option-2: 'Tactical Devastator - You have advantage when making your AD roll
-    for Devastator. '
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: 
-  engineer: 
-  soldier: "[Shock Trooper]"
-  class-list: Shock Trooper Soldier only
-- power: Disruptor Ammo
-  school: Ammo
-  level: '0'
-  die-type: "-"
-  casting-time: 1 action
-  duration: until overridden
-  range: self
-  dmg-type: shock
-  mechanic: Plus 4 damage to shields
-  adv-option-1: "-"
-  adv-option-2: "-"
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: x
-  engineer: 
-  soldier: x
-  class-list: Infiltrator, Soldier
 - power: Dominate
   school: Biotic
   level: '5'
@@ -721,131 +441,6 @@
   engineer: 
   soldier: 
   class-list: Justicar Adept only
-- power: Drone
-  school: Tech
-  level: '1'
-  die-type: d6
-  casting-time: 1 action
-  duration: 1 minute or until destroyed
-  range: self
-  dmg-type: shock
-  mechanic: Spend X TP to summon a drone. Each drone type has a unique set of abilities.
-    Drones have 20m of moverment. You can only have a single Drone active at a time.
-    See Drones.
-  adv-option-1: Lasting Drone - Double the drone's health
-  adv-option-2: Explosive Drone - When the drone's health drops below 0, it explodes,
-    dealing 1[d8] puncture damage to all creatures within 3m
-  higher-levels: You can spend up to 5 TP.
-  max-tp: '5'
-  denotates: x
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: 
-  engineer: "[Drone Jockey]"
-  soldier: 
-  class-list: Drone Jockey Engineer only
-- power: Electric Slash
-  school: Combat
-  level: '5'
-  die-type: d6
-  casting-time: 1 action
-  duration: instant
-  range: 10m
-  dmg-type: shock
-  mechanic: Spend X TP to unleash a wave of electric energy in a 10m cone originating
-    from you. Each creature must make a Dexterity saving throw. On a failed save,
-    a creature takes Xd6 damage and is Restrained for 1 turn. On a successful save,
-    a creature takes half as much damage and isn't restrained.
-  adv-option-1: Restoring Slash - Increase your shields by half of your damage roll
-  adv-option-2: Stunning Slash - Creatures that fail the saving throw are Stunned
-    instead of restrained.
-  higher-levels: You can spend up to 5 TP.
-  max-tp: '5'
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: x
-  engineer: 
-  soldier: 
-  class-list: Infiltrator
-- power: Energy Drain
-  school: Tech
-  level: '1'
-  die-type: d8
-  casting-time: 1 action
-  duration: instant
-  range: 20m
-  dmg-type: shock
-  mechanic: Spend XTP and make a ranged attack on a target within 20m. On a successful
-    hit, deal Xd8 damage to the target. If the damage is done to shields, regain half
-    that damage to your shields.
-  adv-option-1: Heavy Drain - Increase the damage die type to d10.
-  adv-option-2: Boosting Drain - Energy Drain temporarily increases your AC by X until
-    the start of your next turn.
-  higher-levels: You can spend up to 3 TP.
-  max-tp: '3'
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: x
-  infiltrator: x
-  engineer: x
-  soldier: 
-  class-list: Engineer, Infiltrator, Sentinel
-- power: First Aid
-  school: Tech
-  level: '1'
-  die-type: d6
-  casting-time: 1 action
-  duration: instant
-  range: 2m
-  dmg-type: "-"
-  mechanic: Spend X TP to heal a target creature within reach. The heal is equal to
-    Xd6 + your Tech modifier
-  adv-option-1: Adaptive Heal - Healed targets have resistance to the last damage
-    type they took.
-  adv-option-2: Powerful Hands - Increase the die type to d8
-  higher-levels: You can spend up to 5 TP.
-  max-tp: '5'
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: x
-  infiltrator: x
-  engineer: x
-  soldier: 
-  class-list: Engineer, Infiltrator, Sentinel
-- power: Flamer
-  school: Tech
-  level: '4'
-  die-type: d6
-  casting-time: 1 action
-  duration: 1 turn
-  range: 2m
-  dmg-type: incendiary
-  mechanic: Eject flames in a cone in front of you. Creatures within the 5m cone make
-    a Dexterity saving throw. On a failed save, they take 4d6 damage. On a success,
-    they are panicked (their next attack will have disadvantage)
-  adv-option-1: Wicked Flames - Creatures with a failed save lose 1AC
-  adv-option-2: Reaching Flames - Increase the range to 5m
-  higher-levels: When you cast this spell using a spell slot of 5 level or higher,
-    the damage increases by 1d6 for each slot level above 4
-  max-tp: 
-  denotates: x
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: x
-  infiltrator: 
-  engineer: 
-  soldier: "[Havok]"
-  class-list: Sentinel, Havok Soldier only
 - power: Flare
   school: Biotic
   level: '4'
@@ -875,135 +470,6 @@
   engineer: 
   soldier: 
   class-list: Adept, Sentinel
-- power: Flashbang Grenade
-  school: Grenade
-  level: '3'
-  die-type: "-"
-  casting-time: '1 action '
-  duration: instant
-  range: 10m, 3m
-  dmg-type: "-"
-  mechanic: Spend 3 TP or use a 3rd lvl spell slot to target an area within 10m. Creatures
-    within 3m of the target must make a Constitution saving throw. On a failed save,
-    a creature is blinded for 1 turn.
-  adv-option-1: 
-  adv-option-2: 
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: x
-  vanguard: 
-  sentinel: 
-  infiltrator: x
-  engineer: x
-  soldier: 
-  class-list: Adept, Engineer, Infiltrator
-- power: Fortification
-  school: Tech
-  level: '2'
-  die-type: "-"
-  casting-time: 1 action
-  duration: 10m
-  range: self
-  dmg-type: "- "
-  mechanic: Spend TP to increase your AC by that amount. If a soldier, roll your AD
-    and increase your AC by your AD roll.
-  adv-option-1: Explosive Fortification - You can denotate this power. Creatures within
-    a 5m radius of you lose 1 AC.
-  adv-option-2: Empowered Fortification - You get 2 additional AC
-  higher-levels: You can spend up to [maxTP] TP.
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: x
-  infiltrator: 
-  engineer: 
-  soldier: x
-  class-list: Sentinel, Soldier
-- power: Frag Grenade
-  school: Grenade
-  level: '3'
-  die-type: d12
-  casting-time: 1 action
-  duration: instant
-  range: 10m, 3m
-  dmg-type: puncture
-  mechanic: Spend 3 TP or use a 3rd lvl spell slot to target an area within 10m. Creatures
-    within 3m of the target must make a Dexterity saving throw. On a failed save,
-    a creature takes 3d12 damage. On a successful save, a creature takes half as much
-    damage.
-  adv-option-1: 
-  adv-option-2: 
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: x
-  vanguard: x
-  sentinel: x
-  infiltrator: x
-  engineer: x
-  soldier: x
-  class-list: Adept, Engineer, Infiltrator, Sentinel, Soldier, Vanguard
-- power: Havok Strike
-  school: Combat
-  level: 5 (AD)
-  die-type: "-"
-  casting-time: 1 action
-  duration: instant
-  range: 5m
-  dmg-type: incendiary
-  mechanic: Use the propulsion jet to spring to a location within 10m. When you land,
-    roll your AD and Omni-tool damage. Creatures within 5m of the impact point make
-    a Dexterity Saving throw. Deal X times your damage roll, distributed evenly, among
-    all creatures that failed their saving throw. For example, your AD roll is 3,
-    your damage is 6, and there are 5 creatures within 5m. 4 creatures fail there
-    saving throw. The total damage is 18 divided evenly between 4 creatures. 2 creates
-    take 4 damage, and 2 creatures take 5. You can decide which creature(s) take more
-    damage.
-  adv-option-1: Flying Strike - You can leap up to 20m.
-  adv-option-2: Expanding Strike - Increase the radius of the impact to 10m
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: 
-  engineer: 
-  soldier: "[Havok]"
-  class-list: Havok Soldier only
-- power: Hawk Missile Launcher
-  school: Combat
-  level: 5 (AD)
-  die-type: d12
-  casting-time: 1 action
-  duration: instant
-  range: 60m
-  dmg-type: incendiary
-  mechanic: Activate your personal shoulder cannon, the Hawk Missile Launcher. It
-    automatically hits a target within 60m. That targets takes Xd12 damage where X
-    is your AD roll. But activating the launcher consumes some shield power. You reduce
-    yoru shields by X. If you're AD roll is higher than your available shields, reduce
-    X to your available shield points. You cannot cast this power if you don't have
-    any shield points.
-  adv-option-1: Stable Launcher - You take no shield damage
-  adv-option-2: Heavy Launcher - Your AD roll cannot be less than 3.
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: 
-  engineer: 
-  soldier: "[Hawk Missile Launcher]"
-  class-list: Hawk Missile Launcher Soldier only
 - power: Healing Bolts
   school: Biotic
   level: '4'
@@ -1077,188 +543,6 @@
   engineer: 
   soldier: 
   class-list: Adept, Sentinel
-- power: Hex Shield
-  school: Combat
-  level: 1 (AD)
-  die-type: "-"
-  casting-time: 1 action
-  duration: until destroyed
-  range: self
-  dmg-type: "-"
-  mechanic: A shield emmanates from your omni-tool. Roll your AD, the shield has twice
-    that much HP. The shield is a hexagon with 2m sides. This works like a normal
-    shield, except it does not have potential regeneration. You can eject the shield
-    and affix it to the floor or a wall, allowing other party members to benefit from
-    the damage soak.
-  adv-option-1: "-"
-  adv-option-2: "-"
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: 
-  engineer: 
-  soldier: x
-  class-list: Soldier
-- power: Homing Grenade
-  school: Grenade
-  level: '3'
-  die-type: d6
-  casting-time: 1 action
-  duration: instant
-  range: 10m, 3m
-  dmg-type: impact
-  mechanic: Spend 3 TP or use a 3rd lvl spell slot to target a creature within 10m.
-    That creature takes 1d6 damage. Creatures within 3m of the target must make a
-    Dexterity saving throw. On a failed save, a creature takes 1d6 damage. On a successful
-    save, a creature takes half as much damage.
-  adv-option-1: 
-  adv-option-2: 
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: x
-  engineer: x
-  soldier: 
-  class-list: Engineer, Infiltrator
-- power: Hunter Mode
-  school: Tech
-  level: '1'
-  die-type: "-"
-  casting-time: 1 action
-  duration: instant
-  range: self
-  dmg-type: "-"
-  mechanic: 'Spend XTP to channel shields into auxillary combat systems. Lose X- shields.
-    Until the effect ends you gain the following: Increase movement by 5m. +2 to ranged
-    attack rolls. No disadvantage on attacking targets behind partial cover. Melee
-    damage increased by 1d6. The effect lasts X+1 turns.'
-  adv-option-1: Tech Mode - Increase the damage of all Tech power by 1 die
-  adv-option-2: Biotic Hunter - You have resistance to [Biotic Powers] and advantage
-    to Dexterity and Constitution rolls caused by [Biotic Powers].
-  higher-levels: You can spend up to 5 TP.
-  max-tp: '5'
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: x
-  engineer: x
-  soldier: 
-  class-list: Engineer, Infiltrator
-- power: Imbue Omni-tool
-  school: Tech
-  level: '5'
-  die-type: d4
-  casting-time: 1 action
-  duration: 1 hour
-  range: self
-  dmg-type: fire/cryo/shock
-  mechanic: 'Use a tech point to imbue your omni-tool with fire, cryo, or shock properties.
-    For the duration, or until you cast this spell again, you have a +X bonus to melee
-    attacks and your attacks deal an additional Xd4 damage of the type selected. X
-    represents the number of tech points used. In addition, the attack has the following
-    effects, based on damage choosen: -- Fire: Target makes a constitutuion saving
-    throw. On a failed save, they are panicked and make their next attack at a disadvantage.--
-    Cryo: Target makes a Strength saving throw. On a failed save, target is frozen
-    for 1 turn. -- Shock: Deals double damage to shields (double the melee damage
-    and additional damage from this ability)'
-  adv-option-1: 
-  adv-option-2: 
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: "[Juggernaut]"
-  infiltrator: 
-  engineer: 
-  soldier: 
-  class-list: Juggernaut Sentinel only
-- power: Incendiary Ammo
-  school: Ammo
-  level: '0'
-  die-type: "-"
-  casting-time: 1 action
-  duration: until overridden
-  range: self
-  dmg-type: fire
-  mechanic: Succesful ranged attacks with the weapon have a chance to set the target
-    ablaze. The target it makes a Constitutuion saving throw (DC 10). On a failed
-    save, they take an additional 1d4 damage.
-  adv-option-1: "-"
-  adv-option-2: "-"
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: x
-  engineer: 
-  soldier: x
-  class-list: Infiltrator, Soldier
-- power: Incinerate
-  school: Tech
-  level: '1'
-  die-type: d10
-  casting-time: 1 action
-  duration: instant
-  range: 20m
-  dmg-type: fire
-  mechanic: Spend XTP and choose a target within 20m. If the target is unprotected,
-    it makes a Dexterity saving throw. On a failed save, the target takes Xd10. On
-    a success, the target takes half of the damage.
-  adv-option-1: Frozen Combo - Deal double damage to frozen targets.
-  adv-option-2: Radial Blast - Creatures within 5m must also succeed a Dexterity saving
-    throw or take half of the damage.
-  higher-levels: You can spend up to 5 TP.
-  max-tp: '5'
-  denotates: x
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: x
-  infiltrator: 
-  engineer: x
-  soldier: 
-  class-list: Engineer, Sentinel
-- power: Inferno Grenade
-  school: Grenade
-  level: '3'
-  die-type: d4
-  casting-time: 1 action
-  duration: instant
-  range: 10m, 3m
-  dmg-type: fire
-  mechanic: Spend 3 TP or use a 3rd lvl spell slot to target an area within 10m. Creatures
-    within 3m of the target must make a Dexterity saving throw. On a failed save,
-    a creature takes 3d4 damage. On a successful save, a creature takes half as much
-    damage. The 3m area continues to burn for 1 minute. Creatures that enter the area
-    must pass a Dexterity saving throw or take 1d4 damage.
-  adv-option-1: 
-  adv-option-2: 
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: 
-  engineer: 
-  soldier: x
-  class-list: Soldier
 - power: Lash
   school: Biotic
   level: '2'
@@ -1308,133 +592,6 @@
   engineer: 
   soldier: 
   class-list: Adept, Sentinel, Vanguard
-- power: Lift Grenade
-  school: Grenade
-  level: '3'
-  die-type: "-"
-  casting-time: 
-  duration: 
-  range: 10m, 3m
-  dmg-type: "-"
-  mechanic: Spend 3 TP or use a 3rd lvl spell slot to target an area within 10m. Creatures
-    within 3m of the target must make a Dexterity saving throw. On a failed save,
-    a creature is restrained (lift) for 1 turn.
-  adv-option-1: 
-  adv-option-2: 
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: x
-  sentinel: x
-  infiltrator: 
-  engineer: 
-  soldier: 
-  class-list: Sentinel, Vanguard
-- power: Marksman
-  school: Combat
-  level: 1 (AD)
-  die-type: "-"
-  casting-time: 1 action
-  duration: 1 turn
-  range: self
-  dmg-type: "-"
-  mechanic: Roll your AD and subtract the number from 20. If you make a ranged gun
-    attack this turn, anything about the result is considered a critical hit. For
-    example, you roll a 3, on this turn a natural 17, 18, 19, and 20 are critical
-    hits
-  adv-option-1: "-"
-  adv-option-2: "-"
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: 
-  engineer: 
-  soldier: x
-  class-list: Soldier
-- power: Multi-frag Grenade
-  school: Grenade
-  level: '3'
-  die-type: d4
-  casting-time: 1 action
-  duration: instant
-  range: 10m, 3m
-  dmg-type: puncture
-  mechanic: Spend 3 TP or use a 3rd lvl spell slot to target 3 areas within 10m. Creatures
-    within 3m of the targets must make a Dexterity saving throw. On a failed save,
-    a creature takes 1d4 damage. On a successful save, a creature takes half as much
-    damage.
-  adv-option-1: 
-  adv-option-2: 
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: 
-  engineer: 
-  soldier: x
-  class-list: Soldier
-- power: Neural Shock
-  school: Tech
-  level: '1'
-  die-type: "-"
-  casting-time: '1 action '
-  duration: instant
-  range: 20m
-  dmg-type: shock
-  mechanic: Spend XTP and target an organic creature within 20m. The creature has
-    -3 to ranged attack rolls for X turns. The creature also makes a constitution
-    saving throw. On a failed save, the creature is paralyzed for 1 turn.
-  adv-option-1: Damaging Shock - Creatures that fail the saving throw take Xd4 damage.
-    Creatures that succeed take half the damage.
-  adv-option-2: Paralyzing Shock - Creatures have disadvantage on the Costitution
-    saving throw.
-  higher-levels: You can spend up to 5 TP.
-  max-tp: '5'
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: x
-  engineer: x
-  soldier: 
-  class-list: Engineer, Infiltrator
-- power: Nightshade Blades
-  school: Combat
-  level: '4'
-  die-type: d12
-  casting-time: 1 action
-  duration: instant
-  range: 20m
-  dmg-type: poison
-  mechanic: Fling 4 poison tipped blades at 1-4 creatues within 20m. The targets make
-    a Constitution saving throw. On a failed save, a creature takes 1d12 damage. On
-    a success, a creature takes half damage.
-  adv-option-1: Paralyzing Blades - Targets that fail the Constitution saving throw
-    are paralyzed for 1 turn.
-  adv-option-2: Corrosive Blades - Targets that fail the constitution saving throw
-    loose 1AC. This effect can stack on a single target.
-  higher-levels: When you cast this spell using a spell slot of 5 level or higher,
-    the damage increases by 1d12 for each slot level above 4
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: x
-  sentinel: 
-  infiltrator: x
-  engineer: 
-  soldier: 
-  class-list: Infiltrator, Vanguard
 - power: Nova
   school: Biotic
   level: '2'
@@ -1462,31 +619,6 @@
   engineer: 
   soldier: 
   class-list: Vanguard
-- power: Overload
-  school: Tech
-  level: '1'
-  die-type: d6
-  casting-time: 1 action
-  duration: instant
-  range: 20m
-  dmg-type: shock
-  mechanic: Spend X TP to overload electronics with a powerful surge from your Omni-tool.
-    Targets make a Constitution saving throw. On a failed save, the target takes Xd6
-    damage. If the target is synthetic, it is stunned for 1 turn. On a success, the
-    target takes half damage. Deals double damage to Shields
-  adv-option-1: Chain Overload - You can target 2 enemies at once.
-  adv-option-2: Heavy Overload - Increase the die type to d8
-  higher-levels: You can spend up to 3 TP.
-  max-tp: '3'
-  denotates: x
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: x
-  infiltrator: x
-  engineer: x
-  soldier: 
-  class-list: Engineer, Infiltrator, Sentinel
 - power: Phase Disruptor
   school: Biotic
   level: '0'
@@ -1511,60 +643,6 @@
   engineer: 
   soldier: 
   class-list: Vanguard
-- power: Poison Strike
-  school: Combat
-  level: '1'
-  die-type: d6
-  casting-time: 1 action
-  duration: instant
-  range: 10m
-  dmg-type: poison
-  mechanic: Charge forward 10m, cutting through all unfriendly creatures within 2m
-    of your path. Creatures make a Dexterity saving throw. On a failed save, the creature
-    takes 1d6 damage. On a success, a creature takes half damage. -- When you cast
-    this power from Tactical Cloak, the creatures hit automatically fail the Dexterity
-    saving throw.
-  adv-option-1: Paralyzing Poison - Creatures that fail their Dexterity saving throw
-    make a Constitution saving throw. On a failed save, the creature is paralyzed
-    for 1 turn.
-  adv-option-2: Double Dash - You can break up your dash into two 5m dashes, changing
-    the direction of your second dash.
-  higher-levels: When you cast this spell using a spell slot of 2 level or higher,
-    the damage increases by 1d6 for each slot level above 1
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: x
-  sentinel: 
-  infiltrator: x
-  engineer: 
-  soldier: 
-  class-list: Infiltrator, Vanguard
-- power: Proximity Mine
-  school: Tech
-  level: '1'
-  die-type: 
-  casting-time: 1 action
-  duration: until triggered
-  range: 15ft
-  dmg-type: 
-  mechanic: 'Spend 1 TP to lay a proximity mine. A creature that comes within 2m of
-    the mine makes a Dexterity saving throw. On a failed save, that creature takes
-    1 damage. On a success, a creature takes half damage.  '
-  adv-option-1: 
-  adv-option-2: 
-  higher-levels: You can spend up to [maxTP] TP.
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: x
-  engineer: x
-  soldier: 
-  class-list: Engineer, Infiltrator
 - power: Pull
   school: Biotic
   level: '1'
@@ -1622,147 +700,6 @@
   engineer: 
   soldier: 
   class-list: Adept
-- power: Recon Mine
-  school: Tech
-  level: '1'
-  die-type: 
-  casting-time: 
-  duration: 
-  range: 
-  dmg-type: 
-  mechanic: 
-  adv-option-1: 
-  adv-option-2: 
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: x
-  engineer: x
-  soldier: 
-  class-list: Engineer, Infiltrator
-- power: Repair Matrix
-  school: Tech
-  level: '5'
-  die-type: 
-  casting-time: 
-  duration: 
-  range: 
-  dmg-type: 
-  mechanic: 
-  adv-option-1: 
-  adv-option-2: 
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: x
-  engineer: 
-  soldier: 
-  class-list: Infiltrator
-- power: Sabatoge
-  school: Tech
-  level: '1'
-  die-type: 
-  casting-time: 
-  duration: 
-  range: 
-  dmg-type: 
-  mechanic: 
-  adv-option-1: 
-  adv-option-2: 
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: x
-  engineer: x
-  soldier: 
-  class-list: Engineer, Infiltrator
-- power: Sentry Turret
-  school: Tech
-  level: '1'
-  die-type: 
-  casting-time: 
-  duration: 
-  range: 
-  dmg-type: 
-  mechanic: 
-  adv-option-1: 
-  adv-option-2: 
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: 
-  engineer: x
-  soldier: 
-  class-list: Engineer
-- power: Shadow Strike
-  school: Combat
-  level: '5'
-  die-type: "-"
-  casting-time: 1 action
-  duration: instant
-  range: 10m
-  dmg-type: puncture
-  mechanic: Spend 5 TP to teleport to a target within 10m and make a melee attack.
-    You have advantage on this attack. If successful, deal your melee damage plus
-    your sneak attack damage to the target. At the end of the attack, activate Tactical
-    Cloak and teleport to another location 10m away. The teleportation can be used
-    to free you from movement imparing effects such as Lifted, Restrained, Prone,
-    etc.
-  adv-option-1: Rapid Strike - You may make 2 melee attacks, both at an advantage,
-    but only the first has your sneak attack damage applied.
-  adv-option-2: Stunning Strike - Targets hit with Shadow Strike are stunned for 1
-    turn
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: x
-  engineer: 
-  soldier: 
-  class-list: Infiltrator
-- power: Shield Boost
-  school: Tech
-  level: '1'
-  die-type: d6
-  casting-time: '1 action '
-  duration: instant
-  range: self
-  dmg-type: "-"
-  mechanic: Spend X Tech points and recover Xd6 shields. You cannot go above your
-    maximum shields. You can spend up to 3 Tech Points
-  adv-option-1: Friendly Boost - You can cast sheild boost on a friendly target within
-    melee range.
-  adv-option-2: Overloading Boost - Creatures within melee range take 1d4 shock damage.
-  higher-levels: You can spend up to 3 TP.
-  max-tp: '3'
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: x
-  infiltrator: 
-  engineer: x
-  soldier: 
-  class-list: Engineer, Sentinel
 - power: Shockwave
   school: Biotic
   level: '1'
@@ -1789,52 +726,6 @@
   engineer: 
   soldier: 
   class-list: Adept, Sentinel, Vanguard
-- power: Shredder Ammo
-  school: Ammo
-  level: '0'
-  die-type: "-"
-  casting-time: 1 action
-  duration: until overridden
-  range: self
-  dmg-type: slash
-  mechanic: Plus 3 damage to unprotected enemies
-  adv-option-1: "-"
-  adv-option-2: "-"
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: x
-  engineer: 
-  soldier: x
-  class-list: Infiltrator, Soldier
-- power: Siege Pulse
-  school: Combat
-  level: 4 (AD)
-  die-type: "-"
-  casting-time: 1 action to charge, 1 action to use
-  duration: instant
-  range: self, 5m radius
-  dmg-type: "-"
-  mechanic: Roll your AD and store that many charges in your omni-tool. You can use
-    an action to create a siege pulse. Creatures within a 5m radius from you make
-    a Constitution saving throw. On a failed save, they are incapacitated for 1 turn.
-  adv-option-1: "-"
-  adv-option-2: "-"
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: 
-  engineer: 
-  soldier: x
-  class-list: Soldier
 - power: Singularity (aoe lift)
   school: Biotic
   level: '1'
@@ -1915,28 +806,6 @@
   engineer: 
   soldier: 
   class-list: Adept, Vanguard
-- power: Snap Freeze
-  school: Tech
-  level: '1'
-  die-type: 
-  casting-time: 
-  duration: 
-  range: 
-  dmg-type: 
-  mechanic: 
-  adv-option-1: 
-  adv-option-2: 
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: x
-  infiltrator: x
-  engineer: 
-  soldier: 
-  class-list: Infiltrator, Sentinel
 - power: Stasis
   school: Biotic
   level: '2'
@@ -1965,188 +834,6 @@
   engineer: 
   soldier: 
   class-list: Adept, Vanguard
-- power: Sticky Grenade
-  school: Grenade
-  level: '3'
-  die-type: d6
-  casting-time: 1 action
-  duration: instant
-  range: 10m, 3m
-  dmg-type: impact
-  mechanic: Spend 3 TP or use a 3rd lvl spell slot to target an area within 10m. Creatures
-    within 3m of the target must make a Dexterity saving throw. On a failed save,
-    a creature takes 3d6 damage. On a successful save, a creature takes half as much
-    damage. -- Instead, you can choose to make a melee ranged attack on a creature.
-    No proficiency bonuses are added to this roll. On a success, the target creature
-    automatically fails their Dexterity saving throw. -- Infiltrators using this power
-    from Tactical Cloak can select a target within melee range and place the sticky
-    grenade on the target instead of making the ranged attack (throwing the grenade).
-    But the player will need to leave the 3m blast area or make a Dexsterity saving
-    throw like all other creatures within 3m.
-  adv-option-1: 
-  adv-option-2: 
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: x
-  engineer: x
-  soldier: 
-  class-list: Engineer, Infiltrator
-- power: Stimulant Pack
-  school: Combat
-  level: '2'
-  die-type: "-"
-  casting-time: 1 action
-  duration: until consumed
-  range: self
-  dmg-type: "- "
-  mechanic: Spend 2 TP to give yourself advantage on the next dexterity, strength,
-    or constitution saving throw.
-  adv-option-1: Friendly Stimulants - You can inject a creature within melee range
-    with the stimulant pack
-  adv-option-2: Empowering Stimulants - You can choose to apply the advantage to a
-    damage roll
-  higher-levels: You can spend up to [maxTP] TP.
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: x
-  engineer: 
-  soldier: x
-  class-list: Infiltrator, Soldier
-- power: Submission Net
-  school: Tech
-  level: '1'
-  die-type: 
-  casting-time: 
-  duration: 
-  range: 
-  dmg-type: 
-  mechanic: 
-  adv-option-1: 
-  adv-option-2: 
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: x
-  infiltrator: 
-  engineer: x
-  soldier: 
-  class-list: Engineer, Sentinel
-- power: Supply Pylon
-  school: Tech
-  level: '1'
-  die-type: d4
-  casting-time: 1 action
-  duration: 5 minutes
-  range: 5m
-  dmg-type: "-"
-  mechanic: 'Spend X TP to summon a Supply Pylon to a location within 5m. The Supply
-    Pylon has Xd4 health, AC 12, and 1 charge of 4 different supplies. Party members
-    (including you) can spend 1 action accessing the supply pylon (must be within
-    melee range) to gain 1 of 4 supplies: - Replenish Heavy Weapon Ammo - Replenish
-    5 TP or 5 levels worth of Spell slots - Heal themselves for 3d4 - Restore 3d4
-    Shields. Only 1 benefit of each type can be claimed, but at higher levels Supply
-    Pylon has more charges of each supply. If the Pylon is destroyed before the charges
-    are used, they disappear. Supply pylons die type increase with level: At lvl 5
-    = d6. At lvl 11 = d8. At lvl 17 = d12.'
-  adv-option-1: 
-  adv-option-2: 
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: 
-  engineer: "[Support]"
-  soldier: 
-  class-list: Support Engineer only
-- power: Tactical Cloak
-  school: Tech
-  level: '1'
-  die-type: "-"
-  casting-time: Instant
-  duration: 1 minute
-  range: self
-  dmg-type: "-"
-  mechanic: Use 1 Tech point to become Invisible. You continue to make noise, but
-    you have advantage on stealth checks. In combat, when you make a melee attack,
-    ranged attack, or use a power, your tacktical cloak ends. Most powers give you
-    some advantage when you use them from Tactical Cloak. When you make a successful
-    melee or ranged attack from Tactical Cloak, add your Sneak Attack damage.
-  adv-option-1: 
-  adv-option-2: 
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: x
-  engineer: 
-  soldier: 
-  class-list: Infiltrator
-- power: Tactical Scan
-  school: Tech
-  level: '1'
-  die-type: "-"
-  casting-time: 1 action
-  duration: "-"
-  range: 20m
-  dmg-type: "-"
-  mechanic: Use 1 Tech point to scan a creature within 20m. You relay the data to
-    your team member's Omni-tool. This improves the natural crit chance on ranged
-    attacks by 1. I.e., usually a 19 & 20 are now natural crits, but this ability
-    can stack with other crit improving powers.
-  adv-option-1: Area Scan - Scan a 5m area. All creatures are affected.
-  adv-option-2: Improved Scan - You can now spend up to 3 TP, improving natural crit
-    chance by that amount.
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: 
-  infiltrator: x
-  engineer: x
-  soldier: 
-  class-list: Engineer, Infiltrator
-- power: Tech Armor
-  school: Tech
-  level: '1'
-  die-type: 
-  casting-time: 
-  duration: 
-  range: 
-  dmg-type: 
-  mechanic: 
-  adv-option-1: 
-  adv-option-2: 
-  higher-levels: ''
-  max-tp: 
-  denotates: 
-  primes: 
-  adept: 
-  vanguard: 
-  sentinel: x
-  infiltrator: 
-  engineer: 
-  soldier: 
-  class-list: Sentinel
 - power: Throw
   school: Biotic
   level: '0'
@@ -2198,20 +885,430 @@
   engineer: 
   soldier: 
   class-list: Adept, Sentinel
-- power: Warp Ammo
-  school: Ammo
-  level: '0'
+- power: Adrenaline Rush
+  school: Combat
+  level: 0 (AD)
   die-type: "-"
   casting-time: 1 action
-  duration: until overridden
+  duration: 1 turn
   range: self
-  dmg-type: biotic
-  mechanic: Warp bullets strip away additional barrier ticks. A sucessful ranged attack
-    on a target with an active Barrier will strip away 2 Barrier ticks. Warp ammo
-    can also detonate [Biotic Powers].
+  dmg-type: "-"
+  mechanic: 'Inject an adrenaline serum to accelerate your reflexes. On your turn,
+    you can activate Adrenaline Rush as a bonus action. When you activate Adrenaline
+    Rush, choose an available combat feature, tech, or spell, then roll an Adrenaline
+    Dice (AD). Features explain how the die roll affects the ability. For tech, your
+    die roll is the Tech Point (TP) cost. For spells, the roll represents the level
+    at which you cast the spell. If you try to cast a level 4 spell, but roll a 3,
+    subtract 1 damage dice from the damage role. You can still take you normal action
+    this turn. -- You regain 1 AD on a short rest, and all your AD on a long rest. '
   adv-option-1: "-"
   adv-option-2: "-"
   higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: 
+  engineer: 
+  soldier: x
+  class-list: Soldier
+- power: Balistic Blades
+  school: Combat
+  level: 4 (AD)
+  die-type: d6
+  casting-time: 1 action
+  duration: instant
+  range: 10m
+  dmg-type: puncture
+  mechanic: You eject your omni-tool attack towards a creature or object within 10m.
+    Make a ranged spell attack (using Strength modifier). On a success, roll your
+    AD and deal Xd6 damage, where X is your roll. On a failed attack, you do not use
+    your AD, but you cannot use another Adrenaline Rush this turn.
+  adv-option-1: "-"
+  adv-option-2: "-"
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: 
+  engineer: 
+  soldier: x
+  class-list: Soldier
+- power: Blade Armor
+  school: Combat
+  level: '2'
+  die-type: d4
+  casting-time: 1 action
+  duration: until consumed
+  range: self
+  dmg-type: puncture
+  mechanic: Reinforce your armor with biotic blades. A Biotic spike protrudes from
+    each of your shoulderguards. Creatures that attack you must make a successful
+    Dexterity saving throw or take 2d4 damage. Or, you may take an extra free action
+    to make a melee attack on a creature within range. On a success, the creature
+    takes 2d4 damage. You can deal damage twice (once with each shoulderguard), then
+    the power dissipates.
+  adv-option-1: Bleeding Blades - Targets hit by your blades take an additional 1d6
+    damage at the start of their next turn.
+  adv-option-2: Explosive Blades - Blades explode, disorienting the target. It takes
+    it's next attack at a disadvantage
+  higher-levels: When you cast this spell using a spell slot of 3 level or higher,
+    the damage increases by 1d4 for each slot level above 2
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: x
+  sentinel: x
+  infiltrator: 
+  engineer: 
+  soldier: "[Havok]"
+  class-list: Sentinel, Havok Soldier only, Vanguard
+- power: Carnage
+  school: Combat
+  level: '1'
+  die-type: d10
+  casting-time: 1 action
+  duration: instant
+  range: 5m
+  dmg-type: slash
+  mechanic: A biotic blast originates outward in a cone up to 5m away. Creatures caught
+    in the blast make Constitution saving throw. On a failed save, a creature takes
+    1d10 damage. On a successful save, the creature takes half the damage.
+  adv-option-1: Rending Carnage - Deal double damage to organic, unprotected targets.
+  adv-option-2: Reducing Carnage - Targets that fail the saving throw have thier AC
+    reduced by 3.
+  higher-levels: When you cast this spell using a spell slot of 2 level or higher,
+    the damage increases by 1d10 for each slot level above 1
+  max-tp: 
+  denotates: x
+  primes: 
+  adept: 
+  vanguard: x
+  sentinel: 
+  infiltrator: 
+  engineer: 
+  soldier: "[Havok]"
+  class-list: Havok Soldier only, Vanguard
+- power: Concussive Shot
+  school: Combat
+  level: 0 (AD)
+  die-type: "-"
+  casting-time: 1 action
+  duration: 10 min
+  range: based on weapon
+  dmg-type: impact
+  mechanic: 'You use the additional time provided by your adrenaline rush to swap
+    in a specialzed thermal clip. Roll your AD. Your next shot reduces the target''s
+    shield by that amount BEFORE it does it''s damage. This effect can stack with
+    ammo powers. Additionally, a target hit by the bullet must succedd a Constitution
+    saving throw or be knocked down.You can immediate take a shot as an action or
+    take a different action. The specilized clip will remain in your gun for the next
+    10 minutes. '
+  adv-option-1: "-"
+  adv-option-2: "-"
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: 
+  engineer: 
+  soldier: x
+  class-list: Soldier
+- power: Devastator Mode
+  school: Combat
+  level: 5 (AD)
+  die-type: "-"
+  casting-time: 1 action
+  duration: instant
+  range: self
+  dmg-type: "-"
+  mechanic: Turn into a powerful turret. Roll your AD and root yourself in place for
+    X turns, where X is your roll. You may swap weapons before rooting. You cannot
+    move and automatically fail any Dexterity saving throws. While Devastator Mode
+    is active, you cannot use any other spells or abilities, you can only shoot. Your
+    shields increase by 2 times X. Heat has no affect on your weapon, i.e., you do
+    not have to reload. You can take 3 shooting actions per turn.
+  adv-option-1: Heavy Devastator - Add 1d4 to each damage roll
+  adv-option-2: 'Tactical Devastator - You have advantage when making your AD roll
+    for Devastator. '
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: 
+  engineer: 
+  soldier: "[Shock Trooper]"
+  class-list: Shock Trooper Soldier only
+- power: Electric Slash
+  school: Combat
+  level: '5'
+  die-type: d6
+  casting-time: 1 action
+  duration: instant
+  range: 10m
+  dmg-type: shock
+  mechanic: Spend X TP to unleash a wave of electric energy in a 10m cone originating
+    from you. Each creature must make a Dexterity saving throw. On a failed save,
+    a creature takes Xd6 damage and is Restrained for 1 turn. On a successful save,
+    a creature takes half as much damage and isn't restrained.
+  adv-option-1: Restoring Slash - Increase your shields by half of your damage roll
+  adv-option-2: Stunning Slash - Creatures that fail the saving throw are Stunned
+    instead of restrained.
+  higher-levels: You can spend up to 5 TP.
+  max-tp: '5'
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: x
+  engineer: 
+  soldier: 
+  class-list: Infiltrator
+- power: Havok Strike
+  school: Combat
+  level: 5 (AD)
+  die-type: "-"
+  casting-time: 1 action
+  duration: instant
+  range: 5m
+  dmg-type: incendiary
+  mechanic: Use the propulsion jet to spring to a location within 10m. When you land,
+    roll your AD and Omni-tool damage. Creatures within 5m of the impact point make
+    a Dexterity Saving throw. Deal X times your damage roll, distributed evenly, among
+    all creatures that failed their saving throw. For example, your AD roll is 3,
+    your damage is 6, and there are 5 creatures within 5m. 4 creatures fail there
+    saving throw. The total damage is 18 divided evenly between 4 creatures. 2 creates
+    take 4 damage, and 2 creatures take 5. You can decide which creature(s) take more
+    damage.
+  adv-option-1: Flying Strike - You can leap up to 20m.
+  adv-option-2: Expanding Strike - Increase the radius of the impact to 10m
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: 
+  engineer: 
+  soldier: "[Havok]"
+  class-list: Havok Soldier only
+- power: Hawk Missile Launcher
+  school: Combat
+  level: 5 (AD)
+  die-type: d12
+  casting-time: 1 action
+  duration: instant
+  range: 60m
+  dmg-type: incendiary
+  mechanic: Activate your personal shoulder cannon, the Hawk Missile Launcher. It
+    automatically hits a target within 60m. That targets takes Xd12 damage where X
+    is your AD roll. But activating the launcher consumes some shield power. You reduce
+    yoru shields by X. If you're AD roll is higher than your available shields, reduce
+    X to your available shield points. You cannot cast this power if you don't have
+    any shield points.
+  adv-option-1: Stable Launcher - You take no shield damage
+  adv-option-2: Heavy Launcher - Your AD roll cannot be less than 3.
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: 
+  engineer: 
+  soldier: "[Hawk Missile Launcher]"
+  class-list: Hawk Missile Launcher Soldier only
+- power: Hex Shield
+  school: Combat
+  level: 1 (AD)
+  die-type: "-"
+  casting-time: 1 action
+  duration: until destroyed
+  range: self
+  dmg-type: "-"
+  mechanic: A shield emmanates from your omni-tool. Roll your AD, the shield has twice
+    that much HP. The shield is a hexagon with 2m sides. This works like a normal
+    shield, except it does not have potential regeneration. You can eject the shield
+    and affix it to the floor or a wall, allowing other party members to benefit from
+    the damage soak.
+  adv-option-1: "-"
+  adv-option-2: "-"
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: 
+  engineer: 
+  soldier: x
+  class-list: Soldier
+- power: Marksman
+  school: Combat
+  level: 1 (AD)
+  die-type: "-"
+  casting-time: 1 action
+  duration: 1 turn
+  range: self
+  dmg-type: "-"
+  mechanic: Roll your AD and subtract the number from 20. If you make a ranged gun
+    attack this turn, anything about the result is considered a critical hit. For
+    example, you roll a 3, on this turn a natural 17, 18, 19, and 20 are critical
+    hits
+  adv-option-1: "-"
+  adv-option-2: "-"
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: 
+  engineer: 
+  soldier: x
+  class-list: Soldier
+- power: Nightshade Blades
+  school: Combat
+  level: '4'
+  die-type: d12
+  casting-time: 1 action
+  duration: instant
+  range: 20m
+  dmg-type: poison
+  mechanic: Fling 4 poison tipped blades at 1-4 creatues within 20m. The targets make
+    a Constitution saving throw. On a failed save, a creature takes 1d12 damage. On
+    a success, a creature takes half damage.
+  adv-option-1: Paralyzing Blades - Targets that fail the Constitution saving throw
+    are paralyzed for 1 turn.
+  adv-option-2: Corrosive Blades - Targets that fail the constitution saving throw
+    loose 1AC. This effect can stack on a single target.
+  higher-levels: When you cast this spell using a spell slot of 5 level or higher,
+    the damage increases by 1d12 for each slot level above 4
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: x
+  sentinel: 
+  infiltrator: x
+  engineer: 
+  soldier: 
+  class-list: Infiltrator, Vanguard
+- power: Poison Strike
+  school: Combat
+  level: '1'
+  die-type: d6
+  casting-time: 1 action
+  duration: instant
+  range: 10m
+  dmg-type: poison
+  mechanic: Charge forward 10m, cutting through all unfriendly creatures within 2m
+    of your path. Creatures make a Dexterity saving throw. On a failed save, the creature
+    takes 1d6 damage. On a success, a creature takes half damage. -- When you cast
+    this power from Tactical Cloak, the creatures hit automatically fail the Dexterity
+    saving throw.
+  adv-option-1: Paralyzing Poison - Creatures that fail their Dexterity saving throw
+    make a Constitution saving throw. On a failed save, the creature is paralyzed
+    for 1 turn.
+  adv-option-2: Double Dash - You can break up your dash into two 5m dashes, changing
+    the direction of your second dash.
+  higher-levels: When you cast this spell using a spell slot of 2 level or higher,
+    the damage increases by 1d6 for each slot level above 1
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: x
+  sentinel: 
+  infiltrator: x
+  engineer: 
+  soldier: 
+  class-list: Infiltrator, Vanguard
+- power: Shadow Strike
+  school: Combat
+  level: '5'
+  die-type: "-"
+  casting-time: 1 action
+  duration: instant
+  range: 10m
+  dmg-type: puncture
+  mechanic: Spend 5 TP to teleport to a target within 10m and make a melee attack.
+    You have advantage on this attack. If successful, deal your melee damage plus
+    your sneak attack damage to the target. At the end of the attack, activate Tactical
+    Cloak and teleport to another location 10m away. The teleportation can be used
+    to free you from movement imparing effects such as Lifted, Restrained, Prone,
+    etc.
+  adv-option-1: Rapid Strike - You may make 2 melee attacks, both at an advantage,
+    but only the first has your sneak attack damage applied.
+  adv-option-2: Stunning Strike - Targets hit with Shadow Strike are stunned for 1
+    turn
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: x
+  engineer: 
+  soldier: 
+  class-list: Infiltrator
+- power: Siege Pulse
+  school: Combat
+  level: 4 (AD)
+  die-type: "-"
+  casting-time: 1 action to charge, 1 action to use
+  duration: instant
+  range: self, 5m radius
+  dmg-type: "-"
+  mechanic: Roll your AD and store that many charges in your omni-tool. You can use
+    an action to create a siege pulse. Creatures within a 5m radius from you make
+    a Constitution saving throw. On a failed save, they are incapacitated for 1 turn.
+  adv-option-1: "-"
+  adv-option-2: "-"
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: 
+  engineer: 
+  soldier: x
+  class-list: Soldier
+- power: Stimulant Pack
+  school: Combat
+  level: '2'
+  die-type: "-"
+  casting-time: 1 action
+  duration: until consumed
+  range: self
+  dmg-type: "- "
+  mechanic: Spend 2 TP to give yourself advantage on the next dexterity, strength,
+    or constitution saving throw.
+  adv-option-1: Friendly Stimulants - You can inject a creature within melee range
+    with the stimulant pack
+  adv-option-2: Empowering Stimulants - You can choose to apply the advantage to a
+    damage roll
+  higher-levels: You can spend up to [maxTP] TP.
   max-tp: 
   denotates: 
   primes: 
@@ -2222,6 +1319,930 @@
   engineer: 
   soldier: x
   class-list: Infiltrator, Soldier
+- power: Arc Grenade
+  school: Grenade
+  level: '3'
+  die-type: d6
+  casting-time: 1 action
+  duration: instant
+  range: 10m, 3m
+  dmg-type: shock
+  mechanic: Spend 3 TP or use a 3rd lvl spell slot to target an area within 10m. Creatures
+    within 3m of the target must make a Dexterity saving throw. On a failed save,
+    a creature takes 3d6 damage. On a successful save, a creature takes half as much
+    damage. Arc Grenade deals double damage to shields.
+  adv-option-1: 
+  adv-option-2: 
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: x
+  engineer: x
+  soldier: 
+  class-list: Engineer, Infiltrator
+- power: Cluster Grenade
+  school: Grenade
+  level: '3'
+  die-type: d6
+  casting-time: 1 action
+  duration: instant
+  range: 10m, 3m
+  dmg-type: impact
+  mechanic: Spend 3 TP or use a 3rd lvl spell slot to target an area within 10m. Creatures
+    within 3m of the target must make two consecurtive Dexterity saving throw. On
+    2 failed saves, a creature takes 3d6 damage. On a failure and success, a creature
+    takes half as much damage. On two successes, a creature takes no damage.
+  adv-option-1: 
+  adv-option-2: 
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: x
+  vanguard: 
+  sentinel: 
+  infiltrator: 
+  engineer: 
+  soldier: 
+  class-list: Adept
+- power: Flashbang Grenade
+  school: Grenade
+  level: '3'
+  die-type: "-"
+  casting-time: '1 action '
+  duration: instant
+  range: 10m, 3m
+  dmg-type: "-"
+  mechanic: Spend 3 TP or use a 3rd lvl spell slot to target an area within 10m. Creatures
+    within 3m of the target must make a Constitution saving throw. On a failed save,
+    a creature is blinded for 1 turn.
+  adv-option-1: 
+  adv-option-2: 
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: x
+  vanguard: 
+  sentinel: 
+  infiltrator: x
+  engineer: x
+  soldier: 
+  class-list: Adept, Engineer, Infiltrator
+- power: Frag Grenade
+  school: Grenade
+  level: '3'
+  die-type: d12
+  casting-time: 1 action
+  duration: instant
+  range: 10m, 3m
+  dmg-type: puncture
+  mechanic: Spend 3 TP or use a 3rd lvl spell slot to target an area within 10m. Creatures
+    within 3m of the target must make a Dexterity saving throw. On a failed save,
+    a creature takes 3d12 damage. On a successful save, a creature takes half as much
+    damage.
+  adv-option-1: 
+  adv-option-2: 
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: x
+  vanguard: x
+  sentinel: x
+  infiltrator: x
+  engineer: x
+  soldier: x
+  class-list: Adept, Engineer, Infiltrator, Sentinel, Soldier, Vanguard
+- power: Homing Grenade
+  school: Grenade
+  level: '3'
+  die-type: d6
+  casting-time: 1 action
+  duration: instant
+  range: 10m, 3m
+  dmg-type: impact
+  mechanic: Spend 3 TP or use a 3rd lvl spell slot to target a creature within 10m.
+    That creature takes 1d6 damage. Creatures within 3m of the target must make a
+    Dexterity saving throw. On a failed save, a creature takes 1d6 damage. On a successful
+    save, a creature takes half as much damage.
+  adv-option-1: 
+  adv-option-2: 
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: x
+  engineer: x
+  soldier: 
+  class-list: Engineer, Infiltrator
+- power: Inferno Grenade
+  school: Grenade
+  level: '3'
+  die-type: d4
+  casting-time: 1 action
+  duration: instant
+  range: 10m, 3m
+  dmg-type: fire
+  mechanic: Spend 3 TP or use a 3rd lvl spell slot to target an area within 10m. Creatures
+    within 3m of the target must make a Dexterity saving throw. On a failed save,
+    a creature takes 3d4 damage. On a successful save, a creature takes half as much
+    damage. The 3m area continues to burn for 1 minute. Creatures that enter the area
+    must pass a Dexterity saving throw or take 1d4 damage.
+  adv-option-1: 
+  adv-option-2: 
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: 
+  engineer: 
+  soldier: x
+  class-list: Soldier
+- power: Lift Grenade
+  school: Grenade
+  level: '3'
+  die-type: "-"
+  casting-time: 1 action
+  duration: instant
+  range: 10m, 3m
+  dmg-type: "-"
+  mechanic: Spend 3 TP or use a 3rd lvl spell slot to target an area within 10m. Creatures
+    within 3m of the target must make a Dexterity saving throw. On a failed save,
+    a creature is restrained (lift) for 1 turn.
+  adv-option-1: 
+  adv-option-2: 
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: x
+  sentinel: x
+  infiltrator: 
+  engineer: 
+  soldier: 
+  class-list: Sentinel, Vanguard
+- power: Multi-frag Grenade
+  school: Grenade
+  level: '3'
+  die-type: d4
+  casting-time: 1 action
+  duration: instant
+  range: 10m, 3m
+  dmg-type: puncture
+  mechanic: Spend 3 TP or use a 3rd lvl spell slot to target 3 areas within 10m. Creatures
+    within 3m of the targets must make a Dexterity saving throw. On a failed save,
+    a creature takes 1d4 damage. On a successful save, a creature takes half as much
+    damage.
+  adv-option-1: 
+  adv-option-2: 
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: 
+  engineer: 
+  soldier: x
+  class-list: Soldier
+- power: Sticky Grenade
+  school: Grenade
+  level: '3'
+  die-type: d6
+  casting-time: 1 action
+  duration: instant
+  range: 10m, 3m
+  dmg-type: impact
+  mechanic: Spend 3 TP or use a 3rd lvl spell slot to target an area within 10m. Creatures
+    within 3m of the target must make a Dexterity saving throw. On a failed save,
+    a creature takes 3d6 damage. On a successful save, a creature takes half as much
+    damage. -- Instead, you can choose to make a melee ranged attack on a creature.
+    No proficiency bonuses are added to this roll. On a success, the target creature
+    automatically fails their Dexterity saving throw. -- Infiltrators using this power
+    from Tactical Cloak can select a target within melee range and place the sticky
+    grenade on the target instead of making the ranged attack (throwing the grenade).
+    But the player will need to leave the 3m blast area or make a Dexsterity saving
+    throw like all other creatures within 3m.
+  adv-option-1: 
+  adv-option-2: 
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: x
+  engineer: x
+  soldier: 
+  class-list: Engineer, Infiltrator
+- power: Sabotage
+  school: Tech
+  level: '1'
+  die-type: "-"
+  casting-time: '1 action '
+  duration: 1 minute
+  range: 20m
+  dmg-type: 
+  mechanic: 'AI Sabotage: Spend 1 TP per target size and choose a synthetic target
+    within 20m (e.g. 1 TP for small, 2TP for medium, 3TP for large, etc). The target
+    makes an Intelligence saving thow. -- On a failed save, the target cannot distinguish
+    between friend and foe. They will attack the closest target with a weapon or make
+    a melee attack if they have no weapon. Each time the target takes damage, it makes
+    a new Intelligence saving throw. -- On a successful save, the spell ends. ----
+    Weapon Sabotage: Make a ranged spell attack on a ranged weapon you can see within
+    20m (DC 10). On a success, the next time the weapon fires, it does half of it''s
+    damage to its owner. This mechanic only cost 1TP.'
+  adv-option-1: Commanding Sabotage - Take control of a synthetic target.
+  adv-option-2: Multi-weapon Sabotage  - You can spend up to 3 TP to target that many
+    weapons in a sing action. You must make ranged attacks for each weapon.
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: x
+  engineer: x
+  soldier: 
+  class-list: Engineer, Infiltrator
+- power: Cain Trip Mine
+  school: Tech
+  level: '1'
+  die-type: d12
+  casting-time: 1 action
+  duration: until triggered or disarmed
+  range: self
+  dmg-type: impact
+  mechanic: Spend 2 TP to launch a Cain Trip Mine. The mine affixes to a solid surface
+    and projects a beam tripwire. When the mine explodes, creatures within 3m take
+    2d12 damage. -- This tech can be used like a grenade, but enemies can pass a Dexterity
+    saving throw to take half damage. -- Creatures need to pass a Perception check
+    to notice the mine. -- Creatures need to pass a Hacking check to disarm it. --
+    A successful ranged attack on the mine (DC 10) will cause it to detonate, see
+    above for resolution.
+  adv-option-1: 
+  adv-option-2: 
+  higher-levels: ''
+  max-tp: '2'
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: 
+  engineer: x
+  soldier: 
+  class-list: Engineer
+- power: Cryo Blast
+  school: Tech
+  level: '1'
+  die-type: "-"
+  casting-time: 1 action
+  duration: instant
+  range: 20m
+  dmg-type: cryo
+  mechanic: Spend XTP and choose a target within 20m. If the target is unprotected,
+    it makes a Strength saving throw. On a failed save the target is Frozen for 1
+    turn. On a success or if the target is protected,it's movement speed is halved.
+    Any creatures within Xx2m have their movement speed halved.
+  adv-option-1: Impact Blast - You focus the blast on the target, sacrificing the
+    AOE slowing effect. But your blast now deals Xd6 damage.
+  adv-option-2: Deep Cryo Blast - The target remains frozen for 3 turns.
+  higher-levels: You can spend up to 5 TP.
+  max-tp: '5'
+  denotates: 
+  primes: x
+  adept: 
+  vanguard: 
+  sentinel: x
+  infiltrator: x
+  engineer: x
+  soldier: 
+  class-list: Engineer, Infiltrator, Sentinel
+- power: Decoy
+  school: Tech
+  level: '1'
+  die-type: "-"
+  casting-time: 1 action
+  duration: "-"
+  range: 10m
+  dmg-type: "-"
+  mechanic: Spend XTP to summon a holographic copy of yourself at a location within
+    10m. Enemies attack your decoy, but intelligent beings can make a perception check.
+    If they succeed, they are not fooled. The decoy lasts for X rounds of combat
+  adv-option-1: Explosive Decoy - You can spend an additional TP and action to detonate
+    your Decoy, dealing 2d6 damage to creatures within 5m
+  adv-option-2: Improved Decoy - Your Decoy becomes so life-like, not even intelligent
+    creatures can tell the difference.
+  higher-levels: You can spend up to 5 TP.
+  max-tp: '5'
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: x
+  engineer: x
+  soldier: 
+  class-list: Engineer, Infiltrator
+- power: Defense Matrix
+  school: Tech
+  level: '1'
+  die-type: d6
+  casting-time: 1 action
+  duration: 10m
+  range: self
+  dmg-type: "-"
+  mechanic: 'Spend XTP to reinforce your armor with special foccault currents. Gain
+    resistance to your choice of X damage types from the following: impact, slash,
+    and puncture damage. While this power is active, you can shoot and melee attack,
+    but you cannot use any other powers or abilities. As an action or reaction, you
+    can detonate the currents to restore Xd6 shields. '
+  adv-option-1: Mobile Matrix - Deploy the matrix as a stationary shield. Up to 2
+    creatures of normal size can stand behind the shield, and gain the resistance
+    benefit when attacked by creatures standing on the other side of the shield. If
+    you detonate the shield, both creatures get the sheild regen.
+  adv-option-2: Improved Matix - Gain an additional 3 AC on top of your TP spent,
+    but detonating does not restore shields.
+  higher-levels: You can spend up to 5 TP.
+  max-tp: '5'
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: x
+  engineer: x
+  soldier: 
+  class-list: Engineer, Infiltrator
+- power: Drone
+  school: Tech
+  level: '1'
+  die-type: d6
+  casting-time: 1 action
+  duration: 1 minute or until destroyed
+  range: self
+  dmg-type: shock
+  mechanic: Spend X TP to summon a drone. Each drone type has a unique set of abilities.
+    Drones have 20m of moverment. You can only have a single Drone active at a time.
+    See Drones.
+  adv-option-1: Lasting Drone - Double the drone's health
+  adv-option-2: Explosive Drone - When the drone's health drops below 0, it explodes,
+    dealing 1[d8] puncture damage to all creatures within 3m
+  higher-levels: You can spend up to 5 TP.
+  max-tp: '5'
+  denotates: x
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: 
+  engineer: "[Drone Jockey]"
+  soldier: 
+  class-list: Drone Jockey Engineer only
+- power: Energy Drain
+  school: Tech
+  level: '1'
+  die-type: d8
+  casting-time: 1 action
+  duration: instant
+  range: 20m
+  dmg-type: shock
+  mechanic: Spend XTP and make a ranged attack on a target within 20m. On a successful
+    hit, deal Xd8 damage to the target. If the damage is done to shields, regain half
+    that damage to your shields.
+  adv-option-1: Heavy Drain - Increase the damage die type to d10.
+  adv-option-2: Boosting Drain - Energy Drain temporarily increases your AC by X until
+    the start of your next turn.
+  higher-levels: You can spend up to 3 TP.
+  max-tp: '3'
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: x
+  infiltrator: x
+  engineer: x
+  soldier: 
+  class-list: Engineer, Infiltrator, Sentinel
+- power: First Aid
+  school: Tech
+  level: '1'
+  die-type: d6
+  casting-time: 1 action
+  duration: instant
+  range: 2m
+  dmg-type: "-"
+  mechanic: Spend X TP to heal a target creature within reach. The heal is equal to
+    Xd6 + your Tech modifier
+  adv-option-1: Adaptive Heal - Healed targets have resistance to the last damage
+    type they took.
+  adv-option-2: Powerful Hands - Increase the die type to d8
+  higher-levels: You can spend up to 5 TP.
+  max-tp: '5'
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: x
+  infiltrator: x
+  engineer: x
+  soldier: 
+  class-list: Engineer, Infiltrator, Sentinel
+- power: Flamer
+  school: Tech
+  level: '4'
+  die-type: d6
+  casting-time: 1 action
+  duration: 1 turn
+  range: 2m
+  dmg-type: incendiary
+  mechanic: Eject flames in a cone in front of you. Creatures within the 5m cone make
+    a Dexterity saving throw. On a failed save, they take 4d6 damage. On a success,
+    they are panicked (their next attack will have disadvantage)
+  adv-option-1: Wicked Flames - Creatures with a failed save lose 1AC
+  adv-option-2: Reaching Flames - Increase the range to 5m
+  higher-levels: When you cast this spell using a spell slot of 5 level or higher,
+    the damage increases by 1d6 for each slot level above 4
+  max-tp: 
+  denotates: x
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: x
+  infiltrator: 
+  engineer: 
+  soldier: "[Havok]"
+  class-list: Sentinel, Havok Soldier only
+- power: Fortification
+  school: Tech
+  level: '2'
+  die-type: "-"
+  casting-time: 1 action
+  duration: 10m
+  range: self
+  dmg-type: "- "
+  mechanic: Spend XTP to increase your AC by that amount.
+  adv-option-1: Explosive Fortification - You can denotate this power. Creatures within
+    a 5m radius of you lose 1 AC.
+  adv-option-2: Empowered Fortification - You get 2 additional AC
+  higher-levels: You can spend up to 3 TP.
+  max-tp: '3'
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: x
+  infiltrator: 
+  engineer: 
+  soldier: x
+  class-list: Sentinel, Soldier
+- power: Hunter Mode
+  school: Tech
+  level: '1'
+  die-type: "-"
+  casting-time: 1 action
+  duration: instant
+  range: self
+  dmg-type: "-"
+  mechanic: 'Spend XTP to channel shields into auxillary combat systems. Lose X- shields.
+    Until the effect ends you gain the following: Increase movement by 5m. +2 to ranged
+    attack rolls. No disadvantage on attacking targets behind partial cover. Melee
+    damage increased by 1d6. The effect lasts X+1 turns.'
+  adv-option-1: Tech Mode - Increase the damage of all Tech power by 1 die
+  adv-option-2: Biotic Hunter - You have resistance to [Biotic Powers] and advantage
+    to Dexterity and Constitution rolls caused by [Biotic Powers].
+  higher-levels: You can spend up to 5 TP.
+  max-tp: '5'
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: x
+  engineer: x
+  soldier: 
+  class-list: Engineer, Infiltrator
+- power: Imbue Omni-tool
+  school: Tech
+  level: '5'
+  die-type: d4
+  casting-time: 1 action
+  duration: 1 hour
+  range: self
+  dmg-type: fire/cryo/shock
+  mechanic: 'Use a tech point to imbue your omni-tool with fire, cryo, or shock properties.
+    For the duration, or until you cast this spell again, you have a +X bonus to melee
+    attacks and your attacks deal an additional Xd4 damage of the type selected. X
+    represents the number of tech points used. In addition, the attack has the following
+    effects, based on damage choosen: -- Fire: Target makes a constitutuion saving
+    throw. On a failed save, they are panicked and make their next attack at a disadvantage.--
+    Cryo: Target makes a Strength saving throw. On a failed save, target is frozen
+    for 1 turn. -- Shock: Deals double damage to shields (double the melee damage
+    and additional damage from this ability)'
+  adv-option-1: 
+  adv-option-2: 
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: "[Juggernaut]"
+  infiltrator: 
+  engineer: 
+  soldier: 
+  class-list: Juggernaut Sentinel only
+- power: Incinerate
+  school: Tech
+  level: '1'
+  die-type: d10
+  casting-time: 1 action
+  duration: instant
+  range: 20m
+  dmg-type: fire
+  mechanic: Spend XTP and choose a target within 20m. If the target is unprotected,
+    it makes a Dexterity saving throw. On a failed save, the target takes Xd10. On
+    a success, the target takes half of the damage.
+  adv-option-1: Frozen Combo - Deal double damage to frozen targets.
+  adv-option-2: Radial Blast - Creatures within 5m must also succeed a Dexterity saving
+    throw or take half of the damage.
+  higher-levels: You can spend up to 5 TP.
+  max-tp: '5'
+  denotates: x
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: x
+  infiltrator: 
+  engineer: x
+  soldier: 
+  class-list: Engineer, Sentinel
+- power: Neural Shock
+  school: Tech
+  level: '1'
+  die-type: "-"
+  casting-time: '1 action '
+  duration: instant
+  range: 20m
+  dmg-type: shock
+  mechanic: Spend XTP and target an organic creature within 20m. The creature has
+    -3 to ranged attack rolls for X turns. The creature also makes a constitution
+    saving throw. On a failed save, the creature is paralyzed for 1 turn.
+  adv-option-1: Damaging Shock - Creatures that fail the saving throw take Xd4 damage.
+    Creatures that succeed take half the damage.
+  adv-option-2: Paralyzing Shock - Creatures have disadvantage on the Costitution
+    saving throw.
+  higher-levels: You can spend up to 5 TP.
+  max-tp: '5'
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: x
+  engineer: x
+  soldier: 
+  class-list: Engineer, Infiltrator
+- power: Overload
+  school: Tech
+  level: '1'
+  die-type: d6
+  casting-time: 1 action
+  duration: instant
+  range: 20m
+  dmg-type: shock
+  mechanic: Spend X TP to overload electronics with a powerful surge from your Omni-tool.
+    Targets make a Constitution saving throw. On a failed save, the target takes Xd6
+    damage. If the target is synthetic, it is stunned for 1 turn. On a success, the
+    target takes half damage. Deals double damage to Shields
+  adv-option-1: Chain Overload - You can target 2 enemies at once.
+  adv-option-2: Heavy Overload - Increase the die type to d8
+  higher-levels: You can spend up to 3 TP.
+  max-tp: '3'
+  denotates: x
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: x
+  infiltrator: x
+  engineer: x
+  soldier: 
+  class-list: Engineer, Infiltrator, Sentinel
+- power: Proximity Mine
+  school: Tech
+  level: '1'
+  die-type: 
+  casting-time: 1 action
+  duration: until triggered
+  range: 15ft
+  dmg-type: 
+  mechanic: 'Spend 1 TP to lay a proximity mine. A creature that comes within 2m of
+    the mine makes a Dexterity saving throw. On a failed save, that creature takes
+    1 damage. On a success, a creature takes half damage.  '
+  adv-option-1: 
+  adv-option-2: 
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: x
+  engineer: x
+  soldier: 
+  class-list: Engineer, Infiltrator
+- power: Recon Mine
+  school: Tech
+  level: '1'
+  die-type: d4
+  casting-time: 1 action
+  duration: instant
+  range: 20m
+  dmg-type: puncture
+  mechanic: Spend 2 TP to launch a recon mine to a location of your choice within
+    20m. It first sticks to the target location then scans enemies within a 10m cone.
+    After your turn ends, any enemy that walks through the scanning cone loses 1 AC.
+    You may spend another action to detonate the mine, dealing 2d4 damage to each
+    creature within 2m. -- Creatures need to pass a Perception check to notice the
+    mine. -- Creatures need to pass a Hacking check to disarm it. -- A successful
+    ranged attack on the mine (DC 10) will cause it to detonate, see above for resolution.
+  adv-option-1: Improved Recon - Reduce AC by 2
+  adv-option-2: Double Recon - Launch 2 mines to 2 separate locations. The AC reduction
+    does not stack for creature that walk through both scanning cones.
+  higher-levels: ''
+  max-tp: '1'
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: x
+  engineer: x
+  soldier: 
+  class-list: Engineer, Infiltrator
+- power: Repair Matrix
+  school: Tech
+  level: '5'
+  die-type: "-"
+  casting-time: reaction
+  duration: instant
+  range: self
+  dmg-type: "-"
+  mechanic: 'As a reaction, you spend 5 TP to activate a powerful Foucault current.
+    If you are knocked down, you immediately return to your feet. You gain the following
+    benefits for 1m: -- Sheild Regeneration increases by 1 die type -- Speed increases
+    by 5m. -- Regain 1[d6] HP at the start of your turn.'
+  adv-option-1: Healing Matrix - Regain 2d8 instead of 1d6 at the start of your turn.
+  adv-option-2: 'Resisting Matrix - Your shields have resistance to shock damage.
+    -- You cannot be frozen. -- Damage to your HP has resistance to fire damage. '
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: x
+  engineer: 
+  soldier: 
+  class-list: Infiltrator
+- power: Sentry Turret
+  school: Tech
+  level: '1'
+  die-type: d8
+  casting-time: 1 action
+  duration: instant
+  range: 2m
+  dmg-type: puncture
+  mechanic: Spend X TP to set up a sentry turrent within melee range. The turret has
+    Xd8 health. At the end of your turn, the turret attacks. It continues to attack
+    at the end of your turn until it is destroyed. -- If an enemy is within 5m, the
+    turret shoots flames in a 5m cone in a direction of your choosing. Each creature
+    within the 5m cone make a Dexterity saving throw. On a failed save,  a creature
+    takes 2d8 damage or half as much on a success. -- If each enemy is beyond 5m of
+    the turret, you choose a target within 20m. The turremt makes a ranged attack
+    on the target, proficiency +2. On a success, it deals 2d8 damage.
+  adv-option-1: Power Turrent - Increase the damage die for the flame and ranged attack
+    to a d12.
+  adv-option-2: Lasting Turret - Increase the die rolled for the turret's health to
+    d12.
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: 
+  engineer: x
+  soldier: 
+  class-list: Engineer
+- power: Shield Boost
+  school: Tech
+  level: '1'
+  die-type: d6
+  casting-time: '1 action '
+  duration: instant
+  range: self
+  dmg-type: "-"
+  mechanic: Spend X TP and recover Xd6 shields. You cannot go above your maximum shields.
+    You can spend up to 3 Tech Points
+  adv-option-1: Friendly Boost - You can cast sheild boost on a friendly target within
+    melee range.
+  adv-option-2: Overloading Boost - Creatures within melee range take 1d4 shock damage.
+  higher-levels: You can spend up to 3 TP.
+  max-tp: '3'
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: x
+  infiltrator: 
+  engineer: x
+  soldier: 
+  class-list: Engineer, Sentinel
+- power: Snap Freeze
+  school: Tech
+  level: '1'
+  die-type: "-"
+  casting-time: 1 action
+  duration: instant
+  range: 5m
+  dmg-type: cryo
+  mechanic: Spend X TP to send a cryotic blast in an 5m cone, originating from you.
+    Each creature within the radius makes a Strength saving throw. On a failed save,
+    a creature is frozen. On a successful save, a creature's movement speed is halved
+    for 1 turn. -- Increase the DC of the Strength saving throw by 1 for each 2 TP
+    spent.
+  adv-option-1: Brittle Freeze - Creatues hit with Snap Freeze lose 1AC per 2 TP spent.
+  adv-option-2: Radial Freeze - Snap Freeze now affects a 5m radius, origination from
+    you.
+  higher-levels: ''
+  max-tp: '10'
+  denotates: 
+  primes: x
+  adept: 
+  vanguard: 
+  sentinel: x
+  infiltrator: x
+  engineer: 
+  soldier: 
+  class-list: Infiltrator, Sentinel
+- power: Submission Net
+  school: Tech
+  level: '1'
+  die-type: d6
+  casting-time: 1 action
+  duration: 1m
+  range: 20m
+  dmg-type: shock
+  mechanic: Spend 2 TP to shoot a swarm of miniatuer pylons to a target location within
+    20m. The pylons form a 3m, electrified net originating from the chosen location.
+    Creatures within the net cannot cast tech. -- To escape, a creature must succeed
+    on a Strength (Athletics) check or must remain trapped in the net. If a creature
+    does break free, it takes 1d6 damage. -- If you have a submission net deployed,
+    you can spend X TP to send electric currents through it. Each creature within
+    the net makes a Constitution saving throw. On a failed save, a creature takes
+    Xd6 shock damage, or half as much on a success.
+  adv-option-1: Shocking Net - You can electrify the net as a bonus action the first
+    time you cast Submission net.
+  adv-option-2: Gripping Net - Increase the DC to break free of the net by 3.
+  higher-levels: ''
+  max-tp: '5'
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: x
+  infiltrator: 
+  engineer: x
+  soldier: 
+  class-list: Engineer, Sentinel
+- power: Supply Pylon
+  school: Tech
+  level: '1'
+  die-type: d4
+  casting-time: 1 action
+  duration: 5 minutes
+  range: 5m
+  dmg-type: "-"
+  mechanic: 'Spend X TP to summon a Supply Pylon to a location within 5m. The Supply
+    Pylon has Xd4 health, AC 12, and 1 charge of 4 different supplies. Party members
+    (including you) can spend 1 action accessing the supply pylon (must be within
+    melee range) to gain 1 of the 4 supplies: - Replenish Heavy Weapon Ammo - Replenish
+    5 TP or 5 levels worth of Spell slots - Heal themselves for 3d4 - Restore 3d4
+    Shields. Only 1 benefit of each type can be claimed, but at higher levels Supply
+    Pylon has more charges of each supply. If the Pylon is destroyed before the charges
+    are used, they disappear. Supply pylons die type increase with level: At lvl 5
+    = d6. At lvl 11 = d8. At lvl 17 = d12.'
+  adv-option-1: 
+  adv-option-2: 
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: 
+  engineer: "[Support]"
+  soldier: 
+  class-list: Support Engineer only
+- power: Tactical Cloak
+  school: Tech
+  level: '1'
+  die-type: "-"
+  casting-time: 1 action
+  duration: 1 minute
+  range: self
+  dmg-type: "-"
+  mechanic: Use 1 Tech point to become Invisible. You continue to make noise, but
+    you have advantage on stealth checks. In combat, when you make a melee attack,
+    ranged attack, or use a power, your tacktical cloak ends. Most powers give you
+    some advantage when you use them from Tactical Cloak. When you make a successful
+    melee or ranged attack from Tactical Cloak, add your Sneak Attack damage.
+  adv-option-1: 
+  adv-option-2: 
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: x
+  engineer: 
+  soldier: 
+  class-list: Infiltrator
+- power: Tactical Scan
+  school: Tech
+  level: '1'
+  die-type: "-"
+  casting-time: 1 action
+  duration: "-"
+  range: 20m
+  dmg-type: "-"
+  mechanic: Use 1 Tech point to scan a creature within 20m. You relay the data to
+    your team member's Omni-tool. This improves the natural crit chance on ranged
+    attacks by 1. I.e., usually a 19 & 20 are now natural crits, but this ability
+    can stack with other crit improving powers.
+  adv-option-1: Area Scan - Scan a 5m area. All creatures are affected.
+  adv-option-2: Improved Scan - You can now spend up to 3 TP, improving natural crit
+    chance by that amount.
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: 
+  infiltrator: x
+  engineer: x
+  soldier: 
+  class-list: Engineer, Infiltrator
+- power: Tech Armor
+  school: Tech
+  level: '1'
+  die-type: "-"
+  casting-time: 1 action
+  duration: 1 minute
+  range: self
+  dmg-type: "-"
+  mechanic: Spend 3 TP to activate your Tech Armor. Increase your max Shield Points
+    (SP) by 10 and immediately gain 10 SP. You have a +3 bonus to your AC and resistance
+    to all damage done to your HP. While Tech Armor is active your speed is reduced
+    by half and you have disadvantage on Dexterity saving throws. As a reaction, you
+    can deactivate Tech Armor, when you do, gain another 10 SP.
+  adv-option-1: "-"
+  adv-option-2: "-"
+  higher-levels: ''
+  max-tp: 
+  denotates: 
+  primes: 
+  adept: 
+  vanguard: 
+  sentinel: x
+  infiltrator: 
+  engineer: 
+  soldier: 
+  class-list: Sentinel
 - power: 
   school: 
   level: 
