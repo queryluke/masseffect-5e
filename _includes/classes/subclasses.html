@@ -12,13 +12,23 @@
                 </tr>
             </thead>
             <tbody>
+                {% for num in site.data.progression_levels %}
                 <tr>
                    <td>
-                       {% if include.class == "Adept" %}2{% else %}3{% endif %}
+                       {{ num }}
                    </td>
-                    <td>{{ subclass.2 }}</td>
+                    <td>
+                        <ul class="list-unstyled">
+                        {% for feature in subclass[num] %}
+                            <li>
+                                {% include classes/subclass_desc.html feature=feature %}
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    </td>
                 </tr>
-                <tr>
+                {% endfor %}
+                <!--<tr>
                     <td>6</td>
                     <td>{{ subclass.6 }}</td>
                 </tr>
@@ -33,7 +43,7 @@
                 <tr>
                     <td>18</td>
                     <td>{{ subclass.18 }}</td>
-                </tr>
+                </tr>-->
             </tbody>
         </table>
     </div>

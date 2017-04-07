@@ -42,27 +42,38 @@
         }
 
         var renderOptions = {
-            spells: function(object){
-                var html = '<dl class="row">';
-                html += '<dt class="col-sm-3">Casting Time</dt><dd class="col-sm-9">' + object['casting-time'] + '</dd>';
-                html += '<dt class="col-sm-3">Range</dt><dd class="col-sm-9">' + object['range'] + '</dd>';
-                html += '<dt class="col-sm-3">Duration</dt><dd class="col-sm-9">' + object['duration'] + '</dd>';
-                html += '</dl><hr>';
-                html += '<p>' + object['mechanic'] + '</p>';
-                html += '<p>' + object['higher-levels'] + '</p>';
-                if(object['adv-option-1'].length && object['adv-option-1'] != '-'){
-                    html += '<h4>Advancements</h4>';
-                    av1 = object['adv-option-1'].split('-');
-                    html += '<p><strong>' + av1[0].trim() + '</strong>: ' + av1[1].trim() + '</p>';
+            abilities: function(object){
+                var spellHead = '';
+                var body = '';
+                var higher = '';
+                var advancements = '';
+
+                body += '<p>' + object['mechanic'] + '</p>';
+
+                if(object['type'] == 'spell' || object['type'] == 'tech'){
+                    spellHead += '<dl class="row">';
+                    spellHead += '<dt class="col-sm-3">Casting Time</dt><dd class="col-sm-9">' + object['casting-time'] + '</dd>';
+                    spellHead += '<dt class="col-sm-3">Range</dt><dd class="col-sm-9">' + object['range'] + '</dd>';
+                    spellHead += '<dt class="col-sm-3">Duration</dt><dd class="col-sm-9">' + object['duration'] + '</dd>';
+                    spellHead += '</dl><hr>';
+
+                    higher += '<p>' + object['higher-levels'] + '</p>';
+
+                    if(object['adv-option-1'].length && object['adv-option-1'] != '-'){
+                        advancements += '<h4>Advancements</h4>';
+                        av1 = object['adv-option-1'].split('-');
+                        advancements += '<p><strong>' + av1[0].trim() + '</strong>: ' + av1[1].trim() + '</p>';
+                    }
+                    if(object['adv-option-2'].length && object['adv-option-2'] != '-') {
+                        av2 = object['adv-option-2'].split('-');
+                        advancements += '<p><strong>' + av2[0].trim() + '</strong>: ' + av2[1].trim() + '</p>';
+                    }
                 }
-                if(object['adv-option-2'].length && object['adv-option-2'] != '-') {
-                    av2 = object['adv-option-2'].split('-');
-                    html += '<p><strong>' + av2[0].trim() + '</strong>: ' + av2[1].trim() + '</p>';
-                }
-                return html;
+
+                return spellHead + body + higher + advancements;
             },
             weapons: function(object){
-                html = '';
+                var html = '';
                 html += '<div class="row"><div class="col-12 col-sm-4"><!--<img src="' + object['img-src'] + '">--></div>';
                 html += '<div class="col-12 col-sm-8">';
                 html += '<dl class="row">';
@@ -102,7 +113,6 @@
 </footer>
 
 </body>
-{% include feature_modals.html %}
 <div class="modal fade" id="ajaxModal" tabindex="-1" role="dialog" aria-labelledby="ajaxModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">

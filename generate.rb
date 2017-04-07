@@ -15,19 +15,33 @@ drones = {
   "kamakaze" => "",
 }
 
-def inspect_feature(string, spell = false)
+def set_features(string)
+  features = []
   if string
-    string.gsub(/\[(.*?)\]/) do |s|
-      replacement = s.gsub(/(\[|\])/,'')
-      if replacement =~ /\|spell/
-        replacement = replacement.gsub(/\|spell/,'')
-        spell = true
+    string.split(',').each do |f|
+
+      feature = {
+        'text' => f,
+        'add-text' => '',
+        'level' => ''
+      }
+
+      f.match(/\(.*?\)/) do |m|
+        code = m.to_s
+        ability = f.sub(/#{Regexp.escape(code)}/,"")
+        feature['text'] = ability
+        feature['add-text'] = code == "(adv)" ? "Select an Advancement Option" : code
+
+        if code.match(/\([\d]\)/)
+          feature['level'] = code.gsub(/(\(|\))/,"")
+        end
       end
-      target = spell ? "ajaxModal" : replacement.gsub(" ","-").downcase
-      spellTarget = spell ? 'data-id="' + replacement + '" data-key="power" data-type="spells"' : ""
-      '<button type="button" class="link" ' + spellTarget + ' data-toggle="modal" data-target="#' + target + '">' + replacement +'</button>'
+
+      features << feature
+
     end
   end
+  features
 end
 
 def config_races(model)
@@ -50,25 +64,24 @@ def insert_dd(string, die)
   end
 end
 
-def insert_higher_level_text(string, die, tp, level)
+def insert_higher_level_text(type, die, tp, level)
   hlt = {
     "cantrip" => "The spell's damage increases by 1[dd] when you reach 5th level (2[dd]), 11th level (3[dd]), and 17th level (4[dd]).",
     "spell" => "When you cast this spell using a spell slot of [spellLevelp1] level or higher, the damage increases by 1[dd] for each slot level above [spellLevel]",
     "tech" => "You can spend up to [maxTP] TP.",
-    "barrier" => "The spell potential tick use increases by 1 when you reach 5th level (4 ticks), 11th level (5 ticks), and 17th level (6 ticks).",
-    "ac" => "When you cast this spell using a spell slot of [spellLevelp1] level or higher, the increase the AC loss by 1 for each slot level above [spellLevel]",
   }
-  text = hlt[string]
-  if text
-    if die
-      text = insert_dd(text, die)
-    end
-    if tp
-      text = text.gsub(/\[maxTP\]/, tp)
-    end
-    if level
+  case type
+  when "spell"
+    if level.to_i > 0
+      text = insert_dd(hlt["spell"], die)
       plus1 = level.to_i + 1
       text = text.gsub(/\[spellLevelp1\]/, plus1.to_s).gsub(/\[spellLevel\]/, level)
+    else
+      text = insert_dd(hlt["cantrip"], die)
+    end
+  when "tech"
+    if tp
+      text = hlt["tech"].gsub(/\[maxTP\]/, tp)
     end
   else
     text = ''
@@ -90,11 +103,11 @@ def create_class_list(model)
   output.join(', ')
 end
 
-def config_spells(model)
+def config_abilities(model)
   model["mechanic"] = insert_dd(model["mechanic"], model["die-type"])
   model["adv-option-1"] = insert_dd(model["adv-option-1"], model["die-type"])
   model["adv-option-2"] = insert_dd(model["adv-option-2"], model["die-type"])
-  model["higher-levels"] = insert_higher_level_text(model["higher-levels"], model["die-type"], model["max-tp"], model["level"])
+  model["higher-level"] = insert_higher_level_text(model["type"], model["die-type"], model["max-tp"], model["level"])
   model["class-list"] = create_class_list(model)
   model
 end
@@ -143,16 +156,16 @@ def generate_config_file(page, output)
         f.write("---\nlayout: class\ntitle: Classes - #{dup_model["class"]}\nclass: #{dup_model["class"]}\n---")
       end
     when "subclasses"
-      dup_model["2"] = inspect_feature(dup_model["2"], true)
-      dup_model["6"] = inspect_feature(dup_model["6"], true)
-      dup_model["10"] = inspect_feature(dup_model["10"], true)
-      dup_model["14"] = inspect_feature(dup_model["14"], true)
-      dup_model["18"] = inspect_feature(dup_model["18"], true)
-    when "spells"
-      dup_model = config_spells(dup_model)
+      dup_model["2"] = set_features(dup_model["2"])
+      dup_model["6"] = set_features(dup_model["6"])
+      dup_model["10"] = set_features(dup_model["10"])
+      dup_model["14"] = set_features(dup_model["14"])
+      dup_model["18"] = set_features(dup_model["18"])
+    when "abilities"
+      dup_model = config_abilities(dup_model)
     else
       if dup_model.has_key?("features")
-        dup_model["features"] = inspect_feature(dup_model["features"])
+        dup_model["features"] = set_features(dup_model["features"])
       end
     end
 
@@ -179,7 +192,7 @@ pages = [
     :url => "https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=1874613976&single=true&output=csv"
   },
   {
-    :type => "spells",
+    :type => "abilities",
     :url => "https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=686320782&single=true&output=csv",
   },
   {
@@ -189,10 +202,6 @@ pages = [
   {
     :type => "heavy_weapons",
     :url => "https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=1966803402&single=true&output=csv",
-  },
-  {
-    :type => "fighting_styles",
-    :url => "https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=2000756233&single=true&output=csv"
   },
   {
     :type => "adept",
@@ -214,10 +223,6 @@ pages = [
     :type => "vanguard",
     :url => "https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=854116423&single=true&output=csv"
   },
-  {
-    :type => "misc",
-    :url => "https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=867312306&single=true&output=csv"
-  }
 ].each do |p|
   generate_config_file(p, output_type)
 end

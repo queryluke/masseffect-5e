@@ -3,180 +3,665 @@
     "subclass": "Justicar",
     "class": "Adept",
     "role": "balance",
-    "2": "Pure Biotic: Add your proficiency bonus to all biotic damage.",
-    "6": "Additional max level spell slot. Gain 2 barrier ticks.",
-    "10": "Learn <button type=\"button\" class=\"link\" data-id=\"Dominate\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Dominate</button>",
-    "14": "Targets that would make a saving throw against one of your biotic abilities makes that saving throw at a disadvantage",
-    "18": "Advance <button type=\"button\" class=\"link\" data-id=\"Dominate\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Dominate</button>"
+    "2": [
+      {
+        "text": "Pure Biotics",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "6": [
+      {
+        "text": "Proficient Biotics",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "10": [
+      {
+        "text": "Dominate",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "14": [
+      {
+        "text": "Quick Biotics",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "18": [
+      {
+        "text": "Dominate",
+        "add-text": "Select an Advancement Option",
+        "level": ""
+      }
+    ]
   },
   {
     "subclass": "Shaman",
     "class": "Adept",
     "role": "heal",
-    "2": "<button type=\"button\" class=\"link\" data-id=\"Healing Surge\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Healing Surge</button>",
-    "6": "Increase Barrier Capacity to 6",
-    "10": "Learn <button type=\"button\" class=\"link\" data-id=\"Biotic Sphere\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Biotic Sphere</button>",
-    "14": "Advance <button type=\"button\" class=\"link\" data-id=\"Healing Surge\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Healing Surge</button>",
-    "18": "Advance <button type=\"button\" class=\"link\" data-id=\"Biotic Sphere\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Biotic Sphere</button>"
+    "2": [
+      {
+        "text": "Healing Surge",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "6": [
+      {
+        "text": "Barrier Wealth",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "10": [
+      {
+        "text": "Biotic Sphere",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "14": [
+      {
+        "text": "Healing Surge",
+        "add-text": "Select an Advancement Option",
+        "level": ""
+      }
+    ],
+    "18": [
+      {
+        "text": "Biotic Sphere",
+        "add-text": "Select an Advancement Option",
+        "level": ""
+      }
+    ]
   },
   {
     "subclass": "Fury",
     "class": "Adept",
     "role": "dps",
-    "2": "<button type=\"button\" class=\"link\" data-id=\"Dark Channel\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Dark Channel</button>",
-    "6": "Potent cantrips. If a creature succeeds a saving throw against your damaging cantrip, or you fail an attack role, the target still takes half damage.",
-    "10": "Learn <button type=\"button\" class=\"link\" data-id=\"Dark Sphere\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Dark Sphere</button>",
-    "14": "Advance <button type=\"button\" class=\"link\" data-id=\"Dark Channel\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Dark Channel</button>",
-    "18": "Advance <button type=\"button\" class=\"link\" data-id=\"Dark Sphere\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Dark Sphere</button>"
+    "2": [
+      {
+        "text": "Dark Channel",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "6": [
+      {
+        "text": "Potent Biotics",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "10": [
+      {
+        "text": "Dark Sphere",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "14": [
+      {
+        "text": "Dark Channel",
+        "add-text": "Select an Advancement Option",
+        "level": ""
+      }
+    ],
+    "18": [
+      {
+        "text": "Dark Sphere",
+        "add-text": "Select an Advancement Option",
+        "level": ""
+      }
+    ]
   },
   {
     "subclass": "Demolisher",
     "class": "Engineer",
     "role": "ranged dps",
-    "2": "Advanced Weapon Holsters - Your Carry Capacity is equal to your Strength + Your level",
-    "6": "Grenade Tech only costs you 2 TP",
-    "10": "Heavy weapon hack - When your heavy weapon runs out of ammo, you can jerry-rig an additional use for 5 TP.",
-    "14": "Advanced Targeting - You can move slowly while Targeting, you now have a disadvantage to Dexterity saving throws (instead of automatically failing), and creatures attack you without advantage",
-    "18": "Grenade Tech only costs you 1 TP"
+    "2": [
+      {
+        "text": "Advanced Weapon Holsters",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "6": [
+      {
+        "text": "Efficient Grenades",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "10": [
+      {
+        "text": "Heavy Weapon Hack",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "14": [
+      {
+        "text": "Advanced Targeting",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "18": [
+      {
+        "text": "Makeshift Grenades",
+        "add-text": "",
+        "level": ""
+      }
+    ]
   },
   {
     "subclass": "Drone Jockey",
     "class": "Engineer",
     "role": "balance",
-    "2": "Learn 1 Drone Type from <button type=\"button\" class=\"link\" data-id=\"Drone\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Drone</button>",
-    "6": "Learn 1 Drone Type from <button type=\"button\" class=\"link\" data-id=\"Drone\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Drone</button>",
-    "10": "You can have 2 Drones Active at once",
-    "14": "Learn 1 Drone Type from <button type=\"button\" class=\"link\" data-id=\"Drone\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Drone</button>",
-    "18": "You can summon 2 Drones in the same action for the cost of a single drone."
+    "2": [
+      {
+        "text": "Drone",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "6": [
+      {
+        "text": "Drone Sidekick",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "10": [
+      {
+        "text": "Drone Tag Team",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "14": [
+      {
+        "text": "Efficient Drones",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "18": [
+      {
+        "text": "Drone Swarm",
+        "add-text": "",
+        "level": ""
+      }
+    ]
   },
   {
     "subclass": "Support",
     "class": "Engineer",
     "role": "heal",
-    "2": "Learn <button type=\"button\" class=\"link\" data-id=\"Supply Pylon\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Supply Pylon</button>",
-    "6": "Allies within 5m of <button type=\"button\" class=\"link\" data-id=\"Supply Pylon\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Supply Pylon</button> have increased Sheild regen of 1 die type (to a maximum of d20)",
-    "10": "<button type=\"button\" class=\"link\" data-id=\"Supply Pylon\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Supply Pylon</button> has 2 charges of each supply",
-    "14": "Each time <button type=\"button\" class=\"link\" data-id=\"Supply Pylon\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Supply Pylon</button> takes damage, it casts a 1TP<button type=\"button\" class=\"link\" data-id=\"Overload\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Overload</button> at it's attacker. DC on this attack is 10.",
-    "18": "<button type=\"button\" class=\"link\" data-id=\"Supply Pylon\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Supply Pylon</button>has 3 charges of each supply"
+    "2": [
+      {
+        "text": "Supply Pylon",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "6": [
+      {
+        "text": "Regenerative Pylon",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "10": [
+      {
+        "text": "Pylon Supplies",
+        "add-text": "(1)",
+        "level": "1"
+      }
+    ],
+    "14": [
+      {
+        "text": "Defensive Pylon",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "18": [
+      {
+        "text": "Pylon Supplies",
+        "add-text": "(2)",
+        "level": "2"
+      }
+    ]
   },
   {
     "subclass": "Ghost",
     "class": "Infiltrator",
     "role": "dps",
-    "2": "Tactical Cloak does not consume tech points, at the cost of your sneak attack die type being reduced to d4",
-    "6": "Uncanny Dodge -- When an attacker that you can see hits you with an attack, you can use your reaction to halve the attack's damage against you.",
-    "10": "Learn <button type=\"button\" class=\"link\" data-id=\"Shadow Strike\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Shadow Strike</button>",
-    "14": "Evasion -- When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.",
-    "18": "Advance <button type=\"button\" class=\"link\" data-id=\"Shadow Strike\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Shadow Strike</button>"
+    "2": [
+      {
+        "text": "Efficient Cloak",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "6": [
+      {
+        "text": "Uncanny Dodge",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "10": [
+      {
+        "text": "Shadow Strike",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "14": [
+      {
+        "text": "Evasion",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "18": [
+      {
+        "text": "Shadow Strike",
+        "add-text": "Select an Advancement Option",
+        "level": ""
+      }
+    ]
   },
   {
     "subclass": "Saboteur",
     "class": "Infiltrator",
     "role": "control",
-    "2": "Shadow Broker - You are an operative of the Shadow Broker and your focus is on people and on the influence and secrets they have. Many spies, courtiers, and schemers follow this archetype, leading lives of intrigue. Words are your weapons as often as guns or powers, and secrets and favors are some of your favorite treasures. This information may give you detailed information about a scheme or plot, call in favors, blackmail other characters. Tactically, it might give you access to security cameras, preventing surprise attacks or giving you access to security profiles and learning about enemies you might fight.",
-    "6": "Eye for Detail - You can use the bonus action granted by your Cunning Action feature to make a Wisdom (Perception) check to spot a hidden creature or object, to make an Intelligence (Investigation) check to uncover and decipher clues, or to use Insightful Fighting. -- Insightful Fighting - You gain the ability to decipher an opponent's tactics and develop a counter to them. As an action (or as a bonus action using Eye for Detail), you make a Wisdom (Insight) check against a creature you can see that isn't incapacitated, opposed by the target's Charisma (Deception) check. If you succeed, you can add your Sneak Attach damage to your next successfull melee or ranged attack without having to come out of Tactical Cloak. This benefit lasts for 1 minute or until you successfully use Insightful Fighting against a different target.",
-    "10": "Learn <button type=\"button\" class=\"link\" data-id=\"Electric Slash\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Electric Slash</button>",
-    "14": "Infiltration - You can unfailingly create false identities for yourself. You can't establish an identity that belongs to someone else. For example, you might establish yourself within mercernary gang to gain access to their supplies or armory, or a rich colonist to gain access to a fancy party. Thereafter, if you adopt the new identity as a disguise, other creatures believe you to be that person until given an obvious reason not to. If you do not have the appropriate time to research an identity, you will at least gain advantage on pursuation rolls.",
-    "18": "Advance <button type=\"button\" class=\"link\" data-id=\"Electric Slash\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Electric Slash</button>"
+    "2": [
+      {
+        "text": "Shadow Broker",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "6": [
+      {
+        "text": "Eye for Detail",
+        "add-text": "",
+        "level": ""
+      },
+      {
+        "text": " Insightful Fighting",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "10": [
+      {
+        "text": "Electric Slash",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "14": [
+      {
+        "text": "Infiltration",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "18": [
+      {
+        "text": "Electric Slash",
+        "add-text": "Select an Advancement Option",
+        "level": ""
+      }
+    ]
   },
   {
     "subclass": "Operative",
     "class": "Infiltrator",
     "role": "survival",
-    "2": "Master Tactician - You can use the Help action as a bonus action. Additionally, when you use the Help action to aid an ally in attacking a creature, the target of that attack can be within 30 feet of you, rather than 5 feet of you, if the target can see or hear you.",
-    "6": "Misdirection - you can sometimes cause another creature to suffer an attack meant for you. When you are targeted by an attack while a creature within 5 feet of you is granting you cover against that attack, you can use your reaction to have the attack target that creature instead of you.",
-    "10": "Learn <button type=\"button\" class=\"link\" data-id=\"Repair Matrix\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Repair Matrix</button>",
-    "14": "Master Deulist - Your mastery of combat lets you turn failure to success in combat. If you miss with an attack roll, you can choose to roll it again with advantage. Once you do so, you can't use this feature again until you finish a short or long rest.",
-    "18": "Advance <button type=\"button\" class=\"link\" data-id=\"Repair Matrix\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Repair Matrix</button>"
+    "2": [
+      {
+        "text": "Master Tactician",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "6": [
+      {
+        "text": "Misdirection",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "10": [
+      {
+        "text": "Repair Matrix",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "14": [
+      {
+        "text": "Master Duelist",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "18": [
+      {
+        "text": "Repair Matrix",
+        "add-text": "Select an Advancement Option",
+        "level": ""
+      }
+    ]
   },
   {
     "subclass": "Juggernaut",
     "class": "Sentinel",
     "role": "melee dps",
-    "2": "-",
-    "6": "-",
-    "10": "-",
-    "14": "-",
-    "18": "-"
+    "2": [
+
+    ],
+    "6": [
+
+    ],
+    "10": [
+
+    ],
+    "14": [
+
+    ],
+    "18": [
+
+    ]
   },
   {
     "subclass": "Bastion",
     "class": "Sentinel",
     "role": "tank",
-    "2": "-",
-    "6": "-",
-    "10": "-",
-    "14": "-",
-    "18": "-"
+    "2": [
+
+    ],
+    "6": [
+
+    ],
+    "10": [
+
+    ],
+    "14": [
+
+    ],
+    "18": [
+
+    ]
   },
   {
     "subclass": "Paladin",
     "class": "Sentinel",
     "role": "tank/heal",
-    "2": "-",
-    "6": "-",
-    "10": "-",
-    "14": "-",
-    "18": "-"
+    "2": [
+
+    ],
+    "6": [
+
+    ],
+    "10": [
+
+    ],
+    "14": [
+
+    ],
+    "18": [
+
+    ]
   },
   {
     "subclass": "Havoc",
     "class": "Soldier",
     "role": "aoe dps",
-    "2": "<button type=\"button\" class=\"link\" data-id=\"Adrenaline Rush\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Adrenaline Rush</button> taps into your biotic potential. You can cast <button type=\"button\" class=\"link\" data-id=\"Carnage\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Carnage</button> with your AD",
-    "6": "You can cast <button type=\"button\" class=\"link\" data-id=\"Blade Armor\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Blade Armor</button> with your AD",
-    "10": "Learn <button type=\"button\" class=\"link\" data-id=\"Havok Strike\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Havok Strike</button>",
-    "14": "You can cast <button type=\"button\" class=\"link\" data-id=\"Flamer\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Flamer</button> with your AD",
-    "18": "Advance <button type=\"button\" class=\"link\" data-id=\"Havok Strike\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Havok Strike</button>"
+    "2": [
+      {
+        "text": "Carnage",
+        "add-text": "(ad)",
+        "level": ""
+      }
+    ],
+    "6": [
+      {
+        "text": "Blade Armor",
+        "add-text": "(ad)",
+        "level": ""
+      }
+    ],
+    "10": [
+      {
+        "text": "Havok Strike",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "14": [
+      {
+        "text": "Flamer",
+        "add-text": "(ad)",
+        "level": ""
+      }
+    ],
+    "18": [
+      {
+        "text": "Havok Strike",
+        "add-text": "Select an Advancement Option",
+        "level": ""
+      }
+    ]
   },
   {
     "subclass": "Shock Trooper",
     "class": "Soldier",
     "role": "tank / control",
-    "2": "<button type=\"button\" class=\"link\" data-id=\"Hex Shield\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Hex Shield</button>",
-    "6": "plus 6 shields",
-    "10": "Learn <button type=\"button\" class=\"link\" data-id=\"Devastator Mode\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Devastator Mode</button>",
-    "14": "<button type=\"button\" class=\"link\" data-id=\"Siege Pulse\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Siege Pulse</button>",
-    "18": "Advance <button type=\"button\" class=\"link\" data-id=\"Devastator Mode\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Devastator Mode</button>"
+    "2": [
+      {
+        "text": "Hex Shield",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "6": [
+      {
+        "text": "Improved Shields",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "10": [
+      {
+        "text": "Devastator Mode",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "14": [
+      {
+        "text": "Siege Pulse",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "18": [
+      {
+        "text": "Devastator Mode",
+        "add-text": "",
+        "level": ""
+      }
+    ]
   },
   {
     "subclass": "Marksman",
     "class": "Soldier",
     "role": "ranged dps",
-    "2": "<button type=\"button\" class=\"link\" data-id=\"Marksman\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Marksman</button>",
-    "6": "plus 2 bonus to shooting (stacks with Sniper style)",
-    "10": "Learn <button type=\"button\" class=\"link\" data-id=\"Hawk Missile Launcher\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Hawk Missile Launcher</button>",
-    "14": "<button type=\"button\" class=\"link\" data-id=\"Ballistic Blades\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Ballistic Blades</button>",
-    "18": "Advance <button type=\"button\" class=\"link\" data-id=\"Hawk Missile Launcher\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Hawk Missile Launcher</button>"
+    "2": [
+      {
+        "text": "Marksman",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "6": [
+      {
+        "text": "Eagle Eye",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "10": [
+      {
+        "text": "Hawk Missile Launcher",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "14": [
+      {
+        "text": "Ballistic Blades",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "18": [
+      {
+        "text": "Hawk Missile Launcher",
+        "add-text": "",
+        "level": ""
+      }
+    ]
   },
   {
     "subclass": "Protector",
     "class": "Vanguard",
     "role": "tank",
-    "2": "Barrier damage reduction is increased to d8",
-    "6": "Indominable. You can reroll a saving throw that you fail. If you do so, you must use the new roll, and you can't use this feature again until you finish a long rest.",
-    "10": "Select 3(2) spells",
-    "14": "Indominable (2)",
-    "18": "Barrier damage reduction is increased to d12"
+    "2": [
+      {
+        "text": "Improved Barrier",
+        "add-text": "(1)",
+        "level": "1"
+      }
+    ],
+    "6": [
+      {
+        "text": "Indominable",
+        "add-text": "(1)",
+        "level": "1"
+      }
+    ],
+    "10": [
+      {
+        "text": "Biotic Powers",
+        "add-text": "(3/2)",
+        "level": ""
+      }
+    ],
+    "14": [
+      {
+        "text": "Indominable",
+        "add-text": "(2)",
+        "level": "2"
+      }
+    ],
+    "18": [
+      {
+        "text": "Improved Barrier",
+        "add-text": "(2)",
+        "level": "2"
+      }
+    ]
   },
   {
     "subclass": "Battlemaster",
     "class": "Vanguard",
     "role": "balance",
-    "2": "Max Barrier Ticks increased by 3",
-    "6": "When you cast your cantrips you can choose either of the advancement options.",
-    "10": "When you cast your level 1 or less spells, you can choose either of the advancement options",
-    "14": "Max Barrier Ticks increased by 6",
-    "18": "When you cast your level 2 or less spells, you can choose either of the advancement options"
+    "2": [
+      {
+        "text": "Improved Barrier Capacity",
+        "add-text": "(1)",
+        "level": "1"
+      }
+    ],
+    "6": [
+      {
+        "text": "Battlemaster",
+        "add-text": "(1)",
+        "level": "1"
+      }
+    ],
+    "10": [
+      {
+        "text": "Battlemaster",
+        "add-text": "(2)",
+        "level": "2"
+      }
+    ],
+    "14": [
+      {
+        "text": "Improved Barrier Capacity",
+        "add-text": "(2)",
+        "level": "2"
+      }
+    ],
+    "18": [
+      {
+        "text": "Battlemaster",
+        "add-text": "(3)",
+        "level": "3"
+      }
+    ]
   },
   {
     "subclass": "Cabal",
     "class": "Vanguard",
     "role": "spell dps",
-    "2": "Select 1(1) spell",
-    "6": "Select 1(2) spell",
-    "10": "Teleporting Dodge. You can use 3 Barrier ticks to automatically pass a Dexterity saving throw.",
-    "14": "Select 1(4) spell",
-    "18": "Select 1(4) spell"
+    "2": [
+      {
+        "text": "Biotic Powers",
+        "add-text": "(1/1)",
+        "level": ""
+      }
+    ],
+    "6": [
+      {
+        "text": "Biotic Powers",
+        "add-text": "(1/2)",
+        "level": ""
+      }
+    ],
+    "10": [
+      {
+        "text": "Teleporting Dodge",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "14": [
+      {
+        "text": "Biotic Powers",
+        "add-text": "(1/4)",
+        "level": ""
+      }
+    ],
+    "18": [
+      {
+        "text": "Biotic Powers",
+        "add-text": "(1/4)",
+        "level": ""
+      }
+    ]
   }
 ]

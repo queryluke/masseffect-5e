@@ -1,0 +1,9 @@
+{% assign check = site.data.abilities | where: "name", include.feature.text %}
+{% if check[0] %}
+    <button type="button" class="link" data-id="{{ include.feature.text }}" data-key="name" data-type="abilities" data-toggle="modal" data-target="#ajaxModal">
+        {{ include.feature.text }}
+    </button>
+    {{ include.feature.add-text }}
+{% else %}
+    {{ include.feature.text }}
+{% endif %}

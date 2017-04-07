@@ -24,7 +24,25 @@
             {% for col in row %}
                 {% if col[0] != 'id' %}
                     <td>
+                    {% if col[0] == 'features' %}
+                        <ul class="list-unstyled">
+                            {% for ability in col[1] %}
+                            <li>
+                                {% assign check = site.data.abilities | where: "name", ability.text %}
+                                {% if check[0] %}
+                                    <button type="button" class="link" data-id="{{ ability.text }}" data-key="name" data-type="abilities" data-toggle="modal" data-target="#ajaxModal">
+                                        {{ ability.text }}
+                                    </button>
+                                    {{ ability.add-text }}
+                                {% else %}
+                                    {{ ability.text }}
+                                {% endif %}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
                         {{ col[1] }}
+                    {% endif %}
                     </td>
                 {% endif %}
             {% endfor %}

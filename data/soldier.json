@@ -2,7 +2,23 @@
   {
     "level": "1",
     "proficiency": "2",
-    "features": "<button type=\"button\" class=\"link\"  data-toggle=\"modal\" data-target=\"#ammo-power\">Ammo Power</button>: 2, <button type=\"button\" class=\"link\" data-id=\"Adrenaline Rush\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Adrenaline Rush</button>, <button type=\"button\" class=\"link\" data-id=\"Concussive Shot\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Concussive Shot</button>",
+    "features": [
+      {
+        "text": "Ammo Power",
+        "add-text": "(2)",
+        "level": "2"
+      },
+      {
+        "text": " Adrenaline Rush",
+        "add-text": "",
+        "level": ""
+      },
+      {
+        "text": " Concussive Shot",
+        "add-text": "",
+        "level": ""
+      }
+    ],
     "adrenaline-dice": "2",
     "ammo-powers": "2",
     "grenades": "-"
@@ -10,7 +26,13 @@
   {
     "level": "2",
     "proficiency": "2",
-    "features": "<button type=\"button\" class=\"link\"  data-toggle=\"modal\" data-target=\"#advanced-weapon-proficiency\">Advanced Weapon Proficiency</button>",
+    "features": [
+      {
+        "text": "Advanced Weapon Proficiency",
+        "add-text": "",
+        "level": ""
+      }
+    ],
     "adrenaline-dice": "2",
     "ammo-powers": "2",
     "grenades": "-"
@@ -18,7 +40,13 @@
   {
     "level": "3",
     "proficiency": "2",
-    "features": "Select your Subclass",
+    "features": [
+      {
+        "text": "Select your Subclass",
+        "add-text": "",
+        "level": ""
+      }
+    ],
     "adrenaline-dice": "3",
     "ammo-powers": "2",
     "grenades": "-"
@@ -26,7 +54,13 @@
   {
     "level": "4",
     "proficiency": "2",
-    "features": "<button type=\"button\" class=\"link\"  data-toggle=\"modal\" data-target=\"#ability-score-improvement\">Ability Score Improvement</button>",
+    "features": [
+      {
+        "text": "Ability Score Improvement",
+        "add-text": "",
+        "level": ""
+      }
+    ],
     "adrenaline-dice": "3",
     "ammo-powers": "2",
     "grenades": "-"
@@ -34,7 +68,18 @@
   {
     "level": "5",
     "proficiency": "3",
-    "features": "<button type=\"button\" class=\"link\"  data-toggle=\"modal\" data-target=\"#ammo-power\">Ammo Power</button>:1, <button type=\"button\" class=\"link\"  data-toggle=\"modal\" data-target=\"#soldier-grenades\">Soldier Grenades</button>: 2",
+    "features": [
+      {
+        "text": "Ammo Power",
+        "add-text": "(1)",
+        "level": "1"
+      },
+      {
+        "text": " Soldier Grenades",
+        "add-text": "(2)",
+        "level": "2"
+      }
+    ],
     "adrenaline-dice": "3",
     "ammo-powers": "3",
     "grenades": "2"
@@ -42,7 +87,13 @@
   {
     "level": "6",
     "proficiency": "3",
-    "features": "Subclass Feature",
+    "features": [
+      {
+        "text": "Subclass Feature",
+        "add-text": "",
+        "level": ""
+      }
+    ],
     "adrenaline-dice": "4",
     "ammo-powers": "3",
     "grenades": "2"
@@ -50,7 +101,18 @@
   {
     "level": "7",
     "proficiency": "3",
-    "features": "Choose <button type=\"button\" class=\"link\" data-id=\"Stimulant Pack\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Stimulant Pack</button> or <button type=\"button\" class=\"link\" data-id=\"Fortification\" data-key=\"power\" data-type=\"spells\" data-toggle=\"modal\" data-target=\"#ajaxModal\">Fortification</button> as an AD power",
+    "features": [
+      {
+        "text": "Stimulant Pack",
+        "add-text": "",
+        "level": ""
+      },
+      {
+        "text": " Fortification",
+        "add-text": "",
+        "level": ""
+      }
+    ],
     "adrenaline-dice": "4",
     "ammo-powers": "3",
     "grenades": "2"
@@ -58,7 +120,13 @@
   {
     "level": "8",
     "proficiency": "3",
-    "features": "<button type=\"button\" class=\"link\"  data-toggle=\"modal\" data-target=\"#ability-score-improvement\">Ability Score Improvement</button>",
+    "features": [
+      {
+        "text": "Ability Score Improvement",
+        "add-text": "",
+        "level": ""
+      }
+    ],
     "adrenaline-dice": "4",
     "ammo-powers": "3",
     "grenades": "2"
@@ -66,7 +134,13 @@
   {
     "level": "9",
     "proficiency": "4",
-    "features": "<button type=\"button\" class=\"link\"  data-toggle=\"modal\" data-target=\"#quick-swap\">Quick Swap</button>",
+    "features": [
+      {
+        "text": "Quick Swap",
+        "add-text": "",
+        "level": ""
+      }
+    ],
     "adrenaline-dice": "4",
     "ammo-powers": "3",
     "grenades": "2"
@@ -74,7 +148,13 @@
   {
     "level": "10",
     "proficiency": "4",
-    "features": "Subclass Feature",
+    "features": [
+      {
+        "text": "Subclass Feature",
+        "add-text": "",
+        "level": ""
+      }
+    ],
     "adrenaline-dice": "4",
     "ammo-powers": "3",
     "grenades": "2"
@@ -82,7 +162,13 @@
   {
     "level": "11",
     "proficiency": "4",
-    "features": "<button type=\"button\" class=\"link\"  data-toggle=\"modal\" data-target=\"#advanced-weapon-proficiency\">Advanced Weapon Proficiency</button>",
+    "features": [
+      {
+        "text": "Advanced Weapon Proficiency",
+        "add-text": "",
+        "level": ""
+      }
+    ],
     "adrenaline-dice": "4",
     "ammo-powers": "3",
     "grenades": "3"
@@ -90,7 +176,13 @@
   {
     "level": "12",
     "proficiency": "4",
-    "features": "<button type=\"button\" class=\"link\"  data-toggle=\"modal\" data-target=\"#ability-score-improvement\">Ability Score Improvement</button>",
+    "features": [
+      {
+        "text": "Ability Score Improvement",
+        "add-text": "",
+        "level": ""
+      }
+    ],
     "adrenaline-dice": "5",
     "ammo-powers": "3",
     "grenades": "3"
@@ -98,7 +190,13 @@
   {
     "level": "13",
     "proficiency": "5",
-    "features": "Your AD type is increased to d6",
+    "features": [
+      {
+        "text": "Your AD type is increased to d6",
+        "add-text": "",
+        "level": ""
+      }
+    ],
     "adrenaline-dice": "5",
     "ammo-powers": "3",
     "grenades": "3"
@@ -106,7 +204,13 @@
   {
     "level": "14",
     "proficiency": "5",
-    "features": "Subclass Feature",
+    "features": [
+      {
+        "text": "Subclass Feature",
+        "add-text": "",
+        "level": ""
+      }
+    ],
     "adrenaline-dice": "5",
     "ammo-powers": "3",
     "grenades": "3"
@@ -114,7 +218,13 @@
   {
     "level": "15",
     "proficiency": "5",
-    "features": "<button type=\"button\" class=\"link\"  data-toggle=\"modal\" data-target=\"#ammo-power\">Ammo Power</button>: 1",
+    "features": [
+      {
+        "text": "Ammo Power",
+        "add-text": "(1)",
+        "level": "1"
+      }
+    ],
     "adrenaline-dice": "5",
     "ammo-powers": "4",
     "grenades": "3"
@@ -122,7 +232,13 @@
   {
     "level": "16",
     "proficiency": "5",
-    "features": "<button type=\"button\" class=\"link\"  data-toggle=\"modal\" data-target=\"#ability-score-improvement\">Ability Score Improvement</button>",
+    "features": [
+      {
+        "text": "Ability Score Improvement",
+        "add-text": "",
+        "level": ""
+      }
+    ],
     "adrenaline-dice": "5",
     "ammo-powers": "4",
     "grenades": "4"
@@ -130,7 +246,13 @@
   {
     "level": "17",
     "proficiency": "6",
-    "features": "<button type=\"button\" class=\"link\"  data-toggle=\"modal\" data-target=\"#quick-reload\">Quick Reload</button>",
+    "features": [
+      {
+        "text": "Quick Reload",
+        "add-text": "",
+        "level": ""
+      }
+    ],
     "adrenaline-dice": "6",
     "ammo-powers": "4",
     "grenades": "4"
@@ -138,7 +260,13 @@
   {
     "level": "18",
     "proficiency": "6",
-    "features": "Subclass Feature",
+    "features": [
+      {
+        "text": "Subclass Feature",
+        "add-text": "",
+        "level": ""
+      }
+    ],
     "adrenaline-dice": "6",
     "ammo-powers": "4",
     "grenades": "4"
@@ -146,7 +274,13 @@
   {
     "level": "19",
     "proficiency": "6",
-    "features": "<button type=\"button\" class=\"link\"  data-toggle=\"modal\" data-target=\"#ability-score-improvement\">Ability Score Improvement</button>",
+    "features": [
+      {
+        "text": "Ability Score Improvement",
+        "add-text": "",
+        "level": ""
+      }
+    ],
     "adrenaline-dice": "6",
     "ammo-powers": "4",
     "grenades": "4"
@@ -154,7 +288,13 @@
   {
     "level": "20",
     "proficiency": "6",
-    "features": "<button type=\"button\" class=\"link\"  data-toggle=\"modal\" data-target=\"#overpower\">Overpower</button>",
+    "features": [
+      {
+        "text": "Overpower",
+        "add-text": "",
+        "level": ""
+      }
+    ],
     "adrenaline-dice": "8",
     "ammo-powers": "4",
     "grenades": "4"
