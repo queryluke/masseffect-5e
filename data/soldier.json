@@ -28,7 +28,7 @@
     "proficiency": "2",
     "features": [
       {
-        "text": "Advanced Weapon Proficiency",
+        "text": "Select your Subclass",
         "add-text": "",
         "level": ""
       }
@@ -42,7 +42,7 @@
     "proficiency": "2",
     "features": [
       {
-        "text": "Select your Subclass",
+        "text": "Advanced Weapon Proficiency",
         "add-text": "",
         "level": ""
       }
