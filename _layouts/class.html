@@ -51,7 +51,7 @@
                     <a class="nav-link" data-toggle="tab" href="#{{ class.class | slugify }}-subclasses" role="tab">Subclasses</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#{{ class.class | slugify }}-spells" role="tab">Powers & Tech</a>
+                    <a class="nav-link" data-toggle="tab" href="#{{ class.class | slugify }}-spells" role="tab">Available Features</a>
                 </li>
             </ul>
 
@@ -64,7 +64,7 @@
                     {% include classes/subclasses.html class=class.class %}
                 </div>
                 <div class="tab-pane" id="{{ class.class | slugify }}-spells" role="tabpanel">
-                    {% include ability_table.html filter=class.class %}
+                    {% include feature_table.html filter=class.class %}
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@
       {
         "text": "Ammo Power",
         "add-text": "(2)",
-        "level": "2"
+        "level": ""
       },
       {
         "text": " Adrenaline Rush",
@@ -72,12 +72,12 @@
       {
         "text": "Ammo Power",
         "add-text": "(1)",
-        "level": "1"
+        "level": ""
       },
       {
         "text": " Soldier Grenades",
         "add-text": "(2)",
-        "level": "2"
+        "level": ""
       }
     ],
     "adrenaline-dice": "3",
@@ -222,7 +222,7 @@
       {
         "text": "Ammo Power",
         "add-text": "(1)",
-        "level": "1"
+        "level": ""
       }
     ],
     "adrenaline-dice": "5",

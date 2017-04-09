@@ -12,12 +12,12 @@
       {
         "text": " Ammo Power",
         "add-text": "(1)",
-        "level": "1"
+        "level": ""
       },
       {
         "text": " Tech Power",
         "add-text": "(1)",
-        "level": "1"
+        "level": ""
       }
     ],
     "tech-points": "1"
@@ -69,7 +69,7 @@
       {
         "text": "Tech Power",
         "add-text": "(1)",
-        "level": "1"
+        "level": ""
       }
     ],
     "tech-points": "5"
@@ -95,7 +95,7 @@
       {
         "text": "Tech Power",
         "add-text": "(1)",
-        "level": "1"
+        "level": ""
       }
     ],
     "tech-points": "7"
@@ -147,7 +147,7 @@
       {
         "text": "Ammo Power",
         "add-text": "(1)",
-        "level": "1"
+        "level": ""
       }
     ],
     "tech-points": "11"
@@ -173,7 +173,7 @@
       {
         "text": "Tech Power",
         "add-text": "(1)",
-        "level": "1"
+        "level": ""
       }
     ],
     "tech-points": "13"
@@ -199,7 +199,7 @@
       {
         "text": "Tech Power",
         "add-text": "(1)",
-        "level": "1"
+        "level": ""
       }
     ],
     "tech-points": "15"

@@ -6,7 +6,7 @@
       {
         "text": "Tech Power",
         "add-text": "(2)",
-        "level": "2"
+        "level": ""
       }
     ],
     "tech-points": "2"
@@ -30,7 +30,7 @@
       {
         "text": "Tech Power",
         "add-text": "(1)",
-        "level": "1"
+        "level": ""
       }
     ],
     "tech-points": "5"
@@ -54,7 +54,7 @@
       {
         "text": "Tech Power",
         "add-text": "(1)",
-        "level": "1"
+        "level": ""
       }
     ],
     "tech-points": "8"
@@ -78,7 +78,7 @@
       {
         "text": "Tech Power",
         "add-text": "(1)",
-        "level": "1"
+        "level": ""
       }
     ],
     "tech-points": "11"
@@ -102,7 +102,7 @@
       {
         "text": "Tech Power",
         "add-text": "(1)",
-        "level": "1"
+        "level": ""
       }
     ],
     "tech-points": "14"
@@ -126,7 +126,7 @@
       {
         "text": "Tech Power",
         "add-text": "(1)",
-        "level": "1"
+        "level": ""
       }
     ],
     "tech-points": "17"
@@ -150,7 +150,7 @@
       {
         "text": "Tech Power",
         "add-text": "(1)",
-        "level": "1"
+        "level": ""
       }
     ],
     "tech-points": "20"
@@ -174,7 +174,7 @@
       {
         "text": "Tech Power",
         "add-text": "(1)",
-        "level": "1"
+        "level": ""
       }
     ],
     "tech-points": "23"
@@ -198,7 +198,7 @@
       {
         "text": "Tech Power",
         "add-text": "(1)",
-        "level": "1"
+        "level": ""
       }
     ],
     "tech-points": "26"

@@ -162,31 +162,31 @@
   {
     "subclass": "Drone Jockey",
     "class": "Engineer",
-    "role": "balance",
+    "role": "pets",
     "2": [
-      {
-        "text": "Drone",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "6": [
       {
         "text": "Drone Sidekick",
         "add-text": "",
         "level": ""
       }
     ],
+    "6": [
+      {
+        "text": "Drone Efficiency",
+        "add-text": "",
+        "level": ""
+      }
+    ],
     "10": [
       {
-        "text": "Drone Tag Team",
+        "text": "Dual Drones",
         "add-text": "",
         "level": ""
       }
     ],
     "14": [
       {
-        "text": "Efficient Drones",
+        "text": "Drone Mastery",
         "add-text": "",
         "level": ""
       }
@@ -219,9 +219,9 @@
     ],
     "10": [
       {
-        "text": "Pylon Supplies",
-        "add-text": "(1)",
-        "level": "1"
+        "text": "Healing Drone",
+        "add-text": "",
+        "level": ""
       }
     ],
     "14": [
@@ -233,9 +233,9 @@
     ],
     "18": [
       {
-        "text": "Pylon Supplies",
-        "add-text": "(2)",
-        "level": "2"
+        "text": "Healing Drone",
+        "add-text": "Select an Advancement Option",
+        "level": ""
       }
     ]
   },
@@ -552,20 +552,20 @@
       {
         "text": "Improved Barrier",
         "add-text": "(1)",
-        "level": "1"
+        "level": ""
       }
     ],
     "6": [
       {
         "text": "Indominable",
         "add-text": "(1)",
-        "level": "1"
+        "level": ""
       }
     ],
     "10": [
       {
         "text": "Biotic Powers",
-        "add-text": "(3/2)",
+        "add-text": "(2:2)",
         "level": ""
       }
     ],
@@ -573,14 +573,14 @@
       {
         "text": "Indominable",
         "add-text": "(2)",
-        "level": "2"
+        "level": ""
       }
     ],
     "18": [
       {
         "text": "Improved Barrier",
         "add-text": "(2)",
-        "level": "2"
+        "level": ""
       }
     ]
   },
@@ -592,35 +592,35 @@
       {
         "text": "Improved Barrier Capacity",
         "add-text": "(1)",
-        "level": "1"
+        "level": ""
       }
     ],
     "6": [
       {
         "text": "Battlemaster",
         "add-text": "(1)",
-        "level": "1"
+        "level": ""
       }
     ],
     "10": [
       {
         "text": "Battlemaster",
         "add-text": "(2)",
-        "level": "2"
+        "level": ""
       }
     ],
     "14": [
       {
         "text": "Improved Barrier Capacity",
         "add-text": "(2)",
-        "level": "2"
+        "level": ""
       }
     ],
     "18": [
       {
         "text": "Battlemaster",
         "add-text": "(3)",
-        "level": "3"
+        "level": ""
       }
     ]
   },
@@ -630,36 +630,41 @@
     "role": "spell dps",
     "2": [
       {
-        "text": "Biotic Powers",
-        "add-text": "(1/1)",
+        "text": "Poison Strike",
+        "add-text": "",
+        "level": ""
+      },
+      {
+        "text": " Nightshade Blades",
+        "add-text": "",
         "level": ""
       }
     ],
     "6": [
-      {
-        "text": "Biotic Powers",
-        "add-text": "(1/2)",
-        "level": ""
-      }
-    ],
-    "10": [
       {
         "text": "Teleporting Dodge",
         "add-text": "",
         "level": ""
       }
     ],
+    "10": [
+      {
+        "text": "Biotic Powers",
+        "add-text": "(1:1)",
+        "level": ""
+      }
+    ],
     "14": [
       {
         "text": "Biotic Powers",
-        "add-text": "(1/4)",
+        "add-text": "(1:2)",
         "level": ""
       }
     ],
     "18": [
       {
         "text": "Biotic Powers",
-        "add-text": "(1/4)",
+        "add-text": "(1:4)",
         "level": ""
       }
     ]

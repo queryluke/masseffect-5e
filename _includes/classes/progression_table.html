@@ -26,16 +26,16 @@
                     <td>
                     {% if col[0] == 'features' %}
                         <ul class="list-unstyled">
-                            {% for ability in col[1] %}
+                            {% for gain in col[1] %}
                             <li>
-                                {% assign check = site.data.abilities | where: "name", ability.text %}
+                                {% assign check = site.data.features | where: "name", gain.text %}
                                 {% if check[0] %}
-                                    <button type="button" class="link" data-id="{{ ability.text }}" data-key="name" data-type="abilities" data-toggle="modal" data-target="#ajaxModal">
-                                        {{ ability.text }}
+                                    <button type="button" class="link" data-id="{{ gain.text }}" data-key="name" data-type="features" data-toggle="modal" data-target="#ajaxModal">
+                                        {{ gain.text }}
                                     </button>
-                                    {{ ability.add-text }}
+                                    {{ gain.add-text }}
                                 {% else %}
-                                    {{ ability.text }}
+                                    {{ gain.text }}
                                 {% endif %}
                             </li>
                             {% endfor %}
