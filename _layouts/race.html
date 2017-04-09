@@ -36,7 +36,7 @@
                 </div>
                 <div class="col-12 col-sm-8">
                     <div class="px-3" style="border-left: solid 3px black">
-                        {% for skill in race.abilities %}
+                        {% for skill in race.features %}
                             <p style="font-size: .9rem"><strong>{{ skill.title }}</strong>{% if skill.text != '' %}: {{ skill.text }}{% endif %}</p>
                         {% endfor %}
                     </div>
