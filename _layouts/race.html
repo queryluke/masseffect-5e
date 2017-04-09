@@ -37,9 +37,12 @@
                 <div class="col-12 col-sm-8">
                     <div class="px-3" style="border-left: solid 3px black">
                         {% for skill in race.abilities %}
-                        <p style="font-size: .9rem"><strong>{{ skill.title }}</strong>{% if skill.text != '' %}: {{ skill.text }}{% endif %}</p>
+                            <p style="font-size: .9rem"><strong>{{ skill.title }}</strong>{% if skill.text != '' %}: {{ skill.text }}{% endif %}</p>
                         {% endfor %}
                     </div>
+                    {% if race.race == "Geth" %}
+                        <p><strong>Note: </strong> If you choose to play as a Geth and you interact with other races, the timeline should be set after Mass Effect 2.</p>
+                    {% endif %}
                 </div>
             </div>
         </div>

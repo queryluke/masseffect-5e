@@ -4,7 +4,12 @@
     "proficiency": "2",
     "features": [
       {
-        "text": "Tech Power",
+        "text": "Drone",
+        "add-text": "",
+        "level": ""
+      },
+      {
+        "text": " Tech Power",
         "add-text": "(2)",
         "level": ""
       }
