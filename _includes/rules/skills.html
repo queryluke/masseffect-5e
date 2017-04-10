@@ -1,0 +1,23 @@
+<h2>Skills</h2>
+
+<table class="table table-hover table-sm">
+    <thead class="thead-inverse">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for skill in site.data.skills %}
+    <tr>
+        <td>
+            {{ skill.name }}
+        </td>
+        <td>
+            {{ skill.description }}
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+

@@ -216,6 +216,10 @@ pages = [
     :type => 'vanguard',
     :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=854116423&single=true&output=csv'
   },
+  {
+    :type => 'skills',
+    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=1346893981&single=true&output=csv'
+  }
 ].each do |p|
   generate_config_file(p)
 end
