@@ -2,6 +2,7 @@
   {
     "race": "Asari",
     "similar-to": "Half-elf",
+    "alignment": null,
     "available-classes": "Any",
     "sexy-level": "8",
     "increases": "Wis +2, Cha +1",
@@ -31,6 +32,7 @@
   {
     "race": "Batarian",
     "similar-to": "Hobgoblin",
+    "alignment": null,
     "available-classes": "Any",
     "sexy-level": "1",
     "increases": "Con +2, Cha +1",
@@ -56,6 +58,7 @@
   {
     "race": "Drell",
     "similar-to": "Elf",
+    "alignment": null,
     "available-classes": "Adept, Infiltrator, Soldier, Vanguard",
     "sexy-level": "10",
     "increases": "Dex +2, Wis +1",
@@ -93,6 +96,7 @@
   {
     "race": "Human",
     "similar-to": "Humans",
+    "alignment": null,
     "available-classes": "Any",
     "sexy-level": "5",
     "increases": "Choose 2 +1",
@@ -118,6 +122,7 @@
   {
     "race": "Geth",
     "similar-to": "Warforged",
+    "alignment": null,
     "available-classes": "Egineer, Infiltrator, Soldier",
     "sexy-level": "6",
     "increases": "Int +2, Con +1",
@@ -151,6 +156,7 @@
   {
     "race": "Krogan",
     "similar-to": "Orc",
+    "alignment": null,
     "available-classes": "Adept, Engineer, Sentinel, Soldier, Vanguard",
     "sexy-level": "7",
     "increases": "Str +2, Con +1",
@@ -184,6 +190,7 @@
   {
     "race": "Quarian",
     "similar-to": "??",
+    "alignment": null,
     "available-classes": "Engineer, Infiltrator, Soldier",
     "sexy-level": "8",
     "increases": "Cha +2, Int +1",
@@ -213,6 +220,7 @@
   {
     "race": "Salarian",
     "similar-to": "Gnomes",
+    "alignment": null,
     "available-classes": "Engineer, Infiltrator, Soldier",
     "sexy-level": "6",
     "increases": "Int +2, Dex +1",
@@ -242,6 +250,7 @@
   {
     "race": "Turian",
     "similar-to": "Dwarves",
+    "alignment": null,
     "available-classes": "Engineer, Infiltrator, Sentinel, Soldier, Vanguard",
     "sexy-level": "9",
     "increases": "Con +2, Str +1",
@@ -271,6 +280,7 @@
   {
     "race": "Volus",
     "similar-to": "Firbolg",
+    "alignment": null,
     "available-classes": "Adept, Engineer, Sentinel, Vanguard",
     "sexy-level": "3",
     "increases": "Wis +2, Str +1",
@@ -300,6 +310,7 @@
   {
     "race": "Vorcha",
     "similar-to": "Goblins",
+    "alignment": null,
     "available-classes": "Engineer, Infitrator, Soldier",
     "sexy-level": "0",
     "increases": "Dex +2, Con +1",
@@ -329,6 +340,7 @@
   {
     "race": "Yahg",
     "similar-to": "Bugbear",
+    "alignment": null,
     "available-classes": "Sentinel, Soldier, Vanguard",
     "sexy-level": "1",
     "increases": "Str +2, Dex +1",
