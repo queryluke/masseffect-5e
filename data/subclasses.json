@@ -369,19 +369,39 @@
     "class": "Sentinel",
     "role": "melee dps",
     "2": [
-
+      {
+        "text": "Imbue Omni-tool",
+        "add-text": "",
+        "level": ""
+      }
     ],
     "6": [
-
+      {
+        "text": "Improved Melee Damage",
+        "add-text": "",
+        "level": ""
+      }
     ],
     "10": [
-
+      {
+        "text": "Melee Casting",
+        "add-text": "",
+        "level": ""
+      }
     ],
     "14": [
-
+      {
+        "text": "Improved Melee Damage",
+        "add-text": "(2)",
+        "level": ""
+      }
     ],
     "18": [
-
+      {
+        "text": "Tech Armor Overload",
+        "add-text": "",
+        "level": ""
+      }
     ]
   },
   {
@@ -389,19 +409,39 @@
     "class": "Sentinel",
     "role": "tank",
     "2": [
-
+      {
+        "text": "Improved Tech Armor",
+        "add-text": "(1)",
+        "level": ""
+      }
     ],
     "6": [
-
+      {
+        "text": "Improved Tech Armor",
+        "add-text": "(2)",
+        "level": ""
+      }
     ],
     "10": [
-
+      {
+        "text": "Improved Tech Armor",
+        "add-text": "(3)",
+        "level": ""
+      }
     ],
     "14": [
-
+      {
+        "text": "Improved Tech Armor",
+        "add-text": "(4)",
+        "level": ""
+      }
     ],
     "18": [
-
+      {
+        "text": "Improved Tech Armor",
+        "add-text": "(5)",
+        "level": ""
+      }
     ]
   },
   {
@@ -409,19 +449,39 @@
     "class": "Sentinel",
     "role": "tank/heal",
     "2": [
-
+      {
+        "text": "Tech Aura",
+        "add-text": "(1)",
+        "level": ""
+      }
     ],
     "6": [
-
+      {
+        "text": "Tech Aura",
+        "add-text": "(2)",
+        "level": ""
+      }
     ],
     "10": [
-
+      {
+        "text": "Tech Aura",
+        "add-text": "(3)",
+        "level": ""
+      }
     ],
     "14": [
-
+      {
+        "text": "Tech Aura",
+        "add-text": "(4)",
+        "level": ""
+      }
     ],
     "18": [
-
+      {
+        "text": "Tech Aura",
+        "add-text": "(5)",
+        "level": ""
+      }
     ]
   },
   {

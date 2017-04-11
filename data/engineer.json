@@ -26,7 +26,7 @@
         "level": ""
       }
     ],
-    "tech-points": "3"
+    "tech-points": "4"
   },
   {
     "level": "3",
@@ -38,7 +38,7 @@
         "level": ""
       }
     ],
-    "tech-points": "5"
+    "tech-points": "6"
   },
   {
     "level": "4",
@@ -50,7 +50,7 @@
         "level": ""
       }
     ],
-    "tech-points": "6"
+    "tech-points": "8"
   },
   {
     "level": "5",
@@ -62,7 +62,7 @@
         "level": ""
       }
     ],
-    "tech-points": "8"
+    "tech-points": "10"
   },
   {
     "level": "6",
@@ -74,7 +74,7 @@
         "level": ""
       }
     ],
-    "tech-points": "9"
+    "tech-points": "12"
   },
   {
     "level": "7",
@@ -86,7 +86,7 @@
         "level": ""
       }
     ],
-    "tech-points": "11"
+    "tech-points": "14"
   },
   {
     "level": "8",
@@ -98,7 +98,7 @@
         "level": ""
       }
     ],
-    "tech-points": "12"
+    "tech-points": "16"
   },
   {
     "level": "9",
@@ -110,7 +110,7 @@
         "level": ""
       }
     ],
-    "tech-points": "14"
+    "tech-points": "18"
   },
   {
     "level": "10",
@@ -122,7 +122,7 @@
         "level": ""
       }
     ],
-    "tech-points": "15"
+    "tech-points": "20"
   },
   {
     "level": "11",
@@ -134,7 +134,7 @@
         "level": ""
       }
     ],
-    "tech-points": "17"
+    "tech-points": "22"
   },
   {
     "level": "12",
@@ -146,7 +146,7 @@
         "level": ""
       }
     ],
-    "tech-points": "18"
+    "tech-points": "25"
   },
   {
     "level": "13",
@@ -158,7 +158,7 @@
         "level": ""
       }
     ],
-    "tech-points": "20"
+    "tech-points": "28"
   },
   {
     "level": "14",
@@ -170,7 +170,7 @@
         "level": ""
       }
     ],
-    "tech-points": "21"
+    "tech-points": "31"
   },
   {
     "level": "15",
@@ -182,7 +182,7 @@
         "level": ""
       }
     ],
-    "tech-points": "23"
+    "tech-points": "34"
   },
   {
     "level": "16",
@@ -194,7 +194,7 @@
         "level": ""
       }
     ],
-    "tech-points": "24"
+    "tech-points": "37"
   },
   {
     "level": "17",
@@ -206,7 +206,7 @@
         "level": ""
       }
     ],
-    "tech-points": "26"
+    "tech-points": "40"
   },
   {
     "level": "18",
@@ -218,7 +218,7 @@
         "level": ""
       }
     ],
-    "tech-points": "27"
+    "tech-points": "43"
   },
   {
     "level": "19",
@@ -230,7 +230,7 @@
         "level": ""
       }
     ],
-    "tech-points": "29"
+    "tech-points": "46"
   },
   {
     "level": "20",
@@ -242,6 +242,6 @@
         "level": ""
       }
     ],
-    "tech-points": "30"
+    "tech-points": "50"
   }
 ]
