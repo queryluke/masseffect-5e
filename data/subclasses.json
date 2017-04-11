@@ -34,7 +34,7 @@
     "18": [
       {
         "text": "Dominate",
-        "add-text": "Select an Advancement Option",
+        "add-text": ", select an Advancement option",
         "level": ""
       }
     ]
@@ -67,14 +67,14 @@
     "14": [
       {
         "text": "Healing Surge",
-        "add-text": "Select an Advancement Option",
+        "add-text": ", select an Advancement option",
         "level": ""
       }
     ],
     "18": [
       {
         "text": "Biotic Sphere",
-        "add-text": "Select an Advancement Option",
+        "add-text": ", select an Advancement option",
         "level": ""
       }
     ]
@@ -107,14 +107,14 @@
     "14": [
       {
         "text": "Dark Channel",
-        "add-text": "Select an Advancement Option",
+        "add-text": ", select an Advancement option",
         "level": ""
       }
     ],
     "18": [
       {
         "text": "Dark Sphere",
-        "add-text": "Select an Advancement Option",
+        "add-text": ", select an Advancement option",
         "level": ""
       }
     ]
@@ -234,7 +234,7 @@
     "18": [
       {
         "text": "Healing Drone",
-        "add-text": "Select an Advancement Option",
+        "add-text": ", select an Advancement option",
         "level": ""
       }
     ]
@@ -274,7 +274,7 @@
     "18": [
       {
         "text": "Shadow Strike",
-        "add-text": "Select an Advancement Option",
+        "add-text": ", select an Advancement option",
         "level": ""
       }
     ]
@@ -319,7 +319,7 @@
     "18": [
       {
         "text": "Electric Slash",
-        "add-text": "Select an Advancement Option",
+        "add-text": ", select an Advancement option",
         "level": ""
       }
     ]
@@ -359,7 +359,7 @@
     "18": [
       {
         "text": "Repair Matrix",
-        "add-text": "Select an Advancement Option",
+        "add-text": ", select an Advancement option",
         "level": ""
       }
     ]
@@ -519,7 +519,7 @@
     "18": [
       {
         "text": "Havok Strike",
-        "add-text": "Select an Advancement Option",
+        "add-text": ", select an Advancement option",
         "level": ""
       }
     ]

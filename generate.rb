@@ -20,8 +20,8 @@ def set_features(string)
       f.match(/\(.*?\)/) do |m|
         code = m.to_s
         ability = f.sub(/#{Regexp.escape(code)}/,'')
-        feature['text'] = ability
-        feature['add-text'] = code == '(adv)' ? 'Select an Advancement Option' : code
+        feature['text'] = ability.strip
+        feature['add-text'] = code == '(adv)' ? ', select an Advancement option' : code.strip
 
         #if code.match(/\([\d]\)/)
         #  feature['level'] = code.gsub(/(\(|\))/,'')

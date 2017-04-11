@@ -1,9 +1,13 @@
 {% assign check = site.data.features | where: "name", include.feature.text %}
 {% if check[0] %}
-    <button type="button" class="link" data-id="{{ include.feature.text }}" data-key="name" data-type="features" data-toggle="modal" data-target="#ajaxModal">
-        {{ include.feature.text }}
-    </button>
-    {{ include.feature.add-text }}
+    <button
+            type="button"
+            class="link"
+            data-name="{{ include.feature.text }}"
+            data-key="name"
+            data-type="features"
+            data-toggle="modal"
+            data-target="#ajaxModal">{{ include.feature.text }}</button>{{ include.feature.add-text }}
 {% else %}
-    {{ include.feature.text }}
+    {{ include.feature.text }}{{ include.feature.add-text }}
 {% endif %}

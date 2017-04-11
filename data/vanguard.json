@@ -9,7 +9,7 @@
         "level": ""
       },
       {
-        "text": " Biotic Powers",
+        "text": "Biotic Powers",
         "add-text": "(2:0)",
         "level": ""
       },
@@ -36,7 +36,7 @@
         "level": ""
       },
       {
-        "text": " Biotic Powers",
+        "text": "Biotic Powers",
         "add-text": "(1:1)",
         "level": ""
       }
@@ -92,7 +92,7 @@
         "level": ""
       },
       {
-        "text": " Zero-Sum",
+        "text": "Zero-Sum",
         "add-text": "(1)",
         "level": ""
       }
@@ -165,7 +165,7 @@
         "level": ""
       },
       {
-        "text": " Zero-Sum",
+        "text": "Zero-Sum",
         "add-text": "(2)",
         "level": ""
       }
@@ -200,7 +200,7 @@
     "features": [
       {
         "text": "Fighting Style",
-        "add-text": "Select an Advancement Option",
+        "add-text": ", select an Advancement option",
         "level": ""
       }
     ],
@@ -238,7 +238,7 @@
         "level": ""
       },
       {
-        "text": " Zero-Sum",
+        "text": "Zero-Sum",
         "add-text": "(3)",
         "level": ""
       }
@@ -362,7 +362,7 @@
         "level": ""
       },
       {
-        "text": " Zero-Sum",
+        "text": "Zero-Sum",
         "add-text": "(4)",
         "level": ""
       }

@@ -44,7 +44,7 @@
         function renderTable(string){
             string = string.replace(/({!table}|{\/table})/gm,'');
             var rows = string.split('--');
-            var header = rows.slice(0,1)[0].split('-');
+            var header = rows.slice(0,1)[0].split('|');
 
             rows = rows.slice(1);
 
@@ -56,7 +56,7 @@
             table += '</tr></thead><tbody>';
 
             rows.forEach(function(r){
-                var tds = r.split('-');
+                var tds = r.split('|');
                 table += '<tr>';
                 tds.forEach(function(t){
                     table += '<td>' + t + '</td>';
@@ -86,9 +86,9 @@
                 string = string[0] + list;
             }
 
-            string = string.replace('--','<br>');
+            string = string.split('--');
 
-            return string;
+            return '<p>' + string.join('</p><p>') + '</p>';
         }
 
         var renderOptions = {
@@ -119,11 +119,11 @@
 
                     if(object['adv-option-1']){
                         advancements += '<h4>Advancements</h4>';
-                        av1 = object['adv-option-1'].split('-');
+                        av1 = object['adv-option-1'].split(':');
                         advancements += '<p><strong>' + av1[0].trim() + '</strong>: ' + av1[1].trim() + '</p>';
                     }
                     if(object['adv-option-2']) {
-                        av2 = object['adv-option-2'].split('-');
+                        av2 = object['adv-option-2'].split(':');
                         advancements += '<p><strong>' + av2[0].trim() + '</strong>: ' + av2[1].trim() + '</p>';
                     }
                 }
@@ -145,17 +145,20 @@
             }
         }
 
-
         $('#ajaxModal').on('show.bs.modal', function (e) {
             var dataFile =  $(e.relatedTarget).data('type');
-            var id = $(e.relatedTarget).data('id');
+            var name = $(e.relatedTarget).data('name');
+            console.log(name);
             var key = $(e.relatedTarget).data('key');
-            $(this).find('.modal-title').html(id);
+            $(this).find('.modal-title').html(name);
             $.getJSON( "{{ site.baseurl }}data/" + dataFile + ".json" , function( result ){
-                $.each(result, function(k,v){
-                    if(v[key] == id){
+                console.log(result);
+                result.forEach(function(v,k){
+                    if(v[key] === name){
                         html = renderOptions[dataFile](v);
                         $('#ajaxModal').find('.modal-body').html(html);
+                    } else {
+                        console.log(v[key] + '!==' + name);
                     }
                 });
             });
