@@ -148,7 +148,6 @@
         $('#ajaxModal').on('show.bs.modal', function (e) {
             var dataFile =  $(e.relatedTarget).data('type');
             var name = $(e.relatedTarget).data('name');
-            console.log(name);
             var key = $(e.relatedTarget).data('key');
             $(this).find('.modal-title').html(name);
             $.getJSON( "{{ site.baseurl }}data/" + dataFile + ".json" , function( result ){
@@ -157,8 +156,6 @@
                     if(v[key] === name){
                         html = renderOptions[dataFile](v);
                         $('#ajaxModal').find('.modal-body').html(html);
-                    } else {
-                        console.log(v[key] + '!==' + name);
                     }
                 });
             });

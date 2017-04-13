@@ -20,7 +20,7 @@
                     {% for head in page.headers %}
                     <td>
                         {% if head == page.headers[0] and page.data_file != nil %}
-                            <button type="button" class="link" data-id="{{ d[page.id_attribute] }}" data-type="{{ page.data_file }}" data-key="{{ page.id_attribute }}" data-toggle="modal" data-target="#ajaxModal">
+                            <button type="button" class="link" data-name="{{ d[page.id_attribute] }}" data-type="{{ page.data_file }}" data-key="{{ page.id_attribute }}" data-toggle="modal" data-target="#ajaxModal">
                                 {{ d[head] }}
                             </button>
                         {% else %}
