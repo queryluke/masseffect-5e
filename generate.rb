@@ -223,6 +223,10 @@ pages = [
   {
     :type => 'skills',
     :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=1346893981&single=true&output=csv'
+  },
+  {
+    :type => 'conditions',
+    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=1293441189&single=true&output=csv'
   }
 ].each do |p|
   generate_config_file(p)
