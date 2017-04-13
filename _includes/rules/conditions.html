@@ -1,4 +1,4 @@
-<h2>Skills</h2>
+<h2>Weapons</h2>
 
 <table class="table table-sm">
     <thead class="thead-inverse">
@@ -8,13 +8,13 @@
         </tr>
     </thead>
     <tbody>
-    {% for skill in site.data.skills %}
+    {% for condition in site.data.conditions %}
     <tr>
         <td>
-            {{ skill.name }}
+            {{ condition.name }}
         </td>
         <td>
-            {{ skill.description }}
+            {{ condition.description }}
         </td>
     </tr>
     {% endfor %}
