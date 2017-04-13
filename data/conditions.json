@@ -17,7 +17,7 @@
   },
   {
     "name": "Frozen",
-    "description": "Incapacitated. Attack roles against the creature have advantage. Automatically fails Strength and Dexterity saving throws. Unless otherwise stated, lasts 1 turn. Immune to lightening, poison, and necrotic damage."
+    "description": "Incapacitated. Attack rolls against the creature have advantage. Automatically fails Strength and Dexterity saving throws. Unless otherwise stated, lasts 1 turn. Immune to lightning, poison, and necrotic damage."
   },
   {
     "name": "Grappled",
@@ -37,11 +37,11 @@
   },
   {
     "name": "Paralyzed",
-    "description": "Incapacitated. Attack roles against the creature have advantage. Automatically fails Strength and Dexterity saving throws. Any attack that hits made within melee range (2m) is a critical hit."
+    "description": "Incapacitated. Attack rolls against the creature have advantage. Automatically fails Strength and Dexterity saving throws. Any attack that hits made within melee range (2m) is a critical hit."
   },
   {
     "name": "Petrified",
-    "description": "Incapacitated. Attack roles against the creature have advantage. Automatically fails Strength and Dexterity saving throws. Resistance to all damage. Immune to poison and disease."
+    "description": "Incapacitated. Attack rolls against the creature have advantage. Automatically fails Strength and Dexterity saving throws. Resistance to all damage. Immune to poison and disease."
   },
   {
     "name": "Poisoned",

@@ -2709,7 +2709,7 @@
     "range": "10m",
     "dmg-type": "puncture",
     "mechanic-type": "-",
-    "mechanic": "Choose a large-size or smaller creature or object, other than yourself, that you can see within range. Yank the creature into the air where it dangles helplessly, becoming Lifted. While you maintain Pull, you can use a reaction or bonus action to move or throw the target. The speed of this movement is determined by the targets size: Small = 10m, Medium = 5m, Large = 2m.",
+    "mechanic": "Spend 5 TP to teleport to a target within 10m and make a melee attack. You have advantage on this attack. If successful, deal your melee damage plus your sneak attack damage to the target. At the end of the attack, activate Tactical Cloak and teleport to another location up 10m away. The teleportation can be used to free you from movement impairing effects such as grapple, restrained, etc.",
     "adv-option-1": "Rapid Strike : You may make 2 melee attacks, both with advantage, but only the first has your sneak attack damage applied.",
     "adv-option-2": "Stunning Strike : Targets hit with Shadow Strike are stunned for 1 turn",
     "max-tp": null,
