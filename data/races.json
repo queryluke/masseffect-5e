@@ -8,7 +8,7 @@
     "increases": "Wis +2, Cha +1",
     "size": "Medium",
     "speed": "10m",
-    "skills": "Skill Versatility: You gain proficiency in two skills of your choice. -- Mind Meld: You can transfer and receive thoughts to another creature. You must concentrate and if the creature is not willing, the thoughts become jumbled and disjointed. Unintelligent creatures have impredictable results. -- Cantrip: You know one cantrip of your choice from the adept or vanguard spell list. Wisdom is your spellcasting ability for it.",
+    "skills": "Skill Versatility: You gain proficiency in two skills of your choice. -- Mind Meld: You can transfer and receive thoughts to another creature. You must concentrate and if the creature is not willing, the thoughts become jumbled and disjointed. Unintelligent creatures have unpredictable results. -- Cantrip: You know one cantrip of your choice from the adept or vanguard spell list. Wisdom is your spellcasting ability for it.",
     "armor": "Light, Medium",
     "body": "http://vignette2.wikia.nocookie.net/masseffect/images/d/dc/Asari_Justicar_MP.png/revision/latest/scale-to-width-down/500",
     "male": "http://media.moddb.com/images/groups/1/10/9550/As3.jpg",
@@ -21,7 +21,7 @@
       },
       {
         "title": "Mind Meld",
-        "text": "You can transfer and receive thoughts to another creature. You must concentrate and if the creature is not willing, the thoughts become jumbled and disjointed. Unintelligent creatures have impredictable results."
+        "text": "You can transfer and receive thoughts to another creature. You must concentrate and if the creature is not willing, the thoughts become jumbled and disjointed. Unintelligent creatures have unpredictable results."
       },
       {
         "title": "Cantrip",
@@ -64,7 +64,7 @@
     "increases": "Dex +2, Wis +1",
     "size": "Medium",
     "speed": "15m",
-    "skills": "Keen Senses: You have proficiency in the Perception skill. -- Darkvision: You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray. -- Stealthy: You have advantage on stealth roles as long as you're wearing light armor. -- Hallucinogen: You skin is infused with a mild venom. When ingested or injected it can cause mild halucinations. -- Feat",
+    "skills": "Keen Senses: You have proficiency in the Perception skill. -- Darkvision: You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray. -- Stealthy: You have advantage on stealth roles as long as you're wearing light armor. -- Hallucinogen: You skin is infused with a mild venom. When ingested or injected it can cause mild hallucinations. -- Feat",
     "armor": "Light",
     "body": "http://vignette2.wikia.nocookie.net/masseffect/images/a/ad/Drell_MP.png/revision/latest/scale-to-width-down/500",
     "male": "https://img.ifcdn.com/images/761988b5b4b3d3c97b9ba9d1fa087d47b269a2f7aa185a7b0c47db62415efe18_1.jpg",
@@ -85,7 +85,7 @@
       },
       {
         "title": "Hallucinogen",
-        "text": "You skin is infused with a mild venom. When ingested or injected it can cause mild halucinations."
+        "text": "You skin is infused with a mild venom. When ingested or injected it can cause mild hallucinations."
       },
       {
         "title": "Feat",
@@ -123,7 +123,7 @@
     "race": "Geth",
     "similar-to": "Warforged",
     "alignment": null,
-    "available-classes": "Egineer, Infiltrator, Soldier",
+    "available-classes": "Engineer, Infiltrator, Soldier",
     "sexy-level": "6",
     "increases": "Int +2, Con +1",
     "size": "Medium",
@@ -311,7 +311,7 @@
     "race": "Vorcha",
     "similar-to": "Goblins",
     "alignment": null,
-    "available-classes": "Engineer, Infitrator, Soldier",
+    "available-classes": "Engineer, Infiltrator, Soldier",
     "sexy-level": "0",
     "increases": "Dex +2, Con +1",
     "size": "Medium",

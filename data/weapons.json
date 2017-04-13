@@ -38,7 +38,7 @@
     "rof": "1",
     "heat": "4",
     "rare": "x",
-    "notes": "Charged Weapon. You action can be to charge this weapon. Each round of charge uses 1 heat. When the charge is release, make the ranged spell attack. On a success the RoF is equal to all charages that were stored.",
+    "notes": "Charged Weapon. You action can be to charge this weapon. Each round of charge uses 1 heat. When the charge is release, make the ranged spell attack. On a success the RoF is equal to all charges that were stored.",
     "image": "http://vignette3.wikia.nocookie.net/masseffect/images/5/56/ME3_Chakram_Assault_Rifle.png/revision/latest?cb=20120317175958"
   },
   {
@@ -80,7 +80,7 @@
     "rof": "3",
     "heat": "-",
     "rare": null,
-    "notes": "Somewhat of a relic, the M-7 does not use thermal clips. Instead use a d4 to track the \"heat\". Every round you fire the weapon, spin down the die 1 face. If you don't fire the weapon, spin the die up one face. Thsi represents the weapon internally cooling off. If you fire the weapon 4 times in a row, it jams and cannot be used for the rest of this combat.",
+    "notes": "Somewhat of a relic, the M-7 does not use thermal clips. Instead use a d4 to track the \"heat\". Every round you fire the weapon, spin down the die 1 face. If you don't fire the weapon, spin the die up one face. This represents the weapon internally cooling off. If you fire the weapon 4 times in a row, it jams and cannot be used for the rest of this combat.",
     "image": "http://vignette4.wikia.nocookie.net/masseffect/images/c/c6/ME3_Lancer_AS.png/revision/latest?cb=20130227094559"
   },
   {
@@ -262,7 +262,7 @@
     "rof": "1",
     "heat": "4",
     "rare": null,
-    "notes": "Charged Weapon. You action can be to charge this weapon. Each round of charge uses 1 heat. When the charge is release, make the ranged spell attack. On a success the RoF is equal to all charages that were stored.",
+    "notes": "Charged Weapon. You action can be to charge this weapon. Each round of charge uses 1 heat. When the charge is release, make the ranged spell attack. On a success the RoF is equal to all charges that were stored.",
     "image": "http://vignette3.wikia.nocookie.net/masseffect/images/b/b9/ME3_Acolyte_Pistol.png/revision/latest?cb=20120714073045"
   },
   {
@@ -276,7 +276,7 @@
     "rof": "2",
     "heat": "4",
     "rare": null,
-    "notes": "Charged Weapon. You action can be to charge this weapon. Each round of charge uses 1 heat. When the charge is release, make the ranged spell attack. On a success the RoF is equal to all charages that were stored.",
+    "notes": "Charged Weapon. You action can be to charge this weapon. Each round of charge uses 1 heat. When the charge is release, make the ranged spell attack. On a success the RoF is equal to all charges that were stored.",
     "image": "http://vignette1.wikia.nocookie.net/masseffect/images/e/e8/ME3_Arc_Heavy_Pistol.png/revision/latest?cb=20120317185747"
   },
   {
@@ -570,7 +570,7 @@
     "rof": "1",
     "heat": "4",
     "rare": null,
-    "notes": "Charged Weapon. You action can be to charge this weapon. Each round of charge uses 1 heat. When the charge is release, make the ranged spell attack. On a success the RoF is equal to all charages that were stored.",
+    "notes": "Charged Weapon. You action can be to charge this weapon. Each round of charge uses 1 heat. When the charge is release, make the ranged spell attack. On a success the RoF is equal to all charges that were stored.",
     "image": "http://vignette4.wikia.nocookie.net/masseffect/images/d/db/ME3_Kishock_Harpoon_Gun.png/revision/latest?cb=20120411201323"
   },
   {
@@ -724,7 +724,7 @@
     "rof": "1",
     "heat": "4",
     "rare": null,
-    "notes": "Charged Weapon. You action can be to charge this weapon. Each round of charge uses 1 heat. When the charge is release, make the ranged spell attack. On a success the RoF is equal to all charages that were stored.",
+    "notes": "Charged Weapon. You action can be to charge this weapon. Each round of charge uses 1 heat. When the charge is release, make the ranged spell attack. On a success the RoF is equal to all charges that were stored.",
     "image": "http://vignette4.wikia.nocookie.net/masseffect/images/b/b9/ME3_Geth_Plasma_Shotgun.png/revision/latest?cb=20120317201115"
   },
   {
@@ -864,7 +864,7 @@
     "rof": "1",
     "heat": "4",
     "rare": null,
-    "notes": "Charged Weapon. You action can be to charge this weapon. Each round of charge uses 1 heat. When the charge is release, make the ranged spell attack. On a success the RoF is equal to all charages that were stored.",
+    "notes": "Charged Weapon. You action can be to charge this weapon. Each round of charge uses 1 heat. When the charge is release, make the ranged spell attack. On a success the RoF is equal to all charges that were stored.",
     "image": "http://vignette1.wikia.nocookie.net/masseffect/images/7/76/ME3_Venom_Shotgun.png/revision/latest?cb=20121029075317"
   }
 ]

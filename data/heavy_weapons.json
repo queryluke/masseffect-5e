@@ -3,35 +3,35 @@
     "name": "Cobra Missile Launcher",
     "weight": "14",
     "charge": "4",
-    "effect": "Choose a creature within 60m that is not behind cover. Spend a turn Targeting the creature. The creature can use it's action to make a Dexterity saving throw. On a failed save, they continue being targeted. On a successful save, you may switch to another creature not behind cover, or end the Targeting condition. At the start of your turn, if your have a creature targeted, you launch a missle that deals 3d12 damage. Untargeted creatures within 5m of the blast must succeed on a Dexterity saving throw or take 1d12 damage. ",
+    "effect": "Choose a creature within 60m that is not behind cover. Spend a turn Targeting the creature. The creature can use it's action to make a Dexterity saving throw. On a failed save, they continue being targeted. On a successful save, you may switch to another creature not behind cover, or end the Targeting condition. At the start of your turn, if your have a creature targeted, you launch a missile that deals 3d12 damage. Untargeted creatures within 5m of the blast must succeed on a Dexterity saving throw or take 1d12 damage. ",
     "image": "http://vignette2.wikia.nocookie.net/masseffect/images/f/f9/ME3_Hydra_Heavy_Weapon.png/revision/latest?cb=20120317194543"
   },
   {
     "name": "Geth Spitfire",
     "weight": "8",
     "charge": "3",
-    "effect": "Release a torrent of bullets in a sweeping arc in front of you until the start of your next turn. You are considered to be Targeting until the start of your next turn. Creatures that enter or move within a 20m cone infront of you make a Dexterity saving throw. On a failed save, a creature takes 2d6 shock damage. On a success, a creature takes half damage. Each turn uses a charge.",
+    "effect": "Release a torrent of bullets in a sweeping arc in front of you until the start of your next turn. You are considered to be Targeting until the start of your next turn. Creatures that enter or move within a 20m cone in front of you make a Dexterity saving throw. On a failed save, a creature takes 2d6 shock damage. On a success, a creature takes half damage. Each turn uses a charge.",
     "image": "http://vignette3.wikia.nocookie.net/masseffect/images/b/b6/ME3_Geth_Antivirus_Heavy_Weapon.png/revision/latest?cb=20120317195710"
   },
   {
     "name": "M-451 Firestorm",
     "weight": "8",
     "charge": "10",
-    "effect": "Sweep fire across the battlefield. Creatures withing a 5m cone must succeed on a Dexterity saving throw or take 1d8 damage. You can choose to use 2 weapon charges at once to deal 2d8 damage instead.",
+    "effect": "Sweep fire across the battlefield. Creatures within a 5m cone must succeed on a Dexterity saving throw or take 1d8 damage. You can choose to use 2 weapon charges at once to deal 2d8 damage instead.",
     "image": "http://vignette2.wikia.nocookie.net/masseffect/images/5/5a/ME3_Firestorm_Heavy_Weapon.png/revision/latest?cb=20120317194412"
   },
   {
     "name": "M-560 Hydra",
     "weight": "15",
     "charge": "1",
-    "effect": "Choose up to 3 creatures within 60m that you can see and being Targeting those 3 creatures. If you successfully held your targeting for one turn, at the start of your next turn you fire a unique missile at each target. When the missle hits, it deploys 3 shaped charges. The first disrupts any barriers or shields, any barriers or shields the creature has are completely removed. The second charge cripples armor; the creature has their AC reduced by 3 for the remainer of combat. The final charge deal 4d12 damage. The creature can attempt a Constitution saving throw to cut the damage in half.",
+    "effect": "Choose up to 3 creatures within 60m that you can see and being Targeting those 3 creatures. If you successfully held your targeting for one turn, at the start of your next turn you fire a unique missile at each target. When the missile hits, it deploys 3 shaped charges. The first disrupts any barriers or shields, any barriers or shields the creature has are completely removed. The second charge cripples armor; the creature has their AC reduced by 3 for the remainder of combat. The final charge deal 4d12 damage. The creature can attempt a Constitution saving throw to cut the damage in half.",
     "image": "http://vignette2.wikia.nocookie.net/masseffect/images/f/f9/ME3_Hydra_Heavy_Weapon.png/revision/latest?cb=20120317194543"
   },
   {
     "name": "M-597 Landon",
     "weight": "11",
     "charge": "10",
-    "effect": "Spend a round Targeting as you sweep the battlefield for all enemies. At the start of your next turn, choose up to 10 enemy creatures and launch a miniature missle at them, dealing 1d8 damage. You cannot target a creature twice. Each missle used consumes a weapon charge.",
+    "effect": "Spend a round Targeting as you sweep the battlefield for all enemies. At the start of your next turn, choose up to 10 enemy creatures and launch a miniature missile at them, dealing 1d8 damage. You cannot target a creature twice. Each missile used consumes a weapon charge.",
     "image": "http://vignette4.wikia.nocookie.net/masseffect/images/6/61/ME3_Ladon_Codex_Rip.png/revision/latest?cb=20140106114047"
   },
   {
