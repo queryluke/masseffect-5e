@@ -3459,7 +3459,7 @@
     "range": null,
     "dmg-type": null,
     "mechanic-type": null,
-    "mechanic": "Transform your Tech Armor into a beneficial aura for nearby allies.\n{!level}When you activate tech armor, friendly creatures within 3m gain the benefit for 1 turn.\n-- While Tech Armor is active, friendly creatures within 2m gain 1d6 HP on your turn.\n-- When you deactivate tech armor, friendly creatures within 3m gain resistance to the next attack.\n-- While Tech Armor is active, friendly creatures within 2m gain 1d10 HP on your turn.\n-- Increase the range of all Tech Aura benefits to 5m.",
+    "mechanic": "Transform your Tech Armor into a beneficial aura for nearby allies.\n{!level}When you activate tech armor, friendly creatures within 3m gain the benefit for 1 turn.\n-- While Tech Armor is active, friendly creatures within 3m gain 1d6 HP on your turn.\n-- When you deactivate tech armor, friendly creatures within 3m gain resistance to the next attack.\n-- While Tech Armor is active, friendly creatures within 3m gain 1d10 HP on your turn.\n-- Increase the range of all Tech Aura benefits to 5m.",
     "adv-option-1": null,
     "adv-option-2": null,
     "max-tp": null,
