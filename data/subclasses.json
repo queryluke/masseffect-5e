@@ -410,36 +410,36 @@
     "role": "melee tank",
     "2": [
       {
-        "text": "Improved Tech Armor",
-        "add-text": "(1)",
-        "level": ""
-      }
-    ],
-    "6": [
-      {
         "text": "Imbue Omni-tool",
         "add-text": "",
         "level": ""
       }
     ],
+    "6": [
+      {
+        "text": "Improved Tech Armor",
+        "add-text": "(1)",
+        "level": ""
+      }
+    ],
     "10": [
+      {
+        "text": "Protective Tech Armor",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "14": [
       {
         "text": "Improved Tech Armor",
         "add-text": "(2)",
         "level": ""
       }
     ],
-    "14": [
+    "18": [
       {
         "text": "Tech Armor Overload",
         "add-text": "",
-        "level": ""
-      }
-    ],
-    "18": [
-      {
-        "text": "Improved Tech Armor",
-        "add-text": "(3)",
         "level": ""
       }
     ]
