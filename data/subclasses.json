@@ -365,9 +365,49 @@
     ]
   },
   {
-    "subclass": "Juggernaut",
+    "subclass": "Battlemaster",
     "class": "Sentinel",
-    "role": "melee dps",
+    "role": "control",
+    "2": [
+      {
+        "text": "Reactive Tech Armor",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "6": [
+      {
+        "text": "Battlemaster",
+        "add-text": "(1)",
+        "level": ""
+      }
+    ],
+    "10": [
+      {
+        "text": "Battlemaster",
+        "add-text": "(2)",
+        "level": ""
+      }
+    ],
+    "14": [
+      {
+        "text": "Battlemaster",
+        "add-text": "(3)",
+        "level": ""
+      }
+    ],
+    "18": [
+      {
+        "text": "Adaptive Tech Armor",
+        "add-text": "",
+        "level": ""
+      }
+    ]
+  },
+  {
+    "subclass": "Bastion",
+    "class": "Sentinel",
+    "role": "melee tank",
     "2": [
       {
         "text": "Imbue Omni-tool",
@@ -377,21 +417,21 @@
     ],
     "6": [
       {
-        "text": "Improved Melee Damage",
-        "add-text": "",
+        "text": "Improved Tech Armor",
+        "add-text": "(1)",
         "level": ""
       }
     ],
     "10": [
       {
-        "text": "Melee Casting",
+        "text": "Protective Tech Armor",
         "add-text": "",
         "level": ""
       }
     ],
     "14": [
       {
-        "text": "Improved Melee Damage",
+        "text": "Improved Tech Armor",
         "add-text": "(2)",
         "level": ""
       }
@@ -400,46 +440,6 @@
       {
         "text": "Tech Armor Overload",
         "add-text": "",
-        "level": ""
-      }
-    ]
-  },
-  {
-    "subclass": "Bastion",
-    "class": "Sentinel",
-    "role": "tank",
-    "2": [
-      {
-        "text": "Improved Tech Armor",
-        "add-text": "(1)",
-        "level": ""
-      }
-    ],
-    "6": [
-      {
-        "text": "Improved Tech Armor",
-        "add-text": "(2)",
-        "level": ""
-      }
-    ],
-    "10": [
-      {
-        "text": "Improved Tech Armor",
-        "add-text": "(3)",
-        "level": ""
-      }
-    ],
-    "14": [
-      {
-        "text": "Improved Tech Armor",
-        "add-text": "(4)",
-        "level": ""
-      }
-    ],
-    "18": [
-      {
-        "text": "Improved Tech Armor",
-        "add-text": "(5)",
         "level": ""
       }
     ]
@@ -645,27 +645,27 @@
     ]
   },
   {
-    "subclass": "Battlemaster",
+    "subclass": "Juggernaut",
     "class": "Vanguard",
     "role": "balance",
     "2": [
+      {
+        "text": "Improved Melee Damage",
+        "add-text": "",
+        "level": ""
+      }
+    ],
+    "6": [
       {
         "text": "Improved Barrier Capacity",
         "add-text": "(1)",
         "level": ""
       }
     ],
-    "6": [
-      {
-        "text": "Battlemaster",
-        "add-text": "(1)",
-        "level": ""
-      }
-    ],
     "10": [
       {
-        "text": "Battlemaster",
-        "add-text": "(2)",
+        "text": "Melee Casting",
+        "add-text": "",
         "level": ""
       }
     ],
@@ -678,8 +678,8 @@
     ],
     "18": [
       {
-        "text": "Battlemaster",
-        "add-text": "(3)",
+        "text": "Improved Melee Damage",
+        "add-text": "(2)",
         "level": ""
       }
     ]
