@@ -297,7 +297,7 @@
         "level": ""
       },
       {
-        "text": " Insightful Fighting",
+        "text": "Insightful Fighting",
         "add-text": "",
         "level": ""
       }
@@ -491,14 +491,14 @@
     "2": [
       {
         "text": "Carnage",
-        "add-text": "(ad)",
+        "add-text": ". You can cast this spell using your AD",
         "level": ""
       }
     ],
     "6": [
       {
         "text": "Blade Armor",
-        "add-text": "(ad)",
+        "add-text": ". You can cast this spell using your AD",
         "level": ""
       }
     ],
@@ -511,8 +511,8 @@
     ],
     "14": [
       {
-        "text": "Flamer",
-        "add-text": "(ad)",
+        "text": "Flamethrower",
+        "add-text": ". You can cast this spell using your AD",
         "level": ""
       }
     ],
@@ -617,7 +617,7 @@
     ],
     "6": [
       {
-        "text": "Indominable",
+        "text": "Indomitable",
         "add-text": "(1)",
         "level": ""
       }
@@ -631,7 +631,7 @@
     ],
     "14": [
       {
-        "text": "Indominable",
+        "text": "Indomitable",
         "add-text": "(2)",
         "level": ""
       }
@@ -695,7 +695,7 @@
         "level": ""
       },
       {
-        "text": " Nightshade Blades",
+        "text": "Nightshade Blades",
         "add-text": "",
         "level": ""
       }

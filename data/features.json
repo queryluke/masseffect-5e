@@ -490,14 +490,14 @@
     "max-tp": null,
     "detonates": null,
     "primes": null,
-    "adept": "Shaman",
+    "adept": "x",
     "vanguard": null,
     "sentinel": null,
     "infiltrator": null,
     "engineer": null,
     "soldier": null,
     "higher-level": "When you cast this spell using a spell slot of 6 level or higher, the damage increases by 1d20 for each slot level above 5",
-    "class-list": "Shaman Adept only"
+    "class-list": "Adept"
   },
   {
     "name": "Blade Armor",
@@ -520,9 +520,9 @@
     "sentinel": "x",
     "infiltrator": null,
     "engineer": null,
-    "soldier": "Havok",
+    "soldier": "x",
     "higher-level": "When you cast this spell using a spell slot of 3 level or higher, the damage increases by 1d4 for each slot level above 2",
-    "class-list": "Sentinel, Havok Soldier only, Vanguard"
+    "class-list": "Sentinel, Soldier, Vanguard"
   },
   {
     "name": "Cain Trip Mine",
@@ -570,9 +570,9 @@
     "sentinel": null,
     "infiltrator": null,
     "engineer": null,
-    "soldier": "Havok",
+    "soldier": "x",
     "higher-level": "When you cast this spell using a spell slot of 2 level or higher, the damage increases by 1d10 for each slot level above 1",
-    "class-list": "Havok Soldier only, Vanguard"
+    "class-list": "Soldier, Vanguard"
   },
   {
     "name": "Charge",
@@ -715,14 +715,14 @@
     "max-tp": null,
     "detonates": null,
     "primes": "x",
-    "adept": "Fury",
+    "adept": "x",
     "vanguard": null,
     "sentinel": null,
     "infiltrator": null,
     "engineer": null,
     "soldier": null,
     "higher-level": "The spell's damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4).",
-    "class-list": "Fury Adept only"
+    "class-list": "Adept"
   },
   {
     "name": "Dark Sphere",
@@ -740,14 +740,14 @@
     "max-tp": null,
     "detonates": "x",
     "primes": null,
-    "adept": "Fury",
+    "adept": "x",
     "vanguard": null,
     "sentinel": null,
     "infiltrator": null,
     "engineer": null,
     "soldier": null,
     "higher-level": "When you cast this spell using a spell slot of 6 level or higher, the damage increases by 1d8 for each slot level above 5",
-    "class-list": "Fury Adept only"
+    "class-list": "Adept"
   },
   {
     "name": "Decoy",
@@ -845,9 +845,9 @@
     "sentinel": null,
     "infiltrator": null,
     "engineer": null,
-    "soldier": "Shock Trooper",
+    "soldier": "x",
     "higher-level": "",
-    "class-list": "Shock Trooper Soldier only"
+    "class-list": "Soldier"
   },
   {
     "name": "Dominate",
@@ -865,14 +865,14 @@
     "max-tp": null,
     "detonates": null,
     "primes": "x",
-    "adept": "Justicar",
+    "adept": "x",
     "vanguard": null,
     "sentinel": null,
     "infiltrator": null,
     "engineer": null,
     "soldier": null,
     "higher-level": "When you cast this spell using a spell slot of 6 level or higher, the damage increases by 1 for each slot level above 5",
-    "class-list": "Justicar Adept only"
+    "class-list": "Adept"
   },
   {
     "name": "Drone",
@@ -894,10 +894,10 @@
     "vanguard": null,
     "sentinel": null,
     "infiltrator": null,
-    "engineer": "[Drone Jockey]",
+    "engineer": "x",
     "soldier": null,
     "higher-level": "You can spend up to 5 TP.",
-    "class-list": "Drone Jockey Engineer only"
+    "class-list": "Engineer"
   },
   {
     "name": "Drone Efficiency",
@@ -1218,11 +1218,11 @@
     "adept": null,
     "vanguard": null,
     "sentinel": null,
-    "infiltrator": "x",
+    "infiltrator": "Saboteur",
     "engineer": null,
     "soldier": null,
     "higher-level": "",
-    "class-list": "Infiltrator"
+    "class-list": "Saboteur Infiltrator only"
   },
   {
     "name": "Fighting Style",
@@ -1295,9 +1295,9 @@
     "sentinel": "x",
     "infiltrator": null,
     "engineer": null,
-    "soldier": "[Havok]",
+    "soldier": "x",
     "higher-level": null,
-    "class-list": "Sentinel, Havok Soldier only"
+    "class-list": "Sentinel, Soldier"
   },
   {
     "name": "Flare",
@@ -1420,9 +1420,9 @@
     "sentinel": null,
     "infiltrator": null,
     "engineer": null,
-    "soldier": "Havok",
+    "soldier": "x",
     "higher-level": "",
-    "class-list": "Havok Soldier only"
+    "class-list": "Soldier"
   },
   {
     "name": "Hawk Missile Launcher",
@@ -1445,9 +1445,9 @@
     "sentinel": null,
     "infiltrator": null,
     "engineer": null,
-    "soldier": "Marksman",
+    "soldier": "x",
     "higher-level": "",
-    "class-list": "Marksman Soldier only"
+    "class-list": "Soldier"
   },
   {
     "name": "Healing Bolts",
@@ -1476,8 +1476,8 @@
   },
   {
     "name": "Healing Drone",
-    "level": null,
-    "type": "feature",
+    "level": "1",
+    "type": "tech",
     "die-type": null,
     "casting-time": null,
     "duration": null,
@@ -1494,10 +1494,10 @@
     "vanguard": null,
     "sentinel": null,
     "infiltrator": null,
-    "engineer": "Support",
+    "engineer": "x",
     "soldier": null,
-    "higher-level": "",
-    "class-list": "Support Engineer only"
+    "higher-level": null,
+    "class-list": "Engineer"
   },
   {
     "name": "Healing Surge",
@@ -1515,14 +1515,14 @@
     "max-tp": null,
     "detonates": null,
     "primes": null,
-    "adept": "Shaman",
+    "adept": "x",
     "vanguard": null,
     "sentinel": null,
     "infiltrator": null,
     "engineer": null,
     "soldier": null,
     "higher-level": "The spell's damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4).",
-    "class-list": "Shaman Adept only"
+    "class-list": "Adept"
   },
   {
     "name": "Healing Touch",
@@ -1667,12 +1667,12 @@
     "primes": null,
     "adept": null,
     "vanguard": null,
-    "sentinel": "[Juggernaut]",
+    "sentinel": "x",
     "infiltrator": null,
     "engineer": null,
     "soldier": null,
     "higher-level": "You can spend up to 3 TP.",
-    "class-list": "Juggernaut Sentinel only"
+    "class-list": "Sentinel"
   },
   {
     "name": "Improved Barrier",
@@ -2425,7 +2425,7 @@
     "class-list": "Adept"
   },
   {
-    "name": "Proficient Biotic",
+    "name": "Proficient Biotics",
     "level": null,
     "type": "feature",
     "die-type": null,
@@ -2550,7 +2550,7 @@
     "class-list": "Adept"
   },
   {
-    "name": "Quick Biotic",
+    "name": "Quick Biotics",
     "level": null,
     "type": "feature",
     "die-type": null,
@@ -3244,10 +3244,10 @@
     "vanguard": null,
     "sentinel": null,
     "infiltrator": null,
-    "engineer": "[Support]",
+    "engineer": "x",
     "soldier": null,
     "higher-level": null,
-    "class-list": "Support Engineer only"
+    "class-list": "Engineer"
   },
   {
     "name": "Tactical Cloak",

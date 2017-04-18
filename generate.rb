@@ -12,7 +12,7 @@ def set_features(string)
     string.split(',').each do |f|
 
       feature = {
-        'text' => f,
+        'text' => f.strip,
         'add-text' => '',
         'level' => ''
       }
@@ -21,11 +21,16 @@ def set_features(string)
         code = m.to_s
         ability = f.sub(/#{Regexp.escape(code)}/,'')
         feature['text'] = ability.strip
-        feature['add-text'] = code == '(adv)' ? ', select an Advancement option' : code.strip
 
-        #if code.match(/\([\d]\)/)
-        #  feature['level'] = code.gsub(/(\(|\))/,'')
-        #end
+        case code
+          when '(adv)'
+            feature['add-text'] = ', select an Advancement option';
+          when '(ad)'
+            feature['add-text'] = '. You can cast this spell using your AD';
+          else
+            feature['add-text'] = code.strip;
+        end
+
       end
 
       features << feature
