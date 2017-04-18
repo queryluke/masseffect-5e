@@ -1,7 +1,7 @@
 </div>
 <script
-        src="https://code.jquery.com/jquery-3.1.1.min.js"
-        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
         crossorigin="anonymous"></script>
 <script
         src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
@@ -151,7 +151,6 @@
             var key = $(e.relatedTarget).data('key');
             $(this).find('.modal-title').html(name);
             $.getJSON( "{{ site.baseurl }}data/" + dataFile + ".json" , function( result ){
-                console.log(result);
                 result.forEach(function(v,k){
                     if(v[key] === name){
                         html = renderOptions[dataFile](v);
@@ -160,6 +159,63 @@
                 });
             });
         });
+
+        if($('.sortable').length){
+            var table = $('.sortable');
+
+            table.on('click','th',function(){
+                var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
+                table.find('th').removeClass('sort-asc sort-desc');
+                this.asc = !this.asc;
+                if (!this.asc){
+                    rows = rows.reverse()
+                    $(this).addClass('sort-desc');
+                } else {
+                    $(this).addClass('sort-asc');
+                }
+                for (var i = 0; i < rows.length; i++){
+                    table.append(rows[i])
+                }
+            });
+        }
+
+        function comparer(index) {
+            return function(a, b) {
+                var valA = getCellValue(a, index);
+                var valB = getCellValue(b, index);
+                return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.localeCompare(valB)
+            }
+        }
+        function getCellValue(row, index){
+            return $(row).children('td').eq(index).html()
+        }
+
+        if($('.searchable').length){
+            $('#search').keyup(function(){
+                var query = $(this).val();
+                if(query) {
+                    query = query.replace(/\s\S/gim,'(.*?)');
+                    var regex = new RegExp('(.*?)'+query+'(.*?)','gmi');
+                    $('tbody tr').each(function(){
+                        matches = 0;
+                        $(this).children('td').each(function(){
+                            if($(this).html().match(regex)){
+                                matches = matches + 1;
+                            }
+                        });
+                        if(matches > 0){
+                            $(this).show()
+                        } else {
+                            $(this).hide();
+                        }
+                    });
+                } else {
+                    $('tbody td').each(function(){
+                        $(this).parent('tr').show()
+                    });
+                }
+            });
+        }
 
     });
 </script>

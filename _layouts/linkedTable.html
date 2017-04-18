@@ -5,7 +5,12 @@
         <div class="col-12 mt-3">
             <h1>{{ page.title }}</h1>
 
-            <table class="table table-hover table-sm">
+            <div class="form-group hidden-sm-down col-md-4">
+                <label for="search">Search</label>
+                <input id="search" type="text" class="form-control">
+                
+            </div>
+            <table class="table table-hover table-sm linked-table sortable searchable">
                 <thead class="thead-inverse">
                 <tr>
                     {% for head in page.headers %}
