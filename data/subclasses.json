@@ -132,8 +132,8 @@
     ],
     "6": [
       {
-        "text": "Efficient Grenades",
-        "add-text": "",
+        "text": "Makeshift Grenades",
+        "add-text": "(1)",
         "level": ""
       }
     ],
@@ -154,7 +154,7 @@
     "18": [
       {
         "text": "Makeshift Grenades",
-        "add-text": "",
+        "add-text": "(2)",
         "level": ""
       }
     ]
