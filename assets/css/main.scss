@@ -4,6 +4,7 @@
 @import '_variables.scss';
 @import 'bootstrap/bootstrap';
 
+/* General */
 .jumbotron h1 {
   font-size: 8rem;
 }
@@ -12,6 +13,23 @@
   min-height: calc(90vh - 5rem);
   margin-top: 5rem;
 }
+
+button.link {
+  color: $link-color;
+  background:none!important;
+  border:none;
+  padding:0!important;
+  font: inherit;
+  cursor: pointer;
+}
+
+footer {
+  font-size: .8rem;
+  background-color: $inverse-bg;
+  color: $gray-lighter;
+}
+
+/* Circle portrait */
 
 .clip-circle img{
   display: block;
@@ -68,6 +86,8 @@
 .clip-circle:hover:after, .clip-circle:hover:before {
   opacity:1;
 }
+
+/* Class buttons */
 
 .class-button{
   position: relative;
@@ -140,17 +160,22 @@
   border-bottom: 1px solid $gray-dark;
 }
 
-button.link {
-  color: $link-color;
-  background:none!important;
-  border:none;
-  padding:0!important;
-  font: inherit;
-  cursor: pointer;
+/* tables */
+.sortable th:after {
+  content: '^';
+  opacity: 0;
+  float: right;
 }
 
-footer {
-  font-size: .8rem;
-  background-color: $inverse-bg;
-  color: $gray-lighter;
+.sortable th.sort-asc:after {
+  opacity: 1;
+}
+.sortable th.sort-desc:after {
+  content: '^';
+  opacity: 1;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
