@@ -44,7 +44,7 @@
     "increases": "Con +2, Cha +1",
     "size": "Medium",
     "speed": "10m",
-    "skills": "Saving Face: Batarians are careful not to show weakness in front of their allies, for fear of losing status. If you miss with an attack roll or fail an ability check or a saving throw, you can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +5). Once you use this trait, you can't use it again until you finish a short or long rest. \n-- Weapon Master: You have practiced extensively with a variety of weapons, gaining the following benefits\n> Increase your Strength or Dexterity score by 1, to a maximum of 20. \n> You gain proficiency with two weapons of your choice (in addition to your class weapon choice).",
+    "skills": "Saving Face: Batarians are careful not to show weakness in front of their allies, for fear of losing status. If you miss with an attack roll or fail an ability check or a saving throw, you can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +5). Once you use this trait, you can't use it again until you finish a short or long rest. \n-- Choose one Feat: Biotic Slayer (Mage Slayer), Charger, Durable, Grappler, Heavy Armor Master, Resilient, Savage Attacker, Sentinel, Tavern Brawler, Tough, Weapon Master*",
     "armor": "Any",
     "body": "http://vignette1.wikia.nocookie.net/masseffect/images/b/b2/Batarian_MP.png/revision/latest/scale-to-width-down/500",
     "male": "http://cdn.escapistmagazine.com/media/global/images/quizzes/cat_img/235.png",
@@ -58,13 +58,10 @@
         "list": ""
       },
       {
-        "title": "Weapon Master",
-        "text": "You have practiced extensively with a variety of weapons, gaining the following benefits",
-        "type": "list",
-        "list": [
-          "Increase your Strength or Dexterity score by 1, to a maximum of 20.",
-          "You gain proficiency with two weapons of your choice (in addition to your class weapon choice)."
-        ]
+        "title": "Choose one Feat",
+        "text": "Biotic Slayer (Mage Slayer), Charger, Durable, Grappler, Heavy Armor Master, Resilient, Savage Attacker, Sentinel, Tavern Brawler, Tough, Weapon Master*",
+        "type": "paragraph",
+        "list": ""
       }
     ]
   },
@@ -77,7 +74,7 @@
     "increases": "Dex +2, Wis +1",
     "size": "Medium",
     "speed": "15m",
-    "skills": "Keen Senses: You have proficiency in the Perception skill. \n-- Darkvision: You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray. \n-- Hallucinogen: You skin is infused with a mild venom. When ingested or injected it can cause mild hallucinations. \n-- Skulker: You are an expert at slinking through shadows. You gain the following benefits\n> You have advantage on stealth roles as long as you're wearing light armor. \n> You can try to hide when you are lightly obscured from the creature from which you are hiding.\n> When you are hidden from a creature and miss it with a ranged weapon attack, making the attack doesn't reveal your position.\n> Dim light doesn't impose disadvantage on your Wisdom (Perception) checks relying on sight.",
+    "skills": "Keen Senses: You have proficiency in the Perception skill. \n-- Darkvision: You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray. \n-- Hallucinogen: You skin is infused with a mild venom. When ingested or injected it can cause mild hallucinations. \n-- Choose one Feat: Alert, Athlete, Keen Mind, Mobile, Observant, Skulker",
     "armor": "Light",
     "body": "http://vignette2.wikia.nocookie.net/masseffect/images/a/ad/Drell_MP.png/revision/latest/scale-to-width-down/500",
     "male": "https://img.ifcdn.com/images/761988b5b4b3d3c97b9ba9d1fa087d47b269a2f7aa185a7b0c47db62415efe18_1.jpg",
@@ -103,15 +100,10 @@
         "list": ""
       },
       {
-        "title": "Skulker",
-        "text": "You are an expert at slinking through shadows. You gain the following benefits",
-        "type": "list",
-        "list": [
-          "You have advantage on stealth roles as long as you're wearing light armor.",
-          "You can try to hide when you are lightly obscured from the creature from which you are hiding.",
-          "When you are hidden from a creature and miss it with a ranged weapon attack, making the attack doesn't reveal your position.",
-          "Dim light doesn't impose disadvantage on your Wisdom (Perception) checks relying on sight."
-        ]
+        "title": "Choose one Feat",
+        "text": "Alert, Athlete, Keen Mind, Mobile, Observant, Skulker",
+        "type": "paragraph",
+        "list": ""
       }
     ]
   },
@@ -124,7 +116,7 @@
     "increases": "Choose 2 +1",
     "size": "Medium",
     "speed": "10m",
-    "skills": "Choose two Feats: Alert, Athlete, Actor, Charger, Elemental Adept, Heavy Armor Master, Inspiring Leader, Linguist, Lucky, Adept Slayer (Mage Slayer), Medium Armor Master, Observant, Resilient, Savage Attacker, Sentinel, Sharpshooter, Skilled, Tavern Brawler",
+    "skills": "Choose two Feats: Alert, Athlete, Actor, Biotic Slayer (Mage Slayer), Charger, Durable, Elemental Adept, Grappler, Heavy Armor Master, Inspiring Leader, Keen Mind, Linguist, Lucky, Medium Armor Master, Mobile, Observant, Resilient, Savage Attacker, Sentinel, Sharpshooter, Skilled, Skulker, Tavern Brawler, Tough, Weapon Master*",
     "armor": "Any",
     "body": "http://vignette4.wikia.nocookie.net/masseffect/images/2/2e/Human_Female_Infiltrator_MP.png/revision/latest/scale-to-width-down/500",
     "male": "http://31.media.tumblr.com/tumblr_m5d92pkN011qcxzu2o1_500.png",
@@ -133,7 +125,7 @@
     "features": [
       {
         "title": "Choose two Feats",
-        "text": "Alert, Athlete, Actor, Charger, Elemental Adept, Heavy Armor Master, Inspiring Leader, Linguist, Lucky, Adept Slayer (Mage Slayer), Medium Armor Master, Observant, Resilient, Savage Attacker, Sentinel, Sharpshooter, Skilled, Tavern Brawler",
+        "text": "Alert, Athlete, Actor, Biotic Slayer (Mage Slayer), Charger, Durable, Elemental Adept, Grappler, Heavy Armor Master, Inspiring Leader, Keen Mind, Linguist, Lucky, Medium Armor Master, Mobile, Observant, Resilient, Savage Attacker, Sentinel, Sharpshooter, Skilled, Skulker, Tavern Brawler, Tough, Weapon Master*",
         "type": "paragraph",
         "list": ""
       }
@@ -148,8 +140,8 @@
     "increases": "Int +2, Con +1",
     "size": "Medium",
     "speed": "10m",
-    "skills": "Composite Plating: Your construction incorporates advanced armor plating, granting you a +1 bonus to Armor Class. \n-- Living Construct: You are immune to disease. You do not need to eat or breathe. Instead of sleeping, you enter an inactive state for 4 hours each day. You do not dream in this state; you are fully aware of your surroundings and notice approaching enemies and other events as normal. \n-- Machine Tooling: Your unit has been tooled for a specific purpose. Choose one feat from Alert, Athlete, Adept Slayer (Mage Slayer), Observant, Resilient, Savage Attacker, Sentinel, Sharpshooter, Skilled",
-    "armor": "Any",
+    "skills": "Composite Plating: Your construction incorporates advanced armor plating, granting you a +1 bonus to Armor Class. \n-- Living Construct: You are immune to disease. You do not need to eat or breathe. Instead of sleeping, you enter an inactive state for 4 hours each day. You do not dream in this state; you are fully aware of your surroundings and notice approaching enemies and other events as normal. \n-- Choose one Feat: Alert, Athlete, Biotic Slayer (Mage Slayer), Charger, Durable, Lightly Armored, Mobile, Observant, Resilient, Savage Attacker, Sentinel, Sharpshooter, Skilled, Skulker",
+    "armor": "None",
     "body": "http://vignette2.wikia.nocookie.net/masseffect/images/7/72/Geth_Engineer_MP.png/revision/latest/scale-to-width-down/500",
     "male": "http://i.imgur.com/eoxONpu.jpg",
     "female": "http://vignette3.wikia.nocookie.net/robotsupremacy/images/e/ef/Me3-geth-prime.jpg/revision/latest?cb=20130509125034",
@@ -168,8 +160,8 @@
         "list": ""
       },
       {
-        "title": "Machine Tooling",
-        "text": "Your unit has been tooled for a specific purpose. Choose one feat from Alert, Athlete, Adept Slayer (Mage Slayer), Observant, Resilient, Savage Attacker, Sentinel, Sharpshooter, Skilled",
+        "title": "Choose one Feat",
+        "text": "Alert, Athlete, Biotic Slayer (Mage Slayer), Charger, Durable, Lightly Armored, Mobile, Observant, Resilient, Savage Attacker, Sentinel, Sharpshooter, Skilled, Skulker",
         "type": "paragraph",
         "list": ""
       }
@@ -185,7 +177,7 @@
     "size": "Medium",
     "speed": "10m",
     "skills": "Rage: If you sink below half health, you enter into a rage. You take 1d8 less damage per hit your melee attacks deal an additional 1d8 damage. \n-- Natural Armor: Increase your AC by 1. \n-- Relentless Endurance: When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest. \n-- Menacing: You gain proficiency in the Intimidation skill.",
-    "armor": "Medium, Heavy",
+    "armor": "Any",
     "body": "http://vignette4.wikia.nocookie.net/masseffect/images/6/66/Krogan_MP.png/revision/latest/scale-to-width-down/500",
     "male": "http://vignette2.wikia.nocookie.net/masseffect/images/5/5e/Kroganconcept.png/revision/latest?cb=20100322235543",
     "female": "http://img02.deviantart.net/a038/i/2014/336/1/c/female_krogans_for_xps_by_just_jasper-d88fls2.png",
@@ -226,7 +218,7 @@
     "increases": "Int +2, Cha +1",
     "size": "Medium",
     "speed": "10m",
-    "skills": "Improvised Grenade: You can cast [Frag Grenade] once per short rest. \n-- Hermetic Suit: Your suit is your life blood. It makes your immune to diesease. You have resistance to poison and necrotic damage. However, if you ever take a critical hit via puncture damage, your suit is breached. You must begin making death saving throws as if you had 0 hit points.\n-- Choose one Feat: Alert, Actor, Inspiring Leader, Adept Slayer (Mage Slayer), Medium Armor Master, Observant, Sharpshooter",
+    "skills": "Improvised Grenade: You can cast [Frag Grenade] once per short rest. \n-- Hermetic Suit: Your suit is your life blood. It makes your immune to diesease. You have resistance to poison, toxic, and necrotic damage. However, if you ever take an unshielded, critical hit via puncture damage, your suit is breached. You must begin making death saving throws as if you had 0 hit points. You always carry 3 charges of specialzed sealant, and you can take an action to seal the breach, consuming a charge. On a long rest, you regain your charges.\n-- Choose one Feat: Biotic Slayer (Mage Slayer), Heavily Armored, Inspiring Leader, Keen Mind, Linguist, Medium Armor Master, Mobile, Observant, Sharpshooter, Skilled, Skulker",
     "armor": "Light, Medium",
     "body": "http://vignette3.wikia.nocookie.net/masseffect/images/0/0c/Quarian_MP.png/revision/latest/scale-to-width-down/500",
     "male": "http://pre11.deviantart.net/92a8/th/pre/f/2012/221/a/d/the_hero_of_haestrom_by_thekillercobra-d5agfmq.png",
@@ -241,13 +233,13 @@
       },
       {
         "title": "Hermetic Suit",
-        "text": "Your suit is your life blood. It makes your immune to diesease. You have resistance to poison and necrotic damage. However, if you ever take a critical hit via puncture damage, your suit is breached. You must begin making death saving throws as if you had 0 hit points.",
+        "text": "Your suit is your life blood. It makes your immune to diesease. You have resistance to poison, toxic, and necrotic damage. However, if you ever take an unshielded, critical hit via puncture damage, your suit is breached. You must begin making death saving throws as if you had 0 hit points. You always carry 3 charges of specialzed sealant, and you can take an action to seal the breach, consuming a charge. On a long rest, you regain your charges.",
         "type": "paragraph",
         "list": ""
       },
       {
         "title": "Choose one Feat",
-        "text": "Alert, Actor, Inspiring Leader, Adept Slayer (Mage Slayer), Medium Armor Master, Observant, Sharpshooter",
+        "text": "Biotic Slayer (Mage Slayer), Heavily Armored, Inspiring Leader, Keen Mind, Linguist, Medium Armor Master, Mobile, Observant, Sharpshooter, Skilled, Skulker",
         "type": "paragraph",
         "list": ""
       }
@@ -262,7 +254,7 @@
     "increases": "Int +2, Dex +1",
     "size": "Medium",
     "speed": "10m",
-    "skills": "Photographic Memory \n-- Special Ammo: You know an ammo power. \n-- Choose one Feat: Alert, Athlete, Actor, Linguist, Lucky, Observant, Skilled",
+    "skills": "Photographic Memory \n-- Special Ammo: You know an ammo power. \n-- Choose one Feat: Alert, Athlete, Actor, Biotic Slayer (Mage Slayer), Inspiring Leader, Keen Mind, Linguist, Mobile, Moderately Armored, Observant, Sharpshooter, Skilled, Skulker",
     "armor": "Light",
     "body": "http://vignette2.wikia.nocookie.net/masseffect/images/b/ba/Salarian_MP.png/revision/latest/scale-to-width-down/500",
     "male": "http://vignette2.wikia.nocookie.net/o4e/images/a/a4/Salarian.jpg/revision/latest?cb=20111120055555",
@@ -283,7 +275,7 @@
       },
       {
         "title": "Choose one Feat",
-        "text": "Alert, Athlete, Actor, Linguist, Lucky, Observant, Skilled",
+        "text": "Alert, Athlete, Actor, Biotic Slayer (Mage Slayer), Inspiring Leader, Keen Mind, Linguist, Mobile, Moderately Armored, Observant, Sharpshooter, Skilled, Skulker",
         "type": "paragraph",
         "list": ""
       }
@@ -298,8 +290,8 @@
     "increases": "Con +2, Str +1",
     "size": "Medium",
     "speed": "10m",
-    "skills": "Turian Toughness: Your hit point maximum increases by 1, and it increases by 1 every time you gain a level. \n-- Speed: Your speed is not reduced by wearing heavy armor. \n-- Choose one Feat: Athlete, Charger, Heavy Armor Master, Inspiring Leader, Adept Slayer (Mage Slayer), Medium Armor Master, Resilient, Savage Attacker, Sentinel, Sharpshooter, Tavern Brawler",
-    "armor": "Medium, Heavy",
+    "skills": "Turian Toughness: Your hit point maximum increases by 2, and it increases by 2 every time you gain a level. \n-- Choose one Feat: Alert, Athlete, Biotic Slayer (Mage Slayer), Charger, Durable, Grappler, Heavy Armor Master, Inspiring Leader, Keen Mind, Medium Armor Master, Mobile, Observant, Resilient, Savage Attacker, Sentinel, Sharpshooter, Skilled, Tavern Brawler, Tough, Weapon Master*",
+    "armor": "Any",
     "body": "http://vignette2.wikia.nocookie.net/masseffect/images/2/2a/Turian_MP.png/revision/latest/scale-to-width-down/500",
     "male": "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiK6aKjjv3SAhVGLSYKHaeuCZQQjRwIBw&url=http%3A%2F%2Fmeken.deviantart.com%2Fart%2FME3-turian-sketches-291340922&bvm=bv.151325232,d.cGw&psig=AFQjCNEF5OL-EibImPaCzBlSAk5FR3BxrQ&ust=1490924778613040",
     "female": "http://i1066.photobucket.com/albums/u419/gittins2/rp_city80021_zps007b5776.jpg",
@@ -307,19 +299,13 @@
     "features": [
       {
         "title": "Turian Toughness",
-        "text": "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.",
-        "type": "paragraph",
-        "list": ""
-      },
-      {
-        "title": "Speed",
-        "text": "Your speed is not reduced by wearing heavy armor.",
+        "text": "Your hit point maximum increases by 2, and it increases by 2 every time you gain a level.",
         "type": "paragraph",
         "list": ""
       },
       {
         "title": "Choose one Feat",
-        "text": "Athlete, Charger, Heavy Armor Master, Inspiring Leader, Adept Slayer (Mage Slayer), Medium Armor Master, Resilient, Savage Attacker, Sentinel, Sharpshooter, Tavern Brawler",
+        "text": "Alert, Athlete, Biotic Slayer (Mage Slayer), Charger, Durable, Grappler, Heavy Armor Master, Inspiring Leader, Keen Mind, Medium Armor Master, Mobile, Observant, Resilient, Savage Attacker, Sentinel, Sharpshooter, Skilled, Tavern Brawler, Tough, Weapon Master*",
         "type": "paragraph",
         "list": ""
       }
@@ -335,7 +321,7 @@
     "size": "Small",
     "speed": "8m",
     "skills": "Fury of the Small: When you damage a creature with an attack or a spell and the creature's size is larger than yours, you can cause the attack or spell to deal extra damage to the creature. The extra damage equals your level. Once you use this trait, you can't use it again until you finish a short or long rest. -- Savvy Dealings: You can get extra supplies and discounts from vendors. -- Lucky (feat)",
-    "armor": "Medium",
+    "armor": "Light, Medium",
     "body": "http://vignette1.wikia.nocookie.net/masseffect/images/3/3e/ME3_Volus_Adept.png/revision/latest/scale-to-width-down/500",
     "male": "http://www.stardestroyer.net/wiki/images/b/b4/Volus.jpg",
     "female": null,
