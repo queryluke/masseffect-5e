@@ -3509,7 +3509,7 @@
     "range": null,
     "dmg-type": null,
     "mechanic-type": "-",
-    "mechanic": "{!level} On a melee or ranged weapon attack, instead of rolling a dice, you can flip a coin. On a heads, it's a critical hit. On a tails, it's a critical miss. You can use this ability once per short rest.\n-- You can use this ability twice per short rest.\n-- You can use this ability three times per short rest.\n-- You can use this ability four times per short rest.",
+    "mechanic": "{!level} When you make a melee attack, instead of rolling a dice, you can flip a coin. On a heads, it's a critical hit. On a tails, it's a critical miss. You can use this ability once per short rest.\n-- You can use this ability twice per short rest.\n-- You can use this ability three times per short rest.\n-- You can use this ability four times per short rest.",
     "adv-option-1": null,
     "adv-option-2": null,
     "max-tp": null,
