@@ -5,10 +5,10 @@
     "alignment": null,
     "available-classes": "Any",
     "sexy-level": "8",
-    "increases": "Wis +2, Cha +1",
+    "increases": "Cha +2 Wis +1",
     "size": "Medium",
     "speed": "10m",
-    "skills": "Skill Versatility: You gain proficiency in two skills of your choice. -- Mind Meld: You can transfer and receive thoughts to another creature. You must concentrate and if the creature is not willing, the thoughts become jumbled and disjointed. Unintelligent creatures have unpredictable results. -- Cantrip: You know one cantrip of your choice from the adept or vanguard spell list. Wisdom is your spellcasting ability for it.",
+    "skills": "Skill Versatility: You gain proficiency in two skills of your choice. \n-- Mind Meld: You can transfer and receive thoughts to another creature. You must concentrate and if the creature is not willing, the thoughts become jumbled and disjointed. Unintelligent creatures have unpredictable results. \n-- Cantrip: You know one cantrip of your choice from the adept or vanguard spell list. Wisdom is your spellcasting ability for it.",
     "armor": "Light, Medium",
     "body": "http://vignette2.wikia.nocookie.net/masseffect/images/d/dc/Asari_Justicar_MP.png/revision/latest/scale-to-width-down/500",
     "male": "http://media.moddb.com/images/groups/1/10/9550/As3.jpg",
@@ -38,7 +38,7 @@
     "increases": "Con +2, Cha +1",
     "size": "Medium",
     "speed": "10m",
-    "skills": "Saving Face: Batarians are careful not to show weakness in front of their allies, for fear of losing status. If you miss with an attack roll or fail an ability check or a saving throw, you can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +5). Once you use this trait, you can't use it again until you finish a short or long rest. -- Feat",
+    "skills": "Saving Face: Batarians are careful not to show weakness in front of their allies, for fear of losing status. If you miss with an attack roll or fail an ability check or a saving throw, you can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +5). Once you use this trait, you can't use it again until you finish a short or long rest. \n-- Weapon Master: You have practiced extensively with a variety of weapons, gaining the following benefits: Increase your Strength or Dexterity score by 1, to a maximum of 20. You gain proficiency with two weapons of your choice (in addition to your class weapon choice).",
     "armor": "Any",
     "body": "http://vignette1.wikia.nocookie.net/masseffect/images/b/b2/Batarian_MP.png/revision/latest/scale-to-width-down/500",
     "male": "http://cdn.escapistmagazine.com/media/global/images/quizzes/cat_img/235.png",
@@ -50,8 +50,8 @@
         "text": "Batarians are careful not to show weakness in front of their allies, for fear of losing status. If you miss with an attack roll or fail an ability check or a saving throw, you can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +5). Once you use this trait, you can't use it again until you finish a short or long rest."
       },
       {
-        "title": "Feat",
-        "text": ""
+        "title": "Weapon Master",
+        "text": "You have practiced extensively with a variety of weapons, gaining the following benefits"
       }
     ]
   },
@@ -193,7 +193,7 @@
     "alignment": null,
     "available-classes": "Engineer, Infiltrator, Soldier",
     "sexy-level": "8",
-    "increases": "Cha +2, Int +1",
+    "increases": "Int +2, Cha +1",
     "size": "Medium",
     "speed": "10m",
     "skills": "Skills: You gain proficiency in one skill of your choice. -- Improvised Grenade: You can cast [Frag Grenade] once per long rest. -- Feat",
