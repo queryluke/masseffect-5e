@@ -67,12 +67,12 @@
     "primes": null,
     "adept": null,
     "vanguard": null,
-    "sentinel": null,
+    "sentinel": "x",
     "infiltrator": null,
     "engineer": null,
     "soldier": null,
     "higher-level": "",
-    "class-list": ""
+    "class-list": "Sentinel"
   },
   {
     "name": "Adrenaline Rush",
@@ -1218,11 +1218,11 @@
     "adept": null,
     "vanguard": null,
     "sentinel": null,
-    "infiltrator": "Saboteur",
+    "infiltrator": "x",
     "engineer": null,
     "soldier": null,
     "higher-level": "",
-    "class-list": "Saboteur Infiltrator only"
+    "class-list": "Infiltrator"
   },
   {
     "name": "Fighting Style",
@@ -1792,12 +1792,12 @@
     "primes": null,
     "adept": null,
     "vanguard": null,
-    "sentinel": null,
+    "sentinel": "x",
     "infiltrator": null,
     "engineer": null,
     "soldier": null,
     "higher-level": "",
-    "class-list": ""
+    "class-list": "Sentinel"
   },
   {
     "name": "Incinerate",
@@ -2667,12 +2667,12 @@
     "primes": null,
     "adept": null,
     "vanguard": null,
-    "sentinel": null,
+    "sentinel": "x",
     "infiltrator": null,
     "engineer": null,
     "soldier": null,
     "higher-level": "",
-    "class-list": ""
+    "class-list": "Sentinel"
   },
   {
     "name": "Reave",
@@ -3367,12 +3367,12 @@
     "primes": null,
     "adept": null,
     "vanguard": null,
-    "sentinel": null,
+    "sentinel": "x",
     "infiltrator": null,
     "engineer": null,
     "soldier": null,
     "higher-level": "",
-    "class-list": ""
+    "class-list": "Sentinel"
   },
   {
     "name": "Tech Power",
