@@ -124,7 +124,7 @@
     "increases": "Choose 2 +1",
     "size": "Medium",
     "speed": "10m",
-    "skills": "Skills: You gain proficiency in one skill of your choice. -- 2 Feats",
+    "skills": "Choose 2 Feats from Alert, Athlete, Actor, Charger, Elemental Adept, Heavy Armor Master, Inspiring Leader, Linguist, Lucky, Adept Slayer (Mage Slayer), Medium Armor Master, Observant, Resilient, Savage Attacker, Sentinel, Sharpshooter, Skilled, Tavern Brawler",
     "armor": "Any",
     "body": "http://vignette4.wikia.nocookie.net/masseffect/images/2/2e/Human_Female_Infiltrator_MP.png/revision/latest/scale-to-width-down/500",
     "male": "http://31.media.tumblr.com/tumblr_m5d92pkN011qcxzu2o1_500.png",
@@ -132,13 +132,7 @@
     "face": "http://vignette2.wikia.nocookie.net/masseffect/images/8/89/Mirandanew.png",
     "features": [
       {
-        "title": "Skills",
-        "text": "You gain proficiency in one skill of your choice.",
-        "type": "paragraph",
-        "list": ""
-      },
-      {
-        "title": "2 Feats",
+        "title": "Choose 2 Feats from Alert, Athlete, Actor, Charger, Elemental Adept, Heavy Armor Master, Inspiring Leader, Linguist, Lucky, Adept Slayer (Mage Slayer), Medium Armor Master, Observant, Resilient, Savage Attacker, Sentinel, Sharpshooter, Skilled, Tavern Brawler",
         "text": "",
         "type": "paragraph",
         "list": ""
@@ -154,19 +148,13 @@
     "increases": "Int +2, Con +1",
     "size": "Medium",
     "speed": "10m",
-    "skills": "Hacking: You can cast AI hacking for free. -- Composite Plating: Your construction incorporates advanced armor plating, granting you a +1 bonus to Armor Class. -- Living Construct: \\You are immune to disease. You do not need to eat or breathe. Instead of sleeping, you enter an inactive state for 4 hours each day. You do not dream in this state; you are fully aware of your surroundings and notice approaching enemies and other events as normal. -- Feat",
+    "skills": "Composite Plating: Your construction incorporates advanced armor plating, granting you a +1 bonus to Armor Class. \n-- Living Construct: You are immune to disease. You do not need to eat or breathe. Instead of sleeping, you enter an inactive state for 4 hours each day. You do not dream in this state; you are fully aware of your surroundings and notice approaching enemies and other events as normal. \n-- Machine Tooling: Your unit has been tooled for a specific purpose. Choose one feat from Alert, Athlete, Adept Slayer (Mage Slayer), Observant, Resilient, Savage Attacker, Sentinel, Sharpshooter, Skilled",
     "armor": "Any",
     "body": "http://vignette2.wikia.nocookie.net/masseffect/images/7/72/Geth_Engineer_MP.png/revision/latest/scale-to-width-down/500",
     "male": "http://i.imgur.com/eoxONpu.jpg",
     "female": "http://vignette3.wikia.nocookie.net/robotsupremacy/images/e/ef/Me3-geth-prime.jpg/revision/latest?cb=20130509125034",
     "face": "http://vignette1.wikia.nocookie.net/masseffect/images/c/cc/Legion_Character_Shot.png",
     "features": [
-      {
-        "title": "Hacking",
-        "text": "You can cast AI hacking for free.",
-        "type": "paragraph",
-        "list": ""
-      },
       {
         "title": "Composite Plating",
         "text": "Your construction incorporates advanced armor plating, granting you a +1 bonus to Armor Class.",
@@ -175,13 +163,13 @@
       },
       {
         "title": "Living Construct",
-        "text": "\\You are immune to disease. You do not need to eat or breathe. Instead of sleeping, you enter an inactive state for 4 hours each day. You do not dream in this state; you are fully aware of your surroundings and notice approaching enemies and other events as normal.",
+        "text": "You are immune to disease. You do not need to eat or breathe. Instead of sleeping, you enter an inactive state for 4 hours each day. You do not dream in this state; you are fully aware of your surroundings and notice approaching enemies and other events as normal.",
         "type": "paragraph",
         "list": ""
       },
       {
-        "title": "Feat",
-        "text": "",
+        "title": "Machine Tooling",
+        "text": "Your unit has been tooled for a specific purpose. Choose one feat from Alert, Athlete, Adept Slayer (Mage Slayer), Observant, Resilient, Savage Attacker, Sentinel, Sharpshooter, Skilled",
         "type": "paragraph",
         "list": ""
       }
@@ -196,7 +184,7 @@
     "increases": "Str +2, Con +1",
     "size": "Medium",
     "speed": "10m",
-    "skills": "Rage: If you sink below half health, you enter into a rage. You take 1d8 less damage per hit your melee attacks deal an additional 1d8 damage. -- Natural Armor: Increase your AC by 1. -- Relentless Endurance: When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest. -- Menacing: You gain proficiency in the Intimidation skill.",
+    "skills": "Rage: If you sink below half health, you enter into a rage. You take 1d8 less damage per hit your melee attacks deal an additional 1d8 damage. \n-- Natural Armor: Increase your AC by 1. \n-- Relentless Endurance: When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest. \n-- Menacing: You gain proficiency in the Intimidation skill.",
     "armor": "Medium, Heavy",
     "body": "http://vignette4.wikia.nocookie.net/masseffect/images/6/66/Krogan_MP.png/revision/latest/scale-to-width-down/500",
     "male": "http://vignette2.wikia.nocookie.net/masseffect/images/5/5e/Kroganconcept.png/revision/latest?cb=20100322235543",
@@ -238,7 +226,7 @@
     "increases": "Int +2, Cha +1",
     "size": "Medium",
     "speed": "10m",
-    "skills": "Skills: You gain proficiency in one skill of your choice. -- Improvised Grenade: You can cast [Frag Grenade] once per long rest. -- Feat",
+    "skills": "Improvised Grenade: You can cast [Frag Grenade] once per short rest. \n-- Hermetic Suit: Your suit is your life blood. It makes your immune to diesease. You have resistance to poison and necrotic damage. However, if you ever take a critical hit via puncture damage, your suit is breached. You must begin making death saving throws as if you had 0 hit points.\n-- Choose one feat from: Alert, Actor, Inspiring Leader, Adept Slayer (Mage Slayer), Medium Armor Master, Observant, Sharpshooter",
     "armor": "Light, Medium",
     "body": "http://vignette3.wikia.nocookie.net/masseffect/images/0/0c/Quarian_MP.png/revision/latest/scale-to-width-down/500",
     "male": "http://pre11.deviantart.net/92a8/th/pre/f/2012/221/a/d/the_hero_of_haestrom_by_thekillercobra-d5agfmq.png",
@@ -246,20 +234,20 @@
     "face": "http://vignette3.wikia.nocookie.net/masseffect/images/1/15/Talinewme2.png",
     "features": [
       {
-        "title": "Skills",
-        "text": "You gain proficiency in one skill of your choice.",
-        "type": "paragraph",
-        "list": ""
-      },
-      {
         "title": "Improvised Grenade",
-        "text": "You can cast [Frag Grenade] once per long rest.",
+        "text": "You can cast [Frag Grenade] once per short rest.",
         "type": "paragraph",
         "list": ""
       },
       {
-        "title": "Feat",
-        "text": "",
+        "title": "Hermetic Suit",
+        "text": "Your suit is your life blood. It makes your immune to diesease. You have resistance to poison and necrotic damage. However, if you ever take a critical hit via puncture damage, your suit is breached. You must begin making death saving throws as if you had 0 hit points.",
+        "type": "paragraph",
+        "list": ""
+      },
+      {
+        "title": "Choose one feat from",
+        "text": "Alert, Actor, Inspiring Leader, Adept Slayer (Mage Slayer), Medium Armor Master, Observant, Sharpshooter",
         "type": "paragraph",
         "list": ""
       }
@@ -274,7 +262,7 @@
     "increases": "Int +2, Dex +1",
     "size": "Medium",
     "speed": "10m",
-    "skills": "Photographic Memory -- Special Ammo: You know an ammo power. -- Feat",
+    "skills": "Photographic Memory \n-- Special Ammo: You know an ammo power. \n-- Choose 1 feat from Alert, Athlete, Actor, Linguist, Lucky, Observant, Skilled",
     "armor": "Light",
     "body": "http://vignette2.wikia.nocookie.net/masseffect/images/b/ba/Salarian_MP.png/revision/latest/scale-to-width-down/500",
     "male": "http://vignette2.wikia.nocookie.net/o4e/images/a/a4/Salarian.jpg/revision/latest?cb=20111120055555",
@@ -294,7 +282,7 @@
         "list": ""
       },
       {
-        "title": "Feat",
+        "title": "Choose 1 feat from Alert, Athlete, Actor, Linguist, Lucky, Observant, Skilled",
         "text": "",
         "type": "paragraph",
         "list": ""
@@ -310,7 +298,7 @@
     "increases": "Con +2, Str +1",
     "size": "Medium",
     "speed": "10m",
-    "skills": "Turian Toughness: Your hit point maximum increases by 1, and it increases by 1 every time you gain a level. -- Speed: Your speed is not reduced by wearing heavy armor. -- Feat",
+    "skills": "Turian Toughness: Your hit point maximum increases by 1, and it increases by 1 every time you gain a level. \n-- Speed: Your speed is not reduced by wearing heavy armor. \n-- Choose one from Athlete, Charger, Heavy Armor Master, Inspiring Leader, Adept Slayer (Mage Slayer), Medium Armor Master, Resilient, Savage Attacker, Sentinel, Sharpshooter, Tavern Brawler",
     "armor": "Medium, Heavy",
     "body": "http://vignette2.wikia.nocookie.net/masseffect/images/2/2a/Turian_MP.png/revision/latest/scale-to-width-down/500",
     "male": "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiK6aKjjv3SAhVGLSYKHaeuCZQQjRwIBw&url=http%3A%2F%2Fmeken.deviantart.com%2Fart%2FME3-turian-sketches-291340922&bvm=bv.151325232,d.cGw&psig=AFQjCNEF5OL-EibImPaCzBlSAk5FR3BxrQ&ust=1490924778613040",
@@ -330,7 +318,7 @@
         "list": ""
       },
       {
-        "title": "Feat",
+        "title": "Choose one from Athlete, Charger, Heavy Armor Master, Inspiring Leader, Adept Slayer (Mage Slayer), Medium Armor Master, Resilient, Savage Attacker, Sentinel, Sharpshooter, Tavern Brawler",
         "text": "",
         "type": "paragraph",
         "list": ""
@@ -346,7 +334,7 @@
     "increases": "Wis +2, Str +1",
     "size": "Small",
     "speed": "8m",
-    "skills": "Fury of the Small: When you damage a creature with an attack or a spell and the creature's size is larger than yours, you can cause the attack or spell to deal extra damage to the creature. The extra damage equals your level. Once you use this trait, you can't use it again until you finish a short or long rest. -- Savvy Dealings: You can get extra supplies and discounts from vendors. -- Lucky: When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll. You can only use this ability once per long rest.",
+    "skills": "Fury of the Small: When you damage a creature with an attack or a spell and the creature's size is larger than yours, you can cause the attack or spell to deal extra damage to the creature. The extra damage equals your level. Once you use this trait, you can't use it again until you finish a short or long rest. -- Savvy Dealings: You can get extra supplies and discounts from vendors. -- Lucky (feat)",
     "armor": "Medium",
     "body": "http://vignette1.wikia.nocookie.net/masseffect/images/3/3e/ME3_Volus_Adept.png/revision/latest/scale-to-width-down/500",
     "male": "http://www.stardestroyer.net/wiki/images/b/b4/Volus.jpg",
@@ -366,8 +354,8 @@
         "list": ""
       },
       {
-        "title": "Lucky",
-        "text": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll. You can only use this ability once per long rest.",
+        "title": "Lucky (feat)",
+        "text": "",
         "type": "paragraph",
         "list": ""
       }
