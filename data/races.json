@@ -17,15 +17,21 @@
     "features": [
       {
         "title": "Skill Versatility",
-        "text": "You gain proficiency in two skills of your choice."
+        "text": "You gain proficiency in two skills of your choice.",
+        "type": "paragraph",
+        "list": ""
       },
       {
         "title": "Mind Meld",
-        "text": "You can transfer and receive thoughts to another creature. You must concentrate and if the creature is not willing, the thoughts become jumbled and disjointed. Unintelligent creatures have unpredictable results."
+        "text": "You can transfer and receive thoughts to another creature. You must concentrate and if the creature is not willing, the thoughts become jumbled and disjointed. Unintelligent creatures have unpredictable results.",
+        "type": "paragraph",
+        "list": ""
       },
       {
         "title": "Cantrip",
-        "text": "You know one cantrip of your choice from the adept or vanguard spell list. Wisdom is your spellcasting ability for it."
+        "text": "You know one cantrip of your choice from the adept or vanguard spell list. Wisdom is your spellcasting ability for it.",
+        "type": "paragraph",
+        "list": ""
       }
     ]
   },
@@ -38,7 +44,7 @@
     "increases": "Con +2, Cha +1",
     "size": "Medium",
     "speed": "10m",
-    "skills": "Saving Face: Batarians are careful not to show weakness in front of their allies, for fear of losing status. If you miss with an attack roll or fail an ability check or a saving throw, you can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +5). Once you use this trait, you can't use it again until you finish a short or long rest. \n-- Weapon Master: You have practiced extensively with a variety of weapons, gaining the following benefits: Increase your Strength or Dexterity score by 1, to a maximum of 20. You gain proficiency with two weapons of your choice (in addition to your class weapon choice).",
+    "skills": "Saving Face: Batarians are careful not to show weakness in front of their allies, for fear of losing status. If you miss with an attack roll or fail an ability check or a saving throw, you can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +5). Once you use this trait, you can't use it again until you finish a short or long rest. \n-- Weapon Master: You have practiced extensively with a variety of weapons, gaining the following benefits\n> Increase your Strength or Dexterity score by 1, to a maximum of 20. \n> You gain proficiency with two weapons of your choice (in addition to your class weapon choice).",
     "armor": "Any",
     "body": "http://vignette1.wikia.nocookie.net/masseffect/images/b/b2/Batarian_MP.png/revision/latest/scale-to-width-down/500",
     "male": "http://cdn.escapistmagazine.com/media/global/images/quizzes/cat_img/235.png",
@@ -47,11 +53,18 @@
     "features": [
       {
         "title": "Saving Face",
-        "text": "Batarians are careful not to show weakness in front of their allies, for fear of losing status. If you miss with an attack roll or fail an ability check or a saving throw, you can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +5). Once you use this trait, you can't use it again until you finish a short or long rest."
+        "text": "Batarians are careful not to show weakness in front of their allies, for fear of losing status. If you miss with an attack roll or fail an ability check or a saving throw, you can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +5). Once you use this trait, you can't use it again until you finish a short or long rest.",
+        "type": "paragraph",
+        "list": ""
       },
       {
         "title": "Weapon Master",
-        "text": "You have practiced extensively with a variety of weapons, gaining the following benefits"
+        "text": "You have practiced extensively with a variety of weapons, gaining the following benefits",
+        "type": "list",
+        "list": [
+          "Increase your Strength or Dexterity score by 1, to a maximum of 20.",
+          "You gain proficiency with two weapons of your choice (in addition to your class weapon choice)."
+        ]
       }
     ]
   },
@@ -64,7 +77,7 @@
     "increases": "Dex +2, Wis +1",
     "size": "Medium",
     "speed": "15m",
-    "skills": "Keen Senses: You have proficiency in the Perception skill. -- Darkvision: You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray. -- Stealthy: You have advantage on stealth roles as long as you're wearing light armor. -- Hallucinogen: You skin is infused with a mild venom. When ingested or injected it can cause mild hallucinations. -- Feat",
+    "skills": "Keen Senses: You have proficiency in the Perception skill. \n-- Darkvision: You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray. \n-- Hallucinogen: You skin is infused with a mild venom. When ingested or injected it can cause mild hallucinations. \n-- Skulker: You are an expert at slinking through shadows. You gain the following benefits\n> You have advantage on stealth roles as long as you're wearing light armor. \n> You can try to hide when you are lightly obscured from the creature from which you are hiding.\n> When you are hidden from a creature and miss it with a ranged weapon attack, making the attack doesn't reveal your position.\n> Dim light doesn't impose disadvantage on your Wisdom (Perception) checks relying on sight.",
     "armor": "Light",
     "body": "http://vignette2.wikia.nocookie.net/masseffect/images/a/ad/Drell_MP.png/revision/latest/scale-to-width-down/500",
     "male": "https://img.ifcdn.com/images/761988b5b4b3d3c97b9ba9d1fa087d47b269a2f7aa185a7b0c47db62415efe18_1.jpg",
@@ -73,23 +86,32 @@
     "features": [
       {
         "title": "Keen Senses",
-        "text": "You have proficiency in the Perception skill."
+        "text": "You have proficiency in the Perception skill.",
+        "type": "paragraph",
+        "list": ""
       },
       {
         "title": "Darkvision",
-        "text": "You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
-      },
-      {
-        "title": "Stealthy",
-        "text": "You have advantage on stealth roles as long as you're wearing light armor."
+        "text": "You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+        "type": "paragraph",
+        "list": ""
       },
       {
         "title": "Hallucinogen",
-        "text": "You skin is infused with a mild venom. When ingested or injected it can cause mild hallucinations."
+        "text": "You skin is infused with a mild venom. When ingested or injected it can cause mild hallucinations.",
+        "type": "paragraph",
+        "list": ""
       },
       {
-        "title": "Feat",
-        "text": ""
+        "title": "Skulker",
+        "text": "You are an expert at slinking through shadows. You gain the following benefits",
+        "type": "list",
+        "list": [
+          "You have advantage on stealth roles as long as you're wearing light armor.",
+          "You can try to hide when you are lightly obscured from the creature from which you are hiding.",
+          "When you are hidden from a creature and miss it with a ranged weapon attack, making the attack doesn't reveal your position.",
+          "Dim light doesn't impose disadvantage on your Wisdom (Perception) checks relying on sight."
+        ]
       }
     ]
   },
@@ -111,11 +133,15 @@
     "features": [
       {
         "title": "Skills",
-        "text": "You gain proficiency in one skill of your choice."
+        "text": "You gain proficiency in one skill of your choice.",
+        "type": "paragraph",
+        "list": ""
       },
       {
         "title": "2 Feats",
-        "text": ""
+        "text": "",
+        "type": "paragraph",
+        "list": ""
       }
     ]
   },
@@ -137,19 +163,27 @@
     "features": [
       {
         "title": "Hacking",
-        "text": "You can cast AI hacking for free."
+        "text": "You can cast AI hacking for free.",
+        "type": "paragraph",
+        "list": ""
       },
       {
         "title": "Composite Plating",
-        "text": "Your construction incorporates advanced armor plating, granting you a +1 bonus to Armor Class."
+        "text": "Your construction incorporates advanced armor plating, granting you a +1 bonus to Armor Class.",
+        "type": "paragraph",
+        "list": ""
       },
       {
         "title": "Living Construct",
-        "text": "\\You are immune to disease. You do not need to eat or breathe. Instead of sleeping, you enter an inactive state for 4 hours each day. You do not dream in this state; you are fully aware of your surroundings and notice approaching enemies and other events as normal."
+        "text": "\\You are immune to disease. You do not need to eat or breathe. Instead of sleeping, you enter an inactive state for 4 hours each day. You do not dream in this state; you are fully aware of your surroundings and notice approaching enemies and other events as normal.",
+        "type": "paragraph",
+        "list": ""
       },
       {
         "title": "Feat",
-        "text": ""
+        "text": "",
+        "type": "paragraph",
+        "list": ""
       }
     ]
   },
@@ -171,19 +205,27 @@
     "features": [
       {
         "title": "Rage",
-        "text": "If you sink below half health, you enter into a rage. You take 1d8 less damage per hit your melee attacks deal an additional 1d8 damage."
+        "text": "If you sink below half health, you enter into a rage. You take 1d8 less damage per hit your melee attacks deal an additional 1d8 damage.",
+        "type": "paragraph",
+        "list": ""
       },
       {
         "title": "Natural Armor",
-        "text": "Increase your AC by 1."
+        "text": "Increase your AC by 1.",
+        "type": "paragraph",
+        "list": ""
       },
       {
         "title": "Relentless Endurance",
-        "text": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest."
+        "text": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest.",
+        "type": "paragraph",
+        "list": ""
       },
       {
         "title": "Menacing",
-        "text": "You gain proficiency in the Intimidation skill."
+        "text": "You gain proficiency in the Intimidation skill.",
+        "type": "paragraph",
+        "list": ""
       }
     ]
   },
@@ -205,15 +247,21 @@
     "features": [
       {
         "title": "Skills",
-        "text": "You gain proficiency in one skill of your choice."
+        "text": "You gain proficiency in one skill of your choice.",
+        "type": "paragraph",
+        "list": ""
       },
       {
         "title": "Improvised Grenade",
-        "text": "You can cast [Frag Grenade] once per long rest."
+        "text": "You can cast [Frag Grenade] once per long rest.",
+        "type": "paragraph",
+        "list": ""
       },
       {
         "title": "Feat",
-        "text": ""
+        "text": "",
+        "type": "paragraph",
+        "list": ""
       }
     ]
   },
@@ -235,15 +283,21 @@
     "features": [
       {
         "title": "Photographic Memory",
-        "text": ""
+        "text": "",
+        "type": "paragraph",
+        "list": ""
       },
       {
         "title": "Special Ammo",
-        "text": "You know an ammo power."
+        "text": "You know an ammo power.",
+        "type": "paragraph",
+        "list": ""
       },
       {
         "title": "Feat",
-        "text": ""
+        "text": "",
+        "type": "paragraph",
+        "list": ""
       }
     ]
   },
@@ -265,15 +319,21 @@
     "features": [
       {
         "title": "Turian Toughness",
-        "text": "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level."
+        "text": "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.",
+        "type": "paragraph",
+        "list": ""
       },
       {
         "title": "Speed",
-        "text": "Your speed is not reduced by wearing heavy armor."
+        "text": "Your speed is not reduced by wearing heavy armor.",
+        "type": "paragraph",
+        "list": ""
       },
       {
         "title": "Feat",
-        "text": ""
+        "text": "",
+        "type": "paragraph",
+        "list": ""
       }
     ]
   },
@@ -295,15 +355,21 @@
     "features": [
       {
         "title": "Fury of the Small",
-        "text": "When you damage a creature with an attack or a spell and the creature's size is larger than yours, you can cause the attack or spell to deal extra damage to the creature. The extra damage equals your level. Once you use this trait, you can't use it again until you finish a short or long rest."
+        "text": "When you damage a creature with an attack or a spell and the creature's size is larger than yours, you can cause the attack or spell to deal extra damage to the creature. The extra damage equals your level. Once you use this trait, you can't use it again until you finish a short or long rest.",
+        "type": "paragraph",
+        "list": ""
       },
       {
         "title": "Savvy Dealings",
-        "text": "You can get extra supplies and discounts from vendors."
+        "text": "You can get extra supplies and discounts from vendors.",
+        "type": "paragraph",
+        "list": ""
       },
       {
         "title": "Lucky",
-        "text": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll. You can only use this ability once per long rest."
+        "text": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll. You can only use this ability once per long rest.",
+        "type": "paragraph",
+        "list": ""
       }
     ]
   },
@@ -325,15 +391,21 @@
     "features": [
       {
         "title": "Bite",
-        "text": "Your fanged maw is a natural weapon, which you can use to make unarmed strikes. If you hit with it, you deal piercing damage equal to 1d6 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike."
+        "text": "Your fanged maw is a natural weapon, which you can use to make unarmed strikes. If you hit with it, you deal piercing damage equal to 1d6 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike.",
+        "type": "paragraph",
+        "list": ""
       },
       {
         "title": "Hungry Jaws",
-        "text": "In battle, you can throw yourself into a vicious feeding frenzy. As a bonus action, you can make a special attack with your bite. If the attack hits, it deals its normal damage, and you automatically activate Bloodlust. You can't use this trait again until you finish a short or long rest."
+        "text": "In battle, you can throw yourself into a vicious feeding frenzy. As a bonus action, you can make a special attack with your bite. If the attack hits, it deals its normal damage, and you automatically activate Bloodlust. You can't use this trait again until you finish a short or long rest.",
+        "type": "paragraph",
+        "list": ""
       },
       {
         "title": "Bloodlust",
-        "text": "After killing an enemy with a melee attack, you can activate Bloodlust. Your speed increases to 20m, add 1d8 to you melee attacks, and you regenerate 1d4 health per turn. This effect lasts 3 turns. If you kill another enemy, the effect is extended for 3 more turns."
+        "text": "After killing an enemy with a melee attack, you can activate Bloodlust. Your speed increases to 20m, add 1d8 to you melee attacks, and you regenerate 1d4 health per turn. This effect lasts 3 turns. If you kill another enemy, the effect is extended for 3 more turns.",
+        "type": "paragraph",
+        "list": ""
       }
     ]
   },
@@ -355,19 +427,27 @@
     "features": [
       {
         "title": "Darkvision",
-        "text": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        "text": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+        "type": "paragraph",
+        "list": ""
       },
       {
         "title": "Intuition",
-        "text": "You can easily read the body language of creatures, giving you advantage when making an Insight check on an organic creature."
+        "text": "You can easily read the body language of creatures, giving you advantage when making an Insight check on an organic creature.",
+        "type": "paragraph",
+        "list": ""
       },
       {
         "title": "Powerful Build",
-        "text": "You count as one size larger when determining your carrying capacity (+10) and the weight you can push, drag, or lift."
+        "text": "You count as one size larger when determining your carrying capacity (+10) and the weight you can push, drag, or lift.",
+        "type": "paragraph",
+        "list": ""
       },
       {
         "title": "Feat",
-        "text": ""
+        "text": "",
+        "type": "paragraph",
+        "list": ""
       }
     ]
   }

@@ -38,6 +38,13 @@
                     <div class="px-3" style="border-left: solid 3px black">
                         {% for skill in race.features %}
                             <p style="font-size: .9rem"><strong>{{ skill.title }}</strong>{% if skill.text != '' %}: {{ skill.text }}{% endif %}</p>
+                            {% if skill.type == 'list' %}
+                                <ul style="font-size: .9rem">
+                                    {% for item in skill.list %}
+                                        <li>{{ item }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
                         {% endfor %}
                     </div>
                     {% if race.race == "Geth" %}
