@@ -1,6 +1,6 @@
 url: http://queryluke.github.io/masseffect-5e
 baseurl: /masseffect-5e/
-permalink: /news/:title/
+permalink: /masseffect-5e/news/:title/
 include: [assets/js/main.js]
 data_dir: data
 version: 0.1.0-alpha
