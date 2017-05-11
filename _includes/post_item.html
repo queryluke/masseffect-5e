@@ -1,0 +1,11 @@
+<div class="card mb-2">
+    <div class="card-block">
+        <div class="date-grid text-center">
+            <span class="month date-part">{{ include.post.date | date: "%b" }}</span>
+            <span class="day date-part">{{ include.post.date | date: "%d" }}</span>
+            <span class="year date-part">{{ include.post.date | date: "%Y" }}</span>
+        </div>
+        <h4 class="card-title"><a href="{{ include.post.url }}">{{ include.post.title }}</a></h4>
+        <p class="card-text">{{ include.post.excerpt | remove: '<p>' | remove: '</p>' }}</p>
+    </div>
+</div>

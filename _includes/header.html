@@ -57,16 +57,24 @@
                         {% endfor %}
                     </div>
                 </li>
-                <li class="nav-item {% if page.title == 'Features' %} active {% endif %}">
-                    <a class="nav-link" href="{{ site.baseurl }}features">Features {% if page.title == 'Features' %}<span class="sr-only">(current)</span>{% endif %}</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="listLink" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Lists
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="listLink">
+                        <a class="dropdown-item {% if page.title == 'Features' %}active{% endif %}" href="{{ site.baseurl }}features">Features {% if page.title == 'Features' %}<span class="sr-only">(current)</span>{% endif %}</a>
+                        <a class="dropdown-item {% if page.title == 'Weapons' %}active{% endif %}" href="{{ site.baseurl }}weapons">Weapons {% if page.title == 'Weapons' %}<span class="sr-only">(current)</span>{% endif %}</a>
+                        <a class="dropdown-item {% if page.title == 'Heavy Weapons' %}active{% endif %}" href="{{ site.baseurl }}heavy-weapons">Heavy Weapons {% if page.title == 'Heavy Weapons' %}<span class="sr-only">(current)</span>{% endif %}</a>
+                    </div>
                 </li>
-                <li class="nav-item {% if page.title == 'Weapons' %} active {% endif %}">
-                    <a class="nav-link" href="{{ site.baseurl }}weapons">Weapons {% if page.title == 'Weapons' %}<span class="sr-only">(current)</span>{% endif %}</a>
+                <li class="nav-item {% if page.title == 'About' %} active {% endif %}">
+                    <a class="nav-link" href="{{ site.baseurl }}about">About {% if page.title == 'About' %}<span class="sr-only">(current)</span>{% endif %}</a>
                 </li>
-                <li class="nav-item {% if page.title == 'Heavy Weapons' %} active {% endif %}">
-                    <a class="nav-link" href="{{ site.baseurl }}heavy-weapons">Heavy Weapons {% if page.title == 'Heavy Weapons' %}<span class="sr-only">(current)</span>{% endif %}</a>
+                <li class="nav-item {% if page.title == 'News' %} active {% endif %}">
+                    <a class="nav-link" href="{{ site.baseurl }}News">News {% if page.title == 'News' %}<span class="sr-only">(current)</span>{% endif %}</a>
                 </li>
             </ul>
+            <span class="navbar-text">v0.1.0-alpha</span>
         </div>
     </nav>
 

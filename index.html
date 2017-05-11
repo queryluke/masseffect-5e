@@ -5,22 +5,22 @@ title: Mass Effect 5e
 
 <div class="jumbotron jumbotron-fluid" style="margin-top: -3em; padding-bottom: 1em;">
     <div class="container text-center">
+        <h1 class="sr-only">Mass Effect 5e</h1>
         <img src="{{ site.baseurl }}assets/images/me5e_logo_notm.png" class="img-fluid" alt="mass effect 5e logo">
         <p class="lead mt-3">
-            Love Mass Effect? Love D&D 5e? Now you can enjoy them both!
+            The Unofficial D&D 5th Edition conversion for the Mass Effect Universe
         </p>
     </div>
 </div>
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h1>Welcome!</h1>
-            <p>Mass Effect 5e is a D&D 5e conversion project for the Mass Effect universe. Start by reading the
-                <a href="{{ site.baseurl }}rules">Rules</a> to review the changes and tweaks. The rest of the site
-                acts as your virtual Player's Handbook, with all the information on classes, races, weapons, etc. <!--If
-                you'd like additional information about this project, checkout the <a href="{{ site.baseurl }}about.html">About</a>
-                section.--> If you'd like to look at the underlying code, checkout the <a href="https://github.com/queryluke/masseffect-5e">repo</a>.
-            </p>
+            <h2>Latest News</h2>
+            {% assign news = site.posts | limit: 5 %}
+            {% for post in news %}
+                {% include post_item.html post=post %}
+            {% endfor %}
+
             <div class="row mt-5">
                 <div class="col-12">
                     <h2>Races</h2>

@@ -27,6 +27,13 @@ footer {
   font-size: .8rem;
   background-color: $inverse-bg;
   color: $gray-lighter;
+
+  a {
+    color: lighten($brand-primary, 30%);
+  }
+  a:hover, a:focus {
+    color: lighten($brand-primary, 20%);
+  }
 }
 
 /* Circle portrait */
@@ -178,4 +185,31 @@ footer {
   -o-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
+}
+
+/* post list */
+.date-grid {
+  display: block;
+  float: left;
+  background-color: $brand-primary;
+  width: 4.2rem;
+  height: 5rem;
+  margin-right: 1rem;
+  color: $gray-lighter;
+
+  .date-part {
+    display: block;
+    line-height: 1.5rem;
+    font-size: .8rem;
+  }
+
+  .date-part.day {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: .2rem 0 .3rem 0;
+  }
+
+  .date-part.month {
+    letter-spacing: 1px;
+  }
 }

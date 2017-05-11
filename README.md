@@ -1,5 +1,5 @@
 # Mass Effect 5e
-A homebrew conversion of the Mass Effect Universe into Dungeons & Dragons 5th Edition.
+A homebrew conversion of Dungeons & Dragons 5th Edition into the Mass Effect Universe.
 
  [View the Site](https://queryluke.github.io/masseffect-5e)
  
