@@ -29,7 +29,7 @@
                                 {{ d[head] }}
                             </button>
                         {% else %}
-                            {{ d[head] }}
+                            {% if head == 'damage' %}d{% endif %}{{ d[head] }}
                         {% endif %}
                     </td>
                     {% endfor %}
