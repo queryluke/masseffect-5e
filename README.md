@@ -17,9 +17,9 @@ A homebrew conversion of Dungeons & Dragons 5th Edition into the Mass Effect Uni
  2. Or make an issue in this repo
  
  ### Working on the code
- 
+ * You need to have Bundler installed `gem install bundler`
  * Clone the repo
- * Within the directory: `ruby install bundler`
+ * Within the directory: `bundle install`
  
  To run locally:
  
