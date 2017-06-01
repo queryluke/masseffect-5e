@@ -111,6 +111,12 @@
                     if(object['duration']){
                         spellHead += '<dt class="col-sm-3">Duration</dt><dd class="col-sm-9">' + object['duration'] + '</dd>';
                     }
+                    if(object['primes']){
+                        spellHead += '<dt class="col-sm-3"><span class="text-primary">Primes</span></dt>';
+                    }
+                    if(object['detonates']){
+                        spellHead += '<dt class="col-sm-3"><span class="text-danger">Detonates</span></dt>';
+                    }
                     spellHead += '</dl><hr>';
 
                     if(object['higher-level']){
