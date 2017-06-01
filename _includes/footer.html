@@ -100,7 +100,7 @@
 
                 body += '<p>' + renderMechanic(object['mechanic']) + '</p>';
 
-                if(object['type'] == 'spell' || object['type'] == 'tech'){
+                if(object['type'] == 'spell' || object['type'] == 'tech' || object['type'] == 'combat'){
                     spellHead += '<dl class="row">';
                     if(object['casting-time']){
                         spellHead += '<dt class="col-sm-3">Casting Time</dt><dd class="col-sm-9">' + object['casting-time'] + '</dd>';
