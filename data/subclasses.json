@@ -559,7 +559,7 @@
     "18": [
       {
         "text": "Devastator Mode",
-        "add-text": "",
+        "add-text": ", select an Advancement option",
         "level": ""
       }
     ]
@@ -599,7 +599,7 @@
     "18": [
       {
         "text": "Hawk Missile Launcher",
-        "add-text": "",
+        "add-text": ", select an Advancement option",
         "level": ""
       }
     ]

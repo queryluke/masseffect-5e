@@ -75,7 +75,7 @@ end
 def insert_higher_level_text(type, die, tp, level)
   hlt = {
     'cantrip' => 'The spell\'s damage increases by 1[dd] when you reach 5th level (2[dd]), 11th level (3[dd]), and 17th level (4[dd]).',
-    'spell' => 'When you cast this spell using a spell slot of [spellLevelp1] level or higher, the damage increases by 1[dd] for each slot level above [spellLevel]',
+    'spell' => 'When you cast this spell using a spell slot of [spellLevelp1] or higher, the damage increases by 1[dd] for each slot level above [spellLevel]',
     'tech' => 'You can spend up to [maxTP] TP.',
   }
   case type
@@ -112,10 +112,11 @@ def create_class_list(model)
 end
 
 def config_abilities(model)
+  no_higher_lvl = ['Barrier', 'Singularity', 'Phase Disruptor', 'Stasisruby ']
   model['mechanic'] = insert_dd(model['mechanic'], model['die-type'])
   model['adv-option-1'] = insert_dd(model['adv-option-1'], model['die-type'])
   model['adv-option-2'] = insert_dd(model['adv-option-2'], model['die-type'])
-  model['higher-level'] = insert_higher_level_text(model['type'], model['die-type'], model['max-tp'], model['level'])
+  model['higher-level'] = no_higher_lvl.include?(model['name']) ? nil : insert_higher_level_text(model['type'], model['die-type'], model['max-tp'], model['level'])
   model['class-list'] = create_class_list(model)
   model
 end

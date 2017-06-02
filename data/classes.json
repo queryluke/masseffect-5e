@@ -5,7 +5,7 @@
     "hit-die": "1d4",
     "hit-points": "3 + your Constitution modifier",
     "max-shields": "3",
-    "increase-hit-points": "1d4 (or 4) + your Constitution modifier",
+    "increase-hit-points": "1d4 (or 2) + your Constitution modifier",
     "increase-max-shields": "1d4",
     "weapon": "Choose one from Heavy Pistol, SMG",
     "saving-throw": "Dexterity, Wisdom",
