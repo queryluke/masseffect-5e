@@ -112,7 +112,7 @@ def create_class_list(model)
 end
 
 def config_abilities(model)
-  no_higher_lvl = ['Barrier', 'Singularity', 'Phase Disruptor', 'Stasisruby ']
+  no_higher_lvl = ['Barrier', 'Singularity', 'Phase Disruptor', 'Stasis', 'Pull']
   model['mechanic'] = insert_dd(model['mechanic'], model['die-type'])
   model['adv-option-1'] = insert_dd(model['adv-option-1'], model['die-type'])
   model['adv-option-2'] = insert_dd(model['adv-option-2'], model['die-type'])

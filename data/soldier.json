@@ -45,6 +45,11 @@
         "text": "Advanced Weapon Proficiency",
         "add-text": "",
         "level": ""
+      },
+      {
+        "text": "Soldier Grenades",
+        "add-text": "(2)",
+        "level": ""
       }
     ],
     "adrenaline-dice": "3",
@@ -75,8 +80,8 @@
         "level": ""
       },
       {
-        "text": "Soldier Grenades",
-        "add-text": "(2)",
+        "text": "Extra Attack",
+        "add-text": "",
         "level": ""
       }
     ],
@@ -166,6 +171,11 @@
       {
         "text": "Advanced Weapon Proficiency",
         "add-text": "",
+        "level": ""
+      },
+      {
+        "text": "Extra Attack",
+        "add-text": "(2)",
         "level": ""
       }
     ],
@@ -292,6 +302,11 @@
       {
         "text": "Overpower",
         "add-text": "",
+        "level": ""
+      },
+      {
+        "text": "Extra Attack",
+        "add-text": "(3)",
         "level": ""
       }
     ],

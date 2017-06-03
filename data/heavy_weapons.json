@@ -31,7 +31,7 @@
     "name": "M-597 Landon",
     "weight": "11",
     "charge": "10",
-    "effect": "Spend a round Targeting as you sweep the battlefield for all enemies. At the start of your next turn, choose up to 10 enemy creatures and launch a miniature missile at them, dealing 1d8 damage. You cannot target a creature twice. Each missile used consumes a weapon charge.",
+    "effect": "Spend a round Targeting as you sweep the battlefield for all enemies. At the start of your next turn, choose up to 10 enemy creatures and launch a miniature missile at them, dealing 2d8 damage. You cannot target a creature twice. Each missile used consumes a weapon charge.",
     "image": "http://vignette4.wikia.nocookie.net/masseffect/images/6/61/ME3_Ladon_Codex_Rip.png/revision/latest?cb=20140106114047"
   },
   {
