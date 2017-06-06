@@ -159,7 +159,7 @@
             var name = $(e.relatedTarget).data('name');
             var key = $(e.relatedTarget).data('key');
             $(this).find('.modal-title').html(name);
-            $.getJSON( "{{ site.baseurl }}data/" + dataFile + ".json" , function( result ){
+            $.getJSON( "{{ site.github.url }}/data/" + dataFile + ".json" , function( result ){
                 result.forEach(function(v,k){
                     if(v[key] === name){
                         html = renderOptions[dataFile](v);

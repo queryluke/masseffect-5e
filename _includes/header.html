@@ -5,8 +5,8 @@
     <title>{{ page.title }}</title>
     <meta name="description" content="Mass Effect Universe mapped onto the Dungeons & Dragons 5th Edition">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{{ site.baseurl }}favicon.ico" rel="icon" type="image/x-icon" />
-    <link rel="stylesheet" href="{{ site.baseurl }}assets/css/main.css">
+    <link href="{{ site.github.url }}/favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="{{ site.github.url }}/assets/css/main.css">
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -25,35 +25,35 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="{{ site.baseurl }}">
-            <img src="{{ site.baseurl }}assets/images/me5e.svg" width="30" height="30" alt="Mass Effect 5e Logo">
+        <a class="navbar-brand" href="{{ site.github.url }}/">
+            <img src="{{ site.github.url }}/assets/images/me5e.svg" width="30" height="30" alt="Mass Effect 5e Logo">
             <span class="sr-only">Mass Effect 5e</span>
         </a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item {% if page.title == 'Rules' %} active {% endif %}">
-                    <a class="nav-link" href="{{ site.baseurl }}rules">Rules {% if page.title == 'Rules' %}<span class="sr-only">(current)</span>{% endif %}</a>
+                    <a class="nav-link" href="{{ site.github.url }}/rules">Rules {% if page.title == 'Rules' %}<span class="sr-only">(current)</span>{% endif %}</a>
                 </li>
                 <li class="nav-item dropdown {% if page.title == 'Races' %} active {% endif %}">
-                    <a class="nav-link dropdown-toggle" href="{{ site.baseurl }}races" id="racesLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="{{ site.github.url }}/races" id="racesLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Races
                         {% if page.title == 'Races' %}<span class="sr-only">(current)</span>{% endif %}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="racesLink">
                         {% for race in site.data.races %}
-                        <a class="dropdown-item" href="{{ site.baseurl }}races/{{ race.race | slugify }}">{{ race.race }}</a>
+                        <a class="dropdown-item" href="{{ site.github.url }}/races/{{ race.race | slugify }}">{{ race.race }}</a>
                         {% endfor %}
                     </div>
                 </li>
                 <li class="nav-item dropdown {% if page.title == 'Classes' %} active {% endif %}">
-                    <a class="nav-link dropdown-toggle" href="{{ site.baseurl }}classes" id="classLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="{{ site.github.url }}/classes" id="classLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Classes
                         {% if page.title == 'Classes' %}<span class="sr-only">(current)</span>{% endif %}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="classLink">
                         {% for class in site.data.classes %}
-                        <a class="dropdown-item" href="{{ site.baseurl }}classes/{{ class.class | slugify }}">{{ class.class }}</a>
+                        <a class="dropdown-item" href="{{ site.github.url }}/classes/{{ class.class | slugify }}">{{ class.class }}</a>
                         {% endfor %}
                     </div>
                 </li>
@@ -62,19 +62,19 @@
                         Lists
                     </a>
                     <div class="dropdown-menu" aria-labelledby="listLink">
-                        <a class="dropdown-item {% if page.title == 'Features' %}active{% endif %}" href="{{ site.baseurl }}features">Features {% if page.title == 'Features' %}<span class="sr-only">(current)</span>{% endif %}</a>
-                        <a class="dropdown-item {% if page.title == 'Weapons' %}active{% endif %}" href="{{ site.baseurl }}weapons">Weapons {% if page.title == 'Weapons' %}<span class="sr-only">(current)</span>{% endif %}</a>
-                        <a class="dropdown-item {% if page.title == 'Heavy Weapons' %}active{% endif %}" href="{{ site.baseurl }}heavy-weapons">Heavy Weapons {% if page.title == 'Heavy Weapons' %}<span class="sr-only">(current)</span>{% endif %}</a>
+                        <a class="dropdown-item {% if page.title == 'Features' %}active{% endif %}" href="{{ site.github.url }}/features">Features {% if page.title == 'Features' %}<span class="sr-only">(current)</span>{% endif %}</a>
+                        <a class="dropdown-item {% if page.title == 'Weapons' %}active{% endif %}" href="{{ site.github.url }}/weapons">Weapons {% if page.title == 'Weapons' %}<span class="sr-only">(current)</span>{% endif %}</a>
+                        <a class="dropdown-item {% if page.title == 'Heavy Weapons' %}active{% endif %}" href="{{ site.github.url }}/heavy-weapons">Heavy Weapons {% if page.title == 'Heavy Weapons' %}<span class="sr-only">(current)</span>{% endif %}</a>
                     </div>
                 </li>
                 <li class="nav-item {% if page.title == 'Character Sheets' %} active {% endif %}">
-                    <a class="nav-link" href="{{ site.baseurl }}sheets">Character Sheets {% if page.title == 'Character Sheets' %}<span class="sr-only">(current)</span>{% endif %}</a>
+                    <a class="nav-link" href="{{ site.github.url }}/sheets">Character Sheets {% if page.title == 'Character Sheets' %}<span class="sr-only">(current)</span>{% endif %}</a>
                 </li>
                 <li class="nav-item {% if page.title == 'About' %} active {% endif %}">
-                    <a class="nav-link" href="{{ site.baseurl }}about">About {% if page.title == 'About' %}<span class="sr-only">(current)</span>{% endif %}</a>
+                    <a class="nav-link" href="{{ site.github.url }}/about">About {% if page.title == 'About' %}<span class="sr-only">(current)</span>{% endif %}</a>
                 </li>
                 <li class="nav-item {% if page.title == 'News' %} active {% endif %}">
-                    <a class="nav-link" href="{{ site.baseurl }}news">News {% if page.title == 'News' %}<span class="sr-only">(current)</span>{% endif %}</a>
+                    <a class="nav-link" href="{{ site.github.url }}/news">News {% if page.title == 'News' %}<span class="sr-only">(current)</span>{% endif %}</a>
                 </li>
             </ul>
             <span class="navbar-text">v0.1.0-alpha</span>
