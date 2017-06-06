@@ -3,7 +3,7 @@
 {% assign race = site.data.races | where: "race", page.race %}
 {% assign race = race[0] %}
 {% capture img-margin %}{% if race.race == 'Volus' %}-10em{% else %}-1.5em{% endif %}{% endcapture %}
-{% capture img %}{% if race.race == 'Yagh' %}{{ site.baseurl }}{% endif %}{{ race.body }}{% endcapture %}
+{% capture img %}{% if race.race == 'Yagh' %}{{ site.github.url }}/{% endif %}{{ race.body }}{% endcapture %}
 <div class="container-fluid" id="{{ race.race | slugify }}">
     <div class="row">
         <div class="col-sm-4 hidden-xs-down">
