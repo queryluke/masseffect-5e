@@ -3,6 +3,7 @@
 require 'json'
 require 'csv'
 require 'net/http'
+require 'date'
 Encoding.default_external = Encoding::UTF_8
 
 
@@ -72,31 +73,6 @@ def insert_dd(string, die)
   end
 end
 
-def insert_higher_level_text(type, die, tp, level)
-  hlt = {
-    'cantrip' => 'The spell\'s damage increases by 1[dd] when you reach 5th level (2[dd]), 11th level (3[dd]), and 17th level (4[dd]).',
-    'spell' => 'When you cast this spell using a spell slot of [spellLevelp1] or higher, the damage increases by 1[dd] for each slot level above [spellLevel]',
-    'tech' => 'You can spend up to [maxTP] TP.',
-  }
-  case type
-  when 'spell'
-    if level.to_i > 0
-      text = insert_dd(hlt['spell'], die)
-      plus1 = level.to_i + 1
-      text = text.gsub(/\[spellLevelp1\]/, plus1.to_s).gsub(/\[spellLevel\]/, level)
-    else
-      text = insert_dd(hlt['cantrip'], die)
-    end
-  when 'tech'
-    if tp
-      text = hlt['tech'].gsub(/\[maxTP\]/, tp)
-    end
-  else
-    text = ''
-  end
-  text
-end
-
 def create_class_list(model)
   classes = ['adept','engineer','infiltrator','sentinel','soldier','vanguard'];
   output = []
@@ -111,12 +87,15 @@ def create_class_list(model)
   output.join(', ')
 end
 
-def config_abilities(model)
-  no_higher_lvl = ['Barrier', 'Singularity', 'Phase Disruptor', 'Stasis', 'Pull']
-  model['mechanic'] = insert_dd(model['mechanic'], model['die-type'])
-  model['adv-option-1'] = insert_dd(model['adv-option-1'], model['die-type'])
-  model['adv-option-2'] = insert_dd(model['adv-option-2'], model['die-type'])
-  model['higher-level'] = no_higher_lvl.include?(model['name']) ? nil : insert_higher_level_text(model['type'], model['die-type'], model['max-tp'], model['level'])
+def config_spells(model)
+  model['id'] = model['name'].downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+  model['mechanic'] = insert_dd(model['mechanic'], model['die-type']).split('--').map { |l| l.strip }
+  model['attack-type'] = model['attack-type'] ? model['attack-type'].split(',') : []
+  model['effect'] = model['effect'] ? model['effect'].split(',') : []
+  model['damage-type'] = model['damage-type'] ? model['damage-type'].split(',') : []
+  model['adv-options'] = []
+  model['adv-options'] << insert_dd(model['adv-option-1'], model['die-type'])
+  model['adv-options'] << insert_dd(model['adv-option-2'], model['die-type'])
   model['class-list'] = create_class_list(model)
   model
 end
@@ -150,29 +129,8 @@ def generate_config_file(page)
       end
 
       case page[:type]
-      when 'races'
-        race = dup_model['race'].gsub(' ','-').downcase
-        directory = "races/#{race}"
-        Dir.mkdir(directory) unless File.exists?(directory)
-        File.open("#{directory}/index.html", 'w') do |f|
-          f.write("---\nlayout: race\ntitle: Races - #{dup_model['race']}\nrace: #{dup_model['race']}\n---")
-        end
-        dup_model = config_races(dup_model)
-      when 'classes'
-        c = dup_model['class'].gsub(' ','-').downcase
-        directory = "classes/#{c}"
-        Dir.mkdir(directory) unless File.exists?(directory)
-        File.open("#{directory}/index.html", 'w') do |f|
-          f.write("---\nlayout: class\ntitle: Classes - #{dup_model['class']}\nclass: #{dup_model['class']}\n---")
-        end
-      when 'subclasses'
-        dup_model['2'] = set_features(dup_model['2'])
-        dup_model['6'] = set_features(dup_model['6'])
-        dup_model['10'] = set_features(dup_model['10'])
-        dup_model['14'] = set_features(dup_model['14'])
-        dup_model['18'] = set_features(dup_model['18'])
-      when 'features'
-        dup_model = config_abilities(dup_model)
+      when 'spells'
+        dup_model = config_spells(dup_model)
       else
         if dup_model.has_key?('features')
           dup_model['features'] = set_features(dup_model['features'])
@@ -183,69 +141,25 @@ def generate_config_file(page)
     end
   end
 
+  date = DateTime.now
+
+  data = {
+    updated: date.strftime("%B %e, %Y @ %l:%M %p"),
+    source: page[:url],
+    "#{page[:type]}" => collection
+  }
+
 
   puts "working on #{page[:type]}"
-  File.open("data/#{page[:type]}.json", 'wb') {|f| f.write JSON.pretty_generate(collection) }
+  File.open("src/data/#{page[:type]}.json", 'wb') {|f| f.write JSON.pretty_generate(data) }
 
 end
 
 pages = [
   {
-    :type => 'races',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=0&single=true&output=csv'
+    :type => 'spells',
+    :url => 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSs9dkG94f5fPCOJ38g-xCUCwnYynzbiFdggQ1KqM1vMscINwcn2_OGPqGhvxOrYl18oK7dO2notL_y/pub?gid=0&single=true&output=csv'
   },
-  {
-    :type => 'classes',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=781894233&single=true&output=csv'
-  },
-  {
-    :type => 'subclasses',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=1874613976&single=true&output=csv'
-  },
-  {
-    :type => 'features',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=686320782&single=true&output=csv',
-  },
-  {
-    :type => 'weapons',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=1499213134&single=true&output=csv',
-  },
-  {
-    :type => 'heavy_weapons',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=1966803402&single=true&output=csv',
-  },
-  {
-    :type => 'adept',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=1555546585&single=true&output=csv'
-  },
-  {
-    :type => 'engineer',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=1365181965&single=true&output=csv'
-  },
-  {
-    :type => 'infiltrator',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=378282529&single=true&output=csv'
-  },
-  {
-    :type => 'soldier',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=1216928408&single=true&output=csv'
-  },
-  {
-    :type => 'vanguard',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=854116423&single=true&output=csv'
-  },
-  {
-    :type => 'sentinel',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=1711909552&single=true&output=csv'
-  },
-  {
-    :type => 'skills',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=1346893981&single=true&output=csv'
-  },
-  {
-    :type => 'conditions',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=1293441189&single=true&output=csv'
-  }
 ].each do |p|
   generate_config_file(p)
 end
