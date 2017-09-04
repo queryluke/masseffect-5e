@@ -1,0 +1,27 @@
+---
+layout: v1/default
+title: Heavy Weapons
+---
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1>Heavy Weapons</h1>
+        </div>
+    </div>
+    {% for hw in site.data.v1.heavy_weapons %}
+    <div class="row">
+        <div class="col-12 col-sm-3 col-md-4 col-lg-2">
+            <img class="img-fluid" src="{{ hw.image }}">
+        </div>
+        <div class="col-12 col-sm-9 col-md-8 col-lg-10">
+            <h2>{{ hw.name }}</h2>
+            <ul class="list-inline">
+                <li><strong>Weight:</strong> {{ hw.weight }}</li>
+                <li><strong>Charge:</strong> {{ hw.charge }}</li>
+            </ul>
+            <p>{{ hw.effect }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>

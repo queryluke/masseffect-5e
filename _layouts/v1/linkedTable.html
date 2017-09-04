@@ -1,0 +1,44 @@
+{% include v1/header.html %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 mt-3">
+            <h1>{{ page.title }}</h1>
+
+            <div class="form-group hidden-sm-down col-md-4">
+                <label for="search">Search</label>
+                <input id="search" type="text" class="form-control">
+                
+            </div>
+            <table class="table table-hover table-sm linked-table sortable searchable">
+                <thead class="thead-inverse">
+                <tr>
+                    {% for head in page.headers %}
+                    <th>{{ head | replace: '-', ' ' | capitalize}}</th>
+                    {% endfor %}
+                </tr>
+                </thead>
+                <tbody>
+                {% assign data = site.data.v1[page.data_file] | sort: "name" %}
+                {% for d in data %}
+                <tr>
+                    {% for head in page.headers %}
+                    <td>
+                        {% if head == page.headers[0] and page.data_file != nil %}
+                            <button type="button" class="link" data-name="{{ d[page.id_attribute] }}" data-type="{{ page.data_file }}" data-key="{{ page.id_attribute }}" data-toggle="modal" data-target="#ajaxModal">
+                                {{ d[head] }}
+                            </button>
+                        {% else %}
+                            {% if head == 'damage' %}d{% endif %}{{ d[head] }}
+                        {% endif %}
+                    </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% include v1/footer.html %}

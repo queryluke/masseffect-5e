@@ -1,0 +1,251 @@
+</div>
+<script
+        src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+        crossorigin="anonymous"></script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+<script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+<script>
+    $(function(){
+
+        var hash = window.location.hash;
+        if(hash){
+            showContent(hash, '');
+        } else {
+            if($('.content-div').length){
+                target = '#' + $('.content-div').first().attr('id');
+                showContent(target, target);
+            }
+        }
+
+        $('.subnav-link').click(function(e){
+            e.preventDefault();
+            var target = $(this).attr('href');
+            target = target.substring(target.indexOf('#'));
+            showContent(target, target);
+        });
+
+        function showContent(target, hash){
+            if(hash != ''){
+                window.location.hash = target;
+            }
+            $('.subnav-link').removeClass('active');
+            $('[href="'+target+'"]').addClass('active');
+            $('.content-div').addClass('hidden-xl-down');
+            $(target).removeClass('hidden-xl-down');
+        }
+
+        function renderTable(string){
+            string = string.replace(/({!table}|{\/table})/gm,'');
+            var rows = string.split('--');
+            var header = rows.slice(0,1)[0].split('|');
+
+            rows = rows.slice(1);
+
+            var table = '<table class="table table-bordered table-sm table-striped"><thead class="thead-inverse"><tr>';
+            header.forEach(function(key){
+               table += '<th>' + key + '</th>';
+            });
+
+            table += '</tr></thead><tbody>';
+
+            rows.forEach(function(r){
+                var tds = r.split('|');
+                table += '<tr>';
+                tds.forEach(function(t){
+                    table += '<td>' + t + '</td>';
+                });
+                table += '</tr>';
+            });
+
+            table += '</tbody></table>';
+            return table;
+        }
+
+        function renderMechanic(string) {
+
+            if (string.indexOf('{!table}') > -1){
+                var re = /{!table}([\s\S]*?){\/table}/gm;
+                var table = renderTable(string.match(re)[0]);
+                string = string.replace(re,table);
+            }
+            if (string.indexOf('{!level}') > -1){
+                string = string.split('{!level}');
+                var list = '<ul class="list-unstyled">';
+                string[1].split('--').forEach(function(v,k){
+                    list += '<li>(' + (k + 1) + ') - ' + v;
+                });
+                list += '</ul>';
+
+                string = string[0] + list;
+            }
+
+            string = string.split('--');
+
+            return '<p>' + string.join('</p><p>') + '</p>';
+        }
+
+        var renderOptions = {
+            features: function(object){
+                var spellHead = '';
+                var body = '';
+                var higher = '';
+                var advancements = '';
+
+                body += '<p>' + renderMechanic(object['mechanic']) + '</p>';
+
+                if(object['type'] == 'spell' || object['type'] == 'tech' || object['type'] == 'combat'){
+                    spellHead += '<dl class="row">';
+                    if(object['casting-time']){
+                        spellHead += '<dt class="col-sm-3">Casting Time</dt><dd class="col-sm-9">' + object['casting-time'] + '</dd>';
+                    }
+                    if(object['range']) {
+                        spellHead += '<dt class="col-sm-3">Range</dt><dd class="col-sm-9">' + object['range'] + '</dd>';
+                    }
+                    if(object['duration']){
+                        spellHead += '<dt class="col-sm-3">Duration</dt><dd class="col-sm-9">' + object['duration'] + '</dd>';
+                    }
+                    if(object['primes']){
+                        spellHead += '<dt class="col-sm-3"><span class="text-primary">Primes</span></dt>';
+                    }
+                    if(object['detonates']){
+                        spellHead += '<dt class="col-sm-3"><span class="text-danger">Detonates</span></dt>';
+                    }
+                    spellHead += '</dl><hr>';
+
+                    if(object['higher-level']){
+                        higher += '<p>' + object['higher-level'] + '</p>';
+                    }
+
+                    if(object['adv-option-1']){
+                        advancements += '<h4>Advancements</h4>';
+                        av1 = object['adv-option-1'].split(':');
+                        advancements += '<p><strong>' + av1[0].trim() + '</strong>: ' + av1[1].trim() + '</p>';
+                    }
+                    if(object['adv-option-2']) {
+                        av2 = object['adv-option-2'].split(':');
+                        advancements += '<p><strong>' + av2[0].trim() + '</strong>: ' + av2[1].trim() + '</p>';
+                    }
+                }
+
+                return spellHead + body + higher + advancements;
+            },
+            weapons: function(object){
+                var html = '';
+                html += '<div class="row"><div class="col-12 col-sm-4"><img class="img-fluid" src="' + object['image'] + '"></div>';
+                html += '<div class="col-12 col-sm-8">';
+                html += '<dl class="row">';
+                html += '<dt class="col-sm-3">Type</dt><dd class="col-sm-9">' + object['weapon-type'] + '</dd>';
+                html += '<dt class="col-sm-3">Weight</dt><dd class="col-sm-9">' + object['weight'] + '</dd>';
+                html += '<dt class="col-sm-3">Range</dt><dd class="col-sm-9">' + object['range'] + '</dd>';
+                html += '<dt class="col-sm-3">Rate of Fire</dt><dd class="col-sm-9">' + object['rof'] + '</dd>';
+                html += '<dt class="col-sm-3">Damage</dt><dd class="col-sm-9">d' + object['damage'] + '</dd>';
+                html += '<dt class="col-sm-3">Heat</dt><dd class="col-sm-9">' + object['heat'] + '</dd>';
+                html += '<dt class="col-sm-3">Cost</dt><dd class="col-sm-9">' + object['cost'] + '</dd>';
+                html += '</dl></div></div><hr>';
+                html += '<p>' + object['notes'] + '</p>';
+                return html;
+            }
+        }
+
+        $('#ajaxModal').on('show.bs.modal', function (e) {
+            var dataFile =  $(e.relatedTarget).data('type');
+            var name = $(e.relatedTarget).data('name');
+            var key = $(e.relatedTarget).data('key');
+            $(this).find('.modal-title').html(name);
+            $.getJSON( "{{ site.github.url }}/data/v1/" + dataFile + ".json" , function( result ){
+                result.forEach(function(v,k){
+                    if(v[key] === name){
+                        html = renderOptions[dataFile](v);
+                        $('#ajaxModal').find('.modal-body').html(html);
+                    }
+                });
+            });
+        });
+
+        if($('.sortable').length){
+            var table = $('.sortable');
+
+            table.on('click','th',function(){
+                var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
+                table.find('th').removeClass('sort-asc sort-desc');
+                this.asc = !this.asc;
+                if (!this.asc){
+                    rows = rows.reverse()
+                    $(this).addClass('sort-desc');
+                } else {
+                    $(this).addClass('sort-asc');
+                }
+                for (var i = 0; i < rows.length; i++){
+                    table.append(rows[i])
+                }
+            });
+        }
+
+        function comparer(index) {
+            return function(a, b) {
+                var valA = getCellValue(a, index);
+                var valB = getCellValue(b, index);
+                return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.localeCompare(valB)
+            }
+        }
+        function getCellValue(row, index){
+            return $(row).children('td').eq(index).html()
+        }
+
+        if($('.searchable').length){
+            $('#search').keyup(function(){
+                var query = $(this).val();
+                if(query) {
+                    query = query.replace(/\s\S/gim,'(.*?)');
+                    var regex = new RegExp('(.*?)'+query+'(.*?)','gmi');
+                    $('tbody tr').each(function(){
+                        matches = 0;
+                        $(this).children('td').each(function(){
+                            if($(this).html().match(regex)){
+                                matches = matches + 1;
+                            }
+                        });
+                        if(matches > 0){
+                            $(this).show()
+                        } else {
+                            $(this).hide();
+                        }
+                    });
+                } else {
+                    $('tbody td').each(function(){
+                        $(this).parent('tr').show()
+                    });
+                }
+            });
+        }
+
+    });
+</script>
+
+<footer class="container-fluid h-25 text-center p-3 mt-5">
+    {% include copyright.html %}
+</footer>
+
+</body>
+<div class="modal fade" id="ajaxModal" tabindex="-1" role="dialog" aria-labelledby="ajaxModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ajaxModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            </div>
+        </div>
+    </div>
+</div>
+</html>
