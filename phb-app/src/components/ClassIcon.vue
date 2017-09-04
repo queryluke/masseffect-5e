@@ -1,6 +1,6 @@
 <template>
   <span>
-    <img :src="`assets/classes/${classname}.svg`" class="class-icon" :title="`${classname}`">
+    <img :src="`../assets/images/classes/${classname}.svg`" class="class-icon" :title="`${classname}`">
   </span>
 </template>
 

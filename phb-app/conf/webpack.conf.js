@@ -46,6 +46,11 @@ module.exports = {
       {
         test: /\.md$/,
         loader: 'vue-markdown-loader'
+      },
+      {
+        test: /\.(jpe?g|png|svg)$/,
+        include: path.resolve(__dirname, "../../assets/images/"),
+        loader: "file",
       }
     ]
   },
@@ -66,7 +71,7 @@ module.exports = {
   devtool: 'source-map',
   output: {
     path: path.join(process.cwd(), conf.paths.tmp),
-    filename: 'index.js'
+    filename: 'index.js',
   },
   entry: `./${conf.path.src('index')}`
 };

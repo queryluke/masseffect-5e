@@ -2,12 +2,18 @@ const conf = require('./gulp.conf');
 
 module.exports = function () {
   return {
-    server: {
+    /*server: {
       baseDir: [
         conf.paths.tmp,
-        conf.paths.src
-      ]
+        conf.paths.src,
+      ],
     },
-    open: false
+    open: false*/
+    proxy: 'localhost:4000',
+    serveStatic: [{
+      route: '/phb',
+      dir: conf.paths.tmp,
+    }]
+
   };
 };

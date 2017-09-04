@@ -151,7 +151,7 @@ def generate_config_file(page)
 
 
   puts "working on #{page[:type]}"
-  File.open("src/data/#{page[:type]}.json", 'wb') {|f| f.write JSON.pretty_generate(data) }
+  File.open("data/#{page[:type]}.json", 'wb') {|f| f.write JSON.pretty_generate(data) }
 
 end
 

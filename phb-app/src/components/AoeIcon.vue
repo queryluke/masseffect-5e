@@ -1,6 +1,6 @@
 <template>
   <span>
-    <img :src="`assets/aoe/${shape}.svg`" class="aoe-icon" :title="`${shape}`">
+    <img :src="`../assets/images/aoe/${shape}.svg`" class="aoe-icon" :title="`${shape}`">
   </span>
 </template>
 
