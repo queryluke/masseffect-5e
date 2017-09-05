@@ -4,6 +4,10 @@ title: "The refactor: So much change, it's basically new"
 excerpt_separator: <!--more-->
 ---
 
+## Shoutout
+Major thanks to [SleightxHope](https://github.com/SleightxHope) for jumping into Github and contributing a ton of ideas.
+Backgrounds, skills, armor, weapon mods, class rewrites! Can't say thanks enough for the collaboration and playtesting!
+
 ## Where did the old one go?
 For anyone that wants the old version, click on the
 version number in the upper-right of the main nav and 
@@ -23,8 +27,19 @@ rather than lean back on the amazing work WoC does. So, in this iteration, I foc
 on taking subclass features from 5e and sticking them in at appropriate levels. There is
 still plenty of homebrew content, but the classes should have a much more familiary feel than before.
 
+## Player's Handbook
+To keep things more sustainable, I've completely rewritten the [player's handbook]({site.github.url}/phb/) into a single page webapp. This site 
+will now exist to keep people updated on news, play testing, and other miscellaneous items, like printable character sheets
+and spell cards.
+
 ## Changes
 
+### Rules
+
+Other than the change to paragon and renegade, the only rule changes were clarifications and restructuring the handbook 
+for better rule navigation.
+
+### Paragon & Renegade
 
 
 
