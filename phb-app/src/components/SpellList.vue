@@ -4,7 +4,7 @@
       v-for="spell in spells"
       v-bind:spell="spell"
       v-bind:key="spell.id"
-      hideActions)
+      hide-actions)
       div(slot="header")
         v-layout.spell-header
           v-flex.xs2.sm3.lg2
