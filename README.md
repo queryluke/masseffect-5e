@@ -6,8 +6,14 @@ A homebrew conversion of Dungeons & Dragons 5th Edition into the Mass Effect Uni
  ## How it's made
  
  1. Site is generated via Github Pages
- 2. Homebrew data is mostly is stored in [this Google Doc](https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/edit?usp=sharing)
- 3. Google Doc is converted via the ruby script `./generate.rb`
+ 2. Multiple Google sheetss are converted via the ruby script `./generate.rb`
+ 
+ ## Collection of google sheets
+ 
+ 1. [Classes](https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml)
+ 2. [Class Features](https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml)
+ 
+ more comming soon...
  
  ## Contributing
  
