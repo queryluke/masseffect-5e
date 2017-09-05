@@ -22,6 +22,7 @@ import Home from './pages/Home.vue';
 import ParagonRenegade from './pages/ParagonRenegade.md';
 import Race from './pages/Race.vue';
 import Races from './pages/Races.vue';
+import Skills from './pages/Skills.vue';
 import Spell from './pages/Spell.vue';
 import Spells from './pages/Spells.vue';
 import Spellcasting from './pages/Spellcasting.md';
@@ -51,6 +52,7 @@ export const router = new Router({
         {path: 'home', component: Home},
         {path: 'races', component: Races},
         {path: 'races/:id', component: Race},
+        {path: 'skills', component: Skills},
         {path: 'spells', component: Spells},
         {path: 'spells/:id', component: Spell},
         {path: 'thermal-clips', component: ThermalClips},

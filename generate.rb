@@ -6,6 +6,7 @@ require 'net/http'
 require 'date'
 Encoding.default_external = Encoding::UTF_8
 
+imports = ARGV
 
 def set_features(string)
   features = []
@@ -161,5 +162,11 @@ pages = [
     :url => 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSs9dkG94f5fPCOJ38g-xCUCwnYynzbiFdggQ1KqM1vMscINwcn2_OGPqGhvxOrYl18oK7dO2notL_y/pub?gid=0&single=true&output=csv'
   },
 ].each do |p|
-  generate_config_file(p)
+  if imports.length > 0
+    if imports.include?(p)
+      generate_config_file(p)
+    end
+  else
+    generate_config_file(p)
+  end
 end

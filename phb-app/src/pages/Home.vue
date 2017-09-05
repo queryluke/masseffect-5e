@@ -3,10 +3,9 @@
     <v-container fluid>
       <v-layout row justify-space-around>
         <v-flex xs12>
-          <h1 class="sr-only">Mass Effect 5e - Player's Handbook</h1>
           <img src="assets/me5e_logo_notm.png" alt="mass effect 5e logo">
           <p>
-            The Unofficial D&D 5th Edition conversion for the Mass Effect Universe
+            Player's Handbook
           </p>
         </v-flex>
       </v-layout>
@@ -27,7 +26,7 @@ export default {
       width: 100%;
 
     p
-      font-size: 2em;
+      font-size: 3em;
       text-align: center;
       margin-top 1em;
 </style>

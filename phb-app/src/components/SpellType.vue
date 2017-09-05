@@ -1,10 +1,17 @@
 <template lang="jade">
-  span(v-if="spell.type === 'biotic'") {{ spell.type }}, {{ level }}
-  span(v-else) {{ spell.type }}
+  span
+    div.spell-icon
+      me-icon(type="spells" v-bind:name="spell.type")
+    span(v-if="spell.type === 'biotic'")  {{ level }}
 </template>
 
 <script>
+  import MeIcon from "./MeIcon.vue";
+
   export default {
+    components: {
+      MeIcon
+    },
     name: 'SpellRangeArea',
     props: ['spell'],
     created () {
@@ -34,4 +41,11 @@
     }
   };
 </script>
+
+<style lang="stylus">
+  .spell-icon
+    width: 25px;
+    display: inline-block;
+    vertical-align: middle;
+</style>
 

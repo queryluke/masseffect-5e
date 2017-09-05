@@ -1,11 +1,11 @@
 {
-  "updated": "September  4, 2017 @ 12:03 AM",
+  "updated": "September  4, 2017 @  8:37 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSs9dkG94f5fPCOJ38g-xCUCwnYynzbiFdggQ1KqM1vMscINwcn2_OGPqGhvxOrYl18oK7dO2notL_y/pub?gid=0&single=true&output=csv",
   "spells": [
     {
       "name": "Annihilation Field",
       "mechanic": [
-        "Spin a field of corrupted, biotic energy originiating from you in a 6m sphere. The field moves with you and reduces your movement speed by half.",
+        "Spin a field of corrupted, biotic energy originating from you in a 6m sphere. The field moves with you and reduces your movement speed by half.",
         "Each creature within the sphere must make a Constitution saving throw. A creature takes 4d6 necrotic damage on a failed save or half as much damage on a successful one. A creature must also make the saving throw when it enters the field's space for the first time on a turn or ends its turn there.",
         "At higher levels: When you cast this spell using a spell slot of level 4 or higher, increase the radius by 2m for each slot level above the 4th."
       ],
@@ -51,8 +51,8 @@
         "Fire a salvo of blades at a creature or object within range. On a hit, the target takes 6d6 piercing.",
         "You must spend a short rest reloading the armguard before you can this ability again."
       ],
-      "adv-option-1": "Bleeding Blades : The target takes an additional 3[dd] damage a the start of their turn. This damage bypasses shields.",
-      "adv-option-2": "Exploding blades : The blades explode, dealing an additional 3[dd] thunder damamge and knock the target prone.",
+      "adv-option-1": "Bleeding Blades : The target takes an additional 3[dd] damage at the start of their turn. This damage bypasses shields.",
+      "adv-option-2": "Exploding blades : The blades explode, dealing an additional 3[dd] thunder damage and knock the target prone.",
       "level": null,
       "type": "combat",
       "die-type": "d6",
@@ -82,8 +82,8 @@
       "reviewed": "y",
       "id": "ballistic-blades",
       "adv-options": [
-        "Bleeding Blades : The target takes an additional 3d6 damage a the start of their turn. This damage bypasses shields.",
-        "Exploding blades : The blades explode, dealing an additional 3d6 thunder damamge and knock the target prone."
+        "Bleeding Blades : The target takes an additional 3d6 damage at the start of their turn. This damage bypasses shields.",
+        "Exploding blades : The blades explode, dealing an additional 3d6 thunder damage and knock the target prone."
       ],
       "class-list": "Soldier"
     },
@@ -132,7 +132,7 @@
     {
       "name": "Barrier Detonation",
       "mechanic": [
-        "Expend all of your remaning barrier ticks to create a negative mass effect field in a 2m sphere originating from you. In addition, roll Xd8, where X is the number of barrier ticks consumed. The result is the number of hit points of creatures this spell can effect. Starting with the creature that has the lowest current hit points, each creature affected by this spell becomes {lifted} until the start of your next turn. Subtract each creature's hit points from the total before moving on to the creature with the next lowest hit points. A creature's hit points must be equal to or less than the remaining total for that creature to be affected.",
+        "Expend all of your remaining barrier ticks to create a negative mass effect field in a 2m sphere originating from you. In addition, roll Xd8, where X is the number of barrier ticks consumed. The result is the number of hit points of creatures this spell can affect. Starting with the creature that has the lowest current hit points, each creature affected by this spell becomes {lifted} until the start of your next turn. Subtract each creature's hit points from the total before moving on to the creature with the next lowest hit points. A creature's hit points must be equal to or less than the remaining total for that creature to be affected.",
         "Other powers and class features can increase the die type of this roll.",
         "Increase the number of die roll by 2d8 reach 5th level (X + 2d8), 11th level (X + 4d8), and 17th level (X + 6d8)."
       ],
@@ -222,7 +222,7 @@
         "Hostile attacks made on friendly targets are absorbed by the sphere (the sphere automatically fails any saving throws).",
         "Friendly attacks on hostile creatures within the sphere have advantage.",
         "The sphere dissipates when it's hit points are gone. If an attack would deal more damage than the remaining hit points of the sphere, the sphere soaks all of the damage and then dissipates.",
-        "At higher levels: When you cast this spell using a spell slot of level 4 or higher, the sphere's health inscreases by 1d12 for each slot level above the 3rd."
+        "At higher levels: When you cast this spell using a spell slot of level 4 or higher, the sphere's health increases by 1d12 for each slot level above the 3rd."
       ],
       "adv-option-1": "Infuse Ammo : Friendly creatures inside the sphere add 1d4 force damage to all ranged weapon attacks on creatures outside of the sphere and subtract that much from the sphere's HP. This damage can detonate abilities.",
       "adv-option-2": "Armored : The sphere has resistance to piercing, slashing, and bludgeoning damage.",
@@ -263,12 +263,12 @@
     {
       "name": "Carnage",
       "mechanic": [
-        "As one of your attacks, you equip and fire your Armax Anti-Ground Engagement Cannon, colloquially called \"carnage\". It ejects super-heated shrapnel in a 6m cone, originating from you. Each creature caught in the blast must make Dexterity saving throw. On a failed save, a creature takes 2d10 piercing damage or half as much damage on a successful one.",
+        "As one of your attacks, you equip and fire your Armax Anti-Ground Engagement Cannon, colloquially called \"carnage\". It ejects superheated shrapnel in a 6m cone, originating from you. Each creature caught in the blast must make Dexterity saving throw. On a failed save, a creature takes 2d10 piercing damage or half as much damage on a successful one.",
         "The DC is (8 + proficiency bonus + DEX modifier).",
         "You must spend a short or long rest reconfiguring the cannon to use it again."
       ],
       "adv-option-1": "Anti-Flesh : Carnage deals double damage to unprotected, organic targets.",
-      "adv-option-2": "Remote Deploy : As an action you can setup your Carnage cannon in a seperate location. Once it is deployed you can use an attack action to fire it.",
+      "adv-option-2": "Remote Deploy : As an action you can setup your Carnage cannon in a separate location. Once it is deployed you can use an attack action to fire it.",
       "level": null,
       "type": "combat",
       "die-type": "d10",
@@ -299,17 +299,17 @@
       "id": "carnage",
       "adv-options": [
         "Anti-Flesh : Carnage deals double damage to unprotected, organic targets.",
-        "Remote Deploy : As an action you can setup your Carnage cannon in a seperate location. Once it is deployed you can use an attack action to fire it."
+        "Remote Deploy : As an action you can setup your Carnage cannon in a separate location. Once it is deployed you can use an attack action to fire it."
       ],
       "class-list": "Soldier"
     },
     {
       "name": "Charge",
       "mechanic": [
-        "Alter your mass and choose a creature or object you can see within range. You use the target's mass to pull yourself to its location with incredible force. The target must make a dexterity saving throw. On a failed save, the kenetic force from the impact regenerates 1d6 of your shield points, deals 1d6 force damage to the target and knocks it {prone}.",
-        "The kenetic force increases by 1d6 when you reach the 5th level (2d6), 11th level(3d6) and 17th level(4d6)."
+        "Alter your mass and choose a creature or object you can see within range. You use the target's mass to pull yourself to its location with incredible force. The target must make a dexterity saving throw. On a failed save, the kinetic force from the impact regenerates 1d6 of your shield points, deals 1d6 force damage to the target and knocks it {prone}.",
+        "The kinetic force increases by 1d6 when you reach the 5th level (2d6), 11th level(3d6) and 17th level(4d6)."
       ],
-      "adv-option-1": "Increased force: Increase the damage and sheild regeneration to d8",
+      "adv-option-1": "Increased force: Increase the damage and shield regeneration to d8",
       "adv-option-2": "Tremor : The force ripples outwards from the point of impact in a 2m sphere. Creatures within the sphere must succeed on a Dexterity saving throw or are knocked {prone}.",
       "level": "0",
       "type": "biotic",
@@ -342,7 +342,7 @@
       "reviewed": "y",
       "id": "charge",
       "adv-options": [
-        "Increased force: Increase the damage and sheild regeneration to d8",
+        "Increased force: Increase the damage and shield regeneration to d8",
         "Tremor : The force ripples outwards from the point of impact in a 2m sphere. Creatures within the sphere must succeed on a Dexterity saving throw or are knocked {prone}."
       ],
       "class-list": "Vanguard"
@@ -350,7 +350,7 @@
     {
       "name": "Concussive Shot",
       "mechanic": [
-        "Load a specialized, high-impact thermal clip into the weapon you are currently weilding. Until you reload, any successful ranged attacks deal an additional 1d10 bludgeoning damage and medium-sized or smaller creatures are knocked {prone}. You have 3 charges of Concussive Shot. You regain all of your charges on a short or long rest."
+        "Load a specialized, high-impact thermal clip into the weapon you are currently wielding. Until you reload, any successful ranged attacks deal an additional 1d10 bludgeoning damage and medium-sized or smaller creatures are knocked {prone}. You have 3 charges of Concussive Shot. You regain all of your charges on a short or long rest."
       ],
       "adv-option-1": "Stunning Shot : A creature hit by Concussive Shot must make a Constitution saving throw. On a failed save, the creature is {stunned} until the start of your next turn.",
       "adv-option-2": "Blinding Shot : A creature hit by Concussive Shot must make a Constitution saving throw. On a failed save, the creature is {blinded} until the start of your next turn.",
@@ -395,7 +395,7 @@
         "You spend tech points to blast a stream of liquid hydrogen from your omni-tool. Each creature in a 6m cube must make a Dexterity saving throw. A creature takes Xd8 cold damage on a failed save, or half as much damage on a successful one where X is the number of tech points spent. If the target is unshielded, it must pass a Strength saving throw or becomes {frozen} until the end of it's next turn."
       ],
       "adv-option-1": "Brittle Freeze : Creatures that fail the Constitution saving throw suffer a -1 AC penalty",
-      "adv-option-2": "Frozen Ground : Cryo beam leaves a patch of ice on the ground that lasts for 1min. Each creature that moves into or out of the patch must pass a Dexterity saving throw. On a failed save, slips and falls [Prone], ending it's movement.",
+      "adv-option-2": "Frozen Ground : Cryo beam leaves a patch of ice on the ground that lasts for 1 min. Each creature that moves into or out of the patch must pass a Dexterity saving throw. On a failed save, slips and falls [Prone], ending it's movement.",
       "level": null,
       "type": "tech",
       "die-type": "d8",
@@ -427,14 +427,14 @@
       "id": "cryo-beam",
       "adv-options": [
         "Brittle Freeze : Creatures that fail the Constitution saving throw suffer a -1 AC penalty",
-        "Frozen Ground : Cryo beam leaves a patch of ice on the ground that lasts for 1min. Each creature that moves into or out of the patch must pass a Dexterity saving throw. On a failed save, slips and falls [Prone], ending it's movement."
+        "Frozen Ground : Cryo beam leaves a patch of ice on the ground that lasts for 1 min. Each creature that moves into or out of the patch must pass a Dexterity saving throw. On a failed save, slips and falls [Prone], ending it's movement."
       ],
       "class-list": "Engineer, Infiltrator, Sentinel"
     },
     {
       "name": "Cryo Blast",
       "mechanic": [
-        "You use tech points to fire a mass of super-cooled, subatomic particles at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes Xd8 cold damage, where X is the number of tech points spent, and the target's movement is reduced by half. If the target is unprotected, it must pass a Strength saving throw or becomes {frozen} until the end of it's next turn."
+        "You use tech points to fire a mass of supercooled, subatomic particles at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes Xd8 cold damage, where X is the number of tech points spent, and the target's movement is reduced by half. If the target is unprotected, it must pass a Strength saving throw or becomes {frozen} until the end of it's next turn."
       ],
       "adv-option-1": "Ice Lance : Transform the attack into a deadly lance. The attack can no longer freeze or slow the target, but you add 1d6 piercing damage for each tech point spent.",
       "adv-option-2": "Frigid Air : The blast snap freezes the air around the target in a 2m radius. Each creature that enters the frozen space for the first time on a turn or ends its turn there must pass a Constitution saving throw or take 2d4 cold damage.",
@@ -521,7 +521,7 @@
       "mechanic": [
         "Launch a slow-moving, 4m sphere of dark energy in a straight line in front of you. It moves 4m this turn and at the start of each subsequent turn. Each creature caught in the path must make a Dexterity saving throw. On a failed save, a creature takes necrotic damage equal to 3d8 + your biotic modifier, or half as much on a successful one. When the sphere reaches 20m, it detonates and each creature within 10m must make a Constitution saving throw. On a failed save a creature takes necrotic damage equal to 3d8 + your biotic modifier necrotic damage or half as much damage on a successful one.",
         "You can use an action to detonate the sphere early.",
-        "If you loose conentration while casting the spell, it does not detonate.",
+        "If you lose concentration while casting the spell, it does not detonate.",
         "At higher levels: When you cast this spell using a spell slot of level 3 or higher, the damage increases by 1d8 for each slot level above the 2nd."
       ],
       "adv-option-1": "Control : At the start of your turn, before the sphere moves, you can change it's direction.",
@@ -564,9 +564,9 @@
     {
       "name": "Decoy",
       "mechanic": [
-        "Spend X TP to summon a holographic copy of yourself at a location within 10m. The copy mimics your actions. When a creature attacks, it can make an Intelligence (Perception) check and, if it succeeds, is not fooled. The DC of the check is 8 + your Tech modifier + X."
+        "Spend X tech points to summon a holographic copy of yourself at a location within 10m. The copy mimics your actions. When a creature attacks, it can make an Intelligence (Perception) check and, if it succeeds, is not fooled. The DC of the check is 8 + your Tech modifier + X."
       ],
-      "adv-option-1": "Explosive : As an action, you can spend X TP detonate your Decoy. Each creature within 4m must make a Dexterity saving throw. On a failed save, a creature takes Xd6 fire damage or half as much on a successful one.",
+      "adv-option-1": "Explosive : As an action, you can spend X tech points detonate your Decoy. Each creature within 4m must make a Dexterity saving throw. On a failed save, a creature takes Xd6 fire damage or half as much on a successful one.",
       "adv-option-2": "Improved Decoy : Your Decoy becomes so life-like that creatures have disadvantage on the Intelligence (Perception) check.",
       "level": null,
       "type": "tech",
@@ -597,7 +597,7 @@
       "reviewed": "y",
       "id": "decoy",
       "adv-options": [
-        "Explosive : As an action, you can spend X TP detonate your Decoy. Each creature within 4m must make a Dexterity saving throw. On a failed save, a creature takes Xd6 fire damage or half as much on a successful one.",
+        "Explosive : As an action, you can spend X tech points detonate your Decoy. Each creature within 4m must make a Dexterity saving throw. On a failed save, a creature takes Xd6 fire damage or half as much on a successful one.",
         "Improved Decoy : Your Decoy becomes so life-like that creatures have disadvantage on the Intelligence (Perception) check."
       ],
       "class-list": "Engineer, Infiltrator"
@@ -605,7 +605,7 @@
     {
       "name": "Defense Matrix",
       "mechanic": [
-        "Spend X TP to reinforce your armor with special foucault currents. You gain resistance to your choice of X damage types."
+        "Spend X tech points to reinforce your armor with special foucault currents. You gain resistance to your choice of X damage types."
       ],
       "adv-option-1": "Shield : Deploy the matrix as a stationary shield. Up to 2 creatures of medium size can stand behind the shield, gaining the resistance benefit when attacked by creatures from the other side of the shield.",
       "adv-option-2": "Improved Defense : Gain a +2 bonus to your AC while Defense Matrix is active.",
@@ -656,7 +656,7 @@
       "type": "biotic",
       "die-type": null,
       "attack-type": [
-        "Wis Save"
+        "WIS Save"
       ],
       "casting-time": "Action",
       "concentration": "x",
@@ -689,7 +689,7 @@
     {
       "name": "Electric Slash",
       "mechanic": [
-        "Spend X TP to unleash a wave of electric energy in a 8m cone originating from you. Each creature must make a Constitution saving throw. On a failed save, a creature takes Xd8 lightning damage or half as much damage on a successful one."
+        "Spend X tech points to unleash a wave of electric energy in a 8m cone originating from you. Each creature must make a Constitution saving throw. On a failed save, a creature takes Xd8 lightning damage or half as much damage on a successful one."
       ],
       "adv-option-1": "Shield Restore : Gain shield points equal to half of your damage roll.",
       "adv-option-2": "Paralyze : Creatures that fail the saving throw are paralyzed until the end of their next turn.",
@@ -730,10 +730,10 @@
     {
       "name": "Energy Drain",
       "mechanic": [
-        "You use tech points to cycle your Omni-tool, sapping electromagnetic energy from a creature you can see within range. Make a ranged spell attack against the target. On a hit, the target takes Xd4 lightening damage, where X is the amount of tech points you spent, and you gain shield points equal to half of the damage done."
+        "You use tech points to cycle your Omni-tool, sapping electromagnetic energy from a creature you can see within range. Make a ranged spell attack against the target. On a hit, the target takes Xd4 lightning damage, where X is the amount of tech points you spent, and you gain shield points equal to half of the damage done."
       ],
       "adv-option-1": "Improved Damage : Increase the damage die type to d6.",
-      "adv-option-2": "Improved Regen : You gain Shield Points equal to your damage roll.",
+      "adv-option-2": "Improved Regen : You get Shield Points equal to your damage roll.",
       "level": null,
       "type": "tech",
       "die-type": "d4",
@@ -764,20 +764,20 @@
       "id": "energy-drain",
       "adv-options": [
         "Improved Damage : Increase the damage die type to d6.",
-        "Improved Regen : You gain Shield Points equal to your damage roll."
+        "Improved Regen : You get Shield Points equal to your damage roll."
       ],
       "class-list": "Engineer, Sentinel"
     },
     {
       "name": "First Aid",
       "mechanic": [
-        "Spend X TP to inject a friendly creature with nanobots that reduce pain and heal internal injuries. The creature gains hit points equal to Xd6 + your Tech modifier"
+        "Spend X tech points to inject a friendly creature with nanobots that reduce pain and heal internal injuries. The creature gains hit points equal to Xd8 + your Tech modifier"
       ],
       "adv-option-1": "Adaptive : The healed creature gains resistance to the last damage type it suffered. This effect lasts for 1 minute.",
       "adv-option-2": "Improved Healing : Increase the healing die type to d8",
       "level": null,
       "type": "tech",
-      "die-type": "d6",
+      "die-type": "d8",
       "attack-type": [
 
       ],
@@ -857,7 +857,7 @@
         "At higher levels: When you cast this spell using a spell slot of level 4 or higher, increase the damage by 1d10 for each spell slot above the 4th."
       ],
       "adv-option-1": "Improved Blind : Each creature is blinded no matter the result of its saving throw.",
-      "adv-option-2": "Heat seeking flare : Instead of choosing 4 targets, you may instead choose 1. If you do so, the target has disatvantage on the saving throw. Increase the damage by 1[dd].",
+      "adv-option-2": "Heat seeking flare : Instead of choosing 4 targets, you may instead choose 1. If you do so, the target has disadvantage on the saving throw. Increase the damage by 1[dd].",
       "level": "3",
       "type": "biotic",
       "die-type": "d10",
@@ -888,14 +888,14 @@
       "id": "flare",
       "adv-options": [
         "Improved Blind : Each creature is blinded no matter the result of its saving throw.",
-        "Heat seeking flare : Instead of choosing 4 targets, you may instead choose 1. If you do so, the target has disatvantage on the saving throw. Increase the damage by 1d10."
+        "Heat seeking flare : Instead of choosing 4 targets, you may instead choose 1. If you do so, the target has disadvantage on the saving throw. Increase the damage by 1d10."
       ],
       "class-list": "Adept, Sentinel"
     },
     {
       "name": "Havoc Strike",
       "mechanic": [
-        "As one of your attacks, use a propulsion jet built into your leg armor to spring to a location within 8m and strike the ground with violent force. Each creature within a 2m radius of wher you land must make a Dexterity saving throw (DC 8 + proficiency bonus + STR modifier). On a failed save, a creature takes 3d12 thunder damage or half as much on a successful one.",
+        "As one of your attacks, use a propulsion jet built into your leg armor to spring to a location within 8m and strike the ground with violent force. Each creature within a 2m radius of where you land must make a Dexterity saving throw (DC 8 + proficiency bonus + STR modifier). On a failed save, a creature takes 3d12 thunder damage or half as much on a successful one.",
         "You must finish a short or long rest before you can use Havok Strike again."
       ],
       "adv-option-1": "Improved Distance : You can jump up to 12m.",
@@ -979,9 +979,9 @@
     {
       "name": "Hex Shield",
       "mechanic": [
-        "You toss a portable shield generator onto the ground infront of you. It generates 2m tall and wide, hexagon-shaped shield with 5AC and 50 shield points. These shield points do not regenerate during combat and the shield dissipates when it no longer has any sheild points left.",
+        "You toss a portable shield generator onto the ground in front of you. It generates 2m tall and wide, hexagon-shaped shield with 5AC and 50 shield points. These shield points do not regenerate during combat and the shield dissipates when it no longer has any shield points left.",
         "The shield provides full cover to creatures behind it.",
-        "Hex Sheild regains all shield points on a short rest."
+        "Hex shield regains all shield points on a short rest."
       ],
       "adv-option-1": "Hearty Shield : Increase the shield's hit points to 100.",
       "adv-option-2": "Large Shield : The Shield covers a 4m wide area.",
@@ -1063,8 +1063,8 @@
     {
       "name": "Invasion",
       "mechanic": [
-        "Spend 3 TP per creature size and choose a synthetic within 20m (e.g. 3 TP for small, 6 TP for medium, 9 TP for large). The synthetic must succeed on an Intelligence saving throw or becomes hacked (considered {charmed}). A hacked synthetic won't attack friendly creatures and can't use spells or abilities.",
-        "On it's turn, the hacked synthetic attacks the closest hostile creature, making ranged weapon attack or melee attack if it does not have a weapon. If it doesn't have a weapon and there are no hostile creatures within melee range, the hacked synthetic uses its turn to dash towards the closest hostile creature.",
+        "Spend 3 tech points per creature size and choose a synthetic within 20m (e.g. 3 tech points for small, 6 tech points for medium, 9 tech points for large). The synthetic must succeed on an Intelligence saving throw or becomes hacked (considered {charmed}). A hacked synthetic won't attack friendly creatures and can't use spells or abilities.",
+        "On its turn, the hacked synthetic attacks the closest hostile creature, making ranged weapon attack or melee attack if it does not have a weapon. If it doesn't have a weapon and there are no hostile creatures within melee range, the hacked synthetic uses its turn to dash towards the closest hostile creature.",
         "Each time the synthetic takes damage, it makes a new Intelligence saving throw against the spell. If the saving throw succeeds, the spell ends."
       ],
       "adv-option-1": "Total Control : You take the the hacked synthetic's action. You may use it's spells and abilities.",
@@ -1167,7 +1167,7 @@
       "aoe-distance": null,
       "effect": [
         "damage",
-        " controll"
+        " control"
       ],
       "damage-type": [
         "force"
@@ -1316,11 +1316,11 @@
     {
       "name": "Nova",
       "mechanic": [
-        "Transfer the energy of your barrier into a biotic explosion, consuming your remaining barrier ticks. Creatures within a 2m sphere centered on you must make a Dexterity saving throw. On a failed save, a creature is knocked {prone} and takes force damage equal to Xd6, where X is the number of barrier ticks. On a successul save, a creature takes half as much damage.",
-        "When you cast this spell using a spell slot of 2nd level or higer, the radius of the explosion increases by 2m for each level above the 1st."
+        "Transfer the energy of your barrier into a biotic explosion, consuming your remaining barrier ticks. Creatures within a 2m sphere centered on you must make a Dexterity saving throw. On a failed save, a creature is knocked {prone} and takes force damage equal to Xd6, where X is the number of barrier ticks. On a successful save, a creature takes half as much damage.",
+        "When you cast this spell using a spell slot of 2nd level or higher, the radius of the explosion increases by 2m for each level above the 1st."
       ],
       "adv-option-1": "Improved Damage : Increase the damage die to d10.",
-      "adv-option-2": "Half Blast : You can cast Nova, you cause up to 2 blasts. Each blast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaing tick. If you have not used all of your movement, you can move inbetween the blasts.",
+      "adv-option-2": "Half Blast : You can cast Nova, you cause up to 2 blasts. Each blast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. If you have not used all of your movement, you can move in between the blasts.",
       "level": "1",
       "type": "biotic",
       "die-type": "d6",
@@ -1351,14 +1351,14 @@
       "id": "nova",
       "adv-options": [
         "Improved Damage : Increase the damage die to d10.",
-        "Half Blast : You can cast Nova, you cause up to 2 blasts. Each blast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaing tick. If you have not used all of your movement, you can move inbetween the blasts."
+        "Half Blast : You can cast Nova, you cause up to 2 blasts. Each blast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. If you have not used all of your movement, you can move in between the blasts."
       ],
       "class-list": "Vanguard"
     },
     {
       "name": "Overload",
       "mechanic": [
-        "You use tech points to unleash an eletrostatic discharge at a creature or object within range. Three bolts then leap from that target to as many as three other targets, each of which must be within 6m of the first target. A target can be a creature or an object and can be targeted by only one of the bolts.",
+        "You use tech points to unleash an electrostatic discharge at a creature or object within range. Three bolts then leap from that target to as many as three other targets, each of which must be within 6m of the first target. A target can be a creature or an object and can be targeted by only one of the bolts.",
         "A target must make a Dexterity saving throw. The target takes Xd4 lightning damage on a failed save, or half as much on a successful one where X is the number of tech points you spent."
       ],
       "adv-option-1": "Extended Leap : Overload can leap to targets within 10m.",
@@ -1400,11 +1400,11 @@
     {
       "name": "Phase Disruptor",
       "mechanic": [
-        "You foucs the energy of your barrier into a high-powered beam at a target creature or object within range. Remove 1 barrier tick and make a ranged spell attack on that target. On a hit, the creature takes 1d8 force damage.",
+        "You focus the energy of your barrier into a high-powered beam at a target creature or object within range. Remove 1 barrier tick and make a ranged spell attack on that target. On a hit, the creature takes 1d8 force damage.",
         "A higher levels, you may use additional barrier ticks to create more than one beam: two beams at 5th level, three beams at 11th level, and four beams at 17th level. You can direct the beams at the same target or at different ones. Make a separate attack roll for each beam."
       ],
       "adv-option-1": "Improved Damage : Increase the damage die type to d12",
-      "adv-option-2": "Cripple : Creature's hit by Phase Disrupter have disadvantage on their next attack roll.",
+      "adv-option-2": "Cripple : Creature's hit by Phase Disruptor have disadvantage on their next attack roll.",
       "level": "0",
       "type": "biotic",
       "die-type": "d8",
@@ -1435,7 +1435,7 @@
       "id": "phase-disruptor",
       "adv-options": [
         "Improved Damage : Increase the damage die type to d12",
-        "Cripple : Creature's hit by Phase Disrupter have disadvantage on their next attack roll."
+        "Cripple : Creature's hit by Phase Disruptor have disadvantage on their next attack roll."
       ],
       "class-list": "Adept, Vanguard"
     },
@@ -1483,10 +1483,11 @@
     {
       "name": "Pull",
       "mechanic": [
-        "You create a negative mass effect field around a creatue or object you can see within range then jerk the field sharply towards you, bringing the object with it. The distance the target travels is based on its size: Small 10m, Medium 6m, Large 2m. If attempting to pull an object from another creature, the creature must pass a Strength saving throw to retain possession of the object. If you pull a creature, it must pass a Dexterity saving throw or be knocked {prone}.",
+        "You create a negative mass effect field around a creature or object you can see within range then jerk the field sharply towards you, bringing the target with it. Large-sized and larger targets are unaffected. The distance the target travels is based on its size, starting at 2m for medium-sized objects and adding 4m for each size small than medium. E.g., Medium = 2m, Small = 6m, Tiny = 10m, etc.",
+        "If attempting to pull an object from another creature, the creature must pass a Strength saving throw to retain possession of the object. If you pull a creature and it moves more than 2m, it must pass a Dexterity saving throw or be knocked {prone}.",
         "The number of targets increase by 1 when you reach the 5th level (2), 11th level (3), and 17th level (4)."
       ],
-      "adv-option-1": "Magician: You can shape and guide pull to add different trajectories to the object. The direction of pull cannot change, but you an add arcs, decrease the distance the object moves, and even pull small objects directly into your hand.",
+      "adv-option-1": "Magician: You can shape and guide pull to add different trajectories to the object. The direction of pull cannot change, but you can add arcs, decrease the distance the object moves, and even pull small objects directly into your hand.",
       "adv-option-2": "Push: You may choose to move the target towards or away from you.",
       "level": "0",
       "type": "biotic",
@@ -1517,7 +1518,7 @@
       "reviewed": "y",
       "id": "pull",
       "adv-options": [
-        "Magician: You can shape and guide pull to add different trajectories to the object. The direction of pull cannot change, but you an add arcs, decrease the distance the object moves, and even pull small objects directly into your hand.",
+        "Magician: You can shape and guide pull to add different trajectories to the object. The direction of pull cannot change, but you can add arcs, decrease the distance the object moves, and even pull small objects directly into your hand.",
         "Push: You may choose to move the target towards or away from you."
       ],
       "class-list": "Adept, Sentinel, Vanguard"
@@ -1568,7 +1569,7 @@
     {
       "name": "Sabotage",
       "mechanic": [
-        "Spend 1 TP and make a ranged tech attack on a weapon you can see within 20m (DC 10). On a hit, the next creature to use that weapon to make a ranged attack has disadvantage on the attack roll."
+        "Spend 1 tech points and make a ranged tech attack on a weapon you can see within 20m (DC 10). On a hit, the next creature to use that weapon to make a ranged attack has disadvantage on the attack roll."
       ],
       "adv-option-1": "Multi-Weapon : You can target 3 weapons at once.",
       "adv-option-2": "Disable : After the weapon fires, it becomes jammed. It cannot be fired again until it is reloaded.",
@@ -1586,7 +1587,7 @@
       "aoe-distance": null,
       "effect": [
         "debuff",
-        " controll"
+        " control"
       ],
       "damage-type": [
 
@@ -1610,7 +1611,7 @@
     {
       "name": "Sentry Turret",
       "mechanic": [
-        "Spend 5 TP to set up a sentry turret within melee range. The turret has HP equal to 5d8+your level. At the end of your turn, the turret attacks. It continues to attack at the end of your turn until it is destroyed.",
+        "Spend 5 tech points to set up a sentry turret within melee range. The turret has HP equal to 5d8+your level. At the end of your turn, the turret attacks. It continues to attack at the end of your turn until it is destroyed.",
         "The turret has 2 possible attacks. You may select which attack the turret makes.",
         "Shoot flames in a 6m cone in a direction of your choosing. Each creature within the cone must make a Dexterity saving throw. On a failed save, a creature takes 2d8 fire damage or half as much damage on a successful one.",
         "Make a ranged weapon attack (+ your proficiency) on a target of your choice. On a success, it deals 2d8 thunder damage."
@@ -1698,7 +1699,7 @@
     {
       "name": "Siege Pulse",
       "mechanic": [
-        "Reduce your shield capacitors causing a loud, painfully intense kenetic wave to erupt from your location. Reduce your shield points by 10. Each creature within a 4m sphere becomes {deafened} must make Constitution saving throw (DC 8 + your proficiency bonus). On a failed save, a creature is {incapacitated} until the start of your next turn. On a successful save, a creature takes 2 psychic damage."
+        "Reduce your shield capacitors causing a loud, painfully intense kinetic wave to erupt from your location. Reduce your shield points by 10. Each creature within a 4m sphere becomes {deafened} must make Constitution saving throw (DC 8 + your proficiency bonus). On a failed save, a creature is {incapacitated} until the start of your next turn. On a successful save, a creature takes 2 psychic damage."
       ],
       "adv-option-1": "Improved Pulse : Add your STR or DEX mod to the DC of the saving throw. You choose which one.",
       "adv-option-2": "Lingering Pulse : Creatures hit by siege pulse have disadvantage on melee and ranged attacks until the start of your next turn.",
@@ -1866,10 +1867,10 @@
     {
       "name": "Stasis",
       "mechanic": [
-        "Choose a creature you can see within range. The creature must make a Strength saving throw. On a failed save, the creature is restrained. Creatures of huge size or larger have advantage on the saving throw. At the beginning of the creature's turn, it can use it's action to make the saving throw again."
+        "Lock a target in a high-gravity mass effect field. Choose a creature you can see within range. The creature must make a Strength saving throw. On a failed save, the creature is {restrained}. Creatures of huge size or larger have advantage on the saving throw. At the beginning of the creature's turn, it can use its action to make the saving throw again."
       ],
-      "adv-option-1": "Trap : Stasis can be cast on a location. If a creature enters the location, you cast Statis on it as a reaction. It automatically fails it's first saving throw.",
-      "adv-option-2": "Weaken : A creature in Stasis has -3 AC.",
+      "adv-option-1": "Vulnerable : A creature in Stasis takes +2 damage from all damage rolls.",
+      "adv-option-2": "Weakened : A creature in Stasis has -2 AC.",
       "level": "2",
       "type": "biotic",
       "die-type": null,
@@ -1900,15 +1901,15 @@
       "reviewed": "y",
       "id": "stasis",
       "adv-options": [
-        "Trap : Stasis can be cast on a location. If a creature enters the location, you cast Statis on it as a reaction. It automatically fails it's first saving throw.",
-        "Weaken : A creature in Stasis has -3 AC."
+        "Vulnerable : A creature in Stasis takes +2 damage from all damage rolls.",
+        "Weakened : A creature in Stasis has -2 AC."
       ],
       "class-list": "Adept, Vanguard"
     },
     {
       "name": "Stimulant Pack",
       "mechanic": [
-        "As a bonus action, inject youself with a stimulant pack. You have advantage on the next Dexterity, Strength, or Constitution saving throw. You must finish a short or long rest before you can use this feature again.",
+        "As a bonus action, inject yourself with a stimulant pack. You have advantage on the next Dexterity, Strength, or Constitution saving throw. You must finish a short or long rest before you can use this feature again.",
         "An Infiltrator can take this ability instead of learning a tech power."
       ],
       "adv-option-1": "Friendly : You can inject a creature within melee range with the stimulant pack",
@@ -1950,7 +1951,7 @@
     {
       "name": "Submission Net",
       "mechanic": [
-        "Spend 2 TP to shoot a swarm of miniature pylons to a target location within 20m. The pylons form a 4m cylinder at the chosen location, created an electrified new. Creatures within the net cannot cast tech.",
+        "Spend 2 tech points to shoot a swarm of miniature pylons to a target location within 20m. The pylons form a 4m cylinder at the chosen location, created an electrified new. Creatures within the net cannot cast tech.",
         "To escape, a creature must succeed on a Strength (Athletics) check or must remain trapped in the net. If a creature does break free, it takes 1d6 lightning damage.",
         "If you have a submission net deployed, you can spend XTP to send electric currents through it. Each creature within the net makes a Constitution saving throw. On a failed save, a creature takes Xd6 lightning damage, or half as much on a successful one."
       ],
@@ -1998,7 +1999,7 @@
         "Spend your action scanning a creature your can see with your omni-tool, studying it's movement and revealing weaknesses. Your attacks against the target have advantage and natural 19 and 20's are considered critical hits. This ability can stack with other critical improving powers. You may use this ability three times before you finish a short or long rest.",
         "Engineers and Infiltrators can learn and advance this ability instead of learning a tech power."
       ],
-      "adv-option-1": "Area Scan : Scan a 6m cube. You gain the advantage and critcal bonus on all creatures within the area.",
+      "adv-option-1": "Area Scan : Scan a 6m cube. You gain the advantage and critical bonus on all creatures within the area.",
       "adv-option-2": "Telegraphed Attacks : You're hud alerts you when the creature is about to attack. It has disadvantage on ranged and melee attacks and you have advantage on any saving throws caused by spells and abilities of the creature.",
       "level": null,
       "type": "combat",
@@ -2029,7 +2030,7 @@
       "reviewed": "y",
       "id": "tactical-scan",
       "adv-options": [
-        "Area Scan : Scan a 6m cube. You gain the advantage and critcal bonus on all creatures within the area.",
+        "Area Scan : Scan a 6m cube. You gain the advantage and critical bonus on all creatures within the area.",
         "Telegraphed Attacks : You're hud alerts you when the creature is about to attack. It has disadvantage on ranged and melee attacks and you have advantage on any saving throws caused by spells and abilities of the creature."
       ],
       "class-list": "Engineer, Infiltrator, Soldier"
@@ -2079,10 +2080,10 @@
     {
       "name": "Turbocharge",
       "mechanic": [
-        "Insert a specialized thermal clip that connects to your amor's kenetic barrier. The weapon's rate of fire is increased by 2. The weapon no longer needs to be reloaded; instead, each ranged weapon attack reduces your sheild points by an amonut equal to the weapon's rate of fire. While turbocharge is active, you move at half your speed (rounded down) and you have disadvantage on Dexterity saving throws. You can use an action to cancel Turbocharge, removing the thermal clip and reloading your weapon; otherwise, it lasts until your shield points are reduced to 0. You must finish a short or long rest before you can use this ability again."
+        "Insert a specialized thermal clip that connects to your amor's kinetic barrier. The weapon's rate of fire is increased by 2. The weapon no longer needs to be reloaded; instead, each ranged weapon attack reduces your shield points by an amount equal to the weapon's rate of fire. While turbocharge is active, you move at half your speed (rounded down) and you have disadvantage on Dexterity saving throws. You can use an action to cancel Turbocharge, removing the thermal clip and reloading your weapon; otherwise, it lasts until your shield points are reduced to 0. You must finish a short or long rest before you can use this ability again."
       ],
       "adv-option-1": "Quick Charge : You can activate and deactivate Turbocharge as a bonus action.",
-      "adv-option-2": "Improved Charge :  Increase your weapons rate of fire by 4.",
+      "adv-option-2": "Improved Charge :  Increase your weapon's rate of fire by 4.",
       "level": null,
       "type": "combat",
       "die-type": null,
@@ -2113,9 +2114,50 @@
       "id": "turbocharge",
       "adv-options": [
         "Quick Charge : You can activate and deactivate Turbocharge as a bonus action.",
-        "Improved Charge :  Increase your weapons rate of fire by 4."
+        "Improved Charge :  Increase your weapon's rate of fire by 4."
       ],
       "class-list": "Soldier"
+    },
+    {
+      "name": "Unity",
+      "mechanic": [
+        "You spend X tech points to revive a creature that has gone unconscious or died within the last minute. That creature returns to consciousness or life with hit points equal to Xd4 + your proficiency bonus."
+      ],
+      "adv-option-1": "Unrestricted : There is no limit to the amount of TP you may spend on this ability.",
+      "adv-option-2": "Quick : You can use Unity as a bonus action.",
+      "level": null,
+      "type": "tech",
+      "die-type": "d4",
+      "attack-type": [
+
+      ],
+      "casting-time": "Action",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "Touch",
+      "aoe": null,
+      "aoe-distance": null,
+      "effect": [
+        "heal"
+      ],
+      "damage-type": [
+
+      ],
+      "detonates": null,
+      "primes": null,
+      "adept": null,
+      "vanguard": null,
+      "sentinel": null,
+      "infiltrator": null,
+      "engineer": null,
+      "soldier": null,
+      "reviewed": null,
+      "id": "unity",
+      "adv-options": [
+        "Unrestricted : There is no limit to the amount of TP you may spend on this ability.",
+        "Quick : You can use Unity as a bonus action."
+      ],
+      "class-list": ""
     },
     {
       "name": "Warp",
@@ -2123,8 +2165,8 @@
         "Make a ranged spell attack on an organic creature you can see within range. On a hit, you generate a rapidly shifting mass effect field inside the target dealing necrotic damage equal to 3d6 + you biotic modifier. This damage bypasses shields.",
         "At higher levels: When you cast this spell using a spell slot of level 3 or higher, the damage increases by 1d6 for each slot level above the 2nd."
       ],
-      "adv-option-1": "Bleed : The shifting causes internal bleeding. At the start of your turn, the target 1[dd] necrotic damage until it is stabalized or knocked unconcious.",
-      "adv-option-2": "Poison : You localize the mass effect field on the target's center mass, causing queasiness. The target must pass a consitutuion saving throw or becomes poisoned.",
+      "adv-option-1": "Bleed : The shifting causes internal bleeding. At the start of your turn, the target 1[dd] necrotic damage until it is stabilized or knocked unconscious.",
+      "adv-option-2": "Poison : You localize the mass effect field on the target's center mass, causing queasiness. The target must pass a constitution saving throw or becomes poisoned.",
       "level": "2",
       "type": "biotic",
       "die-type": "d6",
@@ -2154,8 +2196,8 @@
       "reviewed": "y",
       "id": "warp",
       "adv-options": [
-        "Bleed : The shifting causes internal bleeding. At the start of your turn, the target 1d6 necrotic damage until it is stabalized or knocked unconcious.",
-        "Poison : You localize the mass effect field on the target's center mass, causing queasiness. The target must pass a consitutuion saving throw or becomes poisoned."
+        "Bleed : The shifting causes internal bleeding. At the start of your turn, the target 1d6 necrotic damage until it is stabilized or knocked unconscious.",
+        "Poison : You localize the mass effect field on the target's center mass, causing queasiness. The target must pass a constitution saving throw or becomes poisoned."
       ],
       "class-list": "Adept, Sentinel, Vanguard"
     }

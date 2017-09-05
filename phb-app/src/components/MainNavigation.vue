@@ -100,8 +100,10 @@
             title: 'Additional Reference',
             action: 'info_outline',
             items: [
+              {href: '/skills', title: 'Skills'},
               {href: '/feats', title: 'Feats'},
               {href: '/backgrounds', title: 'Backgrounds'},
+              {href: '/conditions', title: 'Conditions'},
             ]
           },
           {

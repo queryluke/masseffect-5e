@@ -4,6 +4,7 @@
     <main-toolbar :drawer="drawer" v-on:toggleDrawer="toggleDrawer"></main-toolbar>
     <main>
       <v-container fluid class="blue-grey lighten-4">
+        <h1 class="sr-only">Mass Effect 5e - Player's Handbook</h1>
         <transition name="slide" mode="out-in">
           <router-view></router-view>
         </transition>

@@ -1,22 +1,30 @@
 <template>
-  <span>
+  <div>
     {{ spell.range }}
     <span v-if="spell.aoe">
-      ({{ spell['aoe-distance'] }} <aoe-icon :shape="spell['aoe']"></aoe-icon>)
+      ({{ spell['aoe-distance'] }} <div class="aoe-icon"><me-icon type="aoe" :name="spell['aoe']"></me-icon></div>)
     </span>
-  </span>
+  </div>
 
 </template>
 
 <script>
-  import AoeIcon from './AoeIcon.vue';
+  import MeIcon from './MeIcon.vue';
 
   export default {
     name: 'SpellRangeArea',
     props: ['spell'],
     components: {
-      AoeIcon
+      MeIcon
     },
   };
 </script>
+
+<style lang="stylus">
+  .aoe-icon
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+</style>
 

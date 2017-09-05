@@ -3,7 +3,8 @@
     v-expansion-panel-content(
       v-for="spell in spells"
       v-bind:spell="spell"
-      v-bind:key="spell.id")
+      v-bind:key="spell.id"
+      hideActions)
       div(slot="header")
         v-layout.spell-header
           v-flex.xs2.sm3.lg2

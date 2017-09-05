@@ -15,8 +15,8 @@
         )
     div.mt-3.mb-3.spell-sorting
       v-layout.spell-header
-        v-flex.xs2.sm2.lg1
-        v-flex.xs12.sm6.lg3 Name
+        v-flex.xs2.sm2.lg2
+        v-flex.xs12.sm6.lg2 Name
         v-flex.hidden-md-and-down.lg2 Duration
         v-flex.hidden-md-and-down.lg2 Range/Area
         v-flex.hidden-md-and-down.lg2 Attack/Save

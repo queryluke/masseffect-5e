@@ -1,18 +1,16 @@
 <template lang="jade">
   v-layout(justify-end).spell-class-list
-    div(v-for="meClass in classes" v-bind:key="meClass" v-if="spell[meClass]")
-      class-icon(
-        v-bind:classname="meClass"
-      )
+    div(v-for="meClass in classes" v-bind:key="meClass" v-if="spell[meClass]").class-icon
+      me-icon(type="classes" v-bind:name="meClass")
       span(v-if="spell[meClass] !== 'x'") {{ spell[meClass] }}
 </template>
 
 <script>
-  import ClassIcon from "./ClassIcon.vue";
+  import MeIcon from "./MeIcon.vue";
 
   export default {
     components: {
-      ClassIcon
+      MeIcon
     },
     name: 'SpellClassList',
     props: ['spell'],
