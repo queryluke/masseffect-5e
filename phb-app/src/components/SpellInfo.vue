@@ -12,7 +12,7 @@
           spell-type(:spell="spell")
       v-flex.xs12.sm4.md3.attribute.mb-2
         label Casting Time
-        div {{ spell["casting-time"] }}
+        div {{ spell.casting_time }}
       v-flex.xs12.sm4.md3.attribute.mb-2
         label Duration
         div
@@ -24,11 +24,11 @@
       v-flex.xs12.sm4.md3.attribute.mb-2
         label Attack Type
         ul.list-unstyled
-          li(v-for="at in spell['attack-type']" v-bind:key="at") {{ at }}
+          li(v-for="at in spell.attack_type" v-bind:key="at") {{ at }}
       v-flex.xs12.sm4.md3.attribute.mb-2
         label Damage Type
         ul.list-unstyled
-          li(v-for="dmg in spell['damage-type']" v-bind:key="dmg") {{ dmg }}
+          li(v-for="dmg in spell.damage_type" v-bind:key="dmg") {{ dmg }}
       v-flex.xs12.sm4.md3.attribute.mb-2
         label Effect
         ul
@@ -37,7 +37,7 @@
     div.mt-3
       p(v-for="mechanic in spell.mechanic") {{ mechanic }}
       v-layout(row wrap justify-space-around)
-        v-flex(v-for="option in spell['adv-options']" v-bind:key="spell.id").xs12.md6
+        v-flex(v-for="option in spell.adv_options" v-bind:key="spell.id").xs12.md6
           advanced-option(:option="option")
 </template>
 

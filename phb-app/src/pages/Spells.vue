@@ -49,7 +49,7 @@
         .get('../data/spells.json')
         .then(response => response.json())
         .then(response => {
-          this.spells = response.spells;
+          this.spells = response.data;
           this.updated = response.updated;
           this.source = response.source;
         });

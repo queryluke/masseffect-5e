@@ -1,6 +1,5 @@
 url: http://queryluke.github.io/masseffect-5e
 permalink: news/:title/
-include: [assets/js/main.js]
 data_dir: data
 exclude: [phb-app/, generate.rb]
 version: 0.1.0-alpha

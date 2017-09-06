@@ -1,8 +1,8 @@
 <template lang="jade">
   v-layout(justify-end).spell-class-list
-    div(v-for="meClass in classes" v-bind:key="meClass" v-if="spell[meClass]").class-icon
-      me-icon(type="classes" v-bind:name="meClass")
-      span(v-if="spell[meClass] !== 'x'") {{ spell[meClass] }}
+    div(v-for="me_class in classes" v-bind:key="me_class" v-if="spell[me_class]").class-icon
+      me-icon(type="classes" v-bind:name="me_class")
+      span(v-if="spell[me_class] !== 'x'") {{ spell[me_class] }}
 </template>
 
 <script>

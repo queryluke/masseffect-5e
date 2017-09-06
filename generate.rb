@@ -90,21 +90,21 @@ end
 
 def config_spells(model)
   model['id'] = model['name'].downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
-  model['mechanic'] = insert_dd(model['mechanic'], model['die-type']).split('--').map { |l| l.strip }
-  model['attack-type'] = model['attack-type'] ? model['attack-type'].split(',') : []
+  model['mechanic'] = insert_dd(model['mechanic'], model['die_type']).split('--').map { |l| l.strip }
+  model['attack_type'] = model['attack_type'] ? model['attack_type'].split(',') : []
   model['effect'] = model['effect'] ? model['effect'].split(',') : []
-  model['damage-type'] = model['damage-type'] ? model['damage-type'].split(',') : []
-  model['adv-options'] = []
-  model['adv-options'] << insert_dd(model['adv-option-1'], model['die-type'])
-  model['adv-options'] << insert_dd(model['adv-option-2'], model['die-type'])
-  model['class-list'] = create_class_list(model)
+  model['damage_type'] = model['damage_type'] ? model['damage_type'].split(',') : []
+  model['adv_options'] = []
+  model['adv_options'] << insert_dd(model['adv_option_1'], model['die_type'])
+  model['adv_options'] << insert_dd(model['adv_option_2'], model['die_type'])
+  model['class_list'] = create_class_list(model)
   model
 end
 
 def generate_model(headers)
   model = {}
   headers.each do |h|
-    snake = h.gsub(' ','-').downcase
+    snake = h.gsub(' ','_').downcase
     model[snake] = ''
   end
   model
@@ -146,8 +146,8 @@ def generate_config_file(page)
 
   data = {
     updated: date.strftime("%B %e, %Y @ %l:%M %p"),
-    source: page[:url],
-    "#{page[:type]}" => collection
+    source: page[:url].sub(%r(/pub\?.*),'/pubhtml'),
+    data: collection
   }
 
 
@@ -164,7 +164,11 @@ pages = [
   {
     type: 'skills',
     url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRFYAlUo84hir8VGSHwP4pKqnTcih_5UD0Uqtgi9w-QHEvrSxLthv1xXG0jb_tpbBRNZXE1Dv0nF0_q/pub?gid=0&single=true&output=csv'
-  }
+  },
+  {
+    type: 'feats',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTPhVRIodUwbDYFw8wJZtmb63tTjFJMxY-cN6P5nayPpJhNxAQFqIxeSLd5Tz75aOZ7CLuBkNsDrcs9/pub?gid=0&single=true&output=csv'
+  },
 ].each do |p|
   if imports.length > 0
     if imports.include?(p[:type])

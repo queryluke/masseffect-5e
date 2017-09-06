@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The refactor: So much change, it's basically new"
-excerpt_separator: <!--more-->
+excerpt: Wall of text incoming! 
 ---
 
 ## Shoutout

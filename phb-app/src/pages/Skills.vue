@@ -43,7 +43,7 @@
         .get('../data/skills.json')
         .then(response => response.json())
         .then(response => {
-          this.skills = response.skills;
+          this.skills = response.data;
           this.updated = response.updated;
           this.source = response.source;
         });
