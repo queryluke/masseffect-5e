@@ -13,26 +13,34 @@
         v-for="feat in feats"
         v-bind:feat="feat"
         v-bind:key="feat.name"
-        hide-actions)
+        hide-actions).large-panel
           div(slot="header")
             v-layout
               v-flex.xs2.md1
-                v-avatar(:class="[feat.page_number ? 'deep-purple' : 'deep-orange']" size="25px")
-                  span(v-if="feat.page_number").white--text.headline PHB
+                v-avatar(:class="[feat.page_number ? 'deep-purple' : 'deep-orange']" size="30px")
+                  span(v-if="feat.page_number").white--text PHB
                   span(v-else).white--text New
-              v-flex.xs10.md3
+              v-flex.xs10.md3.pt-1
                 strong {{ feat.name }}
-              v-flex.hidden-sm-and-down.md-8 {{ feat.notes }}
+              v-flex.hidden-sm-and-down.md-8.pt-1 {{ feat.notes }}
           v-card
             v-card-text.grey.lighten-3
+              p(v-if="feat.page_number") p. {{ feat.page_number }}
+              p(v-if="feat.description")
+                me-element(:text="feat.description")
     v-layout(row wrap justify-space-between).mt-4
       span Last Updated: {{ updated }}
       a(:href="source" target="_blank") Source
 </template>
 
 <script>
+import MeElement from '../components/MeElement.vue';
+
   export default {
     name: 'Feats',
+    components: {
+      MeElement
+    },
     data() {
       return {
         feats: [],
