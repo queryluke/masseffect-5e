@@ -23,7 +23,7 @@
         .get('../data/spells.json')
         .then(response => response.json())
         .then(response => {
-          this.spell = response.spells.find((value) => {
+          this.spell = response.data.find((value) => {
             return value.id == this.$route.params.id;
           });
         });
