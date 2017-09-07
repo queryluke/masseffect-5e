@@ -17,9 +17,9 @@
           div(slot="header")
             v-layout
               v-flex.xs2
-                v-avatar(:class="[feat.page_number ? deep-purple : deep-orange, errorClass]")
+                v-avatar(:class="[feat.page_number ? 'deep-purple' : 'deep-orange']" size="25px")
                   span(v-if="feat.page_number").white--text.headline PHB
-                  span(v-else).white--text.headline New
+                  span(v-else).white--text New
               v-flex.xs10 {{ feat.name }}
               v-spacer
           v-card
@@ -46,7 +46,7 @@
         .then(response => response.json())
         .then(response => {
           this.feats = response.data.filter(function(value) {
-            return value['not-available'] === null;
+            return value.not_available === null;
           });
           let not_available = response.data.filter(function(value) {
             return value.not_available !== null;

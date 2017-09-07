@@ -68,22 +68,19 @@
               { href:'/rules/equipment', title: 'Equipment' },
               { href:'/rules/paragon-and-renegade', title: 'Paragon & Renegade' },
               { href:'/rules/spellcasting', title: 'Spellcasting' },
+              { href: '/skills', title: 'Skills' },
+              { href: '/conditions', title: 'Conditions' },
             ]
           },
           {
-            title: 'Classes',
-            action: 'group_work',
-            href: '/classes',
-          },
-          {
-            title: 'Races',
+            title: 'Player Options',
             action: 'face',
-            href: '/races',
-          },
-          {
-            title: 'Spells & Powers',
-            action: 'whatshot',
-            href: '/spells',
+            items: [
+              { href: '/classes', title: 'Classes' },
+              { href: '/races', title: 'Races' },
+              { href: '/feats', title: 'Feats' },
+              { href: '/backgrounds', title: 'Backgrounds' },
+            ],
           },
           {
             title: 'Equipment',
@@ -97,14 +94,9 @@
             ]
           },
           {
-            title: 'Additional Reference',
-            action: 'info_outline',
-            items: [
-              {href: '/skills', title: 'Skills'},
-              {href: '/feats', title: 'Feats'},
-              {href: '/backgrounds', title: 'Backgrounds'},
-              {href: '/conditions', title: 'Conditions'},
-            ]
+            title: 'Spells & Powers',
+            action: 'whatshot',
+            href: '/spells',
           },
           {
             title: 'Beastiary',
