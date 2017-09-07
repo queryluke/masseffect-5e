@@ -1,5 +1,10 @@
 <template lang="pug">
-  v-navigation-drawer(clipped persistent v-model="drawer")
+  v-navigation-drawer(
+    persistent
+    clipped
+    enable-resize-watcher
+    v-model="isActive"
+    )
     v-list(dense)
       template(v-for="item in items")
         v-list-group(v-if="item.items" v-bind:group="item.group")
@@ -53,9 +58,20 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex';
+
   export default {
-    name: 'NavigationDrawer',
-    props: ['drawer'],
+    name: 'MainNavigation',
+    computed: {
+      isActive: {
+        get () {
+          return this.$store.state.sidebar
+        },
+        set (val) {
+          this.$store.commit('toggleSidebar', val)
+        }
+      }
+    },
     data () {
       return {
         items: [

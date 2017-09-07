@@ -35,7 +35,7 @@ require('./stylus/main.styl');
 Vue.use(Router);
 Vue.use(Vuetify);
 
-export const router = new Router({
+const router = new Router({
   mode: 'hash',
   routes: [
     {path: '/', component: Default, redirect: '/home',
@@ -72,8 +72,11 @@ export const router = new Router({
   ]
 });
 
+import store from './store';
+
 export default new Vue({
   el: '#root',
   router,
+  store,
   render: h => h('router-view')
 });

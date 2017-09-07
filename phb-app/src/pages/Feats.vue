@@ -16,12 +16,13 @@
         hide-actions)
           div(slot="header")
             v-layout
-              v-flex.xs2
+              v-flex.xs2.md1
                 v-avatar(:class="[feat.page_number ? 'deep-purple' : 'deep-orange']" size="25px")
                   span(v-if="feat.page_number").white--text.headline PHB
                   span(v-else).white--text New
-              v-flex.xs10 {{ feat.name }}
-              v-spacer
+              v-flex.xs10.md3
+                strong {{ feat.name }}
+              v-flex.hidden-sm-and-down.md-8 {{ feat.notes }}
           v-card
             v-card-text.grey.lighten-3
     v-layout(row wrap justify-space-between).mt-4

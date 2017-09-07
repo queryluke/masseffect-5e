@@ -1,26 +1,23 @@
-<template>
-  <v-toolbar fixed dark>
-    <v-toolbar-side-icon v-on:click="toggleDrawer"></v-toolbar-side-icon>
-    <v-toolbar-title>
-      <img :src="`../assets/images/me5e.svg`" class="nav-brand">
-      Mass Effect 5e - Players Handbook
-    </v-toolbar-title>
-    <v-spacer></v-spacer>
-    <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat href="../"><v-icon>home</v-icon></v-btn>
-    </v-toolbar-items>
-  </v-toolbar>
+<template lang="jade">
+  v-toolbar(fixed dark)
+    v-toolbar-side-icon(@click.stop="toggleSidebar")
+    v-toolbar-title
+      img(:src="`../assets/images/me5e.svg`" class="nav-brand")
+      span Mass Effect 5e - Players Handbook
+    v-spacer
+    v-toolbar-items.hidden-sm-and-down
+      v-btn(flat href="../")
+        v-icon home
 </template>
 
 <script>
   export default {
     name: 'MainToolbar',
-    props: ['drawer'],
     methods: {
-      toggleDrawer () {
-        this.$emit('toggleDrawer');
+      toggleSidebar () {
+        this.$store.commit('toggleSidebar', !this.$store.state.sidebar)
       }
-    },
+    }
   };
 </script>
 

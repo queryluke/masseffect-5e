@@ -1,17 +1,12 @@
-<template>
-  <v-app toolbar footer>
-    <main-navigation :drawer="drawer"></main-navigation>
-    <main-toolbar :drawer="drawer" v-on:toggleDrawer="toggleDrawer"></main-toolbar>
-    <main>
-      <v-container fluid class="blue-grey lighten-4">
-        <h1 class="sr-only">Mass Effect 5e - Player's Handbook</h1>
-        <transition name="slide" mode="out-in">
-          <router-view></router-view>
-        </transition>
-      </v-container>
-    </main>
-    <main-footer></main-footer>
-  </v-app>
+<template lang="jade">
+  v-app(toolbar)
+    main-navigation
+    main-toolbar
+    main
+      v-container(fluid).blue-grey.lighten-4
+        h1.sr-only Mass Effect 5e - Player's Handbook
+        transition(name="slide" mode="out-in")
+          router-view
 </template>
 
 <script>
@@ -29,11 +24,6 @@ export default {
   data () {
     return {
       drawer: true,
-    }
-  },
-  methods: {
-    toggleDrawer () {
-      this.drawer = !this.drawer;
     }
   },
 };
@@ -54,5 +44,4 @@ export default {
 
   .slide-leave-to
     transform: translateX(-3rem)
-
 </style>
