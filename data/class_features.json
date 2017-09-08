@@ -1,0 +1,1661 @@
+{
+  "updated": "September  7, 2017 @  8:48 PM",
+  "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
+  "data": [
+    {
+      "name": "Ability Score Improvement",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. You can't increase an ability score above 20 using this feature. You may instead take a Feat available to your race."
+        }
+      ],
+      "id": "ability-score-improvement"
+    },
+    {
+      "name": "Adrenaline Rush",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "On your turn, you can inject yourself with a shot of adrennaline, pushing yourself beyond your normal limits for a moment. You can take one additional action on top of your regular action and a possible bonus action. Once you use this feature, you must finish a short or long rest before you can use it again."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Starting at the 17th level, you can use this ability twice per short rest but not more than once in a single turn."
+        }
+      ],
+      "id": "adrenaline-rush"
+    },
+    {
+      "name": "Advanced Tech Armor",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Starting at the 20th level, you're able to improve your Tech Armor's defense to seemingly supernatural capabilities. While Tech Armor is active, you gain +3 AC and have resistance to all damage types."
+        }
+      ],
+      "id": "advanced-tech-armor"
+    },
+    {
+      "name": "Advanced Weapon Holsters",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Your carry capacity is equal to your strength + your level"
+        }
+      ],
+      "id": "advanced-weapon-holsters"
+    },
+    {
+      "name": "Assault Armor",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Starting at the 2nd level, your Tech Armor is rigged for maximum protection and keeping the action on you. While Tech Armor is active, it projects a distracting holographic image (your choice). The first time a hostile creature makes an attack after you activate Tech Armor, it must pass a Wisdom (Insight) check (DC your spell save). On a failure, the creature is compelled to attack you while your Tech Armor is active. Synthetic creatures have advantage on this check."
+        }
+      ],
+      "id": "assault-armor"
+    },
+    {
+      "name": "Battlemaster",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Starting at the 2nd level, when you cast a cantrip, you can choose either advancement option\nStarting at the 10th level, when you cast tech powers, you can choose either advancement option\nStarting at the 14th level, when you cast a biotic spell, you can choose either advancement option"
+        }
+      ],
+      "id": "battlemaster"
+    },
+    {
+      "name": "Bend Luck",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You've mastered the art of using small mass effect fields to slightly alter the outcome of other creature's actions. It might be a small burst under the muzzle of a gun to throw off the attacker's aim. Or negative field around a friendly creature as leaps away from a grenade, moving it out of damage's way."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "When another creature you can see makes an attack roll, an ability check, or a saving throw, you can use your reaction to roll 1d4 and apply the number rolled as a bonus or penalty (your choice) to the creature's roll. You can do so after the creature rolls but before any effects of the roll occur."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "You can use Bend Luck a number of times equal to half of your Adept level (minimum 1) before you finish a long rest."
+        }
+      ],
+      "id": "bend-luck"
+    },
+    {
+      "name": "Biotic Concentration",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Starting at the 14th level, you can push your biotic implant to the limit. If you are already maintaining a concentration spell, you can cast another spell that requires concentration and maintain it. If you take damage you must make 2 Constitution saving throws to maintain the spells."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Once you use this feature, you can't use it again until you finish a short or long rest."
+        }
+      ],
+      "id": "biotic-concentration"
+    },
+    {
+      "name": "Biotic Control",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "At the 14th level, you've increase your mastery with biotic spells that control the battle field. Gain the following benefits to the spells below:"
+        },
+        {
+          "id": 2,
+          "type": "list",
+          "data": [
+            "Pull : Pull can affect large-sized objects, moving them 2m, and adding 4m to each size below large.",
+            "Lift : When you cast Lift, and 5 more dice to your roll.",
+            "Singularity : Large-sized object can now be affected by singularity",
+            "Stasis : Target's have disadvantage on their saving throw."
+          ]
+        }
+      ],
+      "id": "biotic-control"
+    },
+    {
+      "name": "Biotic Focus",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "At the 14th level, you can use a bonus action to focus your biotic energies into your muscles granting additional speed and strength. You gain the following benefits for 1 minute:"
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Your speed is doubled."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "+4 to all melee weapon damage rolls."
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "You have advantage on Strength Dexterity saving throws."
+        },
+        {
+          "id": 5,
+          "type": "line",
+          "data": "Once you use this feature, you can't use it again until you finish a long rest."
+        }
+      ],
+      "id": "biotic-focus"
+    },
+    {
+      "name": "Biotic Maneuvers",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You learn maneuvers that are fueled by your barrier ticks. You can use only one maneuver per attack. Some of your maneuvers require your target to make a saving throw to resist the maneuver's effects. The saving throw DC is 8+ your proficiency bonus + your Charisma modifier."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "You learn 2 maneuvers of your choice at the 3rd, 10th, and 18th level."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Disarming Attack - When you hit a creature with a melee attack, you can expend one barrier tick to disarm the target, forcing it to drop one item of your choice that it’s holding. You add the barrier tick die to the attack’s damage roll, and the target must make a Strength saving throw. On a failed save, it drops the object you choose. The object lands at its feet."
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "Distracting Attack - When you hit a creature with a melee attack, you can expend one barrier tick to distract the creature, giving your allies an opening. You add the barrier tick to the attack’s damage roll. The next attack roll against the target by an attacker other than you has advantage if the attack is made before the start of your next turn."
+        },
+        {
+          "id": 5,
+          "type": "line",
+          "data": "Feinting Attack - You can expend one barrier tick and use a bonus action on your turn to feint, choosing one creature within 2m of you as your target. You have advantage on your melee next attack roll against that creature. If that attack hits, add the barrier tick to the attack’s damage roll."
+        },
+        {
+          "id": 6,
+          "type": "line",
+          "data": "Goading Attack - When you hit a creature with a melee attack, you can expend one barrier tick to attempt to goad the target into attacking you. You add the barrier tick to the attack’s damage roll, and the target must make a Wisdom saving throw. On a failed save, the target has disadvantage on all attack rolls against targets other than you until the end of your next turn."
+        },
+        {
+          "id": 7,
+          "type": "line",
+          "data": "Lift Attack - When you hit a creature with a melee attack, you can expend one barrier ticks to attempt to lift the target. You add the barrier tick to the attack’s damage roll, and if the target is Medium or smaller, it must make a Dexterity saving throw. On a failed save, the target is lifted."
+        },
+        {
+          "id": 8,
+          "type": "line",
+          "data": "Menacing Attack - When you hit a creature with a melee attack, you can expend one barrier tick to attempt to frighten the target. You add the barrier tick to the attack’s damage roll, and the target must make a Wisdom saving throw. On a failed save, it is frightened of you until the end of your next turn."
+        },
+        {
+          "id": 9,
+          "type": "line",
+          "data": "Pushing Attack - When you hit a creature with a melee attack, you can expend one barrier tick to attempt to drive the target back. You add the barrier tick to the attack's damage roll, and if the target is Large or smaller, it must make a Strength saving throw. On a failed save, you push the target up to 8m away from you."
+        },
+        {
+          "id": 10,
+          "type": "line",
+          "data": "Riposte - When a creature misses you with a melee attack, you can use your reaction and expend one barrier tick to make a melee attack against the creature. If you hit, you add the barrier tick to the attack's damage roll."
+        },
+        {
+          "id": 11,
+          "type": "line",
+          "data": "Sweeping Attack - When you hit a creature with a melee attack, you can expend one barrier tick to attempt to damage another creature with the same attack. Choose another creature within 2m of the original target and within your reach. If the original attack roll would hit the second creature, it takes damage equal to the number you roll on your barrier tick. The damage is of the same type dealt by the original attack."
+        },
+        {
+          "id": 12,
+          "type": "line",
+          "data": "Trip Attack - When you hit a creature with a melee attack, you can expend one barrier tick to attempt to knock the target down. You add the barrier tick to the attack’s damage roll, and if the target is Large or smaller, it must make a Strength saving throw. On a failed save, you knock the target prone."
+        }
+      ],
+      "id": "biotic-maneuvers"
+    },
+    {
+      "name": "Biotic Mastery",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "At 18th level, you have achieved such mastery over certain biotics that you can cast them at will. Choose a 1st-level biotic spell and a 2nd-level biotic spell that you have learned. You can cast those spells at their lowest level without expending a spell slot. If you want to cast either spell at a higher level, you must expend a spell slot as normal."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "By spending 8 hours training, you can exchange one or both of the spells you chose for different spells of the same levels."
+        }
+      ],
+      "id": "biotic-mastery"
+    },
+    {
+      "name": "Biotic Powers",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Learn or advance your biotic powers. The first number indicates the number of new spells you can learn or advance. For example 2(3): you can either learn 2 new spells, advance 2 spells, or learn a spell and advance a spell. The second number indicates the max level of the spell you can learn or advance. In this example, you can learn or advance spells of level 3 or less, including cantrips. Though you can learn new cantrips this way, you cannot know more cantrips than allowed by your level (indicated on you class sheet)."
+        }
+      ],
+      "id": "biotic-powers"
+    },
+    {
+      "name": "Biotic Slash",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Starting at 2nd level, when you hit a creature with a melee weapon attack, you can expend one spell slot to deal force damage to the target, in addition to the weapon's damage. The extra damage is 2d8 for a 1st-level spell slot, plus 1d8 for each spell level higher than 1st. The damage increases by 1d8 if the target is unshielded."
+        }
+      ],
+      "id": "biotic-slash"
+    },
+    {
+      "name": "Biotic Split",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "When you cast a biotic spell that targets only one creature, you can have it target a second creature."
+        }
+      ],
+      "id": "biotic-split"
+    },
+    {
+      "name": "Biotic Surge",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Starting at 6th level, you can empower your biotics that unleash harm on groups of foes. When you force multiple creatures to make saving throws against the damage of one of your spells, you can increase the spell's damage by rolling two more of its damage dice. This increase occurs only on the turn you cast the spell."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Once you use this feature, you can't use it again until you finish a short or long rest."
+        }
+      ],
+      "id": "biotic-surge"
+    },
+    {
+      "name": "Biotic Wealth",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Your innate pool of biotic ability seems endless. Increase you max 3rd, 4th, and 5th-level spell slots by 1."
+        }
+      ],
+      "id": "biotic-wealth"
+    },
+    {
+      "name": "Brutal Critical",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You can roll one additional damage die when determining the extra damage for a critical hit with a melee attack."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "This increases to two additional dice at 13th level and three additional dice at 17th level."
+        }
+      ],
+      "id": "brutal-critical"
+    },
+    {
+      "name": "Cabal Attacks",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Casting Nightshade Blades or Poison Strike counts as an Attack action."
+        }
+      ],
+      "id": "cabal-attacks"
+    },
+    {
+      "name": "Careful Eyes",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Starting at 7th level, you excel at picking out hidden enemies and other threats. You can take the Search action as a bonus action."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "You also gain proficiency in the Perception, Investigation, or Survival skill (choose one)."
+        }
+      ],
+      "id": "careful-eyes"
+    },
+    {
+      "name": "Combat Power",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Learn or advance a combat power."
+        }
+      ],
+      "id": "combat-power"
+    },
+    {
+      "name": "Cunning Action",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You can take a bonus action on each of your turns in combat. This action can be used only to Dash, Disengage, Hide, or activate Tactical Cloak."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "At 14th level, Cunning Action may also be used to reload or use a grenade."
+        }
+      ],
+      "id": "cunning-action"
+    },
+    {
+      "name": "Danger Sense",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You gain an uncanny sense of when things nearby aren't as they should be, giving you an edge when you dodge away from danger. You have advantage on Dexterity saving throws against effects that you can see, such as traps and spells. To gain this benefit, you can't be blinded, deafened, or incapacitated."
+        }
+      ],
+      "id": "danger-sense"
+    },
+    {
+      "name": "Dark Biotics",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Your skill in dealing damage with withering biotic powers is unmatched. Add your proficiency bonus to all necrotic damage dealt by your biotic spells."
+        }
+      ],
+      "id": "dark-biotics"
+    },
+    {
+      "name": "Deadly Aim",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Your aim becomes deadly. As a bonus action on your turn, you can take careful aim at a creature you can see that is within range of a ranged weapon you're wielding. Until the end of this turn, your ranged attacks with that weapon gain two benefits against the target:"
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "The attacks ignore half and three-quarters cover."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "On each hit, the weapon deals additional damage to the target equal to 2 + half your fighter level."
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "You can use this feature three times. You regain all expended uses of it when you finish a short or long rest."
+        }
+      ],
+      "id": "deadly-aim"
+    },
+    {
+      "name": "Deadly Strike",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "When you apply your sneak attack damage from an attack made with a melee weapon, increase the damage die to d8."
+        }
+      ],
+      "id": "deadly-strike"
+    },
+    {
+      "name": "Drone",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Spend X TP to summon a drone. Each drone type has a unique set of abilities. Drones have a 12 AC and when they make a melee or ranged attack, add your proficiency bonus to the attack roll. Drones move and attack when they are first summoned and at the beginning of your turn on subsequent turns. You can only have a single Drone active at a time unless otherwise stated."
+        },
+        {
+          "id": 2,
+          "type": "table",
+          "data": {
+            "headers": [
+              "Name",
+              "Health",
+              "Speed",
+              "Ability"
+            ],
+            "items": [
+              [
+                "Combat",
+                "Your lvl + Xd8",
+                "6m",
+                "Make a ranged weapon attack on a hostile creature you can see within 20m. On a hit, the Drone deals 2d6 piercing damage. Damage increases by 1d6 at the 5th, 11th, and 17th level."
+              ],
+              [
+                "Anti-Shield",
+                "Your lvl + Xd10",
+                "8m",
+                "Make a melee attack a hostile creature. On a success, the target takes lightening damage equal to 1d8 lightening damage. Damage increases by 1d8 at the 5th, 11th, and 17th level."
+              ],
+              [
+                "Defense",
+                "Your lvl + Xd6",
+                "6m",
+                "When a friendly creature takes damage, if the drone is 2m of that creature, reduce the damage taken by 1d6. Damage reduction increases by 1d6 at the 5th, 11th, and 17th level."
+              ],
+              [
+                "Kamikaze",
+                "Your lvl + Xd4",
+                "10m",
+                "Detonate the drone. Creatures within a 2m radius must make a dexterity saving throw. On a failed save a creature takes 1d12 thunder damage, or half as much on a successful one. Damage increases by 1d12 at the 5th, 11th, and 17th level."
+              ]
+            ]
+          }
+        }
+      ],
+      "id": "drone"
+    },
+    {
+      "name": "Drone Efficiency",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "If you have no Drones active, the next Drone you summon costs 1d4 less TP. For example, you roll 3 on a d4 and choose to spend 1 TP on a Drone. You would calculate the drones health based on 4 TP spent. You cannot use this ability to spend more than 10 TP."
+        }
+      ],
+      "id": "drone-efficiency"
+    },
+    {
+      "name": "Drone Mastery",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You can summon 2 Drones in one action."
+        }
+      ],
+      "id": "drone-mastery"
+    },
+    {
+      "name": "Drone Sidekick",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "When you summon a Drone, role a die of your choice. On an odd roll, your Drone generates a Sidekick: a second 1 TP version of itself. The sidekick does not count towards your maximum number of Drones. When calculating the Sidekick's health, use 1/2 your level, rounded up."
+        }
+      ],
+      "id": "drone-sidekick"
+    },
+    {
+      "name": "Drone Swarm",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You can have 3 Drones active at once."
+        }
+      ],
+      "id": "drone-swarm"
+    },
+    {
+      "name": "Dual Drones",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Your can have 2 Drones active at once."
+        }
+      ],
+      "id": "dual-drones"
+    },
+    {
+      "name": "Ear for Deceit",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You develop a keen ear for picking out lies. Whenever you make a Wisdom (Insight) check to sense if a creature is lying, you use the total of your check or 8 + your Wisdom modifier, whichever is higher. If you are proficient in Insight, you add your proficiency bonus to the fixed result. If you chose Insight as a skill augmented by your Expertise feature, add double your proficiency bonus."
+        }
+      ],
+      "id": "ear-for-deceit"
+    },
+    {
+      "name": "Elegant Maneuver",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Starting at 13th level, you can use a bonus action on your turn to gain advantage on the next Dexterity (Acrobatics) or Strength (Athletics) check you make during the same turn."
+        }
+      ],
+      "id": "elegant-maneuver"
+    },
+    {
+      "name": "Elusive",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You are so evasive that attackers rarely gain the upper hand against you. No attack roll has advantage against you while you aren't incapacitated."
+        }
+      ],
+      "id": "elusive"
+    },
+    {
+      "name": "Empowered Biotics",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Whenever you roll a 1 on damage or healing die for a biotic spell or cantrip you cast, you can reroll the die and must use the new roll."
+        }
+      ],
+      "id": "empowered-biotics"
+    },
+    {
+      "name": "Evasion",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail."
+        }
+      ],
+      "id": "evasion"
+    },
+    {
+      "name": "Expertise",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies."
+        }
+      ],
+      "id": "expertise"
+    },
+    {
+      "name": "Extra Attack",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You can attack twice when you choose to make a melee attack or ranged weapon attack as your action."
+        }
+      ],
+      "id": "extra-attack"
+    },
+    {
+      "name": "Eye for Detail",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You can use the bonus action granted by your Cunning Action feature to make a Wisdom (Perception) check to spot a hidden creature or object, to make an Intelligence (Investigation) check to uncover and decipher clues, or to use Insightful Fighting."
+        }
+      ],
+      "id": "eye-for-detail"
+    },
+    {
+      "name": "Eye for Weakness",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "At 17th level, you learn to exploit a creature's weaknesses by carefully studying its tactics and movement. While your Insightful Fighting feature applies to a creature, your Sneak Attack damage against that creature increases by 2d6."
+        }
+      ],
+      "id": "eye-for-weakness"
+    },
+    {
+      "name": "Fighting Style",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "{!table} Style | Perk | Advanced Perk"
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Brawler | You have advantage when making melee attacks. | Add twice your proficiency bonus to your attack rolls."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Dual Wield | You can wield 2 pistols or SMGs (or combination thereof). Your off-hand weapon always shoots with a disadvantage. You will automatically miss targets out of range. | Remove the disadvantage and range penalty to your off-hand weapon"
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "The Free Hand | When wielding a pistol, you have a +2 bonus to hit with ranged spell or tech attacks. | When wielding a pistol, you add your proficiency bonus as damage to all damaging biotic spells and tech."
+        },
+        {
+          "id": 5,
+          "type": "line",
+          "data": "Up close and personal | You do not have disadvantage on ranged attack rolls against targets within melee range. | In your hands, all weapons are considered to have the Hip-Fire attribute."
+        },
+        {
+          "id": 6,
+          "type": "line",
+          "data": "Sniper | Add your dexterity modifier as damage to successful range attacks against targets that are at least 10m away. | If no hostile creature are within 10m of you, you have advantage on all ranged weapon attacks against targets at least 10m away."
+        },
+        {
+          "id": 7,
+          "type": "line",
+          "data": "Defense | +1AC and +10 Shields | +2AC and +20 Shields"
+        },
+        {
+          "id": 8,
+          "type": "line",
+          "data": "Protection (Vanguard Only) | When a creature you can see attacks a target other than you that is within 2m of you, you can use your reaction and expend one barrier tick to impose disadvantage on the attack roll. | If the attack succeeds, the barrier tick absorbs damage as a normal barrier tick would.\n{/table}"
+        }
+      ],
+      "id": "fighting-style"
+    },
+    {
+      "name": "Focused Biotics",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "While you are concentrating on a biotic spell, your concentration can't be broken as a result of taking damage."
+        }
+      ],
+      "id": "focused-biotics"
+    },
+    {
+      "name": "Healing Drone",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "At the 2nd level, you gain proficiency with Medicine. If you are already poficient in Medicince, you may choose another skill to become proficient in."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "You also learn to summon a Healing drone:\n{!list}"
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Health: your lvl + Xd8"
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "Speed: 10m"
+        },
+        {
+          "id": 5,
+          "type": "line",
+          "data": "Ability: The drone can cast a 1 tech point First Aid.\n{list}"
+        },
+        {
+          "id": 6,
+          "type": "line",
+          "data": "At the 14th level, your healing drone casts a 3 tech point First Aid and has an AC of 15."
+        }
+      ],
+      "id": "healing-drone"
+    },
+    {
+      "name": "Heavy Weapon Hack",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "When your heavy weapon runs out of ammo, you can jerry-rig an additional use for 3 tech points."
+        }
+      ],
+      "id": "heavy-weapon-hack"
+    },
+    {
+      "name": "Improved Barrier",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "At the 6th level, increase the die type of your barrier to d10.\nAt the 10th level, increase the die type of your barrier to d12."
+        }
+      ],
+      "id": "improved-barrier"
+    },
+    {
+      "name": "Improved Biotic Slash",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "By 11th level, you are adept at focusing your biotics into melee strikes. Whenever you hit a creature with a melee weapon, the creature takes an extra 1d8 force damage. If you also use your Biotic Slash with an attack, you add this damage to the extra damage of your Biotic Slash."
+        }
+      ],
+      "id": "improved-biotic-slash"
+    },
+    {
+      "name": "Improved Tech Armor",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "At 6th level, increase the die type used in Tech Armor to d10."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "At 14th level, increase the die type used in Tech Armor to d12"
+        }
+      ],
+      "id": "improved-tech-armor"
+    },
+    {
+      "name": "Improved Weapon Superiority",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "At 10th level, your superiority dice turn into d10s. At 18th level, they turn into d12s."
+        }
+      ],
+      "id": "improved-weapon-superiority"
+    },
+    {
+      "name": "Indomitable",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You can reroll a saving throw that you fail. If you do so, you must use the new roll, and you can't use this feature again until you finish a Long Rest."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "You can use this feature twice between long rests starting at 13th level and three times between long rests starting at 17th level."
+        }
+      ],
+      "id": "indomitable"
+    },
+    {
+      "name": "Infiltration",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You can unfailingly create false identities for yourself, but you can't establish an identity that belongs to someone else. For example, you might establish yourself within mercenary gang to gain access to their supplies or armory, or a rich colonist to gain access to a fancy party. Thereafter, if you adopt the new identity as a disguise, other creatures believe you to be that person until given an obvious reason not to. You have advantage on persuasion rolls when using this disguise, and advantage on deception rolls on an opposed insight check."
+        }
+      ],
+      "id": "infiltration"
+    },
+    {
+      "name": "Insightful Fighting",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You gain the ability to decipher an opponent's tactics and develop a counter to them. As an action (or as a bonus action using Eye for Detail), you make a Wisdom (Insight) check against a creature you can see that isn't incapacitated, opposed by the target's Charisma (Deception) check.  If you succeed, you can use Sneak Attack against that creature even if you do not have advantage against it or if no enemy of the target is within 2m of it. You can use Sneak Attack in this way even if you have disadvantage against the target."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "This benefit lasts for 1 minute or until you successfully use Insightful Fighting against a different target."
+        }
+      ],
+      "id": "insightful-fighting"
+    },
+    {
+      "name": "Invention",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "At the 20th level, you create an Invention. The invention should be condoned by the DM to not be overpowered. But should give you, your party, your drones, etc an advantage."
+        }
+      ],
+      "id": "invention"
+    },
+    {
+      "name": "Makeshift Grenades",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Your omni-tool is so advanced, you can use tech points to create a grenade. Choose a grenade from the grenade list; as an action, you can spend 4 tech points to create and use a grenade of that type. You cannot replenish a grenade or gift a grenade with this ability."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Choose a second grenade type. Both the first and second grenade types you've chosen with Makeshift Grenades cost 2 tech points."
+        }
+      ],
+      "id": "makeshift-grenades"
+    },
+    {
+      "name": "Marksman",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Addrennaline Rush seems to slow down time, giving you the opportunity to line up a perfect shot. When you use Adrennaline Rush, you roll 1d4 and subtract that number from 20. Until the start of your next turn, any natural roll higher than the resulting number is considered a critial hit."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Starting at the 18th level, roll 1d6 instead."
+        }
+      ],
+      "id": "marksman"
+    },
+    {
+      "name": "Master Duelist",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Your mastery of combat lets you turn failure to success in combat. If you miss with an attack roll and your weapon does not need to be reloaded, you can choose to roll it again with advantage. Once you do so, you can't use this feature again until you finish a short or long rest."
+        }
+      ],
+      "id": "master-duelist"
+    },
+    {
+      "name": "Master Tactician",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You can use the Help action as a bonus action. Additionally, when you use the Help action to aid an ally in attacking a creature, the target of that attack can be within 20m of you, rather than 2m of you, if the target can see or hear you."
+        }
+      ],
+      "id": "master-tactician"
+    },
+    {
+      "name": "Medi-gel Enhancements",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You can spend 6 hours in a lab or similar envrionment using drugs to enhance the capabilities of standard medigel. It takes 2 hours to craft a single enhancement, but you can apply that benefit to any number of medigel cartridges. To craft another enhancement takes an additional 6 hours. Instead of using time to limit this feature, your GM can choose to allow you to add X enhancements to Y medigel cartridges, where X is your Intelligence modifier, and Y is half your Engineering level (minimum 1); then, you must finish a long rest before you can create ne enhancements."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "When creating an enhancement, choose from the list below:\n{!list}"
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Stimulant: After using this medigel, you have advantage on the next saving throw or attack roll you make within 1 minute."
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "Opioid: Within 1 minute of using this medigel, if you would fall below 0 hit point but not outright die, you may fall to 1 hit point instead."
+        },
+        {
+          "id": 5,
+          "type": "line",
+          "data": "Steroid: After using this medigel, add +2 damage to all melee damage for 1 minute."
+        },
+        {
+          "id": 6,
+          "type": "line",
+          "data": "Minagen X3: After using this medigel, gain +2 damage to all biotic spells and cantrips for 1 minute."
+        },
+        {
+          "id": 7,
+          "type": "line",
+          "data": "Videlicet: After using this medigel, gain +2 bonus to all ranged tech attacks for 1 minute."
+        },
+        {
+          "id": 8,
+          "type": "line",
+          "data": "Styptic: Increase the healing die by 1 die type when using this medigel.\n{list}"
+        }
+      ],
+      "id": "medi-gel-enhancements"
+    },
+    {
+      "name": "Melee Specialist",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You've trained extensively in melee weapon combat."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "When weilding a two-handed ranged weapon, you can use a bonus action to make a melee weapon attack with your omni-tool."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "When weidling a single-handed ranged weapon, you can use a bonus action to make a melee weapon attack with a light or versatile melee weapon."
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "When weilding only melee weapons: Gain +1 AC. When you take the Attack action, you can use a bonus action to make another melee weapon attack."
+        }
+      ],
+      "id": "melee-specialist"
+    },
+    {
+      "name": "Misdirection",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You can sometimes cause another creature to suffer an attack meant for you. When you are targeted by an attack while a creature within 2m of you is granting you cover against that attack, you can use your reaction to have the attack target that creature instead of you."
+        }
+      ],
+      "id": "misdirection"
+    },
+    {
+      "name": "Omni-Shield",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Starting at the 3rd level, you've mastered the omni-shield. As a bonus action, create a large kenetic shield out of your omni-tool that lasts one minute. You can use another bonus action to end Omni-Shield early. While deployed:\n{!list}"
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "If weilding a single-handed ranged or versatile melee weapon, gain +2 AC and a +2 bonus to Dexterity saving throws."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "If a creature within 2m of you is attacked, you may use your reaction to impose disadvantage on that attack."
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "You omni-tool melee attack is replaced with Shield Bash: Make a melee attack roll (+STR), on a hit, deal 1d12 bludgeoning damage. You may shove a hit creature backwards 2m.\n{list}"
+        },
+        {
+          "id": 5,
+          "type": "line",
+          "data": "Once you use this feature, you must finish a short or long rest before you can use it again."
+        }
+      ],
+      "id": "omni-shield"
+    },
+    {
+      "name": "Opportunist",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "At 17th level, you can exploit a creature's momentary distraction when it is hit by an attack. Whenever a creature within 2m of you is hit by an attack made by a creature other than you, you can use your reaction to make a melee attack against that creature."
+        }
+      ],
+      "id": "opportunist"
+    },
+    {
+      "name": "Overchannel",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You can increase the power of your simpler biotics. When you cast a biotic spell of 1st or 2nd level that deals damage, you can deal maximum damage with that spell."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "The first time you do so, you suffer no adverse effect. If you use this feature again before you finish a long rest, you take 2d12 psychic damage for each level of the spell, immediately after you cast it. Each time you use this feature again before finishing a long rest, the necrotic damage per spell level increases by 1d12. This damage ignores resistance and immunity."
+        }
+      ],
+      "id": "overchannel"
+    },
+    {
+      "name": "Potent Biotics",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "When you roll a 1 on a damage die for a spell that deals necrotic damage, you can reroll the die and must use the new roll."
+        }
+      ],
+      "id": "potent-biotics"
+    },
+    {
+      "name": "Power Armor",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Your Tech Armor can channel its energy into biotic amps. Starting at the 2nd level, add your proficiency bonus as damage to all damage dealt with a biotic spell or cantrip."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Starting and the 18th level, when you activate Tech Armor, gain an additional max level spell slot."
+        }
+      ],
+      "id": "power-armor"
+    },
+    {
+      "name": "Primal Biotics",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Your Strength and Constitution scores increase by 4. Your maximum for those scores is now 24."
+        }
+      ],
+      "id": "primal-biotics"
+    },
+    {
+      "name": "Proficient Biotics",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Casting boitic spells comes so easily to you that it expends only a fraction of your efforts. When you cast a biotic spell of 2nd level or higher using a spell slot, you regain one expended spell slot. The slot you regain must be of a level lower than the spell you cast."
+        }
+      ],
+      "id": "proficient-biotics"
+    },
+    {
+      "name": "Pure Biotics",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Your skill in dealing damage with biotic force powers is unmatched. Add your proficiency bonus to all force damage dealt by your biotic spells."
+        }
+      ],
+      "id": "pure-biotics"
+    },
+    {
+      "name": "Quick Cast",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "At the 5th level, when you use your action to cast a cantrip, you may make a melee or ranged weapon attack as a bonus action.\nAt the 9th level, when you use your action to cast a spell or tech power, you may make a melee or ranged weapon attack as a bonus action."
+        }
+      ],
+      "id": "quick-cast"
+    },
+    {
+      "name": "Quick Reload",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You can reload your Weapon of Choice as a bonus action."
+        }
+      ],
+      "id": "quick-reload"
+    },
+    {
+      "name": "Retaliation",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "When you take damage from a creature that is within 2m of you, you can use your reaction to make a melee weapon attack against that creature."
+        }
+      ],
+      "id": "retaliation"
+    },
+    {
+      "name": "Saboteur's Touch",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Once per long rest, when an enemy makes a saving throw against one of your abilities that imposes one, you can make them fail the saving throw."
+        }
+      ],
+      "id": "saboteurs-touch"
+    },
+    {
+      "name": "Sculpt Biotics",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You can create pockets of relative safety within the effects of your biotic spells. When you cast a biotic spell that affects other creatures that you can see, you can choose a number of them equal to 1+the spell's level. The chosen creatures automatically succeed on their saving throws against the spell, and they take no damage if they would normally take half damage on a successful save."
+        }
+      ],
+      "id": "sculpt-biotics"
+    },
+    {
+      "name": "Sentinel Mastery",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "At 17th level, you have achieved mastery of a single biotic spell and tech power. Choose a 1st-level biotic spell you have learned. You can cast that spells at their lowest level without expending a spell slot. If you want to cast either spell at a higher level, you must expend a spell slot as normal."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Choose a tech power you have learned. You can cast that power for 2 tech points without subtracting those tech points from your pool. If you can to use the power with more tech points, you must subtract the points as normal."
+        }
+      ],
+      "id": "sentinel-mastery"
+    },
+    {
+      "name": "Shadow Broker",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You become an operative of the Shadow Broker and your focus is on people and on the influence and secrets they have. Words are your weapons as often as guns or powers, and secrets and favors are some of your favorite treasures. You service to the Shadow Broker and unbridled access to a wealth of knowledge gives you 10000 credits and an inspiration token every long rest. You may pass the inspiration to another party member."
+        }
+      ],
+      "id": "shadow-broker"
+    },
+    {
+      "name": "Shadow Strike",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "At level 15, you may spend 5 TP to activate Tactical Cloak and teleport to a target within 10m, then make a melee attack. You have advantage on this attack. At the end of the attack (whether a miss or hit), activate Tactical Cloak and teleport to another location up 10m away. This movement does not provoke an attack of opportunity. The teleportation can be used to free you from movement impairing effects such as grapple, restrained, etc."
+        }
+      ],
+      "id": "shadow-strike"
+    },
+    {
+      "name": "Shield Boost",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "As an action, choose up to 5 friendly creatures with shields your can see. Hack into their armor system and use a brute force algorithm to overload their kenetic barrier. Each creature immediately rolls 4 of their shield regeneration die and gains that many shield points."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Once you use this feature, you must finish a short or long rest before you can use it again."
+        }
+      ],
+      "id": "shield-boost"
+    },
+    {
+      "name": "Signature Biotics",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "When you reach 20th level, you gain mastery over two powerful spells and can cast them with little effort. Choose two 2nd or 3rd-level biotic spells in your spellbook as your signature biotics. You can cast each of them once at 3rd level without expending a spell slot. When you do so, you can't do so again until you finish a short or long rest."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "If you want to cast either spell at 4th-level or higher, you must expend a spell slot as normal."
+        }
+      ],
+      "id": "signature-biotics"
+    },
+    {
+      "name": "Snap Shot",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "When weilding your Weapon of Choice, if you take the Attack action on your first turn of a combat, you can make one additional ranged weapon attack as part of that action."
+        }
+      ],
+      "id": "snap-shot"
+    },
+    {
+      "name": "Sneak Attack",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Beginning at 1st level, you know how to strike subtly and exploit a foe's distraction. Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must be made with a melee or ranged weapon."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "The amount of the extra damage increases as you gain levels in this class, as shown in the Sneak Attack column of the Infiltrator table."
+        }
+      ],
+      "id": "sneak-attack"
+    },
+    {
+      "name": "Strafe",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "When you take the Dash or Disengage action, if you are weilding your Weapon of Choice, you can make 1 ranged weapon attack as a free action at any point during your movement."
+        }
+      ],
+      "id": "strafe"
+    },
+    {
+      "name": "Stroke of Luck",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "At 20th level, you have an uncanny knack for succeeding when you need to. If your attack misses a target within range, you can turn the miss into a hit. Alternatively, if you fail an ability check, you can treat the d20 roll as a 20. Once you use this feature, you can't use it again until you finish a short or long rest."
+        }
+      ],
+      "id": "stroke-of-luck"
+    },
+    {
+      "name": "Sudden Strike",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Starting at 17th level, you can strike with deadly speed. If you take the Attack action on your turn, you can make one additional melee attack as a bonus action. This attack can benefit from the damage bonus of Tactical Cloak even if you have already used it this turn, but only if the attack is the only one you make against the target this turn."
+        }
+      ],
+      "id": "sudden-strike"
+    },
+    {
+      "name": "Supply Pylon",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Call in a Supply Pylon to a location within 4m. At the start of your next turn, the pylon arrives. If any creature is standing in the targeted location, the creature must make a Dexterity saving throw, it has advantage on this saving throw. On a failed save, the creature takes 4d8 bludgeoning damage and is knocked prone.\n{!list}"
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "One the pylon has landed, friendly creatures (including you) can spend 1 action accessing the pylon to gain a single resource listed. Creatures must be within melee range to access the pylon."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Gain 1 Heavy Weapon ammo charge"
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "Gain 5 TP or 5 levels worth of Spell slots"
+        },
+        {
+          "id": 5,
+          "type": "line",
+          "data": "Gain 1 medigel"
+        },
+        {
+          "id": 6,
+          "type": "line",
+          "data": "Gain 1 grenades"
+        },
+        {
+          "id": 7,
+          "type": "line",
+          "data": "Gain 2 specialized thermal clips.\n{list}"
+        },
+        {
+          "id": 8,
+          "type": "line",
+          "data": "Once you use this feature, you cannot use it again until you finish a short or long rest."
+        }
+      ],
+      "id": "supply-pylon"
+    },
+    {
+      "name": "Tactical Ambush",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Starting at 9th level, if you are in Tactical Cloak when you use a tech power or grenade, each creature has disadvantage on any saving throw it makes against the tech power or grenade this turn."
+        }
+      ],
+      "id": "tactical-ambush"
+    },
+    {
+      "name": "Tactical Cloak",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Use 1 Tech point to become Invisible. You continue to make noise, but you have advantage on stealth checks. You have advantage on the first melee, ranged, or tech attack made from Tactical Cloak. When you make a melee, ranged, or tech attack, your tactical cloak ends."
+        }
+      ],
+      "id": "tactical-cloak"
+    },
+    {
+      "name": "Targeting Mobility",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "While Targeting, instead of automatically failing Dexterity saving throws, you have disadvantage, and creatures that attack you do not have advantage."
+        }
+      ],
+      "id": "targeting-mobility"
+    },
+    {
+      "name": "Tech Armor",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "As a Sentinel, your mantra is the best offense is a good defense and coming back alive. Thus, you've bolstered your armor with a powerful, defense-oriented AI. As a bonus action or as a reaction to taking damamge, you can spend 1 TP to activate your Tech Armor."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "When activated, tech armor increases your AC by 2 and you gain temporary shield points equal to 1d8 + your level, and you have resistance to slashing, piercing, and bludgeoning damage. You can spend additional tech points to increase the sheild point gain by 1d8 per tech point spent. At the start of eqach of your subsequent turns, Tech Armor consumes 1 tech point. If you have no tech points, Tech Armor ends and you loose all temporary shield points. You can use a bonus action to end Tech Armor early."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Once you have used Tech Armor the maximum number of times for your level, you must finish a long rest before you can use Tech Armor again. The number of times you can use Tech Armor is equal to your proficiency bonus."
+        }
+      ],
+      "id": "tech-armor"
+    },
+    {
+      "name": "Tech Armor Overload",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Starting at the 10th level, you can overload your Tech Armor dealing damage to creatures around you. As an action, you can spend 1 tech point to overload an active Tech Armor, immediately ending the its effect. Creatures within a 2m sphere take Xd4 thunder damage, where X is the number of tech points you used to instantiate Tech Armor."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Starting at the 18th level, when you detonate Tech Armor, you gain shield points equal to the damage done."
+        }
+      ],
+      "id": "tech-armor-overload"
+    },
+    {
+      "name": "Tech Aura",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "In addition to the standard defensive AI, you've augmented your Tech Armor to run different AI packages. The packages can hook into nearby armor systems. Any friendly creature within 4m of you that is wearing armor gains the effect of the package. When you activate Tech Armor, you can only choose a single package to run."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Learn 2 AI packages from the list below (you've already learned the Defensive package). At the 14th level, you learn 2 additional packages."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Defensive: This is the standard Tech Armor package. It does not affect allies."
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "Anti-Biotic: Resistance to force and necrotic damage."
+        },
+        {
+          "id": 5,
+          "type": "line",
+          "data": "Anti-tech: Resistance to fire and cold damage."
+        },
+        {
+          "id": 6,
+          "type": "line",
+          "data": "Grounded: Resistance to lightening damage."
+        },
+        {
+          "id": 7,
+          "type": "line",
+          "data": "Reactive: Add your tech modifier to saving throws"
+        },
+        {
+          "id": 8,
+          "type": "line",
+          "data": "Speed: Inscrease your speed by 4m."
+        },
+        {
+          "id": 9,
+          "type": "line",
+          "data": "Regen: Inscrease shield regeneration by 1 die type (max d12). If an ally is already at max, they gain +4."
+        }
+      ],
+      "id": "tech-aura"
+    },
+    {
+      "name": "Tech Aura Improvement",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Increase the distance of your Tech Aura packages to 10m."
+        }
+      ],
+      "id": "tech-aura-improvement"
+    },
+    {
+      "name": "Tech Power",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Learn or advance a tech power."
+        }
+      ],
+      "id": "tech-power"
+    },
+    {
+      "name": "Teleporting Dodge",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You can use 2 Barrier ticks to automatically pass a Dexterity saving throw."
+        }
+      ],
+      "id": "teleporting-dodge"
+    },
+    {
+      "name": "Uncanny Dodge",
+      "reviewed": null,
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "When an attacker that you can see hits you with an attack, you can use your reaction to halve the attack's damage against you."
+        }
+      ],
+      "id": "uncanny-dodge"
+    },
+    {
+      "name": "Weapon of Choice",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You have undergone extensive training with a single ranged weapon type. Choose a ranged weapon type which becomes your Weapon of Choice. When you have your Weapon of Choice equipped you gain a set of abilities that are fueled by special dice called superiority dice. You may spend 1 month of intensive training to exchange your Weapon of Choice with another ranged weapon type."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Superiority Dice:"
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "You have four superiority dice, which are d8s. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a short or long rest. You gain another superiority die at 7th level and one more at 15th level."
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "Using Superiority Dice:"
+        },
+        {
+          "id": 5,
+          "type": "line",
+          "data": "You can expend superiority dice to gain a number of different benefits."
+        },
+        {
+          "id": 6,
+          "type": "line",
+          "data": "When you make a weapon attack against a creature with your Weapon of Choice, you can expend one superiority die to add it to the attack roll. You can use this ability before or after making the attack roll, but before any of the effects of the attack are applied."
+        },
+        {
+          "id": 7,
+          "type": "line",
+          "data": "When you damage a creature with a weapon attack, you can expend one superiority die to add it to the damage roll. You can use this ability after rolling damage. If the attack causes the target to make a Constitution saving throw to maintain concentration, it has disadvantage on that save."
+        },
+        {
+          "id": 8,
+          "type": "line",
+          "data": "When you are hit by a melee attack, if you are currently holding your Weapon of Choice, you can expend one superiority die as a reaction, adding the number rolled to your AC. If the attack still hits, you take half damage from it."
+        }
+      ],
+      "id": "weapon-of-choice"
+    },
+    {
+      "name": "Zero-Sum",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "{!level} When you make a melee attack, instead of rolling a dice, you can flip a coin. On a heads, it's a critical hit. On a tails, it's a critical miss. You can use this ability once per short rest."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "You can use this ability twice per short rest."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "You can use this ability three times per short rest."
+        }
+      ],
+      "id": "zero-sum"
+    }
+  ]
+}

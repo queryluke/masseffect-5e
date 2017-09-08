@@ -35,7 +35,7 @@
           li(v-for="effect in spell.effect" v-bind:key="effect") {{ effect }}
     div.hr
     div.mt-3
-      p(v-for="mechanic in spell.mechanic") {{ mechanic }}
+      me-element(:text="spell.mechanic")
       v-layout(row wrap justify-space-around)
         v-flex(v-for="option in spell.adv_options" v-bind:key="spell.id").xs12.md6
           advanced-option(:option="option")
@@ -48,12 +48,13 @@
   import SpellDamageEffect from "./SpellDamageEffect.vue";
   import AdvancedOption from "./AdvancedOption.vue";
   import SpellClassList from "./SpellClassList.vue";
+  import MeElement from "./MeElement.vue";
 
   export default {
     name: 'SpellInfo',
     props: ['spell'],
     components: {
-      SpellClassList, AdvancedOption, SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect
+      SpellClassList, AdvancedOption, SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect, MeElement
     },
   };
 </script>

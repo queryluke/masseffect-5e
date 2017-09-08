@@ -1,29 +1,22 @@
 <template lang="jade">
   div
-    div(v-for="element in elements" v-bind:key="element.id")
-      p(v-if="element.type === 'line'") {{ element.text }}
+    div(v-for="element in text" v-bind:key="element.id")
+      table(v-if="element.type === 'table'")
+        thead
+          tr
+            th(v-for="head in element.data.headers") {{ head }}
+        tbody
+          tr(v-for="item in element.data.items")
+            td(v-for="data in item") {{ data }}
+      ul(v-else-if="element.type === 'list'")
+        li(v-for="item in element.data") {{ item }}
+      p(v-else) {{ element.data }}
 </template>
 
 <script>
   export default {
     name: 'MeElement',
     props: ['text'],
-    data () {
-      return {
-        elements: [],
-      }
-    },
-    created () {
-      if(this.text){
-        this.elements = [];
-        let i = 1;
-        let splits = this.text.split('--');
-        for (let element of splits){
-          this.elements.push({id: i, type: 'line', text: element});
-          i++;
-        }
-      }
-    }
   };
 </script>
 
