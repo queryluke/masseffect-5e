@@ -4,7 +4,7 @@
     v-layout(row wrap)
       v-flex(v-for="race in races" v-bind:key="race.id").xs12.sm6.md4
         v-card(hover @click="goTo()").ma-2
-          v-card-media(:src="race.face" height="200px")
+          v-card-media(:src="race.card" height="200px")
           v-card-title(primary-title)
             div
               h3.headline.mb-0 {{ race.name }}
