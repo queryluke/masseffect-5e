@@ -29,9 +29,6 @@
 </template>
 
 <script>
-  import Vue from 'vue';
-  import VueResource from 'vue-resource';
-  Vue.use(VueResource);
   import SpellList from '../components/SpellList.vue';
 
   export default {
@@ -57,7 +54,7 @@
     computed: {
       filtered () {
         let self = this;
-        return this.spells.filter( function(spell) {
+        return this.spells.filter( (spell) => {
           return spell.name.toLowerCase().indexOf(self.search.toLowerCase())>=0;
         });
       }

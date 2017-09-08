@@ -221,6 +221,12 @@ pages = [
     url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pub?gid=0&single=true&output=csv',
     renderables: %w(mechanic),
     id: 'name'
+  },
+  {
+    type: 'races',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQI4F-wI2gwN395GApB347yPb1PixjOtOqZ0qoBYw7d57MPETHS40ZjIy1-DIfZf06PUwrspMiuAMlk/pub?gid=0&single=true&output=csv',
+    renderables: ['skills'],
+    id: 'name'
   }
 ].each do |p|
   if imports.length > 0

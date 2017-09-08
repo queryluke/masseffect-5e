@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify';
 import Router from 'vue-router';
+import VueResource from 'vue-resource';
 
 // Layout
 import Default from './containers/Default.vue';
@@ -34,6 +35,7 @@ require('./stylus/main.styl');
 
 Vue.use(Router);
 Vue.use(Vuetify);
+Vue.use(VueResource);
 
 const router = new Router({
   mode: 'hash',
