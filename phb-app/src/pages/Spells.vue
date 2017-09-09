@@ -13,14 +13,17 @@
           v-model="search"
           autofocus
         )
-    div.mt-3.mb-3
-      v-layout.expansion-panel__sortable
-        v-flex.xs2.sm2.lg2
-        v-flex.xs12.sm6.lg2 Name
-        v-flex.hidden-md-and-down.lg2 Duration
-        v-flex.hidden-md-and-down.lg2 Range/Area
-        v-flex.hidden-md-and-down.lg2 Attack/Save
-        v-flex.hidden-md-and-down.lg2 Damage/Effect
+    div.expansion-panel__sortable.primary.my-3
+      v-layout.px-4
+        v-flex(v-for="header in headers" v-bind:key="header.key" v-bind:class="header.classes")
+          v-list(dark).primary.pa-0
+            v-list-tile(@click.stop="sortBy(header.key)" ripple v-bind:class="{ active: header.key === sortKey }" v-if="header.sortable")
+              v-list-tile-content
+                v-list-tile-title(v-text="header.display")
+              v-icon(:class="[sortOrder > 0 ? 'asc' : 'dsc']" dark) arrow_downward
+            v-list-tile(v-else)
+              v-list-tile-content
+                v-list-tile-title(v-text="header.display")
     spell-list(:spells="filtered")
     v-layout(row wrap justify-space-between).mt-4
       span Last Updated: {{ updated }}
@@ -37,7 +40,15 @@
         spells: [],
         search: '',
         source: '',
-        updated: ''
+        updated: '',
+        headers: [
+          {key: 'type', display: '', classes: 'xs2 sm2 lg2', sortable: false},
+          {key: 'name', display: 'Name', classes: 'xs2 sm2 lg2', sortable: false},
+          {key: 'duration', display: 'Duration', classes: 'hidden-md-and-down lg2', sortable: false},
+          {key: 'range', display: 'Range/Area', classes: 'hidden-md-and-down lg2', sortable: false},
+          {key: 'attack_type', display: 'Attack/Save', classes: 'hidden-md-and-down lg2', sortable: false},
+          {key: 'damage', display: 'Damage/Effect', classes: 'hidden-md-and-down lg2', sortable: false},
+        ]
       };
     },
     created() {
