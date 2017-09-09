@@ -1,0 +1,1366 @@
+{
+  "updated": "September  9, 2017 @  5:38 PM",
+  "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQqEWxn624K8fJS7V1EQH3RZgRApTepIx91C2BIGEDzQTvwtvdTaHduzujhVEmPknjifAU7FFCcjJcv/pubhtml",
+  "data": [
+    {
+      "name": "Adas Anti-Synthetic Rifle ",
+      "type": "Assault Rifle",
+      "cost": "17000",
+      "manufacturer": "Quarian",
+      "weight": "7",
+      "range": "10m",
+      "damage": "4",
+      "rof": "4",
+      "heat": "4",
+      "rare": "x",
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Double Damage to Shields. Can't equip special ammo powers."
+        }
+      ],
+      "image": "http://vignette3.wikia.nocookie.net/masseffect/images/9/9e/ME3_Adas_Anti-Synthetic_Assault_Rifle.png/revision/latest/scale-to-width-down/200?cb=20120809190433",
+      "id": "adas-anti-synthetic-rifle",
+      "notes_text_dump": "DoubleDamagetoShieldsCantequipspecialammopowers"
+    },
+    {
+      "name": "Cerberus Harrier ",
+      "type": "Assault Rifle",
+      "cost": "14000",
+      "manufacturer": "Cerberus",
+      "weight": "7",
+      "range": "20m",
+      "damage": "6",
+      "rof": "4",
+      "heat": "2",
+      "rare": null,
+      "notes": [
+
+      ],
+      "image": "http://vignette1.wikia.nocookie.net/masseffect/images/0/0d/ME3_Cerberus_Harrier.png/revision/latest?cb=20120530214013http://vignette3.wikia.nocookie.net/masseffect/images/5/56/ME3_Chakram_Assault_Rifle.png/revision/latest?cb=20120317175958",
+      "id": "cerberus-harrier",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "Chakram Launcher",
+      "type": "Assault Rifle",
+      "cost": "13500",
+      "manufacturer": "Ama-Lur Equipment",
+      "weight": "4",
+      "range": "20m",
+      "damage": "12",
+      "rof": "1",
+      "heat": "6",
+      "rare": "x",
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Charge Weapon. You can use your attack action to charge the weapon. Each charge consumes 1 heat and increases the RoF by 1. If the number of charges equals the heat of the weapon, it overheats and cannot be fired until reloaded."
+        }
+      ],
+      "image": "http://vignette3.wikia.nocookie.net/masseffect/images/5/56/ME3_Chakram_Assault_Rifle.png/revision/latest?cb=20120317175958",
+      "id": "chakram-launcher",
+      "notes_text_dump": "ChargeWeaponYoucanuseyourattackactiontochargetheweaponEachchargeconsumes1heatandincreasestheRoFby1Ifthenumberofchargesequalstheheatoftheweaponitoverheatsandcannotbefireduntilreloaded"
+    },
+    {
+      "name": "Geth Pulse Rifle",
+      "type": "Assault Rifle",
+      "cost": "12500",
+      "manufacturer": "Geth Armory",
+      "weight": "3",
+      "range": "10m",
+      "damage": "4",
+      "rof": "5",
+      "heat": "1",
+      "rare": null,
+      "notes": [
+
+      ],
+      "image": "http://vignette1.wikia.nocookie.net/masseffect/images/9/92/ME3_Geth_Pulse_Assault_Rifle.png/revision/latest?cb=20120317181047",
+      "id": "geth-pulse-rifle",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "M-15 Vindicator",
+      "type": "Assault Rifle",
+      "cost": "10500",
+      "manufacturer": "Elanus Risk Control Services",
+      "weight": "5",
+      "range": "20m",
+      "damage": "6",
+      "rof": "3",
+      "heat": "4",
+      "rare": null,
+      "notes": [
+
+      ],
+      "image": "http://vignette2.wikia.nocookie.net/masseffect/images/7/7d/ME3_Vindicator_Assault_Rifle.png/revision/latest?cb=20120317173921",
+      "id": "m-15-vindicator",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "M-37 Falcon",
+      "type": "Assault Rifle",
+      "cost": "9000",
+      "manufacturer": "Systems Alliance",
+      "weight": "2",
+      "range": "20m",
+      "damage": "8",
+      "rof": "2",
+      "heat": "20",
+      "rare": null,
+      "notes": [
+
+      ],
+      "image": "http://vignette2.wikia.nocookie.net/masseffect/images/8/8a/ME3_Falcon_Assault_Rifle.png/revision/latest?cb=20120317172936",
+      "id": "m-37-falcon",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "M-55 Argus",
+      "type": "Assault Rifle",
+      "cost": "13500",
+      "manufacturer": "Unknown",
+      "weight": "6",
+      "range": "10m",
+      "damage": "8",
+      "rof": "3",
+      "heat": "2",
+      "rare": null,
+      "notes": [
+
+      ],
+      "image": "http://vignette2.wikia.nocookie.net/masseffect/images/9/95/ME3_Argus_Assault_Rifle.png/revision/latest?cb=20120317173420",
+      "id": "m-55-argus",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "M-7 Lancer",
+      "type": "Assault Rifle",
+      "cost": "17500",
+      "manufacturer": "Hahne-Kedar",
+      "weight": "2",
+      "range": "10m",
+      "damage": "6",
+      "rof": "3",
+      "heat": "-",
+      "rare": null,
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Somewhat of a relic and hard to come by, the M-7 does not use thermal clips. Instead use a d4 to track the \"heat\". Every round you fire the weapon, spin down the die 1 face. If you don't fire the weapon, spin the die up one face. This represents the weapon internally cooling off. If you fire the weapon 4 times in a row, it jams and cannot be used for the rest of this combat."
+        }
+      ],
+      "image": "http://vignette4.wikia.nocookie.net/masseffect/images/c/c6/ME3_Lancer_AS.png/revision/latest?cb=20130227094559",
+      "id": "m-7-lancer",
+      "notes_text_dump": "SomewhatofarelicandhardtocomebytheM7doesnotusethermalclipsInsteadusead4totracktheheatEveryroundyoufiretheweaponspindownthedie1faceIfyoudontfiretheweaponspinthedieuponefaceThisrepresentstheweaponinternallycoolingoffIfyoufiretheweapon4timesinarowitjamsandcannotbeusedfortherestofthiscombat"
+    },
+    {
+      "name": "M-76 Revenant",
+      "type": "Assault Rifle",
+      "cost": "17500",
+      "manufacturer": "Unknown",
+      "weight": "6",
+      "range": "10m",
+      "damage": "6",
+      "rof": "5",
+      "heat": "2",
+      "rare": "x",
+      "notes": [
+
+      ],
+      "image": "http://vignette2.wikia.nocookie.net/masseffect/images/1/17/ME3_Revenant_Assault_Rifle.png/revision/latest?cb=20120317174455",
+      "id": "m-76-revenant",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "M-8 Avenger",
+      "type": "Assault Rifle",
+      "cost": "10000",
+      "manufacturer": "Elkoss Combine",
+      "weight": "3",
+      "range": "10m",
+      "damage": "4",
+      "rof": "4",
+      "heat": "2",
+      "rare": null,
+      "notes": [
+
+      ],
+      "image": "http://vignette4.wikia.nocookie.net/masseffect/images/2/29/ME3_Avenger_Assault_Rifle.png/revision/latest?cb=20120317171316",
+      "id": "m-8-avenger",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "M-96 Mattock",
+      "type": "Assault Rifle",
+      "cost": "11000",
+      "manufacturer": "Unknown",
+      "weight": "4",
+      "range": "10m",
+      "damage": "10",
+      "rof": "2",
+      "heat": "6",
+      "rare": null,
+      "notes": [
+
+      ],
+      "image": "http://vignette4.wikia.nocookie.net/masseffect/images/9/93/ME3_Mattock_Assault_Rifle.png/revision/latest?cb=20120317182842",
+      "id": "m-96-mattock",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "M-99 Saber",
+      "type": "Assault Rifle",
+      "cost": "14000",
+      "manufacturer": "Systems Alliance",
+      "weight": "5",
+      "range": "30m",
+      "damage": "6",
+      "rof": "2",
+      "heat": "10",
+      "rare": null,
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "No noise when fired."
+        }
+      ],
+      "image": "http://vignette4.wikia.nocookie.net/masseffect/images/6/65/ME3_Saber_Assault_Rifle.png/revision/latest?cb=20120317175044",
+      "id": "m-99-saber",
+      "notes_text_dump": "Nonoisewhenfired"
+    },
+    {
+      "name": "N7 Typhoon",
+      "type": "Assault Rifle",
+      "cost": "17000",
+      "manufacturer": "Systems Alliance",
+      "weight": "10",
+      "range": "10m",
+      "damage": "4",
+      "rof": "4",
+      "heat": "5",
+      "rare": "x",
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "AC +1 when using"
+        }
+      ],
+      "image": "http://vignette4.wikia.nocookie.net/masseffect/images/a/ab/ME3_Typhoon_Assault_Rifle.png/revision/latest?cb=20120714073139",
+      "id": "n7-typhoon",
+      "notes_text_dump": "AC1whenusing"
+    },
+    {
+      "name": "N7 Valkyrie",
+      "type": "Assault Rifle",
+      "cost": "7000",
+      "manufacturer": "Systems Alliance",
+      "weight": "6",
+      "range": "20m",
+      "damage": "6",
+      "rof": "2",
+      "heat": "12",
+      "rare": null,
+      "notes": [
+
+      ],
+      "image": "http://vignette1.wikia.nocookie.net/masseffect/images/0/08/ME3_N7_Valkyrie_Assault_Rifle.png/revision/latest?cb=20120317181450",
+      "id": "n7-valkyrie",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "Phaeston",
+      "type": "Assault Rifle",
+      "cost": "12500",
+      "manufacturer": "Turians",
+      "weight": "4",
+      "range": "10m",
+      "damage": "4",
+      "rof": "5",
+      "heat": "2",
+      "rare": null,
+      "notes": [
+
+      ],
+      "image": "http://vignette1.wikia.nocookie.net/masseffect/images/1/11/ME3_Phaeston_Assault_Rifle.png/revision/latest?cb=20120317182349",
+      "id": "phaeston",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "Strike Assault Rifle",
+      "type": "Assault Rifle",
+      "cost": "14000",
+      "manufacturer": "Krogan",
+      "weight": "4",
+      "range": "10m",
+      "damage": "6",
+      "rof": "4",
+      "heat": "3",
+      "rare": null,
+      "notes": [
+
+      ],
+      "image": "http://vignette2.wikia.nocookie.net/masseffect/images/f/fb/ME3_Striker_Assault_Rifle.png/revision/latest?cb=20120411201310",
+      "id": "strike-assault-rifle",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "Acolyte",
+      "type": "Heavy Pistol",
+      "cost": "12500",
+      "manufacturer": "Asari",
+      "weight": "2",
+      "range": "10m",
+      "damage": "10",
+      "rof": "1",
+      "heat": "10",
+      "rare": null,
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Charge Weapon. You can use your attack action to charge the weapon. Each charge consumes 1 heat and increases the RoF by 1. If the number of charges equals the heat of the weapon, it overheats and cannot be fired until reloaded."
+        }
+      ],
+      "image": "http://vignette3.wikia.nocookie.net/masseffect/images/b/b9/ME3_Acolyte_Pistol.png/revision/latest?cb=20120714073045",
+      "id": "acolyte",
+      "notes_text_dump": "ChargeWeaponYoucanuseyourattackactiontochargetheweaponEachchargeconsumes1heatandincreasestheRoFby1Ifthenumberofchargesequalstheheatoftheweaponitoverheatsandcannotbefireduntilreloaded"
+    },
+    {
+      "name": "Arc Pistol",
+      "type": "Heavy Pistol",
+      "cost": "12500",
+      "manufacturer": "Quarian",
+      "weight": "3",
+      "range": "16m",
+      "damage": "10",
+      "rof": "1",
+      "heat": "10",
+      "rare": null,
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Arc Weapon. Hits all other creatures within 2m of the initial target for half damage."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Deals Lightning Damage"
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Cannot benefit from Special Ammo"
+        }
+      ],
+      "image": "http://vignette1.wikia.nocookie.net/masseffect/images/e/e8/ME3_Arc_Heavy_Pistol.png/revision/latest?cb=20120317185747",
+      "id": "arc-pistol",
+      "notes_text_dump": "ArcWeaponHitsallothercreatureswithin2moftheinitialtargetforhalfdamageDealsLightningDamageCannotbenefitfromSpecialAmmo"
+    },
+    {
+      "name": "Executioner Pistol",
+      "type": "Heavy Pistol",
+      "cost": "6500",
+      "manufacturer": "Blood Pack",
+      "weight": "4",
+      "range": "20m",
+      "damage": "12",
+      "rof": "1",
+      "heat": "6",
+      "rare": null,
+      "notes": [
+
+      ],
+      "image": "http://vignette1.wikia.nocookie.net/masseffect/images/9/95/ME3_Executioner_Pistol.png/revision/latest?cb=20121029075230",
+      "id": "executioner-pistol",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "M-11 Suppressor",
+      "type": "Heavy Pistol",
+      "cost": "14000",
+      "manufacturer": "Systems Alliance",
+      "weight": "3",
+      "range": "16m",
+      "damage": "6",
+      "rof": "2",
+      "heat": "4",
+      "rare": null,
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Makes no noise when fired"
+        }
+      ],
+      "image": "http://vignette1.wikia.nocookie.net/masseffect/images/8/84/ME3_Suppressor.png/revision/latest?cb=20130227094606",
+      "id": "m-11-suppressor",
+      "notes_text_dump": "Makesnonoisewhenfired"
+    },
+    {
+      "name": "M-3 Predator",
+      "type": "Heavy Pistol",
+      "cost": "3500",
+      "manufacturer": "Elanus Risk Control Services",
+      "weight": "2",
+      "range": "10m",
+      "damage": "6",
+      "rof": "1",
+      "heat": "12",
+      "rare": null,
+      "notes": [
+
+      ],
+      "image": "http://vignette1.wikia.nocookie.net/masseffect/images/c/c8/ME3_Predator_Heavy_Pistol.png/revision/latest?cb=20120317185446",
+      "id": "m-3-predator",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "M-358 Talon",
+      "type": "Heavy Pistol",
+      "cost": "11000",
+      "manufacturer": "Cerberus",
+      "weight": "5",
+      "range": "20m",
+      "damage": "10",
+      "rof": "2",
+      "heat": "2",
+      "rare": "x",
+      "notes": [
+
+      ],
+      "image": "http://vignette1.wikia.nocookie.net/masseffect/images/9/99/ME3_Talon_Heavy_Pistol.png/revision/latest?cb=20120317185721",
+      "id": "m-358-talon",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "M-5 Phalanx",
+      "type": "Heavy Pistol",
+      "cost": "9000",
+      "manufacturer": "Systems Alliance",
+      "weight": "3",
+      "range": "10m",
+      "damage": "8",
+      "rof": "2",
+      "heat": "12",
+      "rare": null,
+      "notes": [
+
+      ],
+      "image": "http://vignette4.wikia.nocookie.net/masseffect/images/a/ae/ME3_Phalanx_Heavy_Pistol.png/revision/latest?cb=20120317185535",
+      "id": "m-5-phalanx",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "M-6 Carnifex",
+      "type": "Heavy Pistol",
+      "cost": "9000",
+      "manufacturer": "Unknown",
+      "weight": "5",
+      "range": "16m",
+      "damage": "8",
+      "rof": "2",
+      "heat": "2",
+      "rare": null,
+      "notes": [
+
+      ],
+      "image": "http://vignette1.wikia.nocookie.net/masseffect/images/8/88/ME3_Carnifex_Heavy_Pistol.png/revision/latest?cb=20120317185613",
+      "id": "m-6-carnifex",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "M-77 Paladin",
+      "type": "Heavy Pistol",
+      "cost": "13500",
+      "manufacturer": "Unknown",
+      "weight": "3",
+      "range": "20m",
+      "damage": "8",
+      "rof": "3",
+      "heat": "1",
+      "rare": "x",
+      "notes": [
+
+      ],
+      "image": "http://vignette3.wikia.nocookie.net/masseffect/images/4/43/ME3_Paladin_Heavy_Pistol.png/revision/latest?cb=20120317185630",
+      "id": "m-77-paladin",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "N7 Eagle",
+      "type": "Heavy Pistol",
+      "cost": "10500",
+      "manufacturer": "Systems Alliance",
+      "weight": "2",
+      "range": "10m",
+      "damage": "6",
+      "rof": "3",
+      "heat": "2",
+      "rare": null,
+      "notes": [
+
+      ],
+      "image": "http://vignette1.wikia.nocookie.net/masseffect/images/0/01/ME3_N7_Eagle_Heavy_Pistol.png/revision/latest?cb=20120317185811",
+      "id": "n7-eagle",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "Scorpion",
+      "type": "Heavy Pistol",
+      "cost": "16000",
+      "manufacturer": "Special Tasks Group",
+      "weight": "6",
+      "range": "20m",
+      "damage": "8",
+      "rof": "2",
+      "heat": "4",
+      "rare": "x",
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Missed shots adhere to nearby surfaces and do 1d4 thunder damage instead."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Cannot benefit from Special Ammo"
+        }
+      ],
+      "image": "http://vignette3.wikia.nocookie.net/masseffect/images/4/40/ME3_Scorpion_Heavy_Pistol.png/revision/latest?cb=20120317185843",
+      "id": "scorpion",
+      "notes_text_dump": "Missedshotsadheretonearbysurfacesanddo1d4thunderdamageinsteadCannotbenefitfromSpecialAmmo"
+    },
+    {
+      "name": "Cobra Missile Launcher",
+      "type": "Heavy Weapon",
+      "cost": "59000",
+      "manufacturer": null,
+      "weight": "14",
+      "range": "120m",
+      "damage": "12",
+      "rof": "8",
+      "heat": "4",
+      "rare": "x",
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Choose a creature within 60m that is not behind cover. Spend a turn Targeting the creature. The creature can use it's action to make a Dexterity saving throw. On a failed save, they continue being targeted. On a successful save, you may switch to another creature not behind cover, or end the Targeting condition. At the start of your turn, if your have a creature targeted, you launch a missile that deals 8d12 damage. Untargeted creatures within 4m of the blast must succeed on a Dexterity saving throw or take 1d12 damage."
+        }
+      ],
+      "image": "http://vignette2.wikia.nocookie.net/masseffect/images/f/f9/ME3_Hydra_Heavy_Weapon.png/revision/latest?cb=20120317194543",
+      "id": "cobra-missile-launcher",
+      "notes_text_dump": "Chooseacreaturewithin60mthatisnotbehindcoverSpendaturnTargetingthecreatureThecreaturecanuseitsactiontomakeaDexteritysavingthrowOnafailedsavetheycontinuebeingtargetedOnasuccessfulsaveyoumayswitchtoanothercreaturenotbehindcoverorendtheTargetingconditionAtthestartofyourturnifyourhaveacreaturetargetedyoulaunchamissilethatdeals8d12damageUntargetedcreatureswithin4moftheblastmustsucceedonaDexteritysavingthrowortake1d12damage"
+    },
+    {
+      "name": "Geth Spitfire",
+      "type": "Heavy Weapon",
+      "cost": "37000",
+      "manufacturer": null,
+      "weight": "8",
+      "range": "10m",
+      "damage": "4",
+      "rof": "12",
+      "heat": "3",
+      "rare": "x",
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Release a torrent of bullets in a sweeping arc in front of you until the start of your next turn. You are considered to be Targeting until the start of your next turn. Creatures that enter or move within a 10m cone in front of you make a Dexterity saving throw. On a failed save, a creature takes 12d4 shock damage. On a success, a creature takes half damage. Each turn uses a charge."
+        }
+      ],
+      "image": "http://vignette3.wikia.nocookie.net/masseffect/images/b/b6/ME3_Geth_Antivirus_Heavy_Weapon.png/revision/latest?cb=20120317195710",
+      "id": "geth-spitfire",
+      "notes_text_dump": "ReleaseatorrentofbulletsinasweepingarcinfrontofyouuntilthestartofyournextturnYouareconsideredtobeTargetinguntilthestartofyournextturnCreaturesthatenterormovewithina10mconeinfrontofyoumakeaDexteritysavingthrowOnafailedsaveacreaturetakes12d4shockdamageOnasuccessacreaturetakeshalfdamageEachturnusesacharge"
+    },
+    {
+      "name": "M-451 Firestorm",
+      "type": "Heavy Weapon",
+      "cost": "21000",
+      "manufacturer": null,
+      "weight": "8",
+      "range": "6m",
+      "damage": "6",
+      "rof": "4",
+      "heat": "10",
+      "rare": "x",
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Sweep fire across the battlefield. Creatures within a 6m cone must succeed on a Dexterity saving throw or take 4d6 damage. You can choose to use 2 weapon charges at once to increase the heat, dealing 4d8 damage instead."
+        }
+      ],
+      "image": "http://vignette2.wikia.nocookie.net/masseffect/images/5/5a/ME3_Firestorm_Heavy_Weapon.png/revision/latest?cb=20120317194412",
+      "id": "m-451-firestorm",
+      "notes_text_dump": "SweepfireacrossthebattlefieldCreatureswithina6mconemustsucceedonaDexteritysavingthrowortake4d6damageYoucanchoosetouse2weaponchargesatoncetoincreasetheheatdealing4d8damageinstead"
+    },
+    {
+      "name": "M-560 Hydra",
+      "type": "Heavy Weapon",
+      "cost": "33000",
+      "manufacturer": null,
+      "weight": "15",
+      "range": "60m",
+      "damage": "12",
+      "rof": "4",
+      "heat": "1",
+      "rare": "x",
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Choose a creature within 60m that you can see and begin Targeting that creature. If you successfully held your targeting for one turn, at the start of your next turn you fire a unique missile at each target. When the missile hits, it deploys 3 shaped charges. The first disrupts any barriers or shields, any barriers or shields the creature has are completely removed. The second charge cripples armor; the creature has their AC reduced by 3 for the remainder of combat. The final charge deal 4d12 damage. The creature can attempt a Constitution saving throw to cut the damage in half."
+        }
+      ],
+      "image": "http://vignette2.wikia.nocookie.net/masseffect/images/f/f9/ME3_Hydra_Heavy_Weapon.png/revision/latest?cb=20120317194543",
+      "id": "m-560-hydra",
+      "notes_text_dump": "Chooseacreaturewithin60mthatyoucanseeandbeginTargetingthatcreatureIfyousuccessfullyheldyourtargetingforoneturnatthestartofyournextturnyoufireauniquemissileateachtargetWhenthemissilehitsitdeploys3shapedchargesThefirstdisruptsanybarriersorshieldsanybarriersorshieldsthecreaturehasarecompletelyremovedThesecondchargecripplesarmorthecreaturehastheirACreducedby3fortheremainderofcombatThefinalchargedeal4d12damageThecreaturecanattemptaConstitutionsavingthrowtocutthedamageinhalf"
+    },
+    {
+      "name": "M-597 Landon",
+      "type": "Heavy Weapon",
+      "cost": "25000",
+      "manufacturer": null,
+      "weight": "11",
+      "range": "120m",
+      "damage": "8",
+      "rof": "4",
+      "heat": "10",
+      "rare": "x",
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Spend a round Targeting as you sweep the battlefield for all enemies. At the start of your next turn, choose up to 10 enemy creatures and launch a miniature missile at them, dealing 4d8 damage. You cannot target a creature twice. Each missile used consumes a weapon charge."
+        }
+      ],
+      "image": "http://vignette4.wikia.nocookie.net/masseffect/images/6/61/ME3_Ladon_Codex_Rip.png/revision/latest?cb=20140106114047",
+      "id": "m-597-landon",
+      "notes_text_dump": "SpendaroundTargetingasyousweepthebattlefieldforallenemiesAtthestartofyournextturnchooseupto10enemycreaturesandlaunchaminiaturemissileatthemdealing4d8damageYoucannottargetacreaturetwiceEachmissileusedconsumesaweaponcharge"
+    },
+    {
+      "name": "M-920 Cain",
+      "type": "Heavy Weapon",
+      "cost": "52500",
+      "manufacturer": null,
+      "weight": "10",
+      "range": "60m",
+      "damage": "12",
+      "rof": "7",
+      "heat": "5",
+      "rare": "x",
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Spend a round Targeting, charging up the Cain's core. At the start of your turn, you can choose to continue targeting to increase the power of the blast. You can continue Targeting as long as the Cain has weapon charges left. When you're ready to release the blast, choose a fixed point within 60m. You release a small nuclear explosion in the area. Roll X + 5d12 where X is the number of charges you use multiplied by 2. Any creature within 2m automatically fails the saving throw. Creatures within 10m make a Dexterity saving throw. On a failed save, a creature takes damage equal to your roll. On a success, a creature takes half damage."
+        }
+      ],
+      "image": "http://vignette2.wikia.nocookie.net/masseffect/images/b/bf/ME3_Cain_Heavy_Weapon.png/revision/latest?cb=20120317195513",
+      "id": "m-920-cain",
+      "notes_text_dump": "SpendaroundTargetingcharginguptheCainscoreAtthestartofyourturnyoucanchoosetocontinuetargetingtoincreasethepoweroftheblastYoucancontinueTargetingaslongastheCainhasweaponchargesleftWhenyourereadytoreleasetheblastchooseafixedpointwithin60mYoureleaseasmallnuclearexplosionintheareaRollX5d12whereXisthenumberofchargesyouusemultipliedby2Anycreaturewithin2mautomaticallyfailsthesavingthrowCreatureswithin10mmakeaDexteritysavingthrowOnafailedsaveacreaturetakesdamageequaltoyourrollOnasuccessacreaturetakeshalfdamage"
+    },
+    {
+      "name": "Reaper Blackstar",
+      "type": "Heavy Weapon",
+      "cost": "72000",
+      "manufacturer": null,
+      "weight": "12",
+      "range": "60m",
+      "damage": "12",
+      "rof": "10",
+      "heat": "1",
+      "rare": "x",
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Choose a creature within 60m that is not behind cover. The target creature makes a Dexterity saving throw.  Spend a turn Targeting the creature. The creature can use it's action to make a Dexterity saving throw. On a failed save, they continue being targeted. On a successful save, you may switch to another creature not behind cover, or end the Targeting condition. At the start of your turn, the targeted creature takes 10d12 damage."
+        }
+      ],
+      "image": "http://vignette2.wikia.nocookie.net/masseffect/images/6/69/ME3_Reaper_Blackstar_Heavy_Weapon.png/revision/latest?cb=20120317194848",
+      "id": "reaper-blackstar",
+      "notes_text_dump": "Chooseacreaturewithin60mthatisnotbehindcoverThetargetcreaturemakesaDexteritysavingthrowSpendaturnTargetingthecreatureThecreaturecanuseitsactiontomakeaDexteritysavingthrowOnafailedsavetheycontinuebeingtargetedOnasuccessfulsaveyoumayswitchtoanothercreaturenotbehindcoverorendtheTargetingconditionAtthestartofyourturnthetargetedcreaturetakes10d12damage"
+    },
+    {
+      "name": "Sync Laser",
+      "type": "Heavy Weapon",
+      "cost": "59000",
+      "manufacturer": null,
+      "weight": "9",
+      "range": "60m",
+      "damage": "12",
+      "rof": "8",
+      "heat": "2",
+      "rare": "x",
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Spend a round Targeting a 10m x 20m rectangle, up to 60m away. At the start of your turn, call down an orbital strike. Creatures within the rectangle make a Dexterity saving throw. On a failed save, a creature take 8d12 damage. On a success, a creature takes half damage."
+        }
+      ],
+      "image": "http://vignette2.wikia.nocookie.net/masseffect/images/3/3d/ME3_Sync_Laser_Heavy_Weapon.png/revision/latest?cb=20120317195655",
+      "id": "sync-laser",
+      "notes_text_dump": "SpendaroundTargetinga10mx20mrectangleupto60mawayAtthestartofyourturncalldownanorbitalstrikeCreatureswithintherectanglemakeaDexteritysavingthrowOnafailedsaveacreaturetake8d12damageOnasuccessacreaturetakeshalfdamage"
+    },
+    {
+      "name": "AT-12 Raider",
+      "type": "Shotgun",
+      "cost": "18000",
+      "manufacturer": "Batarian",
+      "weight": "8",
+      "range": "2m",
+      "damage": "10",
+      "rof": "2",
+      "heat": "1",
+      "rare": null,
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Hip Fire"
+        }
+      ],
+      "image": "http://vignette2.wikia.nocookie.net/masseffect/images/3/3f/ME3_Raider_Shotgun.png/revision/latest?cb=20120317200919",
+      "id": "at-12-raider",
+      "notes_text_dump": "HipFire"
+    },
+    {
+      "name": "Disciple",
+      "type": "Shotgun",
+      "cost": "17500",
+      "manufacturer": "Asari",
+      "weight": "6",
+      "range": "4m",
+      "damage": "6",
+      "rof": "3",
+      "heat": "3",
+      "rare": null,
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Hip Fire"
+        }
+      ],
+      "image": "http://vignette4.wikia.nocookie.net/masseffect/images/6/6a/ME3_Disciple_Shotgun.png/revision/latest?cb=20120317201011",
+      "id": "disciple",
+      "notes_text_dump": "HipFire"
+    },
+    {
+      "name": "Geth Plasma Shotgun",
+      "type": "Shotgun",
+      "cost": "13500",
+      "manufacturer": "Geth Armory",
+      "weight": "8",
+      "range": "10m",
+      "damage": "12",
+      "rof": "1",
+      "heat": "5",
+      "rare": null,
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Charged Weapon. You action can be to charge this weapon. Each round of charge uses 1 heat. When the charge is release, make the ranged spell attack. On a success the RoF is equal to all charges that were stored."
+        }
+      ],
+      "image": "http://vignette4.wikia.nocookie.net/masseffect/images/b/b9/ME3_Geth_Plasma_Shotgun.png/revision/latest?cb=20120317201115",
+      "id": "geth-plasma-shotgun",
+      "notes_text_dump": "ChargedWeaponYouactioncanbetochargethisweaponEachroundofchargeuses1heatWhenthechargeisreleasemaketherangedspellattackOnasuccesstheRoFisequaltoallchargesthatwerestored"
+    },
+    {
+      "name": "Graal Spike Thrower",
+      "type": "Shotgun",
+      "cost": "13500",
+      "manufacturer": "Krogan",
+      "weight": "8",
+      "range": "16m",
+      "damage": "12",
+      "rof": "1",
+      "heat": "2",
+      "rare": null,
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Deals 1d12 additional damage to a target within 2m."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Hip Fire"
+        }
+      ],
+      "image": "http://vignette1.wikia.nocookie.net/masseffect/images/b/b1/ME3_Graal_Spike_Thrower_Shotgun.png/revision/latest?cb=20120317201204",
+      "id": "graal-spike-thrower",
+      "notes_text_dump": "Deals1d12additionaldamagetoatargetwithin2mHipFire"
+    },
+    {
+      "name": "M-11 Wraith",
+      "type": "Shotgun",
+      "cost": "23500",
+      "manufacturer": "Unknown",
+      "weight": "6",
+      "range": "2m",
+      "damage": "10",
+      "rof": "3",
+      "heat": "1",
+      "rare": "x",
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Hip Fire"
+        }
+      ],
+      "image": "http://vignette3.wikia.nocookie.net/masseffect/images/4/45/ME3_Wraith_Shotgun.png/revision/latest?cb=20120317200422",
+      "id": "m-11-wraith",
+      "notes_text_dump": "HipFire"
+    },
+    {
+      "name": "M-22 Eviscerator",
+      "type": "Shotgun",
+      "cost": "20500",
+      "manufacturer": "Human",
+      "weight": "6",
+      "range": "2m",
+      "damage": "8",
+      "rof": "3",
+      "heat": "2",
+      "rare": null,
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Hip Fire"
+        }
+      ],
+      "image": "http://vignette3.wikia.nocookie.net/masseffect/images/e/e0/ME3_Eviscerator_Shotgun.png/revision/latest?cb=20120317200519",
+      "id": "m-22-eviscerator",
+      "notes_text_dump": "HipFire"
+    },
+    {
+      "name": "M-23 Katana",
+      "type": "Shotgun",
+      "cost": "21000",
+      "manufacturer": "Ariake Technologies",
+      "weight": "6",
+      "range": "2m",
+      "damage": "6",
+      "rof": "4",
+      "heat": "5",
+      "rare": null,
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Hip Fire"
+        }
+      ],
+      "image": "http://vignette1.wikia.nocookie.net/masseffect/images/a/a2/ME3_Katana_Shotgun.png/revision/latest?cb=20120317200552",
+      "id": "m-23-katana",
+      "notes_text_dump": "HipFire"
+    },
+    {
+      "name": "M-27 Scimitar",
+      "type": "Shotgun",
+      "cost": "22000",
+      "manufacturer": "Ariake Technologies",
+      "weight": "5",
+      "range": "2m",
+      "damage": "4",
+      "rof": "6",
+      "heat": "3",
+      "rare": null,
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Hip Fire"
+        }
+      ],
+      "image": "http://vignette4.wikia.nocookie.net/masseffect/images/0/0d/ME3_Scimitar_Shotgun.png/revision/latest?cb=20120317200715",
+      "id": "m-27-scimitar",
+      "notes_text_dump": "HipFire"
+    },
+    {
+      "name": "M-300 Claymore",
+      "type": "Shotgun",
+      "cost": "27000",
+      "manufacturer": "Krogan",
+      "weight": "10",
+      "range": "2m",
+      "damage": "4",
+      "rof": "8",
+      "heat": "1",
+      "rare": "x",
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Hip Fire"
+        }
+      ],
+      "image": "http://vignette4.wikia.nocookie.net/masseffect/images/a/a2/ME3_Claymore_Shotgun.png/revision/latest?cb=20120317200800",
+      "id": "m-300-claymore",
+      "notes_text_dump": "HipFire"
+    },
+    {
+      "name": "N7 Crusader",
+      "type": "Shotgun",
+      "cost": "25000",
+      "manufacturer": "Systems Alliance",
+      "weight": "10",
+      "range": "6m",
+      "damage": "8",
+      "rof": "4",
+      "heat": "2",
+      "rare": "x",
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Hip Fire"
+        }
+      ],
+      "image": "http://vignette2.wikia.nocookie.net/masseffect/images/3/3a/ME3_N7_Crusader_Shotgun.png/revision/latest?cb=20120317201234",
+      "id": "n7-crusader",
+      "notes_text_dump": "HipFire"
+    },
+    {
+      "name": "N7 Piranha",
+      "type": "Shotgun",
+      "cost": "18000",
+      "manufacturer": "Systems Alliance",
+      "weight": "6",
+      "range": "4m",
+      "damage": "10",
+      "rof": "2",
+      "heat": "2",
+      "rare": null,
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "When fired make a single attack roll against all creatures in a 4m cone. All creatures with AC less than the attack are hit."
+        }
+      ],
+      "image": "http://vignette2.wikia.nocookie.net/masseffect/images/c/c4/ME3_Piranha_Assault_Shotgun.png/revision/latest?cb=20120714073110",
+      "id": "n7-piranha",
+      "notes_text_dump": "Whenfiredmakeasingleattackrollagainstallcreaturesina4mconeAllcreatureswithAClessthantheattackarehit"
+    },
+    {
+      "name": "Reegar Carbine",
+      "type": "Shotgun",
+      "cost": "19500",
+      "manufacturer": "Quarian",
+      "weight": "6",
+      "range": "6m",
+      "damage": "4",
+      "rof": "5",
+      "heat": "4",
+      "rare": null,
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Arc Weapon. Hits all other creatures within 2m of the initial target for half damage."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Hip Fire"
+        }
+      ],
+      "image": "http://vignette2.wikia.nocookie.net/masseffect/images/6/60/ME3_Reegar_Carbine.png/revision/latest?cb=20120530214009",
+      "id": "reegar-carbine",
+      "notes_text_dump": "ArcWeaponHitsallothercreatureswithin2moftheinitialtargetforhalfdamageHipFire"
+    },
+    {
+      "name": "Venom Shotgun",
+      "type": "Shotgun",
+      "cost": "29500",
+      "manufacturer": "Special Tasks Group",
+      "weight": "8",
+      "range": "6m",
+      "damage": "8",
+      "rof": "5",
+      "heat": "2",
+      "rare": null,
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Instead of making a ranged weapon attack, target creature makes a Dexterity saving throw (DC13). On a successful save, it takes half as much damage."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Cannot benefit from Special Ammo"
+        }
+      ],
+      "image": "http://vignette1.wikia.nocookie.net/masseffect/images/7/76/ME3_Venom_Shotgun.png/revision/latest?cb=20121029075317",
+      "id": "venom-shotgun",
+      "notes_text_dump": "InsteadofmakingarangedweaponattacktargetcreaturemakesaDexteritysavingthrowDC13OnasuccessfulsaveittakeshalfasmuchdamageCannotbenefitfromSpecialAmmo"
+    },
+    {
+      "name": "Blood Pack Punisher",
+      "type": "SMG",
+      "cost": "14000",
+      "manufacturer": "Blood Pack",
+      "weight": "3",
+      "range": "6m",
+      "damage": "6",
+      "rof": "4",
+      "heat": "1",
+      "rare": null,
+      "notes": [
+
+      ],
+      "image": "http://vignette1.wikia.nocookie.net/masseffect/images/1/17/ME3_Blood_Pack_Punisher_Smg.png/revision/latest?cb=20120809190511",
+      "id": "blood-pack-punisher",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "Geth Plasma SMG",
+      "type": "SMG",
+      "cost": "14500",
+      "manufacturer": "Geth Armory",
+      "weight": "4",
+      "range": "10m",
+      "damage": "4",
+      "rof": "3",
+      "heat": "2",
+      "rare": null,
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Deals lightning damage."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Cannot benefit from Special Ammo"
+        }
+      ],
+      "image": "http://vignette4.wikia.nocookie.net/masseffect/images/9/9c/ME3_Geth_Plasma_SMG.png/revision/latest?cb=20120411201332",
+      "id": "geth-plasma-smg",
+      "notes_text_dump": "DealslightningdamageCannotbenefitfromSpecialAmmo"
+    },
+    {
+      "name": "M-12 Locust",
+      "type": "SMG",
+      "cost": "7500",
+      "manufacturer": "Kassa Fabrication",
+      "weight": "3",
+      "range": "16m",
+      "damage": "4",
+      "rof": "3",
+      "heat": "10",
+      "rare": null,
+      "notes": [
+
+      ],
+      "image": "http://vignette2.wikia.nocookie.net/masseffect/images/f/fb/ME3_Locust_Smg.png/revision/latest?cb=20120317184530",
+      "id": "m-12-locust",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "M-25 Hornet",
+      "type": "SMG",
+      "cost": "10500",
+      "manufacturer": "Cerberus",
+      "weight": "3",
+      "range": "10m",
+      "damage": "6",
+      "rof": "3",
+      "heat": "2",
+      "rare": null,
+      "notes": [
+
+      ],
+      "image": "http://vignette3.wikia.nocookie.net/masseffect/images/6/66/ME3_Hornet_Smg.png/revision/latest?cb=20120317184337",
+      "id": "m-25-hornet",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "M-4 Shuriken",
+      "type": "SMG",
+      "cost": "10000",
+      "manufacturer": "Elkoss Combine",
+      "weight": "4",
+      "range": "6m",
+      "damage": "4",
+      "rof": "4",
+      "heat": "4",
+      "rare": null,
+      "notes": [
+
+      ],
+      "image": "http://vignette1.wikia.nocookie.net/masseffect/images/8/8b/ME3_Shuriken_Smg.png/revision/latest?cb=20120317184559",
+      "id": "m-4-shuriken",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "M-9 Tempest",
+      "type": "SMG",
+      "cost": "10000",
+      "manufacturer": "Elanus Risk Control Services",
+      "weight": "2",
+      "range": "10m",
+      "damage": "4",
+      "rof": "4",
+      "heat": "2",
+      "rare": null,
+      "notes": [
+
+      ],
+      "image": "http://vignette2.wikia.nocookie.net/masseffect/images/1/14/ME3_Tempest_Smg.png/revision/latest?cb=20120317184648",
+      "id": "m-9-tempest",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "N7 Hurricane",
+      "type": "SMG",
+      "cost": "10000",
+      "manufacturer": "Systems Alliance",
+      "weight": "3",
+      "range": "6m",
+      "damage": "4",
+      "rof": "4",
+      "heat": "6",
+      "rare": "x",
+      "notes": [
+
+      ],
+      "image": "http://vignette4.wikia.nocookie.net/masseffect/images/e/e9/ME3_N7_Hurricane_Smg.png/revision/latest?cb=20120317184439",
+      "id": "n7-hurricane",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "Black Widow",
+      "type": "Sniper Rifle",
+      "cost": "19500",
+      "manufacturer": "Systems Alliance",
+      "weight": "10",
+      "range": "60m",
+      "damage": "12",
+      "rof": "3",
+      "heat": "2",
+      "rare": "x",
+      "notes": [
+
+      ],
+      "image": "http://vignette2.wikia.nocookie.net/masseffect/images/4/44/ME3_Black_Widow_Sniper_Rifle.png/revision/latest?cb=20120317191926",
+      "id": "black-widow",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "Javelin",
+      "type": "Sniper Rifle",
+      "cost": "16000",
+      "manufacturer": "Geth Armory",
+      "weight": "10",
+      "range": "60m",
+      "damage": "8",
+      "rof": "2",
+      "heat": "1",
+      "rare": null,
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Deals lightning damage."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Cannot benefit from Special Ammo"
+        }
+      ],
+      "image": "http://vignette2.wikia.nocookie.net/masseffect/images/7/7b/ME3_Javelin_Sniper_Rifle.png/revision/latest?cb=20120317192031",
+      "id": "javelin",
+      "notes_text_dump": "DealslightningdamageCannotbenefitfromSpecialAmmo"
+    },
+    {
+      "name": "Kishock Harpoon Gun",
+      "type": "Sniper Rifle",
+      "cost": "13500",
+      "manufacturer": "Batarian",
+      "weight": "8",
+      "range": "60m",
+      "damage": "12",
+      "rof": "1",
+      "heat": "3",
+      "rare": null,
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Charge Weapon. You can use your attack action to charge the weapon. Each charge consumes 1 heat and increases the RoF by 1. If the number of charges equals the heat of the weapon, it overheats and cannot be fired until reloaded."
+        }
+      ],
+      "image": "http://vignette4.wikia.nocookie.net/masseffect/images/d/db/ME3_Kishock_Harpoon_Gun.png/revision/latest?cb=20120411201323",
+      "id": "kishock-harpoon-gun",
+      "notes_text_dump": "ChargeWeaponYoucanuseyourattackactiontochargetheweaponEachchargeconsumes1heatandincreasestheRoFby1Ifthenumberofchargesequalstheheatoftheweaponitoverheatsandcannotbefireduntilreloaded"
+    },
+    {
+      "name": "Krysae Sniper Rifle",
+      "type": "Sniper Rifle",
+      "cost": "9000",
+      "manufacturer": "Turians",
+      "weight": "8",
+      "range": "60m",
+      "damage": "8",
+      "rof": "2",
+      "heat": "1",
+      "rare": null,
+      "notes": [
+
+      ],
+      "image": "http://vignette1.wikia.nocookie.net/masseffect/images/2/2f/ME3_Krysae_Sniper_Rifle.png/revision/latest?cb=20120530214006",
+      "id": "krysae-sniper-rifle",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "M-13 Raptor",
+      "type": "Sniper Rifle",
+      "cost": "7000",
+      "manufacturer": "Cerberus",
+      "weight": "7",
+      "range": "60m",
+      "damage": "6",
+      "rof": "2",
+      "heat": "2",
+      "rare": null,
+      "notes": [
+
+      ],
+      "image": "http://vignette3.wikia.nocookie.net/masseffect/images/7/70/ME3_Raptor_Sniper_Rifle.png/revision/latest?cb=20120317191426",
+      "id": "m-13-raptor",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "M-29 Incisor",
+      "type": "Sniper Rifle",
+      "cost": "10500",
+      "manufacturer": "Unknown",
+      "weight": "5",
+      "range": "60m",
+      "damage": "6",
+      "rof": "3",
+      "heat": "1",
+      "rare": "x",
+      "notes": [
+
+      ],
+      "image": "http://vignette2.wikia.nocookie.net/masseffect/images/d/dc/ME3_Incisor_Sniper_Rifle.png/revision/latest?cb=20120317191319",
+      "id": "m-29-incisor",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "M-90 Indra",
+      "type": "Sniper Rifle",
+      "cost": "14000",
+      "manufacturer": "Unknown",
+      "weight": "7",
+      "range": "60m",
+      "damage": "6",
+      "rof": "4",
+      "heat": "1",
+      "rare": "x",
+      "notes": [
+
+      ],
+      "image": "http://vignette4.wikia.nocookie.net/masseffect/images/b/b6/ME3_Indra_Sniper_Rifle.png/revision/latest?cb=20120317191212",
+      "id": "m-90-indra",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "M-92 Mantis",
+      "type": "Sniper Rifle",
+      "cost": "13000",
+      "manufacturer": "Devlon Industries",
+      "weight": "7",
+      "range": "60m",
+      "damage": "12",
+      "rof": "2",
+      "heat": "1",
+      "rare": null,
+      "notes": [
+
+      ],
+      "image": "http://vignette2.wikia.nocookie.net/masseffect/images/7/7b/ME3_Mantis_Sniper_Rifle.png/revision/latest?cb=20120317191621",
+      "id": "m-92-mantis",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "M-97 Viper",
+      "type": "Sniper Rifle",
+      "cost": "7000",
+      "manufacturer": "Rosenkov Materials",
+      "weight": "5",
+      "range": "60m",
+      "damage": "6",
+      "rof": "2",
+      "heat": "3",
+      "rare": null,
+      "notes": [
+
+      ],
+      "image": "http://vignette3.wikia.nocookie.net/masseffect/images/5/52/ME3_Viper_Sniper_Rifle.png/revision/latest?cb=20120317191749",
+      "id": "m-97-viper",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "M-98 Widow",
+      "type": "Sniper Rifle",
+      "cost": "19500",
+      "manufacturer": "Unknown",
+      "weight": "12",
+      "range": "120m",
+      "damage": "12",
+      "rof": "3",
+      "heat": "1",
+      "rare": "x",
+      "notes": [
+
+      ],
+      "image": "http://vignette2.wikia.nocookie.net/masseffect/images/1/1d/ME3_Widow_Sniper_Rifle.png/revision/latest?cb=20120317191850",
+      "id": "m-98-widow",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "N7 Valiant",
+      "type": "Sniper Rifle",
+      "cost": "9000",
+      "manufacturer": "Systems Alliance",
+      "weight": "6",
+      "range": "60m",
+      "damage": "8",
+      "rof": "2",
+      "heat": "2",
+      "rare": null,
+      "notes": [
+
+      ],
+      "image": "http://vignette4.wikia.nocookie.net/masseffect/images/1/14/ME3_N7_Valiant_Sniper_Rifle.png/revision/latest?cb=20120317192204",
+      "id": "n7-valiant",
+      "notes_text_dump": ""
+    }
+  ]
+}

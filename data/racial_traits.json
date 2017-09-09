@@ -1,5 +1,5 @@
 {
-  "updated": "September  9, 2017 @ 12:01 AM",
+  "updated": "September  9, 2017 @  5:38 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRETKGL62kEZPA69PhA3AGMiVeHOWBRkTMDL3f_K-oajryEjwdq7fRAj-qfIusPsLMiIqmB12D4Zun8/pubhtml",
   "data": [
     {
@@ -22,7 +22,8 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "id": "skill-versatility"
+      "id": "skill-versatility",
+      "description_text_dump": "Yougainproficiencyintwoskillsofyourchoice"
     },
     {
       "name": "Mind Meld",
@@ -44,7 +45,8 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "id": "mind-meld"
+      "id": "mind-meld",
+      "description_text_dump": "YoucantransferandreceivethoughtstoanothercreatureYoumustconcentrateandifthecreatureisnotwillingthethoughtsbecomejumbledanddisjointedUnintelligentcreatureshaveunpredictableresults"
     },
     {
       "name": "Cantrip",
@@ -66,7 +68,8 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "id": "cantrip"
+      "id": "cantrip",
+      "description_text_dump": "YouknowonecantripofyourchoicefromtheadeptorvanguardspelllistCharismaisyourspellcastingmodifierforit"
     },
     {
       "name": "Saving Face",
@@ -88,7 +91,8 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "id": "saving-face"
+      "id": "saving-face",
+      "description_text_dump": "BatariansarecarefulnottoshowweaknessinfrontoftheiralliesforfearoflosingstatusIfyoumisswithanattackrollorfailanabilitycheckorasavingthrowyoucangainabonustotherollequaltothenumberofalliesyoucanseewithin30feetofyoumaximumbonusof5Onceyouusethistraityoucantuseitagainuntilyoufinishashortorlongrest"
     },
     {
       "name": "Feat",
@@ -110,7 +114,8 @@
       "turian": "x",
       "volus": null,
       "vorcha": null,
-      "id": "feat"
+      "id": "feat",
+      "description_text_dump": "Select1featfromfeats"
     },
     {
       "name": "Keen Senses",
@@ -132,7 +137,8 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "id": "keen-senses"
+      "id": "keen-senses",
+      "description_text_dump": "YouhaveproficiencyinthePerceptionskill"
     },
     {
       "name": "Dark Vision",
@@ -154,7 +160,8 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "id": "dark-vision"
+      "id": "dark-vision",
+      "description_text_dump": "YouhavesuperiorvisionindarkanddimconditionsYoucanseeindimlightwithin60feetofyouasifitwerebrightlightandindarknessasifitweredimlightYoucantdiscerncolorindarknessonlyshadesofgray"
     },
     {
       "name": "Halucinogen",
@@ -176,7 +183,8 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "id": "halucinogen"
+      "id": "halucinogen",
+      "description_text_dump": "YouskinisinfusedwithamildvenomWheningestedorinjecteditcancausemildhallucinations"
     },
     {
       "name": "Feats",
@@ -198,7 +206,8 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "id": "feats"
+      "id": "feats",
+      "description_text_dump": "Select2featsfromfeats"
     },
     {
       "name": "Composite Plating",
@@ -220,7 +229,8 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "id": "composite-plating"
+      "id": "composite-plating",
+      "description_text_dump": "Yourconstructionincorporatesadvancedarmorplatinggrantingyoua1bonustoArmorClass"
     },
     {
       "name": "Living Construct",
@@ -242,7 +252,8 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "id": "living-construct"
+      "id": "living-construct",
+      "description_text_dump": "YouareimmunetodiseaseYoudonotneedtoeatorbreatheInsteadofsleepingyouenteraninactivestatefor4hourseachdayYoudonotdreaminthisstateyouarefullyawareofyoursurroundingsandnoticeapproachingenemiesandothereventsasnormal"
     },
     {
       "name": "Repair Matrix",
@@ -264,7 +275,8 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "id": "repair-matrix"
+      "id": "repair-matrix",
+      "description_text_dump": "WhenyoudropbelowhalfyourhitpointsorlooseallyourshieldpointsasareactionyoumayactivateapowerfulFoucaultcurrentIfyouareproneyouimmediatelyreturntoyourfeetyourshieldregenerationincreasesby1dietypeyourspeedincreasesby6mandyouregain1d6hitpointsatthestartofyourturnThiseffectlasts1minuteThisabilitymayonlybeusedonceperlongrest"
     },
     {
       "name": "Hunter Mode",
@@ -315,7 +327,8 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "id": "hunter-mode"
+      "id": "hunter-mode",
+      "description_text_dump": "ChannelshieldsintoauxiliarycombatsystemsLose3d6shieldsbutgainthefollowingIncreasemovementby6m2onrangedmeleeattackrollsNodisadvantageonattackingtargetsbehindpartialcoverAdd1d6piercingdamagetomeleeandrangeddamagerollsThiseffectlasts1minYoucanonlyuseHunterModeonceperlongrestAt11thlevelyougainanadditionalbenefitbasedonyourclasstableClassFeatureEngineerIncreasethedamageofallTechpowersby1dietypemaxd12Ifthedietypeisalreadyd12add1foreachdierolledinsteadSoldierYouhaveresistancetoalldamagecausedbybioticspellsandadvantageonsavingthrowscausedbybioticspellsInfiltratorIncreaseyoursneakattackdietypetod8table"
     },
     {
       "name": "No Feats",
@@ -337,7 +350,8 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "id": "no-feats"
+      "id": "no-feats",
+      "description_text_dump": "Gethcannottakeanyfeats"
     },
     {
       "name": "Rage",
@@ -359,7 +373,8 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "id": "rage"
+      "id": "rage",
+      "description_text_dump": "IfyousinkbelowhalfhealthyouenterintoarageYoutake1d8lessdamageperhityourmeleeattacksdealanadditional1d8damage"
     },
     {
       "name": "Natural Armor",
@@ -381,7 +396,8 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "id": "natural-armor"
+      "id": "natural-armor",
+      "description_text_dump": "IncreaseyourACby1"
     },
     {
       "name": "Relentless",
@@ -403,7 +419,8 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "id": "relentless"
+      "id": "relentless",
+      "description_text_dump": "Whenyouarereducedto0hitpointsbutnotkilledoutrightyoucandropto1hitpointinsteadYoucantusethisfeatureagainuntilyoufinishalongrest"
     },
     {
       "name": "Menacing",
@@ -425,7 +442,8 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "id": "menacing"
+      "id": "menacing",
+      "description_text_dump": "YougainproficiencyintheIntimidationskill"
     },
     {
       "name": "Hermetic Suit",
@@ -447,7 +465,8 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "id": "hermetic-suit"
+      "id": "hermetic-suit",
+      "description_text_dump": "YoursuitisyourlifebloodItmakesyourimmunetodieseaseYouhaveresistancetopoisontoxicandnecroticdamageHoweverifyouevertakeanunshieldedcriticalhitviapuncturedamageyoursuitisbreachedOnyourturnyoucantakenootheractionacceptmakingadeathsavingthrowasifyouhad0hitpointsorusingachargeofyoursealanttoclosethepunctureYoualwayscarry3chargesofspecialzedsealantandyoucantakeanactiontosealthebreachconsumingachargeOnalongrestyouregainyourcharges"
     },
     {
       "name": "Cybernetic Augmentation",
@@ -469,7 +488,8 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "id": "cybernetic-augmentation"
+      "id": "cybernetic-augmentation",
+      "description_text_dump": "YouhaveaminorcyberneticaugmentationChooseoneofthefollowingDarkvisionspeedincreasedby2mproficiencyinPerceptionIncreasecarrycapacityby5"
     },
     {
       "name": "Photographic Memory",
@@ -491,7 +511,8 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "id": "photographic-memory"
+      "id": "photographic-memory",
+      "description_text_dump": "YouhaveadvantageonHistoryEngineeringHackingMedicineandNaturechecks"
     },
     {
       "name": "Turian Toughness",
@@ -513,7 +534,8 @@
       "turian": "x",
       "volus": null,
       "vorcha": null,
-      "id": "turian-toughness"
+      "id": "turian-toughness",
+      "description_text_dump": "Yourhitpointmaximumincreasesby2anditincreasesby2everytimeyougainalevel"
     },
     {
       "name": "Fury of the Small",
@@ -535,7 +557,8 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "id": "fury-of-the-small"
+      "id": "fury-of-the-small",
+      "description_text_dump": "WhenyoudamageacreaturewithanattackoraspellandthecreaturessizeislargerthanyoursyoucancausetheattackorspelltodealextradamagetothecreatureTheextradamageequalsyourlevelOnceyouusethistraityoucantuseitagainuntilyoufinishashortorlongrest"
     },
     {
       "name": "Savvy Dealings",
@@ -557,7 +580,8 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "id": "savvy-dealings"
+      "id": "savvy-dealings",
+      "description_text_dump": "Youcangetextrasuppliesanddiscountsfromvendors"
     },
     {
       "name": "Lucky",
@@ -579,7 +603,8 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "id": "lucky"
+      "id": "lucky",
+      "description_text_dump": "GaintheLuckyfeat"
     },
     {
       "name": "Bite",
@@ -601,7 +626,8 @@
       "turian": null,
       "volus": null,
       "vorcha": "x",
-      "id": "bite"
+      "id": "bite",
+      "description_text_dump": "YourfangedmawisanaturalweaponwhichyoucanusetomakeunarmedstrikesIfyouhitwithityoudealpiercingdamageequalto1d6yourStrengthmodifierinsteadofthebludgeoningdamagenormalforanunarmedstrike"
     },
     {
       "name": "Hungry Jaws",
@@ -623,7 +649,8 @@
       "turian": null,
       "volus": null,
       "vorcha": "x",
-      "id": "hungry-jaws"
+      "id": "hungry-jaws",
+      "description_text_dump": "InbattleyoucanthrowyourselfintoaviciousfeedingfrenzyAsabonusactionyoucanmakeaspecialattackwithyourbiteIftheattackhitsitdealsitsnormaldamageandyouautomaticallyactivateBloodlustYoucantusethistraitagainuntilyoufinishashortorlongrest"
     },
     {
       "name": "Bloodlust",
@@ -645,7 +672,8 @@
       "turian": null,
       "volus": null,
       "vorcha": "x",
-      "id": "bloodlust"
+      "id": "bloodlust",
+      "description_text_dump": "AfterkillinganenemywithameleeattackyoucanactivateBloodlustYourspeedincreasesto20madd1d8toyoumeleeattacksandyouregenerate1d4healthperturnThiseffectlasts3turnsIfyoukillanotherenemytheeffectisextendedfor3moreturns"
     }
   ]
 }

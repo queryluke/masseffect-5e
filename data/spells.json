@@ -1,5 +1,5 @@
 {
-  "updated": "September  9, 2017 @ 12:01 AM",
+  "updated": "September  9, 2017 @  5:38 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSs9dkG94f5fPCOJ38g-xCUCwnYynzbiFdggQ1KqM1vMscINwcn2_OGPqGhvxOrYl18oK7dO2notL_y/pubhtml",
   "data": [
     {
@@ -55,7 +55,8 @@
         "Anti-Armor : Each creature that fails the saving throw takes a -1 penalty to their AC.",
         "Drain : Each time Annihilation Field deals damage, you gain shield points equal half the damage done."
       ],
-      "class_list": "Adept"
+      "class_list": "Adept",
+      "mechanic_text_dump": "Spinafieldofcorruptedbioticenergyoriginatingfromyouina6msphereThefieldmoveswithyouandreducesyourmovementspeedbyhalfEachcreaturewithinthespheremustmakeaConstitutionsavingthrowAcreaturetakes4d6necroticdamageonafailedsaveorhalfasmuchdamageonasuccessfuloneAcreaturemustalsomakethesavingthrowwhenitentersthefieldsspaceforthefirsttimeonaturnorendsitsturnthereAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel4orhigherincreasetheradiusby2mforeachslotlevelabovethe4th"
     },
     {
       "name": "Ballistic Blades",
@@ -105,7 +106,8 @@
         "Bleeding Blades : The target takes an additional 3d6 damage at the start of their turn. This damage bypasses shields.",
         "Exploding blades : The blades explode, dealing an additional 3d6 thunder damage and knock the target prone."
       ],
-      "class_list": "Soldier"
+      "class_list": "Soldier",
+      "mechanic_text_dump": "FireasalvoofbladesatacreatureorobjectwithinrangeOnahitthetargettakes6d6piercingYoumustspendashortrestreloadingthearmguardbeforeyoucanthisabilityagain"
     },
     {
       "name": "Barrier",
@@ -155,7 +157,8 @@
         "Light Barrier : Remove the speed reduction penalty when Barrier is active.",
         "Tactical Barrier : When you take damage, you can choose whether or not to expend a barrier tick."
       ],
-      "class_list": "Adept, Vanguard"
+      "class_list": "Adept, Vanguard",
+      "mechanic_text_dump": "SurroundyourselfinahighgravitymasseffectthatstrengthensyourshieldsbutreducesyourmovementspeedWhileyouhaveanybarrierticksyourspeedisreducedby4mWheneveryoutakedamageremove1barriertickandreducethatdamageby1d8WhenyoucastBarrierrefillyourbarriertickstotheirmaximumamountYourclassindicatesthemaximumnumberofbarrierticksyoucanhaveThisreductionincreasesby1whenyoureach5thlevel2d811thlevel3d8and17thlevel4d8"
     },
     {
       "name": "Barrier Detonation",
@@ -210,7 +213,8 @@
         "Improved Lift : Add an additional 2[dd] to the roll.",
         "Radius : Increase the size of the detonation to 4m"
       ],
-      "class_list": "Adept, Vanguard"
+      "class_list": "Adept, Vanguard",
+      "mechanic_text_dump": "Expendallofyourremainingbarriertickstocreateanegativemasseffectfieldina2msphereoriginatingfromyouInadditionrollXd8whereXisthenumberofbarrierticksconsumedTheresultisthenumberofhitpointsofcreaturesthisspellcanaffectStartingwiththecreaturethathasthelowestcurrenthitpointseachcreatureaffectedbythisspellbecomeslifteduntilthestartofyournextturnSubtracteachcreatureshitpointsfromthetotalbeforemovingontothecreaturewiththenextlowesthitpointsAcreatureshitpointsmustbeequaltoorlessthantheremainingtotalforthatcreaturetobeaffectedOtherpowersandclassfeaturescanincreasethedietypeofthisrollIncreasethenumberofdierollby2d8reach5thlevelX2d811thlevelX4d8and17thlevelX6d8"
     },
     {
       "name": "Biotic Orbs",
@@ -261,7 +265,8 @@
         "Improved Orbs : Gain 2 max level spell slots when at least 3 orbs are active",
         "Defense Orbs : As a reaction, you can expend an orb to create a micro barrier on the incoming attack, reducing the damage by 1d8. You can use this power on yourself or other creatures."
       ],
-      "class_list": "Adept, Vanguard"
+      "class_list": "Adept, Vanguard",
+      "mechanic_text_dump": "Summon3bioticorbsthatfloataroundyouIfyouhaveatleast3orbsyougainoneadditionalmaxlevelhighestavailablelevelspellslotYoumayalsoexpendanorbandmakearangedspellattackonacreaturewithin20mOnahitdealforcedamageequalto2d10yourbioticmodifierTheorbslast1houroruntilyouveexpendedallofthemAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthenumberoforbsincreasesby1foreachslotlevelabovethe2nd"
     },
     {
       "name": "Biotic Sphere",
@@ -326,7 +331,8 @@
         "Infuse Ammo : Friendly creatures inside the sphere add 1d4 force damage to all ranged weapon attacks on creatures outside of the sphere and subtract that much from the sphere's HP. This damage can detonate abilities.",
         "Armored : The sphere has resistance to piercing, slashing, and bludgeoning damage."
       ],
-      "class_list": "Adept, Sentinel"
+      "class_list": "Adept, Sentinel",
+      "mechanic_text_dump": "Channelaspherewith5d12yourlevelHPthatextendsoutfromyouina6mradiusandmoveswithyouHostilecreaturescannotenterorleavethesphereHostileattacksmadeonfriendlytargetsareabsorbedbythespherethesphereautomaticallyfailsanysavingthrowsFriendlyattacksonhostilecreatureswithinthespherehaveadvantageThespheredissipateswhenitshitpointsaregoneIfanattackwoulddealmoredamagethantheremaininghitpointsofthespherethespheresoaksallofthedamageandthendissipatesAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel4orhigherthesphereshealthincreasesby1d12foreachslotlevelabovethe3rd"
     },
     {
       "name": "Carnage",
@@ -381,7 +387,8 @@
         "Anti-Flesh : Carnage deals double damage to unprotected, organic targets.",
         "Remote Deploy : As an action you can setup your Carnage cannon in a separate location. Once it is deployed you can use an attack action to fire it."
       ],
-      "class_list": "Soldier"
+      "class_list": "Soldier",
+      "mechanic_text_dump": "AsoneofyourattacksyouequipandfireyourArmaxAntiGroundEngagementCannoncolloquiallycalledcarnageItejectssuperheatedshrapnelina6mconeoriginatingfromyouEachcreaturecaughtintheblastmustmakeDexteritysavingthrowOnafailedsaveacreaturetakes2d10piercingdamageorhalfasmuchdamageonasuccessfuloneTheDCis8proficiencybonusDEXmodifierYoumustspendashortorlongrestreconfiguringthecannontouseitagain"
     },
     {
       "name": "Charge",
@@ -433,7 +440,8 @@
         "Increased force: Increase the damage and shield regeneration to d8",
         "Tremor : The force ripples outwards from the point of impact in a 2m sphere. Creatures within the sphere must succeed on a Dexterity saving throw or are knocked {prone}."
       ],
-      "class_list": "Vanguard"
+      "class_list": "Vanguard",
+      "mechanic_text_dump": "AlteryourmassandchooseacreatureorobjectyoucanseewithinrangeYouusethetargetsmasstopullyourselftoitslocationwithincredibleforceThetargetmustmakeadexteritysavingthrowOnafailedsavethekineticforcefromtheimpactregenerates1d6ofyourshieldpointsdeals1d6forcedamagetothetargetandknocksitproneThekineticforceincreasesby1d6whenyoureachthe5thlevel2d611thlevel3d6and17thlevel4d6"
     },
     {
       "name": "Concussive Shot",
@@ -479,7 +487,8 @@
         "Stunning Shot : A creature hit by Concussive Shot must make a Constitution saving throw. On a failed save, the creature is {stunned} until the start of your next turn.",
         "Blinding Shot : A creature hit by Concussive Shot must make a Constitution saving throw. On a failed save, the creature is {blinded} until the start of your next turn."
       ],
-      "class_list": "Soldier"
+      "class_list": "Soldier",
+      "mechanic_text_dump": "LoadaspecializedhighimpactthermalclipintotheweaponyouarecurrentlywieldingUntilyoureloadanysuccessfulrangedattacksdealanadditional1d10bludgeoningdamageandmediumsizedorsmallercreaturesareknockedproneYouhave3chargesofConcussiveShotYouregainallofyourchargesonashortorlongrest"
     },
     {
       "name": "Cryo Beam",
@@ -525,7 +534,8 @@
         "Brittle Freeze : Creatures that fail the Constitution saving throw suffer a -1 AC penalty",
         "Frozen Ground : Cryo beam leaves a patch of ice on the ground that lasts for 1 min. Each creature that moves into or out of the patch must pass a Dexterity saving throw. On a failed save, slips and falls [Prone], ending it's movement."
       ],
-      "class_list": "Engineer, Infiltrator, Sentinel"
+      "class_list": "Engineer, Infiltrator, Sentinel",
+      "mechanic_text_dump": "YouspendtechpointstoblastastreamofliquidhydrogenfromyouromnitoolEachcreatureina6mcubemustmakeaDexteritysavingthrowAcreaturetakesXd8colddamageonafailedsaveorhalfasmuchdamageonasuccessfulonewhereXisthenumberoftechpointsspentIfthetargetisunshieldeditmustpassaStrengthsavingthroworbecomesfrozenuntiltheendofitsnextturn"
     },
     {
       "name": "Cryo Blast",
@@ -572,7 +582,8 @@
         "Ice Lance : Transform the attack into a deadly lance. The attack can no longer freeze or slow the target, but you add 1d6 piercing damage for each tech point spent.",
         "Frigid Air : The blast snap freezes the air around the target in a 2m radius. Each creature that enters the frozen space for the first time on a turn or ends its turn there must pass a Constitution saving throw or take 2d4 cold damage."
       ],
-      "class_list": "Engineer, Infiltrator, Sentinel"
+      "class_list": "Engineer, Infiltrator, Sentinel",
+      "mechanic_text_dump": "YouusetechpointstofireamassofsupercooledsubatomicparticlesatacreatureorobjectwithinrangeMakearangedspellattackagainstthetargetOnahitthetargettakesXd8colddamagewhereXisthenumberoftechpointsspentandthetargetsmovementisreducedbyhalfIfthetargetisunprotecteditmustpassaStrengthsavingthroworbecomesfrozenuntiltheendofitsnextturn"
     },
     {
       "name": "Dark Channel",
@@ -622,7 +633,8 @@
         "Improved Duration : You have advantage when you make a Constitution saving throw to maintain this spell.",
         "Improved Damage : Increase the damage die type to d8"
       ],
-      "class_list": "Adept"
+      "class_list": "Adept",
+      "mechanic_text_dump": "MakearangedspellattackonacreatureyoucanseewithinrangeOnahityouplaguethetargetwithapersistentdamagingbioticfieldThecreaturetakes1d6necroticdamageand1d6necroticdamageonyourturnwhileyoumaintainthespellIfthecreaturediesDarkChanneltransferstoanotherrandomhostilecreaturewithin10mOnlyoneDarkChannelcanmaybeactiveatatimeThedamageincreasesby1d6whenyoureachthe5thlevel2d611thlevel3d6and17thlevel4d6"
     },
     {
       "name": "Dark Sphere",
@@ -683,7 +695,8 @@
         "Control : At the start of your turn, before the sphere moves, you can change it's direction.",
         "Amplify : Every 4m, the sphere's potential damage increases. Add 1d8 to the detonation damage for each 4m the sphere travels."
       ],
-      "class_list": "Adept"
+      "class_list": "Adept",
+      "mechanic_text_dump": "Launchaslowmoving4msphereofdarkenergyinastraightlineinfrontofyouItmoves4mthisturnandatthestartofeachsubsequentturnEachcreaturecaughtinthepathmustmakeaDexteritysavingthrowOnafailedsaveacreaturetakesnecroticdamageequalto3d8yourbioticmodifierorhalfasmuchonasuccessfuloneWhenthespherereaches20mitdetonatesandeachcreaturewithin10mmustmakeaConstitutionsavingthrowOnafailedsaveacreaturetakesnecroticdamageequalto3d8yourbioticmodifiernecroticdamageorhalfasmuchdamageonasuccessfuloneYoucanuseanactiontodetonatethesphereearlyIfyouloseconcentrationwhilecastingthespellitdoesnotdetonateAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d8foreachslotlevelabovethe2nd"
     },
     {
       "name": "Decoy",
@@ -728,7 +741,8 @@
         "Explosive : As an action, you can spend X tech points detonate your Decoy. Each creature within 4m must make a Dexterity saving throw. On a failed save, a creature takes Xd6 fire damage or half as much on a successful one.",
         "Improved Decoy : Your Decoy becomes so life-like that creatures have disadvantage on the Intelligence (Perception) check."
       ],
-      "class_list": "Engineer, Infiltrator"
+      "class_list": "Engineer, Infiltrator",
+      "mechanic_text_dump": "SpendXtechpointstosummonaholographiccopyofyourselfatalocationwithin10mThecopymimicsyouractionsWhenacreatureattacksitcanmakeanIntelligencePerceptioncheckandifitsucceedsisnotfooledTheDCofthecheckis8yourTechmodifierX"
     },
     {
       "name": "Defense Matrix",
@@ -773,7 +787,8 @@
         "Shield : Deploy the matrix as a stationary shield. Up to 2 creatures of medium size can stand behind the shield, gaining the resistance benefit when attacked by creatures from the other side of the shield.",
         "Improved Defense : Gain a +2 bonus to your AC while Defense Matrix is active."
       ],
-      "class_list": "Engineer, Infiltrator, Sentinel"
+      "class_list": "Engineer, Infiltrator, Sentinel",
+      "mechanic_text_dump": "SpendXtechpointstoreinforceyourarmorwithspecialfoucaultcurrentsYougainresistancetoyourchoiceofXdamagetypes"
     },
     {
       "name": "Dominate",
@@ -828,7 +843,8 @@
         "Total Control : You take the the dominated creatures action. You may use it's spells and abilities.",
         "Damage : While the creature is dominated, it takes 2d6 psychic damage at the end of it's turn. This damage does not proc an opportunity to end Dominate."
       ],
-      "class_list": "Adept"
+      "class_list": "Adept",
+      "mechanic_text_dump": "Targetanorganiccreaturewithin20mItmustsucceedonaWisdomsavingthroworitbecomesDominateditisconsideredcharmedandcantusespellsorabilitiesOnitsturnthedominatedcreatureattackstheclosestcreaturehostiletothespellcastermakingarangedweaponattackormeleeattackifitdoesnothaveaweaponIftherearenohostilecreatureswithinrangethedominatedcreatureusesitsturntoruntowardstheclosesthostilecreatureEachtimethedominatedcreaturetakesdamageitmakesanewWisdomsavingthrowagainstthespellIfthesavingthrowsucceedsthespellends"
     },
     {
       "name": "Electric Slash",
@@ -873,7 +889,8 @@
         "Shield Restore : Gain shield points equal to half of your damage roll.",
         "Paralyze : Creatures that fail the saving throw are paralyzed until the end of their next turn."
       ],
-      "class_list": "Engineer, Infiltrator"
+      "class_list": "Engineer, Infiltrator",
+      "mechanic_text_dump": "SpendXtechpointstounleashawaveofelectricenergyina8mconeoriginatingfromyouEachcreaturemustmakeaConstitutionsavingthrowOnafailedsaveacreaturetakesXd8lightningdamageorhalfasmuchdamageonasuccessfulone"
     },
     {
       "name": "Energy Drain",
@@ -918,7 +935,8 @@
         "Improved Damage : Increase the damage die type to d6.",
         "Improved Regen : You get Shield Points equal to your damage roll."
       ],
-      "class_list": "Engineer, Sentinel"
+      "class_list": "Engineer, Sentinel",
+      "mechanic_text_dump": "YouusetechpointstocycleyourOmnitoolsappingelectromagneticenergyfromacreatureyoucanseewithinrangeMakearangedspellattackagainstthetargetOnahitthetargettakesXd4lightningdamagewhereXistheamountoftechpointsyouspentandyougainshieldpointsequaltohalfofthedamagedone"
     },
     {
       "name": "First Aid",
@@ -963,7 +981,8 @@
         "Adaptive : The healed creature gains resistance to the last damage type it suffered. This effect lasts for 1 minute.",
         "Improved Healing : Increase the healing die type to d8"
       ],
-      "class_list": "Engineer, Infiltrator, Sentinel"
+      "class_list": "Engineer, Infiltrator, Sentinel",
+      "mechanic_text_dump": "SpendXtechpointstoinjectafriendlycreaturewithnanobotsthatreducepainandhealinternalinjuriesThecreaturegainshitpointsequaltoXd8yourTechmodifier"
     },
     {
       "name": "Flamethrower",
@@ -1008,7 +1027,8 @@
         "Concentrated Burn : Increase the damage to d12 and the distance to 12m, but the area-of-effect is now a line instead of a cone.",
         "Exhaust : The flames leave behind a thick smoke for 1 turn. Creatures have disadvantage while making ranged weapon attacks against you until the start of your next turn."
       ],
-      "class_list": "Engineer, Infiltrator, Sentinel"
+      "class_list": "Engineer, Infiltrator, Sentinel",
+      "mechanic_text_dump": "YouspendtechpointstooverloadyouromnitoolsacetylenetorchspewingflamesinfrontofyouEachcreaturewithinan8mconemustmakeaDexteritysavingthrowAcreaturetakesXd10firedamageonafailedsaveorhalfasmuchdamageonasuccessfulonewhereXisthenumberoftechpointsspent"
     },
     {
       "name": "Flare",
@@ -1058,7 +1078,8 @@
         "Improved Blind : Each creature is blinded no matter the result of its saving throw.",
         "Heat seeking flare : Instead of choosing 4 targets, you may instead choose 1. If you do so, the target has disadvantage on the saving throw. Increase the damage by 1d10."
       ],
-      "class_list": "Adept, Sentinel"
+      "class_list": "Adept, Sentinel",
+      "mechanic_text_dump": "Chooseupto4creaturesthatyoucanseewithinrangeFocusyourbioticsintoraysoflightthatseekoutthetargetsandexplodeEachcreaturemustmakeaDexteritysavingthrowOnafailedsaveacreatureisblindedforoneturnandtakesradiantdamageequalto6d10OnasuccessfulsaveacreaturetakeshalfdamageAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel4orhigherincreasethedamageby1d10foreachspellslotabovethe4th"
     },
     {
       "name": "Havoc Strike",
@@ -1108,7 +1129,8 @@
         "Improved Distance : You can jump up to 12m.",
         "Improved Radius : Increase the radius of the impact to 4m"
       ],
-      "class_list": "Soldier"
+      "class_list": "Soldier",
+      "mechanic_text_dump": "Asoneofyourattacksuseapropulsionjetbuiltintoyourlegarmortospringtoalocationwithin8mandstrikethegroundwithviolentforceEachcreaturewithina2mradiusofwhereyoulandmustmakeaDexteritysavingthrowDC8proficiencybonusSTRmodifierOnafailedsaveacreaturetakes3d12thunderdamageorhalfasmuchonasuccessfuloneYoumustfinishashortorlongrestbeforeyoucanuseHavokStrikeagain"
     },
     {
       "name": "Hawk Missile Launcher",
@@ -1158,7 +1180,8 @@
         "Anti-Shield : The missile detonates a small EMP, transforming the damage to lightning.",
         "Improved Damage : Increase the damage to 5d10"
       ],
-      "class_list": "Soldier"
+      "class_list": "Soldier",
+      "mechanic_text_dump": "AsanattackactivateyourpersonalshouldercannontheHawkMissileLauncherThisattackautomaticallyhitsatargetwithinrangedealing3d10thunderdamageYoumustfinishashortrestbeforeyoucanusethisfeatureagain"
     },
     {
       "name": "Hex Shield",
@@ -1213,7 +1236,8 @@
         "Hearty Shield : Increase the shield's hit points to 100.",
         "Large Shield : The Shield covers a 4m wide area."
       ],
-      "class_list": "Soldier"
+      "class_list": "Soldier",
+      "mechanic_text_dump": "YoutossaportableshieldgeneratorontothegroundinfrontofyouItgenerates2mtallandwidehexagonshapedshieldwith5ACand50shieldpointsTheseshieldpointsdonotregenerateduringcombatandtheshielddissipateswhenitnolongerhasanyshieldpointsleftTheshieldprovidesfullcovertocreaturesbehinditHexshieldregainsallshieldpointsonashortrest"
     },
     {
       "name": "Incinerate",
@@ -1258,7 +1282,8 @@
         "Frozen Combo : Deal double damage to frozen targets.",
         "Radial Blast : On a miss, the target creature takes half the damage."
       ],
-      "class_list": "Engineer, Infiltrator, Sentinel"
+      "class_list": "Engineer, Infiltrator, Sentinel",
+      "mechanic_text_dump": "YouusetechpointstohurlahighexplosiveplasmaroundatacreatureorobjectwithinrangeMakearangedspellattackagainstthetargetOnahitthetargettakesXd10firedamagewhereXisthenumberoftechpointsyouspentAflammableobjecthitbythisspellignitesifitisntbeingwornorcarried"
     },
     {
       "name": "Invasion",
@@ -1313,7 +1338,8 @@
         "Total Control : You take the the hacked synthetic's action. You may use it's spells and abilities.",
         "Damage : While the synthetic is hacked, it takes 2d6 shock damage at the end of it's turn. This damage does not proc an opportunity to end Invasion."
       ],
-      "class_list": "Engineer, Infiltrator"
+      "class_list": "Engineer, Infiltrator",
+      "mechanic_text_dump": "Spend3techpointspercreaturesizeandchooseasyntheticwithin20meg3techpointsforsmall6techpointsformedium9techpointsforlargeThesyntheticmustsucceedonanIntelligencesavingthroworbecomeshackedconsideredcharmedAhackedsyntheticwontattackfriendlycreaturesandcantusespellsorabilitiesOnitsturnthehackedsyntheticattackstheclosesthostilecreaturemakingrangedweaponattackormeleeattackifitdoesnothaveaweaponIfitdoesnthaveaweaponandtherearenohostilecreatureswithinmeleerangethehackedsyntheticusesitsturntodashtowardstheclosesthostilecreatureEachtimethesynthetictakesdamageitmakesanewIntelligencesavingthrowagainstthespellIfthesavingthrowsucceedsthespellends"
     },
     {
       "name": "Lance",
@@ -1363,7 +1389,8 @@
         "Anti-Shield : Damage type become lightning (double damage to shields)",
         "Improved Damage : Increase the damage die type to d12."
       ],
-      "class_list": "Adept, Sentinel, Vanguard"
+      "class_list": "Adept, Sentinel, Vanguard",
+      "mechanic_text_dump": "MakearangedspellattackonacreatureyoucanseewithinrangeOnahitreleasealanceofenergythatdealsforcedamageequalto1d8yourbioticmodifierAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel2orhigherthedamageincreasesby1d8foreachslotlevelabovethe1st"
     },
     {
       "name": "Lash",
@@ -1414,7 +1441,8 @@
         "Improved Grapple : The grappled creature has disadvantage when trying to escape.",
         "Improved Damage : Increase the damage die type to d8."
       ],
-      "class_list": "Adept, Vanguard"
+      "class_list": "Adept, Vanguard",
+      "mechanic_text_dump": "ConsumebarriertickstocreateawhipofbioticenergyEachbarriertickconsumedincreasestherangeofthewhipby2mTargetacreatureyoucanseewithintheresultingrangeThetargettakes2d6forcedamageandbecomesgrappledToescapethegrapplethecreaturemustsucceedonacontestedStrengthAthleticsagainstyourConstitutionAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d6foreachslotlevelabovethe2nd"
     },
     {
       "name": "Lift",
@@ -1464,7 +1492,8 @@
         "Heavy Lift : Increase the die type for Lift to d12.",
         "Control : While the target is lifted, you can use your action to move the target up to 10m."
       ],
-      "class_list": "Adept, Vanguard"
+      "class_list": "Adept, Vanguard",
+      "mechanic_text_dump": "ThisspellcreatesanegativemasseffectfieldaroundatargetcreatureRoll5d8IfthetotalrollisgreaterthanorequaltothehitpointsofthetargetedcreatureitbecomesliftedAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel2orhigheradd2d8totherollforeachlevelabovethefirst"
     },
     {
       "name": "Neural Shock",
@@ -1509,7 +1538,8 @@
         "Damage: A creature takes Xd6 psychic damage on a failed save or half as much damage on a successful one where X is the number of tech points spent.",
         "Paralyze : If a creature fails the saving throw, it is paralyzed for 1 turn."
       ],
-      "class_list": "Engineer, Infiltrator"
+      "class_list": "Engineer, Infiltrator",
+      "mechanic_text_dump": "YouusetechpointstoflashanionlaseratanorganiccreaturewithinrangeThecreaturemakesaConstitutionsavingthrowTheDCofthisthrowisincreasedby1foreachtechpointspentOnafailedsavethecreaturehasdisadvantageonthenextmeleeorrangedattackitmakes"
     },
     {
       "name": "Nightshade Blades",
@@ -1555,7 +1585,8 @@
         "Paralyze : In addition to being poisoned, the creature is paralyzed until the start of your next turn.",
         "Improved Poison : The creature has disadvantage on it's Constitution saving throw."
       ],
-      "class_list": "Cabal Vanguard only"
+      "class_list": "Cabal Vanguard only",
+      "mechanic_text_dump": "YourOmnitoolisequippedwithmicroscopicpoisontippedbladesthatareabletopiecethroughshieldsandarmorTouseablademakearangedweaponattackonanorganiccreatureyoucanyouaddyourproficiencybonustothisrollOnahitthetargettakes1d12poisondamageandmustsucceedonaConstitutionsavingthroworbecomespoisonedYoumustbewithinmeleerangeanduseanactiontorecovertheblade"
     },
     {
       "name": "Nova",
@@ -1605,7 +1636,8 @@
         "Improved Damage : Increase the damage die to d10.",
         "Half Blast : You can cast Nova, you cause up to 2 blasts. Each blast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. If you have not used all of your movement, you can move in between the blasts."
       ],
-      "class_list": "Vanguard"
+      "class_list": "Vanguard",
+      "mechanic_text_dump": "TransfertheenergyofyourbarrierintoabioticexplosionconsumingyourremainingbarrierticksCreatureswithina2mspherecenteredonyoumustmakeaDexteritysavingthrowOnafailedsaveacreatureisknockedproneandtakesforcedamageequaltoXd6whereXisthenumberofbarrierticksOnasuccessfulsaveacreaturetakeshalfasmuchdamageWhenyoucastthisspellusingaspellslotof2ndlevelorhighertheradiusoftheexplosionincreasesby2mforeachlevelabovethe1st"
     },
     {
       "name": "Overload",
@@ -1655,7 +1687,8 @@
         "Extended Leap : Overload can leap to targets within 10m.",
         "Quad Leap : Overload can leap to five additional targets, but deals 1d4 damage."
       ],
-      "class_list": "Engineer, Infiltrator, Sentinel"
+      "class_list": "Engineer, Infiltrator, Sentinel",
+      "mechanic_text_dump": "YouusetechpointstounleashanelectrostaticdischargeatacreatureorobjectwithinrangeThreeboltsthenleapfromthattargettoasmanyasthreeothertargetseachofwhichmustbewithin6mofthefirsttargetAtargetcanbeacreatureoranobjectandcanbetargetedbyonlyoneoftheboltsAtargetmustmakeaDexteritysavingthrowThetargettakesXd4lightningdamageonafailedsaveorhalfasmuchonasuccessfulonewhereXisthenumberoftechpointsyouspent"
     },
     {
       "name": "Phase Disruptor",
@@ -1705,7 +1738,8 @@
         "Improved Damage : Increase the damage die type to d12",
         "Cripple : Creature's hit by Phase Disruptor have disadvantage on their next attack roll."
       ],
-      "class_list": "Adept, Vanguard"
+      "class_list": "Adept, Vanguard",
+      "mechanic_text_dump": "YoufocustheenergyofyourbarrierintoahighpoweredbeamatatargetcreatureorobjectwithinrangeRemove1barriertickandmakearangedspellattackonthattargetOnahitthecreaturetakes1d8forcedamageAhigherlevelsyoumayuseadditionalbarriertickstocreatemorethanonebeamtwobeamsat5thlevelthreebeamsat11thlevelandfourbeamsat17thlevelYoucandirectthebeamsatthesametargetoratdifferentonesMakeaseparateattackrollforeachbeam"
     },
     {
       "name": "Poison Strike",
@@ -1750,7 +1784,8 @@
         "Paralyze : Organic creatures that fail their Dexterity saving throw also must succeed on a Constitution saving throw or be paralyzed for 1 turn.",
         "Double Dash : You can break up your dash into two 5m dashes, changing direction between dashes."
       ],
-      "class_list": "Cabal Vanguard only"
+      "class_list": "Cabal Vanguard only",
+      "mechanic_text_dump": "Chooseatargetlocationwithin10mYouencaseyourselfinabioticbarrierandslashthroughallcreaturesandobjectsbetweenyouandthetargetlocationEachcreaturewithin2mofthelinemustmakeaDexteritysavingthrowOnafailedsaveacreaturetakes3d6poisondamageorhalfasmuchdamageonasuccessfuloneWhileyouperformthismaneuverhostilecreaturescannotmakeopportunityattacksonyou"
     },
     {
       "name": "Pull",
@@ -1805,7 +1840,8 @@
         "Magician: You can shape and guide pull to add different trajectories to the object. The direction of pull cannot change, but you can add arcs, decrease the distance the object moves, and even pull small objects directly into your hand.",
         "Push: You may choose to move the target towards or away from you."
       ],
-      "class_list": "Adept, Sentinel, Vanguard"
+      "class_list": "Adept, Sentinel, Vanguard",
+      "mechanic_text_dump": "YoucreateanegativemasseffectfieldaroundacreatureorobjectyoucanseewithinrangethenjerkthefieldsharplytowardsyoubringingthetargetwithitLargesizedandlargertargetsareunaffectedThedistancethetargettravelsisbasedonitssizestartingat2mformediumsizedobjectsandadding4mforeachsizesmallthanmediumEgMedium2mSmall6mTiny10metcIfattemptingtopullanobjectfromanothercreaturethecreaturemustpassaStrengthsavingthrowtoretainpossessionoftheobjectIfyoupullacreatureanditmovesmorethan2mitmustpassaDexteritysavingthroworbeknockedproneThenumberoftargetsincreaseby1whenyoureachthe5thlevel211thlevel3and17thlevel4"
     },
     {
       "name": "Reave",
@@ -1856,7 +1892,8 @@
         "Distance : Increase the range of Reave to 10m.",
         "Armor boost : The dark energy heightens your senses momentarily. When you cast Reave, gain +1AC until the start of your next turn."
       ],
-      "class_list": "Adept"
+      "class_list": "Adept",
+      "mechanic_text_dump": "Unleashawaveofdarkbioticenergyina6mcubeEachcreaturewithintheblastmustmakeaConstitutionsavingthrowOnafailedsaveacreaturetakes1d12necroticdamageandhasdisadvantageontheirnextattackorsavingthrownAcreaturetakeshalfasmuchdamageonasuccessfulsaveAtHigherLevelsWhenyoucastthisspellusingaspellslotof3rdlevelorhigherincreasethedamageby1d12foreachlevelabovethesecond"
     },
     {
       "name": "Sabotage",
@@ -1902,7 +1939,8 @@
         "Multi-Weapon : You can target 3 weapons at once.",
         "Disable : After the weapon fires, it becomes jammed. It cannot be fired again until it is reloaded."
       ],
-      "class_list": "Engineer, Infiltrator"
+      "class_list": "Engineer, Infiltrator",
+      "mechanic_text_dump": "Spend1techpointsandmakearangedtechattackonaweaponyoucanseewithin20mDC10Onahitthenextcreaturetousethatweapontomakearangedattackhasdisadvantageontheattackroll"
     },
     {
       "name": "Sentry Turret",
@@ -1964,7 +2002,8 @@
         "Power Turret : Increase the damage die for the flame and ranged attack to a d12.",
         "Lasting Turret : Increase the die rolled for the turret's health to d12."
       ],
-      "class_list": "Engineer"
+      "class_list": "Engineer",
+      "mechanic_text_dump": "Spend5techpointstosetupasentryturretwithinmeleerangeTheturrethasHPequalto5d8yourlevelAttheendofyourturntheturretattacksItcontinuestoattackattheendofyourturnuntilitisdestroyedTheturrethas2possibleattacksYoumayselectwhichattacktheturretmakesShootflamesina6mconeinadirectionofyourchoosingEachcreaturewithintheconemustmakeaDexteritysavingthrowOnafailedsaveacreaturetakes2d8firedamageorhalfasmuchdamageonasuccessfuloneMakearangedweaponattackyourproficiencyonatargetofyourchoiceOnasuccessitdeals2d8thunderdamage"
     },
     {
       "name": "Shockwave",
@@ -2014,7 +2053,8 @@
         "Improved Distance : The shockwave travels 16m",
         "Improved Damage : Increase damage die type to d10"
       ],
-      "class_list": "Adept, Sentinel, Vanguard"
+      "class_list": "Adept, Sentinel, Vanguard",
+      "mechanic_text_dump": "Createacascadingshockwaveina10mlineoriginatingfromyouEachcreaturemustmakeaDexteritysavingthrowOnafailedsaveacreaturetakes2d8thunderdamageandisknockedproneOnasuccessfulsaveacreaturetakeshalfasmuchdamageAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel2orhigherthedamageincreasesby1d8foreachslotlevelabovethe1st"
     },
     {
       "name": "Siege Pulse",
@@ -2060,7 +2100,8 @@
         "Improved Pulse : Add your STR or DEX mod to the DC of the saving throw. You choose which one.",
         "Lingering Pulse : Creatures hit by siege pulse have disadvantage on melee and ranged attacks until the start of your next turn."
       ],
-      "class_list": "Soldier"
+      "class_list": "Soldier",
+      "mechanic_text_dump": "ReduceyourshieldcapacitorscausingaloudpainfullyintensekineticwavetoeruptfromyourlocationReduceyourshieldpointsby10Eachcreaturewithina4mspherebecomesdeafenedmustmakeConstitutionsavingthrowDC8yourproficiencybonusOnafailedsaveacreatureisincapacitateduntilthestartofyournextturnOnasuccessfulsaveacreaturetakes2ddpsychicdamage"
     },
     {
       "name": "Singularity",
@@ -2111,7 +2152,8 @@
         "Heavy Singularity: When a creature affected by this power makes a DEX or STR save to avoid its pull, they make that save at disadvantage.",
         "Damage : A hostile creature that enters the sphere for the first time on a turn or ends its turn there is takes 1d4 necrotic damage."
       ],
-      "class_list": "Adept"
+      "class_list": "Adept",
+      "mechanic_text_dump": "Createanegativemasseffectfieldina4msphereatatargetlocationwithinrangeEachhostilecreaturewithinthespheresradiusmustsucceedonaDexteritysavingthroworbecomesliftedOnlycreaturesofamediumsizeorlessareaffectedAnycreaturethatcomeswithin2mofthespheremustsucceedonaStrengthAthleticsorDexterityAgilitycheckortheyaredrawnintothesphereandbecomeliftedWhenyoucastthisspellusingaspellslotof3rdlevelorhigherincreasethesizeofthesphereby2mperspellslotabovethe2nd"
     },
     {
       "name": "Slam",
@@ -2161,7 +2203,8 @@
         "Stun : The creature must pass a Constitution saving throw or stunned for 1 round.",
         "Improved Damage : Increase the damage die type to d12"
       ],
-      "class_list": "Adept, Sentinel, Vanguard"
+      "class_list": "Adept, Sentinel, Vanguard",
+      "mechanic_text_dump": "Targetaliftedobjectandslamittothegrounddealingforcedamageequalto1d8doubleyourbioticmodifierThetargetisnolongerliftedbutisproneThenumberoftargetsincreasesby1whenyoureach5thlevel211thlevel3and17thlevel4"
     },
     {
       "name": "Slow Fall",
@@ -2206,7 +2249,8 @@
         null,
         null
       ],
-      "class_list": "Adept, Vanguard"
+      "class_list": "Adept, Vanguard",
+      "mechanic_text_dump": "Whenyouoracreaturewithin10mofyoufallschooseuptofivefallingcreatureswithinrangeCreateanegativemasseffectfieldaroundeachcreatureslowingtherateofdescentto20mperroundIfthecreaturelandsbeforethespellendsittakesnoFallingdamageandcanlandonitsfeetandthespellendsforthatcreature"
     },
     {
       "name": "Stasis",
@@ -2252,7 +2296,8 @@
         "Vulnerable : A creature in Stasis takes +2 damage from all damage rolls.",
         "Weakened : A creature in Stasis has -2 AC."
       ],
-      "class_list": "Adept, Vanguard"
+      "class_list": "Adept, Vanguard",
+      "mechanic_text_dump": "LockatargetinahighgravitymasseffectfieldChooseacreatureyoucanseewithinrangeThecreaturemustmakeaStrengthsavingthrowOnafailedsavethecreatureisrestrainedCreaturesofhugesizeorlargerhaveadvantageonthesavingthrowAtthebeginningofthecreaturesturnitcanuseitsactiontomakethesavingthrowagain"
     },
     {
       "name": "Stimulant Pack",
@@ -2302,7 +2347,8 @@
         "Friendly : You can inject a creature within melee range with the stimulant pack",
         "Improved Attack : You can choose to apply the advantage to your next damage roll"
       ],
-      "class_list": "Infiltrator, Soldier"
+      "class_list": "Infiltrator, Soldier",
+      "mechanic_text_dump": "AsabonusactioninjectyourselfwithastimulantpackYouhaveadvantageonthenextDexterityStrengthorConstitutionsavingthrowYoumustfinishashortorlongrestbeforeyoucanusethisfeatureagainAnInfiltratorcantakethisabilityinsteadoflearningatechpower"
     },
     {
       "name": "Submission Net",
@@ -2359,7 +2405,8 @@
         "Shock : You can electrify the net as a bonus action the first time you cast Submission net.",
         "Improved Grip : Increase the DC to break free of the net by 3."
       ],
-      "class_list": "Engineer, Infiltrator, Sentinel"
+      "class_list": "Engineer, Infiltrator, Sentinel",
+      "mechanic_text_dump": "Spend2techpointstoshootaswarmofminiaturepylonstoatargetlocationwithin20mThepylonsforma4mcylinderatthechosenlocationcreatedanelectrifiednewCreatureswithinthenetcannotcasttechToescapeacreaturemustsucceedonaStrengthAthleticscheckormustremaintrappedinthenetIfacreaturedoesbreakfreeittakes1d6lightningdamageIfyouhaveasubmissionnetdeployedyoucanspendXTPtosendelectriccurrentsthroughitEachcreaturewithinthenetmakesaConstitutionsavingthrowOnafailedsaveacreaturetakesXd6lightningdamageorhalfasmuchonasuccessfulone"
     },
     {
       "name": "Tactical Scan",
@@ -2409,7 +2456,8 @@
         "Area Scan : Scan a 6m cube. You gain the advantage and critical bonus on all creatures within the area.",
         "Telegraphed Attacks : You're hud alerts you when the creature is about to attack. It has disadvantage on ranged and melee attacks and you have advantage on any saving throws caused by spells and abilities of the creature."
       ],
-      "class_list": "Engineer, Infiltrator, Soldier"
+      "class_list": "Engineer, Infiltrator, Soldier",
+      "mechanic_text_dump": "SpendyouractionscanningacreatureyourcanseewithyouromnitoolstudyingitsmovementandrevealingweaknessesYourattacksagainstthetargethaveadvantageandnatural19and20sareconsideredcriticalhitsThisabilitycanstackwithothercriticalimprovingpowersYoumayusethisabilitythreetimesbeforeyoufinishashortorlongrestEngineersandInfiltratorscanlearnandadvancethisabilityinsteadoflearningatechpower"
     },
     {
       "name": "Throw",
@@ -2459,7 +2507,8 @@
         "Improved Force : Throw is so forceful, it lifts the target off the ground when knocking it back. Targets must pass a Dexterity saving throw or are knocked prone.",
         "Improved Damage : Increase the damage die type to d6"
       ],
-      "class_list": "Adept, Sentinel, y Vanguard only"
+      "class_list": "Adept, Sentinel, y Vanguard only",
+      "mechanic_text_dump": "MakearangedspellattackonatargetyoucanseewithinrangeOnahithurlthetargetbackwards10manddealforcedamageequalto1d4yourbioticmodifierAthigherlevelsThisspellsdamageincreasesby1d4whenyoureach5thlevel2d411thlevel3d417thlevel4d4"
     },
     {
       "name": "Turbocharge",
@@ -2504,7 +2553,8 @@
         "Quick Charge : You can activate and deactivate Turbocharge as a bonus action.",
         "Improved Charge :  Increase your weapon's rate of fire by 4."
       ],
-      "class_list": "Soldier"
+      "class_list": "Soldier",
+      "mechanic_text_dump": "InsertaspecializedthermalclipthatconnectstoyouramorskineticbarrierTheweaponsrateoffireisincreasedby2TheweaponnolongerneedstobereloadedinsteadeachrangedweaponattackreducesyourshieldpointsbyanamountequaltotheweaponsrateoffireWhileturbochargeisactiveyoumoveathalfyourspeedroundeddownandyouhavedisadvantageonDexteritysavingthrowsYoucanuseanactiontocancelTurbochargeremovingthethermalclipandreloadingyourweaponotherwiseitlastsuntilyourshieldpointsarereducedto0Youmustfinishashortorlongrestbeforeyoucanusethisabilityagain"
     },
     {
       "name": "Unity",
@@ -2549,7 +2599,8 @@
         "Unrestricted : There is no limit to the amount of TP you may spend on this ability.",
         "Quick : You can use Unity as a bonus action."
       ],
-      "class_list": ""
+      "class_list": "",
+      "mechanic_text_dump": "YouspendXtechpointstoreviveacreaturethathasgoneunconsciousordiedwithinthelastminuteThatcreaturereturnstoconsciousnessorlifewithhitpointsequaltoXd4yourproficiencybonus"
     },
     {
       "name": "Warp",
@@ -2599,7 +2650,8 @@
         "Bleed : The shifting causes internal bleeding. At the start of your turn, the target 1d6 necrotic damage until it is stabilized or knocked unconscious.",
         "Poison : You localize the mass effect field on the target's center mass, causing queasiness. The target must pass a constitution saving throw or becomes poisoned."
       ],
-      "class_list": "Adept, Sentinel, Vanguard"
+      "class_list": "Adept, Sentinel, Vanguard",
+      "mechanic_text_dump": "MakearangedspellattackonanorganiccreatureyoucanseewithinrangeOnahityougeneratearapidlyshiftingmasseffectfieldinsidethetargetdealingnecroticdamageequalto3d6youbioticmodifierThisdamagebypassesshieldsAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d6foreachslotlevelabovethe2nd"
     }
   ]
 }

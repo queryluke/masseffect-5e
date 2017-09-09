@@ -91,7 +91,6 @@
         ],
         sortKey: 'name',
         sortOrder: 1,
-        dummy: false
       };
     },
     created() {

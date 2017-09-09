@@ -1,5 +1,5 @@
 {
-  "updated": "September  9, 2017 @ 10:06 AM",
+  "updated": "September  9, 2017 @  5:38 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRBAZH9BXc9xIj62i-StAKv08-iNSQSUyiWjz7TrVqcjEVe-uDaFIy9a4zRxYchDikCsskcNf-vexsG/pubhtml",
   "data": [
     {
@@ -16,7 +16,8 @@
           "data": "Target an area within 10m. Each creature within 4m of the target must make a Dexterity saving throw (DC 13). A creature takes 3d6 lightening damage on a failed save, or half as much damage on a successful one. Arc Grenade deals double damage to shields."
         }
       ],
-      "id": "arc-grenade"
+      "id": "arc-grenade",
+      "desc_text_dump": "Targetanareawithin10mEachcreaturewithin4mofthetargetmustmakeaDexteritysavingthrowDC13Acreaturetakes3d6lighteningdamageonafailedsaveorhalfasmuchdamageonasuccessfuloneArcGrenadedealsdoubledamagetoshields"
     },
     {
       "name": "Cluster Grenade",
@@ -32,7 +33,8 @@
           "data": "Target an area within 10m. Each creature within 6m of the target must make a Dexterity saving throw (DC 16). A creature takes 2d6 thunder damage on a failed save, or half as much damage on a successful one."
         }
       ],
-      "id": "cluster-grenade"
+      "id": "cluster-grenade",
+      "desc_text_dump": "Targetanareawithin10mEachcreaturewithin6mofthetargetmustmakeaDexteritysavingthrowDC16Acreaturetakes2d6thunderdamageonafailedsaveorhalfasmuchdamageonasuccessfulone"
     },
     {
       "name": "Flashbang Grenade",
@@ -48,7 +50,8 @@
           "data": "Target an area within 10m. Each creature within 4m of the target must make a Constitution saving throw (DC 13). On a failed save, a creature is {blinded} until the end of your next turn."
         }
       ],
-      "id": "flashbang-grenade"
+      "id": "flashbang-grenade",
+      "desc_text_dump": "Targetanareawithin10mEachcreaturewithin4mofthetargetmustmakeaConstitutionsavingthrowDC13Onafailedsaveacreatureisblindeduntiltheendofyournextturn"
     },
     {
       "name": "Frag Grenade",
@@ -64,7 +67,8 @@
           "data": "Target an area within 10m. Each creature within 4m of the target must make a Dexterity saving throw (DC 13). On a failed save, a creature takes 3d12 piercing damage or half as much damage on a successful one."
         }
       ],
-      "id": "frag-grenade"
+      "id": "frag-grenade",
+      "desc_text_dump": "Targetanareawithin10mEachcreaturewithin4mofthetargetmustmakeaDexteritysavingthrowDC13Onafailedsaveacreaturetakes3d12piercingdamageorhalfasmuchdamageonasuccessfulone"
     },
     {
       "name": "Homing Grenade",
@@ -80,7 +84,8 @@
           "data": "Target a creature you can see within 10m. The target creature takes 1d6 thunder damage. Each other creature within 2m of the target must make a Dexterity saving throw. On a failed save, a creature takes 1d6 thunder damage or half as much on a successful one."
         }
       ],
-      "id": "homing-grenade"
+      "id": "homing-grenade",
+      "desc_text_dump": "Targetacreatureyoucanseewithin10mThetargetcreaturetakes1d6thunderdamageEachothercreaturewithin2mofthetargetmustmakeaDexteritysavingthrowOnafailedsaveacreaturetakes1d6thunderdamageorhalfasmuchonasuccessfulone"
     },
     {
       "name": "Inferno Grenade",
@@ -96,7 +101,8 @@
           "data": "Target an area within 10m. Each creature within 4m of the target must make a Dexterity saving throw. On a failed save, a creature takes 3d4 fire or half as much on a successful one. The 4m area continues to burn for 1 minute.  A creature must also make the saving throw when it enters the burning space for the first time on a turn or ends its turn there."
         }
       ],
-      "id": "inferno-grenade"
+      "id": "inferno-grenade",
+      "desc_text_dump": "Targetanareawithin10mEachcreaturewithin4mofthetargetmustmakeaDexteritysavingthrowOnafailedsaveacreaturetakes3d4fireorhalfasmuchonasuccessfuloneThe4mareacontinuestoburnfor1minuteAcreaturemustalsomakethesavingthrowwhenitenterstheburningspaceforthefirsttimeonaturnorendsitsturnthere"
     },
     {
       "name": "Lift Grenade",
@@ -112,7 +118,8 @@
           "data": "Target an area within 10m. Each creature within 4m of the target must make a Dexterity saving throw. On a failed save, a creature is {lifted} until the end of your next turn."
         }
       ],
-      "id": "lift-grenade"
+      "id": "lift-grenade",
+      "desc_text_dump": "Targetanareawithin10mEachcreaturewithin4mofthetargetmustmakeaDexteritysavingthrowOnafailedsaveacreatureislifteduntiltheendofyournextturn"
     },
     {
       "name": "Multi-frag Grenade",
@@ -128,7 +135,8 @@
           "data": "Target 3 areas within 10m. Each creature within 4m of each target must make a Dexterity saving throw. On a failed save, a creature takes 1d4 piercing damage or half as much on a successful one."
         }
       ],
-      "id": "multi-frag-grenade"
+      "id": "multi-frag-grenade",
+      "desc_text_dump": "Target3areaswithin10mEachcreaturewithin4mofeachtargetmustmakeaDexteritysavingthrowOnafailedsaveacreaturetakes1d4piercingdamageorhalfasmuchonasuccessfulone"
     },
     {
       "name": "Sticky Grenade",
@@ -149,7 +157,8 @@
           "data": "With a sticky grenade, you may choose to target a creature within 10m instead. Make Dexterity (Slieght of Hand) check against the creature's AC for a target within melee range or a ranged weapon attack (do not add your proficiency bonus unless you have the Grenadier feat) for targets beyond melee range. On a success, the grenade hits and sticks to the target, and when it explodes, the target automatically fails its saving throw. On a miss, the grenade lands in the creatures square."
         }
       ],
-      "id": "sticky-grenade"
+      "id": "sticky-grenade",
+      "desc_text_dump": "Targetanareawithin10mAtthebeginningofyournextturncreatureswithin4mofthetargetmustmakeaDexteritysavingthrowOnafailedsaveacreaturetakes3d6thunderdamageorhalfasmuchdamageonasuccessfuloneWithastickygrenadeyoumaychoosetotargetacreaturewithin10minsteadMakeDexteritySlieghtofHandcheckagainstthecreaturesACforatargetwithinmeleerangeorarangedweaponattackdonotaddyourproficiencybonusunlessyouhavetheGrenadierfeatfortargetsbeyondmeleerangeOnasuccessthegrenadehitsandstickstothetargetandwhenitexplodesthetargetautomaticallyfailsitssavingthrowOnamissthegrenadelandsinthecreaturessquare"
     },
     {
       "name": "Recon Mine",
@@ -185,7 +194,8 @@
           "data": "A successful ranged attack on the mine (AC 10) will cause it to explode"
         }
       ],
-      "id": "recon-mine"
+      "id": "recon-mine",
+      "desc_text_dump": "Launchareconminetoalocationofyourchoicewithin10mItfirststickstothetargetlocationthenscansenemieswithina10mconerelayingtacticalweakpointsabouttheenemysarmorandlocationAfteryourturnendsanyhostilethatwalksthroughthescanningconeloses1ACEachcreaturecanonlybeaffectedbythisdebuffonceYoumayspendanotheractiontodetonatethemineEachcreaturewithin2mmustmakeaDexteritysavingthrowOnafailedsaveacreaturetakes2d4thunderdamageorhalfasmuchdamageonasuccessfuloneEachcreaturethatdidnotnoticetheminehasdisadvantageonissavingthrowCreaturesneedtopassaPerceptioncheckDC10tonoticethemineCreaturesneedtopassaHackingcheckyourspellsaveDCtodisarmitFailingthehackingcheckwillcausetheminetoexplodeThecreaturethatmadethehackingcheckhasdisadvantageonitssavingthrowAsuccessfulrangedattackonthemineAC10willcauseittoexplode"
     },
     {
       "name": "Proximity Mine",
@@ -216,7 +226,8 @@
           "data": "A successful ranged attack on the mine (AC 10) will cause it to explode."
         }
       ],
-      "id": "proximity-mine"
+      "id": "proximity-mine",
+      "desc_text_dump": "PlaceaproximitymineThefirstcreaturethatcomeswithin2moftheminetakes1d8thunderdamageCreaturesneedtopassaPerceptioncheckDC10tonoticethemineCreaturesneedtopassaHackingcheckyourspellsaveDCtodisarmitFailingthehackingcheckwillcausetheminetoexplodeThecreaturethatmadethehackingcheckhasdisadvantageonitssavingthrowAsuccessfulrangedattackonthemineAC10willcauseittoexplode"
     },
     {
       "name": "Cain Trip Mine",
@@ -247,7 +258,8 @@
           "data": "A successful ranged attack on the mine (AC 10) will cause it to explode"
         }
       ],
-      "id": "cain-trip-mine"
+      "id": "cain-trip-mine",
+      "desc_text_dump": "LaunchaCainTripMinetoapointyoucanseewithin20mThemineaffixestoasolidsurfaceandprojectsabeam6mtripwireWhenacreatureorobjectpassesthroughthetripwirethemineexplodesAnycreaturewithina2mspheremustmakeaDexteritysavingthrowAcreaturetakes2d12thunderdamageonafailedsaveorhalfasmuchdamageonasuccessfuloneEachcreaturethatdidnotnoticetheminehasdisadvantageonissavingthrowCreaturesneedtopassaPerceptioncheckDC10tonoticethemineCreaturesneedtopassaHackingcheckyourspellsaveDCtodisarmitFailingthehackingcheckwillcausetheminetoexplodeThecreaturethatmadethehackingcheckhasdisadvantageonitssavingthrowAsuccessfulrangedattackonthemineAC10willcauseittoexplode"
     }
   ]
 }

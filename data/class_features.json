@@ -1,5 +1,5 @@
 {
-  "updated": "September  9, 2017 @ 12:01 AM",
+  "updated": "September  9, 2017 @  5:38 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -12,7 +12,8 @@
           "data": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. You can't increase an ability score above 20 using this feature. You may instead take a Feat available to your race."
         }
       ],
-      "id": "ability-score-improvement"
+      "id": "ability-score-improvement",
+      "mechanic_text_dump": "Youcanincreaseoneabilityscoreofyourchoiceby2oryoucanincreasetwoabilityscoresofyourchoiceby1Youcantincreaseanabilityscoreabove20usingthisfeatureYoumayinsteadtakeaFeatavailabletoyourrace"
     },
     {
       "name": "Adrenaline Rush",
@@ -29,7 +30,8 @@
           "data": "Starting at the 17th level, you can use this ability twice per short rest but not more than once in a single turn."
         }
       ],
-      "id": "adrenaline-rush"
+      "id": "adrenaline-rush",
+      "mechanic_text_dump": "OnyourturnyoucaninjectyourselfwithashotofadrennalinepushingyourselfbeyondyournormallimitsforamomentYoucantakeoneadditionalactionontopofyourregularactionandapossiblebonusactionOnceyouusethisfeatureyoumustfinishashortorlongrestbeforeyoucanuseitagainStartingatthe17thlevelyoucanusethisabilitytwicepershortrestbutnotmorethanonceinasingleturn"
     },
     {
       "name": "Advanced Tech Armor",
@@ -41,7 +43,8 @@
           "data": "Starting at the 20th level, you're able to improve your Tech Armor's defense to seemingly supernatural capabilities. While Tech Armor is active, you gain +3 AC and have resistance to all damage types."
         }
       ],
-      "id": "advanced-tech-armor"
+      "id": "advanced-tech-armor",
+      "mechanic_text_dump": "Startingatthe20thlevelyoureabletoimproveyourTechArmorsdefensetoseeminglysupernaturalcapabilitiesWhileTechArmorisactiveyougain3ACandhaveresistancetoalldamagetypes"
     },
     {
       "name": "Advanced Weapon Holsters",
@@ -53,7 +56,8 @@
           "data": "Your carry capacity is equal to your strength + your level"
         }
       ],
-      "id": "advanced-weapon-holsters"
+      "id": "advanced-weapon-holsters",
+      "mechanic_text_dump": "Yourcarrycapacityisequaltoyourstrengthyourlevel"
     },
     {
       "name": "Assault Armor",
@@ -65,7 +69,8 @@
           "data": "Starting at the 2nd level, your Tech Armor is rigged for maximum protection and keeping the action on you. While Tech Armor is active, it projects a distracting holographic image (your choice). The first time a hostile creature makes an attack after you activate Tech Armor, it must pass a Wisdom (Insight) check (DC your spell save). On a failure, the creature is compelled to attack you while your Tech Armor is active. Synthetic creatures have advantage on this check."
         }
       ],
-      "id": "assault-armor"
+      "id": "assault-armor",
+      "mechanic_text_dump": "Startingatthe2ndlevelyourTechArmorisriggedformaximumprotectionandkeepingtheactiononyouWhileTechArmorisactiveitprojectsadistractingholographicimageyourchoiceThefirsttimeahostilecreaturemakesanattackafteryouactivateTechArmoritmustpassaWisdomInsightcheckDCyourspellsaveOnafailurethecreatureiscompelledtoattackyouwhileyourTechArmorisactiveSyntheticcreatureshaveadvantageonthischeck"
     },
     {
       "name": "Battlemaster",
@@ -87,7 +92,8 @@
           "data": "Starting at the 14th level, when you cast a biotic spell, you can choose either advancement option"
         }
       ],
-      "id": "battlemaster"
+      "id": "battlemaster",
+      "mechanic_text_dump": "Startingatthe2ndlevelwhenyoucastacantripyoucanchooseeitheradvancementoptionStartingatthe10thlevelwhenyoucasttechpowersyoucanchooseeitheradvancementoptionStartingatthe14thlevelwhenyoucastabioticspellyoucanchooseeitheradvancementoption"
     },
     {
       "name": "Bend Luck",
@@ -109,7 +115,8 @@
           "data": "You can use Bend Luck a number of times equal to half of your Adept level (minimum 1) before you finish a long rest."
         }
       ],
-      "id": "bend-luck"
+      "id": "bend-luck",
+      "mechanic_text_dump": "YouvemasteredtheartofusingsmallmasseffectfieldstoslightlyaltertheoutcomeofothercreaturesactionsItmightbeasmallburstunderthemuzzleofaguntothrowofftheattackersaimOrnegativefieldaroundafriendlycreatureasleapsawayfromagrenademovingitoutofdamageswayWhenanothercreatureyoucanseemakesanattackrollanabilitycheckorasavingthrowyoucanuseyourreactiontoroll1d4andapplythenumberrolledasabonusorpenaltyyourchoicetothecreaturesrollYoucandosoafterthecreaturerollsbutbeforeanyeffectsoftherolloccurYoucanuseBendLuckanumberoftimesequaltohalfofyourAdeptlevelminimum1beforeyoufinishalongrest"
     },
     {
       "name": "Biotic Concentration",
@@ -126,7 +133,8 @@
           "data": "Once you use this feature, you can't use it again until you finish a short or long rest."
         }
       ],
-      "id": "biotic-concentration"
+      "id": "biotic-concentration",
+      "mechanic_text_dump": "Startingatthe14thlevelyoucanpushyourbioticimplanttothelimitIfyouarealreadymaintainingaconcentrationspellyoucancastanotherspellthatrequiresconcentrationandmaintainitIfyoutakedamageyoumustmake2ConstitutionsavingthrowstomaintainthespellsOnceyouusethisfeatureyoucantuseitagainuntilyoufinishashortorlongrest"
     },
     {
       "name": "Biotic Control",
@@ -148,7 +156,8 @@
           ]
         }
       ],
-      "id": "biotic-control"
+      "id": "biotic-control",
+      "mechanic_text_dump": "Atthe14thlevelyouveincreaseyourmasterywithbioticspellsthatcontrolthebattlefieldGainthefollowingbenefitstothespellsbelowlistPullPullcanaffectlargesizedobjectsmovingthem2mandadding4mtoeachsizebelowlargeLiftWhenyoucastLiftand5moredicetoyourrollSingularityLargesizedobjectcannowbeaffectedbysingularityStasisTargetshavedisadvantageontheirsavingthrowlist"
     },
     {
       "name": "Biotic Focus",
@@ -170,7 +179,8 @@
           ]
         }
       ],
-      "id": "biotic-focus"
+      "id": "biotic-focus",
+      "mechanic_text_dump": "Atthe14thlevelyoucanuseabonusactiontofocusyourbioticenergiesintoyourmusclesgrantingadditionalspeedandstrengthYougainthefollowingbenefitsfor1minutelistYourspeedisdoubled4toallmeleeweapondamagerollsYouhaveadvantageonStrengthDexteritysavingthrowsOnceyouusethisfeatureyoucantuseitagainuntilyoufinishalongrestlist"
     },
     {
       "name": "Biotic Maneuvers",
@@ -239,7 +249,8 @@
           }
         }
       ],
-      "id": "biotic-maneuvers"
+      "id": "biotic-maneuvers",
+      "mechanic_text_dump": "YoulearnmaneuversthatarefueledbyyourbarrierticksYoucanuseonlyonemaneuverperattackSomeofyourmaneuversrequireyourtargettomakeasavingthrowtoresistthemaneuverseffectsThesavingthrowDCis8yourproficiencybonusyourCharismamodifierAtlevel3learn2maneuversAtlevel14learn2moremaneuverstableNameManeuverDisarmingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktodisarmthetargetforcingittodroponeitemofyourchoicethatitsholdingYouaddthebarriertickdietotheattacksdamagerollandthetargetmustmakeaStrengthsavingthrowOnafailedsaveitdropstheobjectyouchooseTheobjectlandsatitsfeetDistractingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktodistractthecreaturegivingyouralliesanopeningYouaddthebarrierticktotheattacksdamagerollThenextattackrollagainstthetargetbyanattackerotherthanyouhasadvantageiftheattackismadebeforethestartofyournextturnFeintingAttackYoucanexpendonebarriertickanduseabonusactiononyourturntofeintchoosingonecreaturewithin2mofyouasyourtargetYouhaveadvantageonyourmeleenextattackrollagainstthatcreatureIfthatattackhitsaddthebarrierticktotheattacksdamagerollGoadingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttogoadthetargetintoattackingyouYouaddthebarrierticktotheattacksdamagerollandthetargetmustmakeaWisdomsavingthrowOnafailedsavethetargethasdisadvantageonallattackrollsagainsttargetsotherthanyouuntiltheendofyournextturnLiftAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarriertickstoattempttoliftthetargetYouaddthebarrierticktotheattacksdamagerollandifthetargetisMediumorsmalleritmustmakeaDexteritysavingthrowOnafailedsavethetargetisliftedMenacingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttofrightenthetargetYouaddthebarrierticktotheattacksdamagerollandthetargetmustmakeaWisdomsavingthrowOnafailedsaveitisfrightenedofyouuntiltheendofyournextturnPushingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttodrivethetargetbackYouaddthebarrierticktotheattacksdamagerollandifthetargetisLargeorsmalleritmustmakeaStrengthsavingthrowOnafailedsaveyoupushthetargetupto8mawayfromyouRiposteWhenacreaturemissesyouwithameleeattackyoucanuseyourreactionandexpendonebarrierticktomakeameleeattackagainstthecreatureIfyouhityouaddthebarrierticktotheattacksdamagerollSweepingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttodamageanothercreaturewiththesameattackChooseanothercreaturewithin2moftheoriginaltargetandwithinyourreachIftheoriginalattackrollwouldhitthesecondcreatureittakesdamageequaltothenumberyourollonyourbarriertickThedamageisofthesametypedealtbytheoriginalattackTripAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttoknockthetargetdownYouaddthebarrierticktotheattacksdamagerollandifthetargetisLargeorsmalleritmustmakeaStrengthsavingthrowOnafailedsaveyouknockthetargetpronetable"
     },
     {
       "name": "Biotic Mastery",
@@ -256,7 +267,8 @@
           "data": "By spending 8 hours training, you can exchange one or both of the spells you chose for different spells of the same levels."
         }
       ],
-      "id": "biotic-mastery"
+      "id": "biotic-mastery",
+      "mechanic_text_dump": "At18thlevelyouhaveachievedsuchmasteryovercertainbioticsthatyoucancastthematwillChoosea1stlevelbioticspellanda2ndlevelbioticspellthatyouhavelearnedYoucancastthosespellsattheirlowestlevelwithoutexpendingaspellslotIfyouwanttocasteitherspellatahigherlevelyoumustexpendaspellslotasnormalByspending8hourstrainingyoucanexchangeoneorbothofthespellsyouchosefordifferentspellsofthesamelevels"
     },
     {
       "name": "Biotic Powers",
@@ -268,7 +280,8 @@
           "data": "Learn or advance your biotic powers. The first number indicates the number of new spells you can learn or advance. For example 2(3): you can either learn 2 new spells, advance 2 spells, or learn a spell and advance a spell. The second number indicates the max level of the spell you can learn or advance. In this example, you can learn or advance spells of level 3 or less, including cantrips. Though you can learn new cantrips this way, you cannot know more cantrips than allowed by your level (indicated on you class sheet)."
         }
       ],
-      "id": "biotic-powers"
+      "id": "biotic-powers",
+      "mechanic_text_dump": "LearnoradvanceyourbioticpowersThefirstnumberindicatesthenumberofnewspellsyoucanlearnoradvanceForexample23youcaneitherlearn2newspellsadvance2spellsorlearnaspellandadvanceaspellThesecondnumberindicatesthemaxlevelofthespellyoucanlearnoradvanceInthisexampleyoucanlearnoradvancespellsoflevel3orlessincludingcantripsThoughyoucanlearnnewcantripsthiswayyoucannotknowmorecantripsthanallowedbyyourlevelindicatedonyouclasssheet"
     },
     {
       "name": "Biotic Slash",
@@ -280,7 +293,8 @@
           "data": "Starting at 2nd level, when you hit a creature with a melee weapon attack, you can expend one spell slot to deal force damage to the target, in addition to the weapon's damage. The extra damage is 2d8 for a 1st-level spell slot, plus 1d8 for each spell level higher than 1st. The damage increases by 1d8 if the target is unshielded."
         }
       ],
-      "id": "biotic-slash"
+      "id": "biotic-slash",
+      "mechanic_text_dump": "Startingat2ndlevelwhenyouhitacreaturewithameleeweaponattackyoucanexpendonespellslottodealforcedamagetothetargetinadditiontotheweaponsdamageTheextradamageis2d8fora1stlevelspellslotplus1d8foreachspelllevelhigherthan1stThedamageincreasesby1d8ifthetargetisunshielded"
     },
     {
       "name": "Biotic Split",
@@ -292,7 +306,8 @@
           "data": "When you cast a biotic spell that targets only one creature, you can have it target a second creature."
         }
       ],
-      "id": "biotic-split"
+      "id": "biotic-split",
+      "mechanic_text_dump": "Whenyoucastabioticspellthattargetsonlyonecreatureyoucanhaveittargetasecondcreature"
     },
     {
       "name": "Biotic Surge",
@@ -309,7 +324,8 @@
           "data": "Once you use this feature, you can't use it again until you finish a short or long rest."
         }
       ],
-      "id": "biotic-surge"
+      "id": "biotic-surge",
+      "mechanic_text_dump": "Startingat6thlevelyoucanempoweryourbioticsthatunleashharmongroupsoffoesWhenyouforcemultiplecreaturestomakesavingthrowsagainstthedamageofoneofyourspellsyoucanincreasethespellsdamagebyrollingtwomoreofitsdamagediceThisincreaseoccursonlyontheturnyoucastthespellOnceyouusethisfeatureyoucantuseitagainuntilyoufinishashortorlongrest"
     },
     {
       "name": "Biotic Wealth",
@@ -321,7 +337,8 @@
           "data": "Your innate pool of biotic ability seems endless. Increase you max 3rd, 4th, and 5th-level spell slots by 1."
         }
       ],
-      "id": "biotic-wealth"
+      "id": "biotic-wealth",
+      "mechanic_text_dump": "YourinnatepoolofbioticabilityseemsendlessIncreaseyoumax3rd4thand5thlevelspellslotsby1"
     },
     {
       "name": "Brutal Critical",
@@ -338,7 +355,8 @@
           "data": "This increases to two additional dice at 13th level and three additional dice at 17th level."
         }
       ],
-      "id": "brutal-critical"
+      "id": "brutal-critical",
+      "mechanic_text_dump": "YoucanrolloneadditionaldamagediewhendeterminingtheextradamageforacriticalhitwithameleeattackThisincreasestotwoadditionaldiceat13thlevelandthreeadditionaldiceat17thlevel"
     },
     {
       "name": "Cabal Attacks",
@@ -350,7 +368,8 @@
           "data": "Casting Nightshade Blades or Poison Strike counts as an Attack action."
         }
       ],
-      "id": "cabal-attacks"
+      "id": "cabal-attacks",
+      "mechanic_text_dump": "CastingNightshadeBladesorPoisonStrikecountsasanAttackaction"
     },
     {
       "name": "Careful Eyes",
@@ -367,7 +386,8 @@
           "data": "You also gain proficiency in the Perception, Investigation, or Survival skill (choose one)."
         }
       ],
-      "id": "careful-eyes"
+      "id": "careful-eyes",
+      "mechanic_text_dump": "Startingat7thlevelyouexcelatpickingouthiddenenemiesandotherthreatsYoucantaketheSearchactionasabonusactionYoualsogainproficiencyinthePerceptionInvestigationorSurvivalskillchooseone"
     },
     {
       "name": "Combat Power",
@@ -379,7 +399,8 @@
           "data": "Learn or advance a combat power."
         }
       ],
-      "id": "combat-power"
+      "id": "combat-power",
+      "mechanic_text_dump": "Learnoradvanceacombatpower"
     },
     {
       "name": "Cunning Action",
@@ -396,7 +417,8 @@
           "data": "At 14th level, Cunning Action may also be used to reload or use a grenade."
         }
       ],
-      "id": "cunning-action"
+      "id": "cunning-action",
+      "mechanic_text_dump": "YoucantakeabonusactiononeachofyourturnsincombatThisactioncanbeusedonlytoDashDisengageHideoractivateTacticalCloakAt14thlevelCunningActionmayalsobeusedtoreloadoruseagrenade"
     },
     {
       "name": "Danger Sense",
@@ -408,7 +430,8 @@
           "data": "You gain an uncanny sense of when things nearby aren't as they should be, giving you an edge when you dodge away from danger. You have advantage on Dexterity saving throws against effects that you can see, such as traps and spells. To gain this benefit, you can't be blinded, deafened, or incapacitated."
         }
       ],
-      "id": "danger-sense"
+      "id": "danger-sense",
+      "mechanic_text_dump": "YougainanuncannysenseofwhenthingsnearbyarentastheyshouldbegivingyouanedgewhenyoudodgeawayfromdangerYouhaveadvantageonDexteritysavingthrowsagainsteffectsthatyoucanseesuchastrapsandspellsTogainthisbenefityoucantbeblindeddeafenedorincapacitated"
     },
     {
       "name": "Dark Biotics",
@@ -420,7 +443,8 @@
           "data": "Your skill in dealing damage with withering biotic powers is unmatched. Add your proficiency bonus to all necrotic damage dealt by your biotic spells."
         }
       ],
-      "id": "dark-biotics"
+      "id": "dark-biotics",
+      "mechanic_text_dump": "YourskillindealingdamagewithwitheringbioticpowersisunmatchedAddyourproficiencybonustoallnecroticdamagedealtbyyourbioticspells"
     },
     {
       "name": "Deadly Aim",
@@ -441,7 +465,8 @@
           ]
         }
       ],
-      "id": "deadly-aim"
+      "id": "deadly-aim",
+      "mechanic_text_dump": "YouraimbecomesdeadlyAsabonusactiononyourturnyoucantakecarefulaimatacreatureyoucanseethatiswithinrangeofarangedweaponyourewieldingUntiltheendofthisturnyourrangedattackswiththatweapongaintwobenefitsagainstthetargetlistTheattacksignorehalfandthreequarterscoverOneachhittheweapondealsadditionaldamagetothetargetequalto2halfyourfighterlevelYoucanusethisfeaturethreetimesYouregainallexpendedusesofitwhenyoufinishashortorlongrestlist"
     },
     {
       "name": "Deadly Strike",
@@ -453,7 +478,8 @@
           "data": "When you apply your sneak attack damage from an attack made with a melee weapon, increase the damage die to d8."
         }
       ],
-      "id": "deadly-strike"
+      "id": "deadly-strike",
+      "mechanic_text_dump": "Whenyouapplyyoursneakattackdamagefromanattackmadewithameleeweaponincreasethedamagedietod8"
     },
     {
       "name": "Drone",
@@ -503,7 +529,8 @@
           }
         }
       ],
-      "id": "drone"
+      "id": "drone",
+      "mechanic_text_dump": "SpendXTPtosummonadroneEachdronetypehasauniquesetofabilitiesDroneshavea12ACandwhentheymakeameleeorrangedattackaddyourproficiencybonustotheattackrollDronesmoveandattackwhentheyarefirstsummonedandatthebeginningofyourturnonsubsequentturnsYoucanonlyhaveasingleDroneactiveatatimeunlessotherwisestatedtableNameHealthSpeedAbilityCombatYourlvlXd86mMakearangedweaponattackonahostilecreatureyoucanseewithin20mOnahittheDronedeals2d6piercingdamageDamageincreasesby1d6atthe5th11thand17thlevelAntiShieldYourlvlXd108mMakeameleeattackahostilecreatureOnasuccessthetargettakeslighteningdamageequalto1d8lighteningdamageDamageincreasesby1d8atthe5th11thand17thlevelDefenseYourlvlXd66mWhenafriendlycreaturetakesdamageifthedroneis2mofthatcreaturereducethedamagetakenby1d6Damagereductionincreasesby1d6atthe5th11thand17thlevelKamikazeYourlvlXd410mDetonatethedroneCreatureswithina2mradiusmustmakeadexteritysavingthrowOnafailedsaveacreaturetakes1d12thunderdamageorhalfasmuchonasuccessfuloneDamageincreasesby1d12atthe5th11thand17thleveltable"
     },
     {
       "name": "Drone Efficiency",
@@ -515,7 +542,8 @@
           "data": "If you have no Drones active, the next Drone you summon costs 1d4 less TP. For example, you roll 3 on a d4 and choose to spend 1 TP on a Drone. You would calculate the drones health based on 4 TP spent. You cannot use this ability to spend more than 10 TP."
         }
       ],
-      "id": "drone-efficiency"
+      "id": "drone-efficiency",
+      "mechanic_text_dump": "IfyouhavenoDronesactivethenextDroneyousummoncosts1d4lessTPForexampleyouroll3onad4andchoosetospend1TPonaDroneYouwouldcalculatethedroneshealthbasedon4TPspentYoucannotusethisabilitytospendmorethan10TP"
     },
     {
       "name": "Drone Mastery",
@@ -527,7 +555,8 @@
           "data": "You can summon 2 Drones in one action."
         }
       ],
-      "id": "drone-mastery"
+      "id": "drone-mastery",
+      "mechanic_text_dump": "Youcansummon2Dronesinoneaction"
     },
     {
       "name": "Drone Sidekick",
@@ -539,7 +568,8 @@
           "data": "When you summon a Drone, role a die of your choice. On an odd roll, your Drone generates a Sidekick: a second 1 TP version of itself. The sidekick does not count towards your maximum number of Drones. When calculating the Sidekick's health, use 1/2 your level, rounded up."
         }
       ],
-      "id": "drone-sidekick"
+      "id": "drone-sidekick",
+      "mechanic_text_dump": "WhenyousummonaDroneroleadieofyourchoiceOnanoddrollyourDronegeneratesaSidekickasecond1TPversionofitselfThesidekickdoesnotcounttowardsyourmaximumnumberofDronesWhencalculatingtheSidekickshealthuse12yourlevelroundedup"
     },
     {
       "name": "Drone Swarm",
@@ -551,7 +581,8 @@
           "data": "You can have 3 Drones active at once."
         }
       ],
-      "id": "drone-swarm"
+      "id": "drone-swarm",
+      "mechanic_text_dump": "Youcanhave3Dronesactiveatonce"
     },
     {
       "name": "Dual Drones",
@@ -563,7 +594,8 @@
           "data": "Your can have 2 Drones active at once."
         }
       ],
-      "id": "dual-drones"
+      "id": "dual-drones",
+      "mechanic_text_dump": "Yourcanhave2Dronesactiveatonce"
     },
     {
       "name": "Ear for Deceit",
@@ -575,7 +607,8 @@
           "data": "You develop a keen ear for picking out lies. Whenever you make a Wisdom (Insight) check to sense if a creature is lying, you use the total of your check or 8 + your Wisdom modifier, whichever is higher. If you are proficient in Insight, you add your proficiency bonus to the fixed result. If you chose Insight as a skill augmented by your Expertise feature, add double your proficiency bonus."
         }
       ],
-      "id": "ear-for-deceit"
+      "id": "ear-for-deceit",
+      "mechanic_text_dump": "YoudevelopakeenearforpickingoutliesWheneveryoumakeaWisdomInsightchecktosenseifacreatureislyingyouusethetotalofyourcheckor8yourWisdommodifierwhicheverishigherIfyouareproficientinInsightyouaddyourproficiencybonustothefixedresultIfyouchoseInsightasaskillaugmentedbyyourExpertisefeatureadddoubleyourproficiencybonus"
     },
     {
       "name": "Elegant Maneuver",
@@ -587,7 +620,8 @@
           "data": "Starting at 13th level, you can use a bonus action on your turn to gain advantage on the next Dexterity (Acrobatics) or Strength (Athletics) check you make during the same turn."
         }
       ],
-      "id": "elegant-maneuver"
+      "id": "elegant-maneuver",
+      "mechanic_text_dump": "Startingat13thlevelyoucanuseabonusactiononyourturntogainadvantageonthenextDexterityAcrobaticsorStrengthAthleticscheckyoumakeduringthesameturn"
     },
     {
       "name": "Elusive",
@@ -599,7 +633,8 @@
           "data": "You are so evasive that attackers rarely gain the upper hand against you. No attack roll has advantage against you while you aren't incapacitated."
         }
       ],
-      "id": "elusive"
+      "id": "elusive",
+      "mechanic_text_dump": "YouaresoevasivethatattackersrarelygaintheupperhandagainstyouNoattackrollhasadvantageagainstyouwhileyouarentincapacitated"
     },
     {
       "name": "Empowered Biotics",
@@ -611,7 +646,8 @@
           "data": "Whenever you roll a 1 on damage or healing die for a biotic spell or cantrip you cast, you can reroll the die and must use the new roll."
         }
       ],
-      "id": "empowered-biotics"
+      "id": "empowered-biotics",
+      "mechanic_text_dump": "Wheneveryourolla1ondamageorhealingdieforabioticspellorcantripyoucastyoucanrerollthedieandmustusethenewroll"
     },
     {
       "name": "Evasion",
@@ -623,7 +659,8 @@
           "data": "When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail."
         }
       ],
-      "id": "evasion"
+      "id": "evasion",
+      "mechanic_text_dump": "WhenyouaresubjectedtoaneffectthatallowsyoutomakeaDexteritysavingthrowtotakeonlyhalfdamageyouinsteadtakenodamageifyousucceedonthesavingthrowandonlyhalfdamageifyoufail"
     },
     {
       "name": "Expertise",
@@ -635,7 +672,8 @@
           "data": "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies."
         }
       ],
-      "id": "expertise"
+      "id": "expertise",
+      "mechanic_text_dump": "ChoosetwoofyourskillproficienciesYourproficiencybonusisdoubledforanyabilitycheckyoumakethatuseseitherofthechosenproficiencies"
     },
     {
       "name": "Extra Attack",
@@ -647,7 +685,8 @@
           "data": "You can attack twice when you choose to make a melee attack or ranged weapon attack as your action."
         }
       ],
-      "id": "extra-attack"
+      "id": "extra-attack",
+      "mechanic_text_dump": "Youcanattacktwicewhenyouchoosetomakeameleeattackorrangedweaponattackasyouraction"
     },
     {
       "name": "Eye for Detail",
@@ -659,7 +698,8 @@
           "data": "You can use the bonus action granted by your Cunning Action feature to make a Wisdom (Perception) check to spot a hidden creature or object, to make an Intelligence (Investigation) check to uncover and decipher clues, or to use Insightful Fighting."
         }
       ],
-      "id": "eye-for-detail"
+      "id": "eye-for-detail",
+      "mechanic_text_dump": "YoucanusethebonusactiongrantedbyyourCunningActionfeaturetomakeaWisdomPerceptionchecktospotahiddencreatureorobjecttomakeanIntelligenceInvestigationchecktouncoveranddeciphercluesortouseInsightfulFighting"
     },
     {
       "name": "Eye for Weakness",
@@ -671,7 +711,8 @@
           "data": "At 17th level, you learn to exploit a creature's weaknesses by carefully studying its tactics and movement. While your Insightful Fighting feature applies to a creature, your Sneak Attack damage against that creature increases by 2d6."
         }
       ],
-      "id": "eye-for-weakness"
+      "id": "eye-for-weakness",
+      "mechanic_text_dump": "At17thlevelyoulearntoexploitacreaturesweaknessesbycarefullystudyingitstacticsandmovementWhileyourInsightfulFightingfeatureappliestoacreatureyourSneakAttackdamageagainstthatcreatureincreasesby2d6"
     },
     {
       "name": "Fighting Style",
@@ -726,7 +767,8 @@
           }
         }
       ],
-      "id": "fighting-style"
+      "id": "fighting-style",
+      "mechanic_text_dump": "tableStylePerkAdvancedPerkBrawlerYouhaveadvantagewhenmakingmeleeattacksAddtwiceyourproficiencybonustoyourattackrollsDualWieldYoucanwield2pistolsorSMGsorcombinationthereofYouroffhandweaponalwaysshootswithadisadvantageYouwillautomaticallymisstargetsoutofrangeRemovethedisadvantageandrangepenaltytoyouroffhandweaponTheFreeHandWhenwieldingapistolyouhavea2bonustohitwithrangedspellortechattacksWhenwieldingapistolyouaddyourproficiencybonusasdamagetoalldamagingbioticspellsandtechUpcloseandpersonalYoudonothavedisadvantageonrangedattackrollsagainsttargetswithinmeleerangeInyourhandsallweaponsareconsideredtohavetheHipFireattributeSniperAddyourdexteritymodifierasdamagetosuccessfulrangeattacksagainsttargetsthatareatleast10mawayIfnohostilecreaturearewithin10mofyouyouhaveadvantageonallrangedweaponattacksagainsttargetsatleast10mawayDefense1ACand10Shields2ACand20ShieldsProtectionVanguardOnlyWhenacreatureyoucanseeattacksatargetotherthanyouthatiswithin2mofyouyoucanuseyourreactionandexpendonebarrierticktoimposedisadvantageontheattackrollIftheattacksucceedsthebarriertickabsorbsdamageasanormalbarriertickwouldtable"
     },
     {
       "name": "Focused Biotics",
@@ -738,7 +780,8 @@
           "data": "While you are concentrating on a biotic spell, your concentration can't be broken as a result of taking damage."
         }
       ],
-      "id": "focused-biotics"
+      "id": "focused-biotics",
+      "mechanic_text_dump": "Whileyouareconcentratingonabioticspellyourconcentrationcantbebrokenasaresultoftakingdamage"
     },
     {
       "name": "Healing Drone",
@@ -769,7 +812,8 @@
           "data": "At the 14th level, your healing drone casts a 3 tech point First Aid and has an AC of 15."
         }
       ],
-      "id": "healing-drone"
+      "id": "healing-drone",
+      "mechanic_text_dump": "Atthe2ndlevelyougainproficiencywithMedicineIfyouarealreadypoficientinMedicinceyoumaychooseanotherskilltobecomeproficientinYoualsolearntosummonaHealingdronelistHealthyourlvlXd8Speed10mAbilityThedronecancasta1techpointFirstAidlistAtthe14thlevelyourhealingdronecastsa3techpointFirstAidandhasanACof15"
     },
     {
       "name": "Heavy Weapon Hack",
@@ -781,7 +825,8 @@
           "data": "When your heavy weapon runs out of ammo, you can jerry-rig an additional use for 3 tech points."
         }
       ],
-      "id": "heavy-weapon-hack"
+      "id": "heavy-weapon-hack",
+      "mechanic_text_dump": "Whenyourheavyweaponrunsoutofammoyoucanjerryriganadditionalusefor3techpoints"
     },
     {
       "name": "Improved Barrier",
@@ -798,7 +843,8 @@
           "data": "At the 10th level, increase the die type of your barrier to d12."
         }
       ],
-      "id": "improved-barrier"
+      "id": "improved-barrier",
+      "mechanic_text_dump": "Atthe6thlevelincreasethedietypeofyourbarriertod10Atthe10thlevelincreasethedietypeofyourbarriertod12"
     },
     {
       "name": "Improved Biotic Slash",
@@ -810,7 +856,8 @@
           "data": "By 11th level, you are adept at focusing your biotics into melee strikes. Whenever you hit a creature with a melee weapon, the creature takes an extra 1d8 force damage. If you also use your Biotic Slash with an attack, you add this damage to the extra damage of your Biotic Slash."
         }
       ],
-      "id": "improved-biotic-slash"
+      "id": "improved-biotic-slash",
+      "mechanic_text_dump": "By11thlevelyouareadeptatfocusingyourbioticsintomeleestrikesWheneveryouhitacreaturewithameleeweaponthecreaturetakesanextra1d8forcedamageIfyoualsouseyourBioticSlashwithanattackyouaddthisdamagetotheextradamageofyourBioticSlash"
     },
     {
       "name": "Improved Tech Armor",
@@ -827,7 +874,8 @@
           "data": "At 14th level, increase the die type used in Tech Armor to d12"
         }
       ],
-      "id": "improved-tech-armor"
+      "id": "improved-tech-armor",
+      "mechanic_text_dump": "At6thlevelincreasethedietypeusedinTechArmortod10At14thlevelincreasethedietypeusedinTechArmortod12"
     },
     {
       "name": "Improved Weapon Superiority",
@@ -839,7 +887,8 @@
           "data": "At 10th level, your superiority dice turn into d10s. At 18th level, they turn into d12s."
         }
       ],
-      "id": "improved-weapon-superiority"
+      "id": "improved-weapon-superiority",
+      "mechanic_text_dump": "At10thlevelyoursuperioritydiceturnintod10sAt18thleveltheyturnintod12s"
     },
     {
       "name": "Indomitable",
@@ -856,7 +905,8 @@
           "data": "You can use this feature twice between long rests starting at 13th level and three times between long rests starting at 17th level."
         }
       ],
-      "id": "indomitable"
+      "id": "indomitable",
+      "mechanic_text_dump": "YoucanrerollasavingthrowthatyoufailIfyoudosoyoumustusethenewrollandyoucantusethisfeatureagainuntilyoufinishaLongRestYoucanusethisfeaturetwicebetweenlongrestsstartingat13thlevelandthreetimesbetweenlongrestsstartingat17thlevel"
     },
     {
       "name": "Infiltration",
@@ -868,7 +918,8 @@
           "data": "You can unfailingly create false identities for yourself, but you can't establish an identity that belongs to someone else. For example, you might establish yourself within mercenary gang to gain access to their supplies or armory, or a rich colonist to gain access to a fancy party. Thereafter, if you adopt the new identity as a disguise, other creatures believe you to be that person until given an obvious reason not to. You have advantage on persuasion rolls when using this disguise, and advantage on deception rolls on an opposed insight check."
         }
       ],
-      "id": "infiltration"
+      "id": "infiltration",
+      "mechanic_text_dump": "YoucanunfailinglycreatefalseidentitiesforyourselfbutyoucantestablishanidentitythatbelongstosomeoneelseForexampleyoumightestablishyourselfwithinmercenarygangtogainaccesstotheirsuppliesorarmoryorarichcolonisttogainaccesstoafancypartyThereafterifyouadoptthenewidentityasadisguiseothercreaturesbelieveyoutobethatpersonuntilgivenanobviousreasonnottoYouhaveadvantageonpersuasionrollswhenusingthisdisguiseandadvantageondeceptionrollsonanopposedinsightcheck"
     },
     {
       "name": "Insightful Fighting",
@@ -885,7 +936,8 @@
           "data": "This benefit lasts for 1 minute or until you successfully use Insightful Fighting against a different target."
         }
       ],
-      "id": "insightful-fighting"
+      "id": "insightful-fighting",
+      "mechanic_text_dump": "YougaintheabilitytodecipheranopponentstacticsanddevelopacountertothemAsanactionorasabonusactionusingEyeforDetailyoumakeaWisdomInsightcheckagainstacreatureyoucanseethatisntincapacitatedopposedbythetargetsCharismaDeceptioncheckIfyousucceedyoucanuseSneakAttackagainstthatcreatureevenifyoudonothaveadvantageagainstitorifnoenemyofthetargetiswithin2mofitYoucanuseSneakAttackinthiswayevenifyouhavedisadvantageagainstthetargetThisbenefitlastsfor1minuteoruntilyousuccessfullyuseInsightfulFightingagainstadifferenttarget"
     },
     {
       "name": "Invention",
@@ -897,7 +949,8 @@
           "data": "At the 20th level, you create an Invention. The invention should be condoned by the DM to not be overpowered. But should give you, your party, your drones, etc an advantage."
         }
       ],
-      "id": "invention"
+      "id": "invention",
+      "mechanic_text_dump": "Atthe20thlevelyoucreateanInventionTheinventionshouldbecondonedbytheDMtonotbeoverpoweredButshouldgiveyouyourpartyyourdronesetcanadvantage"
     },
     {
       "name": "Makeshift Grenades",
@@ -914,7 +967,8 @@
           "data": "Choose a second grenade type. Both the first and second grenade types you've chosen with Makeshift Grenades cost 2 tech points."
         }
       ],
-      "id": "makeshift-grenades"
+      "id": "makeshift-grenades",
+      "mechanic_text_dump": "YouromnitoolissoadvancedyoucanusetechpointstocreateagrenadeChooseagrenadefromthegrenadelistasanactionyoucanspend4techpointstocreateanduseagrenadeofthattypeYoucannotreplenishagrenadeorgiftagrenadewiththisabilityChooseasecondgrenadetypeBoththefirstandsecondgrenadetypesyouvechosenwithMakeshiftGrenadescost2techpoints"
     },
     {
       "name": "Marksman",
@@ -931,7 +985,8 @@
           "data": "Starting at the 18th level, roll 1d6 instead."
         }
       ],
-      "id": "marksman"
+      "id": "marksman",
+      "mechanic_text_dump": "AddrennalineRushseemstoslowdowntimegivingyoutheopportunitytolineupaperfectshotWhenyouuseAdrennalineRushyouroll1d4andsubtractthatnumberfrom20UntilthestartofyournextturnanynaturalrollhigherthantheresultingnumberisconsideredacritialhitStartingatthe18thlevelroll1d6instead"
     },
     {
       "name": "Master Duelist",
@@ -943,7 +998,8 @@
           "data": "Your mastery of combat lets you turn failure to success in combat. If you miss with an attack roll and your weapon does not need to be reloaded, you can choose to roll it again with advantage. Once you do so, you can't use this feature again until you finish a short or long rest."
         }
       ],
-      "id": "master-duelist"
+      "id": "master-duelist",
+      "mechanic_text_dump": "YourmasteryofcombatletsyouturnfailuretosuccessincombatIfyoumisswithanattackrollandyourweapondoesnotneedtobereloadedyoucanchoosetorollitagainwithadvantageOnceyoudosoyoucantusethisfeatureagainuntilyoufinishashortorlongrest"
     },
     {
       "name": "Master Tactician",
@@ -955,7 +1011,8 @@
           "data": "You can use the Help action as a bonus action. Additionally, when you use the Help action to aid an ally in attacking a creature, the target of that attack can be within 20m of you, rather than 2m of you, if the target can see or hear you."
         }
       ],
-      "id": "master-tactician"
+      "id": "master-tactician",
+      "mechanic_text_dump": "YoucanusetheHelpactionasabonusactionAdditionallywhenyouusetheHelpactiontoaidanallyinattackingacreaturethetargetofthatattackcanbewithin20mofyouratherthan2mofyouifthetargetcanseeorhearyou"
     },
     {
       "name": "Medi-gel Enhancements",
@@ -979,7 +1036,8 @@
           ]
         }
       ],
-      "id": "medi-gel-enhancements"
+      "id": "medi-gel-enhancements",
+      "mechanic_text_dump": "Youcanspend6hoursinalaborsimilarenvrionmentusingdrugstoenhancethecapabilitiesofstandardmedigelIttakes2hourstocraftasingleenhancementbutyoucanapplythatbenefittoanynumberofmedigelcartridgesTocraftanotherenhancementtakesanadditional6hoursInsteadofusingtimetolimitthisfeatureyourGMcanchoosetoallowyoutoaddXenhancementstoYmedigelcartridgeswhereXisyourIntelligencemodifierandYishalfyourEngineeringlevelminimum1thenyoumustfinishalongrestbeforeyoucancreateneenhancementsWhencreatinganenhancementchoosefromthelistbelowlistStimulantAfterusingthismedigelyouhaveadvantageonthenextsavingthroworattackrollyoumakewithin1minuteOpioidWithin1minuteofusingthismedigelifyouwouldfallbelow0hitpointbutnotoutrightdieyoumayfallto1hitpointinsteadSteroidAfterusingthismedigeladd2damagetoallmeleedamagefor1minuteMinagenX3Afterusingthismedigelgain2damagetoallbioticspellsandcantripsfor1minuteVidelicetAfterusingthismedigelgain2bonustoallrangedtechattacksfor1minuteStypticIncreasethehealingdieby1dietypewhenusingthismedigellist"
     },
     {
       "name": "Melee Specialist",
@@ -1006,7 +1064,8 @@
           "data": "When weilding only melee weapons: Gain +1 AC. When you take the Attack action, you can use a bonus action to make another melee weapon attack."
         }
       ],
-      "id": "melee-specialist"
+      "id": "melee-specialist",
+      "mechanic_text_dump": "YouvetrainedextensivelyinmeleeweaponcombatWhenweildingatwohandedrangedweaponyoucanuseabonusactiontomakeameleeweaponattackwithyouromnitoolWhenweidlingasinglehandedrangedweaponyoucanuseabonusactiontomakeameleeweaponattackwithalightorversatilemeleeweaponWhenweildingonlymeleeweaponsGain1ACWhenyoutaketheAttackactionyoucanuseabonusactiontomakeanothermeleeweaponattack"
     },
     {
       "name": "Misdirection",
@@ -1018,7 +1077,8 @@
           "data": "You can sometimes cause another creature to suffer an attack meant for you. When you are targeted by an attack while a creature within 2m of you is granting you cover against that attack, you can use your reaction to have the attack target that creature instead of you."
         }
       ],
-      "id": "misdirection"
+      "id": "misdirection",
+      "mechanic_text_dump": "YoucansometimescauseanothercreaturetosufferanattackmeantforyouWhenyouaretargetedbyanattackwhileacreaturewithin2mofyouisgrantingyoucoveragainstthatattackyoucanuseyourreactiontohavetheattacktargetthatcreatureinsteadofyou"
     },
     {
       "name": "Omni-Shield",
@@ -1039,7 +1099,8 @@
           "data": "Once you use this feature, you must finish a short or long rest before you can use it again."
         }
       ],
-      "id": "omni-shield"
+      "id": "omni-shield",
+      "mechanic_text_dump": "Startingatthe3rdlevelyouvemasteredtheomnishieldAsabonusactioncreatealargekeneticshieldoutofyouromnitoolthatlastsoneminuteYoucanuseanotherbonusactiontoendOmniShieldearlyWhiledeployedlistIfweildingasinglehandedrangedorversatilemeleeweapongain2ACanda2bonustoDexteritysavingthrowsIfacreaturewithin2mofyouisattackedyoumayuseyourreactiontoimposedisadvantageonthatattackYouomnitoolmeleeattackisreplacedwithShieldBashMakeameleeattackrollSTRonahitdeal1d12bludgeoningdamageYoumayshoveahitcreaturebackwards2mlistOnceyouusethisfeatureyoumustfinishashortorlongrestbeforeyoucanuseitagain"
     },
     {
       "name": "Opportunist",
@@ -1051,7 +1112,8 @@
           "data": "At 17th level, you can exploit a creature's momentary distraction when it is hit by an attack. Whenever a creature within 2m of you is hit by an attack made by a creature other than you, you can use your reaction to make a melee attack against that creature."
         }
       ],
-      "id": "opportunist"
+      "id": "opportunist",
+      "mechanic_text_dump": "At17thlevelyoucanexploitacreaturesmomentarydistractionwhenitishitbyanattackWheneveracreaturewithin2mofyouishitbyanattackmadebyacreatureotherthanyouyoucanuseyourreactiontomakeameleeattackagainstthatcreature"
     },
     {
       "name": "Overchannel",
@@ -1068,7 +1130,8 @@
           "data": "The first time you do so, you suffer no adverse effect. If you use this feature again before you finish a long rest, you take 2d12 psychic damage for each level of the spell, immediately after you cast it. Each time you use this feature again before finishing a long rest, the necrotic damage per spell level increases by 1d12. This damage ignores resistance and immunity."
         }
       ],
-      "id": "overchannel"
+      "id": "overchannel",
+      "mechanic_text_dump": "YoucanincreasethepowerofyoursimplerbioticsWhenyoucastabioticspellof1stor2ndlevelthatdealsdamageyoucandealmaximumdamagewiththatspellThefirsttimeyoudosoyousuffernoadverseeffectIfyouusethisfeatureagainbeforeyoufinishalongrestyoutake2d12psychicdamageforeachlevelofthespellimmediatelyafteryoucastitEachtimeyouusethisfeatureagainbeforefinishingalongrestthenecroticdamageperspelllevelincreasesby1d12Thisdamageignoresresistanceandimmunity"
     },
     {
       "name": "Potent Biotics",
@@ -1080,7 +1143,8 @@
           "data": "When you roll a 1 on a damage die for a spell that deals necrotic damage, you can reroll the die and must use the new roll."
         }
       ],
-      "id": "potent-biotics"
+      "id": "potent-biotics",
+      "mechanic_text_dump": "Whenyourolla1onadamagedieforaspellthatdealsnecroticdamageyoucanrerollthedieandmustusethenewroll"
     },
     {
       "name": "Power Armor",
@@ -1097,7 +1161,8 @@
           "data": "Starting and the 18th level, when you activate Tech Armor, gain an additional max level spell slot."
         }
       ],
-      "id": "power-armor"
+      "id": "power-armor",
+      "mechanic_text_dump": "YourTechArmorcanchannelitsenergyintobioticampsStartingatthe2ndleveladdyourproficiencybonusasdamagetoalldamagedealtwithabioticspellorcantripStartingandthe18thlevelwhenyouactivateTechArmorgainanadditionalmaxlevelspellslot"
     },
     {
       "name": "Primal Biotics",
@@ -1109,7 +1174,8 @@
           "data": "Your Strength and Constitution scores increase by 4. Your maximum for those scores is now 24."
         }
       ],
-      "id": "primal-biotics"
+      "id": "primal-biotics",
+      "mechanic_text_dump": "YourStrengthandConstitutionscoresincreaseby4Yourmaximumforthosescoresisnow24"
     },
     {
       "name": "Proficient Biotics",
@@ -1121,7 +1187,8 @@
           "data": "Casting boitic spells comes so easily to you that it expends only a fraction of your efforts. When you cast a biotic spell of 2nd level or higher using a spell slot, you regain one expended spell slot. The slot you regain must be of a level lower than the spell you cast."
         }
       ],
-      "id": "proficient-biotics"
+      "id": "proficient-biotics",
+      "mechanic_text_dump": "CastingboiticspellscomessoeasilytoyouthatitexpendsonlyafractionofyoureffortsWhenyoucastabioticspellof2ndlevelorhigherusingaspellslotyouregainoneexpendedspellslotTheslotyouregainmustbeofalevellowerthanthespellyoucast"
     },
     {
       "name": "Pure Biotics",
@@ -1133,7 +1200,8 @@
           "data": "Your skill in dealing damage with biotic force powers is unmatched. Add your proficiency bonus to all force damage dealt by your biotic spells."
         }
       ],
-      "id": "pure-biotics"
+      "id": "pure-biotics",
+      "mechanic_text_dump": "YourskillindealingdamagewithbioticforcepowersisunmatchedAddyourproficiencybonustoallforcedamagedealtbyyourbioticspells"
     },
     {
       "name": "Quick Cast",
@@ -1150,7 +1218,8 @@
           "data": "At the 9th level, when you use your action to cast a spell or tech power, you may make a melee or ranged weapon attack as a bonus action."
         }
       ],
-      "id": "quick-cast"
+      "id": "quick-cast",
+      "mechanic_text_dump": "Atthe5thlevelwhenyouuseyouractiontocastacantripyoumaymakeameleeorrangedweaponattackasabonusactionAtthe9thlevelwhenyouuseyouractiontocastaspellortechpoweryoumaymakeameleeorrangedweaponattackasabonusaction"
     },
     {
       "name": "Quick Reload",
@@ -1162,7 +1231,8 @@
           "data": "You can reload your Weapon of Choice as a bonus action."
         }
       ],
-      "id": "quick-reload"
+      "id": "quick-reload",
+      "mechanic_text_dump": "YoucanreloadyourWeaponofChoiceasabonusaction"
     },
     {
       "name": "Retaliation",
@@ -1174,7 +1244,8 @@
           "data": "When you take damage from a creature that is within 2m of you, you can use your reaction to make a melee weapon attack against that creature."
         }
       ],
-      "id": "retaliation"
+      "id": "retaliation",
+      "mechanic_text_dump": "Whenyoutakedamagefromacreaturethatiswithin2mofyouyoucanuseyourreactiontomakeameleeweaponattackagainstthatcreature"
     },
     {
       "name": "Saboteur's Touch",
@@ -1186,7 +1257,8 @@
           "data": "Once per long rest, when an enemy makes a saving throw against one of your abilities that imposes one, you can make them fail the saving throw."
         }
       ],
-      "id": "saboteurs-touch"
+      "id": "saboteurs-touch",
+      "mechanic_text_dump": "Onceperlongrestwhenanenemymakesasavingthrowagainstoneofyourabilitiesthatimposesoneyoucanmakethemfailthesavingthrow"
     },
     {
       "name": "Sculpt Biotics",
@@ -1198,7 +1270,8 @@
           "data": "You can create pockets of relative safety within the effects of your biotic spells. When you cast a biotic spell that affects other creatures that you can see, you can choose a number of them equal to 1+the spell's level. The chosen creatures automatically succeed on their saving throws against the spell, and they take no damage if they would normally take half damage on a successful save."
         }
       ],
-      "id": "sculpt-biotics"
+      "id": "sculpt-biotics",
+      "mechanic_text_dump": "YoucancreatepocketsofrelativesafetywithintheeffectsofyourbioticspellsWhenyoucastabioticspellthataffectsothercreaturesthatyoucanseeyoucanchooseanumberofthemequalto1thespellslevelThechosencreaturesautomaticallysucceedontheirsavingthrowsagainstthespellandtheytakenodamageiftheywouldnormallytakehalfdamageonasuccessfulsave"
     },
     {
       "name": "Sentinel Mastery",
@@ -1215,7 +1288,8 @@
           "data": "Choose a tech power you have learned. You can cast that power for 2 tech points without subtracting those tech points from your pool. If you can to use the power with more tech points, you must subtract the points as normal."
         }
       ],
-      "id": "sentinel-mastery"
+      "id": "sentinel-mastery",
+      "mechanic_text_dump": "At17thlevelyouhaveachievedmasteryofasinglebioticspellandtechpowerChoosea1stlevelbioticspellyouhavelearnedYoucancastthatspellsattheirlowestlevelwithoutexpendingaspellslotIfyouwanttocasteitherspellatahigherlevelyoumustexpendaspellslotasnormalChooseatechpoweryouhavelearnedYoucancastthatpowerfor2techpointswithoutsubtractingthosetechpointsfromyourpoolIfyoucantousethepowerwithmoretechpointsyoumustsubtractthepointsasnormal"
     },
     {
       "name": "Shadow Broker",
@@ -1227,7 +1301,8 @@
           "data": "You become an operative of the Shadow Broker and your focus is on people and on the influence and secrets they have. Words are your weapons as often as guns or powers, and secrets and favors are some of your favorite treasures. You service to the Shadow Broker and unbridled access to a wealth of knowledge gives you 10000 credits and an inspiration token every long rest. You may pass the inspiration to another party member."
         }
       ],
-      "id": "shadow-broker"
+      "id": "shadow-broker",
+      "mechanic_text_dump": "YoubecomeanoperativeoftheShadowBrokerandyourfocusisonpeopleandontheinfluenceandsecretstheyhaveWordsareyourweaponsasoftenasgunsorpowersandsecretsandfavorsaresomeofyourfavoritetreasuresYouservicetotheShadowBrokerandunbridledaccesstoawealthofknowledgegivesyou10000creditsandaninspirationtokeneverylongrestYoumaypasstheinspirationtoanotherpartymember"
     },
     {
       "name": "Shadow Strike",
@@ -1239,7 +1314,8 @@
           "data": "At level 15, you may spend 5 TP to activate Tactical Cloak and teleport to a target within 10m, then make a melee attack. You have advantage on this attack. At the end of the attack (whether a miss or hit), activate Tactical Cloak and teleport to another location up 10m away. This movement does not provoke an attack of opportunity. The teleportation can be used to free you from movement impairing effects such as grapple, restrained, etc."
         }
       ],
-      "id": "shadow-strike"
+      "id": "shadow-strike",
+      "mechanic_text_dump": "Atlevel15youmayspend5TPtoactivateTacticalCloakandteleporttoatargetwithin10mthenmakeameleeattackYouhaveadvantageonthisattackAttheendoftheattackwhetheramissorhitactivateTacticalCloakandteleporttoanotherlocationup10mawayThismovementdoesnotprovokeanattackofopportunityTheteleportationcanbeusedtofreeyoufrommovementimpairingeffectssuchasgrapplerestrainedetc"
     },
     {
       "name": "Shield Boost",
@@ -1256,7 +1332,8 @@
           "data": "Once you use this feature, you must finish a short or long rest before you can use it again."
         }
       ],
-      "id": "shield-boost"
+      "id": "shield-boost",
+      "mechanic_text_dump": "Asanactionchooseupto5friendlycreatureswithshieldsyourcanseeHackintotheirarmorsystemanduseabruteforcealgorithmtooverloadtheirkeneticbarrierEachcreatureimmediatelyrolls4oftheirshieldregenerationdieandgainsthatmanyshieldpointsOnceyouusethisfeatureyoumustfinishashortorlongrestbeforeyoucanuseitagain"
     },
     {
       "name": "Signature Biotics",
@@ -1273,7 +1350,8 @@
           "data": "If you want to cast either spell at 4th-level or higher, you must expend a spell slot as normal."
         }
       ],
-      "id": "signature-biotics"
+      "id": "signature-biotics",
+      "mechanic_text_dump": "Whenyoureach20thlevelyougainmasteryovertwopowerfulspellsandcancastthemwithlittleeffortChoosetwo2ndor3rdlevelbioticspellsinyourspellbookasyoursignaturebioticsYoucancasteachofthemonceat3rdlevelwithoutexpendingaspellslotWhenyoudosoyoucantdosoagainuntilyoufinishashortorlongrestIfyouwanttocasteitherspellat4thlevelorhigheryoumustexpendaspellslotasnormal"
     },
     {
       "name": "Snap Shot",
@@ -1285,7 +1363,8 @@
           "data": "When weilding your Weapon of Choice, if you take the Attack action on your first turn of a combat, you can make one additional ranged weapon attack as part of that action."
         }
       ],
-      "id": "snap-shot"
+      "id": "snap-shot",
+      "mechanic_text_dump": "WhenweildingyourWeaponofChoiceifyoutaketheAttackactiononyourfirstturnofacombatyoucanmakeoneadditionalrangedweaponattackaspartofthataction"
     },
     {
       "name": "Sneak Attack",
@@ -1302,7 +1381,8 @@
           "data": "The amount of the extra damage increases as you gain levels in this class, as shown in the Sneak Attack column of the Infiltrator table."
         }
       ],
-      "id": "sneak-attack"
+      "id": "sneak-attack",
+      "mechanic_text_dump": "Beginningat1stlevelyouknowhowtostrikesubtlyandexploitafoesdistractionOnceperturnyoucandealanextra1d6damagetoonecreatureyouhitwithanattackifyouhaveadvantageontheattackrollTheattackmustbemadewithameleeorrangedweaponTheamountoftheextradamageincreasesasyougainlevelsinthisclassasshownintheSneakAttackcolumnoftheInfiltratortable"
     },
     {
       "name": "Strafe",
@@ -1314,7 +1394,8 @@
           "data": "When you take the Dash or Disengage action, if you are weilding your Weapon of Choice, you can make 1 ranged weapon attack as a free action at any point during your movement."
         }
       ],
-      "id": "strafe"
+      "id": "strafe",
+      "mechanic_text_dump": "WhenyoutaketheDashorDisengageactionifyouareweildingyourWeaponofChoiceyoucanmake1rangedweaponattackasafreeactionatanypointduringyourmovement"
     },
     {
       "name": "Stroke of Luck",
@@ -1326,7 +1407,8 @@
           "data": "At 20th level, you have an uncanny knack for succeeding when you need to. If your attack misses a target within range, you can turn the miss into a hit. Alternatively, if you fail an ability check, you can treat the d20 roll as a 20. Once you use this feature, you can't use it again until you finish a short or long rest."
         }
       ],
-      "id": "stroke-of-luck"
+      "id": "stroke-of-luck",
+      "mechanic_text_dump": "At20thlevelyouhaveanuncannyknackforsucceedingwhenyouneedtoIfyourattackmissesatargetwithinrangeyoucanturnthemissintoahitAlternativelyifyoufailanabilitycheckyoucantreatthed20rollasa20Onceyouusethisfeatureyoucantuseitagainuntilyoufinishashortorlongrest"
     },
     {
       "name": "Sudden Strike",
@@ -1338,7 +1420,8 @@
           "data": "Starting at 17th level, you can strike with deadly speed. If you take the Attack action on your turn, you can make one additional melee attack as a bonus action. This attack can benefit from the damage bonus of Tactical Cloak even if you have already used it this turn, but only if the attack is the only one you make against the target this turn."
         }
       ],
-      "id": "sudden-strike"
+      "id": "sudden-strike",
+      "mechanic_text_dump": "Startingat17thlevelyoucanstrikewithdeadlyspeedIfyoutaketheAttackactiononyourturnyoucanmakeoneadditionalmeleeattackasabonusactionThisattackcanbenefitfromthedamagebonusofTacticalCloakevenifyouhavealreadyuseditthisturnbutonlyiftheattackistheonlyoneyoumakeagainstthetargetthisturn"
     },
     {
       "name": "Supply Pylon",
@@ -1366,7 +1449,8 @@
           "data": "Once you use this feature, you cannot use it again until you finish a short or long rest."
         }
       ],
-      "id": "supply-pylon"
+      "id": "supply-pylon",
+      "mechanic_text_dump": "CallinaSupplyPylontoalocationwithin4mAtthestartofyournextturnthepylonarrivesIfanycreatureisstandinginthetargetedlocationthecreaturemustmakeaDexteritysavingthrowithasadvantageonthissavingthrowOnafailedsavethecreaturetakes4d8bludgeoningdamageandisknockedproneOncethepylonhaslandedfriendlycreaturesincludingyouwithinmeleerangecanspend1actionaccessingthepylontogainasingleresourcelistedbelowlistGain1HeavyWeaponammochargeGain5TPor5levelsworthofSpellslotsGain1medigelGain1grenadesGain2specializedthermalclipslistOnceyouusethisfeatureyoucannotuseitagainuntilyoufinishashortorlongrest"
     },
     {
       "name": "Tactical Ambush",
@@ -1378,7 +1462,8 @@
           "data": "Starting at 9th level, if you are in Tactical Cloak when you use a tech power or grenade, each creature has disadvantage on any saving throw it makes against the tech power or grenade this turn."
         }
       ],
-      "id": "tactical-ambush"
+      "id": "tactical-ambush",
+      "mechanic_text_dump": "Startingat9thlevelifyouareinTacticalCloakwhenyouuseatechpowerorgrenadeeachcreaturehasdisadvantageonanysavingthrowitmakesagainstthetechpowerorgrenadethisturn"
     },
     {
       "name": "Tactical Cloak",
@@ -1390,7 +1475,8 @@
           "data": "Use 1 Tech point to become Invisible. You continue to make noise, but you have advantage on stealth checks. You have advantage on the first melee, ranged, or tech attack made from Tactical Cloak. When you make a melee, ranged, or tech attack, your tactical cloak ends."
         }
       ],
-      "id": "tactical-cloak"
+      "id": "tactical-cloak",
+      "mechanic_text_dump": "Use1TechpointtobecomeInvisibleYoucontinuetomakenoisebutyouhaveadvantageonstealthchecksYouhaveadvantageonthefirstmeleerangedortechattackmadefromTacticalCloakWhenyoumakeameleerangedortechattackyourtacticalcloakends"
     },
     {
       "name": "Targeting Mobility",
@@ -1402,7 +1488,8 @@
           "data": "While Targeting, instead of automatically failing Dexterity saving throws, you have disadvantage, and creatures that attack you do not have advantage."
         }
       ],
-      "id": "targeting-mobility"
+      "id": "targeting-mobility",
+      "mechanic_text_dump": "WhileTargetinginsteadofautomaticallyfailingDexteritysavingthrowsyouhavedisadvantageandcreaturesthatattackyoudonothaveadvantage"
     },
     {
       "name": "Tech Armor",
@@ -1424,7 +1511,8 @@
           "data": "Once you have used Tech Armor the maximum number of times for your level, you must finish a long rest before you can use Tech Armor again. The number of times you can use Tech Armor is equal to your proficiency bonus."
         }
       ],
-      "id": "tech-armor"
+      "id": "tech-armor",
+      "mechanic_text_dump": "AsaSentinelyourmantraisthebestoffenseisagooddefenseandcomingbackaliveThusyouvebolsteredyourarmorwithapowerfuldefenseorientedAIAsabonusactionorasareactiontotakingdamamgeyoucanspend1TPtoactivateyourTechArmorWhenactivatedtecharmorincreasesyourACby2andyougaintemporaryshieldpointsequalto1d8yourlevelandyouhaveresistancetoslashingpiercingandbludgeoningdamageYoucanspendadditionaltechpointstoincreasethesheildpointgainby1d8pertechpointspentAtthestartofeqachofyoursubsequentturnsTechArmorconsumes1techpointIfyouhavenotechpointsTechArmorendsandyouloosealltemporaryshieldpointsYoucanuseabonusactiontoendTechArmorearlyOnceyouhaveusedTechArmorthemaximumnumberoftimesforyourlevelyoumustfinishalongrestbeforeyoucanuseTechArmoragainThenumberoftimesyoucanuseTechArmorisequaltoyourproficiencybonus"
     },
     {
       "name": "Tech Armor Overload",
@@ -1441,7 +1529,8 @@
           "data": "Starting at the 18th level, when you detonate Tech Armor, you gain shield points equal to the damage done."
         }
       ],
-      "id": "tech-armor-overload"
+      "id": "tech-armor-overload",
+      "mechanic_text_dump": "Startingatthe10thlevelyoucanoverloadyourTechArmordealingdamagetocreaturesaroundyouAsanactionyoucanspend1techpointtooverloadanactiveTechArmorimmediatelyendingtheitseffectCreatureswithina2mspheretakeXd4thunderdamagewhereXisthenumberoftechpointsyouusedtoinstantiateTechArmorStartingatthe18thlevelwhenyoudetonateTechArmoryougainshieldpointsequaltothedamagedone"
     },
     {
       "name": "Tech Aura",
@@ -1466,7 +1555,8 @@
           ]
         }
       ],
-      "id": "tech-aura"
+      "id": "tech-aura",
+      "mechanic_text_dump": "InadditiontothestandarddefensiveAIyouveaugmentedyourTechArmortorundifferentAIpackagesThepackagescanhookintonearbyarmorsystemsAnyfriendlycreaturewithin4mofyouthatiswearingarmorgainstheeffectofthepackageWhenyouactivateTechArmoryoucanonlychooseasinglepackagetorunLearn2AIpackagesfromthelistbelowyouvealreadylearnedtheDefensivepackageAtthe14thlevelyoulearn2additionalpackageslistDefensiveThisisthestandardTechArmorpackageItdoesnotaffectalliesAntiBioticResistancetoforceandnecroticdamageAntitechResistancetofireandcolddamageGroundedResistancetolighteningdamageReactiveAddyourtechmodifiertosavingthrowsSpeedInscreaseyourspeedby4mRegenInscreaseshieldregenerationby1dietypemaxd12Ifanallyisalreadyatmaxtheygain4list"
     },
     {
       "name": "Tech Aura Improvement",
@@ -1478,7 +1568,8 @@
           "data": "Increase the distance of your Tech Aura packages to 10m."
         }
       ],
-      "id": "tech-aura-improvement"
+      "id": "tech-aura-improvement",
+      "mechanic_text_dump": "IncreasethedistanceofyourTechAurapackagesto10m"
     },
     {
       "name": "Tech Power",
@@ -1490,7 +1581,8 @@
           "data": "Learn or advance a tech power."
         }
       ],
-      "id": "tech-power"
+      "id": "tech-power",
+      "mechanic_text_dump": "Learnoradvanceatechpower"
     },
     {
       "name": "Teleporting Dodge",
@@ -1502,7 +1594,8 @@
           "data": "You can use 2 Barrier ticks to automatically pass a Dexterity saving throw."
         }
       ],
-      "id": "teleporting-dodge"
+      "id": "teleporting-dodge",
+      "mechanic_text_dump": "Youcanuse2BarriertickstoautomaticallypassaDexteritysavingthrow"
     },
     {
       "name": "Uncanny Dodge",
@@ -1514,7 +1607,8 @@
           "data": "When an attacker that you can see hits you with an attack, you can use your reaction to halve the attack's damage against you."
         }
       ],
-      "id": "uncanny-dodge"
+      "id": "uncanny-dodge",
+      "mechanic_text_dump": "Whenanattackerthatyoucanseehitsyouwithanattackyoucanuseyourreactiontohalvetheattacksdamageagainstyou"
     },
     {
       "name": "Weapon of Choice",
@@ -1542,7 +1636,8 @@
           "data": "When you are hit by a melee attack, if you are currently holding your Weapon of Choice, you can expend one superiority die as a reaction, adding the number rolled to your AC. If the attack still hits, you take half damage from it."
         }
       ],
-      "id": "weapon-of-choice"
+      "id": "weapon-of-choice",
+      "mechanic_text_dump": "YouhaveundergoneextensivetrainingwithasinglerangedweapontypeChoosearangedweapontypewhichbecomesyourWeaponofChoiceWhenyouhaveyourWeaponofChoiceequippedyougainasetofabilitiesthatarefueledbyspecialdicecalledsuperioritydiceYoumayspend1monthofintensivetrainingtoexchangeyourWeaponofChoicewithanotherrangedweapontypeSuperiorityDicelistYouhavefoursuperioritydicewhichared8sAsuperioritydieisexpendedwhenyouuseitYouregainallofyourexpendedsuperioritydicewhenyoufinishashortorlongrestYougainanothersuperioritydieat7thlevelandonemoreat15thlevelUsingSuperiorityDiceYoucanexpendsuperioritydicetogainanumberofdifferentbenefitsWhenyoumakeaweaponattackagainstacreaturewithyourWeaponofChoiceyoucanexpendonesuperioritydietoaddittotheattackrollYoucanusethisabilitybeforeoraftermakingtheattackrollbutbeforeanyoftheeffectsoftheattackareappliedWhenyoudamageacreaturewithaweaponattackyoucanexpendonesuperioritydietoaddittothedamagerollYoucanusethisabilityafterrollingdamageIftheattackcausesthetargettomakeaConstitutionsavingthrowtomaintainconcentrationithasdisadvantageonthatsavelistWhenyouarehitbyameleeattackifyouarecurrentlyholdingyourWeaponofChoiceyoucanexpendonesuperioritydieasareactionaddingthenumberrolledtoyourACIftheattackstillhitsyoutakehalfdamagefromit"
     },
     {
       "name": "Zero-Sum",
@@ -1564,7 +1659,8 @@
           "data": "Starting at the 11th level, you can use this ability three times per short rest."
         }
       ],
-      "id": "zero-sum"
+      "id": "zero-sum",
+      "mechanic_text_dump": "WhenyoumakeameleeattackinsteadofrollingadiceyoucanflipacoinOnaheadsitsacriticalhitOnatailsitsacriticalmissYoucanusethisabilityoncepershortrestStartingatthe9thlevelyoucanusethisabilitytwicepershortrestStartingatthe11thlevelyoucanusethisabilitythreetimespershortrest"
     }
   ]
 }

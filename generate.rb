@@ -192,6 +192,7 @@ def generate_config_file(page)
 
       page[:renderables].each do |renderable|
         if dup_model.has_key?(renderable)
+          dup_model["#{renderable}_text_dump"] = dup_model[renderable].nil? ? '' : dup_model[renderable].gsub(/\W/,'')
           dup_model[renderable] = generate_renderable(dup_model[renderable])
         end
       end
@@ -258,6 +259,12 @@ pages = [
     type: 'grenades_mines',
     url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRBAZH9BXc9xIj62i-StAKv08-iNSQSUyiWjz7TrVqcjEVe-uDaFIy9a4zRxYchDikCsskcNf-vexsG/pub?gid=0&single=true&output=csv',
     renderables: ['desc'],
+    id: 'name'
+  },
+  {
+    type: 'weapons',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQqEWxn624K8fJS7V1EQH3RZgRApTepIx91C2BIGEDzQTvwtvdTaHduzujhVEmPknjifAU7FFCcjJcv/pub?gid=0&single=true&output=csv',
+    renderables: ['notes'],
     id: 'name'
   }
 ].each do |p|

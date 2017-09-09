@@ -1,5 +1,5 @@
 {
-  "updated": "September  9, 2017 @ 12:01 AM",
+  "updated": "September  9, 2017 @  5:38 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTPhVRIodUwbDYFw8wJZtmb63tTjFJMxY-cN6P5nayPpJhNxAQFqIxeSLd5Tz75aOZ7CLuBkNsDrcs9/pubhtml",
   "data": [
     {
@@ -18,7 +18,8 @@
       "quarian": null,
       "salarian": "x",
       "turian": null,
-      "id": "actor"
+      "id": "actor",
+      "description_text_dump": ""
     },
     {
       "name": "Alert",
@@ -36,7 +37,8 @@
       "quarian": null,
       "salarian": "x",
       "turian": "x",
-      "id": "alert"
+      "id": "alert",
+      "description_text_dump": ""
     },
     {
       "name": "Athlete",
@@ -54,7 +56,8 @@
       "quarian": null,
       "salarian": "x",
       "turian": "x",
-      "id": "athlete"
+      "id": "athlete",
+      "description_text_dump": ""
     },
     {
       "name": "Biotic Slayer",
@@ -76,7 +79,8 @@
       "quarian": "x",
       "salarian": "x",
       "turian": "x",
-      "id": "biotic-slayer"
+      "id": "biotic-slayer",
+      "description_text_dump": "NameChangeforMageSlayer"
     },
     {
       "name": "Charger",
@@ -94,7 +98,8 @@
       "quarian": null,
       "salarian": null,
       "turian": "x",
-      "id": "charger"
+      "id": "charger",
+      "description_text_dump": ""
     },
     {
       "name": "Crossbow Expert",
@@ -112,7 +117,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "crossbow-expert"
+      "id": "crossbow-expert",
+      "description_text_dump": ""
     },
     {
       "name": "Defensive Duelist",
@@ -130,7 +136,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "defensive-duelist"
+      "id": "defensive-duelist",
+      "description_text_dump": ""
     },
     {
       "name": "Dual Wielder",
@@ -148,7 +155,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "dual-wielder"
+      "id": "dual-wielder",
+      "description_text_dump": ""
     },
     {
       "name": "Dungeon Delver",
@@ -166,7 +174,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "dungeon-delver"
+      "id": "dungeon-delver",
+      "description_text_dump": ""
     },
     {
       "name": "Durable",
@@ -184,7 +193,8 @@
       "quarian": null,
       "salarian": null,
       "turian": "x",
-      "id": "durable"
+      "id": "durable",
+      "description_text_dump": ""
     },
     {
       "name": "Elemental Adept",
@@ -206,7 +216,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "elemental-adept"
+      "id": "elemental-adept",
+      "description_text_dump": "YouoptionsfordamagetypesareFireColdLighteningForceandNecrotic"
     },
     {
       "name": "Grappler",
@@ -224,7 +235,8 @@
       "quarian": null,
       "salarian": null,
       "turian": "x",
-      "id": "grappler"
+      "id": "grappler",
+      "description_text_dump": ""
     },
     {
       "name": "Great Weapon Master",
@@ -242,7 +254,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "great-weapon-master"
+      "id": "great-weapon-master",
+      "description_text_dump": ""
     },
     {
       "name": "Grenadier",
@@ -294,7 +307,8 @@
       "quarian": "x",
       "salarian": "x",
       "turian": "x",
-      "id": "grenadier"
+      "id": "grenadier",
+      "description_text_dump": "2grenadecapacityWhenyouuseagrenadeyoumaychoosetomakearangedweaponattackonacreatureinsteadofchoosingatargetlocationAddyourdexteritymodifiertotheattackrollOnahitthegrenadedeals1d4dexteritymodifierbludgeoningdamagetothetargetandithasdisadvantageonthesavingthrowcausedbythegrenadeThegrenadelandsatthetargetslocationOnamissthegrenadelands2mbeyondthetargetOnacriticalmissroll2d4ThefirstdierepresentsthenumberofspacesawayfromthetargetinwhichthegrenadelandsTheseconddierepresentsthedirection1North2East3South4WestEg22thegrenadewouldland2spaceseastofthetargetOncethegrenadeslocationisdetermineditresolvesnormally"
     },
     {
       "name": "Healer",
@@ -312,7 +326,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "healer"
+      "id": "healer",
+      "description_text_dump": ""
     },
     {
       "name": "Heavily Armored",
@@ -330,7 +345,8 @@
       "quarian": "x",
       "salarian": null,
       "turian": null,
-      "id": "heavily-armored"
+      "id": "heavily-armored",
+      "description_text_dump": ""
     },
     {
       "name": "Heavy Armor Master",
@@ -348,7 +364,8 @@
       "quarian": null,
       "salarian": null,
       "turian": "x",
-      "id": "heavy-armor-master"
+      "id": "heavy-armor-master",
+      "description_text_dump": ""
     },
     {
       "name": "Inspiring Leader",
@@ -366,7 +383,8 @@
       "quarian": "x",
       "salarian": "x",
       "turian": "x",
-      "id": "inspiring-leader"
+      "id": "inspiring-leader",
+      "description_text_dump": ""
     },
     {
       "name": "Keen Mind",
@@ -384,7 +402,8 @@
       "quarian": "x",
       "salarian": "x",
       "turian": "x",
-      "id": "keen-mind"
+      "id": "keen-mind",
+      "description_text_dump": ""
     },
     {
       "name": "Lightly Armored",
@@ -402,7 +421,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "lightly-armored"
+      "id": "lightly-armored",
+      "description_text_dump": ""
     },
     {
       "name": "Linguist",
@@ -420,7 +440,8 @@
       "quarian": "x",
       "salarian": "x",
       "turian": null,
-      "id": "linguist"
+      "id": "linguist",
+      "description_text_dump": ""
     },
     {
       "name": "Lucky",
@@ -438,7 +459,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "lucky"
+      "id": "lucky",
+      "description_text_dump": ""
     },
     {
       "name": "Magic Initiate",
@@ -456,7 +478,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "magic-initiate"
+      "id": "magic-initiate",
+      "description_text_dump": ""
     },
     {
       "name": "Martial Adept",
@@ -474,7 +497,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "martial-adept"
+      "id": "martial-adept",
+      "description_text_dump": ""
     },
     {
       "name": "Medium Armor Master",
@@ -492,7 +516,8 @@
       "quarian": "x",
       "salarian": null,
       "turian": "x",
-      "id": "medium-armor-master"
+      "id": "medium-armor-master",
+      "description_text_dump": ""
     },
     {
       "name": "Mobile",
@@ -510,7 +535,8 @@
       "quarian": "x",
       "salarian": "x",
       "turian": "x",
-      "id": "mobile"
+      "id": "mobile",
+      "description_text_dump": ""
     },
     {
       "name": "Moderately Armored",
@@ -528,7 +554,8 @@
       "quarian": null,
       "salarian": "x",
       "turian": null,
-      "id": "moderately-armored"
+      "id": "moderately-armored",
+      "description_text_dump": ""
     },
     {
       "name": "Mounted Combat",
@@ -546,7 +573,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "mounted-combat"
+      "id": "mounted-combat",
+      "description_text_dump": ""
     },
     {
       "name": "Observant",
@@ -564,7 +592,8 @@
       "quarian": "x",
       "salarian": "x",
       "turian": "x",
-      "id": "observant"
+      "id": "observant",
+      "description_text_dump": ""
     },
     {
       "name": "Polearm Master",
@@ -582,7 +611,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "polearm-master"
+      "id": "polearm-master",
+      "description_text_dump": ""
     },
     {
       "name": "Resilient",
@@ -600,7 +630,8 @@
       "quarian": null,
       "salarian": null,
       "turian": "x",
-      "id": "resilient"
+      "id": "resilient",
+      "description_text_dump": ""
     },
     {
       "name": "Ritual Caster",
@@ -618,7 +649,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "ritual-caster"
+      "id": "ritual-caster",
+      "description_text_dump": ""
     },
     {
       "name": "Savage Attacker",
@@ -636,7 +668,8 @@
       "quarian": null,
       "salarian": null,
       "turian": "x",
-      "id": "savage-attacker"
+      "id": "savage-attacker",
+      "description_text_dump": ""
     },
     {
       "name": "Sentinel",
@@ -654,7 +687,8 @@
       "quarian": null,
       "salarian": null,
       "turian": "x",
-      "id": "sentinel"
+      "id": "sentinel",
+      "description_text_dump": ""
     },
     {
       "name": "Sharpshooter",
@@ -672,7 +706,8 @@
       "quarian": "x",
       "salarian": "x",
       "turian": "x",
-      "id": "sharpshooter"
+      "id": "sharpshooter",
+      "description_text_dump": ""
     },
     {
       "name": "Shield Master",
@@ -690,7 +725,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "shield-master"
+      "id": "shield-master",
+      "description_text_dump": ""
     },
     {
       "name": "Skilled",
@@ -708,7 +744,8 @@
       "quarian": "x",
       "salarian": "x",
       "turian": "x",
-      "id": "skilled"
+      "id": "skilled",
+      "description_text_dump": ""
     },
     {
       "name": "Skulker",
@@ -726,7 +763,8 @@
       "quarian": null,
       "salarian": "x",
       "turian": null,
-      "id": "skulker"
+      "id": "skulker",
+      "description_text_dump": ""
     },
     {
       "name": "Spell Sniper",
@@ -744,7 +782,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "spell-sniper"
+      "id": "spell-sniper",
+      "description_text_dump": ""
     },
     {
       "name": "Tavern Brawler",
@@ -762,7 +801,8 @@
       "quarian": null,
       "salarian": null,
       "turian": "x",
-      "id": "tavern-brawler"
+      "id": "tavern-brawler",
+      "description_text_dump": ""
     },
     {
       "name": "Tough",
@@ -780,7 +820,8 @@
       "quarian": null,
       "salarian": null,
       "turian": "x",
-      "id": "tough"
+      "id": "tough",
+      "description_text_dump": ""
     },
     {
       "name": "War Caster",
@@ -798,7 +839,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "war-caster"
+      "id": "war-caster",
+      "description_text_dump": ""
     },
     {
       "name": "Weapon Master",
@@ -820,7 +862,8 @@
       "quarian": null,
       "salarian": null,
       "turian": "x",
-      "id": "weapon-master"
+      "id": "weapon-master",
+      "description_text_dump": "Insteadofgainproficiencywith4weaponsyougainproficiencywith2rangedweapons"
     }
   ]
 }
