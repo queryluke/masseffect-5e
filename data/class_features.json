@@ -1,5 +1,5 @@
 {
-  "updated": "September  7, 2017 @ 10:24 PM",
+  "updated": "September  9, 2017 @ 12:01 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -74,7 +74,17 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Starting at the 2nd level, when you cast a cantrip, you can choose either advancement option\nStarting at the 10th level, when you cast tech powers, you can choose either advancement option\nStarting at the 14th level, when you cast a biotic spell, you can choose either advancement option"
+          "data": "Starting at the 2nd level, when you cast a cantrip, you can choose either advancement option"
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Starting at the 10th level, when you cast tech powers, you can choose either advancement option"
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Starting at the 14th level, when you cast a biotic spell, you can choose either advancement option"
         }
       ],
       "id": "battlemaster"
@@ -151,23 +161,13 @@
         },
         {
           "id": 2,
-          "type": "line",
-          "data": "Your speed is doubled."
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "+4 to all melee weapon damage rolls."
-        },
-        {
-          "id": 4,
-          "type": "line",
-          "data": "You have advantage on Strength Dexterity saving throws."
-        },
-        {
-          "id": 5,
-          "type": "line",
-          "data": "Once you use this feature, you can't use it again until you finish a long rest."
+          "type": "list",
+          "data": [
+            "Your speed is doubled.",
+            "+4 to all melee weapon damage rolls.",
+            "You have advantage on Strength Dexterity saving throws.",
+            "Once you use this feature, you can't use it again until you finish a long rest."
+          ]
         }
       ],
       "id": "biotic-focus"
@@ -184,57 +184,59 @@
         {
           "id": 2,
           "type": "line",
-          "data": "You learn 2 maneuvers of your choice at the 3rd, 10th, and 18th level."
+          "data": "At level 3, learn 2 maneuvers. At level 14, learn 2 more maneuvers"
         },
         {
           "id": 3,
-          "type": "line",
-          "data": "Disarming Attack - When you hit a creature with a melee attack, you can expend one barrier tick to disarm the target, forcing it to drop one item of your choice that it’s holding. You add the barrier tick die to the attack’s damage roll, and the target must make a Strength saving throw. On a failed save, it drops the object you choose. The object lands at its feet."
-        },
-        {
-          "id": 4,
-          "type": "line",
-          "data": "Distracting Attack - When you hit a creature with a melee attack, you can expend one barrier tick to distract the creature, giving your allies an opening. You add the barrier tick to the attack’s damage roll. The next attack roll against the target by an attacker other than you has advantage if the attack is made before the start of your next turn."
-        },
-        {
-          "id": 5,
-          "type": "line",
-          "data": "Feinting Attack - You can expend one barrier tick and use a bonus action on your turn to feint, choosing one creature within 2m of you as your target. You have advantage on your melee next attack roll against that creature. If that attack hits, add the barrier tick to the attack’s damage roll."
-        },
-        {
-          "id": 6,
-          "type": "line",
-          "data": "Goading Attack - When you hit a creature with a melee attack, you can expend one barrier tick to attempt to goad the target into attacking you. You add the barrier tick to the attack’s damage roll, and the target must make a Wisdom saving throw. On a failed save, the target has disadvantage on all attack rolls against targets other than you until the end of your next turn."
-        },
-        {
-          "id": 7,
-          "type": "line",
-          "data": "Lift Attack - When you hit a creature with a melee attack, you can expend one barrier ticks to attempt to lift the target. You add the barrier tick to the attack’s damage roll, and if the target is Medium or smaller, it must make a Dexterity saving throw. On a failed save, the target is lifted."
-        },
-        {
-          "id": 8,
-          "type": "line",
-          "data": "Menacing Attack - When you hit a creature with a melee attack, you can expend one barrier tick to attempt to frighten the target. You add the barrier tick to the attack’s damage roll, and the target must make a Wisdom saving throw. On a failed save, it is frightened of you until the end of your next turn."
-        },
-        {
-          "id": 9,
-          "type": "line",
-          "data": "Pushing Attack - When you hit a creature with a melee attack, you can expend one barrier tick to attempt to drive the target back. You add the barrier tick to the attack's damage roll, and if the target is Large or smaller, it must make a Strength saving throw. On a failed save, you push the target up to 8m away from you."
-        },
-        {
-          "id": 10,
-          "type": "line",
-          "data": "Riposte - When a creature misses you with a melee attack, you can use your reaction and expend one barrier tick to make a melee attack against the creature. If you hit, you add the barrier tick to the attack's damage roll."
-        },
-        {
-          "id": 11,
-          "type": "line",
-          "data": "Sweeping Attack - When you hit a creature with a melee attack, you can expend one barrier tick to attempt to damage another creature with the same attack. Choose another creature within 2m of the original target and within your reach. If the original attack roll would hit the second creature, it takes damage equal to the number you roll on your barrier tick. The damage is of the same type dealt by the original attack."
-        },
-        {
-          "id": 12,
-          "type": "line",
-          "data": "Trip Attack - When you hit a creature with a melee attack, you can expend one barrier tick to attempt to knock the target down. You add the barrier tick to the attack’s damage roll, and if the target is Large or smaller, it must make a Strength saving throw. On a failed save, you knock the target prone."
+          "type": "table",
+          "data": {
+            "headers": [
+              "Name",
+              "Maneuver"
+            ],
+            "items": [
+              [
+                "Disarming Attack",
+                "When you hit a creature with a melee attack, you can expend one barrier tick to disarm the target, forcing it to drop one item of your choice that it’s holding. You add the barrier tick die to the attack’s damage roll, and the target must make a Strength saving throw. On a failed save, it drops the object you choose. The object lands at its feet."
+              ],
+              [
+                "Distracting Attack",
+                "When you hit a creature with a melee attack, you can expend one barrier tick to distract the creature, giving your allies an opening. You add the barrier tick to the attack’s damage roll. The next attack roll against the target by an attacker other than you has advantage if the attack is made before the start of your next turn."
+              ],
+              [
+                "Feinting Attack",
+                "You can expend one barrier tick and use a bonus action on your turn to feint, choosing one creature within 2m of you as your target. You have advantage on your melee next attack roll against that creature. If that attack hits, add the barrier tick to the attack’s damage roll."
+              ],
+              [
+                "Goading Attack",
+                "When you hit a creature with a melee attack, you can expend one barrier tick to attempt to goad the target into attacking you. You add the barrier tick to the attack’s damage roll, and the target must make a Wisdom saving throw. On a failed save, the target has disadvantage on all attack rolls against targets other than you until the end of your next turn."
+              ],
+              [
+                "Lift Attack",
+                "When you hit a creature with a melee attack, you can expend one barrier ticks to attempt to lift the target. You add the barrier tick to the attack’s damage roll, and if the target is Medium or smaller, it must make a Dexterity saving throw. On a failed save, the target is lifted."
+              ],
+              [
+                "Menacing Attack",
+                "When you hit a creature with a melee attack, you can expend one barrier tick to attempt to frighten the target. You add the barrier tick to the attack’s damage roll, and the target must make a Wisdom saving throw. On a failed save, it is frightened of you until the end of your next turn."
+              ],
+              [
+                "Pushing Attack",
+                "When you hit a creature with a melee attack, you can expend one barrier tick to attempt to drive the target back. You add the barrier tick to the attack's damage roll, and if the target is Large or smaller, it must make a Strength saving throw. On a failed save, you push the target up to 8m away from you."
+              ],
+              [
+                "Riposte",
+                "When a creature misses you with a melee attack, you can use your reaction and expend one barrier tick to make a melee attack against the creature. If you hit, you add the barrier tick to the attack's damage roll."
+              ],
+              [
+                "Sweeping Attack",
+                "When you hit a creature with a melee attack, you can expend one barrier tick to attempt to damage another creature with the same attack. Choose another creature within 2m of the original target and within your reach. If the original attack roll would hit the second creature, it takes damage equal to the number you roll on your barrier tick. The damage is of the same type dealt by the original attack."
+              ],
+              [
+                "Trip Attack",
+                "When you hit a creature with a melee attack, you can expend one barrier tick to attempt to knock the target down. You add the barrier tick to the attack’s damage roll, and if the target is Large or smaller, it must make a Strength saving throw. On a failed save, you knock the target prone."
+              ]
+            ]
+          }
         }
       ],
       "id": "biotic-maneuvers"
@@ -431,18 +433,12 @@
         },
         {
           "id": 2,
-          "type": "line",
-          "data": "The attacks ignore half and three-quarters cover."
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "On each hit, the weapon deals additional damage to the target equal to 2 + half your fighter level."
-        },
-        {
-          "id": 4,
-          "type": "line",
-          "data": "You can use this feature three times. You regain all expended uses of it when you finish a short or long rest."
+          "type": "list",
+          "data": [
+            "The attacks ignore half and three-quarters cover.",
+            "On each hit, the weapon deals additional damage to the target equal to 2 + half your fighter level.",
+            "You can use this feature three times. You regain all expended uses of it when you finish a short or long rest."
+          ]
         }
       ],
       "id": "deadly-aim"
@@ -683,43 +679,51 @@
       "mechanic": [
         {
           "id": 1,
-          "type": "line",
-          "data": "{!table} Style | Perk | Advanced Perk"
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Brawler | You have advantage when making melee attacks. | Add twice your proficiency bonus to your attack rolls."
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "Dual Wield | You can wield 2 pistols or SMGs (or combination thereof). Your off-hand weapon always shoots with a disadvantage. You will automatically miss targets out of range. | Remove the disadvantage and range penalty to your off-hand weapon"
-        },
-        {
-          "id": 4,
-          "type": "line",
-          "data": "The Free Hand | When wielding a pistol, you have a +2 bonus to hit with ranged spell or tech attacks. | When wielding a pistol, you add your proficiency bonus as damage to all damaging biotic spells and tech."
-        },
-        {
-          "id": 5,
-          "type": "line",
-          "data": "Up close and personal | You do not have disadvantage on ranged attack rolls against targets within melee range. | In your hands, all weapons are considered to have the Hip-Fire attribute."
-        },
-        {
-          "id": 6,
-          "type": "line",
-          "data": "Sniper | Add your dexterity modifier as damage to successful range attacks against targets that are at least 10m away. | If no hostile creature are within 10m of you, you have advantage on all ranged weapon attacks against targets at least 10m away."
-        },
-        {
-          "id": 7,
-          "type": "line",
-          "data": "Defense | +1AC and +10 Shields | +2AC and +20 Shields"
-        },
-        {
-          "id": 8,
-          "type": "line",
-          "data": "Protection (Vanguard Only) | When a creature you can see attacks a target other than you that is within 2m of you, you can use your reaction and expend one barrier tick to impose disadvantage on the attack roll. | If the attack succeeds, the barrier tick absorbs damage as a normal barrier tick would.\n{/table}"
+          "type": "table",
+          "data": {
+            "headers": [
+              "Style",
+              "Perk",
+              "Advanced Perk"
+            ],
+            "items": [
+              [
+                "Brawler",
+                "You have advantage when making melee attacks.",
+                "Add twice your proficiency bonus to your attack rolls."
+              ],
+              [
+                "Dual Wield",
+                "You can wield 2 pistols or SMGs (or combination thereof). Your off-hand weapon always shoots with a disadvantage. You will automatically miss targets out of range.",
+                "Remove the disadvantage and range penalty to your off-hand weapon"
+              ],
+              [
+                "The Free Hand",
+                "When wielding a pistol, you have a +2 bonus to hit with ranged spell or tech attacks.",
+                "When wielding a pistol, you add your proficiency bonus as damage to all damaging biotic spells and tech."
+              ],
+              [
+                "Up close and personal",
+                "You do not have disadvantage on ranged attack rolls against targets within melee range.",
+                "In your hands, all weapons are considered to have the Hip-Fire attribute."
+              ],
+              [
+                "Sniper",
+                "Add your dexterity modifier as damage to successful range attacks against targets that are at least 10m away.",
+                "If no hostile creature are within 10m of you, you have advantage on all ranged weapon attacks against targets at least 10m away."
+              ],
+              [
+                "Defense",
+                "+1AC and +10 Shields",
+                "+2AC and +20 Shields"
+              ],
+              [
+                "Protection (Vanguard Only)",
+                "When a creature you can see attacks a target other than you that is within 2m of you, you can use your reaction and expend one barrier tick to impose disadvantage on the attack roll.",
+                "If the attack succeeds, the barrier tick absorbs damage as a normal barrier tick would."
+              ]
+            ]
+          }
         }
       ],
       "id": "fighting-style"
@@ -748,25 +752,19 @@
         {
           "id": 2,
           "type": "line",
-          "data": "You also learn to summon a Healing drone:\n{!list}"
+          "data": "You also learn to summon a Healing drone:"
         },
         {
           "id": 3,
-          "type": "line",
-          "data": "Health: your lvl + Xd8"
+          "type": "list",
+          "data": [
+            "Health: your lvl + Xd8",
+            "Speed: 10m",
+            "Ability: The drone can cast a 1 tech point First Aid."
+          ]
         },
         {
           "id": 4,
-          "type": "line",
-          "data": "Speed: 10m"
-        },
-        {
-          "id": 5,
-          "type": "line",
-          "data": "Ability: The drone can cast a 1 tech point First Aid.\n{list}"
-        },
-        {
-          "id": 6,
           "type": "line",
           "data": "At the 14th level, your healing drone casts a 3 tech point First Aid and has an AC of 15."
         }
@@ -792,7 +790,12 @@
         {
           "id": 1,
           "type": "line",
-          "data": "At the 6th level, increase the die type of your barrier to d10.\nAt the 10th level, increase the die type of your barrier to d12."
+          "data": "At the 6th level, increase the die type of your barrier to d10."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "At the 10th level, increase the die type of your barrier to d12."
         }
       ],
       "id": "improved-barrier"
@@ -965,38 +968,15 @@
         },
         {
           "id": 2,
-          "type": "line",
-          "data": "When creating an enhancement, choose from the list below:\n{!list}"
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "Stimulant: After using this medigel, you have advantage on the next saving throw or attack roll you make within 1 minute."
-        },
-        {
-          "id": 4,
-          "type": "line",
-          "data": "Opioid: Within 1 minute of using this medigel, if you would fall below 0 hit point but not outright die, you may fall to 1 hit point instead."
-        },
-        {
-          "id": 5,
-          "type": "line",
-          "data": "Steroid: After using this medigel, add +2 damage to all melee damage for 1 minute."
-        },
-        {
-          "id": 6,
-          "type": "line",
-          "data": "Minagen X3: After using this medigel, gain +2 damage to all biotic spells and cantrips for 1 minute."
-        },
-        {
-          "id": 7,
-          "type": "line",
-          "data": "Videlicet: After using this medigel, gain +2 bonus to all ranged tech attacks for 1 minute."
-        },
-        {
-          "id": 8,
-          "type": "line",
-          "data": "Styptic: Increase the healing die by 1 die type when using this medigel.\n{list}"
+          "type": "list",
+          "data": [
+            "Stimulant: After using this medigel, you have advantage on the next saving throw or attack roll you make within 1 minute.",
+            "Opioid: Within 1 minute of using this medigel, if you would fall below 0 hit point but not outright die, you may fall to 1 hit point instead.",
+            "Steroid: After using this medigel, add +2 damage to all melee damage for 1 minute.",
+            "Minagen X3: After using this medigel, gain +2 damage to all biotic spells and cantrips for 1 minute.",
+            "Videlicet: After using this medigel, gain +2 bonus to all ranged tech attacks for 1 minute.",
+            "Styptic: Increase the healing die by 1 die type when using this medigel."
+          ]
         }
       ],
       "id": "medi-gel-enhancements"
@@ -1046,26 +1026,15 @@
       "mechanic": [
         {
           "id": 1,
-          "type": "line",
-          "data": "Starting at the 3rd level, you've mastered the omni-shield. As a bonus action, create a large kenetic shield out of your omni-tool that lasts one minute. You can use another bonus action to end Omni-Shield early. While deployed:\n{!list}"
+          "type": "list",
+          "data": [
+            "If weilding a single-handed ranged or versatile melee weapon, gain +2 AC and a +2 bonus to Dexterity saving throws.",
+            "If a creature within 2m of you is attacked, you may use your reaction to impose disadvantage on that attack.",
+            "You omni-tool melee attack is replaced with Shield Bash: Make a melee attack roll (+STR), on a hit, deal 1d12 bludgeoning damage. You may shove a hit creature backwards 2m."
+          ]
         },
         {
           "id": 2,
-          "type": "line",
-          "data": "If weilding a single-handed ranged or versatile melee weapon, gain +2 AC and a +2 bonus to Dexterity saving throws."
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "If a creature within 2m of you is attacked, you may use your reaction to impose disadvantage on that attack."
-        },
-        {
-          "id": 4,
-          "type": "line",
-          "data": "You omni-tool melee attack is replaced with Shield Bash: Make a melee attack roll (+STR), on a hit, deal 1d12 bludgeoning damage. You may shove a hit creature backwards 2m.\n{list}"
-        },
-        {
-          "id": 5,
           "type": "line",
           "data": "Once you use this feature, you must finish a short or long rest before you can use it again."
         }
@@ -1173,7 +1142,12 @@
         {
           "id": 1,
           "type": "line",
-          "data": "At the 5th level, when you use your action to cast a cantrip, you may make a melee or ranged weapon attack as a bonus action.\nAt the 9th level, when you use your action to cast a spell or tech power, you may make a melee or ranged weapon attack as a bonus action."
+          "data": "At the 5th level, when you use your action to cast a cantrip, you may make a melee or ranged weapon attack as a bonus action."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "At the 9th level, when you use your action to cast a spell or tech power, you may make a melee or ranged weapon attack as a bonus action."
         }
       ],
       "id": "quick-cast"
@@ -1373,40 +1347,21 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Call in a Supply Pylon to a location within 4m. At the start of your next turn, the pylon arrives. If any creature is standing in the targeted location, the creature must make a Dexterity saving throw, it has advantage on this saving throw. On a failed save, the creature takes 4d8 bludgeoning damage and is knocked prone.\n{!list}"
+          "data": "Call in a Supply Pylon to a location within 4m. At the start of your next turn, the pylon arrives. If any creature is standing in the targeted location, the creature must make a Dexterity saving throw, it has advantage on this saving throw. On a failed save, the creature takes 4d8 bludgeoning damage and is knocked prone."
         },
         {
           "id": 2,
-          "type": "line",
-          "data": "One the pylon has landed, friendly creatures (including you) can spend 1 action accessing the pylon to gain a single resource listed. Creatures must be within melee range to access the pylon."
+          "type": "list",
+          "data": [
+            "Gain 1 Heavy Weapon ammo charge",
+            "Gain 5 TP or 5 levels worth of Spell slots",
+            "Gain 1 medigel",
+            "Gain 1 grenades",
+            "Gain 2 specialized thermal clips."
+          ]
         },
         {
           "id": 3,
-          "type": "line",
-          "data": "Gain 1 Heavy Weapon ammo charge"
-        },
-        {
-          "id": 4,
-          "type": "line",
-          "data": "Gain 5 TP or 5 levels worth of Spell slots"
-        },
-        {
-          "id": 5,
-          "type": "line",
-          "data": "Gain 1 medigel"
-        },
-        {
-          "id": 6,
-          "type": "line",
-          "data": "Gain 1 grenades"
-        },
-        {
-          "id": 7,
-          "type": "line",
-          "data": "Gain 2 specialized thermal clips.\n{list}"
-        },
-        {
-          "id": 8,
           "type": "line",
           "data": "Once you use this feature, you cannot use it again until you finish a short or long rest."
         }
@@ -1499,43 +1454,16 @@
         },
         {
           "id": 2,
-          "type": "line",
-          "data": "Learn 2 AI packages from the list below (you've already learned the Defensive package). At the 14th level, you learn 2 additional packages."
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "Defensive: This is the standard Tech Armor package. It does not affect allies."
-        },
-        {
-          "id": 4,
-          "type": "line",
-          "data": "Anti-Biotic: Resistance to force and necrotic damage."
-        },
-        {
-          "id": 5,
-          "type": "line",
-          "data": "Anti-tech: Resistance to fire and cold damage."
-        },
-        {
-          "id": 6,
-          "type": "line",
-          "data": "Grounded: Resistance to lightening damage."
-        },
-        {
-          "id": 7,
-          "type": "line",
-          "data": "Reactive: Add your tech modifier to saving throws"
-        },
-        {
-          "id": 8,
-          "type": "line",
-          "data": "Speed: Inscrease your speed by 4m."
-        },
-        {
-          "id": 9,
-          "type": "line",
-          "data": "Regen: Inscrease shield regeneration by 1 die type (max d12). If an ally is already at max, they gain +4."
+          "type": "list",
+          "data": [
+            "Defensive: This is the standard Tech Armor package. It does not affect allies.",
+            "Anti-Biotic: Resistance to force and necrotic damage.",
+            "Anti-tech: Resistance to fire and cold damage.",
+            "Grounded: Resistance to lightening damage.",
+            "Reactive: Add your tech modifier to saving throws",
+            "Speed: Inscrease your speed by 4m.",
+            "Regen: Inscrease shield regeneration by 1 die type (max d12). If an ally is already at max, they gain +4."
+          ]
         }
       ],
       "id": "tech-aura"
@@ -1599,36 +1527,17 @@
         },
         {
           "id": 2,
-          "type": "line",
-          "data": "Superiority Dice:"
+          "type": "list",
+          "data": [
+            "You have four superiority dice, which are d8s. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a short or long rest. You gain another superiority die at 7th level and one more at 15th level.",
+            "Using Superiority Dice:",
+            "You can expend superiority dice to gain a number of different benefits.",
+            "When you make a weapon attack against a creature with your Weapon of Choice, you can expend one superiority die to add it to the attack roll. You can use this ability before or after making the attack roll, but before any of the effects of the attack are applied.",
+            "When you damage a creature with a weapon attack, you can expend one superiority die to add it to the damage roll. You can use this ability after rolling damage. If the attack causes the target to make a Constitution saving throw to maintain concentration, it has disadvantage on that save."
+          ]
         },
         {
           "id": 3,
-          "type": "line",
-          "data": "You have four superiority dice, which are d8s. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a short or long rest. You gain another superiority die at 7th level and one more at 15th level."
-        },
-        {
-          "id": 4,
-          "type": "line",
-          "data": "Using Superiority Dice:"
-        },
-        {
-          "id": 5,
-          "type": "line",
-          "data": "You can expend superiority dice to gain a number of different benefits."
-        },
-        {
-          "id": 6,
-          "type": "line",
-          "data": "When you make a weapon attack against a creature with your Weapon of Choice, you can expend one superiority die to add it to the attack roll. You can use this ability before or after making the attack roll, but before any of the effects of the attack are applied."
-        },
-        {
-          "id": 7,
-          "type": "line",
-          "data": "When you damage a creature with a weapon attack, you can expend one superiority die to add it to the damage roll. You can use this ability after rolling damage. If the attack causes the target to make a Constitution saving throw to maintain concentration, it has disadvantage on that save."
-        },
-        {
-          "id": 8,
           "type": "line",
           "data": "When you are hit by a melee attack, if you are currently holding your Weapon of Choice, you can expend one superiority die as a reaction, adding the number rolled to your AC. If the attack still hits, you take half damage from it."
         }
@@ -1642,17 +1551,17 @@
         {
           "id": 1,
           "type": "line",
-          "data": "{!level} When you make a melee attack, instead of rolling a dice, you can flip a coin. On a heads, it's a critical hit. On a tails, it's a critical miss. You can use this ability once per short rest."
+          "data": "When you make a melee attack, instead of rolling a dice, you can flip a coin. On a heads, it's a critical hit. On a tails, it's a critical miss. You can use this ability once per short rest."
         },
         {
           "id": 2,
           "type": "line",
-          "data": "You can use this ability twice per short rest."
+          "data": "Starting at the 9th level, you can use this ability twice per short rest."
         },
         {
           "id": 3,
           "type": "line",
-          "data": "You can use this ability three times per short rest."
+          "data": "Starting at the 11th level, you can use this ability three times per short rest."
         }
       ],
       "id": "zero-sum"

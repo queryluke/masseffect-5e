@@ -1,5 +1,5 @@
 {
-  "updated": "September  8, 2017 @ 11:53 PM",
+  "updated": "September  9, 2017 @ 12:01 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSs9dkG94f5fPCOJ38g-xCUCwnYynzbiFdggQ1KqM1vMscINwcn2_OGPqGhvxOrYl18oK7dO2notL_y/pubhtml",
   "data": [
     {
@@ -160,7 +160,21 @@
     {
       "name": "Barrier Detonation",
       "mechanic": [
-
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Expend all of your remaining barrier ticks to create a negative mass effect field in a 2m sphere originating from you. In addition, roll Xd8, where X is the number of barrier ticks consumed. The result is the number of hit points of creatures this spell can affect. Starting with the creature that has the lowest current hit points, each creature affected by this spell becomes {lifted} until the start of your next turn. Subtract each creature's hit points from the total before moving on to the creature with the next lowest hit points. A creature's hit points must be equal to or less than the remaining total for that creature to be affected."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Other powers and class features can increase the die type of this roll."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Increase the number of die roll by 2d8 reach 5th level (X + 2d8), 11th level (X + 4d8), and 17th level (X + 6d8)."
+        }
       ],
       "adv_option_1": "Improved Lift : Add an additional 2[dd] to the roll.",
       "adv_option_2": "Radius : Increase the size of the detonation to 4m",
@@ -193,8 +207,8 @@
       "reviewed": "y",
       "id": "barrier-detonation",
       "adv_options": [
-        null,
-        null
+        "Improved Lift : Add an additional 2[dd] to the roll.",
+        "Radius : Increase the size of the detonation to 4m"
       ],
       "class_list": "Adept, Vanguard"
     },
@@ -674,7 +688,11 @@
     {
       "name": "Decoy",
       "mechanic": [
-
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Spend X tech points to summon a holographic copy of yourself at a location within 10m. The copy mimics your actions. When a creature attacks, it can make an Intelligence (Perception) check and, if it succeeds, is not fooled. The DC of the check is 8 + your Tech modifier + X."
+        }
       ],
       "adv_option_1": "Explosive : As an action, you can spend X tech points detonate your Decoy. Each creature within 4m must make a Dexterity saving throw. On a failed save, a creature takes Xd6 fire damage or half as much on a successful one.",
       "adv_option_2": "Improved Decoy : Your Decoy becomes so life-like that creatures have disadvantage on the Intelligence (Perception) check.",
@@ -707,15 +725,19 @@
       "reviewed": "y",
       "id": "decoy",
       "adv_options": [
-        null,
-        null
+        "Explosive : As an action, you can spend X tech points detonate your Decoy. Each creature within 4m must make a Dexterity saving throw. On a failed save, a creature takes Xd6 fire damage or half as much on a successful one.",
+        "Improved Decoy : Your Decoy becomes so life-like that creatures have disadvantage on the Intelligence (Perception) check."
       ],
       "class_list": "Engineer, Infiltrator"
     },
     {
       "name": "Defense Matrix",
       "mechanic": [
-
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Spend X tech points to reinforce your armor with special foucault currents. You gain resistance to your choice of X damage types."
+        }
       ],
       "adv_option_1": "Shield : Deploy the matrix as a stationary shield. Up to 2 creatures of medium size can stand behind the shield, gaining the resistance benefit when attacked by creatures from the other side of the shield.",
       "adv_option_2": "Improved Defense : Gain a +2 bonus to your AC while Defense Matrix is active.",
@@ -748,15 +770,29 @@
       "reviewed": "y",
       "id": "defense-matrix",
       "adv_options": [
-        null,
-        null
+        "Shield : Deploy the matrix as a stationary shield. Up to 2 creatures of medium size can stand behind the shield, gaining the resistance benefit when attacked by creatures from the other side of the shield.",
+        "Improved Defense : Gain a +2 bonus to your AC while Defense Matrix is active."
       ],
       "class_list": "Engineer, Infiltrator, Sentinel"
     },
     {
       "name": "Dominate",
       "mechanic": [
-
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Target an organic creature within 20m. It must succeed on a Wisdom saving throw or it becomes Dominated (it is considered {charmed} and can't use spells or abilities)."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "On its turn, the dominated creature attacks the closest creature hostile to the spellcaster, making a ranged weapon attack or melee attack if it does not have a weapon. If there are no hostile creatures within range, the dominated creature uses its turn to run towards the closest hostile creature."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Each time the dominated creature takes damage, it makes a new Wisdom saving throw against the spell. If the saving throw succeeds, the spell ends."
+        }
       ],
       "adv_option_1": "Total Control : You take the the dominated creatures action. You may use it's spells and abilities.",
       "adv_option_2": "Damage : While the creature is dominated, it takes 2d6 psychic damage at the end of it's turn. This damage does not proc an opportunity to end Dominate.",
@@ -789,8 +825,8 @@
       "reviewed": "y",
       "id": "dominate",
       "adv_options": [
-        null,
-        null
+        "Total Control : You take the the dominated creatures action. You may use it's spells and abilities.",
+        "Damage : While the creature is dominated, it takes 2d6 psychic damage at the end of it's turn. This damage does not proc an opportunity to end Dominate."
       ],
       "class_list": "Adept"
     },
@@ -1127,7 +1163,21 @@
     {
       "name": "Hex Shield",
       "mechanic": [
-
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You toss a portable shield generator onto the ground in front of you. It generates 2m tall and wide, hexagon-shaped shield with 5AC and 50 shield points. These shield points do not regenerate during combat and the shield dissipates when it no longer has any shield points left."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "The shield provides full cover to creatures behind it."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Hex shield regains all shield points on a short rest."
+        }
       ],
       "adv_option_1": "Hearty Shield : Increase the shield's hit points to 100.",
       "adv_option_2": "Large Shield : The Shield covers a 4m wide area.",
@@ -1160,8 +1210,8 @@
       "reviewed": "y",
       "id": "hex-shield",
       "adv_options": [
-        null,
-        null
+        "Hearty Shield : Increase the shield's hit points to 100.",
+        "Large Shield : The Shield covers a 4m wide area."
       ],
       "class_list": "Soldier"
     },
@@ -1213,7 +1263,21 @@
     {
       "name": "Invasion",
       "mechanic": [
-
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Spend 3 tech points per creature size and choose a synthetic within 20m (e.g. 3 tech points for small, 6 tech points for medium, 9 tech points for large). The synthetic must succeed on an Intelligence saving throw or becomes hacked (considered {charmed}). A hacked synthetic won't attack friendly creatures and can't use spells or abilities."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "On its turn, the hacked synthetic attacks the closest hostile creature, making ranged weapon attack or melee attack if it does not have a weapon. If it doesn't have a weapon and there are no hostile creatures within melee range, the hacked synthetic uses its turn to dash towards the closest hostile creature."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Each time the synthetic takes damage, it makes a new Intelligence saving throw against the spell. If the saving throw succeeds, the spell ends."
+        }
       ],
       "adv_option_1": "Total Control : You take the the hacked synthetic's action. You may use it's spells and abilities.",
       "adv_option_2": "Damage : While the synthetic is hacked, it takes 2d6 shock damage at the end of it's turn. This damage does not proc an opportunity to end Invasion.",
@@ -1246,8 +1310,8 @@
       "reviewed": "y",
       "id": "invasion",
       "adv_options": [
-        null,
-        null
+        "Total Control : You take the the hacked synthetic's action. You may use it's spells and abilities.",
+        "Damage : While the synthetic is hacked, it takes 2d6 shock damage at the end of it's turn. This damage does not proc an opportunity to end Invasion."
       ],
       "class_list": "Engineer, Infiltrator"
     },
@@ -1691,7 +1755,21 @@
     {
       "name": "Pull",
       "mechanic": [
-
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You create a negative mass effect field around a creature or object you can see within range then jerk the field sharply towards you, bringing the target with it. Large-sized and larger targets are unaffected. The distance the target travels is based on its size, starting at 2m for medium-sized objects and adding 4m for each size small than medium. E.g., Medium = 2m, Small = 6m, Tiny = 10m, etc."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "If attempting to pull an object from another creature, the creature must pass a Strength saving throw to retain possession of the object. If you pull a creature and it moves more than 2m, it must pass a Dexterity saving throw or be knocked {prone}."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "The number of targets increase by 1 when you reach the 5th level (2), 11th level (3), and 17th level (4)."
+        }
       ],
       "adv_option_1": "Magician: You can shape and guide pull to add different trajectories to the object. The direction of pull cannot change, but you can add arcs, decrease the distance the object moves, and even pull small objects directly into your hand.",
       "adv_option_2": "Push: You may choose to move the target towards or away from you.",
@@ -1724,8 +1802,8 @@
       "reviewed": "y",
       "id": "pull",
       "adv_options": [
-        null,
-        null
+        "Magician: You can shape and guide pull to add different trajectories to the object. The direction of pull cannot change, but you can add arcs, decrease the distance the object moves, and even pull small objects directly into your hand.",
+        "Push: You may choose to move the target towards or away from you."
       ],
       "class_list": "Adept, Sentinel, Vanguard"
     },
@@ -1783,7 +1861,11 @@
     {
       "name": "Sabotage",
       "mechanic": [
-
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Spend 1 tech points and make a ranged tech attack on a weapon you can see within 20m (DC 10). On a hit, the next creature to use that weapon to make a ranged attack has disadvantage on the attack roll."
+        }
       ],
       "adv_option_1": "Multi-Weapon : You can target 3 weapons at once.",
       "adv_option_2": "Disable : After the weapon fires, it becomes jammed. It cannot be fired again until it is reloaded.",
@@ -1817,8 +1899,8 @@
       "reviewed": "y",
       "id": "sabotage",
       "adv_options": [
-        null,
-        null
+        "Multi-Weapon : You can target 3 weapons at once.",
+        "Disable : After the weapon fires, it becomes jammed. It cannot be fired again until it is reloaded."
       ],
       "class_list": "Engineer, Infiltrator"
     },
@@ -1937,7 +2019,11 @@
     {
       "name": "Siege Pulse",
       "mechanic": [
-
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Reduce your shield capacitors causing a loud, painfully intense kinetic wave to erupt from your location. Reduce your shield points by 10. Each creature within a 4m sphere becomes {deafened} must make Constitution saving throw (DC 8 + your proficiency bonus). On a failed save, a creature is {incapacitated} until the start of your next turn. On a successful save, a creature takes 2[dd] psychic damage."
+        }
       ],
       "adv_option_1": "Improved Pulse : Add your STR or DEX mod to the DC of the saving throw. You choose which one.",
       "adv_option_2": "Lingering Pulse : Creatures hit by siege pulse have disadvantage on melee and ranged attacks until the start of your next turn.",
@@ -1971,15 +2057,24 @@
       "reviewed": "y",
       "id": "siege-pulse",
       "adv_options": [
-        null,
-        null
+        "Improved Pulse : Add your STR or DEX mod to the DC of the saving throw. You choose which one.",
+        "Lingering Pulse : Creatures hit by siege pulse have disadvantage on melee and ranged attacks until the start of your next turn."
       ],
       "class_list": "Soldier"
     },
     {
       "name": "Singularity",
       "mechanic": [
-
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Create a negative mass effect field in a 4m sphere at a target location within range. Each hostile creature within the sphere's radius must succeed on a Dexterity saving throw or becomes {lifted}. Only creatures of a medium size or less are affected. Any creature that comes within 2m of the sphere must succeed on a Strength (Athletics) or Dexterity (Agility) check or they are drawn into the sphere and become lifted."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "When you cast this spell using a spell slot of 3rd level or higher, increase the size of the sphere by 2m per spell slot above the 2nd."
+        }
       ],
       "adv_option_1": "Heavy Singularity: When a creature affected by this power makes a DEX or STR save to avoid its pull, they make that save at disadvantage.",
       "adv_option_2": "Damage : A hostile creature that enters the sphere for the first time on a turn or ends its turn there is takes 1d4 necrotic damage.",
@@ -2013,8 +2108,8 @@
       "reviewed": "y",
       "id": "singularity",
       "adv_options": [
-        null,
-        null
+        "Heavy Singularity: When a creature affected by this power makes a DEX or STR save to avoid its pull, they make that save at disadvantage.",
+        "Damage : A hostile creature that enters the sphere for the first time on a turn or ends its turn there is takes 1d4 necrotic damage."
       ],
       "class_list": "Adept"
     },
@@ -2071,7 +2166,11 @@
     {
       "name": "Slow Fall",
       "mechanic": [
-
+        {
+          "id": 1,
+          "type": "line",
+          "data": "When you or a creature within 10m of you falls, choose up to five falling creatures within range. Create a negative mass effect field around each creature, slowing the rate of descent to 20m per round. If the creature lands before the spell ends, it takes no Falling damage and can land on its feet, and the spell ends for that creature."
+        }
       ],
       "adv_option_1": null,
       "adv_option_2": null,
@@ -2112,7 +2211,11 @@
     {
       "name": "Stasis",
       "mechanic": [
-
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Lock a target in a high-gravity mass effect field. Choose a creature you can see within range. The creature must make a Strength saving throw. On a failed save, the creature is {restrained}. Creatures of huge size or larger have advantage on the saving throw. At the beginning of the creature's turn, it can use its action to make the saving throw again."
+        }
       ],
       "adv_option_1": "Vulnerable : A creature in Stasis takes +2 damage from all damage rolls.",
       "adv_option_2": "Weakened : A creature in Stasis has -2 AC.",
@@ -2146,15 +2249,24 @@
       "reviewed": "y",
       "id": "stasis",
       "adv_options": [
-        null,
-        null
+        "Vulnerable : A creature in Stasis takes +2 damage from all damage rolls.",
+        "Weakened : A creature in Stasis has -2 AC."
       ],
       "class_list": "Adept, Vanguard"
     },
     {
       "name": "Stimulant Pack",
       "mechanic": [
-
+        {
+          "id": 1,
+          "type": "line",
+          "data": "As a bonus action, inject yourself with a stimulant pack. You have advantage on the next Dexterity, Strength, or Constitution saving throw. You must finish a short or long rest before you can use this feature again."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "An Infiltrator can take this ability instead of learning a tech power."
+        }
       ],
       "adv_option_1": "Friendly : You can inject a creature within melee range with the stimulant pack",
       "adv_option_2": "Improved Attack : You can choose to apply the advantage to your next damage roll",
@@ -2187,8 +2299,8 @@
       "reviewed": "y",
       "id": "stimulant-pack",
       "adv_options": [
-        null,
-        null
+        "Friendly : You can inject a creature within melee range with the stimulant pack",
+        "Improved Attack : You can choose to apply the advantage to your next damage roll"
       ],
       "class_list": "Infiltrator, Soldier"
     },
@@ -2252,7 +2364,16 @@
     {
       "name": "Tactical Scan",
       "mechanic": [
-
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Spend your action scanning a creature your can see with your omni-tool, studying it's movement and revealing weaknesses. Your attacks against the target have advantage and natural 19 and 20's are considered critical hits. This ability can stack with other critical improving powers. You may use this ability three times before you finish a short or long rest."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Engineers and Infiltrators can learn and advance this ability instead of learning a tech power."
+        }
       ],
       "adv_option_1": "Area Scan : Scan a 6m cube. You gain the advantage and critical bonus on all creatures within the area.",
       "adv_option_2": "Telegraphed Attacks : You're hud alerts you when the creature is about to attack. It has disadvantage on ranged and melee attacks and you have advantage on any saving throws caused by spells and abilities of the creature.",
@@ -2285,8 +2406,8 @@
       "reviewed": "y",
       "id": "tactical-scan",
       "adv_options": [
-        null,
-        null
+        "Area Scan : Scan a 6m cube. You gain the advantage and critical bonus on all creatures within the area.",
+        "Telegraphed Attacks : You're hud alerts you when the creature is about to attack. It has disadvantage on ranged and melee attacks and you have advantage on any saving throws caused by spells and abilities of the creature."
       ],
       "class_list": "Engineer, Infiltrator, Soldier"
     },
@@ -2343,7 +2464,11 @@
     {
       "name": "Turbocharge",
       "mechanic": [
-
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Insert a specialized thermal clip that connects to your amor's kinetic barrier. The weapon's rate of fire is increased by 2. The weapon no longer needs to be reloaded; instead, each ranged weapon attack reduces your shield points by an amount equal to the weapon's rate of fire. While turbocharge is active, you move at half your speed (rounded down) and you have disadvantage on Dexterity saving throws. You can use an action to cancel Turbocharge, removing the thermal clip and reloading your weapon; otherwise, it lasts until your shield points are reduced to 0. You must finish a short or long rest before you can use this ability again."
+        }
       ],
       "adv_option_1": "Quick Charge : You can activate and deactivate Turbocharge as a bonus action.",
       "adv_option_2": "Improved Charge :  Increase your weapon's rate of fire by 4.",
@@ -2376,8 +2501,8 @@
       "reviewed": "y",
       "id": "turbocharge",
       "adv_options": [
-        null,
-        null
+        "Quick Charge : You can activate and deactivate Turbocharge as a bonus action.",
+        "Improved Charge :  Increase your weapon's rate of fire by 4."
       ],
       "class_list": "Soldier"
     },
