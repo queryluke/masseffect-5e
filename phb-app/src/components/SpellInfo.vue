@@ -58,15 +58,3 @@
     },
   };
 </script>
-
-<style lang="stylus">
-  .attribute
-    font-size: 1.2em;
-
-    label
-      font-weight: 700;
-
-    ul
-      list-style none;
-      padding-left: 0;
-</style>

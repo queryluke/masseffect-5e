@@ -2,7 +2,7 @@
   <div>
     {{ spell.range }}
     <span v-if="spell.aoe">
-      ({{ spell['aoe-distance'] }} <div class="aoe-icon"><me-icon type="aoe" :name="spell['aoe']"></me-icon></div>)
+      ({{ spell.aoe_distance }} <div class="aoe-icon"><me-icon type="aoe" :name="spell['aoe']"></me-icon></div>)
     </span>
   </div>
 

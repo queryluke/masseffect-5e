@@ -180,7 +180,12 @@ def generate_config_file(page)
         when 'spells'
           dup_model = config_spells(dup_model)
         when 'grenades_mines'
-          dup_model['desc'] = insert_dd(dup_model['desc'], dup_model['dmg'])
+          dup_model['desc'] = dup_model['desc'].gsub(/\[range\]/,dup_model['range'])
+          dup_model['desc'] = dup_model['desc'].gsub(/\[blast\]/,dup_model['blast'])
+          if dup_model['damage_amount'] && dup_model['dd'] && dup_model['damage_type']
+            damage_string =  "#{dup_model['damage_amount']}#{dup_model['dd']} #{dup_model['damage_type']}"
+            dup_model['desc'] = dup_model['desc'].gsub(/\[damage_string\]/,damage_string)
+          end
         else
           dup_model = dup_model
       end

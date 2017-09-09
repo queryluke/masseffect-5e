@@ -1,4 +1,6 @@
 @import './_variables'
+@import './_attribute.styl'
+@import './_sortable_list.styl'
 
 @import '../../node_modules/vuetify/src/stylus/main'
 
@@ -30,8 +32,3 @@ div.hr
 
   tbody + tbody
     border-top: (2 * $table-border-width) solid $table-border-color;
-
-.expansion-panel__sortable
-  max-width: 95%;
-  margin: auto;
-  padding: 0 $spacers.four.x;
