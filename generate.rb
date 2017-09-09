@@ -149,6 +149,7 @@ def generate_model(headers)
 end
 
 def generate_config_file(page)
+  puts "working on #{page[:type]}"
   uri = URI(page[:url])
   resp = Net::HTTP.get_response(uri)
 
@@ -227,6 +228,18 @@ pages = [
     url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQI4F-wI2gwN395GApB347yPb1PixjOtOqZ0qoBYw7d57MPETHS40ZjIy1-DIfZf06PUwrspMiuAMlk/pub?gid=0&single=true&output=csv',
     renderables: ['skills'],
     id: 'name'
+  },
+  {
+    type: 'racial_traits',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRETKGL62kEZPA69PhA3AGMiVeHOWBRkTMDL3f_K-oajryEjwdq7fRAj-qfIusPsLMiIqmB12D4Zun8/pub?gid=0&single=true&output=csv',
+    renderables: ['description'],
+    id: 'name'
+  },
+  {
+    type: 'thermal_clips',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQmZ3vjTr5MljolyW6N_pnqxBA6Gj8lEw4VihCRj0jROiCDJdWOg5udY0_XIXnbKM8XvamqGawcHKBX/pub?gid=0&single=true&output=csv',
+    renderables: [],
+    id: 'name'
   }
 ].each do |p|
   if imports.length > 0
@@ -234,7 +247,6 @@ pages = [
       generate_config_file(p)
     end
   else
-    puts "working on #{p[:type]}"
     generate_config_file(p)
   end
 end

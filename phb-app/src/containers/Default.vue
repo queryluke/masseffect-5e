@@ -6,7 +6,7 @@
       v-container(fluid).blue-grey.lighten-4
         h1.sr-only Mass Effect 5e - Player's Handbook
         transition(name="slide" mode="out-in")
-          router-view
+          router-view(:key="$route.fullPath")
 </template>
 
 <script>

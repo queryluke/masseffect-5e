@@ -6,9 +6,6 @@
 </template>
 
 <script>
-  import Vue from 'vue';
-  import VueResource from 'vue-resource';
-  Vue.use(VueResource);
   import SpellInfo from "../components/SpellInfo.vue";
 
   export default {

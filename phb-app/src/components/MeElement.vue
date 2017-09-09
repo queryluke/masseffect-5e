@@ -1,9 +1,9 @@
 <template lang="jade">
   div
     div(v-for="element in text" v-bind:key="element.id")
-      table(v-if="element.type === 'table'")
+      table(v-if="element.type === 'table'").table
         thead
-          tr
+          tr.text-xs-left
             th(v-for="head in element.data.headers") {{ head }}
         tbody
           tr(v-for="item in element.data.items")

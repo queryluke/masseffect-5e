@@ -1,33 +1,16 @@
 {
-  "updated": "September  8, 2017 @ 12:04 PM",
+  "updated": "September  8, 2017 @ 10:21 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQI4F-wI2gwN395GApB347yPb1PixjOtOqZ0qoBYw7d57MPETHS40ZjIy1-DIfZf06PUwrspMiuAMlk/pubhtml",
   "data": [
     {
       "name": "Asari",
       "similar_to": "Half-elf",
       "alignment": null,
-      "available_classes": "Any",
+      "available_classes": "Adept, Engineer, Infiltrator, Sentinel, Soldier, Vanguard",
       "sexy_level": "8",
-      "increases": "Cha +2 Wis +1",
+      "increases": "+2 Charisma, +1 Wisdom",
       "size": "Medium",
       "speed": "10m",
-      "skills": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Skill Versatility: You gain proficiency in two skills of your choice."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Mind Meld: You can transfer and receive thoughts to another creature. You must concentrate and if the creature is not willing, the thoughts become jumbled and disjointed. Unintelligent creatures have unpredictable results."
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "Cantrip: You know one cantrip of your choice from the adept or vanguard spell list. Charisma is your spellcasting modifier for it."
-        }
-      ],
       "armor": "Light, Medium",
       "snippet": "The asari, native to the planet Thessia, are often considered the most influential and respected sentient species in the galaxy, and are known for their elegance, diplomacy, and biotic aptitude.",
       "body": "http://vignette2.wikia.nocookie.net/masseffect/images/d/dc/Asari_Justicar_MP.png/revision/latest/scale-to-width-down/500",
@@ -41,23 +24,11 @@
       "name": "Batarian",
       "similar_to": "Hobgoblin",
       "alignment": null,
-      "available_classes": "Any",
+      "available_classes": "Adept, Engineer, Infiltrator, Sentinel, Soldier, Vanguard",
       "sexy_level": "1",
-      "increases": "Con +2, Cha +1",
+      "increases": "+2 Constitution, +1 Charisma",
       "size": "Medium",
       "speed": "10m",
-      "skills": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Saving Face: Batarians are careful not to show weakness in front of their allies, for fear of losing status. If you miss with an attack roll or fail an ability check or a saving throw, you can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +5). Once you use this trait, you can't use it again until you finish a short or long rest."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Select 1 Feat from: {feats}"
-        }
-      ],
       "armor": "All",
       "snippet": "A race of four-eyed bipeds native to the world of Khar'shan, the batarians are a disreputable species that chose to isolate itself from the rest of the galaxy.",
       "body": "http://vignette1.wikia.nocookie.net/masseffect/images/b/b2/Batarian_MP.png/revision/latest/scale-to-width-down/500",
@@ -73,31 +44,9 @@
       "alignment": null,
       "available_classes": "Adept, Infiltrator, Soldier, Vanguard",
       "sexy_level": "10",
-      "increases": "Dex +2, Wis +1",
+      "increases": "+2 Dexterity, +1 Wisdom",
       "size": "Medium",
       "speed": "12m",
-      "skills": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Keen Senses: You have proficiency in the Perception skill."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Darkvision: You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "Hallucinogen: You skin is infused with a mild venom. When ingested or injected it can cause mild hallucinations."
-        },
-        {
-          "id": 4,
-          "type": "line",
-          "data": "Select 1 Feat from: {feats}"
-        }
-      ],
       "armor": "Light",
       "snippet": "The drell are a reptile-like race that were rescued from their dying homeworld by the hanar following first contact between the two. Since then, the drell have remained loyal to the hanar for their camaraderie and have fit comfortably into galactic civilization.",
       "body": "http://vignette2.wikia.nocookie.net/masseffect/images/a/ad/Drell_MP.png/revision/latest/scale-to-width-down/500",
@@ -111,18 +60,11 @@
       "name": "Human",
       "similar_to": "Humans",
       "alignment": null,
-      "available_classes": "Any",
+      "available_classes": "Adept, Engineer, Infiltrator, Sentinel, Soldier, Vanguard",
       "sexy_level": "5",
-      "increases": "Choose 2 +1",
+      "increases": "+1 to two ability scores",
       "size": "Medium",
       "speed": "10m",
-      "skills": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Select 2 Feats from: {feats}"
-        }
-      ],
       "armor": "All",
       "snippet": "Humans, from the planet Earth, are the newest sentient species of notable size to enter the galactic stage and are the most rapidly expanding and developing.",
       "body": "http://vignette4.wikia.nocookie.net/masseffect/images/2/2e/Human_Female_Infiltrator_MP.png/revision/latest/scale-to-width-down/500",
@@ -138,58 +80,16 @@
       "alignment": null,
       "available_classes": "Engineer, Infiltrator, Soldier",
       "sexy_level": "6",
-      "increases": "Int +2, Con +1",
+      "increases": "+2 Intelligence, +1 Constitution",
       "size": "Medium",
       "speed": "10m",
-      "skills": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Composite Plating: Your construction incorporates advanced armor plating, granting you a +1 bonus to Armor Class."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Living Construct: You are immune to disease. You do not need to eat or breathe. Instead of sleeping, you enter an inactive state for 4 hours each day. You do not dream in this state; you are fully aware of your surroundings and notice approaching enemies and other events as normal."
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "Repair Matirx: When you drop below half your hit points or loose all your shield points, as a reaction, you may activate a powerful Foucault current. If you are prone, you immediately return to your feet, your shield regeneration increases by 1 die type, your speed increases by 6m, and you regain 1d6 hit points at the start of your turn. This effect lasts 1 minute. This ability may only be used once per long rest."
-        },
-        {
-          "id": 4,
-          "type": "line",
-          "data": "Hunter Mode: Channel shields into auxiliary combat systems. Lose 3d6 shields but gain the following: Increase movement by 6m. +2 on ranged & melee attack rolls. No disadvantage on attacking targets behind partial cover. Add 1d6 piercing damage to melee and ranged damage rolls. This effect lasts 1 min. You can only use Hunter Mode once per long rest. At 11th level, you gain an additional benefit based on your class:"
-        },
-        {
-          "id": 5,
-          "type": "line",
-          "data": "Engineer: Increase the damage of all Tech powers by 1 die type (max d12). If the die type is already d12, add +1 for each die rolled instead."
-        },
-        {
-          "id": 6,
-          "type": "line",
-          "data": "Soldier: You have resistance to all damage caused by biotic spells and advantage on saving throws caused by biotic spells."
-        },
-        {
-          "id": 7,
-          "type": "line",
-          "data": "Infiltrator: Increase your sneak attack die type to d8."
-        },
-        {
-          "id": 8,
-          "type": "line",
-          "data": "Geth cannot take any Feats"
-        }
-      ],
       "armor": "None",
       "snippet": "The geth (\"Servant of the People\" in Khelish) are a race of networked artificial intelligences that reside beyond the Perseus Veil.",
       "body": "http://vignette2.wikia.nocookie.net/masseffect/images/7/72/Geth_Engineer_MP.png/revision/latest/scale-to-width-down/500",
       "male": "http://i.imgur.com/eoxONpu.jpg",
       "female": "http://vignette3.wikia.nocookie.net/robotsupremacy/images/e/ef/Me3-geth-prime.jpg/revision/latest?cb=20130509125034",
       "face": "http://vignette1.wikia.nocookie.net/masseffect/images/c/cc/Legion_Character_Shot.png",
-      "card": "https://vignette.wikia.nocookie.net/masseffect/images/d/df/Me_geth.jpg/revision/latest?cb=20100312003109",
+      "card": "https://vignette.wikia.nocookie.net/masseffect/images/7/7b/Legion%27s_posse.png/revision/latest/scale-to-width-down/640?cb=20130516170119",
       "id": "geth"
     },
     {
@@ -198,31 +98,9 @@
       "alignment": null,
       "available_classes": "Adept, Engineer, Sentinel, Soldier, Vanguard",
       "sexy_level": "7",
-      "increases": "Str +2, Con +1",
+      "increases": "+2 Strength, +1 Constitution",
       "size": "Medium",
       "speed": "10m",
-      "skills": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Rage: If you sink below half health, you enter into a rage. You take 1d8 less damage per hit your melee attacks deal an additional 1d8 damage."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Natural Armor: Increase your AC by 1."
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "Relentless Endurance: When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest."
-        },
-        {
-          "id": 4,
-          "type": "line",
-          "data": "Menacing: You gain proficiency in the Intimidation skill."
-        }
-      ],
       "armor": "All",
       "snippet": "The krogan are a species of large reptilian bipeds native to the planet Tuchanka, a world known for its harsh environments, scarce resources, and overabundance of vicious predators.",
       "body": "http://vignette4.wikia.nocookie.net/masseffect/images/6/66/Krogan_MP.png/revision/latest/scale-to-width-down/500",
@@ -236,23 +114,11 @@
       "name": "Quarian",
       "similar_to": "??",
       "alignment": null,
-      "available_classes": "Engineer, Infiltrator, Soldier, Adept*",
+      "available_classes": "Engineer, Infiltrator, Soldier",
       "sexy_level": "8",
-      "increases": "Int +2, Cha +1",
+      "increases": "+1 Intelligence, +1 Charisma, +1 Wisdom",
       "size": "Medium",
       "speed": "10m",
-      "skills": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Hermetic Suit: Your suit is your life blood. It makes your immune to diesease. You have resistance to poison, toxic, and necrotic damage. However, if you ever take an unshielded, critical hit via puncture damage, your suit is breached. On your turn, you can take no other action accept making a death saving throw as if you had 0 hit points or using a charge of your sealant to close the puncture. You always carry 3 charges of specialzed sealant, and you can take an action to seal the breach, consuming a charge. On a long rest, you regain your charges.\nCybernetic Augmentation: You have a minor cybernetic augmentation. Choose one of the following: Darkvision, Speed increased by 2m, Proficiency in perception, Increase carry capacity by 5."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Select 1 Feat from: {feats}"
-        }
-      ],
       "armor": "Light, Medium",
       "snippet": "The quarians are a nomadic species of humanoid aliens known for their skills with technology and synthetic intelligence.",
       "body": "http://vignette3.wikia.nocookie.net/masseffect/images/0/0c/Quarian_MP.png/revision/latest/scale-to-width-down/500",
@@ -266,23 +132,11 @@
       "name": "Salarian",
       "similar_to": "Gnomes",
       "alignment": null,
-      "available_classes": "Engineer, Infiltrator, Soldier, Adept*",
+      "available_classes": "Engineer, Infiltrator, Soldier",
       "sexy_level": "6",
-      "increases": "Int +2, Dex +1",
+      "increases": "+2 Intelligence, +1 Dexterity",
       "size": "Medium",
       "speed": "10m",
-      "skills": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Photographic Memory: You have advantage on History, Engineering, Hacking, Medicine, and Nature checks."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Select 1 Feat from: {feats}"
-        }
-      ],
       "armor": "Light",
       "snippet": "The second species to join the Citadel, the salarians are warm-blooded amphibians native to the planet Sur'Kesh. Salarians possess a hyperactive metabolism; they think fast, talk fast, and move fast.",
       "body": "http://vignette2.wikia.nocookie.net/masseffect/images/b/ba/Salarian_MP.png/revision/latest/scale-to-width-down/500",
@@ -296,23 +150,11 @@
       "name": "Turian",
       "similar_to": "Dwarves",
       "alignment": null,
-      "available_classes": "Engineer, Infiltrator, Sentinel, Soldier, Vanguard*",
+      "available_classes": "Engineer, Infiltrator, Sentinel, Soldier, Vanguard",
       "sexy_level": "9",
-      "increases": "Con +2, Str +1",
+      "increases": "+2 Constitution, +1 Strength",
       "size": "Medium",
       "speed": "10m",
-      "skills": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Turian Toughness: Your hit point maximum increases by 2, and it increases by 2 every time you gain a level."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Select 1 Feat from: {feats}"
-        }
-      ],
       "armor": "All",
       "snippet": "Known for their militaristic and disciplined culture, the turians were the third race to join the Citadel Council. They gained their Council seat after defeating the hostile krogan for the Council during the Krogan Rebellions.",
       "body": "http://vignette2.wikia.nocookie.net/masseffect/images/2/2a/Turian_MP.png/revision/latest/scale-to-width-down/500",
@@ -328,26 +170,9 @@
       "alignment": null,
       "available_classes": "Adept, Engineer, Sentinel, Vanguard",
       "sexy_level": "3",
-      "increases": "Wis +2, Str +1",
+      "increases": "+2 Wisdom, +1 Strength",
       "size": "Small",
       "speed": "8m",
-      "skills": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Fury of the Small: When you damage a creature with an attack or a spell and the creature's size is larger than yours, you can cause the attack or spell to deal extra damage to the creature. The extra damage equals your level. Once you use this trait, you can't use it again until you finish a short or long rest."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Savvy Dealings: You can get extra supplies and discounts from vendors."
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "Lucky (feat)"
-        }
-      ],
       "armor": "Light, Medium",
       "snippet": "The volus hail from Irune, which possesses a high-pressure greenhouse atmosphere able to support an ammonia-based biochemistry. As a result, the volus must wear pressure suits and breathers when dealing with other species.",
       "body": "http://vignette1.wikia.nocookie.net/masseffect/images/3/3e/ME3_Volus_Adept.png/revision/latest/scale-to-width-down/500",
@@ -363,26 +188,9 @@
       "alignment": null,
       "available_classes": "Engineer, Infiltrator, Sentinel, Soldier",
       "sexy_level": "0",
-      "increases": "Dex +2, Con +1",
+      "increases": "+2 Dexterity, +1 Constitution",
       "size": "Medium",
       "speed": "15m",
-      "skills": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Bite: Your fanged maw is a natural weapon, which you can use to make unarmed strikes. If you hit with it, you deal piercing damage equal to 1d6 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Hungry Jaws: In battle, you can throw yourself into a vicious feeding frenzy. As a bonus action, you can make a special attack with your bite. If the attack hits, it deals its normal damage, and you automatically activate Bloodlust. You can't use this trait again until you finish a short or long rest."
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "Bloodlust: After killing an enemy with a melee attack, you can activate Bloodlust. Your speed increases to 20m, add 1d8 to you melee attacks, and you regenerate 1d4 health per turn. This effect lasts 3 turns. If you kill another enemy, the effect is extended for 3 more turns."
-        }
-      ],
       "armor": "Light",
       "snippet": "Known for their unique biology and aggressive behavior, the vorcha of Heshtok are a primitive race that live among the galaxy's darker and more dangerous locations, such as Omega.",
       "body": "http://vignette1.wikia.nocookie.net/masseffect/images/d/d8/ME3_Vorcha_Hunter.png/revision/latest/scale-to-width-down/500",
