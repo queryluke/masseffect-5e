@@ -1,7 +1,7 @@
 <template lang="jade">
   div
     div(v-for="element in text" v-bind:key="element.id")
-      table(v-if="element.type === 'table'").table
+      table(v-if="element.type === 'table'").table.alt-table
         thead
           tr.text-xs-left
             th(v-for="head in element.data.headers") {{ head }}
