@@ -7,9 +7,9 @@
       hide-actions)
       div(slot="header")
         v-layout.spell-header
-          v-flex.xs2.sm3.lg2
+          v-flex.xs4.sm3.lg2
             spell-type(:spell="spell")
-          v-flex.xs12.sm9.lg2
+          v-flex.xs8.sm9.lg2
             strong {{ spell.name }}
           v-flex.hidden-md-and-down.lg2
             spell-duration(:spell="spell")

@@ -42,8 +42,8 @@
         source: '',
         updated: '',
         headers: [
-          {key: 'type', display: '', classes: 'xs2 sm2 lg2', sortable: false},
-          {key: 'name', display: 'Name', classes: 'xs2 sm2 lg2', sortable: false},
+          {key: 'type', display: '', classes: 'xs4 sm3 lg2', sortable: false},
+          {key: 'name', display: 'Name', classes: 'xs8 sm9 lg2', sortable: false},
           {key: 'duration', display: 'Duration', classes: 'hidden-md-and-down lg2', sortable: false},
           {key: 'range', display: 'Range/Area', classes: 'hidden-md-and-down lg2', sortable: false},
           {key: 'attack_type', display: 'Attack/Save', classes: 'hidden-md-and-down lg2', sortable: false},

@@ -2,7 +2,7 @@
   span
     div.spell-icon
       me-icon(type="spells" v-bind:name="spell.type")
-    span(v-if="spell.type === 'biotic'")  {{ level }}
+    span(v-if="spell.type === 'biotic'").hidden-xs-only  {{ level }}
 </template>
 
 <script>
