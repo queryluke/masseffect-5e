@@ -69,8 +69,10 @@ def config_races(model)
 end
 
 def insert_dd(string, die)
-  if string
+  if string && die
     string.gsub(/\[dd\]/,die.to_s)
+  else
+    string
   end
 end
 
@@ -89,7 +91,7 @@ def create_class_list(model)
 end
 
 def config_spells(model)
-  model['mechanic'] = generate_renderable(insert_dd(model['mechanic'], model['die_type']))
+  model['mechanic'] = insert_dd(model['mechanic'], model['die_type'])
   model['attack_type'] = model['attack_type'] ? model['attack_type'].split(',') : []
   model['effect'] = model['effect'] ? model['effect'].split(',') : []
   model['damage_type'] = model['damage_type'] ? model['damage_type'].split(',') : []
@@ -142,7 +144,7 @@ end
 def generate_model(headers)
   model = {}
   headers.each do |h|
-    snake = h.gsub(' ','_').downcase
+    snake = h.gsub(/\W/,'_').downcase
     model[snake] = ''
   end
   model
@@ -175,15 +177,20 @@ def generate_config_file(page)
       end
 
       case page[:type]
-      when 'spells'
-        dup_model = config_spells(dup_model)
-      else
-        page[:renderables].each do |renderable|
-          if dup_model.has_key?(renderable)
-            dup_model[renderable] = generate_renderable(dup_model[renderable])
-          end
+        when 'spells'
+          dup_model = config_spells(dup_model)
+        when 'grenades_mines'
+          dup_model['desc'] = insert_dd(dup_model['desc'], dup_model['dmg'])
+        else
+          dup_model = dup_model
+      end
+
+      page[:renderables].each do |renderable|
+        if dup_model.has_key?(renderable)
+          dup_model[renderable] = generate_renderable(dup_model[renderable])
         end
       end
+
       collection << dup_model
     end
   end
@@ -203,13 +210,14 @@ pages = [
   {
     type: 'spells',
     url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSs9dkG94f5fPCOJ38g-xCUCwnYynzbiFdggQ1KqM1vMscINwcn2_OGPqGhvxOrYl18oK7dO2notL_y/pub?gid=0&single=true&output=csv',
+    renderables: ['mechanic'],
     id: 'name'
   },
   {
     type: 'skills',
     url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRFYAlUo84hir8VGSHwP4pKqnTcih_5UD0Uqtgi9w-QHEvrSxLthv1xXG0jb_tpbBRNZXE1Dv0nF0_q/pub?gid=0&single=true&output=csv',
-    id: 'name',
-    renderables: []
+    renderables: [],
+    id: 'name'
   },
   {
     type: 'feats',
@@ -239,6 +247,12 @@ pages = [
     type: 'thermal_clips',
     url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQmZ3vjTr5MljolyW6N_pnqxBA6Gj8lEw4VihCRj0jROiCDJdWOg5udY0_XIXnbKM8XvamqGawcHKBX/pub?gid=0&single=true&output=csv',
     renderables: [],
+    id: 'name'
+  },
+  {
+    type: 'grenades_mines',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRBAZH9BXc9xIj62i-StAKv08-iNSQSUyiWjz7TrVqcjEVe-uDaFIy9a4zRxYchDikCsskcNf-vexsG/pub?gid=0&single=true&output=csv',
+    renderables: ['desc'],
     id: 'name'
   }
 ].each do |p|

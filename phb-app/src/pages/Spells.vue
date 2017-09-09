@@ -13,15 +13,14 @@
           v-model="search"
           autofocus
         )
-    div.mt-3.mb-3.spell-sorting
-      v-layout.spell-header
+    div.mt-3.mb-3
+      v-layout.expansion-panel__sortable
         v-flex.xs2.sm2.lg2
         v-flex.xs12.sm6.lg2 Name
         v-flex.hidden-md-and-down.lg2 Duration
         v-flex.hidden-md-and-down.lg2 Range/Area
         v-flex.hidden-md-and-down.lg2 Attack/Save
         v-flex.hidden-md-and-down.lg2 Damage/Effect
-        span.spacer
     spell-list(:spells="filtered")
     v-layout(row wrap justify-space-between).mt-4
       span Last Updated: {{ updated }}
@@ -64,13 +63,3 @@
     }
   };
 </script>
-
-
-<style lang="stylus">
-  .spell-sorting
-    padding: 0 24px;
-
-    .spacer
-      width: 24px;
-
-</style>

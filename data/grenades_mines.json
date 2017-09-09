@@ -1,0 +1,246 @@
+{
+  "updated": "September  8, 2017 @ 11:59 PM",
+  "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRBAZH9BXc9xIj62i-StAKv08-iNSQSUyiWjz7TrVqcjEVe-uDaFIy9a4zRxYchDikCsskcNf-vexsG/pubhtml",
+  "data": [
+    {
+      "name": "Arc Grenade",
+      "dmg": "d6",
+      "range_thrown": "10m",
+      "range_explosion": "4m",
+      "damage_type": "shock",
+      "desc": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Target an area within 10m. Each creature within 4m of the target must make a Dexterity saving throw (DC 13). A creature takes 3d6 lightning damage on a failed save, or half as much damage on a successful one. Arc Grenade deals double damage to shields."
+        }
+      ],
+      "id": "arc-grenade"
+    },
+    {
+      "name": "Cluster Grenade",
+      "dmg": "d6",
+      "range_thrown": "10m",
+      "range_explosion": "4m",
+      "damage_type": "thunder",
+      "desc": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Target an area within 10m. Each creature within 4m of the target must make two consecutive Dexterity saving throws (DC 13). A creature takes 3d6 thunder damage on 2 failed saves, or half as much damage on a failed save and a successful one."
+        }
+      ],
+      "id": "cluster-grenade"
+    },
+    {
+      "name": "Flashbang Grenade",
+      "dmg": null,
+      "range_thrown": "10m",
+      "range_explosion": "4m",
+      "damage_type": null,
+      "desc": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Target an area within 10m. Each creature within 4m of the target must make a Constitution saving throw (DC 13). On a failed save, a creature is blinded for 1 turn."
+        }
+      ],
+      "id": "flashbang-grenade"
+    },
+    {
+      "name": "Frag Grenade",
+      "dmg": "d12",
+      "range_thrown": "10m",
+      "range_explosion": "4m",
+      "damage_type": "piercing",
+      "desc": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Target an area within 10m. Each creature within 4m of the target must make a Dexterity saving throw (DC 13). On a failed save, a creature takes 3d12 piercing damage or half as much damage on a successful one."
+        }
+      ],
+      "id": "frag-grenade"
+    },
+    {
+      "name": "Homing Grenade",
+      "dmg": "d6",
+      "range_thrown": "10m",
+      "range_explosion": "2m",
+      "damage_type": "thunder",
+      "desc": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Target a creature you can see within range. The target creature takes 1d6 thunder damage. Each other creature within 4m of the target must make a Dexterity saving throw. On a failed save, a creature takes 1d6 thunder damage or half as much on a successful one."
+        }
+      ],
+      "id": "homing-grenade"
+    },
+    {
+      "name": "Inferno Grenade",
+      "dmg": "d4",
+      "range_thrown": "10m",
+      "range_explosion": "4m",
+      "damage_type": "fire",
+      "desc": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Target an area within 10m. Each creature within 4m of the target must make a Dexterity saving throw. On a failed save, a creature takes 3d4 damage or half as much on a successful one. The 4m area continues to burn for 1 minute.  A creature must also make the saving throw when it enters the burning space for the first time on a turn or ends its turn there."
+        }
+      ],
+      "id": "inferno-grenade"
+    },
+    {
+      "name": "Lift Grenade",
+      "dmg": null,
+      "range_thrown": "10m",
+      "range_explosion": "4m",
+      "damage_type": null,
+      "desc": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Target an area within 10m. Each creature within 4m of the target must make a Dexterity saving throw. On a failed save, a creature is Lifted for 1 turn."
+        }
+      ],
+      "id": "lift-grenade"
+    },
+    {
+      "name": "Multi-frag Grenade",
+      "dmg": "d4",
+      "range_thrown": "10m",
+      "range_explosion": "4m",
+      "damage_type": "piercing",
+      "desc": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Target 3 areas within 10m. Each creature within 4m of each target must make a Dexterity saving throw. On a failed save, a creature takes 1d4 piercing damage or half as much on a successful one."
+        }
+      ],
+      "id": "multi-frag-grenade"
+    },
+    {
+      "name": "Sticky Grenade",
+      "dmg": "d6",
+      "range_thrown": "10m",
+      "range_explosion": "4m",
+      "damage_type": "thunder",
+      "desc": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Target an area within 10m. Creatures within 3m of the target must make a Dexterity saving throw. On a failed save, a creature takes 3d6 thunder damage or half as much damage on a successful one."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Instead, you may choose to make a ranged weapon attack on a target within 10m. You do not add any proficiency bonus to this role. You have advantage if the target is within melee range. On a hit, the target automatically fails it's Dexterity saving throw."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Infiltrators using this power from Tactical Cloak can select a target within melee range and place the sticky grenade on the target instead of making the ranged attack (throwing the grenade). But the player will need to leave the 3m blast area or make a Dexterity saving throw like all other creatures within 3m."
+        }
+      ],
+      "id": "sticky-grenade"
+    },
+    {
+      "name": "Recon Mine",
+      "dmg": "d4",
+      "range_thrown": "10m",
+      "range_explosion": "2m",
+      "damage_type": "thunder",
+      "desc": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Launch a recon mine to a location of your choice within 20m. It first sticks to the target location then scans enemies within a 10m cone, relaying tactical weakpoints about the enemy's armor and location. After your turn ends, any hostile that walks through the scanning cone loses 1 AC. Each creature can only be affected by this debuff once."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "You may spend another action to detonate the mine. Each creature within 2m must make a Dexterity saving throw. On a failed save, a creature takes 2d4 thunder damage, or half as much damage on a successful one."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Each creature that did not notice the mine has disadvantage on i's saving throw. Creatures need to pass a Perception check (DC 10) to notice the mine."
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "Creatures need to pass a Hacking check (your spell save DC) to disarm it. Failing the hacking check will cause the mine to explode. The creature that made the hacking check has disadvantage on its saving throw."
+        },
+        {
+          "id": 5,
+          "type": "line",
+          "data": "A successful ranged attack on the mine (AC 10) will cause it to explode"
+        }
+      ],
+      "id": "recon-mine"
+    },
+    {
+      "name": "Proximity Mine",
+      "dmg": "d8",
+      "range_thrown": "Touch",
+      "range_explosion": "2m",
+      "damage_type": "thunder",
+      "desc": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Place a proximity mine. The first creature that comes within 2m of the mine takes 1d8 thunder damage."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Creatures need to pass a Perception check (DC 10) to notice the mine."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Creatures need to pass a Hacking check (your spell save DC) to disarm it. Failing the hacking check will cause the mine to explode. The creature that made the hacking check has disadvantage on its saving throw."
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "A successful ranged attack on the mine (AC 10) will cause it to explode."
+        }
+      ],
+      "id": "proximity-mine"
+    },
+    {
+      "name": "Cain Trip Mine",
+      "dmg": "d12",
+      "range_thrown": "20m",
+      "range_explosion": "2m",
+      "damage_type": "thunder",
+      "desc": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Launch a Cain Trip Mine to a point you can see within 20m. The mine affixes to a solid surface and projects a beam tripwire. When a creature or object passes through the tripwire, the mine explodes. Any creature within 4m sphere must make a Dexterity saving throw. A creature takes 2d12 thunder damage on a failed save or half as much damage on a successful one."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Each creature that did not notice the mine has disadvantage on i's saving throw. Creatures need to pass a Perception check (DC 10) to notice the mine."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Creatures need to pass a Hacking check (your spell save DC) to disarm it. Failing the hacking check will cause the mine to explode. The creature that made the hacking check has disadvantage on its saving throw."
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "A successful ranged attack on the mine (AC 10) will cause it to explode"
+        }
+      ],
+      "id": "cain-trip-mine"
+    }
+  ]
+}
