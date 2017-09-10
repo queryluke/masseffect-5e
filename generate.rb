@@ -266,6 +266,12 @@ pages = [
     url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQqEWxn624K8fJS7V1EQH3RZgRApTepIx91C2BIGEDzQTvwtvdTaHduzujhVEmPknjifAU7FFCcjJcv/pub?gid=0&single=true&output=csv',
     renderables: ['notes'],
     id: 'name'
+  },
+  {
+      type: 'backgrounds',
+      url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQSUXve_hXfyu3glsSiuz-Ju2YUUToorjPPjpfSPiaHaA6yZTKLGMehtmvKtfQ3lSDErrGXgsQp1tFT/pub?gid=0&single=true&output=csv',
+      renderables: %w(feature_description description),
+      id: 'name'
   }
 ].each do |p|
   if imports.length > 0

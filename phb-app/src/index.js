@@ -7,6 +7,7 @@ import VueResource from 'vue-resource';
 import Default from './containers/Default.vue';
 
 // Pages
+import Armor from './pages/Armor.vue';
 import ArmorMods from './pages/ArmorMods.vue';
 import ArmorSets from './pages/ArmorSets.vue';
 import Backgrounds from './pages/Backgrounds.vue';
@@ -66,6 +67,7 @@ const router = new Router({
       children: [
         {path: 'combat', component: Combat},
         {path: 'equipment', component: Equipment},
+        {path: 'armor', component: Armor},
         {path: 'general', component: General},
         {path: 'paragon-and-renegade', component: ParagonRenegade},
         {path: 'spellcasting', component: Spellcasting}

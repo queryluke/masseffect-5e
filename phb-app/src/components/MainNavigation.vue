@@ -82,6 +82,7 @@
               { href:'/rules/general', title: 'General' },
               { href:'/rules/combat', title: 'Combat' },
               { href:'/rules/equipment', title: 'Equipment' },
+              { href:'/rules/armor', title: 'Armor' },
               { href:'/rules/paragon-and-renegade', title: 'Paragon & Renegade' },
               { href:'/rules/spellcasting', title: 'Spellcasting' },
               { href: '/skills', title: 'Skills' },

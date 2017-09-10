@@ -1,0 +1,144 @@
+<template lang="jade">
+  div
+    h2 Armor
+    p Armor is much more complex in ME5e, giving the player a lot of options for customization.
+
+    v-card.mb-3
+      v-card-title.headline.primary.white--text Overview
+      v-card-text
+        ul
+          li Armor proficiency is base on race.
+          li You cannot wear a piece of armor unless you are proficient in that type.
+          li Armor types can be mixed
+          li Armor can be custom made or modified with powerful augmentations.
+    v-card.mb-3
+      v-card-title.headline.primary.white--text Armor proficiency is based on RACE not class.
+      v-card-text
+        p.
+          Since the races come in a variety of shapes and sizes, it makes sense that armor manufacturers would only create sets and
+          pieces they could sell. Based on a race's customs and military it may not have needed any heavy armor (or any light
+          armor...I'm looking at you Krogans). In this way, race also plays a bit more of a role in you character's combat role and abilities.
+          But this doesn't mean a Drell Soldier can't strap on some heavy armor. It means you'll
+          have to take Feats to get yourself proficient in heavy armor. Or you can modify your light armor to have more AC.
+    v-card.mb-3
+      v-card-title.headline.primary.white--text Armor isn't ALL IN ONE
+      v-card-text
+        p.
+          In ME5e there are 4 armor placements, Head, Chest, Arms, Legs. And you can mix and match armor types (Light, Medium, Heavy).
+          This makes the array of AC possibilities a bit more complex. Remember, you must be proficient in a type to wear it.
+        p.headline AC Breakdown
+        table.table
+          thead.text-xs-left
+            tr
+              th Armor Type Mix
+              th AC
+          tbody
+            tr
+              td All Light
+              td 11 + Dexterity Modifier
+            tr
+              td Medium & Light
+              td 12 + Dexterity Modifier (max 2)
+            tr
+              td All Medium
+              td 13 + Dexterity Modifier (max 2)
+            tr
+              td A least 1 Heavy, Mix of Medium & Light
+              td 14
+            tr
+              td 1 Heavy, All other Medium
+              td 15
+            tr
+              td 2 Heavy & 2 Medium
+              td 16
+            tr
+              td 3 Heavy & 1 Medium
+              td 17
+            tr
+              td All Heavy
+              td 18
+    v-card.mb-3
+      v-card-title.headline.primary.white--text Armor can be customized & created
+      v-card-text
+        p.
+          Armor Customization is a new feature and provides a lot of options that Magical Items would. It costs a pretty penny, so
+          creating armor might not be available to new characters, but as they progress, you should be able to afford major
+          custom jobs.
+        p.headline Creating Armor from scratch
+        p.
+          When you create a piece of armor from scratch, you need to select the armor placement (Head, Chest, Arms, Legs),
+          if you want to add additional mod slots, and if you need to customize the armor to fit your race. The following is a matrix
+          of your options and the cost.
+        table.table
+          thead.text-xs-left
+            tr
+              th
+              th Head
+              th Chest
+              th Arms & Legs
+              th Standard Races
+          tbody
+            tr
+              td Light Armor
+              td 3,000
+              td 8,000
+              td 2,000
+              td All races except, Geth, Krogan, and Turians
+            tr
+              td Medium Armor
+              td 4,000
+              td 10,000
+              td 3,000
+              td Asari, Batarian, Human, Quarian, Turian, Volus
+            tr
+              td Heavy Armor
+              td 5,000
+              td 12,000
+              td 4,000
+              td Batarian, Human, Krogan, Turian
+            tr
+              td Mod Slots (Max)
+              td 1 (max 3)
+              td 2 (max 3)
+              td 0 (max 2)
+        p
+          strong Additional Mod Slots:
+          span  20,000 credits
+        p
+          strong Race Custom Fitting:
+          span  5,000 credits
+        p
+          a(to="/armor/mods") Mod List
+        div.hr
+        p.headline Example
+        ol
+          li.
+            You want a Medium-Type, Head Armor for your Drell. On the table, the base cose for Medium + Head is 4,000 credits.
+          li.
+            But this is for a Drell which is not a standard race of medium armor. So it will cost an additional 5,000 credits to get
+            this customized.
+          li.
+            You want to add 2 mods to the helmet, but a Head piece only starts with one mod slot. It'll be another 20k credits to upgrade
+            the helmet.
+          li.
+            Finally, you can add your mods (link above). You select the Umbra AI (8,000) and the Voice
+            Modulator (2,000).
+          li.
+            So the grand total for your custom head piece is: 39,000 credits.
+        p.headline.mt-3 Customizing Armor
+        p.
+          Instead, you might find it cheaper to take what you can get from the battlefield and customize it. If my Drell got
+          a Medium Head piece off the battlefield with 2 mod slots, he could spend 15,000 credits to add the 2 mods and customize it
+          for his race.
+        p
+          strong GM Note:
+          span.
+            When awarding Armor, be sure to say the number of mod slots it came with. Only premium quality armor would have
+            more that the starting amount in the table above. For really cheap armor, you can remove mod slots.
+</template>
+
+<script>
+  export default {
+    name: 'Armor',
+  };
+</script>
