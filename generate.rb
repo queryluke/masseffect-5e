@@ -268,10 +268,22 @@ pages = [
     id: 'name'
   },
   {
-      type: 'backgrounds',
-      url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQSUXve_hXfyu3glsSiuz-Ju2YUUToorjPPjpfSPiaHaA6yZTKLGMehtmvKtfQ3lSDErrGXgsQp1tFT/pub?gid=0&single=true&output=csv',
-      renderables: %w(feature_description description),
-      id: 'name'
+    type: 'backgrounds',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQSUXve_hXfyu3glsSiuz-Ju2YUUToorjPPjpfSPiaHaA6yZTKLGMehtmvKtfQ3lSDErrGXgsQp1tFT/pub?gid=0&single=true&output=csv',
+    renderables: %w(feature_description description),
+    id: 'name'
+  },
+  {
+    type: 'armor_mods',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRIPzbOBXOdWbaY779un1EV3HyacCV3fe15kHW4ABjMV0yHi3GZHVqnbiOVSQ_Dgh1whimOITGOXHkn/pub?output=csv',
+    renderables: [],
+    id: 'name'
+  },
+  {
+    type: 'classes',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=0&single=true&output=csv',
+    renderables: [],
+    id: 'name'
   }
 ].each do |p|
   if imports.length > 0

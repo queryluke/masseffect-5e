@@ -2,27 +2,26 @@
   div
     h2 Armor
     p Armor is much more complex in ME5e, giving the player a lot of options for customization.
-
-    v-card.mb-3
-      v-card-title.headline.primary.white--text Overview
-      v-card-text
+    rule-card
+      span(slot="header") Overview
+      template(slot="text")
         ul
           li Armor proficiency is base on race.
           li You cannot wear a piece of armor unless you are proficient in that type.
           li Armor types can be mixed
           li Armor can be custom made or modified with powerful augmentations.
-    v-card.mb-3
-      v-card-title.headline.primary.white--text Armor proficiency is based on RACE not class.
-      v-card-text
+    rule-card
+      span(slot="header") Armor proficiency is based on RACE not class.
+      template(slot="text")
         p.
           Since the races come in a variety of shapes and sizes, it makes sense that armor manufacturers would only create sets and
           pieces they could sell. Based on a race's customs and military it may not have needed any heavy armor (or any light
           armor...I'm looking at you Krogans). In this way, race also plays a bit more of a role in you character's combat role and abilities.
           But this doesn't mean a Drell Soldier can't strap on some heavy armor. It means you'll
           have to take Feats to get yourself proficient in heavy armor. Or you can modify your light armor to have more AC.
-    v-card.mb-3
-      v-card-title.headline.primary.white--text Armor isn't ALL IN ONE
-      v-card-text
+    rule-card
+      span(slot="header") Armor isn't ALL IN ONE
+      template(slot="text")
         p.
           In ME5e there are 4 armor placements, Head, Chest, Arms, Legs. And you can mix and match armor types (Light, Medium, Heavy).
           This makes the array of AC possibilities a bit more complex. Remember, you must be proficient in a type to wear it.
@@ -57,9 +56,9 @@
             tr
               td All Heavy
               td 18
-    v-card.mb-3
-      v-card-title.headline.primary.white--text Armor can be customized & created
-      v-card-text
+    rule-card
+      span(slot="header") Armor can be customized & created
+      template(slot="text")
         p.
           Armor Customization is a new feature and provides a lot of options that Magical Items would. It costs a pretty penny, so
           creating armor might not be available to new characters, but as they progress, you should be able to afford major
@@ -101,14 +100,11 @@
               td 1 (max 3)
               td 2 (max 3)
               td 0 (max 2)
+        ul
+          li #[strong Additional Mod Slots:] 20,000 credits
+          li #[strong Race Custom Fitting:] 5,000 credits
         p
-          strong Additional Mod Slots:
-          span  20,000 credits
-        p
-          strong Race Custom Fitting:
-          span  5,000 credits
-        p
-          a(to="/armor/mods") Mod List
+          router-link(to="/armor/mods") Mod List
         div.hr
         p.headline Example
         ol
@@ -138,7 +134,9 @@
 </template>
 
 <script>
+  import RuleCard from './../components/RuleCard.vue'
   export default {
     name: 'Armor',
+    components: { RuleCard }
   };
 </script>

@@ -1,0 +1,496 @@
+{
+  "updated": "September 10, 2017 @ 12:12 PM",
+  "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRIPzbOBXOdWbaY779un1EV3HyacCV3fe15kHW4ABjMV0yHi3GZHVqnbiOVSQ_Dgh1whimOITGOXHkn/pubhtml",
+  "data": [
+    {
+      "name": "Ammo Capacity",
+      "brief": "ammo",
+      "piece": "Arms",
+      "flavor": "Additional storage compartments to hold extra thermal clips.",
+      "mechanic": "Increase your thermal clip capacity by 2",
+      "cost": "500",
+      "manu": "Elkoss Combine",
+      "id": "ammo-capacity"
+    },
+    {
+      "name": "Weapon Stabalizers",
+      "brief": "attack bonus ranged",
+      "piece": "Arms",
+      "flavor": "Incorporate micro-gyros linked with your hardsuit's internal targeting aids.",
+      "mechanic": "You gain a +2 bonus to ranged weapon attacks",
+      "cost": "5000",
+      "manu": "Aldrin Labs",
+      "id": "weapon-stabalizers"
+    },
+    {
+      "name": "VI Aiming",
+      "brief": "damage bonus: ranged",
+      "piece": "Arms",
+      "flavor": "A built-in VI aim enhancement targets enemies' vulnerabilities.",
+      "mechanic": "You gain a +2 damage bonus to each ranged weapon damage roll",
+      "cost": "5000",
+      "manu": "Armax Arsenal",
+      "id": "vi-aiming"
+    },
+    {
+      "name": "Microservos",
+      "brief": "melee damage",
+      "piece": "Arms",
+      "flavor": "Microservos coordinate your melee strikes.",
+      "mechanic": "You gain a +2 damage bonus to each melee damage roll",
+      "cost": "5000",
+      "manu": "Ariake Technologies",
+      "id": "microservos"
+    },
+    {
+      "name": "Shield Capacity",
+      "brief": "sp",
+      "piece": "Arms",
+      "flavor": "Micro-harmonic oscillators to reduce stress on the kinetic barriers ensuring suit integrity when faced with oncoming projectiles.",
+      "mechanic": "Increase your shield points by 10.",
+      "cost": "10000",
+      "manu": "Armax Arsenal",
+      "id": "shield-capacity"
+    },
+    {
+      "name": "Amplifier Plates",
+      "brief": "cost: tp",
+      "piece": "Arms",
+      "flavor": "Includes an internal micro-control system to maximize resources.",
+      "mechanic": "Reduce tech point costs by 1, to a minimum of 1. This cannot be used to cast tech powers beyond your max tech point limit.",
+      "cost": "20000",
+      "manu": "Elanus Risk Control Services",
+      "id": "amplifier-plates"
+    },
+    {
+      "name": "Medi-gel",
+      "brief": "revive",
+      "piece": "Arms",
+      "flavor": "Microprocessors in this interface monitor vital functions and release small localized doses of medi-gel to accelerate the healing process. Manually timed heavy doses of medi-gel can be released in response to major trauma.",
+      "mechanic": "You may automatically pass a Wisdom (Medicine) check when you stabalize an ally. You can use once per long rest.",
+      "cost": "20000",
+      "manu": "Any",
+      "id": "medi-gel"
+    },
+    {
+      "name": "Bladed Wristguards",
+      "brief": "special",
+      "piece": "Arms",
+      "flavor": "Reinforce armor with razor-sharp blades that deal damage to melee attackers.",
+      "mechanic": "When you are hit with a melee attack, deal 1d6 piercing damage back at the attacker.",
+      "cost": "5000",
+      "manu": "Batarian State Arms",
+      "id": "bladed-wristguards"
+    },
+    {
+      "name": "?",
+      "brief": "anti: force",
+      "piece": "Arms",
+      "flavor": "?",
+      "mechanic": "Resistance to force",
+      "cost": "4000",
+      "manu": "Serrice Council",
+      "id": ""
+    },
+    {
+      "name": "Battle Telemetry",
+      "brief": "power regen",
+      "piece": "Arms",
+      "flavor": "Battle telemetry systems increase the efficiency of your biotic amplifiers and omni-tool.",
+      "mechanic": "Regain 5 tech points or 1 spell slot on a short rest.",
+      "cost": "8000",
+      "manu": "Rosenkov Materials",
+      "id": "battle-telemetry"
+    },
+    {
+      "name": "Armor Plating",
+      "brief": "ac",
+      "piece": "Chest",
+      "flavor": "Hardened ceramic plates can be applied to body armor suits, increasing their effectiveness.",
+      "mechanic": "Gain +1 AC",
+      "cost": "10000",
+      "manu": "Any",
+      "id": "armor-plating"
+    },
+    {
+      "name": "Ablative Coating",
+      "brief": "ac",
+      "piece": "Chest",
+      "flavor": "Ablative coating is designed to chip away when impacted, redirecting the energy of incoming projectiles away from the body.",
+      "mechanic": "Gain +2 AC",
+      "cost": "20000",
+      "manu": "Alliance",
+      "id": "ablative-coating"
+    },
+    {
+      "name": "Energized Plating",
+      "brief": "ac",
+      "piece": "Chest",
+      "flavor": "A prototype upgrade designed specifically for heavy combat use, it provides maximum protection for the user",
+      "mechanic": "Gain +3 AC",
+      "cost": "30000",
+      "manu": "Cerberus Skunkworks",
+      "id": "energized-plating"
+    },
+    {
+      "name": "Asymetic Defense Layer",
+      "brief": "ac & hp",
+      "piece": "Chest",
+      "flavor": "Offering increased protection where it's needed most, Rosenkov Materials' proprietary coating process increases stopping power of standard ceramic armor.",
+      "mechanic": "Gain +2 AC and +20 HP",
+      "cost": "35000",
+      "manu": "Rosenkov Materials",
+      "id": "asymetic-defense-layer"
+    },
+    {
+      "name": "Ammo Capacity",
+      "brief": "ammo",
+      "piece": "Chest",
+      "flavor": "Additional storage compartments to hold extra thermal clips.",
+      "mechanic": "Increase your thermal clip capacity by 6",
+      "cost": "1500",
+      "manu": "Armax Arsenal",
+      "id": "ammo-capacity"
+    },
+    {
+      "name": "Barrier",
+      "brief": "barrier",
+      "piece": "Chest",
+      "flavor": "Eezo oscilator provides a biotic-like barrier.",
+      "mechanic": "The armor contains a mass effect barrier with 5 barrier ticks. You cannot use these additional barrier ticks for biotic spells, they are only for damage reduction. The barrier ticks recharge after a long rest.",
+      "cost": "10000",
+      "manu": "Armali Council",
+      "id": "barrier"
+    },
+    {
+      "name": "Adrenaline Regulator",
+      "brief": "melee damage",
+      "piece": "Chest",
+      "flavor": "Biofeedback system regulating wearer's adrenaline surges.",
+      "mechanic": "You gain a +2 damage bonus to each melee damage roll",
+      "cost": "5000",
+      "manu": "Ariake Technologies",
+      "id": "adrenaline-regulator"
+    },
+    {
+      "name": "Toxic Resistance",
+      "brief": "resistance: acid/poison",
+      "piece": "Chest",
+      "flavor": "Specially-sealed body armor and biotoxin blood filters provide increased protection against radiation, gases, and a host of other toxins.",
+      "mechanic": "Resistance to acid and poison damage. You have advantage on saving throws that would cause you to be poisoned.",
+      "cost": "5000",
+      "manu": "Batarian State Arms",
+      "id": "toxic-resistance"
+    },
+    {
+      "name": "Recharge Capacitor",
+      "brief": "shield regen each turn",
+      "piece": "Chest",
+      "flavor": "Micro wells store part of the energy directed at the armor and use it to jump start the kinetic barrier recharge cycle.",
+      "mechanic": "You shields recharge every turn, despite taking damage.",
+      "cost": "15000",
+      "manu": "Armax Arsenal",
+      "id": "recharge-capacitor"
+    },
+    {
+      "name": "Shield Battery",
+      "brief": "sp",
+      "piece": "Chest",
+      "flavor": "An increased shield battery for your kinetic barrier.",
+      "mechanic": "Increase your shield points by 10.",
+      "cost": "10000",
+      "manu": "Any",
+      "id": "shield-battery"
+    },
+    {
+      "name": "Shield Modulator",
+      "brief": "sp",
+      "piece": "Chest",
+      "flavor": "A series of ultra-efficient storage cells augment the existing power in the operation of the wearer's kinetic barrier.",
+      "mechanic": "Increase your shield points by 20.",
+      "cost": "20000",
+      "manu": "Armax Arsenal",
+      "id": "shield-modulator"
+    },
+    {
+      "name": "Shield Interface",
+      "brief": "sp",
+      "piece": "Chest",
+      "flavor": "Advanced VI systems monitor incoming enemy fire to redirect energy to vulnerable points, maximizing the effectiveness of a suit's kinetic barrier shields.",
+      "mechanic": "Increase your shield points by 30.",
+      "cost": "30000",
+      "manu": "Alliance",
+      "id": "shield-interface"
+    },
+    {
+      "name": "Ceramic Weave",
+      "brief": "hp",
+      "piece": "Chest",
+      "flavor": "Elite personal protection equipment includes a series of interlocking ceramic plates covered in a proprietary tungsten alloy weave for maximum stopping power.",
+      "mechanic": "Increase you hit points by 10.",
+      "cost": "10000",
+      "manu": "Kassa Fabrication",
+      "id": "ceramic-weave"
+    },
+    {
+      "name": "Medi-gel",
+      "brief": "revive",
+      "piece": "Chest",
+      "flavor": "Microprocessors in this interface monitor vital functions and release small localized doses of medi-gel to accelerate the healing process. Manually timed heavy doses of medi-gel can be released in response to major trauma.",
+      "mechanic": "You may automatically pass a Wisdom (Medicine) check when you stabalize an ally. Additionally, if you fall below 0 hit points and you have medi-gel charges left, you immediately become stabalized. You can use this 3 times per long rest.",
+      "cost": "60000",
+      "manu": "Sirta Foundation",
+      "id": "medi-gel"
+    },
+    {
+      "name": "Thermal Armor",
+      "brief": "anit: frozen",
+      "piece": "Chest",
+      "flavor": "Heat regulators keep your armor warm in the coldest environments.",
+      "mechanic": "You are immune to being frozen.",
+      "cost": "6000",
+      "manu": "Devlon Industries",
+      "id": "thermal-armor"
+    },
+    {
+      "name": "Environmental Regulators",
+      "brief": "resistance: fire, cold",
+      "piece": "Chest",
+      "flavor": "Temperature controls use liguid nitrogen and plasma to keep your suit at a constant tempurature.",
+      "mechanic": "Resistance to fire and cold damage.",
+      "cost": "8000",
+      "manu": "Devlon Industries",
+      "id": "environmental-regulators"
+    },
+    {
+      "name": "Hardened Weave",
+      "brief": "anti: biotic/tech",
+      "piece": "Chest",
+      "flavor": "A complex filament network of element zero microcores combined with advanced firewall technology provides protection against both biotic and tech attacks.",
+      "mechanic": "Resistance to cold, fire, force, lightening, and necrotic damage types.",
+      "cost": "20000",
+      "manu": "Serrice Council",
+      "id": "hardened-weave"
+    },
+    {
+      "name": "Battle Telemetry",
+      "brief": "power regen",
+      "piece": "Chest",
+      "flavor": "Battle telemetry systems increase the efficiency of your biotic amplifiers and omni-tool.",
+      "mechanic": "Regain 10 tech points or 2 spell slots on a short rest.",
+      "cost": "16000",
+      "manu": "Rosenkov Materials",
+      "id": "battle-telemetry"
+    },
+    {
+      "name": "Auxillary Shield Emitters",
+      "brief": "shield die type",
+      "piece": "Chest",
+      "flavor": "Micro-capacitors that release energy to speed up shield regeneration.",
+      "mechanic": "Increase your shield regen by 1 die type (max d12).",
+      "cost": "8000",
+      "manu": "Kassa Fabrication",
+      "id": "auxillary-shield-emitters"
+    },
+    {
+      "name": "Auxillary Shield Emitters",
+      "brief": "shield die type",
+      "piece": "Hands",
+      "flavor": "Micro-capacitors that release energy to speed up shield regeneration.",
+      "mechanic": "Increase your shield regen by 1 die type (max d12).",
+      "cost": "8000",
+      "manu": "Kassa Fabrication",
+      "id": "auxillary-shield-emitters"
+    },
+    {
+      "name": "Umbra AI",
+      "brief": "attack bonus: power",
+      "piece": "Head",
+      "flavor": "By detecting the focal point of the wearer's eyes and enhancing the image at that location, the visor helps direct a biotic power or a shot from an omni-tool exactly where the wearer is looking.",
+      "mechanic": "You gain a +2 bonus to ranged biotic or tech attacks.",
+      "cost": "8000",
+      "manu": "Alliance",
+      "id": "umbra-ai"
+    },
+    {
+      "name": "Focus Modulator",
+      "brief": "attack bonus: ranged",
+      "piece": "Head",
+      "flavor": "Your headware filters out distracting movement and sounds from sources other than your target.",
+      "mechanic": "You gain a +2 bonus to ranged attacks.",
+      "cost": "10000",
+      "manu": "Ariake Technologies",
+      "id": "focus-modulator"
+    },
+    {
+      "name": "Voice Modulator",
+      "brief": "persuasion",
+      "piece": "Head",
+      "flavor": "Includes an advanced audio processing package that allows unprecedented clarity and resonance for spoken communication.",
+      "mechanic": "Gain +2 to Persuasion and Intimidation checks",
+      "cost": "2000",
+      "manu": "Tyriel Advanced Communications Corporation",
+      "id": "voice-modulator"
+    },
+    {
+      "name": "Recharge Capacitor",
+      "brief": "shield regen each turn",
+      "piece": "Head",
+      "flavor": "Micro wells store part of the energy directed at the armor and use it to jump start the kinetic barrier recharge cycle.",
+      "mechanic": "You shields recharge every turn, despite taking damage.",
+      "cost": "15000",
+      "manu": "Alliance",
+      "id": "recharge-capacitor"
+    },
+    {
+      "name": "Sentry System",
+      "brief": "sp",
+      "piece": "Head",
+      "flavor": "A software application that optimizes an armor suit's microframe computer. When the Sentry system is running, more power can be devoted to shield management.",
+      "mechanic": "Increase your shield points by 10.",
+      "cost": "10000",
+      "manu": "Alliance",
+      "id": "sentry-system"
+    },
+    {
+      "name": "Archon AI",
+      "brief": "power regen",
+      "piece": "Head",
+      "flavor": "An efficiency algorithm to balance processing power for biotic amps and omni-tools. A heads-up display and voice command software allows users to micromanage the systems, reducing the cool-down period between energy expenditures.",
+      "mechanic": "Gain one half of your tech points and spell slots (rounded down) on a short rest.",
+      "cost": "20000",
+      "manu": "Rosenkov Materials",
+      "id": "archon-ai"
+    },
+    {
+      "name": "?",
+      "brief": "anti: necrotic",
+      "piece": "Head",
+      "flavor": "?",
+      "mechanic": "Resistance to necrotic",
+      "cost": "4000",
+      "manu": "Serrice Council",
+      "id": ""
+    },
+    {
+      "name": "Archon AI",
+      "brief": "power regen",
+      "piece": "Head",
+      "flavor": "An efficiency algorithm to balance processing power for biotic amps and omni-tools. A heads-up display and voice command software allows users to micromanage the systems, reducing the cool-down period between energy expenditures.",
+      "mechanic": "Gain one half of your tech points and spell slots (rounded down) on a short rest.",
+      "cost": "20000",
+      "manu": "Rosenkov Materials",
+      "id": "archon-ai"
+    },
+    {
+      "name": "Ammo Capacity",
+      "brief": "ammo",
+      "piece": "Legs",
+      "flavor": "Additional storage compartments to hold extra thermal clips.",
+      "mechanic": "Increase your thermal clip capacity by 4",
+      "cost": "1000",
+      "manu": "Armax Arsenal",
+      "id": "ammo-capacity"
+    },
+    {
+      "name": "Microservos",
+      "brief": "melee damage",
+      "piece": "Legs",
+      "flavor": "Microservos coordinate your melee strikes.",
+      "mechanic": "You gain a +2 damage bonus to each melee damage roll",
+      "cost": "5000",
+      "manu": "Ariake Technologies",
+      "id": "microservos"
+    },
+    {
+      "name": "\"Cleats\"",
+      "brief": "resistance: lightening",
+      "piece": "Legs",
+      "flavor": "Copper microfillaments in your boots ground you and abate electrical shock.",
+      "mechanic": "Resistance to lightening.",
+      "cost": "10000",
+      "manu": "Cerberus Skunkworks",
+      "id": "cleats"
+    },
+    {
+      "name": "Stimulator Conduits",
+      "brief": "speed",
+      "piece": "Legs",
+      "flavor": "Incorporates a series of beryllium and tungsten braces and micro-servos to support and enhance the natural movements of the wearer for short periods of time.",
+      "mechanic": "Increase your speed by 6m.",
+      "cost": "6000",
+      "manu": "Sirta Foundation",
+      "id": "stimulator-conduits"
+    },
+    {
+      "name": "Life Support Webbing",
+      "brief": "hp",
+      "piece": "Legs",
+      "flavor": "A net of micro-stimulants and medi-gel in order to increase the chances of survival for aid workers and military personnel working in a hostile environment.",
+      "mechanic": "Increase your hit points by 10.",
+      "cost": "10000",
+      "manu": "Sirta Foundation",
+      "id": "life-support-webbing"
+    },
+    {
+      "name": "Ordinace Packs",
+      "brief": "hw ammo",
+      "piece": "Legs",
+      "flavor": "Co-developed by the Rahael Group and Beckmann Financial to solve the issue of munitions storage for Heavy Weapon class engagement tools.",
+      "mechanic": "Increase the charges of your heavy weapons by 2.",
+      "cost": "10000",
+      "manu": "Jormangund Technology",
+      "id": "ordinace-packs"
+    },
+    {
+      "name": "Medi-gel",
+      "brief": "revive",
+      "piece": "Legs",
+      "flavor": "Microprocessors in this interface monitor vital functions and release small localized doses of medi-gel to accelerate the healing process. Manually timed heavy doses of medi-gel can be released in response to major trauma.",
+      "mechanic": "You may automatically pass a Wisdom (Medicine) check when you stabalize an ally. You can use this 2 times per long rest.",
+      "cost": "40000",
+      "manu": "Any",
+      "id": "medi-gel"
+    },
+    {
+      "name": "Mag Latches",
+      "brief": "anti: lift",
+      "piece": "Legs",
+      "flavor": "Powerful magnets keep you grounded.",
+      "mechanic": "If you are standing on a metal surface, you are immune to being lifted. Otherwise, if you would make a saving throw against being lifted, you have advantage.",
+      "cost": "6000",
+      "manu": "Any",
+      "id": "mag-latches"
+    },
+    {
+      "name": "Auxillary Shield Emitters",
+      "brief": "shield die type",
+      "piece": "Legs",
+      "flavor": "Micro-capacitors that release energy to speed up shield regeneration.",
+      "mechanic": "Increase your shield regen by 1 die type (max d12)",
+      "cost": "8000",
+      "manu": "Kassa Fabrication",
+      "id": "auxillary-shield-emitters"
+    },
+    {
+      "name": "?",
+      "brief": "grenade capacity",
+      "piece": "Legs",
+      "flavor": "?",
+      "mechanic": "Increase your genade capcity by 3",
+      "cost": "9000",
+      "manu": "Jormangund Technology",
+      "id": ""
+    },
+    {
+      "name": "?",
+      "brief": null,
+      "piece": null,
+      "flavor": null,
+      "mechanic": null,
+      "cost": null,
+      "manu": null,
+      "id": ""
+    }
+  ]
+}
