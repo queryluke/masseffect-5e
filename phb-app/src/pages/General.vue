@@ -58,6 +58,16 @@
           action, talking back to an officer for Renegade. Whereas, 5 points is a major action, i.e., deciding to save or
           wipeout research that has potential destructiveness.
     rule-card
+      span(slot="header") Damage Types
+      template(slot="text")
+        p.
+          Since this is the future and there isn't really "magic", some damage types need to be reconceptualized.
+        v-list(two-line)
+          template(v-for="dmg in damage_types")
+            v-list-tile-content
+              v-list-tile-title {{ dmg.type }}
+              v-list-tile-sub-title {{ dmg.note }}
+    rule-card
       span(slot="header") Creature Types
       template(slot="text")
         p.
@@ -77,19 +87,31 @@
           WTF is sexy level? ... A joke, but after reading this very
           #[a(href="http://www.polygon.com/2017/3/20/14980436/mass-effect-sexiest-character-aliens-ranked" target="_blank") scientific article],
           I decided to make it canon.
-
-
-
-
-
-
-
 </template>
 
 <script>
   import RuleCard from './../components/RuleCard.vue'
   export default {
     name: 'General',
-    components: { RuleCard }
+    components: { RuleCard },
+    data() {
+      return {
+        damage_types: [
+          { type: 'Acid', note: 'Unchanged'},
+          { type: 'Bludgeoning', note: 'Unchanged' },
+          { type: 'Cold', note: 'Unchanged' },
+          { type: 'Fire', note: 'Unchanged' },
+          { type: 'Force', note: 'One of the primary biotic damage types. Mass Effect fields that pummel, pierce, or apply pressure deal force damage.' },
+          { type: 'Lightning', note: 'Think shock damage. Any damage done by an electrical discharge or source. Deals double damage to shields.' },
+          { type: 'Necrotic', note: 'The second biotic damage type. Necrotic damage uses dark energy or tiny Mass Effect fields targeted inside a creatre, crippling them from within' },
+          { type: 'Piercing', note: 'Unchanged' },
+          { type: 'Poison', note: 'Unchanged' },
+          { type: 'Psychic', note: 'More likely a shock to the nervous system, rather than fear or mental damage. But the latter is possible.' },
+          { type: 'Radiant', note: 'Think radiation or damage on a nuclear level, rather than divine light.' },
+          { type: 'Slashing', note: 'Unchanged' },
+          { type: 'Thunder', note: 'Shockwaves and explosions. Thunder damage is primarily caused by grenades.' },
+        ]
+      }
+    }
   };
 </script>
