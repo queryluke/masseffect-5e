@@ -7,6 +7,8 @@
           span {{ weapon.type }}
           span(v-if="weapon.rare").deep-purple--text
             small  (rare)
+        p
+          em {{ weapon.tags }}
       v-flex.hidden-xs-only.sm6.md3.offset-md3
         img(:src="weapon.image")
     v-layout(row wrap flex-start)

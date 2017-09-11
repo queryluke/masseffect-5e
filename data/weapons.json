@@ -1,11 +1,11 @@
 {
-  "updated": "September 10, 2017 @ 10:09 PM",
+  "updated": "September 11, 2017 @ 12:20 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQqEWxn624K8fJS7V1EQH3RZgRApTepIx91C2BIGEDzQTvwtvdTaHduzujhVEmPknjifAU7FFCcjJcv/pubhtml",
   "data": [
     {
       "name": "Adas Anti-Synthetic Rifle ",
       "type": "Assault Rifle",
-      "cost": "17000",
+      "cost": "10000",
       "manufacturer": "Quarian",
       "weight": "7",
       "range": "10m",
@@ -13,16 +13,13 @@
       "rof": "4",
       "heat": "4",
       "rare": "x",
+      "tags": "Arc, Unique, Two-handed",
       "notes": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Double Damage to Shields. Can't equip special ammo powers."
-        }
+
       ],
       "image": "http://vignette3.wikia.nocookie.net/masseffect/images/9/9e/ME3_Adas_Anti-Synthetic_Assault_Rifle.png/revision/latest/scale-to-width-down/200?cb=20120809190433",
       "id": "adas-anti-synthetic-rifle",
-      "notes_text_dump": "DoubleDamagetoShieldsCantequipspecialammopowers"
+      "notes_text_dump": ""
     },
     {
       "name": "Cerberus Harrier ",
@@ -35,6 +32,7 @@
       "rof": "4",
       "heat": "2",
       "rare": null,
+      "tags": "Two-handed",
       "notes": [
 
       ],
@@ -45,7 +43,7 @@
     {
       "name": "Chakram Launcher",
       "type": "Assault Rifle",
-      "cost": "13500",
+      "cost": "6500",
       "manufacturer": "Ama-Lur Equipment",
       "weight": "4",
       "range": "20m",
@@ -53,16 +51,13 @@
       "rof": "1",
       "heat": "6",
       "rare": "x",
+      "tags": "Charge,  Two-handed",
       "notes": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Charge Weapon. You can use your attack action to charge the weapon. Each charge consumes 1 heat and increases the RoF by 1. If the number of charges equals the heat of the weapon, it overheats and cannot be fired until reloaded."
-        }
+
       ],
       "image": "http://vignette3.wikia.nocookie.net/masseffect/images/5/56/ME3_Chakram_Assault_Rifle.png/revision/latest?cb=20120317175958",
       "id": "chakram-launcher",
-      "notes_text_dump": "ChargeWeaponYoucanuseyourattackactiontochargetheweaponEachchargeconsumes1heatandincreasestheRoFby1Ifthenumberofchargesequalstheheatoftheweaponitoverheatsandcannotbefireduntilreloaded"
+      "notes_text_dump": ""
     },
     {
       "name": "Geth Pulse Rifle",
@@ -75,6 +70,7 @@
       "rof": "5",
       "heat": "1",
       "rare": null,
+      "tags": "Two-handed",
       "notes": [
 
       ],
@@ -93,6 +89,7 @@
       "rof": "3",
       "heat": "4",
       "rare": null,
+      "tags": "Two-handed",
       "notes": [
 
       ],
@@ -111,6 +108,7 @@
       "rof": "2",
       "heat": "20",
       "rare": null,
+      "tags": "Two-handed",
       "notes": [
 
       ],
@@ -129,6 +127,7 @@
       "rof": "3",
       "heat": "2",
       "rare": null,
+      "tags": "Two-handed",
       "notes": [
 
       ],
@@ -147,6 +146,7 @@
       "rof": "3",
       "heat": "-",
       "rare": null,
+      "tags": "Two-handed",
       "notes": [
         {
           "id": 1,
@@ -169,6 +169,7 @@
       "rof": "5",
       "heat": "2",
       "rare": "x",
+      "tags": "Two-handed",
       "notes": [
 
       ],
@@ -187,6 +188,7 @@
       "rof": "4",
       "heat": "2",
       "rare": null,
+      "tags": "Two-handed",
       "notes": [
 
       ],
@@ -205,6 +207,7 @@
       "rof": "2",
       "heat": "6",
       "rare": null,
+      "tags": "Two-handed",
       "notes": [
 
       ],
@@ -215,7 +218,7 @@
     {
       "name": "M-99 Saber",
       "type": "Assault Rifle",
-      "cost": "14000",
+      "cost": "7000",
       "manufacturer": "Systems Alliance",
       "weight": "5",
       "range": "30m",
@@ -223,16 +226,13 @@
       "rof": "2",
       "heat": "10",
       "rare": null,
+      "tags": "Two-handed, Silent",
       "notes": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "No noise when fired."
-        }
+
       ],
       "image": "http://vignette4.wikia.nocookie.net/masseffect/images/6/65/ME3_Saber_Assault_Rifle.png/revision/latest?cb=20120317175044",
       "id": "m-99-saber",
-      "notes_text_dump": "Nonoisewhenfired"
+      "notes_text_dump": ""
     },
     {
       "name": "N7 Typhoon",
@@ -245,6 +245,7 @@
       "rof": "4",
       "heat": "5",
       "rare": "x",
+      "tags": "Two-handed",
       "notes": [
         {
           "id": 1,
@@ -267,6 +268,7 @@
       "rof": "2",
       "heat": "12",
       "rare": null,
+      "tags": "Two-handed",
       "notes": [
 
       ],
@@ -285,6 +287,7 @@
       "rof": "5",
       "heat": "2",
       "rare": null,
+      "tags": "Two-handed",
       "notes": [
 
       ],
@@ -303,6 +306,7 @@
       "rof": "4",
       "heat": "3",
       "rare": null,
+      "tags": "Two-handed",
       "notes": [
 
       ],
@@ -313,7 +317,7 @@
     {
       "name": "Acolyte",
       "type": "Heavy Pistol",
-      "cost": "12500",
+      "cost": "5500",
       "manufacturer": "Asari",
       "weight": "2",
       "range": "10m",
@@ -321,21 +325,18 @@
       "rof": "1",
       "heat": "10",
       "rare": null,
+      "tags": "Charge",
       "notes": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Charge Weapon. You can use your attack action to charge the weapon. Each charge consumes 1 heat and increases the RoF by 1. If the number of charges equals the heat of the weapon, it overheats and cannot be fired until reloaded."
-        }
+
       ],
       "image": "http://vignette3.wikia.nocookie.net/masseffect/images/b/b9/ME3_Acolyte_Pistol.png/revision/latest?cb=20120714073045",
       "id": "acolyte",
-      "notes_text_dump": "ChargeWeaponYoucanuseyourattackactiontochargetheweaponEachchargeconsumes1heatandincreasestheRoFby1Ifthenumberofchargesequalstheheatoftheweaponitoverheatsandcannotbefireduntilreloaded"
+      "notes_text_dump": ""
     },
     {
       "name": "Arc Pistol",
       "type": "Heavy Pistol",
-      "cost": "12500",
+      "cost": "5500",
       "manufacturer": "Quarian",
       "weight": "3",
       "range": "16m",
@@ -343,26 +344,13 @@
       "rof": "1",
       "heat": "10",
       "rare": null,
+      "tags": "Arc, Unique",
       "notes": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Arc Weapon. Hits all other creatures within 2m of the initial target for half damage."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Deals Lightning Damage"
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "Cannot benefit from Special Ammo"
-        }
+
       ],
       "image": "http://vignette1.wikia.nocookie.net/masseffect/images/e/e8/ME3_Arc_Heavy_Pistol.png/revision/latest?cb=20120317185747",
       "id": "arc-pistol",
-      "notes_text_dump": "ArcWeaponHitsallothercreatureswithin2moftheinitialtargetforhalfdamageDealsLightningDamageCannotbenefitfromSpecialAmmo"
+      "notes_text_dump": ""
     },
     {
       "name": "Executioner Pistol",
@@ -375,6 +363,7 @@
       "rof": "1",
       "heat": "6",
       "rare": null,
+      "tags": null,
       "notes": [
 
       ],
@@ -385,7 +374,7 @@
     {
       "name": "M-11 Suppressor",
       "type": "Heavy Pistol",
-      "cost": "14000",
+      "cost": "7000",
       "manufacturer": "Systems Alliance",
       "weight": "3",
       "range": "16m",
@@ -393,16 +382,13 @@
       "rof": "2",
       "heat": "4",
       "rare": null,
+      "tags": "Silent",
       "notes": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Makes no noise when fired"
-        }
+
       ],
       "image": "http://vignette1.wikia.nocookie.net/masseffect/images/8/84/ME3_Suppressor.png/revision/latest?cb=20130227094606",
       "id": "m-11-suppressor",
-      "notes_text_dump": "Makesnonoisewhenfired"
+      "notes_text_dump": ""
     },
     {
       "name": "M-3 Predator",
@@ -415,6 +401,7 @@
       "rof": "1",
       "heat": "12",
       "rare": null,
+      "tags": null,
       "notes": [
 
       ],
@@ -433,6 +420,7 @@
       "rof": "2",
       "heat": "2",
       "rare": "x",
+      "tags": null,
       "notes": [
 
       ],
@@ -451,6 +439,7 @@
       "rof": "2",
       "heat": "12",
       "rare": null,
+      "tags": null,
       "notes": [
 
       ],
@@ -469,6 +458,7 @@
       "rof": "2",
       "heat": "2",
       "rare": null,
+      "tags": null,
       "notes": [
 
       ],
@@ -487,6 +477,7 @@
       "rof": "3",
       "heat": "1",
       "rare": "x",
+      "tags": null,
       "notes": [
 
       ],
@@ -505,6 +496,7 @@
       "rof": "3",
       "heat": "2",
       "rare": null,
+      "tags": null,
       "notes": [
 
       ],
@@ -523,21 +515,17 @@
       "rof": "2",
       "heat": "4",
       "rare": "x",
+      "tags": "Unique",
       "notes": [
         {
           "id": 1,
           "type": "line",
           "data": "Missed shots adhere to nearby surfaces and do 1d4 thunder damage instead."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Cannot benefit from Special Ammo"
         }
       ],
       "image": "http://vignette3.wikia.nocookie.net/masseffect/images/4/40/ME3_Scorpion_Heavy_Pistol.png/revision/latest?cb=20120317185843",
       "id": "scorpion",
-      "notes_text_dump": "Missedshotsadheretonearbysurfacesanddo1d4thunderdamageinsteadCannotbenefitfromSpecialAmmo"
+      "notes_text_dump": "Missedshotsadheretonearbysurfacesanddo1d4thunderdamageinstead"
     },
     {
       "name": "Cobra Missile Launcher",
@@ -550,6 +538,7 @@
       "rof": "8",
       "heat": "4",
       "rare": "x",
+      "tags": "Two-handed",
       "notes": [
         {
           "id": 1,
@@ -572,6 +561,7 @@
       "rof": "12",
       "heat": "3",
       "rare": "x",
+      "tags": "Two-handed",
       "notes": [
         {
           "id": 1,
@@ -594,6 +584,7 @@
       "rof": "4",
       "heat": "10",
       "rare": "x",
+      "tags": "Two-handed",
       "notes": [
         {
           "id": 1,
@@ -616,6 +607,7 @@
       "rof": "4",
       "heat": "1",
       "rare": "x",
+      "tags": "Two-handed",
       "notes": [
         {
           "id": 1,
@@ -638,6 +630,7 @@
       "rof": "4",
       "heat": "10",
       "rare": "x",
+      "tags": "Two-handed",
       "notes": [
         {
           "id": 1,
@@ -660,6 +653,7 @@
       "rof": "7",
       "heat": "5",
       "rare": "x",
+      "tags": "Two-handed",
       "notes": [
         {
           "id": 1,
@@ -682,6 +676,7 @@
       "rof": "10",
       "heat": "1",
       "rare": "x",
+      "tags": "Two-handed",
       "notes": [
         {
           "id": 1,
@@ -704,6 +699,7 @@
       "rof": "8",
       "heat": "2",
       "rare": "x",
+      "tags": "Two-handed",
       "notes": [
         {
           "id": 1,
@@ -718,7 +714,7 @@
     {
       "name": "AT-12 Raider",
       "type": "Shotgun",
-      "cost": "18000",
+      "cost": "11000",
       "manufacturer": "Batarian",
       "weight": "8",
       "range": "2m",
@@ -726,21 +722,18 @@
       "rof": "2",
       "heat": "1",
       "rare": null,
+      "tags": "Two-handed, Hip Fire",
       "notes": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Hip Fire"
-        }
+
       ],
       "image": "http://vignette2.wikia.nocookie.net/masseffect/images/3/3f/ME3_Raider_Shotgun.png/revision/latest?cb=20120317200919",
       "id": "at-12-raider",
-      "notes_text_dump": "HipFire"
+      "notes_text_dump": ""
     },
     {
       "name": "Disciple",
       "type": "Shotgun",
-      "cost": "17500",
+      "cost": "10500",
       "manufacturer": "Asari",
       "weight": "6",
       "range": "4m",
@@ -748,21 +741,18 @@
       "rof": "3",
       "heat": "3",
       "rare": null,
+      "tags": "Two-handed, Hip Fire",
       "notes": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Hip Fire"
-        }
+
       ],
       "image": "http://vignette4.wikia.nocookie.net/masseffect/images/6/6a/ME3_Disciple_Shotgun.png/revision/latest?cb=20120317201011",
       "id": "disciple",
-      "notes_text_dump": "HipFire"
+      "notes_text_dump": ""
     },
     {
       "name": "Geth Plasma Shotgun",
       "type": "Shotgun",
-      "cost": "13500",
+      "cost": "6500",
       "manufacturer": "Geth Armory",
       "weight": "8",
       "range": "10m",
@@ -770,16 +760,13 @@
       "rof": "1",
       "heat": "5",
       "rare": null,
+      "tags": "Two-handed, Hip Fire, Charge",
       "notes": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Charged Weapon. You action can be to charge this weapon. Each round of charge uses 1 heat. When the charge is release, make the ranged spell attack. On a success the RoF is equal to all charges that were stored."
-        }
+
       ],
       "image": "http://vignette4.wikia.nocookie.net/masseffect/images/b/b9/ME3_Geth_Plasma_Shotgun.png/revision/latest?cb=20120317201115",
       "id": "geth-plasma-shotgun",
-      "notes_text_dump": "ChargedWeaponYouactioncanbetochargethisweaponEachroundofchargeuses1heatWhenthechargeisreleasemaketherangedspellattackOnasuccesstheRoFisequaltoallchargesthatwerestored"
+      "notes_text_dump": ""
     },
     {
       "name": "Graal Spike Thrower",
@@ -792,26 +779,22 @@
       "rof": "1",
       "heat": "2",
       "rare": null,
+      "tags": "Two-handed, Hip Fire",
       "notes": [
         {
           "id": 1,
           "type": "line",
           "data": "Deals 1d12 additional damage to a target within 2m."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Hip Fire"
         }
       ],
       "image": "http://vignette1.wikia.nocookie.net/masseffect/images/b/b1/ME3_Graal_Spike_Thrower_Shotgun.png/revision/latest?cb=20120317201204",
       "id": "graal-spike-thrower",
-      "notes_text_dump": "Deals1d12additionaldamagetoatargetwithin2mHipFire"
+      "notes_text_dump": "Deals1d12additionaldamagetoatargetwithin2m"
     },
     {
       "name": "M-11 Wraith",
       "type": "Shotgun",
-      "cost": "23500",
+      "cost": "16500",
       "manufacturer": "Unknown",
       "weight": "6",
       "range": "2m",
@@ -819,21 +802,18 @@
       "rof": "3",
       "heat": "1",
       "rare": "x",
+      "tags": "Two-handed, Hip Fire",
       "notes": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Hip Fire"
-        }
+
       ],
       "image": "http://vignette3.wikia.nocookie.net/masseffect/images/4/45/ME3_Wraith_Shotgun.png/revision/latest?cb=20120317200422",
       "id": "m-11-wraith",
-      "notes_text_dump": "HipFire"
+      "notes_text_dump": ""
     },
     {
       "name": "M-22 Eviscerator",
       "type": "Shotgun",
-      "cost": "20500",
+      "cost": "13500",
       "manufacturer": "Human",
       "weight": "6",
       "range": "2m",
@@ -841,21 +821,18 @@
       "rof": "3",
       "heat": "2",
       "rare": null,
+      "tags": "Two-handed, Hip Fire",
       "notes": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Hip Fire"
-        }
+
       ],
       "image": "http://vignette3.wikia.nocookie.net/masseffect/images/e/e0/ME3_Eviscerator_Shotgun.png/revision/latest?cb=20120317200519",
       "id": "m-22-eviscerator",
-      "notes_text_dump": "HipFire"
+      "notes_text_dump": ""
     },
     {
       "name": "M-23 Katana",
       "type": "Shotgun",
-      "cost": "21000",
+      "cost": "14000",
       "manufacturer": "Ariake Technologies",
       "weight": "6",
       "range": "2m",
@@ -863,21 +840,18 @@
       "rof": "4",
       "heat": "5",
       "rare": null,
+      "tags": "Two-handed, Hip Fire",
       "notes": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Hip Fire"
-        }
+
       ],
       "image": "http://vignette1.wikia.nocookie.net/masseffect/images/a/a2/ME3_Katana_Shotgun.png/revision/latest?cb=20120317200552",
       "id": "m-23-katana",
-      "notes_text_dump": "HipFire"
+      "notes_text_dump": ""
     },
     {
       "name": "M-27 Scimitar",
       "type": "Shotgun",
-      "cost": "22000",
+      "cost": "15000",
       "manufacturer": "Ariake Technologies",
       "weight": "5",
       "range": "2m",
@@ -885,21 +859,18 @@
       "rof": "6",
       "heat": "3",
       "rare": null,
+      "tags": "Two-handed, Hip Fire",
       "notes": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Hip Fire"
-        }
+
       ],
       "image": "http://vignette4.wikia.nocookie.net/masseffect/images/0/0d/ME3_Scimitar_Shotgun.png/revision/latest?cb=20120317200715",
       "id": "m-27-scimitar",
-      "notes_text_dump": "HipFire"
+      "notes_text_dump": ""
     },
     {
       "name": "M-300 Claymore",
       "type": "Shotgun",
-      "cost": "27000",
+      "cost": "20000",
       "manufacturer": "Krogan",
       "weight": "10",
       "range": "2m",
@@ -907,21 +878,18 @@
       "rof": "8",
       "heat": "1",
       "rare": "x",
+      "tags": "Two-handed, Hip Fire",
       "notes": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Hip Fire"
-        }
+
       ],
       "image": "http://vignette4.wikia.nocookie.net/masseffect/images/a/a2/ME3_Claymore_Shotgun.png/revision/latest?cb=20120317200800",
       "id": "m-300-claymore",
-      "notes_text_dump": "HipFire"
+      "notes_text_dump": ""
     },
     {
       "name": "N7 Crusader",
       "type": "Shotgun",
-      "cost": "25000",
+      "cost": "18000",
       "manufacturer": "Systems Alliance",
       "weight": "10",
       "range": "6m",
@@ -929,16 +897,13 @@
       "rof": "4",
       "heat": "2",
       "rare": "x",
+      "tags": "Two-handed, Hip Fire",
       "notes": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Hip Fire"
-        }
+
       ],
       "image": "http://vignette2.wikia.nocookie.net/masseffect/images/3/3a/ME3_N7_Crusader_Shotgun.png/revision/latest?cb=20120317201234",
       "id": "n7-crusader",
-      "notes_text_dump": "HipFire"
+      "notes_text_dump": ""
     },
     {
       "name": "N7 Piranha",
@@ -951,6 +916,7 @@
       "rof": "2",
       "heat": "2",
       "rare": null,
+      "tags": "Two-handed, Hip Fire",
       "notes": [
         {
           "id": 1,
@@ -965,7 +931,7 @@
     {
       "name": "Reegar Carbine",
       "type": "Shotgun",
-      "cost": "19500",
+      "cost": "12500",
       "manufacturer": "Quarian",
       "weight": "6",
       "range": "6m",
@@ -973,21 +939,13 @@
       "rof": "5",
       "heat": "4",
       "rare": null,
+      "tags": "Two-handed, Hip Fire, Arc, Unique",
       "notes": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Arc Weapon. Hits all other creatures within 2m of the initial target for half damage."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Hip Fire"
-        }
+
       ],
       "image": "http://vignette2.wikia.nocookie.net/masseffect/images/6/60/ME3_Reegar_Carbine.png/revision/latest?cb=20120530214009",
       "id": "reegar-carbine",
-      "notes_text_dump": "ArcWeaponHitsallothercreatureswithin2moftheinitialtargetforhalfdamageHipFire"
+      "notes_text_dump": ""
     },
     {
       "name": "Venom Shotgun",
@@ -1000,21 +958,17 @@
       "rof": "5",
       "heat": "2",
       "rare": null,
+      "tags": "Two-handed, Hip Fire, Unique",
       "notes": [
         {
           "id": 1,
           "type": "line",
           "data": "Instead of making a ranged weapon attack, target creature makes a Dexterity saving throw (DC13). On a successful save, it takes half as much damage."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Cannot benefit from Special Ammo"
         }
       ],
       "image": "http://vignette1.wikia.nocookie.net/masseffect/images/7/76/ME3_Venom_Shotgun.png/revision/latest?cb=20121029075317",
       "id": "venom-shotgun",
-      "notes_text_dump": "InsteadofmakingarangedweaponattacktargetcreaturemakesaDexteritysavingthrowDC13OnasuccessfulsaveittakeshalfasmuchdamageCannotbenefitfromSpecialAmmo"
+      "notes_text_dump": "InsteadofmakingarangedweaponattacktargetcreaturemakesaDexteritysavingthrowDC13Onasuccessfulsaveittakeshalfasmuchdamage"
     },
     {
       "name": "Blood Pack Punisher",
@@ -1027,6 +981,7 @@
       "rof": "4",
       "heat": "1",
       "rare": null,
+      "tags": null,
       "notes": [
 
       ],
@@ -1037,7 +992,7 @@
     {
       "name": "Geth Plasma SMG",
       "type": "SMG",
-      "cost": "14500",
+      "cost": "7500",
       "manufacturer": "Geth Armory",
       "weight": "4",
       "range": "10m",
@@ -1045,21 +1000,13 @@
       "rof": "3",
       "heat": "2",
       "rare": null,
+      "tags": "Arc, Unique",
       "notes": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Deals lightning damage."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Cannot benefit from Special Ammo"
-        }
+
       ],
       "image": "http://vignette4.wikia.nocookie.net/masseffect/images/9/9c/ME3_Geth_Plasma_SMG.png/revision/latest?cb=20120411201332",
       "id": "geth-plasma-smg",
-      "notes_text_dump": "DealslightningdamageCannotbenefitfromSpecialAmmo"
+      "notes_text_dump": ""
     },
     {
       "name": "M-12 Locust",
@@ -1072,6 +1019,7 @@
       "rof": "3",
       "heat": "10",
       "rare": null,
+      "tags": null,
       "notes": [
 
       ],
@@ -1090,6 +1038,7 @@
       "rof": "3",
       "heat": "2",
       "rare": null,
+      "tags": null,
       "notes": [
 
       ],
@@ -1108,6 +1057,7 @@
       "rof": "4",
       "heat": "4",
       "rare": null,
+      "tags": null,
       "notes": [
 
       ],
@@ -1126,6 +1076,7 @@
       "rof": "4",
       "heat": "2",
       "rare": null,
+      "tags": null,
       "notes": [
 
       ],
@@ -1144,6 +1095,7 @@
       "rof": "4",
       "heat": "6",
       "rare": "x",
+      "tags": null,
       "notes": [
 
       ],
@@ -1162,6 +1114,7 @@
       "rof": "3",
       "heat": "2",
       "rare": "x",
+      "tags": "Two-handed",
       "notes": [
 
       ],
@@ -1172,7 +1125,7 @@
     {
       "name": "Javelin",
       "type": "Sniper Rifle",
-      "cost": "16000",
+      "cost": "9000",
       "manufacturer": "Geth Armory",
       "weight": "10",
       "range": "60m",
@@ -1180,26 +1133,18 @@
       "rof": "2",
       "heat": "1",
       "rare": null,
+      "tags": "Two-handed, Unique, Arc",
       "notes": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Deals lightning damage."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Cannot benefit from Special Ammo"
-        }
+
       ],
       "image": "http://vignette2.wikia.nocookie.net/masseffect/images/7/7b/ME3_Javelin_Sniper_Rifle.png/revision/latest?cb=20120317192031",
       "id": "javelin",
-      "notes_text_dump": "DealslightningdamageCannotbenefitfromSpecialAmmo"
+      "notes_text_dump": ""
     },
     {
       "name": "Kishock Harpoon Gun",
       "type": "Sniper Rifle",
-      "cost": "13500",
+      "cost": "6500",
       "manufacturer": "Batarian",
       "weight": "8",
       "range": "60m",
@@ -1207,16 +1152,13 @@
       "rof": "1",
       "heat": "3",
       "rare": null,
+      "tags": "Two-handed, Charge",
       "notes": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Charge Weapon. You can use your attack action to charge the weapon. Each charge consumes 1 heat and increases the RoF by 1. If the number of charges equals the heat of the weapon, it overheats and cannot be fired until reloaded."
-        }
+
       ],
       "image": "http://vignette4.wikia.nocookie.net/masseffect/images/d/db/ME3_Kishock_Harpoon_Gun.png/revision/latest?cb=20120411201323",
       "id": "kishock-harpoon-gun",
-      "notes_text_dump": "ChargeWeaponYoucanuseyourattackactiontochargetheweaponEachchargeconsumes1heatandincreasestheRoFby1Ifthenumberofchargesequalstheheatoftheweaponitoverheatsandcannotbefireduntilreloaded"
+      "notes_text_dump": ""
     },
     {
       "name": "Krysae Sniper Rifle",
@@ -1229,6 +1171,7 @@
       "rof": "2",
       "heat": "1",
       "rare": null,
+      "tags": "Two-handed",
       "notes": [
 
       ],
@@ -1247,6 +1190,7 @@
       "rof": "2",
       "heat": "2",
       "rare": null,
+      "tags": "Two-handed",
       "notes": [
 
       ],
@@ -1265,6 +1209,7 @@
       "rof": "3",
       "heat": "1",
       "rare": "x",
+      "tags": "Two-handed",
       "notes": [
 
       ],
@@ -1283,6 +1228,7 @@
       "rof": "4",
       "heat": "1",
       "rare": "x",
+      "tags": "Two-handed",
       "notes": [
 
       ],
@@ -1301,6 +1247,7 @@
       "rof": "2",
       "heat": "1",
       "rare": null,
+      "tags": "Two-handed",
       "notes": [
 
       ],
@@ -1319,6 +1266,7 @@
       "rof": "2",
       "heat": "3",
       "rare": null,
+      "tags": "Two-handed",
       "notes": [
 
       ],
@@ -1337,6 +1285,7 @@
       "rof": "3",
       "heat": "1",
       "rare": "x",
+      "tags": "Two-handed",
       "notes": [
 
       ],
@@ -1355,6 +1304,7 @@
       "rof": "2",
       "heat": "2",
       "rare": null,
+      "tags": "Two-handed",
       "notes": [
 
       ],

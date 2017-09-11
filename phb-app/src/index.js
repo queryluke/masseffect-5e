@@ -14,22 +14,20 @@ import Backgrounds from './pages/Backgrounds.vue';
 import Bestiary from './pages/Bestiary.vue';
 import Classes from './pages/Classes.vue';
 import ClassView from './pages/ClassView.vue';
-import Combat from './pages/Combat.md';
 import Conditions from './pages/Conditions.md';
-import Equipment from './pages/Equipment.md';
 import Feats from './pages/Feats.vue';
-import General from './pages/General.md';
+import General from './pages/General.vue';
 import Grenades from './pages/Grenades.vue';
 import Home from './pages/Home.vue';
-import ParagonRenegade from './pages/ParagonRenegade.md';
 import Race from './pages/Race.vue';
 import Races from './pages/Races.vue';
 import Skills from './pages/Skills.vue';
 import Spell from './pages/Spell.vue';
 import Spells from './pages/Spells.vue';
-import Spellcasting from './pages/Spellcasting.md';
+import Spellcasting from './pages/Spellcasting.vue';
 import ThermalClips from './pages/ThermalClips.vue';
 import Weapons from './pages/Weapons.vue';
+import WeaponRules from './pages/WeaponRules.vue';
 import Weapon from './pages/Weapon.vue';
 
 require('./stylus/main.styl');
@@ -65,11 +63,9 @@ const router = new Router({
     },
     {path: '/rules', component: Default,
       children: [
-        {path: 'combat', component: Combat},
-        {path: 'equipment', component: Equipment},
-        {path: 'armor', component: Armor},
         {path: 'general', component: General},
-        {path: 'paragon-and-renegade', component: ParagonRenegade},
+        {path: 'weapons', component: WeaponRules},
+        {path: 'armor', component: Armor},
         {path: 'spellcasting', component: Spellcasting}
       ]
     }

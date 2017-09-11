@@ -80,11 +80,10 @@
             action: 'gavel',
             items: [
               { href:'/rules/general', title: 'General' },
-              { href:'/rules/combat', title: 'Combat' },
-              { href:'/rules/equipment', title: 'Equipment' },
-              { href:'/rules/armor', title: 'Armor' },
-              { href:'/rules/paragon-and-renegade', title: 'Paragon & Renegade' },
               { href:'/rules/spellcasting', title: 'Spellcasting' },
+              { href:'/rules/weapons', title: 'Weapons' },
+              { href:'/rules/armor', title: 'Armor' },
+              { href:'/rules/consumables', title: 'Consumables' },
               { href: '/skills', title: 'Skills' },
               { href: '/conditions', title: 'Conditions' },
             ]

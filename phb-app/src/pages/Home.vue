@@ -1,16 +1,9 @@
-<template>
-  <div id="home">
-    <v-container fluid>
-      <v-layout row justify-space-around>
-        <v-flex xs12>
-          <img src="assets/me5e_logo_notm.png" alt="mass effect 5e logo">
-          <p>
-            Player's Handbook
-          </p>
-        </v-flex>
-      </v-layout>
-    </v-container>
-  </div>
+<template lang="jade">
+  div(id="home")
+    v-layout(row justify-space-around)
+      v-flex.xs12
+        img(:src="`../assets/images/me5e_logo_notm.png`" alt="mass effect 5e logo")
+        p Player's Handbook
 </template>
 
 <script>
