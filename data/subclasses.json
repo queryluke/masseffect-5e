@@ -1,0 +1,413 @@
+{
+  "updated": "September 10, 2017 @  8:45 PM",
+  "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
+  "data": [
+    {
+      "name": "Commando",
+      "class": "adept",
+      "description": null,
+      "1": [
+        "pure-biotics"
+      ],
+      "2": [
+        "expert-biotic"
+      ],
+      "3": [
+        "biotic-split"
+      ],
+      "4": [
+        "overchannel"
+      ],
+      "5": null,
+      "id": [
+        "commando"
+      ]
+    },
+    {
+      "name": "Blackstar",
+      "class": "adept",
+      "description": null,
+      "1": [
+        "sculpt-biotics"
+      ],
+      "2": [
+        "bend-luck"
+      ],
+      "3": [
+        "focused-biotics"
+      ],
+      "4": [
+        "biotic-control"
+      ],
+      "5": null,
+      "id": [
+        "blackstar"
+      ]
+    },
+    {
+      "name": "Disruptor",
+      "class": "adept",
+      "description": null,
+      "1": [
+        "dark-biotics"
+      ],
+      "2": [
+        "biotic-surge"
+      ],
+      "3": [
+        "potent-biotics"
+      ],
+      "4": [
+        "biotic-concentration"
+      ],
+      "5": null,
+      "id": [
+        "disruptor"
+      ]
+    },
+    {
+      "name": "Demolisher",
+      "class": "engineer",
+      "description": null,
+      "1": [
+        "advanced-weapon-holsters"
+      ],
+      "2": [
+        "makeshift-grenades"
+      ],
+      "3": [
+        "heavy-weapon-hack"
+      ],
+      "4": [
+        "targeting-mobility"
+      ],
+      "5": [
+        "makeshift-grenades"
+      ],
+      "id": [
+        "demolisher"
+      ]
+    },
+    {
+      "name": "Drone Jockey",
+      "class": "engineer",
+      "description": null,
+      "1": [
+        "drone-sidekick"
+      ],
+      "2": [
+        "drone-efficiency"
+      ],
+      "3": [
+        "dual-drones"
+      ],
+      "4": [
+        "drone-mastery"
+      ],
+      "5": [
+        "drone-swarm"
+      ],
+      "id": [
+        "drone-jockey"
+      ]
+    },
+    {
+      "name": "Support",
+      "class": "engineer",
+      "description": null,
+      "1": [
+        "healing-drone"
+      ],
+      "2": [
+        "medi-gel-enhancements"
+      ],
+      "3": [
+        "shield-boost"
+      ],
+      "4": [
+        "healing-drone"
+      ],
+      "5": [
+        "supply-pylon"
+      ],
+      "id": [
+        "support"
+      ]
+    },
+    {
+      "name": "Shadow",
+      "class": "infiltrator",
+      "description": null,
+      "1": [
+        "melee-specialist"
+      ],
+      "2": [
+        "deadly-strike"
+      ],
+      "3": [
+        "misdirection"
+      ],
+      "4": [
+        "sudden-strike"
+      ],
+      "5": null,
+      "id": [
+        "shadow"
+      ]
+    },
+    {
+      "name": "Saboteur",
+      "class": "infiltrator",
+      "description": null,
+      "1": [
+        "ear-for-deceit",
+        "eye-for-detail",
+        "insightful-fighting"
+      ],
+      "2": [
+        "infiltration"
+      ],
+      "3": [
+        "saboteurs-touch"
+      ],
+      "4": [
+        "eye-for-weakness"
+      ],
+      "5": null,
+      "id": [
+        "saboteur"
+      ]
+    },
+    {
+      "name": "Operative",
+      "class": "infiltrator",
+      "description": null,
+      "1": [
+        "master-tactician"
+      ],
+      "2": [
+        "tactical-ambush"
+      ],
+      "3": [
+        "elegant-maneuver"
+      ],
+      "4": [
+        "master-duelist"
+      ],
+      "5": null,
+      "id": [
+        "operative"
+      ]
+    },
+    {
+      "name": "Battlemaster",
+      "class": "sentinel",
+      "description": null,
+      "1": [
+        "power-armor",
+        "biotic-powers11"
+      ],
+      "2": [
+        "battlemaster"
+      ],
+      "3": [
+        "battlemaster"
+      ],
+      "4": [
+        "battlemaster"
+      ],
+      "5": [
+        "power-armor"
+      ],
+      "id": [
+        "battlemaster"
+      ]
+    },
+    {
+      "name": "Bastion",
+      "class": "sentinel",
+      "description": null,
+      "1": [
+        "assault-armor"
+      ],
+      "2": [
+        "improved-tech-armor"
+      ],
+      "3": [
+        "tech-armor-overload"
+      ],
+      "4": [
+        "improved-tech-armor2"
+      ],
+      "5": [
+        "tech-armor-overload"
+      ],
+      "id": [
+        "bastion"
+      ]
+    },
+    {
+      "name": "Paladin",
+      "class": "sentinel",
+      "description": null,
+      "1": [
+        "omni-shield",
+        "expertise"
+      ],
+      "2": [
+        "tech-aura"
+      ],
+      "3": [
+        "scuplt-biotics",
+        "expertise"
+      ],
+      "4": [
+        "tech-aura"
+      ],
+      "5": [
+        "tech-aura-improvement"
+      ],
+      "id": [
+        "paladin"
+      ]
+    },
+    {
+      "name": "Havoc",
+      "class": "soldier",
+      "description": null,
+      "1": [
+        "combat-power"
+      ],
+      "2": [
+        "combat-power"
+      ],
+      "3": [
+        "combat-power"
+      ],
+      "4": [
+        "combat-power"
+      ],
+      "5": [
+        "combat-power"
+      ],
+      "id": [
+        "havoc"
+      ]
+    },
+    {
+      "name": "Weapon Master",
+      "class": "soldier",
+      "description": null,
+      "1": [
+        "weapon-of-choice"
+      ],
+      "2": [
+        "quick-reload"
+      ],
+      "3": [
+        "improved-weapon-superiority"
+      ],
+      "4": [
+        "strafe"
+      ],
+      "5": [
+        "improved-weapon-superiority"
+      ],
+      "id": [
+        "weapon-master"
+      ]
+    },
+    {
+      "name": "Sharp Shooter",
+      "class": "soldier",
+      "description": null,
+      "1": [
+        "deadly-aim"
+      ],
+      "2": [
+        "careful-eyes"
+      ],
+      "3": [
+        "marksman"
+      ],
+      "4": [
+        "snap-shot"
+      ],
+      "5": [
+        "marksman"
+      ],
+      "id": [
+        "sharp-shooter"
+      ]
+    },
+    {
+      "name": "Champion",
+      "class": "vanguard",
+      "description": null,
+      "1": [
+        "biotic-maneuvers"
+      ],
+      "2": [
+        "improved-barrier"
+      ],
+      "3": [
+        "biotic-maneuvers"
+      ],
+      "4": [
+        "improved-barrier"
+      ],
+      "5": [
+        "biotic-maneuvers"
+      ],
+      "id": [
+        "champion"
+      ]
+    },
+    {
+      "name": "Slayer",
+      "class": "vanguard",
+      "description": null,
+      "1": [
+        "biotic-slash"
+      ],
+      "2": [
+        "melee-specialist"
+      ],
+      "3": [
+        "improved-biotic-slash"
+      ],
+      "4": [
+        "biotic-focus"
+      ],
+      "5": [
+        "opportunist"
+      ],
+      "id": [
+        "slayer"
+      ]
+    },
+    {
+      "name": "Cabal",
+      "class": "vanguard",
+      "description": null,
+      "1": [
+        "nightshade-blades"
+      ],
+      "2": [
+        "poison-strike"
+      ],
+      "3": [
+        "teleporting-dodge"
+      ],
+      "4": [
+        "biotic-powers23"
+      ],
+      "5": [
+        "cabal-attacks"
+      ],
+      "id": [
+        "cabal"
+      ]
+    }
+  ]
+}

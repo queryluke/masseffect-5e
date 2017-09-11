@@ -150,8 +150,28 @@ def generate_model(headers)
   model
 end
 
+def ordinalize(int)
+  case(int)
+    when 1
+      return '1st'
+    when 2
+      return '2nd'
+    when 3
+      return '3rd'
+    else
+      return "#{int}th"
+  end
+end
+
+class String
+  def is_i?
+    !!(self =~ /\A[-+]?[0-9]+\z/)
+  end
+end
+
 def generate_config_file(page)
   puts "working on #{page[:type]}"
+
   uri = URI(page[:url])
   resp = Net::HTTP.get_response(uri)
 
@@ -159,9 +179,26 @@ def generate_config_file(page)
 
   csv = CSV.parse(body)
 
+  headers = csv[0]
   model = generate_model(csv[0])
   csv.delete_at(0)
   collection = []
+  date = DateTime.now
+  data = {
+      updated: date.strftime("%B %e, %Y @ %l:%M %p"),
+      source: page[:url].sub(%r(/pub\?.*),'/pubhtml'),
+      data: collection
+  }
+  if page[:type] =~ %r{_progression}
+    data[:headers] = headers.map do |h|
+      if h.is_i?
+        { display: ordinalize(h.to_i), spell_header: true }
+      else
+        { display: h, spell_header: false }
+      end
+    end
+    subclass_increment = 1
+  end
 
   csv.each do |line|
     unless line[0].nil?
@@ -176,6 +213,26 @@ def generate_config_file(page)
         dup_model[:id] = dup_model[page[:id]].downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
       end
 
+      if page[:type] =~ %r{_progression}
+        dup_model['features'] = dup_model['features'].split(',').map do |l|
+          key = l.downcase.strip.gsub(' ', '-').gsub(/[^a-zA-z\-]/, '')
+          if key == 'subclass-feature'
+            subclass_progression = subclass_increment
+            subclass_increment = subclass_increment + 1
+          end
+          {
+            key: key,
+            display: l,
+            subclass_progression: subclass_progression
+          }
+
+        end
+        subclass_progression =
+        row_data = dup_model.map do |k,v|
+          { key: k, value: v }
+        end
+        dup_model = { level: dup_model['level'], row_data: row_data }
+      end
       case page[:type]
         when 'spells'
           dup_model = config_spells(dup_model)
@@ -185,6 +242,13 @@ def generate_config_file(page)
           if dup_model['damage_amount'] && dup_model['dd'] && dup_model['damage_type']
             damage_string =  "#{dup_model['damage_amount']}#{dup_model['dd']} #{dup_model['damage_type']}"
             dup_model['desc'] = dup_model['desc'].gsub(/\[damage_string\]/,damage_string)
+          end
+        when 'subclasses'
+          dup_model.each_key do |key|
+            unless key == 'name' || key == 'description'
+              dup_model[key] = dup_model[key].split(',').map { |l| l.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') } if dup_model[key]
+              dup_model[key] = dup_model[key][0] if key == 'class'
+            end
           end
         else
           dup_model = dup_model
@@ -201,18 +265,13 @@ def generate_config_file(page)
     end
   end
 
-  date = DateTime.now
+  data[:data] = collection
 
-  data = {
-    updated: date.strftime("%B %e, %Y @ %l:%M %p"),
-    source: page[:url].sub(%r(/pub\?.*),'/pubhtml'),
-    data: collection
-  }
   File.open("data/#{page[:type]}.json", 'wb') {|f| f.write JSON.pretty_generate(data) }
 
 end
 
-pages = [
+[
   {
     type: 'spells',
     url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSs9dkG94f5fPCOJ38g-xCUCwnYynzbiFdggQ1KqM1vMscINwcn2_OGPqGhvxOrYl18oK7dO2notL_y/pub?gid=0&single=true&output=csv',
@@ -282,6 +341,42 @@ pages = [
   {
     type: 'classes',
     url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=0&single=true&output=csv',
+    renderables: [],
+    id: 'name'
+  },
+  {
+    type: 'engineer_progression',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=859616161&single=true&output=csv',
+    renderables: [],
+  },
+  {
+    type: 'sentinel_progression',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=1389384549&single=true&output=csv',
+    renderables: [],
+  },
+  {
+    type: 'infiltrator_progression',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=782961022&single=true&output=csv',
+    renderables: [],
+  },
+  {
+    type: 'vanguard_progression',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=1618519913&single=true&output=csv',
+    renderables: [],
+  },
+  {
+    type: 'soldier_progression',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=2098633418&single=true&output=csv',
+    renderables: [],
+  },
+  {
+    type: 'adept_progression',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=1256776098&single=true&output=csv',
+    renderables: [],
+  },
+  {
+    type: 'subclasses',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=596741267&single=true&output=csv',
     renderables: [],
     id: 'name'
   }

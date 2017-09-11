@@ -48,7 +48,7 @@ const router = new Router({
         {path: 'backgrounds', component: Backgrounds},
         {path: 'bestiary', component: Bestiary},
         {path: 'classes', component: Classes},
-        {path: 'classes/:id', component: ClassView, name: 'class'},
+        {path: 'classes/:id', component: ClassView, name: 'class', props: true},
         {path: 'conditions', component: Conditions},
         {path: 'feats', component: Feats},
         {path: 'grenades', component: Grenades},
