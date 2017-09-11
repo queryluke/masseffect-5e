@@ -1,5 +1,5 @@
 {
-  "updated": "September 10, 2017 @  8:45 PM",
+  "updated": "September 10, 2017 @ 10:09 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -22,7 +22,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "On your turn, you can inject yourself with a shot of adrennaline, pushing yourself beyond your normal limits for a moment. You can take one additional action on top of your regular action and a possible bonus action. Once you use this feature, you must finish a short or long rest before you can use it again."
+          "data": "On your turn, you can inject yourself with a shot of adrenaline, pushing yourself beyond your normal limits for a moment. You can take one additional action on top of your regular action and a possible bonus action. Once you use this feature, you must finish a short or long rest before you can use it again."
         },
         {
           "id": 2,
@@ -31,7 +31,7 @@
         }
       ],
       "id": "adrenaline-rush",
-      "mechanic_text_dump": "OnyourturnyoucaninjectyourselfwithashotofadrennalinepushingyourselfbeyondyournormallimitsforamomentYoucantakeoneadditionalactionontopofyourregularactionandapossiblebonusactionOnceyouusethisfeatureyoumustfinishashortorlongrestbeforeyoucanuseitagainStartingatthe17thlevelyoucanusethisabilitytwicepershortrestbutnotmorethanonceinasingleturn"
+      "mechanic_text_dump": "OnyourturnyoucaninjectyourselfwithashotofadrenalinepushingyourselfbeyondyournormallimitsforamomentYoucantakeoneadditionalactionontopofyourregularactionandapossiblebonusactionOnceyouusethisfeatureyoumustfinishashortorlongrestbeforeyoucanuseitagainStartingatthe17thlevelyoucanusethisabilitytwicepershortrestbutnotmorethanonceinasingleturn"
     },
     {
       "name": "Advanced Tech Armor",
@@ -143,7 +143,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "At the 14th level, you've increase your mastery with biotic spells that control the battle field. Gain the following benefits to the spells below:"
+          "data": "At the 14th level, you've increase your mastery with biotic spells that control the battlefield. Gain the following benefits to the spells below:"
         },
         {
           "id": 2,
@@ -189,7 +189,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You learn maneuvers that are fueled by your barrier ticks. You can use only one maneuver per attack. Some of your maneuvers require your target to make a saving throw to resist the maneuver's effects. The saving throw DC is 8+ your proficiency bonus + your Charisma modifier."
+          "data": "You learn maneuvers that are fueled by your barrier ticks. You can use only one maneuver per attack. Some of your maneuvers require your target to make a saving throw to resist the maneuver effects. The saving throw DC is 8+ your proficiency bonus + your Charisma modifier."
         },
         {
           "id": 2,
@@ -250,7 +250,7 @@
         }
       ],
       "id": "biotic-maneuvers",
-      "mechanic_text_dump": "YoulearnmaneuversthatarefueledbyyourbarrierticksYoucanuseonlyonemaneuverperattackSomeofyourmaneuversrequireyourtargettomakeasavingthrowtoresistthemaneuverseffectsThesavingthrowDCis8yourproficiencybonusyourCharismamodifierAtlevel3learn2maneuversAtlevel14learn2moremaneuverstableNameManeuverDisarmingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktodisarmthetargetforcingittodroponeitemofyourchoicethatitsholdingYouaddthebarriertickdietotheattacksdamagerollandthetargetmustmakeaStrengthsavingthrowOnafailedsaveitdropstheobjectyouchooseTheobjectlandsatitsfeetDistractingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktodistractthecreaturegivingyouralliesanopeningYouaddthebarrierticktotheattacksdamagerollThenextattackrollagainstthetargetbyanattackerotherthanyouhasadvantageiftheattackismadebeforethestartofyournextturnFeintingAttackYoucanexpendonebarriertickanduseabonusactiononyourturntofeintchoosingonecreaturewithin2mofyouasyourtargetYouhaveadvantageonyourmeleenextattackrollagainstthatcreatureIfthatattackhitsaddthebarrierticktotheattacksdamagerollGoadingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttogoadthetargetintoattackingyouYouaddthebarrierticktotheattacksdamagerollandthetargetmustmakeaWisdomsavingthrowOnafailedsavethetargethasdisadvantageonallattackrollsagainsttargetsotherthanyouuntiltheendofyournextturnLiftAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarriertickstoattempttoliftthetargetYouaddthebarrierticktotheattacksdamagerollandifthetargetisMediumorsmalleritmustmakeaDexteritysavingthrowOnafailedsavethetargetisliftedMenacingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttofrightenthetargetYouaddthebarrierticktotheattacksdamagerollandthetargetmustmakeaWisdomsavingthrowOnafailedsaveitisfrightenedofyouuntiltheendofyournextturnPushingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttodrivethetargetbackYouaddthebarrierticktotheattacksdamagerollandifthetargetisLargeorsmalleritmustmakeaStrengthsavingthrowOnafailedsaveyoupushthetargetupto8mawayfromyouRiposteWhenacreaturemissesyouwithameleeattackyoucanuseyourreactionandexpendonebarrierticktomakeameleeattackagainstthecreatureIfyouhityouaddthebarrierticktotheattacksdamagerollSweepingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttodamageanothercreaturewiththesameattackChooseanothercreaturewithin2moftheoriginaltargetandwithinyourreachIftheoriginalattackrollwouldhitthesecondcreatureittakesdamageequaltothenumberyourollonyourbarriertickThedamageisofthesametypedealtbytheoriginalattackTripAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttoknockthetargetdownYouaddthebarrierticktotheattacksdamagerollandifthetargetisLargeorsmalleritmustmakeaStrengthsavingthrowOnafailedsaveyouknockthetargetpronetable"
+      "mechanic_text_dump": "YoulearnmaneuversthatarefueledbyyourbarrierticksYoucanuseonlyonemaneuverperattackSomeofyourmaneuversrequireyourtargettomakeasavingthrowtoresistthemaneuvereffectsThesavingthrowDCis8yourproficiencybonusyourCharismamodifierAtlevel3learn2maneuversAtlevel14learn2moremaneuverstableNameManeuverDisarmingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktodisarmthetargetforcingittodroponeitemofyourchoicethatitsholdingYouaddthebarriertickdietotheattacksdamagerollandthetargetmustmakeaStrengthsavingthrowOnafailedsaveitdropstheobjectyouchooseTheobjectlandsatitsfeetDistractingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktodistractthecreaturegivingyouralliesanopeningYouaddthebarrierticktotheattacksdamagerollThenextattackrollagainstthetargetbyanattackerotherthanyouhasadvantageiftheattackismadebeforethestartofyournextturnFeintingAttackYoucanexpendonebarriertickanduseabonusactiononyourturntofeintchoosingonecreaturewithin2mofyouasyourtargetYouhaveadvantageonyourmeleenextattackrollagainstthatcreatureIfthatattackhitsaddthebarrierticktotheattacksdamagerollGoadingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttogoadthetargetintoattackingyouYouaddthebarrierticktotheattacksdamagerollandthetargetmustmakeaWisdomsavingthrowOnafailedsavethetargethasdisadvantageonallattackrollsagainsttargetsotherthanyouuntiltheendofyournextturnLiftAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarriertickstoattempttoliftthetargetYouaddthebarrierticktotheattacksdamagerollandifthetargetisMediumorsmalleritmustmakeaDexteritysavingthrowOnafailedsavethetargetisliftedMenacingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttofrightenthetargetYouaddthebarrierticktotheattacksdamagerollandthetargetmustmakeaWisdomsavingthrowOnafailedsaveitisfrightenedofyouuntiltheendofyournextturnPushingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttodrivethetargetbackYouaddthebarrierticktotheattacksdamagerollandifthetargetisLargeorsmalleritmustmakeaStrengthsavingthrowOnafailedsaveyoupushthetargetupto8mawayfromyouRiposteWhenacreaturemissesyouwithameleeattackyoucanuseyourreactionandexpendonebarrierticktomakeameleeattackagainstthecreatureIfyouhityouaddthebarrierticktotheattacksdamagerollSweepingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttodamageanothercreaturewiththesameattackChooseanothercreaturewithin2moftheoriginaltargetandwithinyourreachIftheoriginalattackrollwouldhitthesecondcreatureittakesdamageequaltothenumberyourollonyourbarriertickThedamageisofthesametypedealtbytheoriginalattackTripAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttoknockthetargetdownYouaddthebarrierticktotheattacksdamagerollandifthetargetisLargeorsmalleritmustmakeaStrengthsavingthrowOnafailedsaveyouknockthetargetpronetable"
     },
     {
       "name": "Biotic Mastery",
@@ -277,11 +277,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Learn or advance your biotic powers. The first number indicates the number of new spells you can learn or advance. For example 2(3): you can either learn 2 new spells, advance 2 spells, or learn a spell and advance a spell. The second number indicates the max level of the spell you can learn or advance. In this example, you can learn or advance spells of level 3 or less, including cantrips. Though you can learn new cantrips this way, you cannot know more cantrips than allowed by your level (indicated on you class sheet)."
+          "data": "Learn or advance your biotic powers. The first number indicates the number of new spells you can learn or advance. For example 2(3): you can either learn 2 new spells, advance 2 spells, or learn a spell and advance a spell. The second number indicates the max level of the spell you can learn or advance. In this example, you can learn or advance spells of level 3 or less, including cantrips. Though you can learn new cantrips this way, you cannot know more cantrips than allowed by your level (indicated on your class sheet)."
         }
       ],
       "id": "biotic-powers",
-      "mechanic_text_dump": "LearnoradvanceyourbioticpowersThefirstnumberindicatesthenumberofnewspellsyoucanlearnoradvanceForexample23youcaneitherlearn2newspellsadvance2spellsorlearnaspellandadvanceaspellThesecondnumberindicatesthemaxlevelofthespellyoucanlearnoradvanceInthisexampleyoucanlearnoradvancespellsoflevel3orlessincludingcantripsThoughyoucanlearnnewcantripsthiswayyoucannotknowmorecantripsthanallowedbyyourlevelindicatedonyouclasssheet"
+      "mechanic_text_dump": "LearnoradvanceyourbioticpowersThefirstnumberindicatesthenumberofnewspellsyoucanlearnoradvanceForexample23youcaneitherlearn2newspellsadvance2spellsorlearnaspellandadvanceaspellThesecondnumberindicatesthemaxlevelofthespellyoucanlearnoradvanceInthisexampleyoucanlearnoradvancespellsoflevel3orlessincludingcantripsThoughyoucanlearnnewcantripsthiswayyoucannotknowmorecantripsthanallowedbyyourlevelindicatedonyourclasssheet"
     },
     {
       "name": "Biotic Slash",
@@ -511,7 +511,7 @@
                 "Anti-Shield",
                 "Your lvl + Xd10",
                 "8m",
-                "Make a melee attack a hostile creature. On a success, the target takes lightening damage equal to 1d8 lightening damage. Damage increases by 1d8 at the 5th, 11th, and 17th level."
+                "Make a melee attack a hostile creature. On a success, the target takes lightning damage equal to 1d8 lightning damage. Damage increases by 1d8 at the 5th, 11th, and 17th level."
               ],
               [
                 "Defense",
@@ -530,7 +530,7 @@
         }
       ],
       "id": "drone",
-      "mechanic_text_dump": "SpendXTPtosummonadroneEachdronetypehasauniquesetofabilitiesDroneshavea12ACandwhentheymakeameleeorrangedattackaddyourproficiencybonustotheattackrollDronesmoveandattackwhentheyarefirstsummonedandatthebeginningofyourturnonsubsequentturnsYoucanonlyhaveasingleDroneactiveatatimeunlessotherwisestatedtableNameHealthSpeedAbilityCombatYourlvlXd86mMakearangedweaponattackonahostilecreatureyoucanseewithin20mOnahittheDronedeals2d6piercingdamageDamageincreasesby1d6atthe5th11thand17thlevelAntiShieldYourlvlXd108mMakeameleeattackahostilecreatureOnasuccessthetargettakeslighteningdamageequalto1d8lighteningdamageDamageincreasesby1d8atthe5th11thand17thlevelDefenseYourlvlXd66mWhenafriendlycreaturetakesdamageifthedroneis2mofthatcreaturereducethedamagetakenby1d6Damagereductionincreasesby1d6atthe5th11thand17thlevelKamikazeYourlvlXd410mDetonatethedroneCreatureswithina2mradiusmustmakeadexteritysavingthrowOnafailedsaveacreaturetakes1d12thunderdamageorhalfasmuchonasuccessfuloneDamageincreasesby1d12atthe5th11thand17thleveltable"
+      "mechanic_text_dump": "SpendXTPtosummonadroneEachdronetypehasauniquesetofabilitiesDroneshavea12ACandwhentheymakeameleeorrangedattackaddyourproficiencybonustotheattackrollDronesmoveandattackwhentheyarefirstsummonedandatthebeginningofyourturnonsubsequentturnsYoucanonlyhaveasingleDroneactiveatatimeunlessotherwisestatedtableNameHealthSpeedAbilityCombatYourlvlXd86mMakearangedweaponattackonahostilecreatureyoucanseewithin20mOnahittheDronedeals2d6piercingdamageDamageincreasesby1d6atthe5th11thand17thlevelAntiShieldYourlvlXd108mMakeameleeattackahostilecreatureOnasuccessthetargettakeslightningdamageequalto1d8lightningdamageDamageincreasesby1d8atthe5th11thand17thlevelDefenseYourlvlXd66mWhenafriendlycreaturetakesdamageifthedroneis2mofthatcreaturereducethedamagetakenby1d6Damagereductionincreasesby1d6atthe5th11thand17thlevelKamikazeYourlvlXd410mDetonatethedroneCreatureswithina2mradiusmustmakeadexteritysavingthrowOnafailedsaveacreaturetakes1d12thunderdamageorhalfasmuchonasuccessfuloneDamageincreasesby1d12atthe5th11thand17thleveltable"
     },
     {
       "name": "Drone Efficiency",
@@ -790,7 +790,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "At the 2nd level, you gain proficiency with Medicine. If you are already poficient in Medicince, you may choose another skill to become proficient in."
+          "data": "At the 2nd level, you gain proficiency with Medicine. If you are already proficient in Medicine, you may choose another skill to become proficient in."
         },
         {
           "id": 2,
@@ -813,7 +813,7 @@
         }
       ],
       "id": "healing-drone",
-      "mechanic_text_dump": "Atthe2ndlevelyougainproficiencywithMedicineIfyouarealreadypoficientinMedicinceyoumaychooseanotherskilltobecomeproficientinYoualsolearntosummonaHealingdronelistHealthyourlvlXd8Speed10mAbilityThedronecancasta1techpointFirstAidlistAtthe14thlevelyourhealingdronecastsa3techpointFirstAidandhasanACof15"
+      "mechanic_text_dump": "Atthe2ndlevelyougainproficiencywithMedicineIfyouarealreadyproficientinMedicineyoumaychooseanotherskilltobecomeproficientinYoualsolearntosummonaHealingdronelistHealthyourlvlXd8Speed10mAbilityThedronecancasta1techpointFirstAidlistAtthe14thlevelyourhealingdronecastsa3techpointFirstAidandhasanACof15"
     },
     {
       "name": "Heavy Weapon Hack",
@@ -977,7 +977,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Addrennaline Rush seems to slow down time, giving you the opportunity to line up a perfect shot. When you use Adrennaline Rush, you roll 1d4 and subtract that number from 20. Until the start of your next turn, any natural roll higher than the resulting number is considered a critial hit."
+          "data": "Adrenaline Rush seems to slow down time, giving you the opportunity to line up a perfect shot. When you use Adrenaline Rush, you roll 1d4 and subtract that number from 20. Until the start of your next turn, any natural roll higher than the resulting number is considered a critical hit."
         },
         {
           "id": 2,
@@ -986,7 +986,7 @@
         }
       ],
       "id": "marksman",
-      "mechanic_text_dump": "AddrennalineRushseemstoslowdowntimegivingyoutheopportunitytolineupaperfectshotWhenyouuseAdrennalineRushyouroll1d4andsubtractthatnumberfrom20UntilthestartofyournextturnanynaturalrollhigherthantheresultingnumberisconsideredacritialhitStartingatthe18thlevelroll1d6instead"
+      "mechanic_text_dump": "AdrenalineRushseemstoslowdowntimegivingyoutheopportunitytolineupaperfectshotWhenyouuseAdrenalineRushyouroll1d4andsubtractthatnumberfrom20UntilthestartofyournextturnanynaturalrollhigherthantheresultingnumberisconsideredacriticalhitStartingatthe18thlevelroll1d6instead"
     },
     {
       "name": "Master Duelist",
@@ -1021,23 +1021,23 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You can spend 6 hours in a lab or similar envrionment using drugs to enhance the capabilities of standard medigel. It takes 2 hours to craft a single enhancement, but you can apply that benefit to any number of medigel cartridges. To craft another enhancement takes an additional 6 hours. Instead of using time to limit this feature, your GM can choose to allow you to add X enhancements to Y medigel cartridges, where X is your Intelligence modifier, and Y is half your Engineering level (minimum 1); then, you must finish a long rest before you can create ne enhancements."
+          "data": "You can spend 6 hours in a lab or similar environment using drugs to enhance the capabilities of standard medi-gel. It takes 2 hours to craft a single enhancement, but you can apply that benefit to any number of medi-gel cartridges. To craft another enhancement takes an additional 6 hours. Instead of using time to limit this feature, your GM can choose to allow you to add X enhancements to Y medi-gel cartridges, where X is your Intelligence modifier, and Y is half your Engineering level (minimum 1); then, you must finish a long rest before you can create ne enhancements."
         },
         {
           "id": 2,
           "type": "list",
           "data": [
-            "Stimulant: After using this medigel, you have advantage on the next saving throw or attack roll you make within 1 minute.",
-            "Opioid: Within 1 minute of using this medigel, if you would fall below 0 hit point but not outright die, you may fall to 1 hit point instead.",
-            "Steroid: After using this medigel, add +2 damage to all melee damage for 1 minute.",
-            "Minagen X3: After using this medigel, gain +2 damage to all biotic spells and cantrips for 1 minute.",
-            "Videlicet: After using this medigel, gain +2 bonus to all ranged tech attacks for 1 minute.",
-            "Styptic: Increase the healing die by 1 die type when using this medigel."
+            "Stimulant: After using this medi-gel, you have advantage on the next saving throw or attack roll you make within 1 minute.",
+            "Opioid: Within 1 minute of using this medi-gel, if you would fall below 0 hit point but not outright die, you may fall to 1 hit point instead.",
+            "Steroid: After using this medi-gel, add +2 damage to all melee damage for 1 minute.",
+            "Minagen X3: After using this medi-gel, gain +2 damage to all biotic spells and cantrips for 1 minute.",
+            "Videlicet: After using this medi-gel, gain +2 bonus to all ranged tech attacks for 1 minute.",
+            "Styptic: Increase the healing die by 1 die type when using this medi-gel."
           ]
         }
       ],
       "id": "medi-gel-enhancements",
-      "mechanic_text_dump": "Youcanspend6hoursinalaborsimilarenvrionmentusingdrugstoenhancethecapabilitiesofstandardmedigelIttakes2hourstocraftasingleenhancementbutyoucanapplythatbenefittoanynumberofmedigelcartridgesTocraftanotherenhancementtakesanadditional6hoursInsteadofusingtimetolimitthisfeatureyourGMcanchoosetoallowyoutoaddXenhancementstoYmedigelcartridgeswhereXisyourIntelligencemodifierandYishalfyourEngineeringlevelminimum1thenyoumustfinishalongrestbeforeyoucancreateneenhancementsWhencreatinganenhancementchoosefromthelistbelowlistStimulantAfterusingthismedigelyouhaveadvantageonthenextsavingthroworattackrollyoumakewithin1minuteOpioidWithin1minuteofusingthismedigelifyouwouldfallbelow0hitpointbutnotoutrightdieyoumayfallto1hitpointinsteadSteroidAfterusingthismedigeladd2damagetoallmeleedamagefor1minuteMinagenX3Afterusingthismedigelgain2damagetoallbioticspellsandcantripsfor1minuteVidelicetAfterusingthismedigelgain2bonustoallrangedtechattacksfor1minuteStypticIncreasethehealingdieby1dietypewhenusingthismedigellist"
+      "mechanic_text_dump": "Youcanspend6hoursinalaborsimilarenvironmentusingdrugstoenhancethecapabilitiesofstandardmedigelIttakes2hourstocraftasingleenhancementbutyoucanapplythatbenefittoanynumberofmedigelcartridgesTocraftanotherenhancementtakesanadditional6hoursInsteadofusingtimetolimitthisfeatureyourGMcanchoosetoallowyoutoaddXenhancementstoYmedigelcartridgeswhereXisyourIntelligencemodifierandYishalfyourEngineeringlevelminimum1thenyoumustfinishalongrestbeforeyoucancreateneenhancementsWhencreatinganenhancementchoosefromthelistbelowlistStimulantAfterusingthismedigelyouhaveadvantageonthenextsavingthroworattackrollyoumakewithin1minuteOpioidWithin1minuteofusingthismedigelifyouwouldfallbelow0hitpointbutnotoutrightdieyoumayfallto1hitpointinsteadSteroidAfterusingthismedigeladd2damagetoallmeleedamagefor1minuteMinagenX3Afterusingthismedigelgain2damagetoallbioticspellsandcantripsfor1minuteVidelicetAfterusingthismedigelgain2bonustoallrangedtechattacksfor1minuteStypticIncreasethehealingdieby1dietypewhenusingthismedigellist"
     },
     {
       "name": "Melee Specialist",
@@ -1051,21 +1051,21 @@
         {
           "id": 2,
           "type": "line",
-          "data": "When weilding a two-handed ranged weapon, you can use a bonus action to make a melee weapon attack with your omni-tool."
+          "data": "When wielding a two-handed ranged weapon, you can use a bonus action to make a melee weapon attack with your omni-tool."
         },
         {
           "id": 3,
           "type": "line",
-          "data": "When weidling a single-handed ranged weapon, you can use a bonus action to make a melee weapon attack with a light or versatile melee weapon."
+          "data": "When wielding a single-handed ranged weapon, you can use a bonus action to make a melee weapon attack with a light or versatile melee weapon."
         },
         {
           "id": 4,
           "type": "line",
-          "data": "When weilding only melee weapons: Gain +1 AC. When you take the Attack action, you can use a bonus action to make another melee weapon attack."
+          "data": "When wielding only melee weapons: Gain +1 AC. When you take the Attack action, you can use a bonus action to make another melee weapon attack."
         }
       ],
       "id": "melee-specialist",
-      "mechanic_text_dump": "YouvetrainedextensivelyinmeleeweaponcombatWhenweildingatwohandedrangedweaponyoucanuseabonusactiontomakeameleeweaponattackwithyouromnitoolWhenweidlingasinglehandedrangedweaponyoucanuseabonusactiontomakeameleeweaponattackwithalightorversatilemeleeweaponWhenweildingonlymeleeweaponsGain1ACWhenyoutaketheAttackactionyoucanuseabonusactiontomakeanothermeleeweaponattack"
+      "mechanic_text_dump": "YouvetrainedextensivelyinmeleeweaponcombatWhenwieldingatwohandedrangedweaponyoucanuseabonusactiontomakeameleeweaponattackwithyouromnitoolWhenwieldingasinglehandedrangedweaponyoucanuseabonusactiontomakeameleeweaponattackwithalightorversatilemeleeweaponWhenwieldingonlymeleeweaponsGain1ACWhenyoutaketheAttackactionyoucanuseabonusactiontomakeanothermeleeweaponattack"
     },
     {
       "name": "Misdirection",
@@ -1088,9 +1088,9 @@
           "id": 1,
           "type": "list",
           "data": [
-            "If weilding a single-handed ranged or versatile melee weapon, gain +2 AC and a +2 bonus to Dexterity saving throws.",
+            "If wielding a single-handed ranged or versatile melee weapon, gain +2 AC and a +2 bonus to Dexterity saving throws.",
             "If a creature within 2m of you is attacked, you may use your reaction to impose disadvantage on that attack.",
-            "You omni-tool melee attack is replaced with Shield Bash: Make a melee attack roll (+STR), on a hit, deal 1d12 bludgeoning damage. You may shove a hit creature backwards 2m."
+            "You omni-tool melee attack is replaced with Shield Bash: Make a melee attack roll (+STR), on a hot, deal 1d12 bludgeoning damage. You may shove a hit creature backwards 2m."
           ]
         },
         {
@@ -1100,7 +1100,7 @@
         }
       ],
       "id": "omni-shield",
-      "mechanic_text_dump": "Startingatthe3rdlevelyouvemasteredtheomnishieldAsabonusactioncreatealargekeneticshieldoutofyouromnitoolthatlastsoneminuteYoucanuseanotherbonusactiontoendOmniShieldearlyWhiledeployedlistIfweildingasinglehandedrangedorversatilemeleeweapongain2ACanda2bonustoDexteritysavingthrowsIfacreaturewithin2mofyouisattackedyoumayuseyourreactiontoimposedisadvantageonthatattackYouomnitoolmeleeattackisreplacedwithShieldBashMakeameleeattackrollSTRonahitdeal1d12bludgeoningdamageYoumayshoveahitcreaturebackwards2mlistOnceyouusethisfeatureyoumustfinishashortorlongrestbeforeyoucanuseitagain"
+      "mechanic_text_dump": "Startingatthe3rdlevelyouvemasteredtheomnishieldAsabonusactioncreatealargekineticshieldoutofyouromnitoolthatlastsoneminuteYoucanuseanotherbonusactiontoendOmniShieldearlyWhiledeployedlistIfwieldingasinglehandedrangedorversatilemeleeweapongain2ACanda2bonustoDexteritysavingthrowsIfacreaturewithin2mofyouisattackedyoumayuseyourreactiontoimposedisadvantageonthatattackYouomnitoolmeleeattackisreplacedwithShieldBashMakeameleeattackrollSTRonahotdeal1d12bludgeoningdamageYoumayshoveahitcreaturebackwards2mlistOnceyouusethisfeatureyoumustfinishashortorlongrestbeforeyoucanuseitagain"
     },
     {
       "name": "Opportunist",
@@ -1184,11 +1184,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Casting boitic spells comes so easily to you that it expends only a fraction of your efforts. When you cast a biotic spell of 2nd level or higher using a spell slot, you regain one expended spell slot. The slot you regain must be of a level lower than the spell you cast."
+          "data": "Casting biotic spells comes so easily to you that it expends only a fraction of your efforts. When you cast a biotic spell of 2nd level or higher using a spell slot, you regain one expended spell slot. The slot you regain must be of a level lower than the spell you cast."
         }
       ],
       "id": "proficient-biotics",
-      "mechanic_text_dump": "CastingboiticspellscomessoeasilytoyouthatitexpendsonlyafractionofyoureffortsWhenyoucastabioticspellof2ndlevelorhigherusingaspellslotyouregainoneexpendedspellslotTheslotyouregainmustbeofalevellowerthanthespellyoucast"
+      "mechanic_text_dump": "CastingbioticspellscomessoeasilytoyouthatitexpendsonlyafractionofyoureffortsWhenyoucastabioticspellof2ndlevelorhigherusingaspellslotyouregainoneexpendedspellslotTheslotyouregainmustbeofalevellowerthanthespellyoucast"
     },
     {
       "name": "Pure Biotics",
@@ -1324,7 +1324,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "As an action, choose up to 5 friendly creatures with shields your can see. Hack into their armor system and use a brute force algorithm to overload their kenetic barrier. Each creature immediately rolls 4 of their shield regeneration die and gains that many shield points."
+          "data": "As an action, choose up to 5 friendly creatures with shields your can see. Hack into their armor system and use a brute force algorithm to overload their kinetic barrier. Each creature immediately rolls 4 of their shield regeneration die and gains that many shield points."
         },
         {
           "id": 2,
@@ -1333,7 +1333,7 @@
         }
       ],
       "id": "shield-boost",
-      "mechanic_text_dump": "Asanactionchooseupto5friendlycreatureswithshieldsyourcanseeHackintotheirarmorsystemanduseabruteforcealgorithmtooverloadtheirkeneticbarrierEachcreatureimmediatelyrolls4oftheirshieldregenerationdieandgainsthatmanyshieldpointsOnceyouusethisfeatureyoumustfinishashortorlongrestbeforeyoucanuseitagain"
+      "mechanic_text_dump": "Asanactionchooseupto5friendlycreatureswithshieldsyourcanseeHackintotheirarmorsystemanduseabruteforcealgorithmtooverloadtheirkineticbarrierEachcreatureimmediatelyrolls4oftheirshieldregenerationdieandgainsthatmanyshieldpointsOnceyouusethisfeatureyoumustfinishashortorlongrestbeforeyoucanuseitagain"
     },
     {
       "name": "Signature Biotics",
@@ -1354,17 +1354,17 @@
       "mechanic_text_dump": "Whenyoureach20thlevelyougainmasteryovertwopowerfulspellsandcancastthemwithlittleeffortChoosetwo2ndor3rdlevelbioticspellsinyourspellbookasyoursignaturebioticsYoucancasteachofthemonceat3rdlevelwithoutexpendingaspellslotWhenyoudosoyoucantdosoagainuntilyoufinishashortorlongrestIfyouwanttocasteitherspellat4thlevelorhigheryoumustexpendaspellslotasnormal"
     },
     {
-      "name": "Snap Shot",
+      "name": "Snapshot",
       "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
           "type": "line",
-          "data": "When weilding your Weapon of Choice, if you take the Attack action on your first turn of a combat, you can make one additional ranged weapon attack as part of that action."
+          "data": "When wielding your Weapon of Choice, if you take the Attack action on your first turn of a combat, you can make one additional ranged weapon attack as part of that action."
         }
       ],
-      "id": "snap-shot",
-      "mechanic_text_dump": "WhenweildingyourWeaponofChoiceifyoutaketheAttackactiononyourfirstturnofacombatyoucanmakeoneadditionalrangedweaponattackaspartofthataction"
+      "id": "snapshot",
+      "mechanic_text_dump": "WhenwieldingyourWeaponofChoiceifyoutaketheAttackactiononyourfirstturnofacombatyoucanmakeoneadditionalrangedweaponattackaspartofthataction"
     },
     {
       "name": "Sneak Attack",
@@ -1391,11 +1391,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "When you take the Dash or Disengage action, if you are weilding your Weapon of Choice, you can make 1 ranged weapon attack as a free action at any point during your movement."
+          "data": "When you take the Dash or Disengage action, if you are wielding your Weapon of Choice, you can make 1 ranged weapon attack as a free action at any point during your movement."
         }
       ],
       "id": "strafe",
-      "mechanic_text_dump": "WhenyoutaketheDashorDisengageactionifyouareweildingyourWeaponofChoiceyoucanmake1rangedweaponattackasafreeactionatanypointduringyourmovement"
+      "mechanic_text_dump": "WhenyoutaketheDashorDisengageactionifyouarewieldingyourWeaponofChoiceyoucanmake1rangedweaponattackasafreeactionatanypointduringyourmovement"
     },
     {
       "name": "Stroke of Luck",
@@ -1438,7 +1438,7 @@
           "data": [
             "Gain 1 Heavy Weapon ammo charge",
             "Gain 5 TP or 5 levels worth of Spell slots",
-            "Gain 1 medigel",
+            "Gain 1 medi-gel",
             "Gain 1 grenades",
             "Gain 2 specialized thermal clips."
           ]
@@ -1498,12 +1498,12 @@
         {
           "id": 1,
           "type": "line",
-          "data": "As a Sentinel, your mantra is the best offense is a good defense and coming back alive. Thus, you've bolstered your armor with a powerful, defense-oriented AI. As a bonus action or as a reaction to taking damamge, you can spend 1 TP to activate your Tech Armor."
+          "data": "As a Sentinel, your mantra is the best offense is a good defense and coming back alive. Thus, you've bolstered your armor with a powerful, defense-oriented AI. As a bonus action or as a reaction to taking damage, you can spend 1 TP to activate your Tech Armor."
         },
         {
           "id": 2,
           "type": "line",
-          "data": "When activated, tech armor increases your AC by 2 and you gain temporary shield points equal to 1d8 + your level, and you have resistance to slashing, piercing, and bludgeoning damage. You can spend additional tech points to increase the sheild point gain by 1d8 per tech point spent. At the start of eqach of your subsequent turns, Tech Armor consumes 1 tech point. If you have no tech points, Tech Armor ends and you loose all temporary shield points. You can use a bonus action to end Tech Armor early."
+          "data": "When activated, tech armor increases your AC by 2 and you gain temporary shield points equal to 1d8 + your level, and you have resistance to slashing, piercing, and bludgeoning damage. You can spend additional tech points to increase the shield point gain by 1d8 per tech point spent. At the start of each of your subsequent turns, Tech Armor consumes 1 tech point. If you have no tech points, Tech Armor ends and you loose all temporary shield points. You can use a bonus action to end Tech Armor early."
         },
         {
           "id": 3,
@@ -1512,7 +1512,7 @@
         }
       ],
       "id": "tech-armor",
-      "mechanic_text_dump": "AsaSentinelyourmantraisthebestoffenseisagooddefenseandcomingbackaliveThusyouvebolsteredyourarmorwithapowerfuldefenseorientedAIAsabonusactionorasareactiontotakingdamamgeyoucanspend1TPtoactivateyourTechArmorWhenactivatedtecharmorincreasesyourACby2andyougaintemporaryshieldpointsequalto1d8yourlevelandyouhaveresistancetoslashingpiercingandbludgeoningdamageYoucanspendadditionaltechpointstoincreasethesheildpointgainby1d8pertechpointspentAtthestartofeqachofyoursubsequentturnsTechArmorconsumes1techpointIfyouhavenotechpointsTechArmorendsandyouloosealltemporaryshieldpointsYoucanuseabonusactiontoendTechArmorearlyOnceyouhaveusedTechArmorthemaximumnumberoftimesforyourlevelyoumustfinishalongrestbeforeyoucanuseTechArmoragainThenumberoftimesyoucanuseTechArmorisequaltoyourproficiencybonus"
+      "mechanic_text_dump": "AsaSentinelyourmantraisthebestoffenseisagooddefenseandcomingbackaliveThusyouvebolsteredyourarmorwithapowerfuldefenseorientedAIAsabonusactionorasareactiontotakingdamageyoucanspend1TPtoactivateyourTechArmorWhenactivatedtecharmorincreasesyourACby2andyougaintemporaryshieldpointsequalto1d8yourlevelandyouhaveresistancetoslashingpiercingandbludgeoningdamageYoucanspendadditionaltechpointstoincreasetheshieldpointgainby1d8pertechpointspentAtthestartofeachofyoursubsequentturnsTechArmorconsumes1techpointIfyouhavenotechpointsTechArmorendsandyouloosealltemporaryshieldpointsYoucanuseabonusactiontoendTechArmorearlyOnceyouhaveusedTechArmorthemaximumnumberoftimesforyourlevelyoumustfinishalongrestbeforeyoucanuseTechArmoragainThenumberoftimesyoucanuseTechArmorisequaltoyourproficiencybonus"
     },
     {
       "name": "Tech Armor Overload",
@@ -1548,15 +1548,15 @@
             "Defensive: This is the standard Tech Armor package. It does not affect allies.",
             "Anti-Biotic: Resistance to force and necrotic damage.",
             "Anti-tech: Resistance to fire and cold damage.",
-            "Grounded: Resistance to lightening damage.",
+            "Grounded: Resistance to lightning damage.",
             "Reactive: Add your tech modifier to saving throws",
-            "Speed: Inscrease your speed by 4m.",
-            "Regen: Inscrease shield regeneration by 1 die type (max d12). If an ally is already at max, they gain +4."
+            "Speed: Increase your speed by 4m.",
+            "Regen: Increases shield regeneration by 1 die type (max d12). If an ally is already at max, they gain +4."
           ]
         }
       ],
       "id": "tech-aura",
-      "mechanic_text_dump": "InadditiontothestandarddefensiveAIyouveaugmentedyourTechArmortorundifferentAIpackagesThepackagescanhookintonearbyarmorsystemsAnyfriendlycreaturewithin4mofyouthatiswearingarmorgainstheeffectofthepackageWhenyouactivateTechArmoryoucanonlychooseasinglepackagetorunLearn2AIpackagesfromthelistbelowyouvealreadylearnedtheDefensivepackageAtthe14thlevelyoulearn2additionalpackageslistDefensiveThisisthestandardTechArmorpackageItdoesnotaffectalliesAntiBioticResistancetoforceandnecroticdamageAntitechResistancetofireandcolddamageGroundedResistancetolighteningdamageReactiveAddyourtechmodifiertosavingthrowsSpeedInscreaseyourspeedby4mRegenInscreaseshieldregenerationby1dietypemaxd12Ifanallyisalreadyatmaxtheygain4list"
+      "mechanic_text_dump": "InadditiontothestandarddefensiveAIyouveaugmentedyourTechArmortorundifferentAIpackagesThepackagescanhookintonearbyarmorsystemsAnyfriendlycreaturewithin4mofyouthatiswearingarmorgainstheeffectofthepackageWhenyouactivateTechArmoryoucanonlychooseasinglepackagetorunLearn2AIpackagesfromthelistbelowyouvealreadylearnedtheDefensivepackageAtthe14thlevelyoulearn2additionalpackageslistDefensiveThisisthestandardTechArmorpackageItdoesnotaffectalliesAntiBioticResistancetoforceandnecroticdamageAntitechResistancetofireandcolddamageGroundedResistancetolightningdamageReactiveAddyourtechmodifiertosavingthrowsSpeedIncreaseyourspeedby4mRegenIncreasesshieldregenerationby1dietypemaxd12Ifanallyisalreadyatmaxtheygain4list"
     },
     {
       "name": "Tech Aura Improvement",

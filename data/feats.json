@@ -1,5 +1,5 @@
 {
-  "updated": "September 10, 2017 @  8:45 PM",
+  "updated": "September 10, 2017 @ 10:09 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTPhVRIodUwbDYFw8wJZtmb63tTjFJMxY-cN6P5nayPpJhNxAQFqIxeSLd5Tz75aOZ7CLuBkNsDrcs9/pubhtml",
   "data": [
     {
@@ -71,7 +71,7 @@
           "data": "Name Change for Mage Slayer"
         }
       ],
-      "notes": "You have practiced techniques useful in melee combat against biotic weilders",
+      "notes": "You have practiced techniques useful in melee combat against biotic wielders",
       "prerequisite": null,
       "batarian": "x",
       "drell": null,
@@ -205,7 +205,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You options for damage types are: Fire, Cold, Lightening, Force, and Necrotic"
+          "data": "You options for damage types are: Fire, Cold, Lightning, Force, and Necrotic"
         }
       ],
       "notes": "Spells you cast ignore resistance to damage of the chosen type",
@@ -217,7 +217,7 @@
       "salarian": null,
       "turian": null,
       "id": "elemental-adept",
-      "description_text_dump": "YouoptionsfordamagetypesareFireColdLighteningForceandNecrotic"
+      "description_text_dump": "YouoptionsfordamagetypesareFireColdLightningForceandNecrotic"
     },
     {
       "name": "Grappler",

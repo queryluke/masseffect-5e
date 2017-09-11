@@ -1,5 +1,5 @@
 {
-  "updated": "September 10, 2017 @  8:45 PM",
+  "updated": "September 10, 2017 @ 10:09 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRIPzbOBXOdWbaY779un1EV3HyacCV3fe15kHW4ABjMV0yHi3GZHVqnbiOVSQ_Dgh1whimOITGOXHkn/pubhtml",
   "data": [
     {
@@ -13,14 +13,14 @@
       "id": "ammo-capacity"
     },
     {
-      "name": "Weapon Stabalizers",
+      "name": "Weapon Stabilizers",
       "brief": "attack bonus ranged",
       "piece": "Arms",
-      "flavor": "Incorporate micro-gyros linked with your hardsuit's internal targeting aids.",
+      "flavor": "Incorporate micro-gyros linked with your hard suit's internal targeting aids.",
       "mechanic": "You gain a +2 bonus to ranged weapon attacks",
       "cost": "5000",
       "manu": "Aldrin Labs",
-      "id": "weapon-stabalizers"
+      "id": "weapon-stabilizers"
     },
     {
       "name": "VI Aiming",
@@ -67,7 +67,7 @@
       "brief": "revive",
       "piece": "Arms",
       "flavor": "Microprocessors in this interface monitor vital functions and release small localized doses of medi-gel to accelerate the healing process. Manually timed heavy doses of medi-gel can be released in response to major trauma.",
-      "mechanic": "You may automatically pass a Wisdom (Medicine) check when you stabalize an ally. You can use once per long rest.",
+      "mechanic": "You may automatically pass a Wisdom (Medicine) check when you stabilize an ally. You can use once per long rest.",
       "cost": "20000",
       "manu": "Any",
       "id": "medi-gel"
@@ -133,14 +133,14 @@
       "id": "energized-plating"
     },
     {
-      "name": "Asymetic Defense Layer",
+      "name": "Asymmetric Defense Layer",
       "brief": "ac & hp",
       "piece": "Chest",
       "flavor": "Offering increased protection where it's needed most, Rosenkov Materials' proprietary coating process increases stopping power of standard ceramic armor.",
       "mechanic": "Gain +2 AC and +20 HP",
       "cost": "35000",
       "manu": "Rosenkov Materials",
-      "id": "asymetic-defense-layer"
+      "id": "asymmetric-defense-layer"
     },
     {
       "name": "Ammo Capacity",
@@ -156,7 +156,7 @@
       "name": "Barrier",
       "brief": "barrier",
       "piece": "Chest",
-      "flavor": "Eezo oscilator provides a biotic-like barrier.",
+      "flavor": "Eezo oscillator provides a biotic-like barrier.",
       "mechanic": "The armor contains a mass effect barrier with 5 barrier ticks. You cannot use these additional barrier ticks for biotic spells, they are only for damage reduction. The barrier ticks recharge after a long rest.",
       "cost": "10000",
       "manu": "Armali Council",
@@ -227,7 +227,7 @@
       "brief": "hp",
       "piece": "Chest",
       "flavor": "Elite personal protection equipment includes a series of interlocking ceramic plates covered in a proprietary tungsten alloy weave for maximum stopping power.",
-      "mechanic": "Increase you hit points by 10.",
+      "mechanic": "Increase your hit points by 10.",
       "cost": "10000",
       "manu": "Kassa Fabrication",
       "id": "ceramic-weave"
@@ -237,14 +237,14 @@
       "brief": "revive",
       "piece": "Chest",
       "flavor": "Microprocessors in this interface monitor vital functions and release small localized doses of medi-gel to accelerate the healing process. Manually timed heavy doses of medi-gel can be released in response to major trauma.",
-      "mechanic": "You may automatically pass a Wisdom (Medicine) check when you stabalize an ally. Additionally, if you fall below 0 hit points and you have medi-gel charges left, you immediately become stabalized. You can use this 3 times per long rest.",
+      "mechanic": "You may automatically pass a Wisdom (Medicine) check when you stabilize an ally. Additionally, if you fall below 0 hit points and you have medi-gel charges left, you immediately become stabilized. You can use this 3 times per long rest.",
       "cost": "60000",
       "manu": "Sirta Foundation",
       "id": "medi-gel"
     },
     {
       "name": "Thermal Armor",
-      "brief": "anit: frozen",
+      "brief": "anti: frozen",
       "piece": "Chest",
       "flavor": "Heat regulators keep your armor warm in the coldest environments.",
       "mechanic": "You are immune to being frozen.",
@@ -256,7 +256,7 @@
       "name": "Environmental Regulators",
       "brief": "resistance: fire, cold",
       "piece": "Chest",
-      "flavor": "Temperature controls use liguid nitrogen and plasma to keep your suit at a constant tempurature.",
+      "flavor": "Temperature controls use liquid nitrogen and plasma to keep your suit at a constant temperature.",
       "mechanic": "Resistance to fire and cold damage.",
       "cost": "8000",
       "manu": "Devlon Industries",
@@ -267,7 +267,7 @@
       "brief": "anti: biotic/tech",
       "piece": "Chest",
       "flavor": "A complex filament network of element zero microcores combined with advanced firewall technology provides protection against both biotic and tech attacks.",
-      "mechanic": "Resistance to cold, fire, force, lightening, and necrotic damage types.",
+      "mechanic": "Resistance to cold, fire, force, lightning, and necrotic damage types.",
       "cost": "20000",
       "manu": "Serrice Council",
       "id": "hardened-weave"
@@ -283,24 +283,24 @@
       "id": "battle-telemetry"
     },
     {
-      "name": "Auxillary Shield Emitters",
+      "name": "Auxiliary Shield Emitters",
       "brief": "shield die type",
       "piece": "Chest",
       "flavor": "Micro-capacitors that release energy to speed up shield regeneration.",
       "mechanic": "Increase your shield regen by 1 die type (max d12).",
       "cost": "8000",
       "manu": "Kassa Fabrication",
-      "id": "auxillary-shield-emitters"
+      "id": "auxiliary-shield-emitters"
     },
     {
-      "name": "Auxillary Shield Emitters",
+      "name": "Auxiliary Shield Emitters",
       "brief": "shield die type",
       "piece": "Hands",
       "flavor": "Micro-capacitors that release energy to speed up shield regeneration.",
       "mechanic": "Increase your shield regen by 1 die type (max d12).",
       "cost": "8000",
       "manu": "Kassa Fabrication",
-      "id": "auxillary-shield-emitters"
+      "id": "auxiliary-shield-emitters"
     },
     {
       "name": "Umbra AI",
@@ -316,7 +316,7 @@
       "name": "Focus Modulator",
       "brief": "attack bonus: ranged",
       "piece": "Head",
-      "flavor": "Your headware filters out distracting movement and sounds from sources other than your target.",
+      "flavor": "Your headwear filters out distracting movement and sounds from sources other than your target.",
       "mechanic": "You gain a +2 bonus to ranged attacks.",
       "cost": "10000",
       "manu": "Ariake Technologies",
@@ -356,7 +356,7 @@
       "name": "Archon AI",
       "brief": "power regen",
       "piece": "Head",
-      "flavor": "An efficiency algorithm to balance processing power for biotic amps and omni-tools. A heads-up display and voice command software allows users to micromanage the systems, reducing the cool-down period between energy expenditures.",
+      "flavor": "An efficiency algorithm to balance processing power for biotic amps and omni-tools. A heads-up display and voice command software allows users to micromanage the systems, reducing the cooldown period between energy expenditures.",
       "mechanic": "Gain one half of your tech points and spell slots (rounded down) on a short rest.",
       "cost": "20000",
       "manu": "Rosenkov Materials",
@@ -376,7 +376,7 @@
       "name": "Archon AI",
       "brief": "power regen",
       "piece": "Head",
-      "flavor": "An efficiency algorithm to balance processing power for biotic amps and omni-tools. A heads-up display and voice command software allows users to micromanage the systems, reducing the cool-down period between energy expenditures.",
+      "flavor": "An efficiency algorithm to balance processing power for biotic amps and omni-tools. A heads-up display and voice command software allows users to micromanage the systems, reducing the cooldown period between energy expenditures.",
       "mechanic": "Gain one half of your tech points and spell slots (rounded down) on a short rest.",
       "cost": "20000",
       "manu": "Rosenkov Materials",
@@ -404,10 +404,10 @@
     },
     {
       "name": "\"Cleats\"",
-      "brief": "resistance: lightening",
+      "brief": "resistance: lightning",
       "piece": "Legs",
-      "flavor": "Copper microfillaments in your boots ground you and abate electrical shock.",
-      "mechanic": "Resistance to lightening.",
+      "flavor": "Copper microfilaments in your boots ground you and abate electrical shock.",
+      "mechanic": "Resistance to lightning.",
       "cost": "10000",
       "manu": "Cerberus Skunkworks",
       "id": "cleats"
@@ -433,21 +433,21 @@
       "id": "life-support-webbing"
     },
     {
-      "name": "Ordinace Packs",
+      "name": "Ordinance Packs",
       "brief": "hw ammo",
       "piece": "Legs",
       "flavor": "Co-developed by the Rahael Group and Beckmann Financial to solve the issue of munitions storage for Heavy Weapon class engagement tools.",
       "mechanic": "Increase the charges of your heavy weapons by 2.",
       "cost": "10000",
-      "manu": "Jormangund Technology",
-      "id": "ordinace-packs"
+      "manu": "Jormungand Technology",
+      "id": "ordinance-packs"
     },
     {
       "name": "Medi-gel",
       "brief": "revive",
       "piece": "Legs",
       "flavor": "Microprocessors in this interface monitor vital functions and release small localized doses of medi-gel to accelerate the healing process. Manually timed heavy doses of medi-gel can be released in response to major trauma.",
-      "mechanic": "You may automatically pass a Wisdom (Medicine) check when you stabalize an ally. You can use this 2 times per long rest.",
+      "mechanic": "You may automatically pass a Wisdom (Medicine) check when you stabilize an ally. You can use this 2 times per long rest.",
       "cost": "40000",
       "manu": "Any",
       "id": "medi-gel"
@@ -463,23 +463,23 @@
       "id": "mag-latches"
     },
     {
-      "name": "Auxillary Shield Emitters",
+      "name": "Auxiliary Shield Emitters",
       "brief": "shield die type",
       "piece": "Legs",
       "flavor": "Micro-capacitors that release energy to speed up shield regeneration.",
       "mechanic": "Increase your shield regen by 1 die type (max d12)",
       "cost": "8000",
       "manu": "Kassa Fabrication",
-      "id": "auxillary-shield-emitters"
+      "id": "auxiliary-shield-emitters"
     },
     {
       "name": "?",
       "brief": "grenade capacity",
       "piece": "Legs",
       "flavor": "?",
-      "mechanic": "Increase your genade capcity by 3",
+      "mechanic": "Increase your grenade capacity by 3",
       "cost": "9000",
-      "manu": "Jormangund Technology",
+      "manu": "Jormungand Technology",
       "id": ""
     },
     {

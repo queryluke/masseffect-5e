@@ -1,5 +1,5 @@
 {
-  "updated": "September 10, 2017 @  8:45 PM",
+  "updated": "September 10, 2017 @ 10:09 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -24,7 +24,7 @@
     {
       "name": "Engineer",
       "omni_tool": "Omni-thruster",
-      "omni_tool_description": "On a successful melee attack, the target takes fire damage eqaul to 1d8 + your tech modifier.",
+      "omni_tool_description": "On a successful melee attack, the target takes fire damage equal to 1d8 + your tech modifier.",
       "hit_die": "1d6",
       "hit_points": "4 + your Constitution modifier",
       "max_shields": "6",
@@ -43,7 +43,7 @@
     {
       "name": "Infiltrator",
       "omni_tool": "Omni-taser",
-      "omni_tool_description": "On a successful melee attack, the target takes lightening damage equal to 1d6 + your tech modifier.",
+      "omni_tool_description": "On a successful melee attack, the target takes lightning damage equal to 1d6 + your tech modifier.",
       "hit_die": "1d4",
       "hit_points": "4 + your Constitution modifier",
       "max_shields": "4",

@@ -1,5 +1,5 @@
 {
-  "updated": "September 10, 2017 @  8:45 PM",
+  "updated": "September 10, 2017 @ 10:09 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRBAZH9BXc9xIj62i-StAKv08-iNSQSUyiWjz7TrVqcjEVe-uDaFIy9a4zRxYchDikCsskcNf-vexsG/pubhtml",
   "data": [
     {
@@ -154,11 +154,11 @@
         {
           "id": 2,
           "type": "line",
-          "data": "With a sticky grenade, you may choose to target a creature within 10m instead. Make Dexterity (Slieght of Hand) check against the creature's AC for a target within melee range or a ranged weapon attack (do not add your proficiency bonus unless you have the Grenadier feat) for targets beyond melee range. On a success, the grenade hits and sticks to the target, and when it explodes, the target automatically fails its saving throw. On a miss, the grenade lands in the creatures square."
+          "data": "With a sticky grenade, you may choose to target a creature within 10m instead. Make Dexterity (Sleight of Hand) check against the creature's AC for a target within melee range or a ranged weapon attack (do not add your proficiency bonus unless you have the Grenadier feat) for targets beyond melee range. On a success, the grenade hits and sticks to the target, and when it explodes, the target automatically fails its saving throw. On a miss, the grenade lands in the creature's square."
         }
       ],
       "id": "sticky-grenade",
-      "desc_text_dump": "Targetanareawithin10mAtthebeginningofyournextturncreatureswithin4mofthetargetmustmakeaDexteritysavingthrowOnafailedsaveacreaturetakes3d6thunderdamageorhalfasmuchdamageonasuccessfuloneWithastickygrenadeyoumaychoosetotargetacreaturewithin10minsteadMakeDexteritySlieghtofHandcheckagainstthecreaturesACforatargetwithinmeleerangeorarangedweaponattackdonotaddyourproficiencybonusunlessyouhavetheGrenadierfeatfortargetsbeyondmeleerangeOnasuccessthegrenadehitsandstickstothetargetandwhenitexplodesthetargetautomaticallyfailsitssavingthrowOnamissthegrenadelandsinthecreaturessquare"
+      "desc_text_dump": "Targetanareawithin10mAtthebeginningofyournextturncreatureswithin4mofthetargetmustmakeaDexteritysavingthrowOnafailedsaveacreaturetakes3d6thunderdamageorhalfasmuchdamageonasuccessfuloneWithastickygrenadeyoumaychoosetotargetacreaturewithin10minsteadMakeDexteritySleightofHandcheckagainstthecreaturesACforatargetwithinmeleerangeorarangedweaponattackdonotaddyourproficiencybonusunlessyouhavetheGrenadierfeatfortargetsbeyondmeleerangeOnasuccessthegrenadehitsandstickstothetargetandwhenitexplodesthetargetautomaticallyfailsitssavingthrowOnamissthegrenadelandsinthecreaturessquare"
     },
     {
       "name": "Recon Mine",
@@ -171,7 +171,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Launch a recon mine to a location of your choice within 10m. It first sticks to the target location then scans enemies within a 10m cone, relaying tactical weakpoints about the enemy's armor and location. After your turn ends, any hostile that walks through the scanning cone loses 1 AC. Each creature can only be affected by this debuff once."
+          "data": "Launch a recon mine to a location of your choice within 10m. It first sticks to the target location then scans enemies within a 10m cone, relaying tactical weak points about the enemy's armor and location. After your turn ends, any hostile that walks through the scanning cone loses 1 AC. Each creature can only be affected by this debuff once."
         },
         {
           "id": 2,
