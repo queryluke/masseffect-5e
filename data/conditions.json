@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Blinded",
+    "description": "Fails checks that require sight. Attack rolls against the creature have advantage. Creature has disadvantage when attacking."
+  },
+  {
+    "name": "Charmed",
+    "description": "Can't attack the charmer. Charmer has advantage on social ability checks."
+  },
+  {
+    "name": "Deafened",
+    "description": "Fails checks that require sound."
+  },
+  {
+    "name": "Frightened",
+    "description": "Disadvantage on ability checks and attack rolls against the source of its fear. Can't willingly moved closer to the source of its fear."
+  },
+  {
+    "name": "Frozen",
+    "description": "Incapacitated. Attack rolls against the creature have advantage. Automatically Dexterity saving throws. Unless otherwise stated, lasts 1 turn."
+  },
+  {
+    "name": "Grappled",
+    "description": "Speed becomes 0. Ends if grappler becomes incapacitated or an effect removes the grappler beyond melee range of the creature."
+  },
+  {
+    "name": "Incapacitated",
+    "description": "Can't take actions or reactions"
+  },
+  {
+    "name": "Invisible",
+    "description": "Impossible to see without special gadgets. The creature still makes noise and tracks. Attack rolls against the creature have disadvantage. The creature has advantage on attack rolls."
+  },
+  {
+    "name": "Lifted",
+    "description": "Restrained. A lifted target has no mass, lifted into the air by a temporary mass effect field. Thus, a lifted creature can be pushed, pulled, or otherwise manipulated for varying results."
+  },
+  {
+    "name": "Paralyzed",
+    "description": "Incapacitated. Attack rolls against the creature have advantage. Automatically fails Strength and Dexterity saving throws. Any attack that hits made within melee range (2m) is a critical hit."
+  },
+  {
+    "name": "Petrified",
+    "description": "Incapacitated. Attack rolls against the creature have advantage. Automatically fails Strength and Dexterity saving throws. Resistance to all damage. Immune to poison and disease."
+  },
+  {
+    "name": "Poisoned",
+    "description": "Disadvantage on attack rolls and ability checks."
+  },
+  {
+    "name": "Prone",
+    "description": "Can crawl. Condition ends if the creature stands up (takes 1/2 movement). Has disadvantage on attack rolls. Attacks against the creature made within 2m have advantage, beyond 2m disadvantage."
+  },
+  {
+    "name": "Restrained",
+    "description": "Speed becomes 0. Attack rolls have disadvantage. Attack rolls against the creature have advantage. Disadvantage on Dexterity saving throws."
+  },
+  {
+    "name": "Stunned",
+    "description": "Incapacitated. Automatically fails Strength and Dexterity saving throws. Attack rolls against the creature have advantage."
+  },
+  {
+    "name": "Unconscious",
+    "description": "Incapacitated. Drops any weapons. Fails Strength and Dexterity saving throws. Attack rolls against the creature have advantage. Any attack within 2m that hits is a critical hit."
+  }
+]

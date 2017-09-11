@@ -14,7 +14,7 @@ import Backgrounds from './pages/Backgrounds.vue';
 import Bestiary from './pages/Bestiary.vue';
 import Classes from './pages/Classes.vue';
 import ClassView from './pages/ClassView.vue';
-import Conditions from './pages/Conditions.md';
+import Conditions from './pages/Conditions.vue';
 import Consumables from './pages/Consumables.vue';
 import Feats from './pages/Feats.vue';
 import General from './pages/General.vue';
