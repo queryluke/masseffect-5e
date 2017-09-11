@@ -12,7 +12,7 @@
           td(v-for="data in row.row_data" v-bind:key="data.key")
             span(v-if="data.key === 'features'")
               span(v-for="(feature, index) of data.value" v-bind:key="data.value.key")
-                a(@click.stop="showDialog(feature.key, feature.subclass_progression)" style="cursor: pointer;").
+                a(@click.stop="showDialog(feature.key, feature.subclass_progression)" style="cursor: pointer;" v-bind:class="colors.link").
                   {{ feature.display }}
                 span(v-if="data.value.length > index + 1") ,
             span(v-else) {{ data.value }}
@@ -21,7 +21,7 @@
 <script>
   export default {
     name: 'ProgressionTable',
-    props: ['rows','headers', 'spell_header'],
+    props: ['rows','headers', 'spell_header', 'colors'],
     methods: {
       showDialog(feature_id, level) {
         this.$emit('showDialog',feature_id, level);

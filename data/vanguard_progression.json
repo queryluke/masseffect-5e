@@ -1,5 +1,5 @@
 {
-  "updated": "September 10, 2017 @  8:45 PM",
+  "updated": "September 10, 2017 @ 10:00 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -51,18 +51,6 @@
         {
           "key": "4",
           "value": "-"
-        },
-        {
-          "key": "champion",
-          "value": "tank"
-        },
-        {
-          "key": "slayer",
-          "value": "melee dps"
-        },
-        {
-          "key": "cabal",
-          "value": "spell dps"
         }
       ]
     },
@@ -115,18 +103,6 @@
         {
           "key": "4",
           "value": "-"
-        },
-        {
-          "key": "champion",
-          "value": null
-        },
-        {
-          "key": "slayer",
-          "value": null
-        },
-        {
-          "key": "cabal",
-          "value": null
         }
       ]
     },
@@ -174,18 +150,6 @@
         {
           "key": "4",
           "value": "-"
-        },
-        {
-          "key": "champion",
-          "value": "Biotic Maneuvers"
-        },
-        {
-          "key": "slayer",
-          "value": "Biotic Slash"
-        },
-        {
-          "key": "cabal",
-          "value": "Nightshade Blades"
         }
       ]
     },
@@ -233,18 +197,6 @@
         {
           "key": "4",
           "value": "-"
-        },
-        {
-          "key": "champion",
-          "value": null
-        },
-        {
-          "key": "slayer",
-          "value": null
-        },
-        {
-          "key": "cabal",
-          "value": null
         }
       ]
     },
@@ -292,18 +244,6 @@
         {
           "key": "4",
           "value": "-"
-        },
-        {
-          "key": "champion",
-          "value": null
-        },
-        {
-          "key": "slayer",
-          "value": null
-        },
-        {
-          "key": "cabal",
-          "value": null
         }
       ]
     },
@@ -351,18 +291,6 @@
         {
           "key": "4",
           "value": "-"
-        },
-        {
-          "key": "champion",
-          "value": "Improved Barrier"
-        },
-        {
-          "key": "slayer",
-          "value": "Melee Specialist"
-        },
-        {
-          "key": "cabal",
-          "value": "Poison Strike"
         }
       ]
     },
@@ -410,18 +338,6 @@
         {
           "key": "4",
           "value": "-"
-        },
-        {
-          "key": "champion",
-          "value": null
-        },
-        {
-          "key": "slayer",
-          "value": null
-        },
-        {
-          "key": "cabal",
-          "value": null
         }
       ]
     },
@@ -469,18 +385,6 @@
         {
           "key": "4",
           "value": "-"
-        },
-        {
-          "key": "champion",
-          "value": null
-        },
-        {
-          "key": "slayer",
-          "value": null
-        },
-        {
-          "key": "cabal",
-          "value": null
         }
       ]
     },
@@ -533,18 +437,6 @@
         {
           "key": "4",
           "value": "-"
-        },
-        {
-          "key": "champion",
-          "value": null
-        },
-        {
-          "key": "slayer",
-          "value": null
-        },
-        {
-          "key": "cabal",
-          "value": null
         }
       ]
     },
@@ -592,18 +484,6 @@
         {
           "key": "4",
           "value": "-"
-        },
-        {
-          "key": "champion",
-          "value": "Biotic Maneuvers"
-        },
-        {
-          "key": "slayer",
-          "value": "Improved Biotic Slash"
-        },
-        {
-          "key": "cabal",
-          "value": "Teleporting Dodge"
         }
       ]
     },
@@ -656,18 +536,6 @@
         {
           "key": "4",
           "value": "-"
-        },
-        {
-          "key": "champion",
-          "value": null
-        },
-        {
-          "key": "slayer",
-          "value": null
-        },
-        {
-          "key": "cabal",
-          "value": null
         }
       ]
     },
@@ -715,18 +583,6 @@
         {
           "key": "4",
           "value": "-"
-        },
-        {
-          "key": "champion",
-          "value": null
-        },
-        {
-          "key": "slayer",
-          "value": null
-        },
-        {
-          "key": "cabal",
-          "value": null
         }
       ]
     },
@@ -779,18 +635,6 @@
         {
           "key": "4",
           "value": "-"
-        },
-        {
-          "key": "champion",
-          "value": null
-        },
-        {
-          "key": "slayer",
-          "value": null
-        },
-        {
-          "key": "cabal",
-          "value": null
         }
       ]
     },
@@ -838,18 +682,6 @@
         {
           "key": "4",
           "value": "-"
-        },
-        {
-          "key": "champion",
-          "value": "Improved Barrier"
-        },
-        {
-          "key": "slayer",
-          "value": "Biotic Focus"
-        },
-        {
-          "key": "cabal",
-          "value": "Biotic Powers(2:3)"
         }
       ]
     },
@@ -897,18 +729,6 @@
         {
           "key": "4",
           "value": "1"
-        },
-        {
-          "key": "champion",
-          "value": null
-        },
-        {
-          "key": "slayer",
-          "value": null
-        },
-        {
-          "key": "cabal",
-          "value": null
         }
       ]
     },
@@ -956,18 +776,6 @@
         {
           "key": "4",
           "value": "1"
-        },
-        {
-          "key": "champion",
-          "value": null
-        },
-        {
-          "key": "slayer",
-          "value": null
-        },
-        {
-          "key": "cabal",
-          "value": null
         }
       ]
     },
@@ -1020,18 +828,6 @@
         {
           "key": "4",
           "value": "2"
-        },
-        {
-          "key": "champion",
-          "value": null
-        },
-        {
-          "key": "slayer",
-          "value": null
-        },
-        {
-          "key": "cabal",
-          "value": null
         }
       ]
     },
@@ -1079,18 +875,6 @@
         {
           "key": "4",
           "value": "2"
-        },
-        {
-          "key": "champion",
-          "value": "Biotic Maneuvers"
-        },
-        {
-          "key": "slayer",
-          "value": "Opportunist"
-        },
-        {
-          "key": "cabal",
-          "value": "Cabal Attacks"
         }
       ]
     },
@@ -1138,18 +922,6 @@
         {
           "key": "4",
           "value": "3"
-        },
-        {
-          "key": "champion",
-          "value": null
-        },
-        {
-          "key": "slayer",
-          "value": null
-        },
-        {
-          "key": "cabal",
-          "value": null
         }
       ]
     },
@@ -1197,18 +969,6 @@
         {
           "key": "4",
           "value": "3"
-        },
-        {
-          "key": "champion",
-          "value": null
-        },
-        {
-          "key": "slayer",
-          "value": null
-        },
-        {
-          "key": "cabal",
-          "value": null
         }
       ]
     }
@@ -1249,18 +1009,6 @@
     {
       "display": "4th",
       "spell_header": true
-    },
-    {
-      "display": "Champion",
-      "spell_header": false
-    },
-    {
-      "display": "Slayer",
-      "spell_header": false
-    },
-    {
-      "display": "Cabal",
-      "spell_header": false
     }
   ]
 }

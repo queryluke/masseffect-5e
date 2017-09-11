@@ -1,9 +1,13 @@
 <template lang="jade">
   div
-    v-tabs(v-model="active" grow dark)
-      v-tabs-bar.secondary
-        v-tabs-item(v-for="tab in tabs" v-bind:key="tab.id" v-bind:href="`#${tab.id}`" ripple) {{ tab.name }}
-        v-tabs-slider.info
+    v-tabs(dark v-model="active" grow)
+      v-tabs-bar(:class="colors.primary")
+        v-tabs-item(
+          v-for="tab in tabs"
+          v-bind:key="tab.id"
+          v-bind:href="`#${tab.id}`"
+          ripple) {{ tab.name }}
+        v-tabs-slider(v-bind:class="colors.accent")
       v-tabs-items
         v-tabs-content(id="attributes")
           v-card(flat)
@@ -22,6 +26,7 @@
 <script>
   export default {
     name: 'ClassTabs',
+    props: ['colors'],
     data () {
       return {
         tabs: [
