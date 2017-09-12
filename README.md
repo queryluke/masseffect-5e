@@ -6,28 +6,34 @@ A homebrew conversion of Dungeons & Dragons 5th Edition into the Mass Effect Uni
  ## How it's made
  
  1. Site is generated via Github Pages
- 2. Multiple Google sheetss are converted via the ruby script `./generate.rb`
- 
- ## Collection of google sheets
- 
- 1. [Classes](https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml)
- 2. [Class Features](https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml)
- 
- more comming soon...
+ 2. Multiple Google sheetss are converted via the ruby script **generate.rb**
  
  ## Contributing
  
  ### Making suggestions
  
- 1. Either comment on the Google Doc
- 2. Or make an issue in this repo
+ If you'd like to make suggestions for the system itself, check out the [contributing guide](http://queryluke.github.io/masseffect-5e/about) 
+ in the about section.
  
- ### Working on the code
+ If you want to contribute code, see below.
+ 
+ ### Working on the site
  * You need to have Bundler installed `gem install bundler`
  * Clone the repo
- * Within the directory: `bundle install`
+ * Within the site dir: `bundle install`
  
  To run locally:
  
  * `jekyll serve`
  * Site is available at localhost:4000
+ 
+ ### Working on the phb
+  * Do everything in the working on the site section (including running `jekyll serve`)
+  * Install [node.js](https://nodejs.org/en/)
+  * execute the following commands
+  * cd into the **phb-app** directory
+  * `npm install`
+  
+To run locally:
+ * `npm run serve`
+ * Site will be available at localhost:3000 
