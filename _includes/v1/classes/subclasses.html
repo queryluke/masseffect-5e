@@ -1,0 +1,51 @@
+{% assign subclasses = site.data.v1.subclasses | where: "class", include.class %}
+{% for subclass in subclasses %}
+<div class="row">
+    <div class="col-12 mt-3">
+        <h3>{{ subclass.subclass }}</h3>
+        <p>{{ subclass.description }}</p>
+        <table class="table table-bordered table-sm table-striped">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>Level</th>
+                    <th>Feature</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for num in site.data.v1.progression_levels %}
+                <tr>
+                   <td>
+                       {{ num }}
+                   </td>
+                    <td>
+                        <ul class="list-unstyled">
+                        {% for feature in subclass[num] %}
+                            <li>
+                                {% include v1/classes/subclass_desc.html feature=feature %}
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+                {% endfor %}
+                <!--<tr>
+                    <td>6</td>
+                    <td>{{ subclass.6 }}</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>{{ subclass.10 }}</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>{{ subclass.14 }}</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>{{ subclass.18 }}</td>
+                </tr>-->
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endfor %}

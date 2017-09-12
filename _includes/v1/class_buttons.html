@@ -1,0 +1,7 @@
+<div class="d-flex justify-content-around">
+    {% for class in site.data.v1.classes %}
+    <a href="{{ site.github.url }}/v1/classes/{{ class.class | slugify }}" class="class-button" data-name={{ class.class }} aria-label="{{ class.class }}">
+        <img class="class-icon class-icon-xl" src="{{ site.github.url }}/assets/images/classes/{{ class.class | slugify }}.svg">
+    </a>
+    {% endfor %}
+</div>

@@ -1,0 +1,7 @@
+{% for race in site.data.v1.races %}
+<div class="col-12 col-sm-4 col-md-3 col-lg-2 mt-1">
+    <a href="{{ site.github.url }}/v1/races/{{ race.race | slugify }}" class="clip-circle" data-name="{{ race.race }}" aria-label="{{ race.race }}">
+        <img src="{{ race.face }}" alt="{{ race.race }}">
+    </a>
+</div>
+{% endfor %}

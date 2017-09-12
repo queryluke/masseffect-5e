@@ -1,0 +1,772 @@
+{
+  "updated": "September 11, 2017 @ 11:04 PM",
+  "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
+  "data": [
+    {
+      "level": "1",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "proficiency",
+          "value": "2"
+        },
+        {
+          "key": "sneak_attack_damage",
+          "value": "1d6"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "tactical-cloak",
+              "display": "Tactical Cloak",
+              "subclass_progression": null
+            },
+            {
+              "key": "expertise",
+              "display": "Expertise",
+              "subclass_progression": null
+            },
+            {
+              "key": "sneak-attack",
+              "display": "Sneak Attack",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "2"
+        },
+        {
+          "key": "max_tp",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "level": "2",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "2"
+        },
+        {
+          "key": "proficiency",
+          "value": "2"
+        },
+        {
+          "key": "sneak_attack_damage",
+          "value": "1d6"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "cunning-action",
+              "display": "Cunning Action",
+              "subclass_progression": null
+            },
+            {
+              "key": "tech-power",
+              "display": "Tech Power(1)",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "4"
+        },
+        {
+          "key": "max_tp",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "level": "3",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "3"
+        },
+        {
+          "key": "proficiency",
+          "value": "2"
+        },
+        {
+          "key": "sneak_attack_damage",
+          "value": "2d6"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "subclass-feature",
+              "display": "Subclass Feature",
+              "subclass_progression": 1
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "6"
+        },
+        {
+          "key": "max_tp",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "level": "4",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "4"
+        },
+        {
+          "key": "proficiency",
+          "value": "2"
+        },
+        {
+          "key": "sneak_attack_damage",
+          "value": "2d6"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "ability-score-improvement",
+              "display": "Ability Score Improvement",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "8"
+        },
+        {
+          "key": "max_tp",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "level": "5",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "5"
+        },
+        {
+          "key": "proficiency",
+          "value": "3"
+        },
+        {
+          "key": "sneak_attack_damage",
+          "value": "3d6"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "uncanny-dodge",
+              "display": "Uncanny Dodge",
+              "subclass_progression": null
+            },
+            {
+              "key": "tech-power",
+              "display": "Tech Power(1)",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "10"
+        },
+        {
+          "key": "max_tp",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "level": "6",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "6"
+        },
+        {
+          "key": "proficiency",
+          "value": "3"
+        },
+        {
+          "key": "sneak_attack_damage",
+          "value": "3d6"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "expertise",
+              "display": "Expertise",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "11"
+        },
+        {
+          "key": "max_tp",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "level": "7",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "7"
+        },
+        {
+          "key": "proficiency",
+          "value": "3"
+        },
+        {
+          "key": "sneak_attack_damage",
+          "value": "4d6"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "evasion",
+              "display": "Evasion",
+              "subclass_progression": null
+            },
+            {
+              "key": "tech-power",
+              "display": "Tech Power(1)",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "12"
+        },
+        {
+          "key": "max_tp",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "level": "8",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "8"
+        },
+        {
+          "key": "proficiency",
+          "value": "3"
+        },
+        {
+          "key": "sneak_attack_damage",
+          "value": "4d6"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "ability-score-improvement",
+              "display": "Ability Score Improvement",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "13"
+        },
+        {
+          "key": "max_tp",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "level": "9",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "9"
+        },
+        {
+          "key": "proficiency",
+          "value": "4"
+        },
+        {
+          "key": "sneak_attack_damage",
+          "value": "5d6"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "subclass-feature",
+              "display": "Subclass Feature",
+              "subclass_progression": 2
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "14"
+        },
+        {
+          "key": "max_tp",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "level": "10",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "10"
+        },
+        {
+          "key": "proficiency",
+          "value": "4"
+        },
+        {
+          "key": "sneak_attack_damage",
+          "value": "5d6"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "ability-score-improvement",
+              "display": "Ability Score Improvement",
+              "subclass_progression": null
+            },
+            {
+              "key": "tech-power",
+              "display": "Tech Power(1)",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "15"
+        },
+        {
+          "key": "max_tp",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "level": "11",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "11"
+        },
+        {
+          "key": "proficiency",
+          "value": "4"
+        },
+        {
+          "key": "sneak_attack_damage",
+          "value": "6d6"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "reliable-talent",
+              "display": "Reliable Talent",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "16"
+        },
+        {
+          "key": "max_tp",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "level": "12",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "12"
+        },
+        {
+          "key": "proficiency",
+          "value": "4"
+        },
+        {
+          "key": "sneak_attack_damage",
+          "value": "6d6"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "ability-score-improvement",
+              "display": "Ability Score Improvement",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "17"
+        },
+        {
+          "key": "max_tp",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "level": "13",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "13"
+        },
+        {
+          "key": "proficiency",
+          "value": "5"
+        },
+        {
+          "key": "sneak_attack_damage",
+          "value": "7d6"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "subclass-feature",
+              "display": "Subclass Feature",
+              "subclass_progression": 3
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "18"
+        },
+        {
+          "key": "max_tp",
+          "value": "5"
+        }
+      ]
+    },
+    {
+      "level": "14",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "14"
+        },
+        {
+          "key": "proficiency",
+          "value": "5"
+        },
+        {
+          "key": "sneak_attack_damage",
+          "value": "7d6"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "cunning-action",
+              "display": "Cunning Action",
+              "subclass_progression": null
+            },
+            {
+              "key": "tech-power",
+              "display": "Tech Power(1)",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "19"
+        },
+        {
+          "key": "max_tp",
+          "value": "5"
+        }
+      ]
+    },
+    {
+      "level": "15",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "15"
+        },
+        {
+          "key": "proficiency",
+          "value": "5"
+        },
+        {
+          "key": "sneak_attack_damage",
+          "value": "8d6"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "shadow-strike",
+              "display": "Shadow Strike",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "20"
+        },
+        {
+          "key": "max_tp",
+          "value": "5"
+        }
+      ]
+    },
+    {
+      "level": "16",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "16"
+        },
+        {
+          "key": "proficiency",
+          "value": "5"
+        },
+        {
+          "key": "sneak_attack_damage",
+          "value": "8d6"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "ability-score-improvement",
+              "display": "Ability Score Improvement",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "21"
+        },
+        {
+          "key": "max_tp",
+          "value": "5"
+        }
+      ]
+    },
+    {
+      "level": "17",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "17"
+        },
+        {
+          "key": "proficiency",
+          "value": "6"
+        },
+        {
+          "key": "sneak_attack_damage",
+          "value": "9d6"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "subclass-feature",
+              "display": "Subclass Feature",
+              "subclass_progression": 4
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "22"
+        },
+        {
+          "key": "max_tp",
+          "value": "6"
+        }
+      ]
+    },
+    {
+      "level": "18",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "18"
+        },
+        {
+          "key": "proficiency",
+          "value": "6"
+        },
+        {
+          "key": "sneak_attack_damage",
+          "value": "9d6"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "elusive",
+              "display": "Elusive",
+              "subclass_progression": null
+            },
+            {
+              "key": "tech-power",
+              "display": "Tech Power(1)",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "23"
+        },
+        {
+          "key": "max_tp",
+          "value": "6"
+        }
+      ]
+    },
+    {
+      "level": "19",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "19"
+        },
+        {
+          "key": "proficiency",
+          "value": "6"
+        },
+        {
+          "key": "sneak_attack_damage",
+          "value": "10d6"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "ability-score-improvement",
+              "display": "Ability Score Improvement",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "24"
+        },
+        {
+          "key": "max_tp",
+          "value": "6"
+        }
+      ]
+    },
+    {
+      "level": "20",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "20"
+        },
+        {
+          "key": "proficiency",
+          "value": "6"
+        },
+        {
+          "key": "sneak_attack_damage",
+          "value": "10d6"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "stroke-of-luck",
+              "display": "Stroke of Luck",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "25"
+        },
+        {
+          "key": "max_tp",
+          "value": "6"
+        }
+      ]
+    }
+  ],
+  "headers": [
+    {
+      "display": "Level",
+      "spell_header": false
+    },
+    {
+      "display": "Proficiency",
+      "spell_header": false
+    },
+    {
+      "display": "Sneak Attack Damage",
+      "spell_header": false
+    },
+    {
+      "display": "Features",
+      "spell_header": false
+    },
+    {
+      "display": "Tech Points",
+      "spell_header": false
+    },
+    {
+      "display": "Max TP",
+      "spell_header": false
+    }
+  ]
+}

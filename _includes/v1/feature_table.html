@@ -1,0 +1,36 @@
+{% capture filter %}{{ include.filter | slugify }}{% endcapture %}
+
+{% if filter != '' and filter != nil %}
+    {% assign features = site.data.v1.features | where: filter,"x" | sort: 'level' %}
+{% else %}
+    {% assign features = site.data.v1.features | sort: 'name' %}
+{% endif  %}
+<table class="table table-bordered table-sm table-striped sortable">
+    <thead class="thead-inverse">
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Level</th>
+            <th>Classes</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for feature in features %}
+    <tr>
+        <td>
+            <button
+                    type="button"
+                    class="link"
+                    data-name="{{ feature.name }}"
+                    data-key="name"
+                    data-type="features"
+                    data-toggle="modal"
+                    data-target="#ajaxModal">{{ feature.name }}</button>
+        </td>
+        <td>{{ feature.type }}</td>
+        <td>{{ feature.level }}</td>
+        <td>{{ feature.class-list }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>

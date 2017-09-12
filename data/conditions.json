@@ -17,7 +17,7 @@
   },
   {
     "name": "Frozen",
-    "description": "Incapacitated. Attack rolls against the creature have advantage. Automatically fails Strength and Dexterity saving throws. Unless otherwise stated, lasts 1 turn. Immune to lightning, poison, and necrotic damage."
+    "description": "Incapacitated. Attack rolls against the creature have advantage. Automatically Dexterity saving throws. Unless otherwise stated, lasts 1 turn."
   },
   {
     "name": "Grappled",
@@ -58,6 +58,10 @@
   {
     "name": "Stunned",
     "description": "Incapacitated. Automatically fails Strength and Dexterity saving throws. Attack rolls against the creature have advantage."
+  },
+  {
+    "name": "Targeting",
+    "description": "Speed is reduced by half. Automatically fail Dexterity saving throws. Creatures that attack you have advantage."
   },
   {
     "name": "Unconscious",

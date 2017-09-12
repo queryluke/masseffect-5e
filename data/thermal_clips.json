@@ -1,0 +1,36 @@
+{
+  "updated": "September 11, 2017 @ 11:04 PM",
+  "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQmZ3vjTr5MljolyW6N_pnqxBA6Gj8lEw4VihCRj0jROiCDJdWOg5udY0_XIXnbKM8XvamqGawcHKBX/pubhtml",
+  "data": [
+    {
+      "name": "Armor-Piercing",
+      "mechanic": "You ranged weapon deals piercing damage. While this ammo power is equipped, ranged attacks made with this weapon ignore 2AC (+2 bonus).",
+      "id": "armor-piercing"
+    },
+    {
+      "name": "Cryo",
+      "mechanic": "Your ranged weapon deals cold damage. Ranged attacks made which Cryo Ammo equiped have a chance to Freeze the target. Unprotected creatures must make a Strength saving throw (DC 10). On a failed save, a creature is Frozen for 1 round.",
+      "id": "cryo"
+    },
+    {
+      "name": "Disruptor",
+      "mechanic": "Double damage to shields",
+      "id": "disruptor"
+    },
+    {
+      "name": "Incendiary",
+      "mechanic": "Successful ranged attacks with the weapon have a chance to set the target ablaze. The target it makes a Constitution saving throw (DC 10). On a failed save, they take an additional 1d8 fire damage and 1d8 fire damage at the start of it's next turn.",
+      "id": "incendiary"
+    },
+    {
+      "name": "Shredder",
+      "mechanic": " +4 damage to unshielded enemies.",
+      "id": "shredder"
+    },
+    {
+      "name": "Warp",
+      "mechanic": "Warp bullets strip away additional barrier ticks. A successful ranged attack on a target with an active Barrier will strip away 2 Barrier ticks. Warp ammo can detonate primed targets.",
+      "id": "warp"
+    }
+  ]
+}

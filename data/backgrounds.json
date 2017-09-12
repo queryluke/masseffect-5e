@@ -1,0 +1,102 @@
+{
+  "updated": "September 11, 2017 @ 11:04 PM",
+  "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQSUXve_hXfyu3glsSiuz-Ju2YUUToorjPPjpfSPiaHaA6yZTKLGMehtmvKtfQ3lSDErrGXgsQp1tFT/pubhtml",
+  "data": [
+    {
+      "name": "Military",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You joined your species' military as a youth, and were trained day in and day out in modern warfare. You might have spent some years in the service, left it to pursue missionary work, or became part of a civilian militia during an interplanetary conflict. When you choose this background, work with your GM to determine which military organization you served with, your rank, and experiences."
+        }
+      ],
+      "skills": "Athletics, Intimidation",
+      "tools": "One type of gambling game (Skyllian 5, Quasar, etc.), land vehicles.",
+      "equipment": "A badge of rank, trophy from a fallen foe, set of cards, common outfit, and 1000 credits.",
+      "feature_name": "Respect the Rank",
+      "feature_description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You have earned respect with other military service members and mercenaries with your reputation for discipline and service. Among people from your old unit or branch, you can always find space in the barracks to stay, or a recruit who's willing to buy you a drink for a war story."
+        }
+      ],
+      "id": "military",
+      "feature_description_text_dump": "YouhaveearnedrespectwithothermilitaryservicemembersandmercenarieswithyourreputationfordisciplineandserviceAmongpeoplefromyouroldunitorbranchyoucanalwaysfindspaceinthebarrackstostayorarecruitwhoswillingtobuyyouadrinkforawarstory",
+      "description_text_dump": "YoujoinedyourspeciesmilitaryasayouthandweretraineddayinanddayoutinmodernwarfareYoumighthavespentsomeyearsintheserviceleftittopursuemissionaryworkorbecamepartofacivilianmilitiaduringaninterplanetaryconflictWhenyouchoosethisbackgroundworkwithyourGMtodeterminewhichmilitaryorganizationyouservedwithyourrankandexperiences"
+    },
+    {
+      "name": "Crewman",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You were crew on a starship for years. You've been harassed by pirates, survived meteor storms, and outrun slavers. Your first love is the sight of space in the viewport, but you needed a change of scenery from your old vessel. Discuss the nature of your previous ship with your GM, and your role on it."
+        }
+      ],
+      "skills": "Engineering, Piloting",
+      "tools": "Repair kits, vehicles (space)",
+      "equipment": "A repair kit, souvenir from your last ship, common outfit and 1000 credits.",
+      "feature_name": "Safe Passage",
+      "feature_description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You're still in contact with members of your old crew, and if they're in the neighborhood they'll be more than happy to find space for you and your companions to travel free of charge if your destination isn't out of the way."
+        }
+      ],
+      "id": "crewman",
+      "feature_description_text_dump": "Yourestillincontactwithmembersofyouroldcrewandiftheyreintheneighborhoodtheyllbemorethanhappytofindspaceforyouandyourcompanionstotravelfreeofchargeifyourdestinationisntoutoftheway",
+      "description_text_dump": "YouwerecrewonastarshipforyearsYouvebeenharassedbypiratessurvivedmeteorstormsandoutrunslaversYourfirstloveisthesightofspaceintheviewportbutyouneededachangeofsceneryfromyouroldvesselDiscussthenatureofyourpreviousshipwithyourGMandyourroleonit"
+    },
+    {
+      "name": "Colonist",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You grew up on a colony that sat on the threshold of known space. You and your family know the value of adventure, to boldly go where no one has gone previously. Perhaps your family is still out on the verge, living peacefully, or perhaps they fell victim to pirates, slavers, or the Reapers. Discuss the nature of your home world with the GM. For some reason, you decided to leave your colonial life and set out among the stars once again."
+        }
+      ],
+      "skills": "Perception, Survival",
+      "tools": "One type of artisan's tools, vehicles (land)",
+      "equipment": "A set of artisan's tools of your choice, a tattoo or patch on your jacket denoting your colony's sigil, common outfit and 1000 credits.",
+      "feature_name": "Eye for Survival",
+      "feature_description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "As part of an expeditionary crew to colonize a distant world, it's important to know what flora and fauna might be capable of killing you. Choose a type of terrain from among the following: Desert, forest, plains, volcano, underground, mountains, tundra, or urban. You have advantage on Survival, Nature, and Perception checks made in that environment."
+        }
+      ],
+      "id": "colonist",
+      "feature_description_text_dump": "AspartofanexpeditionarycrewtocolonizeadistantworlditsimportanttoknowwhatfloraandfaunamightbecapableofkillingyouChooseatypeofterrainfromamongthefollowingDesertforestplainsvolcanoundergroundmountainstundraorurbanYouhaveadvantageonSurvivalNatureandPerceptionchecksmadeinthatenvironment",
+      "description_text_dump": "YougrewuponacolonythatsatonthethresholdofknownspaceYouandyourfamilyknowthevalueofadventuretoboldlygowherenoonehasgonepreviouslyPerhapsyourfamilyisstilloutonthevergelivingpeacefullyorperhapstheyfellvictimtopiratesslaversortheReapersDiscussthenatureofyourhomeworldwiththeGMForsomereasonyoudecidedtoleaveyourcoloniallifeandsetoutamongthestarsonceagain"
+    },
+    {
+      "name": "Politician",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You understand the value of power, and the power of well placed words. You or your family have significant influence in your world's political structure. Work with your DM to come up with an appropriate title or family history and determine how much authority that carries."
+        }
+      ],
+      "skills": "History, Persuasion",
+      "tools": "One type of gambling game (Skyllian 5, Quasar, etc.),",
+      "equipment": "An expensive outfit, Presidium access codes, and 2500 credits.",
+      "feature_name": "Grease the Wheels",
+      "feature_description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "As a result of your position, you can go places and learn things that other, less privileged members of society cannot. You may use your position to influence law enforcement to overlook small offenses, gain an audience with a society's upper class, and occasionally receive complimentary accommodations."
+        }
+      ],
+      "id": "politician",
+      "feature_description_text_dump": "AsaresultofyourpositionyoucangoplacesandlearnthingsthatotherlessprivilegedmembersofsocietycannotYoumayuseyourpositiontoinfluencelawenforcementtooverlooksmalloffensesgainanaudiencewithasocietysupperclassandoccasionallyreceivecomplimentaryaccommodations",
+      "description_text_dump": "YouunderstandthevalueofpowerandthepowerofwellplacedwordsYouoryourfamilyhavesignificantinfluenceinyourworldspoliticalstructureWorkwithyourDMtocomeupwithanappropriatetitleorfamilyhistoryanddeterminehowmuchauthoritythatcarries"
+    }
+  ]
+}

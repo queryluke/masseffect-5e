@@ -1,732 +1,734 @@
-[
-  {
-    "subclass": "Justicar",
-    "class": "Adept",
-    "role": "balance",
-    "2": [
-      {
-        "text": "Pure Biotics",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "6": [
-      {
-        "text": "Proficient Biotics",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "10": [
-      {
-        "text": "Dominate",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "14": [
-      {
-        "text": "Quick Biotics",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "18": [
-      {
-        "text": "Dominate",
-        "add-text": ", select an Advancement option",
-        "level": ""
-      }
-    ]
-  },
-  {
-    "subclass": "Shaman",
-    "class": "Adept",
-    "role": "heal",
-    "2": [
-      {
-        "text": "Healing Surge",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "6": [
-      {
-        "text": "Barrier Wealth",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "10": [
-      {
-        "text": "Biotic Sphere",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "14": [
-      {
-        "text": "Healing Surge",
-        "add-text": ", select an Advancement option",
-        "level": ""
-      }
-    ],
-    "18": [
-      {
-        "text": "Biotic Sphere",
-        "add-text": ", select an Advancement option",
-        "level": ""
-      }
-    ]
-  },
-  {
-    "subclass": "Fury",
-    "class": "Adept",
-    "role": "dps",
-    "2": [
-      {
-        "text": "Dark Channel",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "6": [
-      {
-        "text": "Potent Biotics",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "10": [
-      {
-        "text": "Dark Sphere",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "14": [
-      {
-        "text": "Dark Channel",
-        "add-text": ", select an Advancement option",
-        "level": ""
-      }
-    ],
-    "18": [
-      {
-        "text": "Dark Sphere",
-        "add-text": ", select an Advancement option",
-        "level": ""
-      }
-    ]
-  },
-  {
-    "subclass": "Demolisher",
-    "class": "Engineer",
-    "role": "ranged dps",
-    "2": [
-      {
-        "text": "Advanced Weapon Holsters",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "6": [
-      {
-        "text": "Makeshift Grenades",
-        "add-text": "(1)",
-        "level": ""
-      }
-    ],
-    "10": [
-      {
-        "text": "Heavy Weapon Hack",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "14": [
-      {
-        "text": "Advanced Targeting",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "18": [
-      {
-        "text": "Makeshift Grenades",
-        "add-text": "(2)",
-        "level": ""
-      }
-    ]
-  },
-  {
-    "subclass": "Drone Jockey",
-    "class": "Engineer",
-    "role": "pets",
-    "2": [
-      {
-        "text": "Drone Sidekick",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "6": [
-      {
-        "text": "Drone Efficiency",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "10": [
-      {
-        "text": "Dual Drones",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "14": [
-      {
-        "text": "Drone Mastery",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "18": [
-      {
-        "text": "Drone Swarm",
-        "add-text": "",
-        "level": ""
-      }
-    ]
-  },
-  {
-    "subclass": "Support",
-    "class": "Engineer",
-    "role": "heal",
-    "2": [
-      {
-        "text": "Supply Pylon",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "6": [
-      {
-        "text": "Regenerative Pylon",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "10": [
-      {
-        "text": "Healing Drone",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "14": [
-      {
-        "text": "Defensive Pylon",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "18": [
-      {
-        "text": "Healing Drone",
-        "add-text": ", select an Advancement option",
-        "level": ""
-      }
-    ]
-  },
-  {
-    "subclass": "Ghost",
-    "class": "Infiltrator",
-    "role": "dps",
-    "2": [
-      {
-        "text": "Efficient Cloak",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "6": [
-      {
-        "text": "Uncanny Dodge",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "10": [
-      {
-        "text": "Shadow Strike",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "14": [
-      {
-        "text": "Evasion",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "18": [
-      {
-        "text": "Shadow Strike",
-        "add-text": ", select an Advancement option",
-        "level": ""
-      }
-    ]
-  },
-  {
-    "subclass": "Saboteur",
-    "class": "Infiltrator",
-    "role": "control",
-    "2": [
-      {
-        "text": "Shadow Broker",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "6": [
-      {
-        "text": "Eye for Detail",
-        "add-text": "",
-        "level": ""
-      },
-      {
-        "text": "Insightful Fighting",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "10": [
-      {
-        "text": "Electric Slash",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "14": [
-      {
-        "text": "Infiltration",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "18": [
-      {
-        "text": "Electric Slash",
-        "add-text": ", select an Advancement option",
-        "level": ""
-      }
-    ]
-  },
-  {
-    "subclass": "Operative",
-    "class": "Infiltrator",
-    "role": "survival",
-    "2": [
-      {
-        "text": "Master Tactician",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "6": [
-      {
-        "text": "Misdirection",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "10": [
-      {
-        "text": "Repair Matrix",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "14": [
-      {
-        "text": "Master Duelist",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "18": [
-      {
-        "text": "Repair Matrix",
-        "add-text": ", select an Advancement option",
-        "level": ""
-      }
-    ]
-  },
-  {
-    "subclass": "Battlemaster",
-    "class": "Sentinel",
-    "role": "control",
-    "2": [
-      {
-        "text": "Reactive Tech Armor",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "6": [
-      {
-        "text": "Battlemaster",
-        "add-text": "(1)",
-        "level": ""
-      }
-    ],
-    "10": [
-      {
-        "text": "Battlemaster",
-        "add-text": "(2)",
-        "level": ""
-      }
-    ],
-    "14": [
-      {
-        "text": "Battlemaster",
-        "add-text": "(3)",
-        "level": ""
-      }
-    ],
-    "18": [
-      {
-        "text": "Adaptive Tech Armor",
-        "add-text": "",
-        "level": ""
-      }
-    ]
-  },
-  {
-    "subclass": "Bastion",
-    "class": "Sentinel",
-    "role": "melee tank",
-    "2": [
-      {
-        "text": "Imbue Omni-tool",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "6": [
-      {
-        "text": "Improved Tech Armor",
-        "add-text": "(1)",
-        "level": ""
-      }
-    ],
-    "10": [
-      {
-        "text": "Protective Tech Armor",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "14": [
-      {
-        "text": "Improved Tech Armor",
-        "add-text": "(2)",
-        "level": ""
-      }
-    ],
-    "18": [
-      {
-        "text": "Tech Armor Overload",
-        "add-text": "",
-        "level": ""
-      }
-    ]
-  },
-  {
-    "subclass": "Paladin",
-    "class": "Sentinel",
-    "role": "tank/heal",
-    "2": [
-      {
-        "text": "Tech Aura",
-        "add-text": "(1)",
-        "level": ""
-      }
-    ],
-    "6": [
-      {
-        "text": "Tech Aura",
-        "add-text": "(2)",
-        "level": ""
-      }
-    ],
-    "10": [
-      {
-        "text": "Tech Aura",
-        "add-text": "(3)",
-        "level": ""
-      }
-    ],
-    "14": [
-      {
-        "text": "Tech Aura",
-        "add-text": "(4)",
-        "level": ""
-      }
-    ],
-    "18": [
-      {
-        "text": "Tech Aura",
-        "add-text": "(5)",
-        "level": ""
-      }
-    ]
-  },
-  {
-    "subclass": "Havoc",
-    "class": "Soldier",
-    "role": "aoe dps",
-    "2": [
-      {
-        "text": "Carnage",
-        "add-text": ". You can cast this spell using your AD",
-        "level": ""
-      }
-    ],
-    "6": [
-      {
-        "text": "Blade Armor",
-        "add-text": ". You can cast this spell using your AD",
-        "level": ""
-      }
-    ],
-    "10": [
-      {
-        "text": "Havoc Strike",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "14": [
-      {
-        "text": "Flamethrower",
-        "add-text": ". You can cast this spell using your AD",
-        "level": ""
-      }
-    ],
-    "18": [
-      {
-        "text": "Havoc Strike",
-        "add-text": ", select an Advancement option",
-        "level": ""
-      }
-    ]
-  },
-  {
-    "subclass": "Shock Trooper",
-    "class": "Soldier",
-    "role": "tank / control",
-    "2": [
-      {
-        "text": "Hex Shield",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "6": [
-      {
-        "text": "Improved Shields",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "10": [
-      {
-        "text": "Devastator Mode",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "14": [
-      {
-        "text": "Siege Pulse",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "18": [
-      {
-        "text": "Devastator Mode",
-        "add-text": ", select an Advancement option",
-        "level": ""
-      }
-    ]
-  },
-  {
-    "subclass": "Marksman",
-    "class": "Soldier",
-    "role": "ranged dps",
-    "2": [
-      {
-        "text": "Marksman",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "6": [
-      {
-        "text": "Eagle Eye",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "10": [
-      {
-        "text": "Hawk Missile Launcher",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "14": [
-      {
-        "text": "Ballistic Blades",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "18": [
-      {
-        "text": "Hawk Missile Launcher",
-        "add-text": ", select an Advancement option",
-        "level": ""
-      }
-    ]
-  },
-  {
-    "subclass": "Protector",
-    "class": "Vanguard",
-    "role": "tank",
-    "2": [
-      {
-        "text": "Improved Barrier",
-        "add-text": "(1)",
-        "level": ""
-      }
-    ],
-    "6": [
-      {
-        "text": "Indomitable",
-        "add-text": "(1)",
-        "level": ""
-      }
-    ],
-    "10": [
-      {
-        "text": "Biotic Powers",
-        "add-text": "(2:2)",
-        "level": ""
-      }
-    ],
-    "14": [
-      {
-        "text": "Indomitable",
-        "add-text": "(2)",
-        "level": ""
-      }
-    ],
-    "18": [
-      {
-        "text": "Improved Barrier",
-        "add-text": "(2)",
-        "level": ""
-      }
-    ]
-  },
-  {
-    "subclass": "Juggernaut",
-    "class": "Vanguard",
-    "role": "balance",
-    "2": [
-      {
-        "text": "Improved Melee Damage",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "6": [
-      {
-        "text": "Improved Barrier Capacity",
-        "add-text": "(1)",
-        "level": ""
-      }
-    ],
-    "10": [
-      {
-        "text": "Melee Casting",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "14": [
-      {
-        "text": "Improved Barrier Capacity",
-        "add-text": "(2)",
-        "level": ""
-      }
-    ],
-    "18": [
-      {
-        "text": "Improved Melee Damage",
-        "add-text": "(2)",
-        "level": ""
-      }
-    ]
-  },
-  {
-    "subclass": "Cabal",
-    "class": "Vanguard",
-    "role": "spell dps",
-    "2": [
-      {
-        "text": "Poison Strike",
-        "add-text": "",
-        "level": ""
-      },
-      {
-        "text": "Nightshade Blades",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "6": [
-      {
-        "text": "Teleporting Dodge",
-        "add-text": "",
-        "level": ""
-      }
-    ],
-    "10": [
-      {
-        "text": "Biotic Powers",
-        "add-text": "(1:1)",
-        "level": ""
-      }
-    ],
-    "14": [
-      {
-        "text": "Biotic Powers",
-        "add-text": "(1:2)",
-        "level": ""
-      }
-    ],
-    "18": [
-      {
-        "text": "Biotic Powers",
-        "add-text": "(1:4)",
-        "level": ""
-      }
-    ]
-  }
-]
+{
+  "updated": "September 11, 2017 @ 11:04 PM",
+  "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
+  "data": [
+    {
+      "name": "Commando",
+      "class": "Adept",
+      "description": null,
+      "1": [
+        {
+          "key": "pure-biotics",
+          "value": "Pure Biotics"
+        }
+      ],
+      "2": [
+        {
+          "key": "expert-biotic",
+          "value": "Expert Biotic"
+        }
+      ],
+      "3": [
+        {
+          "key": "biotic-split",
+          "value": "Biotic Split"
+        }
+      ],
+      "4": [
+        {
+          "key": "overchannel",
+          "value": "Overchannel"
+        }
+      ],
+      "5": null,
+      "id": [
+        {
+          "key": "commando",
+          "value": "commando"
+        }
+      ]
+    },
+    {
+      "name": "Blackstar",
+      "class": "Adept",
+      "description": null,
+      "1": [
+        {
+          "key": "sculpt-biotics",
+          "value": "Sculpt Biotics"
+        }
+      ],
+      "2": [
+        {
+          "key": "bend-luck",
+          "value": "Bend Luck"
+        }
+      ],
+      "3": [
+        {
+          "key": "focused-biotics",
+          "value": "Focused Biotics"
+        }
+      ],
+      "4": [
+        {
+          "key": "biotic-control",
+          "value": "Biotic Control"
+        }
+      ],
+      "5": null,
+      "id": [
+        {
+          "key": "blackstar",
+          "value": "blackstar"
+        }
+      ]
+    },
+    {
+      "name": "Disruptor",
+      "class": "Adept",
+      "description": null,
+      "1": [
+        {
+          "key": "dark-biotics",
+          "value": "Dark Biotics"
+        }
+      ],
+      "2": [
+        {
+          "key": "biotic-surge",
+          "value": "Biotic Surge"
+        }
+      ],
+      "3": [
+        {
+          "key": "potent-biotics",
+          "value": "Potent Biotics"
+        }
+      ],
+      "4": [
+        {
+          "key": "biotic-concentration",
+          "value": "Biotic Concentration"
+        }
+      ],
+      "5": null,
+      "id": [
+        {
+          "key": "disruptor",
+          "value": "disruptor"
+        }
+      ]
+    },
+    {
+      "name": "Demolisher",
+      "class": "Engineer",
+      "description": null,
+      "1": [
+        {
+          "key": "advanced-weapon-holsters",
+          "value": "Advanced Weapon Holsters"
+        }
+      ],
+      "2": [
+        {
+          "key": "makeshift-grenades",
+          "value": "Makeshift Grenades"
+        }
+      ],
+      "3": [
+        {
+          "key": "heavy-weapon-hack",
+          "value": "Heavy Weapon Hack"
+        }
+      ],
+      "4": [
+        {
+          "key": "targeting-mobility",
+          "value": "Targeting Mobility"
+        }
+      ],
+      "5": [
+        {
+          "key": "makeshift-grenades",
+          "value": "Makeshift Grenades"
+        }
+      ],
+      "id": [
+        {
+          "key": "demolisher",
+          "value": "demolisher"
+        }
+      ]
+    },
+    {
+      "name": "Drone Jockey",
+      "class": "Engineer",
+      "description": null,
+      "1": [
+        {
+          "key": "drone-sidekick",
+          "value": "Drone Sidekick"
+        }
+      ],
+      "2": [
+        {
+          "key": "drone-efficiency",
+          "value": "Drone Efficiency"
+        }
+      ],
+      "3": [
+        {
+          "key": "dual-drones",
+          "value": "Dual Drones"
+        }
+      ],
+      "4": [
+        {
+          "key": "drone-mastery",
+          "value": "Drone Mastery"
+        }
+      ],
+      "5": [
+        {
+          "key": "drone-swarm",
+          "value": "Drone Swarm"
+        }
+      ],
+      "id": [
+        {
+          "key": "drone-jockey",
+          "value": "drone-jockey"
+        }
+      ]
+    },
+    {
+      "name": "Support",
+      "class": "Engineer",
+      "description": null,
+      "1": [
+        {
+          "key": "healing-drone",
+          "value": "Healing Drone"
+        }
+      ],
+      "2": [
+        {
+          "key": "medi-gel-enhancements",
+          "value": "Medi-gel Enhancements"
+        }
+      ],
+      "3": [
+        {
+          "key": "shield-boost",
+          "value": "Shield Boost"
+        }
+      ],
+      "4": [
+        {
+          "key": "healing-drone",
+          "value": "Healing Drone"
+        }
+      ],
+      "5": [
+        {
+          "key": "supply-pylon",
+          "value": "Supply Pylon"
+        }
+      ],
+      "id": [
+        {
+          "key": "support",
+          "value": "support"
+        }
+      ]
+    },
+    {
+      "name": "Shadow",
+      "class": "Infiltrator",
+      "description": null,
+      "1": [
+        {
+          "key": "melee-specialist",
+          "value": "Melee Specialist"
+        }
+      ],
+      "2": [
+        {
+          "key": "deadly-strike",
+          "value": "Deadly Strike"
+        }
+      ],
+      "3": [
+        {
+          "key": "misdirection",
+          "value": "Misdirection"
+        }
+      ],
+      "4": [
+        {
+          "key": "sudden-strike",
+          "value": "Sudden Strike"
+        }
+      ],
+      "5": null,
+      "id": [
+        {
+          "key": "shadow",
+          "value": "shadow"
+        }
+      ]
+    },
+    {
+      "name": "Saboteur",
+      "class": "Infiltrator",
+      "description": null,
+      "1": [
+        {
+          "key": "ear-for-deceit",
+          "value": "Ear for Deceit"
+        },
+        {
+          "key": "eye-for-detail",
+          "value": " Eye for Detail"
+        },
+        {
+          "key": "insightful-fighting",
+          "value": " Insightful Fighting"
+        }
+      ],
+      "2": [
+        {
+          "key": "infiltration",
+          "value": "Infiltration"
+        }
+      ],
+      "3": [
+        {
+          "key": "saboteurs-touch",
+          "value": "Saboteur's Touch"
+        }
+      ],
+      "4": [
+        {
+          "key": "eye-for-weakness",
+          "value": "Eye for Weakness"
+        }
+      ],
+      "5": null,
+      "id": [
+        {
+          "key": "saboteur",
+          "value": "saboteur"
+        }
+      ]
+    },
+    {
+      "name": "Operative",
+      "class": "Infiltrator",
+      "description": null,
+      "1": [
+        {
+          "key": "master-tactician",
+          "value": "Master Tactician"
+        }
+      ],
+      "2": [
+        {
+          "key": "tactical-ambush",
+          "value": "Tactical Ambush"
+        }
+      ],
+      "3": [
+        {
+          "key": "elegant-maneuver",
+          "value": "Elegant Maneuver"
+        }
+      ],
+      "4": [
+        {
+          "key": "master-duelist",
+          "value": "Master Duelist"
+        }
+      ],
+      "5": null,
+      "id": [
+        {
+          "key": "operative",
+          "value": "operative"
+        }
+      ]
+    },
+    {
+      "name": "Battlemaster",
+      "class": "Sentinel",
+      "description": null,
+      "1": [
+        {
+          "key": "power-armor",
+          "value": "Power Armor"
+        },
+        {
+          "key": "biotic-powers",
+          "value": " Biotic Powers(1:1)"
+        }
+      ],
+      "2": [
+        {
+          "key": "battlemaster",
+          "value": "Battlemaster"
+        }
+      ],
+      "3": [
+        {
+          "key": "battlemaster",
+          "value": "Battlemaster"
+        }
+      ],
+      "4": [
+        {
+          "key": "battlemaster",
+          "value": "Battlemaster"
+        }
+      ],
+      "5": [
+        {
+          "key": "power-armor",
+          "value": "Power Armor"
+        }
+      ],
+      "id": [
+        {
+          "key": "battlemaster",
+          "value": "battlemaster"
+        }
+      ]
+    },
+    {
+      "name": "Bastion",
+      "class": "Sentinel",
+      "description": null,
+      "1": [
+        {
+          "key": "assault-armor",
+          "value": "Assault Armor"
+        }
+      ],
+      "2": [
+        {
+          "key": "improved-tech-armor",
+          "value": "Improved Tech Armor"
+        }
+      ],
+      "3": [
+        {
+          "key": "tech-armor-overload",
+          "value": "Tech Armor Overload"
+        }
+      ],
+      "4": [
+        {
+          "key": "improved-tech-armor",
+          "value": "Improved Tech Armor(2)"
+        }
+      ],
+      "5": [
+        {
+          "key": "tech-armor-overload",
+          "value": "Tech Armor Overload"
+        }
+      ],
+      "id": [
+        {
+          "key": "bastion",
+          "value": "bastion"
+        }
+      ]
+    },
+    {
+      "name": "Paladin",
+      "class": "Sentinel",
+      "description": null,
+      "1": [
+        {
+          "key": "omni-shield",
+          "value": "Omni-Shield"
+        },
+        {
+          "key": "expertise",
+          "value": " Expertise"
+        }
+      ],
+      "2": [
+        {
+          "key": "tech-aura",
+          "value": "Tech Aura"
+        }
+      ],
+      "3": [
+        {
+          "key": "sculpt-biotics",
+          "value": "Sculpt Biotics"
+        },
+        {
+          "key": "expertise",
+          "value": " Expertise"
+        }
+      ],
+      "4": [
+        {
+          "key": "tech-aura",
+          "value": "Tech Aura"
+        }
+      ],
+      "5": [
+        {
+          "key": "tech-aura-improvement",
+          "value": "Tech Aura Improvement"
+        }
+      ],
+      "id": [
+        {
+          "key": "paladin",
+          "value": "paladin"
+        }
+      ]
+    },
+    {
+      "name": "Havoc",
+      "class": "Soldier",
+      "description": null,
+      "1": [
+        {
+          "key": "combat-power",
+          "value": "Combat Power"
+        }
+      ],
+      "2": [
+        {
+          "key": "combat-power",
+          "value": "Combat Power"
+        }
+      ],
+      "3": [
+        {
+          "key": "combat-power",
+          "value": "Combat Power"
+        }
+      ],
+      "4": [
+        {
+          "key": "combat-power",
+          "value": "Combat Power"
+        }
+      ],
+      "5": [
+        {
+          "key": "combat-power",
+          "value": "Combat Power"
+        }
+      ],
+      "id": [
+        {
+          "key": "havoc",
+          "value": "havoc"
+        }
+      ]
+    },
+    {
+      "name": "Weapon Master",
+      "class": "Soldier",
+      "description": null,
+      "1": [
+        {
+          "key": "weapon-of-choice",
+          "value": "Weapon of Choice"
+        }
+      ],
+      "2": [
+        {
+          "key": "quick-reload",
+          "value": "Quick Reload"
+        }
+      ],
+      "3": [
+        {
+          "key": "improved-weapon-superiority",
+          "value": "Improved Weapon Superiority"
+        }
+      ],
+      "4": [
+        {
+          "key": "strafe",
+          "value": "Strafe"
+        }
+      ],
+      "5": [
+        {
+          "key": "improved-weapon-superiority",
+          "value": "Improved Weapon Superiority"
+        }
+      ],
+      "id": [
+        {
+          "key": "weapon-master",
+          "value": "weapon-master"
+        }
+      ]
+    },
+    {
+      "name": "Sharp Shooter",
+      "class": "Soldier",
+      "description": null,
+      "1": [
+        {
+          "key": "deadly-aim",
+          "value": "Deadly Aim"
+        }
+      ],
+      "2": [
+        {
+          "key": "careful-eyes",
+          "value": "Careful Eyes"
+        }
+      ],
+      "3": [
+        {
+          "key": "marksman",
+          "value": "Marksman"
+        }
+      ],
+      "4": [
+        {
+          "key": "snapshot",
+          "value": "Snapshot"
+        }
+      ],
+      "5": [
+        {
+          "key": "marksman",
+          "value": "Marksman"
+        }
+      ],
+      "id": [
+        {
+          "key": "sharp-shooter",
+          "value": "sharp-shooter"
+        }
+      ]
+    },
+    {
+      "name": "Champion",
+      "class": "Vanguard",
+      "description": null,
+      "1": [
+        {
+          "key": "biotic-maneuvers",
+          "value": "Biotic Maneuvers"
+        }
+      ],
+      "2": [
+        {
+          "key": "improved-barrier",
+          "value": "Improved Barrier"
+        }
+      ],
+      "3": [
+        {
+          "key": "biotic-maneuvers",
+          "value": "Biotic Maneuvers"
+        }
+      ],
+      "4": [
+        {
+          "key": "improved-barrier",
+          "value": "Improved Barrier"
+        }
+      ],
+      "5": [
+        {
+          "key": "biotic-maneuvers",
+          "value": "Biotic Maneuvers"
+        }
+      ],
+      "id": [
+        {
+          "key": "champion",
+          "value": "champion"
+        }
+      ]
+    },
+    {
+      "name": "Slayer",
+      "class": "Vanguard",
+      "description": null,
+      "1": [
+        {
+          "key": "biotic-slash",
+          "value": "Biotic Slash"
+        }
+      ],
+      "2": [
+        {
+          "key": "melee-specialist",
+          "value": "Melee Specialist"
+        }
+      ],
+      "3": [
+        {
+          "key": "improved-biotic-slash",
+          "value": "Improved Biotic Slash"
+        }
+      ],
+      "4": [
+        {
+          "key": "biotic-focus",
+          "value": "Biotic Focus"
+        }
+      ],
+      "5": [
+        {
+          "key": "opportunist",
+          "value": "Opportunist"
+        }
+      ],
+      "id": [
+        {
+          "key": "slayer",
+          "value": "slayer"
+        }
+      ]
+    },
+    {
+      "name": "Cabal",
+      "class": "Vanguard",
+      "description": null,
+      "1": [
+        {
+          "key": "nightshade-blades",
+          "value": "Nightshade Blades"
+        }
+      ],
+      "2": [
+        {
+          "key": "poison-strike",
+          "value": "Poison Strike"
+        }
+      ],
+      "3": [
+        {
+          "key": "teleporting-dodge",
+          "value": "Teleporting Dodge"
+        }
+      ],
+      "4": [
+        {
+          "key": "biotic-powers",
+          "value": "Biotic Powers(2:3)"
+        }
+      ],
+      "5": [
+        {
+          "key": "cabal-attacks",
+          "value": "Cabal Attacks"
+        }
+      ],
+      "id": [
+        {
+          "key": "cabal",
+          "value": "cabal"
+        }
+      ]
+    }
+  ]
+}

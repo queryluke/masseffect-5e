@@ -1,0 +1,653 @@
+{
+  "updated": "September 11, 2017 @ 11:04 PM",
+  "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
+  "data": [
+    {
+      "level": "1",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "1"
+        },
+        {
+          "key": "proficiency",
+          "value": "2"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "drone",
+              "display": "Drone",
+              "subclass_progression": null
+            },
+            {
+              "key": "tech-power",
+              "display": "Tech Power(2)",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "4"
+        },
+        {
+          "key": "max_tp",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "level": "2",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "2"
+        },
+        {
+          "key": "proficiency",
+          "value": "2"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "subclass-feature",
+              "display": "Subclass Feature",
+              "subclass_progression": 1
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "6"
+        },
+        {
+          "key": "max_tp",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "level": "3",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "3"
+        },
+        {
+          "key": "proficiency",
+          "value": "2"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "tech-power",
+              "display": "Tech Power(1)",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "8"
+        },
+        {
+          "key": "max_tp",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "level": "4",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "4"
+        },
+        {
+          "key": "proficiency",
+          "value": "2"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "ability-score-improvement",
+              "display": "Ability Score Improvement",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "10"
+        },
+        {
+          "key": "max_tp",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "level": "5",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "5"
+        },
+        {
+          "key": "proficiency",
+          "value": "3"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "tech-power",
+              "display": "Tech Power(1)",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "12"
+        },
+        {
+          "key": "max_tp",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "level": "6",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "6"
+        },
+        {
+          "key": "proficiency",
+          "value": "3"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "subclass-feature",
+              "display": "Subclass Feature",
+              "subclass_progression": 2
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "14"
+        },
+        {
+          "key": "max_tp",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "level": "7",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "7"
+        },
+        {
+          "key": "proficiency",
+          "value": "3"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "tech-power",
+              "display": "Tech Power(1)",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "16"
+        },
+        {
+          "key": "max_tp",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "level": "8",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "8"
+        },
+        {
+          "key": "proficiency",
+          "value": "3"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "ability-score-improvement",
+              "display": "Ability Score Improvement",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "18"
+        },
+        {
+          "key": "max_tp",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "level": "9",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "9"
+        },
+        {
+          "key": "proficiency",
+          "value": "4"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "tech-power",
+              "display": "Tech Power(1)",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "20"
+        },
+        {
+          "key": "max_tp",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "level": "10",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "10"
+        },
+        {
+          "key": "proficiency",
+          "value": "4"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "subclass-feature",
+              "display": "Subclass Feature",
+              "subclass_progression": 3
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "22"
+        },
+        {
+          "key": "max_tp",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "level": "11",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "11"
+        },
+        {
+          "key": "proficiency",
+          "value": "4"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "tech-power",
+              "display": "Tech Power(1)",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "24"
+        },
+        {
+          "key": "max_tp",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "level": "12",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "12"
+        },
+        {
+          "key": "proficiency",
+          "value": "4"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "ability-score-improvement",
+              "display": "Ability Score Improvement",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "26"
+        },
+        {
+          "key": "max_tp",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "level": "13",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "13"
+        },
+        {
+          "key": "proficiency",
+          "value": "5"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "tech-power",
+              "display": "Tech Power(1)",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "28"
+        },
+        {
+          "key": "max_tp",
+          "value": "5"
+        }
+      ]
+    },
+    {
+      "level": "14",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "14"
+        },
+        {
+          "key": "proficiency",
+          "value": "5"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "subclass-feature",
+              "display": "Subclass Feature",
+              "subclass_progression": 4
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "30"
+        },
+        {
+          "key": "max_tp",
+          "value": "5"
+        }
+      ]
+    },
+    {
+      "level": "15",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "15"
+        },
+        {
+          "key": "proficiency",
+          "value": "5"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "tech-power",
+              "display": "Tech Power(1)",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "33"
+        },
+        {
+          "key": "max_tp",
+          "value": "5"
+        }
+      ]
+    },
+    {
+      "level": "16",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "16"
+        },
+        {
+          "key": "proficiency",
+          "value": "5"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "ability-score-improvement",
+              "display": "Ability Score Improvement",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "36"
+        },
+        {
+          "key": "max_tp",
+          "value": "5"
+        }
+      ]
+    },
+    {
+      "level": "17",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "17"
+        },
+        {
+          "key": "proficiency",
+          "value": "6"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "tech-power",
+              "display": "Tech Power(1)",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "39"
+        },
+        {
+          "key": "max_tp",
+          "value": "6"
+        }
+      ]
+    },
+    {
+      "level": "18",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "18"
+        },
+        {
+          "key": "proficiency",
+          "value": "6"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "subclass-feature",
+              "display": "Subclass feature",
+              "subclass_progression": 5
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "42"
+        },
+        {
+          "key": "max_tp",
+          "value": "6"
+        }
+      ]
+    },
+    {
+      "level": "19",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "19"
+        },
+        {
+          "key": "proficiency",
+          "value": "6"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "ability-score-improvement",
+              "display": "Ability Score Improvement",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "44"
+        },
+        {
+          "key": "max_tp",
+          "value": "7"
+        }
+      ]
+    },
+    {
+      "level": "20",
+      "row_data": [
+        {
+          "key": "level",
+          "value": "20"
+        },
+        {
+          "key": "proficiency",
+          "value": "6"
+        },
+        {
+          "key": "features",
+          "value": [
+            {
+              "key": "invention",
+              "display": "Invention",
+              "subclass_progression": null
+            }
+          ]
+        },
+        {
+          "key": "tech_points",
+          "value": "50"
+        },
+        {
+          "key": "max_tp",
+          "value": "8"
+        }
+      ]
+    }
+  ],
+  "headers": [
+    {
+      "display": "Level",
+      "spell_header": false
+    },
+    {
+      "display": "Proficiency",
+      "spell_header": false
+    },
+    {
+      "display": "Features",
+      "spell_header": false
+    },
+    {
+      "display": "Tech Points",
+      "spell_header": false
+    },
+    {
+      "display": "Max TP",
+      "spell_header": false
+    }
+  ]
+}

@@ -1,0 +1,679 @@
+{
+  "updated": "September 11, 2017 @ 11:04 PM",
+  "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRETKGL62kEZPA69PhA3AGMiVeHOWBRkTMDL3f_K-oajryEjwdq7fRAj-qfIusPsLMiIqmB12D4Zun8/pubhtml",
+  "data": [
+    {
+      "name": "Skill Versatility",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You gain proficiency in two skills of your choice."
+        }
+      ],
+      "asari": "x",
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "id": "skill-versatility",
+      "description_text_dump": "Yougainproficiencyintwoskillsofyourchoice"
+    },
+    {
+      "name": "Mind Meld",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You can transfer and receive thoughts to another creature. You must concentrate and if the creature is not willing, the thoughts become jumbled and disjointed. Unintelligent creatures have unpredictable results."
+        }
+      ],
+      "asari": "x",
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "id": "mind-meld",
+      "description_text_dump": "YoucantransferandreceivethoughtstoanothercreatureYoumustconcentrateandifthecreatureisnotwillingthethoughtsbecomejumbledanddisjointedUnintelligentcreatureshaveunpredictableresults"
+    },
+    {
+      "name": "Cantrip",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You know one cantrip of your choice from the adept or vanguard spell list. Charisma is your spellcasting modifier for it."
+        }
+      ],
+      "asari": "x",
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "id": "cantrip",
+      "description_text_dump": "YouknowonecantripofyourchoicefromtheadeptorvanguardspelllistCharismaisyourspellcastingmodifierforit"
+    },
+    {
+      "name": "Saving Face",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Batarians are careful not to show weakness in front of their allies, for fear of losing status. If you miss with an attack roll or fail an ability check or a saving throw, you can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +5). Once you use this trait, you can't use it again until you finish a short or long rest."
+        }
+      ],
+      "asari": null,
+      "batarian": "x",
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "id": "saving-face",
+      "description_text_dump": "BatariansarecarefulnottoshowweaknessinfrontoftheiralliesforfearoflosingstatusIfyoumisswithanattackrollorfailanabilitycheckorasavingthrowyoucangainabonustotherollequaltothenumberofalliesyoucanseewithin30feetofyoumaximumbonusof5Onceyouusethistraityoucantuseitagainuntilyoufinishashortorlongrest"
+    },
+    {
+      "name": "Feat",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Select 1 feat from: {feats}"
+        }
+      ],
+      "asari": null,
+      "batarian": "x",
+      "drell": "x",
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": "x",
+      "salarian": "x",
+      "turian": "x",
+      "volus": null,
+      "vorcha": null,
+      "id": "feat",
+      "description_text_dump": "Select1featfromfeats"
+    },
+    {
+      "name": "Keen Senses",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You have proficiency in the Perception skill."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": "x",
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "id": "keen-senses",
+      "description_text_dump": "YouhaveproficiencyinthePerceptionskill"
+    },
+    {
+      "name": "Dark Vision",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": "x",
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "id": "dark-vision",
+      "description_text_dump": "YouhavesuperiorvisionindarkanddimconditionsYoucanseeindimlightwithin60feetofyouasifitwerebrightlightandindarknessasifitweredimlightYoucantdiscerncolorindarknessonlyshadesofgray"
+    },
+    {
+      "name": "Halucinogen",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You skin is infused with a mild venom. When ingested or injected it can cause mild hallucinations."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": "x",
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "id": "halucinogen",
+      "description_text_dump": "YouskinisinfusedwithamildvenomWheningestedorinjecteditcancausemildhallucinations"
+    },
+    {
+      "name": "Feats",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Select 2 feats from: {feats}"
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": "x",
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "id": "feats",
+      "description_text_dump": "Select2featsfromfeats"
+    },
+    {
+      "name": "Composite Plating",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Your construction incorporates advanced armor plating, granting you a +1 bonus to Armor Class."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": "x",
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "id": "composite-plating",
+      "description_text_dump": "Yourconstructionincorporatesadvancedarmorplatinggrantingyoua1bonustoArmorClass"
+    },
+    {
+      "name": "Living Construct",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You are immune to disease. You do not need to eat or breathe. Instead of sleeping, you enter an inactive state for 4 hours each day. You do not dream in this state; you are fully aware of your surroundings and notice approaching enemies and other events as normal."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": "x",
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "id": "living-construct",
+      "description_text_dump": "YouareimmunetodiseaseYoudonotneedtoeatorbreatheInsteadofsleepingyouenteraninactivestatefor4hourseachdayYoudonotdreaminthisstateyouarefullyawareofyoursurroundingsandnoticeapproachingenemiesandothereventsasnormal"
+    },
+    {
+      "name": "Repair Matrix",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "When you drop below half your hit points or lose all your shield points, as a reaction, you may activate a powerful Foucault current. If you are prone, you immediately return to your feet, your shield regeneration increases by 1 die type, your speed increases by 6m, and you regain 1d6 hit points at the start of your turn. This effect lasts 1 minute. This ability may only be used once per long rest."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": "x",
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "id": "repair-matrix",
+      "description_text_dump": "WhenyoudropbelowhalfyourhitpointsorloseallyourshieldpointsasareactionyoumayactivateapowerfulFoucaultcurrentIfyouareproneyouimmediatelyreturntoyourfeetyourshieldregenerationincreasesby1dietypeyourspeedincreasesby6mandyouregain1d6hitpointsatthestartofyourturnThiseffectlasts1minuteThisabilitymayonlybeusedonceperlongrest"
+    },
+    {
+      "name": "Hunter Mode",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Channel shields into auxiliary combat systems. Lose 3d6 shields but gain the following: Increase movement by 6m. +2 on ranged & melee attack rolls. No disadvantage on attacking targets behind partial cover. Add 1d6 piercing damage to melee and ranged damage rolls. This effect lasts 1 min. You can only use Hunter Mode once per long rest."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "At 11th level, you gain an additional benefit based on your class:"
+        },
+        {
+          "id": 3,
+          "type": "table",
+          "data": {
+            "headers": [
+              "Class",
+              "Feature"
+            ],
+            "items": [
+              [
+                "Engineer",
+                "Increase the damage of all Tech powers by 1 die type (max d12). If the die type is already d12, add +1 for each die rolled instead."
+              ],
+              [
+                "Soldier",
+                "You have resistance to all damage caused by biotic spells and advantage on saving throws caused by biotic spells."
+              ],
+              [
+                "Infiltrator",
+                "Increase your sneak attack die type to d8."
+              ]
+            ]
+          }
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": "x",
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "id": "hunter-mode",
+      "description_text_dump": "ChannelshieldsintoauxiliarycombatsystemsLose3d6shieldsbutgainthefollowingIncreasemovementby6m2onrangedmeleeattackrollsNodisadvantageonattackingtargetsbehindpartialcoverAdd1d6piercingdamagetomeleeandrangeddamagerollsThiseffectlasts1minYoucanonlyuseHunterModeonceperlongrestAt11thlevelyougainanadditionalbenefitbasedonyourclasstableClassFeatureEngineerIncreasethedamageofallTechpowersby1dietypemaxd12Ifthedietypeisalreadyd12add1foreachdierolledinsteadSoldierYouhaveresistancetoalldamagecausedbybioticspellsandadvantageonsavingthrowscausedbybioticspellsInfiltratorIncreaseyoursneakattackdietypetod8table"
+    },
+    {
+      "name": "No Feats",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Geth cannot take any feats."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": "x",
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "id": "no-feats",
+      "description_text_dump": "Gethcannottakeanyfeats"
+    },
+    {
+      "name": "Rage",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "If you sink below half health, you enter into a rage. You take 1d8 less damage per hit your melee attacks deal an additional 1d8 damage."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": "x",
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "id": "rage",
+      "description_text_dump": "IfyousinkbelowhalfhealthyouenterintoarageYoutake1d8lessdamageperhityourmeleeattacksdealanadditional1d8damage"
+    },
+    {
+      "name": "Natural Armor",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Increase your AC by 1."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": "x",
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "id": "natural-armor",
+      "description_text_dump": "IncreaseyourACby1"
+    },
+    {
+      "name": "Relentless",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": "x",
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "id": "relentless",
+      "description_text_dump": "Whenyouarereducedto0hitpointsbutnotkilledoutrightyoucandropto1hitpointinsteadYoucantusethisfeatureagainuntilyoufinishalongrest"
+    },
+    {
+      "name": "Menacing",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You gain proficiency in the Intimidation skill."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": "x",
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "id": "menacing",
+      "description_text_dump": "YougainproficiencyintheIntimidationskill"
+    },
+    {
+      "name": "Hermetic Suit",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Your suit is your lifeblood. It makes your immune to disease. You have resistance to poison, toxic, and necrotic damage. However, if you ever take an unshielded, critical hit via puncture damage, your suit is breached. On your turn, you can take no other action accept making a death saving throw as if you had 0 hit points or using a charge of your sealant to close the puncture. You always carry 3 charges of specialized sealant, and you can take an action to seal the breach, consuming a charge. On a long rest, you regain your charges."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": "x",
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "id": "hermetic-suit",
+      "description_text_dump": "YoursuitisyourlifebloodItmakesyourimmunetodiseaseYouhaveresistancetopoisontoxicandnecroticdamageHoweverifyouevertakeanunshieldedcriticalhitviapuncturedamageyoursuitisbreachedOnyourturnyoucantakenootheractionacceptmakingadeathsavingthrowasifyouhad0hitpointsorusingachargeofyoursealanttoclosethepunctureYoualwayscarry3chargesofspecializedsealantandyoucantakeanactiontosealthebreachconsumingachargeOnalongrestyouregainyourcharges"
+    },
+    {
+      "name": "Cybernetic Augmentation",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You have a minor cybernetic augmentation. Choose one of the following: Darkvision, speed increased by 2m, proficiency in Perception, Increase carry capacity by 5."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": "x",
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "id": "cybernetic-augmentation",
+      "description_text_dump": "YouhaveaminorcyberneticaugmentationChooseoneofthefollowingDarkvisionspeedincreasedby2mproficiencyinPerceptionIncreasecarrycapacityby5"
+    },
+    {
+      "name": "Photographic Memory",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You have advantage on History, Engineering, Hacking, Medicine, and Nature checks."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": "x",
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "id": "photographic-memory",
+      "description_text_dump": "YouhaveadvantageonHistoryEngineeringHackingMedicineandNaturechecks"
+    },
+    {
+      "name": "Turian Toughness",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Your hit point maximum increases by 2, and it increases by 2 every time you gain a level."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": "x",
+      "volus": null,
+      "vorcha": null,
+      "id": "turian-toughness",
+      "description_text_dump": "Yourhitpointmaximumincreasesby2anditincreasesby2everytimeyougainalevel"
+    },
+    {
+      "name": "Fury of the Small",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "When you damage a creature with an attack or a spell and the creature's size is larger than yours, you can cause the attack or spell to deal extra damage to the creature. The extra damage equals your level. Once you use this trait, you can't use it again until you finish a short or long rest."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": "x",
+      "vorcha": null,
+      "id": "fury-of-the-small",
+      "description_text_dump": "WhenyoudamageacreaturewithanattackoraspellandthecreaturessizeislargerthanyoursyoucancausetheattackorspelltodealextradamagetothecreatureTheextradamageequalsyourlevelOnceyouusethistraityoucantuseitagainuntilyoufinishashortorlongrest"
+    },
+    {
+      "name": "Savvy Dealings",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You can get extra supplies and discounts from vendors."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": "x",
+      "vorcha": null,
+      "id": "savvy-dealings",
+      "description_text_dump": "Youcangetextrasuppliesanddiscountsfromvendors"
+    },
+    {
+      "name": "Lucky",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Gain the Lucky feat"
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": "x",
+      "vorcha": null,
+      "id": "lucky",
+      "description_text_dump": "GaintheLuckyfeat"
+    },
+    {
+      "name": "Bite",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Your fanged maw is a natural weapon, which you can use to make unarmed strikes. If you hit with it, you deal piercing damage equal to 1d6 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": "x",
+      "id": "bite",
+      "description_text_dump": "YourfangedmawisanaturalweaponwhichyoucanusetomakeunarmedstrikesIfyouhitwithityoudealpiercingdamageequalto1d6yourStrengthmodifierinsteadofthebludgeoningdamagenormalforanunarmedstrike"
+    },
+    {
+      "name": "Hungry Jaws",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "In battle, you can throw yourself into a vicious feeding frenzy. As a bonus action, you can make a special attack with your bite. If the attack hits, it deals its normal damage, and you automatically activate Bloodlust. You can't use this trait again until you finish a short or long rest."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": "x",
+      "id": "hungry-jaws",
+      "description_text_dump": "InbattleyoucanthrowyourselfintoaviciousfeedingfrenzyAsabonusactionyoucanmakeaspecialattackwithyourbiteIftheattackhitsitdealsitsnormaldamageandyouautomaticallyactivateBloodlustYoucantusethistraitagainuntilyoufinishashortorlongrest"
+    },
+    {
+      "name": "Bloodlust",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "After killing an enemy with a melee attack, you can activate Bloodlust. Your speed increases to 20m, add 1d8 to you melee attacks, and you regenerate 1d4 health per turn. This effect lasts 3 turns. If you kill another enemy, the effect is extended for 3 more turns."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": "x",
+      "id": "bloodlust",
+      "description_text_dump": "AfterkillinganenemywithameleeattackyoucanactivateBloodlustYourspeedincreasesto20madd1d8toyoumeleeattacksandyouregenerate1d4healthperturnThiseffectlasts3turnsIfyoukillanotherenemytheeffectisextendedfor3moreturns"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+<template lang="pug">
+  v-navigation-drawer(
+    persistent
+    clipped
+    enable-resize-watcher
+    v-model="isActive"
+    )
+    v-list(dense)
+      template(v-for="item in items")
+        v-list-group(v-if="item.items" v-bind:group="item.group")
+          v-list-tile(slot="item" ripple)
+            v-list-tile-action
+              v-icon {{ item.action }}
+            v-list-tile-content
+              v-list-tile-title {{ item.title }}
+            v-list-tile-action
+              v-icon keyboard_arrow_down
+          v-list-tile(
+            v-for="subItem in item.items" v-bind:key="subItem.title"
+            v-bind="{ \
+              to: !subItem.target ? subItem.href : null, \
+              href: subItem.target && subItem.href \
+            }"
+            ripple
+            v-bind:disabled="subItem.disabled"
+            v-bind:target="subItem.target"
+          )
+            v-list-tile-content
+              v-list-tile-title {{ subItem.title }}
+            v-list-tile-action(v-if="subItem.action")
+              v-icon(:class="[subItem.actionClass || 'success--text']") {{ subItem.action }}
+        v-subheader(v-else-if="item.header") {{ item.header }}
+        v-divider(v-else-if="item.divider")
+        v-list-tile(
+          v-bind="{ \
+            to: !item.target ? item.href : null, \
+            href: item.target && item.href \
+          }"
+          ripple
+          v-bind:disabled="item.disabled"
+          v-bind:target="item.target"
+          rel="noopener"
+          v-else
+        )
+          v-list-tile-action
+            v-icon {{ item.action }}
+          v-list-tile-content
+            v-list-tile-title {{ item.title }}
+          v-list-tile-action(v-if="item.subAction")
+            v-icon(class="success--text") {{ item.subAction }}
+          v-chip(
+            v-else-if="item.chip"
+            label
+            small
+            class="caption blue lighten-2 white--text mx-0"
+          ) {{ item.chip }}
+  </v-navigation-drawer>
+</template>
+
+<script>
+  import { mapState } from 'vuex';
+
+  export default {
+    name: 'MainNavigation',
+    computed: {
+      isActive: {
+        get () {
+          return this.$store.state.sidebar
+        },
+        set (val) {
+          this.$store.commit('toggleSidebar', val)
+        }
+      }
+    },
+    data () {
+      return {
+        items: [
+          {
+            title: 'Rules',
+            action: 'gavel',
+            items: [
+              { href:'/rules/general', title: 'General' },
+              { href:'/rules/spellcasting', title: 'Spellcasting' },
+              { href:'/rules/weapons', title: 'Weapons' },
+              { href:'/rules/armor', title: 'Armor' },
+              { href:'/rules/consumables', title: 'Consumables' },
+              { href: '/skills', title: 'Skills' },
+              { href: '/conditions', title: 'Conditions' },
+            ]
+          },
+          {
+            title: 'Player Options',
+            action: 'face',
+            items: [
+              { href: '/classes', title: 'Classes' },
+              { href: '/races', title: 'Races' },
+              { href: '/feats', title: 'Feats' },
+              { href: '/backgrounds', title: 'Backgrounds' },
+            ],
+          },
+          {
+            title: 'Equipment',
+            action: 'build',
+            items: [
+              {href: '/weapons', title: 'Weapons'},
+              {href: '/armor/mods', title: 'Armor Mods'},
+              {href: '/armor/sets', title: 'Pre-made Armor'},
+              {href: '/grenades', title: 'Grenades'},
+              {href: '/thermal-clips', title: 'Thermal Clips'},
+            ]
+          },
+          {
+            title: 'Spells & Powers',
+            action: 'whatshot',
+            href: '/spells',
+          },
+          {
+            title: 'Beastiary',
+            action: 'pets',
+            href: '/bestiary'
+          }
+        ]
+      }
+    }
+  };
+</script>

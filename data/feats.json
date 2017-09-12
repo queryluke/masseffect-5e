@@ -1,0 +1,868 @@
+{
+  "updated": "September 11, 2017 @ 11:04 PM",
+  "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTPhVRIodUwbDYFw8wJZtmb63tTjFJMxY-cN6P5nayPpJhNxAQFqIxeSLd5Tz75aOZ7CLuBkNsDrcs9/pubhtml",
+  "data": [
+    {
+      "name": "Actor",
+      "not_available": null,
+      "page_number": "165",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": "+1 Charisma, skilled at mimicry and dramatics",
+      "prerequisite": null,
+      "batarian": null,
+      "drell": "x",
+      "human": null,
+      "quarian": null,
+      "salarian": "x",
+      "turian": null,
+      "id": "actor",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Alert",
+      "not_available": null,
+      "page_number": "165",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": "+5 to Initiative, can't be surprised, no advantage for hidden attackers",
+      "prerequisite": null,
+      "batarian": null,
+      "drell": "x",
+      "human": "x",
+      "quarian": null,
+      "salarian": "x",
+      "turian": "x",
+      "id": "alert",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Athlete",
+      "not_available": null,
+      "page_number": "165",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": "+1 to Strength or Dexterity - you have undergone extensive physical training",
+      "prerequisite": null,
+      "batarian": null,
+      "drell": null,
+      "human": "x",
+      "quarian": null,
+      "salarian": "x",
+      "turian": "x",
+      "id": "athlete",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Biotic Slayer",
+      "not_available": null,
+      "page_number": "168",
+      "updated": "x",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Name Change for Mage Slayer"
+        }
+      ],
+      "notes": "You have practiced techniques useful in melee combat against biotic wielders",
+      "prerequisite": null,
+      "batarian": "x",
+      "drell": null,
+      "human": "x",
+      "quarian": "x",
+      "salarian": "x",
+      "turian": "x",
+      "id": "biotic-slayer",
+      "description_text_dump": "NameChangeforMageSlayer"
+    },
+    {
+      "name": "Charger",
+      "not_available": null,
+      "page_number": "165",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": "Make a melee attack or shove after the Dash action",
+      "prerequisite": null,
+      "batarian": "x",
+      "drell": null,
+      "human": "x",
+      "quarian": null,
+      "salarian": null,
+      "turian": "x",
+      "id": "charger",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Crossbow Expert",
+      "not_available": "x",
+      "page_number": "165",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": null,
+      "prerequisite": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "id": "crossbow-expert",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Defensive Duelist",
+      "not_available": "x",
+      "page_number": "165",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": null,
+      "prerequisite": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "id": "defensive-duelist",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Dual Wielder",
+      "not_available": "x",
+      "page_number": "165",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": null,
+      "prerequisite": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "id": "dual-wielder",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Dungeon Delver",
+      "not_available": "x",
+      "page_number": "166",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": null,
+      "prerequisite": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "id": "dungeon-delver",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Durable",
+      "not_available": null,
+      "page_number": "166",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": "+1 Constitution, minimum Con modifier x2 on spent Hit Dice",
+      "prerequisite": null,
+      "batarian": "x",
+      "drell": null,
+      "human": "x",
+      "quarian": null,
+      "salarian": null,
+      "turian": "x",
+      "id": "durable",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Elemental Adept",
+      "not_available": null,
+      "page_number": "166",
+      "updated": "x",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You options for damage types are: Fire, Cold, Lightning, Force, and Necrotic"
+        }
+      ],
+      "notes": "Spells you cast ignore resistance to damage of the chosen type",
+      "prerequisite": null,
+      "batarian": null,
+      "drell": null,
+      "human": "x",
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "id": "elemental-adept",
+      "description_text_dump": "YouoptionsfordamagetypesareFireColdLightningForceandNecrotic"
+    },
+    {
+      "name": "Grappler",
+      "not_available": null,
+      "page_number": "167",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": "Hold your own in close-quarters grappling",
+      "prerequisite": null,
+      "batarian": "x",
+      "drell": null,
+      "human": "x",
+      "quarian": null,
+      "salarian": null,
+      "turian": "x",
+      "id": "grappler",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Great Weapon Master",
+      "not_available": "x",
+      "page_number": "167",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": null,
+      "prerequisite": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "id": "great-weapon-master",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Grenadier",
+      "not_available": null,
+      "page_number": null,
+      "updated": null,
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": ""
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "+2 grenade capacity"
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Improvised Grenades. You can make grenades from scrap metal and scavenged materials. Acquire 1 frag grenade every long rest."
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "When you use a grenade, you may choose to make a ranged weapon attack on a creature instead of choosing a target location. Add your dexterity modifier and proficiency bonus to the attack roll."
+        },
+        {
+          "id": 5,
+          "type": "list",
+          "data": [
+            "On a hit, the grenade deals 1d4 + dexterity modifier bludgeoning damage to the target and it has disadvantage on the saving throw caused by the grenade. The grenade lands at the target's location.",
+            "On a miss, the grenade lands 2m beyond the target.",
+            "On a critical miss, roll 2d4. The first die represents the number of spaces away from the target in which the grenade lands. The second die represents the direction (1 = North, 2= East, 3 = South, 4 = West). E.g., 2 & 2, the grenade would land 2 spaces east of the target."
+          ]
+        },
+        {
+          "id": 6,
+          "type": "line",
+          "data": "Once the grenade's location is determined, it resolves normally."
+        }
+      ],
+      "notes": "Additional grenades. Can throw grenades for as an action for additional benefits.",
+      "prerequisite": null,
+      "batarian": "x",
+      "drell": "x",
+      "human": "x",
+      "quarian": "x",
+      "salarian": "x",
+      "turian": "x",
+      "id": "grenadier",
+      "description_text_dump": "2grenadecapacityImprovisedGrenadesYoucanmakegrenadesfromscrapmetalandscavengedmaterialsAcquire1fraggrenadeeverylongrestWhenyouuseagrenadeyoumaychoosetomakearangedweaponattackonacreatureinsteadofchoosingatargetlocationAddyourdexteritymodifierandproficiencybonustotheattackrolllistOnahitthegrenadedeals1d4dexteritymodifierbludgeoningdamagetothetargetandithasdisadvantageonthesavingthrowcausedbythegrenadeThegrenadelandsatthetargetslocationOnamissthegrenadelands2mbeyondthetargetOnacriticalmissroll2d4ThefirstdierepresentsthenumberofspacesawayfromthetargetinwhichthegrenadelandsTheseconddierepresentsthedirection1North2East3South4WestEg22thegrenadewouldland2spaceseastofthetargetlistOncethegrenadeslocationisdetermineditresolvesnormally"
+    },
+    {
+      "name": "Healer",
+      "not_available": "x",
+      "page_number": "167",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": null,
+      "prerequisite": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "id": "healer",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Heavily Armored",
+      "not_available": null,
+      "page_number": "167",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": "+1 Strength, proficiency with heavy armor",
+      "prerequisite": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "quarian": "x",
+      "salarian": null,
+      "turian": null,
+      "id": "heavily-armored",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Heavy Armor Master",
+      "not_available": null,
+      "page_number": "167",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": "+1 Strength, damage reduction from nonmagical weapons",
+      "prerequisite": null,
+      "batarian": "x",
+      "drell": "x",
+      "human": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": "x",
+      "id": "heavy-armor-master",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Inspiring Leader",
+      "not_available": null,
+      "page_number": "167",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": "Inspire your companions to grant temporary hit points",
+      "prerequisite": null,
+      "batarian": null,
+      "drell": "x",
+      "human": null,
+      "quarian": "x",
+      "salarian": "x",
+      "turian": "x",
+      "id": "inspiring-leader",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Keen Mind",
+      "not_available": null,
+      "page_number": "167",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": "+1 Intelligence, track time, direction, and detail with uncanny precision",
+      "prerequisite": null,
+      "batarian": null,
+      "drell": "x",
+      "human": null,
+      "quarian": "x",
+      "salarian": "x",
+      "turian": "x",
+      "id": "keen-mind",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Lightly Armored",
+      "not_available": null,
+      "page_number": "167",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": "+1 Strength or Dexterity, proficiency with light armor",
+      "prerequisite": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "id": "lightly-armored",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Linguist",
+      "not_available": null,
+      "page_number": "167",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": "+1 Intelligence, additional languages, create written ciphers",
+      "prerequisite": null,
+      "batarian": null,
+      "drell": "x",
+      "human": "x",
+      "quarian": "x",
+      "salarian": "x",
+      "turian": null,
+      "id": "linguist",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Lucky",
+      "not_available": null,
+      "page_number": "167",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": "You have inexplicable luck",
+      "prerequisite": null,
+      "batarian": null,
+      "drell": null,
+      "human": "x",
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "id": "lucky",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Magic Initiate",
+      "not_available": "x",
+      "page_number": "168",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": null,
+      "prerequisite": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "id": "magic-initiate",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Martial Adept",
+      "not_available": "x",
+      "page_number": "168",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": null,
+      "prerequisite": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "id": "martial-adept",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Medium Armor Master",
+      "not_available": null,
+      "page_number": "168",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": "You have practiced moving in medium armor",
+      "prerequisite": null,
+      "batarian": null,
+      "drell": null,
+      "human": "x",
+      "quarian": "x",
+      "salarian": null,
+      "turian": "x",
+      "id": "medium-armor-master",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Mobile",
+      "not_available": null,
+      "page_number": "168",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": "You are exceptionally speedy and agile",
+      "prerequisite": null,
+      "batarian": null,
+      "drell": "x",
+      "human": "x",
+      "quarian": "x",
+      "salarian": "x",
+      "turian": "x",
+      "id": "mobile",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Moderately Armored",
+      "not_available": null,
+      "page_number": "168",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": "+1 Strength or Dexterity, proficiency with medium armor and shields",
+      "prerequisite": null,
+      "batarian": null,
+      "drell": "x",
+      "human": null,
+      "quarian": null,
+      "salarian": "x",
+      "turian": null,
+      "id": "moderately-armored",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Mounted Combat",
+      "not_available": "x",
+      "page_number": "168",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": null,
+      "prerequisite": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "id": "mounted-combat",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Observant",
+      "not_available": null,
+      "page_number": "168",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": "+1 Wisdom, quick to notice details of your environment",
+      "prerequisite": null,
+      "batarian": null,
+      "drell": "x",
+      "human": "x",
+      "quarian": "x",
+      "salarian": "x",
+      "turian": "x",
+      "id": "observant",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Polearm Master",
+      "not_available": "x",
+      "page_number": "168",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": null,
+      "prerequisite": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "id": "polearm-master",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Resilient",
+      "not_available": null,
+      "page_number": "168",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": "+1 and proficiency with saving throws to a chosen ability score",
+      "prerequisite": null,
+      "batarian": "x",
+      "drell": null,
+      "human": "x",
+      "quarian": null,
+      "salarian": null,
+      "turian": "x",
+      "id": "resilient",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Ritual Caster",
+      "not_available": "x",
+      "page_number": "169",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": null,
+      "prerequisite": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "id": "ritual-caster",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Savage Attacker",
+      "not_available": null,
+      "page_number": "169",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": "Reroll damage dice for melee weapon attacks",
+      "prerequisite": null,
+      "batarian": "x",
+      "drell": null,
+      "human": "x",
+      "quarian": null,
+      "salarian": null,
+      "turian": "x",
+      "id": "savage-attacker",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Sentinel",
+      "not_available": null,
+      "page_number": "169",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": "Take advantage of every drop in any enemy's guard",
+      "prerequisite": null,
+      "batarian": "x",
+      "drell": null,
+      "human": "x",
+      "quarian": null,
+      "salarian": null,
+      "turian": "x",
+      "id": "sentinel",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Sharpshooter",
+      "not_available": null,
+      "page_number": "170",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": "Ranged weapons mastery - make shots that others find impossible",
+      "prerequisite": null,
+      "batarian": null,
+      "drell": null,
+      "human": "x",
+      "quarian": "x",
+      "salarian": "x",
+      "turian": "x",
+      "id": "sharpshooter",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Shield Master",
+      "not_available": "x",
+      "page_number": "170",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": null,
+      "prerequisite": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "id": "shield-master",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Skilled",
+      "not_available": null,
+      "page_number": "170",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": "Gain proficiency in 3 additional skills",
+      "prerequisite": null,
+      "batarian": null,
+      "drell": null,
+      "human": "x",
+      "quarian": "x",
+      "salarian": "x",
+      "turian": "x",
+      "id": "skilled",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Skulker",
+      "not_available": null,
+      "page_number": "170",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": "You are expert at slinking through shadows",
+      "prerequisite": null,
+      "batarian": null,
+      "drell": "x",
+      "human": "x",
+      "quarian": null,
+      "salarian": "x",
+      "turian": null,
+      "id": "skulker",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Spell Sniper",
+      "not_available": "x",
+      "page_number": "170",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": null,
+      "prerequisite": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "id": "spell-sniper",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Tavern Brawler",
+      "not_available": null,
+      "page_number": "170",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": "+1 Strength or Constitution, improved improvised weapons",
+      "prerequisite": null,
+      "batarian": "x",
+      "drell": null,
+      "human": "x",
+      "quarian": null,
+      "salarian": null,
+      "turian": "x",
+      "id": "tavern-brawler",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Tough",
+      "not_available": null,
+      "page_number": "170",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": "Gain +2 hit points per character level",
+      "prerequisite": null,
+      "batarian": "x",
+      "drell": null,
+      "human": "x",
+      "quarian": null,
+      "salarian": null,
+      "turian": "x",
+      "id": "tough",
+      "description_text_dump": ""
+    },
+    {
+      "name": "War Caster",
+      "not_available": null,
+      "page_number": "170",
+      "updated": null,
+      "description": [
+
+      ],
+      "notes": "You have practiced casting spells in the midst of combat",
+      "prerequisite": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "id": "war-caster",
+      "description_text_dump": ""
+    },
+    {
+      "name": "Weapon Master",
+      "not_available": null,
+      "page_number": "170",
+      "updated": "x",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Instead of gain proficiency with 4 weapons, you gain proficiency with 2 ranged weapons"
+        }
+      ],
+      "notes": "+1 Strength or Dexterity, 2 additional ranged weapon proficiencies",
+      "prerequisite": null,
+      "batarian": "x",
+      "drell": null,
+      "human": "x",
+      "quarian": null,
+      "salarian": null,
+      "turian": "x",
+      "id": "weapon-master",
+      "description_text_dump": "Insteadofgainproficiencywith4weaponsyougainproficiencywith2rangedweapons"
+    }
+  ]
+}

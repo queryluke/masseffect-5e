@@ -1,0 +1,46 @@
+---
+layout: print
+title: Cards for Print
+---
+
+{% assign features = site.data.v1.features | sort: 'type' %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 mt-3" id="print-grid">
+            {% for feature in features %}
+            {% if feature.type != 'feature' and feature.type != null %}
+            <section class="{{feature.type}}">
+                <h1>{{ feature.name }} {% if feature.level %} &mdash; Level: {{ feature.level }} {% endif %}</h1>
+                <h2 class="spell-meta">
+                    {% if feature.mechanic-type != "" and feature.mechanic-type != "-" %}{{feature.mechanic-type}}{% endif %}
+                    {% if feature.dmg-type != "" and feature.dmg-type != null %}&bull; {{feature.dmg-type}} {% endif %}
+                </h2>
+                {% if feature.casting-time != "" and feature.casting-time != null %} <h3>Casting Time: {{feature.casting-time}}</h3> {% endif %}
+                {% if feature.duration != "" and feature.duration != null %} <h3>Duration: {{feature.duration}}</h3> {% endif %}
+                {% if feature.range != "" and feature.range != null %} <h3>Range: {{feature.range}}</h3> {% endif %}
+                {% if feature.detonates != "" and feature.detonates != null %} <h3>Detonates: {{feature.detonates}}</h3> {% endif %}
+                {% if feature.primes != "" and feature.primes != null %} <h3>Primes: {{feature.primes}}</h3> {% endif %}
+
+                <p>{{feature.mechanic}}</p>
+
+                {% if feature.max-tp != "" and feature.max-tp != null %} <h3>Max TP: {{feature.max-tp}}</h3> {% endif %}
+
+                {% if feature.adv-option-1 %}
+                 <p><strong>Adv 1: </strong>{{feature.adv-option-1}}</p>
+                {% endif %}
+
+                {% if feature.adv-option-2 %}
+                <p><strong>Adv 2: </strong>{{feature.adv-option-2}}</p>
+                {% endif %}
+
+                {% if feature.higher-level != "" and feature.higher-level != null %}
+                <p><strong>Higher Levels: </strong>{{feature.higher-level}}</p>
+                {% endif %}
+
+            </section>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

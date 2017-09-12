@@ -3,8 +3,10 @@
 require 'json'
 require 'csv'
 require 'net/http'
+require 'date'
 Encoding.default_external = Encoding::UTF_8
 
+imports = ARGV
 
 def set_features(string)
   features = []
@@ -67,34 +69,11 @@ def config_races(model)
 end
 
 def insert_dd(string, die)
-  if string
+  if string && die
     string.gsub(/\[dd\]/,die.to_s)
-  end
-end
-
-def insert_higher_level_text(type, die, tp, level)
-  hlt = {
-    'cantrip' => 'The spell\'s damage increases by 1[dd] when you reach 5th level (2[dd]), 11th level (3[dd]), and 17th level (4[dd]).',
-    'spell' => 'When you cast this spell using a spell slot of [spellLevelp1] or higher, the damage increases by 1[dd] for each slot level above [spellLevel]',
-    'tech' => 'You can spend up to [maxTP] TP.',
-  }
-  case type
-  when 'spell'
-    if level.to_i > 0
-      text = insert_dd(hlt['spell'], die)
-      plus1 = level.to_i + 1
-      text = text.gsub(/\[spellLevelp1\]/, plus1.to_s).gsub(/\[spellLevel\]/, level)
-    else
-      text = insert_dd(hlt['cantrip'], die)
-    end
-  when 'tech'
-    if tp
-      text = hlt['tech'].gsub(/\[maxTP\]/, tp)
-    end
   else
-    text = ''
+    string
   end
-  text
 end
 
 def create_class_list(model)
@@ -111,71 +90,184 @@ def create_class_list(model)
   output.join(', ')
 end
 
-def config_abilities(model)
-  no_higher_lvl = ['Barrier', 'Singularity', 'Phase Disruptor', 'Stasis', 'Pull']
-  model['mechanic'] = insert_dd(model['mechanic'], model['die-type'])
-  model['adv-option-1'] = insert_dd(model['adv-option-1'], model['die-type'])
-  model['adv-option-2'] = insert_dd(model['adv-option-2'], model['die-type'])
-  model['higher-level'] = no_higher_lvl.include?(model['name']) ? nil : insert_higher_level_text(model['type'], model['die-type'], model['max-tp'], model['level'])
-  model['class-list'] = create_class_list(model)
+def config_spells(model)
+  model['mechanic'] = insert_dd(model['mechanic'], model['die_type'])
+  model['attack_type'] = model['attack_type'] ? model['attack_type'].split(',') : []
+  model['effect'] = model['effect'] ? model['effect'].split(',') : []
+  model['damage_type'] = model['damage_type'] ? model['damage_type'].split(',') : []
+  model['adv_options'] = []
+  model['adv_options'] << insert_dd(model['adv_option_1'], model['die_type'])
+  model['adv_options'] << insert_dd(model['adv_option_2'], model['die_type'])
+  model['class_list'] = create_class_list(model)
   model
+end
+
+def generate_renderable(text)
+  id = 0
+  list_regex = %r{{!list}(?<data>.*?){list}}m
+  table_regex = %r{{!table}(?<data>.*?){table}}m
+
+  if text.nil?
+    return []
+  end
+  text.split('--').map do |e|
+    if table_regex =~ e
+      type = 'table'
+      match = table_regex.match(e)[:data]
+      data = {headers: [], items: []}
+      row = 0
+      match.split('>').map do |r|
+        if row == 0
+          data[:headers] = r.strip.split('|').map { |i| i.strip}
+          row += 1
+        else
+          data[:items] << r.strip.split('|').map { |i| i.strip}
+          row += 1
+        end
+      end
+    elsif list_regex =~ e
+      type = 'list'
+      data = list_regex.match(e)[:data].split('*').map do |i|
+        unless i.strip.empty?
+          i.strip
+        end
+      end.compact
+    else
+      type = 'line'
+      data = e.strip
+    end
+    id += 1
+    {id: id, type: type, data: data}
+  end
 end
 
 def generate_model(headers)
   model = {}
   headers.each do |h|
-    snake = h.gsub(' ','-').downcase
+    snake = h.gsub(/\W/,'_').downcase
     model[snake] = ''
   end
   model
 end
 
+def ordinalize(int)
+  case(int)
+    when 1
+      return '1st'
+    when 2
+      return '2nd'
+    when 3
+      return '3rd'
+    else
+      return "#{int}th"
+  end
+end
+
+class String
+  def is_i?
+    !!(self =~ /\A[-+]?[0-9]+\z/)
+  end
+end
+
 def generate_config_file(page)
+  puts "working on #{page[:type]}"
+
   uri = URI(page[:url])
   resp = Net::HTTP.get_response(uri)
 
-  csv = CSV.parse(resp.body)
+  body = resp.body.force_encoding 'utf-8'
 
+  csv = CSV.parse(body)
+
+  headers = csv[0]
   model = generate_model(csv[0])
   csv.delete_at(0)
   collection = []
+  date = DateTime.now
+  data = {
+      updated: date.strftime("%B %e, %Y @ %l:%M %p"),
+      source: page[:url].sub(%r(/pub\?.*),'/pubhtml'),
+      data: collection
+  }
+  if page[:type] =~ %r{_progression}
+    data[:headers] = headers.map do |h|
+      if h.is_i?
+        { display: ordinalize(h.to_i), spell_header: true }
+      else
+        { display: h, spell_header: false }
+      end
+    end
+    subclass_increment = 1
+  end
 
   csv.each do |line|
     unless line[0].nil?
-      interator = 0
+      iterator = 0
       dup_model = model.dup
       dup_model.each_key do |key|
-        dup_model[key] = line[interator]
-        interator = interator + 1
+        dup_model[key] = line[iterator]
+        iterator += 1
       end
 
+      if page[:id] && dup_model.has_key?(page[:id])
+        dup_model[:id] = dup_model[page[:id]].downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+      end
+
+      if page[:type] =~ %r{_progression}
+        dup_model['features'] = dup_model['features'].split(',').map do |l|
+          if l =~ %r{\(adv\)$}
+            new_l = l.gsub(%r{\(adv\)$},'')
+            key = new_l.downcase.strip.gsub(' ', '-').gsub(/[^a-zA-z\-]/, '')
+            display = new_l.strip + ' (select advancement)'
+          else
+            key = l.downcase.strip.gsub(' ', '-').gsub(/[^a-zA-z\-]/, '')
+            display = l.strip
+          end
+          if key == 'subclass-feature'
+            subclass_progression = subclass_increment
+            subclass_increment = subclass_increment + 1
+          end
+          {
+            key: key,
+            display: display,
+            subclass_progression: subclass_progression
+          }
+
+        end
+        subclass_progression =
+        row_data = dup_model.map do |k,v|
+          { key: k, value: v }
+        end
+        dup_model = { level: dup_model['level'], row_data: row_data }
+      end
       case page[:type]
-      when 'races'
-        race = dup_model['race'].gsub(' ','-').downcase
-        directory = "races/#{race}"
-        Dir.mkdir(directory) unless File.exists?(directory)
-        File.open("#{directory}/index.html", 'w') do |f|
-          f.write("---\nlayout: race\ntitle: Races - #{dup_model['race']}\nrace: #{dup_model['race']}\n---")
-        end
-        dup_model = config_races(dup_model)
-      when 'classes'
-        c = dup_model['class'].gsub(' ','-').downcase
-        directory = "classes/#{c}"
-        Dir.mkdir(directory) unless File.exists?(directory)
-        File.open("#{directory}/index.html", 'w') do |f|
-          f.write("---\nlayout: class\ntitle: Classes - #{dup_model['class']}\nclass: #{dup_model['class']}\n---")
-        end
-      when 'subclasses'
-        dup_model['2'] = set_features(dup_model['2'])
-        dup_model['6'] = set_features(dup_model['6'])
-        dup_model['10'] = set_features(dup_model['10'])
-        dup_model['14'] = set_features(dup_model['14'])
-        dup_model['18'] = set_features(dup_model['18'])
-      when 'features'
-        dup_model = config_abilities(dup_model)
-      else
-        if dup_model.has_key?('features')
-          dup_model['features'] = set_features(dup_model['features'])
+        when 'spells'
+          dup_model = config_spells(dup_model)
+        when 'grenades_mines'
+          dup_model['desc'] = dup_model['desc'].gsub(/\[range\]/,dup_model['range'])
+          dup_model['desc'] = dup_model['desc'].gsub(/\[blast\]/,dup_model['blast'])
+          if dup_model['damage_amount'] && dup_model['dd'] && dup_model['damage_type']
+            damage_string =  "#{dup_model['damage_amount']}#{dup_model['dd']} #{dup_model['damage_type']}"
+            dup_model['desc'] = dup_model['desc'].gsub(/\[damage_string\]/,damage_string)
+          end
+        when 'subclasses'
+          dup_model.each_key do |key|
+            unless key == 'name' || key == 'description' || key == 'class'
+              if dup_model[key]
+                dup_model[key] = dup_model[key].split(',').map do |l|
+                  { key: l.downcase.strip.gsub(' ', '-').gsub(/[^a-zA-z\-]/, ''), value: l }
+                end
+              end
+            end
+          end
+        else
+          dup_model = dup_model
+      end
+
+      page[:renderables].each do |renderable|
+        if dup_model.has_key?(renderable)
+          dup_model["#{renderable}_text_dump"] = dup_model[renderable].nil? ? '' : dup_model[renderable].gsub(/\W/,'')
+          dup_model[renderable] = generate_renderable(dup_model[renderable])
         end
       end
 
@@ -183,69 +275,127 @@ def generate_config_file(page)
     end
   end
 
+  data[:data] = collection
 
-  puts "working on #{page[:type]}"
-  File.open("data/#{page[:type]}.json", 'wb') {|f| f.write JSON.pretty_generate(collection) }
+  File.open("data/#{page[:type]}.json", 'wb') {|f| f.write JSON.pretty_generate(data) }
 
 end
 
-pages = [
+[
   {
-    :type => 'races',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=0&single=true&output=csv'
+    type: 'spells',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSs9dkG94f5fPCOJ38g-xCUCwnYynzbiFdggQ1KqM1vMscINwcn2_OGPqGhvxOrYl18oK7dO2notL_y/pub?gid=0&single=true&output=csv',
+    renderables: ['mechanic'],
+    id: 'name'
   },
   {
-    :type => 'classes',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=781894233&single=true&output=csv'
+    type: 'skills',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRFYAlUo84hir8VGSHwP4pKqnTcih_5UD0Uqtgi9w-QHEvrSxLthv1xXG0jb_tpbBRNZXE1Dv0nF0_q/pub?gid=0&single=true&output=csv',
+    renderables: [],
+    id: 'name'
   },
   {
-    :type => 'subclasses',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=1874613976&single=true&output=csv'
+    type: 'feats',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTPhVRIodUwbDYFw8wJZtmb63tTjFJMxY-cN6P5nayPpJhNxAQFqIxeSLd5Tz75aOZ7CLuBkNsDrcs9/pub?gid=0&single=true&output=csv',
+    id: 'name',
+    renderables: ['description']
   },
   {
-    :type => 'features',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=686320782&single=true&output=csv',
+    type: 'class_features',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pub?gid=0&single=true&output=csv',
+    renderables: %w(mechanic),
+    id: 'name'
   },
   {
-    :type => 'weapons',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=1499213134&single=true&output=csv',
+    type: 'races',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQI4F-wI2gwN395GApB347yPb1PixjOtOqZ0qoBYw7d57MPETHS40ZjIy1-DIfZf06PUwrspMiuAMlk/pub?gid=0&single=true&output=csv',
+    renderables: ['skills'],
+    id: 'name'
   },
   {
-    :type => 'heavy_weapons',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=1966803402&single=true&output=csv',
+    type: 'racial_traits',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRETKGL62kEZPA69PhA3AGMiVeHOWBRkTMDL3f_K-oajryEjwdq7fRAj-qfIusPsLMiIqmB12D4Zun8/pub?gid=0&single=true&output=csv',
+    renderables: ['description'],
+    id: 'name'
   },
   {
-    :type => 'adept',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=1555546585&single=true&output=csv'
+    type: 'thermal_clips',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQmZ3vjTr5MljolyW6N_pnqxBA6Gj8lEw4VihCRj0jROiCDJdWOg5udY0_XIXnbKM8XvamqGawcHKBX/pub?gid=0&single=true&output=csv',
+    renderables: [],
+    id: 'name'
   },
   {
-    :type => 'engineer',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=1365181965&single=true&output=csv'
+    type: 'grenades_mines',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRBAZH9BXc9xIj62i-StAKv08-iNSQSUyiWjz7TrVqcjEVe-uDaFIy9a4zRxYchDikCsskcNf-vexsG/pub?gid=0&single=true&output=csv',
+    renderables: ['desc'],
+    id: 'name'
   },
   {
-    :type => 'infiltrator',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=378282529&single=true&output=csv'
+    type: 'weapons',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQqEWxn624K8fJS7V1EQH3RZgRApTepIx91C2BIGEDzQTvwtvdTaHduzujhVEmPknjifAU7FFCcjJcv/pub?gid=0&single=true&output=csv',
+    renderables: ['notes'],
+    id: 'name'
   },
   {
-    :type => 'soldier',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=1216928408&single=true&output=csv'
+    type: 'backgrounds',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQSUXve_hXfyu3glsSiuz-Ju2YUUToorjPPjpfSPiaHaA6yZTKLGMehtmvKtfQ3lSDErrGXgsQp1tFT/pub?gid=0&single=true&output=csv',
+    renderables: %w(feature_description description),
+    id: 'name'
   },
   {
-    :type => 'vanguard',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=854116423&single=true&output=csv'
+    type: 'armor_mods',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRIPzbOBXOdWbaY779un1EV3HyacCV3fe15kHW4ABjMV0yHi3GZHVqnbiOVSQ_Dgh1whimOITGOXHkn/pub?output=csv',
+    renderables: [],
+    id: 'name'
   },
   {
-    :type => 'sentinel',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=1711909552&single=true&output=csv'
+    type: 'classes',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=0&single=true&output=csv',
+    renderables: [],
+    id: 'name'
   },
   {
-    :type => 'skills',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=1346893981&single=true&output=csv'
+    type: 'engineer_progression',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=859616161&single=true&output=csv',
+    renderables: [],
   },
   {
-    :type => 'conditions',
-    :url => 'https://docs.google.com/spreadsheets/d/1RilxN9RRAuSwZoeuC5YN5xwBvZNk7BuhASQKof44bBo/pub?gid=1293441189&single=true&output=csv'
+    type: 'sentinel_progression',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=1389384549&single=true&output=csv',
+    renderables: [],
+  },
+  {
+    type: 'infiltrator_progression',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=782961022&single=true&output=csv',
+    renderables: [],
+  },
+  {
+    type: 'vanguard_progression',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=1618519913&single=true&output=csv',
+    renderables: [],
+  },
+  {
+    type: 'soldier_progression',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=2098633418&single=true&output=csv',
+    renderables: [],
+  },
+  {
+    type: 'adept_progression',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=1256776098&single=true&output=csv',
+    renderables: [],
+  },
+  {
+    type: 'subclasses',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=596741267&single=true&output=csv',
+    renderables: [],
+    id: 'name'
   }
 ].each do |p|
-  generate_config_file(p)
+  if imports.length > 0
+    if imports.include?(p[:type])
+      generate_config_file(p)
+    end
+  else
+    generate_config_file(p)
+  end
 end

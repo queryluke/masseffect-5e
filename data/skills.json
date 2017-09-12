@@ -1,87 +1,204 @@
-[
-  {
-    "name": "Acrobatics",
-    "link": "Dexterity",
-    "description": "Your Dexterity (Acrobatics) check covers your attempt to stay on your feet in a tricky situation, such as when you're trying to run across a sheet of ice, balance on a tightrope, or stay upright on a rocking spaceship's deck. The GM might also call for a Dexterity (Acrobatics) check to see if you can perform acrobatic stunts, including dives, rolls, somersaults, and flips."
-  },
-  {
-    "name": "Athletics",
-    "link": "Strength",
-    "description": "Your Strength (Athletics) check covers difficult situations you encounter while climbing, Jumping, or swimming."
-  },
-  {
-    "name": "Deception",
-    "link": "Charisma",
-    "description": "Your Charisma (Deception) check determines whether you can convincingly hide the truth, either verbally or through your actions. This deception can encompass everything from misleading others through ambiguity to telling outright lies. Typical situations include trying to fast-talk a guard, con a merchant, earn money through gambling, pass yourself off in a disguise, dull someone's suspicions with false assurances, or maintain a straight face while telling a blatant lie."
-  },
-  {
-    "name": "Hacking",
-    "link": "Intelligence",
-    "description": "Your Hacking (Intelligence) check covers attempts to hack into computer systems, such as when you're trying to open locked doors and containers, turn off cameras, override controls, etc."
-  },
-  {
-    "name": "History",
-    "link": "Intelligence",
-    "description": "Your Intelligence (History) check measures your ability to recall lore about historical events, legendary people, ancient races, past disputes, recent wars, and lost civilizations."
-  },
-  {
-    "name": "Insight",
-    "link": "Wisdom",
-    "description": "Your Wisdom (Insight) check decides whether you can determine the true intentions of a creature, such as when searching out a lie or predicting someone's next move. Doing so involves gleaning clues from body Language, Speech habits, and changes in mannerisms."
-  },
-  {
-    "name": "Intimidation",
-    "link": "Charisma",
-    "description": "When you attempt to influence someone through overt threats, hostile actions, and physical violence, the GM might ask you to make a Charisma (Intimidation) check. Examples include trying to pry information out of a prisoner, convincing street thugs to back down from a confrontation, or using the edge of a broken bottle to convince a sneering vizier to reconsider a decision."
-  },
-  {
-    "name": "Investigation",
-    "link": "Intelligence",
-    "description": "When you look around for clues and make deductions based on those clues, you make an Intelligence (Investigation) check. You might deduce the location of a hidden object, discern from the appearance of a wound what kind of weapon dealt it, or determine the weakest point in a tunnel that could cause it to collapse. Poring through ancient scrolls in Search of a hidden fragment of knowledge might also call for an Intelligence (Investigation) check."
-  },
-  {
-    "name": "Medicine",
-    "link": "Wisdom",
-    "description": "A Wisdom (Medicine) check lets you try to stabilize a dying companion or diagnose an illness."
-  },
-  {
-    "name": "Nature",
-    "link": "Intelligence",
-    "description": "Your Intelligence (Nature) check measures your ability to recall or discern information about flora and fauna, the weather, the environment. It can help you identify alien biology and can give you an advantage when exploring unknown worlds."
-  },
-  {
-    "name": "Perception",
-    "link": "Wisdom",
-    "description": "Your Wisdom (Perception) check lets you spot, hear, or otherwise detect the presence of something. It measures your general awareness of your surroundings and the keenness of your senses. For example, you might try to hear a conversation through a closed door, eavesdrop under an open window, or hear Monsters moving stealthily in the forest. Or you might try to spot things that are obscured or easy to miss, whether they are orcs lying in ambush on a road, thugs hiding in the shadows of an alley, or candlelight under a closed secret door."
-  },
-  {
-    "name": "Performance",
-    "link": "Charisma",
-    "description": "Your Charisma (Performance) check determines how well you can delight an audience with music, dance, acting, storytelling, or some other form of entertainment."
-  },
-  {
-    "name": "Persuasion",
-    "link": "Charisma",
-    "description": "When you attempt to influence someone or a group of people with tact, social graces, or good nature, the GM might ask you to make a Charisma (Persuasion) check. Typically, you use persuasion when acting in good faith, to foster friendships, make cordial requests, or exhibit proper etiquette. Examples of persuading others include convincing a chamberlain to let your party see the king, negotiating peace between warring tribes, or inspiring a crowd of townsfolk."
-  },
-  {
-    "name": "Piloting",
-    "link": "Intelligence",
-    "description": "If you're driving a vehicle you're familiar with, the GM might ask you to make an Intelligence (Piloting) check to make a difficult maneuver or avoid heavy weapon fire. Or you might make an Intelligence (Piloting) check to see if you can use an new or alien vehicle."
-  },
-  {
-    "name": "Sleight of Hand",
-    "link": "Dexterity",
-    "description": "Whenever you attempt an act of legerdemain or manual trickery, such as planting something on someone else or concealing an object on your person, make a Dexterity (Sleight of Hand) check. The GM might also call for a Dexterity (Sleight of Hand) check to determine whether you can lift a coin purse off another person or slip something out of another person's pocket."
-  },
-  {
-    "name": "Stealth",
-    "link": "Dexterity",
-    "description": "Make a Dexterity (Stealth) check when you attempt to conceal yourself from enemies, slink past guards, slip away without being noticed, or sneak up on someone without being seen or heard."
-  },
-  {
-    "name": "Survival",
-    "link": "Wisdom",
-    "description": "The GM might ask you to make a Wisdom (Survival) check to survive in uncivilized alien words, especially harsh environments like tundra, deserts, or jungles. The check might help you navigate a blizzard, find food in a wasteland, or avoid getting eaten by a Thresher Maw."
-  }
-]
+{
+  "updated": "September 11, 2017 @ 11:04 PM",
+  "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRFYAlUo84hir8VGSHwP4pKqnTcih_5UD0Uqtgi9w-QHEvrSxLthv1xXG0jb_tpbBRNZXE1Dv0nF0_q/pubhtml",
+  "data": [
+    {
+      "name": "Acrobatics",
+      "new": null,
+      "removed": null,
+      "micon": "gesture",
+      "link": "Dexterity",
+      "description": "Your Dexterity (Acrobatics) check covers your attempt to stay on your feet in a tricky situation, such as when you're trying to run across a sheet of ice, balance on a tightrope, or stay upright on a rocking spaceship's deck. The GM might also call for a Dexterity (Acrobatics) check to see if you can perform acrobatic stunts, including dives, rolls, somersaults, and flips.",
+      "id": "acrobatics"
+    },
+    {
+      "name": "Arcana",
+      "new": null,
+      "removed": "x",
+      "micon": null,
+      "link": null,
+      "description": null,
+      "id": "arcana"
+    },
+    {
+      "name": "Athletics",
+      "new": null,
+      "removed": null,
+      "micon": "directions_run",
+      "link": "Strength",
+      "description": "Your Strength (Athletics) check covers difficult situations you encounter while climbing, Jumping, or swimming.",
+      "id": "athletics"
+    },
+    {
+      "name": "Animal Handling",
+      "new": null,
+      "removed": "x",
+      "micon": null,
+      "link": null,
+      "description": null,
+      "id": "animal-handling"
+    },
+    {
+      "name": "Deception",
+      "new": null,
+      "removed": null,
+      "micon": "texture",
+      "link": "Charisma",
+      "description": "Your Charisma (Deception) check determines whether you can convincingly hide the truth, either verbally or through your actions. This deception can encompass everything from misleading others through ambiguity to telling outright lies. Typical situations include trying to fast-talk a guard, con a merchant, earn money through gambling, pass yourself off in a disguise, dull someone's suspicions with false assurances, or maintain a straight face while telling a blatant lie.",
+      "id": "deception"
+    },
+    {
+      "name": "Engineering",
+      "new": "x",
+      "removed": null,
+      "micon": "build",
+      "link": "Intelligence",
+      "description": "Your Intelligence (Engineering) check covers your knowledge of machines and mechanical devices. It most cases it determines your ability to repair devices. But you might also use it to spot weaknesses in mechanical defense systems, spot potential vehicle failures before they happen, or find expensive parts in space salvage.",
+      "id": "engineering"
+    },
+    {
+      "name": "Hacking",
+      "new": "x",
+      "removed": null,
+      "micon": "memory",
+      "link": "Intelligence",
+      "description": "Your Hacking (Intelligence) check covers attempts to hack into computer systems, such as when you're trying to open locked doors and containers, turn off cameras, override controls, etc.",
+      "id": "hacking"
+    },
+    {
+      "name": "History",
+      "new": null,
+      "removed": null,
+      "micon": "school",
+      "link": "Intelligence",
+      "description": "Your Intelligence (History) check measures your ability to recall lore about historical events, legendary people, ancient races, past disputes, recent wars, and lost civilizations.",
+      "id": "history"
+    },
+    {
+      "name": "Insight",
+      "new": null,
+      "removed": null,
+      "micon": "visibility",
+      "link": "Wisdom",
+      "description": "Your Wisdom (Insight) check decides whether you can determine the true intentions of a creature, such as when searching out a lie or predicting someone's next move. Doing so involves gleaning clues from body Language, Speech habits, and changes in mannerisms.",
+      "id": "insight"
+    },
+    {
+      "name": "Intimidation",
+      "new": null,
+      "removed": null,
+      "micon": "mood_bad",
+      "link": "Charisma",
+      "description": "When you attempt to influence someone through overt threats, hostile actions, and physical violence, the GM might ask you to make a Charisma (Intimidation) check. Examples include trying to pry information out of a prisoner, convincing street thugs to back down from a confrontation, or using the edge of a broken bottle to convince a sneering vizier to reconsider a decision.",
+      "id": "intimidation"
+    },
+    {
+      "name": "Investigation",
+      "new": null,
+      "removed": null,
+      "micon": "search",
+      "link": "Intelligence",
+      "description": "When you look around for clues and make deductions based on those clues, you make an Intelligence (Investigation) check. You might deduce the location of a hidden object, discern from the appearance of a wound what kind of weapon dealt it, or determine the weakest point in a tunnel that could cause it to collapse. Poring through ancient scrolls in Search of a hidden fragment of knowledge might also call for an Intelligence (Investigation) check.",
+      "id": "investigation"
+    },
+    {
+      "name": "Medicine",
+      "new": null,
+      "removed": null,
+      "micon": "healing",
+      "link": "Wisdom",
+      "description": "A Wisdom (Medicine) check lets you try to stabilize a dying companion or diagnose an illness.",
+      "id": "medicine"
+    },
+    {
+      "name": "Nature",
+      "new": null,
+      "removed": null,
+      "micon": "local_florist",
+      "link": "Intelligence",
+      "description": "Your Intelligence (Nature) check measures your ability to recall or discern information about flora and fauna, the weather, the environment, geological structures and patterns, etc. It can help you identify alien biology and can give you an advantage when exploring unknown worlds.",
+      "id": "nature"
+    },
+    {
+      "name": "Perception",
+      "new": null,
+      "removed": null,
+      "micon": "hearing",
+      "link": "Wisdom",
+      "description": "Your Wisdom (Perception) check lets you spot, hear, or otherwise detect the presence of something. It measures your general awareness of your surroundings and the keenness of your senses. For example, you might try to hear a conversation through a closed door, eavesdrop under an open window, or hear Monsters moving stealthily in the forest. Or you might try to spot things that are obscured or easy to miss, whether they are orcs lying in ambush on a road, thugs hiding in the shadows of an alley, or candlelight under a closed secret door.",
+      "id": "perception"
+    },
+    {
+      "name": "Performance",
+      "new": null,
+      "removed": null,
+      "micon": "music_note",
+      "link": "Charisma",
+      "description": "Your Charisma (Performance) check determines how well you can delight an audience with music, dance, acting, storytelling, or some other form of entertainment.",
+      "id": "performance"
+    },
+    {
+      "name": "Persuasion",
+      "new": null,
+      "removed": null,
+      "micon": "record_voice_over",
+      "link": "Charisma",
+      "description": "When you attempt to influence someone or a group of people with tact, social graces, or good nature, the GM might ask you to make a Charisma (Persuasion) check. Typically, you use persuasion when acting in good faith, to foster friendships, make cordial requests, or exhibit proper etiquette. Examples of persuading others include convincing a chamberlain to let your party see the king, negotiating peace between warring tribes, or inspiring a crowd of townsfolk.",
+      "id": "persuasion"
+    },
+    {
+      "name": "Piloting",
+      "new": "x",
+      "removed": null,
+      "micon": "flight_takeoff",
+      "link": "Intelligence",
+      "description": "If you're driving a vehicle you're familiar with, the GM might ask you to make an Intelligence (Piloting) check to make a difficult maneuver or avoid heavy weapon fire. Or you might make an Intelligence (Piloting) check to see if you can use an new or alien vehicle.",
+      "id": "piloting"
+    },
+    {
+      "name": "Religion",
+      "new": null,
+      "removed": "x",
+      "micon": null,
+      "link": null,
+      "description": null,
+      "id": "religion"
+    },
+    {
+      "name": "Sleight of Hand",
+      "new": null,
+      "removed": null,
+      "micon": "pan_tool",
+      "link": "Dexterity",
+      "description": "Whenever you attempt an act of legerdemain or manual trickery, such as planting something on someone else or concealing an object on your person, make a Dexterity (Sleight of Hand) check. The GM might also call for a Dexterity (Sleight of Hand) check to determine whether you can lift a coin purse off another person or slip something out of another person's pocket.",
+      "id": "sleight-of-hand"
+    },
+    {
+      "name": "Stealth",
+      "new": null,
+      "removed": null,
+      "micon": "group",
+      "link": "Dexterity",
+      "description": "Make a Dexterity (Stealth) check when you attempt to conceal yourself from enemies, slink past guards, slip away without being noticed, or sneak up on someone without being seen or heard.",
+      "id": "stealth"
+    },
+    {
+      "name": "Survival",
+      "new": null,
+      "removed": null,
+      "micon": "terrain",
+      "link": "Wisdom",
+      "description": "The GM might ask you to make a Wisdom (Survival) check to survive in uncivilized alien words, especially harsh environments like tundra, deserts, or jungles. The check might help you navigate a blizzard, find food in a wasteland, or avoid getting eaten by a Thresher Maw.",
+      "id": "survival"
+    },
+    {
+      "name": "Xenology",
+      "new": "x",
+      "removed": null,
+      "micon": null,
+      "link": "Intelligence",
+      "description": "How well do you know your galactic co-habitants? An Intelligence (Xenology) check determins how well you can recall information about alien species. These could be facts about their biology, politics, religions, customs, etc.",
+      "id": "xenology"
+    }
+  ]
+}
