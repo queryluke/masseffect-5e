@@ -1,5 +1,5 @@
 {
-  "updated": "September 10, 2017 @ 10:09 PM",
+  "updated": "September 11, 2017 @  9:12 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -23,12 +23,12 @@
             },
             {
               "key": "tech-power",
-              "display": " Tech Power(1)",
+              "display": "Tech Power(1)",
               "subclass_progression": null
             },
             {
               "key": "biotic-powers",
-              "display": " Biotic Powers(1:0)",
+              "display": "Biotic Powers(1:0)",
               "subclass_progression": null
             }
           ]
@@ -84,7 +84,7 @@
             },
             {
               "key": "fighting-style",
-              "display": " Fighting Style",
+              "display": "Fighting Style",
               "subclass_progression": null
             }
           ]
@@ -293,7 +293,7 @@
             },
             {
               "key": "tech-power",
-              "display": " Tech Power(1)",
+              "display": "Tech Power(1)",
               "subclass_progression": null
             }
           ]
@@ -553,7 +553,7 @@
             },
             {
               "key": "tech-power",
-              "display": " Tech Power(1)",
+              "display": "Tech Power(1)",
               "subclass_progression": null
             }
           ]
@@ -654,8 +654,8 @@
           "key": "features",
           "value": [
             {
-              "key": "fighting-styleadv",
-              "display": "Fighting Style(adv)",
+              "key": "fighting-style",
+              "display": "Fighting Style (select advancement)",
               "subclass_progression": null
             }
           ]
@@ -762,7 +762,7 @@
             },
             {
               "key": "tech-power",
-              "display": " Tech Power(1)",
+              "display": "Tech Power(1)",
               "subclass_progression": null
             }
           ]

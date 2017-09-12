@@ -1,5 +1,5 @@
 {
-  "updated": "September 10, 2017 @ 10:09 PM",
+  "updated": "September 11, 2017 @  9:15 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -23,7 +23,7 @@
             },
             {
               "key": "biotic-powers",
-              "display": " Biotic Powers(3:1)",
+              "display": "Biotic Powers(3:1)",
               "subclass_progression": null
             }
           ]
@@ -75,7 +75,7 @@
             },
             {
               "key": "danger-sense",
-              "display": " Danger Sense",
+              "display": "Danger Sense",
               "subclass_progression": null
             }
           ]
@@ -409,7 +409,7 @@
             },
             {
               "key": "brutal-critical",
-              "display": " Brutal Critical",
+              "display": "Brutal Critical",
               "subclass_progression": null
             }
           ]
@@ -507,8 +507,8 @@
               "subclass_progression": null
             },
             {
-              "key": "fighting-styleadv",
-              "display": " Fighting Style(adv)",
+              "key": "fighting-style",
+              "display": "Fighting Style (select advancement)",
               "subclass_progression": null
             }
           ]
@@ -607,7 +607,7 @@
             },
             {
               "key": "brutal-critical",
-              "display": " Brutal Critical(2)",
+              "display": "Brutal Critical(2)",
               "subclass_progression": null
             }
           ]
@@ -800,7 +800,7 @@
             },
             {
               "key": "brutal-critical",
-              "display": " Brutal Critical(3)",
+              "display": "Brutal Critical(3)",
               "subclass_progression": null
             }
           ]

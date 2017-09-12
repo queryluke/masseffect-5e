@@ -1,5 +1,5 @@
 {
-  "updated": "September 10, 2017 @ 10:09 PM",
+  "updated": "September 11, 2017 @  9:29 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -71,6 +71,19 @@
       ],
       "id": "assault-armor",
       "mechanic_text_dump": "Startingatthe2ndlevelyourTechArmorisriggedformaximumprotectionandkeepingtheactiononyouWhileTechArmorisactiveitprojectsadistractingholographicimageyourchoiceThefirsttimeahostilecreaturemakesanattackafteryouactivateTechArmoritmustpassaWisdomInsightcheckDCyourspellsaveOnafailurethecreatureiscompelledtoattackyouwhileyourTechArmorisactiveSyntheticcreatureshaveadvantageonthischeck"
+    },
+    {
+      "name": "Barrier",
+      "reviewed": null,
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Learn the Barrier cantrip. This does not count against your number of cantrips known."
+        }
+      ],
+      "id": "barrier",
+      "mechanic_text_dump": "LearntheBarriercantripThisdoesnotcountagainstyournumberofcantripsknown"
     },
     {
       "name": "Battlemaster",
@@ -194,7 +207,7 @@
         {
           "id": 2,
           "type": "line",
-          "data": "At level 3, learn 2 maneuvers. At level 14, learn 2 more maneuvers"
+          "data": "Learn 2 maneuvers as the 3rd, 10th, and 18th level."
         },
         {
           "id": 3,
@@ -250,7 +263,7 @@
         }
       ],
       "id": "biotic-maneuvers",
-      "mechanic_text_dump": "YoulearnmaneuversthatarefueledbyyourbarrierticksYoucanuseonlyonemaneuverperattackSomeofyourmaneuversrequireyourtargettomakeasavingthrowtoresistthemaneuvereffectsThesavingthrowDCis8yourproficiencybonusyourCharismamodifierAtlevel3learn2maneuversAtlevel14learn2moremaneuverstableNameManeuverDisarmingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktodisarmthetargetforcingittodroponeitemofyourchoicethatitsholdingYouaddthebarriertickdietotheattacksdamagerollandthetargetmustmakeaStrengthsavingthrowOnafailedsaveitdropstheobjectyouchooseTheobjectlandsatitsfeetDistractingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktodistractthecreaturegivingyouralliesanopeningYouaddthebarrierticktotheattacksdamagerollThenextattackrollagainstthetargetbyanattackerotherthanyouhasadvantageiftheattackismadebeforethestartofyournextturnFeintingAttackYoucanexpendonebarriertickanduseabonusactiononyourturntofeintchoosingonecreaturewithin2mofyouasyourtargetYouhaveadvantageonyourmeleenextattackrollagainstthatcreatureIfthatattackhitsaddthebarrierticktotheattacksdamagerollGoadingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttogoadthetargetintoattackingyouYouaddthebarrierticktotheattacksdamagerollandthetargetmustmakeaWisdomsavingthrowOnafailedsavethetargethasdisadvantageonallattackrollsagainsttargetsotherthanyouuntiltheendofyournextturnLiftAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarriertickstoattempttoliftthetargetYouaddthebarrierticktotheattacksdamagerollandifthetargetisMediumorsmalleritmustmakeaDexteritysavingthrowOnafailedsavethetargetisliftedMenacingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttofrightenthetargetYouaddthebarrierticktotheattacksdamagerollandthetargetmustmakeaWisdomsavingthrowOnafailedsaveitisfrightenedofyouuntiltheendofyournextturnPushingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttodrivethetargetbackYouaddthebarrierticktotheattacksdamagerollandifthetargetisLargeorsmalleritmustmakeaStrengthsavingthrowOnafailedsaveyoupushthetargetupto8mawayfromyouRiposteWhenacreaturemissesyouwithameleeattackyoucanuseyourreactionandexpendonebarrierticktomakeameleeattackagainstthecreatureIfyouhityouaddthebarrierticktotheattacksdamagerollSweepingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttodamageanothercreaturewiththesameattackChooseanothercreaturewithin2moftheoriginaltargetandwithinyourreachIftheoriginalattackrollwouldhitthesecondcreatureittakesdamageequaltothenumberyourollonyourbarriertickThedamageisofthesametypedealtbytheoriginalattackTripAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttoknockthetargetdownYouaddthebarrierticktotheattacksdamagerollandifthetargetisLargeorsmalleritmustmakeaStrengthsavingthrowOnafailedsaveyouknockthetargetpronetable"
+      "mechanic_text_dump": "YoulearnmaneuversthatarefueledbyyourbarrierticksYoucanuseonlyonemaneuverperattackSomeofyourmaneuversrequireyourtargettomakeasavingthrowtoresistthemaneuvereffectsThesavingthrowDCis8yourproficiencybonusyourCharismamodifierLearn2maneuversasthe3rd10thand18thleveltableNameManeuverDisarmingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktodisarmthetargetforcingittodroponeitemofyourchoicethatitsholdingYouaddthebarriertickdietotheattacksdamagerollandthetargetmustmakeaStrengthsavingthrowOnafailedsaveitdropstheobjectyouchooseTheobjectlandsatitsfeetDistractingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktodistractthecreaturegivingyouralliesanopeningYouaddthebarrierticktotheattacksdamagerollThenextattackrollagainstthetargetbyanattackerotherthanyouhasadvantageiftheattackismadebeforethestartofyournextturnFeintingAttackYoucanexpendonebarriertickanduseabonusactiononyourturntofeintchoosingonecreaturewithin2mofyouasyourtargetYouhaveadvantageonyourmeleenextattackrollagainstthatcreatureIfthatattackhitsaddthebarrierticktotheattacksdamagerollGoadingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttogoadthetargetintoattackingyouYouaddthebarrierticktotheattacksdamagerollandthetargetmustmakeaWisdomsavingthrowOnafailedsavethetargethasdisadvantageonallattackrollsagainsttargetsotherthanyouuntiltheendofyournextturnLiftAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarriertickstoattempttoliftthetargetYouaddthebarrierticktotheattacksdamagerollandifthetargetisMediumorsmalleritmustmakeaDexteritysavingthrowOnafailedsavethetargetisliftedMenacingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttofrightenthetargetYouaddthebarrierticktotheattacksdamagerollandthetargetmustmakeaWisdomsavingthrowOnafailedsaveitisfrightenedofyouuntiltheendofyournextturnPushingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttodrivethetargetbackYouaddthebarrierticktotheattacksdamagerollandifthetargetisLargeorsmalleritmustmakeaStrengthsavingthrowOnafailedsaveyoupushthetargetupto8mawayfromyouRiposteWhenacreaturemissesyouwithameleeattackyoucanuseyourreactionandexpendonebarrierticktomakeameleeattackagainstthecreatureIfyouhityouaddthebarrierticktotheattacksdamagerollSweepingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttodamageanothercreaturewiththesameattackChooseanothercreaturewithin2moftheoriginaltargetandwithinyourreachIftheoriginalattackrollwouldhitthesecondcreatureittakesdamageequaltothenumberyourollonyourbarriertickThedamageisofthesametypedealtbytheoriginalattackTripAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttoknockthetargetdownYouaddthebarrierticktotheattacksdamagerollandifthetargetisLargeorsmalleritmustmakeaStrengthsavingthrowOnafailedsaveyouknockthetargetpronetable"
     },
     {
       "name": "Biotic Mastery",
@@ -683,10 +696,15 @@
           "id": 1,
           "type": "line",
           "data": "You can attack twice when you choose to make a melee attack or ranged weapon attack as your action."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "You must finish a short or long rest before you can use this feature again. At higher levels, you can use extra attack multiple times, as indicated in the parentheticals of your class's progression table."
         }
       ],
       "id": "extra-attack",
-      "mechanic_text_dump": "Youcanattacktwicewhenyouchoosetomakeameleeattackorrangedweaponattackasyouraction"
+      "mechanic_text_dump": "YoucanattacktwicewhenyouchoosetomakeameleeattackorrangedweaponattackasyouractionYoumustfinishashortorlongrestbeforeyoucanusethisfeatureagainAthigherlevelsyoucanuseextraattackmultipletimesasindicatedintheparentheticalsofyourclasssprogressiontable"
     },
     {
       "name": "Eye for Detail",
@@ -840,11 +858,11 @@
         {
           "id": 2,
           "type": "line",
-          "data": "At the 10th level, increase the die type of your barrier to d12."
+          "data": "At the 14th level, increase the die type of your barrier to d12."
         }
       ],
       "id": "improved-barrier",
-      "mechanic_text_dump": "Atthe6thlevelincreasethedietypeofyourbarriertod10Atthe10thlevelincreasethedietypeofyourbarriertod12"
+      "mechanic_text_dump": "Atthe6thlevelincreasethedietypeofyourbarriertod10Atthe14thlevelincreasethedietypeofyourbarriertod12"
     },
     {
       "name": "Improved Biotic Slash",
@@ -1178,7 +1196,7 @@
       "mechanic_text_dump": "YourStrengthandConstitutionscoresincreaseby4Yourmaximumforthosescoresisnow24"
     },
     {
-      "name": "Proficient Biotics",
+      "name": "Expert Biotic",
       "reviewed": "x",
       "mechanic": [
         {
@@ -1187,7 +1205,7 @@
           "data": "Casting biotic spells comes so easily to you that it expends only a fraction of your efforts. When you cast a biotic spell of 2nd level or higher using a spell slot, you regain one expended spell slot. The slot you regain must be of a level lower than the spell you cast."
         }
       ],
-      "id": "proficient-biotics",
+      "id": "expert-biotic",
       "mechanic_text_dump": "CastingbioticspellscomessoeasilytoyouthatitexpendsonlyafractionofyoureffortsWhenyoucastabioticspellof2ndlevelorhigherusingaspellslotyouregainoneexpendedspellslotTheslotyouregainmustbeofalevellowerthanthespellyoucast"
     },
     {
@@ -1661,6 +1679,45 @@
       ],
       "id": "zero-sum",
       "mechanic_text_dump": "WhenyoumakeameleeattackinsteadofrollingadiceyoucanflipacoinOnaheadsitsacriticalhitOnatailsitsacriticalmissYoucanusethisabilityoncepershortrestStartingatthe9thlevelyoucanusethisabilitytwicepershortrestStartingatthe11thlevelyoucanusethisabilitythreetimespershortrest"
+    },
+    {
+      "name": "Reliable Talent",
+      "reviewed": "x",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You have refined your chosen skills until they approach perfection. Whenever you make an ability check that lets you add your proficiency bonus, you can treat a d20 roll of 9 or lower as a 10."
+        }
+      ],
+      "id": "reliable-talent",
+      "mechanic_text_dump": "YouhaverefinedyourchosenskillsuntiltheyapproachperfectionWheneveryoumakeanabilitycheckthatletsyouaddyourproficiencybonusyoucantreatad20rollof9orlowerasa10"
+    },
+    {
+      "name": "Nightshade Blades",
+      "reviewed": null,
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Learn the Nightshade Blades spell"
+        }
+      ],
+      "id": "nightshade-blades",
+      "mechanic_text_dump": "LearntheNightshadeBladesspell"
+    },
+    {
+      "name": "Poison Strike",
+      "reviewed": null,
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Learn the Poison Strike spell"
+        }
+      ],
+      "id": "poison-strike",
+      "mechanic_text_dump": "LearnthePoisonStrikespell"
     }
   ]
 }

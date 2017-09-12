@@ -1,412 +1,733 @@
 {
-  "updated": "September 10, 2017 @ 10:09 PM",
+  "updated": "September 11, 2017 @  8:53 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
       "name": "Commando",
-      "class": "adept",
+      "class": "Adept",
       "description": null,
       "1": [
-        "pure-biotics"
+        {
+          "key": "pure-biotics",
+          "value": "Pure Biotics"
+        }
       ],
       "2": [
-        "expert-biotic"
+        {
+          "key": "expert-biotic",
+          "value": "Expert Biotic"
+        }
       ],
       "3": [
-        "biotic-split"
+        {
+          "key": "biotic-split",
+          "value": "Biotic Split"
+        }
       ],
       "4": [
-        "overchannel"
+        {
+          "key": "overchannel",
+          "value": "Overchannel"
+        }
       ],
       "5": null,
       "id": [
-        "commando"
+        {
+          "key": "commando",
+          "value": "commando"
+        }
       ]
     },
     {
       "name": "Blackstar",
-      "class": "adept",
+      "class": "Adept",
       "description": null,
       "1": [
-        "sculpt-biotics"
+        {
+          "key": "sculpt-biotics",
+          "value": "Sculpt Biotics"
+        }
       ],
       "2": [
-        "bend-luck"
+        {
+          "key": "bend-luck",
+          "value": "Bend Luck"
+        }
       ],
       "3": [
-        "focused-biotics"
+        {
+          "key": "focused-biotics",
+          "value": "Focused Biotics"
+        }
       ],
       "4": [
-        "biotic-control"
+        {
+          "key": "biotic-control",
+          "value": "Biotic Control"
+        }
       ],
       "5": null,
       "id": [
-        "blackstar"
+        {
+          "key": "blackstar",
+          "value": "blackstar"
+        }
       ]
     },
     {
       "name": "Disruptor",
-      "class": "adept",
+      "class": "Adept",
       "description": null,
       "1": [
-        "dark-biotics"
+        {
+          "key": "dark-biotics",
+          "value": "Dark Biotics"
+        }
       ],
       "2": [
-        "biotic-surge"
+        {
+          "key": "biotic-surge",
+          "value": "Biotic Surge"
+        }
       ],
       "3": [
-        "potent-biotics"
+        {
+          "key": "potent-biotics",
+          "value": "Potent Biotics"
+        }
       ],
       "4": [
-        "biotic-concentration"
+        {
+          "key": "biotic-concentration",
+          "value": "Biotic Concentration"
+        }
       ],
       "5": null,
       "id": [
-        "disruptor"
+        {
+          "key": "disruptor",
+          "value": "disruptor"
+        }
       ]
     },
     {
       "name": "Demolisher",
-      "class": "engineer",
+      "class": "Engineer",
       "description": null,
       "1": [
-        "advanced-weapon-holsters"
+        {
+          "key": "advanced-weapon-holsters",
+          "value": "Advanced Weapon Holsters"
+        }
       ],
       "2": [
-        "makeshift-grenades"
+        {
+          "key": "makeshift-grenades",
+          "value": "Makeshift Grenades"
+        }
       ],
       "3": [
-        "heavy-weapon-hack"
+        {
+          "key": "heavy-weapon-hack",
+          "value": "Heavy Weapon Hack"
+        }
       ],
       "4": [
-        "targeting-mobility"
+        {
+          "key": "targeting-mobility",
+          "value": "Targeting Mobility"
+        }
       ],
       "5": [
-        "makeshift-grenades"
+        {
+          "key": "makeshift-grenades",
+          "value": "Makeshift Grenades"
+        }
       ],
       "id": [
-        "demolisher"
+        {
+          "key": "demolisher",
+          "value": "demolisher"
+        }
       ]
     },
     {
       "name": "Drone Jockey",
-      "class": "engineer",
+      "class": "Engineer",
       "description": null,
       "1": [
-        "drone-sidekick"
+        {
+          "key": "drone-sidekick",
+          "value": "Drone Sidekick"
+        }
       ],
       "2": [
-        "drone-efficiency"
+        {
+          "key": "drone-efficiency",
+          "value": "Drone Efficiency"
+        }
       ],
       "3": [
-        "dual-drones"
+        {
+          "key": "dual-drones",
+          "value": "Dual Drones"
+        }
       ],
       "4": [
-        "drone-mastery"
+        {
+          "key": "drone-mastery",
+          "value": "Drone Mastery"
+        }
       ],
       "5": [
-        "drone-swarm"
+        {
+          "key": "drone-swarm",
+          "value": "Drone Swarm"
+        }
       ],
       "id": [
-        "drone-jockey"
+        {
+          "key": "drone-jockey",
+          "value": "drone-jockey"
+        }
       ]
     },
     {
       "name": "Support",
-      "class": "engineer",
+      "class": "Engineer",
       "description": null,
       "1": [
-        "healing-drone"
+        {
+          "key": "healing-drone",
+          "value": "Healing Drone"
+        }
       ],
       "2": [
-        "medi-gel-enhancements"
+        {
+          "key": "medi-gel-enhancements",
+          "value": "Medi-gel Enhancements"
+        }
       ],
       "3": [
-        "shield-boost"
+        {
+          "key": "shield-boost",
+          "value": "Shield Boost"
+        }
       ],
       "4": [
-        "healing-drone"
+        {
+          "key": "healing-drone",
+          "value": "Healing Drone"
+        }
       ],
       "5": [
-        "supply-pylon"
+        {
+          "key": "supply-pylon",
+          "value": "Supply Pylon"
+        }
       ],
       "id": [
-        "support"
+        {
+          "key": "support",
+          "value": "support"
+        }
       ]
     },
     {
       "name": "Shadow",
-      "class": "infiltrator",
+      "class": "Infiltrator",
       "description": null,
       "1": [
-        "melee-specialist"
+        {
+          "key": "melee-specialist",
+          "value": "Melee Specialist"
+        }
       ],
       "2": [
-        "deadly-strike"
+        {
+          "key": "deadly-strike",
+          "value": "Deadly Strike"
+        }
       ],
       "3": [
-        "misdirection"
+        {
+          "key": "misdirection",
+          "value": "Misdirection"
+        }
       ],
       "4": [
-        "sudden-strike"
+        {
+          "key": "sudden-strike",
+          "value": "Sudden Strike"
+        }
       ],
       "5": null,
       "id": [
-        "shadow"
+        {
+          "key": "shadow",
+          "value": "shadow"
+        }
       ]
     },
     {
       "name": "Saboteur",
-      "class": "infiltrator",
+      "class": "Infiltrator",
       "description": null,
       "1": [
-        "ear-for-deceit",
-        "eye-for-detail",
-        "insightful-fighting"
+        {
+          "key": "ear-for-deceit",
+          "value": "Ear for Deceit"
+        },
+        {
+          "key": "eye-for-detail",
+          "value": " Eye for Detail"
+        },
+        {
+          "key": "insightful-fighting",
+          "value": " Insightful Fighting"
+        }
       ],
       "2": [
-        "infiltration"
+        {
+          "key": "infiltration",
+          "value": "Infiltration"
+        }
       ],
       "3": [
-        "saboteurs-touch"
+        {
+          "key": "saboteurs-touch",
+          "value": "Saboteur's Touch"
+        }
       ],
       "4": [
-        "eye-for-weakness"
+        {
+          "key": "eye-for-weakness",
+          "value": "Eye for Weakness"
+        }
       ],
       "5": null,
       "id": [
-        "saboteur"
+        {
+          "key": "saboteur",
+          "value": "saboteur"
+        }
       ]
     },
     {
       "name": "Operative",
-      "class": "infiltrator",
+      "class": "Infiltrator",
       "description": null,
       "1": [
-        "master-tactician"
+        {
+          "key": "master-tactician",
+          "value": "Master Tactician"
+        }
       ],
       "2": [
-        "tactical-ambush"
+        {
+          "key": "tactical-ambush",
+          "value": "Tactical Ambush"
+        }
       ],
       "3": [
-        "elegant-maneuver"
+        {
+          "key": "elegant-maneuver",
+          "value": "Elegant Maneuver"
+        }
       ],
       "4": [
-        "master-duelist"
+        {
+          "key": "master-duelist",
+          "value": "Master Duelist"
+        }
       ],
       "5": null,
       "id": [
-        "operative"
+        {
+          "key": "operative",
+          "value": "operative"
+        }
       ]
     },
     {
       "name": "Battlemaster",
-      "class": "sentinel",
+      "class": "Sentinel",
       "description": null,
       "1": [
-        "power-armor",
-        "biotic-powers11"
+        {
+          "key": "power-armor",
+          "value": "Power Armor"
+        },
+        {
+          "key": "biotic-powers",
+          "value": " Biotic Powers(1:1)"
+        }
       ],
       "2": [
-        "battlemaster"
+        {
+          "key": "battlemaster",
+          "value": "Battlemaster"
+        }
       ],
       "3": [
-        "battlemaster"
+        {
+          "key": "battlemaster",
+          "value": "Battlemaster"
+        }
       ],
       "4": [
-        "battlemaster"
+        {
+          "key": "battlemaster",
+          "value": "Battlemaster"
+        }
       ],
       "5": [
-        "power-armor"
+        {
+          "key": "power-armor",
+          "value": "Power Armor"
+        }
       ],
       "id": [
-        "battlemaster"
+        {
+          "key": "battlemaster",
+          "value": "battlemaster"
+        }
       ]
     },
     {
       "name": "Bastion",
-      "class": "sentinel",
+      "class": "Sentinel",
       "description": null,
       "1": [
-        "assault-armor"
+        {
+          "key": "assault-armor",
+          "value": "Assault Armor"
+        }
       ],
       "2": [
-        "improved-tech-armor"
+        {
+          "key": "improved-tech-armor",
+          "value": "Improved Tech Armor"
+        }
       ],
       "3": [
-        "tech-armor-overload"
+        {
+          "key": "tech-armor-overload",
+          "value": "Tech Armor Overload"
+        }
       ],
       "4": [
-        "improved-tech-armor2"
+        {
+          "key": "improved-tech-armor",
+          "value": "Improved Tech Armor(2)"
+        }
       ],
       "5": [
-        "tech-armor-overload"
+        {
+          "key": "tech-armor-overload",
+          "value": "Tech Armor Overload"
+        }
       ],
       "id": [
-        "bastion"
+        {
+          "key": "bastion",
+          "value": "bastion"
+        }
       ]
     },
     {
       "name": "Paladin",
-      "class": "sentinel",
+      "class": "Sentinel",
       "description": null,
       "1": [
-        "omni-shield",
-        "expertise"
+        {
+          "key": "omni-shield",
+          "value": "Omni-Shield"
+        },
+        {
+          "key": "expertise",
+          "value": " Expertise"
+        }
       ],
       "2": [
-        "tech-aura"
+        {
+          "key": "tech-aura",
+          "value": "Tech Aura"
+        }
       ],
       "3": [
-        "sculpt-biotics",
-        "expertise"
+        {
+          "key": "sculpt-biotics",
+          "value": "Sculpt Biotics"
+        },
+        {
+          "key": "expertise",
+          "value": " Expertise"
+        }
       ],
       "4": [
-        "tech-aura"
+        {
+          "key": "tech-aura",
+          "value": "Tech Aura"
+        }
       ],
       "5": [
-        "tech-aura-improvement"
+        {
+          "key": "tech-aura-improvement",
+          "value": "Tech Aura Improvement"
+        }
       ],
       "id": [
-        "paladin"
+        {
+          "key": "paladin",
+          "value": "paladin"
+        }
       ]
     },
     {
       "name": "Havoc",
-      "class": "soldier",
+      "class": "Soldier",
       "description": null,
       "1": [
-        "combat-power"
+        {
+          "key": "combat-power",
+          "value": "Combat Power"
+        }
       ],
       "2": [
-        "combat-power"
+        {
+          "key": "combat-power",
+          "value": "Combat Power"
+        }
       ],
       "3": [
-        "combat-power"
+        {
+          "key": "combat-power",
+          "value": "Combat Power"
+        }
       ],
       "4": [
-        "combat-power"
+        {
+          "key": "combat-power",
+          "value": "Combat Power"
+        }
       ],
       "5": [
-        "combat-power"
+        {
+          "key": "combat-power",
+          "value": "Combat Power"
+        }
       ],
       "id": [
-        "havoc"
+        {
+          "key": "havoc",
+          "value": "havoc"
+        }
       ]
     },
     {
       "name": "Weapon Master",
-      "class": "soldier",
+      "class": "Soldier",
       "description": null,
       "1": [
-        "weapon-of-choice"
+        {
+          "key": "weapon-of-choice",
+          "value": "Weapon of Choice"
+        }
       ],
       "2": [
-        "quick-reload"
+        {
+          "key": "quick-reload",
+          "value": "Quick Reload"
+        }
       ],
       "3": [
-        "improved-weapon-superiority"
+        {
+          "key": "improved-weapon-superiority",
+          "value": "Improved Weapon Superiority"
+        }
       ],
       "4": [
-        "strafe"
+        {
+          "key": "strafe",
+          "value": "Strafe"
+        }
       ],
       "5": [
-        "improved-weapon-superiority"
+        {
+          "key": "improved-weapon-superiority",
+          "value": "Improved Weapon Superiority"
+        }
       ],
       "id": [
-        "weapon-master"
+        {
+          "key": "weapon-master",
+          "value": "weapon-master"
+        }
       ]
     },
     {
       "name": "Sharp Shooter",
-      "class": "soldier",
+      "class": "Soldier",
       "description": null,
       "1": [
-        "deadly-aim"
+        {
+          "key": "deadly-aim",
+          "value": "Deadly Aim"
+        }
       ],
       "2": [
-        "careful-eyes"
+        {
+          "key": "careful-eyes",
+          "value": "Careful Eyes"
+        }
       ],
       "3": [
-        "marksman"
+        {
+          "key": "marksman",
+          "value": "Marksman"
+        }
       ],
       "4": [
-        "snapshot"
+        {
+          "key": "snapshot",
+          "value": "Snapshot"
+        }
       ],
       "5": [
-        "marksman"
+        {
+          "key": "marksman",
+          "value": "Marksman"
+        }
       ],
       "id": [
-        "sharp-shooter"
+        {
+          "key": "sharp-shooter",
+          "value": "sharp-shooter"
+        }
       ]
     },
     {
       "name": "Champion",
-      "class": "vanguard",
+      "class": "Vanguard",
       "description": null,
       "1": [
-        "biotic-maneuvers"
+        {
+          "key": "biotic-maneuvers",
+          "value": "Biotic Maneuvers"
+        }
       ],
       "2": [
-        "improved-barrier"
+        {
+          "key": "improved-barrier",
+          "value": "Improved Barrier"
+        }
       ],
       "3": [
-        "biotic-maneuvers"
+        {
+          "key": "biotic-maneuvers",
+          "value": "Biotic Maneuvers"
+        }
       ],
       "4": [
-        "improved-barrier"
+        {
+          "key": "improved-barrier",
+          "value": "Improved Barrier"
+        }
       ],
       "5": [
-        "biotic-maneuvers"
+        {
+          "key": "biotic-maneuvers",
+          "value": "Biotic Maneuvers"
+        }
       ],
       "id": [
-        "champion"
+        {
+          "key": "champion",
+          "value": "champion"
+        }
       ]
     },
     {
       "name": "Slayer",
-      "class": "vanguard",
+      "class": "Vanguard",
       "description": null,
       "1": [
-        "biotic-slash"
+        {
+          "key": "biotic-slash",
+          "value": "Biotic Slash"
+        }
       ],
       "2": [
-        "melee-specialist"
+        {
+          "key": "melee-specialist",
+          "value": "Melee Specialist"
+        }
       ],
       "3": [
-        "improved-biotic-slash"
+        {
+          "key": "improved-biotic-slash",
+          "value": "Improved Biotic Slash"
+        }
       ],
       "4": [
-        "biotic-focus"
+        {
+          "key": "biotic-focus",
+          "value": "Biotic Focus"
+        }
       ],
       "5": [
-        "opportunist"
+        {
+          "key": "opportunist",
+          "value": "Opportunist"
+        }
       ],
       "id": [
-        "slayer"
+        {
+          "key": "slayer",
+          "value": "slayer"
+        }
       ]
     },
     {
       "name": "Cabal",
-      "class": "vanguard",
+      "class": "Vanguard",
       "description": null,
       "1": [
-        "nightshade-blades"
+        {
+          "key": "nightshade-blades",
+          "value": "Nightshade Blades"
+        }
       ],
       "2": [
-        "poison-strike"
+        {
+          "key": "poison-strike",
+          "value": "Poison Strike"
+        }
       ],
       "3": [
-        "teleporting-dodge"
+        {
+          "key": "teleporting-dodge",
+          "value": "Teleporting Dodge"
+        }
       ],
       "4": [
-        "biotic-powers23"
+        {
+          "key": "biotic-powers",
+          "value": "Biotic Powers(2:3)"
+        }
       ],
       "5": [
-        "cabal-attacks"
+        {
+          "key": "cabal-attacks",
+          "value": "Cabal Attacks"
+        }
       ],
       "id": [
-        "cabal"
+        {
+          "key": "cabal",
+          "value": "cabal"
+        }
       ]
     }
   ]

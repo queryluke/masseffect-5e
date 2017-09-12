@@ -215,14 +215,21 @@ def generate_config_file(page)
 
       if page[:type] =~ %r{_progression}
         dup_model['features'] = dup_model['features'].split(',').map do |l|
-          key = l.downcase.strip.gsub(' ', '-').gsub(/[^a-zA-z\-]/, '')
+          if l =~ %r{\(adv\)$}
+            new_l = l.gsub(%r{\(adv\)$},'')
+            key = new_l.downcase.strip.gsub(' ', '-').gsub(/[^a-zA-z\-]/, '')
+            display = new_l.strip + ' (select advancement)'
+          else
+            key = l.downcase.strip.gsub(' ', '-').gsub(/[^a-zA-z\-]/, '')
+            display = l.strip
+          end
           if key == 'subclass-feature'
             subclass_progression = subclass_increment
             subclass_increment = subclass_increment + 1
           end
           {
             key: key,
-            display: l,
+            display: display,
             subclass_progression: subclass_progression
           }
 
@@ -245,9 +252,12 @@ def generate_config_file(page)
           end
         when 'subclasses'
           dup_model.each_key do |key|
-            unless key == 'name' || key == 'description'
-              dup_model[key] = dup_model[key].split(',').map { |l| l.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '') } if dup_model[key]
-              dup_model[key] = dup_model[key][0] if key == 'class'
+            unless key == 'name' || key == 'description' || key == 'class'
+              if dup_model[key]
+                dup_model[key] = dup_model[key].split(',').map do |l|
+                  { key: l.downcase.strip.gsub(' ', '-').gsub(/[^a-zA-z\-]/, ''), value: l }
+                end
+              end
             end
           end
         else

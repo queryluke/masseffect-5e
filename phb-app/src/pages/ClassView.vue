@@ -94,7 +94,9 @@
         if(subclass_progression){
           let subclasses = this.subclasses.map((sb) => {
             let subclass_features = sb[subclass_progression].map((sf) => {
-              return this.features.find((feature) => { return feature.id === sf});
+              let feature = this.features.find((feature) => { return feature.id === sf.key});
+              feature.name = sf.value;
+              return feature;
             });
             return {
               name: sb.name,
@@ -191,7 +193,7 @@
           return value.id === this.id;
         });
         this.subclasses = subclasses.filter( (sb) => {
-          return sb.class === this.id;
+          return sb.class.toLowerCase() === this.id;
         });
         this.spells = spells.filter( (spell) => {
           return spell[this.id];
