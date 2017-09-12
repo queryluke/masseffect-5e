@@ -1,6 +1,7 @@
 <template lang="jade">
   div
     h2 Grenades
+    p Starting capacity is 2.
     div.expansion-panel__sortable.primary
       v-layout.px-4
         v-flex(v-for="header in headers" v-bind:key="header.key" v-bind:class="header.classes")

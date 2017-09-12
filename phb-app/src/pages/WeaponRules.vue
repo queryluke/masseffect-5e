@@ -42,16 +42,11 @@
           Basically, the number of number of times you can fire before you need to reload. If the weapon has a heat of
           1 and you fire it, you must reload the thermal clip before firing it again. Reloading takes an action.
         p.
-          For Heavy Weapons, Heat is substituted for Charges. You can use the heavy weapon a number of times equal to it's
-          charges. Then you must find some sort of supply depot and spend 2,000 credits to regain your charges.
-          GMs, you can populate loot cahces with Heavy Weapon charges as well.
-        p.headline.mt-2 Ammo
+          In general, standard thermal clips are so plentiful that you do not need to keep track of them. However, you can
+          play with the #[router-link(to="/rules/consumables") Variatent Thermal Clip] rule for an additional challenge.
         p.
-          In Mass Effect, all weapons use interchangeable Thermal Clips as "ammo". In addition, there are also specialized
-          Thermal Clips that deal different types of damage (see Consumables). Your Thermal Clip capacity is 10.
-          It's up to the GM if they want standard thermal clips to count against this total. If you're fighting enemies
-          that also have guns, it's assumed they would have extra thermal clips as well; thus, there would be a steady
-          supply from looting. But if you on a barren planet fighting a Thresher Maw, finding thermal clips might be difficult.
+          For Heavy Weapons, Heat is substituted for Charges. You can use the heavy weapon a number of times equal to it's
+          charges. See #[router-link(to="/rules/consumables") Consumables] for resuppllying information.
         p.headline.mt-2 Rare Weapons
         p.
           Some weapons have a "Rare" qualifier. This just means they're hard to come across. You have to get them special ordered
@@ -101,18 +96,24 @@
         p.headline.mt-2 Charges
         p.
           As stated above, Heavy Weapons use Charges instead of Thermal Clips. Run out of Charges and your weapon is nothing
-          more than a hunk of metal. You need to find a supply depot and spend 2,000 credits to replenish all charges.
+          more than a hunk of metal.
         p.headline.mt-2 Targeting
         p.
           Most Heavy Weapons also use the Targeting condition. Targeting mean painting the battlefield, or keeping a lock on a creature(s) for
           a single round of combat. Targeting is considered a free action, as long as you've already equipped the heavy weapon,
           i.e., you can choose to pick-up or equip a weapon as your action, then begin targeting as a free action before your turn ends.
           If you're already holding the weapon, you might use an ability as your action and then begin targeting.
-          While targeting, you cannot be behind cover, you automatically fail Dexterity saving throws, and creatures that
-          attack you have advantage. You can choose to end this state as a reaction to an attack (not to a damage roll).
-          If you end the state, creatures will not have advantage while attacking, but your Dexterity saving throws will
-          be made at a disadvantage. Prematurely ending the targeting prevents the weapon from firing at the start of your turn.
-          If you loose your footing by being knocked prone, lifted, or losing conciousness Targeting ends.
+        p.
+          #[strong Condition Details:] While targeting, your speed is reduced by half and your automatically fail Dexterity
+          saving throws. Creatures that attack you have advantage.
+        p.
+          #[strong Targeting Failures:]
+          If targeting ends before the start of your next turn, it fails and the weapon does not fire or use a weapon charge.
+          It can be prematurely ended for the following reasons:
+        ul
+          li As a reaction: You can choose to end your Targeting condition as a reaction to an attack (not to a damage roll).
+          li Taking cover: Taking full or three-quater cover while targeting ends the condition.
+          li Another condition: If you loose your footing by being knocked prone, becoming lifted, or incapacitated, targeting ends.
 </template>
 
 <script>

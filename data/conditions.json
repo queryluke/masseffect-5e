@@ -60,6 +60,10 @@
     "description": "Incapacitated. Automatically fails Strength and Dexterity saving throws. Attack rolls against the creature have advantage."
   },
   {
+    "name": "Targeting",
+    "description": "Speed is reduced by half. Automatically fail Dexterity saving throws. Creatures that attack you have advantage."
+  },
+  {
     "name": "Unconscious",
     "description": "Incapacitated. Drops any weapons. Fails Strength and Dexterity saving throws. Attack rolls against the creature have advantage. Any attack within 2m that hits is a critical hit."
   }

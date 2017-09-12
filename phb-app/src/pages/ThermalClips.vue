@@ -1,8 +1,7 @@
 <template lang="jade">
-  v-container
-    v-layout(row wrap)
-      v-flex.xs12
-        h2 Thermal Clips
+  div
+    h2 Thermal Clips
+    p Starting capacity is 6 (Variant 10).
     div.mt-3
       v-data-table(v-bind:headers="headers" v-bind:items="items" hide-actions).elevation-1
         template(slot="items" scope="props")

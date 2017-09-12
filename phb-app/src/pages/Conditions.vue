@@ -5,7 +5,7 @@
         h2 Conditions
       v-flex.xs12
         p.headline New
-        p Frozen, Lifted
+        p Frozen, Lifted, Targeting
     div.mt-3
       v-data-table(v-bind:headers="headers" v-bind:items="items" hide-actions).elevation-1
         template(slot="items" scope="props")
