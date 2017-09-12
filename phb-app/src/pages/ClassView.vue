@@ -5,7 +5,7 @@
         h2 {{ item.name }}
         p {{ item.description}}
       v-flex.hidden-sm-and-down.md3
-        me-icon(:name="item.name" type="classes")
+        me-icon(:name="item.id" type="classes")
       v-flex.xs12
         class-tabs(:colors="colors").mb-3
           class-attributes(:item="item" slot="attributes_tab_content")
