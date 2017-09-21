@@ -37,10 +37,14 @@
                   br
                   span {{ race.armor }}
               div.hr
-              div(v-for="trait in race.racial_traits" v-bind:key="trait.id").ma-2
-                label
-                  strong {{ trait.name }}
-                me-element(:text="trait.description")
+              div.ma-2
+                div(id="race-alignment").section-label Alignment
+                p(aria-labelledby="race-alignment") {{ race.alignment }}
+              div.ma-2
+                div(id="race-traits").section-label Racial Traits
+                div(v-for="trait in race.racial_traits" v-bind:key="trait.id")
+                  label(:id="trait.id") #[strong {{ trait.name }}]
+                  me-element(:text="trait.description" v-bind:aria-labelledby="`race-traits ${trait.id}`")
       v-flex.hidden-sm-and-down.md3
         v-card-media(:src="race.body" height="80vh")
     v-layout(row grow).my-0.mt-4
@@ -113,3 +117,11 @@
     },
   };
 </script>
+
+<style>
+  .section-label {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-top: 1.1em;
+  }
+</style>
