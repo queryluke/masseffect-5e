@@ -13,3 +13,5 @@ Pretty much all changes due, with thanks, the lore mastery and play testing of S
 **Races**
 * Now have alignments
 
+**Classes**
+* Soldiers advance their fighting style 9th level.
