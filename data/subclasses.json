@@ -1,5 +1,5 @@
 {
-  "updated": "September 11, 2017 @ 11:04 PM",
+  "updated": "September 21, 2017 @  8:31 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -239,20 +239,20 @@
       "description": null,
       "1": [
         {
-          "key": "melee-specialist",
-          "value": "Melee Specialist"
+          "key": "up-close-and-personal",
+          "value": "Up Close and Personal"
         }
       ],
       "2": [
         {
-          "key": "deadly-strike",
-          "value": "Deadly Strike"
+          "key": "silent-cloak",
+          "value": "Silent Cloak"
         }
       ],
       "3": [
         {
-          "key": "misdirection",
-          "value": "Misdirection"
+          "key": "tactical-ambush",
+          "value": "Tactical Ambush"
         }
       ],
       "4": [
@@ -319,26 +319,26 @@
       "description": null,
       "1": [
         {
-          "key": "master-tactician",
-          "value": "Master Tactician"
+          "key": "dropshot",
+          "value": "Dropshot"
         }
       ],
       "2": [
         {
-          "key": "tactical-ambush",
-          "value": "Tactical Ambush"
+          "key": "deadeye",
+          "value": "Deadeye"
         }
       ],
       "3": [
         {
-          "key": "elegant-maneuver",
-          "value": "Elegant Maneuver"
+          "key": "combat-heuristics",
+          "value": "Combat Heuristics"
         }
       ],
       "4": [
         {
-          "key": "master-duelist",
-          "value": "Master Duelist"
+          "key": "killshot",
+          "value": "Killshot"
         }
       ],
       "5": null,
@@ -355,18 +355,14 @@
       "description": null,
       "1": [
         {
-          "key": "power-armor",
-          "value": "Power Armor"
-        },
-        {
-          "key": "biotic-powers",
-          "value": " Biotic Powers(1:1)"
+          "key": "master-tactician",
+          "value": "Master Tactician"
         }
       ],
       "2": [
         {
-          "key": "battlemaster",
-          "value": "Battlemaster"
+          "key": "biotic-enfilade",
+          "value": "Biotic Enfilade"
         }
       ],
       "3": [
@@ -377,14 +373,14 @@
       ],
       "4": [
         {
-          "key": "battlemaster",
-          "value": "Battlemaster"
+          "key": "master-duelist",
+          "value": "Master Duelist"
         }
       ],
       "5": [
         {
-          "key": "power-armor",
-          "value": "Power Armor"
+          "key": "synchronized-assault",
+          "value": "Synchronized Assault"
         }
       ],
       "id": [
@@ -660,8 +656,8 @@
       ],
       "2": [
         {
-          "key": "melee-specialist",
-          "value": "Melee Specialist"
+          "key": "biotic-bullrush",
+          "value": "Biotic Bullrush"
         }
       ],
       "3": [

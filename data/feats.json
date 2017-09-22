@@ -1,5 +1,5 @@
 {
-  "updated": "September 11, 2017 @ 11:04 PM",
+  "updated": "September 21, 2017 @  7:08 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTPhVRIodUwbDYFw8wJZtmb63tTjFJMxY-cN6P5nayPpJhNxAQFqIxeSLd5Tz75aOZ7CLuBkNsDrcs9/pubhtml",
   "data": [
     {
@@ -517,6 +517,38 @@
       "turian": "x",
       "id": "medium-armor-master",
       "description_text_dump": ""
+    },
+    {
+      "name": "Melee Specialist",
+      "not_available": null,
+      "page_number": null,
+      "updated": null,
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You've trained extensively in melee weapon combat. +1 Strength"
+        },
+        {
+          "id": 2,
+          "type": "list",
+          "data": [
+            "When wielding a two-handed ranged weapon, you can use a bonus action to make a melee weapon attack with your omni-tool.",
+            "When wielding a single-handed ranged weapon, you can use a bonus action to make a melee weapon attack with a light or versatile melee weapon (your Omni-tool is a light weapon).",
+            "When wielding only melee weapons: Gain +1 AC. When you take the Attack action, you can use a bonus action to make another melee weapon attack."
+          ]
+        }
+      ],
+      "notes": null,
+      "prerequisite": null,
+      "batarian": "x",
+      "drell": "x",
+      "human": "x",
+      "quarian": null,
+      "salarian": null,
+      "turian": "x",
+      "id": "melee-specialist",
+      "description_text_dump": "Youvetrainedextensivelyinmeleeweaponcombat1StrengthlistWhenwieldingatwohandedrangedweaponyoucanuseabonusactiontomakeameleeweaponattackwithyouromnitoolWhenwieldingasinglehandedrangedweaponyoucanuseabonusactiontomakeameleeweaponattackwithalightorversatilemeleeweaponyourOmnitoolisalightweaponWhenwieldingonlymeleeweaponsGain1ACWhenyoutaketheAttackactionyoucanuseabonusactiontomakeanothermeleeweaponattacklist"
     },
     {
       "name": "Mobile",

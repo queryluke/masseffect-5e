@@ -1,10 +1,9 @@
 {
-  "updated": "September 11, 2017 @ 11:04 PM",
+  "updated": "September 21, 2017 @  8:32 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
       "name": "Ability Score Improvement",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -17,7 +16,6 @@
     },
     {
       "name": "Adrenaline Rush",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -35,7 +33,6 @@
     },
     {
       "name": "Advanced Tech Armor",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -48,7 +45,6 @@
     },
     {
       "name": "Advanced Weapon Holsters",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -61,7 +57,6 @@
     },
     {
       "name": "Assault Armor",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -74,7 +69,6 @@
     },
     {
       "name": "Barrier",
-      "reviewed": null,
       "mechanic": [
         {
           "id": 1,
@@ -87,30 +81,18 @@
     },
     {
       "name": "Battlemaster",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
           "type": "line",
-          "data": "Starting at the 2nd level, when you cast a cantrip, you can choose either advancement option"
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Starting at the 10th level, when you cast tech powers, you can choose either advancement option"
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "Starting at the 14th level, when you cast a biotic spell, you can choose either advancement option"
+          "data": "Starting at the 10th level, when you cast a cantrip, biotic spell, or tech power you can choose either advancement option."
         }
       ],
       "id": "battlemaster",
-      "mechanic_text_dump": "Startingatthe2ndlevelwhenyoucastacantripyoucanchooseeitheradvancementoptionStartingatthe10thlevelwhenyoucasttechpowersyoucanchooseeitheradvancementoptionStartingatthe14thlevelwhenyoucastabioticspellyoucanchooseeitheradvancementoption"
+      "mechanic_text_dump": "Startingatthe10thlevelwhenyoucastacantripbioticspellortechpoweryoucanchooseeitheradvancementoption"
     },
     {
       "name": "Bend Luck",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -132,8 +114,34 @@
       "mechanic_text_dump": "YouvemasteredtheartofusingsmallmasseffectfieldstoslightlyaltertheoutcomeofothercreaturesactionsItmightbeasmallburstunderthemuzzleofaguntothrowofftheattackersaimOrnegativefieldaroundafriendlycreatureasleapsawayfromagrenademovingitoutofdamageswayWhenanothercreatureyoucanseemakesanattackrollanabilitycheckorasavingthrowyoucanuseyourreactiontoroll1d4andapplythenumberrolledasabonusorpenaltyyourchoicetothecreaturesrollYoucandosoafterthecreaturerollsbutbeforeanyeffectsoftherolloccurYoucanuseBendLuckanumberoftimesequaltohalfofyourAdeptlevelminimum1beforeyoufinishalongrest"
     },
     {
+      "name": "Biotic Bullrush",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Learn the Charge cantrip. If you have already learned the Charge cantrip, you may learn a new cantrip instead."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "The distance of your Charge cantrip is now 14m."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "When you hit a target with Charge, the target is knocked back 4m before it becomes prone."
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "In addition, a portion of the kenetic force is transfered into you shield's mirco-capacitors. Gain shield points equal to half the damage done, rounded down."
+        }
+      ],
+      "id": "biotic-bullrush",
+      "mechanic_text_dump": "LearntheChargecantripIfyouhavealreadylearnedtheChargecantripyoumaylearnanewcantripinsteadThedistanceofyourChargecantripisnow14mWhenyouhitatargetwithChargethetargetisknockedback4mbeforeitbecomesproneInadditionaportionofthekeneticforceistransferedintoyoushieldsmircocapacitorsGainshieldpointsequaltohalfthedamagedoneroundeddown"
+    },
+    {
       "name": "Biotic Concentration",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -151,7 +159,6 @@
     },
     {
       "name": "Biotic Control",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -173,8 +180,19 @@
       "mechanic_text_dump": "Atthe14thlevelyouveincreaseyourmasterywithbioticspellsthatcontrolthebattlefieldGainthefollowingbenefitstothespellsbelowlistPullPullcanaffectlargesizedobjectsmovingthem2mandadding4mtoeachsizebelowlargeLiftWhenyoucastLiftand5moredicetoyourrollSingularityLargesizedobjectcannowbeaffectedbysingularityStasisTargetshavedisadvantageontheirsavingthrowlist"
     },
     {
+      "name": "Biotic Enfilade",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "If an ally within 10m uses a power that primes an enemy, you may use your reaction to detonate the primed enemy with a quick biotic bolt that cannot miss. The enemy takes an additional 1d6 force damage as per the detonation rules."
+        }
+      ],
+      "id": "biotic-enfilade",
+      "mechanic_text_dump": "Ifanallywithin10musesapowerthatprimesanenemyyoumayuseyourreactiontodetonatetheprimedenemywithaquickbioticboltthatcannotmissTheenemytakesanadditional1d6forcedamageasperthedetonationrules"
+    },
+    {
       "name": "Biotic Focus",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -197,7 +215,6 @@
     },
     {
       "name": "Biotic Maneuvers",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -267,7 +284,6 @@
     },
     {
       "name": "Biotic Mastery",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -285,7 +301,6 @@
     },
     {
       "name": "Biotic Powers",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -298,7 +313,6 @@
     },
     {
       "name": "Biotic Slash",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -311,7 +325,6 @@
     },
     {
       "name": "Biotic Split",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -324,7 +337,6 @@
     },
     {
       "name": "Biotic Surge",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -342,7 +354,6 @@
     },
     {
       "name": "Biotic Wealth",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -355,7 +366,6 @@
     },
     {
       "name": "Brutal Critical",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -373,7 +383,6 @@
     },
     {
       "name": "Cabal Attacks",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -386,7 +395,6 @@
     },
     {
       "name": "Careful Eyes",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -403,8 +411,19 @@
       "mechanic_text_dump": "Startingat7thlevelyouexcelatpickingouthiddenenemiesandotherthreatsYoucantaketheSearchactionasabonusactionYoualsogainproficiencyinthePerceptionInvestigationorSurvivalskillchooseone"
     },
     {
+      "name": "Combat Heuristics",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Every time you bring an enemy to 0 HP or score a critical hit on them with a Sniper Rifle, your HUD updates your tactical feedback, restoring 1 TP each time this occurs."
+        }
+      ],
+      "id": "combat-heuristics",
+      "mechanic_text_dump": "Everytimeyoubringanenemyto0HPorscoreacriticalhitonthemwithaSniperRifleyourHUDupdatesyourtacticalfeedbackrestoring1TPeachtimethisoccurs"
+    },
+    {
       "name": "Combat Power",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -417,7 +436,6 @@
     },
     {
       "name": "Cunning Action",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -435,7 +453,6 @@
     },
     {
       "name": "Danger Sense",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -448,7 +465,6 @@
     },
     {
       "name": "Dark Biotics",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -460,8 +476,19 @@
       "mechanic_text_dump": "YourskillindealingdamagewithwitheringbioticpowersisunmatchedAddyourproficiencybonustoallnecroticdamagedealtbyyourbioticspells"
     },
     {
+      "name": "Deadeye",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You may spend 1 TP to gain advantage on an attack made with a Sniper Rifle by overclocking your scope's targeting technology."
+        }
+      ],
+      "id": "deadeye",
+      "mechanic_text_dump": "Youmayspend1TPtogainadvantageonanattackmadewithaSniperRiflebyoverclockingyourscopestargetingtechnology"
+    },
+    {
       "name": "Deadly Aim",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -482,21 +509,7 @@
       "mechanic_text_dump": "YouraimbecomesdeadlyAsabonusactiononyourturnyoucantakecarefulaimatacreatureyoucanseethatiswithinrangeofarangedweaponyourewieldingUntiltheendofthisturnyourrangedattackswiththatweapongaintwobenefitsagainstthetargetlistTheattacksignorehalfandthreequarterscoverOneachhittheweapondealsadditionaldamagetothetargetequalto2halfyourfighterlevelYoucanusethisfeaturethreetimesYouregainallexpendedusesofitwhenyoufinishashortorlongrestlist"
     },
     {
-      "name": "Deadly Strike",
-      "reviewed": "x",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "When you apply your sneak attack damage from an attack made with a melee weapon, increase the damage die to d8."
-        }
-      ],
-      "id": "deadly-strike",
-      "mechanic_text_dump": "Whenyouapplyyoursneakattackdamagefromanattackmadewithameleeweaponincreasethedamagedietod8"
-    },
-    {
       "name": "Drone",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -547,7 +560,6 @@
     },
     {
       "name": "Drone Efficiency",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -560,7 +572,6 @@
     },
     {
       "name": "Drone Mastery",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -573,7 +584,6 @@
     },
     {
       "name": "Drone Sidekick",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -586,7 +596,6 @@
     },
     {
       "name": "Drone Swarm",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -598,8 +607,19 @@
       "mechanic_text_dump": "Youcanhave3Dronesactiveatonce"
     },
     {
+      "name": "Dropshot",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You have advantage on attack rolls against any creature that hasn’t taken a turn in the combat yet. In addition, any hit you score against a creature that is surprised is a critical hit."
+        }
+      ],
+      "id": "dropshot",
+      "mechanic_text_dump": "YouhaveadvantageonattackrollsagainstanycreaturethathasnttakenaturninthecombatyetInadditionanyhityouscoreagainstacreaturethatissurprisedisacriticalhit"
+    },
+    {
       "name": "Dual Drones",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -612,7 +632,6 @@
     },
     {
       "name": "Ear for Deceit",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -625,7 +644,6 @@
     },
     {
       "name": "Elegant Maneuver",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -638,7 +656,6 @@
     },
     {
       "name": "Elusive",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -651,7 +668,6 @@
     },
     {
       "name": "Empowered Biotics",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -664,7 +680,6 @@
     },
     {
       "name": "Evasion",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -676,8 +691,19 @@
       "mechanic_text_dump": "WhenyouaresubjectedtoaneffectthatallowsyoutomakeaDexteritysavingthrowtotakeonlyhalfdamageyouinsteadtakenodamageifyousucceedonthesavingthrowandonlyhalfdamageifyoufail"
     },
     {
+      "name": "Expert Biotic",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Casting biotic spells comes so easily to you that it expends only a fraction of your efforts. When you cast a biotic spell of 2nd level or higher using a spell slot, you regain one expended spell slot. The slot you regain must be of a level lower than the spell you cast."
+        }
+      ],
+      "id": "expert-biotic",
+      "mechanic_text_dump": "CastingbioticspellscomessoeasilytoyouthatitexpendsonlyafractionofyoureffortsWhenyoucastabioticspellof2ndlevelorhigherusingaspellslotyouregainoneexpendedspellslotTheslotyouregainmustbeofalevellowerthanthespellyoucast"
+    },
+    {
       "name": "Expertise",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -690,7 +716,6 @@
     },
     {
       "name": "Extra Attack",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -708,7 +733,6 @@
     },
     {
       "name": "Eye for Detail",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -721,7 +745,6 @@
     },
     {
       "name": "Eye for Weakness",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -734,7 +757,6 @@
     },
     {
       "name": "Fighting Style",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -790,7 +812,6 @@
     },
     {
       "name": "Focused Biotics",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -803,7 +824,6 @@
     },
     {
       "name": "Healing Drone",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -835,7 +855,6 @@
     },
     {
       "name": "Heavy Weapon Hack",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -848,7 +867,6 @@
     },
     {
       "name": "Improved Barrier",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -866,7 +884,6 @@
     },
     {
       "name": "Improved Biotic Slash",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -879,7 +896,6 @@
     },
     {
       "name": "Improved Tech Armor",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -897,7 +913,6 @@
     },
     {
       "name": "Improved Weapon Superiority",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -910,7 +925,6 @@
     },
     {
       "name": "Indomitable",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -928,7 +942,6 @@
     },
     {
       "name": "Infiltration",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -941,7 +954,6 @@
     },
     {
       "name": "Insightful Fighting",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -959,7 +971,6 @@
     },
     {
       "name": "Invention",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -971,8 +982,19 @@
       "mechanic_text_dump": "Atthe20thlevelyoucreateanInventionTheinventionshouldbecondonedbytheDMtonotbeoverpoweredButshouldgiveyouyourpartyyourdronesetcanadvantage"
     },
     {
+      "name": "Killshot",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "When you attack and hit a creature that is surprised, it must make a Constitution saving throw (DC 8 + your Dexterity modifier + your proficiency bonus). On a failed save, double the damage of your attack against the creature."
+        }
+      ],
+      "id": "killshot",
+      "mechanic_text_dump": "WhenyouattackandhitacreaturethatissurpriseditmustmakeaConstitutionsavingthrowDC8yourDexteritymodifieryourproficiencybonusOnafailedsavedoublethedamageofyourattackagainstthecreature"
+    },
+    {
       "name": "Makeshift Grenades",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -990,7 +1012,6 @@
     },
     {
       "name": "Marksman",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1008,7 +1029,6 @@
     },
     {
       "name": "Master Duelist",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1021,7 +1041,6 @@
     },
     {
       "name": "Master Tactician",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1034,7 +1053,6 @@
     },
     {
       "name": "Medi-gel Enhancements",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1058,36 +1076,7 @@
       "mechanic_text_dump": "Youcanspend6hoursinalaborsimilarenvironmentusingdrugstoenhancethecapabilitiesofstandardmedigelIttakes2hourstocraftasingleenhancementbutyoucanapplythatbenefittoanynumberofmedigelcartridgesTocraftanotherenhancementtakesanadditional6hoursInsteadofusingtimetolimitthisfeatureyourGMcanchoosetoallowyoutoaddXenhancementstoYmedigelcartridgeswhereXisyourIntelligencemodifierandYishalfyourEngineeringlevelminimum1thenyoumustfinishalongrestbeforeyoucancreateneenhancementsWhencreatinganenhancementchoosefromthelistbelowlistStimulantAfterusingthismedigelyouhaveadvantageonthenextsavingthroworattackrollyoumakewithin1minuteOpioidWithin1minuteofusingthismedigelifyouwouldfallbelow0hitpointbutnotoutrightdieyoumayfallto1hitpointinsteadSteroidAfterusingthismedigeladd2damagetoallmeleedamagefor1minuteMinagenX3Afterusingthismedigelgain2damagetoallbioticspellsandcantripsfor1minuteVidelicetAfterusingthismedigelgain2bonustoallrangedtechattacksfor1minuteStypticIncreasethehealingdieby1dietypewhenusingthismedigellist"
     },
     {
-      "name": "Melee Specialist",
-      "reviewed": "x",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "You've trained extensively in melee weapon combat."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "When wielding a two-handed ranged weapon, you can use a bonus action to make a melee weapon attack with your omni-tool."
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "When wielding a single-handed ranged weapon, you can use a bonus action to make a melee weapon attack with a light or versatile melee weapon."
-        },
-        {
-          "id": 4,
-          "type": "line",
-          "data": "When wielding only melee weapons: Gain +1 AC. When you take the Attack action, you can use a bonus action to make another melee weapon attack."
-        }
-      ],
-      "id": "melee-specialist",
-      "mechanic_text_dump": "YouvetrainedextensivelyinmeleeweaponcombatWhenwieldingatwohandedrangedweaponyoucanuseabonusactiontomakeameleeweaponattackwithyouromnitoolWhenwieldingasinglehandedrangedweaponyoucanuseabonusactiontomakeameleeweaponattackwithalightorversatilemeleeweaponWhenwieldingonlymeleeweaponsGain1ACWhenyoutaketheAttackactionyoucanuseabonusactiontomakeanothermeleeweaponattack"
-    },
-    {
       "name": "Misdirection",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1099,8 +1088,19 @@
       "mechanic_text_dump": "YoucansometimescauseanothercreaturetosufferanattackmeantforyouWhenyouaretargetedbyanattackwhileacreaturewithin2mofyouisgrantingyoucoveragainstthatattackyoucanuseyourreactiontohavetheattacktargetthatcreatureinsteadofyou"
     },
     {
+      "name": "Nightshade Blades",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Learn the Nightshade Blades spell"
+        }
+      ],
+      "id": "nightshade-blades",
+      "mechanic_text_dump": "LearntheNightshadeBladesspell"
+    },
+    {
       "name": "Omni-Shield",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1122,7 +1122,6 @@
     },
     {
       "name": "Opportunist",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1135,7 +1134,6 @@
     },
     {
       "name": "Overchannel",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1152,8 +1150,19 @@
       "mechanic_text_dump": "YoucanincreasethepowerofyoursimplerbioticsWhenyoucastabioticspellof1stor2ndlevelthatdealsdamageyoucandealmaximumdamagewiththatspellThefirsttimeyoudosoyousuffernoadverseeffectIfyouusethisfeatureagainbeforeyoufinishalongrestyoutake2d12psychicdamageforeachlevelofthespellimmediatelyafteryoucastitEachtimeyouusethisfeatureagainbeforefinishingalongrestthenecroticdamageperspelllevelincreasesby1d12Thisdamageignoresresistanceandimmunity"
     },
     {
+      "name": "Poison Strike",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Learn the Poison Strike spell"
+        }
+      ],
+      "id": "poison-strike",
+      "mechanic_text_dump": "LearnthePoisonStrikespell"
+    },
+    {
       "name": "Potent Biotics",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1166,7 +1175,6 @@
     },
     {
       "name": "Power Armor",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1184,7 +1192,6 @@
     },
     {
       "name": "Primal Biotics",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1196,21 +1203,7 @@
       "mechanic_text_dump": "YourStrengthandConstitutionscoresincreaseby4Yourmaximumforthosescoresisnow24"
     },
     {
-      "name": "Expert Biotic",
-      "reviewed": "x",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Casting biotic spells comes so easily to you that it expends only a fraction of your efforts. When you cast a biotic spell of 2nd level or higher using a spell slot, you regain one expended spell slot. The slot you regain must be of a level lower than the spell you cast."
-        }
-      ],
-      "id": "expert-biotic",
-      "mechanic_text_dump": "CastingbioticspellscomessoeasilytoyouthatitexpendsonlyafractionofyoureffortsWhenyoucastabioticspellof2ndlevelorhigherusingaspellslotyouregainoneexpendedspellslotTheslotyouregainmustbeofalevellowerthanthespellyoucast"
-    },
-    {
       "name": "Pure Biotics",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1223,7 +1216,6 @@
     },
     {
       "name": "Quick Cast",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1241,7 +1233,6 @@
     },
     {
       "name": "Quick Reload",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1253,8 +1244,19 @@
       "mechanic_text_dump": "YoucanreloadyourWeaponofChoiceasabonusaction"
     },
     {
+      "name": "Reliable Talent",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You have refined your chosen skills until they approach perfection. Whenever you make an ability check that lets you add your proficiency bonus, you can treat a d20 roll of 9 or lower as a 10."
+        }
+      ],
+      "id": "reliable-talent",
+      "mechanic_text_dump": "YouhaverefinedyourchosenskillsuntiltheyapproachperfectionWheneveryoumakeanabilitycheckthatletsyouaddyourproficiencybonusyoucantreatad20rollof9orlowerasa10"
+    },
+    {
       "name": "Retaliation",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1267,7 +1269,6 @@
     },
     {
       "name": "Saboteur's Touch",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1280,7 +1281,6 @@
     },
     {
       "name": "Sculpt Biotics",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1293,7 +1293,6 @@
     },
     {
       "name": "Sentinel Mastery",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1311,7 +1310,6 @@
     },
     {
       "name": "Shadow Broker",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1324,7 +1322,6 @@
     },
     {
       "name": "Shadow Strike",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1337,7 +1334,6 @@
     },
     {
       "name": "Shield Boost",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1355,7 +1351,6 @@
     },
     {
       "name": "Signature Biotics",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1372,8 +1367,19 @@
       "mechanic_text_dump": "Whenyoureach20thlevelyougainmasteryovertwopowerfulspellsandcancastthemwithlittleeffortChoosetwo2ndor3rdlevelbioticspellsinyourspellbookasyoursignaturebioticsYoucancasteachofthemonceat3rdlevelwithoutexpendingaspellslotWhenyoudosoyoucantdosoagainuntilyoufinishashortorlongrestIfyouwanttocasteitherspellat4thlevelorhigheryoumustexpendaspellslotasnormal"
     },
     {
+      "name": "Silent Cloak",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Your Tactical Cloak dampens noise. You have advantage on a Dexterity (Stealth) check if you move no more than half your speed on the same turn."
+        }
+      ],
+      "id": "silent-cloak",
+      "mechanic_text_dump": "YourTacticalCloakdampensnoiseYouhaveadvantageonaDexterityStealthcheckifyoumovenomorethanhalfyourspeedonthesameturn"
+    },
+    {
       "name": "Snapshot",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1386,7 +1392,6 @@
     },
     {
       "name": "Sneak Attack",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1404,7 +1409,6 @@
     },
     {
       "name": "Strafe",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1417,7 +1421,6 @@
     },
     {
       "name": "Stroke of Luck",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1430,7 +1433,6 @@
     },
     {
       "name": "Sudden Strike",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1443,7 +1445,6 @@
     },
     {
       "name": "Supply Pylon",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1471,8 +1472,24 @@
       "mechanic_text_dump": "CallinaSupplyPylontoalocationwithin4mAtthestartofyournextturnthepylonarrivesIfanycreatureisstandinginthetargetedlocationthecreaturemustmakeaDexteritysavingthrowithasadvantageonthissavingthrowOnafailedsavethecreaturetakes4d8bludgeoningdamageandisknockedproneOncethepylonhaslandedfriendlycreaturesincludingyouwithinmeleerangecanspend1actionaccessingthepylontogainasingleresourcelistedbelowlistGain1HeavyWeaponammochargeGain5TPor5levelsworthofSpellslotsGain1medigelGain1grenadesGain2specializedthermalclipslistOnceyouusethisfeatureyoucannotuseitagainuntilyoufinishashortorlongrest"
     },
     {
+      "name": "Synchronized Assault",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You may use a reaction to sync the targeting computers of all your allies who are conscious. You target an enemy, painting them with an infared beam that lets all of your affected allies (and yourself) make an attack roll on that target using their weapon during your turn. If your affected ally has already taken their turn, they may still make an attack on the designated enemy, and if they have not yet taken their turn, they make the attack with advantage."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Once you use Synchronized Assault, you must finish a long rest before you can use it again."
+        }
+      ],
+      "id": "synchronized-assault",
+      "mechanic_text_dump": "YoumayuseareactiontosyncthetargetingcomputersofallyourallieswhoareconsciousYoutargetanenemypaintingthemwithaninfaredbeamthatletsallofyouraffectedalliesandyourselfmakeanattackrollonthattargetusingtheirweaponduringyourturnIfyouraffectedallyhasalreadytakentheirturntheymaystillmakeanattackonthedesignatedenemyandiftheyhavenotyettakentheirturntheymaketheattackwithadvantageOnceyouuseSynchronizedAssaultyoumustfinishalongrestbeforeyoucanuseitagain"
+    },
+    {
       "name": "Tactical Ambush",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1485,7 +1502,6 @@
     },
     {
       "name": "Tactical Cloak",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1498,7 +1514,6 @@
     },
     {
       "name": "Targeting Mobility",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1511,7 +1526,6 @@
     },
     {
       "name": "Tech Armor",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1534,7 +1548,6 @@
     },
     {
       "name": "Tech Armor Overload",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1552,7 +1565,6 @@
     },
     {
       "name": "Tech Aura",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1578,7 +1590,6 @@
     },
     {
       "name": "Tech Aura Improvement",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1591,7 +1602,6 @@
     },
     {
       "name": "Tech Power",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1604,7 +1614,6 @@
     },
     {
       "name": "Teleporting Dodge",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1617,7 +1626,6 @@
     },
     {
       "name": "Uncanny Dodge",
-      "reviewed": null,
       "mechanic": [
         {
           "id": 1,
@@ -1629,8 +1637,19 @@
       "mechanic_text_dump": "Whenanattackerthatyoucanseehitsyouwithanattackyoucanuseyourreactiontohalvetheattacksdamageagainstyou"
     },
     {
+      "name": "Up Close and Personal",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "When you apply your sneak attack damage from an attack made with a melee weapon, increase the damage die to d8."
+        }
+      ],
+      "id": "up-close-and-personal",
+      "mechanic_text_dump": "Whenyouapplyyoursneakattackdamagefromanattackmadewithameleeweaponincreasethedamagedietod8"
+    },
+    {
       "name": "Weapon of Choice",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1659,7 +1678,6 @@
     },
     {
       "name": "Zero-Sum",
-      "reviewed": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1679,45 +1697,6 @@
       ],
       "id": "zero-sum",
       "mechanic_text_dump": "WhenyoumakeameleeattackinsteadofrollingadiceyoucanflipacoinOnaheadsitsacriticalhitOnatailsitsacriticalmissYoucanusethisabilityoncepershortrestStartingatthe9thlevelyoucanusethisabilitytwicepershortrestStartingatthe11thlevelyoucanusethisabilitythreetimespershortrest"
-    },
-    {
-      "name": "Reliable Talent",
-      "reviewed": "x",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "You have refined your chosen skills until they approach perfection. Whenever you make an ability check that lets you add your proficiency bonus, you can treat a d20 roll of 9 or lower as a 10."
-        }
-      ],
-      "id": "reliable-talent",
-      "mechanic_text_dump": "YouhaverefinedyourchosenskillsuntiltheyapproachperfectionWheneveryoumakeanabilitycheckthatletsyouaddyourproficiencybonusyoucantreatad20rollof9orlowerasa10"
-    },
-    {
-      "name": "Nightshade Blades",
-      "reviewed": null,
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Learn the Nightshade Blades spell"
-        }
-      ],
-      "id": "nightshade-blades",
-      "mechanic_text_dump": "LearntheNightshadeBladesspell"
-    },
-    {
-      "name": "Poison Strike",
-      "reviewed": null,
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Learn the Poison Strike spell"
-        }
-      ],
-      "id": "poison-strike",
-      "mechanic_text_dump": "LearnthePoisonStrikespell"
     }
   ]
 }
