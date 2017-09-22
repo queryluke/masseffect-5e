@@ -1,5 +1,5 @@
 {
-  "updated": "September 21, 2017 @  9:22 PM",
+  "updated": "September 22, 2017 @  1:37 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -130,15 +130,10 @@
           "id": 3,
           "type": "line",
           "data": "When you hit a target with Charge, the target is knocked back 4m before it becomes prone."
-        },
-        {
-          "id": 4,
-          "type": "line",
-          "data": "In addition, a portion of the kenetic force is transfered into you shield's mirco-capacitors. Gain shield points equal to half the damage done, rounded down."
         }
       ],
       "id": "biotic-bullrush",
-      "mechanic_text_dump": "LearntheChargecantripIfyouhavealreadylearnedtheChargecantripyoumaylearnanewcantripinsteadThedistanceofyourChargecantripisnow14mWhenyouhitatargetwithChargethetargetisknockedback4mbeforeitbecomesproneInadditionaportionofthekeneticforceistransferedintoyoushieldsmircocapacitorsGainshieldpointsequaltohalfthedamagedoneroundeddown"
+      "mechanic_text_dump": "LearntheChargecantripIfyouhavealreadylearnedtheChargecantripyoumaylearnanewcantripinsteadThedistanceofyourChargecantripisnow14mWhenyouhitatargetwithChargethetargetisknockedback4mbeforeitbecomesprone"
     },
     {
       "name": "Biotic Concentration",
