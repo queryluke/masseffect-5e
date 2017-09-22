@@ -3,7 +3,10 @@
     v-layout(row justify-space-around)
       v-flex.xs12
         img(:src="`../assets/images/me5e_logo_notm.png`" alt="mass effect 5e logo")
-        p Player's Handbook
+        p.subtitle Player's Handbook
+        div.ma-5.text-xs-center
+          v-btn(href="https://queryluke.github.io/masseffect-5e/") About, News, & Printables
+          v-btn(href="https://github.com/queryluke/masseffect-5e/blob/master/CHANGELOG.md") Changelog
 </template>
 
 <script>
@@ -18,7 +21,7 @@ export default {
     img
       width: 100%;
 
-    p
+    p.subtitle
       font-size: 3em;
       text-align: center;
       margin-top 1em;
