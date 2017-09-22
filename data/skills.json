@@ -1,5 +1,5 @@
 {
-  "updated": "September 11, 2017 @ 11:04 PM",
+  "updated": "September 22, 2017 @  1:33 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRFYAlUo84hir8VGSHwP4pKqnTcih_5UD0Uqtgi9w-QHEvrSxLthv1xXG0jb_tpbBRNZXE1Dv0nF0_q/pubhtml",
   "data": [
     {
@@ -71,7 +71,7 @@
       "removed": null,
       "micon": "school",
       "link": "Intelligence",
-      "description": "Your Intelligence (History) check measures your ability to recall lore about historical events, legendary people, ancient races, past disputes, recent wars, and lost civilizations.",
+      "description": "Your Intelligence (History) check measures your ability to recall lore about historical events, legendary people, ancient or alien races and their cultures or customs, past disputes, recent wars, and lost civilizations.",
       "id": "history"
     },
     {
@@ -107,7 +107,7 @@
       "removed": null,
       "micon": "healing",
       "link": "Wisdom",
-      "description": "A Wisdom (Medicine) check lets you try to stabilize a dying companion or diagnose an illness.",
+      "description": "A Wisdom (Medicine) check lets you try to stabilize a dying companion, diagnose an illness, or understand the biology of an organism.",
       "id": "medicine"
     },
     {
@@ -190,15 +190,6 @@
       "link": "Wisdom",
       "description": "The GM might ask you to make a Wisdom (Survival) check to survive in uncivilized alien words, especially harsh environments like tundra, deserts, or jungles. The check might help you navigate a blizzard, find food in a wasteland, or avoid getting eaten by a Thresher Maw.",
       "id": "survival"
-    },
-    {
-      "name": "Xenology",
-      "new": "x",
-      "removed": null,
-      "micon": null,
-      "link": "Intelligence",
-      "description": "How well do you know your galactic co-habitants? An Intelligence (Xenology) check determins how well you can recall information about alien species. These could be facts about their biology, politics, religions, customs, etc.",
-      "id": "xenology"
     }
   ]
 }

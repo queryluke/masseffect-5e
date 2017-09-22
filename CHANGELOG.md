@@ -3,6 +3,10 @@
 ## v0.2.1
 Pretty much all changes due, with thanks, to the lore mastery, creativity, and play testing of SleightxHope!
 
+### Skills
+* Removed Xenology. There was too much crossover between Medicine, History, and Xenology. Medicine is used for organic biology
+checks (alien or no), history is culture, politics, legends, lore, etc (alien or no)
+
 ### Races
 * Now have alignments
 
