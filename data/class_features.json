@@ -1,5 +1,5 @@
 {
-  "updated": "September 21, 2017 @  8:32 PM",
+  "updated": "September 21, 2017 @  9:22 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -999,16 +999,26 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Your omni-tool is so advanced, you can use tech points to create a grenade. Choose a grenade from the grenade list; as an action, you can spend 4 tech points to create and use a grenade of that type. You cannot replenish a grenade or gift a grenade with this ability."
+          "data": "Your omni-tool is so advanced, you can use tech points to create a specific grenade. Choose a grenade from the grenade list, it is permanently programmed into your Omni-tool."
         },
         {
           "id": 2,
           "type": "line",
-          "data": "Choose a second grenade type. Both the first and second grenade types you've chosen with Makeshift Grenades cost 2 tech points."
+          "data": "As an action, you can spend 3 tech points to create and use a grenade of that type. You cannot replenish a grenade or gift a grenade with this ability."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "You can spend 8 hours of programming to exchange your selected grenade with a different one."
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "At the 14th level, you can have 2 grenades programmed into your Omni-tool at once. Reduce the tech point cost for a grenade cast with Makeshift Grenades to 2."
         }
       ],
       "id": "makeshift-grenades",
-      "mechanic_text_dump": "YouromnitoolissoadvancedyoucanusetechpointstocreateagrenadeChooseagrenadefromthegrenadelistasanactionyoucanspend4techpointstocreateanduseagrenadeofthattypeYoucannotreplenishagrenadeorgiftagrenadewiththisabilityChooseasecondgrenadetypeBoththefirstandsecondgrenadetypesyouvechosenwithMakeshiftGrenadescost2techpoints"
+      "mechanic_text_dump": "YouromnitoolissoadvancedyoucanusetechpointstocreateaspecificgrenadeChooseagrenadefromthegrenadelistitispermanentlyprogrammedintoyourOmnitoolAsanactionyoucanspend3techpointstocreateanduseagrenadeofthattypeYoucannotreplenishagrenadeorgiftagrenadewiththisabilityYoucanspend8hoursofprogrammingtoexchangeyourselectedgrenadewithadifferentoneAtthe14thlevelyoucanhave2grenadesprogrammedintoyourOmnitoolatonceReducethetechpointcostforagrenadecastwithMakeshiftGrenadesto2"
     },
     {
       "name": "Marksman",
@@ -1513,18 +1523,6 @@
       "mechanic_text_dump": "Use1TechpointtobecomeInvisibleYoucontinuetomakenoisebutyouhaveadvantageonstealthchecksYouhaveadvantageonthefirstmeleerangedortechattackmadefromTacticalCloakWhenyoumakeameleerangedortechattackyourtacticalcloakends"
     },
     {
-      "name": "Targeting Mobility",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "While Targeting, instead of automatically failing Dexterity saving throws, you have disadvantage, and creatures that attack you do not have advantage."
-        }
-      ],
-      "id": "targeting-mobility",
-      "mechanic_text_dump": "WhileTargetinginsteadofautomaticallyfailingDexteritysavingthrowsyouhavedisadvantageandcreaturesthatattackyoudonothaveadvantage"
-    },
-    {
       "name": "Tech Armor",
       "mechanic": [
         {
@@ -1697,6 +1695,18 @@
       ],
       "id": "zero-sum",
       "mechanic_text_dump": "WhenyoumakeameleeattackinsteadofrollingadiceyoucanflipacoinOnaheadsitsacriticalhitOnatailsitsacriticalmissYoucanusethisabilityoncepershortrestStartingatthe9thlevelyoucanusethisabilitytwicepershortrestStartingatthe11thlevelyoucanusethisabilitythreetimespershortrest"
+    },
+    {
+      "name": "Paint by Number",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You're an artist and a targeting laser is your paintbrush. When using a Heavy Weapon that requires a round to Target, you may target and fire on the same turn."
+        }
+      ],
+      "id": "paint-by-number",
+      "mechanic_text_dump": "YoureanartistandatargetinglaserisyourpaintbrushWhenusingaHeavyWeaponthatrequiresaroundtoTargetyoumaytargetandfireonthesameturn"
     }
   ]
 }

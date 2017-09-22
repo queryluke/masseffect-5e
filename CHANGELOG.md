@@ -8,6 +8,11 @@ Pretty much all changes due, with thanks, to the lore mastery, creativity, and p
 
 ### Classes
 
+### Engineers
+**Demolisher**
+* Moved 2nd level Makeshift Grenades from 18 to 14.
+* Replaced 14th level talent Targeting Mobility with new, more powerful talent Paint by Number.
+
 #### Infiltrators
 **Shadow**
 * Deadly Strike renamed Up Close and Personal, moved to 2nd level.
