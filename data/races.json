@@ -1,11 +1,11 @@
 {
-  "updated": "September 11, 2017 @ 11:04 PM",
+  "updated": "September 21, 2017 @  4:35 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQI4F-wI2gwN395GApB347yPb1PixjOtOqZ0qoBYw7d57MPETHS40ZjIy1-DIfZf06PUwrspMiuAMlk/pubhtml",
   "data": [
     {
       "name": "Asari",
       "similar_to": "Half-elf",
-      "alignment": null,
+      "alignment": "Tend towards neutral as a species. Most Maiden stage Asari are chaotic, Matrons level out to neutral, Matriarchs are heavily lawful.",
       "available_classes": "Adept, Engineer, Infiltrator, Sentinel, Soldier, Vanguard",
       "sexy_level": "8",
       "increases": "+2 Charisma, +1 Wisdom",
@@ -23,7 +23,7 @@
     {
       "name": "Batarian",
       "similar_to": "Hobgoblin",
-      "alignment": null,
+      "alignment": "Tend towards lawful evil, although there are definite outliers on the moral spectrum.",
       "available_classes": "Adept, Engineer, Infiltrator, Sentinel, Soldier, Vanguard",
       "sexy_level": "1",
       "increases": "+2 Constitution, +1 Charisma",
@@ -41,7 +41,7 @@
     {
       "name": "Drell",
       "similar_to": "Elf",
-      "alignment": null,
+      "alignment": "Their religious influences set the Drell firmly in a trend towards lawful neutral, but this is often dependent on their station in life and career.",
       "available_classes": "Adept, Infiltrator, Soldier, Vanguard",
       "sexy_level": "10",
       "increases": "+2 Dexterity, +1 Wisdom",
@@ -59,7 +59,7 @@
     {
       "name": "Human",
       "similar_to": "Humans",
-      "alignment": null,
+      "alignment": "Any and all across the spectrum.",
       "available_classes": "Adept, Engineer, Infiltrator, Sentinel, Soldier, Vanguard",
       "sexy_level": "5",
       "increases": "+1 to two ability scores",
@@ -77,7 +77,7 @@
     {
       "name": "Geth",
       "similar_to": "Warforged",
-      "alignment": null,
+      "alignment": "Your standard Geth platform is neutral good, wanting to prosper and communicate with others, defending themselves only if threatened. Heretics are lawful evil, serving the Reapers and slavishly accomplishing their will.",
       "available_classes": "Engineer, Infiltrator, Soldier",
       "sexy_level": "6",
       "increases": "+2 Intelligence, +1 Constitution",
@@ -95,7 +95,7 @@
     {
       "name": "Krogan",
       "similar_to": "Orc",
-      "alignment": null,
+      "alignment": "Tend towards lawful as a species, with clan rituals and traditions holding heavy sway. Morality varies widely.",
       "available_classes": "Adept, Engineer, Sentinel, Soldier, Vanguard",
       "sexy_level": "7",
       "increases": "+2 Strength, +1 Constitution",
@@ -113,7 +113,7 @@
     {
       "name": "Quarian",
       "similar_to": "??",
-      "alignment": null,
+      "alignment": "The proximity and longstanding traditions of the Migrant Fleet make Quarians very lawful as a race, occasionally drifting toward neutral. Morality can vary but tends towards neutral or good.",
       "available_classes": "Engineer, Infiltrator, Soldier",
       "sexy_level": "8",
       "increases": "+1 Intelligence, +1 Charisma, +1 Wisdom",
@@ -131,7 +131,7 @@
     {
       "name": "Salarian",
       "similar_to": "Gnomes",
-      "alignment": null,
+      "alignment": "Tend to be measured and intellectual, leaning neutral whether lawful, chaotic, evil or good.",
       "available_classes": "Engineer, Infiltrator, Soldier",
       "sexy_level": "6",
       "increases": "+2 Intelligence, +1 Dexterity",
@@ -149,7 +149,7 @@
     {
       "name": "Turian",
       "similar_to": "Dwarves",
-      "alignment": null,
+      "alignment": "Tend away from evil, heavily lean towards lawful as a culture. Outliers tend to be chaotic as a reaction to the culture.",
       "available_classes": "Engineer, Infiltrator, Sentinel, Soldier, Vanguard",
       "sexy_level": "9",
       "increases": "+2 Constitution, +1 Strength",
@@ -167,7 +167,7 @@
     {
       "name": "Volus",
       "similar_to": "Firbolg",
-      "alignment": null,
+      "alignment": "Their society tends towards lawful as a whole, with clans fighting over economic resources and aggressive negotiating, even if they are individually chaotic individuals. They tend towards neutral morality.",
       "available_classes": "Adept, Engineer, Sentinel, Vanguard",
       "sexy_level": "3",
       "increases": "+2 Wisdom, +1 Strength",
@@ -185,7 +185,7 @@
     {
       "name": "Vorcha",
       "similar_to": "Goblins",
-      "alignment": null,
+      "alignment": "Tend towards chaotic evil, almost always chaotic even if their morality is strengthened.",
       "available_classes": "Engineer, Infiltrator, Sentinel, Soldier",
       "sexy_level": "0",
       "increases": "+2 Dexterity, +1 Constitution",

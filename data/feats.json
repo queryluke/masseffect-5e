@@ -1,7 +1,45 @@
 {
-  "updated": "September 11, 2017 @ 11:04 PM",
+  "updated": "September 21, 2017 @ 10:17 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTPhVRIodUwbDYFw8wJZtmb63tTjFJMxY-cN6P5nayPpJhNxAQFqIxeSLd5Tz75aOZ7CLuBkNsDrcs9/pubhtml",
   "data": [
+    {
+      "name": "A Beautiful Mine",
+      "not_available": null,
+      "page_number": null,
+      "updated": null,
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You know how to sculpt explosives into works of art."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "You have advantage on disarming land-mines that you find"
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Enemies who trigger your mines make their Dexterity saving throw at disadvantage."
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "You can sculpt the mine's explosion: Choose two 2m squares. Any creature within those squares take no damage from the mine's explosion."
+        }
+      ],
+      "notes": "You're an ace with explosives.",
+      "prerequisite": null,
+      "batarian": "x",
+      "drell": null,
+      "human": "x",
+      "quarian": "x",
+      "salarian": "x",
+      "turian": "x",
+      "id": "a-beautiful-mine",
+      "description_text_dump": "YouknowhowtosculptexplosivesintoworksofartYouhaveadvantageondisarminglandminesthatyoufindEnemieswhotriggeryourminesmaketheirDexteritysavingthrowatdisadvantageYoucansculpttheminesexplosionChoosetwo2msquaresAnycreaturewithinthosesquarestakenodamagefromtheminesexplosion"
+    },
     {
       "name": "Actor",
       "not_available": null,
@@ -58,6 +96,39 @@
       "turian": "x",
       "id": "athlete",
       "description_text_dump": ""
+    },
+    {
+      "name": "Big Game Hunter",
+      "not_available": null,
+      "page_number": null,
+      "updated": null,
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "The bigger they are, the harder you take them down."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Increase your Strength score by 1, to a maximum of 20."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Non-sentient, organic creatures any size larger than yourself, gain a permanent +2 to damage rolls against them."
+        }
+      ],
+      "notes": "+1 Strength, additional damage to larger, organic creatures",
+      "prerequisite": null,
+      "batarian": "x",
+      "drell": "x",
+      "human": "x",
+      "quarian": "x",
+      "salarian": null,
+      "turian": "x",
+      "id": "big-game-hunter",
+      "description_text_dump": "ThebiggertheyaretheharderyoutakethemdownIncreaseyourStrengthscoreby1toamaximumof20Nonsentientorganiccreaturesanysizelargerthanyourselfgainapermanent2todamagerollsagainstthem"
     },
     {
       "name": "Biotic Slayer",
@@ -220,6 +291,67 @@
       "description_text_dump": "YouoptionsfordamagetypesareFireColdLightningForceandNecrotic"
     },
     {
+      "name": "Enhanced Optics",
+      "not_available": null,
+      "page_number": null,
+      "updated": null,
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Your optic nerves have been enhanced by science to perceive more, and better. Gain low-light vision. If you already have low-light vision, gain darkvision. You now gain proficiency in Perception, Investigation, and Insight. If you are already proficient in any of these, gain a permanent +2 to the proficient skill(s)."
+        }
+      ],
+      "notes": "Increased vision. Proficiency in Preception, Investigation, and Insight",
+      "prerequisite": null,
+      "batarian": null,
+      "drell": null,
+      "human": "x",
+      "quarian": "x",
+      "salarian": null,
+      "turian": "x",
+      "id": "enhanced-optics",
+      "description_text_dump": "YouropticnerveshavebeenenhancedbysciencetoperceivemoreandbetterGainlowlightvisionIfyoualreadyhavelowlightvisiongaindarkvisionYounowgainproficiencyinPerceptionInvestigationandInsightIfyouarealreadyproficientinanyofthesegainapermanent2totheproficientskills"
+    },
+    {
+      "name": "Featherlight",
+      "not_available": null,
+      "page_number": null,
+      "updated": null,
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Travel light, travel fast."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Increase your Dexterity score by 1, to a maximum of 20."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "If you are carrying half or less of your maximum Strength score, your speed increases by 10m."
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "You also avoid triggering any pressure-activated traps or mines."
+        }
+      ],
+      "notes": "+1 Dexterity, increased speed and you don't set off weight based traps",
+      "prerequisite": null,
+      "batarian": "x",
+      "drell": "x",
+      "human": "x",
+      "quarian": "x",
+      "salarian": "x",
+      "turian": "x",
+      "id": "featherlight",
+      "description_text_dump": "TravellighttravelfastIncreaseyourDexterityscoreby1toamaximumof20IfyouarecarryinghalforlessofyourmaximumStrengthscoreyourspeedincreasesby10mYoualsoavoidtriggeringanypressureactivatedtrapsormines"
+    },
+    {
       "name": "Grappler",
       "not_available": null,
       "page_number": "167",
@@ -368,20 +500,20 @@
     },
     {
       "name": "Inspiring Leader",
-      "not_available": null,
-      "page_number": "167",
+      "not_available": "x",
+      "page_number": null,
       "updated": null,
       "description": [
 
       ],
-      "notes": "Inspire your companions to grant temporary hit points",
+      "notes": null,
       "prerequisite": null,
       "batarian": null,
-      "drell": "x",
+      "drell": null,
       "human": null,
-      "quarian": "x",
-      "salarian": "x",
-      "turian": "x",
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
       "id": "inspiring-leader",
       "description_text_dump": ""
     },
@@ -517,6 +649,38 @@
       "turian": "x",
       "id": "medium-armor-master",
       "description_text_dump": ""
+    },
+    {
+      "name": "Melee Specialist",
+      "not_available": null,
+      "page_number": null,
+      "updated": null,
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You've trained extensively in melee weapon combat. +1 Strength"
+        },
+        {
+          "id": 2,
+          "type": "list",
+          "data": [
+            "When wielding a two-handed ranged weapon, you can use a bonus action to make a melee weapon attack with your omni-tool.",
+            "When wielding a single-handed ranged weapon, you can use a bonus action to make a melee weapon attack with a light or versatile melee weapon (your Omni-tool is a light weapon).",
+            "When wielding only melee weapons: Gain +1 AC. When you take the Attack action, you can use a bonus action to make another melee weapon attack."
+          ]
+        }
+      ],
+      "notes": null,
+      "prerequisite": null,
+      "batarian": "x",
+      "drell": "x",
+      "human": "x",
+      "quarian": null,
+      "salarian": null,
+      "turian": "x",
+      "id": "melee-specialist",
+      "description_text_dump": "Youvetrainedextensivelyinmeleeweaponcombat1StrengthlistWhenwieldingatwohandedrangedweaponyoucanuseabonusactiontomakeameleeweaponattackwithyouromnitoolWhenwieldingasinglehandedrangedweaponyoucanuseabonusactiontomakeameleeweaponattackwithalightorversatilemeleeweaponyourOmnitoolisalightweaponWhenwieldingonlymeleeweaponsGain1ACWhenyoutaketheAttackactionyoucanuseabonusactiontomakeanothermeleeweaponattacklist"
     },
     {
       "name": "Mobile",
@@ -785,6 +949,29 @@
       "description_text_dump": ""
     },
     {
+      "name": "Squad Leader",
+      "not_available": null,
+      "page_number": null,
+      "updated": null,
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You know just what to say in a tight situation. As a bonus action, you can inspire all allies within earshot to instantly roll a hit die and regain that many hit points. This does not expend a hit die from their pool. Allies immediately recover from the following conditions: {charmed}, {frightened}, {frozen}, {grappled}, {incapacitated}, {paralyzed}, {poisoned}, {prone}, {restrained}, and {stunned}. You may use this ability once per short rest."
+        }
+      ],
+      "notes": "Heal and inspire allies to overcome negative conditions.",
+      "prerequisite": null,
+      "batarian": "x",
+      "drell": "x",
+      "human": "x",
+      "quarian": "x",
+      "salarian": "x",
+      "turian": "x",
+      "id": "squad-leader",
+      "description_text_dump": "YouknowjustwhattosayinatightsituationAsabonusactionyoucaninspireallallieswithinearshottoinstantlyrollahitdieandregainthatmanyhitpointsThisdoesnotexpendahitdiefromtheirpoolAlliesimmediatelyrecoverfromthefollowingconditionscharmedfrightenedfrozengrappledincapacitatedparalyzedpoisonedpronerestrainedandstunnedYoumayusethisabilityoncepershortrest"
+    },
+    {
       "name": "Tavern Brawler",
       "not_available": null,
       "page_number": "170",
@@ -840,6 +1027,39 @@
       "turian": null,
       "id": "war-caster",
       "description_text_dump": ""
+    },
+    {
+      "name": "Wealth of Knowledge",
+      "not_available": null,
+      "page_number": null,
+      "updated": null,
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Your grasp of random factoids knows no bounds."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Increase your Intelligence score by 1, to a maximum of 20."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "You have advantage on the first Intelligence based skill check you make after a short rest."
+        }
+      ],
+      "notes": "+1 Intelligence, advantage on Intelligence based skil checks",
+      "prerequisite": null,
+      "batarian": null,
+      "drell": null,
+      "human": "x",
+      "quarian": "x",
+      "salarian": "x",
+      "turian": null,
+      "id": "wealth-of-knowledge",
+      "description_text_dump": "YourgraspofrandomfactoidsknowsnoboundsIncreaseyourIntelligencescoreby1toamaximumof20YouhaveadvantageonthefirstIntelligencebasedskillcheckyoumakeafterashortrest"
     },
     {
       "name": "Weapon Master",

@@ -10,27 +10,27 @@
         p
           em {{ weapon.tags }}
       v-flex.hidden-xs-only.sm6.md3.offset-md3
-        img(:src="weapon.image")
+        img(:src="weapon.image" style="max-width: 100%")
     v-layout(row wrap flex-start)
-      v-flex.xs12.sm3.attribute.mb-2
+      v-flex.xs12.sm4.md2.attribute.mb-2
         label Range
         div {{ weapon.range }}
-      v-flex.xs12.sm3.attribute.mb-2
+      v-flex.xs12.sm4.md2.attribute.mb-2
         label Rate of Fire
         div {{ weapon.rof }}
-      v-flex.xs12.sm3.attribute.mb-2
+      v-flex.xs12.sm4.md2.attribute.mb-2
         label Damage
         div d{{ weapon.damage }}
-      v-flex.xs12.sm3.attribute.mb-2
+      v-flex.xs12.sm4.md2.attribute.mb-2
         label(v-if="weapon.type === 'Heavy Weapon'") Charges
         label(v-else) Heat
         div {{ weapon.heat }}
-      v-flex.xs12.sm6.attribute.mb-2
+      v-flex.xs12.sm4.md2.attribute.mb-2
+        label Weight
+        div {{ weapon.weight}}
+      v-flex.xs12.sm4.md2.attribute.mb-2
         label Cost
-        div {{ weapon.type }}
-      v-flex.xs12.sm6.attribute.mb-2
-        label Manufacturer
-        div {{ weapon.manufacturer }}
+        div {{ weapon.cost }}
     div.hr
     div.mt-3
       me-element(:text="weapon.notes")

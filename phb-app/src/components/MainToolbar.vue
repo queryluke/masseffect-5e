@@ -2,12 +2,9 @@
   v-toolbar(fixed dark)
     v-toolbar-side-icon(@click.stop="toggleSidebar")
     v-toolbar-title
-      img(:src="`../assets/images/me5e.svg`" class="nav-brand")
-      span Mass Effect 5e - Players Handbook
-    v-spacer
-    v-toolbar-items.hidden-sm-and-down
-      v-btn(flat href="../")
-        v-icon home
+      router-link(to="/").nav-brand
+        img(:src="`../assets/images/me5e.svg`")
+        span Mass Effect 5e - Player's Handbook
 </template>
 
 <script>
@@ -23,6 +20,13 @@
 
 <style lang="stylus">
   .nav-brand
-    width: 30px;
-    vertical-align: middle;
+    text-decoration: none;
+
+    img
+      width: 30px;
+      vertical-align: middle;
+
+    span
+      margin-left: 15px;
+      color: white;
 </style>
