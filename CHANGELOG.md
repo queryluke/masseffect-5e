@@ -1,5 +1,15 @@
 # CHANGE LOG
 
+## v0.3.0
+
+### Weapon Refactor
+See the post on the homepage for an more detailed explanation. In short, the weapons have been overhauled, reducing the overall damage spread.
+
+New weapon type: Semi-automatic
+When you make a ranged attack with this weapon, you can use your bonus action to make a second ranged attack. You do not add your Dexterity
+modifier to the attack or damage roll. The second attack may be on the same or a different target.
+
+
 ## v0.2.1
 Pretty much all changes due, with thanks, to the lore mastery, creativity, and play testing of SleightxHope!
 

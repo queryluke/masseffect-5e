@@ -66,25 +66,30 @@
               th Mechanic
           tbody
             tr
-              td Hip Fire
-              td You have advantage instead of disadvantage using this weapon in melee range.
-            tr
-              td Two-Handed
-              td This weapon must be fired with two hands.
+              td Arc
+              td Deals lightning damage. On a hit, deals half damage to 1 additional creature within 2m of the hit target.
             tr
               td Charge
               td.
                 You can use your attack action to charge the weapon. Each charge consumes 1 heat and increases the RoF
                 by 1. If the number of charges equals the heat of the weapon, it overheats and cannot be fired until reloaded.
             tr
-              td Arc
-              td Deals lightning damage. On a hit, deals half damage to 1 additional creature within 2m of the hit target.
-            tr
-              td Unique
-              td Cannot benefit from Special Thermal Clips
+              td Hip Fire
+              td You have advantage instead of disadvantage using this weapon in melee range.
             tr
               td Silent
               td Makes no noise when fired.
+            tr
+              td Semi-Automatic
+              td.
+                When you make a ranged attack with this weapon, you can use your bonus action to make a second ranged attack. You do not add your Dexterity
+                modifier to the attack or damage roll. The second attack may be on the same or a different target.
+            tr
+              td Two-Handed
+              td This weapon must be fired with two hands.
+            tr
+              td Unique
+              td Cannot benefit from Special Thermal Clips
     rule-card
       span(slot="header") Melee Weapons & Omni-tools
       template(slot="text")

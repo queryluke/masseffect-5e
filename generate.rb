@@ -332,7 +332,7 @@ end
   },
   {
     type: 'weapons',
-    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQqEWxn624K8fJS7V1EQH3RZgRApTepIx91C2BIGEDzQTvwtvdTaHduzujhVEmPknjifAU7FFCcjJcv/pub?gid=0&single=true&output=csv',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSq70x_GZuDKcELgX8k_7Hd6nLGu3DoIEdDwP-YEGjUU-ghGc7ot_Q7140FZwGbEalHgzPwVm4BN8y_/pub?gid=0&single=true&output=csv',
     renderables: ['notes'],
     id: 'name'
   },
