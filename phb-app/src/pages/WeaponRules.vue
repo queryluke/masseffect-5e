@@ -17,6 +17,13 @@
           As long as you have a weapon equipped (somewhere on your person), you can holster the weapon you're currently
           weilding and draw an equipped weapon as a bonus action. This is true for all weapon types.
     rule-card
+      span(slot="header") Weapon Proficiencies
+      template(slot="text")
+        p.
+          Just like in 5th Edition, you must be proficient with a weapon type to add your proficiency modifier to the attack roll.
+          However, there are fewer weapon types (Assault Rifle, Heavy Pistol, SMG, Shotgun, Sniper Rifle, and Melee).
+          Note that all melee weapons fall under one type, instead of being broken out by weapon.
+    rule-card
       span(slot="header") Weapon Stats
       template(slot="text")
         p.

@@ -15,8 +15,16 @@ Added melee weapons.
 
 ### Classes
 
+#### Class Features
+* Removed the "Up close and personal" fighting style.
+* Added the "Carnage" fighting style, which specifically buffs shotgun use.
+
 #### Engineer
 * Renamed "Kamakaze drone" to "Disruptor drone", more in line with [the lore](http://masseffect.wikia.com/wiki/Disruption_Drone).
+* Renamed "Support" sublcass to "Medic", more in line with [the lore](http://masseffect.wikia.com/wiki/Engineer#Class_Talent)
+
+### Spells & Powers
+* Carnage renamed to "Beehive". Carnage is now a fighting style
 
 
 ## v0.2.1

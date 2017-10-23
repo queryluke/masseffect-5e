@@ -34,7 +34,7 @@ The end result is more generalized weapons by type that have enough variety in r
 * Heavy Pistols: Semi-automatic, light, with high heat and medium range
 * Shotguns: Short range power houses with low heat but a variety of punch.
 * SMGs: Short range, high RoF, low damage.
-* Sniper rifles: Long range & high damage with limited RoF and Heat. Also add DEX mod to damage.
+* Sniper rifles: Long range & high damage with limited RoF and Heat.
 
 Rare weapons have an increased cost (20k credits). This should make them unattainable to low level players and
 gives them a monetary cost to their awesomeness. Obviously, GMs can adjust cost to their needs.
