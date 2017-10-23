@@ -1,5 +1,5 @@
 {
-  "updated": "September 21, 2017 @  9:22 PM",
+  "updated": "October 23, 2017 @  4:26 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -193,7 +193,7 @@
       ]
     },
     {
-      "name": "Support",
+      "name": "Medic ",
       "class": "Engineer",
       "description": null,
       "1": [
@@ -228,8 +228,8 @@
       ],
       "id": [
         {
-          "key": "support",
-          "value": "support"
+          "key": "medic",
+          "value": "medic"
         }
       ]
     },
@@ -350,7 +350,7 @@
       ]
     },
     {
-      "name": "Battlemaster",
+      "name": "Mastermind",
       "class": "Sentinel",
       "description": null,
       "1": [
@@ -385,8 +385,8 @@
       ],
       "id": [
         {
-          "key": "battlemaster",
-          "value": "battlemaster"
+          "key": "mastermind",
+          "value": "mastermind"
         }
       ]
     },
@@ -432,7 +432,7 @@
       ]
     },
     {
-      "name": "Paladin",
+      "name": "Guardian",
       "class": "Sentinel",
       "description": null,
       "1": [
@@ -475,8 +475,8 @@
       ],
       "id": [
         {
-          "key": "paladin",
-          "value": "paladin"
+          "key": "guardian",
+          "value": "guardian"
         }
       ]
     },
@@ -604,7 +604,7 @@
       ]
     },
     {
-      "name": "Champion",
+      "name": "Battle Master",
       "class": "Vanguard",
       "description": null,
       "1": [
@@ -639,13 +639,13 @@
       ],
       "id": [
         {
-          "key": "champion",
-          "value": "champion"
+          "key": "battle-master",
+          "value": "battle-master"
         }
       ]
     },
     {
-      "name": "Slayer",
+      "name": "Shock Trooper",
       "class": "Vanguard",
       "description": null,
       "1": [
@@ -680,25 +680,25 @@
       ],
       "id": [
         {
-          "key": "slayer",
-          "value": "slayer"
+          "key": "shock-trooper",
+          "value": "shock-trooper"
         }
       ]
     },
     {
-      "name": "Cabal",
+      "name": "Nemesis",
       "class": "Vanguard",
       "description": null,
       "1": [
         {
-          "key": "nightshade-blades",
-          "value": "Nightshade Blades"
+          "key": "metabiotics",
+          "value": "Metabiotics"
         }
       ],
       "2": [
         {
-          "key": "poison-strike",
-          "value": "Poison Strike"
+          "key": "vengeance",
+          "value": "Vengeance"
         }
       ],
       "3": [
@@ -709,20 +709,20 @@
       ],
       "4": [
         {
-          "key": "biotic-powers",
-          "value": "Biotic Powers(2:3)"
+          "key": "metabiotics",
+          "value": "Metabiotics"
         }
       ],
       "5": [
         {
-          "key": "cabal-attacks",
-          "value": "Cabal Attacks"
+          "key": "biotic-attacks",
+          "value": "Biotic Attacks"
         }
       ],
       "id": [
         {
-          "key": "cabal",
-          "value": "cabal"
+          "key": "nemesis",
+          "value": "nemesis"
         }
       ]
     }

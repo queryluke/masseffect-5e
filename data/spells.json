@@ -1,5 +1,5 @@
 {
-  "updated": "September 11, 2017 @ 11:04 PM",
+  "updated": "October 23, 2017 @  4:26 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSs9dkG94f5fPCOJ38g-xCUCwnYynzbiFdggQ1KqM1vMscINwcn2_OGPqGhvxOrYl18oK7dO2notL_y/pubhtml",
   "data": [
     {
@@ -335,12 +335,12 @@
       "mechanic_text_dump": "Channelaspherewith5d12yourlevelHPthatextendsoutfromyouina6mradiusandmoveswithyouHostilecreaturescannotenterorleavethesphereHostileattacksmadeonfriendlytargetsareabsorbedbythespherethesphereautomaticallyfailsanysavingthrowsFriendlyattacksonhostilecreatureswithinthespherehaveadvantageThespheredissipateswhenitshitpointsaregoneIfanattackwoulddealmoredamagethantheremaininghitpointsofthespherethespheresoaksallofthedamageandthendissipatesAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel4orhigherthesphereshealthincreasesby1d12foreachslotlevelabovethe3rd"
     },
     {
-      "name": "Carnage",
+      "name": "Beehive",
       "mechanic": [
         {
           "id": 1,
           "type": "line",
-          "data": "As one of your attacks, you equip and fire your Armax Anti-Ground Engagement Cannon, colloquially called \"carnage\". It ejects superheated shrapnel in a 6m cone, originating from you. Each creature caught in the blast must make Dexterity saving throw. On a failed save, a creature takes 2d10 piercing damage or half as much damage on a successful one."
+          "data": "As one of your attacks, you equip and fire your anti-personnel cannon, colloquially called \"the beehive\". It ejects superheated shrapnel in a 6m cone, originating from you. Each creature caught in the blast must make Dexterity saving throw. On a failed save, a creature takes 2d10 piercing damage or half as much damage on a successful one."
         },
         {
           "id": 2,
@@ -353,8 +353,8 @@
           "data": "You must spend a short or long rest reconfiguring the cannon to use it again."
         }
       ],
-      "adv_option_1": "Anti-Flesh : Carnage deals double damage to unprotected, organic targets.",
-      "adv_option_2": "Remote Deploy : As an action you can setup your Carnage cannon in a separate location. Once it is deployed you can use an attack action to fire it.",
+      "adv_option_1": "Anti-Flesh : The Beehive deals double damage to unprotected, organic targets.",
+      "adv_option_2": "Remote Deploy : As an action you can setup your Beehive in a separate location. Once it is deployed you can use an attack action to fire it.",
       "level": null,
       "type": "combat",
       "die_type": "d10",
@@ -382,13 +382,13 @@
       "engineer": null,
       "soldier": "x",
       "reviewed": "y",
-      "id": "carnage",
+      "id": "beehive",
       "adv_options": [
-        "Anti-Flesh : Carnage deals double damage to unprotected, organic targets.",
-        "Remote Deploy : As an action you can setup your Carnage cannon in a separate location. Once it is deployed you can use an attack action to fire it."
+        "Anti-Flesh : The Beehive deals double damage to unprotected, organic targets.",
+        "Remote Deploy : As an action you can setup your Beehive in a separate location. Once it is deployed you can use an attack action to fire it."
       ],
       "class_list": "Soldier",
-      "mechanic_text_dump": "AsoneofyourattacksyouequipandfireyourArmaxAntiGroundEngagementCannoncolloquiallycalledcarnageItejectssuperheatedshrapnelina6mconeoriginatingfromyouEachcreaturecaughtintheblastmustmakeDexteritysavingthrowOnafailedsaveacreaturetakes2d10piercingdamageorhalfasmuchdamageonasuccessfuloneTheDCis8proficiencybonusDEXmodifierYoumustspendashortorlongrestreconfiguringthecannontouseitagain"
+      "mechanic_text_dump": "AsoneofyourattacksyouequipandfireyourantipersonnelcannoncolloquiallycalledthebeehiveItejectssuperheatedshrapnelina6mconeoriginatingfromyouEachcreaturecaughtintheblastmustmakeDexteritysavingthrowOnafailedsaveacreaturetakes2d10piercingdamageorhalfasmuchdamageonasuccessfuloneTheDCis8proficiencybonusDEXmodifierYoumustspendashortorlongrestreconfiguringthecannontouseitagain"
     },
     {
       "name": "Charge",
@@ -396,21 +396,21 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Alter your mass and choose a creature or object you can see within range. You use the target's mass to pull yourself to its location with incredible force. The target must make a dexterity saving throw. On a failed save, the kinetic force from the impact regenerates 1d6 of your shield points, deals 1d6 force damage to the target and knocks it {prone}."
+          "data": "Alter your mass and make a ranges spell attack on a target creature or object you can see within range. On a hit, use the target's mass to pull yourself to its location with incredible force, dealing 1d6 force damage and knocking the target {prone}."
         },
         {
           "id": 2,
           "type": "line",
-          "data": "The kinetic force increases by 1d6 when you reach the 5th level (2d6), 11th level(3d6) and 17th level(4d6)."
+          "data": "The damage increases by 1d6 when you reach the 5th level (2d6), 11th level(3d6) and 17th level(4d6)."
         }
       ],
-      "adv_option_1": "Increased force: Increase the damage and shield regeneration to d8",
+      "adv_option_1": "Poison Strike: The damage of your charge become necrotic. On a successfull attack, all enemies in the line between you and the target, including the target, must succeed on a Constitution saving throw or become {poisoned} for one minute.",
       "adv_option_2": "Tremor : The force ripples outwards from the point of impact in a 2m sphere. Creatures within the sphere must succeed on a Dexterity saving throw or are knocked {prone}.",
       "level": "0",
       "type": "biotic",
       "die_type": "d6",
       "attack_type": [
-        "DEX save"
+        "Ranged Attack"
       ],
       "casting_time": "Action",
       "concentration": null,
@@ -420,7 +420,6 @@
       "aoe_distance": null,
       "effect": [
         "damage",
-        " heal",
         " movement"
       ],
       "damage_type": [
@@ -437,11 +436,11 @@
       "reviewed": "y",
       "id": "charge",
       "adv_options": [
-        "Increased force: Increase the damage and shield regeneration to d8",
+        "Poison Strike: The damage of your charge become necrotic. On a successfull attack, all enemies in the line between you and the target, including the target, must succeed on a Constitution saving throw or become {poisoned} for one minute.",
         "Tremor : The force ripples outwards from the point of impact in a 2m sphere. Creatures within the sphere must succeed on a Dexterity saving throw or are knocked {prone}."
       ],
       "class_list": "Vanguard",
-      "mechanic_text_dump": "AlteryourmassandchooseacreatureorobjectyoucanseewithinrangeYouusethetargetsmasstopullyourselftoitslocationwithincredibleforceThetargetmustmakeadexteritysavingthrowOnafailedsavethekineticforcefromtheimpactregenerates1d6ofyourshieldpointsdeals1d6forcedamagetothetargetandknocksitproneThekineticforceincreasesby1d6whenyoureachthe5thlevel2d611thlevel3d6and17thlevel4d6"
+      "mechanic_text_dump": "AlteryourmassandmakearangesspellattackonatargetcreatureorobjectyoucanseewithinrangeOnahitusethetargetsmasstopullyourselftoitslocationwithincredibleforcedealing1d6forcedamageandknockingthetargetproneThedamageincreasesby1d6whenyoureachthe5thlevel2d611thlevel3d6and17thlevel4d6"
     },
     {
       "name": "Concussive Shot",
@@ -1553,7 +1552,7 @@
       "adv_option_1": "Paralyze : In addition to being poisoned, the creature is paralyzed until the start of your next turn.",
       "adv_option_2": "Improved Poison : The creature has disadvantage on it's Constitution saving throw.",
       "level": "1",
-      "type": "biotic",
+      "type": "combat",
       "die_type": "d12",
       "attack_type": [
         "Ranged Attack",
@@ -1574,18 +1573,18 @@
       "detonates": null,
       "primes": null,
       "adept": null,
-      "vanguard": "Cabal",
+      "vanguard": "x",
       "sentinel": null,
-      "infiltrator": null,
+      "infiltrator": "x",
       "engineer": null,
-      "soldier": null,
+      "soldier": "x",
       "reviewed": "y",
       "id": "nightshade-blades",
       "adv_options": [
         "Paralyze : In addition to being poisoned, the creature is paralyzed until the start of your next turn.",
         "Improved Poison : The creature has disadvantage on it's Constitution saving throw."
       ],
-      "class_list": "Cabal Vanguard only",
+      "class_list": "Infiltrator, Soldier, Vanguard",
       "mechanic_text_dump": "YourOmnitoolisequippedwithmicroscopicpoisontippedbladesthatareabletopiecethroughshieldsandarmorTouseablademakearangedweaponattackonanorganiccreatureyoucanyouaddyourproficiencybonustothisrollOnahitthetargettakes1d12poisondamageandmustsucceedonaConstitutionsavingthroworbecomespoisonedYoumustbewithinmeleerangeanduseanactiontorecovertheblade"
     },
     {
@@ -1740,52 +1739,6 @@
       ],
       "class_list": "Adept, Vanguard",
       "mechanic_text_dump": "YoufocustheenergyofyourbarrierintoahighpoweredbeamatatargetcreatureorobjectwithinrangeRemove1barriertickandmakearangedspellattackonthattargetOnahitthecreaturetakes1d8forcedamageAhigherlevelsyoumayuseadditionalbarriertickstocreatemorethanonebeamtwobeamsat5thlevelthreebeamsat11thlevelandfourbeamsat17thlevelYoucandirectthebeamsatthesametargetoratdifferentonesMakeaseparateattackrollforeachbeam"
-    },
-    {
-      "name": "Poison Strike",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Choose a target location within 10m. You encase yourself in a biotic barrier and slash through all creatures and objects between you and the target location. Each creature within 2m of the line must make a Dexterity saving throw. On a failed save, a creature takes 3d6 poison damage, or half as much damage on a successful one. While you perform this maneuver, hostile creatures cannot make opportunity attacks on you."
-        }
-      ],
-      "adv_option_1": "Paralyze : Organic creatures that fail their Dexterity saving throw also must succeed on a Constitution saving throw or be paralyzed for 1 turn.",
-      "adv_option_2": "Double Dash : You can break up your dash into two 5m dashes, changing direction between dashes.",
-      "level": "1",
-      "type": "biotic",
-      "die_type": "d6",
-      "attack_type": [
-        "DEX Save"
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "10m",
-      "aoe": "line",
-      "aoe_distance": "10m",
-      "effect": [
-        "damage"
-      ],
-      "damage_type": [
-        "poison"
-      ],
-      "detonates": null,
-      "primes": null,
-      "adept": null,
-      "vanguard": "Cabal",
-      "sentinel": null,
-      "infiltrator": null,
-      "engineer": null,
-      "soldier": null,
-      "reviewed": "y",
-      "id": "poison-strike",
-      "adv_options": [
-        "Paralyze : Organic creatures that fail their Dexterity saving throw also must succeed on a Constitution saving throw or be paralyzed for 1 turn.",
-        "Double Dash : You can break up your dash into two 5m dashes, changing direction between dashes."
-      ],
-      "class_list": "Cabal Vanguard only",
-      "mechanic_text_dump": "Chooseatargetlocationwithin10mYouencaseyourselfinabioticbarrierandslashthroughallcreaturesandobjectsbetweenyouandthetargetlocationEachcreaturewithin2mofthelinemustmakeaDexteritysavingthrowOnafailedsaveacreaturetakes3d6poisondamageorhalfasmuchdamageonasuccessfuloneWhileyouperformthismaneuverhostilecreaturescannotmakeopportunityattacksonyou"
     },
     {
       "name": "Pull",

@@ -9,9 +9,12 @@ New weapon type: Semi-automatic
 When you make a ranged attack with this weapon, you can use your bonus action to make a second ranged attack. You do not add your Dexterity
 modifier to the attack or damage roll. The second attack may be on the same or a different target.
 
-New Feat: Hair Trigger, gives you an advantage when using semi-automatic weapons.
+
 
 Added melee weapons.
+
+### Feats
+* New Feat: Hair Trigger, gives you an advantage when using semi-automatic weapons.
 
 ### Classes
 
@@ -20,11 +23,35 @@ Added melee weapons.
 * Added the "Carnage" fighting style, which specifically buffs shotgun use.
 
 #### Engineer
-* Renamed "Kamakaze drone" to "Disruptor drone", more in line with [the lore](http://masseffect.wikia.com/wiki/Disruption_Drone).
-* Renamed "Support" sublcass to "Medic", more in line with [the lore](http://masseffect.wikia.com/wiki/Engineer#Class_Talent)
+* Renamed "Kamakaze drone" to "Disruptor drone", more in line with [the game](http://masseffect.wikia.com/wiki/Disruption_Drone).
+* Renamed "Support" sublcass to "Medic", more in line with [the game](http://masseffect.wikia.com/wiki/Engineer#Class_Talent)
+
+#### Vanguard
+__Cabal__
+Cabal reworked and renamed to Nemesis. Cabals are a very specific Turian Vanguard, so it didn't make much sense for them
+to be a subclass. Nemesis are a biotic-oriented Vanguard.
+* Nightshade blades is now a combat power available to Vanguards, Infiltrators, and Soldiers
+* Poison Strike was removed and the mechanic added as an advancement option for Charge.
+* Metabiotics added, allowing you to spend barrier ticks to enhance your spells.
+* Vengeance added. Dying in battle may not be a bad idea...
+
+
+__Slayer__
+Slayer renamed to Shock Trooper, to better reflect [the game](http://masseffect.wikia.com/wiki/Vanguard#Class_Talent)
+* Biotic Bullrush was revamped slightly, giving the aspects of the Charger feat when using Charge.
+
+* Champion renamed to Battle Master to better reflect it's D&D counterpart.
+
+
+#### Sentinel
+* Battle Master renamed to Mastermind, to better reflect their mastery of tactical situations.
+* Paladin renamed to Guardian to better reflect the feature set (auras that guard allies).
+
 
 ### Spells & Powers
-* Carnage renamed to "Beehive". Carnage is now a fighting style
+* Carnage renamed to "Beehive". Carnage is now a fighting style.
+
+
 
 
 ## v0.2.1
