@@ -9,6 +9,15 @@ New weapon type: Semi-automatic
 When you make a ranged attack with this weapon, you can use your bonus action to make a second ranged attack. You do not add your Dexterity
 modifier to the attack or damage roll. The second attack may be on the same or a different target.
 
+New Feat: Hair Trigger, gives you an advantage when using semi-automatic weapons.
+
+Added melee weapons.
+
+### Classes
+
+#### Engineer
+* Renamed "Kamakaze drone" to "Disruptor drone", more in line with [the lore](http://masseffect.wikia.com/wiki/Disruption_Drone).
+
 
 ## v0.2.1
 Pretty much all changes due, with thanks, to the lore mastery, creativity, and play testing of SleightxHope!

@@ -41,3 +41,10 @@ gives them a monetary cost to their awesomeness. Obviously, GMs can adjust cost 
 
 And finally, this version includes new melee weapons!
 
+Melee weapon attributes work exactly like their D&D 5e counterparts (finesse, light, thrown, versatile, reach, etc). Most weapons have a special
+ability as well. However, to replace the "proficiency" aspect of melee weapons (since there are so few), there is a STR requirement.
+Anyone can wield a melee weapon, but if you don't have the required STR mod (matching or above) your melee attacks with the weapon are
+made at a disadvantage.
+
+
+
