@@ -1,5 +1,5 @@
 {
-  "updated": "September 21, 2017 @ 10:17 PM",
+  "updated": "October 23, 2017 @ 12:56 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTPhVRIodUwbDYFw8wJZtmb63tTjFJMxY-cN6P5nayPpJhNxAQFqIxeSLd5Tz75aOZ7CLuBkNsDrcs9/pubhtml",
   "data": [
     {
@@ -478,6 +478,39 @@
       "turian": null,
       "id": "heavily-armored",
       "description_text_dump": ""
+    },
+    {
+      "name": "Hair Trigger",
+      "not_available": null,
+      "page_number": null,
+      "updated": null,
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You've mastered Semi-Automatic weapons:"
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Increase your Dexterity score by 1, to a maximum of 20."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "When you take the attack action using a semi-automatic weapon, you can make a second attack as a free action, rather than a bonus action. You add your Dexterity modifier to the second attack roll."
+        }
+      ],
+      "notes": "+1 Dexterity, mastery of semi-automatic weapons",
+      "prerequisite": null,
+      "batarian": "x",
+      "drell": "x",
+      "human": "x",
+      "quarian": "x",
+      "salarian": "x",
+      "turian": "x",
+      "id": "hair-trigger",
+      "description_text_dump": "YouvemasteredSemiAutomaticweaponsIncreaseyourDexterityscoreby1toamaximumof20WhenyoutaketheattackactionusingasemiautomaticweaponyoucanmakeasecondattackasafreeactionratherthanabonusactionYouaddyourDexteritymodifiertothesecondattackroll"
     },
     {
       "name": "Heavy Armor Master",
@@ -1070,7 +1103,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Instead of gain proficiency with 4 weapons, you gain proficiency with 2 ranged weapons"
+          "data": "Instead of gaining proficiency with 4 weapons, you gain proficiency with 2 weapon type proficiences."
         }
       ],
       "notes": "+1 Strength or Dexterity, 2 additional ranged weapon proficiencies",
@@ -1082,7 +1115,7 @@
       "salarian": null,
       "turian": "x",
       "id": "weapon-master",
-      "description_text_dump": "Insteadofgainproficiencywith4weaponsyougainproficiencywith2rangedweapons"
+      "description_text_dump": "Insteadofgainingproficiencywith4weaponsyougainproficiencywith2weapontypeproficiences"
     }
   ]
 }
