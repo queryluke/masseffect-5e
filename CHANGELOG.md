@@ -45,11 +45,22 @@ Slayer renamed to Shock Trooper, to better reflect [the game](http://masseffect.
 
 #### Sentinel
 * Battle Master renamed to Mastermind, to better reflect their mastery of tactical situations.
+  * Battle Master feat renamed to Tactical Advantage
 * Paladin renamed to Guardian to better reflect the feature set (auras that guard allies).
 
 
 ### Spells & Powers
 * Carnage renamed to "Beehive". Carnage is now a fighting style.
+
+#### New Spells & Powers
+__Tech__
+* Snap Freeze
+
+__Biotic__
+* Biotic Wall
+
+__Combat__
+
 
 
 

@@ -1,5 +1,5 @@
 {
-  "updated": "October 23, 2017 @  4:27 PM",
+  "updated": "October 23, 2017 @  5:59 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -80,7 +80,7 @@
       "mechanic_text_dump": "LearntheBarriercantripThisdoesnotcountagainstyournumberofcantripsknown"
     },
     {
-      "name": "Battlemaster",
+      "name": "Tactical Advantage",
       "mechanic": [
         {
           "id": 1,
@@ -88,7 +88,7 @@
           "data": "Starting at the 10th level, when you cast a cantrip, biotic spell, or tech power you can choose either advancement option."
         }
       ],
-      "id": "battlemaster",
+      "id": "tactical-advantage",
       "mechanic_text_dump": "Startingatthe10thlevelwhenyoucastacantripbioticspellortechpoweryoucanchooseeitheradvancementoption"
     },
     {
@@ -112,6 +112,23 @@
       ],
       "id": "bend-luck",
       "mechanic_text_dump": "YouvemasteredtheartofusingsmallmasseffectfieldstoslightlyaltertheoutcomeofothercreaturesactionsItmightbeasmallburstunderthemuzzleofaguntothrowofftheattackersaimOrnegativefieldaroundafriendlycreatureasleapsawayfromagrenademovingitoutofdamageswayWhenanothercreatureyoucanseemakesanattackrollanabilitycheckorasavingthrowyoucanuseyourreactiontoroll1d4andapplythenumberrolledasabonusorpenaltyyourchoicetothecreaturesrollYoucandosoafterthecreaturerollsbutbeforeanyeffectsoftherolloccurYoucanuseBendLuckanumberoftimesequaltohalfofyourAdeptlevelminimum1beforeyoufinishalongrest"
+    },
+    {
+      "name": "Biotic Attacks",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Choose 2 biotic spells. Casting either of those spells counts as an Attack action."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "By spending 8 hours training, you can exchange one or both of the spells you chose for different spells of the same levels."
+        }
+      ],
+      "id": "biotic-attacks",
+      "mechanic_text_dump": "Choose2bioticspellsCastingeitherofthosespellscountsasanAttackactionByspending8hourstrainingyoucanexchangeoneorbothofthespellsyouchosefordifferentspellsofthesamelevels"
     },
     {
       "name": "Biotic Bullrush",
@@ -375,23 +392,6 @@
       ],
       "id": "brutal-critical",
       "mechanic_text_dump": "YoucanrolloneadditionaldamagediewhendeterminingtheextradamageforacriticalhitwithameleeattackThisincreasestotwoadditionaldiceat13thlevelandthreeadditionaldiceat17thlevel"
-    },
-    {
-      "name": "Biotic Attacks",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Choose 2 biotic spells. Casting either of those spells counts as an Attack action."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "By spending 8 hours training, you can exchange one or both of the spells you chose for different spells of the same levels."
-        }
-      ],
-      "id": "biotic-attacks",
-      "mechanic_text_dump": "Choose2bioticspellsCastingeitherofthosespellscountsasanAttackactionByspending8hourstrainingyoucanexchangeoneorbothofthespellsyouchosefordifferentspellsofthesamelevels"
     },
     {
       "name": "Careful Eyes",
@@ -1086,6 +1086,25 @@
       "mechanic_text_dump": "Youcanspend6hoursinalaborsimilarenvironmentusingdrugstoenhancethecapabilitiesofstandardmedigelIttakes2hourstocraftasingleenhancementbutyoucanapplythatbenefittoanynumberofmedigelcartridgesTocraftanotherenhancementtakesanadditional6hoursInsteadofusingtimetolimitthisfeatureyourGMcanchoosetoallowyoutoaddXenhancementstoYmedigelcartridgeswhereXisyourIntelligencemodifierandYishalfyourEngineeringlevelminimum1thenyoumustfinishalongrestbeforeyoucancreateneenhancementsWhencreatinganenhancementchoosefromthelistbelowlistStimulantAfterusingthismedigelyouhaveadvantageonthenextsavingthroworattackrollyoumakewithin1minuteOpioidWithin1minuteofusingthismedigelifyouwouldfallbelow0hitpointbutnotoutrightdieyoumayfallto1hitpointinsteadSteroidAfterusingthismedigeladd2damagetoallmeleedamagefor1minuteMinagenX3Afterusingthismedigelgain2damagetoallbioticspellsandcantripsfor1minuteVidelicetAfterusingthismedigelgain2bonustoallrangedtechattacksfor1minuteStypticIncreasethehealingdieby1dietypewhenusingthismedigellist"
     },
     {
+      "name": "Metabiotics",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "list",
+          "data": [
+            "Careful Spell: When you cast a spell that forces other creatures to make a saving throw, you can protect some of those creatures from the spell's full force. To do so, you spend 1 barrier tick and choose a number of those creatures up to your Charisma modifier (minimum of one creature). A chosen creature automatically succeeds on its saving throw against the spell.",
+            "Distant Spell: When you cast a spell that has a range of 2m or greater, you can spend 1 barrier tick to double the range of the spell. When you cast a spell that has a range of touch, you can spend 1 barrier tick to make the range of the spell 10m.",
+            "Empowered Spell: When you roll damage for a spell, you can spend 1 barrier tick to reroll a number of the damage dice up to your Charisma modifier (minimum of one). You must use the new rolls. You can use Empowered Spell even if you have already used a different Metabiotic option during the casting of the spell.",
+            "Heightened Spell: When you cast a spell that forces a creature to make a saving throw to resist its effects, you can spend 3 barrier ticks to give one target of the spell disadvantage on its first saving throw made against the spell.",
+            "Quickened Spell: When you cast a spell that has a casting time of 1 action, you can spend 2 barrier ticks to change the casting time to 1 bonus action for this casting.",
+            "Twinned Spell: When you cast a spell that doesn't have a range of self and is incapable of targeting more than one creature at the spell's current level, you can spend a number of barrier ticks equal to the spell's level to target a second creature in range with the same spell (1 sorcery point if the spell is a cantrip)."
+          ]
+        }
+      ],
+      "id": "metabiotics",
+      "mechanic_text_dump": "At2ndlevelyougaintheabilitytousethepowerstoredinyourbarriertotwistyourspellstosuityourneedsYougaintwoofthefollowingMetaboticoptionsofyourchoiceAt14thlevellearn2additionaloptionsofyourchoicelistCarefulSpellWhenyoucastaspellthatforcesothercreaturestomakeasavingthrowyoucanprotectsomeofthosecreaturesfromthespellsfullforceTodosoyouspend1barriertickandchooseanumberofthosecreaturesuptoyourCharismamodifierminimumofonecreatureAchosencreatureautomaticallysucceedsonitssavingthrowagainstthespellDistantSpellWhenyoucastaspellthathasarangeof2morgreateryoucanspend1barrierticktodoubletherangeofthespellWhenyoucastaspellthathasarangeoftouchyoucanspend1barrierticktomaketherangeofthespell10mEmpoweredSpellWhenyourolldamageforaspellyoucanspend1barrierticktorerollanumberofthedamagediceuptoyourCharismamodifierminimumofoneYoumustusethenewrollsYoucanuseEmpoweredSpellevenifyouhavealreadyusedadifferentMetabioticoptionduringthecastingofthespellHeightenedSpellWhenyoucastaspellthatforcesacreaturetomakeasavingthrowtoresistitseffectsyoucanspend3barriertickstogiveonetargetofthespelldisadvantageonitsfirstsavingthrowmadeagainstthespellQuickenedSpellWhenyoucastaspellthathasacastingtimeof1actionyoucanspend2barriertickstochangethecastingtimeto1bonusactionforthiscastingTwinnedSpellWhenyoucastaspellthatdoesnthavearangeofselfandisincapableoftargetingmorethanonecreatureatthespellscurrentlevelyoucanspendanumberofbarrierticksequaltothespellsleveltotargetasecondcreatureinrangewiththesamespell1sorcerypointifthespellisacantriplist"
+    },
+    {
       "name": "Misdirection",
       "mechanic": [
         {
@@ -1146,6 +1165,18 @@
       ],
       "id": "overchannel",
       "mechanic_text_dump": "YoucanincreasethepowerofyoursimplerbioticsWhenyoucastabioticspellof1stor2ndlevelthatdealsdamageyoucandealmaximumdamagewiththatspellThefirsttimeyoudosoyousuffernoadverseeffectIfyouusethisfeatureagainbeforeyoufinishalongrestyoutake2d12psychicdamageforeachlevelofthespellimmediatelyafteryoucastitEachtimeyouusethisfeatureagainbeforefinishingalongrestthenecroticdamageperspelllevelincreasesby1d12Thisdamageignoresresistanceandimmunity"
+    },
+    {
+      "name": "Paint by Number",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You're an artist and a targeting laser is your paintbrush. When using a Heavy Weapon that requires a round to Target, you may target and fire on the same turn."
+        }
+      ],
+      "id": "paint-by-number",
+      "mechanic_text_dump": "YoureanartistandatargetinglaserisyourpaintbrushWhenusingaHeavyWeaponthatrequiresaroundtoTargetyoumaytargetandfireonthesameturn"
     },
     {
       "name": "Poison Strike",
@@ -1635,6 +1666,23 @@
       "mechanic_text_dump": "Whenyouapplyyoursneakattackdamagefromanattackmadewithameleeweaponincreasethedamagedietod8"
     },
     {
+      "name": "Vengeance",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Starting at 6th level, the your biotic mastery allows you to overcome grievous injuries. When you would make a death saving throw, you can instead spring back to your feet with a burst of biotic energy. You immediately stand up (if you so choose), and you regain hit points equal to half your hit point maximum. All hostile creatures within 10m of you take 10 + your Charisma modifier necrotic damage and are poisoned until the end of your turn."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Once you use this feature, you can't use it again until you finish a long rest."
+        }
+      ],
+      "id": "vengeance",
+      "mechanic_text_dump": "Startingat6thleveltheyourbioticmasteryallowsyoutoovercomegrievousinjuriesWhenyouwouldmakeadeathsavingthrowyoucaninsteadspringbacktoyourfeetwithaburstofbioticenergyYouimmediatelystandupifyousochooseandyouregainhitpointsequaltohalfyourhitpointmaximumAllhostilecreatureswithin10mofyoutake10yourCharismamodifiernecroticdamageandarepoisoneduntiltheendofyourturnOnceyouusethisfeatureyoucantuseitagainuntilyoufinishalongrest"
+    },
+    {
       "name": "Weapon of Choice",
       "mechanic": [
         {
@@ -1683,54 +1731,6 @@
       ],
       "id": "zero-sum",
       "mechanic_text_dump": "WhenyoumakeameleeattackinsteadofrollingadiceyoucanflipacoinOnaheadsitsacriticalhitOnatailsitsacriticalmissYoucanusethisabilityoncepershortrestStartingatthe9thlevelyoucanusethisabilitytwicepershortrestStartingatthe11thlevelyoucanusethisabilitythreetimespershortrest"
-    },
-    {
-      "name": "Paint by Number",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "You're an artist and a targeting laser is your paintbrush. When using a Heavy Weapon that requires a round to Target, you may target and fire on the same turn."
-        }
-      ],
-      "id": "paint-by-number",
-      "mechanic_text_dump": "YoureanartistandatargetinglaserisyourpaintbrushWhenusingaHeavyWeaponthatrequiresaroundtoTargetyoumaytargetandfireonthesameturn"
-    },
-    {
-      "name": "Vengeance",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Starting at 6th level, the your biotic mastery allows you to overcome grievous injuries. When you would make a death saving throw, you can instead spring back to your feet with a burst of biotic energy. You immediately stand up (if you so choose), and you regain hit points equal to half your hit point maximum. All hostile creatures within 10m of you take 10 + your Charisma modifier necrotic damage and are poisoned until the end of your turn."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Once you use this feature, you can't use it again until you finish a long rest."
-        }
-      ],
-      "id": "vengeance",
-      "mechanic_text_dump": "Startingat6thleveltheyourbioticmasteryallowsyoutoovercomegrievousinjuriesWhenyouwouldmakeadeathsavingthrowyoucaninsteadspringbacktoyourfeetwithaburstofbioticenergyYouimmediatelystandupifyousochooseandyouregainhitpointsequaltohalfyourhitpointmaximumAllhostilecreatureswithin10mofyoutake10yourCharismamodifiernecroticdamageandarepoisoneduntiltheendofyourturnOnceyouusethisfeatureyoucantuseitagainuntilyoufinishalongrest"
-    },
-    {
-      "name": "Metabiotics",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "list",
-          "data": [
-            "Careful Spell: When you cast a spell that forces other creatures to make a saving throw, you can protect some of those creatures from the spell's full force. To do so, you spend 1 barrier tick and choose a number of those creatures up to your Charisma modifier (minimum of one creature). A chosen creature automatically succeeds on its saving throw against the spell.",
-            "Distant Spell: When you cast a spell that has a range of 2m or greater, you can spend 1 barrier tick to double the range of the spell. When you cast a spell that has a range of touch, you can spend 1 barrier tick to make the range of the spell 10m.",
-            "Empowered Spell: When you roll damage for a spell, you can spend 1 barrier tick to reroll a number of the damage dice up to your Charisma modifier (minimum of one). You must use the new rolls. You can use Empowered Spell even if you have already used a different Metabiotic option during the casting of the spell.",
-            "Heightened Spell: When you cast a spell that forces a creature to make a saving throw to resist its effects, you can spend 3 barrier ticks to give one target of the spell disadvantage on its first saving throw made against the spell.",
-            "Quickened Spell: When you cast a spell that has a casting time of 1 action, you can spend 2 barrier ticks to change the casting time to 1 bonus action for this casting.",
-            "Twinned Spell: When you cast a spell that doesn't have a range of self and is incapable of targeting more than one creature at the spell's current level, you can spend a number of barrier ticks equal to the spell's level to target a second creature in range with the same spell (1 sorcery point if the spell is a cantrip)."
-          ]
-        }
-      ],
-      "id": "metabiotics",
-      "mechanic_text_dump": "At2ndlevelyougaintheabilitytousethepowerstoredinyourbarriertotwistyourspellstosuityourneedsYougaintwoofthefollowingMetaboticoptionsofyourchoiceAt14thlevellearn2additionaloptionsofyourchoicelistCarefulSpellWhenyoucastaspellthatforcesothercreaturestomakeasavingthrowyoucanprotectsomeofthosecreaturesfromthespellsfullforceTodosoyouspend1barriertickandchooseanumberofthosecreaturesuptoyourCharismamodifierminimumofonecreatureAchosencreatureautomaticallysucceedsonitssavingthrowagainstthespellDistantSpellWhenyoucastaspellthathasarangeof2morgreateryoucanspend1barrierticktodoubletherangeofthespellWhenyoucastaspellthathasarangeoftouchyoucanspend1barrierticktomaketherangeofthespell10mEmpoweredSpellWhenyourolldamageforaspellyoucanspend1barrierticktorerollanumberofthedamagediceuptoyourCharismamodifierminimumofoneYoumustusethenewrollsYoucanuseEmpoweredSpellevenifyouhavealreadyusedadifferentMetabioticoptionduringthecastingofthespellHeightenedSpellWhenyoucastaspellthatforcesacreaturetomakeasavingthrowtoresistitseffectsyoucanspend3barriertickstogiveonetargetofthespelldisadvantageonitsfirstsavingthrowmadeagainstthespellQuickenedSpellWhenyoucastaspellthathasacastingtimeof1actionyoucanspend2barriertickstochangethecastingtimeto1bonusactionforthiscastingTwinnedSpellWhenyoucastaspellthatdoesnthavearangeofselfandisincapableoftargetingmorethanonecreatureatthespellscurrentlevelyoucanspendanumberofbarrierticksequaltothespellsleveltotargetasecondcreatureinrangewiththesamespell1sorcerypointifthespellisacantriplist"
     }
   ]
 }
