@@ -29,6 +29,12 @@
           tech points when casting a power, much like you can cast spells using higher level spell slots. However, there
           is a limit on how many tech points you can spent to fuel a tech power. This limit is indicated in the Max TP column
           of your class progression table.
+    rule-card
+      span(slot="header") Combat Abilities
+      template(slot="text")
+        p.
+          Cambat abilities can be learned by Soldiers and Infiltrators, but they rely on equipment rather than biotic amps or a
+          beefed up omni-tool. Instead of a casting cost, Combat abilities recharge on a short or long rest, similar to class features.
 </template>
 
 <script>

@@ -4,6 +4,8 @@ title: "Version 0.3.0"
 excerpt: Time for a weapon refactor.
 ---
 
+# Weapon Refactor
+
 In a pre-version 1 iteration that was never published, the weapons stats were mapped from the [ME3 weapon stats](http://masseffect.wikia.com/wiki/Weapons#Mass_Effect_3).
 Then I did a lot of tinkering to add some variety to the weapons, but in doing so, I screwed everything up and made many weapons way to powerful.
 
@@ -45,6 +47,12 @@ Melee weapon attributes work exactly like their D&D 5e counterparts (finesse, li
 ability as well. However, to replace the "proficiency" aspect of melee weapons (since there are so few), there is a STR requirement.
 Anyone can wield a melee weapon, but if you don't have the required STR mod (matching or above) your melee attacks with the weapon are
 made at a disadvantage.
+
+# New Spells
+A host of new spells and tech powers have been added. Primarily these were based on 5th edition, adding a bit more variety
+than simple damage dealing abilities, and adding more options for Vanguards and Sentinels.
+
+
 
 
 
