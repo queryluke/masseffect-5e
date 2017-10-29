@@ -44,6 +44,7 @@ Slayer renamed to Shock Trooper, to better reflect [the game](http://masseffect.
 
 
 #### Sentinel
+* Removed 4th level spell slots from the progression table. Reflects that Sentinels are the least powerful of the biotic classes.
 * Battle Master renamed to Mastermind, to better reflect their mastery of tactical situations.
   * Battle Master feat renamed to Tactical Advantage
 * Paladin renamed to Guardian to better reflect the feature set (auras that guard allies).
@@ -51,16 +52,37 @@ Slayer renamed to Shock Trooper, to better reflect [the game](http://masseffect.
 
 ### Spells & Powers
 * Carnage renamed to "Beehive". Carnage is now a fighting style.
+* Neural Shock updated, now a creature hit by neural shock can take reactions until the start of its next turn.
+* Flare and Dominate changed to level 4 and Singularity changed to level 3 to better reflect the required biotic control.
+* With a few exceptions, damage for all damage dealing biotic spells have been adjusted to fit the following criteria:
+    - Cantrips: < 10 avg damage
+    - 1st Level: 10-15 avg damage
+    - 2nd level: 15 - 22 avg damage
+    - 3rd level: 20 - 28 avg damage
+    - 4th level: 25-35 avg damage
+This change was made to add a bit more scaling to the spells, as 4th level spells are effectively 6-7th level D&D spells.
 
 #### New Spells & Powers
 __Tech__
 * Snap Freeze
+* Salvo
+* Guidance
+* Poison Spray
+* Shocking Grasp
+* Target Painting
+* Unity
+* Counterspell
 
 __Biotic__
 * Biotic Wall
+* Storm
+* Backlash
+* Catapult
+* Alter Center Mass
+* Fly
 
 __Combat__
-
+* Fortification
 
 
 
@@ -115,6 +137,9 @@ tactical info to their allies (Help action)."
 ### Spells
 * Charge is now a spell attack, rather than a saving throw. Removed the shield regen mechanic and added it as a special 
 feature of the new Vanguard class feature: Biotic Bullrush.
+
+
+
 
 ## v0.2.0 Beta
 Almost a brand new system. See [The Refactor Post](https://queryluke.github.io/masseffect-5e/news/the-refactor/)
