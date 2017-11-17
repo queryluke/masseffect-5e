@@ -9,8 +9,6 @@ New weapon type: Semi-automatic
 When you make a ranged attack with this weapon, you can use your bonus action to make a second ranged attack. You do not add your Dexterity
 modifier to the attack or damage roll. The second attack may be on the same or a different target.
 
-
-
 Added melee weapons.
 
 ### Feats
@@ -25,6 +23,7 @@ Added melee weapons.
 #### Engineer
 * Renamed "Kamakaze drone" to "Disruptor drone", more in line with [the game](http://masseffect.wikia.com/wiki/Disruption_Drone).
 * Renamed "Support" sublcass to "Medic", more in line with [the game](http://masseffect.wikia.com/wiki/Engineer#Class_Talent)
+* Added some additional subclass features to the Demolisher. It was lacking in combat potential until later levels.
 
 #### Vanguard
 __Cabal__

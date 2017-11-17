@@ -1,5 +1,5 @@
 {
-  "updated": "October 23, 2017 @  5:59 PM",
+  "updated": "November 17, 2017 @  9:33 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -49,11 +49,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Your carry capacity is equal to your strength + your level"
+          "data": "You've outfitted your armor with special rigs that make carrying weapons a cinch. Your carry capacity is doubled."
         }
       ],
       "id": "advanced-weapon-holsters",
-      "mechanic_text_dump": "Yourcarrycapacityisequaltoyourstrengthyourlevel"
+      "mechanic_text_dump": "YouveoutfittedyourarmorwithspecialrigsthatmakecarryingweaponsacinchYourcarrycapacityisdoubled"
     },
     {
       "name": "Assault Armor",
@@ -612,7 +612,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You have advantage on attack rolls against any creature that hasn’t taken a turn in the combat yet. In addition, any hit you score against a creature that is surprised is a critical hit."
+          "data": "You have advantage on attack rolls against any creature that hasn't taken a turn in the combat yet. In addition, any hit you score against a creature that is surprised is a critical hit."
         }
       ],
       "id": "dropshot",
@@ -859,11 +859,16 @@
         {
           "id": 1,
           "type": "line",
-          "data": "When your heavy weapon runs out of ammo, you can jerry-rig an additional use for 3 tech points."
+          "data": "When your heavy weapon runs out of ammo, you can jerry-rig an additional use for 5 tech points."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "You must finish a short or long rest before you can use this ability again."
         }
       ],
       "id": "heavy-weapon-hack",
-      "mechanic_text_dump": "Whenyourheavyweaponrunsoutofammoyoucanjerryriganadditionalusefor3techpoints"
+      "mechanic_text_dump": "Whenyourheavyweaponrunsoutofammoyoucanjerryriganadditionalusefor5techpointsYoumustfinishashortorlongrestbeforeyoucanusethisabilityagain"
     },
     {
       "name": "Improved Barrier",
@@ -1014,11 +1019,11 @@
         {
           "id": 4,
           "type": "line",
-          "data": "At the 14th level, you can have 2 grenades programmed into your Omni-tool at once. Reduce the tech point cost for a grenade cast with Makeshift Grenades to 2."
+          "data": "At the 14th level, you can have 2 grenades programmed into your Omni-tool at once. In addition, you can create and use a grenade with this ability as an Attack action."
         }
       ],
       "id": "makeshift-grenades",
-      "mechanic_text_dump": "YouromnitoolissoadvancedyoucanusetechpointstocreateaspecificgrenadeChooseagrenadefromthegrenadelistitispermanentlyprogrammedintoyourOmnitoolAsanactionyoucanspend3techpointstocreateanduseagrenadeofthattypeYoucannotreplenishagrenadeorgiftagrenadewiththisabilityYoucanspend8hoursofprogrammingtoexchangeyourselectedgrenadewithadifferentoneAtthe14thlevelyoucanhave2grenadesprogrammedintoyourOmnitoolatonceReducethetechpointcostforagrenadecastwithMakeshiftGrenadesto2"
+      "mechanic_text_dump": "YouromnitoolissoadvancedyoucanusetechpointstocreateaspecificgrenadeChooseagrenadefromthegrenadelistitispermanentlyprogrammedintoyourOmnitoolAsanactionyoucanspend3techpointstocreateanduseagrenadeofthattypeYoucannotreplenishagrenadeorgiftagrenadewiththisabilityYoucanspend8hoursofprogrammingtoexchangeyourselectedgrenadewithadifferentoneAtthe14thlevelyoucanhave2grenadesprogrammedintoyourOmnitoolatonceInadditionyoucancreateanduseagrenadewiththisabilityasanAttackaction"
     },
     {
       "name": "Marksman",
@@ -1067,7 +1072,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You can spend 6 hours in a lab or similar environment using drugs to enhance the capabilities of standard medi-gel. It takes 2 hours to craft a single enhancement, but you can apply that benefit to any number of medi-gel cartridges. To craft another enhancement takes an additional 6 hours. Instead of using time to limit this feature, your GM can choose to allow you to add X enhancements to Y medi-gel cartridges, where X is your Intelligence modifier, and Y is half your Engineering level (minimum 1); then, you must finish a long rest before you can create ne enhancements."
+          "data": "You can spend 6 hours in a lab or similar environment using drugs to enhance the capabilities of standard medi-gel. It takes 2 hours to craft a single enhancement, but you can apply that benefit to any number of medi-gel cartridges. To craft another enhancement takes an additional 6 hours. Instead of using time to limit this feature, your GM can choose to allow you to add X enhancements to Y medi-gel cartridges, where X is your Intelligence modifier, and Y is half your Engineering level (minimum 1); then, you must finish a long rest before you can create new enhancements."
         },
         {
           "id": 2,
@@ -1083,7 +1088,7 @@
         }
       ],
       "id": "medi-gel-enhancements",
-      "mechanic_text_dump": "Youcanspend6hoursinalaborsimilarenvironmentusingdrugstoenhancethecapabilitiesofstandardmedigelIttakes2hourstocraftasingleenhancementbutyoucanapplythatbenefittoanynumberofmedigelcartridgesTocraftanotherenhancementtakesanadditional6hoursInsteadofusingtimetolimitthisfeatureyourGMcanchoosetoallowyoutoaddXenhancementstoYmedigelcartridgeswhereXisyourIntelligencemodifierandYishalfyourEngineeringlevelminimum1thenyoumustfinishalongrestbeforeyoucancreateneenhancementsWhencreatinganenhancementchoosefromthelistbelowlistStimulantAfterusingthismedigelyouhaveadvantageonthenextsavingthroworattackrollyoumakewithin1minuteOpioidWithin1minuteofusingthismedigelifyouwouldfallbelow0hitpointbutnotoutrightdieyoumayfallto1hitpointinsteadSteroidAfterusingthismedigeladd2damagetoallmeleedamagefor1minuteMinagenX3Afterusingthismedigelgain2damagetoallbioticspellsandcantripsfor1minuteVidelicetAfterusingthismedigelgain2bonustoallrangedtechattacksfor1minuteStypticIncreasethehealingdieby1dietypewhenusingthismedigellist"
+      "mechanic_text_dump": "Youcanspend6hoursinalaborsimilarenvironmentusingdrugstoenhancethecapabilitiesofstandardmedigelIttakes2hourstocraftasingleenhancementbutyoucanapplythatbenefittoanynumberofmedigelcartridgesTocraftanotherenhancementtakesanadditional6hoursInsteadofusingtimetolimitthisfeatureyourGMcanchoosetoallowyoutoaddXenhancementstoYmedigelcartridgeswhereXisyourIntelligencemodifierandYishalfyourEngineeringlevelminimum1thenyoumustfinishalongrestbeforeyoucancreatenewenhancementsWhencreatinganenhancementchoosefromthelistbelowlistStimulantAfterusingthismedigelyouhaveadvantageonthenextsavingthroworattackrollyoumakewithin1minuteOpioidWithin1minuteofusingthismedigelifyouwouldfallbelow0hitpointbutnotoutrightdieyoumayfallto1hitpointinsteadSteroidAfterusingthismedigeladd2damagetoallmeleedamagefor1minuteMinagenX3Afterusingthismedigelgain2damagetoallbioticspellsandcantripsfor1minuteVidelicetAfterusingthismedigelgain2bonustoallrangedtechattacksfor1minuteStypticIncreasethehealingdieby1dietypewhenusingthismedigellist"
     },
     {
       "name": "Metabiotics",
@@ -1125,7 +1130,7 @@
           "data": [
             "If wielding a single-handed ranged or versatile melee weapon, gain +2 AC and a +2 bonus to Dexterity saving throws.",
             "If a creature within 2m of you is attacked, you may use your reaction to impose disadvantage on that attack.",
-            "You omni-tool melee attack is replaced with Shield Bash: Make a melee attack roll (+STR), on a hot, deal 1d12 bludgeoning damage. You may shove a hit creature backwards 2m."
+            "You omni-tool melee attack is replaced with Shield Bash: Make a melee attack roll (+STR), on a hit, deal 1d12 bludgeoning damage. You may shove a hit creature backwards 2m."
           ]
         },
         {
@@ -1135,7 +1140,7 @@
         }
       ],
       "id": "omni-shield",
-      "mechanic_text_dump": "Startingatthe3rdlevelyouvemasteredtheomnishieldAsabonusactioncreatealargekineticshieldoutofyouromnitoolthatlastsoneminuteYoucanuseanotherbonusactiontoendOmniShieldearlyWhiledeployedlistIfwieldingasinglehandedrangedorversatilemeleeweapongain2ACanda2bonustoDexteritysavingthrowsIfacreaturewithin2mofyouisattackedyoumayuseyourreactiontoimposedisadvantageonthatattackYouomnitoolmeleeattackisreplacedwithShieldBashMakeameleeattackrollSTRonahotdeal1d12bludgeoningdamageYoumayshoveahitcreaturebackwards2mlistOnceyouusethisfeatureyoumustfinishashortorlongrestbeforeyoucanuseitagain"
+      "mechanic_text_dump": "Startingatthe3rdlevelyouvemasteredtheomnishieldAsabonusactioncreatealargekineticshieldoutofyouromnitoolthatlastsoneminuteYoucanuseanotherbonusactiontoendOmniShieldearlyWhiledeployedlistIfwieldingasinglehandedrangedorversatilemeleeweapongain2ACanda2bonustoDexteritysavingthrowsIfacreaturewithin2mofyouisattackedyoumayuseyourreactiontoimposedisadvantageonthatattackYouomnitoolmeleeattackisreplacedwithShieldBashMakeameleeattackrollSTRonahitdeal1d12bludgeoningdamageYoumayshoveahitcreaturebackwards2mlistOnceyouusethisfeatureyoumustfinishashortorlongrestbeforeyoucanuseitagain"
     },
     {
       "name": "Opportunist",
@@ -1505,17 +1510,19 @@
       "mechanic": [
         {
           "id": 1,
-          "type": "line",
-          "data": "You may use a reaction to sync the targeting computers of all your allies who are conscious. You target an enemy, painting them with an infared beam that lets all of your affected allies (and yourself) make an attack roll on that target using their weapon during your turn. If your affected ally has already taken their turn, they may still make an attack on the designated enemy, and if they have not yet taken their turn, they make the attack with advantage."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Once you use Synchronized Assault, you must finish a long rest before you can use it again."
+          "type": "list",
+          "data": [
+            "Careful Spell: When you cast a spell that forces other creatures to make a saving throw, you can protect some of those creatures from the spell's full force. To do so, you spend 1 barrier tick and choose a number of those creatures up to your Charisma modifier (minimum of one creature). A chosen creature automatically succeeds on its saving throw against the spell.",
+            "Distant Spell: When you cast a spell that has a range of 2m or greater, you can spend 1 barrier tick to double the range of the spell. When you cast a spell that has a range of touch, you can spend 1 barrier tick to make the range of the spell 10m.",
+            "Empowered Spell: When you roll damage for a spell, you can spend 1 barrier tick to reroll a number of the damage dice up to your Charisma modifier (minimum of one). You must use the new rolls. You can use Empowered Spell even if you have already used a different Metabiotic option during the casting of the spell.",
+            "Heightened Spell: When you cast a spell that forces a creature to make a saving throw to resist its effects, you can spend 3 barrier ticks to give one target of the spell disadvantage on its first saving throw made against the spell.",
+            "Quickened Spell: When you cast a spell that has a casting time of 1 action, you can spend 2 barrier ticks to change the casting time to 1 bonus action for this casting.",
+            "Twinned Spell: When you cast a spell that doesn't have a range of self and is incapable of targeting more than one creature at the spell's current level, you can spend a number of barrier ticks equal to the spell's level to target a second creature in range with the same spell (1 sorcery point if the spell is a cantrip)."
+          ]
         }
       ],
       "id": "synchronized-assault",
-      "mechanic_text_dump": "YoumayuseareactiontosyncthetargetingcomputersofallyourallieswhoareconsciousYoutargetanenemypaintingthemwithaninfaredbeamthatletsallofyouraffectedalliesandyourselfmakeanattackrollonthattargetusingtheirweaponduringyourturnIfyouraffectedallyhasalreadytakentheirturntheymaystillmakeanattackonthedesignatedenemyandiftheyhavenotyettakentheirturntheymaketheattackwithadvantageOnceyouuseSynchronizedAssaultyoumustfinishalongrestbeforeyoucanuseitagain"
+      "mechanic_text_dump": "At2ndlevelyougaintheabilitytousethepowerstoredinyourbarriertotwistyourspellstosuityourneedsYougaintwoofthefollowingMetabioticoptionsofyourchoiceAt14thlevellearn2additionaloptionsofyourchoicelistCarefulSpellWhenyoucastaspellthatforcesothercreaturestomakeasavingthrowyoucanprotectsomeofthosecreaturesfromthespellsfullforceTodosoyouspend1barriertickandchooseanumberofthosecreaturesuptoyourCharismamodifierminimumofonecreatureAchosencreatureautomaticallysucceedsonitssavingthrowagainstthespellDistantSpellWhenyoucastaspellthathasarangeof2morgreateryoucanspend1barrierticktodoubletherangeofthespellWhenyoucastaspellthathasarangeoftouchyoucanspend1barrierticktomaketherangeofthespell10mEmpoweredSpellWhenyourolldamageforaspellyoucanspend1barrierticktorerollanumberofthedamagediceuptoyourCharismamodifierminimumofoneYoumustusethenewrollsYoucanuseEmpoweredSpellevenifyouhavealreadyusedadifferentMetabioticoptionduringthecastingofthespellHeightenedSpellWhenyoucastaspellthatforcesacreaturetomakeasavingthrowtoresistitseffectsyoucanspend3barriertickstogiveonetargetofthespelldisadvantageonitsfirstsavingthrowmadeagainstthespellQuickenedSpellWhenyoucastaspellthathasacastingtimeof1actionyoucanspend2barriertickstochangethecastingtimeto1bonusactionforthiscastingTwinnedSpellWhenyoucastaspellthatdoesnthavearangeofselfandisincapableoftargetingmorethanonecreatureatthespellscurrentlevelyoucanspendanumberofbarrierticksequaltothespellsleveltotargetasecondcreatureinrangewiththesamespell1sorcerypointifthespellisacantriplist"
     },
     {
       "name": "Tactical Ambush",
@@ -1593,17 +1600,17 @@
           "type": "list",
           "data": [
             "Defensive: This is the standard Tech Armor package. It does not affect allies.",
-            "Anti-Biotic: Resistance to force and necrotic damage.",
+            "Anti-biotic: Resistance to force and necrotic damage.",
             "Anti-tech: Resistance to fire and cold damage.",
             "Grounded: Resistance to lightning damage.",
-            "Reactive: Add your tech modifier to saving throws",
-            "Speed: Increase your speed by 4m.",
-            "Regen: Increases shield regeneration by 1 die type (max d12). If an ally is already at max, they gain +4."
+            "Reactive: If you or a friendly creature wearing armor within range would make a saving throw, add your tech modifier to the roll.",
+            "Speed: Increase speed by 4m.",
+            "Regen: Increases shield regeneration by 1 die type (max d12)."
           ]
         }
       ],
       "id": "tech-aura",
-      "mechanic_text_dump": "InadditiontothestandarddefensiveAIyouveaugmentedyourTechArmortorundifferentAIpackagesThepackagescanhookintonearbyarmorsystemsAnyfriendlycreaturewithin4mofyouthatiswearingarmorgainstheeffectofthepackageWhenyouactivateTechArmoryoucanonlychooseasinglepackagetorunLearn2AIpackagesfromthelistbelowyouvealreadylearnedtheDefensivepackageAtthe14thlevelyoulearn2additionalpackageslistDefensiveThisisthestandardTechArmorpackageItdoesnotaffectalliesAntiBioticResistancetoforceandnecroticdamageAntitechResistancetofireandcolddamageGroundedResistancetolightningdamageReactiveAddyourtechmodifiertosavingthrowsSpeedIncreaseyourspeedby4mRegenIncreasesshieldregenerationby1dietypemaxd12Ifanallyisalreadyatmaxtheygain4list"
+      "mechanic_text_dump": "InadditiontothestandarddefensiveAIyouveaugmentedyourTechArmortorundifferentAIpackagesThepackagescanhookintonearbyarmorsystemsAnyfriendlycreaturewithin4mofyouthatiswearingarmorgainstheeffectofthepackageWhenyouactivateTechArmoryoucanonlychooseasinglepackagetorunLearn2AIpackagesfromthelistbelowyouvealreadylearnedtheDefensivepackageAtthe14thlevelyoulearn2additionalpackageslistDefensiveThisisthestandardTechArmorpackageItdoesnotaffectalliesAntibioticResistancetoforceandnecroticdamageAntitechResistancetofireandcolddamageGroundedResistancetolightningdamageReactiveIfyouorafriendlycreaturewearingarmorwithinrangewouldmakeasavingthrowaddyourtechmodifiertotherollSpeedIncreasespeedby4mRegenIncreasesshieldregenerationby1dietypemaxd12list"
     },
     {
       "name": "Tech Aura Improvement",
@@ -1635,11 +1642,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "As a recation, you can use 2 Barrier ticks to automatically pass a Dexterity saving throw."
+          "data": "As a reaction, you can use 2 Barrier ticks to automatically pass a Dexterity saving throw."
         }
       ],
       "id": "teleporting-dodge",
-      "mechanic_text_dump": "Asarecationyoucanuse2BarriertickstoautomaticallypassaDexteritysavingthrow"
+      "mechanic_text_dump": "Asareactionyoucanuse2BarriertickstoautomaticallypassaDexteritysavingthrow"
     },
     {
       "name": "Uncanny Dodge",
@@ -1731,6 +1738,18 @@
       ],
       "id": "zero-sum",
       "mechanic_text_dump": "WhenyoumakeameleeattackinsteadofrollingadiceyoucanflipacoinOnaheadsitsacriticalhitOnatailsitsacriticalmissYoucanusethisabilityoncepershortrestStartingatthe9thlevelyoucanusethisabilitytwicepershortrestStartingatthe11thlevelyoucanusethisabilitythreetimespershortrest"
+    },
+    {
+      "name": "Weapon Training",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Gain proficiency with an additional weapon type."
+        }
+      ],
+      "id": "weapon-training",
+      "mechanic_text_dump": "Gainproficiencywithanadditionalweapontype"
     }
   ]
 }

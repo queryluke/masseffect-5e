@@ -1,5 +1,5 @@
 {
-  "updated": "October 29, 2017 @  3:43 PM",
+  "updated": "November 17, 2017 @  9:33 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSs9dkG94f5fPCOJ38g-xCUCwnYynzbiFdggQ1KqM1vMscINwcn2_OGPqGhvxOrYl18oK7dO2notL_y/pubhtml",
   "data": [
     {
@@ -3228,11 +3228,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You spend X tech points and tap into the medical interface of a fallen commrade. You revive a friendly creature that has gone unconscious or died within the last minute. That creature returns to consciousness or life with hit points equal to Xd4 + your proficiency bonus."
+          "data": "You spend X tech points and tap into the medical interface of a fallen comrade. You revive a friendly creature that has gone unconscious or died within the last minute. That creature returns to consciousness or life with hit points equal to Xd4 + your proficiency bonus."
         }
       ],
       "adv_option_1": "Unrestricted : There is no limit to the amount of TP you may spend on this ability.",
-      "adv_option_2": "Quick : You can use Unity as a reaction to the creature falling unconcious or dying.",
+      "adv_option_2": "Quick : You can use Unity as a reaction to the creature falling unconscious or dying.",
       "type": "tech",
       "die_type": "d4",
       "attack_type": [
@@ -3262,10 +3262,10 @@
       "id": "unity",
       "adv_options": [
         "Unrestricted : There is no limit to the amount of TP you may spend on this ability.",
-        "Quick : You can use Unity as a reaction to the creature falling unconcious or dying."
+        "Quick : You can use Unity as a reaction to the creature falling unconscious or dying."
       ],
       "class_list": "Engineer, Sentinel",
-      "mechanic_text_dump": "YouspendXtechpointsandtapintothemedicalinterfaceofafallencommradeYoureviveafriendlycreaturethathasgoneunconsciousordiedwithinthelastminuteThatcreaturereturnstoconsciousnessorlifewithhitpointsequaltoXd4yourproficiencybonus"
+      "mechanic_text_dump": "YouspendXtechpointsandtapintothemedicalinterfaceofafallencomradeYoureviveafriendlycreaturethathasgoneunconsciousordiedwithinthelastminuteThatcreaturereturnstoconsciousnessorlifewithhitpointsequaltoXd4yourproficiencybonus"
     },
     {
       "name": "Vortex",

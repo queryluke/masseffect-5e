@@ -1,11 +1,11 @@
 {
-  "updated": "October 23, 2017 @  4:26 PM",
+  "updated": "November 17, 2017 @  9:33 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
       "name": "Commando",
       "class": "Adept",
-      "description": null,
+      "description": "Commandos don't need heavy weapons because they ARE the heavy weapon. Their features improve both the damage potential and throughput of their biotic spells, making them a deadly force.",
       "1": [
         {
           "key": "pure-biotics",
@@ -41,7 +41,7 @@
     {
       "name": "Blackstar",
       "class": "Adept",
-      "description": null,
+      "description": "Blackstars prefer controlling the battlefield over raw power. They can shape their biotic powers to avoid hurting friends and gain unique benefits to biotic control spells like Life, Singularity, and Stasis.",
       "1": [
         {
           "key": "sculpt-biotics",
@@ -77,7 +77,7 @@
     {
       "name": "Disruptor",
       "class": "Adept",
-      "description": null,
+      "description": "Disruptors have learned to tap into dark energy, improving biotic abilities that tear apart their adversaries from within. They also specialize in maintaining spells with intense focus.",
       "1": [
         {
           "key": "dark-biotics",
@@ -113,23 +113,35 @@
     {
       "name": "Demolisher",
       "class": "Engineer",
-      "description": null,
+      "description": "Demolishers are explosive specialists with eye for combat. While not as skilled as a Soldier of Infiltrator, they make up for it with by covering the battlefield with grenades and heavy weapon fire.",
       "1": [
         {
           "key": "advanced-weapon-holsters",
           "value": "Advanced Weapon Holsters"
+        },
+        {
+          "key": "weapon-training",
+          "value": " Weapon Training"
         }
       ],
       "2": [
         {
           "key": "makeshift-grenades",
           "value": "Makeshift Grenades"
+        },
+        {
+          "key": "extra-attack",
+          "value": " Extra Attack"
         }
       ],
       "3": [
         {
           "key": "heavy-weapon-hack",
           "value": "Heavy Weapon Hack"
+        },
+        {
+          "key": "fighting-style",
+          "value": " Fighting Style"
         }
       ],
       "4": [
@@ -154,7 +166,7 @@
     {
       "name": "Drone Jockey",
       "class": "Engineer",
-      "description": null,
+      "description": "Drone Jockeys are happy to let their friends dance and distract around the battlefield while they take pot-shots from afar. Some say it's a coward's way, but some say it's just plain smart.",
       "1": [
         {
           "key": "drone-sidekick",
@@ -195,7 +207,7 @@
     {
       "name": "Medic ",
       "class": "Engineer",
-      "description": null,
+      "description": "The name says it all. As a medic, you'll be one on the field that can dress a wound and get your comrades back into fighting shape.",
       "1": [
         {
           "key": "healing-drone",
@@ -236,7 +248,7 @@
     {
       "name": "Shadow",
       "class": "Infiltrator",
-      "description": null,
+      "description": "Shadow Infiltrators are melee specialists that make heavy use of their tactical cloak and stealth to close the distance between themselves and their target.",
       "1": [
         {
           "key": "up-close-and-personal",
@@ -272,7 +284,7 @@
     {
       "name": "Saboteur",
       "class": "Infiltrator",
-      "description": null,
+      "description": "Saboteurs are infiltration experts. They use a their sharp mind to subtly affect the outcome of battles.",
       "1": [
         {
           "key": "ear-for-deceit",
@@ -316,7 +328,7 @@
     {
       "name": "Operative",
       "class": "Infiltrator",
-      "description": null,
+      "description": "Operatives are ranged specialists that rely on gunplay and a keen eye to take out enemies from a distance.",
       "1": [
         {
           "key": "dropshot",
@@ -352,7 +364,7 @@
     {
       "name": "Mastermind",
       "class": "Sentinel",
-      "description": null,
+      "description": "Masterminds are the top strategists and battlefield experts. They can easily turn the tides by calling out orders or synchronising troop movements.",
       "1": [
         {
           "key": "master-tactician",
@@ -367,8 +379,8 @@
       ],
       "3": [
         {
-          "key": "battlemaster",
-          "value": "Battlemaster"
+          "key": "tactical-advantage",
+          "value": "Tactical Advantage"
         }
       ],
       "4": [
@@ -393,7 +405,7 @@
     {
       "name": "Bastion",
       "class": "Sentinel",
-      "description": null,
+      "description": "Bastions believe a good defense is the best offense. Their tech armor upgrades make sure they can take a hit, or one hundred, without so much as a scratch.",
       "1": [
         {
           "key": "assault-armor",
@@ -434,7 +446,7 @@
     {
       "name": "Guardian",
       "class": "Sentinel",
-      "description": null,
+      "description": "Guardians support and buff party members by utilizing different AI packages from their Tech Armor ability and protecting them with their Omni-Shield. They're also one of the most skilled classes, gaining the Expertise feature twice.",
       "1": [
         {
           "key": "omni-shield",
@@ -483,7 +495,7 @@
     {
       "name": "Havoc",
       "class": "Soldier",
-      "description": null,
+      "description": "Havoc soldiers prefer a multitude of gadgets and combat powers over standard weapons. ",
       "1": [
         {
           "key": "combat-power",
@@ -524,7 +536,7 @@
     {
       "name": "Weapon Master",
       "class": "Soldier",
-      "description": null,
+      "description": "Weapon masters train extensively in the art of a single weapon, giving them powerful advantages when using a weapon of that type.",
       "1": [
         {
           "key": "weapon-of-choice",
@@ -565,7 +577,7 @@
     {
       "name": "Sharp Shooter",
       "class": "Soldier",
-      "description": null,
+      "description": "Sharp shooters use pinpoint accuracy and target weak points on their opponents, resulting a massive amounts of bonus damage.",
       "1": [
         {
           "key": "deadly-aim",
@@ -606,7 +618,7 @@
     {
       "name": "Battle Master",
       "class": "Vanguard",
-      "description": null,
+      "description": "Battle masters use their barrier to execute unique maneuvers on the battlefield, controlling and harrying enemy forces.",
       "1": [
         {
           "key": "biotic-maneuvers",
@@ -647,7 +659,7 @@
     {
       "name": "Shock Trooper",
       "class": "Vanguard",
-      "description": null,
+      "description": "Shock troopers like to fight up close a personal, using charge to dash around the battlefield and striking their opponents with devastating melee strikes.",
       "1": [
         {
           "key": "biotic-slash",
@@ -688,7 +700,7 @@
     {
       "name": "Nemesis",
       "class": "Vanguard",
-      "description": null,
+      "description": "Nemesis vanguards prefer distance and using biotic powers. While they lack the raw power of an adept, they're more agile and much harder to take down.",
       "1": [
         {
           "key": "metabiotics",
