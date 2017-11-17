@@ -1,5 +1,5 @@
 {
-  "updated": "October 23, 2017 @  6:00 PM",
+  "updated": "November 17, 2017 @ 10:58 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -22,7 +22,7 @@
               "subclass_progression": null
             },
             {
-              "key": "biotic-powers",
+              "key": "biotic_powers",
               "display": "Biotic Powers(3:1)",
               "subclass_progression": null
             }
@@ -69,12 +69,12 @@
           "key": "features",
           "value": [
             {
-              "key": "fighting-style",
+              "key": "fighting_style",
               "display": "Fighting Style",
               "subclass_progression": null
             },
             {
-              "key": "danger-sense",
+              "key": "danger_sense",
               "display": "Danger Sense",
               "subclass_progression": null
             }
@@ -121,7 +121,7 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass-feature",
+              "key": "subclass_feature",
               "display": "Subclass Feature",
               "subclass_progression": 1
             }
@@ -168,7 +168,7 @@
           "key": "features",
           "value": [
             {
-              "key": "ability-score-improvement",
+              "key": "ability_score_improvement",
               "display": "Ability Score Improvement",
               "subclass_progression": null
             }
@@ -215,7 +215,7 @@
           "key": "features",
           "value": [
             {
-              "key": "extra-attack",
+              "key": "extra_attack",
               "display": "Extra Attack",
               "subclass_progression": null
             }
@@ -262,7 +262,7 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass-feature",
+              "key": "subclass_feature",
               "display": "Subclass Feature",
               "subclass_progression": 2
             }
@@ -309,7 +309,7 @@
           "key": "features",
           "value": [
             {
-              "key": "biotic-powers",
+              "key": "biotic_powers",
               "display": "Biotic Powers(2:2)",
               "subclass_progression": null
             }
@@ -356,7 +356,7 @@
           "key": "features",
           "value": [
             {
-              "key": "ability-score-improvement",
+              "key": "ability_score_improvement",
               "display": "Ability Score Improvement",
               "subclass_progression": null
             }
@@ -408,7 +408,7 @@
               "subclass_progression": null
             },
             {
-              "key": "brutal-critical",
+              "key": "brutal_critical",
               "display": "Brutal Critical",
               "subclass_progression": null
             }
@@ -455,7 +455,7 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass-feature",
+              "key": "subclass_feature",
               "display": "Subclass Feature",
               "subclass_progression": 3
             }
@@ -502,12 +502,12 @@
           "key": "features",
           "value": [
             {
-              "key": "biotic-powers",
+              "key": "biotic_powers",
               "display": "Biotic Powers(2:3)",
               "subclass_progression": null
             },
             {
-              "key": "fighting-style",
+              "key": "fighting_style",
               "display": "Fighting Style (select advancement)",
               "subclass_progression": null
             }
@@ -554,7 +554,7 @@
           "key": "features",
           "value": [
             {
-              "key": "ability-score-improvement",
+              "key": "ability_score_improvement",
               "display": "Ability Score Improvement",
               "subclass_progression": null
             }
@@ -606,7 +606,7 @@
               "subclass_progression": null
             },
             {
-              "key": "brutal-critical",
+              "key": "brutal_critical",
               "display": "Brutal Critical(2)",
               "subclass_progression": null
             }
@@ -653,7 +653,7 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass-feature",
+              "key": "subclass_feature",
               "display": "Subclass feature",
               "subclass_progression": 4
             }
@@ -705,7 +705,7 @@
               "subclass_progression": null
             },
             {
-              "key": "biotic-powers",
+              "key": "biotic_powers",
               "display": "Biotic Powers(1:4)",
               "subclass_progression": null
             }
@@ -752,7 +752,7 @@
           "key": "features",
           "value": [
             {
-              "key": "ability-score-improvement",
+              "key": "ability_score_improvement",
               "display": "Ability Score Improvement",
               "subclass_progression": null
             }
@@ -804,7 +804,7 @@
               "subclass_progression": null
             },
             {
-              "key": "brutal-critical",
+              "key": "brutal_critical",
               "display": "Brutal Critical(3)",
               "subclass_progression": null
             }
@@ -851,7 +851,7 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass-feature",
+              "key": "subclass_feature",
               "display": "Subclass feature",
               "subclass_progression": 5
             }
@@ -898,7 +898,7 @@
           "key": "features",
           "value": [
             {
-              "key": "ability-score-improvement",
+              "key": "ability_score_improvement",
               "display": "Ability Score Improvement",
               "subclass_progression": null
             }
@@ -945,7 +945,7 @@
           "key": "features",
           "value": [
             {
-              "key": "primal-biotics",
+              "key": "primal_biotics",
               "display": "Primal Biotics",
               "subclass_progression": null
             }

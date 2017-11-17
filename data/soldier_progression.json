@@ -1,5 +1,5 @@
 {
-  "updated": "September 21, 2017 @  5:43 PM",
+  "updated": "November 17, 2017 @ 10:58 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -17,12 +17,12 @@
           "key": "features",
           "value": [
             {
-              "key": "fighting-style",
+              "key": "fighting_style",
               "display": "Fighting Style",
               "subclass_progression": null
             },
             {
-              "key": "combat-power",
+              "key": "combat_power",
               "display": "Combat Power",
               "subclass_progression": null
             }
@@ -45,7 +45,7 @@
           "key": "features",
           "value": [
             {
-              "key": "adrenaline-rush",
+              "key": "adrenaline_rush",
               "display": "Adrenaline Rush",
               "subclass_progression": null
             }
@@ -68,7 +68,7 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass-feature",
+              "key": "subclass_feature",
               "display": "Subclass Feature",
               "subclass_progression": 1
             }
@@ -91,7 +91,7 @@
           "key": "features",
           "value": [
             {
-              "key": "ability-score-improvement",
+              "key": "ability_score_improvement",
               "display": "Ability Score Improvement",
               "subclass_progression": null
             }
@@ -114,12 +114,12 @@
           "key": "features",
           "value": [
             {
-              "key": "extra-attack",
+              "key": "extra_attack",
               "display": "Extra Attack",
               "subclass_progression": null
             },
             {
-              "key": "combat-power",
+              "key": "combat_power",
               "display": "Combat Power",
               "subclass_progression": null
             }
@@ -142,7 +142,7 @@
           "key": "features",
           "value": [
             {
-              "key": "ability-score-improvement",
+              "key": "ability_score_improvement",
               "display": "Ability Score Improvement",
               "subclass_progression": null
             }
@@ -165,7 +165,7 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass-feature",
+              "key": "subclass_feature",
               "display": "Subclass Feature",
               "subclass_progression": 2
             }
@@ -188,7 +188,7 @@
           "key": "features",
           "value": [
             {
-              "key": "ability-score-improvement",
+              "key": "ability_score_improvement",
               "display": "Ability Score Improvement",
               "subclass_progression": null
             }
@@ -211,12 +211,12 @@
           "key": "features",
           "value": [
             {
-              "key": "combat-power",
+              "key": "combat_power",
               "display": "Combat Power",
               "subclass_progression": null
             },
             {
-              "key": "fighting-style",
+              "key": "fighting_style",
               "display": "Fighting Style (select advancement)",
               "subclass_progression": null
             }
@@ -239,7 +239,7 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass-feature",
+              "key": "subclass_feature",
               "display": "Subclass Feature",
               "subclass_progression": 3
             }
@@ -262,7 +262,7 @@
           "key": "features",
           "value": [
             {
-              "key": "extra-attack",
+              "key": "extra_attack",
               "display": "Extra Attack(2)",
               "subclass_progression": null
             }
@@ -285,7 +285,7 @@
           "key": "features",
           "value": [
             {
-              "key": "ability-score-improvement",
+              "key": "ability_score_improvement",
               "display": "Ability Score Improvement",
               "subclass_progression": null
             }
@@ -308,7 +308,7 @@
           "key": "features",
           "value": [
             {
-              "key": "combat-power",
+              "key": "combat_power",
               "display": "Combat Power",
               "subclass_progression": null
             }
@@ -331,7 +331,7 @@
           "key": "features",
           "value": [
             {
-              "key": "ability-score-improvement",
+              "key": "ability_score_improvement",
               "display": "Ability Score Improvement",
               "subclass_progression": null
             }
@@ -354,7 +354,7 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass-feature",
+              "key": "subclass_feature",
               "display": "Subclass Feature",
               "subclass_progression": 4
             }
@@ -377,7 +377,7 @@
           "key": "features",
           "value": [
             {
-              "key": "ability-score-improvement",
+              "key": "ability_score_improvement",
               "display": "Ability Score Improvement",
               "subclass_progression": null
             }
@@ -400,12 +400,12 @@
           "key": "features",
           "value": [
             {
-              "key": "adrenaline-rush",
+              "key": "adrenaline_rush",
               "display": "Adrenaline Rush(2)",
               "subclass_progression": null
             },
             {
-              "key": "combat-power",
+              "key": "combat_power",
               "display": "Combat Power",
               "subclass_progression": null
             }
@@ -428,7 +428,7 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass-feature",
+              "key": "subclass_feature",
               "display": "Subclass Feature",
               "subclass_progression": 5
             }
@@ -451,7 +451,7 @@
           "key": "features",
           "value": [
             {
-              "key": "ability-score-improvement",
+              "key": "ability_score_improvement",
               "display": "Ability Score Improvement",
               "subclass_progression": null
             }
@@ -474,7 +474,7 @@
           "key": "features",
           "value": [
             {
-              "key": "extra-attack",
+              "key": "extra_attack",
               "display": "Extra Attack(3)",
               "subclass_progression": null
             }

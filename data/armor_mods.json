@@ -1,5 +1,5 @@
 {
-  "updated": "September 11, 2017 @ 11:04 PM",
+  "updated": "November 17, 2017 @ 10:58 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRIPzbOBXOdWbaY779un1EV3HyacCV3fe15kHW4ABjMV0yHi3GZHVqnbiOVSQ_Dgh1whimOITGOXHkn/pubhtml",
   "data": [
     {
@@ -10,7 +10,7 @@
       "mechanic": "Increase your thermal clip capacity by 2",
       "cost": "500",
       "manu": "Elkoss Combine",
-      "id": "ammo-capacity"
+      "id": "ammo_capacity"
     },
     {
       "name": "Weapon Stabilizers",
@@ -20,7 +20,7 @@
       "mechanic": "You gain a +2 bonus to ranged weapon attacks",
       "cost": "5000",
       "manu": "Aldrin Labs",
-      "id": "weapon-stabilizers"
+      "id": "weapon_stabilizers"
     },
     {
       "name": "VI Aiming",
@@ -30,7 +30,7 @@
       "mechanic": "You gain a +2 damage bonus to each ranged weapon damage roll",
       "cost": "5000",
       "manu": "Armax Arsenal",
-      "id": "vi-aiming"
+      "id": "vi_aiming"
     },
     {
       "name": "Microservos",
@@ -50,7 +50,7 @@
       "mechanic": "Increase your shield points by 10.",
       "cost": "10000",
       "manu": "Armax Arsenal",
-      "id": "shield-capacity"
+      "id": "shield_capacity"
     },
     {
       "name": "Amplifier Plates",
@@ -60,7 +60,7 @@
       "mechanic": "Reduce tech point costs by 1, to a minimum of 1. This cannot be used to cast tech powers beyond your max tech point limit.",
       "cost": "20000",
       "manu": "Elanus Risk Control Services",
-      "id": "amplifier-plates"
+      "id": "amplifier_plates"
     },
     {
       "name": "Medi-gel",
@@ -80,7 +80,7 @@
       "mechanic": "When you are hit with a melee attack, deal 1d6 piercing damage back at the attacker.",
       "cost": "5000",
       "manu": "Batarian State Arms",
-      "id": "bladed-wristguards"
+      "id": "bladed_wristguards"
     },
     {
       "name": "?",
@@ -100,7 +100,7 @@
       "mechanic": "Regain 5 tech points or 1 spell slot on a short rest.",
       "cost": "8000",
       "manu": "Rosenkov Materials",
-      "id": "battle-telemetry"
+      "id": "battle_telemetry"
     },
     {
       "name": "Armor Plating",
@@ -110,7 +110,7 @@
       "mechanic": "Gain +1 AC",
       "cost": "10000",
       "manu": "Any",
-      "id": "armor-plating"
+      "id": "armor_plating"
     },
     {
       "name": "Ablative Coating",
@@ -120,7 +120,7 @@
       "mechanic": "Gain +2 AC",
       "cost": "20000",
       "manu": "Alliance",
-      "id": "ablative-coating"
+      "id": "ablative_coating"
     },
     {
       "name": "Energized Plating",
@@ -130,7 +130,7 @@
       "mechanic": "Gain +3 AC",
       "cost": "30000",
       "manu": "Cerberus Skunkworks",
-      "id": "energized-plating"
+      "id": "energized_plating"
     },
     {
       "name": "Asymmetric Defense Layer",
@@ -140,7 +140,7 @@
       "mechanic": "Gain +2 AC and +20 HP",
       "cost": "35000",
       "manu": "Rosenkov Materials",
-      "id": "asymmetric-defense-layer"
+      "id": "asymmetric_defense_layer"
     },
     {
       "name": "Ammo Capacity",
@@ -150,7 +150,7 @@
       "mechanic": "Increase your thermal clip capacity by 6",
       "cost": "1500",
       "manu": "Armax Arsenal",
-      "id": "ammo-capacity"
+      "id": "ammo_capacity"
     },
     {
       "name": "Barrier",
@@ -170,7 +170,7 @@
       "mechanic": "You gain a +2 damage bonus to each melee damage roll",
       "cost": "5000",
       "manu": "Ariake Technologies",
-      "id": "adrenaline-regulator"
+      "id": "adrenaline_regulator"
     },
     {
       "name": "Toxic Resistance",
@@ -180,7 +180,7 @@
       "mechanic": "Resistance to acid and poison damage. You have advantage on saving throws that would cause you to be poisoned.",
       "cost": "5000",
       "manu": "Batarian State Arms",
-      "id": "toxic-resistance"
+      "id": "toxic_resistance"
     },
     {
       "name": "Recharge Capacitor",
@@ -190,7 +190,7 @@
       "mechanic": "You shields recharge every turn, despite taking damage.",
       "cost": "15000",
       "manu": "Armax Arsenal",
-      "id": "recharge-capacitor"
+      "id": "recharge_capacitor"
     },
     {
       "name": "Shield Battery",
@@ -200,7 +200,7 @@
       "mechanic": "Increase your shield points by 10.",
       "cost": "10000",
       "manu": "Any",
-      "id": "shield-battery"
+      "id": "shield_battery"
     },
     {
       "name": "Shield Modulator",
@@ -210,7 +210,7 @@
       "mechanic": "Increase your shield points by 20.",
       "cost": "20000",
       "manu": "Armax Arsenal",
-      "id": "shield-modulator"
+      "id": "shield_modulator"
     },
     {
       "name": "Shield Interface",
@@ -220,7 +220,7 @@
       "mechanic": "Increase your shield points by 30.",
       "cost": "30000",
       "manu": "Alliance",
-      "id": "shield-interface"
+      "id": "shield_interface"
     },
     {
       "name": "Ceramic Weave",
@@ -230,7 +230,7 @@
       "mechanic": "Increase your hit points by 10.",
       "cost": "10000",
       "manu": "Kassa Fabrication",
-      "id": "ceramic-weave"
+      "id": "ceramic_weave"
     },
     {
       "name": "Medi-gel",
@@ -250,7 +250,7 @@
       "mechanic": "You are immune to being frozen.",
       "cost": "6000",
       "manu": "Devlon Industries",
-      "id": "thermal-armor"
+      "id": "thermal_armor"
     },
     {
       "name": "Environmental Regulators",
@@ -260,7 +260,7 @@
       "mechanic": "Resistance to fire and cold damage.",
       "cost": "8000",
       "manu": "Devlon Industries",
-      "id": "environmental-regulators"
+      "id": "environmental_regulators"
     },
     {
       "name": "Hardened Weave",
@@ -270,7 +270,7 @@
       "mechanic": "Resistance to cold, fire, force, lightning, and necrotic damage types.",
       "cost": "20000",
       "manu": "Serrice Council",
-      "id": "hardened-weave"
+      "id": "hardened_weave"
     },
     {
       "name": "Battle Telemetry",
@@ -280,7 +280,7 @@
       "mechanic": "Regain 10 tech points or 2 spell slots on a short rest.",
       "cost": "16000",
       "manu": "Rosenkov Materials",
-      "id": "battle-telemetry"
+      "id": "battle_telemetry"
     },
     {
       "name": "Auxiliary Shield Emitters",
@@ -290,7 +290,7 @@
       "mechanic": "Increase your shield regen by 1 die type (max d12).",
       "cost": "8000",
       "manu": "Kassa Fabrication",
-      "id": "auxiliary-shield-emitters"
+      "id": "auxiliary_shield_emitters"
     },
     {
       "name": "Auxiliary Shield Emitters",
@@ -300,7 +300,7 @@
       "mechanic": "Increase your shield regen by 1 die type (max d12).",
       "cost": "8000",
       "manu": "Kassa Fabrication",
-      "id": "auxiliary-shield-emitters"
+      "id": "auxiliary_shield_emitters"
     },
     {
       "name": "Umbra AI",
@@ -310,7 +310,7 @@
       "mechanic": "You gain a +2 bonus to ranged biotic or tech attacks.",
       "cost": "8000",
       "manu": "Alliance",
-      "id": "umbra-ai"
+      "id": "umbra_ai"
     },
     {
       "name": "Focus Modulator",
@@ -320,7 +320,7 @@
       "mechanic": "You gain a +2 bonus to ranged attacks.",
       "cost": "10000",
       "manu": "Ariake Technologies",
-      "id": "focus-modulator"
+      "id": "focus_modulator"
     },
     {
       "name": "Voice Modulator",
@@ -330,7 +330,7 @@
       "mechanic": "Gain +2 to Persuasion and Intimidation checks",
       "cost": "2000",
       "manu": "Tyriel Advanced Communications Corporation",
-      "id": "voice-modulator"
+      "id": "voice_modulator"
     },
     {
       "name": "Recharge Capacitor",
@@ -340,7 +340,7 @@
       "mechanic": "You shields recharge every turn, despite taking damage.",
       "cost": "15000",
       "manu": "Alliance",
-      "id": "recharge-capacitor"
+      "id": "recharge_capacitor"
     },
     {
       "name": "Sentry System",
@@ -350,7 +350,7 @@
       "mechanic": "Increase your shield points by 10.",
       "cost": "10000",
       "manu": "Alliance",
-      "id": "sentry-system"
+      "id": "sentry_system"
     },
     {
       "name": "Archon AI",
@@ -360,7 +360,7 @@
       "mechanic": "Gain one half of your tech points and spell slots (rounded down) on a short rest.",
       "cost": "20000",
       "manu": "Rosenkov Materials",
-      "id": "archon-ai"
+      "id": "archon_ai"
     },
     {
       "name": "?",
@@ -380,7 +380,7 @@
       "mechanic": "Gain one half of your tech points and spell slots (rounded down) on a short rest.",
       "cost": "20000",
       "manu": "Rosenkov Materials",
-      "id": "archon-ai"
+      "id": "archon_ai"
     },
     {
       "name": "Ammo Capacity",
@@ -390,7 +390,7 @@
       "mechanic": "Increase your thermal clip capacity by 4",
       "cost": "1000",
       "manu": "Armax Arsenal",
-      "id": "ammo-capacity"
+      "id": "ammo_capacity"
     },
     {
       "name": "Microservos",
@@ -420,7 +420,7 @@
       "mechanic": "Increase your speed by 6m.",
       "cost": "6000",
       "manu": "Sirta Foundation",
-      "id": "stimulator-conduits"
+      "id": "stimulator_conduits"
     },
     {
       "name": "Life Support Webbing",
@@ -430,7 +430,7 @@
       "mechanic": "Increase your hit points by 10.",
       "cost": "10000",
       "manu": "Sirta Foundation",
-      "id": "life-support-webbing"
+      "id": "life_support_webbing"
     },
     {
       "name": "Ordinance Packs",
@@ -440,7 +440,7 @@
       "mechanic": "Increase the charges of your heavy weapons by 2.",
       "cost": "10000",
       "manu": "Jormungand Technology",
-      "id": "ordinance-packs"
+      "id": "ordinance_packs"
     },
     {
       "name": "Medi-gel",
@@ -460,7 +460,7 @@
       "mechanic": "If you are standing on a metal surface, you are immune to being lifted. Otherwise, if you would make a saving throw against being lifted, you have advantage.",
       "cost": "6000",
       "manu": "Any",
-      "id": "mag-latches"
+      "id": "mag_latches"
     },
     {
       "name": "Auxiliary Shield Emitters",
@@ -470,7 +470,7 @@
       "mechanic": "Increase your shield regen by 1 die type (max d12)",
       "cost": "8000",
       "manu": "Kassa Fabrication",
-      "id": "auxiliary-shield-emitters"
+      "id": "auxiliary_shield_emitters"
     },
     {
       "name": "?",

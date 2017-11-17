@@ -1,5 +1,5 @@
 {
-  "updated": "November 17, 2017 @  9:33 AM",
+  "updated": "November 17, 2017 @ 10:58 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSs9dkG94f5fPCOJ38g-xCUCwnYynzbiFdggQ1KqM1vMscINwcn2_OGPqGhvxOrYl18oK7dO2notL_y/pubhtml",
   "data": [
     {
@@ -45,7 +45,7 @@
       "engineer": null,
       "soldier": null,
       "reviewed": null,
-      "id": "alter-center-mass",
+      "id": "alter_center_mass",
       "adv_options": [
         "Disorient : Creatures that fail the saving throw become disoriented. Until the end of your next turn, attacks made against the creature have advantage and it can't make reactions.",
         "Debilitate : Creatures that fail the saving throw have their movement speed reduced by half and become so dizzy they fall {prone}."
@@ -101,7 +101,7 @@
       "engineer": null,
       "soldier": null,
       "reviewed": "y",
-      "id": "annihilation-field",
+      "id": "annihilation_field",
       "adv_options": [
         "Anti-Armor : Each creature that fails the saving throw takes a -1 penalty to their AC.",
         "Drain : Each time Annihilation Field deals damage, you gain shield points equal half the damage done."
@@ -218,7 +218,7 @@
       "engineer": null,
       "soldier": "x",
       "reviewed": "y",
-      "id": "ballistic-blades",
+      "id": "ballistic_blades",
       "adv_options": [
         "Bleeding Blades : The target takes an additional 3d6 damage at the start of their turn. This damage bypasses shields.",
         "Exploding blades : The blades explode, dealing an additional 3d6 thunder damage and knock the target prone."
@@ -325,7 +325,7 @@
       "engineer": null,
       "soldier": null,
       "reviewed": "y",
-      "id": "barrier-detonation",
+      "id": "barrier_detonation",
       "adv_options": [
         "Improved Lift : Add an additional 2[dd] to the roll.",
         "Radius : Increase the size of the detonation to 4m"
@@ -433,7 +433,7 @@
       "engineer": null,
       "soldier": null,
       "reviewed": "y",
-      "id": "biotic-orbs",
+      "id": "biotic_orbs",
       "adv_options": [
         "Improved Orbs : Gain 2 max level spell slots when at least 3 orbs are active",
         "Defense Orbs : As a reaction, you can expend an orb to create a micro barrier on the incoming attack, reducing the damage by 1d8. You can use this power on yourself or other creatures."
@@ -499,7 +499,7 @@
       "engineer": null,
       "soldier": null,
       "reviewed": null,
-      "id": "biotic-sphere",
+      "id": "biotic_sphere",
       "adv_options": [
         "Infuse Ammo : Friendly creatures inside the sphere add 1d4 force damage to all ranged weapon attacks on creatures outside of the sphere and subtract that much from the sphere's HP. This damage can detonate abilities.",
         "Armored : The sphere has resistance to piercing, slashing, and bludgeoning damage."
@@ -550,7 +550,7 @@
       "engineer": null,
       "soldier": null,
       "reviewed": "y",
-      "id": "biotic-wall",
+      "id": "biotic_wall",
       "adv_options": [
         "Lifting Wall : If a creature comes within 2m of the wall, you can use  your reaction to make a pocket of negatively charged space near the creature's location. It must pass a Dexterity saving throw or become {lifted} until the end of your next turn.",
         "Shifting Wall : As a reaction, you can either: move the wall up to 6m in any direction, rotate the wall up to 180 degrees, or reshape the wall within the parameters listed above."
@@ -700,7 +700,7 @@
       "engineer": null,
       "soldier": "x",
       "reviewed": "y",
-      "id": "concussive-shot",
+      "id": "concussive_shot",
       "adv_options": [
         "Stunning Shot : A creature hit by Concussive Shot must make a Constitution saving throw. On a failed save, the creature is {stunned} until the start of your next turn.",
         "Blinding Shot : A creature hit by Concussive Shot must make a Constitution saving throw. On a failed save, the creature is {blinded} until the start of your next turn."
@@ -798,7 +798,7 @@
       "engineer": "x",
       "soldier": null,
       "reviewed": "y",
-      "id": "cryo-beam",
+      "id": "cryo_beam",
       "adv_options": [
         "Brittle Freeze : Creatures that fail the Constitution saving throw suffer a -1 AC penalty",
         "Frozen Ground : Cryo beam leaves a patch of ice on the ground that lasts for 1 min. Each creature that moves into or out of the patch must pass a Dexterity saving throw. On a failed save, slips and falls [Prone], ending it's movement."
@@ -846,7 +846,7 @@
       "engineer": "x",
       "soldier": null,
       "reviewed": "y",
-      "id": "cryo-blast",
+      "id": "cryo_blast",
       "adv_options": [
         "Ice Lance : Transform the attack into a deadly lance. The attack can no longer freeze or slow the target, but you add 1d6 piercing damage for each tech point spent.",
         "Frigid Air : The blast snap freezes the air around the target in a 2m radius. Each creature that enters the frozen space for the first time on a turn or ends its turn there must pass a Constitution saving throw or take 2d4 cold damage."
@@ -897,7 +897,7 @@
       "engineer": null,
       "soldier": null,
       "reviewed": "y",
-      "id": "dark-channel",
+      "id": "dark_channel",
       "adv_options": [
         "Improved Duration : You have advantage when you make a Constitution saving throw to maintain this spell.",
         "Improved Damage : Increase the damage die type to d8"
@@ -959,7 +959,7 @@
       "engineer": null,
       "soldier": null,
       "reviewed": "y",
-      "id": "dark-sphere",
+      "id": "dark_sphere",
       "adv_options": [
         "Control : At the start of your turn, before the sphere moves, you can change it's direction.",
         "Amplify : Every 4m, the sphere's potential damage increases. Add 1d8 to the detonation damage for each 4m the sphere travels."
@@ -1051,7 +1051,7 @@
       "engineer": "x",
       "soldier": null,
       "reviewed": "y",
-      "id": "defense-matrix",
+      "id": "defense_matrix",
       "adv_options": [
         "Shield : Deploy the matrix as a stationary shield. Up to 2 creatures of medium size can stand behind the shield, gaining the resistance benefit when attacked by creatures from the other side of the shield.",
         "Improved Defense : Gain a +2 bonus to your AC while Defense Matrix is active."
@@ -1153,7 +1153,7 @@
       "engineer": "x",
       "soldier": null,
       "reviewed": "y",
-      "id": "electric-slash",
+      "id": "electric_slash",
       "adv_options": [
         "Shield Restore : Gain shield points equal to half of your damage roll.",
         "Paralyze : Creatures that fail the saving throw are paralyzed until the end of their next turn."
@@ -1199,7 +1199,7 @@
       "engineer": "x",
       "soldier": null,
       "reviewed": "y",
-      "id": "energy-drain",
+      "id": "energy_drain",
       "adv_options": [
         "Improved Damage : Increase the damage die type to d6.",
         "Improved Regen : You get Shield Points equal to your damage roll."
@@ -1245,7 +1245,7 @@
       "engineer": "x",
       "soldier": null,
       "reviewed": "y",
-      "id": "first-aid",
+      "id": "first_aid",
       "adv_options": [
         "Adaptive : The healed creature gains resistance to the last damage type it suffered. This effect lasts for 1 minute.",
         "Improved Healing : Increase the healing die type to d8"
@@ -1541,7 +1541,7 @@
       "engineer": null,
       "soldier": "x",
       "reviewed": "y",
-      "id": "havoc-strike",
+      "id": "havoc_strike",
       "adv_options": [
         "Improved Distance : You can jump up to 12m.",
         "Improved Radius : Increase the radius of the impact to 4m"
@@ -1592,7 +1592,7 @@
       "engineer": null,
       "soldier": "x",
       "reviewed": "y",
-      "id": "hawk-missile-launcher",
+      "id": "hawk_missile_launcher",
       "adv_options": [
         "Anti-Shield : The missile detonates a small EMP, transforming the damage to lightning.",
         "Improved Damage : Increase the damage to 5d10"
@@ -1648,7 +1648,7 @@
       "engineer": null,
       "soldier": "x",
       "reviewed": "y",
-      "id": "hex-shield",
+      "id": "hex_shield",
       "adv_options": [
         "Hearty Shield : Increase the shield's hit points to 100.",
         "Large Shield : The Shield covers a 4m wide area."
@@ -1950,7 +1950,7 @@
       "engineer": "x",
       "soldier": null,
       "reviewed": "y",
-      "id": "neural-shock",
+      "id": "neural_shock",
       "adv_options": [
         "Damage: A creature takes Xd6 psychic damage on a failed save or half as much damage on a successful one where X is the number of tech points spent.",
         "Paralyze : If a creature fails the saving throw, it is paralyzed for 1 turn."
@@ -1997,7 +1997,7 @@
       "engineer": null,
       "soldier": "x",
       "reviewed": "y",
-      "id": "nightshade-blades",
+      "id": "nightshade_blades",
       "adv_options": [
         "Paralyze : In addition to being poisoned, the creature is paralyzed until the start of your next turn.",
         "Improved Poison : The creature has disadvantage on it's Constitution saving throw."
@@ -2150,7 +2150,7 @@
       "engineer": null,
       "soldier": null,
       "reviewed": "y",
-      "id": "phase-disruptor",
+      "id": "phase_disruptor",
       "adv_options": [
         "Improved Damage : Increase the damage die type to d12",
         "Cripple : Creature's hit by Phase Disruptor have disadvantage on their next attack roll."
@@ -2196,7 +2196,7 @@
       "engineer": "x",
       "soldier": null,
       "reviewed": "y",
-      "id": "poison-spray",
+      "id": "poison_spray",
       "adv_options": [
         "Pepper spray : Creatures that fail the Constitution saving throw are also blinded for 1 minute.",
         "Poison Cloud : Create a 2m-radius cloud of poison that persists for 1 minute. Each creature that enters the sphere for the first time on a turn or ends its turn there must make the Constitution saving throw."
@@ -2460,7 +2460,7 @@
       "engineer": "x",
       "soldier": null,
       "reviewed": "y",
-      "id": "sentry-turret",
+      "id": "sentry_turret",
       "adv_options": [
         "Power Turret : Increase the damage die for the flame and ranged attack to a d12.",
         "Lasting Turret : Increase the die rolled for the turret's health to d12."
@@ -2506,7 +2506,7 @@
       "engineer": "x",
       "soldier": null,
       "reviewed": "y",
-      "id": "shocking-grasp",
+      "id": "shocking_grasp",
       "adv_options": [
         "Absorbing Shock : If the target is shielded, get shield points equal to half the damage done.",
         "Improved Shock : Increase the damage die to d8."
@@ -2604,7 +2604,7 @@
       "engineer": null,
       "soldier": "x",
       "reviewed": "y",
-      "id": "siege-pulse",
+      "id": "siege_pulse",
       "adv_options": [
         "Improved Pulse : Add your STR or DEX mod to the DC of the saving throw. You choose which one.",
         "Lingering Pulse : Creatures hit by siege pulse have disadvantage on melee and ranged attacks until the start of your next turn."
@@ -2753,7 +2753,7 @@
       "engineer": null,
       "soldier": null,
       "reviewed": "y",
-      "id": "slow-fall",
+      "id": "slow_fall",
       "adv_options": [
         null,
         null
@@ -2810,7 +2810,7 @@
       "engineer": "x",
       "soldier": null,
       "reviewed": "y",
-      "id": "snap-freeze",
+      "id": "snap_freeze",
       "adv_options": [
         "Lasting Freeze : A creature frozen by Snap Freeze continues to take 1d6 cold damage at the start of its turn for 1 minute.",
         "Brittle Freeze : Successful attacks against a creature that is frozen by Snap Freeze deal an additional 1d4 cold damage."
@@ -2908,7 +2908,7 @@
       "engineer": null,
       "soldier": "x",
       "reviewed": "y",
-      "id": "stimulant-pack",
+      "id": "stimulant_pack",
       "adv_options": [
         "Friendly : You can inject a creature within melee range with the stimulant pack",
         "Improved Attack : You can choose to apply the advantage to your next damage roll"
@@ -3019,7 +3019,7 @@
       "engineer": "x",
       "soldier": null,
       "reviewed": "y",
-      "id": "submission-net",
+      "id": "submission_net",
       "adv_options": [
         "Shock : You can electrify the net as a bonus action the first time you cast Submission net.",
         "Improved Grip : Increase the DC to break free of the net by 3."
@@ -3065,7 +3065,7 @@
       "engineer": null,
       "soldier": "x",
       "reviewed": "y",
-      "id": "tactical-scan",
+      "id": "tactical_scan",
       "adv_options": [
         "Area Scan : Scan a 6m cube. You gain the advantage and critical bonus on all creatures within the area.",
         "Telegraphed Attacks : You're hud alerts you when the creature is about to attack. It has disadvantage on ranged and melee attacks and you have advantage on any saving throws caused by spells and abilities of the creature."
@@ -3116,7 +3116,7 @@
       "engineer": "x",
       "soldier": null,
       "reviewed": "y",
-      "id": "target-painting",
+      "id": "target_painting",
       "adv_options": [
         "Heavy Weapon Sync : Information about the painted targets sync with heavy weapon systems. Any creature that would make a saving throw to avoid heavy weapon damage has disadvantage on the saving throw.",
         "Efficient Scan : Target Painting only cost 1 tech point and has paints a 10m cube."

@@ -1,5 +1,5 @@
 {
-  "updated": "September 21, 2017 @  4:35 PM",
+  "updated": "November 17, 2017 @ 10:58 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQI4F-wI2gwN395GApB347yPb1PixjOtOqZ0qoBYw7d57MPETHS40ZjIy1-DIfZf06PUwrspMiuAMlk/pubhtml",
   "data": [
     {
@@ -190,7 +190,7 @@
       "sexy_level": "0",
       "increases": "+2 Dexterity, +1 Constitution",
       "size": "Medium",
-      "speed": "15m",
+      "speed": "14m",
       "armor": "Light",
       "snippet": "Known for their unique biology and aggressive behavior, the vorcha of Heshtok are a primitive race that live among the galaxy's darker and more dangerous locations, such as Omega.",
       "body": "http://vignette1.wikia.nocookie.net/masseffect/images/d/d8/ME3_Vorcha_Hunter.png/revision/latest/scale-to-width-down/500",
@@ -199,6 +199,24 @@
       "face": "http://vignette2.wikia.nocookie.net/masseffect/images/9/92/Races_Vorcha.PNG",
       "card": "https://vignette.wikia.nocookie.net/masseffect/images/d/d6/Omega_vermin.png/revision/latest/scale-to-width-down/640?cb=20140624121030",
       "id": "vorcha"
+    },
+    {
+      "name": "Unshackled AI",
+      "similar_to": "Warforged",
+      "alignment": "Vary as wildly as their circumstances and personalities allow.",
+      "available_classes": "Engineer, Infiltrator, Soldier",
+      "sexy_level": "Varies",
+      "increases": "+2 Intelligence, +1 to one ability except intelligence",
+      "size": "Medium",
+      "speed": "10m",
+      "armor": "None",
+      "snippet": "AIs are considered illegal by the Council, but that hasn't stopped corporations like Cerberus from innovating. As an unshackled AI, you might be have been mass produced like the Alliance Infiltration Units, or you may be an experiment gone wrong.",
+      "body": "https://vignette.wikia.nocookie.net/masseffect/images/0/06/ME3_Alliance_Infiltration_Unit_Infiltrator.png/revision/latest/scale-to-width-down/240?cb=20130227102713",
+      "male": null,
+      "female": null,
+      "face": "https://vignette.wikia.nocookie.net/masseffect/images/8/88/Edi-robot-body-me3.png/revision/latest/scale-to-width-down/250?cb=20120311035716",
+      "card": "https://vignette.wikia.nocookie.net/masseffect/images/3/39/Cronos_station_edi_and_vendetta.png/revision/latest/scale-to-width-down/640?cb=20120715085530",
+      "id": "unshackled_ai"
     }
   ]
 }

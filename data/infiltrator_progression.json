@@ -1,5 +1,5 @@
 {
-  "updated": "September 21, 2017 @  6:58 PM",
+  "updated": "November 17, 2017 @ 10:58 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -21,7 +21,7 @@
           "key": "features",
           "value": [
             {
-              "key": "tactical-cloak",
+              "key": "tactical_cloak",
               "display": "Tactical Cloak",
               "subclass_progression": null
             },
@@ -31,7 +31,7 @@
               "subclass_progression": null
             },
             {
-              "key": "sneak-attack",
+              "key": "sneak_attack",
               "display": "Sneak Attack",
               "subclass_progression": null
             }
@@ -66,12 +66,12 @@
           "key": "features",
           "value": [
             {
-              "key": "cunning-action",
+              "key": "cunning_action",
               "display": "Cunning Action",
               "subclass_progression": null
             },
             {
-              "key": "tech-power",
+              "key": "tech_power",
               "display": "Tech Power(1)",
               "subclass_progression": null
             }
@@ -106,7 +106,7 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass-feature",
+              "key": "subclass_feature",
               "display": "Subclass Feature",
               "subclass_progression": 1
             }
@@ -141,7 +141,7 @@
           "key": "features",
           "value": [
             {
-              "key": "ability-score-improvement",
+              "key": "ability_score_improvement",
               "display": "Ability Score Improvement",
               "subclass_progression": null
             }
@@ -176,12 +176,12 @@
           "key": "features",
           "value": [
             {
-              "key": "uncanny-dodge",
+              "key": "uncanny_dodge",
               "display": "Uncanny Dodge",
               "subclass_progression": null
             },
             {
-              "key": "tech-power",
+              "key": "tech_power",
               "display": "Tech Power(1)",
               "subclass_progression": null
             }
@@ -256,7 +256,7 @@
               "subclass_progression": null
             },
             {
-              "key": "tech-power",
+              "key": "tech_power",
               "display": "Tech Power(1)",
               "subclass_progression": null
             }
@@ -291,7 +291,7 @@
           "key": "features",
           "value": [
             {
-              "key": "ability-score-improvement",
+              "key": "ability_score_improvement",
               "display": "Ability Score Improvement",
               "subclass_progression": null
             }
@@ -326,7 +326,7 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass-feature",
+              "key": "subclass_feature",
               "display": "Subclass Feature",
               "subclass_progression": 2
             }
@@ -361,12 +361,12 @@
           "key": "features",
           "value": [
             {
-              "key": "ability-score-improvement",
+              "key": "ability_score_improvement",
               "display": "Ability Score Improvement",
               "subclass_progression": null
             },
             {
-              "key": "tech-power",
+              "key": "tech_power",
               "display": "Tech Power(1)",
               "subclass_progression": null
             }
@@ -401,7 +401,7 @@
           "key": "features",
           "value": [
             {
-              "key": "reliable-talent",
+              "key": "reliable_talent",
               "display": "Reliable Talent",
               "subclass_progression": null
             }
@@ -436,7 +436,7 @@
           "key": "features",
           "value": [
             {
-              "key": "ability-score-improvement",
+              "key": "ability_score_improvement",
               "display": "Ability Score Improvement",
               "subclass_progression": null
             }
@@ -471,7 +471,7 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass-feature",
+              "key": "subclass_feature",
               "display": "Subclass Feature",
               "subclass_progression": 3
             }
@@ -506,12 +506,12 @@
           "key": "features",
           "value": [
             {
-              "key": "cunning-action",
+              "key": "cunning_action",
               "display": "Cunning Action",
               "subclass_progression": null
             },
             {
-              "key": "tech-power",
+              "key": "tech_power",
               "display": "Tech Power(1)",
               "subclass_progression": null
             }
@@ -546,7 +546,7 @@
           "key": "features",
           "value": [
             {
-              "key": "shadow-strike",
+              "key": "shadow_strike",
               "display": "Shadow Strike",
               "subclass_progression": null
             }
@@ -581,7 +581,7 @@
           "key": "features",
           "value": [
             {
-              "key": "ability-score-improvement",
+              "key": "ability_score_improvement",
               "display": "Ability Score Improvement",
               "subclass_progression": null
             }
@@ -616,7 +616,7 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass-feature",
+              "key": "subclass_feature",
               "display": "Subclass Feature",
               "subclass_progression": 4
             }
@@ -656,7 +656,7 @@
               "subclass_progression": null
             },
             {
-              "key": "tech-power",
+              "key": "tech_power",
               "display": "Tech Power(1)",
               "subclass_progression": null
             }
@@ -691,7 +691,7 @@
           "key": "features",
           "value": [
             {
-              "key": "ability-score-improvement",
+              "key": "ability_score_improvement",
               "display": "Ability Score Improvement",
               "subclass_progression": null
             }
@@ -726,7 +726,7 @@
           "key": "features",
           "value": [
             {
-              "key": "stroke-of-luck",
+              "key": "stroke_of_luck",
               "display": "Stroke of Luck",
               "subclass_progression": null
             }
