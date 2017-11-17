@@ -67,6 +67,8 @@ This change was made to add a bit more scaling to the spells, as 4th level spell
 A few class changes, primarily in name. Vanguards received some tweaking. Cabals are a very specific Turian Vanguard,
 so it didn't make much sense for them to be a subclass. Thus, Cabals have become Nemesis vanguards, a caster-oriented flavor.
 
+## New Race
+Unshackled AI, a slight variant from Geth. Are you a rogue AI or a corporate masterpiece? You can decide with this versatile new race.
 
 
 
