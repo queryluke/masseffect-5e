@@ -27,13 +27,11 @@ Added melee weapons.
 
 #### Vanguard
 __Cabal__
-Cabal reworked and renamed to Nemesis. Cabals are a very specific Turian Vanguard, so it didn't make much sense for them
-to be a subclass. Nemesis are a biotic-oriented Vanguard.
+Cabal reworked and renamed to Nemesis.
 * Nightshade blades is now a combat power available to Vanguards, Infiltrators, and Soldiers
 * Poison Strike was removed and the mechanic added as an advancement option for Charge.
 * Metabiotics added, allowing you to spend barrier ticks to enhance your spells.
 * Vengeance added. Dying in battle may not be a bad idea...
-
 
 __Slayer__
 Slayer renamed to Shock Trooper, to better reflect [the game](http://masseffect.wikia.com/wiki/Vanguard#Class_Talent)
@@ -53,13 +51,7 @@ Slayer renamed to Shock Trooper, to better reflect [the game](http://masseffect.
 * Carnage renamed to "Beehive". Carnage is now a fighting style.
 * Neural Shock updated, now a creature hit by neural shock can take reactions until the start of its next turn.
 * Flare and Dominate changed to level 4 and Singularity changed to level 3 to better reflect the required biotic control.
-* With a few exceptions, damage for all damage dealing biotic spells have been adjusted to fit the following criteria:
-    - Cantrips: < 10 avg damage
-    - 1st Level: 10-15 avg damage
-    - 2nd level: 15 - 22 avg damage
-    - 3rd level: 20 - 28 avg damage
-    - 4th level: 25-35 avg damage
-This change was made to add a bit more scaling to the spells, as 4th level spells are effectively 6-7th level D&D spells.
+* Damage rescaled on most biotic spells.
 
 #### New Spells & Powers
 __Tech__
@@ -82,8 +74,6 @@ __Biotic__
 
 __Combat__
 * Fortification
-
-
 
 
 ## v0.2.1

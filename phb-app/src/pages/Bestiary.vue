@@ -1,11 +1,11 @@
 <template lang="jade">
   div
-    h2 Beastiary
+    h2 Bestiary
     p coming eventually...
 </template>
 
 <script>
   export default {
-    name: 'Beastiary',
+    name: 'Bestiary',
   };
 </script>

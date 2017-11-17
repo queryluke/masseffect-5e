@@ -4,7 +4,7 @@ title: "Version 0.3.0"
 excerpt: Time for a weapon refactor.
 ---
 
-# Weapon Refactor
+## Weapon Refactor
 
 In a pre-version 1 iteration that was never published, the weapons stats were mapped from the [ME3 weapon stats](http://masseffect.wikia.com/wiki/Weapons#Mass_Effect_3).
 Then I did a lot of tinkering to add some variety to the weapons, but in doing so, I screwed everything up and made many weapons way to powerful.
@@ -48,9 +48,24 @@ ability as well. However, to replace the "proficiency" aspect of melee weapons (
 Anyone can wield a melee weapon, but if you don't have the required STR mod (matching or above) your melee attacks with the weapon are
 made at a disadvantage.
 
-# New Spells
+## New Spells
 A host of new spells and tech powers have been added. Primarily these were based on 5th edition, adding a bit more variety
 than simple damage dealing abilities, and adding more options for Vanguards and Sentinels.
+
+## Spell damage
+With a few exceptions, damage for all damage dealing biotic spells have been adjusted to fit the following criteria:
+
+* Cantrips: < 10 avg damage
+* 1st Level: 10-15 avg damage
+* 2nd level: 15 - 22 avg damage
+* 3rd level: 20 - 28 avg damage
+* 4th level: 25-35 avg damage
+
+This change was made to add a bit more scaling to the spells, as 4th level spells are effectively 6-7th level D&D spells.
+
+## Class changes
+A few class changes, primarily in name. Vanguards received some tweaking. Cabals are a very specific Turian Vanguard,
+so it didn't make much sense for them to be a subclass. Thus, Cabals have become Nemesis vanguards, a caster-oriented flavor.
 
 
 
