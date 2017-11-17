@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   div
     h2 Armor
     p Armor is much more complex in ME5e, giving the player a lot of options for customization.

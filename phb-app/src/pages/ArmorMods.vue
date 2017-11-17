@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   div
     h2 Armor Mods
     p Read the #[router-link(to="/rules/armor") Armor Rules] to understand how armor customization works.

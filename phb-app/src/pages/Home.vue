@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   div(id="home")
     v-layout(row justify-space-around)
       v-flex.xs12

@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   v-container(fluid)
     v-layout(row wrap)
       v-flex.xs12.md9

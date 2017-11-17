@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   div
     v-tabs(dark v-model="active" grow)
       v-tabs-bar(:class="colors.primary")

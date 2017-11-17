@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   v-card.ma-1
     v-card-title {{ title }}
     v-card-text {{ text }}

@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   div
     h2 Backgrounds
     p More coming eventually. Feel free to adjust and backgrounds in the PHB or other D&D books.

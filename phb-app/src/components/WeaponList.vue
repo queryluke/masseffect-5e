@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   v-expansion-panel(popout).mb-2
     v-expansion-panel-content(
       v-for="weapon in weapons"

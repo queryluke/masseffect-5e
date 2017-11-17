@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   div
     h2 Races
     v-layout(row wrap)

@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   div
     p.headline Hit points
     ul.list-unstyled

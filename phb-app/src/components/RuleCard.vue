@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   v-card.mb-3
     v-card-title.headline.primary.white--text
       slot(name="header")

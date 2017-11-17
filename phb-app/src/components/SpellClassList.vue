@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   v-layout(justify-end).spell-class-list
     div(v-for="me_class in classes" v-bind:key="me_class" v-if="spell[me_class]").class-icon
       me-icon(type="classes" v-bind:name="me_class")

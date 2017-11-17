@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   div
     div(v-for="(item, index) of items" v-bind:key="index")
       p.headline {{ item.name }}
