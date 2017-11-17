@@ -1,11 +1,11 @@
-<template lang="jade">
+<template lang="pug">
   div
     h2 Armor Mods
     p Read the #[router-link(to="/rules/armor") Armor Rules] to understand how armor customization works.
     p.text-xs-center #[v-icon warning] This is a work in progress #[v-icon warning]
     div.mt-3
       v-data-table(v-bind:headers="headers" v-bind:items="items" hide-actions).elevation-1
-        template(slot="items" scope="props")
+        template(slot="items" slot-scope="props")
           td {{ props.item.name }}
           td {{ props.item.piece }}
           td {{ props.item.mechanic }}

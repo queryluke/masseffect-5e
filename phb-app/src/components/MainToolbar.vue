@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   v-toolbar(fixed dark)
     v-toolbar-side-icon(@click.stop="toggleSidebar")
     v-toolbar-title

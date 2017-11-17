@@ -1,5 +1,5 @@
 {
-  "updated": "September 11, 2017 @ 11:04 PM",
+  "updated": "November 17, 2017 @ 10:58 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -22,7 +22,7 @@
               "subclass_progression": null
             },
             {
-              "key": "tech-power",
+              "key": "tech_power",
               "display": "Tech Power(2)",
               "subclass_progression": null
             }
@@ -53,7 +53,7 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass-feature",
+              "key": "subclass_feature",
               "display": "Subclass Feature",
               "subclass_progression": 1
             }
@@ -84,7 +84,7 @@
           "key": "features",
           "value": [
             {
-              "key": "tech-power",
+              "key": "tech_power",
               "display": "Tech Power(1)",
               "subclass_progression": null
             }
@@ -115,7 +115,7 @@
           "key": "features",
           "value": [
             {
-              "key": "ability-score-improvement",
+              "key": "ability_score_improvement",
               "display": "Ability Score Improvement",
               "subclass_progression": null
             }
@@ -146,7 +146,7 @@
           "key": "features",
           "value": [
             {
-              "key": "tech-power",
+              "key": "tech_power",
               "display": "Tech Power(1)",
               "subclass_progression": null
             }
@@ -177,7 +177,7 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass-feature",
+              "key": "subclass_feature",
               "display": "Subclass Feature",
               "subclass_progression": 2
             }
@@ -208,7 +208,7 @@
           "key": "features",
           "value": [
             {
-              "key": "tech-power",
+              "key": "tech_power",
               "display": "Tech Power(1)",
               "subclass_progression": null
             }
@@ -239,7 +239,7 @@
           "key": "features",
           "value": [
             {
-              "key": "ability-score-improvement",
+              "key": "ability_score_improvement",
               "display": "Ability Score Improvement",
               "subclass_progression": null
             }
@@ -270,7 +270,7 @@
           "key": "features",
           "value": [
             {
-              "key": "tech-power",
+              "key": "tech_power",
               "display": "Tech Power(1)",
               "subclass_progression": null
             }
@@ -301,7 +301,7 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass-feature",
+              "key": "subclass_feature",
               "display": "Subclass Feature",
               "subclass_progression": 3
             }
@@ -332,7 +332,7 @@
           "key": "features",
           "value": [
             {
-              "key": "tech-power",
+              "key": "tech_power",
               "display": "Tech Power(1)",
               "subclass_progression": null
             }
@@ -363,7 +363,7 @@
           "key": "features",
           "value": [
             {
-              "key": "ability-score-improvement",
+              "key": "ability_score_improvement",
               "display": "Ability Score Improvement",
               "subclass_progression": null
             }
@@ -394,7 +394,7 @@
           "key": "features",
           "value": [
             {
-              "key": "tech-power",
+              "key": "tech_power",
               "display": "Tech Power(1)",
               "subclass_progression": null
             }
@@ -425,7 +425,7 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass-feature",
+              "key": "subclass_feature",
               "display": "Subclass Feature",
               "subclass_progression": 4
             }
@@ -456,7 +456,7 @@
           "key": "features",
           "value": [
             {
-              "key": "tech-power",
+              "key": "tech_power",
               "display": "Tech Power(1)",
               "subclass_progression": null
             }
@@ -487,7 +487,7 @@
           "key": "features",
           "value": [
             {
-              "key": "ability-score-improvement",
+              "key": "ability_score_improvement",
               "display": "Ability Score Improvement",
               "subclass_progression": null
             }
@@ -518,7 +518,7 @@
           "key": "features",
           "value": [
             {
-              "key": "tech-power",
+              "key": "tech_power",
               "display": "Tech Power(1)",
               "subclass_progression": null
             }
@@ -549,7 +549,7 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass-feature",
+              "key": "subclass_feature",
               "display": "Subclass feature",
               "subclass_progression": 5
             }
@@ -580,7 +580,7 @@
           "key": "features",
           "value": [
             {
-              "key": "ability-score-improvement",
+              "key": "ability_score_improvement",
               "display": "Ability Score Improvement",
               "subclass_progression": null
             }

@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   v-avatar(size="25px" tile v-bind:class="[weapon.rare ? 'deep-purple' : 'orange']").accent-2
     img(:src="`../assets/images/weapons/${type}.svg`" v-bind:alt="weapon.type")
 </template>

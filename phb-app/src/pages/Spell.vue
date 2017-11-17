@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   v-card
     v-card-title(primary-title)
       div

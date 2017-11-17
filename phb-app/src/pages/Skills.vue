@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   v-container
     v-layout(row wrap)
       v-flex.xs12
@@ -11,7 +11,7 @@
         p {{ removed }}
     div.mt-3
       v-data-table(v-bind:headers="headers" v-bind:items="items" hide-actions).elevation-1
-        template(slot="items" scope="props")
+        template(slot="items" slot-scope="props")
           td {{ props.item.name }}
           td {{ props.item.link }}
           td {{ props.item.description }}

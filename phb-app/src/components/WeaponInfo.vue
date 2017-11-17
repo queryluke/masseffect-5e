@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   div
     v-layout
       v-flex.xs12.sm6
@@ -15,14 +15,16 @@
       v-flex.xs12.sm4.md2.attribute.mb-2
         label Range
         div {{ weapon.range }}
-      v-flex.xs12.sm4.md2.attribute.mb-2
+      v-flex.xs12.sm4.md2.attribute.mb-2(v-if="weapon.type !== 'Melee'")
         label Rate of Fire
         div {{ weapon.rof }}
       v-flex.xs12.sm4.md2.attribute.mb-2
         label Damage
-        div d{{ weapon.damage }}
+        div(v-if="weapon.type === 'Melee'") {{ weapon.rof }}d{{ weapon.damage }}
+        div(v-else) d{{ weapon.damage }}
       v-flex.xs12.sm4.md2.attribute.mb-2
         label(v-if="weapon.type === 'Heavy Weapon'") Charges
+        label(v-if="weapon.type === 'Melee'") Min STR
         label(v-else) Heat
         div {{ weapon.heat }}
       v-flex.xs12.sm4.md2.attribute.mb-2

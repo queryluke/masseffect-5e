@@ -1,11 +1,11 @@
-<template lang="jade">
+<template lang="pug">
   v-container(fluid)
     v-layout(row wrap)
       v-flex.xs12.md9
         h2 {{ race.name }}
         p {{ race.snippet}}
         p
-          a(:href="`http://masseffect.wikia.com/wiki/${ race.name }`" target="_blank").
+          a(:href="`http://masseffect.wikia.com/wiki/${ race.id == 'unshackled_ai' ? 'Artificial_Intelligence' : race.name }`" target="_blank").
             Read more about {{ race.name }} biology, history, and culture
         v-card
           v-card-title(primary-title)

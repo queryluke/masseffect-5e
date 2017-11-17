@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   div
     h2 Weapons
     p.
@@ -16,6 +16,13 @@
         p.
           As long as you have a weapon equipped (somewhere on your person), you can holster the weapon you're currently
           weilding and draw an equipped weapon as a bonus action. This is true for all weapon types.
+    rule-card
+      span(slot="header") Weapon Proficiencies
+      template(slot="text")
+        p.
+          Just like in 5th Edition, you must be proficient with a weapon type to add your proficiency modifier to the attack roll.
+          However, there are fewer weapon types (Assault Rifle, Heavy Pistol, SMG, Shotgun, Sniper Rifle, and Melee).
+          Note that all melee weapons fall under one type, instead of being broken out by weapon.
     rule-card
       span(slot="header") Weapon Stats
       template(slot="text")
@@ -66,28 +73,37 @@
               th Mechanic
           tbody
             tr
-              td Hip Fire
-              td You have advantage instead of disadvantage using this weapon in melee range.
-            tr
-              td Two-Handed
-              td This weapon must be fired with two hands.
+              td Arc
+              td Deals lightning damage. On a hit, deals half damage to 1 additional creature within 2m of the hit target.
             tr
               td Charge
               td.
                 You can use your attack action to charge the weapon. Each charge consumes 1 heat and increases the RoF
                 by 1. If the number of charges equals the heat of the weapon, it overheats and cannot be fired until reloaded.
             tr
-              td Arc
-              td Deals lightning damage. On a hit, deals half damage to 1 additional creature within 2m of the hit target.
-            tr
-              td Unique
-              td Cannot benefit from Special Thermal Clips
+              td Hip Fire
+              td You have advantage instead of disadvantage using this weapon in melee range.
             tr
               td Silent
               td Makes no noise when fired.
+            tr
+              td Semi-Automatic
+              td.
+                When you make a ranged attack with this weapon, you can use your bonus action to make a second ranged attack. You do not add your Dexterity
+                modifier to the attack or damage roll. The second attack may be on the same or a different target.
+            tr
+              td Two-Handed
+              td This weapon must be fired with two hands.
+            tr
+              td Unique
+              td Cannot benefit from Special Thermal Clips
     rule-card
       span(slot="header") Melee Weapons & Omni-tools
       template(slot="text")
+        p.
+          Melee weapons have the same attributes as D&D 5e weapons, i.e. finesse, light, thrown, etc. But melee weapons do have a strength
+          requirement. If your STR attribute is less than the requirement, all attacks made with the weapon are made with disadvantage.
+          This requirement is denoted in paranthese in the "STR Req" column of the handbook.
         p.
           In addition to weilding a melee weapon, each class has an Omnni-Tool attack. This is considered a melee attack.
     rule-card

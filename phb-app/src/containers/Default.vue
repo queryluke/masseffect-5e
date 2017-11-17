@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   v-app(toolbar)
     main-navigation
     main-toolbar

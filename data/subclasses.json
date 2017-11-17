@@ -1,26 +1,26 @@
 {
-  "updated": "September 21, 2017 @  9:22 PM",
+  "updated": "November 17, 2017 @ 10:58 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
       "name": "Commando",
       "class": "Adept",
-      "description": null,
+      "description": "Commandos don't need heavy weapons because they ARE the heavy weapon. Their features improve both the damage potential and throughput of their biotic spells, making them a deadly force.",
       "1": [
         {
-          "key": "pure-biotics",
+          "key": "pure_biotics",
           "value": "Pure Biotics"
         }
       ],
       "2": [
         {
-          "key": "expert-biotic",
+          "key": "expert_biotic",
           "value": "Expert Biotic"
         }
       ],
       "3": [
         {
-          "key": "biotic-split",
+          "key": "biotic_split",
           "value": "Biotic Split"
         }
       ],
@@ -41,28 +41,28 @@
     {
       "name": "Blackstar",
       "class": "Adept",
-      "description": null,
+      "description": "Blackstars prefer controlling the battlefield over raw power. They can shape their biotic powers to avoid hurting friends and gain unique benefits to biotic control spells like Life, Singularity, and Stasis.",
       "1": [
         {
-          "key": "sculpt-biotics",
+          "key": "sculpt_biotics",
           "value": "Sculpt Biotics"
         }
       ],
       "2": [
         {
-          "key": "bend-luck",
+          "key": "bend_luck",
           "value": "Bend Luck"
         }
       ],
       "3": [
         {
-          "key": "focused-biotics",
+          "key": "focused_biotics",
           "value": "Focused Biotics"
         }
       ],
       "4": [
         {
-          "key": "biotic-control",
+          "key": "biotic_control",
           "value": "Biotic Control"
         }
       ],
@@ -77,28 +77,28 @@
     {
       "name": "Disruptor",
       "class": "Adept",
-      "description": null,
+      "description": "Disruptors have learned to tap into dark energy, improving biotic abilities that tear apart their adversaries from within. They also specialize in maintaining spells with intense focus.",
       "1": [
         {
-          "key": "dark-biotics",
+          "key": "dark_biotics",
           "value": "Dark Biotics"
         }
       ],
       "2": [
         {
-          "key": "biotic-surge",
+          "key": "biotic_surge",
           "value": "Biotic Surge"
         }
       ],
       "3": [
         {
-          "key": "potent-biotics",
+          "key": "potent_biotics",
           "value": "Potent Biotics"
         }
       ],
       "4": [
         {
-          "key": "biotic-concentration",
+          "key": "biotic_concentration",
           "value": "Biotic Concentration"
         }
       ],
@@ -113,34 +113,46 @@
     {
       "name": "Demolisher",
       "class": "Engineer",
-      "description": null,
+      "description": "Demolishers are explosive specialists with eye for combat. While not as skilled as a Soldier of Infiltrator, they make up for it with by covering the battlefield with grenades and heavy weapon fire.",
       "1": [
         {
-          "key": "advanced-weapon-holsters",
+          "key": "advanced_weapon_holsters",
           "value": "Advanced Weapon Holsters"
+        },
+        {
+          "key": "weapon_training",
+          "value": " Weapon Training"
         }
       ],
       "2": [
         {
-          "key": "makeshift-grenades",
+          "key": "makeshift_grenades",
           "value": "Makeshift Grenades"
+        },
+        {
+          "key": "extra_attack",
+          "value": " Extra Attack"
         }
       ],
       "3": [
         {
-          "key": "heavy-weapon-hack",
+          "key": "heavy_weapon_hack",
           "value": "Heavy Weapon Hack"
+        },
+        {
+          "key": "fighting_style",
+          "value": " Fighting Style"
         }
       ],
       "4": [
         {
-          "key": "makeshift-grenades",
+          "key": "makeshift_grenades",
           "value": "Makeshift Grenades"
         }
       ],
       "5": [
         {
-          "key": "paint-by-number",
+          "key": "paint_by_number",
           "value": "Paint by Number"
         }
       ],
@@ -154,110 +166,110 @@
     {
       "name": "Drone Jockey",
       "class": "Engineer",
-      "description": null,
+      "description": "Drone Jockeys are happy to let their friends dance and distract around the battlefield while they take pot-shots from afar. Some say it's a coward's way, but some say it's just plain smart.",
       "1": [
         {
-          "key": "drone-sidekick",
+          "key": "drone_sidekick",
           "value": "Drone Sidekick"
         }
       ],
       "2": [
         {
-          "key": "drone-efficiency",
+          "key": "drone_efficiency",
           "value": "Drone Efficiency"
         }
       ],
       "3": [
         {
-          "key": "dual-drones",
+          "key": "dual_drones",
           "value": "Dual Drones"
         }
       ],
       "4": [
         {
-          "key": "drone-mastery",
+          "key": "drone_mastery",
           "value": "Drone Mastery"
         }
       ],
       "5": [
         {
-          "key": "drone-swarm",
+          "key": "drone_swarm",
           "value": "Drone Swarm"
         }
       ],
       "id": [
         {
-          "key": "drone-jockey",
-          "value": "drone-jockey"
+          "key": "drone_jockey",
+          "value": "drone_jockey"
         }
       ]
     },
     {
-      "name": "Support",
+      "name": "Medic ",
       "class": "Engineer",
-      "description": null,
+      "description": "The name says it all. As a medic, you'll be one on the field that can dress a wound and get your comrades back into fighting shape.",
       "1": [
         {
-          "key": "healing-drone",
+          "key": "healing_drone",
           "value": "Healing Drone"
         }
       ],
       "2": [
         {
-          "key": "medi-gel-enhancements",
+          "key": "medi-gel_enhancements",
           "value": "Medi-gel Enhancements"
         }
       ],
       "3": [
         {
-          "key": "shield-boost",
+          "key": "shield_boost",
           "value": "Shield Boost"
         }
       ],
       "4": [
         {
-          "key": "healing-drone",
+          "key": "healing_drone",
           "value": "Healing Drone"
         }
       ],
       "5": [
         {
-          "key": "supply-pylon",
+          "key": "supply_pylon",
           "value": "Supply Pylon"
         }
       ],
       "id": [
         {
-          "key": "support",
-          "value": "support"
+          "key": "medic",
+          "value": "medic"
         }
       ]
     },
     {
       "name": "Shadow",
       "class": "Infiltrator",
-      "description": null,
+      "description": "Shadow Infiltrators are melee specialists that make heavy use of their tactical cloak and stealth to close the distance between themselves and their target.",
       "1": [
         {
-          "key": "up-close-and-personal",
+          "key": "up_close_and_personal",
           "value": "Up Close and Personal"
         }
       ],
       "2": [
         {
-          "key": "silent-cloak",
+          "key": "silent_cloak",
           "value": "Silent Cloak"
         }
       ],
       "3": [
         {
-          "key": "tactical-ambush",
+          "key": "tactical_ambush",
           "value": "Tactical Ambush"
         }
       ],
       "4": [
         {
-          "key": "sudden-strike",
+          "key": "sudden_strike",
           "value": "Sudden Strike"
         }
       ],
@@ -272,18 +284,18 @@
     {
       "name": "Saboteur",
       "class": "Infiltrator",
-      "description": null,
+      "description": "Saboteurs are infiltration experts. They use a their sharp mind to subtly affect the outcome of battles.",
       "1": [
         {
-          "key": "ear-for-deceit",
+          "key": "ear_for_deceit",
           "value": "Ear for Deceit"
         },
         {
-          "key": "eye-for-detail",
+          "key": "eye_for_detail",
           "value": " Eye for Detail"
         },
         {
-          "key": "insightful-fighting",
+          "key": "insightful_fighting",
           "value": " Insightful Fighting"
         }
       ],
@@ -295,13 +307,13 @@
       ],
       "3": [
         {
-          "key": "saboteurs-touch",
+          "key": "saboteurs_touch",
           "value": "Saboteur's Touch"
         }
       ],
       "4": [
         {
-          "key": "eye-for-weakness",
+          "key": "eye_for_weakness",
           "value": "Eye for Weakness"
         }
       ],
@@ -316,7 +328,7 @@
     {
       "name": "Operative",
       "class": "Infiltrator",
-      "description": null,
+      "description": "Operatives are ranged specialists that rely on gunplay and a keen eye to take out enemies from a distance.",
       "1": [
         {
           "key": "dropshot",
@@ -331,7 +343,7 @@
       ],
       "3": [
         {
-          "key": "combat-heuristics",
+          "key": "combat_heuristics",
           "value": "Combat Heuristics"
         }
       ],
@@ -350,77 +362,77 @@
       ]
     },
     {
-      "name": "Battlemaster",
+      "name": "Mastermind",
       "class": "Sentinel",
-      "description": null,
+      "description": "Masterminds are the top strategists and battlefield experts. They can easily turn the tides by calling out orders or synchronising troop movements.",
       "1": [
         {
-          "key": "master-tactician",
+          "key": "master_tactician",
           "value": "Master Tactician"
         }
       ],
       "2": [
         {
-          "key": "biotic-enfilade",
+          "key": "biotic_enfilade",
           "value": "Biotic Enfilade"
         }
       ],
       "3": [
         {
-          "key": "battlemaster",
-          "value": "Battlemaster"
+          "key": "tactical_advantage",
+          "value": "Tactical Advantage"
         }
       ],
       "4": [
         {
-          "key": "master-duelist",
+          "key": "master_duelist",
           "value": "Master Duelist"
         }
       ],
       "5": [
         {
-          "key": "synchronized-assault",
+          "key": "synchronized_assault",
           "value": "Synchronized Assault"
         }
       ],
       "id": [
         {
-          "key": "battlemaster",
-          "value": "battlemaster"
+          "key": "mastermind",
+          "value": "mastermind"
         }
       ]
     },
     {
       "name": "Bastion",
       "class": "Sentinel",
-      "description": null,
+      "description": "Bastions believe a good defense is the best offense. Their tech armor upgrades make sure they can take a hit, or one hundred, without so much as a scratch.",
       "1": [
         {
-          "key": "assault-armor",
+          "key": "assault_armor",
           "value": "Assault Armor"
         }
       ],
       "2": [
         {
-          "key": "improved-tech-armor",
+          "key": "improved_tech_armor",
           "value": "Improved Tech Armor"
         }
       ],
       "3": [
         {
-          "key": "tech-armor-overload",
+          "key": "tech_armor_overload",
           "value": "Tech Armor Overload"
         }
       ],
       "4": [
         {
-          "key": "improved-tech-armor",
+          "key": "improved_tech_armor",
           "value": "Improved Tech Armor(2)"
         }
       ],
       "5": [
         {
-          "key": "tech-armor-overload",
+          "key": "tech_armor_overload",
           "value": "Tech Armor Overload"
         }
       ],
@@ -432,9 +444,9 @@
       ]
     },
     {
-      "name": "Paladin",
+      "name": "Guardian",
       "class": "Sentinel",
-      "description": null,
+      "description": "Guardians support and buff party members by utilizing different AI packages from their Tech Armor ability and protecting them with their Omni-Shield. They're also one of the most skilled classes, gaining the Expertise feature twice.",
       "1": [
         {
           "key": "omni-shield",
@@ -447,13 +459,13 @@
       ],
       "2": [
         {
-          "key": "tech-aura",
+          "key": "tech_aura",
           "value": "Tech Aura"
         }
       ],
       "3": [
         {
-          "key": "sculpt-biotics",
+          "key": "sculpt_biotics",
           "value": "Sculpt Biotics"
         },
         {
@@ -463,54 +475,54 @@
       ],
       "4": [
         {
-          "key": "tech-aura",
+          "key": "tech_aura",
           "value": "Tech Aura"
         }
       ],
       "5": [
         {
-          "key": "tech-aura-improvement",
+          "key": "tech_aura_improvement",
           "value": "Tech Aura Improvement"
         }
       ],
       "id": [
         {
-          "key": "paladin",
-          "value": "paladin"
+          "key": "guardian",
+          "value": "guardian"
         }
       ]
     },
     {
       "name": "Havoc",
       "class": "Soldier",
-      "description": null,
+      "description": "Havoc soldiers prefer a multitude of gadgets and combat powers over standard weapons. ",
       "1": [
         {
-          "key": "combat-power",
+          "key": "combat_power",
           "value": "Combat Power"
         }
       ],
       "2": [
         {
-          "key": "combat-power",
+          "key": "combat_power",
           "value": "Combat Power"
         }
       ],
       "3": [
         {
-          "key": "combat-power",
+          "key": "combat_power",
           "value": "Combat Power"
         }
       ],
       "4": [
         {
-          "key": "combat-power",
+          "key": "combat_power",
           "value": "Combat Power"
         }
       ],
       "5": [
         {
-          "key": "combat-power",
+          "key": "combat_power",
           "value": "Combat Power"
         }
       ],
@@ -524,22 +536,22 @@
     {
       "name": "Weapon Master",
       "class": "Soldier",
-      "description": null,
+      "description": "Weapon masters train extensively in the art of a single weapon, giving them powerful advantages when using a weapon of that type.",
       "1": [
         {
-          "key": "weapon-of-choice",
+          "key": "weapon_of_choice",
           "value": "Weapon of Choice"
         }
       ],
       "2": [
         {
-          "key": "quick-reload",
+          "key": "quick_reload",
           "value": "Quick Reload"
         }
       ],
       "3": [
         {
-          "key": "improved-weapon-superiority",
+          "key": "improved_weapon_superiority",
           "value": "Improved Weapon Superiority"
         }
       ],
@@ -551,30 +563,30 @@
       ],
       "5": [
         {
-          "key": "improved-weapon-superiority",
+          "key": "improved_weapon_superiority",
           "value": "Improved Weapon Superiority"
         }
       ],
       "id": [
         {
-          "key": "weapon-master",
-          "value": "weapon-master"
+          "key": "weapon_master",
+          "value": "weapon_master"
         }
       ]
     },
     {
       "name": "Sharp Shooter",
       "class": "Soldier",
-      "description": null,
+      "description": "Sharp shooters use pinpoint accuracy and target weak points on their opponents, resulting a massive amounts of bonus damage.",
       "1": [
         {
-          "key": "deadly-aim",
+          "key": "deadly_aim",
           "value": "Deadly Aim"
         }
       ],
       "2": [
         {
-          "key": "careful-eyes",
+          "key": "careful_eyes",
           "value": "Careful Eyes"
         }
       ],
@@ -598,77 +610,77 @@
       ],
       "id": [
         {
-          "key": "sharp-shooter",
-          "value": "sharp-shooter"
+          "key": "sharp_shooter",
+          "value": "sharp_shooter"
         }
       ]
     },
     {
-      "name": "Champion",
+      "name": "Battle Master",
       "class": "Vanguard",
-      "description": null,
+      "description": "Battle masters use their barrier to execute unique maneuvers on the battlefield, controlling and harrying enemy forces.",
       "1": [
         {
-          "key": "biotic-maneuvers",
+          "key": "biotic_maneuvers",
           "value": "Biotic Maneuvers"
         }
       ],
       "2": [
         {
-          "key": "improved-barrier",
+          "key": "improved_barrier",
           "value": "Improved Barrier"
         }
       ],
       "3": [
         {
-          "key": "biotic-maneuvers",
+          "key": "biotic_maneuvers",
           "value": "Biotic Maneuvers"
         }
       ],
       "4": [
         {
-          "key": "improved-barrier",
+          "key": "improved_barrier",
           "value": "Improved Barrier"
         }
       ],
       "5": [
         {
-          "key": "biotic-maneuvers",
+          "key": "biotic_maneuvers",
           "value": "Biotic Maneuvers"
         }
       ],
       "id": [
         {
-          "key": "champion",
-          "value": "champion"
+          "key": "battle_master",
+          "value": "battle_master"
         }
       ]
     },
     {
-      "name": "Slayer",
+      "name": "Shock Trooper",
       "class": "Vanguard",
-      "description": null,
+      "description": "Shock troopers like to fight up close a personal, using charge to dash around the battlefield and striking their opponents with devastating melee strikes.",
       "1": [
         {
-          "key": "biotic-slash",
+          "key": "biotic_slash",
           "value": "Biotic Slash"
         }
       ],
       "2": [
         {
-          "key": "biotic-bullrush",
+          "key": "biotic_bullrush",
           "value": "Biotic Bullrush"
         }
       ],
       "3": [
         {
-          "key": "improved-biotic-slash",
+          "key": "improved_biotic_slash",
           "value": "Improved Biotic Slash"
         }
       ],
       "4": [
         {
-          "key": "biotic-focus",
+          "key": "biotic_focus",
           "value": "Biotic Focus"
         }
       ],
@@ -680,49 +692,49 @@
       ],
       "id": [
         {
-          "key": "slayer",
-          "value": "slayer"
+          "key": "shock_trooper",
+          "value": "shock_trooper"
         }
       ]
     },
     {
-      "name": "Cabal",
+      "name": "Nemesis",
       "class": "Vanguard",
-      "description": null,
+      "description": "Nemesis vanguards prefer distance and using biotic powers. While they lack the raw power of an adept, they're more agile and much harder to take down.",
       "1": [
         {
-          "key": "nightshade-blades",
-          "value": "Nightshade Blades"
+          "key": "metabiotics",
+          "value": "Metabiotics"
         }
       ],
       "2": [
         {
-          "key": "poison-strike",
-          "value": "Poison Strike"
+          "key": "vengeance",
+          "value": "Vengeance"
         }
       ],
       "3": [
         {
-          "key": "teleporting-dodge",
+          "key": "teleporting_dodge",
           "value": "Teleporting Dodge"
         }
       ],
       "4": [
         {
-          "key": "biotic-powers",
-          "value": "Biotic Powers(2:3)"
+          "key": "metabiotics",
+          "value": "Metabiotics"
         }
       ],
       "5": [
         {
-          "key": "cabal-attacks",
-          "value": "Cabal Attacks"
+          "key": "biotic_attacks",
+          "value": "Biotic Attacks"
         }
       ],
       "id": [
         {
-          "key": "cabal",
-          "value": "cabal"
+          "key": "nemesis",
+          "value": "nemesis"
         }
       ]
     }

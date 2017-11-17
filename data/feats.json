@@ -1,5 +1,5 @@
 {
-  "updated": "September 21, 2017 @ 10:17 PM",
+  "updated": "November 17, 2017 @ 11:05 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTPhVRIodUwbDYFw8wJZtmb63tTjFJMxY-cN6P5nayPpJhNxAQFqIxeSLd5Tz75aOZ7CLuBkNsDrcs9/pubhtml",
   "data": [
     {
@@ -37,7 +37,8 @@
       "quarian": "x",
       "salarian": "x",
       "turian": "x",
-      "id": "a-beautiful-mine",
+      "unshackled_ai": "x",
+      "id": "a_beautiful_mine",
       "description_text_dump": "YouknowhowtosculptexplosivesintoworksofartYouhaveadvantageondisarminglandminesthatyoufindEnemieswhotriggeryourminesmaketheirDexteritysavingthrowatdisadvantageYoucansculpttheminesexplosionChoosetwo2msquaresAnycreaturewithinthosesquarestakenodamagefromtheminesexplosion"
     },
     {
@@ -56,6 +57,7 @@
       "quarian": null,
       "salarian": "x",
       "turian": null,
+      "unshackled_ai": "x",
       "id": "actor",
       "description_text_dump": ""
     },
@@ -75,6 +77,7 @@
       "quarian": null,
       "salarian": "x",
       "turian": "x",
+      "unshackled_ai": "x",
       "id": "alert",
       "description_text_dump": ""
     },
@@ -94,6 +97,7 @@
       "quarian": null,
       "salarian": "x",
       "turian": "x",
+      "unshackled_ai": null,
       "id": "athlete",
       "description_text_dump": ""
     },
@@ -127,7 +131,8 @@
       "quarian": "x",
       "salarian": null,
       "turian": "x",
-      "id": "big-game-hunter",
+      "unshackled_ai": "x",
+      "id": "big_game_hunter",
       "description_text_dump": "ThebiggertheyaretheharderyoutakethemdownIncreaseyourStrengthscoreby1toamaximumof20Nonsentientorganiccreaturesanysizelargerthanyourselfgainapermanent2todamagerollsagainstthem"
     },
     {
@@ -150,7 +155,8 @@
       "quarian": "x",
       "salarian": "x",
       "turian": "x",
-      "id": "biotic-slayer",
+      "unshackled_ai": "x",
+      "id": "biotic_slayer",
       "description_text_dump": "NameChangeforMageSlayer"
     },
     {
@@ -169,6 +175,7 @@
       "quarian": null,
       "salarian": null,
       "turian": "x",
+      "unshackled_ai": null,
       "id": "charger",
       "description_text_dump": ""
     },
@@ -188,7 +195,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "crossbow-expert",
+      "unshackled_ai": null,
+      "id": "crossbow_expert",
       "description_text_dump": ""
     },
     {
@@ -207,7 +215,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "defensive-duelist",
+      "unshackled_ai": null,
+      "id": "defensive_duelist",
       "description_text_dump": ""
     },
     {
@@ -226,7 +235,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "dual-wielder",
+      "unshackled_ai": null,
+      "id": "dual_wielder",
       "description_text_dump": ""
     },
     {
@@ -245,7 +255,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "dungeon-delver",
+      "unshackled_ai": null,
+      "id": "dungeon_delver",
       "description_text_dump": ""
     },
     {
@@ -264,6 +275,7 @@
       "quarian": null,
       "salarian": null,
       "turian": "x",
+      "unshackled_ai": "x",
       "id": "durable",
       "description_text_dump": ""
     },
@@ -287,7 +299,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "elemental-adept",
+      "unshackled_ai": null,
+      "id": "elemental_adept",
       "description_text_dump": "YouoptionsfordamagetypesareFireColdLightningForceandNecrotic"
     },
     {
@@ -310,7 +323,8 @@
       "quarian": "x",
       "salarian": null,
       "turian": "x",
-      "id": "enhanced-optics",
+      "unshackled_ai": "x",
+      "id": "enhanced_optics",
       "description_text_dump": "YouropticnerveshavebeenenhancedbysciencetoperceivemoreandbetterGainlowlightvisionIfyoualreadyhavelowlightvisiongaindarkvisionYounowgainproficiencyinPerceptionInvestigationandInsightIfyouarealreadyproficientinanyofthesegainapermanent2totheproficientskills"
     },
     {
@@ -348,6 +362,7 @@
       "quarian": "x",
       "salarian": "x",
       "turian": "x",
+      "unshackled_ai": "x",
       "id": "featherlight",
       "description_text_dump": "TravellighttravelfastIncreaseyourDexterityscoreby1toamaximumof20IfyouarecarryinghalforlessofyourmaximumStrengthscoreyourspeedincreasesby10mYoualsoavoidtriggeringanypressureactivatedtrapsormines"
     },
@@ -367,6 +382,7 @@
       "quarian": null,
       "salarian": null,
       "turian": "x",
+      "unshackled_ai": "x",
       "id": "grappler",
       "description_text_dump": ""
     },
@@ -386,7 +402,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "great-weapon-master",
+      "unshackled_ai": null,
+      "id": "great_weapon_master",
       "description_text_dump": ""
     },
     {
@@ -438,6 +455,7 @@
       "quarian": "x",
       "salarian": "x",
       "turian": "x",
+      "unshackled_ai": "x",
       "id": "grenadier",
       "description_text_dump": "2grenadecapacityImprovisedGrenadesYoucanmakegrenadesfromscrapmetalandscavengedmaterialsAcquire1fraggrenadeeverylongrestWhenyouuseagrenadeyoumaychoosetomakearangedweaponattackonacreatureinsteadofchoosingatargetlocationAddyourdexteritymodifierandproficiencybonustotheattackrolllistOnahitthegrenadedeals1d4dexteritymodifierbludgeoningdamagetothetargetandithasdisadvantageonthesavingthrowcausedbythegrenadeThegrenadelandsatthetargetslocationOnamissthegrenadelands2mbeyondthetargetOnacriticalmissroll2d4ThefirstdierepresentsthenumberofspacesawayfromthetargetinwhichthegrenadelandsTheseconddierepresentsthedirection1North2East3South4WestEg22thegrenadewouldland2spaceseastofthetargetlistOncethegrenadeslocationisdetermineditresolvesnormally"
     },
@@ -457,6 +475,7 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
+      "unshackled_ai": null,
       "id": "healer",
       "description_text_dump": ""
     },
@@ -476,8 +495,43 @@
       "quarian": "x",
       "salarian": null,
       "turian": null,
-      "id": "heavily-armored",
+      "unshackled_ai": null,
+      "id": "heavily_armored",
       "description_text_dump": ""
+    },
+    {
+      "name": "Hair Trigger",
+      "not_available": null,
+      "page_number": null,
+      "updated": null,
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You've mastered Semi-Automatic weapons:"
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Increase your Dexterity score by 1, to a maximum of 20."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "When you take the attack action using a semi-automatic weapon, you can make a second attack as a free action, rather than a bonus action. You add your Dexterity modifier to the second attack roll."
+        }
+      ],
+      "notes": "+1 Dexterity, mastery of semi-automatic weapons",
+      "prerequisite": null,
+      "batarian": "x",
+      "drell": "x",
+      "human": "x",
+      "quarian": "x",
+      "salarian": "x",
+      "turian": "x",
+      "unshackled_ai": "x",
+      "id": "hair_trigger",
+      "description_text_dump": "YouvemasteredSemiAutomaticweaponsIncreaseyourDexterityscoreby1toamaximumof20WhenyoutaketheattackactionusingasemiautomaticweaponyoucanmakeasecondattackasafreeactionratherthanabonusactionYouaddyourDexteritymodifiertothesecondattackroll"
     },
     {
       "name": "Heavy Armor Master",
@@ -495,7 +549,8 @@
       "quarian": null,
       "salarian": null,
       "turian": "x",
-      "id": "heavy-armor-master",
+      "unshackled_ai": null,
+      "id": "heavy_armor_master",
       "description_text_dump": ""
     },
     {
@@ -514,7 +569,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "inspiring-leader",
+      "unshackled_ai": null,
+      "id": "inspiring_leader",
       "description_text_dump": ""
     },
     {
@@ -533,7 +589,8 @@
       "quarian": "x",
       "salarian": "x",
       "turian": "x",
-      "id": "keen-mind",
+      "unshackled_ai": "x",
+      "id": "keen_mind",
       "description_text_dump": ""
     },
     {
@@ -552,7 +609,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "lightly-armored",
+      "unshackled_ai": "x",
+      "id": "lightly_armored",
       "description_text_dump": ""
     },
     {
@@ -571,6 +629,7 @@
       "quarian": "x",
       "salarian": "x",
       "turian": null,
+      "unshackled_ai": "x",
       "id": "linguist",
       "description_text_dump": ""
     },
@@ -590,6 +649,7 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
+      "unshackled_ai": null,
       "id": "lucky",
       "description_text_dump": ""
     },
@@ -609,7 +669,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "magic-initiate",
+      "unshackled_ai": null,
+      "id": "magic_initiate",
       "description_text_dump": ""
     },
     {
@@ -628,7 +689,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "martial-adept",
+      "unshackled_ai": null,
+      "id": "martial_adept",
       "description_text_dump": ""
     },
     {
@@ -647,7 +709,8 @@
       "quarian": "x",
       "salarian": null,
       "turian": "x",
-      "id": "medium-armor-master",
+      "unshackled_ai": null,
+      "id": "medium_armor_master",
       "description_text_dump": ""
     },
     {
@@ -659,7 +722,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You've trained extensively in melee weapon combat. +1 Strength"
+          "data": "You've trained extensively in melee weapon combat. +1 Strength or Dexterity"
         },
         {
           "id": 2,
@@ -671,7 +734,7 @@
           ]
         }
       ],
-      "notes": null,
+      "notes": "+1 Strength or Dexterity, additional attacks with melee weapons",
       "prerequisite": null,
       "batarian": "x",
       "drell": "x",
@@ -679,8 +742,9 @@
       "quarian": null,
       "salarian": null,
       "turian": "x",
-      "id": "melee-specialist",
-      "description_text_dump": "Youvetrainedextensivelyinmeleeweaponcombat1StrengthlistWhenwieldingatwohandedrangedweaponyoucanuseabonusactiontomakeameleeweaponattackwithyouromnitoolWhenwieldingasinglehandedrangedweaponyoucanuseabonusactiontomakeameleeweaponattackwithalightorversatilemeleeweaponyourOmnitoolisalightweaponWhenwieldingonlymeleeweaponsGain1ACWhenyoutaketheAttackactionyoucanuseabonusactiontomakeanothermeleeweaponattacklist"
+      "unshackled_ai": "x",
+      "id": "melee_specialist",
+      "description_text_dump": "Youvetrainedextensivelyinmeleeweaponcombat1StrengthorDexteritylistWhenwieldingatwohandedrangedweaponyoucanuseabonusactiontomakeameleeweaponattackwithyouromnitoolWhenwieldingasinglehandedrangedweaponyoucanuseabonusactiontomakeameleeweaponattackwithalightorversatilemeleeweaponyourOmnitoolisalightweaponWhenwieldingonlymeleeweaponsGain1ACWhenyoutaketheAttackactionyoucanuseabonusactiontomakeanothermeleeweaponattacklist"
     },
     {
       "name": "Mobile",
@@ -698,6 +762,7 @@
       "quarian": "x",
       "salarian": "x",
       "turian": "x",
+      "unshackled_ai": "x",
       "id": "mobile",
       "description_text_dump": ""
     },
@@ -717,7 +782,8 @@
       "quarian": null,
       "salarian": "x",
       "turian": null,
-      "id": "moderately-armored",
+      "unshackled_ai": null,
+      "id": "moderately_armored",
       "description_text_dump": ""
     },
     {
@@ -736,7 +802,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "mounted-combat",
+      "unshackled_ai": null,
+      "id": "mounted_combat",
       "description_text_dump": ""
     },
     {
@@ -755,6 +822,7 @@
       "quarian": "x",
       "salarian": "x",
       "turian": "x",
+      "unshackled_ai": null,
       "id": "observant",
       "description_text_dump": ""
     },
@@ -774,7 +842,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "polearm-master",
+      "unshackled_ai": null,
+      "id": "polearm_master",
       "description_text_dump": ""
     },
     {
@@ -793,6 +862,7 @@
       "quarian": null,
       "salarian": null,
       "turian": "x",
+      "unshackled_ai": "x",
       "id": "resilient",
       "description_text_dump": ""
     },
@@ -812,7 +882,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "ritual-caster",
+      "unshackled_ai": null,
+      "id": "ritual_caster",
       "description_text_dump": ""
     },
     {
@@ -831,7 +902,8 @@
       "quarian": null,
       "salarian": null,
       "turian": "x",
-      "id": "savage-attacker",
+      "unshackled_ai": "x",
+      "id": "savage_attacker",
       "description_text_dump": ""
     },
     {
@@ -850,6 +922,7 @@
       "quarian": null,
       "salarian": null,
       "turian": "x",
+      "unshackled_ai": "x",
       "id": "sentinel",
       "description_text_dump": ""
     },
@@ -869,6 +942,7 @@
       "quarian": "x",
       "salarian": "x",
       "turian": "x",
+      "unshackled_ai": "x",
       "id": "sharpshooter",
       "description_text_dump": ""
     },
@@ -888,7 +962,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "shield-master",
+      "unshackled_ai": null,
+      "id": "shield_master",
       "description_text_dump": ""
     },
     {
@@ -907,6 +982,7 @@
       "quarian": "x",
       "salarian": "x",
       "turian": "x",
+      "unshackled_ai": "x",
       "id": "skilled",
       "description_text_dump": ""
     },
@@ -926,6 +1002,7 @@
       "quarian": null,
       "salarian": "x",
       "turian": null,
+      "unshackled_ai": "x",
       "id": "skulker",
       "description_text_dump": ""
     },
@@ -945,7 +1022,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "spell-sniper",
+      "unshackled_ai": null,
+      "id": "spell_sniper",
       "description_text_dump": ""
     },
     {
@@ -968,7 +1046,8 @@
       "quarian": "x",
       "salarian": "x",
       "turian": "x",
-      "id": "squad-leader",
+      "unshackled_ai": null,
+      "id": "squad_leader",
       "description_text_dump": "YouknowjustwhattosayinatightsituationAsabonusactionyoucaninspireallallieswithinearshottoinstantlyrollahitdieandregainthatmanyhitpointsThisdoesnotexpendahitdiefromtheirpoolAlliesimmediatelyrecoverfromthefollowingconditionscharmedfrightenedfrozengrappledincapacitatedparalyzedpoisonedpronerestrainedandstunnedYoumayusethisabilityoncepershortrest"
     },
     {
@@ -987,7 +1066,8 @@
       "quarian": null,
       "salarian": null,
       "turian": "x",
-      "id": "tavern-brawler",
+      "unshackled_ai": "x",
+      "id": "tavern_brawler",
       "description_text_dump": ""
     },
     {
@@ -1006,6 +1086,7 @@
       "quarian": null,
       "salarian": null,
       "turian": "x",
+      "unshackled_ai": "x",
       "id": "tough",
       "description_text_dump": ""
     },
@@ -1025,7 +1106,8 @@
       "quarian": null,
       "salarian": null,
       "turian": null,
-      "id": "war-caster",
+      "unshackled_ai": null,
+      "id": "war_caster",
       "description_text_dump": ""
     },
     {
@@ -1058,7 +1140,8 @@
       "quarian": "x",
       "salarian": "x",
       "turian": null,
-      "id": "wealth-of-knowledge",
+      "unshackled_ai": "x",
+      "id": "wealth_of_knowledge",
       "description_text_dump": "YourgraspofrandomfactoidsknowsnoboundsIncreaseyourIntelligencescoreby1toamaximumof20YouhaveadvantageonthefirstIntelligencebasedskillcheckyoumakeafterashortrest"
     },
     {
@@ -1070,7 +1153,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Instead of gain proficiency with 4 weapons, you gain proficiency with 2 ranged weapons"
+          "data": "Instead of gaining proficiency with 4 weapons, you gain proficiency with 2 weapon types."
         }
       ],
       "notes": "+1 Strength or Dexterity, 2 additional ranged weapon proficiencies",
@@ -1081,8 +1164,9 @@
       "quarian": null,
       "salarian": null,
       "turian": "x",
-      "id": "weapon-master",
-      "description_text_dump": "Insteadofgainproficiencywith4weaponsyougainproficiencywith2rangedweapons"
+      "unshackled_ai": "x",
+      "id": "weapon_master",
+      "description_text_dump": "Insteadofgainingproficiencywith4weaponsyougainproficiencywith2weapontypes"
     }
   ]
 }

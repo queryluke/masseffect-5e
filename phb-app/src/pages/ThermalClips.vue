@@ -1,10 +1,10 @@
-<template lang="jade">
+<template lang="pug">
   div
     h2 Thermal Clips
     p Starting capacity is 6 (Variant 10).
     div.mt-3
       v-data-table(v-bind:headers="headers" v-bind:items="items" hide-actions).elevation-1
-        template(slot="items" scope="props")
+        template(slot="items" slot-scope="props")
           td {{ props.item.name }}
           td {{ props.item.mechanic }}
     v-layout(row wrap justify-space-between).mt-4

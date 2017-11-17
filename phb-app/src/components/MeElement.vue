@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   div
     div(v-for="element in text" v-bind:key="element.id")
       table(v-if="element.type === 'table'").table.alt-table

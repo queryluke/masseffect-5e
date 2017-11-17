@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   div
     v-layout
       v-flex.xs12.sm6

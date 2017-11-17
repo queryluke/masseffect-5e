@@ -1,5 +1,5 @@
 {
-  "updated": "September 22, 2017 @  1:33 PM",
+  "updated": "November 17, 2017 @ 10:58 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRFYAlUo84hir8VGSHwP4pKqnTcih_5UD0Uqtgi9w-QHEvrSxLthv1xXG0jb_tpbBRNZXE1Dv0nF0_q/pubhtml",
   "data": [
     {
@@ -36,7 +36,7 @@
       "micon": null,
       "link": null,
       "description": null,
-      "id": "animal-handling"
+      "id": "animal_handling"
     },
     {
       "name": "Deception",
@@ -171,7 +171,7 @@
       "micon": "pan_tool",
       "link": "Dexterity",
       "description": "Whenever you attempt an act of legerdemain or manual trickery, such as planting something on someone else or concealing an object on your person, make a Dexterity (Sleight of Hand) check. The GM might also call for a Dexterity (Sleight of Hand) check to determine whether you can lift a coin purse off another person or slip something out of another person's pocket.",
-      "id": "sleight-of-hand"
+      "id": "sleight_of_hand"
     },
     {
       "name": "Stealth",
