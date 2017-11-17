@@ -8,7 +8,7 @@
         p Frozen, Lifted, Targeting
     div.mt-3
       v-data-table(v-bind:headers="headers" v-bind:items="items" hide-actions).elevation-1
-        template(slot="items" scope="props")
+        template(slot="items" slot-scope="props")
           td {{ props.item.name }}
           td {{ props.item.description }}
 </template>
