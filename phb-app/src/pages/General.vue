@@ -35,7 +35,7 @@
           When you take damage, if you have any Barrier Ticks remaining, remove a Barrier Tick and reduce that dmg by 1d8.
           Some class features allow you to choose whether or not you want to expend an Barrier Tick when you take damage.
     rule-card
-      span(slot="header") Uprotected
+      span(slot="header") Unprotected
       template(slot="text")
         p.
           Some abilities may refer to an "unprotected" creature. This is a creature which has no shield points or barrier

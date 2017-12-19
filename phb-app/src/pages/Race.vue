@@ -42,6 +42,9 @@
                 p(aria-labelledby="race-alignment") {{ race.alignment }}
               div.ma-2
                 div(id="race-traits").section-label Racial Traits
+                div(id="race-increases")
+                    label #[strong Ability Mods]
+                    p {{race.increases}}
                 div(v-for="trait in race.racial_traits" v-bind:key="trait.id")
                   label(:id="trait.id") #[strong {{ trait.name }}]
                   me-element(:text="trait.description" v-bind:aria-labelledby="`race-traits ${trait.id}`")
