@@ -24,7 +24,7 @@ A homebrew conversion of Dungeons & Dragons 5th Edition into the Mass Effect Uni
  
  To run locally:
  
- * `jekyll serve`
+ * `jekyll serve` or `bundle exec jekyll serve`
  * Site is available at localhost:4000
  
  ### Working on the phb
