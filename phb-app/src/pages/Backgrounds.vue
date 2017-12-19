@@ -1,7 +1,7 @@
 <template lang="pug">
   div
     h2 Backgrounds
-    p More coming eventually. Feel free to adjust and backgrounds in the PHB or other D&D books.
+    p More coming eventually. Feel free to adjust backgrounds in the 5e PHB or other D&D books.
     div.expansion-panel__sortable.primary
       v-layout.px-4
         v-flex(v-for="header in headers" v-bind:key="header.key" v-bind:class="header.classes")
