@@ -35,5 +35,8 @@ A homebrew conversion of Dungeons & Dragons 5th Edition into the Mass Effect Uni
   * `npm install`
   
 To run locally:
- * `npm run serve`
- * Site will be available at localhost:3000 
+ * `gulp serve`
+ * Site will be available at localhost:3000
+
+To build a distribution:
+* in **phb-app**, run `gulp`, and commit the compiled code
