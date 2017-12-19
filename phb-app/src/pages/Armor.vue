@@ -33,6 +33,9 @@
               th AC
           tbody
             tr
+              td Empty armor slot
+              td -1 AC
+            tr
               td All Light
               td 11 + Dexterity Modifier
             tr
