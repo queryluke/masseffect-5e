@@ -1,5 +1,8 @@
 # CHANGE LOG
 
+## v0.4.0
+
+
 ## v0.3.0
 
 ### Weapon Refactor
