@@ -2,6 +2,11 @@
 
 ## v0.4.0
 
+### Races
+
+#### Salarians
+Added amphibious trait
+
 ### Spell/Power changes
 
 #### Bitoic Spells
