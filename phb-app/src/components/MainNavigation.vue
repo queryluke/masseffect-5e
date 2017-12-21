@@ -1,60 +1,32 @@
 <template lang="pug">
   v-navigation-drawer(
-    persistent
     clipped
-    enable-resize-watcher
+    fixed
+    app
     v-model="isActive"
     )
-    v-list(dense)
+    v-list(dense expand)
       template(v-for="item in items")
-        v-list-group(v-if="item.items" v-bind:group="item.group")
-          v-list-tile(slot="item" ripple)
-            v-list-tile-action
-              v-icon {{ item.action }}
+        v-list-group(v-if="item.items" v-bind:prepend-icon="item.icon" no-action)
+          v-list-tile(slot="activator" ripple)
             v-list-tile-content
               v-list-tile-title {{ item.title }}
-            v-list-tile-action
-              v-icon keyboard_arrow_down
-          v-list-tile(
-            v-for="subItem in item.items" v-bind:key="subItem.title"
-            v-bind="{ \
-              to: !subItem.target ? subItem.href : null, \
-              href: subItem.target && subItem.href \
-            }"
-            ripple
-            v-bind:disabled="subItem.disabled"
-            v-bind:target="subItem.target"
-          )
-            v-list-tile-content
-              v-list-tile-title {{ subItem.title }}
-            v-list-tile-action(v-if="subItem.action")
-              v-icon(:class="[subItem.actionClass || 'success--text']") {{ subItem.action }}
+          template(v-for="(subItem, i) in item.items")
+            v-list-tile(:key="i" v-bind="{to: subItem.href, href: subItem.href }" ripple)
+              v-list-tile-content
+                v-list-tile-title {{ subItem.title }}
         v-subheader(v-else-if="item.header") {{ item.header }}
         v-divider(v-else-if="item.divider")
         v-list-tile(
-          v-bind="{ \
-            to: !item.target ? item.href : null, \
-            href: item.target && item.href \
-          }"
+          v-bind="{ to: item.href, href: item.href }"
           ripple
-          v-bind:disabled="item.disabled"
-          v-bind:target="item.target"
           rel="noopener"
           v-else
         )
           v-list-tile-action
-            v-icon {{ item.action }}
+            v-icon {{ item.icon }}
           v-list-tile-content
             v-list-tile-title {{ item.title }}
-          v-list-tile-action(v-if="item.subAction")
-            v-icon(class="success--text") {{ item.subAction }}
-          v-chip(
-            v-else-if="item.chip"
-            label
-            small
-            class="caption blue lighten-2 white--text mx-0"
-          ) {{ item.chip }}
-  </v-navigation-drawer>
 </template>
 
 <script>
@@ -77,7 +49,7 @@
         items: [
           {
             title: 'Rules',
-            action: 'gavel',
+            icon: 'gavel',
             items: [
               { href:'/rules/general', title: 'General' },
               { href:'/rules/spellcasting', title: 'Spellcasting' },
@@ -90,7 +62,7 @@
           },
           {
             title: 'Player Options',
-            action: 'face',
+            icon: 'face',
             items: [
               { href: '/classes', title: 'Classes' },
               { href: '/races', title: 'Races' },
@@ -100,7 +72,7 @@
           },
           {
             title: 'Equipment',
-            action: 'build',
+            icon: 'build',
             items: [
               {href: '/weapons', title: 'Weapons'},
               {href: '/armor/mods', title: 'Armor Mods'},
@@ -111,12 +83,12 @@
           },
           {
             title: 'Spells & Powers',
-            action: 'whatshot',
+            icon: 'whatshot',
             href: '/spells',
           },
           {
             title: 'Beastiary',
-            action: 'pets',
+            icon: 'pets',
             href: '/bestiary'
           }
         ]

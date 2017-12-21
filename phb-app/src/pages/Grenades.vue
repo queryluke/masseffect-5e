@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    h2 Grenades
+    h2.display-3 Grenades
     p Starting capacity is 2.
     div.expansion-panel__sortable.primary
       v-layout.px-4

@@ -8,7 +8,7 @@
         tbody
           tr(v-for="item in element.data.items")
             td(v-for="data in item") {{ data }}
-      ul(v-else-if="element.type === 'list'")
+      ul(v-else-if="element.type === 'list'").ml-3
         li(v-for="item in element.data") {{ item }}
       p(v-else) {{ element.data }}
 </template>

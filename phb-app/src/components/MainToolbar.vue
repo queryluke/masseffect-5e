@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-toolbar(fixed dark)
+  v-toolbar(dark app fixed clipped-left)
     v-toolbar-side-icon(@click.stop="toggleSidebar")
     v-toolbar-title
       router-link(to="/").nav-brand

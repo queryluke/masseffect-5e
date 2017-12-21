@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    h2 Bestiary
+    h2.display-3 Bestiary
     p coming eventually...
 </template>
 

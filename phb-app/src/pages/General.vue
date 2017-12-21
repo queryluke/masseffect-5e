@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    h2 General
+    h2.display-3 General
     p.
       Overall, this system attempts to keep things in line with D&D 5e rules as much as possible. Some system
       additions are pretty significant, like Shield Points. But most are minor, like the addition of a few more conditions.

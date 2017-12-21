@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    h2 Armor Sets
+    h2.display-3 Armor Sets
     p coming soon...
 </template>
 

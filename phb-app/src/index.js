@@ -31,10 +31,23 @@ import Weapons from './pages/Weapons.vue';
 import WeaponRules from './pages/WeaponRules.vue';
 import Weapon from './pages/Weapon.vue';
 
+// Helpers
+import colors from 'vuetify/es5/util/colors';
+
 require('./stylus/main.styl');
 
 Vue.use(Router);
-Vue.use(Vuetify);
+Vue.use(Vuetify, {
+  theme: {
+    primary: colors.red.darken4,
+    accent: colors.red.darken1,
+    secondary: colors.indigo.darken4,
+    info: colors.blue.lighten2,
+    warning: colors.amber.base,
+    error: colors.red.accent2,
+    success: colors.green.base
+  }
+});
 Vue.use(VueResource);
 
 const router = new Router({

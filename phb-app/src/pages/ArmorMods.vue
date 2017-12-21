@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    h2 Armor Mods
+    h2.display-3 Armor Mods
     p Read the #[router-link(to="/rules/armor") Armor Rules] to understand how armor customization works.
     p.text-xs-center #[v-icon warning] This is a work in progress #[v-icon warning]
     div.mt-3
