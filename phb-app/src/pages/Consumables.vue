@@ -25,7 +25,7 @@
           All armor comes standard with 6 thermal clip slots. Some armor and mods allow you to increase this ammount.
         p.headline Resupply: Uncommon
         p.
-          Nicer gun shops and military operations have a good stock of specialize. Each specialized thermal clip costs 500 credits.
+          Nicer gun shops and military operations have a good stock of specialized thermal clips. Each specialized clip costs 500 credits.
           If you want to track standard thermal clips, see the Variant Thermal Clip Rules Below
         v-btn(to="/thermal-clips").mt-3 Thermal Clip List
     rule-card
@@ -38,7 +38,7 @@
           plenty of thermal clips after the battle.
         p.headline Capacity: 10
         p.
-          All armor comes standard with 10 thermal clip slots. Some armor and mods allow you to increase this ammount.
+          All armor comes standard with 10 thermal clip slots. Some armor and mods allow you to increase this amount.
         p.headline Resupply: Common
         p.
           You can resupply all of you standard thermal clips at a gun shop or military depot for 500 credits. Specialized clips
@@ -51,8 +51,8 @@
           All armor comes standard with 2 grenade slots. Some armor and mods allow you to increase this ammount.
         p.headline Resupply: Rare
         p.
-          Grenades are a military resource, so, depending on your campaign setting might be an uncommon or rare item.
-          If your part of a military outfit, you can resupply every time you return to base (or to your ship).
+          Grenades are a military resource, so, depending on your campaign setting they might be an uncommon or rare item.
+          If your character is part of a military outfit, you can resupply every time you return to base (or to your ship).
           Otherwise, finding grenades may be a bit more difficult, requiring you to barter, steal, or loot them.
         v-btn(to="/grenades").mt-3 Grenade List
     rule-card
@@ -65,7 +65,7 @@
         p.
           If you've got your hands on a heavy weapon, you're either a military specialist or damn lucky you survived the
           battle. It's not easy resupplying your charges. You've either got to have some serious military or black market connections.
-          If military, you might get special permission to keep the weapon and granted a steady stream of chargers (once per long rest).
+          If military, you might get special permission to keep the weapon and granted a steady stream of charges (once per long rest).
           That's between you and your GM.
         p.
           Otherwise, you'll have to pay a pretty penny on the black market (around 20,000 credits) to resupply your charges.
