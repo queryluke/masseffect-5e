@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    h2 Spell Casting
+    h2.display-3 Spell Casting
     p.
       Biotics, Tech powers and Combat abilities
     rule-card

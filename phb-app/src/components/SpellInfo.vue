@@ -37,7 +37,7 @@
     div.mt-3
       me-element(:text="spell.mechanic")
       v-layout(row wrap justify-space-around)
-        v-flex(v-for="option in spell.adv_options" v-bind:key="spell.id").xs12.md6
+        v-flex(v-for="(option, i) in spell.adv_options" v-bind:key="i").xs12.md6
           advanced-option(:option="option")
 </template>
 

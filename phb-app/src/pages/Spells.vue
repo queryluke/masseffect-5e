@@ -2,7 +2,7 @@
   v-container
     v-layout(row wrap)
       v-flex(xs12 sm6)
-        h2 Spells
+        h2.display-3 Spells
         div.small Biotics, Tech Powers, and Combat Abilities
       v-flex(xs12 sm6)
         v-text-field(

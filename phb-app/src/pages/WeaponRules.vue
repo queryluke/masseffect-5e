@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    h2 Weapons
+    h2.display-3 Weapons
     p.
       Guns! A major difference between ME5e and base 5e is the emphasis on ranged combat with firearms. You can still make a pretty
       bad ass melee build, but most people will be shooting instead of slapping.
@@ -124,11 +124,11 @@
         p.
           #[strong Condition Details:] While targeting, your speed is reduced by half and you automatically fail Dexterity
           saving throws. Creatures that attack you have advantage.
-        p.
+        p.mb-0.
           #[strong Targeting Failures:]
           If targeting ends before the start of your next turn, it fails and the weapon does not fire or use a weapon charge.
           It can be prematurely ended for the following reasons:
-        ul
+        ul.ml-5
           li As a reaction: You can choose to end your Targeting condition as a reaction to an attack (not to a damage roll).
           li Taking cover: Taking full or three-quarter cover while targeting ends the condition.
           li Another condition: If you lose your footing by being knocked prone, becoming lifted, or incapacitated, targeting ends.

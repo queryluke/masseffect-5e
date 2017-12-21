@@ -2,7 +2,7 @@
   v-container
     v-layout(row wrap)
       v-flex.xs12
-        h2 Skills
+        h2.display-3 Skills
       v-flex.xs12.sm6
         p.headline New
         p {{ new_skills }}

@@ -1,11 +1,11 @@
 <template lang="pug">
   div
-    h2 Armor
+    h2.display-3 Armor
     p Armor is much more customizable in ME5e than in the base 5e ruleset.
     rule-card
       span(slot="header") Overview
       template(slot="text")
-        ul
+        ul.list
           li Armor proficiency is based on race.
           li You cannot wear a piece of armor unless you are proficient in that armor's type.
           li Armor types can be mixed
@@ -103,14 +103,14 @@
               td 1 (max 3)
               td 2 (max 3)
               td 0 (max 2)
-        ul
+        ul.list
           li #[strong Additional Mod Slots:] 20,000 credits
           li #[strong Race Custom Fitting:] 5,000 credits
         p
-          router-link(to="/armor/mods") Mod List
+          v-btn(to="/armor/mods") Mod List
         div.hr
         p.headline Example
-        ol
+        ol.list
           li.
             You want a Medium-Type, Head Armor for your Drell. On the table, the base cose for Medium + Head is 4,000 credits.
           li.

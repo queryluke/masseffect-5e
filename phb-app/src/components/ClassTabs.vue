@@ -1,7 +1,7 @@
 <template lang="pug">
   div
-    v-tabs(dark v-model="active" grow)
-      v-tabs-bar(:class="colors.primary")
+    v-tabs(v-model="active" grow)
+      v-tabs-bar(:class="colors.primary" dark)
         v-tabs-item(
           v-for="tab in tabs"
           v-bind:key="tab.id"

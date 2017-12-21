@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    h2 Consumables
+    h2.display-3 Consumables
     rule-card
       span(slot="header") Medi-gel
       template(slot="text")

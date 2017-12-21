@@ -2,7 +2,7 @@
   v-container(fluid)
     v-layout(row wrap)
       v-flex.sm12.md9
-        h2 {{ item.name }}
+        h2.display-3 {{ item.name }}
         p {{ item.description}}
       v-flex.hidden-sm-and-down.md3
         me-icon(:name="item.id" type="classes")

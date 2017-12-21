@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    h2 Thermal Clips
+    h2.display-3 Thermal Clips
     p Starting capacity is 6 (Variant 10).
     div.mt-3
       v-data-table(v-bind:headers="headers" v-bind:items="items" hide-actions).elevation-1
