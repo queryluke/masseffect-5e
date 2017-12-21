@@ -2,6 +2,12 @@
 
 ## v0.4.0
 
+### Classes
+Updates saving throws:
+* Adept: CON & CHA => WIS & CHA
+* Sentinel: WIS & CHA => CON & CHA
+* Vanguard: CON & STR => WIS & STR
+
 ### Races
 
 #### Salarians
