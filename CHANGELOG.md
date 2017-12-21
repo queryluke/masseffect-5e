@@ -2,6 +2,69 @@
 
 ## v0.4.0
 
+### Spell/Power changes
+
+#### Bitoic Spells
+* Annihilation Field
+  * Damage increased 6d8 => 12d6
+* Catapult
+  * Damage increased 3d8 => 3d10
+* Charge
+  * Hits multiple targets
+  * Poison Strike => Necrotic strike. No longer causes poisoned effect. Deal more damage in a line.
+  * Tremor => Distance. Increases radius of impact
+* Dark Channel
+  * Damage increased d6/d8 => d10/d12
+  * Improved Duration => Cripple. As a reaction, reduce target's attack roll or saving throw
+* Dark Sphere
+  * Damage increased 3d8 => 6d8
+* Flare
+  * Damage increased d10 => d12
+* Lance
+  * Damage increased 2dx => 3dx
+* Phase Disruptor
+ * Damage increased 1d8/d12 => 3d4/d6
+* Reave
+  * Damage decreased 2d12 => 2d10
+* Slam
+ * Damage adjusted, 2d8/d12 + biotic modifier (instead of 1d8/d12 + 2 * biotic modifier)
+* Storm
+  * Damage increased 8d6 => 8d10
+* Throw
+  * Damage increased d4/d6 => d6/d8
+* Vortex
+  * Damage increased 4d10/d12 => 12d4/d6
+* Warp
+  * Damage increased d6 => d10
+  * Poison => Keel Over. Chance to stun target.
+
+#### Combat
+* Ballistic Blades
+  * Damage decreased 6d6 => 2d12
+  * Scaling damage added
+* Beehive
+  * Damage decreased 2d10 => 2d6
+  * Scaling damage added
+* Concussive Shot
+  * Damage decreased d10 => d8
+  * Blinding shot => Improved shot. Increases damage to d12
+* Havok Strike
+  * Damage decreased 3d12 => 2d8
+  * Scaling damage added
+* Hawk Missile Launcher
+  * Damage decreased 3d10 => 3d6
+  * Scaling damage added
+  * 2 charges per long rest
+* Nightshade Blade
+  * Secondary poison damage added
+  * Scaling damage added
+* Siege Pulse
+  * Damage reduced 2d10 => 2d4
+
+
+
+
+
 
 ## v0.3.0
 
