@@ -1,13 +1,13 @@
 <template lang="pug">
   div
     h2 Armor
-    p Armor is much more complex in ME5e, giving the player a lot of options for customization.
+    p Armor is much more customizable in ME5e than in the base 5e ruleset.
     rule-card
       span(slot="header") Overview
       template(slot="text")
         ul
-          li Armor proficiency is base on race.
-          li You cannot wear a piece of armor unless you are proficient in that type.
+          li Armor proficiency is based on race.
+          li You cannot wear a piece of armor unless you are proficient in that armor's type.
           li Armor types can be mixed
           li Armor can be custom made or modified with powerful augmentations.
     rule-card
@@ -23,8 +23,8 @@
       span(slot="header") Armor isn't ALL IN ONE
       template(slot="text")
         p.
-          In ME5e there are 4 armor placements, Head, Chest, Arms, Legs. And you can mix and match armor types (Light, Medium, Heavy).
-          This makes the array of AC possibilities a bit more complex. Remember, you must be proficient in a type to wear it.
+          In ME5e there are 4 armor placements, Head, Chest, Arms, Legsand you can mix and match armor types (Light, Medium, Heavy).
+          This makes the array of AC possibilities a bit more complex. Remember, you must be proficient in an armor piece's type to wear it.
         p.headline AC Breakdown
         table.table
           thead.text-xs-left
@@ -63,10 +63,10 @@
       span(slot="header") Armor can be customized & created
       template(slot="text")
         p.
-          Armor Customization is a new feature and provides a lot of options that Magical Items would. It costs a pretty penny, so
-          creating armor might not be available to new characters, but as they progress, you should be able to afford major
-          custom jobs.
-        p.headline Creating Armor from scratch
+          Armor Customization is a new feature and provides a lot of the options that would be handled by Magical Items in traditional 5e.
+          It costs a pretty penny, so creating armor might not be available to new characters, but as they progress, you should be able
+          to afford major custom jobs.
+        p.headline Creating Armor from Scratch
         p.
           When you create a piece of armor from scratch, you need to select the armor placement (Head, Chest, Arms, Legs),
           if you want to add additional mod slots, and if you need to customize the armor to fit your race. The following is a matrix
@@ -114,10 +114,10 @@
           li.
             You want a Medium-Type, Head Armor for your Drell. On the table, the base cose for Medium + Head is 4,000 credits.
           li.
-            But this is for a Drell which is not a standard race of medium armor. So it will cost an additional 5,000 credits to get
+            But this is for a Drell which is not a standard race for medium armor. So it will cost an additional 5,000 credits to get
             this customized.
           li.
-            You want to add 2 mods to the helmet, but a Head piece only starts with one mod slot. It'll be another 20k credits to upgrade
+            You want to add 2 mods to the helmet, but a Head piece only starts with one mod slot. It will cost another 20,000 credits to upgrade
             the helmet.
           li.
             Finally, you can add your mods (link above). You select the Umbra AI (8,000) and the Voice
@@ -126,7 +126,7 @@
             So the grand total for your custom head piece is: 39,000 credits.
         p.headline.mt-3 Customizing Armor
         p.
-          Instead, you might find it cheaper to take what you can get from the battlefield and customize it. If my Drell got
+          Instead, you might find it cheaper to take what you can get from the battlefield and customize it. If the in this example Drell got
           a Medium Head piece off the battlefield with 2 mod slots, he could spend 15,000 credits to add the 2 mods and customize it
           for his race.
         p

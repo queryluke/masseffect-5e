@@ -9,7 +9,7 @@
         p.
           As a general rule, I try to use the word "Ability" as the unbrella term for all Biotic spells, Tech powers,
           Combat abilities, and Class features. In addition, the term "Biotic Modifier" or "Tech Modifier" is synonymous
-          with "Spell casting Modifier"
+          with "Spell Casting Modifier"
     rule-card
       span(slot="header") Biotic Spells
       template(slot="text")
@@ -33,8 +33,8 @@
       span(slot="header") Combat Abilities
       template(slot="text")
         p.
-          Cambat abilities can be learned by Soldiers and Infiltrators, but they rely on equipment rather than biotic amps or a
-          beefed up omni-tool. Instead of a casting cost, Combat abilities recharge on a short or long rest, similar to class features.
+          Combat abilities can be learned by Soldiers and Infiltrators, but they rely on equipment rather than biotic amps or a
+          beefed-up omni-tool. Instead of a casting cost, Combat abilities recharge on a short or long rest, similar to class features.
 </template>
 
 <script>
