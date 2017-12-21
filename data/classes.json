@@ -1,5 +1,5 @@
 {
-  "updated": "November 17, 2017 @ 10:58 AM",
+  "updated": "December 21, 2017 @  3:56 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -12,7 +12,7 @@
       "increase_hit_points": "1d4 (or 2) + your Constitution modifier",
       "increase_max_shields": "1d4 (or 2)",
       "weapon": "Choose one from Heavy Pistol, Melee, SMG",
-      "saving_throw": "Constitution, Charisma",
+      "saving_throw": "Wisdom, Charisma",
       "skill": "Choose three from Acrobatics, Insight, Intimidation, Medicine, Perception, Sleight of Hand, Stealth, and Survival",
       "primary_ability": "Charisma",
       "spellcasting_modifier": "Charisma",
@@ -69,7 +69,7 @@
       "increase_hit_points": "1d6 (or 3) + your Constitution modifier",
       "increase_max_shields": "1d6 (or 3)",
       "weapon": "Choose one from Assault Rifles, Heavy Pistols, Melee, SMGs",
-      "saving_throw": "Wisdom, Charisma",
+      "saving_throw": "Constitution, Charisma",
       "skill": "Choose three from Athletics, Engineering, Insight, Intimidation, Medicine, Perception, Performance, Persuasion, Survival",
       "primary_ability": "Wisdom",
       "spellcasting_modifier": "Wisdom",
@@ -88,7 +88,7 @@
       "increase_hit_points": "1d8 (or 5) + your Constitution modifier",
       "increase_max_shields": "1d4",
       "weapon": "Choose two from Assault Rifles, Heavy Pistols, Shotguns, Melee, SMGs, Sniper Rifles",
-      "saving_throw": "Dexterity, Strength",
+      "saving_throw": "Strength, Dexterity",
       "skill": "Choose three from Acrobatics, Athletics, Intimidation, Medicine, Persuasion, Piloting, Stealth, and Survival",
       "primary_ability": "Dexterity",
       "spellcasting_modifier": "Intelligence",
@@ -107,7 +107,7 @@
       "increase_hit_points": "1d6 (or 3) + your Constitution modifier",
       "increase_max_shields": "1d4",
       "weapon": "Choose one from Heavy Pistols, Melee, Shotguns, SMGs",
-      "saving_throw": "Strength, Constitution",
+      "saving_throw": "Wisdom, Strength",
       "skill": "Choose three from Acrobatics, Athletics, Deception, Intimidation, Performance, Persuasion, Sleight of Hand, Stealth, Survival",
       "primary_ability": "Strength or Wisdom",
       "spellcasting_modifier": "Wisdom",
