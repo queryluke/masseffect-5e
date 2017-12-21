@@ -56,7 +56,7 @@
         .get('../data/spells.json')
         .then(response => response.json())
         .then(response => {
-          this.spells = response.data;
+          this.spells = response.data.sort((a, b) => a.name > b.name ? 1 : -1);
           this.updated = response.updated;
           this.source = response.source;
         });
