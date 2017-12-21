@@ -14,7 +14,7 @@
               span(v-for="(feature, index) of data.value" v-bind:key="data.value.key")
                 a(@click.stop="showDialog(feature.key, feature.subclass_progression)" style="cursor: pointer;" v-bind:class="colors.link").
                   {{ feature.display }}
-                span(v-if="data.value.length > index + 1") ,
+                span(v-if="data.value.length > index + 1") ,&nbsp;
             span(v-else) {{ data.value }}
 </template>
 
