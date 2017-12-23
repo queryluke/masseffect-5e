@@ -2,16 +2,31 @@
 
 ## v0.4.0
 
+### General
+
+#### Encumbrance & Carry Capacity
+Bringing this rule in line with 5th Edition. Lifting and Carrying rules added. Includes a limit on number of weapons you may carry
+and armor matrix has minimum strength scores. In addition, an Encumbrance Variant rule is added that uses weapon & armor weight.
+
+### Armor Mods
+* Added 2 Armor Mods (Hip Holster & Back Holster) that increase weapon slots or carry weight.
+
 ### Classes
 Updates saving throws:
 * Adept: CON & CHA => WIS & CHA
 * Sentinel: WIS & CHA => CON & CHA
 * Vanguard: CON & STR => WIS & STR
 
+#### Engineers
+* Demolisher's Advanced Weapon Holsters reworded to account for new weight/encumbrance rules
+
 ### Races
 
 #### Salarians
 Added amphibious trait
+
+#### Quarians
+Cybernetic Augmentation reworded to account for new weight/encumbrance rules
 
 ### Spell/Power changes
 
@@ -72,9 +87,10 @@ Added amphibious trait
 * Siege Pulse
   * Damage reduced 2d10 => 2d4
 
+### Armor Mods
 
-
-
+* Archon AI now only regens spell slots on a short rest
+* Battle Telemetry, now only increases the tech regen die type (does not regen spell slots)
 
 
 ## v0.3.0

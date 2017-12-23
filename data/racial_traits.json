@@ -1,5 +1,5 @@
 {
-  "updated": "December 21, 2017 @  2:38 PM",
+  "updated": "December 23, 2017 @ 10:36 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRETKGL62kEZPA69PhA3AGMiVeHOWBRkTMDL3f_K-oajryEjwdq7fRAj-qfIusPsLMiIqmB12D4Zun8/pubhtml",
   "data": [
     {
@@ -128,7 +128,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You have a minor cybernetic augmentation. Choose one of the following: Darkvision, speed increased by 2m, proficiency in Perception, or increase carry capacity by 5."
+          "data": "You have a minor cybernetic augmentation. Choose one of the following: Darkvision, speed increased by 2m, proficiency in Perception, add 2 to your STR score when calculating minimum STR for weapons and armor (if using the Encumbrance Variant rule, add 5 to your STR when calculating carry weight)."
         }
       ],
       "asari": null,
@@ -144,7 +144,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "id": "cybernetic_augmentation",
-      "description_text_dump": "YouhaveaminorcyberneticaugmentationChooseoneofthefollowingDarkvisionspeedincreasedby2mproficiencyinPerceptionorincreasecarrycapacityby5"
+      "description_text_dump": "YouhaveaminorcyberneticaugmentationChooseoneofthefollowingDarkvisionspeedincreasedby2mproficiencyinPerceptionadd2toyourSTRscorewhencalculatingminimumSTRforweaponsandarmorifusingtheEncumbranceVariantruleadd5toyourSTRwhencalculatingcarryweight"
     },
     {
       "name": "Dark Vision",

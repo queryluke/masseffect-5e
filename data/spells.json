@@ -1,5 +1,5 @@
 {
-  "updated": "December 21, 2017 @ 10:25 AM",
+  "updated": "December 23, 2017 @ 10:15 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSJCBzka3M8w7NvjB7HmV4BmwVcX7wyzFHg8K9YUTZvB8Tdl6_t_FLhQw6EIjm3eEyduIlLxxNwcweq/pubhtml",
   "data": [
     {
@@ -1634,6 +1634,11 @@
           "id": 3,
           "type": "line",
           "data": "This feature's damage increases by 2d12 when you reach 5th level (4d12), 11th level (6d12), 17th level (8d12)"
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "Infiltrators may learn or advance this feature instead of gaining a tech power."
         }
       ],
       "adv_option_1": "Bleeding Blades : On a hit, the target takes an additional 3[dd] piercing damage at the start of their turn. This damage bypasses shields.",
@@ -1660,7 +1665,7 @@
       "adept": null,
       "vanguard": null,
       "sentinel": null,
-      "infiltrator": null,
+      "infiltrator": "x",
       "engineer": null,
       "soldier": "x",
       "id": "ballistic_blades",
@@ -1668,8 +1673,8 @@
         "Bleeding Blades : On a hit, the target takes an additional 3d12 piercing damage at the start of their turn. This damage bypasses shields.",
         "Exploding blades : On a hit, the target takes and additional 3d12 thunder damage and must pass a Constitution saving throw (DC 8 + proficiency bonus) or becomes {stunned} until the end of your next turn."
       ],
-      "class_list": "Soldier",
-      "mechanic_text_dump": "AsanAttackactionfireasalvoofbladesatatargetcreatureorobjectyoucanseewithinrangeMakearangedweaponattackyouaddyourproficiencybonustothisrollOnahitthetargettakes2d12piercingdamageYoumustspendashortorlongrestreloadingthearmguardbeforeyoucanthisabilityagainThisfeaturesdamageincreasesby2d12whenyoureach5thlevel4d1211thlevel6d1217thlevel8d12"
+      "class_list": "Infiltrator, Soldier",
+      "mechanic_text_dump": "AsanAttackactionfireasalvoofbladesatatargetcreatureorobjectyoucanseewithinrangeMakearangedweaponattackyouaddyourproficiencybonustothisrollOnahitthetargettakes2d12piercingdamageYoumustspendashortorlongrestreloadingthearmguardbeforeyoucanthisabilityagainThisfeaturesdamageincreasesby2d12whenyoureach5thlevel4d1211thlevel6d1217thlevel8d12Infiltratorsmaylearnoradvancethisfeatureinsteadofgainingatechpower"
     },
     {
       "name": "Beehive",
@@ -1694,6 +1699,11 @@
           "id": 4,
           "type": "line",
           "data": "This feature's damage increases by 2d6 when you reach 5th level (4d6), 11th level (6d6), 17th level (8d6)"
+        },
+        {
+          "id": 5,
+          "type": "line",
+          "data": "Infiltrators may learn or advance this feature instead of gaining a tech power."
         }
       ],
       "adv_option_1": "Anti-Flesh : The Beehive deals double damage to unprotected, organic targets.",
@@ -1720,7 +1730,7 @@
       "adept": null,
       "vanguard": null,
       "sentinel": null,
-      "infiltrator": null,
+      "infiltrator": "x",
       "engineer": null,
       "soldier": "x",
       "id": "beehive",
@@ -1728,8 +1738,8 @@
         "Anti-Flesh : The Beehive deals double damage to unprotected, organic targets.",
         "Remote Deploy : As an action you can setup your Beehive in a separate location. Once it is deployed you can use an Attack action to fire it."
       ],
-      "class_list": "Soldier",
-      "mechanic_text_dump": "AsanAttackactionyouequipandfireyourantipersonnelcannoncolloquiallycalledthebeehiveItejectssuperheatedshrapnelina6mconeoriginatingfromyouEachcreaturecaughtintheblastmustmakeDexteritysavingthrowOnafailedsaveacreaturetakes2d6piercingdamageorhalfasmuchdamageonasuccessfuloneTheDCis8proficiencybonusDEXmodifierYoumustspendashortorlongrestreconfiguringthecannontouseitagainThisfeaturesdamageincreasesby2d6whenyoureach5thlevel4d611thlevel6d617thlevel8d6"
+      "class_list": "Infiltrator, Soldier",
+      "mechanic_text_dump": "AsanAttackactionyouequipandfireyourantipersonnelcannoncolloquiallycalledthebeehiveItejectssuperheatedshrapnelina6mconeoriginatingfromyouEachcreaturecaughtintheblastmustmakeDexteritysavingthrowOnafailedsaveacreaturetakes2d6piercingdamageorhalfasmuchdamageonasuccessfuloneTheDCis8proficiencybonusDEXmodifierYoumustspendashortorlongrestreconfiguringthecannontouseitagainThisfeaturesdamageincreasesby2d6whenyoureach5thlevel4d611thlevel6d617thlevel8d6Infiltratorsmaylearnoradvancethisfeatureinsteadofgainingatechpower"
     },
     {
       "name": "Concussive Shot",
@@ -1821,7 +1831,7 @@
       "adept": null,
       "vanguard": null,
       "sentinel": null,
-      "infiltrator": "x",
+      "infiltrator": null,
       "engineer": null,
       "soldier": "x",
       "id": "fortification",
@@ -1829,7 +1839,7 @@
         "Lasting Fortification : Fortification lasts an additional turn.",
         "Venting Fortification : When fortification ends, the currents are sent to your gauntlets. Your next Omni-tool attack is made at advantage and deals an additional 2d10 bludgeoning damage."
       ],
-      "class_list": "Infiltrator, Soldier",
+      "class_list": "Soldier",
       "mechanic_text_dump": "AsareactionreinforceyourarmorusingprotectiveFoucaultcurrentsUntilthestartofyournextturnyouhavea5bonustoACincludingagainstthetriggeringattackYoumustfinishashortorlongrestbeforeyoucanusethisabilityagain"
     },
     {
@@ -2015,6 +2025,11 @@
           "id": 3,
           "type": "line",
           "data": "This feature's secondary damage effect increases by 3d12 when you reach 5th level (5d12), 11th level (8d12), 17th level (11d12)"
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "Infiltrators may learn or advance this feature instead of gaining a tech power."
         }
       ],
       "adv_option_1": "Paralyze : A creature that fails the Constitution saving throw becomes {paralyzed} until the end of your next turn.",
@@ -2040,7 +2055,7 @@
       "detonates": null,
       "primes": null,
       "adept": null,
-      "vanguard": "x",
+      "vanguard": null,
       "sentinel": null,
       "infiltrator": "x",
       "engineer": null,
@@ -2050,8 +2065,8 @@
         "Paralyze : A creature that fails the Constitution saving throw becomes {paralyzed} until the end of your next turn.",
         "Improved Poison : The creature has disadvantage on its Constitution saving throw."
       ],
-      "class_list": "Infiltrator, Soldier, Vanguard",
-      "mechanic_text_dump": "YourOmnitoolisequippedwithamicroscopicpoisontippedbladethatisabletopiecethroughshieldsandarmorAsanAttackactionmakearangedweaponattackonacreatureyoucanseewithinrangeyouaddyourproficiencybonustothisrollOnahitthetargettakes1d12poisondamageandmustmakeonaConstitutionsavingthrowDC8proficiencybonusOnafailedsavethetargettakes2d12poisondamageorhalfasmuchdamageonasuccessfuloneIfatargetwouldbereducedto0hitpointsbythisdamageitisreducedto1hitpointinsteadandispoisonedAlldamagecausedbyNightshadeBladebypassesshieldsYoumustbewithinmeleerangeanduseanactiontorecoverthebladeThisfeaturessecondarydamageeffectincreasesby3d12whenyoureach5thlevel5d1211thlevel8d1217thlevel11d12"
+      "class_list": "Infiltrator, Soldier",
+      "mechanic_text_dump": "YourOmnitoolisequippedwithamicroscopicpoisontippedbladethatisabletopiecethroughshieldsandarmorAsanAttackactionmakearangedweaponattackonacreatureyoucanseewithinrangeyouaddyourproficiencybonustothisrollOnahitthetargettakes1d12poisondamageandmustmakeonaConstitutionsavingthrowDC8proficiencybonusOnafailedsavethetargettakes2d12poisondamageorhalfasmuchdamageonasuccessfuloneIfatargetwouldbereducedto0hitpointsbythisdamageitisreducedto1hitpointinsteadandispoisonedAlldamagecausedbyNightshadeBladebypassesshieldsYoumustbewithinmeleerangeanduseanactiontorecoverthebladeThisfeaturessecondarydamageeffectincreasesby3d12whenyoureach5thlevel5d1211thlevel8d1217thlevel11d12Infiltratorsmaylearnoradvancethisfeatureinsteadofgainingatechpower"
     },
     {
       "name": "Siege Pulse",
@@ -2112,6 +2127,11 @@
           "id": 1,
           "type": "line",
           "data": "As a bonus action, inject yourself with a stimulant pack. You have advantage on the next Dexterity, Strength, or Constitution saving throw. You must finish a short or long rest before you can use this feature again."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Infiltrators may learn or advance this feature instead of gaining a tech power."
         }
       ],
       "adv_option_1": "Friendly : You can inject a creature within melee range with the stimulant pack",
@@ -2147,7 +2167,7 @@
         "Improved Attack : You can choose to apply the advantage to your next damage roll"
       ],
       "class_list": "Infiltrator, Soldier",
-      "mechanic_text_dump": "AsabonusactioninjectyourselfwithastimulantpackYouhaveadvantageonthenextDexterityStrengthorConstitutionsavingthrowYoumustfinishashortorlongrestbeforeyoucanusethisfeatureagain"
+      "mechanic_text_dump": "AsabonusactioninjectyourselfwithastimulantpackYouhaveadvantageonthenextDexterityStrengthorConstitutionsavingthrowYoumustfinishashortorlongrestbeforeyoucanusethisfeatureagainInfiltratorsmaylearnoradvancethisfeatureinsteadofgainingatechpower"
     },
     {
       "name": "Tactical Scan",
@@ -2162,6 +2182,11 @@
           "id": 2,
           "type": "line",
           "data": "You may use this ability three times before you finish a short or long rest."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Infiltrators may learn or advance this feature instead of gaining a tech power."
         }
       ],
       "adv_option_1": "Area Scan : Scan a 6m cube. You gain the advantage and critical bonus on all creatures within the area.",
@@ -2197,7 +2222,7 @@
         "Telegraphed Attacks : You're hud alerts you when the creature is about to attack. It has disadvantage on ranged and melee attacks and you have advantage on any saving throws caused by spells and abilities of the creature."
       ],
       "class_list": "Infiltrator, Soldier",
-      "mechanic_text_dump": "SpendyouractionscanningacreatureyourcanseewithyouromnitoolstudyingitsmovementandrevealingweaknessesYourattacksagainstthetargethaveadvantageandnatural19and20sareconsideredcriticalhitsThisabilitycanstackwithothercriticalimprovingpowersYoumayusethisabilitythreetimesbeforeyoufinishashortorlongrest"
+      "mechanic_text_dump": "SpendyouractionscanningacreatureyourcanseewithyouromnitoolstudyingitsmovementandrevealingweaknessesYourattacksagainstthetargethaveadvantageandnatural19and20sareconsideredcriticalhitsThisabilitycanstackwithothercriticalimprovingpowersYoumayusethisabilitythreetimesbeforeyoufinishashortorlongrestInfiltratorsmaylearnoradvancethisfeatureinsteadofgainingatechpower"
     },
     {
       "name": "Turbocharge",

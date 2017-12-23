@@ -1,5 +1,5 @@
 {
-  "updated": "December 21, 2017 @  1:42 PM",
+  "updated": "December 23, 2017 @ 10:33 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -49,11 +49,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You've outfitted your armor with special rigs that make carrying weapons a cinch. Your carry capacity is doubled."
+          "data": "You've outfitted your armor with special rigs that make carrying weapons a cinch. You can have up to 4 weapons equipped. If using the Encumbrance (Variant) rule, your carry weight is doubled."
         }
       ],
       "id": "advanced_weapon_holsters",
-      "mechanic_text_dump": "YouveoutfittedyourarmorwithspecialrigsthatmakecarryingweaponsacinchYourcarrycapacityisdoubled"
+      "mechanic_text_dump": "YouveoutfittedyourarmorwithspecialrigsthatmakecarryingweaponsacinchYoucanhaveupto4weaponsequippedIfusingtheEncumbranceVariantruleyourcarryweightisdoubled"
     },
     {
       "name": "Assault Armor",
@@ -951,7 +951,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You can unfailingly create false identities for yourself, but you can't establish an identity that belongs to someone else. For example, you might establish yourself within mercenary gang to gain access to their supplies or armory, or a rich colonist to gain access to a fancy party. Thereafter, if you adopt the new identity as a disguise, other creatures believe you to be that person until given an obvious reason not to. You have advantage on persuasion rolls when using this disguise, and advantage on deception rolls on an opposed insight check."
+          "data": "You can unfailingly create false identities for yourself, but you can't establish an identity that belongs to someone else. For example, you might establish yourself within mercenary gang to gain access to their supplies or armory, or a rich colonist to gain access to a fancy party. Thereafter, if you adopt the new identity as a disguise, other creatures believe you to be that person until given an obvious reason not to. You have advantage on persuasion rolls when using this disguise and advantage on deception rolls on an opposed insight check."
         }
       ],
       "id": "infiltration",

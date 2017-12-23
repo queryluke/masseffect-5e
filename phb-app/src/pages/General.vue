@@ -5,6 +5,73 @@
       Overall, this system attempts to keep things in line with D&D 5e rules as much as possible. Some system
       additions are pretty significant, like Shield Points. But most are minor, like the addition of a few more conditions.
       Honestly, sometimes the change might seem pointless, like the conversion from feet to meters...but I did it anyway.
+    h3.display-2.mb-2 Rule Changes
+    rule-card
+      span(slot="header") Lifting and Carrying
+      template(slot="text")
+        p.
+          Your Strength score determines the amount of weight you can bear. The following terms define what you can lift or carry.
+          These weights have been adjusted from 5th Edition to work with kilograms (kg) instead of pounds (lbs).
+        dl
+          dt Carry Capacity
+          dd.
+            You can carry capacity is your Strength score multiplied by 5. If you are wearing armor, your carry capacity
+            is your Strength score multiplied by 10 (due to the built-in servos and pneumatics). This score is not effected
+            by weapons or armor (see below).
+          dt Push, Drag, Lift
+          dd.
+            You can push, drag, or lift a weight in kgs up to twice your carrying capacity or 10 (20 w/ armor) times your Strength score.
+            While pushing or dragging weight in excess of your carrying capacity, your speed drops to 2 meters.
+          dt Size & Strength
+          dd.
+            Larger creatures can bear more weight, whereas Tiny creatures can carry less. For each size category above Medium,
+            double the creature's carrying capacity and the amount it can push, drag, or lift. For a Tiny creature, halve these weights.
+          dt Weapon Slots
+          dd.
+            You have 2 weapon slots and can equip a single weapon in either slot. Weapons equipped in a slot do not affect your carry capacity.
+            Any additional weapons you pick up count against your Carry Capacity.
+          dt Armor
+          dd The armor matrix has a minimum Strength score for the combination of armor types.
+        p.headline.mt-2 Variant: Encumbrance
+        p.
+          The lifting an carrying rules attempt to keep the simplicity of 5th edition, with the added restrictions of weapon capacity.
+          Here is a variant if you are looking for more detailed rules for determining how a character is hindered by the weight of equipment.
+          When you use this variant, ignore the minimum Strength column of the Armor table.
+        p Your #[strong carry weight] is equal to your Stength score.
+        p.
+          Each weapon and armor piece has a weight. If your total weight from all weapons and armor is in excess of your
+          carry weight, you are #[strong encumbered], which means your speed drops by 4m.
+        p.
+          If your total weight from all weapons and armor is in excess of Strength score + 10,
+          you are instead heavily encumbered, which means your speed drops by 10m and you have disadvantage on ability
+          checks, attack rolls, and saving throws that use Strength, Dexterity, or Constitution.
+    rule-card
+      span(slot="header") Distance
+      template(slot="text")
+        p.
+          Mass Effect 5e uses meters instead of feet. Why? Because this is set in the future and it's sci-fi and using metric
+          make more sense. The general rule of thumb is that 5ft = 2m. Or, if you're using a playmat, 2m = 1 space.
+    rule-card
+      span(slot="header") Creature Types
+      template(slot="text")
+        p.
+          There aren't enough spells and powers to justify making bonuses like "double damage to beast". In addition, many of the 5th Edition
+          creature types don't make sense in the sci-fi setting (celestials, undead, fey, elemental, etc.). Instead there are only
+          three creatue types: Organic, Synthetic, and Synthorganic.
+        p.
+          Some abilities only effect organic or synthetic creatures (or deal increased damage to that type), as notated in the ability text.
+          Synthorganic creatures are considered both synthetic and organic.
+    rule-card
+      span(slot="header") Damage Types
+      template(slot="text")
+        p.
+          Since this is the future and there isn't really "magic", some damage types need to be reconceptualized. If the damage type is not listed, its concept is unchanged.
+        v-list(two-line)
+          template(v-for="dmg in damage_types")
+            v-list-tile-content
+              v-list-tile-title {{ dmg.type }}
+              v-list-tile-sub-title {{ dmg.note }}
+    h3.display-2.mb-2 Rule Additions
     rule-card
       span(slot="header") Shields
       template(slot="text")
@@ -58,35 +125,12 @@
           action, talking back to an officer for Renegade. Whereas 5 points is a major action, i.e., deciding to save or
           wipeout research that has potential destructiveness.
     rule-card
-      span(slot="header") Damage Types
-      template(slot="text")
-        p.
-          Since this is the future and there isn't really "magic", some damage types need to be reconceptualized.
-        v-list(two-line)
-          template(v-for="dmg in damage_types")
-            v-list-tile-content
-              v-list-tile-title {{ dmg.type }}
-              v-list-tile-sub-title {{ dmg.note }}
-    rule-card
-      span(slot="header") Creature Types
-      template(slot="text")
-        p.
-          Since AIs and Reapers exist in Mass Effect, there are 3 types of creatures: Organic, Synthetic, and Synthorganic.
-          Some abilities only effect organic or synthetic creatures, as notated in the ability text. Synthorganic creatures
-          are considered both synthetic and organic.
-    rule-card
-      span(slot="header") Distance
-      template(slot="text")
-        p.
-          I use meters instead of feet. Why? Because this is set in the future and it's sci-fi and using metric just seems to
-          make more sense. The general rule of thumb is that 5ft = 2m. Or, if you're using a playmat, 2m = 1 space.
-    rule-card
       span(slot="header") Sexy Level
       template(slot="text")
         p.
-          WTF is sexy level? ... A joke, but after reading this very
-          #[a(href="http://www.polygon.com/2017/3/20/14980436/mass-effect-sexiest-character-aliens-ranked" target="_blank") scientific article],
-          I decided to make it canon.
+          #[abbr(title="What the frack") WTF] is sexy level? ... A joke. But please read this very
+          #[a(href="http://www.polygon.com/2017/3/20/14980436/mass-effect-sexiest-character-aliens-ranked" target="_blank") scientific article]
+          for more information.
 </template>
 
 <script>
@@ -97,18 +141,11 @@
     data() {
       return {
         damage_types: [
-          { type: 'Acid', note: 'Unchanged'},
-          { type: 'Bludgeoning', note: 'Unchanged' },
-          { type: 'Cold', note: 'Unchanged' },
-          { type: 'Fire', note: 'Unchanged' },
           { type: 'Force', note: 'One of the primary biotic damage types. Mass Effect fields that pummel, pierce, or apply pressure deal force damage.' },
-          { type: 'Lightning', note: 'Think shock damage. Any damage done by an electrical discharge or source. Deals double damage to shields.' },
+          { type: 'Lightning', note: 'Shock damage. Any damage done by an electrical discharge or source. Deals double damage to shields.' },
           { type: 'Necrotic', note: 'The second biotic damage type. Necrotic damage uses dark energy or tiny Mass Effect fields targeted inside a creatre, crippling them from within' },
-          { type: 'Piercing', note: 'Unchanged' },
-          { type: 'Poison', note: 'Unchanged' },
-          { type: 'Psychic', note: 'More likely a shock to the nervous system, rather than fear or mental damage. But the latter is possible.' },
-          { type: 'Radiant', note: 'Think radiation or damage on a nuclear level, rather than divine light.' },
-          { type: 'Slashing', note: 'Unchanged' },
+          { type: 'Psychic', note: 'A shock to the nervous system, rather than fear or mental damage. But the latter is possible.' },
+          { type: 'Radiant', note: 'Radiation or damage on a nuclear level, rather than divine light.' },
           { type: 'Thunder', note: 'Shockwaves and explosions. Thunder damage is primarily caused by grenades.' },
         ]
       }
