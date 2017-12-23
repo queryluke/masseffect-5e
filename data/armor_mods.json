@@ -1,5 +1,5 @@
 {
-  "updated": "November 17, 2017 @ 12:15 PM",
+  "updated": "December 23, 2017 @ 10:08 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRIPzbOBXOdWbaY779un1EV3HyacCV3fe15kHW4ABjMV0yHi3GZHVqnbiOVSQ_Dgh1whimOITGOXHkn/pubhtml",
   "data": [
     {
@@ -307,8 +307,8 @@
       "brief": "power regen",
       "piece": "Arms",
       "flavor": "Battle telemetry systems increase the efficiency of your biotic amplifiers and omni-tool.",
-      "mechanic": "Regain 5 tech points or 1 spell slot on a short rest.",
-      "cost": "8000",
+      "mechanic": "Increase your tech regen die type by 1 (e.g., from a d4 to d6). Max d12.",
+      "cost": "10000",
       "manu": "Rosenkov Materials",
       "id": "battle_telemetry"
     },
@@ -317,8 +317,8 @@
       "brief": "power regen",
       "piece": "Chest",
       "flavor": "Battle telemetry systems increase the efficiency of your biotic amplifiers and omni-tool.",
-      "mechanic": "Regain 10 tech points or 2 spell slots on a short rest.",
-      "cost": "16000",
+      "mechanic": "Increase your tech regen die type by 1 (e.g., from a d4 to d6). Max d12.",
+      "cost": "10000",
       "manu": "Rosenkov Materials",
       "id": "battle_telemetry"
     },
@@ -326,8 +326,8 @@
       "name": "Archon AI",
       "brief": "power regen",
       "piece": "Head",
-      "flavor": "An efficiency algorithm to balance processing power for biotic amps and omni-tools. A heads-up display and voice command software allows users to micromanage the systems, reducing the cooldown period between energy expenditures.",
-      "mechanic": "Gain one half of your tech points and spell slots (rounded down) on a short rest.",
+      "flavor": "An efficiency algorithm to balance processing power for biotic amps. A heads-up display and voice command software allows users to micromanage the systems, reducing the cooldown period between energy expenditures.",
+      "mechanic": "On a short rest, gain a number of spell slots equal to half your level (rounded down, minimum 1) by spell slot level. For a lvl 10 Adept, you could gain five 1st-level slots OR two 2nd-level slots & one 1st-level slot OR one 3rd-level slot & one 2nd-level slot, etc.",
       "cost": "20000",
       "manu": "Rosenkov Materials",
       "id": "archon_ai"
