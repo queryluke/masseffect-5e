@@ -1,5 +1,5 @@
 {
-  "updated": "December 23, 2017 @ 10:08 AM",
+  "updated": "December 23, 2017 @ 12:11 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRIPzbOBXOdWbaY779un1EV3HyacCV3fe15kHW4ABjMV0yHi3GZHVqnbiOVSQ_Dgh1whimOITGOXHkn/pubhtml",
   "data": [
     {
@@ -171,6 +171,26 @@
       "cost": "500",
       "manu": "Elkoss Combine",
       "id": "offhand_ammo_pack"
+    },
+    {
+      "name": "Hip Holster",
+      "brief": "capacity: weapon",
+      "piece": "Legs",
+      "flavor": "An additional hip holster designed to hold a small weapon.",
+      "mechanic": "Choose Heavy Pistol, SMG, or Melee weapon with a Min STR score of 11 or less. Gain an additional weapon slot for that specific weapon type. If using the Variant: Encumbrance rule, increase your Carry Weight by 5.",
+      "cost": "2000",
+      "manu": "Any",
+      "id": "hip_holster"
+    },
+    {
+      "name": "Back Holster",
+      "brief": "capacity: weapon",
+      "piece": "Chest",
+      "flavor": "A back holster designed to hold a larger weapon.",
+      "mechanic": "Choose Assault Rifle, Shotgun, Sniper Rifle or Melee weapon. Gain an additional weapon slot for that specific weapon type. If using the Variant: Encumbrance rule, increase your Carry Weight by 10.",
+      "cost": "4000",
+      "manu": "Any",
+      "id": "back_holster"
     },
     {
       "name": "Amplifier Plates",
