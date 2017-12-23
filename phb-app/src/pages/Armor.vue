@@ -159,30 +159,27 @@
           v-btn(to="/armor/mods") Mod List
         div.hr
         p.headline Example
-        ol.list
-          li.
-            You want a Medium-Type, Head Armor for your Drell. On the table, the base cose for Medium + Head is 4,000 credits.
-          li.
-            But this is for a Drell which is not a standard race for medium armor. So it will cost an additional 5,000 credits to get
-            this customized.
-          li.
-            You want to add 2 mods to the helmet, but a Head piece only starts with one mod slot. It will cost another 20,000 credits to upgrade
-            the helmet.
-          li.
-            Finally, you can add your mods (link above). You select the Umbra AI (8,000) and the Voice
-            Modulator (2,000).
-          li.
-            So the grand total for your custom head piece is: 39,000 credits.
-        p.headline.mt-3 Customizing Armor
+        p Medium Head Armor w/ 2 mod slots for a Drell
+        table.table
+          tbody
+            tr
+              td Medium Head
+              td 4000
+            tr
+              td Additional Mod Slot (starts with 1)
+              td 20000
+            tr
+              td Customized for Drell (not a standard race for Medium armor)
+              td 5000
+            tr
+              td #[strong Total]
+              td #[strong 29000 credits]
+        p.headline.mt-3 Looted armor
         p.
-          Instead, you might find it cheaper to take what you can get from the battlefield and customize it. If the in this example Drell got
-          a Medium Head piece off the battlefield with 2 mod slots, he could spend 15,000 credits to add the 2 mods and customize it
-          for his race.
-        p
-          strong GM Note:
-          span.
-            When awarding Armor, be sure to say the number of mod slots it came with. Only premium quality armor would have
-            more that the starting amount in the table above. For really cheap armor, you can remove mod slots.
+          You can also apply custom mods, additional mod slots, and race customizations to armor you've looted from the battlefield. The same prices apply.
+        v-alert(type="info" v-bind:value="true").
+          #[strong GM Note]: When awarding Armor, be sure to say the number of mod slots it came with. Only premium quality armor would have
+          more than the starting amount in the table above. For really cheap armor, you can remove mod slots completely.
 </template>
 
 <script>
