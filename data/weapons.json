@@ -1,5 +1,5 @@
 {
-  "updated": "December 21, 2017 @  3:49 PM",
+  "updated": "December 27, 2017 @ 12:58 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSq70x_GZuDKcELgX8k_7Hd6nLGu3DoIEdDwP-YEGjUU-ghGc7ot_Q7140FZwGbEalHgzPwVm4BN8y_/pubhtml",
   "data": [
     {
@@ -13,7 +13,7 @@
       "damage": "8",
       "range": "20m",
       "rare": null,
-      "tags": "Charge, Semi-Automatic",
+      "tags": "Charge, Double Tap",
       "notes": [
         {
           "id": 1,
@@ -55,7 +55,7 @@
       "damage": "8",
       "range": "30m",
       "rare": "x",
-      "tags": "Arc, Charge, Unique, Semi-Automatic",
+      "tags": "Arc, Charge, Unique, Double Tap",
       "notes": [
 
       ],
@@ -120,7 +120,7 @@
       "damage": "10",
       "range": "2m",
       "rare": null,
-      "tags": "Two-handed, Hip Fire, Semi-Automatic",
+      "tags": "Two-handed, Hip Fire, Double Tap",
       "notes": [
 
       ],
@@ -510,7 +510,7 @@
       "damage": "10",
       "range": "80m",
       "rare": null,
-      "tags": "Two-handed, Hip Fire, Semi-Automatic",
+      "tags": "Two-handed, Hip Fire, Double Tap",
       "notes": [
         {
           "id": 1,
@@ -533,7 +533,7 @@
       "damage": "6",
       "range": "20m",
       "rare": null,
-      "tags": "Silent, Semi-Automatic",
+      "tags": "Silent, Double Tap",
       "notes": [
 
       ],
@@ -590,7 +590,7 @@
       "damage": "6",
       "range": "60m",
       "rare": null,
-      "tags": "Two-handed, Semi-Automatic, Hip Fire",
+      "tags": "Two-handed, Double Tap, Hip Fire",
       "notes": [
 
       ],
@@ -685,7 +685,7 @@
       "damage": "4",
       "range": "4m",
       "rare": null,
-      "tags": "Two-handed, Hip Fire, Semi-Automatic",
+      "tags": "Two-handed, Hip Fire, Double Tap",
       "notes": [
 
       ],
@@ -723,7 +723,7 @@
       "damage": "4",
       "range": "20m",
       "rare": null,
-      "tags": "Semi-Automatic",
+      "tags": "Double Tap",
       "notes": [
 
       ],
@@ -761,7 +761,7 @@
       "damage": "8",
       "range": "10m",
       "rare": "x",
-      "tags": "Semi-Automatic",
+      "tags": "Double Tap",
       "notes": [
 
       ],
@@ -780,7 +780,7 @@
       "damage": "8",
       "range": "10m",
       "rare": null,
-      "tags": "Two-handed, Semi-Automatic",
+      "tags": "Two-handed, Double Tap",
       "notes": [
         {
           "id": 1,
@@ -845,7 +845,7 @@
       "damage": "4",
       "range": "20m",
       "rare": null,
-      "tags": "Semi-Automatic, Hip Fire",
+      "tags": "Double Tap, Hip Fire",
       "notes": [
 
       ],
@@ -929,7 +929,7 @@
       "damage": "8",
       "range": "30m",
       "rare": null,
-      "tags": "Semi-Automatic",
+      "tags": "Double Tap",
       "notes": [
 
       ],
@@ -990,7 +990,7 @@
       "damage": "10",
       "range": "30m",
       "rare": "x",
-      "tags": "Semi-Automatic",
+      "tags": "Double Tap",
       "notes": [
 
       ],
@@ -1108,7 +1108,7 @@
       "damage": "6",
       "range": "40m",
       "rare": null,
-      "tags": "Two-handed, Semi-Automatic",
+      "tags": "Two-handed, Double Tap",
       "notes": [
 
       ],
@@ -1127,7 +1127,7 @@
       "damage": "8",
       "range": "100m",
       "rare": null,
-      "tags": "Two-handed, Semi-Automatic",
+      "tags": "Two-handed, Double Tap",
       "notes": [
         {
           "id": 1,
@@ -1173,7 +1173,7 @@
       "damage": "10",
       "range": "50m",
       "rare": "x",
-      "tags": "Two-handed, Semi-Automatic",
+      "tags": "Two-handed, Double Tap",
       "notes": [
         {
           "id": 1,
@@ -1206,7 +1206,7 @@
       "damage": "6",
       "range": "8m",
       "rare": "x",
-      "tags": "Two-handed, Hip Fire, Semi-Automatic",
+      "tags": "Two-handed, Hip Fire, Double Tap",
       "notes": [
 
       ],
@@ -1309,7 +1309,7 @@
       "damage": "8",
       "range": "100m",
       "rare": null,
-      "tags": "Two-handed, Semi-Automatic",
+      "tags": "Two-handed, Double Tap",
       "notes": [
         {
           "id": 1,
@@ -1458,7 +1458,7 @@
       "damage": "8",
       "range": "20m",
       "rare": "x",
-      "tags": "Unique, Semi-Automatic",
+      "tags": "Unique, Double Tap",
       "notes": [
         {
           "id": 1,
