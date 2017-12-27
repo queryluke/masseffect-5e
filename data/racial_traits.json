@@ -1,5 +1,5 @@
 {
-  "updated": "December 27, 2017 @ 11:53 AM",
+  "updated": "December 27, 2017 @  3:40 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRETKGL62kEZPA69PhA3AGMiVeHOWBRkTMDL3f_K-oajryEjwdq7fRAj-qfIusPsLMiIqmB12D4Zun8/pubhtml",
   "data": [
     {
@@ -104,7 +104,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Your construction incorporates advanced armor plating, granting you a +1 bonus to Armor Class."
+          "data": "Your construction incorporates advanced armor plating. Your AC is equal to 13 + your Dexterity modifier."
         }
       ],
       "asari": null,
@@ -120,7 +120,7 @@
       "vorcha": null,
       "unshackled_ai": "x",
       "id": "composite_plating",
-      "description_text_dump": "Yourconstructionincorporatesadvancedarmorplatinggrantingyoua1bonustoArmorClass"
+      "description_text_dump": "YourconstructionincorporatesadvancedarmorplatingYourACisequalto13yourDexteritymodifier"
     },
     {
       "name": "Cybernetic Augmentation",
@@ -380,14 +380,14 @@
       "batarian": null,
       "drell": "x",
       "human": null,
-      "geth": null,
+      "geth": "x",
       "krogan": null,
       "quarian": null,
       "salarian": null,
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "unshackled_ai": null,
+      "unshackled_ai": "x",
       "id": "keen_senses",
       "description_text_dump": "YouhaveproficiencyinthePerceptionskill"
     },
@@ -541,7 +541,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You have advantage on History, Engineering, Hacking, Medicine, and Nature checks."
+          "data": "You can recall with near-perfect clarity anything you ever seen or read. Choose one of the following skills, you have expertise in it (add double your proficiency bonus): Engineering, Hacking, History, Medicine, Nature, or Piloting."
         }
       ],
       "asari": null,
@@ -557,7 +557,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "id": "photographic_memory",
-      "description_text_dump": "YouhaveadvantageonHistoryEngineeringHackingMedicineandNaturechecks"
+      "description_text_dump": "YoucanrecallwithnearperfectclarityanythingyoueverseenorreadChooseoneofthefollowingskillsyouhaveexpertiseinitadddoubleyourproficiencybonusEngineeringHackingHistoryMedicineNatureorPiloting"
     },
     {
       "name": "Rage",

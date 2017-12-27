@@ -309,7 +309,7 @@ end
   {
     type: 'races',
     url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQI4F-wI2gwN395GApB347yPb1PixjOtOqZ0qoBYw7d57MPETHS40ZjIy1-DIfZf06PUwrspMiuAMlk/pub?gid=0&single=true&output=csv',
-    renderables: ['skills'],
+    renderables: ['skills','starting_equipment'],
     id: 'name'
   },
   {

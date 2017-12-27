@@ -22,11 +22,18 @@ Updates saving throws:
 
 ### Races
 
-#### Salarians
-Added amphibious trait
+#### Geth & Unshackled AI
+Composite plating updated, now AC is 13 + DEX modifier.
 
 #### Quarians
 Cybernetic Augmentation reworded to account for new weight/encumbrance rules
+
+#### Salarians
+Added amphibious trait
+Photographic memory changed. Instead of advantage in multiple skills, gain expertise in one skill.
+
+#### Krogan
+Removed the option to be an Engineer.
 
 ### Spell/Power changes
 
