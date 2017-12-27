@@ -1,5 +1,5 @@
 {
-  "updated": "December 21, 2017 @  3:56 PM",
+  "updated": "December 27, 2017 @ 12:08 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -14,8 +14,8 @@
       "weapon": "Choose one from Heavy Pistol, Melee, SMG",
       "saving_throw": "Wisdom, Charisma",
       "skill": "Choose three from Acrobatics, Insight, Intimidation, Medicine, Perception, Sleight of Hand, Stealth, and Survival",
-      "primary_ability": "Charisma",
-      "spellcasting_modifier": "Charisma",
+      "primary_ability": "Wisdom",
+      "spellcasting_modifier": "Wisdom",
       "d_d_similarities": "Wizard",
       "description": "Adepts are biotic specialists, capable of disabling and killing enemies with raw biotic power. While they lack advanced combat training, they are the best at defeating enemies without firing a shot. They are outfitted with L5x implants that can spawn a micro-singularity, damaging enemies and pulling them into the air.",
       "snippet": "The Adept is the ultimate biotic, able to affect the physical world with the power of the mind. ",
@@ -72,9 +72,9 @@
       "saving_throw": "Constitution, Charisma",
       "skill": "Choose three from Athletics, Engineering, Insight, Intimidation, Medicine, Perception, Performance, Persuasion, Survival",
       "primary_ability": "Wisdom",
-      "spellcasting_modifier": "Wisdom",
+      "spellcasting_modifier": "Intelligence & Wisdom",
       "d_d_similarities": "Paladin",
-      "description": "The Sentinel is able to combine tech and biotics to manipulate the environment, disable and track enemies, or defend the party. In addition to complete weapons training, Sentinels are equipped with an advanced shield that makes taking cover much less necessary and rushing their enemies much more productive.",
+      "description": "The Sentinel is able to combine tech and biotics to manipulate the environment, disable and track enemies, or defend the party. In addition to complete weapons training, Sentinels are equipped with an advanced shield that makes taking cover much less necessary and rushing their enemies much more productive. Because Sentinels have access to both biotic spells and tech powers, they have two Spellcasting Skills, Spell Attack Modifiers, and Spell Save DCs. Intelligence is the skill used for all tech powers, and Wisdom is used as the skill for all biotic powers.",
       "snippet": "Sentinels are unique, bringing both tech and biotic abilities to the battlefield.",
       "id": "sentinel"
     },
@@ -100,7 +100,7 @@
     {
       "name": "Vanguard",
       "omni_tool": "Biotic Punch",
-      "omni_tool_description": "Dash forward 6m, then make a melee attack. On a success, deal 1d8 force damage and gain 1 Barrier Tick.",
+      "omni_tool_description": "As an Attack action, dash forward 6m, then make a melee attack. On a success, deal force damage equal to 1d8 + your strength modifier and gain 1 Barrier Tick.",
       "hit_die": "1d6",
       "hit_points": "6 + your Constitution modifier",
       "max_shields": "2",

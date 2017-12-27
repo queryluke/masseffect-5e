@@ -30,6 +30,11 @@ Cybernetic Augmentation reworded to account for new weight/encumbrance rules
 
 ### Spell/Power changes
 
+* Biotic modifier is based on your Wisdom score.
+* Tech modifier is based on your Intelligence score.
+* Sentinels use both biotic and tech modifiers.
+
+
 #### Bitoic Spells
 * Annihilation Field
   * Damage increased 6d8 => 12d6
