@@ -1,5 +1,5 @@
 {
-  "updated": "December 27, 2017 @ 12:08 PM",
+  "updated": "December 27, 2017 @  3:41 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -19,6 +19,7 @@
       "d_d_similarities": "Wizard",
       "description": "Adepts are biotic specialists, capable of disabling and killing enemies with raw biotic power. While they lack advanced combat training, they are the best at defeating enemies without firing a shot. They are outfitted with L5x implants that can spawn a micro-singularity, damaging enemies and pulling them into the air.",
       "snippet": "The Adept is the ultimate biotic, able to affect the physical world with the power of the mind. ",
+      "starting_weapon": "M-3 Predator or M-25 Hornet",
       "id": "adept"
     },
     {
@@ -38,6 +39,7 @@
       "d_d_similarities": "Monk",
       "description": "The Engineer is a tech specialist, able to quickly and easily manipulate the environment with specific talents, and repair or modify technical equipment. Gameplay focus is on shaping the battlefield during combat, healing the party, and debuffing enemies (disabling weapons and lowering shields).",
       "snippet": "Engineers are tech specialists, the only class able to employ combat drones on the battlefield.",
+      "starting_weapon": "M-3 Predator, M-25 Hornet, or M-96 Mattock",
       "id": "engineer"
     },
     {
@@ -57,6 +59,7 @@
       "d_d_similarities": "Rogue",
       "description": "The Infiltrator is a tech-savvy warrior, able to win battles by quickly disabling and killing enemies. These soldiers focus on unlocking alternate routes, gaining access to good equipment, and obtaining an advantageous position over enemies in combat. ",
       "snippet": "Infiltrators are tech and combat specialists with the unique ability to cloak themselves.",
+      "starting_weapon": "M-3 Predator, M-25 Hornet, or M-13 Raptor",
       "id": "infiltrator"
     },
     {
@@ -76,6 +79,7 @@
       "d_d_similarities": "Paladin",
       "description": "The Sentinel is able to combine tech and biotics to manipulate the environment, disable and track enemies, or defend the party. In addition to complete weapons training, Sentinels are equipped with an advanced shield that makes taking cover much less necessary and rushing their enemies much more productive. Because Sentinels have access to both biotic spells and tech powers, they have two Spellcasting Skills, Spell Attack Modifiers, and Spell Save DCs. Intelligence is the skill used for all tech powers, and Wisdom is used as the skill for all biotic powers.",
       "snippet": "Sentinels are unique, bringing both tech and biotic abilities to the battlefield.",
+      "starting_weapon": "M-3 Predator, M-25 Hornet, or M-96 Mattock",
       "id": "sentinel"
     },
     {
@@ -95,6 +99,7 @@
       "d_d_similarities": "Fighter",
       "description": "The Soldier is a tough warrior, able to deal with a range of combat situations. The Soldier gets improved health and has the widest selection of weapons. No one is tougher or more effective at taking down enemies with gunfire.",
       "snippet": "Soldiers are pure combat specialists effective at taking down enemies with gunfire.",
+      "starting_weapon": "Choose 2 from M-3 Predator, M-25 Hornet, M-96 Mattock, M-13 Raptor, M-23 Katana",
       "id": "soldier"
     },
     {
@@ -114,6 +119,7 @@
       "d_d_similarities": "Paladin/Barbarian",
       "description": "Vanguards are feared for their high-risk high-reward combat style, closing quickly on enemies and destroying them at close range with weapons and biotic abilities. They are outfitted with L5n implants, enabling them to perform a biotic charge that strikes the opponent with incredible force while closing distance.",
       "snippet": "Vanguards have a high-risk high-reward combat style, using biotics and melee strikes.",
+      "starting_weapon": "M-3 Predator, M-25 Hornet, or M-23 Katana",
       "id": "vanguard"
     }
   ]

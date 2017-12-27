@@ -8,7 +8,14 @@
 Bringing this rule in line with 5th Edition. Lifting and Carrying rules added. Includes a limit on number of weapons you may carry
 and armor matrix has minimum strength scores. In addition, an Encumbrance Variant rule is added that uses weapon & armor weight.
 
+#### Armor Sets added
+A whole range of armor sets have been added.
+
+#### Armor Mod rules
+Further information about Armor Mods and creating new Armor Mods has been added.
+
 ### Armor Mods
+* Armor mods overhauled (price and mechanics).
 * Added 2 Armor Mods (Hip Holster & Back Holster) that increase weapon slots or carry weight.
 
 ### Classes
@@ -22,11 +29,18 @@ Updates saving throws:
 
 ### Races
 
-#### Salarians
-Added amphibious trait
+#### Geth & Unshackled AI
+Composite plating updated, now AC is 13 + DEX modifier.
 
 #### Quarians
 Cybernetic Augmentation reworded to account for new weight/encumbrance rules
+
+#### Salarians
+Added amphibious trait
+Photographic memory changed. Instead of advantage in multiple skills, gain expertise in one skill.
+
+#### Krogan
+Removed the option to be an Engineer.
 
 ### Spell/Power changes
 
@@ -92,13 +106,9 @@ Cybernetic Augmentation reworded to account for new weight/encumbrance rules
 * Siege Pulse
   * Damage reduced 2d10 => 2d4
 
-### Armor Mods
-
-* Archon AI now only regens spell slots on a short rest
-* Battle Telemetry, now only increases the tech regen die type (does not regen spell slots)
-
 ### Weapons
-"Semi-Automatic" renamed to "Double Tap"
+* "Semi-Automatic" renamed to "Double Tap"
+* Riot Shield added
 
 
 ## v0.3.0

@@ -14,8 +14,10 @@
       li #[strong Saving Throws:] {{ item.saving_throw }}
       li #[strong Skills:] {{ item.skill }}
     div.hr
-    p.headline Omni-Tool Attack
-    p #[strong {{ item.omni_tool }}] {{ item.omni_tool_description }}
+    p.headline Starting Weapons
+    ul.list-unstyled
+      li #[strong Omni-tool:] {{ item.omni_tool }} - {{ item.omni_tool_description }}
+      li #[strong Ranged Weapon] {{ item.starting_weapon }}
 </template>
 
 <script>
