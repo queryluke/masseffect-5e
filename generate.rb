@@ -389,6 +389,18 @@ end
     url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=596741267&single=true&output=csv',
     renderables: [],
     id: 'name'
+  },
+  {
+    type: 'armor_mechanics',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRIPzbOBXOdWbaY779un1EV3HyacCV3fe15kHW4ABjMV0yHi3GZHVqnbiOVSQ_Dgh1whimOITGOXHkn/pub?gid=300114352&single=true&output=csv',
+    renderables: [],
+    id: 'mechanic'
+  },
+  {
+    type: 'armor_sets',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRlWQ7v7esaQwLtD1yXcbiHM-jYHCzjC23cIfNFEcfbLhEcFSi8EIoLi1zZyCQtQFRneMqp02_pFWKH/pub?gid=0&single=true&output=csv',
+    renderables: [],
+    id: 'name'
   }
 ].each do |p|
   if imports.length > 0

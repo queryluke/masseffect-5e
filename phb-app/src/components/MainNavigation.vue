@@ -76,7 +76,7 @@
             items: [
               {href: '/weapons', title: 'Weapons'},
               {href: '/armor/mods', title: 'Armor Mods'},
-              {href: '/armor/sets', title: 'Pre-made Armor'},
+              {href: '/armor/sets', title: 'Armor Sets'},
               {href: '/grenades', title: 'Grenades'},
               {href: '/thermal-clips', title: 'Thermal Clips'},
             ]
