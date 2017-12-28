@@ -22,8 +22,8 @@
       template(slot="text")
         p.
           Tech points are a casting resource for Engineers, Infiltrators, and Sentinels. You spend these points to fuel various
-          tech powers. They represent your Omni-tool's power capacity. When you spend a tech point, it is unavailable until you
-          finish a long rest, at the end of which you recharge your Omni-tool.
+          tech powers. They represent your Omni-tool's power capacity. All tech points are regained on a long rest. On a short rest,
+          you regain 1d4 tech points (this can be increased through armor mods).
         p.
           Tech powers are unique in that most have a variable tech point cost. You can choose to spend a lot or only a few
           tech points when casting a power, much like you can cast spells using higher level spell slots. However, there
