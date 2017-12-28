@@ -35,6 +35,13 @@
         p.
           Combat abilities can be learned by Soldiers and Infiltrators, but they rely on equipment rather than biotic amps or a
           beefed-up omni-tool. Instead of a casting cost, Combat abilities recharge on a short or long rest, similar to class features.
+    rule-card
+    span(slot="header") Spell Saving Throws
+    template(slot="text")
+        p.
+          By default, your character's Spell Save DC is calculated as normal: 8 + proficiency bonus + spellcasting ability modifier. Some
+          individual biotic/tech/combat abilities may have a Save DC that is calculated differently. In these cases, the Save DC is
+          indicated in the spell/ability description.
 </template>
 
 <script>

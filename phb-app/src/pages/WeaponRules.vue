@@ -83,16 +83,16 @@
                 You can use your attack action to charge the weapon. Each charge consumes 1 heat and increases the RoF
                 by 1. If the number of charges equals the heat of the weapon, it overheats and cannot be fired until reloaded.
             tr
+              td Double Tap
+              td.
+                When you make a ranged attack with this weapon, you can use your bonus action to make a second ranged attack. You do not add your Dexterity
+                modifier to the attack or damage roll. The second attack may be on the same or a different target.
+            tr
               td Hip Fire
               td You have advantage instead of disadvantage when using this weapon in melee range.
             tr
               td Silent
               td Makes no noise when fired.
-            tr
-              td Semi-Automatic
-              td.
-                When you make a ranged attack with this weapon, you can use your bonus action to make a second ranged attack. You do not add your Dexterity
-                modifier to the attack or damage roll. The second attack may be on the same or a different target.
             tr
               td Two-Handed
               td This weapon must be fired with two hands.
