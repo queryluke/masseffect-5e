@@ -412,12 +412,6 @@ end
     renderables: [],
     id: 'name',
     camel: true
-  },
-  {
-    type: 'stats_by_cr',
-    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT9ot12TCzu7cTQODVsAIdmI0ioHdE9ypXXPDV5Zfu6wd9ilF_dlkAEFSS20y1_hHtOQxTdHx0CO_fW/pub?gid=0&single=true&output=csv',
-    renderables: [],
-    camel: true
   }
 ].each do |p|
   if imports.length > 0
