@@ -90,7 +90,14 @@
             title: 'Beastiary',
             icon: 'pets',
             href: '/bestiary'
-          }
+          },
+          {
+            title: 'GM Tools',
+            icon: 'extension',
+            items: [
+              {href: '/gm-tools/grunts', title: 'Grunts'},
+            ]
+          },
         ]
       }
     }

@@ -19,6 +19,7 @@ import Consumables from './pages/Consumables.vue';
 import Feats from './pages/Feats.vue';
 import General from './pages/General.vue';
 import Grenades from './pages/Grenades.vue';
+import Grunts from './pages/Grunts.vue';
 import Home from './pages/Home.vue';
 import Race from './pages/Race.vue';
 import Races from './pages/Races.vue';
@@ -82,6 +83,11 @@ const router = new Router({
         {path: 'armor', component: Armor},
         {path: 'consumables', component: Consumables},
         {path: 'spellcasting', component: Spellcasting}
+      ]
+    },
+    {path: '/gm-tools', component: Default,
+      children: [
+        {path: 'grunts', component: Grunts}
       ]
     }
   ]
