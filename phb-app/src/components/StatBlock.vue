@@ -1,7 +1,7 @@
 <template lang="pug">
   v-card
     v-card-text
-      p.red--text.text--darken-4.display-1.mb-0 {{ stats.name }}
+      p.red--text.text--darken-4.headline.small-caps.mb-0 #[strong {{ stats.name }}]
       p #[em {{ stats.size }} {{ stats.type }}, {{ stats.alignment }}]
       div.hr
       ul.list-unstyled
@@ -16,6 +16,15 @@
             p.ma-0 #[strong {{ ability.toUpperCase() }}]
             p.ma-0 {{ score }} ({{ renderBonus(score) }})
       div.hr
+      ul.list-unstyled
+        li(v-if="hasSavingThrows") #[strong Saving Throws] {{ renderSavingThrows(stats) }}
+        li(v-if="hasDamageResistances") #[strong Damage Resistances] {{ stats.damageResistances.join(', ') }}
+        li(v-if="hasConditionImmunities") #[strong Condition Immunities] {{ stats.conditionImmunities.join(', ') }}
+      div.hr
+      p(v-for="(feature, index) in stats.features" v-bind:key="index") #[strong #[em {{ feature.name }}].] {{ feature.description }}
+      div
+        p.title.underline-heading.small-caps Actions
+      div(v-if="hasReactions")
 
 </template>
 
@@ -25,6 +34,18 @@
 
   export default {
     name: 'StatBlock',
+    data() {
+      return {
+        abilityMap: {
+          str: 'Strength',
+          dex: 'Dexterity',
+          con: 'Constitution',
+          int: 'Intelligence',
+          wis: 'Wisdom',
+          cha: 'Charisma',
+        }
+      };
+    },
     mixins: [
       AbilityScoreBonus,
       DieFromAverage
@@ -46,7 +67,28 @@
         } else {
           return '0';
         }
+      },
+      renderSavingThrows(stats) {
+        return stats.savingThrows.map(st => {
+          const fullName = this.abilityMap[st];
+          const modifier = this.abilityScoreBonus(stats.abilityScores[st]);
+          return `+${modifier + stats.profBonus} ${fullName}`;
+        }).join(', ');
       }
+    },
+    computed: {
+      hasDamageResistances() {
+        return this.stats.damageResistances && this.stats.damageResistances.length > 0;
+      },
+      hasConditionImmunities() {
+        return this.stats.conditionImmunities && this.stats.conditionImmunities.length > 0;
+      },
+      hasReactions() {
+        return this.stats.reactions && this.stats.reactions.length > 0;
+      },
+      hasSavingThrows() {
+        return this.stats.savingThrows && this.stats.savingThrows.length > 0;
+      },
     },
     props: ['stats'],
   };

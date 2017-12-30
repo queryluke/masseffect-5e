@@ -8,30 +8,23 @@ export const Ac = {
         return;
       }
 
-      if (config.sc) {
-        if (config.sc.id === 'adept' || config.sc.id === 'infiltrator') {
-          acModArray.push(-2);
-          acModArray.push(-2);
-          acModArray.push(-3);
-          acModArray.push(-3);
-        } else if (config.sc.id === 'engineer' || config.sc.id === 'vanguard') {
-          acModArray.push(0);
-          acModArray.push(0);
-        } else {
-          acModArray.push(+2);
-          acModArray.push(+2);
-          acModArray.push(+3);
-          acModArray.push(+3);
-        }
+      if (config.sc.id === 'adept' || config.sc.id === 'infiltrator') {
+        acModArray.push(-2);
+        acModArray.push(-2);
+        acModArray.push(-3);
+        acModArray.push(-3);
+      } else if (config.sc.id === 'soldier' || config.sc.id === 'sentinel') {
+        acModArray.push(+2);
+        acModArray.push(+2);
+        acModArray.push(+3);
+        acModArray.push(+3);
+      } else {
+        acModArray.push(0);
+        acModArray.push(0);
       }
-      const acMod = this.randomValue(acModArray);
-      grunt.ac = config.cr.ac_dc + acMod;
 
-      if (acMod > 1) {
-        config.crAdjustment.defensive = 1;
-      } else if (acMod < -1) {
-        config.crAdjustment.defensive = -1;
-      }
+      const acMod = this.randomValue(acModArray);
+      grunt.ac = config.cr.acDc + acMod;
     }
   }
 };

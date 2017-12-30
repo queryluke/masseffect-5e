@@ -1,40 +1,54 @@
-import {Name} from './Name';
-import {Type} from './Type';
-import {AbilityScores} from './AbilityScores';
-import {RandomValue} from '../randomValue';
-import {Ac} from './Ac';
 import {AbilityScoreBonus} from '../abilityScoreBonus';
-import {Hp} from './Hp';
+import {AbilityScores} from './AbilityScores';
+import {Ac} from './Ac';
+import {AverageFromDie} from '../averageFromDie';
 import {DieFromAverage} from '../dieFromAverage';
+import {Hp} from './Hp';
+import {Features} from './Features';
+import {Name} from './Name';
 import {NumberRange} from '../numberRange';
-import {Traits} from './Traits';
+import {RandomValue} from '../randomValue';
+import {SavingThrows} from './SavingThrows';
+import {Speed} from './Speed';
+import {Type} from './Type';
 
 export const GruntGenerator = {
   mixins: [
-    Name,
-    Type,
+    AbilityScoreBonus,
     AbilityScores,
     Ac,
-    Hp,
-    Traits,
+    AverageFromDie,
     DieFromAverage,
+    Hp,
+    Features,
+    Name,
+    NumberRange,
     RandomValue,
-    AbilityScoreBonus,
-    NumberRange
+    SavingThrows,
+    Speed,
+    Type
   ],
   methods: {
     generateGrunt(config) {
       const grunt = {
-        size: 'Medium'
+        size: 'Medium',
+        savingThrows: [],
+        conditionImmunities: [],
+        damageResistances: [],
+        reactions: [],
+        profBonus: config.cr.profBonus
       };
       this.setGruntName(config, grunt);
       this.setGruntType(config, grunt);
       grunt.alignment = 'any alignment';
       this.setGruntAbilityScores(config, grunt);
-      this.setGruntTraits(config, grunt);
+      this.setGruntFeatures(config, grunt);
+      this.setGruntSavingThrows(config, grunt);
       this.setGruntAc(config, grunt);
       this.setGruntHp(config, grunt);
+      this.setGruntSpeed(config, grunt);
       console.log(grunt);
+      console.log(config);
       return grunt;
     }
   }

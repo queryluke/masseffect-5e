@@ -21,9 +21,7 @@ export const AbilityScores = {
       const standardArray = [15, 14, 13, 12, 10, 8];
 
       // Create stat weights
-      if (config.sc) {
-        statWeights = classStats[config.sc.id];
-      } else {
+      if (config.sc.id === 'none') {
         const abilities = Object.keys(grunt.abilityScores);
         let i = 3;
         while (i > 0) {
@@ -32,6 +30,8 @@ export const AbilityScores = {
           abilities.splice(abilities.indexOf(ability), 1);
           i--;
         }
+      } else {
+        statWeights = classStats[config.sc.id];
       }
 
       const weightedAbilitySelection = {

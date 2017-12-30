@@ -75,26 +75,20 @@
     },
     mixins: [GruntGenerator],
     created() {
-      let getTraits = this.$http.get('../data/racial_traits.json').then(response => response.json());
       let getRaces = this.$http.get('../data/races.json').then(response => response.json());
       let getClasses = this.$http.get('../data/classes.json').then(response => response.json());
       let getSkills = this.$http.get('../data/skills.json').then(response => response.json());
       let getStatsByCr = this.$http.get('../data/stats_by_cr.json').then(response => response.json());
-      Promise.all([getTraits, getRaces, getClasses, getSkills, getStatsByCr]).then(response => {
-        let traits = response[0].data;
-        let races = response[1].data;
-        let classes = response[2].data;
-        this.skills = response[3].data;
-        this.statsByCr = response[4];
+      Promise.all([getRaces, getClasses, getSkills, getStatsByCr]).then(response => {
+        let races = response[0].data;
+        let classes = response[1].data;
+        this.skills = response[2].data;
+        this.statsByCr = response[3];
 
         // Setup races
         this.races = races.map((race) => {
           // expand available classes
           race.available_classes = race.available_classes.split(',').map((v) => v.trim());
-          // get traits and feats
-          race.racial_traits = traits.filter( (trait) => {
-            return trait[race.id] !== null && (trait.id !== 'feat' || trait.id !== 'feats')
-          });
           return race;
         });
 
@@ -159,7 +153,7 @@
             config.sc = this.randomValue(classes);
             break;
           case 'none':
-            config.sc = null;
+            config.sc = { id: 'none' };
             break;
           default:
             config.sc = this.classes.find((a_class) => {
@@ -177,7 +171,9 @@
           atk: 0,
           dc: 0,
           dmg: 0,
+          resistances: false,
         };
+        config.quarianCybEn = false;
 
         return config;
       }

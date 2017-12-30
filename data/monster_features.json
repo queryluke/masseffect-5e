@@ -1,5 +1,5 @@
 {
-  "updated": "December 29, 2017 @  2:16 PM",
+  "updated": "December 29, 2017 @  7:00 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSSrod77DR2Bb7ihadl83Zar27uWkqeb6lMUo_quIHZr9CqBH3Vcx3TOK3wRzhk7Zhl3RB_av72vvo1/pubhtml",
   "data": [
     {
@@ -19,7 +19,7 @@
       "turian": "x",
       "volus": null,
       "vorcha": "x",
-      "unshackledAi": "x",
+      "unshackled_ai": "x",
       "id": "aggressive"
     },
     {
@@ -39,7 +39,7 @@
       "turian": "x",
       "volus": "x",
       "vorcha": "x",
-      "unshackledAi": "x",
+      "unshackled_ai": "x",
       "id": "ambusher"
     },
     {
@@ -59,7 +59,7 @@
       "turian": null,
       "volus": null,
       "vorcha": "x",
-      "unshackledAi": "x",
+      "unshackled_ai": "x",
       "id": "avoidance"
     },
     {
@@ -79,7 +79,7 @@
       "turian": null,
       "volus": null,
       "vorcha": "x",
-      "unshackledAi": null,
+      "unshackled_ai": null,
       "id": "blood_frenzy"
     },
     {
@@ -99,7 +99,7 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "unshackledAi": null,
+      "unshackled_ai": null,
       "id": "brute"
     },
     {
@@ -119,14 +119,14 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "unshackledAi": "x",
+      "unshackled_ai": "x",
       "id": "cloaking_device"
     },
     {
       "name": "Self-Destruct",
       "type": "feature",
       "crKey": "atk",
-      "crEffect": "10",
+      "crEffect": "3d6",
       "description": "When the NPC dies, it explodes. Each creature within 4m of it must make a DC 11 Dexterity saving throw, taking {dmg} thunder damage on a failed save, or half as much damage on a successful one.",
       "asari": null,
       "batarian": null,
@@ -139,7 +139,7 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "unshackledAi": "x",
+      "unshackled_ai": "x",
       "id": "self-destruct"
     },
     {
@@ -159,7 +159,7 @@
       "turian": "x",
       "volus": null,
       "vorcha": "x",
-      "unshackledAi": null,
+      "unshackled_ai": null,
       "id": "grappler"
     },
     {
@@ -167,7 +167,7 @@
       "type": "feature",
       "crKey": null,
       "crEffect": null,
-      "description": "The asari targets one humanoid it can see within 10m of it. If the target can see the asari, the target must succeed on a DC 17 Wisdom saving throw against this mind meld or be {charmed} by the asari. The charmed target regards the asari as a trusted friend to be heeded and protected. Although the target isn't under the asari's control, it takes the asari's requests or actions in the most favorable way it can, and it is a willing target for the asari's attacks (disadvantage on saving throws & the asari has advantage on attack made against the target). Each time the asari or the asari's companions do anything harmful to the target, it can repeat the saving throw, ending the effect on itself on a success. Otherwise, the effect lasts 24 hours or until the asari is killed.",
+      "description": "The asari targets one humanoid it can see within 10m of it. If the target can see the asari, the target must succeed on a DC {dc} Wisdom saving throw against this mind meld or be {charmed} by the asari. The charmed target regards the asari as a trusted friend to be heeded and protected. Although the target isn't under the asari's control, it takes the asari's requests or actions in the most favorable way it can, and it is a willing target for the asari's attacks (disadvantage on saving throws & the asari has advantage on attack made against the target). Each time the asari or the asari's companions do anything harmful to the target, it can repeat the saving throw, ending the effect on itself on a success. Otherwise, the effect lasts 24 hours or until the asari is killed.",
       "asari": "x",
       "batarian": null,
       "drell": null,
@@ -179,7 +179,7 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "unshackledAi": null,
+      "unshackled_ai": null,
       "id": "mind_meld"
     },
     {
@@ -199,15 +199,15 @@
       "turian": "x",
       "volus": "x",
       "vorcha": "x",
-      "unshackledAi": "x",
+      "unshackled_ai": "x",
       "id": "leadership"
     },
     {
       "name": "Martial Advantage",
       "type": "feature",
       "crKey": "dmg",
-      "crEffect": "7",
-      "description": "Once per turn, the NPC can deal an extra 7 (2d6) damage to a creature it hits with a weapon attack if that creature is within 2m of an ally of the NPC that isn't incapacitated. ",
+      "crEffect": "2d6",
+      "description": "Once per turn, the NPC can deal an extra {dmg} damage to a creature it hits with a weapon attack if that creature is within 2m of an ally of the NPC that isn't incapacitated. ",
       "asari": "x",
       "batarian": "x",
       "drell": "x",
@@ -219,7 +219,7 @@
       "turian": "x",
       "volus": "x",
       "vorcha": "x",
-      "unshackledAi": "x",
+      "unshackled_ai": "x",
       "id": "martial_advantage"
     },
     {
@@ -239,7 +239,7 @@
       "turian": "x",
       "volus": "x",
       "vorcha": "x",
-      "unshackledAi": "x",
+      "unshackled_ai": "x",
       "id": "pack_tactics"
     },
     {
@@ -259,7 +259,7 @@
       "turian": "x",
       "volus": "x",
       "vorcha": "x",
-      "unshackledAi": "x",
+      "unshackled_ai": "x",
       "id": "parry"
     },
     {
@@ -279,7 +279,7 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "unshackledAi": null,
+      "unshackled_ai": null,
       "id": "amphibious"
     },
     {
@@ -299,7 +299,7 @@
       "turian": null,
       "volus": null,
       "vorcha": "x",
-      "unshackledAi": null,
+      "unshackled_ai": null,
       "id": "bloodlust"
     },
     {
@@ -319,7 +319,7 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "unshackledAi": null,
+      "unshackled_ai": null,
       "id": "halucinogen"
     },
     {
@@ -339,7 +339,7 @@
       "turian": null,
       "volus": "a",
       "vorcha": null,
-      "unshackledAi": null,
+      "unshackled_ai": null,
       "id": "fury_of_the_small"
     },
     {
@@ -359,7 +359,7 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "unshackledAi": null,
+      "unshackled_ai": null,
       "id": "hermetic_suit"
     },
     {
@@ -379,7 +379,7 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "unshackledAi": null,
+      "unshackled_ai": null,
       "id": "hunter_mode"
     },
     {
@@ -399,7 +399,7 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "unshackledAi": null,
+      "unshackled_ai": null,
       "id": "rage"
     },
     {
@@ -419,7 +419,7 @@
       "turian": "a",
       "volus": null,
       "vorcha": "x",
-      "unshackledAi": "x",
+      "unshackled_ai": "x",
       "id": "relentless"
     },
     {
@@ -439,7 +439,7 @@
       "turian": null,
       "volus": null,
       "vorcha": null,
-      "unshackledAi": null,
+      "unshackled_ai": null,
       "id": "repair_matrix"
     },
     {
@@ -459,14 +459,14 @@
       "turian": "x",
       "volus": "x",
       "vorcha": "x",
-      "unshackledAi": "x",
+      "unshackled_ai": "x",
       "id": "shadow_cloak"
     },
     {
       "name": "Surprise Attack",
       "type": "feature",
       "crKey": "dmg",
-      "crEffect": "7",
+      "crEffect": "2d6",
       "description": "If the NPC surprises a creature and hits it with an attack during the first round of combat, the target takes an extra {dmg} damage from the attack. ",
       "asari": "x",
       "batarian": "x",
@@ -479,8 +479,188 @@
       "turian": "x",
       "volus": "x",
       "vorcha": "x",
-      "unshackledAi": "x",
+      "unshackled_ai": "x",
       "id": "surprise_attack"
+    },
+    {
+      "name": "res-standard",
+      "type": "resistance",
+      "crKey": null,
+      "crEffect": null,
+      "description": "bludgeoning, piercing, slashing",
+      "asari": "x",
+      "batarian": "x",
+      "drell": "x",
+      "human": "x",
+      "geth": "x",
+      "krogan": "x",
+      "quarian": "x",
+      "salarian": "x",
+      "turian": "x",
+      "volus": "x",
+      "vorcha": "x",
+      "unshackled_ai": "x",
+      "id": "res-standard"
+    },
+    {
+      "name": "res-bitoic",
+      "type": "resistance",
+      "crKey": null,
+      "crEffect": null,
+      "description": "force, necrotic",
+      "asari": "x",
+      "batarian": "x",
+      "drell": "x",
+      "human": "x",
+      "geth": "x",
+      "krogan": "x",
+      "quarian": "x",
+      "salarian": "x",
+      "turian": "x",
+      "volus": "x",
+      "vorcha": "x",
+      "unshackled_ai": "x",
+      "id": "res-bitoic"
+    },
+    {
+      "name": "res-tech",
+      "type": "resistance",
+      "crKey": null,
+      "crEffect": null,
+      "description": "fire, cold",
+      "asari": "x",
+      "batarian": "x",
+      "drell": "x",
+      "human": "x",
+      "geth": "x",
+      "krogan": "x",
+      "quarian": "x",
+      "salarian": "x",
+      "turian": "x",
+      "volus": "x",
+      "vorcha": "x",
+      "unshackled_ai": "x",
+      "id": "res-tech"
+    },
+    {
+      "name": "res-thunder",
+      "type": "resistance",
+      "crKey": null,
+      "crEffect": null,
+      "description": "thunder, piercing",
+      "asari": "x",
+      "batarian": "x",
+      "drell": "x",
+      "human": "x",
+      "geth": "x",
+      "krogan": "x",
+      "quarian": "x",
+      "salarian": "x",
+      "turian": "x",
+      "volus": "x",
+      "vorcha": "x",
+      "unshackled_ai": "x",
+      "id": "res-thunder"
+    },
+    {
+      "name": "res-lightning",
+      "type": "resistance",
+      "crKey": null,
+      "crEffect": null,
+      "description": "lightning",
+      "asari": "x",
+      "batarian": "x",
+      "drell": "x",
+      "human": "x",
+      "geth": "x",
+      "krogan": "x",
+      "quarian": "x",
+      "salarian": "x",
+      "turian": "x",
+      "volus": "x",
+      "vorcha": "x",
+      "unshackled_ai": "x",
+      "id": "res-lightning"
+    },
+    {
+      "name": "con-lift",
+      "type": "condition",
+      "crKey": null,
+      "crEffect": null,
+      "description": "lift",
+      "asari": "x",
+      "batarian": "x",
+      "drell": "x",
+      "human": "x",
+      "geth": "x",
+      "krogan": "x",
+      "quarian": "x",
+      "salarian": "x",
+      "turian": "x",
+      "volus": "x",
+      "vorcha": "x",
+      "unshackled_ai": "x",
+      "id": "con-lift"
+    },
+    {
+      "name": "con-sense",
+      "type": "condition",
+      "crKey": null,
+      "crEffect": null,
+      "description": "blinded, deafened",
+      "asari": "x",
+      "batarian": "x",
+      "drell": "x",
+      "human": "x",
+      "geth": "x",
+      "krogan": "x",
+      "quarian": "x",
+      "salarian": "x",
+      "turian": "x",
+      "volus": "x",
+      "vorcha": "x",
+      "unshackled_ai": "x",
+      "id": "con-sense"
+    },
+    {
+      "name": "con-freeze",
+      "type": "condition",
+      "crKey": null,
+      "crEffect": null,
+      "description": "frozen",
+      "asari": "x",
+      "batarian": "x",
+      "drell": "x",
+      "human": "x",
+      "geth": "x",
+      "krogan": "x",
+      "quarian": "x",
+      "salarian": "x",
+      "turian": "x",
+      "volus": "x",
+      "vorcha": "x",
+      "unshackled_ai": "x",
+      "id": "con-freeze"
+    },
+    {
+      "name": "con-poison",
+      "type": "condition",
+      "crKey": null,
+      "crEffect": null,
+      "description": "poisoned",
+      "asari": "x",
+      "batarian": "x",
+      "drell": "x",
+      "human": "x",
+      "geth": "x",
+      "krogan": "x",
+      "quarian": "x",
+      "salarian": "x",
+      "turian": "x",
+      "volus": "x",
+      "vorcha": "x",
+      "unshackled_ai": "x",
+      "id": "con-poison"
     }
   ]
 }
