@@ -35,7 +35,7 @@
             )
           v-flex(xs12 sm6 md4).px-2
             v-select(
-              v-bind:items="race_options"
+              v-bind:items="raceOptions"
               v-model="race"
               label="Select a Race"
               single-line
@@ -123,11 +123,33 @@
         }
         return class_options;
       },
+      raceOptions: function() {
+        let race_options = [];
+        if(this.selected_class === 'random' || this.selected_class === 'none'){
+          race_options = this.races;
+        } else {
+          race_options = this.filterRaces(this.selected_class);
+        }
+        race_options = race_options.map( (race) => {
+          return { value: race.id, text: race.name };
+        }).sort();
+        race_options.unshift({ value: 'random', text: 'Random' });
+        if(!race_options.map( (ro) => { return ro.value }).includes(this.race)){
+          this.race = 'random';
+        }
+        return race_options;
+      },
     },
     methods: {
       filterClasses(race_id){
         return this.classes.filter(a_class => {
           return this.races.find((race) => { return race.id === race_id }).available_classes.includes(a_class.name);
+        });
+      },
+      filterRaces(class_id){
+        return this.races.filter(race => {
+          const regex = new RegExp(class_id, 'gi');
+          return regex.test(race.available_classes)
         });
       },
       getGrunt(){

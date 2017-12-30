@@ -1,5 +1,5 @@
 {
-  "updated": "December 29, 2017 @  7:00 PM",
+  "updated": "December 30, 2017 @ 10:38 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSSrod77DR2Bb7ihadl83Zar27uWkqeb6lMUo_quIHZr9CqBH3Vcx3TOK3wRzhk7Zhl3RB_av72vvo1/pubhtml",
   "data": [
     {
@@ -287,20 +287,40 @@
       "type": "feature",
       "crKey": "dmg",
       "crEffect": "5",
-      "description": "After reducing an enemy to 0 hit points with a melee weapon, the NPC may take another Action this turn.",
+      "description": "After reducing an enemy to 0 hit points with a melee attack, the NPC may take another Action this turn.",
       "asari": null,
       "batarian": null,
       "drell": null,
       "human": null,
       "geth": null,
-      "krogan": "a",
+      "krogan": "x",
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": "a",
+      "unshackled_ai": null,
+      "id": "bloodlust"
+    },
+    {
+      "name": "Hungry Jaws",
+      "type": "feature",
+      "crKey": null,
+      "crEffect": null,
+      "description": "(Recharge 6). The vorcha can throw itself into a vicious feeding frenzy. As a bonus action, the vorcha can make a Bite attack. If the attack hits, it deals its normal damage, and automatically activates Bloodlust.",
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
       "quarian": null,
       "salarian": null,
       "turian": null,
       "volus": null,
       "vorcha": "x",
       "unshackled_ai": null,
-      "id": "bloodlust"
+      "id": "hungry_jaws"
     },
     {
       "name": "Halucinogen",
@@ -652,15 +672,35 @@
       "batarian": "x",
       "drell": "x",
       "human": "x",
-      "geth": "x",
+      "geth": "a",
       "krogan": "x",
       "quarian": "x",
       "salarian": "x",
       "turian": "x",
       "volus": "x",
       "vorcha": "x",
-      "unshackled_ai": "x",
+      "unshackled_ai": "a",
       "id": "con-poison"
+    },
+    {
+      "name": "Saving Face",
+      "type": "feature",
+      "crKey": "ac",
+      "crEffect": "2",
+      "description": "(Recharge 6) If the NPC misses with an attack roll or fails an ability check or a saving throw, it can gain a bonus to the roll equal to the number of allies it can see within 10m (maximum bonus of +5).",
+      "asari": null,
+      "batarian": "x",
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": "x",
+      "quarian": null,
+      "salarian": "x",
+      "turian": null,
+      "volus": "x",
+      "vorcha": "x",
+      "unshackled_ai": null,
+      "id": "saving_face"
     }
   ]
 }

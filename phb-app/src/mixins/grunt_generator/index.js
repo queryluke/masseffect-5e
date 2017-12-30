@@ -35,6 +35,7 @@ export const GruntGenerator = {
         savingThrows: [],
         conditionImmunities: [],
         damageResistances: [],
+        features: [],
         reactions: [],
         profBonus: config.cr.profBonus
       };

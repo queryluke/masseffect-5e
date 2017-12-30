@@ -23,7 +23,11 @@ export const Ac = {
         acModArray.push(0);
       }
 
-      const acMod = this.randomValue(acModArray);
+      let acMod = this.randomValue(acModArray);
+
+      if (config.race.id === 'krogan') {
+        acMod++;
+      }
       grunt.ac = config.cr.acDc + acMod;
     }
   }

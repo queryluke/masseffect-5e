@@ -36,7 +36,7 @@ export const Hp = {
       }
 
       const averageHpDieRoll = config.race.id === 'volus' ? 3.5 : 4.5;
-      const conMod = this.abilityScoreBonus(grunt.abilityScores.con);
+      let conMod = this.abilityScoreBonus(grunt.abilityScores.con);
       let multiplicativeMod = 1;
       if (config.effective.resistances) {
         if (parseInt(config.cr.cr, 10) < 5) {
@@ -48,6 +48,9 @@ export const Hp = {
         }
       }
 
+      if (config.race.id === 'turian') {
+        conMod += 2;
+      }
       grunt.sp = shields ? this.generatePointObject(averageSpDieRoll, targetSp, maxSp, 0) : null;
       grunt.hp = this.generatePointObject(averageHpDieRoll, targetHp, maxHp, conMod, multiplicativeMod);
     },
@@ -63,7 +66,7 @@ export const Hp = {
       }
       return {
         avgRoll,
-        average: Math.ceil(average),
+        average: Math.floor(average),
         numDice,
         mod: additiveMod * numDice
       };

@@ -25,6 +25,8 @@
       div
         p.title.underline-heading.small-caps Actions
       div(v-if="hasReactions")
+        p.title.underline-heading.small-caps Reactions
+        p(v-for="(reaction, index) in stats.reactions" v-bind:key="index") #[strong #[em {{ reaction.name }}].] {{ reaction.description }}
 
 </template>
 
