@@ -17,8 +17,8 @@
             p.ma-0 {{ score }} ({{ renderBonus(score) }})
       div.hr
       ul.list-unstyled
-        li(v-if="skills") #[strong Skills] {{ skills }}
         li(v-if="savingThrows") #[strong Saving Throws] {{ savingThrows }}
+        li(v-if="skills") #[strong Skills] {{ skills }}
         li(v-if="hasDamageResistances") #[strong Damage Resistances] {{ stats.damageResistances.join(', ') }}
         li(v-if="hasConditionImmunities") #[strong Condition Immunities] {{ stats.conditionImmunities.join(', ') }}
       div.hr
