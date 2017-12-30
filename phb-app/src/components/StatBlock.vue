@@ -17,7 +17,8 @@
             p.ma-0 {{ score }} ({{ renderBonus(score) }})
       div.hr
       ul.list-unstyled
-        li(v-if="hasSavingThrows") #[strong Saving Throws] {{ renderSavingThrows(stats) }}
+        li(v-if="skills") #[strong Skills] {{ skills }}
+        li(v-if="savingThrows") #[strong Saving Throws] {{ savingThrows }}
         li(v-if="hasDamageResistances") #[strong Damage Resistances] {{ stats.damageResistances.join(', ') }}
         li(v-if="hasConditionImmunities") #[strong Condition Immunities] {{ stats.conditionImmunities.join(', ') }}
       div.hr
@@ -70,13 +71,6 @@
           return '0';
         }
       },
-      renderSavingThrows(stats) {
-        return stats.savingThrows.map(st => {
-          const fullName = this.abilityMap[st];
-          const modifier = this.abilityScoreBonus(stats.abilityScores[st]);
-          return `+${modifier + stats.profBonus} ${fullName}`;
-        }).join(', ');
-      }
     },
     computed: {
       hasDamageResistances() {
@@ -88,8 +82,21 @@
       hasReactions() {
         return this.stats.reactions && this.stats.reactions.length > 0;
       },
-      hasSavingThrows() {
-        return this.stats.savingThrows && this.stats.savingThrows.length > 0;
+      savingThrows() {
+        if (this.stats.savingThrows && this.stats.savingThrows.length > 0) {
+          return this.stats.savingThrows.map(st => {
+            return `+${st.bonus} ${st.name}`;
+          }).join(', ');
+        }
+        return false;
+      },
+      skills() {
+        if (this.stats.skills && this.stats.skills.length){
+          return this.stats.skills.map(skill => {
+            return `+${skill.bonus} ${skill.name}`;
+          }).join(', ');
+        }
+        return false;
       },
     },
     props: ['stats'],

@@ -9,6 +9,7 @@ import {Name} from './Name';
 import {NumberRange} from '../numberRange';
 import {RandomValue} from '../randomValue';
 import {SavingThrows} from './SavingThrows';
+import {Skills} from './Skills';
 import {Speed} from './Speed';
 import {Type} from './Type';
 
@@ -25,6 +26,7 @@ export const GruntGenerator = {
     NumberRange,
     RandomValue,
     SavingThrows,
+    Skills,
     Speed,
     Type
   ],
@@ -33,6 +35,7 @@ export const GruntGenerator = {
       const grunt = {
         size: 'Medium',
         savingThrows: [],
+        skills: [],
         conditionImmunities: [],
         damageResistances: [],
         features: [],
@@ -44,6 +47,7 @@ export const GruntGenerator = {
       grunt.alignment = 'any alignment';
       this.setGruntAbilityScores(config, grunt);
       this.setGruntFeatures(config, grunt);
+      this.setGruntSkills(config, grunt);
       this.setGruntSavingThrows(config, grunt);
       this.setGruntAc(config, grunt);
       this.setGruntHp(config, grunt);

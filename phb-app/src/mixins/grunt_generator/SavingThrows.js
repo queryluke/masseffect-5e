@@ -1,27 +1,58 @@
 export const SavingThrows = {
   methods: {
     setGruntSavingThrows(config, grunt) {
-      let numSavingThrows = parseFloat(config.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(config.cr.cr) / 4);
-      const abilities = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
+      const crMetaLevel = parseFloat(config.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(config.cr.cr) / 4);
+      let numSavingThrows = this.randomValue(this.savingThrowWeights[crMetaLevel]);
+      console.log(numSavingThrows);
+      const savingThrows = JSON.parse(JSON.stringify(this.savingThrows));
       if (config.sc.id !== 'none') {
-        grunt.savingThrows = config.sc.saving_throw.split(',').map(st => {
-          const ability = st.toLowerCase().trim().slice(0, 3);
-          abilities.splice(abilities.indexOf(ability), 1);
-          numSavingThrows--;
-          return ability;
+        const classSavingThrows = config.sc.saving_throw.split(',').map(st => {
+          return st.toLowerCase().trim().slice(0, 3);
         });
-        if (numSavingThrows < 2) {
-          grunt.savingThrows.splice(1, 1);
+        for (const classSt of classSavingThrows) {
+          if (numSavingThrows > 0) {
+            const savingThrow = savingThrows.find(st => classSt === st.id);
+            const abilityScoreBonus = this.abilityScoreBonus(grunt.abilityScores[classSt]) + config.cr.profBonus;
+            if (abilityScoreBonus > 0) {
+              savingThrows.splice(savingThrows.indexOf(savingThrow), 1);
+              savingThrow.bonus = abilityScoreBonus;
+              grunt.savingThrows.push(savingThrow);
+              numSavingThrows--;
+            }
+          }
         }
       }
       for (let i = 1; i <= numSavingThrows; i++) {
-        const st = this.randomValue(abilities);
-        grunt.savingThrows.push(st);
+        const savingThrow = this.randomValue(savingThrows);
+        const abilityScoreBonus = this.abilityScoreBonus(savingThrow.id) + config.cr.profBonus;
+        if (abilityScoreBonus > 0) {
+          savingThrows.splice(savingThrows.indexOf(savingThrow), 1);
+          savingThrow.bonus = abilityScoreBonus;
+          grunt.savingThrows.push(savingThrow);
+        }
       }
 
       if (grunt.savingThrows.length > 1) {
         config.effective.ac += 2;
       }
     }
+  },
+  data() {
+    return {
+      savingThrowWeights: {
+        0: [0, 0, 0, 1],
+        1: [0, 1, 1, 2],
+        2: [1, 1, 2, 2],
+        3: [2, 2, 2, 3]
+      },
+      savingThrows: [
+        {id: 'str', name: 'Strength'},
+        {id: 'dex', name: 'Dexterity'},
+        {id: 'con', name: 'Constitution'},
+        {id: 'int', name: 'Intelligence'},
+        {id: 'wis', name: 'Wisdom'},
+        {id: 'cha', name: 'Charisma'}
+      ]
+    };
   }
 };
