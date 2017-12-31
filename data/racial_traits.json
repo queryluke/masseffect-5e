@@ -1,5 +1,5 @@
 {
-  "updated": "December 27, 2017 @  3:40 PM",
+  "updated": "December 31, 2017 @  5:15 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRETKGL62kEZPA69PhA3AGMiVeHOWBRkTMDL3f_K-oajryEjwdq7fRAj-qfIusPsLMiIqmB12D4Zun8/pubhtml",
   "data": [
     {
@@ -56,7 +56,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "After killing an enemy with a melee attack, you can activate Bloodlust. Your speed increases to 20m, add 1d8 to you melee attacks, and you regenerate 1d4 health per turn. This effect lasts 3 turns. If you kill another enemy, the effect is extended for 3 more turns."
+          "data": "After reducing an enemy to 0 hit points with a melee attack, you may take another Action this turn."
         }
       ],
       "asari": null,
@@ -72,7 +72,7 @@
       "vorcha": "x",
       "unshackled_ai": null,
       "id": "bloodlust",
-      "description_text_dump": "AfterkillinganenemywithameleeattackyoucanactivateBloodlustYourspeedincreasesto20madd1d8toyoumeleeattacksandyouregenerate1d4healthperturnThiseffectlasts3turnsIfyoukillanotherenemytheeffectisextendedfor3moreturns"
+      "description_text_dump": "Afterreducinganenemyto0hitpointswithameleeattackyoumaytakeanotherActionthisturn"
     },
     {
       "name": "Cantrip",
@@ -272,7 +272,12 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Your suit is your lifeblood. It makes your immune to disease. You have resistance to poison, toxic, and necrotic damage. However, if you ever take an unshielded, critical hit via puncture damage, your suit is breached. On your turn, you can take no other action accept making a death saving throw as if you had 0 hit points or using a charge of your sealant to close the puncture. You always carry 3 charges of specialized sealant, and you can take an action to seal the breach, consuming a charge. On a long rest, you regain your charges."
+          "data": "Your suit is your lifeblood. It makes your immune to disease. You have resistance to poison and necrotic damage. However, if you ever take an unshielded, critical hit that causes puncture damage, your suit becomes breached. On your turn, you can take no other action except expending a charge of specialized sealant to close the puncture. You have 3 charges of sealant.  On a long rest, you regain your charges."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "If you have no charges of sealant remains, you become poisoned until you can patch the suit. If you spend longer that 24 hours with the breach, you die."
         }
       ],
       "asari": null,
@@ -288,7 +293,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "id": "hermetic_suit",
-      "description_text_dump": "YoursuitisyourlifebloodItmakesyourimmunetodiseaseYouhaveresistancetopoisontoxicandnecroticdamageHoweverifyouevertakeanunshieldedcriticalhitviapuncturedamageyoursuitisbreachedOnyourturnyoucantakenootheractionacceptmakingadeathsavingthrowasifyouhad0hitpointsorusingachargeofyoursealanttoclosethepunctureYoualwayscarry3chargesofspecializedsealantandyoucantakeanactiontosealthebreachconsumingachargeOnalongrestyouregainyourcharges"
+      "description_text_dump": "YoursuitisyourlifebloodItmakesyourimmunetodiseaseYouhaveresistancetopoisonandnecroticdamageHoweverifyouevertakeanunshieldedcriticalhitthatcausespuncturedamageyoursuitbecomesbreachedOnyourturnyoucantakenootheractionexceptexpendingachargeofspecializedsealanttoclosethepunctureYouhave3chargesofsealantOnalongrestyouregainyourchargesIfyouhavenochargesofsealantremainsyoubecomepoisoneduntilyoucanpatchthesuitIfyouspendlongerthat24hourswiththebreachyoudie"
     },
     {
       "name": "Hungry Jaws",
@@ -320,7 +325,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Channel shields into auxiliary combat systems. Lose 3d6 shields but gain the following: Increase movement by 6m. +2 on ranged & melee attack rolls. No disadvantage on attacking targets behind partial cover. Add 1d6 piercing damage to melee and ranged damage rolls. This effect lasts 1 min. You can only use Hunter Mode once per long rest."
+          "data": "Channel shields into auxiliary combat systems. Lose 3d6 shields but gain the following: Increase movement by 6m. +3 bonus to ranged and melee weapon attack rolls. Add 1d6 to any tech power damage rolls. This effect lasts 1 min. You can only use Hunter Mode once per long rest."
         },
         {
           "id": 2,
@@ -365,7 +370,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "id": "hunter_mode",
-      "description_text_dump": "ChannelshieldsintoauxiliarycombatsystemsLose3d6shieldsbutgainthefollowingIncreasemovementby6m2onrangedmeleeattackrollsNodisadvantageonattackingtargetsbehindpartialcoverAdd1d6piercingdamagetomeleeandrangeddamagerollsThiseffectlasts1minYoucanonlyuseHunterModeonceperlongrestAt11thlevelyougainanadditionalbenefitbasedonyourclasstableClassFeatureEngineerIncreasethedamageofallTechpowersby1dietypemaxd12Ifthedietypeisalreadyd12add1foreachdierolledinsteadSoldierYouhaveresistancetoalldamagecausedbybioticspellsandadvantageonsavingthrowscausedbybioticspellsInfiltratorIncreaseyoursneakattackdietypetod8table"
+      "description_text_dump": "ChannelshieldsintoauxiliarycombatsystemsLose3d6shieldsbutgainthefollowingIncreasemovementby6m3bonustorangedandmeleeweaponattackrollsAdd1d6toanytechpowerdamagerollsThiseffectlasts1minYoucanonlyuseHunterModeonceperlongrestAt11thlevelyougainanadditionalbenefitbasedonyourclasstableClassFeatureEngineerIncreasethedamageofallTechpowersby1dietypemaxd12Ifthedietypeisalreadyd12add1foreachdierolledinsteadSoldierYouhaveresistancetoalldamagecausedbybioticspellsandadvantageonsavingthrowscausedbybioticspellsInfiltratorIncreaseyoursneakattackdietypetod8table"
     },
     {
       "name": "Keen Senses",
@@ -397,7 +402,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You are immune to disease. You do not need to eat or breathe. Instead of sleeping, you enter an inactive state for 4 hours each day. You do not dream in this state; you are fully aware of your surroundings and notice approaching enemies and other events as normal."
+          "data": "You are immune to disease and the {poisoned} condition. You do not need to eat or breathe. Instead of sleeping, you enter an inactive state for 4 hours each day. You do not dream in this state; you are fully aware of your surroundings and notice approaching enemies and other events as normal."
         }
       ],
       "asari": null,
@@ -413,7 +418,7 @@
       "vorcha": null,
       "unshackled_ai": "x",
       "id": "living_construct",
-      "description_text_dump": "YouareimmunetodiseaseYoudonotneedtoeatorbreatheInsteadofsleepingyouenteraninactivestatefor4hourseachdayYoudonotdreaminthisstateyouarefullyawareofyoursurroundingsandnoticeapproachingenemiesandothereventsasnormal"
+      "description_text_dump": "YouareimmunetodiseaseandthepoisonedconditionYoudonotneedtoeatorbreatheInsteadofsleepingyouenteraninactivestatefor4hourseachdayYoudonotdreaminthisstateyouarefullyawareofyoursurroundingsandnoticeapproachingenemiesandothereventsasnormal"
     },
     {
       "name": "Lucky",
@@ -565,7 +570,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "If you sink below half health, you enter into a rage. You take 1d8 less damage per hit your melee attacks deal an additional 1d8 damage."
+          "data": "If you begin your turn with less that 1/2 of your hit points, you enter into a rage. Your melee weapon attacks deal one extra die of its damage when you hit with it. This effect lasts 1 minute and cannot be triggered again until you have a short rest."
         }
       ],
       "asari": null,
@@ -581,7 +586,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "id": "rage",
-      "description_text_dump": "IfyousinkbelowhalfhealthyouenterintoarageYoutake1d8lessdamageperhityourmeleeattacksdealanadditional1d8damage"
+      "description_text_dump": "Ifyoubeginyourturnwithlessthat12ofyourhitpointsyouenterintoarageYourmeleeweaponattacksdealoneextradieofitsdamagewhenyouhitwithitThiseffectlasts1minuteandcannotbetriggeredagainuntilyouhaveashortrest"
     },
     {
       "name": "Relentless",
@@ -613,7 +618,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "When you drop below half your hit points or lose all your shield points, as a reaction, you may activate a powerful Foucault current. If you are prone, you immediately return to your feet, your shield regeneration increases by 1 die type, your speed increases by 6m, and you regain 1d6 hit points at the start of your turn. This effect lasts 1 minute. This ability may only be used once per long rest."
+          "data": "If you begin your turn with less that 1/2 of your hit points, you activate your repair matrix. Gain 1d6 hit points at the start of your turn. This effect last 1 minute or until the your become incapacitated. This ability may only be used once per long rest."
         }
       ],
       "asari": null,
@@ -629,7 +634,7 @@
       "vorcha": null,
       "unshackled_ai": "x",
       "id": "repair_matrix",
-      "description_text_dump": "WhenyoudropbelowhalfyourhitpointsorloseallyourshieldpointsasareactionyoumayactivateapowerfulFoucaultcurrentIfyouareproneyouimmediatelyreturntoyourfeetyourshieldregenerationincreasesby1dietypeyourspeedincreasesby6mandyouregain1d6hitpointsatthestartofyourturnThiseffectlasts1minuteThisabilitymayonlybeusedonceperlongrest"
+      "description_text_dump": "Ifyoubeginyourturnwithlessthat12ofyourhitpointsyouactivateyourrepairmatrixGain1d6hitpointsatthestartofyourturnThiseffectlast1minuteoruntiltheyourbecomeincapacitatedThisabilitymayonlybeusedonceperlongrest"
     },
     {
       "name": "Saving Face",
@@ -637,7 +642,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Batarians are careful not to show weakness in front of their allies, for fear of losing status. If you miss with an attack roll or fail an ability check or a saving throw, you can gain a bonus to the roll equal to the number of allies you can see within 30 feet of you (maximum bonus of +5). Once you use this trait, you can't use it again until you finish a short or long rest."
+          "data": "Batarians are careful not to show weakness in front of their allies, for fear of losing status. If you miss with an attack roll or fail an ability check or a saving throw, you can gain a bonus to the roll equal to the number of allies you can see within 10m of you (maximum bonus of +5). Once you use this trait, you can't use it again until you finish a short or long rest."
         }
       ],
       "asari": null,
@@ -653,7 +658,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "id": "saving_face",
-      "description_text_dump": "BatariansarecarefulnottoshowweaknessinfrontoftheiralliesforfearoflosingstatusIfyoumisswithanattackrollorfailanabilitycheckorasavingthrowyoucangainabonustotherollequaltothenumberofalliesyoucanseewithin30feetofyoumaximumbonusof5Onceyouusethistraityoucantuseitagainuntilyoufinishashortorlongrest"
+      "description_text_dump": "BatariansarecarefulnottoshowweaknessinfrontoftheiralliesforfearoflosingstatusIfyoumisswithanattackrollorfailanabilitycheckorasavingthrowyoucangainabonustotherollequaltothenumberofalliesyoucanseewithin10mofyoumaximumbonusof5Onceyouusethistraityoucantuseitagainuntilyoufinishashortorlongrest"
     },
     {
       "name": "Savvy Dealings",
