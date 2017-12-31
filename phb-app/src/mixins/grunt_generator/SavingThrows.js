@@ -3,7 +3,6 @@ export const SavingThrows = {
     setGruntSavingThrows(config, grunt) {
       const crMetaLevel = parseFloat(config.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(config.cr.cr) / 4);
       let numSavingThrows = this.randomValue(this.savingThrowWeights[crMetaLevel]);
-      console.log(numSavingThrows);
       const savingThrows = JSON.parse(JSON.stringify(this.savingThrows));
       if (config.sc.id !== 'none') {
         const classSavingThrows = config.sc.saving_throw.split(',').map(st => {

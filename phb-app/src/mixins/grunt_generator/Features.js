@@ -1,7 +1,7 @@
 export const Features = {
   methods: {
     setGruntFeatures(config, grunt) {
-      const crMetaLevel = Math.ceil(parseFloat(config.cr.cr) / 4);
+      const crMetaLevel = parseFloat(config.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(config.cr.cr) / 4);
       const features = JSON.parse(JSON.stringify(this.monsterFeatures));
 
       // Set base features
@@ -16,13 +16,7 @@ export const Features = {
       const availableFeatures = features.filter(feature => {
         return feature[config.race.id] === 'x';
       });
-      let numFeatureArray = [0, 0, 1, 1, 2];
-      if (crMetaLevel === 1) {
-        numFeatureArray = [0, 1, 1, 2, 2];
-      } else if (crMetaLevel === 3) {
-        numFeatureArray = [1, 2, 2, 3, 3];
-      }
-      const numFeatures = this.randomValue(numFeatureArray);
+      const numFeatures = this.randomValue(this.numFeatureWeights[crMetaLevel]);
       for (let i = 1; i <= numFeatures; i++) {
         const feature = this.randomValue(availableFeatures);
         this.addFeature(config, grunt, feature);
@@ -88,7 +82,13 @@ export const Features = {
   },
   data() {
     return {
-      monsterFeatures: []
+      monsterFeatures: [],
+      numFeatureWeights: {
+        0: [0, 0, 0, 1, 1],
+        1: [0, 1, 1, 1, 2],
+        2: [1, 1, 1, 2, 2],
+        3: [1, 2, 2, 3, 3]
+      }
     };
   },
   created() {

@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "cr": "1/8",
     "profBonus": 2,
     "acDc": 13,
@@ -11,6 +12,7 @@
     "abReduction": [8,9,10]
   },
   {
+    "id": 2,
     "cr": "1/4",
     "profBonus": 2,
     "acDc": 13,
@@ -22,6 +24,7 @@
     "abReduction": [6,7,8]
   },
   {
+    "id": 3,
     "cr": "1/2",
     "profBonus": 2,
     "acDc": 13,
@@ -33,9 +36,10 @@
     "abReduction": [4,5,6]
   },
   {
+    "id": 4,
     "cr": "1",
     "profBonus": 3,
-    "acDc": 14,
+    "acDc": 13,
     "hpMin": 82,
     "hpMax": 98,
     "attackBonus": 4,
@@ -44,9 +48,10 @@
     "abReduction": [2,3,4]
   },
   {
+    "id": 5,
     "cr": "2",
     "profBonus": 3,
-    "acDc": 14,
+    "acDc": 13,
     "hpMin": 99,
     "hpMax": 115,
     "attackBonus": 4,
@@ -55,9 +60,10 @@
     "abReduction": [1,2]
   },
   {
+    "id": 6,
     "cr": "3",
     "profBonus": 3,
-    "acDc": 14,
+    "acDc": 13,
     "hpMin": 116,
     "hpMax": 132,
     "attackBonus": 4,
@@ -65,9 +71,10 @@
     "dmgMax": 29
   },
   {
+    "id": 7,
     "cr": "4",
     "profBonus": 3,
-    "acDc": 15,
+    "acDc": 14,
     "hpMin": 133,
     "hpMax": 150,
     "attackBonus": 5,
@@ -76,6 +83,7 @@
     "abIncrease": [1,2]
   },
   {
+    "id": 8,
     "cr": "5",
     "profBonus": 4,
     "acDc": 15,
@@ -87,6 +95,7 @@
     "abIncrease": [1,2,3]
   },
   {
+    "id": 9,
     "cr": "6",
     "profBonus": 4,
     "acDc": 15,
@@ -98,9 +107,10 @@
     "abIncrease": [2,3,4]
   },
   {
+    "id": 10,
     "cr": "7",
     "profBonus": 4,
-    "acDc": 16,
+    "acDc": 15,
     "hpMin": 185,
     "hpMax": 201,
     "attackBonus": 6,
@@ -109,6 +119,7 @@
     "abIncrease": [3,4,5]
   },
   {
+    "id": 11,
     "cr": "8",
     "profBonus": 4,
     "acDc": 16,
@@ -120,6 +131,7 @@
     "abIncrease": [4,5,6]
   },
   {
+    "id": 12,
     "cr": "9",
     "profBonus": 5,
     "acDc": 16,
@@ -131,6 +143,7 @@
     "abIncrease": [5,6,7]
   },
   {
+    "id": 13,
     "cr": "10",
     "profBonus": 5,
     "acDc": 17,
@@ -142,9 +155,10 @@
     "abIncrease": [6,7,8]
   },
   {
+    "id": 14,
     "cr": "11",
     "profBonus": 5,
-    "acDc": 18,
+    "acDc": 17,
     "hpMin": 254,
     "hpMax": 270,
     "attackBonus": 8,
@@ -153,9 +167,10 @@
     "abIncrease": [7,8,9]
   },
   {
+    "id": 15,
     "cr": "12",
     "profBonus": 5,
-    "acDc": 18,
+    "acDc": 17,
     "hpMin": 271,
     "hpMax": 288,
     "attackBonus": 8,

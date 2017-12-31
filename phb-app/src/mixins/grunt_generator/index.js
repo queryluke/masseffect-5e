@@ -2,7 +2,9 @@ import {AbilityScoreBonus} from '../abilityScoreBonus';
 import {AbilityScores} from './AbilityScores';
 import {Ac} from './Ac';
 import {AverageFromDie} from '../averageFromDie';
+import {Biotics} from './Biotics';
 import {DieFromAverage} from '../dieFromAverage';
+import {Helpers} from './Helpers';
 import {Hp} from './Hp';
 import {Features} from './Features';
 import {Name} from './Name';
@@ -19,7 +21,9 @@ export const GruntGenerator = {
     AbilityScores,
     Ac,
     AverageFromDie,
+    Biotics,
     DieFromAverage,
+    Helpers,
     Hp,
     Features,
     Name,

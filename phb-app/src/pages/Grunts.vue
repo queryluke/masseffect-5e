@@ -161,7 +161,12 @@
 
         // Get the race
         if(this.race === 'random') {
-          config.race = this.randomValue(this.races);
+          if (this.selected_class === 'random' || this.selected_class === 'none') {
+            config.race = this.randomValue(this.races);
+          } else {
+            const races = this.filterRaces(this.selected_class);
+            config.race = this.randomValue(races);
+          }
         } else {
           config.race = this.races.find((race) => {
             return  race.id === this.race;
