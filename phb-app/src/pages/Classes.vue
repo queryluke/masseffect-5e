@@ -1,10 +1,10 @@
 <template lang="pug">
   div
-    h2 Classes
+    h2.display-3 Classes
     v-layout(row wrap)
       v-flex(v-for="item in items" v-bind:key="item.id").xs12.sm6.md4
-        v-card(hover @click="toSingle(item.id)").ma-2
-          v-container(fluid grid-list-lg)
+        v-card(hover).ma-2
+          v-container(fluid grid-list-lg @click="toSingle(item.id)")
             v-layout(row wrap)
               v-flex.xs8
                 h3.headline.mb-0 {{ item.name }}
@@ -25,6 +25,7 @@
     name: 'Classes',
     methods: {
       toSingle(id) {
+        console.log(id);
         this.$router.push(`/classes/${id}`);
       }
     },

@@ -1,0 +1,174 @@
+{
+  "updated": "December 27, 2017 @  5:06 PM",
+  "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRIPzbOBXOdWbaY779un1EV3HyacCV3fe15kHW4ABjMV0yHi3GZHVqnbiOVSQ_Dgh1whimOITGOXHkn/pubhtml",
+  "data": [
+    {
+      "mechanic": "sp",
+      "description": "Additional shield points",
+      "amount": "10",
+      "cost": "10000",
+      "id": "sp"
+    },
+    {
+      "mechanic": "shield regen",
+      "description": "Increase shield regen",
+      "amount": "1 die type",
+      "cost": "8000",
+      "id": "shield_regen"
+    },
+    {
+      "mechanic": "shield auto-regen",
+      "description": "Shield regen on every turn, despite taking damage.",
+      "amount": "-",
+      "cost": "15000",
+      "id": "shield_auto-regen"
+    },
+    {
+      "mechanic": "attack bonus",
+      "description": "+1 to [biotic, tech, ranged weapon, or melee weapon] attack and damage rolls",
+      "amount": "1 damage type",
+      "cost": "8000",
+      "id": "attack_bonus"
+    },
+    {
+      "mechanic": "damage reroll",
+      "description": "reroll any 1 and 2 on your [biotic, tech, ranged, or melee] damage rolls",
+      "amount": "1 damage type",
+      "cost": "10000",
+      "id": "damage_reroll"
+    },
+    {
+      "mechanic": "biotic damage",
+      "description": "add an additional damage die to your biotic spell damage rolls",
+      "amount": "1 die",
+      "cost": "20000",
+      "id": "biotic_damage"
+    },
+    {
+      "mechanic": "thermal clips",
+      "description": "Increase thermal clip capacity",
+      "amount": "4",
+      "cost": "1000",
+      "id": "thermal_clips"
+    },
+    {
+      "mechanic": "grenades",
+      "description": "Increase grenade capacity",
+      "amount": "2",
+      "cost": "3000",
+      "id": "grenades"
+    },
+    {
+      "mechanic": "medi-gel",
+      "description": "Increase Medi-gel capacity",
+      "amount": "2",
+      "cost": "2000",
+      "id": "medi-gel"
+    },
+    {
+      "mechanic": "hw",
+      "description": "Increase Heavy Weapon charges",
+      "amount": "1",
+      "cost": "5000",
+      "id": "hw"
+    },
+    {
+      "mechanic": "weapons",
+      "description": "Additional weapon slot",
+      "amount": "1 for small weapons, 2 for large weapons",
+      "cost": "3000",
+      "id": "weapons"
+    },
+    {
+      "mechanic": "immnunity",
+      "description": "Damage or Condition Immunity",
+      "amount": "1 damage type or condition",
+      "cost": "20000",
+      "id": "immnunity"
+    },
+    {
+      "mechanic": "resistance",
+      "description": "Resistance to a damage type",
+      "amount": "1 damage type",
+      "cost": "15000",
+      "id": "resistance"
+    },
+    {
+      "mechanic": "tech points",
+      "description": "Reduce tech point cost",
+      "amount": "reduce by 1 tp",
+      "cost": "20000",
+      "id": "tech_points"
+    },
+    {
+      "mechanic": "ac",
+      "description": "Increase AC",
+      "amount": "1",
+      "cost": "8000",
+      "id": "ac"
+    },
+    {
+      "mechanic": "hp",
+      "description": "Increase hit points",
+      "amount": "1/2 class level",
+      "cost": "5000",
+      "id": "hp"
+    },
+    {
+      "mechanic": "tech regen",
+      "description": "Increase TP regeneration die",
+      "amount": "1 die type",
+      "cost": "12000",
+      "id": "tech_regen"
+    },
+    {
+      "mechanic": "stabalize",
+      "description": "Instantly stabalize a companion",
+      "amount": "1 per long rest",
+      "cost": "20000",
+      "id": "stabalize"
+    },
+    {
+      "mechanic": "auto-stabalize",
+      "description": "Instantly stabalize when you drop below 0 hit points.",
+      "amount": "1 per long rest",
+      "cost": "50000",
+      "id": "auto-stabalize"
+    },
+    {
+      "mechanic": "speed",
+      "description": "Increase speed",
+      "amount": "2m",
+      "cost": "3000",
+      "id": "speed"
+    },
+    {
+      "mechanic": "st",
+      "description": "Advantage on saving throws",
+      "amount": "1 ability type",
+      "cost": "30000",
+      "id": "st"
+    },
+    {
+      "mechanic": "auto-gel",
+      "description": "Use medi-gel as a reaction to taking hit point damage",
+      "amount": "1 medi-gel charge",
+      "cost": "8000",
+      "id": "auto-gel"
+    },
+    {
+      "mechanic": "improved medi-gel",
+      "description": "Additional hit die when expending medi-gel",
+      "amount": "1 die",
+      "cost": "12000",
+      "id": "improved_medi-gel"
+    },
+    {
+      "mechanic": "heat",
+      "description": "Increase weapon heat",
+      "amount": "1",
+      "cost": "20000",
+      "id": "heat"
+    }
+  ]
+}

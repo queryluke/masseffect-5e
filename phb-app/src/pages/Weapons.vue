@@ -2,7 +2,7 @@
   v-container
     v-layout(row wrap)
       v-flex(xs12 sm6)
-        h2 Weapons
+        h2.display-3 Weapons
       v-flex(xs12 sm6)
         v-text-field(
           append-icon="search"
@@ -63,6 +63,7 @@
           {key: 'heat', display: 'Heat', classes: 'hidden-md-and-down lg2', sortable: true},
           {key: 'range', display: 'Range', classes: 'hidden-md-and-down lg2', sortable: true},
           {key: 'weight', display: 'Weight', classes: 'hidden-md-and-down lg2', sortable: true},
+          {key: 'cost', display: 'Cost', classes: 'hidden-md-and-down lg2', sortable: true},
         ]
       };
     },

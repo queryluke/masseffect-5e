@@ -2,7 +2,7 @@
   v-container
     v-layout(row wrap)
       v-flex.xs12
-        h2 Conditions
+        h2.display-3 Conditions
       v-flex.xs12
         p.headline New
         p Frozen, Lifted, Targeting

@@ -2,7 +2,7 @@
   v-container(fluid)
     v-layout(row wrap)
       v-flex.xs12.md9
-        h2 {{ race.name }}
+        h2.display-3 {{ race.name }}
         p {{ race.snippet}}
         p
           a(:href="`http://masseffect.wikia.com/wiki/${ race.id == 'unshackled_ai' ? 'Artificial_Intelligence' : race.name }`" target="_blank").
@@ -48,6 +48,9 @@
                 div(v-for="trait in race.racial_traits" v-bind:key="trait.id")
                   label(:id="trait.id") #[strong {{ trait.name }}]
                   me-element(:text="trait.description" v-bind:aria-labelledby="`race-traits ${trait.id}`")
+              div.ma-2
+                div(id="starting-equipment").section-label Starting Equipment
+                me-element(:text="race.starting_equipment" aria-labelledby="starting-equipment")
       v-flex.hidden-sm-and-down.md3
         v-card-media(:src="race.body" height="80vh")
     v-layout(row grow).my-0.mt-4

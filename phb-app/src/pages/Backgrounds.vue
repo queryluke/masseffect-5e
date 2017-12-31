@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    h2 Backgrounds
+    h2.display-3 Backgrounds
     p More coming eventually. Feel free to adjust backgrounds in the 5e PHB or other D&D books.
     div.expansion-panel__sortable.primary
       v-layout.px-4

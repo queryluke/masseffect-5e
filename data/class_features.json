@@ -1,5 +1,5 @@
 {
-  "updated": "November 17, 2017 @ 10:58 AM",
+  "updated": "December 23, 2017 @ 10:33 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -49,11 +49,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You've outfitted your armor with special rigs that make carrying weapons a cinch. Your carry capacity is doubled."
+          "data": "You've outfitted your armor with special rigs that make carrying weapons a cinch. You can have up to 4 weapons equipped. If using the Encumbrance (Variant) rule, your carry weight is doubled."
         }
       ],
       "id": "advanced_weapon_holsters",
-      "mechanic_text_dump": "YouveoutfittedyourarmorwithspecialrigsthatmakecarryingweaponsacinchYourcarrycapacityisdoubled"
+      "mechanic_text_dump": "YouveoutfittedyourarmorwithspecialrigsthatmakecarryingweaponsacinchYoucanhaveupto4weaponsequippedIfusingtheEncumbranceVariantruleyourcarryweightisdoubled"
     },
     {
       "name": "Assault Armor",
@@ -951,7 +951,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You can unfailingly create false identities for yourself, but you can't establish an identity that belongs to someone else. For example, you might establish yourself within mercenary gang to gain access to their supplies or armory, or a rich colonist to gain access to a fancy party. Thereafter, if you adopt the new identity as a disguise, other creatures believe you to be that person until given an obvious reason not to. You have advantage on persuasion rolls when using this disguise, and advantage on deception rolls on an opposed insight check."
+          "data": "You can unfailingly create false identities for yourself, but you can't establish an identity that belongs to someone else. For example, you might establish yourself within mercenary gang to gain access to their supplies or armory, or a rich colonist to gain access to a fancy party. Thereafter, if you adopt the new identity as a disguise, other creatures believe you to be that person until given an obvious reason not to. You have advantage on persuasion rolls when using this disguise and advantage on deception rolls on an opposed insight check."
         }
       ],
       "id": "infiltration",
@@ -1076,6 +1076,11 @@
         },
         {
           "id": 2,
+          "type": "line",
+          "data": "When creating an enhancement, choose from the list below:"
+        },
+        {
+          "id": 3,
           "type": "list",
           "data": [
             "Stimulant: After using this medi-gel, you have advantage on the next saving throw or attack roll you make within 1 minute.",
@@ -1095,6 +1100,11 @@
       "mechanic": [
         {
           "id": 1,
+          "type": "line",
+          "data": "At 2nd level, you gain the ability to use the power stored in your barrier to twist your spells to suit your needs. You gain two of the following Metabotic options of your choice. At 14th level, learn 2 additional options of your choice."
+        },
+        {
+          "id": 2,
           "type": "list",
           "data": [
             "Careful Spell: When you cast a spell that forces other creatures to make a saving throw, you can protect some of those creatures from the spell's full force. To do so, you spend 1 barrier tick and choose a number of those creatures up to your Charisma modifier (minimum of one creature). A chosen creature automatically succeeds on its saving throw against the spell.",
@@ -1126,6 +1136,11 @@
       "mechanic": [
         {
           "id": 1,
+          "type": "line",
+          "data": "Starting at the 3rd level, you've mastered the omni-shield. As a bonus action, create a large kinetic shield out of your omni-tool that lasts one minute. You can use another bonus action to end Omni-Shield early. While deployed:"
+        },
+        {
+          "id": 2,
           "type": "list",
           "data": [
             "If wielding a single-handed ranged or versatile melee weapon, gain +2 AC and a +2 bonus to Dexterity saving throws.",
@@ -1134,7 +1149,7 @@
           ]
         },
         {
-          "id": 2,
+          "id": 3,
           "type": "line",
           "data": "Once you use this feature, you must finish a short or long rest before you can use it again."
         }
@@ -1182,18 +1197,6 @@
       ],
       "id": "paint_by_number",
       "mechanic_text_dump": "YoureanartistandatargetinglaserisyourpaintbrushWhenusingaHeavyWeaponthatrequiresaroundtoTargetyoumaytargetandfireonthesameturn"
-    },
-    {
-      "name": "Poison Strike",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Learn the Poison Strike spell"
-        }
-      ],
-      "id": "poison_strike",
-      "mechanic_text_dump": "LearnthePoisonStrikespell"
     },
     {
       "name": "Potent Biotics",
@@ -1487,6 +1490,11 @@
         },
         {
           "id": 2,
+          "type": "line",
+          "data": "Once the pylon has landed, friendly creatures (including you) within melee range can spend 1 action accessing the pylon to gain a single resource listed below:"
+        },
+        {
+          "id": 3,
           "type": "list",
           "data": [
             "Gain 1 Heavy Weapon ammo charge",
@@ -1497,7 +1505,7 @@
           ]
         },
         {
-          "id": 3,
+          "id": 4,
           "type": "line",
           "data": "Once you use this feature, you cannot use it again until you finish a short or long rest."
         }
@@ -1510,6 +1518,11 @@
       "mechanic": [
         {
           "id": 1,
+          "type": "line",
+          "data": "At 2nd level, you gain the ability to use the power stored in your barrier to twist your spells to suit your needs. You gain two of the following Metabiotic options of your choice. At 14th level, learn 2 additional options of your choice."
+        },
+        {
+          "id": 2,
           "type": "list",
           "data": [
             "Careful Spell: When you cast a spell that forces other creatures to make a saving throw, you can protect some of those creatures from the spell's full force. To do so, you spend 1 barrier tick and choose a number of those creatures up to your Charisma modifier (minimum of one creature). A chosen creature automatically succeeds on its saving throw against the spell.",
@@ -1597,6 +1610,11 @@
         },
         {
           "id": 2,
+          "type": "line",
+          "data": "Learn 2 AI packages from the list below (you've already learned the Defensive package). At the 14th level, you learn 2 additional packages."
+        },
+        {
+          "id": 3,
           "type": "list",
           "data": [
             "Defensive: This is the standard Tech Armor package. It does not affect allies.",
@@ -1699,23 +1717,31 @@
         },
         {
           "id": 2,
+          "type": "line",
+          "data": "Superiority Dice: You have four superiority dice, which are d8s. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a short or long rest. You gain another superiority die at 7th level and one more at 15th level."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Using Superiority Dice:"
+        },
+        {
+          "id": 4,
           "type": "list",
           "data": [
-            "You have four superiority dice, which are d8s. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a short or long rest. You gain another superiority die at 7th level and one more at 15th level.",
-            "Using Superiority Dice:",
             "You can expend superiority dice to gain a number of different benefits.",
             "When you make a weapon attack against a creature with your Weapon of Choice, you can expend one superiority die to add it to the attack roll. You can use this ability before or after making the attack roll, but before any of the effects of the attack are applied.",
             "When you damage a creature with a weapon attack, you can expend one superiority die to add it to the damage roll. You can use this ability after rolling damage. If the attack causes the target to make a Constitution saving throw to maintain concentration, it has disadvantage on that save."
           ]
         },
         {
-          "id": 3,
+          "id": 5,
           "type": "line",
           "data": "When you are hit by a melee attack, if you are currently holding your Weapon of Choice, you can expend one superiority die as a reaction, adding the number rolled to your AC. If the attack still hits, you take half damage from it."
         }
       ],
       "id": "weapon_of_choice",
-      "mechanic_text_dump": "YouhaveundergoneextensivetrainingwithasinglerangedweapontypeChoosearangedweapontypewhichbecomesyourWeaponofChoiceWhenyouhaveyourWeaponofChoiceequippedyougainasetofabilitiesthatarefueledbyspecialdicecalledsuperioritydiceYoumayspend1monthofintensivetrainingtoexchangeyourWeaponofChoicewithanotherrangedweapontypeSuperiorityDicelistYouhavefoursuperioritydicewhichared8sAsuperioritydieisexpendedwhenyouuseitYouregainallofyourexpendedsuperioritydicewhenyoufinishashortorlongrestYougainanothersuperioritydieat7thlevelandonemoreat15thlevelUsingSuperiorityDiceYoucanexpendsuperioritydicetogainanumberofdifferentbenefitsWhenyoumakeaweaponattackagainstacreaturewithyourWeaponofChoiceyoucanexpendonesuperioritydietoaddittotheattackrollYoucanusethisabilitybeforeoraftermakingtheattackrollbutbeforeanyoftheeffectsoftheattackareappliedWhenyoudamageacreaturewithaweaponattackyoucanexpendonesuperioritydietoaddittothedamagerollYoucanusethisabilityafterrollingdamageIftheattackcausesthetargettomakeaConstitutionsavingthrowtomaintainconcentrationithasdisadvantageonthatsavelistWhenyouarehitbyameleeattackifyouarecurrentlyholdingyourWeaponofChoiceyoucanexpendonesuperioritydieasareactionaddingthenumberrolledtoyourACIftheattackstillhitsyoutakehalfdamagefromit"
+      "mechanic_text_dump": "YouhaveundergoneextensivetrainingwithasinglerangedweapontypeChoosearangedweapontypewhichbecomesyourWeaponofChoiceWhenyouhaveyourWeaponofChoiceequippedyougainasetofabilitiesthatarefueledbyspecialdicecalledsuperioritydiceYoumayspend1monthofintensivetrainingtoexchangeyourWeaponofChoicewithanotherrangedweapontypeSuperiorityDiceYouhavefoursuperioritydicewhichared8sAsuperioritydieisexpendedwhenyouuseitYouregainallofyourexpendedsuperioritydicewhenyoufinishashortorlongrestYougainanothersuperioritydieat7thlevelandonemoreat15thlevelUsingSuperiorityDicelistYoucanexpendsuperioritydicetogainanumberofdifferentbenefitsWhenyoumakeaweaponattackagainstacreaturewithyourWeaponofChoiceyoucanexpendonesuperioritydietoaddittotheattackrollYoucanusethisabilitybeforeoraftermakingtheattackrollbutbeforeanyoftheeffectsoftheattackareappliedWhenyoudamageacreaturewithaweaponattackyoucanexpendonesuperioritydietoaddittothedamagerollYoucanusethisabilityafterrollingdamageIftheattackcausesthetargettomakeaConstitutionsavingthrowtomaintainconcentrationithasdisadvantageonthatsavelistWhenyouarehitbyameleeattackifyouarecurrentlyholdingyourWeaponofChoiceyoucanexpendonesuperioritydieasareactionaddingthenumberrolledtoyourACIftheattackstillhitsyoutakehalfdamagefromit"
     },
     {
       "name": "Zero-Sum",

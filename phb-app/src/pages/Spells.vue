@@ -2,7 +2,7 @@
   v-container
     v-layout(row wrap)
       v-flex(xs12 sm6)
-        h2 Spells
+        h2.display-3 Spells
         div.small Biotics, Tech Powers, and Combat Abilities
       v-flex(xs12 sm6)
         v-text-field(
@@ -56,7 +56,7 @@
         .get('../data/spells.json')
         .then(response => response.json())
         .then(response => {
-          this.spells = response.data;
+          this.spells = response.data.sort((a, b) => a.name > b.name ? 1 : -1);
           this.updated = response.updated;
           this.source = response.source;
         });

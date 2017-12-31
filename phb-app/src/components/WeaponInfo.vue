@@ -24,7 +24,7 @@
         div(v-else) d{{ weapon.damage }}
       v-flex.xs12.sm4.md2.attribute.mb-2
         label(v-if="weapon.type === 'Heavy Weapon'") Charges
-        label(v-if="weapon.type === 'Melee'") Min STR
+        label(v-else-if="weapon.type === 'Melee'") Min STR
         label(v-else) Heat
         div {{ weapon.heat }}
       v-flex.xs12.sm4.md2.attribute.mb-2

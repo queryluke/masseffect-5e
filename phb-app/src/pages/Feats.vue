@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    h2 Feats
+    h2.display-3 Feats
     p.
       Feats are part of the official D&D PHB. Due to copyright reasons, I can only note any changes or new feats
       available in this system. Hence, if a feat doesn't have a description, you can look it up in the PHB with the page

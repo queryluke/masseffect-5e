@@ -284,7 +284,7 @@ end
 [
   {
     type: 'spells',
-    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSs9dkG94f5fPCOJ38g-xCUCwnYynzbiFdggQ1KqM1vMscINwcn2_OGPqGhvxOrYl18oK7dO2notL_y/pub?gid=0&single=true&output=csv',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSJCBzka3M8w7NvjB7HmV4BmwVcX7wyzFHg8K9YUTZvB8Tdl6_t_FLhQw6EIjm3eEyduIlLxxNwcweq/pub?gid=0&single=true&output=csv',
     renderables: ['mechanic'],
     id: 'name'
   },
@@ -309,7 +309,7 @@ end
   {
     type: 'races',
     url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQI4F-wI2gwN395GApB347yPb1PixjOtOqZ0qoBYw7d57MPETHS40ZjIy1-DIfZf06PUwrspMiuAMlk/pub?gid=0&single=true&output=csv',
-    renderables: ['skills'],
+    renderables: ['skills','starting_equipment'],
     id: 'name'
   },
   {
@@ -387,6 +387,18 @@ end
   {
     type: 'subclasses',
     url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=596741267&single=true&output=csv',
+    renderables: [],
+    id: 'name'
+  },
+  {
+    type: 'armor_mechanics',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRIPzbOBXOdWbaY779un1EV3HyacCV3fe15kHW4ABjMV0yHi3GZHVqnbiOVSQ_Dgh1whimOITGOXHkn/pub?gid=300114352&single=true&output=csv',
+    renderables: [],
+    id: 'mechanic'
+  },
+  {
+    type: 'armor_sets',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRlWQ7v7esaQwLtD1yXcbiHM-jYHCzjC23cIfNFEcfbLhEcFSi8EIoLi1zZyCQtQFRneMqp02_pFWKH/pub?gid=0&single=true&output=csv',
     renderables: [],
     id: 'name'
   }
