@@ -23,6 +23,9 @@ The reason for the changes, is that a 4th level spell is effectively an 7th/8th 
 ## Armor Sets
 A big addition in 0.4.0 is the pre-made Armor Sets.
 
+## Starting equipment
+Due to the addition to the armor sets, each race also has a starting weapon and armor. In addition, classes have starting weapons as well.
+
 ## Armor Mod Overhaul
 I've finally rounded out and standardized the the available armor mods. In addition, there are also detailed instructions
 for creating armor mods in the armor rules section. So feel free to create your own!
