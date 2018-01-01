@@ -1,5 +1,5 @@
 {
-  "updated": "December 27, 2017 @ 12:58 PM",
+  "updated": "January  1, 2018 @ 12:41 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSq70x_GZuDKcELgX8k_7Hd6nLGu3DoIEdDwP-YEGjUU-ghGc7ot_Q7140FZwGbEalHgzPwVm4BN8y_/pubhtml",
   "data": [
     {
@@ -457,7 +457,7 @@
       "name": "Kishock Harpoon Gun",
       "type": "Sniper Rifle",
       "cost": "13500",
-      "manufacturer": "Batarian",
+      "manufacturer": "Batarian State Arms",
       "weight": "8",
       "heat": "1",
       "rof": "1",
@@ -479,11 +479,11 @@
     {
       "name": "Krogan Warhammer",
       "type": "Melee",
-      "cost": "20000",
+      "cost": "13500",
       "manufacturer": "Krogan",
       "weight": "10",
-      "heat": "18",
-      "rof": "2",
+      "heat": "16",
+      "rof": "1",
       "damage": "12",
       "range": "-",
       "rare": null,
@@ -492,12 +492,12 @@
         {
           "id": 1,
           "type": "line",
-          "data": "When you hit with an attack using this weapon, the target is knocked back 4m. In addition, the target must succeed on a Constitution saving throw (DC = 8+Proficiency Bonus+ Strength modifier) or becomes {stunned} until the end of your next turn."
+          "data": "When you hit with an attack using this weapon, the target is knocked back 4m. If the target is unprotected, it must succeed on a Constitution saving throw (DC = 8+Proficiency Bonus+ Strength modifier) or becomes {stunned} until the end of your next turn."
         }
       ],
       "image": null,
       "id": "krogan_warhammer",
-      "notes_text_dump": "Whenyouhitwithanattackusingthisweaponthetargetisknockedback4mInadditionthetargetmustsucceedonaConstitutionsavingthrowDC8ProficiencyBonusStrengthmodifierorbecomesstunneduntiltheendofyournextturn"
+      "notes_text_dump": "Whenyouhitwithanattackusingthisweaponthetargetisknockedback4mIfthetargetisunprotecteditmustsucceedonaConstitutionsavingthrowDC8ProficiencyBonusStrengthmodifierorbecomesstunneduntiltheendofyournextturn"
     },
     {
       "name": "Krysae Sniper Rifle",
@@ -1423,6 +1423,29 @@
       "image": "http://vignette2.wikia.nocookie.net/masseffect/images/6/60/ME3_Reegar_Carbine.png/revision/latest?cb=20120530214009",
       "id": "reegar_carbine",
       "notes_text_dump": ""
+    },
+    {
+      "name": "Riot Shield",
+      "type": "Melee",
+      "cost": "2500",
+      "manufacturer": "Systems Alliance",
+      "weight": "6",
+      "heat": "10",
+      "rof": "-",
+      "damage": "-",
+      "range": "-",
+      "rare": null,
+      "tags": "-",
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "+2 AC"
+        }
+      ],
+      "image": null,
+      "id": "riot_shield",
+      "notes_text_dump": "2AC"
     },
     {
       "name": "Sawblade",

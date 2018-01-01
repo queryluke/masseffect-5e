@@ -1,5 +1,5 @@
 {
-  "updated": "December 27, 2017 @  3:26 PM",
+  "updated": "January  1, 2018 @ 12:52 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQI4F-wI2gwN395GApB347yPb1PixjOtOqZ0qoBYw7d57MPETHS40ZjIy1-DIfZf06PUwrspMiuAMlk/pubhtml",
   "data": [
     {
@@ -22,7 +22,7 @@
         {
           "id": 2,
           "type": "line",
-          "data": "Alternatively, you may start with 10d6 x 1000 credits to buy your own equipment."
+          "data": "Alternatively, you may start with 10d4 x 1000 credits to buy your own equipment."
         }
       ],
       "body": "http://vignette2.wikia.nocookie.net/masseffect/images/d/dc/Asari_Justicar_MP.png/revision/latest/scale-to-width-down/500",
@@ -31,7 +31,7 @@
       "face": "http://vignette3.wikia.nocookie.net/masseffect/images/3/36/Liara_ME2_Character_Shot.png",
       "card": "https://vignette.wikia.nocookie.net/masseffect/images/a/a7/Samara_vs_Morinth.png/revision/latest/scale-to-width-down/640?cb=20130521073819",
       "id": "asari",
-      "starting_equipment_text_dump": "AsariInitiateArmorAsariHuntressSwordAlternativelyyoumaystartwith10d6x1000creditstobuyyourownequipment"
+      "starting_equipment_text_dump": "AsariInitiateArmorAsariHuntressSwordAlternativelyyoumaystartwith10d4x1000creditstobuyyourownequipment"
     },
     {
       "name": "Batarian",
@@ -53,7 +53,7 @@
         {
           "id": 2,
           "type": "line",
-          "data": "Alternatively, you may start with 10d6 x 1000 credits to buy your own equipment."
+          "data": "Alternatively, you may start with 6d8 x 1000 credits to buy your own equipment."
         }
       ],
       "body": "http://vignette1.wikia.nocookie.net/masseffect/images/b/b2/Batarian_MP.png/revision/latest/scale-to-width-down/500",
@@ -62,7 +62,7 @@
       "face": "http://vignette3.wikia.nocookie.net/masseffect/images/0/0e/Codex_ME_-_Batarians_%28after_BDTS%29.png",
       "card": "https://vignette.wikia.nocookie.net/masseffect/images/5/5f/Balak_ME_adversaryshot.png/revision/latest/scale-to-width-down/422?cb=20140812140358",
       "id": "batarian",
-      "starting_equipment_text_dump": "PartisanArmorM6CarnifexAlternativelyyoumaystartwith10d6x1000creditstobuyyourownequipment"
+      "starting_equipment_text_dump": "PartisanArmorM6CarnifexAlternativelyyoumaystartwith6d8x1000creditstobuyyourownequipment"
     },
     {
       "name": "Drell",
@@ -84,7 +84,7 @@
         {
           "id": 2,
           "type": "line",
-          "data": "Alternatively, you may start with 10d6 x 1000 credits to buy your own equipment."
+          "data": "Alternatively, you may start with 6d8 x 1000 credits to buy your own equipment."
         }
       ],
       "body": "http://vignette2.wikia.nocookie.net/masseffect/images/a/ad/Drell_MP.png/revision/latest/scale-to-width-down/500",
@@ -93,7 +93,7 @@
       "face": "http://vignette4.wikia.nocookie.net/masseffect/images/f/fa/Races_Drell.PNG",
       "card": "https://vignette.wikia.nocookie.net/masseffect/images/c/cf/Drell_biotic_field.png/revision/latest/scale-to-width-down/640?cb=20130623224527",
       "id": "drell",
-      "starting_equipment_text_dump": "MercenaryArmorKahjeanVenomDaggerAlternativelyyoumaystartwith10d6x1000creditstobuyyourownequipment"
+      "starting_equipment_text_dump": "MercenaryArmorKahjeanVenomDaggerAlternativelyyoumaystartwith6d8x1000creditstobuyyourownequipment"
     },
     {
       "name": "Human",
@@ -115,7 +115,7 @@
         {
           "id": 2,
           "type": "line",
-          "data": "Alternatively, you may start with 10d6 x 1000 credits to buy your own equipment."
+          "data": "Alternatively, you may start with 8d6 x 1000 credits to buy your own equipment."
         }
       ],
       "body": "http://vignette4.wikia.nocookie.net/masseffect/images/2/2e/Human_Female_Infiltrator_MP.png/revision/latest/scale-to-width-down/500",
@@ -124,7 +124,7 @@
       "face": "http://vignette2.wikia.nocookie.net/masseffect/images/8/89/Mirandanew.png",
       "card": "https://vignette.wikia.nocookie.net/masseffect/images/7/7c/Grissom_Academy_Students.png/revision/latest/scale-to-width-down/640?cb=20120312230100",
       "id": "human",
-      "starting_equipment_text_dump": "N7ArmorRiotShieldAlternativelyyoumaystartwith10d6x1000creditstobuyyourownequipment"
+      "starting_equipment_text_dump": "N7ArmorRiotShieldAlternativelyyoumaystartwith8d6x1000creditstobuyyourownequipment"
     },
     {
       "name": "Geth",
@@ -141,7 +141,12 @@
         {
           "id": 1,
           "type": "line",
-          "data": "None"
+          "data": "Geth Plasma SMG"
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Alternatively, you may start with 2d10 x 1000 credits to buy your own equipment."
         }
       ],
       "body": "http://vignette2.wikia.nocookie.net/masseffect/images/7/72/Geth_Engineer_MP.png/revision/latest/scale-to-width-down/500",
@@ -150,7 +155,7 @@
       "face": "http://vignette1.wikia.nocookie.net/masseffect/images/c/cc/Legion_Character_Shot.png",
       "card": "https://vignette.wikia.nocookie.net/masseffect/images/7/7b/Legion%27s_posse.png/revision/latest/scale-to-width-down/640?cb=20130516170119",
       "id": "geth",
-      "starting_equipment_text_dump": "None"
+      "starting_equipment_text_dump": "GethPlasmaSMGAlternativelyyoumaystartwith2d10x1000creditstobuyyourownequipment"
     },
     {
       "name": "Krogan",
@@ -172,7 +177,7 @@
         {
           "id": 2,
           "type": "line",
-          "data": "Alternatively, you may start with 10d6 x 1000 credits to buy your own equipment."
+          "data": "Alternatively, you may start with 10d4 x 1000 credits to buy your own equipment."
         }
       ],
       "body": "http://vignette4.wikia.nocookie.net/masseffect/images/6/66/Krogan_MP.png/revision/latest/scale-to-width-down/500",
@@ -181,7 +186,7 @@
       "face": "http://vignette2.wikia.nocookie.net/masseffect/images/3/33/Races_Krogan.PNG",
       "card": "https://vignette.wikia.nocookie.net/masseffect/images/0/03/Wreav_rally_-_destroy_2.png/revision/latest/scale-to-width-down/640?cb=20130215150038",
       "id": "krogan",
-      "starting_equipment_text_dump": "WarlordArmorKroganWarhammerAlternativelyyoumaystartwith10d6x1000creditstobuyyourownequipment"
+      "starting_equipment_text_dump": "WarlordArmorKroganWarhammerAlternativelyyoumaystartwith10d4x1000creditstobuyyourownequipment"
     },
     {
       "name": "Quarian",
@@ -203,7 +208,7 @@
         {
           "id": 2,
           "type": "line",
-          "data": "Alternatively, you may start with 10d6 x 1000 credits to buy your own equipment."
+          "data": "Alternatively, you may start with 8d6 x 1000 credits to buy your own equipment."
         }
       ],
       "body": "http://vignette3.wikia.nocookie.net/masseffect/images/0/0c/Quarian_MP.png/revision/latest/scale-to-width-down/500",
@@ -212,7 +217,7 @@
       "face": "http://vignette3.wikia.nocookie.net/masseffect/images/1/15/Talinewme2.png",
       "card": "https://vignette.wikia.nocookie.net/masseffect/images/f/fc/Enter_the_admirals.png/revision/latest/scale-to-width-down/640?cb=20121114134430",
       "id": "quarian",
-      "starting_equipment_text_dump": "HermeticSuitPlatingReegarCombineAlternativelyyoumaystartwith10d6x1000creditstobuyyourownequipment"
+      "starting_equipment_text_dump": "HermeticSuitPlatingReegarCombineAlternativelyyoumaystartwith8d6x1000creditstobuyyourownequipment"
     },
     {
       "name": "Salarian",
@@ -234,7 +239,7 @@
         {
           "id": 2,
           "type": "line",
-          "data": "Alternatively, you may start with 10d6 x 1000 credits to buy your own equipment."
+          "data": "Alternatively, you may start with 4d12 x 1000 credits to buy your own equipment."
         }
       ],
       "body": "http://vignette2.wikia.nocookie.net/masseffect/images/b/ba/Salarian_MP.png/revision/latest/scale-to-width-down/500",
@@ -243,7 +248,7 @@
       "face": "http://vignette1.wikia.nocookie.net/masseffect/images/1/1a/Mordin_Character_Shot.png",
       "card": "https://vignette.wikia.nocookie.net/masseffect/images/3/39/Mordin_-_objection_noted.png/revision/latest/scale-to-width-down/640?cb=20141223052318",
       "id": "salarian",
-      "starting_equipment_text_dump": "BTSuitStunBatonAlternativelyyoumaystartwith10d6x1000creditstobuyyourownequipment"
+      "starting_equipment_text_dump": "BTSuitStunBatonAlternativelyyoumaystartwith4d12x1000creditstobuyyourownequipment"
     },
     {
       "name": "Turian",
@@ -265,7 +270,7 @@
         {
           "id": 2,
           "type": "line",
-          "data": "Alternatively, you may start with 10d6 x 1000 credits to buy your own equipment."
+          "data": "Alternatively, you may start with 8d6 x 1000 credits to buy your own equipment."
         }
       ],
       "body": "http://vignette2.wikia.nocookie.net/masseffect/images/2/2a/Turian_MP.png/revision/latest/scale-to-width-down/500",
@@ -274,7 +279,7 @@
       "face": "http://vignette1.wikia.nocookie.net/masseffect/images/8/84/Garrus_ME3_Character_Shot.png",
       "card": "https://vignette.wikia.nocookie.net/masseffect/images/4/41/Garrus3.png/revision/latest/scale-to-width-down/640?cb=20090625020040",
       "id": "turian",
-      "starting_equipment_text_dump": "PredatorArmorPhaestonAlternativelyyoumaystartwith10d6x1000creditstobuyyourownequipment"
+      "starting_equipment_text_dump": "PredatorArmorPhaestonAlternativelyyoumaystartwith8d6x1000creditstobuyyourownequipment"
     },
     {
       "name": "Volus",
@@ -291,7 +296,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "10d10 x 1000 credits to buy your own equipment."
+          "data": "10d6 x 1000 credits to buy your own equipment."
         }
       ],
       "body": "http://vignette1.wikia.nocookie.net/masseffect/images/3/3e/ME3_Volus_Adept.png/revision/latest/scale-to-width-down/500",
@@ -300,7 +305,7 @@
       "face": "http://vignette4.wikia.nocookie.net/masseffect/images/7/7c/Races_Volus.PNG",
       "card": "https://vignette.wikia.nocookie.net/masseffect/images/8/89/WA_VolusEngineers.png/revision/latest?cb=20120326174601",
       "id": "volus",
-      "starting_equipment_text_dump": "10d10x1000creditstobuyyourownequipment"
+      "starting_equipment_text_dump": "10d6x1000creditstobuyyourownequipment"
     },
     {
       "name": "Vorcha",
@@ -322,7 +327,7 @@
         {
           "id": 2,
           "type": "line",
-          "data": "Alternatively, you may start with 10d6 x 1000 credits to buy your own equipment."
+          "data": "Alternatively, you may start with 4d12 x 1000 credits to buy your own equipment."
         }
       ],
       "body": "http://vignette1.wikia.nocookie.net/masseffect/images/d/d8/ME3_Vorcha_Hunter.png/revision/latest/scale-to-width-down/500",
@@ -331,7 +336,7 @@
       "face": "http://vignette2.wikia.nocookie.net/masseffect/images/9/92/Races_Vorcha.PNG",
       "card": "https://vignette.wikia.nocookie.net/masseffect/images/d/d6/Omega_vermin.png/revision/latest/scale-to-width-down/640?cb=20140624121030",
       "id": "vorcha",
-      "starting_equipment_text_dump": "MercenaryArmorSawbladeAlternativelyyoumaystartwith10d6x1000creditstobuyyourownequipment"
+      "starting_equipment_text_dump": "MercenaryArmorSawbladeAlternativelyyoumaystartwith4d12x1000creditstobuyyourownequipment"
     },
     {
       "name": "Unshackled AI",
@@ -348,7 +353,12 @@
         {
           "id": 1,
           "type": "line",
-          "data": "None"
+          "data": "M-9 Tempest"
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Alternatively, you may start with 2d10 x 1000 credits to buy your own equipment."
         }
       ],
       "body": "https://vignette.wikia.nocookie.net/masseffect/images/0/06/ME3_Alliance_Infiltration_Unit_Infiltrator.png/revision/latest/scale-to-width-down/240?cb=20130227102713",
@@ -357,7 +367,7 @@
       "face": "https://vignette.wikia.nocookie.net/masseffect/images/8/88/Edi-robot-body-me3.png/revision/latest/scale-to-width-down/250?cb=20120311035716",
       "card": "https://vignette.wikia.nocookie.net/masseffect/images/3/39/Cronos_station_edi_and_vendetta.png/revision/latest/scale-to-width-down/640?cb=20120715085530",
       "id": "unshackled_ai",
-      "starting_equipment_text_dump": "None"
+      "starting_equipment_text_dump": "M9TempestAlternativelyyoumaystartwith2d10x1000creditstobuyyourownequipment"
     }
   ]
 }

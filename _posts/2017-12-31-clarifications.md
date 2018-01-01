@@ -21,10 +21,15 @@ undercut the power of the spells. Now the average spell damage should align to t
 The reason for the changes, is that a 4th level spell is effectively an 7th/8th level spell in 5th edition.
 
 ## Armor Sets
-A big addition in 0.4.0 is the pre-made Armor Sets.
+A big addition in 0.4.0 is the pre-made Armor Sets. They're cheaper than creating custom armor, but lack the ability to be customized.
 
 ## Starting equipment
-Due to the addition to the armor sets, each race also has a starting weapon and armor. In addition, classes have starting weapons as well.
+Due to the addition to the armor sets, each race also has a starting weapon and armor. Each race has the option of rolling for credits to buy their own equipment.
+Every die count/die type combination averages to about 25,000 credits. But based on lifespan, you may get roll more or less die.
+The reasoning is that long-lived (asari, krogan) races have a higher chance to be average in their monetary gains . Whereas, short-lived
+races (salarians, vorcha) have a higher probability of either being in their peak or low of their monetary gains. Since it's just
+a starting roll, it shouldn't effect gameplay too much. It was a nice way to factor in that flavor. The only exceptions are Volus, who only start with money
+and Geth/Unshackled AI, who effectively don't need to purchase armor, so start with less.
 
 ## Armor Mod Overhaul
 I've finally rounded out and standardized the the available armor mods. In addition, there are also detailed instructions
