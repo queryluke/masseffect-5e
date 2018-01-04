@@ -1,5 +1,12 @@
 # CHANGE LOG
 
+## v0.4.1
+Additional changes marked for 0.4.0 that didn't make it in.
+
+* Krogan Warhammer was way too prowerful to use as a starting weapon. Damage & Min Str decreased. Chance to stun on available for unprotected enemies.
+* Starting credits reduced.
+* Riot Shield added
+
 ## v0.4.0
 
 ### General
@@ -108,7 +115,6 @@ Removed the option to be an Engineer.
 
 ### Weapons
 * "Semi-Automatic" renamed to "Double Tap"
-* Riot Shield added
 
 
 ## v0.3.0
