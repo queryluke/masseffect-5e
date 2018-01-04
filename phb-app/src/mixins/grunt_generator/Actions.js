@@ -4,10 +4,12 @@ export const Actions = {
       switch (config.sc.id) {
         case 'adept': {
           grunt.spellcasting = true;
-
+          break;
+        }
+        default: {
+          this.setWeaponActions(config, grunt);
         }
       }
-
     }
   }
 };
