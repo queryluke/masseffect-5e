@@ -8,15 +8,24 @@ export const Skills = {
       if (grunt.race.id === 'quarian') {
         if (this.randomValue([1, 2, 3]) === 3 && !config.quarianCybEn) {
           const abilityScoreBonus = this.abilityScoreBonus(grunt.abilityScores.wis);
-          console.log('QUARIAN');
           if (abilityScoreBonus > 0) {
             const skill = skills.find(skill => skill.id === 'perception');
-            console.log(skill);
-            skills.splice(skills.indexOf(skill), 1);
             skill.bonus = abilityScoreBonus;
             grunt.skills.push(skill);
+            skills.splice(skills.indexOf(skill), 1);
           }
           config.quarianCybEn = true;
+        }
+      }
+
+      // Set krogan intimidation
+      if (grunt.race.id === 'krogan') {
+        const abilityScoreBonus = this.abilityScoreBonus(grunt.abilityScores.cha);
+        if (abilityScoreBonus > 0) {
+          const skill = skills.find(skill => skill.id === 'intimidation');
+          skill.bonus = abilityScoreBonus;
+          grunt.skills.push(skill);
+          skills.splice(skills.indexOf(skill), 1);
         }
       }
 

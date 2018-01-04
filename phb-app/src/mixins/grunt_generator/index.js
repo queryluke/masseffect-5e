@@ -13,6 +13,7 @@ import {SavingThrows} from './SavingThrows';
 import {Skills} from './Skills';
 import {Speed} from './Speed';
 import {Type} from './Type';
+import {WeaponActions} from './WeaponActions';
 
 export const GruntGenerator = {
   mixins: [
@@ -30,7 +31,8 @@ export const GruntGenerator = {
     SavingThrows,
     Skills,
     Speed,
-    Type
+    Type,
+    WeaponActions
   ],
   methods: {
     generateGrunt(cr, race, sc) {
@@ -44,7 +46,10 @@ export const GruntGenerator = {
           dmg: 0
         },
         resistances: false,
-        quarianCybEn: false
+        quarianCybEn: false,
+        targetDamage: {dmgMin: 0, dmgMax: 5},
+        allowHeavyWeapons: true,
+        allowMeleeWeapons: true
       };
       const grunt = {
         race,
@@ -69,6 +74,8 @@ export const GruntGenerator = {
       this.setGruntAc(config, grunt);
       this.setGruntHp(config, grunt);
       this.setGruntSpeed(config, grunt);
+      config.targetDamage = this.getTargetDamage(config, grunt);
+      this.setWeaponActions(config, grunt);
       console.log([config, grunt]);
       return grunt;
     }
