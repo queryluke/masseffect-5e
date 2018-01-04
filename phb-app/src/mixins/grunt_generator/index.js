@@ -2,7 +2,6 @@ import {AbilityScoreBonus} from '../abilityScoreBonus';
 import {AbilityScores} from './AbilityScores';
 import {Ac} from './Ac';
 import {AverageFromDie} from '../averageFromDie';
-import {Biotics} from './Biotics';
 import {DieFromAverage} from '../dieFromAverage';
 import {Helpers} from './Helpers';
 import {Hp} from './Hp';
@@ -21,7 +20,6 @@ export const GruntGenerator = {
     AbilityScores,
     Ac,
     AverageFromDie,
-    Biotics,
     DieFromAverage,
     Helpers,
     Hp,
@@ -35,20 +33,35 @@ export const GruntGenerator = {
     Type
   ],
   methods: {
-    generateGrunt(config) {
+    generateGrunt(cr, race, sc) {
+      const config = {
+        cr,
+        effective: {
+          ac: 0,
+          hp: 0,
+          atk: 0,
+          dc: 0,
+          dmg: 0
+        },
+        resistances: false,
+        quarianCybEn: false
+      };
       const grunt = {
+        race,
+        sc,
         size: 'Medium',
+        alignment: 'any alignment',
         savingThrows: [],
         skills: [],
         conditionImmunities: [],
         damageResistances: [],
         features: [],
         reactions: [],
-        profBonus: config.cr.profBonus
+        profBonus: cr.profBonus
       };
-      this.setGruntName(config, grunt);
-      this.setGruntType(config, grunt);
-      grunt.alignment = 'any alignment';
+
+      this.setGruntName(grunt);
+      this.setGruntType(grunt);
       this.setGruntAbilityScores(config, grunt);
       this.setGruntFeatures(config, grunt);
       this.setGruntSkills(config, grunt);
@@ -56,8 +69,7 @@ export const GruntGenerator = {
       this.setGruntAc(config, grunt);
       this.setGruntHp(config, grunt);
       this.setGruntSpeed(config, grunt);
-      console.log(grunt);
-      console.log(config);
+      console.log([config, grunt]);
       return grunt;
     }
   }

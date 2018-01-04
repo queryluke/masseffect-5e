@@ -1,11 +1,11 @@
 export const Name = {
   methods: {
-    setGruntName(config, grunt) {
-      let name = config.race.name;
-      if (config.sc.id === 'none') {
+    setGruntName(grunt) {
+      let name = grunt.race.name;
+      if (grunt.sc.id === 'none') {
         name += ' Grunt';
       } else {
-        name += ` ${config.sc.name}`;
+        name += ` ${grunt.sc.name}`;
       }
       grunt.name = name;
     }

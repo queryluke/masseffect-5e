@@ -21,7 +21,7 @@ export const AbilityScores = {
       const standardArray = [15, 14, 13, 12, 10, 8];
 
       // Create stat weights
-      if (config.sc.id === 'none') {
+      if (grunt.sc.id === 'none') {
         const abilities = Object.keys(grunt.abilityScores);
         let i = 3;
         while (i > 0) {
@@ -31,7 +31,7 @@ export const AbilityScores = {
           i--;
         }
       } else {
-        statWeights = classStats[config.sc.id];
+        statWeights = classStats[grunt.sc.id];
       }
 
       const weightedAbilitySelection = {
@@ -83,7 +83,7 @@ export const AbilityScores = {
       }
 
       // add race attributes
-      switch (config.race.id) {
+      switch (grunt.race.id) {
         case 'human': {
           let ability = this.randomValue(weightedAbilitySelection.increase);
           grunt.abilityScores[ability] += 2;
@@ -101,7 +101,7 @@ export const AbilityScores = {
           break;
         }
         default: {
-          const increases = config.race.increases.split(',');
+          const increases = grunt.race.increases.split(',');
           for (const inc of increases) {
             const ability = inc.toLowerCase().replace(/[^a-z]/g, '').slice(0, 3);
             const increase = parseInt(inc.replace(/\D/, ''), 10);

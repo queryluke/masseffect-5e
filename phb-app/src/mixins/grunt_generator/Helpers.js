@@ -42,7 +42,7 @@ export const Helpers = {
       return {
         dmgMin: effectiveCr.dmgMin,
         dmgMax: effectiveCr.dmgMax
-      }
+      };
     }
   },
   data() {

@@ -3,14 +3,32 @@ export const Skills = {
     setGruntSkills(config, grunt) {
       const numSkills = parseFloat(config.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(config.cr.cr) / 4);
       let skills = JSON.parse(JSON.stringify(this.skills)).filter(skill => skill.removed !== 'x');
-      if (config.sc.id !== 'none') {
-        const classSkills = config.sc.skill.replace(/choose three from/gi, '').split(',').map(skill => {
+
+      // Set possible quarian cybernetic enhancement
+      if (grunt.race.id === 'quarian') {
+        if (this.randomValue([1, 2, 3]) === 3 && !config.quarianCybEn) {
+          const abilityScoreBonus = this.abilityScoreBonus(grunt.abilityScores.wis);
+          console.log('QUARIAN');
+          if (abilityScoreBonus > 0) {
+            const skill = skills.find(skill => skill.id === 'perception');
+            console.log(skill);
+            skills.splice(skills.indexOf(skill), 1);
+            skill.bonus = abilityScoreBonus;
+            grunt.skills.push(skill);
+          }
+          config.quarianCybEn = true;
+        }
+      }
+
+      if (grunt.sc.id !== 'none') {
+        const classSkills = grunt.sc.skill.replace(/choose three from/gi, '').split(',').map(skill => {
           return skill.toLowerCase().trim().replace(/ /g, '_');
         });
         skills = skills.filter(skill => {
           return classSkills.includes(skill.id);
         });
       }
+
       let numProficient = this.randomValue(this.proficientWeights[numSkills]);
       for (let i = 1; i <= numSkills; i++) {
         const skill = this.randomValue(skills);

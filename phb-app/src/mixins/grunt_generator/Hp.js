@@ -23,7 +23,7 @@ export const Hp = {
       // Has Shields?
       const shields = Math.floor(Math.random() * 100) > 30;
       if (shields) {
-        if (config.sc.id === 'engineer' || config.sc.id === 'infiltrator' || config.sc.id === 'sentinel') {
+        if (grunt.sc.id === 'engineer' || grunt.sc.id === 'infiltrator' || grunt.sc.id === 'sentinel') {
           averageSpDieRoll = 3.5;
           shieldPercent = 0.5;
         } else {
@@ -35,7 +35,7 @@ export const Hp = {
         maxHp = config.cr.hpMax - maxSp;
       }
 
-      const averageHpDieRoll = config.race.id === 'volus' ? 3.5 : 4.5;
+      const averageHpDieRoll = grunt.race.id === 'volus' ? 3.5 : 4.5;
       let conMod = this.abilityScoreBonus(grunt.abilityScores.con);
       let multiplicativeMod = 1;
       if (config.effective.resistances) {
@@ -48,7 +48,7 @@ export const Hp = {
         }
       }
 
-      if (config.race.id === 'turian') {
+      if (grunt.race.id === 'turian') {
         conMod += 2;
       }
       grunt.sp = shields ? this.generatePointObject(averageSpDieRoll, targetSp, maxSp, 0) : null;

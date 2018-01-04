@@ -3,15 +3,15 @@ export const Ac = {
     setGruntAc(config, grunt) {
       const acModArray = [-2, -1, -1, 0, 1, 1, 2];
 
-      if (config.race.id === 'geth' || config.race.id === 'unshackled-ai') {
+      if (grunt.race.id === 'geth' || grunt.race.id === 'unshackled-ai') {
         grunt.ac = 13 + this.abilityScoreBonus(grunt.abilityScores.dex);
         return;
       }
 
-      if (config.sc.id === 'adept' || config.sc.id === 'infiltrator') {
+      if (grunt.sc.id === 'adept' || grunt.sc.id === 'infiltrator') {
         acModArray.push(-2);
         acModArray.push(-2);
-      } else if (config.sc.id === 'soldier' || config.sc.id === 'sentinel') {
+      } else if (grunt.sc.id === 'soldier' || grunt.sc.id === 'sentinel') {
         acModArray.push(2);
         acModArray.push(2);
       } else {
@@ -21,7 +21,7 @@ export const Ac = {
 
       let acMod = this.randomValue(acModArray);
 
-      if (config.race.id === 'krogan') {
+      if (grunt.race.id === 'krogan') {
         acMod++;
       }
       grunt.ac = config.cr.acDc + acMod;

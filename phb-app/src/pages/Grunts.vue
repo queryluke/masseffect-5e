@@ -15,9 +15,12 @@
             p Options
           v-flex(xs12 sm6 md4).px-2
             v-select(
-              v-bind:items="cr_options"
+              v-bind:items="crs"
               v-model="cr"
               label="Select a Challenge Rating"
+              item-text="cr"
+              item-value="cr"
+              return-object
               single-line
               bottom
               hint="Challenge Rating"
@@ -26,8 +29,11 @@
           v-flex(xs12 sm6 md4).px-2
             v-select(
               v-bind:items="classOptions"
-              v-model="selected_class"
+              v-model="sClass"
               label="Select a Class"
+              item-text="name"
+              item-value="id"
+              return-object
               single-line
               bottom
               hint="Class"
@@ -38,6 +44,9 @@
               v-bind:items="raceOptions"
               v-model="race"
               label="Select a Race"
+              item-text="name"
+              item-value="id"
+              return-object
               single-line
               bottom
               hint="Race"
@@ -60,16 +69,12 @@
     name: 'Grunts',
     data() {
       return {
-        statsByCr: [],
+        crs: [],
         races: [],
         classes: [],
-        skills: [],
-        cr: "1/8",
-        race: "random",
-        selected_class: "random",
-        race_options: [],
-        class_options: [],
-        cr_options: [],
+        cr: {},
+        race: { id: 'random', name: 'Random' },
+        sClass: { id: 'random', name: 'Random' },
         grunt: {}
       };
     },
@@ -77,65 +82,41 @@
     created() {
       let getRaces = this.$http.get('../data/races.json').then(response => response.json());
       let getClasses = this.$http.get('../data/classes.json').then(response => response.json());
-      let getSkills = this.$http.get('../data/skills.json').then(response => response.json());
       let getStatsByCr = this.$http.get('../data/stats_by_cr.json').then(response => response.json());
-      Promise.all([getRaces, getClasses, getSkills, getStatsByCr]).then(response => {
-        let races = response[0].data;
-        let classes = response[1].data;
-        this.skills = response[2].data;
-        this.statsByCr = response[3];
+      Promise.all([getRaces, getClasses, getStatsByCr]).then(response => {
+        this.crs = response[2];
+        this.cr = this.crs[0];
 
         // Setup races
-        this.races = races.map((race) => {
+        this.races = response[0].data.map((race) => {
           // expand available classes
           race.available_classes = race.available_classes.split(',').map((v) => v.trim());
           return race;
         });
 
         // Setup classes
-        this.classes = classes;
-        this.cr_options = this.statsByCr.map( (cr) => {
-          return cr.cr;
-        });
-        this.race_options = this.races.map( (race) => {
-          return { value: race.id, text: race.name };
-        }).sort();
-        this.race_options.unshift({ value: 'random', text: 'Random' });
+        this.classes = response[1].data;
 
         this.getGrunt();
       });
     },
     computed: {
       classOptions: function() {
-        let class_options = [];
-        if(this.race === 'random'){
-          class_options = this.classes;
-        } else {
-          class_options = this.filterClasses(this.race);
-        }
-        class_options = class_options.map( (a_class) => {
-          return { value: a_class.id, text: a_class.name };
-        }).sort();
-        class_options.unshift({ value: 'random', text: 'Random' });
-        class_options.push({ value: 'none', text: 'None' });
-        if(!class_options.map( (co) => { return co.value }).includes(this.selected_class)){
-          this.selected_class = 'random';
+        let class_options = this.filterClasses(this.race.id);
+        class_options.sort(this.compare);
+        class_options.unshift({ id: 'random', name: 'Random' });
+        class_options.push({ id: 'none', name: 'None' });
+        if(!class_options.map( (co) => { return co.id }).includes(this.sClass.id)){
+          this.sClass = class_options[0];
         }
         return class_options;
       },
       raceOptions: function() {
-        let race_options = [];
-        if(this.selected_class === 'random' || this.selected_class === 'none'){
-          race_options = this.races;
-        } else {
-          race_options = this.filterRaces(this.selected_class);
-        }
-        race_options = race_options.map( (race) => {
-          return { value: race.id, text: race.name };
-        }).sort();
-        race_options.unshift({ value: 'random', text: 'Random' });
-        if(!race_options.map( (ro) => { return ro.value }).includes(this.race)){
-          this.race = 'random';
+        let race_options = this.filterRaces(this.sClass.id);
+        race_options.sort(this.compare);
+        race_options.unshift({ id: 'random', name: 'Random' });
+        if(!race_options.map( (ro) => { return ro.id }).includes(this.race.id)){
+          this.race = race_options[0];
         }
         return race_options;
       },
@@ -143,67 +124,55 @@
     methods: {
       filterClasses(race_id){
         return this.classes.filter(a_class => {
+          if(race_id === 'random'){
+            return true;
+          }
           return this.races.find((race) => { return race.id === race_id }).available_classes.includes(a_class.name);
         });
       },
       filterRaces(class_id){
         return this.races.filter(race => {
+          if(class_id === 'random') {
+            return true;
+          }
           const regex = new RegExp(class_id, 'gi');
           return regex.test(race.available_classes)
         });
       },
-      getGrunt(){
-        const config = this.generateConfig();
-        this.grunt = this.generateGrunt(config);
+      compare(a, b) {
+        let comparison = 0;
+        if(a.name > b.name){
+          comparison = 1;
+        } else if (b.name > a.name) {
+          comparison = -1;
+        }
+        return comparison;
       },
-      generateConfig(){
-        const config = {};
-
+      getGrunt(){
         // Get the race
-        if(this.race === 'random') {
-          if (this.selected_class === 'random' || this.selected_class === 'none') {
-            config.race = this.randomValue(this.races);
+        let race = {};
+        if(this.race.id === 'random') {
+          if (this.sClass.id === 'random' || this.sClass.id === 'none') {
+            race = this.randomValue(this.races);
           } else {
-            const races = this.filterRaces(this.selected_class);
-            config.race = this.randomValue(races);
+            const races = this.filterRaces(this.sClass.id);
+            race = this.randomValue(races);
           }
         } else {
-          config.race = this.races.find((race) => {
-            return  race.id === this.race;
-          });
+          race = this.race;
         }
 
         // Get the class
-        switch(this.selected_class){
-          case 'random':
-            const classes = this.filterClasses(config.race.id);
-            config.sc = this.randomValue(classes);
-            break;
-          case 'none':
-            config.sc = { id: 'none' };
-            break;
-          default:
-            config.sc = this.classes.find((a_class) => {
-              return a_class.id === this.selected_class;
-            });
+        let sc = {};
+        if (this.sClass.id === 'random') {
+          const classes = this.filterClasses(race.id);
+          sc = this.randomValue(classes);
+        } else {
+          sc = this.sc;
         }
-        // Get the cr
-        config.cr = this.statsByCr.find((cr) => {
-          return cr.cr === this.cr;
-        });
 
-        config.effective = {
-          ac: 0,
-          hp: 0,
-          atk: 0,
-          dc: 0,
-          dmg: 0,
-          resistances: false,
-        };
-        config.quarianCybEn = false;
-
-        return config;
-      }
+        this.grunt = this.generateGrunt(this.cr, race, sc);
+      },
     }
   };
 </script>

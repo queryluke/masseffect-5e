@@ -6,7 +6,7 @@ export const Features = {
 
       // Set base features
       const mandatoryFeatures = features.filter(feature => {
-        return feature[config.race.id] === 'a';
+        return feature[grunt.race.id] === 'a';
       });
       for (const feature of mandatoryFeatures) {
         this.addFeature(config, grunt, feature);
@@ -14,7 +14,7 @@ export const Features = {
 
       // Set additional features
       const availableFeatures = features.filter(feature => {
-        return feature[config.race.id] === 'x';
+        return feature[grunt.race.id] === 'x';
       });
       const numFeatures = this.randomValue(this.numFeatureWeights[crMetaLevel]);
       for (let i = 1; i <= numFeatures; i++) {
@@ -61,7 +61,7 @@ export const Features = {
           grunt.damageResistances = grunt.damageResistances.concat(feature.description.split(',').map(res => {
             return res.trim();
           }));
-          config.effective.resistances = true;
+          config.resistances = true;
           break;
         }
         case 'reaction': {

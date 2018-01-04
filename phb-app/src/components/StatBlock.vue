@@ -85,7 +85,7 @@
       savingThrows() {
         if (this.stats.savingThrows && this.stats.savingThrows.length > 0) {
           return this.stats.savingThrows.map(st => {
-            return `+${st.bonus} ${st.name}`;
+            return `+${st.name} ${st.bonus} `;
           }).join(', ');
         }
         return false;
@@ -93,7 +93,7 @@
       skills() {
         if (this.stats.skills && this.stats.skills.length){
           return this.stats.skills.map(skill => {
-            return `+${skill.bonus} ${skill.name}`;
+            return `+${skill.name} ${skill.bonus} `;
           }).join(', ');
         }
         return false;

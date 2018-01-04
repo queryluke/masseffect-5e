@@ -1,7 +1,7 @@
 export const Speed = {
   methods: {
     setGruntSpeed(config, grunt) {
-      switch (config.race.id) {
+      switch (grunt.race.id) {
         case 'volus': {
           grunt.speed = '8m';
           break;
