@@ -168,7 +168,7 @@
           const classes = this.filterClasses(race.id);
           sc = this.randomValue(classes);
         } else {
-          sc = this.sc;
+          sc = this.sClass;
         }
 
         this.grunt = this.generateGrunt(this.cr, race, sc);

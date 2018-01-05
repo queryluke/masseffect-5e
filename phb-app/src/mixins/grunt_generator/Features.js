@@ -71,6 +71,15 @@ export const Features = {
           }
           break;
         }
+        case 'action': {
+          grunt.actions.push({
+            type: 'common',
+            name: feature.name,
+            recharge: feature.recharge,
+            description: feature.description
+          });
+          break;
+        }
         default: {
           grunt.features.push(feature);
           if (feature.crKey) {

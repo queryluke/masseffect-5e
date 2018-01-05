@@ -8,7 +8,7 @@
     "hpMax": 40,
     "attackBonus": 3,
     "dmgMin": 2,
-    "dmgMax": 3,
+    "dmgMax": 6,
     "abReduction": [8,9,10]
   },
   {
@@ -20,7 +20,7 @@
     "hpMax": 56,
     "attackBonus": 3,
     "dmgMin": 4,
-    "dmgMax": 6,
+    "dmgMax": 8,
     "abReduction": [6,7,8]
   },
   {

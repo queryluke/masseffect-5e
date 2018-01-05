@@ -1,6 +1,7 @@
 import {AbilityScoreBonus} from '../abilityScoreBonus';
 import {AbilityScores} from './AbilityScores';
 import {Ac} from './Ac';
+import {Actions} from './Actions';
 import {AverageFromDie} from '../averageFromDie';
 import {DieFromAverage} from '../dieFromAverage';
 import {Helpers} from './Helpers';
@@ -20,6 +21,7 @@ export const GruntGenerator = {
     AbilityScoreBonus,
     AbilityScores,
     Ac,
+    Actions,
     AverageFromDie,
     DieFromAverage,
     Helpers,
@@ -62,6 +64,7 @@ export const GruntGenerator = {
         damageResistances: [],
         features: [],
         reactions: [],
+        actions: [],
         profBonus: cr.profBonus
       };
 
@@ -74,8 +77,7 @@ export const GruntGenerator = {
       this.setGruntAc(config, grunt);
       this.setGruntHp(config, grunt);
       this.setGruntSpeed(config, grunt);
-      config.targetDamage = this.getTargetDamage(config, grunt);
-      this.setWeaponActions(config, grunt);
+      this.setGruntActions(config, grunt);
       console.log([config, grunt]);
       return grunt;
     }

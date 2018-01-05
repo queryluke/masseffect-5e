@@ -22,13 +22,17 @@
         li(v-if="hasDamageResistances") #[strong Damage Resistances] {{ stats.damageResistances.join(', ') }}
         li(v-if="hasConditionImmunities") #[strong Condition Immunities] {{ stats.conditionImmunities.join(', ') }}
       div.hr
-      p(v-for="(feature, index) in stats.features" v-bind:key="index") #[strong #[em {{ feature.name }}].] {{ feature.description }}
-      div
-        p.title.underline-heading.small-caps Actions
+      p(v-for="(feature, index) in stats.features" v-bind:key="index") #[strong #[em {{ featureTitle(feature) }}].] {{ feature.description }}
+      p.title.underline-heading.small-caps Actions
+      div(v-for="(action, index) in stats.actions" v-bind:key="index")
+        div(v-if="action.type === 'attack'")
+          p.mb-0 #[strong #[em {{ action.name }}].] #[em {{ action.attackType }}]: {{ action.description.attack }}
+          p(:class="[action.description.miss ? 'my-0' : 'mt-0']") #[em Hit]: {{ action.description.hit }}
+          p(v-if="action.description.miss").mt-0 #[em Miss]: {{ action.description.miss }}
+        p(v-else-if="action.type === 'common'") #[strong #[em {{ featureTitle(action) }}].] {{ action.description }}
       div(v-if="hasReactions")
         p.title.underline-heading.small-caps Reactions
-        p(v-for="(reaction, index) in stats.reactions" v-bind:key="index") #[strong #[em {{ reaction.name }}].] {{ reaction.description }}
-
+        p(v-for="(reaction, index) in stats.reactions" v-bind:key="index") #[strong #[em {{ featureTitle(reaction) }}].] {{ reaction.description }}
 </template>
 
 <script>
@@ -71,6 +75,13 @@
           return '0';
         }
       },
+      featureTitle(feature) {
+        let name = feature.name;
+        if (feature.recharge) {
+          name += ` (${feature.recharge})`;
+        }
+        return name;
+      }
     },
     computed: {
       hasDamageResistances() {
@@ -85,7 +96,7 @@
       savingThrows() {
         if (this.stats.savingThrows && this.stats.savingThrows.length > 0) {
           return this.stats.savingThrows.map(st => {
-            return `+${st.name} ${st.bonus} `;
+            return `${st.name} +${st.bonus}`;
           }).join(', ');
         }
         return false;
@@ -93,11 +104,14 @@
       skills() {
         if (this.stats.skills && this.stats.skills.length){
           return this.stats.skills.map(skill => {
-            return `+${skill.name} ${skill.bonus} `;
+            return `${skill.name} +${skill.bonus}`;
           }).join(', ');
         }
         return false;
       },
+      reactionName() {
+
+      }
     },
     props: ['stats'],
   };
