@@ -28,7 +28,7 @@ export const Actions = {
         }
       }
       const crMetaLevel = parseFloat(config.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(config.cr.cr) / 4);
-      if (Math.floor(Math.random() * 100) < crMetaLevel * 10) {
+      if (Math.floor(Math.random() * 100) < (crMetaLevel + 1) * 10) {
         const availableGrenades = this.grenades.filter(grenade => {
           return grenade.dpr <= config.targetDamage.dmgMax;
         });
@@ -56,7 +56,9 @@ export const Actions = {
     .then(response => response.json())
     .then(response => {
       this.grenades = response.data.map(grenade => {
-        grenade.dpr = parseInt(grenade.damage_amount, 10) * (((parseInt(grenade.dd, 10) * 2) + 1) / 2);
+        const dmgAmt = grenade.damage_amount ? parseInt(grenade.damage_amount, 10) : 0;
+        const dmg = grenade.dd ? (((parseInt(grenade.dd.replace(/\D/gi, ''), 10) * 2) + 1) / 2) : 0;
+        grenade.dpr = dmgAmt * dmg;
         return grenade;
       });
     });

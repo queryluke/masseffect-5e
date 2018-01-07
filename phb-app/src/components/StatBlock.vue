@@ -21,8 +21,10 @@
         li(v-if="skills") #[strong Skills] {{ skills }}
         li(v-if="hasDamageResistances") #[strong Damage Resistances] {{ stats.damageResistances.join(', ') }}
         li(v-if="hasConditionImmunities") #[strong Condition Immunities] {{ stats.conditionImmunities.join(', ') }}
+        li(v-if="hasSenses") #[strong Senses] {{ stats.senses.join(', ') }}
+        li #[strong Challenge] {{ stats.cr }}
       div.hr
-      p(v-for="(feature, index) in stats.features" v-bind:key="index") #[strong #[em {{ featureTitle(feature) }}].] {{ feature.description }}
+      p(v-for="(feature) in stats.features" v-bind:key="feature.id") #[strong #[em {{ featureTitle(feature) }}].] {{ feature.description }}
       p.title.underline-heading.small-caps Actions
       div(v-for="(action, index) in stats.actions" v-bind:key="index")
         div(v-if="action.type === 'attack'")
@@ -32,7 +34,7 @@
         p(v-else-if="action.type === 'common'") #[strong #[em {{ featureTitle(action) }}].] {{ action.description }}
       div(v-if="hasReactions")
         p.title.underline-heading.small-caps Reactions
-        p(v-for="(reaction, index) in stats.reactions" v-bind:key="index") #[strong #[em {{ featureTitle(reaction) }}].] {{ reaction.description }}
+        p(v-for="(reaction, index) in stats.reactions" v-bind:key="reaction.id") #[strong #[em {{ featureTitle(reaction) }}].] {{ reaction.description }}
 </template>
 
 <script>
@@ -92,6 +94,9 @@
       },
       hasReactions() {
         return this.stats.reactions && this.stats.reactions.length > 0;
+      },
+      hasSenses() {
+        return this.stats.senses && this.stats.senses.length > 0;
       },
       savingThrows() {
         if (this.stats.savingThrows && this.stats.savingThrows.length > 0) {

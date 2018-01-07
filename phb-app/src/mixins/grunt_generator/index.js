@@ -11,6 +11,7 @@ import {Name} from './Name';
 import {NumberRange} from '../numberRange';
 import {RandomValue} from '../randomValue';
 import {SavingThrows} from './SavingThrows';
+import {Senses} from './Senses';
 import {Skills} from './Skills';
 import {Speed} from './Speed';
 import {Type} from './Type';
@@ -31,6 +32,7 @@ export const GruntGenerator = {
     NumberRange,
     RandomValue,
     SavingThrows,
+    Senses,
     Skills,
     Speed,
     Type,
@@ -54,18 +56,20 @@ export const GruntGenerator = {
         allowMeleeWeapons: true
       };
       const grunt = {
-        race,
-        sc,
-        size: 'Medium',
+        actions: [],
         alignment: 'any alignment',
-        savingThrows: [],
-        skills: [],
         conditionImmunities: [],
+        cr: `${cr.cr} (${cr.xp} XP)`,
         damageResistances: [],
         features: [],
+        profBonus: cr.profBonus,
+        race,
         reactions: [],
-        actions: [],
-        profBonus: cr.profBonus
+        savingThrows: [],
+        sc,
+        senses: [],
+        size: 'Medium',
+        skills: []
       };
 
       this.setGruntName(grunt);
@@ -77,6 +81,7 @@ export const GruntGenerator = {
       this.setGruntAc(config, grunt);
       this.setGruntHp(config, grunt);
       this.setGruntSpeed(config, grunt);
+      this.setGruntSenses(config, grunt);
       this.setGruntActions(config, grunt);
       console.log([config, grunt]);
       return grunt;

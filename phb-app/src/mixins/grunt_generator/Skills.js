@@ -53,6 +53,15 @@ export const Skills = {
           grunt.skills.push(skill);
         }
       }
+
+      // Set expertise for salaraians
+      if (grunt.race.id === 'salarian') {
+        for (const skill of grunt.skills) {
+          if (['engineering', 'hacking', 'history', 'medicine', 'nature', 'piloting'].includes(skill.id)) {
+            skill.bonus += config.cr.profBonus;
+          }
+        }
+      }
     }
   },
   data() {

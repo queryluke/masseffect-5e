@@ -21,7 +21,6 @@ export const Hp = {
       let maxHp = config.cr.hpMax;
 
       // Has Shields?
-      console.log(Math.floor(Math.random() * 100));
       const shields = Math.floor(Math.random() * 100) > 15;
       if (shields) {
         if (grunt.sc.id === 'engineer' || grunt.sc.id === 'infiltrator' || grunt.sc.id === 'sentinel') {
