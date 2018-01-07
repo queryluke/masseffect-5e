@@ -21,13 +21,14 @@ export const Hp = {
       let maxHp = config.cr.hpMax;
 
       // Has Shields?
-      const shields = Math.floor(Math.random() * 100) > 30;
+      console.log(Math.floor(Math.random() * 100));
+      const shields = Math.floor(Math.random() * 100) > 15;
       if (shields) {
         if (grunt.sc.id === 'engineer' || grunt.sc.id === 'infiltrator' || grunt.sc.id === 'sentinel') {
           averageSpDieRoll = 3.5;
-          shieldPercent = 0.5;
+          shieldPercent = 0.65;
         } else {
-          shieldPercent = 0.4;
+          shieldPercent = 0.5;
         }
         targetSp = Math.floor(targetTotal * shieldPercent);
         maxSp = Math.floor(targetHp * shieldPercent);
