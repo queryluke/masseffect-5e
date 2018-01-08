@@ -2,31 +2,12 @@ export const Actions = {
   methods: {
     setGruntActions(config, grunt) {
       config.targetDamage = this.getTargetDamage(config, grunt);
-      switch (grunt.sc.id) {
-        case 'adept': {
-          grunt.spellcasting = true;
-          break;
-        }
-        case 'engineer': {
-          grunt.spellcasting = true;
-          break;
-        }
-        case 'vanguard': {
-          grunt.spellcasting = true;
-          break;
-        }
-        case 'sentinel': {
-          grunt.spellcasting = true;
-          break;
-        }
-        case 'infiltrator': {
-          grunt.spellcasting = true;
-          break;
-        }
-        default: {
-          this.setWeaponActions(config, grunt);
-        }
+      if (['adept', 'vanguard', 'sentinel'].includes(grunt.sc.id)) {
+        this.setGruntBiotics(config, grunt);
+        // need to add barrier for vanguards
       }
+      // need to add cantrip for asari, innate spellcasting?
+      this.setWeaponActions(config, grunt);
       const crMetaLevel = parseFloat(config.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(config.cr.cr) / 4);
       if (Math.floor(Math.random() * 100) < (crMetaLevel + 1) * 10) {
         const availableGrenades = this.grenades.filter(grenade => {

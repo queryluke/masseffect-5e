@@ -3,19 +3,21 @@ import {AbilityScores} from './AbilityScores';
 import {Ac} from './Ac';
 import {Actions} from './Actions';
 import {AverageFromDie} from '../averageFromDie';
+import {Biotics} from './Biotics';
 import {DieFromAverage} from '../dieFromAverage';
 import {Helpers} from './Helpers';
 import {Hp} from './Hp';
 import {Features} from './Features';
 import {Name} from './Name';
 import {NumberRange} from '../numberRange';
+import {Ordinal} from '../ordinal';
 import {RandomValue} from '../randomValue';
 import {SavingThrows} from './SavingThrows';
 import {Senses} from './Senses';
 import {Skills} from './Skills';
 import {Speed} from './Speed';
 import {Type} from './Type';
-import {WeaponActions} from './WeaponActions';
+import {Weapons} from './Weapons';
 
 export const GruntGenerator = {
   mixins: [
@@ -24,19 +26,21 @@ export const GruntGenerator = {
     Ac,
     Actions,
     AverageFromDie,
+    Biotics,
     DieFromAverage,
     Helpers,
     Hp,
     Features,
     Name,
     NumberRange,
+    Ordinal,
     RandomValue,
     SavingThrows,
     Senses,
     Skills,
     Speed,
     Type,
-    WeaponActions
+    Weapons
   ],
   methods: {
     generateGrunt(cr, race, sc) {
@@ -69,7 +73,8 @@ export const GruntGenerator = {
         sc,
         senses: [],
         size: 'Medium',
-        skills: []
+        skills: [],
+        spellcasting: false
       };
 
       this.setGruntName(grunt);

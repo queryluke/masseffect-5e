@@ -57,7 +57,7 @@
     v-container
       v-layout
         v-flex(xs12 sm10 offset-sm1 lg8 offset-lg2)
-          stat-block(:stats="grunt")
+          stat-block(v-if="grunt" v-bind:stats="grunt")
 </template>
 
 <script>
@@ -75,7 +75,7 @@
         cr: {},
         race: { id: 'random', name: 'Random' },
         sClass: { id: 'random', name: 'Random' },
-        grunt: {}
+        grunt: false
       };
     },
     mixins: [GruntGenerator],
@@ -96,8 +96,6 @@
 
         // Setup classes
         this.classes = response[1].data;
-
-        this.getGrunt();
       });
     },
     computed: {
@@ -119,7 +117,7 @@
           this.race = race_options[0];
         }
         return race_options;
-      },
+      }
     },
     methods: {
       filterClasses(race_id){

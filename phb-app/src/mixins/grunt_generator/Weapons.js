@@ -1,4 +1,4 @@
-export const WeaponActions = {
+export const Weapons = {
   methods: {
     setWeaponActions(config, grunt) {
       const weapons = this.getWeaponsWithDamage(grunt);
@@ -178,9 +178,10 @@ export const WeaponActions = {
       const hipFire = /hip/gi.test(weapon.tags) ? ' & hip fire' : '';
       const target = weapon.id === 'n7_piranha' ? 'all creatures in 4m cone' : 'one target';
       const additionalHitMechanics = weapon.npcHit ? `, and ${weapon.npcHit}` : '.';
+      const toHit = config.cr.profBonus + weapon.attack.bonus >= 0 ? `+${config.cr.profBonus + weapon.attack.bonus}` : config.cr.profBonus + weapon.attack.bonus;
 
       const description = {
-        attack: `+${config.cr.profBonus + weapon.attack.bonus} to hit, ${reachOrRange} ${weapon.range}${hipFire}, ${target}.`,
+        attack: `${toHit} to hit, ${reachOrRange} ${weapon.range}${hipFire}, ${target}.`,
         hit: `${Math.floor(weapon.attack.dpr)} (${weapon.rof}d${weapon.damage}${bonusText}) ${weapon.dmgType} damage${additionalHitMechanics}`,
         miss: null
       };

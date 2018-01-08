@@ -10,7 +10,8 @@
     "dmgMin": 2,
     "dmgMax": 6,
     "abReduction": [8,9,10],
-    "xp": "25"
+    "xp": "25",
+    "spellcastingLevel": 1
   },
   {
     "id": 2,
@@ -23,7 +24,8 @@
     "dmgMin": 4,
     "dmgMax": 8,
     "abReduction": [6,7,8],
-    "xp": "50"
+    "xp": "50",
+    "spellcastingLevel": 2
   },
   {
     "id": 3,
@@ -36,7 +38,8 @@
     "dmgMin": 7,
     "dmgMax": 9,
     "abReduction": [4,5,6],
-    "xp": "100"
+    "xp": "100",
+    "spellcastingLevel": 3
   },
   {
     "id": 4,
@@ -49,7 +52,8 @@
     "dmgMin": 10,
     "dmgMax": 16,
     "abReduction": [2,3,4],
-    "xp": "200"
+    "xp": "200",
+    "spellcastingLevel": 4
   },
   {
     "id": 5,
@@ -62,7 +66,8 @@
     "dmgMin": 17,
     "dmgMax": 22,
     "abReduction": [1,2],
-    "xp": "450"
+    "xp": "450",
+    "spellcastingLevel": 5
   },
   {
     "id": 6,
@@ -74,7 +79,8 @@
     "attackBonus": 4,
     "dmgMin": 27,
     "dmgMax": 29,
-    "xp": "700"
+    "xp": "700",
+    "spellcastingLevel": 6
   },
   {
     "id": 7,
@@ -87,7 +93,8 @@
     "dmgMin": 30,
     "dmgMax": 36,
     "abIncrease": [1,2],
-    "xp": "1,100"
+    "xp": "1,100",
+    "spellcastingLevel": 7
   },
   {
     "id": 8,
@@ -100,7 +107,8 @@
     "dmgMin": 37,
     "dmgMax": 43,
     "abIncrease": [1,2,3],
-    "xp": "1,800"
+    "xp": "1,800",
+    "spellcastingLevel": 9
   },
   {
     "id": 9,
@@ -113,7 +121,8 @@
     "dmgMin": 44,
     "dmgMax": 49,
     "abIncrease": [2,3,4],
-    "xp": "2,300"
+    "xp": "2,300",
+    "spellcastingLevel": 10
   },
   {
     "id": 10,
@@ -126,7 +135,8 @@
     "dmgMin": 50,
     "dmgMax": 56,
     "abIncrease": [3,4,5],
-    "xp": "2,900"
+    "xp": "2,900",
+    "spellcastingLevel": 11
   },
   {
     "id": 11,
@@ -139,7 +149,8 @@
     "dmgMin": 57,
     "dmgMax": 63,
     "abIncrease": [4,5,6],
-    "xp": "3,900"
+    "xp": "3,900",
+    "spellcastingLevel": 12
   },
   {
     "id": 12,
@@ -152,7 +163,8 @@
     "dmgMin": 64,
     "dmgMax": 69,
     "abIncrease": [5,6,7],
-    "xp": "5,000"
+    "xp": "5,000",
+    "spellcastingLevel": 13
   },
   {
     "id": 13,
@@ -165,7 +177,8 @@
     "dmgMin": 71,
     "dmgMax": 76,
     "abIncrease": [6,7,8],
-    "xp": "5,900"
+    "xp": "5,900",
+    "spellcastingLevel": 14
   },
   {
     "id": 14,
@@ -178,7 +191,8 @@
     "dmgMin": 77,
     "dmgMax": 83,
     "abIncrease": [7,8,9],
-    "xp": "7,200"
+    "xp": "7,200",
+    "spellcastingLevel": 16
   },
   {
     "id": 15,
@@ -191,6 +205,7 @@
     "dmgMin": 84,
     "dmgMax": 90,
     "abIncrease": [8,9,10],
-    "xp": "8,400"
+    "xp": "8,400",
+    "spellcastingLevel": 18
   }
 ]

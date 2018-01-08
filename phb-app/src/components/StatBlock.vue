@@ -25,6 +25,15 @@
         li #[strong Challenge] {{ stats.cr }}
       div.hr
       p(v-for="(feature) in stats.features" v-bind:key="feature.id") #[strong #[em {{ featureTitle(feature) }}].] {{ feature.description }}
+      div(v-if="stats.spellcasting").mb-3
+        p.mb-1.
+          #[strong #[em Biotics].] The {{ stats.name }} is {{ aOrAn(stats.spellcasting.level) }} {{ ordinal(stats.spellcasting.level) }}-level
+          biotic. Its biotic ability is Wisdon (spell save DC {{ stats.spellcasting.dc }}, +{{ stats.spellcasting.hit }} to hit with spell attacks).
+          The {{ stats.name }} has the following biotic spells:
+        div(v-for="(spellLevel, spellLevelIndex) in stats.spellcasting.spells" v-bind:key="spellLevelIndex")
+          p(v-if="spellLevel.level === 'cantrip'").my-0 Cantrips (at will): #[em {{ spellLevel.spells.map(spell => spell.name).join(', ') }}]
+          p(v-else).my-0 {{ ordinal(spellLevel.level) }} level ({{ spellLevel.slots }} slot{{ addS(spellLevel.slots) }})
+            span(v-if="spellLevel.spells.length > 0") : #[em {{ spellLevel.spells.map(spell => spell.name).join(', ') }}]
       p.title.underline-heading.small-caps Actions
       div(v-for="(action, index) in stats.actions" v-bind:key="index")
         div(v-if="action.type === 'attack'")
@@ -40,6 +49,7 @@
 <script>
   import {AbilityScoreBonus} from '../mixins/abilityScoreBonus';
   import {DieFromAverage} from '../mixins/dieFromAverage';
+  import {Ordinal} from '../mixins/ordinal';
 
   export default {
     name: 'StatBlock',
@@ -57,7 +67,8 @@
     },
     mixins: [
       AbilityScoreBonus,
-      DieFromAverage
+      DieFromAverage,
+      Ordinal
     ],
     methods: {
       renderBonus(score){
@@ -83,6 +94,16 @@
           name += ` (${feature.recharge})`;
         }
         return name;
+      },
+      aOrAn(int) {
+        if ([8, 18, '8', '18'].includes(int)) {
+          return 'an';
+        } else {
+          return 'a';
+        }
+      },
+      addS(int) {
+        return int > 1 ? 's' : '';
       }
     },
     computed: {
@@ -113,9 +134,6 @@
           }).join(', ');
         }
         return false;
-      },
-      reactionName() {
-
       }
     },
     props: ['stats'],

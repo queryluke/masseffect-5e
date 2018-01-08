@@ -1,5 +1,5 @@
 {
-  "updated": "December 23, 2017 @ 10:15 AM",
+  "updated": "January  7, 2018 @  9:22 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSJCBzka3M8w7NvjB7HmV4BmwVcX7wyzFHg8K9YUTZvB8Tdl6_t_FLhQw6EIjm3eEyduIlLxxNwcweq/pubhtml",
   "data": [
     {
@@ -307,7 +307,7 @@
       "aoe_distance": null,
       "effect": [
         "damage",
-        " buff"
+        "buff"
       ],
       "damage_type": [
         "force"
@@ -523,7 +523,7 @@
       "aoe_distance": "2m",
       "effect": [
         "damage",
-        " movement"
+        "movement"
       ],
       "damage_type": [
         "force"
@@ -890,7 +890,7 @@
       "aoe_distance": null,
       "effect": [
         "damage",
-        " control"
+        "control"
       ],
       "damage_type": [
         "force"
@@ -1146,7 +1146,7 @@
       "aoe_distance": "6m",
       "effect": [
         "damage",
-        " debuff"
+        "debuff"
       ],
       "damage_type": [
         "necrotic"
@@ -1388,7 +1388,7 @@
       "aoe_distance": null,
       "effect": [
         "control",
-        " debuff"
+        "debuff"
       ],
       "damage_type": [
 
@@ -1439,7 +1439,7 @@
       "aoe_distance": "8m",
       "effect": [
         "damage",
-        " control"
+        "control"
       ],
       "damage_type": [
         "force",
@@ -1771,7 +1771,7 @@
       "aoe_distance": null,
       "effect": [
         "damage",
-        " buff"
+        "buff"
       ],
       "damage_type": [
         "bludgeoning"
@@ -2098,7 +2098,7 @@
       "aoe_distance": "4m",
       "effect": [
         "damage",
-        " control"
+        "control"
       ],
       "damage_type": [
         "psychic"
@@ -2391,7 +2391,7 @@
       "aoe_distance": null,
       "effect": [
         "damage",
-        " debuff"
+        "debuff"
       ],
       "damage_type": [
         "cold"
@@ -2992,7 +2992,7 @@
       "aoe_distance": null,
       "effect": [
         "debuff",
-        " control"
+        "control"
       ],
       "damage_type": [
 
@@ -3200,7 +3200,7 @@
       "aoe_distance": "10m",
       "effect": [
         "control",
-        " damage"
+        "damage"
       ],
       "damage_type": [
         "cold"
@@ -3257,7 +3257,7 @@
       "aoe_distance": "4m",
       "effect": [
         "damage",
-        " control"
+        "control"
       ],
       "damage_type": [
         "lightning"
