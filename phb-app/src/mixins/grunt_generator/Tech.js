@@ -17,6 +17,9 @@ export const Tech = {
       let totalDmgSpells = 0;
       const availableSpells = this.tech.filter(spell => spell.min_tech_points <= tpSpent && spell[grunt.sc.id] === 'x');
       for (let i = 1; i <= numTech; i++) {
+        if (availableSpells.length < 1) {
+          continue;
+        }
         const spell = this.randomValue(availableSpells);
         grunt.techcasting.spells.push(spell);
         availableSpells.splice(availableSpells.indexOf(spell), 1);

@@ -28,6 +28,9 @@ export const Biotics = {
             numCantrips--;
           }
           for (let i = 1; i <= numCantrips; i++) {
+            if (availableSpells.length < 1) {
+              continue;
+            }
             const spell = this.randomValue(availableSpells);
             cantrips.spells.push(spell);
             availableSpells.splice(availableSpells.indexOf(spell), 1);
@@ -56,6 +59,9 @@ export const Biotics = {
           const numSpells = this.numSpellsByLevel[grunt.sc.id][effectiveCr.spellcastingLevel][spellLevel - 1];
           const availableSpells = this.spells.filter(spell => spell.level === column.key && spell[grunt.sc.id] === 'x');
           for (let i = 1; i <= numSpells; i++) {
+            if (availableSpells.length < 1) {
+              continue;
+            }
             const spell = this.randomValue(availableSpells);
             levelSpells.spells.push(spell);
             availableSpells.splice(availableSpells.indexOf(spell), 1);

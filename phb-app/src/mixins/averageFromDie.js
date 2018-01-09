@@ -2,7 +2,7 @@ export const AverageFromDie = {
   methods: {
     averageFromDie(die) {
       const array = die.split('d');
-      return Math.floor(array[0] * ((array[1] + 1) / 2));
+      return Math.floor(parseInt(array[0], 10) * ((parseInt(array[1], 10) + 1) / 2));
     }
   }
 };

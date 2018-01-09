@@ -22,14 +22,15 @@ export const Actions = {
           'It has advantage on Dexterity (Stealth) checks and the first melee, ranged, or tech attack made from Tactical Cloak. ' +
           'When it makes a melee, ranged, or tech attack, tactical cloak ends.'
         });
-        const sneakAttackDie = `${crMetaLevel + 1}d6`;
+        // need to make this scale better
+        const sneakAttackDie = `${Math.ceil(crMetaLevel + 1 + (crMetaLevel / 2))}d6`;
         const extraDmg = this.averageFromDie(sneakAttackDie);
         grunt.actions.push({
           type: 'common',
           name: 'Sneak Attack',
           recharge: '1/Turn',
           description: `The infiltrator deals an extra ${extraDmg} (${sneakAttackDie}) damage when it hits a target with a weapon attack and has advantage on the attack roll, ` +
-          'or when the target is within 5 feet of an ally of the assassin that is n\'t incapacitated and the assassin doesn\'t have disadvantage on the attack roll.'
+          'or when the target is within 5 feet of an ally of the infiltrator that is n\'t incapacitated and the assassin doesn\'t have disadvantage on the attack roll.'
         });
         config.targetDamage.dmgMin -= extraDmg / 2;
         config.targetDamage.dmgMax -= extraDmg / 2;
