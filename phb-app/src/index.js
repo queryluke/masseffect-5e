@@ -16,6 +16,7 @@ import Classes from './pages/Classes.vue';
 import ClassView from './pages/ClassView.vue';
 import Conditions from './pages/Conditions.vue';
 import Consumables from './pages/Consumables.vue';
+import Encounter from './pages/Encounter.vue';
 import Feats from './pages/Feats.vue';
 import General from './pages/General.vue';
 import Grenades from './pages/Grenades.vue';
@@ -87,7 +88,8 @@ const router = new Router({
     },
     {path: '/gm-tools', component: Default,
       children: [
-        {path: 'grunts', component: Grunts}
+        {path: 'grunts', component: Grunts},
+        {path: 'encounter', component: Encounter, name: 'encounter'}
       ]
     }
   ]

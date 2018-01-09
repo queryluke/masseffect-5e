@@ -11,8 +11,8 @@
     v-card.mt-3
       v-card-text
         v-layout(row wrap)
-          v-flex(xs12).display-1
-            p Options
+          v-flex(xs12)
+            p.display-1 Options
           v-flex(xs12 sm6 md4).px-2
             v-select(
               v-bind:items="crs"
@@ -29,7 +29,7 @@
           v-flex(xs12 sm6 md4).px-2
             v-select(
               v-bind:items="classOptions"
-              v-model="sClass"
+              v-model="sc"
               label="Select a Class"
               item-text="name"
               item-value="id"
@@ -54,14 +54,28 @@
             )
           v-flex(xs8 offset-xs2).mt-3
             v-btn(@click="getGrunt()" block color="primary") Generate
+    v-container.text-xs-center
+      v-btn(v-if="savedGrunts.length > 0" large to="encounter") View saved grunts ({{savedGrunts.length}})
     v-container
       v-layout
         v-flex(xs12 sm10 offset-sm1 lg8 offset-lg2)
           stat-block(v-if="grunt" v-bind:stats="grunt")
+            template(slot="actions")
+              v-btn(
+                absolute
+                dark
+                fab
+                top
+                right
+                @click="saveGrunt(grunt)"
+                color="primary"
+              ).mr-2
+                v-icon save
 </template>
 
 <script>
   import {GruntGenerator} from '../mixins/grunt_generator';
+  import { mapState } from 'vuex';
   import StatBlock from '../components/StatBlock.vue';
 
   export default {
@@ -72,9 +86,6 @@
         crs: [],
         races: [],
         classes: [],
-        cr: {},
-        race: { id: 'random', name: 'Random' },
-        sClass: { id: 'random', name: 'Random' },
         grunt: false
       };
     },
@@ -85,7 +96,6 @@
       let getStatsByCr = this.$http.get('../data/stats_by_cr.json').then(response => response.json());
       Promise.all([getRaces, getClasses, getStatsByCr]).then(response => {
         this.crs = response[2];
-        this.cr = this.crs[0];
 
         // Setup races
         this.races = response[0].data.map((race) => {
@@ -104,22 +114,52 @@
         class_options.sort(this.compare);
         class_options.unshift({ id: 'random', name: 'Random' });
         class_options.push({ id: 'none', name: 'None' });
-        if(!class_options.map( (co) => { return co.id }).includes(this.sClass.id)){
-          this.sClass = class_options[0];
+        if(!class_options.map( (co) => co.id).includes(this.sc.id)){
+          this.sc = class_options[0];
         }
         return class_options;
       },
       raceOptions: function() {
-        let race_options = this.filterRaces(this.sClass.id);
+        let race_options = this.filterRaces(this.sc.id);
         race_options.sort(this.compare);
         race_options.unshift({ id: 'random', name: 'Random' });
-        if(!race_options.map( (ro) => { return ro.id }).includes(this.race.id)){
+        if(!race_options.map( (ro) => ro.id).includes(this.race.id)){
           this.race = race_options[0];
         }
         return race_options;
+      },
+      race: {
+        get () {
+          return this.$store.state.gruntConfig.race;
+        },
+        set (value) {
+          this.$store.commit('updateGruntConfigRace', value);
+        }
+      },
+      sc: {
+        get () {
+          return this.$store.state.gruntConfig.sc;
+        },
+        set (value) {
+          this.$store.commit('updateGruntConfigClass', value);
+        }
+      },
+      cr: {
+        get () {
+          return this.$store.state.gruntConfig.cr;
+        },
+        set (value) {
+          this.$store.commit('updateGruntConfigCr', value);
+        }
+      },
+      savedGrunts: function(){
+        return this.$store.state.encounter.npcs.list;
       }
     },
     methods: {
+      saveGrunt (grunt) {
+        this.$store.commit('addEncounterNpc', grunt);
+      },
       filterClasses(race_id){
         return this.classes.filter(a_class => {
           if(race_id === 'random'){
@@ -150,10 +190,10 @@
         // Get the race
         let race = {};
         if(this.race.id === 'random') {
-          if (this.sClass.id === 'random' || this.sClass.id === 'none') {
+          if (this.sc.id === 'random' || this.sc.id === 'none') {
             race = this.randomValue(this.races);
           } else {
-            const races = this.filterRaces(this.sClass.id);
+            const races = this.filterRaces(this.sc.id);
             race = this.randomValue(races);
           }
         } else {
@@ -162,11 +202,11 @@
 
         // Get the class
         let sc = {};
-        if (this.sClass.id === 'random') {
+        if (this.sc.id === 'random') {
           const classes = this.filterClasses(race.id);
           sc = this.randomValue(classes);
         } else {
-          sc = this.sClass;
+          sc = this.sc;
         }
 
         this.grunt = this.generateGrunt(this.cr, race, sc);

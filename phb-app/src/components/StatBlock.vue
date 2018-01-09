@@ -1,8 +1,10 @@
 <template lang="pug">
   v-card
-    v-card-text
+    v-card-text.pb-0
       p.red--text.text--darken-4.headline.small-caps.mb-0 #[strong {{ stats.name }}]
       p #[em {{ stats.size }} {{ stats.type }}, {{ stats.alignment }}]
+    v-card-text(style="position:relative;").pt-0
+      slot(name="actions")
       div.hr
       ul.list-unstyled
         li #[strong Armor Class] {{ stats.ac }}
