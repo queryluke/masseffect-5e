@@ -34,6 +34,13 @@
           p(v-if="spellLevel.level === 'cantrip'").my-0 Cantrips (at will): #[em {{ spellLevel.spells.map(spell => spell.name).join(', ') }}]
           p(v-else).my-0 {{ ordinal(spellLevel.level) }} level ({{ spellLevel.slots }} slot{{ addS(spellLevel.slots) }})
             span(v-if="spellLevel.spells.length > 0") : #[em {{ spellLevel.spells.map(spell => spell.name).join(', ') }}]
+      div(v-if="stats.techcasting").mb-3
+        p.mb-1.
+          #[strong #[em Tech Powers ({{ stats.techcasting.perDay }}/Day)].] The {{ stats.name }} can cast {{ stats.techcasting.perDay }}
+          tech power{{ addS(stats.techcasting.perDay) }} from the following list per day. When it casts a tech power that requires X tech points, it casts the power with
+          {{ stats.techcasting.tpSpent }} tech point{{ addS(stats.techcasting.tpSpent) }}. Its tech ability is Intelligence (spell save DC {{ stats.techcasting.dc }},
+          +{{ stats.techcasting.hit }} to hit with tech attacks).
+        p.my-0 Known tech powers: #[em {{ stats.techcasting.spells.map(spell => spell.name).join(', ') }}]
       p.title.underline-heading.small-caps Actions
       div(v-for="(action, index) in stats.actions" v-bind:key="index")
         div(v-if="action.type === 'attack'")

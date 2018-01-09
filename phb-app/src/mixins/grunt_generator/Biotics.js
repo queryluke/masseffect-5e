@@ -11,7 +11,6 @@ export const Biotics = {
       let totalSpells = 0;
       let totalDmgSpells = 0;
       const progressionLevel = this.progressions[grunt.sc.id].find(row => parseInt(row.level, 10) === effectiveCr.spellcastingLevel);
-      console.log(progressionLevel.level);
       for (const column of progressionLevel.row_data) {
         if (column.key === 'cantrips') {
           // Deal with cantrips
@@ -49,7 +48,6 @@ export const Biotics = {
           // Deal with the rest of the spells
           const spellLevel = parseInt(column.key, 10);
           const spellSlots = parseInt(column.value, 10);
-          console.log([spellLevel, spellSlots]);
           const levelSpells = {
             level: spellLevel,
             slots: spellSlots,

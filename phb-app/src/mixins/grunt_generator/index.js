@@ -16,6 +16,7 @@ import {SavingThrows} from './SavingThrows';
 import {Senses} from './Senses';
 import {Skills} from './Skills';
 import {Speed} from './Speed';
+import {Tech} from './Tech';
 import {Type} from './Type';
 import {Weapons} from './Weapons';
 
@@ -39,6 +40,7 @@ export const GruntGenerator = {
     Senses,
     Skills,
     Speed,
+    Tech,
     Type,
     Weapons
   ],
@@ -74,7 +76,8 @@ export const GruntGenerator = {
         senses: [],
         size: 'Medium',
         skills: [],
-        spellcasting: false
+        spellcasting: false,
+        techcasting: false
       };
 
       this.setGruntName(grunt);
@@ -88,7 +91,6 @@ export const GruntGenerator = {
       this.setGruntSpeed(config, grunt);
       this.setGruntSenses(config, grunt);
       this.setGruntActions(config, grunt);
-      console.log([config, grunt]);
       return grunt;
     }
   }
