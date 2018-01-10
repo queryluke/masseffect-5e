@@ -56,10 +56,7 @@ Vue.use(Router);
 function documentTitle(pageTitle, secondaryKeyword = null) {
   const brandName = 'Mass Effect 5e';
   secondaryKeyword = secondaryKeyword ? ` - ${secondaryKeyword}` : '';
-  return `${brandName} | ${pageTitle}${secondaryKeyword}`;
-}
-function toTitleCase(id) {
-  return id.split('_').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' ');
+  return `${pageTitle}${secondaryKeyword}|${brandName}`;
 }
 const router = new Router({
   mode: 'hash',
@@ -80,10 +77,10 @@ const router = new Router({
         {path: 'races/:id', component: Race, name: 'race', props: true, meta: {title: documentTitle('', 'Race')}},
         {path: 'skills', component: Skills, meta: {title: documentTitle('Skills', 'Reference')}},
         {path: 'spells', component: Spells, meta: {title: documentTitle('Spells', 'Reference')}},
-        {path: 'spells/:id', component: Spell, name: 'spell', meta: {title: documentTitle('', 'Spell')}},
+        {path: 'spells/:id', component: Spell, meta: {title: documentTitle('', 'Spell')}},
         {path: 'thermal-clips', component: ThermalClips, meta: {title: documentTitle('Thermal Clips', 'Equipment')}},
         {path: 'weapons', component: Weapons, meta: {title: documentTitle('Weapons', 'Equipment')}},
-        {path: 'weapons/:id', component: Weapon, name: 'weapon', meta: {title: documentTitle('', 'Weapon')}}
+        {path: 'weapons/:id', component: Weapon, meta: {title: documentTitle('', 'Weapon')}}
       ]
     },
     {path: '/rules', component: Default,
@@ -102,29 +99,15 @@ const router = new Router({
       ]
     }
   ]
-});
-
-router.beforeEach((to, from, next) => {
-  if (['class', 'race', 'spell', 'weapon'].includes(to.name)) {
-    document.title = documentTitle(toTitleCase(to.params.id), toTitleCase(to.name));
-  } else {
-    document.title = to.meta.title;
-  }
+}).beforeEach((to, from, next) => {
+  console.log(to);
+  console.log(from);
+  document.title = to.meta.title;
   next();
 });
-
 Vue.use(VueAnalytics, {
   id: 'UA-83740704-2',
-  router,
-  autoTracking: {
-    pageviewTemplate(route) {
-      return {
-        page: `pbh${route.path}`,
-        title: document.title,
-        location: window.location.href
-      };
-    }
-  }
+  router
 });
 
 import store from './store';

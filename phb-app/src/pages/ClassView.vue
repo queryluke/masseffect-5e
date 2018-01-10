@@ -179,10 +179,9 @@
       Promise.all([getClasses, getFeatures, getProgression, getSubclasses, getSpells]).then(response => {
         let classes = response[0].data;
         let subclasses = response[3].data;
-        let spells = response[4].data;
+        this.spells = response[4].data.filter(spell => spell[this.id]);
 
         this.features = response[1].data;
-        this.spells = response[4].data;
         this.progression = response[2];
 
         let spell_header_count = this.progression.headers.filter((v) => { return v.spell_header }).length;
@@ -194,9 +193,6 @@
         });
         this.subclasses = subclasses.filter( (sb) => {
           return sb.class.toLowerCase() === this.id;
-        });
-        this.spells = spells.filter( (spell) => {
-          return spell[this.id];
         });
 
         this.colors = this.getColors(this.id);

@@ -25,7 +25,6 @@
     name: 'Classes',
     methods: {
       toSingle(id) {
-        console.log(id);
         this.$router.push(`/classes/${id}`);
       }
     },
