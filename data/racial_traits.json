@@ -1,5 +1,5 @@
 {
-  "updated": "December 31, 2017 @  5:15 PM",
+  "updated": "January  6, 2018 @ 11:40 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRETKGL62kEZPA69PhA3AGMiVeHOWBRkTMDL3f_K-oajryEjwdq7fRAj-qfIusPsLMiIqmB12D4Zun8/pubhtml",
   "data": [
     {
@@ -147,12 +147,12 @@
       "description_text_dump": "YouhaveaminorcyberneticaugmentationChooseoneofthefollowingDarkvisionspeedincreasedby2mproficiencyinPerceptionadd2toyourSTRscorewhencalculatingminimumSTRforweaponsandarmorifusingtheEncumbranceVariantruleadd5toyourSTRwhencalculatingcarryweight"
     },
     {
-      "name": "Dark Vision",
+      "name": "Darkvision",
       "description": [
         {
           "id": 1,
           "type": "line",
-          "data": "You have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+          "data": "You have superior vision in dark and dim conditions. You can see in dim light within 20m of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
         }
       ],
       "asari": null,
@@ -167,8 +167,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
-      "id": "dark_vision",
-      "description_text_dump": "YouhavesuperiorvisionindarkanddimconditionsYoucanseeindimlightwithin60feetofyouasifitwerebrightlightandindarknessasifitweredimlightYoucantdiscerncolorindarknessonlyshadesofgray"
+      "id": "darkvision",
+      "description_text_dump": "YouhavesuperiorvisionindarkanddimconditionsYoucanseeindimlightwithin20mofyouasifitwerebrightlightandindarknessasifitweredimlightYoucantdiscerncolorindarknessonlyshadesofgray"
     },
     {
       "name": "Feat",

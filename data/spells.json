@@ -1,5 +1,5 @@
 {
-  "updated": "December 23, 2017 @ 10:15 AM",
+  "updated": "January  8, 2018 @  9:53 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSJCBzka3M8w7NvjB7HmV4BmwVcX7wyzFHg8K9YUTZvB8Tdl6_t_FLhQw6EIjm3eEyduIlLxxNwcweq/pubhtml",
   "data": [
     {
@@ -38,18 +38,18 @@
       ],
       "detonates": null,
       "primes": null,
-      "adept": "x",
       "vanguard": "x",
       "sentinel": "x",
       "infiltrator": null,
       "engineer": null,
       "soldier": null,
+      "min_tech_points": null,
       "id": "alter_center_mass",
       "adv_options": [
         "Disorient : Creatures that fail the saving throw become disoriented. Until the end of your next turn, attacks made against the creature have advantage and it can't make reactions.",
         "Debilitate : Creatures that fail the saving throw have their movement speed reduced by half and become so dizzy they fall {prone}."
       ],
-      "class_list": "Adept, Sentinel, Vanguard",
+      "class_list": "Sentinel, Vanguard",
       "mechanic_text_dump": "UptothreecreaturesofyourchoicethatyoucanseewithinrangemustmakeConstitutionsavingthrowsasyougenerateminormasseffectfieldsthataltertheircentermassWheneveratargetthatfailsthissavingthrowmakesanattackrollorasavingthrowbeforethespellendsthetargetmustrollad4andsubtractthenumberrolledfromtheattackrollorsavingthrowAtHigherLevelsWhenyoucastthisspellusingaspellslotof2ndlevelorhigheryoucantargetoneadditionalcreatureforeachslotlevelabove1st"
     },
     {
@@ -93,18 +93,18 @@
       ],
       "detonates": null,
       "primes": "x",
-      "adept": "x",
       "vanguard": "x",
       "sentinel": null,
       "infiltrator": null,
       "engineer": null,
       "soldier": null,
+      "min_tech_points": null,
       "id": "annihilation_field",
       "adv_options": [
         "Anti-Armor : Each creature that fails the saving throw takes a -1 penalty to their AC.",
         "Drain : Each time Annihilation Field deals damage, you gain shield points equal half the damage done."
       ],
-      "class_list": "Adept, Vanguard",
+      "class_list": "Vanguard",
       "mechanic_text_dump": "Spinafieldofdarkenergyoriginatingfromyouina6msphereThefieldmoveswithyouandreducesyourmovementspeedbyhalfEachcreaturewithinthespheremustmakeaConstitutionsavingthrowAcreaturetakes12d6necroticdamageonafailedsaveorhalfasmuchdamageonasuccessfuloneAcreaturemustalsomakethesavingthrowwhenitentersthefieldsspaceforthefirsttimeonaturnorendsitsturnthereAthigherlevelsWhenyoucastthisspellusingaspellslotof5thlevelorhigherincreasetheradiusby2mforeachslotlevelabovethe4th"
     },
     {
@@ -158,12 +158,12 @@
       ],
       "detonates": null,
       "primes": null,
-      "adept": null,
       "vanguard": "x",
       "sentinel": "x",
       "infiltrator": null,
       "engineer": null,
       "soldier": null,
+      "min_tech_points": null,
       "id": "backlash",
       "adv_options": [
         "Durable : Increase the aegis's hit points to 10 per spell slot.",
@@ -171,6 +171,66 @@
       ],
       "class_list": "Sentinel, Vanguard",
       "mechanic_text_dump": "Generateafrontalbioticaegisbarrierwith15hitpointsIfacreatureyoucanseehitsyouwithanattackwhiletheaegisisactivesplitthedamageequallybetweenyourselfandtheaegisIftheattackisarangedweaponattacktheportionofthedamagethatwouldbedealttoyouisdealttotheattackingcreatureinsteadIfthedamageisanoddnumberyoumaychoosewheretheextra1damageisdealtIfdamagedealttotheaegisisgreaterthanitsremaininghitpointsdealtheremainingdamagetoyourselfWhentheaegisdropsto0hitpointsthespellendsAtHigherLevelsWhenyoucastthisspellusingaspellslotof3rdlevelorhighertheaegisshitpointsincreaseby10foreachslotlevelabovethe1st"
+    },
+    {
+      "name": "Ballistic Blades",
+      "level": null,
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "As an Attack action, fire a salvo of blades at a target creature or object you can see within range. Make a ranged weapon attack, you add your proficiency bonus to this roll. On a hit, the target takes 2d12 piercing damage."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "You must spend a short or long rest reloading the armguard before you can this ability again."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "This feature's damage increases by 2d12 when you reach 5th level (4d12), 11th level (6d12), 17th level (8d12)"
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "Infiltrators may learn or advance this feature instead of gaining a tech power."
+        }
+      ],
+      "adv_option_1": "Bleeding Blades : On a hit, the target takes an additional 3[dd] piercing damage at the start of their turn. This damage bypasses shields.",
+      "adv_option_2": "Exploding blades : On a hit, the target takes and additional 3[dd] thunder damage and must pass a Constitution saving throw (DC 8 + proficiency bonus) or becomes {stunned} until the end of your next turn.",
+      "type": "combat",
+      "die_type": "d12",
+      "attack_type": [
+        "Ranged Attack"
+      ],
+      "casting_time": "Attack",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "10m",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "damage"
+      ],
+      "damage_type": [
+        "piercing"
+      ],
+      "detonates": null,
+      "primes": null,
+      "vanguard": null,
+      "sentinel": null,
+      "infiltrator": "x",
+      "engineer": null,
+      "soldier": "x",
+      "min_tech_points": null,
+      "id": "ballistic_blades",
+      "adv_options": [
+        "Bleeding Blades : On a hit, the target takes an additional 3d12 piercing damage at the start of their turn. This damage bypasses shields.",
+        "Exploding blades : On a hit, the target takes and additional 3d12 thunder damage and must pass a Constitution saving throw (DC 8 + proficiency bonus) or becomes {stunned} until the end of your next turn."
+      ],
+      "class_list": "Infiltrator, Soldier",
+      "mechanic_text_dump": "AsanAttackactionfireasalvoofbladesatatargetcreatureorobjectyoucanseewithinrangeMakearangedweaponattackyouaddyourproficiencybonustothisrollOnahitthetargettakes2d12piercingdamageYoumustspendashortorlongrestreloadingthearmguardbeforeyoucanthisabilityagainThisfeaturesdamageincreasesby2d12whenyoureach5thlevel4d1211thlevel6d1217thlevel8d12Infiltratorsmaylearnoradvancethisfeatureinsteadofgainingatechpower"
     },
     {
       "name": "Barrier",
@@ -208,18 +268,18 @@
       ],
       "detonates": null,
       "primes": null,
-      "adept": "x",
       "vanguard": "x",
       "sentinel": null,
       "infiltrator": null,
       "engineer": null,
       "soldier": null,
+      "min_tech_points": null,
       "id": "barrier",
       "adv_options": [
         "Light Barrier : Remove the speed reduction penalty when Barrier is active.",
         "Tactical Barrier : When you take damage, you can choose whether or not to expend a barrier tick."
       ],
-      "class_list": "Adept, Vanguard",
+      "class_list": "Vanguard",
       "mechanic_text_dump": "SurroundyourselfinahighgravitymasseffectthatstrengthensyourshieldsbutreducesyourmovementspeedWhileyouhaveanybarrierticksyourspeedisreducedby4mWheneveryoutakedamageremove1barriertickandreducethatdamageby1d8WhenyoucastBarrierrefillyourbarriertickstotheirmaximumamountYourclassindicatesthemaximumnumberofbarrierticksyoucanhaveThisreductionincreasesby1whenyoureach5thlevel2d811thlevel3d8and17thlevel4d8"
     },
     {
@@ -263,19 +323,84 @@
       ],
       "detonates": null,
       "primes": "x",
-      "adept": "x",
       "vanguard": "x",
       "sentinel": null,
       "infiltrator": null,
       "engineer": null,
       "soldier": null,
+      "min_tech_points": null,
       "id": "barrier_detonation",
       "adv_options": [
         "Improved Lift : Add an additional 2[dd] to the roll.",
         "Radius : Increase the size of the detonation to 4m"
       ],
-      "class_list": "Adept, Vanguard",
+      "class_list": "Vanguard",
       "mechanic_text_dump": "Expendallofyourremainingbarriertickstocreateanegativemasseffectfieldina2msphereoriginatingfromyouInadditionrollXd8whereXisthenumberofbarrierticksconsumedTheresultisthenumberofhitpointsofcreaturesthisspellcanaffectStartingwiththecreaturethathasthelowestcurrenthitpointseachcreatureaffectedbythisspellbecomeslifteduntilthestartofyournextturnSubtracteachcreatureshitpointsfromthetotalbeforemovingontothecreaturewiththenextlowesthitpointsAcreatureshitpointsmustbeequaltoorlessthantheremainingtotalforthatcreaturetobeaffectedOtherpowersandclassfeaturescanincreasethedietypeofthisrollIncreasethenumberofdierollby2d8reach5thlevelX2d811thlevelX4d8and17thlevelX6d8"
+    },
+    {
+      "name": "Beehive",
+      "level": null,
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "As an Attack action, you equip and fire your antipersonnel cannon, colloquially called \"the beehive\". It ejects superheated shrapnel in a 6m cone, originating from you. Each creature caught in the blast must make Dexterity saving throw. On a failed save, a creature takes 2d6 piercing damage or half as much damage on a successful one."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "The DC is (8 + proficiency bonus + DEX modifier)."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "You must spend a short or long rest reconfiguring the cannon to use it again."
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "This feature's damage increases by 2d6 when you reach 5th level (4d6), 11th level (6d6), 17th level (8d6)"
+        },
+        {
+          "id": 5,
+          "type": "line",
+          "data": "Infiltrators may learn or advance this feature instead of gaining a tech power."
+        }
+      ],
+      "adv_option_1": "Anti-Flesh : The Beehive deals double damage to unprotected, organic targets.",
+      "adv_option_2": "Remote Deploy : As an action you can setup your Beehive in a separate location. Once it is deployed you can use an Attack action to fire it.",
+      "type": "combat",
+      "die_type": "d6",
+      "attack_type": [
+        "DEX save"
+      ],
+      "casting_time": "Attack",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "Self",
+      "aoe": "cone",
+      "aoe_distance": "6m",
+      "effect": [
+        "damage"
+      ],
+      "damage_type": [
+        "piercing"
+      ],
+      "detonates": null,
+      "primes": null,
+      "vanguard": null,
+      "sentinel": null,
+      "infiltrator": "x",
+      "engineer": null,
+      "soldier": "x",
+      "min_tech_points": null,
+      "id": "beehive",
+      "adv_options": [
+        "Anti-Flesh : The Beehive deals double damage to unprotected, organic targets.",
+        "Remote Deploy : As an action you can setup your Beehive in a separate location. Once it is deployed you can use an Attack action to fire it."
+      ],
+      "class_list": "Infiltrator, Soldier",
+      "mechanic_text_dump": "AsanAttackactionyouequipandfireyourantipersonnelcannoncolloquiallycalledthebeehiveItejectssuperheatedshrapnelina6mconeoriginatingfromyouEachcreaturecaughtintheblastmustmakeDexteritysavingthrowOnafailedsaveacreaturetakes2d6piercingdamageorhalfasmuchdamageonasuccessfuloneTheDCis8proficiencybonusDEXmodifierYoumustspendashortorlongrestreconfiguringthecannontouseitagainThisfeaturesdamageincreasesby2d6whenyoureach5thlevel4d611thlevel6d617thlevel8d6Infiltratorsmaylearnoradvancethisfeatureinsteadofgainingatechpower"
     },
     {
       "name": "Biotic Orbs",
@@ -307,25 +432,25 @@
       "aoe_distance": null,
       "effect": [
         "damage",
-        " buff"
+        "buff"
       ],
       "damage_type": [
         "force"
       ],
       "detonates": "x",
       "primes": null,
-      "adept": "x",
       "vanguard": "x",
       "sentinel": null,
       "infiltrator": null,
       "engineer": null,
       "soldier": null,
+      "min_tech_points": null,
       "id": "biotic_orbs",
       "adv_options": [
         "Improved Orbs : Gain 2 max level spell slots when at least 3 orbs are active",
         "Defense Orbs : As a reaction, you can expend an orb to create a micro barrier on the incoming attack, reducing the damage by 1d8. You can use this power on yourself or other creatures."
       ],
-      "class_list": "Adept, Vanguard",
+      "class_list": "Vanguard",
       "mechanic_text_dump": "Summon3bioticorbsthatfloataroundyouIfyouhaveatleast3orbsyougainoneadditionalmaxlevelhighestavailablelevelspellslotYoumayalsoexpendanorbandmakearangedspellattackonacreaturewithin20mOnahotdealforcedamageequalto2d10yourbioticmodifierTheorbslast1houroruntilyouveexpendedallofthemAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthenumberoforbsincreasesby1foreachslotlevelabovethe2nd"
     },
     {
@@ -379,18 +504,18 @@
       ],
       "detonates": null,
       "primes": null,
-      "adept": "x",
       "vanguard": null,
       "sentinel": "x",
       "infiltrator": null,
       "engineer": null,
       "soldier": null,
+      "min_tech_points": null,
       "id": "biotic_sphere",
       "adv_options": [
         "Infuse Ammo : Friendly creatures inside the sphere add 1d4 force damage to all ranged weapon attacks on creatures outside of the sphere and subtract that much from the sphere's HP. This damage can detonate abilities.",
         "Armored : The sphere has resistance to piercing, slashing, and bludgeoning damage."
       ],
-      "class_list": "Adept, Sentinel",
+      "class_list": "Sentinel",
       "mechanic_text_dump": "Channelaspherewith5d12yourlevelhitpointsthatextendsoutfromyouina6mradiusandmoveswithyouHostilecreaturescannotenterorleavethesphereHostileattacksmadeonfriendlytargetsareabsorbedbythespherethesphereautomaticallyfailsanysavingthrowsFriendlyattacksonhostilecreatureswithinthespherehaveadvantageThespheredissipateswhenitshitpointsaregoneIfanattackwoulddealmoredamagethantheremaininghitpointsofthespherethespheresoaksallofthedamageandthendissipatesAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel4orhigherthesphereshealthincreasesby1d12foreachslotlevelabovethe3rd"
     },
     {
@@ -429,18 +554,18 @@
       ],
       "detonates": null,
       "primes": null,
-      "adept": "x",
       "vanguard": "x",
       "sentinel": "x",
       "infiltrator": null,
       "engineer": null,
       "soldier": null,
+      "min_tech_points": null,
       "id": "biotic_wall",
       "adv_options": [
         "Lifting Wall : If a creature comes within 2m of the wall, you can use  your reaction to make a pocket of negatively charged space near the creature's location. It must pass a Dexterity saving throw or become {lifted} until the end of your next turn.",
         "Shifting Wall : As a reaction, you can either: move the wall up to 6m in any direction, rotate the wall up to 180 degrees, or reshape the wall within the parameters listed above."
       ],
-      "class_list": "Adept, Sentinel, Vanguard",
+      "class_list": "Sentinel, Vanguard",
       "mechanic_text_dump": "WithanimmensepositivechargecreateaninvisiblemasseffectfieldthatactslikeawallatapointyouchoosewithinrangeThewallappearsinanyorientationyouchooseasahorizontalorverticalbarrieroratanangleItcanbefreefloatingorrestingonasolidsurfaceYoucanformitintoahemisphericaldomeoraspherewitharadiusofupto4moryoucanshapeaflatsurfacemadeupoften2mby2mpanelsEachpanelmustbecontiguouswithanotherpanelInanyformthewallis14inchthickItlastsforthedurationIfthewallcutsthroughacreaturesspacewhenitappearsthecreatureispushedtoonesideofthewallyourchoicewhichsideNothingcanphysicallypassthroughthewallItisimmunetoalldamage"
     },
     {
@@ -479,18 +604,18 @@
       ],
       "detonates": null,
       "primes": null,
-      "adept": "x",
       "vanguard": "x",
       "sentinel": "x",
       "infiltrator": null,
       "engineer": null,
       "soldier": null,
+      "min_tech_points": null,
       "id": "catapult",
       "adv_options": [
         "Salvo : You can choose any number of objects as long as the total weight of all objects chosen does not exceed the maximum amount of weight for the spell. Each object can be sent in a different direction, but only deals 1d10 damage.",
         "Delayed Catapult : When you cast this spell, you may delay the launch of the object. It hovers 2m off the ground until you launch it. You may use a reaction or bonus action to launch the object. If launched  as a reaction towards a target making an attack roll, you imposed disadvantage on that roll."
       ],
-      "class_list": "Adept, Sentinel, Vanguard",
+      "class_list": "Sentinel, Vanguard",
       "mechanic_text_dump": "Chooseoneobjectweighinglessthan10kilosabout20lbswithinrangethatisntbeingwornorcarriedTheobjectfliesinastraightlineupto30minadirectionyouchoosebeforefallingtothegroundstoppingearlyifitimpactsagainstasolidsurfaceIftheobjectwouldstrikeacreaturethatcreaturemustmakeaDexteritysavingthrowOnafailedsavetheobjectstrikesthetargetandstopsmovingIneithercaseboththeobjectandthecreatureorsolidsurfacetake3d10bludgeoningdamageAtHigherLevelsWhenyoucastthisspellusingaspellslotof2ndlevelorhigherthemaximumweightofobjectsthatyoucantargetwiththisspellincreasesby2kilos5lbsandthedamageincreasesby1d10foreachslotlevelabove1st"
     },
     {
@@ -523,19 +648,19 @@
       "aoe_distance": "2m",
       "effect": [
         "damage",
-        " movement"
+        "movement"
       ],
       "damage_type": [
         "force"
       ],
       "detonates": "x",
       "primes": null,
-      "adept": null,
       "vanguard": "x",
       "sentinel": null,
       "infiltrator": null,
       "engineer": null,
       "soldier": null,
+      "min_tech_points": null,
       "id": "charge",
       "adv_options": [
         "Necrotic Strike: The damage of your charge become necrotic. You no longer create a burst in a 2m radius when you hit the target. Instead, all enemies in the line between you and the target, including the target, must succeed on a Constitution saving throw or take 2d10 necrotic damage. ",
@@ -543,6 +668,200 @@
       ],
       "class_list": "Vanguard",
       "mechanic_text_dump": "AlteryourmassandchooseacreatureorobjectyoucanseewithinrangeUsethetargetsmasstopullyourselftoitslocationwithincredibleforceAnycreatureorobjectwithina2mspheremustmakeaDexteritysavingthrowOnafailedsaveacreaturetakes1d6forcedamageandbecomesproneOnasuccessfulsaveacreaturetakeshalfasmuchdamageThedamageincreasesby1d6whenyoureachthe5thlevel2d611thlevel3d6and17thlevel4d6"
+    },
+    {
+      "name": "Concussive Shot",
+      "level": null,
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "As a bonus action, load a specialized, high-impact thermal clip into the weapon you are currently wielding. Until you reload, any successful ranged attacks deal an additional 1d8 bludgeoning damage and medium-sized or smaller creatures must pass a Strength saving throw (DC 8 + proficiency bonus + DEX modifier) or are knocked {prone}."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "You have 3 charges of Concussive Shot. You regain all of your charges on a long rest."
+        }
+      ],
+      "adv_option_1": "Stunning Shot : A creature hit by Concussive Shot must make a Constitution saving throw (DC 8 + proficiency bonus + DEX modifier). On a failed save, the creature is {stunned} until the end of your next turn.",
+      "adv_option_2": "Improved shot : Increase the bonus damage of Concussive shot to d12.",
+      "type": "combat",
+      "die_type": "d8",
+      "attack_type": [
+        "Ranged Attack"
+      ],
+      "casting_time": "Bonus",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "Self",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "damage",
+        "buff"
+      ],
+      "damage_type": [
+        "bludgeoning"
+      ],
+      "detonates": null,
+      "primes": null,
+      "vanguard": null,
+      "sentinel": null,
+      "infiltrator": null,
+      "engineer": null,
+      "soldier": "x",
+      "min_tech_points": null,
+      "id": "concussive_shot",
+      "adv_options": [
+        "Stunning Shot : A creature hit by Concussive Shot must make a Constitution saving throw (DC 8 + proficiency bonus + DEX modifier). On a failed save, the creature is {stunned} until the end of your next turn.",
+        "Improved shot : Increase the bonus damage of Concussive shot to d12."
+      ],
+      "class_list": "Soldier",
+      "mechanic_text_dump": "AsabonusactionloadaspecializedhighimpactthermalclipintotheweaponyouarecurrentlywieldingUntilyoureloadanysuccessfulrangedattacksdealanadditional1d8bludgeoningdamageandmediumsizedorsmallercreaturesmustpassaStrengthsavingthrowDC8proficiencybonusDEXmodifierorareknockedproneYouhave3chargesofConcussiveShotYouregainallofyourchargesonalongrest"
+    },
+    {
+      "name": "Counterspell",
+      "level": null,
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Spend 5 tech points to attempt to interrupt a creature in the process of casting a biotic spell. Make an ability check using your tech ability. The DC equals 10 + the spell's level (0 for cantrips). On a success, the creature's spell fails and has no effect."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Each additional tech point spent reduces the DC by 1."
+        }
+      ],
+      "adv_option_1": "Lockdown : If you succeed on your ability check, you overload the target's biotic implant and it cannot cast biotic spells until the end of its next turn.",
+      "adv_option_2": "Psychic Strain : If succeed on the ability check, the target takes Xd6 psychic damage, where X is the level of the spell. Targets take 1d4 psychic damage for cantrips.",
+      "type": "tech",
+      "die_type": null,
+      "attack_type": [
+
+      ],
+      "casting_time": "Reaction",
+      "concentration": null,
+      "duration": null,
+      "range": "20m",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "control"
+      ],
+      "damage_type": [
+
+      ],
+      "detonates": null,
+      "primes": null,
+      "vanguard": null,
+      "sentinel": "x",
+      "infiltrator": "x",
+      "engineer": "x",
+      "soldier": null,
+      "min_tech_points": "5",
+      "id": "counterspell",
+      "adv_options": [
+        "Lockdown : If you succeed on your ability check, you overload the target's biotic implant and it cannot cast biotic spells until the end of its next turn.",
+        "Psychic Strain : If succeed on the ability check, the target takes Xd6 psychic damage, where X is the level of the spell. Targets take 1d4 psychic damage for cantrips."
+      ],
+      "class_list": "Engineer, Infiltrator, Sentinel",
+      "mechanic_text_dump": "Spend5techpointstoattempttointerruptacreatureintheprocessofcastingabioticspellMakeanabilitycheckusingyourtechabilityTheDCequals10thespellslevel0forcantripsOnasuccessthecreaturesspellfailsandhasnoeffectEachadditionaltechpointspentreducestheDCby1"
+    },
+    {
+      "name": "Cryo Beam",
+      "level": null,
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You spend tech points to blast a stream of liquid hydrogen from your omni-tool. Each creature in a 6m cube must make a Dexterity saving throw. A creature takes Xd8 cold damage on a failed save, or half as much damage on a successful one where X is the number of tech points spent. If the target is unshielded, it must pass a Strength saving throw or becomes {frozen} until the end of it's next turn."
+        }
+      ],
+      "adv_option_1": "Brittle Freeze : Creatures that fail the Constitution saving throw suffer a -1 AC penalty",
+      "adv_option_2": "Frozen Ground : Cryo beam leaves a patch of ice on the ground that lasts for 1 min. Each creature that moves into or out of the patch must pass a Dexterity saving throw. On a failed save, slips and falls [Prone], ending it's movement.",
+      "type": "tech",
+      "die_type": "d8",
+      "attack_type": [
+        "DEX save",
+        " STR save"
+      ],
+      "casting_time": "Action",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "Self",
+      "aoe": "cube",
+      "aoe_distance": "6m",
+      "effect": [
+        "damage"
+      ],
+      "damage_type": [
+        "cold"
+      ],
+      "detonates": null,
+      "primes": "x",
+      "vanguard": null,
+      "sentinel": "x",
+      "infiltrator": "x",
+      "engineer": "x",
+      "soldier": null,
+      "min_tech_points": "1",
+      "id": "cryo_beam",
+      "adv_options": [
+        "Brittle Freeze : Creatures that fail the Constitution saving throw suffer a -1 AC penalty",
+        "Frozen Ground : Cryo beam leaves a patch of ice on the ground that lasts for 1 min. Each creature that moves into or out of the patch must pass a Dexterity saving throw. On a failed save, slips and falls [Prone], ending it's movement."
+      ],
+      "class_list": "Engineer, Infiltrator, Sentinel",
+      "mechanic_text_dump": "YouspendtechpointstoblastastreamofliquidhydrogenfromyouromnitoolEachcreatureina6mcubemustmakeaDexteritysavingthrowAcreaturetakesXd8colddamageonafailedsaveorhalfasmuchdamageonasuccessfulonewhereXisthenumberoftechpointsspentIfthetargetisunshieldeditmustpassaStrengthsavingthroworbecomesfrozenuntiltheendofitsnextturn"
+    },
+    {
+      "name": "Cryo Blast",
+      "level": null,
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You spend tech points to fire a mass of supercooled, subatomic particles at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes Xd8 cold damage, where X is the number of tech points spent, and the target's movement is reduced by half. If the target is unprotected, it must pass a Strength saving throw or becomes {frozen} until the end of it's next turn."
+        }
+      ],
+      "adv_option_1": "Ice Lance : Transform the attack into a deadly lance. The attack can no longer freeze or slow the target, but you add 1d6 piercing damage for each tech point spent.",
+      "adv_option_2": "Frigid Air : The blast snap freezes the air around the target in a 2m radius. Each creature that enters the frozen space for the first time on a turn or ends its turn there must pass a Constitution saving throw or take 2d4 cold damage.",
+      "type": "tech",
+      "die_type": "d8",
+      "attack_type": [
+        "Ranged Attack",
+        " STR save"
+      ],
+      "casting_time": "Action",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "20m",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "damage",
+        "debuff"
+      ],
+      "damage_type": [
+        "cold"
+      ],
+      "detonates": "x",
+      "primes": null,
+      "vanguard": null,
+      "sentinel": "x",
+      "infiltrator": "x",
+      "engineer": "x",
+      "soldier": null,
+      "min_tech_points": "1",
+      "id": "cryo_blast",
+      "adv_options": [
+        "Ice Lance : Transform the attack into a deadly lance. The attack can no longer freeze or slow the target, but you add 1d6 piercing damage for each tech point spent.",
+        "Frigid Air : The blast snap freezes the air around the target in a 2m radius. Each creature that enters the frozen space for the first time on a turn or ends its turn there must pass a Constitution saving throw or take 2d4 cold damage."
+      ],
+      "class_list": "Engineer, Infiltrator, Sentinel",
+      "mechanic_text_dump": "YouspendtechpointstofireamassofsupercooledsubatomicparticlesatacreatureorobjectwithinrangeMakearangedspellattackagainstthetargetOnahitthetargettakesXd8colddamagewhereXisthenumberoftechpointsspentandthetargetsmovementisreducedbyhalfIfthetargetisunprotecteditmustpassaStrengthsavingthroworbecomesfrozenuntiltheendofitsnextturn"
     },
     {
       "name": "Dark Channel",
@@ -580,18 +899,18 @@
       ],
       "detonates": null,
       "primes": "x",
-      "adept": "x",
       "vanguard": null,
       "sentinel": null,
       "infiltrator": null,
       "engineer": null,
       "soldier": null,
+      "min_tech_points": null,
       "id": "dark_channel",
       "adv_options": [
         "Cripple : If the effected creature would make a saving throw or attack roll, as a reaction you may increase the severity of Dark Channel. The effected creature must roll a d4 and subtract the number rolled from the attack roll or saving throw.",
         "Improved Damage : Increase the damage die type to d12"
       ],
-      "class_list": "Adept",
+      "class_list": "",
       "mechanic_text_dump": "MakearangedspellattackonacreatureyoucanseewithinrangeOnahityouplaguethetargetwithapersistentdamagingbioticfieldThecreaturetakes1d10necroticdamageand1d10necroticdamageatthestartofyourturnwhileyoumaintainthespellIfthecreaturediesDarkChanneltransferstoanotherrandomhostilecreaturewithin10mOnlyoneDarkChannelcanmaybeactiveatatimeThedamageincreasesby1d10whenyoureachthe5thlevel2d1011thlevel3d10and17thlevel4d10"
     },
     {
@@ -641,19 +960,109 @@
       ],
       "detonates": null,
       "primes": "x",
-      "adept": "x",
       "vanguard": null,
       "sentinel": null,
       "infiltrator": null,
       "engineer": null,
       "soldier": null,
+      "min_tech_points": null,
       "id": "dark_sphere",
       "adv_options": [
         "Control : At the start of your turn, before the sphere moves, you can change it's direction.",
         "Amplify : Every 4m, the sphere's potential damage increases. Add 1d8 to the detonation damage for each 4m the sphere travels."
       ],
-      "class_list": "Adept",
+      "class_list": "",
       "mechanic_text_dump": "Launchaslowmoving4mwidesphereofdarkenergyinastraightlineinfrontofyouItmoves4mthisturnandatthestartofeachsubsequentturnEachcreaturecaughtinthepathmustmakeaDexteritysavingthrowOnafailedsaveacreaturetakesnecroticdamageequalto6d8yourbioticmodifierorhalfasmuchonasuccessfuloneWhenthespherereaches20mitdetonatesandeachcreaturewithin10mmustmakeaConstitutionsavingthrowOnafailedsaveacreaturetakesnecroticdamageequalto6d8yourbioticmodifiernecroticdamageorhalfasmuchdamageonasuccessfuloneYoucanuseanactiontodetonatethesphereearlyIfyouloseconcentrationwhilecastingthespellitdoesnotdetonateAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d8foreachslotlevelabovethe2nd"
+    },
+    {
+      "name": "Decoy",
+      "level": null,
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Spend X tech points to summon a holographic copy of yourself at a location within 10m. The copy mimics your actions. When a creature attacks, it can make an Intelligence (Perception) check and, if it succeeds, is not fooled. The DC of the check is 8 + your Tech modifier + X."
+        }
+      ],
+      "adv_option_1": "Explosive : As an action, you can spend X tech points detonate your Decoy. Each creature within 4m must make a Dexterity saving throw. On a failed save, a creature takes Xd6 fire damage or half as much on a successful one.",
+      "adv_option_2": "Improved Decoy : Your Decoy becomes so life-like that creatures have disadvantage on the Intelligence (Perception) check.",
+      "type": "tech",
+      "die_type": null,
+      "attack_type": [
+
+      ],
+      "casting_time": "Action",
+      "concentration": null,
+      "duration": "1 minute",
+      "range": "10m",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "control"
+      ],
+      "damage_type": [
+
+      ],
+      "detonates": null,
+      "primes": null,
+      "vanguard": null,
+      "sentinel": null,
+      "infiltrator": "x",
+      "engineer": "x",
+      "soldier": null,
+      "min_tech_points": "1",
+      "id": "decoy",
+      "adv_options": [
+        "Explosive : As an action, you can spend X tech points detonate your Decoy. Each creature within 4m must make a Dexterity saving throw. On a failed save, a creature takes Xd6 fire damage or half as much on a successful one.",
+        "Improved Decoy : Your Decoy becomes so life-like that creatures have disadvantage on the Intelligence (Perception) check."
+      ],
+      "class_list": "Engineer, Infiltrator",
+      "mechanic_text_dump": "SpendXtechpointstosummonaholographiccopyofyourselfatalocationwithin10mThecopymimicsyouractionsWhenacreatureattacksitcanmakeanIntelligencePerceptioncheckandifitsucceedsisnotfooledTheDCofthecheckis8yourTechmodifierX"
+    },
+    {
+      "name": "Defense Matrix",
+      "level": null,
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Spend X tech points to reinforce your armor with special foucault currents. You gain resistance to your choice of X damage types."
+        }
+      ],
+      "adv_option_1": "Shield : Deploy the matrix as a stationary shield. Up to 2 creatures of medium size can stand behind the shield, gaining the resistance benefit when attacked by creatures from the other side of the shield.",
+      "adv_option_2": "Improved Defense : Gain a +2 bonus to your AC while Defense Matrix is active.",
+      "type": "tech",
+      "die_type": null,
+      "attack_type": [
+
+      ],
+      "casting_time": "Action",
+      "concentration": null,
+      "duration": "1 minute",
+      "range": "Self",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "buff"
+      ],
+      "damage_type": [
+
+      ],
+      "detonates": null,
+      "primes": null,
+      "vanguard": null,
+      "sentinel": "x",
+      "infiltrator": "x",
+      "engineer": "x",
+      "soldier": null,
+      "min_tech_points": "1",
+      "id": "defense_matrix",
+      "adv_options": [
+        "Shield : Deploy the matrix as a stationary shield. Up to 2 creatures of medium size can stand behind the shield, gaining the resistance benefit when attacked by creatures from the other side of the shield.",
+        "Improved Defense : Gain a +2 bonus to your AC while Defense Matrix is active."
+      ],
+      "class_list": "Engineer, Infiltrator, Sentinel",
+      "mechanic_text_dump": "SpendXtechpointstoreinforceyourarmorwithspecialfoucaultcurrentsYougainresistancetoyourchoiceofXdamagetypes"
     },
     {
       "name": "Dominate",
@@ -696,19 +1105,199 @@
       ],
       "detonates": null,
       "primes": null,
-      "adept": "x",
       "vanguard": null,
       "sentinel": null,
       "infiltrator": null,
       "engineer": null,
       "soldier": null,
+      "min_tech_points": null,
       "id": "dominate",
       "adv_options": [
         "Total Control : You take the the dominated creatures action. You may use it's spells and abilities.",
         "Damage : While the creature is dominated, it takes 2d6 psychic damage at the end of it's turn. This damage does not proc an opportunity to end Dominate."
       ],
-      "class_list": "Adept",
+      "class_list": "",
       "mechanic_text_dump": "Targetanorganiccreaturewithin20mItmustsucceedonaWisdomsavingthroworitbecomesDominateditisconsideredcharmedandcantusespellsorabilitiesOnitsturnthedominatedcreatureattackstheclosestcreaturehostiletothespellcastermakingarangedweaponattackormeleeattackifitdoesnothaveaweaponIftherearenohostilecreatureswithinrangethedominatedcreatureusesitsturntoruntowardstheclosesthostilecreatureEachtimethedominatedcreaturetakesdamageitmakesanewWisdomsavingthrowagainstthespellIfthesavingthrowsucceedsthespellends"
+    },
+    {
+      "name": "Electric Slash",
+      "level": null,
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Spend X tech points to unleash a wave of electric energy in a 8m cone originating from you. Each creature must make a Constitution saving throw. On a failed save, a creature takes Xd8 lightning damage or half as much damage on a successful one."
+        }
+      ],
+      "adv_option_1": "Shield Restore : Gain shield points equal to half of your damage roll.",
+      "adv_option_2": "Paralyze : Creatures that fail the saving throw are paralyzed until the end of their next turn.",
+      "type": "tech",
+      "die_type": "d8",
+      "attack_type": [
+        "CON Save"
+      ],
+      "casting_time": "Action",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "Self",
+      "aoe": "cone",
+      "aoe_distance": "8m",
+      "effect": [
+        "damage"
+      ],
+      "damage_type": [
+        "lightning"
+      ],
+      "detonates": "x",
+      "primes": null,
+      "vanguard": null,
+      "sentinel": null,
+      "infiltrator": "x",
+      "engineer": "x",
+      "soldier": null,
+      "min_tech_points": "1",
+      "id": "electric_slash",
+      "adv_options": [
+        "Shield Restore : Gain shield points equal to half of your damage roll.",
+        "Paralyze : Creatures that fail the saving throw are paralyzed until the end of their next turn."
+      ],
+      "class_list": "Engineer, Infiltrator",
+      "mechanic_text_dump": "SpendXtechpointstounleashawaveofelectricenergyina8mconeoriginatingfromyouEachcreaturemustmakeaConstitutionsavingthrowOnafailedsaveacreaturetakesXd8lightningdamageorhalfasmuchdamageonasuccessfulone"
+    },
+    {
+      "name": "Energy Drain",
+      "level": null,
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You spend tech points to cycle your Omni-tool, sapping electromagnetic energy from a creature you can see within range. Make a ranged spell attack against the target. On a hit, the target takes Xd4 lightning damage, where X is the amount of tech points you spent, and you get shield points equal to half of the damage done."
+        }
+      ],
+      "adv_option_1": "Improved Damage : Increase the damage die type to d6.",
+      "adv_option_2": "Improved Regen : You get Shield Points equal to your damage roll.",
+      "type": "tech",
+      "die_type": "d4",
+      "attack_type": [
+        "Ranged Attack"
+      ],
+      "casting_time": "Action",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "20m",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "damage"
+      ],
+      "damage_type": [
+        "lightning"
+      ],
+      "detonates": "x",
+      "primes": null,
+      "vanguard": null,
+      "sentinel": "x",
+      "infiltrator": null,
+      "engineer": "x",
+      "soldier": null,
+      "min_tech_points": "1",
+      "id": "energy_drain",
+      "adv_options": [
+        "Improved Damage : Increase the damage die type to d6.",
+        "Improved Regen : You get Shield Points equal to your damage roll."
+      ],
+      "class_list": "Engineer, Sentinel",
+      "mechanic_text_dump": "YouspendtechpointstocycleyourOmnitoolsappingelectromagneticenergyfromacreatureyoucanseewithinrangeMakearangedspellattackagainstthetargetOnahitthetargettakesXd4lightningdamagewhereXistheamountoftechpointsyouspentandyougetshieldpointsequaltohalfofthedamagedone"
+    },
+    {
+      "name": "First Aid",
+      "level": null,
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Spend X tech points to inject a friendly creature with nanobots that reduce pain and heal internal injuries. The creature gains hit points equal to Xd8 + your Tech modifier"
+        }
+      ],
+      "adv_option_1": "Adaptive : The healed creature gains resistance to the last damage type it suffered. This effect lasts for 1 minute.",
+      "adv_option_2": "Improved Healing : Increase the healing die type to d8",
+      "type": "tech",
+      "die_type": "d8",
+      "attack_type": [
+
+      ],
+      "casting_time": "Action",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "Touch",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "heal"
+      ],
+      "damage_type": [
+
+      ],
+      "detonates": null,
+      "primes": null,
+      "vanguard": null,
+      "sentinel": "x",
+      "infiltrator": "x",
+      "engineer": "x",
+      "soldier": null,
+      "min_tech_points": "1",
+      "id": "first_aid",
+      "adv_options": [
+        "Adaptive : The healed creature gains resistance to the last damage type it suffered. This effect lasts for 1 minute.",
+        "Improved Healing : Increase the healing die type to d8"
+      ],
+      "class_list": "Engineer, Infiltrator, Sentinel",
+      "mechanic_text_dump": "SpendXtechpointstoinjectafriendlycreaturewithnanobotsthatreducepainandhealinternalinjuriesThecreaturegainshitpointsequaltoXd8yourTechmodifier"
+    },
+    {
+      "name": "Flamethrower",
+      "level": null,
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You spend tech points to overload your omni-tool's acetylene torch, spewing flames in front of you. Each creature within an 8m cone must make a Dexterity saving throw. A creature takes Xd10 fire damage on a failed save or half as much damage on a successful one where X is the number of tech points spent."
+        }
+      ],
+      "adv_option_1": "Concentrated Burn : Increase the damage to d12 and the distance to 12m, but the area-of-effect is now a line instead of a cone.",
+      "adv_option_2": "Exhaust : The flames leave behind a thick smoke for 1 turn. Creatures have disadvantage while making ranged weapon attacks against you until the start of your next turn.",
+      "type": "tech",
+      "die_type": "d10",
+      "attack_type": [
+        "DEX Save"
+      ],
+      "casting_time": "Action",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "Self",
+      "aoe": "cone",
+      "aoe_distance": "8m",
+      "effect": [
+        "damage"
+      ],
+      "damage_type": [
+        "fire"
+      ],
+      "detonates": null,
+      "primes": "x",
+      "vanguard": null,
+      "sentinel": "x",
+      "infiltrator": "x",
+      "engineer": "x",
+      "soldier": null,
+      "min_tech_points": "1",
+      "id": "flamethrower",
+      "adv_options": [
+        "Concentrated Burn : Increase the damage to d12 and the distance to 12m, but the area-of-effect is now a line instead of a cone.",
+        "Exhaust : The flames leave behind a thick smoke for 1 turn. Creatures have disadvantage while making ranged weapon attacks against you until the start of your next turn."
+      ],
+      "class_list": "Engineer, Infiltrator, Sentinel",
+      "mechanic_text_dump": "YouspendtechpointstooverloadyouromnitoolsacetylenetorchspewingflamesinfrontofyouEachcreaturewithinan8mconemustmakeaDexteritysavingthrowAcreaturetakesXd10firedamageonafailedsaveorhalfasmuchdamageonasuccessfulonewhereXisthenumberoftechpointsspent"
     },
     {
       "name": "Flare",
@@ -746,18 +1335,18 @@
       ],
       "detonates": "x",
       "primes": "x",
-      "adept": "x",
       "vanguard": null,
       "sentinel": null,
       "infiltrator": null,
       "engineer": null,
       "soldier": null,
+      "min_tech_points": null,
       "id": "flare",
       "adv_options": [
         "Improved Blind : Each creature is blinded no matter the result of its saving throw.",
         "Heat seeking flare : Instead of choosing 4 targets, you may instead choose 1. If you do so, the target has disadvantage on the saving throw. Increase the damage by 4d12."
       ],
-      "class_list": "Adept",
+      "class_list": "",
       "mechanic_text_dump": "RapidlyalteringthemassofairparticlescreatesradioactiveprojectilesthatseekoutthetargetsandexplodeChooseupto4creaturesthatyoucanseewithinrangeEachcreaturemustmakeaConstitutionsavingthrowOnafailedsaveacreatureisblindeduntiltheendofyournextturnandtakesradiantdamageequalto6d12OnasuccessfulsaveacreaturetakeshalfdamagebutsuffersnoothernegativeeffectAthigherlevelsWhenyoucastthisspellusingaspellslotof5thlevelorhigherincreasethedamageby1d12foreachspellslotabovethe4th"
     },
     {
@@ -796,1001 +1385,19 @@
       ],
       "detonates": null,
       "primes": null,
-      "adept": "x",
       "vanguard": "x",
       "sentinel": "x",
       "infiltrator": null,
       "engineer": null,
       "soldier": null,
+      "min_tech_points": null,
       "id": "fly",
       "adv_options": [
         "Improved Lift : You can lift Large sized creatures",
         "Quick : You can cast Fly as a bonus action"
       ],
-      "class_list": "Adept, Sentinel, Vanguard",
+      "class_list": "Sentinel, Vanguard",
       "mechanic_text_dump": "CreateanegativemasseffectfieldaroundawillingMediumsizedorsmallercreatureandliftit2mintotheairThecreaturesspeedbecomeszerobutyoucanuseabonusactionorreactiontomovethecreatureupto20mthroughtheairWhenthespellendsthetargetfallsifitisstillaloftunlessitcanstopthefallAtHigherLevelsWhenyoucastthisspellusingaspellslotof4thlevelorhigheryoucantargetoneadditionalcreatureforeachslotlevelabove3rd"
-    },
-    {
-      "name": "Lance",
-      "level": "1",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Make a ranged spell attack on a creature you can see within range. On a hit, release a lance of energy that deals force damage equal to 3d8 + your biotic modifier."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "At higher levels: When you cast this spell using a spell slot of level 2 or higher, the damage increases by 1d8 for each slot level above the 1st."
-        }
-      ],
-      "adv_option_1": "Anti-Shield : Damage type become lightning (double damage to shields)",
-      "adv_option_2": "Improved Damage : Increase the damage die type to d12.",
-      "type": "biotic",
-      "die_type": "d8",
-      "attack_type": [
-        "Ranged Attack"
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "20m",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "damage"
-      ],
-      "damage_type": [
-        "force"
-      ],
-      "detonates": "x",
-      "primes": null,
-      "adept": "x",
-      "vanguard": "x",
-      "sentinel": "x",
-      "infiltrator": null,
-      "engineer": null,
-      "soldier": null,
-      "id": "lance",
-      "adv_options": [
-        "Anti-Shield : Damage type become lightning (double damage to shields)",
-        "Improved Damage : Increase the damage die type to d12."
-      ],
-      "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "MakearangedspellattackonacreatureyoucanseewithinrangeOnahitreleasealanceofenergythatdealsforcedamageequalto3d8yourbioticmodifierAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel2orhigherthedamageincreasesby1d8foreachslotlevelabovethe1st"
-    },
-    {
-      "name": "Lash",
-      "level": "2",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Consume barrier ticks to create a whip of biotic energy. Each barrier tick consumed increases the range of the whip by 2m. Target a creature you can see within the resulting range. The target takes 4d8 force damage and becomes {grappled}. To escape the grapple the creature must succeed on a contested Strength (Athletics) against your Constitution."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "At higher levels: When you cast this spell using a spell slot of level 3 or higher, the damage increases by 1d8 for each slot level above the 2nd."
-        }
-      ],
-      "adv_option_1": "Improved Grapple : The grappled creature has disadvantage when trying to escape.",
-      "adv_option_2": "Improved Damage : Increase the damage die type to d12.",
-      "type": "biotic",
-      "die_type": "d8",
-      "attack_type": [
-        "Ranged Attack"
-      ],
-      "casting_time": "Action",
-      "concentration": "x",
-      "duration": "1 minute",
-      "range": "var",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "damage",
-        " control"
-      ],
-      "damage_type": [
-        "force"
-      ],
-      "detonates": null,
-      "primes": "x",
-      "adept": "x",
-      "vanguard": "x",
-      "sentinel": null,
-      "infiltrator": null,
-      "engineer": null,
-      "soldier": null,
-      "id": "lash",
-      "adv_options": [
-        "Improved Grapple : The grappled creature has disadvantage when trying to escape.",
-        "Improved Damage : Increase the damage die type to d12."
-      ],
-      "class_list": "Adept, Vanguard",
-      "mechanic_text_dump": "ConsumebarriertickstocreateawhipofbioticenergyEachbarriertickconsumedincreasestherangeofthewhipby2mTargetacreatureyoucanseewithintheresultingrangeThetargettakes4d8forcedamageandbecomesgrappledToescapethegrapplethecreaturemustsucceedonacontestedStrengthAthleticsagainstyourConstitutionAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d8foreachslotlevelabovethe2nd"
-    },
-    {
-      "name": "Lift",
-      "level": "1",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "This spell creates a negative mass effect field around a target creature. Roll 5d8. If the total roll is greater than or equal to the hit points of the targeted creature, it becomes {lifted}."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "At higher levels: When you cast this spell using a spell slot of level 2 or higher, add 2d8 to the roll for each level above the first."
-        }
-      ],
-      "adv_option_1": "Heavy Lift : Increase the die type for Lift to d12.",
-      "adv_option_2": "Control : While the target is lifted, you can use your action to move the target up to 10m.",
-      "type": "biotic",
-      "die_type": "d8",
-      "attack_type": [
-
-      ],
-      "casting_time": "Action",
-      "concentration": "x",
-      "duration": "10 minutes",
-      "range": "20m",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "control"
-      ],
-      "damage_type": [
-
-      ],
-      "detonates": null,
-      "primes": "x",
-      "adept": "x",
-      "vanguard": "x",
-      "sentinel": "x",
-      "infiltrator": null,
-      "engineer": null,
-      "soldier": null,
-      "id": "lift",
-      "adv_options": [
-        "Heavy Lift : Increase the die type for Lift to d12.",
-        "Control : While the target is lifted, you can use your action to move the target up to 10m."
-      ],
-      "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "ThisspellcreatesanegativemasseffectfieldaroundatargetcreatureRoll5d8IfthetotalrollisgreaterthanorequaltothehitpointsofthetargetedcreatureitbecomesliftedAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel2orhigheradd2d8totherollforeachlevelabovethefirst"
-    },
-    {
-      "name": "Nova",
-      "level": "1",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Transfer the energy of your barrier into a biotic explosion, consuming your remaining barrier ticks. Creatures within a 2m sphere centered on you must make a Dexterity saving throw. On a failed save, a creature is knocked {prone} and takes force damage equal to Xd10, where X is the number of barrier ticks. On a successful save, a creature takes half as much damage."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "When you cast this spell using a spell slot of 2nd level or higher, the radius of the explosion increases by 2m for each level above the 1st."
-        }
-      ],
-      "adv_option_1": "Improved Damage : Increase the damage die to d10.",
-      "adv_option_2": "Half Blast : You can cast Nova, you cause up to 2 blasts. Each blast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. If you have not used all of your movement, you can move in between the blasts.",
-      "type": "biotic",
-      "die_type": "d10",
-      "attack_type": [
-        "DEX Save"
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "Self",
-      "aoe": "sphere",
-      "aoe_distance": "2m",
-      "effect": [
-        "damage"
-      ],
-      "damage_type": [
-        "force"
-      ],
-      "detonates": "x",
-      "primes": null,
-      "adept": null,
-      "vanguard": "x",
-      "sentinel": null,
-      "infiltrator": null,
-      "engineer": null,
-      "soldier": null,
-      "id": "nova",
-      "adv_options": [
-        "Improved Damage : Increase the damage die to d10.",
-        "Half Blast : You can cast Nova, you cause up to 2 blasts. Each blast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. If you have not used all of your movement, you can move in between the blasts."
-      ],
-      "class_list": "Vanguard",
-      "mechanic_text_dump": "TransfertheenergyofyourbarrierintoabioticexplosionconsumingyourremainingbarrierticksCreatureswithina2mspherecenteredonyoumustmakeaDexteritysavingthrowOnafailedsaveacreatureisknockedproneandtakesforcedamageequaltoXd10whereXisthenumberofbarrierticksOnasuccessfulsaveacreaturetakeshalfasmuchdamageWhenyoucastthisspellusingaspellslotof2ndlevelorhighertheradiusoftheexplosionincreasesby2mforeachlevelabovethe1st"
-    },
-    {
-      "name": "Phase Disruptor",
-      "level": "0",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "You focus the energy of your barrier into a high-powered beam at a target creature or object within range. Remove 1 barrier tick and make a ranged spell attack on that target. On a hit, the creature takes 3d4 force damage."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "A higher levels, you may use additional barrier ticks to create more than one beam: two beams at 5th level, three beams at 11th level, and four beams at 17th level. You can direct the beams at the same target or at different ones. Make a separate attack roll for each beam."
-        }
-      ],
-      "adv_option_1": "Improved Damage : Increase the damage die type to d6.",
-      "adv_option_2": "Cripple : Creature's hit by Phase Disruptor have disadvantage on their next attack roll.",
-      "type": "biotic",
-      "die_type": "d4",
-      "attack_type": [
-        "Ranged Attack"
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "20m",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "damage"
-      ],
-      "damage_type": [
-        "force"
-      ],
-      "detonates": null,
-      "primes": "x",
-      "adept": "x",
-      "vanguard": "x",
-      "sentinel": null,
-      "infiltrator": null,
-      "engineer": null,
-      "soldier": null,
-      "id": "phase_disruptor",
-      "adv_options": [
-        "Improved Damage : Increase the damage die type to d6.",
-        "Cripple : Creature's hit by Phase Disruptor have disadvantage on their next attack roll."
-      ],
-      "class_list": "Adept, Vanguard",
-      "mechanic_text_dump": "YoufocustheenergyofyourbarrierintoahighpoweredbeamatatargetcreatureorobjectwithinrangeRemove1barriertickandmakearangedspellattackonthattargetOnahitthecreaturetakes3d4forcedamageAhigherlevelsyoumayuseadditionalbarriertickstocreatemorethanonebeamtwobeamsat5thlevelthreebeamsat11thlevelandfourbeamsat17thlevelYoucandirectthebeamsatthesametargetoratdifferentonesMakeaseparateattackrollforeachbeam"
-    },
-    {
-      "name": "Pull",
-      "level": "0",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "You create a negative mass effect field around a creature or object you can see within range then jerk the field sharply towards you, bringing the target with it. Only Medium and smaller creatures are affected. The distance the target travels is based on its size, starting at 2m for medium-sized objects and adding 4m for each size small than medium. E.g., Medium = 2m, Small = 6m, Tiny = 10m, etc."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "If attempting to pull an object from another creature, the creature must pass a Strength saving throw to retain possession of the object. If you pull a creature and it moves more than 2m, it must pass a Dexterity saving throw or be knocked {prone}."
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "The number of targets increase by 1 when you reach the 5th level (2), 11th level (3), and 17th level (4)."
-        }
-      ],
-      "adv_option_1": "Magician: You can shape and guide pull to add different trajectories to the object. The direction of pull cannot change, but you can add arcs, decrease the distance the object moves, and even pull small objects directly into your hand.",
-      "adv_option_2": "Push: You may choose to move the target towards or away from you.",
-      "type": "biotic",
-      "die_type": null,
-      "attack_type": [
-
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "20m",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "control"
-      ],
-      "damage_type": [
-
-      ],
-      "detonates": null,
-      "primes": null,
-      "adept": "x",
-      "vanguard": "x",
-      "sentinel": "x",
-      "infiltrator": null,
-      "engineer": null,
-      "soldier": null,
-      "id": "pull",
-      "adv_options": [
-        "Magician: You can shape and guide pull to add different trajectories to the object. The direction of pull cannot change, but you can add arcs, decrease the distance the object moves, and even pull small objects directly into your hand.",
-        "Push: You may choose to move the target towards or away from you."
-      ],
-      "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "YoucreateanegativemasseffectfieldaroundacreatureorobjectyoucanseewithinrangethenjerkthefieldsharplytowardsyoubringingthetargetwithitOnlyMediumandsmallercreaturesareaffectedThedistancethetargettravelsisbasedonitssizestartingat2mformediumsizedobjectsandadding4mforeachsizesmallthanmediumEgMedium2mSmall6mTiny10metcIfattemptingtopullanobjectfromanothercreaturethecreaturemustpassaStrengthsavingthrowtoretainpossessionoftheobjectIfyoupullacreatureanditmovesmorethan2mitmustpassaDexteritysavingthroworbeknockedproneThenumberoftargetsincreaseby1whenyoureachthe5thlevel211thlevel3and17thlevel4"
-    },
-    {
-      "name": "Reave",
-      "level": "1",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Unleash a wave of dark biotic energy in a 6m cube. Each creature within the blast must make a Constitution saving throw. On a failed save, a creature takes 2d10 necrotic damage and has disadvantage on their next attack or saving thrown. A creature takes half as much damage on a successful save."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, increase the damage by 1d10 for each level above the second."
-        }
-      ],
-      "adv_option_1": "Distance : Increase the range of Reave to 10m.",
-      "adv_option_2": "Armor boost : The dark energy heightens your senses momentarily. When you cast Reave, gain +2AC until the start of your next turn.",
-      "type": "biotic",
-      "die_type": "d10",
-      "attack_type": [
-        "CON Save"
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "Self",
-      "aoe": "cube",
-      "aoe_distance": "6m",
-      "effect": [
-        "damage",
-        " debuff"
-      ],
-      "damage_type": [
-        "necrotic"
-      ],
-      "detonates": "x",
-      "primes": null,
-      "adept": "x",
-      "vanguard": null,
-      "sentinel": null,
-      "infiltrator": null,
-      "engineer": null,
-      "soldier": null,
-      "id": "reave",
-      "adv_options": [
-        "Distance : Increase the range of Reave to 10m.",
-        "Armor boost : The dark energy heightens your senses momentarily. When you cast Reave, gain +2AC until the start of your next turn."
-      ],
-      "class_list": "Adept",
-      "mechanic_text_dump": "Unleashawaveofdarkbioticenergyina6mcubeEachcreaturewithintheblastmustmakeaConstitutionsavingthrowOnafailedsaveacreaturetakes2d10necroticdamageandhasdisadvantageontheirnextattackorsavingthrownAcreaturetakeshalfasmuchdamageonasuccessfulsaveAtHigherLevelsWhenyoucastthisspellusingaspellslotof3rdlevelorhigherincreasethedamageby1d10foreachlevelabovethesecond"
-    },
-    {
-      "name": "Shockwave",
-      "level": "1",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Create a cascading shockwave in a 10m line originating from you. Each creature must make a Dexterity saving throw. On a failed save, a creature takes 3d6 force damage and is knocked {prone}. On a successful save, a creature takes half as much damage."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "At higher levels: When you cast this spell using a spell slot of level 2 or higher, the damage increases by 1d6 for each slot level above the 1st."
-        }
-      ],
-      "adv_option_1": "Improved Distance : The shockwave travels 16m",
-      "adv_option_2": "Improved Damage : Increase damage die type to d10",
-      "type": "biotic",
-      "die_type": "d6",
-      "attack_type": [
-        "DEX Save"
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "Self",
-      "aoe": "line",
-      "aoe_distance": "10m",
-      "effect": [
-        "damage"
-      ],
-      "damage_type": [
-        "force"
-      ],
-      "detonates": "x",
-      "primes": null,
-      "adept": "x",
-      "vanguard": "x",
-      "sentinel": "x",
-      "infiltrator": null,
-      "engineer": null,
-      "soldier": null,
-      "id": "shockwave",
-      "adv_options": [
-        "Improved Distance : The shockwave travels 16m",
-        "Improved Damage : Increase damage die type to d10"
-      ],
-      "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "Createacascadingshockwaveina10mlineoriginatingfromyouEachcreaturemustmakeaDexteritysavingthrowOnafailedsaveacreaturetakes3d6forcedamageandisknockedproneOnasuccessfulsaveacreaturetakeshalfasmuchdamageAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel2orhigherthedamageincreasesby1d6foreachslotlevelabovethe1st"
-    },
-    {
-      "name": "Singularity",
-      "level": "3",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Create a negative mass effect field in a 4m sphere at a target location within range. Each hostile creature within the sphere's radius must succeed on a Dexterity saving throw or becomes {lifted}. Only creatures of a medium size or less are affected. Any creature that comes within 2m of the sphere must succeed on a Strength (Athletics) or Dexterity (Agility) check or they are drawn into the sphere and become lifted."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "When you cast this spell using a spell slot of 4th level or higher, increase the size of the sphere by 2m per spell slot above the 3rd."
-        }
-      ],
-      "adv_option_1": "Heavy Singularity: When a creature affected by this power makes a DEX or STR save to avoid its pull, they make that save at disadvantage.",
-      "adv_option_2": "Damage : A hostile creature that enters the sphere for the first time on a turn or ends its turn there is takes 1d4 necrotic damage.",
-      "type": "biotic",
-      "die_type": null,
-      "attack_type": [
-        "DEX Save",
-        " STR Save"
-      ],
-      "casting_time": "Action",
-      "concentration": "x",
-      "duration": "1 minute",
-      "range": "20m",
-      "aoe": "sphere",
-      "aoe_distance": "4m",
-      "effect": [
-        "control"
-      ],
-      "damage_type": [
-
-      ],
-      "detonates": null,
-      "primes": "x",
-      "adept": "x",
-      "vanguard": null,
-      "sentinel": null,
-      "infiltrator": null,
-      "engineer": null,
-      "soldier": null,
-      "id": "singularity",
-      "adv_options": [
-        "Heavy Singularity: When a creature affected by this power makes a DEX or STR save to avoid its pull, they make that save at disadvantage.",
-        "Damage : A hostile creature that enters the sphere for the first time on a turn or ends its turn there is takes 1d4 necrotic damage."
-      ],
-      "class_list": "Adept",
-      "mechanic_text_dump": "Createanegativemasseffectfieldina4msphereatatargetlocationwithinrangeEachhostilecreaturewithinthespheresradiusmustsucceedonaDexteritysavingthroworbecomesliftedOnlycreaturesofamediumsizeorlessareaffectedAnycreaturethatcomeswithin2mofthespheremustsucceedonaStrengthAthleticsorDexterityAgilitycheckortheyaredrawnintothesphereandbecomeliftedWhenyoucastthisspellusingaspellslotof4thlevelorhigherincreasethesizeofthesphereby2mperspellslotabovethe3rd"
-    },
-    {
-      "name": "Slam",
-      "level": "0",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Target a {lifted} object and slam it to the ground dealing force damage equal to 2d8 + your biotic modifier. The target is no longer {lifted} but is {prone}."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "The number of targets increases by 1 when you reach 5th level (2), 11th level (3) and 17th level (4)"
-        }
-      ],
-      "adv_option_1": "Stun : The creature must pass a Constitution saving throw or stunned for 1 round.",
-      "adv_option_2": "Improved Damage : Increase the damage die type to d12",
-      "type": "biotic",
-      "die_type": "d8",
-      "attack_type": [
-
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "20m",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "damage"
-      ],
-      "damage_type": [
-        "force"
-      ],
-      "detonates": null,
-      "primes": null,
-      "adept": "x",
-      "vanguard": "x",
-      "sentinel": "x",
-      "infiltrator": null,
-      "engineer": null,
-      "soldier": null,
-      "id": "slam",
-      "adv_options": [
-        "Stun : The creature must pass a Constitution saving throw or stunned for 1 round.",
-        "Improved Damage : Increase the damage die type to d12"
-      ],
-      "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "Targetaliftedobjectandslamittothegrounddealingforcedamageequalto2d8yourbioticmodifierThetargetisnolongerliftedbutisproneThenumberoftargetsincreasesby1whenyoureach5thlevel211thlevel3and17thlevel4"
-    },
-    {
-      "name": "Slow Fall",
-      "level": "0",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "When you or a creature within 10m of you falls, choose up to five falling creatures within range. Create a negative mass effect field around each creature, slowing the rate of descent to 20m per round. If the creature lands before the spell ends, it takes no Falling damage and can land on its feet, and the spell ends for that creature."
-        }
-      ],
-      "adv_option_1": null,
-      "adv_option_2": null,
-      "type": "biotic",
-      "die_type": null,
-      "attack_type": [
-
-      ],
-      "casting_time": "Reaction",
-      "concentration": "x",
-      "duration": "1 minute",
-      "range": "10m",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "movement"
-      ],
-      "damage_type": [
-
-      ],
-      "detonates": null,
-      "primes": null,
-      "adept": "x",
-      "vanguard": "x",
-      "sentinel": null,
-      "infiltrator": null,
-      "engineer": null,
-      "soldier": null,
-      "id": "slow_fall",
-      "adv_options": [
-        null,
-        null
-      ],
-      "class_list": "Adept, Vanguard",
-      "mechanic_text_dump": "Whenyouoracreaturewithin10mofyoufallschooseuptofivefallingcreatureswithinrangeCreateanegativemasseffectfieldaroundeachcreatureslowingtherateofdescentto20mperroundIfthecreaturelandsbeforethespellendsittakesnoFallingdamageandcanlandonitsfeetandthespellendsforthatcreature"
-    },
-    {
-      "name": "Stasis",
-      "level": "2",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Lock a target in a high-gravity mass effect field. Choose a creature you can see within range. The creature must make a Strength saving throw. On a failed save, the creature is {restrained}. At the beginning of the creature's turn, it can use its action to make the saving throw again."
-        }
-      ],
-      "adv_option_1": "Vulnerable : A creature in Stasis takes +2 damage from all damage rolls.",
-      "adv_option_2": "Heavy Stasis : The creature has disadvantage on its saving throws to escape Stasis.",
-      "type": "biotic",
-      "die_type": null,
-      "attack_type": [
-        "STR Save"
-      ],
-      "casting_time": "Action",
-      "concentration": "x",
-      "duration": "10 minutes",
-      "range": "20m",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "control",
-        " debuff"
-      ],
-      "damage_type": [
-
-      ],
-      "detonates": null,
-      "primes": "x",
-      "adept": "x",
-      "vanguard": "x",
-      "sentinel": "x",
-      "infiltrator": null,
-      "engineer": null,
-      "soldier": null,
-      "id": "stasis",
-      "adv_options": [
-        "Vulnerable : A creature in Stasis takes +2 damage from all damage rolls.",
-        "Heavy Stasis : The creature has disadvantage on its saving throws to escape Stasis."
-      ],
-      "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "LockatargetinahighgravitymasseffectfieldChooseacreatureyoucanseewithinrangeThecreaturemustmakeaStrengthsavingthrowOnafailedsavethecreatureisrestrainedAtthebeginningofthecreaturesturnitcanuseitsactiontomakethesavingthrowagain"
-    },
-    {
-      "name": "Storm",
-      "level": "4",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "A 8m-radius sphere of rapid shifting mass effect fields springs into existence centered on a point you choose within range, creating a dangerous whirlwind of debris and energy. The sphere remains for the spell’s duration. Each creature in the sphere when it appears or that ends its turn there must succeed on a Strength saving throw or take 8d10 force damage. The sphere’s space is difficult terrain."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "At Higher Levels. When you cast this spell using a spell slot of 5th level or higher, the damage increases for each of its effects by 1d10 for each slot level above 4th."
-        }
-      ],
-      "adv_option_1": "Necrotic Bolts: Until the spell ends, you can use a bonus action on each of your turns to cause a bolt of necrotic energy to leap from the center of the sphere toward one creature you choose within 20m of the center. Make a ranged spell attack. You have advantage on the attack roll if the target is in the sphere. On a hit, the target takes 4[dd] necrotic damage.",
-      "adv_option_2": "Growing Storm: While the spell is maintained, the storm's radius grows by 2m at the start of your turn.",
-      "type": "biotic",
-      "die_type": "d10",
-      "attack_type": [
-        "STR Save"
-      ],
-      "casting_time": "Action",
-      "concentration": "x",
-      "duration": "1 minute",
-      "range": "20m",
-      "aoe": "sphere",
-      "aoe_distance": "8m",
-      "effect": [
-        "damage",
-        " control"
-      ],
-      "damage_type": [
-        "force",
-        " necrotic"
-      ],
-      "detonates": null,
-      "primes": "x",
-      "adept": "x",
-      "vanguard": "x",
-      "sentinel": null,
-      "infiltrator": null,
-      "engineer": null,
-      "soldier": null,
-      "id": "storm",
-      "adv_options": [
-        "Necrotic Bolts: Until the spell ends, you can use a bonus action on each of your turns to cause a bolt of necrotic energy to leap from the center of the sphere toward one creature you choose within 20m of the center. Make a ranged spell attack. You have advantage on the attack roll if the target is in the sphere. On a hit, the target takes 4d10 necrotic damage.",
-        "Growing Storm: While the spell is maintained, the storm's radius grows by 2m at the start of your turn."
-      ],
-      "class_list": "Adept, Vanguard",
-      "mechanic_text_dump": "A8mradiussphereofrapidshiftingmasseffectfieldsspringsintoexistencecenteredonapointyouchoosewithinrangecreatingadangerouswhirlwindofdebrisandenergyThesphereremainsforthespellsdurationEachcreatureinthespherewhenitappearsorthatendsitsturntheremustsucceedonaStrengthsavingthrowortake8d10forcedamageThespheresspaceisdifficultterrainAtHigherLevelsWhenyoucastthisspellusingaspellslotof5thlevelorhigherthedamageincreasesforeachofitseffectsby1d10foreachslotlevelabove4th"
-    },
-    {
-      "name": "Throw",
-      "level": "0",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Make a ranged spell attack on a target you can see within range. On a hit, hurl the target backwards 10m and deal force damage equal to 1d6 + your biotic modifier."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "At higher levels: This spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), 17th level (4d6)"
-        }
-      ],
-      "adv_option_1": "Improved Force : Throw is so forceful, it lifts the target off the ground when knocking it back. Targets must pass a Dexterity saving throw or are knocked prone.",
-      "adv_option_2": "Improved Damage : Increase the damage die type to d8",
-      "type": "biotic",
-      "die_type": "d6",
-      "attack_type": [
-        "Ranged Attack"
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "20m",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "damage"
-      ],
-      "damage_type": [
-        "force"
-      ],
-      "detonates": "x",
-      "primes": null,
-      "adept": "x",
-      "vanguard": "x",
-      "sentinel": "x",
-      "infiltrator": null,
-      "engineer": null,
-      "soldier": null,
-      "id": "throw",
-      "adv_options": [
-        "Improved Force : Throw is so forceful, it lifts the target off the ground when knocking it back. Targets must pass a Dexterity saving throw or are knocked prone.",
-        "Improved Damage : Increase the damage die type to d8"
-      ],
-      "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "MakearangedspellattackonatargetyoucanseewithinrangeOnahithurlthetargetbackwards10manddealforcedamageequalto1d6yourbioticmodifierAthigherlevelsThisspellsdamageincreasesby1d6whenyoureach5thlevel2d611thlevel3d617thlevel4d6"
-    },
-    {
-      "name": "Vortex",
-      "level": "3",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "You intertwine negative and positive mass effect fields to create a swirling vortex. Creatures within a 10m cone must make a DEX saving throw. On a failed save a creature takes 4d10 bludgeoning damage, or half as much damage on a successful one."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Creatures that fail the saving throw are thrown 1d6 + 2m away from you and become {prone}."
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "At Higher Levels: When you cast this spell using a spell slot of 4th level or higher, increase the damage by 1d10 for each slot level above the 3rd."
-        }
-      ],
-      "adv_option_1": "Raidal : You may cast the vortex in a 6m radius sphere instead.",
-      "adv_option_2": "Damage : Increase the damage to d12",
-      "type": "biotic",
-      "die_type": "d10",
-      "attack_type": [
-        "DEX Save"
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "Self",
-      "aoe": "cone",
-      "aoe_distance": "10m",
-      "effect": [
-        "damage"
-      ],
-      "damage_type": [
-        "bludgeoning"
-      ],
-      "detonates": "x",
-      "primes": null,
-      "adept": "x",
-      "vanguard": "x",
-      "sentinel": "x",
-      "infiltrator": null,
-      "engineer": null,
-      "soldier": null,
-      "id": "vortex",
-      "adv_options": [
-        "Raidal : You may cast the vortex in a 6m radius sphere instead.",
-        "Damage : Increase the damage to d12"
-      ],
-      "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "YouintertwinenegativeandpositivemasseffectfieldstocreateaswirlingvortexCreatureswithina10mconemustmakeaDEXsavingthrowOnafailedsaveacreaturetakes4d10bludgeoningdamageorhalfasmuchdamageonasuccessfuloneCreaturesthatfailthesavingthrowarethrown1d62mawayfromyouandbecomeproneAtHigherLevelsWhenyoucastthisspellusingaspellslotof4thlevelorhigherincreasethedamageby1d10foreachslotlevelabovethe3rd"
-    },
-    {
-      "name": "Warp",
-      "level": "2",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Make a ranged spell attack on an organic creature you can see within range. On a hit, you generate a rapidly shifting mass effect field inside the target dealing necrotic damage equal to 3d10 + you biotic modifier. This damage bypasses shields."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "At higher levels: When you cast this spell using a spell slot of level 3 or higher, the damage increases by 1d10 for each slot level above the 2nd."
-        }
-      ],
-      "adv_option_1": "Internal Bleeding : The shifting causes internal bleeding. At the start of your turn, the target takes 1[dd] necrotic damage bypassing it's shields until it uses medi-gel or is stabilized.",
-      "adv_option_2": "Keel over : A target hit by warp must pass a Constitutuion saving throw. On a failed save, the force of warp is so intense the target is knocked {prone} and {stunned} until the start of your next turn.",
-      "type": "biotic",
-      "die_type": "d10",
-      "attack_type": [
-        "Ranged Attack"
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "20m",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "damage"
-      ],
-      "damage_type": [
-        "necrotic"
-      ],
-      "detonates": null,
-      "primes": "x",
-      "adept": "x",
-      "vanguard": "x",
-      "sentinel": "x",
-      "infiltrator": null,
-      "engineer": null,
-      "soldier": null,
-      "id": "warp",
-      "adv_options": [
-        "Internal Bleeding : The shifting causes internal bleeding. At the start of your turn, the target takes 1d10 necrotic damage bypassing it's shields until it uses medi-gel or is stabilized.",
-        "Keel over : A target hit by warp must pass a Constitutuion saving throw. On a failed save, the force of warp is so intense the target is knocked {prone} and {stunned} until the start of your next turn."
-      ],
-      "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "MakearangedspellattackonanorganiccreatureyoucanseewithinrangeOnahityougeneratearapidlyshiftingmasseffectfieldinsidethetargetdealingnecroticdamageequalto3d10youbioticmodifierThisdamagebypassesshieldsAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d10foreachslotlevelabovethe2nd"
-    },
-    {
-      "name": "Ballistic Blades",
-      "level": null,
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "As an Attack action, fire a salvo of blades at a target creature or object you can see within range. Make a ranged weapon attack, you add your proficiency bonus to this roll. On a hit, the target takes 2d12 piercing damage."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "You must spend a short or long rest reloading the armguard before you can this ability again."
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "This feature's damage increases by 2d12 when you reach 5th level (4d12), 11th level (6d12), 17th level (8d12)"
-        },
-        {
-          "id": 4,
-          "type": "line",
-          "data": "Infiltrators may learn or advance this feature instead of gaining a tech power."
-        }
-      ],
-      "adv_option_1": "Bleeding Blades : On a hit, the target takes an additional 3[dd] piercing damage at the start of their turn. This damage bypasses shields.",
-      "adv_option_2": "Exploding blades : On a hit, the target takes and additional 3[dd] thunder damage and must pass a Constitution saving throw (DC 8 + proficiency bonus) or becomes {stunned} until the end of your next turn.",
-      "type": "combat",
-      "die_type": "d12",
-      "attack_type": [
-        "Ranged Attack"
-      ],
-      "casting_time": "Attack",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "10m",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "damage"
-      ],
-      "damage_type": [
-        "piercing"
-      ],
-      "detonates": null,
-      "primes": null,
-      "adept": null,
-      "vanguard": null,
-      "sentinel": null,
-      "infiltrator": "x",
-      "engineer": null,
-      "soldier": "x",
-      "id": "ballistic_blades",
-      "adv_options": [
-        "Bleeding Blades : On a hit, the target takes an additional 3d12 piercing damage at the start of their turn. This damage bypasses shields.",
-        "Exploding blades : On a hit, the target takes and additional 3d12 thunder damage and must pass a Constitution saving throw (DC 8 + proficiency bonus) or becomes {stunned} until the end of your next turn."
-      ],
-      "class_list": "Infiltrator, Soldier",
-      "mechanic_text_dump": "AsanAttackactionfireasalvoofbladesatatargetcreatureorobjectyoucanseewithinrangeMakearangedweaponattackyouaddyourproficiencybonustothisrollOnahitthetargettakes2d12piercingdamageYoumustspendashortorlongrestreloadingthearmguardbeforeyoucanthisabilityagainThisfeaturesdamageincreasesby2d12whenyoureach5thlevel4d1211thlevel6d1217thlevel8d12Infiltratorsmaylearnoradvancethisfeatureinsteadofgainingatechpower"
-    },
-    {
-      "name": "Beehive",
-      "level": null,
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "As an Attack action, you equip and fire your antipersonnel cannon, colloquially called \"the beehive\". It ejects superheated shrapnel in a 6m cone, originating from you. Each creature caught in the blast must make Dexterity saving throw. On a failed save, a creature takes 2d6 piercing damage or half as much damage on a successful one."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "The DC is (8 + proficiency bonus + DEX modifier)."
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "You must spend a short or long rest reconfiguring the cannon to use it again."
-        },
-        {
-          "id": 4,
-          "type": "line",
-          "data": "This feature's damage increases by 2d6 when you reach 5th level (4d6), 11th level (6d6), 17th level (8d6)"
-        },
-        {
-          "id": 5,
-          "type": "line",
-          "data": "Infiltrators may learn or advance this feature instead of gaining a tech power."
-        }
-      ],
-      "adv_option_1": "Anti-Flesh : The Beehive deals double damage to unprotected, organic targets.",
-      "adv_option_2": "Remote Deploy : As an action you can setup your Beehive in a separate location. Once it is deployed you can use an Attack action to fire it.",
-      "type": "combat",
-      "die_type": "d6",
-      "attack_type": [
-        "DEX save"
-      ],
-      "casting_time": "Attack",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "Self",
-      "aoe": "cone",
-      "aoe_distance": "6m",
-      "effect": [
-        "damage"
-      ],
-      "damage_type": [
-        "piercing"
-      ],
-      "detonates": null,
-      "primes": null,
-      "adept": null,
-      "vanguard": null,
-      "sentinel": null,
-      "infiltrator": "x",
-      "engineer": null,
-      "soldier": "x",
-      "id": "beehive",
-      "adv_options": [
-        "Anti-Flesh : The Beehive deals double damage to unprotected, organic targets.",
-        "Remote Deploy : As an action you can setup your Beehive in a separate location. Once it is deployed you can use an Attack action to fire it."
-      ],
-      "class_list": "Infiltrator, Soldier",
-      "mechanic_text_dump": "AsanAttackactionyouequipandfireyourantipersonnelcannoncolloquiallycalledthebeehiveItejectssuperheatedshrapnelina6mconeoriginatingfromyouEachcreaturecaughtintheblastmustmakeDexteritysavingthrowOnafailedsaveacreaturetakes2d6piercingdamageorhalfasmuchdamageonasuccessfuloneTheDCis8proficiencybonusDEXmodifierYoumustspendashortorlongrestreconfiguringthecannontouseitagainThisfeaturesdamageincreasesby2d6whenyoureach5thlevel4d611thlevel6d617thlevel8d6Infiltratorsmaylearnoradvancethisfeatureinsteadofgainingatechpower"
-    },
-    {
-      "name": "Concussive Shot",
-      "level": null,
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "As a bonus action, load a specialized, high-impact thermal clip into the weapon you are currently wielding. Until you reload, any successful ranged attacks deal an additional 1d8 bludgeoning damage and medium-sized or smaller creatures must pass a Strength saving throw (DC 8 + proficiency bonus + DEX modifier) or are knocked {prone}."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "You have 3 charges of Concussive Shot. You regain all of your charges on a long rest."
-        }
-      ],
-      "adv_option_1": "Stunning Shot : A creature hit by Concussive Shot must make a Constitution saving throw (DC 8 + proficiency bonus + DEX modifier). On a failed save, the creature is {stunned} until the end of your next turn.",
-      "adv_option_2": "Improved shot : Increase the bonus damage of Concussive shot to d12.",
-      "type": "combat",
-      "die_type": "d8",
-      "attack_type": [
-        "Ranged Attack"
-      ],
-      "casting_time": "Bonus",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "Self",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "damage",
-        " buff"
-      ],
-      "damage_type": [
-        "bludgeoning"
-      ],
-      "detonates": null,
-      "primes": null,
-      "adept": null,
-      "vanguard": null,
-      "sentinel": null,
-      "infiltrator": null,
-      "engineer": null,
-      "soldier": "x",
-      "id": "concussive_shot",
-      "adv_options": [
-        "Stunning Shot : A creature hit by Concussive Shot must make a Constitution saving throw (DC 8 + proficiency bonus + DEX modifier). On a failed save, the creature is {stunned} until the end of your next turn.",
-        "Improved shot : Increase the bonus damage of Concussive shot to d12."
-      ],
-      "class_list": "Soldier",
-      "mechanic_text_dump": "AsabonusactionloadaspecializedhighimpactthermalclipintotheweaponyouarecurrentlywieldingUntilyoureloadanysuccessfulrangedattacksdealanadditional1d8bludgeoningdamageandmediumsizedorsmallercreaturesmustpassaStrengthsavingthrowDC8proficiencybonusDEXmodifierorareknockedproneYouhave3chargesofConcussiveShotYouregainallofyourchargesonalongrest"
     },
     {
       "name": "Fortification",
@@ -1828,12 +1435,12 @@
       ],
       "detonates": null,
       "primes": null,
-      "adept": null,
       "vanguard": null,
       "sentinel": null,
       "infiltrator": null,
       "engineer": null,
       "soldier": "x",
+      "min_tech_points": null,
       "id": "fortification",
       "adv_options": [
         "Lasting Fortification : Fortification lasts an additional turn.",
@@ -1841,6 +1448,51 @@
       ],
       "class_list": "Soldier",
       "mechanic_text_dump": "AsareactionreinforceyourarmorusingprotectiveFoucaultcurrentsUntilthestartofyournextturnyouhavea5bonustoACincludingagainstthetriggeringattackYoumustfinishashortorlongrestbeforeyoucanusethisabilityagain"
+    },
+    {
+      "name": "Guidance",
+      "level": null,
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Spend 1 tech point to tap into the VI of a willing creature. The target can roll a d4 and add the number rolled to one ability check or saving throw of its choice. It can roll the die before or after making the roll."
+        }
+      ],
+      "adv_option_1": "Multi Tap : You can tap into two willing creatures' VI when you use this power.",
+      "adv_option_2": "Improved Tap : Increase the die type to d6",
+      "type": "tech",
+      "die_type": "d4",
+      "attack_type": [
+
+      ],
+      "casting_time": "Action",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "10m",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "buff"
+      ],
+      "damage_type": [
+
+      ],
+      "detonates": null,
+      "primes": null,
+      "vanguard": null,
+      "sentinel": "x",
+      "infiltrator": "x",
+      "engineer": "x",
+      "soldier": null,
+      "min_tech_points": "1",
+      "id": "guidance",
+      "adv_options": [
+        "Multi Tap : You can tap into two willing creatures' VI when you use this power.",
+        "Improved Tap : Increase the die type to d6"
+      ],
+      "class_list": "Engineer, Infiltrator, Sentinel",
+      "mechanic_text_dump": "Spend1techpointtotapintotheVIofawillingcreatureThetargetcanrollad4andaddthenumberrolledtooneabilitycheckorsavingthrowofitschoiceItcanrollthediebeforeoraftermakingtheroll"
     },
     {
       "name": "Havoc Strike",
@@ -1883,12 +1535,12 @@
       ],
       "detonates": null,
       "primes": null,
-      "adept": null,
       "vanguard": null,
       "sentinel": null,
       "infiltrator": null,
       "engineer": null,
       "soldier": "x",
+      "min_tech_points": null,
       "id": "havoc_strike",
       "adv_options": [
         "Improved Distance : You can jump up to 12m.",
@@ -1938,12 +1590,12 @@
       ],
       "detonates": null,
       "primes": null,
-      "adept": null,
       "vanguard": null,
       "sentinel": null,
       "infiltrator": null,
       "engineer": null,
       "soldier": "x",
+      "min_tech_points": null,
       "id": "hawk_missile_launcher",
       "adv_options": [
         "Anti-Shield : The missile detonates a small EMP, transforming the damage to lightning.",
@@ -1993,12 +1645,12 @@
       ],
       "detonates": null,
       "primes": null,
-      "adept": null,
       "vanguard": null,
       "sentinel": null,
       "infiltrator": null,
       "engineer": null,
       "soldier": "x",
+      "min_tech_points": null,
       "id": "hex_shield",
       "adv_options": [
         "Hearty Shield : Increase the shield's hit points to 100.",
@@ -2006,6 +1658,302 @@
       ],
       "class_list": "Soldier",
       "mechanic_text_dump": "AsabonusactionyoutossaportableshieldgeneratorontothegroundinfrontofyouItgenerates2mtallandwidehexagonshapedshieldwith5ACand50shieldpointsTheseshieldpointsdonotregenerateduringcombatandtheshielddissipateswhenitnolongerhasanyshieldpointsleftAslongastheHexShieldhasshieldpointsitprovidesfullcovertocreaturesbehinditHexshieldregainsallshieldpointsonalongrest"
+    },
+    {
+      "name": "Incinerate",
+      "level": null,
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You spend tech points to hurl a high-explosive, plasma round at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes Xd10 fire damage, where X is the number of tech points you spent. A flammable object hit by this spell ignites if it isn't being worn or carried."
+        }
+      ],
+      "adv_option_1": "Frozen Combo : Deal double damage to frozen targets.",
+      "adv_option_2": "Radial Blast : On a miss, the target creature takes half the damage.",
+      "type": "tech",
+      "die_type": "d10",
+      "attack_type": [
+        "Ranged Attack"
+      ],
+      "casting_time": "Acton",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "20m",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "damage"
+      ],
+      "damage_type": [
+        "fire"
+      ],
+      "detonates": "x",
+      "primes": "x",
+      "vanguard": null,
+      "sentinel": "x",
+      "infiltrator": "x",
+      "engineer": "x",
+      "soldier": null,
+      "min_tech_points": "1",
+      "id": "incinerate",
+      "adv_options": [
+        "Frozen Combo : Deal double damage to frozen targets.",
+        "Radial Blast : On a miss, the target creature takes half the damage."
+      ],
+      "class_list": "Engineer, Infiltrator, Sentinel",
+      "mechanic_text_dump": "YouspendtechpointstohurlahighexplosiveplasmaroundatacreatureorobjectwithinrangeMakearangedspellattackagainstthetargetOnahitthetargettakesXd10firedamagewhereXisthenumberoftechpointsyouspentAflammableobjecthitbythisspellignitesifitisntbeingwornorcarried"
+    },
+    {
+      "name": "Invasion",
+      "level": null,
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Spend 3 tech points per creature size and choose a synthetic within 20m (e.g. 3 tech points for small, 6 tech points for medium, 9 tech points for large). The synthetic must succeed on an Intelligence saving throw or becomes hacked (considered {charmed}). A hacked synthetic won't attack friendly creatures and can't use spells or abilities."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "On its turn, the hacked synthetic attacks the closest hostile creature, making ranged weapon attack or melee attack if it does not have a weapon. If it doesn't have a weapon and there are no hostile creatures within melee range, the hacked synthetic uses its turn to dash towards the closest hostile creature."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Each time the synthetic takes damage, it makes a new Intelligence saving throw against the spell. If the saving throw succeeds, the spell ends."
+        }
+      ],
+      "adv_option_1": "Total Control : You take the the hacked synthetic's action. You may use it's spells and abilities.",
+      "adv_option_2": "Damage : While the synthetic is hacked, it takes 2d6 shock damage at the end of it's turn. This damage does not proc an opportunity to end Invasion.",
+      "type": "tech",
+      "die_type": null,
+      "attack_type": [
+        "INT Save"
+      ],
+      "casting_time": "Action",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "20m",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "control"
+      ],
+      "damage_type": [
+
+      ],
+      "detonates": null,
+      "primes": null,
+      "vanguard": null,
+      "sentinel": null,
+      "infiltrator": "x",
+      "engineer": "x",
+      "soldier": null,
+      "min_tech_points": "3",
+      "id": "invasion",
+      "adv_options": [
+        "Total Control : You take the the hacked synthetic's action. You may use it's spells and abilities.",
+        "Damage : While the synthetic is hacked, it takes 2d6 shock damage at the end of it's turn. This damage does not proc an opportunity to end Invasion."
+      ],
+      "class_list": "Engineer, Infiltrator",
+      "mechanic_text_dump": "Spend3techpointspercreaturesizeandchooseasyntheticwithin20meg3techpointsforsmall6techpointsformedium9techpointsforlargeThesyntheticmustsucceedonanIntelligencesavingthroworbecomeshackedconsideredcharmedAhackedsyntheticwontattackfriendlycreaturesandcantusespellsorabilitiesOnitsturnthehackedsyntheticattackstheclosesthostilecreaturemakingrangedweaponattackormeleeattackifitdoesnothaveaweaponIfitdoesnthaveaweaponandtherearenohostilecreatureswithinmeleerangethehackedsyntheticusesitsturntodashtowardstheclosesthostilecreatureEachtimethesynthetictakesdamageitmakesanewIntelligencesavingthrowagainstthespellIfthesavingthrowsucceedsthespellends"
+    },
+    {
+      "name": "Lance",
+      "level": "1",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Make a ranged spell attack on a creature you can see within range. On a hit, release a lance of energy that deals force damage equal to 3d8 + your biotic modifier."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "At higher levels: When you cast this spell using a spell slot of level 2 or higher, the damage increases by 1d8 for each slot level above the 1st."
+        }
+      ],
+      "adv_option_1": "Anti-Shield : Damage type become lightning (double damage to shields)",
+      "adv_option_2": "Improved Damage : Increase the damage die type to d12.",
+      "type": "biotic",
+      "die_type": "d8",
+      "attack_type": [
+        "Ranged Attack"
+      ],
+      "casting_time": "Action",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "20m",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "damage"
+      ],
+      "damage_type": [
+        "force"
+      ],
+      "detonates": "x",
+      "primes": null,
+      "vanguard": "x",
+      "sentinel": "x",
+      "infiltrator": null,
+      "engineer": null,
+      "soldier": null,
+      "min_tech_points": null,
+      "id": "lance",
+      "adv_options": [
+        "Anti-Shield : Damage type become lightning (double damage to shields)",
+        "Improved Damage : Increase the damage die type to d12."
+      ],
+      "class_list": "Sentinel, Vanguard",
+      "mechanic_text_dump": "MakearangedspellattackonacreatureyoucanseewithinrangeOnahitreleasealanceofenergythatdealsforcedamageequalto3d8yourbioticmodifierAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel2orhigherthedamageincreasesby1d8foreachslotlevelabovethe1st"
+    },
+    {
+      "name": "Lash",
+      "level": "2",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Consume barrier ticks to create a whip of biotic energy. Each barrier tick consumed increases the range of the whip by 2m. Target a creature you can see within the resulting range. The target takes 4d8 force damage and becomes {grappled}. To escape the grapple the creature must succeed on a contested Strength (Athletics) against your Constitution."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "At higher levels: When you cast this spell using a spell slot of level 3 or higher, the damage increases by 1d8 for each slot level above the 2nd."
+        }
+      ],
+      "adv_option_1": "Improved Grapple : The grappled creature has disadvantage when trying to escape.",
+      "adv_option_2": "Improved Damage : Increase the damage die type to d12.",
+      "type": "biotic",
+      "die_type": "d8",
+      "attack_type": [
+        "Ranged Attack"
+      ],
+      "casting_time": "Action",
+      "concentration": "x",
+      "duration": "1 minute",
+      "range": "var",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "damage",
+        "control"
+      ],
+      "damage_type": [
+        "force"
+      ],
+      "detonates": null,
+      "primes": "x",
+      "vanguard": "x",
+      "sentinel": null,
+      "infiltrator": null,
+      "engineer": null,
+      "soldier": null,
+      "min_tech_points": null,
+      "id": "lash",
+      "adv_options": [
+        "Improved Grapple : The grappled creature has disadvantage when trying to escape.",
+        "Improved Damage : Increase the damage die type to d12."
+      ],
+      "class_list": "Vanguard",
+      "mechanic_text_dump": "ConsumebarriertickstocreateawhipofbioticenergyEachbarriertickconsumedincreasestherangeofthewhipby2mTargetacreatureyoucanseewithintheresultingrangeThetargettakes4d8forcedamageandbecomesgrappledToescapethegrapplethecreaturemustsucceedonacontestedStrengthAthleticsagainstyourConstitutionAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d8foreachslotlevelabovethe2nd"
+    },
+    {
+      "name": "Lift",
+      "level": "1",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "This spell creates a negative mass effect field around a target creature. Roll 5d8. If the total roll is greater than or equal to the hit points of the targeted creature, it becomes {lifted}."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "At higher levels: When you cast this spell using a spell slot of level 2 or higher, add 2d8 to the roll for each level above the first."
+        }
+      ],
+      "adv_option_1": "Heavy Lift : Increase the die type for Lift to d12.",
+      "adv_option_2": "Control : While the target is lifted, you can use your action to move the target up to 10m.",
+      "type": "biotic",
+      "die_type": "d8",
+      "attack_type": [
+
+      ],
+      "casting_time": "Action",
+      "concentration": "x",
+      "duration": "10 minutes",
+      "range": "20m",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "control"
+      ],
+      "damage_type": [
+
+      ],
+      "detonates": null,
+      "primes": "x",
+      "vanguard": "x",
+      "sentinel": "x",
+      "infiltrator": null,
+      "engineer": null,
+      "soldier": null,
+      "min_tech_points": null,
+      "id": "lift",
+      "adv_options": [
+        "Heavy Lift : Increase the die type for Lift to d12.",
+        "Control : While the target is lifted, you can use your action to move the target up to 10m."
+      ],
+      "class_list": "Sentinel, Vanguard",
+      "mechanic_text_dump": "ThisspellcreatesanegativemasseffectfieldaroundatargetcreatureRoll5d8IfthetotalrollisgreaterthanorequaltothehitpointsofthetargetedcreatureitbecomesliftedAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel2orhigheradd2d8totherollforeachlevelabovethefirst"
+    },
+    {
+      "name": "Neural Shock",
+      "level": null,
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You spend tech points to flash an ion laser at an organic creature within range. The creature makes a Constitution saving throw. The DC of this throw is increased by 1 for each tech point spent. On a failed save, the creature has disadvantage on the next melee or ranged attack it makes and can't take reactions until the start of its next turn."
+        }
+      ],
+      "adv_option_1": "Damage: A creature takes X[dd] psychic damage on a failed save or half as much damage on a successful one where X is the number of tech points spent.",
+      "adv_option_2": "Paralyze : If a creature fails the saving throw, it is paralyzed for 1 turn.",
+      "type": "tech",
+      "die_type": "d6",
+      "attack_type": [
+        "CON Save"
+      ],
+      "casting_time": "Action",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "20m",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "debuff"
+      ],
+      "damage_type": [
+
+      ],
+      "detonates": null,
+      "primes": null,
+      "vanguard": null,
+      "sentinel": null,
+      "infiltrator": "x",
+      "engineer": "x",
+      "soldier": null,
+      "min_tech_points": "1",
+      "id": "neural_shock",
+      "adv_options": [
+        "Damage: A creature takes Xd6 psychic damage on a failed save or half as much damage on a successful one where X is the number of tech points spent.",
+        "Paralyze : If a creature fails the saving throw, it is paralyzed for 1 turn."
+      ],
+      "class_list": "Engineer, Infiltrator",
+      "mechanic_text_dump": "YouspendtechpointstoflashanionlaseratanorganiccreaturewithinrangeThecreaturemakesaConstitutionsavingthrowTheDCofthisthrowisincreasedby1foreachtechpointspentOnafailedsavethecreaturehasdisadvantageonthenextmeleeorrangedattackitmakesandcanttakereactionsuntilthestartofitsnextturn"
     },
     {
       "name": "Nightshade Blade",
@@ -2054,12 +2002,12 @@
       ],
       "detonates": null,
       "primes": null,
-      "adept": null,
       "vanguard": null,
       "sentinel": null,
       "infiltrator": "x",
       "engineer": null,
       "soldier": "x",
+      "min_tech_points": null,
       "id": "nightshade_blade",
       "adv_options": [
         "Paralyze : A creature that fails the Constitution saving throw becomes {paralyzed} until the end of your next turn.",
@@ -2069,587 +2017,23 @@
       "mechanic_text_dump": "YourOmnitoolisequippedwithamicroscopicpoisontippedbladethatisabletopiecethroughshieldsandarmorAsanAttackactionmakearangedweaponattackonacreatureyoucanseewithinrangeyouaddyourproficiencybonustothisrollOnahitthetargettakes1d12poisondamageandmustmakeonaConstitutionsavingthrowDC8proficiencybonusOnafailedsavethetargettakes2d12poisondamageorhalfasmuchdamageonasuccessfuloneIfatargetwouldbereducedto0hitpointsbythisdamageitisreducedto1hitpointinsteadandispoisonedAlldamagecausedbyNightshadeBladebypassesshieldsYoumustbewithinmeleerangeanduseanactiontorecoverthebladeThisfeaturessecondarydamageeffectincreasesby3d12whenyoureach5thlevel5d1211thlevel8d1217thlevel11d12Infiltratorsmaylearnoradvancethisfeatureinsteadofgainingatechpower"
     },
     {
-      "name": "Siege Pulse",
-      "level": null,
+      "name": "Nova",
+      "level": "1",
       "mechanic": [
         {
           "id": 1,
           "type": "line",
-          "data": "As an Attack action, overload your shield capacitors causing a loud, painfully intense kinetic wave to erupt from your location. Reduce your shield points by 10. Each creature within a 4m sphere becomes {deafened} and must make Constitution saving throw (DC 8 + proficiency bonus). On a failed save, a creature is {incapacitated} until the start of your next turn. On a successful save, a creature takes 2d4 psychic damage."
+          "data": "Transfer the energy of your barrier into a biotic explosion, consuming your remaining barrier ticks. Creatures within a 2m sphere centered on you must make a Dexterity saving throw. On a failed save, a creature is knocked {prone} and takes force damage equal to Xd10, where X is the number of barrier ticks. On a successful save, a creature takes half as much damage."
         },
         {
           "id": 2,
           "type": "line",
-          "data": "You may use Siege Pulse as long as you have at least 10 shield points."
+          "data": "When you cast this spell using a spell slot of 2nd level or higher, the radius of the explosion increases by 2m for each level above the 1st."
         }
       ],
-      "adv_option_1": "Improved Pulse : Add your STR or DEX modifier to the DC of the saving throw. You choose which one.",
-      "adv_option_2": "Lingering Pulse : Creatures hit by siege pulse have disadvantage on melee and ranged attacks until the end of your next turn.",
-      "type": "combat",
-      "die_type": "d4",
-      "attack_type": [
-        "CON Save"
-      ],
-      "casting_time": "Attack",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "Self",
-      "aoe": "sphere",
-      "aoe_distance": "4m",
-      "effect": [
-        "damage",
-        " control"
-      ],
-      "damage_type": [
-        "psychic"
-      ],
-      "detonates": null,
-      "primes": null,
-      "adept": null,
-      "vanguard": null,
-      "sentinel": null,
-      "infiltrator": null,
-      "engineer": null,
-      "soldier": "x",
-      "id": "siege_pulse",
-      "adv_options": [
-        "Improved Pulse : Add your STR or DEX modifier to the DC of the saving throw. You choose which one.",
-        "Lingering Pulse : Creatures hit by siege pulse have disadvantage on melee and ranged attacks until the end of your next turn."
-      ],
-      "class_list": "Soldier",
-      "mechanic_text_dump": "AsanAttackactionoverloadyourshieldcapacitorscausingaloudpainfullyintensekineticwavetoeruptfromyourlocationReduceyourshieldpointsby10Eachcreaturewithina4mspherebecomesdeafenedandmustmakeConstitutionsavingthrowDC8proficiencybonusOnafailedsaveacreatureisincapacitateduntilthestartofyournextturnOnasuccessfulsaveacreaturetakes2d4psychicdamageYoumayuseSiegePulseaslongasyouhaveatleast10shieldpoints"
-    },
-    {
-      "name": "Stimulant Pack",
-      "level": null,
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "As a bonus action, inject yourself with a stimulant pack. You have advantage on the next Dexterity, Strength, or Constitution saving throw. You must finish a short or long rest before you can use this feature again."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Infiltrators may learn or advance this feature instead of gaining a tech power."
-        }
-      ],
-      "adv_option_1": "Friendly : You can inject a creature within melee range with the stimulant pack",
-      "adv_option_2": "Improved Attack : You can choose to apply the advantage to your next damage roll",
-      "type": "combat",
-      "die_type": null,
-      "attack_type": [
-
-      ],
-      "casting_time": "Bonus",
-      "concentration": null,
-      "duration": "10 minutes",
-      "range": "Self",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "buff"
-      ],
-      "damage_type": [
-
-      ],
-      "detonates": null,
-      "primes": null,
-      "adept": null,
-      "vanguard": null,
-      "sentinel": null,
-      "infiltrator": "x",
-      "engineer": null,
-      "soldier": "x",
-      "id": "stimulant_pack",
-      "adv_options": [
-        "Friendly : You can inject a creature within melee range with the stimulant pack",
-        "Improved Attack : You can choose to apply the advantage to your next damage roll"
-      ],
-      "class_list": "Infiltrator, Soldier",
-      "mechanic_text_dump": "AsabonusactioninjectyourselfwithastimulantpackYouhaveadvantageonthenextDexterityStrengthorConstitutionsavingthrowYoumustfinishashortorlongrestbeforeyoucanusethisfeatureagainInfiltratorsmaylearnoradvancethisfeatureinsteadofgainingatechpower"
-    },
-    {
-      "name": "Tactical Scan",
-      "level": null,
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Spend your action scanning a creature your can see with your omni-tool, studying it's movement and revealing weaknesses. Your attacks against the target have advantage and natural 19 and 20's are considered critical hits. This ability can stack with other critical improving powers."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "You may use this ability three times before you finish a short or long rest."
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "Infiltrators may learn or advance this feature instead of gaining a tech power."
-        }
-      ],
-      "adv_option_1": "Area Scan : Scan a 6m cube. You gain the advantage and critical bonus on all creatures within the area.",
-      "adv_option_2": "Telegraphed Attacks : You're hud alerts you when the creature is about to attack. It has disadvantage on ranged and melee attacks and you have advantage on any saving throws caused by spells and abilities of the creature.",
-      "type": "combat",
-      "die_type": null,
-      "attack_type": [
-
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "Infinite",
-      "range": "20m",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "debuff"
-      ],
-      "damage_type": [
-
-      ],
-      "detonates": null,
-      "primes": null,
-      "adept": null,
-      "vanguard": null,
-      "sentinel": null,
-      "infiltrator": "x",
-      "engineer": null,
-      "soldier": "x",
-      "id": "tactical_scan",
-      "adv_options": [
-        "Area Scan : Scan a 6m cube. You gain the advantage and critical bonus on all creatures within the area.",
-        "Telegraphed Attacks : You're hud alerts you when the creature is about to attack. It has disadvantage on ranged and melee attacks and you have advantage on any saving throws caused by spells and abilities of the creature."
-      ],
-      "class_list": "Infiltrator, Soldier",
-      "mechanic_text_dump": "SpendyouractionscanningacreatureyourcanseewithyouromnitoolstudyingitsmovementandrevealingweaknessesYourattacksagainstthetargethaveadvantageandnatural19and20sareconsideredcriticalhitsThisabilitycanstackwithothercriticalimprovingpowersYoumayusethisabilitythreetimesbeforeyoufinishashortorlongrestInfiltratorsmaylearnoradvancethisfeatureinsteadofgainingatechpower"
-    },
-    {
-      "name": "Turbocharge",
-      "level": null,
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Insert a specialized thermal clip that connects to your amor's kinetic barrier. The weapon's rate of fire is increased by 2. The weapon no longer needs to be reloaded; instead, each ranged weapon attack reduces your shield points by an amount equal to the weapon's rate of fire. While turbocharge is active, you move at half your speed (rounded down) and you have disadvantage on Dexterity saving throws. You can use an action to cancel Turbocharge, removing the thermal clip and reloading your weapon; otherwise, it lasts until your shield points are reduced to 0. You must finish a long rest before you can use this ability again."
-        }
-      ],
-      "adv_option_1": "Quick Charge : You can activate and deactivate Turbocharge as a bonus action.",
-      "adv_option_2": "Improved Charge :  Increase your weapon's rate of fire by 4.",
-      "type": "combat",
-      "die_type": null,
-      "attack_type": [
-
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "Self",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "buff"
-      ],
-      "damage_type": [
-
-      ],
-      "detonates": null,
-      "primes": null,
-      "adept": null,
-      "vanguard": null,
-      "sentinel": null,
-      "infiltrator": null,
-      "engineer": null,
-      "soldier": "x",
-      "id": "turbocharge",
-      "adv_options": [
-        "Quick Charge : You can activate and deactivate Turbocharge as a bonus action.",
-        "Improved Charge :  Increase your weapon's rate of fire by 4."
-      ],
-      "class_list": "Soldier",
-      "mechanic_text_dump": "InsertaspecializedthermalclipthatconnectstoyouramorskineticbarrierTheweaponsrateoffireisincreasedby2TheweaponnolongerneedstobereloadedinsteadeachrangedweaponattackreducesyourshieldpointsbyanamountequaltotheweaponsrateoffireWhileturbochargeisactiveyoumoveathalfyourspeedroundeddownandyouhavedisadvantageonDexteritysavingthrowsYoucanuseanactiontocancelTurbochargeremovingthethermalclipandreloadingyourweaponotherwiseitlastsuntilyourshieldpointsarereducedto0Youmustfinishalongrestbeforeyoucanusethisabilityagain"
-    },
-    {
-      "name": "Counterspell",
-      "level": null,
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Spend 5 tech points to attempt to interrupt a creature in the process of casting a biotic spell. Make an ability check using your tech ability. The DC equals 10 + the spell's level (0 for cantrips). On a success, the creature's spell fails and has no effect."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Each additional tech point spent reduces the DC by 1."
-        }
-      ],
-      "adv_option_1": "Lockdown : If you succeed on your ability check, you overload the target's biotic implant and it cannot cast biotic spells until the end of its next turn.",
-      "adv_option_2": "Psychic Strain : If succeed on the ability check, the target takes Xd6 psychic damage, where X is the level of the spell. Targets take 1d4 psychic damage for cantrips.",
-      "type": "tech",
-      "die_type": null,
-      "attack_type": [
-
-      ],
-      "casting_time": "Reaction",
-      "concentration": null,
-      "duration": null,
-      "range": "20m",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "control"
-      ],
-      "damage_type": [
-
-      ],
-      "detonates": null,
-      "primes": null,
-      "adept": null,
-      "vanguard": null,
-      "sentinel": "x",
-      "infiltrator": "x",
-      "engineer": "x",
-      "soldier": null,
-      "id": "counterspell",
-      "adv_options": [
-        "Lockdown : If you succeed on your ability check, you overload the target's biotic implant and it cannot cast biotic spells until the end of its next turn.",
-        "Psychic Strain : If succeed on the ability check, the target takes Xd6 psychic damage, where X is the level of the spell. Targets take 1d4 psychic damage for cantrips."
-      ],
-      "class_list": "Engineer, Infiltrator, Sentinel",
-      "mechanic_text_dump": "Spend5techpointstoattempttointerruptacreatureintheprocessofcastingabioticspellMakeanabilitycheckusingyourtechabilityTheDCequals10thespellslevel0forcantripsOnasuccessthecreaturesspellfailsandhasnoeffectEachadditionaltechpointspentreducestheDCby1"
-    },
-    {
-      "name": "Cryo Beam",
-      "level": null,
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "You spend tech points to blast a stream of liquid hydrogen from your omni-tool. Each creature in a 6m cube must make a Dexterity saving throw. A creature takes Xd8 cold damage on a failed save, or half as much damage on a successful one where X is the number of tech points spent. If the target is unshielded, it must pass a Strength saving throw or becomes {frozen} until the end of it's next turn."
-        }
-      ],
-      "adv_option_1": "Brittle Freeze : Creatures that fail the Constitution saving throw suffer a -1 AC penalty",
-      "adv_option_2": "Frozen Ground : Cryo beam leaves a patch of ice on the ground that lasts for 1 min. Each creature that moves into or out of the patch must pass a Dexterity saving throw. On a failed save, slips and falls [Prone], ending it's movement.",
-      "type": "tech",
-      "die_type": "d8",
-      "attack_type": [
-        "DEX save",
-        " STR save"
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "Self",
-      "aoe": "cube",
-      "aoe_distance": "6m",
-      "effect": [
-        "damage"
-      ],
-      "damage_type": [
-        "cold"
-      ],
-      "detonates": null,
-      "primes": "x",
-      "adept": null,
-      "vanguard": null,
-      "sentinel": "x",
-      "infiltrator": "x",
-      "engineer": "x",
-      "soldier": null,
-      "id": "cryo_beam",
-      "adv_options": [
-        "Brittle Freeze : Creatures that fail the Constitution saving throw suffer a -1 AC penalty",
-        "Frozen Ground : Cryo beam leaves a patch of ice on the ground that lasts for 1 min. Each creature that moves into or out of the patch must pass a Dexterity saving throw. On a failed save, slips and falls [Prone], ending it's movement."
-      ],
-      "class_list": "Engineer, Infiltrator, Sentinel",
-      "mechanic_text_dump": "YouspendtechpointstoblastastreamofliquidhydrogenfromyouromnitoolEachcreatureina6mcubemustmakeaDexteritysavingthrowAcreaturetakesXd8colddamageonafailedsaveorhalfasmuchdamageonasuccessfulonewhereXisthenumberoftechpointsspentIfthetargetisunshieldeditmustpassaStrengthsavingthroworbecomesfrozenuntiltheendofitsnextturn"
-    },
-    {
-      "name": "Cryo Blast",
-      "level": null,
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "You use tech points to fire a mass of supercooled, subatomic particles at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes Xd8 cold damage, where X is the number of tech points spent, and the target's movement is reduced by half. If the target is unprotected, it must pass a Strength saving throw or becomes {frozen} until the end of it's next turn."
-        }
-      ],
-      "adv_option_1": "Ice Lance : Transform the attack into a deadly lance. The attack can no longer freeze or slow the target, but you add 1d6 piercing damage for each tech point spent.",
-      "adv_option_2": "Frigid Air : The blast snap freezes the air around the target in a 2m radius. Each creature that enters the frozen space for the first time on a turn or ends its turn there must pass a Constitution saving throw or take 2d4 cold damage.",
-      "type": "tech",
-      "die_type": "d8",
-      "attack_type": [
-        "Ranged Attack",
-        " STR save"
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "20m",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "damage",
-        " debuff"
-      ],
-      "damage_type": [
-        "cold"
-      ],
-      "detonates": "x",
-      "primes": null,
-      "adept": null,
-      "vanguard": null,
-      "sentinel": "x",
-      "infiltrator": "x",
-      "engineer": "x",
-      "soldier": null,
-      "id": "cryo_blast",
-      "adv_options": [
-        "Ice Lance : Transform the attack into a deadly lance. The attack can no longer freeze or slow the target, but you add 1d6 piercing damage for each tech point spent.",
-        "Frigid Air : The blast snap freezes the air around the target in a 2m radius. Each creature that enters the frozen space for the first time on a turn or ends its turn there must pass a Constitution saving throw or take 2d4 cold damage."
-      ],
-      "class_list": "Engineer, Infiltrator, Sentinel",
-      "mechanic_text_dump": "YouusetechpointstofireamassofsupercooledsubatomicparticlesatacreatureorobjectwithinrangeMakearangedspellattackagainstthetargetOnahitthetargettakesXd8colddamagewhereXisthenumberoftechpointsspentandthetargetsmovementisreducedbyhalfIfthetargetisunprotecteditmustpassaStrengthsavingthroworbecomesfrozenuntiltheendofitsnextturn"
-    },
-    {
-      "name": "Decoy",
-      "level": null,
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Spend X tech points to summon a holographic copy of yourself at a location within 10m. The copy mimics your actions. When a creature attacks, it can make an Intelligence (Perception) check and, if it succeeds, is not fooled. The DC of the check is 8 + your Tech modifier + X."
-        }
-      ],
-      "adv_option_1": "Explosive : As an action, you can spend X tech points detonate your Decoy. Each creature within 4m must make a Dexterity saving throw. On a failed save, a creature takes Xd6 fire damage or half as much on a successful one.",
-      "adv_option_2": "Improved Decoy : Your Decoy becomes so life-like that creatures have disadvantage on the Intelligence (Perception) check.",
-      "type": "tech",
-      "die_type": null,
-      "attack_type": [
-
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "1 minute",
-      "range": "10m",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "control"
-      ],
-      "damage_type": [
-
-      ],
-      "detonates": null,
-      "primes": null,
-      "adept": null,
-      "vanguard": null,
-      "sentinel": null,
-      "infiltrator": "x",
-      "engineer": "x",
-      "soldier": null,
-      "id": "decoy",
-      "adv_options": [
-        "Explosive : As an action, you can spend X tech points detonate your Decoy. Each creature within 4m must make a Dexterity saving throw. On a failed save, a creature takes Xd6 fire damage or half as much on a successful one.",
-        "Improved Decoy : Your Decoy becomes so life-like that creatures have disadvantage on the Intelligence (Perception) check."
-      ],
-      "class_list": "Engineer, Infiltrator",
-      "mechanic_text_dump": "SpendXtechpointstosummonaholographiccopyofyourselfatalocationwithin10mThecopymimicsyouractionsWhenacreatureattacksitcanmakeanIntelligencePerceptioncheckandifitsucceedsisnotfooledTheDCofthecheckis8yourTechmodifierX"
-    },
-    {
-      "name": "Defense Matrix",
-      "level": null,
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Spend X tech points to reinforce your armor with special foucault currents. You gain resistance to your choice of X damage types."
-        }
-      ],
-      "adv_option_1": "Shield : Deploy the matrix as a stationary shield. Up to 2 creatures of medium size can stand behind the shield, gaining the resistance benefit when attacked by creatures from the other side of the shield.",
-      "adv_option_2": "Improved Defense : Gain a +2 bonus to your AC while Defense Matrix is active.",
-      "type": "tech",
-      "die_type": null,
-      "attack_type": [
-
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "1 minute",
-      "range": "Self",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "buff"
-      ],
-      "damage_type": [
-
-      ],
-      "detonates": null,
-      "primes": null,
-      "adept": null,
-      "vanguard": null,
-      "sentinel": "x",
-      "infiltrator": "x",
-      "engineer": "x",
-      "soldier": null,
-      "id": "defense_matrix",
-      "adv_options": [
-        "Shield : Deploy the matrix as a stationary shield. Up to 2 creatures of medium size can stand behind the shield, gaining the resistance benefit when attacked by creatures from the other side of the shield.",
-        "Improved Defense : Gain a +2 bonus to your AC while Defense Matrix is active."
-      ],
-      "class_list": "Engineer, Infiltrator, Sentinel",
-      "mechanic_text_dump": "SpendXtechpointstoreinforceyourarmorwithspecialfoucaultcurrentsYougainresistancetoyourchoiceofXdamagetypes"
-    },
-    {
-      "name": "Electric Slash",
-      "level": null,
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Spend X tech points to unleash a wave of electric energy in a 8m cone originating from you. Each creature must make a Constitution saving throw. On a failed save, a creature takes Xd8 lightning damage or half as much damage on a successful one."
-        }
-      ],
-      "adv_option_1": "Shield Restore : Gain shield points equal to half of your damage roll.",
-      "adv_option_2": "Paralyze : Creatures that fail the saving throw are paralyzed until the end of their next turn.",
-      "type": "tech",
-      "die_type": "d8",
-      "attack_type": [
-        "CON Save"
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "Self",
-      "aoe": "cone",
-      "aoe_distance": "8m",
-      "effect": [
-        "damage"
-      ],
-      "damage_type": [
-        "lightning"
-      ],
-      "detonates": "x",
-      "primes": null,
-      "adept": null,
-      "vanguard": null,
-      "sentinel": null,
-      "infiltrator": "x",
-      "engineer": "x",
-      "soldier": null,
-      "id": "electric_slash",
-      "adv_options": [
-        "Shield Restore : Gain shield points equal to half of your damage roll.",
-        "Paralyze : Creatures that fail the saving throw are paralyzed until the end of their next turn."
-      ],
-      "class_list": "Engineer, Infiltrator",
-      "mechanic_text_dump": "SpendXtechpointstounleashawaveofelectricenergyina8mconeoriginatingfromyouEachcreaturemustmakeaConstitutionsavingthrowOnafailedsaveacreaturetakesXd8lightningdamageorhalfasmuchdamageonasuccessfulone"
-    },
-    {
-      "name": "Energy Drain",
-      "level": null,
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "You use tech points to cycle your Omni-tool, sapping electromagnetic energy from a creature you can see within range. Make a ranged spell attack against the target. On a hit, the target takes Xd4 lightning damage, where X is the amount of tech points you spent, and you get shield points equal to half of the damage done."
-        }
-      ],
-      "adv_option_1": "Improved Damage : Increase the damage die type to d6.",
-      "adv_option_2": "Improved Regen : You get Shield Points equal to your damage roll.",
-      "type": "tech",
-      "die_type": "d4",
-      "attack_type": [
-        "Ranged Attack"
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "20m",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "damage"
-      ],
-      "damage_type": [
-        "lightning"
-      ],
-      "detonates": "x",
-      "primes": null,
-      "adept": null,
-      "vanguard": null,
-      "sentinel": "x",
-      "infiltrator": null,
-      "engineer": "x",
-      "soldier": null,
-      "id": "energy_drain",
-      "adv_options": [
-        "Improved Damage : Increase the damage die type to d6.",
-        "Improved Regen : You get Shield Points equal to your damage roll."
-      ],
-      "class_list": "Engineer, Sentinel",
-      "mechanic_text_dump": "YouusetechpointstocycleyourOmnitoolsappingelectromagneticenergyfromacreatureyoucanseewithinrangeMakearangedspellattackagainstthetargetOnahitthetargettakesXd4lightningdamagewhereXistheamountoftechpointsyouspentandyougetshieldpointsequaltohalfofthedamagedone"
-    },
-    {
-      "name": "First Aid",
-      "level": null,
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Spend X tech points to inject a friendly creature with nanobots that reduce pain and heal internal injuries. The creature gains hit points equal to Xd8 + your Tech modifier"
-        }
-      ],
-      "adv_option_1": "Adaptive : The healed creature gains resistance to the last damage type it suffered. This effect lasts for 1 minute.",
-      "adv_option_2": "Improved Healing : Increase the healing die type to d8",
-      "type": "tech",
-      "die_type": "d8",
-      "attack_type": [
-
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "Touch",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "heal"
-      ],
-      "damage_type": [
-
-      ],
-      "detonates": null,
-      "primes": null,
-      "adept": null,
-      "vanguard": null,
-      "sentinel": "x",
-      "infiltrator": "x",
-      "engineer": "x",
-      "soldier": null,
-      "id": "first_aid",
-      "adv_options": [
-        "Adaptive : The healed creature gains resistance to the last damage type it suffered. This effect lasts for 1 minute.",
-        "Improved Healing : Increase the healing die type to d8"
-      ],
-      "class_list": "Engineer, Infiltrator, Sentinel",
-      "mechanic_text_dump": "SpendXtechpointstoinjectafriendlycreaturewithnanobotsthatreducepainandhealinternalinjuriesThecreaturegainshitpointsequaltoXd8yourTechmodifier"
-    },
-    {
-      "name": "Flamethrower",
-      "level": null,
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "You spend tech points to overload your omni-tool's acetylene torch, spewing flames in front of you. Each creature within an 8m cone must make a Dexterity saving throw. A creature takes Xd10 fire damage on a failed save or half as much damage on a successful one where X is the number of tech points spent."
-        }
-      ],
-      "adv_option_1": "Concentrated Burn : Increase the damage to d12 and the distance to 12m, but the area-of-effect is now a line instead of a cone.",
-      "adv_option_2": "Exhaust : The flames leave behind a thick smoke for 1 turn. Creatures have disadvantage while making ranged weapon attacks against you until the start of your next turn.",
-      "type": "tech",
+      "adv_option_1": "Improved Damage : Increase the damage die to d10.",
+      "adv_option_2": "Half Blast : You can cast Nova, you cause up to 2 blasts. Each blast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. If you have not used all of your movement, you can move in between the blasts.",
+      "type": "biotic",
       "die_type": "d10",
       "attack_type": [
         "DEX Save"
@@ -2658,219 +2042,29 @@
       "concentration": null,
       "duration": "Instant",
       "range": "Self",
-      "aoe": "cone",
-      "aoe_distance": "8m",
+      "aoe": "sphere",
+      "aoe_distance": "2m",
       "effect": [
         "damage"
       ],
       "damage_type": [
-        "fire"
-      ],
-      "detonates": null,
-      "primes": "x",
-      "adept": null,
-      "vanguard": null,
-      "sentinel": "x",
-      "infiltrator": "x",
-      "engineer": "x",
-      "soldier": null,
-      "id": "flamethrower",
-      "adv_options": [
-        "Concentrated Burn : Increase the damage to d12 and the distance to 12m, but the area-of-effect is now a line instead of a cone.",
-        "Exhaust : The flames leave behind a thick smoke for 1 turn. Creatures have disadvantage while making ranged weapon attacks against you until the start of your next turn."
-      ],
-      "class_list": "Engineer, Infiltrator, Sentinel",
-      "mechanic_text_dump": "YouspendtechpointstooverloadyouromnitoolsacetylenetorchspewingflamesinfrontofyouEachcreaturewithinan8mconemustmakeaDexteritysavingthrowAcreaturetakesXd10firedamageonafailedsaveorhalfasmuchdamageonasuccessfulonewhereXisthenumberoftechpointsspent"
-    },
-    {
-      "name": "Guidance",
-      "level": null,
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Spend a tech point to tap into the VI of a willing creature. The target can roll a d4 and add the number rolled to one ability check or saving throw of its choice. It can roll the die before or after making the roll."
-        }
-      ],
-      "adv_option_1": "Multi Tap : You can tap into two willing creatures' VI when you use this power.",
-      "adv_option_2": "Improved Tap : Increase the die type to d6",
-      "type": "tech",
-      "die_type": "d4",
-      "attack_type": [
-
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "10m",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "buff"
-      ],
-      "damage_type": [
-
-      ],
-      "detonates": null,
-      "primes": null,
-      "adept": null,
-      "vanguard": null,
-      "sentinel": "x",
-      "infiltrator": "x",
-      "engineer": "x",
-      "soldier": null,
-      "id": "guidance",
-      "adv_options": [
-        "Multi Tap : You can tap into two willing creatures' VI when you use this power.",
-        "Improved Tap : Increase the die type to d6"
-      ],
-      "class_list": "Engineer, Infiltrator, Sentinel",
-      "mechanic_text_dump": "SpendatechpointtotapintotheVIofawillingcreatureThetargetcanrollad4andaddthenumberrolledtooneabilitycheckorsavingthrowofitschoiceItcanrollthediebeforeoraftermakingtheroll"
-    },
-    {
-      "name": "Incinerate",
-      "level": null,
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "You use tech points to hurl a high-explosive, plasma round at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes Xd10 fire damage, where X is the number of tech points you spent. A flammable object hit by this spell ignites if it isn't being worn or carried."
-        }
-      ],
-      "adv_option_1": "Frozen Combo : Deal double damage to frozen targets.",
-      "adv_option_2": "Radial Blast : On a miss, the target creature takes half the damage.",
-      "type": "tech",
-      "die_type": "d10",
-      "attack_type": [
-        "Ranged Attack"
-      ],
-      "casting_time": "Acton",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "20m",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "damage"
-      ],
-      "damage_type": [
-        "fire"
+        "force"
       ],
       "detonates": "x",
-      "primes": "x",
-      "adept": null,
-      "vanguard": null,
-      "sentinel": "x",
-      "infiltrator": "x",
-      "engineer": "x",
-      "soldier": null,
-      "id": "incinerate",
-      "adv_options": [
-        "Frozen Combo : Deal double damage to frozen targets.",
-        "Radial Blast : On a miss, the target creature takes half the damage."
-      ],
-      "class_list": "Engineer, Infiltrator, Sentinel",
-      "mechanic_text_dump": "YouusetechpointstohurlahighexplosiveplasmaroundatacreatureorobjectwithinrangeMakearangedspellattackagainstthetargetOnahitthetargettakesXd10firedamagewhereXisthenumberoftechpointsyouspentAflammableobjecthitbythisspellignitesifitisntbeingwornorcarried"
-    },
-    {
-      "name": "Invasion",
-      "level": null,
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Spend 3 tech points per creature size and choose a synthetic within 20m (e.g. 3 tech points for small, 6 tech points for medium, 9 tech points for large). The synthetic must succeed on an Intelligence saving throw or becomes hacked (considered {charmed}). A hacked synthetic won't attack friendly creatures and can't use spells or abilities."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "On its turn, the hacked synthetic attacks the closest hostile creature, making ranged weapon attack or melee attack if it does not have a weapon. If it doesn't have a weapon and there are no hostile creatures within melee range, the hacked synthetic uses its turn to dash towards the closest hostile creature."
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "Each time the synthetic takes damage, it makes a new Intelligence saving throw against the spell. If the saving throw succeeds, the spell ends."
-        }
-      ],
-      "adv_option_1": "Total Control : You take the the hacked synthetic's action. You may use it's spells and abilities.",
-      "adv_option_2": "Damage : While the synthetic is hacked, it takes 2d6 shock damage at the end of it's turn. This damage does not proc an opportunity to end Invasion.",
-      "type": "tech",
-      "die_type": null,
-      "attack_type": [
-        "INT Save"
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "20m",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "control"
-      ],
-      "damage_type": [
-
-      ],
-      "detonates": null,
       "primes": null,
-      "adept": null,
-      "vanguard": null,
+      "vanguard": "x",
       "sentinel": null,
-      "infiltrator": "x",
-      "engineer": "x",
+      "infiltrator": null,
+      "engineer": null,
       "soldier": null,
-      "id": "invasion",
+      "min_tech_points": null,
+      "id": "nova",
       "adv_options": [
-        "Total Control : You take the the hacked synthetic's action. You may use it's spells and abilities.",
-        "Damage : While the synthetic is hacked, it takes 2d6 shock damage at the end of it's turn. This damage does not proc an opportunity to end Invasion."
+        "Improved Damage : Increase the damage die to d10.",
+        "Half Blast : You can cast Nova, you cause up to 2 blasts. Each blast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. If you have not used all of your movement, you can move in between the blasts."
       ],
-      "class_list": "Engineer, Infiltrator",
-      "mechanic_text_dump": "Spend3techpointspercreaturesizeandchooseasyntheticwithin20meg3techpointsforsmall6techpointsformedium9techpointsforlargeThesyntheticmustsucceedonanIntelligencesavingthroworbecomeshackedconsideredcharmedAhackedsyntheticwontattackfriendlycreaturesandcantusespellsorabilitiesOnitsturnthehackedsyntheticattackstheclosesthostilecreaturemakingrangedweaponattackormeleeattackifitdoesnothaveaweaponIfitdoesnthaveaweaponandtherearenohostilecreatureswithinmeleerangethehackedsyntheticusesitsturntodashtowardstheclosesthostilecreatureEachtimethesynthetictakesdamageitmakesanewIntelligencesavingthrowagainstthespellIfthesavingthrowsucceedsthespellends"
-    },
-    {
-      "name": "Neural Shock",
-      "level": null,
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "You use tech points to flash an ion laser at an organic creature within range. The creature makes a Constitution saving throw. The DC of this throw is increased by 1 for each tech point spent. On a failed save, the creature has disadvantage on the next melee or ranged attack it makes and can't take reactions until the start of its next turn."
-        }
-      ],
-      "adv_option_1": "Damage: A creature takes X[dd] psychic damage on a failed save or half as much damage on a successful one where X is the number of tech points spent.",
-      "adv_option_2": "Paralyze : If a creature fails the saving throw, it is paralyzed for 1 turn.",
-      "type": "tech",
-      "die_type": "d6",
-      "attack_type": [
-        "CON Save"
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "20m",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "debuff"
-      ],
-      "damage_type": [
-
-      ],
-      "detonates": null,
-      "primes": null,
-      "adept": null,
-      "vanguard": null,
-      "sentinel": null,
-      "infiltrator": "x",
-      "engineer": "x",
-      "soldier": null,
-      "id": "neural_shock",
-      "adv_options": [
-        "Damage: A creature takes Xd6 psychic damage on a failed save or half as much damage on a successful one where X is the number of tech points spent.",
-        "Paralyze : If a creature fails the saving throw, it is paralyzed for 1 turn."
-      ],
-      "class_list": "Engineer, Infiltrator",
-      "mechanic_text_dump": "YouusetechpointstoflashanionlaseratanorganiccreaturewithinrangeThecreaturemakesaConstitutionsavingthrowTheDCofthisthrowisincreasedby1foreachtechpointspentOnafailedsavethecreaturehasdisadvantageonthenextmeleeorrangedattackitmakesandcanttakereactionsuntilthestartofitsnextturn"
+      "class_list": "Vanguard",
+      "mechanic_text_dump": "TransfertheenergyofyourbarrierintoabioticexplosionconsumingyourremainingbarrierticksCreatureswithina2mspherecenteredonyoumustmakeaDexteritysavingthrowOnafailedsaveacreatureisknockedproneandtakesforcedamageequaltoXd10whereXisthenumberofbarrierticksOnasuccessfulsaveacreaturetakeshalfasmuchdamageWhenyoucastthisspellusingaspellslotof2ndlevelorhighertheradiusoftheexplosionincreasesby2mforeachlevelabovethe1st"
     },
     {
       "name": "Overload",
@@ -2879,7 +2073,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You use tech points to unleash an electrostatic discharge at a creature or object within range. Three bolts then leap from that target to as many as three other targets, each of which must be within 6m of the first target. A target can be a creature or an object and can be targeted by only one of the bolts."
+          "data": "You spend tech points to unleash an electrostatic discharge at a creature or object within range. Three bolts then leap from that target to as many as three other targets, each of which must be within 6m of the first target. A target can be a creature or an object and can be targeted by only one of the bolts."
         },
         {
           "id": 2,
@@ -2908,19 +2102,69 @@
       ],
       "detonates": null,
       "primes": "x",
-      "adept": null,
       "vanguard": null,
       "sentinel": "x",
       "infiltrator": "x",
       "engineer": "x",
       "soldier": null,
+      "min_tech_points": "1",
       "id": "overload",
       "adv_options": [
         "Extended Leap : Overload can leap to targets within 10m.",
         "Quad Leap : Overload can leap to five additional targets, but deals 1d4 damage."
       ],
       "class_list": "Engineer, Infiltrator, Sentinel",
-      "mechanic_text_dump": "YouusetechpointstounleashanelectrostaticdischargeatacreatureorobjectwithinrangeThreeboltsthenleapfromthattargettoasmanyasthreeothertargetseachofwhichmustbewithin6mofthefirsttargetAtargetcanbeacreatureoranobjectandcanbetargetedbyonlyoneoftheboltsAtargetmustmakeaDexteritysavingthrowThetargettakesXd4lightningdamageonafailedsaveorhalfasmuchonasuccessfulonewhereXisthenumberoftechpointsyouspent"
+      "mechanic_text_dump": "YouspendtechpointstounleashanelectrostaticdischargeatacreatureorobjectwithinrangeThreeboltsthenleapfromthattargettoasmanyasthreeothertargetseachofwhichmustbewithin6mofthefirsttargetAtargetcanbeacreatureoranobjectandcanbetargetedbyonlyoneoftheboltsAtargetmustmakeaDexteritysavingthrowThetargettakesXd4lightningdamageonafailedsaveorhalfasmuchonasuccessfulonewhereXisthenumberoftechpointsyouspent"
+    },
+    {
+      "name": "Phase Disruptor",
+      "level": "0",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You focus the energy of your barrier into a high-powered beam at a target creature or object within range. Remove 1 barrier tick and make a ranged spell attack on that target. On a hit, the creature takes 3d4 force damage."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "A higher levels, you may use additional barrier ticks to create more than one beam: two beams at 5th level, three beams at 11th level, and four beams at 17th level. You can direct the beams at the same target or at different ones. Make a separate attack roll for each beam."
+        }
+      ],
+      "adv_option_1": "Improved Damage : Increase the damage die type to d6.",
+      "adv_option_2": "Cripple : Creature's hit by Phase Disruptor have disadvantage on their next attack roll.",
+      "type": "biotic",
+      "die_type": "d4",
+      "attack_type": [
+        "Ranged Attack"
+      ],
+      "casting_time": "Action",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "20m",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "damage"
+      ],
+      "damage_type": [
+        "force"
+      ],
+      "detonates": null,
+      "primes": "x",
+      "vanguard": "x",
+      "sentinel": null,
+      "infiltrator": null,
+      "engineer": null,
+      "soldier": null,
+      "min_tech_points": null,
+      "id": "phase_disruptor",
+      "adv_options": [
+        "Improved Damage : Increase the damage die type to d6.",
+        "Cripple : Creature's hit by Phase Disruptor have disadvantage on their next attack roll."
+      ],
+      "class_list": "Vanguard",
+      "mechanic_text_dump": "YoufocustheenergyofyourbarrierintoahighpoweredbeamatatargetcreatureorobjectwithinrangeRemove1barriertickandmakearangedspellattackonthattargetOnahitthecreaturetakes3d4forcedamageAhigherlevelsyoumayuseadditionalbarriertickstocreatemorethanonebeamtwobeamsat5thlevelthreebeamsat11thlevelandfourbeamsat17thlevelYoucandirectthebeamsatthesametargetoratdifferentonesMakeaseparateattackrollforeachbeam"
     },
     {
       "name": "Poison Spray",
@@ -2929,7 +2173,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Spend a tech point to shoot an aerosol spray of noxious chemicals from your omni-tool at a creature within melee range. The creature must succeed on a Constitution saving throw or take 1d12 poison damage and becomes poisoned until the end of your next turn. The DC of the saving throw is increase by 1 for each additional tech point you spend."
+          "data": "Spend 1 tech point to shoot an aerosol spray of noxious chemicals from your omni-tool at a creature within melee range. The creature must succeed on a Constitution saving throw or take 1d12 poison damage and becomes poisoned until the end of your next turn. The DC of the saving throw is increase by 1 for each additional tech point you spend."
         }
       ],
       "adv_option_1": "Pepper spray : Creatures that fail the Constitution saving throw are also blinded for 1 minute.",
@@ -2953,19 +2197,125 @@
       ],
       "detonates": null,
       "primes": null,
-      "adept": null,
       "vanguard": null,
       "sentinel": null,
       "infiltrator": "x",
       "engineer": "x",
       "soldier": null,
+      "min_tech_points": "1",
       "id": "poison_spray",
       "adv_options": [
         "Pepper spray : Creatures that fail the Constitution saving throw are also blinded for 1 minute.",
         "Poison Cloud : Create a 2m-radius cloud of poison that persists for 1 minute. Each creature that enters the sphere for the first time on a turn or ends its turn there must make the Constitution saving throw."
       ],
       "class_list": "Engineer, Infiltrator",
-      "mechanic_text_dump": "SpendatechpointtoshootanaerosolsprayofnoxiouschemicalsfromyouromnitoolatacreaturewithinmeleerangeThecreaturemustsucceedonaConstitutionsavingthrowortake1d12poisondamageandbecomespoisoneduntiltheendofyournextturnTheDCofthesavingthrowisincreaseby1foreachadditionaltechpointyouspend"
+      "mechanic_text_dump": "Spend1techpointtoshootanaerosolsprayofnoxiouschemicalsfromyouromnitoolatacreaturewithinmeleerangeThecreaturemustsucceedonaConstitutionsavingthrowortake1d12poisondamageandbecomespoisoneduntiltheendofyournextturnTheDCofthesavingthrowisincreaseby1foreachadditionaltechpointyouspend"
+    },
+    {
+      "name": "Pull",
+      "level": "0",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You create a negative mass effect field around a creature or object you can see within range then jerk the field sharply towards you, bringing the target with it. Only Medium and smaller creatures are affected. The distance the target travels is based on its size, starting at 2m for medium-sized objects and adding 4m for each size small than medium. E.g., Medium = 2m, Small = 6m, Tiny = 10m, etc."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "If attempting to pull an object from another creature, the creature must pass a Strength saving throw to retain possession of the object. If you pull a creature and it moves more than 2m, it must pass a Dexterity saving throw or be knocked {prone}."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "The number of targets increase by 1 when you reach the 5th level (2), 11th level (3), and 17th level (4)."
+        }
+      ],
+      "adv_option_1": "Magician: You can shape and guide pull to add different trajectories to the object. The direction of pull cannot change, but you can add arcs, decrease the distance the object moves, and even pull small objects directly into your hand.",
+      "adv_option_2": "Push: You may choose to move the target towards or away from you.",
+      "type": "biotic",
+      "die_type": null,
+      "attack_type": [
+
+      ],
+      "casting_time": "Action",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "20m",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "control"
+      ],
+      "damage_type": [
+
+      ],
+      "detonates": null,
+      "primes": null,
+      "vanguard": "x",
+      "sentinel": "x",
+      "infiltrator": null,
+      "engineer": null,
+      "soldier": null,
+      "min_tech_points": null,
+      "id": "pull",
+      "adv_options": [
+        "Magician: You can shape and guide pull to add different trajectories to the object. The direction of pull cannot change, but you can add arcs, decrease the distance the object moves, and even pull small objects directly into your hand.",
+        "Push: You may choose to move the target towards or away from you."
+      ],
+      "class_list": "Sentinel, Vanguard",
+      "mechanic_text_dump": "YoucreateanegativemasseffectfieldaroundacreatureorobjectyoucanseewithinrangethenjerkthefieldsharplytowardsyoubringingthetargetwithitOnlyMediumandsmallercreaturesareaffectedThedistancethetargettravelsisbasedonitssizestartingat2mformediumsizedobjectsandadding4mforeachsizesmallthanmediumEgMedium2mSmall6mTiny10metcIfattemptingtopullanobjectfromanothercreaturethecreaturemustpassaStrengthsavingthrowtoretainpossessionoftheobjectIfyoupullacreatureanditmovesmorethan2mitmustpassaDexteritysavingthroworbeknockedproneThenumberoftargetsincreaseby1whenyoureachthe5thlevel211thlevel3and17thlevel4"
+    },
+    {
+      "name": "Reave",
+      "level": "1",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Unleash a wave of dark biotic energy in a 6m cube. Each creature within the blast must make a Constitution saving throw. On a failed save, a creature takes 2d10 necrotic damage and has disadvantage on their next attack or saving thrown. A creature takes half as much damage on a successful save."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, increase the damage by 1d10 for each level above the second."
+        }
+      ],
+      "adv_option_1": "Distance : Increase the range of Reave to 10m.",
+      "adv_option_2": "Armor boost : The dark energy heightens your senses momentarily. When you cast Reave, gain +2AC until the start of your next turn.",
+      "type": "biotic",
+      "die_type": "d10",
+      "attack_type": [
+        "CON Save"
+      ],
+      "casting_time": "Action",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "Self",
+      "aoe": "cube",
+      "aoe_distance": "6m",
+      "effect": [
+        "damage",
+        "debuff"
+      ],
+      "damage_type": [
+        "necrotic"
+      ],
+      "detonates": "x",
+      "primes": null,
+      "vanguard": null,
+      "sentinel": null,
+      "infiltrator": null,
+      "engineer": null,
+      "soldier": null,
+      "min_tech_points": null,
+      "id": "reave",
+      "adv_options": [
+        "Distance : Increase the range of Reave to 10m.",
+        "Armor boost : The dark energy heightens your senses momentarily. When you cast Reave, gain +2AC until the start of your next turn."
+      ],
+      "class_list": "",
+      "mechanic_text_dump": "Unleashawaveofdarkbioticenergyina6mcubeEachcreaturewithintheblastmustmakeaConstitutionsavingthrowOnafailedsaveacreaturetakes2d10necroticdamageandhasdisadvantageontheirnextattackorsavingthrownAcreaturetakeshalfasmuchdamageonasuccessfulsaveAtHigherLevelsWhenyoucastthisspellusingaspellslotof3rdlevelorhigherincreasethedamageby1d10foreachlevelabovethesecond"
     },
     {
       "name": "Sabotage",
@@ -2992,19 +2342,19 @@
       "aoe_distance": null,
       "effect": [
         "debuff",
-        " control"
+        "control"
       ],
       "damage_type": [
 
       ],
       "detonates": null,
       "primes": null,
-      "adept": null,
       "vanguard": null,
       "sentinel": null,
       "infiltrator": "x",
       "engineer": "x",
       "soldier": null,
+      "min_tech_points": "1",
       "id": "sabotage",
       "adv_options": [
         "Multi-Weapon : You can target 3 weapons at once.",
@@ -3020,7 +2370,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You create glowing darts of plasma equal to the number of tech points spent. Each dart hits a creature of your choice that you can see within range. A dart deals 1d4+1 fire damage to its target. The darts all strike simultaneously and you can direct them to hit one creature or several."
+          "data": "You spend tech points to create glowing darts of plasma equal to the number of tech points spent. Each dart hits a creature of your choice that you can see within range. A dart deals 1d4+1 fire damage to its target. The darts all strike simultaneously and you can direct them to hit one creature or several."
         }
       ],
       "adv_option_1": "Exploding Salvo : Each dart deals an additional 1d4 thunder damage.",
@@ -3044,19 +2394,19 @@
       ],
       "detonates": "x",
       "primes": null,
-      "adept": null,
       "vanguard": null,
       "sentinel": "x",
       "infiltrator": "x",
       "engineer": "x",
       "soldier": null,
+      "min_tech_points": "1",
       "id": "salvo",
       "adv_options": [
         "Exploding Salvo : Each dart deals an additional 1d4 thunder damage.",
         "Blinding Salvo : The darts explode in a bright flash of light. Targets no longer take damage but must make a Constitution saving throw. On a failed save, a target is blinded until the end of your next turn."
       ],
       "class_list": "Engineer, Infiltrator, Sentinel",
-      "mechanic_text_dump": "YoucreateglowingdartsofplasmaequaltothenumberoftechpointsspentEachdarthitsacreatureofyourchoicethatyoucanseewithinrangeAdartdeals1d41firedamagetoitstargetThedartsallstrikesimultaneouslyandyoucandirectthemtohitonecreatureorseveral"
+      "mechanic_text_dump": "YouspendtechpointstocreateglowingdartsofplasmaequaltothenumberoftechpointsspentEachdarthitsacreatureofyourchoicethatyoucanseewithinrangeAdartdeals1d41firedamagetoitstargetThedartsallstrikesimultaneouslyandyoucandirectthemtohitonecreatureorseveral"
     },
     {
       "name": "Sentry Turret",
@@ -3106,12 +2456,12 @@
       ],
       "detonates": null,
       "primes": null,
-      "adept": null,
       "vanguard": null,
       "sentinel": null,
       "infiltrator": null,
       "engineer": "x",
       "soldier": null,
+      "min_tech_points": "5",
       "id": "sentry_turret",
       "adv_options": [
         "Power Turret : Increase the damage die for the flame and ranged attack to a d12.",
@@ -3151,12 +2501,12 @@
       ],
       "detonates": "x",
       "primes": null,
-      "adept": null,
       "vanguard": null,
       "sentinel": null,
       "infiltrator": "x",
       "engineer": "x",
       "soldier": null,
+      "min_tech_points": "1",
       "id": "shocking_grasp",
       "adv_options": [
         "Absorbing Shock : If the target is shielded, get shield points equal to half the damage done.",
@@ -3164,6 +2514,253 @@
       ],
       "class_list": "Engineer, Infiltrator",
       "mechanic_text_dump": "SpendatechpointtosendanelectricshockfromyouromnitooltoacreatureyoutrytotouchMakeameleeattackagainstthetargetYouhaveadvantageontheattackrollifthetargetiswearingarmorOnahitthetargettakesXd6lightningdamagewhereXisthenumberoftechpointsspentanditcanttakereactionsuntilthestartofitsnextturn"
+    },
+    {
+      "name": "Shockwave",
+      "level": "1",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Create a cascading shockwave in a 10m line originating from you. Each creature must make a Dexterity saving throw. On a failed save, a creature takes 3d6 force damage and is knocked {prone}. On a successful save, a creature takes half as much damage."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "At higher levels: When you cast this spell using a spell slot of level 2 or higher, the damage increases by 1d6 for each slot level above the 1st."
+        }
+      ],
+      "adv_option_1": "Improved Distance : The shockwave travels 16m",
+      "adv_option_2": "Improved Damage : Increase damage die type to d10",
+      "type": "biotic",
+      "die_type": "d6",
+      "attack_type": [
+        "DEX Save"
+      ],
+      "casting_time": "Action",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "Self",
+      "aoe": "line",
+      "aoe_distance": "10m",
+      "effect": [
+        "damage"
+      ],
+      "damage_type": [
+        "force"
+      ],
+      "detonates": "x",
+      "primes": null,
+      "vanguard": "x",
+      "sentinel": "x",
+      "infiltrator": null,
+      "engineer": null,
+      "soldier": null,
+      "min_tech_points": null,
+      "id": "shockwave",
+      "adv_options": [
+        "Improved Distance : The shockwave travels 16m",
+        "Improved Damage : Increase damage die type to d10"
+      ],
+      "class_list": "Sentinel, Vanguard",
+      "mechanic_text_dump": "Createacascadingshockwaveina10mlineoriginatingfromyouEachcreaturemustmakeaDexteritysavingthrowOnafailedsaveacreaturetakes3d6forcedamageandisknockedproneOnasuccessfulsaveacreaturetakeshalfasmuchdamageAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel2orhigherthedamageincreasesby1d6foreachslotlevelabovethe1st"
+    },
+    {
+      "name": "Siege Pulse",
+      "level": null,
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "As an Attack action, overload your shield capacitors causing a loud, painfully intense kinetic wave to erupt from your location. Reduce your shield points by 10. Each creature within a 4m sphere becomes {deafened} and must make Constitution saving throw (DC 8 + proficiency bonus). On a failed save, a creature is {incapacitated} until the start of your next turn. On a successful save, a creature takes 2d4 psychic damage."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "You may use Siege Pulse as long as you have at least 10 shield points."
+        }
+      ],
+      "adv_option_1": "Improved Pulse : Add your STR or DEX modifier to the DC of the saving throw. You choose which one.",
+      "adv_option_2": "Lingering Pulse : Creatures hit by siege pulse have disadvantage on melee and ranged attacks until the end of your next turn.",
+      "type": "combat",
+      "die_type": "d4",
+      "attack_type": [
+        "CON Save"
+      ],
+      "casting_time": "Attack",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "Self",
+      "aoe": "sphere",
+      "aoe_distance": "4m",
+      "effect": [
+        "damage",
+        "control"
+      ],
+      "damage_type": [
+        "psychic"
+      ],
+      "detonates": null,
+      "primes": null,
+      "vanguard": null,
+      "sentinel": null,
+      "infiltrator": null,
+      "engineer": null,
+      "soldier": "x",
+      "min_tech_points": null,
+      "id": "siege_pulse",
+      "adv_options": [
+        "Improved Pulse : Add your STR or DEX modifier to the DC of the saving throw. You choose which one.",
+        "Lingering Pulse : Creatures hit by siege pulse have disadvantage on melee and ranged attacks until the end of your next turn."
+      ],
+      "class_list": "Soldier",
+      "mechanic_text_dump": "AsanAttackactionoverloadyourshieldcapacitorscausingaloudpainfullyintensekineticwavetoeruptfromyourlocationReduceyourshieldpointsby10Eachcreaturewithina4mspherebecomesdeafenedandmustmakeConstitutionsavingthrowDC8proficiencybonusOnafailedsaveacreatureisincapacitateduntilthestartofyournextturnOnasuccessfulsaveacreaturetakes2d4psychicdamageYoumayuseSiegePulseaslongasyouhaveatleast10shieldpoints"
+    },
+    {
+      "name": "Singularity",
+      "level": "3",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Create a negative mass effect field in a 4m sphere at a target location within range. Each hostile creature within the sphere's radius must succeed on a Dexterity saving throw or becomes {lifted}. Only creatures of a medium size or less are affected. Any creature that comes within 2m of the sphere must succeed on a Strength (Athletics) or Dexterity (Agility) check or they are drawn into the sphere and become lifted."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "When you cast this spell using a spell slot of 4th level or higher, increase the size of the sphere by 2m per spell slot above the 3rd."
+        }
+      ],
+      "adv_option_1": "Heavy Singularity: When a creature affected by this power makes a DEX or STR save to avoid its pull, they make that save at disadvantage.",
+      "adv_option_2": "Damage : A hostile creature that enters the sphere for the first time on a turn or ends its turn there is takes 1d4 necrotic damage.",
+      "type": "biotic",
+      "die_type": null,
+      "attack_type": [
+        "DEX Save",
+        " STR Save"
+      ],
+      "casting_time": "Action",
+      "concentration": "x",
+      "duration": "1 minute",
+      "range": "20m",
+      "aoe": "sphere",
+      "aoe_distance": "4m",
+      "effect": [
+        "control"
+      ],
+      "damage_type": [
+
+      ],
+      "detonates": null,
+      "primes": "x",
+      "vanguard": null,
+      "sentinel": null,
+      "infiltrator": null,
+      "engineer": null,
+      "soldier": null,
+      "min_tech_points": null,
+      "id": "singularity",
+      "adv_options": [
+        "Heavy Singularity: When a creature affected by this power makes a DEX or STR save to avoid its pull, they make that save at disadvantage.",
+        "Damage : A hostile creature that enters the sphere for the first time on a turn or ends its turn there is takes 1d4 necrotic damage."
+      ],
+      "class_list": "",
+      "mechanic_text_dump": "Createanegativemasseffectfieldina4msphereatatargetlocationwithinrangeEachhostilecreaturewithinthespheresradiusmustsucceedonaDexteritysavingthroworbecomesliftedOnlycreaturesofamediumsizeorlessareaffectedAnycreaturethatcomeswithin2mofthespheremustsucceedonaStrengthAthleticsorDexterityAgilitycheckortheyaredrawnintothesphereandbecomeliftedWhenyoucastthisspellusingaspellslotof4thlevelorhigherincreasethesizeofthesphereby2mperspellslotabovethe3rd"
+    },
+    {
+      "name": "Slam",
+      "level": "0",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Target a {lifted} object and slam it to the ground dealing force damage equal to 2d8 + your biotic modifier. The target is no longer {lifted} but is {prone}."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "The number of targets increases by 1 when you reach 5th level (2), 11th level (3) and 17th level (4)"
+        }
+      ],
+      "adv_option_1": "Stun : The creature must pass a Constitution saving throw or stunned for 1 round.",
+      "adv_option_2": "Improved Damage : Increase the damage die type to d12",
+      "type": "biotic",
+      "die_type": "d8",
+      "attack_type": [
+
+      ],
+      "casting_time": "Action",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "20m",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "damage"
+      ],
+      "damage_type": [
+        "force"
+      ],
+      "detonates": null,
+      "primes": null,
+      "vanguard": "x",
+      "sentinel": "x",
+      "infiltrator": null,
+      "engineer": null,
+      "soldier": null,
+      "min_tech_points": null,
+      "id": "slam",
+      "adv_options": [
+        "Stun : The creature must pass a Constitution saving throw or stunned for 1 round.",
+        "Improved Damage : Increase the damage die type to d12"
+      ],
+      "class_list": "Sentinel, Vanguard",
+      "mechanic_text_dump": "Targetaliftedobjectandslamittothegrounddealingforcedamageequalto2d8yourbioticmodifierThetargetisnolongerliftedbutisproneThenumberoftargetsincreasesby1whenyoureach5thlevel211thlevel3and17thlevel4"
+    },
+    {
+      "name": "Slow Fall",
+      "level": "0",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "When you or a creature within 10m of you falls, choose up to five falling creatures within range. Create a negative mass effect field around each creature, slowing the rate of descent to 20m per round. If the creature lands before the spell ends, it takes no Falling damage and can land on its feet, and the spell ends for that creature."
+        }
+      ],
+      "adv_option_1": null,
+      "adv_option_2": null,
+      "type": "biotic",
+      "die_type": null,
+      "attack_type": [
+
+      ],
+      "casting_time": "Reaction",
+      "concentration": "x",
+      "duration": "1 minute",
+      "range": "10m",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "movement"
+      ],
+      "damage_type": [
+
+      ],
+      "detonates": null,
+      "primes": null,
+      "vanguard": "x",
+      "sentinel": null,
+      "infiltrator": null,
+      "engineer": null,
+      "soldier": null,
+      "min_tech_points": null,
+      "id": "slow_fall",
+      "adv_options": [
+        null,
+        null
+      ],
+      "class_list": "Vanguard",
+      "mechanic_text_dump": "Whenyouoracreaturewithin10mofyoufallschooseuptofivefallingcreatureswithinrangeCreateanegativemasseffectfieldaroundeachcreatureslowingtherateofdescentto20mperroundIfthecreaturelandsbeforethespellendsittakesnoFallingdamageandcanlandonitsfeetandthespellendsforthatcreature"
     },
     {
       "name": "Snap Freeze",
@@ -3200,19 +2797,19 @@
       "aoe_distance": "10m",
       "effect": [
         "control",
-        " damage"
+        "damage"
       ],
       "damage_type": [
         "cold"
       ],
       "detonates": null,
       "primes": "x",
-      "adept": null,
       "vanguard": null,
       "sentinel": null,
       "infiltrator": "x",
       "engineer": "x",
       "soldier": null,
+      "min_tech_points": "5",
       "id": "snap_freeze",
       "adv_options": [
         "Lasting Freeze : A creature frozen by Snap Freeze continues to take 1d6 cold damage at the start of its turn for 1 minute.",
@@ -3220,6 +2817,154 @@
       ],
       "class_list": "Engineer, Infiltrator",
       "mechanic_text_dump": "Spend5techpointstolaunchaglobeofsupercooledheliumtoatargetlocationwithinrangewhereitexplodesina10mradiussphereEachcreaturewithintheareamustmakeaStrengthsavingthrowOnafailedsaveacreatureiffrozenuntiltheendofyournextturnOnasuccessfulsaveitsmovementishalveduntiltheendofyournextturnTheDCofthesavingthrowisincreasebyeachtechpointyouspendabove5Thegroundwithinthe10mspherebecomesicyandisconsidereddifficultterrainIftheglobestrikesabodyofwateroraliquidthatisprincipallywaternotincludingwaterbasedcreaturesitfreezestheliquidtoadepthof15centimetersoveranarea10mThisicelastsfor1minuteCreaturesthatwereswimmingonthesurfaceoffrozenwateraretrappedintheiceAtrappedcreaturecanuseanactiontomakeaStrengthcheckagainstyourspellsaveDCtobreakfree"
+    },
+    {
+      "name": "Stasis",
+      "level": "2",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Lock a target in a high-gravity mass effect field. Choose a creature you can see within range. The creature must make a Strength saving throw. On a failed save, the creature is {restrained}. At the beginning of the creature's turn, it can use its action to make the saving throw again."
+        }
+      ],
+      "adv_option_1": "Vulnerable : A creature in Stasis takes +2 damage from all damage rolls.",
+      "adv_option_2": "Heavy Stasis : The creature has disadvantage on its saving throws to escape Stasis.",
+      "type": "biotic",
+      "die_type": null,
+      "attack_type": [
+        "STR Save"
+      ],
+      "casting_time": "Action",
+      "concentration": "x",
+      "duration": "10 minutes",
+      "range": "20m",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "control",
+        "debuff"
+      ],
+      "damage_type": [
+
+      ],
+      "detonates": null,
+      "primes": "x",
+      "vanguard": "x",
+      "sentinel": "x",
+      "infiltrator": null,
+      "engineer": null,
+      "soldier": null,
+      "min_tech_points": null,
+      "id": "stasis",
+      "adv_options": [
+        "Vulnerable : A creature in Stasis takes +2 damage from all damage rolls.",
+        "Heavy Stasis : The creature has disadvantage on its saving throws to escape Stasis."
+      ],
+      "class_list": "Sentinel, Vanguard",
+      "mechanic_text_dump": "LockatargetinahighgravitymasseffectfieldChooseacreatureyoucanseewithinrangeThecreaturemustmakeaStrengthsavingthrowOnafailedsavethecreatureisrestrainedAtthebeginningofthecreaturesturnitcanuseitsactiontomakethesavingthrowagain"
+    },
+    {
+      "name": "Stimulant Pack",
+      "level": null,
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "As a bonus action, inject yourself with a stimulant pack. You have advantage on the next Dexterity, Strength, or Constitution saving throw. You must finish a short or long rest before you can use this feature again."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Infiltrators may learn or advance this feature instead of gaining a tech power."
+        }
+      ],
+      "adv_option_1": "Friendly : You can inject a creature within melee range with the stimulant pack",
+      "adv_option_2": "Improved Attack : You can choose to apply the advantage to your next damage roll",
+      "type": "combat",
+      "die_type": null,
+      "attack_type": [
+
+      ],
+      "casting_time": "Bonus",
+      "concentration": null,
+      "duration": "10 minutes",
+      "range": "Self",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "buff"
+      ],
+      "damage_type": [
+
+      ],
+      "detonates": null,
+      "primes": null,
+      "vanguard": null,
+      "sentinel": null,
+      "infiltrator": "x",
+      "engineer": null,
+      "soldier": "x",
+      "min_tech_points": null,
+      "id": "stimulant_pack",
+      "adv_options": [
+        "Friendly : You can inject a creature within melee range with the stimulant pack",
+        "Improved Attack : You can choose to apply the advantage to your next damage roll"
+      ],
+      "class_list": "Infiltrator, Soldier",
+      "mechanic_text_dump": "AsabonusactioninjectyourselfwithastimulantpackYouhaveadvantageonthenextDexterityStrengthorConstitutionsavingthrowYoumustfinishashortorlongrestbeforeyoucanusethisfeatureagainInfiltratorsmaylearnoradvancethisfeatureinsteadofgainingatechpower"
+    },
+    {
+      "name": "Storm",
+      "level": "4",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "A 8m-radius sphere of rapid shifting mass effect fields springs into existence centered on a point you choose within range, creating a dangerous whirlwind of debris and energy. The sphere remains for the spell’s duration. Each creature in the sphere when it appears or that ends its turn there must succeed on a Strength saving throw or take 8d10 force damage. The sphere’s space is difficult terrain."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "At Higher Levels. When you cast this spell using a spell slot of 5th level or higher, the damage increases for each of its effects by 1d10 for each slot level above 4th."
+        }
+      ],
+      "adv_option_1": "Necrotic Bolts: Until the spell ends, you can use a bonus action on each of your turns to cause a bolt of necrotic energy to leap from the center of the sphere toward one creature you choose within 20m of the center. Make a ranged spell attack. You have advantage on the attack roll if the target is in the sphere. On a hit, the target takes 4[dd] necrotic damage.",
+      "adv_option_2": "Growing Storm: While the spell is maintained, the storm's radius grows by 2m at the start of your turn.",
+      "type": "biotic",
+      "die_type": "d10",
+      "attack_type": [
+        "STR Save"
+      ],
+      "casting_time": "Action",
+      "concentration": "x",
+      "duration": "1 minute",
+      "range": "20m",
+      "aoe": "sphere",
+      "aoe_distance": "8m",
+      "effect": [
+        "damage",
+        "control"
+      ],
+      "damage_type": [
+        "force",
+        " necrotic"
+      ],
+      "detonates": null,
+      "primes": "x",
+      "vanguard": "x",
+      "sentinel": null,
+      "infiltrator": null,
+      "engineer": null,
+      "soldier": null,
+      "min_tech_points": null,
+      "id": "storm",
+      "adv_options": [
+        "Necrotic Bolts: Until the spell ends, you can use a bonus action on each of your turns to cause a bolt of necrotic energy to leap from the center of the sphere toward one creature you choose within 20m of the center. Make a ranged spell attack. You have advantage on the attack roll if the target is in the sphere. On a hit, the target takes 4d10 necrotic damage.",
+        "Growing Storm: While the spell is maintained, the storm's radius grows by 2m at the start of your turn."
+      ],
+      "class_list": "Vanguard",
+      "mechanic_text_dump": "A8mradiussphereofrapidshiftingmasseffectfieldsspringsintoexistencecenteredonapointyouchoosewithinrangecreatingadangerouswhirlwindofdebrisandenergyThesphereremainsforthespellsdurationEachcreatureinthespherewhenitappearsorthatendsitsturntheremustsucceedonaStrengthsavingthrowortake8d10forcedamageThespheresspaceisdifficultterrainAtHigherLevelsWhenyoucastthisspellusingaspellslotof5thlevelorhigherthedamageincreasesforeachofitseffectsby1d10foreachslotlevelabove4th"
     },
     {
       "name": "Submission Net",
@@ -3257,19 +3002,19 @@
       "aoe_distance": "4m",
       "effect": [
         "damage",
-        " control"
+        "control"
       ],
       "damage_type": [
         "lightning"
       ],
       "detonates": null,
       "primes": null,
-      "adept": null,
       "vanguard": null,
       "sentinel": "x",
       "infiltrator": "x",
       "engineer": "x",
       "soldier": null,
+      "min_tech_points": "2",
       "id": "submission_net",
       "adv_options": [
         "Shock : You can electrify the net as a bonus action the first time you cast Submission net.",
@@ -3277,6 +3022,61 @@
       ],
       "class_list": "Engineer, Infiltrator, Sentinel",
       "mechanic_text_dump": "Spend2techpointstoshootaswarmofminiaturepylonstoatargetlocationwithin20mThepylonsforma4mcylinderatthechosenlocationcreatedanelectrifiednewCreatureswithinthenetcannotcasttechToescapeacreaturemustsucceedonaStrengthAthleticscheckormustremaintrappedinthenetIfacreaturedoesbreakfreeittakes1d6lightningdamageIfyouhaveasubmissionnetdeployedyoucanspendXTPtosendelectriccurrentsthroughitEachcreaturewithinthenetmakesaConstitutionsavingthrowOnafailedsaveacreaturetakesXd6lightningdamageorhalfasmuchonasuccessfulone"
+    },
+    {
+      "name": "Tactical Scan",
+      "level": null,
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Spend your action scanning a creature your can see with your omni-tool, studying it's movement and revealing weaknesses. Your attacks against the target have advantage and natural 19 and 20's are considered critical hits. This ability can stack with other critical improving powers."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "You may use this ability three times before you finish a short or long rest."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Infiltrators may learn or advance this feature instead of gaining a tech power."
+        }
+      ],
+      "adv_option_1": "Area Scan : Scan a 6m cube. You gain the advantage and critical bonus on all creatures within the area.",
+      "adv_option_2": "Telegraphed Attacks : You're hud alerts you when the creature is about to attack. It has disadvantage on ranged and melee attacks and you have advantage on any saving throws caused by spells and abilities of the creature.",
+      "type": "combat",
+      "die_type": null,
+      "attack_type": [
+
+      ],
+      "casting_time": "Action",
+      "concentration": null,
+      "duration": "Infinite",
+      "range": "20m",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "debuff"
+      ],
+      "damage_type": [
+
+      ],
+      "detonates": null,
+      "primes": null,
+      "vanguard": null,
+      "sentinel": null,
+      "infiltrator": "x",
+      "engineer": null,
+      "soldier": "x",
+      "min_tech_points": null,
+      "id": "tactical_scan",
+      "adv_options": [
+        "Area Scan : Scan a 6m cube. You gain the advantage and critical bonus on all creatures within the area.",
+        "Telegraphed Attacks : You're hud alerts you when the creature is about to attack. It has disadvantage on ranged and melee attacks and you have advantage on any saving throws caused by spells and abilities of the creature."
+      ],
+      "class_list": "Infiltrator, Soldier",
+      "mechanic_text_dump": "SpendyouractionscanningacreatureyourcanseewithyouromnitoolstudyingitsmovementandrevealingweaknessesYourattacksagainstthetargethaveadvantageandnatural19and20sareconsideredcriticalhitsThisabilitycanstackwithothercriticalimprovingpowersYoumayusethisabilitythreetimesbeforeyoufinishashortorlongrestInfiltratorsmaylearnoradvancethisfeatureinsteadofgainingatechpower"
     },
     {
       "name": "Target Painting",
@@ -3314,12 +3114,12 @@
       ],
       "detonates": null,
       "primes": null,
-      "adept": null,
       "vanguard": null,
       "sentinel": "x",
       "infiltrator": "x",
       "engineer": "x",
       "soldier": null,
+      "min_tech_points": "2",
       "id": "target_painting",
       "adv_options": [
         "Heavy Weapon Sync : Information about the painted targets sync with heavy weapon systems. Any creature that would make a saving throw to avoid heavy weapon damage has disadvantage on the saving throw.",
@@ -3327,6 +3127,101 @@
       ],
       "class_list": "Engineer, Infiltrator, Sentinel",
       "mechanic_text_dump": "Spend2techpointstopainta8mcubewithinrangeAnycreatureintheareawhenthespelliscastishighlightedonallfriendlycreaturesHUDsifitfailsaDexteritysavingthrowAnyattackrollagainstanaffectedcreatureorobjecthasadvantageiftheattackercanseeitandtheaffectedcreatureorobjectcantbenefitfrombeinginvisible"
+    },
+    {
+      "name": "Throw",
+      "level": "0",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Make a ranged spell attack on a target you can see within range. On a hit, hurl the target backwards 10m and deal force damage equal to 1d6 + your biotic modifier."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "At higher levels: This spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), 17th level (4d6)"
+        }
+      ],
+      "adv_option_1": "Improved Force : Throw is so forceful, it lifts the target off the ground when knocking it back. Targets must pass a Dexterity saving throw or are knocked prone.",
+      "adv_option_2": "Improved Damage : Increase the damage die type to d8",
+      "type": "biotic",
+      "die_type": "d6",
+      "attack_type": [
+        "Ranged Attack"
+      ],
+      "casting_time": "Action",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "20m",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "damage"
+      ],
+      "damage_type": [
+        "force"
+      ],
+      "detonates": "x",
+      "primes": null,
+      "vanguard": "x",
+      "sentinel": "x",
+      "infiltrator": null,
+      "engineer": null,
+      "soldier": null,
+      "min_tech_points": null,
+      "id": "throw",
+      "adv_options": [
+        "Improved Force : Throw is so forceful, it lifts the target off the ground when knocking it back. Targets must pass a Dexterity saving throw or are knocked prone.",
+        "Improved Damage : Increase the damage die type to d8"
+      ],
+      "class_list": "Sentinel, Vanguard",
+      "mechanic_text_dump": "MakearangedspellattackonatargetyoucanseewithinrangeOnahithurlthetargetbackwards10manddealforcedamageequalto1d6yourbioticmodifierAthigherlevelsThisspellsdamageincreasesby1d6whenyoureach5thlevel2d611thlevel3d617thlevel4d6"
+    },
+    {
+      "name": "Turbocharge",
+      "level": null,
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Insert a specialized thermal clip that connects to your amor's kinetic barrier. The weapon's rate of fire is increased by 2. The weapon no longer needs to be reloaded; instead, each ranged weapon attack reduces your shield points by an amount equal to the weapon's rate of fire. While turbocharge is active, you move at half your speed (rounded down) and you have disadvantage on Dexterity saving throws. You can use an action to cancel Turbocharge, removing the thermal clip and reloading your weapon; otherwise, it lasts until your shield points are reduced to 0. You must finish a long rest before you can use this ability again."
+        }
+      ],
+      "adv_option_1": "Quick Charge : You can activate and deactivate Turbocharge as a bonus action.",
+      "adv_option_2": "Improved Charge :  Increase your weapon's rate of fire by 4.",
+      "type": "combat",
+      "die_type": null,
+      "attack_type": [
+
+      ],
+      "casting_time": "Action",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "Self",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "buff"
+      ],
+      "damage_type": [
+
+      ],
+      "detonates": null,
+      "primes": null,
+      "vanguard": null,
+      "sentinel": null,
+      "infiltrator": null,
+      "engineer": null,
+      "soldier": "x",
+      "min_tech_points": null,
+      "id": "turbocharge",
+      "adv_options": [
+        "Quick Charge : You can activate and deactivate Turbocharge as a bonus action.",
+        "Improved Charge :  Increase your weapon's rate of fire by 4."
+      ],
+      "class_list": "Soldier",
+      "mechanic_text_dump": "InsertaspecializedthermalclipthatconnectstoyouramorskineticbarrierTheweaponsrateoffireisincreasedby2TheweaponnolongerneedstobereloadedinsteadeachrangedweaponattackreducesyourshieldpointsbyanamountequaltotheweaponsrateoffireWhileturbochargeisactiveyoumoveathalfyourspeedroundeddownandyouhavedisadvantageonDexteritysavingthrowsYoucanuseanactiontocancelTurbochargeremovingthethermalclipandreloadingyourweaponotherwiseitlastsuntilyourshieldpointsarereducedto0Youmustfinishalongrestbeforeyoucanusethisabilityagain"
     },
     {
       "name": "Unity",
@@ -3359,12 +3254,12 @@
       ],
       "detonates": null,
       "primes": null,
-      "adept": null,
       "vanguard": null,
       "sentinel": "x",
       "infiltrator": null,
       "engineer": "x",
       "soldier": null,
+      "min_tech_points": "1",
       "id": "unity",
       "adv_options": [
         "Unrestricted : There is no limit to the amount of TP you may spend on this ability.",
@@ -3372,6 +3267,111 @@
       ],
       "class_list": "Engineer, Sentinel",
       "mechanic_text_dump": "YouspendXtechpointsandtapintothemedicalinterfaceofafallencomradeYoureviveafriendlycreaturethathasgoneunconsciousordiedwithinthelastminuteThatcreaturereturnstoconsciousnessorlifewithhitpointsequaltoXd4yourproficiencybonus"
+    },
+    {
+      "name": "Vortex",
+      "level": "3",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You intertwine negative and positive mass effect fields to create a swirling vortex. Creatures within a 10m cone must make a DEX saving throw. On a failed save a creature takes 4d10 bludgeoning damage, or half as much damage on a successful one."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Creatures that fail the saving throw are thrown 1d6 + 2m away from you and become {prone}."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "At Higher Levels: When you cast this spell using a spell slot of 4th level or higher, increase the damage by 1d10 for each slot level above the 3rd."
+        }
+      ],
+      "adv_option_1": "Raidal : You may cast the vortex in a 6m radius sphere instead.",
+      "adv_option_2": "Damage : Increase the damage to d12",
+      "type": "biotic",
+      "die_type": "d10",
+      "attack_type": [
+        "DEX Save"
+      ],
+      "casting_time": "Action",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "Self",
+      "aoe": "cone",
+      "aoe_distance": "10m",
+      "effect": [
+        "damage"
+      ],
+      "damage_type": [
+        "bludgeoning"
+      ],
+      "detonates": "x",
+      "primes": null,
+      "vanguard": "x",
+      "sentinel": "x",
+      "infiltrator": null,
+      "engineer": null,
+      "soldier": null,
+      "min_tech_points": null,
+      "id": "vortex",
+      "adv_options": [
+        "Raidal : You may cast the vortex in a 6m radius sphere instead.",
+        "Damage : Increase the damage to d12"
+      ],
+      "class_list": "Sentinel, Vanguard",
+      "mechanic_text_dump": "YouintertwinenegativeandpositivemasseffectfieldstocreateaswirlingvortexCreatureswithina10mconemustmakeaDEXsavingthrowOnafailedsaveacreaturetakes4d10bludgeoningdamageorhalfasmuchdamageonasuccessfuloneCreaturesthatfailthesavingthrowarethrown1d62mawayfromyouandbecomeproneAtHigherLevelsWhenyoucastthisspellusingaspellslotof4thlevelorhigherincreasethedamageby1d10foreachslotlevelabovethe3rd"
+    },
+    {
+      "name": "Warp",
+      "level": "2",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Make a ranged spell attack on an organic creature you can see within range. On a hit, you generate a rapidly shifting mass effect field inside the target dealing necrotic damage equal to 3d10 + you biotic modifier. This damage bypasses shields."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "At higher levels: When you cast this spell using a spell slot of level 3 or higher, the damage increases by 1d10 for each slot level above the 2nd."
+        }
+      ],
+      "adv_option_1": "Internal Bleeding : The shifting causes internal bleeding. At the start of your turn, the target takes 1[dd] necrotic damage bypassing it's shields until it uses medi-gel or is stabilized.",
+      "adv_option_2": "Keel over : A target hit by warp must pass a Constitutuion saving throw. On a failed save, the force of warp is so intense the target is knocked {prone} and {stunned} until the start of your next turn.",
+      "type": "biotic",
+      "die_type": "d10",
+      "attack_type": [
+        "Ranged Attack"
+      ],
+      "casting_time": "Action",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "20m",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "damage"
+      ],
+      "damage_type": [
+        "necrotic"
+      ],
+      "detonates": null,
+      "primes": "x",
+      "vanguard": "x",
+      "sentinel": "x",
+      "infiltrator": null,
+      "engineer": null,
+      "soldier": null,
+      "min_tech_points": null,
+      "id": "warp",
+      "adv_options": [
+        "Internal Bleeding : The shifting causes internal bleeding. At the start of your turn, the target takes 1d10 necrotic damage bypassing it's shields until it uses medi-gel or is stabilized.",
+        "Keel over : A target hit by warp must pass a Constitutuion saving throw. On a failed save, the force of warp is so intense the target is knocked {prone} and {stunned} until the start of your next turn."
+      ],
+      "class_list": "Sentinel, Vanguard",
+      "mechanic_text_dump": "MakearangedspellattackonanorganiccreatureyoucanseewithinrangeOnahityougeneratearapidlyshiftingmasseffectfieldinsidethetargetdealingnecroticdamageequalto3d10youbioticmodifierThisdamagebypassesshieldsAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d10foreachslotlevelabovethe2nd"
     }
   ]
 }

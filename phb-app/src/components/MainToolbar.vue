@@ -1,6 +1,6 @@
 <template lang="pug">
-  v-toolbar(dark app fixed clipped-left)
-    v-toolbar-side-icon(@click.stop="toggleSidebar").hidden-md-and-up
+  v-toolbar(dark app fixed clipped-left style="z-index: 10;")
+    v-toolbar-side-icon(@click.stop="toggleSidebar").hidden-lg-and-up
     v-toolbar-title
       router-link(to="/").nav-brand
         img(:src="`../assets/images/me5e.svg`")

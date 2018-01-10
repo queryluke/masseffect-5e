@@ -94,6 +94,7 @@ def config_spells(model)
   model['mechanic'] = insert_dd(model['mechanic'], model['die_type'])
   model['attack_type'] = model['attack_type'] ? model['attack_type'].split(',') : []
   model['effect'] = model['effect'] ? model['effect'].split(',') : []
+  model['effect'].each { |e| e.strip! }
   model['damage_type'] = model['damage_type'] ? model['damage_type'].split(',') : []
   model['adv_options'] = []
   model['adv_options'] << insert_dd(model['adv_option_1'], model['die_type'])
@@ -141,11 +142,15 @@ def generate_renderable(text)
   end
 end
 
-def generate_model(headers)
+def generate_model(headers, camelCase = false)
   model = {}
   headers.each do |h|
-    snake = h.gsub(/\W/,'_').downcase
-    model[snake] = ''
+    key = h.gsub(/\W/,'_').downcase
+    if camelCase
+        key = key.split('_').collect(&:capitalize).join unless key == 'unshackled_ai'
+        key = key[0,1].downcase + key[1..-1]
+    end
+    model[key] = ''
   end
   model
 end
@@ -180,7 +185,7 @@ def generate_config_file(page)
   csv = CSV.parse(body)
 
   headers = csv[0]
-  model = generate_model(csv[0])
+  model = generate_model(csv[0], page[:camel])
   csv.delete_at(0)
   collection = []
   date = DateTime.now
@@ -334,7 +339,8 @@ end
     type: 'weapons',
     url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSq70x_GZuDKcELgX8k_7Hd6nLGu3DoIEdDwP-YEGjUU-ghGc7ot_Q7140FZwGbEalHgzPwVm4BN8y_/pub?gid=0&single=true&output=csv',
     renderables: ['notes'],
-    id: 'name'
+    id: 'name',
+    camel: true
   },
   {
     type: 'backgrounds',
@@ -401,6 +407,13 @@ end
     url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRlWQ7v7esaQwLtD1yXcbiHM-jYHCzjC23cIfNFEcfbLhEcFSi8EIoLi1zZyCQtQFRneMqp02_pFWKH/pub?gid=0&single=true&output=csv',
     renderables: [],
     id: 'name'
+  },
+  {
+    type: 'monster_features',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSSrod77DR2Bb7ihadl83Zar27uWkqeb6lMUo_quIHZr9CqBH3Vcx3TOK3wRzhk7Zhl3RB_av72vvo1/pub?gid=0&single=true&output=csv',
+    renderables: [],
+    id: 'name',
+    camel: true
   }
 ].each do |p|
   if imports.length > 0

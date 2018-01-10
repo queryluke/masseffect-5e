@@ -16,9 +16,11 @@ import Classes from './pages/Classes.vue';
 import ClassView from './pages/ClassView.vue';
 import Conditions from './pages/Conditions.vue';
 import Consumables from './pages/Consumables.vue';
+import Encounter from './pages/Encounter.vue';
 import Feats from './pages/Feats.vue';
 import General from './pages/General.vue';
 import Grenades from './pages/Grenades.vue';
+import Grunts from './pages/Grunts.vue';
 import Home from './pages/Home.vue';
 import Race from './pages/Race.vue';
 import Races from './pages/Races.vue';
@@ -82,6 +84,12 @@ const router = new Router({
         {path: 'armor', component: Armor},
         {path: 'consumables', component: Consumables},
         {path: 'spellcasting', component: Spellcasting}
+      ]
+    },
+    {path: '/gm-tools', component: Default,
+      children: [
+        {path: 'grunts', component: Grunts},
+        {path: 'encounter', component: Encounter, name: 'encounter'}
       ]
     }
   ]
