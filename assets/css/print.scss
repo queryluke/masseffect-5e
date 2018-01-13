@@ -40,10 +40,10 @@ section {
     text-transform: capitalize;
   }
 
-  &.spell {
+  &.biotic {
 
     h1 {
-      background-image: url(../images/classes/adept.svg);
+      background-image: url(../images/spells/biotic.svg);
 
     }
 
@@ -51,7 +51,7 @@ section {
 
   &.tech {
     h1 {
-      background-image: url(../images/classes/engineer.svg);
+      background-image: url(../images/spells/tech.svg);
 
     }
 
@@ -59,7 +59,7 @@ section {
 
   &.grenade, &.combat {
     h1 {
-      background-image: url(../images/classes/soldier.svg);
+      background-image: url(../images/spells/combat.svg);
 
     }
 

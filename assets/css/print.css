@@ -30,12 +30,12 @@ section {
     margin: 0; }
   section .spell-meta {
     text-transform: capitalize; }
-  section.spell h1 {
-    background-image: url(../images/classes/adept.svg); }
+  section.biotic h1 {
+    background-image: url(../images/spells/biotic.svg); }
   section.tech h1 {
-    background-image: url(../images/classes/engineer.svg); }
+    background-image: url(../images/spells/tech.svg); }
   section.grenade h1, section.combat h1 {
-    background-image: url(../images/classes/soldier.svg); }
+    background-image: url(../images/spells/combat.svg); }
   section p {
     margin: 3px 0; }
 
