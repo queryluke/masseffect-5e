@@ -1,5 +1,5 @@
 {
-  "updated": "December 23, 2017 @ 10:33 AM",
+  "updated": "January 13, 2018 @ 11:17 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -1713,7 +1713,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You have undergone extensive training with a single ranged weapon type. Choose a ranged weapon type which becomes your Weapon of Choice. When you have your Weapon of Choice equipped you gain a set of abilities that are fueled by special dice called superiority dice. You may spend 1 month of intensive training to exchange your Weapon of Choice with another ranged weapon type."
+          "data": "You have undergone extensive training with a single weapon type. Choose a weapon type which becomes your Weapon of Choice. When you have your Weapon of Choice equipped you gain a set of abilities that are fueled by special dice called superiority dice. You may spend 1 month of intensive training to exchange your Weapon of Choice with another ranged weapon type."
         },
         {
           "id": 2,
@@ -1741,7 +1741,7 @@
         }
       ],
       "id": "weapon_of_choice",
-      "mechanic_text_dump": "YouhaveundergoneextensivetrainingwithasinglerangedweapontypeChoosearangedweapontypewhichbecomesyourWeaponofChoiceWhenyouhaveyourWeaponofChoiceequippedyougainasetofabilitiesthatarefueledbyspecialdicecalledsuperioritydiceYoumayspend1monthofintensivetrainingtoexchangeyourWeaponofChoicewithanotherrangedweapontypeSuperiorityDiceYouhavefoursuperioritydicewhichared8sAsuperioritydieisexpendedwhenyouuseitYouregainallofyourexpendedsuperioritydicewhenyoufinishashortorlongrestYougainanothersuperioritydieat7thlevelandonemoreat15thlevelUsingSuperiorityDicelistYoucanexpendsuperioritydicetogainanumberofdifferentbenefitsWhenyoumakeaweaponattackagainstacreaturewithyourWeaponofChoiceyoucanexpendonesuperioritydietoaddittotheattackrollYoucanusethisabilitybeforeoraftermakingtheattackrollbutbeforeanyoftheeffectsoftheattackareappliedWhenyoudamageacreaturewithaweaponattackyoucanexpendonesuperioritydietoaddittothedamagerollYoucanusethisabilityafterrollingdamageIftheattackcausesthetargettomakeaConstitutionsavingthrowtomaintainconcentrationithasdisadvantageonthatsavelistWhenyouarehitbyameleeattackifyouarecurrentlyholdingyourWeaponofChoiceyoucanexpendonesuperioritydieasareactionaddingthenumberrolledtoyourACIftheattackstillhitsyoutakehalfdamagefromit"
+      "mechanic_text_dump": "YouhaveundergoneextensivetrainingwithasingleweapontypeChooseaweapontypewhichbecomesyourWeaponofChoiceWhenyouhaveyourWeaponofChoiceequippedyougainasetofabilitiesthatarefueledbyspecialdicecalledsuperioritydiceYoumayspend1monthofintensivetrainingtoexchangeyourWeaponofChoicewithanotherrangedweapontypeSuperiorityDiceYouhavefoursuperioritydicewhichared8sAsuperioritydieisexpendedwhenyouuseitYouregainallofyourexpendedsuperioritydicewhenyoufinishashortorlongrestYougainanothersuperioritydieat7thlevelandonemoreat15thlevelUsingSuperiorityDicelistYoucanexpendsuperioritydicetogainanumberofdifferentbenefitsWhenyoumakeaweaponattackagainstacreaturewithyourWeaponofChoiceyoucanexpendonesuperioritydietoaddittotheattackrollYoucanusethisabilitybeforeoraftermakingtheattackrollbutbeforeanyoftheeffectsoftheattackareappliedWhenyoudamageacreaturewithaweaponattackyoucanexpendonesuperioritydietoaddittothedamagerollYoucanusethisabilityafterrollingdamageIftheattackcausesthetargettomakeaConstitutionsavingthrowtomaintainconcentrationithasdisadvantageonthatsavelistWhenyouarehitbyameleeattackifyouarecurrentlyholdingyourWeaponofChoiceyoucanexpendonesuperioritydieasareactionaddingthenumberrolledtoyourACIftheattackstillhitsyoutakehalfdamagefromit"
     },
     {
       "name": "Zero-Sum",
