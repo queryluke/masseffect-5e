@@ -13,29 +13,34 @@ title: Cards for Print
             <section class="{{spell.type}}">
                 <h1>{{ spell.name }} {% if spell.level %} &mdash; Level: {{ spell.level }} {% endif %}</h1>
                 <h2 class="spell-meta">
-                    {% if spell.effect != blank %}{{spell.effect | join: ", "}}{% endif %}
-                    {% if spell.dmg-type != "" and spell.dmg-type != null %}&bull; {{feature.dmg-type}} {% endif %}
+                    {% if spell.effect != blank %} {{spell.effect | join: ", "}} {% endif %}
+                    {% if spell.dmg-type != blank %}&bull; {{spell.damage_type | join: ", "}} {% endif %}
                 </h2>
-                {% if feature.casting-time != "" and feature.casting-time != null %} <h3>Casting Time: {{feature.casting-time}}</h3> {% endif %}
-                {% if feature.duration != "" and feature.duration != null %} <h3>Duration: {{feature.duration}}</h3> {% endif %}
-                {% if feature.range != "" and feature.range != null %} <h3>Range: {{feature.range}}</h3> {% endif %}
-                {% if feature.detonates != "" and feature.detonates != null %} <h3>Detonates: {{feature.detonates}}</h3> {% endif %}
-                {% if feature.primes != "" and feature.primes != null %} <h3>Primes: {{feature.primes}}</h3> {% endif %}
+                {% if spell.casting_time != null %} <h3>Casting Time: {{spell.casting_time}}</h3> {% endif %}
+                {% if spell.duration != null %} <h3>Duration: {{spell.duration}}</h3> {% endif %}
+                {% if spell.range != null %} <h3>Range: {{spell.range}}</h3> {% endif %}
+                {% if spell.detonates != null %} <h3>Detonates</h3> {% endif %}
+                {% if spell.primes != null %} <h3>Primes</h3> {% endif %}
+                {% if spell.concentration != null %} <h3>Concentration</h3> {% endif %}
 
-                <p>{{feature.mechanic}}</p>
+                {% for mechanic in spell.mechanic %}
 
-                {% if feature.max-tp != "" and feature.max-tp != null %} <h3>Max TP: {{feature.max-tp}}</h3> {% endif %}
+                    {% if mechanic.type == 'line' %}
+                        <p>{{mechanic.data}}</p>
+                    {% else %}
+                        <figure>TODO: Add "{{mechanic.type}}"</figure>
+                    {% endif %}
 
-                {% if feature.adv-option-1 %}
-                 <p><strong>Adv 1: </strong>{{feature.adv-option-1}}</p>
-                {% endif %}
+                {% endfor %}
 
-                {% if feature.adv-option-2 %}
-                <p><strong>Adv 2: </strong>{{feature.adv-option-2}}</p>
-                {% endif %}
-
-                {% if feature.higher-level != "" and feature.higher-level != null %}
-                <p><strong>Higher Levels: </strong>{{feature.higher-level}}</p>
+                {% if spell.adv_options != blank %}
+                    <h3>Advances</h3>
+                    {% for option in spell.adv_options %}
+                        <p>{{option}}</p>
+                        {% if forloop.last == false %}
+                        <strong> - OR - </strong>
+                        {% endif %}
+                    {% endfor %}
                 {% endif %}
 
             </section>
