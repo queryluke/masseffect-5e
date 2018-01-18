@@ -27,14 +27,28 @@
             v-icon {{ item.icon }}
           v-list-tile-content
             v-list-tile-title {{ item.title }}
+      v-list-tile(
+        v-bind="{ to: '/bookmarks', href: '/bookmarks'}"
+        ripple
+        rel="noopener"
+      )
+        v-list-tile-action
+          v-icon book
+        v-list-tile-content
+          v-list-tile-title Bookmarks
+        v-list-tile-action.text-right
+          v-badge(left v-if="bookmarkCount > 0")
+            span(slot="badge") {{ bookmarkCount }}
 </template>
 
 <script>
   import { mapState } from 'vuex';
+  import { mapGetters } from 'vuex';
 
   export default {
     name: 'MainNavigation',
     computed: {
+      ...mapGetters(['bookmarkCount']),
       isActive: {
         get () {
           return this.$store.state.sidebar
@@ -42,7 +56,7 @@
         set (val) {
           this.$store.commit('toggleSidebar', val)
         }
-      }
+      },
     },
     data () {
       return {

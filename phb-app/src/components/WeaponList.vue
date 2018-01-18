@@ -19,17 +19,17 @@
       v-card
         v-card-text.grey.lighten-3
           weapon-info(:weapon="weapon").mt-2
-          v-btn(small primary dark :to="`/weapons/${weapon.id}`") Weapon Page
-
+          bookmark-button(:card="weapon" type="weapon")
 </template>
 
 <script>
   import WeaponInfo from "./WeaponInfo.vue";
   import WeaponType from "./WeaponType.vue";
+  import BookmarkButton from "./BookmarkButton.vue";
 
   export default {
     components: {
-      WeaponType, WeaponInfo
+      WeaponType, WeaponInfo, BookmarkButton
     },
     name: 'WeaponList',
     props: ['weapons'],

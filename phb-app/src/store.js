@@ -17,7 +17,8 @@ const state = {
       counts: []
     },
     pcs: []
-  }
+  },
+  bookmarks: []
 };
 
 const mutations = {
@@ -32,6 +33,12 @@ const mutations = {
   },
   updateGruntConfigRace(state, payload) {
     state.gruntConfig.race = payload;
+  },
+  addBookmark(state, payload) {
+    state.bookmarks.push(payload);
+  },
+  removeBookmark(state, index) {
+    state.bookmarks.splice(index, 1);
   },
   addEncounterNpc(state, payload) {
     const index = state.encounter.npcs.list.indexOf(payload);
@@ -51,11 +58,41 @@ const mutations = {
   }
 };
 
+const actions = {
+  addBookmark({commit}, payload) {
+    commit('addBookmark', payload);
+  },
+  removeBookmark({state, commit}, payload) {
+    const index = state.bookmarks.findIndex(bookmark => bookmark.type === payload.type && bookmark.card.id === payload.card.id);
+    if (index > -1) {
+      commit('removeBookmark', index);
+    }
+  }
+};
+
+const getters = {
+  bookmarks: state => {
+    return state.bookmarks;
+  },
+  bookmarkCount: (state, getters) => {
+    return getters.bookmarks.length;
+  },
+  isBookmarked: (state, getters) => card => {
+    return getters.bookmarks.find(bookmark => bookmark.card.id === card.id) !== undefined;
+  },
+  bookmarksGroupedByType: (state, getters) => {
+    return getters.bookmarks.reduce((rv, x) => {
+      (rv[x.type] = rv[x.type] || []).push(x.card);
+      return rv;
+    }, {});
+  }
+};
+
 const store = new Vuex.Store({
   state,
   mutations,
-  actions: {},
-  getters: {},
+  actions,
+  getters,
   modules: {},
   plugins: [createPersistedState()]
 });
