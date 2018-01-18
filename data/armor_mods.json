@@ -1,5 +1,5 @@
 {
-  "updated": "December 27, 2017 @  3:57 PM",
+  "updated": "January 18, 2018 @ 11:55 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRIPzbOBXOdWbaY779un1EV3HyacCV3fe15kHW4ABjMV0yHi3GZHVqnbiOVSQ_Dgh1whimOITGOXHkn/pubhtml",
   "data": [
     {
@@ -16,7 +16,7 @@
       "piece": "Chest",
       "flavor": "Biofeedback system regulating wearer's adrenaline surges.",
       "mechanic": "When you roll a 1 or 2 on a damage die for an attack you make with a melee weapon, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. ",
-      "cost": "8000",
+      "cost": "10000",
       "manu": "Ariake Technologies",
       "id": "adrenaline_regulator"
     },
@@ -51,7 +51,7 @@
       "name": "Asymmetric Defense Layer",
       "piece": "Chest",
       "flavor": "Offering increased protection where it's needed most, Rosenkov Materials' proprietary coating process increases stopping power of standard ceramic armor.",
-      "mechanic": "Gain +2 ac. Gain hp equal to your level.",
+      "mechanic": "Gain +2 AC. Gain hp equal to your level.",
       "cost": "26000",
       "manu": "Rosenkov Materials",
       "id": "asymmetric_defense_layer"
@@ -268,7 +268,7 @@
       "piece": "Arms",
       "flavor": "Microservos coordinate your melee strikes.",
       "mechanic": "Gain a +2 bonus to melee attack and damage rolls",
-      "cost": "8000",
+      "cost": "16000",
       "manu": "Ariake Technologies",
       "id": "microservos"
     },
@@ -277,7 +277,7 @@
       "piece": "Legs",
       "flavor": "Microservos coordinate your melee strikes.",
       "mechanic": "Gain a +2 bonus to melee attack and damage rolls",
-      "cost": "8000",
+      "cost": "16000",
       "manu": "Ariake Technologies",
       "id": "microservos"
     },
@@ -300,19 +300,19 @@
       "id": "ordinance_packs"
     },
     {
-      "name": "Personal Disruptor Torpedos",
+      "name": "Personal Disruptor Torpedoes",
       "piece": "Arms",
       "flavor": "A \"micro gravitic\" personal weapon that effectively fires small disruptor torpedoes.",
       "mechanic": "Choose a target location within 30m. Creatures within a 4m sphere of the target must make a dexterity saving throw. On a failed save, a creature takes 4d12 force damage, or have as much damage on a successful one. You must finish a short rest, allowing the weapon to recharge before using it again.",
       "cost": "25000",
       "manu": "Jormungand Technology",
-      "id": "personal_disruptor_torpedos"
+      "id": "personal_disruptor_torpedoes"
     },
     {
       "name": "Recharge Capacitor",
       "piece": "Head",
       "flavor": "Micro wells store part of the energy directed at the armor and use it to jump start the kinetic barrier recharge cycle.",
-      "mechanic": "You shields recharge every turn, despite taking damage.",
+      "mechanic": "Your shields recharge every turn, despite taking damage.",
       "cost": "15000",
       "manu": "Alliance",
       "id": "recharge_capacitor"
@@ -321,7 +321,7 @@
       "name": "Recharge Capacitor",
       "piece": "Chest",
       "flavor": "Micro wells store part of the energy directed at the armor and use it to jump start the kinetic barrier recharge cycle.",
-      "mechanic": "You shields recharge every turn, despite taking damage.",
+      "mechanic": "Your shields recharge every turn, despite taking damage.",
       "cost": "15000",
       "manu": "Armax Arsenal",
       "id": "recharge_capacitor"
@@ -329,7 +329,7 @@
     {
       "name": "Revive AI",
       "piece": "Chest",
-      "flavor": "This AI monitors your vitals and attempts to stabalize you if become incapacitated.",
+      "flavor": "This AI monitors your vitals and attempts to stabilize you if become incapacitated.",
       "mechanic": "If you fall below 0 hit points you immediately become stabilized. If you have any medi-gel left, you may expend one to gain hit points.",
       "cost": "60000",
       "manu": "Sirta Foundation",
@@ -365,7 +365,7 @@
     {
       "name": "Shield Capacity",
       "piece": "Arms",
-      "flavor": "Micro-harmonic oscillators to reduce stress on the kinetic barriers ensuring suit integrity when faced with oncoming projectiles.",
+      "flavor": "Micro-harmonic oscillators to reduce stress on the kinetic barriers ensuring suit integrity when faced with incoming projectiles.",
       "mechanic": "Increase your shield points by 10.",
       "cost": "10000",
       "manu": "Armax Arsenal",
@@ -420,7 +420,7 @@
       "name": "Toxic Resistance",
       "piece": "Chest",
       "flavor": "Specially-sealed body armor and biotoxin blood filters provide increased protection against radiation, gases, and a host of other toxins.",
-      "mechanic": "Resistance to acid and poison damage. You have advantage on saving throws that would cause you to be poisoned.",
+      "mechanic": "Resistance to acid and poison damage. You have advantage on Constitution saving throws that would cause you to be poisoned.",
       "cost": "15000",
       "manu": "Batarian State Arms",
       "id": "toxic_resistance"
@@ -430,16 +430,16 @@
       "piece": "Head",
       "flavor": "By detecting the focal point of the wearer's eyes and enhancing the image at that location, the visor helps direct a biotic power or a shot from an omni-tool exactly where the wearer is looking.",
       "mechanic": "When you roll a 1 or 2 on a damage die for an attack you make with a biotic spell or tech power, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. ",
-      "cost": "10000",
+      "cost": "16000",
       "manu": "Alliance",
       "id": "umbra_ai"
     },
     {
       "name": "VI Aiming",
-      "piece": "Arms",
+      "piece": "Head",
       "flavor": "A built-in VI aim enhancement targets enemies' vulnerabilities.",
       "mechanic": "You gain a +2 bonus to ranged weapon attack and damage rolls",
-      "cost": "8000",
+      "cost": "16000",
       "manu": "Armax Arsenal",
       "id": "vi_aiming"
     },
@@ -456,8 +456,8 @@
       "name": "Weapon Stabilizers",
       "piece": "Arms",
       "flavor": "Incorporate micro-gyros linked with your hard suit's internal targeting aids.",
-      "mechanic": "You gain a +2 bonus to ranged weapon attack and damage rolls",
-      "cost": "16000",
+      "mechanic": "You gain a +1 bonus to ranged weapon attack and damage rolls",
+      "cost": "8000",
       "manu": "Aldrin Labs",
       "id": "weapon_stabilizers"
     }

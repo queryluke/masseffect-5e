@@ -1,5 +1,5 @@
 {
-  "updated": "January 10, 2018 @ 12:24 PM",
+  "updated": "January 18, 2018 @ 12:24 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSJCBzka3M8w7NvjB7HmV4BmwVcX7wyzFHg8K9YUTZvB8Tdl6_t_FLhQw6EIjm3eEyduIlLxxNwcweq/pubhtml",
   "data": [
     {
@@ -251,14 +251,14 @@
           "data": "This reduction increases by 1 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
         }
       ],
-      "adv_option_1": "Light Barrier : Remove the speed reduction penalty when Barrier is active.",
-      "adv_option_2": "Tactical Barrier : When you take damage, you can choose whether or not to expend a barrier tick.",
+      "adv_option_1": "Tactical Barrier : When you take damage, you may choose to expend a Barrier Tick instead of being required to use one.",
+      "adv_option_2": "Quick Barrier : You may cast Barrier as a bonus action.",
       "type": "biotic",
       "die_type": "d8",
       "attack_type": [
 
       ],
-      "casting_time": "Bonus",
+      "casting_time": "Action",
       "concentration": null,
       "duration": "Instant",
       "range": "Self",
@@ -281,8 +281,8 @@
       "min_tech_points": null,
       "id": "barrier",
       "adv_options": [
-        "Light Barrier : Remove the speed reduction penalty when Barrier is active.",
-        "Tactical Barrier : When you take damage, you can choose whether or not to expend a barrier tick."
+        "Tactical Barrier : When you take damage, you may choose to expend a Barrier Tick instead of being required to use one.",
+        "Quick Barrier : You may cast Barrier as a bonus action."
       ],
       "class_list": "Adept, Vanguard",
       "mechanic_text_dump": "SurroundyourselfinahighgravitymasseffectthatstrengthensyourshieldsbutreducesyourmovementspeedWhileyouhaveanybarrierticksyourspeedisreducedby4mWheneveryoutakedamageremove1barriertickandreducethatdamageby1d8WhenyoucastBarrierrefillyourbarriertickstotheirmaximumamountYourclassindicatesthemaximumnumberofbarrierticksyoucanhaveThisreductionincreasesby1whenyoureach5thlevel2d811thlevel3d8and17thlevel4d8"
@@ -374,7 +374,7 @@
         }
       ],
       "adv_option_1": "Anti-Flesh : The Beehive deals double damage to unprotected, organic targets.",
-      "adv_option_2": "Remote Deploy : As an action you can setup your Beehive in a separate location. Once it is deployed you can use an Attack action to fire it.",
+      "adv_option_2": "Remote Deploy : As an action you can set up your Beehive in a separate location. Once it is deployed you can use an Attack action to fire it.",
       "type": "combat",
       "die_type": "d6",
       "attack_type": [
@@ -404,7 +404,7 @@
       "id": "beehive",
       "adv_options": [
         "Anti-Flesh : The Beehive deals double damage to unprotected, organic targets.",
-        "Remote Deploy : As an action you can setup your Beehive in a separate location. Once it is deployed you can use an Attack action to fire it."
+        "Remote Deploy : As an action you can set up your Beehive in a separate location. Once it is deployed you can use an Attack action to fire it."
       ],
       "class_list": "Infiltrator, Soldier",
       "mechanic_text_dump": "AsanAttackactionyouequipandfireyourantipersonnelcannoncolloquiallycalledthebeehiveItejectssuperheatedshrapnelina6mconeoriginatingfromyouEachcreaturecaughtintheblastmustmakeDexteritysavingthrowOnafailedsaveacreaturetakes2d6piercingdamageorhalfasmuchdamageonasuccessfuloneTheDCis8proficiencybonusDEXmodifierYoumustspendashortorlongrestreconfiguringthecannontouseitagainThisfeaturesdamageincreasesby2d6whenyoureach5thlevel4d611thlevel6d617thlevel8d6Infiltratorsmaylearnoradvancethisfeatureinsteadofgainingatechpower"
@@ -791,7 +791,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You spend tech points to blast a stream of liquid hydrogen from your omni-tool. Each creature in a 6m cube must make a Dexterity saving throw. A creature takes Xd8 cold damage on a failed save, or half as much damage on a successful one where X is the number of tech points spent. If the target is unshielded, it must pass a Strength saving throw or becomes {frozen} until the end of it's next turn."
+          "data": "You spend tech points to blast a stream of liquid hydrogen from your omni-tool. Each creature in a 6m cube must make a Dexterity saving throw. A creature takes Xd8 cold damage on a failed save, or half as much damage on a successful one where X is the number of tech points spent. If the target is unshielded, it must pass a Strength saving throw or becomes {frozen} until the end of its next turn."
         }
       ],
       "adv_option_1": "Brittle Freeze : Creatures that fail the Constitution saving throw suffer a -1 AC penalty",
@@ -838,7 +838,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You spend tech points to fire a mass of supercooled, subatomic particles at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes Xd8 cold damage, where X is the number of tech points spent, and the target's movement is reduced by half. If the target is unprotected, it must pass a Strength saving throw or becomes {frozen} until the end of it's next turn."
+          "data": "You spend tech points to fire a mass of supercooled, subatomic particles at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes Xd8 cold damage, where X is the number of tech points spent, and the target's movement is reduced by half. If the target is unprotected, it must pass a Strength saving throw or becomes {frozen} until the end of its next turn."
         }
       ],
       "adv_option_1": "Ice Lance : Transform the attack into a deadly lance. The attack can no longer freeze or slow the target, but you add 1d6 piercing damage for each tech point spent.",
@@ -894,7 +894,7 @@
           "data": "The damage increases by 1d10 when you reach the 5th level (2d10), 11th level(3d10) and 17th level(4d10)."
         }
       ],
-      "adv_option_1": "Cripple : If the effected creature would make a saving throw or attack roll, as a reaction you may increase the severity of Dark Channel. The effected creature must roll a d4 and subtract the number rolled from the attack roll or saving throw.",
+      "adv_option_1": "Cripple : If the affected creature would make a saving throw or attack roll, as a reaction you may increase the severity of Dark Channel. The affected creature must roll a d4 and subtract the number rolled from the attack roll or saving throw.",
       "adv_option_2": "Improved Damage : Increase the damage die type to d12",
       "type": "biotic",
       "die_type": "d10",
@@ -924,7 +924,7 @@
       "min_tech_points": null,
       "id": "dark_channel",
       "adv_options": [
-        "Cripple : If the effected creature would make a saving throw or attack roll, as a reaction you may increase the severity of Dark Channel. The effected creature must roll a d4 and subtract the number rolled from the attack roll or saving throw.",
+        "Cripple : If the affected creature would make a saving throw or attack roll, as a reaction you may increase the severity of Dark Channel. The affected creature must roll a d4 and subtract the number rolled from the attack roll or saving throw.",
         "Improved Damage : Increase the damage die type to d12"
       ],
       "class_list": "Adept",
@@ -955,7 +955,7 @@
           "data": "At higher levels: When you cast this spell using a spell slot of level 3 or higher, the damage increases by 1d8 for each slot level above the 2nd."
         }
       ],
-      "adv_option_1": "Control : At the start of your turn, before the sphere moves, you can change it's direction.",
+      "adv_option_1": "Control : At the start of your turn, before the sphere moves, you can change its direction.",
       "adv_option_2": "Amplify : Every 4m, the sphere's potential damage increases. Add 1[dd] to the detonation damage for each 4m the sphere travels.",
       "type": "biotic",
       "die_type": "d8",
@@ -986,7 +986,7 @@
       "min_tech_points": null,
       "id": "dark_sphere",
       "adv_options": [
-        "Control : At the start of your turn, before the sphere moves, you can change it's direction.",
+        "Control : At the start of your turn, before the sphere moves, you can change its direction.",
         "Amplify : Every 4m, the sphere's potential damage increases. Add 1d8 to the detonation damage for each 4m the sphere travels."
       ],
       "class_list": "Adept",
@@ -999,7 +999,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Spend X tech points to summon a holographic copy of yourself at a location within 10m. The copy mimics your actions. When a creature attacks, it can make an Intelligence (Perception) check and, if it succeeds, is not fooled. The DC of the check is 8 + your Tech modifier + X."
+          "data": "Spend X tech points to summon a holographic copy of yourself at a location within 10m. The copy mimics your actions. When a creature attacks, it can make an Wisdom (Perception) check and, if it succeeds, is not fooled. The DC of the check is 8 + your Tech modifier + X."
         }
       ],
       "adv_option_1": "Explosive : As an action, you can spend X tech points detonate your Decoy. Each creature within 4m must make a Dexterity saving throw. On a failed save, a creature takes Xd6 fire damage or half as much on a successful one.",
@@ -1036,7 +1036,7 @@
         "Improved Decoy : Your Decoy becomes so life-like that creatures have disadvantage on the Intelligence (Perception) check."
       ],
       "class_list": "Engineer, Infiltrator",
-      "mechanic_text_dump": "SpendXtechpointstosummonaholographiccopyofyourselfatalocationwithin10mThecopymimicsyouractionsWhenacreatureattacksitcanmakeanIntelligencePerceptioncheckandifitsucceedsisnotfooledTheDCofthecheckis8yourTechmodifierX"
+      "mechanic_text_dump": "SpendXtechpointstosummonaholographiccopyofyourselfatalocationwithin10mThecopymimicsyouractionsWhenacreatureattacksitcanmakeanWisdomPerceptioncheckandifitsucceedsisnotfooledTheDCofthecheckis8yourTechmodifierX"
     },
     {
       "name": "Defense Matrix",
@@ -1105,7 +1105,7 @@
         }
       ],
       "adv_option_1": "Total Control : You take the the dominated creatures action. You may use it's spells and abilities.",
-      "adv_option_2": "Damage : While the creature is dominated, it takes 2d6 psychic damage at the end of it's turn. This damage does not proc an opportunity to end Dominate.",
+      "adv_option_2": "Damage : While the creature is dominated, it takes 2d6 psychic damage at the end of its turn. This damage does not proc an opportunity to end Dominate.",
       "type": "biotic",
       "die_type": null,
       "attack_type": [
@@ -1135,7 +1135,7 @@
       "id": "dominate",
       "adv_options": [
         "Total Control : You take the the dominated creatures action. You may use it's spells and abilities.",
-        "Damage : While the creature is dominated, it takes 2d6 psychic damage at the end of it's turn. This damage does not proc an opportunity to end Dominate."
+        "Damage : While the creature is dominated, it takes 2d6 psychic damage at the end of its turn. This damage does not proc an opportunity to end Dominate."
       ],
       "class_list": "Adept",
       "mechanic_text_dump": "Targetanorganiccreaturewithin20mItmustsucceedonaWisdomsavingthroworitbecomesDominateditisconsideredcharmedandcantusespellsorabilitiesOnitsturnthedominatedcreatureattackstheclosestcreaturehostiletothespellcastermakingarangedweaponattackormeleeattackifitdoesnothaveaweaponIftherearenohostilecreatureswithinrangethedominatedcreatureusesitsturntoruntowardstheclosesthostilecreatureEachtimethedominatedcreaturetakesdamageitmakesanewWisdomsavingthrowagainstthespellIfthesavingthrowsucceedsthespellends"
@@ -1758,7 +1758,7 @@
         }
       ],
       "adv_option_1": "Total Control : You take the the hacked synthetic's action. You may use it's spells and abilities.",
-      "adv_option_2": "Damage : While the synthetic is hacked, it takes 2d6 shock damage at the end of it's turn. This damage does not proc an opportunity to end Invasion.",
+      "adv_option_2": "Damage : While the synthetic is hacked, it takes 2d6 shock damage at the end of its turn. This damage does not proc an opportunity to end Invasion.",
       "type": "tech",
       "die_type": null,
       "attack_type": [
@@ -1788,7 +1788,7 @@
       "id": "invasion",
       "adv_options": [
         "Total Control : You take the the hacked synthetic's action. You may use it's spells and abilities.",
-        "Damage : While the synthetic is hacked, it takes 2d6 shock damage at the end of it's turn. This damage does not proc an opportunity to end Invasion."
+        "Damage : While the synthetic is hacked, it takes 2d6 shock damage at the end of its turn. This damage does not proc an opportunity to end Invasion."
       ],
       "class_list": "Engineer, Infiltrator",
       "mechanic_text_dump": "Spend3techpointspercreaturesizeandchooseasyntheticwithin20meg3techpointsforsmall6techpointsformedium9techpointsforlargeThesyntheticmustsucceedonanIntelligencesavingthroworbecomeshackedconsideredcharmedAhackedsyntheticwontattackfriendlycreaturesandcantusespellsorabilitiesOnitsturnthehackedsyntheticattackstheclosesthostilecreaturemakingrangedweaponattackormeleeattackifitdoesnothaveaweaponIfitdoesnthaveaweaponandtherearenohostilecreatureswithinmeleerangethehackedsyntheticusesitsturntodashtowardstheclosesthostilecreatureEachtimethesynthetictakesdamageitmakesanewIntelligencesavingthrowagainstthespellIfthesavingthrowsucceedsthespellends"
@@ -3089,7 +3089,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Spend your action scanning a creature your can see with your omni-tool, studying it's movement and revealing weaknesses. Your attacks against the target have advantage and natural 19 and 20's are considered critical hits. This ability can stack with other critical improving powers."
+          "data": "Spend your action scanning a creature your can see with your omni-tool, studying its movement and revealing weaknesses. Your attacks against the target have advantage and natural 19 and 20's are considered critical hits. This ability can stack with other critical improving powers."
         },
         {
           "id": 2,
@@ -3404,7 +3404,7 @@
         }
       ],
       "adv_option_1": "Internal Bleeding : The shifting causes internal bleeding. At the start of your turn, the target takes 1[dd] necrotic damage bypassing it's shields until it uses medi-gel or is stabilized.",
-      "adv_option_2": "Keel over : A target hit by warp must pass a Constitutuion saving throw. On a failed save, the force of warp is so intense the target is knocked {prone} and {stunned} until the start of your next turn.",
+      "adv_option_2": "Keel over : A target hit by warp must pass a Constitution saving throw. On a failed save, the force of warp is so intense the target is knocked {prone} and {stunned} until the start of your next turn.",
       "type": "biotic",
       "die_type": "d10",
       "attack_type": [
@@ -3434,7 +3434,7 @@
       "id": "warp",
       "adv_options": [
         "Internal Bleeding : The shifting causes internal bleeding. At the start of your turn, the target takes 1d10 necrotic damage bypassing it's shields until it uses medi-gel or is stabilized.",
-        "Keel over : A target hit by warp must pass a Constitutuion saving throw. On a failed save, the force of warp is so intense the target is knocked {prone} and {stunned} until the start of your next turn."
+        "Keel over : A target hit by warp must pass a Constitution saving throw. On a failed save, the force of warp is so intense the target is knocked {prone} and {stunned} until the start of your next turn."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
       "mechanic_text_dump": "MakearangedspellattackonanorganiccreatureyoucanseewithinrangeOnahityougeneratearapidlyshiftingmasseffectfieldinsidethetargetdealingnecroticdamageequalto3d10youbioticmodifierThisdamagebypassesshieldsAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d10foreachslotlevelabovethe2nd"

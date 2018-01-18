@@ -17,6 +17,13 @@
           As long as you have a weapon equipped (somewhere on your person), you can holster the weapon you're currently
           weilding and draw an equipped weapon as a bonus action. This is true for all weapon types.
     rule-card
+      span(slot="header") Weapon Slots
+      template(slot="text")
+        p You can carry 2 weapons into combat, unless you have features or armor mods that allow you to carry more.
+        p.headline.mt-2 Variant: Encumbrance
+        p.
+          If using the Variant: Encumbrance rule, use the weapon's weight weight to calculate if your Encumbrance.
+    rule-card
       span(slot="header") Weapon Proficiencies
       template(slot="text")
         p.
@@ -30,10 +37,7 @@
           Some of these stats only apply to certain weapons.
         p.headline.mt-2 Weight
         p.
-          Subtract this from your Carry Capacity. Carrying Capacity is point based, not pound based. Your capacity is equal to
-          your Strength score. You can can carry up to 5 additional points of weapons at the expense of a 2m reduction in movement
-          per point. If you are carrying the maximum 5 points over, all of your Dexterity checks are made at a disadvantage.
-          You cannot carry more than 5 more points over your capacity.
+          Use this to calculate your Carry Capacity if using the Variant: Encumbrance rule.
         p.headline.mt-2 Range
         p.
           If a target is beyond the weapon's range, the attack roll is made at a disadvantage. Ranges are an approximation and

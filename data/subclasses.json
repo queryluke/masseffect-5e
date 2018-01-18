@@ -1,5 +1,5 @@
 {
-  "updated": "November 17, 2017 @ 10:58 AM",
+  "updated": "January 18, 2018 @ 11:55 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -113,7 +113,7 @@
     {
       "name": "Demolisher",
       "class": "Engineer",
-      "description": "Demolishers are explosive specialists with eye for combat. While not as skilled as a Soldier of Infiltrator, they make up for it with by covering the battlefield with grenades and heavy weapon fire.",
+      "description": "Demolishers are explosive specialists with eye for combat. While not as skilled as a Soldier or Infiltrator, they make up for it with by covering the battlefield with grenades and heavy weapon fire.",
       "1": [
         {
           "key": "advanced_weapon_holsters",
@@ -175,14 +175,14 @@
       ],
       "2": [
         {
-          "key": "drone_efficiency",
-          "value": "Drone Efficiency"
+          "key": "dual_drones",
+          "value": "Dual Drones"
         }
       ],
       "3": [
         {
-          "key": "dual_drones",
-          "value": "Dual Drones"
+          "key": "improved_drones",
+          "value": "Improved Drones"
         }
       ],
       "4": [
@@ -545,8 +545,8 @@
       ],
       "2": [
         {
-          "key": "quick_reload",
-          "value": "Quick Reload"
+          "key": "strafe",
+          "value": "Strafe"
         }
       ],
       "3": [
@@ -557,8 +557,8 @@
       ],
       "4": [
         {
-          "key": "strafe",
-          "value": "Strafe"
+          "key": "devastating_critical",
+          "value": "Devastating Critical"
         }
       ],
       "5": [
