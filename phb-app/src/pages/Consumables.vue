@@ -18,11 +18,15 @@
       span(slot="header") Thermal Clips
       template(slot="text")
         p.
+          It is assumed that characters have an unlimited supply of thermal clips, as they can easily be located and
+          scavenged from the battlefield during or after a firefight. However, your supply of #[strong Specialized] clips
+          is limited.
+        p.
           Specialized Thermal Clips can augment your weapon's damage and damage type. Once loaded, the augmentation
           lasts until you reload the weapon. When reloading, you can always pop in another specialized clip.
         p.headline Capacity: 6
         p.
-          All armor comes standard with 6 thermal clip slots. Some armor and mods allow you to increase this ammount.
+          All armor comes standard with 6 thermal clip slots. Some armor and mods allow you to increase this amount.
         p.headline Resupply: Uncommon
         p.
           Nicer gun shops and military operations have a good stock of specialized thermal clips. Each specialized clip costs 500 credits.
@@ -34,11 +38,12 @@
         p.
           For an additional challenge, you can have your player's keep track of all their thermal clips (specialized or not).
           For GMs, if you're using this rule, you can allow players to bring thermal clip backpacks if they're venturing out
-          into the wilderness. But if you players are fighting NPCs that use thermal clips, they should be able to loot
+          into the wilderness. But if your players are fighting NPCs that use thermal clips, they should be able to loot
           plenty of thermal clips after the battle.
         p.headline Capacity: 10
         p.
-          All armor comes standard with 10 thermal clip slots. Some armor and mods allow you to increase this amount.
+          All armor comes standard with 10 thermal clip slots. Some armor and mods allow you to increase this amount. Any thermal
+          clip slot can be used for either standard or specialized thermal clips.
         p.headline Resupply: Common
         p.
           You can resupply all of you standard thermal clips at a gun shop or military depot for 500 credits. Specialized clips
@@ -68,8 +73,9 @@
           If military, you might get special permission to keep the weapon and granted a steady stream of charges (once per long rest).
           That's between you and your GM.
         p.
-          Otherwise, you'll have to pay a pretty penny on the black market (around 20,000 credits) to resupply your charges.
-          In most cases, it's easier to scavenge or steal ammo. Or simply leave the damn thing were you found it.
+          Otherwise, you'll have to pay a pretty penny on the black market to recharge your Heavy Weapon (around 20,000 credits for a
+          complete resupply of charges). In most cases, it's easier to scavenge or steal ammo. Or simply leave the damn thing were
+          you found it.
         v-btn(to="/weapons").mt-3 Weapon List
 </template>
 
