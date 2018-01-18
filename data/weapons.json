@@ -1,5 +1,5 @@
 {
-  "updated": "January  5, 2018 @  3:42 PM",
+  "updated": "January 18, 2018 @ 12:09 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSq70x_GZuDKcELgX8k_7Hd6nLGu3DoIEdDwP-YEGjUU-ghGc7ot_Q7140FZwGbEalHgzPwVm4BN8y_/pubhtml",
   "data": [
     {
@@ -88,7 +88,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Kenetic energy from successful melee attacks grant a minor biotic boost. When you hit with an attack using this weapon, as a bonus action, you may cast a biotic cantrip."
+          "data": "Kinetic energy from successful melee attacks grant a minor biotic boost. When you hit with an attack using this weapon, as a bonus action, you may cast a biotic cantrip."
         }
       ],
       "npcHit": "the attacker may cast a biotic cantrip as a bonus action.",
@@ -96,7 +96,7 @@
       "dmgType": "slashing",
       "image": null,
       "id": "asari_huntress_sword",
-      "notes_text_dump": "KeneticenergyfromsuccessfulmeleeattacksgrantaminorbioticboostWhenyouhitwithanattackusingthisweaponasabonusactionyoumaycastabioticcantrip"
+      "notes_text_dump": "KineticenergyfromsuccessfulmeleeattacksgrantaminorbioticboostWhenyouhitwithanattackusingthisweaponasabonusactionyoumaycastabioticcantrip"
     },
     {
       "name": "Asari Warsword",
@@ -114,7 +114,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Kenetic energy from successful melee attacks grant a biotic boost. When you hit with an attack using this weapon, as a bonus action, you may cast a biotic spell or cantrip. This cast still consumes a spell slot."
+          "data": "Kinetic energy from successful melee attacks grant a biotic boost. When you hit with an attack using this weapon, as a bonus action, you may cast a biotic spell or cantrip. This cast still consumes a spell slot."
         }
       ],
       "npcHit": "the attacker may cast a biotic cantrip or spell as a bonus action. This consumes a spell slot.",
@@ -122,7 +122,7 @@
       "dmgType": "slashing",
       "image": null,
       "id": "asari_warsword",
-      "notes_text_dump": "KeneticenergyfromsuccessfulmeleeattacksgrantabioticboostWhenyouhitwithanattackusingthisweaponasabonusactionyoumaycastabioticspellorcantripThiscaststillconsumesaspellslot"
+      "notes_text_dump": "KineticenergyfromsuccessfulmeleeattacksgrantabioticboostWhenyouhitwithanattackusingthisweaponasabonusactionyoumaycastabioticspellorcantripThiscaststillconsumesaspellslot"
     },
     {
       "name": "AT-12 Raider",
@@ -1757,15 +1757,15 @@
         {
           "id": 1,
           "type": "line",
-          "data": "When you hit with an attack using this weapon, the target takes and additional 1d4 lightening damage. If the target is unprotected and maintaining a concentration spell, it automatically fails its saving throw to maintain that spell."
+          "data": "When you hit with an attack using this weapon, the target takes and additional 1d4 lightning damage. If the target is unprotected and maintaining a concentration spell, it automatically fails its saving throw to maintain that spell."
         }
       ],
-      "npcHit": "the target takes 2 (1d4) lightening damage. If the target is unprotected and maintaining a concentration spell, it automatically fails its saving throw to maintain that spell.",
+      "npcHit": "the target takes 2 (1d4) lightning damage. If the target is unprotected and maintaining a concentration spell, it automatically fails its saving throw to maintain that spell.",
       "addDmg": "2.5",
       "dmgType": "bludgeoning",
       "image": null,
       "id": "stun_baton",
-      "notes_text_dump": "Whenyouhitwithanattackusingthisweaponthetargettakesandadditional1d4lighteningdamageIfthetargetisunprotectedandmaintainingaconcentrationspellitautomaticallyfailsitssavingthrowtomaintainthatspell"
+      "notes_text_dump": "Whenyouhitwithanattackusingthisweaponthetargettakesandadditional1d4lightningdamageIfthetargetisunprotectedandmaintainingaconcentrationspellitautomaticallyfailsitssavingthrowtomaintainthatspell"
     },
     {
       "name": "Sync Laser",
@@ -1788,7 +1788,7 @@
       ],
       "npcHit": null,
       "addDmg": null,
-      "dmgType": "thudner",
+      "dmgType": "thunder",
       "image": "http://vignette2.wikia.nocookie.net/masseffect/images/3/3d/ME3_Sync_Laser_Heavy_Weapon.png/revision/latest?cb=20120317195655",
       "id": "sync_laser",
       "notes_text_dump": "SpendaroundTargetinga10mx20mrectangleupto60mawayAtthestartofyourturncalldownanorbitalstrikeCreatureswithintherectanglemakeaDexteritysavingthrowOnafailedsaveacreaturetake8d12thunderdamageOnasuccessacreaturetakeshalfdamage"

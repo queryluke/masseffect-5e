@@ -1,5 +1,5 @@
 {
-  "updated": "November 17, 2017 @ 11:05 AM",
+  "updated": "January 18, 2018 @ 11:55 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTPhVRIodUwbDYFw8wJZtmb63tTjFJMxY-cN6P5nayPpJhNxAQFqIxeSLd5Tz75aOZ7CLuBkNsDrcs9/pubhtml",
   "data": [
     {
@@ -16,7 +16,7 @@
         {
           "id": 2,
           "type": "line",
-          "data": "You have advantage on disarming land-mines that you find"
+          "data": "You have advantage on disarming landmines that you find"
         },
         {
           "id": 3,
@@ -315,7 +315,7 @@
           "data": "Your optic nerves have been enhanced by science to perceive more, and better. Gain low-light vision. If you already have low-light vision, gain darkvision. You now gain proficiency in Perception, Investigation, and Insight. If you are already proficient in any of these, gain a permanent +2 to the proficient skill(s)."
         }
       ],
-      "notes": "Increased vision. Proficiency in Preception, Investigation, and Insight",
+      "notes": "Increased vision. Proficiency in Perception, Investigation, and Insight",
       "prerequisite": null,
       "batarian": null,
       "drell": null,
@@ -346,12 +346,7 @@
         {
           "id": 3,
           "type": "line",
-          "data": "If you are carrying half or less of your maximum Strength score, your speed increases by 10m."
-        },
-        {
-          "id": 4,
-          "type": "line",
-          "data": "You also avoid triggering any pressure-activated traps or mines."
+          "data": "If you are wearing all light armor and only one weapon, your speed increases by 4m and you avoid triggering any pressure-activated traps or mines."
         }
       ],
       "notes": "+1 Dexterity, increased speed and you don't set off weight based traps",
@@ -364,7 +359,7 @@
       "turian": "x",
       "unshackled_ai": "x",
       "id": "featherlight",
-      "description_text_dump": "TravellighttravelfastIncreaseyourDexterityscoreby1toamaximumof20IfyouarecarryinghalforlessofyourmaximumStrengthscoreyourspeedincreasesby10mYoualsoavoidtriggeringanypressureactivatedtrapsormines"
+      "description_text_dump": "TravellighttravelfastIncreaseyourDexterityscoreby1toamaximumof20Ifyouarewearingalllightarmorandonlyoneweaponyourspeedincreasesby4mandyouavoidtriggeringanypressureactivatedtrapsormines"
     },
     {
       "name": "Grappler",
@@ -508,7 +503,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You've mastered Semi-Automatic weapons:"
+          "data": "You've mastered Double Tap weapons:"
         },
         {
           "id": 2,
@@ -518,10 +513,10 @@
         {
           "id": 3,
           "type": "line",
-          "data": "When you take the attack action using a semi-automatic weapon, you can make a second attack as a free action, rather than a bonus action. You add your Dexterity modifier to the second attack roll."
+          "data": "When you take the Attack action using a Double Tap weapon, you can make a second attack without using your bonus action for this turn. You add your Dexterity modifier to the second attack roll."
         }
       ],
-      "notes": "+1 Dexterity, mastery of semi-automatic weapons",
+      "notes": "+1 Dexterity, mastery of Double Tap weapons",
       "prerequisite": null,
       "batarian": "x",
       "drell": "x",
@@ -531,7 +526,7 @@
       "turian": "x",
       "unshackled_ai": "x",
       "id": "hair_trigger",
-      "description_text_dump": "YouvemasteredSemiAutomaticweaponsIncreaseyourDexterityscoreby1toamaximumof20WhenyoutaketheattackactionusingasemiautomaticweaponyoucanmakeasecondattackasafreeactionratherthanabonusactionYouaddyourDexteritymodifiertothesecondattackroll"
+      "description_text_dump": "YouvemasteredDoubleTapweaponsIncreaseyourDexterityscoreby1toamaximumof20WhenyoutaketheAttackactionusingaDoubleTapweaponyoucanmakeasecondattackwithoutusingyourbonusactionforthisturnYouaddyourDexteritymodifiertothesecondattackroll"
     },
     {
       "name": "Heavy Armor Master",

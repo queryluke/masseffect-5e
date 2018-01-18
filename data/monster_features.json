@@ -1,5 +1,5 @@
 {
-  "updated": "January  5, 2018 @ 12:16 PM",
+  "updated": "January 18, 2018 @ 11:55 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSSrod77DR2Bb7ihadl83Zar27uWkqeb6lMUo_quIHZr9CqBH3Vcx3TOK3wRzhk7Zhl3RB_av72vvo1/pubhtml",
   "data": [
     {
@@ -223,7 +223,7 @@
       "type": "action",
       "crKey": null,
       "crEffect": null,
-      "description": "For 1 minute, the NPC can utter a special command or warning whenever a nonhostile creature that it can see within 10m of it makes an attack roll or a saving throw. The creature can add a d4 to its roll provided it can hear and understand the NPC. A creature can benefit from only one Leadership die at a time. This effect ends if the NPC is incapacitated. ",
+      "description": "For 1 minute, the NPC can utter a special command or warning whenever a non-hostile creature that it can see within 10m of it makes an attack roll or a saving throw. The creature can add a d4 to its role provided it can hear and understand the NPC. A creature can benefit from only one Leadership die at a time. This effect ends if the NPC is incapacitated. ",
       "recharge": "Recharges after a Short or Long rest",
       "asari": null,
       "batarian": "x",
@@ -408,7 +408,7 @@
       "id": "hungry_jaws"
     },
     {
-      "name": "Halucinogen",
+      "name": "Hallucinogen",
       "type": "feature",
       "crKey": null,
       "crEffect": null,
@@ -432,7 +432,7 @@
       "sentinel": null,
       "soldier": null,
       "vanguard": null,
-      "id": "halucinogen"
+      "id": "hallucinogen"
     },
     {
       "name": "Fury of the small",
@@ -520,7 +520,7 @@
       "type": "feature",
       "crKey": "atk",
       "crEffect": "5",
-      "description": "If the krogan begins its turn with less that 1/2 of its hit points, it enters into a rage. The krogan's melee weapon attacks deal one extra die of its damage when the krogan hits with it. This effect lasts 1 minute.",
+      "description": "For 1 minute the geth can activate its hunter mode, gaining the following: increase speed by 6m, +2 on ranged or melee attack and damage rolls, add 1d4 to any tech power damage rolls.",
       "recharge": "Recharges after a Short or Long rest",
       "asari": null,
       "batarian": null,
@@ -574,7 +574,7 @@
       "type": "feature",
       "crKey": "hp",
       "crEffect": "10",
-      "description": "If the construct begins its turn with less that 1/2 of its hit points, it activates it's repair matrix, regaining 1d6 hit points at the start of its turn. This effect last one minute or until the construct becomes incapacitated.",
+      "description": "If the construct begins its turn with less than 1/2 of its hit points, it activates it's repair matrix, regaining 1d6 hit points at the start of its turn. This effect last one minute or until the construct becomes incapacitated.",
       "recharge": "Recharges after a Short or Long rest",
       "asari": null,
       "batarian": null,
@@ -678,7 +678,7 @@
       "id": "res-standard"
     },
     {
-      "name": "res-bitoic",
+      "name": "res-biotic",
       "type": "resistance",
       "crKey": null,
       "crEffect": null,
@@ -702,7 +702,7 @@
       "sentinel": null,
       "soldier": null,
       "vanguard": null,
-      "id": "res-bitoic"
+      "id": "res-biotic"
     },
     {
       "name": "res-tech",

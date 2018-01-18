@@ -1,5 +1,5 @@
 {
-  "updated": "January  6, 2018 @ 11:04 PM",
+  "updated": "January 18, 2018 @ 11:55 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRBAZH9BXc9xIj62i-StAKv08-iNSQSUyiWjz7TrVqcjEVe-uDaFIy9a4zRxYchDikCsskcNf-vexsG/pubhtml",
   "data": [
     {
@@ -8,16 +8,16 @@
       "dd": "d6",
       "range": "10m",
       "blast": "4m",
-      "damage_type": "lightening",
+      "damage_type": "lightning",
       "desc": [
         {
           "id": 1,
           "type": "line",
-          "data": "Target an area within 10m. Each creature within 4m of the target must make a DC 13 Dexterity saving throw. A creature takes 3d6 lightening damage on a failed save, or half as much damage on a successful one. Arc Grenade deals double damage to shields."
+          "data": "Target an area within 10m. Each creature within 4m of the target must make a DC 13 Dexterity saving throw. A creature takes 3d6 lightning damage on a failed save, or half as much damage on a successful one. Arc Grenade deals double damage to shields."
         }
       ],
       "id": "arc_grenade",
-      "desc_text_dump": "Targetanareawithin10mEachcreaturewithin4mofthetargetmustmakeaDC13DexteritysavingthrowAcreaturetakes3d6lighteningdamageonafailedsaveorhalfasmuchdamageonasuccessfuloneArcGrenadedealsdoubledamagetoshields"
+      "desc_text_dump": "Targetanareawithin10mEachcreaturewithin4mofthetargetmustmakeaDC13DexteritysavingthrowAcreaturetakes3d6lightningdamageonafailedsaveorhalfasmuchdamageonasuccessfuloneArcGrenadedealsdoubledamagetoshields"
     },
     {
       "name": "Cluster Grenade",
