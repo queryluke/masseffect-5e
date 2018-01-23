@@ -1,5 +1,5 @@
 {
-  "updated": "January 23, 2018 @ 10:48 AM",
+  "updated": "January 23, 2018 @ 10:59 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -326,8 +326,12 @@
         },
         {
           "id": 3,
-          "type": "line",
-          "data": "For example (2:3): you can either learn 2 new spells of 3rd level or lower, advance 2 already known spells of 3rd level or lower, or learn a spell of 3rd level or lower and advance an anlready known spell or 3rd level or lower."
+          "type": "list",
+          "data": [
+            "Learn 2 new spells of 3rd level or lower",
+            "Advance 2 already known spells of 3rd level or lower",
+            "Learn a spell of 3rd level or lower and advance an already known spell or 3rd level or lower."
+          ]
         },
         {
           "id": 4,
@@ -336,7 +340,7 @@
         }
       ],
       "id": "biotic_powers",
-      "mechanic_text_dump": "LearnoradvanceyourbioticpowersThefirstnumberindicatesthenumberofnewspellsyoucanlearnoradvanceThesecondnumberindicatesthemaxlevelofthespellyoucanlearnoradvanceForexample23youcaneitherlearn2newspellsof3rdlevelorloweradvance2alreadyknownspellsof3rdlevelorlowerorlearnaspellof3rdlevelorlowerandadvanceananlreadyknownspellor3rdlevelorlowerCantripsareconsidered0levelspellsThoughyoucanlearnnewcantripsthiswayyoucannotknowmorecantripsthanallowedbyyourclasslevelindicatedonyourclasssprogressiontable"
+      "mechanic_text_dump": "LearnoradvanceyourbioticpowersThefirstnumberindicatesthenumberofnewspellsyoucanlearnoradvanceThesecondnumberindicatesthemaxlevelofthespellyoucanlearnoradvanceForexample23youcaneitherlistLearn2newspellsof3rdlevelorlowerAdvance2alreadyknownspellsof3rdlevelorlowerLearnaspellof3rdlevelorlowerandadvanceanalreadyknownspellor3rdlevelorlowerlistCantripsareconsidered0levelspellsThoughyoucanlearnnewcantripsthiswayyoucannotknowmorecantripsthanallowedbyyourclasslevelindicatedonyourclasssprogressiontable"
     },
     {
       "name": "Biotic Slash",
@@ -1618,7 +1622,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You may use a reaction to sync the targeting computers of all your allies who are conscious. You target an enemy, painting them with an infared beam that lets all of your affected allies (and yourself) make an attack roll on that target using their weapon during your turn. If your affected ally has already taken their turn, they may still make an attack on the designated enemy, and if they have not yet taken their turn, they make the attack with advantage."
+          "data": "You may use a reaction to sync the targeting computers of all your allies who are conscious. You target an enemy, painting them with an infrared beam that lets all of your affected allies (and yourself) make an attack roll on that target using their weapon during your turn. If your affected ally has already taken their turn, they may still make an attack on the designated enemy, and if they have not yet taken their turn, they make the attack with advantage."
         },
         {
           "id": 2,
@@ -1627,7 +1631,7 @@
         }
       ],
       "id": "synchronized_assault",
-      "mechanic_text_dump": "YoumayuseareactiontosyncthetargetingcomputersofallyourallieswhoareconsciousYoutargetanenemypaintingthemwithaninfaredbeamthatletsallofyouraffectedalliesandyourselfmakeanattackrollonthattargetusingtheirweaponduringyourturnIfyouraffectedallyhasalreadytakentheirturntheymaystillmakeanattackonthedesignatedenemyandiftheyhavenotyettakentheirturntheymaketheattackwithadvantageOnceyouuseSynchronizedAssaultyoumustfinishalongrestbeforeyoucanuseitagain"
+      "mechanic_text_dump": "YoumayuseareactiontosyncthetargetingcomputersofallyourallieswhoareconsciousYoutargetanenemypaintingthemwithaninfraredbeamthatletsallofyouraffectedalliesandyourselfmakeanattackrollonthattargetusingtheirweaponduringyourturnIfyouraffectedallyhasalreadytakentheirturntheymaystillmakeanattackonthedesignatedenemyandiftheyhavenotyettakentheirturntheymaketheattackwithadvantageOnceyouuseSynchronizedAssaultyoumustfinishalongrestbeforeyoucanuseitagain"
     },
     {
       "name": "Tactical Ambush",
