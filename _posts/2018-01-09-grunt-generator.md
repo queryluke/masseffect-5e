@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Grunt Generator"
+description: "Explanation of new site feature: the Grunt Generator"
 excerpt: A quick and easy way to create NPCs.
 ---
 

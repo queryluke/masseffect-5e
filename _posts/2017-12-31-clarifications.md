@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Version 0.4.0"
+description: "Overview of rule changes in Mass Effect 5e v0.4.0"
 excerpt: Minor changes overall, increased spell damage, and Armor sets.
 ---
 
