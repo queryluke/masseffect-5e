@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "How it starts"
+description: "A summary of how the Mass Effect 5e project started"
 excerpt_separator: <!--more-->
 ---
 

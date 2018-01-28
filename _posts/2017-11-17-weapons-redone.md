@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Version 0.3.0"
+description: "Outline and reasoning for the system's weapon refactor"
 excerpt: Time for a weapon refactor.
 ---
 
