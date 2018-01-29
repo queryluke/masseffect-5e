@@ -21,6 +21,9 @@ Vue.use(Vuetify, {
 // Vue 1 filters
 import Vue2Filters from 'vue2-filters';
 Vue.use(Vue2Filters);
+// Custom Filters
+import {Filters} from './filters';
+Vue.use(Filters);
 
 import store from './store';
 import router from './routes';
