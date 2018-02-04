@@ -4,9 +4,9 @@
     p.
       Overall, this system attempts to keep things in line with D&D 5e rules as much as possible. Some system
       additions are pretty significant, like Shield Points. But most are minor, like the addition of a few more conditions.
-      Honestly, sometimes the change might seem pointless, like the conversion from feet to meters...but I did it anyway.
+      Honestly, sometimes the change might seem pointless, like the conversion from feet to meters...but we have our reasons.
     h3.display-2.mb-2 Rule Changes
-    rule-card
+    rule-card(id="liftingAndCarrying")
       span(slot="header") Lifting and Carrying
       template(slot="text")
         p.
