@@ -2,8 +2,8 @@
   div
     h2.display-3 Armor
     p Armor is much more customizable in ME5e than in the base 5e ruleset.
-    div(v-for="(card, index) in cards")
-      component(v-bind:is="card")
+    div(v-for="(rule, index) in rules")
+      component(v-bind:is="rule")
 </template>
 
 <script>
@@ -14,7 +14,7 @@
     components: RuleCards,
     data() {
       return {
-        cards: [
+        rules: [
           'armor-overview',
           'armor-proficiency',
           'armor-pieces',
