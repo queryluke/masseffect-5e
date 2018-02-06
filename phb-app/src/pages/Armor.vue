@@ -22,11 +22,6 @@
           'creating-new-armor'
         ]
       };
-    },
-    methods: {
-      showGlobalDialog(component) {
-        this.$emit('showGlobalDialog', component);
-      }
     }
   };
 </script>
