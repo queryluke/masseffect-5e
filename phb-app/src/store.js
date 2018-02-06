@@ -6,6 +6,10 @@ Vue.use(Vuex);
 
 const state = {
   sidebar: true,
+  globalDialog: {
+    show: false,
+    component: ''
+  },
   gruntConfig: {
     cr: {},
     race: {id: 'random', name: 'Random'},
@@ -24,6 +28,12 @@ const state = {
 const mutations = {
   toggleSidebar(state, payload) {
     state.sidebar = payload;
+  },
+  toggleGlobalDialog(state, payload) {
+    state.globalDialog.show = payload;
+  },
+  updateGlobalDialogComponent(state, payload) {
+    state.globalDialog.component = payload;
   },
   updateGruntConfigCr(state, payload) {
     state.gruntConfig.cr = payload;
@@ -67,10 +77,20 @@ const actions = {
     if (index > -1) {
       commit('removeBookmark', index);
     }
+  },
+  showGlobalDialog({commit}, payload) {
+    commit('toggleGlobalDialog', true);
+    commit('updateGlobalDialogComponent', payload);
+  },
+  hideGlobalDialog({commit}) {
+    commit('toggleGlobalDialog', false);
   }
 };
 
 const getters = {
+  globalDialog: state => {
+    return state.globalDialog;
+  },
   bookmarks: state => {
     return state.bookmarks;
   },

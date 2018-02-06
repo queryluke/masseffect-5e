@@ -2,7 +2,7 @@
   rule-card(id="armorOverview")
     span(slot="header") Overview
     template(slot="text")
-      ul.list
+      ul.pl-3
         li Armor proficiency is based on race.
         li You cannot wear a piece of armor unless you are proficient in that armor's type.
         li Armor types can be mixed

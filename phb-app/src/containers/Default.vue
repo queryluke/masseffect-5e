@@ -6,8 +6,8 @@
       v-container(fluid fill-height).blue-grey.lighten-4
         h1.sr-only Mass Effect 5e - Player's Handbook
         transition(name="slide" mode="out-in")
-          router-view(:key="$route.fullPath" v-on:showGlobalDialog="showGlobalDialog")
-    global-dialog(v-bind:show="globalDialogShow" v-bind:component="globalDialogComponent" v-on:hide="hideGlobalDialog")
+          router-view(:key="$route.fullPath")
+    global-dialog
 </template>
 
 <script>
@@ -27,17 +27,6 @@ export default {
   data () {
     return {
       drawer: true,
-      globalDialogShow: false,
-      globalDialogComponent: '',
-    }
-  },
-  methods: {
-    showGlobalDialog(component) {
-      this.globalDialogShow = true;
-      this.globalDialogComponent = component;
-    },
-    hideGlobalDialog() {
-      this.globalDialogShow = false;
     }
   }
 };

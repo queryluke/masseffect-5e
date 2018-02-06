@@ -5,12 +5,14 @@
       p.
         Armor Customization is a new feature and provides a lot of the options that would be handled by Magical Items in traditional 5e.
         It costs a pretty penny, so creating armor might not be available to new characters, but as they progress, you should be able
-        to afford major custom jobs.
+        to afford custom jobs.
       p.headline Creating Armor from Scratch
       p.
-        When you create a piece of armor from scratch, you need to select the armor placement (Head, Chest, Arms, Legs),
-        if you want to add additional mod slots, and if you need to customize the armor to fit your race. The following is a matrix
-        of your options and the cost.
+        When you create a piece of armor from scratch, you need to select:
+      ol.pl-3
+        li The armor placement (Head, Chest, Arms, Legs).
+        li If you want to add additional mod slots.
+        li If you need to customize the armor to fit your race.
       table.table
         thead.text-xs-left
           tr

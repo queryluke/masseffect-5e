@@ -1,18 +1,18 @@
 <template lang="pug">
   rule-card(id="liftingAndCarrying")
-    span(slot="header") Encumbrance: Variant
+    span(slot="header") Variant: Encumberance
     template(slot="text")
       p.
         The lifting an carrying rules attempt to keep the simplicity of 5th edition, with the added restrictions of weapon capacity.
         Here is a variant if you are looking for more detailed rules for determining how a character is hindered by the weight of equipment.
         When you use this variant, ignore the minimum Strength column of the Armor table.
-      p Your #[strong carry weight] is equal to your Stength score.
+      p Your #[strong carry weight is equal to your Stength score].
       p.
         Each weapon and armor piece has a weight. If your total weight from all weapons and armor is in excess of your
         carry weight, you are #[strong encumbered], which means your speed drops by 4m.
       p.
         If your total weight from all weapons and armor is in excess of Strength score + 10,
-        you are instead heavily encumbered, which means your speed drops by 10m and you have disadvantage on ability
+        you are instead #[strong heavily encumbered], which means your speed drops by 10m and you have disadvantage on ability
         checks, attack rolls, and saving throws that use Strength, Dexterity, or Constitution.
 </template>
 

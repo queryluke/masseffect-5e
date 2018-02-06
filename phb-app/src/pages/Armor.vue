@@ -22,6 +22,6 @@
           'creating-new-armor'
         ]
       };
-    }
+    },
   };
 </script>

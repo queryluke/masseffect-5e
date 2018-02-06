@@ -1,23 +1,31 @@
 <template lang="pug">
   v-dialog(v-model="active" width="70vw")
-    component(v-bind:is="component")
+    v-card
+      component(v-bind:is="globalDialog.component")
+      v-card-actions
+        v-spacer
+        v-btn(@click.native="hideGlobalDialog" flat="flat") Close
 </template>
 
 <script>
 import RuleCards from './RuleCards';
+import {mapGetters, mapActions} from 'vuex';
 
   export default {
     name: 'GlobalDialog',
-    props: ['show', 'component'],
     computed: {
+      ...mapGetters(['globalDialog']),
       active: {
         get () {
-          return this.show;
+          return this.globalDialog.show;
         },
         set () {
-          this.$emit('hide');
+          this.hideGlobalDialog();
         }
-      },
+      }
+    },
+    methods: {
+      ...mapActions(['hideGlobalDialog']),
     },
     components: RuleCards
   };
