@@ -35,7 +35,7 @@ export default {
   MediGel,
   ParagonAndRenegade,
   SexyLevel,
-  Sheilds,
+  Shields,
   ThermalClips,
   ThermalClipsVariant
 };
