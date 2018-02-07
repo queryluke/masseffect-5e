@@ -1,10 +1,12 @@
 <template lang="pug">
   rule-card
-    span(slot="header") New Combat Action: Reloading
+    span(slot="header") New Combat Action: Reload
     template(slot="text")
       p.
-        As detailed below, standard weapons use Thermal Clips and have Heat. If the weapon runs out of Heat, you must reload it
-        before you can fire it again. Reloading a weapon is a combat action.
+        When you take the Reload action, you add a new Thermal Clip into your equipped weapon. You may choose to make a DC 15
+        Dexterity (Sleight of Hand) check. On a pass, if you have not taken a bonus action this turn, you may reload your weapon
+        as a bonus action instead. However, on a critical failure, the Thermal Clip drops from your hands and your weapon
+        is not relaoded.
 </template>
 
 <script>

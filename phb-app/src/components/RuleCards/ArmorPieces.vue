@@ -74,19 +74,19 @@
         tbody
           tr
             td #[strong Light]
-            td 1
             td 2
-            td 0
-          tr
-            td #[strong Medium]
-            td 1
             td 3
             td 1
           tr
-            td #[strong Heavy]
-            td 2
+            td #[strong Medium]
             td 4
+            td 6
             td 2
+          tr
+            td #[strong Heavy]
+            td 6
+            td 10
+            td 3
 </template>
 
 <script>

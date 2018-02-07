@@ -2,14 +2,14 @@
   rule-card
     span(slot="header") Heavy Weapons
     template(slot="text")
-      p.headline.mt-2 Charges
+      p.title.mt-2 Charges
       p.
         As stated above, Heavy Weapons use Charges instead of Thermal Clips. If you run out of Charges your weapon is nothing
         more than a hunk of metal.
-      p.headline.mt-2 Targeting
+      p.title.mt-2 Targeting
       p.
-        Most Heavy Weapons also use the Targeting condition. Targeting mean painting the battlefield, or keeping a lock on a creature(s) for
-        a single round of combat. Targeting is considered a free action, as long as you've already equipped the heavy weapon,
+        Most Heavy Weapons also use the Targeting condition. Targeting means painting the battlefield, or keeping a lock on one or more creatures for
+        a single round of combat. Targeting is considered a free action, as long as you've already drawn the heavy weapon,
         i.e., you can choose to pick-up or equip a weapon as your action, then begin targeting as a free action before your turn ends.
         If you're already holding the weapon, you might use an ability as your action and then begin targeting.
       p.

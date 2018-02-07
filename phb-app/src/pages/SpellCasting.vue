@@ -2,7 +2,7 @@
   div
     h2.display-3 Spell Casting
     p.
-      Biotics, Tech powers and Combat abilities
+      Biotics, Tech & Combat Powers
     div(v-for="(rule, index) in rules")
       component(v-bind:is="rule")
 </template>
@@ -12,7 +12,7 @@
 
   export default {
     name: 'SpellCasting',
-    components: { RuleCards },
+    components: RuleCards,
     data() {
       return {
         rules: [

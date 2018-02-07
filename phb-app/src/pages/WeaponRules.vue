@@ -16,11 +16,11 @@
     data() {
       return {
         rules: [
+          'weapon-stats',
           'reloading',
           'holstering-and-drawing',
           'weapon-slots',
           'weapon-proficiency',
-          'weapon-stats',
           'weapon-attributes',
           'melee-weapons',
           'heavy-weapons'

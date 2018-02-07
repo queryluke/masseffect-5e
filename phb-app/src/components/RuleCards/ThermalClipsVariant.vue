@@ -1,6 +1,6 @@
 <template lang="pug">
   rule-card
-    span(slot="header") Thermal Clips (variant)
+    span(slot="header") Variant: Thermal Clips
     template(slot="text")
       p.
         For an additional challenge, you can have your player's keep track of all their thermal clips (specialized or not).

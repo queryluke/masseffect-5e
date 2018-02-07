@@ -7,7 +7,7 @@
       p.
         By default, your character's Spell Save DC is calculated as normal: 8 + proficiency bonus + spellcasting ability modifier. Some
         individual biotic/tech/combat abilities may have a Save DC that is calculated differently. In these cases, the Save DC is
-        indicated in the spell/ability description.
+        indicated in the ability description.
 </template>
 
 <script>

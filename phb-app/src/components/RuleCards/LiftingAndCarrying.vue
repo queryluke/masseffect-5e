@@ -19,32 +19,23 @@
         dd.
           Larger creatures can bear more weight, whereas Tiny creatures can carry less. For each size category above Medium,
           double the creature's carrying capacity and the amount it can push, drag, or lift. For a Tiny creature, halve these weights.
-        dt Weapon Slots
+        dt Weapons
         dd.
           You have 2 weapon slots and can equip a single weapon in either slot. Weapons equipped in a slot do not affect your carry capacity.
-          Any additional weapons you pick up count against your Carry Capacity.
+          Any additional weapons you pick up count against your carry capacity.
         dt Armor
-        dd The armor matrix has a minimum Strength score for the combination of armor types.
-      p.headline.mt-2 Variant: Encumbrance
-      p.
-        The lifting an carrying rules attempt to keep the simplicity of 5th edition, with the added restrictions of weapon capacity.
-        Here is a variant if you are looking for more detailed rules for determining how a character is hindered by the weight of equipment.
-        When you use this variant, ignore the minimum Strength column of the Armor table.
-      p Your #[strong carry weight] is equal to your Stength score.
-      p.
-        Each weapon and armor piece has a weight. If your total weight from all weapons and armor is in excess of your
-        carry weight, you are #[strong encumbered], which means your speed drops by 4m.
-      p.
-        If your total weight from all weapons and armor is in excess of Strength score + 10,
-        you are instead heavily encumbered, which means your speed drops by 10m and you have disadvantage on ability
-        checks, attack rolls, and saving throws that use Strength, Dexterity, or Constitution.
+        dd The #[a(v-on:click="showGlobalDialog('armor-pieces')") armor matrix] has a minimum Strength score for the combination of armor types. You must meet or exceed that score.
 </template>
 
 <script>
-  import RuleCard from './../RuleCard.vue'
+  import RuleCard from './../RuleCard.vue';
+  import {mapActions} from 'vuex';
 
   export default {
     name: 'LiftingAndCarrying',
     components: { RuleCard },
+    methods: {
+      ...mapActions(['showGlobalDialog']),
+    }
   };
 </script>
