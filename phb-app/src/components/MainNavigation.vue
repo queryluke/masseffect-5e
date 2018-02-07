@@ -1,10 +1,5 @@
 <template lang="pug">
-  v-navigation-drawer(
-    clipped
-    fixed
-    app
-    v-model="isActive"
-    )
+  v-navigation-drawer(clipped fixed app v-model="isActive")
     v-list(dense expand)
       template(v-for="item in items")
         v-list-group(v-if="item.items" v-bind:prepend-icon="item.icon" no-action)

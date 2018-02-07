@@ -87,15 +87,17 @@ const routes = [
 
 const router = new Router({
   mode: 'hash',
-  routes,
-  beforeEach: (to, from, next) => {
-    if (['class', 'race', 'spell', 'weapon'].includes(to.name)) {
-      document.title = documentTitle(toTitleCase(to.params.id), toTitleCase(to.name));
-    } else {
-      document.title = to.meta.title;
-    }
-    next();
+  routes
+});
+
+// Set page metadata
+router.beforeEach((to, from, next) => {
+  if (['class', 'race', 'spell', 'weapon'].includes(to.name)) {
+    document.title = documentTitle(toTitleCase(to.params.id), toTitleCase(to.name));
+  } else {
+    document.title = to.meta.title;
   }
+  next();
 });
 
 // Analytics tracking
