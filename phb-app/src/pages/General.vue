@@ -16,7 +16,7 @@
           dt Carry Capacity
           dd.
             You can carry capacity is your Strength score multiplied by 5. If you are wearing armor, your carry capacity
-            is your Strength score multiplied by 10 (due to the built-in servos and pneumatics). This score is not effected
+            is your Strength score multiplied by 10 (due to the built-in servos and pneumatics). This score is not affected
             by weapons or armor (see below).
           dt Push, Drag, Lift
           dd.
@@ -28,13 +28,13 @@
             double the creature's carrying capacity and the amount it can push, drag, or lift. For a Tiny creature, halve these weights.
           dt Weapon Slots
           dd.
-            You have 2 weapon slots and can equip a single weapon in either slot. Weapons equipped in a slot do not affect your carry capacity.
+            You have 2 weapon slots and can equip a single weapon in either slot. Weapons equipped in a slot do not affect your Carry Capacity.
             Any additional weapons you pick up count against your Carry Capacity.
           dt Armor
           dd The armor matrix has a minimum Strength score for the combination of armor types.
         p.headline.mt-2 Variant: Encumbrance
         p.
-          The lifting an carrying rules attempt to keep the simplicity of 5th edition, with the added restrictions of weapon capacity.
+          The lifting and carrying rules attempt to keep the simplicity of 5th edition, with the added restrictions of weapon capacity.
           Here is a variant if you are looking for more detailed rules for determining how a character is hindered by the weight of equipment.
           When you use this variant, ignore the minimum Strength column of the Armor table.
         p Your #[strong carry weight] is equal to your Stength score.
@@ -96,7 +96,7 @@
         p.
           Barrier is a cantrip available to Adepts and Vanguards. It generates Barrier Ticks which are both a casting
           resource and damage reduction mechanic. Barrier Ticks start at 0 and can be gained by casting Barrier or other abilities.
-          You cannot have more Barrier Tick than the amount indicated on your class progression table.
+          You cannot have more Barrier Ticks than the amount indicated on your class progression table.
         p.headline.mt-2 Using Barrier Ticks
         p.
           When you take damage, if you have any Barrier Ticks remaining, remove a Barrier Tick and reduce that dmg by 1d8.
