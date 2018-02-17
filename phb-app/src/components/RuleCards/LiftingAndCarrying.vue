@@ -9,7 +9,7 @@
         dt Carry Capacity
         dd.
           You can carry capacity is your Strength score multiplied by 5. If you are wearing armor, your carry capacity
-          is your Strength score multiplied by 10 (due to the built-in servos and pneumatics). This score is not effected
+          is your Strength score multiplied by 10 (due to the built-in servos and pneumatics). This score is not affected
           by weapons or armor (see below).
         dt Push, Drag, Lift
         dd.
