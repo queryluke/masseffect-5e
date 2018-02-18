@@ -11,7 +11,7 @@ function npcSavingThrows(npc) {
   };
   return npc.savingThrows.map(st => {
     const name = abilityMap[st];
-    let bonus = AbilityScoreBonus.methods.abilityScoreBonus(npc.abilityScores[st]) + npc.profBonus;
+    let bonus = AbilityScoreBonus.methods.abilityScoreBonus(npc.abilityScores[st]) + parseInt(npc.profBonus, 10);
     bonus = bonus > 0 ? bonus : 0;
     return `${name} +${bonus}`;
   }).join(', ');

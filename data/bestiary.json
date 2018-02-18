@@ -1,5 +1,5 @@
 {
-  "updated": "February 18, 2018 @ 12:28 PM",
+  "updated": "February 18, 2018 @ 12:33 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT87AUwt1n514k6a6b4l0kOzGwIphsGXBJLFqujgkCsJ1rdudQ1Bk7Km12DACO5qQ2WGDVI8fT6-Xe/pubhtml",
   "data": [
     {
@@ -47,6 +47,7 @@
       "speed": "10m",
       "dc": "13",
       "ac": "13",
+      "xp": "50",
       "damageResistances": [
 
       ],
@@ -115,6 +116,7 @@
       "speed": "8m",
       "dc": "13",
       "ac": "10",
+      "xp": "100",
       "damageResistances": [
 
       ],
@@ -185,6 +187,7 @@
       "speed": "10m",
       "dc": "14",
       "ac": "14",
+      "xp": "200",
       "damageResistances": [
 
       ],
@@ -257,6 +260,7 @@
       "speed": "14m",
       "dc": "15",
       "ac": "16",
+      "xp": "2300",
       "damageResistances": [
         "bludgeoning",
         "piercing",
@@ -375,6 +379,7 @@
       "speed": "6m",
       "dc": "15",
       "ac": "16",
+      "xp": "3900",
       "damageResistances": [
 
       ],
@@ -449,6 +454,7 @@
       "speed": "14m, burrow 14m, fly 26m",
       "dc": "19",
       "ac": "19",
+      "xp": "20000",
       "damageResistances": [
         "bludgeoning",
         "piercing",
@@ -524,6 +530,7 @@
       "speed": "10m",
       "dc": "15",
       "ac": "12",
+      "xp": "1800",
       "damageResistances": [
 
       ],
@@ -593,6 +600,7 @@
       "speed": "12m",
       "dc": "13",
       "ac": "10",
+      "xp": "10",
       "damageResistances": [
 
       ],
@@ -661,6 +669,7 @@
       "speed": "10m",
       "dc": "13",
       "ac": "11",
+      "xp": "25",
       "damageResistances": [
 
       ],
@@ -735,6 +744,7 @@
       "speed": "10m, fly 6m",
       "dc": "15",
       "ac": "15",
+      "xp": "1100",
       "damageResistances": [
 
       ],
@@ -809,6 +819,7 @@
       "speed": "10m, fly 6m",
       "dc": "14",
       "ac": "15",
+      "xp": "200",
       "damageResistances": [
 
       ],
@@ -879,6 +890,7 @@
       "speed": "10m, fly 6m",
       "dc": "13",
       "ac": "13",
+      "xp": "100",
       "damageResistances": [
 
       ],
@@ -947,6 +959,7 @@
       "speed": "10m, fly 6m",
       "dc": "14",
       "ac": "14",
+      "xp": "450",
       "damageResistances": [
 
       ],
@@ -1015,6 +1028,7 @@
       "speed": "10m, fly 6m",
       "dc": "14",
       "ac": "16",
+      "xp": "700",
       "damageResistances": [
 
       ],
@@ -1085,6 +1099,7 @@
       "speed": "10m, fly 10m",
       "dc": "18",
       "ac": "20",
+      "xp": "8400",
       "damageResistances": [
         "bludgeoning",
         "piercing",
@@ -1162,6 +1177,7 @@
       "speed": "8m",
       "dc": "16",
       "ac": "18",
+      "xp": "2900",
       "damageResistances": [
         "bludgeoning",
         "piercing",
@@ -1232,6 +1248,7 @@
       "speed": "fly 10m",
       "dc": "13",
       "ac": "13",
+      "xp": "25",
       "damageResistances": [
 
       ],
@@ -1299,6 +1316,7 @@
       "speed": "fly 10m",
       "dc": "13",
       "ac": "13",
+      "xp": "50",
       "damageResistances": [
 
       ],
@@ -1413,6 +1431,7 @@
       "speed": "10m",
       "dc": "16",
       "ac": "16",
+      "xp": "5900",
       "damageResistances": [
 
       ],
