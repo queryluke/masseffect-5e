@@ -69,7 +69,7 @@ def config_races(model)
 end
 
 def configure_monster(model)
-  keep = %w(name image cr size type unit alignment profBonus barrier)
+  keep = %w(name image cr size type unit alignment profBonus barrier speed)
   to_array = %w(damageResistances damageImmunities conditionImmunities damageVulnerabilities featuresActionsReactions savingThrows senses skills)
   monster = {
       actions: [],

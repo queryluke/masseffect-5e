@@ -1,18 +1,20 @@
 import abilityBonus from './abilityBonus';
 import article from './article';
-import dc from './dc';
 import featureTitle from './featureTitle';
 import npcDamage from './npcDamage';
+import npcDc from './npcDc';
 import npcName from './npcName';
+import npcSavingThrows from './npcSavingThrows';
 import ordinal from './ordinal';
 
 const customFilters = {
   abilityBonus,
   article,
-  dc,
   featureTitle,
   npcDamage,
+  npcDc,
   npcName,
+  npcSavingThrows,
   ordinal
 };
 

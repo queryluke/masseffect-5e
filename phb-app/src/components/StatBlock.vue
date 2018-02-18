@@ -19,7 +19,7 @@
             p.ma-0 {{ score }} ({{ score | abilityBonus }})
       div.hr
       ul.list-unstyled
-        li(v-if="savingThrows") #[strong Saving Throws] {{ savingThrows }}
+        li(v-if="hasFeature('savingThrows')") #[strong Saving Throws] {{ stats | npcSavingThrows }}
         li(v-if="skills") #[strong Skills] {{ skills }}
         li(v-if="hasFeature('damageVulnerabilities')") #[strong Damage Vulnerabilities] {{ stats.damageVulnerabilities.join(', ') }}
         li(v-if="hasFeature('damageResistances')") #[strong Damage Resistances] {{ stats.damageResistances.join(', ') }}
@@ -63,18 +63,6 @@
 
   export default {
     name: 'StatBlock',
-    data() {
-      return {
-        abilityMap: {
-          str: 'Strength',
-          dex: 'Dexterity',
-          con: 'Constitution',
-          int: 'Intelligence',
-          wis: 'Wisdom',
-          cha: 'Charisma',
-        }
-      };
-    },
     mixins: [
       AbilityScoreBonus,
       DieFromAverage,
@@ -94,19 +82,10 @@
         }
       },
       hasFeature(feature) {
-        console.log(feature);
         return this.stats[feature] && this.stats[feature].length > 0;
       }
     },
     computed: {
-      savingThrows() {
-        if (this.stats.savingThrows && this.stats.savingThrows.length > 0) {
-          return this.stats.savingThrows.map(st => {
-            return `${st.name} +${st.bonus}`;
-          }).join(', ');
-        }
-        return false;
-      },
       skills() {
         if (this.stats.skills && this.stats.skills.length){
           return this.stats.skills.map(skill => {

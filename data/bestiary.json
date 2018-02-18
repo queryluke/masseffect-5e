@@ -1,5 +1,5 @@
 {
-  "updated": "February 17, 2018 @  5:41 PM",
+  "updated": "February 18, 2018 @ 11:04 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT87AUwt1n514k6a6b4l0kOzGwIphsGXBJLFqujgkCsJ1rdudQ1Bk7Km12DACO5qQ2WGDVI8fT6-Xe/pubhtml",
   "data": [
     {
@@ -44,6 +44,7 @@
       "alignment": "Lawful evil",
       "profBonus": "2",
       "barrier": null,
+      "speed": "10m",
       "damageResistances": [
 
       ],
@@ -109,6 +110,7 @@
       "alignment": "Lawful evil",
       "profBonus": "2",
       "barrier": null,
+      "speed": "8m",
       "damageResistances": [
 
       ],
@@ -176,6 +178,7 @@
       "alignment": "Lawful evil",
       "profBonus": "2",
       "barrier": null,
+      "speed": "10m",
       "damageResistances": [
 
       ],
@@ -245,6 +248,7 @@
       "alignment": "Lawful evil",
       "profBonus": "3",
       "barrier": null,
+      "speed": "14m",
       "damageResistances": [
         "bludgeoning",
         "piercing",
@@ -360,6 +364,7 @@
       "alignment": "Lawful evil",
       "profBonus": "3",
       "barrier": "10",
+      "speed": "6m",
       "damageResistances": [
 
       ],
@@ -431,6 +436,7 @@
       "alignment": "Lawful evil",
       "profBonus": "6",
       "barrier": null,
+      "speed": "14m, burrow 14m, fly 26m",
       "damageResistances": [
         "bludgeoning",
         "piercing",
@@ -503,6 +509,7 @@
       "alignment": "Lawful evil",
       "profBonus": "3",
       "barrier": null,
+      "speed": "10m",
       "damageResistances": [
 
       ],
@@ -569,6 +576,7 @@
       "alignment": "Lawful evil",
       "profBonus": "2",
       "barrier": null,
+      "speed": "12m",
       "damageResistances": [
 
       ],
@@ -634,6 +642,7 @@
       "alignment": "Lawful evil",
       "profBonus": "2",
       "barrier": null,
+      "speed": "10m",
       "damageResistances": [
 
       ],
@@ -705,6 +714,7 @@
       "alignment": "Lawful evil",
       "profBonus": "2",
       "barrier": "6",
+      "speed": "10m, fly 6m",
       "damageResistances": [
 
       ],
@@ -776,6 +786,7 @@
       "alignment": "Lawful evil",
       "profBonus": "2",
       "barrier": null,
+      "speed": "10m, fly 6m",
       "damageResistances": [
 
       ],
@@ -843,6 +854,7 @@
       "alignment": "Lawful evil",
       "profBonus": "2",
       "barrier": null,
+      "speed": "10m, fly 6m",
       "damageResistances": [
 
       ],
@@ -908,6 +920,7 @@
       "alignment": "Lawful evil",
       "profBonus": "2",
       "barrier": "4",
+      "speed": "10m, fly 6m",
       "damageResistances": [
 
       ],
@@ -973,6 +986,7 @@
       "alignment": "Lawful evil",
       "profBonus": "2",
       "barrier": "5",
+      "speed": "10m, fly 6m",
       "damageResistances": [
 
       ],
@@ -1040,6 +1054,7 @@
       "alignment": "Lawful evil",
       "profBonus": "4",
       "barrier": "10",
+      "speed": "10m, fly 10m",
       "damageResistances": [
         "bludgeoning",
         "piercing",
@@ -1114,6 +1129,7 @@
       "alignment": "Lawful evil",
       "profBonus": "3",
       "barrier": null,
+      "speed": "8m",
       "damageResistances": [
         "bludgeoning",
         "piercing",
@@ -1181,6 +1197,7 @@
       "alignment": "Lawful Evil",
       "profBonus": "2",
       "barrier": null,
+      "speed": "fly 10m",
       "damageResistances": [
 
       ],
@@ -1245,6 +1262,7 @@
       "alignment": "Lawful Evil",
       "profBonus": "2",
       "barrier": "1",
+      "speed": "fly 10m",
       "damageResistances": [
 
       ],
@@ -1356,6 +1374,7 @@
       "alignment": "Lawful Evil",
       "profBonus": "4",
       "barrier": "20",
+      "speed": "10m",
       "damageResistances": [
 
       ],
