@@ -89,11 +89,21 @@
         sortOrder: 1,
         updated: '',
         headers: [
-          {key: 'name', display: 'Name', classes: 'xs9 lg5', sortable: false},
+          {key: 'name', display: 'Name', classes: 'xs9 lg5', sortable: true},
           {key: 'unit', display: 'Faction', classes: 'hidden-md-and-down lg5', sortable: true},
           {key: 'cr', display: 'CR', classes: 'xs3', sortable: true},
         ]
       };
+    },
+    methods: {
+      sortBy (key) {
+        if (this.sortKey === key) {
+          this.sortOrder = this.sortOrder * -1;
+        } else {
+          this.sortKey = key;
+          this.sortOrder = 1;
+        }
+      }
     },
     mixins: [ConfigureMonster],
     name: 'Bestiary'
