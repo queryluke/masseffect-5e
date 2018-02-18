@@ -67,6 +67,7 @@ export const GruntGenerator = {
         damageImmunities: [],
         cr: cr.cr,
         xp: cr.xp,
+        dc: cr.acDc,
         damageResistances: [],
         features: [],
         profBonus: cr.profBonus,

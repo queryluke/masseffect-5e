@@ -28,7 +28,8 @@
         li(v-if="hasFeature('senses')") #[strong Senses] {{ stats.senses.join(', ') }}
         li #[strong Challenge] {{ stats.cr }} ({{ stats.xp }} XP)
       div.hr
-      p(v-for="(feature) in stats.features" v-bind:key="feature.id") #[strong #[em {{ feature | featureTitle }}].] {{ feature.description | npcName(stats.name) }}
+      p(v-for="feature in stats.features" v-bind:key="feature.id")
+        npc-common-feature(:feature="feature" v-bind:npc="stats")
       div(v-if="stats.spellcasting").mb-3
         p.mb-1.
           #[strong #[em Biotics].] The {{ stats.name }} is {{ stats.spellcasting.level | article }} {{ stats.spellcasting.level | ordinal }}-level
@@ -48,20 +49,26 @@
       p.title.underline-heading.small-caps Actions
       div(v-for="(action, index) in stats.actions" v-bind:key="index")
         div(v-if="action.type === 'attack'")
-          p.mb-0 #[strong #[em {{ action.name }}].] #[em {{ action.attackType }} Weapon Attack]: {{ action.description.attack | npcName(stats.name) }}
-          p(:class="[action.description.miss ? 'my-0' : 'mt-0']") #[em Hit]: {{ action.description.hit | npcName(stats.name) }}
-          p(v-if="action.description.miss").mt-0 #[em Miss]: {{ action.description.miss | npcName(stats.name) }}
-        p(v-else-if="action.type === 'common'") #[strong #[em {{ action | featureTitle }}].] {{ action.description | npcName(stats.name) }}
+          npc-attack(:feature="action" v-bind:npc="stats")
+        p(v-else-if="action.type === 'common'")
+          npc-common-feature(:feature="action" v-bind:npc="stats")
       div(v-if="hasFeature('reactions')")
         p.title.underline-heading.small-caps Reactions
-        p(v-for="(reaction, index) in stats.reactions" v-bind:key="reaction.id") #[strong #[em {{ reaction | featureTitle }}].] {{ reaction.description | npcName(stats.name) }}
+        p(v-for="reaction in stats.reactions" v-bind:key="reaction.id")
+          npc-common-feature(:feature="reaction" v-bind:npc="stats")
 </template>
 
 <script>
   import {AbilityScoreBonus} from '../mixins/abilityScoreBonus';
   import {DieFromAverage} from '../mixins/dieFromAverage';
+  import NpcCommonFeature from './NpcFeatures/NpcCommonFeature.vue';
+  import NpcAttack from './NpcFeatures/NpcAttack.vue';
 
   export default {
+    components: {
+      NpcAttack,
+      NpcCommonFeature
+    },
     name: 'StatBlock',
     mixins: [
       AbilityScoreBonus,

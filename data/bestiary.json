@@ -1,5 +1,5 @@
 {
-  "updated": "February 18, 2018 @ 11:04 AM",
+  "updated": "February 18, 2018 @ 12:28 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT87AUwt1n514k6a6b4l0kOzGwIphsGXBJLFqujgkCsJ1rdudQ1Bk7Km12DACO5qQ2WGDVI8fT6-Xe/pubhtml",
   "data": [
     {
@@ -45,6 +45,8 @@
       "profBonus": "2",
       "barrier": null,
       "speed": "10m",
+      "dc": "13",
+      "ac": "13",
       "damageResistances": [
 
       ],
@@ -111,6 +113,8 @@
       "profBonus": "2",
       "barrier": null,
       "speed": "8m",
+      "dc": "13",
+      "ac": "10",
       "damageResistances": [
 
       ],
@@ -179,6 +183,8 @@
       "profBonus": "2",
       "barrier": null,
       "speed": "10m",
+      "dc": "14",
+      "ac": "14",
       "damageResistances": [
 
       ],
@@ -249,6 +255,8 @@
       "profBonus": "3",
       "barrier": null,
       "speed": "14m",
+      "dc": "15",
+      "ac": "16",
       "damageResistances": [
         "bludgeoning",
         "piercing",
@@ -365,6 +373,8 @@
       "profBonus": "3",
       "barrier": "10",
       "speed": "6m",
+      "dc": "15",
+      "ac": "16",
       "damageResistances": [
 
       ],
@@ -437,6 +447,8 @@
       "profBonus": "6",
       "barrier": null,
       "speed": "14m, burrow 14m, fly 26m",
+      "dc": "19",
+      "ac": "19",
       "damageResistances": [
         "bludgeoning",
         "piercing",
@@ -510,6 +522,8 @@
       "profBonus": "3",
       "barrier": null,
       "speed": "10m",
+      "dc": "15",
+      "ac": "12",
       "damageResistances": [
 
       ],
@@ -577,6 +591,8 @@
       "profBonus": "2",
       "barrier": null,
       "speed": "12m",
+      "dc": "13",
+      "ac": "10",
       "damageResistances": [
 
       ],
@@ -643,6 +659,8 @@
       "profBonus": "2",
       "barrier": null,
       "speed": "10m",
+      "dc": "13",
+      "ac": "11",
       "damageResistances": [
 
       ],
@@ -715,6 +733,8 @@
       "profBonus": "2",
       "barrier": "6",
       "speed": "10m, fly 6m",
+      "dc": "15",
+      "ac": "15",
       "damageResistances": [
 
       ],
@@ -787,6 +807,8 @@
       "profBonus": "2",
       "barrier": null,
       "speed": "10m, fly 6m",
+      "dc": "14",
+      "ac": "15",
       "damageResistances": [
 
       ],
@@ -855,6 +877,8 @@
       "profBonus": "2",
       "barrier": null,
       "speed": "10m, fly 6m",
+      "dc": "13",
+      "ac": "13",
       "damageResistances": [
 
       ],
@@ -921,6 +945,8 @@
       "profBonus": "2",
       "barrier": "4",
       "speed": "10m, fly 6m",
+      "dc": "14",
+      "ac": "14",
       "damageResistances": [
 
       ],
@@ -987,6 +1013,8 @@
       "profBonus": "2",
       "barrier": "5",
       "speed": "10m, fly 6m",
+      "dc": "14",
+      "ac": "16",
       "damageResistances": [
 
       ],
@@ -1055,6 +1083,8 @@
       "profBonus": "4",
       "barrier": "10",
       "speed": "10m, fly 10m",
+      "dc": "18",
+      "ac": "20",
       "damageResistances": [
         "bludgeoning",
         "piercing",
@@ -1130,6 +1160,8 @@
       "profBonus": "3",
       "barrier": null,
       "speed": "8m",
+      "dc": "16",
+      "ac": "18",
       "damageResistances": [
         "bludgeoning",
         "piercing",
@@ -1198,6 +1230,8 @@
       "profBonus": "2",
       "barrier": null,
       "speed": "fly 10m",
+      "dc": "13",
+      "ac": "13",
       "damageResistances": [
 
       ],
@@ -1263,6 +1297,8 @@
       "profBonus": "2",
       "barrier": "1",
       "speed": "fly 10m",
+      "dc": "13",
+      "ac": "13",
       "damageResistances": [
 
       ],
@@ -1375,6 +1411,8 @@
       "profBonus": "4",
       "barrier": "20",
       "speed": "10m",
+      "dc": "16",
+      "ac": "16",
       "damageResistances": [
 
       ],

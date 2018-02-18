@@ -27,10 +27,10 @@ export const Features = {
         }
         default: {
           const attackMod = this.abilityScoreBonus(monster.abilityScores[feature.attackMod]);
-          const toHit = attackMod + monster.profBonus;
+          const toHit = attackMod + parseInt(monster.profBonus, 10);
           const reachOrRange = feature.type === 'melee' ? 'reach' : 'range';
           const description = {
-            attack: `${toHit} to hit, ${reachOrRange} ${feature.range}m, ${feature.numberOfTargets}.`,
+            attack: `+${toHit} to hit, ${reachOrRange} ${feature.range}m, ${feature.numberOfTargets}.`,
             hit: feature.description,
             miss: feature.miss
           };

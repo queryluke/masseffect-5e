@@ -1,5 +1,5 @@
 {
-  "updated": "February 18, 2018 @ 10:02 AM",
+  "updated": "February 18, 2018 @ 12:28 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT87AUwt1n514k6a6b4l0kOzGwIphsGXBJLFqujgkCsJ1rdudQ1Bk7Km12DACO5qQ2WGDVI8fT6-Xe/pubhtml",
   "data": [
     {
@@ -1096,7 +1096,7 @@
       "attackMod": null,
       "range": null,
       "numberOfTargets": null,
-      "description": "When the [name] dies, it explodes in a burst of necrotic energy. Each creature within 2m of it must succeed on a DC [dc] Dexterity saving throw, taking 7 (2d6) necrotic damage on a failed save, or half as much damage on a successful one. A creature that is grappled by the [name] automatically fails it's saving throw.",
+      "description": "When the [name] dies, it explodes in a burst of necrotic energy. Each creature within 2m of it must succeed on a DC [dc] Dexterity saving throw, taking 7 (2d6) necrotic damage on a failed save, or half as much damage on a successful one. A creature that is grappled by the [name] automatically fails its saving throw.",
       "miss": null,
       "asari": null,
       "batarian": null,
@@ -1592,7 +1592,7 @@
       "attackMod": "str",
       "range": "2",
       "numberOfTargets": "one target",
-      "description": "The creature is grappled (escape DC [dc]). At the start of the [name]'s next turn, it kills itself, activating it's Post-Mortem Explosion.",
+      "description": "The creature is grappled (escape DC [dc-str]). At the start of the [name]'s next turn, it kills itself, activating it's Post-Mortem Explosion.",
       "miss": null,
       "asari": null,
       "batarian": null,
