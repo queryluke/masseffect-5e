@@ -28,26 +28,16 @@ export const Features = {
     },
     addFeature(config, grunt, feature) {
       const crMetaLevel = Math.ceil(parseFloat(config.cr.cr) / 4);
-      switch (feature.id) {
-        case 'mind_meld': {
-          feature.description = feature.description.replace(/{dc}/g, config.cr.acDc);
-          break;
-        }
-        case 'relentless': {
-          feature.crEffect *= crMetaLevel;
-          break;
-        }
-        default: {
-          if (/{dmg}/.test(feature.description)) {
-            const dmgArray = feature.crEffect.split('d');
-            const numDie = parseInt(dmgArray[0], 10) * crMetaLevel;
-            const avgDamage = Math.floor(((parseInt(dmgArray[1], 10) + 1) / 2) * numDie);
-            feature.crEffect = avgDamage;
-            const dmgDisplay = `${avgDamage} (${numDie}d${dmgArray[1]})`;
-            feature.description = feature.description.replace(/{dmg}/g, dmgDisplay);
-          }
-          break;
-        }
+      if (feature.id === 'relentless') {
+        feature.crEffect *= crMetaLevel;
+      }
+      if (/\[dmg]/.test(feature.description)) {
+        const dmgArray = feature.crEffect.split('d');
+        const numDie = parseInt(dmgArray[0], 10) * crMetaLevel;
+        const avgDamage = Math.floor(((parseInt(dmgArray[1], 10) + 1) / 2) * numDie);
+        feature.crEffect = avgDamage;
+        const dmgDisplay = `${avgDamage} (${numDie}d${dmgArray[1]})`;
+        feature.description = feature.description.replace(/\[dmg]/g, dmgDisplay);
       }
 
       switch (feature.type) {

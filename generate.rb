@@ -68,6 +68,77 @@ def config_races(model)
   model
 end
 
+def configure_monster(model)
+  keep = %w(name image cr size type unit alignment profBonus barrier)
+  to_array = %w(damageResistances damageImmunities conditionImmunities damageVulnerabilities featuresActionsReactions savingThrows senses skills)
+  monster = {
+      actions: [],
+      reactions: [],
+      features: [],
+      spellcasting: false,
+      techcasting: false,
+  }
+  monster['abilityScores'] = {
+      str: model['str'].to_i,
+      dex: model['dex'].to_i,
+      con: model['con'].to_i,
+      int: model['int'].to_i,
+      wis: model['wis'].to_i,
+      cha: model['cha'].to_i
+  }
+  monster['hp'] = {
+      die: model['hpDieType'],
+      average: model['avgHp'],
+      numDice: model['hpDieAmount'],
+  }
+  monster['hp']['mod'] = 0
+  monster['hp']['mod'] = ((model['con'].to_i - 10) / 2).floor * model['hpDieAmount'].to_i if model['con'].to_i > 11
+  monster['hp']['mod'] = ((model['con'].to_i - 10) / 2).ceil * model['hpDieAmount'].to_i if model['con'].to_i < 10
+  monster['sp'] = {
+      shields: model['shields'].nil? ? 0 : model['shields'].to_i,
+      regen: model['regen']
+  }
+  unless model['spellcasting'].nil?
+    wisMod = ((model['wis'].to_i - 10) / 2).floor
+    monster['spellcasting'] = {
+      level: model['spellcasting'],
+      dc: 8 + model['profBonus'].to_i + wisMod,
+      hit: model['profBonus'].to_i + wisMod,
+      spellList: model['spells'].to_s.split(',').collect{ |x| x.strip },
+      spells: model['slots'].split(',').collect do |x|
+        parts = x.split('-')
+        {
+            level: parts[0],
+            slots: parts[1],
+            spells: []
+        }
+      end
+    }
+    monster['spellcasting'][:spells].unshift({level: 'cantrip', spells: []})
+  end
+
+  unless model['techcasting'].nil?
+    intMod = ((model['int'].to_i - 10) / 2).floor
+    monster['techcasting'] = {
+        perDay: model['techPerDay'],
+        tpSpent: model['techMax'],
+        dc: 8 + model['profBonus'].to_i + intMod,
+        hit: model['profBonus'].to_i + intMod,
+        spells: model.techPowers.split(',')
+    }
+  end
+  monster[:actions] << {
+      type: 'common',
+      name: 'Multiattack',
+      description: model['multiattack']
+  } unless model['multiattack'].nil?
+  monster['senses'] = model['senses'].to_s.split(',')
+  monster['senses'].unshift("passive Perception #{model['pp']}")
+  keep.each { |key| monster[key] = model[key]}
+  to_array.each { |key| monster[key] = model[key].to_s.split(',').collect{ |x| x.strip }}
+  monster
+end
+
 def insert_dd(string, die)
   if string && die
     string.gsub(/\[dd\]/,die.to_s)
@@ -265,6 +336,9 @@ def generate_config_file(page)
               end
             end
           end
+        when 'bestiary'
+          next if dup_model['image'].nil?
+          dup_model = configure_monster(dup_model)
         else
           dup_model = dup_model
       end
@@ -410,7 +484,14 @@ end
   },
   {
     type: 'monster_features',
-    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSSrod77DR2Bb7ihadl83Zar27uWkqeb6lMUo_quIHZr9CqBH3Vcx3TOK3wRzhk7Zhl3RB_av72vvo1/pub?gid=0&single=true&output=csv',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQT87AUwt1n514k6a6b4l0kOzGwIphsGXBJLFqujgkCsJ1rdudQ1Bk7Km12DACO5qQ2WGDVI8fT6-Xe/pub?gid=1564226847&single=true&output=csv',
+    renderables: [],
+    id: 'name',
+    camel: true
+  },
+  {
+    type: 'bestiary',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQT87AUwt1n514k6a6b4l0kOzGwIphsGXBJLFqujgkCsJ1rdudQ1Bk7Km12DACO5qQ2WGDVI8fT6-Xe/pub?gid=0&single=true&output=csv',
     renderables: [],
     id: 'name',
     camel: true
