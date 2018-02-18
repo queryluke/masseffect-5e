@@ -1,7 +1,7 @@
 import {AbilityScoreBonus} from '../mixins/abilityScoreBonus';
 
 function npcDc(input, npc) {
-  return input.replace(/\[dc(.*)]/, match => {
+  return input.replace(/\[dc(.*)]/g, match => {
     let dcType = match.split('-')[1];
     if (dcType) {
       dcType = dcType.slice(0, -1);
