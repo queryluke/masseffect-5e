@@ -73,7 +73,7 @@
       let getSpells = this.$http.get('../data/spells.json').then(response => response.json());
       Promise.all([getMonsters, getFeatures, getSpells]).then(response => {
         const features = response[1].data;
-        const spells = response[2].data.filter(spell => spell.type === 'biotic');
+        const spells = response[2].data;
         const monsters = this.configureMonsters(response[0].data, features, spells);
         this.monsters = monsters.sort((a, b) => a.name > b.name ? 1 : -1);
         this.updated = response[0].updated;
