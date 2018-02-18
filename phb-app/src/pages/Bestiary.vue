@@ -71,10 +71,12 @@
       let getMonsters = this.$http.get('../data/bestiary.json').then(response => response.json());
       let getFeatures = this.$http.get('../data/monster_features.json').then(response => response.json());
       let getSpells = this.$http.get('../data/spells.json').then(response => response.json());
-      Promise.all([getMonsters, getFeatures, getSpells]).then(response => {
+      let getSkills = this.$http.get('../data/skills.json').then(response => response.json());
+      Promise.all([getMonsters, getFeatures, getSpells, getSkills]).then(response => {
         const features = response[1].data;
         const spells = response[2].data;
-        const monsters = this.configureMonsters(response[0].data, features, spells);
+        const skills = response[3].data;
+        const monsters = this.configureMonsters(response[0].data, features, spells, skills);
         this.monsters = monsters.sort((a, b) => a.name > b.name ? 1 : -1);
         this.updated = response[0].updated;
         this.source = response[0].source;
