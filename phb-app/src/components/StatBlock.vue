@@ -10,6 +10,7 @@
         li #[strong Armor Class] {{ stats.ac }}
         li #[strong Hit Points] {{ renderPoints(stats.hp) }}
         li #[strong Shield Points] {{ renderPoints(stats.sp) }}
+        li(v-if="stats.barrier") #[strong Barrier] {{ stats.barrier }} {{ stats.barrier | pluralize('tick') }}
         li #[strong Speed] {{ stats.speed }}
       div.hr
       v-container.py-0
@@ -46,7 +47,7 @@
           {{ stats.techcasting.tpSpent }} tech {{ stats.techcasting.tpSpent | pluralize('point') }}. Its tech ability is Intelligence (spell save DC {{ stats.techcasting.dc }},
           +{{ stats.techcasting.hit }} to hit with tech attacks).
         p.my-0 Known tech powers: #[em {{ stats.techcasting.spells.map(spell => spell.name).join(', ') }}]
-      p.title.underline-heading.small-caps Actions
+      p(v-if="hasFeature('actions')").title.underline-heading.small-caps Actions
       div(v-for="(action, index) in stats.actions" v-bind:key="index")
         div(v-if="action.type === 'attack'")
           npc-attack(:feature="action" v-bind:npc="stats")
