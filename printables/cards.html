@@ -14,12 +14,26 @@ title: Cards for Print
             {% if spell.effect != blank %} {{spell.effect | join: ", "}} {% endif %}
             {% if spell.dmg-type != blank %}&bull; {{spell.damage_type | join: ", "}} {% endif %}
         </h2>
-        {% if spell.casting_time != null %} <h3>Casting Time: {{spell.casting_time}}</h3> {% endif %}
-        {% if spell.duration != null %} <h3>Duration: {{spell.duration}}</h3> {% endif %}
-        {% if spell.range != null %} <h3>Range: {{spell.range}}</h3> {% endif %}
+        <table>
+            <tr>
+                <th>Casting Time</th>
+                <th>Duration</th>
+                <th>Range</th>
+                <th>Concentration</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ spell.casting_time }}</td>
+                <td>{{ spell.duration }}</td>
+                <td>{{ spell.range }}</td>
+                <td>{% if spell.concentration %}&#x2714;{% endif %}</td>
+            </tr>
+            </tbody>
+        </table>
+
         {% if spell.detonates != null %} <h3>Detonates</h3> {% endif %}
         {% if spell.primes != null %} <h3>Primes</h3> {% endif %}
-        {% if spell.concentration != null %} <h3>Concentration</h3> {% endif %}
 
         {% for mechanic in spell.mechanic %}
 
