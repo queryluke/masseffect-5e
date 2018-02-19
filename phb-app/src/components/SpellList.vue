@@ -22,8 +22,7 @@
       v-card
         v-card-text.grey.lighten-3
           spell-info(:spell="spell").mt-2
-          v-btn(small primary dark :to="`/spells/${spell.id}`") Spell Page
-
+          bookmark-button(:card="spell" type="spell")
 </template>
 
 <script>
@@ -32,10 +31,11 @@
   import SpellRangeArea from "./SpellRangeArea.vue";
   import SpellDamageEffect from "./SpellDamageEffect.vue";
   import SpellInfo from "./SpellInfo.vue";
+  import BookmarkButton from "./BookmarkButton.vue";
 
   export default {
     components: {
-      SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect, SpellInfo
+      SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect, SpellInfo, BookmarkButton
     },
     name: 'SpellList',
     props: ['spells'],

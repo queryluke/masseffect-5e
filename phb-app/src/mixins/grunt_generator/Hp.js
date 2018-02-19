@@ -65,6 +65,7 @@ export const Hp = {
         max = numDice * maxRoll * multiplicativeMod;
       }
       return {
+        die: maxRoll,
         avgRoll,
         average: Math.floor(average),
         numDice,

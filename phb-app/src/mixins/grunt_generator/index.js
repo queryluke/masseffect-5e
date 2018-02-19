@@ -10,7 +10,6 @@ import {Hp} from './Hp';
 import {Features} from './Features';
 import {Name} from './Name';
 import {NumberRange} from '../numberRange';
-import {Ordinal} from '../ordinal';
 import {RandomValue} from '../randomValue';
 import {SavingThrows} from './SavingThrows';
 import {Senses} from './Senses';
@@ -34,7 +33,6 @@ export const GruntGenerator = {
     Features,
     Name,
     NumberRange,
-    Ordinal,
     RandomValue,
     SavingThrows,
     Senses,
@@ -65,7 +63,11 @@ export const GruntGenerator = {
         actions: [],
         alignment: 'any alignment',
         conditionImmunities: [],
-        cr: `${cr.cr} (${cr.xp} XP)`,
+        damageVulnerabilities: [],
+        damageImmunities: [],
+        cr: cr.cr,
+        xp: cr.xp,
+        dc: cr.acDc,
         damageResistances: [],
         features: [],
         profBonus: cr.profBonus,

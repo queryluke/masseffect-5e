@@ -1,5 +1,5 @@
 {
-  "updated": "January  6, 2018 @ 11:40 PM",
+  "updated": "January 18, 2018 @ 11:55 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRETKGL62kEZPA69PhA3AGMiVeHOWBRkTMDL3f_K-oajryEjwdq7fRAj-qfIusPsLMiIqmB12D4Zun8/pubhtml",
   "data": [
     {
@@ -80,7 +80,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You know one cantrip of your choice from the adept or vanguard spell list. Wisdom is your spellcasting modifier for it."
+          "data": "You know one cantrip of your choice from the adept or vanguard spell list. Wisdom is your spellcasting modifier for it. This does not count against your max number of cantrips known."
         }
       ],
       "asari": "x",
@@ -96,7 +96,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "id": "cantrip",
-      "description_text_dump": "YouknowonecantripofyourchoicefromtheadeptorvanguardspelllistWisdomisyourspellcastingmodifierforit"
+      "description_text_dump": "YouknowonecantripofyourchoicefromtheadeptorvanguardspelllistWisdomisyourspellcastingmodifierforitThisdoesnotcountagainstyourmaxnumberofcantripsknown"
     },
     {
       "name": "Composite Plating",
@@ -243,7 +243,7 @@
       "description_text_dump": "WhenyoudamageacreaturewithanattackoraspellandthecreaturessizeislargerthanyoursyoucancausetheattackorspelltodealextradamagetothecreatureTheextradamageequalsyourlevelOnceyouusethistraityoucantuseitagainuntilyoufinishashortorlongrest"
     },
     {
-      "name": "Halucinogen",
+      "name": "Hallucinogen",
       "description": [
         {
           "id": 1,
@@ -263,7 +263,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
-      "id": "halucinogen",
+      "id": "hallucinogen",
       "description_text_dump": "YouskinisinfusedwithamildvenomWheningestedorinjecteditcancausemildhallucinations"
     },
     {
