@@ -11,7 +11,6 @@
     h3.display-2.mb-2 Rule Additions
     div(v-for="(ruleAddition, ruleAdditionIndex) in rules.additions")
       component(v-bind:is="ruleAddition")
-
 </template>
 
 <script>
