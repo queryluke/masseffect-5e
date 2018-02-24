@@ -16,7 +16,6 @@
     div.hr
     p.headline Starting Weapons
     ul.list-unstyled
-      li #[strong Omni-tool:] {{ item.omni_tool }} - {{ item.omni_tool_description }}
       li #[strong Ranged Weapon] {{ item.starting_weapon }}
 </template>
 

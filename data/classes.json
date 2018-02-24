@@ -1,11 +1,9 @@
 {
-  "updated": "January 18, 2018 @ 11:55 AM",
+  "updated": "February 24, 2018 @  5:26 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
       "name": "Adept",
-      "omni_tool": "Biotic Burst",
-      "omni_tool_description": "On a successful melee attack, the target takes force damage equal to 1d6 + your biotic modifier and is pushed backward 4m.",
       "hit_die": "1d4",
       "hit_points": "4 + your Constitution modifier",
       "max_shields": "2",
@@ -24,8 +22,6 @@
     },
     {
       "name": "Engineer",
-      "omni_tool": "Omni-thruster",
-      "omni_tool_description": "On a successful melee attack, the target takes fire damage equal to 1d8 + your tech modifier.",
       "hit_die": "1d4",
       "hit_points": "4 + your Constitution modifier",
       "max_shields": "6",
@@ -44,8 +40,6 @@
     },
     {
       "name": "Infiltrator",
-      "omni_tool": "Omni-taser",
-      "omni_tool_description": "On a successful melee attack, the target takes lightning damage equal to 1d6 + your tech modifier.",
       "hit_die": "1d4",
       "hit_points": "4 + your Constitution modifier",
       "max_shields": "4",
@@ -64,8 +58,6 @@
     },
     {
       "name": "Sentinel",
-      "omni_tool": "Dual omni-blade",
-      "omni_tool_description": "On a successful melee attack, the target takes slashing damage equal to 1d8 + your strength modifier.",
       "hit_die": "1d8",
       "hit_points": "6 + your Constitution modifier",
       "max_shields": "6",
@@ -84,8 +76,6 @@
     },
     {
       "name": "Soldier",
-      "omni_tool": "Omni-blade",
-      "omni_tool_description": "+2 to melee attack rolls. On a successful melee attack, target takes puncture damage equal to 1d10 + your strength modifier.",
       "hit_die": "1d8",
       "hit_points": "8 + your Constitution modifier",
       "max_shields": "4",
@@ -104,8 +94,6 @@
     },
     {
       "name": "Vanguard",
-      "omni_tool": "Biotic Punch",
-      "omni_tool_description": "As an Attack action, dash forward 6m, then make a melee attack. On a success, deal force damage equal to 1d8 + your strength modifier and gain 1 Barrier Tick.",
       "hit_die": "1d6",
       "hit_points": "6 + your Constitution modifier",
       "max_shields": "2",

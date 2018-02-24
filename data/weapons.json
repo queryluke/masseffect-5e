@@ -1,5 +1,5 @@
 {
-  "updated": "January 18, 2018 @ 12:09 PM",
+  "updated": "February 24, 2018 @  5:32 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSq70x_GZuDKcELgX8k_7Hd6nLGu3DoIEdDwP-YEGjUU-ghGc7ot_Q7140FZwGbEalHgzPwVm4BN8y_/pubhtml",
   "data": [
     {
@@ -293,6 +293,54 @@
       "image": "http://vignette2.wikia.nocookie.net/masseffect/images/f/f9/ME3_Hydra_Heavy_Weapon.png/revision/latest?cb=20120317194543",
       "id": "cobra_missile_launcher",
       "notes_text_dump": "Chooseacreaturewithin60mthatyoucanseeandbeginTargetingthatcreatureAtthestartofyourturnifyousuccessfullyheldyourtargetingonthecreatureyoulaunchamissilethatdeals8d12thunderdamage"
+    },
+    {
+      "name": "Collector Assault Rifle",
+      "type": "Assault Rifle",
+      "cost": "30000",
+      "manufacturer": null,
+      "weight": "8",
+      "heat": "3",
+      "rof": "4",
+      "damage": "4",
+      "range": "20m",
+      "rare": "x",
+      "tags": "Two-handed",
+      "notes": [
+
+      ],
+      "npcHit": null,
+      "addDmg": null,
+      "dmgType": "piercing",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/f/f8/ME3_Collector_Assault_Rifle.png/revision/latest/scale-to-width-down/350?cb=20120317180554",
+      "id": "collector_assault_rifle",
+      "notes_text_dump": ""
+    },
+    {
+      "name": "Collector SMG",
+      "type": "SMG",
+      "cost": "41000",
+      "manufacturer": null,
+      "weight": "3",
+      "heat": "6",
+      "rof": "4",
+      "damage": "6",
+      "range": "10m",
+      "rare": "x",
+      "tags": "Two-handed",
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "The Collector SMG does not use thermal clips. Instead use a d6 to track the \"heat\". Every round you fire the weapon, spin down the die 1 face. If you don't fire the weapon, spin the die up 1 face. This represents the weapon internally cooling off. If you ever spin down the die to 0, the weapon jams and cannot be fired again this combat."
+        }
+      ],
+      "npcHit": null,
+      "addDmg": null,
+      "dmgType": "piercing",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/6/68/ME3_Collector_SMG.png/revision/latest/scale-to-width-down/350?cb=20121009204046",
+      "id": "collector_smg",
+      "notes_text_dump": "TheCollectorSMGdoesnotusethermalclipsInsteadusead6totracktheheatEveryroundyoufiretheweaponspindownthedie1faceIfyoudontfiretheweaponspinthedieup1faceThisrepresentstheweaponinternallycoolingoffIfyoueverspindownthedieto0theweaponjamsandcannotbefiredagainthiscombat"
     },
     {
       "name": "Disciple",
@@ -1091,7 +1139,7 @@
       "cost": "21000",
       "manufacturer": "Hahne-Kedar",
       "weight": "2",
-      "heat": "4",
+      "heat": "8",
       "rof": "4",
       "damage": "6",
       "range": "20m",
@@ -1101,7 +1149,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Somewhat of a relic and hard to come by, the M-7 does not use thermal clips. Instead use a d4 to track the \"heat\". Every round you fire the weapon, spin down the die 1 face. If you don't fire the weapon, spin the die up one face. This represents the weapon internally cooling off. If you fire the weapon four times in a row, it jams and cannot be used for the rest of this combat."
+          "data": "Somewhat of a relic and hard to come by, the M-7 does not use thermal clips. Instead use a d8 to track the \"heat\". Every round you fire the weapon, spin down the die 1 face. If you don't fire the weapon, spin the die up 2 faces. This represents the weapon internally cooling off. If you ever spin down the die to 0, the weapon jams and cannot be fired again this combat."
         }
       ],
       "npcHit": null,
@@ -1109,7 +1157,7 @@
       "dmgType": "piercing",
       "image": "http://vignette4.wikia.nocookie.net/masseffect/images/c/c6/ME3_Lancer_AS.png/revision/latest?cb=20130227094559",
       "id": "m-7_lancer",
-      "notes_text_dump": "SomewhatofarelicandhardtocomebytheM7doesnotusethermalclipsInsteadusead4totracktheheatEveryroundyoufiretheweaponspindownthedie1faceIfyoudontfiretheweaponspinthedieuponefaceThisrepresentstheweaponinternallycoolingoffIfyoufiretheweaponfourtimesinarowitjamsandcannotbeusedfortherestofthiscombat"
+      "notes_text_dump": "SomewhatofarelicandhardtocomebytheM7doesnotusethermalclipsInsteadusead8totracktheheatEveryroundyoufiretheweaponspindownthedie1faceIfyoudontfiretheweaponspinthedieup2facesThisrepresentstheweaponinternallycoolingoffIfyoueverspindownthedieto0theweaponjamsandcannotbefiredagainthiscombat"
     },
     {
       "name": "M-76 Revenant",
@@ -1550,6 +1598,28 @@
       "notes_text_dump": "1toattackrolls"
     },
     {
+      "name": "Omni-Blade",
+      "type": "Melee",
+      "cost": "3500",
+      "manufacturer": null,
+      "weight": "1",
+      "heat": "6",
+      "rof": "1",
+      "damage": "6",
+      "range": "2m",
+      "rare": null,
+      "tags": "Light, Finesse",
+      "notes": [
+
+      ],
+      "npcHit": null,
+      "addDmg": null,
+      "dmgType": "slashing",
+      "image": null,
+      "id": "omni-blade",
+      "notes_text_dump": ""
+    },
+    {
       "name": "Omni-Whip",
       "type": "Melee",
       "cost": "4500",
@@ -1570,6 +1640,32 @@
       "image": null,
       "id": "omni-whip",
       "notes_text_dump": ""
+    },
+    {
+      "name": "Particle Rifle",
+      "type": "Assault Rifle",
+      "cost": "42000",
+      "manufacturer": null,
+      "weight": "6",
+      "heat": "4",
+      "rof": "6",
+      "damage": "4",
+      "range": "10m",
+      "rare": "x",
+      "tags": "Two-handed",
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "The Particle Rifle does not use thermal clips. Instead use a d4 to track the \"heat\". Every round you fire the weapon, spin down the die 1 face. If you don't fire the weapon, spin the die up 1 face. This represents the weapon internally cooling off. If you ever spin down the die to 0, the weapon jams and cannot be fired again this combat."
+        }
+      ],
+      "npcHit": null,
+      "addDmg": null,
+      "dmgType": "radiant",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/6/61/ME3_Particle_Assault_Rifle.png/revision/latest/scale-to-width-down/350?cb=20120317181936",
+      "id": "particle_rifle",
+      "notes_text_dump": "TheParticleRifledoesnotusethermalclipsInsteadusead4totracktheheatEveryroundyoufiretheweaponspindownthedie1faceIfyoudontfiretheweaponspinthedieup1faceThisrepresentstheweaponinternallycoolingoffIfyoueverspindownthedieto0theweaponjamsandcannotbefiredagainthiscombat"
     },
     {
       "name": "Phaeston",
@@ -1818,6 +1914,28 @@
       "image": "http://vignette1.wikia.nocookie.net/masseffect/images/7/76/ME3_Venom_Shotgun.png/revision/latest?cb=20121029075317",
       "id": "venom_shotgun",
       "notes_text_dump": "DealsthunderdamageInsteadofmakingarangedweaponattacktargetcreaturemakesaDexteritysavingthrowDC13Onasuccessfulsaveittakeshalfasmuchdamage"
+    },
+    {
+      "name": "Monomolecular Blade",
+      "type": "Melee",
+      "cost": null,
+      "manufacturer": null,
+      "weight": "2",
+      "heat": "8",
+      "rof": "1",
+      "damage": "8",
+      "range": "2m",
+      "rare": null,
+      "tags": "Versatile (1d10)",
+      "notes": [
+
+      ],
+      "npcHit": null,
+      "addDmg": null,
+      "dmgType": "slashing",
+      "image": null,
+      "id": "monomolecular_blade",
+      "notes_text_dump": ""
     }
   ]
 }
