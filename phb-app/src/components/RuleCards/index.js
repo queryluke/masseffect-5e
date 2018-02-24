@@ -19,6 +19,7 @@ import LiftingAndCarrying from './LiftingAndCarrying.vue';
 import MediGel from './MediGel.vue';
 import MeleeWeapons from './MeleeWeapons.vue';
 import ParagonAndRenegade from './ParagonAndRenegade.vue';
+import PrimersAndDetonators from './PrimersAndDetonators.vue';
 import Reloading from './Reloading.vue';
 import SexyLevel from './SexyLevel.vue';
 import Shields from './Shields.vue';
@@ -53,6 +54,7 @@ export default {
   MediGel,
   MeleeWeapons,
   ParagonAndRenegade,
+  PrimersAndDetonators,
   Reloading,
   SexyLevel,
   Shields,

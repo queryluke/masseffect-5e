@@ -32,5 +32,8 @@ export default new Vue({
   el: '#root',
   router,
   store,
-  render: h => h('router-view')
+  render: h => h('router-view'),
+  created() {
+    this.$store.dispatch('setTooltips');
+  }
 });

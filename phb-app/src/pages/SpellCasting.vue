@@ -20,7 +20,8 @@
           'biotics',
           'tech-powers',
           'combat-powers',
-          'spell-save-dc'
+          'spell-save-dc',
+          'primers-and-detonators',
         ]
       };
     }

@@ -1,5 +1,29 @@
 # CHANGE LOG
 
+## v0.5.5
+Shield mechanic refactor.
+
+### Site Enhancements
+* Rule dialogs added for quick reference.
+* Tooltips added for conditions
+* Special thermal clips added as possible npc feature in the grunt generator.
+* Spell cards added to printables section
+* Bookmarks allow you to save spells, weapons, and npcs for quick reference
+
+### Rule Changes
+* Reloading updated. Players may attempt to reload as a bonus action.
+* Shields
+  * Flat temporary HP that no longer increase with level
+  * Gained from armor and items, not inherent to the player character
+  * Regenerate fully on a short/long rest
+  * Regenerate in combat if the player takes the Dodge or Hide action then takes no damage until the start of the player's next turn.
+* Primer and Detonator rules added as variant rule.
+
+### Thermal Clips
+* New thermal clips added.
+* Thermal clip mechanics changed to account for addition of primer and detonators.
+
+
 ## v0.4.2
 Some minor rule changes and clean-up based on a play test 1/13/18
 

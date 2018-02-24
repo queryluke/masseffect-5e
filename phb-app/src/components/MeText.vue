@@ -10,10 +10,22 @@
     render(createElement) {
       const renderArray = this.text.split(/(?={)(.*?})/g).map(text => {
         if (text.charAt(0) === '{' && text.substring(text.length - 1) === '}') {
-          const id = text.replace(/[{|}]/g,'');
+          let id = text.replace(/[{|}]/g,'');
+          let display = id;
+          if (/prime/gi.test(text)) {
+            id = 'primed';
+            const textArray = text.replace(/[{|}]/g,'').split('-');
+            display = `${textArray[0]} (${textArray[1]})`;
+          }
+
           const tooltip = this.tooltips.find((tt) => {
             return tt.id === id;
           });
+
+          if (tooltip === undefined) {
+            return text;
+          }
+
           return createElement(
             'v-tooltip',
             {
@@ -22,7 +34,7 @@
               },
             },
             [
-              createElement('span', {slot: 'activator', attrs: {class: 'primary--text'}}, id),
+              createElement('span', {slot: 'activator', attrs: {class: 'primary--text'}}, display),
               createElement('span', tooltip.mechanic)
             ]
           );

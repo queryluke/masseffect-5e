@@ -1,5 +1,5 @@
 {
-  "updated": "February 23, 2018 @ 10:30 PM",
+  "updated": "February 24, 2018 @  2:02 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRxNdrcVHvbqyeRuxHkMt2e8GYD92gMn5pTnxNI_1I3s1xC1nACWAgiSimFsgc3GIrcRfhYljjMymyJ/pubhtml",
   "data": [
     {
@@ -24,7 +24,7 @@
     },
     {
       "name": "Frozen",
-      "mechanic": "Incapacitated. Attack rolls against the creature have advantage. Automatically Dexterity saving throws. Unless otherwise stated, lasts 1 turn.",
+      "mechanic": "Incapacitated. Attack rolls against the creature have advantage. Automatically fails Dexterity saving throws.",
       "id": "frozen"
     },
     {
@@ -44,7 +44,7 @@
     },
     {
       "name": "Lifted",
-      "mechanic": "Restrained. A lifted target has no mass, lifted into the air by a temporary mass effect field. Thus, a lifted creature can be pushed, pulled, or otherwise manipulated for varying results.",
+      "mechanic": "Restrained. Primed (force). A detonating attack ends the lifted condition. A lifted target has no mass and is dangled in the air by a temporary mass effect field. Thus, a lifted creature can be pushed, pulled, or otherwise manipulated for varying results.",
       "id": "lifted"
     },
     {
@@ -61,6 +61,11 @@
       "name": "Poisoned",
       "mechanic": "Disadvantage on attack rolls and ability checks.",
       "id": "poisoned"
+    },
+    {
+      "name": "Primed",
+      "mechanic": "Subject to a detonating attack or spell, triggering a powerful effect. Creatures can be primed with one of the following damage types: Force, Necrotic, Fire, Cold, or Lightning. The resulting effect is dependant on the priming damage type. See Spellcasting Rules for more information.",
+      "id": "primed"
     },
     {
       "name": "Prone",

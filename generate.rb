@@ -362,7 +362,7 @@ end
 [
   {
     type: 'spells',
-    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSJCBzka3M8w7NvjB7HmV4BmwVcX7wyzFHg8K9YUTZvB8Tdl6_t_FLhQw6EIjm3eEyduIlLxxNwcweq/pub?gid=0&single=true&output=csv',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pub?gid=0&single=true&output=csv',
     renderables: ['mechanic'],
     id: 'name'
   },

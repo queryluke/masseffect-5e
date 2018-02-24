@@ -1,6 +1,6 @@
 {
-  "updated": "January 18, 2018 @ 12:24 PM",
-  "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSJCBzka3M8w7NvjB7HmV4BmwVcX7wyzFHg8K9YUTZvB8Tdl6_t_FLhQw6EIjm3eEyduIlLxxNwcweq/pubhtml",
+  "updated": "February 24, 2018 @  2:02 PM",
+  "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
       "name": "Alter Center Mass",
@@ -70,6 +70,11 @@
         {
           "id": 3,
           "type": "line",
+          "data": "Any creature within the sphere is {primed-necrotic}. This condition ends immediately if the creature leaves the sphere."
+        },
+        {
+          "id": 4,
+          "type": "line",
           "data": "At higher levels: When you cast this spell using a spell slot of 5th level or higher, increase the radius by 2m for each slot level above the 4th."
         }
       ],
@@ -93,7 +98,7 @@
         "necrotic"
       ],
       "detonates": null,
-      "primes": "x",
+      "primes": "necrotic",
       "adept": "x",
       "vanguard": "x",
       "sentinel": null,
@@ -107,7 +112,7 @@
         "Drain : Each time Annihilation Field deals damage, you gain shield points equal half the damage done."
       ],
       "class_list": "Adept, Vanguard",
-      "mechanic_text_dump": "Spinafieldofdarkenergyoriginatingfromyouina6msphereThefieldmoveswithyouandreducesyourmovementspeedbyhalfEachcreaturewithinthespheremustmakeaConstitutionsavingthrowAcreaturetakes12d6necroticdamageonafailedsaveorhalfasmuchdamageonasuccessfuloneAcreaturemustalsomakethesavingthrowwhenitentersthefieldsspaceforthefirsttimeonaturnorendsitsturnthereAthigherlevelsWhenyoucastthisspellusingaspellslotof5thlevelorhigherincreasetheradiusby2mforeachslotlevelabovethe4th"
+      "mechanic_text_dump": "Spinafieldofdarkenergyoriginatingfromyouina6msphereThefieldmoveswithyouandreducesyourmovementspeedbyhalfEachcreaturewithinthespheremustmakeaConstitutionsavingthrowAcreaturetakes12d6necroticdamageonafailedsaveorhalfasmuchdamageonasuccessfuloneAcreaturemustalsomakethesavingthrowwhenitentersthefieldsspaceforthefirsttimeonaturnorendsitsturnthereAnycreaturewithinthesphereisprimednecroticThisconditionendsimmediatelyifthecreatureleavesthesphereAthigherlevelsWhenyoucastthisspellusingaspellslotof5thlevelorhigherincreasetheradiusby2mforeachslotlevelabovethe4th"
     },
     {
       "name": "Backlash",
@@ -327,7 +332,7 @@
 
       ],
       "detonates": null,
-      "primes": "x",
+      "primes": null,
       "adept": "x",
       "vanguard": "x",
       "sentinel": null,
@@ -688,7 +693,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "As a bonus action, load a specialized, high-impact thermal clip into the weapon you are currently wielding. Until you reload, any successful ranged attacks deal an additional 1d8 bludgeoning damage and medium-sized or smaller creatures must pass a Strength saving throw (DC 8 + proficiency bonus + DEX modifier) or are knocked {prone}."
+          "data": "As a bonus action, load a specialized thermal clip into the weapon you are currently wielding. Until you reload, any successful ranged attacks deal an additional 1d8 bludgeoning damage and medium-sized or smaller creatures must pass a Strength saving throw (DC 8 + proficiency bonus + DEX modifier) or are knocked {prone}."
         },
         {
           "id": 2,
@@ -731,7 +736,7 @@
         "Improved shot : Increase the bonus damage of Concussive shot to d12."
       ],
       "class_list": "Soldier",
-      "mechanic_text_dump": "AsabonusactionloadaspecializedhighimpactthermalclipintotheweaponyouarecurrentlywieldingUntilyoureloadanysuccessfulrangedattacksdealanadditional1d8bludgeoningdamageandmediumsizedorsmallercreaturesmustpassaStrengthsavingthrowDC8proficiencybonusDEXmodifierorareknockedproneYouhave3chargesofConcussiveShotYouregainallofyourchargesonalongrest"
+      "mechanic_text_dump": "AsabonusactionloadaspecializedthermalclipintotheweaponyouarecurrentlywieldingUntilyoureloadanysuccessfulrangedattacksdealanadditional1d8bludgeoningdamageandmediumsizedorsmallercreaturesmustpassaStrengthsavingthrowDC8proficiencybonusDEXmodifierorareknockedproneYouhave3chargesofConcussiveShotYouregainallofyourchargesonalongrest"
     },
     {
       "name": "Counterspell",
@@ -791,7 +796,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You spend tech points to blast a stream of liquid hydrogen from your omni-tool. Each creature in a 6m cube must make a Dexterity saving throw. A creature takes Xd8 cold damage on a failed save, or half as much damage on a successful one where X is the number of tech points spent. If the target is unshielded, it must pass a Strength saving throw or becomes {frozen} until the end of its next turn."
+          "data": "You spend tech points to blast a stream of liquid hydrogen from your omni-tool. Each creature in a 6m cube becomes {primed-cold} until the end of its next turn and must make a Dexterity saving throw. A creature takes Xd8 cold damage on a failed save, or half as much damage on a successful one where X is the number of tech points spent. If the target is unprotected, it must pass a Strength saving throw or becomes {frozen} until the end of its next turn."
         }
       ],
       "adv_option_1": "Brittle Freeze : Creatures that fail the Constitution saving throw suffer a -1 AC penalty",
@@ -815,7 +820,7 @@
         "cold"
       ],
       "detonates": null,
-      "primes": "x",
+      "primes": "cold",
       "adept": null,
       "vanguard": null,
       "sentinel": "x",
@@ -829,7 +834,7 @@
         "Frozen Ground : Cryo beam leaves a patch of ice on the ground that lasts for 1 min. Each creature that moves into or out of the patch must pass a Dexterity saving throw. On a failed save, slips and falls [Prone], ending it's movement."
       ],
       "class_list": "Engineer, Infiltrator, Sentinel",
-      "mechanic_text_dump": "YouspendtechpointstoblastastreamofliquidhydrogenfromyouromnitoolEachcreatureina6mcubemustmakeaDexteritysavingthrowAcreaturetakesXd8colddamageonafailedsaveorhalfasmuchdamageonasuccessfulonewhereXisthenumberoftechpointsspentIfthetargetisunshieldeditmustpassaStrengthsavingthroworbecomesfrozenuntiltheendofitsnextturn"
+      "mechanic_text_dump": "YouspendtechpointstoblastastreamofliquidhydrogenfromyouromnitoolEachcreatureina6mcubebecomesprimedcolduntiltheendofitsnextturnandmustmakeaDexteritysavingthrowAcreaturetakesXd8colddamageonafailedsaveorhalfasmuchdamageonasuccessfulonewhereXisthenumberoftechpointsspentIfthetargetisunprotecteditmustpassaStrengthsavingthroworbecomesfrozenuntiltheendofitsnextturn"
     },
     {
       "name": "Cryo Blast",
@@ -838,7 +843,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You spend tech points to fire a mass of supercooled, subatomic particles at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes Xd8 cold damage, where X is the number of tech points spent, and the target's movement is reduced by half. If the target is unprotected, it must pass a Strength saving throw or becomes {frozen} until the end of its next turn."
+          "data": "You spend tech points to fire a mass of supercooled, subatomic particles at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target becomes {primed-cold} until the end of its next turn and takes Xd8 cold damage, where X is the number of tech points spent, and the target's movement is reduced by half. If the target is unprotected, it must pass a Strength saving throw or becomes {frozen} until the end of its next turn."
         }
       ],
       "adv_option_1": "Ice Lance : Transform the attack into a deadly lance. The attack can no longer freeze or slow the target, but you add 1d6 piercing damage for each tech point spent.",
@@ -862,8 +867,8 @@
       "damage_type": [
         "cold"
       ],
-      "detonates": "x",
-      "primes": null,
+      "detonates": null,
+      "primes": "cold",
       "adept": null,
       "vanguard": null,
       "sentinel": "x",
@@ -877,7 +882,7 @@
         "Frigid Air : The blast snap freezes the air around the target in a 2m radius. Each creature that enters the frozen space for the first time on a turn or ends its turn there must pass a Constitution saving throw or take 2d4 cold damage."
       ],
       "class_list": "Engineer, Infiltrator, Sentinel",
-      "mechanic_text_dump": "YouspendtechpointstofireamassofsupercooledsubatomicparticlesatacreatureorobjectwithinrangeMakearangedspellattackagainstthetargetOnahitthetargettakesXd8colddamagewhereXisthenumberoftechpointsspentandthetargetsmovementisreducedbyhalfIfthetargetisunprotecteditmustpassaStrengthsavingthroworbecomesfrozenuntiltheendofitsnextturn"
+      "mechanic_text_dump": "YouspendtechpointstofireamassofsupercooledsubatomicparticlesatacreatureorobjectwithinrangeMakearangedspellattackagainstthetargetOnahitthetargetbecomesprimedcolduntiltheendofitsnextturnandtakesXd8colddamagewhereXisthenumberoftechpointsspentandthetargetsmovementisreducedbyhalfIfthetargetisunprotecteditmustpassaStrengthsavingthroworbecomesfrozenuntiltheendofitsnextturn"
     },
     {
       "name": "Dark Channel",
@@ -886,7 +891,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Make a ranged spell attack on a creature you can see within range. On a hit, you plague the target with a persistent, damaging biotic field. The creature takes 1d10 necrotic damage and 1d10 necrotic damage at the start of your turn while you maintain the spell. If the creature dies, Dark Channel transfers to another random, hostile creature within 10m. Only one Dark Channel can may be active at a time."
+          "data": "Make a ranged spell attack on a creature you can see within range. On a hit, you plague the target with a persistent, damaging biotic field. The creature is {primed-necrotic} and takes 1d10 necrotic damage and 1d10 necrotic damage at the start of your turn while you maintain the spell. If the creature dies, Dark Channel transfers to another random, hostile creature within 10m. Only one Dark Channel can may be active at a time."
         },
         {
           "id": 2,
@@ -914,7 +919,7 @@
         "necrotic"
       ],
       "detonates": null,
-      "primes": "x",
+      "primes": "necrotic",
       "adept": "x",
       "vanguard": null,
       "sentinel": null,
@@ -928,7 +933,7 @@
         "Improved Damage : Increase the damage die type to d12"
       ],
       "class_list": "Adept",
-      "mechanic_text_dump": "MakearangedspellattackonacreatureyoucanseewithinrangeOnahityouplaguethetargetwithapersistentdamagingbioticfieldThecreaturetakes1d10necroticdamageand1d10necroticdamageatthestartofyourturnwhileyoumaintainthespellIfthecreaturediesDarkChanneltransferstoanotherrandomhostilecreaturewithin10mOnlyoneDarkChannelcanmaybeactiveatatimeThedamageincreasesby1d10whenyoureachthe5thlevel2d1011thlevel3d10and17thlevel4d10"
+      "mechanic_text_dump": "MakearangedspellattackonacreatureyoucanseewithinrangeOnahityouplaguethetargetwithapersistentdamagingbioticfieldThecreatureisprimednecroticandtakes1d10necroticdamageand1d10necroticdamageatthestartofyourturnwhileyoumaintainthespellIfthecreaturediesDarkChanneltransferstoanotherrandomhostilecreaturewithin10mOnlyoneDarkChannelcanmaybeactiveatatimeThedamageincreasesby1d10whenyoureachthe5thlevel2d1011thlevel3d10and17thlevel4d10"
     },
     {
       "name": "Dark Sphere",
@@ -937,7 +942,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Launch a slow-moving, 4m wide sphere of dark energy in a straight line in front of you. It moves 4m this turn and at the start of each subsequent turn. Each creature caught in the path must make a Dexterity saving throw. On a failed save, a creature takes necrotic damage equal to 6d8 + your biotic modifier, or half as much on a successful one. When the sphere reaches 20m, it detonates and each creature within 10m must make a Constitution saving throw. On a failed save a creature takes necrotic damage equal to 6d8 + your biotic modifier necrotic damage or half as much damage on a successful one."
+          "data": "Launch a slow-moving, 4m wide sphere of dark energy in a straight line in front of you. It moves 4m this turn and at the start of each subsequent turn. Each creature caught in the path becomes {primed-necrotic} until the end of its next turn and must make a Dexterity saving throw. On a failed save, a creature takes necrotic damage equal to 6d8 + your biotic modifier, or half as much on a successful one. When the sphere reaches 20m, it detonates and each creature within 10m becomes {primed-necrotic} for 1 minute and must make a Constitution saving throw. On a failed save a creature takes necrotic damage equal to 6d8 + your biotic modifier necrotic damage or half as much damage on a successful one."
         },
         {
           "id": 2,
@@ -976,7 +981,7 @@
         "necrotic"
       ],
       "detonates": null,
-      "primes": "x",
+      "primes": "necrotic",
       "adept": "x",
       "vanguard": null,
       "sentinel": null,
@@ -990,7 +995,7 @@
         "Amplify : Every 4m, the sphere's potential damage increases. Add 1d8 to the detonation damage for each 4m the sphere travels."
       ],
       "class_list": "Adept",
-      "mechanic_text_dump": "Launchaslowmoving4mwidesphereofdarkenergyinastraightlineinfrontofyouItmoves4mthisturnandatthestartofeachsubsequentturnEachcreaturecaughtinthepathmustmakeaDexteritysavingthrowOnafailedsaveacreaturetakesnecroticdamageequalto6d8yourbioticmodifierorhalfasmuchonasuccessfuloneWhenthespherereaches20mitdetonatesandeachcreaturewithin10mmustmakeaConstitutionsavingthrowOnafailedsaveacreaturetakesnecroticdamageequalto6d8yourbioticmodifiernecroticdamageorhalfasmuchdamageonasuccessfuloneYoucanuseanactiontodetonatethesphereearlyIfyouloseconcentrationwhilecastingthespellitdoesnotdetonateAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d8foreachslotlevelabovethe2nd"
+      "mechanic_text_dump": "Launchaslowmoving4mwidesphereofdarkenergyinastraightlineinfrontofyouItmoves4mthisturnandatthestartofeachsubsequentturnEachcreaturecaughtinthepathbecomesprimednecroticuntiltheendofitsnextturnandmustmakeaDexteritysavingthrowOnafailedsaveacreaturetakesnecroticdamageequalto6d8yourbioticmodifierorhalfasmuchonasuccessfuloneWhenthespherereaches20mitdetonatesandeachcreaturewithin10mbecomesprimednecroticfor1minuteandmustmakeaConstitutionsavingthrowOnafailedsaveacreaturetakesnecroticdamageequalto6d8yourbioticmodifiernecroticdamageorhalfasmuchdamageonasuccessfuloneYoucanuseanactiontodetonatethesphereearlyIfyouloseconcentrationwhilecastingthespellitdoesnotdetonateAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d8foreachslotlevelabovethe2nd"
     },
     {
       "name": "Decoy",
@@ -1285,7 +1290,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You spend tech points to overload your omni-tool's acetylene torch, spewing flames in front of you. Each creature within an 8m cone must make a Dexterity saving throw. A creature takes Xd10 fire damage on a failed save or half as much damage on a successful one where X is the number of tech points spent."
+          "data": "You spend tech points to overload your omni-tool's acetylene torch, spewing flames in front of you. Each creature within an 8m cone is {primed-fire} until the end of its next turn and must make a Dexterity saving throw. A creature takes Xd10 fire damage on a failed save or half as much damage on a successful one where X is the number of tech points spent."
         }
       ],
       "adv_option_1": "Concentrated Burn : Increase the damage to d12 and the distance to 12m, but the area-of-effect is now a line instead of a cone.",
@@ -1308,7 +1313,7 @@
         "fire"
       ],
       "detonates": null,
-      "primes": "x",
+      "primes": "fire",
       "adept": null,
       "vanguard": null,
       "sentinel": "x",
@@ -1322,7 +1327,7 @@
         "Exhaust : The flames leave behind a thick smoke for 1 turn. Creatures have disadvantage while making ranged weapon attacks against you until the start of your next turn."
       ],
       "class_list": "Engineer, Infiltrator, Sentinel",
-      "mechanic_text_dump": "YouspendtechpointstooverloadyouromnitoolsacetylenetorchspewingflamesinfrontofyouEachcreaturewithinan8mconemustmakeaDexteritysavingthrowAcreaturetakesXd10firedamageonafailedsaveorhalfasmuchdamageonasuccessfulonewhereXisthenumberoftechpointsspent"
+      "mechanic_text_dump": "YouspendtechpointstooverloadyouromnitoolsacetylenetorchspewingflamesinfrontofyouEachcreaturewithinan8mconeisprimedfireuntiltheendofitsnextturnandmustmakeaDexteritysavingthrowAcreaturetakesXd10firedamageonafailedsaveorhalfasmuchdamageonasuccessfulonewhereXisthenumberoftechpointsspent"
     },
     {
       "name": "Flare",
@@ -1359,7 +1364,7 @@
         "radiant"
       ],
       "detonates": "x",
-      "primes": "x",
+      "primes": null,
       "adept": "x",
       "vanguard": null,
       "sentinel": null,
@@ -1698,7 +1703,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You spend tech points to hurl a high-explosive, plasma round at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes Xd10 fire damage, where X is the number of tech points you spent. A flammable object hit by this spell ignites if it isn't being worn or carried."
+          "data": "You spend tech points to hurl a high-explosive, plasma round at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target is {primed-fire} and takes Xd10 fire damage, where X is the number of tech points you spent. A flammable object hit by this spell ignites if it isn't being worn or carried."
         }
       ],
       "adv_option_1": "Frozen Combo : Deal double damage to frozen targets.",
@@ -1721,7 +1726,7 @@
         "fire"
       ],
       "detonates": "x",
-      "primes": "x",
+      "primes": "fire",
       "adept": null,
       "vanguard": null,
       "sentinel": "x",
@@ -1735,7 +1740,7 @@
         "Radial Blast : On a miss, the target creature takes half the damage."
       ],
       "class_list": "Engineer, Infiltrator, Sentinel",
-      "mechanic_text_dump": "YouspendtechpointstohurlahighexplosiveplasmaroundatacreatureorobjectwithinrangeMakearangedspellattackagainstthetargetOnahitthetargettakesXd10firedamagewhereXisthenumberoftechpointsyouspentAflammableobjecthitbythisspellignitesifitisntbeingwornorcarried"
+      "mechanic_text_dump": "YouspendtechpointstohurlahighexplosiveplasmaroundatacreatureorobjectwithinrangeMakearangedspellattackagainstthetargetOnahitthetargetisprimedfireandtakesXd10firedamagewhereXisthenumberoftechpointsyouspentAflammableobjecthitbythisspellignitesifitisntbeingwornorcarried"
     },
     {
       "name": "Invasion",
@@ -1851,7 +1856,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Consume barrier ticks to create a whip of biotic energy. Each barrier tick consumed increases the range of the whip by 2m. Target a creature you can see within the resulting range. The target takes 4d8 force damage and becomes {grappled}. To escape the grapple the creature must succeed on a contested Strength (Athletics) against your Constitution."
+          "data": "Consume barrier ticks to create a whip of biotic energy. Each barrier tick consumed increases the range of the whip by 2m. Target a creature you can see within the resulting range. The target takes 4d8 force damage and becomes {grappled} and {primed-force} until it escapes the grapple. A detonating attack immediately ends the grapple or, to escape the grapple, the creature must succeed on a contested Strength (Athletics) against your Constitution."
         },
         {
           "id": 2,
@@ -1880,7 +1885,7 @@
         "force"
       ],
       "detonates": null,
-      "primes": "x",
+      "primes": "force",
       "adept": "x",
       "vanguard": "x",
       "sentinel": null,
@@ -1894,7 +1899,7 @@
         "Improved Damage : Increase the damage die type to d12."
       ],
       "class_list": "Adept, Vanguard",
-      "mechanic_text_dump": "ConsumebarriertickstocreateawhipofbioticenergyEachbarriertickconsumedincreasestherangeofthewhipby2mTargetacreatureyoucanseewithintheresultingrangeThetargettakes4d8forcedamageandbecomesgrappledToescapethegrapplethecreaturemustsucceedonacontestedStrengthAthleticsagainstyourConstitutionAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d8foreachslotlevelabovethe2nd"
+      "mechanic_text_dump": "ConsumebarriertickstocreateawhipofbioticenergyEachbarriertickconsumedincreasestherangeofthewhipby2mTargetacreatureyoucanseewithintheresultingrangeThetargettakes4d8forcedamageandbecomesgrappledandprimedforceuntilitescapesthegrappleAdetonatingattackimmediatelyendsthegrappleortoescapethegrapplethecreaturemustsucceedonacontestedStrengthAthleticsagainstyourConstitutionAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d8foreachslotlevelabovethe2nd"
     },
     {
       "name": "Lift",
@@ -1931,7 +1936,7 @@
 
       ],
       "detonates": null,
-      "primes": "x",
+      "primes": "force",
       "adept": "x",
       "vanguard": "x",
       "sentinel": "x",
@@ -2118,7 +2123,7 @@
         {
           "id": 2,
           "type": "line",
-          "data": "A target must make a Dexterity saving throw. The target takes Xd4 lightning damage on a failed save, or half as much on a successful one where X is the number of tech points you spent."
+          "data": "A target become {primed-lightning} until the end of its next turn and must make a Dexterity saving throw. The target takes Xd4 lightning damage on a failed save, or half as much on a successful one where X is the number of tech points you spent."
         }
       ],
       "adv_option_1": "Extended Leap : Overload can leap to targets within 10m.",
@@ -2141,7 +2146,7 @@
         "lightning"
       ],
       "detonates": null,
-      "primes": "x",
+      "primes": "lightning",
       "adept": null,
       "vanguard": null,
       "sentinel": "x",
@@ -2155,7 +2160,7 @@
         "Quad Leap : Overload can leap to five additional targets, but deals 1d4 damage."
       ],
       "class_list": "Engineer, Infiltrator, Sentinel",
-      "mechanic_text_dump": "YouspendtechpointstounleashanelectrostaticdischargeatacreatureorobjectwithinrangeThreeboltsthenleapfromthattargettoasmanyasthreeothertargetseachofwhichmustbewithin6mofthefirsttargetAtargetcanbeacreatureoranobjectandcanbetargetedbyonlyoneoftheboltsAtargetmustmakeaDexteritysavingthrowThetargettakesXd4lightningdamageonafailedsaveorhalfasmuchonasuccessfulonewhereXisthenumberoftechpointsyouspent"
+      "mechanic_text_dump": "YouspendtechpointstounleashanelectrostaticdischargeatacreatureorobjectwithinrangeThreeboltsthenleapfromthattargettoasmanyasthreeothertargetseachofwhichmustbewithin6mofthefirsttargetAtargetcanbeacreatureoranobjectandcanbetargetedbyonlyoneoftheboltsAtargetbecomeprimedlightninguntiltheendofitsnextturnandmustmakeaDexteritysavingthrowThetargettakesXd4lightningdamageonafailedsaveorhalfasmuchonasuccessfulonewhereXisthenumberoftechpointsyouspent"
     },
     {
       "name": "Phase Disruptor",
@@ -2191,8 +2196,8 @@
       "damage_type": [
         "force"
       ],
-      "detonates": null,
-      "primes": "x",
+      "detonates": "x",
+      "primes": null,
       "adept": "x",
       "vanguard": "x",
       "sentinel": null,
@@ -2317,7 +2322,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Unleash a wave of dark biotic energy in a 6m cube. Each creature within the blast must make a Constitution saving throw. On a failed save, a creature takes 2d10 necrotic damage and has disadvantage on their next attack or saving thrown. A creature takes half as much damage on a successful save."
+          "data": "Unleash a wave of dark biotic energy in a 6m cube. Each creature within the blast becomes {primed-necrotic} until the end of its next turn and must make a Constitution saving throw. On a failed save, a creature takes 2d10 necrotic damage and has disadvantage on their next attack or saving thrown. A creature takes half as much damage on a successful save."
         },
         {
           "id": 2,
@@ -2346,7 +2351,7 @@
         "necrotic"
       ],
       "detonates": "x",
-      "primes": null,
+      "primes": "necrotic",
       "adept": "x",
       "vanguard": null,
       "sentinel": null,
@@ -2360,7 +2365,7 @@
         "Armor boost : The dark energy heightens your senses momentarily. When you cast Reave, gain +2AC until the start of your next turn."
       ],
       "class_list": "Adept",
-      "mechanic_text_dump": "Unleashawaveofdarkbioticenergyina6mcubeEachcreaturewithintheblastmustmakeaConstitutionsavingthrowOnafailedsaveacreaturetakes2d10necroticdamageandhasdisadvantageontheirnextattackorsavingthrownAcreaturetakeshalfasmuchdamageonasuccessfulsaveAtHigherLevelsWhenyoucastthisspellusingaspellslotof3rdlevelorhigherincreasethedamageby1d10foreachlevelabovethesecond"
+      "mechanic_text_dump": "Unleashawaveofdarkbioticenergyina6mcubeEachcreaturewithintheblastbecomesprimednecroticuntiltheendofitsnextturnandmustmakeaConstitutionsavingthrowOnafailedsaveacreaturetakes2d10necroticdamageandhasdisadvantageontheirnextattackorsavingthrownAcreaturetakeshalfasmuchdamageonasuccessfulsaveAtHigherLevelsWhenyoucastthisspellusingaspellslotof3rdlevelorhigherincreasethedamageby1d10foreachlevelabovethesecond"
     },
     {
       "name": "Sabotage",
@@ -2525,7 +2530,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Spend a tech point to send an electric shock from your omni-tool to a creature you try to touch. Make a melee attack against the target. You have advantage on the attack roll if the target is wearing armor. On a hit, the target takes Xd6 lightning damage where X is the number of tech points spent, and it can't take reactions until the start of its next turn."
+          "data": "Spend a tech point to send an electric shock from your omni-tool to a creature you try to touch. Make a melee attack against the target. You have advantage on the attack roll if the target is wearing armor. On a hit, the target becomes {primed-lightning} until the end of its next turn and takes Xd6 lightning damage where X is the number of tech points spent, and it can't take reactions until the start of its next turn."
         }
       ],
       "adv_option_1": "Absorbing Shock : If the target is shielded, get shield points equal to half the damage done.",
@@ -2547,8 +2552,8 @@
       "damage_type": [
 
       ],
-      "detonates": "x",
-      "primes": null,
+      "detonates": null,
+      "primes": "lightning",
       "adept": null,
       "vanguard": null,
       "sentinel": null,
@@ -2562,7 +2567,7 @@
         "Improved Shock : Increase the damage die to d8."
       ],
       "class_list": "Engineer, Infiltrator",
-      "mechanic_text_dump": "SpendatechpointtosendanelectricshockfromyouromnitooltoacreatureyoutrytotouchMakeameleeattackagainstthetargetYouhaveadvantageontheattackrollifthetargetiswearingarmorOnahitthetargettakesXd6lightningdamagewhereXisthenumberoftechpointsspentanditcanttakereactionsuntilthestartofitsnextturn"
+      "mechanic_text_dump": "SpendatechpointtosendanelectricshockfromyouromnitooltoacreatureyoutrytotouchMakeameleeattackagainstthetargetYouhaveadvantageontheattackrollifthetargetiswearingarmorOnahitthetargetbecomesprimedlightninguntiltheendofitsnextturnandtakesXd6lightningdamagewhereXisthenumberoftechpointsspentanditcanttakereactionsuntilthestartofitsnextturn"
     },
     {
       "name": "Shockwave",
@@ -2703,7 +2708,7 @@
 
       ],
       "detonates": null,
-      "primes": "x",
+      "primes": "force",
       "adept": "x",
       "vanguard": null,
       "sentinel": null,
@@ -2823,7 +2828,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Spend 5 tech points to launch a globe of supercooled helium to a target location within range, where it explodes in a 10m-radius sphere. Each creature within the area must make a Strength saving throw. On a failed save, a creature if {frozen} until the end of your next turn. On a successful save, its movement is halved until the end of your next turn. The DC of the saving throw is increase by each tech point you spend above 5."
+          "data": "Spend 5 tech points to launch a globe of supercooled helium to a target location within range, where it explodes in a 10m-radius sphere. Each creature within the area becomes {primed-cold} until the end of its next turn and must make a Strength saving throw. On a failed save, a creature if {frozen} until the end of your next turn. On a successful save, its movement is halved until the end of your next turn. The DC of the saving throw is increase by each tech point you spend above 5."
         },
         {
           "id": 2,
@@ -2857,7 +2862,7 @@
         "cold"
       ],
       "detonates": null,
-      "primes": "x",
+      "primes": "cold",
       "adept": null,
       "vanguard": null,
       "sentinel": null,
@@ -2871,7 +2876,7 @@
         "Brittle Freeze : Successful attacks against a creature that is frozen by Snap Freeze deal an additional 1d4 cold damage."
       ],
       "class_list": "Engineer, Infiltrator",
-      "mechanic_text_dump": "Spend5techpointstolaunchaglobeofsupercooledheliumtoatargetlocationwithinrangewhereitexplodesina10mradiussphereEachcreaturewithintheareamustmakeaStrengthsavingthrowOnafailedsaveacreatureiffrozenuntiltheendofyournextturnOnasuccessfulsaveitsmovementishalveduntiltheendofyournextturnTheDCofthesavingthrowisincreasebyeachtechpointyouspendabove5Thegroundwithinthe10mspherebecomesicyandisconsidereddifficultterrainIftheglobestrikesabodyofwateroraliquidthatisprincipallywaternotincludingwaterbasedcreaturesitfreezestheliquidtoadepthof15centimetersoveranarea10mThisicelastsfor1minuteCreaturesthatwereswimmingonthesurfaceoffrozenwateraretrappedintheiceAtrappedcreaturecanuseanactiontomakeaStrengthcheckagainstyourspellsaveDCtobreakfree"
+      "mechanic_text_dump": "Spend5techpointstolaunchaglobeofsupercooledheliumtoatargetlocationwithinrangewhereitexplodesina10mradiussphereEachcreaturewithintheareabecomesprimedcolduntiltheendofitsnextturnandmustmakeaStrengthsavingthrowOnafailedsaveacreatureiffrozenuntiltheendofyournextturnOnasuccessfulsaveitsmovementishalveduntiltheendofyournextturnTheDCofthesavingthrowisincreasebyeachtechpointyouspendabove5Thegroundwithinthe10mspherebecomesicyandisconsidereddifficultterrainIftheglobestrikesabodyofwateroraliquidthatisprincipallywaternotincludingwaterbasedcreaturesitfreezestheliquidtoadepthof15centimetersoveranarea10mThisicelastsfor1minuteCreaturesthatwereswimmingonthesurfaceoffrozenwateraretrappedintheiceAtrappedcreaturecanuseanactiontomakeaStrengthcheckagainstyourspellsaveDCtobreakfree"
     },
     {
       "name": "Stasis",
@@ -2880,7 +2885,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Lock a target in a high-gravity mass effect field. Choose a creature you can see within range. The creature must make a Strength saving throw. On a failed save, the creature is {restrained}. At the beginning of the creature's turn, it can use its action to make the saving throw again."
+          "data": "Lock a target in a high-gravity mass effect field. Choose a creature you can see within range. The creature must make a Strength saving throw. On a failed save, the creature is {restrained} and {primed-force} for the duration of the spell. At the beginning of the creature's turn, it can use its action to make the saving throw again. A detonating attack immediatly ends the spell."
         }
       ],
       "adv_option_1": "Vulnerable : A creature in Stasis takes +2 damage from all damage rolls.",
@@ -2904,7 +2909,7 @@
 
       ],
       "detonates": null,
-      "primes": "x",
+      "primes": "force",
       "adept": "x",
       "vanguard": "x",
       "sentinel": "x",
@@ -2918,7 +2923,7 @@
         "Heavy Stasis : The creature has disadvantage on its saving throws to escape Stasis."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "LockatargetinahighgravitymasseffectfieldChooseacreatureyoucanseewithinrangeThecreaturemustmakeaStrengthsavingthrowOnafailedsavethecreatureisrestrainedAtthebeginningofthecreaturesturnitcanuseitsactiontomakethesavingthrowagain"
+      "mechanic_text_dump": "LockatargetinahighgravitymasseffectfieldChooseacreatureyoucanseewithinrangeThecreaturemustmakeaStrengthsavingthrowOnafailedsavethecreatureisrestrainedandprimedforceforthedurationofthespellAtthebeginningofthecreaturesturnitcanuseitsactiontomakethesavingthrowagainAdetonatingattackimmediatlyendsthespell"
     },
     {
       "name": "Stimulant Pack",
@@ -2986,7 +2991,7 @@
           "data": "At Higher Levels. When you cast this spell using a spell slot of 5th level or higher, the damage increases for each of its effects by 1d10 for each slot level above 4th."
         }
       ],
-      "adv_option_1": "Necrotic Bolts: Until the spell ends, you can use a bonus action on each of your turns to cause a bolt of necrotic energy to leap from the center of the sphere toward one creature you choose within 20m of the center. Make a ranged spell attack. You have advantage on the attack roll if the target is in the sphere. On a hit, the target takes 4[dd] necrotic damage.",
+      "adv_option_1": "Necrotic Bolts: Until the spell ends, you can use a bonus action on each of your turns to cause a bolt of necrotic energy to leap from the center of the sphere toward one creature you choose within 20m of the center. Make a ranged spell attack. You have advantage on the attack roll if the target is in the sphere. On a hit, the target takes 4[dd] necrotic damage. Necrotic bolts can detonate primed targets.",
       "adv_option_2": "Growing Storm: While the spell is maintained, the storm's radius grows by 2m at the start of your turn.",
       "type": "biotic",
       "die_type": "d10",
@@ -3008,7 +3013,7 @@
         " necrotic"
       ],
       "detonates": null,
-      "primes": "x",
+      "primes": null,
       "adept": "x",
       "vanguard": "x",
       "sentinel": null,
@@ -3018,7 +3023,7 @@
       "min_tech_points": null,
       "id": "storm",
       "adv_options": [
-        "Necrotic Bolts: Until the spell ends, you can use a bonus action on each of your turns to cause a bolt of necrotic energy to leap from the center of the sphere toward one creature you choose within 20m of the center. Make a ranged spell attack. You have advantage on the attack roll if the target is in the sphere. On a hit, the target takes 4d10 necrotic damage.",
+        "Necrotic Bolts: Until the spell ends, you can use a bonus action on each of your turns to cause a bolt of necrotic energy to leap from the center of the sphere toward one creature you choose within 20m of the center. Make a ranged spell attack. You have advantage on the attack roll if the target is in the sphere. On a hit, the target takes 4d10 necrotic damage. Necrotic bolts can detonate primed targets.",
         "Growing Storm: While the spell is maintained, the storm's radius grows by 2m at the start of your turn."
       ],
       "class_list": "Adept, Vanguard",
@@ -3371,7 +3376,7 @@
       "damage_type": [
         "bludgeoning"
       ],
-      "detonates": "x",
+      "detonates": null,
       "primes": null,
       "adept": "x",
       "vanguard": "x",
@@ -3395,7 +3400,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Make a ranged spell attack on an organic creature you can see within range. On a hit, you generate a rapidly shifting mass effect field inside the target dealing necrotic damage equal to 3d10 + you biotic modifier. This damage bypasses shields."
+          "data": "Make a ranged spell attack on an organic creature you can see within range. On a hit, you generate a rapidly shifting mass effect field inside the target dealing necrotic damage equal to 3d10 + you biotic modifier. In addition, the target is {primed-necrotic} until the end of its next turn. This damage bypasses shields."
         },
         {
           "id": 2,
@@ -3423,7 +3428,7 @@
         "necrotic"
       ],
       "detonates": null,
-      "primes": "x",
+      "primes": "necrotic",
       "adept": "x",
       "vanguard": "x",
       "sentinel": "x",
@@ -3437,7 +3442,7 @@
         "Keel over : A target hit by warp must pass a Constitution saving throw. On a failed save, the force of warp is so intense the target is knocked {prone} and {stunned} until the start of your next turn."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "MakearangedspellattackonanorganiccreatureyoucanseewithinrangeOnahityougeneratearapidlyshiftingmasseffectfieldinsidethetargetdealingnecroticdamageequalto3d10youbioticmodifierThisdamagebypassesshieldsAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d10foreachslotlevelabovethe2nd"
+      "mechanic_text_dump": "MakearangedspellattackonanorganiccreatureyoucanseewithinrangeOnahityougeneratearapidlyshiftingmasseffectfieldinsidethetargetdealingnecroticdamageequalto3d10youbioticmodifierInadditionthetargetisprimednecroticuntiltheendofitsnextturnThisdamagebypassesshieldsAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d10foreachslotlevelabovethe2nd"
     }
   ]
 }
