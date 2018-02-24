@@ -22,7 +22,13 @@ const state = {
     },
     pcs: []
   },
-  bookmarks: []
+  bookmarks: [],
+  tooltips: []
+};
+
+const getTooltips = () => {
+  console.log('getting tooltips');
+  return Vue.http.get(`../data/conditions.json`).then(response => response.json());
 };
 
 const mutations = {
@@ -65,6 +71,9 @@ const mutations = {
       state.encounter.npcs.counts.splice(index, 1);
       state.encounter.npcs.list.splice(index, 1);
     }
+  },
+  setTooltips(state, payload) {
+    state.tooltips = payload;
   }
 };
 
@@ -85,6 +94,12 @@ const actions = {
   },
   hideGlobalDialog({commit}) {
     commit('toggleGlobalDialog', false);
+  },
+  setTooltips({commit}) {
+    console.log(getTooltips());
+    return getTooltips().then(response => {
+      commit('setTooltips', response.data);
+    });
   }
 };
 
@@ -100,6 +115,9 @@ const getters = {
   },
   isBookmarked: (state, getters) => card => {
     return getters.bookmarks.find(bookmark => bookmark.card.id === card.id) !== undefined;
+  },
+  tooltips: state => {
+    return state.tooltips;
   },
   bookmarksGroupedByType: (state, getters) => {
     return getters.bookmarks.reduce((rv, x) => {

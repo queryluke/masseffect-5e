@@ -6,15 +6,28 @@
       v-data-table(v-bind:headers="headers" v-bind:items="items" hide-actions).elevation-1
         template(slot="items" slot-scope="props")
           td {{ props.item.name }}
-          td {{ props.item.mechanic }}
+          td
+            me-text(:text="props.item.mechanic")
     v-layout(row wrap justify-space-between).mt-4
       span Last Updated: {{ updated }}
       a(:href="source" target="_blank") Source
 </template>
 
 <script>
+  import MeText from '../components/MeText.vue';
+
   export default {
-    name: 'ThermalClips',
+    components: {MeText},
+    created() {
+      return this.$http
+        .get('../data/thermal_clips.json')
+        .then(response => response.json())
+        .then(response => {
+          this.items = response.data;
+          this.updated = response.updated;
+          this.source = response.source;
+        });
+    },
     data() {
       return {
         items: [],
@@ -26,15 +39,6 @@
         ]
       };
     },
-    created() {
-      return this.$http
-        .get('../data/thermal_clips.json')
-        .then(response => response.json())
-        .then(response => {
-          this.items = response.data;
-          this.updated = response.updated;
-          this.source = response.source;
-        });
-    }
+    name: 'ThermalClips'
   };
 </script>
