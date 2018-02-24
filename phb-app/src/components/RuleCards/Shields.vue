@@ -3,20 +3,29 @@
     span(slot="header") Shields
     template(slot="text")
       p.
-        Shields are a regenerating health pool. Like your health, it increases with level. When you take damage, if you
-        have any shield points, subtract the damage from your shield points first. If there is remaining damage or if
-        you do not have any shield points left, then subtract the damage from your hit points. Some abilities "bypass"
-        your shields. In these instances, you subtract damage from your hit points leaving your shield points unchanged.
+        Shields are regenerating temporary hit points. When damage is applied it is subtracted from your shield points first,
+        then from your hit points. Some abilities "bypass" your shields. In these instances, you subtract damage from your hit
+        points leaving your shield points unchanged.
       p.headline.mt-2 Shield Regeneration
       p.
-        If you do not lose any shield points from the end of your turn until the start of your turn, roll 1d4 and gain that
-        many shield points. Some armor modifications and abilities can allow this to happen every turn. Other mods and
-        abilities can increase the die type of your shield regeneration. Your shield regeneration die type cannot be more
-        than a d12. Note that taking damage to your hit points does not prevent your shields from recharging.
+        Your shield points regerate completely on a short or long rest. However, in combat, you can attempt to regain shield
+        points. A creature that takes the Hide or Dodge action and takes no damage until the start of its next turn regenerates
+        shields points equal to the regen rate of their shields. For example, a set of armor with 15 shields and 5 regen
+        would regenerate 5 shield points per Hide or Dodge action and didn't take damage for a full round of combat.
+      p.headline.mt-2 Shield devices
+      p.
+        All armor chest pieces come standard with 5 shield points and a regen of 5. However more advanced mods and armor sets
+        can provided additional shields. Additionally, personal shield generators are available, which can provided
+        shields without the player wearing armor.
       p.headline.mt-2 Lightning Damage
       p.
-        Shields are vulnerable to lightning damage. In the event that a shield gains resistance to lightning damage,
-        it takes normal damage instead of double damage.
+        All shields are vulnerable to lightning damage. In the event that a lighting attack remove all shield points, the following
+        steps outline how to divvy up the damage:
+      ol.ml-3
+        li Double the damage.
+        li Subtract the shield points from the total damage.
+        li Reduce the remaining damage by half
+        li Apply the new amount to the target's hit points.
 </template>
 
 <script>
