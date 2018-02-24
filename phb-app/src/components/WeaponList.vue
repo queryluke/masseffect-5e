@@ -16,10 +16,10 @@
           v-flex.hidden-md-and-down.lg2 {{ weapon.range }}
           v-flex.hidden-md-and-down.lg2 {{ weapon.weight }}
           v-flex.hidden-md-and-down.lg2 {{ weapon.cost }}
-      v-card
-        v-card-text.grey.lighten-3
+      v-card.grey.lighten-3
+        v-card-text
           weapon-info(:weapon="weapon").mt-2
-          bookmark-button(:card="weapon" type="weapon")
+          bookmark-button(:card="weapon" type="weapon" v-bind:props="{flat: true}")
 </template>
 
 <script>

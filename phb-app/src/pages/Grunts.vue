@@ -54,32 +54,27 @@
             )
           v-flex(xs8 offset-xs2).mt-3
             v-btn(@click="getGrunt()" block color="primary") Generate
-    v-container.text-xs-center
-      v-btn(v-if="savedGrunts.length > 0" large to="encounter") View saved grunts ({{savedGrunts.length}})
     v-container
       v-layout
         v-flex(xs12 sm10 offset-sm1 lg8 offset-lg2)
-          stat-block(v-if="grunt" v-bind:stats="grunt")
-            template(slot="actions")
-              v-btn(
-                absolute
-                dark
-                fab
-                top
-                right
-                @click="saveGrunt(grunt)"
-                color="primary"
-              ).mr-2
-                v-icon save
+          v-card(v-if="grunt")
+            v-card-text
+              stat-block(:stats="grunt")
+            v-card-actions
+              bookmark-button(:card="grunt" type="npc" v-bind:props="{flat: true}")
 </template>
 
 <script>
   import {GruntGenerator} from '../mixins/grunt_generator';
   import { mapState } from 'vuex';
   import StatBlock from '../components/StatBlock.vue';
+  import BookmarkButton from '../components/BookmarkButton.vue';
 
   export default {
-    components: {StatBlock},
+    components: {
+      BookmarkButton,
+      StatBlock
+    },
     name: 'Grunts',
     data() {
       return {

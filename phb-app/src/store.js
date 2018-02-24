@@ -70,6 +70,7 @@ const mutations = {
 
 const actions = {
   addBookmark({commit}, payload) {
+    console.log(payload);
     commit('addBookmark', payload);
   },
   removeBookmark({state, commit}, payload) {

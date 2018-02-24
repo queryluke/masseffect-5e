@@ -19,10 +19,11 @@
             span(v-if="spell.attack_type.length > 1") (...)
           v-flex.hidden-md-and-down.lg2
             spell-damage-effect(:spell="spell")
-      v-card
-        v-card-text.grey.lighten-3
+      v-card.grey.lighten-3
+        v-card-text
           spell-info(:spell="spell").mt-2
-          bookmark-button(:card="spell" type="spell")
+        v-card-actions
+          bookmark-button(:card="spell" type="spell" v-bind:props="{flat: true}")
 </template>
 
 <script>

@@ -69,7 +69,7 @@ def config_races(model)
 end
 
 def configure_monster(model)
-  keep = %w(name image cr size type unit alignment profBonus barrier speed dc ac xp)
+  keep = %w(name image cr size type unit alignment profBonus barrier speed dc ac xp id)
   to_array = %w(damageResistances damageImmunities conditionImmunities damageVulnerabilities featuresActionsReactions savingThrows senses skills)
   monster = {
       actions: [],
@@ -286,7 +286,7 @@ def generate_config_file(page)
       end
 
       if page[:id] && dup_model.has_key?(page[:id])
-        dup_model[:id] = dup_model[page[:id]].downcase.strip.gsub(' ', '_').gsub(/[^\w-]/, '')
+        dup_model['id'] = dup_model[page[:id]].downcase.strip.gsub(' ', '_').gsub(/[^\w-]/, '')
       end
 
       if page[:type] =~ %r{_progression}
@@ -310,7 +310,6 @@ def generate_config_file(page)
           }
 
         end
-        subclass_progression =
         row_data = dup_model.map do |k,v|
           { key: k, value: v }
         end

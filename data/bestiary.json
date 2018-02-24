@@ -1,5 +1,5 @@
 {
-  "updated": "February 18, 2018 @ 12:33 PM",
+  "updated": "February 23, 2018 @  6:40 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT87AUwt1n514k6a6b4l0kOzGwIphsGXBJLFqujgkCsJ1rdudQ1Bk7Km12DACO5qQ2WGDVI8fT6-Xe/pubhtml",
   "data": [
     {
@@ -48,6 +48,7 @@
       "dc": "13",
       "ac": "13",
       "xp": "50",
+      "id": "husk",
       "damageResistances": [
 
       ],
@@ -117,6 +118,7 @@
       "dc": "13",
       "ac": "10",
       "xp": "100",
+      "id": "cannibal",
       "damageResistances": [
 
       ],
@@ -188,6 +190,7 @@
       "dc": "14",
       "ac": "14",
       "xp": "200",
+      "id": "marauder",
       "damageResistances": [
 
       ],
@@ -261,6 +264,7 @@
       "dc": "15",
       "ac": "16",
       "xp": "2300",
+      "id": "brute",
       "damageResistances": [
         "bludgeoning",
         "piercing",
@@ -380,6 +384,7 @@
       "dc": "15",
       "ac": "16",
       "xp": "3900",
+      "id": "banshee",
       "damageResistances": [
 
       ],
@@ -455,6 +460,7 @@
       "dc": "19",
       "ac": "19",
       "xp": "20000",
+      "id": "reaper_harvester",
       "damageResistances": [
         "bludgeoning",
         "piercing",
@@ -531,6 +537,7 @@
       "dc": "15",
       "ac": "12",
       "xp": "1800",
+      "id": "ravager",
       "damageResistances": [
 
       ],
@@ -601,6 +608,7 @@
       "dc": "13",
       "ac": "10",
       "xp": "10",
+      "id": "swarmer",
       "damageResistances": [
 
       ],
@@ -670,6 +678,7 @@
       "dc": "13",
       "ac": "11",
       "xp": "25",
+      "id": "abomination",
       "damageResistances": [
 
       ],
@@ -745,6 +754,7 @@
       "dc": "15",
       "ac": "15",
       "xp": "1100",
+      "id": "collector_captain",
       "damageResistances": [
 
       ],
@@ -820,6 +830,7 @@
       "dc": "14",
       "ac": "15",
       "xp": "200",
+      "id": "collector_trooper",
       "damageResistances": [
 
       ],
@@ -891,6 +902,7 @@
       "dc": "13",
       "ac": "13",
       "xp": "100",
+      "id": "collector_drone",
       "damageResistances": [
 
       ],
@@ -960,6 +972,7 @@
       "dc": "14",
       "ac": "14",
       "xp": "450",
+      "id": "collector_assassin",
       "damageResistances": [
 
       ],
@@ -1029,6 +1042,7 @@
       "dc": "14",
       "ac": "16",
       "xp": "700",
+      "id": "collector_guardian",
       "damageResistances": [
 
       ],
@@ -1100,6 +1114,7 @@
       "dc": "18",
       "ac": "20",
       "xp": "8400",
+      "id": "praetorian",
       "damageResistances": [
         "bludgeoning",
         "piercing",
@@ -1178,6 +1193,7 @@
       "dc": "16",
       "ac": "18",
       "xp": "2900",
+      "id": "scion",
       "damageResistances": [
         "bludgeoning",
         "piercing",
@@ -1249,6 +1265,7 @@
       "dc": "13",
       "ac": "13",
       "xp": "25",
+      "id": "seeker_swarm",
       "damageResistances": [
 
       ],
@@ -1317,6 +1334,7 @@
       "dc": "13",
       "ac": "13",
       "xp": "50",
+      "id": "seeker_plague",
       "damageResistances": [
 
       ],
@@ -1432,6 +1450,7 @@
       "dc": "16",
       "ac": "16",
       "xp": "5900",
+      "id": "harbinger",
       "damageResistances": [
 
       ],

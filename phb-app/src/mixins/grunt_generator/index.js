@@ -7,6 +7,7 @@ import {Biotics} from './Biotics';
 import {DieFromAverage} from '../dieFromAverage';
 import {Helpers} from './Helpers';
 import {Hp} from './Hp';
+import {Id} from './Id';
 import {Features} from './Features';
 import {Name} from './Name';
 import {NumberRange} from '../numberRange';
@@ -30,6 +31,7 @@ export const GruntGenerator = {
     DieFromAverage,
     Helpers,
     Hp,
+    Id,
     Features,
     Name,
     NumberRange,
@@ -93,6 +95,7 @@ export const GruntGenerator = {
       this.setGruntSpeed(config, grunt);
       this.setGruntSenses(config, grunt);
       this.setGruntActions(config, grunt);
+      this.setGruntId(grunt);
       return grunt;
     }
   }

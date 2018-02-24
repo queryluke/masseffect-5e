@@ -6,10 +6,12 @@
         h3.display-1 {{ 2 | pluralize(type) | capitalize }}
       v-flex(v-for="(card, index) in cards" v-bind:key="index" xs12 lg6)
         v-card.ma-1
-          v-card-text.grey.lighten-3
+          v-card-text
             spell-info(:spell="card" v-if="type === 'spell'")
             weapon-info(:weapon="card" v-if="type === 'weapon'")
-            bookmark-button(:card="card" v-bind:type="type")
+            stat-block(:stats="card" v-if="type === 'npc'")
+          v-card-actions
+            bookmark-button(:card="card" v-bind:type="type" v-bind:props="{flat: true}")
 </template>
 
 <script>
@@ -17,9 +19,15 @@
   import SpellInfo from '../components/SpellInfo.vue';
   import WeaponInfo from '../components/WeaponInfo.vue';
   import BookmarkButton from '../components/BookmarkButton.vue';
+  import StatBlock from '../components/StatBlock.vue';
 
   export default {
-    components: {SpellInfo, WeaponInfo, BookmarkButton},
+    components: {
+      StatBlock,
+      SpellInfo,
+      WeaponInfo,
+      BookmarkButton
+    },
     name: 'Bookmarks',
     computed: {
       ...mapGetters(['bookmarksGroupedByType']),

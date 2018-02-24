@@ -10,17 +10,21 @@
           v-flex.xs9.lg5 #[strong {{ monster.name }}]
           v-flex.hidden-md-and-down.lg5 {{ monster.unit }}
           v-flex.xs3 {{ monster.cr }}
-      v-card
-        v-card-text.grey.lighten-3
+      v-card.grey.lighten-3
+        v-card-text
           stat-block(v-bind:stats="monster").mt-2
+        v-card-actions
+          bookmark-button(:card="monster" type="npc" v-bind:props="{flat: true}")
 </template>
 
 <script>
+  import BookmarkButton from "./BookmarkButton.vue";
   import StatBlock from "./StatBlock.vue";
 
   export default {
     components: {
-      StatBlock
+      StatBlock,
+      BookmarkButton
     },
     name: 'MonsterList',
     props: ['monsters'],

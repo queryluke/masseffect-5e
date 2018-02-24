@@ -2,7 +2,7 @@
   div
     v-layout
       v-flex.xs12.sm6
-        h4 {{ spell.name }}
+        p.title {{ spell.name }}
       v-flex.xs12.sm6
         spell-class-list(:spell="spell")
     v-layout(row wrap flex-start)
