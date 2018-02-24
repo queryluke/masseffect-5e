@@ -494,6 +494,13 @@ end
     renderables: [],
     id: 'name',
     camel: true
+  },
+  {
+    type: 'conditions',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRxNdrcVHvbqyeRuxHkMt2e8GYD92gMn5pTnxNI_1I3s1xC1nACWAgiSimFsgc3GIrcRfhYljjMymyJ/pub?gid=0&single=true&output=csv',
+    renderables: [],
+    id: 'name',
+    camel: true
   }
 ].each do |p|
   if imports.length > 0

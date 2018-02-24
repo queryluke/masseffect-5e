@@ -7,14 +7,20 @@
             th(v-for="head in element.data.headers") {{ head }}
         tbody
           tr(v-for="item in element.data.items")
-            td(v-for="data in item") {{ data }}
+            td(v-for="data in item")
+              me-text(:text="data")
       ul(v-else-if="element.type === 'list'").ml-3
-        li(v-for="item in element.data") {{ item }}
-      p(v-else) {{ element.data }}
+        li(v-for="item in element.data")
+          me-text(:text="item")
+      p(v-else)
+        me-text(:text="element.data")
 </template>
 
 <script>
+  import MeText from './MeText.vue';
+
   export default {
+    components: {MeText},
     name: 'MeElement',
     props: ['text'],
   };

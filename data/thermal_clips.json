@@ -1,5 +1,5 @@
 {
-  "updated": "February 19, 2018 @  3:37 PM",
+  "updated": "February 23, 2018 @  9:02 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQmZ3vjTr5MljolyW6N_pnqxBA6Gj8lEw4VihCRj0jROiCDJdWOg5udY0_XIXnbKM8XvamqGawcHKBX/pubhtml",
   "data": [
     {
@@ -9,12 +9,12 @@
     },
     {
       "name": "Cryo",
-      "mechanic": "Your ranged weapon deals cold damage. Ranged attacks made which Cryo Ammo equiped have a chance to Freeze the target. Unprotected creatures must make a Strength saving throw (DC 10). On a failed save, a creature is Frozen for 1 round.",
+      "mechanic": "Your ranged weapon deals cold damage. Ranged attacks made which Cryo Ammo equiped have a chance to freeze the target. Unprotected creatures must make a Strength saving throw (DC 10). On a failed save, a creature is {frozen} for 1 round.",
       "id": "cryo"
     },
     {
       "name": "Disruptor",
-      "mechanic": "Your ranged weapon deals lightning damamge. Double damage to shields",
+      "mechanic": "Your ranged weapon deals lightning damamge. Double damage to shields.",
       "id": "disruptor"
     },
     {
