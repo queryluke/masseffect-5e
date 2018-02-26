@@ -1,5 +1,5 @@
 {
-  "updated": "January 18, 2018 @ 11:55 AM",
+  "updated": "February 25, 2018 @  8:31 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRIPzbOBXOdWbaY779un1EV3HyacCV3fe15kHW4ABjMV0yHi3GZHVqnbiOVSQ_Dgh1whimOITGOXHkn/pubhtml",
   "data": [
     {
@@ -78,8 +78,8 @@
       "name": "Auxiliary Shield Emitters",
       "piece": "Arms",
       "flavor": "Micro-capacitors that release energy to speed up shield regeneration.",
-      "mechanic": "Increase your shield regen by 1 die type (max d12).",
-      "cost": "8000",
+      "mechanic": "Increase your shield regen by 5.",
+      "cost": "5000",
       "manu": "Kassa Fabrication",
       "id": "auxiliary_shield_emitters"
     },
@@ -87,8 +87,8 @@
       "name": "Auxiliary Shield Emitters",
       "piece": "Chest",
       "flavor": "Micro-capacitors that release energy to speed up shield regeneration.",
-      "mechanic": "Increase your shield regen by 1 die type (max d12).",
-      "cost": "8000",
+      "mechanic": "Increase your shield regen by 5.",
+      "cost": "5000",
       "manu": "Kassa Fabrication",
       "id": "auxiliary_shield_emitters"
     },
@@ -96,8 +96,8 @@
       "name": "Auxiliary Shield Emitters",
       "piece": "Legs",
       "flavor": "Micro-capacitors that release energy to speed up shield regeneration.",
-      "mechanic": "Increase your shield regen by 1 die type (max d12)",
-      "cost": "8000",
+      "mechanic": "Increase your shield regen by 5.",
+      "cost": "5000",
       "manu": "Kassa Fabrication",
       "id": "auxiliary_shield_emitters"
     },
@@ -312,7 +312,7 @@
       "name": "Recharge Capacitor",
       "piece": "Head",
       "flavor": "Micro wells store part of the energy directed at the armor and use it to jump start the kinetic barrier recharge cycle.",
-      "mechanic": "Your shields recharge every turn, despite taking damage.",
+      "mechanic": "Once per short rest, as a free action, you may jumpstart your shield regen and immediately gain shield points equal to your regen amount.",
       "cost": "15000",
       "manu": "Alliance",
       "id": "recharge_capacitor"
@@ -321,7 +321,7 @@
       "name": "Recharge Capacitor",
       "piece": "Chest",
       "flavor": "Micro wells store part of the energy directed at the armor and use it to jump start the kinetic barrier recharge cycle.",
-      "mechanic": "Your shields recharge every turn, despite taking damage.",
+      "mechanic": "Once per short rest, as a free action, you may jumpstart your shield regen and immediately gain shield points equal to your regen amount.",
       "cost": "15000",
       "manu": "Armax Arsenal",
       "id": "recharge_capacitor"

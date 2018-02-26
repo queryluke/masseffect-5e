@@ -1,10 +1,10 @@
 {
-  "updated": "December 27, 2017 @  5:06 PM",
+  "updated": "February 25, 2018 @  8:30 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRIPzbOBXOdWbaY779un1EV3HyacCV3fe15kHW4ABjMV0yHi3GZHVqnbiOVSQ_Dgh1whimOITGOXHkn/pubhtml",
   "data": [
     {
       "mechanic": "sp",
-      "description": "Additional shield points",
+      "description": "Additional shield points (regen remains base 5)",
       "amount": "10",
       "cost": "10000",
       "id": "sp"
@@ -12,16 +12,9 @@
     {
       "mechanic": "shield regen",
       "description": "Increase shield regen",
-      "amount": "1 die type",
-      "cost": "8000",
+      "amount": "5",
+      "cost": "5000",
       "id": "shield_regen"
-    },
-    {
-      "mechanic": "shield auto-regen",
-      "description": "Shield regen on every turn, despite taking damage.",
-      "amount": "-",
-      "cost": "15000",
-      "id": "shield_auto-regen"
     },
     {
       "mechanic": "attack bonus",
