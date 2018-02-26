@@ -1,5 +1,5 @@
 {
-  "updated": "February 19, 2018 @  3:37 PM",
+  "updated": "February 25, 2018 @  5:42 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT87AUwt1n514k6a6b4l0kOzGwIphsGXBJLFqujgkCsJ1rdudQ1Bk7Km12DACO5qQ2WGDVI8fT6-Xe/pubhtml",
   "data": [
     {
@@ -538,7 +538,7 @@
       "attackMod": null,
       "range": null,
       "numberOfTargets": null,
-      "description": "When the quarian takes an unshielded, critical hit that deals puncture damage, it's suit becomes breached. On the quarian's turn, it can take no other action except expending a charge of specialized sealant to close the puncture (1 charge). If it has no remaining charges, it becomes {poisoned}.",
+      "description": "When the quarian takes an unshielded, critical hit that deals piercing damage, its suit becomes breached. On the quarian's turn, it can take no other action except expending a charge of specialized sealant to close the puncture (1 charge). If it has no remaining charges, it becomes {poisoned}.",
       "miss": null,
       "asari": null,
       "batarian": null,
@@ -600,7 +600,7 @@
       "attackMod": null,
       "range": null,
       "numberOfTargets": null,
-      "description": "For 1 minute the geth can activate its hunter mode, gaining the following: increase speed by 6m, +2 on ranged or melee attack and damage rolls, add 1d4 to any tech power damage rolls.",
+      "description": "For 1 minute the geth can activate its hunter mode, gaining the following: increase speed by 2m, +1 on ranged or melee attack and damage rolls.",
       "miss": null,
       "asari": null,
       "batarian": null,

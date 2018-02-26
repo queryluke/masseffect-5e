@@ -23,6 +23,11 @@ Shield mechanic refactor.
 * New thermal clips added.
 * Thermal clip mechanics changed to account for addition of primer and detonators.
 
+### Races
+
+#### Geth
+* Hunter Mode: No longer reduces shields. Movement increase reduced to 2m, attack bonus reduced to +1. Soldier class bonus reduced to only necrotic and force damage resistance.
+
 
 ## v0.4.2
 Some minor rule changes and clean-up based on a play test 1/13/18

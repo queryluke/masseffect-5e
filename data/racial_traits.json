@@ -1,5 +1,5 @@
 {
-  "updated": "January 18, 2018 @ 11:55 AM",
+  "updated": "February 24, 2018 @  7:57 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRETKGL62kEZPA69PhA3AGMiVeHOWBRkTMDL3f_K-oajryEjwdq7fRAj-qfIusPsLMiIqmB12D4Zun8/pubhtml",
   "data": [
     {
@@ -272,7 +272,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Your suit is your lifeblood. It makes your immune to disease. You have resistance to poison and necrotic damage. However, if you ever take an unshielded, critical hit that causes puncture damage, your suit becomes breached. On your turn, you can take no other action except expending a charge of specialized sealant to close the puncture. You have 3 charges of sealant.  On a long rest, you regain your charges."
+          "data": "Your suit is your lifeblood. It makes your immune to disease. You have resistance to poison and necrotic damage. However, when you take an unprotected critical hit from puncture damage your suit becomes breached. On your turn, you can take no other action except expending a charge of specialized sealant to close the puncture. You have 3 charges of sealant.  On a long rest, you regain your charges."
         },
         {
           "id": 2,
@@ -293,7 +293,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "id": "hermetic_suit",
-      "description_text_dump": "YoursuitisyourlifebloodItmakesyourimmunetodiseaseYouhaveresistancetopoisonandnecroticdamageHoweverifyouevertakeanunshieldedcriticalhitthatcausespuncturedamageyoursuitbecomesbreachedOnyourturnyoucantakenootheractionexceptexpendingachargeofspecializedsealanttoclosethepunctureYouhave3chargesofsealantOnalongrestyouregainyourchargesIfyouhavenochargesofsealantremainsyoubecomepoisoneduntilyoucanpatchthesuitIfyouspendlongerthat24hourswiththebreachyoudie"
+      "description_text_dump": "YoursuitisyourlifebloodItmakesyourimmunetodiseaseYouhaveresistancetopoisonandnecroticdamageHoweverwhenyoutakeanunprotectedcriticalhitfrompuncturedamageyoursuitbecomesbreachedOnyourturnyoucantakenootheractionexceptexpendingachargeofspecializedsealanttoclosethepunctureYouhave3chargesofsealantOnalongrestyouregainyourchargesIfyouhavenochargesofsealantremainsyoubecomepoisoneduntilyoucanpatchthesuitIfyouspendlongerthat24hourswiththebreachyoudie"
     },
     {
       "name": "Hungry Jaws",
@@ -325,7 +325,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Channel shields into auxiliary combat systems. Lose 3d6 shields but gain the following: Increase movement by 6m. +3 bonus to ranged and melee weapon attack rolls. Add 1d6 to any tech power damage rolls. This effect lasts 1 min. You can only use Hunter Mode once per long rest."
+          "data": "As an action, activate Hunter Mode: Increase movement by 2m. +1 bonus to ranged and melee weapon attack rolls. This effect lasts 1 min. You can only use Hunter Mode once per long rest."
         },
         {
           "id": 2,
@@ -343,11 +343,11 @@
             "items": [
               [
                 "Engineer",
-                "Increase the damage of all Tech powers by 1 die type (max d12). If the die type is already d12, add +1 for each die rolled instead."
+                "Increase the damage of all Tech powers by 1 die type (max d12). If the die type is already d12, add +1 damage for each die rolled instead."
               ],
               [
                 "Soldier",
-                "You have resistance to all damage caused by biotic spells and advantage on saving throws caused by biotic spells."
+                "You have resistance to necrotic and force damage."
               ],
               [
                 "Infiltrator",
@@ -370,7 +370,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "id": "hunter_mode",
-      "description_text_dump": "ChannelshieldsintoauxiliarycombatsystemsLose3d6shieldsbutgainthefollowingIncreasemovementby6m3bonustorangedandmeleeweaponattackrollsAdd1d6toanytechpowerdamagerollsThiseffectlasts1minYoucanonlyuseHunterModeonceperlongrestAt11thlevelyougainanadditionalbenefitbasedonyourclasstableClassFeatureEngineerIncreasethedamageofallTechpowersby1dietypemaxd12Ifthedietypeisalreadyd12add1foreachdierolledinsteadSoldierYouhaveresistancetoalldamagecausedbybioticspellsandadvantageonsavingthrowscausedbybioticspellsInfiltratorIncreaseyoursneakattackdietypetod8table"
+      "description_text_dump": "AsanactionactivateHunterModeIncreasemovementby2m1bonustorangedandmeleeweaponattackrollsThiseffectlasts1minYoucanonlyuseHunterModeonceperlongrestAt11thlevelyougainanadditionalbenefitbasedonyourclasstableClassFeatureEngineerIncreasethedamageofallTechpowersby1dietypemaxd12Ifthedietypeisalreadyd12add1damageforeachdierolledinsteadSoldierYouhaveresistancetonecroticandforcedamageInfiltratorIncreaseyoursneakattackdietypetod8table"
     },
     {
       "name": "Keen Senses",
