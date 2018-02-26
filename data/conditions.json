@@ -1,5 +1,5 @@
 {
-  "updated": "February 24, 2018 @  2:02 PM",
+  "updated": "February 25, 2018 @  7:39 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRxNdrcVHvbqyeRuxHkMt2e8GYD92gMn5pTnxNI_1I3s1xC1nACWAgiSimFsgc3GIrcRfhYljjMymyJ/pubhtml",
   "data": [
     {
@@ -39,7 +39,7 @@
     },
     {
       "name": "Invisible",
-      "mechanic": "Impossible to see without special gadgets. The creature still makes noise and tracks. Attack rolls against the creature have disadvantage. The creature has advantage on attack rolls.",
+      "mechanic": "Impossible to see without special gadgets. For the purpose of Hiding, the creature is heavily obscured. The creature’s location can be detected by any noise it makes or any tracks it leaves. Attack rolls against the creature have disadvantage. The creature has advantage on attack rolls.",
       "id": "invisible"
     },
     {

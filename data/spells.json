@@ -1,5 +1,5 @@
 {
-  "updated": "February 24, 2018 @  2:02 PM",
+  "updated": "February 25, 2018 @  8:04 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -79,7 +79,7 @@
         }
       ],
       "adv_option_1": "Anti-Armor : Each creature that fails the saving throw takes a -1 penalty to their AC.",
-      "adv_option_2": "Drain : Each time Annihilation Field deals damage, you gain shield points equal half the damage done.",
+      "adv_option_2": "Phasic : Annihilation Field's damage bypasses shields.",
       "type": "biotic",
       "die_type": "d6",
       "attack_type": [
@@ -109,7 +109,7 @@
       "id": "annihilation_field",
       "adv_options": [
         "Anti-Armor : Each creature that fails the saving throw takes a -1 penalty to their AC.",
-        "Drain : Each time Annihilation Field deals damage, you gain shield points equal half the damage done."
+        "Phasic : Annihilation Field's damage bypasses shields."
       ],
       "class_list": "Adept, Vanguard",
       "mechanic_text_dump": "Spinafieldofdarkenergyoriginatingfromyouina6msphereThefieldmoveswithyouandreducesyourmovementspeedbyhalfEachcreaturewithinthespheremustmakeaConstitutionsavingthrowAcreaturetakes12d6necroticdamageonafailedsaveorhalfasmuchdamageonasuccessfuloneAcreaturemustalsomakethesavingthrowwhenitentersthefieldsspaceforthefirsttimeonaturnorendsitsturnthereAnycreaturewithinthesphereisprimednecroticThisconditionendsimmediatelyifthecreatureleavesthesphereAthigherlevelsWhenyoucastthisspellusingaspellslotof5thlevelorhigherincreasetheradiusby2mforeachslotlevelabovethe4th"
@@ -248,7 +248,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Surround yourself in a high-gravity mass effect that strengthens your shields but reduces your movement speed. While you have any barrier ticks, your speed is reduced by 4m. Whenever you take damage, remove 1 barrier tick and reduce that damage by 1d8. When you cast Barrier, refill your barrier ticks to their maximum amount. Your class indicates the maximum number of barrier ticks you can have."
+          "data": "Surround yourself in a high-gravity mass effect field that strengthens your defense but reduces your movement speed. While you have any barrier ticks, your speed is reduced by 4m. Whenever you take damage, remove 1 barrier tick and reduce that damage by 1d8. When you cast Barrier, refill your barrier ticks to their maximum amount. Your class indicates the maximum number of barrier ticks you can have."
         },
         {
           "id": 2,
@@ -290,7 +290,7 @@
         "Quick Barrier : You may cast Barrier as a bonus action."
       ],
       "class_list": "Adept, Vanguard",
-      "mechanic_text_dump": "SurroundyourselfinahighgravitymasseffectthatstrengthensyourshieldsbutreducesyourmovementspeedWhileyouhaveanybarrierticksyourspeedisreducedby4mWheneveryoutakedamageremove1barriertickandreducethatdamageby1d8WhenyoucastBarrierrefillyourbarriertickstotheirmaximumamountYourclassindicatesthemaximumnumberofbarrierticksyoucanhaveThisreductionincreasesby1whenyoureach5thlevel2d811thlevel3d8and17thlevel4d8"
+      "mechanic_text_dump": "SurroundyourselfinahighgravitymasseffectfieldthatstrengthensyourdefensebutreducesyourmovementspeedWhileyouhaveanybarrierticksyourspeedisreducedby4mWheneveryoutakedamageremove1barriertickandreducethatdamageby1d8WhenyoucastBarrierrefillyourbarriertickstotheirmaximumamountYourclassindicatesthemaximumnumberofbarrierticksyoucanhaveThisreductionincreasesby1whenyoureach5thlevel2d811thlevel3d8and17thlevel4d8"
     },
     {
       "name": "Barrier Detonation",
@@ -1155,7 +1155,7 @@
           "data": "Spend X tech points to unleash a wave of electric energy in a 8m cone originating from you. Each creature must make a Constitution saving throw. On a failed save, a creature takes Xd8 lightning damage or half as much damage on a successful one."
         }
       ],
-      "adv_option_1": "Shield Restore : Gain shield points equal to half of your damage roll.",
+      "adv_option_1": "Shield Restore : If you are wearing armor, gain shield points equal to half of your damage roll.",
       "adv_option_2": "Paralyze : Creatures that fail the saving throw are paralyzed until the end of their next turn.",
       "type": "tech",
       "die_type": "d8",
@@ -1185,7 +1185,7 @@
       "min_tech_points": "1",
       "id": "electric_slash",
       "adv_options": [
-        "Shield Restore : Gain shield points equal to half of your damage roll.",
+        "Shield Restore : If you are wearing armor, gain shield points equal to half of your damage roll.",
         "Paralyze : Creatures that fail the saving throw are paralyzed until the end of their next turn."
       ],
       "class_list": "Engineer, Infiltrator",
@@ -1198,11 +1198,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You spend tech points to cycle your Omni-tool, sapping electromagnetic energy from a creature you can see within range. Make a ranged spell attack against the target. On a hit, the target takes Xd4 lightning damage, where X is the amount of tech points you spent, and you get shield points equal to half of the damage done."
+          "data": "You spend tech points to cycle your Omni-tool, sapping electromagnetic energy from a creature you can see within range. Make a ranged spell attack against the target. On a hit, the target takes Xd4 lightning damage, where X is the amount of tech points you spent. Additionally, if you are wearing armor, gain shield points equal to half of the damage done."
         }
       ],
       "adv_option_1": "Improved Damage : Increase the damage die type to d6.",
-      "adv_option_2": "Improved Regen : You get Shield Points equal to your damage roll.",
+      "adv_option_2": "Improved Regen : If you are wearing armor, gain shield points equal to your damage roll.",
       "type": "tech",
       "die_type": "d4",
       "attack_type": [
@@ -1232,10 +1232,10 @@
       "id": "energy_drain",
       "adv_options": [
         "Improved Damage : Increase the damage die type to d6.",
-        "Improved Regen : You get Shield Points equal to your damage roll."
+        "Improved Regen : If you are wearing armor, gain shield points equal to your damage roll."
       ],
       "class_list": "Engineer, Sentinel",
-      "mechanic_text_dump": "YouspendtechpointstocycleyourOmnitoolsappingelectromagneticenergyfromacreatureyoucanseewithinrangeMakearangedspellattackagainstthetargetOnahitthetargettakesXd4lightningdamagewhereXistheamountoftechpointsyouspentandyougetshieldpointsequaltohalfofthedamagedone"
+      "mechanic_text_dump": "YouspendtechpointstocycleyourOmnitoolsappingelectromagneticenergyfromacreatureyoucanseewithinrangeMakearangedspellattackagainstthetargetOnahitthetargettakesXd4lightningdamagewhereXistheamountoftechpointsyouspentAdditionallyifyouarewearingarmorgainshieldpointsequaltohalfofthedamagedone"
     },
     {
       "name": "First Aid",
@@ -1647,7 +1647,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "As a bonus action, you toss a portable shield generator onto the ground in front of you. It generates 2m tall and wide, hexagon-shaped shield with 5AC and 50 shield points. These shield points do not regenerate during combat and the shield dissipates when it no longer has any shield points left."
+          "data": "As a bonus action, you toss a portable shield generator onto the ground in front of you. It generates 2m tall and wide, hexagon-shaped shield with 5AC and 50 shield points."
         },
         {
           "id": 2,
@@ -1694,7 +1694,7 @@
         "Large Shield : The Shield covers a 4m wide area."
       ],
       "class_list": "Soldier",
-      "mechanic_text_dump": "AsabonusactionyoutossaportableshieldgeneratorontothegroundinfrontofyouItgenerates2mtallandwidehexagonshapedshieldwith5ACand50shieldpointsTheseshieldpointsdonotregenerateduringcombatandtheshielddissipateswhenitnolongerhasanyshieldpointsleftAslongastheHexShieldhasshieldpointsitprovidesfullcovertocreaturesbehinditHexshieldregainsallshieldpointsonalongrest"
+      "mechanic_text_dump": "AsabonusactionyoutossaportableshieldgeneratorontothegroundinfrontofyouItgenerates2mtallandwidehexagonshapedshieldwith5ACand50shieldpointsAslongastheHexShieldhasshieldpointsitprovidesfullcovertocreaturesbehinditHexshieldregainsallshieldpointsonalongrest"
     },
     {
       "name": "Incinerate",
@@ -1813,7 +1813,7 @@
           "data": "At higher levels: When you cast this spell using a spell slot of level 2 or higher, the damage increases by 1d8 for each slot level above the 1st."
         }
       ],
-      "adv_option_1": "Anti-Shield : Damage type become lightning (double damage to shields)",
+      "adv_option_1": "Anti-Shield : Damage type become lightning.",
       "adv_option_2": "Improved Damage : Increase the damage die type to d12.",
       "type": "biotic",
       "die_type": "d8",
@@ -1843,7 +1843,7 @@
       "min_tech_points": null,
       "id": "lance",
       "adv_options": [
-        "Anti-Shield : Damage type become lightning (double damage to shields)",
+        "Anti-Shield : Damage type become lightning.",
         "Improved Damage : Increase the damage die type to d12."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
@@ -2533,7 +2533,7 @@
           "data": "Spend a tech point to send an electric shock from your omni-tool to a creature you try to touch. Make a melee attack against the target. You have advantage on the attack roll if the target is wearing armor. On a hit, the target becomes {primed-lightning} until the end of its next turn and takes Xd6 lightning damage where X is the number of tech points spent, and it can't take reactions until the start of its next turn."
         }
       ],
-      "adv_option_1": "Absorbing Shock : If the target is shielded, get shield points equal to half the damage done.",
+      "adv_option_1": "Reach : Increase the range to 4m.",
       "adv_option_2": "Improved Shock : Increase the damage die to d8.",
       "type": "tech",
       "die_type": "d6",
@@ -2563,7 +2563,7 @@
       "min_tech_points": "1",
       "id": "shocking_grasp",
       "adv_options": [
-        "Absorbing Shock : If the target is shielded, get shield points equal to half the damage done.",
+        "Reach : Increase the range to 4m.",
         "Improved Shock : Increase the damage die to d8."
       ],
       "class_list": "Engineer, Infiltrator",
@@ -3408,7 +3408,7 @@
           "data": "At higher levels: When you cast this spell using a spell slot of level 3 or higher, the damage increases by 1d10 for each slot level above the 2nd."
         }
       ],
-      "adv_option_1": "Internal Bleeding : The shifting causes internal bleeding. At the start of your turn, the target takes 1[dd] necrotic damage bypassing it's shields until it uses medi-gel or is stabilized.",
+      "adv_option_1": "Internal Bleeding : The shifting causes internal bleeding. At the start of your turn, the target takes 1[dd] necrotic damage bypassing its shields until it uses medi-gel or is stabilized.",
       "adv_option_2": "Keel over : A target hit by warp must pass a Constitution saving throw. On a failed save, the force of warp is so intense the target is knocked {prone} and {stunned} until the start of your next turn.",
       "type": "biotic",
       "die_type": "d10",
@@ -3438,7 +3438,7 @@
       "min_tech_points": null,
       "id": "warp",
       "adv_options": [
-        "Internal Bleeding : The shifting causes internal bleeding. At the start of your turn, the target takes 1d10 necrotic damage bypassing it's shields until it uses medi-gel or is stabilized.",
+        "Internal Bleeding : The shifting causes internal bleeding. At the start of your turn, the target takes 1d10 necrotic damage bypassing its shields until it uses medi-gel or is stabilized.",
         "Keel over : A target hit by warp must pass a Constitution saving throw. On a failed save, the force of warp is so intense the target is knocked {prone} and {stunned} until the start of your next turn."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
