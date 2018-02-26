@@ -1,7 +1,6 @@
 # CHANGE LOG
 
-## v0.5.5
-Shield mechanic refactor.
+## v0.5.0
 
 ### Site Enhancements
 * Rule dialogs added for quick reference.
@@ -20,8 +19,22 @@ Shield mechanic refactor.
 * Primer and Detonator rules added as variant rule.
 
 ### Thermal Clips
-* New thermal clips added.
+* New thermal clips added: Drill, Explosive, Phasic
 * Thermal clip mechanics changed to account for addition of primer and detonators.
+
+### Armor Mods & Sets
+Armor or mods that granted an increase in shield regen die type, now increase shield regen by 5.
+Armor sets that had +shield points, have the total shields and regen amount listed.
+
+### Spells & Powers
+Any spell effect that had a player 'gain shield points', no only effects players wearing armor.
+* Annihilation Field: __Drain__ option replaced with __Phasic__, which bypasses shields.
+* Shocking touch: __Absorbing Shock__ option replaced with __Reach__, increasing the range of the power.
+* Siege Pulse: Shield point cost reduced to 5.
+
+### Bestiary
+Collector forces added.
+Reaper forces added (excluding Reaper Destroyers and Reaper Capital Ships).
 
 ### Races
 

@@ -1,5 +1,5 @@
 {
-  "updated": "February 25, 2018 @  8:04 PM",
+  "updated": "February 26, 2018 @  2:56 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -2627,12 +2627,12 @@
         {
           "id": 1,
           "type": "line",
-          "data": "As an Attack action, overload your shield capacitors causing a loud, painfully intense kinetic wave to erupt from your location. Reduce your shield points by 10. Each creature within a 4m sphere becomes {deafened} and must make Constitution saving throw (DC 8 + proficiency bonus). On a failed save, a creature is {incapacitated} until the start of your next turn. On a successful save, a creature takes 2d4 psychic damage."
+          "data": "As an Attack action, overload your shield capacitors causing a loud, painfully intense kinetic wave to erupt from your location. Reduce your shield points by 5. Each creature within a 4m sphere becomes {deafened} and must make Constitution saving throw (DC 8 + proficiency bonus). On a failed save, a creature is {incapacitated} until the start of your next turn. On a successful save, a creature takes 2d4 psychic damage."
         },
         {
           "id": 2,
           "type": "line",
-          "data": "You may use Siege Pulse as long as you have at least 10 shield points."
+          "data": "You may use Siege Pulse as long as you have at least 5 shield points."
         }
       ],
       "adv_option_1": "Improved Pulse : Add your STR or DEX modifier to the DC of the saving throw. You choose which one.",
@@ -2670,7 +2670,7 @@
         "Lingering Pulse : Creatures hit by siege pulse have disadvantage on melee and ranged attacks until the end of your next turn."
       ],
       "class_list": "Soldier",
-      "mechanic_text_dump": "AsanAttackactionoverloadyourshieldcapacitorscausingaloudpainfullyintensekineticwavetoeruptfromyourlocationReduceyourshieldpointsby10Eachcreaturewithina4mspherebecomesdeafenedandmustmakeConstitutionsavingthrowDC8proficiencybonusOnafailedsaveacreatureisincapacitateduntilthestartofyournextturnOnasuccessfulsaveacreaturetakes2d4psychicdamageYoumayuseSiegePulseaslongasyouhaveatleast10shieldpoints"
+      "mechanic_text_dump": "AsanAttackactionoverloadyourshieldcapacitorscausingaloudpainfullyintensekineticwavetoeruptfromyourlocationReduceyourshieldpointsby5Eachcreaturewithina4mspherebecomesdeafenedandmustmakeConstitutionsavingthrowDC8proficiencybonusOnafailedsaveacreatureisincapacitateduntilthestartofyournextturnOnasuccessfulsaveacreaturetakes2d4psychicdamageYoumayuseSiegePulseaslongasyouhaveatleast5shieldpoints"
     },
     {
       "name": "Singularity",

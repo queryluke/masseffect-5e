@@ -27,7 +27,6 @@ const state = {
 };
 
 const getTooltips = () => {
-  console.log('getting tooltips');
   return Vue.http.get(`../data/conditions.json`).then(response => response.json());
 };
 
@@ -79,7 +78,6 @@ const mutations = {
 
 const actions = {
   addBookmark({commit}, payload) {
-    console.log(payload);
     commit('addBookmark', payload);
   },
   removeBookmark({state, commit}, payload) {
@@ -96,7 +94,6 @@ const actions = {
     commit('toggleGlobalDialog', false);
   },
   setTooltips({commit}) {
-    console.log(getTooltips());
     return getTooltips().then(response => {
       commit('setTooltips', response.data);
     });

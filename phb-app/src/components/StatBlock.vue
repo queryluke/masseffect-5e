@@ -8,7 +8,7 @@
       ul.list-unstyled
         li #[strong Armor Class] {{ stats.ac }}
         li #[strong Hit Points] {{ renderPoints(stats.hp) }}
-        li #[strong Shield Points] {{ shields(stats.sp) }}
+        li(v-if="stats.sp") #[strong Shield Points] {{ stats.sp.shields }} ({{ stats.sp.regen }} regen)
         li(v-if="stats.barrier") #[strong Barrier] {{ stats.barrier }} {{ stats.barrier | pluralize('tick') }}
         li #[strong Speed] {{ stats.speed }}
       div.hr
@@ -87,14 +87,6 @@
         } else {
           return '0';
         }
-      },
-      shields(shieldObject) {
-        if (shieldObject.average) {
-          return this.renderPoints(shieldObject);
-        } else if (shieldObject.shields) {
-          return `${shieldObject.shields} (${shieldObject.regen} regen)`;
-        }
-        return '0';
       },
       hasFeature(feature) {
         return this.stats[feature] && this.stats[feature].length > 0;
