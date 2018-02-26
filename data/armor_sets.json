@@ -1,5 +1,5 @@
 {
-  "updated": "February 25, 2018 @  8:34 PM",
+  "updated": "February 25, 2018 @  8:39 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRlWQ7v7esaQwLtD1yXcbiHM-jYHCzjC23cIfNFEcfbLhEcFSi8EIoLi1zZyCQtQFRneMqp02_pFWKH/pubhtml",
   "data": [
     {
@@ -546,7 +546,7 @@
       "piece": "None",
       "type": "None",
       "flavor": "A personal shield generator that offers shields outside of wearing armor.",
-      "mechanic": "10 shields (regen 5). Improved models can be purchased. 10,000 for each 10 shield points, and 5,000 for 5 additional regen.",
+      "mechanic": "10 shields (regen 5). Improved models can be purchased. 10,000 for each 10 shield points, and 5,000 for 5 additional regen. Max is 50 shield points and 25 regen,",
       "cost": "20000",
       "manu": "Hahne-Kedar",
       "image": null,
