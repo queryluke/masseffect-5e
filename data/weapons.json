@@ -1,5 +1,5 @@
 {
-  "updated": "February 24, 2018 @  5:32 PM",
+  "updated": "February 27, 2018 @ 12:04 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSq70x_GZuDKcELgX8k_7Hd6nLGu3DoIEdDwP-YEGjUU-ghGc7ot_Q7140FZwGbEalHgzPwVm4BN8y_/pubhtml",
   "data": [
     {
@@ -1428,6 +1428,28 @@
       "notes_text_dump": "CustommadeforitsownerwhenyoupurchasethisweaponyoumaychooseoneofthefollowinglistIncreasedamageofthisweapontod12Reloadingthisweaponisabonusaction2torangedattacksmadewiththeweaponIncreasetheHeatto12list"
     },
     {
+      "name": "Monomolecular Blade",
+      "type": "Melee",
+      "cost": "4500",
+      "manufacturer": "Cerberus",
+      "weight": "2",
+      "heat": "8",
+      "rof": "1",
+      "damage": "8",
+      "range": "2m",
+      "rare": null,
+      "tags": "Versatile (1d10)",
+      "notes": [
+
+      ],
+      "npcHit": null,
+      "addDmg": null,
+      "dmgType": "slashing",
+      "image": null,
+      "id": "monomolecular_blade",
+      "notes_text_dump": ""
+    },
+    {
       "name": "N7 Crusader",
       "type": "Shotgun",
       "cost": "27000",
@@ -1914,28 +1936,6 @@
       "image": "http://vignette1.wikia.nocookie.net/masseffect/images/7/76/ME3_Venom_Shotgun.png/revision/latest?cb=20121029075317",
       "id": "venom_shotgun",
       "notes_text_dump": "DealsthunderdamageInsteadofmakingarangedweaponattacktargetcreaturemakesaDexteritysavingthrowDC13Onasuccessfulsaveittakeshalfasmuchdamage"
-    },
-    {
-      "name": "Monomolecular Blade",
-      "type": "Melee",
-      "cost": null,
-      "manufacturer": null,
-      "weight": "2",
-      "heat": "8",
-      "rof": "1",
-      "damage": "8",
-      "range": "2m",
-      "rare": null,
-      "tags": "Versatile (1d10)",
-      "notes": [
-
-      ],
-      "npcHit": null,
-      "addDmg": null,
-      "dmgType": "slashing",
-      "image": null,
-      "id": "monomolecular_blade",
-      "notes_text_dump": ""
     }
   ]
 }

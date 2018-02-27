@@ -5,7 +5,7 @@
         h2.display-3 Conditions
       v-flex.xs12
         p.headline New
-        p Frozen, Lifted, Targeting, Unprotected
+        p Frozen, Lifted, Primed, Targeting, Unprotected
     div.mt-3
       v-data-table(v-bind:headers="headers" v-bind:items="items" hide-actions).elevation-1
         template(slot="items" slot-scope="props")

@@ -1,5 +1,5 @@
 {
-  "updated": "February 25, 2018 @  7:37 PM",
+  "updated": "February 27, 2018 @ 12:02 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -78,18 +78,6 @@
       ],
       "id": "barrier",
       "mechanic_text_dump": "LearntheBarriercantripThisdoesnotcountagainstyournumberofcantripsknown"
-    },
-    {
-      "name": "Tactical Advantage",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Starting at the 10th level, when you cast a cantrip, biotic spell, or tech power you can choose either advancement option."
-        }
-      ],
-      "id": "tactical_advantage",
-      "mechanic_text_dump": "Startingatthe10thlevelwhenyoucastacantripbioticspellortechpoweryoucanchooseeitheradvancementoption"
     },
     {
       "name": "Bend Luck",
@@ -528,6 +516,18 @@
       "mechanic_text_dump": "YouraimbecomesdeadlyAsabonusactiononyourturnyoucantakecarefulaimatacreatureyoucanseethatiswithinrangeofarangedweaponyourewieldingUntiltheendofthisturnyourrangedattackswiththatweapongaintwobenefitsagainstthetargetlistTheattacksignorehalfandthreequarterscoverOneachhittheweapondealsadditionaldamagetothetargetequalto2halfyourfighterlevelYoucanusethisfeaturethreetimesYouregainallexpendedusesofitwhenyoufinishashortorlongrestlist"
     },
     {
+      "name": "Devastating Critical",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Starting at the 15th level, when you score a critical hit with your Weapon of Choice, you gain a bonus to that weapon's damage roll equal to your level."
+        }
+      ],
+      "id": "devastating_critical",
+      "mechanic_text_dump": "Startingatthe15thlevelwhenyouscoreacriticalhitwithyourWeaponofChoiceyougainabonustothatweaponsdamagerollequaltoyourlevel"
+    },
+    {
       "name": "Drone",
       "mechanic": [
         {
@@ -581,48 +581,6 @@
       ],
       "id": "drone",
       "mechanic_text_dump": "AsanActionspendXTPtosummonadroneEachdronetypehasauniquesetofabilitiesDronesmoveandcanusetheirabilitywhentheyarefirstsummonedandatthebeginningofyourturnonsubsequentturnsYoucanonlyhaveasingleDroneactiveatatimeunlessotherwisestatedtableNameACHealthSpeedAbilityCombat12YourlvlXd86mMakearangedweaponattackonahostilecreatureyoucanseewithin20maddyourTechmodifiertotheattackrollOnahittheDronedeals2d6piercingdamageDamageincreasesby1d6atthe5th11thand17thlevelAntiShield12YourlvlXd108mMakeameleeattackahostilecreatureyoucanseewithin2maddyourTechmodifiertotheattackrollOnahitthetargettakes1d8lightningdamageDamageincreasesby1d8atthe5th11thand17thlevelDefense15YourlvlXd66mWhenafriendlycreaturetakesdamageifthedroneiswithin2mofthatcreaturereducethedamagetakenby1d6Damagereductionincreasesby1d6atthe5th11thand17thlevelDisruptor8YourlvlXd410mDetonatethedroneCreatureswithina2mradiusmustmakeaDexteritysavingthrowDCequalsyourTechsaveOnafailedsaveacreaturetakes1d12thunderdamageorhalfasmuchonasuccessfuloneDamageincreasesby1d12atthe5th11thand17thleveltable"
-    },
-    {
-      "name": "Improved Drones",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "When you summon a Drone, they are augmented in the following ways:"
-        },
-        {
-          "id": 2,
-          "type": "table",
-          "data": {
-            "headers": [
-              "Name",
-              "Augmentation"
-            ],
-            "items": [
-              [
-                "Combat",
-                "The drone makes 2 ranged attacks when it uses its ability. These attacks can be made on the same or separate targets."
-              ],
-              [
-                "Anti-Shield",
-                "Damage done increases to a d12."
-              ],
-              [
-                "Defense",
-                "Damage reduction increases to a d10."
-              ],
-              [
-                "Disruptor",
-                "Your lvl + Xd4",
-                "10m",
-                "If the drone is destroyed before you activate its detonation ability, it explodes. Resolve the detonation ability immediately."
-              ]
-            ]
-          }
-        }
-      ],
-      "id": "improved_drones",
-      "mechanic_text_dump": "WhenyousummonaDronetheyareaugmentedinthefollowingwaystableNameAugmentationCombatThedronemakes2rangedattackswhenitusesitsabilityTheseattackscanbemadeonthesameorseparatetargetsAntiShieldDamagedoneincreasestoad12DefenseDamagereductionincreasestoad10DisruptorYourlvlXd410mIfthedroneisdestroyedbeforeyouactivateitsdetonationabilityitexplodesResolvethedetonationabilityimmediatelytable"
     },
     {
       "name": "Drone Mastery",
@@ -719,6 +677,18 @@
       ],
       "id": "elusive",
       "mechanic_text_dump": "YouaresoevasivethatattackersrarelygaintheupperhandagainstyouNoattackrollhasadvantageagainstyouwhileyouarentincapacitated"
+    },
+    {
+      "name": "Empowered Biotics",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Whenever you roll a 1 on a damage roll for a biotic spell or cantrip you cast, you can reroll the die and must use the new roll."
+        }
+      ],
+      "id": "empowered_biotics",
+      "mechanic_text_dump": "Wheneveryourolla1onadamagerollforabioticspellorcantripyoucastyoucanrerollthedieandmustusethenewroll"
     },
     {
       "name": "Evasion",
@@ -874,13 +844,25 @@
         },
         {
           "id": 3,
-          "type": "list",
-          "data": [
-            "Health: your lvl + Xd8",
-            "AC: 12",
-            "Speed: 10m",
-            "Ability: The drone casts a 1 tech point version of First Aid (this does not reduce your tech points). Use your Tech modifier to calculate the healing done. The version of First Aid the drone casts increases by 1 tech point at the 5th (2 tp), 11th (3 tp), and 17th (4 tp) level."
-          ]
+          "type": "table",
+          "data": {
+            "headers": [
+              "Name",
+              "AC",
+              "Health",
+              "Speed",
+              "Ability"
+            ],
+            "items": [
+              [
+                "Healing",
+                "12",
+                "Your lvl + Xd8",
+                "10m",
+                "The drone casts a 1 tech point version of First Aid (this does not reduce your tech points). Use your Tech modifier to calculate the healing done. The version of First Aid the drone casts increases by 1 tech point at the 5th (2 tp), 11th (3 tp), and 17th (4 tp) level."
+              ]
+            ]
+          }
         },
         {
           "id": 4,
@@ -891,15 +873,14 @@
           "id": 5,
           "type": "list",
           "data": [
-            "Health: (your lvl + Xd8)",
-            "2",
+            "HP: Your level multiplied by 2 + Xd8",
             "AC: 15",
             "Speed: 16m"
           ]
         }
       ],
       "id": "healing_drone",
-      "mechanic_text_dump": "Atthe2ndlevelyougainproficiencywithMedicineIfyouarealreadyproficientinMedicineyoumaychooseanotherskilltobecomeproficientinYoualsolearntosummonaHealingdronelistHealthyourlvlXd8AC12Speed10mAbilityThedronecastsa1techpointversionofFirstAidthisdoesnotreduceyourtechpointsUseyourTechmodifiertocalculatethehealingdoneTheversionofFirstAidthedronecastsincreasesby1techpointatthe5th2tp11th3tpand17th4tplevellistAtthe14thlevelyourhealingdronesstatsincreaselistHealthyourlvlXd82AC15Speed16mlist"
+      "mechanic_text_dump": "Atthe2ndlevelyougainproficiencywithMedicineIfyouarealreadyproficientinMedicineyoumaychooseanotherskilltobecomeproficientinYoualsolearntosummonaHealingdronetableNameACHealthSpeedAbilityHealing12YourlvlXd810mThedronecastsa1techpointversionofFirstAidthisdoesnotreduceyourtechpointsUseyourTechmodifiertocalculatethehealingdoneTheversionofFirstAidthedronecastsincreasesby1techpointatthe5th2tp11th3tpand17th4tpleveltableAtthe14thlevelyourhealingdronesstatsincreaselistHPYourlevelmultipliedby2Xd8AC15Speed16mlist"
     },
     {
       "name": "Heavy Weapon Hack",
@@ -946,6 +927,46 @@
       ],
       "id": "improved_biotic_slash",
       "mechanic_text_dump": "By11thlevelyouareadeptatfocusingyourbioticsintomeleestrikesWheneveryouhitacreaturewithameleeweaponthecreaturetakesanextra1d8forcedamageIfyoualsouseyourBioticSlashwithanattackyouaddthisdamagetotheextradamageofyourBioticSlash"
+    },
+    {
+      "name": "Improved Drones",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "When you summon a Drone, they are augmented in the following ways:"
+        },
+        {
+          "id": 2,
+          "type": "table",
+          "data": {
+            "headers": [
+              "Name",
+              "Augmentation"
+            ],
+            "items": [
+              [
+                "Combat",
+                "The drone makes 2 ranged attacks when it uses its ability. These attacks can be made on the same or separate targets."
+              ],
+              [
+                "Anti-Shield",
+                "Damage done increases to a d12."
+              ],
+              [
+                "Defense",
+                "Damage reduction increases to a d10."
+              ],
+              [
+                "Disruptor",
+                "If the drone is destroyed before you activate its detonation ability, it explodes. Resolve the detonation ability immediately."
+              ]
+            ]
+          }
+        }
+      ],
+      "id": "improved_drones",
+      "mechanic_text_dump": "WhenyousummonaDronetheyareaugmentedinthefollowingwaystableNameAugmentationCombatThedronemakes2rangedattackswhenitusesitsabilityTheseattackscanbemadeonthesameorseparatetargetsAntiShieldDamagedoneincreasestoad12DefenseDamagereductionincreasestoad10DisruptorIfthedroneisdestroyedbeforeyouactivateitsdetonationabilityitexplodesResolvethedetonationabilityimmediatelytable"
     },
     {
       "name": "Improved Tech Armor",
@@ -1252,11 +1273,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "When you roll a 1 on a damage die for a spell that deals necrotic damage, you can reroll the die and must use the new roll."
+          "data": "When you roll a 1 or 2 on a damage die for a spell that deals necrotic damage, you can reroll the die and must use the new roll."
         }
       ],
       "id": "potent_biotics",
-      "mechanic_text_dump": "Whenyourolla1onadamagedieforaspellthatdealsnecroticdamageyoucanrerollthedieandmustusethenewroll"
+      "mechanic_text_dump": "Whenyourolla1or2onadamagedieforaspellthatdealsnecroticdamageyoucanrerollthedieandmustusethenewroll"
     },
     {
       "name": "Power Armor",
@@ -1315,18 +1336,6 @@
       ],
       "id": "quick_cast",
       "mechanic_text_dump": "Atthe5thlevelwhenyouuseyouractiontocastacantripyoumaymakeameleeorrangedweaponattackasabonusactionAtthe9thlevelwhenyouuseyouractiontocastaspellortechpoweryoumaymakeameleeorrangedweaponattackasabonusaction"
-    },
-    {
-      "name": "Devastating Critical",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Starting at the 15th level, when you score a critical hit with your Weapon of Choice, you gain a bonus to that weapon's damage roll equal to your level."
-        }
-      ],
-      "id": "devastating_critical",
-      "mechanic_text_dump": "Startingatthe15thlevelwhenyouscoreacriticalhitwithyourWeaponofChoiceyougainabonustothatweaponsdamagerollequaltoyourlevel"
     },
     {
       "name": "Reliable Talent",
@@ -1392,6 +1401,18 @@
       ],
       "id": "sentinel_mastery",
       "mechanic_text_dump": "At17thlevelyouhaveachievedmasteryofasinglebioticspellandtechpowerChoosea1stlevelbioticspellyouhavelearnedYoucancastthatspellwithoutexpendingaspellslotIfyouwanttocastthespellatahigherlevelyoumustexpendaspellslotasnormalChooseatechpoweryouhavelearnedYoucancastthatpowerfor2techpointswithoutsubtractingthosetechpointsfromyourpoolIfyoucantousethepowerwithmoretechpointsyoumustsubtractthepointsasnormal"
+    },
+    {
+      "name": "Shadow Strike",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "At level 15, you may spend 5 TP to activate Tactical Cloak and teleport to a target within 10m, then make a melee attack. At the end of the attack (whether a miss or hit), activate Tactical Cloak again and teleport to another location up 10m away. This movement does not provoke an attack of opportunity. The teleportation can be used to free you from movement impairing effects such as grapple, restrained, lifted, etc."
+        }
+      ],
+      "id": "shadow_strike",
+      "mechanic_text_dump": "Atlevel15youmayspend5TPtoactivateTacticalCloakandteleporttoatargetwithin10mthenmakeameleeattackAttheendoftheattackwhetheramissorhitactivateTacticalCloakagainandteleporttoanotherlocationup10mawayThismovementdoesnotprovokeanattackofopportunityTheteleportationcanbeusedtofreeyoufrommovementimpairingeffectssuchasgrapplerestrainedliftedetc"
     },
     {
       "name": "Shield Boost",
@@ -1561,6 +1582,18 @@
       "mechanic_text_dump": "YoumayuseareactiontosyncthetargetingcomputersofallyourallieswhoarenotincapacitatedYoutargetanenemypaintingthemwithaninfraredbeamthatletsallofyouraffectedalliesandyourselfmakeanattackrollonthattargetusingtheirweaponduringyourturnIfyouraffectedallyhasalreadytakentheirturntheymaystillmakeanattackonthedesignatedenemyandiftheyhavenotyettakentheirturntheymaketheattackwithadvantageOnceyouuseSynchronizedAssaultyoumustfinishalongrestbeforeyoucanuseitagain"
     },
     {
+      "name": "Tactical Advantage",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Starting at the 10th level, when you cast a cantrip, biotic spell, or tech power you can choose either advancement option."
+        }
+      ],
+      "id": "tactical_advantage",
+      "mechanic_text_dump": "Startingatthe10thlevelwhenyoucastacantripbioticspellortechpoweryoucanchooseeitheradvancementoption"
+    },
+    {
       "name": "Tactical Ambush",
       "mechanic": [
         {
@@ -1672,10 +1705,15 @@
           "id": 1,
           "type": "line",
           "data": "Learn or advance a tech power."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Infiltrators may learn or advance an available combat power instead."
         }
       ],
       "id": "tech_power",
-      "mechanic_text_dump": "Learnoradvanceatechpower"
+      "mechanic_text_dump": "LearnoradvanceatechpowerInfiltratorsmaylearnoradvanceanavailablecombatpowerinstead"
     },
     {
       "name": "Teleporting Dodge",
@@ -1762,6 +1800,18 @@
       "mechanic_text_dump": "YouhaveundergoneextensivetrainingwithasingleweapontypeChooseaweapontypewhichbecomesyourWeaponofChoiceWhenyouhaveyourWeaponofChoiceequippedyougainasetofabilitiesthatarefueledbyspecialdicecalledsuperioritydiceYoumayspend1monthofintensivetrainingtoexchangeyourWeaponofChoicewithanotherweapontypeSuperiorityDiceYouhavefoursuperioritydicewhichared8sAsuperioritydieisexpendedwhenyouuseitYouregainallofyourexpendedsuperioritydicewhenyoufinishashortorlongrestYougainanothersuperioritydieat7thlevelandonemoreat15thlevelYoucanexpendsuperioritydicetogainanumberofdifferentbenefitslistWhenyoumakeaweaponattackagainstacreaturewithyourWeaponofChoiceyoucanexpendonesuperioritydietoaddittotheattackrollYoucanusethisabilitybeforeoraftermakingtheattackrollbutbeforeanyoftheeffectsoftheattackareappliedWhenyoudamageacreaturewithaweaponattackyoucanexpendonesuperioritydietoaddittothedamagerollYoucanusethisabilityafterrollingdamageIftheattackcausesthetargettomakeaConstitutionsavingthrowtomaintainconcentrationithasdisadvantageonthatsaveWhenyouarehitbyameleeattackifyouarecurrentlyholdingyourWeaponofChoiceyoucanexpendonesuperioritydieasareactionaddingthenumberrolledtoyourACIftheattackstillhitsyoutakehalfdamagefromitlist"
     },
     {
+      "name": "Weapon Training",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Gain proficiency with an additional weapon type."
+        }
+      ],
+      "id": "weapon_training",
+      "mechanic_text_dump": "Gainproficiencywithanadditionalweapontype"
+    },
+    {
       "name": "Zero-Sum",
       "mechanic": [
         {
@@ -1782,18 +1832,6 @@
       ],
       "id": "zero-sum",
       "mechanic_text_dump": "WhenyoumakeameleeattackinsteadofrollingadiceyoucanflipacoinOnaheadsitsacriticalhitOnatailsitsacriticalmissYoucanusethisabilityoncepershortrestStartingatthe9thlevelyoucanusethisabilitytwicepershortrestStartingatthe11thlevelyoucanusethisabilitythreetimespershortrest"
-    },
-    {
-      "name": "Weapon Training",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Gain proficiency with an additional weapon type."
-        }
-      ],
-      "id": "weapon_training",
-      "mechanic_text_dump": "Gainproficiencywithanadditionalweapontype"
     }
   ]
 }

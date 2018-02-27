@@ -1,5 +1,5 @@
 {
-  "updated": "February 24, 2018 @  7:57 PM",
+  "updated": "February 26, 2018 @  4:15 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRETKGL62kEZPA69PhA3AGMiVeHOWBRkTMDL3f_K-oajryEjwdq7fRAj-qfIusPsLMiIqmB12D4Zun8/pubhtml",
   "data": [
     {
@@ -731,6 +731,30 @@
       "unshackled_ai": null,
       "id": "turian_toughness",
       "description_text_dump": "Yourhitpointmaximumincreasesby2anditincreasesby2everytimeyougainalevel"
+    },
+    {
+      "name": "Innate Shielding",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You have 5 shields (regen 5). These shields can be upgrade for and equivalent cost of buying an armor mod."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": "x",
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "unshackled_ai": "x",
+      "id": "innate_shielding",
+      "description_text_dump": "Youhave5shieldsregen5Theseshieldscanbeupgradeforandequivalentcostofbuyinganarmormod"
     }
   ]
 }
