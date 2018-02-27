@@ -3,7 +3,7 @@
     h2.display-3 Saved Grunts
     v-container(fluid)
       v-layout(row wrap)
-        v-flex(v-for="(npc, index) in npcs" v-bind:key="index" xs12 md6 lg4 xl3)
+        v-flex(v-for="(npc, index) in npcs" v-bind:key="index" xs12 md6 xl4)
           stat-block(v-bind:stats="npc").ma-2
             template(slot="actions")
               v-btn(

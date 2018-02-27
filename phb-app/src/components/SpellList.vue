@@ -19,11 +19,11 @@
             span(v-if="spell.attack_type.length > 1") (...)
           v-flex.hidden-md-and-down.lg2
             spell-damage-effect(:spell="spell")
-      v-card
-        v-card-text.grey.lighten-3
+      v-card.grey.lighten-3
+        v-card-text
           spell-info(:spell="spell").mt-2
-          v-btn(small primary dark :to="`/spells/${spell.id}`") Spell Page
-
+        v-card-actions
+          bookmark-button(:card="spell" type="spell" v-bind:props="{flat: true}")
 </template>
 
 <script>
@@ -32,10 +32,11 @@
   import SpellRangeArea from "./SpellRangeArea.vue";
   import SpellDamageEffect from "./SpellDamageEffect.vue";
   import SpellInfo from "./SpellInfo.vue";
+  import BookmarkButton from "./BookmarkButton.vue";
 
   export default {
     components: {
-      SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect, SpellInfo
+      SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect, SpellInfo, BookmarkButton
     },
     name: 'SpellList',
     props: ['spells'],

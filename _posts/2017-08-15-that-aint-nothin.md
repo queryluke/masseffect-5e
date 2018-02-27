@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "That ain't nothin..."
+description: "Recapping the growing interest in the project"
 excerpt: "A long overdue update. A brief recap of the play test and what's coming next."
 ---
 

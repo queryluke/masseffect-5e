@@ -5,7 +5,8 @@
   "env": {
     "test": {
       "plugins": [
-        "istanbul"
+        "istanbul",
+        "transform-object-rest-spread"
       ]
     },
     "production": {
@@ -16,6 +17,9 @@
             "modules": false
           }
         ]
+      ],
+      "plugins": [
+        "transform-object-rest-spread"
       ]
     }
   }

@@ -8,34 +8,25 @@ export const Hp = {
       } else {
         hpRange = hpRange.slice(oneQuarterOfRange, hpRange.length - oneQuarterOfRange);
       }
-      const targetTotal = this.randomValue(hpRange);
-
-      // Base Shield Calcs
-      let averageSpDieRoll = 2.5;
-      let shieldPercent = 0.3;
-      let targetSp = 0;
-      let maxSp = 0;
 
       // Base HP calcs
-      let targetHp = targetTotal;
+      let targetHp = this.randomValue(hpRange);
       let maxHp = config.cr.hpMax;
 
       // Has Shields?
       const shields = Math.floor(Math.random() * 100) > 15;
       if (shields) {
-        if (grunt.sc.id === 'engineer' || grunt.sc.id === 'infiltrator' || grunt.sc.id === 'sentinel') {
-          averageSpDieRoll = 3.5;
-          shieldPercent = 0.65;
-        } else {
-          shieldPercent = 0.5;
-        }
-        targetSp = Math.floor(targetTotal * shieldPercent);
-        maxSp = Math.floor(targetHp * shieldPercent);
-        targetHp = targetTotal - targetSp;
-        maxHp = config.cr.hpMax - maxSp;
+        const crMetaLevel = parseFloat(config.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(config.cr.cr) / 4);
+        grunt.sp = {
+          shields: crMetaLevel * 10,
+          regen: crMetaLevel * 10 / 2
+        };
+        const adjustment = grunt.sp.shields + grunt.sp.regen;
+        targetHp -= adjustment;
+        maxHp -= adjustment;
       }
 
-      const averageHpDieRoll = grunt.race.id === 'volus' ? 3.5 : 4.5;
+      const avgRoll = grunt.race.id === 'volus' ? 3.5 : 4.5;
       let conMod = this.abilityScoreBonus(grunt.abilityScores.con);
       let multiplicativeMod = 1;
       if (config.effective.resistances) {
@@ -51,24 +42,23 @@ export const Hp = {
       if (grunt.race.id === 'turian') {
         conMod += 2;
       }
-      grunt.sp = shields ? this.generatePointObject(averageSpDieRoll, targetSp, maxSp, 0) : null;
-      grunt.hp = this.generatePointObject(averageHpDieRoll, targetHp, maxHp, conMod, multiplicativeMod);
-    },
-    generatePointObject(avgRoll, targetAverage, maxPoints, additiveMod = 0, multiplicativeMod = 1) {
+
+      // generate the hp
       let numDice = 0;
       let average = 0;
       let max = 0;
       const maxRoll = this.dieFromAverage(avgRoll);
-      while (average <= targetAverage && max <= maxPoints) {
+      while (average <= targetHp && max <= maxHp) {
         numDice++;
-        average = ((numDice * avgRoll) + (numDice * additiveMod)) * multiplicativeMod;
+        average = ((numDice * avgRoll) + (numDice * conMod)) * multiplicativeMod;
         max = numDice * maxRoll * multiplicativeMod;
       }
-      return {
+      grunt.hp = {
+        die: maxRoll,
         avgRoll,
         average: Math.floor(average),
         numDice,
-        mod: additiveMod * numDice
+        mod: conMod * numDice
       };
     }
   }

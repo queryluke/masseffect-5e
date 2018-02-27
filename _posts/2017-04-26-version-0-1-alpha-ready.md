@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Version 0.1.0-alpha ready!"
+description: "Press Release for the initial release of Mass Effect 5e"
 excerpt: "What does that mean..."
 ---
 

@@ -16,7 +16,7 @@ export const Helpers = {
       offensiveAdjustment = offensiveAdjustment >= 0 ? Math.floor(offensiveAdjustment) : Math.ceil(offensiveAdjustment);
 
       // Get the recommended hp output by effective hp
-      const shields = grunt.sp ? grunt.sp.average : 0;
+      const shields = grunt.sp ? grunt.sp.shields + grunt.sp.regen : 0;
       const recHp = grunt.hp.average + shields + config.effective.hp;
       // Find the recommended cr by the effective hp
       const recCrByHp = this.crArray.find(cr => {

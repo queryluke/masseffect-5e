@@ -16,20 +16,20 @@
           v-flex.hidden-md-and-down.lg2 {{ weapon.range }}
           v-flex.hidden-md-and-down.lg2 {{ weapon.weight }}
           v-flex.hidden-md-and-down.lg2 {{ weapon.cost }}
-      v-card
-        v-card-text.grey.lighten-3
+      v-card.grey.lighten-3
+        v-card-text
           weapon-info(:weapon="weapon").mt-2
-          v-btn(small primary dark :to="`/weapons/${weapon.id}`") Weapon Page
-
+          bookmark-button(:card="weapon" type="weapon" v-bind:props="{flat: true}")
 </template>
 
 <script>
   import WeaponInfo from "./WeaponInfo.vue";
   import WeaponType from "./WeaponType.vue";
+  import BookmarkButton from "./BookmarkButton.vue";
 
   export default {
     components: {
-      WeaponType, WeaponInfo
+      WeaponType, WeaponInfo, BookmarkButton
     },
     name: 'WeaponList',
     props: ['weapons'],

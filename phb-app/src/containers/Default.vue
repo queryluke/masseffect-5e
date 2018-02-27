@@ -7,25 +7,28 @@
         h1.sr-only Mass Effect 5e - Player's Handbook
         transition(name="slide" mode="out-in")
           router-view(:key="$route.fullPath")
+    global-dialog
 </template>
 
 <script>
 import MainNavigation from '../components/MainNavigation.vue';
 import MainFooter from '../components/MainFooter.vue';
 import MainToolbar from '../components/MainToolbar.vue';
+import GlobalDialog from '../components/GlobalDialog.vue';
 
 export default {
   name: 'Default',
   components: {
-    MainToolbar, 'main-toolbar': MainToolbar,
-    MainNavigation, 'main-navigation': MainNavigation,
-    MainFooter, 'main-footer': MainFooter,
+    GlobalDialog,
+    MainToolbar,
+    MainNavigation,
+    MainFooter
   },
   data () {
     return {
       drawer: true,
     }
-  },
+  }
 };
 </script>
 

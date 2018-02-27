@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The refactor: So much change, it's basically new"
+description: "Reasoning for major rule and system changes."
 excerpt: Wall of text incoming! 
 ---
 
