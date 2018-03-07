@@ -4,7 +4,9 @@
 
 ### Bestiary Updates
 * Husk, Str increased to 13, AC increased to 14, CR decreased to 1/8
-* Abomination, Str increased to 13, HP increased to 26, CR increased to 1/4 
+* Abomination, Str increased to 13, HP increased to 26, CR increased to 1/4
+* Collector Captain, Summon Seaker Swarm summons 1d4 swarms at an unoccupied space it can see within 10m.
+* Harbinger, Added legendary actions, added melee attack, added Dark Channel to spell list
 
 ## v0.5.0
 
