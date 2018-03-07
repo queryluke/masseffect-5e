@@ -2,11 +2,23 @@
 
 ## v0.5.1
 
+### New Combat Action: Apply Medi-gel
+Medi-gel was reworked. It no longer used a hit die, but works similar to a healing potion giving the creature it was applied to
+hit points based on their own hit die.
+
+### Shield update
+Shields regenerate after combat or an encounter in addition to a short or long rest, or by taking the Hide or Dodge action
+and taking no damage.
+
 ### Bestiary Updates
 * Husk, Str increased to 13, AC increased to 14, CR decreased to 1/8
 * Abomination, Str increased to 13, HP increased to 26, CR increased to 1/4
 * Collector Captain, Summon Seaker Swarm summons 1d4 swarms at an unoccupied space it can see within 10m.
 * Harbinger, Added legendary actions, added melee attack, added Dark Channel to spell list
+
+### Site Enhancements
+* Fixed bug that showed `Shields o ( regen)` when a monster had no shields.
+* Added Distance rule change back into general rules.
 
 ## v0.5.0
 

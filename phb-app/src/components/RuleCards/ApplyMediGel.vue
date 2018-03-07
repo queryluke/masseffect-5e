@@ -5,6 +5,8 @@
       p.
         As an action, use a medi-gel pack on yourself or a willing creature within 2m. The targeted creatue rolls 1 die
         equal to its hit die and gains that many hit points.
+      p.
+        For NPCs, the hit die is equal to their hp die, which is based on the NPC's size.
 </template>
 
 <script>
