@@ -8,10 +8,12 @@
         points leaving your shield points unchanged.
       p.headline.mt-2 Shield Regeneration
       p.
-        Your shield points regerate completely on a short or long rest. However, in combat, you can attempt to regain shield
-        points. A creature that takes the Hide or Dodge action and takes no damage until the start of its next turn regenerates
+        Your shield points regerate completely on a short or long rest or when combat or an encounter ends. However, in combat,
+        you can attempt to regain shield points.
+      p.
+        A creature that takes the Hide or Dodge action and takes no damage until the start of its next turn regenerates
         shields points equal to the regen rate of their shields. For example, a set of armor with 15 shields and 5 regen
-        would regenerate 5 shield points per Hide or Dodge action and didn't take damage for a full round of combat.
+        would regenerate 5 shield points when it takes the Hide or Dodge action and additionally takes no damage for a full round of combat.
       p.headline.mt-2 Shield devices
       p.
         All armor chest pieces come standard with 5 shield points and a regen of 5. However more advanced mods and armor sets
@@ -26,6 +28,11 @@
         li Subtract the shield points from the total damage.
         li Reduce the remaining damage by half
         li Apply the new amount to the target's hit points.
+      p.headline.mt-2 Justification
+      p.
+        Our interpretation is that your armor's shields are managed by the on-board VI, which is taxed during combat
+        as it manages other armor systems: your omni-tool or biotic implant, HUD, etc. Thus, once a a threat is properly
+        neutralized, your VI can route power back into your sheilds for immediate regeneration.
 </template>
 
 <script>
