@@ -22,6 +22,7 @@
       return {
         rules: {
           changes: [
+            'distance',
             'lifting-and-carrying',
             'encumbrance',
             'creature-types',
