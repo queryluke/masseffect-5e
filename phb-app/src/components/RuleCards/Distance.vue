@@ -7,6 +7,7 @@
       p.
         Mass Effect 5e uses meters instead of feet. Why? Because this is set in the future and it's sci-fi and using metric
         make more sense.
+  
 </template>
 
 <script>
