@@ -32,6 +32,8 @@
             'shields',
             'barriers',
             'paragon-and-renegade',
+            'reloading',
+            'apply-medi-gel',
             'sexy-level'
           ]
         }

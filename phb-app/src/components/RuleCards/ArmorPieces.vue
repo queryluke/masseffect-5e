@@ -94,10 +94,10 @@
   import {mapActions} from 'vuex';
 
   export default {
-    name: 'ArmorPieces',
     components: { RuleCard },
     methods: {
       ...mapActions(['showGlobalDialog']),
-    }
+    },
+    name: 'ArmorPieces'
   };
 </script>
