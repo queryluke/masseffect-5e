@@ -12,6 +12,10 @@ export const Features = {
           monster.reactions.push(feature);
           break;
         }
+        case 'legendary': {
+          monster.legendaryActions.push(feature);
+          break;
+        }
         case 'feature': {
           monster.features.push(feature);
           break;

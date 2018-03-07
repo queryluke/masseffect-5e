@@ -74,6 +74,7 @@ def configure_monster(model)
   monster = {
       actions: [],
       reactions: [],
+      legendaryActions: [],
       features: [],
       spellcasting: false,
       techcasting: false,

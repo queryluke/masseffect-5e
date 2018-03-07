@@ -1,5 +1,5 @@
 {
-  "updated": "March  7, 2018 @  6:27 PM",
+  "updated": "March  7, 2018 @  6:41 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT87AUwt1n514k6a6b4l0kOzGwIphsGXBJLFqujgkCsJ1rdudQ1Bk7Km12DACO5qQ2WGDVI8fT6-Xe/pubhtml",
   "data": [
     {
@@ -7,6 +7,9 @@
 
       ],
       "reactions": [
+
+      ],
+      "legendaryActions": [
 
       ],
       "features": [
@@ -75,6 +78,9 @@
       "reactions": [
 
       ],
+      "legendaryActions": [
+
+      ],
       "features": [
 
       ],
@@ -141,6 +147,9 @@
 
       ],
       "reactions": [
+
+      ],
+      "legendaryActions": [
 
       ],
       "features": [
@@ -217,6 +226,9 @@
       "reactions": [
 
       ],
+      "legendaryActions": [
+
+      ],
       "features": [
 
       ],
@@ -284,6 +296,9 @@
 
       ],
       "reactions": [
+
+      ],
+      "legendaryActions": [
 
       ],
       "features": [
@@ -405,6 +420,9 @@
       "reactions": [
 
       ],
+      "legendaryActions": [
+
+      ],
       "features": [
 
       ],
@@ -456,7 +474,10 @@
 
       ],
       "featuresActionsReactions": [
-        "harvester_cannon"
+        "harvester_cannon",
+        "detect",
+        "harvester_cannon_attack",
+        "spawn_husks"
       ],
       "savingThrows": [
         "con",
@@ -475,6 +496,9 @@
         }
       ],
       "reactions": [
+
+      ],
+      "legendaryActions": [
 
       ],
       "features": [
@@ -544,6 +568,9 @@
       "reactions": [
 
       ],
+      "legendaryActions": [
+
+      ],
       "features": [
 
       ],
@@ -608,6 +635,9 @@
 
       ],
       "reactions": [
+
+      ],
+      "legendaryActions": [
 
       ],
       "features": [
@@ -682,6 +712,9 @@
       "reactions": [
 
       ],
+      "legendaryActions": [
+
+      ],
       "features": [
 
       ],
@@ -754,6 +787,9 @@
       "reactions": [
 
       ],
+      "legendaryActions": [
+
+      ],
       "features": [
 
       ],
@@ -822,6 +858,9 @@
       "reactions": [
 
       ],
+      "legendaryActions": [
+
+      ],
       "features": [
 
       ],
@@ -886,6 +925,9 @@
 
       ],
       "reactions": [
+
+      ],
+      "legendaryActions": [
 
       ],
       "features": [
@@ -954,6 +996,9 @@
       "reactions": [
 
       ],
+      "legendaryActions": [
+
+      ],
       "features": [
 
       ],
@@ -1020,6 +1065,9 @@
 
       ],
       "reactions": [
+
+      ],
+      "legendaryActions": [
 
       ],
       "features": [
@@ -1097,6 +1145,9 @@
       "reactions": [
 
       ],
+      "legendaryActions": [
+
+      ],
       "features": [
 
       ],
@@ -1165,6 +1216,9 @@
       "reactions": [
 
       ],
+      "legendaryActions": [
+
+      ],
       "features": [
 
       ],
@@ -1230,6 +1284,9 @@
       "reactions": [
 
       ],
+      "legendaryActions": [
+
+      ],
       "features": [
 
       ],
@@ -1293,6 +1350,9 @@
 
       ],
       "reactions": [
+
+      ],
+      "legendaryActions": [
 
       ],
       "features": [
@@ -1392,7 +1452,10 @@
 
       ],
       "featuresActionsReactions": [
-        "bash"
+        "bash",
+        "bash_attack",
+        "assume_control",
+        "cast_a_spell"
       ],
       "savingThrows": [
 
