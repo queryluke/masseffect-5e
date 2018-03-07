@@ -1,5 +1,11 @@
 # CHANGE LOG
 
+## v0.5.1
+
+### Bestiary Updates
+* Husk, Str increased to 13, AC increased to 14, CR decreased to 1/8
+* Abomination, Str increased to 13, HP increased to 26, CR increased to 1/4 
+
 ## v0.5.0
 
 ### Site Enhancements
