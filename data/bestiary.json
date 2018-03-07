@@ -1,5 +1,5 @@
 {
-  "updated": "February 23, 2018 @  6:40 PM",
+  "updated": "March  7, 2018 @  6:27 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT87AUwt1n514k6a6b4l0kOzGwIphsGXBJLFqujgkCsJ1rdudQ1Bk7Km12DACO5qQ2WGDVI8fT6-Xe/pubhtml",
   "data": [
     {
@@ -15,7 +15,7 @@
       "spellcasting": false,
       "techcasting": false,
       "abilityScores": {
-        "str": 11,
+        "str": 13,
         "dex": 8,
         "con": 14,
         "int": 3,
@@ -28,16 +28,12 @@
         "numDice": "1",
         "mod": 2
       },
-      "sp": {
-        "shields": 0,
-        "regen": null
-      },
       "senses": [
         "darkvision 20m"
       ],
       "name": "Husk",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/27/ME3_Husk.png/revision/latest/scale-to-width-down/350?cb=20120320012912",
-      "cr": "1/4",
+      "cr": "1/8",
       "size": "Medium",
       "type": "Synorg",
       "unit": "Reaper",
@@ -46,8 +42,8 @@
       "barrier": null,
       "speed": "10m",
       "dc": "13",
-      "ac": "13",
-      "xp": "50",
+      "ac": "14",
+      "xp": "25",
       "id": "husk",
       "damageResistances": [
 
@@ -97,10 +93,6 @@
         "average": "13",
         "numDice": "3",
         "mod": 0
-      },
-      "sp": {
-        "shields": 0,
-        "regen": null
       },
       "senses": [
         "darkvision 20m"
@@ -244,10 +236,6 @@
         "numDice": "10",
         "mod": 40
       },
-      "sp": {
-        "shields": 0,
-        "regen": null
-      },
       "senses": [
         "darkvision 20m"
       ],
@@ -316,10 +304,6 @@
         "average": "110",
         "numDice": "20",
         "mod": 0
-      },
-      "sp": {
-        "shields": 0,
-        "regen": null
       },
       "spellcasting": {
         "level": "13",
@@ -440,10 +424,6 @@
         "numDice": "25",
         "mod": 175
       },
-      "sp": {
-        "shields": 0,
-        "regen": null
-      },
       "senses": [
         "darkvision 40m"
       ],
@@ -476,8 +456,7 @@
 
       ],
       "featuresActionsReactions": [
-        "harvester_cannon",
-        "spawn_husks"
+        "harvester_cannon"
       ],
       "savingThrows": [
         "con",
@@ -516,10 +495,6 @@
         "average": "110",
         "numDice": "20",
         "mod": 0
-      },
-      "sp": {
-        "shields": 0,
-        "regen": null
       },
       "senses": [
         "darkvision 20m"
@@ -588,10 +563,6 @@
         "numDice": "3",
         "mod": -3
       },
-      "sp": {
-        "shields": 0,
-        "regen": null
-      },
       "senses": [
         "darkvision 20m"
       ],
@@ -645,7 +616,7 @@
       "spellcasting": false,
       "techcasting": false,
       "abilityScores": {
-        "str": 11,
+        "str": 13,
         "dex": 8,
         "con": 14,
         "int": 3,
@@ -654,20 +625,16 @@
       },
       "hp": {
         "die": "8",
-        "average": "6",
-        "numDice": "1",
-        "mod": 2
-      },
-      "sp": {
-        "shields": 0,
-        "regen": null
+        "average": "26",
+        "numDice": "4",
+        "mod": 8
       },
       "senses": [
         "darkvision 20m"
       ],
       "name": "Abomination",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/8/8e/AbominationME3.jpg/revision/latest/scale-to-width-down/316?cb=20121201211954",
-      "cr": "1/8",
+      "cr": "1/4",
       "size": "Medium",
       "type": "Synorg",
       "unit": "Collector",
@@ -677,7 +644,7 @@
       "speed": "10m",
       "dc": "13",
       "ac": "11",
-      "xp": "25",
+      "xp": "50",
       "id": "abomination",
       "damageResistances": [
 
@@ -733,10 +700,6 @@
         "average": "97",
         "numDice": "15",
         "mod": 30
-      },
-      "sp": {
-        "shields": 0,
-        "regen": null
       },
       "senses": [
         "darkvision 20m"
@@ -810,10 +773,6 @@
         "numDice": "10",
         "mod": 10
       },
-      "sp": {
-        "shields": 0,
-        "regen": null
-      },
       "senses": [
         "darkvision 20m"
       ],
@@ -882,10 +841,6 @@
         "numDice": "7",
         "mod": 0
       },
-      "sp": {
-        "shields": 0,
-        "regen": null
-      },
       "senses": [
         "darkvision 20m"
       ],
@@ -952,10 +907,6 @@
         "numDice": "10",
         "mod": 0
       },
-      "sp": {
-        "shields": 0,
-        "regen": null
-      },
       "senses": [
         "darkvision 20m"
       ],
@@ -1021,10 +972,6 @@
         "average": "75",
         "numDice": "10",
         "mod": 30
-      },
-      "sp": {
-        "shields": 0,
-        "regen": null
       },
       "senses": [
         "darkvision 20m"
@@ -1093,10 +1040,6 @@
         "average": "136",
         "numDice": "13",
         "mod": 65
-      },
-      "sp": {
-        "shields": 0,
-        "regen": null
       },
       "senses": [
         "darkvision 20m"
@@ -1173,10 +1116,6 @@
         "numDice": "7",
         "mod": 21
       },
-      "sp": {
-        "shields": 0,
-        "regen": null
-      },
       "senses": [
         "darkvision 20m"
       ],
@@ -1245,10 +1184,6 @@
         "numDice": "2",
         "mod": -2
       },
-      "sp": {
-        "shields": 0,
-        "regen": null
-      },
       "senses": [
 
       ],
@@ -1313,10 +1248,6 @@
         "average": "7",
         "numDice": "2",
         "mod": 0
-      },
-      "sp": {
-        "shields": 0,
-        "regen": null
       },
       "senses": [
 
@@ -1383,15 +1314,12 @@
         "numDice": "25",
         "mod": 25
       },
-      "sp": {
-        "shields": 0,
-        "regen": null
-      },
       "spellcasting": {
         "level": "12",
         "dc": 16,
         "hit": 8,
         "spellList": [
+          "dark_channel",
           "pull",
           "reave",
           "shockwave",
@@ -1464,7 +1392,7 @@
 
       ],
       "featuresActionsReactions": [
-        "assume_control"
+        "bash"
       ],
       "savingThrows": [
 

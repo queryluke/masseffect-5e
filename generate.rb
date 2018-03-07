@@ -95,9 +95,9 @@ def configure_monster(model)
   monster['hp']['mod'] = ((model['con'].to_i - 10) / 2).floor * model['hpDieAmount'].to_i if model['con'].to_i > 11
   monster['hp']['mod'] = ((model['con'].to_i - 10) / 2).ceil * model['hpDieAmount'].to_i if model['con'].to_i < 10
   monster['sp'] = {
-      shields: model['shields'].nil? ? 0 : model['shields'].to_i,
+      shields: model['shields'].to_i,
       regen: model['regen']
-  }
+  } unless model['shields'].nil?
   unless model['spellcasting'].nil?
     wisMod = ((model['wis'].to_i - 10) / 2).floor
     monster['spellcasting'] = {
