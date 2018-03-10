@@ -1,7 +1,8 @@
 export const Skills = {
   methods: {
-    setMonsterSkills(monster, skills) {
+    setMonsterSkills(monster) {
       const monsterSkills = [];
+      const skills = this.getData('skills');
       for (let skillId of monster.skills) {
         let bonus = false;
         if (/\*/.test(skillId)) {

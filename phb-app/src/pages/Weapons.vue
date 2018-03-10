@@ -25,8 +25,8 @@
                 v-list-tile-title(v-text="header.display")
     weapon-list(:weapons="filtered")
     v-layout(row wrap justify-space-between).mt-4
-      span Last Updated: {{ updated }}
-      a(:href="source" target="_blank") Source
+      span Last Updated: {{ weapons.updated }}
+      a(:href="weapons.source" target="_blank") Source
 </template>
 
 <script>
@@ -50,7 +50,7 @@
     },
     data() {
       return {
-        weapons: [],
+        weapons: {},
         search: '',
         source: '',
         updated: '',
@@ -69,14 +69,12 @@
       };
     },
     created() {
-      this.weapons = this.WEAPONS.data;
-      this.updated = this.WEAPONS.updated;
-      this.source = this.WEAPONS.source;
+      this.weapons = this.getData('weapons');
     },
     computed: {
-      ...mapGetters(['WEAPONS']),
+      ...mapGetters(['getData']),
       filtered () {
-        let data = this.weapons;
+        let data = this.weapons.data;
         let sortKey = this.sortKey;
         let search = this.search;
         let order = this.sortOrder;

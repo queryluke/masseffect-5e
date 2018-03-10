@@ -25,23 +25,22 @@
               v-list-tile-content
                 v-list-tile-title(v-text="header.display")
     spell-list(:spells="filtered")
-    v-layout(row wrap justify-space-between).mt-4
-      span Last Updated: {{ updated }}
-      a(:href="source" target="_blank") Source
+    page-footer(:list="listName")
+
 </template>
 
 <script>
   import SpellList from '../components/SpellList.vue';
+  import PageFooter from '../components/PageFooter.vue';
   import {mapGetters} from 'vuex';
 
   export default {
     name: 'Spells',
     data() {
       return {
-        spells: [],
+        items: [],
+        listName: 'spells',
         search: '',
-        source: '',
-        updated: '',
         headers: [
           {key: 'type', display: '', classes: 'xs4 sm3 lg2', sortable: false},
           {key: 'name', display: 'Name', classes: 'xs8 sm9 lg2', sortable: false},
@@ -53,20 +52,19 @@
       };
     },
     created() {
-      this.spells = this.SPELLS.data.sort((a, b) => a.name > b.name ? 1 : -1);
-      this.updated = this.SPELLS.updated;
-      this.source = this.SPELLS.source;
+      this.items = this.getData(this.listName).sort((a, b) => a.name > b.name ? 1 : -1);
     },
     computed: {
-      ...mapGetters(['SPELLS']),
+      ...mapGetters(['getData']),
       filtered () {
         let self = this;
-        return this.spells.filter( (spell) => {
+        return this.items.filter( (spell) => {
           return spell.name.toLowerCase().indexOf(self.search.toLowerCase())>=0;
         });
       }
     },
     components: {
+      PageFooter,
       SpellList
     }
   };

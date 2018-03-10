@@ -203,7 +203,6 @@
         } else {
           sc = this.sc;
         }
-
         this.grunt = this.generateGrunt(this.cr, race, sc);
       },
     }

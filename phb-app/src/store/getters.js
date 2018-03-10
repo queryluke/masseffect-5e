@@ -17,13 +17,23 @@ export default {
   isBookmarked: (state, getters) => card => {
     return getters.bookmarks.find(bookmark => bookmark.card.id === card.id) !== undefined;
   },
-  SPELLS: state => {
-    return state.data.spells;
+  getData: state => name => {
+    const data = state.data[name];
+    if (typeof data === 'object' && data.data) {
+      return data.data;
+    }
+    return data;
+  },
+  getSheetUrl: state => name => {
+    return state.data[name].source;
+  },
+  getSheetUpdated: state => name => {
+    return state.data[name].updated;
+  },
+  getMutableData: (state, getters) => name => {
+    return JSON.parse(JSON.stringify(getters.getData(name)));
   },
   tooltips: state => {
     return state.tooltips;
-  },
-  WEAPONS: state => {
-    return state.data.weapons;
   }
 };

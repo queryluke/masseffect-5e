@@ -61,16 +61,11 @@ export const Actions = {
     };
   },
   created() {
-    return this.$http
-    .get('../data/grenades_mines.json')
-    .then(response => response.json())
-    .then(response => {
-      this.grenades = response.data.map(grenade => {
-        const dmgAmt = grenade.damage_amount ? parseInt(grenade.damage_amount, 10) : 0;
-        const dmg = grenade.dd ? (((parseInt(grenade.dd.replace(/\D/gi, ''), 10) * 2) + 1) / 2) : 0;
-        grenade.dpr = dmgAmt * dmg;
-        return grenade;
-      });
+    this.grenades = this.getMutableData('grenades').map(grenade => {
+      const dmgAmt = grenade.damage_amount ? parseInt(grenade.damage_amount, 10) : 0;
+      const dmg = grenade.dd ? (((parseInt(grenade.dd.replace(/\D/gi, ''), 10) * 2) + 1) / 2) : 0;
+      grenade.dpr = dmgAmt * dmg;
+      return grenade;
     });
   }
 };

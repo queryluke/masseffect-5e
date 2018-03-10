@@ -1,6 +1,7 @@
 export const Features = {
   methods: {
-    setMonsterFeatures(monster, features) {
+    setMonsterFeatures(monster) {
+      const features = this.getMutableData('monsterFeatures');
       for (const featureId of monster.featuresActionsReactions) {
         const feature = features.find(feature => feature.id === featureId);
         this.addFeature(monster, feature);
