@@ -1,6 +1,6 @@
 <template lang="pug">
   rule-card
-    span(slot="header") Melee Weapons & Omni-tools
+    span(slot="header") Melee Weapons
     template(slot="text")
       p.
         Melee weapons have the same attributes as D&D 5e weapons, i.e. finesse, light, thrown, etc. But melee weapons do have a strength

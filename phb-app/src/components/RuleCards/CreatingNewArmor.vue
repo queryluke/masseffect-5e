@@ -73,22 +73,21 @@
 
 <script>
   import RuleCard from './../RuleCard.vue'
+  import {mapGetters} from 'vuex';
 
   export default {
     name: 'CreatingNewArmor',
     components: { RuleCard },
+    computed: {
+      ...mapGetters(['getData'])
+    },
     data() {
       return {
         mechanics: []
       };
     },
     created() {
-      return this.$http
-      .get('../data/armor_mechanics.json')
-      .then(response => response.json())
-      .then(response => {
-        this.mechanics = response.data;
-      });
+      this.mechanics = this.getData('armorMechanics');
     },
   };
 </script>

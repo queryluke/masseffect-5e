@@ -33,7 +33,7 @@ export default {
   getMutableData: (state, getters) => name => {
     return JSON.parse(JSON.stringify(getters.getData(name)));
   },
-  tooltips: state => {
-    return state.tooltips;
+  tooltips: (state, getters) => {
+    return getters.getData('conditions');
   }
 };

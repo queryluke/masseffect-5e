@@ -16,6 +16,8 @@ import skills from '../../../data/skills.json';
 import monsterFeatures from '../../../data/monster_features.json';
 import grenades from '../../../data/grenades_mines.json';
 import statsByCr from '../../../data/stats_by_cr.json';
+import weaponAttributes from '../../../data/weapon_attributes.json';
+import armorMechanics from '../../../data/armor_mechanics.json';
 
 export default {
   spells,
@@ -35,5 +37,7 @@ export default {
   skills,
   monsterFeatures,
   grenades,
-  statsByCr
+  statsByCr,
+  weaponAttributes,
+  armorMechanics
 };
