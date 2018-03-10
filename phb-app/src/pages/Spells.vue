@@ -32,6 +32,7 @@
 
 <script>
   import SpellList from '../components/SpellList.vue';
+  import {mapGetters} from 'vuex';
 
   export default {
     name: 'Spells',
@@ -52,16 +53,12 @@
       };
     },
     created() {
-      return this.$http
-        .get('../data/spells.json')
-        .then(response => response.json())
-        .then(response => {
-          this.spells = response.data.sort((a, b) => a.name > b.name ? 1 : -1);
-          this.updated = response.updated;
-          this.source = response.source;
-        });
+      this.spells = this.SPELLS.data.sort((a, b) => a.name > b.name ? 1 : -1);
+      this.updated = this.SPELLS.updated;
+      this.source = this.SPELLS.source;
     },
     computed: {
+      ...mapGetters(['SPELLS']),
       filtered () {
         let self = this;
         return this.spells.filter( (spell) => {
