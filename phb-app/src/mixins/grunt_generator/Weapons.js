@@ -20,7 +20,6 @@ export const Weapons = {
           description: this.generateMultiattackDescription(grunt, attack)
         });
       }
-      console.log(this.getData('weapons').data);
     },
     getAttackOptions(config, weapons) {
       const attacks = [];

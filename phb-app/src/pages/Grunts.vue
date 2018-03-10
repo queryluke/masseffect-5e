@@ -66,7 +66,8 @@
 
 <script>
   import {GruntGenerator} from '../mixins/grunt_generator';
-  import { mapState } from 'vuex';
+  import {mapGetters} from 'vuex';
+  import {mapActions} from 'vuex';
   import StatBlock from '../components/StatBlock.vue';
   import BookmarkButton from '../components/BookmarkButton.vue';
 
@@ -86,24 +87,20 @@
     },
     mixins: [GruntGenerator],
     created() {
-      let getRaces = this.$http.get('../data/races.json').then(response => response.json());
-      let getClasses = this.$http.get('../data/classes.json').then(response => response.json());
-      let getStatsByCr = this.$http.get('../data/stats_by_cr.json').then(response => response.json());
-      Promise.all([getRaces, getClasses, getStatsByCr]).then(response => {
-        this.crs = response[2];
+      this.crs = this.getData('statsByCr');
 
-        // Setup races
-        this.races = response[0].data.map((race) => {
-          // expand available classes
-          race.available_classes = race.available_classes.split(',').map((v) => v.trim());
-          return race;
-        });
-
-        // Setup classes
-        this.classes = response[1].data;
+      // Setup races
+      this.races = this.getMutableData('races').map((race) => {
+        // expand available classes
+        race.available_classes = race.available_classes.split(',').map((v) => v.trim());
+        return race;
       });
+
+      // Setup classes
+      this.classes = this.getMutableData('classes');
     },
     computed: {
+      ...mapGetters(['getData', 'getMutableData', 'getGruntConfig']),
       classOptions: function() {
         let class_options = this.filterClasses(this.race.id);
         class_options.sort(this.compare);
@@ -125,33 +122,31 @@
       },
       race: {
         get () {
-          return this.$store.state.gruntConfig.race;
+          return this.getGruntConfig('race');
         },
         set (value) {
-          this.$store.commit('updateGruntConfigRace', value);
+          this.updateGruntConfig({key: 'race', value});
         }
       },
       sc: {
         get () {
-          return this.$store.state.gruntConfig.sc;
+          return this.getGruntConfig('sc');
         },
         set (value) {
-          this.$store.commit('updateGruntConfigClass', value);
+          this.updateGruntConfig({key: 'sc', value});
         }
       },
       cr: {
         get () {
-          return this.$store.state.gruntConfig.cr;
+          return this.getGruntConfig('cr');
         },
         set (value) {
-          this.$store.commit('updateGruntConfigCr', value);
+          this.updateGruntConfig({key: 'cr', value});
         }
-      },
-      savedGrunts: function(){
-        return this.$store.state.encounter.npcs.list;
       }
     },
     methods: {
+      ...mapActions(['updateGruntConfig']),
       saveGrunt (grunt) {
         this.$store.commit('addEncounterNpc', grunt);
       },

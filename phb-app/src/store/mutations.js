@@ -8,14 +8,8 @@ export default {
   updateGlobalDialogComponent(state, payload) {
     state.globalDialog.component = payload;
   },
-  updateGruntConfigCr(state, payload) {
-    state.gruntConfig.cr = payload;
-  },
-  updateGruntConfigClass(state, payload) {
-    state.gruntConfig.sc = payload;
-  },
-  updateGruntConfigRace(state, payload) {
-    state.gruntConfig.race = payload;
+  updateGruntConfig(state, payload) {
+    state.gruntConfig[payload.key] = payload.value;
   },
   addBookmark(state, payload) {
     state.bookmarks.push(payload);

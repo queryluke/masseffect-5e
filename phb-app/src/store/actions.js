@@ -8,6 +8,9 @@ export default {
       commit('removeBookmark', index);
     }
   },
+  updateGruntConfig({commit}, payload) {
+    commit('updateGruntConfig', payload);
+  },
   showGlobalDialog({commit}, payload) {
     commit('toggleGlobalDialog', true);
     commit('updateGlobalDialogComponent', payload);

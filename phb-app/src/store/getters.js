@@ -24,6 +24,9 @@ export default {
     }
     return data;
   },
+  getGruntConfig: state => (key = false) => {
+    return key ? state.gruntConfig[key] : state.gruntConfig;
+  },
   getSheetUrl: state => name => {
     return state.data[name].source;
   },
