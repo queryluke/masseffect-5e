@@ -18,9 +18,12 @@ export default {
     return getters.bookmarks.find(bookmark => bookmark.card.id === card.id) !== undefined;
   },
   SPELLS: state => {
-    return state.spells;
+    return state.data.spells;
   },
   tooltips: state => {
     return state.tooltips;
+  },
+  WEAPONS: state => {
+    return state.data.weapons;
   }
 };

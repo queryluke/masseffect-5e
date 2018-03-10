@@ -31,6 +31,7 @@
 
 <script>
   import WeaponList from '../components/WeaponList.vue';
+  import {mapGetters} from 'vuex';
 
   export default {
     name: 'Weapons',
@@ -68,18 +69,12 @@
       };
     },
     created() {
-      return this.$http
-        .get('../data/weapons.json')
-        .then(response => response.json())
-        .then(response => {
-          this.weapons = response.data;
-          this.updated = response.updated;
-          this.source = response.source;
-          this.sortKey = 'name';
-          this.sortOrder = 1;
-        });
+      this.weapons = this.WEAPONS.data;
+      this.updated = this.WEAPONS.updated;
+      this.source = this.WEAPONS.source;
     },
     computed: {
+      ...mapGetters(['WEAPONS']),
       filtered () {
         let data = this.weapons;
         let sortKey = this.sortKey;

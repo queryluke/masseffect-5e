@@ -1,4 +1,4 @@
-import spells from '../../../data/spells.json';
+import data from './data';
 
 export default {
   bookmarks: [],
@@ -19,6 +19,6 @@ export default {
     sc: {id: 'random', name: 'Random'}
   },
   sidebar: true,
-  spells,
-  tooltips: []
+  tooltips: [],
+  data
 };
