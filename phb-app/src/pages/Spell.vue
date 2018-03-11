@@ -7,8 +7,12 @@
 
 <script>
   import SpellInfo from "../components/SpellInfo.vue";
+  import {mapGetters} from 'vuex';
 
   export default {
+    computed: {
+      ...mapGetters(['getData'])
+    },
     name: 'Spell',
     data() {
       return {
@@ -16,14 +20,9 @@
       };
     },
     created() {
-      return this.$http
-        .get('../data/spells.json')
-        .then(response => response.json())
-        .then(response => {
-          this.spell = response.data.find((value) => {
-            return value.id == this.$route.params.id;
-          });
-        });
+      this.spell = this.getData('spells').find((value) => {
+        return value.id == this.$route.params.id;
+      });
     },
     components: {
       SpellInfo

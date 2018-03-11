@@ -23,19 +23,21 @@
           v-card
             v-card-text.grey.lighten-3
               grenade-info(:grenade="grenade")
-    v-layout(row wrap justify-space-between).mt-4
-      span Last Updated: {{ updated }}
-      a(:href="source" target="_blank") Source
+    page-footer(:list="listName")
 </template>
 
 <script>
   import MeElement from '../components/MeElement.vue';
   import GrenadeInfo from "../components/GrenadeInfo.vue";
+  import PageFooter from '../components/PageFooter.vue';
+  import {mapGetters} from 'vuex';
 
   export default {
     name: 'Grenades',
     components: {
-      GrenadeInfo, MeElement
+      GrenadeInfo,
+      MeElement,
+      PageFooter
     },
     methods: {
       sortBy (key) {
@@ -48,8 +50,9 @@
       },
     },
     computed: {
+      ...mapGetters(['getData']),
       filteredData() {
-        let data = this.grenades;
+        let data = this.items;
         let sortKey = this.sortKey;
         let order = this.sortOrder;
         let getDamage = function(grenade){
@@ -80,9 +83,8 @@
     },
     data() {
       return {
-        grenades: [],
-        source: '',
-        updated: '',
+        items: [],
+        listName: 'grenades',
         headers: [
           {key: 'name', display: 'Name', classes: 'xs12 sm5 md4'},
           {key: 'intensity', display: 'Intensity', classes: 'xs12 sm3 md2'},
@@ -95,14 +97,7 @@
       };
     },
     created() {
-      return this.$http
-        .get('../data/grenades_mines.json')
-        .then(response => response.json())
-        .then(response => {
-          this.grenades = response.data;
-          this.updated = response.updated;
-          this.source = response.source;
-        });
+      this.items = this.getData(this.listName);
     }
   };
 </script>

@@ -154,15 +154,9 @@ export const Biotics = {
     };
   },
   created() {
-    const spells = this.$http.get('../data/spells.json').then(response => response.json());
-    const aProg = this.$http.get('../data/adept_progression.json').then(response => response.json());
-    const sProg = this.$http.get('../data/sentinel_progression.json').then(response => response.json());
-    const vProg = this.$http.get('../data/vanguard_progression.json').then(response => response.json());
-    Promise.all([spells, aProg, sProg, vProg]).then(response => {
-      this.spells = response[0].data.filter(spell => spell.type === 'biotic');
-      this.progressions.adept = response[1].data;
-      this.progressions.sentinel = response[2].data;
-      this.progressions.vanguard = response[3].data;
-    });
+    this.spells = this.getData('spells').filter(spell => spell.type === 'biotic');
+    this.progressions.adept = this.getData('adeptProgression');
+    this.progressions.sentinel = this.getData('sentinelProgression');
+    this.progressions.vanguard = this.getData('vanguardProgression');
   }
 };

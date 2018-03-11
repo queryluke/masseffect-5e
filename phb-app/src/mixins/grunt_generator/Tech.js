@@ -109,11 +109,6 @@ export const Tech = {
     };
   },
   created() {
-    return this.$http
-    .get('../data/spells.json')
-    .then(response => response.json())
-    .then(response => {
-      this.tech = response.data.filter(spell => spell.type === 'tech');
-    });
+    this.tech = this.getData('spells').data.filter(spell => spell.type === 'tech');
   }
 };

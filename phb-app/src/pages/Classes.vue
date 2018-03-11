@@ -15,13 +15,18 @@
                 p.ma-0 #[strong Hit Die:] {{ item.hit_die }}
                 p.ma-0 #[strong Primary Ability:] {{ item.primary_ability }}
                 p #[strong Saves:] {{ item.saving_throw.replace(/,\s/, ' & ') }}
-    v-layout(row wrap justify-space-between).mt-4
-      span Last Updated: {{ updated }}
-      a(:href="source" target="_blank") Source
+    page-footer(:list="listName")
 </template>
 
 <script>
+  import PageFooter from '../components/PageFooter.vue';
+  import {mapGetters} from 'vuex';
+
   export default {
+    components: {PageFooter},
+    computed: {
+      ...mapGetters(['getData'])
+    },
     name: 'Classes',
     methods: {
       toSingle(id) {
@@ -31,19 +36,11 @@
     data() {
       return {
         items: [],
-        source: '',
-        updated: '',
+        listName: 'classes'
       };
     },
     created() {
-      return this.$http
-        .get('../data/classes.json')
-        .then(response => response.json())
-        .then(response => {
-          this.items = response.data;
-          this.updated = response.updated;
-          this.source = response.source;
-        });
+      this.items = this.getData('classes');
     },
   };
 </script>

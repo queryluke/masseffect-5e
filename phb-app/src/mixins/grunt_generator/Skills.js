@@ -2,7 +2,7 @@ export const Skills = {
   methods: {
     setGruntSkills(config, grunt) {
       const numSkills = parseFloat(config.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(config.cr.cr) / 4);
-      let skills = JSON.parse(JSON.stringify(this.skills)).filter(skill => skill.removed !== 'x');
+      let skills = this.getMutableData('skills').filter(skill => skill.removed !== 'x');
 
       // Set possible quarian cybernetic enhancement
       if (grunt.race.id === 'quarian') {
@@ -66,7 +66,6 @@ export const Skills = {
   },
   data() {
     return {
-      skills: [],
       proficientWeights: {
         0: [0, 0, 1, 1],
         1: [1, 1, 1, 2],
@@ -74,13 +73,5 @@ export const Skills = {
         3: [2, 2, 3, 3]
       }
     };
-  },
-  created() {
-    return this.$http
-    .get('../data/skills.json')
-    .then(response => response.json())
-    .then(response => {
-      this.skills = response.data;
-    });
   }
 };

@@ -33,18 +33,19 @@
                 v-card-title.headline Feature: {{ item.feature_name }}
                 v-card-text
                   me-element(:text="item.feature_description")
-    v-layout(row wrap justify-space-between).mt-4
-      span Last Updated: {{ updated }}
-      a(:href="source" target="_blank") Source
+    page-footer(:list="listName")
 </template>
 
 <script>
   import MeElement from '../components/MeElement.vue';
+  import PageFooter from '../components/PageFooter.vue';
+  import {mapGetters} from 'vuex';
 
   export default {
     name: 'Backgrounds',
     components: {
-      MeElement
+      MeElement,
+      PageFooter
     },
     methods: {
       sortBy (key) {
@@ -57,6 +58,7 @@
       },
     },
     computed: {
+      ...mapGetters(['getData']),
       filteredData() {
         let data = this.items;
         let sortKey = this.sortKey;
@@ -74,8 +76,7 @@
     data() {
       return {
         items: [],
-        source: '',
-        updated: '',
+        listName: 'backgrounds',
         headers: [
           {key: 'name', display: 'Name', classes: 'xs12 sm3'},
           {key: 'feature_name', display: 'Feature', classes: 'hidden-xs-only sm5'},
@@ -86,14 +87,7 @@
       };
     },
     created() {
-      return this.$http
-        .get('../data/backgrounds.json')
-        .then(response => response.json())
-        .then(response => {
-          this.items = response.data;
-          this.updated = response.updated;
-          this.source = response.source;
-        });
+      this.items = this.getData('backgrounds');
     }
   };
 </script>

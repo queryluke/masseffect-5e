@@ -2,7 +2,7 @@ export const Features = {
   methods: {
     setGruntFeatures(config, grunt) {
       const crMetaLevel = parseFloat(config.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(config.cr.cr) / 4);
-      const features = JSON.parse(JSON.stringify(this.monsterFeatures));
+      const features = this.getMutableData('monsterFeatures');
 
       // Set base features
       const mandatoryFeatures = features.filter(feature => {
@@ -81,7 +81,6 @@ export const Features = {
   },
   data() {
     return {
-      monsterFeatures: [],
       numFeatureWeights: {
         0: [0, 0, 0, 1, 1],
         1: [0, 1, 1, 1, 2],
@@ -89,13 +88,5 @@ export const Features = {
         3: [1, 2, 2, 3, 3]
       }
     };
-  },
-  created() {
-    return this.$http
-    .get('../data/monster_features.json')
-    .then(response => response.json())
-    .then(response => {
-      this.monsterFeatures = response.data;
-    });
   }
 };

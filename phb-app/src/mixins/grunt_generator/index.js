@@ -19,6 +19,7 @@ import {Speed} from './Speed';
 import {Tech} from './Tech';
 import {Type} from './Type';
 import {Weapons} from './Weapons';
+import {mapGetters} from 'vuex';
 
 export const GruntGenerator = {
   mixins: [
@@ -44,6 +45,9 @@ export const GruntGenerator = {
     Type,
     Weapons
   ],
+  computed: {
+    ...mapGetters(['getData', 'getMutableData'])
+  },
   methods: {
     generateGrunt(cr, race, sc) {
       const config = {

@@ -99,7 +99,8 @@ export const Weapons = {
       const strBonus = this.abilityScoreBonus(grunt.abilityScores.str);
       const dexBonus = this.abilityScoreBonus(grunt.abilityScores.dex);
       const bruteMod = grunt.features.find(feature => feature.id === 'brute');
-      return this.weapons.map(weapon => {
+      const weapons = this.getMutableData('weapons').filter(weapon => weapon.dmg !== null);
+      return weapons.map(weapon => {
         weapon.attack = {};
         if (weapon.type === 'Melee' && bruteMod) {
           weapon.rof += 1;
@@ -200,18 +201,5 @@ export const Weapons = {
         description
       };
     }
-  },
-  data() {
-    return {
-      weapons: []
-    };
-  },
-  created() {
-    return this.$http
-    .get('../data/weapons.json')
-    .then(response => response.json())
-    .then(response => {
-      this.weapons = response.data.filter(weapon => weapon.dmg !== null);
-    });
   }
 };

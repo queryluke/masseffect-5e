@@ -9,19 +9,23 @@
           td {{ props.item.piece }}
           td {{ props.item.cost }}
           td {{ props.item.mechanic }}
-    v-layout(row wrap justify-space-between).mt-4
-      span Last Updated: {{ updated }}
-      a(:href="source" target="_blank") Source
+    page-footer(:list="listName")
 </template>
 
 <script>
+  import PageFooter from '../components/PageFooter.vue';
+  import {mapGetters} from 'vuex';
+
   export default {
+    components: {PageFooter},
+    computed: {
+      ...mapGetters(['getData'])
+    },
     name: 'ArmorMods',
     data() {
       return {
         items: [],
-        source: '',
-        updated: '',
+        listName: 'armorMods',
         headers: [
           { text: 'Name', value: 'name', align: 'left'},
           { text: 'Slot', value: 'piece', align: 'left' },
@@ -31,14 +35,7 @@
       };
     },
     created() {
-      return this.$http
-        .get('../data/armor_mods.json')
-        .then(response => response.json())
-        .then(response => {
-          this.items = response.data;
-          this.updated = response.updated;
-          this.source = response.source;
-        });
+      this.items = this.getData('armorMods');
     }
   };
 </script>
