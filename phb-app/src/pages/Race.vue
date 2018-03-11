@@ -73,8 +73,12 @@
 <script>
   import MeIcon from '../components/MeIcon.vue';
   import MeElement from "../components/MeElement.vue";
+  import {mapGetters} from 'vuex';
 
   export default {
+    computed: {
+      ...mapGetters(['getData', 'getMutableData'])
+    },
     name: 'Race',
     props: ['id'],
     components: { MeElement, MeIcon },
@@ -86,40 +90,35 @@
       };
     },
     created() {
-      let getFeats = this.$http.get('../data/feats.json').then(response => response.json());
-      let getTraits = this.$http.get('../data/racial_traits.json').then(response => response.json());
-      let getRaces = this.$http.get('../data/races.json').then(response => response.json());
-      Promise.all([getFeats, getRaces, getTraits]).then(response => {
-        let feats = response[0].data;
-        let races = response[1].data;
-        let traits = response[2].data;
-        let race = races.find((value) => {
-          return value.id == this.id;
-        });
-
-        let index = races.indexOf(race);
-        this.previous_race = races[index-1] ? races[index-1] : {};
-        this.next_race = races[index+1] ? races[index+1] : {};
-
-        race.available_classes = race.available_classes.split(',').map((v) => v.trim());
-
-        race.racial_traits = traits.filter( (trait) => {
-          return trait[race.id] !== null
-        }).map( (trait) => {
-          for (let line of trait.description){
-            if(/{feats}/.test(line.data)){
-              let available_starting_feats = feats.filter( (feat) => {
-                return feat[race.id] !== null
-              }).map( (feat) => feat.name );
-              line.data = line.data.replace(/{feats}/,available_starting_feats.join(', '))
-            }
-          }
-          return trait;
-        });
-
-
-        this.race = race;
+      let feats = this.getData('feats');
+      let races = this.getMutableData('races');
+      let traits = this.getData('racialTraits');
+      let race = races.find((value) => {
+        return value.id == this.id;
       });
+
+      let index = races.indexOf(race);
+      this.previous_race = races[index-1] ? races[index-1] : {};
+      this.next_race = races[index+1] ? races[index+1] : {};
+
+      race.available_classes = race.available_classes.split(',').map((v) => v.trim());
+
+      race.racial_traits = traits.filter( (trait) => {
+        return trait[race.id] !== null
+      }).map( (trait) => {
+        for (let line of trait.description){
+          if(/{feats}/.test(line.data)){
+            let available_starting_feats = feats.filter( (feat) => {
+              return feat[race.id] !== null
+            }).map( (feat) => feat.name );
+            line.data = line.data.replace(/{feats}/,available_starting_feats.join(', '))
+          }
+        }
+        return trait;
+      });
+
+
+      this.race = race;
     },
   };
 </script>

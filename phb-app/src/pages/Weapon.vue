@@ -7,8 +7,12 @@
 
 <script>
   import WeaponInfo from "../components/WeaponInfo.vue";
+  import {mapGetters} from 'vuex';
 
   export default {
+    computed: {
+      ...mapGetters(['getData'])
+    },
     name: 'Weapon',
     components: {
       WeaponInfo
@@ -19,14 +23,9 @@
       };
     },
     created() {
-      return this.$http
-        .get('../data/weapons.json')
-        .then(response => response.json())
-        .then(response => {
-          this.weapon = response.data.find((value) => {
-            return value.id == this.$route.params.id;
-          });
-        });
+      this.weapon = this.getData('weapons').find((value) => {
+        return value.id == this.$route.params.id;
+      });
     }
   };
 </script>
