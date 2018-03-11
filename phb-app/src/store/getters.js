@@ -36,6 +36,9 @@ export default {
   getMutableData: (state, getters) => name => {
     return JSON.parse(JSON.stringify(getters.getData(name)));
   },
+  getProgressionHeaders: state => name => {
+    return state.data[`${name}Progression`].headers;
+  },
   tooltips: (state, getters) => {
     return getters.getData('conditions');
   }

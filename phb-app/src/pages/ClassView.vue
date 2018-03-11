@@ -16,10 +16,10 @@
           v-card-title(:class="colors.primary").headline.white--text Progression Table
           v-card-text
             progression-table(
-              :headers="progression.headers"
+              :headers="headers"
               v-bind:colors="colors"
-              v-bind:rows="progression.data"
-              v-bind:spell_header="progression.spell_header"
+              v-bind:rows="progression"
+              v-bind:spell_header="spellHeaders"
               v-on:showDialog="showDialog")
     v-layout(row grow).my-0.mt-4
       v-flex(v-if="previous.name").primary.pa-0.xs6
@@ -74,6 +74,8 @@
         subclasses: [],
         features: [],
         progression: {},
+        spellHeaders: {},
+        headers: {},
         spells: [],
         next: {},
         previous: {},
@@ -172,19 +174,20 @@
       }
     },
     computed: {
-      ...mapGetters(['getData'])
+      ...mapGetters(['getData', 'getProgressionHeaders'])
     },
     created() {
-      let classes = this.getData('classes').data;
-      let subclasses = this.getData('subclasses').data;
-      this.spells = this.getData('spells').data.filter(spell => spell[this.id]);
+      let classes = this.getData('classes');
+      let subclasses = this.getData('subclasses');
+      this.spells = this.getData('spells').filter(spell => spell[this.id]);
 
-      this.features = this.getData('classFeatures').data;
+      this.features = this.getData('classFeatures');
       this.progression = this.getData(`${this.id}Progression`);
+      this.headers = this.getProgressionHeaders(this.id);
 
-      let spell_header_count = this.progression.headers.filter((v) => { return v.spell_header }).length;
-      let header_count = this.progression.headers.length;
-      this.progression.spell_header = spell_header_count ? { blank_length: header_count - spell_header_count, spell_length: spell_header_count } : false;
+      let spell_header_count = this.headers.filter((v) => { return v.spell_header }).length;
+      let header_count = this.headers.length;
+      this.spellHeaders = spell_header_count ? { blank_length: header_count - spell_header_count, spell_length: spell_header_count } : false;
 
       this.item = classes.find((value) => {
         return value.id === this.id;

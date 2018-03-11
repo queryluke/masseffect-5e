@@ -69,7 +69,6 @@
     },
     created() {
       this.monsters = this.getMonsters();
-      console.log(this.getMonsters());
     },
     data() {
       return {
