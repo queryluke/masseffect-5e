@@ -44,13 +44,7 @@ export const Actions = {
         });
         if (availableGrenades.length > 0) {
           const grenade = this.randomValue(availableGrenades);
-          const description = grenade.desc.map(line => line.data).join(' ');
-          grunt.actions.push({
-            type: 'common',
-            name: grenade.name,
-            recharge: `${crMetaLevel} grenades`,
-            description
-          });
+          grunt.actions.push(this.generateGrenadeAttack(grenade));
         }
       }
     }

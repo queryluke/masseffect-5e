@@ -1,7 +1,9 @@
 export const Weapons = {
   methods: {
     setWeaponActions(config, grunt) {
-      const weapons = this.getWeaponsWithDamage(grunt);
+      const weapons = this.getMutableData('weapons')
+        .filter(weapon => weapon.dmg !== null)
+        .map(weapon => this.setWeaponDamage(weapon, grunt));
       const attacks = this.getAttackOptions(config, weapons);
       let availableAttacks = attacks.filter(attack => {
         return attack.dpr >= config.targetDamage.dmgMin && attack.dpr <= config.targetDamage.dmgMax;
@@ -11,7 +13,7 @@ export const Weapons = {
       }
       const attack = this.randomValue(availableAttacks);
       for (const weapon of attack.weapons) {
-        grunt.actions.unshift(this.generateWeaponAttack(config, weapon));
+        grunt.actions.unshift(this.generateWeaponAttack(config.cr.profBonus, weapon));
       }
       if (attack.numAttacks > 1) {
         grunt.actions.unshift({
@@ -95,35 +97,6 @@ export const Weapons = {
       attacks.sort((a, b) => a.dpr - b.dpr);
       return attacks;
     },
-    getWeaponsWithDamage(grunt) {
-      const strBonus = this.abilityScoreBonus(grunt.abilityScores.str);
-      const dexBonus = this.abilityScoreBonus(grunt.abilityScores.dex);
-      const bruteMod = grunt.features.find(feature => feature.id === 'brute');
-      const weapons = this.getMutableData('weapons').filter(weapon => weapon.dmg !== null);
-      return weapons.map(weapon => {
-        weapon.attack = {};
-        if (weapon.type === 'Melee' && bruteMod) {
-          weapon.rof += 1;
-        }
-        weapon.attack.dpr = parseInt(weapon.rof, 10) * (((parseInt(weapon.damage, 10) * 2) + 1) / 2);
-        weapon.attack.extraDmg = weapon.addDmg ? parseInt(weapon.addDmg, 10) : 0;
-        // add str or dex to melee dpr
-        if (weapon.type === 'Melee') {
-          let finalBonus = 0;
-          if (/finesse/gi.test(weapon.tags)) {
-            finalBonus = strBonus >= dexBonus ? strBonus : dexBonus;
-          } else {
-            finalBonus = strBonus;
-          }
-          weapon.attack.bonus = finalBonus;
-        } else if (weapon.type === 'Heavy Weapon') {
-          weapon.attack.bonus = 0;
-        } else {
-          weapon.attack.bonus = dexBonus;
-        }
-        return weapon;
-      });
-    },
     generateMultiattackDescription(grunt, attack) {
       const name = grunt.sc.id === 'none' ? 'grunt' : grunt.sc.id;
       const words = ['', 'one', 'two', 'three', 'four'];
@@ -142,64 +115,6 @@ export const Weapons = {
         text += ` ${words[attack.numAttacks]} ${attack.weapons[0].name} attack${plural}`;
       }
       return text;
-    },
-    generateWeaponAttack(config, weapon) {
-      // Heavy weapons
-      if (weapon.type === 'Heavy Weapon') {
-        return {
-          type: 'common',
-          name: weapon.name,
-          recharge: `Charges ${weapon.heat}`,
-          description: weapon.notes
-        };
-      }
-      // Other special weapons
-      if (weapon.id === 'm-37_falcon') {
-        return {
-          type: 'common',
-          name: weapon.name,
-          description: `Target a creature within  ${weapon.range}. It makes a DC ${8 + weapon.bonus + config.cr.profBonus} Dexterity saving throw, taking ${weapon.dpr} (${weapon.rof}d${weapon.damage}) thunder damage on a failed save, or have as much damage on a successful one.`
-        };
-      }
-      if (weapon.id === 'venom_shotgun') {
-        return {
-          type: 'common',
-          name: weapon.name,
-          description: `Target a creature within  ${weapon.range}. It makes a DC 13 Dexterity saving throw, taking ${weapon.dpr} (${weapon.rof}d${weapon.damage}) thunder damage on a failed save, or have as much damage on a successful one.`
-        };
-      }
-
-      let bonusText = '';
-      if (weapon.attack.bonus > 0) {
-        bonusText = ` + ${weapon.attack.bonus}`;
-      } else if (weapon.attack.bonus < 0) {
-        bonusText = ` - ${weapon.attack.bonus * -1}`;
-      }
-      const reachOrRange = weapon.type === 'Melee' ? 'reach' : 'range';
-      const hipFire = /hip/gi.test(weapon.tags) ? ' & hip fire' : '';
-      const target = weapon.id === 'n7_piranha' ? 'all creatures in 4m cone' : 'one target';
-      const additionalHitMechanics = weapon.npcHit ? `, and ${weapon.npcHit}` : '.';
-      const toHit = config.cr.profBonus + weapon.attack.bonus >= 0 ? `+${config.cr.profBonus + weapon.attack.bonus}` : config.cr.profBonus + weapon.attack.bonus;
-
-      const description = {
-        attack: `${toHit} to hit, ${reachOrRange} ${weapon.range}${hipFire}, ${target}.`,
-        hit: `${Math.floor(weapon.attack.dpr)} (${weapon.rof}d${weapon.damage}${bonusText}) ${weapon.dmgType} damage${additionalHitMechanics}`,
-        miss: null
-      };
-
-      // Miss mechanics
-      if (weapon.id === 'scorpion') {
-        description.miss = '2 (1d4) thunder damage';
-      }
-
-      let attackType = weapon.type === 'Melee' ? 'Melee' : 'Ranged';
-      attackType += ' Weapon Attack';
-      return {
-        type: 'attack',
-        name: weapon.name,
-        attackType,
-        description
-      };
     }
   }
 };

@@ -1,5 +1,5 @@
 {
-  "updated": "March  7, 2018 @  6:41 PM",
+  "updated": "March 11, 2018 @  7:43 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT87AUwt1n514k6a6b4l0kOzGwIphsGXBJLFqujgkCsJ1rdudQ1Bk7Km12DACO5qQ2WGDVI8fT6-Xe/pubhtml",
   "data": [
     {
@@ -979,7 +979,7 @@
 
       ],
       "featuresActionsReactions": [
-        "collector_particle_rifle",
+        "particle_rifle",
         "possessed_collector"
       ],
       "savingThrows": [
@@ -1466,6 +1466,317 @@
         "nature",
         "persuasion",
         "deception"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The adjutant makes 2 arm cannon attacks."
+        }
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 12,
+        "dex": 18,
+        "con": 16,
+        "int": 10,
+        "wis": 12,
+        "cha": 8
+      },
+      "hp": {
+        "die": "10",
+        "average": "127",
+        "numDice": "15",
+        "mod": 45
+      },
+      "senses": [
+        "darkvision 20m"
+      ],
+      "name": "Adjutant",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/98/ME3_adjutant.png/revision/latest/scale-to-width-down/700?cb=20121128185320",
+      "cr": "5",
+      "size": "Large",
+      "type": "Synorg",
+      "unit": "Cerberus",
+      "alignment": "Lawful Evil",
+      "profBonus": "3",
+      "barrier": "6",
+      "speed": "10m",
+      "dc": "15",
+      "ac": "18",
+      "xp": "1800",
+      "id": "adjutant",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "arm_cannon",
+        "bash",
+        "reaper_infection",
+        "grappler"
+      ],
+      "savingThrows": [
+        "dex"
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 12,
+        "dex": 13,
+        "con": 14,
+        "int": 10,
+        "wis": 10,
+        "cha": 10
+      },
+      "hp": {
+        "die": "8",
+        "average": "39",
+        "numDice": "6",
+        "mod": 12
+      },
+      "senses": [
+
+      ],
+      "name": "Assault Trooper",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/1/1c/ME3_Cerberus_Assault_Trooper.png/revision/latest/scale-to-width-down/514?cb=20120322151133",
+      "cr": "1/2",
+      "size": "Medium",
+      "type": "Organic",
+      "unit": "Cerberus",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "10m",
+      "dc": "13",
+      "ac": "14",
+      "xp": "100",
+      "id": "assault_trooper",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "stun_baton",
+        "m-25_hornet",
+        "frag_grenade"
+      ],
+      "savingThrows": [
+        "dex"
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 20,
+        "dex": 10,
+        "con": 20,
+        "int": 18,
+        "wis": 10,
+        "cha": 9
+      },
+      "hp": {
+        "die": "10",
+        "average": "147",
+        "numDice": "14",
+        "mod": 70
+      },
+      "sp": {
+        "shields": 50,
+        "regen": "5"
+      },
+      "senses": [
+        "darkvision 20m"
+      ],
+      "name": "Atlas",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/1/16/ME3_Cerberus_Atlas.png/revision/latest/scale-to-width-down/700?cb=20120322140845",
+      "cr": "14",
+      "size": "Large",
+      "type": "Synthetic",
+      "unit": "Cerberus",
+      "alignment": "Neutral",
+      "profBonus": "5",
+      "barrier": null,
+      "speed": "6m",
+      "dc": "18",
+      "ac": "20",
+      "xp": "11500",
+      "id": "atlas",
+      "damageResistances": [
+        "bludgeoning",
+        "piercing",
+        "slashing"
+      ],
+      "damageImmunities": [
+        "poison",
+        "necrotic",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "blinded",
+        "deafened",
+        "grappled",
+        "paralyzed",
+        "petrified",
+        "stunned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "smash",
+        "mass_accelerator_cannon",
+        "rocket_launcher",
+        "smoke_grenade"
+      ],
+      "savingThrows": [
+        "str"
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The centurion makes 2 M-96 Mattock attacks or 2 Stun Baton attacks."
+        }
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 14,
+        "dex": 14,
+        "con": 16,
+        "int": 11,
+        "wis": 9,
+        "cha": 12
+      },
+      "hp": {
+        "die": "8",
+        "average": "45",
+        "numDice": "6",
+        "mod": 18
+      },
+      "sp": {
+        "shields": 10,
+        "regen": "10"
+      },
+      "senses": [
+
+      ],
+      "name": "Centurion",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/3f/ME3_Cerberus_Centurion.png/revision/latest/scale-to-width-down/417?cb=20120322145316",
+      "cr": "2",
+      "size": "Medium",
+      "type": "Organic",
+      "unit": "Cerberus",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": null,
+      "dc": "14",
+      "ac": "14",
+      "xp": "450",
+      "id": "centurion",
+      "damageResistances": [
+        "bludgeoning",
+        "piercing",
+        "slashing"
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "aggressive",
+        "stun_baton",
+        "m-96_mattock",
+        "frag_grenade",
+        "smoke_grenade"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
       ]
     }
   ]

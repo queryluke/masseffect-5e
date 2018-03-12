@@ -1,10 +1,25 @@
 export const Features = {
   methods: {
     setMonsterFeatures(monster) {
+      const weapons = this.getMutableData('weapons');
+      const grenades = this.getMutableData('grenades');
       const features = this.getMutableData('monsterFeatures');
       for (const featureId of monster.featuresActionsReactions) {
+        // matches a weapon?
+        let weapon = weapons.find(weapon => weapon.id === featureId);
+        if (weapon) {
+          weapon = this.setWeaponDamage(weapon, monster);
+          monster.actions.push(this.generateWeaponAttack(monster.profBonus, weapon));
+        }
+        // matches a grenade?
+        const grenade = grenades.find(grenade => grenade.id === featureId);
+        if (grenade) {
+          monster.actions.push(this.generateGrenadeAttack(grenade));
+        }
         const feature = features.find(feature => feature.id === featureId);
-        this.addFeature(monster, feature);
+        if (feature) {
+          this.addFeature(monster, feature);
+        }
       }
     },
     addFeature(monster, feature) {

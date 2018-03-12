@@ -3,6 +3,7 @@ import {AbilityScoreBonus} from '../abilityScoreBonus';
 import {Features} from './Features';
 import {Tech} from './Tech';
 import {Skills} from './Skills';
+import {BestiaryHelpers} from '../bestiaryHelpers';
 import {mapGetters} from 'vuex';
 
 export const ConfigureMonsters = {
@@ -11,6 +12,7 @@ export const ConfigureMonsters = {
   },
   mixins: [
     AbilityScoreBonus,
+    BestiaryHelpers,
     Biotics,
     Features,
     Skills,

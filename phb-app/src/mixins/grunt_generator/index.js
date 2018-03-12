@@ -3,6 +3,7 @@ import {AbilityScores} from './AbilityScores';
 import {Ac} from './Ac';
 import {Actions} from './Actions';
 import {AverageFromDie} from '../averageFromDie';
+import {BestiaryHelpers} from '../bestiaryHelpers';
 import {Biotics} from './Biotics';
 import {DieFromAverage} from '../dieFromAverage';
 import {Helpers} from './Helpers';
@@ -28,6 +29,7 @@ export const GruntGenerator = {
     Ac,
     Actions,
     AverageFromDie,
+    BestiaryHelpers,
     Biotics,
     DieFromAverage,
     Helpers,
