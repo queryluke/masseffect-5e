@@ -101,21 +101,33 @@ def configure_monster(model)
   } unless model['shields'].nil?
   unless model['spellcasting'].nil?
     wisMod = ((model['wis'].to_i - 10) / 2).floor
-    monster['spellcasting'] = {
+    if model['spellcasting'] == 'innate'
+      spells = model['spells'].split(',').collect do |x|
+        parts = x.split('-')
+        {
+          level: parts[0],
+          spells: parts[1].split(';').collect{|x| x.strip}
+        }
+      end
+    else
+      spells = model['slots'].split(',').collect do |x|
+        parts = x.split('-')
+        {
+          level: parts[0],
+          slots: parts[1],
+          spells: []
+        }
+      end
+      spells.unshift({level: 'cantrip', spells: []})
+    end
+
+    monster[:spellcasting] = {
       level: model['spellcasting'],
       dc: 8 + model['profBonus'].to_i + wisMod,
       hit: model['profBonus'].to_i + wisMod,
       spellList: model['spells'].to_s.split(',').collect{ |x| x.strip },
-      spells: model['slots'].split(',').collect do |x|
-        parts = x.split('-')
-        {
-            level: parts[0],
-            slots: parts[1],
-            spells: []
-        }
-      end
+      spells: spells
     }
-    monster['spellcasting'][:spells].unshift({level: 'cantrip', spells: []})
   end
 
   unless model['techcasting'].nil?

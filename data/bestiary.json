@@ -1,5 +1,5 @@
 {
-  "updated": "March 11, 2018 @  7:43 PM",
+  "updated": "March 12, 2018 @  6:41 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT87AUwt1n514k6a6b4l0kOzGwIphsGXBJLFqujgkCsJ1rdudQ1Bk7Km12DACO5qQ2WGDVI8fT6-Xe/pubhtml",
   "data": [
     {
@@ -304,22 +304,6 @@
       "features": [
 
       ],
-      "spellcasting": false,
-      "techcasting": false,
-      "abilityScores": {
-        "str": 11,
-        "dex": 16,
-        "con": 11,
-        "int": 12,
-        "wis": 18,
-        "cha": 19
-      },
-      "hp": {
-        "die": "10",
-        "average": "110",
-        "numDice": "20",
-        "mod": 0
-      },
       "spellcasting": {
         "level": "13",
         "dc": 15,
@@ -366,6 +350,21 @@
             ]
           }
         ]
+      },
+      "techcasting": false,
+      "abilityScores": {
+        "str": 11,
+        "dex": 16,
+        "con": 11,
+        "int": 12,
+        "wis": 18,
+        "cha": 19
+      },
+      "hp": {
+        "die": "10",
+        "average": "110",
+        "numDice": "20",
+        "mod": 0
       },
       "senses": [
         "darkvision 20m"
@@ -1358,22 +1357,6 @@
       "features": [
 
       ],
-      "spellcasting": false,
-      "techcasting": false,
-      "abilityScores": {
-        "str": 10,
-        "dex": 12,
-        "con": 12,
-        "int": 14,
-        "wis": 18,
-        "cha": 16
-      },
-      "hp": {
-        "die": "10",
-        "average": "162",
-        "numDice": "25",
-        "mod": 25
-      },
       "spellcasting": {
         "level": "12",
         "dc": 16,
@@ -1421,6 +1404,21 @@
             ]
           }
         ]
+      },
+      "techcasting": false,
+      "abilityScores": {
+        "str": 10,
+        "dex": 12,
+        "con": 12,
+        "int": 14,
+        "wis": 18,
+        "cha": 16
+      },
+      "hp": {
+        "die": "10",
+        "average": "162",
+        "numDice": "25",
+        "mod": 25
       },
       "senses": [
         "darkvision 20m"
@@ -1485,7 +1483,22 @@
       "features": [
 
       ],
-      "spellcasting": false,
+      "spellcasting": {
+        "level": "innate",
+        "dc": 12,
+        "hit": 4,
+        "spellList": [
+          "3-singularity"
+        ],
+        "spells": [
+          {
+            "level": "3",
+            "spells": [
+              "singularity"
+            ]
+          }
+        ]
+      },
       "techcasting": false,
       "abilityScores": {
         "str": 12,
@@ -1514,7 +1527,7 @@
       "profBonus": "3",
       "barrier": "6",
       "speed": "10m",
-      "dc": "15",
+      "dc": "12",
       "ac": "18",
       "xp": "1800",
       "id": "adjutant",
