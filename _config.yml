@@ -1,4 +1,4 @@
-url: http://queryluke.github.io/masseffect-5e
+url: n7.world
 permalink: news/:title/
 data_dir: data
 exclude: [phb-app/, generate.rb]

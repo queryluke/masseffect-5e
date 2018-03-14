@@ -1,7 +1,7 @@
 # Mass Effect 5e
 A homebrew conversion of Dungeons & Dragons 5th Edition into the Mass Effect Universe.
 
- [View the Site](https://queryluke.github.io/masseffect-5e)
+ [View the Site](http://n7.world/)
  
  ## How it's made
  
@@ -12,7 +12,7 @@ A homebrew conversion of Dungeons & Dragons 5th Edition into the Mass Effect Uni
  
  ### Making suggestions
  
- If you'd like to make suggestions for the system itself, check out the [contributing guide](http://queryluke.github.io/masseffect-5e/about) 
+ If you'd like to make suggestions for the system itself, check out the [contributing guide](http://n7.world/about)
  in the about section.
  
  If you want to contribute code, see below.
