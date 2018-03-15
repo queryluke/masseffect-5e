@@ -336,8 +336,6 @@ tactical info to their allies (Help action)."
 feature of the new Vanguard class feature: Biotic Bullrush.
 
 
-
-
 ## v0.2.0 Beta
-Almost a brand new system. See [The Refactor Post](https://queryluke.github.io/masseffect-5e/news/the-refactor/)
+Almost a brand new system. See [The Refactor Post](http://n7.world/news/the-refactor/)
 for an overview.

@@ -7,9 +7,9 @@
         span Mass Effect 5e - Player's Handbook
     v-spacer
     v-toolbar-items.hidden-sm-and-down
-      v-btn(href="/masseffect-5e/about/" flat) About
-      v-btn(href="/masseffect-5e/printables/" flat) Printables
-      v-btn(href="/masseffect-5e/news/" flat) News
+      v-btn(href="/about/" flat) About
+      v-btn(href="/printables/" flat) Printables
+      v-btn(href="/news/" flat) News
       v-btn(href="https://goo.gl/forms/3wZj8QhlsLv3XOJw1" target="_blank" flat) Feedback
 </template>
 
