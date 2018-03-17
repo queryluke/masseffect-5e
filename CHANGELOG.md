@@ -10,6 +10,29 @@ hit points based on their own hit die.
 Shields regenerate after combat or an encounter in addition to a short or long rest, or by taking the Hide or Dodge action
 and taking no damage.
 
+### Armor proficiency
+Armor proficiency moved back to the class (not race), bringing the system more in line with 5th edition.
+To compensate this change, the 5,000 credit cost for race customization has been removed.
+
+### Weapons
+Almost all weapon weights have been reduced by 1-2. The exception is a few Heavy Weapons.
+
+#### Omni-weapons
+Omni-weapons replace void left by omni-tool attacks. They are light weapons that take no weapon slot and take a free action
+to draw. This gives players the option of having a back-up, at-the-ready melee attack.
+* Added Omni-Taser & Omni-Hammer added
+
+#### Other weapon changes
+* __Asari Huntress Sword__ & __Asari Warsword__ combined into one weapon. Only allows casting of cantrip.
+* Cerberus Operator Blade renamed Monomolecular Blade
+
+### Feats
+* Melee Specialist:
+  * with two-handed ranged weapon, can attack with an omni-weapon
+  * with one-handed ranged weapon, can attack with light or versatile (w/ one hand) weapon
+  * only melee, removed +1 AC (benefit available w/ Dual wielder feat)
+* Added Dual Wielder feat
+
 ### Bestiary Updates
 * Husk, Str increased to 13, AC increased to 14, CR decreased to 1/8
 * Abomination, Str increased to 13, HP increased to 26, CR increased to 1/4
@@ -17,8 +40,9 @@ and taking no damage.
 * Harbinger, Added legendary actions, added melee attack, added Dark Channel to spell list
 
 ### Site Enhancements
-* Fixed bug that showed `Shields o ( regen)` when a monster had no shields.
+* Fixed bug that showed `Shields 0 ( regen)` when a monster had no shields.
 * Added Distance rule change back into general rules.
+* Fixed bug that caused side navigation menu to sometimes not show up.
 
 ## v0.5.0
 

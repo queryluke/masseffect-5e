@@ -1,5 +1,5 @@
 {
-  "updated": "March 16, 2018 @  3:44 PM",
+  "updated": "March 16, 2018 @  9:48 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSq70x_GZuDKcELgX8k_7Hd6nLGu3DoIEdDwP-YEGjUU-ghGc7ot_Q7140FZwGbEalHgzPwVm4BN8y_/pubhtml",
   "data": [
     {
@@ -75,14 +75,14 @@
     {
       "name": "Asari Huntress Sword",
       "type": "Melee",
-      "cost": "10500",
+      "cost": "30500",
       "manufacturer": null,
       "weight": "1",
-      "heat": "11",
+      "heat": "8",
       "rof": "1",
       "damage": "6",
       "range": "2m",
-      "rare": null,
+      "rare": "x",
       "tags": "Slashing, Finesse, Light",
       "notes": [
         {
@@ -97,32 +97,6 @@
       "image": null,
       "id": "asari_huntress_sword",
       "notes_text_dump": "KineticenergyfromsuccessfulmeleeattacksgrantaminorbioticboostWhenyouhitwithanattackusingthisweaponasabonusactionyoumaycastabioticcantrip"
-    },
-    {
-      "name": "Asari Warsword",
-      "type": "Melee",
-      "cost": "30500",
-      "manufacturer": null,
-      "weight": "2",
-      "heat": "12",
-      "rof": "1",
-      "damage": "6",
-      "range": "2m",
-      "rare": "x",
-      "tags": "Slashing, Finesse",
-      "notes": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Kinetic energy from successful melee attacks grant a biotic boost. When you hit with an attack using this weapon, as a bonus action, you may cast a biotic spell or cantrip. This cast still consumes a spell slot."
-        }
-      ],
-      "npcHit": "the attacker may cast a biotic cantrip or spell as a bonus action. This consumes a spell slot.",
-      "addDmg": null,
-      "dmgType": "slashing",
-      "image": null,
-      "id": "asari_warsword",
-      "notes_text_dump": "KineticenergyfromsuccessfulmeleeattacksgrantabioticboostWhenyouhitwithanattackusingthisweaponasabonusactionyoumaycastabioticspellorcantripThiscaststillconsumesaspellslot"
     },
     {
       "name": "AT-12 Raider",
@@ -1622,46 +1596,106 @@
     {
       "name": "Omni-Blade",
       "type": "Melee",
-      "cost": "3500",
+      "cost": "10500",
       "manufacturer": null,
-      "weight": "1",
-      "heat": "6",
+      "weight": "0",
+      "heat": "1",
       "rof": "1",
       "damage": "6",
       "range": "2m",
       "rare": null,
       "tags": "Light, Finesse",
       "notes": [
-
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Drawing the Omni-Blade is a free action. Having this weapon equipped does not require a weapon slot."
+        }
       ],
       "npcHit": null,
       "addDmg": null,
       "dmgType": "slashing",
       "image": null,
       "id": "omni-blade",
-      "notes_text_dump": ""
+      "notes_text_dump": "DrawingtheOmniBladeisafreeactionHavingthisweaponequippeddoesnotrequireaweaponslot"
+    },
+    {
+      "name": "Omni-Hammer",
+      "type": "Melee",
+      "cost": "11500",
+      "manufacturer": null,
+      "weight": "0",
+      "heat": "1",
+      "rof": "1",
+      "damage": "8",
+      "range": "2m",
+      "rare": null,
+      "tags": "Light",
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Drawing the Omni-Hammer is a free action. Having this weapon equipped does not require a weapon slot."
+        }
+      ],
+      "npcHit": null,
+      "addDmg": null,
+      "dmgType": "bludgeoning",
+      "image": null,
+      "id": "omni-hammer",
+      "notes_text_dump": "DrawingtheOmniHammerisafreeactionHavingthisweaponequippeddoesnotrequireaweaponslot"
+    },
+    {
+      "name": "Omni-Taser",
+      "type": "Melee",
+      "cost": "9500",
+      "manufacturer": null,
+      "weight": "0",
+      "heat": "1",
+      "rof": "1",
+      "damage": "4",
+      "range": "2m",
+      "rare": null,
+      "tags": "Lightning, Light, Finesse",
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Drawing the Omni-Taser is a free action. Having this weapon equipped does not require a weapon slot."
+        }
+      ],
+      "npcHit": null,
+      "addDmg": null,
+      "dmgType": "lightning",
+      "image": null,
+      "id": "omni-taser",
+      "notes_text_dump": "DrawingtheOmniTaserisafreeactionHavingthisweaponequippeddoesnotrequireaweaponslot"
     },
     {
       "name": "Omni-Whip",
       "type": "Melee",
-      "cost": "4500",
+      "cost": "11500",
       "manufacturer": "Cerberus",
-      "weight": "1",
-      "heat": "11",
+      "weight": "0",
+      "heat": "1",
       "rof": "1",
       "damage": "8",
       "range": "4m",
       "rare": null,
       "tags": "Lightning, Finesse, Reach",
       "notes": [
-
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Drawing the Omni-Whip is a free action. Having this weapon equipped does not require a weapon slot."
+        }
       ],
       "npcHit": null,
       "addDmg": null,
       "dmgType": "lightning",
       "image": null,
       "id": "omni-whip",
-      "notes_text_dump": ""
+      "notes_text_dump": "DrawingtheOmniWhipisafreeactionHavingthisweaponequippeddoesnotrequireaweaponslot"
     },
     {
       "name": "Particle Rifle",

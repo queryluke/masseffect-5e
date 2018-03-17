@@ -3,7 +3,6 @@ import ApplyMediGel from './ApplyMediGel.vue';
 import ArmorOverview from './ArmorOverview.vue';
 import ArmorCustomization from './ArmorCustomization.vue';
 import ArmorPieces from './ArmorPieces.vue';
-import ArmorProficiency from './ArmorProficiency.vue';
 import Barriers from './Barriers.vue';
 import Biotics from './Biotics.vue';
 import CombatPowers from './CombatPowers.vue';
@@ -12,6 +11,7 @@ import CreatureTypes from './CreatureTypes.vue';
 import DamageTypes from './DamageTypes.vue';
 import Distance from './Distance.vue';
 import Encumbrance from './Encumbrance.vue';
+import GalaxyMaster from './GalaxyMaster.vue';
 import Grenades from './Grenades.vue';
 import HeavyWeaponCharges from './HeavyWeaponCharges.vue';
 import HeavyWeapons from './HeavyWeapons.vue';
@@ -39,7 +39,6 @@ export default {
   ArmorOverview,
   ArmorCustomization,
   ArmorPieces,
-  ArmorProficiency,
   Barriers,
   Biotics,
   CombatPowers,
@@ -49,6 +48,7 @@ export default {
   Distance,
   Encumbrance,
   Grenades,
+  GalaxyMaster,
   HeavyWeaponCharges,
   HeavyWeapons,
   HolsteringAndDrawing,

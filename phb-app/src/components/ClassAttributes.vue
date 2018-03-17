@@ -8,17 +8,20 @@
     div.hr
     p.headline Proficiencies
     ul.list-unstyled
+      li #[strong Armor:] {{ item.armor_proficiency }}
       li #[strong Weapons:] {{ item.weapon }}
       li #[strong Saving Throws:] {{ item.saving_throw }}
       li #[strong Skills:] {{ item.skill }}
     div.hr
-    p.headline Starting Weapons
-    ul.list-unstyled
-      li #[strong Ranged Weapon] {{ item.starting_weapon }}
+    p.headline Starting Equipment
+    me-element(:text="item.starting_equipment")
 </template>
 
 <script>
+  import MeElement from './MeElement.vue';
+
   export default {
+    components: {MeElement},
     name: 'ClassAttributes',
     props: ['item'],
   };

@@ -16,7 +16,6 @@
       return {
         rules: [
           'armor-overview',
-          'armor-proficiency',
           'armor-pieces',
           'armor-customization',
           'creating-new-armor'

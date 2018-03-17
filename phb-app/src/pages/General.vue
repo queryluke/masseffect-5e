@@ -22,6 +22,7 @@
       return {
         rules: {
           changes: [
+            'galaxy-master',
             'distance',
             'lifting-and-carrying',
             'encumbrance',

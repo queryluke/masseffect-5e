@@ -32,10 +32,6 @@
                   strong Sexy Level
                   br
                   span {{ race.sexy_level }}
-                v-flex.xs6.sm3.text-xs-center
-                  strong Armor Proficiency
-                  br
-                  span {{ race.armor }}
               div.hr
               div.ma-2
                 div(id="race-alignment").section-label Alignment
@@ -49,8 +45,8 @@
                   label(:id="trait.id") #[strong {{ trait.name }}]
                   me-element(:text="trait.description" v-bind:aria-labelledby="`race-traits ${trait.id}`")
               div.ma-2
-                div(id="starting-equipment").section-label Starting Equipment
-                me-element(:text="race.starting_equipment" aria-labelledby="starting-equipment")
+                div(id="optional-starting-credits").section-label Optional Starting Credits
+                p(aria-labelledby="optional-starting-credits") {{ race.optional_starting_credits }}
       v-flex.hidden-sm-and-down.md3
         v-card-media(:src="race.body" height="80vh")
     v-layout(row grow).my-0.mt-4
