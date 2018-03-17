@@ -2,17 +2,25 @@
 
 ## v0.5.1
 
-### New Combat Action: Apply Medi-gel
+### General
+#### New Combat Action: Apply Medi-gel
 Medi-gel was reworked. It no longer used a hit die, but works similar to a healing potion giving the creature it was applied to
 hit points based on their own hit die.
 
-### Shield update
+#### Shield update
 Shields regenerate after combat or an encounter in addition to a short or long rest, or by taking the Hide or Dodge action
 and taking no damage.
 
-### Armor proficiency
+#### Armor proficiency
 Armor proficiency moved back to the class (not race), bringing the system more in line with 5th edition.
 To compensate this change, the 5,000 credit cost for race customization has been removed.
+
+### Skills
+* _Hacking_ renamed _Electronics_ to encompass a wide variety of checks.
+* _Nature_ renamed _Science_ as a catch-all for scientific intelligence checks. In theory, most information needs can be found with
+a quick search on the exonet. This check involves making connections between facts based on experience or intellect.
+* _Piloting_ renamed _Vehicle Handling_ and base ability changed to Dex. This covers your ability to maneuver vehicles. The GM
+can also ask for a Wison (Vehicle Handling) check when attempting to drive unfamiliar or alien vehicles.
 
 ### Weapons
 Almost all weapon weights have been reduced by 1-2. The exception is a few Heavy Weapons.

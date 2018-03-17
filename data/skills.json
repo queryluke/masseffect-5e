@@ -1,5 +1,5 @@
 {
-  "updated": "November 17, 2017 @ 10:58 AM",
+  "updated": "March 17, 2018 @  2:13 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRFYAlUo84hir8VGSHwP4pKqnTcih_5UD0Uqtgi9w-QHEvrSxLthv1xXG0jb_tpbBRNZXE1Dv0nF0_q/pubhtml",
   "data": [
     {
@@ -10,6 +10,15 @@
       "link": "Dexterity",
       "description": "Your Dexterity (Acrobatics) check covers your attempt to stay on your feet in a tricky situation, such as when you're trying to run across a sheet of ice, balance on a tightrope, or stay upright on a rocking spaceship's deck. The GM might also call for a Dexterity (Acrobatics) check to see if you can perform acrobatic stunts, including dives, rolls, somersaults, and flips.",
       "id": "acrobatics"
+    },
+    {
+      "name": "Animal Handling",
+      "new": null,
+      "removed": "x",
+      "micon": null,
+      "link": null,
+      "description": null,
+      "id": "animal_handling"
     },
     {
       "name": "Arcana",
@@ -30,15 +39,6 @@
       "id": "athletics"
     },
     {
-      "name": "Animal Handling",
-      "new": null,
-      "removed": "x",
-      "micon": null,
-      "link": null,
-      "description": null,
-      "id": "animal_handling"
-    },
-    {
       "name": "Deception",
       "new": null,
       "removed": null,
@@ -48,6 +48,15 @@
       "id": "deception"
     },
     {
+      "name": "Electronics",
+      "new": "x",
+      "removed": null,
+      "micon": "memory",
+      "link": "Intelligence",
+      "description": "Your Intelligence (Electronics) check covers attempts to hack or interface with computer systems, such as when you're trying to open locked doors and containers, turn off cameras, override controls, etc.",
+      "id": "electronics"
+    },
+    {
       "name": "Engineering",
       "new": "x",
       "removed": null,
@@ -55,15 +64,6 @@
       "link": "Intelligence",
       "description": "Your Intelligence (Engineering) check covers your knowledge of machines and mechanical devices. It most cases it determines your ability to repair devices. But you might also use it to spot weaknesses in mechanical defense systems, spot potential vehicle failures before they happen, or find expensive parts in space salvage.",
       "id": "engineering"
-    },
-    {
-      "name": "Hacking",
-      "new": "x",
-      "removed": null,
-      "micon": "memory",
-      "link": "Intelligence",
-      "description": "Your Hacking (Intelligence) check covers attempts to hack into computer systems, such as when you're trying to open locked doors and containers, turn off cameras, override controls, etc.",
-      "id": "hacking"
     },
     {
       "name": "History",
@@ -113,10 +113,10 @@
     {
       "name": "Nature",
       "new": null,
-      "removed": null,
-      "micon": "local_florist",
-      "link": "Intelligence",
-      "description": "Your Intelligence (Nature) check measures your ability to recall or discern information about flora and fauna, the weather, the environment, geological structures and patterns, etc. It can help you identify alien biology and can give you an advantage when exploring unknown worlds.",
+      "removed": "x",
+      "micon": null,
+      "link": null,
+      "description": null,
       "id": "nature"
     },
     {
@@ -147,15 +147,6 @@
       "id": "persuasion"
     },
     {
-      "name": "Piloting",
-      "new": "x",
-      "removed": null,
-      "micon": "flight_takeoff",
-      "link": "Intelligence",
-      "description": "If you're driving a vehicle you're familiar with, the GM might ask you to make an Intelligence (Piloting) check to make a difficult maneuver or avoid heavy weapon fire. Or you might make an Intelligence (Piloting) check to see if you can use an new or alien vehicle.",
-      "id": "piloting"
-    },
-    {
       "name": "Religion",
       "new": null,
       "removed": "x",
@@ -163,6 +154,15 @@
       "link": null,
       "description": null,
       "id": "religion"
+    },
+    {
+      "name": "Science",
+      "new": "x",
+      "removed": null,
+      "micon": "local_florist",
+      "link": "Intelligence",
+      "description": "Your Intelligence (Science) check measures your ability to make useful connections and correlations based on the wealth of knowledge that can be found on the exonet. In a sense, it measures your 'scientific mindset'. A GM might ask for a check when encountering unknown flora or fauna, assessing the geology of an alien world, or analyzing a natural or unnatural phenomena.",
+      "id": "science"
     },
     {
       "name": "Sleight of Hand",
@@ -190,6 +190,15 @@
       "link": "Wisdom",
       "description": "The GM might ask you to make a Wisdom (Survival) check to survive in uncivilized alien words, especially harsh environments like tundra, deserts, or jungles. The check might help you navigate a blizzard, find food in a wasteland, or avoid getting eaten by a Thresher Maw.",
       "id": "survival"
+    },
+    {
+      "name": "Vehicle Handling",
+      "new": "x",
+      "removed": null,
+      "micon": "flight_takeoff",
+      "link": "Dexterity",
+      "description": "If you're driving a vehicle you're familiar with, the GM might ask you to make a Dexterity (Vehicle) check to make a difficult maneuver or avoid heavy weapon fire, crash land, or weave between traffic.  However, if you are unfamiliar with a vehicle, the GM would require a Wisdom (Vehicle Handling) check to see if you can pilot the vehicle at all.",
+      "id": "vehicle_handling"
     }
   ]
 }
