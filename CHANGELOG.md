@@ -33,6 +33,7 @@ to draw. This gives players the option of having a back-up, at-the-ready melee a
 #### Other weapon changes
 * __Asari Huntress Sword__ & __Asari Warsword__ combined into one weapon. Only allows casting of cantrip.
 * Cerberus Operator Blade renamed Monomolecular Blade
+* M-98 Widow deals double damage to targets not behind cover, replacing the complex and unrealistic 'line-damage' to creatures behind the target.
 
 ### Feats
 * Melee Specialist:

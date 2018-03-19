@@ -110,6 +110,7 @@ def configure_monster(model)
         }
       end
     else
+      spells = []
       spells = model['slots'].split(',').collect do |x|
         parts = x.split('-')
         {
@@ -117,7 +118,7 @@ def configure_monster(model)
           slots: parts[1],
           spells: []
         }
-      end
+      end if model['slots']
       spells.unshift({level: 'cantrip', spells: []})
     end
 

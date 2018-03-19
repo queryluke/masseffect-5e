@@ -10,6 +10,22 @@ export const BestiaryHelpers = {
         description
       };
     },
+    setFeatureDamage(feature, cr) {
+      const featureCopy = Object.assign({}, feature);
+      const crMetaLevel = Math.ceil(parseFloat(cr) / 4);
+      if (featureCopy.id === 'relentless') {
+        featureCopy.crEffect *= crMetaLevel;
+      }
+      if (/\[dmg]/.test(featureCopy.description)) {
+        const dmgArray = featureCopy.crEffect.split('d');
+        const numDie = parseInt(dmgArray[0], 10) * crMetaLevel;
+        const avgDamage = Math.floor(((parseInt(dmgArray[1], 10) + 1) / 2) * numDie);
+        featureCopy.crEffect = avgDamage;
+        const dmgDisplay = `${avgDamage} (${numDie}d${dmgArray[1]})`;
+        featureCopy.description = featureCopy.description.replace(/\[dmg]/g, dmgDisplay);
+      }
+      return featureCopy;
+    },
     setWeaponDamage(weapon, npc) {
       const strBonus = this.abilityScoreBonus(npc.abilityScores.str);
       const dexBonus = this.abilityScoreBonus(npc.abilityScores.dex);

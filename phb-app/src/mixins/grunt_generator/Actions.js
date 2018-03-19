@@ -8,8 +8,7 @@ export const Actions = {
           type: 'common',
           name: 'Tactical Cloak',
           recharge: `${crMetaLevel + 1}/Day`,
-          description: 'As a bonus action, the infiltrator may cast Tactical Cloak. ' +
-          'It has advantage on Dexterity (Stealth) checks and the first melee, ranged, or tech attack made from Tactical Cloak. ' +
+          description: 'As a bonus action, the infiltrator may cast Tactical Cloak, becoming {invisible}. ' +
           'When it makes a melee, ranged, or tech attack, tactical cloak ends.'
         });
         config.effective.ac += 1;

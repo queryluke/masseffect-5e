@@ -16,8 +16,9 @@ export const Features = {
         if (grenade) {
           monster.actions.push(this.generateGrenadeAttack(grenade));
         }
-        const feature = features.find(feature => feature.id === featureId);
+        let feature = features.find(feature => feature.id === featureId);
         if (feature) {
+          feature = this.setFeatureDamage(feature, monster.cr);
           this.addFeature(monster, feature);
         }
       }

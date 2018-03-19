@@ -27,19 +27,7 @@ export const Features = {
       grunt.conditionImmunities = Array.from(new Set(grunt.conditionImmunities));
     },
     addFeature(config, grunt, feature) {
-      const crMetaLevel = Math.ceil(parseFloat(config.cr.cr) / 4);
-      if (feature.id === 'relentless') {
-        feature.crEffect *= crMetaLevel;
-      }
-      if (/\[dmg]/.test(feature.description)) {
-        const dmgArray = feature.crEffect.split('d');
-        const numDie = parseInt(dmgArray[0], 10) * crMetaLevel;
-        const avgDamage = Math.floor(((parseInt(dmgArray[1], 10) + 1) / 2) * numDie);
-        feature.crEffect = avgDamage;
-        const dmgDisplay = `${avgDamage} (${numDie}d${dmgArray[1]})`;
-        feature.description = feature.description.replace(/\[dmg]/g, dmgDisplay);
-      }
-
+      feature = this.setFeatureDamage(feature, config.cr.cr);
       switch (feature.type) {
         case 'condition': {
           grunt.conditionImmunities = grunt.conditionImmunities.concat(feature.description.split(',').map(imm => {

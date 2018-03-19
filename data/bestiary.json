@@ -1,5 +1,5 @@
 {
-  "updated": "March 12, 2018 @  6:41 AM",
+  "updated": "March 19, 2018 @  4:25 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT87AUwt1n514k6a6b4l0kOzGwIphsGXBJLFqujgkCsJ1rdudQ1Bk7Km12DACO5qQ2WGDVI8fT6-Xe/pubhtml",
   "data": [
     {
@@ -1558,6 +1558,81 @@
     },
     {
       "actions": [
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The adjutant makes 2 arm cannon attacks."
+        }
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 10,
+        "dex": 12,
+        "con": 10,
+        "int": 8,
+        "wis": 10,
+        "cha": 8
+      },
+      "hp": {
+        "die": "10",
+        "average": "55",
+        "numDice": "10",
+        "mod": 0
+      },
+      "senses": [
+
+      ],
+      "name": "Weakened Adjutant",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/4/46/EPP_-_adjutant_1.png/revision/latest/scale-to-width-down/640?cb=20121202170742",
+      "cr": "1",
+      "size": "Large",
+      "type": "Synorg",
+      "unit": "Cerberus",
+      "alignment": "Lawful Evil",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "8m",
+      "dc": "14",
+      "ac": "14",
+      "xp": "200",
+      "id": "weakened_adjutant",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "arm_cannon",
+        "bash",
+        "reaper_infection",
+        "grappler"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
 
       ],
       "reactions": [
@@ -1704,7 +1779,8 @@
         "smoke_grenade"
       ],
       "savingThrows": [
-        "str"
+        "str",
+        "int"
       ],
       "skills": [
 
@@ -1752,7 +1828,7 @@
       ],
       "name": "Centurion",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/3f/ME3_Cerberus_Centurion.png/revision/latest/scale-to-width-down/417?cb=20120322145316",
-      "cr": "2",
+      "cr": "3",
       "size": "Medium",
       "type": "Organic",
       "unit": "Cerberus",
@@ -1762,12 +1838,10 @@
       "speed": null,
       "dc": "14",
       "ac": "14",
-      "xp": "450",
+      "xp": "700",
       "id": "centurion",
       "damageResistances": [
-        "bludgeoning",
-        "piercing",
-        "slashing"
+
       ],
       "damageImmunities": [
 
@@ -1784,6 +1858,561 @@
         "m-96_mattock",
         "frag_grenade",
         "smoke_grenade"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The dragoon makes 3 omni-whip attacks"
+        }
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 12,
+        "dex": 18,
+        "con": 13,
+        "int": 14,
+        "wis": 12,
+        "cha": 13
+      },
+      "hp": {
+        "die": "8",
+        "average": "110",
+        "numDice": "20",
+        "mod": 20
+      },
+      "senses": [
+
+      ],
+      "name": "Dragoon",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/01/Cerberus_dragoon_smash.png/revision/latest?cb=20121013090412",
+      "cr": "5",
+      "size": "Medium",
+      "type": "Organic",
+      "unit": "Cerberus",
+      "alignment": "Neutral Evil",
+      "profBonus": "3",
+      "barrier": null,
+      "speed": "12m",
+      "dc": "15",
+      "ac": "16",
+      "xp": "1800",
+      "id": "dragoon",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "omni-whip",
+        "m-25_hornet",
+        "aggressive"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+        "acrobatics"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The combat engineer makes 2 M-5 Phalanx attacks."
+        }
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 11,
+        "dex": 14,
+        "con": 12,
+        "int": 16,
+        "wis": 13,
+        "cha": 16
+      },
+      "hp": {
+        "die": "8",
+        "average": "77",
+        "numDice": "14",
+        "mod": 14
+      },
+      "sp": {
+        "shields": 20,
+        "regen": "10"
+      },
+      "senses": [
+
+      ],
+      "name": "Combat Engineer",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/5/54/ME3_Cerberus_Combat_Engineer.png/revision/latest/scale-to-width-down/214?cb=20120322145158",
+      "cr": "4",
+      "size": "Medium",
+      "type": "Organic",
+      "unit": "Cerberus",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "10m",
+      "dc": "15",
+      "ac": "14",
+      "xp": "1100",
+      "id": "combat_engineer",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "m-5_phalanx",
+        "pistol_whip",
+        "repair",
+        "deploy_turret"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+        "electronics"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The Guardian makes 2 M-358 Talon attacks."
+        }
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 16,
+        "dex": 11,
+        "con": 15,
+        "int": 11,
+        "wis": 10,
+        "cha": 12
+      },
+      "hp": {
+        "die": "8",
+        "average": "91",
+        "numDice": "14",
+        "mod": 28
+      },
+      "senses": [
+
+      ],
+      "name": "Guardian",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/3f/ME3_Cerberus_Guardian.png/revision/latest/scale-to-width-down/350?cb=20120321201359",
+      "cr": "5",
+      "size": "Medium",
+      "type": "Organic",
+      "unit": "Cerberus",
+      "alignment": "Neutral",
+      "profBonus": "3",
+      "barrier": null,
+      "speed": "6m",
+      "dc": "15",
+      "ac": "18",
+      "xp": "1800",
+      "id": "guardian",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "m-358_talon",
+        "stun_baton",
+        "riot_shield"
+      ],
+      "savingThrows": [
+        "str"
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 8,
+        "dex": 18,
+        "con": 11,
+        "int": 16,
+        "wis": 13,
+        "cha": 14
+      },
+      "hp": {
+        "die": "8",
+        "average": "67",
+        "numDice": "15",
+        "mod": 0
+      },
+      "sp": {
+        "shields": 20,
+        "regen": "10"
+      },
+      "senses": [
+        "darkvision 60m"
+      ],
+      "name": "Nemesis",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/a/aa/ME3_Cerberus_Nemesis.png/revision/latest/scale-to-width-down/338?cb=20120314005634",
+      "cr": "6",
+      "size": "Medium",
+      "type": "Organic",
+      "unit": "Cerberus",
+      "alignment": "Neutral Evil",
+      "profBonus": "3",
+      "barrier": null,
+      "speed": "10m",
+      "dc": "15",
+      "ac": "16",
+      "xp": "2300",
+      "id": "nemesis",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "pistol_whip",
+        "m-98_widow",
+        "self-destruct",
+        "pack_tactics",
+        "surprise_attack",
+        "shadow_cloak"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+        "perception",
+        "stealth",
+        "suvival"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The phantom makes three monomolecular blade attacks or one palm blaster attack and two monomolecular (one-handed) blade attack."
+        }
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": {
+        "level": "3",
+        "dc": 13,
+        "hit": 5,
+        "spellList": [
+          "barrier"
+        ],
+        "spells": [
+          {
+            "level": "cantrip",
+            "spells": [
+
+            ]
+          }
+        ]
+      },
+      "techcasting": false,
+      "abilityScores": {
+        "str": 16,
+        "dex": 22,
+        "con": 12,
+        "int": 11,
+        "wis": 15,
+        "cha": 15
+      },
+      "hp": {
+        "die": "8",
+        "average": "110",
+        "numDice": "20",
+        "mod": 20
+      },
+      "senses": [
+
+      ],
+      "name": "Phantom",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/4/4d/ME3_Cerberus_Phantom.png/revision/latest/scale-to-width-down/699?cb=20120325214910",
+      "cr": "7",
+      "size": "Medium",
+      "type": "Organic",
+      "unit": "Cerberus",
+      "alignment": "Neutral Evil",
+      "profBonus": "3",
+      "barrier": "8",
+      "speed": "14m",
+      "dc": "13",
+      "ac": "17",
+      "xp": "2900",
+      "id": "phantom",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "avoidance",
+        "aggressive",
+        "palm_blaster",
+        "monomolecular_blade"
+      ],
+      "savingThrows": [
+        "dex"
+      ],
+      "skills": [
+        "acrobatics",
+        "electronics",
+        "perception",
+        "stealth"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The rampart mech makes 2 omni-blade attacks."
+        }
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 16,
+        "dex": 15,
+        "con": 8,
+        "int": 16,
+        "wis": 11,
+        "cha": 8
+      },
+      "hp": {
+        "die": "8",
+        "average": "52",
+        "numDice": "15",
+        "mod": -15
+      },
+      "senses": [
+
+      ],
+      "name": "Rampart Mech",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/6/60/ME3-Rampart-Mech.png/revision/latest/scale-to-width-down/287?cb=20121128090615",
+      "cr": "2",
+      "size": "Medium",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": null,
+      "dc": "14",
+      "ac": "15",
+      "xp": "450",
+      "id": "rampart_mech",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "necrotic",
+        "psychic"
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "aggressive",
+        "omni-blade",
+        "m-23_katana",
+        "hex_shield",
+        "post-mortem_vent"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 1,
+        "dex": 1,
+        "con": 8,
+        "int": 10,
+        "wis": 6,
+        "cha": 1
+      },
+      "hp": {
+        "die": "6",
+        "average": "25",
+        "numDice": "10",
+        "mod": -10
+      },
+      "sp": {
+        "shields": 10,
+        "regen": "0"
+      },
+      "senses": [
+
+      ],
+      "name": "Turret",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/0c/ME3_Cerberus_Turret.png/revision/latest/scale-to-width-down/350?cb=20120322141943",
+      "cr": "1",
+      "size": "Small",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "0m",
+      "dc": "14",
+      "ac": "12",
+      "xp": "200",
+      "id": "turret",
+      "damageResistances": [
+        "bludgeoning"
+      ],
+      "damageImmunities": [
+        "poison",
+        "necrotic",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "blinded",
+        "deafened",
+        "paralyzed",
+        "petrified"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "mass_accelerator_machinegun",
+        "stationary"
       ],
       "savingThrows": [
 

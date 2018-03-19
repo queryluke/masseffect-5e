@@ -1,5 +1,5 @@
 {
-  "updated": "March 16, 2018 @  9:48 PM",
+  "updated": "March 19, 2018 @  4:19 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSq70x_GZuDKcELgX8k_7Hd6nLGu3DoIEdDwP-YEGjUU-ghGc7ot_Q7140FZwGbEalHgzPwVm4BN8y_/pubhtml",
   "data": [
     {
@@ -189,32 +189,6 @@
       "image": "http://vignette1.wikia.nocookie.net/masseffect/images/0/0d/ME3_Cerberus_Harrier.png/revision/latest?cb=20120530214013http://vignette3.wikia.nocookie.net/masseffect/images/5/56/ME3_Chakram_Assault_Rifle.png/revision/latest?cb=20120317175958",
       "id": "cerberus_harrier",
       "notes_text_dump": ""
-    },
-    {
-      "name": "Cerberus Operator Blade",
-      "type": "Melee",
-      "cost": "11500",
-      "manufacturer": "Cerberus",
-      "weight": "1",
-      "heat": "12",
-      "rof": "1",
-      "damage": "8",
-      "range": "2m",
-      "rare": null,
-      "tags": "Slashing, Versatile",
-      "notes": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Versatile: 1d10"
-        }
-      ],
-      "npcHit": null,
-      "addDmg": null,
-      "dmgType": "slashing",
-      "image": null,
-      "id": "cerberus_operator_blade",
-      "notes_text_dump": "Versatile1d10"
     },
     {
       "name": "Chakram Launcher",
@@ -1355,15 +1329,15 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Ignores half and three-quarter cover. On a hit, if the target is not behind cover, every creature within a 6m line behind the target (inline with the attack direction) also takes the weapon's damage."
+          "data": "Ignores half and three-quarter cover. On a hit, if the target is not behind cover, it takes twice as much damage."
         }
       ],
-      "npcHit": "if the target is not behind cover, every creature within a 6m line behind the target (inline with the attack direction) also takes the weapon's damage. ",
+      "npcHit": "if the target is not behind cover, it takes an twice as much damage.",
       "addDmg": null,
       "dmgType": "piercing",
       "image": "http://vignette2.wikia.nocookie.net/masseffect/images/1/1d/ME3_Widow_Sniper_Rifle.png/revision/latest?cb=20120317191850",
       "id": "m-98_widow",
-      "notes_text_dump": "IgnoreshalfandthreequartercoverOnahitifthetargetisnotbehindcovereverycreaturewithina6mlinebehindthetargetinlinewiththeattackdirectionalsotakestheweaponsdamage"
+      "notes_text_dump": "IgnoreshalfandthreequartercoverOnahitifthetargetisnotbehindcoverittakestwiceasmuchdamage"
     },
     {
       "name": "M-99 Saber",
@@ -1412,7 +1386,7 @@
       "damage": "8",
       "range": "2m",
       "rare": null,
-      "tags": "Versatile (1d10)",
+      "tags": "Slashing, Versatile (1d10), Finesse",
       "notes": [
 
       ],
