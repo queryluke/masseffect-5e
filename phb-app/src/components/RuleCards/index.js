@@ -1,5 +1,4 @@
 import AbilityNomenclature from './AbilityNomenclature.vue';
-import ApplyMediGel from './ApplyMediGel.vue';
 import ArmorOverview from './ArmorOverview.vue';
 import ArmorCustomization from './ArmorCustomization.vue';
 import ArmorPieces from './ArmorPieces.vue';
@@ -35,7 +34,6 @@ import WeaponStats from './WeaponStats.vue';
 
 export default {
   AbilityNomenclature,
-  ApplyMediGel,
   ArmorOverview,
   ArmorCustomization,
   ArmorPieces,

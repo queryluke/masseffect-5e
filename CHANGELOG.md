@@ -3,17 +3,10 @@
 ## v0.5.1
 
 ### General
-#### New Combat Action: Apply Medi-gel
-Medi-gel was reworked. It no longer used a hit die, but works similar to a healing potion giving the creature it was applied to
-hit points based on their own hit die.
-
-#### Shield update
-Shields regenerate after combat or an encounter in addition to a short or long rest, or by taking the Hide or Dodge action
+* Medi-gel is basically a health potion.
+* Shields regenerate after combat in addition to a short or long rest, or by taking the Hide or Dodge action
 and taking no damage.
-
-#### Armor proficiency
-Armor proficiency moved back to the class (not race), bringing the system more in line with 5th edition.
-To compensate this change, the 5,000 credit cost for race customization has been removed.
+* Armor proficiency moved back to the class (not race). To compensate this change, the 5,000 credit cost for race customization has been removed.
 
 ### Skills
 * _Hacking_ renamed _Electronics_ to encompass a wide variety of checks.
@@ -41,6 +34,10 @@ to draw. This gives players the option of having a back-up, at-the-ready melee a
   * with one-handed ranged weapon, can attack with light or versatile (w/ one hand) weapon
   * only melee, removed +1 AC (benefit available w/ Dual wielder feat)
 * Added Dual Wielder feat
+
+### Classes
+* Dual Wield fighting style renamed Gunslinger to avoid confusion with the Dual Wielder feat
+* Engineer's _Styptic_ Medi-gel Enhancement increases the potency of the medi-gel.
 
 ### Bestiary Updates
 * Husk, Str increased to 13, AC increased to 14, CR decreased to 1/8
