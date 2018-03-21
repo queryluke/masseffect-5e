@@ -74,6 +74,7 @@ def configure_monster(model)
   monster = {
       actions: [],
       reactions: [],
+      legendaryActions: [],
       features: [],
       spellcasting: false,
       techcasting: false,
@@ -95,26 +96,39 @@ def configure_monster(model)
   monster['hp']['mod'] = ((model['con'].to_i - 10) / 2).floor * model['hpDieAmount'].to_i if model['con'].to_i > 11
   monster['hp']['mod'] = ((model['con'].to_i - 10) / 2).ceil * model['hpDieAmount'].to_i if model['con'].to_i < 10
   monster['sp'] = {
-      shields: model['shields'].nil? ? 0 : model['shields'].to_i,
+      shields: model['shields'].to_i,
       regen: model['regen']
-  }
+  } unless model['shields'].nil?
   unless model['spellcasting'].nil?
     wisMod = ((model['wis'].to_i - 10) / 2).floor
-    monster['spellcasting'] = {
+    if model['spellcasting'] == 'innate'
+      spells = model['spells'].split(',').collect do |x|
+        parts = x.split('-')
+        {
+          level: parts[0],
+          spells: parts[1].split(';').collect{|x| x.strip}
+        }
+      end
+    else
+      spells = []
+      spells = model['slots'].split(',').collect do |x|
+        parts = x.split('-')
+        {
+          level: parts[0],
+          slots: parts[1],
+          spells: []
+        }
+      end if model['slots']
+      spells.unshift({level: 'cantrip', spells: []})
+    end
+
+    monster[:spellcasting] = {
       level: model['spellcasting'],
       dc: 8 + model['profBonus'].to_i + wisMod,
       hit: model['profBonus'].to_i + wisMod,
       spellList: model['spells'].to_s.split(',').collect{ |x| x.strip },
-      spells: model['slots'].split(',').collect do |x|
-        parts = x.split('-')
-        {
-            level: parts[0],
-            slots: parts[1],
-            spells: []
-        }
-      end
+      spells: spells
     }
-    monster['spellcasting'][:spells].unshift({level: 'cantrip', spells: []})
   end
 
   unless model['techcasting'].nil?
@@ -361,15 +375,21 @@ end
 
 [
   {
-    type: 'spells',
-    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pub?gid=0&single=true&output=csv',
-    renderables: ['mechanic'],
+    type: 'armor_mods',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRIPzbOBXOdWbaY779un1EV3HyacCV3fe15kHW4ABjMV0yHi3GZHVqnbiOVSQ_Dgh1whimOITGOXHkn/pub?output=csv',
+    renderables: [],
     id: 'name'
   },
   {
-    type: 'skills',
-    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRFYAlUo84hir8VGSHwP4pKqnTcih_5UD0Uqtgi9w-QHEvrSxLthv1xXG0jb_tpbBRNZXE1Dv0nF0_q/pub?gid=0&single=true&output=csv',
-    renderables: [],
+    type: 'backgrounds',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQSUXve_hXfyu3glsSiuz-Ju2YUUToorjPPjpfSPiaHaA6yZTKLGMehtmvKtfQ3lSDErrGXgsQp1tFT/pub?gid=0&single=true&output=csv',
+    renderables: %w(feature_description description),
+    id: 'name'
+  },
+  {
+    type: 'class_features',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pub?gid=0&single=true&output=csv',
+    renderables: %w(mechanic),
     id: 'name'
   },
   {
@@ -379,9 +399,9 @@ end
     renderables: ['description']
   },
   {
-    type: 'class_features',
-    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pub?gid=0&single=true&output=csv',
-    renderables: %w(mechanic),
+    type: 'grenades_mines',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRBAZH9BXc9xIj62i-StAKv08-iNSQSUyiWjz7TrVqcjEVe-uDaFIy9a4zRxYchDikCsskcNf-vexsG/pub?gid=0&single=true&output=csv',
+    renderables: ['desc'],
     id: 'name'
   },
   {
@@ -397,15 +417,21 @@ end
     id: 'name'
   },
   {
-    type: 'thermal_clips',
-    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQmZ3vjTr5MljolyW6N_pnqxBA6Gj8lEw4VihCRj0jROiCDJdWOg5udY0_XIXnbKM8XvamqGawcHKBX/pub?gid=0&single=true&output=csv',
+    type: 'skills',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRFYAlUo84hir8VGSHwP4pKqnTcih_5UD0Uqtgi9w-QHEvrSxLthv1xXG0jb_tpbBRNZXE1Dv0nF0_q/pub?gid=0&single=true&output=csv',
     renderables: [],
     id: 'name'
   },
   {
-    type: 'grenades_mines',
-    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRBAZH9BXc9xIj62i-StAKv08-iNSQSUyiWjz7TrVqcjEVe-uDaFIy9a4zRxYchDikCsskcNf-vexsG/pub?gid=0&single=true&output=csv',
-    renderables: ['desc'],
+    type: 'spells',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pub?gid=0&single=true&output=csv',
+    renderables: ['mechanic'],
+    id: 'name'
+  },
+  {
+    type: 'thermal_clips',
+    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQmZ3vjTr5MljolyW6N_pnqxBA6Gj8lEw4VihCRj0jROiCDJdWOg5udY0_XIXnbKM8XvamqGawcHKBX/pub?gid=0&single=true&output=csv',
+    renderables: [],
     id: 'name'
   },
   {
@@ -416,21 +442,9 @@ end
     camel: true
   },
   {
-    type: 'backgrounds',
-    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQSUXve_hXfyu3glsSiuz-Ju2YUUToorjPPjpfSPiaHaA6yZTKLGMehtmvKtfQ3lSDErrGXgsQp1tFT/pub?gid=0&single=true&output=csv',
-    renderables: %w(feature_description description),
-    id: 'name'
-  },
-  {
-    type: 'armor_mods',
-    url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRIPzbOBXOdWbaY779un1EV3HyacCV3fe15kHW4ABjMV0yHi3GZHVqnbiOVSQ_Dgh1whimOITGOXHkn/pub?output=csv',
-    renderables: [],
-    id: 'name'
-  },
-  {
     type: 'classes',
     url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=0&single=true&output=csv',
-    renderables: [],
+    renderables: ['starting_equipment'],
     id: 'name'
   },
   {

@@ -96,7 +96,7 @@
             href: '/spells',
           },
           {
-            title: 'Beastiary',
+            title: 'Bestiary',
             icon: 'pets',
             href: '/bestiary'
           },

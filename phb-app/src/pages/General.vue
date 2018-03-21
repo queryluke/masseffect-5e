@@ -22,6 +22,8 @@
       return {
         rules: {
           changes: [
+            'galaxy-master',
+            'distance',
             'lifting-and-carrying',
             'encumbrance',
             'creature-types',
@@ -31,6 +33,7 @@
             'shields',
             'barriers',
             'paragon-and-renegade',
+            'reloading',
             'sexy-level'
           ]
         }

@@ -15,22 +15,21 @@
 
 <script>
   import RuleCard from './../RuleCard.vue'
+  import {mapGetters} from 'vuex';
 
   export default {
     name: 'WeaponAttributes',
     components: { RuleCard },
+    computed: {
+      ...mapGetters(['getData'])
+    },
     data() {
       return {
         weaponAttributes: []
       };
     },
     created() {
-      return this.$http
-      .get('../data/weapon_attributes.json')
-      .then(response => response.json())
-      .then(response => {
-        this.weaponAttributes = response;
-      });
+      this.weaponAttributes = this.getData('weaponAttributes');
     }
   };
 </script>

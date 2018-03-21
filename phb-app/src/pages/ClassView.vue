@@ -16,10 +16,10 @@
           v-card-title(:class="colors.primary").headline.white--text Progression Table
           v-card-text
             progression-table(
-              :headers="progression.headers"
+              :headers="headers"
               v-bind:colors="colors"
-              v-bind:rows="progression.data"
-              v-bind:spell_header="progression.spell_header"
+              v-bind:rows="progression"
+              v-bind:spell_header="spellHeaders"
               v-on:showDialog="showDialog")
     v-layout(row grow).my-0.mt-4
       v-flex(v-if="previous.name").primary.pa-0.xs6
@@ -62,6 +62,7 @@
   import ClassTabs from "../components/ClassTabs.vue";
   import SpellList from "../components/SpellList.vue";
   import SubclassInfo from "../components/SubclassInfo.vue";
+  import {mapGetters} from 'vuex';
 
   export default {
     name: 'ClassView',
@@ -73,6 +74,8 @@
         subclasses: [],
         features: [],
         progression: {},
+        spellHeaders: {},
+        headers: {},
         spells: [],
         next: {},
         previous: {},
@@ -170,40 +173,36 @@
         return colors;
       }
     },
+    computed: {
+      ...mapGetters(['getData', 'getProgressionHeaders'])
+    },
     created() {
-      let getFeatures = this.$http.get('../data/class_features.json').then(response => response.json());
-      let getProgression = this.$http.get(`../data/${this.id}_progression.json`).then(response => response.json());
-      let getClasses = this.$http.get('../data/classes.json').then(response => response.json());
-      let getSubclasses = this.$http.get('../data/subclasses.json').then(response => response.json());
-      let getSpells = this.$http.get('../data/spells.json').then(response => response.json());
-      Promise.all([getClasses, getFeatures, getProgression, getSubclasses, getSpells]).then(response => {
-        let classes = response[0].data;
-        let subclasses = response[3].data;
-        this.spells = response[4].data.filter(spell => spell[this.id]);
+      let classes = this.getData('classes');
+      let subclasses = this.getData('subclasses');
+      this.spells = this.getData('spells').filter(spell => spell[this.id]);
 
-        this.features = response[1].data;
-        this.progression = response[2];
+      this.features = this.getData('classFeatures');
+      this.progression = this.getData(`${this.id}Progression`);
+      this.headers = this.getProgressionHeaders(this.id);
 
-        let spell_header_count = this.progression.headers.filter((v) => { return v.spell_header }).length;
-        let header_count = this.progression.headers.length;
-        this.progression.spell_header = spell_header_count ? { blank_length: header_count - spell_header_count, spell_length: spell_header_count } : false;
+      let spell_header_count = this.headers.filter((v) => { return v.spell_header }).length;
+      let header_count = this.headers.length;
+      this.spellHeaders = spell_header_count ? { blank_length: header_count - spell_header_count, spell_length: spell_header_count } : false;
 
-        this.item = classes.find((value) => {
-          return value.id === this.id;
-        });
-        this.subclasses = subclasses.filter( (sb) => {
-          return sb.class.toLowerCase() === this.id;
-        });
-
-        this.colors = this.getColors(this.id);
-
-        let index = classes.indexOf(this.item);
-        this.previous = classes[index-1] ? classes[index-1] : {};
-        this.previous.colors = this.getColors(this.previous.id);
-        this.next = classes[index+1] ? classes[index+1] : {};
-        this.next.colors = this.getColors(this.next.id);
-
+      this.item = classes.find((value) => {
+        return value.id === this.id;
       });
+      this.subclasses = subclasses.filter( (sb) => {
+        return sb.class.toLowerCase() === this.id;
+      });
+
+      this.colors = this.getColors(this.id);
+
+      let index = classes.indexOf(this.item);
+      this.previous = classes[index-1] ? classes[index-1] : {};
+      this.previous.colors = this.getColors(this.previous.id);
+      this.next = classes[index+1] ? classes[index+1] : {};
+      this.next.colors = this.getColors(this.next.id);
     },
   };
 </script>

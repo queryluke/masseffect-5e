@@ -25,15 +25,12 @@ Vue.use(Vue2Filters);
 import {Filters} from './filters';
 Vue.use(Filters);
 
-import store from './store';
+import store from './store/index';
 import router from './routes';
 
 export default new Vue({
   el: '#root',
   router,
   store,
-  render: h => h('router-view'),
-  created() {
-    this.$store.dispatch('setTooltips');
-  }
+  render: h => h('router-view')
 });

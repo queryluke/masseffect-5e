@@ -1,7 +1,8 @@
 export const Skills = {
   methods: {
-    setMonsterSkills(monster, skills) {
+    setMonsterSkills(monster) {
       const monsterSkills = [];
+      const skills = this.getData('skills').filter(skill => skill.removed !== 'x');
       for (let skillId of monster.skills) {
         let bonus = false;
         if (/\*/.test(skillId)) {
@@ -9,10 +10,14 @@ export const Skills = {
           bonus = true;
         }
         const skill = skills.find(skill => skill.id === skillId);
-        const skillLinkAbbr = skill.link.slice(0, 3).toLowerCase();
-        const abilityScoreBonus = this.abilityScoreBonus(monster.abilityScores[skillLinkAbbr]);
-        skill.bonus = bonus ? abilityScoreBonus + parseInt(monster.profBonus, 10) : abilityScoreBonus;
-        monsterSkills.push(skill);
+        if (skill) {
+          const skillLinkAbbr = skill.link.slice(0, 3).toLowerCase();
+          const abilityScoreBonus = this.abilityScoreBonus(monster.abilityScores[skillLinkAbbr]);
+          skill.bonus = bonus ? abilityScoreBonus + parseInt(monster.profBonus, 10) : abilityScoreBonus;
+          monsterSkills.push(skill);
+        } else {
+          console.log(`Skill Not Found: ${monster.name} | ${skillId}`);
+        }
       }
       monster.skills = monsterSkills;
     }

@@ -1,5 +1,55 @@
 # CHANGE LOG
 
+## v0.5.1
+
+### General
+* Medi-gel is basically a health potion.
+* Shields regenerate after combat in addition to a short or long rest, or by taking the Hide or Dodge action
+and taking no damage.
+* Armor proficiency moved back to the class (not race). To compensate this change, the 5,000 credit cost for race customization has been removed.
+
+### Skills
+* _Hacking_ renamed _Electronics_ to encompass a wide variety of checks.
+* _Nature_ renamed _Science_ as a catch-all for scientific intelligence checks. In theory, most information needs can be found with
+a quick search on the exonet. This check involves making connections between facts based on experience or intellect.
+* _Piloting_ renamed _Vehicle Handling_ and base ability changed to Dex. This covers your ability to maneuver vehicles. The GM
+can also ask for a Wison (Vehicle Handling) check when attempting to drive unfamiliar or alien vehicles.
+
+### Weapons
+Almost all weapon weights have been reduced by 1-2. The exception is a few Heavy Weapons.
+
+#### Omni-weapons
+Omni-weapons replace void left by omni-tool attacks. They are light weapons that take no weapon slot and take a free action
+to draw. This gives players the option of having a back-up, at-the-ready melee attack.
+* Added Omni-Taser & Omni-Hammer added
+
+#### Other weapon changes
+* __Asari Huntress Sword__ & __Asari Warsword__ combined into one weapon. Only allows casting of cantrip.
+* Cerberus Operator Blade renamed Monomolecular Blade
+* M-98 Widow deals double damage to targets not behind cover, replacing the complex and unrealistic 'line-damage' to creatures behind the target.
+
+### Feats
+* Melee Specialist:
+  * with two-handed ranged weapon, can attack with an omni-weapon
+  * with one-handed ranged weapon, can attack with light or versatile (w/ one hand) weapon
+  * only melee, removed +1 AC (benefit available w/ Dual wielder feat)
+* Added Dual Wielder feat
+
+### Classes
+* Dual Wield fighting style renamed Gunslinger to avoid confusion with the Dual Wielder feat
+* Engineer's _Styptic_ Medi-gel Enhancement increases the potency of the medi-gel.
+
+### Bestiary Updates
+* Husk, Str increased to 13, AC increased to 14, CR decreased to 1/8
+* Abomination, Str increased to 13, HP increased to 26, CR increased to 1/4
+* Collector Captain, Summon Seaker Swarm summons 1d4 swarms at an unoccupied space it can see within 10m.
+* Harbinger, Added legendary actions, added melee attack, added Dark Channel to spell list
+
+### Site Enhancements
+* Fixed bug that showed `Shields 0 ( regen)` when a monster had no shields.
+* Added Distance rule change back into general rules.
+* Fixed bug that caused side navigation menu to sometimes not show up.
+
 ## v0.5.0
 
 ### Site Enhancements
@@ -314,8 +364,6 @@ tactical info to their allies (Help action)."
 ### Spells
 * Charge is now a spell attack, rather than a saving throw. Removed the shield regen mechanic and added it as a special 
 feature of the new Vanguard class feature: Biotic Bullrush.
-
-
 
 
 ## v0.2.0 Beta

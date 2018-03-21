@@ -3,28 +3,35 @@ import {AbilityScoreBonus} from '../abilityScoreBonus';
 import {Features} from './Features';
 import {Tech} from './Tech';
 import {Skills} from './Skills';
+import {BestiaryHelpers} from '../bestiaryHelpers';
+import {mapGetters} from 'vuex';
 
-export const ConfigureMonster = {
+export const ConfigureMonsters = {
+  computed: {
+    ...mapGetters(['getData', 'getMutableData'])
+  },
   mixins: [
     AbilityScoreBonus,
+    BestiaryHelpers,
     Biotics,
     Features,
     Skills,
     Tech
   ],
   methods: {
-    configureMonsters(monsters, features, spells, skills) {
+    getMonsters() {
+      const monsters = this.getMutableData('bestiary');
       return monsters.map(monster => {
         if (monster.spellcasting) {
-          this.setMonsterBiotics(monster, spells);
+          this.setMonsterBiotics(monster);
         }
         if (monster.techcasting) {
-          this.setMonsterTech(monster, spells);
+          this.setMonsterTech(monster);
         }
         if (monster.skills.length > 0) {
-          this.setMonsterSkills(monster, skills);
+          this.setMonsterSkills(monster);
         }
-        this.setMonsterFeatures(monster, features);
+        this.setMonsterFeatures(monster);
         return monster;
       });
     }

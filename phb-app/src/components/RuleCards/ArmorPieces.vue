@@ -60,8 +60,6 @@
             td 18
             td 15
             td Disadvantage
-      v-alert(type="warning" v-bind:value="true").grey--text.text--darken-3.
-        You must be proficient in an armor type (Light, Medium, or Heavy) to wear it.
       p.headline.mt-3 Variant: Encumberance
       p.mb-0 If using the #[a(v-on:click="showGlobalDialog('encumbrance')") Variant: Encumberance rule], use the following to calculate your armor weight.
       table.table
@@ -94,10 +92,10 @@
   import {mapActions} from 'vuex';
 
   export default {
-    name: 'ArmorPieces',
     components: { RuleCard },
     methods: {
       ...mapActions(['showGlobalDialog']),
-    }
+    },
+    name: 'ArmorPieces'
   };
 </script>

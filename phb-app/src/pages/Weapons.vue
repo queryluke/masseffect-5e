@@ -24,17 +24,18 @@
               v-list-tile-content
                 v-list-tile-title(v-text="header.display")
     weapon-list(:weapons="filtered")
-    v-layout(row wrap justify-space-between).mt-4
-      span Last Updated: {{ updated }}
-      a(:href="source" target="_blank") Source
+    page-footer(:list="listName")
 </template>
 
 <script>
   import WeaponList from '../components/WeaponList.vue';
+  import {mapGetters} from 'vuex';
+  import PageFooter from '../components/PageFooter.vue';
 
   export default {
     name: 'Weapons',
     components: {
+      PageFooter,
       WeaponList
     },
     methods: {
@@ -49,10 +50,9 @@
     },
     data() {
       return {
-        weapons: [],
+        items: [],
+        listName: 'weapons',
         search: '',
-        source: '',
-        updated: '',
         sortKey: 'name',
         sortOrder: 1,
         headers: [
@@ -68,20 +68,12 @@
       };
     },
     created() {
-      return this.$http
-        .get('../data/weapons.json')
-        .then(response => response.json())
-        .then(response => {
-          this.weapons = response.data;
-          this.updated = response.updated;
-          this.source = response.source;
-          this.sortKey = 'name';
-          this.sortOrder = 1;
-        });
+      this.items = this.getData('weapons');
     },
     computed: {
+      ...mapGetters(['getData']),
       filtered () {
-        let data = this.weapons;
+        let data = this.items;
         let sortKey = this.sortKey;
         let search = this.search;
         let order = this.sortOrder;

@@ -1,5 +1,5 @@
 {
-  "updated": "January 18, 2018 @ 11:55 AM",
+  "updated": "March 16, 2018 @  9:58 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTPhVRIodUwbDYFw8wJZtmb63tTjFJMxY-cN6P5nayPpJhNxAQFqIxeSLd5Tz75aOZ7CLuBkNsDrcs9/pubhtml",
   "data": [
     {
@@ -221,21 +221,21 @@
     },
     {
       "name": "Dual Wielder",
-      "not_available": "x",
+      "not_available": null,
       "page_number": "165",
       "updated": null,
       "description": [
 
       ],
       "notes": null,
-      "prerequisite": null,
-      "batarian": null,
-      "drell": null,
-      "human": null,
+      "prerequisite": "+1 AC bonus, wield heavier weapons, draw or stow two weapons at once",
+      "batarian": "x",
+      "drell": "x",
+      "human": "x",
       "quarian": null,
       "salarian": null,
-      "turian": null,
-      "unshackled_ai": null,
+      "turian": "x",
+      "unshackled_ai": "x",
       "id": "dual_wielder",
       "description_text_dump": ""
     },
@@ -723,9 +723,9 @@
           "id": 2,
           "type": "list",
           "data": [
-            "When wielding a two-handed ranged weapon, you can use a bonus action to make a melee weapon attack with your omni-tool.",
-            "When wielding a single-handed ranged weapon, you can use a bonus action to make a melee weapon attack with a light or versatile melee weapon (your Omni-tool is a light weapon).",
-            "When wielding only melee weapons: Gain +1 AC. When you take the Attack action, you can use a bonus action to make another melee weapon attack."
+            "When wielding a two-handed ranged weapon, you can use a bonus action to make a melee weapon attack with an omni-tool weapon (a weapon you can equip as a free action).",
+            "When wielding a single-handed ranged weapon, you can use a bonus action to make a melee weapon attack with a light or versatile (one-handed attack) melee weapon.",
+            "When wielding only melee weapons: When you take the Attack action, you can use a bonus action to make another melee weapon attack."
           ]
         }
       ],
@@ -739,7 +739,7 @@
       "turian": "x",
       "unshackled_ai": "x",
       "id": "melee_specialist",
-      "description_text_dump": "Youvetrainedextensivelyinmeleeweaponcombat1StrengthorDexteritylistWhenwieldingatwohandedrangedweaponyoucanuseabonusactiontomakeameleeweaponattackwithyouromnitoolWhenwieldingasinglehandedrangedweaponyoucanuseabonusactiontomakeameleeweaponattackwithalightorversatilemeleeweaponyourOmnitoolisalightweaponWhenwieldingonlymeleeweaponsGain1ACWhenyoutaketheAttackactionyoucanuseabonusactiontomakeanothermeleeweaponattacklist"
+      "description_text_dump": "Youvetrainedextensivelyinmeleeweaponcombat1StrengthorDexteritylistWhenwieldingatwohandedrangedweaponyoucanuseabonusactiontomakeameleeweaponattackwithanomnitoolweaponaweaponyoucanequipasafreeactionWhenwieldingasinglehandedrangedweaponyoucanuseabonusactiontomakeameleeweaponattackwithalightorversatileonehandedattackmeleeweaponWhenwieldingonlymeleeweaponsWhenyoutaketheAttackactionyoucanuseabonusactiontomakeanothermeleeweaponattacklist"
     },
     {
       "name": "Mobile",

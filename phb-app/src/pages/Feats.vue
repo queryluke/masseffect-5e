@@ -10,7 +10,7 @@
     div.mt-3
       v-expansion-panel(popout).mb-2
         v-expansion-panel-content(
-        v-for="feat in feats"
+        v-for="feat in items"
         v-bind:feat="feat"
         v-bind:key="feat.name"
         hide-actions).large-panel
@@ -28,44 +28,41 @@
               p(v-if="feat.page_number") p. {{ feat.page_number }}
               p(v-if="feat.description")
                 me-element(:text="feat.description")
-    v-layout(row wrap justify-space-between).mt-4
-      span Last Updated: {{ updated }}
-      a(:href="source" target="_blank") Source
+    page-footer(:list="listName")
 </template>
 
 <script>
-import MeElement from '../components/MeElement.vue';
+  import MeElement from '../components/MeElement.vue';
+  import PageFooter from '../components/PageFooter.vue';
+  import {mapGetters} from 'vuex';
 
   export default {
     name: 'Feats',
     components: {
-      MeElement
+      MeElement,
+      PageFooter
+    },
+    computed: {
+      ...mapGetters(['getData']),
     },
     data() {
       return {
-        feats: [],
-        source: '',
-        updated: '',
+        items: [],
+        listName: 'feats',
         not_available: '',
       };
     },
     created() {
-      return this.$http
-        .get('../data/feats.json')
-        .then(response => response.json())
-        .then(response => {
-          this.feats = response.data.filter(function(value) {
-            return value.not_available === null;
-          });
-          let not_available = response.data.filter(function(value) {
-            return value.not_available !== null;
-          });
-          this.not_available = not_available.map(function(value){
-            return value.name;
-          }).join(', ');
-          this.updated = response.updated;
-          this.source = response.source;
-        });
+      const data = this.getData('feats');
+      this.items = data.filter(function(value) {
+        return value.not_available === null;
+      });
+      const not_available = data.filter(function(value) {
+        return value.not_available !== null;
+      });
+      this.not_available = not_available.map(function(value){
+        return value.name;
+      }).join(', ');
     }
   };
 </script>

@@ -1,5 +1,5 @@
 {
-  "updated": "February 25, 2018 @  5:39 PM",
+  "updated": "March 11, 2018 @  7:29 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRBAZH9BXc9xIj62i-StAKv08-iNSQSUyiWjz7TrVqcjEVe-uDaFIy9a4zRxYchDikCsskcNf-vexsG/pubhtml",
   "data": [
     {
@@ -260,6 +260,23 @@
       ],
       "id": "cain_trip_mine",
       "desc_text_dump": "LaunchaCainTripMinetoapointyoucanseewithin20mThemineaffixestoasolidsurfaceandprojectsabeam6mtripwireWhenacreatureorobjectpassesthroughthetripwirethemineexplodesAnycreaturewithina2mspheremustmakeaDC13DexteritysavingthrowAcreaturetakes2d12thunderdamageonafailedsaveorhalfasmuchdamageonasuccessfuloneCreaturesneedtopassaDC10PerceptionchecktonoticethemineTodisarmthemineacreaturemustpassaHackingcheck8IntelligencemodifierFailingthehackingcheckcausestheminetoexplodeThecreaturethatmadethehackingcheckhasdisadvantageonitssavingthrowAsuccessfulrangedattackonthemineAC10willcauseittoexplodeEachcreaturewithin2moftheminetakes2d12thunderdamage"
+    },
+    {
+      "name": "Smoke Grenade",
+      "damage_amount": null,
+      "dd": null,
+      "range": "10m",
+      "blast": "2m",
+      "damage_type": null,
+      "desc": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Target an area within 10m. A cloud of thick smoke erupts out in a 2m radius from the target location. The cloud's area is heavily obscured. The cloud persists for 30 seconds. A moderate wind (11 to 20 miles per hour) can disperse the smoke after 1 round, and a strong wind (21 or more miles per hour) can do so immediately."
+        }
+      ],
+      "id": "smoke_grenade",
+      "desc_text_dump": "Targetanareawithin10mAcloudofthicksmokeeruptsoutina2mradiusfromthetargetlocationThecloudsareaisheavilyobscuredThecloudpersistsfor30secondsAmoderatewind11to20milesperhourcandispersethesmokeafter1roundandastrongwind21ormoremilesperhourcandosoimmediately"
     }
   ]
 }

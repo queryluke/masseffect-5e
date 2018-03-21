@@ -2,7 +2,7 @@
   div
     h2.display-3 Races
     v-layout(row wrap)
-      v-flex(v-for="race in races" v-bind:key="race.id").xs12.sm6.md4
+      v-flex(v-for="race in items" v-bind:key="race.id").xs12.sm6.md4
         v-card(hover).ma-2
           div(@click="toRace(race.id)")
             v-card-media(:src="race.card" height="200px")
@@ -13,18 +13,22 @@
                 label
                   strong Racial Traits
                 p {{ race.increases }}, {{ race.racial_traits }}
-    v-layout(row wrap justify-space-between).mt-4
-      span Last Updated: {{ updated }}
-      a(:href="source" target="_blank") Source
+    page-footer(:list="listName")
 </template>
 
 <script>
   import MeElement from '../components/MeElement.vue';
+  import PageFooter from '../components/PageFooter.vue';
+  import {mapGetters} from 'vuex';
 
   export default {
+    computed: {
+      ...mapGetters(['getData', 'getMutableData'])
+    },
     name: 'Races',
     components: {
-      MeElement
+      MeElement,
+      PageFooter
     },
     methods: {
       toRace(id) {
@@ -33,26 +37,19 @@
     },
     data() {
       return {
-        races: [],
-        source: '',
-        updated: '',
+        items: [],
+        listName: 'races'
       };
     },
     created() {
-      let getTraits = this.$http.get('../data/racial_traits.json').then(response => response.json());
-      let getRaces = this.$http.get('../data/races.json').then(response => response.json());
-      Promise.all([getTraits, getRaces]).then(response => {
-        let traits = response[0].data;
+      let traits = this.getData('racialTraits');
 
-        this.races = response[1].data.map( (race) => {
-          race.racial_traits = traits.filter( (trait) => {
-            return trait[race.id] !== null
-          }).map( (trait) => trait.name ).join(', ');
+      this.items = this.getMutableData('races').map( (race) => {
+        race.racial_traits = traits.filter( (trait) => {
+          return trait[race.id] !== null
+        }).map( (trait) => trait.name ).join(', ');
 
-          return race
-        });
-        this.updated = response[1].updated;
-        this.source = response[1].source;
+        return race
       });
     }
   };

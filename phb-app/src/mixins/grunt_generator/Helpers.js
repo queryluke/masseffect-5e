@@ -51,11 +51,6 @@ export const Helpers = {
     };
   },
   created() {
-    return this.$http
-    .get('../data/stats_by_cr.json')
-    .then(response => response.json())
-    .then(response => {
-      this.crArray = response;
-    });
+    this.crArray = this.getData('statsByCr');
   }
 };

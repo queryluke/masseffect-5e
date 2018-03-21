@@ -8,8 +8,7 @@ export const Actions = {
           type: 'common',
           name: 'Tactical Cloak',
           recharge: `${crMetaLevel + 1}/Day`,
-          description: 'As a bonus action, the infiltrator may cast Tactical Cloak. ' +
-          'It has advantage on Dexterity (Stealth) checks and the first melee, ranged, or tech attack made from Tactical Cloak. ' +
+          description: 'As a bonus action, the infiltrator may cast Tactical Cloak, becoming {invisible}. ' +
           'When it makes a melee, ranged, or tech attack, tactical cloak ends.'
         });
         config.effective.ac += 1;
@@ -44,13 +43,7 @@ export const Actions = {
         });
         if (availableGrenades.length > 0) {
           const grenade = this.randomValue(availableGrenades);
-          const description = grenade.desc.map(line => line.data).join(' ');
-          grunt.actions.push({
-            type: 'common',
-            name: grenade.name,
-            recharge: `${crMetaLevel} grenades`,
-            description
-          });
+          grunt.actions.push(this.generateGrenadeAttack(grenade));
         }
       }
     }
@@ -61,16 +54,11 @@ export const Actions = {
     };
   },
   created() {
-    return this.$http
-    .get('../data/grenades_mines.json')
-    .then(response => response.json())
-    .then(response => {
-      this.grenades = response.data.map(grenade => {
-        const dmgAmt = grenade.damage_amount ? parseInt(grenade.damage_amount, 10) : 0;
-        const dmg = grenade.dd ? (((parseInt(grenade.dd.replace(/\D/gi, ''), 10) * 2) + 1) / 2) : 0;
-        grenade.dpr = dmgAmt * dmg;
-        return grenade;
-      });
+    this.grenades = this.getMutableData('grenades').map(grenade => {
+      const dmgAmt = grenade.damage_amount ? parseInt(grenade.damage_amount, 10) : 0;
+      const dmg = grenade.dd ? (((parseInt(grenade.dd.replace(/\D/gi, ''), 10) * 2) + 1) / 2) : 0;
+      grenade.dpr = dmgAmt * dmg;
+      return grenade;
     });
   }
 };

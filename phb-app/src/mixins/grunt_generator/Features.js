@@ -2,7 +2,7 @@ export const Features = {
   methods: {
     setGruntFeatures(config, grunt) {
       const crMetaLevel = parseFloat(config.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(config.cr.cr) / 4);
-      const features = JSON.parse(JSON.stringify(this.monsterFeatures));
+      const features = this.getMutableData('monsterFeatures');
 
       // Set base features
       const mandatoryFeatures = features.filter(feature => {
@@ -27,19 +27,7 @@ export const Features = {
       grunt.conditionImmunities = Array.from(new Set(grunt.conditionImmunities));
     },
     addFeature(config, grunt, feature) {
-      const crMetaLevel = Math.ceil(parseFloat(config.cr.cr) / 4);
-      if (feature.id === 'relentless') {
-        feature.crEffect *= crMetaLevel;
-      }
-      if (/\[dmg]/.test(feature.description)) {
-        const dmgArray = feature.crEffect.split('d');
-        const numDie = parseInt(dmgArray[0], 10) * crMetaLevel;
-        const avgDamage = Math.floor(((parseInt(dmgArray[1], 10) + 1) / 2) * numDie);
-        feature.crEffect = avgDamage;
-        const dmgDisplay = `${avgDamage} (${numDie}d${dmgArray[1]})`;
-        feature.description = feature.description.replace(/\[dmg]/g, dmgDisplay);
-      }
-
+      feature = this.setFeatureDamage(feature, config.cr.cr);
       switch (feature.type) {
         case 'condition': {
           grunt.conditionImmunities = grunt.conditionImmunities.concat(feature.description.split(',').map(imm => {
@@ -81,7 +69,6 @@ export const Features = {
   },
   data() {
     return {
-      monsterFeatures: [],
       numFeatureWeights: {
         0: [0, 0, 0, 1, 1],
         1: [0, 1, 1, 1, 2],
@@ -89,13 +76,5 @@ export const Features = {
         3: [1, 2, 2, 3, 3]
       }
     };
-  },
-  created() {
-    return this.$http
-    .get('../data/monster_features.json')
-    .then(response => response.json())
-    .then(response => {
-      this.monsterFeatures = response.data;
-    });
   }
 };

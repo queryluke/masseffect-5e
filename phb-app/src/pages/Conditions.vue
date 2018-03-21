@@ -11,17 +11,23 @@
         template(slot="items" slot-scope="props")
           td {{ props.item.name }}
           td {{ props.item.mechanic }}
-    v-layout(row wrap justify-space-between).mt-4
-      span Last Updated: {{ updated }}
-      a(:href="source" target="_blank") Source
+    page-footer(:list="listName")
 </template>
 
 <script>
+  import PageFooter from '../components/PageFooter.vue';
+  import {mapGetters} from 'vuex';
+
   export default {
+    components: {PageFooter},
+    computed: {
+      ...mapGetters(['getData'])
+    },
     name: 'Skills',
     data() {
       return {
         items: [],
+        listName: 'conditions',
         new_skills: '',
         removed: '',
         source: '',
@@ -33,14 +39,7 @@
       };
     },
     created() {
-      return this.$http
-        .get('../data/conditions.json')
-        .then(response => response.json())
-        .then(response => {
-          this.items = response.data;
-          this.updated = response.updated;
-          this.source = response.source;
-        });
+      this.items = this.getData('conditions');
     }
   };
 </script>

@@ -1,5 +1,5 @@
 {
-  "updated": "February 27, 2018 @ 12:02 AM",
+  "updated": "March 20, 2018 @ 11:13 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -781,7 +781,7 @@
                 "Add twice your proficiency bonus to your attack rolls."
               ],
               [
-                "Dual Wield",
+                "Gunslinger",
                 "You can wield 2 pistols or SMGs (or combination thereof). Your off-hand weapon always shoots with a disadvantage. You will automatically miss targets out of range.",
                 "Remove the disadvantage and range penalty to your off-hand weapon"
               ],
@@ -815,7 +815,7 @@
         }
       ],
       "id": "fighting_style",
-      "mechanic_text_dump": "tableStylePerkAdvancedPerkBrawlerYouhaveadvantagewhenmakingmeleeattacksAddtwiceyourproficiencybonustoyourattackrollsDualWieldYoucanwield2pistolsorSMGsorcombinationthereofYouroffhandweaponalwaysshootswithadisadvantageYouwillautomaticallymisstargetsoutofrangeRemovethedisadvantageandrangepenaltytoyouroffhandweaponTheFreeHandWhenwieldingapistolyouhavea2bonustohitwithrangedspellortechattacksWhenwieldingapistolyouaddyourproficiencybonusasdamagetoalldamagingbioticspellsandtechCarnage2tohitwithattacksmadewithashotgunWhenmakinganattackrollwithashotgunyoucanaddanadditional2mtothegunsrangeThisappliestothehipfiremechanicaswellieyouhaveadvantagetohittargetswithin4mSniperAddyourdexteritymodifierasdamagetosuccessfulrangeattacksagainsttargetsthatareatleast10mawayIfnohostilecreaturearewithin10mofyouyouhaveadvantageonallrangedweaponattacksagainsttargetsatleast10mawayDefense1AC2ACProtectionVanguardOnlyWhenacreatureyoucanseeattacksatargetotherthanyouthatiswithin2mofyouyoucanuseyourreactionandexpendonebarrierticktoimposedisadvantageontheattackrollIftheattacksucceedsthebarriertickabsorbsdamageasanormalbarriertickwouldtable"
+      "mechanic_text_dump": "tableStylePerkAdvancedPerkBrawlerYouhaveadvantagewhenmakingmeleeattacksAddtwiceyourproficiencybonustoyourattackrollsGunslingerYoucanwield2pistolsorSMGsorcombinationthereofYouroffhandweaponalwaysshootswithadisadvantageYouwillautomaticallymisstargetsoutofrangeRemovethedisadvantageandrangepenaltytoyouroffhandweaponTheFreeHandWhenwieldingapistolyouhavea2bonustohitwithrangedspellortechattacksWhenwieldingapistolyouaddyourproficiencybonusasdamagetoalldamagingbioticspellsandtechCarnage2tohitwithattacksmadewithashotgunWhenmakinganattackrollwithashotgunyoucanaddanadditional2mtothegunsrangeThisappliestothehipfiremechanicaswellieyouhaveadvantagetohittargetswithin4mSniperAddyourdexteritymodifierasdamagetosuccessfulrangeattacksagainsttargetsthatareatleast10mawayIfnohostilecreaturearewithin10mofyouyouhaveadvantageonallrangedweaponattacksagainsttargetsatleast10mawayDefense1AC2ACProtectionVanguardOnlyWhenacreatureyoucanseeattacksatargetotherthanyouthatiswithin2mofyouyoucanuseyourreactionandexpendonebarrierticktoimposedisadvantageontheattackrollIftheattacksucceedsthebarriertickabsorbsdamageasanormalbarriertickwouldtable"
     },
     {
       "name": "Focused Biotics",
@@ -1157,12 +1157,12 @@
             "Steroid: After using this medi-gel, add +2 damage to all melee damage for 1 minute.",
             "Minagen X3: After using this medi-gel, gain +2 damage to all biotic spells and cantrips for 1 minute.",
             "Videlicet: After using this medi-gel, gain +2 bonus to all ranged tech attacks for 1 minute.",
-            "Styptic: Increase the healing die by 1 die type when using this medi-gel."
+            "Styptic: Increase the potency of the medi-gel by 1 level (maximum level is Superior)"
           ]
         }
       ],
       "id": "medi-gel_enhancements",
-      "mechanic_text_dump": "Youcanspend6hoursinalaborsimilarenvironmentusingdrugstoenhancethecapabilitiesofstandardmedigelIttakes2hourstocraftasingleenhancementbutyoucanapplythatbenefittoanynumberofmedigelcartridgesTocraftanotherenhancementtakesanadditional6hoursInsteadofusingtimetolimitthisfeatureyourGMcanchoosetoallowyoutoaddXdividedby2roundedupenhancementswhereXisyourIntelligencemodifierthenyoumustfinishalongrestbeforeyoucancreatenewenhancementsOnlyoneenhancementcanbeaddedtoamedigelcartridgeWhencreatinganenhancementchoosefromthelistbelowlistStimulantAfterusingthismedigelyouhaveadvantageonthenextsavingthroworattackrollyoumakewithin1minuteOpioidWithin1minuteofusingthismedigelifyouwouldfallbelow0hitpointbutnotoutrightdieyoumayfallto1hitpointinsteadSteroidAfterusingthismedigeladd2damagetoallmeleedamagefor1minuteMinagenX3Afterusingthismedigelgain2damagetoallbioticspellsandcantripsfor1minuteVidelicetAfterusingthismedigelgain2bonustoallrangedtechattacksfor1minuteStypticIncreasethehealingdieby1dietypewhenusingthismedigellist"
+      "mechanic_text_dump": "Youcanspend6hoursinalaborsimilarenvironmentusingdrugstoenhancethecapabilitiesofstandardmedigelIttakes2hourstocraftasingleenhancementbutyoucanapplythatbenefittoanynumberofmedigelcartridgesTocraftanotherenhancementtakesanadditional6hoursInsteadofusingtimetolimitthisfeatureyourGMcanchoosetoallowyoutoaddXdividedby2roundedupenhancementswhereXisyourIntelligencemodifierthenyoumustfinishalongrestbeforeyoucancreatenewenhancementsOnlyoneenhancementcanbeaddedtoamedigelcartridgeWhencreatinganenhancementchoosefromthelistbelowlistStimulantAfterusingthismedigelyouhaveadvantageonthenextsavingthroworattackrollyoumakewithin1minuteOpioidWithin1minuteofusingthismedigelifyouwouldfallbelow0hitpointbutnotoutrightdieyoumayfallto1hitpointinsteadSteroidAfterusingthismedigeladd2damagetoallmeleedamagefor1minuteMinagenX3Afterusingthismedigelgain2damagetoallbioticspellsandcantripsfor1minuteVidelicetAfterusingthismedigelgain2bonustoallrangedtechattacksfor1minuteStypticIncreasethepotencyofthemedigelby1levelmaximumlevelisSuperiorlist"
     },
     {
       "name": "Metabiotics",
@@ -1599,11 +1599,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Starting at 9th level, if you are in Tactical Cloak when you use a tech power or grenade, each creature has disadvantage on any saving throw it makes against the tech power or grenade."
+          "data": "Starting at 13th level, if you are in Tactical Cloak when you use a tech power or grenade, each creature has disadvantage on any saving throw it makes against the tech power or grenade."
         }
       ],
       "id": "tactical_ambush",
-      "mechanic_text_dump": "Startingat9thlevelifyouareinTacticalCloakwhenyouuseatechpowerorgrenadeeachcreaturehasdisadvantageonanysavingthrowitmakesagainstthetechpowerorgrenade"
+      "mechanic_text_dump": "Startingat13thlevelifyouareinTacticalCloakwhenyouuseatechpowerorgrenadeeachcreaturehasdisadvantageonanysavingthrowitmakesagainstthetechpowerorgrenade"
     },
     {
       "name": "Tactical Cloak",
