@@ -14,7 +14,7 @@ function monsterDamage(input, npc) {
         bonusText = ` + ${dmgBonus}`;
       }
       if (dmgBonus < 0) {
-        bonusText = ` - ${dmgBonus}`;
+        bonusText = ` - ${dmgBonus * -1}`;
       }
     }
     const dmg = match.substring(match.indexOf(':') + 1, match.indexOf(dmgEnd)).trim();

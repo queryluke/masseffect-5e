@@ -5,13 +5,16 @@ description: "Overview of Mass Effect 5e version 0.5.1 changes"
 excerpt: Cerberus forces and a note about upcoming changes
 ---
 
+## Galaxy Master
+Swampson came up with the term 'Galaxy Master' (tm tm tm) or GM. We're using that from now on.
+
 ## Cerberus Forces
 12 unique monsters have been added to the Bestiary which encompass the list of Cerberus forces. It may seem like 3 weeks is
 a long time to only have finished 12 monsters, but I need to refactor the underlying weapon code. Originally, I was creating
 duplicate attacks for each weapon. I.e., there was an NPC weapon attack and the weapon itself. But this was creating a lot
 of inconsistent data and needed to be remedied.
 
-Sans the delay, I am happy with the diversity among this group of NPCs. Adjutants add a bit of 'vampire'-flare to the system.
+Except for the delay, I am happy with the diversity among this group of NPCs. Adjutants add a bit of 'vampire'-flare to the system.
 Phantoms and Dragoons are a threat up close and hard to hit. Combat Engineers can be troublesome by spawning Turrets. Guardians
 are walking tanks that can take a serious amount of damage. All the while, a Nemesis might be taking pot-shots at you from 80m out.
 

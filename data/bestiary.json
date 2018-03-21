@@ -1,5 +1,5 @@
 {
-  "updated": "March 19, 2018 @  4:25 PM",
+  "updated": "March 21, 2018 @  7:54 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT87AUwt1n514k6a6b4l0kOzGwIphsGXBJLFqujgkCsJ1rdudQ1Bk7Km12DACO5qQ2WGDVI8fT6-Xe/pubhtml",
   "data": [
     {
@@ -220,7 +220,7 @@
         {
           "type": "common",
           "name": "Multiattack",
-          "description": "The brute makes 2 smash attacks."
+          "description": "The brute makes two smash attacks."
         }
       ],
       "reactions": [
@@ -491,7 +491,7 @@
         {
           "type": "common",
           "name": "Multiattack",
-          "description": "The ravager makes 2 twin artillery cannon attacks."
+          "description": "The ravager makes two twin artillery cannon attacks."
         }
       ],
       "reactions": [
@@ -705,7 +705,7 @@
         {
           "type": "common",
           "name": "Multiattack",
-          "description": "The collector captain makes 2 attacks with its assault rifle."
+          "description": "The collector captain makes twp attacks with its assault rifle."
         }
       ],
       "reactions": [
@@ -775,7 +775,7 @@
       ],
       "skills": [
         "athletics",
-        "nature",
+        "science",
         "survival"
       ]
     },
@@ -1461,7 +1461,7 @@
       "skills": [
         "history",
         "perception",
-        "nature",
+        "science",
         "persuasion",
         "deception"
       ]
@@ -1471,7 +1471,7 @@
         {
           "type": "common",
           "name": "Multiattack",
-          "description": "The adjutant makes 2 arm cannon attacks."
+          "description": "The adjutant makes two arm cannon attacks."
         }
       ],
       "reactions": [
@@ -1501,7 +1501,7 @@
       },
       "techcasting": false,
       "abilityScores": {
-        "str": 12,
+        "str": 15,
         "dex": 18,
         "con": 16,
         "int": 10,
@@ -1561,7 +1561,7 @@
         {
           "type": "common",
           "name": "Multiattack",
-          "description": "The adjutant makes 2 arm cannon attacks."
+          "description": "The adjutant makes two arm cannon attacks."
         }
       ],
       "reactions": [
@@ -1576,8 +1576,8 @@
       "spellcasting": false,
       "techcasting": false,
       "abilityScores": {
-        "str": 10,
-        "dex": 12,
+        "str": 8,
+        "dex": 10,
         "con": 10,
         "int": 8,
         "wis": 10,
@@ -1776,7 +1776,10 @@
         "smash",
         "mass_accelerator_cannon",
         "rocket_launcher",
-        "smoke_grenade"
+        "smoke_grenade",
+        "smash_attack",
+        "rocket_launcher_attack",
+        "eject"
       ],
       "savingThrows": [
         "str",
@@ -1791,7 +1794,7 @@
         {
           "type": "common",
           "name": "Multiattack",
-          "description": "The centurion makes 2 M-96 Mattock attacks or 2 Stun Baton attacks."
+          "description": "The centurion makes two M-96 Mattock attacks or two Stun Baton attacks."
         }
       ],
       "reactions": [
@@ -1871,7 +1874,7 @@
         {
           "type": "common",
           "name": "Multiattack",
-          "description": "The dragoon makes 3 omni-whip attacks"
+          "description": "The dragoon makes three omni-whip attacks"
         }
       ],
       "reactions": [
@@ -1945,7 +1948,7 @@
         {
           "type": "common",
           "name": "Multiattack",
-          "description": "The combat engineer makes 2 M-5 Phalanx attacks."
+          "description": "The combat engineer makes two M-5 Phalanx attacks."
         }
       ],
       "reactions": [
@@ -2024,7 +2027,7 @@
         {
           "type": "common",
           "name": "Multiattack",
-          "description": "The Guardian makes 2 M-358 Talon attacks."
+          "description": "The Guardian makes two M-358 Talon attacks."
         }
       ],
       "reactions": [
@@ -2048,9 +2051,9 @@
       },
       "hp": {
         "die": "8",
-        "average": "91",
-        "numDice": "14",
-        "mod": 28
+        "average": "130",
+        "numDice": "20",
+        "mod": 40
       },
       "senses": [
 
@@ -2084,7 +2087,7 @@
       "featuresActionsReactions": [
         "m-358_talon",
         "stun_baton",
-        "riot_shield"
+        "heavy_shield"
       ],
       "savingThrows": [
         "str"
@@ -2169,7 +2172,7 @@
       "skills": [
         "perception",
         "stealth",
-        "suvival"
+        "survival"
       ]
     },
     {
@@ -2177,7 +2180,7 @@
         {
           "type": "common",
           "name": "Multiattack",
-          "description": "The phantom makes three monomolecular blade attacks or one palm blaster attack and two monomolecular (one-handed) blade attack."
+          "description": "The phantom makes three monomolecular blade attacks or one palm blaster attack and two monomolecular (one-handed) blade attacks."
         }
       ],
       "reactions": [
@@ -2270,7 +2273,7 @@
         {
           "type": "common",
           "name": "Multiattack",
-          "description": "The rampart mech makes 2 omni-blade attacks."
+          "description": "The rampart mech makes two omni-blade attacks."
         }
       ],
       "reactions": [

@@ -7,14 +7,22 @@ export const Biotics = {
         for (const group of monster.spellcasting.spells) {
           for (const spellId of group.spells) {
             const spell = spells.find(spell => spell.id === spellId);
-            groupList.push(spell);
+            if (spell) {
+              groupList.push(spell);
+            } else {
+              console.log(`Spell not found: ${monster.name} | ${spellId}`);
+            }
           }
           group.spells = groupList;
         }
       } else {
         for (const spellId of monster.spellcasting.spellList) {
           const spell = spells.find(spell => spell.id === spellId);
-          monster.spellcasting.spells[spell.level].spells.push(spell);
+          if (spell) {
+            monster.spellcasting.spells[spell.level].spells.push(spell);
+          } else {
+            console.log(`Spell not found: ${monster.name} | ${spellId}`);
+          }
         }
       }
       delete monster.spellcasting.spellList;

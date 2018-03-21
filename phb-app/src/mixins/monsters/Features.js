@@ -10,17 +10,22 @@ export const Features = {
         if (weapon) {
           weapon = this.setWeaponDamage(weapon, monster);
           monster.actions.push(this.generateWeaponAttack(monster.profBonus, weapon));
+          continue;
         }
         // matches a grenade?
         const grenade = grenades.find(grenade => grenade.id === featureId);
         if (grenade) {
           monster.actions.push(this.generateGrenadeAttack(grenade));
+          continue;
         }
         let feature = features.find(feature => feature.id === featureId);
         if (feature) {
           feature = this.setFeatureDamage(feature, monster.cr);
           this.addFeature(monster, feature);
+          continue;
         }
+
+        console.log(`Feature not found: ${monster.name} | ${featureId}`);
       }
     },
     addFeature(monster, feature) {

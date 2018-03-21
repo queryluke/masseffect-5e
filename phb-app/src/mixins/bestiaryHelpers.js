@@ -93,7 +93,7 @@ export const BestiaryHelpers = {
 
       const description = {
         attack: `${toHit} to hit, ${reachOrRange} ${weapon.range}${hipFire}, ${target}.`,
-        hit: `${Math.floor(weapon.attack.dpr)} (${weapon.rof}d${weapon.damage}${bonusText}) ${weapon.dmgType} damage${additionalHitMechanics}`,
+        hit: `${Math.floor(weapon.attack.dpr + weapon.attack.bonus)} (${weapon.rof}d${weapon.damage}${bonusText}) ${weapon.dmgType} damage${additionalHitMechanics}`,
         miss: null
       };
 
