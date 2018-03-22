@@ -1,5 +1,5 @@
 {
-  "updated": "February 26, 2018 @  2:56 PM",
+  "updated": "March 21, 2018 @  9:25 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -141,10 +141,10 @@
         {
           "id": 5,
           "type": "line",
-          "data": "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, the aegis's hit points increase by 10 for each slot level above the 1st."
+          "data": "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, the aegis's hit points increase by 10 for each slot level above the 2nd."
         }
       ],
-      "adv_option_1": "Durable : Increase the aegis's hit points to 10 per spell slot.",
+      "adv_option_1": "Durable : Increase the aegis's hit points to 30. Each additional spell slot about the 2nd, increases the aegis's hit points by 15.",
       "adv_option_2": "Counter strike : If you cast Backlash as a reaction against a melee attack and the attack misses, gain an attack of opportunity against the attacking creature.",
       "type": "biotic",
       "die_type": null,
@@ -174,11 +174,11 @@
       "min_tech_points": null,
       "id": "backlash",
       "adv_options": [
-        "Durable : Increase the aegis's hit points to 10 per spell slot.",
+        "Durable : Increase the aegis's hit points to 30. Each additional spell slot about the 2nd, increases the aegis's hit points by 15.",
         "Counter strike : If you cast Backlash as a reaction against a melee attack and the attack misses, gain an attack of opportunity against the attacking creature."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "Generateafrontalbioticaegisbarrierwith15hitpointsIfacreatureyoucanseehitsyouwithanattackwhiletheaegisisactivesplitthedamageequallybetweenyourselfandtheaegisIftheattackisarangedweaponattacktheportionofthedamagethatwouldbedealttoyouisdealttotheattackingcreatureinsteadIfthedamageisanoddnumberyoumaychoosewheretheextra1damageisdealtIfdamagedealttotheaegisisgreaterthanitsremaininghitpointsdealtheremainingdamagetoyourselfWhentheaegisdropsto0hitpointsthespellendsAtHigherLevelsWhenyoucastthisspellusingaspellslotof3rdlevelorhighertheaegisshitpointsincreaseby10foreachslotlevelabovethe1st"
+      "mechanic_text_dump": "Generateafrontalbioticaegisbarrierwith15hitpointsIfacreatureyoucanseehitsyouwithanattackwhiletheaegisisactivesplitthedamageequallybetweenyourselfandtheaegisIftheattackisarangedweaponattacktheportionofthedamagethatwouldbedealttoyouisdealttotheattackingcreatureinsteadIfthedamageisanoddnumberyoumaychoosewheretheextra1damageisdealtIfdamagedealttotheaegisisgreaterthanitsremaininghitpointsdealtheremainingdamagetoyourselfWhentheaegisdropsto0hitpointsthespellendsAtHigherLevelsWhenyoucastthisspellusingaspellslotof3rdlevelorhighertheaegisshitpointsincreaseby10foreachslotlevelabovethe2nd"
     },
     {
       "name": "Ballistic Blades",
@@ -1248,7 +1248,7 @@
         }
       ],
       "adv_option_1": "Adaptive : The healed creature gains resistance to the last damage type it suffered. This effect lasts for 1 minute.",
-      "adv_option_2": "Improved Healing : Increase the healing die type to d8",
+      "adv_option_2": "Improved Healing : Increase the healing die type to d12",
       "type": "tech",
       "die_type": "d8",
       "attack_type": [
@@ -1278,7 +1278,7 @@
       "id": "first_aid",
       "adv_options": [
         "Adaptive : The healed creature gains resistance to the last damage type it suffered. This effect lasts for 1 minute.",
-        "Improved Healing : Increase the healing die type to d8"
+        "Improved Healing : Increase the healing die type to d12"
       ],
       "class_list": "Engineer, Infiltrator, Sentinel",
       "mechanic_text_dump": "SpendXtechpointstoinjectafriendlycreaturewithnanobotsthatreducepainandhealinternalinjuriesThecreaturegainshitpointsequaltoXd8yourTechmodifier"
