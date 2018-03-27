@@ -1,20 +1,57 @@
 <template lang="pug">
   v-toolbar(dark app fixed clipped-left style="z-index: 10;")
-    v-toolbar-side-icon(@click.stop="toggleSidebar").hidden-lg-and-up
+    v-toolbar-side-icon(v-if="showHamburger" v-on:click="toggleSidebar").hidden-lg-and-up
     v-toolbar-title
       router-link(to="/").nav-brand
         img(:src="`../assets/images/me5e.svg`")
-        span Mass Effect 5e - Player's Handbook
+        span.hidden-xs-only Mass Effect 5e
     v-spacer
     v-toolbar-items.hidden-sm-and-down
-      v-btn(href="/about/" flat) About
-      v-btn(href="/printables/" flat) Printables
-      v-btn(href="/news/" flat) News
-      v-btn(href="https://goo.gl/forms/3wZj8QhlsLv3XOJw1" target="_blank" flat) Feedback
+      v-btn(v-for="item in items" v-bind:to="item.route" flat)
+        span {{ item.title }}
+      v-btn(href="https://goo.gl/forms/3wZj8QhlsLv3XOJw1" target="_blank" flat)
+        span.hidden-sm-and-down Feedback
+    span.hidden-md-and-up
+      v-btn(v-for="item in items" v-bind:to="item.route" icon)
+        v-icon.hidden-md-and-up {{ item.icon }}
+      v-btn(href="https://goo.gl/forms/3wZj8QhlsLv3XOJw1" target="_blank" icon)
+        v-icon.hidden-md-and-up feedback
+
 </template>
 
 <script>
   export default {
+    computed: {
+      showHamburger() {
+        return !['home','about','printables','news'].includes(this.$route.name);
+      }
+    },
+    data() {
+      return {
+        items: [
+          {
+            route: '/phb',
+            title: 'Player\'s Handbook',
+            icon: 'library_books'
+          },
+          {
+            route: '/printables',
+            title: 'Printables',
+            icon: 'print'
+          },
+          {
+            route: '/news',
+            title: 'News',
+            icon: 'new_releases'
+          },
+          {
+            route: '/about',
+            title: 'About',
+            icon: 'help'
+          }
+        ]
+      }
+    },
     name: 'MainToolbar',
     methods: {
       toggleSidebar () {

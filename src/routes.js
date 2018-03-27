@@ -47,7 +47,7 @@ function toTitleCase(id) {
 const routes = [
   {path: '/', component: Default, redirect: '/',
     children: [
-      {path: '', component: Home, meta: {title: documentTitle('Mass Effect 5e')}},
+      {path: '', component: Home, name: 'home', meta: {title: documentTitle('Mass Effect 5e')}},
       {path: 'about', component: About, meta: {title: documentTitle('About Mass Effect 5e')}}
     ]
   },
