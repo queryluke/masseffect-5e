@@ -1,7 +1,2 @@
 url: n7.world
-permalink: news/:title/
-data_dir: data
-exclude: [phb-app/, generate.rb]
-version: 0.5.1
-sass:
-  sass_dir: assets/_scss
+source: dist

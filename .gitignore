@@ -1,9 +1,7 @@
 .idea/
 _site/
-masseffect-5e/
 .sass-cache
-phb-app/node_modules/
-phb-app/.tmp/
-phb-app/npm-debug.log
-phb-app/coverage/
-.tmp
+node_modules/
+.tmp/
+npm-debug.log
+coverage/
