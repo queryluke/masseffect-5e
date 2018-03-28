@@ -107,7 +107,7 @@
               v-card-actions
                 v-btn(to="/phb" flat) Print #[v-icon chevron_right]
           v-flex(md5).hidden-sm-and-down.text-xs-center
-            img(src="/assets/images/misc/datapad.png" height="300").px-5
+            img(src="/assets/images/misc/tt_assets.png" height="300").px-5
 </template>
 
 <script>
