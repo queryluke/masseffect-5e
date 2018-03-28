@@ -30,7 +30,7 @@
     name: 'Classes',
     methods: {
       toSingle(id) {
-        this.$router.push(`/classes/${id}`);
+        this.$router.push(`/phb/classes/${id}`);
       }
     },
     data() {

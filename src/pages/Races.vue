@@ -32,7 +32,7 @@
     },
     methods: {
       toRace(id) {
-        this.$router.push(`/races/${id}`);
+        this.$router.push(`/phb/races/${id}`);
       }
     },
     data() {
