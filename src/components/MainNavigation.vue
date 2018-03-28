@@ -57,6 +57,11 @@
       return {
         items: [
           {
+            title: 'Introduction',
+            icon: 'code',
+            href: '/phb/intro'
+          },
+          {
             title: 'Rules',
             icon: 'gavel',
             items: [

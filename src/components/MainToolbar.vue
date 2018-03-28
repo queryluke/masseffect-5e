@@ -35,8 +35,8 @@
             icon: 'library_books'
           },
           {
-            route: '/printables',
-            title: 'Printables',
+            route: '/assets',
+            title: 'Assets',
             icon: 'print'
           },
           {

@@ -11,6 +11,7 @@ import About from './pages/About.vue';
 import Armor from './pages/Armor.vue';
 import ArmorMods from './pages/ArmorMods.vue';
 import ArmorSets from './pages/ArmorSets.vue';
+import Assets from './pages/Assets.vue';
 import Backgrounds from './pages/Backgrounds.vue';
 import Bookmarks from './pages/Bookmarks.vue';
 import Bestiary from './pages/Bestiary.vue';
@@ -24,6 +25,7 @@ import General from './pages/General.vue';
 import Grenades from './pages/Grenades.vue';
 import Grunts from './pages/Grunts.vue';
 import Home from './pages/Home.vue';
+import PhbIntro from './pages/PhbIntro.vue';
 import Race from './pages/Race.vue';
 import Races from './pages/Races.vue';
 import Skills from './pages/Skills.vue';
@@ -47,12 +49,14 @@ function toTitleCase(id) {
 const routes = [
   {path: '/', component: Default, redirect: '/',
     children: [
-      {path: '', component: Home, name: 'home', meta: {title: documentTitle('Mass Effect 5e')}},
+      {path: '', component: Home, name: 'home', meta: {title: documentTitle('A D&D 5e Homebrew')}},
+      {path: 'assets', component: Assets, meta: {title: documentTitle('Assets')}},
       {path: 'about', component: About, meta: {title: documentTitle('About Mass Effect 5e')}}
     ]
   },
-  {path: '/phb', component: PHB,
+  {path: '/phb', component: PHB, redirect: '/phb/intro',
     children: [
+      {path: 'intro', component: PhbIntro, meta: {title: documentTitle('Player\'s Handbook Introduction')}},
       {path: 'armor/mods', component: ArmorMods, meta: {title: documentTitle('Armor Mods', 'Equipment')}},
       {path: 'armor/sets', component: ArmorSets, meta: {title: documentTitle('Armor Sets', 'Equipment')}},
       {path: 'backgrounds', component: Backgrounds, meta: {title: documentTitle('Backgrounds', 'Player Options')}},
