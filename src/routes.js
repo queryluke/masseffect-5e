@@ -5,6 +5,7 @@ Vue.use(Router);
 // Layout
 import PHB from './containers/PHB.vue';
 import Default from './containers/Default.vue';
+import Print from './containers/Print.vue';
 
 // Pages
 import About from './pages/About.vue';
@@ -26,6 +27,7 @@ import Grenades from './pages/Grenades.vue';
 import Grunts from './pages/Grunts.vue';
 import Home from './pages/Home.vue';
 import PhbIntro from './pages/PhbIntro.vue';
+import PrintSpellCards from './pages/PrintSpellCards.vue';
 import Race from './pages/Race.vue';
 import Races from './pages/Races.vue';
 import Skills from './pages/Skills.vue';
@@ -84,6 +86,11 @@ const routes = [
     children: [
       {path: 'grunts', component: Grunts, meta: {title: documentTitle('Grunt Generator', 'GM Tools')}},
       {path: 'encounter', component: Encounter, name: 'encounter', meta: {title: documentTitle('Encounter Maker', 'GM Tools')}}
+    ]
+  },
+  {path: '/print', component: Print,
+    children: [
+      {path: 'spell-cards/:limit?', component: PrintSpellCards, name: 'print-spell-cards', props: true, meta: {title: documentTitle('', 'Spell Cards')}}
     ]
   }
 ];

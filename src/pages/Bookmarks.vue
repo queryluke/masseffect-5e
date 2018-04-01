@@ -1,7 +1,7 @@
 <template lang="pug">
   v-container(fluid)
     h2.display-3 Bookmarks
-    v-layout(row wrap v-for="(cards, type) of bookmarksGroupedByType")
+    v-layout(row wrap v-for="(cards, type) of bookmarksGroupedByType" v-bind:key="type")
       v-flex(xs12)
         h3.display-1 {{ 2 | pluralize(type) | capitalize }}
       v-flex(v-for="(card, index) in cards" v-bind:key="index" xs12 lg6)

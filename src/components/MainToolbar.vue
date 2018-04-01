@@ -7,12 +7,12 @@
         span.hidden-xs-only Mass Effect 5e
     v-spacer
     v-toolbar-items.hidden-sm-and-down
-      v-btn(v-for="item in items" v-bind:to="item.route" flat)
+      v-btn(v-for="(item, index) in items" v-bind:key="index" v-bind:to="item.route" flat)
         span {{ item.title }}
       v-btn(href="https://goo.gl/forms/3wZj8QhlsLv3XOJw1" target="_blank" flat)
         span.hidden-sm-and-down Feedback
     span.hidden-md-and-up
-      v-btn(v-for="item in items" v-bind:to="item.route" icon)
+      v-btn(v-for="(item, index) in items" v-bind:key="index" v-bind:to="item.route" flat)
         v-icon.hidden-md-and-up {{ item.icon }}
       v-btn(href="https://goo.gl/forms/3wZj8QhlsLv3XOJw1" target="_blank" icon)
         v-icon.hidden-md-and-up feedback

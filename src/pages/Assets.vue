@@ -18,15 +18,32 @@
         v-flex(xs12).my-3
           div.text-xs-center
             h2.headline Spell Cards
+        v-flex(v-for="item in classes" v-bind:key="item.id").xs12.sm6.md4
+          v-card(hover v-bind:to="`/print/spell-cards/${item.id}`").ma-2
+            v-card-media(:src="`../assets/images/classes/${item.id}.svg`" height="100px" contain)
+              v-container(fill-height fluid)
+                v-layout(fill-height)
+                  v-flex(xs12 align-end flexbox)
+                    h3.title {{ item.name }} #[span.sr-only Spell Cards]
+        v-flex(xs12)
+          v-btn(block to="/print/spell-cards" ).primary All Spell Cards
+
 </template>
 
 <script>
-
+import {mapGetters} from 'vuex';
 export default {
+  computed: {
+    ...mapGetters(['getData'])
+  },
+  created() {
+    this.classes = this.getData('classes');
+  },
+  data() {
+    return {
+      classes: []
+    }
+  },
   name: 'Assets',
 };
 </script>
-
-<style lang="stylus">
-
-</style>

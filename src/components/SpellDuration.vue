@@ -1,6 +1,7 @@
 <template>
   <span v-if="spell.concentration">
-    <img :src="`../assets/images/c.svg`" alt="Concentration" title="Concentration" class="con-icon"> {{ spell.duration }}
+    <img :src="`../assets/images/c.svg`" alt="Concentration" title="Concentration" class="con-icon" v-if="!verbose">
+    <span v-else>Concentration, up to</span> {{ spell.duration }}
   </span>
   <span v-else>
     {{ spell.duration }}
@@ -11,7 +12,7 @@
 <script>
   export default {
     name: 'SpellDuration',
-    props: ['spell'],
+    props: ['spell','verbose'],
   };
 </script>
 
