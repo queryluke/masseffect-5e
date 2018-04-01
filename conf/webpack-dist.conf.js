@@ -3,6 +3,8 @@ const conf = require('./gulp.conf');
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const PrerenderSPAPlugin = require('prerender-spa-plugin');
+const Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
 const FailPlugin = require('webpack-fail-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const pkg = require('../package.json');
@@ -69,6 +71,13 @@ module.exports = {
       options: {
         postcss: () => [autoprefixer]
       }
+    }),
+    new PrerenderSPAPlugin({
+      staticDir: path.join(process.cwd(), conf.paths.dist),
+      routes: ['/','/about'],
+      renderer: new Renderer({
+        executablePath: '/Applications/Chromium.app/Contents/MacOS/Chromium'
+      })
     })
   ],
   output: {
