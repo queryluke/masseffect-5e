@@ -12,3 +12,6 @@ dist
 
 # jekyll testing
 _site
+
+# jet brains products
+.idea
