@@ -1,7 +1,14 @@
-.idea/
-_site/
-.sass-cache
-node_modules/
-.tmp/
+# dependencies
+node_modules
+
+# logs
 npm-debug.log
-coverage/
+
+# Nuxt build
+.nuxt
+
+# Nuxt generate
+dist
+
+# jekyll testing
+_site
