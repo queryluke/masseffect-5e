@@ -36,8 +36,8 @@
 </template>
 
 <script>
-  import RuleCard from '~/components/partials/RuleCard.vue'
-  import MeText from '~/components/partials/MeText.vue'
+  import RuleCard from '~/components/shared/RuleCard.vue'
+  import MeText from '~/components/shared/MeText.vue'
 
   export default {
     name: 'PrimersAndDetonators',

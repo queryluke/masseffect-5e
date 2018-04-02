@@ -36,12 +36,12 @@
 </template>
 
 <script>
-  import SpellType from '~/components/partials/SpellType.vue'
-  import SpellDuration from '~/components/partials/SpellDuration.vue'
-  import SpellRangeArea from '~/components/partials/SpellRangeArea.vue'
-  import SpellDamageEffect from '~/components/partials/SpellDamageEffect.vue'
-  import AdvancedOption from '~/components/partials/AdvancedOption.vue'
-  import MeElement from '~/components/partials/MeElement.vue'
+  import SpellType from '~/components/shared/SpellType.vue'
+  import SpellDuration from '~/components/shared/SpellDuration.vue'
+  import SpellRangeArea from '~/components/shared/SpellRangeArea.vue'
+  import SpellDamageEffect from '~/components/shared/SpellDamageEffect.vue'
+  import AdvancedOption from '~/components/shared/AdvancedOption.vue'
+  import MeElement from '~/components/shared/MeElement.vue'
 
   export default {
     components: {
@@ -78,7 +78,6 @@
         }
       }
     },
-    name: 'SpellCard',
     props: ['spell']
   }
 </script>

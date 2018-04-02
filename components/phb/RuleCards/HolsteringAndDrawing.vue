@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import RuleCard from '~/components/partials/RuleCard.vue'
+  import RuleCard from '~/components/shared/RuleCard.vue'
 
   export default {
     name: 'HolsteringAndDrawing',

@@ -17,7 +17,7 @@
 </template>
 
 <script>
-  import MeText from '~/components/partials/MeText.vue'
+  import MeText from '~/components/shared/MeText.vue'
 
   export default {
     components: {MeText},
