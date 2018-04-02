@@ -39,13 +39,12 @@
 </template>
 
 <script>
-  import MeElement from "./MeElement.vue";
+  import MeElement from '~/components/shared/MeElement.vue'
 
   export default {
-    name: 'WeaponInfo',
     props: ['weapon'],
     components: {
       MeElement
-    },
-  };
+    }
+  }
 </script>

@@ -1,10 +1,6 @@
 <template lang="pug">
   v-expansion-panel(popout).mb-2
-    v-expansion-panel-content(
-      v-for="spell in spells"
-      v-bind:spell="spell"
-      v-bind:key="spell.id"
-      hide-actions)
+    v-expansion-panel-content(v-for="spell in spells" v-bind:spell="spell" v-bind:key="spell.id" hide-actions)
       div(slot="header")
         v-layout.spell-header
           v-flex.xs4.sm3.lg2
@@ -27,19 +23,18 @@
 </template>
 
 <script>
-  import SpellType from "./SpellType.vue";
-  import SpellDuration from "./SpellDuration.vue";
-  import SpellRangeArea from "./SpellRangeArea.vue";
-  import SpellDamageEffect from "./SpellDamageEffect.vue";
-  import SpellInfo from "./SpellInfo.vue";
-  import BookmarkButton from "./BookmarkButton.vue";
+  import SpellType from '~/components/shared/SpellType.vue'
+  import SpellDuration from '~/components/shared/SpellDuration.vue'
+  import SpellRangeArea from '~/components/shared/SpellRangeArea.vue'
+  import SpellDamageEffect from '~/components/shared/SpellDamageEffect.vue'
+  import SpellInfo from '~/components/shared/SpellInfo.vue'
+  import BookmarkButton from '~/components/shared/BookmarkButton.vue'
 
   export default {
     components: {
       SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect, SpellInfo, BookmarkButton
     },
-    name: 'SpellList',
-    props: ['spells'],
-  };
+    props: ['spells']
+  }
 </script>
 

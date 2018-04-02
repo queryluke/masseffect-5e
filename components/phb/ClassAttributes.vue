@@ -18,12 +18,11 @@
 </template>
 
 <script>
-  import MeElement from './MeElement.vue';
+  import MeElement from '~/components/shared/MeElement.vue'
 
   export default {
     components: {MeElement},
-    name: 'ClassAttributes',
-    props: ['item'],
-  };
+    props: ['item']
+  }
 </script>
 

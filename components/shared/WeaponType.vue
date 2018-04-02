@@ -1,21 +1,20 @@
 <template lang="pug">
   v-avatar(size="25px" tile v-bind:class="[weapon.rare ? 'deep-purple' : 'orange']").accent-2
-    img(:src="`../assets/images/weapons/${type}.svg`" v-bind:alt="weapon.type")
+    img(:src="`/images/weapons/${type}.svg`" v-bind:alt="weapon.type")
 </template>
 
 <script>
   export default {
-    name: 'WeaponType',
-    props: ['weapon'],
     created () {
-      this.type = this.weapon.type.replace(/\s/,'_').toLowerCase();
+      this.type = this.weapon.type.replace(/\s/, '_').toLowerCase()
     },
     data () {
       return {
         type: ''
       }
-    }
-  };
+    },
+    props: ['weapon']
+  }
 </script>
 
 <style>

@@ -46,17 +46,19 @@
 </template>
 
 <script>
-  import SpellType from "./SpellType.vue";
-  import SpellDuration from "./SpellDuration.vue";
-  import SpellRangeArea from "./SpellRangeArea.vue";
-  import SpellDamageEffect from "./SpellDamageEffect.vue";
-  import AdvancedOption from "./AdvancedOption.vue";
-  import SpellClassList from "./SpellClassList.vue";
-  import MeElement from "./MeElement.vue";
+  import SpellType from '~/components/shared/SpellType.vue'
+  import SpellDuration from '~/components/shared/SpellDuration.vue'
+  import SpellRangeArea from '~/components/shared/SpellRangeArea.vue'
+  import SpellDamageEffect from '~/components/shared/SpellDamageEffect.vue'
+  import AdvancedOption from '~/components/shared/AdvancedOption.vue'
+  import SpellClassList from '~/components/shared/SpellClassList.vue'
+  import MeElement from '~/components/shared/MeElement.vue'
 
   export default {
-    name: 'SpellInfo',
-    data() {
+    components: {
+      SpellClassList, AdvancedOption, SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect, MeElement
+    },
+    data () {
       return {
         primeTypeCss: {
           force: 'purple--text text--darken-1',
@@ -67,9 +69,6 @@
         }
       }
     },
-    props: ['spell'],
-    components: {
-      SpellClassList, AdvancedOption, SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect, MeElement
-    },
-  };
+    props: ['spell']
+  }
 </script>

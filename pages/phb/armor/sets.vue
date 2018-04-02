@@ -3,7 +3,7 @@
     h2.display-3 Armor Sets
     p.
       Pre-made Armor Sets are cheaper than creating a full set of custom armor. However, they cannot be customized or upgraded
-      in any way. To learn about creating additional Armor Sets, read the #[router-link(to="/rules/armor") Armor Rules].
+      in any way. To learn about creating additional Armor Sets, read the #[router-link(to="/phb/rules/armor") Armor Rules].
     p.
       An armor set can be one or multiple pieces of armor. "Full Set" means the armor consists of Head, Chest, Arms, and Legs piece.
       "Body Armor" consists of a Chest, Arm and Leg piece.
@@ -19,30 +19,38 @@
 </template>
 
 <script>
-  import PageFooter from '../components/PageFooter.vue';
-  import {mapGetters} from 'vuex';
+  import PageFooter from '~/components/phb/PageFooter.vue'
+  import {mapGetters} from 'vuex'
 
   export default {
-    components: {PageFooter},
+    components: { PageFooter },
     computed: {
       ...mapGetters(['getData'])
     },
-    name: 'ArmorSets',
-    data() {
+    created () {
+      this.items = this.getData('armorSets')
+    },
+    data () {
       return {
         items: [],
         listName: 'armorSets',
         headers: [
-          { text: 'Name', value: 'name', align: 'left'},
+          { text: 'Name', value: 'name', align: 'left' },
           { text: 'Slot', value: 'piece', align: 'left' },
           { text: 'Type', value: 'cost', align: 'left' },
           { text: 'Cost', value: 'cost', align: 'left' },
-          { text: 'Mechanic(s)', value: 'mechanic', sortable: false, align: 'left'},
+          { text: 'Mechanic(s)', value: 'mechanic', sortable: false, align: 'left' }
         ]
-      };
+      }
     },
-    created() {
-      this.items = this.getData('armorSets');
-    }
-  };
+    head () {
+      return {
+        title: 'Mass Effect 5e | Equipment - Pre-made Armor Sets',
+        meta: [
+          { hid: 'description', name: 'description', content: 'Pre-made armor sets ...' }
+        ]
+      }
+    },
+    layout: 'phb'
+  }
 </script>

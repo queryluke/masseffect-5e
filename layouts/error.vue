@@ -1,8 +1,10 @@
 <template lang="pug">
   v-content
-    v-layout(fill-height)
-      h1(v-if="error.statusCode === 404") Page Not Found
-      nuxt-link(to="/") Home Page
+    v-container(fill-height)
+      v-layout(fill-height).text-xs-center
+        v-flex(xs12)
+          h1(v-if="error.statusCode === 404").display-1 Page Not Found
+          v-btn(to="/").primary Return Home
 </template>
 
 <script>

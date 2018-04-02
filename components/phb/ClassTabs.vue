@@ -31,18 +31,17 @@
 
 <script>
   export default {
-    name: 'ClassTabs',
     props: ['colors'],
     data () {
       return {
         tabs: [
           { name: 'Attributes', id: 'attributes' },
           { name: 'Subclasses', id: 'subclasses' },
-          { name: 'Spell List', id: 'spell_list' },
+          { name: 'Spell List', id: 'spell_list' }
         ],
-        active: null,
+        active: null
       }
-    },
-  };
+    }
+  }
 </script>
 

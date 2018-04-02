@@ -3,14 +3,14 @@
     h2.display-3 Classes
     v-layout(row wrap)
       v-flex(v-for="item in items" v-bind:key="item.id").xs12.sm6.md4
-        v-card(hover).ma-2
-          v-container(fluid grid-list-lg @click="toSingle(item.id)")
+        v-card(:to="{ name: 'phb-classes-id', params: { id: item.id }}" hover).ma-2
+          v-container(fluid grid-list-lg)
             v-layout(row wrap)
               v-flex.xs8
                 h3.headline.mb-0 {{ item.name }}
                 p {{ item.snippet }}
               v-flex.xs4
-                v-card-media(:src="`../assets/images/classes/${item.id}.svg`" height="100px" contain)
+                v-card-media(:src="`/images/classes/${item.id}.svg`" height="100px" contain)
               v-flex.xs12
                 p.ma-0 #[strong Hit Die:] {{ item.hit_die }}
                 p.ma-0 #[strong Primary Ability:] {{ item.primary_ability }}
@@ -19,28 +19,31 @@
 </template>
 
 <script>
-  import PageFooter from '../components/PageFooter.vue';
-  import {mapGetters} from 'vuex';
+  import PageFooter from '~/components/phb/PageFooter.vue'
+  import {mapGetters} from 'vuex'
 
   export default {
     components: {PageFooter},
     computed: {
       ...mapGetters(['getData'])
     },
-    name: 'Classes',
-    methods: {
-      toSingle(id) {
-        this.$router.push(`/phb/classes/${id}`);
-      }
+    created () {
+      this.items = this.getData('classes')
     },
-    data() {
+    data () {
       return {
         items: [],
         listName: 'classes'
-      };
+      }
     },
-    created() {
-      this.items = this.getData('classes');
+    head () {
+      return {
+        title: 'Mass Effect 5e | Classes',
+        meta: [
+          { hid: 'description', name: 'description', content: 'Available player character classes in Mass Effect 5e' }
+        ]
+      }
     },
-  };
+    layout: 'phb'
+  }
 </script>

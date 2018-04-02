@@ -1,6 +1,7 @@
 <template lang="pug">
   div
-    h2.display-3 Consumables
+    h2.display-3 Items
+    p.subheading Medi-gel, Thermal Clips, Heavy Weapons, Grenades, and Mines
     div(v-for="(rule, index) in rules")
       component(v-bind:is="rule")
 </template>
@@ -24,9 +25,9 @@
     },
     head () {
       return {
-        title: 'Mass Effect 5e | Rules - Consumables',
+        title: 'Mass Effect 5e | Equipment - Other items',
         meta: [
-          { hid: 'description', name: 'description', content: 'List of consumable items in Mass Effect 5e' }
+          { hid: 'description', name: 'description', content: 'List of consumable items in Mass Effect 5e: Medi-gel, Thermal Clips, Heavy Weapons, Grenades, and Mines' }
         ]
       }
     },

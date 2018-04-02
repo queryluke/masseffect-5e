@@ -9,18 +9,16 @@
 </template>
 
 <script>
-  import {mapActions} from 'vuex';
-  import {mapGetters} from 'vuex';
+  import {mapActions, mapGetters} from 'vuex'
 
   export default {
-    name: 'BookmarkButton',
-    props: ['card', 'type', 'props'],
+    computed: {
+      ...mapGetters(['isBookmarked'])
+    },
     methods: {
       ...mapActions(['addBookmark', 'removeBookmark'])
     },
-    computed: {
-      ...mapGetters(['isBookmarked']),
-    },
-  };
+    props: ['card', 'type', 'props']
+  }
 </script>
 

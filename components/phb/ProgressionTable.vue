@@ -20,13 +20,12 @@
 
 <script>
   export default {
-    name: 'ProgressionTable',
-    props: ['rows','headers', 'spell_header', 'colors'],
+    props: ['rows', 'headers', 'spell_header', 'colors'],
     methods: {
-      showDialog(feature_id, level) {
-        this.$emit('showDialog',feature_id, level);
+      showDialog (featureId, level) {
+        this.$emit('showDialog', featureId, level)
       }
     }
-  };
+  }
 </script>
 

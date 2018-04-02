@@ -67,7 +67,6 @@
               { href: '/phb/rules/spellcasting', title: 'Spellcasting' },
               { href: '/phb/rules/weapons', title: 'Weapons' },
               { href: '/phb/rules/armor', title: 'Armor' },
-              { href: '/phb/rules/consumables', title: 'Consumables' },
               { href: '/phb/rules/skills', title: 'Skills' },
               { href: '/phb/rules/conditions', title: 'Conditions' }
             ]
@@ -78,19 +77,18 @@
             items: [
               { href: '/phb/classes', title: 'Classes' },
               { href: '/phb/races', title: 'Races' },
-              { href: '/phb/feats', title: 'Feats' },
-              { href: '/phb/backgrounds', title: 'Backgrounds' }
+              { href: '/phb/feats', title: 'Feats' }
+              // { href: '/phb/backgrounds', title: 'Backgrounds' }
             ]
           },
           {
             title: 'Equipment',
             icon: 'build',
             items: [
-              {href: '/phb/weapons', title: 'Weapons'},
-              {href: '/phb/armor/mods', title: 'Armor Mods'},
-              {href: '/phb/armor/sets', title: 'Armor Sets'},
-              {href: '/phb/grenades', title: 'Grenades'},
-              {href: '/phb/thermal-clips', title: 'Thermal Clips'}
+              { href: '/phb/weapons', title: 'Weapons' },
+              { href: '/phb/armor/mods', title: 'Armor Mods' },
+              { href: '/phb/armor/sets', title: 'Armor Sets' },
+              { href: '/phb/items', title: 'Other Items' }
             ]
           },
           {

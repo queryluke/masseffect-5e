@@ -8,8 +8,7 @@
 
 <script>
   export default {
-    name: 'SubclassInfo',
-    props: ['items'],
-  };
+    props: ['items']
+  }
 </script>
 
