@@ -1,6 +1,6 @@
 export const Skills = {
   methods: {
-    setMonsterSkills(monster) {
+    setMonsterSkills (monster) {
       const monsterSkills = []
       const skills = this.getData('skills').filter(skill => skill.removed !== 'x')
       for (let skillId of monster.skills) {

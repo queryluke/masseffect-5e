@@ -1,6 +1,6 @@
 export const SavingThrows = {
   methods: {
-    setGruntSavingThrows(config, grunt) {
+    setGruntSavingThrows (config, grunt) {
       const crMetaLevel = parseFloat(config.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(config.cr.cr) / 4)
       let numSavingThrows = this.randomValue(this.savingThrowWeights[crMetaLevel])
       const savingThrows = this.savingThrows.slice(0)
@@ -19,7 +19,7 @@ export const SavingThrows = {
           }
         }
       }
-      for (let i = 1 i <= numSavingThrows i++) {
+      for (let i = 1; i <= numSavingThrows; i++) {
         const savingThrow = this.randomValue(savingThrows)
         const abilityScoreBonus = this.abilityScoreBonus(savingThrow) + config.cr.profBonus
         if (abilityScoreBonus > 0) {
@@ -33,7 +33,7 @@ export const SavingThrows = {
       }
     }
   },
-  data() {
+  data () {
     return {
       savingThrowWeights: {
         0: [0, 0, 0, 1],

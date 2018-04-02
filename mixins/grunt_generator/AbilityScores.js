@@ -1,6 +1,6 @@
 export const AbilityScores = {
   methods: {
-    setGruntAbilityScores(config, grunt) {
+    setGruntAbilityScores (config, grunt) {
       grunt.abilityScores = {
         str: 0,
         dex: 0,
@@ -65,7 +65,7 @@ export const AbilityScores = {
       // Set boosts based on CR
       if (config.cr.abIncrease) {
         const increase = this.randomValue(config.cr.abIncrease)
-        for (let i = 0 i < increase i++) {
+        for (let i = 0; i < increase; i++) {
           const ability = this.randomValue(weightedAbilitySelection.increase)
           grunt.abilityScores[ability]++
         }
@@ -73,7 +73,7 @@ export const AbilityScores = {
       // Set decreases based on CR
       if (config.cr.abReduction) {
         const reduction = this.randomValue(config.cr.abReduction)
-        for (let i = 0 i < reduction i++) {
+        for (let i = 0; i < reduction; i++) {
           const ability = this.randomValue(weightedAbilitySelection.reduction)
           if (grunt.abilityScores[ability] === 1) {
             continue

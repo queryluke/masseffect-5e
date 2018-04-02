@@ -1,6 +1,6 @@
 export const Features = {
   methods: {
-    setGruntFeatures(config, grunt) {
+    setGruntFeatures (config, grunt) {
       const crMetaLevel = parseFloat(config.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(config.cr.cr) / 4)
       const features = this.getMutableData('monsterFeatures')
 
@@ -17,7 +17,7 @@ export const Features = {
         return feature[grunt.race.id] === 'x'
       })
       const numFeatures = this.randomValue(this.numFeatureWeights[crMetaLevel])
-      for (let i = 1 i <= numFeatures i++) {
+      for (let i = 1; i <= numFeatures; i++) {
         const feature = this.randomValue(availableFeatures)
         this.addFeature(config, grunt, feature)
         availableFeatures.splice(availableFeatures.indexOf(feature), 1)
@@ -26,7 +26,7 @@ export const Features = {
       grunt.damageResistances = Array.from(new Set(grunt.damageResistances))
       grunt.conditionImmunities = Array.from(new Set(grunt.conditionImmunities))
     },
-    addFeature(config, grunt, feature) {
+    addFeature (config, grunt, feature) {
       feature = this.setFeatureDamage(feature, config.cr.cr)
       switch (feature.type) {
         case 'condition': {
@@ -67,7 +67,7 @@ export const Features = {
       }
     }
   },
-  data() {
+  data () {
     return {
       numFeatureWeights: {
         0: [0, 0, 0, 1, 1],

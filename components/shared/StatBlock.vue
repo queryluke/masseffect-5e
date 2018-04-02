@@ -76,50 +76,49 @@
 </template>
 
 <script>
-  import {AbilityScoreBonus} from '../mixins/abilityScoreBonus';
-  import {DieFromAverage} from '../mixins/dieFromAverage';
-  import NpcCommonFeature from './NpcFeatures/NpcCommonFeature.vue';
-  import NpcAttack from './NpcFeatures/NpcAttack.vue';
+  import {AbilityScoreBonus} from '~/mixins/abilityScoreBonus'
+  import {DieFromAverage} from '~/mixins/dieFromAverage'
+  import NpcCommonFeature from '~/components/shared/NpcFeatures/NpcCommonFeature.vue'
+  import NpcAttack from '~/components/shared/NpcFeatures/NpcAttack.vue'
 
   export default {
     components: {
       NpcAttack,
       NpcCommonFeature
     },
-    name: 'StatBlock',
-    mixins: [
-      AbilityScoreBonus,
-      DieFromAverage,
-    ],
-    methods: {
-      renderPoints(pointObject){
-        if (pointObject) {
-          let mod = '';
-          if (pointObject.mod > 0) {
-            mod = ` + ${pointObject.mod}`;
-          } else if (pointObject.mod < 0) {
-            mod = ` - ${pointObject.mod * -1}`;
-          }
-          return `${pointObject.average} (${pointObject.numDice}d${pointObject.die}${mod})`;
-        } else {
-          return '0';
+    computed: {
+      skills () {
+        if (this.stats.skills && this.stats.skills.length) {
+          return this.stats.skills.map(skill => {
+            return `${skill.name} +${skill.bonus}`
+          }).join(', ')
         }
-      },
-      hasFeature(feature) {
-        return this.stats[feature] && this.stats[feature].length > 0;
+        return false
       }
     },
-    computed: {
-      skills() {
-        if (this.stats.skills && this.stats.skills.length){
-          return this.stats.skills.map(skill => {
-            return `${skill.name} +${skill.bonus}`;
-          }).join(', ');
+    methods: {
+      renderPoints (pointObject) {
+        if (pointObject) {
+          let mod = ''
+          if (pointObject.mod > 0) {
+            mod = ` + ${pointObject.mod}`
+          } else if (pointObject.mod < 0) {
+            mod = ` - ${pointObject.mod * -1}`
+          }
+          return `${pointObject.average} (${pointObject.numDice}d${pointObject.die}${mod})`
+        } else {
+          return '0'
         }
-        return false;
       },
+      hasFeature (feature) {
+        return this.stats[feature] && this.stats[feature].length > 0
+      }
     },
-    props: ['stats'],
-  };
+    mixins: [
+      AbilityScoreBonus,
+      DieFromAverage
+    ],
+    props: ['stats']
+  }
 </script>
 

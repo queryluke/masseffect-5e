@@ -1,6 +1,6 @@
 export const Hp = {
   methods: {
-    setGruntHp(config, grunt) {
+    setGruntHp (config, grunt) {
       let hpRange = this.createNumberRange(config.cr.hpMin, config.cr.hpMax)
       const oneQuarterOfRange = Math.floor(hpRange.length / 4)
       if (config.effective.resistances) {

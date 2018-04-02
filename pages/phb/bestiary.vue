@@ -30,8 +30,8 @@
 </template>
 
 <script>
-  import MonsterList from '../components/MonsterList.vue';
-  import {ConfigureMonsters} from '../mixins/monsters';
+  import MonsterList from '~/components/phb/MonsterList.vue'
+  import {ConfigureMonsters} from '~/mixins/monsters'
 
   export default {
     components: {
@@ -39,38 +39,38 @@
     },
     computed: {
       filtered () {
-        let data = this.monsters;
-        let sortKey = this.sortKey;
-        let search = this.search;
-        let order = this.sortOrder;
+        let data = this.monsters
+        let sortKey = this.sortKey
+        let search = this.search
+        let order = this.sortOrder
         if (sortKey) {
           data = data.slice().sort(function (a, b) {
-            switch(sortKey){
+            switch (sortKey) {
               case 'cr':
-                a = a[sortKey] ? parseInt(a[sortKey].replace(/\D/,''),10) : 0;
-                b = b[sortKey] ? parseInt(b[sortKey].replace(/\D/,''),10) : 0;
-                break;
+                a = a[sortKey] ? parseInt(a[sortKey].replace(/\D/, ''), 10) : 0
+                b = b[sortKey] ? parseInt(b[sortKey].replace(/\D/, ''), 10) : 0
+                break
               default:
-                a = a[sortKey];
-                b = b[sortKey];
+                a = a[sortKey]
+                b = b[sortKey]
             }
-            return (a === b ? 0 : a > b ? 1 : -1) * order;
-          });
+            return (a === b ? 0 : a > b ? 1 : -1) * order
+          })
         }
         if (search) {
-          data = data.filter( (monster) => {
-            let name_match = monster.name.toLowerCase().indexOf(this.search.toLowerCase())>=0;
-            let unit_match = monster.unit.toLowerCase().indexOf(this.search.toLowerCase())>=0;
-            return name_match || unit_match;
-          });
+          data = data.filter((monster) => {
+            let nameMatch = monster.name.toLowerCase().indexOf(this.search.toLowerCase()) >= 0
+            let unitMatch = monster.unit.toLowerCase().indexOf(this.search.toLowerCase()) >= 0
+            return nameMatch || unitMatch
+          })
         }
         return data
       }
     },
-    created() {
-      this.monsters = this.getMonsters();
+    created () {
+      this.monsters = this.getMonsters()
     },
-    data() {
+    data () {
       return {
         monsters: [],
         search: '',
@@ -79,23 +79,31 @@
         sortOrder: 1,
         updated: '',
         headers: [
-          {key: 'name', display: 'Name', classes: 'xs9 lg5', sortable: true},
-          {key: 'unit', display: 'Faction', classes: 'hidden-md-and-down lg5', sortable: true},
-          {key: 'cr', display: 'CR', classes: 'xs3', sortable: true},
+          { key: 'name', display: 'Name', classes: 'xs9 lg5', sortable: true },
+          { key: 'unit', display: 'Faction', classes: 'hidden-md-and-down lg5', sortable: true },
+          { key: 'cr', display: 'CR', classes: 'xs3', sortable: true }
         ]
-      };
+      }
     },
+    head () {
+      return {
+        title: 'Mass Effect 5e | Bestiary',
+        meta: [
+          { hid: 'description', name: 'description', content: 'Bestiary..' }
+        ]
+      }
+    },
+    layout: 'phb',
     methods: {
       sortBy (key) {
         if (this.sortKey === key) {
-          this.sortOrder = this.sortOrder * -1;
+          this.sortOrder = this.sortOrder * -1
         } else {
-          this.sortKey = key;
-          this.sortOrder = 1;
+          this.sortKey = key
+          this.sortOrder = 1
         }
       }
     },
-    mixins: [ConfigureMonsters],
-    name: 'Bestiary'
-  };
+    mixins: [ConfigureMonsters]
+  }
 </script>

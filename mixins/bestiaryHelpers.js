@@ -1,6 +1,6 @@
 export const BestiaryHelpers = {
   methods: {
-    generateGrenadeAttack(grenade) {
+    generateGrenadeAttack (grenade) {
       const description = grenade.desc.map(line => line.data).join(' ')
       const numGrenades = grenade.id === 'smoke_grenade' ? '1 grenade' : '3 grenades'
       return {
@@ -10,7 +10,7 @@ export const BestiaryHelpers = {
         description
       }
     },
-    setFeatureDamage(feature, cr) {
+    setFeatureDamage (feature, cr) {
       const featureCopy = Object.assign({}, feature)
       const crMetaLevel = Math.ceil(parseFloat(cr) / 4)
       if (featureCopy.id === 'relentless') {
@@ -26,7 +26,7 @@ export const BestiaryHelpers = {
       }
       return featureCopy
     },
-    setWeaponDamage(weapon, npc) {
+    setWeaponDamage (weapon, npc) {
       const strBonus = this.abilityScoreBonus(npc.abilityScores.str)
       const dexBonus = this.abilityScoreBonus(npc.abilityScores.dex)
       const bruteMod = npc.features ? npc.features.find(feature => feature.id === 'brute') : false
@@ -52,7 +52,7 @@ export const BestiaryHelpers = {
       }
       return weapon
     },
-    generateWeaponAttack(profBonus, weapon) {
+    generateWeaponAttack (profBonus, weapon) {
       profBonus = parseInt(profBonus, 10)
       // Heavy weapons
       if (weapon.type === 'Heavy Weapon') {

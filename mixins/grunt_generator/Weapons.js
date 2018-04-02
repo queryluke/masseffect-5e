@@ -1,6 +1,6 @@
 export const Weapons = {
   methods: {
-    setWeaponActions(config, grunt) {
+    setWeaponActions (config, grunt) {
       const weapons = this.getMutableData('weapons')
         .filter(weapon => weapon.dmg !== null)
         .map(weapon => this.setWeaponDamage(weapon, grunt))
@@ -23,7 +23,7 @@ export const Weapons = {
         })
       }
     },
-    getAttackOptions(config, weapons) {
+    getAttackOptions (config, weapons) {
       const attacks = []
 
       for (const weapon of weapons) {
@@ -36,7 +36,7 @@ export const Weapons = {
           continue
         }
 
-        for (let i = 1 i <= 3 i++) {
+        for (let i = 1; i <= 3; i++) {
           if ((i > 1 && weapon.type === 'Heavy Weapon') ||
             (i > 2 && ((weapon.type === 'Heavy Weapon' || weapon.type === 'Sniper Rifle') || weapon.heat < 3))) {
             continue
@@ -97,7 +97,7 @@ export const Weapons = {
       attacks.sort((a, b) => a.dpr - b.dpr)
       return attacks
     },
-    generateMultiattackDescription(grunt, attack) {
+    generateMultiattackDescription (grunt, attack) {
       const name = grunt.sc.id === 'none' ? 'grunt' : grunt.sc.id
       const words = ['', 'one', 'two', 'three', 'four']
       const plural = attack.numAttacks > 1 ? 's' : ''

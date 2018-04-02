@@ -1,6 +1,6 @@
 export const Biotics = {
   methods: {
-    setGruntBiotics(config, grunt) {
+    setGruntBiotics (config, grunt) {
       const effectiveCr = this.getEffectiveCr(config, grunt)
       grunt.spellcasting = {
         level: effectiveCr.spellcastingLevel,
@@ -27,7 +27,7 @@ export const Biotics = {
             availableSpells.splice(availableSpells.indexOf(barrier), 1)
             numCantrips--
           }
-          for (let i = 1 i <= numCantrips i++) {
+          for (let i = 1; i <= numCantrips; i++) {
             if (availableSpells.length < 1) {
               continue
             }
@@ -58,7 +58,7 @@ export const Biotics = {
           }
           const numSpells = this.numSpellsByLevel[grunt.sc.id][effectiveCr.spellcastingLevel][spellLevel - 1]
           const availableSpells = this.spells.filter(spell => spell.level === column.key && spell[grunt.sc.id] === 'x')
-          for (let i = 1 i <= numSpells i++) {
+          for (let i = 1; i <= numSpells; i++) {
             if (availableSpells.length < 1) {
               continue
             }
@@ -81,7 +81,7 @@ export const Biotics = {
       }
     }
   },
-  data() {
+  data () {
     return {
       spells: [],
       progressions: {
@@ -153,7 +153,7 @@ export const Biotics = {
       }
     }
   },
-  created() {
+  created () {
     this.spells = this.getData('spells').filter(spell => spell.type === 'biotic')
     this.progressions.adept = this.getData('adeptProgression')
     this.progressions.sentinel = this.getData('sentinelProgression')

@@ -51,7 +51,7 @@ export const GruntGenerator = {
     ...mapGetters(['getData', 'getMutableData'])
   },
   methods: {
-    generateGrunt(cr, race, sc) {
+    generateGrunt (cr, race, sc) {
       const config = {
         cr,
         effective: {

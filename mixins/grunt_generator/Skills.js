@@ -1,6 +1,6 @@
 export const Skills = {
   methods: {
-    setGruntSkills(config, grunt) {
+    setGruntSkills (config, grunt) {
       const numSkills = parseFloat(config.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(config.cr.cr) / 4)
       let skills = this.getMutableData('skills').filter(skill => skill.removed !== 'x')
 
@@ -39,7 +39,7 @@ export const Skills = {
       }
 
       let numProficient = this.randomValue(this.proficientWeights[numSkills])
-      for (let i = 1 i <= numSkills i++) {
+      for (let i = 1; i <= numSkills; i++) {
         const skill = this.randomValue(skills)
         const skillLinkAbbr = skill.link.slice(0, 3).toLowerCase()
         let abilityScoreBonus = this.abilityScoreBonus(grunt.abilityScores[skillLinkAbbr])
@@ -64,7 +64,7 @@ export const Skills = {
       }
     }
   },
-  data() {
+  data () {
     return {
       proficientWeights: {
         0: [0, 0, 1, 1],

@@ -1,6 +1,6 @@
 export const Biotics = {
   methods: {
-    setMonsterBiotics(monster) {
+    setMonsterBiotics (monster) {
       const spells = this.getData('spells')
       if (monster.spellcasting.level === 'innate') {
         const groupList = []

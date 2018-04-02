@@ -65,141 +65,148 @@
 </template>
 
 <script>
-  import {GruntGenerator} from '../mixins/grunt_generator';
-  import {mapGetters} from 'vuex';
-  import {mapActions} from 'vuex';
-  import StatBlock from '../components/StatBlock.vue';
-  import BookmarkButton from '../components/BookmarkButton.vue';
+  import {GruntGenerator} from '~/mixins/grunt_generator'
+  import {mapGetters, mapActions} from 'vuex'
+  import StatBlock from '~/components/shared/StatBlock.vue'
+  import BookmarkButton from '~/components/shared/BookmarkButton.vue'
 
   export default {
     components: {
       BookmarkButton,
       StatBlock
     },
-    name: 'Grunts',
-    data() {
+    created () {
+      this.crs = this.getData('statsByCr')
+
+      // Setup races
+      this.races = this.getMutableData('races').map((race) => {
+        // expand available classes
+        race.available_classes = race.available_classes.split(',').map((v) => v.trim())
+        return race
+      })
+
+      // Setup classes
+      this.classes = this.getMutableData('classes')
+    },
+    computed: {
+      ...mapGetters(['getData', 'getMutableData', 'getGruntConfig']),
+      classOptions () {
+        let classOptions = this.filterClasses(this.race.id)
+        classOptions.sort(this.compare)
+        classOptions.unshift({ id: 'random', name: 'Random' })
+        classOptions.push({ id: 'none', name: 'None' })
+        if (!classOptions.map((co) => co.id).includes(this.sc.id)) {
+          this.sc = classOptions[0]
+        }
+        return classOptions
+      },
+      raceOptions () {
+        let raceOptions = this.filterRaces(this.sc.id)
+        raceOptions.sort(this.compare)
+        raceOptions.unshift({ id: 'random', name: 'Random' })
+        if (!raceOptions.map((ro) => ro.id).includes(this.race.id)) {
+          this.race = raceOptions[0]
+        }
+        return raceOptions
+      },
+      race: {
+        get () {
+          return this.getGruntConfig('race')
+        },
+        set (value) {
+          this.updateGruntConfig({key: 'race', value})
+        }
+      },
+      sc: {
+        get () {
+          return this.getGruntConfig('sc')
+        },
+        set (value) {
+          this.updateGruntConfig({key: 'sc', value})
+        }
+      },
+      cr: {
+        get () {
+          return this.getGruntConfig('cr')
+        },
+        set (value) {
+          this.updateGruntConfig({key: 'cr', value})
+        }
+      }
+    },
+    data () {
       return {
         crs: [],
         races: [],
         classes: [],
         grunt: false
-      };
-    },
-    mixins: [GruntGenerator],
-    created() {
-      this.crs = this.getData('statsByCr');
-
-      // Setup races
-      this.races = this.getMutableData('races').map((race) => {
-        // expand available classes
-        race.available_classes = race.available_classes.split(',').map((v) => v.trim());
-        return race;
-      });
-
-      // Setup classes
-      this.classes = this.getMutableData('classes');
-    },
-    computed: {
-      ...mapGetters(['getData', 'getMutableData', 'getGruntConfig']),
-      classOptions: function() {
-        let class_options = this.filterClasses(this.race.id);
-        class_options.sort(this.compare);
-        class_options.unshift({ id: 'random', name: 'Random' });
-        class_options.push({ id: 'none', name: 'None' });
-        if(!class_options.map( (co) => co.id).includes(this.sc.id)){
-          this.sc = class_options[0];
-        }
-        return class_options;
-      },
-      raceOptions: function() {
-        let race_options = this.filterRaces(this.sc.id);
-        race_options.sort(this.compare);
-        race_options.unshift({ id: 'random', name: 'Random' });
-        if(!race_options.map( (ro) => ro.id).includes(this.race.id)){
-          this.race = race_options[0];
-        }
-        return race_options;
-      },
-      race: {
-        get () {
-          return this.getGruntConfig('race');
-        },
-        set (value) {
-          this.updateGruntConfig({key: 'race', value});
-        }
-      },
-      sc: {
-        get () {
-          return this.getGruntConfig('sc');
-        },
-        set (value) {
-          this.updateGruntConfig({key: 'sc', value});
-        }
-      },
-      cr: {
-        get () {
-          return this.getGruntConfig('cr');
-        },
-        set (value) {
-          this.updateGruntConfig({key: 'cr', value});
-        }
       }
     },
+    head () {
+      return {
+        title: 'Mass Effect 5e | GM Tools - Grunt Generator',
+        meta: [
+          { hid: 'description', name: 'description', content: 'Create Grunts' }
+        ]
+      }
+    },
+    layout: 'phb',
+    mixins: [GruntGenerator],
     methods: {
       ...mapActions(['updateGruntConfig']),
       saveGrunt (grunt) {
-        this.$store.commit('addEncounterNpc', grunt);
+        this.$store.commit('addEncounterNpc', grunt)
       },
-      filterClasses(race_id){
-        return this.classes.filter(a_class => {
-          if(race_id === 'random'){
-            return true;
+      filterClasses (raceId) {
+        return this.classes.filter(aClass => {
+          if (raceId === 'random') {
+            return true
           }
-          return this.races.find((race) => { return race.id === race_id }).available_classes.includes(a_class.name);
-        });
+          return this.races.find((race) => { return race.id === raceId }).available_classes.includes(aClass.name)
+        })
       },
-      filterRaces(class_id){
+      filterRaces (classId) {
         return this.races.filter(race => {
-          if(class_id === 'random') {
-            return true;
+          if (classId === 'random') {
+            return true
           }
-          const regex = new RegExp(class_id, 'gi');
+          const regex = new RegExp(classId, 'gi')
           return regex.test(race.available_classes)
-        });
+        })
       },
-      compare(a, b) {
-        let comparison = 0;
-        if(a.name > b.name){
-          comparison = 1;
+      compare (a, b) {
+        let comparison = 0
+        if (a.name > b.name) {
+          comparison = 1
         } else if (b.name > a.name) {
-          comparison = -1;
+          comparison = -1
         }
-        return comparison;
+        return comparison
       },
-      getGrunt(){
+      getGrunt () {
         // Get the race
-        let race = {};
-        if(this.race.id === 'random') {
+        let race = {}
+        if (this.race.id === 'random') {
           if (this.sc.id === 'random' || this.sc.id === 'none') {
-            race = this.randomValue(this.races);
+            race = this.randomValue(this.races)
           } else {
-            const races = this.filterRaces(this.sc.id);
-            race = this.randomValue(races);
+            const races = this.filterRaces(this.sc.id)
+            race = this.randomValue(races)
           }
         } else {
-          race = this.race;
+          race = this.race
         }
 
         // Get the class
-        let sc = {};
+        let sc = {}
         if (this.sc.id === 'random') {
-          const classes = this.filterClasses(race.id);
-          sc = this.randomValue(classes);
+          const classes = this.filterClasses(race.id)
+          sc = this.randomValue(classes)
         } else {
-          sc = this.sc;
+          sc = this.sc
         }
-        this.grunt = this.generateGrunt(this.cr, race, sc);
-      },
+        this.grunt = this.generateGrunt(this.cr, race, sc)
+      }
     }
-  };
+  }
 </script>

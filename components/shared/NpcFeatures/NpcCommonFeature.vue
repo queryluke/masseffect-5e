@@ -4,8 +4,7 @@
 
 <script>
   export default {
-    name: 'NpcCommonFeature',
-    props: ['feature', 'npc'],
-  };
+    props: ['feature', 'npc']
+  }
 </script>
 

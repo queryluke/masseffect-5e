@@ -1,6 +1,6 @@
 export const Helpers = {
   methods: {
-    getEffectiveCrAdjustment(config, grunt) {
+    getEffectiveCrAdjustment (config, grunt) {
       // Get the recommended dmg output by effective dmg
       const recDmgOutput = Math.floor(((config.cr.dmgMin + config.cr.dmgMax) / 2) + config.effective.dmg)
       // Find the recommended cr by the effective dmg
@@ -8,7 +8,7 @@ export const Helpers = {
         return recDmgOutput >= cr.dmgMin && recDmgOutput <= cr.dmgMax
       })
       // prevent any null crs
-      recCrByDmg = recCrByDmg ? recCrByDmg : config.cr
+      recCrByDmg = recCrByDmg === null ? recCrByDmg : config.cr
       // calc the effective attack
       const effectiveAtk = config.cr.attackBonus + config.effective.atk
       // count of how much higher/lower the attack bonus is (divided by 2 because adjustment is for every 2 points)
@@ -30,14 +30,14 @@ export const Helpers = {
 
       return (defensiveAdjustment + offensiveAdjustment) * -1
     },
-    getEffectiveCr(config, grunt) {
+    getEffectiveCr (config, grunt) {
       const totalAdjustment = this.getEffectiveCrAdjustment(config, grunt)
       let crIndex = config.cr.id + totalAdjustment
       crIndex = crIndex < 1 ? 1 : crIndex
       crIndex = crIndex > 15 ? 15 : crIndex
       return this.crArray[crIndex - 1]
     },
-    getTargetDamage(config, grunt) {
+    getTargetDamage (config, grunt) {
       const effectiveCr = this.getEffectiveCr(config, grunt)
       return {
         dmgMin: effectiveCr.dmgMin,
@@ -45,12 +45,12 @@ export const Helpers = {
       }
     }
   },
-  data() {
+  data () {
     return {
       crArray: []
     }
   },
-  created() {
+  created () {
     this.crArray = this.getData('statsByCr')
   }
 }

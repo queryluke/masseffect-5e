@@ -19,7 +19,7 @@ export const ConfigureMonsters = {
     Tech
   ],
   methods: {
-    getMonsters() {
+    getMonsters () {
       const monsters = this.getMutableData('bestiary')
       return monsters.map(monster => {
         if (monster.spellcasting) {

@@ -1,6 +1,6 @@
 export const Senses = {
   methods: {
-    setGruntSenses(config, grunt) {
+    setGruntSenses (config, grunt) {
       let pp = 10 + this.abilityScoreBonus(grunt.abilityScores.wis)
       let ppProficient = false
       if (grunt.race.id === 'quarian' && !config.quarianCybEn) {

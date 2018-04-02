@@ -7,8 +7,7 @@
 
 <script>
   export default {
-    name: 'NpcAttack',
-    props: ['feature', 'npc'],
-  };
+    props: ['feature', 'npc']
+  }
 </script>
 

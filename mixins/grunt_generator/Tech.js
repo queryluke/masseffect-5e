@@ -1,6 +1,6 @@
 export const Tech = {
   methods: {
-    setGruntTech(config, grunt) {
+    setGruntTech (config, grunt) {
       const effectiveCr = this.getEffectiveCr(config, grunt)
       const techArray = this.numSpellsByLevel[grunt.sc.id][effectiveCr.spellcastingLevel]
       const numTech = techArray[0]
@@ -16,7 +16,7 @@ export const Tech = {
       let totalSpells = 0
       let totalDmgSpells = 0
       const availableSpells = this.tech.filter(spell => spell.min_tech_points <= tpSpent && spell[grunt.sc.id] === 'x')
-      for (let i = 1 i <= numTech i++) {
+      for (let i = 1; i <= numTech; i++) {
         if (availableSpells.length < 1) {
           continue
         }
@@ -36,7 +36,7 @@ export const Tech = {
       }
     }
   },
-  data() {
+  data () {
     return {
       tech: [],
       progressions: {
@@ -108,7 +108,7 @@ export const Tech = {
       }
     }
   },
-  created() {
-    this.tech = this.getData('spells').data.filter(spell => spell.type === 'tech')
+  created () {
+    this.tech = this.getData('spells').filter(spell => spell.type === 'tech')
   }
 }

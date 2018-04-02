@@ -19,7 +19,8 @@ module.exports = {
   plugins: [
     '~/plugins/vuetify.js',
     { src: '~/plugins/persistentState.js', ssr: false },
-    '~/plugins/filters/index.js'
+    '~/plugins/filters/index.js',
+    '~/plugins/vue2-filters'
   ],
   css: [
     '~/assets/style/app.styl'

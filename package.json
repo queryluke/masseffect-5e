@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "nuxt": "^1.0.0",
+    "vue2-filters": "^0.3.0",
     "vuetify": "^1.0.0",
     "vuex-persistedstate": "^2.5.1"
   },

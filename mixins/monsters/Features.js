@@ -1,6 +1,6 @@
 export const Features = {
   methods: {
-    setMonsterFeatures(monster) {
+    setMonsterFeatures (monster) {
       const weapons = this.getMutableData('weapons')
       const grenades = this.getMutableData('grenades')
       const features = this.getMutableData('monsterFeatures')
@@ -28,7 +28,7 @@ export const Features = {
         console.log(`Feature not found: ${monster.name} | ${featureId}`)
       }
     },
-    addFeature(monster, feature) {
+    addFeature (monster, feature) {
       switch (feature.type) {
         case 'reaction': {
           monster.reactions.push(feature)

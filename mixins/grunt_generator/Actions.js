@@ -1,6 +1,6 @@
 export const Actions = {
   methods: {
-    setGruntActions(config, grunt) {
+    setGruntActions (config, grunt) {
       const crMetaLevel = parseFloat(config.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(config.cr.cr) / 4)
 
       if (grunt.sc.id === 'infiltrator') {
@@ -48,12 +48,12 @@ export const Actions = {
       }
     }
   },
-  data() {
+  data () {
     return {
       grenades: []
     }
   },
-  created() {
+  created () {
     this.grenades = this.getMutableData('grenades').map(grenade => {
       const dmgAmt = grenade.damage_amount ? parseInt(grenade.damage_amount, 10) : 0
       const dmg = grenade.dd ? (((parseInt(grenade.dd.replace(/\D/gi, ''), 10) * 2) + 1) / 2) : 0

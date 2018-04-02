@@ -1,6 +1,6 @@
 export const Ac = {
   methods: {
-    setGruntAc(config, grunt) {
+    setGruntAc (config, grunt) {
       const acModArray = [-2, -1, -1, 0, 1, 1, 2]
 
       if (grunt.race.id === 'geth' || grunt.race.id === 'unshackled-ai') {

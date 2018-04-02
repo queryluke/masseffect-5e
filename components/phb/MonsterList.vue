@@ -18,16 +18,15 @@
 </template>
 
 <script>
-  import BookmarkButton from "./BookmarkButton.vue";
-  import StatBlock from "./StatBlock.vue";
+  import BookmarkButton from '~/components/shared/BookmarkButton.vue'
+  import StatBlock from '~/components/shared/StatBlock.vue'
 
   export default {
     components: {
       StatBlock,
       BookmarkButton
     },
-    name: 'MonsterList',
-    props: ['monsters'],
-  };
+    props: ['monsters']
+  }
 </script>
 

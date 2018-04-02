@@ -1,6 +1,6 @@
 export const RandomValue = {
   methods: {
-    randomValue(array) {
+    randomValue (array) {
       return array[Math.floor(Math.random() * array.length)]
     }
   }
