@@ -8,7 +8,7 @@
           h1.sr-only Mass Effect 5e
           h2.headline.mt-4 Mass Effect + D&D 5th Edition
           p.subheading An Unofficial D&D 5th Edition homebrew for Mass Effect
-          v-btn(to="/phb" dark large).primary.my-3 Get Started
+          v-btn(to="/phb/intro" dark large).primary.my-3 Get Started
     // Intro Section
     section
       v-layout(column wrap align-center).my-5
@@ -78,7 +78,7 @@
                 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
                 Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.
               v-card-actions
-                v-btn(to="/phb" flat) Get Started #[v-icon chevron_right]
+                v-btn(to="/phb/intro" flat) Get Started #[v-icon chevron_right]
           v-flex(md5).hidden-sm-and-down.text-xs-center
             img(src="/images/misc/datapad.png" height="300" alt="data pad").px-5
           // Grunt Generator
@@ -94,7 +94,7 @@
                 Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.
               v-card-actions
                 v-spacer
-                v-btn(to="/phb" flat) Generate #[v-icon chevron_right]
+                v-btn(to="/tools/grunts" flat) Generate #[v-icon chevron_right]
           // Printables
           v-flex(xs12 md7)
             v-card.elevation-0.transparent
@@ -105,7 +105,7 @@
                 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
                 Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.
               v-card-actions
-                v-btn(to="/phb" flat) Print #[v-icon chevron_right]
+                v-btn(to="/assets" flat) Print #[v-icon chevron_right]
           v-flex(md5).hidden-sm-and-down.text-xs-center
             img(src="/images/misc/tt_assets.png" height="300").px-5
 </template>

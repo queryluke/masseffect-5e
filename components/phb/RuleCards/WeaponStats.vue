@@ -24,7 +24,7 @@
         play with the #[a(v-on:click="showGlobalDialog('thermal-clips-variant')") Variant: Thermal Clip] rule for an additional challenge.
       p.
         For Heavy Weapons, Heat is substituted for Charges. You can use the heavy weapon a number of times equal to its
-        charges. See #[router-link(to="/rules/consumables") Consumables] for resupplying information.
+        charges. See #[nuxt-link(to="/phb/items") Other Items] for resupplying information.
 </template>
 
 <script>

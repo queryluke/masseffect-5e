@@ -102,10 +102,10 @@
             href: '/phb/bestiary'
           },
           {
-            title: 'GM Tools',
+            title: 'Tools',
             icon: 'extension',
             items: [
-              {href: '/gm-tools/grunts', title: 'Grunts'}
+              {href: '/tools/grunts', title: 'Grunts Generator'}
             ]
           }
         ]
