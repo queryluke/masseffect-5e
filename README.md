@@ -1,52 +1,21 @@
 # Mass Effect 5e
 A homebrew conversion of Dungeons & Dragons 5th Edition into the Mass Effect Universe.
 
- [View the Site](http://n7.world/)
+[View the Site](http://n7.world/)
  
- ## How it's made
- 
- 1. Site is generated via Github Pages
- 2. Multiple Google sheetss are converted via the ruby script **generate.rb**
- 
- ## Contributing
- 
- ### Making suggestions
- 
- If you'd like to make suggestions for the system itself, check out the [contributing guide](http://n7.world/about)
- in the about section.
- 
- If you want to contribute code, see below.
- 
- ### Working on the site
- * You need to have Bundler installed `gem install bundler`
- * Clone the repo
- * Within the site dir: `bundle install`
- 
- To run locally:
- 
- * `jekyll serve` or `bundle exec jekyll serve`
- * Site is available at localhost:4000
- 
- ### Working on the phb
-  * Do everything in the working on the site section (including running `jekyll serve`)
-  * Install [node.js](https://nodejs.org/en/)
-  * execute the following commands
-  * cd into the **phb-app** directory
-  * `npm install`
-  
-To run locally:
- * `gulp serve`
- * Site will be available at localhost:3000
+## How it's made
+1. Majority of info is stored on a variety of Google Sheets, converted to json with ruby
+2. Web App created with [Vue.js](http://vuejs.org/), [Vuetify.js](https://vuetifyjs.com), and [Nuxt.js](https://nuxtjs.org/)
+3. [Hosted by Github Pages](https://pages.github.com/)
 
-To build a distribution:
-* in **phb-app**, run `gulp`, and commit the compiled code
+## Contributing
 
+### Making suggestions about the system
 
-# mass-effect-5e
+[Feedback form](https://goo.gl/forms/3wZj8QhlsLv3XOJw1)
 
-> Mass Effect + D&D 5e
-
-## Build Setup
+### Working on the site
+Requirements: [Node.js](https://nodejs.org/)
 
 ``` bash
 # install dependencies
