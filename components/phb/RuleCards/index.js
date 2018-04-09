@@ -25,7 +25,6 @@ import SexyLevel from './SexyLevel.vue'
 import Shields from './Shields.vue'
 import SpellSaveDc from './SpellSaveDc.vue'
 import TechPowers from './TechPowers.vue'
-import ThermalClips from './ThermalClips.vue'
 import ThermalClipsVariant from './ThermalClipsVariant.vue'
 import WeaponAttributes from './WeaponAttributes.vue'
 import WeaponProficiency from './WeaponProficiency.vue'
@@ -60,7 +59,6 @@ export default {
   Shields,
   SpellSaveDc,
   TechPowers,
-  ThermalClips,
   ThermalClipsVariant,
   WeaponAttributes,
   WeaponProficiency,

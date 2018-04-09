@@ -22,11 +22,10 @@
 </template>
 
 <script>
-  import MeElement from "./MeElement.vue";
+  import MeElement from '~/components/shared/MeElement.vue'
 
   export default {
-    name: 'GrenadeInfo',
-    props: ['grenade'],
     components: { MeElement },
-  };
+    props: ['grenade']
+  }
 </script>

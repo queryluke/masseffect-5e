@@ -4,6 +4,8 @@
       slot(name="header")
     v-card-text
       slot(name="text")
+    v-card-actions
+      slot(name="actions")
 </template>
 
 <script>

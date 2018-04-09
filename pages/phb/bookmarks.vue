@@ -9,6 +9,7 @@
           v-card-text
             spell-info(:spell="card" v-if="type === 'spell'")
             weapon-info(:weapon="card" v-if="type === 'weapon'")
+            grenade-info(:grenade="card" v-if="type === 'grenade'")
             stat-block(:stats="card" v-if="type === 'npc'")
           v-card-actions
             bookmark-button(:card="card" v-bind:type="type" v-bind:props="{flat: true}")
@@ -20,9 +21,11 @@
   import WeaponInfo from '~/components/shared/WeaponInfo.vue'
   import BookmarkButton from '~/components/shared/BookmarkButton.vue'
   import StatBlock from '~/components/shared/StatBlock.vue'
+  import GrenadeInfo from '~/components/shared/GrenadeInfo.vue'
 
   export default {
     components: {
+      GrenadeInfo,
       StatBlock,
       SpellInfo,
       WeaponInfo,

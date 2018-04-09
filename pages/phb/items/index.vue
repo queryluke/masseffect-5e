@@ -16,10 +16,9 @@
       return {
         rules: [
           'medi-gel',
-          'thermal-clips',
-          'thermal-clips-variant',
           'grenades',
-          'heavy-weapon-charges'
+          'heavy-weapon-charges',
+          'thermal-clips-variant'
         ]
       }
     },
