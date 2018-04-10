@@ -1,5 +1,5 @@
 {
-  "updated": "January 18, 2018 @ 11:55 AM",
+  "updated": "April 10, 2018 @  2:28 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -284,7 +284,7 @@
     {
       "name": "Saboteur",
       "class": "Infiltrator",
-      "description": "Saboteurs are infiltration experts. They use a their sharp mind to subtly affect the outcome of battles.",
+      "description": "Saboteurs are infiltration experts. They use a sharp mind to subtly affect the outcome of battles.",
       "1": [
         {
           "key": "ear_for_deceit",
@@ -364,7 +364,7 @@
     {
       "name": "Mastermind",
       "class": "Sentinel",
-      "description": "Masterminds are the top strategists and battlefield experts. They can easily turn the tides by calling out orders or synchronising troop movements.",
+      "description": "Masterminds are the top strategists and battlefield experts. They can easily turn the tides by calling out orders or synchronizing troop movements.",
       "1": [
         {
           "key": "master_tactician",

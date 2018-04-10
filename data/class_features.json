@@ -1,5 +1,5 @@
 {
-  "updated": "March 20, 2018 @ 11:13 AM",
+  "updated": "April 10, 2018 @  2:26 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -119,7 +119,7 @@
       "mechanic_text_dump": "Choose2bioticspellsCastingeitherofthosespellscountsasanAttackactionByspending8hourstrainingyoucanexchangeoneorbothofthespellsyouchosefordifferentspellsofthesamelevels"
     },
     {
-      "name": "Biotic Bullrush",
+      "name": "Biotic Bull Rush",
       "mechanic": [
         {
           "id": 1,
@@ -137,7 +137,7 @@
           "data": "When you use your action to cast the Charge cantrip, you may use a bonus action to make one melee weapon attack or shove a creature. You gain +5 to the melee attack’s damage roll, or shove the creature 6m."
         }
       ],
-      "id": "biotic_bullrush",
+      "id": "biotic_bull_rush",
       "mechanic_text_dump": "LearntheChargecantripIfyouhavealreadylearnedtheChargecantripyoumaylearnanewcantripinsteadThedistanceofyourChargecantripisnow14mWhenyouuseyouractiontocasttheChargecantripyoumayuseabonusactiontomakeonemeleeweaponattackorshoveacreatureYougain5tothemeleeattacksdamagerollorshovethecreature6m"
     },
     {
@@ -172,7 +172,7 @@
             "Pull : Pull can affect large-sized objects, moving them 2m, and adding 4m to each size below large.",
             "Lift : When you cast Lift add 5 more dice to your roll.",
             "Singularity : Large-sized object can now be affected by singularity",
-            "Stasis : Target's have disadvantage on their saving throw."
+            "Stasis : Targets have disadvantage on their saving throw."
           ]
         }
       ],
@@ -636,11 +636,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Your can have 2 Drones active at once."
+          "data": "You can have 2 Drones active at once."
         }
       ],
       "id": "dual_drones",
-      "mechanic_text_dump": "Yourcanhave2Dronesactiveatonce"
+      "mechanic_text_dump": "Youcanhave2Dronesactiveatonce"
     },
     {
       "name": "Ear for Deceit",
@@ -798,7 +798,7 @@
               [
                 "Sniper",
                 "Add your dexterity modifier as damage to successful range attacks against targets that are at least 10m away.",
-                "If no hostile creature are within 10m of you, you have advantage on all ranged weapon attacks against targets at least 10m away."
+                "If no hostile creature is within 10m of you, you have advantage on all ranged weapon attacks against targets at least 10m away."
               ],
               [
                 "Defense",
@@ -815,7 +815,7 @@
         }
       ],
       "id": "fighting_style",
-      "mechanic_text_dump": "tableStylePerkAdvancedPerkBrawlerYouhaveadvantagewhenmakingmeleeattacksAddtwiceyourproficiencybonustoyourattackrollsGunslingerYoucanwield2pistolsorSMGsorcombinationthereofYouroffhandweaponalwaysshootswithadisadvantageYouwillautomaticallymisstargetsoutofrangeRemovethedisadvantageandrangepenaltytoyouroffhandweaponTheFreeHandWhenwieldingapistolyouhavea2bonustohitwithrangedspellortechattacksWhenwieldingapistolyouaddyourproficiencybonusasdamagetoalldamagingbioticspellsandtechCarnage2tohitwithattacksmadewithashotgunWhenmakinganattackrollwithashotgunyoucanaddanadditional2mtothegunsrangeThisappliestothehipfiremechanicaswellieyouhaveadvantagetohittargetswithin4mSniperAddyourdexteritymodifierasdamagetosuccessfulrangeattacksagainsttargetsthatareatleast10mawayIfnohostilecreaturearewithin10mofyouyouhaveadvantageonallrangedweaponattacksagainsttargetsatleast10mawayDefense1AC2ACProtectionVanguardOnlyWhenacreatureyoucanseeattacksatargetotherthanyouthatiswithin2mofyouyoucanuseyourreactionandexpendonebarrierticktoimposedisadvantageontheattackrollIftheattacksucceedsthebarriertickabsorbsdamageasanormalbarriertickwouldtable"
+      "mechanic_text_dump": "tableStylePerkAdvancedPerkBrawlerYouhaveadvantagewhenmakingmeleeattacksAddtwiceyourproficiencybonustoyourattackrollsGunslingerYoucanwield2pistolsorSMGsorcombinationthereofYouroffhandweaponalwaysshootswithadisadvantageYouwillautomaticallymisstargetsoutofrangeRemovethedisadvantageandrangepenaltytoyouroffhandweaponTheFreeHandWhenwieldingapistolyouhavea2bonustohitwithrangedspellortechattacksWhenwieldingapistolyouaddyourproficiencybonusasdamagetoalldamagingbioticspellsandtechCarnage2tohitwithattacksmadewithashotgunWhenmakinganattackrollwithashotgunyoucanaddanadditional2mtothegunsrangeThisappliestothehipfiremechanicaswellieyouhaveadvantagetohittargetswithin4mSniperAddyourdexteritymodifierasdamagetosuccessfulrangeattacksagainsttargetsthatareatleast10mawayIfnohostilecreatureiswithin10mofyouyouhaveadvantageonallrangedweaponattacksagainsttargetsatleast10mawayDefense1AC2ACProtectionVanguardOnlyWhenacreatureyoucanseeattacksatargetotherthanyouthatiswithin2mofyouyoucanuseyourreactionandexpendonebarrierticktoimposedisadvantageontheattackrollIftheattacksucceedsthebarriertickabsorbsdamageasanormalbarriertickwouldtable"
     },
     {
       "name": "Focused Biotics",
@@ -1420,7 +1420,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "As an action, choose up to 5 friendly creatures with shields your can see. Hack into their armor system and use a brute force algorithm to overload their kinetic barrier. Roll 4d8. Each creature immediately gains that many shield points, even if thier total shield point capacity is less than the amount rolled."
+          "data": "As an action, choose up to 5 friendly creatures with shields you can see. Hack into their armor system and use a brute force algorithm to overload their kinetic barrier. Roll 4d8. Each creature immediately gains that many shield points, even if their total shield point capacity is less than the amount rolled."
         },
         {
           "id": 2,
@@ -1429,7 +1429,7 @@
         }
       ],
       "id": "shield_boost",
-      "mechanic_text_dump": "Asanactionchooseupto5friendlycreatureswithshieldsyourcanseeHackintotheirarmorsystemanduseabruteforcealgorithmtooverloadtheirkineticbarrierRoll4d8EachcreatureimmediatelygainsthatmanyshieldpointsevenifthiertotalshieldpointcapacityislessthantheamountrolledOnceyouusethisfeatureyoumustfinishashortorlongrestbeforeyoucanuseitagain"
+      "mechanic_text_dump": "Asanactionchooseupto5friendlycreatureswithshieldsyoucanseeHackintotheirarmorsystemanduseabruteforcealgorithmtooverloadtheirkineticbarrierRoll4d8EachcreatureimmediatelygainsthatmanyshieldpointseveniftheirtotalshieldpointcapacityislessthantheamountrolledOnceyouusethisfeatureyoumustfinishashortorlongrestbeforeyoucanuseitagain"
     },
     {
       "name": "Signature Biotics",
@@ -1437,7 +1437,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "When you reach 20th level, you gain mastery over two powerful spells and can cast them with little effort. Choose two 2nd or 3rd-level biotic spells in your spellbook as your signature biotics. You can cast each of them once at 3rd level without expending a spell slot. When you do so, you can't do so again until you finish a short or long rest."
+          "data": "When you reach 20th level, you gain mastery over two powerful spells and can cast them with little effort. Choose two 2nd or 3rd-level biotic spells you know as your signature biotics. You can cast each of them once at 3rd level without expending a spell slot. When you do so, you can't do so again until you finish a short or long rest."
         },
         {
           "id": 2,
@@ -1446,7 +1446,7 @@
         }
       ],
       "id": "signature_biotics",
-      "mechanic_text_dump": "Whenyoureach20thlevelyougainmasteryovertwopowerfulspellsandcancastthemwithlittleeffortChoosetwo2ndor3rdlevelbioticspellsinyourspellbookasyoursignaturebioticsYoucancasteachofthemonceat3rdlevelwithoutexpendingaspellslotWhenyoudosoyoucantdosoagainuntilyoufinishashortorlongrestIfyouwanttocasteitherspellat4thlevelorhigheryoumustexpendaspellslotasnormal"
+      "mechanic_text_dump": "Whenyoureach20thlevelyougainmasteryovertwopowerfulspellsandcancastthemwithlittleeffortChoosetwo2ndor3rdlevelbioticspellsyouknowasyoursignaturebioticsYoucancasteachofthemonceat3rdlevelwithoutexpendingaspellslotWhenyoudosoyoucantdosoagainuntilyoufinishashortorlongrestIfyouwanttocasteitherspellat4thlevelorhigheryoumustexpendaspellslotasnormal"
     },
     {
       "name": "Silent Cloak",
@@ -1757,7 +1757,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Starting at 6th level, the your biotic mastery allows you to overcome grievous injuries. When you would make a death saving throw, you can instead spring back to your feet with a burst of biotic energy. You immediately stand up (if you so choose), and you regain hit points equal to half your hit point maximum. All hostile creatures within 10m of you take 10 + your Charisma modifier necrotic damage and are {poisoned} until the end of your next turn."
+          "data": "Starting at 6th level, your biotic mastery allows you to overcome grievous injuries. When you would make a death saving throw, you can instead spring back to your feet with a burst of biotic energy. You immediately stand up (if you so choose), and you regain hit points equal to half your hit point maximum. All hostile creatures within 10m of you take 10 + your Charisma modifier necrotic damage and are {poisoned} until the end of your next turn."
         },
         {
           "id": 2,
@@ -1766,7 +1766,7 @@
         }
       ],
       "id": "vengeance",
-      "mechanic_text_dump": "Startingat6thleveltheyourbioticmasteryallowsyoutoovercomegrievousinjuriesWhenyouwouldmakeadeathsavingthrowyoucaninsteadspringbacktoyourfeetwithaburstofbioticenergyYouimmediatelystandupifyousochooseandyouregainhitpointsequaltohalfyourhitpointmaximumAllhostilecreatureswithin10mofyoutake10yourCharismamodifiernecroticdamageandarepoisoneduntiltheendofyournextturnOnceyouusethisfeatureyoucantuseitagainuntilyoufinishalongrest"
+      "mechanic_text_dump": "Startingat6thlevelyourbioticmasteryallowsyoutoovercomegrievousinjuriesWhenyouwouldmakeadeathsavingthrowyoucaninsteadspringbacktoyourfeetwithaburstofbioticenergyYouimmediatelystandupifyousochooseandyouregainhitpointsequaltohalfyourhitpointmaximumAllhostilecreatureswithin10mofyoutake10yourCharismamodifiernecroticdamageandarepoisoneduntiltheendofyournextturnOnceyouusethisfeatureyoucantuseitagainuntilyoufinishalongrest"
     },
     {
       "name": "Weapon of Choice",
@@ -1817,7 +1817,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "When you make a melee attack, instead of rolling a dice, you can flip a coin. On a heads, it's a critical hit. On a tails, it's a critical miss. You can use this ability once per short rest."
+          "data": "When you make a melee attack, instead of rolling a dice, you can flip a coin. On heads, it's a critical hit. On tails, it's a critical miss. You can use this ability once per short rest."
         },
         {
           "id": 2,
@@ -1831,7 +1831,7 @@
         }
       ],
       "id": "zero-sum",
-      "mechanic_text_dump": "WhenyoumakeameleeattackinsteadofrollingadiceyoucanflipacoinOnaheadsitsacriticalhitOnatailsitsacriticalmissYoucanusethisabilityoncepershortrestStartingatthe9thlevelyoucanusethisabilitytwicepershortrestStartingatthe11thlevelyoucanusethisabilitythreetimespershortrest"
+      "mechanic_text_dump": "WhenyoumakeameleeattackinsteadofrollingadiceyoucanflipacoinOnheadsitsacriticalhitOntailsitsacriticalmissYoucanusethisabilityoncepershortrestStartingatthe9thlevelyoucanusethisabilitytwicepershortrestStartingatthe11thlevelyoucanusethisabilitythreetimespershortrest"
     }
   ]
 }
