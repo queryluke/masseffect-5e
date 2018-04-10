@@ -20,10 +20,16 @@ export default {
         return post
       })
       this.dispatch('loadPosts', posts)
+
+      const versions = fs.readdirSync('changelog').map(file => file.replace(/.md$/, ''))
+      this.dispatch('loadVersions', versions)
     }
   },
   loadPosts ({commit}, posts) {
     commit('updatePosts', posts)
+  },
+  loadVersions ({commit}, versions) {
+    commit('updateVersions', versions)
   },
   addBookmark ({commit}, payload) {
     commit('addBookmark', payload)

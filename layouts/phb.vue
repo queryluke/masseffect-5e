@@ -2,10 +2,9 @@
   v-app(toolbar)
     phb-navigation
     main-toolbar
-    v-content
-      v-container(fluid fill-height).blue-grey.lighten-4
-        h1.sr-only Mass Effect 5e - Player's Handbook
-        nuxt
+    v-content.blue-grey.lighten-4
+      h1.sr-only Mass Effect 5e - Player's Handbook
+      nuxt
     global-dialog
 </template>
 

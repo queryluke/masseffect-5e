@@ -7,13 +7,14 @@
             v-list-tile-content
               v-list-tile-title {{ item.title }}
           template(v-for="(subItem, i) in item.items")
-            v-list-tile(:key="i" v-bind="{to: subItem.href, href: subItem.href }" ripple)
+            v-list-tile(:key="i" v-bind="{to: subItem.href, href: subItem.href }" ripple nuxt)
               v-list-tile-content
                 v-list-tile-title {{ subItem.title }}
         v-subheader(v-else-if="item.header") {{ item.header }}
         v-divider(v-else-if="item.divider")
         v-list-tile(
           v-bind="{ to: item.href, href: item.href }"
+          nuxt
           ripple
           rel="noopener"
           v-else
@@ -22,18 +23,9 @@
             v-icon {{ item.icon }}
           v-list-tile-content
             v-list-tile-title {{ item.title }}
-      v-list-tile(
-        v-bind="{ to: '/phb/bookmarks', href: '/phb/bookmarks'}"
-        ripple
-        rel="noopener"
-      )
-        v-list-tile-action
-          v-icon book
-        v-list-tile-content
-          v-list-tile-title Bookmarks
-        v-list-tile-action.text-right
-          v-badge(left v-if="bookmarkCount > 0")
-            span(slot="badge") {{ bookmarkCount }}
+          v-list-tile-action(v-if="item.icon === 'book'").text-xs-right
+            v-badge(left v-if="bookmarkCount > 0")
+              span(slot="badge") {{ bookmarkCount }}
 </template>
 
 <script>
@@ -107,6 +99,11 @@
             items: [
               {href: '/tools/grunts', title: 'Grunts Generator'}
             ]
+          },
+          {
+            title: 'Bookmarks',
+            icon: 'book',
+            href: '/phb/bookmarks'
           }
         ]
       }

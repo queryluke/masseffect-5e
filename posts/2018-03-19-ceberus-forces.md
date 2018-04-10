@@ -58,6 +58,6 @@ and all armor proficiency and starting equipment is on the class.
 ## Skill changes
 Finally, the skill changes were made to accomodate the upcoming Backgrounds and a large vehicle/space travel addition Swampson is working on.
 
-Details of all changes can be found in the [changelog](https://github.com/queryluke/masseffect-5e/blob/master/CHANGELOG.md).
+Details of all changes can be found in the [changelog](/changelog).
 
 [Feedback Welcome!](https://goo.gl/forms/3wZj8QhlsLv3XOJw1)

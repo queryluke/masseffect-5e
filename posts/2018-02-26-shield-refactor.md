@@ -58,5 +58,5 @@ now have tooltips. And we've added spell cards to the [Printables]({{ site.githu
 thanks to Swampson for banging those out. We're not 100% on the layout and style, but when we are, we'll release a
 printing guide to go along with them.
 
-As always, the [changelog](https://github.com/queryluke/masseffect-5e/blob/master/CHANGELOG.md) is available for all the
+As always, the [changelog](/changelog) is available for all the
 nitty gritty details.

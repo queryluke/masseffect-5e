@@ -1,3 +1,8 @@
+function versionTotal (version) {
+  const parts = version.split('.')
+  return (parseInt(parts[0], 10) * 100) + (parseInt(parts[1], 10) * 10) + (parseInt(parts[2], 10) * 1)
+}
+
 export default {
   bookmarkCount: (state, getters) => {
     return getters.bookmarks.length
@@ -57,5 +62,18 @@ export default {
   },
   tooltips: (state, getters) => {
     return getters.getData('conditions')
+  },
+  getVersion: state => {
+    return state.version
+  },
+  getVersions: state => {
+    return state.versions.sort((a, b) => {
+      const verA = versionTotal(a)
+      const verB = versionTotal(b)
+      if (verA === verB) {
+        return 0
+      }
+      return (verA < verB) ? 1 : -1
+    })
   }
 }

@@ -4,6 +4,8 @@
       img(src="/images/me5e_logo_notm.png" height="90px")
     v-flex(xs12).text-xs-center
       h1.display-3 Player's Handbook Introduction
+      h2.title v{{ version }}
+      v-btn(to="/changelog" nuxt).primary Changelog
     v-flex(xs12)
       v-card.elevation-0.transparent
         v-card-text
@@ -26,7 +28,14 @@
 </template>
 
 <script>
+  import {mapGetters} from 'vuex'
   export default {
+    computed: {
+      ...mapGetters(['getVersion']),
+      version () {
+        return this.getVersion
+      }
+    },
     head () {
       return {
         title: 'Mass Effect 5e | Player\'s Handbook',

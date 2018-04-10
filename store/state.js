@@ -1,4 +1,5 @@
 import data from './data'
+const config = require('~/package.json')
 
 export default {
   bookmarks: [],
@@ -21,5 +22,7 @@ export default {
   sidebar: true,
   tooltips: [],
   posts: [],
-  data
+  data,
+  version: config.version,
+  versions: []
 }

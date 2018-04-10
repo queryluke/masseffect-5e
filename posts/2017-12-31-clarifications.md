@@ -39,7 +39,7 @@ for creating armor mods in the armor rules section. So feel free to create your 
 ## Feedback form
 And finally, I've added a [Google Form](https://goo.gl/forms/3wZj8QhlsLv3XOJw1) so anyone can provide feedback without having to make a Github account.
 
-As always, be sure to review the [changelog](https://github.com/queryluke/masseffect-5e/blob/master/CHANGELOG.md) for all
+As always, be sure to review the [changelog](/changelog) for all
 the changes. Sorry for the short post. Swampson and I are working on a couple of pretty significant additions that
 I'm hoping to get out in the next few weeks.
 

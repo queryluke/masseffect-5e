@@ -1,15 +1,7 @@
 <template lang="pug">
   v-app(toolbar)
     main-toolbar
-    v-content
-      v-container
-        v-layout(row wrap)
-          v-flex(xs12)
-            nuxt
-          v-flex(xs12)
-            v-btn(to="/news" nuxt).primary
-              v-icon keyboard_arrow_left
-              span Back to news
+    nuxt
     main-footer
 </template>
 

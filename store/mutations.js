@@ -35,5 +35,8 @@ export default {
   },
   updatePosts (state, payload) {
     state.posts = payload
+  },
+  updateVersions (state, payload) {
+    state.versions = payload
   }
 }
