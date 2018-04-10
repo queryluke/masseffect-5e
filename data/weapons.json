@@ -1,5 +1,5 @@
 {
-  "updated": "March 19, 2018 @  4:19 PM",
+  "updated": "April 10, 2018 @  1:54 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSq70x_GZuDKcELgX8k_7Hd6nLGu3DoIEdDwP-YEGjUU-ghGc7ot_Q7140FZwGbEalHgzPwVm4BN8y_/pubhtml",
   "data": [
     {
@@ -29,7 +29,7 @@
       "notes_text_dump": "DealsforcedamageDamagedonebythisweaponcannotbereducedbyusingbarrierticks"
     },
     {
-      "name": "Adas Anti-Synthetic Rifle ",
+      "name": "Adas Anti-Synthetic Rifle",
       "type": "Assault Rifle",
       "cost": "34000",
       "manufacturer": "Quarian",
@@ -169,7 +169,7 @@
       "notes_text_dump": "Ignores2AContargetswithinrange"
     },
     {
-      "name": "Cerberus Harrier ",
+      "name": "Cerberus Harrier",
       "type": "Assault Rifle",
       "cost": "10000",
       "manufacturer": "Cerberus",
@@ -201,7 +201,7 @@
       "damage": "8",
       "range": "80m",
       "rare": "x",
-      "tags": "Charge,  Two-handed",
+      "tags": "Charge, Two-handed",
       "notes": [
         {
           "id": 1,
@@ -232,7 +232,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Choose a creature within 60m that you can see and begin Targeting that creature. At the start of your turn, if you successfully held your targeting on the creature,  you launch a missile that deals 8d12 thunder damage."
+          "data": "Choose a creature within 60m that you can see and begin Targeting that creature. At the start of your turn, if you successfully held your targeting on the creature, you launch a missile that deals 8d12 thunder damage."
         }
       ],
       "npcHit": null,
@@ -510,7 +510,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "When you hit with an attack using this weapon, the the target must make a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way."
+          "data": "When you hit with an attack using this weapon, the target must make a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way."
         }
       ],
       "npcHit": "the target must make a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.",
@@ -518,7 +518,7 @@
       "dmgType": "piercing",
       "image": null,
       "id": "kahjean_venom_dagger",
-      "notes_text_dump": "WhenyouhitwithanattackusingthisweaponthethetargetmustmakeaDC11Constitutionsavingthrowtaking103d6poisondamageonafailedsaveorhalfasmuchdamageonasuccessfuloneIfthepoisondamagereducesthetargetto0hitpointsthetargetisstablebutpoisonedfor1hourevenafterregaininghitpointsandisparalyzedwhilepoisonedinthisway"
+      "notes_text_dump": "WhenyouhitwithanattackusingthisweaponthetargetmustmakeaDC11Constitutionsavingthrowtaking103d6poisondamageonafailedsaveorhalfasmuchdamageonasuccessfuloneIfthepoisondamagereducesthetargetto0hitpointsthetargetisstablebutpoisonedfor1hourevenafterregaininghitpointsandisparalyzedwhilepoisonedinthisway"
     },
     {
       "name": "Kishock Harpoon Gun",
@@ -656,7 +656,7 @@
       "heat": "2",
       "rof": "4",
       "damage": "4",
-      "range": "18m",
+      "range": "10m",
       "rare": null,
       "tags": null,
       "notes": [
@@ -672,12 +672,12 @@
     {
       "name": "M-13 Raptor",
       "type": "Sniper Rifle",
-      "cost": "3500",
+      "cost": "4500",
       "manufacturer": "Cerberus",
       "weight": "5",
       "heat": "15",
       "rof": "1",
-      "damage": "6",
+      "damage": "8",
       "range": "60m",
       "rare": null,
       "tags": "Two-handed, Double Tap, Hip Fire",
@@ -766,9 +766,9 @@
       "heat": "4",
       "rof": "3",
       "damage": "4",
-      "range": "6m",
+      "range": "8m",
       "rare": null,
-      "tags": null,
+      "tags": "Double Tap",
       "notes": [
 
       ],
@@ -923,7 +923,7 @@
       "weight": "2",
       "heat": "3",
       "rof": "6",
-      "damage": "4",
+      "damage": "1",
       "range": "4m",
       "rare": null,
       "tags": null,
@@ -1154,11 +1154,11 @@
     {
       "name": "M-8 Avenger",
       "type": "Assault Rifle",
-      "cost": "10000",
+      "cost": "7500",
       "manufacturer": "Elkoss Combine",
       "weight": "3",
       "heat": "3",
-      "rof": "4",
+      "rof": "3",
       "damage": "4",
       "range": "20m",
       "rare": null,
@@ -1268,12 +1268,12 @@
     {
       "name": "M-96 Mattock",
       "type": "Assault Rifle",
-      "cost": "3500",
+      "cost": "5500",
       "manufacturer": "Unknown",
       "weight": "3",
       "heat": "16",
       "rof": "1",
-      "damage": "6",
+      "damage": "10",
       "range": "40m",
       "rare": null,
       "tags": "Two-handed, Double Tap",
@@ -1332,7 +1332,7 @@
           "data": "Ignores half and three-quarter cover. On a hit, if the target is not behind cover, it takes twice as much damage."
         }
       ],
-      "npcHit": "if the target is not behind cover, it takes an twice as much damage.",
+      "npcHit": "if the target is not behind cover, it takes twice as much damage.",
       "addDmg": null,
       "dmgType": "piercing",
       "image": "http://vignette2.wikia.nocookie.net/masseffect/images/1/1d/ME3_Widow_Sniper_Rifle.png/revision/latest?cb=20120317191850",
@@ -1355,7 +1355,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Custom made for it's owner, when you purchase this weapon, you may choose one of the following:"
+          "data": "Custom made for its owner, when you purchase this weapon, you may choose one of the following:"
         },
         {
           "id": 2,
@@ -1646,6 +1646,32 @@
       "notes_text_dump": "DrawingtheOmniTaserisafreeactionHavingthisweaponequippeddoesnotrequireaweaponslot"
     },
     {
+      "name": "Omni-Torch",
+      "type": "Melee",
+      "cost": "10500",
+      "manufacturer": null,
+      "weight": "0",
+      "heat": "1",
+      "rof": "1",
+      "damage": "6",
+      "range": "2m",
+      "rare": null,
+      "tags": "Fire, Light",
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Drawing the Omni-Torch is a free action. Having this weapon equipped does not require a weapon slot."
+        }
+      ],
+      "npcHit": null,
+      "addDmg": null,
+      "dmgType": "fire",
+      "image": null,
+      "id": "omni-torch",
+      "notes_text_dump": "DrawingtheOmniTorchisafreeactionHavingthisweaponequippeddoesnotrequireaweaponslot"
+    },
+    {
       "name": "Omni-Whip",
       "type": "Melee",
       "cost": "11500",
@@ -1760,7 +1786,7 @@
       "notes": [
 
       ],
-      "npcHit": "deals half of the damage roll  as lightning damage to 1 additional creature within 2m of the target.",
+      "npcHit": "deals half of the damage roll as lightning damage to 1 additional creature within 2m of the target.",
       "addDmg": null,
       "dmgType": "lightning",
       "image": "http://vignette2.wikia.nocookie.net/masseffect/images/6/60/ME3_Reegar_Carbine.png/revision/latest?cb=20120530214009",
@@ -1909,7 +1935,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Spend a round Targeting a 10m x 20m rectangle, up to 60m away. At the start of your turn, call down an orbital strike. Creatures within the rectangle make a Dexterity saving throw. On a failed save, a creature take 8d12 thunder damage. On a success, a creature takes half damage."
+          "data": "Spend a round Targeting a 10m x 20m rectangle, up to 60m away. At the start of your turn, call down an orbital strike. Creatures within the rectangle make a Dexterity saving throw. On a failed save, a creature takes 8d12 thunder damage. On a success, a creature takes half damage."
         }
       ],
       "npcHit": null,
@@ -1917,7 +1943,7 @@
       "dmgType": "thunder",
       "image": "http://vignette2.wikia.nocookie.net/masseffect/images/3/3d/ME3_Sync_Laser_Heavy_Weapon.png/revision/latest?cb=20120317195655",
       "id": "sync_laser",
-      "notes_text_dump": "SpendaroundTargetinga10mx20mrectangleupto60mawayAtthestartofyourturncalldownanorbitalstrikeCreatureswithintherectanglemakeaDexteritysavingthrowOnafailedsaveacreaturetake8d12thunderdamageOnasuccessacreaturetakeshalfdamage"
+      "notes_text_dump": "SpendaroundTargetinga10mx20mrectangleupto60mawayAtthestartofyourturncalldownanorbitalstrikeCreatureswithintherectanglemakeaDexteritysavingthrowOnafailedsaveacreaturetakes8d12thunderdamageOnasuccessacreaturetakeshalfdamage"
     },
     {
       "name": "Venom Shotgun",
