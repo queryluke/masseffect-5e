@@ -39,6 +39,22 @@ export default {
   getProgressionHeaders: state => name => {
     return state.data[`${name}Progression`].headers
   },
+  getPost: state => slug => {
+    return state.posts.find(post => post.slug === slug)
+  },
+  getPosts: state => (limit = null, order = 'desc') => {
+    const sortOrder = order === 'desc' ? 1 : -1
+    let posts = state.posts.sort((a, b) => {
+      if (a === b) {
+        return 0
+      }
+      return (a.created < b.created) ? sortOrder : sortOrder * -1
+    })
+    if (Number.isInteger(limit)) {
+      posts.slice(0, limit)
+    }
+    return posts
+  },
   tooltips: (state, getters) => {
     return getters.getData('conditions')
   }

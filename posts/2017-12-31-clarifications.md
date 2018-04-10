@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Version 0.4.0"
-description: "Overview of rule changes in Mass Effect 5e v0.4.0"
-excerpt: Minor changes overall, increased spell damage, and Armor sets.
+title: "Version 0.4.0 - Armor Sets & Mods"
+description: "Armor sets added. Biotic and Tech power damage has been increased. And we've got a new way for you to get involved"
+image: https://vignette.wikia.nocookie.net/masseffect/images/3/3f/Thessia_ground_assault.png/revision/latest/scale-to-width-down/640?cb=20130517150006
 ---
 
 Overall, [Swampson](https://github.com/Swampson) has helped me fix my wording can clarify a lot of rules that didn't make sense

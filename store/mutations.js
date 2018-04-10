@@ -32,5 +32,8 @@ export default {
       state.encounter.npcs.counts.splice(index, 1)
       state.encounter.npcs.list.splice(index, 1)
     }
+  },
+  updatePosts (state, payload) {
+    state.posts = payload
   }
 }

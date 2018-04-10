@@ -2,13 +2,13 @@
 @import './_attribute.styl'
 @import './_sortable_list.styl'
 @import './_dictionary_list.styl'
+@import './_date_grid.styl'
 
 // Import Vuetify styling
 @require '~vuetify/src/stylus/main.styl'
 
 .page
   @extend .fade-transition
-
 
 .sr-only
   position: absolute;
@@ -47,3 +47,17 @@ ul.list-unstyled
 
 .small-caps
   font-variant: small-caps;
+
+.me-title-logo
+  width: 100%;
+  height: auto;
+
+@media screen and (min-width: 960px)
+  .me-title-logo
+    width: auto;
+    height: 200px;
+
+.parallax-title {
+  text-shadow: 0px 0px 5px black;
+  font-size: 4em;
+}

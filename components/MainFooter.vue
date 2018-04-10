@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-footer(height="auto")
+  v-footer(height="auto" dark id="mainFooter")
     v-card(flat tile style="background-color: #000000" width="100%").text-xs-center
       v-card-text
         p.
@@ -14,3 +14,9 @@
           and are licensed under a #[a(href="http://creativecommons.org/licenses/by/4.0/" target="_blank") Creative Commons Attribution 4.0 International license].
         div © {{ new Date().getFullYear() }}
 </template>
+
+<style>
+  #mainFooter a {
+    color: #4FC3F7;
+  }
+</style>

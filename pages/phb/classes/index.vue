@@ -2,7 +2,7 @@
   div
     h2.display-3 Classes
     v-layout(row wrap)
-      v-flex(v-for="item in items" v-bind:key="item.id").xs12.sm6.md4
+      v-flex(v-for="item in items" v-bind:key="item.id" d-flex).xs12.sm6.md4
         v-card(:to="{ name: 'phb-classes-id', params: { id: item.id }}" hover).ma-2
           v-container(fluid grid-list-lg)
             v-layout(row wrap)

@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Version 0.1.0-alpha ready!"
-description: "Press Release for the initial release of Mass Effect 5e"
-excerpt: "What does that mean..."
+description: "Classes, races, and spells, oh my! The skeleton of an awesome homebrew."
+image: https://vignette.wikia.nocookie.net/masseffect/images/8/8c/Project_lazarus_-_shep_skeleton_%28after%29.png/revision/latest/scale-to-width-down/640?cb=20140710175851
 ---
 
 Version 0.1.0-alpha means this bad boy is just getting started. But it's at a point where I'm ready for the first 

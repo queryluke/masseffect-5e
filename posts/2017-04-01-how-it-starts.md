@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "How it starts"
-description: "A summary of how the Mass Effect 5e project started"
-excerpt_separator: <!--more-->
+description: "The origin story or Mass Effect 5e. Learn about how the system germinated."
+image: https://vignette.wikia.nocookie.net/masseffect/images/e/e1/Normandy_Render.png/revision/latest/scale-to-width-down/1000?cb=20120703201556
 ---
 
 In early 2017, I began listening to [The Adventure Zone](http://www.maximumfun.org/shows/adventure-zone)

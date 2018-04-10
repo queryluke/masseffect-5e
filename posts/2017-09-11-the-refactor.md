@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "The refactor: So much change, it's basically new"
-description: "Reasoning for major rule and system changes."
-excerpt: Wall of text incoming! 
+description: "We've overhauled the Mass Effect 5e, making it better than it was before. Better, stronger, faster."
+image: https://vignette.wikia.nocookie.net/masseffect/images/9/9d/Mass_relay_montage.png/revision/latest/scale-to-width-down/640?cb=20141021134527
 ---
 
 ## Shoutout

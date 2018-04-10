@@ -12,7 +12,7 @@
         Otherwise, finding grenades may be a bit more difficult, requiring you to barter, steal, or loot them.
       p A recommended cost is 500-1000 credits per grenade or mine.
     template(slot="actions")
-      v-btn(flat to="/phb/items/grenades" nuxt="true")
+      v-btn(flat to="/phb/items/grenades" nuxt=true)
         span Grenade List
         v-icon keyboard_arrow_right
 </template>

@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Version 0.3.0"
-description: "Outline and reasoning for the system's weapon refactor"
-excerpt: Time for a weapon refactor.
+title: "Version 0.3.0 - Weapon Update"
+description: "The weapons have been aligned with Mass Effect 1, 2, & 3 weapon stats"
+image: https://vignette.wikia.nocookie.net/masseffect/images/a/ad/ME1_Assault_Rifle_Expert.png/revision/latest?cb=20120309174857
 ---
 
 ## Weapon Refactor

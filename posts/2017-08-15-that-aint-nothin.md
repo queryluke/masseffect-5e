@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "That ain't nothin..."
-description: "Recapping the growing interest in the project"
-excerpt: "A long overdue update. A brief recap of the play test and what's coming next."
+description: "Growing interest in the system has rekindled our efforts."
+image: https://vignette.wikia.nocookie.net/masseffect/images/1/15/Doran_Dancing.png/revision/latest?cb=20100903012232
 ---
 
 I randomly decided to checkout the analytics for this site and came across a surprising and exciting find: _people are 

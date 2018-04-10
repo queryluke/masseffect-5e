@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Grunt Generator"
-description: "Explanation of new site feature: the Grunt Generator"
-excerpt: A quick and easy way to create NPCs.
+description: "Infinite NPCs! Our generator can spits out millions of unique NPC combinations"
+image: /images/misc/grunts_cropped.png
 ---
 
 For the past month, I've been quietly working on the bestiary. For people who've read the DMG or used it to create monsters,

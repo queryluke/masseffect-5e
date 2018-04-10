@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "v0.5.0 - Finally a few monsters"
-description: "Overview of Mass Effect 5e version 0.5.0 changes"
-excerpt: Reaper and collector forces added to the bestiary, shield mechanics refactored, and some site enhancements
+description: "Bestiary drops with Reaper and collector forces. Shield mechanics refactored and some site enhancements"
+image: https://vignette.wikia.nocookie.net/masseffect/images/8/89/Derelict_reaper_-_altar_huskathon.png/revision/latest/scale-to-width-down/640?cb=20140712153831
 ---
 
 ## Shields

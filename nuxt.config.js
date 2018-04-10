@@ -1,16 +1,17 @@
 // Dynamic Route generation
-const classes = require('./data/classes.json')
-const races = require('./data/races.json')
 const routes = []
-for (const c of classes.data) {
+require('./data/classes.json').data.map(c => {
   routes.push(`/phb/classes/${c.id}`)
   routes.push(`/print/spell-cards/${c.id}`)
-}
-for (const r of races.data) {
-  routes.push(`/phb/races/${r.id}`)
-}
+})
+require('./data/races.json').data.map(r => routes.push(`/phb/races/${r.id}`))
+
+require('fs').readdirSync('posts').map((file) => {
+  routes.push('/news/' + (file.replace(/^(\d+-\d+-\d+)-|(\.md$)/, '')))
+})
 
 module.exports = {
+  debug: true,
   /*
   ** Headers of the page
   */
@@ -47,10 +48,16 @@ module.exports = {
   ** Modules
   */
   modules: [
-    ['@nuxtjs/google-analytics', {
-      id: 'UA-83740704-2'
-    }]
+    '@nuxtjs/markdownit',
+    ['@nuxtjs/google-analytics', { id: 'UA-83740704-2' }]
   ],
+  markdownit: {
+    preset: 'default',
+    linkify: true,
+    use: [
+      'markdown-it-meta'
+    ]
+  },
   /*
   ** Build configuration
   */

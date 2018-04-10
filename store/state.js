@@ -20,5 +20,6 @@ export default {
   },
   sidebar: true,
   tooltips: [],
+  posts: [],
   data
 }

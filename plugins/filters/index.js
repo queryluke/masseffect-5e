@@ -3,6 +3,7 @@ import Vue from 'vue'
 import abilityBonus from './abilityBonus'
 import article from './article'
 import featureTitle from './featureTitle'
+import formatDate from './formatDate'
 import npcDamage from './npcDamage'
 import npcDc from './npcDc'
 import npcName from './npcName'
@@ -13,6 +14,7 @@ const customFilters = {
   abilityBonus,
   article,
   featureTitle,
+  formatDate,
   npcDamage,
   npcDc,
   npcName,

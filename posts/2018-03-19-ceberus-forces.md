@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "v0.5.1 - Cerberus forces"
-description: "Overview of Mass Effect 5e version 0.5.1 changes"
+description: "Cerberus forces now in the bestiary."
 excerpt: Cerberus forces and a note about upcoming changes
+image: https://vignette.wikia.nocookie.net/masseffect/images/8/8c/TIM_and_kai_leng.png/revision/latest/scale-to-width-down/640?cb=20130523085712
 ---
 
 ## Galaxy Master

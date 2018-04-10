@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "N7 World"
-description: "Added n7.world as site domain name"
-excerpt: A quick but exciting update
+title: "Official Site: N7 World"
+description: "A quick, but exciting, update"
+image: https://vignette.wikia.nocookie.net/masseffect/images/8/83/EDI_Genetic_Analysis.jpg/revision/latest/scale-to-width-down/640?cb=20100618183644
 ---
 
 ## We're official (kind of...)
