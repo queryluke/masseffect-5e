@@ -7,7 +7,7 @@ require('./data/classes.json').data.map(c => {
 require('./data/races.json').data.map(r => routes.push(`/phb/races/${r.id}`))
 
 require('fs').readdirSync('posts').map((file) => {
-  routes.push('/news/' + (file.replace(/^(\d+-\d+-\d+)-|(\.md$)/, '')))
+  routes.push('/news/' + (file.replace(/^(\d+-\d+-\d+)-|(\.md$)/g, '')))
 })
 
 module.exports = {
@@ -49,8 +49,20 @@ module.exports = {
   */
   modules: [
     '@nuxtjs/markdownit',
-    ['@nuxtjs/google-analytics', { id: 'UA-83740704-2' }]
+    '@nuxtjs/google-analytics'
   ],
+  'google-analytics': {
+    id: 'UA-83740704-2',
+    autoTracking: {
+      pageviewTemplate: route => {
+        return {
+          page: route.path,
+          title: document.title,
+          location: window.location.href
+        }
+      }
+    }
+  },
   markdownit: {
     preset: 'default',
     linkify: true,

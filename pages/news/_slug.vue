@@ -2,7 +2,7 @@
   v-content.blue-grey.lighten-4
     v-container
       div.news-post
-        h1.display-3 {{ post.attributes.title }}
+        h1.display-3 {{ post.title }}
         h2.subheading #[em {{ post.created | formatDate('DDDD, MMMM DD, YYYY') }}]
         div(v-html="postFile").my-3
       v-btn(to="/news" nuxt).primary
@@ -29,9 +29,9 @@
     },
     head () {
       return {
-        title: `Mass Effect 5e | News - ${this.post.attributes.title}`,
+        title: `Mass Effect 5e | News - ${this.post.title}`,
         meta: [
-          { hid: 'description', name: 'description', content: this.post.attributes.description }
+          { hid: 'description', name: 'description', content: this.post.description }
         ]
       }
     },

@@ -8,15 +8,14 @@ export default {
       const fs = require('fs')
       const files = fs.readdirSync('posts')
       const posts = files.map((file) => {
-        const post = fm(fs.readFileSync(`posts/${file}`, 'utf8'))
+        const fc = fm(fs.readFileSync(`posts/${file}`, 'utf8'))
+        const post = Object.assign(fc.attributes, {})
         while ((filenameParts = filenameRegex.exec(file)) !== null) {
           post.filename = filenameParts[0]
           post.created = new Date(filenameParts[1])
           post.slug = filenameParts[2]
         }
         post.url = `/news/${post.slug}`
-        delete post.body
-        delete post.frontmatter
         return post
       })
       this.dispatch('loadPosts', posts)
@@ -49,5 +48,8 @@ export default {
   },
   hideGlobalDialog ({commit}) {
     commit('toggleGlobalDialog', false)
+  },
+  toggleSidebar ({getters, commit}) {
+    commit('toggleSidebar', !getters.sidebar)
   }
 }

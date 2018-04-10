@@ -19,6 +19,7 @@
 </template>
 
 <script>
+  import {mapActions} from 'vuex'
   export default {
     computed: {
       showHamburger () {
@@ -52,9 +53,7 @@
       }
     },
     methods: {
-      toggleSidebar () {
-        // this.$store.commit('toggleSidebar', !this.$store.state.sidebar)
-      }
+      ...mapActions(['toggleSidebar'])
     }
   }
 </script>

@@ -75,5 +75,8 @@ export default {
       }
       return (verA < verB) ? 1 : -1
     })
+  },
+  sidebar: state => {
+    return state.sidebar
   }
 }
