@@ -1,5 +1,5 @@
 {
-  "updated": "March 16, 2018 @  9:58 PM",
+  "updated": "April 10, 2018 @  2:17 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTPhVRIodUwbDYFw8wJZtmb63tTjFJMxY-cN6P5nayPpJhNxAQFqIxeSLd5Tz75aOZ7CLuBkNsDrcs9/pubhtml",
   "data": [
     {
@@ -227,8 +227,8 @@
       "description": [
 
       ],
-      "notes": null,
-      "prerequisite": "+1 AC bonus, wield heavier weapons, draw or stow two weapons at once",
+      "notes": "+1 AC bonus, wield heavier weapons, draw or stow two weapons at once",
+      "prerequisite": null,
       "batarian": "x",
       "drell": "x",
       "human": "x",
@@ -288,7 +288,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You options for damage types are: Fire, Cold, Lightning, Force, and Necrotic"
+          "data": "Your options for damage types are: Fire, Cold, Lightning, Force, and Necrotic"
         }
       ],
       "notes": "Spells you cast ignore resistance to damage of the chosen type",
@@ -301,7 +301,7 @@
       "turian": null,
       "unshackled_ai": null,
       "id": "elemental_adept",
-      "description_text_dump": "YouoptionsfordamagetypesareFireColdLightningForceandNecrotic"
+      "description_text_dump": "YouroptionsfordamagetypesareFireColdLightningForceandNecrotic"
     },
     {
       "name": "Enhanced Optics",
@@ -1127,7 +1127,7 @@
           "data": "You have advantage on the first Intelligence based skill check you make after a short rest."
         }
       ],
-      "notes": "+1 Intelligence, advantage on Intelligence based skil checks",
+      "notes": "+1 Intelligence, advantage on Intelligence based skill checks",
       "prerequisite": null,
       "batarian": null,
       "drell": null,
