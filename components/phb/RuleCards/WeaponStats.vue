@@ -20,19 +20,27 @@
         Basically, the number of number of times you can fire before you need to reload. If the weapon has a heat of
         1 and you fire it, you must reload the thermal clip before firing it again. Reloading takes an action.
       p.
-        In general, standard thermal clips are so plentiful that you do not need to keep track of them. However, you can
-        play with the #[a(v-on:click="showGlobalDialog('thermal-clips-variant')") Variant: Thermal Clip] rule for an additional challenge.
+        In general, thermal clips are so plentiful that you do not need to keep track of them. However, you can
+        play with the Variant: Thermal Clip rule for an additional challenge.
       p.
         For Heavy Weapons, Heat is substituted for Charges. You can use the heavy weapon a number of times equal to its
-        charges. See #[nuxt-link(to="/phb/items") Other Items] for resupplying information.
+        charges.
+    template(slot="actions")
+      further-reading(:list="furtherReading")
 </template>
 
 <script>
   import RuleCard from '~/components/shared/RuleCard.vue'
+  import FurtherReading from '~/components/phb/RuleCards/FurtherReading.vue'
   import {mapActions} from 'vuex'
 
   export default {
-    components: { RuleCard },
+    components: { RuleCard, FurtherReading },
+    data () {
+      return {
+        furtherReading: ['reloading', 'thermal-clips-variant', 'heavy-weapon-charges']
+      }
+    },
     methods: {
       ...mapActions(['showGlobalDialog'])
     }

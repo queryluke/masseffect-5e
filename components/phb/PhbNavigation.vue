@@ -12,20 +12,12 @@
                 v-list-tile-title {{ subItem.title }}
         v-subheader(v-else-if="item.header") {{ item.header }}
         v-divider(v-else-if="item.divider")
-        v-list-tile(
-          v-bind="{ to: item.href, href: item.href }"
-          nuxt
-          ripple
-          rel="noopener"
-          v-else
-        )
+        v-list-tile(v-else v-bind="{ to: item.href, href: item.href }" ripple rel="noopener" nuxt )
           v-list-tile-action
             v-icon {{ item.icon }}
           v-list-tile-content
             v-list-tile-title {{ item.title }}
-          v-list-tile-action(v-if="item.icon === 'book'").text-xs-right
-            v-badge(left v-if="bookmarkCount > 0")
-              span(slot="badge") {{ bookmarkCount }}
+          v-list-tile-avatar(v-if="item.icon === 'book'" color="primary" size="20").white--text {{ bookmarkCount }}
 </template>
 
 <script>

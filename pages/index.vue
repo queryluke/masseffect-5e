@@ -51,7 +51,7 @@
                     v-card-title(primary-title).layout.justify-center
                       div.headline.text-xs-center Weapons & Armor
                     v-card-text.
-                      Magic is just science we don't understand yet. So we've replaced the plethora of magical items
+                      Magic is just science we don't understand yet, so we've replaced the plethora of magical items
                       found in D&D 5th edition with unique weapons and armor. You'll also find a full mod system for upgrading
                       and customizing your gear.
                 // Enemies
@@ -80,7 +80,7 @@
                 div.headline Interactive Handbook
               v-card-text.
                 Our player's handbook is more than a PDF. It's a fully navigable, web app that allows you to browse rules, search for items and spells,
-                and create bookmarks for fequently used information.
+                and create bookmarks for frequently used information.
               v-card-actions
                 v-btn(to="/phb/intro" flat) Get Started #[v-icon chevron_right]
           v-flex(md5).hidden-sm-and-down.text-xs-center
@@ -93,9 +93,9 @@
               v-card-title(primary-title)
                 div.headline NPC Generator
               v-card-text.
-                Creating NPCs can be a pain, but our Grunt generator is hear to help. With the click of a button, you can create unique
+                Creating NPCs can be a pain, but our Grunt generator is here to help. With the click of a button, you can create unique
                 NPCs (or 'grunts') that are fully compatible with the monster creation guidelines of the Dungeon Master's Guide. The generator
-                applys the correct Challenge Rating, unqiue class and racial traits, weapons, and spells.
+                applies the correct Challenge Rating, unique class and racial traits, weapons, and spells.
               v-card-actions
                 v-spacer
                 v-btn(to="/tools/grunts" flat) Generate #[v-icon chevron_right]
@@ -105,7 +105,7 @@
               v-card-title(primary-title)
                 div.headline Tabletop Assets
               v-card-text.
-                We've also got a host of tabletop rpg assests. A custom made character sheet and printable spell cards. In addition,
+                We've also got a host of tabletop rpg assests. A custom-made character sheet and printable spell cards. In addition,
                 we're working on VTT maps and tokens and plenty of other goodies.
               v-card-actions
                 v-btn(to="/assets" flat) Print #[v-icon chevron_right]
