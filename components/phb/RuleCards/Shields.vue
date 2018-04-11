@@ -10,11 +10,11 @@
         v-flex.xs12.lg7
           p.headline.mt-2 Shield Regeneration
           p.
-            Your shield points regerate completely on a short or long rest or when combat or an encounter ends. However, in combat,
+            Your shield points regenerate completely on a short or long rest or when combat or an encounter ends. However, in combat,
             you can attempt to regain shield points.
           p.
             A creature that takes the Hide or Dodge action and takes no damage until the start of its next turn regenerates
-            shields points equal to the regen rate of their shields. For example, a set of armor with 15 shields and 5 regen
+            shield points equal to the regen rate of their shields. For example, a set of armor with 15 shields and 5 regen
             would regenerate 5 shield points when it takes the Hide or Dodge action and additionally takes no damage for a full round of combat.
         v-flex.xs12.lg5
           v-card
@@ -23,9 +23,9 @@
                 #[em Why Don't Shields Recharge Automatically in Combat?]
               p.
                 Our interpretation is that your armor's shields are managed by the on-board VI, which is taxed during combat
-                as it manages other systems: your omni-tool or biotic implant, HUD, etc. Thus, once a a threat is properly
+                as it manages other systems: your omni-tool or biotic implant, HUD, etc. Thus, once a threat is properly
                 neutralized, or you are able to temporarily remove yourself from the fray, your VI can route power back into your
-                sheilds for immediate regeneration.
+                shields for immediate regeneration.
       p.headline.mt-2 Shield devices
       p.
         All armor chest pieces come standard with 5 shield points and a regen of 5. However more advanced mods and armor sets

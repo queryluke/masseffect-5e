@@ -12,7 +12,7 @@
         If military, you might get special permission to keep the weapon and granted a steady stream of charges (once per long rest).
         That's between you and your Galaxy Master.
       p.
-        Otherwise, you'll have to pay a pretty penny on the black market to recharge your Heavy Weapon (10-15,000 credits for a
+        Otherwise, you'll have to pay a pretty penny on the black-market to recharge your Heavy Weapon (10-15,000 credits for a
         complete resupply of charges). In most cases, it's easier to scavenge or steal ammo. Or simply leave the damn thing were
         you found it.
 </template>

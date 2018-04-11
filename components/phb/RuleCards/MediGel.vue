@@ -7,11 +7,11 @@
         As an action, use a medi-gel pack on yourself or a willing creature within 2m. The target regains hit points equal to the medi-gel's potency.
       h3.title Armor Capacity: 4
       p.
-        All armor comes standard with a capacity for 4 medi-gel. Some armor and mods allow you to increase this ammount.
+        All armor comes standard with a capacity for 4 medi-gel. Some armor and mods allow you to increase this amount.
       h3.title Resupplying
       p.
-        As long as you're in a relatively civilized environment, you can easily resupply your medigel at a medical facility.
-        However, you would need insider or black-market connections to get Superior or Ulitmate medi-gel. Since Ultimate
+        As long as you're in a relatively civilized environment, you can easily resupply your medi-gel at a medical facility.
+        However, you would need insider or black-market connections to get Superior or Ultimate medi-gel. Since Ultimate
         medi-gel is so rare, the cost is entirely dependent on the people you know, favors your owed, or ability
         to break into a medical facility.
       h3.title Medi-gel types

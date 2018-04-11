@@ -13,7 +13,7 @@
         The damage type indicates how to resolve the detonation of the primer.
       p.
         Priming effects of different types can stack. I.e., a creature that is lifted (primed force), that is hit with Cryo Beam (primed cold)
-        is considered to be primed with both types. Thus, a deontating attack would trigger both effects. These effect occur
+        is considered to be primed with both types. Thus, a detonating attack would trigger both effects. These effects occur
         simultaneously (the creature would not be pushed back 2m and then trigger the 4m cold explosion). However, if a creature that is
         both lifted (primed force) and grappled by Lash (primed force) would only suffer the effects of one force explosion.
       p.headline Detonators
@@ -30,7 +30,7 @@
           saving throw. On a failed save a creature takes 1d8 fire damage, or half as much damage on a successful one.
         li.
           #[strong Cold]: Each creature, including the target creature, within a 4m radius must make a Strength (DC 10)
-          saving throw. On a failed save a creature is  #[me-text(text="{frozen}")] until the end of its next turn.
+          saving throw. On a failed save a creature is #[me-text(text="{frozen}")] until the end of its next turn.
         li.
           #[strong Lightning]: Each creature, including the target creature, within a 4m radius take 1d4 lightning damage.
 </template>

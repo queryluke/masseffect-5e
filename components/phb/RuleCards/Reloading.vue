@@ -6,7 +6,7 @@
         When you take the Reload action, you add a new Thermal Clip into your equipped weapon. If you have not taken a bonus action
         this turn, you may attempt a DC 15 Dexterity (Sleight of Hand) check. On a success, you may reload your weapon
         as a bonus action. However, on a critical failure, the Thermal Clip drops from your hands and your weapon
-        is not relaoded.
+        is not reloaded.
 </template>
 
 <script>

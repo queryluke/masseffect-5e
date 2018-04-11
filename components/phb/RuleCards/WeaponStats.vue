@@ -5,7 +5,7 @@
       p.title.mt-2 Weight
       p.
         The weight if kilograms. Used to calculate your #[a(v-on:click="showGlobalDialog('lifting-and-carrying')") carry capacity] if you are carrying more
-        weapons than the number of weapon slots allowed by your armor or if you are using the #[a(v-on:click="showGlobalDialog('encumbrance')") Variant: Encumberance rule].
+        weapons than the number of weapon slots allowed by your armor or if you are using the #[a(v-on:click="showGlobalDialog('encumbrance')") Variant: Encumbrance rule].
       p.title.mt-2 Range
       p.
         If a target is beyond the weapon's range, the attack roll is made at a disadvantage. Ranges are an approximation and

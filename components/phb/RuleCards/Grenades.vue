@@ -4,7 +4,7 @@
     template(slot="text")
       h3.title Armor Capacity: 2
       p.
-        All armor comes standard with 2 grenade slots. Some armor and mods allow you to increase this ammount.
+        All armor comes standard with 2 grenade slots. Some armor and mods allow you to increase this amount.
       h3.title Resupplying
       p.
         Grenades are a military resource, so, depending on your campaign setting they might be an uncommon or rare item.
