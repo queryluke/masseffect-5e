@@ -40,6 +40,7 @@
     div.hr
     div.mt-3
       me-element(:text="spell.mechanic")
+      p.title Advancement Options
       v-layout(row wrap justify-space-around)
         v-flex(v-for="(option, i) in spell.adv_options" v-bind:key="i").xs12.md6
           advanced-option(:option="option")

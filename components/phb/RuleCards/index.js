@@ -1,4 +1,5 @@
 import AbilityNomenclature from './AbilityNomenclature.vue'
+import AdvancementOptions from './AdvancementOptions.vue'
 import ArmorOverview from './ArmorOverview.vue'
 import ArmorCustomization from './ArmorCustomization.vue'
 import ArmorPieces from './ArmorPieces.vue'
@@ -33,6 +34,7 @@ import WeaponStats from './WeaponStats.vue'
 
 export default {
   AbilityNomenclature,
+  AdvancementOptions,
   ArmorOverview,
   ArmorCustomization,
   ArmorPieces,

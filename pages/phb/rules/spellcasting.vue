@@ -19,6 +19,7 @@
           'biotics',
           'tech-powers',
           'combat-powers',
+          'advancement-options',
           'spell-save-dc',
           'primers-and-detonators'
         ]
