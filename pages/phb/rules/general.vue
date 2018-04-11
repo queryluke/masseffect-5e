@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  v-container
     h2.display-3 General
     p.
       Overall, this system attempts to keep things in line with D&D 5e rules as much as possible. Some system

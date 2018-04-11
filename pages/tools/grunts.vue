@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  v-container
     h2.display-3 Grunt Generator
     p.
       Grunts are disposable NPCs based on the Mass Effect archetypes. The #[em Monster Manual] outlines adjusting

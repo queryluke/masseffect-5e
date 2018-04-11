@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  v-container
     h2.display-3 Feats
     p.
       Feats are part of the official D&D PHB. Due to copyright reasons, I can only note any changes or new feats

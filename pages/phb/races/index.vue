@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  v-container(fluid)
     h2.display-3 Races
     v-layout(row wrap)
       v-flex(v-for="race in items" v-bind:key="race.id" d-flex).xs12.sm6.md4

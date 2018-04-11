@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  v-container
     h2.display-3 Spell Casting
     p.
       Biotics, Tech & Combat Powers

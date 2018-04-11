@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  v-container
     h2.display-3 Armor
     p Armor is much more customizable in ME5e than in the base 5e ruleset.
     div(v-for="(rule, index) in rules")

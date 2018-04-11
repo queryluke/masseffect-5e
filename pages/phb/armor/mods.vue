@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  v-container
     h2.display-3 Armor Mods
     p Read the #[router-link(to="/phb/rules/armor") Armor Rules] to understand how armor customization works.
     div.mt-3

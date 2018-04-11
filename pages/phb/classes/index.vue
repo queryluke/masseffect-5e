@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  v-container(fluid)
     h2.display-3 Classes
     v-layout(row wrap)
       v-flex(v-for="item in items" v-bind:key="item.id" d-flex).xs12.sm6.md4

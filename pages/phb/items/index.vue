@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  v-container
     h2.display-3 Items
     p.subheading Medi-gel, Thermal Clips, Heavy Weapons, Grenades, and Mines
     div(v-for="(rule, index) in rules")

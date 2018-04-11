@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  v-container
     h2.display-3 Armor Sets
     p.
       Pre-made Armor Sets are cheaper than creating a full set of custom armor. However, they cannot be customized or upgraded

@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  v-container
     h2.display-3 Weapons
     p.subtitle {{ description }}
     div(v-for="(rule, index) in rules")
