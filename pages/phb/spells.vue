@@ -70,7 +70,7 @@
       return {
         title: 'Mass Effect 5e | Biotics, Tech and Combat Powers',
         meta: [
-          { hid: 'description', name: 'description', content: 'Biotics, Tech and Combat Powers...' }
+          { hid: 'description', name: 'description', content: 'Dozens of unique and re-skinned D&D spells are available as Biotic, Tech, and Combat powers' }
         ]
       }
     },

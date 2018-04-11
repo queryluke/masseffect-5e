@@ -129,7 +129,7 @@
       return {
         title: `Mass Effect 5e | Classes - ${this.item.name}`,
         meta: [
-          { hid: 'description', name: 'description', content: `Information about the ${this.item.name} class, including Progression table, subclasses, proficiencies, and starting equipment` }
+          { hid: 'description', name: 'description', content: `Learn more about the ${this.item.name} class, including Progression table, subclasses, proficiencies, and starting equipment` }
         ]
       }
     },

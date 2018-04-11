@@ -49,7 +49,7 @@ export default {
     return {
       title: 'Mass Effect 5e | Assets',
       meta: [
-        { hid: 'description', name: 'description', content: 'Character sheets, spell cards, and other tabletop assets for Mass Effect 5e' }
+        { hid: 'description', name: 'description', content: 'Mass Effect 5e is more that a rule set. We have also created character sheets, spell cards, and other great tabletop assets.' }
       ]
     }
   }

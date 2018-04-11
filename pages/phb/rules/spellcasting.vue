@@ -28,7 +28,7 @@
       return {
         title: 'Mass Effect 5e | Rules - Spellcasting',
         meta: [
-          { hid: 'description', name: 'description', content: 'List of spellcasting differences between Mass Effect 5e and D&D 5th Edition' }
+          { hid: 'description', name: 'description', content: 'Learn how to PEW PEW correctly with our spellcasting guide.' }
         ]
       }
     },

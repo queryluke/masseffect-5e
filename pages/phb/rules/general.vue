@@ -43,7 +43,7 @@
       return {
         title: 'Mass Effect 5e | Rules - General',
         meta: [
-          { hid: 'description', name: 'description', content: 'Overview of the rule changes and additions between Mass Effect 5e and D&D 5th Edition' }
+          { hid: 'description', name: 'description', content: 'Learn about the primary rule changes and additions between Mass Effect 5e and Dungeons and Dragons 5th Edition' }
         ]
       }
     },

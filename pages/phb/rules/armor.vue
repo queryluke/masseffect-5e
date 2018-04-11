@@ -26,7 +26,7 @@
       return {
         title: 'Mass Effect 5e | Rules - Armor',
         meta: [
-          { hid: 'description', name: 'description', content: 'Information about the armor mechanics in Mass Effect 5e' }
+          { hid: 'description', name: 'description', content: 'Mass Effect 5e\'s armor system is a bit more complex than D&D 5th edition. Learn how to gear up properly.' }
         ]
       }
     },

@@ -89,7 +89,7 @@
       return {
         title: 'Mass Effect 5e | Bestiary',
         meta: [
-          { hid: 'description', name: 'description', content: 'Bestiary..' }
+          { hid: 'description', name: 'description', content: 'Give your player\'s a unique challenge with over 100 custom made Mass Effect enemies! ' }
         ]
       }
     },

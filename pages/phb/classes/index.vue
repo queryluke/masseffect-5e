@@ -40,7 +40,7 @@
       return {
         title: 'Mass Effect 5e | Classes',
         meta: [
-          { hid: 'description', name: 'description', content: 'Available player character classes in Mass Effect 5e' }
+          { hid: 'description', name: 'description', content: 'Choose your favorite Mass Effect class, each with 3 subclasses to provide variety to the game.' }
         ]
       }
     },

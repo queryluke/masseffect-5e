@@ -95,7 +95,7 @@
       return {
         title: 'Mass Effect 5e | Equipment - Weapons',
         meta: [
-          { hid: 'description', name: 'description', content: 'A whole lot of weapons' }
+          { hid: 'description', name: 'description', content: 'The Mass Effect 5e arsenal has over 80 unique weapons designed to match the game\'s weaponry' }
         ]
       }
     },

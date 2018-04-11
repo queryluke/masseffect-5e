@@ -26,7 +26,7 @@
       return {
         title: 'Mass Effect 5e | Equipment - Other items',
         meta: [
-          { hid: 'description', name: 'description', content: 'List of consumable items in Mass Effect 5e: Medi-gel, Thermal Clips, Heavy Weapons, Grenades, and Mines' }
+          { hid: 'description', name: 'description', content: 'Find out more about the unique Mass Effect 5e items: Medi-gel, Thermal Clips, Heavy Weapons, Grenades, and Mines' }
         ]
       }
     },

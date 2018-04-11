@@ -50,7 +50,7 @@
       return {
         title: 'Mass Effect 5e | Rules - Skills',
         meta: [
-          { hid: 'description', name: 'description', content: 'Mass Effect 5e skills' }
+          { hid: 'description', name: 'description', content: 'Mass Effect 5e comes with a few futuristic skill options!' }
         ]
       }
     },

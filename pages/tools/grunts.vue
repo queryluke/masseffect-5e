@@ -146,7 +146,7 @@
       return {
         title: 'Mass Effect 5e | GM Tools - Grunt Generator',
         meta: [
-          { hid: 'description', name: 'description', content: 'Create Grunts' }
+          { hid: 'description', name: 'description', content: 'Need a quick NPC? Our grunt generator can create millions of NPC combinations in seconds.' }
         ]
       }
     },

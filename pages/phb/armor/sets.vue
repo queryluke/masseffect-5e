@@ -47,7 +47,7 @@
       return {
         title: 'Mass Effect 5e | Equipment - Pre-made Armor Sets',
         meta: [
-          { hid: 'description', name: 'description', content: 'Pre-made armor sets ...' }
+          { hid: 'description', name: 'description', content: 'These pre-made armor sets are available as cheap alternatives to custom modding.' }
         ]
       }
     },

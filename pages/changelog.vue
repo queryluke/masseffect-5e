@@ -40,7 +40,7 @@
       return {
         title: `Mass Effect 5e | Changelog`,
         meta: [
-          { hid: 'description', name: 'description', content: 'Changelog ... ' }
+          { hid: 'description', name: 'description', content: 'Keep up-to-date with all the Mass Effect 5e system rule additions and updates.' }
         ]
       }
     },

@@ -46,7 +46,7 @@
       return {
         title: 'Mass Effect 5e | Races',
         meta: [
-          { hid: 'description', name: 'description', content: 'Available player character races in Mass Effect 5e' }
+          { hid: 'description', name: 'description', content: 'Every race you need for a deeply involved Mass Effect Campaign.' }
         ]
       }
     },

@@ -38,7 +38,7 @@
       return {
         title: 'Mass Effect 5e | Player\'s Handbook - Bookmarks',
         meta: [
-          { hid: 'description', name: 'description', content: 'Bookmarks' }
+          { hid: 'description', name: 'description', content: 'Keep your favorite weapons, enemies, and spells close at hand with our nifty bookmark tool.' }
         ]
       }
     },

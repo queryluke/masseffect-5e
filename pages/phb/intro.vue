@@ -40,7 +40,7 @@
       return {
         title: 'Mass Effect 5e | Player\'s Handbook',
         meta: [
-          { hid: 'description', name: 'description', content: 'Information about how to play Mass Effect 5e and use the player\'s handbook' }
+          { hid: 'description', name: 'description', content: 'Want to play D&D in the Mass Effect Universe? Learn how to get started.' }
         ]
       }
     },

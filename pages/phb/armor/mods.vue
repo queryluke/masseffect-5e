@@ -40,7 +40,7 @@
       return {
         title: 'Mass Effect 5e | Equipment - Armor Mods',
         meta: [
-          { hid: 'description', name: 'description', content: 'Armor mods...' }
+          { hid: 'description', name: 'description', content: 'Mass Effect 5e comes with a full set of armor mods that let you customize your armor to your needs.' }
         ]
       }
     },

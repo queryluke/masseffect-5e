@@ -44,7 +44,7 @@
       return {
         title: 'Mass Effect 5e | Rules - General',
         meta: [
-          { hid: 'description', name: 'description', content: 'List of conditions in Mass Effect 5e' }
+          { hid: 'description', name: 'description', content: 'There are new conditions in Mass Effect 5e that add variety to combat.' }
         ]
       }
     },

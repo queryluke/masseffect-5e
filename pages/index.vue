@@ -145,6 +145,14 @@
       recentPosts () {
         return this.getPosts(6)
       }
-    }
+    },
+    head () {
+      return {
+        title: `Mass Effect 5e`,
+        meta: [
+          { hid: 'description', name: 'description', content: 'Ever wanted to play D&D in the Mass Effect Universe? Mass Effect 5e has you covered.' }
+        ]
+      }
+    },
   }
 </script>

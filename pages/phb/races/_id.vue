@@ -118,7 +118,7 @@
       return {
         title: `Mass Effect 5e | Races - ${this.race.name}`,
         meta: [
-          { hid: 'description', name: 'description', content: `Information about the ${this.race.name} class, including alignment, available classes, and racial traits` }
+          { hid: 'description', name: 'description', content: `Learn more about the ${this.race.name} race, including alignment, available classes, and racial traits` }
         ]
       }
     },

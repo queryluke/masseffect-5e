@@ -98,7 +98,7 @@
       return {
         title: 'Mass Effect 5e | Equipment - Grenades & Mines',
         meta: [
-          { hid: 'description', name: 'description', content: 'Grenades...' }
+          { hid: 'description', name: 'description', content: 'Grenades offer an offensive boost while mines can be used like D&D traps.' }
         ]
       }
     },

@@ -47,7 +47,7 @@ export default {
     return {
       title: 'Mass Effect 5e | About',
       meta: [
-        { hid: 'description', name: 'description', content: 'Information about Mass Effect 5e, including authors, contributors and contact information' }
+        { hid: 'description', name: 'description', content: 'Learn more about the Mass Effect 5e creators and contributors.' }
       ]
     }
   }

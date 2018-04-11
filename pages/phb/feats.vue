@@ -65,7 +65,7 @@
       return {
         title: 'Mass Effect 5e | Feats',
         meta: [
-          { hid: 'description', name: 'description', content: 'List of available and unavailable feats in Mass Effect 5e' }
+          { hid: 'description', name: 'description', content: 'New feats available! Plus a curated list of D&D 5th edition feats.' }
         ]
       }
     },
