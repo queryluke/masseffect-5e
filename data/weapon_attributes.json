@@ -16,6 +16,10 @@
     "description": "You have advantage instead of disadvantage when using this weapon in melee range."
   },
   {
+    "name": "Melee",
+    "description": "Damage resulting from melee weapon attacks by-pass shields. Technically, this is a weapon type, but this mechanic still applies to all weapons of this type."
+  },
+  {
     "name": "Silent",
     "description": "Makes no noise when fired."
   },

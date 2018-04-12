@@ -1,5 +1,5 @@
 {
-  "updated": "April 10, 2018 @  1:54 PM",
+  "updated": "April 12, 2018 @ 10:06 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSq70x_GZuDKcELgX8k_7Hd6nLGu3DoIEdDwP-YEGjUU-ghGc7ot_Q7140FZwGbEalHgzPwVm4BN8y_/pubhtml",
   "data": [
     {
@@ -29,7 +29,7 @@
       "notes_text_dump": "DealsforcedamageDamagedonebythisweaponcannotbereducedbyusingbarrierticks"
     },
     {
-      "name": "Adas Anti-Synthetic Rifle",
+      "name": "Adas Anti-Synthetic Rifle ",
       "type": "Assault Rifle",
       "cost": "34000",
       "manufacturer": "Quarian",
@@ -169,7 +169,7 @@
       "notes_text_dump": "Ignores2AContargetswithinrange"
     },
     {
-      "name": "Cerberus Harrier",
+      "name": "Cerberus Harrier ",
       "type": "Assault Rifle",
       "cost": "10000",
       "manufacturer": "Cerberus",
@@ -201,7 +201,7 @@
       "damage": "8",
       "range": "80m",
       "rare": "x",
-      "tags": "Charge, Two-handed",
+      "tags": "Charge,  Two-handed",
       "notes": [
         {
           "id": 1,
@@ -232,7 +232,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Choose a creature within 60m that you can see and begin Targeting that creature. At the start of your turn, if you successfully held your targeting on the creature, you launch a missile that deals 8d12 thunder damage."
+          "data": "Choose a creature within 60m that you can see and begin Targeting that creature. At the start of your turn, if you successfully held your targeting on the creature,  you launch a missile that deals 8d12 thunder damage."
         }
       ],
       "npcHit": null,
@@ -562,7 +562,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "When you hit with an attack using this weapon, the target is knocked back 4m. If the target is unprotected, it must succeed on a Constitution saving throw (DC = 8+Proficiency Bonus+ Strength modifier) or becomes {stunned} until the end of your next turn."
+          "data": "When you hit with an attack using this weapon, the target must succeed on a Strength saving throw (DC = 8+Proficiency Bonus+ Strength modifier) or is knocked {prone}."
         },
         {
           "id": 2,
@@ -570,12 +570,12 @@
           "data": "*If wielded by a Krogan or another creature with a minimum Strength ability score of 18, this weapon becomes Versatile (1d10 for single-handed)"
         }
       ],
-      "npcHit": "the target is knocked back 4m",
+      "npcHit": "the target must succeed on a Strength saving throw (DC 13) or is knocked {prone}. ",
       "addDmg": null,
       "dmgType": "bludgeoning",
       "image": null,
       "id": "krogan_warhammer",
-      "notes_text_dump": "Whenyouhitwithanattackusingthisweaponthetargetisknockedback4mIfthetargetisunprotecteditmustsucceedonaConstitutionsavingthrowDC8ProficiencyBonusStrengthmodifierorbecomesstunneduntiltheendofyournextturnIfwieldedbyaKroganoranothercreaturewithaminimumStrengthabilityscoreof18thisweaponbecomesVersatile1d10forsinglehanded"
+      "notes_text_dump": "WhenyouhitwithanattackusingthisweaponthetargetmustsucceedonaStrengthsavingthrowDC8ProficiencyBonusStrengthmodifierorisknockedproneIfwieldedbyaKroganoranothercreaturewithaminimumStrengthabilityscoreof18thisweaponbecomesVersatile1d10forsinglehanded"
     },
     {
       "name": "Krysae Sniper Rifle",
@@ -918,7 +918,7 @@
     {
       "name": "M-4 Shuriken",
       "type": "SMG",
-      "cost": "15000",
+      "cost": "6000",
       "manufacturer": "Elkoss Combine",
       "weight": "2",
       "heat": "3",
@@ -1786,7 +1786,7 @@
       "notes": [
 
       ],
-      "npcHit": "deals half of the damage roll as lightning damage to 1 additional creature within 2m of the target.",
+      "npcHit": "deals half of the damage roll  as lightning damage to 1 additional creature within 2m of the target.",
       "addDmg": null,
       "dmgType": "lightning",
       "image": "http://vignette2.wikia.nocookie.net/masseffect/images/6/60/ME3_Reegar_Carbine.png/revision/latest?cb=20120530214009",

@@ -40,6 +40,13 @@
         li Subtract the shield points from the total damage.
         li Reduce the remaining damage by half
         li Apply the new amount to the target's hit points.
+      p.headline.mt-2 Melee Weapon Attacks
+      p.
+        All damage resulting from a melee weapon attack by-passess shields. The Mass Effect codex explains that shields are "...
+        repulsive mass effect fields projected from tiny emitters. These shields safely deflect small objects traveling at
+        rapid velocities. This affords protection from bullets and other dangerous projectiles,
+        but still allows the user to sit down without knocking away their chair." Therefore, melee weapon attacks move slow
+        enough to by-pass a shields protective barrier.
 </template>
 
 <script>
