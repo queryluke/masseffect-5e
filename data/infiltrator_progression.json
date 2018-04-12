@@ -1,5 +1,5 @@
 {
-  "updated": "November 17, 2017 @ 10:58 AM",
+  "updated": "April 12, 2018 @ 10:18 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -72,7 +72,7 @@
             },
             {
               "key": "tech_power",
-              "display": "Tech Power(1)",
+              "display": "Tech Power(2)",
               "subclass_progression": null
             }
           ]
@@ -179,11 +179,6 @@
               "key": "uncanny_dodge",
               "display": "Uncanny Dodge",
               "subclass_progression": null
-            },
-            {
-              "key": "tech_power",
-              "display": "Tech Power(1)",
-              "subclass_progression": null
             }
           ]
         },
@@ -219,6 +214,11 @@
               "key": "expertise",
               "display": "Expertise",
               "subclass_progression": null
+            },
+            {
+              "key": "tech_power",
+              "display": "Tech Power(2)",
+              "subclass_progression": null
             }
           ]
         },
@@ -253,11 +253,6 @@
             {
               "key": "evasion",
               "display": "Evasion",
-              "subclass_progression": null
-            },
-            {
-              "key": "tech_power",
-              "display": "Tech Power(1)",
               "subclass_progression": null
             }
           ]
@@ -364,11 +359,6 @@
               "key": "ability_score_improvement",
               "display": "Ability Score Improvement",
               "subclass_progression": null
-            },
-            {
-              "key": "tech_power",
-              "display": "Tech Power(1)",
-              "subclass_progression": null
             }
           ]
         },
@@ -403,6 +393,11 @@
             {
               "key": "reliable_talent",
               "display": "Reliable Talent",
+              "subclass_progression": null
+            },
+            {
+              "key": "tech_power",
+              "display": "Tech Power(2)",
               "subclass_progression": null
             }
           ]
@@ -512,7 +507,7 @@
             },
             {
               "key": "tech_power",
-              "display": "Tech Power(1)",
+              "display": "Tech Power(2)",
               "subclass_progression": null
             }
           ]

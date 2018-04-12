@@ -1,5 +1,5 @@
 {
-  "updated": "April 10, 2018 @  2:26 PM",
+  "updated": "April 12, 2018 @ 12:03 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -61,11 +61,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Starting at the 2nd level, your Tech Armor is rigged for maximum protection and keeping the action on you. While Tech Armor is active, it projects a distracting holographic image (your choice). The first time a hostile creature makes an attack after you activate Tech Armor, it must pass a Wisdom (Insight) check (DC your spell save). On a failure, the creature is compelled to attack you while your Tech Armor is active. Synthetic creatures have advantage on this check."
+          "data": "Starting at the 3rd level, your Tech Armor is rigged for maximum protection and keeping the action on you. While Tech Armor is active, it projects a distracting holographic image (your choice). The first time a hostile creature makes an attack after you activate Tech Armor, it must pass a Wisdom (Insight) check (DC your tech save). On a failure, the creature is compelled to attack you while your Tech Armor is active. Synthetic creatures have advantage on this check."
         }
       ],
       "id": "assault_armor",
-      "mechanic_text_dump": "Startingatthe2ndlevelyourTechArmorisriggedformaximumprotectionandkeepingtheactiononyouWhileTechArmorisactiveitprojectsadistractingholographicimageyourchoiceThefirsttimeahostilecreaturemakesanattackafteryouactivateTechArmoritmustpassaWisdomInsightcheckDCyourspellsaveOnafailurethecreatureiscompelledtoattackyouwhileyourTechArmorisactiveSyntheticcreatureshaveadvantageonthischeck"
+      "mechanic_text_dump": "Startingatthe3rdlevelyourTechArmorisriggedformaximumprotectionandkeepingtheactiononyouWhileTechArmorisactiveitprojectsadistractingholographicimageyourchoiceThefirsttimeahostilecreaturemakesanattackafteryouactivateTechArmoritmustpassaWisdomInsightcheckDCyourtechsaveOnafailurethecreatureiscompelledtoattackyouwhileyourTechArmorisactiveSyntheticcreatureshaveadvantageonthischeck"
     },
     {
       "name": "Barrier",
@@ -401,6 +401,18 @@
       "mechanic_text_dump": "YoucanrolloneadditionaldamagediewhendeterminingtheextradamageforacriticalhitwithameleeattackThisincreasestotwoadditionaldiceat13thlevelandthreeadditionaldiceat17thlevel"
     },
     {
+      "name": "Cantrips",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Learn 2 cantrips from the available list of Adpet spells."
+        }
+      ],
+      "id": "cantrips",
+      "mechanic_text_dump": "Learn2cantripsfromtheavailablelistofAdpetspells"
+    },
+    {
       "name": "Careful Eyes",
       "mechanic": [
         {
@@ -689,6 +701,33 @@
       ],
       "id": "empowered_biotics",
       "mechanic_text_dump": "Wheneveryourolla1onadamagerollforabioticspellorcantripyoucastyoucanrerollthedieandmustusethenewroll"
+    },
+    {
+      "name": "Engineer's Efficiency",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Starting at the 3rd level, you're able to optimize a basic tech power. Choose and learn one of the following tech powers: Cryo Blast, Incinerate, or Overload. You may cast a 1 TP version of this power without expending any tech points. If you cast the power at a high level, you must spend all tech points as normal."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "The potency of this power increases by 1 tech point at the 7th (2TP version), 11th (3TP version), and 15th (4TP version) level."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "If you wish to apply this feature to a power you've already learnt, you may choose to learn or advance an additional tech power. For example, a player who has already learnt Incinerate and chooses to apply this feature to it, may learn Tactical Scan as an additional power when they gain this feature."
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "If you choose to advance the selected power, you may cast the advanced version using this feature."
+        }
+      ],
+      "id": "engineers_efficiency",
+      "mechanic_text_dump": "Startingatthe3rdlevelyoureabletooptimizeabasictechpowerChooseandlearnoneofthefollowingtechpowersCryoBlastIncinerateorOverloadYoumaycasta1TPversionofthispowerwithoutexpendinganytechpointsIfyoucastthepoweratahighlevelyoumustspendalltechpointsasnormalThepotencyofthispowerincreasesby1techpointatthe7th2TPversion11th3TPversionand15th4TPversionlevelIfyouwishtoapplythisfeaturetoapoweryouvealreadylearntyoumaychoosetolearnoradvanceanadditionaltechpowerForexampleaplayerwhohasalreadylearntIncinerateandchoosestoapplythisfeaturetoitmaylearnTacticalScanasanadditionalpowerwhentheygainthisfeatureIfyouchoosetoadvancetheselectedpoweryoumaycasttheadvancedversionusingthisfeature"
     },
     {
       "name": "Evasion",
@@ -1206,25 +1245,25 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Starting at the 3rd level, you've mastered the omni-shield. As a bonus action, create a large kinetic shield out of your omni-tool that lasts one minute. You can use another bonus action to end Omni-Shield early. While deployed:"
+          "data": "Starting at the 3rd level, you've mastered the omni-shield. As a bonus action, create a large kinetic shield out of your omni-tool that lasts one minute. You can use another bonus action to end Omni-Shield early. Once you use this feature, you must finish a short or long rest before you can use it again."
         },
         {
           "id": 2,
+          "type": "line",
+          "data": "While Omni-Shield is deployed, you gain the following:"
+        },
+        {
+          "id": 3,
           "type": "list",
           "data": [
             "If wielding a single-handed ranged or versatile melee weapon, gain +2 AC and a +2 bonus to Dexterity saving throws.",
             "If a creature within 2m of you is attacked, you may use your reaction to impose disadvantage on that attack.",
             "As an attack action, you may make a melee attack roll (+STR), on a hit, deal 1d12 bludgeoning damage. You may shove a hit creature backwards 2m."
           ]
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "Once you use this feature, you must finish a short or long rest before you can use it again."
         }
       ],
       "id": "omni-shield",
-      "mechanic_text_dump": "Startingatthe3rdlevelyouvemasteredtheomnishieldAsabonusactioncreatealargekineticshieldoutofyouromnitoolthatlastsoneminuteYoucanuseanotherbonusactiontoendOmniShieldearlyWhiledeployedlistIfwieldingasinglehandedrangedorversatilemeleeweapongain2ACanda2bonustoDexteritysavingthrowsIfacreaturewithin2mofyouisattackedyoumayuseyourreactiontoimposedisadvantageonthatattackAsanattackactionyoumaymakeameleeattackrollSTRonahitdeal1d12bludgeoningdamageYoumayshoveahitcreaturebackwards2mlistOnceyouusethisfeatureyoumustfinishashortorlongrestbeforeyoucanuseitagain"
+      "mechanic_text_dump": "Startingatthe3rdlevelyouvemasteredtheomnishieldAsabonusactioncreatealargekineticshieldoutofyouromnitoolthatlastsoneminuteYoucanuseanotherbonusactiontoendOmniShieldearlyOnceyouusethisfeatureyoumustfinishashortorlongrestbeforeyoucanuseitagainWhileOmniShieldisdeployedyougainthefollowinglistIfwieldingasinglehandedrangedorversatilemeleeweapongain2ACanda2bonustoDexteritysavingthrowsIfacreaturewithin2mofyouisattackedyoumayuseyourreactiontoimposedisadvantageonthatattackAsanattackactionyoumaymakeameleeattackrollSTRonahitdeal1d12bludgeoningdamageYoumayshoveahitcreaturebackwards2mlist"
     },
     {
       "name": "Opportunist",
@@ -1384,23 +1423,6 @@
       ],
       "id": "sculpt_biotics",
       "mechanic_text_dump": "YoucancreatepocketsofrelativesafetywithintheeffectsofyourbioticspellsWhenyoucastabioticspellthataffectsothercreaturesthatyoucanseeyoucanchooseanumberofthemequalto1thespellslevelThechosencreaturesautomaticallysucceedontheirsavingthrowsagainstthespellandtheytakenodamageiftheywouldnormallytakehalfdamageonasuccessfulsave"
-    },
-    {
-      "name": "Sentinel Mastery",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "At 17th level, you have achieved mastery of a single biotic spell and tech power. Choose a 1st-level biotic spell you have learned. You can cast that spell without expending a spell slot. If you want to cast the spell at a higher level, you must expend a spell slot as normal."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Choose a tech power you have learned. You can cast that power for 2 tech points without subtracting those tech points from your pool. If you can to use the power with more tech points, you must subtract the points as normal."
-        }
-      ],
-      "id": "sentinel_mastery",
-      "mechanic_text_dump": "At17thlevelyouhaveachievedmasteryofasinglebioticspellandtechpowerChoosea1stlevelbioticspellyouhavelearnedYoucancastthatspellwithoutexpendingaspellslotIfyouwanttocastthespellatahigherlevelyoumustexpendaspellslotasnormalChooseatechpoweryouhavelearnedYoucancastthatpowerfor2techpointswithoutsubtractingthosetechpointsfromyourpoolIfyoucantousethepowerwithmoretechpointsyoumustsubtractthepointsasnormal"
     },
     {
       "name": "Shadow Strike",

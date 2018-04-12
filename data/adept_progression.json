@@ -1,5 +1,5 @@
 {
-  "updated": "November 17, 2017 @ 10:58 AM",
+  "updated": "April 12, 2018 @ 12:09 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -18,7 +18,12 @@
           "value": [
             {
               "key": "biotic_powers",
-              "display": "Biotic Powers(3:1)",
+              "display": "Biotic Powers(2:1)",
+              "subclass_progression": null
+            },
+            {
+              "key": "cantrips",
+              "display": "Cantrips",
               "subclass_progression": null
             }
           ]
@@ -29,7 +34,7 @@
         },
         {
           "key": "cantrips",
-          "value": "2"
+          "value": "3"
         },
         {
           "key": "1",
@@ -222,7 +227,7 @@
           "value": [
             {
               "key": "biotic_powers",
-              "display": "Biotic Powers(1:2)",
+              "display": "Biotic Powers(2:2)",
               "subclass_progression": null
             }
           ]
@@ -233,7 +238,7 @@
         },
         {
           "key": "cantrips",
-          "value": "3"
+          "value": "4"
         },
         {
           "key": "1",
@@ -284,7 +289,7 @@
         },
         {
           "key": "cantrips",
-          "value": "3"
+          "value": "4"
         },
         {
           "key": "1",
@@ -324,7 +329,7 @@
           "value": [
             {
               "key": "biotic_powers",
-              "display": "Biotic Powers(2:2)",
+              "display": "Biotic Powers(1:2)",
               "subclass_progression": null
             }
           ]
@@ -335,7 +340,7 @@
         },
         {
           "key": "cantrips",
-          "value": "3"
+          "value": "4"
         },
         {
           "key": "1",
@@ -386,7 +391,7 @@
         },
         {
           "key": "cantrips",
-          "value": "3"
+          "value": "4"
         },
         {
           "key": "1",
@@ -426,7 +431,7 @@
           "value": [
             {
               "key": "biotic_powers",
-              "display": "Biotic Powers(1:3)",
+              "display": "Biotic Powers(2:3)",
               "subclass_progression": null
             }
           ]
@@ -528,7 +533,7 @@
           "value": [
             {
               "key": "biotic_powers",
-              "display": "Biotic Powers(1:3)",
+              "display": "Biotic Powers(2:3)",
               "subclass_progression": null
             }
           ]
@@ -630,7 +635,7 @@
           "value": [
             {
               "key": "biotic_powers",
-              "display": "Biotic Powers(1:4)",
+              "display": "Biotic Powers(2:4)",
               "subclass_progression": null
             }
           ]
@@ -641,7 +646,7 @@
         },
         {
           "key": "cantrips",
-          "value": "4"
+          "value": "5"
         },
         {
           "key": "1",
@@ -692,7 +697,7 @@
         },
         {
           "key": "cantrips",
-          "value": "4"
+          "value": "5"
         },
         {
           "key": "1",
@@ -732,7 +737,7 @@
           "value": [
             {
               "key": "biotic_powers",
-              "display": "Biotic Powers(1:4)",
+              "display": "Biotic Powers(2:4)",
               "subclass_progression": null
             }
           ]
@@ -743,7 +748,7 @@
         },
         {
           "key": "cantrips",
-          "value": "4"
+          "value": "5"
         },
         {
           "key": "1",
@@ -794,7 +799,7 @@
         },
         {
           "key": "cantrips",
-          "value": "4"
+          "value": "5"
         },
         {
           "key": "1",
@@ -845,7 +850,7 @@
         },
         {
           "key": "cantrips",
-          "value": "4"
+          "value": "5"
         },
         {
           "key": "1",
@@ -896,7 +901,7 @@
         },
         {
           "key": "cantrips",
-          "value": "4"
+          "value": "5"
         },
         {
           "key": "1",
@@ -947,7 +952,7 @@
         },
         {
           "key": "cantrips",
-          "value": "4"
+          "value": "5"
         },
         {
           "key": "1",
@@ -998,7 +1003,7 @@
         },
         {
           "key": "cantrips",
-          "value": "4"
+          "value": "5"
         },
         {
           "key": "1",

@@ -1,5 +1,5 @@
 {
-  "updated": "January 18, 2018 @ 11:55 AM",
+  "updated": "April 12, 2018 @ 12:03 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -84,8 +84,8 @@
           "key": "features",
           "value": [
             {
-              "key": "tech_power",
-              "display": "Tech Power(1)",
+              "key": "engineers_efficiency",
+              "display": "Engineer's Efficiency",
               "subclass_progression": null
             }
           ]
@@ -147,7 +147,7 @@
           "value": [
             {
               "key": "tech_power",
-              "display": "Tech Power(1)",
+              "display": "Tech Power(2)",
               "subclass_progression": null
             }
           ]
@@ -271,7 +271,7 @@
           "value": [
             {
               "key": "tech_power",
-              "display": "Tech Power(1)",
+              "display": "Tech Power(2)",
               "subclass_progression": null
             }
           ]
@@ -395,7 +395,7 @@
           "value": [
             {
               "key": "tech_power",
-              "display": "Tech Power(1)",
+              "display": "Tech Power(2)",
               "subclass_progression": null
             }
           ]
@@ -519,7 +519,7 @@
           "value": [
             {
               "key": "tech_power",
-              "display": "Tech Power(1)",
+              "display": "Tech Power(2)",
               "subclass_progression": null
             }
           ]
