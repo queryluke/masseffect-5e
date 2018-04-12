@@ -34,19 +34,19 @@
           {
             name: 'Standard',
             rarity: 'Common',
-            cost: '200 credits',
+            cost: '~200 credits',
             hp: '2d4 + 2'
           },
           {
             name: 'Enhanced',
             rarity: 'Uncommon',
-            cost: '400 credits',
+            cost: '~500 credits',
             hp: '4d4 + 4'
           },
           {
             name: 'Superior',
             rarity: 'Rare',
-            cost: '800 credits',
+            cost: '~1500 credits',
             hp: '8d4 + 8'
           },
           {

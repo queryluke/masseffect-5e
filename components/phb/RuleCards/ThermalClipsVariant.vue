@@ -13,7 +13,7 @@
       h3.title Armor Capacity: 10
       p.
         All armor comes standard with 10 thermal clip slots. Some armor and mods allow you to increase this amount.
-      p.title Resupplying
+      h3.title Resupplying: ~100 credits
       p.
         You can resupply all of your thermal clips at a gun shop or military depot for 500 credits.
 </template>
