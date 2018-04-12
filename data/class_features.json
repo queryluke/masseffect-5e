@@ -1,5 +1,5 @@
 {
-  "updated": "April 12, 2018 @ 12:03 PM",
+  "updated": "April 12, 2018 @  1:43 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -336,7 +336,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Starting at 2nd level, when you hit a creature with a melee weapon attack, you can expend one spell slot to deal force damage to the target, in addition to the weapon's damage. The extra damage is 2d8 for a 1st-level spell slot, plus 1d8 for each spell level higher than 1st."
+          "data": "Starting at 2nd level, when you hit a creature with a melee weapon attack, you can expend one spell slot to deal force damage to the target in addition to the weapon's damage. The extra damage is 2d8 for a 1st-level spell slot, plus 1d8 for each spell level higher than 1st."
         }
       ],
       "id": "biotic_slash",
@@ -1854,6 +1854,18 @@
       ],
       "id": "zero-sum",
       "mechanic_text_dump": "WhenyoumakeameleeattackinsteadofrollingadiceyoucanflipacoinOnheadsitsacriticalhitOntailsitsacriticalmissYoucanusethisabilityoncepershortrestStartingatthe9thlevelyoucanusethisabilitytwicepershortrestStartingatthe11thlevelyoucanusethisabilitythreetimespershortrest"
+    },
+    {
+      "name": "Vanguard Cantrip",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Learn one of the following cantrips: Charge, Biotic Punch, Barrier, or Throw"
+        }
+      ],
+      "id": "vanguard_cantrip",
+      "mechanic_text_dump": "LearnoneofthefollowingcantripsChargeBioticPunchBarrierorThrow"
     }
   ]
 }
