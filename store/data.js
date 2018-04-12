@@ -2,6 +2,7 @@ import adeptProgression from '~/data/adept_progression.json'
 import armorMechanics from '~/data/armor_mechanics.json'
 import armorMods from '~/data/armor_mods.json'
 import armorSets from '~/data/armor_sets.json'
+import attributions from '~/data/attributions.json'
 import backgrounds from '~/data/backgrounds.json'
 import bestiary from '~/data/bestiary.json'
 import classes from '~/data/classes.json'
@@ -30,6 +31,7 @@ export default {
   armorMechanics,
   armorMods,
   armorSets,
+  attributions,
   backgrounds,
   bestiary,
   classes,
