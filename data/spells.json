@@ -1,5 +1,5 @@
 {
-  "updated": "April 10, 2018 @  2:08 PM",
+  "updated": "April 13, 2018 @  2:44 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -3443,6 +3443,110 @@
       ],
       "class_list": "Adept, Sentinel, Vanguard",
       "mechanic_text_dump": "MakearangedspellattackonanorganiccreatureyoucanseewithinrangeOnahityougeneratearapidlyshiftingmasseffectfieldinsidethetargetdealingnecroticdamageequalto3d10yourbioticmodifierInadditionthetargetisprimednecroticuntiltheendofitsnextturnThisdamagebypassesshieldsAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d10foreachslotlevelabovethe2nd"
+    },
+    {
+      "name": "Biotic Push",
+      "level": "0",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Make a melee spell attack on a medium-size or smaller object within range. On a hit, you create a pocket mass effect field that deals 1d4 force damage repels the target 6m away from you, knocking it {prone}."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "At higher levels: This spell's damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), 17th level (4d4)"
+        }
+      ],
+      "adv_option_1": "Quick Cast : You may cast Biotic Push as a bonus action.",
+      "adv_option_2": "Deadly Push : The force of the blast causes internal bleeding, dealing and additional 1d6 necrotic damage.",
+      "type": "biotic",
+      "die_type": "d4",
+      "attack_type": [
+        "Melee Spell Attack"
+      ],
+      "casting_time": "Action",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "Touch",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "damage",
+        "control"
+      ],
+      "damage_type": [
+
+      ],
+      "detonates": "x",
+      "primes": null,
+      "adept": "x",
+      "vanguard": "x",
+      "sentinel": "x",
+      "infiltrator": null,
+      "engineer": null,
+      "soldier": null,
+      "min_tech_points": null,
+      "id": "biotic_push",
+      "adv_options": [
+        "Quick Cast : You may cast Biotic Push as a bonus action.",
+        "Deadly Push : The force of the blast causes internal bleeding, dealing and additional 1d6 necrotic damage."
+      ],
+      "class_list": "Adept, Sentinel, Vanguard",
+      "mechanic_text_dump": "MakeameleespellattackonamediumsizeorsmallerobjectwithinrangeOnahityoucreateapocketmasseffectfieldthatdeals1d4forcedamagerepelsthetarget6mawayfromyouknockingitproneAthigherlevelsThisspellsdamageincreasesby1d4whenyoureach5thlevel2d411thlevel3d417thlevel4d4"
+    },
+    {
+      "name": "Biotic Punch",
+      "level": "0",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Make a melee spell attack on an object within range. On a hit, you increase the mass of your fist, 1d8 bludgeoning damage. The kenetic force can be harness by your biotic implant as Barrier ticks. Gain 1 barrier tick per size of the object that was hit (1 for small, 2 for medium, 3 for large, etc.)"
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "At higher levels: This spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), 17th level (4d8)"
+        }
+      ],
+      "adv_option_1": "Efficient Punch : Gain an additional barrier tick when you hit a target with your Biotic punch",
+      "adv_option_2": "Syphoning Strike : Instead of gaining a barrier tick, you can regain 2 shield points per size of the creature.",
+      "type": "biotic",
+      "die_type": "d8",
+      "attack_type": [
+        "Melee Spell Attack"
+      ],
+      "casting_time": "Attack",
+      "concentration": null,
+      "duration": "Instant",
+      "range": "Touch",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "damage",
+        "buff"
+      ],
+      "damage_type": [
+        "bludgeoning"
+      ],
+      "detonates": "x",
+      "primes": null,
+      "adept": "x",
+      "vanguard": "x",
+      "sentinel": "x",
+      "infiltrator": null,
+      "engineer": null,
+      "soldier": null,
+      "min_tech_points": null,
+      "id": "biotic_punch",
+      "adv_options": [
+        "Efficient Punch : Gain an additional barrier tick when you hit a target with your Biotic punch",
+        "Syphoning Strike : Instead of gaining a barrier tick, you can regain 2 shield points per size of the creature."
+      ],
+      "class_list": "Adept, Sentinel, Vanguard",
+      "mechanic_text_dump": "MakeameleespellattackonanobjectwithinrangeOnahityouincreasethemassofyourfist1d8bludgeoningdamageThekeneticforcecanbeharnessbyyourbioticimplantasBarrierticksGain1barriertickpersizeoftheobjectthatwashit1forsmall2formedium3forlargeetcAthigherlevelsThisspellsdamageincreasesby1d8whenyoureach5thlevel2d811thlevel3d817thlevel4d8"
     }
   ]
 }
