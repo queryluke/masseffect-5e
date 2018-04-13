@@ -14,7 +14,9 @@
     v-layout(row wrap flex-start)
       v-flex.xs12.sm4.md2.attribute.mb-2
         label Range
-        div {{ weapon.range }}
+        div(v-if="weapon.type === 'Melee' || weapon.type === 'Heavy Weapon'")
+          span(v-if="weapon.range") {{ weapon.range }}m
+        div(v-else) ({{ weapon.range }}m / {{ weapon.longRange }}m)
       v-flex.xs12.sm4.md2.attribute.mb-2(v-if="weapon.type !== 'Melee'")
         label Rate of Fire
         div {{ weapon.rof }}
@@ -22,9 +24,11 @@
         label Damage
         div(v-if="weapon.type === 'Melee'") {{ weapon.rof }}d{{ weapon.damage }}
         div(v-else) d{{ weapon.damage }}
-      v-flex.xs12.sm4.md2.attribute.mb-2
+      v-flex(v-if="weapon.type === 'Melee'").xs12.sm4.md2.attribute.mb-2
+        label Min STR
+        div {{ weapon.minStr }}
+      v-flex(v-else).xs12.sm4.md2.attribute.mb-2
         label(v-if="weapon.type === 'Heavy Weapon'") Charges
-        label(v-else-if="weapon.type === 'Melee'") Min STR
         label(v-else) Heat
         div {{ weapon.heat }}
       v-flex.xs12.sm4.md2.attribute.mb-2

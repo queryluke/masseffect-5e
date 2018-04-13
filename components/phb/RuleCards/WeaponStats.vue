@@ -8,8 +8,10 @@
         weapons than the number of weapon slots allowed by your armor or if you are using the #[a(v-on:click="showGlobalDialog('encumbrance')") Variant: Encumbrance rule].
       p.title.mt-2 Range
       p.
-        If a target is beyond the weapon's range, the attack roll is made at a disadvantage. Ranges are an approximation and
-        can be 2m (hip fire), 10m (close range), 20m (average range), 60m (long range), 120m (sniper range).
+        A weapon that can be used to make a ranged Attack has a range in parentheses. The range lists two numbers. The first is the weapon’s normal range in meters,
+        and the second indicates the weapon’s long range. When attacking a target beyond normal range, you have disadvantage on the Attack roll.
+        You can’t Attack a target beyond the weapon’s long range. Heavy weapons only have a single range. They cannot be used to make attacks on targets
+        beyond their range.
       p.title.mt-2 Rate of Fire (Rof) & Damage
       p.
         On a successful ranged attack, the RoF of the weapon indicates number of dice you roll. The Damage indicates the die type.

@@ -31,6 +31,7 @@
   import WeaponList from '~/components/phb/WeaponList.vue'
   import {mapGetters} from 'vuex'
   import PageFooter from '~/components/phb/PageFooter.vue'
+  import {AverageFromDie} from '~/mixins/averageFromDie'
 
   export default {
     components: {
@@ -45,11 +46,16 @@
         let search = this.search
         let order = this.sortOrder
         if (sortKey) {
+          const self = this
           data = data.slice().sort(function (a, b) {
             switch (sortKey) {
               case 'name':
                 a = a[sortKey]
                 b = b[sortKey]
+                break
+              case 'rof':
+                a = self.averageFromDie(`${a.rof}d${a.damage}`)
+                b = self.averageFromDie(`${b.rof}d${b.damage}`)
                 break
               default:
                 a = a[sortKey] ? parseInt(a[sortKey].replace(/\D/, ''), 10) : 0
@@ -82,8 +88,7 @@
         headers: [
           { key: 'type', display: '', classes: 'xs4 sm3 lg1', sortable: false },
           { key: 'name', display: 'Name', classes: 'xs8 sm9 lg3', sortable: true },
-          { key: 'rof', display: 'RoF', classes: 'hidden-md-and-down lg1', sortable: true },
-          { key: 'damage', display: 'Dmg', classes: 'hidden-md-and-down lg1', sortable: true },
+          { key: 'rof', display: 'RoF/Dmg', classes: 'hidden-md-and-down lg2', sortable: true },
           { key: 'heat', display: 'Heat', classes: 'hidden-md-and-down lg2', sortable: true },
           { key: 'range', display: 'Range', classes: 'hidden-md-and-down lg2', sortable: true },
           { key: 'weight', display: 'Weight', classes: 'hidden-md-and-down lg2', sortable: true },
@@ -109,6 +114,7 @@
           this.sortOrder = 1
         }
       }
-    }
+    },
+    mixins: [AverageFromDie]
   }
 </script>
