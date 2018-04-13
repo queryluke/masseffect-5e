@@ -15,3 +15,6 @@ _site
 
 # jet brains products
 .idea
+
+# mac store
+.DS_Store
