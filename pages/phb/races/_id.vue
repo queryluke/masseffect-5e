@@ -61,7 +61,7 @@
         v-list(dark).py-0.primary.dark
           v-list-tile(:to="{ name: 'phb-races-id', params: { id: next_race.id }}" ripple)
             v-list-tile-content
-              v-list-tile-sub-title.text-xs-right Next Class:
+              v-list-tile-sub-title.text-xs-right Next Race:
               v-list-tile-title.text-xs-right(v-text="next_race.name")
             v-icon(dark).ml-5.hidden-xs-only chevron_right
 </template>
