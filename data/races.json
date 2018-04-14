@@ -1,5 +1,5 @@
 {
-  "updated": "March 16, 2018 @  8:18 PM",
+  "updated": "April 13, 2018 @ 11:50 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQI4F-wI2gwN395GApB347yPb1PixjOtOqZ0qoBYw7d57MPETHS40ZjIy1-DIfZf06PUwrspMiuAMlk/pubhtml",
   "data": [
     {
@@ -96,7 +96,7 @@
       "name": "Krogan",
       "similar_to": "Orc",
       "alignment": "Tend towards lawful as a species, with clan rituals and traditions holding heavy sway. Morality varies widely.",
-      "available_classes": "Adept, Sentinel, Soldier, Vanguard",
+      "available_classes": "Adept, Engineer, Sentinel, Soldier, Vanguard",
       "sexy_level": "7",
       "increases": "+2 Strength, +1 Constitution",
       "size": "Medium",
