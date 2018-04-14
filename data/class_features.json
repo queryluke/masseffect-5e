@@ -1,5 +1,5 @@
 {
-  "updated": "April 12, 2018 @  1:43 PM",
+  "updated": "April 13, 2018 @ 11:26 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -8,11 +8,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. You can't increase an ability score above 20 using this feature. You may instead take a Feat available to your race."
+          "data": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. You can't increase an ability score above 20 using this feature. You may instead take a Feat."
         }
       ],
       "id": "ability_score_improvement",
-      "mechanic_text_dump": "Youcanincreaseoneabilityscoreofyourchoiceby2oryoucanincreasetwoabilityscoresofyourchoiceby1Youcantincreaseanabilityscoreabove20usingthisfeatureYoumayinsteadtakeaFeatavailabletoyourrace"
+      "mechanic_text_dump": "Youcanincreaseoneabilityscoreofyourchoiceby2oryoucanincreasetwoabilityscoresofyourchoiceby1Youcantincreaseanabilityscoreabove20usingthisfeatureYoumayinsteadtakeaFeat"
     },
     {
       "name": "Adrenaline Rush",
