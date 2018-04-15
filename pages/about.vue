@@ -174,7 +174,7 @@
             ' thanks to RJ, but he\'s also had a hand in weapon and armor mods and play testing'
           },
           {
-            name: 'Alex N',
+            name: 'Alex Needleman',
             image: '/images/spells/tech.svg',
             desc: 'Alex is a thorough and detail oriented play tester who has pointed out many anomalies and problematic' +
             ' features. He\'s also been working on a set of VTT maps that we hope to feature on the site soon. He has also had a heavy' +
