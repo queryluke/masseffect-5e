@@ -55,7 +55,7 @@
           v-list-tile(:to="{ name: 'phb-races-id', params: { id: previous_race.id }}" ripple)
             v-icon(dark).mr-5.hidden-xs-only chevron_left
             v-list-tile-content
-              v-list-tile-sub-title Previous Class:
+              v-list-tile-sub-title Previous Race:
               v-list-tile-title(v-text="previous_race.name")
       v-flex(v-if="next_race.name" v-bind:class="{ 'offset-xs6': !previous_race.name }").primary.pa-0.xs6
         v-list(dark).py-0.primary.dark
