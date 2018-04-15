@@ -3,12 +3,12 @@
     span(slot="header") New Combat Action: Reload
     template(slot="text")
       p.
-        When you take the Reload action, you add a new Thermal Clip into your equipped weapon.
-      p.title Rapid Reload
+        When you take the Reload Action, you add a new Thermal Clip into your equipped weapon.
+      p.title Rapid Reload (reaction)
       p.
-        After taking the Reload action, if you have not taken a bonus action this turn, you may attempt a DC 15 Dexterity (Sleight of Hand) check.
-        On a success, you reload your currently equipped weapon as bonus action, and my choose a different action to make this turn. On a failure
-        you reload the weapon as your action. On a critical failure, the thermal clip drops from your hands and your weapon is not reloaded.
+        If you are only wielding one weapon, after taking the Reload Action, you may use your Reaction to attempt a DC 15 Dexterity (Sleight of Hand) check.
+        On a success, you reload your currently equipped weapon and may choose a different Action. On a failure,
+        you reload the weapon as your Action. On a critical failure, the thermal clip drops from your hands and your weapon is not reloaded.
 </template>
 
 <script>

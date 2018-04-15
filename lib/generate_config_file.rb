@@ -44,14 +44,8 @@ def generate_config_file(page)
 
       if page[:type] =~ %r{_progression}
         dup_model['features'] = dup_model['features'].split(',').map do |l|
-          if l =~ %r{\(adv\)$}
-            new_l = l.gsub(%r{\(adv\)$},'')
-            key = new_l.downcase.strip.gsub(' ', '_').gsub(/[^a-zA-z\-]/, '')
-            display = new_l.strip + ' (select advancement)'
-          else
-            key = l.downcase.strip.gsub(' ', '_').gsub(/[^a-zA-z\-]/, '')
-            display = l.strip
-          end
+          key = l.downcase.strip.gsub(' ', '_').gsub(/[^a-zA-z\-]/, '')
+          display = l.strip
           if key == 'subclass_feature'
             subclass_progression = subclass_increment
             subclass_increment = subclass_increment + 1

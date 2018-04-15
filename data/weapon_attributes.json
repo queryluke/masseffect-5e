@@ -9,7 +9,7 @@
   },
   {
     "name": "Double Tap",
-    "description": "When you make a ranged attack with this weapon, you can use your bonus action to make a second ranged attack. You do not add your Dexterity modifier to the attack or damage roll. The second attack may be on the same or a different target."
+    "description": "When you make a ranged attack with this weapon, you can use your bonus action to make a second ranged attack. You do not add your ability modifier to the damage of the bonus attack, unless that modifier is negative. The second attack may be on the same or a different target."
   },
   {
     "name": "Hip Fire",

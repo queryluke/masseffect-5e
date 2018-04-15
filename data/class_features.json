@@ -1,5 +1,5 @@
 {
-  "updated": "April 14, 2018 @  8:55 PM",
+  "updated": "April 14, 2018 @ 10:04 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -806,6 +806,11 @@
       "mechanic": [
         {
           "id": 1,
+          "type": "line",
+          "data": "Choose a fighting style from the list below and gain the perk in the first column. The second time you learn this ability you may choose to gain the Advanced Perk in the Fighting Style you've alread selected or select a second Fighting Style Perk."
+        },
+        {
+          "id": 2,
           "type": "table",
           "data": {
             "headers": [
@@ -821,8 +826,8 @@
               ],
               [
                 "Gunslinger",
-                "You can wield 2 pistols or SMGs (or combination thereof). Your off-hand weapon always shoots with a disadvantage. You will automatically miss targets out of range.",
-                "Remove the disadvantage and range penalty to your off-hand weapon"
+                "When you take the Attack action and attack with a Heavy Pistol or SMG that you're holding in one hand, you can use a free action to attack with a different Heavy Weapon or SMG that you're holding in the other hand. The Double Tap rule can be applied to both weapons for one bonus action. However, the second weapon always suffers an Off-hand Penalty: do not add your proficiency bonus to the attack roll.",
+                "Remove the Off-hand Penalty from your second weapon attack."
               ],
               [
                 "The Free Hand",
@@ -832,11 +837,11 @@
               [
                 "Carnage",
                 "+2 to hit with attacks made with a shotgun.",
-                "When making an attack roll with a shotgun, you can add an additional 2m to the guns range. This applies to the hip-fire mechanic as well (i.e., you have advantage to hit target's within 4m)"
+                "All shotguns you wield have an increased range of 2m. This applies to the hip-fire mechanic as well. For example, a shotgun with range of 2m with hip-fire gives you advantage on targets within 4m."
               ],
               [
                 "Sniper",
-                "Add your dexterity modifier as damage to successful range attacks against targets that are at least 10m away.",
+                "Add your porficiency bonus as damage to successful range attacks against targets that are at least 10m away.",
                 "If no hostile creature is within 10m of you, you have advantage on all ranged weapon attacks against targets at least 10m away."
               ],
               [
@@ -854,7 +859,7 @@
         }
       ],
       "id": "fighting_style",
-      "mechanic_text_dump": "tableStylePerkAdvancedPerkBrawlerYouhaveadvantagewhenmakingmeleeattacksAddtwiceyourproficiencybonustoyourattackrollsGunslingerYoucanwield2pistolsorSMGsorcombinationthereofYouroffhandweaponalwaysshootswithadisadvantageYouwillautomaticallymisstargetsoutofrangeRemovethedisadvantageandrangepenaltytoyouroffhandweaponTheFreeHandWhenwieldingapistolyouhavea2bonustohitwithrangedspellortechattacksWhenwieldingapistolyouaddyourproficiencybonusasdamagetoalldamagingbioticspellsandtechCarnage2tohitwithattacksmadewithashotgunWhenmakinganattackrollwithashotgunyoucanaddanadditional2mtothegunsrangeThisappliestothehipfiremechanicaswellieyouhaveadvantagetohittargetswithin4mSniperAddyourdexteritymodifierasdamagetosuccessfulrangeattacksagainsttargetsthatareatleast10mawayIfnohostilecreatureiswithin10mofyouyouhaveadvantageonallrangedweaponattacksagainsttargetsatleast10mawayDefense1AC2ACProtectionVanguardOnlyWhenacreatureyoucanseeattacksatargetotherthanyouthatiswithin2mofyouyoucanuseyourreactionandexpendonebarrierticktoimposedisadvantageontheattackrollIftheattacksucceedsthebarriertickabsorbsdamageasanormalbarriertickwouldtable"
+      "mechanic_text_dump": "ChooseafightingstylefromthelistbelowandgaintheperkinthefirstcolumnThesecondtimeyoulearnthisabilityyoumaychoosetogaintheAdvancedPerkintheFightingStyleyouvealreadselectedorselectasecondFightingStylePerktableStylePerkAdvancedPerkBrawlerYouhaveadvantagewhenmakingmeleeattacksAddtwiceyourproficiencybonustoyourattackrollsGunslingerWhenyoutaketheAttackactionandattackwithaHeavyPistolorSMGthatyoureholdinginonehandyoucanuseafreeactiontoattackwithadifferentHeavyWeaponorSMGthatyoureholdingintheotherhandTheDoubleTaprulecanbeappliedtobothweaponsforonebonusactionHoweverthesecondweaponalwayssuffersanOffhandPenaltydonotaddyourproficiencybonustotheattackrollRemovetheOffhandPenaltyfromyoursecondweaponattackTheFreeHandWhenwieldingapistolyouhavea2bonustohitwithrangedspellortechattacksWhenwieldingapistolyouaddyourproficiencybonusasdamagetoalldamagingbioticspellsandtechCarnage2tohitwithattacksmadewithashotgunAllshotgunsyouwieldhaveanincreasedrangeof2mThisappliestothehipfiremechanicaswellForexampleashotgunwithrangeof2mwithhipfiregivesyouadvantageontargetswithin4mSniperAddyourporficiencybonusasdamagetosuccessfulrangeattacksagainsttargetsthatareatleast10mawayIfnohostilecreatureiswithin10mofyouyouhaveadvantageonallrangedweaponattacksagainsttargetsatleast10mawayDefense1AC2ACProtectionVanguardOnlyWhenacreatureyoucanseeattacksatargetotherthanyouthatiswithin2mofyouyoucanuseyourreactionandexpendonebarrierticktoimposedisadvantageontheattackrollIftheattacksucceedsthebarriertickabsorbsdamageasanormalbarriertickwouldtable"
     },
     {
       "name": "Focused Biotics",

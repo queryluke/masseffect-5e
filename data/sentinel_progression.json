@@ -1,5 +1,5 @@
 {
-  "updated": "April 12, 2018 @ 12:03 PM",
+  "updated": "April 14, 2018 @  9:04 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -602,7 +602,7 @@
           "value": [
             {
               "key": "fighting_style",
-              "display": "Fighting Style (select advancement)",
+              "display": "Fighting Style",
               "subclass_progression": null
             }
           ]
