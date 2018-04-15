@@ -1,5 +1,5 @@
 {
-  "updated": "April 13, 2018 @ 11:26 PM",
+  "updated": "April 14, 2018 @  8:55 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -1721,21 +1721,28 @@
       "mechanic_text_dump": "IncreasethedistanceofyourTechAurapackagesto10m"
     },
     {
+      "name": "Tech/Combat Power",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Learn or advance a tech or combat power."
+        }
+      ],
+      "id": "techcombat_power",
+      "mechanic_text_dump": "Learnoradvanceatechorcombatpower"
+    },
+    {
       "name": "Tech Power",
       "mechanic": [
         {
           "id": 1,
           "type": "line",
           "data": "Learn or advance a tech power."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Infiltrators may learn or advance an available combat power instead."
         }
       ],
       "id": "tech_power",
-      "mechanic_text_dump": "LearnoradvanceatechpowerInfiltratorsmaylearnoradvanceanavailablecombatpowerinstead"
+      "mechanic_text_dump": "Learnoradvanceatechpower"
     },
     {
       "name": "Teleporting Dodge",

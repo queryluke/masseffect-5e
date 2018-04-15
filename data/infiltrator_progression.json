@@ -1,5 +1,5 @@
 {
-  "updated": "April 12, 2018 @ 10:18 AM",
+  "updated": "April 14, 2018 @  8:55 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -71,8 +71,8 @@
               "subclass_progression": null
             },
             {
-              "key": "tech_power",
-              "display": "Tech Power(2)",
+              "key": "techcombat_power",
+              "display": "Tech/Combat Power(2)",
               "subclass_progression": null
             }
           ]
@@ -153,7 +153,7 @@
         },
         {
           "key": "max_tp",
-          "value": "2"
+          "value": "3"
         }
       ]
     },
@@ -216,8 +216,8 @@
               "subclass_progression": null
             },
             {
-              "key": "tech_power",
-              "display": "Tech Power(2)",
+              "key": "techcombat_power",
+              "display": "Tech/Combat Power(2)",
               "subclass_progression": null
             }
           ]
@@ -228,7 +228,7 @@
         },
         {
           "key": "max_tp",
-          "value": "3"
+          "value": "4"
         }
       ]
     },
@@ -263,7 +263,7 @@
         },
         {
           "key": "max_tp",
-          "value": "3"
+          "value": "4"
         }
       ]
     },
@@ -298,7 +298,7 @@
         },
         {
           "key": "max_tp",
-          "value": "3"
+          "value": "4"
         }
       ]
     },
@@ -333,7 +333,7 @@
         },
         {
           "key": "max_tp",
-          "value": "4"
+          "value": "5"
         }
       ]
     },
@@ -368,7 +368,7 @@
         },
         {
           "key": "max_tp",
-          "value": "4"
+          "value": "5"
         }
       ]
     },
@@ -396,8 +396,8 @@
               "subclass_progression": null
             },
             {
-              "key": "tech_power",
-              "display": "Tech Power(2)",
+              "key": "techcombat_power",
+              "display": "Tech/Combat Power(2)",
               "subclass_progression": null
             }
           ]
@@ -408,7 +408,7 @@
         },
         {
           "key": "max_tp",
-          "value": "4"
+          "value": "5"
         }
       ]
     },
@@ -443,7 +443,7 @@
         },
         {
           "key": "max_tp",
-          "value": "4"
+          "value": "6"
         }
       ]
     },
@@ -478,7 +478,7 @@
         },
         {
           "key": "max_tp",
-          "value": "5"
+          "value": "6"
         }
       ]
     },
@@ -506,8 +506,8 @@
               "subclass_progression": null
             },
             {
-              "key": "tech_power",
-              "display": "Tech Power(2)",
+              "key": "techcombat_power",
+              "display": "Tech/Combat Power(2)",
               "subclass_progression": null
             }
           ]
@@ -518,7 +518,7 @@
         },
         {
           "key": "max_tp",
-          "value": "5"
+          "value": "6"
         }
       ]
     },
@@ -553,7 +553,7 @@
         },
         {
           "key": "max_tp",
-          "value": "5"
+          "value": "7"
         }
       ]
     },
@@ -588,7 +588,7 @@
         },
         {
           "key": "max_tp",
-          "value": "5"
+          "value": "7"
         }
       ]
     },
@@ -623,7 +623,7 @@
         },
         {
           "key": "max_tp",
-          "value": "6"
+          "value": "7"
         }
       ]
     },
@@ -651,8 +651,8 @@
               "subclass_progression": null
             },
             {
-              "key": "tech_power",
-              "display": "Tech Power(1)",
+              "key": "techcombat_power",
+              "display": "Tech/Combat Power(1)",
               "subclass_progression": null
             }
           ]
@@ -663,7 +663,7 @@
         },
         {
           "key": "max_tp",
-          "value": "6"
+          "value": "8"
         }
       ]
     },
@@ -698,7 +698,7 @@
         },
         {
           "key": "max_tp",
-          "value": "6"
+          "value": "8"
         }
       ]
     },
@@ -733,7 +733,7 @@
         },
         {
           "key": "max_tp",
-          "value": "6"
+          "value": "8"
         }
       ]
     }
