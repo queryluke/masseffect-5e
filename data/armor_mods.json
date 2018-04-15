@@ -1,5 +1,5 @@
 {
-  "updated": "February 25, 2018 @  8:31 PM",
+  "updated": "April 14, 2018 @  4:46 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRIPzbOBXOdWbaY779un1EV3HyacCV3fe15kHW4ABjMV0yHi3GZHVqnbiOVSQ_Dgh1whimOITGOXHkn/pubhtml",
   "data": [
     {
@@ -268,7 +268,7 @@
       "piece": "Arms",
       "flavor": "Microservos coordinate your melee strikes.",
       "mechanic": "Gain a +2 bonus to melee attack and damage rolls",
-      "cost": "16000",
+      "cost": "20000",
       "manu": "Ariake Technologies",
       "id": "microservos"
     },
@@ -277,7 +277,7 @@
       "piece": "Legs",
       "flavor": "Microservos coordinate your melee strikes.",
       "mechanic": "Gain a +2 bonus to melee attack and damage rolls",
-      "cost": "16000",
+      "cost": "20000",
       "manu": "Ariake Technologies",
       "id": "microservos"
     },
@@ -439,7 +439,7 @@
       "piece": "Head",
       "flavor": "A built-in VI aim enhancement targets enemies' vulnerabilities.",
       "mechanic": "You gain a +2 bonus to ranged weapon attack and damage rolls",
-      "cost": "16000",
+      "cost": "24000",
       "manu": "Armax Arsenal",
       "id": "vi_aiming"
     },
@@ -457,7 +457,7 @@
       "piece": "Arms",
       "flavor": "Incorporate micro-gyros linked with your hard suit's internal targeting aids.",
       "mechanic": "You gain a +1 bonus to ranged weapon attack and damage rolls",
-      "cost": "8000",
+      "cost": "12000",
       "manu": "Aldrin Labs",
       "id": "weapon_stabilizers"
     }

@@ -70,6 +70,7 @@
             icon: 'build',
             items: [
               { href: '/phb/weapons', title: 'Weapons' },
+              { href: '/phb/weapon-mods', title: 'Weapon Mods' },
               { href: '/phb/armor/mods', title: 'Armor Mods' },
               { href: '/phb/armor/sets', title: 'Armor Sets' },
               { href: '/phb/items', title: 'Other Items' }

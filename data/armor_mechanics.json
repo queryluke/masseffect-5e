@@ -1,5 +1,5 @@
 {
-  "updated": "February 25, 2018 @  8:30 PM",
+  "updated": "April 14, 2018 @  6:47 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRIPzbOBXOdWbaY779un1EV3HyacCV3fe15kHW4ABjMV0yHi3GZHVqnbiOVSQ_Dgh1whimOITGOXHkn/pubhtml",
   "data": [
     {
@@ -20,7 +20,7 @@
       "mechanic": "attack bonus",
       "description": "+1 to [biotic, tech, ranged weapon, or melee weapon] attack and damage rolls",
       "amount": "1 damage type",
-      "cost": "8000",
+      "cost": "12000",
       "id": "attack_bonus"
     },
     {

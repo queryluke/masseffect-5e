@@ -28,6 +28,7 @@ import SpellSaveDc from './SpellSaveDc.vue'
 import TechPowers from './TechPowers.vue'
 import ThermalClipsVariant from './ThermalClipsVariant.vue'
 import WeaponAttributes from './WeaponAttributes.vue'
+import WeaponCustomization from './WeaponCustomization.vue'
 import WeaponProficiency from './WeaponProficiency.vue'
 import WeaponSlots from './WeaponSlots.vue'
 import WeaponStats from './WeaponStats.vue'
@@ -63,6 +64,7 @@ export default {
   TechPowers,
   ThermalClipsVariant,
   WeaponAttributes,
+  WeaponCustomization,
   WeaponProficiency,
   WeaponSlots,
   WeaponStats

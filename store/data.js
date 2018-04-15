@@ -24,6 +24,7 @@ import subclasses from '~/data/subclasses.json'
 import thermalClips from '~/data/thermal_clips.json'
 import vanguardProgression from '~/data/vanguard_progression.json'
 import weaponAttributes from '~/data/weapon_attributes.json'
+import weaponMods from '~/data/weapon_mods.json'
 import weapons from '~/data/weapons.json'
 
 export default {
@@ -53,5 +54,6 @@ export default {
   thermalClips,
   vanguardProgression,
   weaponAttributes,
+  weaponMods,
   weapons
 }
