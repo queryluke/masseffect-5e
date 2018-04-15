@@ -19,7 +19,7 @@
       p.mb-0 #[strong Potency]
       p.
         Next, decide how the Mechanic's potency will stack. For example, increased shield points have 10 points per potency. So, an Armor
-        Mod with +30 shield points would have a potency of 3. Armor Mods should never have a potency higher than 5. Keep this in mind
+        Mod with +20 shield points would have a potency of 2. Armor Mods should never have a potency higher than 3. Keep this in mind
         when figuring out the lowest potency amount.
       p.mb-0 #[strong Cost]
       p.
