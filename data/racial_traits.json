@@ -1,5 +1,5 @@
 {
-  "updated": "February 26, 2018 @  4:15 PM",
+  "updated": "April 14, 2018 @ 10:45 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRETKGL62kEZPA69PhA3AGMiVeHOWBRkTMDL3f_K-oajryEjwdq7fRAj-qfIusPsLMiIqmB12D4Zun8/pubhtml",
   "data": [
     {
@@ -755,6 +755,30 @@
       "unshackled_ai": "x",
       "id": "innate_shielding",
       "description_text_dump": "Youhave5shieldsregen5Theseshieldscanbeupgradeforandequivalentcostofbuyinganarmormod"
+    },
+    {
+      "name": "High-Speed Metabolism",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Salarians don't need to sleep for as long as other races. Instead, their unique biology requires that they only need to sleep for 1 hour a day. Salarians gain the same benefit that a human does from 8 hours of sleep."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": "x",
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "unshackled_ai": null,
+      "id": "high-speed_metabolism",
+      "description_text_dump": "SalariansdontneedtosleepforaslongasotherracesInsteadtheiruniquebiologyrequiresthattheyonlyneedtosleepfor1houradaySalariansgainthesamebenefitthatahumandoesfrom8hoursofsleep"
     }
   ]
 }
