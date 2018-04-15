@@ -2,7 +2,7 @@
   v-container
     v-layout(row wrap)
       v-flex(xs12).my-5.text-xs-center
-        img(src="/images/me5e_logo_notm.png" height="90px")
+        img(src="/images/me5e_logo_notm.png" id="phbLogo")
       v-flex(xs12).text-xs-center
         h1.display-3 Player's Handbook Introduction
         h2.title v{{ version }}
@@ -163,3 +163,17 @@
     layout: 'phb'
   }
 </script>
+
+<style>
+  #phbLogo {
+    width: 100%;
+    height: auto;
+  }
+
+  @media screen and (min-width: 960px) {
+    #phbLogo {
+      width: auto;
+      height: 90px;
+    }
+  }
+</style>

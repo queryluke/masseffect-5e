@@ -11,7 +11,7 @@
         span {{ item.title }}
       v-btn(href="https://goo.gl/forms/3wZj8QhlsLv3XOJw1" target="_blank" flat)
         span.hidden-sm-and-down Feedback
-    span.hidden-md-and-up
+    span(id="mobileToolbar").hidden-md-and-up
       v-btn(v-for="(item, index) in items" v-bind:key="index" v-bind:to="item.route" icon)
         v-icon.hidden-md-and-up {{ item.icon }}
       v-btn(href="https://goo.gl/forms/3wZj8QhlsLv3XOJw1" target="_blank" icon)
@@ -23,7 +23,8 @@
   export default {
     computed: {
       showHamburger () {
-        return !['home', 'about', 'printables', 'news'].includes(this.$route.name)
+        console.log(this.$route.name)
+        return !['index', 'about', 'printables', 'news'].includes(this.$route.name)
       }
     },
     data () {
@@ -58,15 +59,32 @@
   }
 </script>
 
-<style lang="stylus">
-  .nav-brand
+<style>
+  @media(max-width: 420px) {
+    .toolbar__title {
+      margin-left: 2px;
+    }
+  }
+  @media(max-width: 350px){
+    .toolbar .toolbar__content > .btn:first-child, .toolbar .toolbar__extension > .btn:first-child {
+      margin-left: 5px;
+    }
+  }
+
+  #mobileToolbar a.btn--icon {
+    margin: 6px 2px;
+  }
+  .nav-brand {
     text-decoration: none;
+  }
+  .nav-brand img {
+    width: 30px;
+    vertical-align: middle;
+  }
+  .nav-brand span {
+    margin-left: 15px;
+    color: white;
+  }
 
-    img
-      width: 30px;
-      vertical-align: middle;
 
-    span
-      margin-left: 15px;
-      color: white;
 </style>
