@@ -8,6 +8,7 @@
           v-select(:items="versions" v-model="version" label="Version" class="input-group--focused" light)
       v-layout
         v-flex(xs12)
+          div.display-2.text-xs-center v{{ version }}
           div(v-html="changeFile").my-3
 </template>
 
@@ -51,5 +52,16 @@
 <style>
   ul, ol {
     margin-left: 2em;
+  }
+  h3 {
+    font-size: 1.5em;
+    margin-top: 1em;
+  },
+  h4 {
+    margin-top: .5em;
+    font-size: 1.1em;
+  }
+  p {
+    margin-bottom: 0;
   }
 </style>

@@ -11,7 +11,7 @@
         p.caption.ma-0.
           This conversion of the #[a(href="http://dnd.wizards.com/" target="_blank") Dungeon's and Dragons 5th Ed] is licensed under
           #[a(href="https://github.com/queryluke/masseffect-5e/blob/master/LICENSE.txt" target="_blank") GNU General Public License v3.0]
-        p.caption.ma-0.mb-2
+        p.caption.ma-0.mb-2.
           Except where otherwise noted, images on this site are from the #[a(href="http://masseffect.wikia.com/wiki/Mass_Effect_Wiki" target="_blank") Mass Effect Wikia]
           and are licensed under a #[a(href="http://creativecommons.org/licenses/by/4.0/" target="_blank") Creative Commons Attribution 4.0 International license].
         div This homebrew is licensed under GPL-3.0
