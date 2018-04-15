@@ -1,5 +1,5 @@
 {
-  "updated": "March 21, 2018 @  7:54 AM",
+  "updated": "April 14, 2018 @ 10:19 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT87AUwt1n514k6a6b4l0kOzGwIphsGXBJLFqujgkCsJ1rdudQ1Bk7Km12DACO5qQ2WGDVI8fT6-Xe/pubhtml",
   "data": [
     {
@@ -765,7 +765,7 @@
       "featuresActionsReactions": [
         "pack_tactics",
         "leadership",
-        "summon_seaker_swarm",
+        "summon_seeker_swarm",
         "collector_assault_rifle",
         "possessed_captain"
       ],
@@ -1758,7 +1758,6 @@
       ],
       "damageImmunities": [
         "poison",
-        "necrotic",
         "psychic"
       ],
       "conditionImmunities": [
@@ -1767,6 +1766,7 @@
         "grappled",
         "paralyzed",
         "petrified",
+        "poisoned",
         "stunned"
       ],
       "damageVulnerabilities": [
@@ -2323,11 +2323,11 @@
       ],
       "damageImmunities": [
         "poison",
-        "necrotic",
         "psychic"
       ],
       "conditionImmunities": [
-
+        "petrified",
+        "poisoned"
       ],
       "damageVulnerabilities": [
         "lightning"
@@ -2401,14 +2401,11 @@
       ],
       "damageImmunities": [
         "poison",
-        "necrotic",
         "psychic"
       ],
       "conditionImmunities": [
-        "blinded",
-        "deafened",
-        "paralyzed",
-        "petrified"
+        "petrified",
+        "poisoned"
       ],
       "damageVulnerabilities": [
         "lightning"

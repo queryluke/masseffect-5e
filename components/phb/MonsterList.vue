@@ -1,10 +1,6 @@
 <template lang="pug">
   v-expansion-panel(popout).mb-2
-    v-expansion-panel-content(
-      v-for="monster in monsters"
-      v-bind:monster="monster"
-      v-bind:key="monster.id"
-      hide-actions)
+    v-expansion-panel-content(v-for="monster in monsters" v-bind:monster="monster" v-bind:key="monster.id")
       div(slot="header")
         v-layout.spell-header
           v-flex.xs9.lg5 #[strong {{ monster.name }}]

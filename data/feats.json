@@ -1,5 +1,5 @@
 {
-  "updated": "April 10, 2018 @  2:17 PM",
+  "updated": "April 14, 2018 @ 10:20 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTPhVRIodUwbDYFw8wJZtmb63tTjFJMxY-cN6P5nayPpJhNxAQFqIxeSLd5Tz75aOZ7CLuBkNsDrcs9/pubhtml",
   "data": [
     {
@@ -1151,7 +1151,7 @@
           "data": "Instead of gaining proficiency with 4 weapons, you gain proficiency with 2 weapon types."
         }
       ],
-      "notes": "+1 Strength or Dexterity, 2 additional ranged weapon proficiencies",
+      "notes": "+1 Strength or Dexterity, 2 additional weapon proficiencies",
       "prerequisite": null,
       "batarian": "x",
       "drell": null,

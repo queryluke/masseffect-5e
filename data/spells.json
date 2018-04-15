@@ -1,5 +1,5 @@
 {
-  "updated": "April 13, 2018 @  2:44 PM",
+  "updated": "April 14, 2018 @ 10:39 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -548,7 +548,7 @@
         }
       ],
       "adv_option_1": "Lifting Wall : If a creature comes within 2m of the wall, you can use your reaction to make a pocket of negatively charged space near the creature's location. It must pass a Dexterity saving throw or become {lifted} until the end of your next turn.",
-      "adv_option_2": "Shifting Wall : As a reaction, you can either: move the wall up to 6m in any direction, rotate the wall up to 180 degrees, or reshape the wall within the parameters listed above.",
+      "adv_option_2": "Shifting Wall : As a reaction, you can either move the wall up to 6m in any direction, rotate the wall up to 180 degrees, or reshape the wall within the parameters listed above.",
       "type": "biotic",
       "die_type": null,
       "attack_type": [
@@ -578,7 +578,7 @@
       "id": "biotic_wall",
       "adv_options": [
         "Lifting Wall : If a creature comes within 2m of the wall, you can use your reaction to make a pocket of negatively charged space near the creature's location. It must pass a Dexterity saving throw or become {lifted} until the end of your next turn.",
-        "Shifting Wall : As a reaction, you can either: move the wall up to 6m in any direction, rotate the wall up to 180 degrees, or reshape the wall within the parameters listed above."
+        "Shifting Wall : As a reaction, you can either move the wall up to 6m in any direction, rotate the wall up to 180 degrees, or reshape the wall within the parameters listed above."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
       "mechanic_text_dump": "WithanimmensepositivechargecreateaninvisiblemasseffectfieldthatactslikeawallatapointyouchoosewithinrangeThewallappearsinanyorientationyouchooseasahorizontalorverticalbarrieroratanangleItcanbefreefloatingorrestingonasolidsurfaceYoucanformitintoahemisphericaldomeoraspherewitharadiusofupto4moryoucanshapeaflatsurfacemadeupoften2mby2mpanelsEachpanelmustbecontiguouswithanotherpanelInanyformthewallis14inchthickItlastsforthedurationIfthewallcutsthroughacreaturesspacewhenitappearsthecreatureispushedtoonesideofthewallyourchoicewhichsideNothingcanphysicallypassthroughthewallItisimmunetoalldamage"

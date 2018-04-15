@@ -9,11 +9,7 @@
       The following feats from the PHB are not available: {{ notAvailable }}
     div.mt-3
       v-expansion-panel(popout).mb-2
-        v-expansion-panel-content(
-        v-for="feat in items"
-        v-bind:feat="feat"
-        v-bind:key="feat.name"
-        hide-actions).large-panel
+        v-expansion-panel-content(v-for="feat in items" v-bind:feat="feat" v-bind:key="feat.name").large-panel
           div(slot="header")
             v-layout
               v-flex.xs2.md1

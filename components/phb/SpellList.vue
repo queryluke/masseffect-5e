@@ -1,6 +1,6 @@
 <template lang="pug">
   v-expansion-panel(popout).mb-2
-    v-expansion-panel-content(v-for="spell in spells" v-bind:spell="spell" v-bind:key="spell.id" hide-actions)
+    v-expansion-panel-content(v-for="spell in spells" v-bind:spell="spell" v-bind:key="spell.id")
       div(slot="header")
         v-layout.spell-header
           v-flex.xs4.sm3.lg2
