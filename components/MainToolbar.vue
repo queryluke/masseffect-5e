@@ -59,7 +59,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   @media(max-width: 420px) {
     .toolbar__title {
       margin-left: 2px;

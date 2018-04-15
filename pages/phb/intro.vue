@@ -164,7 +164,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   #phbLogo {
     width: 100%;
     height: auto;
