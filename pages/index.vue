@@ -19,7 +19,7 @@
               p.
                 Mass Effect 5e lets you take the immersive and cooperative story-telling gameplay of Dungeons & Dragons 5th edition
                 and experience new adventures in the Mass Effect universe. Go exploring in the Outer Terminus. Stop a political assassination
-                on Thessia. Battle the Reapers invasion on Earth, Palavan, or Sur'Kesh. Or, solve crimes as a C-SEC officer on the Citadel.
+                on Thessia. Battle the Reaper invasion on Earth, Palavan, or Sur'Kesh. Solve crimes as a C-SEC officer on the Citadel.
                 With Mass Effect 5e, the adventure is in your hands. You can play anywhere are on the Mass Effect timeline, create
                 new worlds, or revisit old ones. So gear up and start making your own journey.
         v-layout(column wrap align-center)
