@@ -12,12 +12,12 @@
             h2.headline Creators
         v-flex(xs12)
           v-container(grid-list-xl)
-            v-layout(row wrap align-center)
-              v-flex(xs12 md6)
+            v-layout(row wrap)
+              v-flex(xs12 md6 d-flex)
                 v-card.elevation-0.transparent
                   v-card-text.text-xs-center
                     v-avatar(size="128")
-                      img(src="https://avatars0.githubusercontent.com/u/12414786?s=460&v=4" alt="Luke A")
+                      img(src="/images/misc/luke.jpg" alt="Luke A")
                   v-card-title(primary-title).layout.column.justify-center.text-xs-center.pb-0
                     v-flex.pb-0
                       div.headline Luke Aeschleman
@@ -25,11 +25,12 @@
                       div Creator, Site Developer
                   v-card-text.pt-0
                     p.
-                      Luke fell in love with the Mass Effect Universe after playing Mass Effect 2. He's since amassed a number
-                      of playthroughs of all the games, DLC, and spent WAY too much time playing ME3 Multiplayer. By
-                      day, Luke is a Web Developer and Librarian at NC State University. By night, he DMs, codes, watches
-                      baseball and practices Si Lum Kung-Fu
-              v-flex(xs12 md6)
+                      Luke is a web developer, librarian, and mediocre DM, who decided one day (after only 2 years to TRPG experience) that he wanted
+                      to play Mass Effect while rolling dice. He fell in love with the Mass Effect Universe after playing Mass Effect 2 (noob!). But he's since
+                      amassed a number of playthroughs for all the games. He's also spent WAY too much time playing ME3 Multiplayer. By
+                      day, Luke is a Digital Technologies Developement Librarian at NC State University. By night, he wrangles 3 dogs, DMs, codes, watches
+                      baseball, and practices Si Lum Kung-Fu.
+              v-flex(xs12 md6 d-flex)
                 v-card.elevation-0.transparent
                   v-card-text.text-xs-center
                     v-avatar(size="128")
@@ -41,9 +42,10 @@
                       div Editor-in-Chief
                   v-card-text.pt-0
                     p.
-                      Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
-                      Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                      Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.
+                      Hugh is a TRPG afficianado and DM/GM wizard. But, more importantly, Hugh has as much love for Mass Effect
+                      as anyone. With a keen eye for detail, Hugh takes a lot of the random crap Luke comes up with, strips away the
+                      verbiage and creates actionable rules and changes. By day, Hugh is the Director of Technology Solutions and Web Development
+                      at Rock, Paper, Scissors. By night, he DMs, Dads, and spends endless hours on his Nintendo Switch.
     section
       v-layout(row wrap justify-center)
         v-flex(xs12 sm8).my-3
@@ -181,8 +183,19 @@
           {
             name: 'Adam, a.k.a. TheMarmotKing',
             image: 'https://avatars3.githubusercontent.com/u/37369223?s=460&v=4',
-            desc: 'Adam has provided a lot of invaluable feedback and started many conversations. Most notibally, you can thank' +
+            desc: 'Adam has provided a lot of invaluable feedback and started many conversations. Most notably, you can thank' +
             ' him for the recent boost in class spell acquisition. '
+          },
+          {
+            name: 'Benjamin McPherson',
+            image: 'https://avatars3.githubusercontent.com/u/1324851?s=400&v=4',
+            desc: 'The newest member of the team and likely to get a creator card soon. Ben has been poring through the rule set and' +
+            'pointing out OP mechanics and faulty site bugs. He\'s also been working on new classes. So thank him for the upcoming Angara and Protheans.'
+          },
+          {
+            name: 'Other Shout outs!',
+            image: 'https://vignette.wikia.nocookie.net/masseffect/images/3/32/ME1_Paragon.png/revision/latest?cb=20120309175829',
+            desc: 'Noel Moriarty, Mel Bee, Joey C., Connor C., and any one who has contacted us with ideas or words of motivation!'
           }
         ]
       }
