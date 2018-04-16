@@ -23,7 +23,6 @@
   export default {
     computed: {
       showHamburger () {
-        console.log(this.$route.name)
         return !['index', 'about', 'printables', 'news'].includes(this.$route.name)
       }
     },
