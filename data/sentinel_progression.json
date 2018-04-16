@@ -1,5 +1,5 @@
 {
-  "updated": "April 14, 2018 @  9:04 PM",
+  "updated": "April 15, 2018 @  8:35 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -220,8 +220,8 @@
               "subclass_progression": null
             },
             {
-              "key": "bioitc_powers",
-              "display": "Bioitc Powers(2:1)",
+              "key": "biotic_powers",
+              "display": "Biotic Powers(2:1)",
               "subclass_progression": null
             }
           ]
@@ -413,8 +413,8 @@
               "subclass_progression": null
             },
             {
-              "key": "bioitc_powers",
-              "display": "Bioitc Powers(2:2)",
+              "key": "biotic_powers",
+              "display": "Biotic Powers(2:2)",
               "subclass_progression": null
             }
           ]
