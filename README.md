@@ -9,10 +9,7 @@ A homebrew conversion of Dungeons & Dragons 5th Edition into the Mass Effect Uni
 3. [Hosted by Github Pages](https://pages.github.com/)
 
 ## Contributing
-
-### Making suggestions about the system
-
-[Feedback form](https://goo.gl/forms/3wZj8QhlsLv3XOJw1)
+Please see the [contributing guide](https://github.com/queryluke/masseffect-5e/blob/master/CONTRIBUTING.md)
 
 ### Working on the site
 Requirements: [Node.js](https://nodejs.org/)
