@@ -2,6 +2,11 @@ For the code savvy, you can always fork the repo, make changes and issue pull re
 
 Otherwise, the standard for contributing ideas, improvements, site bugs, etc. is as follows:
 
+### Option 1
+[Feedback form](https://goo.gl/forms/3wZj8QhlsLv3XOJw1) (though it can take a few days for a response)
+
+### Option 2
+
 1. You'll need a GitHub account
 2. In the repo, click the Issues tab. Here you'll find a list of past and present issues. 
 
