@@ -1,5 +1,5 @@
 {
-  "updated": "April 14, 2018 @ 10:36 PM",
+  "updated": "April 16, 2018 @  9:06 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -134,11 +134,11 @@
         {
           "id": 3,
           "type": "line",
-          "data": "When you use your action to cast the Charge cantrip, you may use a bonus action to make one melee weapon attack or shove a creature. You gain +5 to the melee attack’s damage roll, or shove the creature 6m."
+          "data": "When you use your action to cast the Charge cantrip, you may use a bonus action to make one melee weapon attack or shove the target creature. You gain +5 to the melee attack’s damage roll, or shove the creature 6m."
         }
       ],
       "id": "biotic_bull_rush",
-      "mechanic_text_dump": "LearntheChargecantripIfyouhavealreadylearnedtheChargecantripyoumaylearnanewcantripinsteadThedistanceofyourChargecantripisnow14mWhenyouuseyouractiontocasttheChargecantripyoumayuseabonusactiontomakeonemeleeweaponattackorshoveacreatureYougain5tothemeleeattacksdamagerollorshovethecreature6m"
+      "mechanic_text_dump": "LearntheChargecantripIfyouhavealreadylearnedtheChargecantripyoumaylearnanewcantripinsteadThedistanceofyourChargecantripisnow14mWhenyouuseyouractiontocasttheChargecantripyoumayuseabonusactiontomakeonemeleeweaponattackorshovethetargetcreatureYougain5tothemeleeattacksdamagerollorshovethecreature6m"
     },
     {
       "name": "Biotic Concentration",
@@ -205,13 +205,17 @@
           "data": [
             "Your speed is doubled.",
             "+4 to all melee weapon damage rolls.",
-            "You have advantage on Strength Dexterity saving throws.",
-            "Once you use this feature, you can't use it again until you finish a long rest."
+            "You have advantage on Strength and Dexterity saving throws."
           ]
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Once you use this feature, you can't use it again until you finish a long rest."
         }
       ],
       "id": "biotic_focus",
-      "mechanic_text_dump": "Atthe14thlevelyoucanuseabonusactiontofocusyourbioticenergiesintoyourmusclesgrantingadditionalspeedandstrengthYougainthefollowingbenefitsfor1minutelistYourspeedisdoubled4toallmeleeweapondamagerollsYouhaveadvantageonStrengthDexteritysavingthrowsOnceyouusethisfeatureyoucantuseitagainuntilyoufinishalongrestlist"
+      "mechanic_text_dump": "Atthe14thlevelyoucanuseabonusactiontofocusyourbioticenergiesintoyourmusclesgrantingadditionalspeedandstrengthYougainthefollowingbenefitsfor1minutelistYourspeedisdoubled4toallmeleeweapondamagerollsYouhaveadvantageonStrengthandDexteritysavingthrowslistOnceyouusethisfeatureyoucantuseitagainuntilyoufinishalongrest"
     },
     {
       "name": "Biotic Maneuvers",
@@ -245,7 +249,7 @@
               ],
               [
                 "Feinting Attack",
-                "You can expend one barrier tick and use a bonus action on your turn to feint, choosing one creature within 2m of you as your target. You have advantage on your melee next attack roll against that creature. If that attack hits, add the barrier tick to the attack’s damage roll."
+                "You can expend one barrier tick and use a bonus action on your turn to feint, choosing one creature within 2m of you as your target. You have advantage on your next melee attack roll against that creature. If that attack hits, add the barrier tick to the attack’s damage roll."
               ],
               [
                 "Goading Attack",
@@ -253,7 +257,7 @@
               ],
               [
                 "Lift Attack",
-                "When you hit a creature with a melee attack, you can expend one barrier ticks to attempt to lift the target. You add the barrier tick to the attack’s damage roll, and if the target is Medium or smaller, it must make a Dexterity saving throw. On a failed save, the target is lifted."
+                "When you hit a creature with a melee attack, you can expend one barrier tick to attempt to lift the target. You add the barrier tick to the attack’s damage roll, and if the target is Medium or smaller, it must make a Dexterity saving throw. On a failed save, the target is lifted."
               ],
               [
                 "Menacing Attack",
@@ -280,7 +284,7 @@
         }
       ],
       "id": "biotic_maneuvers",
-      "mechanic_text_dump": "YoulearnmaneuversthatarefueledbyyourbarrierticksYoucanuseonlyonemaneuverperattackSomeofyourmaneuversrequireyourtargettomakeasavingthrowtoresistthemaneuvereffectsThesavingthrowDCis8yourproficiencybonusyourCharismamodifierLearn2maneuversasthe3rd10thand18thleveltableNameManeuverDisarmingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktodisarmthetargetforcingittodroponeitemofyourchoicethatitsholdingYouaddthebarriertickdietotheattacksdamagerollandthetargetmustmakeaStrengthsavingthrowOnafailedsaveitdropstheobjectyouchooseTheobjectlandsatitsfeetDistractingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktodistractthecreaturegivingyouralliesanopeningYouaddthebarrierticktotheattacksdamagerollThenextattackrollagainstthetargetbyanattackerotherthanyouhasadvantageiftheattackismadebeforethestartofyournextturnFeintingAttackYoucanexpendonebarriertickanduseabonusactiononyourturntofeintchoosingonecreaturewithin2mofyouasyourtargetYouhaveadvantageonyourmeleenextattackrollagainstthatcreatureIfthatattackhitsaddthebarrierticktotheattacksdamagerollGoadingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttogoadthetargetintoattackingyouYouaddthebarrierticktotheattacksdamagerollandthetargetmustmakeaWisdomsavingthrowOnafailedsavethetargethasdisadvantageonallattackrollsagainsttargetsotherthanyouuntiltheendofyournextturnLiftAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarriertickstoattempttoliftthetargetYouaddthebarrierticktotheattacksdamagerollandifthetargetisMediumorsmalleritmustmakeaDexteritysavingthrowOnafailedsavethetargetisliftedMenacingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttofrightenthetargetYouaddthebarrierticktotheattacksdamagerollandthetargetmustmakeaWisdomsavingthrowOnafailedsaveitisfrightenedofyouuntiltheendofyournextturnPushingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttodrivethetargetbackYouaddthebarrierticktotheattacksdamagerollandifthetargetisLargeorsmalleritmustmakeaStrengthsavingthrowOnafailedsaveyoupushthetargetupto8mawayfromyouRiposteWhenacreaturemissesyouwithameleeattackyoucanuseyourreactionandexpendonebarrierticktomakeameleeattackagainstthecreatureIfyouhityouaddthebarrierticktotheattacksdamagerollSweepingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttodamageanothercreaturewiththesameattackChooseanothercreaturewithin2moftheoriginaltargetandwithinyourreachIftheoriginalattackrollwouldhitthesecondcreatureittakesdamageequaltothenumberyourollonyourbarriertickThedamageisofthesametypedealtbytheoriginalattackTripAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttoknockthetargetdownYouaddthebarrierticktotheattacksdamagerollandifthetargetisLargeorsmalleritmustmakeaStrengthsavingthrowOnafailedsaveyouknockthetargetpronetable"
+      "mechanic_text_dump": "YoulearnmaneuversthatarefueledbyyourbarrierticksYoucanuseonlyonemaneuverperattackSomeofyourmaneuversrequireyourtargettomakeasavingthrowtoresistthemaneuvereffectsThesavingthrowDCis8yourproficiencybonusyourCharismamodifierLearn2maneuversasthe3rd10thand18thleveltableNameManeuverDisarmingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktodisarmthetargetforcingittodroponeitemofyourchoicethatitsholdingYouaddthebarriertickdietotheattacksdamagerollandthetargetmustmakeaStrengthsavingthrowOnafailedsaveitdropstheobjectyouchooseTheobjectlandsatitsfeetDistractingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktodistractthecreaturegivingyouralliesanopeningYouaddthebarrierticktotheattacksdamagerollThenextattackrollagainstthetargetbyanattackerotherthanyouhasadvantageiftheattackismadebeforethestartofyournextturnFeintingAttackYoucanexpendonebarriertickanduseabonusactiononyourturntofeintchoosingonecreaturewithin2mofyouasyourtargetYouhaveadvantageonyournextmeleeattackrollagainstthatcreatureIfthatattackhitsaddthebarrierticktotheattacksdamagerollGoadingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttogoadthetargetintoattackingyouYouaddthebarrierticktotheattacksdamagerollandthetargetmustmakeaWisdomsavingthrowOnafailedsavethetargethasdisadvantageonallattackrollsagainsttargetsotherthanyouuntiltheendofyournextturnLiftAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttoliftthetargetYouaddthebarrierticktotheattacksdamagerollandifthetargetisMediumorsmalleritmustmakeaDexteritysavingthrowOnafailedsavethetargetisliftedMenacingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttofrightenthetargetYouaddthebarrierticktotheattacksdamagerollandthetargetmustmakeaWisdomsavingthrowOnafailedsaveitisfrightenedofyouuntiltheendofyournextturnPushingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttodrivethetargetbackYouaddthebarrierticktotheattacksdamagerollandifthetargetisLargeorsmalleritmustmakeaStrengthsavingthrowOnafailedsaveyoupushthetargetupto8mawayfromyouRiposteWhenacreaturemissesyouwithameleeattackyoucanuseyourreactionandexpendonebarrierticktomakeameleeattackagainstthecreatureIfyouhityouaddthebarrierticktotheattacksdamagerollSweepingAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttodamageanothercreaturewiththesameattackChooseanothercreaturewithin2moftheoriginaltargetandwithinyourreachIftheoriginalattackrollwouldhitthesecondcreatureittakesdamageequaltothenumberyourollonyourbarriertickThedamageisofthesametypedealtbytheoriginalattackTripAttackWhenyouhitacreaturewithameleeattackyoucanexpendonebarrierticktoattempttoknockthetargetdownYouaddthebarrierticktotheattacksdamagerollandifthetargetisLargeorsmalleritmustmakeaStrengthsavingthrowOnafailedsaveyouknockthetargetpronetable"
     },
     {
       "name": "Biotic Mastery",
@@ -519,13 +523,17 @@
           "type": "list",
           "data": [
             "The attacks ignore half and three-quarters cover.",
-            "On each hit, the weapon deals additional damage to the target equal to 2 + half your fighter level.",
-            "You can use this feature three times. You regain all expended uses of it when you finish a short or long rest."
+            "On each hit, the weapon deals additional damage to the target equal to 2 + half your fighter level."
           ]
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "You can use this feature three times. You regain all expended uses of it when you finish a short or long rest."
         }
       ],
       "id": "deadly_aim",
-      "mechanic_text_dump": "YouraimbecomesdeadlyAsabonusactiononyourturnyoucantakecarefulaimatacreatureyoucanseethatiswithinrangeofarangedweaponyourewieldingUntiltheendofthisturnyourrangedattackswiththatweapongaintwobenefitsagainstthetargetlistTheattacksignorehalfandthreequarterscoverOneachhittheweapondealsadditionaldamagetothetargetequalto2halfyourfighterlevelYoucanusethisfeaturethreetimesYouregainallexpendedusesofitwhenyoufinishashortorlongrestlist"
+      "mechanic_text_dump": "YouraimbecomesdeadlyAsabonusactiononyourturnyoucantakecarefulaimatacreatureyoucanseethatiswithinrangeofarangedweaponyourewieldingUntiltheendofthisturnyourrangedattackswiththatweapongaintwobenefitsagainstthetargetlistTheattacksignorehalfandthreequarterscoverOneachhittheweapondealsadditionaldamagetothetargetequalto2halfyourfighterlevellistYoucanusethisfeaturethreetimesYouregainallexpendedusesofitwhenyoufinishashortorlongrest"
     },
     {
       "name": "Devastating Critical",
@@ -1261,14 +1269,14 @@
           "id": 3,
           "type": "list",
           "data": [
-            "If wielding a single-handed ranged or versatile melee weapon, gain +2 AC and a +2 bonus to Dexterity saving throws.",
+            "If wielding a single-handed ranged or melee weapon, gain +2 AC and a +2 bonus to Dexterity saving throws.",
             "If a creature within 2m of you is attacked, you may use your reaction to impose disadvantage on that attack.",
             "As an attack action, you may make a melee attack roll (+STR), on a hit, deal 1d12 bludgeoning damage. You may shove a hit creature backwards 2m."
           ]
         }
       ],
       "id": "omni-shield",
-      "mechanic_text_dump": "Startingatthe3rdlevelyouvemasteredtheomnishieldAsabonusactioncreatealargekineticshieldoutofyouromnitoolthatlastsoneminuteYoucanuseanotherbonusactiontoendOmniShieldearlyOnceyouusethisfeatureyoumustfinishashortorlongrestbeforeyoucanuseitagainWhileOmniShieldisdeployedyougainthefollowinglistIfwieldingasinglehandedrangedorversatilemeleeweapongain2ACanda2bonustoDexteritysavingthrowsIfacreaturewithin2mofyouisattackedyoumayuseyourreactiontoimposedisadvantageonthatattackAsanattackactionyoumaymakeameleeattackrollSTRonahitdeal1d12bludgeoningdamageYoumayshoveahitcreaturebackwards2mlist"
+      "mechanic_text_dump": "Startingatthe3rdlevelyouvemasteredtheomnishieldAsabonusactioncreatealargekineticshieldoutofyouromnitoolthatlastsoneminuteYoucanuseanotherbonusactiontoendOmniShieldearlyOnceyouusethisfeatureyoumustfinishashortorlongrestbeforeyoucanuseitagainWhileOmniShieldisdeployedyougainthefollowinglistIfwieldingasinglehandedrangedormeleeweapongain2ACanda2bonustoDexteritysavingthrowsIfacreaturewithin2mofyouisattackedyoumayuseyourreactiontoimposedisadvantageonthatattackAsanattackactionyoumaymakeameleeattackrollSTRonahitdeal1d12bludgeoningdamageYoumayshoveahitcreaturebackwards2mlist"
     },
     {
       "name": "Opportunist",
@@ -1493,11 +1501,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "When wielding your Weapon of Choice, if you take the Attack action on your first turn of a combat, you can make one additional ranged weapon attack as part of that action."
+          "data": "If you take the Attack action on your first turn of a combat, you can make one additional ranged weapon attack as part of that action."
         }
       ],
       "id": "snapshot",
-      "mechanic_text_dump": "WhenwieldingyourWeaponofChoiceifyoutaketheAttackactiononyourfirstturnofacombatyoucanmakeoneadditionalrangedweaponattackaspartofthataction"
+      "mechanic_text_dump": "IfyoutaketheAttackactiononyourfirstturnofacombatyoucanmakeoneadditionalrangedweaponattackaspartofthataction"
     },
     {
       "name": "Sneak Attack",
@@ -1577,9 +1585,8 @@
             "Gain 1 Heavy Weapon ammo charge",
             "Gain 10 TP",
             "Gain 5 levels worth of Spell slots",
-            "Gain 1 medi-gel",
-            "Gain 1 grenade",
-            "Gain 2 specialized thermal clips."
+            "Gain 2 Enhanced medi-gel",
+            "Gain 2 grenades"
           ]
         },
         {
@@ -1589,7 +1596,7 @@
         }
       ],
       "id": "supply_pylon",
-      "mechanic_text_dump": "CallinaSupplyPylontoalocationwithin4mAtthestartofyournextturnthepylonarrivesIfanycreatureisstandinginthetargetedlocationthecreaturemustmakeaDexteritysavingthrowithasadvantageonthissavingthrowOnafailedsavethecreaturetakes4d8bludgeoningdamageandisknockedproneOncethepylonhaslandedfriendlycreaturesincludingyouwithinmeleerangecanspend1actionaccessingthepylontogainasingleresourcelistedbelowlistGain1HeavyWeaponammochargeGain10TPGain5levelsworthofSpellslotsGain1medigelGain1grenadeGain2specializedthermalclipslistOnceyouusethisfeatureyoucannotuseitagainuntilyoufinishalongrest"
+      "mechanic_text_dump": "CallinaSupplyPylontoalocationwithin4mAtthestartofyournextturnthepylonarrivesIfanycreatureisstandinginthetargetedlocationthecreaturemustmakeaDexteritysavingthrowithasadvantageonthissavingthrowOnafailedsavethecreaturetakes4d8bludgeoningdamageandisknockedproneOncethepylonhaslandedfriendlycreaturesincludingyouwithinmeleerangecanspend1actionaccessingthepylontogainasingleresourcelistedbelowlistGain1HeavyWeaponammochargeGain10TPGain5levelsworthofSpellslotsGain2EnhancedmedigelGain2grenadeslistOnceyouusethisfeatureyoucannotuseitagainuntilyoufinishalongrest"
     },
     {
       "name": "Synchronized Assault",
@@ -1626,11 +1633,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Starting at 13th level, if you are in Tactical Cloak when you use a tech power or grenade, each creature has disadvantage on any saving throw it makes against the tech power or grenade."
+          "data": "Starting at 13th level, if you are in Tactical Cloak when you use a tech power, combat power, or grenade, each creature has disadvantage on any saving throw it makes against the tech power, combat power, or grenade."
         }
       ],
       "id": "tactical_ambush",
-      "mechanic_text_dump": "Startingat13thlevelifyouareinTacticalCloakwhenyouuseatechpowerorgrenadeeachcreaturehasdisadvantageonanysavingthrowitmakesagainstthetechpowerorgrenade"
+      "mechanic_text_dump": "Startingat13thlevelifyouareinTacticalCloakwhenyouuseatechpowercombatpowerorgrenadeeachcreaturehasdisadvantageonanysavingthrowitmakesagainstthetechpowercombatpowerorgrenade"
     },
     {
       "name": "Tactical Cloak",
@@ -1655,7 +1662,7 @@
         {
           "id": 2,
           "type": "line",
-          "data": "When activated, tech armor increases your AC by 2, you gain shield points equal to 1d8 + your level, and you have resistance to slashing, piercing, and bludgeoning damage. You can spend additional tech points to increase the shield point gain by 1d8 per tech point spent. At the start of each of your subsequent turns, Tech Armor consumes 1 tech point. If you have no tech points, Tech Armor ends and you lose all any shield points gained. You can use a bonus action to end Tech Armor early."
+          "data": "When activated, tech armor increases your AC by 2, you gain shield points equal to 1d8 + your Sentinel level, and you have resistance to slashing, piercing, and bludgeoning damage. You can spend additional tech points to increase the shield point gain by 1d8 per tech point spent. At the start of each of your subsequent turns, Tech Armor consumes 1 tech point. If you have no tech points, Tech Armor ends and you lose all any shield points gained. You can use a bonus action to end Tech Armor early."
         },
         {
           "id": 3,
@@ -1664,7 +1671,7 @@
         }
       ],
       "id": "tech_armor",
-      "mechanic_text_dump": "AsaSentinelyourmantraisthebestoffenseisagooddefenseandcomingbackaliveThusyouvebolsteredyourarmorwithapowerfuldefenseorientedAIAsabonusactionorasareactiontotakingdamageyoucanspend1TPtoactivateyourTechArmorWhenactivatedtecharmorincreasesyourACby2yougainshieldpointsequalto1d8yourlevelandyouhaveresistancetoslashingpiercingandbludgeoningdamageYoucanspendadditionaltechpointstoincreasetheshieldpointgainby1d8pertechpointspentAtthestartofeachofyoursubsequentturnsTechArmorconsumes1techpointIfyouhavenotechpointsTechArmorendsandyouloseallanyshieldpointsgainedYoucanuseabonusactiontoendTechArmorearlyThenumberoftimesyoucanuseTechArmorbetweenlongrestsisequaltoyourproficiencybonus"
+      "mechanic_text_dump": "AsaSentinelyourmantraisthebestoffenseisagooddefenseandcomingbackaliveThusyouvebolsteredyourarmorwithapowerfuldefenseorientedAIAsabonusactionorasareactiontotakingdamageyoucanspend1TPtoactivateyourTechArmorWhenactivatedtecharmorincreasesyourACby2yougainshieldpointsequalto1d8yourSentinellevelandyouhaveresistancetoslashingpiercingandbludgeoningdamageYoucanspendadditionaltechpointstoincreasetheshieldpointgainby1d8pertechpointspentAtthestartofeachofyoursubsequentturnsTechArmorconsumes1techpointIfyouhavenotechpointsTechArmorendsandyouloseallanyshieldpointsgainedYoucanuseabonusactiontoendTechArmorearlyThenumberoftimesyoucanuseTechArmorbetweenlongrestsisequaltoyourproficiencybonus"
     },
     {
       "name": "Tech Armor Overload",
@@ -1825,13 +1832,13 @@
           "type": "list",
           "data": [
             "When you make a weapon attack against a creature with your Weapon of Choice, you can expend one superiority die to add it to the attack roll. You can use this ability before or after making the attack roll, but before any of the effects of the attack are applied.",
-            "When you damage a creature with a weapon attack, you can expend one superiority die to add it to the damage roll. You can use this ability after rolling damage. If the attack causes the target to make a Constitution saving throw to maintain concentration, it has disadvantage on that save.",
+            "When you damage a creature with a weapon attack from your Weapon of Choice, you can expend one superiority die to add it to the damage roll. You can use this ability after rolling damage. If the attack causes the target to make a Constitution saving throw to maintain concentration, it has disadvantage on that save.",
             "When you are hit by a melee attack, if you are currently holding your Weapon of Choice, you can expend one superiority die as a reaction, adding the number rolled to your AC. If the attack still hits, you take half damage from it."
           ]
         }
       ],
       "id": "weapon_of_choice",
-      "mechanic_text_dump": "YouhaveundergoneextensivetrainingwithasingleweapontypeChooseaweapontypewhichbecomesyourWeaponofChoiceWhenyouhaveyourWeaponofChoiceequippedyougainasetofabilitiesthatarefueledbyspecialdicecalledsuperioritydiceYoumayspend1monthofintensivetrainingtoexchangeyourWeaponofChoicewithanotherweapontypeSuperiorityDiceYouhavefoursuperioritydicewhichared8sAsuperioritydieisexpendedwhenyouuseitYouregainallofyourexpendedsuperioritydicewhenyoufinishashortorlongrestYougainanothersuperioritydieat7thlevelandonemoreat15thlevelYoucanexpendsuperioritydicetogainanumberofdifferentbenefitslistWhenyoumakeaweaponattackagainstacreaturewithyourWeaponofChoiceyoucanexpendonesuperioritydietoaddittotheattackrollYoucanusethisabilitybeforeoraftermakingtheattackrollbutbeforeanyoftheeffectsoftheattackareappliedWhenyoudamageacreaturewithaweaponattackyoucanexpendonesuperioritydietoaddittothedamagerollYoucanusethisabilityafterrollingdamageIftheattackcausesthetargettomakeaConstitutionsavingthrowtomaintainconcentrationithasdisadvantageonthatsaveWhenyouarehitbyameleeattackifyouarecurrentlyholdingyourWeaponofChoiceyoucanexpendonesuperioritydieasareactionaddingthenumberrolledtoyourACIftheattackstillhitsyoutakehalfdamagefromitlist"
+      "mechanic_text_dump": "YouhaveundergoneextensivetrainingwithasingleweapontypeChooseaweapontypewhichbecomesyourWeaponofChoiceWhenyouhaveyourWeaponofChoiceequippedyougainasetofabilitiesthatarefueledbyspecialdicecalledsuperioritydiceYoumayspend1monthofintensivetrainingtoexchangeyourWeaponofChoicewithanotherweapontypeSuperiorityDiceYouhavefoursuperioritydicewhichared8sAsuperioritydieisexpendedwhenyouuseitYouregainallofyourexpendedsuperioritydicewhenyoufinishashortorlongrestYougainanothersuperioritydieat7thlevelandonemoreat15thlevelYoucanexpendsuperioritydicetogainanumberofdifferentbenefitslistWhenyoumakeaweaponattackagainstacreaturewithyourWeaponofChoiceyoucanexpendonesuperioritydietoaddittotheattackrollYoucanusethisabilitybeforeoraftermakingtheattackrollbutbeforeanyoftheeffectsoftheattackareappliedWhenyoudamageacreaturewithaweaponattackfromyourWeaponofChoiceyoucanexpendonesuperioritydietoaddittothedamagerollYoucanusethisabilityafterrollingdamageIftheattackcausesthetargettomakeaConstitutionsavingthrowtomaintainconcentrationithasdisadvantageonthatsaveWhenyouarehitbyameleeattackifyouarecurrentlyholdingyourWeaponofChoiceyoucanexpendonesuperioritydieasareactionaddingthenumberrolledtoyourACIftheattackstillhitsyoutakehalfdamagefromitlist"
     },
     {
       "name": "Weapon Training",

@@ -1,5 +1,5 @@
 {
-  "updated": "April 14, 2018 @ 10:45 PM",
+  "updated": "April 16, 2018 @  8:54 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRETKGL62kEZPA69PhA3AGMiVeHOWBRkTMDL3f_K-oajryEjwdq7fRAj-qfIusPsLMiIqmB12D4Zun8/pubhtml",
   "data": [
     {
@@ -104,7 +104,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Your construction incorporates advanced armor plating. Your AC is equal to 13 + your Dexterity modifier."
+          "data": "Your construction incorporates advanced armor plating. While not wearing armor, your AC is equal to 13 + your Dexterity modifier."
         }
       ],
       "asari": null,
@@ -120,7 +120,7 @@
       "vorcha": null,
       "unshackled_ai": "x",
       "id": "composite_plating",
-      "description_text_dump": "YourconstructionincorporatesadvancedarmorplatingYourACisequalto13yourDexteritymodifier"
+      "description_text_dump": "YourconstructionincorporatesadvancedarmorplatingWhilenotwearingarmoryourACisequalto13yourDexteritymodifier"
     },
     {
       "name": "Cybernetic Augmentation",
@@ -618,7 +618,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "If you begin your turn with less that 1/2 of your hit points, you activate your repair matrix. Gain 1d6 hit points at the start of your turn. This effect last 1 minute or until the your become incapacitated. This ability may only be used once per long rest."
+          "data": "If you begin your turn with less that 1/2 of your hit points, as a reaction you may activate your repair matrix. Gain 1d6 hit points at the start of your turn. This effect last 1 minute or until the your become incapacitated. This ability may only be used once per long rest."
         }
       ],
       "asari": null,
@@ -634,7 +634,7 @@
       "vorcha": null,
       "unshackled_ai": "x",
       "id": "repair_matrix",
-      "description_text_dump": "Ifyoubeginyourturnwithlessthat12ofyourhitpointsyouactivateyourrepairmatrixGain1d6hitpointsatthestartofyourturnThiseffectlast1minuteoruntiltheyourbecomeincapacitatedThisabilitymayonlybeusedonceperlongrest"
+      "description_text_dump": "Ifyoubeginyourturnwithlessthat12ofyourhitpointsasareactionyoumayactivateyourrepairmatrixGain1d6hitpointsatthestartofyourturnThiseffectlast1minuteoruntiltheyourbecomeincapacitatedThisabilitymayonlybeusedonceperlongrest"
     },
     {
       "name": "Saving Face",
@@ -738,7 +738,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You have 5 shields (regen 5). These shields can be upgrade for and equivalent cost of buying an armor mod."
+          "data": "You have 5 shields (regen 5). These shields can be upgraded for the equivalent cost of buying an armor mod."
         }
       ],
       "asari": null,
@@ -754,7 +754,7 @@
       "vorcha": null,
       "unshackled_ai": "x",
       "id": "innate_shielding",
-      "description_text_dump": "Youhave5shieldsregen5Theseshieldscanbeupgradeforandequivalentcostofbuyinganarmormod"
+      "description_text_dump": "Youhave5shieldsregen5Theseshieldscanbeupgradedfortheequivalentcostofbuyinganarmormod"
     },
     {
       "name": "High-Speed Metabolism",

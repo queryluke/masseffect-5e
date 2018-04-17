@@ -1,5 +1,5 @@
 {
-  "updated": "April 12, 2018 @  1:42 PM",
+  "updated": "April 16, 2018 @  9:10 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -659,7 +659,7 @@
     {
       "name": "Shock Trooper",
       "class": "Vanguard",
-      "description": "Shock troopers like to fight up close a personal, using charge to dash around the battlefield and striking their opponents with devastating melee strikes.",
+      "description": "Shock troopers like to fight up close and personal, using charge to dash around the battlefield and striking their opponents with devastating melee strikes.",
       "1": [
         {
           "key": "biotic_slash",

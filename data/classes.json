@@ -1,5 +1,5 @@
 {
-  "updated": "April 14, 2018 @ 10:44 PM",
+  "updated": "April 16, 2018 @  9:07 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -35,7 +35,7 @@
       "hit_die": "1d8",
       "hit_points": "8 + your Constitution modifier",
       "increase_hit_points": "1d8 (or 5) + your Constitution modifier",
-      "weapon": "Heavy Pistols and either Assault Rifles, Melee, and SMGs",
+      "weapon": "Heavy Pistols and choose one from Assault Rifles, Melee, and SMGs",
       "armor_proficiency": "Light, Medium",
       "saving_throw": "Intelligence, Constitution",
       "skill": "Choose three skills from Athletics, Electronics, Engineering, History, Investigation, Medicine, Science, and Vehicle Handling",

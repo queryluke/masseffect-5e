@@ -1,5 +1,5 @@
 {
-  "updated": "April 10, 2018 @  2:37 PM",
+  "updated": "April 16, 2018 @  8:44 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT87AUwt1n514k6a6b4l0kOzGwIphsGXBJLFqujgkCsJ1rdudQ1Bk7Km12DACO5qQ2WGDVI8fT6-Xe/pubhtml",
   "data": [
     {
@@ -1127,7 +1127,7 @@
       "attackMod": null,
       "range": null,
       "numberOfTargets": null,
-      "description": "The reaper harvester targets a location within 30m. Each creature within a 6m radius must make a Dexterity saving throw. On a failed save a creature takes 3d10 force and 3d10 thunder damage, or have as much damage on a successful one.",
+      "description": "The reaper harvester targets a location within 30m. Each creature within a 6m radius must make a Dexterity saving throw. On a failed save a creature takes 3d10 force and 3d10 thunder damage, or half as much damage on a successful one.",
       "miss": null,
       "asari": null,
       "batarian": null,
