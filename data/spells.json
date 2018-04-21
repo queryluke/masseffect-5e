@@ -1,5 +1,5 @@
 {
-  "updated": "April 14, 2018 @ 10:39 PM",
+  "updated": "April 21, 2018 @  6:53 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -649,7 +649,7 @@
           "data": "The damage increases by 1d6 when you reach the 5th level (2d6), 11th level(3d6) and 17th level(4d6)."
         }
       ],
-      "adv_option_1": "Necrotic Strike: The damage of your charge become necrotic. You no longer create a burst in a 2m radius when you hit the target. Instead, all enemies in the line between you and the target, including the target, must succeed on a Constitution saving throw or take 2d10 necrotic damage.",
+      "adv_option_1": "Barrier Regen : after you cast Charge, regain half of your barrier ticks (rounded down).",
       "adv_option_2": "Distance : The force ripples outwards from the point of impact, increasing the radius to 4m.",
       "type": "biotic",
       "die_type": "d6",
@@ -680,7 +680,7 @@
       "min_tech_points": null,
       "id": "charge",
       "adv_options": [
-        "Necrotic Strike: The damage of your charge become necrotic. You no longer create a burst in a 2m radius when you hit the target. Instead, all enemies in the line between you and the target, including the target, must succeed on a Constitution saving throw or take 2d10 necrotic damage.",
+        "Barrier Regen : after you cast Charge, regain half of your barrier ticks (rounded down).",
         "Distance : The force ripples outwards from the point of impact, increasing the radius to 4m."
       ],
       "class_list": "Vanguard",
@@ -739,7 +739,7 @@
       "mechanic_text_dump": "AsabonusactionloadaspecializedthermalclipintotheweaponyouarecurrentlywieldingUntilyoureloadanysuccessfulrangedattacksdealanadditional1d8bludgeoningdamageandmediumsizedorsmallercreaturesmustpassaStrengthsavingthrowDC8proficiencybonusDEXmodifierorareknockedproneYouhave3chargesofConcussiveShotYouregainallofyourchargesonalongrest"
     },
     {
-      "name": "Counterspell",
+      "name": "Disrupt Biotics",
       "level": null,
       "mechanic": [
         {
@@ -781,7 +781,7 @@
       "engineer": "x",
       "soldier": null,
       "min_tech_points": "5",
-      "id": "counterspell",
+      "id": "disrupt_biotics",
       "adv_options": [
         "Lockdown : If you succeed on your ability check, you overload the target's biotic implant and it cannot cast biotic spells until the end of its next turn.",
         "Psychic Strain : If succeed on the ability check, the target takes Xd6 psychic damage, where X is the level of the spell. Targets take 1d4 psychic damage for cantrips."
@@ -1743,7 +1743,7 @@
       "mechanic_text_dump": "YouspendtechpointstohurlahighexplosiveplasmaroundatacreatureorobjectwithinrangeMakearangedspellattackagainstthetargetOnahitthetargetisprimedfireandtakesXd10firedamagewhereXisthenumberoftechpointsyouspentAflammableobjecthitbythisspellignitesifitisntbeingwornorcarried"
     },
     {
-      "name": "Invasion",
+      "name": "AI Hacking",
       "level": null,
       "mechanic": [
         {
@@ -1790,7 +1790,7 @@
       "engineer": "x",
       "soldier": null,
       "min_tech_points": "3",
-      "id": "invasion",
+      "id": "ai_hacking",
       "adv_options": [
         "Total Control : You take the hacked synthetic's action. You may use its spells and abilities.",
         "Damage : While the synthetic is hacked, it takes 2d6 shock damage at the end of its turn. This damage does not proc an opportunity to end Invasion."
