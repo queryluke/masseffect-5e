@@ -16,6 +16,7 @@ import Grenades from './Grenades.vue'
 import HeavyWeaponCharges from './HeavyWeaponCharges.vue'
 import HeavyWeapons from './HeavyWeapons.vue'
 import HolsteringAndDrawing from './HolsteringAndDrawing.vue'
+import InfraredVision from './InfraredVision.vue'
 import LiftingAndCarrying from './LiftingAndCarrying.vue'
 import MediGel from './MediGel.vue'
 import MeleeWeapons from './MeleeWeapons.vue'
@@ -52,6 +53,7 @@ export default {
   HeavyWeaponCharges,
   HeavyWeapons,
   HolsteringAndDrawing,
+  InfraredVision,
   LiftingAndCarrying,
   MediGel,
   MeleeWeapons,

@@ -32,6 +32,7 @@
           additions: [
             'shields',
             'barriers',
+            'infrared-vision',
             'paragon-and-renegade',
             'reloading',
             'sexy-level'
