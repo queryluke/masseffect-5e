@@ -1,5 +1,5 @@
 {
-  "updated": "April 20, 2018 @  8:02 PM",
+  "updated": "April 21, 2018 @  4:16 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT87AUwt1n514k6a6b4l0kOzGwIphsGXBJLFqujgkCsJ1rdudQ1Bk7Km12DACO5qQ2WGDVI8fT6-Xe/pubhtml",
   "data": [
     {
@@ -2502,6 +2502,538 @@
       ],
       "skills": [
         "perception"
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": {
+        "level": "innate",
+        "perDay": "3",
+        "tpSpent": "1",
+        "dc": 10,
+        "hit": 2,
+        "spells": [
+          "sabotage"
+        ]
+      },
+      "abilityScores": {
+        "str": 12,
+        "dex": 14,
+        "con": 12,
+        "int": 10,
+        "wis": 8,
+        "cha": 6
+      },
+      "hp": {
+        "die": "6",
+        "average": "13",
+        "numDice": "3",
+        "mod": 3
+      },
+      "sp": {
+        "shields": 10,
+        "regen": "5"
+      },
+      "senses": [
+
+      ],
+      "name": "Combat Drone",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/4/44/Me3_combat_drone.png/revision/latest/scale-to-width-down/480?cb=20120720164039",
+      "cr": "1/4",
+      "size": "Small",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "fly 14m",
+      "dc": "10",
+      "ac": "13",
+      "xp": "50",
+      "id": "combat_drone",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "shock_attack"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 10,
+        "dex": 10,
+        "con": 10,
+        "int": 10,
+        "wis": 10,
+        "cha": 4
+      },
+      "hp": {
+        "die": "6",
+        "average": "7",
+        "numDice": "2",
+        "mod": 0
+      },
+      "senses": [
+
+      ],
+      "name": "Rocket Drone",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/2f/Virmire_geth_rocket_drone.png/revision/latest/scale-to-width-down/640?cb=20091209133938",
+      "cr": "1/4",
+      "size": "Small",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "fly 10m",
+      "dc": "13",
+      "ac": "11",
+      "xp": "50",
+      "id": "rocket_drone",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "distortion_rocket"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 11,
+        "dex": 14,
+        "con": 11,
+        "int": 10,
+        "wis": 10,
+        "cha": 6
+      },
+      "hp": {
+        "die": "6",
+        "average": "10",
+        "numDice": "3",
+        "mod": 0
+      },
+      "sp": {
+        "shields": 5,
+        "regen": "5"
+      },
+      "senses": [
+
+      ],
+      "name": "Assault Drone",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/ea/Defense_Drone.png/revision/latest/scale-to-width-down/606?cb=20120407052056",
+      "cr": "1/2",
+      "size": "Small",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "fly 10m",
+      "dc": "13",
+      "ac": "12",
+      "xp": "100",
+      "id": "assault_drone",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "pulse_cannon"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 15,
+        "dex": 10,
+        "con": 14,
+        "int": 12,
+        "wis": 10,
+        "cha": 7
+      },
+      "hp": {
+        "die": "6",
+        "average": "22",
+        "numDice": "4",
+        "mod": 8
+      },
+      "sp": {
+        "shields": 5,
+        "regen": "5"
+      },
+      "senses": [
+
+      ],
+      "name": "Defense Drone",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/e0/Info_Drone.png/revision/latest/scale-to-width-down/531?cb=20100908213419",
+      "cr": "1/2",
+      "size": "Small",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "fly 10m",
+      "dc": "13",
+      "ac": "14",
+      "xp": "100",
+      "id": "defense_drone",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "bash",
+        "guard"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": {
+        "level": "innate",
+        "perDay": "3",
+        "tpSpent": "1",
+        "dc": 10,
+        "hit": 2,
+        "spells": [
+          "first_aid"
+        ]
+      },
+      "abilityScores": {
+        "str": 8,
+        "dex": 12,
+        "con": 10,
+        "int": 11,
+        "wis": 11,
+        "cha": 6
+      },
+      "hp": {
+        "die": "6",
+        "average": "7",
+        "numDice": "2",
+        "mod": 0
+      },
+      "sp": {
+        "shields": 5,
+        "regen": "5"
+      },
+      "senses": [
+
+      ],
+      "name": "Repair Drone",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/21/Maintenance_Drone.png/revision/latest/scale-to-width-down/350?cb=20100909024927",
+      "cr": "1/8",
+      "size": "Small",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "fly 12m",
+      "dc": "10",
+      "ac": "11",
+      "xp": "25",
+      "id": "repair_drone",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "defibrillators",
+        "stabalize"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 10,
+        "dex": 16,
+        "con": 8,
+        "int": 11,
+        "wis": 12,
+        "cha": 5
+      },
+      "hp": {
+        "die": "6",
+        "average": "5",
+        "numDice": "2",
+        "mod": -2
+      },
+      "sp": {
+        "shields": 5,
+        "regen": "5"
+      },
+      "senses": [
+        "infared vision 60m"
+      ],
+      "name": "Recon Drone",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/29/Geth_Recon_Drone_ME2.png/revision/latest/scale-to-width-down/350?cb=20100627032507",
+      "cr": "1/8",
+      "size": "Small",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "fly 16m",
+      "dc": "13",
+      "ac": "13",
+      "xp": "25",
+      "id": "recon_drone",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "pulse_rifle",
+        "tactical_cloak"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+        "perception",
+        "stealth"
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 8,
+        "dex": 14,
+        "con": 8,
+        "int": 8,
+        "wis": 8,
+        "cha": 8
+      },
+      "hp": {
+        "die": "6",
+        "average": "5",
+        "numDice": "2",
+        "mod": -2
+      },
+      "senses": [
+
+      ],
+      "name": "Disruption Drone",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/b/b6/ME3_disruption_drone.png/revision/latest/scale-to-width-down/350?cb=20130308125421",
+      "cr": "1/8",
+      "size": "Small",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "fly 16m",
+      "dc": "13",
+      "ac": "8",
+      "xp": "25",
+      "id": "disruption_drone",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "kamikaze_attack"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
       ]
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "updated": "April 16, 2018 @  9:10 PM",
+  "updated": "April 21, 2018 @  3:59 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -166,35 +166,39 @@
     {
       "name": "Drone Jockey",
       "class": "Engineer",
-      "description": "Drone Jockeys are happy to let their friends dance and distract around the battlefield while they take pot-shots from afar. Some say it's a coward's way, but some say it's just plain smart.",
+      "description": "A drone jockey forms a bond with their mechanical companion, giving it a body, name and increasing its potency on the battlefield.",
       "1": [
         {
-          "key": "drone_sidekick",
-          "value": "Drone Sidekick"
+          "key": "drone_companion",
+          "value": "Drone Companion"
+        },
+        {
+          "key": "drones_bond",
+          "value": " Drone's Bond"
         }
       ],
       "2": [
         {
-          "key": "dual_drones",
-          "value": "Dual Drones"
+          "key": "coordinated_attack",
+          "value": "Coordinated Attack"
         }
       ],
       "3": [
         {
-          "key": "improved_drones",
-          "value": "Improved Drones"
+          "key": "drones_defense",
+          "value": "Drone's Defense"
         }
       ],
       "4": [
         {
-          "key": "drone_mastery",
-          "value": "Drone Mastery"
+          "key": "assault_protocol",
+          "value": "Assault Protocol"
         }
       ],
       "5": [
         {
-          "key": "drone_swarm",
-          "value": "Drone Swarm"
+          "key": "drones_defense",
+          "value": "Drone's Defense"
         }
       ],
       "id": [
@@ -210,8 +214,8 @@
       "description": "The name says it all. As a medic, you'll be one on the field that can dress a wound and get your comrades back into fighting shape.",
       "1": [
         {
-          "key": "healing_drone",
-          "value": "Healing Drone"
+          "key": "repair_drone",
+          "value": "Repair Drone"
         }
       ],
       "2": [
@@ -228,8 +232,8 @@
       ],
       "4": [
         {
-          "key": "healing_drone",
-          "value": "Healing Drone"
+          "key": "repair_drone",
+          "value": "Repair Drone"
         }
       ],
       "5": [
