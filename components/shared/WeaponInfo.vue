@@ -16,7 +16,7 @@
         label Range
         div(v-if="weapon.type === 'Melee' || weapon.type === 'Heavy Weapon'")
           span(v-if="weapon.range") {{ weapon.range }}m
-        div(v-else) ({{ weapon.range }}m / {{ weapon.longRange }}m)
+        div(v-else) ({{ weapon.range }}m / {{ Number.parseInt(weapon.range, 10) * 3 }}m)
       v-flex.xs12.sm4.md2.attribute.mb-2(v-if="weapon.type !== 'Melee'")
         label Rate of Fire
         div {{ weapon.rof }}

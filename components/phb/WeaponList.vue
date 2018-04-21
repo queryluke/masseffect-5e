@@ -13,7 +13,7 @@
           v-flex.hidden-md-and-down.lg2 {{ weapon.heat }}
           v-flex(v-if="weapon.type === 'Melee' || weapon.type === 'Heavy Weapon'").hidden-md-and-down.lg2
             span(v-if="weapon.range") {{ weapon.range }}m
-          v-flex(v-else).hidden-md-and-down.lg2 ({{ weapon.range }}m / {{ weapon.longRange }}m)
+          v-flex(v-else).hidden-md-and-down.lg2 ({{ weapon.range }}m / {{ Number.parseInt(weapon.range, 10) * 3 }}m)
           v-flex.hidden-md-and-down.lg2 {{ weapon.weight }}
           v-flex.hidden-md-and-down.lg2 {{ weapon.cost }}
       v-card.grey.lighten-3
