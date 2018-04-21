@@ -63,12 +63,13 @@ def configure_monster(model)
 
   unless model['techcasting'].nil?
     intMod = ((model['int'].to_i - 10) / 2).floor
-    monster['techcasting'] = {
+    monster[:techcasting] = {
+        level: model['techcasting'],
         perDay: model['techPerDay'],
         tpSpent: model['techMax'],
         dc: 8 + model['profBonus'].to_i + intMod,
         hit: model['profBonus'].to_i + intMod,
-        spells: model.techPowers.split(',')
+        spells: model['techPowers'].split(',')
     }
   end
   monster[:actions] << {

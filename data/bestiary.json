@@ -1,5 +1,5 @@
 {
-  "updated": "April 14, 2018 @ 10:19 PM",
+  "updated": "April 20, 2018 @  8:02 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT87AUwt1n514k6a6b4l0kOzGwIphsGXBJLFqujgkCsJ1rdudQ1Bk7Km12DACO5qQ2WGDVI8fT6-Xe/pubhtml",
   "data": [
     {
@@ -2419,6 +2419,89 @@
       ],
       "skills": [
 
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": {
+        "level": "innate",
+        "perDay": null,
+        "tpSpent": "2",
+        "dc": 12,
+        "hit": 4,
+        "spells": [
+          "overload"
+        ]
+      },
+      "abilityScores": {
+        "str": 6,
+        "dex": 18,
+        "con": 6,
+        "int": 14,
+        "wis": 10,
+        "cha": 8
+      },
+      "hp": {
+        "die": "6",
+        "average": "15",
+        "numDice": "10",
+        "mod": -20
+      },
+      "sp": {
+        "shields": 15,
+        "regen": "5"
+      },
+      "senses": [
+        "darkvision 60m"
+      ],
+      "name": "Geth Bomber",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/01/ME3_geth_bomber_AAA.png/revision/latest/scale-to-width-down/700?cb=20130313175937",
+      "cr": "1/2",
+      "size": "Small",
+      "type": "Synthetic",
+      "unit": "Geth",
+      "alignment": "Lawful Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "fly 10m",
+      "dc": "12",
+      "ac": "16",
+      "xp": "100",
+      "id": "geth_bomber",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "multi-frag_grenade"
+      ],
+      "savingThrows": [
+        "dex"
+      ],
+      "skills": [
+        "perception"
       ]
     }
   ]
