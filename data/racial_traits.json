@@ -1,5 +1,5 @@
 {
-  "updated": "April 16, 2018 @  8:54 PM",
+  "updated": "April 21, 2018 @  4:26 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRETKGL62kEZPA69PhA3AGMiVeHOWBRkTMDL3f_K-oajryEjwdq7fRAj-qfIusPsLMiIqmB12D4Zun8/pubhtml",
   "data": [
     {
@@ -190,7 +190,7 @@
       "turian": "x",
       "volus": null,
       "vorcha": null,
-      "unshackled_ai": "x",
+      "unshackled_ai": null,
       "id": "feat",
       "description_text_dump": "Select1featfromfeats"
     },
@@ -666,7 +666,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You can get extra supplies and discounts from vendors."
+          "data": "You have proficiency in the Persuasion skill."
         }
       ],
       "asari": null,
@@ -682,7 +682,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "id": "savvy_dealings",
-      "description_text_dump": "Youcangetextrasuppliesanddiscountsfromvendors"
+      "description_text_dump": "YouhaveproficiencyinthePersuasionskill"
     },
     {
       "name": "Skill Versatility",
