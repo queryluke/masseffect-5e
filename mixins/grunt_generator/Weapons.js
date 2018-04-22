@@ -1,19 +1,31 @@
 export const Weapons = {
   methods: {
     setWeaponActions (config, grunt) {
-      const weapons = this.getMutableData('weapons')
-        .filter(weapon => weapon.dmg !== null)
-        .map(weapon => this.setWeaponDamage(weapon, grunt))
-      const attacks = this.getAttackOptions(config, weapons)
-      let availableAttacks = attacks.filter(attack => {
-        return attack.dpr >= config.targetDamage.dmgMin && attack.dpr <= config.targetDamage.dmgMax
-      })
+      let availableAttacks = []
+      let boost = 0
+      let attacks = []
+      let trials = 0
+      // while the number of attacks is 0, up the str and dex scores for increased damage
+      while (trials < 10) {
+        attacks = this.getAttackOptions(config, grunt, boost)
+        availableAttacks = attacks.filter(attack => {
+          return attack.dpr >= config.targetDamage.dmgMin && attack.dpr <= config.targetDamage.dmgMax && attack.type !== 'Heavy Weapon'
+        })
+        if (availableAttacks.length < 10) {
+          trials += 1
+          boost += 3
+          grunt.abilityScores.dex += 1
+        } else {
+          break
+        }
+      }
+      // if it still couldn't find suitable damage, then get the last attack
       if (availableAttacks.length < 1) {
-        availableAttacks = [attacks[0]]
+        availableAttacks = [availableAttacks[availableAttacks.length - 1]]
       }
       const attack = this.randomValue(availableAttacks)
       for (const weapon of attack.weapons) {
-        grunt.actions.unshift(this.generateWeaponAttack(config.cr.profBonus, weapon))
+        grunt.actions.unshift(this.generateWeaponAttack(config.cr.profBonus, weapon, boost))
       }
       if (attack.numAttacks > 1) {
         grunt.actions.unshift({
@@ -22,10 +34,18 @@ export const Weapons = {
           description: this.generateMultiattackDescription(grunt, attack)
         })
       }
+      let heavyWeaponOptions = attacks.filter(attack => {
+        return attack.dpr <= config.targetDamage.dmgMax && attack.type === 'Heavy Weapon'
+      })
+      if (heavyWeaponOptions.length > 0 && Math.floor(Math.random() * 100) > 85) {
+        grunt.actions.push(this.generateWeaponAttack(config.cr.profBonus, this.randomValue(heavyWeaponOptions).weapons[0]))
+      }
     },
-    getAttackOptions (config, weapons) {
+    getAttackOptions (config, grunt, boost) {
+      const weapons = this.getMutableData('weapons')
+        .filter(weapon => weapon.dmg !== null)
+        .map(weapon => this.setWeaponDamage(weapon, grunt))
       const attacks = []
-
       for (const weapon of weapons) {
         // filter heavy weapons
         if (!config.allowHeavyWeapons && weapon.type === 'Heavy Weapon') {
@@ -38,13 +58,15 @@ export const Weapons = {
 
         for (let i = 1; i <= 3; i++) {
           if ((i > 1 && weapon.type === 'Heavy Weapon') ||
-            (i > 2 && ((weapon.type === 'Heavy Weapon' || weapon.type === 'Sniper Rifle') || weapon.heat < 3))) {
+            (i > weapon.heat)) {
             continue
           }
           attacks.push({
-            dpr: (weapon.attack.dpr + weapon.attack.bonus + weapon.attack.extraDmg) * i,
+            dpr: (weapon.attack.dpr + weapon.attack.bonus + weapon.attack.extraDmg + boost) * i,
             numAttacks: i,
-            weapons: [weapon]
+            weapons: [weapon],
+            type: weapon.type,
+            boost
           })
         }
       }
@@ -80,15 +102,19 @@ export const Weapons = {
           const offDpr = off.attack.dpr + off.attack.bonus + off.attack.extraDmg
           // single attack with each
           attacks.push({
-            dpr: mainDpr + offDpr,
+            dpr: mainDpr + offDpr + (boost * 2),
             numAttacks: 2,
-            weapons: [main, off]
+            weapons: [main, off],
+            type: 'dw',
+            boost
           })
           // two attacks with each
           attacks.push({
-            dpr: (mainDpr * 2) + (offDpr * 2),
+            dpr: (mainDpr * 2) + (offDpr * 2) + (boost * 4),
             numAttacks: 4,
-            weapons: [main, off]
+            weapons: [main, off],
+            type: 'dw',
+            boost
           })
 
           combinations.push(`${main.id}-${off.id}`)

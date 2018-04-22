@@ -19,9 +19,12 @@ export const Helpers = {
       const shields = grunt.sp ? grunt.sp.shields + grunt.sp.regen : 0
       const recHp = grunt.hp.average + shields + config.effective.hp
       // Find the recommended cr by the effective hp
-      const recCrByHp = this.crArray.find(cr => {
+      let recCrByHp = this.crArray.find(cr => {
         return recHp >= cr.hpMin && recHp <= cr.hpMax
       })
+      if (!recCrByHp) {
+        recCrByHp = this.crArray[14]
+      }
       // prevent any null crs
       const effectiveAc = grunt.ac + config.effective.ac
       // count of how much higher/lower the ac is (divided by 2 because adjustment is for every 2 points)
