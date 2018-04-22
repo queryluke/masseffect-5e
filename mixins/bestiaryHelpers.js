@@ -52,7 +52,7 @@ export const BestiaryHelpers = {
       }
       return weapon
     },
-    generateWeaponAttack (profBonus, weapon) {
+    generateWeaponAttack (profBonus, weapon, boost = 0) {
       profBonus = parseInt(profBonus, 10)
       // Heavy weapons
       if (weapon.type === 'Heavy Weapon') {
@@ -60,7 +60,7 @@ export const BestiaryHelpers = {
           type: 'common',
           name: weapon.name,
           recharge: `Charges ${weapon.heat}`,
-          description: weapon.notes
+          description: weapon.notes.map(n => n.data).join(' ')
         }
       }
       // Other special weapons
@@ -81,7 +81,7 @@ export const BestiaryHelpers = {
 
       let bonusText = ''
       if (weapon.attack.bonus > 0) {
-        bonusText = ` + ${weapon.attack.bonus}`
+        bonusText = ` + ${weapon.attack.bonus + boost}`
       } else if (weapon.attack.bonus < 0) {
         bonusText = ` - ${weapon.attack.bonus * -1}`
       }
@@ -94,7 +94,7 @@ export const BestiaryHelpers = {
 
       const description = {
         attack: `${toHit} to hit, ${reachOrRange} ${rangeString}${hipFire}, ${target}.`,
-        hit: `${Math.floor(weapon.attack.dpr + weapon.attack.bonus)} (${weapon.rof}d${weapon.damage}${bonusText}) ${weapon.dmgType} damage${additionalHitMechanics}`,
+        hit: `${Math.floor(weapon.attack.dpr + weapon.attack.bonus + boost)} (${weapon.rof}d${weapon.damage}${bonusText}) ${weapon.dmgType} damage${additionalHitMechanics}`,
         miss: null
       }
 

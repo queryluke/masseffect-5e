@@ -7,7 +7,7 @@
     "hpMin": 8,
     "hpMax": 40,
     "attackBonus": 3,
-    "dmgMin": 2,
+    "dmgMin": 0,
     "dmgMax": 6,
     "abReduction": [8,9,10],
     "xp": "25",
