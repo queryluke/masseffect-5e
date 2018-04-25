@@ -41,8 +41,8 @@
       div(v-if="hasFeature('legendaryActions')")
         p.title.underline-heading.small-caps Legendary Actions
         p.
-          {{ stats.name }} can take 3 legendary actions, choosing from the options below. Only one legendary action can
-          be used at a time and only at the end of another creature's turn. Ancient Black Dragon regains spent legendary
+          The {{ stats.name }} can take 3 legendary actions, choosing from the options below. Only one legendary action can
+          be used at a time and only at the end of another creature's turn. The {{ stats.name }} regains spent legendary
           actions at the start of his turn.
         p(v-for="la in stats.legendaryActions" v-bind:key="la.id")
           npc-common-feature(:feature="la" v-bind:npc="stats")
