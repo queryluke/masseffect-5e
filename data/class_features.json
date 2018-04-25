@@ -1,5 +1,5 @@
 {
-  "updated": "April 21, 2018 @  4:20 PM",
+  "updated": "April 25, 2018 @  7:09 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -169,15 +169,15 @@
           "id": 2,
           "type": "list",
           "data": [
-            "Pull : Pull can affect large-sized objects, moving them 2m, and adding 4m to each size below large.",
-            "Lift : When you cast Lift add 5 more dice to your roll.",
-            "Singularity : Large-sized object can now be affected by singularity",
+            "Pull : Pull can affect Large or smaller objects and creatures, moving them 2m, and adding 4m to each size below large.",
+            "Lift : When you cast Lift you can target a creature size 1 larger than your lift is currently capable.",
+            "Singularity : Large or smaller objects and creatures are affected by singularity.",
             "Stasis : Targets have disadvantage on their saving throw."
           ]
         }
       ],
       "id": "biotic_control",
-      "mechanic_text_dump": "Atthe14thlevelyouveincreaseyourmasterywithbioticspellsthatcontrolthebattlefieldGainthefollowingbenefitstothespellsbelowlistPullPullcanaffectlargesizedobjectsmovingthem2mandadding4mtoeachsizebelowlargeLiftWhenyoucastLiftadd5moredicetoyourrollSingularityLargesizedobjectcannowbeaffectedbysingularityStasisTargetshavedisadvantageontheirsavingthrowlist"
+      "mechanic_text_dump": "Atthe14thlevelyouveincreaseyourmasterywithbioticspellsthatcontrolthebattlefieldGainthefollowingbenefitstothespellsbelowlistPullPullcanaffectLargeorsmallerobjectsandcreaturesmovingthem2mandadding4mtoeachsizebelowlargeLiftWhenyoucastLiftyoucantargetacreaturesize1largerthanyourliftiscurrentlycapableSingularityLargeorsmallerobjectsandcreaturesareaffectedbysingularityStasisTargetshavedisadvantageontheirsavingthrowlist"
     },
     {
       "name": "Biotic Enfilade",

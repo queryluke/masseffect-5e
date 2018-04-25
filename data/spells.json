@@ -1,5 +1,5 @@
 {
-  "updated": "April 21, 2018 @  6:53 PM",
+  "updated": "April 25, 2018 @  7:09 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -1908,16 +1908,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "This spell creates a negative mass effect field around a target creature. Roll 5d8. If the total roll is greater than or equal to the hit points of the targeted creature, it becomes {lifted}."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "At higher levels: When you cast this spell using a spell slot of level 2 or higher, add 2d8 to the roll for each level above the first."
+          "data": "Make a ranged spell attack on a Medium or smaller creature or object within range. On a success, you create a mass effect field around the target and it become {lifted}."
         }
       ],
-      "adv_option_1": "Heavy Lift : Increase the die type for Lift to d12.",
-      "adv_option_2": "Control : While the target is lifted, you can use your action to move the target up to 10m.",
+      "adv_option_1": "Heavy Lift : You may target a Large or smaller creature or object.",
+      "adv_option_2": "Control : While the target is lifted, as a bonus action, you can move the target up to 6m.",
       "type": "biotic",
       "die_type": "d8",
       "attack_type": [
@@ -1946,11 +1941,11 @@
       "min_tech_points": null,
       "id": "lift",
       "adv_options": [
-        "Heavy Lift : Increase the die type for Lift to d12.",
-        "Control : While the target is lifted, you can use your action to move the target up to 10m."
+        "Heavy Lift : You may target a Large or smaller creature or object.",
+        "Control : While the target is lifted, as a bonus action, you can move the target up to 6m."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "ThisspellcreatesanegativemasseffectfieldaroundatargetcreatureRoll5d8IfthetotalrollisgreaterthanorequaltothehitpointsofthetargetedcreatureitbecomesliftedAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel2orhigheradd2d8totherollforeachlevelabovethefirst"
+      "mechanic_text_dump": "MakearangedspellattackonaMediumorsmallercreatureorobjectwithinrangeOnasuccessyoucreateamasseffectfieldaroundthetargetanditbecomelifted"
     },
     {
       "name": "Neural Shock",
