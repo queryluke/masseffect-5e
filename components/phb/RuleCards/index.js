@@ -6,6 +6,7 @@ import ArmorPieces from './ArmorPieces.vue'
 import Barriers from './Barriers.vue'
 import Biotics from './Biotics.vue'
 import CombatPowers from './CombatPowers.vue'
+import Conditions from './Conditions.vue'
 import CreatingNewArmor from './CreatingNewArmor.vue'
 import CreatureTypes from './CreatureTypes.vue'
 import DamageTypes from './DamageTypes.vue'
@@ -22,6 +23,7 @@ import MediGel from './MediGel.vue'
 import MeleeWeapons from './MeleeWeapons.vue'
 import ParagonAndRenegade from './ParagonAndRenegade.vue'
 import PrimersAndDetonators from './PrimersAndDetonators.vue'
+import RaceClassRestrictions from './RaceClassRestrictions.vue'
 import Reloading from './Reloading.vue'
 import SexyLevel from './SexyLevel.vue'
 import Shields from './Shields.vue'
@@ -43,6 +45,7 @@ export default {
   Barriers,
   Biotics,
   CombatPowers,
+  Conditions,
   CreatingNewArmor,
   CreatureTypes,
   DamageTypes,
@@ -59,6 +62,7 @@ export default {
   MeleeWeapons,
   ParagonAndRenegade,
   PrimersAndDetonators,
+  RaceClassRestrictions,
   Reloading,
   SexyLevel,
   Shields,

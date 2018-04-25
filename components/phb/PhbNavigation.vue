@@ -48,6 +48,7 @@
             icon: 'gavel',
             items: [
               { href: '/phb/rules/general', title: 'General' },
+              { href: '/phb/rules/combat', title: 'Combat' },
               { href: '/phb/rules/spellcasting', title: 'Spellcasting' },
               { href: '/phb/rules/weapons', title: 'Weapons' },
               { href: '/phb/rules/armor', title: 'Armor' },

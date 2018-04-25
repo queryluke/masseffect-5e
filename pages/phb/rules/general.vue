@@ -26,15 +26,12 @@
             'distance',
             'lifting-and-carrying',
             'encumbrance',
-            'creature-types',
-            'damage-types'
+            'race-class-restrictions',
+            'creature-types'
           ],
           additions: [
-            'shields',
-            'barriers',
             'infrared-vision',
             'paragon-and-renegade',
-            'reloading',
             'sexy-level'
           ]
         }
