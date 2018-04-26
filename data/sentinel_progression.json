@@ -1,5 +1,5 @@
 {
-  "updated": "April 15, 2018 @  8:35 PM",
+  "updated": "April 25, 2018 @  8:06 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -32,6 +32,10 @@
               "subclass_progression": null
             }
           ]
+        },
+        {
+          "key": "barrier_ticks",
+          "value": "2"
         },
         {
           "key": "cantrips",
@@ -81,6 +85,10 @@
           ]
         },
         {
+          "key": "barrier_ticks",
+          "value": "2"
+        },
+        {
           "key": "cantrips",
           "value": "2"
         },
@@ -128,6 +136,10 @@
           ]
         },
         {
+          "key": "barrier_ticks",
+          "value": "2"
+        },
+        {
           "key": "cantrips",
           "value": "2"
         },
@@ -173,6 +185,10 @@
               "subclass_progression": null
             }
           ]
+        },
+        {
+          "key": "barrier_ticks",
+          "value": "2"
         },
         {
           "key": "cantrips",
@@ -227,6 +243,10 @@
           ]
         },
         {
+          "key": "barrier_ticks",
+          "value": "3"
+        },
+        {
           "key": "cantrips",
           "value": "2"
         },
@@ -272,6 +292,10 @@
               "subclass_progression": null
             }
           ]
+        },
+        {
+          "key": "barrier_ticks",
+          "value": "3"
         },
         {
           "key": "cantrips",
@@ -321,6 +345,10 @@
           ]
         },
         {
+          "key": "barrier_ticks",
+          "value": "3"
+        },
+        {
           "key": "cantrips",
           "value": "3"
         },
@@ -366,6 +394,10 @@
               "subclass_progression": null
             }
           ]
+        },
+        {
+          "key": "barrier_ticks",
+          "value": "3"
         },
         {
           "key": "cantrips",
@@ -420,6 +452,10 @@
           ]
         },
         {
+          "key": "barrier_ticks",
+          "value": "4"
+        },
+        {
           "key": "cantrips",
           "value": "3"
         },
@@ -465,6 +501,10 @@
               "subclass_progression": 3
             }
           ]
+        },
+        {
+          "key": "barrier_ticks",
+          "value": "4"
         },
         {
           "key": "cantrips",
@@ -514,6 +554,10 @@
           ]
         },
         {
+          "key": "barrier_ticks",
+          "value": "4"
+        },
+        {
           "key": "cantrips",
           "value": "4"
         },
@@ -559,6 +603,10 @@
               "subclass_progression": null
             }
           ]
+        },
+        {
+          "key": "barrier_ticks",
+          "value": "4"
         },
         {
           "key": "cantrips",
@@ -608,6 +656,10 @@
           ]
         },
         {
+          "key": "barrier_ticks",
+          "value": "5"
+        },
+        {
           "key": "cantrips",
           "value": "4"
         },
@@ -653,6 +705,10 @@
               "subclass_progression": 4
             }
           ]
+        },
+        {
+          "key": "barrier_ticks",
+          "value": "5"
         },
         {
           "key": "cantrips",
@@ -707,6 +763,10 @@
           ]
         },
         {
+          "key": "barrier_ticks",
+          "value": "5"
+        },
+        {
           "key": "cantrips",
           "value": "4"
         },
@@ -752,6 +812,10 @@
               "subclass_progression": null
             }
           ]
+        },
+        {
+          "key": "barrier_ticks",
+          "value": "5"
         },
         {
           "key": "cantrips",
@@ -806,6 +870,10 @@
           ]
         },
         {
+          "key": "barrier_ticks",
+          "value": "6"
+        },
+        {
           "key": "cantrips",
           "value": "4"
         },
@@ -851,6 +919,10 @@
               "subclass_progression": 5
             }
           ]
+        },
+        {
+          "key": "barrier_ticks",
+          "value": "6"
         },
         {
           "key": "cantrips",
@@ -900,6 +972,10 @@
           ]
         },
         {
+          "key": "barrier_ticks",
+          "value": "6"
+        },
+        {
           "key": "cantrips",
           "value": "4"
         },
@@ -947,6 +1023,10 @@
           ]
         },
         {
+          "key": "barrier_ticks",
+          "value": "6"
+        },
+        {
           "key": "cantrips",
           "value": "4"
         },
@@ -984,6 +1064,10 @@
     },
     {
       "display": "Features",
+      "spell_header": false
+    },
+    {
+      "display": "Barrier Ticks",
       "spell_header": false
     },
     {
