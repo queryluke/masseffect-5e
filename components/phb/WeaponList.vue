@@ -8,7 +8,6 @@
           v-flex.xs8.sm9.lg3
             strong {{ weapon.name }}
           v-flex.hidden-md-and-down.lg2
-            span(v-if="weapon.rof") {{ weapon.rof }}d
             span {{ weapon.damage }}
           v-flex.hidden-md-and-down.lg2 {{ weapon.heat }}
           v-flex(v-if="weapon.type === 'Melee' || weapon.type === 'Heavy Weapon'").hidden-md-and-down.lg2

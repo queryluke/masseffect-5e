@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-avatar(size="25px" tile v-bind:class="[weapon.rare ? 'deep-purple' : 'orange']").accent-2
+  v-avatar(size="30px" tile v-bind:class="rarityColors[weapon.rarity]")
     img(:src="`/images/weapons/${type}.svg`" v-bind:alt="weapon.type")
 </template>
 
@@ -10,7 +10,13 @@
     },
     data () {
       return {
-        type: ''
+        type: '',
+        rarityColors: {
+          'Common': 'grey lighten-2',
+          'Uncommon': 'green accent-2',
+          'Rare': 'orange accent-2',
+          'Very Rare': 'deep-purple accent-1'
+        }
       }
     },
     props: ['weapon']
