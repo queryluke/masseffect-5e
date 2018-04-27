@@ -1,3 +1,5 @@
+import {AverageFromDie} from './averageFromDie'
+
 export const BestiaryHelpers = {
   methods: {
     generateGrenadeAttack (grenade) {
@@ -34,7 +36,7 @@ export const BestiaryHelpers = {
       if (weapon.type === 'Melee' && bruteMod) {
         weapon.rof += 1
       }
-      weapon.attack.dpr = parseInt(weapon.rof, 10) * ((parseInt(weapon.damage, 10) + 1) / 2)
+      weapon.attack.dpr = this.averageFromDie(weapon.damage)
       weapon.attack.extraDmg = weapon.addDmg ? parseInt(weapon.addDmg, 10) : 0
       // add str or dex to melee dpr
       if (weapon.type === 'Melee') {
@@ -68,14 +70,14 @@ export const BestiaryHelpers = {
         return {
           type: 'common',
           name: weapon.name,
-          description: `Target a creature within  ${weapon.range}. It makes a DC ${8 + weapon.bonus + profBonus} Dexterity saving throw, taking ${weapon.dpr} (${weapon.rof}d${weapon.damage}) thunder damage on a failed save, or have as much damage on a successful one.`
+          description: `Target a creature within  ${weapon.range}. It makes a DC ${8 + weapon.bonus + profBonus} Dexterity saving throw, taking ${weapon.dpr} (${weapon.damage}) thunder damage on a failed save, or have as much damage on a successful one.`
         }
       }
       if (weapon.id === 'venom_shotgun') {
         return {
           type: 'common',
           name: weapon.name,
-          description: `Target a creature within  ${weapon.range}. It makes a DC 13 Dexterity saving throw, taking ${weapon.dpr} (${weapon.rof}d${weapon.damage}) thunder damage on a failed save, or have as much damage on a successful one.`
+          description: `Target a creature within  ${weapon.range}. It makes a DC 13 Dexterity saving throw, taking ${weapon.dpr} (${weapon.damage}) thunder damage on a failed save, or have as much damage on a successful one.`
         }
       }
 
@@ -94,7 +96,7 @@ export const BestiaryHelpers = {
 
       const description = {
         attack: `${toHit} to hit, ${reachOrRange} ${rangeString}${hipFire}, ${target}.`,
-        hit: `${Math.floor(weapon.attack.dpr + weapon.attack.bonus + boost)} (${weapon.rof}d${weapon.damage}${bonusText}) ${weapon.dmgType} damage${additionalHitMechanics}`,
+        hit: `${Math.floor(weapon.attack.dpr + weapon.attack.bonus + boost)} (${weapon.damage}${bonusText}) ${weapon.dmgType} damage${additionalHitMechanics}`,
         miss: null
       }
 
@@ -110,5 +112,6 @@ export const BestiaryHelpers = {
         description
       }
     }
-  }
+  },
+  mixins: [AverageFromDie]
 }

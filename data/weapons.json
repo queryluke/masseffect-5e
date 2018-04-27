@@ -1,5 +1,5 @@
 {
-  "updated": "April 27, 2018 @  2:22 PM",
+  "updated": "April 27, 2018 @  3:38 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSq70x_GZuDKcELgX8k_7Hd6nLGu3DoIEdDwP-YEGjUU-ghGc7ot_Q7140FZwGbEalHgzPwVm4BN8y_/pubhtml",
   "data": [
     {
@@ -432,7 +432,7 @@
       "notes_text_dump": ""
     },
     {
-      "name": "Strike Assault Rifle",
+      "name": "Striker Assault Rifle",
       "rarity": "Rare",
       "type": "Assault Rifle",
       "cost": "42000",
@@ -454,7 +454,7 @@
       "addDmg": null,
       "dmgType": "piercing",
       "image": "http://vignette2.wikia.nocookie.net/masseffect/images/f/fb/ME3_Striker_Assault_Rifle.png/revision/latest?cb=20120411201310",
-      "id": "strike_assault_rifle",
+      "id": "striker_assault_rifle",
       "notes_text_dump": "AftermakingarangedattackwiththeStrikeryoumaychoosetoenterthetargetingconditionAtthestartofyournextturnallrangedattacksmadewiththeStrikerdealanadditional1d12damageatthecostof2heatperattackThisbonuscontinuestostackatthestartofyourturnuntilthetargetingconditionendsoruntiltheStrikermustbereloadedForexamplethe3rdroundwoulddeal3d12for3heatperattacketc"
     },
     {
@@ -1161,7 +1161,7 @@
       "damage": null,
       "range": null,
       "minStr": "10",
-      "tags": "-",
+      "tags": null,
       "notes": [
         {
           "id": 1,

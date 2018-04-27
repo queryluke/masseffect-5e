@@ -43,7 +43,7 @@ export const Weapons = {
     },
     getAttackOptions (config, grunt, boost) {
       const weapons = this.getMutableData('weapons')
-        .filter(weapon => weapon.dmg !== null)
+        .filter(weapon => weapon.damage !== null)
         .map(weapon => this.setWeaponDamage(weapon, grunt))
       const attacks = []
       for (const weapon of weapons) {
