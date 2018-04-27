@@ -1,5 +1,5 @@
 {
-  "updated": "April 14, 2018 @ 10:39 PM",
+  "updated": "April 27, 2018 @ 11:49 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -206,7 +206,7 @@
         }
       ],
       "adv_option_1": "Bleeding Blades : On a hit, the target takes an additional 3[dd] piercing damage at the start of their turn. This damage bypasses shields.",
-      "adv_option_2": "Exploding blades : On a hit, the target takes and additional 3[dd] thunder damage and must pass a Constitution saving throw (DC 8 + proficiency bonus) or becomes {stunned} until the end of your next turn.",
+      "adv_option_2": "Exploding blades : On a hit, the target takes an additional 3[dd] thunder damage and must pass a Constitution saving throw (DC 8 + proficiency bonus) or becomes {stunned} until the end of your next turn.",
       "type": "combat",
       "die_type": "d12",
       "attack_type": [
@@ -2076,7 +2076,7 @@
         }
       ],
       "adv_option_1": "Improved Damage : Increase the damage die to d10.",
-      "adv_option_2": "Half Blast : You can cast Nova, you cause up to 2 blasts. Each blast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. If you have not used all of your movement, you can move in between the blasts.",
+      "adv_option_2": "Half Blast : You can cast Nova, you cause up to 2 blasts. Each blast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. If you have not used all your movement, you can move in between the blasts.",
       "type": "biotic",
       "die_type": "d10",
       "attack_type": [
@@ -2106,7 +2106,7 @@
       "id": "nova",
       "adv_options": [
         "Improved Damage : Increase the damage die to d10.",
-        "Half Blast : You can cast Nova, you cause up to 2 blasts. Each blast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. If you have not used all of your movement, you can move in between the blasts."
+        "Half Blast : You can cast Nova, you cause up to 2 blasts. Each blast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. If you have not used all your movement, you can move in between the blasts."
       ],
       "class_list": "Vanguard",
       "mechanic_text_dump": "TransfertheenergyofyourbarrierintoabioticexplosionconsumingyourremainingbarrierticksCreatureswithina2mspherecenteredonyoumustmakeaDexteritysavingthrowOnafailedsaveacreatureisknockedproneandtakesforcedamageequaltoXd10whereXisthenumberofbarrierticksOnasuccessfulsaveacreaturetakeshalfasmuchdamageWhenyoucastthisspellusingaspellslotof2ndlevelorhighertheradiusoftheexplosionincreasesby2mforeachlevelabovethe1st"
@@ -3036,7 +3036,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Spend 2 tech points to shoot a swarm of miniature pylons to a target location within 20m. The pylons form a 4m cylinder at the chosen location, created an electrified new. Creatures within the net cannot cast tech."
+          "data": "Spend 2 tech points to shoot a swarm of miniature pylons to a target location within 20m. The pylons form a 4m cylinder at the chosen location, created an electrified net. Creatures within the net cannot cast tech."
         },
         {
           "id": 2,
@@ -3503,7 +3503,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Make a melee spell attack on an object within range. On a hit, you increase the mass of your fist, 1d8 bludgeoning damage. The kenetic force can be harness by your biotic implant as Barrier ticks. Gain 1 barrier tick per size of the object that was hit (1 for small, 2 for medium, 3 for large, etc.)"
+          "data": "Make a melee spell attack on an object within range. On a hit, you increase the mass of your fist, 1d8 bludgeoning damage. The kinetic force can be harness by your biotic implant as Barrier ticks. Gain 1 barrier tick per size of the object that was hit (1 for small, 2 for medium, 3 for large, etc.)"
         },
         {
           "id": 2,
