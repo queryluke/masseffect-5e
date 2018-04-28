@@ -1,5 +1,5 @@
 {
-  "updated": "April 28, 2018 @  9:20 AM",
+  "updated": "April 28, 2018 @  2:19 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -1489,19 +1489,24 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Spend 1 tech point to tap into the VI of a willing creature. The target can roll a d4 and add the number rolled to one ability check or saving throw of its choice. It can roll the die before or after making the roll."
+          "data": "Spend 1 tech point to tap into the VI of a willing creature. Once within the next 10 minutes, the target can roll a d6 and add the number rolled to one ability check, saving throw, or attack roll of its choice. It can roll the die before or after making the roll."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "You may only have Guidance on one target at a time."
         }
       ],
-      "adv_option_1": "Multi Tap : You can tap into two willing creatures' VI when you use this power.",
-      "adv_option_2": "Improved Tap : Increase the die type to d6",
+      "adv_option_1": "Multi Tap : You can apply Guidance to up to 3 different targets (you must still cast the ability each time you apply it to a new target).",
+      "adv_option_2": "Improved Tap : Increase the die type to d10",
       "type": "tech",
-      "die_type": "d4",
+      "die_type": "d6",
       "attack_type": [
 
       ],
       "casting_time": "Action",
       "concentration": null,
-      "duration": "Instant",
+      "duration": "10 minutes",
       "range": "10m",
       "aoe": null,
       "aoe_distance": null,
@@ -1522,11 +1527,11 @@
       "min_tech_points": "1",
       "id": "guidance",
       "adv_options": [
-        "Multi Tap : You can tap into two willing creatures' VI when you use this power.",
-        "Improved Tap : Increase the die type to d6"
+        "Multi Tap : You can apply Guidance to up to 3 different targets (you must still cast the ability each time you apply it to a new target).",
+        "Improved Tap : Increase the die type to d10"
       ],
       "class_list": "Engineer, Infiltrator, Sentinel",
-      "mechanic_text_dump": "Spend1techpointtotapintotheVIofawillingcreatureThetargetcanrollad4andaddthenumberrolledtooneabilitycheckorsavingthrowofitschoiceItcanrollthediebeforeoraftermakingtheroll"
+      "mechanic_text_dump": "Spend1techpointtotapintotheVIofawillingcreatureOncewithinthenext10minutesthetargetcanrollad6andaddthenumberrolledtooneabilitychecksavingthroworattackrollofitschoiceItcanrollthediebeforeoraftermakingtherollYoumayonlyhaveGuidanceononetargetatatime"
     },
     {
       "name": "Havoc Strike",
@@ -1908,7 +1913,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Make a ranged spell attack on a Medium or smaller creature or object within range. On a success, you create a mass effect field around the target and it become {lifted}."
+          "data": "Make a ranged spell attack on a Medium or smaller creature or object within range. On a success, you create a mass effect field around the target and it becomes {lifted}."
         }
       ],
       "adv_option_1": "Heavy Lift : You may target a Large or smaller creature or object.",
@@ -1945,7 +1950,7 @@
         "Control : While the target is lifted, as a bonus action, you can move the target up to 6m."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "MakearangedspellattackonaMediumorsmallercreatureorobjectwithinrangeOnasuccessyoucreateamasseffectfieldaroundthetargetanditbecomelifted"
+      "mechanic_text_dump": "MakearangedspellattackonaMediumorsmallercreatureorobjectwithinrangeOnasuccessyoucreateamasseffectfieldaroundthetargetanditbecomeslifted"
     },
     {
       "name": "Neural Shock",
