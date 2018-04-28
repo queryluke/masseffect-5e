@@ -1,5 +1,5 @@
 {
-  "updated": "April 28, 2018 @  9:21 AM",
+  "updated": "April 28, 2018 @  1:48 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRETKGL62kEZPA69PhA3AGMiVeHOWBRkTMDL3f_K-oajryEjwdq7fRAj-qfIusPsLMiIqmB12D4Zun8/pubhtml",
   "data": [
     {
@@ -75,12 +75,12 @@
       "description_text_dump": "Afterreducinganenemyto0hitpointswithameleeattackyoumaytakeanotherActionthisturn"
     },
     {
-      "name": "Cantrip",
+      "name": "Biotic Initiate",
       "description": [
         {
           "id": 1,
           "type": "line",
-          "data": "You know one cantrip of your choice from the adept or vanguard spell list. Wisdom is your spellcasting modifier for it. This does not count against your max number of cantrips known."
+          "data": "Choose a class: Adept or Vanguard. You learn two cantrips of your choice from that class’s spell list. In addition, choose one 1st-level spell from that same list. You learn that spell and can cast it at its lowest level. Once you cast it, you must finish a long rest before you can cast it again."
         }
       ],
       "asari": "x",
@@ -95,8 +95,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
-      "id": "cantrip",
-      "description_text_dump": "YouknowonecantripofyourchoicefromtheadeptorvanguardspelllistWisdomisyourspellcastingmodifierforitThisdoesnotcountagainstyourmaxnumberofcantripsknown"
+      "id": "biotic_initiate",
+      "description_text_dump": "ChooseaclassAdeptorVanguardYoulearntwocantripsofyourchoicefromthatclasssspelllistInadditionchooseone1stlevelspellfromthatsamelistYoulearnthatspellandcancastitatitslowestlevelOnceyoucastityoumustfinishalongrestbeforeyoucancastitagain"
     },
     {
       "name": "Composite Plating",
@@ -128,7 +128,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You have a minor cybernetic augmentation. Choose one of the following: Darkvision, speed increased by 2m, proficiency in Perception, add 2 to your STR score when calculating minimum STR for weapons and armor (if using the Encumbrance Variant rule, add 5 to your STR when calculating carry weight)."
+          "data": "You have a minor cybernetic augmentation. Choose one of the following: Darkvision, speed increased by 4m, +1 Strength, or proficiency in either Perception, Athletics, or Acrobatics."
         }
       ],
       "asari": null,
@@ -144,7 +144,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "id": "cybernetic_augmentation",
-      "description_text_dump": "YouhaveaminorcyberneticaugmentationChooseoneofthefollowingDarkvisionspeedincreasedby2mproficiencyinPerceptionadd2toyourSTRscorewhencalculatingminimumSTRforweaponsandarmorifusingtheEncumbranceVariantruleadd5toyourSTRwhencalculatingcarryweight"
+      "description_text_dump": "YouhaveaminorcyberneticaugmentationChooseoneofthefollowingDarkvisionspeedincreasedby4m1StrengthorproficiencyineitherPerceptionAthleticsorAcrobatics"
     },
     {
       "name": "Darkvision",
@@ -272,12 +272,12 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Your suit is your lifeblood. It makes your immune to disease. You have resistance to poison and necrotic damage. However, when you take an unprotected critical hit from puncture damage your suit becomes breached. On your turn, you can take no other action except expending a charge of specialized sealant to close the puncture. You have 3 charges of sealant.  On a long rest, you regain your charges."
+          "data": "Your suit is your lifeblood. It makes your immune to disease. You have resistance to poison and necrotic damage. However, if you are {unprotected} and receive a critical hit, your suit becomes breached. On your turn, you can take no other action except expending a charge of specialized sealant to close the puncture. You have 3 charges of sealant.  On a long rest, you regain your charges."
         },
         {
           "id": 2,
           "type": "line",
-          "data": "If you have no charges of sealant remains, you become poisoned until you can patch the suit. If you spend longer that 24 hours with the breach, you die."
+          "data": "For each hour in which you have a breach in your suit, you suffer one level of exhaustion. For each hour you spend outside of your suit if not in a compatible environment, suffer 3 levels of exhaustion."
         }
       ],
       "asari": null,
@@ -293,7 +293,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "id": "hermetic_suit",
-      "description_text_dump": "YoursuitisyourlifebloodItmakesyourimmunetodiseaseYouhaveresistancetopoisonandnecroticdamageHoweverwhenyoutakeanunprotectedcriticalhitfrompuncturedamageyoursuitbecomesbreachedOnyourturnyoucantakenootheractionexceptexpendingachargeofspecializedsealanttoclosethepunctureYouhave3chargesofsealantOnalongrestyouregainyourchargesIfyouhavenochargesofsealantremainsyoubecomepoisoneduntilyoucanpatchthesuitIfyouspendlongerthat24hourswiththebreachyoudie"
+      "description_text_dump": "YoursuitisyourlifebloodItmakesyourimmunetodiseaseYouhaveresistancetopoisonandnecroticdamageHoweverifyouareunprotectedandreceiveacriticalhityoursuitbecomesbreachedOnyourturnyoucantakenootheractionexceptexpendingachargeofspecializedsealanttoclosethepunctureYouhave3chargesofsealantOnalongrestyouregainyourchargesForeachhourinwhichyouhaveabreachinyoursuityousufferonelevelofexhaustionForeachhouryouspendoutsideofyoursuitifnotinacompatibleenvironmentsuffer3levelsofexhaustion"
     },
     {
       "name": "Hungry Jaws",
