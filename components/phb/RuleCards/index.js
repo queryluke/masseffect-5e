@@ -4,8 +4,6 @@ import ArmorOverview from './ArmorOverview.vue'
 import ArmorCustomization from './ArmorCustomization.vue'
 import ArmorPieces from './ArmorPieces.vue'
 import Barriers from './Barriers.vue'
-import Biotics from './Biotics.vue'
-import CombatPowers from './CombatPowers.vue'
 import Conditions from './Conditions.vue'
 import CreatingNewArmor from './CreatingNewArmor.vue'
 import CreatureTypes from './CreatureTypes.vue'
@@ -27,8 +25,6 @@ import RaceClassRestrictions from './RaceClassRestrictions.vue'
 import Reloading from './Reloading.vue'
 import SexyLevel from './SexyLevel.vue'
 import Shields from './Shields.vue'
-import SpellSaveDc from './SpellSaveDc.vue'
-import TechPowers from './TechPowers.vue'
 import ThermalClipsVariant from './ThermalClipsVariant.vue'
 import WeaponAttributes from './WeaponAttributes.vue'
 import WeaponCustomization from './WeaponCustomization.vue'
@@ -43,8 +39,6 @@ export default {
   ArmorCustomization,
   ArmorPieces,
   Barriers,
-  Biotics,
-  CombatPowers,
   Conditions,
   CreatingNewArmor,
   CreatureTypes,
@@ -66,8 +60,6 @@ export default {
   Reloading,
   SexyLevel,
   Shields,
-  SpellSaveDc,
-  TechPowers,
   ThermalClipsVariant,
   WeaponAttributes,
   WeaponCustomization,

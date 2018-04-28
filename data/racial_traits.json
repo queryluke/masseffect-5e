@@ -1,5 +1,5 @@
 {
-  "updated": "April 21, 2018 @  4:26 PM",
+  "updated": "April 28, 2018 @  9:21 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRETKGL62kEZPA69PhA3AGMiVeHOWBRkTMDL3f_K-oajryEjwdq7fRAj-qfIusPsLMiIqmB12D4Zun8/pubhtml",
   "data": [
     {
@@ -779,6 +779,30 @@
       "unshackled_ai": null,
       "id": "high-speed_metabolism",
       "description_text_dump": "SalariansdontneedtosleepforaslongasotherracesInsteadtheiruniquebiologyrequiresthattheyonlyneedtosleepfor1houradaySalariansgainthesamebenefitthatahumandoesfrom8hoursofsleep"
+    },
+    {
+      "name": "Innate Biotics",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Asari do not require biotic implants to control their abilities. Instead, their biotic talents rely on their ability to project their will onto the world. As an Asari, you use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for an biotic spell you cast and when making an attack roll with one."
+        }
+      ],
+      "asari": "x",
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "unshackled_ai": null,
+      "id": "innate_biotics",
+      "description_text_dump": "AsaridonotrequirebioticimplantstocontroltheirabilitiesInsteadtheirbiotictalentsrelyontheirabilitytoprojecttheirwillontotheworldAsanAsariyouuseyourCharismawheneveraspellreferstoyourspellcastingabilityInadditionyouuseyourCharismamodifierwhensettingthesavingthrowDCforanbioticspellyoucastandwhenmakinganattackrollwithone"
     }
   ]
 }

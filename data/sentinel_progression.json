@@ -1,5 +1,5 @@
 {
-  "updated": "April 25, 2018 @  8:06 PM",
+  "updated": "April 28, 2018 @ 12:41 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -19,11 +19,6 @@
             {
               "key": "tech_armor",
               "display": "Tech Armor",
-              "subclass_progression": null
-            },
-            {
-              "key": "tech_power",
-              "display": "Tech Power(1)",
               "subclass_progression": null
             },
             {
@@ -60,6 +55,10 @@
         {
           "key": "3",
           "value": "-"
+        },
+        {
+          "key": "4",
+          "value": "-"
         }
       ]
     },
@@ -80,6 +79,11 @@
             {
               "key": "fighting_style",
               "display": "Fighting Style",
+              "subclass_progression": null
+            },
+            {
+              "key": "tech_power",
+              "display": "Tech Power(2)",
               "subclass_progression": null
             }
           ]
@@ -111,6 +115,10 @@
         {
           "key": "3",
           "value": "-"
+        },
+        {
+          "key": "4",
+          "value": "-"
         }
       ]
     },
@@ -132,6 +140,11 @@
               "key": "subclass_feature",
               "display": "Subclass Feature",
               "subclass_progression": 1
+            },
+            {
+              "key": "biotic_powers",
+              "display": "Biotic Powers(2:1)",
+              "subclass_progression": null
             }
           ]
         },
@@ -153,7 +166,7 @@
         },
         {
           "key": "1",
-          "value": "-"
+          "value": "2"
         },
         {
           "key": "2",
@@ -161,6 +174,10 @@
         },
         {
           "key": "3",
+          "value": "-"
+        },
+        {
+          "key": "4",
           "value": "-"
         }
       ]
@@ -200,11 +217,11 @@
         },
         {
           "key": "max_tp",
-          "value": "2"
+          "value": "3"
         },
         {
           "key": "1",
-          "value": "-"
+          "value": "2"
         },
         {
           "key": "2",
@@ -212,6 +229,10 @@
         },
         {
           "key": "3",
+          "value": "-"
+        },
+        {
+          "key": "4",
           "value": "-"
         }
       ]
@@ -236,8 +257,8 @@
               "subclass_progression": null
             },
             {
-              "key": "biotic_powers",
-              "display": "Biotic Powers(2:1)",
+              "key": "tech_power",
+              "display": "Tech Power(2)",
               "subclass_progression": null
             }
           ]
@@ -269,6 +290,10 @@
         {
           "key": "3",
           "value": "-"
+        },
+        {
+          "key": "4",
+          "value": "-"
         }
       ]
     },
@@ -287,8 +312,8 @@
           "key": "features",
           "value": [
             {
-              "key": "tech_power",
-              "display": "Tech Power(2)",
+              "key": "biotic_powers",
+              "display": "Biotic Powers(2:2)",
               "subclass_progression": null
             }
           ]
@@ -307,7 +332,7 @@
         },
         {
           "key": "max_tp",
-          "value": "3"
+          "value": "4"
         },
         {
           "key": "1",
@@ -315,10 +340,14 @@
         },
         {
           "key": "2",
-          "value": "-"
+          "value": "1"
         },
         {
           "key": "3",
+          "value": "-"
+        },
+        {
+          "key": "4",
           "value": "-"
         }
       ]
@@ -358,18 +387,22 @@
         },
         {
           "key": "max_tp",
-          "value": "3"
+          "value": "4"
         },
         {
           "key": "1",
-          "value": "2"
+          "value": "3"
         },
         {
           "key": "2",
-          "value": "-"
+          "value": "1"
         },
         {
           "key": "3",
+          "value": "-"
+        },
+        {
+          "key": "4",
           "value": "-"
         }
       ]
@@ -409,7 +442,7 @@
         },
         {
           "key": "max_tp",
-          "value": "3"
+          "value": "4"
         },
         {
           "key": "1",
@@ -417,10 +450,14 @@
         },
         {
           "key": "2",
-          "value": "-"
+          "value": "2"
         },
         {
           "key": "3",
+          "value": "-"
+        },
+        {
+          "key": "4",
           "value": "-"
         }
       ]
@@ -445,8 +482,8 @@
               "subclass_progression": null
             },
             {
-              "key": "biotic_powers",
-              "display": "Biotic Powers(2:2)",
+              "key": "tech_power",
+              "display": "Tech Power(2)",
               "subclass_progression": null
             }
           ]
@@ -465,7 +502,7 @@
         },
         {
           "key": "max_tp",
-          "value": "4"
+          "value": "5"
         },
         {
           "key": "1",
@@ -477,6 +514,10 @@
         },
         {
           "key": "3",
+          "value": "-"
+        },
+        {
+          "key": "4",
           "value": "-"
         }
       ]
@@ -516,7 +557,7 @@
         },
         {
           "key": "max_tp",
-          "value": "4"
+          "value": "5"
         },
         {
           "key": "1",
@@ -524,10 +565,14 @@
         },
         {
           "key": "2",
-          "value": "2"
+          "value": "3"
         },
         {
           "key": "3",
+          "value": "-"
+        },
+        {
+          "key": "4",
           "value": "-"
         }
       ]
@@ -547,8 +592,8 @@
           "key": "features",
           "value": [
             {
-              "key": "tech_power",
-              "display": "Tech Power(2)",
+              "key": "biotic_powers",
+              "display": "Biotic Powers(2:3)",
               "subclass_progression": null
             }
           ]
@@ -567,7 +612,7 @@
         },
         {
           "key": "max_tp",
-          "value": "4"
+          "value": "5"
         },
         {
           "key": "1",
@@ -575,10 +620,14 @@
         },
         {
           "key": "2",
-          "value": "2"
+          "value": "3"
         },
         {
           "key": "3",
+          "value": "1"
+        },
+        {
+          "key": "4",
           "value": "-"
         }
       ]
@@ -618,7 +667,7 @@
         },
         {
           "key": "max_tp",
-          "value": "4"
+          "value": "6"
         },
         {
           "key": "1",
@@ -630,6 +679,10 @@
         },
         {
           "key": "3",
+          "value": "1"
+        },
+        {
+          "key": "4",
           "value": "-"
         }
       ]
@@ -652,6 +705,11 @@
               "key": "fighting_style",
               "display": "Fighting Style",
               "subclass_progression": null
+            },
+            {
+              "key": "tech_power",
+              "display": "Tech Power(2)",
+              "subclass_progression": null
             }
           ]
         },
@@ -669,7 +727,7 @@
         },
         {
           "key": "max_tp",
-          "value": "5"
+          "value": "6"
         },
         {
           "key": "1",
@@ -681,6 +739,10 @@
         },
         {
           "key": "3",
+          "value": "2"
+        },
+        {
+          "key": "4",
           "value": "-"
         }
       ]
@@ -720,18 +782,22 @@
         },
         {
           "key": "max_tp",
-          "value": "5"
+          "value": "6"
         },
         {
           "key": "1",
-          "value": "5"
+          "value": "4"
         },
         {
           "key": "2",
-          "value": "3"
+          "value": "4"
         },
         {
           "key": "3",
+          "value": "2"
+        },
+        {
+          "key": "4",
           "value": "-"
         }
       ]
@@ -776,7 +842,7 @@
         },
         {
           "key": "max_tp",
-          "value": "5"
+          "value": "7"
         },
         {
           "key": "1",
@@ -784,11 +850,15 @@
         },
         {
           "key": "2",
-          "value": "3"
+          "value": "4"
         },
         {
           "key": "3",
-          "value": "2"
+          "value": "3"
+        },
+        {
+          "key": "4",
+          "value": "1"
         }
       ]
     },
@@ -827,7 +897,7 @@
         },
         {
           "key": "max_tp",
-          "value": "5"
+          "value": "7"
         },
         {
           "key": "1",
@@ -835,11 +905,15 @@
         },
         {
           "key": "2",
-          "value": "3"
+          "value": "4"
         },
         {
           "key": "3",
-          "value": "2"
+          "value": "3"
+        },
+        {
+          "key": "4",
+          "value": "1"
         }
       ]
     },
@@ -883,7 +957,7 @@
         },
         {
           "key": "max_tp",
-          "value": "6"
+          "value": "7"
         },
         {
           "key": "1",
@@ -891,10 +965,14 @@
         },
         {
           "key": "2",
-          "value": "3"
+          "value": "4"
         },
         {
           "key": "3",
+          "value": "3"
+        },
+        {
+          "key": "4",
           "value": "2"
         }
       ]
@@ -934,7 +1012,7 @@
         },
         {
           "key": "max_tp",
-          "value": "6"
+          "value": "8"
         },
         {
           "key": "1",
@@ -942,11 +1020,15 @@
         },
         {
           "key": "2",
-          "value": "3"
+          "value": "4"
         },
         {
           "key": "3",
-          "value": "3"
+          "value": "4"
+        },
+        {
+          "key": "4",
+          "value": "2"
         }
       ]
     },
@@ -985,7 +1067,7 @@
         },
         {
           "key": "max_tp",
-          "value": "6"
+          "value": "8"
         },
         {
           "key": "1",
@@ -998,6 +1080,10 @@
         {
           "key": "3",
           "value": "3"
+        },
+        {
+          "key": "4",
+          "value": "2"
         }
       ]
     },
@@ -1036,7 +1122,7 @@
         },
         {
           "key": "max_tp",
-          "value": "6"
+          "value": "8"
         },
         {
           "key": "1",
@@ -1049,6 +1135,10 @@
         {
           "key": "3",
           "value": "3"
+        },
+        {
+          "key": "4",
+          "value": "2"
         }
       ]
     }
@@ -1092,6 +1182,10 @@
     },
     {
       "display": "3rd",
+      "spell_header": true
+    },
+    {
+      "display": "4th",
       "spell_header": true
     }
   ]

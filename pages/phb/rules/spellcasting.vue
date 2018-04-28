@@ -1,6 +1,6 @@
 <template lang="pug">
   v-container
-    h2.display-3 Spell Casting
+    h2.display-3 Spellcasting
     p.
       Biotics, Tech & Combat Powers
     div(v-for="(rule, index) in rules")

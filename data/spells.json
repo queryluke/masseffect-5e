@@ -1,5 +1,5 @@
 {
-  "updated": "April 28, 2018 @  8:16 AM",
+  "updated": "April 28, 2018 @  9:20 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -421,7 +421,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Summon 3 biotic orbs that float around you. If you have at least 3 orbs, you gain one additional max level (highest available level) spell slot. You may also expend an orb and make a ranged spell attack on a creature within 20m. On a hot, deal force damage equal to 2d10 + your biotic modifier. The orbs last 1 hour or until you've expended all of them."
+          "data": "Summon 3 biotic orbs that float around you. If you have at least 3 orbs, you gain one additional max level (highest available level) spell slot. You may also expend an orb and make a ranged spell attack on a creature within 20m. On a hot, deal force damage equal to 2d10 + your spellcasting ability modifier. The orbs last 1 hour or until you've expended all of them."
         },
         {
           "id": 2,
@@ -464,7 +464,7 @@
         "Defense Orbs : As a reaction, you can expend an orb to create a micro barrier on the incoming attack, reducing the damage by 1d8. You can use this power on yourself or other creatures."
       ],
       "class_list": "Adept, Vanguard",
-      "mechanic_text_dump": "Summon3bioticorbsthatfloataroundyouIfyouhaveatleast3orbsyougainoneadditionalmaxlevelhighestavailablelevelspellslotYoumayalsoexpendanorbandmakearangedspellattackonacreaturewithin20mOnahotdealforcedamageequalto2d10yourbioticmodifierTheorbslast1houroruntilyouveexpendedallofthemAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthenumberoforbsincreasesby1foreachslotlevelabovethe2nd"
+      "mechanic_text_dump": "Summon3bioticorbsthatfloataroundyouIfyouhaveatleast3orbsyougainoneadditionalmaxlevelhighestavailablelevelspellslotYoumayalsoexpendanorbandmakearangedspellattackonacreaturewithin20mOnahotdealforcedamageequalto2d10yourspellcastingabilitymodifierTheorbslast1houroruntilyouveexpendedallofthemAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthenumberoforbsincreasesby1foreachslotlevelabovethe2nd"
     },
     {
       "name": "Biotic Sphere",
@@ -942,7 +942,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Launch a slow-moving, 4m wide sphere of dark energy in a straight line in front of you. It moves 4m this turn and at the start of each subsequent turn. Each creature caught in the path becomes {primed-necrotic} until the end of its next turn and must make a Dexterity saving throw. On a failed save, a creature takes necrotic damage equal to 6d8 + your biotic modifier, or half as much on a successful one. When the sphere reaches 20m, it detonates and each creature within 10m becomes {primed-necrotic} for 1 minute and must make a Constitution saving throw. On a failed save a creature takes necrotic damage equal to 6d8 + your biotic modifier necrotic damage or half as much damage on a successful one."
+          "data": "Launch a slow-moving, 4m wide sphere of dark energy in a straight line in front of you. It moves 4m this turn and at the start of each subsequent turn. Each creature caught in the path becomes {primed-necrotic} until the end of its next turn and must make a Dexterity saving throw. On a failed save, a creature takes necrotic damage equal to 6d8 + your spellcasting ability modifier, or half as much on a successful one. When the sphere reaches 20m, it detonates and each creature within 10m becomes {primed-necrotic} for 1 minute and must make a Constitution saving throw. On a failed save a creature takes necrotic damage equal to 6d8 + your spellcasting ability modifier or half as much damage on a successful one."
         },
         {
           "id": 2,
@@ -995,7 +995,7 @@
         "Amplify : Every 4m, the sphere's potential damage increases. Add 1d8 to the detonation damage for each 4m the sphere travels."
       ],
       "class_list": "Adept",
-      "mechanic_text_dump": "Launchaslowmoving4mwidesphereofdarkenergyinastraightlineinfrontofyouItmoves4mthisturnandatthestartofeachsubsequentturnEachcreaturecaughtinthepathbecomesprimednecroticuntiltheendofitsnextturnandmustmakeaDexteritysavingthrowOnafailedsaveacreaturetakesnecroticdamageequalto6d8yourbioticmodifierorhalfasmuchonasuccessfuloneWhenthespherereaches20mitdetonatesandeachcreaturewithin10mbecomesprimednecroticfor1minuteandmustmakeaConstitutionsavingthrowOnafailedsaveacreaturetakesnecroticdamageequalto6d8yourbioticmodifiernecroticdamageorhalfasmuchdamageonasuccessfuloneYoucanuseanactiontodetonatethesphereearlyIfyouloseconcentrationwhilecastingthespellitdoesnotdetonateAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d8foreachslotlevelabovethe2nd"
+      "mechanic_text_dump": "Launchaslowmoving4mwidesphereofdarkenergyinastraightlineinfrontofyouItmoves4mthisturnandatthestartofeachsubsequentturnEachcreaturecaughtinthepathbecomesprimednecroticuntiltheendofitsnextturnandmustmakeaDexteritysavingthrowOnafailedsaveacreaturetakesnecroticdamageequalto6d8yourspellcastingabilitymodifierorhalfasmuchonasuccessfuloneWhenthespherereaches20mitdetonatesandeachcreaturewithin10mbecomesprimednecroticfor1minuteandmustmakeaConstitutionsavingthrowOnafailedsaveacreaturetakesnecroticdamageequalto6d8yourspellcastingabilitymodifierorhalfasmuchdamageonasuccessfuloneYoucanuseanactiontodetonatethesphereearlyIfyouloseconcentrationwhilecastingthespellitdoesnotdetonateAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d8foreachslotlevelabovethe2nd"
     },
     {
       "name": "Decoy",
@@ -1004,7 +1004,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Spend X tech points to summon a holographic copy of yourself at a location within 10m. The copy mimics your actions. When a creature attacks, it can make a Wisdom (Perception) check and, if it succeeds, is not fooled. The DC of the check is 8 + your Tech modifier + X."
+          "data": "Spend X tech points to summon a holographic copy of yourself at a location within 10m. The copy mimics your actions. When a creature attacks, it can make a Wisdom (Perception) check and, if it succeeds, is not fooled. The DC of the check is 8 + your spellcasting ability modifier + X."
         }
       ],
       "adv_option_1": "Explosive : As an action, you can spend X tech points detonate your Decoy. Each creature within 4m must make a Dexterity saving throw. On a failed save, a creature takes Xd6 fire damage or half as much on a successful one.",
@@ -1041,7 +1041,7 @@
         "Improved Decoy : Your Decoy becomes so life-like that creatures have disadvantage on the Intelligence (Perception) check."
       ],
       "class_list": "Engineer, Infiltrator",
-      "mechanic_text_dump": "SpendXtechpointstosummonaholographiccopyofyourselfatalocationwithin10mThecopymimicsyouractionsWhenacreatureattacksitcanmakeaWisdomPerceptioncheckandifitsucceedsisnotfooledTheDCofthecheckis8yourTechmodifierX"
+      "mechanic_text_dump": "SpendXtechpointstosummonaholographiccopyofyourselfatalocationwithin10mThecopymimicsyouractionsWhenacreatureattacksitcanmakeaWisdomPerceptioncheckandifitsucceedsisnotfooledTheDCofthecheckis8yourspellcastingabilitymodifierX"
     },
     {
       "name": "Defense Matrix",
@@ -1244,7 +1244,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Spend X tech points to inject a friendly creature with nanobots that reduce pain and heal internal injuries. The creature gains hit points equal to Xd8 + your Tech modifier"
+          "data": "Spend X tech points to inject a friendly creature with nanobots that reduce pain and heal internal injuries. The creature gains hit points equal to Xd8 + your spellcasting ability modifier"
         }
       ],
       "adv_option_1": "Adaptive : The healed creature gains resistance to the last damage type it suffered. This effect lasts for 1 minute.",
@@ -1281,7 +1281,7 @@
         "Improved Healing : Increase the healing die type to d12"
       ],
       "class_list": "Engineer, Infiltrator, Sentinel",
-      "mechanic_text_dump": "SpendXtechpointstoinjectafriendlycreaturewithnanobotsthatreducepainandhealinternalinjuriesThecreaturegainshitpointsequaltoXd8yourTechmodifier"
+      "mechanic_text_dump": "SpendXtechpointstoinjectafriendlycreaturewithnanobotsthatreducepainandhealinternalinjuriesThecreaturegainshitpointsequaltoXd8yourspellcastingabilitymodifier"
     },
     {
       "name": "Flamethrower",
@@ -2726,7 +2726,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Target a {lifted} object and slam it to the ground dealing force damage equal to 2d8 + your biotic modifier. The target is no longer {lifted} but is {prone}."
+          "data": "Target a {lifted} object and slam it to the ground dealing force damage equal to 2d8 + your spellcasting ability modifier. The target is no longer {lifted} but is {prone}."
         },
         {
           "id": 2,
@@ -2768,7 +2768,7 @@
         "Improved Damage : Increase the damage die type to d12"
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "Targetaliftedobjectandslamittothegrounddealingforcedamageequalto2d8yourbioticmodifierThetargetisnolongerliftedbutisproneThenumberoftargetsincreasesby1whenyoureach5thlevel211thlevel3and17thlevel4"
+      "mechanic_text_dump": "Targetaliftedobjectandslamittothegrounddealingforcedamageequalto2d8yourspellcastingabilitymodifierThetargetisnolongerliftedbutisproneThenumberoftargetsincreasesby1whenyoureach5thlevel211thlevel3and17thlevel4"
     },
     {
       "name": "Slow Fall",
@@ -3196,7 +3196,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Make a ranged spell attack on a target you can see within range. On a hit, hurl the target backwards 10m and deal force damage equal to 1d6 + your biotic modifier."
+          "data": "Make a ranged spell attack on a target you can see within range. On a hit, hurl the target backwards 10m and deal force damage equal to 1d6 + your spellcasting ability modifier."
         },
         {
           "id": 2,
@@ -3238,7 +3238,7 @@
         "Improved Damage : Increase the damage die type to d8"
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "MakearangedspellattackonatargetyoucanseewithinrangeOnahithurlthetargetbackwards10manddealforcedamageequalto1d6yourbioticmodifierAthigherlevelsThisspellsdamageincreasesby1d6whenyoureach5thlevel2d611thlevel3d617thlevel4d6"
+      "mechanic_text_dump": "MakearangedspellattackonatargetyoucanseewithinrangeOnahithurlthetargetbackwards10manddealforcedamageequalto1d6yourspellcastingabilitymodifierAthigherlevelsThisspellsdamageincreasesby1d6whenyoureach5thlevel2d611thlevel3d617thlevel4d6"
     },
     {
       "name": "Turbocharge",
@@ -3395,7 +3395,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Make a ranged spell attack on an organic creature you can see within range. On a hit, you generate a rapidly shifting mass effect field inside the target dealing necrotic damage equal to 3d10 + your biotic modifier. In addition, the target is {primed-necrotic} until the end of its next turn. This damage bypasses shields."
+          "data": "Make a ranged spell attack on an organic creature you can see within range. On a hit, you generate a rapidly shifting mass effect field inside the target dealing necrotic damage equal to 3d10 + your spellcasting ability modifier. In addition, the target is {primed-necrotic} until the end of its next turn. This damage bypasses shields."
         },
         {
           "id": 2,
@@ -3437,7 +3437,7 @@
         "Keel over : A target hit by warp must pass a Constitution saving throw. On a failed save, the force of warp is so intense the target is knocked {prone} and {stunned} until the start of your next turn."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "MakearangedspellattackonanorganiccreatureyoucanseewithinrangeOnahityougeneratearapidlyshiftingmasseffectfieldinsidethetargetdealingnecroticdamageequalto3d10yourbioticmodifierInadditionthetargetisprimednecroticuntiltheendofitsnextturnThisdamagebypassesshieldsAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d10foreachslotlevelabovethe2nd"
+      "mechanic_text_dump": "MakearangedspellattackonanorganiccreatureyoucanseewithinrangeOnahityougeneratearapidlyshiftingmasseffectfieldinsidethetargetdealingnecroticdamageequalto3d10yourspellcastingabilitymodifierInadditionthetargetisprimednecroticuntiltheendofitsnextturnThisdamagebypassesshieldsAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d10foreachslotlevelabovethe2nd"
     },
     {
       "name": "Biotic Push",

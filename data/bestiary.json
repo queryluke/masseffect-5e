@@ -1,5 +1,5 @@
 {
-  "updated": "April 21, 2018 @  4:16 PM",
+  "updated": "April 28, 2018 @  1:03 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT87AUwt1n514k6a6b4l0kOzGwIphsGXBJLFqujgkCsJ1rdudQ1Bk7Km12DACO5qQ2WGDVI8fT6-Xe/pubhtml",
   "data": [
     {
@@ -306,8 +306,9 @@
       ],
       "spellcasting": {
         "level": "13",
-        "dc": 15,
-        "hit": 7,
+        "dc": 16,
+        "hit": 8,
+        "mod": "Charisma",
         "spellList": [
           "barrier",
           "charge",
@@ -358,7 +359,7 @@
         "con": 11,
         "int": 12,
         "wis": 18,
-        "cha": 19
+        "cha": 20
       },
       "hp": {
         "die": "10",
@@ -705,7 +706,7 @@
         {
           "type": "common",
           "name": "Multiattack",
-          "description": "The collector captain makes twp attacks with its assault rifle."
+          "description": "The collector captain makes two attacks with its assault rifle."
         }
       ],
       "reactions": [
@@ -1361,6 +1362,7 @@
         "level": "12",
         "dc": 16,
         "hit": 8,
+        "mod": "Charisma",
         "spellList": [
           "dark_channel",
           "pull",
@@ -1411,8 +1413,8 @@
         "dex": 12,
         "con": 12,
         "int": 14,
-        "wis": 18,
-        "cha": 16
+        "wis": 16,
+        "cha": 18
       },
       "hp": {
         "die": "10",
@@ -1433,7 +1435,7 @@
       "profBonus": "4",
       "barrier": "20",
       "speed": "10m",
-      "dc": "16",
+      "dc": "15",
       "ac": "16",
       "xp": "5900",
       "id": "harbinger",
@@ -1487,6 +1489,7 @@
         "level": "innate",
         "dc": 12,
         "hit": 4,
+        "mod": "Charisma",
         "spellList": [
           "3-singularity"
         ],
@@ -1505,8 +1508,8 @@
         "dex": 18,
         "con": 16,
         "int": 10,
-        "wis": 12,
-        "cha": 8
+        "wis": 8,
+        "cha": 12
       },
       "hp": {
         "die": "10",
@@ -1527,7 +1530,7 @@
       "profBonus": "3",
       "barrier": "6",
       "speed": "10m",
-      "dc": "12",
+      "dc": "11",
       "ac": "18",
       "xp": "1800",
       "id": "adjutant",
@@ -2196,6 +2199,7 @@
         "level": "3",
         "dc": 13,
         "hit": 5,
+        "mod": "Wisdom",
         "spellList": [
           "barrier"
         ],
