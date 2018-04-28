@@ -1,5 +1,5 @@
 {
-  "updated": "April 25, 2018 @  8:05 PM",
+  "updated": "April 28, 2018 @  8:16 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -206,7 +206,7 @@
         }
       ],
       "adv_option_1": "Bleeding Blades : On a hit, the target takes an additional 3[dd] piercing damage at the start of their turn. This damage bypasses shields.",
-      "adv_option_2": "Exploding blades : On a hit, the target takes and additional 3[dd] thunder damage and must pass a Constitution saving throw (DC 8 + proficiency bonus) or becomes {stunned} until the end of your next turn.",
+      "adv_option_2": "Exploding blades : On a hit, the target takes an additional 3[dd] thunder damage and must pass a Constitution saving throw (DC 8 + proficiency bonus) or becomes {stunned} until the end of your next turn.",
       "type": "combat",
       "die_type": "d12",
       "attack_type": [
@@ -236,7 +236,7 @@
       "id": "ballistic_blades",
       "adv_options": [
         "Bleeding Blades : On a hit, the target takes an additional 3d12 piercing damage at the start of their turn. This damage bypasses shields.",
-        "Exploding blades : On a hit, the target takes and additional 3d12 thunder damage and must pass a Constitution saving throw (DC 8 + proficiency bonus) or becomes {stunned} until the end of your next turn."
+        "Exploding blades : On a hit, the target takes an additional 3d12 thunder damage and must pass a Constitution saving throw (DC 8 + proficiency bonus) or becomes {stunned} until the end of your next turn."
       ],
       "class_list": "Infiltrator, Soldier",
       "mechanic_text_dump": "AsanAttackactionfireasalvoofbladesatatargetcreatureorobjectyoucanseewithinrangeMakearangedweaponattackyouaddyourproficiencybonustothisrollOnahitthetargettakes2d12piercingdamageYoumustspendashortorlongrestreloadingthearmguardbeforeyoucanthisabilityagainThisfeaturesdamageincreasesby2d12whenyoureach5thlevel4d1211thlevel6d1217thlevel8d12Infiltratorsmaylearnoradvancethisfeatureinsteadofgainingatechpower"
@@ -2071,7 +2071,7 @@
         }
       ],
       "adv_option_1": "Improved Damage : Increase the damage die to d10.",
-      "adv_option_2": "Half Blast : You can cast Nova, you cause up to 2 blasts. Each blast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. If you have not used all of your movement, you can move in between the blasts.",
+      "adv_option_2": "Half Blast : When you cast Nova, you cause up to 2 blasts. Each blast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. If you have not used all your movement, you can move in between the blasts.",
       "type": "biotic",
       "die_type": "d10",
       "attack_type": [
@@ -2101,7 +2101,7 @@
       "id": "nova",
       "adv_options": [
         "Improved Damage : Increase the damage die to d10.",
-        "Half Blast : You can cast Nova, you cause up to 2 blasts. Each blast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. If you have not used all of your movement, you can move in between the blasts."
+        "Half Blast : When you cast Nova, you cause up to 2 blasts. Each blast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. If you have not used all your movement, you can move in between the blasts."
       ],
       "class_list": "Vanguard",
       "mechanic_text_dump": "TransfertheenergyofyourbarrierintoabioticexplosionconsumingyourremainingbarrierticksCreatureswithina2mspherecenteredonyoumustmakeaDexteritysavingthrowOnafailedsaveacreatureisknockedproneandtakesforcedamageequaltoXd10whereXisthenumberofbarrierticksOnasuccessfulsaveacreaturetakeshalfasmuchdamageWhenyoucastthisspellusingaspellslotof2ndlevelorhighertheradiusoftheexplosionincreasesby2mforeachlevelabovethe1st"
@@ -3031,7 +3031,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Spend 2 tech points to shoot a swarm of miniature pylons to a target location within 20m. The pylons form a 4m cylinder at the chosen location, created an electrified new. Creatures within the net cannot cast tech."
+          "data": "Spend 2 tech points to shoot a swarm of miniature pylons to a target location within 20m. The pylons form a 4m cylinder at the chosen location, created an electrified net. Creatures within the net cannot cast tech."
         },
         {
           "id": 2,
@@ -3080,7 +3080,7 @@
         "Improved Grip : Increase the DC to break free of the net by 3."
       ],
       "class_list": "Engineer, Infiltrator, Sentinel",
-      "mechanic_text_dump": "Spend2techpointstoshootaswarmofminiaturepylonstoatargetlocationwithin20mThepylonsforma4mcylinderatthechosenlocationcreatedanelectrifiednewCreatureswithinthenetcannotcasttechToescapeacreaturemustsucceedonaStrengthAthleticscheckormustremaintrappedinthenetIfacreaturedoesbreakfreeittakes1d6lightningdamageIfyouhaveasubmissionnetdeployedyoucanspendXTPtosendelectriccurrentsthroughitEachcreaturewithinthenetmakesaConstitutionsavingthrowOnafailedsaveacreaturetakesXd6lightningdamageorhalfasmuchonasuccessfulone"
+      "mechanic_text_dump": "Spend2techpointstoshootaswarmofminiaturepylonstoatargetlocationwithin20mThepylonsforma4mcylinderatthechosenlocationcreatedanelectrifiednetCreatureswithinthenetcannotcasttechToescapeacreaturemustsucceedonaStrengthAthleticscheckormustremaintrappedinthenetIfacreaturedoesbreakfreeittakes1d6lightningdamageIfyouhaveasubmissionnetdeployedyoucanspendXTPtosendelectriccurrentsthroughitEachcreaturewithinthenetmakesaConstitutionsavingthrowOnafailedsaveacreaturetakesXd6lightningdamageorhalfasmuchonasuccessfulone"
     },
     {
       "name": "Tactical Scan",
@@ -3498,7 +3498,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Make a melee spell attack on an object within range. On a hit, you increase the mass of your fist, 1d8 bludgeoning damage. The kenetic force can be harness by your biotic implant as Barrier ticks. Gain 1 barrier tick per size of the object that was hit (1 for small, 2 for medium, 3 for large, etc.)"
+          "data": "Make a melee spell attack on an object within range. On a hit, you increase the mass of your fist, 1d8 bludgeoning damage. The kinetic force can be harness by your biotic implant as Barrier ticks. Gain 1 barrier tick per size of the object that was hit (1 for small, 2 for medium, 3 for large, etc.)"
         },
         {
           "id": 2,
@@ -3541,7 +3541,7 @@
         "Syphoning Strike : Instead of gaining a barrier tick, you can regain 2 shield points per size of the creature."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "MakeameleespellattackonanobjectwithinrangeOnahityouincreasethemassofyourfist1d8bludgeoningdamageThekeneticforcecanbeharnessbyyourbioticimplantasBarrierticksGain1barriertickpersizeoftheobjectthatwashit1forsmall2formedium3forlargeetcAthigherlevelsThisspellsdamageincreasesby1d8whenyoureach5thlevel2d811thlevel3d817thlevel4d8"
+      "mechanic_text_dump": "MakeameleespellattackonanobjectwithinrangeOnahityouincreasethemassofyourfist1d8bludgeoningdamageThekineticforcecanbeharnessbyyourbioticimplantasBarrierticksGain1barriertickpersizeoftheobjectthatwashit1forsmall2formedium3forlargeetcAthigherlevelsThisspellsdamageincreasesby1d8whenyoureach5thlevel2d811thlevel3d817thlevel4d8"
     }
   ]
 }
