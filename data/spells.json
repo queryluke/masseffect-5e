@@ -1,5 +1,5 @@
 {
-  "updated": "April 28, 2018 @  2:19 PM",
+  "updated": "April 28, 2018 @  2:32 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -1497,7 +1497,7 @@
           "data": "You may only have Guidance on one target at a time."
         }
       ],
-      "adv_option_1": "Multi Tap : You can apply Guidance to up to 3 different targets (you must still cast the ability each time you apply it to a new target).",
+      "adv_option_1": "Multi Tap : Guidance can be active on up to 3 different targets.",
       "adv_option_2": "Improved Tap : Increase the die type to d10",
       "type": "tech",
       "die_type": "d6",
@@ -1527,7 +1527,7 @@
       "min_tech_points": "1",
       "id": "guidance",
       "adv_options": [
-        "Multi Tap : You can apply Guidance to up to 3 different targets (you must still cast the ability each time you apply it to a new target).",
+        "Multi Tap : Guidance can be active on up to 3 different targets.",
         "Improved Tap : Increase the die type to d10"
       ],
       "class_list": "Engineer, Infiltrator, Sentinel",
@@ -3116,7 +3116,7 @@
       ],
       "casting_time": "Action",
       "concentration": null,
-      "duration": "Infinite",
+      "duration": "10 minutes",
       "range": "20m",
       "aoe": null,
       "aoe_distance": null,
