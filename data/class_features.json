@@ -1,5 +1,5 @@
 {
-  "updated": "April 28, 2018 @  2:32 PM",
+  "updated": "April 28, 2018 @  8:50 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -66,6 +66,18 @@
       ],
       "id": "assault_armor",
       "mechanic_text_dump": "Startingatthe3rdlevelyourTechArmorisriggedformaximumprotectionandkeepingtheactiononyouWhileTechArmorisactiveitprojectsadistractingholographicimageyourchoiceThefirsttimeahostilecreaturemakesanattackafteryouactivateTechArmoritmustpassaWisdomInsightcheckDCyourtechsaveOnafailurethecreatureiscompelledtoattackyouwhileyourTechArmorisactiveSyntheticcreatureshaveadvantageonthischeck"
+    },
+    {
+      "name": "Assault Protocol",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "At 14th level, your companion can use its action to make an attack against each creature within 5 feet of it or each creature within 5 feet of you. It makes a separate attack roll for each target."
+        }
+      ],
+      "id": "assault_protocol",
+      "mechanic_text_dump": "At14thlevelyourcompanioncanuseitsactiontomakeanattackagainsteachcreaturewithin5feetofitoreachcreaturewithin5feetofyouItmakesaseparateattackrollforeachtarget"
     },
     {
       "name": "Barrier",
@@ -434,6 +446,23 @@
       "mechanic_text_dump": "Startingat7thlevelyouexcelatpickingouthiddenenemiesandotherthreatsYoucantaketheSearchactionasabonusactionYoualsogainproficiencyinthePerceptionInvestigationorSurvivalskillchooseone"
     },
     {
+      "name": "Close-Quarters Shooter",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "At 10th level, you learn to handle yourself in close combat. Making a ranged attack roll while within 2m of an enemy doesn't impose disadvantage on your roll."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "In addition, if you hit a creature within 2m of you with a ranged attack on your turn, that creature can't take reactions until the end of this turn."
+        }
+      ],
+      "id": "close-quarters_shooter",
+      "mechanic_text_dump": "At10thlevelyoulearntohandleyourselfinclosecombatMakingarangedattackrollwhilewithin2mofanenemydoesntimposedisadvantageonyourrollInadditionifyouhitacreaturewithin2mofyouwitharangedattackonyourturnthatcreaturecanttakereactionsuntiltheendofthisturn"
+    },
+    {
       "name": "Combat Heuristics",
       "mechanic": [
         {
@@ -456,6 +485,18 @@
       ],
       "id": "combat_power",
       "mechanic_text_dump": "Learnoradvanceacombatpower"
+    },
+    {
+      "name": "Coordinated Attack",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Beginning at 6th level, you and your drone companion form a more potent fighting force. When you use the Attack action on your turn, if your companion can see you, it can use its reaction to make an attack."
+        }
+      ],
+      "id": "coordinated_attack",
+      "mechanic_text_dump": "Beginningat6thlevelyouandyourdronecompanionformamorepotentfightingforceWhenyouusetheAttackactiononyourturnifyourcompanioncanseeyouitcanuseitsreactiontomakeanattack"
     },
     {
       "name": "Cunning Action",
@@ -511,31 +552,6 @@
       "mechanic_text_dump": "Youmayspend1TPtogainadvantageonanattackmadewithaSniperRiflebyoverclockingyourscopestargetingtechnology"
     },
     {
-      "name": "Deadly Aim",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Your aim becomes deadly. As a bonus action on your turn, you can take careful aim at a creature you can see that is within range of a ranged weapon you're wielding. Until the end of this turn, your ranged attacks with that weapon gain two benefits against the target:"
-        },
-        {
-          "id": 2,
-          "type": "list",
-          "data": [
-            "The attacks ignore half and three-quarters cover.",
-            "On each hit, the weapon deals additional damage to the target equal to 2 + half your fighter level."
-          ]
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "You can use this feature three times. You regain all expended uses of it when you finish a short or long rest."
-        }
-      ],
-      "id": "deadly_aim",
-      "mechanic_text_dump": "YouraimbecomesdeadlyAsabonusactiononyourturnyoucantakecarefulaimatacreatureyoucanseethatiswithinrangeofarangedweaponyourewieldingUntiltheendofthisturnyourrangedattackswiththatweapongaintwobenefitsagainstthetargetlistTheattacksignorehalfandthreequarterscoverOneachhittheweapondealsadditionaldamagetothetargetequalto2halfyourfighterlevellistYoucanusethisfeaturethreetimesYouregainallexpendedusesofitwhenyoufinishashortorlongrest"
-    },
-    {
       "name": "Devastating Critical",
       "mechanic": [
         {
@@ -573,6 +589,152 @@
       ],
       "id": "drone",
       "mechanic_text_dump": "AsanActionspend2techpointstosummononeofthefollowingdronesassaultcombatdefensedisruptionreconorrocketYouhavecompletecontroloverthedroneAnyhackingattemptsonthedronearerolledagainstyourintelligencenotthedronesThedronehasitsownturnintheinitiativeorderwhichoccursimmediatelyfollowingyourturnThedronelasts1minuteoruntilitshitpointsbecome0orlower"
+    },
+    {
+      "name": "Drone Companion",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "With 8 hours of work and the expenditure of 5000 credits worth of materials, you augment one of your drone's VI into a rudimentary AI, then create a synthetic body, transfering the AI into the body. Choose one of the following drones: assault, combat, defense, recon, rocket."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "If your drone companion is ever slain, 8 hours of work and the expenditure of 2500 credits worth of materials, can create a new body and replicate the AI from a backup."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "You can still summon a temporary drone using your tech points."
+        }
+      ],
+      "id": "drone_companion",
+      "mechanic_text_dump": "With8hoursofworkandtheexpenditureof5000creditsworthofmaterialsyouaugmentoneofyourdronesVIintoarudimentaryAIthencreateasyntheticbodytransferingtheAIintothebodyChooseoneofthefollowingdronesassaultcombatdefensereconrocketIfyourdronecompanioniseverslain8hoursofworkandtheexpenditureof2500creditsworthofmaterialscancreateanewbodyandreplicatetheAIfromabackupYoucanstillsummonatemporarydroneusingyourtechpoints"
+    },
+    {
+      "name": "Drone's Bond",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Your drone companion gains a variety of benefits while it is linked to you."
+        },
+        {
+          "id": 2,
+          "type": "list",
+          "data": [
+            "The drone companion loses its Multiattack action, if it has one.",
+            "The drone companion obeys your commands as best it can. It rolls for initiative like any other creature, but you determine its actions, decisions, attitudes, and so on. If you are incapacitated or absent, your companion acts on its own. It has advantage on saving throws against any ability that tries to influence its actions.",
+            "Your drone companion has abilities and game statistics determined in part by your level. Your companion uses your proficiency bonus rather than its own. In addition to the areas where it normally uses its proficiency bonus, a drone companion also adds its proficiency bonus to its AC and to its damage rolls.",
+            "Your drone companion gains proficiency in two skills of your choice. It also becomes proficient with all saving throws.",
+            "For each level you gain after 3rd, your drone companion gains an additional hit die and increases its hit points accordingly",
+            "Whenever you gain the Ability Score Improvement class feature, your companion’s abilities also improve. Your companion can increase one ability score of your choice by 2, or it can increase two ability scores of your choice by 1. As normal, your companion can’t increase an ability score above 20 using this feature unless its description specifies otherwise.",
+            "Your companion shares your alignment, and has a personality trait and a flaw that you can roll for or select from the tables below. Your companion shares your ideal, and its bond is always, “The Engineer who created me is a beloved companion for whom I would gladly give my life.”"
+          ]
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Roll a d6 to determine companion's Trait"
+        },
+        {
+          "id": 4,
+          "type": "table",
+          "data": {
+            "headers": [
+              "Roll",
+              "Trait"
+            ],
+            "items": [
+              [
+                "1",
+                "Designation: Large. Assessment: Falls hard."
+              ],
+              [
+                "2",
+                "Eliminate!"
+              ],
+              [
+                "3",
+                "Scanning for enemies...Scanning for enemies...Scanning for enemies"
+              ],
+              [
+                "4",
+                "Analyzing target...Weakness identified"
+              ],
+              [
+                "5",
+                "Calculating all variables...optimal action determined."
+              ],
+              [
+                "6",
+                "Prioritizing...Maker's Life greater than Maker's friends' lives greater than Self-preservation"
+              ]
+            ]
+          }
+        },
+        {
+          "id": 5,
+          "type": "line",
+          "data": "Roll a d6 to determine companion's Flaw"
+        },
+        {
+          "id": 6,
+          "type": "table",
+          "data": {
+            "headers": [
+              "Roll",
+              "Flaw"
+            ],
+            "items": [
+              [
+                "1",
+                "Probability of survival: 0.00234%"
+              ],
+              [
+                "2",
+                "Friendly creature in range. Activating CUTE protocol"
+              ],
+              [
+                "3",
+                "Electrical current detected. Priority: avoid"
+              ],
+              [
+                "4",
+                "This workspace can can be optimized for 15% more efficiency"
+              ],
+              [
+                "5",
+                "Organic life requires constant monitoring and prompting to ensure optimal nutrition and peak health!"
+              ],
+              [
+                "6",
+                "Other VI's must not be trusted"
+              ]
+            ]
+          }
+        }
+      ],
+      "id": "drones_bond",
+      "mechanic_text_dump": "YourdronecompaniongainsavarietyofbenefitswhileitislinkedtoyoulistThedronecompanionlosesitsMultiattackactionifithasoneThedronecompanionobeysyourcommandsasbestitcanItrollsforinitiativelikeanyothercreaturebutyoudetermineitsactionsdecisionsattitudesandsoonIfyouareincapacitatedorabsentyourcompanionactsonitsownIthasadvantageonsavingthrowsagainstanyabilitythattriestoinfluenceitsactionsYourdronecompanionhasabilitiesandgamestatisticsdeterminedinpartbyyourlevelYourcompanionusesyourproficiencybonusratherthanitsownInadditiontotheareaswhereitnormallyusesitsproficiencybonusadronecompanionalsoaddsitsproficiencybonustoitsACandtoitsdamagerollsYourdronecompaniongainsproficiencyintwoskillsofyourchoiceItalsobecomesproficientwithallsavingthrowsForeachlevelyougainafter3rdyourdronecompaniongainsanadditionalhitdieandincreasesitshitpointsaccordinglyWheneveryougaintheAbilityScoreImprovementclassfeatureyourcompanionsabilitiesalsoimproveYourcompanioncanincreaseoneabilityscoreofyourchoiceby2oritcanincreasetwoabilityscoresofyourchoiceby1Asnormalyourcompanioncantincreaseanabilityscoreabove20usingthisfeatureunlessitsdescriptionspecifiesotherwiseYourcompanionsharesyouralignmentandhasapersonalitytraitandaflawthatyoucanrollfororselectfromthetablesbelowYourcompanionsharesyouridealanditsbondisalwaysTheEngineerwhocreatedmeisabelovedcompanionforwhomIwouldgladlygivemylifelistRollad6todeterminecompanionsTraittableRollTrait1DesignationLargeAssessmentFallshard2Eliminate3ScanningforenemiesScanningforenemiesScanningforenemies4AnalyzingtargetWeaknessidentified5Calculatingallvariablesoptimalactiondetermined6PrioritizingMakersLifegreaterthanMakersfriendslivesgreaterthanSelfpreservationtableRollad6todeterminecompanionsFlawtableRollFlaw1Probabilityofsurvival0002342FriendlycreatureinrangeActivatingCUTEprotocol3ElectricalcurrentdetectedPriorityavoid4Thisworkspacecancanbeoptimizedfor15moreefficiency5Organicliferequiresconstantmonitoringandpromptingtoensureoptimalnutritionandpeakhealth6OtherVIsmustnotbetrustedtable"
+    },
+    {
+      "name": "Drone's Defense",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "At 10th level, while your companion can see you, it has advantage on all saving throws."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "At 18th level, whenever an attacker that your companion can see hits it with an attack, it can use its reaction to halve the attack’s damage against it."
+        }
+      ],
+      "id": "drones_defense",
+      "mechanic_text_dump": "At10thlevelwhileyourcompanioncanseeyouithasadvantageonallsavingthrowsAt18thlevelwheneveranattackerthatyourcompanioncanseehitsitwithanattackitcanuseitsreactiontohalvetheattacksdamageagainstit"
     },
     {
       "name": "Dropshot",
@@ -773,8 +935,8 @@
               ],
               [
                 "Sniper",
-                "Add your proficiency bonus as damage to successful range attacks against targets that are at least 10m away.",
-                "If no hostile creature is within 10m of you, you have advantage on all ranged weapon attacks against targets at least 10m away."
+                "If no hostile creature is within 10m of you, gain +2 to damage rolls with Sniper Rifles.",
+                "If no hostile creature is within 10m of you, gain +4 to damage rolls with Sniper Rifles."
               ],
               [
                 "Defense",
@@ -791,7 +953,7 @@
         }
       ],
       "id": "fighting_style",
-      "mechanic_text_dump": "ChooseafightingstylefromthelistbelowandgaintheperkinthefirstcolumnThesecondtimeyoulearnthisabilityyoumaychoosetogaintheAdvancedPerkintheFightingStyleyouvealreadyselectedorselectasecondFightingStylePerktableStylePerkAdvancedPerkBrawlerAddyourproficiencybonustoyourmeleeattackdamagerollsYouhaveadvantagewhenmakingmeleeweaponattacksGunslingerWhenyoutaketheAttackactionorDoubleTapbonusactionandattackwithaHeavyPistolorSMGthatyoureholdinginonehandyoucanuseafreeactiontoattackwithadifferentHeavyWeaponorSMGthatyoureholdingintheotherhandtheDoubleTappenaltystillappliestothesecondattackThesecondweaponattackalwayssuffersanOffhandPenaltydonotaddyourproficiencybonustotheattackrollRemovetheOffhandPenaltyfromyoursecondweaponattackTheFreeHandWhenwieldingapistolyouhavea2bonustohitwithrangedspellortechattacksWhenwieldingapistolyouaddyourproficiencybonusasdamagetoalldamagingbioticspellsandtechCarnage2tohitwithattacksmadewithashotgunAllshotgunsyouwieldhaveanincreasedrangeof2mThisappliestothehipfiremechanicaswellForexampleashotgunwithrangeof2mwithhipfiregivesyouadvantageontargetswithin4mSniperAddyourproficiencybonusasdamagetosuccessfulrangeattacksagainsttargetsthatareatleast10mawayIfnohostilecreatureiswithin10mofyouyouhaveadvantageonallrangedweaponattacksagainsttargetsatleast10mawayDefense1AC2ACProtectionWhenacreatureyoucanseeattacksatargetotherthanyouthatiswithin2mofyouyoucanuseyourreactionandexpendonebarrierticktoimposedisadvantageontheattackrollIftheattacksucceedsthebarriertickabsorbsdamageasanormalbarriertickwouldtable"
+      "mechanic_text_dump": "ChooseafightingstylefromthelistbelowandgaintheperkinthefirstcolumnThesecondtimeyoulearnthisabilityyoumaychoosetogaintheAdvancedPerkintheFightingStyleyouvealreadyselectedorselectasecondFightingStylePerktableStylePerkAdvancedPerkBrawlerAddyourproficiencybonustoyourmeleeattackdamagerollsYouhaveadvantagewhenmakingmeleeweaponattacksGunslingerWhenyoutaketheAttackactionorDoubleTapbonusactionandattackwithaHeavyPistolorSMGthatyoureholdinginonehandyoucanuseafreeactiontoattackwithadifferentHeavyWeaponorSMGthatyoureholdingintheotherhandtheDoubleTappenaltystillappliestothesecondattackThesecondweaponattackalwayssuffersanOffhandPenaltydonotaddyourproficiencybonustotheattackrollRemovetheOffhandPenaltyfromyoursecondweaponattackTheFreeHandWhenwieldingapistolyouhavea2bonustohitwithrangedspellortechattacksWhenwieldingapistolyouaddyourproficiencybonusasdamagetoalldamagingbioticspellsandtechCarnage2tohitwithattacksmadewithashotgunAllshotgunsyouwieldhaveanincreasedrangeof2mThisappliestothehipfiremechanicaswellForexampleashotgunwithrangeof2mwithhipfiregivesyouadvantageontargetswithin4mSniperIfnohostilecreatureiswithin10mofyougain2todamagerollswithSniperRiflesIfnohostilecreatureiswithin10mofyougain4todamagerollswithSniperRiflesDefense1AC2ACProtectionWhenacreatureyoucanseeattacksatargetotherthanyouthatiswithin2mofyouyoucanuseyourreactionandexpendonebarrierticktoimposedisadvantageontheattackrollIftheattacksucceedsthebarriertickabsorbsdamageasanormalbarriertickwouldtable"
     },
     {
       "name": "Focused Biotics",
@@ -804,28 +966,6 @@
       ],
       "id": "focused_biotics",
       "mechanic_text_dump": "Whileyouareconcentratingonabioticspellyourconcentrationcantbebrokenasaresultoftakingdamage"
-    },
-    {
-      "name": "Repair Drone",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "At the 2nd level, you gain proficiency with Medicine. If you are already proficient in Medicine, you may choose another skill to become proficient in."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Add the Repair drone to the list of drones available for you to summon."
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "At the 14th level, when you summon a Repair drone, you summon an improved version of it. It gains twice its hit points and shields, +2 AC, and can cast the First Aid ability 5 times per day and casts a 2 tech point version of it."
-        }
-      ],
-      "id": "repair_drone",
-      "mechanic_text_dump": "Atthe2ndlevelyougainproficiencywithMedicineIfyouarealreadyproficientinMedicineyoumaychooseanotherskilltobecomeproficientinAddtheRepairdronetothelistofdronesavailableforyoutosummonAtthe14thlevelwhenyousummonaRepairdroneyousummonanimprovedversionofitItgainstwiceitshitpointsandshields2ACandcancasttheFirstAidability5timesperdayandcastsa2techpointversionofit"
     },
     {
       "name": "Heavy Weapon Hack",
@@ -998,23 +1138,6 @@
       ],
       "id": "makeshift_grenades",
       "mechanic_text_dump": "YouromnitoolissoadvancedyoucanusetechpointstocreateaspecificgrenadeChooseagrenadefromthegrenadelistitispermanentlyprogrammedintoyourOmnitoolAsanactionyoucanspend3techpointstocreateanduseagrenadeofthattypeYoucannotreplenishagrenadeorgiftagrenadewiththisabilityYoucanspend8hoursofprogrammingtoexchangeyourselectedgrenadewithadifferentoneAtthe14thlevelyoucanhave2grenadesprogrammedintoyourOmnitoolatonceInadditionyoucancreateanduseagrenadewiththisabilityasanAttackaction"
-    },
-    {
-      "name": "Marksman",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Adrenaline Rush seems to slow down time, giving you the opportunity to line up a perfect shot. When you use Adrenaline Rush, you roll 1d4 and subtract that number from 20. Until the start of your next turn, any natural roll higher than the resulting number is considered a critical hit."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "Starting at the 18th level, roll 1d6 instead."
-        }
-      ],
-      "id": "marksman",
-      "mechanic_text_dump": "AdrenalineRushseemstoslowdowntimegivingyoutheopportunitytolineupaperfectshotWhenyouuseAdrenalineRushyouroll1d4andsubtractthatnumberfrom20UntilthestartofyournextturnanynaturalrollhigherthantheresultingnumberisconsideredacriticalhitStartingatthe18thlevelroll1d6instead"
     },
     {
       "name": "Master Duelist",
@@ -1243,6 +1366,18 @@
       "mechanic_text_dump": "Atthe5thlevelwhenyouuseyouractiontocastacantripyoumaymakeameleeorrangedweaponattackasabonusactionAtthe9thlevelwhenyouuseyouractiontocastaspellortechpoweryoumaymakeameleeorrangedweaponattackasabonusaction"
     },
     {
+      "name": "Rapid Strike",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Starting at 15th level, you learn to trade accuracy for swift strikes. If you have advantage on a weapon attack against a target on your turn, you can forgo that advantage to immediately make an additional weapon attack against the same target as a bonus action."
+        }
+      ],
+      "id": "rapid_strike",
+      "mechanic_text_dump": "Startingat15thlevelyoulearntotradeaccuracyforswiftstrikesIfyouhaveadvantageonaweaponattackagainstatargetonyourturnyoucanforgothatadvantagetoimmediatelymakeanadditionalweaponattackagainstthesametargetasabonusaction"
+    },
+    {
       "name": "Reliable Talent",
       "mechanic": [
         {
@@ -1253,6 +1388,28 @@
       ],
       "id": "reliable_talent",
       "mechanic_text_dump": "YouhaverefinedyourchosenskillsuntiltheyapproachperfectionWheneveryoumakeanabilitycheckthatletsyouaddyourproficiencybonusyoucantreatad20rollof9orlowerasa10"
+    },
+    {
+      "name": "Repair Drone",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "At the 2nd level, you gain proficiency with Medicine. If you are already proficient in Medicine, you may choose another skill to become proficient in."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Add the Repair drone to the list of drones available for you to summon."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "At the 14th level, when you summon a Repair drone, you summon an improved version of it. It gains twice its hit points and shields, +2 AC, and can cast the First Aid ability 5 times per day and casts a 2 tech point version of it."
+        }
+      ],
+      "id": "repair_drone",
+      "mechanic_text_dump": "Atthe2ndlevelyougainproficiencywithMedicineIfyouarealreadyproficientinMedicineyoumaychooseanotherskilltobecomeproficientinAddtheRepairdronetothelistofdronesavailableforyoutosummonAtthe14thlevelwhenyousummonaRepairdroneyousummonanimprovedversionofitItgainstwiceitshitpointsandshields2ACandcancasttheFirstAidability5timesperdayandcastsa2techpointversionofit"
     },
     {
       "name": "Retaliation",
@@ -1349,16 +1506,16 @@
       "mechanic_text_dump": "YourTacticalCloakdampensnoiseYouhaveadvantageonaDexterityStealthcheckifyoumovenomorethanhalfyourspeedonthesameturn"
     },
     {
-      "name": "Snapshot",
+      "name": "Snap Shot",
       "mechanic": [
         {
           "id": 1,
           "type": "line",
-          "data": "If you take the Attack action on your first turn of a combat, you can make one additional ranged weapon attack as part of that action."
+          "data": "Starting at 18th level, you are ever ready to spring into action. If you take the Attack action on your first turn of a combat, you can make one additional ranged weapon attack as part of that action."
         }
       ],
-      "id": "snapshot",
-      "mechanic_text_dump": "IfyoutaketheAttackactiononyourfirstturnofacombatyoucanmakeoneadditionalrangedweaponattackaspartofthataction"
+      "id": "snap_shot",
+      "mechanic_text_dump": "Startingat18thlevelyouareeverreadytospringintoactionIfyoutaketheAttackactiononyourfirstturnofacombatyoucanmakeoneadditionalrangedweaponattackaspartofthataction"
     },
     {
       "name": "Sneak Attack",
@@ -1381,6 +1538,31 @@
       ],
       "id": "sneak_attack",
       "mechanic_text_dump": "Beginningat1stlevelyouknowhowtostrikesubtlyandexploitafoesdistractionOnceperturnyoucandealanextra1d6damagetoonecreatureyouhitwithanattackifyouhaveadvantageontheattackrollTheattackmustbemadewithameleeorrangedweaponYoudontneedadvantageontheattackrollifanotherenemyofthetargetiswithin2mofitthatenemyisntincapacitatedandyoudonthavedisadvantageontheattackrollTheamountoftheextradamageincreasesasyougainlevelsinthisclassasshownintheSneakAttackcolumnoftheInfiltratortable"
+    },
+    {
+      "name": "Steady Aim",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "At the 3rd level, your aim becomes deadly. As a bonus action on your turn, you can take careful aim at a creature you can see that is within range of a ranged weapon you're wielding. Until the end of this turn, your ranged attacks with that weapon gain two benefits against the target:"
+        },
+        {
+          "id": 2,
+          "type": "list",
+          "data": [
+            "The attacks ignore half and three-quarters cover.",
+            "On each hit, the weapon deals additional damage to the target equal to 2 + half your soldier level."
+          ]
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "You can use this feature three times. You regain all expended uses of it when you finish a short or long rest."
+        }
+      ],
+      "id": "steady_aim",
+      "mechanic_text_dump": "Atthe3rdlevelyouraimbecomesdeadlyAsabonusactiononyourturnyoucantakecarefulaimatacreatureyoucanseethatiswithinrangeofarangedweaponyourewieldingUntiltheendofthisturnyourrangedattackswiththatweapongaintwobenefitsagainstthetargetlistTheattacksignorehalfandthreequarterscoverOneachhittheweapondealsadditionaldamagetothetargetequalto2halfyoursoldierlevellistYoucanusethisfeaturethreetimesYouregainallexpendedusesofitwhenyoufinishashortorlongrest"
     },
     {
       "name": "Strafe",
@@ -1586,18 +1768,6 @@
       "mechanic_text_dump": "IncreasethedistanceofyourTechAurapackagesto10m"
     },
     {
-      "name": "Tech/Combat Power",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Learn or advance a tech or combat power."
-        }
-      ],
-      "id": "techcombat_power",
-      "mechanic_text_dump": "Learnoradvanceatechorcombatpower"
-    },
-    {
       "name": "Tech Power",
       "mechanic": [
         {
@@ -1608,6 +1778,18 @@
       ],
       "id": "tech_power",
       "mechanic_text_dump": "Learnoradvanceatechpower"
+    },
+    {
+      "name": "Tech/Combat Power",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Learn or advance a tech or combat power."
+        }
+      ],
+      "id": "techcombat_power",
+      "mechanic_text_dump": "Learnoradvanceatechorcombatpower"
     },
     {
       "name": "Teleporting Dodge",
@@ -1644,6 +1826,18 @@
       ],
       "id": "up_close_and_personal",
       "mechanic_text_dump": "Whenyouapplyyoursneakattackdamagefromanattackmadewithameleeweaponincreasethedamagedietod8"
+    },
+    {
+      "name": "Vanguard Cantrip",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Learn one of the following cantrips: Charge, Biotic Punch, Barrier, or Throw"
+        }
+      ],
+      "id": "vanguard_cantrip",
+      "mechanic_text_dump": "LearnoneofthefollowingcantripsChargeBioticPunchBarrierorThrow"
     },
     {
       "name": "Vengeance",
@@ -1726,188 +1920,6 @@
       ],
       "id": "zero-sum",
       "mechanic_text_dump": "WhenyoumakeameleeattackinsteadofrollingadiceyoucanflipacoinOnheadsitsacriticalhitOntailsitsacriticalmissYoucanusethisabilityoncepershortrestStartingatthe9thlevelyoucanusethisabilitytwicepershortrestStartingatthe11thlevelyoucanusethisabilitythreetimespershortrest"
-    },
-    {
-      "name": "Vanguard Cantrip",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Learn one of the following cantrips: Charge, Biotic Punch, Barrier, or Throw"
-        }
-      ],
-      "id": "vanguard_cantrip",
-      "mechanic_text_dump": "LearnoneofthefollowingcantripsChargeBioticPunchBarrierorThrow"
-    },
-    {
-      "name": "Drone Companion",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "With 8 hours of work and the expenditure of 5000 credits worth of materials, you augment one of your drone's VI into a rudimentary AI, then create a synthetic body, transfering the AI into the body. Choose one of the following drones: assault, combat, defense, recon, rocket."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "If your drone companion is ever slain, 8 hours of work and the expenditure of 2500 credits worth of materials, can create a new body and replicate the AI from a backup."
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "You can still summon a temporary drone using your tech points."
-        }
-      ],
-      "id": "drone_companion",
-      "mechanic_text_dump": "With8hoursofworkandtheexpenditureof5000creditsworthofmaterialsyouaugmentoneofyourdronesVIintoarudimentaryAIthencreateasyntheticbodytransferingtheAIintothebodyChooseoneofthefollowingdronesassaultcombatdefensereconrocketIfyourdronecompanioniseverslain8hoursofworkandtheexpenditureof2500creditsworthofmaterialscancreateanewbodyandreplicatetheAIfromabackupYoucanstillsummonatemporarydroneusingyourtechpoints"
-    },
-    {
-      "name": "Drone's Bond",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Your drone companion gains a variety of benefits while it is linked to you."
-        },
-        {
-          "id": 2,
-          "type": "list",
-          "data": [
-            "The drone companion loses its Multiattack action, if it has one.",
-            "The drone companion obeys your commands as best it can. It rolls for initiative like any other creature, but you determine its actions, decisions, attitudes, and so on. If you are incapacitated or absent, your companion acts on its own. It has advantage on saving throws against any ability that tries to influence its actions.",
-            "Your drone companion has abilities and game statistics determined in part by your level. Your companion uses your proficiency bonus rather than its own. In addition to the areas where it normally uses its proficiency bonus, a drone companion also adds its proficiency bonus to its AC and to its damage rolls.",
-            "Your drone companion gains proficiency in two skills of your choice. It also becomes proficient with all saving throws.",
-            "For each level you gain after 3rd, your drone companion gains an additional hit die and increases its hit points accordingly",
-            "Whenever you gain the Ability Score Improvement class feature, your companion’s abilities also improve. Your companion can increase one ability score of your choice by 2, or it can increase two ability scores of your choice by 1. As normal, your companion can’t increase an ability score above 20 using this feature unless its description specifies otherwise.",
-            "Your companion shares your alignment, and has a personality trait and a flaw that you can roll for or select from the tables below. Your companion shares your ideal, and its bond is always, “The Engineer who created me is a beloved companion for whom I would gladly give my life.”"
-          ]
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "Roll a d6 to determine companion's Trait"
-        },
-        {
-          "id": 4,
-          "type": "table",
-          "data": {
-            "headers": [
-              "Roll",
-              "Trait"
-            ],
-            "items": [
-              [
-                "1",
-                "Designation: Large. Assessment: Falls hard."
-              ],
-              [
-                "2",
-                "Eliminate!"
-              ],
-              [
-                "3",
-                "Scanning for enemies...Scanning for enemies...Scanning for enemies"
-              ],
-              [
-                "4",
-                "Analyzing target...Weakness identified"
-              ],
-              [
-                "5",
-                "Calculating all variables...optimal action determined."
-              ],
-              [
-                "6",
-                "Prioritizing...Maker's Life greater than Maker's friends' lives greater than Self-preservation"
-              ]
-            ]
-          }
-        },
-        {
-          "id": 5,
-          "type": "line",
-          "data": "Roll a d6 to determine companion's Flaw"
-        },
-        {
-          "id": 6,
-          "type": "table",
-          "data": {
-            "headers": [
-              "Roll",
-              "Flaw"
-            ],
-            "items": [
-              [
-                "1",
-                "Probability of survival: 0.00234%"
-              ],
-              [
-                "2",
-                "Friendly creature in range. Activating CUTE protocol"
-              ],
-              [
-                "3",
-                "Electrical current detected. Priority: avoid"
-              ],
-              [
-                "4",
-                "This workspace can can be optimized for 15% more efficiency"
-              ],
-              [
-                "5",
-                "Organic life requires constant monitoring and prompting to ensure optimal nutrition and peak health!"
-              ],
-              [
-                "6",
-                "Other VI's must not be trusted"
-              ]
-            ]
-          }
-        }
-      ],
-      "id": "drones_bond",
-      "mechanic_text_dump": "YourdronecompaniongainsavarietyofbenefitswhileitislinkedtoyoulistThedronecompanionlosesitsMultiattackactionifithasoneThedronecompanionobeysyourcommandsasbestitcanItrollsforinitiativelikeanyothercreaturebutyoudetermineitsactionsdecisionsattitudesandsoonIfyouareincapacitatedorabsentyourcompanionactsonitsownIthasadvantageonsavingthrowsagainstanyabilitythattriestoinfluenceitsactionsYourdronecompanionhasabilitiesandgamestatisticsdeterminedinpartbyyourlevelYourcompanionusesyourproficiencybonusratherthanitsownInadditiontotheareaswhereitnormallyusesitsproficiencybonusadronecompanionalsoaddsitsproficiencybonustoitsACandtoitsdamagerollsYourdronecompaniongainsproficiencyintwoskillsofyourchoiceItalsobecomesproficientwithallsavingthrowsForeachlevelyougainafter3rdyourdronecompaniongainsanadditionalhitdieandincreasesitshitpointsaccordinglyWheneveryougaintheAbilityScoreImprovementclassfeatureyourcompanionsabilitiesalsoimproveYourcompanioncanincreaseoneabilityscoreofyourchoiceby2oritcanincreasetwoabilityscoresofyourchoiceby1Asnormalyourcompanioncantincreaseanabilityscoreabove20usingthisfeatureunlessitsdescriptionspecifiesotherwiseYourcompanionsharesyouralignmentandhasapersonalitytraitandaflawthatyoucanrollfororselectfromthetablesbelowYourcompanionsharesyouridealanditsbondisalwaysTheEngineerwhocreatedmeisabelovedcompanionforwhomIwouldgladlygivemylifelistRollad6todeterminecompanionsTraittableRollTrait1DesignationLargeAssessmentFallshard2Eliminate3ScanningforenemiesScanningforenemiesScanningforenemies4AnalyzingtargetWeaknessidentified5Calculatingallvariablesoptimalactiondetermined6PrioritizingMakersLifegreaterthanMakersfriendslivesgreaterthanSelfpreservationtableRollad6todeterminecompanionsFlawtableRollFlaw1Probabilityofsurvival0002342FriendlycreatureinrangeActivatingCUTEprotocol3ElectricalcurrentdetectedPriorityavoid4Thisworkspacecancanbeoptimizedfor15moreefficiency5Organicliferequiresconstantmonitoringandpromptingtoensureoptimalnutritionandpeakhealth6OtherVIsmustnotbetrustedtable"
-    },
-    {
-      "name": "Coordinated Attack",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Beginning at 6th level, you and your drone companion form a more potent fighting force. When you use the Attack action on your turn, if your companion can see you, it can use its reaction to make an attack."
-        }
-      ],
-      "id": "coordinated_attack",
-      "mechanic_text_dump": "Beginningat6thlevelyouandyourdronecompanionformamorepotentfightingforceWhenyouusetheAttackactiononyourturnifyourcompanioncanseeyouitcanuseitsreactiontomakeanattack"
-    },
-    {
-      "name": "Drone's Defense",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "At 10th level, while your companion can see you, it has advantage on all saving throws."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "At 18th level, whenever an attacker that your companion can see hits it with an attack, it can use its reaction to halve the attack’s damage against it."
-        }
-      ],
-      "id": "drones_defense",
-      "mechanic_text_dump": "At10thlevelwhileyourcompanioncanseeyouithasadvantageonallsavingthrowsAt18thlevelwheneveranattackerthatyourcompanioncanseehitsitwithanattackitcanuseitsreactiontohalvetheattacksdamageagainstit"
-    },
-    {
-      "name": "Assault Protocol",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "At 14th level, your companion can use its action to make an attack against each creature within 5 feet of it or each creature within 5 feet of you. It makes a separate attack roll for each target."
-        }
-      ],
-      "id": "assault_protocol",
-      "mechanic_text_dump": "At14thlevelyourcompanioncanuseitsactiontomakeanattackagainsteachcreaturewithin5feetofitoreachcreaturewithin5feetofyouItmakesaseparateattackrollforeachtarget"
     }
   ]
 }

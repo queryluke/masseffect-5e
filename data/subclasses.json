@@ -1,5 +1,5 @@
 {
-  "updated": "April 21, 2018 @  3:59 PM",
+  "updated": "April 28, 2018 @  8:51 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -579,13 +579,13 @@
       ]
     },
     {
-      "name": "Sharp Shooter",
+      "name": "Marksman",
       "class": "Soldier",
       "description": "Sharp shooters use pinpoint accuracy and target weak points on their opponents, resulting a massive amounts of bonus damage.",
       "1": [
         {
-          "key": "deadly_aim",
-          "value": "Deadly Aim"
+          "key": "steady_aim",
+          "value": "Steady Aim"
         }
       ],
       "2": [
@@ -596,26 +596,26 @@
       ],
       "3": [
         {
-          "key": "marksman",
-          "value": "Marksman"
+          "key": "close-quarters_shooter",
+          "value": "Close-Quarters Shooter"
         }
       ],
       "4": [
         {
-          "key": "snapshot",
-          "value": "Snapshot"
+          "key": "rapid_strike",
+          "value": "Rapid Strike"
         }
       ],
       "5": [
         {
-          "key": "marksman",
-          "value": "Marksman"
+          "key": "snap_shot",
+          "value": "Snap Shot"
         }
       ],
       "id": [
         {
-          "key": "sharp_shooter",
-          "value": "sharp_shooter"
+          "key": "marksman",
+          "value": "marksman"
         }
       ]
     },
