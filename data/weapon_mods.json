@@ -1,5 +1,5 @@
 {
-  "updated": "April 28, 2018 @  8:09 PM",
+  "updated": "April 30, 2018 @  9:09 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRphibK9-tEg_9zoirocbeKnHIJpDSSVr721q4D5Wq9M4Eupx_vVJqVUzamgbHhM4bhyHrKn9PxQ0MV/pubhtml",
   "data": [
     {
@@ -258,10 +258,10 @@
       "availability": "Sniper Rifle"
     },
     {
-      "name": "Piercing Mod",
+      "name": "Piercing Ammo",
       "level": "1",
       "description": "Capacitor boosts kinetic coil generators, increasing shot penetration.",
-      "feature": "You may use a bonus action to toggle the following effect on or off: +2 on ranged weapon attack rolls with this weapon on targets behind half and three-quarters cover.",
+      "feature": "Damage done by this weapon cannot be reduced by piercing damage resistance.",
       "cost": "20000",
       "placement": "Ammo",
       "assaultRifle": "x",
@@ -269,22 +269,22 @@
       "smg": null,
       "shotgun": null,
       "sniperRifle": "x",
-      "id": "piercing_mod",
+      "id": "piercing_ammo",
       "availability": "Assault Rifle, Heavy Pistol, Sniper Rifle"
     },
     {
-      "name": "Shredder Mod",
+      "name": "Shredder Ammo",
       "level": "1",
       "description": "Shoot pellets covered in Tungsten for increased damage.",
-      "feature": "You may use a bonus action to toggle the following effect on or off: damage type becomes slashing. An unprotected, organic creature that is hit by this weapon looses 2d4 hit points at the start of it's next turn due to bleeding.",
-      "cost": "22000",
+      "feature": "You may use a bonus action to toggle the following effect on or off: damage type becomes slashing. Damage done by this weapon cannot be reduced by slashing damage resistance.",
+      "cost": "20000",
       "placement": "Ammo",
       "assaultRifle": null,
       "heavyPistol": null,
       "smg": null,
       "shotgun": "x",
       "sniperRifle": null,
-      "id": "shredder_mod",
+      "id": "shredder_ammo",
       "availability": "Shotgun"
     },
     {
@@ -306,7 +306,7 @@
       "name": "Magazine Upgrade",
       "level": "1",
       "description": "Increases magazine capacity, allowing more shots before reload.",
-      "feature": "Weapon gains a additional heat equal to 1/2 its base heat (rounded down). ",
+      "feature": "Weapon gains additional heat equal to 1/2 its base heat (rounded down). ",
       "cost": "8000",
       "placement": "Magazine",
       "assaultRifle": "x",
@@ -321,7 +321,7 @@
       "name": "Extended Magazine",
       "level": "1",
       "description": "Increases magazine capacity, allowing more shots before reload.",
-      "feature": "Weapon gains a additional heat equal to double its base heat.",
+      "feature": "Weapon gains a additional heat equal to its base heat.",
       "cost": "16000",
       "placement": "Magazine",
       "assaultRifle": "x",
@@ -330,6 +330,21 @@
       "shotgun": "x",
       "sniperRifle": "x",
       "id": "extended_magazine",
+      "availability": "All"
+    },
+    {
+      "name": "Heat Sink",
+      "level": "1",
+      "description": "Greatly improves your weapons cooling capacity.",
+      "feature": "Weapon gains additional heat equal to double its base heat.",
+      "cost": "32000",
+      "placement": "Magazine",
+      "assaultRifle": "x",
+      "heavyPistol": "x",
+      "smg": "x",
+      "shotgun": "x",
+      "sniperRifle": "x",
+      "id": "heat_sink",
       "availability": "All"
     },
     {
