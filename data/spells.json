@@ -1,5 +1,5 @@
 {
-  "updated": "April 28, 2018 @  2:32 PM",
+  "updated": "April 30, 2018 @  5:47 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -1913,7 +1913,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Make a ranged spell attack on a Medium or smaller creature or object within range. On a success, you create a mass effect field around the target and it becomes {lifted}."
+          "data": "Make a ranged spell attack on a Medium or smaller creature or object within range. On a success, you create a mass effect field around the target and it becomes {lifted} 2m in the air."
         }
       ],
       "adv_option_1": "Heavy Lift : You may target a Large or smaller creature or object.",
@@ -1950,7 +1950,7 @@
         "Control : While the target is lifted, as a bonus action, you can move the target up to 6m."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "MakearangedspellattackonaMediumorsmallercreatureorobjectwithinrangeOnasuccessyoucreateamasseffectfieldaroundthetargetanditbecomeslifted"
+      "mechanic_text_dump": "MakearangedspellattackonaMediumorsmallercreatureorobjectwithinrangeOnasuccessyoucreateamasseffectfieldaroundthetargetanditbecomeslifted2mintheair"
     },
     {
       "name": "Neural Shock",
@@ -2467,44 +2467,42 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Spend 5 tech points to set up a sentry turret within melee range. The turret has HP equal to 5d8+your level. At the end of your turn, the turret attacks. It continues to attack at the end of your turn until it is destroyed."
+          "data": "Spend 5 tech points to construct a sentry turrent in an unoccupied space within 2m."
         },
         {
           "id": 2,
           "type": "line",
-          "data": "The turret has 2 possible attacks. You may select which attack the turret makes."
+          "data": "You have complete control over the turret. Any hacking attempts on the turret are rolled against your intelligence, not the turret's."
         },
         {
           "id": 3,
           "type": "line",
-          "data": "Shoot flames in a 6m cone in a direction of your choosing. Each creature within the cone must make a Dexterity saving throw. On a failed save, a creature takes 2d8 fire damage or half as much damage on a successful one."
+          "data": "The turret has its own turn in the initiative order, which occurs immediately following your turn."
         },
         {
           "id": 4,
           "type": "line",
-          "data": "Make a ranged weapon attack (+ your proficiency) on a target of your choice. On a success, it deals 2d8 thunder damage."
+          "data": "The turret lasts until its hit points become 0 or lower or until you use a bonus action to destroy it."
         }
       ],
-      "adv_option_1": "Power Turret : Increase the damage die for the flame and ranged attack to a d12.",
-      "adv_option_2": "Lasting Turret : Increase the die rolled for the turret's health to d12.",
+      "adv_option_1": "Cryo Ammo : The turret's mass accelerator machinegun deals 7 (2d6) piercing and 7 (2d6) cold damage. Any creature that fails the saving throw is {frozen} until the end of the turret's next turn.",
+      "adv_option_2": "Shields : The turret has 30 shield points (0 regen).",
       "type": "tech",
-      "die_type": "d8",
+      "die_type": null,
       "attack_type": [
-        "Ranged Attack",
-        " DEX Save"
+
       ],
       "casting_time": "Action",
       "concentration": null,
       "duration": "Instant",
       "range": "Touch",
-      "aoe": "cone",
-      "aoe_distance": "6m",
+      "aoe": null,
+      "aoe_distance": null,
       "effect": [
-        "damage"
+        "summon"
       ],
       "damage_type": [
-        "fire",
-        " thunder"
+
       ],
       "detonates": null,
       "primes": null,
@@ -2517,11 +2515,11 @@
       "min_tech_points": "5",
       "id": "sentry_turret",
       "adv_options": [
-        "Power Turret : Increase the damage die for the flame and ranged attack to a d12.",
-        "Lasting Turret : Increase the die rolled for the turret's health to d12."
+        "Cryo Ammo : The turret's mass accelerator machinegun deals 7 (2d6) piercing and 7 (2d6) cold damage. Any creature that fails the saving throw is {frozen} until the end of the turret's next turn.",
+        "Shields : The turret has 30 shield points (0 regen)."
       ],
       "class_list": "Engineer",
-      "mechanic_text_dump": "Spend5techpointstosetupasentryturretwithinmeleerangeTheturrethasHPequalto5d8yourlevelAttheendofyourturntheturretattacksItcontinuestoattackattheendofyourturnuntilitisdestroyedTheturrethas2possibleattacksYoumayselectwhichattacktheturretmakesShootflamesina6mconeinadirectionofyourchoosingEachcreaturewithintheconemustmakeaDexteritysavingthrowOnafailedsaveacreaturetakes2d8firedamageorhalfasmuchdamageonasuccessfuloneMakearangedweaponattackyourproficiencyonatargetofyourchoiceOnasuccessitdeals2d8thunderdamage"
+      "mechanic_text_dump": "Spend5techpointstoconstructasentryturrentinanunoccupiedspacewithin2mYouhavecompletecontrolovertheturretAnyhackingattemptsontheturretarerolledagainstyourintelligencenottheturretsTheturrethasitsownturnintheinitiativeorderwhichoccursimmediatelyfollowingyourturnTheturretlastsuntilitshitpointsbecome0orloweroruntilyouuseabonusactiontodestroyit"
     },
     {
       "name": "Shocking Grasp",
@@ -2679,7 +2677,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Create a negative mass effect field in a 4m sphere at a target location within range. Each hostile creature within the sphere's radius must succeed on a Dexterity saving throw or becomes {lifted}. Only creatures of a medium size or less are affected. Any creature that comes within 2m of the sphere must succeed on a Strength (Athletics) or Dexterity (Agility) check or they are drawn into the sphere and become lifted."
+          "data": "Create a negative mass effect field in a 4m sphere at a target location within range. Each hostile creature within the sphere's radius must succeed on a Dexterity saving throw or becomes {lifted}. Only Medium or smaller creatures are affected. Any creature that comes within 2m of the sphere must succeed on a Strength (Athletics) or Dexterity (Agility) check or they are drawn into the sphere and become lifted."
         },
         {
           "id": 2,
@@ -2722,7 +2720,7 @@
         "Damage : A hostile creature that enters the sphere for the first time on a turn or ends its turn there is takes 1d4 necrotic damage."
       ],
       "class_list": "Adept",
-      "mechanic_text_dump": "Createanegativemasseffectfieldina4msphereatatargetlocationwithinrangeEachhostilecreaturewithinthespheresradiusmustsucceedonaDexteritysavingthroworbecomesliftedOnlycreaturesofamediumsizeorlessareaffectedAnycreaturethatcomeswithin2mofthespheremustsucceedonaStrengthAthleticsorDexterityAgilitycheckortheyaredrawnintothesphereandbecomeliftedWhenyoucastthisspellusingaspellslotof4thlevelorhigherincreasethesizeofthesphereby2mperspellslotabovethe3rd"
+      "mechanic_text_dump": "Createanegativemasseffectfieldina4msphereatatargetlocationwithinrangeEachhostilecreaturewithinthespheresradiusmustsucceedonaDexteritysavingthroworbecomesliftedOnlyMediumorsmallercreaturesareaffectedAnycreaturethatcomeswithin2mofthespheremustsucceedonaStrengthAthleticsorDexterityAgilitycheckortheyaredrawnintothesphereandbecomeliftedWhenyoucastthisspellusingaspellslotof4thlevelorhigherincreasethesizeofthesphereby2mperspellslotabovethe3rd"
     },
     {
       "name": "Slam",

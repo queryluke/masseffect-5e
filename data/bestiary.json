@@ -1,5 +1,5 @@
 {
-  "updated": "April 30, 2018 @  5:12 PM",
+  "updated": "April 30, 2018 @  5:47 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT87AUwt1n514k6a6b4l0kOzGwIphsGXBJLFqujgkCsJ1rdudQ1Bk7Km12DACO5qQ2WGDVI8fT6-Xe/pubhtml",
   "data": [
     {
@@ -3687,6 +3687,86 @@
       ],
       "featuresActionsReactions": [
         "kamikaze_attack"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": {
+        "level": "innate",
+        "perDay": "5",
+        "tpSpent": "2",
+        "dc": 10,
+        "hit": 2,
+        "spells": [
+          "flamethrower"
+        ]
+      },
+      "abilityScores": {
+        "str": 10,
+        "dex": 10,
+        "con": 10,
+        "int": 10,
+        "wis": 10,
+        "cha": 10
+      },
+      "hp": {
+        "die": "6",
+        "average": "77",
+        "numDice": "22",
+        "mod": 0
+      },
+      "senses": [
+
+      ],
+      "name": "Sentry Turret",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/f/f8/ME3_Sentry_Turret.png/revision/latest/scale-to-width-down/100?cb=20180206214039",
+      "cr": "1",
+      "size": "Small",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "0m",
+      "dc": "10",
+      "ac": "14",
+      "xp": "200",
+      "id": "sentry_turret",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "mass_accelerator_machinegun",
+        "stationary"
       ],
       "savingThrows": [
 
