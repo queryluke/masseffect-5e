@@ -88,7 +88,7 @@ export const BestiaryHelpers = {
         bonusText = ` - ${weapon.attack.bonus * -1}`
       }
       const reachOrRange = weapon.type === 'Melee' ? 'reach' : 'range'
-      const rangeString = weapon.type === 'Melee' || weapon.type === 'Heavy Weapon' ? `${weapon.range}m` : `(${weapon.range}m / ${Number.parseInt(weapon.range, 10) * 3}m)`
+      const rangeString = weapon.type === 'Melee' || weapon.type === 'Heavy Weapon' ? `${weapon.range}m` : `(${weapon.range}m/${Number.parseInt(weapon.range, 10) * 3}m)`
       const hipFire = /hip/gi.test(weapon.tags) ? ' & hip fire' : ''
       const target = weapon.id === 'n7_piranha' ? 'all creatures in 4m cone' : 'one target'
       const additionalHitMechanics = weapon.npcHit ? `, and ${weapon.npcHit}` : '.'

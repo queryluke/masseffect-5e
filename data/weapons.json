@@ -1,5 +1,5 @@
 {
-  "updated": "April 27, 2018 @  3:38 PM",
+  "updated": "April 30, 2018 @  4:53 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSq70x_GZuDKcELgX8k_7Hd6nLGu3DoIEdDwP-YEGjUU-ghGc7ot_Q7140FZwGbEalHgzPwVm4BN8y_/pubhtml",
   "data": [
     {
@@ -775,7 +775,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Sweep fire across the battlefield. Creatures within a 6m cone must succeed on a Dexterity saving throw or take 4d6 damage. You can choose to use 2 weapon charges at once to increase the heat, dealing 4d8 fire damage instead."
+          "data": "Sweep fire across the battlefield. Creatures within a 6m cone must make a Dexterity saving throw (DC 13). On a failed save, a creature takes 4d6 fire damage, or half as much damage on a successful one."
         }
       ],
       "npcHit": null,
@@ -783,7 +783,7 @@
       "dmgType": "fire",
       "image": "http://vignette2.wikia.nocookie.net/masseffect/images/5/5a/ME3_Firestorm_Heavy_Weapon.png/revision/latest?cb=20120317194412",
       "id": "m-451_firestorm",
-      "notes_text_dump": "SweepfireacrossthebattlefieldCreatureswithina6mconemustsucceedonaDexteritysavingthrowortake4d6damageYoucanchoosetouse2weaponchargesatoncetoincreasetheheatdealing4d8firedamageinstead"
+      "notes_text_dump": "SweepfireacrossthebattlefieldCreatureswithina6mconemustmakeaDexteritysavingthrowDC13Onafailedsaveacreaturetakes4d6firedamageorhalfasmuchdamageonasuccessfulone"
     },
     {
       "name": "M-560 Hydra",
