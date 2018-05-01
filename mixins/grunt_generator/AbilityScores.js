@@ -10,29 +10,26 @@ export const AbilityScores = {
         cha: 0
       }
       const classStats = {
-        adept: {wis: 3, dex: 2, cha: 1},
-        engineer: {int: 3, con: 2, dex: 1},
-        infiltrator: {dex: 3, int: 2, cha: 1},
-        sentinel: {con: 3, int: 2, wis: 1},
-        soldier: {dex: 3, con: 2, str: 1},
-        vanguard: {str: 3, wis: 2, con: 1}
+        adept: {wis: 5, dex: 4, cha: 1},
+        engineer: {int: 5, dex: 4, con: 1},
+        infiltrator: {dex: 5, int: 4, str: 3},
+        sentinel: {wis: 5, int: 4, dex: 2},
+        soldier: {dex: 5, str: 4, con: 3},
+        vanguard: {str: 5, wis: 4, con: 2},
+        none: {dex: 5, str: 3, con: 2}
       }
-      let statWeights = {}
+      if (grunt.race.id === 'asari') {
+        classStats.adept.wis = 1
+        classStats.adept.cha = 5
+        classStats.sentinel.cha = 5
+        delete classStats.sentinel.wis
+        classStats.vanguard.cha = 4
+        delete classStats.vanguard.wis
+      }
       const standardArray = [15, 14, 13, 12, 10, 8]
 
       // Create stat weights
-      if (grunt.sc.id === 'none') {
-        const abilities = Object.keys(grunt.abilityScores)
-        let i = 3
-        while (i > 0) {
-          const ability = this.randomValue(abilities)
-          statWeights[ability] = i
-          abilities.splice(abilities.indexOf(ability), 1)
-          i--
-        }
-      } else {
-        statWeights = classStats[grunt.sc.id]
-      }
+      const statWeights = classStats[grunt.sc.id]
 
       const weightedAbilitySelection = {
         increase: Object.keys(grunt.abilityScores),

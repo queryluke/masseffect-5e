@@ -6,6 +6,9 @@ export const Tech = {
       const numTech = techArray[0]
       const perDay = techArray[1]
       const tpSpent = techArray[2]
+      if (perDay < 1) {
+        return
+      }
       grunt.techcasting = {
         perDay,
         tpSpent,

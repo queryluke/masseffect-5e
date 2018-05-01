@@ -1,32 +1,48 @@
 export const Weapons = {
+  data () {
+    return {
+      gruntWeaponRarity: {
+        0: ['Common'],
+        1: ['Common', 'Uncommon'],
+        2: ['Common', 'Uncommon', 'Rare'],
+        3: ['Common', 'Uncommon', 'Rare', 'Very Rare']
+      }
+    }
+  },
   methods: {
     setWeaponActions (config, grunt) {
       let availableAttacks = []
-      let boost = 0
       let attacks = []
-      let trials = 0
-      // while the number of attacks is 0, up the str and dex scores for increased damage
-      while (trials < 10) {
-        attacks = this.getAttackOptions(config, grunt, boost)
-        availableAttacks = attacks.filter(attack => {
-          return attack.dpr >= config.targetDamage.dmgMin && attack.dpr <= config.targetDamage.dmgMax && attack.type !== 'Heavy Weapon'
-        })
-        if (availableAttacks.length < 10) {
-          trials += 1
-          boost += 3
-          grunt.abilityScores.dex += 1
-        } else {
-          break
+      attacks = this.getAttackOptions(config, grunt)
+      // console.log(attacks)
+      availableAttacks = attacks.filter(attack => {
+        return attack.dpr >= config.targetDamage.dmgMin && attack.dpr <= config.targetDamage.dmgMax && attack.type !== 'Heavy Weapon'
+      })
+      // console.log(availableAttacks)
+      if (availableAttacks.length < 1) {
+        console.log('unable to meet necessary damage')
+        console.log(attacks)
+        const lowOrHigh = parseFloat(config.cr.cr) <= 1 ? 0 : attacks.length - 1
+        availableAttacks = [attacks[lowOrHigh]]
+      }
+      // pick a random attack that falls within the dpr
+      const attack = this.randomValue(availableAttacks)
+      // set the actions for the grunt
+      for (const weapon of attack.weapons) {
+        grunt.actions.unshift(this.generateWeaponAttack(config.cr.profBonus, weapon))
+      }
+      // set legendary actions if needed
+      if (attack.legendary) {
+        grunt.legendaryActions = []
+        for (const weapon of attack.weapons) {
+          grunt.legendaryActions.push({
+            name: `${weapon.name} Attack`,
+            description: `The ${grunt.name} makes a ${weapon.name} attack.`,
+            recharge: null
+          })
         }
       }
-      // if it still couldn't find suitable damage, then get the last attack
-      if (availableAttacks.length < 1) {
-        availableAttacks = [availableAttacks[availableAttacks.length - 1]]
-      }
-      const attack = this.randomValue(availableAttacks)
-      for (const weapon of attack.weapons) {
-        grunt.actions.unshift(this.generateWeaponAttack(config.cr.profBonus, weapon, boost))
-      }
+      // Set multiattack if needed
       if (attack.numAttacks > 1) {
         grunt.actions.unshift({
           type: 'common',
@@ -34,6 +50,7 @@ export const Weapons = {
           description: this.generateMultiattackDescription(grunt, attack)
         })
       }
+      // chance of heavy weapons
       let heavyWeaponOptions = attacks.filter(attack => {
         return attack.dpr <= config.targetDamage.dmgMax && attack.type === 'Heavy Weapon'
       })
@@ -41,9 +58,10 @@ export const Weapons = {
         grunt.actions.push(this.generateWeaponAttack(config.cr.profBonus, this.randomValue(heavyWeaponOptions).weapons[0]))
       }
     },
-    getAttackOptions (config, grunt, boost) {
+    getAttackOptions (config, grunt) {
+      const crMetaLevel = parseFloat(config.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(config.cr.cr) / 4)
       const weapons = this.getMutableData('weapons')
-        .filter(weapon => weapon.damage !== null)
+        .filter(weapon => weapon.damage !== null && this.gruntWeaponRarity[crMetaLevel].includes(weapon.rarity))
         .map(weapon => this.setWeaponDamage(weapon, grunt))
       const attacks = []
       for (const weapon of weapons) {
@@ -57,17 +75,25 @@ export const Weapons = {
         }
 
         for (let i = 1; i <= 3; i++) {
-          if ((i > 1 && weapon.type === 'Heavy Weapon') ||
-            (i > weapon.heat)) {
+          if ((i > 1 && weapon.type === 'Heavy Weapon')) {
             continue
           }
           attacks.push({
-            dpr: (weapon.attack.dpr + weapon.attack.bonus + weapon.attack.extraDmg + boost) * i,
+            dpr: (weapon.attack.damage + weapon.attack.bonus + weapon.attack.extraDmg) * i,
             numAttacks: i,
             weapons: [weapon],
-            type: weapon.type,
-            boost
+            type: weapon.type
           })
+          // if cr >= 9, add legendary attack options
+          if (crMetaLevel > 2) {
+            attacks.push({
+              dpr: ((weapon.attack.damage + weapon.attack.bonus + weapon.attack.extraDmg) * i) + ((weapon.attack.damage + weapon.attack.bonus + weapon.attack.extraDmg) * 3),
+              numAttacks: i,
+              weapons: [weapon],
+              type: weapon.type,
+              legendary: true
+            })
+          }
         }
       }
 
@@ -82,7 +108,7 @@ export const Weapons = {
         if (!config.allowMeleeWeapons && main.type === 'Melee') {
           continue
         }
-        const mainDpr = main.attack.dpr + main.attack.bonus + main.attack.extraDmg
+        const mainDpr = main.attack.damage + main.attack.bonus + main.attack.extraDmg
 
         // each possible off-hand
         for (const off of dualOpts) {
@@ -99,22 +125,20 @@ export const Weapons = {
           if (combinations.includes(`${main.id}-${off.id}`) || combinations.includes(`${off.id}-${main.id}`)) {
             continue
           }
-          const offDpr = off.attack.dpr + off.attack.bonus + off.attack.extraDmg
+          const offDpr = off.attack.damage + off.attack.bonus + off.attack.extraDmg
           // single attack with each
           attacks.push({
-            dpr: mainDpr + offDpr + (boost * 2),
+            dpr: mainDpr + offDpr,
             numAttacks: 2,
             weapons: [main, off],
-            type: 'dw',
-            boost
+            type: 'dw'
           })
           // two attacks with each
           attacks.push({
-            dpr: (mainDpr * 2) + (offDpr * 2) + (boost * 4),
+            dpr: (mainDpr * 2) + (offDpr * 2),
             numAttacks: 4,
             weapons: [main, off],
-            type: 'dw',
-            boost
+            type: 'dw'
           })
 
           combinations.push(`${main.id}-${off.id}`)

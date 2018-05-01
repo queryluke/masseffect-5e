@@ -36,7 +36,7 @@ export const BestiaryHelpers = {
       if (weapon.type === 'Melee' && bruteMod) {
         weapon.rof += 1
       }
-      weapon.attack.dpr = this.averageFromDie(weapon.damage)
+      weapon.attack.damage = this.averageFromDie(weapon.damage)
       weapon.attack.extraDmg = weapon.addDmg ? parseInt(weapon.addDmg, 10) : 0
       // add str or dex to melee dpr
       if (weapon.type === 'Melee') {
@@ -54,7 +54,7 @@ export const BestiaryHelpers = {
       }
       return weapon
     },
-    generateWeaponAttack (profBonus, weapon, boost = 0) {
+    generateWeaponAttack (profBonus, weapon) {
       profBonus = parseInt(profBonus, 10)
       // Heavy weapons
       if (weapon.type === 'Heavy Weapon') {
@@ -83,7 +83,7 @@ export const BestiaryHelpers = {
 
       let bonusText = ''
       if (weapon.attack.bonus > 0) {
-        bonusText = ` + ${weapon.attack.bonus + boost}`
+        bonusText = ` + ${weapon.attack.bonus}`
       } else if (weapon.attack.bonus < 0) {
         bonusText = ` - ${weapon.attack.bonus * -1}`
       }
@@ -96,7 +96,7 @@ export const BestiaryHelpers = {
 
       const description = {
         attack: `${toHit} to hit, ${reachOrRange} ${rangeString}${hipFire}, ${target}.`,
-        hit: `${Math.floor(weapon.attack.dpr + weapon.attack.bonus + boost)} (${weapon.damage}${bonusText}) ${weapon.dmgType} damage${additionalHitMechanics}`,
+        hit: `${Math.floor(weapon.attack.damage + weapon.attack.bonus)} (${weapon.damage}${bonusText}) ${weapon.dmgType} damage${additionalHitMechanics}`,
         miss: null
       }
 

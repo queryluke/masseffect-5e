@@ -37,13 +37,33 @@ export const Actions = {
       }
 
       this.setWeaponActions(config, grunt)
-      if (Math.floor(Math.random() * 100) < (crMetaLevel + 1) * 10) {
+      const hasGrenades = Math.floor(Math.random() * 100) < (crMetaLevel + 1) * 10
+      if (hasGrenades) {
         const availableGrenades = this.grenades.filter(grenade => {
           return grenade.dpr <= config.targetDamage.dmgMax
         })
         if (availableGrenades.length > 0) {
           const grenade = this.randomValue(availableGrenades)
           grunt.actions.push(this.generateGrenadeAttack(grenade))
+        }
+      }
+      // if grunt has legendary actions, add some more options
+      if (grunt.legendaryActions) {
+        // grenades
+        if (hasGrenades) {
+          grunt.legendaryActions.push({
+            name: 'Throw Grenade',
+            description: `The ${grunt.name} throws an available grenade`,
+            recharge: 'Costs 2 Actions'
+          })
+        }
+        // tech & biotics
+        if (['engineer', 'infiltrator', 'sentinel', 'adept', 'vanguard'].includes(grunt.sc.id)) {
+          grunt.legendaryActions.push({
+            name: 'Cast Tech or Biotics',
+            description: `The ${grunt.name} casts a Tech or Biotic Spell`,
+            recharge: 'Costs 3 Actions'
+          })
         }
       }
     }
