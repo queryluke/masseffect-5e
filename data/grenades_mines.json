@@ -1,5 +1,5 @@
 {
-  "updated": "April 28, 2018 @  2:38 PM",
+  "updated": "May  2, 2018 @  2:42 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRBAZH9BXc9xIj62i-StAKv08-iNSQSUyiWjz7TrVqcjEVe-uDaFIy9a4zRxYchDikCsskcNf-vexsG/pubhtml",
   "data": [
     {
@@ -266,17 +266,17 @@
       "damage_amount": null,
       "dd": null,
       "range": "10m",
-      "blast": "2m",
+      "blast": "4m",
       "damage_type": null,
       "desc": [
         {
           "id": 1,
           "type": "line",
-          "data": "As an Action, target an area within 10m. A cloud of thick smoke erupts out in a 2m radius from the target location. The cloud's area is heavily obscured. The cloud persists for 30 seconds. A moderate wind (11 to 20 miles per hour) can disperse the smoke after 1 round, and a strong wind (21 or more miles per hour) can do so immediately."
+          "data": "As an Action, target an area within 10m. A cloud of thick smoke erupts out in a 4m radius from the target location. The cloud's area is heavily obscured. The cloud persists for 30 seconds. A moderate wind (11 to 20 miles per hour) can disperse the smoke after 1 round, and a strong wind (21 or more miles per hour) can do so immediately."
         }
       ],
       "id": "smoke_grenade",
-      "desc_text_dump": "AsanActiontargetanareawithin10mAcloudofthicksmokeeruptsoutina2mradiusfromthetargetlocationThecloudsareaisheavilyobscuredThecloudpersistsfor30secondsAmoderatewind11to20milesperhourcandispersethesmokeafter1roundandastrongwind21ormoremilesperhourcandosoimmediately"
+      "desc_text_dump": "AsanActiontargetanareawithin10mAcloudofthicksmokeeruptsoutina4mradiusfromthetargetlocationThecloudsareaisheavilyobscuredThecloudpersistsfor30secondsAmoderatewind11to20milesperhourcandispersethesmokeafter1roundandastrongwind21ormoremilesperhourcandosoimmediately"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated": "April 30, 2018 @  5:47 PM",
+  "updated": "May  2, 2018 @  2:42 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT87AUwt1n514k6a6b4l0kOzGwIphsGXBJLFqujgkCsJ1rdudQ1Bk7Km12DACO5qQ2WGDVI8fT6-Xe/pubhtml",
   "data": [
     {
@@ -1830,7 +1830,7 @@
         "regen": "10"
       },
       "senses": [
-
+        "infrared vision 20m"
       ],
       "name": "Centurion",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/3f/ME3_Cerberus_Centurion.png/revision/latest/scale-to-width-down/417?cb=20120322145316",
@@ -1841,13 +1841,15 @@
       "alignment": "Neutral",
       "profBonus": "2",
       "barrier": null,
-      "speed": null,
+      "speed": "10m",
       "dc": "14",
       "ac": "14",
       "xp": "700",
       "id": "centurion",
       "damageResistances": [
-
+        "bludgeoning",
+        "piercing",
+        "slashing"
       ],
       "damageImmunities": [
 
@@ -1866,7 +1868,7 @@
         "smoke_grenade"
       ],
       "savingThrows": [
-
+        "dex"
       ],
       "skills": [
 
