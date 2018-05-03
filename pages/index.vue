@@ -98,7 +98,7 @@
                 applies the correct Challenge Rating, unique class and racial traits, weapons, and spells.
               v-card-actions
                 v-spacer
-                v-btn(to="/tools/grunts" flat) Generate #[v-icon chevron_right]
+                v-btn(to="/for-gms/grunts" flat) Generate #[v-icon chevron_right]
           // Printables
           v-flex(xs12 md7)
             v-card.elevation-0.transparent

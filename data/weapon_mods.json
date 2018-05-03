@@ -1,5 +1,5 @@
 {
-  "updated": "April 30, 2018 @  4:53 PM",
+  "updated": "May  3, 2018 @  4:06 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRphibK9-tEg_9zoirocbeKnHIJpDSSVr721q4D5Wq9M4Eupx_vVJqVUzamgbHhM4bhyHrKn9PxQ0MV/pubhtml",
   "data": [
     {
@@ -450,6 +450,36 @@
       "shotgun": "x",
       "sniperRifle": "x",
       "id": "combat_sensor",
+      "availability": "All"
+    },
+    {
+      "name": "High-Velocity Barrel I",
+      "level": "1",
+      "description": "Increase bullet velocity to ensure bullets pierce armor.",
+      "feature": "When you roll a 1 on a damage die for an attack you make with this weapon, you can reroll the die and must use the new roll, even if the new roll is a 1.",
+      "cost": "20000",
+      "placement": "Barrel",
+      "assaultRifle": "x",
+      "heavyPistol": "x",
+      "smg": "x",
+      "shotgun": "x",
+      "sniperRifle": "x",
+      "id": "high-velocity_barrel_i",
+      "availability": "All"
+    },
+    {
+      "name": "High-Velocity Barrel II",
+      "level": "1",
+      "description": "Increase bullet velocity to ensure bullets pierce armor.",
+      "feature": "When you roll a 1 or 2 on a damage die for an attack you make with this weapon, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2.",
+      "cost": "40000",
+      "placement": "Barrel",
+      "assaultRifle": "x",
+      "heavyPistol": "x",
+      "smg": "x",
+      "shotgun": "x",
+      "sniperRifle": "x",
+      "id": "high-velocity_barrel_ii",
       "availability": "All"
     }
   ]

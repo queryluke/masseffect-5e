@@ -125,7 +125,7 @@
             p.mb-0.
               In addition to being your Player's Handbook, this website also has some helpful tools. We hope to add more tools in the near future!
             dl
-              dt #[nuxt-link(to="/tools/grunts/") NPC Generator]
+              dt #[nuxt-link(to="/for-gms/grunts/") NPC Generator]
               dd.
                 If there aren't enough options in the bestiary, or you just want to spin up some random NPCs, the Grunt Generator can quickly
                 create NPCs from CR 1/8 to CR 12. All weapons, powers, and traits are randomly generated, but damage output and health are kept within

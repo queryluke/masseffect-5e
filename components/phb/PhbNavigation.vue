@@ -88,10 +88,11 @@
             href: '/phb/bestiary'
           },
           {
-            title: 'Tools',
+            title: 'For GMs',
             icon: 'extension',
             items: [
-              {href: '/tools/grunts', title: 'Grunts Generator'}
+              {href: '/for-gms/grunts', title: 'Grunts Generator'},
+              {href: '/for-gms/armor-creation', title: 'Creating Armor'}
             ]
           },
           {

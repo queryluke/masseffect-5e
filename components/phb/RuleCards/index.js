@@ -5,7 +5,6 @@ import ArmorCustomization from './ArmorCustomization.vue'
 import ArmorPieces from './ArmorPieces.vue'
 import Barriers from './Barriers.vue'
 import Conditions from './Conditions.vue'
-import CreatingNewArmor from './CreatingNewArmor.vue'
 import CreatureTypes from './CreatureTypes.vue'
 import DamageTypes from './DamageTypes.vue'
 import Distance from './Distance.vue'
@@ -40,7 +39,6 @@ export default {
   ArmorPieces,
   Barriers,
   Conditions,
-  CreatingNewArmor,
   CreatureTypes,
   DamageTypes,
   Distance,
