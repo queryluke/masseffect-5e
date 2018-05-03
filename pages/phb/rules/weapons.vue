@@ -15,6 +15,7 @@
         rules: [
           'weapon-stats',
           'reloading',
+          'rapid-reload',
           'holstering-and-drawing',
           'weapon-slots',
           'weapon-proficiency',

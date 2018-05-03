@@ -21,6 +21,7 @@ import MeleeWeapons from './MeleeWeapons.vue'
 import ParagonAndRenegade from './ParagonAndRenegade.vue'
 import PrimersAndDetonators from './PrimersAndDetonators.vue'
 import RaceClassRestrictions from './RaceClassRestrictions.vue'
+import RapidReload from './RapidReload.vue'
 import Reloading from './Reloading.vue'
 import SexyLevel from './SexyLevel.vue'
 import Shields from './Shields.vue'
@@ -55,6 +56,7 @@ export default {
   ParagonAndRenegade,
   PrimersAndDetonators,
   RaceClassRestrictions,
+  RapidReload,
   Reloading,
   SexyLevel,
   Shields,

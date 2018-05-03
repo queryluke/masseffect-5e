@@ -18,6 +18,7 @@
           'shields',
           'barriers',
           'reloading',
+          'rapid-reload',
           'primers-and-detonators',
           'creature-types',
           'damage-types',
