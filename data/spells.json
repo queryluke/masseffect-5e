@@ -1,5 +1,5 @@
 {
-  "updated": "May  4, 2018 @  2:32 PM",
+  "updated": "May  4, 2018 @  6:05 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -3247,52 +3247,6 @@
       ],
       "class_list": "Adept, Sentinel, Vanguard",
       "mechanic_text_dump": "MakearangedspellattackonatargetyoucanseewithinrangeOnahithurlthetargetbackwards10manddealforcedamageequalto1d6yourspellcastingabilitymodifierAthigherlevelsThisspellsdamageincreasesby1d6whenyoureach5thlevel2d611thlevel3d617thlevel4d6"
-    },
-    {
-      "name": "Turbocharge",
-      "level": null,
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Insert a specialized thermal clip that connects to your armor’s kinetic barrier. The weapon's rate of fire is increased by 2. The weapon no longer needs to be reloaded; instead, each ranged weapon attack reduces your shield points by an amount equal to the weapon's rate of fire. While turbocharge is active, you move at half your speed (rounded down) and you have disadvantage on Dexterity saving throws. You can use an action to cancel Turbocharge, removing the thermal clip and reloading your weapon; otherwise, it lasts until your shield points are reduced to 0. You must finish a long rest before you can use this ability again."
-        }
-      ],
-      "adv_option_1": "Quick Charge : You can activate and deactivate Turbocharge as a bonus action.",
-      "adv_option_2": "Improved Charge : Increase your weapon's rate of fire by 4.",
-      "type": "combat",
-      "die_type": null,
-      "attack_type": [
-
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "Self",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "buff"
-      ],
-      "damage_type": [
-
-      ],
-      "detonates": null,
-      "primes": null,
-      "adept": null,
-      "vanguard": null,
-      "sentinel": null,
-      "infiltrator": null,
-      "engineer": null,
-      "soldier": "x",
-      "min_tech_points": null,
-      "id": "turbocharge",
-      "adv_options": [
-        "Quick Charge : You can activate and deactivate Turbocharge as a bonus action.",
-        "Improved Charge : Increase your weapon's rate of fire by 4."
-      ],
-      "class_list": "Soldier",
-      "mechanic_text_dump": "InsertaspecializedthermalclipthatconnectstoyourarmorskineticbarrierTheweaponsrateoffireisincreasedby2TheweaponnolongerneedstobereloadedinsteadeachrangedweaponattackreducesyourshieldpointsbyanamountequaltotheweaponsrateoffireWhileturbochargeisactiveyoumoveathalfyourspeedroundeddownandyouhavedisadvantageonDexteritysavingthrowsYoucanuseanactiontocancelTurbochargeremovingthethermalclipandreloadingyourweaponotherwiseitlastsuntilyourshieldpointsarereducedto0Youmustfinishalongrestbeforeyoucanusethisabilityagain"
     },
     {
       "name": "Unity",
