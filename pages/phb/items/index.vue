@@ -15,10 +15,10 @@
     data () {
       return {
         rules: [
+          'thermal-clips',
           'medi-gel',
           'grenades',
-          'heavy-weapon-charges',
-          'thermal-clips-variant'
+          'heavy-weapon-charges'
         ]
       }
     },

@@ -25,7 +25,7 @@ import RapidReload from './RapidReload.vue'
 import Reloading from './Reloading.vue'
 import SexyLevel from './SexyLevel.vue'
 import Shields from './Shields.vue'
-import ThermalClipsVariant from './ThermalClipsVariant.vue'
+import ThermalClips from './ThermalClips.vue'
 import WeaponAttributes from './WeaponAttributes.vue'
 import WeaponCustomization from './WeaponCustomization.vue'
 import WeaponProficiency from './WeaponProficiency.vue'
@@ -60,7 +60,7 @@ export default {
   Reloading,
   SexyLevel,
   Shields,
-  ThermalClipsVariant,
+  ThermalClips,
   WeaponAttributes,
   WeaponCustomization,
   WeaponProficiency,
