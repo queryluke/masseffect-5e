@@ -15,8 +15,8 @@
         div(v-else) ({{ weapon.range }}m / {{ Number.parseInt(weapon.range, 10) * 3 }}m)
       v-flex.xs12.sm4.md2.attribute.mb-2
         label Damage
-        div(v-if="weapon.type === 'Melee'") {{ weapon.rof }}d{{ weapon.damage }}
-        div(v-else) d{{ weapon.damage }}
+        div {{ weapon.damage }}
+
       v-flex(v-if="weapon.type === 'Melee'").xs12.sm4.md2.attribute.mb-2
         label Min STR
         div {{ weapon.minStr }}
