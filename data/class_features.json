@@ -1,5 +1,5 @@
 {
-  "updated": "May  3, 2018 @  6:11 PM",
+  "updated": "May  5, 2018 @  2:46 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -1929,7 +1929,7 @@
       "mechanic_text_dump": "YoucanusethebonusactiongrantedbyyourCunningActiontomakeaDexteritySleightofHandchecktaketheReloadactionortaketheUseanObjectaction"
     },
     {
-      "name": "Quick Clip",
+      "name": "Tactical Reload",
       "mechanic": [
         {
           "id": 1,
@@ -1937,8 +1937,8 @@
           "data": "You're so familiar with guns that reloading them is nothing more than muscle memory. Once per turn, if the heat of a weapon your holding becomes 0, you can use your Reaction to take the Reload action for that weapon."
         }
       ],
-      "id": "quick_clip",
-      "mechanic_text_dump": "YouresofamiliarwithgunsthatreloadingthemisnothingmorethanmusclememoryOnceperturnIftheheatofaweaponyourholdingbecomes0youcanuseyourReactiontotaketheReloadactionforthatweapon"
+      "id": "tactical_reload",
+      "mechanic_text_dump": "YouresofamiliarwithgunsthatreloadingthemisnothingmorethanmusclememoryOnceperturniftheheatofaweaponyourholdingbecomes0youcanuseyourReactiontotaketheReloadactionforthatweapon"
     }
   ]
 }
