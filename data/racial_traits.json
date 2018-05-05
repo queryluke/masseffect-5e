@@ -1,5 +1,5 @@
 {
-  "updated": "April 28, 2018 @  3:14 PM",
+  "updated": "May  5, 2018 @  8:15 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRETKGL62kEZPA69PhA3AGMiVeHOWBRkTMDL3f_K-oajryEjwdq7fRAj-qfIusPsLMiIqmB12D4Zun8/pubhtml",
   "data": [
     {
@@ -827,6 +827,158 @@
       "unshackled_ai": null,
       "id": "shrewd_negotiator",
       "description_text_dump": "GainproficiencyineitherInsightorIntimidation"
+    },
+    {
+      "name": "Eidetic Memory",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You can recall memories in intricate detail, including details from all your senses. Distant or inconsequential memories require a DC 14 Wisdom check. On a failure, you can only recall details from one or two senses."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": "x",
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "unshackled_ai": null,
+      "id": "eidetic_memory",
+      "description_text_dump": "YoucanrecallmemoriesinintricatedetailincludingdetailsfromallyoursensesDistantorinconsequentialmemoriesrequireaDC14WisdomcheckOnafailureyoucanonlyrecalldetailsfromoneortwosenses"
+    },
+    {
+      "name": "Non-Differentiated Cells",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You are immune to disease. In addition, you have resistance against poison damage and advantage on saving throws would cause you to become {poison}."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": "x",
+      "unshackled_ai": null,
+      "id": "non-differentiated_cells",
+      "description_text_dump": "YouareimmunetodiseaseInadditionyouhaveresistanceagainstpoisondamageandadvantageonsavingthrowswouldcauseyoutobecomepoison"
+    },
+    {
+      "name": "Limited Regeneration",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You regain all your your Hit Dice on a long rest. Additionally, if you lose a body part, the missing part will regrow and return to full functionality after a passing of time based on the body part:"
+        },
+        {
+          "id": 2,
+          "type": "table",
+          "data": {
+            "headers": [
+              "Part",
+              "Time"
+            ],
+            "items": [
+              [
+                "Fingers & toes",
+                "1 week"
+              ],
+              [
+                "Eye",
+                "6 weeks"
+              ],
+              [
+                "Hands & Feet",
+                "2 weeks"
+              ],
+              [
+                "Arm (to elbow) & Leg (to knee)",
+                "4 weeks"
+              ],
+              [
+                "Arm (to shoulder) & Leg (to hip)",
+                "8 weeks"
+              ]
+            ]
+          }
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": "x",
+      "unshackled_ai": null,
+      "id": "limited_regeneration",
+      "description_text_dump": "YouregainallyouryourHitDiceonalongrestAdditionallyifyouloseabodypartthemissingpartwillregrowandreturntofullfunctionalityafterapassingoftimebasedonthebodyparttablePartTimeFingerstoes1weekEye6weeksHandsFeet2weeksArmtoelbowLegtoknee4weeksArmtoshoulderLegtohip8weekstable"
+    },
+    {
+      "name": "Powerful Build",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": "x",
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "unshackled_ai": null,
+      "id": "powerful_build",
+      "description_text_dump": "Youcountasonesizelargerwhendeterminingyourcarryingcapacityandtheweightyoucanpushdragorlift"
+    },
+    {
+      "name": "Thulium Skin",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Resistance to radiant damage and any diseases that would be caused by radiation."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": "x",
+      "volus": null,
+      "vorcha": null,
+      "unshackled_ai": null,
+      "id": "thulium_skin",
+      "description_text_dump": "Resistancetoradiantdamageandanydiseasesthatwouldbecausedbyradiation"
     }
   ]
 }

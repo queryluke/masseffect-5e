@@ -2,7 +2,7 @@
 layout: post
 title: "v0.7.0"
 description: "Geth forces, Race Audit, and a Weapon Balance"
-image: https://vignette.wikia.nocookie.net/masseffect/images/a/a9/ArmatureLanding.png/revision/latest?cb=20090125024722
+image: /images/misc/ArmatureLanding.png
 ---
 
 ### Many hands
