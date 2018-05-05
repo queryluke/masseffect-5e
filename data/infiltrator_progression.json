@@ -1,5 +1,5 @@
 {
-  "updated": "April 14, 2018 @  8:55 PM",
+  "updated": "May  3, 2018 @  6:12 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -251,8 +251,8 @@
           "key": "features",
           "value": [
             {
-              "key": "evasion",
-              "display": "Evasion",
+              "key": "fast_hands",
+              "display": "Fast Hands",
               "subclass_progression": null
             }
           ]
@@ -501,8 +501,8 @@
           "key": "features",
           "value": [
             {
-              "key": "cunning_action",
-              "display": "Cunning Action",
+              "key": "evasion",
+              "display": "Evasion",
               "subclass_progression": null
             },
             {

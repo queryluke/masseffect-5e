@@ -1,5 +1,5 @@
 {
-  "updated": "April 14, 2018 @ 10:19 PM",
+  "updated": "May  2, 2018 @  2:42 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT87AUwt1n514k6a6b4l0kOzGwIphsGXBJLFqujgkCsJ1rdudQ1Bk7Km12DACO5qQ2WGDVI8fT6-Xe/pubhtml",
   "data": [
     {
@@ -306,8 +306,9 @@
       ],
       "spellcasting": {
         "level": "13",
-        "dc": 15,
-        "hit": 7,
+        "dc": 16,
+        "hit": 8,
+        "mod": "Charisma",
         "spellList": [
           "barrier",
           "charge",
@@ -358,7 +359,7 @@
         "con": 11,
         "int": 12,
         "wis": 18,
-        "cha": 19
+        "cha": 20
       },
       "hp": {
         "die": "10",
@@ -705,7 +706,7 @@
         {
           "type": "common",
           "name": "Multiattack",
-          "description": "The collector captain makes twp attacks with its assault rifle."
+          "description": "The collector captain makes two attacks with its assault rifle."
         }
       ],
       "reactions": [
@@ -1361,6 +1362,7 @@
         "level": "12",
         "dc": 16,
         "hit": 8,
+        "mod": "Charisma",
         "spellList": [
           "dark_channel",
           "pull",
@@ -1411,8 +1413,8 @@
         "dex": 12,
         "con": 12,
         "int": 14,
-        "wis": 18,
-        "cha": 16
+        "wis": 16,
+        "cha": 18
       },
       "hp": {
         "die": "10",
@@ -1433,7 +1435,7 @@
       "profBonus": "4",
       "barrier": "20",
       "speed": "10m",
-      "dc": "16",
+      "dc": "15",
       "ac": "16",
       "xp": "5900",
       "id": "harbinger",
@@ -1487,6 +1489,7 @@
         "level": "innate",
         "dc": 12,
         "hit": 4,
+        "mod": "Charisma",
         "spellList": [
           "3-singularity"
         ],
@@ -1505,8 +1508,8 @@
         "dex": 18,
         "con": 16,
         "int": 10,
-        "wis": 12,
-        "cha": 8
+        "wis": 8,
+        "cha": 12
       },
       "hp": {
         "die": "10",
@@ -1527,7 +1530,7 @@
       "profBonus": "3",
       "barrier": "6",
       "speed": "10m",
-      "dc": "12",
+      "dc": "11",
       "ac": "18",
       "xp": "1800",
       "id": "adjutant",
@@ -1827,7 +1830,7 @@
         "regen": "10"
       },
       "senses": [
-
+        "infrared vision 20m"
       ],
       "name": "Centurion",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/3f/ME3_Cerberus_Centurion.png/revision/latest/scale-to-width-down/417?cb=20120322145316",
@@ -1838,13 +1841,15 @@
       "alignment": "Neutral",
       "profBonus": "2",
       "barrier": null,
-      "speed": null,
+      "speed": "10m",
       "dc": "14",
       "ac": "14",
       "xp": "700",
       "id": "centurion",
       "damageResistances": [
-
+        "bludgeoning",
+        "piercing",
+        "slashing"
       ],
       "damageImmunities": [
 
@@ -1863,7 +1868,7 @@
         "smoke_grenade"
       ],
       "savingThrows": [
-
+        "dex"
       ],
       "skills": [
 
@@ -2196,6 +2201,7 @@
         "level": "3",
         "dc": 13,
         "hit": 5,
+        "mod": "Wisdom",
         "spellList": [
           "barrier"
         ],
@@ -2398,6 +2404,1356 @@
       "id": "turret",
       "damageResistances": [
         "bludgeoning"
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "mass_accelerator_machinegun",
+        "stationary"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": {
+        "level": "innate",
+        "perDay": null,
+        "tpSpent": "2",
+        "dc": 12,
+        "hit": 4,
+        "spells": [
+          "overload"
+        ]
+      },
+      "abilityScores": {
+        "str": 6,
+        "dex": 18,
+        "con": 6,
+        "int": 14,
+        "wis": 10,
+        "cha": 8
+      },
+      "hp": {
+        "die": "6",
+        "average": "15",
+        "numDice": "10",
+        "mod": -20
+      },
+      "sp": {
+        "shields": 15,
+        "regen": "5"
+      },
+      "senses": [
+        "darkvision 60m"
+      ],
+      "name": "Geth Bomber",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/01/ME3_geth_bomber_AAA.png/revision/latest/scale-to-width-down/700?cb=20130313175937",
+      "cr": "1/2",
+      "size": "Small",
+      "type": "Synthetic",
+      "unit": "Geth",
+      "alignment": "Lawful Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "fly 10m",
+      "dc": "12",
+      "ac": "16",
+      "xp": "100",
+      "id": "geth_bomber",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "multi-frag_grenade"
+      ],
+      "savingThrows": [
+        "dex"
+      ],
+      "skills": [
+        "perception"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The Geth Hunter makes two Geth Plasma Shotgun attacks."
+        }
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 14,
+        "dex": 14,
+        "con": 16,
+        "int": 16,
+        "wis": 12,
+        "cha": 10
+      },
+      "hp": {
+        "die": "8",
+        "average": "75",
+        "numDice": "10",
+        "mod": 30
+      },
+      "sp": {
+        "shields": 20,
+        "regen": "10"
+      },
+      "senses": [
+        "darkvision 60m"
+      ],
+      "name": "Geth Hunter",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/b/be/ME3_Geth_Hunter.png/revision/latest/scale-to-width-down/300?cb=20120326002931",
+      "cr": "3",
+      "size": "Medium",
+      "type": "Synthetic",
+      "unit": "Geth",
+      "alignment": "Lawful Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "14m",
+      "dc": "14",
+      "ac": "14",
+      "xp": "700",
+      "id": "geth_hunter",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "assassination",
+        "geth_plasma_shotgun",
+        "tactical_cloak"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+        "electronics",
+        "stealth"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The Geth Prime makes two Geth Pulse Rifle attacks."
+        }
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 16,
+        "dex": 18,
+        "con": 16,
+        "int": 14,
+        "wis": 10,
+        "cha": 10
+      },
+      "hp": {
+        "die": "10",
+        "average": "170",
+        "numDice": "20",
+        "mod": 60
+      },
+      "sp": {
+        "shields": 30,
+        "regen": "10"
+      },
+      "senses": [
+
+      ],
+      "name": "Geth Prime",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/c/c9/ME3_Geth_Prime.png/revision/latest/scale-to-width-down/229?cb=20120403192110",
+      "cr": "7",
+      "size": "Large",
+      "type": "Synthetic",
+      "unit": "Geth",
+      "alignment": "Lawful Neutral",
+      "profBonus": "3",
+      "barrier": null,
+      "speed": "10m",
+      "dc": "16",
+      "ac": "18",
+      "xp": "2900",
+      "id": "geth_prime",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "geth_pulse_rifle",
+        "summon_combat_drone",
+        "summon_geth_turret",
+        "radar_jamming",
+        "geth_pulse_rifle_attack",
+        "activate_radar_jamming",
+        "summon_turret_or_drone"
+      ],
+      "savingThrows": [
+        "con"
+      ],
+      "skills": [
+        "electronics"
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 12,
+        "dex": 14,
+        "con": 11,
+        "int": 12,
+        "wis": 8,
+        "cha": 8
+      },
+      "hp": {
+        "die": "8",
+        "average": "54",
+        "numDice": "12",
+        "mod": 0
+      },
+      "senses": [
+
+      ],
+      "name": "Geth Trooper",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/c/cf/ME3_Geth_Trooper.png/revision/latest/scale-to-width-down/238?cb=20120315171310",
+      "cr": "1/2",
+      "size": "Medium",
+      "type": "Synthetic",
+      "unit": "Geth",
+      "alignment": "Lawful Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "10m",
+      "dc": "13",
+      "ac": "13",
+      "xp": "100",
+      "id": "geth_trooper",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "geth_pulse_rifle"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 20,
+        "dex": 11,
+        "con": 18,
+        "int": 11,
+        "wis": 8,
+        "cha": 4
+      },
+      "hp": {
+        "die": "10",
+        "average": "95",
+        "numDice": "10",
+        "mod": 40
+      },
+      "sp": {
+        "shields": 20,
+        "regen": "5"
+      },
+      "senses": [
+
+      ],
+      "name": "Geth Destroyer",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/a/a4/Geth_Destroyer_ME2.png/revision/latest/scale-to-width-down/350?cb=20100625040647",
+      "cr": "4",
+      "size": "Large",
+      "type": "Synthetic",
+      "unit": "Geth",
+      "alignment": "Lawful Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "12m",
+      "dc": "15",
+      "ac": "15",
+      "xp": "1100",
+      "id": "geth_destroyer",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "bash",
+        "m-451_firestorm"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 22,
+        "dex": 10,
+        "con": 25,
+        "int": 11,
+        "wis": 6,
+        "cha": 8
+      },
+      "hp": {
+        "die": "12",
+        "average": "135",
+        "numDice": "10",
+        "mod": 70
+      },
+      "sp": {
+        "shields": 100,
+        "regen": "0"
+      },
+      "senses": [
+        "darkvision 20m",
+        "infrared vision 20m"
+      ],
+      "name": "Geth Armature",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/a/a9/ArmatureLanding.png/revision/latest/scale-to-width-down/350?cb=20090125024722",
+      "cr": "11",
+      "size": "Huge",
+      "type": "Synthetic",
+      "unit": "Geth",
+      "alignment": "Lawful Neutral",
+      "profBonus": "4",
+      "barrier": null,
+      "speed": "6m",
+      "dc": "18",
+      "ac": "15",
+      "xp": "7200",
+      "id": "geth_armature",
+      "damageResistances": [
+        "bludgeonin",
+        "piercing",
+        "slashing"
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "charmed",
+        "deafened",
+        "frightened",
+        "frozen",
+        "grappled",
+        "invisible",
+        "lifted",
+        "paralyzed",
+        "petrified",
+        "poisoned",
+        "restrained",
+        "stunned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "siege_pulse",
+        "siege_cannon",
+        "repair_protocol",
+        "mass_accelerator_machinegun"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+        "perception"
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 28,
+        "dex": 8,
+        "con": 28,
+        "int": 9,
+        "wis": 6,
+        "cha": 8
+      },
+      "hp": {
+        "die": "20",
+        "average": "234",
+        "numDice": "12",
+        "mod": 108
+      },
+      "sp": {
+        "shields": 100,
+        "regen": "0"
+      },
+      "senses": [
+        "darkvision 20m",
+        "infrared vision 20m"
+      ],
+      "name": "Geth Colossus",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/6/64/Geth_Colossus_01.jpg/revision/latest/scale-to-width-down/350?cb=20080922231050",
+      "cr": "20",
+      "size": "Gargantuan",
+      "type": "Synthetic",
+      "unit": "Geth",
+      "alignment": "Lawful Neutral",
+      "profBonus": "6",
+      "barrier": null,
+      "speed": "6m",
+      "dc": "19",
+      "ac": "18",
+      "xp": "25000",
+      "id": "geth_colossus",
+      "damageResistances": [
+        "bludgeonin",
+        "piercing",
+        "slashing"
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "charmed",
+        "deafened",
+        "frightened",
+        "frozen",
+        "grappled",
+        "invisible",
+        "lifted",
+        "paralyzed",
+        "petrified",
+        "poisoned",
+        "restrained",
+        "stunned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "siege_pulse",
+        "siege_cannon",
+        "repair_protocol",
+        "mass_accelerator_machinegun",
+        "siege_cannon_attack",
+        "mass_accelerator_machinegun_attack",
+        "siege_pulse_attack"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+        "perception"
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": {
+        "level": "innate",
+        "perDay": null,
+        "tpSpent": "1",
+        "dc": 11,
+        "hit": 3,
+        "spells": [
+          "sabotage"
+        ]
+      },
+      "abilityScores": {
+        "str": 8,
+        "dex": 16,
+        "con": 8,
+        "int": 12,
+        "wis": 14,
+        "cha": 5
+      },
+      "hp": {
+        "die": "8",
+        "average": "28",
+        "numDice": "8",
+        "mod": -8
+      },
+      "sp": {
+        "shields": 5,
+        "regen": "5"
+      },
+      "senses": [
+        "darkvision 30m",
+        "infrared vision 30m"
+      ],
+      "name": "Geth Stalker",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/ec/ME_geth_stalker.png/revision/latest/scale-to-width-down/350?cb=20130517141111",
+      "cr": "1",
+      "size": "Medium",
+      "type": "Synthetic",
+      "unit": "Geth",
+      "alignment": "Lawful Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "16m",
+      "dc": "11",
+      "ac": "14",
+      "xp": "200",
+      "id": "geth_stalker",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "assassination",
+        "eye_cannon",
+        "spider_climb",
+        "leap"
+      ],
+      "savingThrows": [
+        "dex"
+      ],
+      "skills": [
+        "perception"
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 10,
+        "dex": 10,
+        "con": 10,
+        "int": 10,
+        "wis": 8,
+        "cha": 8
+      },
+      "hp": {
+        "die": "6",
+        "average": "7",
+        "numDice": "2",
+        "mod": 0
+      },
+      "sp": {
+        "shields": 5,
+        "regen": "5"
+      },
+      "senses": [
+
+      ],
+      "name": "Geth Turret",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/b/b0/ME3_Geth_Turret.png/revision/latest/scale-to-width-down/350?cb=20120326000908",
+      "cr": "1/4",
+      "size": "Small",
+      "type": "Synthetic",
+      "unit": "Geth",
+      "alignment": "Lawful Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "fly 6m",
+      "dc": "13",
+      "ac": "12",
+      "xp": "50",
+      "id": "geth_turret",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "pulse_cannon",
+        "shield_restore"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": {
+        "level": "innate",
+        "perDay": "3",
+        "tpSpent": "1",
+        "dc": 10,
+        "hit": 2,
+        "spells": [
+          "sabotage"
+        ]
+      },
+      "abilityScores": {
+        "str": 12,
+        "dex": 14,
+        "con": 12,
+        "int": 10,
+        "wis": 8,
+        "cha": 6
+      },
+      "hp": {
+        "die": "6",
+        "average": "13",
+        "numDice": "3",
+        "mod": 3
+      },
+      "sp": {
+        "shields": 10,
+        "regen": "5"
+      },
+      "senses": [
+
+      ],
+      "name": "Combat Drone",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/4/44/Me3_combat_drone.png/revision/latest/scale-to-width-down/480?cb=20120720164039",
+      "cr": "1/4",
+      "size": "Small",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "fly 14m",
+      "dc": "10",
+      "ac": "13",
+      "xp": "50",
+      "id": "combat_drone",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "shock_attack"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 10,
+        "dex": 10,
+        "con": 10,
+        "int": 10,
+        "wis": 10,
+        "cha": 4
+      },
+      "hp": {
+        "die": "6",
+        "average": "7",
+        "numDice": "2",
+        "mod": 0
+      },
+      "senses": [
+
+      ],
+      "name": "Rocket Drone",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/2f/Virmire_geth_rocket_drone.png/revision/latest/scale-to-width-down/640?cb=20091209133938",
+      "cr": "1/4",
+      "size": "Small",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "fly 10m",
+      "dc": "13",
+      "ac": "11",
+      "xp": "50",
+      "id": "rocket_drone",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "distortion_rocket"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 11,
+        "dex": 14,
+        "con": 11,
+        "int": 10,
+        "wis": 10,
+        "cha": 6
+      },
+      "hp": {
+        "die": "6",
+        "average": "10",
+        "numDice": "3",
+        "mod": 0
+      },
+      "sp": {
+        "shields": 5,
+        "regen": "5"
+      },
+      "senses": [
+
+      ],
+      "name": "Assault Drone",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/ea/Defense_Drone.png/revision/latest/scale-to-width-down/606?cb=20120407052056",
+      "cr": "1/2",
+      "size": "Small",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "fly 10m",
+      "dc": "13",
+      "ac": "12",
+      "xp": "100",
+      "id": "assault_drone",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "pulse_cannon"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 15,
+        "dex": 10,
+        "con": 14,
+        "int": 12,
+        "wis": 10,
+        "cha": 7
+      },
+      "hp": {
+        "die": "6",
+        "average": "22",
+        "numDice": "4",
+        "mod": 8
+      },
+      "sp": {
+        "shields": 5,
+        "regen": "5"
+      },
+      "senses": [
+
+      ],
+      "name": "Defense Drone",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/e0/Info_Drone.png/revision/latest/scale-to-width-down/531?cb=20100908213419",
+      "cr": "1/2",
+      "size": "Small",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "fly 10m",
+      "dc": "13",
+      "ac": "14",
+      "xp": "100",
+      "id": "defense_drone",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "bash",
+        "guard"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": {
+        "level": "innate",
+        "perDay": "3",
+        "tpSpent": "1",
+        "dc": 10,
+        "hit": 2,
+        "spells": [
+          "first_aid"
+        ]
+      },
+      "abilityScores": {
+        "str": 8,
+        "dex": 12,
+        "con": 10,
+        "int": 11,
+        "wis": 11,
+        "cha": 6
+      },
+      "hp": {
+        "die": "6",
+        "average": "7",
+        "numDice": "2",
+        "mod": 0
+      },
+      "sp": {
+        "shields": 5,
+        "regen": "5"
+      },
+      "senses": [
+
+      ],
+      "name": "Repair Drone",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/21/Maintenance_Drone.png/revision/latest/scale-to-width-down/350?cb=20100909024927",
+      "cr": "1/8",
+      "size": "Small",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "fly 12m",
+      "dc": "10",
+      "ac": "11",
+      "xp": "25",
+      "id": "repair_drone",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "defibrillators",
+        "stabalize"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 10,
+        "dex": 16,
+        "con": 8,
+        "int": 11,
+        "wis": 12,
+        "cha": 5
+      },
+      "hp": {
+        "die": "6",
+        "average": "5",
+        "numDice": "2",
+        "mod": -2
+      },
+      "sp": {
+        "shields": 5,
+        "regen": "5"
+      },
+      "senses": [
+        "infared vision 60m"
+      ],
+      "name": "Recon Drone",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/29/Geth_Recon_Drone_ME2.png/revision/latest/scale-to-width-down/350?cb=20100627032507",
+      "cr": "1/8",
+      "size": "Small",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "fly 16m",
+      "dc": "13",
+      "ac": "13",
+      "xp": "25",
+      "id": "recon_drone",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "pulse_rifle",
+        "tactical_cloak"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+        "perception",
+        "stealth"
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 8,
+        "dex": 14,
+        "con": 8,
+        "int": 8,
+        "wis": 8,
+        "cha": 8
+      },
+      "hp": {
+        "die": "6",
+        "average": "5",
+        "numDice": "2",
+        "mod": -2
+      },
+      "senses": [
+
+      ],
+      "name": "Disruption Drone",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/b/b6/ME3_disruption_drone.png/revision/latest/scale-to-width-down/350?cb=20130308125421",
+      "cr": "1/8",
+      "size": "Small",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "fly 16m",
+      "dc": "13",
+      "ac": "8",
+      "xp": "25",
+      "id": "disruption_drone",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "kamikaze_attack"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": {
+        "level": "innate",
+        "perDay": "5",
+        "tpSpent": "2",
+        "dc": 10,
+        "hit": 2,
+        "spells": [
+          "flamethrower"
+        ]
+      },
+      "abilityScores": {
+        "str": 10,
+        "dex": 10,
+        "con": 10,
+        "int": 10,
+        "wis": 10,
+        "cha": 10
+      },
+      "hp": {
+        "die": "6",
+        "average": "77",
+        "numDice": "22",
+        "mod": 0
+      },
+      "senses": [
+
+      ],
+      "name": "Sentry Turret",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/f/f8/ME3_Sentry_Turret.png/revision/latest/scale-to-width-down/100?cb=20180206214039",
+      "cr": "1",
+      "size": "Small",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "0m",
+      "dc": "10",
+      "ac": "14",
+      "xp": "200",
+      "id": "sentry_turret",
+      "damageResistances": [
+
       ],
       "damageImmunities": [
         "poison",

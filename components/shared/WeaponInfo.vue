@@ -2,11 +2,7 @@
   div
     v-layout
       v-flex.xs12.sm6
-        h4 {{ weapon.name }}
-        p.headline
-          span {{ weapon.type }}
-          span(v-if="weapon.rare").deep-purple--text
-            small  (rare)
+        h4.headline {{ weapon.name }}
         p
           em {{ weapon.tags }}
       v-flex.hidden-xs-only.sm6.md3.offset-md3
@@ -16,10 +12,7 @@
         label Range
         div(v-if="weapon.type === 'Melee' || weapon.type === 'Heavy Weapon'")
           span(v-if="weapon.range") {{ weapon.range }}m
-        div(v-else) ({{ weapon.range }}m / {{ weapon.longRange }}m)
-      v-flex.xs12.sm4.md2.attribute.mb-2(v-if="weapon.type !== 'Melee'")
-        label Rate of Fire
-        div {{ weapon.rof }}
+        div(v-else) ({{ weapon.range }}m / {{ Number.parseInt(weapon.range, 10) * 3 }}m)
       v-flex.xs12.sm4.md2.attribute.mb-2
         label Damage
         div(v-if="weapon.type === 'Melee'") {{ weapon.rof }}d{{ weapon.damage }}
@@ -34,6 +27,9 @@
       v-flex.xs12.sm4.md2.attribute.mb-2
         label Weight
         div {{ weapon.weight}}
+      v-flex.xs12.sm4.md2.attribute.mb-2
+        label Rarity
+        div {{ weapon.rarity }}
       v-flex.xs12.sm4.md2.attribute.mb-2
         label Cost
         div {{ weapon.cost }}

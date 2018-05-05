@@ -1,5 +1,5 @@
 {
-  "updated": "March 11, 2018 @  7:29 PM",
+  "updated": "May  2, 2018 @  2:42 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRBAZH9BXc9xIj62i-StAKv08-iNSQSUyiWjz7TrVqcjEVe-uDaFIy9a4zRxYchDikCsskcNf-vexsG/pubhtml",
   "data": [
     {
@@ -13,11 +13,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Target an area within 10m. Each creature within 4m of the target must make a DC 13 Dexterity saving throw. A creature takes 3d6 lightning damage on a failed save, or half as much damage on a successful one."
+          "data": "As an Action, target an area within 10m. Each creature within 4m of the target must make a DC 13 Dexterity saving throw. A creature takes 3d6 lightning damage on a failed save, or half as much damage on a successful one."
         }
       ],
       "id": "arc_grenade",
-      "desc_text_dump": "Targetanareawithin10mEachcreaturewithin4mofthetargetmustmakeaDC13DexteritysavingthrowAcreaturetakes3d6lightningdamageonafailedsaveorhalfasmuchdamageonasuccessfulone"
+      "desc_text_dump": "AsanActiontargetanareawithin10mEachcreaturewithin4mofthetargetmustmakeaDC13DexteritysavingthrowAcreaturetakes3d6lightningdamageonafailedsaveorhalfasmuchdamageonasuccessfulone"
     },
     {
       "name": "Cluster Grenade",
@@ -30,11 +30,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Target an area within 10m. Each creature within 6m of the target must make a DC 16 Dexterity saving throw. A creature takes 2d6 thunder damage on a failed save, or half as much damage on a successful one."
+          "data": "As an Action, target an area within 10m. Each creature within 6m of the target must make a DC 16 Dexterity saving throw. A creature takes 2d6 thunder damage on a failed save, or half as much damage on a successful one."
         }
       ],
       "id": "cluster_grenade",
-      "desc_text_dump": "Targetanareawithin10mEachcreaturewithin6mofthetargetmustmakeaDC16DexteritysavingthrowAcreaturetakes2d6thunderdamageonafailedsaveorhalfasmuchdamageonasuccessfulone"
+      "desc_text_dump": "AsanActiontargetanareawithin10mEachcreaturewithin6mofthetargetmustmakeaDC16DexteritysavingthrowAcreaturetakes2d6thunderdamageonafailedsaveorhalfasmuchdamageonasuccessfulone"
     },
     {
       "name": "Flashbang Grenade",
@@ -47,11 +47,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Target an area within 10m. Each creature within 4m of the target must make a DC 13 Constitution saving throw. On a failed save, a creature is {blinded} until the end of your next turn."
+          "data": "As an Action, target an area within 10m. Each creature within 4m of the target must make a DC 13 Constitution saving throw. On a failed save, a creature is {blinded} until the end of your next turn."
         }
       ],
       "id": "flashbang_grenade",
-      "desc_text_dump": "Targetanareawithin10mEachcreaturewithin4mofthetargetmustmakeaDC13ConstitutionsavingthrowOnafailedsaveacreatureisblindeduntiltheendofyournextturn"
+      "desc_text_dump": "AsanActiontargetanareawithin10mEachcreaturewithin4mofthetargetmustmakeaDC13ConstitutionsavingthrowOnafailedsaveacreatureisblindeduntiltheendofyournextturn"
     },
     {
       "name": "Frag Grenade",
@@ -64,11 +64,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Target an area within 10m. Each creature within 4m of the target must make a DC 13 Dexterity saving throw. On a failed save, a creature takes 3d12 piercing damage or half as much damage on a successful one."
+          "data": "As an Action, target an area within 10m. Each creature within 4m of the target must make a DC 13 Dexterity saving throw. On a failed save, a creature takes 3d12 piercing damage or half as much damage on a successful one."
         }
       ],
       "id": "frag_grenade",
-      "desc_text_dump": "Targetanareawithin10mEachcreaturewithin4mofthetargetmustmakeaDC13DexteritysavingthrowOnafailedsaveacreaturetakes3d12piercingdamageorhalfasmuchdamageonasuccessfulone"
+      "desc_text_dump": "AsanActiontargetanareawithin10mEachcreaturewithin4mofthetargetmustmakeaDC13DexteritysavingthrowOnafailedsaveacreaturetakes3d12piercingdamageorhalfasmuchdamageonasuccessfulone"
     },
     {
       "name": "Homing Grenade",
@@ -81,11 +81,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Target a creature you can see within 10m. The target creature takes 1d6 thunder damage. Each other creature within 2m of the target must make a DC 10 Dexterity saving throw. On a failed save, a creature takes 1d6 thunder damage or half as much on a successful one."
+          "data": "As an Action, target a creature you can see within 10m. The target creature takes 1d6 thunder damage. Each other creature within 2m of the target must make a DC 10 Dexterity saving throw. On a failed save, a creature takes 1d6 thunder damage or half as much on a successful one."
         }
       ],
       "id": "homing_grenade",
-      "desc_text_dump": "Targetacreatureyoucanseewithin10mThetargetcreaturetakes1d6thunderdamageEachothercreaturewithin2mofthetargetmustmakeaDC10DexteritysavingthrowOnafailedsaveacreaturetakes1d6thunderdamageorhalfasmuchonasuccessfulone"
+      "desc_text_dump": "AsanActiontargetacreatureyoucanseewithin10mThetargetcreaturetakes1d6thunderdamageEachothercreaturewithin2mofthetargetmustmakeaDC10DexteritysavingthrowOnafailedsaveacreaturetakes1d6thunderdamageorhalfasmuchonasuccessfulone"
     },
     {
       "name": "Inferno Grenade",
@@ -98,11 +98,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Target an area within 10m. Each creature within 4m of the target must make a DC 13 Dexterity saving throw. On a failed save, a creature takes 3d4 fire or half as much on a successful one. The 4m area continues to burn for 1 minute.  A creature must also make the saving throw when it enters the burning space for the first time on a turn or ends its turn there."
+          "data": "As an Action, target an area within 10m. Each creature within 4m of the target must make a DC 13 Dexterity saving throw. On a failed save, a creature takes 3d4 fire or half as much on a successful one. The 4m area continues to burn for 1 minute.  A creature must also make the saving throw when it enters the burning space for the first time on a turn or ends its turn there."
         }
       ],
       "id": "inferno_grenade",
-      "desc_text_dump": "Targetanareawithin10mEachcreaturewithin4mofthetargetmustmakeaDC13DexteritysavingthrowOnafailedsaveacreaturetakes3d4fireorhalfasmuchonasuccessfuloneThe4mareacontinuestoburnfor1minuteAcreaturemustalsomakethesavingthrowwhenitenterstheburningspaceforthefirsttimeonaturnorendsitsturnthere"
+      "desc_text_dump": "AsanActiontargetanareawithin10mEachcreaturewithin4mofthetargetmustmakeaDC13DexteritysavingthrowOnafailedsaveacreaturetakes3d4fireorhalfasmuchonasuccessfuloneThe4mareacontinuestoburnfor1minuteAcreaturemustalsomakethesavingthrowwhenitenterstheburningspaceforthefirsttimeonaturnorendsitsturnthere"
     },
     {
       "name": "Lift Grenade",
@@ -115,11 +115,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Target an area within 10m. Each creature within 4m of the target must make a DC 13 Dexterity saving throw. On a failed save, a creature is {lifted} until the end of your next turn."
+          "data": "As an Action, target an area within 10m. Each creature within 4m of the target must make a DC 13 Dexterity saving throw. On a failed save, a creature is {lifted} until the end of your next turn."
         }
       ],
       "id": "lift_grenade",
-      "desc_text_dump": "Targetanareawithin10mEachcreaturewithin4mofthetargetmustmakeaDC13DexteritysavingthrowOnafailedsaveacreatureislifteduntiltheendofyournextturn"
+      "desc_text_dump": "AsanActiontargetanareawithin10mEachcreaturewithin4mofthetargetmustmakeaDC13DexteritysavingthrowOnafailedsaveacreatureislifteduntiltheendofyournextturn"
     },
     {
       "name": "Multi-frag Grenade",
@@ -132,11 +132,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Target 3 areas within 10m. Each creature within 4m of each target must make a DC 13 Dexterity saving throw. On a failed save, a creature takes 1d4 piercing damage or half as much on a successful one."
+          "data": "As an Action, target 3 areas within 10m. Each creature within 4m of each target must make a DC 13 Dexterity saving throw. On a failed save, a creature takes 1d4 piercing damage or half as much on a successful one."
         }
       ],
       "id": "multi-frag_grenade",
-      "desc_text_dump": "Target3areaswithin10mEachcreaturewithin4mofeachtargetmustmakeaDC13DexteritysavingthrowOnafailedsaveacreaturetakes1d4piercingdamageorhalfasmuchonasuccessfulone"
+      "desc_text_dump": "AsanActiontarget3areaswithin10mEachcreaturewithin4mofeachtargetmustmakeaDC13DexteritysavingthrowOnafailedsaveacreaturetakes1d4piercingdamageorhalfasmuchonasuccessfulone"
     },
     {
       "name": "Sticky Grenade",
@@ -149,7 +149,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Target an area within 10m. At the beginning of your next turn, creatures within 4m of the target must make a DC 13 Dexterity saving throw. On a failed save, a creature takes 3d6 thunder damage or half as much damage on a successful one."
+          "data": "As an Action, target an area within 10m. At the beginning of your next turn, creatures within 4m of the target must make a DC 13 Dexterity saving throw. On a failed save, a creature takes 3d6 thunder damage or half as much damage on a successful one."
         },
         {
           "id": 2,
@@ -158,7 +158,7 @@
         }
       ],
       "id": "sticky_grenade",
-      "desc_text_dump": "Targetanareawithin10mAtthebeginningofyournextturncreatureswithin4mofthetargetmustmakeaDC13DexteritysavingthrowOnafailedsaveacreaturetakes3d6thunderdamageorhalfasmuchdamageonasuccessfuloneWithastickygrenadeyoumaychoosetomakeameleeweaponattackonatargetcreaturewithin2minsteadorarangedweaponattackonatargetcreaturewithin10minsteadAddyouDexteritymodifiertotheattackDonotaddyourproficiencybonustotheattackunlessyouhavetheGrenadierfeatOnahitthegrenadehitsandstickstothetargetandwhenitexplodesthetargetautomaticallyfailsitssavingthrowOnamissthegrenadelandsinthecreaturessquare"
+      "desc_text_dump": "AsanActiontargetanareawithin10mAtthebeginningofyournextturncreatureswithin4mofthetargetmustmakeaDC13DexteritysavingthrowOnafailedsaveacreaturetakes3d6thunderdamageorhalfasmuchdamageonasuccessfuloneWithastickygrenadeyoumaychoosetomakeameleeweaponattackonatargetcreaturewithin2minsteadorarangedweaponattackonatargetcreaturewithin10minsteadAddyouDexteritymodifiertotheattackDonotaddyourproficiencybonustotheattackunlessyouhavetheGrenadierfeatOnahitthegrenadehitsandstickstothetargetandwhenitexplodesthetargetautomaticallyfailsitssavingthrowOnamissthegrenadelandsinthecreaturessquare"
     },
     {
       "name": "Recon Mine",
@@ -171,7 +171,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Launch a recon mine to a location of your choice within 10m. It first sticks to the target location then scans enemies within a 10m cone, relaying tactical weak points about the enemy's armor and location. After your turn ends, any hostile that walks through the scanning cone loses 1 AC. Each creature can only be affected by this debuff once."
+          "data": "As an Action, launch a recon mine to a location of your choice within 10m. It first sticks to the target location then scans enemies within a 10m cone, relaying tactical weak points about the enemy's armor and location. After your turn ends, any hostile that walks through the scanning cone loses 1 AC. Each creature can only be affected by this debuff once."
         },
         {
           "id": 2,
@@ -195,7 +195,7 @@
         }
       ],
       "id": "recon_mine",
-      "desc_text_dump": "Launchareconminetoalocationofyourchoicewithin10mItfirststickstothetargetlocationthenscansenemieswithina10mconerelayingtacticalweakpointsabouttheenemysarmorandlocationAfteryourturnendsanyhostilethatwalksthroughthescanningconeloses1ACEachcreaturecanonlybeaffectedbythisdebuffonceYoumayspendanotheractiontodetonatethemineEachcreaturewithin2mmustmakeaDC13DexteritysavingthrowOnafailedsaveacreaturetakes2d4thunderdamageorhalfasmuchdamageonasuccessfuloneCreaturesneedtopassaDC10PerceptionchecktonoticethemineTodisarmthemineacreaturemustpassaHackingcheck8IntelligencemodifierFailingthehackingcheckcausestheminetoexplodeThecreaturethatmadethehackingcheckhasdisadvantageonitssavingthrowAsuccessfulrangedattackonthemineAC10willcauseittoexplodeEachcreaturewithin2moftheminetakes2d4thunderdamage"
+      "desc_text_dump": "AsanActionlaunchareconminetoalocationofyourchoicewithin10mItfirststickstothetargetlocationthenscansenemieswithina10mconerelayingtacticalweakpointsabouttheenemysarmorandlocationAfteryourturnendsanyhostilethatwalksthroughthescanningconeloses1ACEachcreaturecanonlybeaffectedbythisdebuffonceYoumayspendanotheractiontodetonatethemineEachcreaturewithin2mmustmakeaDC13DexteritysavingthrowOnafailedsaveacreaturetakes2d4thunderdamageorhalfasmuchdamageonasuccessfuloneCreaturesneedtopassaDC10PerceptionchecktonoticethemineTodisarmthemineacreaturemustpassaHackingcheck8IntelligencemodifierFailingthehackingcheckcausestheminetoexplodeThecreaturethatmadethehackingcheckhasdisadvantageonitssavingthrowAsuccessfulrangedattackonthemineAC10willcauseittoexplodeEachcreaturewithin2moftheminetakes2d4thunderdamage"
     },
     {
       "name": "Proximity Mine",
@@ -208,7 +208,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Place a proximity mine within 2m. The first creature, besides yourself, that comes within 2m of the mine takes 1d8 thunder damage."
+          "data": "As an Action, place a proximity mine within 2m. The first creature, besides yourself, that comes within 2m of the mine takes 1d8 thunder damage."
         },
         {
           "id": 2,
@@ -227,7 +227,7 @@
         }
       ],
       "id": "proximity_mine",
-      "desc_text_dump": "Placeaproximityminewithin2mThefirstcreaturebesidesyourselfthatcomeswithin2moftheminetakes1d8thunderdamageCreaturesneedtopassaDC10PerceptionchecktonoticethemineTodisarmthemineacreaturemustpassaHackingcheck8IntelligencemodifierFailingthehackingcheckcausestheminetoexplodeThecreaturethatmadethehackingcheckhasdisadvantageonitssavingthrowAsuccessfulrangedattackonthemineAC10willcauseittoexplodeEachcreaturewithin2moftheminetakes1d8thunderdamage"
+      "desc_text_dump": "AsanActionplaceaproximityminewithin2mThefirstcreaturebesidesyourselfthatcomeswithin2moftheminetakes1d8thunderdamageCreaturesneedtopassaDC10PerceptionchecktonoticethemineTodisarmthemineacreaturemustpassaHackingcheck8IntelligencemodifierFailingthehackingcheckcausestheminetoexplodeThecreaturethatmadethehackingcheckhasdisadvantageonitssavingthrowAsuccessfulrangedattackonthemineAC10willcauseittoexplodeEachcreaturewithin2moftheminetakes1d8thunderdamage"
     },
     {
       "name": "Cain Trip Mine",
@@ -240,7 +240,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Launch a Cain Trip Mine to a point you can see within 20m. The mine affixes to a solid surface and projects a beam 6m tripwire. When a creature or object passes through the tripwire, the mine explodes. Any creature within a 2m sphere must make a DC 13 Dexterity saving throw. A creature takes 2d12 thunder damage on a failed save or half as much damage on a successful one."
+          "data": "As an Action, launch a Cain Trip Mine to a point you can see within 20m. The mine affixes to a solid surface and projects a beam 6m tripwire. When a creature or object passes through the tripwire, the mine explodes. Any creature within a 2m sphere must make a DC 13 Dexterity saving throw. A creature takes 2d12 thunder damage on a failed save or half as much damage on a successful one."
         },
         {
           "id": 2,
@@ -259,24 +259,24 @@
         }
       ],
       "id": "cain_trip_mine",
-      "desc_text_dump": "LaunchaCainTripMinetoapointyoucanseewithin20mThemineaffixestoasolidsurfaceandprojectsabeam6mtripwireWhenacreatureorobjectpassesthroughthetripwirethemineexplodesAnycreaturewithina2mspheremustmakeaDC13DexteritysavingthrowAcreaturetakes2d12thunderdamageonafailedsaveorhalfasmuchdamageonasuccessfuloneCreaturesneedtopassaDC10PerceptionchecktonoticethemineTodisarmthemineacreaturemustpassaHackingcheck8IntelligencemodifierFailingthehackingcheckcausestheminetoexplodeThecreaturethatmadethehackingcheckhasdisadvantageonitssavingthrowAsuccessfulrangedattackonthemineAC10willcauseittoexplodeEachcreaturewithin2moftheminetakes2d12thunderdamage"
+      "desc_text_dump": "AsanActionlaunchaCainTripMinetoapointyoucanseewithin20mThemineaffixestoasolidsurfaceandprojectsabeam6mtripwireWhenacreatureorobjectpassesthroughthetripwirethemineexplodesAnycreaturewithina2mspheremustmakeaDC13DexteritysavingthrowAcreaturetakes2d12thunderdamageonafailedsaveorhalfasmuchdamageonasuccessfuloneCreaturesneedtopassaDC10PerceptionchecktonoticethemineTodisarmthemineacreaturemustpassaHackingcheck8IntelligencemodifierFailingthehackingcheckcausestheminetoexplodeThecreaturethatmadethehackingcheckhasdisadvantageonitssavingthrowAsuccessfulrangedattackonthemineAC10willcauseittoexplodeEachcreaturewithin2moftheminetakes2d12thunderdamage"
     },
     {
       "name": "Smoke Grenade",
       "damage_amount": null,
       "dd": null,
       "range": "10m",
-      "blast": "2m",
+      "blast": "4m",
       "damage_type": null,
       "desc": [
         {
           "id": 1,
           "type": "line",
-          "data": "Target an area within 10m. A cloud of thick smoke erupts out in a 2m radius from the target location. The cloud's area is heavily obscured. The cloud persists for 30 seconds. A moderate wind (11 to 20 miles per hour) can disperse the smoke after 1 round, and a strong wind (21 or more miles per hour) can do so immediately."
+          "data": "As an Action, target an area within 10m. A cloud of thick smoke erupts out in a 4m radius from the target location. The cloud's area is heavily obscured. The cloud persists for 30 seconds. A moderate wind (11 to 20 miles per hour) can disperse the smoke after 1 round, and a strong wind (21 or more miles per hour) can do so immediately."
         }
       ],
       "id": "smoke_grenade",
-      "desc_text_dump": "Targetanareawithin10mAcloudofthicksmokeeruptsoutina2mradiusfromthetargetlocationThecloudsareaisheavilyobscuredThecloudpersistsfor30secondsAmoderatewind11to20milesperhourcandispersethesmokeafter1roundandastrongwind21ormoremilesperhourcandosoimmediately"
+      "desc_text_dump": "AsanActiontargetanareawithin10mAcloudofthicksmokeeruptsoutina4mradiusfromthetargetlocationThecloudsareaisheavilyobscuredThecloudpersistsfor30secondsAmoderatewind11to20milesperhourcandispersethesmokeafter1roundandastrongwind21ormoremilesperhourcandosoimmediately"
     }
   ]
 }

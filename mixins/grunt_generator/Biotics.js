@@ -2,10 +2,12 @@ export const Biotics = {
   methods: {
     setGruntBiotics (config, grunt) {
       const effectiveCr = this.getEffectiveCr(config, grunt)
+      const chaOrWis = grunt.race.id === 'asari' ? 'cha' : 'wis'
       grunt.spellcasting = {
         level: effectiveCr.spellcastingLevel,
-        dc: 8 + config.cr.profBonus + this.abilityScoreBonus(grunt.abilityScores.wis),
-        hit: config.cr.profBonus + this.abilityScoreBonus(grunt.abilityScores.wis),
+        dc: 8 + config.cr.profBonus + this.abilityScoreBonus(grunt.abilityScores[chaOrWis]),
+        hit: config.cr.profBonus + this.abilityScoreBonus(grunt.abilityScores[chaOrWis]),
+        mod: chaOrWis === 'cha' ? 'Charisma' : 'Wisdom',
         spells: []
       }
       let totalSpells = 0

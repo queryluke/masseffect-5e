@@ -1,13 +1,13 @@
 {
-  "updated": "April 14, 2018 @  4:46 PM",
+  "updated": "May  3, 2018 @  4:00 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRIPzbOBXOdWbaY779un1EV3HyacCV3fe15kHW4ABjMV0yHi3GZHVqnbiOVSQ_Dgh1whimOITGOXHkn/pubhtml",
   "data": [
     {
       "name": "Ablative Coating",
       "piece": "Chest",
       "flavor": "Ablative coating is designed to chip away when impacted, redirecting the energy of incoming projectiles away from the body.",
-      "mechanic": "Gain +2 AC",
-      "cost": "16000",
+      "mechanic": "Resistance to piercing damage.",
+      "cost": "30000",
       "manu": "Alliance",
       "id": "ablative_coating"
     },
@@ -16,7 +16,7 @@
       "piece": "Chest",
       "flavor": "Biofeedback system regulating wearer's adrenaline surges.",
       "mechanic": "When you roll a 1 or 2 on a damage die for an attack you make with a melee weapon, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. ",
-      "cost": "10000",
+      "cost": "40000",
       "manu": "Ariake Technologies",
       "id": "adrenaline_regulator"
     },
@@ -34,25 +34,16 @@
       "piece": "Head",
       "flavor": "An efficiency algorithm to balance processing power for biotic amps. A heads-up display and voice command software allows users to micromanage the systems, reducing the cooldown period between energy expenditures.",
       "mechanic": "On a short rest, gain a number of spell slots equal to half your level (rounded down, minimum 1) by spell slot level. For a lvl 10 Adept, you could gain five 1st-level slots OR two 2nd-level slots & one 1st-level slot OR one 3rd-level slot & one 2nd-level slot, etc.",
-      "cost": "18000",
+      "cost": "24000",
       "manu": "Rosenkov Materials",
       "id": "archon_ai"
-    },
-    {
-      "name": "Armor Plating",
-      "piece": "Chest",
-      "flavor": "Hardened ceramic plates can be applied to body armor suits, increasing their effectiveness.",
-      "mechanic": "Gain +1 AC",
-      "cost": "8000",
-      "manu": "Any",
-      "id": "armor_plating"
     },
     {
       "name": "Asymmetric Defense Layer",
       "piece": "Chest",
       "flavor": "Offering increased protection where it's needed most, Rosenkov Materials' proprietary coating process increases stopping power of standard ceramic armor.",
-      "mechanic": "Gain +2 AC. Gain hp equal to your level.",
-      "cost": "26000",
+      "mechanic": "+2 AC",
+      "cost": "20000",
       "manu": "Rosenkov Materials",
       "id": "asymmetric_defense_layer"
     },
@@ -79,7 +70,7 @@
       "piece": "Arms",
       "flavor": "Micro-capacitors that release energy to speed up shield regeneration.",
       "mechanic": "Increase your shield regen by 5.",
-      "cost": "5000",
+      "cost": "8000",
       "manu": "Kassa Fabrication",
       "id": "auxiliary_shield_emitters"
     },
@@ -88,7 +79,7 @@
       "piece": "Chest",
       "flavor": "Micro-capacitors that release energy to speed up shield regeneration.",
       "mechanic": "Increase your shield regen by 5.",
-      "cost": "5000",
+      "cost": "8000",
       "manu": "Kassa Fabrication",
       "id": "auxiliary_shield_emitters"
     },
@@ -97,7 +88,7 @@
       "piece": "Legs",
       "flavor": "Micro-capacitors that release energy to speed up shield regeneration.",
       "mechanic": "Increase your shield regen by 5.",
-      "cost": "5000",
+      "cost": "8000",
       "manu": "Kassa Fabrication",
       "id": "auxiliary_shield_emitters"
     },
@@ -114,8 +105,8 @@
       "name": "Barrier",
       "piece": "Chest",
       "flavor": "Eezo oscillator provides a biotic-like barrier.",
-      "mechanic": "The armor contains a mass effect barrier with 5 barrier ticks. You cannot use these additional barrier ticks for biotic spells, they are only for damage reduction. The barrier ticks recharge after a long rest.",
-      "cost": "16000",
+      "mechanic": "The armor contains a mass effect barrier with 3 barrier ticks. You cannot use these additional barrier ticks for biotic spells, they are only for damage reduction. The barrier ticks recharge after a short rest.",
+      "cost": "24000",
       "manu": "Armali Council",
       "id": "barrier"
     },
@@ -150,7 +141,7 @@
       "name": "Ceramic Weave",
       "piece": "Chest",
       "flavor": "Elite personal protection equipment includes a series of interlocking ceramic plates covered in a proprietary tungsten alloy weave for maximum stopping power.",
-      "mechanic": "Increase your hit points by half your level, minimum 1.",
+      "mechanic": "+1 AC",
       "cost": "5000",
       "manu": "Kassa Fabrication",
       "id": "ceramic_weave"
@@ -186,8 +177,8 @@
       "name": "Energized Plating",
       "piece": "Chest",
       "flavor": "A prototype upgrade designed specifically for heavy combat use, it provides maximum protection for the user",
-      "mechanic": "Gain +3 AC",
-      "cost": "24000",
+      "mechanic": "+3 AC",
+      "cost": "30000",
       "manu": "Cerberus Skunkworks",
       "id": "energized_plating"
     },
@@ -196,7 +187,7 @@
       "piece": "Chest",
       "flavor": "Temperature controls use liquid nitrogen and plasma to keep your suit at a constant temperature.",
       "mechanic": "Resistance to fire and cold damage.",
-      "cost": "15000",
+      "cost": "30000",
       "manu": "Devlon Industries",
       "id": "environmental_regulators"
     },
@@ -204,8 +195,8 @@
       "name": "Focus Modulator",
       "piece": "Head",
       "flavor": "Your headwear filters out distracting movement and sounds from sources other than your target.",
-      "mechanic": "You gain a +2 bonus to ranged weapon, biotic, and tech attack rolls.",
-      "cost": "8000",
+      "mechanic": "As a bonus action, you choose a creature you can see within 30m. For the next minute, you deal an extra 1d6 damage to the target whenever you hit it with a weapon attack, and you have advantage on any Wisdom (Perception) or Wisdom (Survival) check you make to find it. You can use this feature 3 times per long rest.",
+      "cost": "40000",
       "manu": "Ariake Technologies",
       "id": "focus_modulator"
     },
@@ -214,7 +205,7 @@
       "piece": "Chest",
       "flavor": "A complex filament network of element zero microcores combined with advanced firewall technology provides protection against both biotic and tech attacks.",
       "mechanic": "Resistance to cold, fire, force, lightning, and necrotic damage types.",
-      "cost": "60000",
+      "cost": "75000",
       "manu": "Elanus Risk Control Services",
       "id": "hardened_weave"
     },
@@ -248,9 +239,9 @@
     {
       "name": "Life Support Webbing",
       "piece": "Legs",
-      "flavor": "A net of micro-stimulants and medi-gel in order to increase the chances of survival for aid workers and military personnel working in a hostile environment.",
-      "mechanic": "Increase your hit points by half your level, minimum 1.",
-      "cost": "5000",
+      "flavor": "A net of micro-stimulants and medi-gel in order to increase the chances of survival for aid workers and military personnel working in hostile environments.",
+      "mechanic": "Increases your maximum exhaustion by 1 level. At the first level, you suffer no negative effects.",
+      "cost": "15000",
       "manu": "Sirta Foundation",
       "id": "life_support_webbing"
     },
@@ -259,25 +250,25 @@
       "piece": "Legs",
       "flavor": "Powerful magnets keep you grounded.",
       "mechanic": "If you are standing on a metal surface, you are immune to being lifted. Otherwise, if you would make a saving throw against being lifted, you have advantage.",
-      "cost": "20000",
+      "cost": "25000",
       "manu": "Any",
       "id": "mag_latches"
     },
     {
       "name": "Microservos",
-      "piece": "Arms",
+      "piece": "Legs",
       "flavor": "Microservos coordinate your melee strikes.",
-      "mechanic": "Gain a +2 bonus to melee attack and damage rolls",
-      "cost": "20000",
+      "mechanic": "+1 bonus to melee attack and damage rolls",
+      "cost": "12000",
       "manu": "Ariake Technologies",
       "id": "microservos"
     },
     {
       "name": "Microservos",
-      "piece": "Legs",
+      "piece": "Arms",
       "flavor": "Microservos coordinate your melee strikes.",
-      "mechanic": "Gain a +2 bonus to melee attack and damage rolls",
-      "cost": "20000",
+      "mechanic": "+2 bonus to melee attack and damage rolls",
+      "cost": "24000",
       "manu": "Ariake Technologies",
       "id": "microservos"
     },
@@ -303,27 +294,27 @@
       "name": "Personal Disruptor Torpedoes",
       "piece": "Arms",
       "flavor": "A \"micro gravitic\" personal weapon that effectively fires small disruptor torpedoes.",
-      "mechanic": "Choose a target location within 30m. Creatures within a 4m sphere of the target must make a dexterity saving throw. On a failed save, a creature takes 4d12 force damage, or have as much damage on a successful one. You must finish a short rest, allowing the weapon to recharge before using it again.",
+      "mechanic": "Choose a target location within 30m. Creatures within a 4m sphere of the target must make a dexterity saving throw. On a failed save, a creature takes 3d12 force damage, or have as much damage on a successful one. You must finish a short rest, allowing the weapon to recharge before using it again.",
       "cost": "25000",
       "manu": "Jormungand Technology",
       "id": "personal_disruptor_torpedoes"
     },
     {
       "name": "Recharge Capacitor",
-      "piece": "Head",
+      "piece": "Chest",
       "flavor": "Micro wells store part of the energy directed at the armor and use it to jump start the kinetic barrier recharge cycle.",
-      "mechanic": "Once per short rest, as a free action, you may jumpstart your shield regen and immediately gain shield points equal to your regen amount.",
+      "mechanic": "Once per short rest, as a reaction to taking damage, you may jumpstart your shield regen and immediately gain shield points equal to your regen amount.",
       "cost": "15000",
-      "manu": "Alliance",
+      "manu": "Armax Arsenal",
       "id": "recharge_capacitor"
     },
     {
       "name": "Recharge Capacitor",
-      "piece": "Chest",
+      "piece": "Head",
       "flavor": "Micro wells store part of the energy directed at the armor and use it to jump start the kinetic barrier recharge cycle.",
-      "mechanic": "Once per short rest, as a free action, you may jumpstart your shield regen and immediately gain shield points equal to your regen amount.",
+      "mechanic": "Once per short rest, as a reaction to taking damage, you may jumpstart your shield regen and immediately gain shield points equal to your regen amount.",
       "cost": "15000",
-      "manu": "Armax Arsenal",
+      "manu": "Alliance",
       "id": "recharge_capacitor"
     },
     {
@@ -331,7 +322,7 @@
       "piece": "Chest",
       "flavor": "This AI monitors your vitals and attempts to stabilize you if become incapacitated.",
       "mechanic": "If you fall below 0 hit points you immediately become stabilized. If you have any medi-gel left, you may expend one to gain hit points.",
-      "cost": "60000",
+      "cost": "50000",
       "manu": "Sirta Foundation",
       "id": "revive_ai"
     },
@@ -339,8 +330,8 @@
       "name": "Savant Biotic Amp",
       "piece": "Head",
       "flavor": "One of the most powerful biotic amps on the market. Serrice Council amps are incredibly rare—and highly prized—items on the galactic market.",
-      "mechanic": "When you would roll dice for a biotic spell damage or effect, add an additional die to the roll. ",
-      "cost": "20000",
+      "mechanic": "When you roll a 1 or 2 on a damage die for an attack you make with a biotic spell, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. ",
+      "cost": "40000",
       "manu": "Serrice Council",
       "id": "savant_biotic_amp"
     },
@@ -348,7 +339,7 @@
       "name": "Sentry System",
       "piece": "Head",
       "flavor": "A software application that optimizes an armor suit's microframe computer. When the Sentry system is running, more power can be devoted to shield management.",
-      "mechanic": "Increase your shield points by 10.",
+      "mechanic": "Increase your shield points by 5.",
       "cost": "10000",
       "manu": "Alliance",
       "id": "sentry_system"
@@ -357,7 +348,7 @@
       "name": "Shield Battery",
       "piece": "Chest",
       "flavor": "An increased shield battery for your kinetic barrier.",
-      "mechanic": "Increase your shield points by 10.",
+      "mechanic": "Increase your shield points by 5.",
       "cost": "10000",
       "manu": "Any",
       "id": "shield_battery"
@@ -366,7 +357,7 @@
       "name": "Shield Capacity",
       "piece": "Arms",
       "flavor": "Micro-harmonic oscillators to reduce stress on the kinetic barriers ensuring suit integrity when faced with incoming projectiles.",
-      "mechanic": "Increase your shield points by 10.",
+      "mechanic": "Increase your shield points by 5.",
       "cost": "10000",
       "manu": "Armax Arsenal",
       "id": "shield_capacity"
@@ -375,7 +366,7 @@
       "name": "Shield Interface",
       "piece": "Chest",
       "flavor": "Advanced VI systems monitor incoming enemy fire to redirect energy to vulnerable points, maximizing the effectiveness of a suit's kinetic barrier shields.",
-      "mechanic": "Increase your shield points by 30.",
+      "mechanic": "Increase your shield points by 15.",
       "cost": "30000",
       "manu": "Alliance",
       "id": "shield_interface"
@@ -384,7 +375,7 @@
       "name": "Shield Modulator",
       "piece": "Chest",
       "flavor": "A series of ultra-efficient storage cells augment the existing power in the operation of the wearer's kinetic barrier.",
-      "mechanic": "Increase your shield points by 20.",
+      "mechanic": "Increase your shield points by 10.",
       "cost": "20000",
       "manu": "Armax Arsenal",
       "id": "shield_modulator"
@@ -393,7 +384,7 @@
       "name": "Shock absorbers",
       "piece": "Legs",
       "flavor": "Made for explosive mining on asteroids, these shock absorbers distribute energy from powerful blasts, reducing damage to the wearer.",
-      "mechanic": "Resistance to thunder",
+      "mechanic": "Resistance to thunder.",
       "cost": "15000",
       "manu": "Devlon Industries",
       "id": "shock_absorbers"
@@ -408,11 +399,20 @@
       "id": "stimulator_conduits"
     },
     {
+      "name": "Teflon Coating",
+      "piece": "Chest",
+      "flavor": "A spray of teflon that reflects mutliple types of radiation.",
+      "mechanic": "Resistance to radiant damage.",
+      "cost": "15000",
+      "manu": "Devlon Industries",
+      "id": "teflon_coating"
+    },
+    {
       "name": "Thermal Armor",
       "piece": "Chest",
       "flavor": "Heat regulators keep your armor warm in the coldest environments.",
       "mechanic": "You are immune to being frozen.",
-      "cost": "20000",
+      "cost": "25000",
       "manu": "Devlon Industries",
       "id": "thermal_armor"
     },
@@ -429,37 +429,19 @@
       "name": "Umbra AI",
       "piece": "Head",
       "flavor": "By detecting the focal point of the wearer's eyes and enhancing the image at that location, the visor helps direct a biotic power or a shot from an omni-tool exactly where the wearer is looking.",
-      "mechanic": "When you roll a 1 or 2 on a damage die for an attack you make with a biotic spell or tech power, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. ",
-      "cost": "16000",
+      "mechanic": "When you roll a 1 or 2 on a damage die for an attack you make with a tech power, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. ",
+      "cost": "40000",
       "manu": "Alliance",
       "id": "umbra_ai"
-    },
-    {
-      "name": "VI Aiming",
-      "piece": "Head",
-      "flavor": "A built-in VI aim enhancement targets enemies' vulnerabilities.",
-      "mechanic": "You gain a +2 bonus to ranged weapon attack and damage rolls",
-      "cost": "24000",
-      "manu": "Armax Arsenal",
-      "id": "vi_aiming"
     },
     {
       "name": "Voice Modulator",
       "piece": "Head",
       "flavor": "Includes an advanced audio processing package that allows unprecedented clarity and resonance for spoken communication.",
-      "mechanic": "Gain +2 to Persuasion and Intimidation checks",
+      "mechanic": "+2 to Persuasion and Intimidation checks",
       "cost": "2000",
       "manu": "Tyriel Advanced Communications Corporation",
       "id": "voice_modulator"
-    },
-    {
-      "name": "Weapon Stabilizers",
-      "piece": "Arms",
-      "flavor": "Incorporate micro-gyros linked with your hard suit's internal targeting aids.",
-      "mechanic": "You gain a +1 bonus to ranged weapon attack and damage rolls",
-      "cost": "12000",
-      "manu": "Aldrin Labs",
-      "id": "weapon_stabilizers"
     }
   ]
 }

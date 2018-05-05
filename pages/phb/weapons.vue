@@ -1,17 +1,26 @@
 <template lang="pug">
   v-container
-    v-layout(row wrap)
-      v-flex(xs12 sm6)
-        h2.display-3 Weapons
-      v-flex(xs12 sm6)
-        v-text-field(
-          append-icon="search"
-          label="Search"
-          single-line
-          hide-details
-          v-model="search"
-          autofocus
-        )
+    h2.display-3 Weapons
+    v-container(grid-list-xl)
+      v-layout(row wrap)
+        v-flex(xs12 sm6 d-flex)
+          v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
+        v-flex(xs12 sm6)
+          p.title Filter by Rarity
+          v-layout(row wrap)
+            v-flex.xs6.sm3
+              v-checkbox(label="Common" v-model="rarityFilter" value="Common" color="grey")
+            v-flex.xs6.sm3
+              v-checkbox(label="Uncommon" v-model="rarityFilter" value="Uncommon" color="green accent-4")
+            v-flex.xs6.sm3
+              v-checkbox(label="Rare" v-model="rarityFilter" value="Rare" color="orange accent-4")
+            v-flex.xs6.sm3
+              v-checkbox(label="Very Rare" v-model="rarityFilter" value="Very Rare" color="deep-purple accent-4")
+        v-flex(xs12)
+          p.title Filter by Type
+          v-layout(row v-bind:class="{'wrap': isMobile}")
+            v-flex(v-for="type in weaponTypes" v-bind:key="type").xs6.sm4.md2
+              v-checkbox(v-bind:label="type" v-model="typeFilter" v-bind:value="type")
     div.expansion-panel__sortable.primary.my-3
       v-layout.px-4
         v-flex(v-for="header in headers" v-bind:key="header.key" v-bind:class="header.classes")
@@ -38,6 +47,11 @@
       PageFooter,
       WeaponList
     },
+    beforeDestroy () {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', this.onResize, { passive: true })
+      }
+    },
     computed: {
       ...mapGetters(['getData']),
       filtered () {
@@ -53,9 +67,9 @@
                 a = a[sortKey]
                 b = b[sortKey]
                 break
-              case 'rof':
-                a = self.averageFromDie(`${a.rof}d${a.damage}`)
-                b = self.averageFromDie(`${b.rof}d${b.damage}`)
+              case 'damage':
+                a = self.averageFromDie(a.damage)
+                b = self.averageFromDie(b.damage)
                 break
               default:
                 a = a[sortKey] ? parseInt(a[sortKey].replace(/\D/, ''), 10) : 0
@@ -72,6 +86,12 @@
             return nameMatch || typeMatch || noteMatch
           })
         }
+        if (this.rarityFilter.length > 0) {
+          data = data.filter(weapon => this.rarityFilter.includes(weapon.rarity))
+        }
+        if (this.typeFilter.length > 0) {
+          data = data.filter(weapon => this.typeFilter.includes(weapon.type))
+        }
         return data
       }
     },
@@ -80,20 +100,24 @@
     },
     data () {
       return {
+        isMobile: false,
         items: [],
         listName: 'weapons',
         search: '',
         sortKey: 'name',
         sortOrder: 1,
+        typeFilter: [],
+        rarityFilter: [],
         headers: [
           { key: 'type', display: '', classes: 'xs4 sm3 lg1', sortable: false },
           { key: 'name', display: 'Name', classes: 'xs8 sm9 lg3', sortable: true },
-          { key: 'rof', display: 'RoF/Dmg', classes: 'hidden-md-and-down lg2', sortable: true },
+          { key: 'rof', display: 'Damage', classes: 'hidden-md-and-down lg2', sortable: true },
           { key: 'heat', display: 'Heat', classes: 'hidden-md-and-down lg2', sortable: true },
           { key: 'range', display: 'Range', classes: 'hidden-md-and-down lg2', sortable: true },
           { key: 'weight', display: 'Weight', classes: 'hidden-md-and-down lg2', sortable: true },
           { key: 'cost', display: 'Cost', classes: 'hidden-md-and-down lg2', sortable: true }
-        ]
+        ],
+        weaponTypes: ['Assault Rifle', 'Heavy Pistol', 'Heavy Weapon', 'Melee', 'Shotgun', 'SMG', 'Sniper Rifle']
       }
     },
     head () {
@@ -113,8 +137,15 @@
           this.sortKey = key
           this.sortOrder = 1
         }
+      },
+      onResize () {
+        this.isMobile = window.innerWidth < 600
       }
     },
-    mixins: [AverageFromDie]
+    mixins: [AverageFromDie],
+    mounted () {
+      this.onResize()
+      window.addEventListener('resize', this.onResize, { passive: true })
+    }
   }
 </script>

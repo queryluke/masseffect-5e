@@ -1,5 +1,5 @@
 {
-  "updated": "April 13, 2018 @ 11:50 PM",
+  "updated": "April 28, 2018 @  1:37 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQI4F-wI2gwN395GApB347yPb1PixjOtOqZ0qoBYw7d57MPETHS40ZjIy1-DIfZf06PUwrspMiuAMlk/pubhtml",
   "data": [
     {
@@ -80,7 +80,7 @@
       "alignment": "Your standard Geth platform is neutral good, wanting to prosper and communicate with others, defending themselves only if threatened. Heretics are lawful evil, serving the Reapers and slavishly accomplishing their will.",
       "available_classes": "Engineer, Infiltrator, Soldier",
       "sexy_level": "6",
-      "increases": "+2 Intelligence, +1 Constitution",
+      "increases": "+2 Intelligence, +1 Strength",
       "size": "Medium",
       "speed": "10m",
       "snippet": "The geth (\"Servant of the People\" in Khelish) are a race of networked artificial intelligences that reside beyond the Perseus Veil.",
@@ -116,7 +116,7 @@
       "alignment": "The proximity and longstanding traditions of the Migrant Fleet make Quarians very lawful as a race, occasionally drifting toward neutral. Morality can vary but tends towards neutral or good.",
       "available_classes": "Engineer, Infiltrator, Soldier",
       "sexy_level": "8",
-      "increases": "+1 Intelligence, +1 Charisma, +1 Wisdom",
+      "increases": "+2 Intelligence, +1 Constitution",
       "size": "Medium",
       "speed": "10m",
       "snippet": "The quarians are a nomadic species of humanoid aliens known for their skills with technology and synthetic intelligence.",
@@ -170,7 +170,7 @@
       "alignment": "Their society tends towards lawful as a whole, with clans fighting over economic resources and aggressive negotiating, even if they are individually chaotic individuals. They tend towards neutral morality.",
       "available_classes": "Adept, Engineer, Sentinel, Vanguard",
       "sexy_level": "3",
-      "increases": "+2 Wisdom, +1 Strength",
+      "increases": "+2 Wisdom, +1 Intelligence",
       "size": "Small",
       "speed": "8m",
       "snippet": "The volus hail from Irune, which possesses a high-pressure greenhouse atmosphere able to support an ammonia-based biochemistry. As a result, the volus must wear pressure suits and breathers when dealing with other species.",

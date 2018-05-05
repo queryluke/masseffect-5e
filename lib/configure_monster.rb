@@ -30,7 +30,7 @@ def configure_monster(model)
       regen: model['regen']
   } unless model['shields'].nil?
   unless model['spellcasting'].nil?
-    wisMod = ((model['wis'].to_i - 10) / 2).floor
+    scMod = ((model[model['spellcastingMod']].to_i - 10) / 2).floor
     if model['spellcasting'] == 'innate'
       spells = model['spells'].split(',').collect do |x|
         parts = x.split('-')
@@ -54,8 +54,9 @@ def configure_monster(model)
 
     monster[:spellcasting] = {
         level: model['spellcasting'],
-        dc: 8 + model['profBonus'].to_i + wisMod,
-        hit: model['profBonus'].to_i + wisMod,
+        dc: 8 + model['profBonus'].to_i + scMod,
+        hit: model['profBonus'].to_i + scMod,
+        mod: model['spellcastingMod'] == 'cha' ? 'Charisma' : 'Wisdom',
         spellList: model['spells'].to_s.split(',').collect{ |x| x.strip },
         spells: spells
     }
@@ -63,12 +64,13 @@ def configure_monster(model)
 
   unless model['techcasting'].nil?
     intMod = ((model['int'].to_i - 10) / 2).floor
-    monster['techcasting'] = {
+    monster[:techcasting] = {
+        level: model['techcasting'],
         perDay: model['techPerDay'],
         tpSpent: model['techMax'],
         dc: 8 + model['profBonus'].to_i + intMod,
         hit: model['profBonus'].to_i + intMod,
-        spells: model.techPowers.split(',')
+        spells: model['techPowers'].split(',')
     }
   end
   monster[:actions] << {

@@ -1,5 +1,5 @@
 {
-  "updated": "April 14, 2018 @  9:04 PM",
+  "updated": "April 25, 2018 @  8:06 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -129,7 +129,7 @@
         },
         {
           "key": "barrier_ticks",
-          "value": "4"
+          "value": "3"
         },
         {
           "key": "cantrips",
@@ -270,7 +270,7 @@
         },
         {
           "key": "barrier_ticks",
-          "value": "5"
+          "value": "4"
         },
         {
           "key": "cantrips",
@@ -614,7 +614,7 @@
         },
         {
           "key": "barrier_ticks",
-          "value": "6"
+          "value": "7"
         },
         {
           "key": "cantrips",

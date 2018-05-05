@@ -40,7 +40,7 @@
     components: { RuleCard, FurtherReading },
     data () {
       return {
-        furtherReading: ['reloading', 'thermal-clips-variant', 'heavy-weapon-charges']
+        furtherReading: ['reloading', 'thermal-clips', 'heavy-weapon-charges']
       }
     },
     methods: {

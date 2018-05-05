@@ -38,8 +38,11 @@
                   dl
                     dt #[nuxt-link(to="/phb/rules/general") General]
                     dd.
-                      This section gives you an overview of the global rule changes. They might be minor, such as calling the Dungeon Master the Galaxy Master.
-                      But it also includes new additions to the rules like Shields and Reloading.
+                      This section gives you an overview of the general rule changes. You might also consider this the miscellaneous category.
+                    dt #[nuxt-link(to="/phb/rules/combat") Combat]
+                    dd.
+                      This section gives you an overview of the changes in combat, which are mostly additions.
+                      It information about Shields, Primers and Detonators, and Barriers.
                     dt #[nuxt-link(to="/phb/rules/spellcasting") Spellcasting]
                     dd.
                       A major feature of D&D are the spells. Since there isn't 'magic' in Mass Effect, our spell list is limited to
@@ -125,7 +128,7 @@
             p.mb-0.
               In addition to being your Player's Handbook, this website also has some helpful tools. We hope to add more tools in the near future!
             dl
-              dt #[nuxt-link(to="/tools/grunts/") NPC Generator]
+              dt #[nuxt-link(to="/for-gms/grunts/") NPC Generator]
               dd.
                 If there aren't enough options in the bestiary, or you just want to spin up some random NPCs, the Grunt Generator can quickly
                 create NPCs from CR 1/8 to CR 12. All weapons, powers, and traits are randomly generated, but damage output and health are kept within

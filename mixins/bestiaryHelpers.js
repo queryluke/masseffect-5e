@@ -1,3 +1,5 @@
+import {AverageFromDie} from './averageFromDie'
+
 export const BestiaryHelpers = {
   methods: {
     generateGrenadeAttack (grenade) {
@@ -34,7 +36,7 @@ export const BestiaryHelpers = {
       if (weapon.type === 'Melee' && bruteMod) {
         weapon.rof += 1
       }
-      weapon.attack.dpr = parseInt(weapon.rof, 10) * ((parseInt(weapon.damage, 10) + 1) / 2)
+      weapon.attack.damage = this.averageFromDie(weapon.damage)
       weapon.attack.extraDmg = weapon.addDmg ? parseInt(weapon.addDmg, 10) : 0
       // add str or dex to melee dpr
       if (weapon.type === 'Melee') {
@@ -52,7 +54,7 @@ export const BestiaryHelpers = {
       }
       return weapon
     },
-    generateWeaponAttack (profBonus, weapon, boost = 0) {
+    generateWeaponAttack (profBonus, weapon) {
       profBonus = parseInt(profBonus, 10)
       // Heavy weapons
       if (weapon.type === 'Heavy Weapon') {
@@ -68,25 +70,25 @@ export const BestiaryHelpers = {
         return {
           type: 'common',
           name: weapon.name,
-          description: `Target a creature within  ${weapon.range}. It makes a DC ${8 + weapon.bonus + profBonus} Dexterity saving throw, taking ${weapon.dpr} (${weapon.rof}d${weapon.damage}) thunder damage on a failed save, or have as much damage on a successful one.`
+          description: `Target a creature within  ${weapon.range}. It makes a DC ${8 + weapon.bonus + profBonus} Dexterity saving throw, taking ${weapon.dpr} (${weapon.damage}) thunder damage on a failed save, or have as much damage on a successful one.`
         }
       }
       if (weapon.id === 'venom_shotgun') {
         return {
           type: 'common',
           name: weapon.name,
-          description: `Target a creature within  ${weapon.range}. It makes a DC 13 Dexterity saving throw, taking ${weapon.dpr} (${weapon.rof}d${weapon.damage}) thunder damage on a failed save, or have as much damage on a successful one.`
+          description: `Target a creature within  ${weapon.range}. It makes a DC 13 Dexterity saving throw, taking ${weapon.dpr} (${weapon.damage}) thunder damage on a failed save, or have as much damage on a successful one.`
         }
       }
 
       let bonusText = ''
       if (weapon.attack.bonus > 0) {
-        bonusText = ` + ${weapon.attack.bonus + boost}`
+        bonusText = ` + ${weapon.attack.bonus}`
       } else if (weapon.attack.bonus < 0) {
         bonusText = ` - ${weapon.attack.bonus * -1}`
       }
       const reachOrRange = weapon.type === 'Melee' ? 'reach' : 'range'
-      const rangeString = weapon.type === 'Melee' || weapon.type === 'Heavy Weapon' ? `${weapon.range}m` : `(${weapon.range}m / ${weapon.longRange}m)`
+      const rangeString = weapon.type === 'Melee' || weapon.type === 'Heavy Weapon' ? `${weapon.range}m` : `(${weapon.range}m/${Number.parseInt(weapon.range, 10) * 3}m)`
       const hipFire = /hip/gi.test(weapon.tags) ? ' & hip fire' : ''
       const target = weapon.id === 'n7_piranha' ? 'all creatures in 4m cone' : 'one target'
       const additionalHitMechanics = weapon.npcHit ? `, and ${weapon.npcHit}` : '.'
@@ -94,7 +96,7 @@ export const BestiaryHelpers = {
 
       const description = {
         attack: `${toHit} to hit, ${reachOrRange} ${rangeString}${hipFire}, ${target}.`,
-        hit: `${Math.floor(weapon.attack.dpr + weapon.attack.bonus + boost)} (${weapon.rof}d${weapon.damage}${bonusText}) ${weapon.dmgType} damage${additionalHitMechanics}`,
+        hit: `${Math.floor(weapon.attack.damage + weapon.attack.bonus)} (${weapon.damage}${bonusText}) ${weapon.dmgType} damage${additionalHitMechanics}`,
         miss: null
       }
 
@@ -110,5 +112,6 @@ export const BestiaryHelpers = {
         description
       }
     }
-  }
+  },
+  mixins: [AverageFromDie]
 }
