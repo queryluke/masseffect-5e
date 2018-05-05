@@ -4,11 +4,10 @@
     template(slot="text")
       p.
         Since this is the future and there isn't really "magic", some damage types need to be re-conceptualized. If the damage type is not listed, its concept is unchanged.
-      v-list(two-line)
+      dl
         template(v-for="dmg in damage_types")
-          v-list-tile-content
-            v-list-tile-title {{ dmg.type }}
-            v-list-tile-sub-title {{ dmg.note }}
+          dt {{ dmg.type }}
+          dd {{ dmg.note }}
 </template>
 
 <script>

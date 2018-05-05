@@ -38,8 +38,11 @@
                   dl
                     dt #[nuxt-link(to="/phb/rules/general") General]
                     dd.
-                      This section gives you an overview of the global rule changes. They might be minor, such as calling the Dungeon Master the Galaxy Master.
-                      But it also includes new additions to the rules like Shields and Reloading.
+                      This section gives you an overview of the general rule changes. You might also consider this the miscellaneous category.
+                    dt #[nuxt-link(to="/phb/rules/combat") Combat]
+                    dd.
+                      This section gives you an overview of the changes in combat, which are mostly additions.
+                      It information about Shields, Primers and Detonators, and Barriers.
                     dt #[nuxt-link(to="/phb/rules/spellcasting") Spellcasting]
                     dd.
                       A major feature of D&D are the spells. Since there isn't 'magic' in Mass Effect, our spell list is limited to
