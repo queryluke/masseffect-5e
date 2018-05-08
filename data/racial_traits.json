@@ -1,5 +1,5 @@
 {
-  "updated": "May  5, 2018 @  8:32 AM",
+  "updated": "May  8, 2018 @ 12:01 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRETKGL62kEZPA69PhA3AGMiVeHOWBRkTMDL3f_K-oajryEjwdq7fRAj-qfIusPsLMiIqmB12D4Zun8/pubhtml",
   "data": [
     {
@@ -666,7 +666,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You can recall with near-perfect clarity anything you ever seen or read. Choose one of the following skills, you have expertise in it (add double your proficiency bonus): Engineering, Hacking, History, Medicine, Nature, or Piloting."
+          "data": "You can recall with near-perfect clarity anything you ever seen or read. Choose one of the following skills, you have expertise in it (add double your proficiency bonus): Engineering, Electronics, History, Medicine, or Science."
         }
       ],
       "asari": null,
@@ -682,7 +682,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "id": "photographic_memory",
-      "description_text_dump": "YoucanrecallwithnearperfectclarityanythingyoueverseenorreadChooseoneofthefollowingskillsyouhaveexpertiseinitadddoubleyourproficiencybonusEngineeringHackingHistoryMedicineNatureorPiloting"
+      "description_text_dump": "YoucanrecallwithnearperfectclarityanythingyoueverseenorreadChooseoneofthefollowingskillsyouhaveexpertiseinitadddoubleyourproficiencybonusEngineeringElectronicsHistoryMedicineorScience"
     },
     {
       "name": "Powerful Build",
