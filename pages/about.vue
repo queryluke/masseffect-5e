@@ -28,7 +28,7 @@
                       Luke is a web developer, librarian, and mediocre DM, who decided one day (after only 2 years to TRPG experience) that he wanted
                       to play Mass Effect while rolling dice. He fell in love with the Mass Effect Universe after playing Mass Effect 2 (noob!). But he's since
                       amassed a number of playthroughs for all the games. He's also spent WAY too much time playing ME3 Multiplayer. By
-                      day, Luke is a Digital Technologies Developement Librarian at NC State University. By night, he wrangles 3 dogs, DMs, codes, watches
+                      day, Luke is a Digital Technologies Development Librarian at NC State University. By night, he wrangles 3 dogs, DMs, codes, watches
                       baseball, and practices Si Lum Kung-Fu.
               v-flex(xs12 md6 d-flex)
                 v-card.elevation-0.transparent
@@ -39,13 +39,13 @@
                     v-flex.pb-0
                       div.headline Hugh Thompson
                     v-flex.pt-1
-                      div Editor-in-Chief
+                      div Editor
                   v-card-text.pt-0
                     p.
-                      Hugh is a TRPG afficianado and DM/GM wizard. But, more importantly, Hugh has as much love for Mass Effect
+                      Hugh is a TRPG enthusiast, both as a GM and a player. But, more importantly, Hugh has as much love for Mass Effect
                       as anyone. With a keen eye for detail, Hugh takes a lot of the random crap Luke comes up with, strips away the
                       verbiage and creates actionable rules and changes. By day, Hugh is the Director of Technology Solutions and Web Development
-                      at Rock, Paper, Scissors. By night, he DMs, Dads, and spends endless hours on his Nintendo Switch.
+                      at Rock, Paper, Scissors. He's also a dad and a hard-style strength training enthusiast.
     section
       v-layout(row wrap justify-center)
         v-flex(xs12 sm8).my-3
@@ -68,15 +68,15 @@
           v-card.elevation-0.transparent
             v-alert(type="info" v-bind:value="true" outline).
               If, we've missed anyone it was merely an oversight on our part and not intentional.
-              Feel free to contact us and we'll be happy to give you a shout out. Or if you're on the list and want to be
-              removed, have your name changed, or update your picture. Contact us as well.
+              Feel free to contact us and we'll be happy to give you a shout out. If you're on the list and want to be
+              removed, have your name changed, or update your picture, contact us as well.
     section
       v-layout(column wrap align-center).my-5
         v-flex(xs12 sm8).my-3
           div.text-xs-center
             h2.headline Getting Involved
             p.
-              We welcome feedback, criticism, questions! Whether you're a playtester with a mile-long list of class balance
+              We welcome feedback, criticism, and questions! Whether you're a playtester with a mile-long list of class balance
               issues or simply a passer-by with a fun idea, please let us know.
         v-flex(xs12)
           v-container(grid-list-xl)
@@ -94,8 +94,7 @@
                   v-card-text.pt-0
                     p.
                       Our feedback form can be used for pretty much anything: questions, ideas, clarifications, etc.
-                      It also gives you the option to leave feedback anonymously (but we won't be able to respond). Additionally, we only check the form a few times
-                      a week, so it might be a few days before we get back to you.
+                      It also gives you the option to leave feedback anonymously (but we won't be able to respond). Additionally, we only check the form a few times a week, so it might be a few days before we get back to you.
               v-flex(xs12 md4 d-flex)
                 v-card.elevation-0.transparent
                   v-card-text.text-xs-center
@@ -108,7 +107,7 @@
                       div Normal
                   v-card-text.pt-0
                     p.
-                      Alternatively, you can email us directly. We'll be a bit more responsive and can have an ongoing thread of discussion.
+                      You can also email us directly. We'll be a bit more responsive and can have an ongoing thread of discussion.
               v-flex(xs12 md4 d-flex)
                 v-card.elevation-0.transparent
                   v-card-text.text-xs-center
@@ -176,9 +175,9 @@
           {
             name: 'Alex Needleman',
             image: '/images/spells/tech.svg',
-            desc: 'Alex is a thorough and detail oriented play tester who has pointed out many anomalies and problematic' +
-            ' features. He\'s also been working on a set of VTT maps that we hope to feature on the site soon. He has also had a heavy' +
-            ' hand in the creation of weapon mods.'
+            desc: 'Alex is a thorough and detail-oriented play tester who has pointed out many anomalies and problematic' +
+            ' features. He\'s also been working on a set of VTT maps that we hope to feature on the site soon. He has also been heavily' +
+            ' involved in the creation of weapon mods.'
           },
           {
             name: 'Adam, a.k.a. TheMarmotKing',
