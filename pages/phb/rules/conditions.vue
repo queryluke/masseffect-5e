@@ -4,8 +4,8 @@
       v-flex.xs12
         h2.display-3 Conditions
       v-flex.xs12
-        p.headline New
-        p Frozen, Lifted, Primed, Targeting, Unprotected
+        p All of the conditions which can affect a character or object are listed below. Note that there are a few new conditons in this system in order to maintain consistency with the Mass Effect setting:
+        p #[b New Conditons]: Frozen, Lifted, Primed, Targeting, Unprotected
     div.mt-3
       v-data-table(v-bind:headers="headers" v-bind:items="items" hide-actions).elevation-1
         template(slot="items" slot-scope="props")

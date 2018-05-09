@@ -2,9 +2,8 @@
   v-container
     h2.display-3 Feats
     p.
-      Feats are part of the official D&D PHB. Due to copyright reasons, I can only note any changes or new feats
-      available in this system. Hence, if a feat doesn't have a description, you can look it up in the PHB with the page
-      number provided.
+      Feats are part of the official #[em Dungeons & Dragons Players Handbook] (PHB). Due to copyright reasons, I can only note any changed or new feats
+      available in this system. Hence, if a feat doesn't have a description, you can look it up in your copy of the PHB with the page number provided.
     p.
       The following feats from the PHB are not available: {{ notAvailable }}
     div.mt-3
