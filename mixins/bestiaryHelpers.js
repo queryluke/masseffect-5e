@@ -4,11 +4,10 @@ export const BestiaryHelpers = {
   methods: {
     generateGrenadeAttack (grenade) {
       const description = grenade.desc.map(line => line.data).join(' ')
-      const numGrenades = grenade.id === 'smoke_grenade' ? '1 grenade' : '3 grenades'
       return {
         type: 'common',
         name: grenade.name,
-        recharge: numGrenades,
+        recharge: 'Recharge 5-6',
         description
       }
     },
