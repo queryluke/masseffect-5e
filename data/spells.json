@@ -1,5 +1,5 @@
 {
-  "updated": "May 12, 2018 @  3:18 PM",
+  "updated": "May 12, 2018 @  3:32 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -871,7 +871,7 @@
       "damage_type": [
         "bludgeoning"
       ],
-      "detonates": null,
+      "detonates": "x",
       "primes": null,
       "adept": null,
       "vanguard": null,
