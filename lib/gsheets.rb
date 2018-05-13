@@ -147,5 +147,12 @@ GSHEETS = [
         renderables: [],
         id: 'name',
         camel: true
+    },
+    {
+        type: 'commonplace_items',
+        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ5DO-4Giug9mwmDRyBRQBkAJS8NqaqhXqN25fcIRN23oa58KdAZy0m15XDBMYvF7VOMomWWi_2NaIp/pub?output=csv',
+        renderables: [],
+        id: 'name',
+        camel: true
     }
 ]

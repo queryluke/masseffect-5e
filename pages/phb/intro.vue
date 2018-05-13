@@ -58,6 +58,9 @@
                       The other huge addition is the expansion of how armor works. Instead of a full suit of armor, ME5e allows players to don armor of
                       different types on different parts of the body, resulting in an array of armor class possibilities. The other change is that armor can be
                       modded to increase its stats and grant minor features.
+                    dt #[nuxt-link(to="/phb/rules/expenses") Expenses]
+                    dd.
+                      In this section we'll outline currency, buying and selling, and porvide some guidelines for setting the cost of items and lifestyle expenses.
                     dt #[nuxt-link(to="/phb/rules/skills") Skills]
                     dd.
                       We've replaced some 5th Edition skills with sci-fi flavored versions.

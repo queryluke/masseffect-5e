@@ -88,6 +88,9 @@ def generate_config_file(page)
         when 'weapon_mods'
           config_weapon_mods(dup_model)
           dup_model = nil
+        when 'commonplace_items'
+          config_commonplace_items(dup_model)
+          dup_model = nil
         else
           dup_model = dup_model
       end
