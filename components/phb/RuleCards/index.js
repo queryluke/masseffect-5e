@@ -4,8 +4,11 @@ import ArmorOverview from './ArmorOverview.vue'
 import ArmorCustomization from './ArmorCustomization.vue'
 import ArmorPieces from './ArmorPieces.vue'
 import Barriers from './Barriers.vue'
+import BuyingAndSelling from './BuyingAndSelling.vue'
 import Conditions from './Conditions.vue'
+import CostOfThings from './CostOfThings.vue'
 import CreatureTypes from './CreatureTypes.vue'
+import Currency from './Currency.vue'
 import DamageTypes from './DamageTypes.vue'
 import Distance from './Distance.vue'
 import Encumbrance from './Encumbrance.vue'
@@ -15,6 +18,7 @@ import HeavyWeaponCharges from './HeavyWeaponCharges.vue'
 import HeavyWeapons from './HeavyWeapons.vue'
 import HolsteringAndDrawing from './HolsteringAndDrawing.vue'
 import InfraredVision from './InfraredVision.vue'
+import LifestyleExpenses from './LifestyleExpenses.vue'
 import LiftingAndCarrying from './LiftingAndCarrying.vue'
 import MediGel from './MediGel.vue'
 import MeleeWeapons from './MeleeWeapons.vue'
@@ -39,8 +43,11 @@ export default {
   ArmorCustomization,
   ArmorPieces,
   Barriers,
+  BuyingAndSelling,
   Conditions,
+  CostOfThings,
   CreatureTypes,
+  Currency,
   DamageTypes,
   Distance,
   Encumbrance,
@@ -50,6 +57,7 @@ export default {
   HeavyWeapons,
   HolsteringAndDrawing,
   InfraredVision,
+  LifestyleExpenses,
   LiftingAndCarrying,
   MediGel,
   MeleeWeapons,

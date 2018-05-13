@@ -13,7 +13,7 @@
   },
   {
     "name": "Hip Fire",
-    "description": "You have advantage instead of disadvantage when using this weapon in melee range."
+    "description": "When making a ranged attack on a target creature within 2m, you do not have disadvantage on the attack roll"
   },
   {
     "name": "Melee",

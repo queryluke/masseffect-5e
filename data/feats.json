@@ -1,5 +1,5 @@
 {
-  "updated": "April 14, 2018 @ 10:20 PM",
+  "updated": "May 12, 2018 @  2:50 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTPhVRIodUwbDYFw8wJZtmb63tTjFJMxY-cN6P5nayPpJhNxAQFqIxeSLd5Tz75aOZ7CLuBkNsDrcs9/pubhtml",
   "data": [
     {
@@ -513,7 +513,12 @@
         {
           "id": 3,
           "type": "line",
-          "data": "When you take the Attack action using a Double Tap weapon, you can make a second attack without using your bonus action for this turn. You add your Dexterity modifier to the second attack roll."
+          "data": "When wielding only one Double Tap weapon, you may make a second ranged attack on the same target as your first ranged attack as a free action. You may do this once per turn."
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "When you make a second ranged attack with a Double Tap, you add your ability modifier to the damage roll."
         }
       ],
       "notes": "+1 Dexterity, mastery of Double Tap weapons",
@@ -526,7 +531,7 @@
       "turian": "x",
       "unshackled_ai": "x",
       "id": "hair_trigger",
-      "description_text_dump": "YouvemasteredDoubleTapweaponsIncreaseyourDexterityscoreby1toamaximumof20WhenyoutaketheAttackactionusingaDoubleTapweaponyoucanmakeasecondattackwithoutusingyourbonusactionforthisturnYouaddyourDexteritymodifiertothesecondattackroll"
+      "description_text_dump": "YouvemasteredDoubleTapweaponsIncreaseyourDexterityscoreby1toamaximumof20WhenwieldingonlyoneDoubleTapweaponyoumaymakeasecondrangedattackonthesametargetasyourfirstrangedattackasafreeactionYoumaydothisonceperturnWhenyoumakeasecondrangedattackwithaDoubleTapyouaddyourabilitymodifiertothedamageroll"
     },
     {
       "name": "Heavy Armor Master",

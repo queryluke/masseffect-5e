@@ -7,6 +7,7 @@ import backgrounds from '~/data/backgrounds.json'
 import bestiary from '~/data/bestiary.json'
 import classes from '~/data/classes.json'
 import classFeatures from '~/data/class_features.json'
+import commonplaceItems from '~/data/commonplace_items.json'
 import conditions from '~/data/conditions.json'
 import engineerProgression from '~/data/engineer_progression.json'
 import feats from '~/data/feats.json'
@@ -37,6 +38,7 @@ export default {
   bestiary,
   classes,
   classFeatures,
+  commonplaceItems,
   conditions,
   engineerProgression,
   feats,
