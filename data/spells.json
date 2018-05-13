@@ -1,5 +1,5 @@
 {
-  "updated": "May 12, 2018 @  3:32 PM",
+  "updated": "May 13, 2018 @  4:53 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -519,7 +519,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Make a melee spell attack on an object within range. On a hit, you increase the mass of your fist, 1d8 bludgeoning damage. The kinetic force can be harness by your biotic implant as Barrier ticks. Gain 1 barrier tick per size of the object that was hit (1 for small, 2 for medium, 3 for large, etc.)"
+          "data": "Increase the mass of your fist and strike at a target.  Make a melee spell attack on a target creature or object within range. On a hit, deal 1d8 bludgeoning damage to the target and gain 1 barrier tick per size of the target (1 for small, 2 for medium, 3 for large, etc.)"
         },
         {
           "id": 2,
@@ -528,7 +528,7 @@
         }
       ],
       "adv_option_1": "Efficient Punch : Gain an additional barrier tick when you hit a target with your Biotic punch",
-      "adv_option_2": "Syphoning Strike : Instead of gaining a barrier tick, you can regain 2 shield points per size of the creature.",
+      "adv_option_2": "Syphoning Strike : Instead of gaining a barrier tick, you regain 2 shield points per size of the creature.",
       "type": "biotic",
       "die_type": "d8",
       "attack_type": [
@@ -559,10 +559,10 @@
       "id": "biotic_punch",
       "adv_options": [
         "Efficient Punch : Gain an additional barrier tick when you hit a target with your Biotic punch",
-        "Syphoning Strike : Instead of gaining a barrier tick, you can regain 2 shield points per size of the creature."
+        "Syphoning Strike : Instead of gaining a barrier tick, you regain 2 shield points per size of the creature."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "MakeameleespellattackonanobjectwithinrangeOnahityouincreasethemassofyourfist1d8bludgeoningdamageThekineticforcecanbeharnessbyyourbioticimplantasBarrierticksGain1barriertickpersizeoftheobjectthatwashit1forsmall2formedium3forlargeetcAthigherlevelsThisspellsdamageincreasesby1d8whenyoureach5thlevel2d811thlevel3d817thlevel4d8"
+      "mechanic_text_dump": "IncreasethemassofyourfistandstrikeatatargetMakeameleespellattackonatargetcreatureorobjectwithinrangeOnahitdeal1d8bludgeoningdamagetothetargetandgain1barriertickpersizeofthetarget1forsmall2formedium3forlargeetcAthigherlevelsThisspellsdamageincreasesby1d8whenyoureach5thlevel2d811thlevel3d817thlevel4d8"
     },
     {
       "name": "Biotic Push",
@@ -571,7 +571,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Make a melee spell attack on a medium-size or smaller object within range. On a hit, you create a pocket mass effect field that deals 1d4 force damage repels the target 6m away from you, knocking it {prone}."
+          "data": "Make a melee spell attack on a Medium or smaller creature or object within range. On a hit, you create a pocket mass effect field that deals 1d4 force damage the target and repels it 6m away from you."
         },
         {
           "id": 2,
@@ -580,7 +580,7 @@
         }
       ],
       "adv_option_1": "Quick Cast : You may cast Biotic Push as a bonus action.",
-      "adv_option_2": "Deadly Push : The force of the blast causes internal bleeding, dealing and additional 1d6 necrotic damage.",
+      "adv_option_2": "Flatten: On a hit, the target is knocked {prone}.",
       "type": "biotic",
       "die_type": "d4",
       "attack_type": [
@@ -611,10 +611,10 @@
       "id": "biotic_push",
       "adv_options": [
         "Quick Cast : You may cast Biotic Push as a bonus action.",
-        "Deadly Push : The force of the blast causes internal bleeding, dealing and additional 1d6 necrotic damage."
+        "Flatten: On a hit, the target is knocked {prone}."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "MakeameleespellattackonamediumsizeorsmallerobjectwithinrangeOnahityoucreateapocketmasseffectfieldthatdeals1d4forcedamagerepelsthetarget6mawayfromyouknockingitproneAthigherlevelsThisspellsdamageincreasesby1d4whenyoureach5thlevel2d411thlevel3d417thlevel4d4"
+      "mechanic_text_dump": "MakeameleespellattackonaMediumorsmallercreatureorobjectwithinrangeOnahityoucreateapocketmasseffectfieldthatdeals1d4forcedamagethetargetandrepelsit6mawayfromyouAthigherlevelsThisspellsdamageincreasesby1d4whenyoureach5thlevel2d411thlevel3d417thlevel4d4"
     },
     {
       "name": "Biotic Sphere",
@@ -799,7 +799,7 @@
           "data": "The damage increases by 1d6 when you reach the 5th level (2d6), 11th level(3d6) and 17th level(4d6)."
         }
       ],
-      "adv_option_1": "Barrier Regen : after you cast Charge, regain half of your barrier ticks (rounded down).",
+      "adv_option_1": "Barrier Regen : After you cast Charge, regain half of your barrier ticks (rounded down).",
       "adv_option_2": "Distance : The force ripples outwards from the point of impact, increasing the radius to 4m.",
       "type": "biotic",
       "die_type": "d6",
@@ -830,7 +830,7 @@
       "min_tech_points": null,
       "id": "charge",
       "adv_options": [
-        "Barrier Regen : after you cast Charge, regain half of your barrier ticks (rounded down).",
+        "Barrier Regen : After you cast Charge, regain half of your barrier ticks (rounded down).",
         "Distance : The force ripples outwards from the point of impact, increasing the radius to 4m."
       ],
       "class_list": "Vanguard",
