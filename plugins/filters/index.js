@@ -4,6 +4,7 @@ import abilityBonus from './abilityBonus'
 import article from './article'
 import featureTitle from './featureTitle'
 import formatDate from './formatDate'
+import groupDigits from './groupDigits'
 import npcDamage from './npcDamage'
 import npcDc from './npcDc'
 import npcName from './npcName'
@@ -16,6 +17,7 @@ const customFilters = {
   article,
   featureTitle,
   formatDate,
+  groupDigits,
   npcDamage,
   npcDc,
   npcName,
