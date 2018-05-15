@@ -139,11 +139,11 @@
             itemRolls: [
               { min: 1, max: 5, roll: null },
               { min: 6, max: 15, roll: 8, table: 'c' },
-              { min: 16, max: 25, roll: 6, table: 'd' },
-              { min: 26, max: 30, roll: 6, table: 'f' },
+              { min: 16, max: 25, roll: 8, table: 'd' },
+              { min: 26, max: 30, roll: 8, table: 'f' },
               { min: 31, max: 50, roll: 4, table: 'g' },
               { min: 51, max: 65, roll: 6, table: 'g' },
-              { min: 66, max: 80, roll: 1, table: 'h' },
+              { min: 66, max: 80, roll: 8, table: 'g' },
               { min: 66, max: 95, roll: 4, table: 'h' },
               { min: 96, max: 100, roll: 6, table: 'h' }
             ]
