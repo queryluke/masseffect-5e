@@ -92,6 +92,7 @@
             title: 'For GMs',
             icon: 'extension',
             items: [
+              {href: '/for-gms/loot-generator', title: 'Loot Generator'},
               {href: '/for-gms/grunts', title: 'Grunts Generator'},
               {href: '/for-gms/armor-creation', title: 'Creating Armor'}
             ]
