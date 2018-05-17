@@ -2,8 +2,10 @@
   v-container
     h2.display-3 General
     p.
-      Overall, this system attempts to keep things in line with D&D 5e rules as much as possible. There are some significant additions, like Shield Points, but most are minor, like the addition of a few more conditions.
-      Some changes might seem pointless at first, such as using meters instead of feet as the base unit of distance. In these situations we have made the changes in order for the rules to better reflect the Mass Effect setting. 
+      Overall, this system attempts to keep things in line with D&D 5e rules as much as possible. There are some
+      significant additions, like Shield Points, but most are minor, like the addition of a few more conditions.
+      Some changes might seem pointless at first, such as using meters instead of feet as the base unit of distance.
+      In these situations we have made the changes in order for the rules to better reflect the Mass Effect setting.
     h3.display-2.mb-2 Rule Changes
     div(v-for="(ruleChange, ruleChangeIndex) in rules.changes")
       component(v-bind:is="ruleChange")
