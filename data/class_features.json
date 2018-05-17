@@ -1,5 +1,5 @@
 {
-  "updated": "May  5, 2018 @  2:46 PM",
+  "updated": "May 12, 2018 @  2:22 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -1726,7 +1726,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "In addition to the standard defensive AI, you've augmented your Tech Armor to run different AI packages. The packages can hook into nearby armor systems. Any friendly creature within 4m of you that is wearing armor gains the effect of the package. When you activate Tech Armor, you can only choose a single package to run."
+          "data": "In addition to the standard defensive AI, you've augmented your Tech Armor to run different AI packages. The packages can hook into nearby armor systems. Any friendly creature within 10m of you that is wearing armor gains the effect of the package. When you activate Tech Armor, you can only choose a single package to run."
         },
         {
           "id": 2,
@@ -1748,7 +1748,7 @@
         }
       ],
       "id": "tech_aura",
-      "mechanic_text_dump": "InadditiontothestandarddefensiveAIyouveaugmentedyourTechArmortorundifferentAIpackagesThepackagescanhookintonearbyarmorsystemsAnyfriendlycreaturewithin4mofyouthatiswearingarmorgainstheeffectofthepackageWhenyouactivateTechArmoryoucanonlychooseasinglepackagetorunLearn2AIpackagesfromthelistbelowyouvealreadylearnedtheDefensivepackageAtthe14thlevelyoulearn2additionalpackageslistDefensiveThisisthestandardTechArmorpackageItdoesnotaffectalliesAntibioticResistancetoforceandnecroticdamageAntitechResistancetofireandcolddamageGroundedResistancetolightningdamageReactiveIfyouorafriendlycreaturewearingarmorwithinrangewouldmakeasavingthrowaddyourtechmodifiertotherollSpeedIncreasespeedby4mRegenFriendlycreatureswearingarmorregenerate5shieldpointsonthestartofyourturnlist"
+      "mechanic_text_dump": "InadditiontothestandarddefensiveAIyouveaugmentedyourTechArmortorundifferentAIpackagesThepackagescanhookintonearbyarmorsystemsAnyfriendlycreaturewithin10mofyouthatiswearingarmorgainstheeffectofthepackageWhenyouactivateTechArmoryoucanonlychooseasinglepackagetorunLearn2AIpackagesfromthelistbelowyouvealreadylearnedtheDefensivepackageAtthe14thlevelyoulearn2additionalpackageslistDefensiveThisisthestandardTechArmorpackageItdoesnotaffectalliesAntibioticResistancetoforceandnecroticdamageAntitechResistancetofireandcolddamageGroundedResistancetolightningdamageReactiveIfyouorafriendlycreaturewearingarmorwithinrangewouldmakeasavingthrowaddyourtechmodifiertotherollSpeedIncreasespeedby4mRegenFriendlycreatureswearingarmorregenerate5shieldpointsonthestartofyourturnlist"
     },
     {
       "name": "Tech Aura Improvement",
@@ -1756,11 +1756,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Increase the distance of your Tech Aura packages to 10m."
+          "data": "Increase the distance of your Tech Aura packages to 20m."
         }
       ],
       "id": "tech_aura_improvement",
-      "mechanic_text_dump": "IncreasethedistanceofyourTechAurapackagesto10m"
+      "mechanic_text_dump": "IncreasethedistanceofyourTechAurapackagesto20m"
     },
     {
       "name": "Tech Power",

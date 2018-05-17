@@ -1,5 +1,5 @@
 {
-  "updated": "April 30, 2018 @  5:16 PM",
+  "updated": "May 12, 2018 @  2:19 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT87AUwt1n514k6a6b4l0kOzGwIphsGXBJLFqujgkCsJ1rdudQ1Bk7Km12DACO5qQ2WGDVI8fT6-Xe/pubhtml",
   "data": [
     {
@@ -970,8 +970,8 @@
       "crEffect": null,
       "recharge": null,
       "attackMod": "dex",
-      "range": null,
-      "numberOfTargets": null,
+      "range": "30",
+      "numberOfTargets": "one target",
       "description": "2d6 thunder damage.",
       "miss": null,
       "asari": null,
@@ -2274,7 +2274,7 @@
       "attackMod": null,
       "range": null,
       "numberOfTargets": null,
-      "description": "For 1 minute the geth can activate its hunter mode, gaining the following: increase speed by 2m, +1 on ranged or melee attack and damage rolls.",
+      "description": "If the [name] begins its turn with less that 1/2 of its hit points, it enters into a rage. The [name]'s melee weapon attacks deal one extra die of its damage. This effect lasts 1 minute.",
       "miss": null,
       "asari": null,
       "batarian": null,

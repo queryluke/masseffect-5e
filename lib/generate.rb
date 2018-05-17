@@ -32,6 +32,7 @@ require_relative 'generate_model'
 require_relative 'ordinalize'
 require_relative 'generate_config_file'
 require_relative 'config_weapon_mods'
+require_relative 'config_commonplace_items'
 require_relative 'gsheets'
 
 imports = ARGV

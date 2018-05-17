@@ -1,5 +1,5 @@
 {
-  "updated": "April 28, 2018 @  8:24 AM",
+  "updated": "May 11, 2018 @  6:09 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -50,13 +50,13 @@
           "type": "list",
           "data": [
             "M-3 Predator, M-4 Shuriken, or M-8 Avenger",
-            "Omni-Taser, Omni-Blade, or Stun Baton",
+            "Omni-Taser, Omni-Blade, or Omni-Torch",
             "Stock Light Armor or Stock Medium Armor"
           ]
         }
       ],
       "id": "engineer",
-      "starting_equipment_text_dump": "listM3PredatorM4ShurikenorM8AvengerOmniTaserOmniBladeorStunBatonStockLightArmororStockMediumArmorlist"
+      "starting_equipment_text_dump": "listM3PredatorM4ShurikenorM8AvengerOmniTaserOmniBladeorOmniTorchStockLightArmororStockMediumArmorlist"
     },
     {
       "name": "Infiltrator",
@@ -78,13 +78,13 @@
           "type": "list",
           "data": [
             "M-3 Predator, M-4 Shuriken, or M-92 Mantis",
-            "Omni-Taser, Omni-Blade, Monomolecular Blade, or Stun Baton",
+            "Omni-Taser, Omni-Blade, or Monomolecular Blade",
             "Stock Light Armor"
           ]
         }
       ],
       "id": "infiltrator",
-      "starting_equipment_text_dump": "listM3PredatorM4ShurikenorM92MantisOmniTaserOmniBladeMonomolecularBladeorStunBatonStockLightArmorlist"
+      "starting_equipment_text_dump": "listM3PredatorM4ShurikenorM92MantisOmniTaserOmniBladeorMonomolecularBladeStockLightArmorlist"
     },
     {
       "name": "Sentinel",

@@ -4,11 +4,10 @@ export const BestiaryHelpers = {
   methods: {
     generateGrenadeAttack (grenade) {
       const description = grenade.desc.map(line => line.data).join(' ')
-      const numGrenades = grenade.id === 'smoke_grenade' ? '1 grenade' : '3 grenades'
       return {
         type: 'common',
         name: grenade.name,
-        recharge: numGrenades,
+        recharge: 'Recharge 5-6',
         description
       }
     },
@@ -88,7 +87,8 @@ export const BestiaryHelpers = {
         bonusText = ` - ${weapon.attack.bonus * -1}`
       }
       const reachOrRange = weapon.type === 'Melee' ? 'reach' : 'range'
-      const rangeString = weapon.type === 'Melee' || weapon.type === 'Heavy Weapon' ? `${weapon.range}m` : `(${weapon.range}m/${Number.parseInt(weapon.range, 10) * 3}m)`
+      const longRangeMultiplier = weapon.type === 'Shotgun' ? 2 : 3
+      const rangeString = weapon.type === 'Melee' || weapon.type === 'Heavy Weapon' ? `${weapon.range}m` : `(${weapon.range}m/${Number.parseInt(weapon.range, 10) * longRangeMultiplier}m)`
       const hipFire = /hip/gi.test(weapon.tags) ? ' & hip fire' : ''
       const target = weapon.id === 'n7_piranha' ? 'all creatures in 4m cone' : 'one target'
       const additionalHitMechanics = weapon.npcHit ? `, and ${weapon.npcHit}` : '.'

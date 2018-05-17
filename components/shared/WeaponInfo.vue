@@ -10,13 +10,10 @@
     v-layout(row wrap flex-start)
       v-flex.xs12.sm4.md2.attribute.mb-2
         label Range
-        div(v-if="weapon.type === 'Melee' || weapon.type === 'Heavy Weapon'")
-          span(v-if="weapon.range") {{ weapon.range }}m
-        div(v-else) ({{ weapon.range }}m / {{ Number.parseInt(weapon.range, 10) * 3 }}m)
+        div {{ weapon | weaponRange }}
       v-flex.xs12.sm4.md2.attribute.mb-2
         label Damage
         div {{ weapon.damage }}
-
       v-flex(v-if="weapon.type === 'Melee'").xs12.sm4.md2.attribute.mb-2
         label Min STR
         div {{ weapon.minStr }}
