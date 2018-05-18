@@ -46,7 +46,7 @@
           {
             name: 'Superior',
             rarity: 'Rare',
-            cost: '~1500 credits',
+            cost: '~1,500 credits',
             hp: '8d4 + 8'
           },
           {

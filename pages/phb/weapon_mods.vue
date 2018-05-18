@@ -7,7 +7,7 @@
         template(slot="items" slot-scope="props")
           td {{ props.item.name }}
           td {{ props.item.placement }}
-          td {{ props.item.cost }}
+          td {{ props.item.cost | groupDigits(',') }}
           td {{ props.item.availability }}
           td {{ props.item.feature }}
     page-footer(:list="listName")

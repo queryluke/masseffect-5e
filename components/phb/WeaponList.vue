@@ -12,7 +12,7 @@
           v-flex.hidden-md-and-down.lg2 {{ weapon.heat }}
           v-flex.hidden-md-and-down.lg2 {{ weapon | weaponRange }}
           v-flex.hidden-md-and-down.lg2 {{ weapon.weight }}
-          v-flex.hidden-md-and-down.lg2 {{ weapon.cost }}
+          v-flex.hidden-md-and-down.lg2 {{ weapon.cost | groupDigits(',') }}
       v-card.grey.lighten-3
         v-card-text
           weapon-info(:weapon="weapon").mt-2
