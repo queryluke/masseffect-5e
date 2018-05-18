@@ -141,6 +141,9 @@
                             If there aren't enough options in the bestiary, or you just want to spin up some random NPCs, the Grunt Generator can quickly
                             create NPCs with Challenge Ratings (CR) from 1/8 to 12. All weapons, powers, and traits are randomly generated, but damage output and health are kept within
                             your selected CR boundary. For GMs, this is also a great way to provide new weapons for your players, as they can loot the remains of the enemy.
+                          dt #[nuxt-link(to="/for-gms/loot-generator/") Loot Generator]
+                          dd.
+                            You can use the loot generator to quickly create randomly generated rewards. These results are similar to rolling for loot in the DMG, but with much less effort.
                           dt #[nuxt-link(to="/phb/bookmarks") Bookmarks]
                           dd.
                             Weapons, grenades, spells, and monsters can all be bookmarked by clicking on the "Bookmark" button on the bottom of their info card.

@@ -1,6 +1,69 @@
 <template lang="pug">
   v-container
     h2.display-3 Random Loot Generator
+    p.
+      The Loot Generator uses random rolls on a set of loot tables to decide loot rewards. Our loot tables aren't as diverse as the ones
+      found in the DMG. For example, individual loot tables currently supply only credits. Weapons, armor, and mods, can be acquired from the hoard
+      loot tables.
+    div.text-xs-center
+      v-btn(color="primary" dark @click.stop="lootTableDialog = true") Raw Tables
+    v-dialog(v-model="lootTableDialog" fullscreen hide-overlay transition="dialog-bottom-transition" scrollable)
+      v-card(tile)
+        v-toolbar(card dark color="primary")
+          v-btn(icon dark @click.native="lootTableDialog = false")
+            v-icon close
+          v-toolbar-title Raw Loot Tables
+        v-card-text
+          v-container(grid-list-lg fluid)
+            v-layout(row wrap)
+              v-flex(xs12 lg6)
+                v-card
+                  v-card-title(primaryTitle)
+                    div.headline Individual rewards
+                  v-card-text
+                    table.table.text-xs-left
+                      thead
+                        tr
+                          th CR
+                          th Reward
+                      tbody
+                        tr(v-for="cr in crOptions" v-bind:index="cr.value")
+                          td {{ cr.text }}
+                          td {{ individualRewards[cr.value][0] | groupDigits(',') }} - {{ individualRewards[cr.value][individualRewards[cr.value].length - 1] | groupDigits(',') }}
+                v-card.mt-5
+                  v-card-title(primaryTitle)
+                    div.headline Hoard rewards
+                  v-card-text
+                    div(v-for="cr in crOptions" v-bind:index="cr.value").mt-3
+                      p.title CR: {{ cr.text }}
+                      ul.list
+                        li #[strong Credits]: {{ hoardRewards[cr.value].credits }}
+                        li #[strong Additional Credits]: {{ hoardRewards[cr.value].additionalCredits[0] | groupDigits(',') }} - {{ hoardRewards[cr.value].additionalCredits[hoardRewards[cr.value].additionalCredits.length - 1] | groupDigits(',') }}
+                      table.table.text-xs-left
+                        thead
+                          tr
+                            th d100 roll
+                            th Equipment Table Roll
+                        tbody
+                          tr(v-for="(reward, index) in hoardRewards[cr.value].itemRolls" v-bind:index="index")
+                            td {{ reward.min }}-{{ reward.max }}
+                            td {{ rollText(reward) }}
+              v-flex(xs12 lg6)
+                v-card
+                  v-card-title(primaryTitle)
+                    div.headline Equipment Tables
+                  v-card-text
+                    div(v-for="(table, id) in rewardTables" v-bind:index="id").mt-3
+                      p.title Equipment Table {{ id.toUpperCase() }}
+                      table.table.text-xs-left
+                        thead
+                          tr
+                            th d100 roll
+                            th Equipment Table Roll
+                        tbody
+                          tr(v-for="(reward, index) in table" v-bind:index="index")
+                            td {{ reward.min }}-{{ reward.max }}
+                            td {{ reward.text }}
     v-card.mt-3
       v-card-text
         v-layout(row wrap)
@@ -73,6 +136,7 @@
     },
     data () {
       return {
+        lootTableDialog: false,
         loots: [],
         workingLoot: {},
         cache: {},
@@ -88,10 +152,10 @@
           { text: '17+', value: 3 }
         ],
         individualRewards: [
-          [10, 50, 200, 350, 500],
-          [500, 600, 700, 800, 900, 1000],
-          [1000, 1500, 2000, 3000],
-          [3000, 4500, 6000]
+          [10, 20, 30, 40, 50, 75, 100, 125, 150, 175, 200, 225, 275, 300, 325, 350, 375, 400, 450, 500],
+          [500, 525, 550, 575, 600, 625, 650, 675, 700, 725, 750, 775, 800, 825, 850, 875, 900, 950, 1000, 1050],
+          [1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400, 2500, 2750, 3000, 3250, 3500],
+          [3000, 3250, 3500, 3750, 4000, 4250, 4500, 4750, 5000, 5250, 5500, 5750, 6000, 6250, 6500, 6750, 7000, 8000, 9000, 10000]
         ],
         hoardRewards: [
           {
@@ -151,66 +215,66 @@
         ],
         rewardTables: {
           a: [
-            { min: 1, max: 25, reward: () => this.addThOrHw('thermalClips', 10) },
-            { min: 26, max: 50, reward: () => this.addMedigel(1, 'standard') },
-            { min: 51, max: 70, reward: () => this.addGrenade(1) },
-            { min: 71, max: 80, reward: () => this.addGrenade(2) },
-            { min: 81, max: 90, reward: () => this.addWeapon('common') },
-            { min: 90, max: 95, reward: () => this.addMedigel(1, 'enhanced') },
-            { min: 96, max: 100, reward: () => this.addModOrArmor('mods', 0, 3000) }
+            { min: 1, max: 25, reward: () => this.addThOrHw('thermalClips', 10), text: '10 Thermal Clips' },
+            { min: 26, max: 50, reward: () => this.addMedigel(1, 'standard'), text: '1 standard medi-gel' },
+            { min: 51, max: 70, reward: () => this.addGrenade(1), text: '1 random grenade' },
+            { min: 71, max: 80, reward: () => this.addGrenade(2), text: '2 random grenades' },
+            { min: 81, max: 90, reward: () => this.addWeapon('common'), text: '1 common weapon' },
+            { min: 90, max: 95, reward: () => this.addMedigel(1, 'enhanced'), text: '1 enhanced medi-gel' },
+            { min: 96, max: 100, reward: () => this.addModOrArmor('mods', 0, 3000), text: '1 random armor or weapon mod of 3,000 credits or less' }
           ],
           b: [
-            { min: 1, max: 15, reward: () => this.addMedigel(1, 'enhanced') },
-            { min: 16, max: 54, reward: () => this.addGrenade(2) },
-            { min: 55, max: 64, reward: () => this.addWeapon('common') },
+            { min: 1, max: 15, reward: () => this.addMedigel(1, 'enhanced'), text: '1 enhanced medi-gel' },
+            { min: 16, max: 54, reward: () => this.addGrenade(2), text: '2 random grenades' },
+            { min: 55, max: 64, reward: () => this.addWeapon('common'), text: '1 common weapon' },
             { min: 65, max: 77, reward: () => this.addModOrArmor('mods', 0, 5000) },
-            { min: 78, max: 90, reward: () => this.addThOrHw('heavyWeapon', 3) },
-            { min: 91, max: 100, reward: () => this.addWeapon('uncommon') }
+            { min: 78, max: 90, reward: () => this.addThOrHw('heavyWeapon', 3), text: '3 heavy weapon charges' },
+            { min: 91, max: 100, reward: () => this.addWeapon('uncommon'), text: '1 uncommon weapon' }
           ],
           c: [
-            { min: 1, max: 15, reward: () => this.addMedigel(1, 'enhanced') },
-            { min: 16, max: 45, reward: () => this.addGrenade(3) },
-            { min: 46, max: 60, reward: () => this.addWeapon('uncommon') },
-            { min: 61, max: 73, reward: () => this.addModOrArmor('mods', 0, 10000) },
-            { min: 74, max: 85, reward: () => this.addThOrHw('heavyWeapon', 5) },
-            { min: 86, max: 90, reward: () => this.addModOrArmor('armor', 0, 20000) },
-            { min: 91, max: 100, reward: () => this.addMedigel(1, 'superior') }
+            { min: 1, max: 15, reward: () => this.addMedigel(1, 'enhanced'), text: '1 enhanced medi-gel' },
+            { min: 16, max: 45, reward: () => this.addGrenade(3), text: '3 random grenades' },
+            { min: 46, max: 60, reward: () => this.addWeapon('uncommon'), text: '1 uncommon weapon' },
+            { min: 61, max: 73, reward: () => this.addModOrArmor('mods', 0, 10000), text: '1 random armor or weapon mod of 10,000 credits or less' },
+            { min: 74, max: 85, reward: () => this.addThOrHw('heavyWeapon', 5), text: '5 heavy weapon charges' },
+            { min: 86, max: 90, reward: () => this.addModOrArmor('armor', 0, 20000), text: '1 random armor set of 20,000 credits or less' },
+            { min: 91, max: 100, reward: () => this.addMedigel(1, 'superior'), text: '1 superior medi-gel' }
           ],
           d: [
-            { min: 1, max: 20, reward: () => this.addMedigel(2, 'standard') },
-            { min: 21, max: 40, reward: () => this.addMedigel(2, 'enhanced') },
-            { min: 41, max: 60, reward: () => this.addGrenade(3) },
-            { min: 61, max: 80, reward: () => this.addThOrHw('heavyWeapon', 3) },
-            { min: 81, max: 90, reward: () => this.addMedigel(2, 'superior') },
-            { min: 91, max: 95, reward: () => this.addMedigel(1, 'ultimate') },
-            { min: 96, max: 100, reward: () => this.addMedigel(1, 'ultimate') }
+            { min: 1, max: 20, reward: () => this.addMedigel(2, 'standard'), text: '2 standard medi-gel' },
+            { min: 21, max: 40, reward: () => this.addMedigel(2, 'enhanced'), text: '2 enhanced medi-gel' },
+            { min: 41, max: 60, reward: () => this.addGrenade(3), text: '3 random grenades' },
+            { min: 61, max: 80, reward: () => this.addThOrHw('heavyWeapon', 3), text: '3 heavy weapon charges' },
+            { min: 81, max: 90, reward: () => this.addMedigel(2, 'superior'), text: '2 superior medi-gel' },
+            { min: 91, max: 95, reward: () => this.addMedigel(1, 'ultimate'), text: '1 ultimate medi-gel' },
+            { min: 96, max: 100, reward: () => this.addMedigel(2, 'ultimate'), text: '2 ultimate medi-gel' }
           ],
           e: [
-            { min: 1, max: 30, reward: () => this.addWeapon('common') },
-            { min: 31, max: 60, reward: () => this.addWeapon('uncommon') },
-            { min: 61, max: 80, reward: () => this.addModOrArmor('mods', 0, 5000) },
-            { min: 81, max: 90, reward: () => this.addModOrArmor('mods', 0, 10000) },
-            { min: 91, max: 100, reward: () => this.addModOrArmor('armor', 0, 20000) }
+            { min: 1, max: 30, reward: () => this.addWeapon('common'), text: '1 common weapon' },
+            { min: 31, max: 60, reward: () => this.addWeapon('uncommon'), text: '1 uncommon weapon' },
+            { min: 61, max: 80, reward: () => this.addModOrArmor('mods', 0, 5000), text: '1 random armor or weapon mod of 5,000 credits or less' },
+            { min: 81, max: 90, reward: () => this.addModOrArmor('mods', 0, 10000), text: '1 random armor or weapon mod of 10,000 credits or less' },
+            { min: 91, max: 100, reward: () => this.addModOrArmor('armor', 0, 20000), text: '1 random armor set of 20,000 credits or less' }
           ],
           f: [
-            { min: 1, max: 30, reward: () => this.addWeapon('uncommon') },
-            { min: 31, max: 60, reward: () => this.addWeapon('rare') },
-            { min: 61, max: 80, reward: () => this.addModOrArmor('mods', 0, 10000) },
-            { min: 81, max: 90, reward: () => this.addModOrArmor('mods', 5000, 15000) },
-            { min: 91, max: 100, reward: () => this.addModOrArmor('armor', 0, 30000) }
+            { min: 1, max: 30, reward: () => this.addWeapon('uncommon'), text: '1 uncommon weapon' },
+            { min: 31, max: 60, reward: () => this.addWeapon('rare'), text: '1 rare weapon' },
+            { min: 61, max: 80, reward: () => this.addModOrArmor('mods', 0, 10000), text: '1 random armor or weapon mod of 10,000 credits or less' },
+            { min: 81, max: 90, reward: () => this.addModOrArmor('mods', 5000, 15000), text: '1 random 5,000 - 15,000 credit armor or weapon mod' },
+            { min: 91, max: 100, reward: () => this.addModOrArmor('armor', 0, 30000), text: '1 random armor set of 30,000 credits or less' }
           ],
           g: [
-            { min: 1, max: 30, reward: () => this.addWeapon('rare') },
-            { min: 31, max: 60, reward: () => this.addWeapon('very rare') },
-            { min: 61, max: 80, reward: () => this.addModOrArmor('mods', 5000, 15000) },
-            { min: 81, max: 90, reward: () => this.addModOrArmor('mods', 15000, 30000) },
-            { min: 91, max: 100, reward: () => this.addModOrArmor('armor', 20000, 40000) }
+            { min: 1, max: 30, reward: () => this.addWeapon('rare'), text: '1 rare weapon' },
+            { min: 31, max: 60, reward: () => this.addWeapon('very rare'), text: '1 very rare weapon' },
+            { min: 61, max: 80, reward: () => this.addModOrArmor('mods', 5000, 15000), text: '1 random 5,000 - 15,000 credit armor or weapon mod' },
+            { min: 81, max: 90, reward: () => this.addModOrArmor('mods', 15000, 30000), text: '1 random 15,000 - 30,000 credit armor or weapon mod' },
+            { min: 91, max: 100, reward: () => this.addModOrArmor('armor', 20000, 40000), text: '1 random 20,000 - 40,000 armor set' }
           ],
           h: [
-            { min: 1, max: 10, reward: () => this.addWeapon('rare') },
-            { min: 11, max: 45, reward: () => this.addWeapon('very rare') },
-            { min: 46, max: 75, reward: () => this.addModOrArmor('mods', 15000, 100000000000) },
-            { min: 76, max: 100, reward: () => this.addModOrArmor('armor', 30000, 100000000000) }
+            { min: 1, max: 10, reward: () => this.addWeapon('rare'), text: '1 rare weapon' },
+            { min: 11, max: 45, reward: () => this.addWeapon('very rare'), text: '1 very rare weapon' },
+            { min: 46, max: 75, reward: () => this.addModOrArmor('mods', 15000, 100000000000), text: '1 random armor or weapon mod of 15,000 credits or more' },
+            { min: 76, max: 100, reward: () => this.addModOrArmor('armor', 30000, 100000000000), text: '1 random armor set of 30,000 credits or more' }
           ]
         }
       }
@@ -225,6 +289,14 @@
     },
     layout: 'phb',
     methods: {
+      rollText (itemRoll) {
+        if (!itemRoll.roll) {
+          return ''
+        }
+        const die = itemRoll.roll === 1 ? 1 : `1d${itemRoll.roll}`
+        const plural = itemRoll.roll === 1 ? '' : 's'
+        return `Roll ${die} time${plural} on Equipment Table ${itemRoll.table.toUpperCase()}`
+      },
       addMedigel (count, type) {
         const existingType = this.workingLoot.medigel.find((mg) => mg.type === type)
         if (existingType) {
