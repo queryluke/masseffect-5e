@@ -29,7 +29,7 @@
         div {{ weapon.rarity }}
       v-flex.xs12.sm4.md2.attribute.mb-2
         label Cost
-        div {{ weapon.cost }}
+        div {{ weapon.cost | groupDigits(',') }}
     div.hr
     div.mt-3
       me-element(:text="weapon.notes")
