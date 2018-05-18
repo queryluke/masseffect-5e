@@ -17,7 +17,6 @@
     "date-format-lite": "^17.7.0",
     "front-matter": "^2.3.0",
     "markdown-it-meta": "0.0.1",
-    "npm": "^6.0.0",
     "nuxt": "^1.0.0",
     "vue2-filters": "^0.3.0",
     "vuetify": "^1.0.17",
