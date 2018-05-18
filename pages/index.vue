@@ -20,8 +20,8 @@
                 Mass Effect 5e lets you take the immersive and cooperative story-telling gameplay of Dungeons & Dragons 5th edition
                 and experience new adventures in the Mass Effect universe. Go exploring in the Outer Terminus. Stop a political assassination
                 on Thessia. Battle the Reaper invasion on Earth, Palavan, or Sur'Kesh. Solve crimes as a C-SEC officer on the Citadel.
-                With Mass Effect 5e, the adventure is in your hands. You can play anywhere are on the Mass Effect timeline, create
-                new worlds, or revisit old ones. So gear up and start making your own journey.
+                With Mass Effect 5e, the adventure is in your hands. You can play anywhere in the Mass Effect time line, create
+                new worlds, or revisit old ones. So, gear up and start making your own journey.
         v-layout(column wrap align-center)
           v-flex(xs12)
             v-container(grid-list-xl)
@@ -40,8 +40,8 @@
                     v-card-text.
                       Mass Effect 5e lets you mix and match a variety of classic alien races with your favorite Mass Effect class.
                       Wreak havoc on the front lines as a Krogan Shocktrooper. Crush your enemies like a biotic god as a
-                      Volus Commando. With 12 race and 18 subclass options, Mass Effect 5e has a number of options to fit
-                      your play style.
+                      Volus Commando. With 12 races 6 classes, and 18 specializations, Mass Effect 5e has options to fit any
+                      play style.
                 // Weapons and armor
                 v-flex(xs12 md4 d-flex)
                   v-card.elevation-0.transparent
@@ -52,7 +52,7 @@
                       div.headline.text-xs-center Weapons & Armor
                     v-card-text.
                       Magic is just science we don't understand yet, so we've replaced the plethora of magical items
-                      found in D&D 5th edition with unique weapons and armor. You'll also find a full mod system for upgrading
+                      found in D&D 5th edition with unique weapons and armor. You'll also find a full modification system for upgrading
                       and customizing your gear.
                 // Enemies
                 v-flex(xs12 md4 d-flex)
@@ -63,9 +63,9 @@
                     v-card-title(primary-title).layout.justify-center
                       div.headline.text-xs-center Unique Enemies
                     v-card-text.
-                      Our bestiary is filled with iconic Mass Effect enemies, but custom made using D&D's Dungeon Master Guide
+                      Our bestiary is filled with iconic Mass Effect enemies custom-made using D&D's Dungeon Master Guide
                       to ensure balanced combat. From Reaper forces to Blue Sun grunts, we've got enough monsters to keep your
-                      players interested and challenged.
+                      players engaged and challenged.
     section
       v-parallax(src="/images/parallax/joker.png")
         v-layout(column align-center justify-center).white--text
@@ -79,7 +79,7 @@
               v-card-title(primary-title)
                 div.headline Interactive Handbook
               v-card-text.
-                Our player's handbook is more than a PDF. It's a fully navigable, web app that allows you to browse rules, search for items and spells,
+                Our player's handbook is more than a PDF. It's a fully navigable web app that allows you to browse rules, search for items and spells,
                 and create bookmarks for frequently used information.
               v-card-actions
                 v-btn(to="/phb/intro" flat) Get Started #[v-icon chevron_right]
@@ -105,8 +105,8 @@
               v-card-title(primary-title)
                 div.headline Tabletop Assets
               v-card-text.
-                We've also got a host of tabletop rpg assests. A custom-made character sheet and printable spell cards. In addition,
-                we're working on VTT maps and tokens and plenty of other goodies.
+                We've also got a host of tabletop rpg assets: a custom-made character sheet and printable spell cards. In addition,
+                we're working on VTT maps, tokens, and plenty of other goodies.
               v-card-actions
                 v-btn(to="/assets" flat) Print #[v-icon chevron_right]
           v-flex(md5).hidden-sm-and-down.text-xs-center

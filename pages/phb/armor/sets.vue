@@ -2,11 +2,11 @@
   v-container
     h2.display-3 Armor Sets
     p.
-      Pre-made Armor Sets are cheaper than creating a full set of custom armor. However, they cannot be customized or upgraded
-      in any way. To learn about creating additional Armor Sets, read the #[router-link(to="/phb/rules/armor") Armor Rules].
+      Pre-made armor sets are cheaper than creating a full set of custom armor. However, they cannot be customized or upgraded
+      in any way. To learn about creating additional armor sets, read the #[router-link(to="/phb/rules/armor") Armor Rules].
     p.
-      An armor set can be one or multiple pieces of armor. "Full Set" means the armor consists of Head, Chest, Arms, and Legs piece.
-      "Body Armor" consists of a Chest, Arm and Leg piece.
+      An armor set can be one or more pieces of armor. "Full Set" means the armor consists of Head, Chest, Arms, and Legs pieces.
+      "Body Armor" consists of a Chest, Arms and Legs piece.
     div.mt-3
       v-data-table(v-bind:headers="headers" v-bind:items="items" hide-actions).elevation-1
         template(slot="items" slot-scope="props")
