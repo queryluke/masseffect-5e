@@ -24,7 +24,7 @@
           'heavy-weapons',
           'weapon-customization'
         ],
-        description: 'Guns! A major difference between Mass Effect 5e and D&D 5e is the emphasis on ranged combat with firearms. You can still make a pretty bad ass melee build, but most people will be shooting instead of slapping.'
+        description: 'Guns! A major difference between Mass Effect 5e and D&D 5e is the emphasis on ranged combat with firearms. You can still make a very powerful melee-focused character, but most characters in this setting will be shooting instead of slapping.'
       }
     },
     head () {

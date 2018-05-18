@@ -2,7 +2,7 @@
   v-container
     h2.display-3 Spellcasting
     p.
-      Biotics, Tech & Combat Powers
+      Biotics, Tech, & Combat Powers
     div(v-for="(rule, index) in rules")
       component(v-bind:is="rule")
 </template>
