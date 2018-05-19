@@ -7,6 +7,7 @@ about: Open a discussion about a current spell in the system
 <!-- title of issue should be "Spell Review: Spell Name" -->
 
 ## Current
+* Level: [e.g., 1st, Tech, Cantrip]
 * Casting Time: [e.g. action, reaction]
 * Range: [e.g. 10m]
 * Duration: [e.g. Concentration 1 min, instant, 10 min]
@@ -24,6 +25,7 @@ __Advanced Options__
 The reason you've opened the spell review.
 
 ## Proposal (optional)
+* Level: [e.g., 1st, Tech, Cantrip]
 * Casting Time: [e.g. action, reaction]
 * Range: [e.g. 10m]
 * Duration: [e.g. Concentration 1 min, instant, 10 min]
