@@ -41,7 +41,7 @@
                 div(id="race-increases")
                     label #[strong Ability Mods]
                     p {{race.increases}}
-                div(v-for="trait in race.racial_traits" v-bind:key="trait.id")
+                div(v-for="trait in racialTraits" v-bind:key="trait.id")
                   label(:id="trait.id") #[strong {{ trait.name }}]
                   me-element(:text="trait.description" v-bind:aria-labelledby="`race-traits ${trait.id}`")
               div.ma-2
@@ -74,13 +74,22 @@
   export default {
     components: { MeElement, MeIcon },
     computed: {
-      ...mapGetters(['getData', 'getMutableData'])
+      ...mapGetters(['getData', 'getMutableData']),
+      racialTraits () {
+        const availableFeats = this.getMutableData('feats').filter((feat) => feat[this.id] !== null).map((feat) => feat.name)
+        return this.getMutableData('racialTraits').filter((trait) => trait[this.id] !== null).map((trait) => {
+          for (let line of trait.description) {
+            if (/{feats}/.test(line.data)) {
+              line.data = line.data.replace(/{feats}/, availableFeats.join(', '))
+            }
+          }
+          return trait
+        })
+      }
     },
     created () {
       this.id = this.$route.params.id
-      let feats = this.getData('feats')
       let races = this.getMutableData('races')
-      let traits = this.getData('racialTraits')
       let race = races.find((value) => {
         return value.id === this.id
       })
@@ -88,28 +97,13 @@
       let index = races.indexOf(race)
       this.previous_race = races[index - 1] ? races[index - 1] : {}
       this.next_race = races[index + 1] ? races[index + 1] : {}
-
       race.available_classes = race.available_classes.split(',').map((v) => v.trim())
-
-      race.racial_traits = traits.filter((trait) => {
-        return trait[race.id] !== null
-      }).map((trait) => {
-        for (let line of trait.description) {
-          if (/{feats}/.test(line.data)) {
-            let availableStartingFeats = feats.filter((feat) => {
-              return feat[race.id] !== null
-            }).map((feat) => feat.name)
-            line.data = line.data.replace(/{feats}/, availableStartingFeats.join(', '))
-          }
-        }
-        return trait
-      })
-
       this.race = race
     },
     data () {
       return {
         race: {},
+        feats: {},
         next_race: {},
         previous_race: {}
       }
