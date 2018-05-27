@@ -1,5 +1,5 @@
 {
-  "updated": "April 25, 2018 @  8:06 PM",
+  "updated": "May 27, 2018 @  4:13 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -504,11 +504,6 @@
             {
               "key": "biotic_powers",
               "display": "Biotic Powers(2:3)",
-              "subclass_progression": null
-            },
-            {
-              "key": "fighting_style",
-              "display": "Fighting Style",
               "subclass_progression": null
             }
           ]

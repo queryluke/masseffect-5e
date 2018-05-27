@@ -1,5 +1,5 @@
 {
-  "updated": "May 13, 2018 @  4:53 PM",
+  "updated": "May 27, 2018 @  4:13 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -208,8 +208,8 @@
 
       ],
       "casting_time": "Reaction",
-      "concentration": null,
-      "duration": "1 hour",
+      "concentration": "x",
+      "duration": "1 minute",
       "range": "Self",
       "aoe": null,
       "aoe_distance": null,

@@ -1,5 +1,5 @@
 {
-  "updated": "April 28, 2018 @ 12:41 PM",
+  "updated": "May 27, 2018 @  4:13 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -701,11 +701,6 @@
         {
           "key": "features",
           "value": [
-            {
-              "key": "fighting_style",
-              "display": "Fighting Style",
-              "subclass_progression": null
-            },
             {
               "key": "tech_power",
               "display": "Tech Power(2)",

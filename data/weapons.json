@@ -1,5 +1,5 @@
 {
-  "updated": "May 12, 2018 @  2:02 PM",
+  "updated": "May 27, 2018 @  4:13 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSq70x_GZuDKcELgX8k_7Hd6nLGu3DoIEdDwP-YEGjUU-ghGc7ot_Q7140FZwGbEalHgzPwVm4BN8y_/pubhtml",
   "data": [
     {
@@ -35,11 +35,11 @@
       "cost": "17000",
       "manufacturer": "Cerberus",
       "weight": "5",
-      "heat": "2",
+      "heat": "6",
       "damage": "2d6",
       "range": "60",
       "minStr": null,
-      "tags": "Two-handed",
+      "tags": "Two-handed, Burst Fire",
       "notes": [
 
       ],
@@ -83,16 +83,16 @@
       "cost": "60000",
       "manufacturer": null,
       "weight": "6",
-      "heat": "3",
+      "heat": "8",
       "damage": "4d4",
       "range": "20",
       "minStr": null,
-      "tags": "Unique, Two-handed",
+      "tags": "Unique, Two-handed, Burst Fire",
       "notes": [
         {
           "id": 1,
           "type": "line",
-          "data": "The Collector Assault Rifle does not use thermal clips. Instead use a d8 to track the \"heat\". Every round you fire the weapon, spin down the die 1 face. If you don't fire the weapon, spin the die up 1 face. This represents the weapon internally cooling off. If you ever spin down the die to 0, the weapon jams and cannot be fired again this combat."
+          "data": "The Collector Assault Rifle does not use thermal clips. Instead use a d8 to track the \"heat\". Whenever you make a ranged attack with the weapon, spin down the die 1 face. Every round that you don't fire the weapon, spin the die up 1 face. This represents the weapon internally cooling off. If you ever spin down the die to 0, the weapon jams and cannot be fired again this combat."
         }
       ],
       "npcHit": null,
@@ -100,7 +100,7 @@
       "dmgType": "piercing",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/f/f8/ME3_Collector_Assault_Rifle.png/revision/latest/scale-to-width-down/350?cb=20120317180554",
       "id": "collector_assault_rifle",
-      "notes_text_dump": "TheCollectorAssaultRifledoesnotusethermalclipsInsteadusead8totracktheheatEveryroundyoufiretheweaponspindownthedie1faceIfyoudontfiretheweaponspinthedieup1faceThisrepresentstheweaponinternallycoolingoffIfyoueverspindownthedieto0theweaponjamsandcannotbefiredagainthiscombat"
+      "notes_text_dump": "TheCollectorAssaultRifledoesnotusethermalclipsInsteadusead8totracktheheatWheneveryoumakearangedattackwiththeweaponspindownthedie1faceEveryroundthatyoudontfiretheweaponspinthedieup1faceThisrepresentstheweaponinternallycoolingoffIfyoueverspindownthedieto0theweaponjamsandcannotbefiredagainthiscombat"
     },
     {
       "name": "Geth Pulse Rifle",
@@ -109,11 +109,11 @@
       "cost": "37000",
       "manufacturer": "Geth Armory",
       "weight": "4",
-      "heat": "6",
+      "heat": "9",
       "damage": "2d6",
       "range": "40",
       "minStr": null,
-      "tags": "Two-handed",
+      "tags": "Two-handed, Burst Fire",
       "notes": [
         {
           "id": 1,
@@ -135,11 +135,11 @@
       "cost": "15500",
       "manufacturer": "Elanus Risk Control Services",
       "weight": "2",
-      "heat": "4",
+      "heat": "12",
       "damage": "1d10",
       "range": "50",
       "minStr": null,
-      "tags": "Two-handed",
+      "tags": "Two-handed, Burst Fire",
       "notes": [
 
       ],
@@ -157,7 +157,7 @@
       "cost": "14500",
       "manufacturer": "Systems Alliance",
       "weight": "5",
-      "heat": "6",
+      "heat": "8",
       "damage": "1d8",
       "range": "10",
       "minStr": null,
@@ -183,11 +183,11 @@
       "cost": "16500",
       "manufacturer": "Unknown",
       "weight": "5",
-      "heat": "3",
+      "heat": "9",
       "damage": "1d12",
       "range": "20",
       "minStr": null,
-      "tags": "Two-handed",
+      "tags": "Two-handed, Burst Fire",
       "notes": [
 
       ],
@@ -209,12 +209,12 @@
       "damage": "2d6",
       "range": "20",
       "minStr": null,
-      "tags": "Two-handed",
+      "tags": "Two-handed, Burst Fire",
       "notes": [
         {
           "id": 1,
           "type": "line",
-          "data": "Somewhat of a relic and hard to come by, the M-7 does not use thermal clips. Instead use a d8 to track the \"heat\". Whenever you make a ranged attack with the weapon, spin down the die 1 face. If you don't fire the weapon, spin the die up 2 faces. This represents the weapon internally cooling off. If you ever spin down the die to 0, the weapon jams and cannot be fired again this combat."
+          "data": "Somewhat of a relic and hard to come by, the M-7 does not use thermal clips. Instead use a d8 to track the \"heat\". Whenever you make a ranged attack with the weapon, spin down the die 1 face. Every round that you don't fire the weapon, spin the die up 2 faces. This represents the weapon internally cooling off. If you ever spin down the die to 0, the weapon jams and cannot be fired again this combat."
         },
         {
           "id": 2,
@@ -227,7 +227,7 @@
       "dmgType": "piercing",
       "image": "http://vignette4.wikia.nocookie.net/masseffect/images/c/c6/ME3_Lancer_AS.png/revision/latest?cb=20130227094559",
       "id": "m-7_lancer",
-      "notes_text_dump": "SomewhatofarelicandhardtocomebytheM7doesnotusethermalclipsInsteadusead8totracktheheatWheneveryoumakearangedattackwiththeweaponspindownthedie1faceIfyoudontfiretheweaponspinthedieup2facesThisrepresentstheweaponinternallycoolingoffIfyoueverspindownthedieto0theweaponjamsandcannotbefiredagainthiscombatItcannotbenefitfromMagazinemods"
+      "notes_text_dump": "SomewhatofarelicandhardtocomebytheM7doesnotusethermalclipsInsteadusead8totracktheheatWheneveryoumakearangedattackwiththeweaponspindownthedie1faceEveryroundthatyoudontfiretheweaponspinthedieup2facesThisrepresentstheweaponinternallycoolingoffIfyoueverspindownthedieto0theweaponjamsandcannotbefiredagainthiscombatItcannotbenefitfromMagazinemods"
     },
     {
       "name": "M-76 Revenant",
@@ -240,7 +240,7 @@
       "damage": "3d4",
       "range": "10",
       "minStr": null,
-      "tags": "Two-handed",
+      "tags": "Two-handed, Burst Fire",
       "notes": [
 
       ],
@@ -258,11 +258,11 @@
       "cost": "7500",
       "manufacturer": "Elkoss Combine",
       "weight": "3",
-      "heat": "3",
+      "heat": "9",
       "damage": "1d8",
       "range": "20",
       "minStr": null,
-      "tags": "Two-handed",
+      "tags": "Two-handed, Burst Fire",
       "notes": [
 
       ],
@@ -280,7 +280,7 @@
       "cost": "14500",
       "manufacturer": "Unknown",
       "weight": "3",
-      "heat": "16",
+      "heat": "15",
       "damage": "1d8",
       "range": "40",
       "minStr": null,
@@ -341,7 +341,7 @@
       "damage": "2d8",
       "range": "20",
       "minStr": null,
-      "tags": "Two-handed",
+      "tags": "Two-handed, Burst Fire",
       "notes": [
         {
           "id": 1,
@@ -385,16 +385,16 @@
       "cost": "61000",
       "manufacturer": null,
       "weight": "6",
-      "heat": "4",
+      "heat": "6",
       "damage": "2d10",
       "range": "10",
       "minStr": null,
-      "tags": "Unique, Two-handed",
+      "tags": "Unique, Two-handed, Burst Fire",
       "notes": [
         {
           "id": 1,
           "type": "line",
-          "data": "The Particle Rifle does not use thermal clips. Instead use a d4 to track the \"heat\". Whenever you make a ranged attack with the weapon, spin down the die 1 face. If you don't fire the weapon, spin the die up 1 face. This represents the weapon internally cooling off. If you ever spin down the die to 0, the weapon jams and cannot be fired again this combat."
+          "data": "The Particle Rifle does not use thermal clips. Instead use a d6 to track the \"heat\". Whenever you make a ranged attack with the weapon, spin down the die 1 face. Every round that you don't fire the weapon, spin the die up 1 face. This represents the weapon internally cooling off. If you ever spin down the die to 0, the weapon jams and cannot be fired again this combat."
         },
         {
           "id": 2,
@@ -407,7 +407,7 @@
       "dmgType": "radiant",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/6/61/ME3_Particle_Assault_Rifle.png/revision/latest/scale-to-width-down/350?cb=20120317181936",
       "id": "particle_rifle",
-      "notes_text_dump": "TheParticleRifledoesnotusethermalclipsInsteadusead4totracktheheatWheneveryoumakearangedattackwiththeweaponspindownthedie1faceIfyoudontfiretheweaponspinthedieup1faceThisrepresentstheweaponinternallycoolingoffIfyoueverspindownthedieto0theweaponjamsandcannotbefiredagainthiscombatDealsradiantdamage"
+      "notes_text_dump": "TheParticleRifledoesnotusethermalclipsInsteadusead6totracktheheatWheneveryoumakearangedattackwiththeweaponspindownthedie1faceEveryroundthatyoudontfiretheweaponspinthedieup1faceThisrepresentstheweaponinternallycoolingoffIfyoueverspindownthedieto0theweaponjamsandcannotbefiredagainthiscombatDealsradiantdamage"
     },
     {
       "name": "Phaeston",
@@ -416,11 +416,11 @@
       "cost": "8000",
       "manufacturer": "Turians",
       "weight": "3",
-      "heat": "6",
+      "heat": "12",
       "damage": "2d4",
       "range": "20",
       "minStr": null,
-      "tags": "Two-handed",
+      "tags": "Two-handed, Burst Fire",
       "notes": [
 
       ],
@@ -670,7 +670,7 @@
       "damage": "2d4",
       "range": "20",
       "minStr": null,
-      "tags": null,
+      "tags": "Burst Fire",
       "notes": [
 
       ],
@@ -711,11 +711,11 @@
       "name": "Cobra Missile Launcher",
       "rarity": "Rare",
       "type": "Heavy Weapon",
-      "cost": "69000",
+      "cost": "82000",
       "manufacturer": null,
       "weight": "12",
       "heat": "4",
-      "damage": "6d12",
+      "damage": "8d12",
       "range": "120",
       "minStr": null,
       "tags": "Unique, Two-handed",
@@ -723,7 +723,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Choose a creature within 60m that you can see and begin Targeting that creature. At the start of your turn, if you successfully held your targeting on the creature,  you launch a missile that deals 8d12 thunder damage."
+          "data": "Choose a creature within 60m that you can see and begin Targeting. At the start of your turn, if are still Targeting, you fire a missile that deals 8d12 thunder damage."
         }
       ],
       "npcHit": null,
@@ -731,7 +731,7 @@
       "dmgType": "thunder",
       "image": "http://vignette2.wikia.nocookie.net/masseffect/images/f/f9/ME3_Hydra_Heavy_Weapon.png/revision/latest?cb=20120317194543",
       "id": "cobra_missile_launcher",
-      "notes_text_dump": "Chooseacreaturewithin60mthatyoucanseeandbeginTargetingthatcreatureAtthestartofyourturnifyousuccessfullyheldyourtargetingonthecreatureyoulaunchamissilethatdeals8d12thunderdamage"
+      "notes_text_dump": "Chooseacreaturewithin60mthatyoucanseeandbeginTargetingAtthestartofyourturnifarestillTargetingyoufireamissilethatdeals8d12thunderdamage"
     },
     {
       "name": "Geth Spitfire",
@@ -801,7 +801,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Choose a creature within 60m that you can see and begin Targeting that creature. If you successfully held your targeting for one turn, at the start of your next turn you fire a unique missile at each target. When the missile hits, it deploys 3 shaped charges. The first disrupts any barriers or shields, any barriers or shields the creature has are completely removed. The second charge cripples armor; the creature has their AC reduced by 3 for the remainder of combat. The final charge deal 4d12 thunder damage. The creature can attempt a Constitution saving throw to cut the damage in half."
+          "data": "Choose a creature within 60m that you can see and begin Targeting. At the start of your turn, if are still Targeting, fire a unique missile at the target. When the missile hits, it deploys 3 shaped charges. The first disrupts any barriers or shields, completely removing all barrier ticks and shield points. The second charge cripples armor; the creature has their AC reduced by 3 for the remainder of combat. The final charge deals explodes and the creature must make a Constitution saving throw (DC 18). On a failed save the creature takes 4d12 thunder damage or half as much on a successful one."
         }
       ],
       "npcHit": null,
@@ -809,7 +809,7 @@
       "dmgType": "thunder",
       "image": "http://vignette2.wikia.nocookie.net/masseffect/images/f/f9/ME3_Hydra_Heavy_Weapon.png/revision/latest?cb=20120317194543",
       "id": "m-560_hydra",
-      "notes_text_dump": "Chooseacreaturewithin60mthatyoucanseeandbeginTargetingthatcreatureIfyousuccessfullyheldyourtargetingforoneturnatthestartofyournextturnyoufireauniquemissileateachtargetWhenthemissilehitsitdeploys3shapedchargesThefirstdisruptsanybarriersorshieldsanybarriersorshieldsthecreaturehasarecompletelyremovedThesecondchargecripplesarmorthecreaturehastheirACreducedby3fortheremainderofcombatThefinalchargedeal4d12thunderdamageThecreaturecanattemptaConstitutionsavingthrowtocutthedamageinhalf"
+      "notes_text_dump": "Chooseacreaturewithin60mthatyoucanseeandbeginTargetingAtthestartofyourturnifarestillTargetingfireauniquemissileatthetargetWhenthemissilehitsitdeploys3shapedchargesThefirstdisruptsanybarriersorshieldscompletelyremovingallbarrierticksandshieldpointsThesecondchargecripplesarmorthecreaturehastheirACreducedby3fortheremainderofcombatThefinalchargedealsexplodesandthecreaturemustmakeaConstitutionsavingthrowDC18Onafailedsavethecreaturetakes4d12thunderdamageorhalfasmuchonasuccessfulone"
     },
     {
       "name": "M-597 Landon",
@@ -827,7 +827,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Spend a round Targeting as you sweep the battlefield for all enemies. At the start of your next turn, choose up to 10 enemy creatures and launch a miniature missile at them, dealing 4d8 thunder damage. You cannot target a creature twice. Each missile used consumes a weapon charge."
+          "data": "Spend a round Targeting as you sweep the battlefield for all enemies. At the start of your next turn, if you are still targeting, choose up to 10 enemy creatures and launch a miniature missile at them, dealing 4d8 thunder damage. You cannot target a creature twice. Each missile used consumes a weapon charge."
         }
       ],
       "npcHit": null,
@@ -835,7 +835,7 @@
       "dmgType": "thunder",
       "image": "http://vignette4.wikia.nocookie.net/masseffect/images/6/61/ME3_Ladon_Codex_Rip.png/revision/latest?cb=20140106114047",
       "id": "m-597_landon",
-      "notes_text_dump": "SpendaroundTargetingasyousweepthebattlefieldforallenemiesAtthestartofyournextturnchooseupto10enemycreaturesandlaunchaminiaturemissileatthemdealing4d8thunderdamageYoucannottargetacreaturetwiceEachmissileusedconsumesaweaponcharge"
+      "notes_text_dump": "SpendaroundTargetingasyousweepthebattlefieldforallenemiesAtthestartofyournextturnifyouarestilltargetingchooseupto10enemycreaturesandlaunchaminiaturemissileatthemdealing4d8thunderdamageYoucannottargetacreaturetwiceEachmissileusedconsumesaweaponcharge"
     },
     {
       "name": "M-920 Cain",
@@ -853,7 +853,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Spend a round Targeting, charging up the Cain's core. At the start of your turn, you can choose to continue targeting to increase the power of the blast. You can continue Targeting as long as the Cain has weapon charges left. When you're ready to release the blast, choose a fixed point within 60m. You release a small nuclear explosion in the area. Roll X + 5d12 where X is the number of charges you use multiplied by 2. Any creature within 2m automatically fails the saving throw. Creatures within 10m make a Dexterity saving throw. On a failed save, a creature takes radiant damage equal to your roll. On a success, a creature takes half damage."
+          "data": "Spend a round Targeting, charging up the Cain's core. At the start of your turn, if you are still Targeting, you can choose to continue Targeting to increase the power of the blast. You can continue Targeting as long as the Cain has weapon charges left. When you're ready to release the blast, choose a fixed point within 60m. You release a small nuclear explosion in the area. Roll X + 5d12 where X is the number of charges you use multiplied by 2. Any creature within 2m automatically fails the saving throw. Creatures within 10m make a Dexterity saving throw. On a failed save, a creature takes radiant damage equal to your roll. On a success, a creature takes half damage."
         }
       ],
       "npcHit": null,
@@ -861,7 +861,33 @@
       "dmgType": "radiant",
       "image": "http://vignette2.wikia.nocookie.net/masseffect/images/b/bf/ME3_Cain_Heavy_Weapon.png/revision/latest?cb=20120317195513",
       "id": "m-920_cain",
-      "notes_text_dump": "SpendaroundTargetingcharginguptheCainscoreAtthestartofyourturnyoucanchoosetocontinuetargetingtoincreasethepoweroftheblastYoucancontinueTargetingaslongastheCainhasweaponchargesleftWhenyourereadytoreleasetheblastchooseafixedpointwithin60mYoureleaseasmallnuclearexplosionintheareaRollX5d12whereXisthenumberofchargesyouusemultipliedby2Anycreaturewithin2mautomaticallyfailsthesavingthrowCreatureswithin10mmakeaDexteritysavingthrowOnafailedsaveacreaturetakesradiantdamageequaltoyourrollOnasuccessacreaturetakeshalfdamage"
+      "notes_text_dump": "SpendaroundTargetingcharginguptheCainscoreAtthestartofyourturnifyouarestillTargetingyoucanchoosetocontinueTargetingtoincreasethepoweroftheblastYoucancontinueTargetingaslongastheCainhasweaponchargesleftWhenyourereadytoreleasetheblastchooseafixedpointwithin60mYoureleaseasmallnuclearexplosionintheareaRollX5d12whereXisthenumberofchargesyouusemultipliedby2Anycreaturewithin2mautomaticallyfailsthesavingthrowCreatureswithin10mmakeaDexteritysavingthrowOnafailedsaveacreaturetakesradiantdamageequaltoyourrollOnasuccessacreaturetakeshalfdamage"
+    },
+    {
+      "name": "ML-77 Missile Launcher",
+      "rarity": "Uncommon",
+      "type": "Heavy Weapon",
+      "cost": "49000",
+      "manufacturer": "Systems Alliance",
+      "weight": "10",
+      "heat": "6",
+      "damage": "6d12",
+      "range": "60",
+      "minStr": null,
+      "tags": "Unique, Two-handed",
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Choose a creature within 60m that you can see and fire a missle at it. Each creature within a 4m cube of the target, including the target, must make a Dexterity saving throw (DC 14). On a failed save a creature takes 6d12 thunder damge or half as much on a successful one."
+        }
+      ],
+      "npcHit": null,
+      "addDmg": null,
+      "dmgType": "thunder",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/e7/Codex_ME2_-_Missile_Launcher.png/revision/latest/scale-to-width-down/200?cb=20140823053914",
+      "id": "ml-77_missile_launcher",
+      "notes_text_dump": "Chooseacreaturewithin60mthatyoucanseeandfireamissleatitEachcreaturewithina4mcubeofthetargetincludingthetargetmustmakeaDexteritysavingthrowDC14Onafailedsaveacreaturetakes6d12thunderdamgeorhalfasmuchonasuccessfulone"
     },
     {
       "name": "Reaper Blackstar",
@@ -879,7 +905,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Choose a creature within 60m that you can see and begin Targeting that creature. At the start of your turn, if you successfully held your targeting on the creature, it takes 15d10 necrotic damage."
+          "data": "Choose a creature within 60m that you can see and begin Targeting that creature. At the start of your turn, if you are still Targeting, fire a sub-atomic particle beam at the creature dealing 15d10 necrotic damage."
         }
       ],
       "npcHit": null,
@@ -887,17 +913,17 @@
       "dmgType": "necrotic",
       "image": "http://vignette2.wikia.nocookie.net/masseffect/images/6/69/ME3_Reaper_Blackstar_Heavy_Weapon.png/revision/latest?cb=20120317194848",
       "id": "reaper_blackstar",
-      "notes_text_dump": "Chooseacreaturewithin60mthatyoucanseeandbeginTargetingthatcreatureAtthestartofyourturnifyousuccessfullyheldyourtargetingonthecreatureittakes15d10necroticdamage"
+      "notes_text_dump": "Chooseacreaturewithin60mthatyoucanseeandbeginTargetingthatcreatureAtthestartofyourturnifyouarestillTargetingfireasubatomicparticlebeamatthecreaturedealing15d10necroticdamage"
     },
     {
       "name": "Sync Laser",
       "rarity": "Rare",
       "type": "Heavy Weapon",
-      "cost": "69000",
+      "cost": "82000",
       "manufacturer": null,
       "weight": "9",
       "heat": "2",
-      "damage": "6d12",
+      "damage": "8d12",
       "range": "120",
       "minStr": null,
       "tags": "Unique, Two-handed",
@@ -905,7 +931,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Spend a round Targeting a 10m x 20m rectangle, up to 60m away. At the start of your turn, call down an orbital strike. Creatures within the rectangle make a Dexterity saving throw. On a failed save, a creature takes 8d12 thunder damage. On a success, a creature takes half damage."
+          "data": "Spend a round Targeting a 10m x 20m rectangle, up to 60m away. At the start of your turn, if you are still targeting, call down an orbital strike. Creatures within the rectangle make a Dexterity saving throw. On a failed save, a creature takes 8d12 thunder damage. On a success, a creature takes half damage."
         }
       ],
       "npcHit": null,
@@ -913,7 +939,7 @@
       "dmgType": "thunder",
       "image": "http://vignette2.wikia.nocookie.net/masseffect/images/3/3d/ME3_Sync_Laser_Heavy_Weapon.png/revision/latest?cb=20120317195655",
       "id": "sync_laser",
-      "notes_text_dump": "SpendaroundTargetinga10mx20mrectangleupto60mawayAtthestartofyourturncalldownanorbitalstrikeCreatureswithintherectanglemakeaDexteritysavingthrowOnafailedsaveacreaturetakes8d12thunderdamageOnasuccessacreaturetakeshalfdamage"
+      "notes_text_dump": "SpendaroundTargetinga10mx20mrectangleupto60mawayAtthestartofyourturnifyouarestilltargetingcalldownanorbitalstrikeCreatureswithintherectanglemakeaDexteritysavingthrowOnafailedsaveacreaturetakes8d12thunderdamageOnasuccessacreaturetakeshalfdamage"
     },
     {
       "name": "Asari Huntress Sword",
@@ -1401,7 +1427,7 @@
       "cost": "8000",
       "manufacturer": "Ariake Technologies",
       "weight": "5",
-      "heat": "8",
+      "heat": "9",
       "damage": "2d4",
       "range": "4",
       "minStr": null,
@@ -1541,11 +1567,11 @@
       "cost": "37500",
       "manufacturer": "Blood Pack",
       "weight": "2",
-      "heat": "5",
+      "heat": "6",
       "damage": "3d4",
       "range": "6",
       "minStr": null,
-      "tags": "Hip Fire",
+      "tags": "Hip Fire, Burst Fire",
       "notes": [
         {
           "id": 1,
@@ -1571,12 +1597,12 @@
       "damage": "2d8",
       "range": "10",
       "minStr": null,
-      "tags": "Unique, Two-handed",
+      "tags": "Unique, Two-handed, Burst Fire",
       "notes": [
         {
           "id": 1,
           "type": "line",
-          "data": "The Collector SMG does not use thermal clips. Instead use a d6 to track the \"heat\". Every round you fire the weapon, spin down the die 1 face. If you don't fire the weapon, spin the die up 1 face. This represents the weapon internally cooling off. If you ever spin down the die to 0, the weapon jams and cannot be fired again this combat."
+          "data": "The Collector SMG does not use thermal clips. Instead use a d6 to track the \"heat\". Whenever you make a ranged attack with the weapon, spin down the die 1 face. Every round that you don't fire the weapon, spin the die up 1 face. This represents the weapon internally cooling off. If you ever spin down the die to 0, the weapon jams and cannot be fired again this combat."
         }
       ],
       "npcHit": null,
@@ -1584,7 +1610,7 @@
       "dmgType": "piercing",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/6/68/ME3_Collector_SMG.png/revision/latest/scale-to-width-down/350?cb=20121009204046",
       "id": "collector_smg",
-      "notes_text_dump": "TheCollectorSMGdoesnotusethermalclipsInsteadusead6totracktheheatEveryroundyoufiretheweaponspindownthedie1faceIfyoudontfiretheweaponspinthedieup1faceThisrepresentstheweaponinternallycoolingoffIfyoueverspindownthedieto0theweaponjamsandcannotbefiredagainthiscombat"
+      "notes_text_dump": "TheCollectorSMGdoesnotusethermalclipsInsteadusead6totracktheheatWheneveryoumakearangedattackwiththeweaponspindownthedie1faceEveryroundthatyoudontfiretheweaponspinthedieup1faceThisrepresentstheweaponinternallycoolingoffIfyoueverspindownthedieto0theweaponjamsandcannotbefiredagainthiscombat"
     },
     {
       "name": "Geth Plasma SMG",
@@ -1597,7 +1623,7 @@
       "damage": "4d4",
       "range": "18",
       "minStr": null,
-      "tags": "Unique",
+      "tags": "Unique, Burst Fire",
       "notes": [
         {
           "id": 1,
@@ -1619,11 +1645,11 @@
       "cost": "37500",
       "manufacturer": "Kassa Fabrication",
       "weight": "1",
-      "heat": "2",
+      "heat": "3",
       "damage": "3d4",
       "range": "10",
       "minStr": null,
-      "tags": "Hip Fire",
+      "tags": "Hip Fire, Burst Fire",
       "notes": [
 
       ],
@@ -1641,11 +1667,11 @@
       "cost": "15000",
       "manufacturer": "Cerberus",
       "weight": "1",
-      "heat": "4",
+      "heat": "6",
       "damage": "2d4",
       "range": "8",
       "minStr": null,
-      "tags": "Double Tap, Hip Fire",
+      "tags": "Double Tap, Hip Fire, Burst Fire",
       "notes": [
 
       ],
@@ -1667,7 +1693,7 @@
       "damage": "2d4",
       "range": "4",
       "minStr": null,
-      "tags": "Hip Fire",
+      "tags": "Hip Fire, Burst Fire",
       "notes": [
 
       ],
@@ -1689,7 +1715,7 @@
       "damage": "2d6",
       "range": "10",
       "minStr": null,
-      "tags": "Hip Fire",
+      "tags": "Hip Fire, Burst Fire",
       "notes": [
 
       ],
@@ -1707,11 +1733,11 @@
       "cost": "60500",
       "manufacturer": "Systems Alliance",
       "weight": "2",
-      "heat": "5",
+      "heat": "6",
       "damage": "3d6",
       "range": "6",
       "minStr": null,
-      "tags": "Hip Fire",
+      "tags": "Hip Fire, Burst Fire",
       "notes": [
 
       ],
@@ -1733,7 +1759,7 @@
       "damage": "2d12",
       "range": "100",
       "minStr": null,
-      "tags": "Two-handed",
+      "tags": "Two-handed, Burst Fire",
       "notes": [
         {
           "id": 1,
@@ -1855,11 +1881,11 @@
       "cost": "40500",
       "manufacturer": "Unknown",
       "weight": "4",
-      "heat": "2",
+      "heat": "3",
       "damage": "3d6",
       "range": "60",
       "minStr": null,
-      "tags": "Two-handed",
+      "tags": "Two-handed, Burst Fire",
       "notes": [
 
       ],
@@ -1877,11 +1903,11 @@
       "cost": "59000",
       "manufacturer": "Unknown",
       "weight": "6",
-      "heat": "10",
+      "heat": "9",
       "damage": "2d8",
       "range": "60",
       "minStr": null,
-      "tags": "Two-handed",
+      "tags": "Two-handed, Burst Fire",
       "notes": [
 
       ],
@@ -1987,6 +2013,32 @@
       "image": "http://vignette4.wikia.nocookie.net/masseffect/images/1/14/ME3_N7_Valiant_Sniper_Rifle.png/revision/latest?cb=20120317192204",
       "id": "n7_valiant",
       "notes_text_dump": ""
+    },
+    {
+      "name": "Collector Sniper Rifle",
+      "rarity": "Rare",
+      "type": "Sniper Rifle",
+      "cost": "36500",
+      "manufacturer": null,
+      "weight": "8",
+      "heat": "4",
+      "damage": "1d12",
+      "range": "60",
+      "minStr": null,
+      "tags": "Two-handed, Burst Fire",
+      "notes": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "The Collector Sniper Rifle does not use thermal clips. Instead use a d4 to track the \"heat\". Whenever you make a ranged attack with the weapon, spin down the die 1 face. Every round that you don't fire the weapon, spin the die up 1 face. This represents the weapon internally cooling off. If you ever spin down the die to 0, the weapon jams and cannot be fired again this combat."
+        }
+      ],
+      "npcHit": null,
+      "addDmg": null,
+      "dmgType": "piercing",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/4/40/ME3_Collector_Sniper_Rifle.png/revision/latest/scale-to-width-down/200?cb=20121009204028",
+      "id": "collector_sniper_rifle",
+      "notes_text_dump": "TheCollectorSniperRifledoesnotusethermalclipsInsteadusead4totracktheheatWheneveryoumakearangedattackwiththeweaponspindownthedie1faceEveryroundthatyoudontfiretheweaponspinthedieup1faceThisrepresentstheweaponinternallycoolingoffIfyoueverspindownthedieto0theweaponjamsandcannotbefiredagainthiscombat"
     }
   ]
 }
