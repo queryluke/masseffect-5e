@@ -1,5 +1,5 @@
 {
-  "updated": "May  8, 2018 @ 12:01 PM",
+  "updated": "May 27, 2018 @  7:46 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRETKGL62kEZPA69PhA3AGMiVeHOWBRkTMDL3f_K-oajryEjwdq7fRAj-qfIusPsLMiIqmB12D4Zun8/pubhtml",
   "data": [
     {
@@ -666,7 +666,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You can recall with near-perfect clarity anything you ever seen or read. Choose one of the following skills, you have expertise in it (add double your proficiency bonus): Engineering, Electronics, History, Medicine, or Science."
+          "data": "Whenever you make an Intelligence (Engineering, Electronics, History, or Science) check to recall information, you add double your proficiency bonus to the check, even if you're not normally proficient."
         }
       ],
       "asari": null,
@@ -682,7 +682,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "id": "photographic_memory",
-      "description_text_dump": "YoucanrecallwithnearperfectclarityanythingyoueverseenorreadChooseoneofthefollowingskillsyouhaveexpertiseinitadddoubleyourproficiencybonusEngineeringElectronicsHistoryMedicineorScience"
+      "description_text_dump": "WheneveryoumakeanIntelligenceEngineeringElectronicsHistoryorSciencechecktorecallinformationyouadddoubleyourproficiencybonustothecheckevenifyourenotnormallyproficient"
     },
     {
       "name": "Powerful Build",
