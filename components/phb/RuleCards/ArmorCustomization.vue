@@ -16,30 +16,27 @@
       table.table
         thead.text-xs-left
           tr
-            th
-            th Head
-            th Chest
-            th Arms & Legs
+            th Slot / Type
+            th Light
+            th Medium
+            th Heavy
+            th Mod Slots #[em (max)]
         tbody
           tr
-            td #[strong Light]
-            td 3,000
+            td #[strong Chest]
             td 8,000
-            td 2,000
-          tr
-            td #[strong Medium]
-            td 4,000
             td 10,000
-            td 3,000
-          tr
-            td #[strong Heavy]
-            td 5,000
             td 12,000
-            td 4,000
-          tr
-            td Mod Slots #[em (max)]
-            td 1 #[em (3)]
             td 2 #[em (3)]
+          tr
+            td #[strong Arms & Legs]
+            td 2,000
+            td 3,000
+            td 4,000
+            td 1 #[em (3)]
+          tr
+            td #[strong Head]
+            td(colspan=3) 5,000
             td 0 #[em (2)]
       ul.list
         li #[strong Additional Mod Slots:] 20,000 credits
