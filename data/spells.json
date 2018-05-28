@@ -1,5 +1,5 @@
 {
-  "updated": "May 27, 2018 @  4:13 PM",
+  "updated": "May 27, 2018 @  8:09 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -565,58 +565,6 @@
       "mechanic_text_dump": "IncreasethemassofyourfistandstrikeatatargetMakeameleespellattackonatargetcreatureorobjectwithinrangeOnahitdeal1d8bludgeoningdamagetothetargetandgain1barriertickpersizeofthetarget1forsmall2formedium3forlargeetcAthigherlevelsThisspellsdamageincreasesby1d8whenyoureach5thlevel2d811thlevel3d817thlevel4d8"
     },
     {
-      "name": "Biotic Push",
-      "level": "0",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Make a melee spell attack on a Medium or smaller creature or object within range. On a hit, you create a pocket mass effect field that deals 1d4 force damage the target and repels it 6m away from you."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "At higher levels: This spell's damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), 17th level (4d4)"
-        }
-      ],
-      "adv_option_1": "Quick Cast : You may cast Biotic Push as a bonus action.",
-      "adv_option_2": "Flatten: On a hit, the target is knocked {prone}.",
-      "type": "biotic",
-      "die_type": "d4",
-      "attack_type": [
-        "Melee Spell Attack"
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "Touch",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "damage",
-        "control"
-      ],
-      "damage_type": [
-
-      ],
-      "detonates": "x",
-      "primes": null,
-      "adept": "x",
-      "vanguard": "x",
-      "sentinel": "x",
-      "infiltrator": null,
-      "engineer": null,
-      "soldier": null,
-      "min_tech_points": null,
-      "id": "biotic_push",
-      "adv_options": [
-        "Quick Cast : You may cast Biotic Push as a bonus action.",
-        "Flatten: On a hit, the target is knocked {prone}."
-      ],
-      "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "MakeameleespellattackonaMediumorsmallercreatureorobjectwithinrangeOnahityoucreateapocketmasseffectfieldthatdeals1d4forcedamagethetargetandrepelsit6mawayfromyouAthigherlevelsThisspellsdamageincreasesby1d4whenyoureach5thlevel2d411thlevel3d417thlevel4d4"
-    },
-    {
       "name": "Biotic Sphere",
       "level": "3",
       "mechanic": [
@@ -800,7 +748,7 @@
         }
       ],
       "adv_option_1": "Barrier Regen : After you cast Charge, regain half of your barrier ticks (rounded down).",
-      "adv_option_2": "Distance : The force ripples outwards from the point of impact, increasing the radius to 4m.",
+      "adv_option_2": "Stunning blow : On a failed save, the target becomes {stunned} until the end of your next turn",
       "type": "biotic",
       "die_type": "d6",
       "attack_type": [
@@ -831,7 +779,7 @@
       "id": "charge",
       "adv_options": [
         "Barrier Regen : After you cast Charge, regain half of your barrier ticks (rounded down).",
-        "Distance : The force ripples outwards from the point of impact, increasing the radius to 4m."
+        "Stunning blow : On a failed save, the target becomes {stunned} until the end of your next turn"
       ],
       "class_list": "Vanguard",
       "mechanic_text_dump": "AlteryourmassandchooseacreatureorobjectyoucanseewithinrangeUsethetargetsmasstopullyourselftoitslocationwithincredibleforceAnycreatureorobjectwithina2mspheremustmakeaDexteritysavingthrowOnafailedsaveacreaturetakes1d6forcedamageandbecomesproneOnasuccessfulsaveacreaturetakeshalfasmuchdamageThedamageincreasesby1d6whenyoureachthe5thlevel2d611thlevel3d6and17thlevel4d6"
@@ -990,18 +938,18 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Make a ranged spell attack on a creature you can see within range. On a hit, you plague the target with a persistent, damaging biotic field. The creature is {primed-necrotic} and takes 1d10 necrotic damage and 1d10 necrotic damage at the start of your turn while you maintain the spell. If the creature dies, Dark Channel transfers to another random, hostile creature within 10m. Only one Dark Channel can may be active at a time."
+          "data": "Make a ranged spell attack on a creature you can see within range. On a hit, you plague the target with a persistent, damaging biotic field. The creature is {primed-necrotic} and takes 1d6 necrotic damage and 1d6 necrotic damage at the start of your turn while you maintain the spell. If the creature dies, Dark Channel transfers to the nearest hostile creature within 10m of the target."
         },
         {
           "id": 2,
           "type": "line",
-          "data": "The damage increases by 1d10 when you reach the 5th level (2d10), 11th level(3d10) and 17th level(4d10)."
+          "data": "The damage increases by 1d6 when you reach the 5th level (2d6), 11th level(3d6) and 17th level(4d6)."
         }
       ],
       "adv_option_1": "Cripple : If the affected creature would make a saving throw or attack roll, as a reaction you may increase the severity of Dark Channel. The affected creature must roll a d4 and subtract the number rolled from the attack roll or saving throw.",
-      "adv_option_2": "Improved Damage : Increase the damage die type to d12",
+      "adv_option_2": "Improved Damage : Increase the damage die type to d10",
       "type": "biotic",
-      "die_type": "d10",
+      "die_type": "d6",
       "attack_type": [
         "Ranged Attack"
       ],
@@ -1029,10 +977,10 @@
       "id": "dark_channel",
       "adv_options": [
         "Cripple : If the affected creature would make a saving throw or attack roll, as a reaction you may increase the severity of Dark Channel. The affected creature must roll a d4 and subtract the number rolled from the attack roll or saving throw.",
-        "Improved Damage : Increase the damage die type to d12"
+        "Improved Damage : Increase the damage die type to d10"
       ],
       "class_list": "Adept",
-      "mechanic_text_dump": "MakearangedspellattackonacreatureyoucanseewithinrangeOnahityouplaguethetargetwithapersistentdamagingbioticfieldThecreatureisprimednecroticandtakes1d10necroticdamageand1d10necroticdamageatthestartofyourturnwhileyoumaintainthespellIfthecreaturediesDarkChanneltransferstoanotherrandomhostilecreaturewithin10mOnlyoneDarkChannelcanmaybeactiveatatimeThedamageincreasesby1d10whenyoureachthe5thlevel2d1011thlevel3d10and17thlevel4d10"
+      "mechanic_text_dump": "MakearangedspellattackonacreatureyoucanseewithinrangeOnahityouplaguethetargetwithapersistentdamagingbioticfieldThecreatureisprimednecroticandtakes1d6necroticdamageand1d6necroticdamageatthestartofyourturnwhileyoumaintainthespellIfthecreaturediesDarkChanneltransferstothenearesthostilecreaturewithin10mofthetargetThedamageincreasesby1d6whenyoureachthe5thlevel2d611thlevel3d6and17thlevel4d6"
     },
     {
       "name": "Dark Sphere",
@@ -1069,7 +1017,7 @@
       ],
       "casting_time": "Action",
       "concentration": "x",
-      "duration": "10 minutes",
+      "duration": "1 minute",
       "range": "Self",
       "aoe": "sphere",
       "aoe_distance": "4m",
@@ -3133,26 +3081,26 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Spend 2 tech points to shoot a swarm of miniature pylons to a target location within 20m. The pylons form a 4m cylinder at the chosen location, created an electrified net. Creatures within the net cannot cast tech."
+          "data": "Spend 2 tech points to shoot a swarm of miniature pylons to a target location within 20m. Each creature within a 4m cylinder of the target location must make a Dexterity saving throw. Any creature that fails the saving throw is trapped in an electrified net, becomming {restrained} and cannot cast Tech spells."
         },
         {
           "id": 2,
           "type": "line",
-          "data": "To escape, a creature must succeed on a Strength (Athletics) check or must remain trapped in the net. If a creature does break free, it takes 1d6 lightning damage."
+          "data": "Until the spell ends, the area is considered difficult terrain. A creature that enters the cylinder for the first time on its turn or end its turn there must also make the Dexterity saving throw."
         },
         {
           "id": 3,
           "type": "line",
-          "data": "If you have a submission net deployed, you can spend XTP to send electric currents through it. Each creature within the net makes a Constitution saving throw. On a failed save, a creature takes Xd6 lightning damage, or half as much on a successful one."
+          "data": "A creature restrained by submission net may use its action to make a Strength (Athletics) check against your spell save DC to escape the net. On each attempt, the creature takes 1d6 lightning damage as it struggles against the net. On a success, the creature is no longer restrained."
         }
       ],
-      "adv_option_1": "Shock : You can electrify the net as a bonus action the first time you cast Submission net.",
-      "adv_option_2": "Improved Grip : Increase the DC to break free of the net by 3.",
+      "adv_option_1": "Electrified Net : If you have a submission net deployed, you can use your bonus action to spend XTP, sending electric currents through one net. Each creature within the net takes Xd6 lightning damage.",
+      "adv_option_2": "Anti-Tech : If a creature you can see begins to cast a Tech spell, you can use your reaction to cast submission net.",
       "type": "tech",
       "die_type": "d6",
       "attack_type": [
         "STR Save",
-        " CON Save"
+        " DEX Save"
       ],
       "casting_time": "Action",
       "concentration": null,
@@ -3161,7 +3109,6 @@
       "aoe": "cylinder",
       "aoe_distance": "4m",
       "effect": [
-        "damage",
         "control"
       ],
       "damage_type": [
@@ -3178,11 +3125,11 @@
       "min_tech_points": "2",
       "id": "submission_net",
       "adv_options": [
-        "Shock : You can electrify the net as a bonus action the first time you cast Submission net.",
-        "Improved Grip : Increase the DC to break free of the net by 3."
+        "Electrified Net : If you have a submission net deployed, you can use your bonus action to spend XTP, sending electric currents through one net. Each creature within the net takes Xd6 lightning damage.",
+        "Anti-Tech : If a creature you can see begins to cast a Tech spell, you can use your reaction to cast submission net."
       ],
       "class_list": "Engineer, Infiltrator, Sentinel",
-      "mechanic_text_dump": "Spend2techpointstoshootaswarmofminiaturepylonstoatargetlocationwithin20mThepylonsforma4mcylinderatthechosenlocationcreatedanelectrifiednetCreatureswithinthenetcannotcasttechToescapeacreaturemustsucceedonaStrengthAthleticscheckormustremaintrappedinthenetIfacreaturedoesbreakfreeittakes1d6lightningdamageIfyouhaveasubmissionnetdeployedyoucanspendXTPtosendelectriccurrentsthroughitEachcreaturewithinthenetmakesaConstitutionsavingthrowOnafailedsaveacreaturetakesXd6lightningdamageorhalfasmuchonasuccessfulone"
+      "mechanic_text_dump": "Spend2techpointstoshootaswarmofminiaturepylonstoatargetlocationwithin20mEachcreaturewithina4mcylinderofthetargetlocationmustmakeaDexteritysavingthrowAnycreaturethatfailsthesavingthrowistrappedinanelectrifiednetbecommingrestrainedandcannotcastTechspellsUntilthespellendstheareaisconsidereddifficultterrainAcreaturethatentersthecylinderforthefirsttimeonitsturnorenditsturntheremustalsomaketheDexteritysavingthrowAcreaturerestrainedbysubmissionnetmayuseitsactiontomakeaStrengthAthleticscheckagainstyourspellsaveDCtoescapethenetOneachattemptthecreaturetakes1d6lightningdamageasitstrugglesagainstthenetOnasuccessthecreatureisnolongerrestrained"
     },
     {
       "name": "Tactical Scan",
