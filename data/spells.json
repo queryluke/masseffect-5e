@@ -1,5 +1,5 @@
 {
-  "updated": "June  2, 2018 @  8:36 AM",
+  "updated": "June  2, 2018 @  9:15 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -519,7 +519,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Increase the mass of your fist and strike at a target.  Make a melee spell attack on a target creature or object within range. On a hit, deal 1d8 bludgeoning damage to the target and gain 1 barrier tick per size of the target (1 for small, 2 for medium, 3 for large, etc.)"
+          "data": "Increase the mass of your fist and strike at a target. Make a melee spell attack on a target creature or object within range. On a hit, deal 1d8 bludgeoning damage to the target and gain 2 barrier ticks."
         },
         {
           "id": 2,
@@ -527,14 +527,14 @@
           "data": "At higher levels: This spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), 17th level (4d8)"
         }
       ],
-      "adv_option_1": "Efficient Punch : Gain an additional barrier tick when you hit a target with your Biotic punch",
-      "adv_option_2": "Syphoning Strike : Instead of gaining a barrier tick, you regain 2 shield points per size of the creature.",
+      "adv_option_1": "Efficient Punch : On a hit, gain 3 barrier ticks.",
+      "adv_option_2": "Siphoning Strike : On a hit, instead of gaining barrier ticks, gain 10 shield points.",
       "type": "biotic",
       "die_type": "d8",
       "attack_type": [
         "Melee Spell Attack"
       ],
-      "casting_time": "Attack",
+      "casting_time": "Action",
       "concentration": null,
       "duration": "Instant",
       "range": "Touch",
@@ -558,11 +558,11 @@
       "min_tech_points": null,
       "id": "biotic_punch",
       "adv_options": [
-        "Efficient Punch : Gain an additional barrier tick when you hit a target with your Biotic punch",
-        "Syphoning Strike : Instead of gaining a barrier tick, you regain 2 shield points per size of the creature."
+        "Efficient Punch : On a hit, gain 3 barrier ticks.",
+        "Siphoning Strike : On a hit, instead of gaining barrier ticks, gain 10 shield points."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "IncreasethemassofyourfistandstrikeatatargetMakeameleespellattackonatargetcreatureorobjectwithinrangeOnahitdeal1d8bludgeoningdamagetothetargetandgain1barriertickpersizeofthetarget1forsmall2formedium3forlargeetcAthigherlevelsThisspellsdamageincreasesby1d8whenyoureach5thlevel2d811thlevel3d817thlevel4d8"
+      "mechanic_text_dump": "IncreasethemassofyourfistandstrikeatatargetMakeameleespellattackonatargetcreatureorobjectwithinrangeOnahitdeal1d8bludgeoningdamagetothetargetandgain2barrierticksAthigherlevelsThisspellsdamageincreasesby1d8whenyoureach5thlevel2d811thlevel3d817thlevel4d8"
     },
     {
       "name": "Biotic Sphere",
@@ -1954,7 +1954,7 @@
       "mechanic_text_dump": "ConsumebarriertickstocreateawhipofbioticenergyEachbarriertickconsumedincreasestherangeofthewhipby2mTargetacreatureyoucanseewithintheresultingrangeThetargettakes4d8forcedamageandbecomesgrappledandprimedforceuntilitescapesthegrappleAdetonatingattackimmediatelyendsthegrappleortoescapethegrapplethecreaturemustsucceedonacontestedStrengthAthleticsagainstyourConstitutionAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d8foreachslotlevelabovethe2nd"
     },
     {
-      "name": "Lift",
+      "name": "Pull",
       "level": "1",
       "mechanic": [
         {
@@ -1963,7 +1963,7 @@
           "data": "Make a ranged spell attack on a Medium or smaller creature or object within range. On a success, you create a mass effect field around the target and it becomes {lifted} 2m in the air."
         }
       ],
-      "adv_option_1": "Heavy Lift : You may target a Large or smaller creature or object.",
+      "adv_option_1": "Heavy Pull : You may target a Large or smaller creature or object.",
       "adv_option_2": "Control : While the target is lifted, as a bonus action, you can move the target up to 6m.",
       "type": "biotic",
       "die_type": "d8",
@@ -1991,9 +1991,9 @@
       "engineer": null,
       "soldier": null,
       "min_tech_points": null,
-      "id": "lift",
+      "id": "pull",
       "adv_options": [
-        "Heavy Lift : You may target a Large or smaller creature or object.",
+        "Heavy Pull : You may target a Large or smaller creature or object.",
         "Control : While the target is lifted, as a bonus action, you can move the target up to 6m."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
@@ -2313,29 +2313,24 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You create a negative mass effect field around a creature or object you can see within range then jerk the field sharply towards you, bringing the target with it. Only Medium and smaller creatures are affected. The distance the target travels is based on its size, starting at 2m for medium-sized objects and adding 4m for each size small than medium. E.g., Medium = 2m, Small = 6m, Tiny = 10m, etc."
+          "data": "You can manipulate light objects with a series of mass effect fields. When you cast this cantrip, you can try to move an object that weighs up to 10 kgs (~20 pounds). If the object isn't being worn or carried, you automatically move it up to 10 meters in any direction, but not beyond the range of this spell."
         },
         {
           "id": 2,
           "type": "line",
-          "data": "If attempting to pull an object from another creature, the creature must pass a Strength saving throw to retain possession of the object. If you pull a creature and it moves more than 2m, it must pass a Dexterity saving throw or be knocked {prone}."
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "The number of targets increase by 1 when you reach the 5th level (2), 11th level (3), and 17th level (4)."
+          "data": "If the object is worn or carried by a creature, you must make an ability check with your spellcasting ability contested by that creature's Strength check. If you succeed, you pull the object away from that creature and can move it up to 10 meters in any direction but not beyond the range of this spell."
         }
       ],
-      "adv_option_1": "Magician: You can shape and guide pull to add different trajectories to the object. The direction of pull cannot change, but you can add arcs, decrease the distance the object moves, and even pull small objects directly into your hand.",
-      "adv_option_2": "Push: You may choose to move the target towards or away from you.",
+      "adv_option_1": "Magician : You can exert fine motor control over the object, such as manipulating a simple tool or removing an object from a container.",
+      "adv_option_2": "Improved Lift : You can manipulate an object that weighs up to 25 kgs (~55 pounds).",
       "type": "biotic",
       "die_type": null,
       "attack_type": [
 
       ],
       "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
+      "concentration": "x",
+      "duration": "10 minutes",
       "range": "20m",
       "aoe": null,
       "aoe_distance": null,
@@ -2356,11 +2351,11 @@
       "min_tech_points": null,
       "id": "pull",
       "adv_options": [
-        "Magician: You can shape and guide pull to add different trajectories to the object. The direction of pull cannot change, but you can add arcs, decrease the distance the object moves, and even pull small objects directly into your hand.",
-        "Push: You may choose to move the target towards or away from you."
+        "Magician : You can exert fine motor control over the object, such as manipulating a simple tool or removing an object from a container.",
+        "Improved Lift : You can manipulate an object that weighs up to 25 kgs (~55 pounds)."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "YoucreateanegativemasseffectfieldaroundacreatureorobjectyoucanseewithinrangethenjerkthefieldsharplytowardsyoubringingthetargetwithitOnlyMediumandsmallercreaturesareaffectedThedistancethetargettravelsisbasedonitssizestartingat2mformediumsizedobjectsandadding4mforeachsizesmallthanmediumEgMedium2mSmall6mTiny10metcIfattemptingtopullanobjectfromanothercreaturethecreaturemustpassaStrengthsavingthrowtoretainpossessionoftheobjectIfyoupullacreatureanditmovesmorethan2mitmustpassaDexteritysavingthroworbeknockedproneThenumberoftargetsincreaseby1whenyoureachthe5thlevel211thlevel3and17thlevel4"
+      "mechanic_text_dump": "YoucanmanipulatelightobjectswithaseriesofmasseffectfieldsWhenyoucastthiscantripyoucantrytomoveanobjectthatweighsupto10kgs20poundsIftheobjectisntbeingwornorcarriedyouautomaticallymoveitupto10metersinanydirectionbutnotbeyondtherangeofthisspellIftheobjectiswornorcarriedbyacreatureyoumustmakeanabilitycheckwithyourspellcastingabilitycontestedbythatcreaturesStrengthcheckIfyousucceedyoupulltheobjectawayfromthatcreatureandcanmoveitupto10metersinanydirectionbutnotbeyondtherangeofthisspell"
     },
     {
       "name": "Reave",
@@ -2776,7 +2771,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Target a {lifted} object and slam it to the ground dealing bludgeoning damage equal to 2d8 + your spellcasting ability modifier. The target is no longer {lifted} but is {prone}."
+          "data": "Target a {lifted} creature or object and slam it to the ground dealing 2d8 bludgeoning damage and knocking it {prone}. The target is no longer lifted."
         },
         {
           "id": 2,
@@ -2784,8 +2779,8 @@
           "data": "The number of targets increases by 1 when you reach 5th level (2), 11th level (3) and 17th level (4)"
         }
       ],
-      "adv_option_1": "Stun : The creature must pass a Constitution saving throw or stunned for 1 round.",
-      "adv_option_2": "Improved Damage : Increase the damage die type to d12",
+      "adv_option_1": "Stun : If the target is a creature, it must pass a Constitution saving throw or becomes stunned until the end of your next turn.",
+      "adv_option_2": "Reaction : When a creature or object you can see becomes lifted, you may cast Slam on it as a reaction.",
       "type": "biotic",
       "die_type": "d8",
       "attack_type": [
@@ -2814,11 +2809,11 @@
       "min_tech_points": null,
       "id": "slam",
       "adv_options": [
-        "Stun : The creature must pass a Constitution saving throw or stunned for 1 round.",
-        "Improved Damage : Increase the damage die type to d12"
+        "Stun : If the target is a creature, it must pass a Constitution saving throw or becomes stunned until the end of your next turn.",
+        "Reaction : When a creature or object you can see becomes lifted, you may cast Slam on it as a reaction."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "Targetaliftedobjectandslamittothegrounddealingbludgeoningdamageequalto2d8yourspellcastingabilitymodifierThetargetisnolongerliftedbutisproneThenumberoftargetsincreasesby1whenyoureach5thlevel211thlevel3and17thlevel4"
+      "mechanic_text_dump": "Targetaliftedcreatureorobjectandslamittothegrounddealing2d8bludgeoningdamageandknockingitproneThetargetisnolongerliftedThenumberoftargetsincreasesby1whenyoureach5thlevel211thlevel3and17thlevel4"
     },
     {
       "name": "Slow Fall",
@@ -2830,8 +2825,8 @@
           "data": "When you or a creature within 10m of you falls, choose up to five falling creatures within range. Create a negative mass effect field around each creature, slowing the rate of descent to 20m per round. If the creature lands before the spell ends, it takes no Falling damage and can land on its feet, and the spell ends for that creature."
         }
       ],
-      "adv_option_1": null,
-      "adv_option_2": null,
+      "adv_option_1": "Improved Duration : Increase the duration to 5 minutes",
+      "adv_option_2": "Navigate : As you fall, you can direct your fall by 2m in any direction except up. You may do this once per round.",
       "type": "biotic",
       "die_type": null,
       "attack_type": [
@@ -2860,8 +2855,8 @@
       "min_tech_points": null,
       "id": "slow_fall",
       "adv_options": [
-        null,
-        null
+        "Improved Duration : Increase the duration to 5 minutes",
+        "Navigate : As you fall, you can direct your fall by 2m in any direction except up. You may do this once per round."
       ],
       "class_list": "Adept, Vanguard",
       "mechanic_text_dump": "Whenyouoracreaturewithin10mofyoufallschooseuptofivefallingcreatureswithinrangeCreateanegativemasseffectfieldaroundeachcreatureslowingtherateofdescentto20mperroundIfthecreaturelandsbeforethespellendsittakesnoFallingdamageandcanlandonitsfeetandthespellendsforthatcreature"
@@ -3240,18 +3235,18 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Make a ranged spell attack on a target you can see within range. On a hit, hurl the target backwards 10m and deal force damage equal to 1d6 + your spellcasting ability modifier."
+          "data": "Make a ranged spell attack on a target you can see within range. On a hit, the target takes force damage equal to 1d8 force damage. If the target is Medium or smaller, it is pushed backwards 10m."
         },
         {
           "id": 2,
           "type": "line",
-          "data": "At higher levels: This spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), 17th level (4d6)"
+          "data": "At higher levels: This spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), 17th level (4d8)"
         }
       ],
-      "adv_option_1": "Improved Force : Throw is so forceful, it lifts the target off the ground when knocking it back. Targets must pass a Dexterity saving throw or are knocked prone.",
+      "adv_option_1": "Radial Blast : On a hit, the damage is dealt to each creature within a 2m radius of the target.",
       "adv_option_2": "Improved Damage : Increase the damage die type to d8",
       "type": "biotic",
-      "die_type": "d6",
+      "die_type": "d8",
       "attack_type": [
         "Ranged Attack"
       ],
@@ -3278,11 +3273,11 @@
       "min_tech_points": null,
       "id": "throw",
       "adv_options": [
-        "Improved Force : Throw is so forceful, it lifts the target off the ground when knocking it back. Targets must pass a Dexterity saving throw or are knocked prone.",
+        "Radial Blast : On a hit, the damage is dealt to each creature within a 2m radius of the target.",
         "Improved Damage : Increase the damage die type to d8"
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "MakearangedspellattackonatargetyoucanseewithinrangeOnahithurlthetargetbackwards10manddealforcedamageequalto1d6yourspellcastingabilitymodifierAthigherlevelsThisspellsdamageincreasesby1d6whenyoureach5thlevel2d611thlevel3d617thlevel4d6"
+      "mechanic_text_dump": "MakearangedspellattackonatargetyoucanseewithinrangeOnahitthetargettakesforcedamageequalto1d8forcedamageIfthetargetisMediumorsmalleritispushedbackwards10mAthigherlevelsThisspellsdamageincreasesby1d8whenyoureach5thlevel2d811thlevel3d817thlevel4d8"
     },
     {
       "name": "Unity",
