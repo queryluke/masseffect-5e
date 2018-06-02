@@ -1,5 +1,5 @@
 {
-  "updated": "June  2, 2018 @  8:17 AM",
+  "updated": "June  2, 2018 @  2:43 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -61,11 +61,21 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Starting at the 3rd level, your Tech Armor is rigged for maximum protection and keeping the action on you. While Tech Armor is active, it projects a distracting holographic image (your choice). The first time a hostile creature makes an attack after you activate Tech Armor, it must pass a Wisdom (Insight) check (DC your tech save). On a failure, the creature is compelled to attack you while your Tech Armor is active. Synthetic creatures have advantage on this check."
+          "data": "Starting at the 3rd level, your Tech Armor is rigged for maximum protection and keeping the action on you. When you activate tech armor, you project a distracting holographic image (your choice) and each creature within 20m that can see you must make a Wisdom saving throw (DC = 8 + proficiency bonus + Intelligence modifier). On a failure, a creature is compelled to attack you while your Tech Armor is active. A creature that is compelled to attack you always targets you when it makes a weapon or spell attack."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Each time a creature that is compelled to attack you takes damage from source other than you, it makes a new Wisdom saving throw against the spell. If the saving throw succeeds, the spell ends."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Synthetic creatures have advantage on Wisdom saving throws."
         }
       ],
       "id": "assault_armor",
-      "mechanic_text_dump": "Startingatthe3rdlevelyourTechArmorisriggedformaximumprotectionandkeepingtheactiononyouWhileTechArmorisactiveitprojectsadistractingholographicimageyourchoiceThefirsttimeahostilecreaturemakesanattackafteryouactivateTechArmoritmustpassaWisdomInsightcheckDCyourtechsaveOnafailurethecreatureiscompelledtoattackyouwhileyourTechArmorisactiveSyntheticcreatureshaveadvantageonthischeck"
+      "mechanic_text_dump": "Startingatthe3rdlevelyourTechArmorisriggedformaximumprotectionandkeepingtheactiononyouWhenyouactivatetecharmoryouprojectadistractingholographicimageyourchoiceandeachcreaturewithin20mthatcanseeyoumustmakeaWisdomsavingthrowDC8proficiencybonusIntelligencemodifierOnafailureacreatureiscompelledtoattackyouwhileyourTechArmorisactiveAcreaturethatiscompelledtoattackyoualwaystargetsyouwhenitmakesaweaponorspellattackEachtimeacreaturethatiscompelledtoattackyoutakesdamagefromsourceotherthanyouitmakesanewWisdomsavingthrowagainstthespellIfthesavingthrowsucceedsthespellendsSyntheticcreatureshaveadvantageonWisdomsavingthrows"
     },
     {
       "name": "Assault Protocol",
@@ -175,21 +185,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "At the 14th level, you've increase your mastery with biotic spells that control the battlefield. Gain the following benefits to the spells below:"
-        },
-        {
-          "id": 2,
-          "type": "list",
-          "data": [
-            "Pull : Pull can affect Large or smaller objects and creatures, moving them 2m, and adding 4m to each size below large.",
-            "Lift : When you cast Lift you can target a creature size 1 larger than your lift is currently capable.",
-            "Singularity : Large or smaller objects and creatures are affected by singularity.",
-            "Stasis : Targets have disadvantage on their saving throw."
-          ]
+          "data": "Starting at the 3rd level, your Tech Armor is rigged for maximum protection and keeping the action on you. While Tech Armor is active, it projects a distracting holographic image (your choice). While your tech armor is active, each hostile creature that can see you that makes an attack, it must make a Wisdom saving throw. On a failure, the creature is compelled to attack you until your tech armor ends. Synthetic creatures have advantage on this check. Each time the creature takes damage from a source other than you, it can"
         }
       ],
       "id": "biotic_control",
-      "mechanic_text_dump": "Atthe14thlevelyouveincreaseyourmasterywithbioticspellsthatcontrolthebattlefieldGainthefollowingbenefitstothespellsbelowlistPullPullcanaffectLargeorsmallerobjectsandcreaturesmovingthem2mandadding4mtoeachsizebelowlargeLiftWhenyoucastLiftyoucantargetacreaturesize1largerthanyourliftiscurrentlycapableSingularityLargeorsmallerobjectsandcreaturesareaffectedbysingularityStasisTargetshavedisadvantageontheirsavingthrowlist"
+      "mechanic_text_dump": "Startingatthe3rdlevelyourTechArmorisriggedformaximumprotectionandkeepingtheactiononyouWhileTechArmorisactiveitprojectsadistractingholographicimageyourchoiceWhileyourtecharmorisactiveeachhostilecreaturethatcanseeyouthatmakesanattackitmustmakeaWisdomsavingthrowOnafailurethecreatureiscompelledtoattackyouuntilyourtecharmorendsSyntheticcreatureshaveadvantageonthischeckEachtimethecreaturetakesdamagefromasourceotherthanyouitcan"
     },
     {
       "name": "Biotic Enfilade",
