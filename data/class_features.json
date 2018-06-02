@@ -1,5 +1,5 @@
 {
-  "updated": "May 27, 2018 @  4:13 PM",
+  "updated": "June  2, 2018 @  8:17 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -352,11 +352,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Starting at 2nd level, when you hit a creature with a melee weapon attack, you can expend one spell slot to deal force damage to the target in addition to the weapon's damage. The extra damage is 2d8 for a 1st-level spell slot, plus 1d8 for each spell level higher than 1st."
+          "data": "Starting at 2nd level, when you hit a creature with a melee weapon attack, you can expend one spell slot to deal force damage to the target in addition to the weapon's damage. The extra damage is 2d8 for a 1st-level spell slot, plus 1d8 for each spell level higher than 1st. Biotic Slash detonates primed targets."
         }
       ],
       "id": "biotic_slash",
-      "mechanic_text_dump": "Startingat2ndlevelwhenyouhitacreaturewithameleeweaponattackyoucanexpendonespellslottodealforcedamagetothetargetinadditiontotheweaponsdamageTheextradamageis2d8fora1stlevelspellslotplus1d8foreachspelllevelhigherthan1st"
+      "mechanic_text_dump": "Startingat2ndlevelwhenyouhitacreaturewithameleeweaponattackyoucanexpendonespellslottodealforcedamagetothetargetinadditiontotheweaponsdamageTheextradamageis2d8fora1stlevelspellslotplus1d8foreachspelllevelhigherthan1stBioticSlashdetonatesprimedtargets"
     },
     {
       "name": "Biotic Split",
@@ -1905,16 +1905,16 @@
         {
           "id": 2,
           "type": "line",
-          "data": "Starting at the 9th level, you can use this ability twice per short rest."
+          "data": "Starting at the 13th level, you can use this ability twice per short rest."
         },
         {
           "id": 3,
           "type": "line",
-          "data": "Starting at the 11th level, you can use this ability three times per short rest."
+          "data": "Starting at the 17th level, you can use this ability three times per short rest."
         }
       ],
       "id": "zero-sum",
-      "mechanic_text_dump": "WhenyoumakeameleeattackinsteadofrollingadiceyoucanflipacoinOnheadsitsacriticalhitOntailsitsacriticalmissYoucanusethisabilityoncepershortrestStartingatthe9thlevelyoucanusethisabilitytwicepershortrestStartingatthe11thlevelyoucanusethisabilitythreetimespershortrest"
+      "mechanic_text_dump": "WhenyoumakeameleeattackinsteadofrollingadiceyoucanflipacoinOnheadsitsacriticalhitOntailsitsacriticalmissYoucanusethisabilityoncepershortrestStartingatthe13thlevelyoucanusethisabilitytwicepershortrestStartingatthe17thlevelyoucanusethisabilitythreetimespershortrest"
     },
     {
       "name": "Fast Hands",

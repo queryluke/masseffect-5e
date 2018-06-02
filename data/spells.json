@@ -1,10 +1,10 @@
 {
-  "updated": "May 27, 2018 @  8:09 PM",
+  "updated": "June  2, 2018 @  8:36 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
       "name": "AI Hacking",
-      "level": null,
+      "level": "3",
       "mechanic": [
         {
           "id": 1,
@@ -838,7 +838,7 @@
     },
     {
       "name": "Cryo Beam",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,
@@ -885,7 +885,7 @@
     },
     {
       "name": "Cryo Blast",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1046,7 +1046,7 @@
     },
     {
       "name": "Decoy",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1097,7 +1097,7 @@
     },
     {
       "name": "Defense Matrix",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1143,7 +1143,7 @@
     },
     {
       "name": "Disrupt Biotics",
-      "level": null,
+      "level": "5",
       "mechanic": [
         {
           "id": 1,
@@ -1250,7 +1250,7 @@
     },
     {
       "name": "Electric Slash",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1296,7 +1296,7 @@
     },
     {
       "name": "Energy Drain",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1342,7 +1342,7 @@
     },
     {
       "name": "First Aid",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1388,7 +1388,7 @@
     },
     {
       "name": "Flamethrower",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1587,7 +1587,7 @@
     },
     {
       "name": "Guidance",
-      "level": null,
+      "level": "1",
       "mechanic": [
         {
           "id": 1,
@@ -1806,7 +1806,7 @@
     },
     {
       "name": "Incinerate",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,
@@ -2001,7 +2001,7 @@
     },
     {
       "name": "Neural Shock",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,
@@ -2160,7 +2160,7 @@
     },
     {
       "name": "Overload",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,
@@ -2262,12 +2262,12 @@
     },
     {
       "name": "Poison Spray",
-      "level": null,
+      "level": "1",
       "mechanic": [
         {
           "id": 1,
           "type": "line",
-          "data": "Spend 1 tech point to shoot an aerosol spray of noxious chemicals from your omni-tool at a creature within melee range. The creature must succeed on a Constitution saving throw or take 1d12 poison damage and becomes poisoned until the end of your next turn. The DC of the saving throw is increase by 1 for each additional tech point you spend."
+          "data": "Spend 1 tech point to shoot an aerosol spray of noxious chemicals from your omni-tool at a creature within melee range. The creature must succeed on a Constitution saving throw or take 1d12 poison damage and becomes poisoned until the end of your next turn. The DC of the saving throw is increased by 2 for each additional tech point you spend."
         }
       ],
       "adv_option_1": "Pepper spray : Creatures that fail the Constitution saving throw are also blinded for 1 minute.",
@@ -2304,7 +2304,7 @@
         "Poison Cloud : Create a 2m-radius cloud of poison that persists for 1 minute. Each creature that enters the sphere for the first time on a turn or ends its turn there must make the Constitution saving throw."
       ],
       "class_list": "Engineer, Infiltrator",
-      "mechanic_text_dump": "Spend1techpointtoshootanaerosolsprayofnoxiouschemicalsfromyouromnitoolatacreaturewithinmeleerangeThecreaturemustsucceedonaConstitutionsavingthrowortake1d12poisondamageandbecomespoisoneduntiltheendofyournextturnTheDCofthesavingthrowisincreaseby1foreachadditionaltechpointyouspend"
+      "mechanic_text_dump": "Spend1techpointtoshootanaerosolsprayofnoxiouschemicalsfromyouromnitoolatacreaturewithinmeleerangeThecreaturemustsucceedonaConstitutionsavingthrowortake1d12poisondamageandbecomespoisoneduntiltheendofyournextturnTheDCofthesavingthrowisincreasedby2foreachadditionaltechpointyouspend"
     },
     {
       "name": "Pull",
@@ -2416,16 +2416,16 @@
     },
     {
       "name": "Sabotage",
-      "level": null,
+      "level": "2",
       "mechanic": [
         {
           "id": 1,
           "type": "line",
-          "data": "Spend 1 tech points and make a ranged tech attack on a weapon you can see within 20m (DC 10). On a hit, the next creature to use that weapon to make a ranged attack has disadvantage on the attack roll."
+          "data": "Spend 2 tech points and target a ranged weapon you can see within range. If the weapon is integrated into a creature, such as an Atlas mech's mass accelerator cannon or a drone's particle rifle, this spell has no effect unless the creature fails an Intelligence saving throw. The next attack made with the target weapon has disadvantage."
         }
       ],
       "adv_option_1": "Multi-Weapon : You can target 3 weapons at once.",
-      "adv_option_2": "Disable : After the weapon fires, it becomes jammed. It cannot be fired again until it is reloaded.",
+      "adv_option_2": "Backfire : After the weapon fires, it deals 2d6 thunder damage to the attacking creature.",
       "type": "tech",
       "die_type": null,
       "attack_type": [
@@ -2452,18 +2452,18 @@
       "infiltrator": "x",
       "engineer": "x",
       "soldier": null,
-      "min_tech_points": "1",
+      "min_tech_points": "2",
       "id": "sabotage",
       "adv_options": [
         "Multi-Weapon : You can target 3 weapons at once.",
-        "Disable : After the weapon fires, it becomes jammed. It cannot be fired again until it is reloaded."
+        "Backfire : After the weapon fires, it deals 2d6 thunder damage to the attacking creature."
       ],
       "class_list": "Engineer, Infiltrator",
-      "mechanic_text_dump": "Spend1techpointsandmakearangedtechattackonaweaponyoucanseewithin20mDC10Onahitthenextcreaturetousethatweapontomakearangedattackhasdisadvantageontheattackroll"
+      "mechanic_text_dump": "Spend2techpointsandtargetarangedweaponyoucanseewithinrangeIftheweaponisintegratedintoacreaturesuchasanAtlasmechsmassacceleratorcannonoradronesparticleriflethisspellhasnoeffectunlessthecreaturefailsanIntelligencesavingthrowThenextattackmadewiththetargetweaponhasdisadvantage"
     },
     {
       "name": "Salvo",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,
@@ -2509,7 +2509,7 @@
     },
     {
       "name": "Sentry Turret",
-      "level": null,
+      "level": "5",
       "mechanic": [
         {
           "id": 1,
@@ -2570,12 +2570,12 @@
     },
     {
       "name": "Shocking Grasp",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,
           "type": "line",
-          "data": "Spend a tech point to send an electric shock from your omni-tool to a creature you try to touch. Make a melee attack against the target. You have advantage on the attack roll if the target is wearing armor. On a hit, the target becomes {primed-lightning} until the end of its next turn and takes Xd6 lightning damage where X is the number of tech points spent, and it can't take reactions until the start of its next turn."
+          "data": "Spend tech points to send an electric shock from your omni-tool to a creature you try to touch. Make a melee attack against the target. You have advantage on the attack roll if the target is wearing armor. On a hit, the target becomes {primed-lightning} until the end of its next turn and takes Xd6 lightning damage where X is the number of tech points spent, and it can't take reactions until the start of its next turn."
         }
       ],
       "adv_option_1": "Reach : Increase the range to 4m.",
@@ -2612,7 +2612,7 @@
         "Improved Shock : Increase the damage die to d8."
       ],
       "class_list": "Engineer, Infiltrator",
-      "mechanic_text_dump": "SpendatechpointtosendanelectricshockfromyouromnitooltoacreatureyoutrytotouchMakeameleeattackagainstthetargetYouhaveadvantageontheattackrollifthetargetiswearingarmorOnahitthetargetbecomesprimedlightninguntiltheendofitsnextturnandtakesXd6lightningdamagewhereXisthenumberoftechpointsspentanditcanttakereactionsuntilthestartofitsnextturn"
+      "mechanic_text_dump": "SpendtechpointstosendanelectricshockfromyouromnitooltoacreatureyoutrytotouchMakeameleeattackagainstthetargetYouhaveadvantageontheattackrollifthetargetiswearingarmorOnahitthetargetbecomesprimedlightninguntiltheendofitsnextturnandtakesXd6lightningdamagewhereXisthenumberoftechpointsspentanditcanttakereactionsuntilthestartofitsnextturn"
     },
     {
       "name": "Shockwave",
@@ -2868,7 +2868,7 @@
     },
     {
       "name": "Snap Freeze",
-      "level": null,
+      "level": "5",
       "mechanic": [
         {
           "id": 1,
@@ -3076,7 +3076,7 @@
     },
     {
       "name": "Submission Net",
-      "level": null,
+      "level": "2",
       "mechanic": [
         {
           "id": 1,
@@ -3184,7 +3184,7 @@
     },
     {
       "name": "Target Painting",
-      "level": null,
+      "level": "2",
       "mechanic": [
         {
           "id": 1,
@@ -3286,7 +3286,7 @@
     },
     {
       "name": "Unity",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,

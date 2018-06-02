@@ -2,7 +2,7 @@
   span
     div.spell-icon
       me-icon(type="spells" v-bind:name="spell.type")
-    span(v-if="spell.type === 'biotic'")  {{ level }}
+    span  {{ level }}
 </template>
 
 <script>
@@ -31,6 +31,8 @@
           default:
             this.level = `${this.spell.level}th-level`
         }
+      } else if (this.spell.type === 'tech') {
+        this.level = `${this.spell.level.toUpperCase()}-tp`
       }
     },
     data () {
