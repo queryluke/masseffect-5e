@@ -1,11 +1,9 @@
 <template lang="pug">
   div
     v-tabs(
-      v-bind:color="colors.primary"
       slot="extension"
-      v-bind:slider-color="colors.accent"
+      v-bind:slider-color="colors.primary"
       v-model="active"
-      dark
       grow
     )
       v-tab(
@@ -15,18 +13,10 @@
         ripple
       ) {{ tab.name }}
     v-tabs-items(v-model="active")
-      v-tab-item(id="attributes")
+      v-tab-item(v-for="tab in tabs" v-bind:key="tab.id" v-bind:id="tab.id")
         v-card(flat)
           v-card-text
-            slot(name="attributes_tab_content")
-      v-tab-item(id="subclasses")
-        v-card(flat)
-          v-card-text
-            slot(name="subclasses_tab_content")
-      v-tab-item(id="spell_list")
-        v-card(flat)
-          v-card-text
-            slot(name="spell_list_tab_content")
+            slot(:name="tab.slot")
 </template>
 
 <script>
@@ -35,9 +25,10 @@
     data () {
       return {
         tabs: [
-          { name: 'Attributes', id: 'attributes' },
-          { name: 'Subclasses', id: 'subclasses' },
-          { name: 'Spell List', id: 'spell_list' }
+          { name: 'Progression Table', id: 'progression_table', slot: 'progression_table_tab_content' },
+          { name: 'Class Features', id: 'attributes', slot: 'attributes_tab_content' },
+          { name: 'Subclasses', id: 'subclasses', slot: 'subclasses_tab_content' },
+          { name: 'Spell List', id: 'spell_list', slot: 'spell_list_tab_content' }
         ],
         active: null
       }

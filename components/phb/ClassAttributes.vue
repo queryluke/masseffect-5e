@@ -5,14 +5,14 @@
       li #[strong Hit dice:] {{ item.hit_die }} per level
       li #[strong Hit Points at 1st level:] {{ item.hit_points }}
       li #[strong Hit Points at higher levels:] {{ item.increase_hit_points }}
-    div.hr
+    div(:class="primaryColor").hr
     p.headline Proficiencies
     ul.list-unstyled
       li #[strong Armor:] {{ item.armor_proficiency }}
       li #[strong Weapons:] {{ item.weapon }}
       li #[strong Saving Throws:] {{ item.saving_throw }}
       li #[strong Skills:] {{ item.skill }}
-    div.hr
+    div(:class="primaryColor").hr
     div(v-if="item.spellcasting")
       p.headline Spellcasting
       p.subheading Learning and advancing spells
@@ -36,7 +36,7 @@
           You regain 1d4 tech points at the end of a short rest and all of your tech points at the end of a long rest.
       p.subheading Spellcasting Ability
       p {{ item.spellcasting }}
-      div.hr
+      div(:class="primaryColor").hr
     p.headline Starting Equipment
     me-element(:text="item.starting_equipment")
 </template>
@@ -52,7 +52,7 @@
         techcasters: ['engineer', 'infiltrator', 'sentinel']
       }
     },
-    props: ['item']
+    props: ['item', 'primaryColor']
   }
 </script>
 

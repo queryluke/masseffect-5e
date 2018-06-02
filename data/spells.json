@@ -1,5 +1,5 @@
 {
-  "updated": "June  2, 2018 @  9:15 AM",
+  "updated": "June  2, 2018 @  3:18 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -2307,7 +2307,7 @@
       "mechanic_text_dump": "Spend1techpointtoshootanaerosolsprayofnoxiouschemicalsfromyouromnitoolatacreaturewithinmeleerangeThecreaturemustsucceedonaConstitutionsavingthrowortake1d12poisondamageandbecomespoisoneduntiltheendofyournextturnTheDCofthesavingthrowisincreasedby2foreachadditionaltechpointyouspend"
     },
     {
-      "name": "Pull",
+      "name": "Lift",
       "level": "0",
       "mechanic": [
         {
@@ -2349,7 +2349,7 @@
       "engineer": null,
       "soldier": null,
       "min_tech_points": null,
-      "id": "pull",
+      "id": "lift",
       "adv_options": [
         "Magician : You can exert fine motor control over the object, such as manipulating a simple tool or removing an object from a container.",
         "Improved Lift : You can manipulate an object that weighs up to 25 kgs (~55 pounds)."
