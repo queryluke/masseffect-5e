@@ -63,8 +63,8 @@
             items: [
               { href: '/phb/classes', title: 'Classes' },
               { href: '/phb/races', title: 'Races' },
-              { href: '/phb/feats', title: 'Feats' }
-              // { href: '/phb/backgrounds', title: 'Backgrounds' }
+              { href: '/phb/feats', title: 'Feats' },
+              { href: '/phb/backgrounds', title: 'Backgrounds' }
             ]
           },
           {

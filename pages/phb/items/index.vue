@@ -1,7 +1,7 @@
 <template lang="pug">
   v-container
     h2.display-3 Items
-    p.subheading Medi-gel, Thermal Clips, Heavy Weapons, Grenades, and Mines
+    p.subheading Medi-gel, Thermal Clips, Heavy Weapons, Grenades & Mines, Omni-gel, Tooks & Kits
     div(v-for="(rule, index) in rules")
       component(v-bind:is="rule")
 </template>
@@ -18,7 +18,9 @@
           'thermal-clips',
           'medi-gel',
           'grenades',
-          'heavy-weapon-charges'
+          'heavy-weapon-charges',
+          'omni-gel',
+          'tools-kits'
         ]
       }
     },
@@ -26,7 +28,7 @@
       return {
         title: 'Mass Effect 5e | Equipment - Other items',
         meta: [
-          { hid: 'description', name: 'description', content: 'Find out more about the unique Mass Effect 5e items: Medi-gel, Thermal Clips, Heavy Weapons, Grenades, and Mines' }
+          { hid: 'description', name: 'description', content: 'Find out more about the unique Mass Effect 5e items: Medi-gel, Thermal Clips, Heavy Weapons, Grenades & Mines, Omni-gel, Tooks & Kits' }
         ]
       }
     },

@@ -23,11 +23,15 @@ export default {
     return getters.bookmarks.find(bookmark => bookmark.card.id === card.id) !== undefined
   },
   getData: state => name => {
-    const data = state.data[name]
+    let data = state[name]
+    if (typeof data === 'object' && data) {
+      return data
+    }
+    data = state.data[name]
     if (typeof data === 'object' && data.data) {
       return data.data
     }
-    return data
+    return null
   },
   getGruntConfig: state => (key = false) => {
     return key ? state.gruntConfig[key] : state.gruntConfig
@@ -78,5 +82,8 @@ export default {
   },
   sidebar: state => {
     return state.sidebar
+  },
+  stateKeys: state => {
+    return Object.keys(state)
   }
 }
