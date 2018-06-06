@@ -1,34 +1,38 @@
 const fm = require('front-matter')
-const filenameRegex = /^(\d+-\d+-\d+)-(.*)\.md$/g
-let filenameParts
+const postFilenameRegex = /^(\d+-\d+-\d+)-(.*)\.md$/g
+let postFilenameParts
+const mdDirs = ['posts', 'backgrounds', 'kits']
 
 export default {
   nuxtServerInit () {
     if (process.server) {
       const fs = require('fs')
-      const files = fs.readdirSync('posts')
-      const posts = files.map((file) => {
-        const fc = fm(fs.readFileSync(`posts/${file}`, 'utf8'))
-        const post = Object.assign(fc.attributes, {})
-        while ((filenameParts = filenameRegex.exec(file)) !== null) {
-          post.filename = filenameParts[0]
-          post.created = new Date(filenameParts[1])
-          post.slug = filenameParts[2]
-        }
-        post.url = `/news/${post.slug}`
-        return post
-      })
-      this.dispatch('loadPosts', posts)
-
+      for (let dir of mdDirs) {
+        const path = `data/${dir}`
+        const files = fs.readdirSync(path)
+        const items = files.map((file) => {
+          const fc = fm(fs.readFileSync(`${path}/${file}`, 'utf8'))
+          const item = Object.assign(fc.attributes, {})
+          if (dir === 'posts') {
+            while ((postFilenameParts = postFilenameRegex.exec(file)) !== null) {
+              item.filename = postFilenameParts[0]
+              item.created = new Date(postFilenameParts[1])
+              item.slug = postFilenameParts[2]
+            }
+            item.url = `/news/${item.slug}`
+          }
+          return item
+        })
+        this.dispatch('instantiateState', { key: dir, items })
+      }
       const versions = fs.readdirSync('changelog').map(file => file.replace(/.md$/, ''))
-      this.dispatch('loadVersions', versions)
+      this.dispatch('instantiateState', { key: 'versions', items: versions })
     }
   },
-  loadPosts ({commit}, posts) {
-    commit('updatePosts', posts)
-  },
-  loadVersions ({commit}, versions) {
-    commit('updateVersions', versions)
+  instantiateState ({getters, commit}, payload) {
+    if (getters.stateKeys.includes(payload.key)) {
+      commit('update', payload)
+    }
   },
   addBookmark ({commit}, payload) {
     commit('addBookmark', payload)
