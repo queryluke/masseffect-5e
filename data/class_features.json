@@ -1,5 +1,5 @@
 {
-  "updated": "June  2, 2018 @  2:43 PM",
+  "updated": "June  6, 2018 @ 10:14 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -99,7 +99,7 @@
         }
       ],
       "id": "barrier",
-      "mechanic_text_dump": "LearntheBarriercantripThisdoesnotcountagainstyournumberofcantripsknown"
+      "mechanic_text_dump": "UseabonusactiontocreateabioticbarrieraroundyouthatreducesincomingdamageandfuelscertainbioticabilitiesUponactivatingyougainbarrierticksequaltothemaximumshownonyourclassprogressiontableIfmulticlassinggainthehigheramountWheneveryoutakedamagewhilebarrierisactiveremove1barriertickandreducethedamageby1d8Barrierlasts1minuteItendsearlyifyouareknockedunconsciousorhavenobarrierticksremainingYoucanalsoendbarrieronyourturnasabonusactionOnceyouhaveusedbarrierthemaximumnumberoftimesforyourAdeptSentinelofVanguardlevelwhicheverishighestyoumustfinishalongrestbeforeyoucanuseitagainYoumayusebarrier2timesat1stlevel3at3rd4at6th5at12thand6at17th"
     },
     {
       "name": "Bend Luck",
@@ -891,6 +891,18 @@
       "mechanic_text_dump": "At17thlevelyoulearntoexploitacreaturesweaknessesbycarefullystudyingitstacticsandmovementWhileyourInsightfulFightingfeatureappliestoacreatureyourSneakAttackdamageagainstthatcreatureincreasesby2d6"
     },
     {
+      "name": "Fast Hands",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You can use the bonus action granted by your Cunning Action to make a Dexterity (Sleight of Hand) check, take the Reload action, or take the Use an Object action."
+        }
+      ],
+      "id": "fast_hands",
+      "mechanic_text_dump": "YoucanusethebonusactiongrantedbyyourCunningActiontomakeaDexteritySleightofHandchecktaketheReloadactionortaketheUseanObjectaction"
+    },
+    {
       "name": "Fighting Style",
       "mechanic": [
         {
@@ -963,6 +975,18 @@
       "mechanic_text_dump": "Whileyouareconcentratingonabioticspellyourconcentrationcantbebrokenasaresultoftakingdamage"
     },
     {
+      "name": "Heavy Barrier",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Whenever you take damage while barrier is active, remove 1 barrier tick and reduce the damage by 3d8."
+        }
+      ],
+      "id": "heavy_barrier",
+      "mechanic_text_dump": "Wheneveryoutakedamagewhilebarrierisactiveremove1barriertickandreducethedamageby3d8"
+    },
+    {
       "name": "Heavy Weapon Hack",
       "mechanic": [
         {
@@ -985,16 +1009,16 @@
         {
           "id": 1,
           "type": "line",
-          "data": "At the 6th level, increase the die type of your barrier to d10."
+          "data": "At the 6th level, increase the die type of your barrier ticks to d10."
         },
         {
           "id": 2,
           "type": "line",
-          "data": "At the 14th level, increase the die type of your barrier to d12."
+          "data": "At the 14th level, increase the die type of your barrier ticks to d12."
         }
       ],
       "id": "improved_barrier",
-      "mechanic_text_dump": "Atthe6thlevelincreasethedietypeofyourbarriertod10Atthe14thlevelincreasethedietypeofyourbarriertod12"
+      "mechanic_text_dump": "Atthe6thlevelincreasethedietypeofyourbarriertickstod10Atthe14thlevelincreasethedietypeofyourbarriertickstod12"
     },
     {
       "name": "Improved Biotic Slash",
@@ -1670,16 +1694,40 @@
       "mechanic_text_dump": "Startingat13thlevelifyouareinTacticalCloakwhenyouuseatechpowercombatpowerorgrenadeeachcreaturehasdisadvantageonanysavingthrowitmakesagainstthetechpowercombatpowerorgrenade"
     },
     {
+      "name": "Tactical Barrier",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Whenever you take damage while barrier is active, you may choose the number of barrier ticks to expend. You may choose to expend 0 barrier ticks."
+        }
+      ],
+      "id": "tactical_barrier",
+      "mechanic_text_dump": "WheneveryoutakedamagewhilebarrierisactiveyoumaychoosethenumberofbarriertickstoexpendYoumaychoosetoexpend0barrierticks"
+    },
+    {
       "name": "Tactical Cloak",
       "mechanic": [
         {
           "id": 1,
           "type": "line",
-          "data": "Use 1 Tech point to become {invisible}. When you make a melee, ranged, or use a tech or combat power, your tactical cloak ends."
+          "data": "Use 1 Tech point to become {invisible}. Tactical cloak lasts 1 minute or until you use a tech or combat power, your tactical cloak ends."
         }
       ],
       "id": "tactical_cloak",
-      "mechanic_text_dump": "Use1TechpointtobecomeinvisibleWhenyoumakeameleerangedoruseatechorcombatpoweryourtacticalcloakends"
+      "mechanic_text_dump": "Use1TechpointtobecomeinvisibleTacticalcloaklasts1minuteoruntilyouuseatechorcombatpoweryourtacticalcloakends"
+    },
+    {
+      "name": "Tactical Reload",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You're so familiar with guns that reloading them is nothing more than muscle memory. Once per turn, if the heat of a weapon your holding becomes 0, you can use your Reaction to take the Reload action for that weapon."
+        }
+      ],
+      "id": "tactical_reload",
+      "mechanic_text_dump": "YouresofamiliarwithgunsthatreloadingthemisnothingmorethanmusclememoryOnceperturniftheheatofaweaponyourholdingbecomes0youcanuseyourReactiontotaketheReloadactionforthatweapon"
     },
     {
       "name": "Tech Armor",
@@ -1915,30 +1963,6 @@
       ],
       "id": "zero-sum",
       "mechanic_text_dump": "WhenyoumakeameleeattackinsteadofrollingadiceyoucanflipacoinOnheadsitsacriticalhitOntailsitsacriticalmissYoucanusethisabilityoncepershortrestStartingatthe13thlevelyoucanusethisabilitytwicepershortrestStartingatthe17thlevelyoucanusethisabilitythreetimespershortrest"
-    },
-    {
-      "name": "Fast Hands",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "You can use the bonus action granted by your Cunning Action to make a Dexterity (Sleight of Hand) check, take the Reload action, or take the Use an Object action."
-        }
-      ],
-      "id": "fast_hands",
-      "mechanic_text_dump": "YoucanusethebonusactiongrantedbyyourCunningActiontomakeaDexteritySleightofHandchecktaketheReloadactionortaketheUseanObjectaction"
-    },
-    {
-      "name": "Tactical Reload",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "You're so familiar with guns that reloading them is nothing more than muscle memory. Once per turn, if the heat of a weapon your holding becomes 0, you can use your Reaction to take the Reload action for that weapon."
-        }
-      ],
-      "id": "tactical_reload",
-      "mechanic_text_dump": "YouresofamiliarwithgunsthatreloadingthemisnothingmorethanmusclememoryOnceperturniftheheatofaweaponyourholdingbecomes0youcanuseyourReactiontotaketheReloadactionforthatweapon"
     }
   ]
 }

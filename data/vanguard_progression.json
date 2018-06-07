@@ -1,5 +1,5 @@
 {
-  "updated": "May 27, 2018 @  4:13 PM",
+  "updated": "June  6, 2018 @ 10:12 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -17,13 +17,13 @@
           "key": "features",
           "value": [
             {
-              "key": "vanguard_cantrip",
-              "display": "Vanguard Cantrip",
+              "key": "barrier",
+              "display": "Barrier",
               "subclass_progression": null
             },
             {
               "key": "biotic_powers",
-              "display": "Biotic Powers(3:1)",
+              "display": "Biotic Powers(2:1)",
               "subclass_progression": null
             }
           ]
@@ -217,6 +217,11 @@
             {
               "key": "extra_attack",
               "display": "Extra Attack",
+              "subclass_progression": null
+            },
+            {
+              "key": "tactical_barrier",
+              "display": "Tactical Barrier",
               "subclass_progression": null
             }
           ]
@@ -501,6 +506,11 @@
         {
           "key": "features",
           "value": [
+            {
+              "key": "heavy_barrier",
+              "display": "Heavy Barrier",
+              "subclass_progression": null
+            },
             {
               "key": "biotic_powers",
               "display": "Biotic Powers(2:3)",

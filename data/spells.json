@@ -1,5 +1,5 @@
 {
-  "updated": "June  2, 2018 @  3:18 PM",
+  "updated": "June  6, 2018 @ 10:08 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -293,64 +293,13 @@
       "mechanic_text_dump": "AsanAttackactionfireasalvoofbladesatatargetcreatureorobjectyoucanseewithinrangeMakearangedweaponattackyouaddyourproficiencybonustothisrollOnahitthetargettakes2d12piercingdamageYoumustspendashortorlongrestreloadingthearmguardbeforeyoucanthisabilityagainThisfeaturesdamageincreasesby2d12whenyoureach5thlevel4d1211thlevel6d1217thlevel8d12"
     },
     {
-      "name": "Barrier",
-      "level": "0",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Surround yourself in a high-gravity mass effect field that strengthens your defense but reduces your movement speed. While you have any barrier ticks, your speed is reduced by 4m. Whenever you take damage, remove 1 barrier tick and reduce that damage by 1d8. When you cast Barrier, refill your barrier ticks to their maximum amount. Your class indicates the maximum number of barrier ticks you can have."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "This reduction increases by 1 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
-        }
-      ],
-      "adv_option_1": "Tactical Barrier : When you take damage, you may choose to expend a Barrier Tick instead of being required to use one.",
-      "adv_option_2": "Quick Barrier : You may cast Barrier as a bonus action.",
-      "type": "biotic",
-      "die_type": "d8",
-      "attack_type": [
-
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "Self",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "warding"
-      ],
-      "damage_type": [
-
-      ],
-      "detonates": null,
-      "primes": null,
-      "adept": "x",
-      "vanguard": "x",
-      "sentinel": "x",
-      "infiltrator": null,
-      "engineer": null,
-      "soldier": null,
-      "min_tech_points": null,
-      "id": "barrier",
-      "adv_options": [
-        "Tactical Barrier : When you take damage, you may choose to expend a Barrier Tick instead of being required to use one.",
-        "Quick Barrier : You may cast Barrier as a bonus action."
-      ],
-      "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "SurroundyourselfinahighgravitymasseffectfieldthatstrengthensyourdefensebutreducesyourmovementspeedWhileyouhaveanybarrierticksyourspeedisreducedby4mWheneveryoutakedamageremove1barriertickandreducethatdamageby1d8WhenyoucastBarrierrefillyourbarriertickstotheirmaximumamountYourclassindicatesthemaximumnumberofbarrierticksyoucanhaveThisreductionincreasesby1whenyoureach5thlevel2d811thlevel3d8and17thlevel4d8"
-    },
-    {
       "name": "Barrier Detonation",
       "level": "0",
       "mechanic": [
         {
           "id": 1,
           "type": "line",
-          "data": "Expend all of your remaining barrier ticks to create a negative mass effect field in a 2m sphere originating from you. Each Medium or smaller creature or object within the sphere must succeed on Dexterity saving throw or becomes {lifted}"
+          "data": "Expend all of your remaining barrier ticks to create a negative mass effect field in a 2m sphere originating from you. Each Medium or smaller creature or object within the sphere must succeed on Dexterity saving throw or becomes {lifted}. If you expend at least 4 barrier ticks, Large targets must make the saving throw."
         },
         {
           "id": 2,
@@ -392,7 +341,7 @@
         "Heavy Lift: Large and smaller creatures and objects are affected."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "Expendallofyourremainingbarriertickstocreateanegativemasseffectfieldina2msphereoriginatingfromyouEachMediumorsmallercreatureorobjectwithinthespheremustsucceedonDexteritysavingthroworbecomesliftedIncreasetherangeofthesphereby2mat5thlevel4m11thlevel6mand17thlevel8m"
+      "mechanic_text_dump": "Expendallofyourremainingbarriertickstocreateanegativemasseffectfieldina2msphereoriginatingfromyouEachMediumorsmallercreatureorobjectwithinthespheremustsucceedonDexteritysavingthroworbecomesliftedIfyouexpendatleast4barrierticksLargetargetsmustmakethesavingthrowIncreasetherangeofthesphereby2mat5thlevel4m11thlevel6mand17thlevel8m"
     },
     {
       "name": "Beehive",
@@ -519,7 +468,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Increase the mass of your fist and strike at a target. Make a melee spell attack on a target creature or object within range. On a hit, deal 1d8 bludgeoning damage to the target and gain 2 barrier ticks."
+          "data": "Increase the mass of your fist and strike at a target. Make a melee spell attack on a target creature or object within range. On a hit, deal 1d8 bludgeoning damage. If you have an active barrier, gain 2 barrier ticks and reset the duration of your barrier to 1 minute."
         },
         {
           "id": 2,
@@ -562,7 +511,7 @@
         "Siphoning Strike : On a hit, instead of gaining barrier ticks, gain 10 shield points."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "IncreasethemassofyourfistandstrikeatatargetMakeameleespellattackonatargetcreatureorobjectwithinrangeOnahitdeal1d8bludgeoningdamagetothetargetandgain2barrierticksAthigherlevelsThisspellsdamageincreasesby1d8whenyoureach5thlevel2d811thlevel3d817thlevel4d8"
+      "mechanic_text_dump": "IncreasethemassofyourfistandstrikeatatargetMakeameleespellattackonatargetcreatureorobjectwithinrangeOnahitdeal1d8bludgeoningdamageIfyouhaveanactivebarriergain2barrierticksandresetthedurationofyourbarrierto1minuteAthigherlevelsThisspellsdamageincreasesby1d8whenyoureach5thlevel2d811thlevel3d817thlevel4d8"
     },
     {
       "name": "Biotic Sphere",
@@ -747,7 +696,7 @@
           "data": "The damage increases by 1d6 when you reach the 5th level (2d6), 11th level(3d6) and 17th level(4d6)."
         }
       ],
-      "adv_option_1": "Barrier Regen : After you cast Charge, regain half of your barrier ticks (rounded down).",
+      "adv_option_1": "Barrier Regen : After you cast Charge, if you have an active barrier, regain half of your barrier ticks and reset the duration of your barrier to 1 minute.",
       "adv_option_2": "Stunning blow : On a failed save, the target becomes {stunned} until the end of your next turn",
       "type": "biotic",
       "die_type": "d6",
@@ -778,7 +727,7 @@
       "min_tech_points": null,
       "id": "charge",
       "adv_options": [
-        "Barrier Regen : After you cast Charge, regain half of your barrier ticks (rounded down).",
+        "Barrier Regen : After you cast Charge, if you have an active barrier, regain half of your barrier ticks and reset the duration of your barrier to 1 minute.",
         "Stunning blow : On a failed save, the target becomes {stunned} until the end of your next turn"
       ],
       "class_list": "Vanguard",
@@ -1908,7 +1857,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Consume barrier ticks to create a whip of biotic energy. Each barrier tick consumed increases the range of the whip by 2m. Target a creature you can see within the resulting range. The target takes 4d8 force damage and becomes {grappled} and {primed-force} until it escapes the grapple. A detonating attack immediately ends the grapple or, to escape the grapple, the creature must succeed on a contested Strength (Athletics) against your Constitution."
+          "data": "Target a creature you can see within range. The target takes 4d8 force damage and becomes {grappled} and {primed-force} until it escapes the grapple. A detonating attack immediately ends the grapple or, to escape the grapple, the creature must succeed on a contested Strength (Athletics) check against your Constitution."
         },
         {
           "id": 2,
@@ -1926,7 +1875,7 @@
       "casting_time": "Action",
       "concentration": "x",
       "duration": "1 minute",
-      "range": "var",
+      "range": "10m",
       "aoe": null,
       "aoe_distance": null,
       "effect": [
@@ -1951,7 +1900,7 @@
         "Improved Damage : Increase the damage die type to d12."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "ConsumebarriertickstocreateawhipofbioticenergyEachbarriertickconsumedincreasestherangeofthewhipby2mTargetacreatureyoucanseewithintheresultingrangeThetargettakes4d8forcedamageandbecomesgrappledandprimedforceuntilitescapesthegrappleAdetonatingattackimmediatelyendsthegrappleortoescapethegrapplethecreaturemustsucceedonacontestedStrengthAthleticsagainstyourConstitutionAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d8foreachslotlevelabovethe2nd"
+      "mechanic_text_dump": "TargetacreatureyoucanseewithinrangeThetargettakes4d8forcedamageandbecomesgrappledandprimedforceuntilitescapesthegrappleAdetonatingattackimmediatelyendsthegrappleortoescapethegrapplethecreaturemustsucceedonacontestedStrengthAthleticscheckagainstyourConstitutionAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d8foreachslotlevelabovethe2nd"
     },
     {
       "name": "Pull",
@@ -2123,7 +2072,7 @@
         }
       ],
       "adv_option_1": "Improved Damage : Increase the damage die to d10.",
-      "adv_option_2": "Half Blast : When you cast Nova, you cause up to 2 blasts. Each blast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. If you have not used all your movement, you can move in between the blasts.",
+      "adv_option_2": "Half Blast : You may cast nova twice within a single action. Each cast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. You can move in between the blasts.",
       "type": "biotic",
       "die_type": "d10",
       "attack_type": [
@@ -2153,7 +2102,7 @@
       "id": "nova",
       "adv_options": [
         "Improved Damage : Increase the damage die to d10.",
-        "Half Blast : When you cast Nova, you cause up to 2 blasts. Each blast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. If you have not used all your movement, you can move in between the blasts."
+        "Half Blast : You may cast nova twice within a single action. Each cast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. You can move in between the blasts."
       ],
       "class_list": "Vanguard",
       "mechanic_text_dump": "TransfertheenergyofyourbarrierintoabioticexplosionconsumingyourremainingbarrierticksCreatureswithina2mspherecenteredonyoumustmakeaDexteritysavingthrowOnafailedsaveacreatureisknockedproneandtakesforcedamageequaltoXd10whereXisthenumberofbarrierticksOnasuccessfulsaveacreaturetakeshalfasmuchdamageWhenyoucastthisspellusingaspellslotof2ndlevelorhighertheradiusoftheexplosionincreasesby2mforeachlevelabovethe1st"
@@ -2536,7 +2485,7 @@
       ],
       "casting_time": "Action",
       "concentration": null,
-      "duration": "Instant",
+      "duration": "1 minute",
       "range": "Touch",
       "aoe": null,
       "aoe_distance": null,
