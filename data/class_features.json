@@ -1,5 +1,5 @@
 {
-  "updated": "June  6, 2018 @ 10:14 PM",
+  "updated": "June  6, 2018 @ 10:51 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -351,15 +351,10 @@
             "Advance 2 already known spells of 3rd level or lower",
             "Learn a spell of 3rd level or lower and advance an already known spell or 3rd level or lower."
           ]
-        },
-        {
-          "id": 4,
-          "type": "line",
-          "data": "Cantrips are considered 0 level spells. Though you can learn new cantrips this way, you cannot know more cantrips than allowed by your class level (indicated on your class's progression table)."
         }
       ],
       "id": "biotic_powers",
-      "mechanic_text_dump": "LearnoradvanceyourbioticpowersThefirstnumberindicatesthenumberofnewspellsyoucanlearnoradvanceThesecondnumberindicatesthemaxlevelofthespellyoucanlearnoradvanceForexample23youcaneitherlistLearn2newspellsof3rdlevelorlowerAdvance2alreadyknownspellsof3rdlevelorlowerLearnaspellof3rdlevelorlowerandadvanceanalreadyknownspellor3rdlevelorlowerlistCantripsareconsidered0levelspellsThoughyoucanlearnnewcantripsthiswayyoucannotknowmorecantripsthanallowedbyyourclasslevelindicatedonyourclasssprogressiontable"
+      "mechanic_text_dump": "LearnoradvanceyourbioticpowersThefirstnumberindicatesthenumberofnewspellsyoucanlearnoradvanceThesecondnumberindicatesthemaxlevelofthespellyoucanlearnoradvanceForexample23youcaneitherlistLearn2newspellsof3rdlevelorlowerAdvance2alreadyknownspellsof3rdlevelorlowerLearnaspellof3rdlevelorlowerandadvanceanalreadyknownspellor3rdlevelorlowerlist"
     },
     {
       "name": "Biotic Slash",
