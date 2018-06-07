@@ -95,7 +95,22 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Learn the Barrier cantrip. This does not count against your number of cantrips known."
+          "data": "Use a bonus action to create a biotic barrier around you that reduces incoming damage and fuels certain biotic abilities. Upon activating, you gain barrier ticks equal to the maximum shown on your class progression table. If multiclassing, gain the higher amount."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Whenever you take damage while barrier is active, remove 1 barrier tick and reduce the damage by 1d8."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Barrier lasts 1 minute. It ends early if you are knocked unconscious or have no barrier ticks remaining. You can also end barrier on your turn as a bonus action."
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "Once you have used barrier the maximum number of times for your Adept, Sentinel, of Vanguard level (whichever is highest), you must finish a long rest before you can use it again. You may use barrier 2 times at 1st level, 3 at 3rd, 4 at 6th, 5 at 12th, and 6 at 17th."
         }
       ],
       "id": "barrier",
