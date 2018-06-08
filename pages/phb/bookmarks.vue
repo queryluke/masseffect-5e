@@ -11,7 +11,7 @@
             weapon-info(:weapon="card" v-if="type === 'weapon'")
             grenade-info(:grenade="card" v-if="type === 'grenade'")
             stat-block(:stats="card" v-if="type === 'npc'")
-            markdown-file(:id="card.id" v-bind:itemType="type")
+            markdown-file(:id="card.id" v-bind:itemType="type" v-else)
           v-card-actions
             bookmark-button(:card="card" v-bind:type="type" v-bind:props="{flat: true}")
 </template>
