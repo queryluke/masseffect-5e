@@ -373,7 +373,6 @@
             reward.reward()
           }
         }
-        console.log(this.workingLoot)
       },
       getIndividualLoot () {
         this.workingLoot.credits += this.randomValue(this.individualRewards[this.options.cr])

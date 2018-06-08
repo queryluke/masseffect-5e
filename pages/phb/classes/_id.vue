@@ -104,7 +104,6 @@
             sb.features.push({ name, description: this.features.find(feat => feat.name === name) })
           }
         }
-        console.log(sb.features)
         return sb
       })
 
