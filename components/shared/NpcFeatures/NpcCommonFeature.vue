@@ -1,5 +1,5 @@
 <template lang="pug">
-  span #[strong #[em {{ feature | featureTitle }}].] {{ feature.description | npcName(npc.name) | npcDc(npc) | npcDamage(npc) }}
+  span #[strong #[em {{ feature | featureTitle | removeActionId }}].] {{ feature.description | npcName(npc.name) | npcDc(npc) | npcDamage(npc) }}
 </template>
 
 <script>

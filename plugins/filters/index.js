@@ -10,6 +10,7 @@ import npcDc from './npcDc'
 import npcName from './npcName'
 import npcSavingThrows from './npcSavingThrows'
 import ordinal from './ordinal'
+import removeActionId from './removeActionId'
 import weaponRange from './weaponRange'
 
 const customFilters = {
@@ -23,6 +24,7 @@ const customFilters = {
   npcName,
   npcSavingThrows,
   ordinal,
+  removeActionId,
   weaponRange
 }
 

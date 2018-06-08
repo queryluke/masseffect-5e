@@ -6,7 +6,7 @@ export const Skills = {
       for (let skillId of monster.skills) {
         let bonus = false
         if (/\*/.test(skillId)) {
-          skillId = skillId.substr(0, -1)
+          skillId = skillId.substring(0, skillId.length - 1)
           bonus = true
         }
         const skill = skills.find(skill => skill.id === skillId)
