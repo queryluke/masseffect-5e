@@ -17,10 +17,10 @@
     "date-format-lite": "^17.7.0",
     "front-matter": "^2.3.0",
     "markdown-it-meta": "0.0.1",
-    "nuxt": "^1.0.0",
+    "nuxt": "^1.4.1",
     "vue2-filters": "^0.3.0",
-    "vuetify": "^1.0.17",
-    "vuex-persistedstate": "^2.5.2"
+    "vuetify": "^1.0.19",
+    "vuex-persistedstate": "^2.5.4"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
@@ -28,9 +28,9 @@
     "eslint-config-standard": "^10.2.1",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-html": "^3.1.1",
-    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-node": "^5.1.1",
-    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
     "node-sass": "^4.9.0",
     "pug": "^2.0.3",

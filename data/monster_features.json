@@ -1,5 +1,5 @@
 {
-  "updated": "June  7, 2018 @  9:12 PM",
+  "updated": "June  7, 2018 @ 10:13 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTIwlLPyS6hKc2XoW5tm901kmWbiZD_cHiUBWrH2V-ceinyWWz5SiGFfnRehK4CWrewGWubXBldbesh/pubhtml",
   "data": [
     {
@@ -459,12 +459,12 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
-      "adept": null,
+      "adept": "a",
       "engineer": null,
       "infiltrator": null,
-      "sentinel": null,
+      "sentinel": "a",
       "soldier": null,
-      "vanguard": null,
+      "vanguard": "a",
       "id": "barrier"
     },
     {

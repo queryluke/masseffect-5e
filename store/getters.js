@@ -31,7 +31,7 @@ export default {
     if (typeof data === 'object' && data.data) {
       return data.data
     }
-    return null
+    return data
   },
   getGruntConfig: state => (key = false) => {
     return key ? state.gruntConfig[key] : state.gruntConfig

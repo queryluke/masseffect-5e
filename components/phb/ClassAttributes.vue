@@ -19,7 +19,7 @@
         p.subheading Cantrips
         p.
           At 1st level, you know a number of cantrips equal to the amount listed in the cantrips column of your class's
-          progression table. At higher levels, when the number of cantrip increases on your progression table, you can
+          progression table. At higher levels, when the number of cantrips increases on your progression table, you can
           choose to learn a new cantrip or advance a cantrip you already know.
       p.subheading Learning and advancing spells
       p.

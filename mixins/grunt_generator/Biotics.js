@@ -13,6 +13,7 @@ export const Biotics = {
       let totalSpells = 0
       let totalDmgSpells = 0
       const progressionLevel = this.progressions[grunt.sc.id].find(row => parseInt(row.level, 10) === effectiveCr.spellcastingLevel)
+      grunt.barrier = progressionLevel.row_data.find((rd) => rd.key === 'barrier_ticks').value
       for (const column of progressionLevel.row_data) {
         if (column.key === 'cantrips') {
           // Deal with cantrips
@@ -22,13 +23,6 @@ export const Biotics = {
           }
           let numCantrips = parseInt(column.value, 10)
           const availableSpells = this.spells.filter(spell => spell.level === '0' && spell[grunt.sc.id] === 'x')
-          // If vanguard, add barrier
-          if (grunt.sc.id === 'vanguard') {
-            const barrier = this.spells.find(spell => spell.id === 'barrier')
-            cantrips.spells.push(barrier)
-            availableSpells.splice(availableSpells.indexOf(barrier), 1)
-            numCantrips--
-          }
           for (let i = 1; i <= numCantrips; i++) {
             if (availableSpells.length < 1) {
               continue
@@ -36,12 +30,6 @@ export const Biotics = {
             const spell = this.randomValue(availableSpells)
             cantrips.spells.push(spell)
             availableSpells.splice(availableSpells.indexOf(spell), 1)
-            if (grunt.sc.id === 'adept' && ['barrier_detonation', 'phase_disruptor'].includes(spell.id)) {
-              const barrier = this.spells.find(spell => spell.id === 'barrier')
-              cantrips.spells.push(barrier)
-              availableSpells.splice(availableSpells.indexOf(barrier), 1)
-              i++
-            }
             // Increase total counts
             totalSpells++
             if (spell.effect.includes('damage')) {

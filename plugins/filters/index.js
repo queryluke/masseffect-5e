@@ -5,6 +5,7 @@ import article from './article'
 import featureTitle from './featureTitle'
 import formatDate from './formatDate'
 import groupDigits from './groupDigits'
+import npcBarrier from './npcBarrier'
 import npcDamage from './npcDamage'
 import npcDc from './npcDc'
 import npcName from './npcName'
@@ -19,6 +20,7 @@ const customFilters = {
   featureTitle,
   formatDate,
   groupDigits,
+  npcBarrier,
   npcDamage,
   npcDc,
   npcName,
