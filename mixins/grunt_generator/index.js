@@ -87,7 +87,8 @@ export const GruntGenerator = {
         size: 'Medium',
         skills: [],
         spellcasting: false,
-        techcasting: false
+        techcasting: false,
+        barrier: false
       }
 
       this.setGruntName(grunt)

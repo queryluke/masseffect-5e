@@ -6,7 +6,7 @@ require('./data/classes.json').data.map(c => {
 })
 require('./data/races.json').data.map(r => routes.push(`/phb/races/${r.id}`))
 
-require('fs').readdirSync('posts').map((file) => {
+require('fs').readdirSync('./data/posts').map((file) => {
   routes.push('/news/' + (file.replace(/^(\d+-\d+-\d+)-|(\.md$)/g, '')))
 })
 

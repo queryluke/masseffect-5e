@@ -122,14 +122,14 @@ GSHEETS = [
     },
     {
         type: 'monster_features',
-        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQT87AUwt1n514k6a6b4l0kOzGwIphsGXBJLFqujgkCsJ1rdudQ1Bk7Km12DACO5qQ2WGDVI8fT6-Xe/pub?gid=1564226847&single=true&output=csv',
+        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTIwlLPyS6hKc2XoW5tm901kmWbiZD_cHiUBWrH2V-ceinyWWz5SiGFfnRehK4CWrewGWubXBldbesh/pub?gid=1564226847&single=true&output=csv',
         renderables: [],
         id: 'name',
         camel: true
     },
     {
         type: 'bestiary',
-        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQT87AUwt1n514k6a6b4l0kOzGwIphsGXBJLFqujgkCsJ1rdudQ1Bk7Km12DACO5qQ2WGDVI8fT6-Xe/pub?gid=0&single=true&output=csv',
+        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTIwlLPyS6hKc2XoW5tm901kmWbiZD_cHiUBWrH2V-ceinyWWz5SiGFfnRehK4CWrewGWubXBldbesh/pub?gid=0&single=true&output=csv',
         renderables: [],
         id: 'name',
         camel: true

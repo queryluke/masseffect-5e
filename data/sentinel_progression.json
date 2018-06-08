@@ -1,5 +1,5 @@
 {
-  "updated": "April 28, 2018 @ 12:41 PM",
+  "updated": "June  6, 2018 @ 10:11 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -22,15 +22,15 @@
               "subclass_progression": null
             },
             {
-              "key": "biotic_powers",
-              "display": "Biotic Powers(2:0)",
+              "key": "fighting_style",
+              "display": "Fighting Style",
               "subclass_progression": null
             }
           ]
         },
         {
           "key": "barrier_ticks",
-          "value": "2"
+          "value": "-"
         },
         {
           "key": "cantrips",
@@ -77,8 +77,8 @@
           "key": "features",
           "value": [
             {
-              "key": "fighting_style",
-              "display": "Fighting Style",
+              "key": "barrier",
+              "display": "Barrier",
               "subclass_progression": null
             },
             {
@@ -430,7 +430,7 @@
         },
         {
           "key": "barrier_ticks",
-          "value": "3"
+          "value": "4"
         },
         {
           "key": "cantrips",
@@ -600,7 +600,7 @@
         },
         {
           "key": "barrier_ticks",
-          "value": "4"
+          "value": "5"
         },
         {
           "key": "cantrips",
@@ -655,7 +655,7 @@
         },
         {
           "key": "barrier_ticks",
-          "value": "4"
+          "value": "5"
         },
         {
           "key": "cantrips",
@@ -702,8 +702,8 @@
           "key": "features",
           "value": [
             {
-              "key": "fighting_style",
-              "display": "Fighting Style",
+              "key": "heavy_barrier",
+              "display": "Heavy Barrier",
               "subclass_progression": null
             },
             {
@@ -770,7 +770,7 @@
         },
         {
           "key": "barrier_ticks",
-          "value": "5"
+          "value": "6"
         },
         {
           "key": "cantrips",
@@ -830,7 +830,7 @@
         },
         {
           "key": "barrier_ticks",
-          "value": "5"
+          "value": "6"
         },
         {
           "key": "cantrips",
@@ -885,7 +885,7 @@
         },
         {
           "key": "barrier_ticks",
-          "value": "5"
+          "value": "6"
         },
         {
           "key": "cantrips",
@@ -945,7 +945,7 @@
         },
         {
           "key": "barrier_ticks",
-          "value": "6"
+          "value": "7"
         },
         {
           "key": "cantrips",
@@ -1000,7 +1000,7 @@
         },
         {
           "key": "barrier_ticks",
-          "value": "6"
+          "value": "7"
         },
         {
           "key": "cantrips",
@@ -1055,7 +1055,7 @@
         },
         {
           "key": "barrier_ticks",
-          "value": "6"
+          "value": "7"
         },
         {
           "key": "cantrips",
@@ -1110,7 +1110,7 @@
         },
         {
           "key": "barrier_ticks",
-          "value": "6"
+          "value": "8"
         },
         {
           "key": "cantrips",

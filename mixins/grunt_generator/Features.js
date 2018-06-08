@@ -6,7 +6,7 @@ export const Features = {
 
       // Set base features
       const mandatoryFeatures = features.filter(feature => {
-        return feature[grunt.race.id] === 'a'
+        return feature[grunt.race.id] === 'a' || feature[grunt.sc.id] === 'a'
       })
       for (const feature of mandatoryFeatures) {
         this.addFeature(config, grunt, feature)

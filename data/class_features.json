@@ -1,5 +1,5 @@
 {
-  "updated": "May 12, 2018 @  2:22 PM",
+  "updated": "June  7, 2018 @  2:15 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -61,11 +61,21 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Starting at the 3rd level, your Tech Armor is rigged for maximum protection and keeping the action on you. While Tech Armor is active, it projects a distracting holographic image (your choice). The first time a hostile creature makes an attack after you activate Tech Armor, it must pass a Wisdom (Insight) check (DC your tech save). On a failure, the creature is compelled to attack you while your Tech Armor is active. Synthetic creatures have advantage on this check."
+          "data": "Starting at the 3rd level, your Tech Armor is rigged for maximum protection and keeping the action on you. When you activate tech armor, you project a distracting holographic image (your choice) and each creature within 20m that can see you must make a Wisdom saving throw (DC = 8 + proficiency bonus + Intelligence modifier). On a failure, a creature is compelled to attack you while your Tech Armor is active. A creature that is compelled to attack you always targets you when it makes a weapon or spell attack."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Each time a creature that is compelled to attack you takes damage from source other than you, it makes a new Wisdom saving throw against the spell. If the saving throw succeeds, the spell ends."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Synthetic creatures have advantage on Wisdom saving throws."
         }
       ],
       "id": "assault_armor",
-      "mechanic_text_dump": "Startingatthe3rdlevelyourTechArmorisriggedformaximumprotectionandkeepingtheactiononyouWhileTechArmorisactiveitprojectsadistractingholographicimageyourchoiceThefirsttimeahostilecreaturemakesanattackafteryouactivateTechArmoritmustpassaWisdomInsightcheckDCyourtechsaveOnafailurethecreatureiscompelledtoattackyouwhileyourTechArmorisactiveSyntheticcreatureshaveadvantageonthischeck"
+      "mechanic_text_dump": "Startingatthe3rdlevelyourTechArmorisriggedformaximumprotectionandkeepingtheactiononyouWhenyouactivatetecharmoryouprojectadistractingholographicimageyourchoiceandeachcreaturewithin20mthatcanseeyoumustmakeaWisdomsavingthrowDC8proficiencybonusIntelligencemodifierOnafailureacreatureiscompelledtoattackyouwhileyourTechArmorisactiveAcreaturethatiscompelledtoattackyoualwaystargetsyouwhenitmakesaweaponorspellattackEachtimeacreaturethatiscompelledtoattackyoutakesdamagefromsourceotherthanyouitmakesanewWisdomsavingthrowagainstthespellIfthesavingthrowsucceedsthespellendsSyntheticcreatureshaveadvantageonWisdomsavingthrows"
     },
     {
       "name": "Assault Protocol",
@@ -85,11 +95,26 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Learn the Barrier cantrip. This does not count against your number of cantrips known."
+          "data": "As an action or bonus action, you create a biotic barrier around you that reduces incoming damage and fuels certain biotic abilities. Upon activating, you gain barrier ticks equal to the maximum shown on your class progression table. If multiclassing, gain the higher amount."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "Whenever you take damage while barrier is active, remove 1 barrier tick and reduce the damage by 1d8."
+        },
+        {
+          "id": 3,
+          "type": "line",
+          "data": "Barrier lasts 1 minute. It ends early if you are knocked unconscious or have no barrier ticks remaining. You can also end barrier on your turn as a bonus action."
+        },
+        {
+          "id": 4,
+          "type": "line",
+          "data": "Once you have used barrier the maximum number of times for your Adept, Sentinel, of Vanguard level (whichever is highest), you must finish a long rest before you can use it again. You may use barrier 2 times at 1st level, 3 at 3rd, 4 at 6th, 5 at 12th, and 6 at 17th."
         }
       ],
       "id": "barrier",
-      "mechanic_text_dump": "LearntheBarriercantripThisdoesnotcountagainstyournumberofcantripsknown"
+      "mechanic_text_dump": "AsanactionorbonusactionyoucreateabioticbarrieraroundyouthatreducesincomingdamageandfuelscertainbioticabilitiesUponactivatingyougainbarrierticksequaltothemaximumshownonyourclassprogressiontableIfmulticlassinggainthehigheramountWheneveryoutakedamagewhilebarrierisactiveremove1barriertickandreducethedamageby1d8Barrierlasts1minuteItendsearlyifyouareknockedunconsciousorhavenobarrierticksremainingYoucanalsoendbarrieronyourturnasabonusactionOnceyouhaveusedbarrierthemaximumnumberoftimesforyourAdeptSentinelofVanguardlevelwhicheverishighestyoumustfinishalongrestbeforeyoucanuseitagainYoumayusebarrier2timesat1stlevel3at3rd4at6th5at12thand6at17th"
     },
     {
       "name": "Bend Luck",
@@ -175,21 +200,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "At the 14th level, you've increase your mastery with biotic spells that control the battlefield. Gain the following benefits to the spells below:"
-        },
-        {
-          "id": 2,
-          "type": "list",
-          "data": [
-            "Pull : Pull can affect Large or smaller objects and creatures, moving them 2m, and adding 4m to each size below large.",
-            "Lift : When you cast Lift you can target a creature size 1 larger than your lift is currently capable.",
-            "Singularity : Large or smaller objects and creatures are affected by singularity.",
-            "Stasis : Targets have disadvantage on their saving throw."
-          ]
+          "data": "Starting at the 3rd level, your Tech Armor is rigged for maximum protection and keeping the action on you. While Tech Armor is active, it projects a distracting holographic image (your choice). While your tech armor is active, each hostile creature that can see you that makes an attack, it must make a Wisdom saving throw. On a failure, the creature is compelled to attack you until your tech armor ends. Synthetic creatures have advantage on this check. Each time the creature takes damage from a source other than you, it can"
         }
       ],
       "id": "biotic_control",
-      "mechanic_text_dump": "Atthe14thlevelyouveincreaseyourmasterywithbioticspellsthatcontrolthebattlefieldGainthefollowingbenefitstothespellsbelowlistPullPullcanaffectLargeorsmallerobjectsandcreaturesmovingthem2mandadding4mtoeachsizebelowlargeLiftWhenyoucastLiftyoucantargetacreaturesize1largerthanyourliftiscurrentlycapableSingularityLargeorsmallerobjectsandcreaturesareaffectedbysingularityStasisTargetshavedisadvantageontheirsavingthrowlist"
+      "mechanic_text_dump": "Startingatthe3rdlevelyourTechArmorisriggedformaximumprotectionandkeepingtheactiononyouWhileTechArmorisactiveitprojectsadistractingholographicimageyourchoiceWhileyourtecharmorisactiveeachhostilecreaturethatcanseeyouthatmakesanattackitmustmakeaWisdomsavingthrowOnafailurethecreatureiscompelledtoattackyouuntilyourtecharmorendsSyntheticcreatureshaveadvantageonthischeckEachtimethecreaturetakesdamagefromasourceotherthanyouitcan"
     },
     {
       "name": "Biotic Enfilade",
@@ -336,15 +351,10 @@
             "Advance 2 already known spells of 3rd level or lower",
             "Learn a spell of 3rd level or lower and advance an already known spell or 3rd level or lower."
           ]
-        },
-        {
-          "id": 4,
-          "type": "line",
-          "data": "Cantrips are considered 0 level spells. Though you can learn new cantrips this way, you cannot know more cantrips than allowed by your class level (indicated on your class's progression table)."
         }
       ],
       "id": "biotic_powers",
-      "mechanic_text_dump": "LearnoradvanceyourbioticpowersThefirstnumberindicatesthenumberofnewspellsyoucanlearnoradvanceThesecondnumberindicatesthemaxlevelofthespellyoucanlearnoradvanceForexample23youcaneitherlistLearn2newspellsof3rdlevelorlowerAdvance2alreadyknownspellsof3rdlevelorlowerLearnaspellof3rdlevelorlowerandadvanceanalreadyknownspellor3rdlevelorlowerlistCantripsareconsidered0levelspellsThoughyoucanlearnnewcantripsthiswayyoucannotknowmorecantripsthanallowedbyyourclasslevelindicatedonyourclasssprogressiontable"
+      "mechanic_text_dump": "LearnoradvanceyourbioticpowersThefirstnumberindicatesthenumberofnewspellsyoucanlearnoradvanceThesecondnumberindicatesthemaxlevelofthespellyoucanlearnoradvanceForexample23youcaneitherlistLearn2newspellsof3rdlevelorlowerAdvance2alreadyknownspellsof3rdlevelorlowerLearnaspellof3rdlevelorlowerandadvanceanalreadyknownspellor3rdlevelorlowerlist"
     },
     {
       "name": "Biotic Slash",
@@ -352,11 +362,11 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Starting at 2nd level, when you hit a creature with a melee weapon attack, you can expend one spell slot to deal force damage to the target in addition to the weapon's damage. The extra damage is 2d8 for a 1st-level spell slot, plus 1d8 for each spell level higher than 1st."
+          "data": "Starting at 2nd level, when you hit a creature with a melee weapon attack, you can expend one spell slot to deal force damage to the target in addition to the weapon's damage. The extra damage is 2d8 for a 1st-level spell slot, plus 1d8 for each spell level higher than 1st. Biotic Slash detonates primed targets."
         }
       ],
       "id": "biotic_slash",
-      "mechanic_text_dump": "Startingat2ndlevelwhenyouhitacreaturewithameleeweaponattackyoucanexpendonespellslottodealforcedamagetothetargetinadditiontotheweaponsdamageTheextradamageis2d8fora1stlevelspellslotplus1d8foreachspelllevelhigherthan1st"
+      "mechanic_text_dump": "Startingat2ndlevelwhenyouhitacreaturewithameleeweaponattackyoucanexpendonespellslottodealforcedamagetothetargetinadditiontotheweaponsdamageTheextradamageis2d8fora1stlevelspellslotplus1d8foreachspelllevelhigherthan1stBioticSlashdetonatesprimedtargets"
     },
     {
       "name": "Biotic Split",
@@ -891,12 +901,24 @@
       "mechanic_text_dump": "At17thlevelyoulearntoexploitacreaturesweaknessesbycarefullystudyingitstacticsandmovementWhileyourInsightfulFightingfeatureappliestoacreatureyourSneakAttackdamageagainstthatcreatureincreasesby2d6"
     },
     {
+      "name": "Fast Hands",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You can use the bonus action granted by your Cunning Action to make a Dexterity (Sleight of Hand) check, take the Reload action, or take the Use an Object action."
+        }
+      ],
+      "id": "fast_hands",
+      "mechanic_text_dump": "YoucanusethebonusactiongrantedbyyourCunningActiontomakeaDexteritySleightofHandchecktaketheReloadactionortaketheUseanObjectaction"
+    },
+    {
       "name": "Fighting Style",
       "mechanic": [
         {
           "id": 1,
           "type": "line",
-          "data": "Choose a fighting style from the list below and gain the perk in the first column. The second time you learn this ability you may choose to gain the Advanced Perk in the Fighting Style you've already selected or select a second Fighting Style Perk."
+          "data": "Choose a fighting style from the list below."
         },
         {
           "id": 2,
@@ -904,51 +926,51 @@
           "data": {
             "headers": [
               "Style",
-              "Perk",
-              "Advanced Perk"
+              "Perk"
             ],
             "items": [
               [
+                "Assault",
+                "When you take the burst fire action, the size of the cube increased by 2m and you add your proficiency bonus to the DC of the saving throw."
+              ],
+              [
                 "Brawler",
-                "Add your proficiency bonus to your melee attack damage rolls.",
-                "You have advantage when making melee weapon attacks."
-              ],
-              [
-                "Gunslinger",
-                "When you take the Attack action or Double Tap bonus action and attack with a Heavy Pistol or SMG that you're holding in one hand, you can use a free action to attack with a different Heavy Weapon or SMG that you're holding in the other hand (the Double Tap penalty still applies to the second attack). The second weapon attack always suffers an Off-hand Penalty: do not add your proficiency bonus to the attack roll.",
-                "Remove the Off-hand Penalty from your second weapon attack."
-              ],
-              [
-                "The Free Hand",
-                "When wielding a pistol, you have a +2 bonus to hit with ranged spell or tech attacks.",
-                "When wielding a pistol, you add your proficiency bonus as damage to all damaging biotic spells and tech."
+                "Add your proficiency bonus to your melee attack damage rolls."
               ],
               [
                 "Carnage",
-                "+2 to hit with attacks made with a shotgun.",
-                "All shotguns you wield have an increased range of 2m. This applies to the hip-fire mechanic as well. For example, a shotgun with range of 2m with hip-fire gives you advantage on targets within 4m."
+                "When you roll a 1 or 2 on a damage die for an attack you make with a shotgun, you can reroll the die and must use the new roll."
               ],
               [
-                "Sniper",
-                "If no hostile creature is within 10m of you, gain +2 to damage rolls with Sniper Rifles.",
-                "If no hostile creature is within 10m of you, gain +4 to damage rolls with Sniper Rifles."
+                "Close-Quarters Shooter",
+                "When making a ranged attack while you are within 2m of a hostile creature, you do not have disadvantage on the attack roll. Your ranged attacks ignore half cover against targets within 10m of you."
               ],
               [
                 "Defense",
-                "+1 AC",
-                "+2 AC"
+                "+1 AC"
+              ],
+              [
+                "Gunslinger",
+                "When you take the Attack action and attack with a light ranged weapon that you’re holding in one hand, you can use a bonus action to attack with a different light ranged weapon that you’re holding in the other hand."
+              ],
+              [
+                "The Free Hand",
+                "When holding no more than one light, non-two-handed weapon, you gain a +2 bonus to hit with ranged spell and tech attacks"
               ],
               [
                 "Protection",
-                "When a creature you can see attacks a target other than you that is within 2m of you, you can use your reaction and expend one barrier tick to impose disadvantage on the attack roll.",
-                "If the attack succeeds, the barrier tick absorbs damage as a normal barrier tick would."
+                "When a creature you can see attacks a target other than you that is within 2m of you, you can use your reaction and expend one barrier tick to impose disadvantage on the attack roll."
+              ],
+              [
+                "Sniper",
+                "If no hostile creature is within 10m of you, gain +2 to damage rolls on attacks made with a sniper rifle."
               ]
             ]
           }
         }
       ],
       "id": "fighting_style",
-      "mechanic_text_dump": "ChooseafightingstylefromthelistbelowandgaintheperkinthefirstcolumnThesecondtimeyoulearnthisabilityyoumaychoosetogaintheAdvancedPerkintheFightingStyleyouvealreadyselectedorselectasecondFightingStylePerktableStylePerkAdvancedPerkBrawlerAddyourproficiencybonustoyourmeleeattackdamagerollsYouhaveadvantagewhenmakingmeleeweaponattacksGunslingerWhenyoutaketheAttackactionorDoubleTapbonusactionandattackwithaHeavyPistolorSMGthatyoureholdinginonehandyoucanuseafreeactiontoattackwithadifferentHeavyWeaponorSMGthatyoureholdingintheotherhandtheDoubleTappenaltystillappliestothesecondattackThesecondweaponattackalwayssuffersanOffhandPenaltydonotaddyourproficiencybonustotheattackrollRemovetheOffhandPenaltyfromyoursecondweaponattackTheFreeHandWhenwieldingapistolyouhavea2bonustohitwithrangedspellortechattacksWhenwieldingapistolyouaddyourproficiencybonusasdamagetoalldamagingbioticspellsandtechCarnage2tohitwithattacksmadewithashotgunAllshotgunsyouwieldhaveanincreasedrangeof2mThisappliestothehipfiremechanicaswellForexampleashotgunwithrangeof2mwithhipfiregivesyouadvantageontargetswithin4mSniperIfnohostilecreatureiswithin10mofyougain2todamagerollswithSniperRiflesIfnohostilecreatureiswithin10mofyougain4todamagerollswithSniperRiflesDefense1AC2ACProtectionWhenacreatureyoucanseeattacksatargetotherthanyouthatiswithin2mofyouyoucanuseyourreactionandexpendonebarrierticktoimposedisadvantageontheattackrollIftheattacksucceedsthebarriertickabsorbsdamageasanormalbarriertickwouldtable"
+      "mechanic_text_dump": "ChooseafightingstylefromthelistbelowtableStylePerkAssaultWhenyoutaketheburstfireactionthesizeofthecubeincreasedby2mandyouaddyourproficiencybonustotheDCofthesavingthrowBrawlerAddyourproficiencybonustoyourmeleeattackdamagerollsCarnageWhenyourolla1or2onadamagedieforanattackyoumakewithashotgunyoucanrerollthedieandmustusethenewrollCloseQuartersShooterWhenmakingarangedattackwhileyouarewithin2mofahostilecreatureyoudonothavedisadvantageontheattackrollYourrangedattacksignorehalfcoveragainsttargetswithin10mofyouDefense1ACGunslingerWhenyoutaketheAttackactionandattackwithalightrangedweaponthatyoureholdinginonehandyoucanuseabonusactiontoattackwithadifferentlightrangedweaponthatyoureholdingintheotherhandTheFreeHandWhenholdingnomorethanonelightnontwohandedweaponyougaina2bonustohitwithrangedspellandtechattacksProtectionWhenacreatureyoucanseeattacksatargetotherthanyouthatiswithin2mofyouyoucanuseyourreactionandexpendonebarrierticktoimposedisadvantageontheattackrollSniperIfnohostilecreatureiswithin10mofyougain2todamagerollsonattacksmadewithasniperrifletable"
     },
     {
       "name": "Focused Biotics",
@@ -961,6 +983,18 @@
       ],
       "id": "focused_biotics",
       "mechanic_text_dump": "Whileyouareconcentratingonabioticspellyourconcentrationcantbebrokenasaresultoftakingdamage"
+    },
+    {
+      "name": "Heavy Barrier",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Whenever you take damage while barrier is active, remove 1 barrier tick and reduce the damage by 3d8."
+        }
+      ],
+      "id": "heavy_barrier",
+      "mechanic_text_dump": "Wheneveryoutakedamagewhilebarrierisactiveremove1barriertickandreducethedamageby3d8"
     },
     {
       "name": "Heavy Weapon Hack",
@@ -985,16 +1019,16 @@
         {
           "id": 1,
           "type": "line",
-          "data": "At the 6th level, increase the die type of your barrier to d10."
+          "data": "At the 6th level, increase the die type of your barrier ticks to d10."
         },
         {
           "id": 2,
           "type": "line",
-          "data": "At the 14th level, increase the die type of your barrier to d12."
+          "data": "At the 14th level, increase the die type of your barrier ticks to d12."
         }
       ],
       "id": "improved_barrier",
-      "mechanic_text_dump": "Atthe6thlevelincreasethedietypeofyourbarriertod10Atthe14thlevelincreasethedietypeofyourbarriertod12"
+      "mechanic_text_dump": "Atthe6thlevelincreasethedietypeofyourbarriertickstod10Atthe14thlevelincreasethedietypeofyourbarriertickstod12"
     },
     {
       "name": "Improved Biotic Slash",
@@ -1670,16 +1704,40 @@
       "mechanic_text_dump": "Startingat13thlevelifyouareinTacticalCloakwhenyouuseatechpowercombatpowerorgrenadeeachcreaturehasdisadvantageonanysavingthrowitmakesagainstthetechpowercombatpowerorgrenade"
     },
     {
+      "name": "Tactical Barrier",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Whenever you take damage while barrier is active, you may choose the number of barrier ticks to expend. You may choose to expend 0 barrier ticks."
+        }
+      ],
+      "id": "tactical_barrier",
+      "mechanic_text_dump": "WheneveryoutakedamagewhilebarrierisactiveyoumaychoosethenumberofbarriertickstoexpendYoumaychoosetoexpend0barrierticks"
+    },
+    {
       "name": "Tactical Cloak",
       "mechanic": [
         {
           "id": 1,
           "type": "line",
-          "data": "Use 1 Tech point to become {invisible}. When you make a melee, ranged, or use a tech or combat power, your tactical cloak ends."
+          "data": "Use 1 Tech point to become {invisible}. Tactical cloak lasts 1 minute or until you use a tech or combat power, your tactical cloak ends."
         }
       ],
       "id": "tactical_cloak",
-      "mechanic_text_dump": "Use1TechpointtobecomeinvisibleWhenyoumakeameleerangedoruseatechorcombatpoweryourtacticalcloakends"
+      "mechanic_text_dump": "Use1TechpointtobecomeinvisibleTacticalcloaklasts1minuteoruntilyouuseatechorcombatpoweryourtacticalcloakends"
+    },
+    {
+      "name": "Tactical Reload",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You're so familiar with guns that reloading them is nothing more than muscle memory. Once per turn, if the heat of a weapon your holding becomes 0, you can use your Reaction to take the Reload action for that weapon."
+        }
+      ],
+      "id": "tactical_reload",
+      "mechanic_text_dump": "YouresofamiliarwithgunsthatreloadingthemisnothingmorethanmusclememoryOnceperturniftheheatofaweaponyourholdingbecomes0youcanuseyourReactiontotaketheReloadactionforthatweapon"
     },
     {
       "name": "Tech Armor",
@@ -1905,40 +1963,16 @@
         {
           "id": 2,
           "type": "line",
-          "data": "Starting at the 9th level, you can use this ability twice per short rest."
+          "data": "Starting at the 13th level, you can use this ability twice per short rest."
         },
         {
           "id": 3,
           "type": "line",
-          "data": "Starting at the 11th level, you can use this ability three times per short rest."
+          "data": "Starting at the 17th level, you can use this ability three times per short rest."
         }
       ],
       "id": "zero-sum",
-      "mechanic_text_dump": "WhenyoumakeameleeattackinsteadofrollingadiceyoucanflipacoinOnheadsitsacriticalhitOntailsitsacriticalmissYoucanusethisabilityoncepershortrestStartingatthe9thlevelyoucanusethisabilitytwicepershortrestStartingatthe11thlevelyoucanusethisabilitythreetimespershortrest"
-    },
-    {
-      "name": "Fast Hands",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "You can use the bonus action granted by your Cunning Action to make a Dexterity (Sleight of Hand) check, take the Reload action, or take the Use an Object action."
-        }
-      ],
-      "id": "fast_hands",
-      "mechanic_text_dump": "YoucanusethebonusactiongrantedbyyourCunningActiontomakeaDexteritySleightofHandchecktaketheReloadactionortaketheUseanObjectaction"
-    },
-    {
-      "name": "Tactical Reload",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "You're so familiar with guns that reloading them is nothing more than muscle memory. Once per turn, if the heat of a weapon your holding becomes 0, you can use your Reaction to take the Reload action for that weapon."
-        }
-      ],
-      "id": "tactical_reload",
-      "mechanic_text_dump": "YouresofamiliarwithgunsthatreloadingthemisnothingmorethanmusclememoryOnceperturniftheheatofaweaponyourholdingbecomes0youcanuseyourReactiontotaketheReloadactionforthatweapon"
+      "mechanic_text_dump": "WhenyoumakeameleeattackinsteadofrollingadiceyoucanflipacoinOnheadsitsacriticalhitOntailsitsacriticalmissYoucanusethisabilityoncepershortrestStartingatthe13thlevelyoucanusethisabilitytwicepershortrestStartingatthe17thlevelyoucanusethisabilitythreetimespershortrest"
     }
   ]
 }

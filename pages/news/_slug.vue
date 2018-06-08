@@ -21,7 +21,7 @@
       },
       postFile () {
         if (this.post.filename) {
-          return require(`~/posts/${this.post.filename}`)
+          return require(`~/data/posts/${this.post.filename}`)
         } else {
           this.$nuxt.error({statusCode: 404})
         }

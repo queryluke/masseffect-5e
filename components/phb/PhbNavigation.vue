@@ -63,8 +63,8 @@
             items: [
               { href: '/phb/classes', title: 'Classes' },
               { href: '/phb/races', title: 'Races' },
-              { href: '/phb/feats', title: 'Feats' }
-              // { href: '/phb/backgrounds', title: 'Backgrounds' }
+              { href: '/phb/feats', title: 'Feats' },
+              { href: '/phb/backgrounds', title: 'Backgrounds' }
             ]
           },
           {
@@ -93,7 +93,7 @@
             icon: 'extension',
             items: [
               {href: '/for-gms/loot-generator', title: 'Loot Generator'},
-              {href: '/for-gms/grunts', title: 'Grunts Generator'},
+              {href: '/for-gms/grunts', title: 'Grunt Generator'},
               {href: '/for-gms/armor-creation', title: 'Creating Armor'}
             ]
           },

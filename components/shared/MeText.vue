@@ -8,6 +8,9 @@
     name: 'MeText',
     props: ['text'],
     render (createElement) {
+      if (!this.text) {
+        return ''
+      }
       const renderArray = this.text.split(/(?={)(.*?})/g).map(text => {
         if (text.charAt(0) === '{' && text.substring(text.length - 1) === '}') {
           let id = text.replace(/[{|}]/g, '')

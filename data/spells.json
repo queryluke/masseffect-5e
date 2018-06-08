@@ -1,10 +1,10 @@
 {
-  "updated": "May 13, 2018 @  4:53 PM",
+  "updated": "June  7, 2018 @  9:48 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
       "name": "AI Hacking",
-      "level": null,
+      "level": "3",
       "mechanic": [
         {
           "id": 1,
@@ -208,8 +208,8 @@
 
       ],
       "casting_time": "Reaction",
-      "concentration": null,
-      "duration": "1 hour",
+      "concentration": "x",
+      "duration": "1 minute",
       "range": "Self",
       "aoe": null,
       "aoe_distance": null,
@@ -293,64 +293,13 @@
       "mechanic_text_dump": "AsanAttackactionfireasalvoofbladesatatargetcreatureorobjectyoucanseewithinrangeMakearangedweaponattackyouaddyourproficiencybonustothisrollOnahitthetargettakes2d12piercingdamageYoumustspendashortorlongrestreloadingthearmguardbeforeyoucanthisabilityagainThisfeaturesdamageincreasesby2d12whenyoureach5thlevel4d1211thlevel6d1217thlevel8d12"
     },
     {
-      "name": "Barrier",
-      "level": "0",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Surround yourself in a high-gravity mass effect field that strengthens your defense but reduces your movement speed. While you have any barrier ticks, your speed is reduced by 4m. Whenever you take damage, remove 1 barrier tick and reduce that damage by 1d8. When you cast Barrier, refill your barrier ticks to their maximum amount. Your class indicates the maximum number of barrier ticks you can have."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "This reduction increases by 1 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
-        }
-      ],
-      "adv_option_1": "Tactical Barrier : When you take damage, you may choose to expend a Barrier Tick instead of being required to use one.",
-      "adv_option_2": "Quick Barrier : You may cast Barrier as a bonus action.",
-      "type": "biotic",
-      "die_type": "d8",
-      "attack_type": [
-
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "Self",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "warding"
-      ],
-      "damage_type": [
-
-      ],
-      "detonates": null,
-      "primes": null,
-      "adept": "x",
-      "vanguard": "x",
-      "sentinel": "x",
-      "infiltrator": null,
-      "engineer": null,
-      "soldier": null,
-      "min_tech_points": null,
-      "id": "barrier",
-      "adv_options": [
-        "Tactical Barrier : When you take damage, you may choose to expend a Barrier Tick instead of being required to use one.",
-        "Quick Barrier : You may cast Barrier as a bonus action."
-      ],
-      "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "SurroundyourselfinahighgravitymasseffectfieldthatstrengthensyourdefensebutreducesyourmovementspeedWhileyouhaveanybarrierticksyourspeedisreducedby4mWheneveryoutakedamageremove1barriertickandreducethatdamageby1d8WhenyoucastBarrierrefillyourbarriertickstotheirmaximumamountYourclassindicatesthemaximumnumberofbarrierticksyoucanhaveThisreductionincreasesby1whenyoureach5thlevel2d811thlevel3d8and17thlevel4d8"
-    },
-    {
       "name": "Barrier Detonation",
       "level": "0",
       "mechanic": [
         {
           "id": 1,
           "type": "line",
-          "data": "Expend all of your remaining barrier ticks to create a negative mass effect field in a 2m sphere originating from you. Each Medium or smaller creature or object within the sphere must succeed on Dexterity saving throw or becomes {lifted}"
+          "data": "Expend all of your remaining barrier ticks to create a negative mass effect field in a 2m sphere originating from you. Each Medium or smaller creature or object within the sphere must succeed on Dexterity saving throw or becomes {lifted}. If you expend at least 4 barrier ticks, Large targets must make the saving throw."
         },
         {
           "id": 2,
@@ -392,7 +341,7 @@
         "Heavy Lift: Large and smaller creatures and objects are affected."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "Expendallofyourremainingbarriertickstocreateanegativemasseffectfieldina2msphereoriginatingfromyouEachMediumorsmallercreatureorobjectwithinthespheremustsucceedonDexteritysavingthroworbecomesliftedIncreasetherangeofthesphereby2mat5thlevel4m11thlevel6mand17thlevel8m"
+      "mechanic_text_dump": "Expendallofyourremainingbarriertickstocreateanegativemasseffectfieldina2msphereoriginatingfromyouEachMediumorsmallercreatureorobjectwithinthespheremustsucceedonDexteritysavingthroworbecomesliftedIfyouexpendatleast4barrierticksLargetargetsmustmakethesavingthrowIncreasetherangeofthesphereby2mat5thlevel4m11thlevel6mand17thlevel8m"
     },
     {
       "name": "Beehive",
@@ -519,7 +468,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Increase the mass of your fist and strike at a target.  Make a melee spell attack on a target creature or object within range. On a hit, deal 1d8 bludgeoning damage to the target and gain 1 barrier tick per size of the target (1 for small, 2 for medium, 3 for large, etc.)"
+          "data": "Increase the mass of your fist and strike at a target. Make a melee spell attack on a target creature or object within range. On a hit, deal 1d8 bludgeoning damage. If you have an active barrier, gain 2 barrier ticks and reset the duration of your barrier to 1 minute."
         },
         {
           "id": 2,
@@ -527,14 +476,14 @@
           "data": "At higher levels: This spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), 17th level (4d8)"
         }
       ],
-      "adv_option_1": "Efficient Punch : Gain an additional barrier tick when you hit a target with your Biotic punch",
-      "adv_option_2": "Syphoning Strike : Instead of gaining a barrier tick, you regain 2 shield points per size of the creature.",
+      "adv_option_1": "Efficient Punch : On a hit, gain 3 barrier ticks.",
+      "adv_option_2": "Siphoning Strike : On a hit, instead of gaining barrier ticks, gain 10 shield points.",
       "type": "biotic",
       "die_type": "d8",
       "attack_type": [
         "Melee Spell Attack"
       ],
-      "casting_time": "Attack",
+      "casting_time": "Action",
       "concentration": null,
       "duration": "Instant",
       "range": "Touch",
@@ -558,63 +507,11 @@
       "min_tech_points": null,
       "id": "biotic_punch",
       "adv_options": [
-        "Efficient Punch : Gain an additional barrier tick when you hit a target with your Biotic punch",
-        "Syphoning Strike : Instead of gaining a barrier tick, you regain 2 shield points per size of the creature."
+        "Efficient Punch : On a hit, gain 3 barrier ticks.",
+        "Siphoning Strike : On a hit, instead of gaining barrier ticks, gain 10 shield points."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "IncreasethemassofyourfistandstrikeatatargetMakeameleespellattackonatargetcreatureorobjectwithinrangeOnahitdeal1d8bludgeoningdamagetothetargetandgain1barriertickpersizeofthetarget1forsmall2formedium3forlargeetcAthigherlevelsThisspellsdamageincreasesby1d8whenyoureach5thlevel2d811thlevel3d817thlevel4d8"
-    },
-    {
-      "name": "Biotic Push",
-      "level": "0",
-      "mechanic": [
-        {
-          "id": 1,
-          "type": "line",
-          "data": "Make a melee spell attack on a Medium or smaller creature or object within range. On a hit, you create a pocket mass effect field that deals 1d4 force damage the target and repels it 6m away from you."
-        },
-        {
-          "id": 2,
-          "type": "line",
-          "data": "At higher levels: This spell's damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), 17th level (4d4)"
-        }
-      ],
-      "adv_option_1": "Quick Cast : You may cast Biotic Push as a bonus action.",
-      "adv_option_2": "Flatten: On a hit, the target is knocked {prone}.",
-      "type": "biotic",
-      "die_type": "d4",
-      "attack_type": [
-        "Melee Spell Attack"
-      ],
-      "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
-      "range": "Touch",
-      "aoe": null,
-      "aoe_distance": null,
-      "effect": [
-        "damage",
-        "control"
-      ],
-      "damage_type": [
-
-      ],
-      "detonates": "x",
-      "primes": null,
-      "adept": "x",
-      "vanguard": "x",
-      "sentinel": "x",
-      "infiltrator": null,
-      "engineer": null,
-      "soldier": null,
-      "min_tech_points": null,
-      "id": "biotic_push",
-      "adv_options": [
-        "Quick Cast : You may cast Biotic Push as a bonus action.",
-        "Flatten: On a hit, the target is knocked {prone}."
-      ],
-      "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "MakeameleespellattackonaMediumorsmallercreatureorobjectwithinrangeOnahityoucreateapocketmasseffectfieldthatdeals1d4forcedamagethetargetandrepelsit6mawayfromyouAthigherlevelsThisspellsdamageincreasesby1d4whenyoureach5thlevel2d411thlevel3d417thlevel4d4"
+      "mechanic_text_dump": "IncreasethemassofyourfistandstrikeatatargetMakeameleespellattackonatargetcreatureorobjectwithinrangeOnahitdeal1d8bludgeoningdamageIfyouhaveanactivebarriergain2barrierticksandresetthedurationofyourbarrierto1minuteAthigherlevelsThisspellsdamageincreasesby1d8whenyoureach5thlevel2d811thlevel3d817thlevel4d8"
     },
     {
       "name": "Biotic Sphere",
@@ -799,8 +696,8 @@
           "data": "The damage increases by 1d6 when you reach the 5th level (2d6), 11th level(3d6) and 17th level(4d6)."
         }
       ],
-      "adv_option_1": "Barrier Regen : After you cast Charge, regain half of your barrier ticks (rounded down).",
-      "adv_option_2": "Distance : The force ripples outwards from the point of impact, increasing the radius to 4m.",
+      "adv_option_1": "Barrier Regen : After you cast Charge, if you have an active barrier, regain half of your barrier ticks and reset the duration of your barrier to 1 minute.",
+      "adv_option_2": "Stunning blow : On a failed save, the target becomes {stunned} until the end of your next turn",
       "type": "biotic",
       "die_type": "d6",
       "attack_type": [
@@ -830,8 +727,8 @@
       "min_tech_points": null,
       "id": "charge",
       "adv_options": [
-        "Barrier Regen : After you cast Charge, regain half of your barrier ticks (rounded down).",
-        "Distance : The force ripples outwards from the point of impact, increasing the radius to 4m."
+        "Barrier Regen : After you cast Charge, if you have an active barrier, regain half of your barrier ticks and reset the duration of your barrier to 1 minute.",
+        "Stunning blow : On a failed save, the target becomes {stunned} until the end of your next turn"
       ],
       "class_list": "Vanguard",
       "mechanic_text_dump": "AlteryourmassandchooseacreatureorobjectyoucanseewithinrangeUsethetargetsmasstopullyourselftoitslocationwithincredibleforceAnycreatureorobjectwithina2mspheremustmakeaDexteritysavingthrowOnafailedsaveacreaturetakes1d6forcedamageandbecomesproneOnasuccessfulsaveacreaturetakeshalfasmuchdamageThedamageincreasesby1d6whenyoureachthe5thlevel2d611thlevel3d6and17thlevel4d6"
@@ -890,7 +787,7 @@
     },
     {
       "name": "Cryo Beam",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,
@@ -937,7 +834,7 @@
     },
     {
       "name": "Cryo Blast",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,
@@ -990,18 +887,18 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Make a ranged spell attack on a creature you can see within range. On a hit, you plague the target with a persistent, damaging biotic field. The creature is {primed-necrotic} and takes 1d10 necrotic damage and 1d10 necrotic damage at the start of your turn while you maintain the spell. If the creature dies, Dark Channel transfers to another random, hostile creature within 10m. Only one Dark Channel can may be active at a time."
+          "data": "Make a ranged spell attack on a creature you can see within range. On a hit, you plague the target with a persistent, damaging biotic field. The creature is {primed-necrotic} and takes 1d6 necrotic damage and 1d6 necrotic damage at the start of your turn while you maintain the spell. If the creature dies, Dark Channel transfers to the nearest hostile creature within 10m of the target."
         },
         {
           "id": 2,
           "type": "line",
-          "data": "The damage increases by 1d10 when you reach the 5th level (2d10), 11th level(3d10) and 17th level(4d10)."
+          "data": "The damage increases by 1d6 when you reach the 5th level (2d6), 11th level(3d6) and 17th level(4d6)."
         }
       ],
       "adv_option_1": "Cripple : If the affected creature would make a saving throw or attack roll, as a reaction you may increase the severity of Dark Channel. The affected creature must roll a d4 and subtract the number rolled from the attack roll or saving throw.",
-      "adv_option_2": "Improved Damage : Increase the damage die type to d12",
+      "adv_option_2": "Improved Damage : Increase the damage die type to d10",
       "type": "biotic",
-      "die_type": "d10",
+      "die_type": "d6",
       "attack_type": [
         "Ranged Attack"
       ],
@@ -1029,10 +926,10 @@
       "id": "dark_channel",
       "adv_options": [
         "Cripple : If the affected creature would make a saving throw or attack roll, as a reaction you may increase the severity of Dark Channel. The affected creature must roll a d4 and subtract the number rolled from the attack roll or saving throw.",
-        "Improved Damage : Increase the damage die type to d12"
+        "Improved Damage : Increase the damage die type to d10"
       ],
       "class_list": "Adept",
-      "mechanic_text_dump": "MakearangedspellattackonacreatureyoucanseewithinrangeOnahityouplaguethetargetwithapersistentdamagingbioticfieldThecreatureisprimednecroticandtakes1d10necroticdamageand1d10necroticdamageatthestartofyourturnwhileyoumaintainthespellIfthecreaturediesDarkChanneltransferstoanotherrandomhostilecreaturewithin10mOnlyoneDarkChannelcanmaybeactiveatatimeThedamageincreasesby1d10whenyoureachthe5thlevel2d1011thlevel3d10and17thlevel4d10"
+      "mechanic_text_dump": "MakearangedspellattackonacreatureyoucanseewithinrangeOnahityouplaguethetargetwithapersistentdamagingbioticfieldThecreatureisprimednecroticandtakes1d6necroticdamageand1d6necroticdamageatthestartofyourturnwhileyoumaintainthespellIfthecreaturediesDarkChanneltransferstothenearesthostilecreaturewithin10mofthetargetThedamageincreasesby1d6whenyoureachthe5thlevel2d611thlevel3d6and17thlevel4d6"
     },
     {
       "name": "Dark Sphere",
@@ -1069,7 +966,7 @@
       ],
       "casting_time": "Action",
       "concentration": "x",
-      "duration": "10 minutes",
+      "duration": "1 minute",
       "range": "Self",
       "aoe": "sphere",
       "aoe_distance": "4m",
@@ -1098,7 +995,7 @@
     },
     {
       "name": "Decoy",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1149,7 +1046,7 @@
     },
     {
       "name": "Defense Matrix",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1195,7 +1092,7 @@
     },
     {
       "name": "Disrupt Biotics",
-      "level": null,
+      "level": "5",
       "mechanic": [
         {
           "id": 1,
@@ -1302,7 +1199,7 @@
     },
     {
       "name": "Electric Slash",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1348,7 +1245,7 @@
     },
     {
       "name": "Energy Drain",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1394,7 +1291,7 @@
     },
     {
       "name": "First Aid",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1440,7 +1337,7 @@
     },
     {
       "name": "Flamethrower",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1639,7 +1536,7 @@
     },
     {
       "name": "Guidance",
-      "level": null,
+      "level": "1",
       "mechanic": [
         {
           "id": 1,
@@ -1858,7 +1755,7 @@
     },
     {
       "name": "Incinerate",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,
@@ -1960,7 +1857,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Consume barrier ticks to create a whip of biotic energy. Each barrier tick consumed increases the range of the whip by 2m. Target a creature you can see within the resulting range. The target takes 4d8 force damage and becomes {grappled} and {primed-force} until it escapes the grapple. A detonating attack immediately ends the grapple or, to escape the grapple, the creature must succeed on a contested Strength (Athletics) against your Constitution."
+          "data": "Target a creature you can see within range. The target takes 4d8 force damage and becomes {grappled} and {primed-force} until it escapes the grapple. A detonating attack immediately ends the grapple or, to escape the grapple, the creature must succeed on a contested Strength (Athletics) check against your Constitution."
         },
         {
           "id": 2,
@@ -1978,7 +1875,7 @@
       "casting_time": "Action",
       "concentration": "x",
       "duration": "1 minute",
-      "range": "var",
+      "range": "10m",
       "aoe": null,
       "aoe_distance": null,
       "effect": [
@@ -2003,10 +1900,10 @@
         "Improved Damage : Increase the damage die type to d12."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "ConsumebarriertickstocreateawhipofbioticenergyEachbarriertickconsumedincreasestherangeofthewhipby2mTargetacreatureyoucanseewithintheresultingrangeThetargettakes4d8forcedamageandbecomesgrappledandprimedforceuntilitescapesthegrappleAdetonatingattackimmediatelyendsthegrappleortoescapethegrapplethecreaturemustsucceedonacontestedStrengthAthleticsagainstyourConstitutionAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d8foreachslotlevelabovethe2nd"
+      "mechanic_text_dump": "TargetacreatureyoucanseewithinrangeThetargettakes4d8forcedamageandbecomesgrappledandprimedforceuntilitescapesthegrappleAdetonatingattackimmediatelyendsthegrappleortoescapethegrapplethecreaturemustsucceedonacontestedStrengthAthleticscheckagainstyourConstitutionAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d8foreachslotlevelabovethe2nd"
     },
     {
-      "name": "Lift",
+      "name": "Pull",
       "level": "1",
       "mechanic": [
         {
@@ -2015,7 +1912,7 @@
           "data": "Make a ranged spell attack on a Medium or smaller creature or object within range. On a success, you create a mass effect field around the target and it becomes {lifted} 2m in the air."
         }
       ],
-      "adv_option_1": "Heavy Lift : You may target a Large or smaller creature or object.",
+      "adv_option_1": "Heavy Pull : You may target a Large or smaller creature or object.",
       "adv_option_2": "Control : While the target is lifted, as a bonus action, you can move the target up to 6m.",
       "type": "biotic",
       "die_type": "d8",
@@ -2043,9 +1940,9 @@
       "engineer": null,
       "soldier": null,
       "min_tech_points": null,
-      "id": "lift",
+      "id": "pull",
       "adv_options": [
-        "Heavy Lift : You may target a Large or smaller creature or object.",
+        "Heavy Pull : You may target a Large or smaller creature or object.",
         "Control : While the target is lifted, as a bonus action, you can move the target up to 6m."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
@@ -2053,7 +1950,7 @@
     },
     {
       "name": "Neural Shock",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,
@@ -2175,7 +2072,7 @@
         }
       ],
       "adv_option_1": "Improved Damage : Increase the damage die to d10.",
-      "adv_option_2": "Half Blast : When you cast Nova, you cause up to 2 blasts. Each blast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. If you have not used all your movement, you can move in between the blasts.",
+      "adv_option_2": "Half Blast : You may cast nova twice within a single action. Each cast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. You can move in between the blasts.",
       "type": "biotic",
       "die_type": "d10",
       "attack_type": [
@@ -2205,14 +2102,14 @@
       "id": "nova",
       "adv_options": [
         "Improved Damage : Increase the damage die to d10.",
-        "Half Blast : When you cast Nova, you cause up to 2 blasts. Each blast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. If you have not used all your movement, you can move in between the blasts."
+        "Half Blast : You may cast nova twice within a single action. Each cast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. You can move in between the blasts."
       ],
       "class_list": "Vanguard",
       "mechanic_text_dump": "TransfertheenergyofyourbarrierintoabioticexplosionconsumingyourremainingbarrierticksCreatureswithina2mspherecenteredonyoumustmakeaDexteritysavingthrowOnafailedsaveacreatureisknockedproneandtakesforcedamageequaltoXd10whereXisthenumberofbarrierticksOnasuccessfulsaveacreaturetakeshalfasmuchdamageWhenyoucastthisspellusingaspellslotof2ndlevelorhighertheradiusoftheexplosionincreasesby2mforeachlevelabovethe1st"
     },
     {
       "name": "Overload",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,
@@ -2314,12 +2211,12 @@
     },
     {
       "name": "Poison Spray",
-      "level": null,
+      "level": "1",
       "mechanic": [
         {
           "id": 1,
           "type": "line",
-          "data": "Spend 1 tech point to shoot an aerosol spray of noxious chemicals from your omni-tool at a creature within melee range. The creature must succeed on a Constitution saving throw or take 1d12 poison damage and becomes poisoned until the end of your next turn. The DC of the saving throw is increase by 1 for each additional tech point you spend."
+          "data": "Spend 1 tech point to shoot an aerosol spray of noxious chemicals from your omni-tool at a creature within melee range. The creature must succeed on a Constitution saving throw or take 1d12 poison damage and becomes poisoned until the end of your next turn. The DC of the saving throw is increased by 2 for each additional tech point you spend."
         }
       ],
       "adv_option_1": "Pepper spray : Creatures that fail the Constitution saving throw are also blinded for 1 minute.",
@@ -2356,38 +2253,33 @@
         "Poison Cloud : Create a 2m-radius cloud of poison that persists for 1 minute. Each creature that enters the sphere for the first time on a turn or ends its turn there must make the Constitution saving throw."
       ],
       "class_list": "Engineer, Infiltrator",
-      "mechanic_text_dump": "Spend1techpointtoshootanaerosolsprayofnoxiouschemicalsfromyouromnitoolatacreaturewithinmeleerangeThecreaturemustsucceedonaConstitutionsavingthrowortake1d12poisondamageandbecomespoisoneduntiltheendofyournextturnTheDCofthesavingthrowisincreaseby1foreachadditionaltechpointyouspend"
+      "mechanic_text_dump": "Spend1techpointtoshootanaerosolsprayofnoxiouschemicalsfromyouromnitoolatacreaturewithinmeleerangeThecreaturemustsucceedonaConstitutionsavingthrowortake1d12poisondamageandbecomespoisoneduntiltheendofyournextturnTheDCofthesavingthrowisincreasedby2foreachadditionaltechpointyouspend"
     },
     {
-      "name": "Pull",
+      "name": "Lift",
       "level": "0",
       "mechanic": [
         {
           "id": 1,
           "type": "line",
-          "data": "You create a negative mass effect field around a creature or object you can see within range then jerk the field sharply towards you, bringing the target with it. Only Medium and smaller creatures are affected. The distance the target travels is based on its size, starting at 2m for medium-sized objects and adding 4m for each size small than medium. E.g., Medium = 2m, Small = 6m, Tiny = 10m, etc."
+          "data": "You can manipulate light objects with a series of mass effect fields. When you cast this cantrip, you can try to move an object that weighs up to 10 kgs (~20 pounds). If the object isn't being worn or carried, you automatically move it up to 10 meters in any direction, but not beyond the range of this spell."
         },
         {
           "id": 2,
           "type": "line",
-          "data": "If attempting to pull an object from another creature, the creature must pass a Strength saving throw to retain possession of the object. If you pull a creature and it moves more than 2m, it must pass a Dexterity saving throw or be knocked {prone}."
-        },
-        {
-          "id": 3,
-          "type": "line",
-          "data": "The number of targets increase by 1 when you reach the 5th level (2), 11th level (3), and 17th level (4)."
+          "data": "If the object is worn or carried by a creature, you must make an ability check with your spellcasting ability contested by that creature's Strength check. If you succeed, you pull the object away from that creature and can move it up to 10 meters in any direction but not beyond the range of this spell."
         }
       ],
-      "adv_option_1": "Magician: You can shape and guide pull to add different trajectories to the object. The direction of pull cannot change, but you can add arcs, decrease the distance the object moves, and even pull small objects directly into your hand.",
-      "adv_option_2": "Push: You may choose to move the target towards or away from you.",
+      "adv_option_1": "Magician : You can exert fine motor control over the object, such as manipulating a simple tool or removing an object from a container.",
+      "adv_option_2": "Improved Lift : You can manipulate an object that weighs up to 25 kgs (~55 pounds).",
       "type": "biotic",
       "die_type": null,
       "attack_type": [
 
       ],
       "casting_time": "Action",
-      "concentration": null,
-      "duration": "Instant",
+      "concentration": "x",
+      "duration": "10 minutes",
       "range": "20m",
       "aoe": null,
       "aoe_distance": null,
@@ -2406,13 +2298,13 @@
       "engineer": null,
       "soldier": null,
       "min_tech_points": null,
-      "id": "pull",
+      "id": "lift",
       "adv_options": [
-        "Magician: You can shape and guide pull to add different trajectories to the object. The direction of pull cannot change, but you can add arcs, decrease the distance the object moves, and even pull small objects directly into your hand.",
-        "Push: You may choose to move the target towards or away from you."
+        "Magician : You can exert fine motor control over the object, such as manipulating a simple tool or removing an object from a container.",
+        "Improved Lift : You can manipulate an object that weighs up to 25 kgs (~55 pounds)."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "YoucreateanegativemasseffectfieldaroundacreatureorobjectyoucanseewithinrangethenjerkthefieldsharplytowardsyoubringingthetargetwithitOnlyMediumandsmallercreaturesareaffectedThedistancethetargettravelsisbasedonitssizestartingat2mformediumsizedobjectsandadding4mforeachsizesmallthanmediumEgMedium2mSmall6mTiny10metcIfattemptingtopullanobjectfromanothercreaturethecreaturemustpassaStrengthsavingthrowtoretainpossessionoftheobjectIfyoupullacreatureanditmovesmorethan2mitmustpassaDexteritysavingthroworbeknockedproneThenumberoftargetsincreaseby1whenyoureachthe5thlevel211thlevel3and17thlevel4"
+      "mechanic_text_dump": "YoucanmanipulatelightobjectswithaseriesofmasseffectfieldsWhenyoucastthiscantripyoucantrytomoveanobjectthatweighsupto10kgs20poundsIftheobjectisntbeingwornorcarriedyouautomaticallymoveitupto10metersinanydirectionbutnotbeyondtherangeofthisspellIftheobjectiswornorcarriedbyacreatureyoumustmakeanabilitycheckwithyourspellcastingabilitycontestedbythatcreaturesStrengthcheckIfyousucceedyoupulltheobjectawayfromthatcreatureandcanmoveitupto10metersinanydirectionbutnotbeyondtherangeofthisspell"
     },
     {
       "name": "Reave",
@@ -2468,16 +2360,16 @@
     },
     {
       "name": "Sabotage",
-      "level": null,
+      "level": "2",
       "mechanic": [
         {
           "id": 1,
           "type": "line",
-          "data": "Spend 1 tech points and make a ranged tech attack on a weapon you can see within 20m (DC 10). On a hit, the next creature to use that weapon to make a ranged attack has disadvantage on the attack roll."
+          "data": "Spend 2 tech points and target a ranged weapon you can see within range. If the weapon is integrated into a creature, such as an Atlas mech's mass accelerator cannon or a drone's particle rifle, this spell has no effect unless the creature fails an Intelligence saving throw. The next attack made with the target weapon has disadvantage."
         }
       ],
       "adv_option_1": "Multi-Weapon : You can target 3 weapons at once.",
-      "adv_option_2": "Disable : After the weapon fires, it becomes jammed. It cannot be fired again until it is reloaded.",
+      "adv_option_2": "Backfire : After the weapon fires, it deals 2d6 thunder damage to the attacking creature.",
       "type": "tech",
       "die_type": null,
       "attack_type": [
@@ -2504,18 +2396,18 @@
       "infiltrator": "x",
       "engineer": "x",
       "soldier": null,
-      "min_tech_points": "1",
+      "min_tech_points": "2",
       "id": "sabotage",
       "adv_options": [
         "Multi-Weapon : You can target 3 weapons at once.",
-        "Disable : After the weapon fires, it becomes jammed. It cannot be fired again until it is reloaded."
+        "Backfire : After the weapon fires, it deals 2d6 thunder damage to the attacking creature."
       ],
       "class_list": "Engineer, Infiltrator",
-      "mechanic_text_dump": "Spend1techpointsandmakearangedtechattackonaweaponyoucanseewithin20mDC10Onahitthenextcreaturetousethatweapontomakearangedattackhasdisadvantageontheattackroll"
+      "mechanic_text_dump": "Spend2techpointsandtargetarangedweaponyoucanseewithinrangeIftheweaponisintegratedintoacreaturesuchasanAtlasmechsmassacceleratorcannonoradronesparticleriflethisspellhasnoeffectunlessthecreaturefailsanIntelligencesavingthrowThenextattackmadewiththetargetweaponhasdisadvantage"
     },
     {
       "name": "Salvo",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,
@@ -2561,7 +2453,7 @@
     },
     {
       "name": "Sentry Turret",
-      "level": null,
+      "level": "5",
       "mechanic": [
         {
           "id": 1,
@@ -2593,7 +2485,7 @@
       ],
       "casting_time": "Action",
       "concentration": null,
-      "duration": "Instant",
+      "duration": "1 minute",
       "range": "Touch",
       "aoe": null,
       "aoe_distance": null,
@@ -2622,12 +2514,12 @@
     },
     {
       "name": "Shocking Grasp",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,
           "type": "line",
-          "data": "Spend a tech point to send an electric shock from your omni-tool to a creature you try to touch. Make a melee attack against the target. You have advantage on the attack roll if the target is wearing armor. On a hit, the target becomes {primed-lightning} until the end of its next turn and takes Xd6 lightning damage where X is the number of tech points spent, and it can't take reactions until the start of its next turn."
+          "data": "Spend tech points to send an electric shock from your omni-tool to a creature you try to touch. Make a melee attack against the target. You have advantage on the attack roll if the target is wearing armor. On a hit, the target becomes {primed-lightning} until the end of its next turn and takes Xd6 lightning damage where X is the number of tech points spent, and it can't take reactions until the start of its next turn."
         }
       ],
       "adv_option_1": "Reach : Increase the range to 4m.",
@@ -2664,7 +2556,7 @@
         "Improved Shock : Increase the damage die to d8."
       ],
       "class_list": "Engineer, Infiltrator",
-      "mechanic_text_dump": "SpendatechpointtosendanelectricshockfromyouromnitooltoacreatureyoutrytotouchMakeameleeattackagainstthetargetYouhaveadvantageontheattackrollifthetargetiswearingarmorOnahitthetargetbecomesprimedlightninguntiltheendofitsnextturnandtakesXd6lightningdamagewhereXisthenumberoftechpointsspentanditcanttakereactionsuntilthestartofitsnextturn"
+      "mechanic_text_dump": "SpendtechpointstosendanelectricshockfromyouromnitooltoacreatureyoutrytotouchMakeameleeattackagainstthetargetYouhaveadvantageontheattackrollifthetargetiswearingarmorOnahitthetargetbecomesprimedlightninguntiltheendofitsnextturnandtakesXd6lightningdamagewhereXisthenumberoftechpointsspentanditcanttakereactionsuntilthestartofitsnextturn"
     },
     {
       "name": "Shockwave",
@@ -2828,7 +2720,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Target a {lifted} object and slam it to the ground dealing bludgeoning damage equal to 2d8 + your spellcasting ability modifier. The target is no longer {lifted} but is {prone}."
+          "data": "Target a {lifted} creature or object and slam it to the ground dealing 2d8 bludgeoning damage and knocking it {prone}. The target is no longer lifted."
         },
         {
           "id": 2,
@@ -2836,8 +2728,8 @@
           "data": "The number of targets increases by 1 when you reach 5th level (2), 11th level (3) and 17th level (4)"
         }
       ],
-      "adv_option_1": "Stun : The creature must pass a Constitution saving throw or stunned for 1 round.",
-      "adv_option_2": "Improved Damage : Increase the damage die type to d12",
+      "adv_option_1": "Stun : If the target is a creature, it must pass a Constitution saving throw or becomes stunned until the end of your next turn.",
+      "adv_option_2": "Reaction : When a creature or object you can see becomes lifted, you may cast Slam on it as a reaction.",
       "type": "biotic",
       "die_type": "d8",
       "attack_type": [
@@ -2866,11 +2758,11 @@
       "min_tech_points": null,
       "id": "slam",
       "adv_options": [
-        "Stun : The creature must pass a Constitution saving throw or stunned for 1 round.",
-        "Improved Damage : Increase the damage die type to d12"
+        "Stun : If the target is a creature, it must pass a Constitution saving throw or becomes stunned until the end of your next turn.",
+        "Reaction : When a creature or object you can see becomes lifted, you may cast Slam on it as a reaction."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "Targetaliftedobjectandslamittothegrounddealingbludgeoningdamageequalto2d8yourspellcastingabilitymodifierThetargetisnolongerliftedbutisproneThenumberoftargetsincreasesby1whenyoureach5thlevel211thlevel3and17thlevel4"
+      "mechanic_text_dump": "Targetaliftedcreatureorobjectandslamittothegrounddealing2d8bludgeoningdamageandknockingitproneThetargetisnolongerliftedThenumberoftargetsincreasesby1whenyoureach5thlevel211thlevel3and17thlevel4"
     },
     {
       "name": "Slow Fall",
@@ -2882,8 +2774,8 @@
           "data": "When you or a creature within 10m of you falls, choose up to five falling creatures within range. Create a negative mass effect field around each creature, slowing the rate of descent to 20m per round. If the creature lands before the spell ends, it takes no Falling damage and can land on its feet, and the spell ends for that creature."
         }
       ],
-      "adv_option_1": null,
-      "adv_option_2": null,
+      "adv_option_1": "Improved Duration : Increase the duration to 5 minutes",
+      "adv_option_2": "Navigate : As you fall, you can direct your fall by 2m in any direction except up. You may do this once per round.",
       "type": "biotic",
       "die_type": null,
       "attack_type": [
@@ -2912,15 +2804,15 @@
       "min_tech_points": null,
       "id": "slow_fall",
       "adv_options": [
-        null,
-        null
+        "Improved Duration : Increase the duration to 5 minutes",
+        "Navigate : As you fall, you can direct your fall by 2m in any direction except up. You may do this once per round."
       ],
       "class_list": "Adept, Vanguard",
       "mechanic_text_dump": "Whenyouoracreaturewithin10mofyoufallschooseuptofivefallingcreatureswithinrangeCreateanegativemasseffectfieldaroundeachcreatureslowingtherateofdescentto20mperroundIfthecreaturelandsbeforethespellendsittakesnoFallingdamageandcanlandonitsfeetandthespellendsforthatcreature"
     },
     {
       "name": "Snap Freeze",
-      "level": null,
+      "level": "5",
       "mechanic": [
         {
           "id": 1,
@@ -3128,31 +3020,31 @@
     },
     {
       "name": "Submission Net",
-      "level": null,
+      "level": "2",
       "mechanic": [
         {
           "id": 1,
           "type": "line",
-          "data": "Spend 2 tech points to shoot a swarm of miniature pylons to a target location within 20m. The pylons form a 4m cylinder at the chosen location, created an electrified net. Creatures within the net cannot cast tech."
+          "data": "Spend 2 tech points to shoot a swarm of miniature pylons to a target location within 20m. Each creature within a 4m cylinder of the target location must make a Dexterity saving throw. Any creature that fails the saving throw is trapped in an electrified net, becomming {restrained} and cannot cast Tech spells."
         },
         {
           "id": 2,
           "type": "line",
-          "data": "To escape, a creature must succeed on a Strength (Athletics) check or must remain trapped in the net. If a creature does break free, it takes 1d6 lightning damage."
+          "data": "Until the spell ends, the area is considered difficult terrain. A creature that enters the cylinder for the first time on its turn or end its turn there must also make the Dexterity saving throw."
         },
         {
           "id": 3,
           "type": "line",
-          "data": "If you have a submission net deployed, you can spend XTP to send electric currents through it. Each creature within the net makes a Constitution saving throw. On a failed save, a creature takes Xd6 lightning damage, or half as much on a successful one."
+          "data": "A creature restrained by submission net may use its action to make a Strength (Athletics) check against your spell save DC to escape the net. On each attempt, the creature takes 1d6 lightning damage as it struggles against the net. On a success, the creature is no longer restrained."
         }
       ],
-      "adv_option_1": "Shock : You can electrify the net as a bonus action the first time you cast Submission net.",
-      "adv_option_2": "Improved Grip : Increase the DC to break free of the net by 3.",
+      "adv_option_1": "Electrified Net : If you have a submission net deployed, you can use your bonus action to spend XTP, sending electric currents through one net. Each creature within the net takes Xd6 lightning damage.",
+      "adv_option_2": "Anti-Tech : If a creature you can see begins to cast a Tech spell, you can use your reaction to cast submission net.",
       "type": "tech",
       "die_type": "d6",
       "attack_type": [
         "STR Save",
-        " CON Save"
+        " DEX Save"
       ],
       "casting_time": "Action",
       "concentration": null,
@@ -3161,7 +3053,6 @@
       "aoe": "cylinder",
       "aoe_distance": "4m",
       "effect": [
-        "damage",
         "control"
       ],
       "damage_type": [
@@ -3178,11 +3069,11 @@
       "min_tech_points": "2",
       "id": "submission_net",
       "adv_options": [
-        "Shock : You can electrify the net as a bonus action the first time you cast Submission net.",
-        "Improved Grip : Increase the DC to break free of the net by 3."
+        "Electrified Net : If you have a submission net deployed, you can use your bonus action to spend XTP, sending electric currents through one net. Each creature within the net takes Xd6 lightning damage.",
+        "Anti-Tech : If a creature you can see begins to cast a Tech spell, you can use your reaction to cast submission net."
       ],
       "class_list": "Engineer, Infiltrator, Sentinel",
-      "mechanic_text_dump": "Spend2techpointstoshootaswarmofminiaturepylonstoatargetlocationwithin20mThepylonsforma4mcylinderatthechosenlocationcreatedanelectrifiednetCreatureswithinthenetcannotcasttechToescapeacreaturemustsucceedonaStrengthAthleticscheckormustremaintrappedinthenetIfacreaturedoesbreakfreeittakes1d6lightningdamageIfyouhaveasubmissionnetdeployedyoucanspendXTPtosendelectriccurrentsthroughitEachcreaturewithinthenetmakesaConstitutionsavingthrowOnafailedsaveacreaturetakesXd6lightningdamageorhalfasmuchonasuccessfulone"
+      "mechanic_text_dump": "Spend2techpointstoshootaswarmofminiaturepylonstoatargetlocationwithin20mEachcreaturewithina4mcylinderofthetargetlocationmustmakeaDexteritysavingthrowAnycreaturethatfailsthesavingthrowistrappedinanelectrifiednetbecommingrestrainedandcannotcastTechspellsUntilthespellendstheareaisconsidereddifficultterrainAcreaturethatentersthecylinderforthefirsttimeonitsturnorenditsturntheremustalsomaketheDexteritysavingthrowAcreaturerestrainedbysubmissionnetmayuseitsactiontomakeaStrengthAthleticscheckagainstyourspellsaveDCtoescapethenetOneachattemptthecreaturetakes1d6lightningdamageasitstrugglesagainstthenetOnasuccessthecreatureisnolongerrestrained"
     },
     {
       "name": "Tactical Scan",
@@ -3237,7 +3128,7 @@
     },
     {
       "name": "Target Painting",
-      "level": null,
+      "level": "2",
       "mechanic": [
         {
           "id": 1,
@@ -3293,18 +3184,18 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Make a ranged spell attack on a target you can see within range. On a hit, hurl the target backwards 10m and deal force damage equal to 1d6 + your spellcasting ability modifier."
+          "data": "Make a ranged spell attack on a target you can see within range. On a hit, the target takes force damage equal to 1d8 force damage. If the target is Medium or smaller, it is pushed backwards 10m."
         },
         {
           "id": 2,
           "type": "line",
-          "data": "At higher levels: This spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), 17th level (4d6)"
+          "data": "At higher levels: This spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), 17th level (4d8)"
         }
       ],
-      "adv_option_1": "Improved Force : Throw is so forceful, it lifts the target off the ground when knocking it back. Targets must pass a Dexterity saving throw or are knocked prone.",
+      "adv_option_1": "Radial Blast : On a hit, the damage is dealt to each creature within a 2m radius of the target.",
       "adv_option_2": "Improved Damage : Increase the damage die type to d8",
       "type": "biotic",
-      "die_type": "d6",
+      "die_type": "d8",
       "attack_type": [
         "Ranged Attack"
       ],
@@ -3331,15 +3222,15 @@
       "min_tech_points": null,
       "id": "throw",
       "adv_options": [
-        "Improved Force : Throw is so forceful, it lifts the target off the ground when knocking it back. Targets must pass a Dexterity saving throw or are knocked prone.",
+        "Radial Blast : On a hit, the damage is dealt to each creature within a 2m radius of the target.",
         "Improved Damage : Increase the damage die type to d8"
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "MakearangedspellattackonatargetyoucanseewithinrangeOnahithurlthetargetbackwards10manddealforcedamageequalto1d6yourspellcastingabilitymodifierAthigherlevelsThisspellsdamageincreasesby1d6whenyoureach5thlevel2d611thlevel3d617thlevel4d6"
+      "mechanic_text_dump": "MakearangedspellattackonatargetyoucanseewithinrangeOnahitthetargettakesforcedamageequalto1d8forcedamageIfthetargetisMediumorsmalleritispushedbackwards10mAthigherlevelsThisspellsdamageincreasesby1d8whenyoureach5thlevel2d811thlevel3d817thlevel4d8"
     },
     {
       "name": "Unity",
-      "level": null,
+      "level": "x",
       "mechanic": [
         {
           "id": 1,

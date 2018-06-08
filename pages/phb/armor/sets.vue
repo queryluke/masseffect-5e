@@ -6,7 +6,7 @@
       in any way. To learn about creating additional armor sets, read the #[router-link(to="/phb/rules/armor") Armor Rules].
     p.
       An armor set can be one or more pieces of armor. "Full Set" means the armor consists of Head, Chest, Arms, and Legs pieces.
-      "Body Armor" consists of a Chest, Arms and Legs piece.
+      "Body Armor" consists of a Chest, Arms and Legs piece. To gain the benefits from a Full Set or Body Armor, you must be wearing all peices of the set.
     div.mt-3
       v-data-table(v-bind:headers="headers" v-bind:items="items" hide-actions).elevation-1
         template(slot="items" slot-scope="props")
@@ -37,7 +37,7 @@
         headers: [
           { text: 'Name', value: 'name', align: 'left' },
           { text: 'Slot', value: 'piece', align: 'left' },
-          { text: 'Type', value: 'cost', align: 'left' },
+          { text: 'Type', value: 'type', align: 'left' },
           { text: 'Cost', value: 'cost', align: 'left' },
           { text: 'Mechanic(s)', value: 'mechanic', sortable: false, align: 'left' }
         ]

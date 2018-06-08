@@ -4,62 +4,58 @@
     template(slot="text")
       p.
         In Mass Effect 5e, there are 4 armor placements: #[strong Head], #[strong Chest], #[strong Arms], and #[strong Legs].
-        You can mix and match armor types (#[strong Light], #[strong Medium], #[strong Heavy]). This makes the array of
-        Armor Class (AC) possibilities a bit more complex.
-      p.headline.mb-0 AC Breakdown
+        Each combination of armor type and placement provides a bonus to your AC as listed in the table below.
+        to AC.
+      p.
+        For simplicities sake, you cannot mix armor #[em within] placements. I.e., you cannot have a heavy piece of on your
+        right arm and a light piece of armor on your left.
+      p.headline.mb-0 AC / Armor
       table.table
         thead.text-xs-left
           tr
-            th Armor Type Mix
-            th AC
-            th Min STR
+            th Slot / Type
+            th Light
+            th Medium
+            th Heavy
+        tbody
+          tr
+            td Chest
+            td +1
+            td +2
+            td +3
+          tr
+            td Arms & Legs
+            td +0
+            td +1
+            td +2
+          tr
+            td Head
+            td(colspan=3) Unless otherwise listed, headware provides no bonus
+      p.headline.mb-0.mt-3 Additional Rules
+      p.mb-0 If you are wearing...
+      table.table
+        thead.text-xs-left
+          tr
+            th
+            th DEX bonus
+            th Min Str
             th Stealth
         tbody
           tr
-            td Empty armor slot
-            td -1 AC
-            td
-            td
-          tr
-            td All Light
-            td 11 + Dexterity Modifier
-            td -
-            td -
-          tr
-            td Medium & Light
-            td 12 + Dexterity Modifier (max 2)
-            td 8
-            td -
-          tr
-            td All Medium
-            td 13 + Dexterity Modifier (max 2)
-            td 10
-            td -
-          tr
-            td A least 1 Heavy, Mix of Medium & Light
+            td ...at least one Heavy piece of armor
+            td none
             td 14
-            td 11
-            td Disadvantage
+            td disadvantage
           tr
-            td 1 Heavy, All other Medium
-            td 15
+            td ...at least one Medium piece of armor
+            td Max +2 bonus from Dexterity modifier
             td 12
-            td Disadvantage
+            td -
           tr
-            td 2 Heavy & 2 Medium
-            td 16
-            td 13
-            td Disadvantage
-          tr
-            td 3 Heavy & 1 Medium
-            td 17
-            td 14
-            td Disadvantage
-          tr
-            td All Heavy
-            td 18
-            td 15
-            td Disadvantage
+            td ...mix of no armor and/or light armor
+            td Add Dexterity modifier to your AC
+            td -
+            td -
       p.headline.mt-3 Variant: Encumberance
       p.mb-0 If using the #[a(v-on:click="showGlobalDialog('encumbrance')") Variant: Encumberance rule], use the following to calculate your armor weight.
       table.table
@@ -77,12 +73,12 @@
             td 1
           tr
             td #[strong Medium]
-            td 4
+            td 2
             td 6
             td 2
           tr
             td #[strong Heavy]
-            td 6
+            td 2
             td 10
             td 3
 </template>

@@ -33,10 +33,7 @@ export default {
       state.encounter.npcs.list.splice(index, 1)
     }
   },
-  updatePosts (state, payload) {
-    state.posts = payload
-  },
-  updateVersions (state, payload) {
-    state.versions = payload
+  update (state, payload) {
+    state[payload.key] = payload.items
   }
 }

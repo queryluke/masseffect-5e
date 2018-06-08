@@ -41,7 +41,7 @@
       div(v-if="hasFeature('legendaryActions')")
         p.title.underline-heading.small-caps Legendary Actions
         p.
-          The {{ stats.name }} can take 3 legendary actions, choosing from the options below. Only one legendary action can
+          The {{ stats.name | removeActionId }} can take 3 legendary actions, choosing from the options below. Only one legendary action can
           be used at a time and only at the end of another creature's turn. The {{ stats.name }} regains spent legendary
           actions at the start of his turn.
         p(v-for="la in stats.legendaryActions" v-bind:key="la.id")

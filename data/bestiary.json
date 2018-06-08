@@ -1,6 +1,6 @@
 {
-  "updated": "May  2, 2018 @  2:42 PM",
-  "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT87AUwt1n514k6a6b4l0kOzGwIphsGXBJLFqujgkCsJ1rdudQ1Bk7Km12DACO5qQ2WGDVI8fT6-Xe/pubhtml",
+  "updated": "June  7, 2018 @  9:12 PM",
+  "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTIwlLPyS6hKc2XoW5tm901kmWbiZD_cHiUBWrH2V-ceinyWWz5SiGFfnRehK4CWrewGWubXBldbesh/pubhtml",
   "data": [
     {
       "actions": [
@@ -18,38 +18,44 @@
       "spellcasting": false,
       "techcasting": false,
       "abilityScores": {
-        "str": 13,
-        "dex": 8,
-        "con": 14,
-        "int": 3,
-        "wis": 6,
-        "cha": 5
+        "str": 20,
+        "dex": 4,
+        "con": 24,
+        "int": 16,
+        "wis": 18,
+        "cha": 8
       },
       "hp": {
-        "die": "8",
-        "average": "6",
-        "numDice": "1",
-        "mod": 2
+        "die": "10",
+        "average": "125",
+        "numDice": "10",
+        "mod": 70
+      },
+      "sp": {
+        "shields": 50,
+        "regen": "10"
       },
       "senses": [
-        "darkvision 20m"
-      ],
-      "name": "Husk",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/27/ME3_Husk.png/revision/latest/scale-to-width-down/350?cb=20120320012912",
-      "cr": "1/8",
-      "size": "Medium",
-      "type": "Synorg",
-      "unit": "Reaper",
-      "alignment": "Lawful evil",
-      "profBonus": "2",
-      "barrier": null,
-      "speed": "10m",
-      "dc": "13",
-      "ac": "14",
-      "xp": "25",
-      "id": "husk",
-      "damageResistances": [
 
+      ],
+      "name": "Elcor",
+      "image": "https://pre00.deviantart.net/0c66/th/pre/f/2012/139/9/3/mass_effect__elcor_warriors_by_lipatov-d50d2p0.jpg",
+      "cr": "6",
+      "size": "Large",
+      "type": "Organic",
+      "unit": "Alien",
+      "alignment": "Lawful Neutral",
+      "profBonus": "3",
+      "barrier": null,
+      "speed": "4m",
+      "dc": "15",
+      "ac": "20",
+      "xp": "2300",
+      "id": "elcor",
+      "damageResistances": [
+        "bludgeoning",
+        "piercing",
+        "slashing"
       ],
       "damageImmunities": [
 
@@ -61,11 +67,165 @@
 
       ],
       "featuresActionsReactions": [
-        "aggressive",
-        "swipe"
+        "mass_accelerator_cannon",
+        "slow_moving"
       ],
       "savingThrows": [
+        "str",
+        "con"
+      ],
+      "skills": [
+        "history",
+        "insight"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The harvester can use its Frightful Presence. It then makes three attacks: one with its acid spit and two with its stomp."
+        }
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 26,
+        "dex": 14,
+        "con": 24,
+        "int": 16,
+        "wis": 15,
+        "cha": 16
+      },
+      "hp": {
+        "die": "12",
+        "average": "351",
+        "numDice": "26",
+        "mod": 182
+      },
+      "senses": [
+
+      ],
+      "name": "Harvester",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/92/ME2_Harvester.jpg/revision/latest/scale-to-width-down/200?cb=20100210004033",
+      "cr": "19",
+      "size": "Huge",
+      "type": "Organic",
+      "unit": "Alien",
+      "alignment": "Unaligned",
+      "profBonus": "6",
+      "barrier": null,
+      "speed": "20m, fly 30m",
+      "dc": "19",
+      "ac": "16",
+      "xp": "22000",
+      "id": "harvester",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison"
+      ],
+      "conditionImmunities": [
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "frightful_presence",
+        "acid_spit",
+        "stomp",
+        "detect",
+        "stomp_attack",
+        "trample_attack",
+        "drop_klixen"
+      ],
+      "savingThrows": [
+        "str",
+        "con",
         "wis"
+      ],
+      "skills": [
+        "perception"
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 12,
+        "dex": 14,
+        "con": 12,
+        "int": 5,
+        "wis": 10,
+        "cha": 7
+      },
+      "hp": {
+        "die": "8",
+        "average": "27",
+        "numDice": "5",
+        "mod": 5
+      },
+      "senses": [
+
+      ],
+      "name": "Klixen",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/2f/ME2_Klixen.PNG/revision/latest/scale-to-width-down/350?cb=20100703065034",
+      "cr": "1",
+      "size": "Medium",
+      "type": "Organic",
+      "unit": "Alien",
+      "alignment": "Unaligned",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "10m",
+      "dc": "14",
+      "ac": "14",
+      "xp": "200",
+      "id": "klixen",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "fire",
+        "poison"
+      ],
+      "conditionImmunities": [
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "cold"
+      ],
+      "featuresActionsReactions": [
+        "pincer",
+        "fire_breath",
+        "death_burst",
+        "heated_body"
+      ],
+      "savingThrows": [
+
       ],
       "skills": [
 
@@ -87,36 +247,36 @@
       "spellcasting": false,
       "techcasting": false,
       "abilityScores": {
-        "str": 13,
-        "dex": 10,
-        "con": 10,
+        "str": 8,
+        "dex": 14,
+        "con": 11,
         "int": 8,
-        "wis": 5,
-        "cha": 3
+        "wis": 12,
+        "cha": 6
       },
       "hp": {
-        "die": "8",
-        "average": "13",
-        "numDice": "3",
+        "die": "6",
+        "average": "3",
+        "numDice": "1",
         "mod": 0
       },
       "senses": [
-        "darkvision 20m"
+
       ],
-      "name": "Cannibal",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/1/1b/ME3_Cannibal.png/revision/latest/scale-to-width-down/339?cb=20120320020900",
-      "cr": "1/2",
-      "size": "Medium",
-      "type": "Synorg",
-      "unit": "Reaper",
-      "alignment": "Lawful evil",
+      "name": "Pyjak",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/c/c4/Spacemonkey.jpg/revision/latest/scale-to-width-down/200?cb=20080727175830",
+      "cr": "0",
+      "size": "Small",
+      "type": "Organic",
+      "unit": "Alien",
+      "alignment": "Unaligned",
       "profBonus": "2",
       "barrier": null,
-      "speed": "8m",
+      "speed": "10m, climb 6m",
       "dc": "13",
-      "ac": "10",
-      "xp": "100",
-      "id": "cannibal",
+      "ac": "12",
+      "xp": "10",
+      "id": "pyjak",
       "damageResistances": [
 
       ],
@@ -130,13 +290,107 @@
 
       ],
       "featuresActionsReactions": [
-        "cannibalize",
-        "frag_grenade",
-        "arm_cannon",
-        "bash"
+        "bite---pyjak",
+        "pack_tactics"
       ],
       "savingThrows": [
 
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The thresher maw can use its Frightful Presence. It then makes four attacks: one with its grasp, two with its tail, one with its acid spit. It can use its Swallow instead of its grasp."
+        }
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 30,
+        "dex": 11,
+        "con": 30,
+        "int": 3,
+        "wis": 11,
+        "cha": 11
+      },
+      "hp": {
+        "die": "20",
+        "average": "615",
+        "numDice": "30",
+        "mod": 300
+      },
+      "senses": [
+        "blindsight 10m",
+        "tremorsense 20m"
+      ],
+      "name": "Thresher Maw",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/9e/Thresher_Maw_ME2.png/revision/latest?cb=20100704014552",
+      "cr": "28",
+      "size": "Gargantuan",
+      "type": "Organic",
+      "unit": "Alien",
+      "alignment": "Unaligned",
+      "profBonus": "8",
+      "barrier": null,
+      "speed": "20m, burrow 12m",
+      "dc": "22",
+      "ac": "22",
+      "xp": "120000",
+      "id": "thresher_maw",
+      "damageResistances": [
+        "acid",
+        "bludgeoning",
+        "cold",
+        "fire",
+        "force",
+        "lightning",
+        "piercing",
+        "poison",
+        "slashing"
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+        "charmed",
+        "frightened",
+        "paralyzed",
+        "frozen",
+        "lifted"
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "frightful_presence",
+        "legendary_resistance",
+        "siege_monster",
+        "acid_spit",
+        "tail",
+        "grasp",
+        "swallow",
+        "acid_spit_attack",
+        "move---thresher_maw",
+        "tail_attack",
+        "destroy_terrain"
+      ],
+      "savingThrows": [
+        "str",
+        "con"
       ],
       "skills": [
 
@@ -159,523 +413,35 @@
       "techcasting": false,
       "abilityScores": {
         "str": 12,
-        "dex": 16,
-        "con": 13,
-        "int": 8,
-        "wis": 11,
-        "cha": 8
-      },
-      "hp": {
-        "die": "8",
-        "average": "27",
-        "numDice": "5",
-        "mod": 5
-      },
-      "sp": {
-        "shields": 15,
-        "regen": "15"
-      },
-      "senses": [
-        "darkvision 20m"
-      ],
-      "name": "Marauder",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/9b/ME3_Marauder.png/revision/latest/scale-to-width-down/219?cb=20120313015215",
-      "cr": "1",
-      "size": "Medium",
-      "type": "Synorg",
-      "unit": "Reaper",
-      "alignment": "Lawful evil",
-      "profBonus": "2",
-      "barrier": null,
-      "speed": "10m",
-      "dc": "14",
-      "ac": "14",
-      "xp": "200",
-      "id": "marauder",
-      "damageResistances": [
-
-      ],
-      "damageImmunities": [
-
-      ],
-      "conditionImmunities": [
-
-      ],
-      "damageVulnerabilities": [
-
-      ],
-      "featuresActionsReactions": [
-        "create_armor_plating",
-        "phaeston"
-      ],
-      "savingThrows": [
-        "dex"
-      ],
-      "skills": [
-        "survival"
-      ]
-    },
-    {
-      "actions": [
-        {
-          "type": "common",
-          "name": "Multiattack",
-          "description": "The brute makes two smash attacks."
-        }
-      ],
-      "reactions": [
-
-      ],
-      "legendaryActions": [
-
-      ],
-      "features": [
-
-      ],
-      "spellcasting": false,
-      "techcasting": false,
-      "abilityScores": {
-        "str": 20,
-        "dex": 12,
-        "con": 18,
-        "int": 9,
-        "wis": 6,
-        "cha": 12
-      },
-      "hp": {
-        "die": "10",
-        "average": "95",
-        "numDice": "10",
-        "mod": 40
-      },
-      "senses": [
-        "darkvision 20m"
-      ],
-      "name": "Brute",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/90/ME3_Brute.png/revision/latest/scale-to-width-down/700?cb=20120320023753",
-      "cr": "6",
-      "size": "Large",
-      "type": "Synorg",
-      "unit": "Reaper",
-      "alignment": "Lawful evil",
-      "profBonus": "3",
-      "barrier": null,
-      "speed": "14m",
-      "dc": "15",
-      "ac": "16",
-      "xp": "2300",
-      "id": "brute",
-      "damageResistances": [
-        "bludgeoning",
-        "piercing",
-        "slashing"
-      ],
-      "damageImmunities": [
-
-      ],
-      "conditionImmunities": [
-
-      ],
-      "damageVulnerabilities": [
-
-      ],
-      "featuresActionsReactions": [
-        "brutal_charge",
-        "smash",
-        "clobber"
-      ],
-      "savingThrows": [
-        "con"
-      ],
-      "skills": [
-        "athletics"
-      ]
-    },
-    {
-      "actions": [
-
-      ],
-      "reactions": [
-
-      ],
-      "legendaryActions": [
-
-      ],
-      "features": [
-
-      ],
-      "spellcasting": {
-        "level": "13",
-        "dc": 16,
-        "hit": 8,
-        "mod": "Charisma",
-        "spellList": [
-          "barrier",
-          "charge",
-          "nova",
-          "warp"
-        ],
-        "spells": [
-          {
-            "level": "cantrip",
-            "spells": [
-
-            ]
-          },
-          {
-            "level": "1",
-            "slots": "5",
-            "spells": [
-
-            ]
-          },
-          {
-            "level": "2",
-            "slots": "4",
-            "spells": [
-
-            ]
-          },
-          {
-            "level": "3",
-            "slots": "3",
-            "spells": [
-
-            ]
-          },
-          {
-            "level": "4",
-            "slots": "2",
-            "spells": [
-
-            ]
-          }
-        ]
-      },
-      "techcasting": false,
-      "abilityScores": {
-        "str": 11,
-        "dex": 16,
-        "con": 11,
-        "int": 12,
-        "wis": 18,
-        "cha": 20
-      },
-      "hp": {
-        "die": "10",
-        "average": "110",
-        "numDice": "20",
-        "mod": 0
-      },
-      "senses": [
-        "darkvision 20m"
-      ],
-      "name": "Banshee",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/eb/ME3_Banshee.png/revision/latest/scale-to-width-down/548?cb=20120319210941",
-      "cr": "8",
-      "size": "Large",
-      "type": "Synorg",
-      "unit": "Reaper",
-      "alignment": "Lawful evil",
-      "profBonus": "3",
-      "barrier": "10",
-      "speed": "6m",
-      "dc": "15",
-      "ac": "16",
-      "xp": "3900",
-      "id": "banshee",
-      "damageResistances": [
-
-      ],
-      "damageImmunities": [
-
-      ],
-      "conditionImmunities": [
-
-      ],
-      "damageVulnerabilities": [
-
-      ],
-      "featuresActionsReactions": [
-        "wail",
-        "impale",
-        "teleporting_dodge"
-      ],
-      "savingThrows": [
-        "dex",
-        "wis"
-      ],
-      "skills": [
-
-      ]
-    },
-    {
-      "actions": [
-        {
-          "type": "common",
-          "name": "Multiattack",
-          "description": "The reaper harvester makes two harvester cannon attacks."
-        }
-      ],
-      "reactions": [
-
-      ],
-      "legendaryActions": [
-
-      ],
-      "features": [
-
-      ],
-      "spellcasting": false,
-      "techcasting": false,
-      "abilityScores": {
-        "str": 27,
-        "dex": 10,
-        "con": 25,
-        "int": 11,
-        "wis": 12,
-        "cha": 16
-      },
-      "hp": {
-        "die": "12",
-        "average": "337",
-        "numDice": "25",
-        "mod": 175
-      },
-      "senses": [
-        "darkvision 40m"
-      ],
-      "name": "Reaper Harvester",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/a/ae/ME3_Harvester.png/revision/latest/scale-to-width-down/350?cb=20120320013110",
-      "cr": "18",
-      "size": "Huge",
-      "type": "Synorg",
-      "unit": "Reaper",
-      "alignment": "Lawful evil",
-      "profBonus": "6",
-      "barrier": null,
-      "speed": "14m, burrow 14m, fly 26m",
-      "dc": "19",
-      "ac": "19",
-      "xp": "20000",
-      "id": "reaper_harvester",
-      "damageResistances": [
-        "bludgeoning",
-        "piercing",
-        "slashing"
-      ],
-      "damageImmunities": [
-
-      ],
-      "conditionImmunities": [
-
-      ],
-      "damageVulnerabilities": [
-
-      ],
-      "featuresActionsReactions": [
-        "harvester_cannon",
-        "detect",
-        "harvester_cannon_attack",
-        "spawn_husks"
-      ],
-      "savingThrows": [
-        "con",
-        "wis"
-      ],
-      "skills": [
-        "perception"
-      ]
-    },
-    {
-      "actions": [
-        {
-          "type": "common",
-          "name": "Multiattack",
-          "description": "The ravager makes two twin artillery cannon attacks."
-        }
-      ],
-      "reactions": [
-
-      ],
-      "legendaryActions": [
-
-      ],
-      "features": [
-
-      ],
-      "spellcasting": false,
-      "techcasting": false,
-      "abilityScores": {
-        "str": 16,
-        "dex": 14,
-        "con": 10,
-        "int": 8,
-        "wis": 11,
-        "cha": 11
-      },
-      "hp": {
-        "die": "10",
-        "average": "110",
-        "numDice": "20",
-        "mod": 0
-      },
-      "senses": [
-        "darkvision 20m"
-      ],
-      "name": "Ravager",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/7/7b/ME3_Ravager.png/revision/latest/scale-to-width-down/350?cb=20120319195950",
-      "cr": "5",
-      "size": "Large",
-      "type": "Synorg",
-      "unit": "Reaper",
-      "alignment": "Lawful evil",
-      "profBonus": "3",
-      "barrier": null,
-      "speed": "10m",
-      "dc": "15",
-      "ac": "12",
-      "xp": "1800",
-      "id": "ravager",
-      "damageResistances": [
-
-      ],
-      "damageImmunities": [
-
-      ],
-      "conditionImmunities": [
-        "charmed"
-      ],
-      "damageVulnerabilities": [
-
-      ],
-      "featuresActionsReactions": [
-        "egg_sacs",
-        "acid_splash",
-        "twin_artillery_cannons"
-      ],
-      "savingThrows": [
-
-      ],
-      "skills": [
-
-      ]
-    },
-    {
-      "actions": [
-
-      ],
-      "reactions": [
-
-      ],
-      "legendaryActions": [
-
-      ],
-      "features": [
-
-      ],
-      "spellcasting": false,
-      "techcasting": false,
-      "abilityScores": {
-        "str": 4,
-        "dex": 12,
-        "con": 8,
-        "int": 4,
-        "wis": 4,
-        "cha": 4
-      },
-      "hp": {
-        "die": "4",
-        "average": "4",
-        "numDice": "3",
-        "mod": -3
-      },
-      "senses": [
-        "darkvision 20m"
-      ],
-      "name": "Swarmer",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/8/82/ME3_Swarmer.png/revision/latest/scale-to-width-down/350?cb=20120319204747",
-      "cr": "0",
-      "size": "Tiny",
-      "type": "Synorg",
-      "unit": "Reaper",
-      "alignment": "Lawful evil",
-      "profBonus": "2",
-      "barrier": null,
-      "speed": "12m",
-      "dc": "13",
-      "ac": "10",
-      "xp": "10",
-      "id": "swarmer",
-      "damageResistances": [
-
-      ],
-      "damageImmunities": [
-
-      ],
-      "conditionImmunities": [
-        "charmed"
-      ],
-      "damageVulnerabilities": [
-
-      ],
-      "featuresActionsReactions": [
-        "aggressive",
-        "suicide_attack"
-      ],
-      "savingThrows": [
-        "dex"
-      ],
-      "skills": [
-
-      ]
-    },
-    {
-      "actions": [
-
-      ],
-      "reactions": [
-
-      ],
-      "legendaryActions": [
-
-      ],
-      "features": [
-
-      ],
-      "spellcasting": false,
-      "techcasting": false,
-      "abilityScores": {
-        "str": 13,
-        "dex": 8,
-        "con": 14,
+        "dex": 15,
+        "con": 12,
         "int": 3,
-        "wis": 6,
-        "cha": 5
+        "wis": 12,
+        "cha": 6
       },
       "hp": {
         "die": "8",
-        "average": "26",
-        "numDice": "4",
-        "mod": 8
+        "average": "11",
+        "numDice": "2",
+        "mod": 2
       },
       "senses": [
-        "darkvision 20m"
+
       ],
-      "name": "Abomination",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/8/8e/AbominationME3.jpg/revision/latest/scale-to-width-down/316?cb=20121201211954",
+      "name": "Varren",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/f/f5/Varren.png/revision/latest?cb=20100220175817",
       "cr": "1/4",
       "size": "Medium",
-      "type": "Synorg",
-      "unit": "Collector",
-      "alignment": "Lawful evil",
+      "type": "Organic",
+      "unit": "Alien",
+      "alignment": "Unaligned",
       "profBonus": "2",
       "barrier": null,
-      "speed": "10m",
+      "speed": "16m",
       "dc": "13",
-      "ac": "11",
+      "ac": "13",
       "xp": "50",
-      "id": "abomination",
+      "id": "varren",
       "damageResistances": [
 
       ],
@@ -689,95 +455,16 @@
 
       ],
       "featuresActionsReactions": [
-        "aggressive",
-        "post-mortem_explosion",
-        "grapple",
-        "possessed_abomination"
-      ],
-      "savingThrows": [
-        "wis"
-      ],
-      "skills": [
-
-      ]
-    },
-    {
-      "actions": [
-        {
-          "type": "common",
-          "name": "Multiattack",
-          "description": "The collector captain makes two attacks with its assault rifle."
-        }
-      ],
-      "reactions": [
-
-      ],
-      "legendaryActions": [
-
-      ],
-      "features": [
-
-      ],
-      "spellcasting": false,
-      "techcasting": false,
-      "abilityScores": {
-        "str": 15,
-        "dex": 16,
-        "con": 14,
-        "int": 11,
-        "wis": 14,
-        "cha": 14
-      },
-      "hp": {
-        "die": "8",
-        "average": "97",
-        "numDice": "15",
-        "mod": 30
-      },
-      "senses": [
-        "darkvision 20m"
-      ],
-      "name": "Collector Captain",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/8/8f/Collector_CapME3.jpg/revision/latest/scale-to-width-down/335?cb=20121201212047",
-      "cr": "4",
-      "size": "Medium",
-      "type": "Organic",
-      "unit": "Collector",
-      "alignment": "Lawful evil",
-      "profBonus": "2",
-      "barrier": "6",
-      "speed": "10m, fly 6m",
-      "dc": "15",
-      "ac": "15",
-      "xp": "1100",
-      "id": "collector_captain",
-      "damageResistances": [
-
-      ],
-      "damageImmunities": [
-
-      ],
-      "conditionImmunities": [
-
-      ],
-      "damageVulnerabilities": [
-
-      ],
-      "featuresActionsReactions": [
+        "keen_hearing_and_smell",
         "pack_tactics",
-        "leadership",
-        "summon_seeker_swarm",
-        "collector_assault_rifle",
-        "possessed_captain"
+        "bite---varren"
       ],
       "savingThrows": [
-        "dex",
-        "con"
+
       ],
       "skills": [
-        "athletics",
-        "science",
-        "survival"
+        "perception",
+        "stealth"
       ]
     },
     {
@@ -796,176 +483,36 @@
       "spellcasting": false,
       "techcasting": false,
       "abilityScores": {
-        "str": 13,
-        "dex": 14,
-        "con": 12,
-        "int": 11,
+        "str": 17,
+        "dex": 15,
+        "con": 15,
+        "int": 3,
         "wis": 12,
-        "cha": 8
+        "cha": 7
       },
       "hp": {
-        "die": "8",
-        "average": "55",
-        "numDice": "10",
+        "die": "10",
+        "average": "37",
+        "numDice": "5",
         "mod": 10
       },
       "senses": [
-        "darkvision 20m"
+
       ],
-      "name": "Collector Trooper",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/d/d3/Collector_TrooperME3.jpg/revision/latest/scale-to-width-down/350?cb=20121201212208",
+      "name": "Varren Alpha",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/6/63/Codex_ME_-_Varren.png/revision/latest/scale-to-width-down/200?cb=20140820063614",
       "cr": "1",
-      "size": "Medium",
+      "size": "Large",
       "type": "Organic",
-      "unit": "Collector",
-      "alignment": "Lawful evil",
+      "unit": "Alien",
+      "alignment": "Unaligned",
       "profBonus": "2",
       "barrier": null,
-      "speed": "10m, fly 6m",
-      "dc": "14",
-      "ac": "15",
-      "xp": "200",
-      "id": "collector_trooper",
-      "damageResistances": [
-
-      ],
-      "damageImmunities": [
-
-      ],
-      "conditionImmunities": [
-
-      ],
-      "damageVulnerabilities": [
-
-      ],
-      "featuresActionsReactions": [
-        "frag_grenade",
-        "collector_smg",
-        "collector_web",
-        "possessed_collector"
-      ],
-      "savingThrows": [
-        "dex"
-      ],
-      "skills": [
-        "athletics"
-      ]
-    },
-    {
-      "actions": [
-
-      ],
-      "reactions": [
-
-      ],
-      "legendaryActions": [
-
-      ],
-      "features": [
-
-      ],
-      "spellcasting": false,
-      "techcasting": false,
-      "abilityScores": {
-        "str": 10,
-        "dex": 10,
-        "con": 10,
-        "int": 8,
-        "wis": 8,
-        "cha": 8
-      },
-      "hp": {
-        "die": "8",
-        "average": "31",
-        "numDice": "7",
-        "mod": 0
-      },
-      "senses": [
-        "darkvision 20m"
-      ],
-      "name": "Collector Drone",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/a/a3/Collector.png/revision/latest/scale-to-width-down/331?cb=20100130000709",
-      "cr": "1/2",
-      "size": "Medium",
-      "type": "Organic",
-      "unit": "Collector",
-      "alignment": "Lawful evil",
-      "profBonus": "2",
-      "barrier": null,
-      "speed": "10m, fly 6m",
-      "dc": "13",
-      "ac": "13",
-      "xp": "100",
-      "id": "collector_drone",
-      "damageResistances": [
-
-      ],
-      "damageImmunities": [
-
-      ],
-      "conditionImmunities": [
-
-      ],
-      "damageVulnerabilities": [
-
-      ],
-      "featuresActionsReactions": [
-        "collector_assault_rifle",
-        "possessed_collector"
-      ],
-      "savingThrows": [
-        "dex"
-      ],
-      "skills": [
-        "athletics"
-      ]
-    },
-    {
-      "actions": [
-
-      ],
-      "reactions": [
-
-      ],
-      "legendaryActions": [
-
-      ],
-      "features": [
-
-      ],
-      "spellcasting": false,
-      "techcasting": false,
-      "abilityScores": {
-        "str": 10,
-        "dex": 18,
-        "con": 10,
-        "int": 8,
-        "wis": 8,
-        "cha": 8
-      },
-      "hp": {
-        "die": "8",
-        "average": "45",
-        "numDice": "10",
-        "mod": 0
-      },
-      "senses": [
-        "darkvision 20m"
-      ],
-      "name": "Collector Assassin",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/6/69/Collector_Assassin.png/revision/latest/scale-to-width-down/350?cb=20100623060453",
-      "cr": "2",
-      "size": "Medium",
-      "type": "Organic",
-      "unit": "Collector",
-      "alignment": "Lawful evil",
-      "profBonus": "2",
-      "barrier": "4",
-      "speed": "10m, fly 6m",
+      "speed": "20m",
       "dc": "14",
       "ac": "14",
-      "xp": "450",
-      "id": "collector_assassin",
+      "xp": "200",
+      "id": "varren_alpha",
       "damageResistances": [
 
       ],
@@ -979,168 +526,25 @@
 
       ],
       "featuresActionsReactions": [
-        "particle_rifle",
-        "possessed_collector"
+        "keen_hearing_and_smell",
+        "pack_tactics",
+        "bite---varren-alpha"
       ],
       "savingThrows": [
-        "dex"
+
       ],
       "skills": [
-        "athletics"
+        "perception",
+        "stealth"
       ]
     },
     {
       "actions": [
-
-      ],
-      "reactions": [
-
-      ],
-      "legendaryActions": [
-
-      ],
-      "features": [
-
-      ],
-      "spellcasting": false,
-      "techcasting": false,
-      "abilityScores": {
-        "str": 16,
-        "dex": 15,
-        "con": 16,
-        "int": 8,
-        "wis": 8,
-        "cha": 9
-      },
-      "hp": {
-        "die": "8",
-        "average": "75",
-        "numDice": "10",
-        "mod": 30
-      },
-      "senses": [
-        "darkvision 20m"
-      ],
-      "name": "Collector Guardian",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/c/ce/Collector_Guardian.png/revision/latest/scale-to-width-down/350?cb=20100623060233",
-      "cr": "3",
-      "size": "Medium",
-      "type": "Organic",
-      "unit": "Collector",
-      "alignment": "Lawful evil",
-      "profBonus": "2",
-      "barrier": "5",
-      "speed": "10m, fly 6m",
-      "dc": "14",
-      "ac": "16",
-      "xp": "700",
-      "id": "collector_guardian",
-      "damageResistances": [
-
-      ],
-      "damageImmunities": [
-
-      ],
-      "conditionImmunities": [
-
-      ],
-      "damageVulnerabilities": [
-
-      ],
-      "featuresActionsReactions": [
-        "collector_assault_rifle",
-        "warp_ammo",
-        "hex_shield",
-        "possessed_collector"
-      ],
-      "savingThrows": [
-        "con"
-      ],
-      "skills": [
-        "athletics"
-      ]
-    },
-    {
-      "actions": [
-
-      ],
-      "reactions": [
-
-      ],
-      "legendaryActions": [
-
-      ],
-      "features": [
-
-      ],
-      "spellcasting": false,
-      "techcasting": false,
-      "abilityScores": {
-        "str": 20,
-        "dex": 19,
-        "con": 21,
-        "int": 11,
-        "wis": 14,
-        "cha": 10
-      },
-      "hp": {
-        "die": "10",
-        "average": "136",
-        "numDice": "13",
-        "mod": 65
-      },
-      "senses": [
-        "darkvision 20m"
-      ],
-      "name": "Praetorian",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/09/PraetorianME3.jpg/revision/latest/scale-to-width-down/700?cb=20121201212320",
-      "cr": "12",
-      "size": "Large",
-      "type": "Synorg",
-      "unit": "Collector",
-      "alignment": "Lawful evil",
-      "profBonus": "4",
-      "barrier": "10",
-      "speed": "10m, fly 10m",
-      "dc": "18",
-      "ac": "20",
-      "xp": "8400",
-      "id": "praetorian",
-      "damageResistances": [
-        "bludgeoning",
-        "piercing",
-        "slashing"
-      ],
-      "damageImmunities": [
-
-      ],
-      "conditionImmunities": [
-
-      ],
-      "damageVulnerabilities": [
-
-      ],
-      "featuresActionsReactions": [
-        "pounce",
-        "claw",
-        "twin_particle_beams",
-        "negation_barrier",
-        "possessed_praetorian"
-      ],
-      "savingThrows": [
-        "dex",
-        "con",
-        "str"
-      ],
-      "skills": [
-        "acrobatics",
-        "athletics",
-        "perception"
-      ]
-    },
-    {
-      "actions": [
-
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The yahg makes three attacks: one with its bite and two with its claws."
+        }
       ],
       "reactions": [
 
@@ -1155,317 +559,67 @@
       "techcasting": false,
       "abilityScores": {
         "str": 18,
-        "dex": 11,
-        "con": 16,
-        "int": 6,
-        "wis": 6,
-        "cha": 5
-      },
-      "hp": {
-        "die": "8",
-        "average": "52",
-        "numDice": "7",
-        "mod": 21
-      },
-      "senses": [
-        "darkvision 20m"
-      ],
-      "name": "Scion",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/d/da/ScionME3.jpg/revision/latest/scale-to-width-down/350?cb=20121201212433",
-      "cr": "7",
-      "size": "Medium",
-      "type": "Synorg",
-      "unit": "Collector",
-      "alignment": "Lawful evil",
-      "profBonus": "3",
-      "barrier": null,
-      "speed": "8m",
-      "dc": "16",
-      "ac": "18",
-      "xp": "2900",
-      "id": "scion",
-      "damageResistances": [
-        "bludgeoning",
-        "piercing",
-        "slashing"
-      ],
-      "damageImmunities": [
-
-      ],
-      "conditionImmunities": [
-
-      ],
-      "damageVulnerabilities": [
-
-      ],
-      "featuresActionsReactions": [
-        "salvo",
-        "bash"
-      ],
-      "savingThrows": [
-        "con"
-      ],
-      "skills": [
-
-      ]
-    },
-    {
-      "actions": [
-
-      ],
-      "reactions": [
-
-      ],
-      "legendaryActions": [
-
-      ],
-      "features": [
-
-      ],
-      "spellcasting": false,
-      "techcasting": false,
-      "abilityScores": {
-        "str": 2,
         "dex": 12,
-        "con": 8,
-        "int": 10,
-        "wis": 8,
-        "cha": 5
-      },
-      "hp": {
-        "die": "6",
-        "average": "5",
-        "numDice": "2",
-        "mod": -2
-      },
-      "senses": [
-
-      ],
-      "name": "Seeker Swarm",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/8/8f/SwarmME3.jpg/revision/latest/scale-to-width-down/350?cb=20121201212516",
-      "cr": "1/8",
-      "size": "Small",
-      "type": "Organic",
-      "unit": "Collector",
-      "alignment": "Lawful Evil",
-      "profBonus": "2",
-      "barrier": null,
-      "speed": "fly 10m",
-      "dc": "13",
-      "ac": "13",
-      "xp": "25",
-      "id": "seeker_swarm",
-      "damageResistances": [
-
-      ],
-      "damageImmunities": [
-
-      ],
-      "conditionImmunities": [
-
-      ],
-      "damageVulnerabilities": [
-
-      ],
-      "featuresActionsReactions": [
-        "sting"
-      ],
-      "savingThrows": [
-        "dex"
-      ],
-      "skills": [
-
-      ]
-    },
-    {
-      "actions": [
-
-      ],
-      "reactions": [
-
-      ],
-      "legendaryActions": [
-
-      ],
-      "features": [
-
-      ],
-      "spellcasting": false,
-      "techcasting": false,
-      "abilityScores": {
-        "str": 4,
-        "dex": 12,
-        "con": 10,
-        "int": 10,
-        "wis": 8,
-        "cha": 6
-      },
-      "hp": {
-        "die": "6",
-        "average": "7",
-        "numDice": "2",
-        "mod": 0
-      },
-      "senses": [
-
-      ],
-      "name": "Seeker Plague",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/9f/SwarmME3_Plague.jpg/revision/latest/scale-to-width-down/350?cb=20121201212536",
-      "cr": "1/4",
-      "size": "Small",
-      "type": "Organic",
-      "unit": "Collector",
-      "alignment": "Lawful Evil",
-      "profBonus": "2",
-      "barrier": "1",
-      "speed": "fly 10m",
-      "dc": "13",
-      "ac": "13",
-      "xp": "50",
-      "id": "seeker_plague",
-      "damageResistances": [
-
-      ],
-      "damageImmunities": [
-
-      ],
-      "conditionImmunities": [
-
-      ],
-      "damageVulnerabilities": [
-
-      ],
-      "featuresActionsReactions": [
-        "plague_sting"
-      ],
-      "savingThrows": [
-        "dex"
-      ],
-      "skills": [
-
-      ]
-    },
-    {
-      "actions": [
-
-      ],
-      "reactions": [
-
-      ],
-      "legendaryActions": [
-
-      ],
-      "features": [
-
-      ],
-      "spellcasting": {
-        "level": "12",
-        "dc": 16,
-        "hit": 8,
-        "mod": "Charisma",
-        "spellList": [
-          "dark_channel",
-          "pull",
-          "reave",
-          "shockwave",
-          "singularity"
-        ],
-        "spells": [
-          {
-            "level": "cantrip",
-            "spells": [
-
-            ]
-          },
-          {
-            "level": "1",
-            "slots": "5",
-            "spells": [
-
-            ]
-          },
-          {
-            "level": "2",
-            "slots": "4",
-            "spells": [
-
-            ]
-          },
-          {
-            "level": "3",
-            "slots": "3",
-            "spells": [
-
-            ]
-          },
-          {
-            "level": "4",
-            "slots": "2",
-            "spells": [
-
-            ]
-          }
-        ]
-      },
-      "techcasting": false,
-      "abilityScores": {
-        "str": 10,
-        "dex": 12,
-        "con": 12,
-        "int": 14,
+        "con": 15,
+        "int": 18,
         "wis": 16,
-        "cha": 18
+        "cha": 10
       },
       "hp": {
         "die": "10",
-        "average": "162",
-        "numDice": "25",
-        "mod": 25
+        "average": "157",
+        "numDice": "21",
+        "mod": 42
       },
       "senses": [
-        "darkvision 20m"
+        "blindsight 6m"
       ],
-      "name": "Harbinger",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/3c/Collectors_Leader_Character_Shot.png/revision/latest/scale-to-width-down/350?cb=20091119091650",
-      "cr": "10",
+      "name": "Yahg",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/34/ME3_Yahg.png/revision/latest/scale-to-width-down/230?cb=20120322212821",
+      "cr": "8",
       "size": "Large",
       "type": "Organic",
-      "unit": "Collector",
-      "alignment": "Lawful Evil",
-      "profBonus": "4",
-      "barrier": "20",
-      "speed": "10m",
-      "dc": "15",
-      "ac": "16",
-      "xp": "5900",
-      "id": "harbinger",
+      "unit": "Alien",
+      "alignment": "Chaotic Evil",
+      "profBonus": "3",
+      "barrier": null,
+      "speed": "16m",
+      "dc": "16",
+      "ac": "17",
+      "xp": "3900",
+      "id": "yahg",
       "damageResistances": [
-
+        "poison"
       ],
       "damageImmunities": [
 
       ],
       "conditionImmunities": [
-        "charmed"
+
       ],
       "damageVulnerabilities": [
 
       ],
       "featuresActionsReactions": [
-        "bash",
-        "bash_attack",
-        "assume_control",
-        "cast_a_spell"
+        "assassinate",
+        "avoidance",
+        "sneak_attack",
+        "bite---yahg",
+        "claw---yahg"
       ],
       "savingThrows": [
-
+        "str",
+        "dex",
+        "wis",
+        "int"
       ],
       "skills": [
-        "history",
+        "acrobatics",
+        "athletics",
+        "deception",
+        "insight*",
         "perception",
-        "science",
-        "persuasion",
-        "deception"
+        "stealth*"
       ]
     },
     {
@@ -1473,7 +627,7 @@
         {
           "type": "common",
           "name": "Multiattack",
-          "description": "The adjutant makes two arm cannon attacks."
+          "description": "The adjutant makes two Arm Cannon attacks."
         }
       ],
       "reactions": [
@@ -1522,7 +676,7 @@
       ],
       "name": "Adjutant",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/98/ME3_adjutant.png/revision/latest/scale-to-width-down/700?cb=20121128185320",
-      "cr": "5",
+      "cr": "6",
       "size": "Large",
       "type": "Synorg",
       "unit": "Cerberus",
@@ -1532,7 +686,7 @@
       "speed": "10m",
       "dc": "11",
       "ac": "18",
-      "xp": "1800",
+      "xp": "2300",
       "id": "adjutant",
       "damageResistances": [
 
@@ -1554,81 +708,6 @@
       ],
       "savingThrows": [
         "dex"
-      ],
-      "skills": [
-
-      ]
-    },
-    {
-      "actions": [
-        {
-          "type": "common",
-          "name": "Multiattack",
-          "description": "The adjutant makes two arm cannon attacks."
-        }
-      ],
-      "reactions": [
-
-      ],
-      "legendaryActions": [
-
-      ],
-      "features": [
-
-      ],
-      "spellcasting": false,
-      "techcasting": false,
-      "abilityScores": {
-        "str": 8,
-        "dex": 10,
-        "con": 10,
-        "int": 8,
-        "wis": 10,
-        "cha": 8
-      },
-      "hp": {
-        "die": "10",
-        "average": "55",
-        "numDice": "10",
-        "mod": 0
-      },
-      "senses": [
-
-      ],
-      "name": "Weakened Adjutant",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/4/46/EPP_-_adjutant_1.png/revision/latest/scale-to-width-down/640?cb=20121202170742",
-      "cr": "1",
-      "size": "Large",
-      "type": "Synorg",
-      "unit": "Cerberus",
-      "alignment": "Lawful Evil",
-      "profBonus": "2",
-      "barrier": null,
-      "speed": "8m",
-      "dc": "14",
-      "ac": "14",
-      "xp": "200",
-      "id": "weakened_adjutant",
-      "damageResistances": [
-
-      ],
-      "damageImmunities": [
-
-      ],
-      "conditionImmunities": [
-
-      ],
-      "damageVulnerabilities": [
-
-      ],
-      "featuresActionsReactions": [
-        "arm_cannon",
-        "bash",
-        "reaper_infection",
-        "grappler"
-      ],
-      "savingThrows": [
-
       ],
       "skills": [
 
@@ -1668,7 +747,7 @@
       ],
       "name": "Assault Trooper",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/1/1c/ME3_Cerberus_Assault_Trooper.png/revision/latest/scale-to-width-down/514?cb=20120322151133",
-      "cr": "1/2",
+      "cr": "1",
       "size": "Medium",
       "type": "Organic",
       "unit": "Cerberus",
@@ -1676,9 +755,9 @@
       "profBonus": "2",
       "barrier": null,
       "speed": "10m",
-      "dc": "13",
+      "dc": "14",
       "ac": "14",
-      "xp": "100",
+      "xp": "200",
       "id": "assault_trooper",
       "damageResistances": [
 
@@ -1781,7 +860,7 @@
         "rocket_launcher",
         "smoke_grenade",
         "smash_attack",
-        "rocket_launcher_attack",
+        "mass_accelerator_cannon_attack",
         "eject"
       ],
       "savingThrows": [
@@ -1821,9 +900,9 @@
       },
       "hp": {
         "die": "8",
-        "average": "45",
-        "numDice": "6",
-        "mod": 18
+        "average": "52",
+        "numDice": "7",
+        "mod": 21
       },
       "sp": {
         "shields": 10,
@@ -1834,7 +913,7 @@
       ],
       "name": "Centurion",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/3f/ME3_Cerberus_Centurion.png/revision/latest/scale-to-width-down/417?cb=20120322145316",
-      "cr": "3",
+      "cr": "4",
       "size": "Medium",
       "type": "Organic",
       "unit": "Cerberus",
@@ -1842,9 +921,9 @@
       "profBonus": "2",
       "barrier": null,
       "speed": "10m",
-      "dc": "14",
+      "dc": "15",
       "ac": "14",
-      "xp": "700",
+      "xp": "1100",
       "id": "centurion",
       "damageResistances": [
         "bludgeoning",
@@ -1868,7 +947,7 @@
         "smoke_grenade"
       ],
       "savingThrows": [
-        "dex"
+
       ],
       "skills": [
 
@@ -1879,7 +958,85 @@
         {
           "type": "common",
           "name": "Multiattack",
-          "description": "The dragoon makes three omni-whip attacks"
+          "description": "The combat engineer makes two M-5 Phalanx attacks."
+        }
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 11,
+        "dex": 16,
+        "con": 12,
+        "int": 16,
+        "wis": 13,
+        "cha": 16
+      },
+      "hp": {
+        "die": "8",
+        "average": "77",
+        "numDice": "14",
+        "mod": 14
+      },
+      "sp": {
+        "shields": 20,
+        "regen": "10"
+      },
+      "senses": [
+
+      ],
+      "name": "Combat Engineer",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/5/54/ME3_Cerberus_Combat_Engineer.png/revision/latest/scale-to-width-down/214?cb=20120322145158",
+      "cr": "3",
+      "size": "Medium",
+      "type": "Organic",
+      "unit": "Cerberus",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "10m",
+      "dc": "14",
+      "ac": "14",
+      "xp": "700",
+      "id": "combat_engineer",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "m-5_phalanx",
+        "repair",
+        "deploy_turret"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+        "electronics"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The dragoon makes three Omni-whip attacks"
         }
       ],
       "reactions": [
@@ -1942,7 +1099,7 @@
         "aggressive"
       ],
       "savingThrows": [
-
+        "dex"
       ],
       "skills": [
         "acrobatics"
@@ -1953,86 +1110,7 @@
         {
           "type": "common",
           "name": "Multiattack",
-          "description": "The combat engineer makes two M-5 Phalanx attacks."
-        }
-      ],
-      "reactions": [
-
-      ],
-      "legendaryActions": [
-
-      ],
-      "features": [
-
-      ],
-      "spellcasting": false,
-      "techcasting": false,
-      "abilityScores": {
-        "str": 11,
-        "dex": 14,
-        "con": 12,
-        "int": 16,
-        "wis": 13,
-        "cha": 16
-      },
-      "hp": {
-        "die": "8",
-        "average": "77",
-        "numDice": "14",
-        "mod": 14
-      },
-      "sp": {
-        "shields": 20,
-        "regen": "10"
-      },
-      "senses": [
-
-      ],
-      "name": "Combat Engineer",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/5/54/ME3_Cerberus_Combat_Engineer.png/revision/latest/scale-to-width-down/214?cb=20120322145158",
-      "cr": "4",
-      "size": "Medium",
-      "type": "Organic",
-      "unit": "Cerberus",
-      "alignment": "Neutral",
-      "profBonus": "2",
-      "barrier": null,
-      "speed": "10m",
-      "dc": "15",
-      "ac": "14",
-      "xp": "1100",
-      "id": "combat_engineer",
-      "damageResistances": [
-
-      ],
-      "damageImmunities": [
-
-      ],
-      "conditionImmunities": [
-
-      ],
-      "damageVulnerabilities": [
-
-      ],
-      "featuresActionsReactions": [
-        "m-5_phalanx",
-        "pistol_whip",
-        "repair",
-        "deploy_turret"
-      ],
-      "savingThrows": [
-
-      ],
-      "skills": [
-        "electronics"
-      ]
-    },
-    {
-      "actions": [
-        {
-          "type": "common",
-          "name": "Multiattack",
-          "description": "The Guardian makes two M-358 Talon attacks."
+          "description": "The guardian makes two M-358 Talon attacks."
         }
       ],
       "reactions": [
@@ -2048,7 +1126,7 @@
       "techcasting": false,
       "abilityScores": {
         "str": 16,
-        "dex": 11,
+        "dex": 12,
         "con": 15,
         "int": 11,
         "wis": 10,
@@ -2118,7 +1196,7 @@
       "techcasting": false,
       "abilityScores": {
         "str": 8,
-        "dex": 18,
+        "dex": 20,
         "con": 11,
         "int": 16,
         "wis": 13,
@@ -2164,7 +1242,7 @@
 
       ],
       "featuresActionsReactions": [
-        "pistol_whip",
+        "weapon_strike",
         "m-98_widow",
         "self-destruct",
         "pack_tactics",
@@ -2172,7 +1250,7 @@
         "shadow_cloak"
       ],
       "savingThrows": [
-
+        "dex"
       ],
       "skills": [
         "perception",
@@ -2185,7 +1263,7 @@
         {
           "type": "common",
           "name": "Multiattack",
-          "description": "The phantom makes three monomolecular blade attacks or one palm blaster attack and two monomolecular (one-handed) blade attacks."
+          "description": "The phantom makes three Monomolecular Blade attacks or one Palm Blaster attack and two Monomolecular  Blade (one-handed) attacks."
         }
       ],
       "reactions": [
@@ -2197,23 +1275,7 @@
       "features": [
 
       ],
-      "spellcasting": {
-        "level": "3",
-        "dc": 13,
-        "hit": 5,
-        "mod": "Wisdom",
-        "spellList": [
-          "barrier"
-        ],
-        "spells": [
-          {
-            "level": "cantrip",
-            "spells": [
-
-            ]
-          }
-        ]
-      },
+      "spellcasting": false,
       "techcasting": false,
       "abilityScores": {
         "str": 16,
@@ -2242,7 +1304,7 @@
       "profBonus": "3",
       "barrier": "8",
       "speed": "14m",
-      "dc": "13",
+      "dc": "16",
       "ac": "17",
       "xp": "2900",
       "id": "phantom",
@@ -2262,7 +1324,8 @@
         "avoidance",
         "aggressive",
         "palm_blaster",
-        "monomolecular_blade"
+        "monomolecular_blade",
+        "barrier"
       ],
       "savingThrows": [
         "dex"
@@ -2279,7 +1342,428 @@
         {
           "type": "common",
           "name": "Multiattack",
-          "description": "The rampart mech makes two omni-blade attacks."
+          "description": "The adjutant makes two Arm Cannon attacks."
+        }
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 10,
+        "dex": 16,
+        "con": 10,
+        "int": 8,
+        "wis": 10,
+        "cha": 8
+      },
+      "hp": {
+        "die": "10",
+        "average": "55",
+        "numDice": "10",
+        "mod": 0
+      },
+      "senses": [
+
+      ],
+      "name": "Weakened Adjutant",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/4/46/EPP_-_adjutant_1.png/revision/latest/scale-to-width-down/640?cb=20121202170742",
+      "cr": "2",
+      "size": "Large",
+      "type": "Synorg",
+      "unit": "Cerberus",
+      "alignment": "Lawful Evil",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "8m",
+      "dc": "14",
+      "ac": "14",
+      "xp": "450",
+      "id": "weakened_adjutant",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "arm_cannon",
+        "bash",
+        "reaper_infection",
+        "grappler"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The collector assassin makes two Particle Rifle attacks."
+        }
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 10,
+        "dex": 18,
+        "con": 10,
+        "int": 8,
+        "wis": 8,
+        "cha": 8
+      },
+      "hp": {
+        "die": "8",
+        "average": "45",
+        "numDice": "10",
+        "mod": 0
+      },
+      "senses": [
+        "darkvision 20m"
+      ],
+      "name": "Collector Assassin",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/6/69/Collector_Assassin.png/revision/latest/scale-to-width-down/350?cb=20100623060453",
+      "cr": "3",
+      "size": "Medium",
+      "type": "Organic",
+      "unit": "Collector",
+      "alignment": "Lawful evil",
+      "profBonus": "2",
+      "barrier": "4",
+      "speed": "10m, fly 6m",
+      "dc": "14",
+      "ac": "14",
+      "xp": "700",
+      "id": "collector_assassin",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "weapon_strike",
+        "particle_rifle",
+        "possessed_collector"
+      ],
+      "savingThrows": [
+        "dex"
+      ],
+      "skills": [
+        "athletics"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The collector captain makes two Collector Assault Rifle attacks."
+        }
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 15,
+        "dex": 18,
+        "con": 14,
+        "int": 11,
+        "wis": 14,
+        "cha": 14
+      },
+      "hp": {
+        "die": "8",
+        "average": "123",
+        "numDice": "19",
+        "mod": 38
+      },
+      "senses": [
+        "darkvision 20m"
+      ],
+      "name": "Collector Captain",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/8/8f/Collector_CapME3.jpg/revision/latest/scale-to-width-down/335?cb=20121201212047",
+      "cr": "7",
+      "size": "Medium",
+      "type": "Organic",
+      "unit": "Collector",
+      "alignment": "Lawful evil",
+      "profBonus": "3",
+      "barrier": "6",
+      "speed": "10m, fly 6m",
+      "dc": "16",
+      "ac": "16",
+      "xp": "2900",
+      "id": "collector_captain",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "pack_tactics",
+        "leadership",
+        "summon_seeker_swarm",
+        "collector_assault_rifle",
+        "possessed_captain"
+      ],
+      "savingThrows": [
+        "dex",
+        "con"
+      ],
+      "skills": [
+        "athletics",
+        "science",
+        "survival"
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 10,
+        "dex": 10,
+        "con": 10,
+        "int": 8,
+        "wis": 8,
+        "cha": 8
+      },
+      "hp": {
+        "die": "8",
+        "average": "31",
+        "numDice": "7",
+        "mod": 0
+      },
+      "senses": [
+        "darkvision 20m"
+      ],
+      "name": "Collector Drone",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/a/a3/Collector.png/revision/latest/scale-to-width-down/331?cb=20100130000709",
+      "cr": "1",
+      "size": "Medium",
+      "type": "Organic",
+      "unit": "Collector",
+      "alignment": "Lawful evil",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "10m, fly 6m",
+      "dc": "14",
+      "ac": "13",
+      "xp": "200",
+      "id": "collector_drone",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "weapon_strike",
+        "collector_assault_rifle",
+        "possessed_collector"
+      ],
+      "savingThrows": [
+        "dex"
+      ],
+      "skills": [
+        "athletics"
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": {
+        "level": "12",
+        "dc": 16,
+        "hit": 8,
+        "mod": "Charisma",
+        "spellList": [
+          "dark_channel",
+          "pull",
+          "reave",
+          "shockwave",
+          "singularity"
+        ],
+        "spells": [
+          {
+            "level": "cantrip",
+            "spells": [
+
+            ]
+          },
+          {
+            "level": "1",
+            "slots": "5",
+            "spells": [
+
+            ]
+          },
+          {
+            "level": "2",
+            "slots": "4",
+            "spells": [
+
+            ]
+          },
+          {
+            "level": "3",
+            "slots": "3",
+            "spells": [
+
+            ]
+          },
+          {
+            "level": "4",
+            "slots": "2",
+            "spells": [
+
+            ]
+          }
+        ]
+      },
+      "techcasting": false,
+      "abilityScores": {
+        "str": 10,
+        "dex": 12,
+        "con": 12,
+        "int": 14,
+        "wis": 16,
+        "cha": 18
+      },
+      "hp": {
+        "die": "10",
+        "average": "162",
+        "numDice": "25",
+        "mod": 25
+      },
+      "senses": [
+        "darkvision 20m"
+      ],
+      "name": "Collector General",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/3c/Collectors_Leader_Character_Shot.png/revision/latest/scale-to-width-down/350?cb=20091119091650",
+      "cr": "11",
+      "size": "Large",
+      "type": "Organic",
+      "unit": "Collector",
+      "alignment": "Lawful Evil",
+      "profBonus": "4",
+      "barrier": "20",
+      "speed": "10m",
+      "dc": "15",
+      "ac": "16",
+      "xp": "7200",
+      "id": "collector_general",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+        "charmed"
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "bash",
+        "bash_attack",
+        "assume_control",
+        "cast_a_spell"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+        "history",
+        "perception",
+        "science",
+        "persuasion",
+        "deception"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The collector guardian makes two Collector Assault Rifle attacks."
         }
       ],
       "reactions": [
@@ -2296,57 +1780,276 @@
       "abilityScores": {
         "str": 16,
         "dex": 15,
-        "con": 8,
-        "int": 16,
-        "wis": 11,
-        "cha": 8
+        "con": 16,
+        "int": 8,
+        "wis": 8,
+        "cha": 9
       },
       "hp": {
         "die": "8",
-        "average": "52",
-        "numDice": "15",
-        "mod": -15
+        "average": "75",
+        "numDice": "10",
+        "mod": 30
       },
       "senses": [
-
+        "darkvision 20m"
       ],
-      "name": "Rampart Mech",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/6/60/ME3-Rampart-Mech.png/revision/latest/scale-to-width-down/287?cb=20121128090615",
-      "cr": "2",
+      "name": "Collector Guardian",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/c/ce/Collector_Guardian.png/revision/latest/scale-to-width-down/350?cb=20100623060233",
+      "cr": "4",
       "size": "Medium",
-      "type": "Synthetic",
-      "unit": "Mech",
-      "alignment": "Neutral",
+      "type": "Organic",
+      "unit": "Collector",
+      "alignment": "Lawful evil",
       "profBonus": "2",
-      "barrier": null,
-      "speed": null,
-      "dc": "14",
-      "ac": "15",
-      "xp": "450",
-      "id": "rampart_mech",
+      "barrier": "5",
+      "speed": "10m, fly 6m",
+      "dc": "15",
+      "ac": "16",
+      "xp": "1100",
+      "id": "collector_guardian",
       "damageResistances": [
 
       ],
       "damageImmunities": [
-        "poison",
-        "psychic"
+
       ],
       "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "weapon_strike",
+        "collector_assault_rifle",
+        "warp_ammo",
+        "hex_shield",
+        "possessed_collector"
+      ],
+      "savingThrows": [
+        "con"
+      ],
+      "skills": [
+        "athletics"
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 13,
+        "dex": 14,
+        "con": 12,
+        "int": 11,
+        "wis": 12,
+        "cha": 8
+      },
+      "hp": {
+        "die": "8",
+        "average": "77",
+        "numDice": "14",
+        "mod": 14
+      },
+      "senses": [
+        "darkvision 20m"
+      ],
+      "name": "Collector Trooper",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/d/d3/Collector_TrooperME3.jpg/revision/latest/scale-to-width-down/350?cb=20121201212208",
+      "cr": "3",
+      "size": "Medium",
+      "type": "Organic",
+      "unit": "Collector",
+      "alignment": "Lawful evil",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "10m, fly 6m",
+      "dc": "14",
+      "ac": "15",
+      "xp": "700",
+      "id": "collector_trooper",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "weapon_strike",
+        "frag_grenade",
+        "collector_smg",
+        "collector_web",
+        "possessed_collector"
+      ],
+      "savingThrows": [
+        "dex"
+      ],
+      "skills": [
+        "athletics"
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 20,
+        "dex": 19,
+        "con": 21,
+        "int": 11,
+        "wis": 14,
+        "cha": 10
+      },
+      "hp": {
+        "die": "10",
+        "average": "136",
+        "numDice": "13",
+        "mod": 65
+      },
+      "senses": [
+        "darkvision 20m"
+      ],
+      "name": "Praetorian",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/09/PraetorianME3.jpg/revision/latest/scale-to-width-down/700?cb=20121201212320",
+      "cr": "12",
+      "size": "Large",
+      "type": "Synorg",
+      "unit": "Collector",
+      "alignment": "Lawful evil",
+      "profBonus": "4",
+      "barrier": "10",
+      "speed": "10m, fly 10m",
+      "dc": "18",
+      "ac": "20",
+      "xp": "8400",
+      "id": "praetorian",
+      "damageResistances": [
+        "force",
+        "necrotic"
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+        "charmed",
+        "grappled",
+        "paralyzed",
         "petrified",
         "poisoned"
       ],
       "damageVulnerabilities": [
-        "lightning"
+
       ],
       "featuresActionsReactions": [
-        "aggressive",
-        "omni-blade",
-        "m-23_katana",
-        "hex_shield",
-        "post-mortem_vent"
+        "pounce",
+        "claw",
+        "twin_particle_beams",
+        "negation_barrier",
+        "possessed_praetorian"
       ],
       "savingThrows": [
+        "dex",
+        "con",
+        "str"
+      ],
+      "skills": [
+        "acrobatics",
+        "athletics",
+        "perception"
+      ]
+    },
+    {
+      "actions": [
 
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 4,
+        "dex": 12,
+        "con": 10,
+        "int": 10,
+        "wis": 8,
+        "cha": 6
+      },
+      "hp": {
+        "die": "6",
+        "average": "14",
+        "numDice": "4",
+        "mod": 0
+      },
+      "senses": [
+
+      ],
+      "name": "Seeker Plague",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/9f/SwarmME3_Plague.jpg/revision/latest/scale-to-width-down/350?cb=20121201212536",
+      "cr": "1/4",
+      "size": "Small",
+      "type": "Organic",
+      "unit": "Collector",
+      "alignment": "Lawful Evil",
+      "profBonus": "2",
+      "barrier": "1",
+      "speed": "fly 10m",
+      "dc": "13",
+      "ac": "13",
+      "xp": "50",
+      "id": "seeker_plague",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "plague_sting"
+      ],
+      "savingThrows": [
+        "dex"
       ],
       "skills": [
 
@@ -2368,63 +2071,146 @@
       "spellcasting": false,
       "techcasting": false,
       "abilityScores": {
-        "str": 1,
-        "dex": 1,
+        "str": 2,
+        "dex": 10,
         "con": 8,
         "int": 10,
-        "wis": 6,
-        "cha": 1
+        "wis": 8,
+        "cha": 5
       },
       "hp": {
         "die": "6",
-        "average": "25",
-        "numDice": "10",
-        "mod": -10
-      },
-      "sp": {
-        "shields": 10,
-        "regen": "0"
+        "average": "10",
+        "numDice": "4",
+        "mod": -4
       },
       "senses": [
 
       ],
-      "name": "Turret",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/0c/ME3_Cerberus_Turret.png/revision/latest/scale-to-width-down/350?cb=20120322141943",
-      "cr": "1",
+      "name": "Seeker Swarm",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/8/8f/SwarmME3.jpg/revision/latest/scale-to-width-down/350?cb=20121201212516",
+      "cr": "1/8",
       "size": "Small",
-      "type": "Synthetic",
-      "unit": "Mech",
-      "alignment": "Neutral",
+      "type": "Organic",
+      "unit": "Collector",
+      "alignment": "Lawful Evil",
       "profBonus": "2",
       "barrier": null,
-      "speed": "0m",
-      "dc": "14",
-      "ac": "12",
-      "xp": "200",
-      "id": "turret",
+      "speed": "fly 10m",
+      "dc": "13",
+      "ac": "13",
+      "xp": "25",
+      "id": "seeker_swarm",
       "damageResistances": [
-        "bludgeoning"
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "sting"
+      ],
+      "savingThrows": [
+        "dex"
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 22,
+        "dex": 10,
+        "con": 25,
+        "int": 11,
+        "wis": 6,
+        "cha": 8
+      },
+      "hp": {
+        "die": "12",
+        "average": "135",
+        "numDice": "10",
+        "mod": 70
+      },
+      "sp": {
+        "shields": 100,
+        "regen": "0"
+      },
+      "senses": [
+        "darkvision 20m",
+        "infrared vision 20m"
+      ],
+      "name": "Geth Armature",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/a/a9/ArmatureLanding.png/revision/latest/scale-to-width-down/350?cb=20090125024722",
+      "cr": "15",
+      "size": "Huge",
+      "type": "Synthetic",
+      "unit": "Geth",
+      "alignment": "Lawful Neutral",
+      "profBonus": "5",
+      "barrier": null,
+      "speed": "6m",
+      "dc": "18",
+      "ac": "15",
+      "xp": "13000",
+      "id": "geth_armature",
+      "damageResistances": [
+        "bludgeoning",
+        "piercing",
+        "slashing"
       ],
       "damageImmunities": [
         "poison",
         "psychic"
       ],
       "conditionImmunities": [
+        "charmed",
+        "deafened",
+        "frightened",
+        "frozen",
+        "grappled",
+        "invisible",
+        "lifted",
+        "paralyzed",
         "petrified",
-        "poisoned"
+        "poisoned",
+        "restrained",
+        "stunned"
       ],
       "damageVulnerabilities": [
         "lightning"
       ],
       "featuresActionsReactions": [
-        "mass_accelerator_machinegun",
-        "stationary"
+        "siege_pulse",
+        "siege_cannon",
+        "repair_protocol",
+        "mass_accelerator_machinegun---geth_armature"
       ],
       "savingThrows": [
 
       ],
       "skills": [
-
+        "perception"
       ]
     },
     {
@@ -2474,7 +2260,7 @@
       ],
       "name": "Geth Bomber",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/01/ME3_geth_bomber_AAA.png/revision/latest/scale-to-width-down/700?cb=20130313175937",
-      "cr": "1/2",
+      "cr": "2",
       "size": "Small",
       "type": "Synthetic",
       "unit": "Geth",
@@ -2484,7 +2270,7 @@
       "speed": "fly 10m",
       "dc": "12",
       "ac": "16",
-      "xp": "100",
+      "xp": "450",
       "id": "geth_bomber",
       "damageResistances": [
 
@@ -2512,10 +2298,103 @@
     },
     {
       "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 28,
+        "dex": 8,
+        "con": 28,
+        "int": 9,
+        "wis": 6,
+        "cha": 8
+      },
+      "hp": {
+        "die": "20",
+        "average": "175",
+        "numDice": "9",
+        "mod": 81
+      },
+      "sp": {
+        "shields": 100,
+        "regen": "0"
+      },
+      "senses": [
+        "darkvision 20m",
+        "infrared vision 20m"
+      ],
+      "name": "Geth Colossus",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/6/64/Geth_Colossus_01.jpg/revision/latest/scale-to-width-down/350?cb=20080922231050",
+      "cr": "21",
+      "size": "Gargantuan",
+      "type": "Synthetic",
+      "unit": "Geth",
+      "alignment": "Lawful Neutral",
+      "profBonus": "7",
+      "barrier": null,
+      "speed": "6m",
+      "dc": "20",
+      "ac": "17",
+      "xp": "33000",
+      "id": "geth_colossus",
+      "damageResistances": [
+        "bludgeoning",
+        "piercing",
+        "slashing"
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "charmed",
+        "deafened",
+        "frightened",
+        "frozen",
+        "grappled",
+        "invisible",
+        "lifted",
+        "paralyzed",
+        "petrified",
+        "poisoned",
+        "restrained",
+        "stunned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "siege_pulse",
+        "siege_cannon",
+        "repair_protocol",
+        "mass_accelerator_machinegun---geth_colossus",
+        "siege_cannon_attack",
+        "mass_accelerator_machinegun_attack",
+        "siege_pulse_attack"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+        "perception"
+      ]
+    },
+    {
+      "actions": [
         {
           "type": "common",
           "name": "Multiattack",
-          "description": "The Geth Hunter makes two Geth Plasma Shotgun attacks."
+          "description": "The geth hunter makes two Geth Plasma Shotgun attacks."
         }
       ],
       "reactions": [
@@ -2539,9 +2418,9 @@
       },
       "hp": {
         "die": "8",
-        "average": "75",
-        "numDice": "10",
-        "mod": 30
+        "average": "60",
+        "numDice": "8",
+        "mod": 24
       },
       "sp": {
         "shields": 20,
@@ -2552,7 +2431,7 @@
       ],
       "name": "Geth Hunter",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/b/be/ME3_Geth_Hunter.png/revision/latest/scale-to-width-down/300?cb=20120326002931",
-      "cr": "3",
+      "cr": "4",
       "size": "Medium",
       "type": "Synthetic",
       "unit": "Geth",
@@ -2560,9 +2439,9 @@
       "profBonus": "2",
       "barrier": null,
       "speed": "14m",
-      "dc": "14",
+      "dc": "15",
       "ac": "14",
-      "xp": "700",
+      "xp": "1100",
       "id": "geth_hunter",
       "damageResistances": [
 
@@ -2579,6 +2458,7 @@
         "lightning"
       ],
       "featuresActionsReactions": [
+        "weapon_strike",
         "assassination",
         "geth_plasma_shotgun",
         "tactical_cloak"
@@ -2596,7 +2476,89 @@
         {
           "type": "common",
           "name": "Multiattack",
-          "description": "The Geth Prime makes two Geth Pulse Rifle attacks."
+          "description": "The geth juggernaut makes two Bash attacks."
+        }
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 20,
+        "dex": 11,
+        "con": 18,
+        "int": 11,
+        "wis": 8,
+        "cha": 4
+      },
+      "hp": {
+        "die": "10",
+        "average": "133",
+        "numDice": "14",
+        "mod": 56
+      },
+      "sp": {
+        "shields": 20,
+        "regen": "5"
+      },
+      "senses": [
+
+      ],
+      "name": "Geth Juggernaut",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/a/a4/Geth_Destroyer_ME2.png/revision/latest/scale-to-width-down/350?cb=20100625040647",
+      "cr": "8",
+      "size": "Large",
+      "type": "Synthetic",
+      "unit": "Geth",
+      "alignment": "Lawful Neutral",
+      "profBonus": "3",
+      "barrier": null,
+      "speed": "12m",
+      "dc": "16",
+      "ac": "15",
+      "xp": "3900",
+      "id": "geth_juggernaut",
+      "damageResistances": [
+        "bludgeoning",
+        "piercing",
+        "slashing"
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "aggressive",
+        "bash---geth_juggernaut",
+        "geth_plasma_smg"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The geth prime makes two Geth Pulse Rifle attacks."
         }
       ],
       "reactions": [
@@ -2633,17 +2595,17 @@
       ],
       "name": "Geth Prime",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/c/c9/ME3_Geth_Prime.png/revision/latest/scale-to-width-down/229?cb=20120403192110",
-      "cr": "7",
+      "cr": "9",
       "size": "Large",
       "type": "Synthetic",
       "unit": "Geth",
       "alignment": "Lawful Neutral",
-      "profBonus": "3",
+      "profBonus": "4",
       "barrier": null,
       "speed": "10m",
       "dc": "16",
       "ac": "18",
-      "xp": "2900",
+      "xp": "5000",
       "id": "geth_prime",
       "damageResistances": [
 
@@ -2660,6 +2622,7 @@
         "lightning"
       ],
       "featuresActionsReactions": [
+        "weapon_strike---geth_prime",
         "geth_pulse_rifle",
         "summon_combat_drone",
         "summon_geth_turret",
@@ -2673,334 +2636,6 @@
       ],
       "skills": [
         "electronics"
-      ]
-    },
-    {
-      "actions": [
-
-      ],
-      "reactions": [
-
-      ],
-      "legendaryActions": [
-
-      ],
-      "features": [
-
-      ],
-      "spellcasting": false,
-      "techcasting": false,
-      "abilityScores": {
-        "str": 12,
-        "dex": 14,
-        "con": 11,
-        "int": 12,
-        "wis": 8,
-        "cha": 8
-      },
-      "hp": {
-        "die": "8",
-        "average": "54",
-        "numDice": "12",
-        "mod": 0
-      },
-      "senses": [
-
-      ],
-      "name": "Geth Trooper",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/c/cf/ME3_Geth_Trooper.png/revision/latest/scale-to-width-down/238?cb=20120315171310",
-      "cr": "1/2",
-      "size": "Medium",
-      "type": "Synthetic",
-      "unit": "Geth",
-      "alignment": "Lawful Neutral",
-      "profBonus": "2",
-      "barrier": null,
-      "speed": "10m",
-      "dc": "13",
-      "ac": "13",
-      "xp": "100",
-      "id": "geth_trooper",
-      "damageResistances": [
-
-      ],
-      "damageImmunities": [
-        "poison",
-        "psychic"
-      ],
-      "conditionImmunities": [
-        "petrified",
-        "poisoned"
-      ],
-      "damageVulnerabilities": [
-        "lightning"
-      ],
-      "featuresActionsReactions": [
-        "geth_pulse_rifle"
-      ],
-      "savingThrows": [
-
-      ],
-      "skills": [
-
-      ]
-    },
-    {
-      "actions": [
-
-      ],
-      "reactions": [
-
-      ],
-      "legendaryActions": [
-
-      ],
-      "features": [
-
-      ],
-      "spellcasting": false,
-      "techcasting": false,
-      "abilityScores": {
-        "str": 20,
-        "dex": 11,
-        "con": 18,
-        "int": 11,
-        "wis": 8,
-        "cha": 4
-      },
-      "hp": {
-        "die": "10",
-        "average": "95",
-        "numDice": "10",
-        "mod": 40
-      },
-      "sp": {
-        "shields": 20,
-        "regen": "5"
-      },
-      "senses": [
-
-      ],
-      "name": "Geth Destroyer",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/a/a4/Geth_Destroyer_ME2.png/revision/latest/scale-to-width-down/350?cb=20100625040647",
-      "cr": "4",
-      "size": "Large",
-      "type": "Synthetic",
-      "unit": "Geth",
-      "alignment": "Lawful Neutral",
-      "profBonus": "2",
-      "barrier": null,
-      "speed": "12m",
-      "dc": "15",
-      "ac": "15",
-      "xp": "1100",
-      "id": "geth_destroyer",
-      "damageResistances": [
-
-      ],
-      "damageImmunities": [
-        "poison",
-        "psychic"
-      ],
-      "conditionImmunities": [
-        "petrified",
-        "poisoned"
-      ],
-      "damageVulnerabilities": [
-        "lightning"
-      ],
-      "featuresActionsReactions": [
-        "bash",
-        "m-451_firestorm"
-      ],
-      "savingThrows": [
-
-      ],
-      "skills": [
-
-      ]
-    },
-    {
-      "actions": [
-
-      ],
-      "reactions": [
-
-      ],
-      "legendaryActions": [
-
-      ],
-      "features": [
-
-      ],
-      "spellcasting": false,
-      "techcasting": false,
-      "abilityScores": {
-        "str": 22,
-        "dex": 10,
-        "con": 25,
-        "int": 11,
-        "wis": 6,
-        "cha": 8
-      },
-      "hp": {
-        "die": "12",
-        "average": "135",
-        "numDice": "10",
-        "mod": 70
-      },
-      "sp": {
-        "shields": 100,
-        "regen": "0"
-      },
-      "senses": [
-        "darkvision 20m",
-        "infrared vision 20m"
-      ],
-      "name": "Geth Armature",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/a/a9/ArmatureLanding.png/revision/latest/scale-to-width-down/350?cb=20090125024722",
-      "cr": "11",
-      "size": "Huge",
-      "type": "Synthetic",
-      "unit": "Geth",
-      "alignment": "Lawful Neutral",
-      "profBonus": "4",
-      "barrier": null,
-      "speed": "6m",
-      "dc": "18",
-      "ac": "15",
-      "xp": "7200",
-      "id": "geth_armature",
-      "damageResistances": [
-        "bludgeonin",
-        "piercing",
-        "slashing"
-      ],
-      "damageImmunities": [
-        "poison",
-        "psychic"
-      ],
-      "conditionImmunities": [
-        "charmed",
-        "deafened",
-        "frightened",
-        "frozen",
-        "grappled",
-        "invisible",
-        "lifted",
-        "paralyzed",
-        "petrified",
-        "poisoned",
-        "restrained",
-        "stunned"
-      ],
-      "damageVulnerabilities": [
-        "lightning"
-      ],
-      "featuresActionsReactions": [
-        "siege_pulse",
-        "siege_cannon",
-        "repair_protocol",
-        "mass_accelerator_machinegun"
-      ],
-      "savingThrows": [
-
-      ],
-      "skills": [
-        "perception"
-      ]
-    },
-    {
-      "actions": [
-
-      ],
-      "reactions": [
-
-      ],
-      "legendaryActions": [
-
-      ],
-      "features": [
-
-      ],
-      "spellcasting": false,
-      "techcasting": false,
-      "abilityScores": {
-        "str": 28,
-        "dex": 8,
-        "con": 28,
-        "int": 9,
-        "wis": 6,
-        "cha": 8
-      },
-      "hp": {
-        "die": "20",
-        "average": "234",
-        "numDice": "12",
-        "mod": 108
-      },
-      "sp": {
-        "shields": 100,
-        "regen": "0"
-      },
-      "senses": [
-        "darkvision 20m",
-        "infrared vision 20m"
-      ],
-      "name": "Geth Colossus",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/6/64/Geth_Colossus_01.jpg/revision/latest/scale-to-width-down/350?cb=20080922231050",
-      "cr": "20",
-      "size": "Gargantuan",
-      "type": "Synthetic",
-      "unit": "Geth",
-      "alignment": "Lawful Neutral",
-      "profBonus": "6",
-      "barrier": null,
-      "speed": "6m",
-      "dc": "19",
-      "ac": "18",
-      "xp": "25000",
-      "id": "geth_colossus",
-      "damageResistances": [
-        "bludgeonin",
-        "piercing",
-        "slashing"
-      ],
-      "damageImmunities": [
-        "poison",
-        "psychic"
-      ],
-      "conditionImmunities": [
-        "charmed",
-        "deafened",
-        "frightened",
-        "frozen",
-        "grappled",
-        "invisible",
-        "lifted",
-        "paralyzed",
-        "petrified",
-        "poisoned",
-        "restrained",
-        "stunned"
-      ],
-      "damageVulnerabilities": [
-        "lightning"
-      ],
-      "featuresActionsReactions": [
-        "siege_pulse",
-        "siege_cannon",
-        "repair_protocol",
-        "mass_accelerator_machinegun",
-        "siege_cannon_attack",
-        "mass_accelerator_machinegun_attack",
-        "siege_pulse_attack"
-      ],
-      "savingThrows": [
-
-      ],
-      "skills": [
-        "perception"
       ]
     },
     {
@@ -3037,9 +2672,9 @@
       },
       "hp": {
         "die": "8",
-        "average": "28",
-        "numDice": "8",
-        "mod": -8
+        "average": "63",
+        "numDice": "18",
+        "mod": -18
       },
       "sp": {
         "shields": 5,
@@ -3051,7 +2686,7 @@
       ],
       "name": "Geth Stalker",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/ec/ME_geth_stalker.png/revision/latest/scale-to-width-down/350?cb=20130517141111",
-      "cr": "1",
+      "cr": "3",
       "size": "Medium",
       "type": "Synthetic",
       "unit": "Geth",
@@ -3061,7 +2696,7 @@
       "speed": "16m",
       "dc": "11",
       "ac": "14",
-      "xp": "200",
+      "xp": "700",
       "id": "geth_stalker",
       "damageResistances": [
 
@@ -3078,6 +2713,8 @@
         "lightning"
       ],
       "featuresActionsReactions": [
+        "avoidance",
+        "bash",
         "assassination",
         "eye_cannon",
         "spider_climb",
@@ -3088,6 +2725,81 @@
       ],
       "skills": [
         "perception"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The geth trooper makes two Geth Pulse Rifle attacks."
+        }
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 12,
+        "dex": 14,
+        "con": 11,
+        "int": 12,
+        "wis": 8,
+        "cha": 8
+      },
+      "hp": {
+        "die": "8",
+        "average": "72",
+        "numDice": "16",
+        "mod": 0
+      },
+      "senses": [
+
+      ],
+      "name": "Geth Trooper",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/c/cf/ME3_Geth_Trooper.png/revision/latest/scale-to-width-down/238?cb=20120315171310",
+      "cr": "2",
+      "size": "Medium",
+      "type": "Synthetic",
+      "unit": "Geth",
+      "alignment": "Lawful Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "10m",
+      "dc": "14",
+      "ac": "13",
+      "xp": "450",
+      "id": "geth_trooper",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "weapon_strike",
+        "geth_pulse_rifle"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
       ]
     },
     {
@@ -3157,6 +2869,80 @@
       "featuresActionsReactions": [
         "pulse_cannon",
         "shield_restore"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 11,
+        "dex": 14,
+        "con": 11,
+        "int": 10,
+        "wis": 10,
+        "cha": 6
+      },
+      "hp": {
+        "die": "6",
+        "average": "10",
+        "numDice": "3",
+        "mod": 0
+      },
+      "sp": {
+        "shields": 5,
+        "regen": "5"
+      },
+      "senses": [
+
+      ],
+      "name": "Assault Drone",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/ea/Defense_Drone.png/revision/latest/scale-to-width-down/606?cb=20120407052056",
+      "cr": "1/2",
+      "size": "Small",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "fly 10m",
+      "dc": "13",
+      "ac": "12",
+      "xp": "100",
+      "id": "assault_drone",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "pulse_cannon"
       ],
       "savingThrows": [
 
@@ -3264,150 +3050,6 @@
       "spellcasting": false,
       "techcasting": false,
       "abilityScores": {
-        "str": 10,
-        "dex": 10,
-        "con": 10,
-        "int": 10,
-        "wis": 10,
-        "cha": 4
-      },
-      "hp": {
-        "die": "6",
-        "average": "7",
-        "numDice": "2",
-        "mod": 0
-      },
-      "senses": [
-
-      ],
-      "name": "Rocket Drone",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/2f/Virmire_geth_rocket_drone.png/revision/latest/scale-to-width-down/640?cb=20091209133938",
-      "cr": "1/4",
-      "size": "Small",
-      "type": "Synthetic",
-      "unit": "Mech",
-      "alignment": "Neutral",
-      "profBonus": "2",
-      "barrier": null,
-      "speed": "fly 10m",
-      "dc": "13",
-      "ac": "11",
-      "xp": "50",
-      "id": "rocket_drone",
-      "damageResistances": [
-
-      ],
-      "damageImmunities": [
-        "poison",
-        "psychic"
-      ],
-      "conditionImmunities": [
-        "petrified",
-        "poisoned"
-      ],
-      "damageVulnerabilities": [
-        "lightning"
-      ],
-      "featuresActionsReactions": [
-        "distortion_rocket"
-      ],
-      "savingThrows": [
-
-      ],
-      "skills": [
-
-      ]
-    },
-    {
-      "actions": [
-
-      ],
-      "reactions": [
-
-      ],
-      "legendaryActions": [
-
-      ],
-      "features": [
-
-      ],
-      "spellcasting": false,
-      "techcasting": false,
-      "abilityScores": {
-        "str": 11,
-        "dex": 14,
-        "con": 11,
-        "int": 10,
-        "wis": 10,
-        "cha": 6
-      },
-      "hp": {
-        "die": "6",
-        "average": "10",
-        "numDice": "3",
-        "mod": 0
-      },
-      "sp": {
-        "shields": 5,
-        "regen": "5"
-      },
-      "senses": [
-
-      ],
-      "name": "Assault Drone",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/ea/Defense_Drone.png/revision/latest/scale-to-width-down/606?cb=20120407052056",
-      "cr": "1/2",
-      "size": "Small",
-      "type": "Synthetic",
-      "unit": "Mech",
-      "alignment": "Neutral",
-      "profBonus": "2",
-      "barrier": null,
-      "speed": "fly 10m",
-      "dc": "13",
-      "ac": "12",
-      "xp": "100",
-      "id": "assault_drone",
-      "damageResistances": [
-
-      ],
-      "damageImmunities": [
-        "poison",
-        "psychic"
-      ],
-      "conditionImmunities": [
-        "petrified",
-        "poisoned"
-      ],
-      "damageVulnerabilities": [
-        "lightning"
-      ],
-      "featuresActionsReactions": [
-        "pulse_cannon"
-      ],
-      "savingThrows": [
-
-      ],
-      "skills": [
-
-      ]
-    },
-    {
-      "actions": [
-
-      ],
-      "reactions": [
-
-      ],
-      "legendaryActions": [
-
-      ],
-      "features": [
-
-      ],
-      "spellcasting": false,
-      "techcasting": false,
-      "abilityScores": {
         "str": 15,
         "dex": 10,
         "con": 14,
@@ -3465,6 +3107,230 @@
       ],
       "skills": [
 
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 8,
+        "dex": 14,
+        "con": 8,
+        "int": 8,
+        "wis": 8,
+        "cha": 8
+      },
+      "hp": {
+        "die": "6",
+        "average": "5",
+        "numDice": "2",
+        "mod": -2
+      },
+      "senses": [
+
+      ],
+      "name": "Disruption Drone",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/b/b6/ME3_disruption_drone.png/revision/latest/scale-to-width-down/350?cb=20130308125421",
+      "cr": "1/8",
+      "size": "Small",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "fly 16m",
+      "dc": "13",
+      "ac": "8",
+      "xp": "25",
+      "id": "disruption_drone",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "kamikaze_attack"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The rampart mech makes two omni-blade attacks."
+        }
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 16,
+        "dex": 15,
+        "con": 8,
+        "int": 16,
+        "wis": 11,
+        "cha": 8
+      },
+      "hp": {
+        "die": "8",
+        "average": "52",
+        "numDice": "15",
+        "mod": -15
+      },
+      "senses": [
+
+      ],
+      "name": "Rampart Mech",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/6/60/ME3-Rampart-Mech.png/revision/latest/scale-to-width-down/287?cb=20121128090615",
+      "cr": "2",
+      "size": "Medium",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": null,
+      "dc": "14",
+      "ac": "15",
+      "xp": "450",
+      "id": "rampart_mech",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "aggressive",
+        "omni-blade",
+        "m-23_katana",
+        "hex_shield",
+        "post-mortem_vent"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 10,
+        "dex": 16,
+        "con": 8,
+        "int": 11,
+        "wis": 12,
+        "cha": 5
+      },
+      "hp": {
+        "die": "6",
+        "average": "5",
+        "numDice": "2",
+        "mod": -2
+      },
+      "sp": {
+        "shields": 5,
+        "regen": "5"
+      },
+      "senses": [
+        "infared vision 60m"
+      ],
+      "name": "Recon Drone",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/29/Geth_Recon_Drone_ME2.png/revision/latest/scale-to-width-down/350?cb=20100627032507",
+      "cr": "1/8",
+      "size": "Small",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "fly 16m",
+      "dc": "13",
+      "ac": "13",
+      "xp": "25",
+      "id": "recon_drone",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "pulse_rifle",
+        "tactical_cloak"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+        "perception",
+        "stealth"
       ]
     },
     {
@@ -3568,39 +3434,35 @@
       "techcasting": false,
       "abilityScores": {
         "str": 10,
-        "dex": 16,
-        "con": 8,
-        "int": 11,
-        "wis": 12,
-        "cha": 5
+        "dex": 10,
+        "con": 10,
+        "int": 10,
+        "wis": 10,
+        "cha": 4
       },
       "hp": {
         "die": "6",
-        "average": "5",
+        "average": "7",
         "numDice": "2",
-        "mod": -2
-      },
-      "sp": {
-        "shields": 5,
-        "regen": "5"
+        "mod": 0
       },
       "senses": [
-        "infared vision 60m"
+
       ],
-      "name": "Recon Drone",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/29/Geth_Recon_Drone_ME2.png/revision/latest/scale-to-width-down/350?cb=20100627032507",
-      "cr": "1/8",
+      "name": "Rocket Drone",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/2f/Virmire_geth_rocket_drone.png/revision/latest/scale-to-width-down/640?cb=20091209133938",
+      "cr": "1/4",
       "size": "Small",
       "type": "Synthetic",
       "unit": "Mech",
       "alignment": "Neutral",
       "profBonus": "2",
       "barrier": null,
-      "speed": "fly 16m",
+      "speed": "fly 10m",
       "dc": "13",
-      "ac": "13",
-      "xp": "25",
-      "id": "recon_drone",
+      "ac": "11",
+      "xp": "50",
+      "id": "rocket_drone",
       "damageResistances": [
 
       ],
@@ -3616,79 +3478,7 @@
         "lightning"
       ],
       "featuresActionsReactions": [
-        "pulse_rifle",
-        "tactical_cloak"
-      ],
-      "savingThrows": [
-
-      ],
-      "skills": [
-        "perception",
-        "stealth"
-      ]
-    },
-    {
-      "actions": [
-
-      ],
-      "reactions": [
-
-      ],
-      "legendaryActions": [
-
-      ],
-      "features": [
-
-      ],
-      "spellcasting": false,
-      "techcasting": false,
-      "abilityScores": {
-        "str": 8,
-        "dex": 14,
-        "con": 8,
-        "int": 8,
-        "wis": 8,
-        "cha": 8
-      },
-      "hp": {
-        "die": "6",
-        "average": "5",
-        "numDice": "2",
-        "mod": -2
-      },
-      "senses": [
-
-      ],
-      "name": "Disruption Drone",
-      "image": "https://vignette.wikia.nocookie.net/masseffect/images/b/b6/ME3_disruption_drone.png/revision/latest/scale-to-width-down/350?cb=20130308125421",
-      "cr": "1/8",
-      "size": "Small",
-      "type": "Synthetic",
-      "unit": "Mech",
-      "alignment": "Neutral",
-      "profBonus": "2",
-      "barrier": null,
-      "speed": "fly 16m",
-      "dc": "13",
-      "ac": "8",
-      "xp": "25",
-      "id": "disruption_drone",
-      "damageResistances": [
-
-      ],
-      "damageImmunities": [
-        "poison",
-        "psychic"
-      ],
-      "conditionImmunities": [
-        "petrified",
-        "poisoned"
-      ],
-      "damageVulnerabilities": [
-        "lightning"
-      ],
-      "featuresActionsReactions": [
-        "kamikaze_attack"
+        "distortion_rocket"
       ],
       "savingThrows": [
 
@@ -3772,6 +3562,871 @@
       ],
       "savingThrows": [
 
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 1,
+        "dex": 1,
+        "con": 8,
+        "int": 10,
+        "wis": 6,
+        "cha": 1
+      },
+      "hp": {
+        "die": "6",
+        "average": "25",
+        "numDice": "10",
+        "mod": -10
+      },
+      "sp": {
+        "shields": 10,
+        "regen": "0"
+      },
+      "senses": [
+
+      ],
+      "name": "Turret",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/0c/ME3_Cerberus_Turret.png/revision/latest/scale-to-width-down/350?cb=20120322141943",
+      "cr": "1",
+      "size": "Small",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "0m",
+      "dc": "14",
+      "ac": "12",
+      "xp": "200",
+      "id": "turret",
+      "damageResistances": [
+        "bludgeoning"
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "mass_accelerator_machinegun",
+        "stationary"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 13,
+        "dex": 8,
+        "con": 14,
+        "int": 3,
+        "wis": 6,
+        "cha": 5
+      },
+      "hp": {
+        "die": "8",
+        "average": "26",
+        "numDice": "4",
+        "mod": 8
+      },
+      "senses": [
+        "darkvision 20m"
+      ],
+      "name": "Abomination",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/8/8e/AbominationME3.jpg/revision/latest/scale-to-width-down/316?cb=20121201211954",
+      "cr": "1",
+      "size": "Medium",
+      "type": "Synorg",
+      "unit": "Reaper",
+      "alignment": "Lawful evil",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "10m",
+      "dc": "14",
+      "ac": "11",
+      "xp": "200",
+      "id": "abomination",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "aggressive",
+        "post-mortem_explosion",
+        "grapple"
+      ],
+      "savingThrows": [
+        "wis"
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": {
+        "level": "15",
+        "dc": 18,
+        "hit": 10,
+        "mod": "Charisma",
+        "spellList": [
+          "charge",
+          "nova",
+          "warp"
+        ],
+        "spells": [
+          {
+            "level": "cantrip",
+            "spells": [
+
+            ]
+          },
+          {
+            "level": "1",
+            "slots": "5",
+            "spells": [
+
+            ]
+          },
+          {
+            "level": "2",
+            "slots": "5",
+            "spells": [
+
+            ]
+          },
+          {
+            "level": "3",
+            "slots": "4",
+            "spells": [
+
+            ]
+          },
+          {
+            "level": "4",
+            "slots": "4",
+            "spells": [
+
+            ]
+          },
+          {
+            "level": "5",
+            "slots": "2",
+            "spells": [
+
+            ]
+          }
+        ]
+      },
+      "techcasting": false,
+      "abilityScores": {
+        "str": 11,
+        "dex": 16,
+        "con": 11,
+        "int": 12,
+        "wis": 18,
+        "cha": 20
+      },
+      "hp": {
+        "die": "10",
+        "average": "165",
+        "numDice": "30",
+        "mod": 0
+      },
+      "senses": [
+        "darkvision 20m"
+      ],
+      "name": "Banshee",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/eb/ME3_Banshee.png/revision/latest/scale-to-width-down/548?cb=20120319210941",
+      "cr": "13",
+      "size": "Large",
+      "type": "Synorg",
+      "unit": "Reaper",
+      "alignment": "Lawful evil",
+      "profBonus": "5",
+      "barrier": "20",
+      "speed": "6m",
+      "dc": "17",
+      "ac": "16",
+      "xp": "10000",
+      "id": "banshee",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "wail",
+        "impale",
+        "teleporting_dodge",
+        "barrier",
+        "wail_attack",
+        "impale_attack",
+        "cast_a_spell"
+      ],
+      "savingThrows": [
+        "dex",
+        "wis"
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The brute makes two Smash attacks or two Clobber attacks."
+        }
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 20,
+        "dex": 12,
+        "con": 18,
+        "int": 9,
+        "wis": 6,
+        "cha": 12
+      },
+      "hp": {
+        "die": "10",
+        "average": "123",
+        "numDice": "13",
+        "mod": 52
+      },
+      "senses": [
+        "darkvision 20m"
+      ],
+      "name": "Brute",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/90/ME3_Brute.png/revision/latest/scale-to-width-down/700?cb=20120320023753",
+      "cr": "10",
+      "size": "Large",
+      "type": "Synorg",
+      "unit": "Reaper",
+      "alignment": "Lawful evil",
+      "profBonus": "4",
+      "barrier": null,
+      "speed": "14m",
+      "dc": "17",
+      "ac": "18",
+      "xp": "5900",
+      "id": "brute",
+      "damageResistances": [
+        "bludgeoning",
+        "piercing",
+        "slashing"
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "brutal_charge",
+        "smash",
+        "clobber",
+        "blood_frenzy"
+      ],
+      "savingThrows": [
+        "str",
+        "con"
+      ],
+      "skills": [
+        "athletics"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The cannibal makes 2 Arm Cannon attacks."
+        }
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 13,
+        "dex": 10,
+        "con": 10,
+        "int": 8,
+        "wis": 5,
+        "cha": 3
+      },
+      "hp": {
+        "die": "8",
+        "average": "72",
+        "numDice": "16",
+        "mod": 0
+      },
+      "senses": [
+        "darkvision 20m"
+      ],
+      "name": "Cannibal",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/1/1b/ME3_Cannibal.png/revision/latest/scale-to-width-down/339?cb=20120320020900",
+      "cr": "2",
+      "size": "Medium",
+      "type": "Synorg",
+      "unit": "Reaper",
+      "alignment": "Lawful evil",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "8m",
+      "dc": "14",
+      "ac": "13",
+      "xp": "450",
+      "id": "cannibal",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "cannibalize",
+        "frag_grenade",
+        "arm_cannon",
+        "bash",
+        "pack_tactics"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 13,
+        "dex": 8,
+        "con": 14,
+        "int": 3,
+        "wis": 6,
+        "cha": 5
+      },
+      "hp": {
+        "die": "8",
+        "average": "6",
+        "numDice": "1",
+        "mod": 2
+      },
+      "senses": [
+        "darkvision 20m"
+      ],
+      "name": "Husk",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/27/ME3_Husk.png/revision/latest/scale-to-width-down/350?cb=20120320012912",
+      "cr": "1/2",
+      "size": "Medium",
+      "type": "Synorg",
+      "unit": "Reaper",
+      "alignment": "Lawful evil",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "10m",
+      "dc": "13",
+      "ac": "11",
+      "xp": "100",
+      "id": "husk",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "aggressive",
+        "swipe"
+      ],
+      "savingThrows": [
+        "wis"
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The marauder makes 2 Phaeston attacks."
+        }
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 12,
+        "dex": 16,
+        "con": 13,
+        "int": 8,
+        "wis": 11,
+        "cha": 8
+      },
+      "hp": {
+        "die": "8",
+        "average": "44",
+        "numDice": "8",
+        "mod": 8
+      },
+      "sp": {
+        "shields": 15,
+        "regen": "15"
+      },
+      "senses": [
+        "darkvision 20m"
+      ],
+      "name": "Marauder",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/9b/ME3_Marauder.png/revision/latest/scale-to-width-down/219?cb=20120313015215",
+      "cr": "2",
+      "size": "Medium",
+      "type": "Synorg",
+      "unit": "Reaper",
+      "alignment": "Lawful evil",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "10m",
+      "dc": "14",
+      "ac": "15",
+      "xp": "450",
+      "id": "marauder",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "create_armor_plating",
+        "phaeston"
+      ],
+      "savingThrows": [
+        "dex"
+      ],
+      "skills": [
+        "survival"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The ravager makes two twin artillery cannon attacks."
+        }
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 16,
+        "dex": 14,
+        "con": 10,
+        "int": 8,
+        "wis": 11,
+        "cha": 11
+      },
+      "hp": {
+        "die": "10",
+        "average": "110",
+        "numDice": "20",
+        "mod": 0
+      },
+      "senses": [
+        "darkvision 20m"
+      ],
+      "name": "Ravager",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/7/7b/ME3_Ravager.png/revision/latest/scale-to-width-down/350?cb=20120319195950",
+      "cr": "6",
+      "size": "Large",
+      "type": "Synorg",
+      "unit": "Reaper",
+      "alignment": "Lawful evil",
+      "profBonus": "3",
+      "barrier": null,
+      "speed": "10m",
+      "dc": "15",
+      "ac": "12",
+      "xp": "2300",
+      "id": "ravager",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+        "charmed"
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "egg_sacs",
+        "acid_splash",
+        "twin_artillery_cannons"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The reaper harvester makes two harvester cannon attacks."
+        }
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 27,
+        "dex": 10,
+        "con": 25,
+        "int": 11,
+        "wis": 12,
+        "cha": 16
+      },
+      "hp": {
+        "die": "12",
+        "average": "364",
+        "numDice": "27",
+        "mod": 189
+      },
+      "senses": [
+        "darkvision 40m"
+      ],
+      "name": "Reaper Harvester",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/a/ae/ME3_Harvester.png/revision/latest/scale-to-width-down/350?cb=20120320013110",
+      "cr": "20",
+      "size": "Huge",
+      "type": "Synorg",
+      "unit": "Reaper",
+      "alignment": "Lawful evil",
+      "profBonus": "6",
+      "barrier": null,
+      "speed": "14m, burrow 14m, fly 26m",
+      "dc": "19",
+      "ac": "20",
+      "xp": "25000",
+      "id": "reaper_harvester",
+      "damageResistances": [
+        "bludgeoning",
+        "piercing",
+        "slashing"
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "harvester_cannon",
+        "detect",
+        "harvester_cannon_attack",
+        "spawn_husks"
+      ],
+      "savingThrows": [
+        "con",
+        "wis"
+      ],
+      "skills": [
+        "perception"
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 18,
+        "dex": 11,
+        "con": 16,
+        "int": 6,
+        "wis": 6,
+        "cha": 5
+      },
+      "hp": {
+        "die": "8",
+        "average": "52",
+        "numDice": "7",
+        "mod": 21
+      },
+      "senses": [
+        "darkvision 20m"
+      ],
+      "name": "Scion",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/d/da/ScionME3.jpg/revision/latest/scale-to-width-down/350?cb=20121201212433",
+      "cr": "9",
+      "size": "Medium",
+      "type": "Synorg",
+      "unit": "Reaper",
+      "alignment": "Lawful evil",
+      "profBonus": "4",
+      "barrier": null,
+      "speed": "8m",
+      "dc": "16",
+      "ac": "18",
+      "xp": "5000",
+      "id": "scion",
+      "damageResistances": [
+        "bludgeoning",
+        "piercing",
+        "slashing"
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "salvo",
+        "bash"
+      ],
+      "savingThrows": [
+        "con"
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 4,
+        "dex": 12,
+        "con": 8,
+        "int": 4,
+        "wis": 4,
+        "cha": 4
+      },
+      "hp": {
+        "die": "4",
+        "average": "4",
+        "numDice": "3",
+        "mod": -3
+      },
+      "senses": [
+        "darkvision 20m"
+      ],
+      "name": "Swarmer",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/8/82/ME3_Swarmer.png/revision/latest/scale-to-width-down/350?cb=20120319204747",
+      "cr": "1/8",
+      "size": "Tiny",
+      "type": "Synorg",
+      "unit": "Reaper",
+      "alignment": "Lawful evil",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "12m",
+      "dc": "13",
+      "ac": "10",
+      "xp": "25",
+      "id": "swarmer",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+        "charmed"
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "aggressive",
+        "suicide_attack"
+      ],
+      "savingThrows": [
+        "dex"
       ],
       "skills": [
 

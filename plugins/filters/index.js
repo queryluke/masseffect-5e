@@ -5,11 +5,13 @@ import article from './article'
 import featureTitle from './featureTitle'
 import formatDate from './formatDate'
 import groupDigits from './groupDigits'
+import npcBarrier from './npcBarrier'
 import npcDamage from './npcDamage'
 import npcDc from './npcDc'
 import npcName from './npcName'
 import npcSavingThrows from './npcSavingThrows'
 import ordinal from './ordinal'
+import removeActionId from './removeActionId'
 import weaponRange from './weaponRange'
 
 const customFilters = {
@@ -18,11 +20,13 @@ const customFilters = {
   featureTitle,
   formatDate,
   groupDigits,
+  npcBarrier,
   npcDamage,
   npcDc,
   npcName,
   npcSavingThrows,
   ordinal,
+  removeActionId,
   weaponRange
 }
 

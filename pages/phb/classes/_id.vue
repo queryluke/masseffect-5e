@@ -1,26 +1,24 @@
 <template lang="pug">
-  v-container(fluid)
-    v-layout(row wrap)
-      v-flex.sm12.md9
+  v-container(fluid grid-list-xl)
+    v-layout(row)
+      v-avatar(size="128" tile)
+        img(:src="`/images/classes/${id}.svg`")
+      div.pl-5
         h2.display-3 {{ item.name }}
         p {{ item.description}}
-      v-flex.hidden-sm-and-down.md3
-        me-icon(:name="item.id" type="classes")
+    v-layout(row wrap)
       v-flex.xs12
-        class-tabs(:colors="colors[item.id]").mb-3
-          class-attributes(:item="item" slot="attributes_tab_content")
-          subclass-info(:items="subclasses" slot="subclasses_tab_content")
-          spell-list(:spells="spells" slot="spell_list_tab_content")
-      v-flex.xs12
-        v-card.mb-3
-          v-card-title(:class="colors[item.id].primary").headline.white--text Progression Table
-          v-card-text
-            progression-table(
-              :headers="headers"
+        v-card
+          class-tabs(:colors="colors[item.id]").mb-3
+            progression-table(:headers="headers"
               v-bind:colors="colors[item.id]"
               v-bind:rows="progression"
               v-bind:spell_header="spellHeaders"
-              v-on:showDialog="showDialog")
+              v-on:showDialog="showDialog"
+              slot="progression_table_tab_content")
+            class-attributes(:item="item" v-bind:primaryColor="colors[item.id].primary" slot="attributes_tab_content")
+            subclass-info(:items="subclasses" v-bind:primaryColor="colors[item.id].primary" slot="subclasses_tab_content")
+            spell-list(:spells="spells" slot="spell_list_tab_content")
     v-layout(row grow).my-0.mt-4
       v-flex(v-if="previous.name").primary.pa-0.xs6
         v-list(:class="previous.colors.primary" dark).py-0
@@ -73,7 +71,17 @@
       this.id = this.$route.params.id
       let classes = this.getData('classes')
       let subclasses = this.getData('subclasses')
-      this.spells = this.getData('spells').filter(spell => spell[this.id])
+      this.spells = this.getData('spells').filter(spell => spell[this.id]).sort(function (a, b) {
+        if (a.type === b.type) {
+          if (a.level === b.level) {
+            return a.name > b.name ? 1 : -1
+          } else {
+            return a.level > b.level ? 1 : -1
+          }
+        } else {
+          return a.type > b.type ? 1 : -1
+        }
+      })
 
       this.features = this.getData('classFeatures')
       this.progression = this.getData(`${this.id}Progression`)
@@ -88,6 +96,16 @@
       })
       this.subclasses = subclasses.filter((sb) => {
         return sb.class.toLowerCase() === this.id
+      }).map((sb) => {
+        sb.features = []
+        for (const property in sb) {
+          if (!isNaN(property) && sb[property]) {
+            let name = sb[property][0].value
+            sb.features.push({ name, description: this.features.find(feat => feat.name === name) })
+          }
+        }
+        console.log(sb.features)
+        return sb
       })
 
       let index = classes.indexOf(this.item)
@@ -115,13 +133,13 @@
           text: ''
         },
         colors: {
-          '': { primary: 'primary', accent: 'red darken-4', link: 'red darken-4' },
-          adept: { primary: 'deep-purple darken-1', accent: 'purple accent-1', link: 'purple--text' },
-          engineer: { primary: 'amber darken-2', accent: 'blue-grey darken-1', link: 'amber--text text--darken-4' },
-          infiltrator: { primary: 'deep-orange darken-1', accent: 'grey darken-4', link: 'deep-orange--text text--darken-4' },
-          sentinel: { primary: 'green darken-2', accent: 'green accent-3', link: 'teal--text text--darken-4' },
-          soldier: { primary: 'primary', accent: 'grey lighten-1', link: '' },
-          vanguard: { primary: 'indigo darken-4', accent: 'light-blue accent-2', link: 'indigo--text darken-4' }
+          '': { primary: 'primary', link: 'red darken-4' },
+          adept: { primary: 'deep-purple darken-1', link: 'purple--text' },
+          engineer: { primary: 'amber darken-2', link: 'amber--text text--darken-4' },
+          infiltrator: { primary: 'deep-orange darken-1', link: 'deep-orange--text text--darken-4' },
+          sentinel: { primary: 'green darken-2', link: 'teal--text text--darken-4' },
+          soldier: { primary: 'primary', link: '' },
+          vanguard: { primary: 'indigo darken-4', link: 'indigo--text darken-4' }
         }
       }
     },

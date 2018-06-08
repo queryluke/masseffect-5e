@@ -1,5 +1,5 @@
 {
-  "updated": "April 28, 2018 @  2:41 PM",
+  "updated": "May 27, 2018 @  5:15 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRlWQ7v7esaQwLtD1yXcbiHM-jYHCzjC23cIfNFEcfbLhEcFSi8EIoLi1zZyCQtQFRneMqp02_pFWKH/pubhtml",
   "data": [
     {
@@ -205,7 +205,7 @@
       "piece": "Full Set",
       "type": "Heavy",
       "flavor": "The Terminus Armor is environmentally sealed with an independent air supply for use in space and extreme planetary conditions. Its on onboard microframe computer runs a suite of battle management software. To prevent detection by passive thermal sensors, body heat is channeled to the base of the feet and dispersed into the ground.",
-      "mechanic": "10 shields (regen 5). Speed +4m. When you lose hit points, as a reaction, you may expend a charge of medi-gel. +2 bonus to melee attack and damage rolls",
+      "mechanic": "10 shields (regen 5). +1 AC. Speed +4m. When you lose hit points, as a reaction, you may expend a charge of medi-gel. +2 bonus to melee attack and damage rolls",
       "cost": "64600",
       "manu": "Hahne-Kedar",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/23/ME3_Terminus_Assault_Armor.png/revision/latest?cb=20120314195928",
@@ -216,8 +216,8 @@
       "piece": "Full Set",
       "type": "Heavy",
       "flavor": "A favorite for Krogran gladiators. The armor is finished with a silver polish, which quickly becomes dented, scuffed, and bloodied. These \"battle scars\" tell the tale of a Krogan's feats.",
-      "mechanic": "Resistance to slashing and bludgeoning damage.",
-      "cost": "46750",
+      "mechanic": "Resistance to slashing and bludgeoning damage. +2 AC.",
+      "cost": "64750",
       "manu": "Elanus Risk Control Services",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/f/fd/Heavy-krogan-Warlord.png/revision/latest/scale-to-width-down/80?cb=20100209091717",
       "id": "warlord_armor"
@@ -228,7 +228,7 @@
       "type": "Light",
       "flavor": "Nightmare armor is worn by Cerberus Phantoms expecting long-range conflicts. Powerful capacitors deliver punishing energy to the Phantom's weapons, and circulating coolant in its gloves allows for more shots before a given thermal clip overheats. The remaining energy focuses on shield strength and regeneration time to help survivability.",
       "mechanic": "10 shields (regen 10). Increase your thermal clip capacity by 8. Equipped weapons have their heat increased by twice their base heat.",
-      "cost": "46750",
+      "cost": "48750",
       "manu": "Cerberus Skunkworks",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/6/67/Cerberus_shade.jpg/revision/latest/scale-to-width-down/350?cb=20130308134524",
       "id": "cerberus_nightmare_armor"
@@ -239,7 +239,7 @@
       "type": "Light",
       "flavor": "Spirit armor is worn by Cerberus Phantoms fortunate enough to be biotic or for those who are skilled enough to use highly technical attacks. The armor has small gains for shield strength and regeneration, but where it truly shines is in its capacity to amplify biotic amps and omni-tools. These attacks hit significantly harder and more often, allowing the Phantom to dismantle heavily-armored targets.",
       "mechanic": "Regain one 3rd-level or lower spell slot on a short rest. Increase your tech regen die by 2 die types (Max d12).",
-      "cost": "45050",
+      "cost": "47050",
       "manu": "Cerberus Skunkworks",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/5/5d/Cerberus_Shade_Female.png/revision/latest/scale-to-width-down/350?cb=20160619125819",
       "id": "cerberus_spirit_armor"
@@ -250,7 +250,7 @@
       "type": "Medium",
       "flavor": "Originally created for Earth's Urban Combat Championship league, this set of armor has undergone as much or more field testing than those of modern militaries. It uses a unique, proprietary power cell that costs as much as a EUCC rookie's contract. The armor's microframe computer adapts to any top-tier omni-tool, kinetic barrier, or biotic amp, giving breathtaking and error-free performance. The chest and shoulder piece bears the logo of the Edmonton Blood Dragons, and the inside of the armor bears the signatures of the entire team.",
       "mechanic": "20 shields (regen 10). When you roll a 1 on a damage die for an attack you make with a biotic or tech spell, you can reroll the die and must use the new roll, even if the new roll is a 1.  Regain one 3rd-level or lower spell slot on a short rest. Increase your tech regen die by 1 die type.",
-      "cost": "100300",
+      "cost": "101300",
       "manu": "Armax Arsenal",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/9c/ME3_Blood_Dragon_Armor.png/revision/latest?cb=20120314192826",
       "id": "blood_dragon_armor"
@@ -323,11 +323,11 @@
     },
     {
       "name": "Hermetic Suit Plating",
-      "piece": "Full Set",
+      "piece": "Body Armor",
       "type": "Medium",
       "flavor": "Specifically designed for Quarians to protect their suit from puncture damage.",
       "mechanic": "+1 AC",
-      "cost": "23800",
+      "cost": "18800",
       "manu": "Devlon Industries",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/08/Medium-human-Explorer.png/revision/latest/scale-to-width-down/160?cb=20100209161746",
       "id": "hermetic_suit_plating"
@@ -335,9 +335,9 @@
     {
       "name": "Kestrel Helmet",
       "piece": "Head",
-      "type": "Heavy",
+      "type": "-",
       "flavor": "The Kestrel armor system's helmet forgoes traditional transparent visors in favor of a reinforced faceplate with an internal heads-up display. The display connects to redundant micro cameras to allow naturalistic vision inside the well-padded interior. ",
-      "mechanic": "+1 AC",
+      "mechanic": "+2 AC",
       "cost": "11050",
       "manu": "Hahne-Kedar",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/7/71/ME3_kestrel_helmet.png/revision/latest/scale-to-width-down/115?cb=20120312190815",
@@ -346,9 +346,9 @@
     {
       "name": "Securitel Helmet",
       "piece": "Head",
-      "type": "Heavy",
+      "type": "-",
       "flavor": "The Securitel Helmet was originally designed as riot-gear. It is covered in ablative plating, well-padded to lessen damage from shocks, blows and bullet impacts. The helmet's emitters boost shielding in the rest of the armor, while its onboard computers monitor the wearer's heart-rate and central nervous system.",
-      "mechanic": "Any critical hit against you becomes a normal hit",
+      "mechanic": "+1 AC. Any critical hit against you becomes a normal hit",
       "cost": "21250",
       "manu": "Hahne-Kedar",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/6/69/ME3_securitel_helmet.png/revision/latest/scale-to-width-down/115?cb=20120312191724",
@@ -357,10 +357,10 @@
     {
       "name": "Kuwashii Visor",
       "piece": "Head",
-      "type": "Light",
+      "type": "-",
       "flavor": "Developed by Ariake Technologies, the wearer exchanges full protective coverage for visibility, unencumbered mobility, and increased accuracy.",
-      "mechanic": "-1 AC, As a bonus action, you choose a creature you can see within 30m. For the next minute, you deal an extra 1d6 damage to the target whenever you hit it with a weapon attack, and you have advantage on any Wisdom (Perception) or Wisdom (Survival) check you make to find it. You can use this feature 3 times per long rest.",
-      "cost": "34000",
+      "mechanic": "As a bonus action, you choose a creature you can see within 30m. For the next minute, you deal an extra 1d6 damage to the target whenever you hit it with a weapon attack, and you have advantage on any Wisdom (Perception) or Wisdom (Survival) check you make to find it. You can use this feature 3 times per long rest.",
+      "cost": "36000",
       "manu": "Ariake Technologies",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/00/ME3_kuwashii_visor.png/revision/latest?cb=20120312190654",
       "id": "kuwashii_visor"
@@ -368,10 +368,10 @@
     {
       "name": "Sentry Interface",
       "piece": "Head",
-      "type": "Light",
+      "type": "-",
       "flavor": "This visor works with the Sentry system, a software application that optimizes an armor suit's microframe computer. When the Sentry system is running, more power can be devoted to shield management.",
-      "mechanic": "-1 AC. Once per short rest, as a reaction to taking damamge, you may jumpstart your shield regen and immediately gain shield points equal to your regen amount.",
-      "cost": "12750",
+      "mechanic": "Once per short rest, as a reaction to taking damamge, you may jumpstart your shield regen and immediately gain shield points equal to your regen amount.",
+      "cost": "14750",
       "manu": "Hahne-Kedar",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/b/b7/ME3_sentry_interface.png/revision/latest/scale-to-width-down/115?cb=20120312190726",
       "id": "sentry_interface"
@@ -379,10 +379,10 @@
     {
       "name": "Archon Visor",
       "piece": "Head",
-      "type": "Light",
+      "type": "-",
       "flavor": "The Archon visor uses an efficiency algorithm to balance processing power for omni-tools. A heads-up display and voice command software allows users to micromanage the systems, reducing the cool-down period between energy expenditures.",
-      "mechanic": "-1 AC. Gain additional tech points equal to one half of either your Engineer, Sentinel, or Infiltrator level (your choice). Minimum 1.",
-      "cost": "17000",
+      "mechanic": "Gain additional tech points equal to one half of either your Engineer, Sentinel, or Infiltrator level (your choice). Minimum 1.",
+      "cost": "19000",
       "manu": "Devlon Industries",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/22/ME3_capacitor_helmet.png/revision/latest/scale-to-width-down/115?cb=20120312191432",
       "id": "archon_visor"
@@ -390,10 +390,10 @@
     {
       "name": "Umbra Visor",
       "piece": "Head",
-      "type": "Light",
+      "type": "-",
       "flavor": "A next-generation night-vision device that assists targeting. By detecting the focal point of the wearer's eyes and enhancing the image at that location, the visor helps direct a biotic power or a shot from an omni-tool exactly where the wearer is looking.",
-      "mechanic": "-1 AC. When you roll a 1 damage die for an attack you make with a tech power, you can reroll the die and must use the new roll, even if the new roll is a 1. ",
-      "cost": "17000",
+      "mechanic": "When you roll a 1 damage die for an attack you make with a tech power, you can reroll the die and must use the new roll, even if the new roll is a 1.",
+      "cost": "19000",
       "manu": "Hahne-Kedar",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/4/41/ME3_umbra_visor.png/revision/latest/scale-to-width-down/115?cb=20120312191552",
       "id": "umbra_visor"
@@ -401,10 +401,10 @@
     {
       "name": "Mnemonic Visor",
       "piece": "Head",
-      "type": "Light",
+      "type": "-",
       "flavor": "Relatively new to the market, the Mnemonic Visor is difficult to find outside Alliance space. Intended for biotic specialists, this headpiece plugs into the rest of the user's suit, gathering data so it can adapt to the wearer's tactics. It boosts biotic performance at critical moments to allow a soldier to perform with greater power than normally possible.",
-      "mechanic": "-1 AC. When you roll a 1 damage die for an attack you make with a biotic spell, you can reroll the die and must use the new roll, even if the new roll is a 1. ",
-      "cost": "17000",
+      "mechanic": "When you roll a 1 damage die for an attack you make with a biotic spell, you can reroll the die and must use the new roll, even if the new roll is a 1.",
+      "cost": "19000",
       "manu": "Hahne-Kedar",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/ea/ME3_mnemonic_visor.png/revision/latest/scale-to-width-down/115?cb=20120312191649",
       "id": "mnemonic_visor"
@@ -412,10 +412,10 @@
     {
       "name": "Delumcore Overlay",
       "piece": "Head",
-      "type": "Light",
+      "type": "-",
       "flavor": "Developed by Delumcore Systems, a VI inside this headgear enhances aim when targeting an enemy's vulnerable points.",
-      "mechanic": "-1 AC. You roll one additional weapon damage die when determining the extra damage for a cirtical hit with a ranged weapon attack.",
-      "cost": "17000",
+      "mechanic": "You roll one additional weapon damage die when determining the extra damage for a cirtical hit with a ranged weapon attack.",
+      "cost": "19000",
       "manu": "Delumcore Systems",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/d/d4/ME3_delumcore_overlay.png/revision/latest/scale-to-width-down/115?cb=20120312191745",
       "id": "delumcore_overlay"
@@ -423,10 +423,10 @@
     {
       "name": "Death Mask",
       "piece": "Head",
-      "type": "Medium",
+      "type": "-",
       "flavor": "Developed by Tyriel Advanced Communications Corporation (TACC), the latest version of the Death Mask offers exceptional protection and real-time data feedback that helps coordinate the wearer's melee attacks.",
-      "mechanic": "+1 AC. +1 on melee attack and damamge rolls",
-      "cost": "20400",
+      "mechanic": "+2 AC. +1 on melee attack and damamge rolls",
+      "cost": "21400",
       "manu": "Tyriel Advanced Communications Corporation",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/2d/ME3_death_mask.png/revision/latest?cb=20120312190621",
       "id": "death_mask"
@@ -434,10 +434,10 @@
     {
       "name": "Capacitor Helmet",
       "piece": "Head",
-      "type": "Medium",
+      "type": "-",
       "flavor": "A recent design, this Alliance-made helmet stores micro capacitors in its structure to replenish spent kinetic barriers. The transpari-plast armor panel on its top can be removed to access capacitors for field maintenance.",
-      "mechanic": "Once per short rest, as a reaction to taking damamge, you may jumpstart your shield regen and immediately gain shield points equal to your regen amount.",
-      "cost": "16150",
+      "mechanic": "+1 AC. Once per short rest, as a reaction to taking damamge, you may jumpstart your shield regen and immediately gain shield points equal to your regen amount.",
+      "cost": "17150",
       "manu": "Hahne-Kedar",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/22/ME3_capacitor_helmet.png/revision/latest/scale-to-width-down/115?cb=20120312191432",
       "id": "capacitor_helmet"
@@ -445,10 +445,10 @@
     {
       "name": "Recon Hood",
       "piece": "Head",
-      "type": "Medium",
+      "type": "-",
       "flavor": "A hood issued to covert action teams, this model's optic display interfaces with most small arm's auto-targeting software, linking hand and eye for improved accuracy and increased weapon damage. Ballistic-mesh fabric and composite ceramic plating provide necessary armor, and the integral air filter helps in hostile environments. ",
-      "mechanic": "Infrared Vision 60m. Darkvision 60m. You can toggle between the 2 vision types as a free action.",
-      "cost": "8500",
+      "mechanic": "+1 AC. Infrared Vision 60m. Darkvision 60m. You can toggle between the 2 vision types as a free action.",
+      "cost": "9500",
       "manu": "Kassa Fabrication",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/ee/ME3_recon_hood.png/revision/latest/scale-to-width-down/115?cb=20120312191621",
       "id": "recon_hood"
@@ -544,7 +544,7 @@
     {
       "name": "Personal Shield Generator",
       "piece": "None",
-      "type": "None",
+      "type": "-",
       "flavor": "A personal shield generator that offers shields outside of wearing armor.",
       "mechanic": "10 shields (regen 5). Improved models can be purchased. 10,000 for each 5 shield points, and 8,000 for 5 additional regen. Max is 30 shield points and 15 regen,",
       "cost": "15000",

@@ -4,6 +4,10 @@
     "description": "Deals lightning damage. On a hit, deals half damage to 1 additional creature within 2m of the hit target."
   },
   {
+    "name": "Burst Fire",
+    "description": "Can make a normal single-target attack, or it can spray a 4m-cube area within normal range with shots. Each creature in the area must succeed on a DC 15 Dexterity saving throw or take the weapon's normal damage. This action uses 3 heat."
+  },
+  {
     "name": "Charge",
     "description": "You can use your attack action to charge the weapon. Each charge consumes 1 heat and increases the RoF by 1. If the number of charges equals the heat of the weapon, it overheats and cannot be fired until reloaded."
   },
