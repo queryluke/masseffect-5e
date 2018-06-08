@@ -1,5 +1,5 @@
 {
-  "updated": "June  6, 2018 @ 10:51 PM",
+  "updated": "June  7, 2018 @  2:15 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pubhtml",
   "data": [
     {
@@ -95,7 +95,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Use a bonus action to create a biotic barrier around you that reduces incoming damage and fuels certain biotic abilities. Upon activating, you gain barrier ticks equal to the maximum shown on your class progression table. If multiclassing, gain the higher amount."
+          "data": "As an action or bonus action, you create a biotic barrier around you that reduces incoming damage and fuels certain biotic abilities. Upon activating, you gain barrier ticks equal to the maximum shown on your class progression table. If multiclassing, gain the higher amount."
         },
         {
           "id": 2,
@@ -114,7 +114,7 @@
         }
       ],
       "id": "barrier",
-      "mechanic_text_dump": "UseabonusactiontocreateabioticbarrieraroundyouthatreducesincomingdamageandfuelscertainbioticabilitiesUponactivatingyougainbarrierticksequaltothemaximumshownonyourclassprogressiontableIfmulticlassinggainthehigheramountWheneveryoutakedamagewhilebarrierisactiveremove1barriertickandreducethedamageby1d8Barrierlasts1minuteItendsearlyifyouareknockedunconsciousorhavenobarrierticksremainingYoucanalsoendbarrieronyourturnasabonusactionOnceyouhaveusedbarrierthemaximumnumberoftimesforyourAdeptSentinelofVanguardlevelwhicheverishighestyoumustfinishalongrestbeforeyoucanuseitagainYoumayusebarrier2timesat1stlevel3at3rd4at6th5at12thand6at17th"
+      "mechanic_text_dump": "AsanactionorbonusactionyoucreateabioticbarrieraroundyouthatreducesincomingdamageandfuelscertainbioticabilitiesUponactivatingyougainbarrierticksequaltothemaximumshownonyourclassprogressiontableIfmulticlassinggainthehigheramountWheneveryoutakedamagewhilebarrierisactiveremove1barriertickandreducethedamageby1d8Barrierlasts1minuteItendsearlyifyouareknockedunconsciousorhavenobarrierticksremainingYoucanalsoendbarrieronyourturnasabonusactionOnceyouhaveusedbarrierthemaximumnumberoftimesforyourAdeptSentinelofVanguardlevelwhicheverishighestyoumustfinishalongrestbeforeyoucanuseitagainYoumayusebarrier2timesat1stlevel3at3rd4at6th5at12thand6at17th"
     },
     {
       "name": "Bend Luck",
