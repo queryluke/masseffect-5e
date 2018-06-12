@@ -1,0 +1,14 @@
+---
+id: assault_armor
+name: Assault Armor
+---
+Starting at {{ level }} level, your Tech Armor is rigged for maximum protection and keeping the action on you. When 
+you activate tech armor, you project a distracting holographic image (your choice) and each creature within 20m 
+that can see you must make a Wisdom saving throw (DC = 8 + proficiency bonus + Intelligence modifier). On a failure, 
+a creature is compelled to attack you while your Tech Armor is active. A creature that is compelled to attack you always 
+targets you when it makes a weapon or spell attack.
+
+Each time a creature that is compelled to attack you takes damage from source other than you, it makes a new Wisdom saving 
+throw against the spell. If the saving throw succeeds, the spell ends.
+
+Synthetic creatures have advantage on the Wisdom saving throw.
