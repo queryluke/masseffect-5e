@@ -27,6 +27,7 @@ __Specialty__. To determine the nature of your scholarly training, roll a d8 or 
 You gain a tool proficiency based on your choice.
 
 1d8 | Field of Study | Proficiency
+--- | --- | ---
 1 | Chemistry | Chemist's kit or Brewer's kit
 2	| Astronomy | Starship system (navigation)
 3	| Engineering | Tinker's Tools
