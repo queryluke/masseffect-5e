@@ -1,5 +1,5 @@
 {
-  "updated": "June  6, 2018 @ 10:10 PM",
+  "updated": "June 14, 2018 @  8:50 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -18,18 +18,18 @@
           "value": [
             {
               "key": "biotic_powers",
-              "display": "Biotic Powers(2:1)",
+              "display": "biotic_powers",
               "subclass_progression": null
             },
             {
               "key": "barrier",
-              "display": "Barrier",
+              "display": "barrier",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "2"
         },
         {
@@ -55,6 +55,14 @@
         {
           "key": "5",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": "2"
+        },
+        {
+          "key": "spelllevel",
+          "value": "1"
         }
       ]
     },
@@ -73,14 +81,14 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass_feature",
-              "display": "Subclass Feature",
-              "subclass_progression": 1
+              "key": "subclass",
+              "display": "subclass",
+              "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "2"
         },
         {
@@ -106,6 +114,14 @@
         {
           "key": "5",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     },
@@ -125,13 +141,13 @@
           "value": [
             {
               "key": "biotic_powers",
-              "display": "Biotic Powers(1:1)",
+              "display": "biotic_powers",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "2"
         },
         {
@@ -157,6 +173,14 @@
         {
           "key": "5",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": "1"
+        },
+        {
+          "key": "spelllevel",
+          "value": "1"
         }
       ]
     },
@@ -176,13 +200,13 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "2"
         },
         {
@@ -208,6 +232,14 @@
         {
           "key": "5",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     },
@@ -227,13 +259,13 @@
           "value": [
             {
               "key": "biotic_powers",
-              "display": "Biotic Powers(2:2)",
+              "display": "biotic_powers",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "2"
         },
         {
@@ -259,6 +291,14 @@
         {
           "key": "5",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": "2"
+        },
+        {
+          "key": "spelllevel",
+          "value": "2"
         }
       ]
     },
@@ -277,14 +317,14 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass_feature",
-              "display": "Subclass Feature",
-              "subclass_progression": 2
+              "key": "subclass",
+              "display": "subclass",
+              "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "2"
         },
         {
@@ -310,6 +350,14 @@
         {
           "key": "5",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     },
@@ -329,13 +377,13 @@
           "value": [
             {
               "key": "biotic_powers",
-              "display": "Biotic Powers(1:2)",
+              "display": "biotic_powers",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "3"
         },
         {
@@ -361,6 +409,14 @@
         {
           "key": "5",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": "1"
+        },
+        {
+          "key": "spelllevel",
+          "value": "2"
         }
       ]
     },
@@ -380,13 +436,13 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "3"
         },
         {
@@ -412,6 +468,14 @@
         {
           "key": "5",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     },
@@ -431,13 +495,13 @@
           "value": [
             {
               "key": "biotic_powers",
-              "display": "Biotic Powers(2:3)",
+              "display": "biotic_powers",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "3"
         },
         {
@@ -463,6 +527,14 @@
         {
           "key": "5",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": "2"
+        },
+        {
+          "key": "spelllevel",
+          "value": "3"
         }
       ]
     },
@@ -481,14 +553,14 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass_feature",
-              "display": "Subclass Feature",
-              "subclass_progression": 3
+              "key": "subclass",
+              "display": "subclass",
+              "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "3"
         },
         {
@@ -514,6 +586,14 @@
         {
           "key": "5",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     },
@@ -533,13 +613,13 @@
           "value": [
             {
               "key": "biotic_powers",
-              "display": "Biotic Powers(2:3)",
+              "display": "biotic_powers",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "3"
         },
         {
@@ -565,6 +645,14 @@
         {
           "key": "5",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": "2"
+        },
+        {
+          "key": "spelllevel",
+          "value": "3"
         }
       ]
     },
@@ -584,13 +672,13 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "3"
         },
         {
@@ -616,6 +704,14 @@
         {
           "key": "5",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     },
@@ -635,13 +731,13 @@
           "value": [
             {
               "key": "biotic_powers",
-              "display": "Biotic Powers(2:4)",
+              "display": "biotic_powers",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "4"
         },
         {
@@ -667,6 +763,14 @@
         {
           "key": "5",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": "2"
+        },
+        {
+          "key": "spelllevel",
+          "value": "4"
         }
       ]
     },
@@ -685,14 +789,14 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass_feature",
-              "display": "Subclass Feature",
-              "subclass_progression": 4
+              "key": "subclass",
+              "display": "subclass",
+              "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "4"
         },
         {
@@ -718,6 +822,14 @@
         {
           "key": "5",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     },
@@ -737,13 +849,13 @@
           "value": [
             {
               "key": "biotic_powers",
-              "display": "Biotic Powers(2:4)",
+              "display": "biotic_powers",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "4"
         },
         {
@@ -769,6 +881,14 @@
         {
           "key": "5",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": "2"
+        },
+        {
+          "key": "spelllevel",
+          "value": "4"
         }
       ]
     },
@@ -788,13 +908,13 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "4"
         },
         {
@@ -820,6 +940,14 @@
         {
           "key": "5",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     },
@@ -839,13 +967,13 @@
           "value": [
             {
               "key": "empowered_biotics",
-              "display": "Empowered Biotics",
+              "display": "empowered_biotics",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "4"
         },
         {
@@ -871,6 +999,14 @@
         {
           "key": "5",
           "value": "1"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     },
@@ -890,13 +1026,13 @@
           "value": [
             {
               "key": "biotic_mastery",
-              "display": "Biotic Mastery",
+              "display": "biotic_mastery",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "4"
         },
         {
@@ -922,6 +1058,14 @@
         {
           "key": "5",
           "value": "1"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     },
@@ -941,13 +1085,13 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "5"
         },
         {
@@ -973,6 +1117,14 @@
         {
           "key": "5",
           "value": "2"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     },
@@ -992,13 +1144,13 @@
           "value": [
             {
               "key": "signature_biotics",
-              "display": "Signature Biotics",
+              "display": "signature_biotics",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "5"
         },
         {
@@ -1024,6 +1176,14 @@
         {
           "key": "5",
           "value": "3"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     }
@@ -1068,6 +1228,14 @@
     {
       "display": "5th",
       "spell_header": true
+    },
+    {
+      "display": "numSpells",
+      "spell_header": false
+    },
+    {
+      "display": "spellLevel",
+      "spell_header": false
     }
   ]
 }

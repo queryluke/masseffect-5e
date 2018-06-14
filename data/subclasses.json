@@ -1,5 +1,5 @@
 {
-  "updated": "June  2, 2018 @  4:34 PM",
+  "updated": "June 14, 2018 @  8:50 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -9,25 +9,25 @@
       "1": [
         {
           "key": "pure_biotics",
-          "value": "Pure Biotics"
+          "value": "pure_biotics"
         }
       ],
       "2": [
         {
           "key": "expert_biotic",
-          "value": "Expert Biotic"
+          "value": "expert_biotic"
         }
       ],
       "3": [
         {
           "key": "biotic_split",
-          "value": "Biotic Split"
+          "value": "biotic_split"
         }
       ],
       "4": [
         {
           "key": "overchannel",
-          "value": "Overchannel"
+          "value": "overchannel"
         }
       ],
       "5": null,
@@ -45,25 +45,25 @@
       "1": [
         {
           "key": "sculpt_biotics",
-          "value": "Sculpt Biotics"
+          "value": "sculpt_biotics"
         }
       ],
       "2": [
         {
           "key": "bend_luck",
-          "value": "Bend Luck"
+          "value": "bend_luck"
         }
       ],
       "3": [
         {
           "key": "focused_biotics",
-          "value": "Focused Biotics"
+          "value": "focused_biotics"
         }
       ],
       "4": [
         {
           "key": "biotic_control",
-          "value": "Biotic Control"
+          "value": "biotic_control"
         }
       ],
       "5": null,
@@ -81,25 +81,25 @@
       "1": [
         {
           "key": "dark_biotics",
-          "value": "Dark Biotics"
+          "value": "dark_biotics"
         }
       ],
       "2": [
         {
           "key": "biotic_surge",
-          "value": "Biotic Surge"
+          "value": "biotic_surge"
         }
       ],
       "3": [
         {
           "key": "potent_biotics",
-          "value": "Potent Biotics"
+          "value": "potent_biotics"
         }
       ],
       "4": [
         {
           "key": "biotic_concentration",
-          "value": "Biotic Concentration"
+          "value": "biotic_concentration"
         }
       ],
       "5": null,
@@ -117,43 +117,43 @@
       "1": [
         {
           "key": "advanced_weapon_holsters",
-          "value": "Advanced Weapon Holsters"
+          "value": "advanced_weapon_holsters"
         },
         {
           "key": "weapon_training",
-          "value": " Weapon Training"
+          "value": " weapon_training"
         }
       ],
       "2": [
         {
-          "key": "makeshift_grenades",
-          "value": "Makeshift Grenades"
+          "key": "makeshift_grenades_",
+          "value": "makeshift_grenades_1"
         },
         {
-          "key": "extra_attack",
-          "value": " Extra Attack"
+          "key": "extra_attack_",
+          "value": " extra_attack_1"
         }
       ],
       "3": [
         {
           "key": "heavy_weapon_hack",
-          "value": "Heavy Weapon Hack"
+          "value": "heavy_weapon_hack"
         },
         {
           "key": "fighting_style",
-          "value": " Fighting Style"
+          "value": " fighting_style"
         }
       ],
       "4": [
         {
-          "key": "makeshift_grenades",
-          "value": "Makeshift Grenades"
+          "key": "makeshit_grenades_",
+          "value": "makeshit_grenades_2"
         }
       ],
       "5": [
         {
           "key": "paint_by_number",
-          "value": "Paint by Number"
+          "value": "paint_by_number"
         }
       ],
       "id": [
@@ -170,35 +170,35 @@
       "1": [
         {
           "key": "drone_companion",
-          "value": "Drone Companion"
+          "value": "drone_companion"
         },
         {
           "key": "drones_bond",
-          "value": " Drone's Bond"
+          "value": " drones_bond"
         }
       ],
       "2": [
         {
           "key": "coordinated_attack",
-          "value": "Coordinated Attack"
+          "value": "coordinated_attack"
         }
       ],
       "3": [
         {
-          "key": "drones_defense",
-          "value": "Drone's Defense"
+          "key": "drones_defense_",
+          "value": "drones_defense_1"
         }
       ],
       "4": [
         {
           "key": "assault_protocol",
-          "value": "Assault Protocol"
+          "value": "assault_protocol"
         }
       ],
       "5": [
         {
-          "key": "drones_defense",
-          "value": "Drone's Defense"
+          "key": "drones_defense_",
+          "value": "drones_defense_2"
         }
       ],
       "id": [
@@ -214,32 +214,32 @@
       "description": "The name says it all. As a medic, you'll be one on the field that can dress a wound and get your comrades back into fighting shape.",
       "1": [
         {
-          "key": "repair_drone",
-          "value": "Repair Drone"
+          "key": "repair_drone_",
+          "value": "repair_drone_1"
         }
       ],
       "2": [
         {
           "key": "medi-gel_enhancements",
-          "value": "Medi-gel Enhancements"
+          "value": "medi-gel_enhancements"
         }
       ],
       "3": [
         {
           "key": "shield_boost",
-          "value": "Shield Boost"
+          "value": "shield_boost"
         }
       ],
       "4": [
         {
-          "key": "repair_drone",
-          "value": "Repair Drone"
+          "key": "repair_drone_",
+          "value": "repair_drone_2"
         }
       ],
       "5": [
         {
           "key": "supply_pylon",
-          "value": "Supply Pylon"
+          "value": "supply_pylon"
         }
       ],
       "id": [
@@ -256,25 +256,25 @@
       "1": [
         {
           "key": "up_close_and_personal",
-          "value": "Up Close and Personal"
+          "value": "up_close_and_personal"
         }
       ],
       "2": [
         {
           "key": "silent_cloak",
-          "value": "Silent Cloak"
+          "value": "silent_cloak"
         }
       ],
       "3": [
         {
           "key": "tactical_ambush",
-          "value": "Tactical Ambush"
+          "value": "tactical_ambush"
         }
       ],
       "4": [
         {
           "key": "sudden_strike",
-          "value": "Sudden Strike"
+          "value": "sudden_strike"
         }
       ],
       "5": null,
@@ -292,33 +292,33 @@
       "1": [
         {
           "key": "ear_for_deceit",
-          "value": "Ear for Deceit"
+          "value": "ear_for_deceit"
         },
         {
           "key": "eye_for_detail",
-          "value": " Eye for Detail"
+          "value": " eye_for_detail"
         },
         {
           "key": "insightful_fighting",
-          "value": " Insightful Fighting"
+          "value": " insightful_fighting"
         }
       ],
       "2": [
         {
           "key": "infiltration",
-          "value": "Infiltration"
+          "value": "infiltration"
         }
       ],
       "3": [
         {
           "key": "saboteurs_touch",
-          "value": "Saboteur's Touch"
+          "value": "saboteurs_touch"
         }
       ],
       "4": [
         {
           "key": "eye_for_weakness",
-          "value": "Eye for Weakness"
+          "value": "eye_for_weakness"
         }
       ],
       "5": null,
@@ -336,25 +336,25 @@
       "1": [
         {
           "key": "dropshot",
-          "value": "Dropshot"
+          "value": "dropshot"
         }
       ],
       "2": [
         {
           "key": "deadeye",
-          "value": "Deadeye"
+          "value": "deadeye"
         }
       ],
       "3": [
         {
           "key": "combat_heuristics",
-          "value": "Combat Heuristics"
+          "value": "combat_heuristics"
         }
       ],
       "4": [
         {
           "key": "killshot",
-          "value": "Killshot"
+          "value": "killshot"
         }
       ],
       "5": null,
@@ -372,31 +372,31 @@
       "1": [
         {
           "key": "master_tactician",
-          "value": "Master Tactician"
+          "value": "master_tactician"
         }
       ],
       "2": [
         {
           "key": "biotic_enfilade",
-          "value": "Biotic Enfilade"
+          "value": "biotic_enfilade"
         }
       ],
       "3": [
         {
           "key": "tactical_advantage",
-          "value": "Tactical Advantage"
+          "value": "tactical_advantage"
         }
       ],
       "4": [
         {
-          "key": "master_duelist",
-          "value": "Master Duelist"
+          "key": "master_deulist",
+          "value": "master_deulist"
         }
       ],
       "5": [
         {
           "key": "synchronized_assault",
-          "value": "Synchronized Assault"
+          "value": "synchronized_assault"
         }
       ],
       "id": [
@@ -413,31 +413,31 @@
       "1": [
         {
           "key": "assault_armor",
-          "value": "Assault Armor"
+          "value": "assault_armor"
         }
       ],
       "2": [
         {
-          "key": "improved_tech_armor",
-          "value": "Improved Tech Armor"
+          "key": "improved_tech_armor_",
+          "value": "improved_tech_armor_1"
         }
       ],
       "3": [
         {
-          "key": "tech_armor_overload",
-          "value": "Tech Armor Overload"
+          "key": "tech_armor_overload_",
+          "value": "tech_armor_overload_1"
         }
       ],
       "4": [
         {
-          "key": "improved_tech_armor",
-          "value": "Improved Tech Armor"
+          "key": "improved_tech_armor_",
+          "value": "improved_tech_armor_2"
         }
       ],
       "5": [
         {
-          "key": "tech_armor_overload",
-          "value": "Tech Armor Overload"
+          "key": "tech_armor_overload_",
+          "value": "tech_armor_overload_2"
         }
       ],
       "id": [
@@ -454,39 +454,39 @@
       "1": [
         {
           "key": "omni-shield",
-          "value": "Omni-Shield"
+          "value": "omni-shield"
         },
         {
           "key": "expertise",
-          "value": " Expertise"
+          "value": " expertise"
         }
       ],
       "2": [
         {
-          "key": "tech_aura",
-          "value": "Tech Aura"
+          "key": "tech_aura_",
+          "value": "tech_aura_1"
         }
       ],
       "3": [
         {
           "key": "sculpt_biotics",
-          "value": "Sculpt Biotics"
+          "value": "sculpt_biotics"
         },
         {
           "key": "expertise",
-          "value": " Expertise"
+          "value": " expertise"
         }
       ],
       "4": [
         {
-          "key": "tech_aura",
-          "value": "Tech Aura"
+          "key": "tech_aura_",
+          "value": "tech_aura_2"
         }
       ],
       "5": [
         {
-          "key": "tech_aura_improvement",
-          "value": "Tech Aura Improvement"
+          "key": "tech_aura_",
+          "value": "tech_aura_3"
         }
       ],
       "id": [
@@ -503,31 +503,31 @@
       "1": [
         {
           "key": "combat_power",
-          "value": "Combat Power"
+          "value": "combat_power"
         }
       ],
       "2": [
         {
           "key": "combat_power",
-          "value": "Combat Power"
+          "value": "combat_power"
         }
       ],
       "3": [
         {
           "key": "combat_power",
-          "value": "Combat Power"
+          "value": "combat_power"
         }
       ],
       "4": [
         {
           "key": "combat_power",
-          "value": "Combat Power"
+          "value": "combat_power"
         }
       ],
       "5": [
         {
           "key": "combat_power",
-          "value": "Combat Power"
+          "value": "combat_power"
         }
       ],
       "id": [
@@ -544,31 +544,31 @@
       "1": [
         {
           "key": "weapon_of_choice",
-          "value": "Weapon of Choice"
+          "value": "weapon_of_choice"
         }
       ],
       "2": [
         {
           "key": "strafe",
-          "value": "Strafe"
+          "value": "strafe"
         }
       ],
       "3": [
         {
           "key": "improved_weapon_superiority",
-          "value": "Improved Weapon Superiority"
+          "value": "improved_weapon_superiority"
         }
       ],
       "4": [
         {
           "key": "devastating_critical",
-          "value": "Devastating Critical"
+          "value": "devastating_critical"
         }
       ],
       "5": [
         {
           "key": "improved_weapon_superiority",
-          "value": "Improved Weapon Superiority"
+          "value": "improved_weapon_superiority"
         }
       ],
       "id": [
@@ -585,31 +585,31 @@
       "1": [
         {
           "key": "steady_aim",
-          "value": "Steady Aim"
+          "value": "steady_aim"
         }
       ],
       "2": [
         {
           "key": "careful_eyes",
-          "value": "Careful Eyes"
+          "value": "careful_eyes"
         }
       ],
       "3": [
         {
           "key": "close-quarters_shooter",
-          "value": "Close-Quarters Shooter"
+          "value": "close-quarters_shooter"
         }
       ],
       "4": [
         {
           "key": "rapid_strike",
-          "value": "Rapid Strike"
+          "value": "rapid_strike"
         }
       ],
       "5": [
         {
           "key": "snap_shot",
-          "value": "Snap Shot"
+          "value": "snap_shot"
         }
       ],
       "id": [
@@ -625,32 +625,32 @@
       "description": "Battle masters use their barrier to execute unique maneuvers on the battlefield, controlling and harrying enemy forces.",
       "1": [
         {
-          "key": "biotic_maneuvers",
-          "value": "Biotic Maneuvers"
+          "key": "biotic_maneuvers_",
+          "value": "biotic_maneuvers_1"
         }
       ],
       "2": [
         {
-          "key": "improved_barrier",
-          "value": "Improved Barrier"
+          "key": "improved_barrier_",
+          "value": "improved_barrier_1"
         }
       ],
       "3": [
         {
-          "key": "biotic_maneuvers",
-          "value": "Biotic Maneuvers"
+          "key": "biotic_maneuvers_",
+          "value": "biotic_maneuvers_2"
         }
       ],
       "4": [
         {
-          "key": "improved_barrier",
-          "value": "Improved Barrier"
+          "key": "improved_barrier_",
+          "value": "improved_barrier_2"
         }
       ],
       "5": [
         {
-          "key": "biotic_maneuvers",
-          "value": "Biotic Maneuvers"
+          "key": "biotic_maneuvers_",
+          "value": "biotic_maneuvers_2"
         }
       ],
       "id": [
@@ -666,32 +666,32 @@
       "description": "Shock troopers like to fight up close and personal, using charge to dash around the battlefield and striking their opponents with devastating melee strikes.",
       "1": [
         {
-          "key": "biotic_slash",
-          "value": "Biotic Slash"
+          "key": "biotic_slash_",
+          "value": "biotic_slash_1"
         }
       ],
       "2": [
         {
           "key": "biotic_bull_rush",
-          "value": "Biotic Bull Rush"
+          "value": "biotic_bull_rush"
         }
       ],
       "3": [
         {
-          "key": "improved_biotic_slash",
-          "value": "Improved Biotic Slash"
+          "key": "biotic_slash_",
+          "value": "biotic_slash_2"
         }
       ],
       "4": [
         {
           "key": "biotic_focus",
-          "value": "Biotic Focus"
+          "value": "biotic_focus"
         }
       ],
       "5": [
         {
           "key": "opportunist",
-          "value": "Opportunist"
+          "value": "opportunist"
         }
       ],
       "id": [
@@ -707,32 +707,32 @@
       "description": "Nemesis vanguards prefer distance and using biotic powers. While they lack the raw power of an adept, they're more agile and much harder to take down.",
       "1": [
         {
-          "key": "metabiotics",
-          "value": "Metabiotics"
+          "key": "metabiotics_",
+          "value": "metabiotics_1"
         }
       ],
       "2": [
         {
           "key": "vengeance",
-          "value": "Vengeance"
+          "value": "vengeance"
         }
       ],
       "3": [
         {
           "key": "teleporting_dodge",
-          "value": "Teleporting Dodge"
+          "value": "teleporting_dodge"
         }
       ],
       "4": [
         {
-          "key": "metabiotics",
-          "value": "Metabiotics"
+          "key": "metabiotics_",
+          "value": "metabiotics_2"
         }
       ],
       "5": [
         {
           "key": "biotic_attacks",
-          "value": "Biotic Attacks"
+          "value": "biotic_attacks"
         }
       ],
       "id": [

@@ -1,5 +1,5 @@
 {
-  "updated": "April 12, 2018 @ 12:03 PM",
+  "updated": "June 14, 2018 @  8:50 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -18,22 +18,26 @@
           "value": [
             {
               "key": "drone",
-              "display": "Drone",
+              "display": "drone",
               "subclass_progression": null
             },
             {
               "key": "tech_power",
-              "display": "Tech Power(2)",
+              "display": "tech_power",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "4"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
+          "value": "2"
+        },
+        {
+          "key": "numspells",
           "value": "2"
         }
       ]
@@ -53,19 +57,23 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass_feature",
-              "display": "Subclass Feature",
-              "subclass_progression": 1
+              "key": "subclass",
+              "display": "subclass",
+              "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "6"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "2"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     },
@@ -85,18 +93,22 @@
           "value": [
             {
               "key": "engineers_efficiency",
-              "display": "Engineer's Efficiency",
+              "display": "engineers_efficiency",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "8"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "3"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     },
@@ -116,18 +128,22 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "10"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "3"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     },
@@ -147,18 +163,22 @@
           "value": [
             {
               "key": "tech_power",
-              "display": "Tech Power(2)",
+              "display": "tech_power",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "12"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "4"
+        },
+        {
+          "key": "numspells",
+          "value": "2"
         }
       ]
     },
@@ -177,19 +197,23 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass_feature",
-              "display": "Subclass Feature",
-              "subclass_progression": 2
+              "key": "subclass",
+              "display": "subclass",
+              "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "14"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "4"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     },
@@ -209,18 +233,22 @@
           "value": [
             {
               "key": "tech_power",
-              "display": "Tech Power(1)",
+              "display": "tech_power",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "16"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "5"
+        },
+        {
+          "key": "numspells",
+          "value": "1"
         }
       ]
     },
@@ -240,18 +268,22 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "18"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "5"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     },
@@ -271,18 +303,22 @@
           "value": [
             {
               "key": "tech_power",
-              "display": "Tech Power(2)",
+              "display": "tech_power",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "20"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "5"
+        },
+        {
+          "key": "numspells",
+          "value": "2"
         }
       ]
     },
@@ -301,19 +337,23 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass_feature",
-              "display": "Subclass Feature",
-              "subclass_progression": 3
+              "key": "subclass",
+              "display": "subclass",
+              "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "22"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "6"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     },
@@ -333,18 +373,22 @@
           "value": [
             {
               "key": "tech_power",
-              "display": "Tech Power(1)",
+              "display": "tech_power",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "24"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "6"
+        },
+        {
+          "key": "numspells",
+          "value": "1"
         }
       ]
     },
@@ -364,18 +408,22 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "26"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "6"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     },
@@ -395,18 +443,22 @@
           "value": [
             {
               "key": "tech_power",
-              "display": "Tech Power(2)",
+              "display": "tech_power",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "28"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "7"
+        },
+        {
+          "key": "numspells",
+          "value": "2"
         }
       ]
     },
@@ -425,19 +477,23 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass_feature",
-              "display": "Subclass Feature",
-              "subclass_progression": 4
+              "key": "subclass",
+              "display": "subclass",
+              "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "30"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "7"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     },
@@ -457,18 +513,22 @@
           "value": [
             {
               "key": "tech_power",
-              "display": "Tech Power(1)",
+              "display": "tech_power",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "33"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "8"
+        },
+        {
+          "key": "numspells",
+          "value": "1"
         }
       ]
     },
@@ -488,18 +548,22 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "36"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "8"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     },
@@ -519,18 +583,22 @@
           "value": [
             {
               "key": "tech_power",
-              "display": "Tech Power(2)",
+              "display": "tech_power",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "39"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "9"
+        },
+        {
+          "key": "numspells",
+          "value": "2"
         }
       ]
     },
@@ -549,19 +617,23 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass_feature",
-              "display": "Subclass feature",
-              "subclass_progression": 5
+              "key": "subclass",
+              "display": "subclass",
+              "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "42"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "9"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     },
@@ -581,18 +653,22 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "44"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "10"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     },
@@ -612,18 +688,22 @@
           "value": [
             {
               "key": "invention",
-              "display": "Invention",
+              "display": "invention",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "50"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "10"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     }
@@ -647,6 +727,10 @@
     },
     {
       "display": "Max TP",
+      "spell_header": false
+    },
+    {
+      "display": "numSpells",
       "spell_header": false
     }
   ]
