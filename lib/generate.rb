@@ -22,10 +22,8 @@ class String
 end
 
 require_relative 'config_races'
-require_relative 'set_features'
 require_relative 'configure_monster'
 require_relative 'insert_dd'
-require_relative 'create_class_list'
 require_relative 'config_spells'
 require_relative 'generate_renderable'
 require_relative 'generate_model'
