@@ -4,7 +4,7 @@ const postFilenameRegex = /^(\d+-\d+-\d+)-(.*)\.md$/g
 
 let postFilenameParts
 const jsonDirs = ['classes']
-const mdDirs = ['posts', 'backgrounds', 'kits', 'class_features']
+const mdDirs = ['posts', 'backgrounds', 'kits', 'class_features', 'changelog']
 
 export default {
   nuxtServerInit () {
@@ -28,12 +28,13 @@ export default {
             item.url = `/news/${item.slug}`
           }
 
-          if (dir === 'versions') {
+          if (dir === 'changelog') {
             item = file.replace(/.md$/, '')
           }
           return item
         })
-        this.dispatch('instantiateState', { key: _.camelCase(dir), items })
+        const key = dir === 'changelog' ? 'versions' : _.camelCase(dir)
+        this.dispatch('instantiateState', { key: key, items })
       }
 
       // process jsDirs
