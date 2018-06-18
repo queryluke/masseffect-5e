@@ -6,7 +6,7 @@
       the provided NPC Archetypes with various races, weapons, and abilities, but this can be rather time consuming.
     p.
       This generator enables you to quickly create random grunts with a given Challenge Rating (CR). CRs only go up to 12
-      because higher CRs represent much more powerful monsters. As a point of reference, a Banshee has a CR of 10, so
+      because higher CRs represent much more powerful monsters. As a point of reference, a Banshee has a CR of 13, so
       a grunt with a CR of 12 would represent a #[em very] experienced and deadly NPC.
     v-card.mt-3
       v-card-text
