@@ -1,5 +1,5 @@
 ---
-id: adrenaline_rush
+id: adrenaline_rush_1
 name: Adrenaline Rush
 ---
 On your turn, you can inject yourself with a shot of adrenaline, pushing yourself beyond your normal limits for a moment. 

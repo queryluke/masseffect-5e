@@ -1,5 +1,5 @@
 ---
-id: weapon_of_choice
+id: weapon_of_choice_1
 name: Weapon of Choice
 ---
 You have undergone extensive training with a single weapon type. Choose a weapon type which becomes your Weapon of Choice. 

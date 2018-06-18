@@ -1,5 +1,5 @@
 ---
-id: improved_biotic_slash
+id: biotic_slash_2
 name: Improved Biotic Slash
 ---
 By {{ level }} level, you are adept at focusing your biotics into melee strikes. Whenever you hit a creature with a melee 

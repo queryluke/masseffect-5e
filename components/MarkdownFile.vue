@@ -1,11 +1,11 @@
 <template lang="pug">
   div.markdown-file
-    p.title {{ item.name }}
     div(v-html="markdownFile")
 </template>
 
 <script>
   import {mapGetters} from 'vuex'
+  import {EnhanceMarkdown} from '~/mixins/enhanceMarkdown.js'
 
   export default {
     computed: {
@@ -14,12 +14,13 @@
         return this.getData(this.itemType).find(item => item.id === this.id)
       },
       markdownFile () {
-        return require(`~/data/${this.itemType}/${this.item.id}.md`)
-          .replace(/<table>/gi, '<table class="table">')
-          .replace(/<th>/gi, '<th class="text-xs-left">')
-          .replace(/<ul>/gi, '<ul class="list">')
+        return this.enhanceMarkdown(require(`~/data/${this.itemType}/${this.item.id}.md`))
       }
     },
-    props: ['itemType', 'id']
+    mixins: [EnhanceMarkdown],
+    props: {
+      itemType: String,
+      id: String
+    }
   }
 </script>

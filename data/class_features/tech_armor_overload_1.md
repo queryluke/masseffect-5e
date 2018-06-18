@@ -1,5 +1,5 @@
 ---
-id: tech_armor_overload
+id: tech_armor_overload_1
 name: Tech Armor Overload
 ---
 Starting at {{ level }} level, you can overload your Tech Armor dealing damage to creatures around you. As an action, 

@@ -33,6 +33,14 @@ export default {
     }
     return data
   },
+  getDataItem: (state, getters) => (name, id) => {
+    const item = getters.getData(name).find(item => item.id === id)
+    if (typeof item === 'undefined') {
+      console.log(`cannot find ${name}: ${id}`)
+      return {}
+    }
+    return item
+  },
   getGruntConfig: state => (key = false) => {
     return key ? state.gruntConfig[key] : state.gruntConfig
   },

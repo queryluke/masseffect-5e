@@ -2,16 +2,16 @@
   div
     p.headline Hit points
     ul.list-unstyled
-      li #[strong Hit dice:] {{ item.hit_die }} per level
-      li #[strong Hit Points at 1st level:] {{ item.hit_points }}
-      li #[strong Hit Points at higher levels:] {{ item.increase_hit_points }}
+      li #[strong Hit dice:] 1d{{ item.hitDie }} per level
+      li #[strong Hit Points at 1st level:] {{ item.hitDie }} + Constitution modifier
+      li #[strong Hit Points at higher levels:] 1d{{ item.hitDie }} (or {{ item.minHitDieRoll }}) + Constitution modifier
     div(:class="primaryColor").hr
     p.headline Proficiencies
     ul.list-unstyled
-      li #[strong Armor:] {{ item.armor_proficiency }}
-      li #[strong Weapons:] {{ item.weapon }}
-      li #[strong Saving Throws:] {{ item.saving_throw }}
-      li #[strong Skills:] {{ item.skill }}
+      li #[strong Armor:] {{ item.armorProficiencies.join(', ') }}
+      li #[strong Weapons:] {{ item.weaponProficiencies | listOfChoices(item.weaponProficiencyChoices) }}
+      li #[strong Saving Throws:] {{ item.savingThrows.join(' & ') }}
+      li #[strong Skills:] {{ item.skillProficiencies | listOfChoices(item.skillChoices) }}
     div(:class="primaryColor").hr
     div(v-if="item.spellcasting")
       p.headline Spellcasting
@@ -44,7 +44,10 @@
       p {{ item.spellcasting }}
       div(:class="primaryColor").hr
     p.headline Starting Equipment
-    me-element(:text="item.starting_equipment")
+    ul.pl-3
+      li {{ item.startingRangedWeapons | listOfChoices(item.startingRangedWeaponChoices) }}
+      li {{ item.startingMeleeWeapons | listOfChoices(item.startingMeleeWeaponChoices) }}
+      li {{ item.startingArmor | listOfChoices }}
 </template>
 
 <script>

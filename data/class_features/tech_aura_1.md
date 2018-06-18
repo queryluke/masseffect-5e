@@ -1,5 +1,5 @@
 ---
-id: tech_aura
+id: tech_aura_1
 name: Tech Aura
 ---
 In addition to the standard defensive AI, you've augmented your Tech Armor to run different AI packages. The packages can 

@@ -1,5 +1,5 @@
 ---
-id: metabiotics
+id: metabiotics_1
 name: Metabiotics
 ---
 At {{ level }} level, you gain the ability to use the power stored in your barrier to twist your spells to suit your needs. 

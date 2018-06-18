@@ -1,5 +1,5 @@
 ---
-id: indomitable
+id: indomitable_1
 name: Indomitable
 ---
 You can reroll a saving throw that you fail. If you do so, you must use the new roll, and you can't use this feature 

@@ -12,18 +12,15 @@
               v-flex.xs4
                 v-card-media(:src="`/images/classes/${item.id}.svg`" height="100px" contain)
               v-flex.xs12
-                p.ma-0 #[strong Hit Die:] {{ item.hit_die }}
-                p.ma-0 #[strong Primary Ability:] {{ item.primary_ability }}
-                p #[strong Saves:] {{ item.saving_throw.replace(/,\s/, ' & ') }}
-    page-footer(:list="listName")
+                p.ma-0 #[strong Hit Die:] 1d{{ item.hitDie }}
+                p.ma-0 #[strong Primary Ability:] {{ item.primaryAbility }}
+                p #[strong Saves:] {{ savingThrows(item) }}
 </template>
 
 <script>
-  import PageFooter from '~/components/phb/PageFooter.vue'
   import {mapGetters} from 'vuex'
 
   export default {
-    components: {PageFooter},
     computed: {
       ...mapGetters(['getData'])
     },
@@ -32,8 +29,7 @@
     },
     data () {
       return {
-        items: [],
-        listName: 'classes'
+        items: []
       }
     },
     head () {
@@ -44,6 +40,11 @@
         ]
       }
     },
-    layout: 'phb'
+    layout: 'phb',
+    methods: {
+      savingThrows (item) {
+        return item.savingThrows.map(st => this.$options.filters.capitalize(st)).join(' & ')
+      }
+    }
   }
 </script>

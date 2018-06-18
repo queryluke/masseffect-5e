@@ -1,6 +1,6 @@
 export const Unique = {
   methods: {
-    unique(array) {
+    unique (array) {
       return Array.from(new Set(array))
     }
   }

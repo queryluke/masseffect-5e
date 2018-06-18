@@ -1,5 +1,5 @@
 ---
-id: biotic_slash
+id: biotic_slash_1
 name: Biotic Slash
 ---
 Starting at {{ level }} level, when you hit a creature with a melee weapon attack, you can expend one spell slot to deal 

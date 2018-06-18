@@ -1,18 +1,24 @@
 const fm = require('front-matter')
+const _ = require('lodash')
 const postFilenameRegex = /^(\d+-\d+-\d+)-(.*)\.md$/g
+
 let postFilenameParts
-const mdDirs = ['posts', 'backgrounds', 'kits']
+const jsonDirs = ['classes']
+const mdDirs = ['posts', 'backgrounds', 'kits', 'class_features']
 
 export default {
   nuxtServerInit () {
     if (process.server) {
       const fs = require('fs')
+      // process markdown files
       for (let dir of mdDirs) {
         const path = `data/${dir}`
         const files = fs.readdirSync(path)
+
         const items = files.map((file) => {
           const fc = fm(fs.readFileSync(`${path}/${file}`, 'utf8'))
-          const item = Object.assign(fc.attributes, {})
+          let item = Object.assign(fc.attributes, {})
+
           if (dir === 'posts') {
             while ((postFilenameParts = postFilenameRegex.exec(file)) !== null) {
               item.filename = postFilenameParts[0]
@@ -21,12 +27,22 @@ export default {
             }
             item.url = `/news/${item.slug}`
           }
+
+          if (dir === 'versions') {
+            item = file.replace(/.md$/, '')
+          }
           return item
         })
-        this.dispatch('instantiateState', { key: dir, items })
+        this.dispatch('instantiateState', { key: _.camelCase(dir), items })
       }
-      const versions = fs.readdirSync('changelog').map(file => file.replace(/.md$/, ''))
-      this.dispatch('instantiateState', { key: 'versions', items: versions })
+
+      // process jsDirs
+      for (let dir of jsonDirs) {
+        const path = `data/${dir}`
+        const files = fs.readdirSync(path)
+        const items = files.map(file => JSON.parse(fs.readFileSync(`${path}/${file}`, 'utf8')))
+        this.dispatch('instantiateState', { key: _.camelCase(dir), items })
+      }
     }
   },
   instantiateState ({getters, commit}, payload) {

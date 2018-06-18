@@ -25,7 +25,7 @@
       },
       changeFile () {
         if (this.version) {
-          return require(`~/changelog/${this.version}.md`)
+          return require(`~/data/changelog/${this.version}.md`)
         }
       }
     },

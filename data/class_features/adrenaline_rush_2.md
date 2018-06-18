@@ -1,5 +1,5 @@
 ---
-id: adrenaline_rush
+id: adrenaline_rush_2
 name: Adrenaline Rush
 ---
 

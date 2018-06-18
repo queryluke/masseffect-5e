@@ -74,11 +74,9 @@ def generate_config_file(page)
           end
         when 'subclasses'
           dup_model.each_key do |key|
-            unless key == 'name' || key == 'description' || key == 'class'
+            unless key == 'name' || key == 'description' || key == 'class' || key == 'id'
               if dup_model[key]
-                dup_model[key] = dup_model[key].split(',').map do |l|
-                  { key: l.downcase.strip.gsub(' ', '_').gsub(/[^a-zA-z\-]/, ''), value: l }
-                end
+                dup_model[key] = dup_model[key].split(',')
               end
             end
           end

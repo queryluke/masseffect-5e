@@ -1,5 +1,5 @@
 ---
-id: drones_defense
+id: drones_defense_1
 name: Drone's Defense
 ---
 At {{ level }} level, while your companion can see you, it has advantage on all saving throws.

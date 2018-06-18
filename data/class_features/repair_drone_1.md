@@ -1,5 +1,5 @@
 ---
-id: repair_drone
+id: repair_drone_1
 name: Repair Drone
 ---
 At {{ level }} level, you gain proficiency with Medicine. If you are already proficient in Medicine, you may choose 

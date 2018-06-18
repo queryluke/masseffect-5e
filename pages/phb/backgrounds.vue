@@ -7,6 +7,7 @@
           div(slot="header") {{ item.name }}
           v-card.grey.lighten-3
             v-card-text
+              p.title {{ item.name }}
               markdown-file(:id="item.id" itemType="backgrounds")
             v-card-actions
               bookmark-button(:card="item" type="backgrounds" v-bind:props="{flat: true}")
@@ -14,7 +15,7 @@
 
 <script>
   import {mapGetters} from 'vuex'
-  import MarkdownFile from '~/components/shared/MarkdownFile.vue'
+  import MarkdownFile from '~/components/MarkdownFile.vue'
   import BookmarkButton from '~/components/shared/BookmarkButton'
 
   export default {

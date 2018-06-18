@@ -1,5 +1,5 @@
 ---
-id: makeshift_grenades
+id: makeshift_grenades_1
 name: Makeshift Grenades
 ---
 Your omni-tool is so advanced, you can use tech points to create a specific grenade. Choose a grenade from the grenade 
