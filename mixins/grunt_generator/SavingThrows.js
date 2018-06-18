@@ -5,7 +5,7 @@ export const SavingThrows = {
       let numSavingThrows = this.randomValue(this.savingThrowWeights[crMetaLevel])
       const savingThrows = this.savingThrows.slice(0)
       if (grunt.sc.id !== 'none') {
-        const classSavingThrows = grunt.sc.saving_throw.split(',').map(st => {
+        const classSavingThrows = grunt.sc.savingThrows.map(st => {
           return st.toLowerCase().trim().slice(0, 3)
         })
         for (const classSt of classSavingThrows) {

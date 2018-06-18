@@ -12,57 +12,57 @@ export const Biotics = {
       }
       let totalSpells = 0
       let totalDmgSpells = 0
-      const progressionLevel = this.progressions[grunt.sc.id].find(row => parseInt(row.level, 10) === effectiveCr.spellcastingLevel)
-      grunt.barrier = progressionLevel.row_data.find((rd) => rd.key === 'barrier_ticks').value
-      for (const column of progressionLevel.row_data) {
-        if (column.key === 'cantrips') {
-          // Deal with cantrips
-          const cantrips = {
-            level: 'cantrip',
-            spells: []
-          }
-          let numCantrips = parseInt(column.value, 10)
-          const availableSpells = this.spells.filter(spell => spell.level === '0' && spell[grunt.sc.id] === 'x')
-          for (let i = 1; i <= numCantrips; i++) {
-            if (availableSpells.length < 1) {
-              continue
-            }
-            const spell = this.randomValue(availableSpells)
-            cantrips.spells.push(spell)
-            availableSpells.splice(availableSpells.indexOf(spell), 1)
-            // Increase total counts
-            totalSpells++
-            if (spell.effect.includes('damage')) {
-              totalDmgSpells++
-            }
-          }
-          grunt.spellcasting.spells.push(cantrips)
-        } else if (Number.isInteger(parseInt(column.key, 10)) && Number.isInteger(parseInt(column.value, 10))) {
-          // Deal with the rest of the spells
-          const spellLevel = parseInt(column.key, 10)
-          const spellSlots = parseInt(column.value, 10)
-          const levelSpells = {
-            level: spellLevel,
-            slots: spellSlots,
-            spells: []
-          }
-          const numSpells = this.numSpellsByLevel[grunt.sc.id][effectiveCr.spellcastingLevel][spellLevel - 1]
-          const availableSpells = this.spells.filter(spell => spell.level === column.key && spell[grunt.sc.id] === 'x')
-          for (let i = 1; i <= numSpells; i++) {
-            if (availableSpells.length < 1) {
-              continue
-            }
-            const spell = this.randomValue(availableSpells)
-            levelSpells.spells.push(spell)
-            availableSpells.splice(availableSpells.indexOf(spell), 1)
-            // Increase total counts
-            totalSpells++
-            if (spell.effect.includes('damage')) {
-              totalDmgSpells++
-            }
-          }
-          grunt.spellcasting.spells.push(levelSpells)
+      const progressionLevel = this.progressions[grunt.sc.id].find(row => row.level === effectiveCr.spellcastingLevel)
+      grunt.barrier = progressionLevel.barrierTicks
+      // Deal with cantrips
+      const cantrips = {
+        level: 'cantrip',
+        spells: []
+      }
+      let numCantrips = progressionLevel.cantrips
+      const availableSpells = this.spells.filter(spell => spell.level === '0' && spell[grunt.sc.id] === 'x')
+      for (let i = 1; i <= numCantrips; i++) {
+        if (availableSpells.length < 1) {
+          continue
         }
+        const spell = this.randomValue(availableSpells)
+        cantrips.spells.push(spell)
+        availableSpells.splice(availableSpells.indexOf(spell), 1)
+        // Increase total counts
+        totalSpells++
+        if (spell.effect.includes('damage')) {
+          totalDmgSpells++
+        }
+      }
+      grunt.spellcasting.spells.push(cantrips)
+      // Deal with the rest of the spells
+      for (const slots of Object.entries(progressionLevel.spellSlots)) {
+        if (!slots[1]) {
+          continue
+        }
+        const spellLevel = parseInt(slots[0], 10)
+        const spellSlots = parseInt(slots[1], 10)
+        const levelSpells = {
+          level: spellLevel,
+          slots: spellSlots,
+          spells: []
+        }
+        const numSpells = this.numSpellsByLevel[grunt.sc.id][effectiveCr.spellcastingLevel][spellLevel - 1]
+        const availableSpells = this.spells.filter(spell => parseInt(spell.level, 10) === spellLevel && spell[grunt.sc.id] === 'x')
+        for (let i = 1; i <= numSpells; i++) {
+          if (availableSpells.length < 1) {
+            continue
+          }
+          const spell = this.randomValue(availableSpells)
+          levelSpells.spells.push(spell)
+          availableSpells.splice(availableSpells.indexOf(spell), 1)
+          // Increase total counts
+          totalSpells++
+          if (spell.effect.includes('damage')) {
+            totalDmgSpells++
+          }
+        }
+        grunt.spellcasting.spells.push(levelSpells)
       }
 
       if (totalDmgSpells >= totalSpells / 2) {
@@ -145,8 +145,9 @@ export const Biotics = {
   },
   created () {
     this.spells = this.getData('spells').filter(spell => spell.type === 'biotic')
-    this.progressions.adept = this.getData('adeptProgression')
-    this.progressions.sentinel = this.getData('sentinelProgression')
-    this.progressions.vanguard = this.getData('vanguardProgression')
+    const classes = this.getMutableData('classes').filter(c => ['adept', 'sentinel', 'vanguard'].includes(c.id))
+    this.progressions.adept = classes.find(c => c.id === 'adept').progression
+    this.progressions.sentinel = classes.find(c => c.id === 'sentinel').progression
+    this.progressions.vanguard = classes.find(c => c.id === 'vanguard').progression
   }
 }
