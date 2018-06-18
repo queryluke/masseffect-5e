@@ -20,7 +20,7 @@ export const EnhanceMarkdown = {
                 return this.$options.filters.pluralize(_.get(model, key), string)
               case 'condition':
                 const condition = this.getDataItem('conditions', abbrKey)
-                return `<abbr title="${condition.mechanic}">${condition.name}</abbr>`
+                return `<abbr data-tooltip="${condition.mechanic}">${condition.name}</abbr>`
               default:
                 return ''
             }

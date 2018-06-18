@@ -3,7 +3,7 @@ function arrayToChoices (list, count = 1) {
     return list[0]
   }
   const finalItem = list.splice(-1, 1)
-  return `${list.join(', ')}${list.length > 2 ? ',' : ''} ${count > 1 ? 'and' : 'or'} ${finalItem}`
+  return `${list.join(', ')}${list.length > 2 ? ', ' : ''} ${count > 1 ? 'and' : 'or'} ${finalItem}`
 }
 
 function digitToString (digit) {
