@@ -96,7 +96,7 @@
                   ol.pl-3
                     li Choose a #[nuxt-link(to="/phb/races") race]
                     li Choose a #[nuxt-link(to="/phb/classes") class]
-                    li Choose a background (coming soon...)
+                    li Choose a #[nuxt-link(to="/phb/backgrounds") background]
                     li Roll for ability scores
                     li Choose your starting equipment
                     li Choose any feats provided by your class
