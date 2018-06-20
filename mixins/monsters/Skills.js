@@ -2,7 +2,7 @@ export const Skills = {
   methods: {
     setMonsterSkills (monster) {
       const monsterSkills = []
-      const skills = this.getData('skills').filter(skill => skill.removed !== 'x')
+      const skills = this.getMutableData('skills').filter(skill => skill.removed !== 'x')
       for (let skillId of monster.skills) {
         let bonus = false
         if (/\*/.test(skillId)) {
