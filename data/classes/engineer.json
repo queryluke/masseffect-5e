@@ -227,7 +227,7 @@
       "maxTechPoints": 5,
       "newBioticSpellCount": null,
       "newSpellLevelMax": null,
-      "newTechSpellCount": 1
+      "newTechSpellCount": 2
     },
     {
       "level": 8,
@@ -315,7 +315,7 @@
       "maxTechPoints": 6,
       "newBioticSpellCount": null,
       "newSpellLevelMax": null,
-      "newTechSpellCount": 1
+      "newTechSpellCount": 2
     },
     {
       "level": 12,
@@ -403,7 +403,7 @@
       "maxTechPoints": 8,
       "newBioticSpellCount": null,
       "newSpellLevelMax": null,
-      "newTechSpellCount": 1
+      "newTechSpellCount": 2
     },
     {
       "level": 16,

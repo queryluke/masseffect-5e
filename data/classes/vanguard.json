@@ -94,7 +94,7 @@
       "barrierTicks": 3,
       "techPoints": null,
       "maxTechPoints": null,
-      "newBioticSpellCount": null,
+      "newBioticSpellCount": 2,
       "newSpellLevelMax": 1,
       "newTechSpellCount": null
     },
@@ -126,7 +126,8 @@
       "proficiencyBonus": 2,
       "sneakAttack": null,
       "features": [
-        "subclass"
+        "subclass",
+        "biotic_powers"
       ],
       "cantrips": 3,
       "spellSlots": {
@@ -139,8 +140,8 @@
       "barrierTicks": 3,
       "techPoints": null,
       "maxTechPoints": null,
-      "newBioticSpellCount": null,
-      "newSpellLevelMax": null,
+      "newBioticSpellCount": 2,
+      "newSpellLevelMax": 1,
       "newTechSpellCount": null
     },
     {
@@ -228,7 +229,7 @@
       "barrierTicks": 5,
       "techPoints": null,
       "maxTechPoints": null,
-      "newBioticSpellCount": null,
+      "newBioticSpellCount": 2,
       "newSpellLevelMax": 2,
       "newTechSpellCount": null
     },
@@ -318,7 +319,7 @@
       "barrierTicks": 6,
       "techPoints": null,
       "maxTechPoints": null,
-      "newBioticSpellCount": null,
+      "newBioticSpellCount": 2,
       "newSpellLevelMax": 3,
       "newTechSpellCount": null
     },
@@ -408,7 +409,7 @@
       "barrierTicks": 7,
       "techPoints": null,
       "maxTechPoints": null,
-      "newBioticSpellCount": null,
+      "newBioticSpellCount": 1,
       "newSpellLevelMax": 4,
       "newTechSpellCount": null
     },

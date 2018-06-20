@@ -1,5 +1,5 @@
 {
-  "updated": "June 20, 2018 @ 12:18 PM",
+  "updated": "June 20, 2018 @  3:51 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -2071,7 +2071,7 @@
           "data": "When you cast this spell using a spell slot of 2nd level or higher, the radius of the explosion increases by 2m for each level above the 1st."
         }
       ],
-      "adv_option_1": "Improved Damage : Increase the damage die to d10.",
+      "adv_option_1": "Improved Damage : Increase the damage die to d12.",
       "adv_option_2": "Half Blast : You may cast nova twice within a single action. Each cast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. You can move in between the blasts.",
       "type": "biotic",
       "die_type": "d10",
@@ -2101,7 +2101,7 @@
       "min_tech_points": null,
       "id": "nova",
       "adv_options": [
-        "Improved Damage : Increase the damage die to d10.",
+        "Improved Damage : Increase the damage die to d12.",
         "Half Blast : You may cast nova twice within a single action. Each cast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. You can move in between the blasts."
       ],
       "class_list": "Vanguard",
