@@ -1,5 +1,5 @@
 {
-  "updated": "June 18, 2018 @ 10:27 AM",
+  "updated": "June 20, 2018 @ 10:18 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRETKGL62kEZPA69PhA3AGMiVeHOWBRkTMDL3f_K-oajryEjwdq7fRAj-qfIusPsLMiIqmB12D4Zun8/pubhtml",
   "data": [
     {
@@ -23,6 +23,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "amphibious",
       "description_text_dump": "Canbreathebothairandwater"
     },
@@ -47,6 +48,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "biotic_initiate",
       "description_text_dump": "ChooseaclassAdeptorVanguardYoulearntwocantripsofyourchoicefromthatclasssspelllistInadditionchooseone1stlevelspellfromthatsamelistYoulearnthatspellandcancastitatitslowestlevelOnceyoucastityoumustfinishalongrestbeforeyoucancastitagain"
     },
@@ -71,6 +73,7 @@
       "volus": null,
       "vorcha": "x",
       "unshackled_ai": null,
+      "prothean": null,
       "id": "bite",
       "description_text_dump": "YourfangedmawisanaturalweaponwhichyoucanusetomakeunarmedstrikesIfyouhitwithityoudealpiercingdamageequalto1d6yourStrengthmodifierinsteadofthebludgeoningdamagenormalforanunarmedstrike"
     },
@@ -95,6 +98,7 @@
       "volus": null,
       "vorcha": "x",
       "unshackled_ai": null,
+      "prothean": null,
       "id": "bloodlust",
       "description_text_dump": "Afterreducinganenemyto0hitpointswithameleeattackyoumaytakeanotherActionthisturn"
     },
@@ -119,6 +123,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": "x",
+      "prothean": null,
       "id": "composite_plating",
       "description_text_dump": "YourconstructionincorporatesadvancedarmorplatingWhilenotwearingarmoryourACisequalto13yourDexteritymodifier"
     },
@@ -143,6 +148,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "cybernetic_augmentation",
       "description_text_dump": "YouhaveaminorcyberneticaugmentationChooseoneofthefollowingDarkvisionspeedincreasedby4m1StrengthorproficiencyineitherPerceptionAthleticsorAcrobatics"
     },
@@ -167,6 +173,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "darkvision",
       "description_text_dump": "YouhavesuperiorvisionindarkanddimconditionsYoucanseeindimlightwithin20mofyouasifitwerebrightlightandindarknessasifitweredimlightYoucantdiscerncolorindarknessonlyshadesofgray"
     },
@@ -191,6 +198,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "eidetic_memory",
       "description_text_dump": "YoucanrecallmemoriesinintricatedetailincludingdetailsfromallyoursensesDistantorinconsequentialmemoriesrequireaDC14WisdomcheckOnafailureyoucanonlyrecalldetailsfromoneortwosenses"
     },
@@ -215,6 +223,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "feat",
       "description_text_dump": "Select1featfromfeats"
     },
@@ -239,6 +248,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "feats",
       "description_text_dump": "Select2featsfromfeats"
     },
@@ -263,6 +273,7 @@
       "volus": "x",
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "fury_of_the_small",
       "description_text_dump": "WhenyoudamageacreaturewithanattackoraspellandthecreaturessizeislargerthanyoursyoucancausetheattackorspelltodealextradamagetothecreatureTheextradamageequalsyourlevelOnceyouusethistraityoucantuseitagainuntilyoufinishashortorlongrest"
     },
@@ -287,6 +298,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "hallucinogen",
       "description_text_dump": "YouskinisinfusedwithamildvenomWheningestedorinjecteditcancausemildhallucinations"
     },
@@ -316,6 +328,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "hermetic_suit",
       "description_text_dump": "YoursuitisyourlifebloodItmakesyourimmunetodiseaseYouhaveresistancetopoisonandnecroticdamageHoweverifyouareunprotectedandreceiveacriticalhityoursuitbecomesbreachedOnyourturnyoucantakenootheractionexceptexpendingachargeofspecializedsealanttoclosethepunctureYouhave3chargesofsealantOnalongrestyouregainyourchargesForeachhourinwhichyouhaveabreachinyoursuityousufferonelevelofexhaustionForeachhouryouspendoutsideofyoursuitifnotinacompatibleenvironmentsuffer3levelsofexhaustion"
     },
@@ -340,6 +353,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "high-speed_metabolism",
       "description_text_dump": "SalariansdontneedtosleepforaslongasotherracesInsteadtheiruniquebiologyrequiresthattheyonlyneedtosleepfor1houradaySalariansgainthesamebenefitthatahumandoesfrom8hoursofsleep"
     },
@@ -364,6 +378,7 @@
       "volus": null,
       "vorcha": "x",
       "unshackled_ai": null,
+      "prothean": null,
       "id": "hungry_jaws",
       "description_text_dump": "InbattleyoucanthrowyourselfintoaviciousfeedingfrenzyAsabonusactionyoucanmakeaspecialattackwithyourbiteIftheattackhitsitdealsitsnormaldamageandyouautomaticallyactivateBloodlustYoucantusethistraitagainuntilyoufinishashortorlongrest"
     },
@@ -417,6 +432,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "hunter_mode",
       "description_text_dump": "AsanactionactivateHunterModeIncreasemovementby2m1bonustorangedandmeleeweaponattackrollsThiseffectlasts1minYoucanonlyuseHunterModeonceperlongrestAt11thlevelyougainanadditionalbenefitbasedonyourclasstableClassFeatureEngineerIncreasethedamageofallTechpowersby1dietypemaxd12Ifthedietypeisalreadyd12add1damageforeachdierolledinsteadSoldierYouhaveresistancetonecroticandforcedamageInfiltratorIncreaseyoursneakattackdietypetod8table"
     },
@@ -441,6 +457,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "innate_biotics",
       "description_text_dump": "AsaridonotrequirebioticimplantstocontroltheirabilitiesInsteadtheirbiotictalentsrelyontheirabilitytoprojecttheirwillontotheworldAsanAsariyouuseyourCharismawheneveraspellreferstoyourspellcastingabilityInadditionyouuseyourCharismamodifierwhensettingthesavingthrowDCforanbioticspellyoucastandwhenmakinganattackrollwithone"
     },
@@ -465,6 +482,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": "x",
+      "prothean": null,
       "id": "innate_shielding",
       "description_text_dump": "Youhave5shieldsregen5Theseshieldscanbeupgradedfortheequivalentcostofbuyinganarmormod"
     },
@@ -489,6 +507,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": "x",
+      "prothean": null,
       "id": "keen_senses",
       "description_text_dump": "YouhaveproficiencyinthePerceptionskill"
     },
@@ -513,6 +532,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": "x",
+      "prothean": null,
       "id": "living_construct",
       "description_text_dump": "YouareimmunetodiseaseandthepoisonedconditionYoudonotneedtoeatorbreatheInsteadofsleepingyouenteraninactivestatefor4hourseachdayYoudonotdreaminthisstateyouarefullyawareofyoursurroundingsandnoticeapproachingenemiesandothereventsasnormal"
     },
@@ -537,6 +557,7 @@
       "volus": "x",
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "lucky",
       "description_text_dump": "GaintheLuckyfeat"
     },
@@ -561,6 +582,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "menacing",
       "description_text_dump": "YougainproficiencyintheIntimidationskill"
     },
@@ -585,6 +607,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "mind_meld",
       "description_text_dump": "YoucantransferandreceivethoughtstoanothercreatureYoumustconcentrateandifthecreatureisnotwillingthethoughtsbecomejumbledanddisjointedUnintelligentcreatureshaveunpredictableresults"
     },
@@ -609,6 +632,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "natural_armor",
       "description_text_dump": "IncreaseyourACby1"
     },
@@ -633,6 +657,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "no_feats",
       "description_text_dump": "Gethcannottakeanyfeats"
     },
@@ -657,6 +682,7 @@
       "volus": null,
       "vorcha": "x",
       "unshackled_ai": null,
+      "prothean": null,
       "id": "non-differentiated_cells",
       "description_text_dump": "YouareimmunetodiseaseInadditionyouhaveresistanceagainstpoisondamageandadvantageonsavingthrowswouldcauseyoutobecomepoisoned"
     },
@@ -681,6 +707,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "photographic_memory",
       "description_text_dump": "WheneveryoumakeanIntelligenceEngineeringElectronicsHistoryorSciencechecktorecallinformationaddyourproficiencybonusasifyouhadexpertiseinthatskill"
     },
@@ -705,6 +732,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "powerful_build",
       "description_text_dump": "Youcountasonesizelargerwhendeterminingyourcarryingcapacityandtheweightyoucanpushdragorlift"
     },
@@ -729,6 +757,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "rage",
       "description_text_dump": "Ifyoubeginyourturnwithlessthat12ofyourhitpointsyouenterintoarageYourmeleeweaponattacksdealoneextradieofitsdamagewhenyouhitwithitThiseffectlasts1minuteandcannotbetriggeredagainuntilyouhaveashortrest"
     },
@@ -753,6 +782,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "relentless",
       "description_text_dump": "Whenyouarereducedto0hitpointsbutnotkilledoutrightyoucandropto1hitpointinsteadYoucantusethisfeatureagainuntilyoufinishalongrest"
     },
@@ -777,6 +807,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": "x",
+      "prothean": null,
       "id": "repair_matrix",
       "description_text_dump": "Ifyoubeginyourturnwithlessthat12ofyourhitpointsasareactionyoumayactivateyourrepairmatrixGain1d6hitpointsatthestartofyourturnThiseffectlast1minuteoruntiltheyourbecomeincapacitatedThisabilitymayonlybeusedonceperlongrest"
     },
@@ -801,6 +832,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "saving_face",
       "description_text_dump": "BatariansarecarefulnottoshowweaknessinfrontoftheiralliesforfearoflosingstatusIfyoumisswithanattackrollorfailanabilitycheckorasavingthrowyoucangainabonustotherollequaltothenumberofalliesyoucanseewithin10mofyoumaximumbonusof5Onceyouusethistraityoucantuseitagainuntilyoufinishashortorlongrest"
     },
@@ -825,6 +857,7 @@
       "volus": "x",
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "savvy_dealings",
       "description_text_dump": "YouhaveproficiencyinthePersuasionskill"
     },
@@ -849,6 +882,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "shrewd_negotiator",
       "description_text_dump": "GainproficiencyineitherInsightorIntimidation"
     },
@@ -873,6 +907,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "skill_versatility",
       "description_text_dump": "Yougainproficiencyintwoskillsofyourchoice"
     },
@@ -897,6 +932,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "thulium_skin",
       "description_text_dump": "Resistancetoradiantdamageandanydiseasesthatwouldbecausedbyradiation"
     },
@@ -921,6 +957,7 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
       "id": "turian_toughness",
       "description_text_dump": "Yourhitpointmaximumincreasesby2anditincreasesby2everytimeyougainalevel"
     },
@@ -977,8 +1014,109 @@
       "volus": null,
       "vorcha": "x",
       "unshackled_ai": null,
+      "prothean": null,
       "id": "limited_regeneration",
       "description_text_dump": "YouregainallyouryourHitDiceonalongrestAdditionallyifyouloseabodypartthemissingpartwillregrowandreturntofullfunctionalityafterapassingoftimebasedonthebodyparttablePartTimeFingerstoes1weekEye6weeksHandsFeet2weeksArmtoelbowLegtoknee4weeksArmtoshoulderLegtohip8weekstable"
+    },
+    {
+      "name": "All-seeing Eyes",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You have proficiency in Perception. You have truesight up to 20m."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "unshackled_ai": null,
+      "prothean": "x",
+      "id": "all-seeing_eyes",
+      "description_text_dump": "YouhaveproficiencyinPerceptionYouhavetruesightupto20m"
+    },
+    {
+      "name": "Quad-Strand DNA",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Your unique quad-strand DNA helps to protect you against radiation and cold. You have radiant and cold damage resistance."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "unshackled_ai": null,
+      "prothean": "x",
+      "id": "quad-strand_dna",
+      "description_text_dump": "YouruniquequadstrandDNAhelpstoprotectyouagainstradiationandcoldYouhaveradiantandcolddamageresistance"
+    },
+    {
+      "name": "Psychometry",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "While in physical contact with a creature or object, a Prothean can recall its experiences. If you touch an object or creature and concentrate on it for 1 minute, you learn a few basic facts about it. You gain a mental image from the object or creature's point of view, learning of any events that have occurred within 10 meters of the object or creature within the past 24 hours. If in contact with an object, you see the last creature to hold the object, regardless of how long ago it was last handled. This ability may only be used once per long rest."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "unshackled_ai": null,
+      "prothean": "x",
+      "id": "psychometry",
+      "description_text_dump": "WhileinphysicalcontactwithacreatureorobjectaProtheancanrecallitsexperiencesIfyoutouchanobjectorcreatureandconcentrateonitfor1minuteyoulearnafewbasicfactsaboutitYougainamentalimagefromtheobjectorcreaturespointofviewlearningofanyeventsthathaveoccurredwithin10metersoftheobjectorcreaturewithinthepast24hoursIfincontactwithanobjectyouseethelastcreaturetoholdtheobjectregardlessofhowlongagoitwaslasthandledThisabilitymayonlybeusedonceperlongrest"
+    },
+    {
+      "name": "Avatar (optional)",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "In Prothean society, there were many \"Avatars\", Protheans who embodied a single virtue for the society. Example virtues include benevolence, cleanliness, courage, dignity, frugality, honor, justice, mercy, order, perseverance, temperance, tranquility, truthfulness, vengeance"
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "unshackled_ai": null,
+      "prothean": "x",
+      "id": "avatar_optional",
+      "description_text_dump": "InProtheansocietythereweremanyAvatarsProtheanswhoembodiedasinglevirtueforthesocietyExamplevirtuesincludebenevolencecleanlinesscouragedignityfrugalityhonorjusticemercyorderperseverancetemperancetranquilitytruthfulnessvengeance"
     }
   ]
 }
