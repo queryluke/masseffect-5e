@@ -1,5 +1,5 @@
 {
-  "updated": "June 20, 2018 @ 10:18 AM",
+  "updated": "June 20, 2018 @ 11:03 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRETKGL62kEZPA69PhA3AGMiVeHOWBRkTMDL3f_K-oajryEjwdq7fRAj-qfIusPsLMiIqmB12D4Zun8/pubhtml",
   "data": [
     {
@@ -24,6 +24,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "amphibious",
       "description_text_dump": "Canbreathebothairandwater"
     },
@@ -49,6 +50,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "biotic_initiate",
       "description_text_dump": "ChooseaclassAdeptorVanguardYoulearntwocantripsofyourchoicefromthatclasssspelllistInadditionchooseone1stlevelspellfromthatsamelistYoulearnthatspellandcancastitatitslowestlevelOnceyoucastityoumustfinishalongrestbeforeyoucancastitagain"
     },
@@ -74,6 +76,7 @@
       "vorcha": "x",
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "bite",
       "description_text_dump": "YourfangedmawisanaturalweaponwhichyoucanusetomakeunarmedstrikesIfyouhitwithityoudealpiercingdamageequalto1d6yourStrengthmodifierinsteadofthebludgeoningdamagenormalforanunarmedstrike"
     },
@@ -99,6 +102,7 @@
       "vorcha": "x",
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "bloodlust",
       "description_text_dump": "Afterreducinganenemyto0hitpointswithameleeattackyoumaytakeanotherActionthisturn"
     },
@@ -124,6 +128,7 @@
       "vorcha": null,
       "unshackled_ai": "x",
       "prothean": null,
+      "angara": null,
       "id": "composite_plating",
       "description_text_dump": "YourconstructionincorporatesadvancedarmorplatingWhilenotwearingarmoryourACisequalto13yourDexteritymodifier"
     },
@@ -149,6 +154,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "cybernetic_augmentation",
       "description_text_dump": "YouhaveaminorcyberneticaugmentationChooseoneofthefollowingDarkvisionspeedincreasedby4m1StrengthorproficiencyineitherPerceptionAthleticsorAcrobatics"
     },
@@ -174,6 +180,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "darkvision",
       "description_text_dump": "YouhavesuperiorvisionindarkanddimconditionsYoucanseeindimlightwithin20mofyouasifitwerebrightlightandindarknessasifitweredimlightYoucantdiscerncolorindarknessonlyshadesofgray"
     },
@@ -199,6 +206,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "eidetic_memory",
       "description_text_dump": "YoucanrecallmemoriesinintricatedetailincludingdetailsfromallyoursensesDistantorinconsequentialmemoriesrequireaDC14WisdomcheckOnafailureyoucanonlyrecalldetailsfromoneortwosenses"
     },
@@ -224,6 +232,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "feat",
       "description_text_dump": "Select1featfromfeats"
     },
@@ -249,6 +258,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "feats",
       "description_text_dump": "Select2featsfromfeats"
     },
@@ -274,6 +284,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "fury_of_the_small",
       "description_text_dump": "WhenyoudamageacreaturewithanattackoraspellandthecreaturessizeislargerthanyoursyoucancausetheattackorspelltodealextradamagetothecreatureTheextradamageequalsyourlevelOnceyouusethistraityoucantuseitagainuntilyoufinishashortorlongrest"
     },
@@ -299,6 +310,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "hallucinogen",
       "description_text_dump": "YouskinisinfusedwithamildvenomWheningestedorinjecteditcancausemildhallucinations"
     },
@@ -329,6 +341,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "hermetic_suit",
       "description_text_dump": "YoursuitisyourlifebloodItmakesyourimmunetodiseaseYouhaveresistancetopoisonandnecroticdamageHoweverifyouareunprotectedandreceiveacriticalhityoursuitbecomesbreachedOnyourturnyoucantakenootheractionexceptexpendingachargeofspecializedsealanttoclosethepunctureYouhave3chargesofsealantOnalongrestyouregainyourchargesForeachhourinwhichyouhaveabreachinyoursuityousufferonelevelofexhaustionForeachhouryouspendoutsideofyoursuitifnotinacompatibleenvironmentsuffer3levelsofexhaustion"
     },
@@ -354,6 +367,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "high-speed_metabolism",
       "description_text_dump": "SalariansdontneedtosleepforaslongasotherracesInsteadtheiruniquebiologyrequiresthattheyonlyneedtosleepfor1houradaySalariansgainthesamebenefitthatahumandoesfrom8hoursofsleep"
     },
@@ -379,6 +393,7 @@
       "vorcha": "x",
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "hungry_jaws",
       "description_text_dump": "InbattleyoucanthrowyourselfintoaviciousfeedingfrenzyAsabonusactionyoucanmakeaspecialattackwithyourbiteIftheattackhitsitdealsitsnormaldamageandyouautomaticallyactivateBloodlustYoucantusethistraitagainuntilyoufinishashortorlongrest"
     },
@@ -433,6 +448,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "hunter_mode",
       "description_text_dump": "AsanactionactivateHunterModeIncreasemovementby2m1bonustorangedandmeleeweaponattackrollsThiseffectlasts1minYoucanonlyuseHunterModeonceperlongrestAt11thlevelyougainanadditionalbenefitbasedonyourclasstableClassFeatureEngineerIncreasethedamageofallTechpowersby1dietypemaxd12Ifthedietypeisalreadyd12add1damageforeachdierolledinsteadSoldierYouhaveresistancetonecroticandforcedamageInfiltratorIncreaseyoursneakattackdietypetod8table"
     },
@@ -458,6 +474,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "innate_biotics",
       "description_text_dump": "AsaridonotrequirebioticimplantstocontroltheirabilitiesInsteadtheirbiotictalentsrelyontheirabilitytoprojecttheirwillontotheworldAsanAsariyouuseyourCharismawheneveraspellreferstoyourspellcastingabilityInadditionyouuseyourCharismamodifierwhensettingthesavingthrowDCforanbioticspellyoucastandwhenmakinganattackrollwithone"
     },
@@ -483,6 +500,7 @@
       "vorcha": null,
       "unshackled_ai": "x",
       "prothean": null,
+      "angara": null,
       "id": "innate_shielding",
       "description_text_dump": "Youhave5shieldsregen5Theseshieldscanbeupgradedfortheequivalentcostofbuyinganarmormod"
     },
@@ -508,6 +526,7 @@
       "vorcha": null,
       "unshackled_ai": "x",
       "prothean": null,
+      "angara": null,
       "id": "keen_senses",
       "description_text_dump": "YouhaveproficiencyinthePerceptionskill"
     },
@@ -533,6 +552,7 @@
       "vorcha": null,
       "unshackled_ai": "x",
       "prothean": null,
+      "angara": null,
       "id": "living_construct",
       "description_text_dump": "YouareimmunetodiseaseandthepoisonedconditionYoudonotneedtoeatorbreatheInsteadofsleepingyouenteraninactivestatefor4hourseachdayYoudonotdreaminthisstateyouarefullyawareofyoursurroundingsandnoticeapproachingenemiesandothereventsasnormal"
     },
@@ -558,6 +578,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "lucky",
       "description_text_dump": "GaintheLuckyfeat"
     },
@@ -583,6 +604,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "menacing",
       "description_text_dump": "YougainproficiencyintheIntimidationskill"
     },
@@ -608,6 +630,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "mind_meld",
       "description_text_dump": "YoucantransferandreceivethoughtstoanothercreatureYoumustconcentrateandifthecreatureisnotwillingthethoughtsbecomejumbledanddisjointedUnintelligentcreatureshaveunpredictableresults"
     },
@@ -633,6 +656,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "natural_armor",
       "description_text_dump": "IncreaseyourACby1"
     },
@@ -658,6 +682,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "no_feats",
       "description_text_dump": "Gethcannottakeanyfeats"
     },
@@ -683,6 +708,7 @@
       "vorcha": "x",
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "non-differentiated_cells",
       "description_text_dump": "YouareimmunetodiseaseInadditionyouhaveresistanceagainstpoisondamageandadvantageonsavingthrowswouldcauseyoutobecomepoisoned"
     },
@@ -708,6 +734,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "photographic_memory",
       "description_text_dump": "WheneveryoumakeanIntelligenceEngineeringElectronicsHistoryorSciencechecktorecallinformationaddyourproficiencybonusasifyouhadexpertiseinthatskill"
     },
@@ -733,6 +760,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "powerful_build",
       "description_text_dump": "Youcountasonesizelargerwhendeterminingyourcarryingcapacityandtheweightyoucanpushdragorlift"
     },
@@ -758,6 +786,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "rage",
       "description_text_dump": "Ifyoubeginyourturnwithlessthat12ofyourhitpointsyouenterintoarageYourmeleeweaponattacksdealoneextradieofitsdamagewhenyouhitwithitThiseffectlasts1minuteandcannotbetriggeredagainuntilyouhaveashortrest"
     },
@@ -783,6 +812,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "relentless",
       "description_text_dump": "Whenyouarereducedto0hitpointsbutnotkilledoutrightyoucandropto1hitpointinsteadYoucantusethisfeatureagainuntilyoufinishalongrest"
     },
@@ -808,6 +838,7 @@
       "vorcha": null,
       "unshackled_ai": "x",
       "prothean": null,
+      "angara": null,
       "id": "repair_matrix",
       "description_text_dump": "Ifyoubeginyourturnwithlessthat12ofyourhitpointsasareactionyoumayactivateyourrepairmatrixGain1d6hitpointsatthestartofyourturnThiseffectlast1minuteoruntiltheyourbecomeincapacitatedThisabilitymayonlybeusedonceperlongrest"
     },
@@ -833,6 +864,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "saving_face",
       "description_text_dump": "BatariansarecarefulnottoshowweaknessinfrontoftheiralliesforfearoflosingstatusIfyoumisswithanattackrollorfailanabilitycheckorasavingthrowyoucangainabonustotherollequaltothenumberofalliesyoucanseewithin10mofyoumaximumbonusof5Onceyouusethistraityoucantuseitagainuntilyoufinishashortorlongrest"
     },
@@ -858,6 +890,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "savvy_dealings",
       "description_text_dump": "YouhaveproficiencyinthePersuasionskill"
     },
@@ -883,6 +916,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "shrewd_negotiator",
       "description_text_dump": "GainproficiencyineitherInsightorIntimidation"
     },
@@ -908,6 +942,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "skill_versatility",
       "description_text_dump": "Yougainproficiencyintwoskillsofyourchoice"
     },
@@ -933,6 +968,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "thulium_skin",
       "description_text_dump": "Resistancetoradiantdamageandanydiseasesthatwouldbecausedbyradiation"
     },
@@ -958,6 +994,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "turian_toughness",
       "description_text_dump": "Yourhitpointmaximumincreasesby2anditincreasesby2everytimeyougainalevel"
     },
@@ -1015,6 +1052,7 @@
       "vorcha": "x",
       "unshackled_ai": null,
       "prothean": null,
+      "angara": null,
       "id": "limited_regeneration",
       "description_text_dump": "YouregainallyouryourHitDiceonalongrestAdditionallyifyouloseabodypartthemissingpartwillregrowandreturntofullfunctionalityafterapassingoftimebasedonthebodyparttablePartTimeFingerstoes1weekEye6weeksHandsFeet2weeksArmtoelbowLegtoknee4weeksArmtoshoulderLegtohip8weekstable"
     },
@@ -1040,6 +1078,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": "x",
+      "angara": null,
       "id": "all-seeing_eyes",
       "description_text_dump": "YouhaveproficiencyinPerceptionYouhavetruesightupto20m"
     },
@@ -1065,6 +1104,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": "x",
+      "angara": null,
       "id": "quad-strand_dna",
       "description_text_dump": "YouruniquequadstrandDNAhelpstoprotectyouagainstradiationandcoldYouhaveradiantandcolddamageresistance"
     },
@@ -1090,6 +1130,7 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": "x",
+      "angara": null,
       "id": "psychometry",
       "description_text_dump": "WhileinphysicalcontactwithacreatureorobjectaProtheancanrecallitsexperiencesIfyoutouchanobjectorcreatureandconcentrateonitfor1minuteyoulearnafewbasicfactsaboutitYougainamentalimagefromtheobjectorcreaturespointofviewlearningofanyeventsthathaveoccurredwithin10metersoftheobjectorcreaturewithinthepast24hoursIfincontactwithanobjectyouseethelastcreaturetoholdtheobjectregardlessofhowlongagoitwaslasthandledThisabilitymayonlybeusedonceperlongrest"
     },
@@ -1115,8 +1156,113 @@
       "vorcha": null,
       "unshackled_ai": null,
       "prothean": "x",
+      "angara": null,
       "id": "avatar_optional",
       "description_text_dump": "InProtheansocietythereweremanyAvatarsProtheanswhoembodiedasinglevirtueforthesocietyExamplevirtuesincludebenevolencecleanlinesscouragedignityfrugalityhonorjusticemercyorderperseverancetemperancetranquilitytruthfulnessvengeance"
+    },
+    {
+      "name": "Survivalist",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You have proficiency in Survival."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "unshackled_ai": null,
+      "prothean": null,
+      "angara": "x",
+      "id": "survivalist",
+      "description_text_dump": "YouhaveproficiencyinSurvival"
+    },
+    {
+      "name": "Bio-Electric Focus",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You can use Shocking Grasp as a cantrip, without having to spend tech points, and dealing 1d6 points of damage, but otherwise functioning the same. Charisma is your spellcasting ability for this ability. This does not count against your max number of cantrips known."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "unshackled_ai": null,
+      "prothean": null,
+      "angara": "x",
+      "id": "bio-electric_focus",
+      "description_text_dump": "YoucanuseShockingGraspasacantripwithouthavingtospendtechpointsanddealing1d6pointsofdamagebutotherwisefunctioningthesameCharismaisyourspellcastingabilityforthisabilityThisdoesnotcountagainstyourmaxnumberofcantripsknown"
+    },
+    {
+      "name": "Bio-electric Ward",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Increase your AC by 1. You have a resistance to lightning damage, but this resistance does not apply to damage done to your shields."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "unshackled_ai": null,
+      "prothean": null,
+      "angara": "x",
+      "id": "bio-electric_ward",
+      "description_text_dump": "IncreaseyourACby1Youhavearesistancetolightningdamagebutthisresistancedoesnotapplytodamagedonetoyourshields"
+    },
+    {
+      "name": "Solar Dependency",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "If you fail to immerse yourself in sunlight for at least 1 hour during a day, you suffer one level of exhaustion at the end of that day."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "unshackled_ai": null,
+      "prothean": null,
+      "angara": "x",
+      "id": "solar_dependency",
+      "description_text_dump": "Ifyoufailtoimmerseyourselfinsunlightforatleast1hourduringadayyousufferonelevelofexhaustionattheendofthatday"
     }
   ]
 }
