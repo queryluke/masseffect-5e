@@ -260,7 +260,7 @@
       "proficiencyBonus": 4,
       "sneakAttack": null,
       "features": [
-        "zero_sum_1",
+        "zero-sum_1",
         "brutal_critical_1"
       ],
       "cantrips": 4,
@@ -350,7 +350,7 @@
       "proficiencyBonus": 5,
       "sneakAttack": null,
       "features": [
-        "zero_sum_2",
+        "zero-sum_2",
         "brutal_critical_2"
       ],
       "cantrips": 4,
@@ -440,7 +440,7 @@
       "proficiencyBonus": 6,
       "sneakAttack": null,
       "features": [
-        "zero_sum_3",
+        "zero-sum_3",
         "brutal_critical_3"
       ],
       "cantrips": 4,

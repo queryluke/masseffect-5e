@@ -51,7 +51,26 @@
     },
     methods: {
       featureList (level) {
-        return this.getData('classFeatures').filter(feature => level.features.includes(feature.id)).map(feature => feature.name).join(', ')
+        return this.getData('classFeatures').filter(feature => level.features.includes(feature.id)).map(feature => {
+          switch (feature.id) {
+            case 'biotic_powers':
+              return `${feature.name}(${level.newBioticSpellCount}:${level.newSpellLevelMax})`
+            case 'tech_power':
+              return `${feature.name}(${level.newTechSpellCount})`
+            case 'techcombat_power':
+              return `${feature.name}(${level.newTechSpellCount})`
+            case 'extra_attack_2':
+            case 'extra_attack_3':
+            case 'brutal_critical_2':
+            case 'brutal_critical_3':
+            case 'zero-sum_2':
+            case 'zero-sum_3':
+            case 'adrenaline_rush_2':
+              return `${feature.name}(${feature.id.split('_')[feature.id.split('_').length - 1]})`
+            default:
+              return feature.name
+          }
+        }).join(', ')
       }
     },
     props: ['item', 'colors']
