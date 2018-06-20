@@ -1,5 +1,5 @@
 {
-  "updated": "June  7, 2018 @  9:48 PM",
+  "updated": "June 20, 2018 @ 12:18 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -3380,6 +3380,57 @@
       ],
       "class_list": "Adept, Sentinel, Vanguard",
       "mechanic_text_dump": "MakearangedspellattackonanorganiccreatureyoucanseewithinrangeOnahityougeneratearapidlyshiftingmasseffectfieldinsidethetargetdealingnecroticdamageequalto3d10yourspellcastingabilitymodifierInadditionthetargetisprimednecroticuntiltheendofitsnextturnThisdamagebypassesshieldsAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d10foreachslotlevelabovethe2nd"
+    },
+    {
+      "name": "Turbocharge",
+      "level": null,
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "As a bonus action, activate a subroutine that temporarily vents weapon heat through your armor to improve thermal clip efficiency and weapon damage. Until the end of your turn, the weapon your currently holding gains Burst Fire, the heat expense from using Burst Fire is 2, and you may use Burst Fire an Attack action."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "You must finish a short or long rest before using Turbocharge again."
+        }
+      ],
+      "adv_option_1": "Improved Damage : +2 damage with the turbocharged weapon",
+      "adv_option_2": "Improved Accuracy : The DC of the Dexterity saving throw is increased to 18",
+      "type": "combat",
+      "die_type": null,
+      "attack_type": [
+
+      ],
+      "casting_time": "Bonus Action",
+      "concentration": null,
+      "duration": "1 Turn",
+      "range": "Self",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "buff"
+      ],
+      "damage_type": [
+
+      ],
+      "detonates": null,
+      "primes": null,
+      "adept": null,
+      "vanguard": null,
+      "sentinel": null,
+      "infiltrator": null,
+      "engineer": null,
+      "soldier": "x",
+      "min_tech_points": null,
+      "id": "turbocharge",
+      "adv_options": [
+        "Improved Damage : +2 damage with the turbocharged weapon",
+        "Improved Accuracy : The DC of the Dexterity saving throw is increased to 18"
+      ],
+      "class_list": "Soldier",
+      "mechanic_text_dump": "AsabonusactionactivateasubroutinethattemporarilyventsweaponheatthroughyourarmortoimprovethermalclipefficiencyandweapondamageUntiltheendofyourturntheweaponyourcurrentlyholdinggainsBurstFiretheheatexpensefromusingBurstFireis2andyoumayuseBurstFireanAttackactionYoumustfinishashortorlongrestbeforeusingTurbochargeagain"
     }
   ]
 }
