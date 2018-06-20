@@ -180,7 +180,7 @@
       "proficiencyBonus": 3,
       "sneakAttack": null,
       "features": [
-        "quick_cast",
+        "quick_cast_1",
         "tech_power"
       ],
       "cantrips": 2,
@@ -269,7 +269,7 @@
       "proficiencyBonus": 4,
       "sneakAttack": null,
       "features": [
-        "quick_cast",
+        "quick_cast_2",
         "tech_power"
       ],
       "cantrips": 3,

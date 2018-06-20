@@ -2,7 +2,7 @@
 id: assault_armor
 name: Assault Armor
 ---
-Starting at {{ level }} level, your Tech Armor is rigged for maximum protection and keeping the action on you. When 
+Starting at {{ level }} level, your Tech Armor is rigged for keeping the action on you. When
 you activate tech armor, you project a distracting holographic image (your choice) and each creature within 20m 
 that can see you must make a Wisdom saving throw (DC = 8 + proficiency bonus + Intelligence modifier). On a failure, 
 a creature is compelled to attack you while your Tech Armor is active. A creature that is compelled to attack you always 
