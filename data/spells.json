@@ -1,5 +1,5 @@
 {
-  "updated": "June 20, 2018 @  3:51 PM",
+  "updated": "June 20, 2018 @  4:27 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -792,7 +792,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "You spend tech points to blast a stream of liquid hydrogen from your omni-tool. Each creature in a 6m cube becomes {primed-cold} until the end of its next turn and must make a Dexterity saving throw. A creature takes Xd8 cold damage on a failed save, or half as much damage on a successful one where X is the number of tech points spent. If the target is {unprotected}, it must pass a Strength saving throw or becomes {frozen} until the end of its next turn."
+          "data": "You spend tech points to blast a stream of liquid hydrogen from your omni-tool. Each creature in a 6m cube becomes {primed-cold} until the end of its next turn and must make a Constitution saving throw. A creature takes Xd8 cold damage on a failed save, or half as much damage on a successful one where X is the number of tech points spent. If the target is {unprotected}, it must pass a Strength saving throw or becomes {frozen} until the end of its next turn."
         }
       ],
       "adv_option_1": "Brittle Freeze : Creatures that fail the Constitution saving throw suffer a -1 AC penalty",
@@ -830,7 +830,7 @@
         "Frozen Ground : Cryo beam leaves a patch of ice on the ground that lasts for 1 min. Each creature that moves into or out of the patch must pass a Dexterity saving throw. On a failed save, slips and falls [Prone], ending its movement."
       ],
       "class_list": "Engineer, Infiltrator, Sentinel",
-      "mechanic_text_dump": "YouspendtechpointstoblastastreamofliquidhydrogenfromyouromnitoolEachcreatureina6mcubebecomesprimedcolduntiltheendofitsnextturnandmustmakeaDexteritysavingthrowAcreaturetakesXd8colddamageonafailedsaveorhalfasmuchdamageonasuccessfulonewhereXisthenumberoftechpointsspentIfthetargetisunprotecteditmustpassaStrengthsavingthroworbecomesfrozenuntiltheendofitsnextturn"
+      "mechanic_text_dump": "YouspendtechpointstoblastastreamofliquidhydrogenfromyouromnitoolEachcreatureina6mcubebecomesprimedcolduntiltheendofitsnextturnandmustmakeaConstitutionsavingthrowAcreaturetakesXd8colddamageonafailedsaveorhalfasmuchdamageonasuccessfulonewhereXisthenumberoftechpointsspentIfthetargetisunprotecteditmustpassaStrengthsavingthroworbecomesfrozenuntiltheendofitsnextturn"
     },
     {
       "name": "Cryo Blast",
