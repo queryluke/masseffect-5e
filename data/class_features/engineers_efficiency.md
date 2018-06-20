@@ -10,6 +10,5 @@ If you choose to advance the selected power, you may cast the advanced version u
 
 The potency of this power increases by 1 tech point at the 7th (2TP version), 11th (3TP version), and 15th (4TP version) level.
 
-If you wish to apply this feature to a power you've already learnt, you may choose to learn or advance an additional tech 
-power. For example, a player who has already learned Incinerate and chooses to apply this feature to it, may learn Tactical 
-Scan as an additional power when they gain this feature.
+If you wish to apply this feature to a power you've already learned, you may choose to learn or advance a different tech
+power instead.
