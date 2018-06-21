@@ -1,5 +1,5 @@
 {
-  "updated": "June  7, 2018 @ 10:13 PM",
+  "updated": "June 20, 2018 @  4:08 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTIwlLPyS6hKc2XoW5tm901kmWbiZD_cHiUBWrH2V-ceinyWWz5SiGFfnRehK4CWrewGWubXBldbesh/pubhtml",
   "data": [
     {
@@ -3228,7 +3228,7 @@
     },
     {
       "name": "Reaper Infection",
-      "type": "action",
+      "type": "melee",
       "crKey": null,
       "crEffect": null,
       "recharge": null,

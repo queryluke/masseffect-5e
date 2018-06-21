@@ -24,14 +24,12 @@
               v-list-tile-content
                 v-list-tile-title(v-text="header.display")
     monster-list(:monsters="filtered")
-    v-layout(row wrap justify-space-between).mt-4
-      span Last Updated: {{ updated }}
-      a(:href="source" target="_blank") Source
 </template>
 
 <script>
   import MonsterList from '~/components/phb/MonsterList.vue'
   import {ConfigureMonsters} from '~/mixins/monsters'
+  import {CrToInt} from '~/mixins/crToInt'
 
   export default {
     components: {
@@ -42,20 +40,8 @@
         let data = this.monsters
         let sortKey = this.sortKey
         let search = this.search
-        let order = this.sortOrder
         if (sortKey) {
-          data = data.slice().sort(function (a, b) {
-            switch (sortKey) {
-              case 'cr':
-                a = a[sortKey] ? parseInt(a[sortKey].replace(/\D/, ''), 10) : 0
-                b = b[sortKey] ? parseInt(b[sortKey].replace(/\D/, ''), 10) : 0
-                break
-              default:
-                a = a[sortKey]
-                b = b[sortKey]
-            }
-            return (a === b ? 0 : a > b ? 1 : -1) * order
-          })
+          data = data.slice().sort(this.sortFunction)
         }
         if (search) {
           data = data.filter((monster) => {
@@ -102,8 +88,20 @@
           this.sortKey = key
           this.sortOrder = 1
         }
+      },
+      sortFunction (a, b) {
+        switch (this.sortKey) {
+          case 'cr':
+            a = this.crToInt(a[this.sortKey])
+            b = this.crToInt(b[this.sortKey])
+            break
+          default:
+            a = a[this.sortKey]
+            b = b[this.sortKey]
+        }
+        return (a === b ? 0 : a > b ? 1 : -1) * this.sortOrder
       }
     },
-    mixins: [ConfigureMonsters]
+    mixins: [ConfigureMonsters, CrToInt]
   }
 </script>

@@ -1,5 +1,5 @@
 {
-  "updated": "May  3, 2018 @  4:00 PM",
+  "updated": "June 18, 2018 @ 10:33 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRIPzbOBXOdWbaY779un1EV3HyacCV3fe15kHW4ABjMV0yHi3GZHVqnbiOVSQ_Dgh1whimOITGOXHkn/pubhtml",
   "data": [
     {
@@ -97,7 +97,7 @@
       "mechanic": "ac",
       "description": "Increase AC",
       "amount": "1",
-      "cost": "8000",
+      "cost": "20000",
       "id": "ac"
     },
     {

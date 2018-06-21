@@ -6,7 +6,7 @@
       the provided NPC Archetypes with various races, weapons, and abilities, but this can be rather time consuming.
     p.
       This generator enables you to quickly create random grunts with a given Challenge Rating (CR). CRs only go up to 12
-      because higher CRs represent much more powerful monsters. As a point of reference, a Banshee has a CR of 10, so
+      because higher CRs represent much more powerful monsters. As a point of reference, a Banshee has a CR of 13, so
       a grunt with a CR of 12 would represent a #[em very] experienced and deadly NPC.
     v-card.mt-3
       v-card-text
@@ -28,7 +28,7 @@
             )
           v-flex(xs12 sm6 md4).px-2
             v-select(
-              v-bind:items="classOptions"
+              v-bind:items="classes"
               v-model="sc"
               label="Select a Class"
               item-text="name"
@@ -41,7 +41,7 @@
             )
           v-flex(xs12 sm6 md4).px-2
             v-select(
-              v-bind:items="raceOptions"
+              v-bind:items="races"
               v-model="race"
               label="Select a Race"
               item-text="name"
@@ -90,25 +90,6 @@
     },
     computed: {
       ...mapGetters(['getData', 'getMutableData', 'getGruntConfig']),
-      classOptions () {
-        let classOptions = this.filterClasses(this.race.id)
-        classOptions.sort(this.compare)
-        classOptions.unshift({ id: 'random', name: 'Random' })
-        classOptions.push({ id: 'none', name: 'None' })
-        if (!classOptions.map((co) => co.id).includes(this.sc.id)) {
-          this.sc = classOptions[0]
-        }
-        return classOptions
-      },
-      raceOptions () {
-        let raceOptions = this.filterRaces(this.sc.id)
-        raceOptions.sort(this.compare)
-        raceOptions.unshift({ id: 'random', name: 'Random' })
-        if (!raceOptions.map((ro) => ro.id).includes(this.race.id)) {
-          this.race = raceOptions[0]
-        }
-        return raceOptions
-      },
       race: {
         get () {
           return this.getGruntConfig('race')
@@ -154,26 +135,6 @@
     mixins: [GruntGenerator],
     methods: {
       ...mapActions(['updateGruntConfig']),
-      saveGrunt (grunt) {
-        this.$store.commit('addEncounterNpc', grunt)
-      },
-      filterClasses (raceId) {
-        return this.classes.filter(aClass => {
-          if (raceId === 'random') {
-            return true
-          }
-          return this.races.find((race) => { return race.id === raceId }).available_classes.includes(aClass.name)
-        })
-      },
-      filterRaces (classId) {
-        return this.races.filter(race => {
-          if (classId === 'random') {
-            return true
-          }
-          const regex = new RegExp(classId, 'gi')
-          return regex.test(race.available_classes)
-        })
-      },
       compare (a, b) {
         let comparison = 0
         if (a.name > b.name) {

@@ -1,4 +1,5 @@
 def config_races(model)
+  model['galaxy'] = model['galaxy'].split(',')
   skills = []
   model['skills'].split('--').each do |a|
     separated = a.split(':')

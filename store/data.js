@@ -5,8 +5,6 @@ import armorSets from '~/data/armor_sets.json'
 import attributions from '~/data/attributions.json'
 import backgrounds from '~/data/backgrounds.json'
 import bestiary from '~/data/bestiary.json'
-import classes from '~/data/classes.json'
-import classFeatures from '~/data/class_features.json'
 import commonplaceItems from '~/data/commonplace_items.json'
 import conditions from '~/data/conditions.json'
 import engineerProgression from '~/data/engineer_progression.json'
@@ -21,7 +19,6 @@ import sentinelProgression from '~/data/sentinel_progression.json'
 import soldierProgression from '~/data/soldier_progression.json'
 import spells from '~/data/spells.json'
 import statsByCr from '~/data/stats_by_cr.json'
-import subclasses from '~/data/subclasses.json'
 import thermalClips from '~/data/thermal_clips.json'
 import vanguardProgression from '~/data/vanguard_progression.json'
 import weaponAttributes from '~/data/weapon_attributes.json'
@@ -36,8 +33,6 @@ export default {
   attributions,
   backgrounds,
   bestiary,
-  classes,
-  classFeatures,
   commonplaceItems,
   conditions,
   engineerProgression,
@@ -52,7 +47,6 @@ export default {
   soldierProgression,
   spells,
   statsByCr,
-  subclasses,
   thermalClips,
   vanguardProgression,
   weaponAttributes,

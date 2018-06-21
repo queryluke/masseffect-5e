@@ -2,6 +2,7 @@ import {Biotics} from './Biotics'
 import {AbilityScoreBonus} from '../abilityScoreBonus'
 import {Features} from './Features'
 import {Tech} from './Tech'
+import {Senses} from './Senses'
 import {Skills} from './Skills'
 import {BestiaryHelpers} from '../bestiaryHelpers'
 import {mapGetters} from 'vuex'
@@ -15,6 +16,7 @@ export const ConfigureMonsters = {
     BestiaryHelpers,
     Biotics,
     Features,
+    Senses,
     Skills,
     Tech
   ],
@@ -32,6 +34,7 @@ export const ConfigureMonsters = {
           this.setMonsterSkills(monster)
         }
         this.setMonsterFeatures(monster)
+        this.setMonsterSenses(monster)
         return monster
       })
     }

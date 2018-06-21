@@ -1,6 +1,6 @@
 {
   "name": "masseffect-5e",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Mass Effect + D&D 5e",
   "author": "Luke Aeschleman <lukeaeschleman@gmail.com>",
   "private": true,
@@ -16,6 +16,8 @@
     "@nuxtjs/markdownit": "^1.2.1",
     "date-format-lite": "^17.7.0",
     "front-matter": "^2.3.0",
+    "fs": "0.0.1-security",
+    "lodash": "^4.17.10",
     "markdown-it-meta": "0.0.1",
     "nuxt": "^1.4.1",
     "vue2-filters": "^0.3.0",

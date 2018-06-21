@@ -42,11 +42,6 @@ export const Tech = {
   data () {
     return {
       tech: [],
-      progressions: {
-        adept: {},
-        sentinel: {},
-        vanguard: {}
-      },
       numSpellsByLevel: {
         engineer: {
           1: [1, 3, 1],

@@ -1,0 +1,590 @@
+{
+  "id": "infiltrator",
+  "name": "Infiltrator",
+  "description": "The Infiltrator is a tech-savvy warrior, able to win battles by quickly disabling and killing enemies. These soldiers focus on unlocking alternate routes, gaining access to good equipment, and obtaining an advantageous position over enemies in combat.\n",
+  "snippet": "Infiltrators are tech and combat specialists with the unique ability to cloak themselves.\n",
+  "primaryAbility": "Dexterity",
+  "hitDie": 8,
+  "minHitDieRoll": 5,
+  "armorProficiencies": [
+    "Light"
+  ],
+  "weaponProficiencyChoices": 2,
+  "weaponProficiencies": {
+    "required": [
+      "Heavy Pistols"
+    ],
+    "optional": [
+      "Assault Rifles",
+      "Melee",
+      "SMGs",
+      "Sniper Rifles"
+    ]
+  },
+  "savingThrows": [
+    "Dexterity",
+    "Intelligence"
+  ],
+  "skillChoices": 3,
+  "skillProficiencies": [
+    "Athletics",
+    "Acrobatics",
+    "Deception",
+    "Electronics",
+    "History",
+    "Insight",
+    "Investigation",
+    "Perception",
+    "Persuasion",
+    "Sleight of Hand",
+    "Stealth",
+    "Vehicle Handling"
+  ],
+  "startingRangedWeaponChoices": 1,
+  "startingRangedWeapons": [
+    "M-3 Predator",
+    "M-4 Shuriken",
+    "M-92 Mantis"
+  ],
+  "startingMeleeWeaponChoices": 1,
+  "startingMeleeWeapons": [
+    "Omni-Taser",
+    "Omni-Blade",
+    "Monomolecular Blade"
+  ],
+  "startingArmor": [
+    "Stock Light Armor"
+  ],
+  "progressionHeaders": [
+    {
+      "title": "Level"
+    },
+    {
+      "title": "Proficiency Bonus"
+    },
+    {
+      "title": "Sneak Attack Damage",
+      "key": "sneakAttack"
+    },
+    {
+      "title": "Features"
+    },
+    {
+      "title": "Tech Points"
+    },
+    {
+      "title": "Max TP",
+      "key": "maxTechPoints"
+    }
+  ],
+  "spellSlots": false,
+  "maxSpellSlot": 0,
+  "spellcasting": "Infiltrators use a highly modified Omni-tool that requires a keen intellect to maintain. As an Infiltrator, you use your Intelligence whenever a spell refers to your spellcasting ability. In addition, you use your Intelligence modifier when setting the saving throw DC for a tech spell you cast and when making an attack roll with one.\n",
+  "progression": [
+    {
+      "level": 1,
+      "proficiencyBonus": 2,
+      "sneakAttack": "1d6",
+      "features": [
+        "tactical_cloak",
+        "expertise",
+        "sneak_attack"
+      ],
+      "cantrips": null,
+      "spellSlots": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null
+      },
+      "barrierTicks": null,
+      "techPoints": 2,
+      "maxTechPoints": 2,
+      "newBioticSpellCount": null,
+      "newSpellLevelMax": null,
+      "newTechSpellCount": null
+    },
+    {
+      "level": 2,
+      "proficiencyBonus": 2,
+      "sneakAttack": "1d6",
+      "features": [
+        "cunning_action",
+        "techcombat_power"
+      ],
+      "cantrips": null,
+      "spellSlots": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null
+      },
+      "barrierTicks": null,
+      "techPoints": 4,
+      "maxTechPoints": 2,
+      "newBioticSpellCount": null,
+      "newSpellLevelMax": null,
+      "newTechSpellCount": 2
+    },
+    {
+      "level": 3,
+      "proficiencyBonus": 2,
+      "sneakAttack": "2d6",
+      "features": [
+        "subclass"
+      ],
+      "cantrips": null,
+      "spellSlots": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null
+      },
+      "barrierTicks": null,
+      "techPoints": 6,
+      "maxTechPoints": 2,
+      "newBioticSpellCount": null,
+      "newSpellLevelMax": null,
+      "newTechSpellCount": null
+    },
+    {
+      "level": 4,
+      "proficiencyBonus": 2,
+      "sneakAttack": "2d6",
+      "features": [
+        "ability_score_improvement"
+      ],
+      "cantrips": null,
+      "spellSlots": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null
+      },
+      "barrierTicks": null,
+      "techPoints": 8,
+      "maxTechPoints": 3,
+      "newBioticSpellCount": null,
+      "newSpellLevelMax": null,
+      "newTechSpellCount": null
+    },
+    {
+      "level": 5,
+      "proficiencyBonus": 3,
+      "sneakAttack": "3d6",
+      "features": [
+        "uncanny_dodge"
+      ],
+      "cantrips": null,
+      "spellSlots": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null
+      },
+      "barrierTicks": null,
+      "techPoints": 10,
+      "maxTechPoints": 3,
+      "newBioticSpellCount": null,
+      "newSpellLevelMax": null,
+      "newTechSpellCount": null
+    },
+    {
+      "level": 6,
+      "proficiencyBonus": 3,
+      "sneakAttack": "3d6",
+      "features": [
+        "expertise",
+        "techcombat_power"
+      ],
+      "cantrips": null,
+      "spellSlots": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null
+      },
+      "barrierTicks": null,
+      "techPoints": 11,
+      "maxTechPoints": 4,
+      "newBioticSpellCount": null,
+      "newSpellLevelMax": null,
+      "newTechSpellCount": 2
+    },
+    {
+      "level": 7,
+      "proficiencyBonus": 3,
+      "sneakAttack": "4d6",
+      "features": [
+        "fast_hands"
+      ],
+      "cantrips": null,
+      "spellSlots": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null
+      },
+      "barrierTicks": null,
+      "techPoints": 12,
+      "maxTechPoints": 4,
+      "newBioticSpellCount": null,
+      "newSpellLevelMax": null,
+      "newTechSpellCount": null
+    },
+    {
+      "level": 8,
+      "proficiencyBonus": 3,
+      "sneakAttack": "4d6",
+      "features": [
+        "ability_score_improvement"
+      ],
+      "cantrips": null,
+      "spellSlots": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null
+      },
+      "barrierTicks": null,
+      "techPoints": 13,
+      "maxTechPoints": 4,
+      "newBioticSpellCount": null,
+      "newSpellLevelMax": null,
+      "newTechSpellCount": null
+    },
+    {
+      "level": 9,
+      "proficiencyBonus": 4,
+      "sneakAttack": "5d6",
+      "features": [
+        "subclass"
+      ],
+      "cantrips": null,
+      "spellSlots": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null
+      },
+      "barrierTicks": null,
+      "techPoints": 14,
+      "maxTechPoints": 5,
+      "newBioticSpellCount": null,
+      "newSpellLevelMax": null,
+      "newTechSpellCount": null
+    },
+    {
+      "level": 10,
+      "proficiencyBonus": 4,
+      "sneakAttack": "5d6",
+      "features": [
+        "ability_score_improvement"
+      ],
+      "cantrips": null,
+      "spellSlots": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null
+      },
+      "barrierTicks": null,
+      "techPoints": 15,
+      "maxTechPoints": 5,
+      "newBioticSpellCount": null,
+      "newSpellLevelMax": null,
+      "newTechSpellCount": null
+    },
+    {
+      "level": 11,
+      "proficiencyBonus": 4,
+      "sneakAttack": "6d6",
+      "features": [
+        "reliable_talent",
+        "techcombat_power"
+      ],
+      "cantrips": null,
+      "spellSlots": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null
+      },
+      "barrierTicks": null,
+      "techPoints": 16,
+      "maxTechPoints": 5,
+      "newBioticSpellCount": null,
+      "newSpellLevelMax": null,
+      "newTechSpellCount": 2
+    },
+    {
+      "level": 12,
+      "proficiencyBonus": 4,
+      "sneakAttack": "6d6",
+      "features": [
+        "ability_score_improvement"
+      ],
+      "cantrips": null,
+      "spellSlots": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null
+      },
+      "barrierTicks": null,
+      "techPoints": 17,
+      "maxTechPoints": 6,
+      "newBioticSpellCount": null,
+      "newSpellLevelMax": null,
+      "newTechSpellCount": null
+    },
+    {
+      "level": 13,
+      "proficiencyBonus": 5,
+      "sneakAttack": "7d6",
+      "features": [
+        "subclass"
+      ],
+      "cantrips": null,
+      "spellSlots": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null
+      },
+      "barrierTicks": null,
+      "techPoints": 18,
+      "maxTechPoints": 6,
+      "newBioticSpellCount": null,
+      "newSpellLevelMax": null,
+      "newTechSpellCount": null
+    },
+    {
+      "level": 14,
+      "proficiencyBonus": 5,
+      "sneakAttack": "7d6",
+      "features": [
+        "evasion",
+        "techcombat_power"
+      ],
+      "cantrips": null,
+      "spellSlots": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null
+      },
+      "barrierTicks": null,
+      "techPoints": 19,
+      "maxTechPoints": 6,
+      "newBioticSpellCount": null,
+      "newSpellLevelMax": null,
+      "newTechSpellCount": 2
+    },
+    {
+      "level": 15,
+      "proficiencyBonus": 5,
+      "sneakAttack": "8d6",
+      "features": [
+        "shadow_strike"
+      ],
+      "cantrips": null,
+      "spellSlots": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null
+      },
+      "barrierTicks": null,
+      "techPoints": 20,
+      "maxTechPoints": 7,
+      "newBioticSpellCount": null,
+      "newSpellLevelMax": null,
+      "newTechSpellCount": null
+    },
+    {
+      "level": 16,
+      "proficiencyBonus": 5,
+      "sneakAttack": "8d6",
+      "features": [
+        "ability_score_improvement"
+      ],
+      "cantrips": null,
+      "spellSlots": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null
+      },
+      "barrierTicks": null,
+      "techPoints": 21,
+      "maxTechPoints": 7,
+      "newBioticSpellCount": null,
+      "newSpellLevelMax": null,
+      "newTechSpellCount": null
+    },
+    {
+      "level": 17,
+      "proficiencyBonus": 6,
+      "sneakAttack": "9d6",
+      "features": [
+        "subclass"
+      ],
+      "cantrips": null,
+      "spellSlots": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null
+      },
+      "barrierTicks": null,
+      "techPoints": 22,
+      "maxTechPoints": 7,
+      "newBioticSpellCount": null,
+      "newSpellLevelMax": null,
+      "newTechSpellCount": null
+    },
+    {
+      "level": 18,
+      "proficiencyBonus": 6,
+      "sneakAttack": "9d6",
+      "features": [
+        "elusive",
+        "techcombat_power"
+      ],
+      "cantrips": null,
+      "spellSlots": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null
+      },
+      "barrierTicks": null,
+      "techPoints": 23,
+      "maxTechPoints": 8,
+      "newBioticSpellCount": null,
+      "newSpellLevelMax": null,
+      "newTechSpellCount": 1
+    },
+    {
+      "level": 19,
+      "proficiencyBonus": 6,
+      "sneakAttack": "10d6",
+      "features": [
+        "ability_score_improvement"
+      ],
+      "cantrips": null,
+      "spellSlots": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null
+      },
+      "barrierTicks": null,
+      "techPoints": 24,
+      "maxTechPoints": 8,
+      "newBioticSpellCount": null,
+      "newSpellLevelMax": null,
+      "newTechSpellCount": null
+    },
+    {
+      "level": 20,
+      "proficiencyBonus": 6,
+      "sneakAttack": "10d6",
+      "features": [
+        "stroke_of_luck"
+      ],
+      "cantrips": null,
+      "spellSlots": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null
+      },
+      "barrierTicks": null,
+      "techPoints": 25,
+      "maxTechPoints": 8,
+      "newBioticSpellCount": null,
+      "newSpellLevelMax": null,
+      "newTechSpellCount": null
+    }
+  ],
+  "subclasses": [
+    {
+      "name": "Shadow",
+      "description": "Shadow Infiltrators are melee specialists that make heavy use of their tactical cloak and stealth to close the distance between themselves and their target.",
+      "features": [
+        [
+          "up_close_and_personal"
+        ],
+        [
+          "silent_cloak"
+        ],
+        [
+          "tactical_ambush"
+        ],
+        [
+          "sudden_strike"
+        ]
+      ]
+    },
+    {
+      "name": "Saboteur",
+      "description": "Saboteurs are infiltration experts. They use a sharp mind to subtly affect the outcome of battles.",
+      "features": [
+        [
+          "ear_for_deceit",
+          "eye_for_detail",
+          "insightful_fighting"
+        ],
+        [
+          "infiltration"
+        ],
+        [
+          "saboteurs_touch"
+        ],
+        [
+          "eye_for_weakness"
+        ]
+      ]
+    },
+    {
+      "name": "Operative",
+      "description": "Operatives are ranged specialists that rely on gunplay and a keen eye to take out enemies from a distance.",
+      "features": [
+        [
+          "dropshot"
+        ],
+        [
+          "deadeye"
+        ],
+        [
+          "combat_heuristics"
+        ],
+        [
+          "killshot"
+        ]
+      ]
+    }
+  ]
+}

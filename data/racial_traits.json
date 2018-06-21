@@ -1,5 +1,5 @@
 {
-  "updated": "May 27, 2018 @  7:46 PM",
+  "updated": "June 20, 2018 @  8:30 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRETKGL62kEZPA69PhA3AGMiVeHOWBRkTMDL3f_K-oajryEjwdq7fRAj-qfIusPsLMiIqmB12D4Zun8/pubhtml",
   "data": [
     {
@@ -23,6 +23,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "amphibious",
       "description_text_dump": "Canbreathebothairandwater"
     },
@@ -47,6 +49,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "biotic_initiate",
       "description_text_dump": "ChooseaclassAdeptorVanguardYoulearntwocantripsofyourchoicefromthatclasssspelllistInadditionchooseone1stlevelspellfromthatsamelistYoulearnthatspellandcancastitatitslowestlevelOnceyoucastityoumustfinishalongrestbeforeyoucancastitagain"
     },
@@ -71,6 +75,8 @@
       "volus": null,
       "vorcha": "x",
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "bite",
       "description_text_dump": "YourfangedmawisanaturalweaponwhichyoucanusetomakeunarmedstrikesIfyouhitwithityoudealpiercingdamageequalto1d6yourStrengthmodifierinsteadofthebludgeoningdamagenormalforanunarmedstrike"
     },
@@ -95,6 +101,8 @@
       "volus": null,
       "vorcha": "x",
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "bloodlust",
       "description_text_dump": "Afterreducinganenemyto0hitpointswithameleeattackyoumaytakeanotherActionthisturn"
     },
@@ -119,6 +127,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": "x",
+      "prothean": null,
+      "angara": null,
       "id": "composite_plating",
       "description_text_dump": "YourconstructionincorporatesadvancedarmorplatingWhilenotwearingarmoryourACisequalto13yourDexteritymodifier"
     },
@@ -143,6 +153,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "cybernetic_augmentation",
       "description_text_dump": "YouhaveaminorcyberneticaugmentationChooseoneofthefollowingDarkvisionspeedincreasedby4m1StrengthorproficiencyineitherPerceptionAthleticsorAcrobatics"
     },
@@ -167,6 +179,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "darkvision",
       "description_text_dump": "YouhavesuperiorvisionindarkanddimconditionsYoucanseeindimlightwithin20mofyouasifitwerebrightlightandindarknessasifitweredimlightYoucantdiscerncolorindarknessonlyshadesofgray"
     },
@@ -191,6 +205,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "eidetic_memory",
       "description_text_dump": "YoucanrecallmemoriesinintricatedetailincludingdetailsfromallyoursensesDistantorinconsequentialmemoriesrequireaDC14WisdomcheckOnafailureyoucanonlyrecalldetailsfromoneortwosenses"
     },
@@ -215,6 +231,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "feat",
       "description_text_dump": "Select1featfromfeats"
     },
@@ -239,6 +257,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "feats",
       "description_text_dump": "Select2featsfromfeats"
     },
@@ -263,6 +283,8 @@
       "volus": "x",
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "fury_of_the_small",
       "description_text_dump": "WhenyoudamageacreaturewithanattackoraspellandthecreaturessizeislargerthanyoursyoucancausetheattackorspelltodealextradamagetothecreatureTheextradamageequalsyourlevelOnceyouusethistraityoucantuseitagainuntilyoufinishashortorlongrest"
     },
@@ -287,6 +309,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "hallucinogen",
       "description_text_dump": "YouskinisinfusedwithamildvenomWheningestedorinjecteditcancausemildhallucinations"
     },
@@ -316,6 +340,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "hermetic_suit",
       "description_text_dump": "YoursuitisyourlifebloodItmakesyourimmunetodiseaseYouhaveresistancetopoisonandnecroticdamageHoweverifyouareunprotectedandreceiveacriticalhityoursuitbecomesbreachedOnyourturnyoucantakenootheractionexceptexpendingachargeofspecializedsealanttoclosethepunctureYouhave3chargesofsealantOnalongrestyouregainyourchargesForeachhourinwhichyouhaveabreachinyoursuityousufferonelevelofexhaustionForeachhouryouspendoutsideofyoursuitifnotinacompatibleenvironmentsuffer3levelsofexhaustion"
     },
@@ -340,6 +366,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "high-speed_metabolism",
       "description_text_dump": "SalariansdontneedtosleepforaslongasotherracesInsteadtheiruniquebiologyrequiresthattheyonlyneedtosleepfor1houradaySalariansgainthesamebenefitthatahumandoesfrom8hoursofsleep"
     },
@@ -364,6 +392,8 @@
       "volus": null,
       "vorcha": "x",
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "hungry_jaws",
       "description_text_dump": "InbattleyoucanthrowyourselfintoaviciousfeedingfrenzyAsabonusactionyoucanmakeaspecialattackwithyourbiteIftheattackhitsitdealsitsnormaldamageandyouautomaticallyactivateBloodlustYoucantusethistraitagainuntilyoufinishashortorlongrest"
     },
@@ -417,6 +447,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "hunter_mode",
       "description_text_dump": "AsanactionactivateHunterModeIncreasemovementby2m1bonustorangedandmeleeweaponattackrollsThiseffectlasts1minYoucanonlyuseHunterModeonceperlongrestAt11thlevelyougainanadditionalbenefitbasedonyourclasstableClassFeatureEngineerIncreasethedamageofallTechpowersby1dietypemaxd12Ifthedietypeisalreadyd12add1damageforeachdierolledinsteadSoldierYouhaveresistancetonecroticandforcedamageInfiltratorIncreaseyoursneakattackdietypetod8table"
     },
@@ -441,6 +473,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "innate_biotics",
       "description_text_dump": "AsaridonotrequirebioticimplantstocontroltheirabilitiesInsteadtheirbiotictalentsrelyontheirabilitytoprojecttheirwillontotheworldAsanAsariyouuseyourCharismawheneveraspellreferstoyourspellcastingabilityInadditionyouuseyourCharismamodifierwhensettingthesavingthrowDCforanbioticspellyoucastandwhenmakinganattackrollwithone"
     },
@@ -465,6 +499,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": "x",
+      "prothean": null,
+      "angara": null,
       "id": "innate_shielding",
       "description_text_dump": "Youhave5shieldsregen5Theseshieldscanbeupgradedfortheequivalentcostofbuyinganarmormod"
     },
@@ -489,6 +525,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": "x",
+      "prothean": null,
+      "angara": null,
       "id": "keen_senses",
       "description_text_dump": "YouhaveproficiencyinthePerceptionskill"
     },
@@ -513,6 +551,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": "x",
+      "prothean": null,
+      "angara": null,
       "id": "living_construct",
       "description_text_dump": "YouareimmunetodiseaseandthepoisonedconditionYoudonotneedtoeatorbreatheInsteadofsleepingyouenteraninactivestatefor4hourseachdayYoudonotdreaminthisstateyouarefullyawareofyoursurroundingsandnoticeapproachingenemiesandothereventsasnormal"
     },
@@ -537,6 +577,8 @@
       "volus": "x",
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "lucky",
       "description_text_dump": "GaintheLuckyfeat"
     },
@@ -561,6 +603,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "menacing",
       "description_text_dump": "YougainproficiencyintheIntimidationskill"
     },
@@ -585,6 +629,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "mind_meld",
       "description_text_dump": "YoucantransferandreceivethoughtstoanothercreatureYoumustconcentrateandifthecreatureisnotwillingthethoughtsbecomejumbledanddisjointedUnintelligentcreatureshaveunpredictableresults"
     },
@@ -609,6 +655,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "natural_armor",
       "description_text_dump": "IncreaseyourACby1"
     },
@@ -633,6 +681,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "no_feats",
       "description_text_dump": "Gethcannottakeanyfeats"
     },
@@ -657,6 +707,8 @@
       "volus": null,
       "vorcha": "x",
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "non-differentiated_cells",
       "description_text_dump": "YouareimmunetodiseaseInadditionyouhaveresistanceagainstpoisondamageandadvantageonsavingthrowswouldcauseyoutobecomepoisoned"
     },
@@ -666,7 +718,7 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Whenever you make an Intelligence (Engineering, Electronics, History, or Science) check to recall information, you add double your proficiency bonus to the check, even if you're not normally proficient."
+          "data": "Whenever you make an Intelligence (Engineering, Electronics, History, or Science) check to recall information, add your proficiency bonus as if you had expertise in that skill."
         }
       ],
       "asari": null,
@@ -681,8 +733,10 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "photographic_memory",
-      "description_text_dump": "WheneveryoumakeanIntelligenceEngineeringElectronicsHistoryorSciencechecktorecallinformationyouadddoubleyourproficiencybonustothecheckevenifyourenotnormallyproficient"
+      "description_text_dump": "WheneveryoumakeanIntelligenceEngineeringElectronicsHistoryorSciencechecktorecallinformationaddyourproficiencybonusasifyouhadexpertiseinthatskill"
     },
     {
       "name": "Powerful Build",
@@ -705,6 +759,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "powerful_build",
       "description_text_dump": "Youcountasonesizelargerwhendeterminingyourcarryingcapacityandtheweightyoucanpushdragorlift"
     },
@@ -729,6 +785,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "rage",
       "description_text_dump": "Ifyoubeginyourturnwithlessthat12ofyourhitpointsyouenterintoarageYourmeleeweaponattacksdealoneextradieofitsdamagewhenyouhitwithitThiseffectlasts1minuteandcannotbetriggeredagainuntilyouhaveashortrest"
     },
@@ -753,6 +811,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "relentless",
       "description_text_dump": "Whenyouarereducedto0hitpointsbutnotkilledoutrightyoucandropto1hitpointinsteadYoucantusethisfeatureagainuntilyoufinishalongrest"
     },
@@ -777,6 +837,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": "x",
+      "prothean": null,
+      "angara": null,
       "id": "repair_matrix",
       "description_text_dump": "Ifyoubeginyourturnwithlessthat12ofyourhitpointsasareactionyoumayactivateyourrepairmatrixGain1d6hitpointsatthestartofyourturnThiseffectlast1minuteoruntiltheyourbecomeincapacitatedThisabilitymayonlybeusedonceperlongrest"
     },
@@ -801,6 +863,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "saving_face",
       "description_text_dump": "BatariansarecarefulnottoshowweaknessinfrontoftheiralliesforfearoflosingstatusIfyoumisswithanattackrollorfailanabilitycheckorasavingthrowyoucangainabonustotherollequaltothenumberofalliesyoucanseewithin10mofyoumaximumbonusof5Onceyouusethistraityoucantuseitagainuntilyoufinishashortorlongrest"
     },
@@ -825,6 +889,8 @@
       "volus": "x",
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "savvy_dealings",
       "description_text_dump": "YouhaveproficiencyinthePersuasionskill"
     },
@@ -849,6 +915,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "shrewd_negotiator",
       "description_text_dump": "GainproficiencyineitherInsightorIntimidation"
     },
@@ -873,6 +941,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "skill_versatility",
       "description_text_dump": "Yougainproficiencyintwoskillsofyourchoice"
     },
@@ -897,6 +967,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "thulium_skin",
       "description_text_dump": "Resistancetoradiantdamageandanydiseasesthatwouldbecausedbyradiation"
     },
@@ -921,6 +993,8 @@
       "volus": null,
       "vorcha": null,
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "turian_toughness",
       "description_text_dump": "Yourhitpointmaximumincreasesby2anditincreasesby2everytimeyougainalevel"
     },
@@ -977,8 +1051,244 @@
       "volus": null,
       "vorcha": "x",
       "unshackled_ai": null,
+      "prothean": null,
+      "angara": null,
       "id": "limited_regeneration",
       "description_text_dump": "YouregainallyouryourHitDiceonalongrestAdditionallyifyouloseabodypartthemissingpartwillregrowandreturntofullfunctionalityafterapassingoftimebasedonthebodyparttablePartTimeFingerstoes1weekEye6weeksHandsFeet2weeksArmtoelbowLegtoknee4weeksArmtoshoulderLegtohip8weekstable"
+    },
+    {
+      "name": "All-seeing Eyes",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You have proficiency in Perception. You have truesight up to 20m."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "unshackled_ai": null,
+      "prothean": "x",
+      "angara": null,
+      "id": "all-seeing_eyes",
+      "description_text_dump": "YouhaveproficiencyinPerceptionYouhavetruesightupto20m"
+    },
+    {
+      "name": "Quad-Strand DNA",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Your unique quad-strand DNA helps to protect you against radiation and cold. You have radiant and cold damage resistance."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "unshackled_ai": null,
+      "prothean": "x",
+      "angara": null,
+      "id": "quad-strand_dna",
+      "description_text_dump": "YouruniquequadstrandDNAhelpstoprotectyouagainstradiationandcoldYouhaveradiantandcolddamageresistance"
+    },
+    {
+      "name": "Psychometry",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "While in physical contact with a creature or object, a Prothean can recall its experiences. If you touch an object or creature and concentrate on it for 1 minute, you learn a few basic facts about it. You gain a mental image from the object or creature's point of view, learning of any events that have occurred within 10 meters of the object or creature within the past 24 hours. If in contact with an object, you see the last creature to hold the object, regardless of how long ago it was last handled. This ability may only be used once per long rest."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "unshackled_ai": null,
+      "prothean": "x",
+      "angara": null,
+      "id": "psychometry",
+      "description_text_dump": "WhileinphysicalcontactwithacreatureorobjectaProtheancanrecallitsexperiencesIfyoutouchanobjectorcreatureandconcentrateonitfor1minuteyoulearnafewbasicfactsaboutitYougainamentalimagefromtheobjectorcreaturespointofviewlearningofanyeventsthathaveoccurredwithin10metersoftheobjectorcreaturewithinthepast24hoursIfincontactwithanobjectyouseethelastcreaturetoholdtheobjectregardlessofhowlongagoitwaslasthandledThisabilitymayonlybeusedonceperlongrest"
+    },
+    {
+      "name": "Avatar (optional)",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "In Prothean society, there were many \"Avatars\", Protheans who embodied a single virtue for the society. Example virtues include benevolence, cleanliness, courage, dignity, frugality, honor, justice, mercy, order, perseverance, temperance, tranquility, truthfulness, vengeance"
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "unshackled_ai": null,
+      "prothean": "x",
+      "angara": null,
+      "id": "avatar_optional",
+      "description_text_dump": "InProtheansocietythereweremanyAvatarsProtheanswhoembodiedasinglevirtueforthesocietyExamplevirtuesincludebenevolencecleanlinesscouragedignityfrugalityhonorjusticemercyorderperseverancetemperancetranquilitytruthfulnessvengeance"
+    },
+    {
+      "name": "Survivalist",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You have proficiency in Survival."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "unshackled_ai": null,
+      "prothean": null,
+      "angara": "x",
+      "id": "survivalist",
+      "description_text_dump": "YouhaveproficiencyinSurvival"
+    },
+    {
+      "name": "Bio-Electric Focus",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "You can use Shocking Grasp as a cantrip, without having to spend tech points, and dealing 1d6 points of damage, but otherwise functioning the same. Charisma is your spellcasting ability for this ability. This does not count against your max number of cantrips known."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "unshackled_ai": null,
+      "prothean": null,
+      "angara": "x",
+      "id": "bio-electric_focus",
+      "description_text_dump": "YoucanuseShockingGraspasacantripwithouthavingtospendtechpointsanddealing1d6pointsofdamagebutotherwisefunctioningthesameCharismaisyourspellcastingabilityforthisabilityThisdoesnotcountagainstyourmaxnumberofcantripsknown"
+    },
+    {
+      "name": "Bio-electric Ward",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Increase your AC by 1. You have a resistance to lightning damage, but this resistance does not apply to damage done to your shields."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "unshackled_ai": null,
+      "prothean": null,
+      "angara": "x",
+      "id": "bio-electric_ward",
+      "description_text_dump": "IncreaseyourACby1Youhavearesistancetolightningdamagebutthisresistancedoesnotapplytodamagedonetoyourshields"
+    },
+    {
+      "name": "Solar Dependency",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "If you fail to immerse yourself in sunlight for at least 1 hour during a day, you suffer one level of exhaustion at the end of that day."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "unshackled_ai": null,
+      "prothean": null,
+      "angara": "x",
+      "id": "solar_dependency",
+      "description_text_dump": "Ifyoufailtoimmerseyourselfinsunlightforatleast1hourduringadayyousufferonelevelofexhaustionattheendofthatday"
+    },
+    {
+      "name": "All Eyes on You",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Your accent, mannerisms, figures of speech, and perhaps even your appearance all mark you as more alien than most aliens. Curious glances are directed your way wherever you go, which can be a nuisance, but you also gain the friendly interest of scholars and others intrigued by far-off worlds, to say nothing of everyday beings who are eager to hear stories of your origin. You can parley this attention into access to people and places you might not otherwise have, for you and your companions. Politicians, scientists, and entrepreneurs, to name a few, might be interested in hearing about you and your people."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "unshackled_ai": null,
+      "prothean": "x",
+      "angara": null,
+      "id": "all_eyes_on_you",
+      "description_text_dump": "YouraccentmannerismsfiguresofspeechandperhapsevenyourappearanceallmarkyouasmorealienthanmostaliensCuriousglancesaredirectedyourwaywhereveryougowhichcanbeanuisancebutyoualsogainthefriendlyinterestofscholarsandothersintriguedbyfaroffworldstosaynothingofeverydaybeingswhoareeagertohearstoriesofyouroriginYoucanparleythisattentionintoaccesstopeopleandplacesyoumightnototherwisehaveforyouandyourcompanionsPoliticiansscientistsandentrepreneurstonameafewmightbeinterestedinhearingaboutyouandyourpeople"
     }
   ]
 }

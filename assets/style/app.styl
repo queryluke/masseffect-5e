@@ -3,6 +3,7 @@
 @import './_sortable_list.styl'
 @import './_dictionary_list.styl'
 @import './_date_grid.styl'
+@import './_tooltip.styl'
 
 // Import Vuetify styling
 @require '~vuetify/src/stylus/main.styl'
@@ -18,6 +19,10 @@ div.hr
   height: 4px;
   background-color: $theme.secondary;
   margin: $spacers.three.y 0px;
+
+.clickable {
+  cursor: pointer;
+}
 
 .table.alt-table
   width: 100%;

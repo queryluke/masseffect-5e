@@ -12,12 +12,6 @@ GSHEETS = [
         id: 'name'
     },
     {
-        type: 'class_features',
-        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSGBdk0hRdRSA7UVMow0_VlmTnIyX7Tm14rOVcEI74EOGymh8lTFodPByXU8PeczJVZxL0omNWb6iIg/pub?gid=0&single=true&output=csv',
-        renderables: %w(mechanic),
-        id: 'name'
-    },
-    {
         type: 'feats',
         url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTPhVRIodUwbDYFw8wJZtmb63tTjFJMxY-cN6P5nayPpJhNxAQFqIxeSLd5Tz75aOZ7CLuBkNsDrcs9/pub?gid=0&single=true&output=csv',
         id: 'name',
@@ -65,48 +59,6 @@ GSHEETS = [
         renderables: ['notes'],
         id: 'name',
         camel: true
-    },
-    {
-        type: 'classes',
-        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=0&single=true&output=csv',
-        renderables: ['starting_equipment'],
-        id: 'name'
-    },
-    {
-        type: 'engineer_progression',
-        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=859616161&single=true&output=csv',
-        renderables: [],
-    },
-    {
-        type: 'sentinel_progression',
-        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=1389384549&single=true&output=csv',
-        renderables: [],
-    },
-    {
-        type: 'infiltrator_progression',
-        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=782961022&single=true&output=csv',
-        renderables: [],
-    },
-    {
-        type: 'vanguard_progression',
-        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=1618519913&single=true&output=csv',
-        renderables: [],
-    },
-    {
-        type: 'soldier_progression',
-        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=2098633418&single=true&output=csv',
-        renderables: [],
-    },
-    {
-        type: 'adept_progression',
-        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=1256776098&single=true&output=csv',
-        renderables: [],
-    },
-    {
-        type: 'subclasses',
-        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=596741267&single=true&output=csv',
-        renderables: [],
-        id: 'name'
     },
     {
         type: 'armor_mechanics',

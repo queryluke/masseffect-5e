@@ -4,6 +4,8 @@ const config = require('~/package.json')
 export default {
   backgrounds: [],
   bookmarks: [],
+  classes: [],
+  classFeatures: [],
   encounter: {
     npcs: {
       list: [],

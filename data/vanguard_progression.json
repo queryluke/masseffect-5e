@@ -1,5 +1,5 @@
 {
-  "updated": "June  6, 2018 @ 10:12 PM",
+  "updated": "June 14, 2018 @  8:51 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -17,19 +17,19 @@
           "key": "features",
           "value": [
             {
-              "key": "barrier",
-              "display": "Barrier",
+              "key": "biotic_powers",
+              "display": "biotic_powers",
               "subclass_progression": null
             },
             {
-              "key": "biotic_powers",
-              "display": "Biotic Powers(2:1)",
+              "key": "barrier",
+              "display": "barrier",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "3"
         },
         {
@@ -51,6 +51,14 @@
         {
           "key": "4",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": "2"
+        },
+        {
+          "key": "spelllevel",
+          "value": "1"
         }
       ]
     },
@@ -70,18 +78,18 @@
           "value": [
             {
               "key": "fighting_style",
-              "display": "Fighting Style",
+              "display": "fighting_style",
               "subclass_progression": null
             },
             {
               "key": "danger_sense",
-              "display": "Danger Sense",
+              "display": "danger_sense",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "3"
         },
         {
@@ -103,6 +111,14 @@
         {
           "key": "4",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     },
@@ -121,14 +137,14 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass_feature",
-              "display": "Subclass Feature",
-              "subclass_progression": 1
+              "key": "subclass",
+              "display": "subclass",
+              "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "3"
         },
         {
@@ -150,6 +166,14 @@
         {
           "key": "4",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     },
@@ -169,13 +193,13 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "4"
         },
         {
@@ -197,6 +221,14 @@
         {
           "key": "4",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     },
@@ -215,19 +247,19 @@
           "key": "features",
           "value": [
             {
-              "key": "extra_attack",
-              "display": "Extra Attack",
+              "key": "extra_attack_",
+              "display": "extra_attack_1",
               "subclass_progression": null
             },
             {
               "key": "tactical_barrier",
-              "display": "Tactical Barrier",
+              "display": "tactical_barrier",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "4"
         },
         {
@@ -249,6 +281,14 @@
         {
           "key": "4",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     },
@@ -267,14 +307,14 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass_feature",
-              "display": "Subclass Feature",
-              "subclass_progression": 2
+              "key": "subclass",
+              "display": "subclass",
+              "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "4"
         },
         {
@@ -296,6 +336,14 @@
         {
           "key": "4",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     },
@@ -315,13 +363,13 @@
           "value": [
             {
               "key": "biotic_powers",
-              "display": "Biotic Powers(2:2)",
+              "display": "biotic_powers",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "5"
         },
         {
@@ -343,6 +391,14 @@
         {
           "key": "4",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": "2"
+        },
+        {
+          "key": "spelllevel",
+          "value": "2"
         }
       ]
     },
@@ -362,13 +418,13 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "5"
         },
         {
@@ -390,6 +446,14 @@
         {
           "key": "4",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     },
@@ -408,19 +472,19 @@
           "key": "features",
           "value": [
             {
-              "key": "zero-sum",
-              "display": "Zero-Sum",
+              "key": "zero_sum_",
+              "display": "zero_sum_1",
               "subclass_progression": null
             },
             {
-              "key": "brutal_critical",
-              "display": "Brutal Critical",
+              "key": "brutal_critical_",
+              "display": "brutal_critical_1",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "5"
         },
         {
@@ -442,6 +506,14 @@
         {
           "key": "4",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     },
@@ -460,14 +532,14 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass_feature",
-              "display": "Subclass Feature",
-              "subclass_progression": 3
+              "key": "subclass",
+              "display": "subclass",
+              "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "6"
         },
         {
@@ -489,6 +561,14 @@
         {
           "key": "4",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     },
@@ -507,19 +587,19 @@
           "key": "features",
           "value": [
             {
-              "key": "heavy_barrier",
-              "display": "Heavy Barrier",
+              "key": "biotic_powers",
+              "display": "biotic_powers",
               "subclass_progression": null
             },
             {
-              "key": "biotic_powers",
-              "display": "Biotic Powers(2:3)",
+              "key": "heavy_barrier",
+              "display": "heavy_barrier",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "6"
         },
         {
@@ -541,6 +621,14 @@
         {
           "key": "4",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": "2"
+        },
+        {
+          "key": "spelllevel",
+          "value": "3"
         }
       ]
     },
@@ -560,13 +648,13 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "6"
         },
         {
@@ -588,6 +676,14 @@
         {
           "key": "4",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     },
@@ -606,19 +702,19 @@
           "key": "features",
           "value": [
             {
-              "key": "zero-sum",
-              "display": "Zero-Sum(2)",
+              "key": "zero_sum_",
+              "display": "zero_sum_2",
               "subclass_progression": null
             },
             {
-              "key": "brutal_critical",
-              "display": "Brutal Critical(2)",
+              "key": "brutal_critical_",
+              "display": "brutal_critical_2",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "7"
         },
         {
@@ -640,6 +736,14 @@
         {
           "key": "4",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     },
@@ -658,14 +762,14 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass_feature",
-              "display": "Subclass feature",
-              "subclass_progression": 4
+              "key": "subclass",
+              "display": "subclass",
+              "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "7"
         },
         {
@@ -687,6 +791,14 @@
         {
           "key": "4",
           "value": "-"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     },
@@ -706,18 +818,18 @@
           "value": [
             {
               "key": "retaliation",
-              "display": "Retaliation",
+              "display": "retaliation",
               "subclass_progression": null
             },
             {
               "key": "biotic_powers",
-              "display": "Biotic Powers(1:4)",
+              "display": "biotic_powers",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "7"
         },
         {
@@ -739,6 +851,14 @@
         {
           "key": "4",
           "value": "1"
+        },
+        {
+          "key": "numspells",
+          "value": "1"
+        },
+        {
+          "key": "spelllevel",
+          "value": "4"
         }
       ]
     },
@@ -758,13 +878,13 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "8"
         },
         {
@@ -786,6 +906,14 @@
         {
           "key": "4",
           "value": "1"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     },
@@ -804,19 +932,19 @@
           "key": "features",
           "value": [
             {
-              "key": "zero-sum",
-              "display": "Zero-Sum(3)",
+              "key": "zero_sum_",
+              "display": "zero_sum_3",
               "subclass_progression": null
             },
             {
-              "key": "brutal_critical",
-              "display": "Brutal Critical(3)",
+              "key": "brutal_critical_",
+              "display": "brutal_critical_3",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "8"
         },
         {
@@ -838,6 +966,14 @@
         {
           "key": "4",
           "value": "2"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     },
@@ -856,14 +992,14 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass_feature",
-              "display": "Subclass feature",
-              "subclass_progression": 5
+              "key": "subclass",
+              "display": "subclass",
+              "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "9"
         },
         {
@@ -885,6 +1021,14 @@
         {
           "key": "4",
           "value": "2"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     },
@@ -904,13 +1048,13 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "9"
         },
         {
@@ -932,6 +1076,14 @@
         {
           "key": "4",
           "value": "3"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     },
@@ -951,13 +1103,13 @@
           "value": [
             {
               "key": "primal_biotics",
-              "display": "Primal Biotics",
+              "display": "primal_biotics",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "barrier_ticks",
+          "key": "barrierTicks",
           "value": "10"
         },
         {
@@ -979,6 +1131,14 @@
         {
           "key": "4",
           "value": "3"
+        },
+        {
+          "key": "numspells",
+          "value": null
+        },
+        {
+          "key": "spelllevel",
+          "value": null
         }
       ]
     }
@@ -1019,6 +1179,14 @@
     {
       "display": "4th",
       "spell_header": true
+    },
+    {
+      "display": "numSpells",
+      "spell_header": false
+    },
+    {
+      "display": "spellLevel",
+      "spell_header": false
     }
   ]
 }

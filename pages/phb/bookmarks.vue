@@ -23,7 +23,7 @@
   import BookmarkButton from '~/components/shared/BookmarkButton.vue'
   import StatBlock from '~/components/shared/StatBlock.vue'
   import GrenadeInfo from '~/components/shared/GrenadeInfo.vue'
-  import MarkdownFile from '~/components/shared/MarkdownFile.vue'
+  import MarkdownFile from '~/components/MarkdownFile.vue'
 
   export default {
     components: {

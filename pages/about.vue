@@ -17,7 +17,7 @@
                 v-card.elevation-0.transparent
                   v-card-text.text-xs-center
                     v-avatar(size="128")
-                      img(src="/images/misc/luke.jpg" alt="Luke A")
+                      img(src="https://avatars0.githubusercontent.com/u/12414786?s=460&v=4" alt="Luke A")
                   v-card-title(primary-title).layout.column.justify-center.text-xs-center.pb-0
                     v-flex.pb-0
                       div.headline Luke Aeschleman
@@ -132,13 +132,25 @@
           {
             name: 'Benjamin McPherson',
             image: 'https://avatars3.githubusercontent.com/u/1324851?s=400&v=4',
-            desc: 'The newest member of the team and likely to get a creator card soon. Ben has been poring through the rule set and' +
-            'pointing out OP mechanics and faulty site bugs. He\'s also been working on new classes. So thank him for the upcoming Angara and Protheans.'
+            desc: 'Ben has been poring through the rule set and pointing out OP mechanics and faulty site bugs.' +
+            ' He\'s also been working on new content including races, spells, and assets. Thank him for the Angara and Protheans!'
+          },
+          {
+            name: 'Noel Moriarty',
+            image: 'https://avatars1.githubusercontent.com/u/38429874?s=460&v=4',
+            desc: 'Nmmoriarty is a wizard at breaking down rules and theorycrafting. This calculated approach has been invaluable' +
+            ' in making a balanced yet intriguing system.'
+          },
+          {
+            name: 'Duneday',
+            image: 'https://avatars1.githubusercontent.com/u/38437397?s=460&v=4',
+            desc: 'Duneday has contributed a lot of class improvement ideas, especially with Sentinels and was a major part of the Race audit'
           },
           {
             name: 'Other Shout outs!',
             image: 'https://vignette.wikia.nocookie.net/masseffect/images/3/32/ME1_Paragon.png/revision/latest?cb=20120309175829',
-            desc: 'Noel Moriarty, Mel Bee, Joey C., Connor C., and any one who has contacted us with ideas or words of motivation!'
+            desc: 'damuttley, SrShdw, BLUEmusta, Mel Bee, Joey C., Connor C., RexThePig, MonocledMutineer, tioeduardo27, kstrtroi, HadesJester, Lodus,' +
+            ' and any one who has contacted us with ideas or words of motivation!'
           }
         ]
       }

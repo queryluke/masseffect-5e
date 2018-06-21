@@ -1,5 +1,5 @@
 {
-  "updated": "May  3, 2018 @  4:00 PM",
+  "updated": "June 18, 2018 @ 10:33 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRIPzbOBXOdWbaY779un1EV3HyacCV3fe15kHW4ABjMV0yHi3GZHVqnbiOVSQ_Dgh1whimOITGOXHkn/pubhtml",
   "data": [
     {
@@ -43,7 +43,7 @@
       "piece": "Chest",
       "flavor": "Offering increased protection where it's needed most, Rosenkov Materials' proprietary coating process increases stopping power of standard ceramic armor.",
       "mechanic": "+2 AC",
-      "cost": "20000",
+      "cost": "40000",
       "manu": "Rosenkov Materials",
       "id": "asymmetric_defense_layer"
     },
@@ -142,7 +142,7 @@
       "piece": "Chest",
       "flavor": "Elite personal protection equipment includes a series of interlocking ceramic plates covered in a proprietary tungsten alloy weave for maximum stopping power.",
       "mechanic": "+1 AC",
-      "cost": "5000",
+      "cost": "20000",
       "manu": "Kassa Fabrication",
       "id": "ceramic_weave"
     },
@@ -178,7 +178,7 @@
       "piece": "Chest",
       "flavor": "A prototype upgrade designed specifically for heavy combat use, it provides maximum protection for the user",
       "mechanic": "+3 AC",
-      "cost": "30000",
+      "cost": "60000",
       "manu": "Cerberus Skunkworks",
       "id": "energized_plating"
     },

@@ -1,5 +1,5 @@
 {
-  "updated": "May  3, 2018 @  6:12 PM",
+  "updated": "June 14, 2018 @  8:51 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -14,7 +14,7 @@
           "value": "2"
         },
         {
-          "key": "sneak_attack_damage",
+          "key": "sneakAttackDamage",
           "value": "1d6"
         },
         {
@@ -22,28 +22,32 @@
           "value": [
             {
               "key": "tactical_cloak",
-              "display": "Tactical Cloak",
+              "display": "tactical_cloak",
               "subclass_progression": null
             },
             {
               "key": "expertise",
-              "display": "Expertise",
+              "display": "expertise",
               "subclass_progression": null
             },
             {
               "key": "sneak_attack",
-              "display": "Sneak Attack",
+              "display": "sneak_attack",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "2"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "2"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     },
@@ -59,7 +63,7 @@
           "value": "2"
         },
         {
-          "key": "sneak_attack_damage",
+          "key": "sneakAttackDamage",
           "value": "1d6"
         },
         {
@@ -67,22 +71,26 @@
           "value": [
             {
               "key": "cunning_action",
-              "display": "Cunning Action",
+              "display": "cunning_action",
               "subclass_progression": null
             },
             {
               "key": "techcombat_power",
-              "display": "Tech/Combat Power(2)",
+              "display": "techcombat_power",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "4"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
+          "value": "2"
+        },
+        {
+          "key": "numspells",
           "value": "2"
         }
       ]
@@ -99,26 +107,30 @@
           "value": "2"
         },
         {
-          "key": "sneak_attack_damage",
+          "key": "sneakAttackDamage",
           "value": "2d6"
         },
         {
           "key": "features",
           "value": [
             {
-              "key": "subclass_feature",
-              "display": "Subclass Feature",
-              "subclass_progression": 1
+              "key": "subclass",
+              "display": "subclass",
+              "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "6"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "2"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     },
@@ -134,7 +146,7 @@
           "value": "2"
         },
         {
-          "key": "sneak_attack_damage",
+          "key": "sneakAttackDamage",
           "value": "2d6"
         },
         {
@@ -142,18 +154,22 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "8"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "3"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     },
@@ -169,7 +185,7 @@
           "value": "3"
         },
         {
-          "key": "sneak_attack_damage",
+          "key": "sneakAttackDamage",
           "value": "3d6"
         },
         {
@@ -177,18 +193,22 @@
           "value": [
             {
               "key": "uncanny_dodge",
-              "display": "Uncanny Dodge",
+              "display": "uncanny_dodge",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "10"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "3"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     },
@@ -204,7 +224,7 @@
           "value": "3"
         },
         {
-          "key": "sneak_attack_damage",
+          "key": "sneakAttackDamage",
           "value": "3d6"
         },
         {
@@ -212,23 +232,27 @@
           "value": [
             {
               "key": "expertise",
-              "display": "Expertise",
+              "display": "expertise",
               "subclass_progression": null
             },
             {
               "key": "techcombat_power",
-              "display": "Tech/Combat Power(2)",
+              "display": "techcombat_power",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "11"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "4"
+        },
+        {
+          "key": "numspells",
+          "value": "2"
         }
       ]
     },
@@ -244,7 +268,7 @@
           "value": "3"
         },
         {
-          "key": "sneak_attack_damage",
+          "key": "sneakAttackDamage",
           "value": "4d6"
         },
         {
@@ -252,18 +276,22 @@
           "value": [
             {
               "key": "fast_hands",
-              "display": "Fast Hands",
+              "display": "fast_hands",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "12"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "4"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     },
@@ -279,7 +307,7 @@
           "value": "3"
         },
         {
-          "key": "sneak_attack_damage",
+          "key": "sneakAttackDamage",
           "value": "4d6"
         },
         {
@@ -287,18 +315,22 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "13"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "4"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     },
@@ -314,26 +346,30 @@
           "value": "4"
         },
         {
-          "key": "sneak_attack_damage",
+          "key": "sneakAttackDamage",
           "value": "5d6"
         },
         {
           "key": "features",
           "value": [
             {
-              "key": "subclass_feature",
-              "display": "Subclass Feature",
-              "subclass_progression": 2
+              "key": "subclass",
+              "display": "subclass",
+              "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "14"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "5"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     },
@@ -349,7 +385,7 @@
           "value": "4"
         },
         {
-          "key": "sneak_attack_damage",
+          "key": "sneakAttackDamage",
           "value": "5d6"
         },
         {
@@ -357,18 +393,22 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "15"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "5"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     },
@@ -384,7 +424,7 @@
           "value": "4"
         },
         {
-          "key": "sneak_attack_damage",
+          "key": "sneakAttackDamage",
           "value": "6d6"
         },
         {
@@ -392,23 +432,27 @@
           "value": [
             {
               "key": "reliable_talent",
-              "display": "Reliable Talent",
+              "display": "reliable_talent",
               "subclass_progression": null
             },
             {
               "key": "techcombat_power",
-              "display": "Tech/Combat Power(2)",
+              "display": "techcombat_power",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "16"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "5"
+        },
+        {
+          "key": "numspells",
+          "value": "2"
         }
       ]
     },
@@ -424,7 +468,7 @@
           "value": "4"
         },
         {
-          "key": "sneak_attack_damage",
+          "key": "sneakAttackDamage",
           "value": "6d6"
         },
         {
@@ -432,18 +476,22 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "17"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "6"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     },
@@ -459,26 +507,30 @@
           "value": "5"
         },
         {
-          "key": "sneak_attack_damage",
+          "key": "sneakAttackDamage",
           "value": "7d6"
         },
         {
           "key": "features",
           "value": [
             {
-              "key": "subclass_feature",
-              "display": "Subclass Feature",
-              "subclass_progression": 3
+              "key": "subclass",
+              "display": "subclass",
+              "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "18"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "6"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     },
@@ -494,7 +546,7 @@
           "value": "5"
         },
         {
-          "key": "sneak_attack_damage",
+          "key": "sneakAttackDamage",
           "value": "7d6"
         },
         {
@@ -502,23 +554,27 @@
           "value": [
             {
               "key": "evasion",
-              "display": "Evasion",
+              "display": "evasion",
               "subclass_progression": null
             },
             {
               "key": "techcombat_power",
-              "display": "Tech/Combat Power(2)",
+              "display": "techcombat_power",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "19"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "6"
+        },
+        {
+          "key": "numspells",
+          "value": "2"
         }
       ]
     },
@@ -534,7 +590,7 @@
           "value": "5"
         },
         {
-          "key": "sneak_attack_damage",
+          "key": "sneakAttackDamage",
           "value": "8d6"
         },
         {
@@ -542,18 +598,22 @@
           "value": [
             {
               "key": "shadow_strike",
-              "display": "Shadow Strike",
+              "display": "shadow_strike",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "20"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "7"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     },
@@ -569,7 +629,7 @@
           "value": "5"
         },
         {
-          "key": "sneak_attack_damage",
+          "key": "sneakAttackDamage",
           "value": "8d6"
         },
         {
@@ -577,18 +637,22 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "21"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "7"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     },
@@ -604,26 +668,30 @@
           "value": "6"
         },
         {
-          "key": "sneak_attack_damage",
+          "key": "sneakAttackDamage",
           "value": "9d6"
         },
         {
           "key": "features",
           "value": [
             {
-              "key": "subclass_feature",
-              "display": "Subclass Feature",
-              "subclass_progression": 4
+              "key": "subclass",
+              "display": "subclass",
+              "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "22"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "7"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     },
@@ -639,7 +707,7 @@
           "value": "6"
         },
         {
-          "key": "sneak_attack_damage",
+          "key": "sneakAttackDamage",
           "value": "9d6"
         },
         {
@@ -647,23 +715,27 @@
           "value": [
             {
               "key": "elusive",
-              "display": "Elusive",
+              "display": "elusive",
               "subclass_progression": null
             },
             {
               "key": "techcombat_power",
-              "display": "Tech/Combat Power(1)",
+              "display": "techcombat_power",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "23"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "8"
+        },
+        {
+          "key": "numspells",
+          "value": "1"
         }
       ]
     },
@@ -679,7 +751,7 @@
           "value": "6"
         },
         {
-          "key": "sneak_attack_damage",
+          "key": "sneakAttackDamage",
           "value": "10d6"
         },
         {
@@ -687,18 +759,22 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "24"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "8"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     },
@@ -714,7 +790,7 @@
           "value": "6"
         },
         {
-          "key": "sneak_attack_damage",
+          "key": "sneakAttackDamage",
           "value": "10d6"
         },
         {
@@ -722,18 +798,22 @@
           "value": [
             {
               "key": "stroke_of_luck",
-              "display": "Stroke of Luck",
+              "display": "stroke_of_luck",
               "subclass_progression": null
             }
           ]
         },
         {
-          "key": "tech_points",
+          "key": "techPoints",
           "value": "25"
         },
         {
-          "key": "max_tp",
+          "key": "maxTp",
           "value": "8"
+        },
+        {
+          "key": "numspells",
+          "value": null
         }
       ]
     }
@@ -761,6 +841,10 @@
     },
     {
       "display": "Max TP",
+      "spell_header": false
+    },
+    {
+      "display": "numSpells",
       "spell_header": false
     }
   ]

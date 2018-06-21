@@ -1,5 +1,5 @@
 {
-  "updated": "May  5, 2018 @  2:46 PM",
+  "updated": "June 14, 2018 @  8:51 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pubhtml",
   "data": [
     {
@@ -18,15 +18,19 @@
           "value": [
             {
               "key": "fighting_style",
-              "display": "Fighting Style",
+              "display": "fighting_style",
               "subclass_progression": null
             },
             {
               "key": "combat_power",
-              "display": "Combat Power",
+              "display": "combat_power",
               "subclass_progression": null
             }
           ]
+        },
+        {
+          "key": "numattacks",
+          "value": null
         }
       ]
     },
@@ -45,11 +49,15 @@
           "key": "features",
           "value": [
             {
-              "key": "adrenaline_rush",
-              "display": "Adrenaline Rush",
+              "key": "adrenaline_rush_",
+              "display": "adrenaline_rush_1",
               "subclass_progression": null
             }
           ]
+        },
+        {
+          "key": "numattacks",
+          "value": null
         }
       ]
     },
@@ -68,11 +76,15 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass_feature",
-              "display": "Subclass Feature",
-              "subclass_progression": 1
+              "key": "subclass",
+              "display": "subclass",
+              "subclass_progression": null
             }
           ]
+        },
+        {
+          "key": "numattacks",
+          "value": null
         }
       ]
     },
@@ -92,10 +104,14 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
+        },
+        {
+          "key": "numattacks",
+          "value": null
         }
       ]
     },
@@ -114,16 +130,20 @@
           "key": "features",
           "value": [
             {
-              "key": "extra_attack",
-              "display": "Extra Attack",
+              "key": "extra_attack_",
+              "display": "extra_attack_1",
               "subclass_progression": null
             },
             {
               "key": "combat_power",
-              "display": "Combat Power",
+              "display": "combat_power",
               "subclass_progression": null
             }
           ]
+        },
+        {
+          "key": "numattacks",
+          "value": "1"
         }
       ]
     },
@@ -143,10 +163,14 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
+        },
+        {
+          "key": "numattacks",
+          "value": null
         }
       ]
     },
@@ -165,16 +189,20 @@
           "key": "features",
           "value": [
             {
-              "key": "tactical_reload",
-              "display": "Tactical Reload",
+              "key": "subclass",
+              "display": "subclass",
               "subclass_progression": null
             },
             {
-              "key": "subclass_feature",
-              "display": "Subclass Feature",
-              "subclass_progression": 2
+              "key": "tactical_reload",
+              "display": "tactical_reload",
+              "subclass_progression": null
             }
           ]
+        },
+        {
+          "key": "numattacks",
+          "value": null
         }
       ]
     },
@@ -194,10 +222,14 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
+        },
+        {
+          "key": "numattacks",
+          "value": null
         }
       ]
     },
@@ -216,16 +248,20 @@
           "key": "features",
           "value": [
             {
-              "key": "combat_power",
-              "display": "Combat Power",
+              "key": "fighting_style",
+              "display": "fighting_style",
               "subclass_progression": null
             },
             {
-              "key": "fighting_style",
-              "display": "Fighting Style",
+              "key": "combat_power",
+              "display": "combat_power",
               "subclass_progression": null
             }
           ]
+        },
+        {
+          "key": "numattacks",
+          "value": null
         }
       ]
     },
@@ -244,11 +280,15 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass_feature",
-              "display": "Subclass Feature",
-              "subclass_progression": 3
+              "key": "subclass",
+              "display": "subclass",
+              "subclass_progression": null
             }
           ]
+        },
+        {
+          "key": "numattacks",
+          "value": null
         }
       ]
     },
@@ -267,11 +307,15 @@
           "key": "features",
           "value": [
             {
-              "key": "extra_attack",
-              "display": "Extra Attack(2)",
+              "key": "extra_attack_",
+              "display": "extra_attack_2",
               "subclass_progression": null
             }
           ]
+        },
+        {
+          "key": "numattacks",
+          "value": "2"
         }
       ]
     },
@@ -291,10 +335,14 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
+        },
+        {
+          "key": "numattacks",
+          "value": null
         }
       ]
     },
@@ -314,10 +362,14 @@
           "value": [
             {
               "key": "combat_power",
-              "display": "Combat Power",
+              "display": "combat_power",
               "subclass_progression": null
             }
           ]
+        },
+        {
+          "key": "numattacks",
+          "value": null
         }
       ]
     },
@@ -337,10 +389,14 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
+        },
+        {
+          "key": "numattacks",
+          "value": null
         }
       ]
     },
@@ -359,11 +415,15 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass_feature",
-              "display": "Subclass Feature",
-              "subclass_progression": 4
+              "key": "subclass",
+              "display": "subclass",
+              "subclass_progression": null
             }
           ]
+        },
+        {
+          "key": "numattacks",
+          "value": null
         }
       ]
     },
@@ -383,10 +443,14 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
+        },
+        {
+          "key": "numattacks",
+          "value": null
         }
       ]
     },
@@ -405,16 +469,20 @@
           "key": "features",
           "value": [
             {
-              "key": "adrenaline_rush",
-              "display": "Adrenaline Rush(2)",
+              "key": "adrenaline_rush_",
+              "display": "adrenaline_rush_2",
               "subclass_progression": null
             },
             {
               "key": "combat_power",
-              "display": "Combat Power",
+              "display": "combat_power",
               "subclass_progression": null
             }
           ]
+        },
+        {
+          "key": "numattacks",
+          "value": null
         }
       ]
     },
@@ -433,11 +501,15 @@
           "key": "features",
           "value": [
             {
-              "key": "subclass_feature",
-              "display": "Subclass Feature",
-              "subclass_progression": 5
+              "key": "subclass",
+              "display": "subclass",
+              "subclass_progression": null
             }
           ]
+        },
+        {
+          "key": "numattacks",
+          "value": null
         }
       ]
     },
@@ -457,10 +529,14 @@
           "value": [
             {
               "key": "ability_score_improvement",
-              "display": "Ability Score Improvement",
+              "display": "ability_score_improvement",
               "subclass_progression": null
             }
           ]
+        },
+        {
+          "key": "numattacks",
+          "value": null
         }
       ]
     },
@@ -479,11 +555,15 @@
           "key": "features",
           "value": [
             {
-              "key": "extra_attack",
-              "display": "Extra Attack(3)",
+              "key": "extra_attack_",
+              "display": "extra_attack_3",
               "subclass_progression": null
             }
           ]
+        },
+        {
+          "key": "numattacks",
+          "value": "3"
         }
       ]
     }
@@ -499,6 +579,10 @@
     },
     {
       "display": "Features",
+      "spell_header": false
+    },
+    {
+      "display": "numAttacks",
       "spell_header": false
     }
   ]

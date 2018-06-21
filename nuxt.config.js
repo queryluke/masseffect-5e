@@ -1,8 +1,10 @@
 // Dynamic Route generation
+const fs = require('fs')
 const routes = []
-require('./data/classes.json').data.map(c => {
-  routes.push(`/phb/classes/${c.id}`)
-  routes.push(`/print/spell-cards/${c.id}`)
+fs.readdirSync('./data/classes').map(file => {
+  const id = file.replace(/.json$/, '')
+  routes.push(`/phb/classes/${id}`)
+  routes.push(`/print/spell-cards/${id}`)
 })
 require('./data/races.json').data.map(r => routes.push(`/phb/races/${r.id}`))
 

@@ -1,5 +1,5 @@
 {
-  "updated": "May 27, 2018 @  5:15 PM",
+  "updated": "June 18, 2018 @ 10:39 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRlWQ7v7esaQwLtD1yXcbiHM-jYHCzjC23cIfNFEcfbLhEcFSi8EIoLi1zZyCQtQFRneMqp02_pFWKH/pubhtml",
   "data": [
     {
@@ -118,7 +118,7 @@
       "type": "Medium",
       "flavor": "Hahne-Kedar's line of armor that utilizes auxiliary power cells to increase the users speed on the battlefield.",
       "mechanic": "+1 AC. Increase your speed by 4m. Increase your grenade capacity by 2.",
-      "cost": "28050",
+      "cost": "38050",
       "manu": "Hahne-Kedar",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/9c/Medium-human-Mantis.png/revision/latest/scale-to-width-down/160?cb=20100209162437",
       "id": "mantis_armor"
@@ -173,7 +173,7 @@
       "type": "Heavy",
       "flavor": "Cerberus assault armor is designed for shock troops, who are expected to turn the tide of battle against creatures or forces that would decimate normal soldiers. The troops demanded three things in its design: shields and armor thick enough to last against a superior foe, and compartments for extra thermal clips. The only drawback of the armor is its weight, which the troops carry as a point of pride. They have a saying: \"Out of shape going in, in shape coming out.\"",
       "mechanic": "30 Shields (regen 10) +2 AC. Increase your thermal clip capacity by 4.",
-      "cost": "78200",
+      "cost": "98200",
       "manu": "Cerberus Skunkworks",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/35/ME3_Cerberus_Assault_Armor.png/revision/latest?cb=20120314164810",
       "id": "cerberus_assault_armor"
@@ -184,7 +184,7 @@
       "type": "Heavy",
       "flavor": "The Collectors' chitinous armor is flexible and even tougher than ballistic fibers. Its organic construction allows it to be self-healing, and the muscle-like tissue that assists movement ensures it is comfortable to wear despite its weight. This suit was originally adapted out of salvaged Collector technology by Cerberus, and is incredibly difficult to find on the galactic market.",
       "mechanic": "+3 AC. If you fall below 0 hit points you immediately become stabilized. If you have any medi-gel left, you may expend one to gain hit points.",
-      "cost": "84150",
+      "cost": "114150",
       "manu": "Cerberus Skunkworks",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/a/ac/ME3_Collector_Armor.png/revision/latest/scale-to-width-down/350?cb=20120314183021",
       "id": "collector_armor"
@@ -195,7 +195,7 @@
       "type": "Heavy",
       "flavor": "The Defender Armor is a variation on the N7 Special Forces’ combat gear, built to protect soldiers in long-running engagements where reinforcements may be sparse. When the wearer fires a weapon, the suit's computers divert energy from the main power cell to the gun's kinetic coils, offering an extra punch. The Defender's storage compartments are designed to hold spare thermal clips, while capacitors throughout the armor provide extra power to shields during critical moments in battle. The armor also comes with an injection system built into the suit and neural-linked bio-monitors that help adjust the wearer's breathing rate and adrenaline levels.",
       "mechanic": "20 shields (regen 10). +2 AC. Increase thermal clip capacity by 4. Increase grenade capacity by 2",
-      "cost": "79050",
+      "cost": "99050",
       "manu": "Hahne-Kedar",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/f/f4/ME3_N7_Defender_Armor.png/revision/latest?cb=20120314194601",
       "id": "n7_defender_armor"
@@ -206,7 +206,7 @@
       "type": "Heavy",
       "flavor": "The Terminus Armor is environmentally sealed with an independent air supply for use in space and extreme planetary conditions. Its on onboard microframe computer runs a suite of battle management software. To prevent detection by passive thermal sensors, body heat is channeled to the base of the feet and dispersed into the ground.",
       "mechanic": "10 shields (regen 5). +1 AC. Speed +4m. When you lose hit points, as a reaction, you may expend a charge of medi-gel. +2 bonus to melee attack and damage rolls",
-      "cost": "64600",
+      "cost": "74600",
       "manu": "Hahne-Kedar",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/23/ME3_Terminus_Assault_Armor.png/revision/latest?cb=20120314195928",
       "id": "terminus_assault_armor"
@@ -217,7 +217,7 @@
       "type": "Heavy",
       "flavor": "A favorite for Krogran gladiators. The armor is finished with a silver polish, which quickly becomes dented, scuffed, and bloodied. These \"battle scars\" tell the tale of a Krogan's feats.",
       "mechanic": "Resistance to slashing and bludgeoning damage. +2 AC.",
-      "cost": "64750",
+      "cost": "84750",
       "manu": "Elanus Risk Control Services",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/f/fd/Heavy-krogan-Warlord.png/revision/latest/scale-to-width-down/80?cb=20100209091717",
       "id": "warlord_armor"
@@ -261,7 +261,7 @@
       "type": "Medium",
       "flavor": "Among Cerberus soldiers, Ajax armor is favored by those brave or unlucky enough to lead charges to break enemy formations. Its role is to keep the wearer standing and shooting as long as possible. It offers some benefit to omni-tool and biotic amp systems, but its main emphasis is boosting and recharging its kinetic barrier and bleeding off weapon heat through coolant circulation in its gloves. ",
       "mechanic": "20 shields (20 regen). +1 AC. Increase your thermal clip capacity by 8. Increase your grenade capacity by 4.",
-      "cost": "86700",
+      "cost": "96700",
       "manu": "Cerberus Skunkworks",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/f/f8/ME3_Cerberus_Ajax_Armor.png/revision/latest?cb=20121123062420",
       "id": "cerberus_ajax_armor"
@@ -316,7 +316,7 @@
       "type": "Medium",
       "flavor": "Standard issue armor for all Alliance infantry.",
       "mechanic": "10 shields (regen 10). +1 AC",
-      "cost": "39100",
+      "cost": "49100",
       "manu": "Hahne-Kedar",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/d/df/ME3_N7_Armor.png/revision/latest/scale-to-width-down/350?cb=20120314160514",
       "id": "n7_armor"
@@ -327,7 +327,7 @@
       "type": "Medium",
       "flavor": "Specifically designed for Quarians to protect their suit from puncture damage.",
       "mechanic": "+1 AC",
-      "cost": "18800",
+      "cost": "2880",
       "manu": "Devlon Industries",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/08/Medium-human-Explorer.png/revision/latest/scale-to-width-down/160?cb=20100209161746",
       "id": "hermetic_suit_plating"
@@ -338,7 +338,7 @@
       "type": "-",
       "flavor": "The Kestrel armor system's helmet forgoes traditional transparent visors in favor of a reinforced faceplate with an internal heads-up display. The display connects to redundant micro cameras to allow naturalistic vision inside the well-padded interior. ",
       "mechanic": "+2 AC",
-      "cost": "11050",
+      "cost": "21050",
       "manu": "Hahne-Kedar",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/7/71/ME3_kestrel_helmet.png/revision/latest/scale-to-width-down/115?cb=20120312190815",
       "id": "kestrel_helmet"
@@ -349,7 +349,7 @@
       "type": "-",
       "flavor": "The Securitel Helmet was originally designed as riot-gear. It is covered in ablative plating, well-padded to lessen damage from shocks, blows and bullet impacts. The helmet's emitters boost shielding in the rest of the armor, while its onboard computers monitor the wearer's heart-rate and central nervous system.",
       "mechanic": "+1 AC. Any critical hit against you becomes a normal hit",
-      "cost": "21250",
+      "cost": "31250",
       "manu": "Hahne-Kedar",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/6/69/ME3_securitel_helmet.png/revision/latest/scale-to-width-down/115?cb=20120312191724",
       "id": "securitel_helmet"
@@ -426,7 +426,7 @@
       "type": "-",
       "flavor": "Developed by Tyriel Advanced Communications Corporation (TACC), the latest version of the Death Mask offers exceptional protection and real-time data feedback that helps coordinate the wearer's melee attacks.",
       "mechanic": "+2 AC. +1 on melee attack and damamge rolls",
-      "cost": "21400",
+      "cost": "41400",
       "manu": "Tyriel Advanced Communications Corporation",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/2d/ME3_death_mask.png/revision/latest?cb=20120312190621",
       "id": "death_mask"
@@ -437,7 +437,7 @@
       "type": "-",
       "flavor": "A recent design, this Alliance-made helmet stores micro capacitors in its structure to replenish spent kinetic barriers. The transpari-plast armor panel on its top can be removed to access capacitors for field maintenance.",
       "mechanic": "+1 AC. Once per short rest, as a reaction to taking damamge, you may jumpstart your shield regen and immediately gain shield points equal to your regen amount.",
-      "cost": "17150",
+      "cost": "27500",
       "manu": "Hahne-Kedar",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/22/ME3_capacitor_helmet.png/revision/latest/scale-to-width-down/115?cb=20120312191432",
       "id": "capacitor_helmet"
@@ -448,7 +448,7 @@
       "type": "-",
       "flavor": "A hood issued to covert action teams, this model's optic display interfaces with most small arm's auto-targeting software, linking hand and eye for improved accuracy and increased weapon damage. Ballistic-mesh fabric and composite ceramic plating provide necessary armor, and the integral air filter helps in hostile environments. ",
       "mechanic": "+1 AC. Infrared Vision 60m. Darkvision 60m. You can toggle between the 2 vision types as a free action.",
-      "cost": "9500",
+      "cost": "19500",
       "manu": "Kassa Fabrication",
       "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/ee/ME3_recon_hood.png/revision/latest/scale-to-width-down/115?cb=20120312191621",
       "id": "recon_hood"
