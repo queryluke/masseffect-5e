@@ -1,5 +1,5 @@
 {
-  "updated": "June 20, 2018 @ 11:03 AM",
+  "updated": "June 20, 2018 @  8:30 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRETKGL62kEZPA69PhA3AGMiVeHOWBRkTMDL3f_K-oajryEjwdq7fRAj-qfIusPsLMiIqmB12D4Zun8/pubhtml",
   "data": [
     {
@@ -1263,6 +1263,32 @@
       "angara": "x",
       "id": "solar_dependency",
       "description_text_dump": "Ifyoufailtoimmerseyourselfinsunlightforatleast1hourduringadayyousufferonelevelofexhaustionattheendofthatday"
+    },
+    {
+      "name": "All Eyes on You",
+      "description": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "Your accent, mannerisms, figures of speech, and perhaps even your appearance all mark you as more alien than most aliens. Curious glances are directed your way wherever you go, which can be a nuisance, but you also gain the friendly interest of scholars and others intrigued by far-off worlds, to say nothing of everyday beings who are eager to hear stories of your origin. You can parley this attention into access to people and places you might not otherwise have, for you and your companions. Politicians, scientists, and entrepreneurs, to name a few, might be interested in hearing about you and your people."
+        }
+      ],
+      "asari": null,
+      "batarian": null,
+      "drell": null,
+      "human": null,
+      "geth": null,
+      "krogan": null,
+      "quarian": null,
+      "salarian": null,
+      "turian": null,
+      "volus": null,
+      "vorcha": null,
+      "unshackled_ai": null,
+      "prothean": "x",
+      "angara": null,
+      "id": "all_eyes_on_you",
+      "description_text_dump": "YouraccentmannerismsfiguresofspeechandperhapsevenyourappearanceallmarkyouasmorealienthanmostaliensCuriousglancesaredirectedyourwaywhereveryougowhichcanbeanuisancebutyoualsogainthefriendlyinterestofscholarsandothersintriguedbyfaroffworldstosaynothingofeverydaybeingswhoareeagertohearstoriesofyouroriginYoucanparleythisattentionintoaccesstopeopleandplacesyoumightnototherwisehaveforyouandyourcompanionsPoliticiansscientistsandentrepreneurstonameafewmightbeinterestedinhearingaboutyouandyourpeople"
     }
   ]
 }
