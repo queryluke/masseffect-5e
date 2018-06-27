@@ -1,6 +1,6 @@
 <template lang="pug">
-  v-navigation-drawer(clipped fixed app v-model="isActive")
-    v-list(dense expand)
+  v-navigation-drawer(fixed clipped app v-model="isActive")
+    v-list(dense)
       template(v-for="item in items")
         v-list-group(v-if="item.items" v-bind:prepend-icon="item.icon" no-action)
           v-list-tile(slot="activator" ripple)
@@ -13,7 +13,7 @@
         v-subheader(v-else-if="item.header") {{ item.header }}
         v-divider(v-else-if="item.divider")
         v-list-tile(v-else v-bind="{ to: item.href, href: item.href }" ripple rel="noopener" nuxt )
-          v-list-tile-action
+          v-list-tile-action(v-if="item.icon")
             v-icon {{ item.icon }}
           v-list-tile-content
             v-list-tile-title {{ item.title }}
@@ -25,7 +25,7 @@
 
   export default {
     computed: {
-      ...mapGetters(['bookmarkCount']),
+      ...mapGetters(['bookmarkCount', 'getVersion']),
       isActive: {
         get () {
           return this.$store.state.sidebar
@@ -38,6 +38,9 @@
     data () {
       return {
         items: [
+          {
+            header: 'Player\'s Handbook'
+          },
           {
             title: 'Introduction',
             icon: 'code',
@@ -89,6 +92,18 @@
             href: '/phb/bestiary'
           },
           {
+            title: 'Bookmarks',
+            icon: 'book',
+            href: '/phb/bookmarks'
+          },
+          {
+            title: 'divider',
+            divider: true
+          },
+          {
+            header: 'Tools'
+          },
+          {
             title: 'For GMs',
             icon: 'extension',
             items: [
@@ -98,10 +113,16 @@
             ]
           },
           {
-            title: 'Bookmarks',
-            icon: 'book',
-            href: '/phb/bookmarks'
-          }
+            title: 'divider',
+            divider: true
+          },
+          {
+            header: 'Mass Effect 5e'
+          },
+          { title: 'News', href: '/news' },
+          { title: 'Get Involved', href: '/contributing' },
+          { title: 'About the Project', href: '/about' },
+          { title: `Changelog`, href: '/changelog' }
         ]
       }
     }

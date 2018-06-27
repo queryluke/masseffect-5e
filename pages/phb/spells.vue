@@ -1,18 +1,7 @@
 <template lang="pug">
-  v-container
-    h2.display-3 Spells
-    div.small Biotics, Tech Powers, and Combat Abilities
+  div
     v-container(grid-list-xl)
       v-layout(row wrap)
-        v-flex(xs12 sm6 d-flex)
-          v-text-field(
-            append-icon="search"
-            label="Search"
-            single-line
-            hide-details
-            v-model="search"
-            autofocus
-          )
         v-flex(xs12 sm6 d-flex)
           v-layout(row)
             v-flex
@@ -33,18 +22,14 @@
               v-list-tile-content
                 v-list-tile-title(v-text="header.display")
     spell-list(:spells="filtered")
-    page-footer(:list="listName")
-
-</template>
+  </template>
 
 <script>
   import SpellList from '~/components/phb/SpellList.vue'
-  import PageFooter from '~/components/phb/PageFooter.vue'
   import {mapGetters} from 'vuex'
 
   export default {
     components: {
-      PageFooter,
       SpellList
     },
     computed: {
@@ -89,10 +74,11 @@
       return {
         items: [],
         listName: 'spells',
-        search: '',
+        searchString: '',
         sortKey: 'name',
         sortOrder: 1,
         spellFilter: [],
+        searchBar: false,
         headers: [
           { key: 'type', display: 'Type', classes: 'xs4 sm3 lg2', sortable: true },
           { key: 'name', display: 'Name', classes: 'xs8 sm9 lg2', sortable: true },
@@ -120,6 +106,9 @@
           this.sortKey = key
           this.sortOrder = 1
         }
+      },
+      toggleSearchBar () {
+        this.searchBar = !this.searchBar
       }
     }
   }
