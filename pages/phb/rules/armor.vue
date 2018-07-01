@@ -17,8 +17,7 @@
         rules: [
           'armor-overview',
           'armor-pieces',
-          'armor-customization',
-          'creating-new-armor'
+          'armor-customization'
         ]
       }
     },
