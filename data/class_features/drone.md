@@ -2,7 +2,8 @@
 id: drone
 name: Drone
 ---
-As an Action, spend 2 tech points to summon one of the following drones: assault, combat, defense, disruption, recon, or rocket. 
+As an Action, spend 2 tech points to summon one of the following drones: assault, combat, defense, disruption, recon, or rocket.
+The stat blocks for the drones can be found in the [bestiary](/phb/bestiary)
 
 You have complete control over the drone. Any hacking attempts on the drone are rolled against your intelligence, not the drone's. 
 
