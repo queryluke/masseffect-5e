@@ -52,6 +52,7 @@ export default {
         { hid: 'description', name: 'description', content: 'Mass Effect 5e is more than a rule set. We have also created character sheets, spell cards, and other great tabletop assets.' }
       ]
     }
-  }
+  },
+  layout: 'dark'
 }
 </script>

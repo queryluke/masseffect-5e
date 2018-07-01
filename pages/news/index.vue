@@ -35,6 +35,7 @@
           { hid: 'description', name: 'description', content: 'News...' }
         ]
       }
-    }
+    },
+    layout: 'dark'
   }
 </script>

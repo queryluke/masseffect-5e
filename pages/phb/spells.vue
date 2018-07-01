@@ -1,59 +1,60 @@
 <template lang="pug">
-  div
-    v-container(grid-list-xl)
-      v-layout(row wrap)
-        v-flex(xs12 sm6 d-flex)
-          v-layout(row)
-            v-flex
-              v-checkbox(label="Biotic" v-model="spellFilter" value="biotic" color="purple darken-4")
-            v-flex
-              v-checkbox(label="Tech" v-model="spellFilter" value="tech" color="orange darken-4")
-            v-flex
-              v-checkbox(label="Combat" v-model="spellFilter" value="combat" color="primary")
-    div.expansion-panel__sortable.primary
-      v-layout.px-4
-        v-flex(v-for="header in headers" v-bind:key="header.key" v-bind:class="header.classes")
-          v-list(dark).primary.pa-0
-            v-list-tile(@click.stop="sortBy(header.key)" ripple v-bind:class="{ active: header.key === sortKey }" v-if="header.sortable")
-              v-list-tile-content
-                v-list-tile-title(v-text="header.display")
-              v-icon(:class="[sortOrder > 0 ? 'asc' : 'dsc']" dark) arrow_downward
-            v-list-tile(v-else)
-              v-list-tile-content
-                v-list-tile-title(v-text="header.display")
-    spell-list(:spells="filtered")
-  </template>
+  v-app(toolbar)
+    h1.sr-only Mass Effect 5e - Player's Handbook
+    side-navigation
+
+    // Main toolbar
+    main-toolbar(v-if="!searchActive")
+      h2(slot="toolbarTitle").title Spells
+      template(slot="toolbarItems")
+        v-btn(icon @click="searchActive = true") #[v-icon search]
+        v-btn(icon @click="")  #[v-icon filter_list]
+
+    // Search Toolbar
+    v-toolbar(light v-if="searchActive").hidden-md-and-up
+      v-btn(@click="searchActive = false" icon) #[v-icon arrow_back]
+      v-text-field(v-model="searchString" single-line full-width hide-details label="Search")
+
+    // Content
+    v-content.blue-grey.lighten-4
+      v-container(:class="{ 'px-0': $vuetify.breakpoint.xsOnly }" )
+
+        // Search functions for large screens
+        div.hidden-sm-and-down
+          div.text-xs-center #[h2 Spells]
+          v-layout(row wrap)
+            v-flex(xs12) this is where the class filter will go
+            v-flex(xs12 sm6 d-flex)
+              v-layout(row)
+                v-flex
+                  v-checkbox(label="Biotic" v-model="spellFilter" value="biotic" color="purple darken-4")
+                v-flex
+                  v-checkbox(label="Tech" v-model="spellFilter" value="tech" color="orange darken-4")
+                v-flex
+                  v-checkbox(label="Combat" v-model="spellFilter" value="combat" color="primary")
+
+        // Spell List
+        spell-expansion-list(:spells="filtered")
+
+    // Mobile Search filters
+</template>
 
 <script>
-  import SpellList from '~/components/phb/SpellList.vue'
+  import MainToolbar from '~/components/MainToolbar.vue'
+  import SideNavigation from '~/components/SideNavigation.vue'
+  import SpellExpansionList from '~/components/spell/SpellExpansionList.vue'
   import {mapGetters} from 'vuex'
 
   export default {
     components: {
-      SpellList
+      MainToolbar,
+      SideNavigation,
+      SpellExpansionList
     },
     computed: {
       ...mapGetters(['getData']),
       filtered () {
         let data = this.items
-        let sortKey = this.sortKey
-        let order = this.sortOrder
-        data = data.slice().sort(function (a, b) {
-          switch (sortKey) {
-            case 'type':
-              if (a[sortKey] === b[sortKey]) {
-                if (a.level === b.level) {
-                  return (a.name > b.name ? 1 : -1) * order
-                } else {
-                  return (a.level > b.level ? 1 : -1) * order
-                }
-              } else {
-                return (a[sortKey] > b[sortKey] ? 1 : -1) * order
-              }
-            default:
-              return (a[sortKey] === b[sortKey] ? 0 : a[sortKey] > b[sortKey] ? 1 : -1) * order
-          }
-        })
         if (this.search) {
           data = data.filter((spell) => {
             let nameMatch = spell.name.toLowerCase().indexOf(this.search.toLowerCase()) >= 0
@@ -72,6 +73,7 @@
     },
     data () {
       return {
+        searchActive: false,
         items: [],
         listName: 'spells',
         searchString: '',
@@ -79,14 +81,7 @@
         sortOrder: 1,
         spellFilter: [],
         searchBar: false,
-        headers: [
-          { key: 'type', display: 'Type', classes: 'xs4 sm3 lg2', sortable: true },
-          { key: 'name', display: 'Name', classes: 'xs8 sm9 lg2', sortable: true },
-          { key: 'duration', display: 'Duration', classes: 'hidden-md-and-down lg2', sortable: false },
-          { key: 'range', display: 'Range/Area', classes: 'hidden-md-and-down lg2', sortable: false },
-          { key: 'attack_type', display: 'Attack/Save', classes: 'hidden-md-and-down lg2', sortable: false },
-          { key: 'damage', display: 'Damage/Effect', classes: 'hidden-md-and-down lg2', sortable: false }
-        ]
+        pageName: 'Spells'
       }
     },
     head () {
@@ -97,7 +92,7 @@
         ]
       }
     },
-    layout: 'phb',
+    layout: 'cyo',
     methods: {
       sortBy (key) {
         if (this.sortKey === key) {
@@ -107,8 +102,8 @@
           this.sortOrder = 1
         }
       },
-      toggleSearchBar () {
-        this.searchBar = !this.searchBar
+      hideSearch () {
+        this.searchActive = false
       }
     }
   }

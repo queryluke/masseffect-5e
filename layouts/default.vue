@@ -1,21 +1,18 @@
 <template lang="pug">
-  v-app(toolbar dark)
-    main-toolbar
-    side-navigation(v-if="$vuetify.breakpoint.mdAndDown")
+  v-app(toolbar)
+    main-toolbar(navBrand primaryNavigation)
     nuxt
     main-footer
 </template>
 
 <script>
-import MainToolbar from '~/components/MainToolbar.vue'
-import MainFooter from '~/components/MainFooter.vue'
-import SideNavigation from '~/components/SideNavigation.vue'
+  import MainToolbar from '~/components/MainToolbar.vue'
+  import MainFooter from '~/components/MainFooter.vue'
 
-export default {
-  components: {
-    MainFooter,
-    MainToolbar,
-    SideNavigation
+  export default {
+    components: {
+      MainFooter,
+      MainToolbar
+    }
   }
-}
 </script>

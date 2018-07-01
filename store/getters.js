@@ -19,9 +19,6 @@ export default {
   globalDialog: state => {
     return state.globalDialog
   },
-  isBookmarked: (state, getters) => card => {
-    return getters.bookmarks.find(bookmark => bookmark.card.id === card.id) !== undefined
-  },
   getData: state => name => {
     let data = state[name]
     if (typeof data === 'object' && data) {
@@ -44,17 +41,8 @@ export default {
   getGruntConfig: state => (key = false) => {
     return key ? state.gruntConfig[key] : state.gruntConfig
   },
-  getSheetUrl: state => name => {
-    return state.data[name].source
-  },
-  getSheetUpdated: state => name => {
-    return state.data[name].updated
-  },
   getMutableData: (state, getters) => name => {
     return JSON.parse(JSON.stringify(getters.getData(name)))
-  },
-  getProgressionHeaders: state => name => {
-    return state.data[`${name}Progression`].headers
   },
   getPost: state => slug => {
     return state.posts.find(post => post.slug === slug)
@@ -72,8 +60,17 @@ export default {
     }
     return posts
   },
-  tooltips: (state, getters) => {
-    return getters.getData('conditions')
+  getProgressionHeaders: state => name => {
+    return state.data[`${name}Progression`].headers
+  },
+  getSpellListOptions: state => (key = false) => {
+    return key ? state.spellListOptions[key] : state.spellListOptions
+  },
+  getSheetUrl: state => name => {
+    return state.data[name].source
+  },
+  getSheetUpdated: state => name => {
+    return state.data[name].updated
   },
   getVersion: state => {
     return state.version
@@ -88,10 +85,16 @@ export default {
       return (verA < verB) ? 1 : -1
     })
   },
+  isBookmarked: (state, getters) => card => {
+    return getters.bookmarks.find(bookmark => bookmark.card.id === card.id) !== undefined
+  },
   sidebar: state => {
     return state.sidebar
   },
   stateKeys: state => {
     return Object.keys(state)
+  },
+  tooltips: (state, getters) => {
+    return getters.getData('conditions')
   }
 }

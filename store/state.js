@@ -23,6 +23,15 @@ export default {
     sc: {id: 'random', name: 'Random'}
   },
   sidebar: true,
+  spellListOptions: {
+    sortBy: { key: 'name', display: 'Name' },
+    order: 1,
+    searchString: '',
+    filters: {
+      type: [],
+      available_classes: []
+    }
+  },
   tooltips: [],
   posts: [],
   kits: [],

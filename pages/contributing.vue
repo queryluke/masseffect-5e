@@ -83,6 +83,7 @@
           { hid: 'description', name: 'description', content: 'Learn how to contribute and provide feedback.' }
         ]
       }
-    }
+    },
+    layout: 'dark'
   }
 </script>

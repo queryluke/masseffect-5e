@@ -162,6 +162,7 @@
           { hid: 'description', name: 'description', content: 'Learn more about the Mass Effect 5e creators and contributors.' }
         ]
       }
-    }
+    },
+    layout: 'dark'
   }
 </script>

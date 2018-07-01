@@ -44,8 +44,7 @@
           { hid: 'description', name: 'description', content: 'Keep up-to-date with all the Mass Effect 5e system rule additions and updates.' }
         ]
       }
-    },
-    layout: 'default-light'
+    }
   }
 </script>
 

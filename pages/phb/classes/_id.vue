@@ -13,7 +13,7 @@
             progression-table(:item="item" v-bind:colors="colors[item.id]" slot="progression_table_tab_content")
             class-attributes(:item="item" v-bind:primaryColor="colors[item.id].primary" slot="attributes_tab_content")
             subclass-info(:item="item" v-bind:primaryColor="colors[item.id].primary" slot="subclasses_tab_content")
-            spell-list(:spells="spells" slot="spell_list_tab_content")
+            spell-expansion-list(:spells="spells" slot="spell_list_tab_content")
     v-layout(row grow).my-0.mt-4
       v-flex(v-if="previous.name").primary.pa-0.xs6
         v-list(:class="previous.colors.primary" dark).py-0
@@ -36,12 +36,12 @@
   import ProgressionTable from '~/components/class/ProgressionTable.vue'
   import ClassAttributes from '~/components/class/ClassAttributes.vue'
   import ClassTabs from '~/components/class/ClassTabs.vue'
-  import SpellList from '~/components/phb/SpellList.vue'
+  import SpellExpansionList from '~/components/spell/SpellExpansionList.vue'
   import SubclassInfo from '~/components/class/SubclassInfo.vue'
   import {mapGetters} from 'vuex'
 
   export default {
-    components: { SubclassInfo, SpellList, ClassTabs, ClassAttributes, ProgressionTable, MeIcon },
+    components: { SubclassInfo, SpellExpansionList, ClassTabs, ClassAttributes, ProgressionTable, MeIcon },
     computed: {
       ...mapGetters(['getData', 'getProgressionHeaders', 'getMutableData'])
     },
