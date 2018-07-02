@@ -11,7 +11,7 @@
         For simplicity's sake, you cannot mix armor #[em within] placements. I.e., you cannot have a heavy piece of on your
         right arm and a light piece of armor on your left.
       p.headline.mb-0 Armor / AC
-      table.table
+      table.table.alt-table
         thead.text-xs-left
           tr
             th Placement / Type
@@ -34,7 +34,7 @@
             td(colspan=3) Unless otherwise listed, headware provides no bonus
       p.headline.mb-0.mt-3 Bonues and Limitations
       p.mb-0 If you are wearing...
-      table.table
+      table.table.alt-table
         thead.text-xs-left
           tr
             th
@@ -59,7 +59,7 @@
             td -
       p.headline.mt-3 Variant: Encumberance
       p.mb-0 If using the #[a(v-on:click="showGlobalDialog('encumbrance')") Variant: Encumberance rule], use the following to calculate your armor weight.
-      table.table
+      table.table.alt-table
         thead.text-xs-left
           tr
             th

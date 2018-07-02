@@ -21,7 +21,7 @@
                   v-card-title(primaryTitle)
                     div.headline Individual rewards
                   v-card-text
-                    table.table.text-xs-left
+                    table.table.alt-table.text-xs-left
                       thead
                         tr
                           th CR
@@ -39,7 +39,7 @@
                       ul.list
                         li #[strong Credits]: {{ hoardRewards[cr.value].credits }}
                         li #[strong Additional Credits]: {{ hoardRewards[cr.value].additionalCredits[0] | groupDigits(',') }} - {{ hoardRewards[cr.value].additionalCredits[hoardRewards[cr.value].additionalCredits.length - 1] | groupDigits(',') }}
-                      table.table.text-xs-left
+                      table.table.alt-table.text-xs-left
                         thead
                           tr
                             th d100 roll
@@ -55,7 +55,7 @@
                   v-card-text
                     div(v-for="(table, id) in rewardTables" v-bind:index="id").mt-3
                       p.title Equipment Table {{ id.toUpperCase() }}
-                      table.table.text-xs-left
+                      table.table.alt-table.text-xs-left
                         thead
                           tr
                             th d100 roll
