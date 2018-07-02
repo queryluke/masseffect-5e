@@ -18,7 +18,7 @@
 
 <script>
   import { mapGetters } from 'vuex'
-  import SpellInfo from '~/components/shared/SpellInfo.vue'
+  import SpellInfo from '~/components/spell/SpellInfo.vue'
   import WeaponInfo from '~/components/shared/WeaponInfo.vue'
   import BookmarkButton from '~/components/shared/BookmarkButton.vue'
   import StatBlock from '~/components/shared/StatBlock.vue'

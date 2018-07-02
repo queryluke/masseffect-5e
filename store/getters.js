@@ -63,9 +63,6 @@ export default {
   getProgressionHeaders: state => name => {
     return state.data[`${name}Progression`].headers
   },
-  getSpellListOptions: state => (key = false) => {
-    return key ? state.spellListOptions[key] : state.spellListOptions
-  },
   getSheetUrl: state => name => {
     return state.data[name].source
   },

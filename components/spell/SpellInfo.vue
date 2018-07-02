@@ -47,12 +47,12 @@
 </template>
 
 <script>
-  import SpellType from '~/components/shared/SpellType.vue'
-  import SpellDuration from '~/components/shared/SpellDuration.vue'
-  import SpellRangeArea from '~/components/shared/SpellRangeArea.vue'
-  import SpellDamageEffect from '~/components/shared/SpellDamageEffect.vue'
-  import AdvancedOption from '~/components/shared/AdvancedOption.vue'
-  import SpellClassList from '~/components/shared/SpellClassList.vue'
+  import SpellType from '~/components/spell/SpellType.vue'
+  import SpellDuration from '~/components/spell/SpellDuration.vue'
+  import SpellRangeArea from '~/components/spell/SpellRangeArea.vue'
+  import SpellDamageEffect from '~/components/spell/SpellDamageEffect.vue'
+  import AdvancedOption from '~/components/spell/AdvancedOption.vue'
+  import SpellClassList from '~/components/spell/SpellClassList.vue'
   import MeElement from '~/components/shared/MeElement.vue'
 
   export default {

@@ -35,8 +35,5 @@ export default {
   },
   updateGruntConfig (state, payload) {
     state.gruntConfig[payload.key] = payload.value
-  },
-  updateSpellListOptions (state, payload) {
-    state.spellListOptions[payload.key] = payload.value
   }
 }

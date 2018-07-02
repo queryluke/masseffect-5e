@@ -72,8 +72,5 @@ export default {
   },
   updateGruntConfig ({commit}, payload) {
     commit('updateGruntConfig', payload)
-  },
-  updateSpellListOptions ({commit}, payload) {
-    commit('updateSpellListOptions', payload)
   }
 }

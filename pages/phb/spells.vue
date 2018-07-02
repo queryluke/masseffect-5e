@@ -8,14 +8,15 @@
       h2(slot="toolbarTitle").title Spells
       template(slot="toolbarItems")
         v-btn(icon @click="searchActive = true") #[v-icon search]
-        v-btn(icon @click="")  #[v-icon filter_list]
+        v-btn(icon @click="mobileFilters = true")  #[v-icon filter_list]
 
     // Search Toolbar
     v-toolbar(light v-if="searchActive").hidden-md-and-up
-      v-btn(@click="searchActive = false" icon) #[v-icon arrow_back]
+      v-btn(@click="searchActive = false; searchString = ''" icon) #[v-icon arrow_back]
       v-text-field(v-model="searchString" single-line full-width hide-details label="Search")
 
     // Content
+
     v-content.blue-grey.lighten-4
       v-container(:class="{ 'px-0': $vuetify.breakpoint.xsOnly }" )
 
@@ -24,64 +25,93 @@
           div.text-xs-center #[h2 Spells]
           v-layout(row wrap)
             v-flex(xs12) this is where the class filter will go
-            v-flex(xs12 sm6 d-flex)
-              v-layout(row)
-                v-flex
-                  v-checkbox(label="Biotic" v-model="spellFilter" value="biotic" color="purple darken-4")
-                v-flex
-                  v-checkbox(label="Tech" v-model="spellFilter" value="tech" color="orange darken-4")
-                v-flex
-                  v-checkbox(label="Combat" v-model="spellFilter" value="combat" color="primary")
 
         // Spell List
         spell-expansion-list(:spells="filtered")
 
     // Mobile Search filters
+    v-dialog(v-model="mobileFilters" fullscreen hide-overlay transition="dialog-bottom-transition" v-if="$vuetify.breakpoint.smAndDown")
+      v-card
+        v-toolbar(dark color="primary")
+          v-btn(icon dark @click.native="mobileFilters = false") #[v-icon close]
+          v-toolbar-title Filter Spells
+        v-card-text
+          spell-filters
 </template>
 
 <script>
   import MainToolbar from '~/components/MainToolbar.vue'
   import SideNavigation from '~/components/SideNavigation.vue'
   import SpellExpansionList from '~/components/spell/SpellExpansionList.vue'
-  import {mapGetters} from 'vuex'
+  import SpellFilters from '~/components/spell/SpellFilters.vue'
+  import {mapGetters, mapActions} from 'vuex'
 
   export default {
     components: {
       MainToolbar,
       SideNavigation,
-      SpellExpansionList
+      SpellExpansionList,
+      SpellFilters
     },
     computed: {
       ...mapGetters(['getData']),
+      ...mapGetters('spellList', {
+        order: 'order',
+        sortBy: 'sortBy',
+        type: 'type',
+        availableClasses: 'availableClasses'
+      }),
       filtered () {
         let data = this.items
-        if (this.search) {
+        let sortBy = this.sortBy.key
+        let order = this.order
+        data.sort(function (a, b) {
+          switch (sortBy) {
+            case 'type':
+              if (a[sortBy] === b[sortBy]) {
+                if (a.level === b.level) {
+                  return (a.name > b.name ? 1 : -1) * order
+                } else {
+                  return (a.level > b.level ? 1 : -1) * order
+                }
+              } else {
+                return (a[sortBy] > b[sortBy] ? 1 : -1) * order
+              }
+            default:
+              return (a[sortBy] === b[sortBy] ? 0 : a[sortBy] > b[sortBy] ? 1 : -1) * order
+          }
+        })
+        if (this.searchString) {
           data = data.filter((spell) => {
-            let nameMatch = spell.name.toLowerCase().indexOf(this.search.toLowerCase()) >= 0
-            let textMatch = spell.mechanic_text_dump.indexOf(this.search.toLowerCase()) >= 0
+            let nameMatch = spell.name.toLowerCase().indexOf(this.searchString.toLowerCase()) >= 0
+            let textMatch = spell.mechanic_text_dump.indexOf(this.searchString.toLowerCase()) >= 0
             return nameMatch || textMatch
           })
         }
-        if (this.spellFilter.length > 0) {
-          data = data.filter(spell => this.spellFilter.includes(spell.type))
+        if (this.type.length > 0) {
+          data = data.filter(spell => this.type.includes(spell.type))
+        }
+        if (this.availableClasses.length > 0) {
+          data = data.filter(spell => {
+            for (const c of this.availableClasses) {
+              if (spell[c]) {
+                return spell
+              }
+            }
+          })
         }
         return data
       }
     },
     created () {
-      this.items = this.getData(this.listName).sort((a, b) => a.name > b.name ? 1 : -1)
+      this.items = this.getData('spells')
     },
     data () {
       return {
-        searchActive: false,
         items: [],
-        listName: 'spells',
-        searchString: '',
-        sortKey: 'name',
-        sortOrder: 1,
-        spellFilter: [],
-        searchBar: false,
-        pageName: 'Spells'
+        mobileFilters: false,
+        searchActive: false,
+        searchString: ''
       }
     },
     head () {
@@ -94,17 +124,7 @@
     },
     layout: 'cyo',
     methods: {
-      sortBy (key) {
-        if (this.sortKey === key) {
-          this.sortOrder = this.sortOrder * -1
-        } else {
-          this.sortKey = key
-          this.sortOrder = 1
-        }
-      },
-      hideSearch () {
-        this.searchActive = false
-      }
+      ...mapActions(['spellList/updateValue', 'spellList/getValue'])
     }
   }
 </script>

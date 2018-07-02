@@ -1,12 +1,12 @@
 <template lang="pug">
   div
-    div.text-xs-right.mx-4.mb-2
+    div.text-xs-right.mb-2
       v-menu(bottom left).hidden-md-and-up
-        span(slot="activator") Sort by: {{ sortBy.display }}
+        span(slot="activator").subheading Sort by: {{ sortBy.display }}
         v-list
-          v-list-tile(v-for="(sort, index) of sortOptions" v-bind:key="index")
+          v-list-tile(v-for="(sort, index) of sortOptions" v-bind:key="index" v-on:click="sortBy = sort")
             v-list-tile-title {{ sort.display }} #[v-icon(v-if="sort.key === sortBy.key") check]
-      v-btn(@click="order = order * -1" icon)
+      v-btn(@click="order = order * -1" icon small)
         v-icon(v-if="order > 0") arrow_downward
         v-icon(v-if="order < 0") arrow_upward
     v-expansion-panel.mb-2
@@ -33,11 +33,11 @@
 </template>
 
 <script>
-  import SpellType from '~/components/shared/SpellType.vue'
-  import SpellDuration from '~/components/shared/SpellDuration.vue'
-  import SpellRangeArea from '~/components/shared/SpellRangeArea.vue'
-  import SpellDamageEffect from '~/components/shared/SpellDamageEffect.vue'
-  import SpellInfo from '~/components/shared/SpellInfo.vue'
+  import SpellType from '~/components/spell/SpellType.vue'
+  import SpellDuration from '~/components/spell/SpellDuration.vue'
+  import SpellRangeArea from '~/components/spell/SpellRangeArea.vue'
+  import SpellDamageEffect from '~/components/spell/SpellDamageEffect.vue'
+  import SpellInfo from '~/components/spell/SpellInfo.vue'
   import BookmarkButton from '~/components/shared/BookmarkButton.vue'
   import {mapGetters, mapActions} from 'vuex'
 
@@ -46,44 +46,26 @@
       SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect, SpellInfo, BookmarkButton
     },
     computed: {
-      ...mapGetters(['getSpellListOptions']),
-      sortBy: {
-        get () {
-          return this.getSpellListOptions('sortBy')
-        },
-        set (value) {
-          this.updateSpellListOptions({key: 'sortBy', value})
-        }
-      },
+      ...mapGetters('spellList', {
+        getOrder: 'order',
+        getSortBy: 'sortBy'
+      }),
       order: {
         get () {
-          return this.getSpellListOptions('order')
+          return this.getOrder
         },
         set (value) {
-          this.updateSpellListOptions({key: 'order', value})
+          this.updateSpellList({key: 'order', value: value})
+        }
+      },
+      sortBy: {
+        get () {
+          return this.getSortBy
+        },
+        set (value) {
+          this.updateSpellList({key: 'sortBy', value: value})
         }
       }
-    },
-    created () {
-      // TODO: sort should go back to the filtered part of spells.vue
-      let sortBy = this.sortBy.key
-      let order = this.order
-      this.spells.sort(function (a, b) {
-        switch (sortBy) {
-          case 'type':
-            if (a[sortBy] === b[sortBy]) {
-              if (a.level === b.level) {
-                return (a.name > b.name ? 1 : -1) * order
-              } else {
-                return (a.level > b.level ? 1 : -1) * order
-              }
-            } else {
-              return (a[sortBy] > b[sortBy] ? 1 : -1) * order
-            }
-          default:
-            return (a[sortBy] === b[sortBy] ? 0 : a[sortBy] > b[sortBy] ? 1 : -1) * order
-        }
-      })
     },
     data () {
       return {
@@ -94,10 +76,7 @@
       }
     },
     methods: {
-      ...mapActions(['updateSpellListOptions']),
-      sortSpells () {
-
-      }
+      ...mapActions('spellList', ['updateSpellList'])
     },
     props: ['spells']
   }
