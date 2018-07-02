@@ -1,5 +1,5 @@
 {
-  "updated": "June 20, 2018 @  4:08 PM",
+  "updated": "July  2, 2018 @  6:42 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTIwlLPyS6hKc2XoW5tm901kmWbiZD_cHiUBWrH2V-ceinyWWz5SiGFfnRehK4CWrewGWubXBldbesh/pubhtml",
   "data": [
     {
@@ -1530,7 +1530,7 @@
       "attackMod": null,
       "range": null,
       "numberOfTargets": null,
-      "description": "The pilot of the Atlas ejects, landing in an unoccupied space within 40m. The pilot is an Assault Trooper. The Atlas then self-destructs. Each creature within a 6m radius must make a DC [dc] Dexterity saving throw. On a failed save, a creature takes [dmg: 6d12] thunder damage or half as much on a successful one.",
+      "description": "The pilot of the Atlas ejects, landing in an unoccupied space within 40m. The pilot is an Assault Trooper. The Atlas then self-destructs. Each creature within a 6m radius must make a DC [dc] Dexterity saving throw. On a failed save, a creature takes 39 (6d12) thunder damage or half as much on a successful one.",
       "miss": null,
       "asari": null,
       "batarian": null,
@@ -3545,7 +3545,7 @@
       "attackMod": null,
       "range": null,
       "numberOfTargets": null,
-      "description": "The [name] targets an area within 60m. Each creature within 4m of the target must make a DC [dc] Dexterity saving throw. On a failed save, a creature takes [dmg: 3d12] thunder damage or half as much damage on a successful one.",
+      "description": "The [name] targets an area within 60m. Each creature within 4m of the target must make a DC [dc] Dexterity saving throw. On a failed save, a creature takes 19 (3d12) thunder damage or half as much damage on a successful one.",
       "miss": null,
       "asari": null,
       "batarian": null,
