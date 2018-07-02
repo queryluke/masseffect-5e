@@ -1,12 +1,11 @@
 <template lang="pug">
-  v-app(toolbar)
-    h1.sr-only Mass Effect 5e - Player's Handbook
+  div
     side-navigation
 
     // Main toolbar
-    main-toolbar(v-if="!searchActive")
+    main-toolbar(v-if="!searchActive" v-bind:primaryNavigation="$vuetify.breakpoint.mdAndUp" v-bind:navBrand="$vuetify.breakpoint.mdAndUp")
       h2(slot="toolbarTitle").title Spells
-      template(slot="toolbarItems")
+      template(slot="toolbarItems" v-if="$vuetify.breakpoint.smAndDown")
         v-btn(icon @click="searchActive = true") #[v-icon search]
         v-btn(icon @click="mobileFilters = true")  #[v-icon filter_list]
 
@@ -18,13 +17,17 @@
     // Content
 
     v-content.blue-grey.lighten-4
+      h1.sr-only Mass Effect 5e - Player's Handbook
       v-container(:class="{ 'px-0': $vuetify.breakpoint.xsOnly }" )
 
         // Search functions for large screens
         div.hidden-sm-and-down
-          div.text-xs-center #[h2 Spells]
+          h2.display-1 Spells
           v-layout(row wrap)
-            v-flex(xs12) this is where the class filter will go
+            v-flex(md4).px-1
+              v-text-field(append-icon="search" label="Search" single-line hide-details v-model="searchString")
+            v-flex(md8).px-1
+              spell-filters
 
         // Spell List
         spell-expansion-list(:spells="filtered")

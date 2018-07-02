@@ -1,3 +1,4 @@
 <template lang="pug">
-  nuxt
+  v-app
+    nuxt
 </template>

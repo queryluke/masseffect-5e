@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-toolbar(dark app clipped-left :prominent="prominent" v-bind:extended="prominent")
+  v-toolbar(dark fixed app clipped-left :prominent="prominent" v-bind:extended="prominent")
     v-toolbar-side-icon(v-on:click="toggleSidebar").hidden-lg-and-up
     v-toolbar-title
       router-link(to="/" v-if="navBrand").nav-brand

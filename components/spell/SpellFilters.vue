@@ -1,11 +1,12 @@
 <template lang="pug">
-  v-layout(row wrap)
-    v-flex(xs12 md6 lg4)
-      v-select(:items="typeOptions" v-model="typeFilter" label="Spell Type" multiple max-height="400")
-    v-flex(xs12 md6 lg4)
-      v-select(:items="classOptions" v-model="classFilter" label="Classes" multiple max-height="400")
-    v-flex(xs12 lg4).text-xs-center
-      v-btn(@click="reset()") Reset
+  v-container(grid-list-md).pa-0
+    v-layout(row justify-center)
+      v-flex(xs12 md6)
+        v-select(:items="typeOptions" v-model="typeFilter" label="Spell Type" multiple max-height="400")
+      v-flex(xs12 md6)
+        v-select(:items="classOptions" v-model="classFilter" label="Classes" multiple max-height="400")
+      v-flex(xs12).text-xs-center.hidden-md-and-up
+        v-btn(@click="reset()") Reset
 </template>
 
 <script>
