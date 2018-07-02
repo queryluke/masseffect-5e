@@ -32,17 +32,16 @@ div.hr
   th, td
     padding: $spacers.two.y $spacers.two.x !important;
     vertical-align: top;
-    border-top: $table-border-width solid $table-border-color;
+
+  tr:hover {
+    background-color: #eee
+  }
 
   thead tr
     height: auto !important;
 
   thead th
     vertical-align: bottom;
-    border-bottom: (2 * $table-border-width) solid $table-border-color;
-
-  tbody + tbody
-    border-top: (2 * $table-border-width) solid $table-border-color;
 
 ul.list-unstyled
   list-style: none;
