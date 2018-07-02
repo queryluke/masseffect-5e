@@ -39,7 +39,7 @@
           additional carrying capacity or minor speed boosts. These range from 1,000 to 5,000 credits.
           Mods that increase survivability (shields, AC, resistances) or damage should range between 5,000 and 20,000 credits
         p.title Current Mechanic List
-        table.table
+        table.table.alt-table
           thead
             tr.text-xs-left
               th Rule addition/exception

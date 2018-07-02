@@ -9,7 +9,7 @@
       p.
         Omni-gel is composed of common, reusable industrial plastics, ceramics, and light alloys kept in a semi-molten state.
         Each "charge" of omni-gel is stored in a canister and is worth 1,000 credits.
-      table.table
+      table.table.alt-table
         thead
           tr.text-xs-left
             th Item

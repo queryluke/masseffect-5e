@@ -2,7 +2,7 @@
   rule-card
     span(slot="header") Special Weapon Attributes
     template(slot="text")
-      table.table
+      table.table.alt-table
         thead.text-xs-left
           tr
             th Attribute

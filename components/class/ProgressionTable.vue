@@ -1,6 +1,6 @@
 <template lang="pug">
   div.table__overflow
-    table.table
+    table.table.alt-table
       thead
         tr(v-if="item.spellSlots" style="height: 24px; border-bottom: none;")
           th(:colspan="item.progressionHeaders.length" style="padding: 0;")

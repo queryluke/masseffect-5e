@@ -13,7 +13,7 @@
         li The armor placement (Head, Chest, Arms, Legs).
         li The armor type (Light, Medium, Heavy)
         li Additional mod slots, if any.
-      table.table
+      table.table.alt-table
         thead.text-xs-left
           tr
             th Slot / Type
@@ -45,7 +45,7 @@
       div.hr
       p.headline Example
       p Medium Head Armor w/ 2 mod slots
-      table.table
+      table.table.alt-table
         tbody
           tr
             td Medium Head

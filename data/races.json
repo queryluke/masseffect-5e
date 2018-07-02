@@ -1,5 +1,5 @@
 {
-  "updated": "June 20, 2018 @ 11:26 AM",
+  "updated": "July  1, 2018 @ 11:42 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQI4F-wI2gwN395GApB347yPb1PixjOtOqZ0qoBYw7d57MPETHS40ZjIy1-DIfZf06PUwrspMiuAMlk/pubhtml",
   "data": [
     {
@@ -22,7 +22,7 @@
     },
     {
       "name": "Asari",
-      "galaxy": "Andromeda, Milky Way",
+      "galaxy": "Andromeda,Milky Way",
       "alignment": "Tend towards neutral as a species. Most Maiden stage Asari are chaotic, Matrons level out to neutral, Matriarchs are heavily lawful.",
       "available_classes": "Adept, Engineer, Infiltrator, Sentinel, Soldier, Vanguard",
       "sexy_level": "8",
@@ -40,7 +40,7 @@
     },
     {
       "name": "Batarian",
-      "galaxy": "Andromeda, Milky Way",
+      "galaxy": "Andromeda,Milky Way",
       "alignment": "Tend towards lawful evil, although there are definite outliers on the moral spectrum.",
       "available_classes": "Adept, Engineer, Infiltrator, Sentinel, Soldier, Vanguard",
       "sexy_level": "1",
@@ -58,7 +58,7 @@
     },
     {
       "name": "Drell",
-      "galaxy": "Andromeda, Milky Way",
+      "galaxy": "Andromeda,Milky Way",
       "alignment": "Their religious influences set the Drell firmly in a trend towards lawful neutral, but this is often dependent on their station in life and career.",
       "available_classes": "Adept, Infiltrator, Soldier, Vanguard",
       "sexy_level": "10",
@@ -94,7 +94,7 @@
     },
     {
       "name": "Human",
-      "galaxy": "Andromeda, Milky Way",
+      "galaxy": "Andromeda,Milky Way",
       "alignment": "Any and all across the spectrum.",
       "available_classes": "Adept, Engineer, Infiltrator, Sentinel, Soldier, Vanguard",
       "sexy_level": "5",
@@ -112,7 +112,7 @@
     },
     {
       "name": "Krogan",
-      "galaxy": "Andromeda, Milky Way",
+      "galaxy": "Andromeda,Milky Way",
       "alignment": "Tend towards lawful as a species, with clan rituals and traditions holding heavy sway. Morality varies widely.",
       "available_classes": "Adept, Engineer, Sentinel, Soldier, Vanguard",
       "sexy_level": "7",
@@ -148,7 +148,7 @@
     },
     {
       "name": "Quarian",
-      "galaxy": "Andromeda, Milky Way",
+      "galaxy": "Andromeda,Milky Way",
       "alignment": "The proximity and longstanding traditions of the Migrant Fleet make Quarians very lawful as a race, occasionally drifting toward neutral. Morality can vary but tends towards neutral or good.",
       "available_classes": "Engineer, Infiltrator, Soldier",
       "sexy_level": "8",
@@ -166,7 +166,7 @@
     },
     {
       "name": "Salarian",
-      "galaxy": "Andromeda, Milky Way",
+      "galaxy": "Andromeda,Milky Way",
       "alignment": "Tend to be measured and intellectual, leaning neutral whether lawful, chaotic, evil or good.",
       "available_classes": "Engineer, Infiltrator, Soldier",
       "sexy_level": "6",
@@ -184,7 +184,7 @@
     },
     {
       "name": "Turian",
-      "galaxy": "Andromeda, Milky Way",
+      "galaxy": "Andromeda,Milky Way",
       "alignment": "Tend away from evil, heavily lean towards lawful as a culture. Outliers tend to be chaotic as a reaction to the culture.",
       "available_classes": "Engineer, Infiltrator, Sentinel, Soldier, Vanguard",
       "sexy_level": "9",
@@ -220,7 +220,7 @@
     },
     {
       "name": "Volus",
-      "galaxy": "Andromeda, Milky Way",
+      "galaxy": "Andromeda,Milky Way",
       "alignment": "Their society tends towards lawful as a whole, with clans fighting over economic resources and aggressive negotiating, even if they are individually chaotic individuals. They tend towards neutral morality.",
       "available_classes": "Adept, Engineer, Sentinel, Vanguard",
       "sexy_level": "3",
@@ -247,7 +247,7 @@
       "speed": "14m",
       "snippet": "Known for their unique biology and aggressive behavior, the vorcha of Heshtok are a primitive race that live among the galaxy's darker and more dangerous locations, such as Omega.",
       "optional_starting_credits": "Instead of your class's starting equipment, you may start with 4d12 x 1000 + 10,000 credits to buy your own equipment.",
-      "body": "https://vignette.wikia.nocookie.net/masseffect/images/3/39/Prothean_Profile.png/revision/latest/scale-to-width-down/216?cb=20130412085831",
+      "body": "http://vignette1.wikia.nocookie.net/masseffect/images/d/d8/ME3_Vorcha_Hunter.png/revision/latest/scale-to-width-down/500",
       "male": "http://vignette2.wikia.nocookie.net/theworldofblueteam/images/9/9e/VideoGameArt_MassEffect3_Vorcha02_RodriguePralier.jpg/revision/latest?cb=20130510043301",
       "female": "http://pre11.deviantart.net/c8b6/th/pre/i/2010/203/1/a/woman_vorcha_by_yanarada.jpg",
       "face": "http://vignette2.wikia.nocookie.net/masseffect/images/9/92/Races_Vorcha.PNG",

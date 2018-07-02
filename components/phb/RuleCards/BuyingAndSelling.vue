@@ -31,7 +31,7 @@
         li #[strong Critical Success]: +50
       p.
         Finally, the GM or player rolls a d100 adding the modifier from the previous step. Consult the following table for the resolution.
-      table.table
+      table.table.alt-table
         thead
           tr
             th Roll
