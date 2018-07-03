@@ -9,7 +9,7 @@
       v-btn(@click="order = order * -1" icon small)
         v-icon {{ order > 0 ? 'arrow_downward' : 'arrow_upward' }}
     v-layout(row).pl-4.pr-5.my-2.hidden-md-and-down
-      v-flex(v-for="header in headers" v-bind:class="header.classes")
+      v-flex(v-for="(header, index) in headers" v-bind:key="index" v-bind:class="header.classes")
         button(v-if="header.sort" v-on:click="sort(header.sort)").body-2 {{ header.name }}
           v-icon(v-if="sortBy.key === header.sort" size="16").ml-3 {{ order > 0 ? 'arrow_downward' : 'arrow_upward' }}
         span(v-else).body-2 {{ header.name }}

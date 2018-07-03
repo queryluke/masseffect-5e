@@ -1,11 +1,13 @@
 <template lang="pug">
   div
+    h1.sr-only Mass Effect 5e - Player's Handbook
     side-navigation
 
     // Main toolbar
-    main-toolbar(v-if="!searchActive" v-bind:primaryNavigation="$vuetify.breakpoint.mdAndUp" v-bind:navBrand="$vuetify.breakpoint.mdAndUp")
+    main-toolbar.hidden-sm-and-down
+    phb-toolbar(v-if="!searchActive").hidden-md-and-up
       h2(slot="toolbarTitle").title Spells
-      template(slot="toolbarItems" v-if="$vuetify.breakpoint.smAndDown")
+      template(slot="toolbarItems")
         v-btn(icon @click="searchActive = true") #[v-icon search]
         v-btn(icon @click="mobileFilters = true")  #[v-icon filter_list]
 
@@ -15,9 +17,7 @@
       v-text-field(v-model="searchString" single-line full-width hide-details label="Search")
 
     // Content
-
     v-content.blue-grey.lighten-4
-      h1.sr-only Mass Effect 5e - Player's Handbook
       v-container(:class="{ 'px-0': $vuetify.breakpoint.xsOnly }" )
 
         // Search functions for large screens
@@ -44,6 +44,7 @@
 
 <script>
   import MainToolbar from '~/components/MainToolbar.vue'
+  import PhbToolbar from '~/components/PhbToolbar.vue'
   import SideNavigation from '~/components/SideNavigation.vue'
   import SpellExpansionList from '~/components/spell/SpellExpansionList.vue'
   import SpellFilters from '~/components/spell/SpellFilters.vue'
@@ -52,6 +53,7 @@
   export default {
     components: {
       MainToolbar,
+      PhbToolbar,
       SideNavigation,
       SpellExpansionList,
       SpellFilters

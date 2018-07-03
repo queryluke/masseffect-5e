@@ -1,19 +1,11 @@
 <template lang="pug">
-  v-toolbar(dark fixed app clipped-left)
+  v-toolbar(dark fixed app clipped-left :prominent="prominent" v-bind:extended="prominent")
     v-toolbar-side-icon(v-on:click="toggleSidebar").hidden-lg-and-up
     v-toolbar-title
-      nuxt-link(to="/").nav-brand
-        img(src="/images/me5e.svg")
-        span Mass Effect 5e
+      slot(name="toolbarTitle")
     v-spacer
-    v-toolbar-items.hidden-sm-and-down
-      v-btn(v-for="(item, index) in items" v-bind:key="index" v-bind:to="item.route" flat)
-        span {{ item.title }}
-      v-menu(bottom left).hidden-md-and-up
-        v-btn(slot="activator" icon dark) #[v-icon more_vert]
-        v-list
-          v-list-tile(v-for="(item, index) in items" v-bind:key="index" v-bind:to="item.route")
-            v-list-tile-title {{ item.title }}
+    v-toolbar-items.hidden-md-and-up
+      slot(name="toolbarItems")
 </template>
 
 <script>
@@ -47,6 +39,9 @@
     },
     methods: {
       ...mapActions(['toggleSidebar'])
+    },
+    props: {
+      prominent: Boolean
     }
   }
 </script>

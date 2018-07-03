@@ -1,6 +1,6 @@
 <template lang="pug">
   v-container(grid-list-md).pa-0
-    v-layout(row justify-center)
+    v-layout(row justify-center wrap)
       v-flex(xs12 md6)
         v-select(:items="typeOptions" v-model="typeFilter" label="Spell Type" multiple max-height="400")
       v-flex(xs12 md6)
@@ -11,7 +11,6 @@
 
 <script>
   import {mapGetters, mapActions} from 'vuex'
-  //
 
   export default {
     computed: {
