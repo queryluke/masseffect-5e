@@ -88,7 +88,7 @@
 </template>
 
 <script>
-  import RuleCard from '~/components/shared/RuleCard'
+  import RuleCard from '~/components/cards/RuleCard'
   import {mapActions, mapGetters} from 'vuex'
 
   export default {

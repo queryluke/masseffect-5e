@@ -4,7 +4,7 @@
     v-toolbar-title
       slot(name="toolbarTitle")
     v-spacer
-    v-toolbar-items.hidden-md-and-up
+    v-toolbar-items(id="phbToolbarItems").hidden-md-and-up
       slot(name="toolbarItems")
 </template>
 

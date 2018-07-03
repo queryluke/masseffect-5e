@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import RuleCards from '~/components/phb/RuleCards'
+import RuleCards from '~/components/phb'
 import {mapGetters, mapActions} from 'vuex'
 
 export default {

@@ -7,9 +7,9 @@ export const EnhanceMarkdown = {
   },
   methods: {
     enhanceMarkdown (html, model = {}) {
-      return html.replace(/<table>/gi, '<table class="table">')
+      return html.replace(/<table>/gi, '<table class="table v-table">')
         .replace(/<th>/gi, '<th class="text-xs-left">')
-        .replace(/<ul>/gi, '<ul style="background-color: transparent; padding-left: 2em">')
+        .replace(/<ul>/gi, '<ul style="background-color: transparent">')
         .replace(/{{2}(.*?)}{2}/g, (match, capture) => {
           const key = capture.trim()
           if (key.indexOf('=') > -1) {
@@ -20,7 +20,7 @@ export const EnhanceMarkdown = {
                 return this.$options.filters.pluralize(_.get(model, key), string)
               case 'condition':
                 const condition = this.getDataItem('conditions', abbrKey)
-                return `<abbr data-tooltip="${condition.mechanic}">${condition.name}</abbr>`
+                return `<a href="/phb/rules/conditions#${condition.uid}">${condition.name}</abbr>`
               default:
                 return ''
             }

@@ -6,6 +6,7 @@ export default {
   bookmarks: [],
   classes: [],
   classFeatures: [],
+  conditions: [],
   encounter: {
     npcs: {
       list: [],
@@ -23,7 +24,6 @@ export default {
     sc: {id: 'random', name: 'Random'}
   },
   sidebar: true,
-  tooltips: [],
   posts: [],
   kits: [],
   data,

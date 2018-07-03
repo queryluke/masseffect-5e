@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import RuleCards from '~/components/phb/RuleCards'
+  import RuleCards from '~/components/phb'
 
   export default {
     name: 'Armor',

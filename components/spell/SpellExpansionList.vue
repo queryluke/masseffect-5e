@@ -25,7 +25,8 @@
               spell-duration(:spell="spell")
             v-flex.hidden-md-and-down.lg2
               spell-range-area(:spell="spell")
-            v-flex.hidden-md-and-down.lg2 {{ spell.attack_type[0] }}
+            v-flex.hidden-md-and-down.lg2
+              span {{ spell.attack_type[0] }}
               span(v-if="spell.attack_type.length > 1") (...)
             v-flex.hidden-md-and-down.lg2
               spell-damage-effect(:spell="spell")

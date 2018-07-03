@@ -4,7 +4,6 @@ import armorSets from '~/data/armor_sets.json'
 import attributions from '~/data/attributions.json'
 import bestiary from '~/data/bestiary.json'
 import commonplaceItems from '~/data/commonplace_items.json'
-import conditions from '~/data/conditions.json'
 import feats from '~/data/feats.json'
 import grenades from '~/data/grenades_mines.json'
 import monsterFeatures from '~/data/monster_features.json'
@@ -24,7 +23,6 @@ export default {
   attributions,
   bestiary,
   commonplaceItems,
-  conditions,
   feats,
   grenades,
   monsterFeatures,

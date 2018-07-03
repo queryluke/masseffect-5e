@@ -3,7 +3,7 @@
 
   export default {
     computed: {
-      ...mapGetters(['tooltips'])
+      ...mapGetters(['getDataItem'])
     },
     name: 'MeText',
     props: ['text'],
@@ -21,25 +21,17 @@
             display = `${textArray[0]} (${textArray[1]})`
           }
 
-          const tooltip = this.tooltips.find((tt) => {
-            return tt.id === id
-          })
-
-          if (tooltip === undefined) {
+          const condition = this.getDataItem('conditions', id)
+          if (condition === undefined) {
             return text
           }
 
           return createElement(
-            'v-tooltip',
+            'nuxt-link',
             {
-              props: {
-                bottom: true
-              }
+              attrs: { to: `/phb/rules/conditions#${condition.id}` }
             },
-            [
-              createElement('span', {slot: 'activator', attrs: {class: 'primary--text'}}, display),
-              createElement('span', tooltip.mechanic)
-            ]
+            [ display ]
           )
         } else {
           return text
@@ -49,4 +41,5 @@
     }
   }
 </script>
+
 

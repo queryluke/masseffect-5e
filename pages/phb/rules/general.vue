@@ -1,41 +1,59 @@
 <template lang="pug">
-  v-container
-    h2.display-3 General
-    p.
-      Overall, this system attempts to keep things in line with D&D 5e rules as much as possible. There are some
-      significant additions, like Shield Points, but most are minor, like the addition of a few more conditions.
-      Some changes might seem pointless at first, such as using meters instead of feet as the base unit of distance.
-      In these situations we have made the changes in order for the rules to better reflect the Mass Effect setting.
-    h3.display-2.mb-2 Rule Changes
-    div(v-for="(ruleChange, ruleChangeIndex) in rules.changes")
-      component(v-bind:is="ruleChange")
-    h3.display-2.mb-2 Rule Additions
-    div(v-for="(ruleAddition, ruleAdditionIndex) in rules.additions")
-      component(v-bind:is="ruleAddition")
+  rule-page(:rules="rules" pageTitle="General")
+    template(slot="jumpList")
+
+    template(slot="pageContent")
+      p.
+        Overall, this system attempts to keep things in line with D&D 5e rules as much as possible. There are some
+        significant additions, like Shield Points, but most are minor, like the addition of a few more conditions.
+        Some changes might seem pointless at first, such as using meters instead of feet as the base unit of distance.
+        In these situations we have made the changes in order for the rules to better reflect the Mass Effect setting.
+      div(v-for="(rule, index) in rules" v-bind:key="index")
+        component(v-bind:is="rule")
 </template>
 
 <script>
-  import RuleCards from '~/components/phb/RuleCards'
+  import RulePage from '~/components/layouts/RulePage.vue'
+
+  // Rule Cards
+  import {
+    GalaxyMaster,
+    Distance,
+    LiftingAndCarrying,
+    Encumbrance,
+    RaceClassRestrictions,
+    CreatureTypes,
+    InfraredVision,
+    ParagonAndRenegade,
+    SexyLevel
+  } from '~/components/phb/'
 
   export default {
-    components: RuleCards,
+    components: {
+      GalaxyMaster,
+      Distance,
+      LiftingAndCarrying,
+      Encumbrance,
+      RaceClassRestrictions,
+      CreatureTypes,
+      InfraredVision,
+      ParagonAndRenegade,
+      SexyLevel,
+      RulePage
+    },
     data () {
       return {
-        rules: {
-          changes: [
-            'galaxy-master',
-            'distance',
-            'lifting-and-carrying',
-            'encumbrance',
-            'race-class-restrictions',
-            'creature-types'
-          ],
-          additions: [
-            'infrared-vision',
-            'paragon-and-renegade',
-            'sexy-level'
-          ]
-        }
+        rules: [
+          'galaxy-master',
+          'distance',
+          'lifting-and-carrying',
+          'encumbrance',
+          'race-class-restrictions',
+          'creature-types',
+          'infrared-vision',
+          'paragon-and-renegade',
+          'sexy-level'
+        ]
       }
     },
     head () {
@@ -46,6 +64,6 @@
         ]
       }
     },
-    layout: 'phb'
+    layout: 'cyo'
   }
 </script>

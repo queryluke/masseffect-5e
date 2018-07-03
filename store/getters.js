@@ -90,8 +90,5 @@ export default {
   },
   stateKeys: state => {
     return Object.keys(state)
-  },
-  tooltips: (state, getters) => {
-    return getters.getData('conditions')
   }
 }
