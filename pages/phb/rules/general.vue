@@ -5,7 +5,7 @@
       significant additions, like Shield Points, but most are minor, like the addition of a few more conditions.
       Some changes might seem pointless at first, such as using meters instead of feet as the base unit of distance.
       In these situations we have made the changes in order for the rules to better reflect the Mass Effect setting.
-    div(v-for="(rule, index) in rules" v-bind:key="index")
+    div(v-for="(rule, index) in pages[$route.name].rules" v-bind:key="index")
       component(v-bind:is="rule")
 </template>
 
@@ -23,7 +23,7 @@
     SexyLevel
   } from '~/components/phb/'
 
-  import {mapMutations, mapActions} from 'vuex'
+  import {mapGetters} from 'vuex'
 
   export default {
     components: {
@@ -37,8 +37,10 @@
       ParagonAndRenegade,
       SexyLevel
     },
-    created () {
-      this.updatePageTitle({value: 'Rules - General'})
+    computed: {
+      ...mapGetters('phb', {
+        pages: 'pages'
+      })
     },
     head () {
       return {
@@ -48,10 +50,6 @@
         ]
       }
     },
-    layout: 'phb-rules',
-    methods: {
-      ...mapMutations(['updatePageTitle']),
-      ...mapActions(['rules/updateRuleSet'])
-    }
+    layout: 'phb-rules'
   }
 </script>

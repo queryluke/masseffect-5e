@@ -23,26 +23,25 @@
 
 <script>
 import SideNavigation from '~/components/SideNavigation.vue'
-import MainFooter from '~/components/MainFooter.vue'
 import PhbToolbar from '~/components/PhbToolbar.vue'
 
 // State
-import {mapMutations, mapGetters} from 'vuex'
+import {createNamespacedHelpers} from 'vuex'
+const {mapActions, mapGetters} = createNamespacedHelpers('phb')
 
 export default {
   components: {
     PhbToolbar,
-    SideNavigation,
-    MainFooter
+    SideNavigation
   },
   computed: {
-    ...mapGetters(['searchString', 'pageTitle']),
+    ...mapGetters(['searchString']),
     search: {
       get () {
         return this.searchString
       },
       set (value) {
-        this.updateSearchString({value})
+        this.updateSearchString(value)
       }
     }
   },
@@ -55,7 +54,7 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(['updateSearchString', 'toggleMobileFilterDialog'])
+    ...mapActions(['updateSearchString', 'toggleMobileFilterDialog'])
   }
 }
 </script>

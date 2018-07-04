@@ -6,8 +6,8 @@ import mutations from './mutations'
 import getters from './getters'
 
 // modules
+import phb from './phb-pages'
 import spellList from './spellList'
-import rules from './rules'
 
 const createStore = () => {
   return new Vuex.Store({
@@ -16,8 +16,8 @@ const createStore = () => {
     actions,
     getters,
     modules: {
-      spellList,
-      rules
+      phb,
+      spellList
     }
   })
 }

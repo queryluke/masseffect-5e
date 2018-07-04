@@ -5,7 +5,7 @@
     side-navigation
 
     // Main toolbar
-    phb-toolbar
+    phb-toolbar(clippedRight)
       template(slot="toolbarItems")
         v-btn(icon dark @click="ruleList = !ruleList") #[v-icon view_list]
 
@@ -13,7 +13,7 @@
     v-navigation-drawer(v-model="ruleList" fixed right clipped app width="200" mobile-break-point="960")
       v-list(dense)
         v-subheader Jump to
-        v-list-tile(ripple v-for="(rule, index) in rules[current]" v-bind:key="index" v-on:click="goToRule(`#${rule}`)")
+        v-list-tile(ripple v-for="(rule, index) in pages[$route.name].rules" v-bind:key="index" v-on:click="goToRule(`#${rule}`)")
           v-list-tile-title {{ rule.replace(/-/g,' ') | capitalize }}
 
     // Content
@@ -24,7 +24,6 @@
 
 <script>
 import SideNavigation from '~/components/SideNavigation.vue'
-import MainFooter from '~/components/MainFooter.vue'
 import PhbToolbar from '~/components/PhbToolbar.vue'
 
 // State
@@ -33,18 +32,12 @@ import {mapGetters} from 'vuex'
 export default {
   components: {
     PhbToolbar,
-    SideNavigation,
-    MainFooter
+    SideNavigation
   },
   computed: {
-    ...mapGetters(['pageTitle', 'pageRules']),
-    ...mapGetters('rules', {
-      rules: 'rules',
-      current: 'current'
+    ...mapGetters('phb', {
+      pages: 'pages'
     })
-  },
-  created () {
-    console.log(this.rules['general'])
   },
   data () {
     return {

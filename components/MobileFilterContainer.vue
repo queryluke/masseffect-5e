@@ -9,14 +9,15 @@
 </template>
 
 <script>
-import {mapGetters, mapMutations} from 'vuex'
+import {createNamespacedHelpers} from 'vuex'
+const {mapActions, mapGetters} = createNamespacedHelpers('phb')
 
 export default {
   computed: {
     ...mapGetters(['mobileFilterDialog'])
   },
   methods: {
-    ...mapMutations(['toggleMobileFilterDialog'])
+    ...mapActions(['toggleMobileFilterDialog'])
   }
 }
 </script>

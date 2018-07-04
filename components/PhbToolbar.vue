@@ -5,7 +5,7 @@
       nuxt-link(to="/").nav-brand.hidden-sm-and-down
         img(src="/images/me5e.svg")
         span Mass Effect 5e
-      span.hidden-md-and-up {{ pageTitle }}
+      span.hidden-md-and-up {{ pages[$route.name].name }}
     v-spacer
     v-toolbar-items.hidden-sm-and-down
       v-btn(v-for="(item, index) in primaryNavigation" v-bind:key="index" v-bind:to="item.route" flat)
@@ -15,10 +15,11 @@
 </template>
 
 <script>
-  import {mapActions, mapGetters} from 'vuex'
+  import {createNamespacedHelpers} from 'vuex'
+  const {mapActions, mapGetters} = createNamespacedHelpers('phb')
   export default {
     computed: {
-      ...mapGetters(['pageTitle', 'primaryNavigation'])
+      ...mapGetters(['pages', 'primaryNavigation'])
     },
     methods: {
       ...mapActions(['toggleSidebar'])

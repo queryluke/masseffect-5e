@@ -10,14 +10,12 @@
 </template>
 
 <script>
-  import {mapGetters, mapActions} from 'vuex'
+  import {createNamespacedHelpers} from 'vuex'
+  const {mapActions, mapGetters} = createNamespacedHelpers('spellList')
 
   export default {
     computed: {
-      ...mapGetters('spellList', {
-        type: 'type',
-        availableClasses: 'availableClasses'
-      }),
+      ...mapGetters(['type', 'availableClasses']),
       typeFilter: {
         get () {
           return this.type
@@ -53,13 +51,12 @@
       }
     },
     methods: {
-      ...mapActions('spellList', ['updateSpellList']),
+      ...mapActions(['updateSpellList']),
       reset () {
         this.classFilter = []
         this.typeFilter = []
       }
-    },
-    props: ['spells']
+    }
   }
 </script>
 

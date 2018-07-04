@@ -23,7 +23,10 @@
   import SpellExpansionList from '~/components/spell/SpellExpansionList.vue'
   import SpellFilters from '~/components/spell/SpellFilters.vue'
   import MobileFilterContainer from '~/components/MobileFilterContainer.vue'
-  import {mapGetters, mapActions, mapMutations} from 'vuex'
+
+  // State
+  import {createNamespacedHelpers} from 'vuex'
+  const {mapActions, mapGetters} = createNamespacedHelpers('spellList')
 
   export default {
     components: {
@@ -32,13 +35,7 @@
       SpellFilters
     },
     computed: {
-      ...mapGetters(['getData', 'searchString']),
-      ...mapGetters('spellList', {
-        order: 'order',
-        sortBy: 'sortBy',
-        type: 'type',
-        availableClasses: 'availableClasses'
-      }),
+      ...mapGetters(['spells', 'order', 'sortBy', 'type', 'availableClasses', 'searchString']),
       search: {
         get () {
           return this.searchString
@@ -48,7 +45,7 @@
         }
       },
       filtered () {
-        let data = this.items
+        let data = this.spells
         let sortBy = this.sortBy.key
         let order = this.order
         data.sort(function (a, b) {
@@ -89,15 +86,6 @@
         return data
       }
     },
-    created () {
-      this.items = this.getData('spells')
-      this.updatePageTitle({value: 'Spells'})
-    },
-    data () {
-      return {
-        items: []
-      }
-    },
     head () {
       return {
         title: 'Mass Effect 5e | Biotics, Tech and Combat Powers',
@@ -108,8 +96,7 @@
     },
     layout: 'phb-list',
     methods: {
-      ...mapMutations(['updatePageTitle', 'updateSearchString']),
-      ...mapActions(['spellList/updateValue', 'spellList/getValue'])
+      ...mapActions(['updateValue', 'getValue', 'updateSearchString'])
     }
   }
 </script>
