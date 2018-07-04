@@ -11,6 +11,9 @@ export default {
       state.encounter.npcs.counts.push(1)
     }
   },
+  toggleMobileFilterDialog (state) {
+    state.mobileFilterDialog = !state.mobileFilterDialog
+  },
   removeBookmark (state, index) {
     state.bookmarks.splice(index, 1)
   },
@@ -35,5 +38,11 @@ export default {
   },
   updateGruntConfig (state, payload) {
     state.gruntConfig[payload.key] = payload.value
+  },
+  updatePageTitle (state, payload) {
+    state.pageTitle = payload.value
+  },
+  updateSearchString (state, payload) {
+    state.searchString = payload.value
   }
 }

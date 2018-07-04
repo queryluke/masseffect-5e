@@ -1,8 +1,6 @@
 <template lang="pug">
   div
     h1.sr-only Mass Effect 5e - Player's Handbook
-    side-navigation
-
     // Main toolbar
     main-toolbar.hidden-sm-and-down
     phb-toolbar.hidden-md-and-up
@@ -32,7 +30,6 @@
   import MainToolbar from '~/components/MainToolbar.vue'
   import PhbToolbar from '~/components/PhbToolbar.vue'
   import QuestionsAndFeedback from '~/components/phb/QuestionsAndFeedback.vue'
-  import SideNavigation from '~/components/SideNavigation.vue'
   import StartingYourCampaign from '~/components/phb/StartingYourCampaign.vue'
   import WebAppTools from '~/components/phb/WebAppTools.vue'
 
@@ -46,7 +43,6 @@
       MainToolbar,
       PhbToolbar,
       QuestionsAndFeedback,
-      SideNavigation,
       StartingYourCampaign,
       WebAppTools
     },

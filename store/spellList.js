@@ -3,6 +3,7 @@ export default {
   state: {
     sortBy: { key: 'name', display: 'Name' },
     order: 1,
+    searchString: '',
     type: [],
     availableClasses: []
   },

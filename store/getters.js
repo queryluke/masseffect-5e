@@ -85,6 +85,18 @@ export default {
   isBookmarked: (state, getters) => card => {
     return getters.bookmarks.find(bookmark => bookmark.card.id === card.id) !== undefined
   },
+  mobileFilterDialog: state => {
+    return state.mobileFilterDialog
+  },
+  pageTitle: (state) => {
+    return state.pageTitle
+  },
+  primaryNavigation: (state) => {
+    return state.primaryNavigation
+  },
+  searchString: state => {
+    return state.searchString
+  },
   sidebar: state => {
     return state.sidebar
   },

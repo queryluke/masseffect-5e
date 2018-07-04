@@ -1,52 +1,68 @@
 <template lang="pug">
-  v-container(:class="{ 'px-0': $vuetify.breakpoint.xsOnly }" )
+  div
+    h1.sr-only Mass Effect 5e - Player's Handbook
 
-    // Search functions for large screens
-    div.hidden-sm-and-down
-      h2.display-1 Spells
-      v-layout(row wrap)
-        v-flex(md4).px-1
-          v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
-        v-flex(md8).px-1
+    // Main toolbar
+    main-toolbar.hidden-sm-and-down
+    phb-toolbar(v-if="!searchActive").hidden-md-and-up
+      h2(slot="toolbarTitle").title Spells
+      template(slot="toolbarItems")
+        v-btn(icon @click="searchActive = true") #[v-icon search]
+        v-btn(icon @click="mobileFilters = true")  #[v-icon filter_list]
+
+    // Search Toolbar
+    v-toolbar(light v-if="searchActive").hidden-md-and-up
+      v-btn(@click="searchActive = false; searchString = ''" icon) #[v-icon arrow_back]
+      v-text-field(v-model="searchString" single-line full-width hide-details label="Search")
+
+    // Content
+    v-content.blue-grey.lighten-4
+      v-container(:class="{ 'px-0': $vuetify.breakpoint.xsOnly }" )
+
+        // Search functions for large screens
+        div.hidden-sm-and-down
+          h2.display-1 Spells
+          v-layout(row wrap)
+            v-flex(md4).px-1
+              v-text-field(append-icon="search" label="Search" single-line hide-details v-model="searchString")
+            v-flex(md8).px-1
+              spell-filters
+
+        // Spell List
+        spell-expansion-list(:spells="filtered")
+
+    // Mobile Search filters
+    v-dialog(v-model="mobileFilters" fullscreen hide-overlay transition="dialog-bottom-transition" v-if="$vuetify.breakpoint.smAndDown")
+      v-card
+        v-toolbar(dark color="primary")
+          v-btn(icon dark @click.native="mobileFilters = false") #[v-icon close]
+          v-toolbar-title Filter Spells
+        v-card-text
           spell-filters
-
-    // Spell List
-    spell-expansion-list(:spells="filtered")
-
-    // Mobile Filters
-    mobile-filter-container
-      template(slot="filters")
-        spell-filters
 </template>
 
 <script>
+  import MainToolbar from '~/components/MainToolbar.vue'
+  import PhbToolbar from '~/components/PhbToolbar.vue'
   import SpellExpansionList from '~/components/spell/SpellExpansionList.vue'
   import SpellFilters from '~/components/spell/SpellFilters.vue'
-  import MobileFilterContainer from '~/components/MobileFilterContainer.vue'
-  import {mapGetters, mapActions, mapMutations} from 'vuex'
+  import {mapGetters, mapActions} from 'vuex'
 
   export default {
     components: {
-      MobileFilterContainer,
+      MainToolbar,
+      PhbToolbar,
       SpellExpansionList,
       SpellFilters
     },
     computed: {
-      ...mapGetters(['getData', 'searchString']),
+      ...mapGetters(['getData']),
       ...mapGetters('spellList', {
         order: 'order',
         sortBy: 'sortBy',
         type: 'type',
         availableClasses: 'availableClasses'
       }),
-      search: {
-        get () {
-          return this.searchString
-        },
-        set (value) {
-          this.updateSearchString({value})
-        }
-      },
       filtered () {
         let data = this.items
         let sortBy = this.sortBy.key
@@ -91,11 +107,13 @@
     },
     created () {
       this.items = this.getData('spells')
-      this.updatePageTitle({value: 'Spells'})
     },
     data () {
       return {
-        items: []
+        items: [],
+        mobileFilters: false,
+        searchActive: false,
+        searchString: ''
       }
     },
     head () {
@@ -106,9 +124,8 @@
         ]
       }
     },
-    layout: 'phb-list',
+    layout: 'cyo',
     methods: {
-      ...mapMutations(['updatePageTitle', 'updateSearchString']),
       ...mapActions(['spellList/updateValue', 'spellList/getValue'])
     }
   }

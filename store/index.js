@@ -7,6 +7,7 @@ import getters from './getters'
 
 // modules
 import spellList from './spellList'
+import rules from './rules'
 
 const createStore = () => {
   return new Vuex.Store({
@@ -15,7 +16,8 @@ const createStore = () => {
     actions,
     getters,
     modules: {
-      spellList
+      spellList,
+      rules
     }
   })
 }
