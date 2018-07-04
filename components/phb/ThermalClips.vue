@@ -1,5 +1,5 @@
 <template lang="pug">
-  rule-card
+  rule-card(id="thermal-clips")
     span(slot="header") Thermal Clips
     template(slot="text")
       blockquote.mb-3

@@ -1,5 +1,5 @@
 <template lang="pug">
-  rule-card
+  rule-card(id="omni-gel")
     span(slot="header") Omni-gel
     template(slot="text")
       p.

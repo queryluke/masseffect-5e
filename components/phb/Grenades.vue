@@ -1,5 +1,5 @@
 <template lang="pug">
-  rule-card
+  rule-card(id="grenades")
     span(slot="header") Grenades
     template(slot="text")
       h3.title Armor Capacity: 2

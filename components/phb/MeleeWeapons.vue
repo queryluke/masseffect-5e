@@ -1,5 +1,5 @@
 <template lang="pug">
-  rule-card
+  rule-card(id="melee-weapons")
     span(slot="header") Melee Weapons
     template(slot="text")
       p.

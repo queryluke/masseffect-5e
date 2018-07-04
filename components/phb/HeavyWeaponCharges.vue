@@ -1,5 +1,5 @@
 <template lang="pug">
-  rule-card
+  rule-card(id="heavy-weapon-charges")
     span(slot="header") Heavy Weapon Charges
     template(slot="text")
       h3.title Capacity: (based on weapon)

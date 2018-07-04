@@ -1,5 +1,5 @@
 <template lang="pug">
-  rule-card
+  rule-card(id="reloading")
     span(slot="header") New Combat Action: Reload
     template(slot="text")
       p.

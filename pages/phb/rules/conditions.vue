@@ -2,7 +2,7 @@
   v-container
     v-layout(row wrap)
       v-flex.xs12
-        h2.display-3 Conditions
+        h2.display-1.hidden-sm-and-down Conditions
       v-flex.xs12
         p.
           All of the conditions which can affect a character or object are listed below. Note that there are a few new

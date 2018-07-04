@@ -1,5 +1,5 @@
 <template lang="pug">
-  rule-card
+  rule-card(id="buying-and-selling")
     span(slot="header") Buying and Selling
     template(slot="text")
       p.title Buying

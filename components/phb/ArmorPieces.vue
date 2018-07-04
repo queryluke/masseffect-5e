@@ -1,5 +1,5 @@
 <template lang="pug">
-  rule-card(id="armorPieces")
+  rule-card(id="armor-pieces")
     span(slot="header") Armor isn't ALL-IN-ONE
     template(slot="text")
       p.

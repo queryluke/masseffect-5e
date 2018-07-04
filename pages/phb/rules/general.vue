@@ -1,5 +1,6 @@
 <template lang="pug">
   v-container
+    h2.display-1.hidden-sm-and-down General
     p.
       Overall, this system attempts to keep things in line with D&D 5e rules as much as possible. There are some
       significant additions, like Shield Points, but most are minor, like the addition of a few more conditions.

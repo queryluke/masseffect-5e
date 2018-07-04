@@ -1,25 +1,32 @@
 <template lang="pug">
   v-container
-    h2.display-3 Expenses
-    div(v-for="(rule, index) in rules")
+    h2.display-1.hidden-sm-and-down Expenses
+    div(v-for="(rule, index) in pages[$route.name].rules" v-bind:key="index")
       component(v-bind:is="rule")
 </template>
 
 <script>
-  import RuleCards from '~/components/phb'
+  // Rule Cards
+  import {
+    Currency,
+    LifestyleExpenses,
+    CostOfThings,
+    BuyingAndSelling
+  } from '~/components/phb/'
+
+  import {mapGetters} from 'vuex'
 
   export default {
-    name: 'Armor',
-    components: RuleCards,
-    data () {
-      return {
-        rules: [
-          'currency',
-          'lifestyle-expenses',
-          'cost-of-things',
-          'buying-and-selling'
-        ]
-      }
+    components: {
+      Currency,
+      LifestyleExpenses,
+      CostOfThings,
+      BuyingAndSelling
+    },
+    computed: {
+      ...mapGetters('phb', {
+        pages: 'pages'
+      })
     },
     head () {
       return {
@@ -29,6 +36,6 @@
         ]
       }
     },
-    layout: 'phb'
+    layout: 'phb-rules'
   }
 </script>

@@ -2,7 +2,7 @@
   v-container
     v-layout(row wrap)
       v-flex.xs12
-        h2.display-3 Skills
+        h2.display-1.hidden-sm-and-down Skills
       v-flex.xs12.sm6
         p.headline New
         p {{ new_skills }}
@@ -15,15 +15,12 @@
           td {{ props.item.name }}
           td {{ props.item.link }}
           td {{ props.item.description }}
-    page-footer(:list="listName")
 </template>
 
 <script>
-  import PageFooter from '~/components/phb/PageFooter.vue'
   import {mapGetters} from 'vuex'
 
   export default {
-    components: {PageFooter},
     computed: {
       ...mapGetters(['getData'])
     },

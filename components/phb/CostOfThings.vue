@@ -1,5 +1,5 @@
 <template lang="pug">
-  rule-card
+  rule-card(id="cost-of-things")
     span(slot="header") Commonplace Things
     template(slot="text")
       p.

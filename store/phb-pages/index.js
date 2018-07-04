@@ -26,6 +26,7 @@ export default {
     mobileFilterDialog: state => state.mobileFilterDialog,
     pages: state => state.pages,
     searchString: state => state.searchString,
-    primaryNavigation: (state, getters, rootState) => rootState.primaryNavigation
+    primaryNavigation: (state, getters, rootState) => rootState.primaryNavigation,
+    version: (state, getters, rootState, rootGetters) => rootGetters.getVersion
   }
 }

@@ -1,5 +1,5 @@
 <template lang="pug">
-  rule-card
+  rule-card(id="damage-types")
     span(slot="header") Damage Types
     template(slot="text")
       p.

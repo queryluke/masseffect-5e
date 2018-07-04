@@ -1,5 +1,5 @@
 <template lang="pug">
-  rule-card
+  rule-card(id="currency")
     span(slot="header") Currency
     template(slot="text")
       p.

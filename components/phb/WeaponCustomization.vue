@@ -1,5 +1,5 @@
 <template lang="pug">
-  rule-card(id="weaponCustomization")
+  rule-card(id="weapon-customization")
     span(slot="header") Weapon Customization
     template(slot="text")
       p.

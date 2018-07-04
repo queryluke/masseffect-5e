@@ -1,5 +1,5 @@
 <template lang="pug">
-  rule-card
+  rule-card(id="advancement-options")
     span(slot="header") Advancement Options
     template(slot="text")
       p.

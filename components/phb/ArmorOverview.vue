@@ -1,5 +1,5 @@
 <template lang="pug">
-  rule-card(id="armorOverview")
+  rule-card(id="armor-overview")
     span(slot="header") Overview
     template(slot="text")
       p.

@@ -1,5 +1,5 @@
 <template lang="pug">
-  rule-card
+  rule-card(id="barriers")
     span(slot="header") Barriers
     template(slot="text")
       p.

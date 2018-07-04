@@ -1,5 +1,5 @@
 <template lang="pug">
-  rule-card
+  rule-card(id="tools-kits")
     span(slot="header") Tools & Kits
     template(slot="text")
       p.title Tool Proficiencies

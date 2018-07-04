@@ -1,5 +1,5 @@
 <template lang="pug">
-  rule-card(id="armorCustomization")
+  rule-card(id="armor-customization")
     span(slot="header") Armor can be customized & created
     template(slot="text")
       p.

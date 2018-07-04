@@ -1,5 +1,5 @@
 <template lang="pug">
-  rule-card
+  rule-card(id="rapid-reload")
     span(slot="header") Variant: Rapid Reload
     template(slot="text")
       p.

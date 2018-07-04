@@ -1,5 +1,5 @@
 <template lang="pug">
-  rule-card
+  rule-card(id="medi-gel")
     span(slot="header") Medi-gel
     template(slot="text")
       h3.title Using Medi-gel

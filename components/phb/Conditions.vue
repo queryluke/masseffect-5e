@@ -1,5 +1,5 @@
 <template lang="pug">
-  rule-card
+  rule-card(id="conditions")
     span(slot="header") Conditions
     template(slot="text")
       div(v-for="condition in items" v-bind:key="condition.id" v-bind:id="condition.id").my-5

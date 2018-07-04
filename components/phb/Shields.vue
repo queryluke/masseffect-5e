@@ -1,12 +1,12 @@
 <template lang="pug">
-  rule-card
+  rule-card(id="shields")
     span(slot="header") Shields
     template(slot="text")
       p.
         Shields are regenerating temporary hit points. When damage is applied it is subtracted from your shield points first,
         then from your hit points. Some abilities "bypass" your shields. In these instances, you subtract damage from your hit
         points leaving your shield points unchanged.
-      v-layout
+      v-layout(row wrap)
         v-flex.xs12.lg7
           p.headline.mt-2 Shield Regeneration
           p.

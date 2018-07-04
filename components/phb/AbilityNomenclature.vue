@@ -1,5 +1,5 @@
 <template lang="pug">
-  rule-card
+  rule-card(id="ability-nomenclature")
     span(slot="header") Spells
     template(slot="text")
       p.

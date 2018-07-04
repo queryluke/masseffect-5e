@@ -1,5 +1,5 @@
 <template lang="pug">
-  rule-card
+  rule-card(id="heavy-weapons")
     span(slot="header") Heavy Weapons
     template(slot="text")
       p.title.mt-2 Charges

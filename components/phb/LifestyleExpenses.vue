@@ -1,5 +1,5 @@
 <template lang="pug">
-  rule-card
+  rule-card(id="lifestyle-expenses")
     span(slot="header") Lifestyle Expenses
     template(slot="text")
       v-card

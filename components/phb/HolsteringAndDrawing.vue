@@ -1,5 +1,5 @@
 <template lang="pug">
-  rule-card
+  rule-card(id="holstering-and-drawing")
     span(slot="header") Holstering & Drawing Weapons
     template(slot="text")
       p.

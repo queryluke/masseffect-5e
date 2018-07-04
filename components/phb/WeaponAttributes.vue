@@ -1,5 +1,5 @@
 <template lang="pug">
-  rule-card
+  rule-card(id="weapon-attributes")
     span(slot="header") Special Weapon Attributes
     template(slot="text")
       table.table.alt-table

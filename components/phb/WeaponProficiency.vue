@@ -1,5 +1,5 @@
 <template lang="pug">
-  rule-card
+  rule-card(id="weapon-proficiency")
     span(slot="header") Weapon Proficiencies
     template(slot="text")
       p.
