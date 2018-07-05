@@ -9,12 +9,13 @@
       p.headline Creating Armor from Scratch
       p.
         When you create a piece of armor from scratch, you need to select:
-      ol.pl-3
+      ol
         li The armor placement (Head, Chest, Arms, Legs).
         li The armor type (Light, Medium, Heavy)
         li Additional mod slots, if any.
-      table.table.alt-table
-        thead.text-xs-left
+      div.subheading.mt-3 Costs
+      table.table
+        thead
           tr
             th Slot / Type
             th Light
@@ -23,29 +24,29 @@
             th Mod Slots #[em (max)]
         tbody
           tr
-            td #[strong Chest]
-            td 8,000
-            td 10,000
-            td 12,000
-            td 2 #[em (3)]
+            td(data-table-key="Placement") Chest
+            td(data-table-key="Light") 8,000
+            td(data-table-key="Medium") 10,000
+            td(data-table-key="Heavy") 12,000
+            td(data-table-key="Mod Slots") 2 (3)
           tr
-            td #[strong Arms & Legs]
-            td 2,000
-            td 3,000
-            td 4,000
-            td 1 #[em (3)]
+            td(data-table-key="Placement") Arms & Legs
+            td(data-table-key="Light") 2,000
+            td(data-table-key="Medium") 3,000
+            td(data-table-key="Heavy") 4,000
+            td(data-table-key="Mod Slots") 0 (2)
           tr
-            td #[strong Head]
+            td(data-table-key="Placement") Head
             td(colspan=3) 5,000
-            td 0 #[em (2)]
-      ul.list
+            td(data-table-key="Mod Slots") 1 (3)
+      ul
         li #[strong Additional Mod Slots:] 20,000 credits
       p
         v-btn(to="/phb/armor/mods") Mod List
       div.hr
       p.headline Example
       p Medium Head Armor w/ 2 mod slots
-      table.table.alt-table
+      table.table
         tbody
           tr
             td Medium Head

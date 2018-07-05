@@ -12,10 +12,16 @@
           p.
             Your shield points regenerate completely on a short or long rest or when combat or an encounter ends. However, in combat,
             you can attempt to regain shield points.
+          p.mb-1.
+            To regenerate shields during combat, a creature must do one of the following:
+          ol.mb-1
+            li Take the Hide action
+            li Take the Dodge action
+            li Have full cover at the end of its turn
           p.
-            A creature that takes the Hide or Dodge action and takes no damage until the start of its next turn regenerates
-            shield points equal to the regen rate of their shields. For example, a set of armor with 15 shields and 5 regen
-            would regenerate 5 shield points when it takes the Hide or Dodge action and additionally takes no damage for a full round of combat.
+            Then, if the creature takes no damage until the start of its next turn, its shields begin regenerating. A
+            creature with regenerating shields gains shield points equal to its regen stat. This effect continues
+            until the shield points reach maximum capacity or the creature takes damage.
         v-flex.xs12.lg5
           v-card
             v-card-text.blue.lighten-5
@@ -35,7 +41,7 @@
       p.
         All shields are vulnerable to lightning damage. In the event that a lighting attack removes all shield points, the following
         steps outline how to divvy up the damage:
-      ol.ml-3
+      ol
         li Double the damage.
         li Subtract the shield points from the total damage.
         li Reduce the remaining damage by half
@@ -46,7 +52,7 @@
         repulsive mass effect fields projected from tiny emitters. These shields safely deflect small objects traveling at
         rapid velocities. This affords protection from bullets and other dangerous projectiles,
         but still allows the user to sit down without knocking away their chair." Therefore, melee weapon attacks move slow
-        enough to by-pass a shields protective barrier.
+        enough to by-pass a shield's protective barrier.
 </template>
 
 <script>

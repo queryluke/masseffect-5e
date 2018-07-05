@@ -48,7 +48,6 @@ export default {
       name: 'Rules - Combat',
       rules: [
         'shields',
-        'barriers',
         'reloading',
         'rapid-reload',
         'primers-and-detonators',
@@ -86,8 +85,7 @@ export default {
         'weapon-stats',
         'reloading',
         'rapid-reload',
-        'holstering-and-drawing',
-        'weapon-slots',
+        'carrying-weapons',
         'weapon-proficiency',
         'weapon-attributes',
         'melee-weapons',

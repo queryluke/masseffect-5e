@@ -2,15 +2,15 @@
   rule-card(id="weapon-attributes")
     span(slot="header") Special Weapon Attributes
     template(slot="text")
-      table.table.alt-table
-        thead.text-xs-left
+      table.table
+        thead
           tr
             th Attribute
             th Mechanic
         tbody
           tr(v-for="(attribute, index) in weaponAttributes")
-            td {{ attribute.name }}
-            td {{ attribute.description }}
+            td(data-table-key="Attribute") {{ attribute.name }}
+            td(data-table-key="Mechanic") {{ attribute.description }}
 </template>
 
 <script>

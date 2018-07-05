@@ -4,7 +4,7 @@
     template(slot="text")
       p.
         When you take the Reload Action, you expend a Thermal Clip from your inventory and insert it into the weapon
-        you're currently holding, treturning the weapon's heat to its maximum value.
+        you're currently holding, returning the weapon's heat to its maximum value.
 </template>
 
 <script>

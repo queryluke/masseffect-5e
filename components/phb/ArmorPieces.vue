@@ -11,8 +11,8 @@
         For simplicity's sake, you cannot mix armor #[em within] placements. I.e., you cannot have a heavy piece of on your
         right arm and a light piece of armor on your left.
       p.headline.mb-0 Armor / AC
-      table.table.alt-table
-        thead.text-xs-left
+      table.table
+        thead
           tr
             th Placement / Type
             th Light
@@ -20,68 +20,66 @@
             th Heavy
         tbody
           tr
-            td Chest
-            td +1
-            td +2
-            td +3
+            td(data-table-key="Placement") Chest
+            td(data-table-key="Light") +1
+            td(data-table-key="Medium") +2
+            td(data-table-key="Heavy") +3
           tr
-            td Arms & Legs
-            td +0
-            td +1
-            td +2
+            td(data-table-key="Placement") Arms & Legs
+            td(data-table-key="Light") +0
+            td(data-table-key="Medium") +1
+            td(data-table-key="Heavy") +2
           tr
-            td Head
+            td(data-table-key="Placement") Head
             td(colspan=3) Unless otherwise listed, headware provides no bonus
       p.headline.mb-0.mt-3 Bonues and Limitations
       p.mb-0 If you are wearing...
-      table.table.alt-table
-        thead.text-xs-left
+      table.table
+        thead
           tr
             th
             th DEX bonus
-            th Min Str
+            th Min STR
             th Stealth
         tbody
           tr
             td ...one or more pieces of Heavy armor
-            td none
-            td 14
-            td disadvantage
+            td(data-table-key="DEX bonus") none
+            td(data-table-key="Min STR") 14
+            td(data-table-key="Stealth") disadvantage
           tr
             td ...one or more pieces of Medium armor
-            td Max +2 bonus from Dexterity modifier
-            td 12
-            td -
+            td(data-table-key="DEX bonus") Max +2 bonus from Dexterity modifier
+            td(data-table-key="Min STR") 12
+            td(data-table-key="Stealth") -
           tr
             td ...light or no armor
-            td Add Dexterity modifier to your AC
-            td -
-            td -
+            td(data-table-key="DEX bonus") Add Dexterity modifier to your AC
+            td(data-table-key="Min STR") -
+            td(data-table-key="Stealth") -
       p.headline.mt-3 Variant: Encumberance
-      p.mb-0 If using the #[a(v-on:click="showGlobalDialog('encumbrance')") Variant: Encumberance rule], use the following to calculate your armor weight.
-      table.table.alt-table
-        thead.text-xs-left
+      p.mb-0 If using the #[nuxt-link(to="/phb/rules/general#encumbrance") Variant: Encumbrance rule], use the following to calculate your armor weight.
+      table.table
+        thead
           tr
-            th
-            th Head
-            th Chest
-            th Arms & Legs
+            th Placement / Type
+            th Light
+            th Medium
+            th Heavy
         tbody
           tr
-            td #[strong Light]
-            td 2
-            td 3
-            td 1
+            td(data-table-key="Placement") Chest
+            td(data-table-key="Light") 3
+            td(data-table-key="Medium") 6
+            td(data-table-key="Heavy") 10
           tr
-            td #[strong Medium]
-            td 2
-            td 6
-            td 2
+            td(data-table-key="Placement") Arms & Legs
+            td(data-table-key="Light") 1
+            td(data-table-key="Medium") 2
+            td(data-table-key="Heavy") 3
           tr
-            td #[strong Heavy]
-            td 2
-            td 10
-            td 3
+            td(data-table-key="Placement") Head
+            td(colspan=3) 2
 </template>
 
 <script>

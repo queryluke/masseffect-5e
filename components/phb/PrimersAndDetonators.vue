@@ -5,7 +5,8 @@
       p.
         Primers and Detonators add a combo-based mechanic to combat. However, they can also add an unwanted level of complexity
         to combat as well, as tracking which creatures are primed at any given moment can become cumbersome.
-        As a variant rule, you may forego this rule and ignore any mention of the Primed condition or detonation effects.
+        As a variant, you may forego this rule and ignore any mention of the Primed condition or detonation effects.
+      p.subheading Primed Condition
       markdown-file(id="primed" itemType="conditions")
 </template>
 

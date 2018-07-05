@@ -4,8 +4,8 @@ import ArmorOverview from './ArmorOverview.vue'
 import ArmorCustomization from './ArmorCustomization.vue'
 import ArmorPieces from './ArmorPieces.vue'
 import Basics from './Basics.vue'
-import Barriers from './Barriers.vue'
 import BuyingAndSelling from './BuyingAndSelling.vue'
+import CarryingWeapons from './CarryingWeapons.vue'
 import CharacterCreationAndLeveling from './CharacterCreationAndLeveling.vue'
 import ChangesAndAdditions from './ChangesAndAdditions.vue'
 import Conditions from './Conditions.vue'
@@ -19,7 +19,6 @@ import GalaxyMaster from './GalaxyMaster.vue'
 import Grenades from './Grenades.vue'
 import HeavyWeaponCharges from './HeavyWeaponCharges.vue'
 import HeavyWeapons from './HeavyWeapons.vue'
-import HolsteringAndDrawing from './HolsteringAndDrawing.vue'
 import InfraredVision from './InfraredVision.vue'
 import LifestyleExpenses from './LifestyleExpenses.vue'
 import LiftingAndCarrying from './LiftingAndCarrying.vue'
@@ -40,7 +39,6 @@ import ToolsKits from './ToolsKits.vue'
 import WeaponAttributes from './WeaponAttributes.vue'
 import WeaponCustomization from './WeaponCustomization.vue'
 import WeaponProficiency from './WeaponProficiency.vue'
-import WeaponSlots from './WeaponSlots.vue'
 import WeaponStats from './WeaponStats.vue'
 import WebAppTools from './WebAppTools.vue'
 
@@ -50,9 +48,9 @@ export {
   ArmorOverview,
   ArmorCustomization,
   ArmorPieces,
-  Barriers,
   Basics,
   BuyingAndSelling,
+  CarryingWeapons,
   ChangesAndAdditions,
   CharacterCreationAndLeveling,
   Conditions,
@@ -66,7 +64,6 @@ export {
   GalaxyMaster,
   HeavyWeaponCharges,
   HeavyWeapons,
-  HolsteringAndDrawing,
   InfraredVision,
   LifestyleExpenses,
   LiftingAndCarrying,
@@ -87,7 +84,6 @@ export {
   WeaponAttributes,
   WeaponCustomization,
   WeaponProficiency,
-  WeaponSlots,
   WeaponStats,
   WebAppTools
 }

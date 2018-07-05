@@ -10,11 +10,17 @@
         p.headline Removed
         p {{ removed }}
     div.mt-3
-      v-data-table(v-bind:headers="headers" v-bind:items="items" hide-actions).elevation-1
-        template(slot="items" slot-scope="props")
-          td {{ props.item.name }}
-          td {{ props.item.link }}
-          td {{ props.item.description }}
+      table.elevation-1.table
+        thead
+          tr
+            th Name
+            th Ability
+            th Description
+        tbody
+          tr(v-for="item in items" v-bind:key="item.id")
+            td(data-table-key="Name") {{ item.name }}
+            td(data-table-key="Ability") {{ item.link }}
+            td(data-table-key="Description").full-width-td {{ item.description }}
 </template>
 
 <script>

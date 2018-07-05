@@ -12,24 +12,15 @@
         a single round of combat. Targeting is considered a free action, as long as you've already drawn the heavy weapon,
         i.e., you can choose to pick-up or equip a weapon as your action, then begin targeting as a free action before your turn ends.
         If you're already holding the weapon, you might use an ability as your action and then begin targeting.
-      p.
-        #[strong Condition Details:] While targeting, your speed is reduced by half and you automatically fail Dexterity
-        saving throws. Creatures that attack you have advantage.
-      p.mb-0.
-        #[strong Targeting Failures:]
-        If targeting ends before the start of your next turn, it fails and the weapon does not fire or use a weapon charge.
-        It can be prematurely ended for the following reasons:
-      ul.ml-5
-        li As a reaction: You can choose to end your Targeting condition as a reaction to an attack (not to a damage roll).
-        li Taking cover: Taking full or three-quarter cover while targeting ends the condition.
-        li Another condition: If you lose your footing by being knocked prone, becoming lifted, or incapacitated, targeting ends.
+      p.subheading Targeting condition
+      markdown-file(id="targeting" itemType="conditions")
 </template>
 
 <script>
   import RuleCard from '~/components/cards/RuleCard.vue'
+  import MarkdownFile from '~/components/MarkdownFile.vue'
 
   export default {
-    name: 'HeavyWeapons',
-    components: { RuleCard }
+    components: { RuleCard, MarkdownFile }
   }
 </script>

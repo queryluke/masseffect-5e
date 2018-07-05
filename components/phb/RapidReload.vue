@@ -4,7 +4,7 @@
     template(slot="text")
       p.
         At the start of your turn, if you are holding only a single weapon, you may use a Bonus Action to attempt a Rapid Reload.
-        Make a Dexterity (Sleight of Hand) check (#[strong DC 15]). On a success, you reload the weapon you're currently holding and may continue your turn as normal.
+        Make a DC 15 Dexterity (Sleight of Hand) check. On a success, you reload the weapon you're currently holding and may continue your turn as normal.
         On a failure, you must take the Reload action this turn.
         On a critical failure, the thermal clip drops from your hand, your weapon is not reloaded, and your lose your Action.
       p.subheading.

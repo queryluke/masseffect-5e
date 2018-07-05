@@ -2,8 +2,8 @@
 name: Primed
 id: primed
 ---
-Some spells and attacks cause the target to become primed. While primed, if the target is hit with a detonating spell or attack
-the primed condition ends and causes an explosive effect. There are five primed types: Force, Necrotic, Fire, Cold, or Lightning,
+Some spells and attacks cause the target to become primed. When a primed target is hit with a detonating spell or attack
+the primed condition ends and the detonation causes an explosive effect. There are five primed types: Force, Necrotic, Fire, Cold, or Lightning,
 which correspond with the following explosions:
 
 Type | Explosion

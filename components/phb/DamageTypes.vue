@@ -18,9 +18,9 @@
     data () {
       return {
         damage_types: [
-          { type: 'Force', note: 'One of the primary biotic damage types. Mass Effect fields that pummel, pierce, or apply pressure deal force damage.' },
+          { type: 'Force', note: 'One of the primary biotic damage types. Mass effect fields that pummel, pierce, or apply pressure deal force damage.' },
           { type: 'Lightning', note: 'Shock damage. Any damage done by an electrical discharge or source. Deals double damage to shields.' },
-          { type: 'Necrotic', note: 'The second biotic damage type. Necrotic damage uses dark energy or tiny Mass Effect fields targeted inside a creature, crippling them from within' },
+          { type: 'Necrotic', note: 'The second biotic damage type. Necrotic damage uses dark energy and  mass effect fields on a subatomic level.' },
           { type: 'Psychic', note: 'A shock to the nervous system, rather than fear or mental damage. But the latter is possible.' },
           { type: 'Radiant', note: 'Radiation or damage on a nuclear level, rather than divine light.' },
           { type: 'Thunder', note: 'Shockwaves and explosions. Thunder damage is primarily caused by grenades.' }

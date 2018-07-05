@@ -24,7 +24,7 @@
           You have 2 weapon slots and can equip a single weapon in either slot. Weapons equipped in a slot do not affect your carry capacity.
           Any additional weapons you pick up count against your carry capacity.
         dt Armor
-        dd The #[nuxt-link(to="/phb/rules/armor#armorPieces") armor matrix] has a minimum Strength score for the combination of armor types. You must meet or exceed that score.
+        dd The #[nuxt-link(to="/phb/rules/armor#armor-pieces") armor matrix] has a minimum Strength score for the combination of armor types. You must meet or exceed that score.
 </template>
 
 <script>

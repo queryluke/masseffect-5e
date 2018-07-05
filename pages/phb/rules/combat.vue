@@ -10,7 +10,6 @@
   // Rule Cards
   import {
     Shields,
-    Barriers,
     Reloading,
     RapidReload,
     PrimersAndDetonators,
@@ -24,7 +23,6 @@
   export default {
     components: {
       Shields,
-      Barriers,
       Reloading,
       RapidReload,
       PrimersAndDetonators,
