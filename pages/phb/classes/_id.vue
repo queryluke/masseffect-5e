@@ -30,7 +30,7 @@
 </template>
 
 <script>
-  import MeIcon from '~/components/shared/MeIcon.vue'
+  import MeIcon from '~/components/MeIcon.vue'
   import ProgressionTable from '~/components/class/ProgressionTable.vue'
   import ClassAttributes from '~/components/class/ClassAttributes.vue'
   import ClassTabs from '~/components/class/ClassTabs.vue'

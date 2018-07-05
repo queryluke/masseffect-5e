@@ -41,7 +41,7 @@
   import SpellRangeArea from '~/components/spell/SpellRangeArea.vue'
   import SpellDamageEffect from '~/components/spell/SpellDamageEffect.vue'
   import AdvancedOption from '~/components/spell/AdvancedOption.vue'
-  import MeElement from '~/components/shared/MeElement.vue'
+  import MeElement from '~/components/MeElement.vue'
 
   export default {
     components: {

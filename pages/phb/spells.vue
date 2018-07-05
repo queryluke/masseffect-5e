@@ -96,7 +96,7 @@
     },
     layout: 'phb-list',
     methods: {
-      ...mapActions(['updateValue', 'getValue', 'updateSearchString'])
+      ...mapActions(['updateSearchString'])
     }
   }
 </script>

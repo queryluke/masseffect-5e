@@ -13,7 +13,7 @@
 
 <script>
   import {mapGetters} from 'vuex'
-  import PostCard from '~/components/misc/PostCard.vue'
+  import PostCard from '~/components/cards/PostCard.vue'
 
   export default {
     components: { PostCard },

@@ -10,15 +10,12 @@
           td {{ props.item.cost | groupDigits(',') }}
           td {{ props.item.availability }}
           td {{ props.item.feature }}
-    page-footer(:list="listName")
 </template>
 
 <script>
-  import PageFooter from '~/components/phb/PageFooter.vue'
   import {mapGetters} from 'vuex'
 
   export default {
-    components: {PageFooter},
     computed: {
       ...mapGetters(['getData'])
     },

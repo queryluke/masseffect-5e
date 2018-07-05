@@ -9,6 +9,7 @@ import getters from './getters'
 import phb from './phb-pages'
 import spellList from './spellList'
 import classPage from './classPage'
+import weaponList from './weaponList'
 
 const createStore = () => {
   return new Vuex.Store({
@@ -19,7 +20,8 @@ const createStore = () => {
     modules: {
       phb,
       spellList,
-      classPage
+      classPage,
+      weaponList
     }
   })
 }

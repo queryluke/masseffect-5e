@@ -51,7 +51,7 @@
 </template>
 
 <script>
-  import MeElement from '~/components/shared/MeElement.vue'
+  import MeElement from '~/components/MeElement.vue'
 
   export default {
     components: {MeElement},

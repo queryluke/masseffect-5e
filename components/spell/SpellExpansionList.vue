@@ -43,7 +43,7 @@
   import SpellRangeArea from '~/components/spell/SpellRangeArea.vue'
   import SpellDamageEffect from '~/components/spell/SpellDamageEffect.vue'
   import SpellInfo from '~/components/spell/SpellInfo.vue'
-  import BookmarkButton from '~/components/shared/BookmarkButton.vue'
+  import BookmarkButton from '~/components/BookmarkButton.vue'
   import {mapGetters, mapActions} from 'vuex'
 
   export default {

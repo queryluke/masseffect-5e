@@ -27,21 +27,18 @@
                   grenade-info(:grenade="grenade")
                 v-card-actions
                   bookmark-button(:card="grenade" type="grenade" v-bind:props="{flat: true}")
-    page-footer(:list="listName")
 </template>
 
 <script>
-  import MeElement from '~/components/shared/MeElement.vue'
-  import GrenadeInfo from '~/components/shared/GrenadeInfo.vue'
-  import PageFooter from '~/components/phb/PageFooter.vue'
-  import BookmarkButton from '~/components/shared/BookmarkButton'
+  import MeElement from '~/components/MeElement.vue'
+  import GrenadeInfo from '~/components/GrenadeInfo.vue'
+  import BookmarkButton from '~/components/BookmarkButton.vue'
   import {mapGetters} from 'vuex'
 
   export default {
     components: {
       GrenadeInfo,
       MeElement,
-      PageFooter,
       BookmarkButton
     },
     computed: {

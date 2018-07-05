@@ -18,7 +18,7 @@
 
 <script>
   import MarkdownFile from '~/components/MarkdownFile.vue'
-  import BookmarkButton from '~/components/shared/BookmarkButton'
+  import BookmarkButton from '~/components/BookmarkButton.vue'
   import {mapGetters} from 'vuex'
 
   export default {

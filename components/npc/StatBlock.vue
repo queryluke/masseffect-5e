@@ -55,10 +55,10 @@
 <script>
   import {AbilityScoreBonus} from '~/mixins/abilityScoreBonus'
   import {DieFromAverage} from '~/mixins/dieFromAverage'
-  import NpcCommonFeature from '~/components/shared/NpcFeatures/NpcCommonFeature.vue'
-  import NpcAttack from '~/components/shared/NpcFeatures/NpcAttack.vue'
-  import NpcBiotics from '~/components/shared/NpcFeatures/NpcBiotics.vue'
-  import NpcTech from '~/components/shared/NpcFeatures/NpcTech.vue'
+  import NpcCommonFeature from '~/components/npc/NpcCommonFeature.vue'
+  import NpcAttack from '~/components/npc/NpcAttack.vue'
+  import NpcBiotics from '~/components/npc/NpcBiotics.vue'
+  import NpcTech from '~/components/npc/NpcTech.vue'
 
   export default {
     components: {

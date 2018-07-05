@@ -19,10 +19,10 @@
 <script>
   import { mapGetters } from 'vuex'
   import SpellInfo from '~/components/spell/SpellInfo.vue'
-  import WeaponInfo from '~/components/shared/WeaponInfo.vue'
-  import BookmarkButton from '~/components/shared/BookmarkButton.vue'
-  import StatBlock from '~/components/shared/StatBlock.vue'
-  import GrenadeInfo from '~/components/shared/GrenadeInfo.vue'
+  import WeaponInfo from '~/components/weapon/WeaponInfo.vue'
+  import BookmarkButton from '~/components/BookmarkButton.vue'
+  import StatBlock from '~/components/npc/StatBlock.vue'
+  import GrenadeInfo from '~/components/GrenadeInfo.vue'
   import MarkdownFile from '~/components/MarkdownFile.vue'
 
   export default {

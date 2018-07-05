@@ -27,7 +27,7 @@
 </template>
 
 <script>
-  import MonsterList from '~/components/phb/MonsterList.vue'
+  import MonsterList from '~/components/npc/MonsterList.vue'
   import {ConfigureMonsters} from '~/mixins/monsters'
   import {CrToInt} from '~/mixins/crToInt'
 

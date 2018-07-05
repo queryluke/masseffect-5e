@@ -88,7 +88,7 @@
 </template>
 
 <script>
-  import AboutCard from '~/components/misc/AboutCard.vue'
+  import AboutCard from '~/components/cards/AboutCard.vue'
   import {mapGetters} from 'vuex'
 
   export default {

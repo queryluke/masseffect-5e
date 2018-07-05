@@ -53,7 +53,7 @@
   import SpellDamageEffect from '~/components/spell/SpellDamageEffect.vue'
   import AdvancedOption from '~/components/spell/AdvancedOption.vue'
   import SpellClassList from '~/components/spell/SpellClassList.vue'
-  import MeElement from '~/components/shared/MeElement.vue'
+  import MeElement from '~/components/MeElement.vue'
 
   export default {
     components: {

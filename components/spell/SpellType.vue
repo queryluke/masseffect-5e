@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import MeIcon from '~/components/shared/MeIcon.vue'
+  import MeIcon from '~/components/MeIcon.vue'
 
   export default {
     components: {

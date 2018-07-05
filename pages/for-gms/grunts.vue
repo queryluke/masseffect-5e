@@ -67,8 +67,8 @@
 <script>
   import {GruntGenerator} from '~/mixins/grunt_generator'
   import {mapGetters, mapActions} from 'vuex'
-  import StatBlock from '~/components/shared/StatBlock.vue'
-  import BookmarkButton from '~/components/shared/BookmarkButton.vue'
+  import StatBlock from '~/components/npc/StatBlock.vue'
+  import BookmarkButton from '~/components/BookmarkButton.vue'
 
   export default {
     components: {
