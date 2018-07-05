@@ -24,25 +24,13 @@ export default {
       state.encounter.npcs.list.splice(index, 1)
     }
   },
-  toggleGlobalDialog (state, payload) {
-    state.globalDialog.show = payload
-  },
   toggleSidebar (state, payload) {
     state.sidebar = payload
   },
   update (state, payload) {
     state[payload.key] = payload.items
   },
-  updateGlobalDialogComponent (state, payload) {
-    state.globalDialog.component = payload
-  },
   updateGruntConfig (state, payload) {
     state.gruntConfig[payload.key] = payload.value
-  },
-  updatePageTitle (state, payload) {
-    state.pageTitle = payload.value
-  },
-  updateSearchString (state, payload) {
-    state.searchString = payload.value
   }
 }

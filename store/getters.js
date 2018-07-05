@@ -16,9 +16,6 @@ export default {
       return rv
     }, {})
   },
-  globalDialog: state => {
-    return state.globalDialog
-  },
   getData: state => name => {
     let data = state[name]
     if (typeof data === 'object' && data) {
@@ -60,9 +57,6 @@ export default {
     }
     return posts
   },
-  getProgressionHeaders: state => name => {
-    return state.data[`${name}Progression`].headers
-  },
   getSheetUrl: state => name => {
     return state.data[name].source
   },
@@ -88,14 +82,8 @@ export default {
   mobileFilterDialog: state => {
     return state.mobileFilterDialog
   },
-  pageTitle: (state) => {
-    return state.pageTitle
-  },
   primaryNavigation: (state) => {
     return state.primaryNavigation
-  },
-  searchString: state => {
-    return state.searchString
   },
   sidebar: state => {
     return state.sidebar

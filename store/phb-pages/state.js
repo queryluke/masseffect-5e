@@ -93,6 +93,9 @@ export default {
         'weapon-customization'
       ]
     },
+    'phb-classes': {
+      name: 'Classes'
+    },
     'phb-spells': {
       name: 'Spells'
     }

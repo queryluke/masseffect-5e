@@ -44,7 +44,7 @@
       p {{ item.spellcasting }}
       div(:class="primaryColor").hr
     p.headline Starting Equipment
-    ul.pl-3
+    ul.mb-4
       li {{ item.startingRangedWeapons | listOfChoices(item.startingRangedWeaponChoices) }}
       li {{ item.startingMeleeWeapons | listOfChoices(item.startingMeleeWeaponChoices) }}
       li {{ item.startingArmor | listOfChoices }}

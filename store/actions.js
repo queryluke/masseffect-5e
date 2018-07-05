@@ -49,9 +49,6 @@ export default {
   addBookmark ({commit}, payload) {
     commit('addBookmark', payload)
   },
-  hideGlobalDialog ({commit}) {
-    commit('toggleGlobalDialog', false)
-  },
   instantiateState ({getters, commit}, payload) {
     if (getters.stateKeys.includes(payload.key)) {
       commit('update', payload)
@@ -62,10 +59,6 @@ export default {
     if (index > -1) {
       commit('removeBookmark', index)
     }
-  },
-  showGlobalDialog ({commit}, payload) {
-    commit('toggleGlobalDialog', true)
-    commit('updateGlobalDialogComponent', payload)
   },
   toggleSidebar ({getters, commit}) {
     commit('toggleSidebar', !getters.sidebar)

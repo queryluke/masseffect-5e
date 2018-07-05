@@ -1,19 +1,17 @@
 <template lang="pug">
-  v-container(fluid grid-list-xl)
-    v-layout(row)
+  v-container(:class="{ 'pa-0': $vuetify.breakpoint.smAndDown }" fluid)
+    v-layout(row).hidden-sm-and-down
       v-avatar(size="128" tile)
         img(:src="`/images/classes/${id}.svg`")
       div.pl-5
         h2.display-3 {{ item.name }}
         p {{ item.description}}
-    v-layout(row wrap)
-      v-flex.xs12
-        v-card
-          class-tabs(:colors="colors[item.id]").mb-3
-            progression-table(:item="item" v-bind:colors="colors[item.id]" slot="progression_table_tab_content")
-            class-attributes(:item="item" v-bind:primaryColor="colors[item.id].primary" slot="attributes_tab_content")
-            subclass-info(:item="item" v-bind:primaryColor="colors[item.id].primary" slot="subclasses_tab_content")
-            spell-expansion-list(:spells="spells" slot="spell_list_tab_content")
+    v-card(:class="{ 'pt-4': $vuetify.breakpoint.smAndDown }")
+      class-tabs(:colors="colors[item.id]").mb-3
+        progression-table(:item="item" v-bind:colors="colors[item.id]" slot="progression_table_tab_content")
+        class-attributes(:item="item" v-bind:primaryColor="colors[item.id].primary" slot="attributes_tab_content")
+        subclass-info(:item="item" v-bind:primaryColor="colors[item.id].primary" slot="subclasses_tab_content")
+        spell-expansion-list(:spells="filteredSpells" slot="spell_list_tab_content")
     v-layout(row grow).my-0.mt-4
       v-flex(v-if="previous.name").primary.pa-0.xs6
         v-list(:class="previous.colors.primary" dark).py-0
@@ -38,28 +36,43 @@
   import ClassTabs from '~/components/class/ClassTabs.vue'
   import SpellExpansionList from '~/components/spell/SpellExpansionList.vue'
   import SubclassInfo from '~/components/class/SubclassInfo.vue'
-  import {mapGetters} from 'vuex'
+
+  // State
+  import {createNamespacedHelpers} from 'vuex'
+  const {mapGetters} = createNamespacedHelpers('classPage')
 
   export default {
     components: { SubclassInfo, SpellExpansionList, ClassTabs, ClassAttributes, ProgressionTable, MeIcon },
     computed: {
-      ...mapGetters(['getData', 'getProgressionHeaders', 'getMutableData'])
+      ...mapGetters(['getData', 'colors', 'order', 'sortBy']),
+      filteredSpells () {
+        const data = this.spells
+        let sortBy = this.sortBy.key
+        let order = this.order
+        data.sort(function (a, b) {
+          switch (sortBy) {
+            case 'type':
+              if (a[sortBy] === b[sortBy]) {
+                if (a.level === b.level) {
+                  return (a.name > b.name ? 1 : -1) * order
+                } else {
+                  return (a.level > b.level ? 1 : -1) * order
+                }
+              } else {
+                return (a[sortBy] > b[sortBy] ? 1 : -1) * order
+              }
+            default:
+              return (a[sortBy] === b[sortBy] ? 0 : a[sortBy] > b[sortBy] ? 1 : -1) * order
+          }
+        })
+        return data
+      }
     },
     created () {
       this.id = this.$route.params.id
       let classes = this.getData('classes')
       this.item = classes.find(value => value.id === this.id)
-      this.spells = this.getData('spells').filter(spell => spell[this.id]).sort(function (a, b) {
-        if (a.type === b.type) {
-          if (a.level === b.level) {
-            return a.name > b.name ? 1 : -1
-          } else {
-            return a.level > b.level ? 1 : -1
-          }
-        } else {
-          return a.type > b.type ? 1 : -1
-        }
-      })
+      this.spells = this.getData('spells').filter(spell => spell[this.id])
       let index = classes.indexOf(this.item)
       this.previous = classes[index - 1] ? classes[index - 1] : {}
       this.previous.colors = this.colors[this.previous.id]
@@ -72,16 +85,7 @@
         item: {},
         spells: {},
         next: {},
-        previous: {},
-        colors: {
-          '': { primary: 'primary', link: 'red darken-4' },
-          adept: { primary: 'deep-purple darken-1', link: 'purple--text' },
-          engineer: { primary: 'amber darken-2', link: 'amber--text text--darken-4' },
-          infiltrator: { primary: 'deep-orange darken-1', link: 'deep-orange--text text--darken-4' },
-          sentinel: { primary: 'green darken-2', link: 'teal--text text--darken-4' },
-          soldier: { primary: 'primary', link: '' },
-          vanguard: { primary: 'indigo darken-4', link: 'indigo--text darken-4' }
-        }
+        previous: {}
       }
     },
     head () {
@@ -92,6 +96,6 @@
         ]
       }
     },
-    layout: 'phb'
+    layout: 'phb-class'
   }
 </script>

@@ -14,10 +14,6 @@ export default {
     },
     pcs: []
   },
-  globalDialog: {
-    show: false,
-    component: ''
-  },
   gruntConfig: {
     cr: {},
     race: {id: 'random', name: 'Random'},
@@ -32,7 +28,6 @@ export default {
     { route: '/about', title: 'About' },
     { route: '/contributing', title: 'Feedback' }
   ],
-  searchString: '',
   sidebar: true,
   posts: [],
   kits: [],
