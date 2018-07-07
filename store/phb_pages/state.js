@@ -119,7 +119,7 @@ export default {
       name: 'Spells',
       list: true
     },
-    'phb-weapon-mods': {
+    'phb-weaponmods': {
       name: 'Weapon Mods',
       list: true
     }

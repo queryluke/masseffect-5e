@@ -13,8 +13,9 @@
     // Desktop Sort
     v-layout(row).pl-4.pr-5.my-2.hidden-md-and-down
       v-flex(v-for="header in headers" v-bind:key="header.key" v-bind:class="header.classes")
-        button(@click="sort(header.key)" v-if="header.sortable").body-2 {{ header.label }}
+        button(@click="sort(header)" v-if="header.sortable").body-2 {{ header.label }}
           v-icon(v-if="sortBy.key === header.key" size="16").ml-2 {{ order > 0 ? 'arrow_downward' : 'arrow_upward' }}
+        span(v-else).body-2 {{ header.label }}
 </template>
 
 <script>
@@ -50,13 +51,11 @@
     },
     methods: {
       ...mapActions('itemList', ['updateList']),
-      sort (key) {
-        const currentKey = this.sortBy.key
-        const newSort = this.headers.find(so => so.key === key)
-        if (currentKey === newSort.key) {
+      sort (header) {
+        if (this.sortBy === header) {
           this.order = this.order * -1
         } else {
-          this.sortBy = newSort
+          this.sortBy = header
         }
       }
     },

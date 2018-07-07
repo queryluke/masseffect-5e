@@ -11,6 +11,7 @@
             weapon-info(:weapon="card" v-if="type === 'weapon'")
             grenade-info(:grenade="card" v-if="type === 'grenade'")
             stat-block(:stats="card" v-if="type === 'npc'")
+            weapon-mod-info(:mod="card" v-if="type === 'weaponMod'")
             markdown-file(:id="card.id" v-bind:itemType="type" v-else)
           v-card-actions
             bookmark-button(:card="card" v-bind:type="type" v-bind:props="{flat: true}")
@@ -23,6 +24,7 @@
   import BookmarkButton from '~/components/BookmarkButton.vue'
   import StatBlock from '~/components/npc/StatBlock.vue'
   import GrenadeInfo from '~/components/GrenadeInfo.vue'
+  import WeaponModInfo from '~/components/weapon_mod/WeaponModInfo.vue'
   import MarkdownFile from '~/components/MarkdownFile.vue'
 
   export default {
@@ -31,6 +33,7 @@
       StatBlock,
       SpellInfo,
       WeaponInfo,
+      WeaponModInfo,
       BookmarkButton,
       MarkdownFile
     },
@@ -45,6 +48,7 @@
           spell: 'Spells',
           grenade: 'Grenades & Mines',
           weapon: 'Weapons',
+          weaponMod: 'Weapon Mods',
           npc: 'Npcs'
         }
       }

@@ -1,5 +1,5 @@
 {
-  "updated": "May  3, 2018 @  4:06 PM",
+  "updated": "July  7, 2018 @ 11:33 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRphibK9-tEg_9zoirocbeKnHIJpDSSVr721q4D5Wq9M4Eupx_vVJqVUzamgbHhM4bhyHrKn9PxQ0MV/pubhtml",
   "data": [
     {
@@ -14,6 +14,7 @@
       "smg": "x",
       "shotgun": null,
       "sniperRifle": "x",
+      "notes": "Extra Weapon Damage",
       "id": "extended_barrel_1",
       "availability": "Assault Rifle, Heavy Pistol, Smg, Sniper Rifle"
     },
@@ -29,6 +30,7 @@
       "smg": "x",
       "shotgun": null,
       "sniperRifle": "x",
+      "notes": "Extra Weapon Damage",
       "id": "extended_barrel_2",
       "availability": "Assault Rifle, Heavy Pistol, Smg, Sniper Rifle"
     },
@@ -44,6 +46,7 @@
       "smg": "x",
       "shotgun": null,
       "sniperRifle": "x",
+      "notes": "Extra Weapon Damage",
       "id": "extended_barrel_3",
       "availability": "Assault Rifle, Heavy Pistol, Smg, Sniper Rifle"
     },
@@ -59,6 +62,7 @@
       "smg": null,
       "shotgun": null,
       "sniperRifle": null,
+      "notes": "Melee Attacks",
       "id": "omni-blade_attachment",
       "availability": "Assault Rifle"
     },
@@ -74,6 +78,7 @@
       "smg": "x",
       "shotgun": "x",
       "sniperRifle": "x",
+      "notes": "Extra Weapon Damage, Attack Bonus",
       "id": "high-caliber_barrel_1",
       "availability": "All"
     },
@@ -89,6 +94,7 @@
       "smg": "x",
       "shotgun": "x",
       "sniperRifle": "x",
+      "notes": "Extra Weapon Damage, Attack Bonus",
       "id": "high-caliber_barrel_2",
       "availability": "All"
     },
@@ -104,6 +110,7 @@
       "smg": "x",
       "shotgun": "x",
       "sniperRifle": "x",
+      "notes": "Extra Weapon Damage, Attack Bonus",
       "id": "high-caliber_barrel_3",
       "availability": "All"
     },
@@ -119,6 +126,7 @@
       "smg": "x",
       "shotgun": null,
       "sniperRifle": null,
+      "notes": "Melee Attacks",
       "id": "stunner",
       "availability": "Heavy Pistol, Smg"
     },
@@ -134,6 +142,7 @@
       "smg": null,
       "shotgun": null,
       "sniperRifle": null,
+      "notes": "Extra Critical Dice",
       "id": "cranial_trauma_system",
       "availability": "Heavy Pistol"
     },
@@ -149,6 +158,7 @@
       "smg": "x",
       "shotgun": "x",
       "sniperRifle": "x",
+      "notes": "Attack Bonus",
       "id": "stability_damper_1",
       "availability": "Assault Rifle, Smg, Shotgun, Sniper Rifle"
     },
@@ -164,6 +174,7 @@
       "smg": "x",
       "shotgun": "x",
       "sniperRifle": "x",
+      "notes": "Attack Bonus",
       "id": "stability_damper_2",
       "availability": "Assault Rifle, Smg, Shotgun, Sniper Rifle"
     },
@@ -179,6 +190,7 @@
       "smg": "x",
       "shotgun": "x",
       "sniperRifle": "x",
+      "notes": "Attack Bonus",
       "id": "stability_damper_3",
       "availability": "Assault Rifle, Smg, Shotgun, Sniper Rifle"
     },
@@ -194,6 +206,7 @@
       "smg": "x",
       "shotgun": null,
       "sniperRifle": null,
+      "notes": "Increased Range",
       "id": "precision_scope",
       "availability": "Assault Rifle, Heavy Pistol, Smg"
     },
@@ -209,6 +222,7 @@
       "smg": null,
       "shotgun": null,
       "sniperRifle": "x",
+      "notes": "Infrared Vision",
       "id": "thermal_scope",
       "availability": "Assault Rifle, Sniper Rifle"
     },
@@ -224,6 +238,7 @@
       "smg": "x",
       "shotgun": "x",
       "sniperRifle": "x",
+      "notes": "Reduced Weight",
       "id": "ultralight_materials",
       "availability": "All"
     },
@@ -239,6 +254,7 @@
       "smg": "x",
       "shotgun": null,
       "sniperRifle": null,
+      "notes": "Extra Spell Damage",
       "id": "power_magnifier",
       "availability": "Heavy Pistol, Smg"
     },
@@ -254,6 +270,7 @@
       "smg": null,
       "shotgun": null,
       "sniperRifle": "x",
+      "notes": "Increased Critical Chance",
       "id": "concentration_mod",
       "availability": "Sniper Rifle"
     },
@@ -269,6 +286,7 @@
       "smg": null,
       "shotgun": null,
       "sniperRifle": "x",
+      "notes": "Ignore Piercing Resistance",
       "id": "piercing_ammo",
       "availability": "Assault Rifle, Heavy Pistol, Sniper Rifle"
     },
@@ -284,6 +302,7 @@
       "smg": null,
       "shotgun": "x",
       "sniperRifle": null,
+      "notes": "Slashing Damage, Ignore Slashing Resistance",
       "id": "shredder_ammo",
       "availability": "Shotgun"
     },
@@ -299,6 +318,7 @@
       "smg": "x",
       "shotgun": null,
       "sniperRifle": "x",
+      "notes": "Faster Reload",
       "id": "quick_release_magazine",
       "availability": "Assault Rifle, Heavy Pistol, Smg, Sniper Rifle"
     },
@@ -314,6 +334,7 @@
       "smg": "x",
       "shotgun": "x",
       "sniperRifle": "x",
+      "notes": "Additional Heat",
       "id": "magazine_upgrade",
       "availability": "All"
     },
@@ -329,6 +350,7 @@
       "smg": "x",
       "shotgun": "x",
       "sniperRifle": "x",
+      "notes": "Additional Heat",
       "id": "extended_magazine",
       "availability": "All"
     },
@@ -344,6 +366,7 @@
       "smg": "x",
       "shotgun": "x",
       "sniperRifle": "x",
+      "notes": "Additional Heat",
       "id": "heat_sink",
       "availability": "All"
     },
@@ -359,6 +382,7 @@
       "smg": "x",
       "shotgun": "x",
       "sniperRifle": "x",
+      "notes": "Cold Damage, Debuff",
       "id": "cryo_ammo",
       "availability": "All"
     },
@@ -374,6 +398,7 @@
       "smg": "x",
       "shotgun": "x",
       "sniperRifle": "x",
+      "notes": "Lightning Damage, Detonates",
       "id": "disruptor_ammo",
       "availability": "All"
     },
@@ -389,6 +414,7 @@
       "smg": "x",
       "shotgun": "x",
       "sniperRifle": "x",
+      "notes": "Fire Damamge, Extra Damage",
       "id": "incendiary_ammo",
       "availability": "All"
     },
@@ -404,6 +430,7 @@
       "smg": "x",
       "shotgun": "x",
       "sniperRifle": "x",
+      "notes": "Ignore Barrier, Detonates",
       "id": "warp_ammo",
       "availability": "All"
     },
@@ -419,6 +446,7 @@
       "smg": "x",
       "shotgun": "x",
       "sniperRifle": "x",
+      "notes": "Extra Damage",
       "id": "explosive_ammo",
       "availability": "All"
     },
@@ -434,6 +462,7 @@
       "smg": "x",
       "shotgun": "x",
       "sniperRifle": "x",
+      "notes": "Ignore Shields",
       "id": "phasic_ammo",
       "availability": "All"
     },
@@ -449,6 +478,7 @@
       "smg": "x",
       "shotgun": "x",
       "sniperRifle": "x",
+      "notes": "Initiative Advantage",
       "id": "combat_sensor",
       "availability": "All"
     },
@@ -464,6 +494,7 @@
       "smg": "x",
       "shotgun": "x",
       "sniperRifle": "x",
+      "notes": "Damage Reroll",
       "id": "high-velocity_barrel_i",
       "availability": "All"
     },
@@ -479,6 +510,7 @@
       "smg": "x",
       "shotgun": "x",
       "sniperRifle": "x",
+      "notes": "Damage Reroll",
       "id": "high-velocity_barrel_ii",
       "availability": "All"
     }

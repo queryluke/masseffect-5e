@@ -6,8 +6,8 @@ import mutations from './mutations'
 import getters from './getters'
 
 // modules
-import phb from './phb-pages'
-import classPage from './classPage'
+import phb from './phb_pages'
+import classPage from './class_page'
 import itemList from './itemList'
 
 const createStore = () => {

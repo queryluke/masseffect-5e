@@ -11,6 +11,10 @@ export default {
       spells: {
         type: [],
         availableClasses: []
+      },
+      weaponMods: {
+        placement: [],
+        weaponType: []
       }
     },
     mobileFilterDialog: false,
