@@ -4,7 +4,7 @@
     // Search functions for large screens
     div.hidden-sm-and-down
       h2.display-1 Armor Mods
-      p Read the #[router-link(to="/phb/rules/armor") Armor Rules] to understand how armor customization works.
+      p Read the #[nuxt-link(to="/phb/rules/armor#armor-customization") Armor Rules] to understand how armor customization works.
       v-layout(row wrap)
         v-flex(xs4).px-1
           v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
@@ -46,7 +46,11 @@
         let sortBy = this.sortBy.key
         let order = this.order
         data.sort(function (a, b) {
-          return (a[sortBy] === b[sortBy] ? 0 : a[sortBy] > b[sortBy] ? 1 : -1) * order
+          data.sort(function (a, b) {
+            const aSort = sortBy === 'cost' ? parseInt(a[sortBy], 10) : a[sortBy]
+            const bSort = sortBy === 'cost' ? parseInt(b[sortBy], 10) : b[sortBy]
+            return (aSort === bSort ? 0 : aSort > bSort ? 1 : -1) * order
+          })
         })
         if (this.search) {
           data = data.filter((item) => {

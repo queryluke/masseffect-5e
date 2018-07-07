@@ -8,11 +8,12 @@
         v-card.ma-1
           v-card-text
             spell-info(:spell="card" v-if="type === 'spell'")
-            weapon-info(:weapon="card" v-if="type === 'weapon'")
-            grenade-info(:grenade="card" v-if="type === 'grenade'")
-            stat-block(:stats="card" v-if="type === 'npc'")
-            weapon-mod-info(:mod="card" v-if="type === 'weaponMod'")
-            armor-mod-info(:mod="card" v-if="type === 'armorMod'")
+            weapon-info(:weapon="card" v-else-if="type === 'weapon'")
+            grenade-info(:grenade="card" v-else-if="type === 'grenade'")
+            stat-block(:stats="card" v-else-if="type === 'npc'")
+            weapon-mod-info(:mod="card" v-else-if="type === 'weaponMod'")
+            armor-mod-info(:mod="card" v-else-if="type === 'armorMod'")
+            armor-set-info(:mod="card" v-else-if="type === 'armorSet'")
             markdown-file(:id="card.id" v-bind:itemType="type" v-else)
           v-card-actions
             bookmark-button(:card="card" v-bind:type="type" v-bind:props="{flat: true}")
@@ -27,6 +28,7 @@
   import GrenadeInfo from '~/components/GrenadeInfo.vue'
   import WeaponModInfo from '~/components/weapon_mod/WeaponModInfo.vue'
   import ArmorModInfo from '~/components/armor_mod/ArmorModInfo.vue'
+  import ArmorSetInfo from '~/components/armor_set/ArmorSetInfo.vue'
   import MarkdownFile from '~/components/MarkdownFile.vue'
 
   export default {
@@ -37,6 +39,7 @@
       WeaponInfo,
       WeaponModInfo,
       ArmorModInfo,
+      ArmorSetInfo,
       BookmarkButton,
       MarkdownFile
     },
@@ -53,6 +56,7 @@
           weapon: 'Weapons',
           weaponMod: 'Weapon Mods',
           armorMod: 'Armor Mods',
+          armorSet: 'Armor Sets',
           npc: 'Npcs'
         }
       }

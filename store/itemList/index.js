@@ -20,6 +20,11 @@ export default {
       armorMods: {
         type: [],
         notes: []
+      },
+      armorSets: {
+        type: [],
+        armorType: [],
+        notes: []
       }
     },
     mobileFilterDialog: false,

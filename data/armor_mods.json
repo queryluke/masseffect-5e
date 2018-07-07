@@ -1,5 +1,5 @@
 {
-  "updated": "July  7, 2018 @  1:29 PM",
+  "updated": "July  7, 2018 @  2:45 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRIPzbOBXOdWbaY779un1EV3HyacCV3fe15kHW4ABjMV0yHi3GZHVqnbiOVSQ_Dgh1whimOITGOXHkn/pubhtml",
   "data": [
     {
@@ -289,7 +289,7 @@
       "feature": "+1 bonus to melee attack and damage rolls",
       "cost": "12000",
       "manu": "Ariake Technologies",
-      "notes": "Extra Damage",
+      "notes": "Extra Damage, Attack Bonus",
       "id": "microservos_legs"
     },
     {
@@ -299,7 +299,7 @@
       "feature": "+2 bonus to melee attack and damage rolls",
       "cost": "24000",
       "manu": "Ariake Technologies",
-      "notes": "Extra Damage",
+      "notes": "Extra Damage, Attack Bonus",
       "id": "microservos_arms"
     },
     {
@@ -339,7 +339,7 @@
       "feature": "Once per short rest, as a reaction to taking damage, you may jumpstart your shield regen and immediately gain shield points equal to your regen amount.",
       "cost": "15000",
       "manu": "Armax Arsenal",
-      "notes": "Shield Regen",
+      "notes": "Shield Jumpstart",
       "id": "recharge_capacitor_chest"
     },
     {
@@ -349,7 +349,7 @@
       "feature": "Once per short rest, as a reaction to taking damage, you may jumpstart your shield regen and immediately gain shield points equal to your regen amount.",
       "cost": "15000",
       "manu": "Alliance",
-      "notes": "Shield Regen",
+      "notes": "Shield Jumpstart",
       "id": "recharge_capacitor_head"
     },
     {

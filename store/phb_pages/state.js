@@ -126,6 +126,10 @@ export default {
     'phb-armor-mods': {
       name: 'Armor Mods',
       list: true
+    },
+    'phb-armor-sets': {
+      name: 'Armor Sets',
+      list: true
     }
   }
 }

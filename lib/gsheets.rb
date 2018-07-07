@@ -70,7 +70,8 @@ GSHEETS = [
         type: 'armor_sets',
         url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRlWQ7v7esaQwLtD1yXcbiHM-jYHCzjC23cIfNFEcfbLhEcFSi8EIoLi1zZyCQtQFRneMqp02_pFWKH/pub?gid=0&single=true&output=csv',
         renderables: [],
-        id: 'name'
+        id: 'name',
+        camel: true
     },
     {
         type: 'monster_features',
