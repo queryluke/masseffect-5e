@@ -140,6 +140,18 @@ export default {
     'phb-bestiary': {
       name: 'Bestiary',
       list: true
+    },
+    'phb-bookmarks': {
+      name: 'Bookmarks'
+    },
+    'for-gms-loot-generator': {
+      name: 'Random Loot Generator'
+    },
+    'for-gms-grunts': {
+      name: 'Random Grunt Generator'
+    },
+    'for-gms-armor-creation': {
+      name: 'Creating Armor'
     }
   }
 }

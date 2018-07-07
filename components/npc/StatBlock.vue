@@ -5,7 +5,7 @@
       p #[em {{ stats.size }} {{ stats.type }}{{ stats.unit ? `${stats.unit},` : ',' }} {{ stats.alignment }}]
     div(style="position:relative;").pt-0
       div.hr
-      ul.list-unstyled
+      ul.list-unstyled.pl-0
         li #[strong Armor Class] {{ stats.ac }}
         li #[strong Hit Points] {{ renderPoints(stats.hp) }}
         li(v-if="stats.sp") #[strong Shield Points] {{ stats.sp.shields }} ({{ stats.sp.regen }} regen)
@@ -18,7 +18,7 @@
             p.ma-0 #[strong {{ ability.toUpperCase() }}]
             p.ma-0 {{ score }} ({{ score | abilityBonus }})
       div.hr
-      ul.list-unstyled
+      ul.list-unstyled.pl-0
         li(v-if="hasFeature('savingThrows')") #[strong Saving Throws] {{ stats | npcSavingThrows }}
         li(v-if="skills") #[strong Skills] {{ skills }}
         li(v-if="hasFeature('damageVulnerabilities')") #[strong Damage Vulnerabilities] {{ stats.damageVulnerabilities.join(', ') }}

@@ -1,6 +1,6 @@
 <template lang="pug">
   v-container
-    h2.display-3 Grunt Generator
+    h2.display-1.hidden-sm-and-down Random Grunt Generator
     p.
       Grunts are disposable NPCs based on the Mass Effect archetypes. The #[em Monster Manual] outlines adjusting
       the provided NPC Archetypes with various races, weapons, and abilities, but this can be rather time consuming.
