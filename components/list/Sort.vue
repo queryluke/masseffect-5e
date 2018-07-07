@@ -15,7 +15,7 @@
       v-flex(v-for="header in headers" v-bind:key="header.key" v-bind:class="header.classes")
         button(@click="sort(header)" v-if="header.sortable").body-2 {{ header.label }}
           v-icon(v-if="sortBy.key === header.key" size="16").ml-2 {{ order > 0 ? 'arrow_downward' : 'arrow_upward' }}
-        span(v-else).body-2 {{ header.label }}
+        span(v-else).body-1 {{ header.label }}
 </template>
 
 <script>
