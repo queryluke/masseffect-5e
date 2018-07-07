@@ -1,5 +1,5 @@
 {
-  "updated": "June 20, 2018 @  4:27 PM",
+  "updated": "July  7, 2018 @  6:47 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -70,11 +70,11 @@
         {
           "id": 2,
           "type": "line",
-          "data": "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st."
+          "data": "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, you can target two additional creature for each slot level above 1st."
         }
       ],
-      "adv_option_1": "Disorient : Creatures that fail the saving throw become disoriented. Until the end of your next turn, attacks made against the creature have advantage and it can't take reactions.",
-      "adv_option_2": "Debilitate : Creatures that fail the saving throw take 1d4 psychic damage and have their movement speed reduced by half until the spell ends.",
+      "adv_option_1": "Disorient : Creatures that fail the saving throw become disoriented. Until the end of your next turn, attacks made against the creature has advantage and the creature can't take reactions.",
+      "adv_option_2": "Debilitate : Creatures that fail the saving throw can barely move. Until the end of your next turn, the creature's speed becomes 0 and it automatically fails Dexterity saving throws.",
       "type": "biotic",
       "die_type": null,
       "attack_type": [
@@ -83,7 +83,7 @@
       "casting_time": "Action",
       "concentration": "x",
       "duration": "1 minute",
-      "range": "10m",
+      "range": "30m",
       "aoe": null,
       "aoe_distance": null,
       "effect": [
@@ -103,11 +103,11 @@
       "min_tech_points": null,
       "id": "alter_center_mass",
       "adv_options": [
-        "Disorient : Creatures that fail the saving throw become disoriented. Until the end of your next turn, attacks made against the creature have advantage and it can't take reactions.",
-        "Debilitate : Creatures that fail the saving throw take 1d4 psychic damage and have their movement speed reduced by half until the spell ends."
+        "Disorient : Creatures that fail the saving throw become disoriented. Until the end of your next turn, attacks made against the creature has advantage and the creature can't take reactions.",
+        "Debilitate : Creatures that fail the saving throw can barely move. Until the end of your next turn, the creature's speed becomes 0 and it automatically fails Dexterity saving throws."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "UptothreecreaturesofyourchoicethatyoucanseewithinrangemustmakeConstitutionsavingthrowsasyougenerateminormasseffectfieldsthataltertheircentermassWheneveratargetthatfailsthissavingthrowmakesanattackrollorasavingthrowbeforethespellendsthetargetmustrollad4andsubtractthenumberrolledfromtheattackrollorsavingthrowAtHigherLevelsWhenyoucastthisspellusingaspellslotof2ndlevelorhigheryoucantargetoneadditionalcreatureforeachslotlevelabove1st"
+      "mechanic_text_dump": "UptothreecreaturesofyourchoicethatyoucanseewithinrangemustmakeConstitutionsavingthrowsasyougenerateminormasseffectfieldsthataltertheircentermassWheneveratargetthatfailsthissavingthrowmakesanattackrollorasavingthrowbeforethespellendsthetargetmustrollad4andsubtractthenumberrolledfromtheattackrollorsavingthrowAtHigherLevelsWhenyoucastthisspellusingaspellslotof2ndlevelorhigheryoucantargettwoadditionalcreatureforeachslotlevelabove1st"
     },
     {
       "name": "Annihilation Field",
@@ -131,7 +131,7 @@
         {
           "id": 4,
           "type": "line",
-          "data": "At higher levels: When you cast this spell using a spell slot of 5th level or higher, increase the radius by 2m for each slot level above the 4th."
+          "data": "At higher levels: When you cast this spell using a spell slot of 5th level or higher, increase the radius by 4m for each slot level above the 4th."
         }
       ],
       "adv_option_1": "Anti-Armor : Each creature within the sphere has a -1 penalty to their AC.",
@@ -168,7 +168,7 @@
         "Phasic : Annihilation Field's damage bypasses shields."
       ],
       "class_list": "Adept, Vanguard",
-      "mechanic_text_dump": "Spinafieldofdarkenergyoriginatingfromyouina6msphereThefieldmoveswithyouandreducesyourmovementspeedbyhalfEachcreaturewithinthespheremustmakeaConstitutionsavingthrowAcreaturetakes12d6necroticdamageonafailedsaveorhalfasmuchdamageonasuccessfuloneAcreaturemustalsomakethesavingthrowwhenitentersthefieldsspaceforthefirsttimeonaturnorendsitsturnthereAnycreaturewithinthesphereisprimednecroticThisconditionendsimmediatelyifthecreatureleavesthesphereAthigherlevelsWhenyoucastthisspellusingaspellslotof5thlevelorhigherincreasetheradiusby2mforeachslotlevelabovethe4th"
+      "mechanic_text_dump": "Spinafieldofdarkenergyoriginatingfromyouina6msphereThefieldmoveswithyouandreducesyourmovementspeedbyhalfEachcreaturewithinthespheremustmakeaConstitutionsavingthrowAcreaturetakes12d6necroticdamageonafailedsaveorhalfasmuchdamageonasuccessfuloneAcreaturemustalsomakethesavingthrowwhenitentersthefieldsspaceforthefirsttimeonaturnorendsitsturnthereAnycreaturewithinthesphereisprimednecroticThisconditionendsimmediatelyifthecreatureleavesthesphereAthigherlevelsWhenyoucastthisspellusingaspellslotof5thlevelorhigherincreasetheradiusby4mforeachslotlevelabovethe4th"
     },
     {
       "name": "Backlash",
@@ -197,7 +197,7 @@
         {
           "id": 5,
           "type": "line",
-          "data": "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, the aegis's hit points increase by 10 for each slot level above the 2nd."
+          "data": "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, the aegis's hit points increase by 20 for each slot level above the 2nd."
         }
       ],
       "adv_option_1": "Durable : Increase the aegis's hit points to 30. Each additional spell slot about the 2nd, increases the aegis's hit points by 15.",
@@ -234,7 +234,7 @@
         "Counter strike : If you cast Backlash as a reaction against a melee attack, gain an attack of opportunity against the attacking creature."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "Whenyouarehitwithaweaponattackasareactionyoucangenerateafrontalbioticaegisbarrierwith15hitpointsIfacreatureyoucanseehitsyouwithanattackwhiletheaegisisactivesplitthedamageequallybetweenyourselfandtheaegisIftheattackisarangedweaponattacktheportionofthedamagethatwouldbedealttoyouisdealttotheattackingcreatureinsteadIfthedamageisanoddnumberyoumaychoosewheretheextra1damageisdealtIfdamagedealttotheaegisisgreaterthanitsremaininghitpointsdealtheremainingdamagetoyourselfWhentheaegisdropsto0hitpointsthespellendsAtHigherLevelsWhenyoucastthisspellusingaspellslotof3rdlevelorhighertheaegisshitpointsincreaseby10foreachslotlevelabovethe2nd"
+      "mechanic_text_dump": "Whenyouarehitwithaweaponattackasareactionyoucangenerateafrontalbioticaegisbarrierwith15hitpointsIfacreatureyoucanseehitsyouwithanattackwhiletheaegisisactivesplitthedamageequallybetweenyourselfandtheaegisIftheattackisarangedweaponattacktheportionofthedamagethatwouldbedealttoyouisdealttotheattackingcreatureinsteadIfthedamageisanoddnumberyoumaychoosewheretheextra1damageisdealtIfdamagedealttotheaegisisgreaterthanitsremaininghitpointsdealtheremainingdamagetoyourselfWhentheaegisdropsto0hitpointsthespellendsAtHigherLevelsWhenyoucastthisspellusingaspellslotof3rdlevelorhighertheaegisshitpointsincreaseby20foreachslotlevelabovethe2nd"
     },
     {
       "name": "Ballistic Blades",
@@ -421,7 +421,7 @@
         {
           "id": 2,
           "type": "line",
-          "data": "At higher levels: When you cast this spell using a spell slot of level 3 or higher, the number of orbs increases by 1 for each slot level above the 2nd."
+          "data": "At higher levels: When you cast this spell using a spell slot of level 3 or higher, the number of orbs increases by 2 for each slot level above the 2nd."
         }
       ],
       "adv_option_1": "Improved Orbs : Gain 2 max level spell slots when at least 3 orbs are active",
@@ -459,7 +459,7 @@
         "Defense Orbs : As a reaction, you can expend an orb to create a micro barrier on the incoming attack, reducing the damage by 1d8. You can use this power on yourself or other creatures."
       ],
       "class_list": "Adept, Vanguard",
-      "mechanic_text_dump": "Summon3bioticorbsthatfloataroundyouIfyouhaveatleast3orbsyougainoneadditionalmaxlevelhighestavailablelevelspellslotYoumayalsoexpendanorbandmakearangedspellattackonacreaturewithin20mOnahitdealforcedamageequalto2d10yourspellcastingabilitymodifierTheorbslast1houroruntilyouveexpendedallofthemAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthenumberoforbsincreasesby1foreachslotlevelabovethe2nd"
+      "mechanic_text_dump": "Summon3bioticorbsthatfloataroundyouIfyouhaveatleast3orbsyougainoneadditionalmaxlevelhighestavailablelevelspellslotYoumayalsoexpendanorbandmakearangedspellattackonacreaturewithin20mOnahitdealforcedamageequalto2d10yourspellcastingabilitymodifierTheorbslast1houroruntilyouveexpendedallofthemAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthenumberoforbsincreasesby2foreachslotlevelabovethe2nd"
     },
     {
       "name": "Biotic Punch",
@@ -540,7 +540,7 @@
         {
           "id": 5,
           "type": "line",
-          "data": "At higher levels: When you cast this spell using a spell slot of level 4 or higher, the sphere's health increases by 1d12 for each slot level above the 3rd."
+          "data": "At higher levels: When you cast this spell using a spell slot of level 4 or higher, the sphere's health increases by 2d12 for each slot level above the 3rd."
         }
       ],
       "adv_option_1": "Infuse Ammo : Friendly creatures inside the sphere add 1d4 force damage to all ranged weapon attacks on creatures outside of the sphere and subtract that much from the sphere's HP. This damage can detonate abilities.",
@@ -577,7 +577,7 @@
         "Armored : The sphere has resistance to piercing, slashing, and bludgeoning damage."
       ],
       "class_list": "Adept, Sentinel",
-      "mechanic_text_dump": "Channelaspherewith5d12yourlevelhitpointsthatextendsoutfromyouina6mradiusandmoveswithyouHostilecreaturescannotenterorleavethesphereHostileattacksmadeonfriendlytargetsareabsorbedbythespherethesphereautomaticallyfailsanysavingthrowsFriendlyattacksonhostilecreatureswithinthespherehaveadvantageThespheredissipateswhenitshitpointsaregoneIfanattackwoulddealmoredamagethantheremaininghitpointsofthespherethespheresoaksallofthedamageandthendissipatesAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel4orhigherthesphereshealthincreasesby1d12foreachslotlevelabovethe3rd"
+      "mechanic_text_dump": "Channelaspherewith5d12yourlevelhitpointsthatextendsoutfromyouina6mradiusandmoveswithyouHostilecreaturescannotenterorleavethesphereHostileattacksmadeonfriendlytargetsareabsorbedbythespherethesphereautomaticallyfailsanysavingthrowsFriendlyattacksonhostilecreatureswithinthespherehaveadvantageThespheredissipateswhenitshitpointsaregoneIfanattackwoulddealmoredamagethantheremaininghitpointsofthespherethespheresoaksallofthedamageandthendissipatesAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel4orhigherthesphereshealthincreasesby2d12foreachslotlevelabovethe3rd"
     },
     {
       "name": "Biotic Wall",
@@ -637,16 +637,16 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Choose one object weighing less than 10 kilos (about 20 lbs.) within range that isn't being worn or carried. The object flies in a straight line up to 30m in a direction you choose before falling to the ground, stopping early if it impacts against a solid surface. If the object would strike a creature, that creature must make a Dexterity saving throw. On a failed save, the object strikes the target and stops moving. In either case, both the object and the creature or solid surface take 3d10 bludgeoning damage."
+          "data": "Choose one object weighing 1 to 10 kilos (about 2 to 20 lbs.) within range that isn't being worn or carried. The object flies in a straight line up to 30m in a direction you choose before falling to the ground, stopping early if it impacts against a solid surface. If the object would strike a creature, that creature must make a Dexterity saving throw. On a failed save, the object strikes the creature and stops moving. When the object strikes something, the object and what it strikes each take 3d10 bludgeoning damage."
         },
         {
           "id": 2,
           "type": "line",
-          "data": "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the maximum weight of objects that you can target with this spell increases by 2 kilos (5lbs), and the damage increases by 1d10, for each slot level above 1st."
+          "data": "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the maximum weight of objects that you can target with this spell increases by 5 kilos (10lbs), and the damage increases by 2d10, for each slot level above 1st."
         }
       ],
-      "adv_option_1": "Salvo : You can choose any number of objects as long as the total weight of all objects chosen does not exceed the maximum amount of weight for the spell. Each object can be sent in a different direction, but only deals 1[dd] damage.",
-      "adv_option_2": "Delayed Catapult : When you cast this spell, you may delay the launch of the object. It hovers 2m off the ground until you launch it. You may use a reaction or bonus action to launch the object. If launched as a reaction towards a target making an attack roll, you imposed disadvantage on that roll.",
+      "adv_option_1": "Salvo : When you cast Salvo, you may target a number of objects equal to or less than your spellcasting modifier. The combined weight of the objects cannot exceed the maximum weight limit of the spell (10 kilos at 1st level, 12 kilos at 2nd level, etc).",
+      "adv_option_2": "Counterstrike : You may cast catapult as a reaction when you see a creature within 30m of you casting a spell or making a weapon attack. If the object would strike a creature casting a spell, the creature automatically fails its Dexterity saving throw and must succeed on a Constitution saving throw or the spell fails and has no effect (DC 10 or half the damage done by catapult, whichever is higher). If object would strike a creature making a weapon attack, you impose disadvantage on the attack roll whether or not the creature fails its Dexterity saving throw.",
       "type": "biotic",
       "die_type": "d10",
       "attack_type": [
@@ -675,11 +675,11 @@
       "min_tech_points": null,
       "id": "catapult",
       "adv_options": [
-        "Salvo : You can choose any number of objects as long as the total weight of all objects chosen does not exceed the maximum amount of weight for the spell. Each object can be sent in a different direction, but only deals 1d10 damage.",
-        "Delayed Catapult : When you cast this spell, you may delay the launch of the object. It hovers 2m off the ground until you launch it. You may use a reaction or bonus action to launch the object. If launched as a reaction towards a target making an attack roll, you imposed disadvantage on that roll."
+        "Salvo : When you cast Salvo, you may target a number of objects equal to or less than your spellcasting modifier. The combined weight of the objects cannot exceed the maximum weight limit of the spell (10 kilos at 1st level, 12 kilos at 2nd level, etc).",
+        "Counterstrike : You may cast catapult as a reaction when you see a creature within 30m of you casting a spell or making a weapon attack. If the object would strike a creature casting a spell, the creature automatically fails its Dexterity saving throw and must succeed on a Constitution saving throw or the spell fails and has no effect (DC 10 or half the damage done by catapult, whichever is higher). If object would strike a creature making a weapon attack, you impose disadvantage on the attack roll whether or not the creature fails its Dexterity saving throw."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "Chooseoneobjectweighinglessthan10kilosabout20lbswithinrangethatisntbeingwornorcarriedTheobjectfliesinastraightlineupto30minadirectionyouchoosebeforefallingtothegroundstoppingearlyifitimpactsagainstasolidsurfaceIftheobjectwouldstrikeacreaturethatcreaturemustmakeaDexteritysavingthrowOnafailedsavetheobjectstrikesthetargetandstopsmovingIneithercaseboththeobjectandthecreatureorsolidsurfacetake3d10bludgeoningdamageAtHigherLevelsWhenyoucastthisspellusingaspellslotof2ndlevelorhigherthemaximumweightofobjectsthatyoucantargetwiththisspellincreasesby2kilos5lbsandthedamageincreasesby1d10foreachslotlevelabove1st"
+      "mechanic_text_dump": "Chooseoneobjectweighing1to10kilosabout2to20lbswithinrangethatisntbeingwornorcarriedTheobjectfliesinastraightlineupto30minadirectionyouchoosebeforefallingtothegroundstoppingearlyifitimpactsagainstasolidsurfaceIftheobjectwouldstrikeacreaturethatcreaturemustmakeaDexteritysavingthrowOnafailedsavetheobjectstrikesthecreatureandstopsmovingWhentheobjectstrikessomethingtheobjectandwhatitstrikeseachtake3d10bludgeoningdamageAtHigherLevelsWhenyoucastthisspellusingaspellslotof2ndlevelorhigherthemaximumweightofobjectsthatyoucantargetwiththisspellincreasesby5kilos10lbsandthedamageincreasesby2d10foreachslotlevelabove1st"
     },
     {
       "name": "Charge",
@@ -953,7 +953,7 @@
         {
           "id": 4,
           "type": "line",
-          "data": "At higher levels: When you cast this spell using a spell slot of level 3 or higher, the damage increases by 1d8 for each slot level above the 2nd."
+          "data": "At higher levels: When you cast this spell using a spell slot of level 3 or higher, the damage increases by 2d8 for each slot level above the 2nd."
         }
       ],
       "adv_option_1": "Control : At the start of your turn, before the sphere moves, you can change its direction.",
@@ -991,7 +991,7 @@
         "Amplify : Every 4m, the sphere's potential damage increases. Add 1d8 to the detonation damage for each 4m the sphere travels."
       ],
       "class_list": "Adept",
-      "mechanic_text_dump": "Launchaslowmoving4mwidesphereofdarkenergyinastraightlineinfrontofyouItmoves4mthisturnandatthestartofeachsubsequentturnEachcreaturecaughtinthepathbecomesprimednecroticuntiltheendofitsnextturnandmustmakeaDexteritysavingthrowOnafailedsaveacreaturetakesnecroticdamageequalto6d8yourspellcastingabilitymodifierorhalfasmuchonasuccessfuloneWhenthespherereaches20mitdetonatesandeachcreaturewithin10mbecomesprimednecroticfor1minuteandmustmakeaConstitutionsavingthrowOnafailedsaveacreaturetakesnecroticdamageequalto6d8yourspellcastingabilitymodifierorhalfasmuchdamageonasuccessfuloneYoucanuseanactiontodetonatethesphereearlyIfyouloseconcentrationwhilecastingthespellitdoesnotdetonateAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d8foreachslotlevelabovethe2nd"
+      "mechanic_text_dump": "Launchaslowmoving4mwidesphereofdarkenergyinastraightlineinfrontofyouItmoves4mthisturnandatthestartofeachsubsequentturnEachcreaturecaughtinthepathbecomesprimednecroticuntiltheendofitsnextturnandmustmakeaDexteritysavingthrowOnafailedsaveacreaturetakesnecroticdamageequalto6d8yourspellcastingabilitymodifierorhalfasmuchonasuccessfuloneWhenthespherereaches20mitdetonatesandeachcreaturewithin10mbecomesprimednecroticfor1minuteandmustmakeaConstitutionsavingthrowOnafailedsaveacreaturetakesnecroticdamageequalto6d8yourspellcastingabilitymodifierorhalfasmuchdamageonasuccessfuloneYoucanuseanactiontodetonatethesphereearlyIfyouloseconcentrationwhilecastingthespellitdoesnotdetonateAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby2d8foreachslotlevelabovethe2nd"
     },
     {
       "name": "Decoy",
@@ -1393,7 +1393,7 @@
         {
           "id": 2,
           "type": "line",
-          "data": "At higher levels: When you cast this spell using a spell slot of 5th level or higher, increase the damage by 1d12 for each spell slot above the 4th."
+          "data": "At higher levels: When you cast this spell using a spell slot of 5th level or higher, increase the damage by 2d12 for each spell slot above the 4th."
         }
       ],
       "adv_option_1": "Improved Blind : Each creature is blinded no matter the result of its saving throw.",
@@ -1430,7 +1430,7 @@
         "Heat seeking flare : Instead of choosing 4 targets, you may instead choose 1. If you do so, the target has disadvantage on the saving throw. Increase the damage by 4d12."
       ],
       "class_list": "Adept",
-      "mechanic_text_dump": "RapidlyalteringthemassofairparticlescreatesradioactiveprojectilesthatseekoutthetargetsandexplodeChooseupto4creaturesthatyoucanseewithinrangeEachcreaturemustmakeaConstitutionsavingthrowOnafailedsaveacreatureisblindeduntiltheendofyournextturnandtakesradiantdamageequalto6d12OnasuccessfulsaveacreaturetakeshalfdamagebutsuffersnoothernegativeeffectAthigherlevelsWhenyoucastthisspellusingaspellslotof5thlevelorhigherincreasethedamageby1d12foreachspellslotabovethe4th"
+      "mechanic_text_dump": "RapidlyalteringthemassofairparticlescreatesradioactiveprojectilesthatseekoutthetargetsandexplodeChooseupto4creaturesthatyoucanseewithinrangeEachcreaturemustmakeaConstitutionsavingthrowOnafailedsaveacreatureisblindeduntiltheendofyournextturnandtakesradiantdamageequalto6d12OnasuccessfulsaveacreaturetakeshalfdamagebutsuffersnoothernegativeeffectAthigherlevelsWhenyoucastthisspellusingaspellslotof5thlevelorhigherincreasethedamageby2d12foreachspellslotabovethe4th"
     },
     {
       "name": "Fly",
@@ -1444,7 +1444,7 @@
         {
           "id": 2,
           "type": "line",
-          "data": "At Higher Levels: When you cast this spell using a spell slot of 4th level or higher, you can target one additional creature for each slot level above 3rd."
+          "data": "At Higher Levels: When you cast this spell using a spell slot of 4th level or higher, you can target two additional creatures for each slot level above 3rd."
         }
       ],
       "adv_option_1": "Improved Lift : You can lift Large sized creatures",
@@ -1481,7 +1481,7 @@
         "Quick : You can cast Fly as a bonus action"
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "CreateanegativemasseffectfieldaroundawillingMediumsizedorsmallercreatureandliftit2mintotheairThecreaturesspeedbecomeszerobutyoucanuseabonusactionorreactiontomovethecreatureupto20mthroughtheairWhenthespellendsthetargetfallsifitisstillaloftunlessitcanstopthefallAtHigherLevelsWhenyoucastthisspellusingaspellslotof4thlevelorhigheryoucantargetoneadditionalcreatureforeachslotlevelabove3rd"
+      "mechanic_text_dump": "CreateanegativemasseffectfieldaroundawillingMediumsizedorsmallercreatureandliftit2mintotheairThecreaturesspeedbecomeszerobutyoucanuseabonusactionorreactiontomovethecreatureupto20mthroughtheairWhenthespellendsthetargetfallsifitisstillaloftunlessitcanstopthefallAtHigherLevelsWhenyoucastthisspellusingaspellslotof4thlevelorhigheryoucantargettwoadditionalcreaturesforeachslotlevelabove3rd"
     },
     {
       "name": "Fortification",
@@ -1806,15 +1806,15 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Make a ranged spell attack on a creature you can see within range. On a hit, release a lance of energy that deals force damage equal to 3d8 + your biotic modifier."
+          "data": "Release a lance of energy at a creature within range. Make a ranged spell attack against the target. On a hit, the target takes force damage equal to 3d8 + your biotic modifier."
         },
         {
           "id": 2,
           "type": "line",
-          "data": "At higher levels: When you cast this spell using a spell slot of level 2 or higher, the damage increases by 1d8 for each slot level above the 1st."
+          "data": "At higher levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 2d8 for each slot level above the 1st."
         }
       ],
-      "adv_option_1": "Anti-Shield : Damage type become lightning.",
+      "adv_option_1": "Anti-shield : Lance deals an additional 2d4 lightning damage. This damage increases by 2d4 for each spell slot level above the first.",
       "adv_option_2": "Improved Damage : Increase the damage die type to d12.",
       "type": "biotic",
       "die_type": "d8",
@@ -1824,7 +1824,7 @@
       "casting_time": "Action",
       "concentration": null,
       "duration": "Instant",
-      "range": "20m",
+      "range": "50m",
       "aoe": null,
       "aoe_distance": null,
       "effect": [
@@ -1844,11 +1844,11 @@
       "min_tech_points": null,
       "id": "lance",
       "adv_options": [
-        "Anti-Shield : Damage type become lightning.",
+        "Anti-shield : Lance deals an additional 2d4 lightning damage. This damage increases by 2d4 for each spell slot level above the first.",
         "Improved Damage : Increase the damage die type to d12."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "MakearangedspellattackonacreatureyoucanseewithinrangeOnahitreleasealanceofenergythatdealsforcedamageequalto3d8yourbioticmodifierAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel2orhigherthedamageincreasesby1d8foreachslotlevelabovethe1st"
+      "mechanic_text_dump": "ReleasealanceofenergyatacreaturewithinrangeMakearangedspellattackagainstthetargetOnahitthetargettakesforcedamageequalto3d8yourbioticmodifierAthigherlevelsWhenyoucastthisspellusingaspellslotof2ndlevelorhigherthedamageincreasesby2d8foreachslotlevelabovethe1st"
     },
     {
       "name": "Lash",
@@ -1862,7 +1862,7 @@
         {
           "id": 2,
           "type": "line",
-          "data": "At higher levels: When you cast this spell using a spell slot of level 3 or higher, the damage increases by 1d8 for each slot level above the 2nd."
+          "data": "At higher levels: When you cast this spell using a spell slot of level 3 or higher, the damage increases by 2d8 for each slot level above the 2nd."
         }
       ],
       "adv_option_1": "Improved Grapple : The grappled creature has disadvantage when trying to escape.",
@@ -1900,7 +1900,7 @@
         "Improved Damage : Increase the damage die type to d12."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "TargetacreatureyoucanseewithinrangeThetargettakes4d8forcedamageandbecomesgrappledandprimedforceuntilitescapesthegrappleAdetonatingattackimmediatelyendsthegrappleortoescapethegrapplethecreaturemustsucceedonacontestedStrengthAthleticscheckagainstyourConstitutionAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d8foreachslotlevelabovethe2nd"
+      "mechanic_text_dump": "TargetacreatureyoucanseewithinrangeThetargettakes4d8forcedamageandbecomesgrappledandprimedforceuntilitescapesthegrappleAdetonatingattackimmediatelyendsthegrappleortoescapethegrapplethecreaturemustsucceedonacontestedStrengthAthleticscheckagainstyourConstitutionAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby2d8foreachslotlevelabovethe2nd"
     },
     {
       "name": "Pull",
@@ -1909,20 +1909,20 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Make a ranged spell attack on a Medium or smaller creature or object within range. On a success, you create a mass effect field around the target and it becomes {lifted} 2m in the air."
+          "data": "Make a ranged spell attack on a Medium or smaller creature or object within range. On a success, you create a mass effect field around the target and it becomes lifted 2m in the air. While you maintain this spell, as a bonus action, you can move the target up to 4m in any direction. If you move the target further than 30m away from you, the spell ends and the target falls to the ground."
         }
       ],
       "adv_option_1": "Heavy Pull : You may target a Large or smaller creature or object.",
-      "adv_option_2": "Control : While the target is lifted, as a bonus action, you can move the target up to 6m.",
+      "adv_option_2": "Grip : While maintaining this spell, you may use your bonus action to increase pressure around the target, dealing 2d6 bludgeoning damage.",
       "type": "biotic",
-      "die_type": "d8",
+      "die_type": null,
       "attack_type": [
-
+        "Ranged Attack"
       ],
       "casting_time": "Action",
       "concentration": "x",
       "duration": "10 minutes",
-      "range": "20m",
+      "range": "30m",
       "aoe": null,
       "aoe_distance": null,
       "effect": [
@@ -1943,10 +1943,10 @@
       "id": "pull",
       "adv_options": [
         "Heavy Pull : You may target a Large or smaller creature or object.",
-        "Control : While the target is lifted, as a bonus action, you can move the target up to 6m."
+        "Grip : While maintaining this spell, you may use your bonus action to increase pressure around the target, dealing 2d6 bludgeoning damage."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "MakearangedspellattackonaMediumorsmallercreatureorobjectwithinrangeOnasuccessyoucreateamasseffectfieldaroundthetargetanditbecomeslifted2mintheair"
+      "mechanic_text_dump": "MakearangedspellattackonaMediumorsmallercreatureorobjectwithinrangeOnasuccessyoucreateamasseffectfieldaroundthetargetanditbecomeslifted2mintheairWhileyoumaintainthisspellasabonusactionyoucanmovethetargetupto4minanydirectionIfyoumovethetargetfurtherthan30mawayfromyouthespellendsandthetargetfallstotheground"
     },
     {
       "name": "Neural Shock",
@@ -2058,23 +2058,23 @@
     },
     {
       "name": "Nova",
-      "level": "1",
+      "level": "0",
       "mechanic": [
         {
           "id": 1,
           "type": "line",
-          "data": "Transfer the energy of your barrier into a biotic explosion, consuming your remaining barrier ticks. Creatures within a 2m sphere centered on you must make a Dexterity saving throw. On a failed save, a creature is knocked {prone} and takes force damage equal to Xd10, where X is the number of barrier ticks. On a successful save, a creature takes half as much damage."
+          "data": "Transfer the energy of your barrier into a biotic explosion, consuming your remaining barrier ticks. Creatures within a 2m sphere centered on you must make a Dexterity saving throw. On a failed save, a creature is knocked prone and takes force damage equal to Xd8, where X is the number of barrier ticks. On a successful save, a creature takes half as much damage."
         },
         {
           "id": 2,
           "type": "line",
-          "data": "When you cast this spell using a spell slot of 2nd level or higher, the radius of the explosion increases by 2m for each level above the 1st."
+          "data": "At higher levels: This spell's damage increases by 1d8 when you reach 5th level (X + 1d8), 11th level (X + 2d8), 17th level (X + 3d8)"
         }
       ],
       "adv_option_1": "Improved Damage : Increase the damage die to d12.",
-      "adv_option_2": "Half Blast : You may cast nova twice within a single action. Each cast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. You can move in between the blasts.",
+      "adv_option_2": "Half blast : When you cast nova, it consumes one half of your remaining barrier ticks (rounded up), but deals damage as if you had used all of your remaining barrier ticks.",
       "type": "biotic",
-      "die_type": "d10",
+      "die_type": "d8",
       "attack_type": [
         "DEX Save"
       ],
@@ -2102,10 +2102,10 @@
       "id": "nova",
       "adv_options": [
         "Improved Damage : Increase the damage die to d12.",
-        "Half Blast : You may cast nova twice within a single action. Each cast consumes one half of your barrier ticks. If you have an odd number of barrier ticks, you choose which blast consumes the remaining tick. You can move in between the blasts."
+        "Half blast : When you cast nova, it consumes one half of your remaining barrier ticks (rounded up), but deals damage as if you had used all of your remaining barrier ticks."
       ],
       "class_list": "Vanguard",
-      "mechanic_text_dump": "TransfertheenergyofyourbarrierintoabioticexplosionconsumingyourremainingbarrierticksCreatureswithina2mspherecenteredonyoumustmakeaDexteritysavingthrowOnafailedsaveacreatureisknockedproneandtakesforcedamageequaltoXd10whereXisthenumberofbarrierticksOnasuccessfulsaveacreaturetakeshalfasmuchdamageWhenyoucastthisspellusingaspellslotof2ndlevelorhighertheradiusoftheexplosionincreasesby2mforeachlevelabovethe1st"
+      "mechanic_text_dump": "TransfertheenergyofyourbarrierintoabioticexplosionconsumingyourremainingbarrierticksCreatureswithina2mspherecenteredonyoumustmakeaDexteritysavingthrowOnafailedsaveacreatureisknockedproneandtakesforcedamageequaltoXd8whereXisthenumberofbarrierticksOnasuccessfulsaveacreaturetakeshalfasmuchdamageAthigherlevelsThisspellsdamageincreasesby1d8whenyoureach5thlevelX1d811thlevelX2d817thlevelX3d8"
     },
     {
       "name": "Overload",
@@ -2313,25 +2313,25 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Unleash a wave of dark biotic energy in a 6m cube. Each creature within the blast becomes {primed-necrotic} until the end of its next turn and must make a Constitution saving throw. On a failed save, a creature takes 2d10 necrotic damage and has disadvantage on their next attack or saving thrown. A creature takes half as much damage on a successful save."
+          "data": "Hurl an orb of dark energy at one creature within range. Make a range spell attack against the target. On a hit, you deal 2d10 necrotic damage and the target becomes primed(necrotic) until the end of your next turn. The target also has disadvantage on their next attack, ability check, or saving throw. This disadvantage lasts one minute or until the target becomes incapacitated."
         },
         {
           "id": 2,
           "type": "line",
-          "data": "At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, increase the damage by 1d10 for each level above the second."
+          "data": "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, increase the damage by 2d10 for each level above the 1st."
         }
       ],
-      "adv_option_1": "Distance : Increase the range of Reave to 10m.",
-      "adv_option_2": "Armor boost : The dark energy heightens your senses momentarily. When you cast Reave, gain +2AC until the start of your next turn.",
+      "adv_option_1": "Area Reave : The orb becomes unstable and explodes when it reaches the target. Hit or miss, the target and each creature within 2m of it must succeed on a Constitution saving throw or take 2d6 necrotic damage. This damage increases by 2d6 for each spell slot level above the first.",
+      "adv_option_2": "Immediate Detonation : When you hit a target with reave, it detonates the primed condition at the end of your turn.",
       "type": "biotic",
       "die_type": "d10",
       "attack_type": [
-        "CON Save"
+        "Ranged Attack"
       ],
       "casting_time": "Action",
       "concentration": null,
       "duration": "Instant",
-      "range": "Self",
+      "range": "50m",
       "aoe": "cube",
       "aoe_distance": "6m",
       "effect": [
@@ -2341,7 +2341,7 @@
       "damage_type": [
         "necrotic"
       ],
-      "detonates": "x",
+      "detonates": null,
       "primes": "necrotic",
       "adept": "x",
       "vanguard": null,
@@ -2352,11 +2352,11 @@
       "min_tech_points": null,
       "id": "reave",
       "adv_options": [
-        "Distance : Increase the range of Reave to 10m.",
-        "Armor boost : The dark energy heightens your senses momentarily. When you cast Reave, gain +2AC until the start of your next turn."
+        "Area Reave : The orb becomes unstable and explodes when it reaches the target. Hit or miss, the target and each creature within 2m of it must succeed on a Constitution saving throw or take 2d6 necrotic damage. This damage increases by 2d6 for each spell slot level above the first.",
+        "Immediate Detonation : When you hit a target with reave, it detonates the primed condition at the end of your turn."
       ],
       "class_list": "Adept",
-      "mechanic_text_dump": "Unleashawaveofdarkbioticenergyina6mcubeEachcreaturewithintheblastbecomesprimednecroticuntiltheendofitsnextturnandmustmakeaConstitutionsavingthrowOnafailedsaveacreaturetakes2d10necroticdamageandhasdisadvantageontheirnextattackorsavingthrownAcreaturetakeshalfasmuchdamageonasuccessfulsaveAtHigherLevelsWhenyoucastthisspellusingaspellslotof3rdlevelorhigherincreasethedamageby1d10foreachlevelabovethesecond"
+      "mechanic_text_dump": "HurlanorbofdarkenergyatonecreaturewithinrangeMakearangespellattackagainstthetargetOnahityoudeal2d10necroticdamageandthetargetbecomesprimednecroticuntiltheendofyournextturnThetargetalsohasdisadvantageontheirnextattackabilitycheckorsavingthrowThisdisadvantagelastsoneminuteoruntilthetargetbecomesincapacitatedAtHigherLevelsWhenyoucastthisspellusingaspellslotof2ndlevelorhigherincreasethedamageby2d10foreachlevelabovethe1st"
     },
     {
       "name": "Sabotage",
@@ -2565,15 +2565,15 @@
         {
           "id": 1,
           "type": "line",
-          "data": "Create a cascading shockwave in a 10m line originating from you. Each creature must make a Dexterity saving throw. On a failed save, a creature takes 3d6 force damage and is knocked {prone}. On a successful save, a creature takes half as much damage."
+          "data": "Create a cascading shockwave in a 2m wide by 10m long line originating from you. Each creature caught in the line must make a Dexterity saving throw. On a failed save, a creature takes 3d6 force damage and is knocked prone. On a successful save, a creature takes half as much damage."
         },
         {
           "id": 2,
           "type": "line",
-          "data": "At higher levels: When you cast this spell using a spell slot of level 2 or higher, the damage increases by 1d6 for each slot level above the 1st."
+          "data": "At higher levels: When you cast this spell using a spell slot of level 2 or higher, the damage increases by 2d6 for each slot level above the 1st."
         }
       ],
-      "adv_option_1": "Improved Distance : The shockwave travels 16m",
+      "adv_option_1": "Controlled Shockwave : The shockwave travels 16m. You may change the direct of the line every 4m.",
       "adv_option_2": "Improved Damage : Increase damage die type to d10",
       "type": "biotic",
       "die_type": "d6",
@@ -2603,11 +2603,11 @@
       "min_tech_points": null,
       "id": "shockwave",
       "adv_options": [
-        "Improved Distance : The shockwave travels 16m",
+        "Controlled Shockwave : The shockwave travels 16m. You may change the direct of the line every 4m.",
         "Improved Damage : Increase damage die type to d10"
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "Createacascadingshockwaveina10mlineoriginatingfromyouEachcreaturemustmakeaDexteritysavingthrowOnafailedsaveacreaturetakes3d6forcedamageandisknockedproneOnasuccessfulsaveacreaturetakeshalfasmuchdamageAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel2orhigherthedamageincreasesby1d6foreachslotlevelabovethe1st"
+      "mechanic_text_dump": "Createacascadingshockwaveina2mwideby10mlonglineoriginatingfromyouEachcreaturecaughtinthelinemustmakeaDexteritysavingthrowOnafailedsaveacreaturetakes3d6forcedamageandisknockedproneOnasuccessfulsaveacreaturetakeshalfasmuchdamageAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel2orhigherthedamageincreasesby2d6foreachslotlevelabovethe1st"
     },
     {
       "name": "Siege Pulse",
@@ -2673,7 +2673,7 @@
         {
           "id": 2,
           "type": "line",
-          "data": "When you cast this spell using a spell slot of 4th level or higher, increase the size of the sphere by 2m per spell slot above the 3rd."
+          "data": "When you cast this spell using a spell slot of 4th level or higher, increase the size of the sphere by 4m per spell slot above the 3rd."
         }
       ],
       "adv_option_1": "Heavy Singularity: When a creature affected by this power makes a DEX or STR save to avoid its pull, they make that save at disadvantage.",
@@ -2711,7 +2711,7 @@
         "Damage : A hostile creature that enters the sphere for the first time on a turn or ends its turn there is takes 1d4 necrotic damage."
       ],
       "class_list": "Adept",
-      "mechanic_text_dump": "Createanegativemasseffectfieldina4msphereatatargetlocationwithinrangeEachcreatureorobjectwithinthespheresradiusmustsucceedonaDexteritysavingthroworbecomesliftedOnlyMediumorsmallercreatureandobjectsareaffectedAnycreatureorobjectentersthesphereforthefirsttimeorendsitsturntheremustsucceedonaStrengthAthleticsorDexterityAgilitycheckortheyaredrawnintothesphereandbecomeliftedWhenyoucastthisspellusingaspellslotof4thlevelorhigherincreasethesizeofthesphereby2mperspellslotabovethe3rd"
+      "mechanic_text_dump": "Createanegativemasseffectfieldina4msphereatatargetlocationwithinrangeEachcreatureorobjectwithinthespheresradiusmustsucceedonaDexteritysavingthroworbecomesliftedOnlyMediumorsmallercreatureandobjectsareaffectedAnycreatureorobjectentersthesphereforthefirsttimeorendsitsturntheremustsucceedonaStrengthAthleticsorDexterityAgilitycheckortheyaredrawnintothesphereandbecomeliftedWhenyoucastthisspellusingaspellslotof4thlevelorhigherincreasethesizeofthesphereby4mperspellslotabovethe3rd"
     },
     {
       "name": "Slam",
@@ -2977,7 +2977,7 @@
         {
           "id": 2,
           "type": "line",
-          "data": "At Higher Levels. When you cast this spell using a spell slot of 5th level or higher, the damage increases for each of its effects by 1d10 for each slot level above 4th."
+          "data": "At Higher Levels. When you cast this spell using a spell slot of 5th level or higher, the damage increases for each of its effects by 2d10 for each slot level above 4th."
         }
       ],
       "adv_option_1": "Necrotic Bolts: Until the spell ends, you can use a bonus action on each of your turns to cause a bolt of necrotic energy to leap from the center of the sphere toward one creature you choose within 20m of the center. Make a ranged spell attack. You have advantage on the attack roll if the target is in the sphere. On a hit, the target takes 4[dd] necrotic damage. Necrotic bolts can detonate primed targets.",
@@ -3016,7 +3016,7 @@
         "Growing Storm: While the spell is maintained, the storm's radius grows by 2m at the start of your turn."
       ],
       "class_list": "Adept, Vanguard",
-      "mechanic_text_dump": "An8mradiussphereofrapidshiftingmasseffectfieldsspringsintoexistencecenteredonapointyouchoosewithinrangecreatingadangerouswhirlwindofdebrisandenergyThesphereremainsforthespellsdurationEachcreatureinthespherewhenitappearsorthatendsitsturntheremustsucceedonaStrengthsavingthrowortake8d10forcedamageThespheresspaceisdifficultterrainAtHigherLevelsWhenyoucastthisspellusingaspellslotof5thlevelorhigherthedamageincreasesforeachofitseffectsby1d10foreachslotlevelabove4th"
+      "mechanic_text_dump": "An8mradiussphereofrapidshiftingmasseffectfieldsspringsintoexistencecenteredonapointyouchoosewithinrangecreatingadangerouswhirlwindofdebrisandenergyThesphereremainsforthespellsdurationEachcreatureinthespherewhenitappearsorthatendsitsturntheremustsucceedonaStrengthsavingthrowortake8d10forcedamageThespheresspaceisdifficultterrainAtHigherLevelsWhenyoucastthisspellusingaspellslotof5thlevelorhigherthedamageincreasesforeachofitseffectsby2d10foreachslotlevelabove4th"
     },
     {
       "name": "Submission Net",
@@ -3291,7 +3291,7 @@
         {
           "id": 3,
           "type": "line",
-          "data": "At Higher Levels: When you cast this spell using a spell slot of 4th level or higher, increase the damage by 1d10 for each slot level above the 3rd."
+          "data": "At Higher Levels: When you cast this spell using a spell slot of 4th level or higher, increase the damage by 2d10 for each slot level above the 3rd."
         }
       ],
       "adv_option_1": "Radial : You may cast the vortex in a 6m radius sphere instead.",
@@ -3328,7 +3328,7 @@
         "Damage : Increase the damage to d12"
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "YouintertwinenegativeandpositivemasseffectfieldstocreateaswirlingvortexCreatureswithina10mconemustmakeaDEXsavingthrowOnafailedsaveacreaturetakes4d10forcedamageorhalfasmuchdamageonasuccessfuloneCreaturesthatfailthesavingthrowarethrown1d62mawayfromyouandbecomeproneAtHigherLevelsWhenyoucastthisspellusingaspellslotof4thlevelorhigherincreasethedamageby1d10foreachslotlevelabovethe3rd"
+      "mechanic_text_dump": "YouintertwinenegativeandpositivemasseffectfieldstocreateaswirlingvortexCreatureswithina10mconemustmakeaDEXsavingthrowOnafailedsaveacreaturetakes4d10forcedamageorhalfasmuchdamageonasuccessfuloneCreaturesthatfailthesavingthrowarethrown1d62mawayfromyouandbecomeproneAtHigherLevelsWhenyoucastthisspellusingaspellslotof4thlevelorhigherincreasethedamageby2d10foreachslotlevelabovethe3rd"
     },
     {
       "name": "Warp",
@@ -3342,7 +3342,7 @@
         {
           "id": 2,
           "type": "line",
-          "data": "At higher levels: When you cast this spell using a spell slot of level 3 or higher, the damage increases by 1d10 for each slot level above the 2nd."
+          "data": "At higher levels: When you cast this spell using a spell slot of level 3 or higher, the damage increases by 2d10 for each slot level above the 2nd."
         }
       ],
       "adv_option_1": "Internal Bleeding : The shifting causes internal bleeding. At the start of your turn, the target takes 1[dd] necrotic damage bypassing its shields until it uses medi-gel or is stabilized.",
@@ -3379,7 +3379,7 @@
         "Keel over : A target hit by warp must pass a Constitution saving throw. On a failed save, the force of warp is so intense the target is knocked {prone} and {stunned} until the start of your next turn."
       ],
       "class_list": "Adept, Sentinel, Vanguard",
-      "mechanic_text_dump": "MakearangedspellattackonanorganiccreatureyoucanseewithinrangeOnahityougeneratearapidlyshiftingmasseffectfieldinsidethetargetdealingnecroticdamageequalto3d10yourspellcastingabilitymodifierInadditionthetargetisprimednecroticuntiltheendofitsnextturnThisdamagebypassesshieldsAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby1d10foreachslotlevelabovethe2nd"
+      "mechanic_text_dump": "MakearangedspellattackonanorganiccreatureyoucanseewithinrangeOnahityougeneratearapidlyshiftingmasseffectfieldinsidethetargetdealingnecroticdamageequalto3d10yourspellcastingabilitymodifierInadditionthetargetisprimednecroticuntiltheendofitsnextturnThisdamagebypassesshieldsAthigherlevelsWhenyoucastthisspellusingaspellslotoflevel3orhigherthedamageincreasesby2d10foreachslotlevelabovethe2nd"
     },
     {
       "name": "Turbocharge",
