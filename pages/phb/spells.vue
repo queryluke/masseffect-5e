@@ -72,11 +72,11 @@
           })
         }
         if (this.filters.spells.type.length > 0) {
-          data = data.filter(spell => this.type.includes(spell.type))
+          data = data.filter(spell => this.filters.spells.type.includes(spell.type))
         }
         if (this.filters.spells.availableClasses.length > 0) {
           data = data.filter(spell => {
-            for (const c of this.availableClasses) {
+            for (const c of this.filters.spells.availableClasses) {
               if (spell[c]) {
                 return spell
               }

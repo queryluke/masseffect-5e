@@ -96,6 +96,9 @@ export default {
     'phb-classes': {
       name: 'Classes'
     },
+    'phb-classes-id': {
+      name: 'Classes'
+    },
     'phb-races': {
       name: 'Races'
     },
@@ -113,7 +116,12 @@ export default {
       list: true
     },
     'phb-spells': {
-      name: 'Spells'
+      name: 'Spells',
+      list: true
+    },
+    'phb-weapon-mods': {
+      name: 'Weapon Mods',
+      list: true
     }
   }
 }

@@ -39,7 +39,7 @@ export default {
     getData: (state, getters, rootState, rootGetters) => type => {
       return rootGetters.getData(type)
     },
-    order: (state, getters, rootState) => rootState.spellList.order,
-    sortBy: (state, getters, rootState) => rootState.spellList.sortBy
+    order: (state, getters, rootState) => rootState.itemList.order,
+    sortBy: (state, getters, rootState) => rootState.itemList.sortBy
   }
 }

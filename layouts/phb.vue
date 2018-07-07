@@ -45,7 +45,7 @@ export default {
   computed: {
     ...mapGetters(['pages', 'searchString']),
     page () {
-      return this.pages[this.$route.name]
+      return this.pages[this.$route.name] ? this.pages[this.$route.name] : {}
     },
     search: {
       get () {
