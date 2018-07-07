@@ -10,6 +10,7 @@ import CharacterCreationAndLeveling from './CharacterCreationAndLeveling.vue'
 import ChangesAndAdditions from './ChangesAndAdditions.vue'
 import Conditions from './Conditions.vue'
 import CostOfThings from './CostOfThings.vue'
+import Cover from './Cover.vue'
 import CreatureTypes from './CreatureTypes.vue'
 import Currency from './Currency.vue'
 import DamageTypes from './DamageTypes.vue'
@@ -55,6 +56,7 @@ export {
   CharacterCreationAndLeveling,
   Conditions,
   CostOfThings,
+  Cover,
   CreatureTypes,
   Currency,
   DamageTypes,

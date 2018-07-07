@@ -37,7 +37,6 @@
     },
     created () {
       this.items = this.getData('grenades')
-      console.log(this.items)
     },
     head () {
       return {

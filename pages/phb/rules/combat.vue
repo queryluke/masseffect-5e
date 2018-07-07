@@ -15,7 +15,8 @@
     PrimersAndDetonators,
     CreatureTypes,
     DamageTypes,
-    Conditions
+    Conditions,
+    Cover
   } from '~/components/phb/'
 
   import {mapGetters} from 'vuex'
@@ -28,7 +29,8 @@
       PrimersAndDetonators,
       CreatureTypes,
       DamageTypes,
-      Conditions
+      Conditions,
+      Cover
     },
     computed: {
       ...mapGetters('phb', {

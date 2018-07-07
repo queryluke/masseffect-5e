@@ -37,6 +37,7 @@ export default {
       name: 'Rules - Combat',
       rules: [
         'shields',
+        'cover',
         'reloading',
         'rapid-reload',
         'primers-and-detonators',
