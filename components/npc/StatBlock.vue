@@ -2,7 +2,7 @@
   div
     div.pb-0
       p.red--text.text--darken-4.headline.small-caps.mb-0 #[strong {{ stats.name }}]
-      p #[em {{ stats.size }} {{ stats.type }}, {{ stats.alignment }}]
+      p #[em {{ stats.size }} {{ stats.type }}{{ stats.unit ? `${stats.unit},` : ',' }} {{ stats.alignment }}]
     div(style="position:relative;").pt-0
       div.hr
       ul.list-unstyled

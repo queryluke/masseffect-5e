@@ -136,6 +136,10 @@ export default {
     },
     'phb-items-tools-kits': {
       name: 'Tools & Kits'
+    },
+    'phb-bestiary': {
+      name: 'Bestiary',
+      list: true
     }
   }
 }

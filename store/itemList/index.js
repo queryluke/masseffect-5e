@@ -25,6 +25,10 @@ export default {
         type: [],
         armorType: [],
         notes: []
+      },
+      monsters: {
+        cr: [],
+        unit: []
       }
     },
     mobileFilterDialog: false,

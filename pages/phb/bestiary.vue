@@ -1,74 +1,103 @@
 <template lang="pug">
-  v-container
-    v-layout(row wrap)
-      v-flex(xs12 sm6)
-        h2.display-3 Bestiary
-      v-flex(xs12 sm6)
-        v-text-field(
-        append-icon="search"
-        label="Search"
-        single-line
-        hide-details
-        v-model="search"
-        autofocus
-        )
-    div.expansion-panel__sortable.primary.my-3
-      v-layout.px-4
-        v-flex(v-for="header in headers" v-bind:key="header.key" v-bind:class="header.classes")
-          v-list(dark).primary.pa-0
-            v-list-tile(@click.stop="sortBy(header.key)" ripple v-bind:class="{ active: header.key === sortKey }" v-if="header.sortable")
-              v-list-tile-content
-                v-list-tile-title(v-text="header.display")
-              v-icon(:class="[sortOrder > 0 ? 'asc' : 'dsc']" dark) arrow_downward
-            v-list-tile(v-else)
-              v-list-tile-content
-                v-list-tile-title(v-text="header.display")
-    monster-list(:monsters="filtered")
+  v-container(:class="{ 'px-0': $vuetify.breakpoint.xsOnly }" )
+
+    // Search functions for large screens
+    div.hidden-sm-and-down
+      h2.display-1 Bestiary
+      v-layout(row wrap)
+        v-flex(md4).px-1
+          v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
+        v-flex(md8).px-1
+          bestiary-filters(:itemKey="itemKey" v-bind:crOptions="crOptions" v-bind:unitOptions="unitOptions")
+
+    // Spell List
+    bestiary-list(:items="filtered")
+
+    // Mobile Filters
+    mobile-filter-container(title="Filter Monsters")
+      template(slot="filters")
+        bestiary-filters(:itemKey="itemKey" v-bind:crOptions="crOptions" v-bind:unitOptions="unitOptions")
 </template>
 
 <script>
-  import MonsterList from '~/components/npc/MonsterList.vue'
+  import BestiaryList from '~/components/bestiary/BestiaryList.vue'
+  import BestiaryFilters from '~/components/bestiary/BestiaryFilters.vue'
+  import MobileFilterContainer from '~/components/list/MobileFilterContainer.vue'
   import {ConfigureMonsters} from '~/mixins/monsters'
   import {CrToInt} from '~/mixins/crToInt'
 
+  // State
+  import {createNamespacedHelpers} from 'vuex'
+  const {mapActions, mapGetters} = createNamespacedHelpers('itemList')
+
   export default {
     components: {
-      MonsterList
+      BestiaryList,
+      BestiaryFilters,
+      MobileFilterContainer
     },
     computed: {
-      filtered () {
-        let data = this.monsters
-        let sortKey = this.sortKey
-        let search = this.search
-        if (sortKey) {
-          data = data.slice().sort(this.sortFunction)
+      ...mapGetters(['order', 'sortBy', 'filters', 'searchString']),
+      search: {
+        get () {
+          return this.searchString
+        },
+        set (value) {
+          this.updateSearchString(value)
         }
-        if (search) {
+      },
+      filtered () {
+        let data = this.items
+        let sortBy = this.sortBy.key
+        let order = this.order
+        data.sort((a, b) => {
+          switch (sortBy) {
+            case 'cr':
+              a = this.crToInt(a[sortBy])
+              b = this.crToInt(b[sortBy])
+              break
+            default:
+              a = a[sortBy]
+              b = b[sortBy]
+          }
+          return (a === b ? 0 : a > b ? 1 : -1) * order
+        })
+        if (this.search) {
           data = data.filter((monster) => {
             let nameMatch = monster.name.toLowerCase().indexOf(this.search.toLowerCase()) >= 0
             let unitMatch = monster.unit.toLowerCase().indexOf(this.search.toLowerCase()) >= 0
             return nameMatch || unitMatch
           })
         }
+        for (const key in this.filters[this.itemKey]) {
+          const filter = this.filters[this.itemKey][key]
+          if (filter.length > 0) {
+            data = data.filter(item => filter.includes(item[key]))
+          }
+        }
         return data
       }
     },
     created () {
-      this.monsters = this.getMonsters()
+      const self = this
+      this.items = this.getMonsters()
+      const crOptions = new Set()
+      const unitOptions = new Set()
+      for (const item of this.items) {
+        crOptions.add(item.cr)
+        unitOptions.add(item.unit)
+      }
+      this.crOptions = [...crOptions].sort((a, b) => {
+        const aSort = self.crToInt(a)
+        const bSort = self.crToInt(b)
+        return aSort === bSort ? 0 : aSort > bSort ? 1 : -1
+      })
+      this.unitOptions = [...unitOptions].sort()
     },
     data () {
       return {
-        monsters: [],
-        search: '',
-        source: '',
-        sortKey: 'name',
-        sortOrder: 1,
-        updated: '',
-        headers: [
-          { key: 'name', display: 'Name', classes: 'xs9 lg5', sortable: true },
-          { key: 'unit', display: 'Faction', classes: 'hidden-md-and-down lg5', sortable: true },
-          { key: 'cr', display: 'CR', classes: 'xs3', sortable: true }
-        ]
+        items: [],
+        itemKey: 'monsters'
       }
     },
     head () {
@@ -81,26 +110,7 @@
     },
     layout: 'phb',
     methods: {
-      sortBy (key) {
-        if (this.sortKey === key) {
-          this.sortOrder = this.sortOrder * -1
-        } else {
-          this.sortKey = key
-          this.sortOrder = 1
-        }
-      },
-      sortFunction (a, b) {
-        switch (this.sortKey) {
-          case 'cr':
-            a = this.crToInt(a[this.sortKey])
-            b = this.crToInt(b[this.sortKey])
-            break
-          default:
-            a = a[this.sortKey]
-            b = b[this.sortKey]
-        }
-        return (a === b ? 0 : a > b ? 1 : -1) * this.sortOrder
-      }
+      ...mapActions(['updateSearchString'])
     },
     mixins: [ConfigureMonsters, CrToInt]
   }
