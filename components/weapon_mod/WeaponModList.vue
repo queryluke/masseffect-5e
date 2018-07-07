@@ -33,7 +33,7 @@
           { label: 'Cost', key: 'cost', classes: 'xs3 md3 lg1', sortable: true },
           { label: 'Placement', key: 'placement', classes: 'xs3 md3 lg1' },
           { label: 'Weapon Availability', key: 'weaponType', classes: 'hidden-md-and-down lg4' },
-          { label: 'Notes', key: 'notes', classes: 'hidden-md-and-down md3 lg4' }
+          { label: 'Notes', key: 'notes', classes: 'hidden-sm-and-down md3 lg4' }
         ]
       }
     },

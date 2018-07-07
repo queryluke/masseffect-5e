@@ -16,6 +16,10 @@ export default {
         placement: [],
         weaponType: [],
         notes: []
+      },
+      armorMods: {
+        type: [],
+        notes: []
       }
     },
     mobileFilterDialog: false,

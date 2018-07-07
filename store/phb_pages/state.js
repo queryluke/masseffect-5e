@@ -122,6 +122,10 @@ export default {
     'phb-weaponmods': {
       name: 'Weapon Mods',
       list: true
+    },
+    'phb-armor-mods': {
+      name: 'Armor Mods',
+      list: true
     }
   }
 }

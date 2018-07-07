@@ -86,6 +86,8 @@ def generate_config_file(page)
         when 'weapon_mods'
           config_weapon_mods(dup_model)
           dup_model = nil
+        when 'armor_mods'
+          dup_model['id'] = "#{dup_model['id']}_#{dup_model['type'].downcase}"
         when 'commonplace_items'
           config_commonplace_items(dup_model)
           dup_model = nil
