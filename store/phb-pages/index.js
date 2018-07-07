@@ -3,29 +3,22 @@ import state from './state'
 export default {
   namespaced: true,
   state,
-  mutations: {
-    toggleMobileFilterDialog (state, payload) {
-      state.mobileFilterDialog = payload
-    },
-    updateSearchString (state, payload) {
-      state.searchString = payload
-    }
-  },
+  mutations: {},
   actions: {
     toggleSidebar ({dispatch}) {
       dispatch('toggleSidebar', null, { root: true })
     },
-    toggleMobileFilterDialog ({getters, commit}) {
-      commit('toggleMobileFilterDialog', !getters.mobileFilterDialog)
+    toggleMobileFilterDialog ({dispatch}) {
+      dispatch('itemList/toggleMobileFilterDialog', null, {root: true})
     },
-    updateSearchString ({commit}, payload) {
-      commit('updateSearchString', payload)
+    updateSearchString ({dispatch}, payload) {
+      dispatch('itemList/updateSearchString', payload, {root: true})
     }
   },
   getters: {
-    mobileFilterDialog: state => state.mobileFilterDialog,
+    mobileFilterDialog: (state, getters, rootState) => rootState.itemList.mobileFilterDialog,
     pages: state => state.pages,
-    searchString: state => state.searchString,
+    searchString: (state, getters, rootState) => rootState.itemList.searchString,
     primaryNavigation: (state, getters, rootState) => rootState.primaryNavigation,
     version: (state, getters, rootState, rootGetters) => rootGetters.getVersion
   }

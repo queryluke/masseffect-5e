@@ -8,44 +8,44 @@
         v-flex(md4).px-1
           v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
         v-flex(md8).px-1
-          spell-filters
+          spell-filters(:itemKey="itemKey")
 
     // Spell List
-    spell-expansion-list(:spells="filtered")
+    spell-list(:items="filtered")
 
     // Mobile Filters
-    mobile-filter-container
+    mobile-filter-container(title="Filter Spells")
       template(slot="filters")
-        spell-filters
+        spell-filters(:itemKey="itemKey")
 </template>
 
 <script>
-  import SpellExpansionList from '~/components/spell/SpellExpansionList.vue'
+  import SpellList from '~/components/spell/SpellList.vue'
   import SpellFilters from '~/components/spell/SpellFilters.vue'
   import MobileFilterContainer from '~/components/MobileFilterContainer.vue'
 
   // State
   import {createNamespacedHelpers} from 'vuex'
-  const {mapActions, mapGetters} = createNamespacedHelpers('spellList')
+  const {mapActions, mapGetters} = createNamespacedHelpers('itemList')
 
   export default {
     components: {
       MobileFilterContainer,
-      SpellExpansionList,
+      SpellList,
       SpellFilters
     },
     computed: {
-      ...mapGetters(['spells', 'order', 'sortBy', 'type', 'availableClasses', 'searchString']),
+      ...mapGetters(['getItems', 'order', 'sortBy', 'filters', 'searchString']),
       search: {
         get () {
           return this.searchString
         },
         set (value) {
-          this.updateSearchString({value})
+          this.updateSearchString(value)
         }
       },
       filtered () {
-        let data = this.spells
+        let data = this.items
         let sortBy = this.sortBy.key
         let order = this.order
         data.sort(function (a, b) {
@@ -64,17 +64,17 @@
               return (a[sortBy] === b[sortBy] ? 0 : a[sortBy] > b[sortBy] ? 1 : -1) * order
           }
         })
-        if (this.searchString) {
+        if (this.search) {
           data = data.filter((spell) => {
             let nameMatch = spell.name.toLowerCase().indexOf(this.searchString.toLowerCase()) >= 0
             let textMatch = spell.mechanic_text_dump.indexOf(this.searchString.toLowerCase()) >= 0
             return nameMatch || textMatch
           })
         }
-        if (this.type.length > 0) {
+        if (this.filters.spells.type.length > 0) {
           data = data.filter(spell => this.type.includes(spell.type))
         }
-        if (this.availableClasses.length > 0) {
+        if (this.filters.spells.availableClasses.length > 0) {
           data = data.filter(spell => {
             for (const c of this.availableClasses) {
               if (spell[c]) {
@@ -86,6 +86,15 @@
         return data
       }
     },
+    created () {
+      this.items = this.getItems(this.itemKey)
+    },
+    data () {
+      return {
+        items: [],
+        itemKey: 'spells'
+      }
+    },
     head () {
       return {
         title: 'Mass Effect 5e | Biotics, Tech and Combat Powers',
@@ -94,7 +103,7 @@
         ]
       }
     },
-    layout: 'phb-list',
+    layout: 'phb',
     methods: {
       ...mapActions(['updateSearchString'])
     }

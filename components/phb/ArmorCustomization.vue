@@ -41,8 +41,7 @@
             td(data-table-key="Mod Slots") 1 (3)
       ul
         li #[strong Additional Mod Slots:] 20,000 credits
-      p
-        v-btn(to="/phb/armor/mods") Mod List
+      v-btn(to="/phb/armor/mods") Mod List
       div.hr
       p.headline Example
       p Medium Head Armor w/ 2 mod slots

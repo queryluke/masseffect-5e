@@ -1,6 +1,6 @@
 <template lang="pug">
   v-container
-    h2.display-3 Feats
+    h2.display-1.hidden-sm-and-down Feats
     p.
       Feats are part of the official #[em Dungeons & Dragons Players Handbook] (PHB). Due to copyright reasons, I can only note any changed or new feats
       available in this system. Hence, if a feat doesn't have a description, you can look it up in your copy of the PHB with the page number provided.

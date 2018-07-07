@@ -109,12 +109,11 @@ export default {
       name: 'Backgrounds'
     },
     'phb-weapons': {
-      name: 'Weapons'
+      name: 'Weapons',
+      list: true
     },
     'phb-spells': {
       name: 'Spells'
     }
-  },
-  mobileFilterDialog: false,
-  searchString: ''
+  }
 }

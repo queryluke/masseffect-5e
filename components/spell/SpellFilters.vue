@@ -11,25 +11,25 @@
 
 <script>
   import {createNamespacedHelpers} from 'vuex'
-  const {mapActions, mapGetters} = createNamespacedHelpers('spellList')
+  const {mapActions, mapGetters} = createNamespacedHelpers('itemList')
 
   export default {
     computed: {
-      ...mapGetters(['type', 'availableClasses']),
+      ...mapGetters(['filters']),
       typeFilter: {
         get () {
-          return this.type
+          return this.filters[this.itemKey].type
         },
         set (value) {
-          this.updateSpellList({key: 'type', value})
+          this.updateFilter({key: this.itemKey, filterKey: 'type', value})
         }
       },
       classFilter: {
         get () {
-          return this.availableClasses
+          return this.filters[this.itemKey].availableClasses
         },
         set (value) {
-          this.updateSpellList({key: 'availableClasses', value})
+          this.updateFilter({key: this.itemKey, filterKey: 'availableClasses', value})
         }
       }
     },
@@ -51,12 +51,13 @@
       }
     },
     methods: {
-      ...mapActions(['updateSpellList']),
+      ...mapActions(['updateFilter']),
       reset () {
         this.classFilter = []
         this.typeFilter = []
       }
-    }
+    },
+    props: ['itemKey']
   }
 </script>
 

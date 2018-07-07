@@ -11,25 +11,25 @@
 
 <script>
   import {createNamespacedHelpers} from 'vuex'
-  const {mapActions, mapGetters} = createNamespacedHelpers('weaponList')
+  const {mapActions, mapGetters} = createNamespacedHelpers('itemList')
 
   export default {
     computed: {
-      ...mapGetters(['type', 'rarity']),
+      ...mapGetters(['filters']),
       typeFilter: {
         get () {
-          return this.type
+          return this.filters[this.itemKey].type
         },
         set (value) {
-          this.updateList({key: 'type', value})
+          this.updateFilter({key: this.itemKey, filterKey: 'type', value})
         }
       },
       rarityFilter: {
         get () {
-          return this.rarity
+          return this.filters[this.itemKey].rarity
         },
         set (value) {
-          this.updateList({key: 'rarity', value})
+          this.updateFilter({key: this.itemKey, filterKey: 'rarity', value})
         }
       }
     },
@@ -40,12 +40,13 @@
       }
     },
     methods: {
-      ...mapActions(['updateList']),
+      ...mapActions(['updateFilter']),
       reset () {
         this.rarityFilter = []
         this.typeFilter = []
       }
-    }
+    },
+    props: ['itemKey']
   }
 </script>
 

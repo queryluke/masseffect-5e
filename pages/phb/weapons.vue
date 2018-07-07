@@ -8,45 +8,48 @@
         v-flex(md4).px-1
           v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
         v-flex(md8).px-1
-          weapon-filters
+          weapon-filters(:itemKey="itemKey")
 
     // List
-    weapon-expansion-list(:weapons="filtered")
+    weapon-list(:items="filtered")
 
     // Mobile Filters
-    mobile-filter-container
+    mobile-filter-container(title="Filter Weapons")
       template(slot="filters")
-        weapon-filters
+        weapon-filters(:itemKey="itemKey")
+
 </template>
 
 <script>
-  import WeaponExpansionList from '~/components/weapon/WeaponExpansionList.vue'
+  import WeaponList from '~/components/weapon/WeaponList.vue'
   import WeaponFilters from '~/components/weapon/WeaponFilters.vue'
-  import MobileFilterContainer from '~/components/MobileFilterContainer.vue'
+  import BookmarkButton from '~/components/BookmarkButton.vue'
+  import MobileFilterContainer from '~/components/list/MobileFilterContainer.vue'
   import {AverageFromDie} from '~/mixins/averageFromDie'
 
   // State
   import {createNamespacedHelpers} from 'vuex'
-  const {mapActions, mapGetters} = createNamespacedHelpers('weaponList')
+  const {mapActions, mapGetters} = createNamespacedHelpers('itemList')
 
   export default {
     components: {
       MobileFilterContainer,
-      WeaponExpansionList,
-      WeaponFilters
+      WeaponFilters,
+      WeaponList,
+      BookmarkButton
     },
     computed: {
-      ...mapGetters(['weapons', 'order', 'sortBy', 'type', 'rarity', 'searchString']),
+      ...mapGetters(['getItems', 'order', 'sortBy', 'filters', 'searchString']),
       search: {
         get () {
           return this.searchString
         },
         set (value) {
-          this.updateSearchString({value})
+          this.updateSearchString(value)
         }
       },
       filtered () {
-        let data = this.weapons
+        let data = this.items
         let sortBy = this.sortBy.key
         let order = this.order
         let self = this
@@ -67,21 +70,30 @@
           }
           return (a === b ? 0 : a > b ? 1 : -1) * order
         })
-        if (this.searchString) {
-          data = data.filter((weapon) => {
-            let nameMatch = weapon.name.toLowerCase().indexOf(this.search.toLowerCase()) >= 0
-            let typeMatch = weapon.type.toLowerCase().indexOf(this.search.toLowerCase()) >= 0
-            let noteMatch = weapon.notes_text_dump.toLowerCase().indexOf(this.search.toLowerCase()) >= 0
+        if (this.search) {
+          data = data.filter((item) => {
+            let nameMatch = item.name.toLowerCase().indexOf(this.search.toLowerCase()) >= 0
+            let typeMatch = item.type.toLowerCase().indexOf(this.search.toLowerCase()) >= 0
+            let noteMatch = item.notes_text_dump.toLowerCase().indexOf(this.search.toLowerCase()) >= 0
             return nameMatch || typeMatch || noteMatch
           })
         }
-        if (this.rarity.length > 0) {
-          data = data.filter(weapon => this.rarity.includes(weapon.rarity))
-        }
-        if (this.type.length > 0) {
-          data = data.filter(weapon => this.type.includes(weapon.type))
+        for (const key in this.filters[this.itemKey]) {
+          const filter = this.filters[this.itemKey][key]
+          if (filter.length > 0) {
+            data = data.filter(item => filter.includes(item[key]))
+          }
         }
         return data
+      }
+    },
+    created () {
+      this.items = this.getItems(this.itemKey)
+    },
+    data () {
+      return {
+        items: [],
+        itemKey: 'weapons'
       }
     },
     head () {
@@ -92,7 +104,7 @@
         ]
       }
     },
-    layout: 'phb-list',
+    layout: 'phb',
     methods: {
       ...mapActions(['updateSearchString'])
     },

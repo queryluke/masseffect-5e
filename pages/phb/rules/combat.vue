@@ -48,6 +48,6 @@
         ]
       }
     },
-    layout: 'phb-rules'
+    layout: 'phb'
   }
 </script>

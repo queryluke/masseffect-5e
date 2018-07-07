@@ -1,6 +1,6 @@
 <template lang="pug">
   v-container
-    h2.display-3 Items
+    h2.display-1.hidden-sm-and-down Other Items
     p.subheading Medi-gel, Thermal Clips, Heavy Weapons, Grenades & Mines, Omni-gel, Tooks & Kits
     div(v-for="(rule, index) in pages[$route.name].rules" v-bind:key="index")
       component(v-bind:is="rule")
@@ -41,6 +41,6 @@
         ]
       }
     },
-    layout: 'phb-rules'
+    layout: 'phb'
   }
 </script>

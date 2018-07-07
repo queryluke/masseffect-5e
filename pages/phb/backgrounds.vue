@@ -1,6 +1,6 @@
 <template lang="pug">
   v-container
-    h2.display-3 Backgrounds
+    h2.display-1.hidden-sm-and-down Backgrounds
     v-expansion-panel.mb-2
       v-expansion-panel-content(v-for="item in items" v-bind:key="item.id").large-panel
         div(slot="header") {{ item.name }}
