@@ -6,10 +6,10 @@
       h2.display-1 Weapon Mods
       p Read the #[router-link(to="/phb/rules/weapons#weapon-customization") Weapon Customization Rules] to understand how weapons customization works.
       v-layout(row wrap)
-        v-flex(md4).px-1
+        v-flex(xs12)
           v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
-        v-flex(md8).px-1
-          weapon-mod-filters(:itemKey="itemKey")
+        v-flex(xs12)
+          weapon-mod-filters(:itemKey="itemKey" v-bind:noteOptions="noteOptions")
 
     // List
     weapon-mod-list(:items="filtered")
@@ -17,7 +17,7 @@
     // Mobile Filters
     mobile-filter-container(title="Filter Weapon Mods")
       template(slot="filters")
-        weapon-mod-filters(:itemKey="itemKey")
+        weapon-mod-filters(:itemKey="itemKey" v-bind:noteOptions="noteOptions")
 </template>
 
 <script>
@@ -69,15 +69,32 @@
             }
           })
         }
+        if (this.filters.weaponMods.notes.length > 0) {
+          data = data.filter(item => {
+            for (const note of item.notes.split(',').map(n => n.trim())) {
+              if (this.filters.weaponMods.notes.includes(note)) {
+                return item
+              }
+            }
+          })
+        }
         return data
       }
     },
     created () {
       this.items = this.getItems(this.itemKey)
+      const noteOptions = new Set()
+      for (const item of this.items) {
+        for (const note of item.notes.split(',').map(n => n.trim())) {
+          noteOptions.add(note)
+        }
+      }
+      this.noteOptions = [...noteOptions].sort()
     },
     data () {
       return {
         items: [],
+        noteOptions: [],
         itemKey: 'weaponMods'
       }
     },

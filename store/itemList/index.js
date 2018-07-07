@@ -14,7 +14,8 @@ export default {
       },
       weaponMods: {
         placement: [],
-        weaponType: []
+        weaponType: [],
+        notes: []
       }
     },
     mobileFilterDialog: false,

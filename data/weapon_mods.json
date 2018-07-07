@@ -1,5 +1,5 @@
 {
-  "updated": "July  7, 2018 @ 11:33 AM",
+  "updated": "July  7, 2018 @ 12:57 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRphibK9-tEg_9zoirocbeKnHIJpDSSVr721q4D5Wq9M4Eupx_vVJqVUzamgbHhM4bhyHrKn9PxQ0MV/pubhtml",
   "data": [
     {
@@ -382,7 +382,7 @@
       "smg": "x",
       "shotgun": "x",
       "sniperRifle": "x",
-      "notes": "Cold Damage, Debuff",
+      "notes": "Damage Augment, Primes, Debuff",
       "id": "cryo_ammo",
       "availability": "All"
     },
@@ -398,7 +398,7 @@
       "smg": "x",
       "shotgun": "x",
       "sniperRifle": "x",
-      "notes": "Lightning Damage, Detonates",
+      "notes": "Damage Augment, Primes, Detonates",
       "id": "disruptor_ammo",
       "availability": "All"
     },
@@ -414,7 +414,7 @@
       "smg": "x",
       "shotgun": "x",
       "sniperRifle": "x",
-      "notes": "Fire Damamge, Extra Damage",
+      "notes": "Damage Augment, Extra Damage, Primes",
       "id": "incendiary_ammo",
       "availability": "All"
     },
@@ -430,7 +430,7 @@
       "smg": "x",
       "shotgun": "x",
       "sniperRifle": "x",
-      "notes": "Ignore Barrier, Detonates",
+      "notes": "Damage Augment, Ignore Barrier, Detonates",
       "id": "warp_ammo",
       "availability": "All"
     },
