@@ -4,7 +4,8 @@
     template(slot="text")
       p.title Tool Proficiencies
       p.
-        Mass Effect 5e utilizes the Tool Proficiency rules found in (Xanathar's Guide to Everything)[http://dnd.wizards.com/products/tabletop-games/rpg-products/xanathars-guide-everything]
+        Mass Effect 5e utilizes the Tool Proficiency rules found in
+        #[a(href="http://dnd.wizards.com/products/tabletop-games/rpg-products/xanathars-guide-everything" target="_blank") Xanathar's Guide to Everything]
         (pg. 78). In summary, it's unclear when a player should use a tool proficiency and a skill proficiency. The rule
         of thumb is that tools have specific applications whereas skills are very broad, but this limits the use of tools.
       p.

@@ -16,7 +16,7 @@
             th Resulting Omni-gel
         tbody
           tr
-            td Armor and Weapon upgrades, grenades
+            td Armor and Weapon upgrades
             td 1 omni-gel
           tr
             td Heavy Pistols, SMGs, Head armor, Leg armor, Arm armor

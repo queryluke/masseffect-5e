@@ -11,17 +11,6 @@ export default {
         'questions-and-feedback'
       ]
     },
-    'phb-items': {
-      name: 'Other Items',
-      rules: [
-        'thermal-clips',
-        'medi-gel',
-        'grenades',
-        'heavy-weapon-charges',
-        'omni-gel',
-        'tools-kits'
-      ]
-    },
     'phb-rules-general': {
       name: 'Rules - General',
       rules: [
@@ -130,6 +119,23 @@ export default {
     'phb-armor-sets': {
       name: 'Armor Sets',
       list: true
+    },
+    'phb-items': {
+      name: 'Other Items',
+      rules: [
+        'thermal-clips',
+        'medi-gel',
+        'grenades',
+        'heavy-weapon-charges',
+        'omni-gel',
+        'tools-kits'
+      ]
+    },
+    'phb-items-grenades': {
+      name: 'Grenades'
+    },
+    'phb-items-tools-kits': {
+      name: 'Tools & Kits'
     }
   }
 }

@@ -15,12 +15,16 @@
         medi-gel is so rare, the cost is entirely dependent on the people you know, favors your owed, or ability
         to break into a medical facility.
       h3.title Medi-gel types
-      v-data-table(:headers="headers" v-bind:items="items" hide-actions).my-2
-        template(slot="items" slot-scope="props")
-          td {{ props.item.name }}
-          td {{ props.item.rarity }}
-          td {{ props.item.cost }}
-          td {{ props.item.hp }}
+      table.my-2.table
+        thead
+          tr
+            th(v-for="header in headers" v-bind:key="header.value") {{ header.text }}
+        tbody
+          tr(v-for="(item, index) in items" v-bind:key="index")
+            td(:data-table-key="headers[0].text") {{ item.name }}
+            td(:data-table-key="headers[1].text") {{ item.rarity }}
+            td(:data-table-key="headers[2].text") {{ item.cost }}
+            td(:data-table-key="headers[3].text") {{ item.hp }}
 </template>
 
 <script>
