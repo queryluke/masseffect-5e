@@ -6,6 +6,7 @@ export default {
   bookmarks: [],
   classes: [],
   classFeatures: [],
+  conditions: [],
   encounter: {
     npcs: {
       list: [],
@@ -13,17 +14,21 @@ export default {
     },
     pcs: []
   },
-  globalDialog: {
-    show: false,
-    component: ''
-  },
   gruntConfig: {
     cr: {},
     race: {id: 'random', name: 'Random'},
     sc: {id: 'random', name: 'Random'}
   },
+  mobileFilterDialog: false,
+  pageTitle: 'Mass Effect 5e',
+  primaryNavigation: [
+    { route: '/phb/intro', title: 'Player\'s Handbook' },
+    { route: '/assets', title: 'Assets' },
+    { route: '/news', title: 'News' },
+    { route: '/about', title: 'About' },
+    { route: '/contributing', title: 'Feedback' }
+  ],
   sidebar: true,
-  tooltips: [],
   posts: [],
   kits: [],
   data,

@@ -1,6 +1,6 @@
 <template lang="pug">
   v-container(fluid)
-    h2.display-3 Classes
+    h2.display-1.hidden-sm-and-down Classes
     v-layout(row wrap)
       v-flex(v-for="item in items" v-bind:key="item.id" d-flex).xs12.sm6.md4
         v-card(:to="{ name: 'phb-classes-id', params: { id: item.id }}" hover).ma-2

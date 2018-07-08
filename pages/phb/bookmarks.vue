@@ -1,16 +1,19 @@
 <template lang="pug">
   v-container(fluid)
-    h2.display-3 Bookmarks
+    h2.display-1.hidden-sm-and-down Feats
     v-layout(row wrap v-for="(cards, type) of bookmarksGroupedByType" v-bind:key="type")
       v-flex(xs12)
-        h3.display-1 {{ headers[type] }}
+        h3.headline {{ headers[type] }}
       v-flex(v-for="(card, index) in cards" v-bind:key="index" xs12 lg6)
         v-card.ma-1
           v-card-text
             spell-info(:spell="card" v-if="type === 'spell'")
-            weapon-info(:weapon="card" v-if="type === 'weapon'")
-            grenade-info(:grenade="card" v-if="type === 'grenade'")
-            stat-block(:stats="card" v-if="type === 'npc'")
+            weapon-info(:weapon="card" v-else-if="type === 'weapon'")
+            grenade-info(:grenade="card" v-else-if="type === 'grenade'")
+            stat-block(:stats="card" v-else-if="type === 'npc'")
+            weapon-mod-info(:mod="card" v-else-if="type === 'weaponMod'")
+            armor-mod-info(:mod="card" v-else-if="type === 'armorMod'")
+            armor-set-info(:mod="card" v-else-if="type === 'armorSet'")
             markdown-file(:id="card.id" v-bind:itemType="type" v-else)
           v-card-actions
             bookmark-button(:card="card" v-bind:type="type" v-bind:props="{flat: true}")
@@ -18,11 +21,14 @@
 
 <script>
   import { mapGetters } from 'vuex'
-  import SpellInfo from '~/components/shared/SpellInfo.vue'
-  import WeaponInfo from '~/components/shared/WeaponInfo.vue'
-  import BookmarkButton from '~/components/shared/BookmarkButton.vue'
-  import StatBlock from '~/components/shared/StatBlock.vue'
-  import GrenadeInfo from '~/components/shared/GrenadeInfo.vue'
+  import SpellInfo from '~/components/spell/SpellInfo.vue'
+  import WeaponInfo from '~/components/weapon/WeaponInfo.vue'
+  import BookmarkButton from '~/components/BookmarkButton.vue'
+  import StatBlock from '~/components/npc/StatBlock.vue'
+  import GrenadeInfo from '~/components/GrenadeInfo.vue'
+  import WeaponModInfo from '~/components/weapon_mod/WeaponModInfo.vue'
+  import ArmorModInfo from '~/components/armor_mod/ArmorModInfo.vue'
+  import ArmorSetInfo from '~/components/armor_set/ArmorSetInfo.vue'
   import MarkdownFile from '~/components/MarkdownFile.vue'
 
   export default {
@@ -31,6 +37,9 @@
       StatBlock,
       SpellInfo,
       WeaponInfo,
+      WeaponModInfo,
+      ArmorModInfo,
+      ArmorSetInfo,
       BookmarkButton,
       MarkdownFile
     },
@@ -45,6 +54,9 @@
           spell: 'Spells',
           grenade: 'Grenades & Mines',
           weapon: 'Weapons',
+          weaponMod: 'Weapon Mods',
+          armorMod: 'Armor Mods',
+          armorSet: 'Armor Sets',
           npc: 'Npcs'
         }
       }

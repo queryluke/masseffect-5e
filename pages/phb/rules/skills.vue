@@ -2,7 +2,7 @@
   v-container
     v-layout(row wrap)
       v-flex.xs12
-        h2.display-3 Skills
+        h2.display-1.hidden-sm-and-down Skills
       v-flex.xs12.sm6
         p.headline New
         p {{ new_skills }}
@@ -10,20 +10,23 @@
         p.headline Removed
         p {{ removed }}
     div.mt-3
-      v-data-table(v-bind:headers="headers" v-bind:items="items" hide-actions).elevation-1
-        template(slot="items" slot-scope="props")
-          td {{ props.item.name }}
-          td {{ props.item.link }}
-          td {{ props.item.description }}
-    page-footer(:list="listName")
+      table.elevation-1.table
+        thead
+          tr
+            th Name
+            th Ability
+            th Description
+        tbody
+          tr(v-for="item in items" v-bind:key="item.id")
+            td(data-table-key="Name") {{ item.name }}
+            td(data-table-key="Ability") {{ item.link }}
+            td(data-table-key="Description").full-width-td {{ item.description }}
 </template>
 
 <script>
-  import PageFooter from '~/components/phb/PageFooter.vue'
   import {mapGetters} from 'vuex'
 
   export default {
-    components: {PageFooter},
     computed: {
       ...mapGetters(['getData'])
     },

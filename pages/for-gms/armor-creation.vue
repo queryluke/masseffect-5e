@@ -1,6 +1,6 @@
 <template lang="pug">
   v-container
-    h2.display-3 Creating Armor
+    h2.display-1.hidden-sm-and-down Creating Armor
     p.
       Though we provide a list of armor mods and sets, we encourage you to create your own!
     rule-card
@@ -39,7 +39,7 @@
           additional carrying capacity or minor speed boosts. These range from 1,000 to 5,000 credits.
           Mods that increase survivability (shields, AC, resistances) or damage should range between 5,000 and 20,000 credits
         p.title Current Mechanic List
-        table.table.alt-table
+        table.table
           thead
             tr.text-xs-left
               th Rule addition/exception
@@ -47,9 +47,9 @@
               th Cost per Potency
           tbody
             tr(v-for="(mechanic, index) in mechanics")
-              td {{ mechanic.description }}
-              td {{ mechanic.amount }}
-              td {{ mechanic.cost }}
+              td(data-table-key="Rule") {{ mechanic.description }}
+              td(data-table-key="Potency") {{ mechanic.amount }}
+              td(data-table-key="Cost") {{ mechanic.cost }}
     rule-card
       span(slot="header") Creating an Armor Mod
       template(slot="text")
@@ -88,7 +88,7 @@
 </template>
 
 <script>
-  import RuleCard from '~/components/shared/RuleCard'
+  import RuleCard from '~/components/cards/RuleCard'
   import {mapActions, mapGetters} from 'vuex'
 
   export default {

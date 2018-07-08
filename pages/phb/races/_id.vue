@@ -67,8 +67,8 @@
 </template>
 
 <script>
-  import MeIcon from '~/components/shared/MeIcon.vue'
-  import MeElement from '~/components/shared/MeElement.vue'
+  import MeIcon from '~/components/MeIcon.vue'
+  import MeElement from '~/components/MeElement.vue'
   import {mapGetters} from 'vuex'
 
   export default {

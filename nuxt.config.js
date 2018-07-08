@@ -13,6 +13,31 @@ require('fs').readdirSync('./data/posts').map((file) => {
 })
 
 module.exports = {
+  /*
+  ** Build configuration
+  */
+  build: {
+    vendor: [
+      '~/plugins/vuetify.js'
+    ],
+    extractCSS: true,
+    /*
+    ** Run ESLint on save
+    */
+    extend (config, ctx) {
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
+      }
+    }
+  },
+  css: [
+    '~/assets/style/app.styl'
+  ],
   debug: true,
   /*
   ** Headers of the page
@@ -33,15 +58,6 @@ module.exports = {
   generate: {
     routes
   },
-  plugins: [
-    '~/plugins/vuetify.js',
-    { src: '~/plugins/persistentState.js', ssr: false },
-    '~/plugins/filters/index.js',
-    '~/plugins/vue2-filters'
-  ],
-  css: [
-    '~/assets/style/app.styl'
-  ],
   /*
   ** Customize the progress bar color
   */
@@ -72,26 +88,42 @@ module.exports = {
       'markdown-it-meta'
     ]
   },
-  /*
-  ** Build configuration
-  */
-  build: {
-    vendor: [
-      '~/plugins/vuetify.js'
-    ],
-    extractCSS: true,
-    /*
-    ** Run ESLint on save
-    */
-    extend (config, ctx) {
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
+  plugins: [
+    '~/plugins/vuetify.js',
+    { src: '~/plugins/persistentState.js', ssr: false },
+    '~/plugins/filters/index.js',
+    '~/plugins/vue2-filters'
+  ],
+  router: {
+    scrollBehavior: (to, from, savedPosition) => {
+      let position = false
+
+      // if no children detected
+      if (to.matched.length < 2) {
+        // scroll to the top of the page
+        position = { x: 0, y: 0 }
+      } else if (to.matched.some((r) => r.components.default.options.scrollToTop)) {
+        // if one of the children has scrollToTop option set to true
+        position = { x: 0, y: 0 }
       }
+
+      // savedPosition is only available for popstate navigations (back button)
+      if (savedPosition) {
+        position = savedPosition
+      }
+
+      return new Promise(resolve => {
+        // wait for the out transition to complete (if necessary)
+        window.$nuxt.$once('triggerScroll', () => {
+          // coords will be used if no selector is provided,
+          // or if the selector didn't match any element.
+          if (to.hash && document.querySelector(to.hash)) {
+            // scroll to anchor by returning the selector
+            position = { selector: to.hash, offset: { x: 0, y: 56 } }
+          }
+          resolve(position)
+        })
+      })
     }
   }
 }

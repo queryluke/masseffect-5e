@@ -1,29 +1,77 @@
 <template lang="pug">
   v-app(toolbar)
-    phb-navigation
-    main-toolbar
+
+    // Side Navigation
+    side-navigation
+
+    // Main toolbar
+    phb-toolbar(v-if="!searchActive" v-bind:clippedRight="typeof page.rules !== 'undefined'")
+      template(slot="toolbarItems")
+        v-btn(icon @click="searchActive = true" v-if="page.list") #[v-icon search]
+        v-btn(icon @click="toggleMobileFilterDialog" v-if="page.list")  #[v-icon filter_list]
+        v-btn(icon dark @click="ruleList = !ruleList" v-if="page.rules") #[v-icon view_list]
+
+    // Search Toolbar
+    v-toolbar(light v-if="searchActive").hidden-md-and-up
+      v-btn(@click="searchActive = false; search = ''" icon) #[v-icon arrow_back]
+      v-text-field(v-model="search" single-line full-width hide-details label="Search")
+
+    // Jump Links
+    v-navigation-drawer(v-model="ruleList" fixed right clipped app width="200" mobile-break-point="960" v-if="page.rules")
+      v-list(dense)
+        v-subheader Jump to
+        v-list-tile(ripple v-for="(rule, index) in pages[$route.name].rules" v-bind:key="index" v-on:click="goToRule(`#${rule}`)")
+          v-list-tile-title {{ rule.replace(/-/g,' ') | capitalize }}
+
+    // Content
     v-content.blue-grey.lighten-4
       h1.sr-only Mass Effect 5e - Player's Handbook
       nuxt
-    global-dialog
 </template>
 
 <script>
-import PhbNavigation from '~/components/phb/PhbNavigation.vue'
-import MainFooter from '~/components/MainFooter.vue'
-import MainToolbar from '~/components/MainToolbar.vue'
-import GlobalDialog from '~/components/GlobalDialog.vue'
+import SideNavigation from '~/components/SideNavigation.vue'
+import PhbToolbar from '~/components/PhbToolbar.vue'
+
+// State
+import {createNamespacedHelpers} from 'vuex'
+const {mapActions, mapGetters} = createNamespacedHelpers('phb')
 
 export default {
   components: {
-    GlobalDialog,
-    MainToolbar,
-    PhbNavigation,
-    MainFooter
+    PhbToolbar,
+    SideNavigation
+  },
+  computed: {
+    ...mapGetters(['pages', 'searchString']),
+    page () {
+      return this.pages[this.$route.name] ? this.pages[this.$route.name] : {}
+    },
+    search: {
+      get () {
+        return this.searchString
+      },
+      set (value) {
+        this.updateSearchString(value)
+      }
+    }
+  },
+  created () {
+    this.search = ''
   },
   data () {
     return {
-      drawer: true
+      searchActive: false,
+      ruleList: this.$vuetify.breakpoint.mdAndUp
+    }
+  },
+  methods: {
+    ...mapActions(['updateSearchString', 'toggleMobileFilterDialog']),
+    goToRule (rule) {
+      this.$vuetify.goTo(rule, { offset: -58 })
+      if (this.$vuetify.breakpoint.smAndDown) {
+        this.ruleList = false
+      }
     }
   }
 }

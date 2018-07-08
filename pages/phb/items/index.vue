@@ -1,28 +1,37 @@
 <template lang="pug">
   v-container
-    h2.display-3 Items
+    h2.display-1.hidden-sm-and-down Other Items
     p.subheading Medi-gel, Thermal Clips, Heavy Weapons, Grenades & Mines, Omni-gel, Tooks & Kits
-    div(v-for="(rule, index) in rules")
+    div(v-for="(rule, index) in pages[$route.name].rules" v-bind:key="index")
       component(v-bind:is="rule")
 </template>
 
 <script>
-  import RuleCards from '~/components/phb/RuleCards'
+  // Rule Cards
+  import {
+    ThermalClips,
+    MediGel,
+    Grenades,
+    HeavyWeaponCharges,
+    OmniGel,
+    ToolsKits
+  } from '~/components/phb/'
+
+  import {mapGetters} from 'vuex'
 
   export default {
-    name: 'Consumables',
-    components: RuleCards,
-    data () {
-      return {
-        rules: [
-          'thermal-clips',
-          'medi-gel',
-          'grenades',
-          'heavy-weapon-charges',
-          'omni-gel',
-          'tools-kits'
-        ]
-      }
+    components: {
+      ThermalClips,
+      MediGel,
+      Grenades,
+      HeavyWeaponCharges,
+      OmniGel,
+      ToolsKits
+    },
+    computed: {
+      ...mapGetters('phb', {
+        pages: 'pages'
+      })
     },
     head () {
       return {
@@ -32,11 +41,6 @@
         ]
       }
     },
-    layout: 'phb',
-    methods: {
-      showGlobalDialog (component) {
-        this.$emit('showGlobalDialog', component)
-      }
-    }
+    layout: 'phb'
   }
 </script>

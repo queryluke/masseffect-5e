@@ -22,17 +22,14 @@
             label
               strong Racial Traits
             p {{ race.increases }}, {{ race.racial_traits }}
-
-    page-footer(:list="listName")
 </template>
 
 <script>
-  import MeElement from '~/components/shared/MeElement.vue'
-  import PageFooter from '~/components/phb/PageFooter.vue'
+  import MeElement from '~/components/MeElement.vue'
   import {mapGetters} from 'vuex'
 
   export default {
-    components: { MeElement, PageFooter },
+    components: { MeElement },
     computed: {
       ...mapGetters(['getData', 'getMutableData'])
     },

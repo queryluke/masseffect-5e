@@ -4,7 +4,7 @@
 </template>
 
 <script>
-  import SpellCard from '~/components/misc/SpellCard.vue'
+  import SpellCard from '~/components/cards/SpellCard.vue'
   import {mapGetters} from 'vuex'
 
   export default {

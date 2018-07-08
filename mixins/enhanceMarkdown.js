@@ -7,9 +7,24 @@ export const EnhanceMarkdown = {
   },
   methods: {
     enhanceMarkdown (html, model = {}) {
-      return html.replace(/<table>/gi, '<table class="table">')
-        .replace(/<th>/gi, '<th class="text-xs-left">')
-        .replace(/<ul>/gi, '<ul style="background-color: transparent; padding-left: 2em">')
+      return html.replace(/<table>([\s\S]*?)<\/table>/gi, (match, capture) => {
+        const headerKeys = capture.match(/<thead>[\s\S]*?<tr>([\s\S]*?)<\/tr>/)[1]
+          .split('</th>').map(k => k.replace(/(\W|th)/g, '')).filter(String)
+        const rowCount = (capture.match(/<tr>/g) || []).length
+        let i = 0
+        const fullWidth = ['Explosion']
+        do {
+          for (let j = 0; j < headerKeys.length; j++) {
+            const replacement = fullWidth.includes(headerKeys[j])
+              ? `<td data-table-key="${headerKeys[j]}" class="full-width-td">`
+              : `<td data-table-key="${headerKeys[j]}">`
+            capture = capture.replace('<td>', replacement)
+          }
+          i++
+        } while (i < rowCount)
+        return `<table class="table mb-3">${capture}</table>`
+      })
+        .replace(/<ul>/gi, '<ul style="background-color: transparent">')
         .replace(/{{2}(.*?)}{2}/g, (match, capture) => {
           const key = capture.trim()
           if (key.indexOf('=') > -1) {
@@ -20,7 +35,7 @@ export const EnhanceMarkdown = {
                 return this.$options.filters.pluralize(_.get(model, key), string)
               case 'condition':
                 const condition = this.getDataItem('conditions', abbrKey)
-                return `<abbr data-tooltip="${condition.mechanic}">${condition.name}</abbr>`
+                return `<a href="/phb/rules/conditions#${condition.uid}">${condition.name}</abbr>`
               default:
                 return ''
             }

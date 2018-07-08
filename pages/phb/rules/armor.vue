@@ -1,25 +1,31 @@
 <template lang="pug">
   v-container
-    h2.display-3 Armor
+    h2.display-1.hidden-sm-and-down Armor
     p Armor is much more customizable in ME5e than in the base 5e ruleset.
-    div(v-for="(rule, index) in rules")
+    div(v-for="(rule, index) in pages[$route.name].rules" v-bind:key="index")
       component(v-bind:is="rule")
 </template>
 
 <script>
-  import RuleCards from '~/components/phb/RuleCards'
+  // Rule Cards
+  import {
+    ArmorOverview,
+    ArmorPieces,
+    ArmorCustomization
+  } from '~/components/phb/'
+
+  import {mapGetters} from 'vuex'
 
   export default {
-    name: 'Armor',
-    components: RuleCards,
-    data () {
-      return {
-        rules: [
-          'armor-overview',
-          'armor-pieces',
-          'armor-customization'
-        ]
-      }
+    components: {
+      ArmorOverview,
+      ArmorPieces,
+      ArmorCustomization
+    },
+    computed: {
+      ...mapGetters('phb', {
+        pages: 'pages'
+      })
     },
     head () {
       return {

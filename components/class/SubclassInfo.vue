@@ -4,7 +4,7 @@
       v-expansion-panel-content(v-for="(subclass, index) of item.subclasses" v-bind:key="index")
         div(slot="header")
           div {{ subclass.name }}
-          div.caption {{ subclass.description }}
+          div.caption.hidden-sm-and-down {{ subclass.description }}
         v-card.grey.lighten-2
           v-card-text
             div(v-for="(features, i) in subclass.features" v-bind:key="i")
@@ -28,4 +28,10 @@
     }
   }
 </script>
+
+<style>
+  .v-expansion-panel__header {
+    height: 64px !important;
+  }
+</style>
 

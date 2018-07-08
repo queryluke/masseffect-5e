@@ -34,8 +34,7 @@
           { hid: 'description', name: 'description', content: this.post.description }
         ]
       }
-    },
-    layout: 'default-light'
+    }
   }
 </script>
 

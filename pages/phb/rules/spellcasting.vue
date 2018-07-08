@@ -1,29 +1,31 @@
 <template lang="pug">
   v-container
-    h2.display-3 Spellcasting
-    p.
-      Biotics, Tech, & Combat Powers
-    div(v-for="(rule, index) in rules")
+    h2.display-1.hidden-sm-and-down Spellcasting
+    p Biotics, Tech, & Combat Powers
+    div(v-for="(rule, index) in pages[$route.name].rules" v-bind:key="index")
       component(v-bind:is="rule")
 </template>
 
 <script>
-  import RuleCards from '~/components/phb/RuleCards'
+  // Rule Cards
+  import {
+    AbilityNomenclature,
+    AdvancementOptions,
+    PrimersAndDetonators
+  } from '~/components/phb/'
+
+  import {mapGetters} from 'vuex'
 
   export default {
-    components: RuleCards,
-    data () {
-      return {
-        rules: [
-          'ability-nomenclature',
-          'biotics',
-          'tech-powers',
-          'combat-powers',
-          'advancement-options',
-          'spell-save-dc',
-          'primers-and-detonators'
-        ]
-      }
+    components: {
+      AbilityNomenclature,
+      AdvancementOptions,
+      PrimersAndDetonators
+    },
+    computed: {
+      ...mapGetters('phb', {
+        pages: 'pages'
+      })
     },
     head () {
       return {

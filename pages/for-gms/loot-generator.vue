@@ -1,6 +1,6 @@
 <template lang="pug">
   v-container
-    h2.display-3 Random Loot Generator
+    h2.display-1.hidden-sm-and-down Random Loot Generator
     p.
       The Loot Generator uses random rolls on a set of loot tables to decide loot rewards. Our loot tables aren't as diverse as the ones
       found in the DMG. For example, individual loot tables currently supply only credits. Weapons, armor, and mods, can be acquired from the hoard

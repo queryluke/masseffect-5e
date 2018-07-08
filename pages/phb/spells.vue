@@ -1,106 +1,98 @@
 <template lang="pug">
-  v-container
-    h2.display-3 Spells
-    div.small Biotics, Tech Powers, and Combat Abilities
-    v-container(grid-list-xl)
-      v-layout(row wrap)
-        v-flex(xs12 sm6 d-flex)
-          v-text-field(
-            append-icon="search"
-            label="Search"
-            single-line
-            hide-details
-            v-model="search"
-            autofocus
-          )
-        v-flex(xs12 sm6 d-flex)
-          v-layout(row)
-            v-flex
-              v-checkbox(label="Biotic" v-model="spellFilter" value="biotic" color="purple darken-4")
-            v-flex
-              v-checkbox(label="Tech" v-model="spellFilter" value="tech" color="orange darken-4")
-            v-flex
-              v-checkbox(label="Combat" v-model="spellFilter" value="combat" color="primary")
-    div.expansion-panel__sortable.primary
-      v-layout.px-4
-        v-flex(v-for="header in headers" v-bind:key="header.key" v-bind:class="header.classes")
-          v-list(dark).primary.pa-0
-            v-list-tile(@click.stop="sortBy(header.key)" ripple v-bind:class="{ active: header.key === sortKey }" v-if="header.sortable")
-              v-list-tile-content
-                v-list-tile-title(v-text="header.display")
-              v-icon(:class="[sortOrder > 0 ? 'asc' : 'dsc']" dark) arrow_downward
-            v-list-tile(v-else)
-              v-list-tile-content
-                v-list-tile-title(v-text="header.display")
-    spell-list(:spells="filtered")
-    page-footer(:list="listName")
+  v-container(:class="{ 'px-0': $vuetify.breakpoint.xsOnly }" )
 
+    // Search functions for large screens
+    div.hidden-sm-and-down
+      h2.display-1 Spells
+      v-layout(row wrap)
+        v-flex(md4).px-1
+          v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
+        v-flex(md8).px-1
+          spell-filters(:itemKey="itemKey")
+
+    // Spell List
+    spell-list(:items="filtered")
+
+    // Mobile Filters
+    mobile-filter-container(title="Filter Spells")
+      template(slot="filters")
+        spell-filters(:itemKey="itemKey")
 </template>
 
 <script>
-  import SpellList from '~/components/phb/SpellList.vue'
-  import PageFooter from '~/components/phb/PageFooter.vue'
-  import {mapGetters} from 'vuex'
+  import SpellList from '~/components/spell/SpellList.vue'
+  import SpellFilters from '~/components/spell/SpellFilters.vue'
+  import MobileFilterContainer from '~/components/MobileFilterContainer.vue'
+
+  // State
+  import {createNamespacedHelpers} from 'vuex'
+  const {mapActions, mapGetters} = createNamespacedHelpers('itemList')
 
   export default {
     components: {
-      PageFooter,
-      SpellList
+      MobileFilterContainer,
+      SpellList,
+      SpellFilters
     },
     computed: {
-      ...mapGetters(['getData']),
+      ...mapGetters(['getItems', 'order', 'sortBy', 'filters', 'searchString']),
+      search: {
+        get () {
+          return this.searchString
+        },
+        set (value) {
+          this.updateSearchString(value)
+        }
+      },
       filtered () {
         let data = this.items
-        let sortKey = this.sortKey
-        let order = this.sortOrder
-        data = data.slice().sort(function (a, b) {
-          switch (sortKey) {
+        let sortBy = this.sortBy.key
+        let order = this.order
+        data.sort(function (a, b) {
+          switch (sortBy) {
             case 'type':
-              if (a[sortKey] === b[sortKey]) {
+              if (a[sortBy] === b[sortBy]) {
                 if (a.level === b.level) {
                   return (a.name > b.name ? 1 : -1) * order
                 } else {
                   return (a.level > b.level ? 1 : -1) * order
                 }
               } else {
-                return (a[sortKey] > b[sortKey] ? 1 : -1) * order
+                return (a[sortBy] > b[sortBy] ? 1 : -1) * order
               }
             default:
-              return (a[sortKey] === b[sortKey] ? 0 : a[sortKey] > b[sortKey] ? 1 : -1) * order
+              return (a[sortBy] === b[sortBy] ? 0 : a[sortBy] > b[sortBy] ? 1 : -1) * order
           }
         })
         if (this.search) {
           data = data.filter((spell) => {
-            let nameMatch = spell.name.toLowerCase().indexOf(this.search.toLowerCase()) >= 0
-            let textMatch = spell.mechanic_text_dump.indexOf(this.search.toLowerCase()) >= 0
+            let nameMatch = spell.name.toLowerCase().indexOf(this.searchString.toLowerCase()) >= 0
+            let textMatch = spell.mechanic_text_dump.indexOf(this.searchString.toLowerCase()) >= 0
             return nameMatch || textMatch
           })
         }
-        if (this.spellFilter.length > 0) {
-          data = data.filter(spell => this.spellFilter.includes(spell.type))
+        if (this.filters.spells.type.length > 0) {
+          data = data.filter(spell => this.filters.spells.type.includes(spell.type))
+        }
+        if (this.filters.spells.availableClasses.length > 0) {
+          data = data.filter(spell => {
+            for (const c of this.filters.spells.availableClasses) {
+              if (spell[c]) {
+                return spell
+              }
+            }
+          })
         }
         return data
       }
     },
     created () {
-      this.items = this.getData(this.listName).sort((a, b) => a.name > b.name ? 1 : -1)
+      this.items = this.getItems(this.itemKey)
     },
     data () {
       return {
         items: [],
-        listName: 'spells',
-        search: '',
-        sortKey: 'name',
-        sortOrder: 1,
-        spellFilter: [],
-        headers: [
-          { key: 'type', display: 'Type', classes: 'xs4 sm3 lg2', sortable: true },
-          { key: 'name', display: 'Name', classes: 'xs8 sm9 lg2', sortable: true },
-          { key: 'duration', display: 'Duration', classes: 'hidden-md-and-down lg2', sortable: false },
-          { key: 'range', display: 'Range/Area', classes: 'hidden-md-and-down lg2', sortable: false },
-          { key: 'attack_type', display: 'Attack/Save', classes: 'hidden-md-and-down lg2', sortable: false },
-          { key: 'damage', display: 'Damage/Effect', classes: 'hidden-md-and-down lg2', sortable: false }
-        ]
+        itemKey: 'spells'
       }
     },
     head () {
@@ -113,14 +105,7 @@
     },
     layout: 'phb',
     methods: {
-      sortBy (key) {
-        if (this.sortKey === key) {
-          this.sortOrder = this.sortOrder * -1
-        } else {
-          this.sortKey = key
-          this.sortOrder = 1
-        }
-      }
+      ...mapActions(['updateSearchString'])
     }
   }
 </script>

@@ -88,7 +88,7 @@
 </template>
 
 <script>
-  import AboutCard from '~/components/misc/AboutCard.vue'
+  import AboutCard from '~/components/cards/AboutCard.vue'
   import {mapGetters} from 'vuex'
 
   export default {
@@ -162,6 +162,7 @@
           { hid: 'description', name: 'description', content: 'Learn more about the Mass Effect 5e creators and contributors.' }
         ]
       }
-    }
+    },
+    layout: 'dark'
   }
 </script>

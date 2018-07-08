@@ -1,29 +1,44 @@
 <template lang="pug">
   v-container
-    h2.display-3 Combat
+    h2.display-1.hidden-sm-and-down Combat
     p {{ description }}
-    div(v-for="(rule, index) in rules")
+    div(v-for="(rule, index) in pages[$route.name].rules" v-bind:key="index")
       component(v-bind:is="rule")
 </template>
 
 <script>
-  import RuleCards from '~/components/phb/RuleCards'
+  // Rule Cards
+  import {
+    Shields,
+    Reloading,
+    RapidReload,
+    PrimersAndDetonators,
+    CreatureTypes,
+    DamageTypes,
+    Conditions,
+    Cover
+  } from '~/components/phb/'
+
+  import {mapGetters} from 'vuex'
 
   export default {
-    name: 'Armor',
-    components: RuleCards,
+    components: {
+      Shields,
+      Reloading,
+      RapidReload,
+      PrimersAndDetonators,
+      CreatureTypes,
+      DamageTypes,
+      Conditions,
+      Cover
+    },
+    computed: {
+      ...mapGetters('phb', {
+        pages: 'pages'
+      })
+    },
     data () {
       return {
-        rules: [
-          'shields',
-          'barriers',
-          'reloading',
-          'rapid-reload',
-          'primers-and-detonators',
-          'creature-types',
-          'damage-types',
-          'conditions'
-        ],
         description: 'Combat is very similar to D&D 5th edition, with a few additional rules and defensive mechanics that add Mass Effect flavor to the system.'
       }
     },

@@ -65,7 +65,7 @@
 </template>
 
 <script>
-  import AboutCard from '~/components/misc/AboutCard.vue'
+  import AboutCard from '~/components/cards/AboutCard.vue'
   import {mapGetters} from 'vuex'
 
   export default {
@@ -83,6 +83,7 @@
           { hid: 'description', name: 'description', content: 'Learn how to contribute and provide feedback.' }
         ]
       }
-    }
+    },
+    layout: 'dark'
   }
 </script>

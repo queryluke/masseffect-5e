@@ -1,41 +1,103 @@
 <template lang="pug">
-  v-container
-    h2.display-3 Weapon Mods
-    p Read the #[router-link(to="/phb/rules/weapons") Weapon Customization Rules] to understand how weapons customization works.
-    div.mt-3
-      v-data-table(v-bind:headers="headers" v-bind:items="items" hide-actions).elevation-1
-        template(slot="items" slot-scope="props")
-          td {{ props.item.name }}
-          td {{ props.item.placement }}
-          td {{ props.item.cost | groupDigits(',') }}
-          td {{ props.item.availability }}
-          td {{ props.item.feature }}
-    page-footer(:list="listName")
+  v-container(:class="{ 'px-0': $vuetify.breakpoint.xsOnly }" )
+
+    // Search functions for large screens
+    div.hidden-sm-and-down
+      h2.display-1 Weapon Mods
+      p Read the #[router-link(to="/phb/rules/weapons#weapon-customization") Weapon Customization Rules] to understand how weapons customization works.
+      v-layout(row wrap)
+        v-flex(xs12)
+          v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
+        v-flex(xs12)
+          weapon-mod-filters(:itemKey="itemKey" v-bind:noteOptions="noteOptions")
+
+    // List
+    weapon-mod-list(:items="filtered")
+
+    // Mobile Filters
+    mobile-filter-container(title="Filter Weapon Mods")
+      template(slot="filters")
+        weapon-mod-filters(:itemKey="itemKey" v-bind:noteOptions="noteOptions")
 </template>
 
 <script>
-  import PageFooter from '~/components/phb/PageFooter.vue'
-  import {mapGetters} from 'vuex'
+  import WeaponModFilters from '~/components/weapon_mod/WeaponModFilters.vue'
+  import WeaponModList from '~/components/weapon_mod/WeaponModList.vue'
+  import MobileFilterContainer from '~/components/MobileFilterContainer.vue'
+
+  // State
+  import {createNamespacedHelpers} from 'vuex'
+  const {mapActions, mapGetters} = createNamespacedHelpers('itemList')
 
   export default {
-    components: {PageFooter},
+    components: { WeaponModFilters, WeaponModList, MobileFilterContainer },
     computed: {
-      ...mapGetters(['getData'])
+      ...mapGetters(['getItems', 'order', 'sortBy', 'filters', 'searchString']),
+      search: {
+        get () {
+          return this.searchString
+        },
+        set (value) {
+          this.updateSearchString(value)
+        }
+      },
+      filtered () {
+        let data = this.items
+        let sortBy = this.sortBy.key
+        let order = this.order
+        data.sort(function (a, b) {
+          const aSort = sortBy === 'cost' ? parseInt(a[sortBy], 10) : a[sortBy]
+          const bSort = sortBy === 'cost' ? parseInt(b[sortBy], 10) : b[sortBy]
+          return (aSort === bSort ? 0 : aSort > bSort ? 1 : -1) * order
+        })
+        if (this.search) {
+          data = data.filter((item) => {
+            let nameMatch = item.name.toLowerCase().indexOf(this.searchString.toLowerCase()) >= 0
+            let textMatch = item.notes.toLowerCase().indexOf(this.searchString.toLowerCase()) >= 0
+            let descMatch = item.description.toLowerCase().indexOf(this.searchString.toLowerCase()) >= 0
+            let featMatch = item.feature.toLowerCase().indexOf(this.searchString.toLowerCase()) >= 0
+            return nameMatch || textMatch || descMatch || featMatch
+          })
+        }
+        if (this.filters.weaponMods.placement.length > 0) {
+          data = data.filter(item => this.filters.weaponMods.placement.includes(item.placement))
+        }
+        if (this.filters.weaponMods.weaponType.length > 0) {
+          data = data.filter(item => {
+            for (const t of this.filters.weaponMods.weaponType) {
+              if (item[t]) {
+                return item
+              }
+            }
+          })
+        }
+        if (this.filters.weaponMods.notes.length > 0) {
+          data = data.filter(item => {
+            for (const note of item.notes.split(',').map(n => n.trim())) {
+              if (this.filters.weaponMods.notes.includes(note)) {
+                return item
+              }
+            }
+          })
+        }
+        return data
+      }
     },
     created () {
-      this.items = this.getData('weaponMods')
+      this.items = this.getItems(this.itemKey)
+      const noteOptions = new Set()
+      for (const item of this.items) {
+        for (const note of item.notes.split(',').map(n => n.trim())) {
+          noteOptions.add(note)
+        }
+      }
+      this.noteOptions = [...noteOptions].sort()
     },
     data () {
       return {
         items: [],
-        listName: 'weaponMods',
-        headers: [
-          { text: 'Name', value: 'name', align: 'left' },
-          { text: 'Slot', value: 'placement', align: 'left' },
-          { text: 'Cost', value: 'cost', align: 'left' },
-          { text: 'Weapon Types', value: 'availability', sortable: false, align: 'left' },
-          { text: 'Mechanic', value: 'feature', sortable: false, align: 'left' }
-        ]
+        noteOptions: [],
+        itemKey: 'weaponMods'
       }
     },
     head () {
@@ -46,6 +108,9 @@
         ]
       }
     },
-    layout: 'phb'
+    layout: 'phb',
+    methods: {
+      ...mapActions(['updateSearchString'])
+    }
   }
 </script>
