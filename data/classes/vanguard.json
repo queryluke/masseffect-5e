@@ -552,13 +552,13 @@
       "description": "Shock troopers like to fight up close and personal, using charge to dash around the battlefield and striking their opponents with devastating melee strikes.",
       "features": [
         [
-          "biotic_slash_1"
+          "biotic_fury"
         ],
         [
           "biotic_bull_rush"
         ],
         [
-          "biotic_slash_2"
+          "relentless"
         ],
         [
           "biotic_focus"

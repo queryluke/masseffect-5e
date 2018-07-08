@@ -1,5 +1,5 @@
 {
-  "updated": "July  7, 2018 @  8:06 PM",
+  "updated": "July  7, 2018 @  8:47 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -3431,6 +3431,58 @@
       ],
       "class_list": "Soldier",
       "mechanic_text_dump": "AsabonusactionactivateasubroutinethattemporarilyventsweaponheatthroughyourarmortoimprovethermalclipefficiencyandweapondamageUntiltheendofyourturntheweaponyourcurrentlyholdinggainsBurstFiretheheatexpensefromusingBurstFireis2andyoumayuseBurstFireanAttackactionYoumustfinishashortorlongrestbeforeusingTurbochargeagain"
+    },
+    {
+      "name": "Biotic Slash",
+      "level": "1",
+      "mechanic": [
+        {
+          "id": 1,
+          "type": "line",
+          "data": "The next time you hit a creature with a melee weapon attack during the spell's duration, increasw the density of the weapon dealing an extra 2d8 force damage to the target. This damage detonates primers."
+        },
+        {
+          "id": 2,
+          "type": "line",
+          "data": "At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the extra damage dealt by the attack increases by 2d8 for each slot above the 1st."
+        }
+      ],
+      "adv_option_1": "Improved Damage : Increase the damage die to 2d12",
+      "adv_option_2": "Destined Hit : Gain a +5 bonus to your next melee weapon attack roll",
+      "type": "biotic",
+      "die_type": "d8",
+      "attack_type": [
+
+      ],
+      "casting_time": "Bonus Action",
+      "concentration": "x",
+      "duration": "1 minute",
+      "range": "Self",
+      "aoe": null,
+      "aoe_distance": null,
+      "effect": [
+        "damage",
+        "buff"
+      ],
+      "damage_type": [
+        "fore"
+      ],
+      "detonates": "x",
+      "primes": null,
+      "adept": null,
+      "vanguard": "x",
+      "sentinel": "x",
+      "infiltrator": null,
+      "engineer": null,
+      "soldier": null,
+      "min_tech_points": null,
+      "id": "biotic_slash",
+      "adv_options": [
+        "Improved Damage : Increase the damage die to 2d12",
+        "Destined Hit : Gain a +5 bonus to your next melee weapon attack roll"
+      ],
+      "class_list": "Sentinel, Vanguard",
+      "mechanic_text_dump": "Thenexttimeyouhitacreaturewithameleeweaponattackduringthespellsdurationincreaswthedensityoftheweapondealinganextra2d8forcedamagetothetargetThisdamagedetonatesprimersAtHigherLevelsWhenyoucastthisspellusingaspellslotof2ndlevelorhighertheextradamagedealtbytheattackincreasesby2d8foreachslotabovethe1st"
     }
   ]
 }
