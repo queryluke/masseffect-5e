@@ -7,7 +7,7 @@
         h2.display-3 {{ item.name }}
         p {{ item.description}}
     v-card(:class="{ 'pt-4': $vuetify.breakpoint.smAndDown }")
-      class-tabs(:colors="colors[item.id]").mb-3
+      class-tabs.mb-3
         progression-table(:item="item" v-bind:colors="colors[item.id]" slot="progression_table_tab_content")
         class-attributes(:item="item" v-bind:primaryColor="colors[item.id].primary" slot="attributes_tab_content")
         subclass-info(:item="item" v-bind:primaryColor="colors[item.id].primary" slot="subclasses_tab_content")

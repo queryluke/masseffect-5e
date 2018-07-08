@@ -25,6 +25,11 @@ import LifestyleExpenses from './LifestyleExpenses.vue'
 import LiftingAndCarrying from './LiftingAndCarrying.vue'
 import MediGel from './MediGel.vue'
 import MeleeWeapons from './MeleeWeapons.vue'
+import MulticlassingBarrier from './MulticlassingBarrier.vue'
+import MulticlassingBiotics from './MulticlassingBiotics.vue'
+import MulticlassingPrereqs from './MulticlassingPrereqs.vue'
+import MulticlassingProfs from './MulticlassingProfs.vue'
+import MulticlassingTech from './MulticlassingTech.vue'
 import OmniGel from './OmniGel.vue'
 import ParagonAndRenegade from './ParagonAndRenegade.vue'
 import PrimersAndDetonators from './PrimersAndDetonators.vue'
@@ -71,6 +76,11 @@ export {
   LiftingAndCarrying,
   MediGel,
   MeleeWeapons,
+  MulticlassingBarrier,
+  MulticlassingBiotics,
+  MulticlassingPrereqs,
+  MulticlassingProfs,
+  MulticlassingTech,
   OmniGel,
   ParagonAndRenegade,
   PrimersAndDetonators,

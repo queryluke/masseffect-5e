@@ -16,7 +16,7 @@
       v-toolbar-items.hidden-sm-and-down
         v-btn(v-for="(item, index) in primaryNavigation" v-bind:key="index" v-bind:to="item.route" flat)
           span {{ item.title }}
-      v-tabs(slot="extension" v-model="activeTab" color="grey darken-4" show-arrows v-bind:slider-color="sliderColor" grow).hidden-md-and-up
+      v-tabs(slot="extension" v-model="activeTab" color="grey darken-4" slider-color="white" id="mobileTabs" grow show-arrows).hidden-md-and-up
         v-tab(v-for="tab in tabs" v-bind:key="tab.id" v-bind:href="`#${tab.id}`" ripple) {{ tab.name }}
 
     // Content
@@ -47,9 +47,6 @@ export default {
       set (value) {
         this.setActiveTab(value)
       }
-    },
-    sliderColor () {
-      return this.colors[this.$route.params.id] ? this.colors[this.$route.params.id].primary : 'primary'
     }
   },
   methods: {
@@ -70,5 +67,8 @@ export default {
       margin-top: 64px !important;
       max-height: calc(100% - 64px) !important;
     }
+  }
+  #mobileTabs .v-tabs__item:not(.v-tabs__item--active) {
+    color: #fff
   }
 </style>

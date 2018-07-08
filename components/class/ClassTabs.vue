@@ -1,7 +1,7 @@
 <template lang="pug">
   div
-    v-tabs(v-model="activeTab" v-bind:slider-color="colors[$route.params.id].primary" grow).hidden-sm-and-down
-      v-tab(v-for="tab in tabs" v-bind:key="tab.id" v-bind:href="`#${tab.id}`" ripple) {{ tab.name }}
+    v-tabs(v-model="activeTab" v-bind:slider-color="sliderColor" id="desktopTabs" grow).hidden-sm-and-down
+      v-tab(v-for="tab in tabs" v-bind:key="tab.id" v-bind:href="`#${tab.id}`" v-bind:class="textColor" ripple) {{ tab.name }}
     v-tabs-items(v-model="active")
       v-tab-item(v-for="tab in tabs" v-bind:key="tab.id" v-bind:id="tab.id")
         div.pa-2
@@ -23,6 +23,13 @@
         set (value) {
           this.setActiveTab(value)
         }
+      },
+      sliderColor () {
+        return this.colors[this.$route.params.id] ? this.colors[this.$route.params.id].primary : 'primary'
+      },
+      textColor () {
+        const colorArray = this.sliderColor.split(' ')
+        return `${colorArray[0]}--text ${colorArray[1] ? 'text--' + colorArray[1] : ''}`
       }
     },
     methods: {
@@ -30,4 +37,10 @@
     }
   }
 </script>
+
+<style>
+  #desktopTabs .v-tabs__item:not(.v-tabs__item--active) {
+    color: rgba(0, 0, 0, .87)
+  }
+</style>
 

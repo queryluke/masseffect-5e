@@ -25,6 +25,16 @@ export default {
         'sexy-level'
       ]
     },
+    'phb-rules-multiclassing': {
+      name: 'Rules - Multiclassing',
+      rules: [
+        'multiclassing-prereqs',
+        'multiclassing-profs',
+        'multiclassing-biotics',
+        'multiclassing-barrier',
+        'multiclassing-tech'
+      ]
+    },
     'phb-rules-armor': {
       name: 'Rules - Armor',
       rules: [

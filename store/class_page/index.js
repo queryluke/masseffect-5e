@@ -10,7 +10,7 @@ export default {
     active: null,
     colors: {
       '': { primary: 'primary', link: 'red darken-4' },
-      adept: { primary: 'deep-purple lighten-1', link: 'purple--text' },
+      adept: { primary: 'deep-purple darken-1', link: 'deep-purple--text' },
       engineer: { primary: 'amber darken-2', link: 'amber--text text--darken-4' },
       infiltrator: { primary: 'deep-orange darken-1', link: 'deep-orange--text text--darken-4' },
       sentinel: { primary: 'green darken-2', link: 'teal--text text--darken-4' },

@@ -56,6 +56,7 @@
               { href: '/phb/rules/weapons', title: 'Weapons' },
               { href: '/phb/rules/armor', title: 'Armor' },
               { href: '/phb/rules/expenses', title: 'Expenses' },
+              { href: '/phb/rules/multiclassing', title: 'Multiclassing' },
               { href: '/phb/rules/skills', title: 'Skills' },
               { href: '/phb/rules/conditions', title: 'Conditions' }
             ]
