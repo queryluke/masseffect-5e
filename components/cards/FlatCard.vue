@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-card.elevation-0.transparent
+  v-card(:id="id").elevation-0.transparent
     v-card-text
       v-container(fluid grid-list-md).pa-0
         v-layout(row wrap)
@@ -22,7 +22,8 @@
       alertBox: {
         type: Boolean,
         default: false
-      }
+      },
+      id: String
     }
   }
 </script>

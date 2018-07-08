@@ -1,5 +1,5 @@
 <template lang="pug">
-  flat-card(alert-box)
+  flat-card(alert-box id="basics")
     span(slot="title") Learning the basics
     template(slot="body")
       p.

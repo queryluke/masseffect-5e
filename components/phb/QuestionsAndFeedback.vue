@@ -1,5 +1,5 @@
 <template lang="pug">
-  flat-card
+  flat-card(id="questions-and-feedback")
     span(slot="title") Questions and feedback
     template(slot="body")
       p.

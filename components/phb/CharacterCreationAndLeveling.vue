@@ -1,5 +1,5 @@
 <template lang="pug">
-  flat-card(alert-box)
+  flat-card(alert-box id="character-creation-and-leveling")
     span(slot="title") Character creation and leveling
     template(slot="body")
       p.

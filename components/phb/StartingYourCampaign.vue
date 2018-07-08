@@ -1,5 +1,5 @@
 <template lang="pug">
-  flat-card
+  flat-card(id="starting-your-campaign")
     span(slot="title") Starting your campaign
     template(slot="body")
       p.

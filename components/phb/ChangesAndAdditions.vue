@@ -1,5 +1,5 @@
 <template lang="pug">
-  flat-card(alert-box)
+  flat-card(alert-box id="changes-and-editions")
     span(slot="title") Changes and additions
     template(slot="body")
       p.

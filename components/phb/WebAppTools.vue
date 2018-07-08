@@ -1,5 +1,5 @@
 <template lang="pug">
-  flat-card(alert-box)
+  flat-card(alert-box id="web-app-tools")
     span(slot="title") Web app tools
     template(slot="body")
       p.mb-0.
