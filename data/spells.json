@@ -1,5 +1,5 @@
 {
-  "updated": "July  7, 2018 @  6:47 PM",
+  "updated": "July  7, 2018 @  8:06 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBBF0TK7kMnvFK1JKOY0OnxXiRrFxBPd0gFE_D1e_mjdCL1hnIToBkAWOtfS1veIgTFsxajiAYcY6f/pubhtml",
   "data": [
     {
@@ -905,7 +905,7 @@
       "casting_time": "Action",
       "concentration": "x",
       "duration": "1 minute",
-      "range": "20m",
+      "range": "40m",
       "aoe": null,
       "aoe_distance": null,
       "effect": [
@@ -2183,7 +2183,7 @@
       "casting_time": "Action",
       "concentration": null,
       "duration": "Instant",
-      "range": "20m",
+      "range": "40m",
       "aoe": null,
       "aoe_distance": null,
       "effect": [
@@ -2280,7 +2280,7 @@
       "casting_time": "Action",
       "concentration": "x",
       "duration": "10 minutes",
-      "range": "20m",
+      "range": "40m",
       "aoe": null,
       "aoe_distance": null,
       "effect": [
@@ -2738,7 +2738,7 @@
       "casting_time": "Action",
       "concentration": null,
       "duration": "Instant",
-      "range": "20m",
+      "range": "30m",
       "aoe": null,
       "aoe_distance": null,
       "effect": [
@@ -3202,7 +3202,7 @@
       "casting_time": "Action",
       "concentration": null,
       "duration": "Instant",
-      "range": "20m",
+      "range": "40m",
       "aoe": null,
       "aoe_distance": null,
       "effect": [
