@@ -1,8 +1,10 @@
 <template lang="pug">
   div
     div.pb-0
-      p.red--text.text--darken-4.headline.small-caps.mb-0 #[strong {{ stats.name }}]
-      p #[em {{ stats.size }} {{ stats.type }}{{ stats.unit ? `${stats.unit},` : ',' }} {{ stats.alignment }}]
+      p.red--text.text--darken-4.headline.small-caps.mb-0
+        strong {{ stats.name }}
+        span(v-if="stats.unit" style="text-transform: uppercase").body-2.grey--text.text--darken-4.pl-2 ({{ stats.unit }})
+      p #[em {{ stats.size }} {{ stats.type }}, {{ stats.alignment }}]
     div(style="position:relative;").pt-0
       div.hr
       ul.list-unstyled.pl-0
