@@ -1,17 +1,12 @@
 <template lang="pug">
   span
-    div.spell-icon
-      me-icon(type="spells" v-bind:name="spell.type")
+    v-avatar(size="25")
+      img(:src="`/images/spells/${spell.type}.svg`")
     span  {{ level }}
 </template>
 
 <script>
-  import MeIcon from '~/components/MeIcon.vue'
-
   export default {
-    components: {
-      MeIcon
-    },
     props: ['spell'],
     created () {
       if (this.spell.type === 'biotic') {
@@ -42,11 +37,3 @@
     }
   }
 </script>
-
-<style lang="stylus">
-  .spell-icon
-    width: 25px
-    display: inline-block
-    vertical-align: middle
-</style>
-

@@ -1,12 +1,17 @@
 <template>
-  <span v-if="spell.concentration">
-    <img src="/images/c.svg" alt="Concentration" title="Concentration" class="con-icon" v-if="!verbose">
-    <span v-else>Concentration, up to</span> {{ spell.duration }}
-  </span>
-  <span v-else>
-    {{ spell.duration }}
-  </span>
-
+  <div>
+    <span v-if="spell.concentration">
+      <span v-if="!verbose">
+        <v-avatar color="black" size="18" alt="concentration">
+          <span class="white--text">C</span>
+        </v-avatar>
+      </span>
+      <span v-else>Concentration, up to</span> {{ spell.duration }}
+    </span>
+    <span v-else>
+      {{ spell.duration }}
+    </span>
+  </div>
 </template>
 
 <script>
@@ -14,11 +19,3 @@
     props: ['spell', 'verbose']
   }
 </script>
-
-<style>
-  .con-icon {
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
-  }
-</style>

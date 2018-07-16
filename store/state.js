@@ -7,6 +7,7 @@ export default {
   classes: [],
   classFeatures: [],
   conditions: [],
+  data,
   encounter: {
     npcs: {
       list: [],
@@ -19,8 +20,10 @@ export default {
     race: {id: 'random', name: 'Random'},
     sc: {id: 'random', name: 'Random'}
   },
+  kits: [],
   mobileFilterDialog: false,
   pageTitle: 'Mass Effect 5e',
+  posts: [],
   primaryNavigation: [
     { route: '/phb/intro', title: 'Player\'s Handbook' },
     { route: '/assets', title: 'Assets' },
@@ -29,9 +32,7 @@ export default {
     { route: '/contributing', title: 'Feedback' }
   ],
   sidebar: true,
-  posts: [],
-  kits: [],
-  data,
+  spells: [],
   version: config.version,
   versions: []
 }

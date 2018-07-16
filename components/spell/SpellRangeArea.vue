@@ -1,29 +1,16 @@
 <template>
   <div>
-    {{ spell.range }}
-    <span v-if="spell.aoe">
-      ({{ spell.aoe_distance }} <div class="aoe-icon"><me-icon type="aoe" :name="spell['aoe']"></me-icon></div>)
+    <span>
+      {{ spell.distance.range }}
+    </span>
+    <span v-if="spell.distance.aoeDistance">
+      ({{ spell.distance.aoeDistance }} <v-avatar size="18" tile><img :src="`/images/aoe/${spell.distance.aoeType}.svg`" :alt="spell.distance.aoeType" /></v-avatar>)
     </span>
   </div>
-
 </template>
 
 <script>
-  import MeIcon from '~/components/MeIcon.vue'
-
   export default {
-    props: ['spell'],
-    components: {
-      MeIcon
-    }
+    props: ['spell']
   }
 </script>
-
-<style lang="stylus">
-  .aoe-icon
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
-</style>
-
