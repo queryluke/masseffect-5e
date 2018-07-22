@@ -26,6 +26,7 @@
           v-flex(xs12)
             v-container(grid-list-xl)
               v-layout(row wrap)
+                v-flex(xs12)
                 // Races and classes
                 v-flex(xs12 md4 d-flex)
                   v-card.elevation-0.transparent
@@ -66,6 +67,9 @@
                       Our bestiary is filled with iconic Mass Effect enemies custom-made using D&D's Dungeon Master Guide
                       to ensure balanced combat. From Reaper forces to Blue Sun grunts, we've got enough monsters to keep your
                       players engaged and challenged.
+          v-flex(xs12 sm10 md8).my-3
+            v-alert(dismissable type="info" v-model="alert" outline).
+              Want to get involved? Check out the #[nuxt-link(to="/contributing" class="light-blue--text text--lighten-1") contributing page] for more information!
     section
       v-parallax(src="/images/parallax/joker.png")
         v-layout(column align-center justify-center).white--text
@@ -147,6 +151,9 @@
       recentPosts () {
         return this.getPosts(6)
       }
+    },
+    data () {
+      return { alert: true }
     },
     head () {
       return {
