@@ -19,12 +19,9 @@ export const AbilityScores = {
         none: {dex: 5, str: 3, con: 2}
       }
       if (grunt.race.id === 'asari') {
-        classStats.adept.wis = 1
-        classStats.adept.cha = 5
-        classStats.sentinel.cha = 5
-        delete classStats.sentinel.wis
-        classStats.vanguard.cha = 4
-        delete classStats.vanguard.wis
+        classStats.adept = {cha: 5, dex: 4, wis: 1}
+        classStats.sentinel = {cha: 5, int: 4, dex: 2}
+        classStats.vanguard = {str: 5, cha: 4, con: 2}
       }
       const standardArray = [15, 14, 13, 12, 10, 8]
 
@@ -58,7 +55,6 @@ export const AbilityScores = {
         weightedAbilitySelection.reduction.push(ability)
         weightedAbilitySelection.reduction.push(ability)
       }
-
       // Set boosts based on CR
       if (config.cr.abIncrease) {
         const increase = this.randomValue(config.cr.abIncrease)

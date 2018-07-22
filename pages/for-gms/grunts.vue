@@ -25,6 +25,7 @@
               bottom
               hint="Challenge Rating"
               persistent-hint
+              required
             )
           v-flex(xs12 sm6 md4).px-2
             v-select(
