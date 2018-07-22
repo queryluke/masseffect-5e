@@ -40,7 +40,7 @@
                     v-card-text.
                       Mass Effect 5e lets you mix and match a variety of classic alien races with your favorite Mass Effect class.
                       Wreak havoc on the front lines as a Krogan Shocktrooper. Crush your enemies like a biotic god as a
-                      Volus Commando. With 12 races 6 classes, and 18 specializations, Mass Effect 5e has options to fit any
+                      Volus Commando. With 12 races, 6 classes, and 18 specializations, Mass Effect 5e has options to fit any
                       play style.
                 // Weapons and armor
                 v-flex(xs12 md4 d-flex)
