@@ -85,7 +85,7 @@
                     p.
                       We've filled out quite a few monsters in the bestiary, but there are still a lot to complete. If
                       you'd like to create an original monster stat block or revise a current one,
-                      #[a(href="We can't offer much in recompense for your creative endeavors other than attributing the stat block to you on the website and adding to our list of contributors." target="_blank" class="light-blue--text text--lighten-1") this sheet]
+                      #[a(href="https://drive.google.com/open?id=18AJJLaqv3vM-RS4HKF0khirPeXIpls1zrltJx22-6Lw" target="_blank" class="light-blue--text text--lighten-1") this sheet]
                       has more information.
               v-flex(xs12 md4 d-flex)
                 v-card(dark)
