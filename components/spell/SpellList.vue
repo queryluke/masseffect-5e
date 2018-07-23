@@ -13,8 +13,8 @@
             v-flex(:class="headers[3].classes")
               spell-range-area(:spell="item")
             v-flex(:class="headers[4].classes")
-              span {{ item.attack_type[0] }}
-              span(v-if="item.attack_type.length > 1") (...)
+              span {{ item.attackType[0] }}
+              span(v-if="item.attackType.length > 1") (...)
             v-flex(:class="headers[5].classes")
               spell-damage-effect(:spell="item")
         v-card.grey.lighten-3

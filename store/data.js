@@ -10,7 +10,6 @@ import monsterFeatures from '~/data/monster_features.json'
 import races from '~/data/races.json'
 import racialTraits from '~/data/racial_traits.json'
 import skills from '~/data/skills.json'
-import spells from '~/data/spells.json'
 import statsByCr from '~/data/stats_by_cr.json'
 import weaponAttributes from '~/data/weapon_attributes.json'
 import weaponMods from '~/data/weapon_mods.json'
@@ -29,7 +28,6 @@ export default {
   races,
   racialTraits,
   skills,
-  spells,
   statsByCr,
   weaponAttributes,
   weaponMods,

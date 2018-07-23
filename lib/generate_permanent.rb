@@ -34,7 +34,7 @@ options = {
 }
 
 dir = 'classes'
-theClass = 'soldier'
+theClass = 'soldier'
 url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_ggYGhA2KS7Vyo30ImCIIkRK6omm7dD0tiyeR1ytpg2EUpiMRyIT1QniX6vujm3DnV3eRj5pW6-TX/pub?gid=2098633418&single=true&output=csv'
 
 uri = URI(url)

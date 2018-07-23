@@ -4,7 +4,7 @@ const postFilenameRegex = /^(\d+-\d+-\d+)-(.*)\.md$/g
 
 let postFilenameParts
 const jsonDirs = ['classes']
-const mdDirs = ['posts', 'backgrounds', 'conditions', 'kits', 'class_features', 'changelog']
+const mdDirs = ['posts', 'backgrounds', 'conditions', 'kits', 'class_features', 'changelog', 'spells']
 
 export default {
   nuxtServerInit () {

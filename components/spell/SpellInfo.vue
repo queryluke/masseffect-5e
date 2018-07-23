@@ -8,7 +8,7 @@
           span(v-if="spell.primes && spell.detonates").mx-2 |
           span(class="primary--text" v-if="spell.detonates") #[strong Detonates]
       v-flex.xs12.sm6
-        spell-class-list(:spell="spell")
+        spell-class-list(:availableClasses="spell.availableClasses")
     v-layout(row wrap flex-start)
       v-flex.xs12.sm4.md3.attribute.mb-2
         label Type
@@ -28,7 +28,7 @@
       v-flex.xs12.sm4.md3.attribute.mb-2
         label Attack Type
         ul.list-unstyled
-          li(v-for="at in spell.attack_type" v-bind:key="at") {{ at }}
+          li(v-for="at in spell.attackType" v-bind:key="at") {{ at }}
       v-flex.xs12.sm4.md3.attribute.mb-2
         label Damage Type
         ul.list-unstyled
@@ -39,10 +39,10 @@
           li(v-for="effect in spell.effect" v-bind:key="effect") {{ effect }}
     div.hr
     div.mt-3
-      me-element(:text="spell.mechanic")
+      markdown-file(:id="spell.id" itemType="spells")
       p.title Advancement Options
       v-layout(row wrap justify-space-around)
-        v-flex(v-for="(option, i) in spell.adv_options" v-bind:key="i").xs12.md6
+        v-flex(v-for="(option, i) in spell.advancementOptions" v-bind:key="i").xs12.md6
           advanced-option(:option="option")
 </template>
 
@@ -53,11 +53,11 @@
   import SpellDamageEffect from '~/components/spell/SpellDamageEffect.vue'
   import AdvancedOption from '~/components/spell/AdvancedOption.vue'
   import SpellClassList from '~/components/spell/SpellClassList.vue'
-  import MeElement from '~/components/MeElement.vue'
+  import MarkdownFile from '~/components/MarkdownFile.vue'
 
   export default {
     components: {
-      SpellClassList, AdvancedOption, SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect, MeElement
+      SpellClassList, AdvancedOption, SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect, MarkdownFile
     },
     data () {
       return {
