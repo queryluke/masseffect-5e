@@ -18,7 +18,7 @@ export const Tech = {
       }
       let totalSpells = 0
       let totalDmgSpells = 0
-      const availableSpells = this.tech.filter(spell => spell.min_tech_points <= tpSpent && spell[grunt.sc.id] === 'x')
+      const availableSpells = this.tech.filter(spell => parseInt(spell.level, 10) <= tpSpent && spell.availableClasses.includes(grunt.sc.id))
       for (let i = 1; i <= numTech; i++) {
         if (availableSpells.length < 1) {
           continue

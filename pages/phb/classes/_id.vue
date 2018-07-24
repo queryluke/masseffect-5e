@@ -72,7 +72,7 @@
       this.id = this.$route.params.id
       let classes = this.getData('classes')
       this.item = classes.find(value => value.id === this.id)
-      this.spells = this.getData('spells').filter(spell => spell[this.id])
+      this.spells = this.getData('spells').filter(spell => spell.availableClasses.includes(this.id))
       let index = classes.indexOf(this.item)
       this.previous = classes[index - 1] ? classes[index - 1] : {}
       this.previous.colors = this.colors[this.previous.id]

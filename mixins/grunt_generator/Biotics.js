@@ -20,7 +20,7 @@ export const Biotics = {
         spells: []
       }
       let numCantrips = progressionLevel.cantrips
-      const availableSpells = this.spells.filter(spell => spell.level === '0' && spell[grunt.sc.id] === 'x')
+      const availableSpells = this.spells.filter(spell => spell.level === '0' && spell.availableClasses.includes(grunt.sc.id))
       for (let i = 1; i <= numCantrips; i++) {
         if (availableSpells.length < 1) {
           continue
@@ -48,7 +48,7 @@ export const Biotics = {
           spells: []
         }
         const numSpells = this.numSpellsByLevel[grunt.sc.id][effectiveCr.spellcastingLevel][spellLevel - 1]
-        const availableSpells = this.spells.filter(spell => parseInt(spell.level, 10) === spellLevel && spell[grunt.sc.id] === 'x')
+        const availableSpells = this.spells.filter(spell => parseInt(spell.level, 10) === spellLevel && spell.availableClasses.includes(grunt.sc.id))
         for (let i = 1; i <= numSpells; i++) {
           if (availableSpells.length < 1) {
             continue
