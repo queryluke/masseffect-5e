@@ -12,7 +12,7 @@
       this.spells = this.getData('spells')
       if (this.$route.params.limit) {
         this.limit = this.$route.params.limit
-        this.spells = this.spells.filter(spell => spell[this.limit])
+        this.spells = this.spells.filter(spell => spell.availableClasses.includes(this.limit))
       }
     },
     components: {
