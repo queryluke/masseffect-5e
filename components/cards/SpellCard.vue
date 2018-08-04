@@ -9,7 +9,7 @@
             tr
               td
                 label Casting Time
-                div {{ spell.casting_time }}
+                div {{ spell.castingTime }}
               td
                 label Range (AOE)
                 div
@@ -26,11 +26,11 @@
                   span(v-if="spell.detonates") Detonates
                 div(v-if="spell.primes") {{spell.primes}}
         v-flex.pa-1.spell-text
-          me-element(:text="spell.mechanic")
+          markdown-file(:id="spell.id" itemType="spells")
           div.adv-options.mt-1
             label Advanced Options
-            div(v-for="(option, i) in spell.adv_options" v-bind:key="i")
-              p {{ option }}
+            div(v-for="(option, i) in spell.advancementOptions" v-bind:key="i")
+              p #[strong {{ option.name }}]: {{ option.description }}
               p(v-if="i == 0").text-xs-center #[strong --OR--]
 
 </template>
@@ -41,11 +41,11 @@
   import SpellRangeArea from '~/components/spell/SpellRangeArea.vue'
   import SpellDamageEffect from '~/components/spell/SpellDamageEffect.vue'
   import AdvancedOption from '~/components/spell/AdvancedOption.vue'
-  import MeElement from '~/components/MeElement.vue'
+  import MarkdownFile from '~/components/MarkdownFile.vue'
 
   export default {
     components: {
-      AdvancedOption, SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect, MeElement
+      AdvancedOption, SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect, MarkdownFile
     },
     computed: {
       cardType () {
@@ -59,7 +59,7 @@
         }
         for (const i of this.spell.effect) {
           if (i === 'damage') {
-            text.push(`${i} (${this.spell.damage_type.join(', ')})`)
+            text.push(`${i} (${this.spell.damageType.join(', ')})`)
           } else {
             text.push(i)
           }

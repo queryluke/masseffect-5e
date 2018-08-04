@@ -23,10 +23,10 @@ availableClasses:
 - soldier
 advancementOptions:
 - name: Bleeding Blades
-  description: On a hit, the target takes an additional 3[dd] damage at the start
+  description: On a hit, the target takes an additional 3d12 damage at the start
     of their turn due to blood loss. This damage bypasses shields.
 - name: Exploding blades
-  description: On a hit, the target takes an additional 3[dd] thunder damage and must
+  description: On a hit, the target takes an additional 3d12 thunder damage and must
     pass a Constitution saving throw (DC 8 + proficiency bonus) or becomes {stunned}
     until the end of your next turn.
 ---

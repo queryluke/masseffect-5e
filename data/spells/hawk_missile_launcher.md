@@ -24,7 +24,7 @@ advancementOptions:
 - name: Anti-Shield
   description: The missile detonates a small EMP, transforming the damage to lightning.
 - name: Improved Damage
-  description: Increase the damage to 5[dd]
+  description: Increase the damage to 5d6
 ---
 As an Attack action, activate your personal shoulder cannon: The Hawk Missile Launcher. This attack automatically hits a target within range dealing 3d6 thunder damage.
 The Hawk Missile Launcher has 2 charges. You regain all charges on a long rest.

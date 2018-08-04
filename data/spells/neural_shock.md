@@ -22,7 +22,7 @@ availableClasses:
 - infiltrator
 advancementOptions:
 - name: Damage
-  description: A creature takes X[dd] psychic damage on a failed save or half as much
+  description: A creature takes Xd6 psychic damage on a failed save or half as much
     damage on a successful one where X is the number of tech points spent.
 - name: Paralyze
   description: If a creature fails the saving throw, it is paralyzed for 1 turn.

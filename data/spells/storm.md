@@ -29,7 +29,7 @@ advancementOptions:
     to cause a bolt of necrotic energy to leap from the center of the sphere toward
     one creature you choose within 20m of the center. Make a ranged spell attack.
     You have advantage on the attack roll if the target is in the sphere. On a hit,
-    the target takes 4[dd] necrotic damage. Necrotic bolts can detonate primed targets.
+    the target takes 4d10 necrotic damage. Necrotic bolts can detonate primed targets.
 - name: Growing Storm
   description: While the spell is maintained, the storm's radius grows by 2m at the
     start of your turn.

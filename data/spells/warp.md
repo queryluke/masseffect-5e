@@ -25,7 +25,7 @@ availableClasses:
 advancementOptions:
 - name: Internal Bleeding
   description: The shifting causes internal bleeding. At the start of your turn, the
-    target takes 1[dd] necrotic damage bypassing its shields until it uses medi-gel
+    target takes 1d10 necrotic damage bypassing its shields until it uses medi-gel
     or is stabilized.
 - name: Keel over
   description: A target hit by warp must pass a Constitution saving throw. On a failed
