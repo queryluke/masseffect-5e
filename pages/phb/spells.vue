@@ -67,8 +67,7 @@
         if (this.search) {
           data = data.filter((spell) => {
             let nameMatch = spell.name.toLowerCase().indexOf(this.searchString.toLowerCase()) >= 0
-            let textMatch = spell.mechanic_text_dump.indexOf(this.searchString.toLowerCase()) >= 0
-            return nameMatch || textMatch
+            return nameMatch
           })
         }
         if (this.filters.spells.type.length > 0) {
@@ -77,7 +76,7 @@
         if (this.filters.spells.availableClasses.length > 0) {
           data = data.filter(spell => {
             for (const c of this.filters.spells.availableClasses) {
-              if (spell[c]) {
+              if (spell.availableClasses.includes(c)) {
                 return spell
               }
             }
