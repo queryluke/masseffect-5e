@@ -1,5 +1,5 @@
 {
-  "updated": "June 20, 2018 @  3:54 PM",
+  "updated": "August  6, 2018 @ 10:54 AM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTIwlLPyS6hKc2XoW5tm901kmWbiZD_cHiUBWrH2V-ceinyWWz5SiGFfnRehK4CWrewGWubXBldbesh/pubhtml",
   "data": [
     {
@@ -2142,7 +2142,7 @@
         "str": 22,
         "dex": 10,
         "con": 25,
-        "int": 11,
+        "int": 18,
         "wis": 6,
         "cha": 8
       },
@@ -2207,7 +2207,7 @@
         "mass_accelerator_machinegun---geth_armature"
       ],
       "savingThrows": [
-
+        "int"
       ],
       "skills": [
         "perception"
@@ -2315,7 +2315,7 @@
         "str": 28,
         "dex": 8,
         "con": 28,
-        "int": 9,
+        "int": 20,
         "wis": 6,
         "cha": 8
       },
@@ -2383,7 +2383,7 @@
         "siege_pulse_attack"
       ],
       "savingThrows": [
-
+        "int"
       ],
       "skills": [
         "perception"
@@ -2464,7 +2464,7 @@
         "tactical_cloak"
       ],
       "savingThrows": [
-
+        "int"
       ],
       "skills": [
         "electronics",
@@ -2494,7 +2494,7 @@
         "str": 20,
         "dex": 11,
         "con": 18,
-        "int": 11,
+        "int": 13,
         "wis": 8,
         "cha": 4
       },
@@ -2632,7 +2632,8 @@
         "summon_turret_or_drone"
       ],
       "savingThrows": [
-        "con"
+        "con",
+        "int"
       ],
       "skills": [
         "electronics"
@@ -3181,6 +3182,171 @@
     },
     {
       "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": {
+        "level": "innate",
+        "perDay": "10",
+        "tpSpent": "2",
+        "dc": 10,
+        "hit": 2,
+        "spells": [
+          "shocking_grasp"
+        ]
+      },
+      "abilityScores": {
+        "str": 12,
+        "dex": 16,
+        "con": 11,
+        "int": 10,
+        "wis": 14,
+        "cha": 8
+      },
+      "hp": {
+        "die": "6",
+        "average": "35",
+        "numDice": "10",
+        "mod": 0
+      },
+      "senses": [
+        "infrared vision 30m"
+      ],
+      "name": "FENRIS Mech",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/32/ME2_FENRIS_Mech.png/revision/latest/scale-to-width-down/350?cb=20120419003938",
+      "cr": "1/2",
+      "size": "Small",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "14m",
+      "dc": "10",
+      "ac": "14",
+      "xp": "100",
+      "id": "fenris_mech",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "aggressive",
+        "pounce---fenris_mech",
+        "stun---fenris_mech",
+        "post-mortem_explosion---fenris_mech"
+      ],
+      "savingThrows": [
+        "dex"
+      ],
+      "skills": [
+        "perception"
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": {
+        "level": "innate",
+        "perDay": "5",
+        "tpSpent": "1",
+        "dc": 9,
+        "hit": 1,
+        "spells": [
+          "shocking_grasp"
+        ]
+      },
+      "abilityScores": {
+        "str": 10,
+        "dex": 12,
+        "con": 11,
+        "int": 8,
+        "wis": 6,
+        "cha": 5
+      },
+      "hp": {
+        "die": "8",
+        "average": "22",
+        "numDice": "5",
+        "mod": 0
+      },
+      "senses": [
+        "infrared vision 30m"
+      ],
+      "name": "LOKI Mech",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/c/c0/ME2_Loki_Mech.png/revision/latest?cb=20120917060158",
+      "cr": "1/8",
+      "size": "Medium",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "8m",
+      "dc": "10",
+      "ac": "10",
+      "xp": "25",
+      "id": "loki_mech",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "chatter_variant",
+        "limited_tactics",
+        "m-4_shuriken",
+        "m-3_predator",
+        "post-mortem_explosion---loki_mech"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+        "perception"
+      ]
+    },
+    {
+      "actions": [
         {
           "type": "common",
           "name": "Multiattack",
@@ -3637,6 +3803,86 @@
       ],
       "savingThrows": [
 
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 20,
+        "dex": 6,
+        "con": 18,
+        "int": 16,
+        "wis": 8,
+        "cha": 12
+      },
+      "hp": {
+        "die": "10",
+        "average": "161",
+        "numDice": "17",
+        "mod": 68
+      },
+      "sp": {
+        "shields": 50,
+        "regen": "10"
+      },
+      "senses": [
+        "infared vision 60m"
+      ],
+      "name": "YMIR Mech",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/5/5f/ME2_YMIR_Mech.png/revision/latest/scale-to-width-down/700?cb=20120419005946",
+      "cr": "11",
+      "size": "Large",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "4",
+      "barrier": null,
+      "speed": "6m",
+      "dc": "18",
+      "ac": "18",
+      "xp": "7200",
+      "id": "ymir_mech",
+      "damageResistances": [
+        "cold",
+        "bludgeoning",
+        "piercing",
+        "slashing"
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "mass_accelerator_machinegun---ymir_mech",
+        "rocket_launcher---ymir_mech",
+        "post-mortem_explosion---ymir_mech"
+      ],
+      "savingThrows": [
+        "str",
+        "int"
       ],
       "skills": [
 
