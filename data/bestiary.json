@@ -1,5 +1,5 @@
 {
-  "updated": "August  8, 2018 @  9:41 AM",
+  "updated": "August  8, 2018 @  2:59 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTIwlLPyS6hKc2XoW5tm901kmWbiZD_cHiUBWrH2V-ceinyWWz5SiGFfnRehK4CWrewGWubXBldbesh/pubhtml",
   "data": [
     {
@@ -4024,7 +4024,7 @@
       ],
       "featuresActionsReactions": [
         "mass_accelerator_machinegun---ymir_mech",
-        "rocket_launcher---ymir_mech",
+        "rocket_launcher",
         "post-mortem_explosion---ymir_mech"
       ],
       "savingThrows": [

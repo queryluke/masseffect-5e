@@ -3,8 +3,8 @@ export const Biotics = {
     setMonsterBiotics (monster) {
       const spells = this.getData('spells')
       if (monster.spellcasting.level === 'innate') {
-        const groupList = []
         for (const group of monster.spellcasting.spells) {
+          const groupList = []
           for (const spellId of group.spells) {
             const spell = spells.find(spell => spell.id === spellId)
             if (spell) {
