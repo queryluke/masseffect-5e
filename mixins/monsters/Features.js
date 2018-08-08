@@ -38,6 +38,10 @@ export const Features = {
           monster.legendaryActions.push(feature)
           break
         }
+        case 'lair': {
+          monster.lairActions.push(feature)
+          break
+        }
         case 'feature': {
           monster.features.push(feature)
           break

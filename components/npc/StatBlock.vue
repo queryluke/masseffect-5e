@@ -43,11 +43,18 @@
       div(v-if="hasFeature('legendaryActions')")
         p.title.underline-heading.small-caps Legendary Actions
         p.
-          The {{ stats.name | removeActionId }} can take 3 legendary actions, choosing from the options below. Only one legendary action can
+          The {{ stats.name }} can take 3 legendary actions, choosing from the options below. Only one legendary action can
           be used at a time and only at the end of another creature's turn. The {{ stats.name }} regains spent legendary
           actions at the start of his turn.
         p(v-for="la in stats.legendaryActions" v-bind:key="la.id")
           npc-common-feature(:feature="la" v-bind:npc="stats")
+      div(v-if="hasFeature('lairActions')")
+        p.title.underline-heading.small-caps Lair Actions
+        p.
+          On initiative count 20 (losing initiative ties), the {{ stats.name }} takes a lair action to cause one of the
+          following effects; it can't use the same effect two rounds in a row:
+        ul
+          li(v-for="(action, index) in stats.lairActions" v-bind:key="index") {{ action.description }}
       div(v-if="hasFeature('reactions')")
         p.title.underline-heading.small-caps Reactions
         p(v-for="reaction in stats.reactions" v-bind:key="reaction.id")

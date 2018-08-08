@@ -5,6 +5,7 @@ def configure_monster(model)
       actions: [],
       reactions: [],
       legendaryActions: [],
+      lairActions: [],
       features: [],
       spellcasting: false,
       techcasting: false,
