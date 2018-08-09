@@ -1,7 +1,7 @@
 ---
 id: biotic_sphere
 name: Biotic Sphere
-level: '3'
+level: '4'
 type: biotic
 attackType: []
 effect:
@@ -21,14 +21,19 @@ availableClasses:
 - sentinel
 advancementOptions:
 - name: Infuse Ammo
-  description: Friendly creatures inside the sphere add 1d4 force damage to all ranged
-    weapon attacks on creatures outside of the sphere and subtract that much from
-    the sphere's HP. This damage can detonate abilities.
+  description: Friendly creatures inside the sphere add 1d6 force damage to all ranged weapon attacks against creatures
+    outside of the sphere. This damage can detonate primed targets.
 - name: Armored
-  description: The sphere has resistance to piercing, slashing, and bludgeoning damage.
+  description: The sphere has resistance to bludgeoning, piercing, slashing, and thunder damage, but only has 75 hit points.
 ---
-Channel a sphere with (5d12 + your level) hit points that extends out from you in a 6m radius and moves with you. Hostile creatures cannot enter or leave the sphere.
-Hostile attacks made on friendly targets are absorbed by the sphere (the sphere automatically fails any saving throws).
-Friendly attacks on hostile creatures within the sphere have advantage.
-The sphere dissipates when it's hit points are gone. If an attack would deal more damage than the remaining hit points of the sphere, the sphere soaks all of the damage and then dissipates.
-At higher levels: When you cast this spell using a spell slot of level 4 or higher, the sphere's health increases by 2d12 for each slot level above the 3rd.
+A shimmering barrier with 100 hit points extends out from you in a 6m sphere and moves with you, remaining centered on
+you and hedging out hostile creatures. If a hostile creature is within the sphere when you cast this spell, it is pushed
+outside of the sphere's radius.
+
+Any attack against a creature or targeted at a location within the sphere automatically hits the barrier instead. The barrier
+automatically fails any saving throws.
+
+The barrier dissipates when it has 0 hit points. If an attack would deal more damage than the remaining hit points of the
+barrier, it soaks all of the damage and then dissipates.
+
+__At Higher Levels__: When you cast this spell using a spell slot of 5th level, the barrier's health increases by 50 hit points.
