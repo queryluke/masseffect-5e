@@ -1,6 +1,6 @@
 <template lang="pug">
   v-container(fluid)
-    h2.display-1.hidden-sm-and-down Feats
+    h2.display-1.hidden-sm-and-down Bookmarks
     v-layout(row wrap v-for="(cards, type) of bookmarksGroupedByType" v-bind:key="type")
       v-flex(xs12)
         h3.headline {{ headers[type] }}
