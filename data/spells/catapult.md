@@ -37,5 +37,12 @@ advancementOptions:
     object would strike a creature making a weapon attack, you impose disadvantage
     on the attack roll whether or not the creature fails its Dexterity saving throw.
 ---
-Choose one object weighing 1 to 10 kilos (about 2 to 20 lbs.) within range that isn't being worn or carried. The object flies in a straight line up to 30m in a direction you choose before falling to the ground, stopping early if it impacts against a solid surface. If the object would strike a creature, that creature must make a Dexterity saving throw. On a failed save, the object strikes the creature and stops moving. When the object strikes something, the object and what it strikes each take 3d10 bludgeoning damage.
-At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the maximum weight of objects that you can target with this spell increases by 5 kilos (10lbs), and the damage increases by 2d10, for each slot level above 1st.
+Choose one object weighing 1 to 10 kilos (about 2 to 20 lbs.) within range that isn't being worn or carried. The object
+flies in a straight line up to 30m in a direction you choose before falling to the ground, stopping early if it impacts
+against a solid surface. If the object would strike a creature, that creature must make a Dexterity saving throw. On a
+failed save, the object strikes the creature and stops moving. When the object strikes something, the object and what it
+strikes each take 3d10 bludgeoning damage.
+
+__At Higher Levels__: When you cast this spell using a spell slot of 2nd level or higher, the maximum weight of objects
+that you can target with this spell increases by 5 kilos (10lbs), and the damage increases by 2d10, for each slot level
+above 1st.
