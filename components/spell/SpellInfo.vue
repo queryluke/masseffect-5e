@@ -16,7 +16,7 @@
           spell-type(:spell="spell")
       v-flex.xs12.sm4.md3.attribute.mb-2
         label Casting Time
-        div {{ spell.casting_time }}
+        div {{ spell.castingTime }}
       v-flex.xs12.sm4.md3.attribute.mb-2
         label Duration
         div
@@ -32,7 +32,7 @@
       v-flex.xs12.sm4.md3.attribute.mb-2
         label Damage Type
         ul.list-unstyled
-          li(v-for="dmg in spell.damage_type" v-bind:key="dmg") {{ dmg }}
+          li(v-for="dmg in spell.damageType" v-bind:key="dmg") {{ dmg }}
       v-flex.xs12.sm4.md3.attribute.mb-2
         label Effect
         ul

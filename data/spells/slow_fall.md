@@ -7,7 +7,7 @@ attackType: []
 effect:
 - movement
 damageType: []
-castingTime: Reaction
+castingTime: Reaction, which you take when you or a creature within 10m of you falls
 duration: 1 minute
 concentration: true
 distance:

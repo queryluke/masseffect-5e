@@ -7,7 +7,7 @@ attackType: []
 effect:
 - control
 damageType: []
-castingTime: Bonus
+castingTime: Bonus Action
 duration: Instant
 concentration: false
 distance:
