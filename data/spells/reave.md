@@ -15,8 +15,8 @@ duration: Instant
 concentration: false
 distance:
   range: 50m
-  aoeType: cube
-  aoeDistance: 6m
+  aoeType:
+  aoeDistance:
 detonates: 
 primes: necrotic
 availableClasses:
