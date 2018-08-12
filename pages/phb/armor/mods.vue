@@ -24,6 +24,7 @@
   import ArmorModFilters from '~/components/armor_mod/ArmorModFilters.vue'
   import ArmorModList from '~/components/armor_mod/ArmorModList.vue'
   import MobileFilterContainer from '~/components/MobileFilterContainer.vue'
+  import ArmorMods from '~/data/armor_mods.json'
 
   // State
   import {createNamespacedHelpers} from 'vuex'
@@ -32,7 +33,7 @@
   export default {
     components: { ArmorModFilters, ArmorModList, MobileFilterContainer },
     computed: {
-      ...mapGetters(['getItems', 'order', 'sortBy', 'filters', 'searchString']),
+      ...mapGetters(['order', 'sortBy', 'filters', 'searchString']),
       search: {
         get () {
           return this.searchString
@@ -46,11 +47,9 @@
         let sortBy = this.sortBy.key
         let order = this.order
         data.sort(function (a, b) {
-          data.sort(function (a, b) {
-            const aSort = sortBy === 'cost' ? parseInt(a[sortBy], 10) : a[sortBy]
-            const bSort = sortBy === 'cost' ? parseInt(b[sortBy], 10) : b[sortBy]
-            return (aSort === bSort ? 0 : aSort > bSort ? 1 : -1) * order
-          })
+          const aSort = sortBy === 'cost' ? parseInt(a[sortBy], 10) : a[sortBy]
+          const bSort = sortBy === 'cost' ? parseInt(b[sortBy], 10) : b[sortBy]
+          return (aSort === bSort ? 0 : aSort > bSort ? 1 : -1) * order
         })
         if (this.search) {
           data = data.filter((item) => {
@@ -76,20 +75,17 @@
         return data
       }
     },
-    created () {
-      this.items = this.getItems(this.itemKey)
+    data () {
+      const items = ArmorMods.data
       const noteOptions = new Set()
-      for (const item of this.items) {
+      for (const item of items) {
         for (const note of item.notes.split(',').map(n => n.trim())) {
           noteOptions.add(note)
         }
       }
-      this.noteOptions = [...noteOptions].sort()
-    },
-    data () {
       return {
-        items: [],
-        noteOptions: [],
+        items,
+        noteOptions: [...noteOptions].sort(),
         itemKey: 'armorMods'
       }
     },

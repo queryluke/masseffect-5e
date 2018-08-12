@@ -1,5 +1,4 @@
 import armorMechanics from '~/data/armor_mechanics.json'
-import armorMods from '~/data/armor_mods.json'
 import armorSets from '~/data/armor_sets.json'
 import attributions from '~/data/attributions.json'
 import bestiary from '~/data/bestiary.json'
@@ -17,7 +16,6 @@ import weapons from '~/data/weapons.json'
 
 export default {
   armorMechanics,
-  armorMods,
   armorSets,
   attributions,
   bestiary,

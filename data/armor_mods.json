@@ -1,5 +1,5 @@
 {
-  "updated": "July  7, 2018 @  2:45 PM",
+  "updated": "August 12, 2018 @  5:03 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRIPzbOBXOdWbaY779un1EV3HyacCV3fe15kHW4ABjMV0yHi3GZHVqnbiOVSQ_Dgh1whimOITGOXHkn/pubhtml",
   "data": [
     {
@@ -439,7 +439,7 @@
       "feature": "Increase your speed by 6m.",
       "cost": "6000",
       "manu": "Sirta Foundation",
-      "notes": "Speed",
+      "notes": "Movement",
       "id": "stimulator_conduits_legs"
     },
     {
@@ -489,8 +489,48 @@
       "feature": "+2 to Persuasion and Intimidation checks",
       "cost": "2000",
       "manu": "Tyriel Advanced Communications Corporation",
-      "notes": "Specail",
+      "notes": "Special",
       "id": "voice_modulator_head"
+    },
+    {
+      "name": "Jetpack",
+      "type": "Chest",
+      "description": "This propulsion device generates mass effect fields for lift and gyroscopic atitude adjusters to maneuver the wearer for a short duration.",
+      "feature": "As a bonus action, activate the jetpack to gain flying 6m for 1 minute. This device cannot be used again until you finish a short rest.",
+      "cost": "10000",
+      "manu": "Elanus Risk Control Services",
+      "notes": "Movement",
+      "id": "jetpack_chest"
+    },
+    {
+      "name": "QR Jetpack",
+      "type": "Chest",
+      "description": "A better model of the standard jetpack that has a larger batter reserve, allowing for more uses before recharging.",
+      "feature": "As a bonus action, activate the jetpack to gain flying 6m for 1 minute. You may use this 3 times per short rest.",
+      "cost": "22000",
+      "manu": "Elanus Risk Control Services",
+      "notes": "Movement",
+      "id": "qr_jetpack_chest"
+    },
+    {
+      "name": "Explorer's Jetpack",
+      "type": "Chest",
+      "description": "An advanced jetpack that can be used for longer than the standard version, but takes longer to recharge.",
+      "feature": "As a bonus action, activate the jetpack to gain flying 6m for 10 minutes. This device cannot be used again until you finish a long rest.",
+      "cost": "18000",
+      "manu": "Elanus Risk Control Services",
+      "notes": "Movement",
+      "id": "explorers_jetpack_chest"
+    },
+    {
+      "name": "Jump Jets",
+      "type": "Legs",
+      "description": "Quickly compresses the atmosphere and ejects it from boosters built into the soles of the boots, allowing for longer jumps and brief hovering.",
+      "feature": "Your jump distance is tripled. If you jump straight up, you can hover at the apex of your jump for 1 round of combat (6 sec). ",
+      "cost": "14000",
+      "manu": "Elanus Risk Control Services",
+      "notes": "Movement",
+      "id": "jump_jets_legs"
     }
   ]
 }
