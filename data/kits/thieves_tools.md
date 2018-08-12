@@ -2,7 +2,7 @@
 id: thieves_tools
 name: "Thieves' tools"
 type: null
-cost: 5000
+cost: 3000
 ---
 
 Thieves' tools are used to _manually_ disarm traps, breach security doors, and open locked containers. Criminals prefer thieves'

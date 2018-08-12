@@ -2,7 +2,7 @@
 id: musical_instrument
 name: "Musical Instrument"
 type: artisan
-cost: 3000
+cost: 1000
 ---
 
 Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have
