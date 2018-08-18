@@ -121,7 +121,6 @@
           {
             header: 'Mass Effect 5e'
           },
-          { title: 'News', href: '/news' },
           { title: 'Get Involved', href: '/contributing' },
           { title: 'About the Project', href: '/about' },
           { title: `Changelog`, href: '/changelog' }

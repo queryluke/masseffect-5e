@@ -8,8 +8,8 @@ fs.readdirSync('./data/classes').map(file => {
 })
 require('./data/races.json').data.map(r => routes.push(`/phb/races/${r.id}`))
 
-require('fs').readdirSync('./data/posts').map((file) => {
-  routes.push('/news/' + (file.replace(/^(\d+-\d+-\d+)-|(\.md$)/g, '')))
+require('fs').readdirSync('./data/changelog').map((file) => {
+  routes.push('/changelog/' + (file.replace(/\.md$/g, '')))
 })
 
 module.exports = {

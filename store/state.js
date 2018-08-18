@@ -23,11 +23,10 @@ export default {
   kits: [],
   mobileFilterDialog: false,
   pageTitle: 'Mass Effect 5e',
-  posts: [],
   primaryNavigation: [
     { route: '/phb/intro', title: 'Player\'s Handbook' },
     { route: '/assets', title: 'Assets' },
-    { route: '/news', title: 'News' },
+    { route: '/changelog', title: 'Changelog' },
     { route: '/about', title: 'About' },
     { route: '/contributing', title: 'Feedback' }
   ],

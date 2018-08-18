@@ -41,22 +41,6 @@ export default {
   getMutableData: (state, getters) => name => {
     return JSON.parse(JSON.stringify(getters.getData(name)))
   },
-  getPost: state => slug => {
-    return state.posts.find(post => post.slug === slug)
-  },
-  getPosts: state => (limit = null, order = 'desc') => {
-    const sortOrder = order === 'desc' ? 1 : -1
-    let posts = state.posts.sort((a, b) => {
-      if (a === b) {
-        return 0
-      }
-      return (a.created < b.created) ? sortOrder : sortOrder * -1
-    })
-    if (Number.isInteger(limit)) {
-      posts.slice(0, limit)
-    }
-    return posts
-  },
   getSheetUrl: state => name => {
     return state.data[name].source
   },
@@ -66,15 +50,23 @@ export default {
   getVersion: state => {
     return state.version
   },
-  getVersions: state => {
-    return state.versions.sort((a, b) => {
-      const verA = versionTotal(a)
-      const verB = versionTotal(b)
+  getSingleVersion: state => slug => {
+    return state.versions.find(version => version.slug === slug)
+  },
+  getVersions: state => (limit = null, order = 'desc') => {
+    const sortOrder = order === 'desc' ? 1 : -1
+    let versions = state.versions.sort((a, b) => {
+      const verA = versionTotal(a.slug)
+      const verB = versionTotal(b.slug)
       if (verA === verB) {
         return 0
       }
-      return (verA < verB) ? 1 : -1
+      return (verA < verB) ? sortOrder : sortOrder * -1
     })
+    if (Number.isInteger(limit)) {
+      versions.slice(0, limit)
+    }
+    return versions
   },
   isBookmarked: (state, getters) => card => {
     return getters.bookmarks.find(bookmark => bookmark.card.id === card.id) !== undefined
