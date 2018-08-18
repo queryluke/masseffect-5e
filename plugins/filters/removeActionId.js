@@ -1,5 +1,7 @@
 function removeActionId (id) {
-  return id.replace(/---.*?$/, '')
+  if (id) {
+    return id.replace(/---.*?$/, '')
+  }
 }
 
 export default removeActionId
