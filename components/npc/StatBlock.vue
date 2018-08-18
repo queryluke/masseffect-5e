@@ -1,72 +1,73 @@
 <template lang="pug">
   div
-    v-tabs(v-model="active" slider-color="secondary" color="transparent")
-      v-tab(:href="`#${stats.id}-stat_block`") Stat Block
-      v-tab(:href="`#${stats.id}-images`") Images
-      v-tab-item(:id="`${stats.id}-stat_block`")
-        div.pb-0.mt-3
-          p.red--text.text--darken-4.headline.small-caps.mb-0
-            strong {{ stats.name }}
-            span(v-if="stats.unit" style="text-transform: uppercase").body-2.grey--text.text--darken-4.pl-2 ({{ stats.unit }})
-          p #[em {{ stats.size }} {{ stats.type }}, {{ stats.alignment }}]
-        div(style="position:relative;").pt-0
-          div.hr
-          ul.list-unstyled.pl-0
-            li #[strong Armor Class] {{ stats.ac }}
-            li #[strong Hit Points] {{ renderPoints(stats.hp) }}
-            li(v-if="stats.sp") #[strong Shield Points] {{ stats.sp.shields }} ({{ stats.sp.regen }} regen)
-            li(v-if="stats.barrier") #[strong Barrier] {{ stats.barrier }} {{ stats.barrier | pluralize('tick') }}
-            li #[strong Speed] {{ stats.speed }}
-          div.hr
-          v-container.py-0
-            v-layout
-              v-flex(xs2 v-for="(score, ability) in stats.abilityScores" v-bind:key="ability").text-xs-center
-                p.ma-0 #[strong {{ ability.toUpperCase() }}]
-                p.ma-0 {{ score }} ({{ score | abilityBonus }})
-          div.hr
-          ul.list-unstyled.pl-0
-            li(v-if="hasFeature('savingThrows')") #[strong Saving Throws] {{ stats | npcSavingThrows }}
-            li(v-if="skills") #[strong Skills] {{ skills }}
-            li(v-if="hasFeature('damageVulnerabilities')") #[strong Damage Vulnerabilities] {{ stats.damageVulnerabilities.join(', ') }}
-            li(v-if="hasFeature('damageResistances')") #[strong Damage Resistances] {{ stats.damageResistances.join(', ') }}
-            li(v-if="hasFeature('damageImmunities')") #[strong Damage Immunities] {{ stats.damageImmunities.join(', ') }}
-            li(v-if="hasFeature('conditionImmunities')") #[strong Condition Immunities] {{ stats.conditionImmunities.join(', ') }}
-            li(v-if="hasFeature('senses')") #[strong Senses] {{ stats.senses.join(', ') }}
-            li #[strong Challenge] {{ stats.cr }} ({{ stats.xp }} XP)
-          div.hr
-          p(v-for="feature in stats.features" v-bind:key="feature.id")
-            npc-common-feature(:feature="feature" v-bind:npc="stats")
-          npc-biotics(v-if="stats.spellcasting" v-bind:stats="stats")
-          npc-tech(v-if="stats.techcasting" v-bind:stats="stats")
-          p(v-if="hasFeature('actions')").title.underline-heading.small-caps Actions
-          div(v-for="(action, index) in stats.actions" v-bind:key="index")
-            div(v-if="action.type === 'attack'")
-              npc-attack(:feature="action" v-bind:npc="stats")
-            p(v-else-if="action.type === 'common'")
-              npc-common-feature(:feature="action" v-bind:npc="stats")
-          div(v-if="hasFeature('legendaryActions')")
-            p.title.underline-heading.small-caps Legendary Actions
-            p.
-              The {{ stats.name }} can take 3 legendary actions, choosing from the options below. Only one legendary action can
-              be used at a time and only at the end of another creature's turn. The {{ stats.name }} regains spent legendary
-              actions at the start of his turn.
-            p(v-for="la in stats.legendaryActions" v-bind:key="la.id")
-              npc-common-feature(:feature="la" v-bind:npc="stats")
-          div(v-if="hasFeature('lairActions')")
-            p.title.underline-heading.small-caps Lair Actions
-            p.
-              On initiative count 20 (losing initiative ties), the {{ stats.name }} takes a lair action to cause one of the
-              following effects; it can't use the same effect two rounds in a row:
-            ul
-              li(v-for="(action, index) in stats.lairActions" v-bind:key="index") {{ action.description }}
-          div(v-if="hasFeature('reactions')")
-            p.title.underline-heading.small-caps Reactions
-            p(v-for="reaction in stats.reactions" v-bind:key="reaction.id")
-              npc-common-feature(:feature="reaction" v-bind:npc="stats")
-      v-tab-item(:id="`${stats.id}-images`")
-        div.pb-0.mt-3
-          img(:src="stats.image" v-if="stats.image")
-
+    div.pb-0.mt-3
+      p.red--text.text--darken-4.headline.small-caps.mb-0
+        strong {{ stats.name }}
+        span(v-if="stats.unit" style="text-transform: uppercase").body-2.grey--text.text--darken-4.pl-2 ({{ stats.unit }})
+      p #[em {{ stats.size }} {{ stats.type }}, {{ stats.alignment }}]
+    div(style="position:relative;").pt-0
+      v-btn(@click="imageDialog = true" color="secondary" dark small fab absolute right top v-if="stats.image") #[v-icon photo]
+      div.hr
+      ul.list-unstyled.pl-0
+        li #[strong Armor Class] {{ stats.ac }}
+        li #[strong Hit Points] {{ renderPoints(stats.hp) }}
+        li(v-if="stats.sp") #[strong Shield Points] {{ stats.sp.shields }} ({{ stats.sp.regen }} regen)
+        li(v-if="stats.barrier") #[strong Barrier] {{ stats.barrier }} {{ stats.barrier | pluralize('tick') }}
+        li #[strong Speed] {{ stats.speed }}
+      div.hr
+      v-container.py-0
+        v-layout
+          v-flex(xs2 v-for="(score, ability) in stats.abilityScores" v-bind:key="ability").text-xs-center
+            p.ma-0 #[strong {{ ability.toUpperCase() }}]
+            p.ma-0 {{ score }} ({{ score | abilityBonus }})
+      div.hr
+      ul.list-unstyled.pl-0
+        li(v-if="hasFeature('savingThrows')") #[strong Saving Throws] {{ stats | npcSavingThrows }}
+        li(v-if="skills") #[strong Skills] {{ skills }}
+        li(v-if="hasFeature('damageVulnerabilities')") #[strong Damage Vulnerabilities] {{ stats.damageVulnerabilities.join(', ') }}
+        li(v-if="hasFeature('damageResistances')") #[strong Damage Resistances] {{ stats.damageResistances.join(', ') }}
+        li(v-if="hasFeature('damageImmunities')") #[strong Damage Immunities] {{ stats.damageImmunities.join(', ') }}
+        li(v-if="hasFeature('conditionImmunities')") #[strong Condition Immunities] {{ stats.conditionImmunities.join(', ') }}
+        li(v-if="hasFeature('senses')") #[strong Senses] {{ stats.senses.join(', ') }}
+        li #[strong Challenge] {{ stats.cr }} ({{ stats.xp }} XP)
+      div.hr
+      p(v-for="feature in stats.features" v-bind:key="feature.id")
+        npc-common-feature(:feature="feature" v-bind:npc="stats")
+      npc-biotics(v-if="stats.spellcasting" v-bind:stats="stats")
+      npc-tech(v-if="stats.techcasting" v-bind:stats="stats")
+      p(v-if="hasFeature('actions')").title.underline-heading.small-caps Actions
+      div(v-for="(action, index) in stats.actions" v-bind:key="index")
+        div(v-if="action.type === 'attack'")
+          npc-attack(:feature="action" v-bind:npc="stats")
+        p(v-else-if="action.type === 'common'")
+          npc-common-feature(:feature="action" v-bind:npc="stats")
+      div(v-if="hasFeature('legendaryActions')")
+        p.title.underline-heading.small-caps Legendary Actions
+        p.
+          The {{ stats.name }} can take 3 legendary actions, choosing from the options below. Only one legendary action can
+          be used at a time and only at the end of another creature's turn. The {{ stats.name }} regains spent legendary
+          actions at the start of his turn.
+        p(v-for="la in stats.legendaryActions" v-bind:key="la.id")
+          npc-common-feature(:feature="la" v-bind:npc="stats")
+      div(v-if="hasFeature('lairActions')")
+        p.title.underline-heading.small-caps Lair Actions
+        p.
+          On initiative count 20 (losing initiative ties), the {{ stats.name }} takes a lair action to cause one of the
+          following effects; it can't use the same effect two rounds in a row:
+        ul
+          li(v-for="(action, index) in stats.lairActions" v-bind:key="index") {{ action.description }}
+      div(v-if="hasFeature('reactions')")
+        p.title.underline-heading.small-caps Reactions
+        p(v-for="reaction in stats.reactions" v-bind:key="reaction.id")
+          npc-common-feature(:feature="reaction" v-bind:npc="stats")
+    v-dialog(v-model="imageDialog" width="500" v-if="stats.image")
+      v-card
+        v-card-title.headline {{ stats.name }} Images
+        v-card-text.text-xs-center
+          img(:src="stats.image" width="450")
+        v-card-actions
+          v-spacer
+          v-btn(@click="imageDialog = false" color="primary" flat="flat")
 </template>
 
 <script>
@@ -96,7 +97,7 @@
     },
     data () {
       return {
-        active: `#${this.stats.id}-stat_block`
+        imageDialog: false
       }
     },
     methods: {
