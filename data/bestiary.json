@@ -1,5 +1,5 @@
 {
-  "updated": "June 20, 2018 @  3:54 PM",
+  "updated": "August  8, 2018 @  2:59 PM",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTIwlLPyS6hKc2XoW5tm901kmWbiZD_cHiUBWrH2V-ceinyWWz5SiGFfnRehK4CWrewGWubXBldbesh/pubhtml",
   "data": [
     {
@@ -10,6 +10,9 @@
 
       ],
       "legendaryActions": [
+
+      ],
+      "lairActions": [
 
       ],
       "features": [
@@ -93,6 +96,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -169,6 +175,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -239,6 +248,9 @@
 
       ],
       "legendaryActions": [
+
+      ],
+      "lairActions": [
 
       ],
       "features": [
@@ -312,6 +324,9 @@
 
       ],
       "legendaryActions": [
+
+      ],
+      "lairActions": [
 
       ],
       "features": [
@@ -406,6 +421,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -475,6 +493,9 @@
 
       ],
       "legendaryActions": [
+
+      ],
+      "lairActions": [
 
       ],
       "features": [
@@ -550,6 +571,9 @@
 
       ],
       "legendaryActions": [
+
+      ],
+      "lairActions": [
 
       ],
       "features": [
@@ -634,6 +658,9 @@
 
       ],
       "legendaryActions": [
+
+      ],
+      "lairActions": [
 
       ],
       "features": [
@@ -723,6 +750,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -791,6 +821,9 @@
 
       ],
       "legendaryActions": [
+
+      ],
+      "lairActions": [
 
       ],
       "features": [
@@ -885,6 +918,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -967,6 +1003,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -1045,6 +1084,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -1119,6 +1161,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -1187,6 +1232,9 @@
 
       ],
       "legendaryActions": [
+
+      ],
+      "lairActions": [
 
       ],
       "features": [
@@ -1272,6 +1320,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -1351,6 +1402,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -1426,6 +1480,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -1498,6 +1555,9 @@
 
       ],
       "legendaryActions": [
+
+      ],
+      "lairActions": [
 
       ],
       "features": [
@@ -1575,6 +1635,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -1643,6 +1706,9 @@
 
       ],
       "legendaryActions": [
+
+      ],
+      "lairActions": [
 
       ],
       "features": [
@@ -1772,6 +1838,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -1844,6 +1913,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -1914,6 +1986,9 @@
 
       ],
       "legendaryActions": [
+
+      ],
+      "lairActions": [
 
       ],
       "features": [
@@ -1997,6 +2072,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -2063,6 +2141,9 @@
 
       ],
       "legendaryActions": [
+
+      ],
+      "lairActions": [
 
       ],
       "features": [
@@ -2133,6 +2214,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -2142,7 +2226,7 @@
         "str": 22,
         "dex": 10,
         "con": 25,
-        "int": 11,
+        "int": 18,
         "wis": 6,
         "cha": 8
       },
@@ -2207,7 +2291,7 @@
         "mass_accelerator_machinegun---geth_armature"
       ],
       "savingThrows": [
-
+        "int"
       ],
       "skills": [
         "perception"
@@ -2221,6 +2305,9 @@
 
       ],
       "legendaryActions": [
+
+      ],
+      "lairActions": [
 
       ],
       "features": [
@@ -2306,6 +2393,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -2315,7 +2405,7 @@
         "str": 28,
         "dex": 8,
         "con": 28,
-        "int": 9,
+        "int": 20,
         "wis": 6,
         "cha": 8
       },
@@ -2383,7 +2473,7 @@
         "siege_pulse_attack"
       ],
       "savingThrows": [
-
+        "int"
       ],
       "skills": [
         "perception"
@@ -2401,6 +2491,9 @@
 
       ],
       "legendaryActions": [
+
+      ],
+      "lairActions": [
 
       ],
       "features": [
@@ -2464,7 +2557,7 @@
         "tactical_cloak"
       ],
       "savingThrows": [
-
+        "int"
       ],
       "skills": [
         "electronics",
@@ -2485,6 +2578,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -2494,7 +2590,7 @@
         "str": 20,
         "dex": 11,
         "con": 18,
-        "int": 11,
+        "int": 13,
         "wis": 8,
         "cha": 4
       },
@@ -2567,6 +2663,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -2632,7 +2731,8 @@
         "summon_turret_or_drone"
       ],
       "savingThrows": [
-        "con"
+        "con",
+        "int"
       ],
       "skills": [
         "electronics"
@@ -2646,6 +2746,9 @@
 
       ],
       "legendaryActions": [
+
+      ],
+      "lairActions": [
 
       ],
       "features": [
@@ -2741,6 +2844,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -2810,6 +2916,9 @@
 
       ],
       "legendaryActions": [
+
+      ],
+      "lairActions": [
 
       ],
       "features": [
@@ -2887,6 +2996,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -2959,6 +3071,9 @@
 
       ],
       "legendaryActions": [
+
+      ],
+      "lairActions": [
 
       ],
       "features": [
@@ -3044,6 +3159,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -3119,6 +3237,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -3181,6 +3302,177 @@
     },
     {
       "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "lairActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": {
+        "level": "innate",
+        "perDay": "10",
+        "tpSpent": "2",
+        "dc": 10,
+        "hit": 2,
+        "spells": [
+          "shocking_grasp"
+        ]
+      },
+      "abilityScores": {
+        "str": 12,
+        "dex": 16,
+        "con": 11,
+        "int": 10,
+        "wis": 14,
+        "cha": 8
+      },
+      "hp": {
+        "die": "6",
+        "average": "35",
+        "numDice": "10",
+        "mod": 0
+      },
+      "senses": [
+        "infrared vision 30m"
+      ],
+      "name": "FENRIS Mech",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/32/ME2_FENRIS_Mech.png/revision/latest/scale-to-width-down/350?cb=20120419003938",
+      "cr": "1/2",
+      "size": "Small",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "14m",
+      "dc": "10",
+      "ac": "14",
+      "xp": "100",
+      "id": "fenris_mech",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "aggressive",
+        "pounce---fenris_mech",
+        "stun---fenris_mech",
+        "post-mortem_explosion---fenris_mech"
+      ],
+      "savingThrows": [
+        "dex"
+      ],
+      "skills": [
+        "perception"
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "lairActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": {
+        "level": "innate",
+        "perDay": "5",
+        "tpSpent": "1",
+        "dc": 9,
+        "hit": 1,
+        "spells": [
+          "shocking_grasp"
+        ]
+      },
+      "abilityScores": {
+        "str": 10,
+        "dex": 12,
+        "con": 11,
+        "int": 8,
+        "wis": 6,
+        "cha": 5
+      },
+      "hp": {
+        "die": "8",
+        "average": "22",
+        "numDice": "5",
+        "mod": 0
+      },
+      "senses": [
+        "infrared vision 30m"
+      ],
+      "name": "LOKI Mech",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/c/c0/ME2_Loki_Mech.png/revision/latest?cb=20120917060158",
+      "cr": "1/8",
+      "size": "Medium",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "8m",
+      "dc": "10",
+      "ac": "10",
+      "xp": "25",
+      "id": "loki_mech",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "chatter_variant",
+        "limited_tactics",
+        "m-4_shuriken",
+        "m-3_predator",
+        "post-mortem_explosion---loki_mech"
+      ],
+      "savingThrows": [
+
+      ],
+      "skills": [
+        "perception"
+      ]
+    },
+    {
+      "actions": [
         {
           "type": "common",
           "name": "Multiattack",
@@ -3191,6 +3483,9 @@
 
       ],
       "legendaryActions": [
+
+      ],
+      "lairActions": [
 
       ],
       "features": [
@@ -3267,6 +3562,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -3341,6 +3639,9 @@
 
       ],
       "legendaryActions": [
+
+      ],
+      "lairActions": [
 
       ],
       "features": [
@@ -3427,6 +3728,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -3495,6 +3799,9 @@
 
       ],
       "legendaryActions": [
+
+      ],
+      "lairActions": [
 
       ],
       "features": [
@@ -3577,6 +3884,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -3652,6 +3962,424 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 20,
+        "dex": 6,
+        "con": 18,
+        "int": 16,
+        "wis": 8,
+        "cha": 12
+      },
+      "hp": {
+        "die": "10",
+        "average": "161",
+        "numDice": "17",
+        "mod": 68
+      },
+      "sp": {
+        "shields": 50,
+        "regen": "10"
+      },
+      "senses": [
+        "infared vision 60m"
+      ],
+      "name": "YMIR Mech",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/5/5f/ME2_YMIR_Mech.png/revision/latest/scale-to-width-down/700?cb=20120419005946",
+      "cr": "11",
+      "size": "Large",
+      "type": "Synthetic",
+      "unit": "Mech",
+      "alignment": "Neutral",
+      "profBonus": "4",
+      "barrier": null,
+      "speed": "6m",
+      "dc": "18",
+      "ac": "18",
+      "xp": "7200",
+      "id": "ymir_mech",
+      "damageResistances": [
+        "cold",
+        "bludgeoning",
+        "piercing",
+        "slashing"
+      ],
+      "damageImmunities": [
+        "poison",
+        "psychic"
+      ],
+      "conditionImmunities": [
+        "petrified",
+        "poisoned"
+      ],
+      "damageVulnerabilities": [
+        "lightning"
+      ],
+      "featuresActionsReactions": [
+        "mass_accelerator_machinegun---ymir_mech",
+        "rocket_launcher",
+        "post-mortem_explosion---ymir_mech"
+      ],
+      "savingThrows": [
+        "str",
+        "int"
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The brood warrior makes two Impale attacks or attempts to grapple a creature and makes an Impale attack."
+        }
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "lairActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": {
+        "level": "innate",
+        "dc": 12,
+        "hit": 4,
+        "mod": "Wisdom",
+        "spellList": [
+          "5-warp",
+          "3-stasis"
+        ],
+        "spells": [
+          {
+            "level": "5",
+            "spells": [
+              "warp"
+            ]
+          },
+          {
+            "level": " 3",
+            "spells": [
+              "stasis"
+            ]
+          }
+        ]
+      },
+      "techcasting": false,
+      "abilityScores": {
+        "str": 19,
+        "dex": 12,
+        "con": 17,
+        "int": 7,
+        "wis": 15,
+        "cha": 7
+      },
+      "hp": {
+        "die": "10",
+        "average": "102",
+        "numDice": "12",
+        "mod": 36
+      },
+      "senses": [
+        "blindsight 4m"
+      ],
+      "name": "Rachni Brood Warrior",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/e5/Rachni_Brood_Warrior.PNG/revision/latest/scale-to-width-down/700?cb=20100824160815",
+      "cr": "4",
+      "size": "Large",
+      "type": "Organic",
+      "unit": "Rachni",
+      "alignment": "Unaligned",
+      "profBonus": "2",
+      "barrier": "5",
+      "speed": "10m",
+      "dc": "14",
+      "ac": "15",
+      "xp": "1100",
+      "id": "rachni_brood_warrior",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "acid_spit---rachni_brood_warrior",
+        "impale---rachni_brood_warroir",
+        "grappler",
+        "barrier"
+      ],
+      "savingThrows": [
+        "con",
+        "wis"
+      ],
+      "skills": [
+        "perception"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "type": "common",
+          "name": "Multiattack",
+          "description": "The rachni queen makes one bite attack and two impale attacks."
+        }
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "lairActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 25,
+        "dex": 10,
+        "con": 18,
+        "int": 22,
+        "wis": 25,
+        "cha": 18
+      },
+      "hp": {
+        "die": "20",
+        "average": "319",
+        "numDice": "22",
+        "mod": 88
+      },
+      "senses": [
+        "blindsight 10m"
+      ],
+      "name": "Rachni Queen",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/38/Noveria_rachni_queen.png/revision/latest/scale-to-width-down/700?cb=20090919061419",
+      "cr": "18",
+      "size": "Gargantuan",
+      "type": "Organic",
+      "unit": "Rachni",
+      "alignment": "Lawful neutral",
+      "profBonus": "6",
+      "barrier": null,
+      "speed": "6m",
+      "dc": "19",
+      "ac": "21",
+      "xp": "20000",
+      "id": "rachni_queen",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+        "charmed"
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "call_workers",
+        "call_soldiers",
+        "call_brood_warrior",
+        "bite---rachni_queen",
+        "impale---rachni_queen"
+      ],
+      "savingThrows": [
+        "wis",
+        "con",
+        "str"
+      ],
+      "skills": [
+        "perception",
+        "history"
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "lairActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 14,
+        "dex": 16,
+        "con": 12,
+        "int": 2,
+        "wis": 11,
+        "cha": 4
+      },
+      "hp": {
+        "die": "8",
+        "average": "44",
+        "numDice": "8",
+        "mod": 8
+      },
+      "senses": [
+        "blindsight 4m"
+      ],
+      "name": "Rachni Soldier",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/4/4f/Codex_ME_-_Rachni.png/revision/latest?cb=20140820042133",
+      "cr": "1",
+      "size": "Medium",
+      "type": "Organic",
+      "unit": "Rachni",
+      "alignment": "Unaligned",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "10m",
+      "dc": "14",
+      "ac": "14",
+      "xp": "200",
+      "id": "rachni_soldier",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "acid_spit---rachni_soldier",
+        "impale---rachni_soldier",
+        "grappler",
+        "ambusher"
+      ],
+      "savingThrows": [
+        "con",
+        "wis"
+      ],
+      "skills": [
+        "stealth",
+        "perception"
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "lairActions": [
+
+      ],
+      "features": [
+
+      ],
+      "spellcasting": false,
+      "techcasting": false,
+      "abilityScores": {
+        "str": 8,
+        "dex": 10,
+        "con": 12,
+        "int": 1,
+        "wis": 7,
+        "cha": 3
+      },
+      "hp": {
+        "die": "6",
+        "average": "9",
+        "numDice": "2",
+        "mod": 2
+      },
+      "senses": [
+        "blindsight 4m"
+      ],
+      "name": "Rachni Worker",
+      "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/e0/Rachni_Worker.png/revision/latest?cb=20100824223955",
+      "cr": "1/8",
+      "size": "Small",
+      "type": "Organic",
+      "unit": "Rachni",
+      "alignment": "Unaligned",
+      "profBonus": "2",
+      "barrier": null,
+      "speed": "12m",
+      "dc": "13",
+      "ac": "13",
+      "xp": "25",
+      "id": "rachni_worker",
+      "damageResistances": [
+
+      ],
+      "damageImmunities": [
+
+      ],
+      "conditionImmunities": [
+
+      ],
+      "damageVulnerabilities": [
+
+      ],
+      "featuresActionsReactions": [
+        "acid_splash---rachni_worker",
+        "bite---rachni_worker"
+      ],
+      "savingThrows": [
+        "wis"
+      ],
+      "skills": [
+
+      ]
+    },
+    {
+      "actions": [
+
+      ],
+      "reactions": [
+
+      ],
+      "legendaryActions": [
+
+      ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -3720,6 +4448,9 @@
 
       ],
       "legendaryActions": [
+
+      ],
+      "lairActions": [
 
       ],
       "features": [
@@ -3854,6 +4585,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -3932,6 +4666,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -4002,6 +4739,9 @@
 
       ],
       "legendaryActions": [
+
+      ],
+      "lairActions": [
 
       ],
       "features": [
@@ -4075,6 +4815,9 @@
 
       ],
       "legendaryActions": [
+
+      ],
+      "lairActions": [
 
       ],
       "features": [
@@ -4154,6 +4897,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -4226,6 +4972,9 @@
 
       ],
       "legendaryActions": [
+
+      ],
+      "lairActions": [
 
       ],
       "features": [
@@ -4302,6 +5051,9 @@
       "legendaryActions": [
 
       ],
+      "lairActions": [
+
+      ],
       "features": [
 
       ],
@@ -4371,6 +5123,9 @@
 
       ],
       "legendaryActions": [
+
+      ],
+      "lairActions": [
 
       ],
       "features": [

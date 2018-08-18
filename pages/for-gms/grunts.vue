@@ -25,7 +25,6 @@
               bottom
               hint="Challenge Rating"
               persistent-hint
-              required
             )
           v-flex(xs12 sm6 md4).px-2
             v-select(
@@ -85,9 +84,11 @@
         race.available_classes = race.available_classes.split(',').map((v) => v.trim())
         return race
       })
+      this.races.unshift({id: 'random', name: 'Random'})
 
       // Setup classes
       this.classes = this.getMutableData('classes')
+      this.classes.unshift({id: 'random', name: 'Random'})
     },
     computed: {
       ...mapGetters(['getData', 'getMutableData', 'getGruntConfig']),
@@ -136,37 +137,9 @@
     mixins: [GruntGenerator],
     methods: {
       ...mapActions(['updateGruntConfig']),
-      compare (a, b) {
-        let comparison = 0
-        if (a.name > b.name) {
-          comparison = 1
-        } else if (b.name > a.name) {
-          comparison = -1
-        }
-        return comparison
-      },
       getGrunt () {
-        // Get the race
-        let race = {}
-        if (this.race.id === 'random') {
-          if (this.sc.id === 'random' || this.sc.id === 'none') {
-            race = this.randomValue(this.races)
-          } else {
-            const races = this.filterRaces(this.sc.id)
-            race = this.randomValue(races)
-          }
-        } else {
-          race = this.race
-        }
-
-        // Get the class
-        let sc = {}
-        if (this.sc.id === 'random') {
-          const classes = this.filterClasses(race.id)
-          sc = this.randomValue(classes)
-        } else {
-          sc = this.sc
-        }
+        const race = this.race.id === 'random' ? this.randomValue(this.races.filter(race => race.id !== 'random')) : this.race
+        const sc = this.sc.id === 'random' ? this.randomValue(this.classes.filter(sc => sc.id !== 'random')) : this.sc
         this.grunt = this.generateGrunt(this.cr, race, sc)
       }
     }

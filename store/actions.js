@@ -1,10 +1,8 @@
 const fm = require('front-matter')
 const _ = require('lodash')
-const postFilenameRegex = /^(\d+-\d+-\d+)-(.*)\.md$/g
 
-let postFilenameParts
 const jsonDirs = ['classes']
-const mdDirs = ['posts', 'backgrounds', 'conditions', 'kits', 'class_features', 'changelog', 'spells']
+const mdDirs = ['backgrounds', 'conditions', 'kits', 'class_features', 'changelog', 'spells']
 
 export default {
   nuxtServerInit () {
@@ -19,17 +17,10 @@ export default {
           const fc = fm(fs.readFileSync(`${path}/${file}`, 'utf8'))
           let item = Object.assign(fc.attributes, {})
 
-          if (dir === 'posts') {
-            while ((postFilenameParts = postFilenameRegex.exec(file)) !== null) {
-              item.filename = postFilenameParts[0]
-              item.created = new Date(postFilenameParts[1])
-              item.slug = postFilenameParts[2]
-            }
-            item.url = `/news/${item.slug}`
-          }
-
           if (dir === 'changelog') {
-            item = file.replace(/.md$/, '')
+            item.date = new Date(item.date)
+            item.slug = file.replace(/.md$/, '')
+            item.url = `/changelog/${item.slug}`
           }
           return item
         })

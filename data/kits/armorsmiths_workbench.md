@@ -2,7 +2,7 @@
 id: armorsmiths_workbench
 name: "Armorsmith's Workbench"
 type: artisan
-cost: 3000
+cost: 6000
 ---
 
 An armorsmith's workbench allows you to work with alloys and ceramic plates, letting you to reshape armor for different races,

@@ -2,7 +2,7 @@
 id: weaponsmiths_workbench
 name: "Weaponsmith's Workbench"
 type: artisan
-cost: 3000
+cost: 6000
 ---
 
 An weaponsmith's workbench allows you to customize, craft, and repair weapons.

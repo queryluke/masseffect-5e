@@ -7,6 +7,7 @@
         v-card.grey.lighten-3
           v-card-text
             p.title {{ item.name }}
+            p.body-1 Cost: {{ item.cost }}
             markdown-file(:id="item.id" itemType="kits")
           v-card-actions
             bookmark-button(:card="item" type="kits" v-bind:props="{flat: true}")

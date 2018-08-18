@@ -29,5 +29,8 @@ advancementOptions:
   description: On a failed save, the target becomes {stunned} until the end of your
     next turn
 ---
-Alter your mass and choose a creature or object you can see within range. Use the target's mass to pull yourself to its location with incredible force. Any creature or object within a 2m sphere must make a Dexterity saving throw. On a failed save, a creature takes 1d6 force damage and becomes {prone}. On a successful save, a creature takes half as much damage.
-The damage increases by 1d6 when you reach the 5th level (2d6), 11th level(3d6) and 17th level(4d6).
+Alter your mass and choose a creature or object you can see within range. Use the target's mass to pull yourself to its
+location with incredible force. Any creature or object within a 2m sphere must make a Dexterity saving throw. On a failed
+save, a creature takes 1d6 force damage and becomes {prone}. On a successful save, a creature takes half as much damage.
+
+The damage increases by 1d6 when you reach the 5th level (2d6), 11th level (3d6) and 17th level (4d6).

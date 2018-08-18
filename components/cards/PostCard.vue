@@ -2,9 +2,9 @@
   v-card(hover v-bind:to="post.url" nuxt).post__card
     v-card-media(:src="post.image" v-bind:height="height")
       div.date-grid.text-xs-center
-        span.month.date-part {{ post.created | formatDate('MMM') }}
-        span.day.date-part {{ post.created | formatDate('DD') }}
-        span.year.date-part {{ post.created | formatDate('YYYY') }}
+        span.month.date-part {{ post.date | formatDate('MMM') }}
+        span.day.date-part {{ post.date | formatDate('DD') }}
+        span.year.date-part {{ post.date | formatDate('YYYY') }}
     v-card-title.mb-0.pb-0
       p.headline.mb-0 {{ post.title }}
     v-card-text.pt-0

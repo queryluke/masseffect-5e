@@ -10,10 +10,10 @@ effect:
 - debuff
 damageType: []
 castingTime: Action
-duration: 10 minutes
+duration: 1 minute
 concentration: true
 distance:
-  range: 20m
+  range: 30m
   aoeType: 
   aoeDistance: 
 detonates: 
@@ -23,9 +23,13 @@ availableClasses:
 - sentinel
 - vanguard
 advancementOptions:
-- name: Vulnerable
-  description: A creature in Stasis takes +2 damage from all damage rolls.
-- name: Heavy Stasis
+- name: Shatter
+  description: When stasis ends via a successful saving throw or detonating attack, the target takes 2d8 force damage for
+    each round of combat it was in stasis.
+- name: Deep Stasis
   description: The creature has disadvantage on its saving throws to escape Stasis.
 ---
-Lock a target in a high-gravity mass effect field. Choose a creature you can see within range. The creature must make a Strength saving throw. On a failed save, the creature is {restrained} and {primed-force} for the duration of the spell. At the beginning of the creature's turn, it can use its action to make the saving throw again. A detonating attack immediately ends the spell.
+Lock a target in a high-gravity mass effect field. Choose a creature you can see within range. The creature must make a
+Strength saving throw. On a failed save, the creature is paralyzed, primed (force), and has resistance to all damage for
+the duration of the spell. At the end of each of its turns, the target can make another Strength saving throw. On a success,
+the spell ends. A detonating attack immediately ends the spell.

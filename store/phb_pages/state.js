@@ -163,6 +163,9 @@ export default {
     },
     'for-gms-armor-creation': {
       name: 'Creating Armor'
+    },
+    'for-gms-encounter-builder': {
+      name: 'Encounter Builder'
     }
   }
 }

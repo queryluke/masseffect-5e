@@ -147,9 +147,9 @@
   export default {
     components: { PostCard },
     computed: {
-      ...mapGetters(['getPosts']),
+      ...mapGetters(['getVersions']),
       recentPosts () {
-        return this.getPosts(6)
+        return this.getVersions(6)
       }
     },
     data () {

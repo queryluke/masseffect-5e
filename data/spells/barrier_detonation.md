@@ -7,7 +7,7 @@ attackType: []
 effect:
 - control
 damageType: []
-castingTime: Bonus
+castingTime: Bonus Action
 duration: Instant
 concentration: false
 distance:
@@ -26,5 +26,8 @@ advancementOptions:
 - name: Heavy Lift
   description: Large and smaller creatures and objects are affected.
 ---
-Expend all of your remaining barrier ticks to create a negative mass effect field in a 2m sphere originating from you. Each Medium or smaller creature or object within the sphere must succeed on Dexterity saving throw or becomes {lifted}. If you expend at least 4 barrier ticks, Large targets must make the saving throw.
+Expend all of your remaining barrier ticks to create a negative mass effect field in a 2m sphere originating from you.
+Each Medium or smaller creature or object within the sphere must succeed on Dexterity saving throw or becomes lifted.
+If you expend at least 4 barrier ticks, Large targets must make the saving throw.
+
 Increase the range of the sphere by 2m at 5th level (4m), 11th level (6m), and 17th level (8m).

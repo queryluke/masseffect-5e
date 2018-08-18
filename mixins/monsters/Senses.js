@@ -9,7 +9,7 @@ export const Senses = {
       }
 
       if (ppProficient) {
-        pp += monster.profBonus
+        pp += Number.parseInt(monster.profBonus, 10)
       }
 
       monster.senses.push(`passive Perception ${pp}`)

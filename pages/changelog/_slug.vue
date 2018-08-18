@@ -3,11 +3,11 @@
     v-container
       div.news-post
         h1.display-3 {{ post.title }}
-        h2.subheading #[em {{ post.created | formatDate('DDDD, MMMM DD, YYYY') }}]
+        h2.subheading #[em {{ post.date | formatDate('DDDD, MMMM DD, YYYY') }}]
         div(v-html="postFile").my-3
-      v-btn(to="/news" nuxt).primary
+      v-btn(to="/changelog" nuxt).primary
         v-icon keyboard_arrow_left
-        span Back to news
+        span Back to changelog
 </template>
 
 <script>
@@ -15,13 +15,13 @@
 
   export default {
     computed: {
-      ...mapGetters(['getPost']),
+      ...mapGetters(['getSingleVersion']),
       post () {
-        return this.getPost(this.$route.params.slug)
+        return this.getSingleVersion(this.$route.params.slug)
       },
       postFile () {
-        if (this.post.filename) {
-          return require(`~/data/posts/${this.post.filename}`)
+        if (this.post.slug) {
+          return require(`~/data/changelog/${this.post.slug}.md`)
         } else {
           this.$nuxt.error({statusCode: 404})
         }
@@ -29,7 +29,7 @@
     },
     head () {
       return {
-        title: `Mass Effect 5e | News - ${this.post.title}`,
+        title: `Mass Effect 5e | Changelog - ${this.post.title}`,
         meta: [
           { hid: 'description', name: 'description', content: this.post.description }
         ]

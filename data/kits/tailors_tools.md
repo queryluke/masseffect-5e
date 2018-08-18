@@ -2,7 +2,7 @@
 id: tailors_tools
 name: "Tailor's Tools"
 type: artisan
-cost: 3000
+cost: 6000
 ---
 
 Tailor's tools allow you to work with fabrics and nano-materials to reshape armor for different races,

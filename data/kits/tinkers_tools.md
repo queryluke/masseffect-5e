@@ -2,7 +2,7 @@
 id: tinkers_tools
 name: "Tinker's Tools"
 type: artisan
-cost: 1000
+cost: 3000
 ---
 
 A set of tinker's tools is designed to create small, inventive devices from onmi-gel. Some examples include a motion sensor,
