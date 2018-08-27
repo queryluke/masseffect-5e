@@ -5,7 +5,15 @@
 </template>
 
 <style lang="scss">
-  #print-grid {
-    width:8.5in;
+  .application.theme--light {
+    background-color: #fff;
+  }
+  @page {
+    size: A4
+  }
+  @media print {
+    #print-grid {
+      margin: auto;
+    }
   }
 </style>
