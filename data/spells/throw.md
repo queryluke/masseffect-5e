@@ -27,7 +27,7 @@ advancementOptions:
   description: On a hit, the damage is dealt to each creature within a 2m radius of
     the target.
 - name: Improved Damage
-  description: Increase the damage die type to d8
+  description: Increase the damage die type to d12
 ---
 Make a ranged spell attack on a target you can see within range. On a hit, the target takes force damage equal to 1d8
 force damage. If the target is Medium or smaller, it is pushed backwards 10m.
