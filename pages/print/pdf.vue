@@ -2,7 +2,7 @@
   div
     v-navigation-drawer(v-model="drawer" fixed clipped floating right id="spvNavDrawer" class="blue-grey lighten-5")
       v-list(dense)
-        template(v-for="item in toc")
+        template(v-for="item in tocA.slice(0).concat(tocB)")
           v-list-group(v-if="item.lookup" no-action)
             v-list-tile(slot="activator" ripple)
               v-list-tile-content
@@ -48,6 +48,68 @@
           This page is generated from components in the web version of the site. Therefore links and buttons
           #[em within] this document will link out to the web version of the Player's Handbook. At some point in the future,
           we will create a better PDF version of the rules.
+
+    section(id="download").page
+      h3.display-2 Create and offline version (cached or PDF)
+      p #[em source: #[a(href="https://www.pcworld.com/article/3003651/mobile/4-ways-to-save-a-web-page-on-an-iphone-or-android-phone.html" target="_blank") PC World | 4 ways to save a web page on an iPhone or Android phone]]
+
+      h4.title On a Desktop/Laptop?
+      p #[code Ctrl] + #[code P] #[em for Windows OS]
+      p #[code Cmd] + #[code P] #[em for OSX]
+      p Choose "Save as PDF"
+
+      h4.title Add a webpage to your Reading List (iOS only)
+      p Bookmarking a webpage in Safari for iPhone or iPad does little more than save the page’s URL in a thicket of nested bookmark folders—and if you happen to lose your network connection, pulling up a bookmark will give you nothing but an error message.
+      p The beauty of iOS’s Reading List feature is that it can take a functional snapshot of any webpage, save it to your handset’s local storage for offline reading, and sync it with all your other iCloud-connected devices.
+      p To save a webpage to your Reading List, just open the page in Safari, tap the Action button (the square button with the arrow) at the bottom of the screen, then tap Add to Reading List.
+      p To open your Reading List, tap the Bookmarks button (the button that looks like an open book), then tap the Reading List tab (it’s the icon that looks like a pair of reading glasses).
+      p Note: Adding a webpage to your Reading List won’t necessarily save it for all time. In my tests, I found that Reading List will try to grab the latest version of a page if your device is online, and if the page happens to disappear from the web, you’ll get a “page not found” error (or something along those lines). If you go back offline, Reading List usually goes back to the older, “cached” version.
+
+      h4.title Download a webpage in Chrome (Android only)
+      p If you’re using Chrome for Android, good news: There’s an easy way to download webpages for offline reading.
+      p Unlike iOS’s Reading List feature, Chrome won’t sync downloaded webpages to your other Android devices. But while iOS will try to update pages saved to Reading List, even going so far as to give you a '404' error on saved webpages that have since disappeared, Chrome treats your saved webpages as permanent snapshots. You can even compared a live webpage and downloaded offline page in separate Chrome tabs.
+      p To save a webpage in Chrome, tap the three-dot menu button in the top-right corner of the screen, then tap the Download icon (the one that looks like a down arrow).
+      p To access your saved webpages, tap the three-dot menu button again, then tap the Download icon. Tap a downloaded page to view it in Chrome, or tap and hold the page to share it or trash it.
+
+      h4.title Save a webpage as a PDF (Android and iOS)
+      p While a webpage added to your iOS Reading List or Downloads in Chrome will look pretty much identical to its live, on-the-web counterpart, a PDF version of the same page may look jumbled and ungainly compared to the original. The upside of a PDF’d webpage, though, is that it’s essentially a digital printout—meaning it’s yours to keep, no matter what happens to the online version of the page.
+      p You can create a PDF version of any webpage on your Android or iOS device, but the methods of doing so are somewhat different.
+
+      h5.subheading For Android:
+      p First, open the page you want to save in Chrome, tap the three-dot menu button in the top-right corner of the screen, tap Share, then tap Print.
+      p Once Android has finished creating a preview of the page you want to save, tap the Save to drop-down menu at the top of the page. Select Save to Google Drive to upload a PDF of the page to your Drive account (make sure you pick the right one if you’re signed in to multiple Google accounts), or tap Save as PDF to save the file to your handset’s local storage.
+      p Now, just head to Google Drive to view your saved page (look in the Recent section if you’re not sure which Drive directory you saved the file to), or tap Downloads in the app drawer to find the file in your handset’s local storage.
+      p Note: Sure, you could try tapping Share > Google Drive to save a webpage from Chrome to your Drive account, but all you’d be doing is saving a tiny text file with the page’s URL.
+
+      h5.subheading For iOS:
+      p Go ahead and open a webpage in Safari, tap the Action button (again, it’s the square button with the upward arrow), then tap a Save PDF button in the top row (at the very least, there should be a Save PDF to iBooks button).
+      p If you’re a Dropbox user, the Save to Dropbox option under the iOS Action button will save webpages as PDFs to your Dropbox account.
+
+
+    // Print-only Table of Contents
+    section(id="tableOfContents").page
+      h3.display-2 Table of Contents
+      v-layout(row)
+        v-flex(md6)
+          div(v-for="item in tocA")
+            div(v-if="item.lookup") {{ item.title }}
+              ul.toc-list
+                li(v-for="(subItem, i) in tocLookup(item.lookup)" v-bind:key="i")
+                  a(:href="subItem.anchor").xref {{ subItem.title }}
+            div(v-else-if="item.header").toc-header {{ item.header }}
+            div(v-else-if="item.divider").toc-divider
+            div(v-else).toc-item
+              a(v-bind:href="item.anchor").xref {{ item.title }}
+        v-flex(md6)
+          div(v-for="item in tocB")
+            div(v-if="item.lookup") {{ item.title }}
+              ul.toc-list
+                li(v-for="(subItem, i) in tocLookup(item.lookup)" v-bind:key="i")
+                  a(:href="subItem.anchor").xref {{ subItem.title }}
+            div(v-else-if="item.header").toc-header {{ item.header }}
+            div(v-else-if="item.divider").toc-divider
+            div(v-else).toc-item
+              a(v-bind:href="item.anchor").xref {{ item.title }}
 
     // Rules
     section(v-for="(page, key) in pages" v-bind:key="key" v-if="page.rules && key !== 'phb-items'" v-bind:id="key").page
@@ -294,7 +356,7 @@
       const weaponTypes = ['Assault Rifle', 'Heavy Pistol', 'Melee', 'Shotgun', 'SMG', 'Sniper Rifle', 'Heavy Weapon']
       return {
         drawer: null,
-        toc: [
+        tocA: [
           { header: 'Preface' },
           { title: 'Introduction', anchor: '#phb-intro' },
           { divider: true },
@@ -305,7 +367,9 @@
           { title: 'Weapons', lookup: 'phb-rules-weapons' },
           { title: 'Armor', lookup: 'phb-rules-armor' },
           { title: 'Expenses', lookup: 'phb-rules-expenses' },
-          { title: 'Multiclassing', lookup: 'phb-rules-multiclassing' },
+          { title: 'Multiclassing', lookup: 'phb-rules-multiclassing' }
+        ],
+        tocB: [
           { divider: true },
           { header: 'Player Options' },
           { title: 'Races', lookup: 'races' },
@@ -449,6 +513,14 @@
 </script>
 
 <style>
+  #tableOfContents {
+    display: none;
+  }
+  .toc-header {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
   .anchor-pad {
     padding-top: 55px;
   }
@@ -493,12 +565,26 @@
     border-bottom: 2px solid #bbb;
   }
 
-  .table thead tr, .table tbody td, .table tbody th, table.v-table thead tr, table.v-table tbody td, table.v-table tbody th {
+  .table thead tr, .table tbody td, .table thead th, table.v-table thead tr, table.v-table tbody td, table.v-table tbody th {
     height: auto !important;
+    padding: 0 4px !important;
   }
 
   @media print {
-    #spvNavDrawer, #spvToolbar {
+    #tableOfContents {
+      display: block;
+    }
+
+    p, li, div {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    p, div {
+      margin-bottom: 8px;
+    }
+
+    #spvNavDrawer, #spvToolbar, #download {
       display: none;
     }
 
@@ -534,6 +620,12 @@
     }
     .class-page {
       page-break-after: always;
+    }
+
+    @page:right{
+      @bottom-right {
+        content: counter(page);
+      }
     }
 
     #phbLogo { width: 6in }
