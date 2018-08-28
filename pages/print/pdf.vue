@@ -17,7 +17,6 @@
             v-list-tile-content
               v-list-tile-title {{ item.title }}
     v-toolbar(dense fixed id="spvToolbar")
-      v-toolbar-side-icon
       v-toolbar-title Mass Effect 5e - Player's Handbook #[small (Single Page Version)]
       v-spacer
       v-btn(icon @click="drawer = !drawer") #[v-icon view_list]
