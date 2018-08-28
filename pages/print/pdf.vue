@@ -45,7 +45,7 @@
           div © Mass Effect 5e {{ new Date().getFullYear() }}
       div(style="width: 600px; margin: auto;").my-5
         v-alert(:value="true" type="warning").black--text.
-          This page is generated from components in the web version of the site. Therefore links and buttons
+          This page is generated from components in the web version of the site. Except for the table of contents, links and buttons
           #[em within] this document will link out to the web version of the Player's Handbook. At some point in the future,
           we will create a better PDF version of the rules.
 
