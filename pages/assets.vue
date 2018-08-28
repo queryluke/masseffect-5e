@@ -15,6 +15,17 @@
           v-btn(block href="https://drive.google.com/open?id=1eXwjbZQH5z7ACZw60WJ2AMKla94quGAD" target="_blank").primary by Thessian Shadow
         v-flex(xs12 sm4)
           v-btn(block href="https://drive.google.com/open?id=1SPghERVzFgEva4C11xRbnuc8i1RYKBbu" target="_blank").primary by theNamelessOne
+    // PDF of Rules
+    h2.display-2.text-xs-center.mt-5 Player's Handbook
+    v-container(grid-list-xl)
+      v-layout(row wrap justify-center)
+        v-flex(xs12 sm6 md4)
+          v-alert(:value="true" type="warning").black--text.
+            The PDF is auto-generated from compoents on the website, therefore is very barebones and aesthetically limited. We
+            will work on an official PDF version of the rules after our v1.0.0 release.
+      v-layout(row wrap justify-center)
+        v-flex(xs12 sm6 md4)
+          v-btn(block href="https://drive.google.com/open?id=1eDfgpG3JplKUjrIdySJKmyC4qxTi2MUT" target="_blank").primary Player's Handbook PDF
     // Tokens
     h2.display-2.text-xs-center.mt-5 NPC Tokens
     v-container(grid-list-xl)

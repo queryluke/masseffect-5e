@@ -25,24 +25,6 @@ export default {
         'sexy-level'
       ]
     },
-    'phb-rules-multiclassing': {
-      name: 'Rules - Multiclassing',
-      rules: [
-        'multiclassing-prereqs',
-        'multiclassing-profs',
-        'multiclassing-biotics',
-        'multiclassing-barrier',
-        'multiclassing-tech'
-      ]
-    },
-    'phb-rules-armor': {
-      name: 'Rules - Armor',
-      rules: [
-        'armor-overview',
-        'armor-pieces',
-        'armor-customization'
-      ]
-    },
     'phb-rules-combat': {
       name: 'Rules - Combat',
       rules: [
@@ -55,21 +37,6 @@ export default {
         'damage-types',
         'conditions'
       ]
-    },
-    'phb-rules-conditions': {
-      name: 'Conditions'
-    },
-    'phb-rules-expenses': {
-      name: 'Rules - Expenses',
-      rules: [
-        'currency',
-        'lifestyle-expenses',
-        'cost-of-things',
-        'buying-and-selling'
-      ]
-    },
-    'phb-rules-skills': {
-      name: 'Skills'
     },
     'phb-rules-spellcasting': {
       name: 'Rules - Spellcasting',
@@ -92,6 +59,39 @@ export default {
         'heavy-weapons',
         'weapon-customization'
       ]
+    },
+    'phb-rules-armor': {
+      name: 'Rules - Armor',
+      rules: [
+        'armor-overview',
+        'armor-pieces',
+        'armor-customization'
+      ]
+    },
+    'phb-rules-expenses': {
+      name: 'Rules - Expenses',
+      rules: [
+        'currency',
+        'lifestyle-expenses',
+        'cost-of-things',
+        'buying-and-selling'
+      ]
+    },
+    'phb-rules-multiclassing': {
+      name: 'Rules - Multiclassing',
+      rules: [
+        'multiclassing-prereqs',
+        'multiclassing-profs',
+        'multiclassing-biotics',
+        'multiclassing-barrier',
+        'multiclassing-tech'
+      ]
+    },
+    'phb-rules-conditions': {
+      name: 'Conditions'
+    },
+    'phb-rules-skills': {
+      name: 'Skills'
     },
     'phb-classes': {
       name: 'Classes'
