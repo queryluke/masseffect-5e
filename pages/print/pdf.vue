@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  main
     v-navigation-drawer(v-model="drawer" fixed clipped floating right id="spvNavDrawer" class="blue-grey lighten-5")
       v-list(dense)
         template(v-for="item in tocA.slice(0).concat(tocB)")
@@ -17,13 +17,13 @@
             v-list-tile-content
               v-list-tile-title {{ item.title }}
     v-toolbar(dense fixed id="spvToolbar")
-      v-toolbar-title Mass Effect 5e - Player's Handbook #[small (Single Page Version)]
+      v-toolbar-title Mass Effect 5e #[span.hidden-xs-only -  Player's Handbook #[small.hidden-sm-and-down (Single Page Version)]]
       v-spacer
       v-btn(icon @click="drawer = !drawer") #[v-icon view_list]
     // Frontmatter
     section.page
       div.my-5.text-xs-center
-        img(src="/images/me5e_logo_notm.png" id="phbLogo" alt="Mass Effect 5e Logo" width="800px").mb-4
+        img(src="/images/me5e_logo_notm.png" id="phbLogo" alt="Mass Effect 5e Logo").mb-4
         h1.sr-only Mass Effect 5e
         h2.display-3 Player's Handbook
         p.title v{{ version }}
@@ -42,11 +42,12 @@
             and are licensed under a #[a(href="http://creativecommons.org/licenses/by/4.0/" target="_blank") Creative Commons Attribution 4.0 International license].
           div This homebrew is licensed under GPL-3.0
           div © Mass Effect 5e {{ new Date().getFullYear() }}
-      div(style="width: 600px; margin: auto;").my-5
-        v-alert(:value="true" type="warning").black--text.
-          This page is generated from components in the web version of the site. Except for the table of contents, links and buttons
-          #[em within] this document will link out to the web version of the Player's Handbook. At some point in the future,
-          we will create a better PDF version of the rules.
+      v-layout(row justify-center)
+        v-flex(xs12 sm8 lg6)
+          v-alert(:value="true" type="warning").black--text.
+            This page is generated from components in the web version of the site. Except for the table of contents, links and buttons
+            #[em within] this document will link out to the web version of the Player's Handbook. At some point in the future,
+            we will create a better PDF version of the rules.
 
     section(id="download").page
       h3.display-2 Create and offline version (cached or PDF)
@@ -512,6 +513,26 @@
 </script>
 
 <style>
+
+  main {
+    margin-left: 10px;
+  }
+
+  #phbLogo {
+    width: 100%;
+    height: auto;
+  }
+
+  @media screen and (min-width: 960px) {
+    #phbLogo {
+      width: auto;
+      height: 90px;
+    }
+    main {
+      margin-left: 0;
+    }
+  }
+
   #tableOfContents {
     display: none;
   }
@@ -552,7 +573,10 @@
   #spvNavDrawer {
     height: calc(100vh - 48px);
     top: 48px;
-    z-index: 2;
+    z-index: 6;
+  }
+  #spvToolbar {
+    z-index: 6;
   }
 
   .table, table.v-table, .table.alt-table {
@@ -570,6 +594,10 @@
   }
 
   @media print {
+    main {
+      margin-left: 0;
+    }
+
     #tableOfContents {
       display: block;
     }
