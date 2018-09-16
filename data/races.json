@@ -211,7 +211,7 @@
       "speed": "10m",
       "snippet": "AIs are considered illegal by the Council, but that hasn't stopped corporations like Cerberus from innovating. As an unshackled AI, you might be have been mass produced like the Alliance Infiltration Units, or you may be an experiment gone wrong.",
       "optional_starting_credits": "Instead of your class's starting equipment, you may start with 2d10 x 1000 + 10,000 credits to buy your own equipment.",
-      "body": "https://vignette.wikia.nocookie.net/masseffect/images/0/06/ME3_Alliance_Infiltration_Unit_Infiltrator.png/revision/latest?cb=20130227102713",
+      "body": "https://vignette.wikia.nocookie.net/masseffect/images/0/06/ME3_Alliance_Infiltration_Unit_Infiltrator.png/revision/latest/scale-to-width-down/500?cb=20130227102713",
       "male": null,
       "female": null,
       "face": "https://vignette.wikia.nocookie.net/masseffect/images/8/88/Edi-robot-body-me3.png/revision/latest/scale-to-width-down/250?cb=20120311035716",
@@ -233,7 +233,7 @@
       "male": "http://www.stardestroyer.net/wiki/images/b/b4/Volus.jpg",
       "female": null,
       "face": "http://vignette4.wikia.nocookie.net/masseffect/images/7/7c/Races_Volus.PNG",
-      "card": "https://vignette.wikia.nocookie.net/masseffect/images/b/b4/Volus.jpg/revision/latest?cb=20121009195731",
+      "card": "https://vignette.wikia.nocookie.net/masseffect/images/b/b4/Volus.jpg/revision/latest/scale-to-width-down/640?cb=20121009195731",
       "id": "volus"
     },
     {
