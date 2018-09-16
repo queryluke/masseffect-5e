@@ -75,7 +75,7 @@
               v-model="options.cr"
               label="Challenge Rating"
               single-line
-              bottom
+              menu-props="bottom"
               hint="Challenge Rating"
               persistent-hint
             )
