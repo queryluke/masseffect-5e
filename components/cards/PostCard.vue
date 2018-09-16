@@ -1,6 +1,6 @@
 <template lang="pug">
   v-card(hover v-bind:to="post.url" nuxt).post__card
-    v-card-media(:src="post.image" v-bind:height="height")
+    v-img(:src="post.image" v-bind:height="height")
       div.date-grid.text-xs-center
         span.month.date-part {{ post.date | formatDate('MMM') }}
         span.day.date-part {{ post.date | formatDate('DD') }}

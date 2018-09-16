@@ -10,7 +10,7 @@
                 h3.headline.mb-0 {{ item.name }}
                 p {{ item.snippet }}
               v-flex.xs4
-                v-card-media(:src="`/images/classes/${item.id}.svg`" height="100px" contain)
+                v-img(:src="`/images/classes/${item.id}.svg`" height="100px" contain)
               v-flex.xs12
                 p.ma-0 #[strong Hit Die:] 1d{{ item.hitDie }}
                 p.ma-0 #[strong Primary Ability:] {{ item.primaryAbility }}

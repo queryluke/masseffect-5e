@@ -2,9 +2,9 @@
   v-container(grid-list-md).pa-0
     v-layout(row justify-center wrap)
       v-flex(xs12 md6)
-        v-select(:items="unitOptions" v-model="unitFilter" label="Faction" multiple max-height="400")
+        v-select(:items="unitOptions" v-model="unitFilter" label="Faction" multiple menu-props="{maxHeight:'400'}")
       v-flex(xs12 md6)
-        v-select(:items="crOptions" v-model="crFilter" label="CR" multiple max-height="400")
+        v-select(:items="crOptions" v-model="crFilter" label="CR" multiple menu-props="{maxHeight:'400'}")
       v-flex(xs12).text-xs-center.hidden-md-and-up
         v-btn(@click="reset()") Reset
 </template>

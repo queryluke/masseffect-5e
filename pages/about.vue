@@ -83,7 +83,7 @@
         v-layout(row wrap)
           v-flex(v-for="att in attributions" v-bind:key="att.attribution" xs12 sm6 md4 lg3 d-flex)
             v-card(:href="att.source" v-bind:alt="att.title" target="_blank" hover)
-              v-card-media(:src="att.path" height="200px" contain).blue-grey.lighten-5
+              v-img(:src="att.path" height="200px" contain).blue-grey.lighten-5
               v-card-title(color="grey darken-3") {{ att.attribution }}
 </template>
 

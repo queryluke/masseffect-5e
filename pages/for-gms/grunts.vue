@@ -22,7 +22,7 @@
               item-value="cr"
               return-object
               single-line
-              bottom
+              menu-props="bottom"
               hint="Challenge Rating"
               persistent-hint
             )
@@ -35,7 +35,7 @@
               item-value="id"
               return-object
               single-line
-              bottom
+              menu-props="bottom"
               hint="Class"
               persistent-hint
             )
@@ -48,7 +48,7 @@
               item-value="id"
               return-object
               single-line
-              bottom
+              menu-props="bottom"
               hint="Race"
               persistent-hint
             )

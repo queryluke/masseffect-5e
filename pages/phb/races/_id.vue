@@ -48,7 +48,7 @@
                 div(id="optional-starting-credits").section-label Optional Starting Credits
                 p(aria-labelledby="optional-starting-credits") {{ race.optional_starting_credits }}
       v-flex.hidden-sm-and-down.md3
-        v-card-media(:src="race.body" height="80vh")
+        v-img(:src="race.body" height="80vh")
         p(v-if="id == 'prothean'").text-xs-center #[small #[em image courtesy of JTickner]]
     v-layout(row grow).my-0.mt-4
       v-flex(v-if="previous_race.name").primary.pa-0.xs6

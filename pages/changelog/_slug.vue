@@ -37,9 +37,3 @@
     }
   }
 </script>
-
-<style>
-  ul, ol {
-    margin-left: 2em;
-  }
-</style>

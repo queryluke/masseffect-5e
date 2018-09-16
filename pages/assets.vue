@@ -38,7 +38,7 @@
       v-layout(row wrap).mb-5
         v-flex(v-for="item in classes" v-bind:key="item.id").xs12.sm6.md4
           v-card(hover v-bind:to="`/print/spell-cards/${item.id}`").ma-2
-            v-card-media(:src="`/images/classes/${item.id}.svg`" height="100px" contain)
+            v-img(:src="`/images/classes/${item.id}.svg`" height="100px" contain)
               v-container(fill-height fluid)
                 v-layout(fill-height)
                   v-flex(xs12 align-end flexbox)

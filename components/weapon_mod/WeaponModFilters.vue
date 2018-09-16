@@ -2,11 +2,11 @@
   v-container(grid-list-md).pa-0
     v-layout(row justify-center wrap)
       v-flex(xs12 md4)
-        v-select(:items="placementOptions" v-model="placementFilter" label="Placement" multiple max-height="400")
+        v-select(:items="placementOptions" v-model="placementFilter" label="Placement" multiple menu-props="{maxHeight:'400'}")
       v-flex(xs12 md4)
-        v-select(:items="weaponTypeOptions" v-model="weaponTypeFilter" label="Weapon Availability" multiple max-height="400")
+        v-select(:items="weaponTypeOptions" v-model="weaponTypeFilter" label="Weapon Availability" menu-props="{maxHeight:'400'}")
       v-flex(xs12 md4)
-        v-select(:items="noteOptions" v-model="noteFilter" label="Benefits" multiple max-height="400")
+        v-select(:items="noteOptions" v-model="noteFilter" label="Benefits" multiple menu-props="{maxHeight:'400'}")
       v-flex(xs12).text-xs-center.hidden-md-and-up
         v-btn(@click="reset()") Reset
 </template>

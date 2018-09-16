@@ -10,7 +10,7 @@
     v-layout(row wrap)
       v-flex(v-for="race in items" v-bind:key="race.id" d-flex).xs12.sm6.md4
         v-card(:to="{ name: 'phb-races-id', params: { id: race.id }}" hover).ma-2
-          v-card-media(:src="race.card" height="200px")
+          v-img(:src="race.card" height="200px")
           v-card-title(primary-title)
             v-layout(row wrap)
               v-flex(xs12 sm6)
