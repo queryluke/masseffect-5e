@@ -5,6 +5,7 @@
       h3.display-3.hidden-sm-and-down Player's Handbook Introduction
       p.title v{{ version }}
       v-btn(to="/changelog" nuxt).primary Changelog
+    rule-card(:id="'01-01-using-this-homebrew'")
     div(v-for="(rule, index) in pages[$route.name].rules" v-bind:key="index")
       component(v-bind:is="rule")
 </template>
@@ -20,6 +21,8 @@
     WebAppTools
   } from '~/components/phb/'
 
+  import RuleCard from '~/components/RuleCard.vue'
+
   import {mapGetters} from 'vuex'
 
   export default {
@@ -29,7 +32,8 @@
       CharacterCreationAndLeveling,
       QuestionsAndFeedback,
       StartingYourCampaign,
-      WebAppTools
+      WebAppTools,
+      RuleCard
     },
     computed: {
       ...mapGetters('phb', {

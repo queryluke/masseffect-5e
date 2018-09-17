@@ -25,6 +25,13 @@ module.exports = {
     ** Run ESLint on save
     */
     extend (config, ctx) {
+      config.module.rules.push({
+        test: /\.md$/,
+        loader: 'frontmatter-markdown-loader',
+        options: {
+          vue: true
+        }
+      })
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
@@ -66,7 +73,6 @@ module.exports = {
   ** Modules
   */
   modules: [
-    '@nuxtjs/markdownit',
     '@nuxtjs/google-analytics'
   ],
   'google-analytics': {
@@ -80,13 +86,6 @@ module.exports = {
         }
       }
     }
-  },
-  markdownit: {
-    preset: 'default',
-    linkify: true,
-    use: [
-      'markdown-it-meta'
-    ]
   },
   plugins: [
     '~/plugins/vuetify.js',
