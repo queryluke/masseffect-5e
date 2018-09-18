@@ -1,0 +1,56 @@
+[
+  {
+    "length": 1208,
+    "new": true,
+    "title": "About the Player's Handbook",
+    "section": 1,
+    "subSection": 1,
+    "id": "01-01-using-this-homebrew",
+    "hash": "using-this-homebrew"
+  },
+  {
+    "length": 4962,
+    "new": false,
+    "title": "Introduction",
+    "section": 1,
+    "subSection": 2,
+    "id": "01-02-introduction",
+    "hash": "introduction"
+  },
+  {
+    "length": 3007,
+    "new": true,
+    "title": "A Universe to Explore",
+    "section": 1,
+    "subSection": 3,
+    "id": "01-03-universe-to-explore",
+    "hash": "universe-to-explore"
+  },
+  {
+    "length": 0,
+    "new": true,
+    "title": "Using these Rules",
+    "section": 1,
+    "subSection": 4,
+    "id": "01-04-using-these-rules",
+    "hash": "using-these-rules"
+  },
+  {
+    "length": 8266,
+    "new": false,
+    "title": "How to Play",
+    "section": 1,
+    "subSection": 5,
+    "id": "01-05-how-to-play",
+    "hash": "how-to-play"
+  },
+  {
+    "length": 8266,
+    "new": false,
+    "title": "Adventures",
+    "section": 1,
+    "subSection": 6,
+    "id": "01-06-adventures",
+    "hash": "adventures"
+  }
+]

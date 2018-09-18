@@ -5,41 +5,25 @@
       h3.display-3.hidden-sm-and-down Player's Handbook Introduction
       p.title v{{ version }}
       v-btn(to="/changelog" nuxt).primary Changelog
-    rule-card(:id="'01-01-using-this-homebrew'")
-    div(v-for="(rule, index) in pages[$route.name].rules" v-bind:key="index")
-      component(v-bind:is="rule")
+    div(v-for="(rule, index) in rules" v-bind:key="index")
+      rule-card(:id="rule.id")
 </template>
 
 <script>
-  // Rule Cards
-  import {
-    Basics,
-    ChangesAndAdditions,
-    CharacterCreationAndLeveling,
-    QuestionsAndFeedback,
-    StartingYourCampaign,
-    WebAppTools
-  } from '~/components/phb/'
-
   import RuleCard from '~/components/RuleCard.vue'
-
+  import rules from '~/static/data/rules'
   import {mapGetters} from 'vuex'
 
   export default {
-    components: {
-      Basics,
-      ChangesAndAdditions,
-      CharacterCreationAndLeveling,
-      QuestionsAndFeedback,
-      StartingYourCampaign,
-      WebAppTools,
-      RuleCard
-    },
+    components: {RuleCard},
     computed: {
       ...mapGetters('phb', {
         version: 'version',
         pages: 'pages'
-      })
+      }),
+      rules () {
+        return rules.filter(rule => rule.section === this.pages[this.$route.name].rules)
+      }
     },
     head () {
       return {

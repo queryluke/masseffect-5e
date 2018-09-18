@@ -44,7 +44,7 @@
           {
             title: 'Introduction',
             icon: 'code',
-            href: '/phb/intro'
+            href: '/phb/'
           },
           {
             title: 'Rules',

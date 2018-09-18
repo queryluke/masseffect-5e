@@ -1,15 +1,8 @@
 export default {
   pages: {
-    'phb-intro': {
+    'phb': {
       name: 'Player\'s Handbook - Intro',
-      rules: [
-        'basics',
-        'changes-and-additions',
-        'character-creation-and-leveling',
-        'starting-your-campaign',
-        'web-app-tools',
-        'questions-and-feedback'
-      ]
+      rules: 1
     },
     'phb-rules-general': {
       name: 'Rules - General',

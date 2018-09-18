@@ -12,6 +12,21 @@ require('fs').readdirSync('./data/changelog').map((file) => {
   routes.push('/changelog/' + (file.replace(/\.md$/g, '')))
 })
 
+const rules = []
+const fm = require('front-matter')
+const dirContent = fs.readdirSync('./static/data/rules')
+dirContent.filter(elm => elm.match(/.*\.(md)/ig)).map(file => {
+  const fc = fm(fs.readFileSync(`./static/data/rules/${file}`, 'utf8'))
+  const fileParts = file.split('-')
+  const attr = fc.attributes
+  attr.section = Number.parseInt(fileParts[0])
+  attr.subSection = Number.parseInt(fileParts[1])
+  attr.id = file.replace(/\.md$/g, '')
+  attr.hash = fileParts.splice(2).join('-').replace(/\.md$/g, '')
+  rules.push(attr)
+})
+fs.writeFileSync('./static/data/rules/index.json', JSON.stringify(rules, null, 2))
+
 module.exports = {
   /*
   ** Build configuration

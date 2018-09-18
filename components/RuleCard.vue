@@ -1,7 +1,8 @@
 <template lang="pug">
-  v-card(:id="id").elevation-0
-    v-card-title.headline.primary.white--text {{ title }}
-    v-card-text
+  v-card(:id="hash").elevation-0.transparent
+    v-card-title.headline {{ title }}
+      v-chip(v-if="newRule" color="secondary" text-color="white" small) new
+    v-card-text.rule-text
       rule-text(:component="item.vue")
 </template>
 
@@ -17,6 +18,12 @@
       },
       title () {
         return this.item.attributes.title
+      },
+      newRule () {
+        return this.item.attributes.new
+      },
+      hash () {
+        return this.id.split('-').splice(2).join('-')
       }
     },
     mixins: [EnhanceMarkdown],
@@ -25,3 +32,8 @@
     }
   }
 </script>
+
+<style lang="scss">
+  .rule-text {
+  }
+</style>

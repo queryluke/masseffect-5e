@@ -17,11 +17,13 @@
       v-text-field(v-model="search" single-line full-width hide-details label="Search")
 
     // Jump Links
-    v-navigation-drawer(v-model="ruleList" fixed right clipped app width="200" mobile-break-point="960" v-if="page.rules")
+    v-navigation-drawer(v-model="ruleList" fixed right clipped app width="225" mobile-break-point="960" v-if="page.rules")
       v-list(dense)
         v-subheader Jump to
-        v-list-tile(ripple v-for="(rule, index) in pages[$route.name].rules" v-bind:key="index" v-on:click="goToRule(`#${rule}`)")
-          v-list-tile-title {{ rule.replace(/-/g,' ') | capitalize }}
+        v-list-tile(ripple v-for="(rule, index) in rules" v-bind:key="index" v-on:click="goToRule(`#${rule.hash}`)")
+          v-list-tile-content
+            v-list-tile-title {{ rule.title }}
+          v-chip(v-if="rule.new" color="secondary" text-color="white" disabled).pa-0.v-chip--x-small new
 
     // Content
     v-content.blue-grey.lighten-4
@@ -32,6 +34,7 @@
 <script>
 import SideNavigation from '~/components/SideNavigation.vue'
 import PhbToolbar from '~/components/PhbToolbar.vue'
+import rules from '~/static/data/rules'
 
 // State
 import {createNamespacedHelpers} from 'vuex'
@@ -46,6 +49,9 @@ export default {
     ...mapGetters(['pages', 'searchString']),
     page () {
       return this.pages[this.$route.name] ? this.pages[this.$route.name] : {}
+    },
+    rules () {
+      return rules.filter(rule => rule.section === this.page.rules)
     },
     search: {
       get () {

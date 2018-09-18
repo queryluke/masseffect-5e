@@ -14,7 +14,8 @@
         return this.getData(this.itemType).find(item => item.id === this.id)
       },
       markdownFile () {
-        return this.enhanceMarkdown(require(`~/data/${this.itemType}/${this.item.id}.md`))
+        const file = require(`~/data/${this.itemType}/${this.item.id}.md`)
+        return this.enhanceMarkdown(file.html)
       }
     },
     mixins: [EnhanceMarkdown],
