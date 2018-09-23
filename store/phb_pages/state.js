@@ -1,8 +1,12 @@
 export default {
   pages: {
-    'phb': {
+    'phb-intro': {
       name: 'Player\'s Handbook - Intro',
       rules: 1
+    },
+    'phb-character-creation': {
+      name: 'Step-By-Step Characters',
+      rules: 2
     },
     'phb-rules-general': {
       name: 'Rules - General',

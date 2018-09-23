@@ -45,12 +45,75 @@
     "hash": "how-to-play"
   },
   {
-    "length": 8266,
+    "length": 4794,
     "new": false,
     "title": "Adventures",
     "section": 1,
     "subSection": 6,
     "id": "01-06-adventures",
     "hash": "adventures"
+  },
+  {
+    "length": 1539,
+    "new": false,
+    "title": "Overview",
+    "section": 2,
+    "subSection": 1,
+    "id": "02-01-step-by-step-characters",
+    "hash": "step-by-step-characters"
+  },
+  {
+    "length": 4361,
+    "new": true,
+    "title": "1. Choose a Race",
+    "section": 2,
+    "subSection": 2,
+    "id": "02-02-choose-a-race",
+    "hash": "choose-a-race"
+  },
+  {
+    "length": 4948,
+    "new": false,
+    "title": "2. Choose a Class",
+    "section": 2,
+    "subSection": 3,
+    "id": "02-03-choose-a-class",
+    "hash": "choose-a-class"
+  },
+  {
+    "length": 4767,
+    "new": false,
+    "title": "3. Determine Ability Scores",
+    "section": 2,
+    "subSection": 4,
+    "id": "02-04-determine-ability-scores",
+    "hash": "determine-ability-scores"
+  },
+  {
+    "length": 4224,
+    "new": false,
+    "title": "4. Describe Your Character",
+    "section": 2,
+    "subSection": 5,
+    "id": "02-05-describe-your-character",
+    "hash": "describe-your-character"
+  },
+  {
+    "length": 3555,
+    "new": false,
+    "title": "5. Choose Equipment",
+    "section": 2,
+    "subSection": 6,
+    "id": "02-06-choose-equipment",
+    "hash": "choose-equipment"
+  },
+  {
+    "length": 654,
+    "new": false,
+    "title": "Coming Together",
+    "section": 2,
+    "subSection": 7,
+    "id": "02-07-coming-together",
+    "hash": "coming-together"
   }
 ]

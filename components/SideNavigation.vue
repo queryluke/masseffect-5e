@@ -44,7 +44,12 @@
           {
             title: 'Introduction',
             icon: 'code',
-            href: '/phb/'
+            href: '/phb/intro'
+          },
+          {
+            title: 'Step-by-step Characters',
+            icon: 'supervised_user_circle',
+            href: '/phb/character-creation'
           },
           {
             title: 'Rules',

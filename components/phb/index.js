@@ -34,7 +34,6 @@ import OmniGel from './OmniGel.vue'
 import ParagonAndRenegade from './ParagonAndRenegade.vue'
 import PrimersAndDetonators from './PrimersAndDetonators.vue'
 import QuestionsAndFeedback from './QuestionsAndFeedback.vue'
-import RaceClassRestrictions from './RaceClassRestrictions.vue'
 import RapidReload from './RapidReload.vue'
 import Reloading from './Reloading.vue'
 import SexyLevel from './SexyLevel.vue'
@@ -85,7 +84,6 @@ export {
   ParagonAndRenegade,
   PrimersAndDetonators,
   QuestionsAndFeedback,
-  RaceClassRestrictions,
   RapidReload,
   Reloading,
   SexyLevel,
