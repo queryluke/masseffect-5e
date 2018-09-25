@@ -7,7 +7,8 @@
             v-list-tile-content
               v-list-tile-title {{ item.title }}
           template(v-for="(subItem, i) in item.items")
-            v-list-tile(:key="i" v-bind="{to: subItem.href, href: subItem.href }" ripple nuxt)
+            v-divider(v-if="item.divider")
+            v-list-tile(v-else :key="i" v-bind="{to: subItem.href, href: subItem.href }" ripple nuxt)
               v-list-tile-content
                 v-list-tile-title {{ subItem.title }}
         v-subheader(v-else-if="item.header") {{ item.header }}
@@ -47,15 +48,11 @@
             href: '/phb/intro'
           },
           {
-            title: 'Step-by-step Characters',
-            icon: 'supervised_user_circle',
-            href: '/phb/character-creation'
-          },
-          {
             title: 'Rules',
             icon: 'gavel',
             items: [
-              { href: '/phb/rules/general', title: 'General' },
+              { title: 'Step-by-step Characters', icon: 'supervised_user_circle', href: '/phb/rules/character-creation' },
+              { title: 'Beyond 1st Level', icon: 'tending_up', href: '/phb/rules/beyond-first-level' },
               { href: '/phb/rules/combat', title: 'Combat' },
               { href: '/phb/rules/spellcasting', title: 'Spellcasting' },
               { href: '/phb/rules/weapons', title: 'Weapons' },

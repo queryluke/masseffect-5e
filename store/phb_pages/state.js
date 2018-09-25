@@ -4,23 +4,13 @@ export default {
       name: 'Player\'s Handbook - Intro',
       rules: 1
     },
-    'phb-character-creation': {
+    'phb-rules-character-creation': {
       name: 'Step-By-Step Characters',
       rules: 2
     },
-    'phb-rules-general': {
-      name: 'Rules - General',
-      rules: [
-        'galaxy-master',
-        'distance',
-        'lifting-and-carrying',
-        'encumbrance',
-        'race-class-restrictions',
-        'creature-types',
-        'infrared-vision',
-        'paragon-and-renegade',
-        'sexy-level'
-      ]
+    'phb-rules-beyond-first-level': {
+      name: 'Beyond 1st Level',
+      rules: 3
     },
     'phb-rules-combat': {
       name: 'Rules - Combat',

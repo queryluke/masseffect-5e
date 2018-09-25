@@ -81,7 +81,7 @@
     "hash": "choose-a-class"
   },
   {
-    "length": 4767,
+    "length": 3730,
     "new": false,
     "title": "3. Determine Ability Scores",
     "section": 2,
@@ -90,7 +90,7 @@
     "hash": "determine-ability-scores"
   },
   {
-    "length": 4224,
+    "length": 2220,
     "new": false,
     "title": "4. Describe Your Character",
     "section": 2,
@@ -99,12 +99,48 @@
     "hash": "describe-your-character"
   },
   {
+    "length": 2062,
+    "new": false,
+    "title": "4.a Appearance",
+    "section": 2,
+    "subSection": 6,
+    "id": "02-06-appearance",
+    "hash": "appearance"
+  },
+  {
+    "length": 2631,
+    "new": false,
+    "title": "4.b Alignment",
+    "section": 2,
+    "subSection": 7,
+    "id": "02-07-alignment",
+    "hash": "alignment"
+  },
+  {
+    "length": 1882,
+    "new": false,
+    "title": "4.c Background",
+    "section": 2,
+    "subSection": 8,
+    "id": "02-08-background",
+    "hash": "background"
+  },
+  {
+    "length": 4770,
+    "new": false,
+    "title": "4.d Personality",
+    "section": 2,
+    "subSection": 9,
+    "id": "02-09-personality",
+    "hash": "personality"
+  },
+  {
     "length": 3555,
     "new": false,
     "title": "5. Choose Equipment",
     "section": 2,
-    "subSection": 6,
-    "id": "02-06-choose-equipment",
+    "subSection": 10,
+    "id": "02-10-choose-equipment",
     "hash": "choose-equipment"
   },
   {
@@ -112,8 +148,44 @@
     "new": false,
     "title": "Coming Together",
     "section": 2,
-    "subSection": 7,
-    "id": "02-07-coming-together",
+    "subSection": 11,
+    "id": "02-11-coming-together",
     "hash": "coming-together"
+  },
+  {
+    "length": 1539,
+    "new": false,
+    "title": "Overview",
+    "section": 3,
+    "subSection": 1,
+    "id": "03-01-beyond-first-level",
+    "hash": "beyond-first-level"
+  },
+  {
+    "length": 1539,
+    "new": true,
+    "title": "Multiclassing",
+    "section": 3,
+    "subSection": 2,
+    "id": "03-02-multiclassing",
+    "hash": "multiclassing"
+  },
+  {
+    "length": 1539,
+    "new": false,
+    "title": "Inspiration",
+    "section": 3,
+    "subSection": 3,
+    "id": "03-03-inspiration",
+    "hash": "inspiration"
+  },
+  {
+    "length": 3178,
+    "new": true,
+    "title": "Variant: Paragon & Renegade",
+    "section": 3,
+    "subSection": 4,
+    "id": "03-04-paragon-renegade",
+    "hash": "paragon-renegade"
   }
 ]

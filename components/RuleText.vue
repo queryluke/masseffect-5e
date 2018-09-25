@@ -1,7 +1,9 @@
 <script>
+  import AiDialog from '~/components/rule_partials/AdditionalInformationDialog.vue'
+
   export default {
     components: {
-      // OtherComponents
+      AiDialog
     },
     created () {
       this.templateRender = new Function(this.component.render)()
