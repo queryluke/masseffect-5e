@@ -1,6 +1,5 @@
 ---
 length: 1539
-new: false
 title: 'Inspiration'
 ---
 

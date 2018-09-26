@@ -12,6 +12,10 @@ export default {
       name: 'Beyond 1st Level',
       rules: 3
     },
+    'phb-rules-using-ability-scores': {
+      name: 'Using Ability Scores',
+      rules: 4
+    },
     'phb-rules-combat': {
       name: 'Rules - Combat',
       rules: [
@@ -62,16 +66,6 @@ export default {
         'lifestyle-expenses',
         'cost-of-things',
         'buying-and-selling'
-      ]
-    },
-    'phb-rules-multiclassing': {
-      name: 'Rules - Multiclassing',
-      rules: [
-        'multiclassing-prereqs',
-        'multiclassing-profs',
-        'multiclassing-biotics',
-        'multiclassing-barrier',
-        'multiclassing-tech'
       ]
     },
     'phb-rules-conditions': {

@@ -1,6 +1,5 @@
 ---
 length: 3730
-new: false
 title: '3. Determine Ability Scores'
 ---
 
@@ -21,12 +20,12 @@ Now take your six numbers and write each number beside one of your character’s
 Strength, Dexterity, Constitution, Intelligence, Wisdom, and Charisma. Afterward, make any changes to your ability scores
 as a result of your race choice.
 
-After assigning your ability scores, determine your ability modifiers using the Ability Scores modifiers table (below).
+After assigning your ability scores, determine your ability modifiers using the Ability Scores and Modifiers table.
 To determine an ability modifier without consulting the table, subtract 10 from the ability score and then divide the result
 by 2 (round down). Write the modifier next to each of your scores.
 
 
-<ai-dialog title="Ability Score modifiers" component="ability-score-modifiers"></ai-dialog>
+<ai-dialog title="Ability Scores and Modifiers" component="ability-score-modifiers"></ai-dialog>
 
 <v-alert type="info" :value="true">
 <strong>BUILDING KALEEM, STEP 3</strong><br>

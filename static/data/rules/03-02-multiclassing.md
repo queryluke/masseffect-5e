@@ -1,6 +1,6 @@
 ---
 length: 1539
-new: true
+change: true
 title: 'Multiclassing'
 ---
 
@@ -65,7 +65,7 @@ barrier capacity by consulting the Multiclassing Barrier table.
 If you gain the Extra Attack class feature from more than one class, the features don't add together. You can't make
 more than two attacks with this feature unless it says you do (as the soldier's version of Extra Attack does).
 
-<h4 class="mt-3 subheading">Spellcasting <v-chip color="secondary" text-color="white" class="v-chip--x-small">new</v-chip></h4>
+<h4 class="mt-3 subheading">Spellcasting <v-chip color="orange accent-2" text-color="black" class="v-chip--x-small">change</v-chip></h4>
 
 __Biotic Spell Slots & Cantrips__: You determine your available spell slots and cantrips by adding together all your
 levels in the adept class and half your levels (rounded down) in the sentinel and vanguard classes. Use this total to determine

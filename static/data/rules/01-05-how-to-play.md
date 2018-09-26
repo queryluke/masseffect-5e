@@ -1,6 +1,5 @@
 ---
 length: 8266
-new: false
 title: How to Play
 ---
 

@@ -18,24 +18,28 @@
   import AbilityScoreModifiers from './AbilityScoreModifiers.vue'
   import AbilityScorePointCost from './AbilityScorePointCost.vue'
   import AbilityScoreSummary from './AbilityScoreSummary.vue'
+  import ArmorBonusesLimitations from './ArmorBonusesLimitations.vue'
   import CharacterAdvancementTable from './CharacterAdvancementTable.vue'
   import MulticlassingBarrierTable from './MulticlassingBarrierTable.vue'
   import MulticlassingBioticsTable from './MulticlassingBioticsTable.vue'
   import MulticlassingPrereqsTable from './MulticlassingPrereqsTable.vue'
   import MulticlassingProfsTable from './MulticlassingProfsTable.vue'
   import MulticlassingTechTable from './MulticlassingTechTable.vue'
+  import TypicalDifficultyClassesTable from './TypicalDifficultyClassesTable.vue'
 
   export default {
     components: {
       AbilityScoreModifiers,
       AbilityScorePointCost,
       AbilityScoreSummary,
+      ArmorBonusesLimitations,
       CharacterAdvancementTable,
       MulticlassingBarrierTable,
       MulticlassingBioticsTable,
       MulticlassingPrereqsTable,
       MulticlassingProfsTable,
       MulticlassingTechTable,
+      TypicalDifficultyClassesTable,
       RuleText
     },
     computed: {

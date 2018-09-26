@@ -7,8 +7,10 @@ title: About the Player's Handbook
 Mass Effect 5e is a homebrew for Dungeons and Dragons 5th edition which allows you to play a tabletop roleplaying game
 with D&D 5th edition rules but set in the Mass Effect Universe. If you have played 5th edition, many of the rules
 and rule syntax will feel familiar to you. For your convenience, completely new rules will be tagged with a
-<v-chip color="secondary" text-color="white" class="v-chip--x-small">new</v-chip> badge. This
-indicates either an entire new rule or mechanic or a change in an existing rule.
+<v-chip color="secondary" text-color="white" class="v-chip--x-small">new</v-chip> badge. This indicates an entirely new
+rule or mechanic .Changes to rules will be tagged with a
+<v-chip color="orange accent-2" text-color="black" class="v-chip--x-small">change</v-chip> badge. This indicates a rule
+change, augmentation, or extension.
 
 For entirely new players (i.e., players who have not played 5th edition), you will find the entirey of 5th edition's
 System Reference Document (SRD) included in this homebrew. The purpose of including the SRD it to make it easier for

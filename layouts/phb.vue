@@ -24,6 +24,7 @@
           v-list-tile-content
             v-list-tile-title {{ rule.title }}
           v-chip(v-if="rule.new" color="secondary" text-color="white" disabled).pa-0.v-chip--x-small new
+          v-chip(v-if="rule.change" color="orange accent-2" text-color="black" disabled).pa-0.v-chip--x-small change
 
     // Content
     v-content.blue-grey.lighten-4

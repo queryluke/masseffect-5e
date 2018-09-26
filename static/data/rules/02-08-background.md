@@ -1,6 +1,5 @@
 ---
 length: 1882
-new: false
 title: '4.c Background'
 ---
 

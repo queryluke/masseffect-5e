@@ -1,6 +1,5 @@
 ---
 length: 4962
-new: false
 title: Introduction
 ---
 The Dungeons & Dragons roleplaying game is about storytelling in worlds of swords and sorcery and Mass Effect 5e

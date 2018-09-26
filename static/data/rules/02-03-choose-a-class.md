@@ -1,6 +1,5 @@
 ---
 length: 4948
-new: false
 title: '2. Choose a Class'
 ---
 

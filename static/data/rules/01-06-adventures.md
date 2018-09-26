@@ -1,6 +1,5 @@
 ---
 length: 4794
-new: false
 title: Adventures
 ---
 

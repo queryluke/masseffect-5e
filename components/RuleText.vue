@@ -1,9 +1,11 @@
 <script>
   import AiDialog from '~/components/rule_partials/AdditionalInformationDialog.vue'
+  import SkillList from '~/components/rule_partials/SkillList.vue'
 
   export default {
     components: {
-      AiDialog
+      AiDialog,
+      SkillList
     },
     created () {
       this.templateRender = new Function(this.component.render)()

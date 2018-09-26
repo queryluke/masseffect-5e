@@ -1,14 +1,18 @@
 ---
 length: 3555
-new: false
+change: true
 title: '5. Choose Equipment'
 ---
 
 Your class and background determine your character’s starting equipment, including weapons, armor, and other adventuring
 gear. Record this equipment on your character sheet. All such items are detailed in the Equipment section.
 
+
+__Starting Credits__ <v-chip color="orange accent-2" text-color="black" class="v-chip--x-small">change</v-chip>
 Instead of taking the gear given to you by your class and background, you can purchase your starting equipment. You
-have a number of credits to spend based on your race.
+have a number of credits to spend based on your _race_ (not your class as in D&D 5th). The range of average starting credits
+is roughly equivalent across races, but the variability changes based on race. Long-lived races (asari and krogan) have lower
+variability, whereas short-lived races (salarians and vorcha) have a high variability.
 
 Your Strength score limits the amount of gear you can carry and armor you can wear. Try not to purchase equipment with
 a total weight exceeding your Strength score times 2. "[Using Ability Scores](needsLink)" has more information on carrying capacity.

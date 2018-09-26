@@ -1,6 +1,5 @@
 ---
 length: 2220
-new: false
 title: '4. Describe Your Character'
 ---
 

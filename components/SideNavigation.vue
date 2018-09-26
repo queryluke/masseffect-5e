@@ -53,6 +53,7 @@
             items: [
               { title: 'Step-by-step Characters', icon: 'supervised_user_circle', href: '/phb/rules/character-creation' },
               { title: 'Beyond 1st Level', icon: 'tending_up', href: '/phb/rules/beyond-first-level' },
+              { title: 'Using Ability Scores', icon: 'gamepad', href: '/phb/rules/using-ability-scores' },
               { href: '/phb/rules/combat', title: 'Combat' },
               { href: '/phb/rules/spellcasting', title: 'Spellcasting' },
               { href: '/phb/rules/weapons', title: 'Weapons' },

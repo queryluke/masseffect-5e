@@ -2,6 +2,7 @@
   v-card(:id="hash").elevation-0.transparent
     v-card-title.headline {{ title }}
       v-chip(v-if="newRule" color="secondary" text-color="white" small) new
+      v-chip(v-if="changeRule" color="orange accent-2" text-color="black" small) change
     v-card-text.rule-text
       rule-text(:component="item.vue")
 </template>
@@ -21,6 +22,9 @@
       },
       newRule () {
         return this.item.attributes.new
+      },
+      changeRule () {
+        return this.item.attributes.change
       },
       hash () {
         return this.id.split('-').splice(2).join('-')

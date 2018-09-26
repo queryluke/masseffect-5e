@@ -1,6 +1,5 @@
 ---
 length: 2062
-new: false
 title: '4.a Appearance'
 ---
 

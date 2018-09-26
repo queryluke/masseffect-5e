@@ -10,7 +10,6 @@
   },
   {
     "length": 4962,
-    "new": false,
     "title": "Introduction",
     "section": 1,
     "subSection": 2,
@@ -37,7 +36,6 @@
   },
   {
     "length": 8266,
-    "new": false,
     "title": "How to Play",
     "section": 1,
     "subSection": 5,
@@ -46,7 +44,6 @@
   },
   {
     "length": 4794,
-    "new": false,
     "title": "Adventures",
     "section": 1,
     "subSection": 6,
@@ -55,7 +52,6 @@
   },
   {
     "length": 1539,
-    "new": false,
     "title": "Overview",
     "section": 2,
     "subSection": 1,
@@ -64,7 +60,7 @@
   },
   {
     "length": 4361,
-    "new": true,
+    "change": true,
     "title": "1. Choose a Race",
     "section": 2,
     "subSection": 2,
@@ -73,7 +69,6 @@
   },
   {
     "length": 4948,
-    "new": false,
     "title": "2. Choose a Class",
     "section": 2,
     "subSection": 3,
@@ -82,7 +77,6 @@
   },
   {
     "length": 3730,
-    "new": false,
     "title": "3. Determine Ability Scores",
     "section": 2,
     "subSection": 4,
@@ -91,7 +85,6 @@
   },
   {
     "length": 2220,
-    "new": false,
     "title": "4. Describe Your Character",
     "section": 2,
     "subSection": 5,
@@ -100,7 +93,6 @@
   },
   {
     "length": 2062,
-    "new": false,
     "title": "4.a Appearance",
     "section": 2,
     "subSection": 6,
@@ -109,7 +101,6 @@
   },
   {
     "length": 2631,
-    "new": false,
     "title": "4.b Alignment",
     "section": 2,
     "subSection": 7,
@@ -118,7 +109,6 @@
   },
   {
     "length": 1882,
-    "new": false,
     "title": "4.c Background",
     "section": 2,
     "subSection": 8,
@@ -127,7 +117,6 @@
   },
   {
     "length": 4770,
-    "new": false,
     "title": "4.d Personality",
     "section": 2,
     "subSection": 9,
@@ -135,26 +124,33 @@
     "hash": "personality"
   },
   {
-    "length": 3555,
-    "new": false,
-    "title": "5. Choose Equipment",
+    "length": 720,
+    "change": true,
+    "title": "4.e Languages",
     "section": 2,
     "subSection": 10,
-    "id": "02-10-choose-equipment",
+    "id": "02-10-languages",
+    "hash": "languages"
+  },
+  {
+    "length": 3555,
+    "change": true,
+    "title": "5. Choose Equipment",
+    "section": 2,
+    "subSection": 11,
+    "id": "02-11-choose-equipment",
     "hash": "choose-equipment"
   },
   {
     "length": 654,
-    "new": false,
     "title": "Coming Together",
     "section": 2,
-    "subSection": 11,
-    "id": "02-11-coming-together",
+    "subSection": 12,
+    "id": "02-12-coming-together",
     "hash": "coming-together"
   },
   {
     "length": 1539,
-    "new": false,
     "title": "Overview",
     "section": 3,
     "subSection": 1,
@@ -163,7 +159,7 @@
   },
   {
     "length": 1539,
-    "new": true,
+    "change": true,
     "title": "Multiclassing",
     "section": 3,
     "subSection": 2,
@@ -172,7 +168,6 @@
   },
   {
     "length": 1539,
-    "new": false,
     "title": "Inspiration",
     "section": 3,
     "subSection": 3,
@@ -187,5 +182,105 @@
     "subSection": 4,
     "id": "03-04-paragon-renegade",
     "hash": "paragon-renegade"
+  },
+  {
+    "length": 866,
+    "title": "Overview",
+    "section": 4,
+    "subSection": 1,
+    "id": "04-01-using-ability-scores",
+    "hash": "using-ability-scores"
+  },
+  {
+    "length": 885,
+    "title": "Ability Scores and Modifiers",
+    "section": 4,
+    "subSection": 2,
+    "id": "04-02-ability-scores-and-modifiers",
+    "hash": "ability-scores-and-modifiers"
+  },
+  {
+    "length": 1689,
+    "title": "Advantage and Disadvantage",
+    "section": 4,
+    "subSection": 3,
+    "id": "04-03-advantage-and-disadvantage",
+    "hash": "advantage-and-disadvantage"
+  },
+  {
+    "length": 1750,
+    "title": "Proficiency Bonus",
+    "section": 4,
+    "subSection": 4,
+    "id": "04-04-proficiency-bonus",
+    "hash": "proficiency-bonus"
+  },
+  {
+    "length": 8215,
+    "change": true,
+    "title": "Ability Checks",
+    "section": 4,
+    "subSection": 5,
+    "id": "04-05-ability-checks",
+    "hash": "ability-checks"
+  },
+  {
+    "length": 4840,
+    "change": true,
+    "title": "Strength",
+    "section": 4,
+    "subSection": 6,
+    "id": "04-06-strength",
+    "hash": "strength"
+  },
+  {
+    "length": 4634,
+    "change": true,
+    "title": "Dexterity",
+    "section": 4,
+    "subSection": 7,
+    "id": "04-07-dexterity",
+    "hash": "dexterity"
+  },
+  {
+    "length": 1688,
+    "title": "Constitution",
+    "section": 4,
+    "subSection": 8,
+    "id": "04-08-constitution",
+    "hash": "constitution"
+  },
+  {
+    "length": 3102,
+    "change": true,
+    "title": "Intelligence",
+    "section": 4,
+    "subSection": 9,
+    "id": "04-09-intelligence",
+    "hash": "intelligence"
+  },
+  {
+    "length": 3102,
+    "title": "Wisdom",
+    "section": 4,
+    "subSection": 10,
+    "id": "04-10-wisdom",
+    "hash": "wisdom"
+  },
+  {
+    "length": 3102,
+    "title": "Charisma",
+    "section": 4,
+    "subSection": 11,
+    "id": "04-11-charisma",
+    "hash": "charisma"
+  },
+  {
+    "length": 3102,
+    "title": "Saving Throws",
+    "section": 4,
+    "subSection": 12,
+    "id": "04-12-saving-throws",
+    "hash": "saving-throws"
   }
 ]

@@ -33,30 +33,7 @@
             td(data-table-key="Placement") Head
             td(colspan=3) Unless otherwise listed, headware provides no bonus
       p.headline.mb-0.mt-3 Bonues and Limitations
-      p.mb-0 If you are wearing...
-      table.table
-        thead
-          tr
-            th
-            th DEX bonus
-            th Min STR
-            th Stealth
-        tbody
-          tr
-            td ...one or more pieces of Heavy armor
-            td(data-table-key="DEX bonus") none
-            td(data-table-key="Min STR") 14
-            td(data-table-key="Stealth") disadvantage
-          tr
-            td ...one or more pieces of Medium armor
-            td(data-table-key="DEX bonus") Max +2 bonus from Dexterity modifier
-            td(data-table-key="Min STR") 12
-            td(data-table-key="Stealth") -
-          tr
-            td ...light or no armor
-            td(data-table-key="DEX bonus") Add Dexterity modifier to your AC
-            td(data-table-key="Min STR") -
-            td(data-table-key="Stealth") -
+
       p.headline.mt-3 Variant: Encumberance
       p.mb-0 If using the #[nuxt-link(to="/phb/rules/general#encumbrance") Variant: Encumbrance rule], use the following to calculate your armor weight.
       table.table

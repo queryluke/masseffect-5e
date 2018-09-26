@@ -1,6 +1,5 @@
 ---
 length: 4770
-new: false
 title: '4.d Personality'
 ---
 

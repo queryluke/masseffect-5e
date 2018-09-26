@@ -1,6 +1,5 @@
 ---
 length: 654
-new: false
 title: 'Coming Together'
 ---
 
