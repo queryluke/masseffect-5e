@@ -23,5 +23,4 @@ You usually gain advantage or disadvantage through the use of special abilities,
 [Inspiration](/phb/rules/beyond-first-level#inspiration) can also give a character advantage. The GM can also decide
 that circumstances influence a roll in one direction or the other and grant advantage or impose disadvantage as a result.
 
-<p class="text-xs-right"><small>text adapted from <a href="http://media.wizards.com/2016/downloads/DND/SRD-OGL_V5.1.pdf" target="_blank">
-<em>Dungeons & Dragons System Reference Document 5.1</em></a>, p. 76-77</small></p>
+<source-reference pages="76-77"></source-reference>

@@ -31,5 +31,4 @@ what other improvements you gain at each level.
 
 <ai-dialog title="Character Advancement Table" component="character-advancement-table"></ai-dialog>
 
-<p class="text-xs-right"><small>text adapted from <a href="http://media.wizards.com/2016/downloads/DND/SRD-OGL_V5.1.pdf" target="_blank">
-<em>Dungeons & Dragons System Reference Document 5.1</em></a>, p. 56</small></p>
+<source-reference pages="56"></source-reference>

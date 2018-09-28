@@ -21,5 +21,4 @@ Additionally, if you have inspiration, you can reward another player for good ro
 doing something exciting in the game. When another player character does something that really contributes to the story
 in a fun and interesting way, you can give up your inspiration to give that character inspiration.
 
-<p class="text-xs-right"><small>text adapted from <a href="http://media.wizards.com/2016/downloads/DND/SRD-OGL_V5.1.pdf" target="_blank">
-<em>Dungeons & Dragons System Reference Document 5.1</em></a>, p. 59-60</small></p>
+<source-reference pages="59-60"></source-reference>

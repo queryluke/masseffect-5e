@@ -58,5 +58,4 @@ Omni-torch, a melee weapon, Kaleem uses her Strength modifier (+1) but she does 
 she is not proficient with melee weapons. The weapon deals 1d6 + 1 fire damage when it hits.
 </v-alert>
 
-<p class="text-xs-right"><small>text adapted from <a href="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook" target="_blank">
-<em>Player's Handbook: A Dungeons & Dragons Core Rulebook</em></a>, p. 14-15</small></p>
+<source-reference pages="9" source="basic"></source-reference>

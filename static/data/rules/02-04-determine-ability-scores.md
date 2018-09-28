@@ -53,5 +53,4 @@ between those extremes.
 
 <ai-dialog title="Ability Score Point Cost" component="ability-score-point-cost"></ai-dialog>
 
-<p class="text-xs-right"><small>text adapted from <a href="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook" target="_blank">
-<em>Player's Handbook: A Dungeons & Dragons Core Rulebook</em></a>, p. 12-13</small></p>
+<source-reference pages="7-8" source="basic"></source-reference>

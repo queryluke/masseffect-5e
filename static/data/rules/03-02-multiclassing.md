@@ -79,5 +79,4 @@ total to determine your tech points and memory by consulting the Multiclassing T
 
 <ai-dialog title="Multiclassing Tech table" component="multiclassing-Tech-table"></ai-dialog>
 
-<p class="text-xs-right"><small>text adapted from <a href="http://media.wizards.com/2016/downloads/DND/SRD-OGL_V5.1.pdf" target="_blank">
-<em>Dungeons & Dragons System Reference Document 5.1</em></a>, p. 56-58</small></p>
+<source-reference pages="56-58"></source-reference>

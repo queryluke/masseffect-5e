@@ -13,20 +13,12 @@
 </template>
 
 <script>
-  import RuleCard from '~/components/cards/RuleCard.vue'
-  import {mapGetters} from 'vuex'
+  import engineer from '~/static/data/classes/engineer.json'
 
   export default {
-    components: { RuleCard },
-    computed: {
-      ...mapGetters(['getDataItem'])
-    },
-    created () {
-      this.engineer = this.getDataItem('classes', 'engineer')
-    },
     data () {
       return {
-        engineer: {}
+        engineer
       }
     }
   }

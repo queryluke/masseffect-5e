@@ -36,8 +36,7 @@ mind, higher Strength and Constitution suggest a healthy, athletic body, and her
 awkward social decorum.
 </v-alert>
 
-<p class="text-xs-right"><small>text adapted from <a href="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook" target="_blank">
-<em>Player's Handbook: A Dungeons & Dragons Core Rulebook</em></a>, p. 13-14</small></p>
+<source-reference pages="8-9" source="basic"></source-reference>
 
 
 

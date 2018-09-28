@@ -1,27 +1,23 @@
 <template lang="pug">
-  div.markdown-file
-    div(v-html="markdownFile")
+  div.markdown-content
+    markdown-content(:component="item.vue")
 </template>
 
 <script>
-  import {mapGetters} from 'vuex'
-  import {EnhanceMarkdown} from '~/mixins/enhanceMarkdown.js'
+  import MarkdownContent from '~/components/MarkdownContent.vue'
 
   export default {
+    components: {MarkdownContent},
     computed: {
-      ...mapGetters(['getData']),
       item () {
-        return this.getData(this.itemType).find(item => item.id === this.id)
-      },
-      markdownFile () {
-        const file = require(`~/data/${this.itemType}/${this.item.id}.md`)
-        return this.enhanceMarkdown(file.html)
+        if (this.id) {
+          return require(`~/static/data/${this.itemType}/${this.id}.md`)
+        }
       }
     },
-    mixins: [EnhanceMarkdown],
     props: {
-      itemType: String,
-      id: String
+      id: String,
+      itemType: String
     }
   }
 </script>

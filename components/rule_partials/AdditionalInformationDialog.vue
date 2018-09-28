@@ -14,7 +14,7 @@
 </template>
 
 <script>
-  import RuleText from '~/components/RuleText.vue'
+  import MarkdownContent from '~/components/MarkdownContent.vue'
   import AbilityScoreModifiers from './AbilityScoreModifiers.vue'
   import AbilityScorePointCost from './AbilityScorePointCost.vue'
   import AbilityScoreSummary from './AbilityScoreSummary.vue'
@@ -40,7 +40,7 @@
       MulticlassingProfsTable,
       MulticlassingTechTable,
       TypicalDifficultyClassesTable,
-      RuleText
+      MarkdownContent
     },
     computed: {
       item () {

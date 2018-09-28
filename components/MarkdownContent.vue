@@ -1,11 +1,13 @@
 <script>
   import AiDialog from '~/components/rule_partials/AdditionalInformationDialog.vue'
   import SkillList from '~/components/rule_partials/SkillList.vue'
+  import SourceReference from '~/components/rule_partials/SourceReference'
 
   export default {
     components: {
       AiDialog,
-      SkillList
+      SkillList,
+      SourceReference
     },
     created () {
       this.templateRender = new Function(this.component.render)()

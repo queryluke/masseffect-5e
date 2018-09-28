@@ -1,8 +1,11 @@
 const fm = require('front-matter')
 const _ = require('lodash')
 
+// const jsonDirs = ['classes']
+// const mdDirs = ['backgrounds', 'conditions', 'kits', 'class_features', 'changelog', 'spells']
+
 const jsonDirs = ['classes']
-const mdDirs = ['backgrounds', 'conditions', 'kits', 'class_features', 'changelog', 'spells']
+const mdDirs = ['backgrounds', 'rules']
 
 export default {
   nuxtServerInit () {
@@ -10,10 +13,10 @@ export default {
       const fs = require('fs')
       // process markdown files
       for (let dir of mdDirs) {
-        const path = `data/${dir}`
+        const path = `./static/data/${dir}`
         const files = fs.readdirSync(path)
 
-        const items = files.map((file) => {
+        const items = files.filter(elm => elm.match(/.*\.(md)/ig)).map((file) => {
           const fc = fm(fs.readFileSync(`${path}/${file}`, 'utf8'))
           let item = Object.assign(fc.attributes, {})
 
@@ -22,10 +25,17 @@ export default {
             item.slug = file.replace(/.md$/, '')
             item.url = `/changelog/${item.slug}`
           }
+
+          if (dir === 'rules') {
+            const fileParts = file.split('-')
+            item.section = Number.parseInt(fileParts[0])
+            item.subSection = Number.parseInt(fileParts[1])
+            item.id = file.replace(/\.md$/g, '')
+            item.hash = fileParts.splice(2).join('-').replace(/\.md$/g, '')
+          }
           return item
         })
-        const key = dir === 'changelog' ? 'versions' : _.camelCase(dir)
-        this.dispatch('instantiateState', { key: key, items })
+        fs.writeFileSync(`${path}/index.json`, JSON.stringify(items, null, 2))
       }
 
       // process jsDirs

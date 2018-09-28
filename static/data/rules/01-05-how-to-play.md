@@ -114,5 +114,4 @@ There’s one more general rule you need to know at the outset. Whenever you div
 end up with a fraction, even if the fraction is one-half or greater.
 
 
-<p class="text-xs-right"><small>text adapted from <a href="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook" target="_blank">
-<em>Player's Handbook: A Dungeons & Dragons Core Rulebook</em></a>, p. 6-7</small></p>
+<source-reference pages="3-4" source="basic"></source-reference>

@@ -45,5 +45,4 @@ Sam picks a lawful alignment for Kaleem, as she buys into the tradition of the B
 lack of empathy make her neutral in her disposition for moral codes.
 </v-alert>
 
-<p class="text-xs-right"><small>text adapted from <a href="http://media.wizards.com/2016/downloads/DND/SRD-OGL_V5.1.pdf" target="_blank">
-<em>Dungeons & Dragons System Reference Document 5.1</em></a>, p. 58-59</small></p>
+<source-reference pages="8-9, 33-34" source="basic"></source-reference>

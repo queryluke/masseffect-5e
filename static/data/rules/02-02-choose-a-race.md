@@ -54,5 +54,4 @@ classes for the salarian race. She notes all the racial traits of salarians on h
 of 10m and Medium size.
 </v-alert>
 
-<p class="text-xs-right"><small>text adapted from <a href="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook" target="_blank">
-<em>Player's Handbook: A Dungeons & Dragons Core Rulebook</em></a>, p. 11</small></p>
+<source-reference pages="6" source="basic"></source-reference>

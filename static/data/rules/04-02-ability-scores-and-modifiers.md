@@ -17,5 +17,4 @@ from 1 to 30.
 
 <ai-dialog title="Ability Scores and Modifiers" component="ability-score-modifiers"></ai-dialog>
 
-<p class="text-xs-right"><small>text adapted from <a href="http://media.wizards.com/2016/downloads/DND/SRD-OGL_V5.1.pdf" target="_blank">
-<em>Dungeons & Dragons System Reference Document 5.1</em></a>, p. 76</small></p>
+<source-reference pages="76"></source-reference>

@@ -70,5 +70,4 @@ Sam notes this, and will record the final number after she determines Kaleem’s
 notes the proficiency bonus for a 1st-level character, which is +2.
 </v-alert>
 
-<p class="text-xs-right"><small>text adapted from <a href="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook" target="_blank">
-<em>Player's Handbook: A Dungeons & Dragons Core Rulebook</em></a>, p. 11-12</small></p>
+<source-reference pages="6-7" source="basic"></source-reference>

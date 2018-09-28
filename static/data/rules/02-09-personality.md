@@ -65,5 +65,4 @@ Given her history, Kaleem’s bond is obvious: she owes her life to the Blue Sun
 has caused her to do some morally questionable deeds without thinking twice.
 </v-alert>
 
-<p class="text-xs-right"><small>text adapted from <a href="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook" target="_blank">
-<em>Player's Handbook: A Dungeons & Dragons Core Rulebook</em></a>, p. 14, 123-124</small></p>
+<source-reference pages="8-9, 34-35" source="basic"></source-reference>

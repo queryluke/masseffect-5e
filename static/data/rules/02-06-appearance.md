@@ -32,5 +32,4 @@ Sam fills in some of Kaleems’s basic details: her name, her sex (female), her 
 is missing a cranial ridge (making her unattractive being by salarain standards).
 </v-alert>
 
-<p class="text-xs-right"><small>text adapted from <a href="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook" target="_blank">
-<em>Player's Handbook: A Dungeons & Dragons Core Rulebook</em></a>, p. 121</small></p>
+<source-reference pages="8-9, 33" source="basic"></source-reference>

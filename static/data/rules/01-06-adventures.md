@@ -56,5 +56,4 @@ pitched battle, there’s still plenty of opportunity for adventurers to attempt
 to examine the environment (perhaps by pushing a very large red button), and to interact with other creatures,
 including allies, enemies, and neutral parties.
 
-<p class="text-xs-right"><small>text adapted from <a href="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook" target="_blank">
-<em>Player's Handbook: A Dungeons & Dragons Core Rulebook</em></a>, p. 7-8</small></p>
+<source-reference pages="4-5" source="basic"></source-reference>

@@ -18,5 +18,4 @@ and the attack roll - rely on the six ability scores. The [Introduction](/phb/in
 rule behind these rolls: roll a d20, add an ability modifier derived from one of the six ability scores, and compare the
 total to a target number.
 
-<p class="text-xs-right"><small>text adapted from <a href="http://media.wizards.com/2016/downloads/DND/SRD-OGL_V5.1.pdf" target="_blank">
-<em>Dungeons & Dragons System Reference Document 5.1</em></a>, p. 76</small></p>
+<source-reference pages="76"></source-reference>

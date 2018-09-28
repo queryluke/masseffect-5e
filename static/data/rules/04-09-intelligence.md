@@ -25,5 +25,4 @@ Electronics, Engineering, History, Investigation, and Science skills reflect apt
 Engineers, infiltrators, and sentinels use Intelligence as their spellcasting ability, which helps determine the saving
 throw DCs of spells they cast.
 
-<p class="text-xs-right"><small>text adapted from <a href="http://media.wizards.com/2016/downloads/DND/SRD-OGL_V5.1.pdf" target="_blank">
-<em>Dungeons & Dragons System Reference Document 5.1</em></a>, p. 81-82</small></p>
+<source-reference pages="81-82"></source-reference>

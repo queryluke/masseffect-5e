@@ -72,5 +72,4 @@ the other adventurers can search for breaking-edge medical experiments to revive
 player might choose to create a new character to carry on. The group might fail to complete an adventure successfully,
 but if everyone had a good time and created a memorable story, they all win.
 
-<p class="text-xs-right"><small>text adapted from <a href="http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook" target="_blank">
-<em>Player's Handbook: A Dungeons & Dragons Core Rulebook</em></a>, p. 5</small></p>
+<source-reference pages="2" source="basic"></source-reference>
