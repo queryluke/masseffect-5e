@@ -46,7 +46,7 @@ Bonds might answer any of these questions: Whom do you care most about? To what 
 What is your most treasured possession?
 
 Your bonds might be tied to your class, your background, your race, or some other aspect of your character’s history or
-personality. You might also gain new bonds over the course of your adventures.
+personality. You might also gain new bonds over the course of your missions.
 
 ### Flaws
 Finally, choose a flaw for your character. Your character’s flaw represents some vice, compulsion, fear, or weakness —

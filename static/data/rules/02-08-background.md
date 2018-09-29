@@ -3,7 +3,7 @@ length: 1882
 title: '4.c Background'
 ---
 
-Every story has a beginning. Your character’s background reveals where you came from, how you became an adventurer, and
+Every story has a beginning. Your character’s background reveals where you came from, how you became an operative, and
 your place in the galaxy. Your soldier might have been a mercenary or a former Specter. Your adept could have been an
 government experiment or a celebrated artisan. Your infiltrator might be a political assassin or gathered intel for the
 Shadow Broker.

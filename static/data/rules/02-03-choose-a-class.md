@@ -3,7 +3,7 @@ length: 4948
 title: '2. Choose a Class'
 ---
 
-Every adventurer is a member of a class. Class broadly describes a character’s vocation, what special talents he or she
+Every operative is a member of a class. Class broadly describes a character’s vocation, what special talents he or she
 possesses, and the tactics he or she is most likely to employ when exploring a planet, fighting alien monsters, or engaging
 in a tense negotiation. The character classes are described in the [Classes](/phb/classes) section.
 
@@ -21,7 +21,7 @@ and done dangerous things before.
 
 Starting off at 1st level marks your character’s entry into the adventuring life. If you’re already familiar with the
 game, or if you are joining an existing ME5e campaign, your GM might decide to have you begin at a higher level, on the
-assumption that your character has already survived a few harrowing adventures.
+assumption that your character has already survived a few harrowing missions.
 
 Record your level on your character sheet. If you’re starting at a higher level, record the additional elements your
 class gives you for your levels past 1st. Also record your experience points. A 1st-level character has 0 XP. A higher-level

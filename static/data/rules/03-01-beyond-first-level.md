@@ -3,7 +3,7 @@ length: 1539
 title: 'Overview'
 ---
 
-As your character goes on adventures and overcomes challenges, he or she gains experience, represented by experience
+As your character goes on missions and overcomes challenges, he or she gains experience, represented by experience
 points. A character who reaches a specified experience point total advances in capability. This advancement is called
 __gaining a level__.
 

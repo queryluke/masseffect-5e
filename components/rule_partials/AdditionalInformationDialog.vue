@@ -20,12 +20,14 @@
   import AbilityScoreSummary from './AbilityScoreSummary.vue'
   import ArmorBonusesLimitations from './ArmorBonusesLimitations.vue'
   import CharacterAdvancementTable from './CharacterAdvancementTable.vue'
+  import LifestyleExpenses from './LifestyleExpenses.vue'
   import MulticlassingBarrierTable from './MulticlassingBarrierTable.vue'
   import MulticlassingBioticsTable from './MulticlassingBioticsTable.vue'
   import MulticlassingPrereqsTable from './MulticlassingPrereqsTable.vue'
   import MulticlassingProfsTable from './MulticlassingProfsTable.vue'
   import MulticlassingTechTable from './MulticlassingTechTable.vue'
   import TypicalDifficultyClassesTable from './TypicalDifficultyClassesTable.vue'
+  import TravelPace from './TravelPace.vue'
 
   export default {
     components: {
@@ -34,12 +36,14 @@
       AbilityScoreSummary,
       ArmorBonusesLimitations,
       CharacterAdvancementTable,
+      LifestyleExpenses,
       MulticlassingBarrierTable,
       MulticlassingBioticsTable,
       MulticlassingPrereqsTable,
       MulticlassingProfsTable,
       MulticlassingTechTable,
       TypicalDifficultyClassesTable,
+      TravelPace,
       MarkdownContent
     },
     computed: {

@@ -6,32 +6,32 @@ title: How to Play
 The play of the Dungeons & Dragons game (and by extension, Mass Effect 5e) unfolds according to this basic pattern.
 
 ### 1. The GM describes the environment.
-The GM tells the players where their adventurers are and what’s around them, presenting the basic scope of options that
+The GM tells the players where their operatives are and what’s around them, presenting the basic scope of options that
 present themselves (how many airlocks lead out of a space station, what’s on a table, who’s in the night club, and so on).
 
 ### 2. The players describe what they want to do.
 Sometimes one player speaks for the whole party, saying, “We’ll take the east door,” for example. Other times, different
-adventurers do different things: one adventurer might search a lock box while a second examines an esoteric symbol
+operatives do different things: one operative might search a lock box while a second examines an esoteric symbol
 spray painted on a wall and a third keeps a look out for thugs. The players don’t need to take turns, but the DM listens
 to every player and decides how to resolve those actions.
 
-Sometimes, resolving a task is easy. If an adventurer wants to walk across a room and open a door, the GM might just say
+Sometimes, resolving a task is easy. If an operative wants to walk across a room and open a door, the GM might just say
 that the door opens and describe what lies beyond. But the door might be locked, the floor might hide a tripwire, or some
-other circumstance might make it challenging for an adventurer to complete a task. In those cases, the GM decides what
+other circumstance might make it challenging for an operative to complete a task. In those cases, the GM decides what
 happens, often relying on the roll of a die to determine the results of an action.
 
-### 3. The DM narrates the results of the adventurers’ actions.
+### 3. The DM narrates the results of the operatives’ actions.
 
 Describing the results often leads to another decision point, which brings the flow of the game right back to step 1.
 
-This pattern holds whether the adventurers are cautiously exploring a derelict ship, talking to a devious politician, or
+This pattern holds whether the operatives are cautiously exploring a derelict ship, talking to a devious politician, or
 locked in a firefight against a squad of Batarian extremists. In certain situations, particularly combat, the action is
 more structured and the players (and GM) do take turns choosing and resolving actions. But most of the time, play is
-fluid and flexible, adapting to the circumstances of the adventure.
+fluid and flexible, adapting to the circumstances of the mission.
 
-Often the action of an adventure takes place in the imagination of the players and GM, relying on the GM’s verbal
+Often the action of a mission takes place in the imagination of the players and GM, relying on the GM’s verbal
 descriptions to set the scene. Some GMs like to use music, art, or recorded sound effects to help set the mood, and many
-players and GMs alike adopt different voices for the various adventurers, aliens, and other characters they play in the
+players and GMs alike adopt different voices for the various operatives, aliens, and other characters they play in the
 game. Sometimes, a GM might lay out a map and use tokens or miniature figures to represent each creature involved in a
 scene to help the players keep track of where everyone is.
 
@@ -57,13 +57,13 @@ whether it was odd or even. (Alternatively, if the number rolled is more than ha
 
 ### The D20
 
-Does an adventurer’s Scimitar shotgun blast hurt a Reaper Brute or just bounce off its iron-hard skin? Will the asari
+Does an operative’s Scimitar shotgun blast hurt a Reaper Brute or just bounce off its iron-hard skin? Will the asari
 believe an outrageous bluff? Can a character swim across a raging river? Can a character avoid the blast of a fragmentation
 grenade, or does he or she take full damage from the explosion? In cases where the outcome of an action is uncertain,
 the game relies on rolls of a 20-sided die, a d20, to determine success or failure.
 
 Every character and monster in the game has capabilities defined by six ability scores. The abilities are Strength, Dexterity,
-Constitution, Intelligence, Wisdom, and Charisma, and they typically range from 3 to 18 for most adventurers. (Monsters
+Constitution, Intelligence, Wisdom, and Charisma, and they typically range from 3 to 18 for most operatives. (Monsters
 might have scores as low as 1 or as high as 30.) These ability scores, and the ability modifiers derived from them, are
 the basis for almost every d20 roll that a player makes on a character’s or monster’s behalf.
 
@@ -104,9 +104,9 @@ This compendium contains rules that govern how the game plays. That said, many r
 gadgets, monster abilities, and other game elements break the general rules in some way, creating an exception to how
 the rest of the game works. Remember this: If a specific rule contradicts a general rule, the specific rule wins.
 
-Exceptions to the rules are often minor. For instance, many adventurers don’t have proficiency with shotguns, but every
+Exceptions to the rules are often minor. For instance, many operatives don’t have proficiency with shotguns, but every
 soldier does because of a class trait. That trait creates a minor exception in the game. Other examples of rule-breaking
-are more conspicuous. For instance, an adventurer can’t normally fly, but some spells and armor mods make that possible.
+are more conspicuous. For instance, an operative can’t normally fly, but some spells and armor mods make that possible.
 Biotics and tech accounts for most of the major exceptions to the rules.
 
 ### Round Down

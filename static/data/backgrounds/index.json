@@ -109,8 +109,8 @@
     "starting_credits": 5000
   },
   {
-    "id": "operative",
-    "name": "Operative",
+    "id": "faction-agent",
+    "name": "Faction Agent",
     "skill_proficiencies": [
       "deception",
       "investigation",

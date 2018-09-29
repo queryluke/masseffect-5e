@@ -13,13 +13,9 @@ import Cover from './Cover.vue'
 import CreatureTypes from './CreatureTypes.vue'
 import Currency from './Currency.vue'
 import DamageTypes from './DamageTypes.vue'
-import Distance from './Distance.vue'
-import GalaxyMaster from './GalaxyMaster.vue'
 import Grenades from './Grenades.vue'
 import HeavyWeaponCharges from './HeavyWeaponCharges.vue'
 import HeavyWeapons from './HeavyWeapons.vue'
-import InfraredVision from './InfraredVision.vue'
-import LifestyleExpenses from './LifestyleExpenses.vue'
 import MediGel from './MediGel.vue'
 import MeleeWeapons from './MeleeWeapons.vue'
 import OmniGel from './OmniGel.vue'
@@ -54,13 +50,9 @@ export {
   CreatureTypes,
   Currency,
   DamageTypes,
-  Distance,
   Grenades,
-  GalaxyMaster,
   HeavyWeaponCharges,
   HeavyWeapons,
-  InfraredVision,
-  LifestyleExpenses,
   MediGel,
   MeleeWeapons,
   OmniGel,

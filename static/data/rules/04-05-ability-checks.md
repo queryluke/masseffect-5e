@@ -27,7 +27,7 @@ Sometimes one character's or monster's efforts are directly opposed to another's
 trying to do the same thing and only one can succeed, such as attempting to snatch up a grenade that has fallen on the floor.
 
 This situation also applies when one of them is trying to prevent the other one from accomplishing a goal - for example,
-when a brute tries to force open a door that an adventurer is holding closed. In situations like these, the outcome is
+when a brute tries to force open a door that an operative is holding closed. In situations like these, the outcome is
 determined by a special form of ability check, called a __contest__.
 
 Both participants in a contest make ability checks appropriate to their efforts. They apply all appropriate bonuses and
@@ -37,7 +37,7 @@ one from succeeding.
 
 If the contest results in a tie, the situation remains the same as it was before the contest. Thus, one contestant might
 win the contest by default. If two characters tie in a contest to snatch a grenade the floor, neither character grabs it.
-In a contest between a monster trying to open a door and an adventurer trying to keep the door closed, a tie means that
+In a contest between a monster trying to open a door and an operative trying to keep the door closed, a tie means that
 the door remains shut.
 
 
@@ -144,7 +144,7 @@ To make a group ability check, everyone in the group makes the ability check. If
 the whole group succeeds.
 
 Otherwise, the group fails. Group checks don't come up very often, and they're most useful when all the characters
-succeed or fail as a group. For example, when adventurers are navigating a swamp, the GM might call for a group
+succeed or fail as a group. For example, when operatives are navigating a swamp, the GM might call for a group
 Wisdom (Survival) check to see if the characters can avoid the quicksand, sinkholes, and other natural hazards of the
 environment. If at least half the group succeeds, the successful characters are able to guide their companions out of
 danger. Otherwise, the group stumbles into one of these hazards.

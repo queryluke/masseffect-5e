@@ -1,6 +1,6 @@
 ---
-id: operative
-name: "Operative"
+id: faction-agent
+name: "Faction Agent"
 skill_proficiencies:
   - deception
   - investigation
@@ -22,23 +22,23 @@ or starship system (weapons)
 __Equipment__. A disguise kit, a set thieves' tools or hacking tools, a badge or emblem of your faction,
 a set of bio-encryption keys, and 1,000 credits
 
-__Feature: Safe Haven__. As a an operative, you have access to a secret network of supporters and other operatives who can
+__Feature: Safe Haven__. As a faction agent, you have access to a secret network of supporters and other agents who can
 provide assistance. You know a set of secret signs, encrypted communication channels, and passwords you can use to identify
-such operatives, who can provide you with access to a hidden safe house, free room and board, or assistance in finding information.
+such agents, who can provide you with access to a hidden safe house, free room and board, or assistance in finding information.
 These agents never risk their lives for you or risk revealing their true identities.
 
-__Faction__. As an operative, you're part of a larger faction, which could be criminal, military, religious, political, etc.
+__Faction__. As a faction agent, you're part of a larger faction, which could be criminal, military, religious, political, etc.
 You can work with your GM to create a faction or you can use an existing one from the Mass Effect Universe. Some faction
-examples are the Shadow Broker Network, Blue Suns, Special Tasks Group, Cerberus, Eclipse, and the Blood Pack. Operatives
+examples are the Shadow Broker Network, Blue Suns, Special Tasks Group, Cerberus, Eclipse, and the Blood Pack. Agents
 are more than hired mercenaries and are supportive of their faction's efforts.
 
 <div class="hr"></div>
 
 ### Suggested Characteristics
-Operatives are shaped by their experience in the line of duty. The beliefs, laws, and practices of their faction can
+Faction Agents are shaped by their experience in the line of duty. The beliefs, laws, and practices of their faction can
 affect their mannerisms and ideals. Their flaws might be some hidden hypocrisy that counteracts the tennats of their faction.
 For example, a Shadow Broker Agent that secretly wants transparency of information. Or they might have an ideal or bond
-that is taken to an extreme, such as a Cerberus operative that hates all non-human races and kills them whenever possible.
+that is taken to an extreme, such as a Cerberus agent that hates all non-human races and kills them whenever possible.
 
 
 d8 | Personality Trait

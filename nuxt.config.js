@@ -12,8 +12,6 @@ require('fs').readdirSync('./data/changelog').map((file) => {
   routes.push('/changelog/' + (file.replace(/\.md$/g, '')))
 })
 
-const md = require('markdown-it')()
-
 module.exports = {
   /*
   ** Build configuration

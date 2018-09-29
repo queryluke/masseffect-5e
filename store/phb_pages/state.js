@@ -16,6 +16,10 @@ export default {
       name: 'Using Ability Scores',
       rules: 4
     },
+    'phb-rules-missions': {
+      name: 'Missions',
+      rules: 5
+    },
     'phb-rules-combat': {
       name: 'Rules - Combat',
       rules: [

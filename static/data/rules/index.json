@@ -44,7 +44,7 @@
   },
   {
     "length": 4794,
-    "title": "Adventures",
+    "title": "missions",
     "section": 1,
     "subSection": 6,
     "id": "01-06-adventures",
@@ -282,5 +282,63 @@
     "subSection": 12,
     "id": "04-12-saving-throws",
     "hash": "saving-throws"
+  },
+  {
+    "length": 1043,
+    "title": "Overview",
+    "section": 5,
+    "subSection": 1,
+    "id": "05-01-missions",
+    "hash": "missions"
+  },
+  {
+    "length": 1119,
+    "title": "Time",
+    "section": 5,
+    "subSection": 2,
+    "id": "05-02-time",
+    "hash": "time"
+  },
+  {
+    "length": 1043,
+    "title": "Movement",
+    "change": true,
+    "section": 5,
+    "subSection": 3,
+    "id": "05-03-movement",
+    "hash": "movement"
+  },
+  {
+    "length": 7372,
+    "title": "The Environment",
+    "change": true,
+    "section": 5,
+    "subSection": 4,
+    "id": "05-04-environment",
+    "hash": "environment"
+  },
+  {
+    "length": 4573,
+    "title": "Social Interaction",
+    "section": 5,
+    "subSection": 5,
+    "id": "05-05-social-interaction",
+    "hash": "social-interaction"
+  },
+  {
+    "length": 2003,
+    "title": "Resting",
+    "section": 5,
+    "subSection": 6,
+    "id": "05-06-resting",
+    "hash": "resting"
+  },
+  {
+    "length": 1043,
+    "title": "Between Missions",
+    "section": 5,
+    "subSection": 7,
+    "id": "05-07-between-missions",
+    "hash": "between-missions"
   }
 ]

@@ -9,7 +9,6 @@
   // Rule Cards
   import {
     Currency,
-    LifestyleExpenses,
     CostOfThings,
     BuyingAndSelling
   } from '~/components/phb/'
@@ -19,7 +18,6 @@
   export default {
     components: {
       Currency,
-      LifestyleExpenses,
       CostOfThings,
       BuyingAndSelling
     },

@@ -5,7 +5,7 @@ title: A Universe to Explore
 ---
 
 Mass Effect spans two galaxies: the Milky Way and Andromeda. Both have biotics, advanced tech, brave soldiers and fantastic
-adventures. But the galaxies are vastly different. The Milky Way has been settled by sentient beings for millennia and most of
+missions. But the galaxies are vastly different. The Milky Way has been settled by sentient beings for millennia and most of
 its clusters, star systems, and planets have been charted and explored. It also is home to a variety of sentient alien species
 all with their own culture, planets, and colonies, making up a vast galactic community. If you aren't familiar
 with the first Mass Effect 3 video games, you can read about major events and lore at the
@@ -24,7 +24,7 @@ Both galaxies share the same characteristics that are nascent to Mass Effect, i.
 each galaxy offers its own zeitgeist and challenges. The Milky Way is mostly explored and contains extensive urban environments.
 You could easily set an entire campaign on a single planet and, depending on when you set you campaign
 on the timeline, you might also deal with the impending invasion of <a href="http://masseffect.wikia.com/wiki/Reaper" target="_blank">the Reapers</a>.
-In contrast, Andromeda is themed for exploration, survival, and being a pioneer. An adventurers' primary goal is that of
+In contrast, Andromeda is themed for exploration, survival, and being a pioneer. An operatives' primary goal is that of
 setting up a thriving civilization in the new galaxy and uncovering its mysterious past. In short, the Milky Way
 is an urban setting and Andromeda is rural.
 
