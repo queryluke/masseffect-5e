@@ -334,11 +334,117 @@
     "hash": "resting"
   },
   {
-    "length": 1043,
+    "length": 6127,
     "title": "Between Missions",
     "section": 5,
     "subSection": 7,
     "id": "05-07-between-missions",
     "hash": "between-missions"
+  },
+  {
+    "length": 974,
+    "title": "Starting Equipment",
+    "section": 6,
+    "subSection": 1,
+    "id": "06-01-starting-equipment",
+    "hash": "starting-equipment"
+  },
+  {
+    "length": 7139,
+    "title": "Armor",
+    "change": true,
+    "section": 6,
+    "subSection": 2,
+    "id": "06-02-armor",
+    "hash": "armor"
+  },
+  {
+    "length": 5158,
+    "title": "Weapons",
+    "change": true,
+    "section": 6,
+    "subSection": 3,
+    "id": "06-03-weapons",
+    "hash": "weapons"
+  },
+  {
+    "length": 1237,
+    "title": "Thermal Clips",
+    "new": true,
+    "section": 6,
+    "subSection": 4,
+    "id": "06-04-thermal-clips",
+    "hash": "thermal-clips"
+  },
+  {
+    "length": 1284,
+    "title": "Medi-gel",
+    "new": true,
+    "section": 6,
+    "subSection": 5,
+    "id": "06-05-medi-gel",
+    "hash": "medi-gel"
+  },
+  {
+    "length": 818,
+    "title": "Grenades & Mines",
+    "new": true,
+    "section": 6,
+    "subSection": 6,
+    "id": "06-06-grenades",
+    "hash": "grenades"
+  },
+  {
+    "length": 819,
+    "title": "Heavy Weapon Charges",
+    "new": true,
+    "section": 6,
+    "subSection": 7,
+    "id": "06-07-heavy-weapon-charges",
+    "hash": "heavy-weapon-charges"
+  },
+  {
+    "length": 747,
+    "title": "Omni-gel",
+    "new": true,
+    "section": 6,
+    "subSection": 8,
+    "id": "06-08-omni-gel",
+    "hash": "omni-gel"
+  },
+  {
+    "length": null,
+    "title": "Tools & Kits",
+    "change": true,
+    "section": 6,
+    "subSection": 9,
+    "id": "06-09-tools-kits",
+    "hash": "tools-kits"
+  },
+  {
+    "length": 980,
+    "title": "Wealth",
+    "change": true,
+    "section": 7,
+    "subSection": 1,
+    "id": "07-01-wealth",
+    "hash": "wealth"
+  },
+  {
+    "length": 1140,
+    "title": "Selling Items",
+    "section": 7,
+    "subSection": 2,
+    "id": "07-02-selling-items",
+    "hash": "selling-items"
+  },
+  {
+    "length": 4573,
+    "title": "Discounts",
+    "new": true,
+    "section": 7,
+    "subSection": 3,
+    "id": "07-03-discounts",
+    "hash": "discounts"
   }
 ]

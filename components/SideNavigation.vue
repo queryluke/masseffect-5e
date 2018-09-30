@@ -55,12 +55,7 @@
               { title: 'Beyond 1st Level', icon: 'tending_up', href: '/phb/rules/beyond-first-level' },
               { title: 'Using Ability Scores', icon: 'gamepad', href: '/phb/rules/using-ability-scores' },
               { title: 'Missions', icon: 'map', href: '/phb/rules/missions' },
-              { href: '/phb/rules/combat', title: 'Combat' },
-              { href: '/phb/rules/spellcasting', title: 'Spellcasting' },
-              { href: '/phb/rules/weapons', title: 'Weapons' },
-              { href: '/phb/rules/armor', title: 'Armor' },
-              { href: '/phb/rules/expenses', title: 'Expenses' },
-              { href: '/phb/rules/multiclassing', title: 'Multiclassing' },
+              { title: 'Equipment', icon: 'category', href: '/phb/rules/equipment' },
               { href: '/phb/rules/skills', title: 'Skills' },
               { href: '/phb/rules/conditions', title: 'Conditions' }
             ]
@@ -83,7 +78,8 @@
               { href: '/phb/weapon-mods', title: 'Weapon Mods' },
               { href: '/phb/armor/mods', title: 'Armor Mods' },
               { href: '/phb/armor/sets', title: 'Armor Sets' },
-              { href: '/phb/items', title: 'Other Items' }
+              { href: '/phb/grenades', title: 'Grenades' },
+              { href: '/phb/tools-kits', title: 'Tools & Kits' }
             ]
           },
           {

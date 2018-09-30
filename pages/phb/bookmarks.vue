@@ -25,7 +25,7 @@
   import WeaponInfo from '~/components/weapon/WeaponInfo.vue'
   import BookmarkButton from '~/components/BookmarkButton.vue'
   import StatBlock from '~/components/npc/StatBlock.vue'
-  import GrenadeInfo from '~/components/GrenadeInfo.vue'
+  import GrenadeInfo from '~/components/grenade/GrenadeInfo.vue'
   import WeaponModInfo from '~/components/weapon_mod/WeaponModInfo.vue'
   import ArmorModInfo from '~/components/armor_mod/ArmorModInfo.vue'
   import ArmorSetInfo from '~/components/armor_set/ArmorSetInfo.vue'

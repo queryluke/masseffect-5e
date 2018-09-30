@@ -20,57 +20,9 @@ export default {
       name: 'Missions',
       rules: 5
     },
-    'phb-rules-combat': {
-      name: 'Rules - Combat',
-      rules: [
-        'shields',
-        'cover',
-        'reloading',
-        'rapid-reload',
-        'primers-and-detonators',
-        'creature-types',
-        'damage-types',
-        'conditions'
-      ]
-    },
-    'phb-rules-spellcasting': {
-      name: 'Rules - Spellcasting',
-      rules: [
-        'ability-nomenclature',
-        'advancement-options',
-        'primers-and-detonators'
-      ]
-    },
-    'phb-rules-weapons': {
-      name: 'Rules - Weapons',
-      rules: [
-        'weapon-stats',
-        'reloading',
-        'rapid-reload',
-        'carrying-weapons',
-        'weapon-proficiency',
-        'weapon-attributes',
-        'melee-weapons',
-        'heavy-weapons',
-        'weapon-customization'
-      ]
-    },
-    'phb-rules-armor': {
-      name: 'Rules - Armor',
-      rules: [
-        'armor-overview',
-        'armor-pieces',
-        'armor-customization'
-      ]
-    },
-    'phb-rules-expenses': {
-      name: 'Rules - Expenses',
-      rules: [
-        'currency',
-        'lifestyle-expenses',
-        'cost-of-things',
-        'buying-and-selling'
-      ]
+    'phb-rules-equipment': {
+      name: 'Equipment',
+      rules: 6
     },
     'phb-rules-conditions': {
       name: 'Conditions'
@@ -116,21 +68,10 @@ export default {
       name: 'Armor Sets',
       list: true
     },
-    'phb-items': {
-      name: 'Other Items',
-      rules: [
-        'thermal-clips',
-        'medi-gel',
-        'grenades',
-        'heavy-weapon-charges',
-        'omni-gel',
-        'tools-kits'
-      ]
-    },
-    'phb-items-grenades': {
+    'phb-grenades': {
       name: 'Grenades'
     },
-    'phb-items-tools-kits': {
+    'phb-tools-kits': {
       name: 'Tools & Kits'
     },
     'phb-bestiary': {

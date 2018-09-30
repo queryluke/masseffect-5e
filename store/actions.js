@@ -5,12 +5,25 @@ const _ = require('lodash')
 // const mdDirs = ['backgrounds', 'conditions', 'kits', 'class_features', 'changelog', 'spells']
 
 const jsonDirs = ['classes']
-const mdDirs = ['backgrounds', 'rules']
+const mdDirs = ['backgrounds', 'rules', 'grenades', 'tools']
 
 export default {
   nuxtServerInit () {
     if (process.server) {
       const fs = require('fs')
+      // one time process
+      /*
+      for (const g of grenades.data) {
+        const id = g.id.replace('_', '-')
+
+        let text = `---\nid: ${id}\nname: ${g.name}\ndamage: ${g.damage_amount}${g.dd}\nrange: ${g.range}\nblast: ${g.blast}\ndamageType: ${g.damage_type}\n---`
+        for (const line of g.desc) {
+          text += `\n${line.data}`
+        }
+
+        fs.writeFileSync(`./static/data/grenades/${id}.md`, text)
+      }
+      */
       // process markdown files
       for (let dir of mdDirs) {
         const path = `./static/data/${dir}`

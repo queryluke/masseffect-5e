@@ -10,7 +10,7 @@
         v-card-text
           v-container(grid-list-lg fluid)
             component(v-if="component" v-bind:is="component")
-            rule-text(v-if="item" v-bind:component="item.vue")
+            markdown-content(v-if="item" v-bind:component="item.vue")
 </template>
 
 <script>
@@ -18,9 +18,14 @@
   import AbilityScoreModifiers from './AbilityScoreModifiers.vue'
   import AbilityScorePointCost from './AbilityScorePointCost.vue'
   import AbilityScoreSummary from './AbilityScoreSummary.vue'
+  import ArmorAc from './ArmorAc.vue'
   import ArmorBonusesLimitations from './ArmorBonusesLimitations.vue'
+  import ArmorPieceWeights from './ArmorPieceWeights.vue'
   import CharacterAdvancementTable from './CharacterAdvancementTable.vue'
+  import CustomizableArmorCosts from './CustomizableArmorCosts.vue'
+  import GrenadeList from '~/components/grenade/GrenadeList.vue'
   import LifestyleExpenses from './LifestyleExpenses.vue'
+  import MediGelTypes from './MediGelTypes.vue'
   import MulticlassingBarrierTable from './MulticlassingBarrierTable.vue'
   import MulticlassingBioticsTable from './MulticlassingBioticsTable.vue'
   import MulticlassingPrereqsTable from './MulticlassingPrereqsTable.vue'
@@ -28,15 +33,21 @@
   import MulticlassingTechTable from './MulticlassingTechTable.vue'
   import TypicalDifficultyClassesTable from './TypicalDifficultyClassesTable.vue'
   import TravelPace from './TravelPace.vue'
+  import WeaponProperties from './WeaponProperties.vue'
 
   export default {
     components: {
       AbilityScoreModifiers,
       AbilityScorePointCost,
       AbilityScoreSummary,
+      ArmorAc,
       ArmorBonusesLimitations,
+      ArmorPieceWeights,
       CharacterAdvancementTable,
+      CustomizableArmorCosts,
+      GrenadeList,
       LifestyleExpenses,
+      MediGelTypes,
       MulticlassingBarrierTable,
       MulticlassingBioticsTable,
       MulticlassingPrereqsTable,
@@ -44,6 +55,7 @@
       MulticlassingTechTable,
       TypicalDifficultyClassesTable,
       TravelPace,
+      WeaponProperties,
       MarkdownContent
     },
     computed: {

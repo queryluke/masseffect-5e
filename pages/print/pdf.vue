@@ -1,5 +1,5 @@
 <template lang="pug">
-  main
+  //main
     v-navigation-drawer(v-model="drawer" fixed clipped floating right id="spvNavDrawer" class="blue-grey lighten-5")
       v-list(dense)
         template(v-for="item in tocA.slice(0).concat(tocB)")
@@ -283,6 +283,7 @@
 </template>
 
 <script>
+  /*
   import RuleHelper from '~/components/pdf/RuleHelper.vue'
   import RaceTrait from '~/components/pdf/RaceTrait.vue'
   import ProgressionTable from '~/components/class/ProgressionTable.vue'
@@ -292,7 +293,6 @@
   import HeavyWeaponCharges from '~/components/phb/HeavyWeaponCharges.vue'
   import ThermalClips from '~/components/phb/ThermalClips.vue'
   import Grenades from '~/components/phb/Grenades.vue'
-  import MediGel from '~/components/phb/MediGel.vue'
   import OmniGel from '~/components/phb/OmniGel.vue'
   import ToolsKits from '~/components/phb/ToolsKits.vue'
   import SpellCard from '~/components/cards/SpellCard.vue'
@@ -510,6 +510,7 @@
       }
     }
   }
+  */
 </script>
 
 <style>

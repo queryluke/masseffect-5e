@@ -4,6 +4,7 @@
   import SourceReference from '~/components/rule_partials/SourceReference'
 
   export default {
+    name: 'MarkdownContent',
     components: {
       AiDialog,
       SkillList,

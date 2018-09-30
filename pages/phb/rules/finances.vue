@@ -28,7 +28,7 @@
       return {
         title: `Mass Effect 5e | ${this.title}`,
         meta: [
-          { hid: 'description', name: 'description', content: 'Missions are the backbone of playing Mass Effect 5e' }
+          { hid: 'description', name: 'description', content: 'Learn how to buy and sell equipment, keep up a lifestyle, and go out on the town' }
         ]
       }
     },
