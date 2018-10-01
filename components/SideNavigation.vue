@@ -56,7 +56,10 @@
               { title: 'Using Ability Scores', icon: 'gamepad', href: '/phb/rules/using-ability-scores' },
               { title: 'Missions', icon: 'map', href: '/phb/rules/missions' },
               { title: 'Equipment', icon: 'category', href: '/phb/rules/equipment' },
-              { title: 'Finances', icon: 'money', href: '/phb/rules/finances' }
+              { title: 'Finances', icon: 'money', href: '/phb/rules/finances' },
+              { title: 'Vehicles', icon: '', href: '/phb/rules/vehicles' },
+              { title: 'Combat', icon: '', href: '/phb/rules/combat' },
+              { title: 'Spellcasting', icon: '', href: '/phb/rules/spellcasting' }
             ]
           },
           {

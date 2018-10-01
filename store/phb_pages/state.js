@@ -28,10 +28,22 @@ export default {
       name: 'Finances',
       rules: 7
     },
-    'phb-rules-conditions': {
+    'phb-rules-vehicles': {
+      name: 'Vehicles',
+      rules: 8
+    },
+    'phb-rules-combat': {
+      name: 'Combat',
+      rules: 9
+    },
+    'phb-rules-spellcasting': {
+      name: 'Spellcasting',
+      rules: 10
+    },
+    'phb-appendix-conditions': {
       name: 'Conditions'
     },
-    'phb-rules-skills': {
+    'phb-appendix-skills': {
       name: 'Skills'
     },
     'phb-classes': {

@@ -30,5 +30,3 @@ Finally, the GM or player rolls a d100 adding the modifier from the previous ste
 51-70 | The shopkeeper has seen these ploys before, but you gave him a good chuckle, for that, you get a 10% discount.
 71-90 | Better to work with you than against you, the shopkeeper offers you a 20% discount.
 >= 91 | Either completely enthralled with your proposal, or scared out of their wits, the shopkeeper offers you a on-time discount of 50% off, and a lifetime discount of 20% off.
-
-<source-reference pages="66-67" source="basic"></source-reference>

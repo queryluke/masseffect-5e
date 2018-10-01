@@ -23,6 +23,7 @@
   import ArmorPieceWeights from './ArmorPieceWeights.vue'
   import CharacterAdvancementTable from './CharacterAdvancementTable.vue'
   import CustomizableArmorCosts from './CustomizableArmorCosts.vue'
+  import DamageTypes from './DamageTypes.vue'
   import GrenadeList from '~/components/grenade/GrenadeList.vue'
   import LifestyleExpenses from './LifestyleExpenses.vue'
   import MediGelTypes from './MediGelTypes.vue'
@@ -31,6 +32,7 @@
   import MulticlassingPrereqsTable from './MulticlassingPrereqsTable.vue'
   import MulticlassingProfsTable from './MulticlassingProfsTable.vue'
   import MulticlassingTechTable from './MulticlassingTechTable.vue'
+  import SizeCategory from './SizeCategory.vue'
   import TypicalDifficultyClassesTable from './TypicalDifficultyClassesTable.vue'
   import TravelPace from './TravelPace.vue'
   import WeaponProperties from './WeaponProperties.vue'
@@ -45,6 +47,7 @@
       ArmorPieceWeights,
       CharacterAdvancementTable,
       CustomizableArmorCosts,
+      DamageTypes,
       GrenadeList,
       LifestyleExpenses,
       MediGelTypes,
@@ -53,6 +56,7 @@
       MulticlassingPrereqsTable,
       MulticlassingProfsTable,
       MulticlassingTechTable,
+      SizeCategory,
       TypicalDifficultyClassesTable,
       TravelPace,
       WeaponProperties,

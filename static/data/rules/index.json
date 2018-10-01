@@ -463,5 +463,74 @@
     "subSection": 5,
     "id": "07-05-cost-of-things",
     "hash": "cost-of-things"
+  },
+  {
+    "length": 6137,
+    "title": "The Order of Combat",
+    "section": 9,
+    "subSection": 1,
+    "id": "09-01-order-of-combat",
+    "hash": "order-of-combat"
+  },
+  {
+    "length": 6186,
+    "title": "Movement & Position",
+    "section": 9,
+    "subSection": 2,
+    "id": "09-02-movement-and-position",
+    "hash": "movement-and-position"
+  },
+  {
+    "length": 6893,
+    "title": "Actions in Combat",
+    "change": true,
+    "section": 9,
+    "subSection": 3,
+    "id": "09-03-actions-in-combat",
+    "hash": "actions-in-combat"
+  },
+  {
+    "length": 9095,
+    "title": "Making an Attack",
+    "section": 9,
+    "subSection": 4,
+    "id": "09-04-making-an-attack",
+    "hash": "making-an-attack"
+  },
+  {
+    "length": 2197,
+    "title": "Cover",
+    "new": true,
+    "section": 9,
+    "subSection": 5,
+    "id": "09-05-cover",
+    "hash": "cover"
+  },
+  {
+    "length": null,
+    "title": "Damage and Healing",
+    "change": true,
+    "section": 9,
+    "subSection": 6,
+    "id": "09-06-damage-and-healing",
+    "hash": "damage-and-healing"
+  },
+  {
+    "length": 6186,
+    "title": "Shields",
+    "new": true,
+    "section": 9,
+    "subSection": 7,
+    "id": "09-07-shields",
+    "hash": "shields"
+  },
+  {
+    "length": 6186,
+    "title": "Shields",
+    "new": true,
+    "section": 9,
+    "subSection": 8,
+    "id": "09-08-primer-and-detonators",
+    "hash": "primer-and-detonators"
   }
 ]

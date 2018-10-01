@@ -49,9 +49,11 @@ If a character uses a ranged weapon to make a melee attack, or throws a melee we
 it also deals 1d4 damage. An improvised thrown weapon has a normal range of 10 meters and a long range of 30 meters.
 
 
+
 ### Thermal Clips <v-chip color="secondary" text-color="white" class="v-chip--x-small">new</v-chip>
 Ranged weapons (guns) use thermal clips to abate heat. All thermal clips are interchangeable between weapons. More information
 about using thermal clips can be found below.
+
 
 
 ### Heavy Weapons <v-chip color="secondary" text-color="white" class="v-chip--x-small">new</v-chip>
@@ -65,11 +67,13 @@ If you're already holding the weapon, you might use an ability as your action an
 
 
 
-### Carrying, Stowing, and Drawing Weapons <v-chip color="secondary" text-color="white" class="v-chip--x-small">new</v-chip>
+### Carrying, Holstering, and Drawing Weapons <v-chip color="secondary" text-color="white" class="v-chip--x-small">new</v-chip>
 You can carry 2 weapons into combat unless a feature or armor mod allows you to carry more. If using the Variant: Encumbrance
 rule, you can carry as many weapons as your carry capacity will allow.
 
-You can holster the weapon you're wielding and draw a weapon you're carrying as a bonus action. This is true for all weapon types.
+You can holster one weapon you're wielding or draw one weapon you're carrying as a free action. This is true for all weapon types.
+However, to holster one weapon *then* draw a second weapon would require an action.
+But the GM might allow a Sleight of Hand check to see if you can holster and draw at the cost of your bonus action.
 
 
 ### Weapon Mods <v-chip color="secondary" text-color="white" class="v-chip--x-small">new</v-chip>

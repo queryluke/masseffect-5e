@@ -69,4 +69,4 @@ Maintaining this kind of lifestyle doesn't require you to spend any coin, but it
 time between adventures practicing a profession, you can eke out the equivalent of a poor lifestyle. Proficiency in
 Survival the skill lets you live at the equivalent of a comfortable lifestyle.
 
-<source-reference pages="72-73" source="basic"></source-reference>
+<source-reference pages="72-73"></source-reference>

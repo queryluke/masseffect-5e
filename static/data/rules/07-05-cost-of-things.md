@@ -8,4 +8,4 @@ The following tables provided an assortment of costs for commonplace things. The
 
 <cost-of-things></cost-of-things>
 
-<source-reference pages="72-73" source="basic"></source-reference>
+<source-reference pages="72-73"></source-reference>

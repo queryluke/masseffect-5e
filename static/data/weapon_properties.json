@@ -16,7 +16,7 @@
   },
   {
     "name": "Finesse",
-    "description": "When making an attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls. "
+    "description": "When making an attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls."
   },
   {
     "name": "Heat",
@@ -48,7 +48,12 @@
   },
   {
     "name": "Reach",
-    "description": "This weapon adds 5 feet to your reach when you attack with it, as well as when determining your reach for opportunity attacks with it. "
+    "description": "This weapon adds 5 feet to your reach when you attack with it, as well as when determining your reach for opportunity attacks with it."
+  },
+  {
+    "name": "Recoil",
+    "new": true,
+    "description": "A weapon with the Recoil property generates a lot of kickback when fired. You use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls."
   },
   {
     "name": "Silent",
