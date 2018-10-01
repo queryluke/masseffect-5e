@@ -1,6 +1,7 @@
 ---
 length: 2197
 title: 'Cover'
+change: true
 ---
 
 Walls, trees, creatures, and other obstacles can provide cover during combat, making a target more difficult to harm.

@@ -500,16 +500,15 @@
   {
     "length": 2197,
     "title": "Cover",
-    "new": true,
+    "change": true,
     "section": 9,
     "subSection": 5,
     "id": "09-05-cover",
     "hash": "cover"
   },
   {
-    "length": null,
+    "length": 9433,
     "title": "Damage and Healing",
-    "change": true,
     "section": 9,
     "subSection": 6,
     "id": "09-06-damage-and-healing",
@@ -525,12 +524,57 @@
     "hash": "shields"
   },
   {
-    "length": 6186,
-    "title": "Shields",
+    "length": null,
+    "title": "What is a Spell?",
+    "change": true,
+    "section": 10,
+    "subSection": 1,
+    "id": "10-01-what-is-a-spell",
+    "hash": "what-is-a-spell"
+  },
+  {
+    "length": null,
+    "title": "Biotics",
     "new": true,
-    "section": 9,
-    "subSection": 8,
-    "id": "09-08-primer-and-detonators",
+    "section": 10,
+    "subSection": 2,
+    "id": "10-02-biotics",
+    "hash": "biotics"
+  },
+  {
+    "length": null,
+    "title": "Tech",
+    "new": true,
+    "section": 10,
+    "subSection": 3,
+    "id": "10-03-tech",
+    "hash": "tech"
+  },
+  {
+    "length": null,
+    "title": "Combat",
+    "new": true,
+    "section": 10,
+    "subSection": 4,
+    "id": "10-04-combat",
+    "hash": "combat"
+  },
+  {
+    "length": null,
+    "title": "Casting a Spell",
+    "change": true,
+    "section": 10,
+    "subSection": 5,
+    "id": "10-05-casting-a-spell",
+    "hash": "casting-a-spell"
+  },
+  {
+    "length": 6186,
+    "title": "Primers and Detonators",
+    "new": true,
+    "section": 10,
+    "subSection": 6,
+    "id": "10-06-primer-and-detonators",
     "hash": "primer-and-detonators"
   }
 ]

@@ -10,7 +10,7 @@
         v-card-text
           v-container(grid-list-lg fluid)
             component(v-if="component" v-bind:is="component")
-            markdown-content(v-if="item" v-bind:component="item.vue")
+            markdown-file(v-if="item" v-bind:itemType="item[0]" v-bind:id="item[1]")
 </template>
 
 <script>
@@ -64,8 +64,8 @@
     },
     computed: {
       item () {
-        if (this.otherRule) {
-          return require(`~/static/data/rules/${this.otherRule}.md`)
+        if (this.mdFile) {
+          return this.mdFile.split('/')
         }
       }
     },
@@ -77,7 +77,7 @@
     props: {
       title: String,
       component: String,
-      otherRule: String
+      mdFile: String
     }
   }
 </script>
