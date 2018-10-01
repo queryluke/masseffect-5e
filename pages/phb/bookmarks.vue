@@ -29,7 +29,6 @@
   import WeaponModInfo from '~/components/weapon_mod/WeaponModInfo.vue'
   import ArmorModInfo from '~/components/armor_mod/ArmorModInfo.vue'
   import ArmorSetInfo from '~/components/armor_set/ArmorSetInfo.vue'
-  import MarkdownFile from '~/components/MarkdownFile.vue'
 
   export default {
     components: {
@@ -40,8 +39,7 @@
       WeaponModInfo,
       ArmorModInfo,
       ArmorSetInfo,
-      BookmarkButton,
-      MarkdownFile
+      BookmarkButton
     },
     computed: {
       ...mapGetters(['bookmarksGroupedByType'])

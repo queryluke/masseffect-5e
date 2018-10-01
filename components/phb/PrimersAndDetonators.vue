@@ -12,13 +12,11 @@
 
 <script>
   import RuleCard from '~/components/cards/RuleCard.vue'
-  import MarkdownFile from '~/components/MarkdownFile.vue'
 
   export default {
     name: 'PrimersAndDetonators',
     components: {
-      RuleCard,
-      MarkdownFile
+      RuleCard
     }
   }
 </script>

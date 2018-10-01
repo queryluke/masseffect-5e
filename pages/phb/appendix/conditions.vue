@@ -8,13 +8,25 @@
           All of the conditions which can affect a character or object are listed below. Note that there are a few new
           conditions in this system in order to maintain consistency with the Mass Effect setting:
         p #[b New Conditions]: Frozen, Lifted, Primed, Targeting, Unprotected
-        conditions
+        v-card(v-for="condition in items" v-bind:key="condition.id" v-bind:id="condition.id").my-5
+          v-card-title
+            p.title.mb-1 {{ condition.name }}
+          v-divider
+          v-card-text
+            md-file(:id="condition.id" itemType="conditions").mt-2
 </template>
 
 <script>
-  import Conditions from '~/components/phb/Conditions.vue'
+  import items from '~/static/data/conditions/index.json'
+  import MarkdownFile from '~/components/MarkdownFile.vue'
+
   export default {
-    components: {Conditions},
+    components: { MarkdownFile },
+    data () {
+      return {
+        items
+      }
+    },
     head () {
       return {
         title: 'Mass Effect 5e | Rules - General',

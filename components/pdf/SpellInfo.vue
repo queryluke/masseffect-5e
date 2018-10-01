@@ -40,11 +40,10 @@
   import SpellDamageEffect from '~/components/spell/SpellDamageEffect.vue'
   import AdvancedOption from '~/components/spell/AdvancedOption.vue'
   import SpellClassList from '~/components/spell/SpellClassList.vue'
-  import MarkdownFile from '~/components/MarkdownFile.vue'
 
   export default {
     components: {
-      SpellClassList, AdvancedOption, SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect, MarkdownFile
+      SpellClassList, AdvancedOption, SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect
     },
     data () {
       return {

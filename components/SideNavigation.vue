@@ -56,8 +56,7 @@
               { title: 'Using Ability Scores', icon: 'gamepad', href: '/phb/rules/using-ability-scores' },
               { title: 'Missions', icon: 'map', href: '/phb/rules/missions' },
               { title: 'Equipment', icon: 'category', href: '/phb/rules/equipment' },
-              { href: '/phb/rules/skills', title: 'Skills' },
-              { href: '/phb/rules/conditions', title: 'Conditions' }
+              { title: 'Finances', icon: 'money', href: '/phb/rules/finances' }
             ]
           },
           {
@@ -91,6 +90,14 @@
             title: 'Bestiary',
             icon: 'pets',
             href: '/phb/bestiary'
+          },
+          {
+            title: 'Appendix',
+            icon: 'vertical_split',
+            items: [
+              { href: '/phb/appendix/conditions', title: 'Conditions' },
+              { href: '/phb/appendix/skills', title: 'Skills' }
+            ]
           },
           {
             title: 'Bookmarks',

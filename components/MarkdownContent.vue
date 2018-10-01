@@ -1,14 +1,18 @@
 <script>
   import AiDialog from '~/components/rule_partials/AdditionalInformationDialog.vue'
   import SkillList from '~/components/rule_partials/SkillList.vue'
-  import SourceReference from '~/components/rule_partials/SourceReference'
+  import SourceReference from '~/components/rule_partials/SourceReference.vue'
+  import CostOfThings from '~/components/rule_partials/CostOfThings.vue'
+  import Condition from '~/components/Condition.vue'
 
   export default {
-    name: 'MarkdownContent',
+    name: 'markdown-content',
     components: {
       AiDialog,
       SkillList,
-      SourceReference
+      SourceReference,
+      CostOfThings,
+      Condition
     },
     created () {
       this.templateRender = new Function(this.component.render)()

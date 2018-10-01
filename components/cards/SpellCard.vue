@@ -41,11 +41,10 @@
   import SpellRangeArea from '~/components/spell/SpellRangeArea.vue'
   import SpellDamageEffect from '~/components/spell/SpellDamageEffect.vue'
   import AdvancedOption from '~/components/spell/AdvancedOption.vue'
-  import MarkdownFile from '~/components/MarkdownFile.vue'
 
   export default {
     components: {
-      AdvancedOption, SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect, MarkdownFile
+      AdvancedOption, SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect
     },
     computed: {
       cardType () {

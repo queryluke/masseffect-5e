@@ -446,5 +446,22 @@
     "subSection": 3,
     "id": "07-03-discounts",
     "hash": "discounts"
+  },
+  {
+    "length": 5512,
+    "title": "Lifestyle Expenses",
+    "section": 7,
+    "subSection": 4,
+    "id": "07-04-lifestyle-expenses",
+    "hash": "lifestyle-expenses"
+  },
+  {
+    "length": 4573,
+    "title": "Cost of things",
+    "change": true,
+    "section": 7,
+    "subSection": 5,
+    "id": "07-05-cost-of-things",
+    "hash": "cost-of-things"
   }
 ]

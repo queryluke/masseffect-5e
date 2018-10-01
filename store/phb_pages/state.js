@@ -24,6 +24,10 @@ export default {
       name: 'Equipment',
       rules: 6
     },
+    'phb-rules-finances': {
+      name: 'Finances',
+      rules: 7
+    },
     'phb-rules-conditions': {
       name: 'Conditions'
     },

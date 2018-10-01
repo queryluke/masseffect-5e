@@ -1,0 +1,155 @@
+[
+  {
+    "type": "Drinks",
+    "items": [
+      {
+        "name": "Beer (pint)",
+        "cost": "5"
+      },
+      {
+        "name": "Wine (glass)",
+        "cost": "5-20"
+      },
+      {
+        "name": "Beer (pitcher)",
+        "cost": "20"
+      },
+      {
+        "name": "Wine (bottle)",
+        "cost": "20-100"
+      },
+      {
+        "name": "Mixed Drink",
+        "cost": "10"
+      },
+      {
+        "name": "Exotic Drink",
+        "cost": "20"
+      }
+    ]
+  },
+  {
+    "type": "Food",
+    "items": [
+      {
+        "name": "Nutrient Bar",
+        "cost": "5"
+      },
+      {
+        "name": "Flavored Nutrient Bar",
+        "cost": "10"
+      },
+      {
+        "name": "Synthetic Meal Facsimile",
+        "cost": "30"
+      },
+      {
+        "name": "Standard Meal",
+        "cost": "10-50"
+      },
+      {
+        "name": "Artisan Meal",
+        "cost": "100-200"
+      },
+      {
+        "name": "Low-Grade Provisions",
+        "cost": "100"
+      },
+      {
+        "name": "Mid-Grade Provisions",
+        "cost": "200"
+      },
+      {
+        "name": "High-Grade Provisions",
+        "cost": "500"
+      }
+    ]
+  },
+  {
+    "type": "Lodging",
+    "items": [
+      {
+        "name": "Poor",
+        "cost": "25"
+      },
+      {
+        "name": "Modest",
+        "cost": "100"
+      },
+      {
+        "name": "Comfortable",
+        "cost": "300"
+      },
+      {
+        "name": "Upscale",
+        "cost": "750"
+      },
+      {
+        "name": "Lavish",
+        "cost": "1500"
+      }
+    ]
+  },
+  {
+    "type": "Drugs",
+    "items": [
+      {
+        "name": "Creeper, 1 dose",
+        "cost": "50"
+      },
+      {
+        "name": "Eximo, 30 pills",
+        "cost": "25"
+      },
+      {
+        "name": "Hallex, 10 pills",
+        "cost": "50"
+      },
+      {
+        "name": "Minagen X3, 1 dose",
+        "cost": "100"
+      },
+      {
+        "name": "Oblivion, 10 doses",
+        "cost": "10"
+      },
+      {
+        "name": "Red Sand, 1 gram",
+        "cost": "200"
+      }
+    ]
+  },
+  {
+    "type": "Services",
+    "items": [
+      {
+        "name": "Taxi, within town/city",
+        "cost": "1 per kilometer"
+      },
+      {
+        "name": "Shuttle, within planet",
+        "cost": "50"
+      },
+      {
+        "name": "Interplanetary Shuttle",
+        "cost": "500"
+      },
+      {
+        "name": "Starship's Passage",
+        "cost": "100 per day"
+      },
+      {
+        "name": "Weapon or Armor Detailing",
+        "cost": "100-500"
+      },
+      {
+        "name": "Hireling (Skilled)",
+        "cost": "500 per day, minimum"
+      },
+      {
+        "name": "Hireling (Unskilled)",
+        "cost": "200 per day"
+      }
+    ]
+  }
+]

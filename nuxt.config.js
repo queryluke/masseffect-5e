@@ -91,7 +91,8 @@ module.exports = {
     '~/plugins/vuetify.js',
     { src: '~/plugins/persistentState.js', ssr: false },
     '~/plugins/filters/index.js',
-    '~/plugins/vue2-filters'
+    '~/plugins/vue2-filters',
+    '~/plugins/globals'
   ],
   router: {
     scrollBehavior: (to, from, savedPosition) => {

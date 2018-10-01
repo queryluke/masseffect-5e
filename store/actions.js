@@ -5,7 +5,7 @@ const _ = require('lodash')
 // const mdDirs = ['backgrounds', 'conditions', 'kits', 'class_features', 'changelog', 'spells']
 
 const jsonDirs = ['classes']
-const mdDirs = ['backgrounds', 'rules', 'grenades', 'tools']
+const mdDirs = ['backgrounds', 'rules', 'grenades', 'tools', 'conditions']
 
 export default {
   nuxtServerInit () {

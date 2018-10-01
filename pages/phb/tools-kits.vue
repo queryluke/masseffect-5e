@@ -15,12 +15,10 @@
 
 <script>
   import tools from '~/static/data/tools/index.json'
-  import MarkdownFile from '~/components/MarkdownFile.vue'
   import BookmarkButton from '~/components/BookmarkButton.vue'
 
   export default {
     components: {
-      MarkdownFile,
       BookmarkButton
     },
     data () {

@@ -7,6 +7,7 @@
   import MarkdownContent from '~/components/MarkdownContent.vue'
 
   export default {
+    name: 'markdown-file',
     components: {MarkdownContent},
     computed: {
       item () {

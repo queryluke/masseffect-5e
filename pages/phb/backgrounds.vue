@@ -18,13 +18,11 @@
 
 <script>
   import backgrounds from '~/static/data/backgrounds/index.json'
-  import MarkdownFile from '~/components/MarkdownFile.vue'
   import BookmarkButton from '~/components/BookmarkButton.vue'
 
   export default {
     components: {
-      BookmarkButton,
-      MarkdownFile
+      BookmarkButton
     },
     data () {
       return {

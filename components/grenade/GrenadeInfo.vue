@@ -22,10 +22,7 @@
 </template>
 
 <script>
-  import MarkdownFile from '~/components/MarkdownFile.vue'
-
   export default {
-    components: { MarkdownFile },
     props: ['grenade']
   }
 </script>

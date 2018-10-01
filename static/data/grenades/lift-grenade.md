@@ -7,4 +7,4 @@ blast: 4m
 damageType: utility
 ---
 As an Action, target an area within 10m. Each creature within 4m of the target must make a DC 13 Dexterity saving throw.
-On a failed save, a creature is {lifted} until the end of your next turn.
+On a failed save, a creature is <condition id="lifted"/> until the end of your next turn.
