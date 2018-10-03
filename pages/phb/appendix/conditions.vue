@@ -17,7 +17,7 @@
 </template>
 
 <script>
-  import items from '~/static/data/conditions/index.json'
+  import items from '~/static/data/conditions.json'
   import MarkdownFile from '~/components/MarkdownFile.vue'
 
   export default {

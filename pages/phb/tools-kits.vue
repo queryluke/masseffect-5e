@@ -14,7 +14,7 @@
 </template>
 
 <script>
-  import tools from '~/static/data/tools/index.json'
+  import tools from '~/static/data/tools.json'
   import BookmarkButton from '~/components/BookmarkButton.vue'
 
   export default {

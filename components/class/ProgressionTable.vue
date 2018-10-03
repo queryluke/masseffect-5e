@@ -23,8 +23,8 @@
           v-toolbar-title {{ selectedLevel.level | ordinal }} Level
         v-card-text
           div(v-for="feature in selectedLevel.features" v-bind:key="feature").mt-3
-            subclass-feature(v-if="feature === 'subclass'" v-bind:item="item" v-bind:level="selectedLevel" v-bind:primaryColor="colors.primary")
-            class-feature(v-else v-bind:id="feature" v-bind:level="selectedLevel")
+            // subclass-feature(v-if="feature === 'subclass'" v-bind:item="item" v-bind:level="selectedLevel" v-bind:primaryColor="colors.primary")
+            class-feature(v-bind:id="feature" v-bind:featureLevel="selectedLevel")
         v-card-actions
           v-btn(@click="dialog=false" flat="flat") Close
 </template>
@@ -32,16 +32,12 @@
 <script>
   import _ from 'lodash'
   import ClassFeature from '~/components/class/ClassFeature.vue'
+  import features from '~/static/data/class_features'
   import SubclassFeature from '~/components/class/SubclassFeature.vue'
-
-  // State
-  import {createNamespacedHelpers} from 'vuex'
-  const {mapGetters} = createNamespacedHelpers('classPage')
 
   export default {
     components: { ClassFeature, SubclassFeature },
     computed: {
-      ...mapGetters(['getData']),
       spellSlotArray () {
         return this.item.spellSlots ? [...Array(this.item.maxSpellSlot).keys()] : []
       }
@@ -54,7 +50,7 @@
     },
     methods: {
       featureList (level) {
-        return this.getData('classFeatures').filter(feature => level.features.includes(feature.id)).map(feature => {
+        return features.filter(feature => level.features.includes(feature.id)).map(feature => {
           switch (feature.id) {
             case 'biotic_powers':
               return `${feature.name}(${level.newBioticSpellCount}:${level.newSpellLevelMax})`

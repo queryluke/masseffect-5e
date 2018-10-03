@@ -37,6 +37,9 @@
   import SpellList from '~/components/spell/SpellList.vue'
   import SubclassInfo from '~/components/class/SubclassInfo.vue'
 
+  // Classes
+  import items from '~/static/data/classes'
+
   // State
   import {createNamespacedHelpers} from 'vuex'
   const {mapGetters} = createNamespacedHelpers('classPage')
@@ -44,7 +47,7 @@
   export default {
     components: { SubclassInfo, SpellList, ClassTabs, ClassAttributes, ProgressionTable, MeIcon },
     computed: {
-      ...mapGetters(['getData', 'colors', 'order', 'sortBy']),
+      ...mapGetters(['colors', 'order', 'sortBy']),
       filteredSpells () {
         const data = this.spells
         let sortBy = this.sortBy.key
@@ -70,9 +73,9 @@
     },
     created () {
       this.id = this.$route.params.id
-      let classes = this.getData('classes')
+      let classes = items
       this.item = classes.find(value => value.id === this.id)
-      this.spells = this.getData('spells').filter(spell => spell.availableClasses.includes(this.id))
+      // this.spells = this.getData('spells').filter(spell => spell.availableClasses.includes(this.id))
       let index = classes.indexOf(this.item)
       this.previous = classes[index - 1] ? classes[index - 1] : {}
       this.previous.colors = this.colors[this.previous.id]
@@ -83,7 +86,7 @@
       return {
         id: '',
         item: {},
-        spells: {},
+        spells: [],
         next: {},
         previous: {}
       }

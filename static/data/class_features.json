@@ -1,0 +1,542 @@
+[
+  {
+    "id": "ability_score_improvement",
+    "name": "Ability Score Improvement"
+  },
+  {
+    "id": "adrenaline_rush_1",
+    "name": "Adrenaline Rush"
+  },
+  {
+    "id": "adrenaline_rush_2",
+    "name": "Adrenaline Rush"
+  },
+  {
+    "id": "advanced_tech_armor",
+    "name": "Advanced Tech Armor"
+  },
+  {
+    "id": "advanced_weapon_holsters",
+    "name": "Advanced Weapon Holsters"
+  },
+  {
+    "id": "assault_armor",
+    "name": "Assault Armor"
+  },
+  {
+    "id": "assault_protocol",
+    "name": "Assault Protocol"
+  },
+  {
+    "id": "barrier",
+    "name": "Barrier"
+  },
+  {
+    "id": "bend_luck",
+    "name": "Bend Luck"
+  },
+  {
+    "id": "biotic_attacks",
+    "name": "Biotic Attacks"
+  },
+  {
+    "id": "biotic_bull_rush",
+    "name": "Biotic Bull Rush"
+  },
+  {
+    "id": "biotic_concentration",
+    "name": "Biotic Concentration"
+  },
+  {
+    "id": "biotic_control",
+    "name": "Biotic Control"
+  },
+  {
+    "id": "biotic_enfilade",
+    "name": "Biotic Enfilade"
+  },
+  {
+    "id": "biotic_focus",
+    "name": "Biotic Focus"
+  },
+  {
+    "id": "biotic_fury",
+    "name": "Biotic Fury"
+  },
+  {
+    "id": "biotic_maneuvers_1",
+    "name": "Biotic Maneuvers"
+  },
+  {
+    "id": "biotic_maneuvers_2",
+    "name": "Biotic Maneuvers"
+  },
+  {
+    "id": "biotic_mastery",
+    "name": "Biotic Mastery"
+  },
+  {
+    "id": "biotic_powers",
+    "name": "Biotic Powers"
+  },
+  {
+    "id": "biotic_slash_2",
+    "name": "Improved Biotic Slash"
+  },
+  {
+    "id": "biotic_split",
+    "name": "Biotic Split"
+  },
+  {
+    "id": "biotic_surge",
+    "name": "Biotic Surge"
+  },
+  {
+    "id": "biotic_wealth",
+    "name": "Biotic Wealth"
+  },
+  {
+    "id": "brutal_critical_1",
+    "name": "Brutal Critical"
+  },
+  {
+    "id": "brutal_critical_2",
+    "name": "Brutal Critical"
+  },
+  {
+    "id": "brutal_critical_3",
+    "name": "Brutal Critical"
+  },
+  {
+    "id": "careful_eyes",
+    "name": "Careful Eyes"
+  },
+  {
+    "id": "close-quarters_shooter",
+    "name": "Close-Quarters Shooter"
+  },
+  {
+    "id": "combat_heuristics",
+    "name": "Combat Heuristics"
+  },
+  {
+    "id": "combat_power",
+    "name": "Combat Power"
+  },
+  {
+    "id": "coordinated_attack",
+    "name": "Coordinated Attack"
+  },
+  {
+    "id": "cunning_action",
+    "name": "Cunning Action"
+  },
+  {
+    "id": "danger_sense",
+    "name": "Danger Sense"
+  },
+  {
+    "id": "dark_biotics",
+    "name": "Dark Biotics"
+  },
+  {
+    "id": "deadeye",
+    "name": "Deadeye"
+  },
+  {
+    "id": "devastating_critical",
+    "name": "Devastating Critical"
+  },
+  {
+    "id": "drone",
+    "name": "Drone"
+  },
+  {
+    "id": "drone_companion",
+    "name": "Drone Companion"
+  },
+  {
+    "id": "drones_bond",
+    "name": "Drone's Bond"
+  },
+  {
+    "id": "drones_defense_1",
+    "name": "Drone's Defense"
+  },
+  {
+    "id": "drones_defense_2",
+    "name": "Drone's Defense"
+  },
+  {
+    "id": "dropshot",
+    "name": "Dropshot"
+  },
+  {
+    "id": "ear_for_deceit",
+    "name": "Ear for Deceit"
+  },
+  {
+    "id": "elegant_maneuver",
+    "name": "Elegant Maneuver"
+  },
+  {
+    "id": "elusive",
+    "name": "Elusive"
+  },
+  {
+    "id": "empowered_biotics",
+    "name": "Empowered Biotics"
+  },
+  {
+    "id": "engineers_efficiency",
+    "name": "Engineer's Efficiency"
+  },
+  {
+    "id": "evasion",
+    "name": "Evasion"
+  },
+  {
+    "id": "expert_biotic",
+    "name": "Expert Biotic"
+  },
+  {
+    "id": "expertise",
+    "name": "Expertise"
+  },
+  {
+    "id": "extra_attack_1",
+    "name": "Extra Attack"
+  },
+  {
+    "id": "extra_attack_2",
+    "name": "Extra Attack"
+  },
+  {
+    "id": "extra_attack_3",
+    "name": "Extra Attack"
+  },
+  {
+    "id": "eye_for_detail",
+    "name": "Eye for Detail"
+  },
+  {
+    "id": "eye_for_weakness",
+    "name": "Eye for Weakness"
+  },
+  {
+    "id": "fast_hands",
+    "name": "Fast Hands"
+  },
+  {
+    "id": "fighting_style",
+    "name": "Fighting Style"
+  },
+  {
+    "id": "focused_biotics",
+    "name": "Focused Biotics"
+  },
+  {
+    "id": "heavy_barrier",
+    "name": "Heavy Barrier"
+  },
+  {
+    "id": "heavy_weapon_hack",
+    "name": "Heavy Weapon Hack"
+  },
+  {
+    "id": "improved_barrier_1",
+    "name": "Improved Barrier"
+  },
+  {
+    "id": "improved_barrier_2",
+    "name": "Improved Barrier"
+  },
+  {
+    "id": "improved_tech_armor_1",
+    "name": "Improved Tech Armor"
+  },
+  {
+    "id": "improved_tech_armor_2",
+    "name": "Improved Tech Armor"
+  },
+  {
+    "id": "improved_weapon_superiority_1",
+    "name": "Improved Weapon Superiority"
+  },
+  {
+    "id": "improved_weapon_superiority_2",
+    "name": "Improved Weapon Superiority"
+  },
+  {
+    "id": "indomitable_1",
+    "name": "Indomitable"
+  },
+  {
+    "id": "indomitable_2",
+    "name": "Indomitable"
+  },
+  {
+    "id": "infiltration",
+    "name": "Infiltration"
+  },
+  {
+    "id": "insightful_fighting",
+    "name": "Insightful Fighting"
+  },
+  {
+    "id": "invention",
+    "name": "Invention"
+  },
+  {
+    "id": "killshot",
+    "name": "Killshot"
+  },
+  {
+    "id": "makeshift_grenades_1",
+    "name": "Makeshift Grenades"
+  },
+  {
+    "id": "makeshift_grenades_2",
+    "name": "Makeshift Grenades"
+  },
+  {
+    "id": "master_duelist",
+    "name": "Master Duelist"
+  },
+  {
+    "id": "master_tactician",
+    "name": "Master Tactician"
+  },
+  {
+    "id": "medi-gel_enhancements",
+    "name": "Medi-gel Enhancements"
+  },
+  {
+    "id": "metabiotics_1",
+    "name": "Metabiotics"
+  },
+  {
+    "id": "metabiotics_2",
+    "name": "Metabiotics"
+  },
+  {
+    "id": "misdirection",
+    "name": "Misdirection"
+  },
+  {
+    "id": "omni-shield",
+    "name": "Omni-Shield"
+  },
+  {
+    "id": "opportunist",
+    "name": "Opportunist"
+  },
+  {
+    "id": "overchannel",
+    "name": "Overchannel"
+  },
+  {
+    "id": "paint_by_number",
+    "name": "Paint by Number"
+  },
+  {
+    "id": "potent_biotics",
+    "name": "Potent Biotics"
+  },
+  {
+    "id": "primal_biotics",
+    "name": "Primal Biotics"
+  },
+  {
+    "id": "pure_biotics",
+    "name": "Pure Biotics"
+  },
+  {
+    "id": "quick_cast_1",
+    "name": "Quick Cast"
+  },
+  {
+    "id": "quick_cast_2",
+    "name": "Quick Cast"
+  },
+  {
+    "id": "rapid_strike",
+    "name": "Rapid Strike"
+  },
+  {
+    "id": "relentless",
+    "name": "Relentless"
+  },
+  {
+    "id": "reliable_talent",
+    "name": "Reliable Talent"
+  },
+  {
+    "id": "repair_drone_1",
+    "name": "Repair Drone"
+  },
+  {
+    "id": "repair_drone_2",
+    "name": "Repair Drone"
+  },
+  {
+    "id": "retaliation",
+    "name": "Retaliation"
+  },
+  {
+    "id": "saboteurs_touch",
+    "name": "Saboteur's Touch"
+  },
+  {
+    "id": "sculpt_biotics",
+    "name": "Sculpt Biotics"
+  },
+  {
+    "id": "shadow_strike",
+    "name": "Shadow Strike"
+  },
+  {
+    "id": "shield_boost",
+    "name": "Shield Boost"
+  },
+  {
+    "id": "signature_biotics",
+    "name": "Signature Biotics"
+  },
+  {
+    "id": "silent_cloak",
+    "name": "Silent Cloak"
+  },
+  {
+    "id": "snap_shot",
+    "name": "Snap Shot"
+  },
+  {
+    "id": "sneak_attack",
+    "name": "Sneak Attack"
+  },
+  {
+    "id": "steady_aim",
+    "name": "Steady Aim"
+  },
+  {
+    "id": "strafe",
+    "name": "Strafe"
+  },
+  {
+    "id": "stroke_of_luck",
+    "name": "Stroke of Luck"
+  },
+  {
+    "id": "subclass",
+    "name": "Subclass Feature"
+  },
+  {
+    "id": "sudden_strike",
+    "name": "Sudden Strike"
+  },
+  {
+    "id": "supply_pylon",
+    "name": "Supply Pylon"
+  },
+  {
+    "id": "synchronized_assault",
+    "name": "Synchronized Assault"
+  },
+  {
+    "id": "tactical_advantage",
+    "name": "Tactical Advantage"
+  },
+  {
+    "id": "tactical_ambush",
+    "name": "Tactical Ambush"
+  },
+  {
+    "id": "tactical_barrier",
+    "name": "Tactical Barrier"
+  },
+  {
+    "id": "tactical_cloak",
+    "name": "Tactical Cloak"
+  },
+  {
+    "id": "tactical_reload",
+    "name": "Tactical Reload"
+  },
+  {
+    "id": "tech_armor",
+    "name": "Tech Armor"
+  },
+  {
+    "id": "tech_armor_overload_1",
+    "name": "Tech Armor Overload"
+  },
+  {
+    "id": "tech_armor_overload_2",
+    "name": "Tech Armor Overload"
+  },
+  {
+    "id": "tech_aura_1",
+    "name": "Tech Aura"
+  },
+  {
+    "id": "tech_aura_2",
+    "name": "Tech Aura"
+  },
+  {
+    "id": "tech_aura_3",
+    "name": "Tech Aura"
+  },
+  {
+    "id": "tech_power",
+    "name": "Tech Power"
+  },
+  {
+    "id": "techcombat_power",
+    "name": "Tech/Combat Power"
+  },
+  {
+    "id": "teleporting_dodge",
+    "name": "Teleporting Dodge"
+  },
+  {
+    "id": "uncanny_dodge",
+    "name": "Uncanny Dodge"
+  },
+  {
+    "id": "up_close_and_personal",
+    "name": "Up Close and Personal"
+  },
+  {
+    "id": "vengeance",
+    "name": "Vengeance"
+  },
+  {
+    "id": "weapon_of_choice_1",
+    "name": "Weapon of Choice"
+  },
+  {
+    "id": "weapon_of_choice_2",
+    "name": "Weapon of Choice"
+  },
+  {
+    "id": "weapon_of_choice_3",
+    "name": "Weapon of Choice"
+  },
+  {
+    "id": "weapon_training",
+    "name": "Weapon Training"
+  },
+  {
+    "id": "zero-sum_1",
+    "name": "Zero-Sum"
+  },
+  {
+    "id": "zero-sum_2",
+    "name": "Zero-Sum"
+  },
+  {
+    "id": "zero-sum_3",
+    "name": "Zero-Sum"
+  }
+]

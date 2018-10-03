@@ -16,7 +16,7 @@
 </template>
 
 <script>
-  import grenades from '~/static/data/grenades/index.json'
+  import grenades from '~/static/data/grenades.json'
   import GrenadeInfo from '~/components/grenade/GrenadeInfo.vue'
   import BookmarkButton from '~/components/BookmarkButton.vue'
 

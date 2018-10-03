@@ -17,7 +17,7 @@
 </template>
 
 <script>
-  import backgrounds from '~/static/data/backgrounds/index.json'
+  import backgrounds from '~/static/data/backgrounds.json'
   import BookmarkButton from '~/components/BookmarkButton.vue'
 
   export default {

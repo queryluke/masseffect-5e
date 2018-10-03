@@ -8,7 +8,7 @@
         v-card.grey.lighten-2
           v-card-text
             div(v-for="(features, i) in subclass.features" v-bind:key="i")
-              class-feature(v-for="feature in features" v-bind:key="feature" v-bind:id="feature" v-bind:level="subClassFeatureLevels[i]")
+              class-feature(v-for="feature in features" v-bind:key="feature" v-bind:id="feature" v-bind:featureLevel="subClassFeatureLevels[i]")
               div(:class="primaryColor" v-if="subclass.features.length > i + 1").hr
 </template>
 

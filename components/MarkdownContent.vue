@@ -14,6 +14,17 @@
       CostOfThings,
       Condition
     },
+    computed: {
+      level () {
+        return this.ctx('level')
+      },
+      newSpellLevelMax () {
+        if (this.context.newSpellLevelMax) {
+          return this.$options.filters.ordinal(this.context.level)
+        }
+        return ''
+      }
+    },
     created () {
       this.templateRender = new Function(this.component.render)()
       this.$options.staticRenderFns = new Function(this.component.staticRenderFns)()
@@ -23,7 +34,20 @@
         templateRender: null
       }
     },
-    props: ['component'],
+    methods: {
+      ctx (key) {
+        if (this.context) {
+          return this.context[key] ? this.context[key] : key
+        }
+        return key
+      }
+    },
+    props: {
+      component: Object,
+      context: {
+        type: Object
+      }
+    },
     render (createElement) {
       return this.templateRender ? this.templateRender() : createElement('div', 'rendering')
     }

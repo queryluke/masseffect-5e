@@ -1,5 +1,61 @@
-// Dynamic Route generation
 const fs = require('fs')
+const fm = require('front-matter')
+const jsonDirs = ['classes']
+const mdDirs = ['backgrounds', 'rules', 'grenades', 'tools', 'conditions', 'class_features']
+
+/*****
+ * Static file generation
+ */
+// one time process
+/*
+for (const g of grenades.data) {
+  const id = g.id.replace('_', '-')
+
+  let text = `---\nid: ${id}\nname: ${g.name}\ndamage: ${g.damage_amount}${g.dd}\nrange: ${g.range}\nblast: ${g.blast}\ndamageType: ${g.damage_type}\n---`
+  for (const line of g.desc) {
+    text += `\n${line.data}`
+  }
+
+  fs.writeFileSync(`./static/data/grenades/${id}.md`, text)
+}
+*/
+for (let dir of mdDirs) {
+  const path = `./static/data/${dir}`
+  const files = fs.readdirSync(path)
+
+  const items = files.map((file) => {
+    const fc = fm(fs.readFileSync(`${path}/${file}`, 'utf8'))
+    let item = Object.assign(fc.attributes, {})
+
+    if (dir === 'changelog') {
+      item.date = new Date(item.date)
+      item.slug = file.replace(/.md$/, '')
+      item.url = `/changelog/${item.slug}`
+    }
+
+    if (dir === 'rules') {
+      const fileParts = file.split('-')
+      item.section = Number.parseInt(fileParts[0])
+      item.subSection = Number.parseInt(fileParts[1])
+      item.id = file.replace(/\.md$/g, '')
+      item.hash = fileParts.splice(2).join('-').replace(/\.md$/g, '')
+    }
+    return item
+  })
+  fs.writeFileSync(`${path}.json`, JSON.stringify(items, null, 2))
+}
+
+// process jsDirs
+for (let dir of jsonDirs) {
+  const path = `./static/data/${dir}`
+  const files = fs.readdirSync(path)
+  const items = files.map(file => JSON.parse(fs.readFileSync(`${path}/${file}`, 'utf8')))
+  fs.writeFileSync(`${path}.json`, JSON.stringify(items, null, 2))
+}
+
+/*****
+ * Dynamic Route Generation
+ */
 const routes = []
 fs.readdirSync('./data/classes').map(file => {
   const id = file.replace(/.json$/, '')
@@ -8,7 +64,7 @@ fs.readdirSync('./data/classes').map(file => {
 })
 require('./data/races.json').data.map(r => routes.push(`/phb/races/${r.id}`))
 
-require('fs').readdirSync('./data/changelog').map((file) => {
+fs.readdirSync('./data/changelog').map((file) => {
   routes.push('/changelog/' + (file.replace(/\.md$/g, '')))
 })
 
@@ -21,18 +77,24 @@ module.exports = {
       '~/plugins/vuetify.js'
     ],
     extractCSS: true,
-    /*
-    ** Run ESLint on save
-    */
     extend (config, ctx) {
+      /*
+      ** Frontmatter loader
+      */
       config.module.rules.push({
         test: /\.md$/,
         loader: 'frontmatter-markdown-loader',
         options: {
-          vue: true,
+          vue: true
         }
       })
+      /*
+      ** Dev Only
+      */
       if (ctx.isDev && ctx.isClient) {
+        /*
+        ** Run ESLint on save
+        */
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,

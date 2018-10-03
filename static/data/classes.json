@@ -1,0 +1,3531 @@
+[
+  {
+    "id": "adept",
+    "name": "Adept",
+    "description": "Adepts are biotic specialists, capable of disabling and killing enemies with raw biotic power. While they lack advanced combat training, they are the best at defeating enemies without firing a shot. They are outfitted with L5x implants that can spawn a micro-singularity, damaging enemies and pulling them into the air.",
+    "snippet": "The Adept is the ultimate biotic, able to affect the physical world with the power of the mind.",
+    "primaryAbility": "Wisdom",
+    "hitDie": 6,
+    "minHitDieRoll": 4,
+    "armorProficiencies": [
+      "Light"
+    ],
+    "weaponProficiencyChoices": 1,
+    "weaponProficiencies": {
+      "required": [
+        "Heavy Pistols"
+      ],
+      "optional": [
+        "Melee",
+        "SMGs"
+      ]
+    },
+    "savingThrows": [
+      "Charisma",
+      "Wisdom"
+    ],
+    "skillChoices": 3,
+    "skillProficiencies": [
+      "Acrobatics",
+      "Deception",
+      "History",
+      "Insight",
+      "Intimidation",
+      "Performance",
+      "Sleight of hand",
+      "Survival"
+    ],
+    "startingRangedWeaponChoices": 1,
+    "startingRangedWeapons": [
+      "M-3 Predator",
+      "M-4 Shuriken"
+    ],
+    "startingMeleeWeaponChoices": 1,
+    "startingMeleeWeapons": [
+      "Omni-Blade",
+      "Monomolecular Blade"
+    ],
+    "startingArmor": [
+      "Stock Light Armor"
+    ],
+    "spellcasting": "Adepts have an L5x biotic implant which requires conscious control over their nervous system. As an Adept, you use your Wisdom whenever a spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a biotic spell you cast and when making an attack roll with one.",
+    "progressionHeaders": [
+      {
+        "title": "Level"
+      },
+      {
+        "title": "Proficiency Bonus"
+      },
+      {
+        "title": "Features"
+      },
+      {
+        "title": "Barrier Ticks"
+      },
+      {
+        "title": "Cantrips"
+      }
+    ],
+    "spellSlots": true,
+    "maxSpellSlot": 5,
+    "progression": [
+      {
+        "level": 1,
+        "proficiencyBonus": 2,
+        "sneakAttack": null,
+        "features": [
+          "biotic_powers",
+          "barrier"
+        ],
+        "cantrips": 3,
+        "spellSlots": {
+          "1": "3",
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 2,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": 2,
+        "newSpellLevelMax": 1,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 2,
+        "proficiencyBonus": 2,
+        "sneakAttack": null,
+        "features": [
+          "subclass"
+        ],
+        "cantrips": 3,
+        "spellSlots": {
+          "1": "4",
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 2,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 3,
+        "proficiencyBonus": 2,
+        "sneakAttack": null,
+        "features": [
+          "biotic_powers"
+        ],
+        "cantrips": 3,
+        "spellSlots": {
+          "1": "5",
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 2,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": 1,
+        "newSpellLevelMax": 1,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 4,
+        "proficiencyBonus": 2,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": 3,
+        "spellSlots": {
+          "1": "6",
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 2,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 5,
+        "proficiencyBonus": 3,
+        "sneakAttack": null,
+        "features": [
+          "biotic_powers"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "6",
+          "2": "2",
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 2,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": 2,
+        "newSpellLevelMax": 2,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 6,
+        "proficiencyBonus": 3,
+        "sneakAttack": null,
+        "features": [
+          "subclass"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "6",
+          "2": "3",
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 2,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 7,
+        "proficiencyBonus": 3,
+        "sneakAttack": null,
+        "features": [
+          "biotic_powers"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "6",
+          "2": "4",
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 3,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": 1,
+        "newSpellLevelMax": 2,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 8,
+        "proficiencyBonus": 3,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "6",
+          "2": "5",
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 3,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 9,
+        "proficiencyBonus": 4,
+        "sneakAttack": null,
+        "features": [
+          "biotic_powers"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "6",
+          "2": "5",
+          "3": "1",
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 3,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": 2,
+        "newSpellLevelMax": 3,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 10,
+        "proficiencyBonus": 4,
+        "sneakAttack": null,
+        "features": [
+          "subclass"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "6",
+          "2": "5",
+          "3": "2",
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 3,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 11,
+        "proficiencyBonus": 4,
+        "sneakAttack": null,
+        "features": [
+          "biotic_powers"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "6",
+          "2": "5",
+          "3": "3",
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 3,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": 2,
+        "newSpellLevelMax": 3,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 12,
+        "proficiencyBonus": 4,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "6",
+          "2": "5",
+          "3": "4",
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 3,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 13,
+        "proficiencyBonus": 5,
+        "sneakAttack": null,
+        "features": [
+          "biotic_powers"
+        ],
+        "cantrips": 5,
+        "spellSlots": {
+          "1": "6",
+          "2": "5",
+          "3": "4",
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 4,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": 2,
+        "newSpellLevelMax": 4,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 14,
+        "proficiencyBonus": 5,
+        "sneakAttack": null,
+        "features": [
+          "subclass"
+        ],
+        "cantrips": 5,
+        "spellSlots": {
+          "1": "6",
+          "2": "5",
+          "3": "4",
+          "4": "1",
+          "5": null
+        },
+        "barrierTicks": 4,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 15,
+        "proficiencyBonus": 5,
+        "sneakAttack": null,
+        "features": [
+          "biotic_powers"
+        ],
+        "cantrips": 5,
+        "spellSlots": {
+          "1": "6",
+          "2": "5",
+          "3": "4",
+          "4": "2",
+          "5": null
+        },
+        "barrierTicks": 4,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": 2,
+        "newSpellLevelMax": 4,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 16,
+        "proficiencyBonus": 5,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": 5,
+        "spellSlots": {
+          "1": "6",
+          "2": "5",
+          "3": "4",
+          "4": "2",
+          "5": null
+        },
+        "barrierTicks": 4,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 17,
+        "proficiencyBonus": 6,
+        "sneakAttack": null,
+        "features": [
+          "empowered_biotics"
+        ],
+        "cantrips": 5,
+        "spellSlots": {
+          "1": "6",
+          "2": "5",
+          "3": "4",
+          "4": "2",
+          "5": "1"
+        },
+        "barrierTicks": 4,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 18,
+        "proficiencyBonus": 6,
+        "sneakAttack": null,
+        "features": [
+          "biotic_mastery"
+        ],
+        "cantrips": 5,
+        "spellSlots": {
+          "1": "6",
+          "2": "5",
+          "3": "4",
+          "4": "3",
+          "5": "1"
+        },
+        "barrierTicks": 4,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 19,
+        "proficiencyBonus": 6,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": 5,
+        "spellSlots": {
+          "1": "6",
+          "2": "5",
+          "3": "4",
+          "4": "3",
+          "5": "2"
+        },
+        "barrierTicks": 5,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 20,
+        "proficiencyBonus": 6,
+        "sneakAttack": null,
+        "features": [
+          "signature_biotics"
+        ],
+        "cantrips": 5,
+        "spellSlots": {
+          "1": "6",
+          "2": "5",
+          "3": "4",
+          "4": "3",
+          "5": "3"
+        },
+        "barrierTicks": 5,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      }
+    ],
+    "subclasses": [
+      {
+        "name": "Commando",
+        "description": "Commandos don't need heavy weapons because they ARE the heavy weapon. Their features improve both the damage potential and throughput of their biotic spells, making them a deadly force.",
+        "features": [
+          [
+            "pure_biotics"
+          ],
+          [
+            "expert_biotic"
+          ],
+          [
+            "biotic_split"
+          ],
+          [
+            "overchannel"
+          ]
+        ]
+      },
+      {
+        "name": "Blackstar",
+        "description": "Blackstars prefer controlling the battlefield over raw power. They can shape their biotic powers to avoid hurting friends and gain unique benefits to biotic control spells like Life, Singularity, and Stasis.",
+        "features": [
+          [
+            "sculpt_biotics"
+          ],
+          [
+            "bend_luck"
+          ],
+          [
+            "focused_biotics"
+          ],
+          [
+            "biotic_control"
+          ]
+        ]
+      },
+      {
+        "name": "Disruptor",
+        "description": "Disruptors have learned to tap into dark energy, improving biotic abilities that tear apart their adversaries from within. They also specialize in maintaining spells with intense focus.",
+        "features": [
+          [
+            "dark_biotics"
+          ],
+          [
+            "biotic_surge"
+          ],
+          [
+            "potent_biotics"
+          ],
+          [
+            "biotic_concentration"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "engineer",
+    "name": "Engineer",
+    "description": "The Engineer is a tech specialist, able to quickly and easily manipulate the environment with specific talents, and repair or modify technical equipment. Gameplay focus is on shaping the battlefield during combat, healing the party, and debuffing enemies (disabling weapons and lowering shields).\n",
+    "snippet": "Engineers are tech specialists, the only class able to employ combat drones on the battlefield.\n",
+    "primaryAbility": "Intelligence",
+    "hitDie": 8,
+    "minHitDieRoll": 5,
+    "armorProficiencies": [
+      "Light",
+      "Medium"
+    ],
+    "weaponProficiencyChoices": 1,
+    "weaponProficiencies": {
+      "required": [
+        "Heavy Pistols"
+      ],
+      "optional": [
+        "Assault Rifles",
+        "Melee",
+        "SMGs"
+      ]
+    },
+    "savingThrows": [
+      "Constitution",
+      "Intelligence"
+    ],
+    "skillChoices": 3,
+    "skillProficiencies": [
+      "Athletics",
+      "Electronics",
+      "Engineering",
+      "History",
+      "Investigation",
+      "Medicine",
+      "Science",
+      "Vehicle Handling"
+    ],
+    "startingRangedWeaponChoices": 1,
+    "startingRangedWeapons": [
+      "M-3 Predator",
+      "M-4 Shuriken",
+      "M-8 Avenger"
+    ],
+    "startingMeleeWeaponChoices": 1,
+    "startingMeleeWeapons": [
+      "Omni-Taser",
+      "Omni-Blade",
+      "Omni-Torch"
+    ],
+    "startingArmor": [
+      "Stock Light Armor",
+      "Stock Medium Armor"
+    ],
+    "progressionHeaders": [
+      {
+        "title": "Level"
+      },
+      {
+        "title": "Proficiency Bonus"
+      },
+      {
+        "title": "Features"
+      },
+      {
+        "title": "Tech Points"
+      },
+      {
+        "title": "Max TP",
+        "key": "maxTechPoints"
+      }
+    ],
+    "spellSlots": false,
+    "maxSpellSlot": 0,
+    "spellcasting": "Engineers use a highly modified Omni-tool that requires a keen intellect to maintain. As an Engineer, you use your Intelligence whenever a spell refers to your spellcasting ability. In addition, you use your Intelligence modifier when setting the saving throw DC for a tech spell you cast and when making an attack roll with one.\n",
+    "progression": [
+      {
+        "level": 1,
+        "proficiencyBonus": 2,
+        "sneakAttack": null,
+        "features": [
+          "drone",
+          "tech_power"
+        ],
+        "cantrips": null,
+        "spelllots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 4,
+        "maxTechPoints": 2,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": 2
+      },
+      {
+        "level": 2,
+        "proficiencyBonus": 2,
+        "sneakAttack": null,
+        "features": [
+          "subclass"
+        ],
+        "cantrips": null,
+        "spelllots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 6,
+        "maxTechPoints": 2,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 3,
+        "proficiencyBonus": 2,
+        "sneakAttack": null,
+        "features": [
+          "engineers_efficiency"
+        ],
+        "cantrips": null,
+        "spelllots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 8,
+        "maxTechPoints": 3,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 4,
+        "proficiencyBonus": 2,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": null,
+        "spelllots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 10,
+        "maxTechPoints": 3,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 5,
+        "proficiencyBonus": 3,
+        "sneakAttack": null,
+        "features": [
+          "tech_power"
+        ],
+        "cantrips": null,
+        "spelllots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 12,
+        "maxTechPoints": 4,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": 2
+      },
+      {
+        "level": 6,
+        "proficiencyBonus": 3,
+        "sneakAttack": null,
+        "features": [
+          "subclass"
+        ],
+        "cantrips": null,
+        "spelllots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 14,
+        "maxTechPoints": 4,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 7,
+        "proficiencyBonus": 3,
+        "sneakAttack": null,
+        "features": [
+          "tech_power"
+        ],
+        "cantrips": null,
+        "spelllots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 16,
+        "maxTechPoints": 5,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": 2
+      },
+      {
+        "level": 8,
+        "proficiencyBonus": 3,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": null,
+        "spelllots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 18,
+        "maxTechPoints": 5,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 9,
+        "proficiencyBonus": 4,
+        "sneakAttack": null,
+        "features": [
+          "tech_power"
+        ],
+        "cantrips": null,
+        "spelllots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 20,
+        "maxTechPoints": 5,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": 2
+      },
+      {
+        "level": 10,
+        "proficiencyBonus": 4,
+        "sneakAttack": null,
+        "features": [
+          "subclass"
+        ],
+        "cantrips": null,
+        "spelllots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 22,
+        "maxTechPoints": 6,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 11,
+        "proficiencyBonus": 4,
+        "sneakAttack": null,
+        "features": [
+          "tech_power"
+        ],
+        "cantrips": null,
+        "spelllots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 24,
+        "maxTechPoints": 6,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": 2
+      },
+      {
+        "level": 12,
+        "proficiencyBonus": 4,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": null,
+        "spelllots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 26,
+        "maxTechPoints": 6,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 13,
+        "proficiencyBonus": 5,
+        "sneakAttack": null,
+        "features": [
+          "tech_power"
+        ],
+        "cantrips": null,
+        "spelllots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 28,
+        "maxTechPoints": 7,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": 2
+      },
+      {
+        "level": 14,
+        "proficiencyBonus": 5,
+        "sneakAttack": null,
+        "features": [
+          "subclass"
+        ],
+        "cantrips": null,
+        "spelllots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 30,
+        "maxTechPoints": 7,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 15,
+        "proficiencyBonus": 5,
+        "sneakAttack": null,
+        "features": [
+          "tech_power"
+        ],
+        "cantrips": null,
+        "spelllots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 33,
+        "maxTechPoints": 8,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": 2
+      },
+      {
+        "level": 16,
+        "proficiencyBonus": 5,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": null,
+        "spelllots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 36,
+        "maxTechPoints": 8,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 17,
+        "proficiencyBonus": 6,
+        "sneakAttack": null,
+        "features": [
+          "tech_power"
+        ],
+        "cantrips": null,
+        "spelllots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 39,
+        "maxTechPoints": 9,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": 2
+      },
+      {
+        "level": 18,
+        "proficiencyBonus": 6,
+        "sneakAttack": null,
+        "features": [
+          "subclass"
+        ],
+        "cantrips": null,
+        "spelllots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 42,
+        "maxTechPoints": 9,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 19,
+        "proficiencyBonus": 6,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": null,
+        "spelllots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 44,
+        "maxTechPoints": 10,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 20,
+        "proficiencyBonus": 6,
+        "sneakAttack": null,
+        "features": [
+          "invention"
+        ],
+        "cantrips": null,
+        "spelllots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 50,
+        "maxTechPoints": 10,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      }
+    ],
+    "subclasses": [
+      {
+        "name": "Demolisher",
+        "description": "Demolishers are explosive specialists with eye for combat. While not as skilled as a Soldier or Infiltrator, they make up for it with by covering the battlefield with grenades and heavy weapon fire.",
+        "features": [
+          [
+            "advanced_weapon_holsters",
+            "weapon_training"
+          ],
+          [
+            "makeshift_grenades_1",
+            "extra_attack_1"
+          ],
+          [
+            "heavy_weapon_hack",
+            "fighting_style"
+          ],
+          [
+            "makeshift_grenades_2"
+          ],
+          [
+            "paint_by_number"
+          ]
+        ]
+      },
+      {
+        "name": "Drone Jockey",
+        "description": "A drone jockey forms a bond with their mechanical companion, giving it a body, name and increasing its potency on the battlefield.",
+        "features": [
+          [
+            "drone_companion",
+            "drones_bond"
+          ],
+          [
+            "coordinated_attack"
+          ],
+          [
+            "drones_defense_1"
+          ],
+          [
+            "assault_protocol"
+          ],
+          [
+            "drones_defense_2"
+          ]
+        ]
+      },
+      {
+        "name": "Medic ",
+        "description": "The name says it all. As a medic, you'll be one on the field that can dress a wound and get your comrades back into fighting shape.",
+        "features": [
+          [
+            "repair_drone_1"
+          ],
+          [
+            "medi-gel_enhancements"
+          ],
+          [
+            "shield_boost"
+          ],
+          [
+            "repair_drone_2"
+          ],
+          [
+            "supply_pylon"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "infiltrator",
+    "name": "Infiltrator",
+    "description": "The Infiltrator is a tech-savvy warrior, able to win battles by quickly disabling and killing enemies. These soldiers focus on unlocking alternate routes, gaining access to good equipment, and obtaining an advantageous position over enemies in combat.\n",
+    "snippet": "Infiltrators are tech and combat specialists with the unique ability to cloak themselves.\n",
+    "primaryAbility": "Dexterity",
+    "hitDie": 8,
+    "minHitDieRoll": 5,
+    "armorProficiencies": [
+      "Light"
+    ],
+    "weaponProficiencyChoices": 2,
+    "weaponProficiencies": {
+      "required": [
+        "Heavy Pistols"
+      ],
+      "optional": [
+        "Assault Rifles",
+        "Melee",
+        "SMGs",
+        "Sniper Rifles"
+      ]
+    },
+    "savingThrows": [
+      "Dexterity",
+      "Intelligence"
+    ],
+    "skillChoices": 3,
+    "skillProficiencies": [
+      "Athletics",
+      "Acrobatics",
+      "Deception",
+      "Electronics",
+      "History",
+      "Insight",
+      "Investigation",
+      "Perception",
+      "Persuasion",
+      "Sleight of Hand",
+      "Stealth",
+      "Vehicle Handling"
+    ],
+    "startingRangedWeaponChoices": 1,
+    "startingRangedWeapons": [
+      "M-3 Predator",
+      "M-4 Shuriken",
+      "M-92 Mantis"
+    ],
+    "startingMeleeWeaponChoices": 1,
+    "startingMeleeWeapons": [
+      "Omni-Taser",
+      "Omni-Blade",
+      "Monomolecular Blade"
+    ],
+    "startingArmor": [
+      "Stock Light Armor"
+    ],
+    "progressionHeaders": [
+      {
+        "title": "Level"
+      },
+      {
+        "title": "Proficiency Bonus"
+      },
+      {
+        "title": "Sneak Attack Damage",
+        "key": "sneakAttack"
+      },
+      {
+        "title": "Features"
+      },
+      {
+        "title": "Tech Points"
+      },
+      {
+        "title": "Max TP",
+        "key": "maxTechPoints"
+      }
+    ],
+    "spellSlots": false,
+    "maxSpellSlot": 0,
+    "spellcasting": "Infiltrators use a highly modified Omni-tool that requires a keen intellect to maintain. As an Infiltrator, you use your Intelligence whenever a spell refers to your spellcasting ability. In addition, you use your Intelligence modifier when setting the saving throw DC for a tech spell you cast and when making an attack roll with one.\n",
+    "progression": [
+      {
+        "level": 1,
+        "proficiencyBonus": 2,
+        "sneakAttack": "1d6",
+        "features": [
+          "tactical_cloak",
+          "expertise",
+          "sneak_attack"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 2,
+        "maxTechPoints": 2,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 2,
+        "proficiencyBonus": 2,
+        "sneakAttack": "1d6",
+        "features": [
+          "cunning_action",
+          "techcombat_power"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 4,
+        "maxTechPoints": 2,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": 2
+      },
+      {
+        "level": 3,
+        "proficiencyBonus": 2,
+        "sneakAttack": "2d6",
+        "features": [
+          "subclass"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 6,
+        "maxTechPoints": 2,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 4,
+        "proficiencyBonus": 2,
+        "sneakAttack": "2d6",
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 8,
+        "maxTechPoints": 3,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 5,
+        "proficiencyBonus": 3,
+        "sneakAttack": "3d6",
+        "features": [
+          "uncanny_dodge"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 10,
+        "maxTechPoints": 3,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 6,
+        "proficiencyBonus": 3,
+        "sneakAttack": "3d6",
+        "features": [
+          "expertise",
+          "techcombat_power"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 11,
+        "maxTechPoints": 4,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": 2
+      },
+      {
+        "level": 7,
+        "proficiencyBonus": 3,
+        "sneakAttack": "4d6",
+        "features": [
+          "fast_hands"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 12,
+        "maxTechPoints": 4,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 8,
+        "proficiencyBonus": 3,
+        "sneakAttack": "4d6",
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 13,
+        "maxTechPoints": 4,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 9,
+        "proficiencyBonus": 4,
+        "sneakAttack": "5d6",
+        "features": [
+          "subclass"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 14,
+        "maxTechPoints": 5,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 10,
+        "proficiencyBonus": 4,
+        "sneakAttack": "5d6",
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 15,
+        "maxTechPoints": 5,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 11,
+        "proficiencyBonus": 4,
+        "sneakAttack": "6d6",
+        "features": [
+          "reliable_talent",
+          "techcombat_power"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 16,
+        "maxTechPoints": 5,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": 2
+      },
+      {
+        "level": 12,
+        "proficiencyBonus": 4,
+        "sneakAttack": "6d6",
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 17,
+        "maxTechPoints": 6,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 13,
+        "proficiencyBonus": 5,
+        "sneakAttack": "7d6",
+        "features": [
+          "subclass"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 18,
+        "maxTechPoints": 6,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 14,
+        "proficiencyBonus": 5,
+        "sneakAttack": "7d6",
+        "features": [
+          "evasion",
+          "techcombat_power"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 19,
+        "maxTechPoints": 6,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": 2
+      },
+      {
+        "level": 15,
+        "proficiencyBonus": 5,
+        "sneakAttack": "8d6",
+        "features": [
+          "shadow_strike"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 20,
+        "maxTechPoints": 7,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 16,
+        "proficiencyBonus": 5,
+        "sneakAttack": "8d6",
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 21,
+        "maxTechPoints": 7,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 17,
+        "proficiencyBonus": 6,
+        "sneakAttack": "9d6",
+        "features": [
+          "subclass"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 22,
+        "maxTechPoints": 7,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 18,
+        "proficiencyBonus": 6,
+        "sneakAttack": "9d6",
+        "features": [
+          "elusive",
+          "techcombat_power"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 23,
+        "maxTechPoints": 8,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": 1
+      },
+      {
+        "level": 19,
+        "proficiencyBonus": 6,
+        "sneakAttack": "10d6",
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 24,
+        "maxTechPoints": 8,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 20,
+        "proficiencyBonus": 6,
+        "sneakAttack": "10d6",
+        "features": [
+          "stroke_of_luck"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 25,
+        "maxTechPoints": 8,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      }
+    ],
+    "subclasses": [
+      {
+        "name": "Shadow",
+        "description": "Shadow Infiltrators are melee specialists that make heavy use of their tactical cloak and stealth to close the distance between themselves and their target.",
+        "features": [
+          [
+            "up_close_and_personal"
+          ],
+          [
+            "silent_cloak"
+          ],
+          [
+            "tactical_ambush"
+          ],
+          [
+            "sudden_strike"
+          ]
+        ]
+      },
+      {
+        "name": "Saboteur",
+        "description": "Saboteurs are infiltration experts. They use a sharp mind to subtly affect the outcome of battles.",
+        "features": [
+          [
+            "ear_for_deceit",
+            "eye_for_detail",
+            "insightful_fighting"
+          ],
+          [
+            "infiltration"
+          ],
+          [
+            "saboteurs_touch"
+          ],
+          [
+            "eye_for_weakness"
+          ]
+        ]
+      },
+      {
+        "name": "Operative",
+        "description": "Operatives are ranged specialists that rely on gunplay and a keen eye to take out enemies from a distance.",
+        "features": [
+          [
+            "dropshot"
+          ],
+          [
+            "deadeye"
+          ],
+          [
+            "combat_heuristics"
+          ],
+          [
+            "killshot"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sentinel",
+    "name": "Sentinel",
+    "description": "The Sentinel is able to combine tech and biotics to manipulate the environment, disable and track enemies, or defend the party. In addition to complete weapons training, Sentinels are equipped with an advanced shield that makes taking cover much less necessary and rushing their enemies much more productive. Because Sentinels have access to both biotic spells and tech powers, they have two Spellcasting Skills, Spell Attack Modifiers, and Spell Save DCs. Intelligence is the skill used for all tech powers, and Wisdom is used as the skill for all biotic powers.\n",
+    "snippet": "Sentinels are unique, bringing both tech and biotic abilities to the battlefield.\n",
+    "primaryAbility": "Wisdom or Intelligence",
+    "hitDie": 10,
+    "minHitDieRoll": 6,
+    "armorProficiencies": [
+      "Light",
+      "Medium",
+      "Heavy"
+    ],
+    "weaponProficiencyChoices": 2,
+    "weaponProficiencies": {
+      "required": [
+        "Heavy Pistols"
+      ],
+      "optional": [
+        "Assault Rifles",
+        "Melee",
+        "Shotguns",
+        "SMGs"
+      ]
+    },
+    "savingThrows": [
+      "Charisma",
+      "Constitution"
+    ],
+    "skillChoices": 3,
+    "skillProficiencies": [
+      "Athletics",
+      "Engineering",
+      "Insight",
+      "Intimidation",
+      "Medicine",
+      "Persuasion",
+      "Science",
+      "Survival"
+    ],
+    "startingRangedWeaponChoices": 1,
+    "startingRangedWeapons": [
+      "M-3 Predator",
+      "M-4 Shuriken",
+      "M-8 Avenger"
+    ],
+    "startingMeleeWeaponChoices": 1,
+    "startingMeleeWeapons": [
+      "Omni-Blade",
+      "Omni-Hammer",
+      "Monomolecular Blade",
+      "Riot Shield"
+    ],
+    "startingArmor": [
+      "Stock Light Armor",
+      "Stock Medium Armor",
+      "Stock Heavy Armor"
+    ],
+    "progressionHeaders": [
+      {
+        "title": "Level"
+      },
+      {
+        "title": "Proficiency Bonus"
+      },
+      {
+        "title": "Features"
+      },
+      {
+        "title": "Tech Points"
+      },
+      {
+        "title": "Max TP",
+        "key": "maxTechPoints"
+      },
+      {
+        "title": "Barrier Ticks"
+      },
+      {
+        "title": "Cantrips"
+      }
+    ],
+    "spellSlots": true,
+    "maxSpellSlot": 4,
+    "spellcasting": "Sentinels use the L5q biotic implant and a modified Omni-tool. When casting Biotic spells, Wisdom is your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a biotic spell you cast and when making an attack roll with one. When casting Tech powers, Intelligence is your spellcasting ability. In addition, you use your Intelligence modifier when setting the saving throw DC for a tech spell you cast and when making an attack roll with one.\n",
+    "progression": [
+      {
+        "level": 1,
+        "proficiencyBonus": 2,
+        "sneakAttack": null,
+        "features": [
+          "tech_armor",
+          "fighting_style"
+        ],
+        "cantrips": 2,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": 2,
+        "maxTechPoints": 2,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 2,
+        "proficiencyBonus": 2,
+        "sneakAttack": null,
+        "features": [
+          "barrier",
+          "tech_power"
+        ],
+        "cantrips": 2,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 2,
+        "techPoints": 4,
+        "maxTechPoints": 2,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": 2
+      },
+      {
+        "level": 3,
+        "proficiencyBonus": 2,
+        "sneakAttack": null,
+        "features": [
+          "subclass",
+          "biotic_powers"
+        ],
+        "cantrips": 2,
+        "spellSlots": {
+          "1": "2",
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 2,
+        "techPoints": 6,
+        "maxTechPoints": 2,
+        "newBioticSpellCount": 2,
+        "newSpellLevelMax": 1,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 4,
+        "proficiencyBonus": 2,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": 2,
+        "spellSlots": {
+          "1": "2",
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 2,
+        "techPoints": 8,
+        "maxTechPoints": 3,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 5,
+        "proficiencyBonus": 3,
+        "sneakAttack": null,
+        "features": [
+          "quick_cast_1",
+          "tech_power"
+        ],
+        "cantrips": 2,
+        "spellSlots": {
+          "1": "2",
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 3,
+        "techPoints": 10,
+        "maxTechPoints": 3,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": 2
+      },
+      {
+        "level": 6,
+        "proficiencyBonus": 3,
+        "sneakAttack": null,
+        "features": [
+          "biotic_powers"
+        ],
+        "cantrips": 2,
+        "spellSlots": {
+          "1": "2",
+          "2": "1",
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 3,
+        "techPoints": 11,
+        "maxTechPoints": 4,
+        "newBioticSpellCount": 2,
+        "newSpellLevelMax": 2,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 7,
+        "proficiencyBonus": 3,
+        "sneakAttack": null,
+        "features": [
+          "subclass"
+        ],
+        "cantrips": 3,
+        "spellSlots": {
+          "1": "3",
+          "2": "1",
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 3,
+        "techPoints": 12,
+        "maxTechPoints": 4,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 8,
+        "proficiencyBonus": 3,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": 3,
+        "spellSlots": {
+          "1": "3",
+          "2": "2",
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 4,
+        "techPoints": 13,
+        "maxTechPoints": 4,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 9,
+        "proficiencyBonus": 4,
+        "sneakAttack": null,
+        "features": [
+          "quick_cast_2",
+          "tech_power"
+        ],
+        "cantrips": 3,
+        "spellSlots": {
+          "1": "3",
+          "2": "2",
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 4,
+        "techPoints": 14,
+        "maxTechPoints": 5,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": 2
+      },
+      {
+        "level": 10,
+        "proficiencyBonus": 4,
+        "sneakAttack": null,
+        "features": [
+          "subclass"
+        ],
+        "cantrips": 3,
+        "spellSlots": {
+          "1": "3",
+          "2": "3",
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 4,
+        "techPoints": 15,
+        "maxTechPoints": 5,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 11,
+        "proficiencyBonus": 4,
+        "sneakAttack": null,
+        "features": [
+          "biotic_powers"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "4",
+          "2": "3",
+          "3": "1",
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 5,
+        "techPoints": 16,
+        "maxTechPoints": 5,
+        "newBioticSpellCount": 2,
+        "newSpellLevelMax": 3,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 12,
+        "proficiencyBonus": 4,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "4",
+          "2": "3",
+          "3": "1",
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 5,
+        "techPoints": 17,
+        "maxTechPoints": 6,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 13,
+        "proficiencyBonus": 5,
+        "sneakAttack": null,
+        "features": [
+          "heavy_barrier",
+          "tech_power"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "4",
+          "2": "3",
+          "3": "2",
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 5,
+        "techPoints": 18,
+        "maxTechPoints": 6,
+        "newBioticSpellCount": 2,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 14,
+        "proficiencyBonus": 5,
+        "sneakAttack": null,
+        "features": [
+          "subclass"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "4",
+          "2": "4",
+          "3": "2",
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 6,
+        "techPoints": 19,
+        "maxTechPoints": 6,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 15,
+        "proficiencyBonus": 5,
+        "sneakAttack": null,
+        "features": [
+          "biotic_powers",
+          "tech_power"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "5",
+          "2": "4",
+          "3": "3",
+          "4": "1",
+          "5": null
+        },
+        "barrierTicks": 6,
+        "techPoints": 20,
+        "maxTechPoints": 7,
+        "newBioticSpellCount": 1,
+        "newSpellLevelMax": 3,
+        "newTechSpellCount": 1
+      },
+      {
+        "level": 16,
+        "proficiencyBonus": 5,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "5",
+          "2": "4",
+          "3": "3",
+          "4": "1",
+          "5": null
+        },
+        "barrierTicks": 6,
+        "techPoints": 21,
+        "maxTechPoints": 7,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 17,
+        "proficiencyBonus": 6,
+        "sneakAttack": null,
+        "features": [
+          "biotic_powers",
+          "tech_power"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "5",
+          "2": "4",
+          "3": "3",
+          "4": "2",
+          "5": null
+        },
+        "barrierTicks": 7,
+        "techPoints": 22,
+        "maxTechPoints": 7,
+        "newBioticSpellCount": 1,
+        "newSpellLevelMax": 3,
+        "newTechSpellCount": 1
+      },
+      {
+        "level": 18,
+        "proficiencyBonus": 6,
+        "sneakAttack": null,
+        "features": [
+          "subclass"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "5",
+          "2": "4",
+          "3": "4",
+          "4": "2",
+          "5": null
+        },
+        "barrierTicks": 7,
+        "techPoints": 23,
+        "maxTechPoints": 8,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 19,
+        "proficiencyBonus": 6,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "5",
+          "2": "4",
+          "3": "3",
+          "4": "2",
+          "5": null
+        },
+        "barrierTicks": 7,
+        "techPoints": 24,
+        "maxTechPoints": 8,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 20,
+        "proficiencyBonus": 6,
+        "sneakAttack": null,
+        "features": [
+          "advanced_tech_armor"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "5",
+          "2": "4",
+          "3": "3",
+          "4": "2",
+          "5": null
+        },
+        "barrierTicks": 8,
+        "techPoints": 25,
+        "maxTechPoints": 8,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      }
+    ],
+    "subclasses": [
+      {
+        "name": "Mastermind",
+        "description": "Masterminds are the top strategists and battlefield experts. They can easily turn the tides by calling out orders or synchronizing troop movements.",
+        "features": [
+          [
+            "master_tactician"
+          ],
+          [
+            "biotic_enfilade"
+          ],
+          [
+            "tactical_advantage"
+          ],
+          [
+            "master_duelist"
+          ],
+          [
+            "synchronized_assault"
+          ]
+        ]
+      },
+      {
+        "name": "Bastion",
+        "description": "Bastions believe a good defense is the best offense. Their tech armor upgrades make sure they can take a hit, or one hundred, without so much as a scratch.",
+        "features": [
+          [
+            "assault_armor"
+          ],
+          [
+            "improved_tech_armor_1"
+          ],
+          [
+            "tech_armor_overload_1"
+          ],
+          [
+            "improved_tech_armor_2"
+          ],
+          [
+            "tech_armor_overload_2"
+          ]
+        ]
+      },
+      {
+        "name": "Guardian",
+        "description": "Guardians support and buff party members by utilizing different AI packages from their Tech Armor ability and protecting them with their Omni-Shield. They're also one of the most skilled classes, gaining the Expertise feature twice.",
+        "features": [
+          [
+            "omni-shield",
+            "expertise"
+          ],
+          [
+            "tech_aura_1"
+          ],
+          [
+            "sculpt_biotics",
+            "expertise"
+          ],
+          [
+            "tech_aura_2"
+          ],
+          [
+            "tech_aura_3"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "soldier",
+    "name": "Soldier",
+    "description": "The Soldier is a tough warrior, able to deal with a range of combat situations. The Soldier gets improved health and has the widest selection of weapons. No one is tougher or more effective at taking down enemies with gunfire.\n",
+    "snippet": "Soldiers are pure combat specialists effective at taking down enemies with gunfire.\n",
+    "primaryAbility": "Strength or Dexterity",
+    "hitDie": 10,
+    "minHitDieRoll": 6,
+    "armorProficiencies": [
+      "Light",
+      "Medium",
+      "Heavy"
+    ],
+    "weaponProficiencyChoices": 0,
+    "weaponProficiencies": {
+      "required": [
+        "Assault Rifles",
+        "Heavy Pistols",
+        "Melee",
+        "Shotguns",
+        "SMGs",
+        "Sniper Rifles"
+      ]
+    },
+    "savingThrows": [
+      "Strength",
+      "Dexterity"
+    ],
+    "skillChoices": 3,
+    "skillProficiencies": [
+      "Acrobatics",
+      "Athletics",
+      "History",
+      "Intimidation",
+      "Medicine",
+      "Perception",
+      "Persuasion",
+      "Stealth",
+      "Survival",
+      "Vehicle Handling"
+    ],
+    "startingRangedWeaponChoices": 2,
+    "startingRangedWeapons": [
+      "M-3 Predator",
+      "M-4 Shuriken",
+      "M-8 Avenger",
+      "M-92 Mantis",
+      "M-23 Katana"
+    ],
+    "startingMeleeWeaponChoices": 1,
+    "startingMeleeWeapons": [
+      "Omni-Blade",
+      "Omni-Hammer"
+    ],
+    "startingArmor": [
+      "Stock Light Armor",
+      "Stock Medium Armor",
+      "Stock Heavy Armor"
+    ],
+    "progressionHeaders": [
+      {
+        "title": "Level"
+      },
+      {
+        "title": "Proficiency Bonus"
+      },
+      {
+        "title": "Features"
+      }
+    ],
+    "spellSlots": false,
+    "maxSpellSlot": 0,
+    "spellcasting": null,
+    "progression": [
+      {
+        "level": 1,
+        "proficiencyBonus": 2,
+        "sneakAttack": null,
+        "features": [
+          "fighting_style",
+          "combat_power"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 2,
+        "proficiencyBonus": 2,
+        "sneakAttack": null,
+        "features": [
+          "adrenaline_rush_1"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 3,
+        "proficiencyBonus": 2,
+        "sneakAttack": null,
+        "features": [
+          "subclass"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 4,
+        "proficiencyBonus": 2,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 5,
+        "proficiencyBonus": 3,
+        "sneakAttack": null,
+        "features": [
+          "extra_attack_1",
+          "combat_power"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 6,
+        "proficiencyBonus": 3,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 7,
+        "proficiencyBonus": 3,
+        "sneakAttack": null,
+        "features": [
+          "subclass",
+          "tactical_reload"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 8,
+        "proficiencyBonus": 3,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 9,
+        "proficiencyBonus": 4,
+        "sneakAttack": null,
+        "features": [
+          "fighting_style",
+          "combat_power"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 10,
+        "proficiencyBonus": 4,
+        "sneakAttack": null,
+        "features": [
+          "subclass"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 11,
+        "proficiencyBonus": 4,
+        "sneakAttack": null,
+        "features": [
+          "extra_attack_2"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 12,
+        "proficiencyBonus": 4,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 13,
+        "proficiencyBonus": 5,
+        "sneakAttack": null,
+        "features": [
+          "combat_power"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 14,
+        "proficiencyBonus": 5,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 15,
+        "proficiencyBonus": 5,
+        "sneakAttack": null,
+        "features": [
+          "subclass"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 16,
+        "proficiencyBonus": 5,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 17,
+        "proficiencyBonus": 6,
+        "sneakAttack": null,
+        "features": [
+          "adrenaline_rush_2",
+          "combat_power"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 18,
+        "proficiencyBonus": 6,
+        "sneakAttack": null,
+        "features": [
+          "subclass"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 19,
+        "proficiencyBonus": 6,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 20,
+        "proficiencyBonus": 6,
+        "sneakAttack": null,
+        "features": [
+          "extra_attack_3"
+        ],
+        "cantrips": null,
+        "spellSlots": {
+          "1": null,
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": null,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      }
+    ],
+    "subclasses": [
+      {
+        "name": "Havoc",
+        "description": "Havoc soldiers prefer a multitude of gadgets and combat powers over standard weapons. ",
+        "features": [
+          [
+            "combat_power"
+          ],
+          [
+            "combat_power"
+          ],
+          [
+            "combat_power"
+          ],
+          [
+            "combat_power"
+          ],
+          [
+            "combat_power"
+          ]
+        ]
+      },
+      {
+        "name": "Weapon Master",
+        "description": "Weapon masters train extensively in the art of a single weapon, giving them powerful advantages when using a weapon of that type.",
+        "features": [
+          [
+            "weapon_of_choice_1"
+          ],
+          [
+            "strafe"
+          ],
+          [
+            "weapon_of_choice_2"
+          ],
+          [
+            "devastating_critical"
+          ],
+          [
+            "weapon_of_choice_3"
+          ]
+        ]
+      },
+      {
+        "name": "Sharpshooter",
+        "description": "Sharpshooters use pinpoint accuracy and target weak points on their opponents, resulting a massive amounts of bonus damage.",
+        "features": [
+          [
+            "steady_aim"
+          ],
+          [
+            "careful_eyes"
+          ],
+          [
+            "close-quarters_shooter"
+          ],
+          [
+            "rapid_strike"
+          ],
+          [
+            "snap_shot"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vanguard",
+    "name": "Vanguard",
+    "description": "Vanguards are feared for their high-risk high-reward combat style, closing quickly on enemies and destroying them at close range with weapons and biotic abilities. They are outfitted with L5n implants, enabling them to perform a biotic charge that strikes the opponent with incredible force while closing distance.\n",
+    "snippet": "Vanguards have a high-risk high-reward combat style, using biotics and melee strikes.\n",
+    "primaryAbility": "Strength or Wisdom",
+    "hitDie": 12,
+    "minHitDieRoll": 7,
+    "armorProficiencies": [
+      "Light",
+      "Medium"
+    ],
+    "weaponProficiencyChoices": 1,
+    "weaponProficiencies": {
+      "required": [
+        "Heavy Pistols",
+        "Melee"
+      ],
+      "optional": [
+        "Shotguns",
+        "SMGs"
+      ]
+    },
+    "savingThrows": [
+      "Strength",
+      "Wisdom"
+    ],
+    "skillChoices": 3,
+    "skillProficiencies": [
+      "Acrobatics",
+      "Athletics",
+      "Deception",
+      "Insight",
+      "Intimidation",
+      "Performance",
+      "Persuasion",
+      "Sleight of Hand",
+      "Survival"
+    ],
+    "startingRangedWeaponChoices": 1,
+    "startingRangedWeapons": [
+      "M-3 Predator",
+      "M-4 Shuriken",
+      "M-23 Katana"
+    ],
+    "startingMeleeWeaponChoices": 1,
+    "startingMeleeWeapons": [
+      "Omni-Blade",
+      "Omni-Hammer",
+      "Monomolecular Blade",
+      "Riot Shield"
+    ],
+    "startingArmor": [
+      "Stock Light Armor",
+      "Stock Medium Armor"
+    ],
+    "progressionHeaders": [
+      {
+        "title": "Level"
+      },
+      {
+        "title": "Proficiency Bonus"
+      },
+      {
+        "title": "Features"
+      },
+      {
+        "title": "Barrier Ticks"
+      },
+      {
+        "title": "Cantrips"
+      }
+    ],
+    "spellSlots": true,
+    "maxSpellSlot": 4,
+    "spellcasting": "Vanguards are outfitted with the L5n biotic implant which draws upon their inner strength of will and focus on their physical mnemonics. As a Vanguard, you use your Wisdom whenever a spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a biotic spell you cast and when making an attack roll with one.\n",
+    "progression": [
+      {
+        "level": 1,
+        "proficiencyBonus": 2,
+        "sneakAttack": null,
+        "features": [
+          "biotic_powers",
+          "barrier"
+        ],
+        "cantrips": 2,
+        "spellSlots": {
+          "1": "2",
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 3,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": 2,
+        "newSpellLevelMax": 1,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 2,
+        "proficiencyBonus": 2,
+        "sneakAttack": null,
+        "features": [
+          "fighting_style",
+          "danger_sense"
+        ],
+        "cantrips": 3,
+        "spellSlots": {
+          "1": "2",
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 3,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 3,
+        "proficiencyBonus": 2,
+        "sneakAttack": null,
+        "features": [
+          "subclass",
+          "biotic_powers"
+        ],
+        "cantrips": 3,
+        "spellSlots": {
+          "1": "3",
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 3,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": 2,
+        "newSpellLevelMax": 1,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 4,
+        "proficiencyBonus": 2,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": 3,
+        "spellSlots": {
+          "1": "3",
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 4,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 5,
+        "proficiencyBonus": 3,
+        "sneakAttack": null,
+        "features": [
+          "extra_attack_1",
+          "tactical_barrier"
+        ],
+        "cantrips": 3,
+        "spellSlots": {
+          "1": "4",
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 4,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 6,
+        "proficiencyBonus": 3,
+        "sneakAttack": null,
+        "features": [
+          "subclass"
+        ],
+        "cantrips": 3,
+        "spellSlots": {
+          "1": "5",
+          "2": null,
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 4,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 7,
+        "proficiencyBonus": 3,
+        "sneakAttack": null,
+        "features": [
+          "biotic_powers"
+        ],
+        "cantrips": 3,
+        "spellSlots": {
+          "1": "5",
+          "2": "1",
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 5,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": 2,
+        "newSpellLevelMax": 2,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 8,
+        "proficiencyBonus": 3,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": 3,
+        "spellSlots": {
+          "1": "5",
+          "2": "2",
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 5,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 9,
+        "proficiencyBonus": 4,
+        "sneakAttack": null,
+        "features": [
+          "zero-sum_1",
+          "brutal_critical_1"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "5",
+          "2": "3",
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 5,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 10,
+        "proficiencyBonus": 4,
+        "sneakAttack": null,
+        "features": [
+          "subclass"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "5",
+          "2": "4",
+          "3": null,
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 6,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 11,
+        "proficiencyBonus": 4,
+        "sneakAttack": null,
+        "features": [
+          "biotic_powers",
+          "heavy_barrier"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "5",
+          "2": "4",
+          "3": "1",
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 6,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": 2,
+        "newSpellLevelMax": 3,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 12,
+        "proficiencyBonus": 4,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "5",
+          "2": "4",
+          "3": "2",
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 6,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 13,
+        "proficiencyBonus": 5,
+        "sneakAttack": null,
+        "features": [
+          "zero-sum_2",
+          "brutal_critical_2"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "5",
+          "2": "4",
+          "3": "3",
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 7,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 14,
+        "proficiencyBonus": 5,
+        "sneakAttack": null,
+        "features": [
+          "subclass"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "5",
+          "2": "4",
+          "3": "4",
+          "4": null,
+          "5": null
+        },
+        "barrierTicks": 7,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 15,
+        "proficiencyBonus": 5,
+        "sneakAttack": null,
+        "features": [
+          "retaliation",
+          "biotic_powers"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "5",
+          "2": "4",
+          "3": "4",
+          "4": "1",
+          "5": null
+        },
+        "barrierTicks": 7,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": 1,
+        "newSpellLevelMax": 4,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 16,
+        "proficiencyBonus": 5,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "5",
+          "2": "5",
+          "3": "4",
+          "4": "1",
+          "5": null
+        },
+        "barrierTicks": 8,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 17,
+        "proficiencyBonus": 6,
+        "sneakAttack": null,
+        "features": [
+          "zero-sum_3",
+          "brutal_critical_3"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "5",
+          "2": "5",
+          "3": "4",
+          "4": "2",
+          "5": null
+        },
+        "barrierTicks": 8,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 18,
+        "proficiencyBonus": 6,
+        "sneakAttack": null,
+        "features": [
+          "subclass"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "5",
+          "2": "5",
+          "3": "4",
+          "4": "2",
+          "5": null
+        },
+        "barrierTicks": 9,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 19,
+        "proficiencyBonus": 6,
+        "sneakAttack": null,
+        "features": [
+          "ability_score_improvement"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "5",
+          "2": "5",
+          "3": "4",
+          "4": "3",
+          "5": null
+        },
+        "barrierTicks": 9,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      },
+      {
+        "level": 20,
+        "proficiencyBonus": 6,
+        "sneakAttack": null,
+        "features": [
+          "primal_biotics"
+        ],
+        "cantrips": 4,
+        "spellSlots": {
+          "1": "5",
+          "2": "5",
+          "3": "4",
+          "4": "3",
+          "5": null
+        },
+        "barrierTicks": 10,
+        "techPoints": null,
+        "maxTechPoints": null,
+        "newBioticSpellCount": null,
+        "newSpellLevelMax": null,
+        "newTechSpellCount": null
+      }
+    ],
+    "subclasses": [
+      {
+        "name": "Battle Master",
+        "description": "Battle masters use their barrier to execute unique maneuvers on the battlefield, controlling and harrying enemy forces.",
+        "features": [
+          [
+            "biotic_maneuvers_1"
+          ],
+          [
+            "improved_barrier_1"
+          ],
+          [
+            "biotic_maneuvers_2"
+          ],
+          [
+            "improved_barrier_2"
+          ],
+          [
+            "biotic_maneuvers_2"
+          ]
+        ]
+      },
+      {
+        "name": "Shock Trooper",
+        "description": "Shock troopers like to fight up close and personal, using charge to dash around the battlefield and striking their opponents with devastating melee strikes.",
+        "features": [
+          [
+            "biotic_fury"
+          ],
+          [
+            "biotic_bull_rush"
+          ],
+          [
+            "relentless"
+          ],
+          [
+            "biotic_focus"
+          ],
+          [
+            "opportunist"
+          ]
+        ]
+      },
+      {
+        "name": "Nemesis",
+        "description": "Nemesis vanguards prefer distance and using biotic powers. While they lack the raw power of an adept, they're more agile and much harder to take down.",
+        "features": [
+          [
+            "metabiotics_1"
+          ],
+          [
+            "vengeance"
+          ],
+          [
+            "teleporting_dodge"
+          ],
+          [
+            "metabiotics_2"
+          ],
+          [
+            "biotic_attacks"
+          ]
+        ]
+      }
+    ]
+  }
+]
