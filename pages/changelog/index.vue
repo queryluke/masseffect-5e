@@ -4,25 +4,19 @@
       div.text-xs-center
         h1.display-2 Changelog
       v-layout(row wrap).mt-5
-        v-flex(v-for="version in versions" v-bind:key="version.slug" xs12 sm6 lg4 d-flex)
-          post-card(:post="version" height="185px")
+        v-flex(v-for="post in items" v-bind:key="post.slug" xs12 sm6 lg4 d-flex)
+          post-card(:post="post" height="185px")
 </template>
 
 <script>
-  import {mapGetters} from 'vuex'
+  import items from '~/static/data/changelog'
   import PostCard from '~/components/cards/PostCard.vue'
 
   export default {
     components: { PostCard },
-    computed: {
-      ...mapGetters(['getVersions'])
-    },
-    created () {
-      this.versions = this.getVersions()
-    },
     data () {
       return {
-        versions: []
+        items
       }
     },
     head () {

@@ -2,36 +2,34 @@
   v-content.blue-grey.lighten-4
     v-container
       div.news-post
-        h1.display-3 {{ post.title }}
-        h2.subheading #[em {{ post.date | formatDate('DDDD, MMMM DD, YYYY') }}]
-        div(v-html="postFile").my-3
+        h1.display-3 {{ post.attributes.title }}
+        h2.subheading #[em {{ post.attributes.date | formatDate('DDDD, MMMM DD, YYYY') }}]
+        div.markdown-content
+          markdown-content(:component="post.vue")
       v-btn(to="/changelog" nuxt).primary
         v-icon keyboard_arrow_left
         span Back to changelog
 </template>
 
 <script>
-  import {mapGetters} from 'vuex'
-
   export default {
     computed: {
-      ...mapGetters(['getSingleVersion']),
       post () {
-        return this.getSingleVersion(this.$route.params.slug)
-      },
-      postFile () {
-        if (this.post.slug) {
-          return require(`~/data/changelog/${this.post.slug}.md`)
-        } else {
-          this.$nuxt.error({statusCode: 404})
+        if (this.id) {
+          return require(`~/static/data/changelog/${this.id}.md`)
         }
+      }
+    },
+    data () {
+      return {
+        id: this.$route.params.slug
       }
     },
     head () {
       return {
-        title: `Mass Effect 5e | Changelog - ${this.post.title}`,
+        title: `Mass Effect 5e | Changelog - ${this.post.attributes.title}`,
         meta: [
-          { hid: 'description', name: 'description', content: this.post.description }
+          { hid: 'description', name: 'description', content: this.post.attributes.description }
         ]
       }
     }

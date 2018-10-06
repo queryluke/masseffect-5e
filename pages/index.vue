@@ -141,19 +141,13 @@
 </template>
 
 <script>
-  import {mapGetters} from 'vuex'
+  import recentPosts from '~/static/data/changelog.json'
   import PostCard from '~/components/cards/PostCard.vue'
 
   export default {
     components: { PostCard },
-    computed: {
-      ...mapGetters(['getVersions']),
-      recentPosts () {
-        return this.getVersions(6)
-      }
-    },
     data () {
-      return { alert: true }
+      return { alert: true, recentPosts }
     },
     head () {
       return {

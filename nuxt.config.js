@@ -1,7 +1,7 @@
 const fs = require('fs')
 const fm = require('front-matter')
 const jsonDirs = ['classes']
-const mdDirs = ['backgrounds', 'rules', 'grenades', 'tools', 'conditions', 'class_features']
+const mdDirs = ['backgrounds', 'rules', 'grenades', 'tools', 'conditions', 'class_features', 'changelog']
 
 /*****
  * Static file generation
@@ -26,22 +26,32 @@ for (let dir of mdDirs) {
   const items = files.map((file) => {
     const fc = fm(fs.readFileSync(`${path}/${file}`, 'utf8'))
     let item = Object.assign(fc.attributes, {})
-
-    if (dir === 'changelog') {
-      item.date = new Date(item.date)
-      item.slug = file.replace(/.md$/, '')
-      item.url = `/changelog/${item.slug}`
-    }
-
-    if (dir === 'rules') {
-      const fileParts = file.split('-')
-      item.section = Number.parseInt(fileParts[0])
-      item.subSection = Number.parseInt(fileParts[1])
-      item.id = file.replace(/\.md$/g, '')
-      item.hash = fileParts.splice(2).join('-').replace(/\.md$/g, '')
+    switch (dir) {
+      case 'changelog':
+        item.date = new Date(item.date)
+        item.slug = file.replace(/.md$/, '')
+        item.url = `/changelog/${item.slug}`
+        break
+      case 'rules':
+        const fileParts = file.split('-')
+        item.section = Number.parseInt(fileParts[0])
+        item.subSection = Number.parseInt(fileParts[1])
+        item.id = file.replace(/\.md$/g, '')
+        item.hash = fileParts.splice(2).join('-').replace(/\.md$/g, '')
+        break
+      default:
+        break
     }
     return item
   })
+
+  switch (dir) {
+    case 'changelog':
+      items.reverse()
+      break
+    default:
+      break
+  }
   fs.writeFileSync(`${path}.json`, JSON.stringify(items, null, 2))
 }
 

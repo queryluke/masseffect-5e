@@ -3,7 +3,6 @@ import armorSets from '~/data/armor_sets.json'
 import attributions from '~/data/attributions.json'
 import bestiary from '~/data/bestiary.json'
 import feats from '~/data/feats.json'
-import grenades from '~/data/grenades_mines.json'
 import monsterFeatures from '~/data/monster_features.json'
 import races from '~/data/races.json'
 import racialTraits from '~/data/racial_traits.json'
@@ -17,7 +16,6 @@ export default {
   attributions,
   bestiary,
   feats,
-  grenades,
   monsterFeatures,
   races,
   racialTraits,
