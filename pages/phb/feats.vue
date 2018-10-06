@@ -2,53 +2,40 @@
   v-container
     h2.display-1.hidden-sm-and-down Feats
     p.
-      Feats are part of the official #[em Dungeons & Dragons Players Handbook] (PHB). Due to copyright reasons, I can only note any changed or new feats
-      available in this system. Hence, if a feat doesn't have a description, you can look it up in your copy of the PHB with the page number provided.
+      A feat represents a talent or an area of expertise that gives a character special capabilities. It embodies
+      training, experience, and abilities beyond what a class provides. Mass Effect 5e uses a number of feats in the
+      Player's Handbook, providing page numbers for reference.
     p.
-      The following feats from the PHB are not available: {{ notAvailable }}
-    v-expansion-panel.mb-2
+      At certain levels, your class gives you the Ability Score Improvement feature. Using the optional feats rule, you
+      can forgo taking that feature to take a feat of your choice instead. You can take each feat only once, unless
+      the feat’s description says otherwise.
+    p.
+      You must meet any prerequisite specified in a feat to take that feat. If you ever lose a feat’s prerequisite,
+      you can’t use that feat until you regain the prerequisite.
+    v-expansion-panel.my-5
       v-expansion-panel-content(v-for="feat in items" v-bind:feat="feat" v-bind:key="feat.name").large-panel
         div(slot="header")
           v-layout
             v-flex.xs2.md1
-              v-avatar(:class="[feat.page_number ? 'deep-purple' : 'deep-orange']" size="30px")
-                span(v-if="feat.page_number").white--text PHB
-                span(v-else).white--text New
+              v-avatar(:class="[feat.new ? 'deep-purple' : 'deep-orange']" size="30px")
+                span(v-if="feat.new").white--text New
+                span(v-else).white--text PHB
             v-flex.xs10.md3.pt-1
               strong {{ feat.name }}
-            v-flex.hidden-sm-and-down.md-8.pt-1 {{ feat.notes }}
+            v-flex.hidden-sm-and-down.md-8.pt-1 {{ feat.note }}
         v-card
           v-card-text.grey.lighten-3
             p(v-if="feat.page_number") p. {{ feat.page_number }}
-            me-element(:text="feat.description" v-else)
+            markdown-file(:id="feat.id" itemType="feats")
 </template>
 
 <script>
-  import MeElement from '~/components/MeElement.vue'
-  import {mapGetters} from 'vuex'
+  import items from '~/static/data/feats.json'
 
   export default {
-    components: {
-      MeElement
-    },
-    computed: {
-      ...mapGetters(['getData'])
-    },
-    created () {
-      const data = this.getData('feats')
-      this.items = data.filter((value) => {
-        return value.not_available === null
-      })
-      const notAvailable = data.filter((value) => {
-        return value.not_available !== null
-      })
-      this.notAvailable = notAvailable.map(value => value.name).join(', ')
-    },
     data () {
       return {
-        items: [],
-        listName: 'feats',
-        notAvailable: ''
+        items
       }
     },
     head () {
