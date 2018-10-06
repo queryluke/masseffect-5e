@@ -1,24 +1,44 @@
 const fs = require('fs')
 const fm = require('front-matter')
 const jsonDirs = ['classes']
-const mdDirs = ['backgrounds', 'rules', 'grenades', 'tools', 'conditions', 'class_features', 'changelog']
+const mdDirs = ['backgrounds', 'rules', 'grenades', 'tools', 'conditions', 'class_features', 'changelog', 'races']
 
 /*****
  * Static file generation
  */
-// one time process
-/*
-for (const g of grenades.data) {
-  const id = g.id.replace('_', '-')
 
-  let text = `---\nid: ${id}\nname: ${g.name}\ndamage: ${g.damage_amount}${g.dd}\nrange: ${g.range}\nblast: ${g.blast}\ndamageType: ${g.damage_type}\n---`
-  for (const line of g.desc) {
-    text += `\n${line.data}`
-  }
+// const races = require('./data/races.json')
+// const feats = require('./data/feats.json')
+// // const racialTraits = require('./data/racial_traits.json')
+// // // one time process
+// for (const g of feats.data) {
+//   const id = g.id.replace(/_/g, '-')
+//   // const acText = g.available_classes.split(',').map(c => {
+//   //   return `  - ${c.trim().toLowerCase()}`
+//   // }).join('\n')
+//   // const increaseText = g.increases.split(',').map(c => {
+//   //   return `  - amount: ${c.trim().substring(1, 2)}\n    ability: ${c.trim().substring(3)}`
+//   // }).join('\n')
+//   // const startingFeats = feats.data.filter(f => f[g.id] === 'x').map(f => `  - ${f.id.replace(/_/g, '-')}`).join('\n')
+//   // const traits = racialTraits.data.filter(f => f[g.id] === 'x').map(f => `  - ${f.id.replace(/_/g, '-')}`).join('\n')
+//   // const galaxy = g.galaxy.split(',').map(f => `  - ${f.trim()}`).join('\n')
+//   //
+//   // let text = `---\nid: ${id}\nname: ${g.name}\ngalaxy: \n${galaxy}\nalignment: ${g.alignment}`
+//   // text += `\navailableClasses:\n${acText}\nsexyLevel: ${g.sexy_level}\nabilityScoreIncrease:\n${increaseText}`
+//   // text += `\nsize: ${g.size}\nspeed: ${g.speed}\nsnippet: ${g.snippet}\nstartingCredits: ${g.optional_starting_credits}`
+//   // text += `\nbodyImg: ${g.body}\nimg: ${g.card}\nstartingFeats: \n${startingFeats}\ntraits: \n${traits}\nage: \n---`
+//   const isNew = g.page_number ? 'new: true\n' : ''
+//   let text = `---\nid: ${id}\nname: ${g.name}\nnote: ${g.notes}\nprerequisite: ${g.prerequisite}\n${isNew}---\n`
+//   if (g.description.length > 0) {
+//     for (const line of g.description) {
+//       text += `\n${line.data}`
+//     }
+//   } else {
+//     text += `Player's Handbook, p. ${g.page_number}`
+//   }
+//   fs.writeFileSync(`./static/data/feats/${id}.md`, text)
+// }
 
-  fs.writeFileSync(`./static/data/grenades/${id}.md`, text)
-}
-*/
 for (let dir of mdDirs) {
   const path = `./static/data/${dir}`
   const files = fs.readdirSync(path)
@@ -67,14 +87,14 @@ for (let dir of jsonDirs) {
  * Dynamic Route Generation
  */
 const routes = []
-fs.readdirSync('./data/classes').map(file => {
+fs.readdirSync('./static/data/classes').map(file => {
   const id = file.replace(/.json$/, '')
   routes.push(`/phb/classes/${id}`)
   routes.push(`/print/spell-cards/${id}`)
 })
-require('./data/races.json').data.map(r => routes.push(`/phb/races/${r.id}`))
+// require('./data/races.json').data.map(r => routes.push(`/phb/races/${r.id}`))
 
-fs.readdirSync('./data/changelog').map((file) => {
+fs.readdirSync('./static/data/changelog').map((file) => {
   routes.push('/changelog/' + (file.replace(/\.md$/g, '')))
 })
 

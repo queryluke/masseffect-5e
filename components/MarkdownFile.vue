@@ -18,7 +18,8 @@
     },
     props: {
       id: String,
-      itemType: String
+      itemType: String,
+      header: Object
     }
   }
 </script>

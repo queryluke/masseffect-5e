@@ -9,14 +9,11 @@
 </template>
 
 <script>
-  import {mapGetters} from 'vuex'
-  import {EnhanceMarkdown} from '~/mixins/enhanceMarkdown.js'
   import ClassFeature from '~/components/class/ClassFeature.vue'
 
   export default {
     components: { ClassFeature },
     computed: {
-      ...mapGetters(['getData']),
       featureIndex () {
         let index = 0
         for (const level of this.item.progression) {
@@ -29,12 +26,6 @@
         }
       }
     },
-    methods: {
-      markdownFile (id) {
-        return this.enhanceMarkdown(require(`~/data/class_features/${id}.md`), this.level)
-      }
-    },
-    mixins: [EnhanceMarkdown],
     props: {
       item: Object,
       level: Object,

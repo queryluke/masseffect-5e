@@ -13,6 +13,7 @@ import npcName from './npcName'
 import npcSavingThrows from './npcSavingThrows'
 import ordinal from './ordinal'
 import removeActionId from './removeActionId'
+import titlecase from './titlecase'
 import weaponRange from './weaponRange'
 
 const customFilters = {
@@ -29,6 +30,7 @@ const customFilters = {
   npcSavingThrows,
   ordinal,
   removeActionId,
+  titlecase,
   weaponRange
 }
 
