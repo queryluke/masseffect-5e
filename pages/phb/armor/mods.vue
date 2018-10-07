@@ -24,7 +24,7 @@
   import ArmorModFilters from '~/components/armor_mod/ArmorModFilters.vue'
   import ArmorModList from '~/components/armor_mod/ArmorModList.vue'
   import MobileFilterContainer from '~/components/MobileFilterContainer.vue'
-  import ArmorMods from '~/data/armor_mods.json'
+  import items from '~/static/data/armor_mods.json'
 
   // State
   import {createNamespacedHelpers} from 'vuex'
@@ -76,7 +76,6 @@
       }
     },
     data () {
-      const items = ArmorMods.data
       const noteOptions = new Set()
       for (const item of items) {
         for (const note of item.notes.split(',').map(n => n.trim())) {

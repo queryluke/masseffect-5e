@@ -13,15 +13,13 @@
             p.title.mb-1 {{ condition.name }}
           v-divider
           v-card-text
-            md-file(:id="condition.id" itemType="conditions").mt-2
+            markdown-file(:id="condition.id" itemType="conditions").mt-2
 </template>
 
 <script>
   import items from '~/static/data/conditions.json'
-  import MarkdownFile from '~/components/MarkdownFile.vue'
 
   export default {
-    components: { MarkdownFile },
     data () {
       return {
         items

@@ -5,10 +5,10 @@
         h2.display-1.hidden-sm-and-down Skills
       v-flex.xs12.sm6
         p.headline New
-        p {{ new_skills }}
+        p Electronics, Engineering, Science, Vehicle Handling
       v-flex.xs12.sm6
         p.headline Removed
-        p {{ removed }}
+        p Animal Handling, Arcana, Nature, Religion
     div.mt-3
       table.elevation-1.table
         thead
@@ -24,24 +24,12 @@
 </template>
 
 <script>
-  import {mapGetters} from 'vuex'
+  import items from '~/static/data/skills'
 
   export default {
-    computed: {
-      ...mapGetters(['getData'])
-    },
-    created () {
-      const data = this.getData('skills')
-      this.items = data.filter((i) => { return i.removed === null })
-      this.removed = data.filter((i) => { return i.removed }).map((i) => { return i.name }).join(', ')
-      this.new_skills = data.filter((i) => { return i.new }).map((i) => { return i.name }).join(', ')
-    },
     data () {
       return {
-        items: [],
-        new_skills: '',
-        removed: '',
-        listName: 'skills',
+        items,
         headers: [
           { text: 'Name', value: 'name', align: 'left' },
           { text: 'Ability', value: 'link', align: 'left' },

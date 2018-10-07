@@ -29,6 +29,7 @@
   import ArmorSetFilters from '~/components/armor_set/ArmorSetFilters.vue'
   import ArmorSetList from '~/components/armor_set/ArmorSetList.vue'
   import MobileFilterContainer from '~/components/MobileFilterContainer.vue'
+  import items from '~/static/data/armor_sets'
 
   // State
   import {createNamespacedHelpers} from 'vuex'
@@ -37,7 +38,7 @@
   export default {
     components: { ArmorSetFilters, ArmorSetList, MobileFilterContainer },
     computed: {
-      ...mapGetters(['getItems', 'order', 'sortBy', 'filters', 'searchString']),
+      ...mapGetters(['order', 'sortBy', 'filters', 'searchString']),
       search: {
         get () {
           return this.searchString
@@ -86,22 +87,18 @@
         return data
       }
     },
-    created () {
-      this.items = this.getItems(this.itemKey)
+    data () {
       const noteOptions = new Set()
-      for (const item of this.items) {
+      for (const item of items) {
         if (item.notes) {
           for (const note of item.notes.split(',').map(n => n.trim())) {
             noteOptions.add(note)
           }
         }
       }
-      this.noteOptions = [...noteOptions].sort()
-    },
-    data () {
       return {
-        items: [],
-        noteOptions: [],
+        items,
+        noteOptions: [...noteOptions].sort(),
         itemKey: 'armorSets'
       }
     },

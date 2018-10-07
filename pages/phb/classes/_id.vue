@@ -12,21 +12,6 @@
         class-attributes(:item="item" v-bind:primaryColor="colors[item.id].primary" slot="attributes_tab_content")
         subclass-info(:item="item" v-bind:primaryColor="colors[item.id].primary" slot="subclasses_tab_content")
         spell-list(:items="filteredSpells" slot="spell_list_tab_content")
-    v-layout(row grow).my-0.mt-4
-      v-flex(v-if="previous.name").primary.pa-0.xs6
-        v-list(:class="previous.colors.primary" dark).py-0
-          v-list-tile(:to="{ name: 'phb-classes-id', params: { id: previous.id }}" ripple)
-            v-icon(dark).mr-5.hidden-xs-only chevron_left
-            v-list-tile-content
-              v-list-tile-sub-title Previous Class:
-              v-list-tile-title(v-text="previous.name")
-      v-flex(v-if="next.name" v-bind:class="{ 'offset-xs6': !previous.name }").primary.pa-0.xs6
-        v-list(:class="next.colors.primary" dark).py-0
-          v-list-tile(:to="{ name: 'phb-classes-id', params: { id: next.id }}" ripple)
-            v-list-tile-content
-              v-list-tile-sub-title.text-xs-right Next Class:
-              v-list-tile-title.text-xs-right(v-text="next.name")
-            v-icon(dark).ml-5.hidden-xs-only chevron_right
 </template>
 
 <script>
@@ -36,9 +21,6 @@
   import ClassTabs from '~/components/class/ClassTabs.vue'
   import SpellList from '~/components/spell/SpellList.vue'
   import SubclassInfo from '~/components/class/SubclassInfo.vue'
-
-  // Classes
-  import items from '~/static/data/classes'
 
   // State
   import {createNamespacedHelpers} from 'vuex'
@@ -71,24 +53,14 @@
         return data
       }
     },
-    created () {
-      this.id = this.$route.params.id
-      let classes = items
-      this.item = classes.find(value => value.id === this.id)
-      // this.spells = this.getData('spells').filter(spell => spell.availableClasses.includes(this.id))
-      let index = classes.indexOf(this.item)
-      this.previous = classes[index - 1] ? classes[index - 1] : {}
-      this.previous.colors = this.colors[this.previous.id]
-      this.next = classes[index + 1] ? classes[index + 1] : {}
-      this.next.colors = this.colors[this.next.id]
-    },
     data () {
+      const id = this.$route.params.id
+      const item = require(`~/static/data/classes/${this.$route.params.id}.json`)
+      const spells = require(`~/static/data/spells`).filter(spell => spell.availableClasses.includes(id))
       return {
-        id: '',
-        item: {},
-        spells: [],
-        next: {},
-        previous: {}
+        id,
+        item,
+        spells
       }
     },
     head () {

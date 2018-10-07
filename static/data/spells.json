@@ -1,0 +1,2542 @@
+[
+  {
+    "id": "ai_hacking",
+    "name": "AI Hacking",
+    "level": "3",
+    "type": "tech",
+    "attackType": [
+      "INT Save"
+    ],
+    "effect": [
+      "control"
+    ],
+    "damageType": [],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "20m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "engineer",
+      "infiltrator"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Total Control",
+        "description": "You take the hacked synthetic's action. You may use its spells and abilities."
+      },
+      {
+        "name": "Damage",
+        "description": "While the synthetic is hacked, it takes 2d6 shock damage at the end of its turn. This damage does not proc an opportunity to end the spell."
+      }
+    ]
+  },
+  {
+    "id": "alter_center_mass",
+    "name": "Alter Center Mass",
+    "level": "1",
+    "type": "biotic",
+    "attackType": [
+      "CON Save"
+    ],
+    "effect": [
+      "debuff"
+    ],
+    "damageType": [],
+    "castingTime": "Action",
+    "duration": "1 minute",
+    "concentration": true,
+    "distance": {
+      "range": "30m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "adept",
+      "sentinel",
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Disorient",
+        "description": "Creatures that fail the saving throw become disoriented. Until the end of your next turn, attacks made against the creature has advantage and the creature can't take reactions."
+      },
+      {
+        "name": "Debilitate",
+        "description": "Creatures that fail the saving throw can barely move. Until the end of your next turn, the creature's speed becomes 0 and it automatically fails Dexterity saving throws."
+      }
+    ]
+  },
+  {
+    "id": "annihilation_field",
+    "name": "Annihilation Field",
+    "level": "4",
+    "type": "biotic",
+    "attackType": [
+      "CON Save"
+    ],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "necrotic"
+    ],
+    "castingTime": "Action",
+    "duration": "1 minute",
+    "concentration": true,
+    "distance": {
+      "range": "Self",
+      "aoeType": "sphere",
+      "aoeDistance": "4m"
+    },
+    "detonates": null,
+    "primes": "necrotic",
+    "availableClasses": [
+      "adept",
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Disorient",
+        "description": "Creatures that fail the Constitution saving throw have disadvantage on their next attack roll."
+      },
+      {
+        "name": "Phasic",
+        "description": "Annihilation Field's damage bypasses shields."
+      }
+    ]
+  },
+  {
+    "id": "backlash",
+    "name": "Backlash",
+    "level": "2",
+    "type": "biotic",
+    "attackType": [],
+    "effect": [
+      "protection"
+    ],
+    "damageType": [],
+    "castingTime": "Reaction, which you take when you are hit by an attack",
+    "duration": "1 minute",
+    "concentration": true,
+    "distance": {
+      "range": "Self",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "adept",
+      "sentinel",
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Durable",
+        "description": "Increase the aegis's hit points to 30."
+      },
+      {
+        "name": "Counter strike",
+        "description": "If you cast Backlash as a reaction against a melee attack, gain an attack of opportunity against the attacking creature."
+      }
+    ]
+  },
+  {
+    "id": "ballistic_blades",
+    "name": "Ballistic Blades",
+    "level": null,
+    "type": "combat",
+    "attackType": [
+      "Ranged Attack"
+    ],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "piercing"
+    ],
+    "castingTime": "Attack",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "10m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "infiltrator",
+      "soldier"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Bleeding Blades",
+        "description": "On a hit, the target takes an additional 3d12 damage at the start of their turn due to blood loss. This damage bypasses shields."
+      },
+      {
+        "name": "Exploding blades",
+        "description": "On a hit, the target takes an additional 3d12 thunder damage and must pass a Constitution saving throw (DC 8 + proficiency bonus) or becomes {stunned} until the end of your next turn."
+      }
+    ]
+  },
+  {
+    "id": "barrier_detonation",
+    "name": "Barrier Detonation",
+    "level": "0",
+    "type": "biotic",
+    "attackType": [],
+    "effect": [
+      "control"
+    ],
+    "damageType": [],
+    "castingTime": "Bonus Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "Self",
+      "aoeType": "sphere",
+      "aoeDistance": "2m"
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "adept",
+      "sentinel",
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Shaped Lift",
+        "description": "You may choose the shape of the detonation"
+      },
+      {
+        "name": "Heavy Lift",
+        "description": "Large and smaller creatures and objects are affected."
+      }
+    ]
+  },
+  {
+    "id": "beehive",
+    "name": "Beehive",
+    "level": null,
+    "type": "combat",
+    "attackType": [
+      "DEX save"
+    ],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "piercing"
+    ],
+    "castingTime": "Attack",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "Self",
+      "aoeType": "cone",
+      "aoeDistance": "6m"
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "infiltrator",
+      "soldier"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Anti-Flesh",
+        "description": "The Beehive deals double damage to {unprotected}, organic targets."
+      },
+      {
+        "name": "Remote Deploy",
+        "description": "As an action, you can set up your Beehive in a separate location. Once it is deployed you can use an Attack action to fire it."
+      }
+    ]
+  },
+  {
+    "id": "biotic_orbs",
+    "name": "Biotic Orbs",
+    "level": "2",
+    "type": "biotic",
+    "attackType": [
+      "Ranged Attack"
+    ],
+    "effect": [
+      "damage",
+      "buff"
+    ],
+    "damageType": [
+      "force"
+    ],
+    "castingTime": "Action",
+    "duration": "1 minute",
+    "concentration": true,
+    "distance": {
+      "range": "40m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": "x",
+    "primes": null,
+    "availableClasses": [
+      "adept",
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Improved Orbs",
+        "description": "You many expend 2 orbs to cast a spell using your highest available spell slot."
+      },
+      {
+        "name": "Retribution",
+        "description": "As a reaction to taking damage, you may expend all of your remaining biotic orbs. For each expended orb, make a ranged spell attack on a target you can see within range. You can direct all attacks to hit one creature or several."
+      }
+    ]
+  },
+  {
+    "id": "biotic_punch",
+    "name": "Biotic Punch",
+    "level": "0",
+    "type": "biotic",
+    "attackType": [
+      "Melee Spell Attack"
+    ],
+    "effect": [
+      "damage",
+      "buff"
+    ],
+    "damageType": [
+      "bludgeoning"
+    ],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "Touch",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": "x",
+    "primes": null,
+    "availableClasses": [
+      "adept",
+      "sentinel",
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Efficient Punch",
+        "description": "On a hit, gain 3 barrier ticks."
+      },
+      {
+        "name": "Siphoning Strike",
+        "description": "On a hit, instead of gaining barrier ticks, gain 10 shield points."
+      }
+    ]
+  },
+  {
+    "id": "biotic_slash",
+    "name": "Biotic Slash",
+    "level": "1",
+    "type": "biotic",
+    "attackType": [],
+    "effect": [
+      "damage",
+      "buff"
+    ],
+    "damageType": [
+      "fore"
+    ],
+    "castingTime": "Bonus Action",
+    "duration": "1 minute",
+    "concentration": true,
+    "distance": {
+      "range": "Self",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": "x",
+    "primes": null,
+    "availableClasses": [
+      "sentinel",
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Improved Damage",
+        "description": "Increase the damage die to 2d12"
+      },
+      {
+        "name": "Destined Hit",
+        "description": "Gain a +5 bonus to your next melee weapon attack roll"
+      }
+    ]
+  },
+  {
+    "id": "biotic_sphere",
+    "name": "Biotic Sphere",
+    "level": "4",
+    "type": "biotic",
+    "attackType": [],
+    "effect": [
+      "warding"
+    ],
+    "damageType": [],
+    "castingTime": "Action",
+    "duration": "1 minute",
+    "concentration": true,
+    "distance": {
+      "range": "Self",
+      "aoeType": "sphere",
+      "aoeDistance": "6m"
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "adept",
+      "sentinel"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Infuse Ammo",
+        "description": "Friendly creatures inside the sphere add 1d6 force damage to all ranged weapon attacks against creatures outside of the sphere. This damage can detonate primed targets."
+      },
+      {
+        "name": "Armored",
+        "description": "The sphere has resistance to bludgeoning, piercing, slashing, and thunder damage, but only has 75 hit points."
+      }
+    ]
+  },
+  {
+    "id": "biotic_wall",
+    "name": "Biotic Wall",
+    "level": "3",
+    "type": "biotic",
+    "attackType": [],
+    "effect": [
+      "control"
+    ],
+    "damageType": [],
+    "castingTime": "Action",
+    "duration": "10 minutes",
+    "concentration": true,
+    "distance": {
+      "range": "20m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "adept",
+      "sentinel",
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Lifting Wall",
+        "description": "If a creature comes within 2m of the wall, you can use your reaction to make a pocket of negatively charged space near the creature's location. It must pass a Strength saving throw or become lifted until the end of your next turn."
+      },
+      {
+        "name": "Shifting Wall",
+        "description": "As a bonus action, you can either move the wall up to 6m in any direction, rotate the wall up to 180 degrees, or reshape the wall within the parameters listed above."
+      }
+    ]
+  },
+  {
+    "id": "catapult",
+    "name": "Catapult",
+    "level": "1",
+    "type": "biotic",
+    "attackType": [
+      "DEX Save"
+    ],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "bludgeoning"
+    ],
+    "castingTime": "Action",
+    "duration": null,
+    "concentration": false,
+    "distance": {
+      "range": "20m",
+      "aoeType": "line",
+      "aoeDistance": "30m"
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "adept",
+      "sentinel",
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Salvo",
+        "description": "When you cast Salvo, you may target a number of objects equal to or less than your spellcasting modifier. The combined weight of the objects cannot exceed the maximum weight limit of the spell (10 kilos at 1st level, 12 kilos at 2nd level, etc)."
+      },
+      {
+        "name": "Counterstrike",
+        "description": "You may cast catapult as a reaction when you see a creature within 30m of you casting a spell or making a weapon attack. If the object would strike a creature casting a spell, the creature automatically fails its Dexterity saving throw and must succeed on a Constitution saving throw or the spell fails and has no effect (DC 10 or half the damage done by catapult, whichever is higher). If object would strike a creature making a weapon attack, you impose disadvantage on the attack roll whether or not the creature fails its Dexterity saving throw."
+      }
+    ]
+  },
+  {
+    "id": "charge",
+    "name": "Charge",
+    "level": "0",
+    "type": "biotic",
+    "attackType": [
+      "DEX Save"
+    ],
+    "effect": [
+      "damage",
+      "movement"
+    ],
+    "damageType": [
+      "force"
+    ],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "10m",
+      "aoeType": "sphere",
+      "aoeDistance": "2m"
+    },
+    "detonates": "x",
+    "primes": null,
+    "availableClasses": [
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Barrier Regen",
+        "description": "After you cast Charge, if you have an active barrier, regain half of your barrier ticks and reset the duration of your barrier to 1 minute."
+      },
+      {
+        "name": "Stunning blow",
+        "description": "On a failed save, the target becomes {stunned} until the end of your next turn"
+      }
+    ]
+  },
+  {
+    "id": "concussive_shot",
+    "name": "Concussive Shot",
+    "level": null,
+    "type": "combat",
+    "attackType": [
+      "Ranged Attack"
+    ],
+    "effect": [
+      "damage",
+      "buff"
+    ],
+    "damageType": [
+      "bludgeoning"
+    ],
+    "castingTime": "Bonus",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "Self",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": "x",
+    "primes": null,
+    "availableClasses": [
+      "soldier"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Stunning Shot",
+        "description": "A creature hit by Concussive Shot must make a Constitution saving throw (DC 8 + proficiency bonus + DEX modifier). On a failed save, the creature is {stunned} until the end of your next turn."
+      },
+      {
+        "name": "Improved shot",
+        "description": "Increase the bonus damage of Concussive shot to d12."
+      }
+    ]
+  },
+  {
+    "id": "cryo_beam",
+    "name": "Cryo Beam",
+    "level": "x",
+    "type": "tech",
+    "attackType": [
+      "DEX save",
+      " STR save"
+    ],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "cold"
+    ],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "Self",
+      "aoeType": "cube",
+      "aoeDistance": "6m"
+    },
+    "detonates": null,
+    "primes": "cold",
+    "availableClasses": [
+      "engineer",
+      "infiltrator",
+      "sentinel"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Brittle Freeze",
+        "description": "Creatures that fail the Constitution saving throw suffer a -1 AC penalty"
+      },
+      {
+        "name": "Frozen Ground",
+        "description": "Cryo beam leaves a patch of ice on the ground that lasts for 1 min. Each creature that moves into or out of the patch must pass a Dexterity saving throw. On a failed save, slips and falls [Prone], ending its movement."
+      }
+    ]
+  },
+  {
+    "id": "cryo_blast",
+    "name": "Cryo Blast",
+    "level": "x",
+    "type": "tech",
+    "attackType": [
+      "Ranged Attack",
+      " STR save"
+    ],
+    "effect": [
+      "damage",
+      "debuff"
+    ],
+    "damageType": [
+      "cold"
+    ],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "20m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": "cold",
+    "availableClasses": [
+      "engineer",
+      "infiltrator",
+      "sentinel"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Ice Lance",
+        "description": "Transform the attack into a deadly lance. The attack can no longer freeze or slow the target, but you add 1d6 piercing damage for each tech point spent."
+      },
+      {
+        "name": "Frigid Air",
+        "description": "The blast snap freezes the air around the target in a 2m radius. Each creature that enters the frozen space for the first time on a turn or ends its turn there must pass a Constitution saving throw or take 2d4 cold damage."
+      }
+    ]
+  },
+  {
+    "id": "dark_channel",
+    "name": "Dark Channel",
+    "level": "0",
+    "type": "biotic",
+    "attackType": [
+      "Ranged Attack"
+    ],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "necrotic"
+    ],
+    "castingTime": "Action",
+    "duration": "1 minute",
+    "concentration": true,
+    "distance": {
+      "range": "40m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": "necrotic",
+    "availableClasses": [
+      "adept"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Cripple",
+        "description": "If the affected creature would make a saving throw or attack roll, as a reaction you may increase the severity of Dark Channel. The affected creature must roll a d4 and subtract the number rolled from the attack roll or saving throw."
+      },
+      {
+        "name": "Improved Damage",
+        "description": "Increase the damage die type to d10"
+      }
+    ]
+  },
+  {
+    "id": "dark_sphere",
+    "name": "Dark Sphere",
+    "level": "3",
+    "type": "biotic",
+    "attackType": [
+      "DEX save",
+      "CON save"
+    ],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "necrotic"
+    ],
+    "castingTime": "Action",
+    "duration": "1 minute",
+    "concentration": true,
+    "distance": {
+      "range": "Self",
+      "aoeType": "sphere",
+      "aoeDistance": "4m"
+    },
+    "detonates": null,
+    "primes": "necrotic",
+    "availableClasses": [
+      "adept"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Control",
+        "description": "Before the sphere moves, you may change its direction and speed. Its speed becomes 4m, 6m, or 8m."
+      },
+      {
+        "name": "Amplify",
+        "description": "Add 1d8 to the detonation damage for each 4m the sphere travels."
+      }
+    ]
+  },
+  {
+    "id": "decoy",
+    "name": "Decoy",
+    "level": "x",
+    "type": "tech",
+    "attackType": [],
+    "effect": [
+      "control"
+    ],
+    "damageType": [],
+    "castingTime": "Action",
+    "duration": "1 minute",
+    "concentration": false,
+    "distance": {
+      "range": "10m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "engineer",
+      "infiltrator"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Explosive",
+        "description": "As an action, you can spend 1 tech point to detonate your Decoy. Each creature within 4m must make a Dexterity saving throw. On a failed save, a creature takes 3d6 thunder damage or half as much on a successful one."
+      },
+      {
+        "name": "Improved Decoy",
+        "description": "Your Decoy becomes so life-like that creatures have disadvantage on the Wisdom (Perception) check."
+      }
+    ]
+  },
+  {
+    "id": "defense_matrix",
+    "name": "Defense Matrix",
+    "level": "x",
+    "type": "tech",
+    "attackType": [],
+    "effect": [
+      "buff"
+    ],
+    "damageType": [],
+    "castingTime": "Action",
+    "duration": "1 minute",
+    "concentration": false,
+    "distance": {
+      "range": "Self",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "engineer",
+      "infiltrator",
+      "sentinel"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Shield",
+        "description": "Deploy the matrix as a stationary shield. Up to 2 creatures of medium size can stand behind the shield, gaining the resistance benefit when attacked by creatures from the other side of the shield."
+      },
+      {
+        "name": "Improved Defense",
+        "description": "Gain a +2 bonus to your AC while Defense Matrix is active."
+      }
+    ]
+  },
+  {
+    "id": "disrupt_biotics",
+    "name": "Disrupt Biotics",
+    "level": "5",
+    "type": "tech",
+    "attackType": [],
+    "effect": [
+      "control"
+    ],
+    "damageType": [],
+    "castingTime": "Reaction",
+    "duration": null,
+    "concentration": false,
+    "distance": {
+      "range": "20m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "engineer",
+      "infiltrator",
+      "sentinel"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Lockdown",
+        "description": "If you succeed on your ability check, you overload the target's biotic implant and it cannot cast biotic spells until the end of its next turn."
+      },
+      {
+        "name": "Psychic Strain",
+        "description": "If succeed on the ability check, the target takes Xd6 psychic damage, where X is the level of the spell. Targets take 1d4 psychic damage for cantrips."
+      }
+    ]
+  },
+  {
+    "id": "dominate",
+    "name": "Dominate",
+    "level": "3",
+    "type": "biotic",
+    "attackType": [
+      "WIS Save"
+    ],
+    "effect": [
+      "control"
+    ],
+    "damageType": [],
+    "castingTime": "Action",
+    "duration": "1 minute",
+    "concentration": true,
+    "distance": {
+      "range": "30m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "adept"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Total Control",
+        "description": "You take the dominated creature's action. You may use its spells and abilities."
+      },
+      {
+        "name": "Damage",
+        "description": "While the creature is dominated, it takes 4d6 psychic damage at the end of its turn. This damage bypasses shields and does not proc an opportunity to end Dominate."
+      }
+    ]
+  },
+  {
+    "id": "electric_slash",
+    "name": "Electric Slash",
+    "level": "x",
+    "type": "tech",
+    "attackType": [
+      "CON Save"
+    ],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "lightning"
+    ],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "Self",
+      "aoeType": "cone",
+      "aoeDistance": "8m"
+    },
+    "detonates": "x",
+    "primes": null,
+    "availableClasses": [
+      "engineer",
+      "infiltrator"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Shield Restore",
+        "description": "If you are wearing armor, gain shield points equal to half of your damage roll."
+      },
+      {
+        "name": "Paralyze",
+        "description": "Creatures that fail the saving throw are paralyzed until the end of their next turn."
+      }
+    ]
+  },
+  {
+    "id": "energy_drain",
+    "name": "Energy Drain",
+    "level": "x",
+    "type": "tech",
+    "attackType": [
+      "Ranged Attack"
+    ],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "lightning"
+    ],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "20m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": "x",
+    "primes": null,
+    "availableClasses": [
+      "engineer",
+      "sentinel"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Improved Damage",
+        "description": "Increase the damage die type to d6."
+      },
+      {
+        "name": "Improved Regen",
+        "description": "If you are wearing armor, gain shield points equal to your damage roll."
+      }
+    ]
+  },
+  {
+    "id": "first_aid",
+    "name": "First Aid",
+    "level": "x",
+    "type": "tech",
+    "attackType": [],
+    "effect": [
+      "heal"
+    ],
+    "damageType": [],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "Touch",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "engineer",
+      "infiltrator",
+      "sentinel"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Adaptive",
+        "description": "The healed creature gains resistance to the last damage type it suffered. This effect lasts for 1 minute."
+      },
+      {
+        "name": "Improved Healing",
+        "description": "Increase the healing die type to d12"
+      }
+    ]
+  },
+  {
+    "id": "flamethrower",
+    "name": "Flamethrower",
+    "level": "x",
+    "type": "tech",
+    "attackType": [
+      "DEX Save"
+    ],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "fire"
+    ],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "Self",
+      "aoeType": "cone",
+      "aoeDistance": "8m"
+    },
+    "detonates": null,
+    "primes": "fire",
+    "availableClasses": [
+      "engineer",
+      "infiltrator",
+      "sentinel"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Concentrated Burn",
+        "description": "Increase the damage to d12 and the distance to 12m, but the area-of-effect is now a line instead of a cone."
+      },
+      {
+        "name": "Exhaust",
+        "description": "The flames leave behind a thick smoke for 1 turn. Creatures have disadvantage while making ranged weapon attacks against you until the start of your next turn."
+      }
+    ]
+  },
+  {
+    "id": "flare",
+    "name": "Flare",
+    "level": "4",
+    "type": "biotic",
+    "attackType": [
+      "DEX Save"
+    ],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "radiant"
+    ],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "50m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": "x",
+    "primes": null,
+    "availableClasses": [
+      "adept"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Improved Blind",
+        "description": "Each creature is blinded no matter the result of its saving throw."
+      },
+      {
+        "name": "Heat seeking flare",
+        "description": "Instead of choosing 4 targets, you may instead choose 1. If you do so, the target has disadvantage on the saving throw. Increase the damage by 4d12."
+      }
+    ]
+  },
+  {
+    "id": "fly",
+    "name": "Fly",
+    "level": "2",
+    "type": "biotic",
+    "attackType": [],
+    "effect": [
+      "movement"
+    ],
+    "damageType": [],
+    "castingTime": "Action",
+    "duration": "10 minutes",
+    "concentration": true,
+    "distance": {
+      "range": "Self",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "adept",
+      "sentinel",
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Speed",
+        "description": "You may cast Fly as a bonus action. Increase the fly speed to 30m"
+      },
+      {
+        "name": "Extended Cast",
+        "description": "The duration of fly becomes 30 minutes."
+      }
+    ]
+  },
+  {
+    "id": "fortification",
+    "name": "Fortification",
+    "level": null,
+    "type": "combat",
+    "attackType": [],
+    "effect": [
+      "buff"
+    ],
+    "damageType": [],
+    "castingTime": "Reaction",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "Self",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "soldier"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Lasting Fortification",
+        "description": "Fortification lasts an additional turn."
+      },
+      {
+        "name": "Venting Fortification",
+        "description": "When fortification ends, the currents are sent to your gauntlets. Your next Omni-tool attack is made at advantage and deals an additional 2d10 bludgeoning damage."
+      }
+    ]
+  },
+  {
+    "id": "guidance",
+    "name": "Guidance",
+    "level": "1",
+    "type": "tech",
+    "attackType": [],
+    "effect": [
+      "buff"
+    ],
+    "damageType": [],
+    "castingTime": "Action",
+    "duration": "10 minutes",
+    "concentration": false,
+    "distance": {
+      "range": "10m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "engineer",
+      "infiltrator",
+      "sentinel"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Multi Tap",
+        "description": "Guidance can be active on up to 3 different targets."
+      },
+      {
+        "name": "Improved Tap",
+        "description": "Increase the die type to d10"
+      }
+    ]
+  },
+  {
+    "id": "havoc_strike",
+    "name": "Havoc Strike",
+    "level": null,
+    "type": "combat",
+    "attackType": [
+      "DEX Save"
+    ],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "thunder"
+    ],
+    "castingTime": "Attack",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "8m",
+      "aoeType": "sphere",
+      "aoeDistance": "2m"
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "soldier"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Improved Distance",
+        "description": "You can jump up to 12m."
+      },
+      {
+        "name": "Improved Radius",
+        "description": "Increase the radius of the impact to 4m"
+      }
+    ]
+  },
+  {
+    "id": "hawk_missile_launcher",
+    "name": "Hawk Missile Launcher",
+    "level": null,
+    "type": "combat",
+    "attackType": [
+      "Ranged Attack"
+    ],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "thunder"
+    ],
+    "castingTime": "Attack",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "60m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "soldier"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Anti-Shield",
+        "description": "The missile detonates a small EMP, transforming the damage to lightning."
+      },
+      {
+        "name": "Improved Damage",
+        "description": "Increase the damage to 5d6"
+      }
+    ]
+  },
+  {
+    "id": "hex_shield",
+    "name": "Hex Shield",
+    "level": null,
+    "type": "combat",
+    "attackType": [],
+    "effect": [
+      "warding"
+    ],
+    "damageType": [],
+    "castingTime": "Bonus",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "Self",
+      "aoeType": "line",
+      "aoeDistance": "2m"
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "soldier"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Hearty Shield",
+        "description": "Increase the shield's hit points to 100."
+      },
+      {
+        "name": "Large Shield",
+        "description": "The Shield covers a 4m wide area."
+      }
+    ]
+  },
+  {
+    "id": "incinerate",
+    "name": "Incinerate",
+    "level": "x",
+    "type": "tech",
+    "attackType": [
+      "Ranged Attack"
+    ],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "fire"
+    ],
+    "castingTime": "Acton",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "20m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": "x",
+    "primes": "fire",
+    "availableClasses": [
+      "engineer",
+      "infiltrator",
+      "sentinel"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Frozen Combo",
+        "description": "Deal double damage to frozen targets."
+      },
+      {
+        "name": "Radial Blast",
+        "description": "On a miss, the target creature takes half the damage."
+      }
+    ]
+  },
+  {
+    "id": "lance",
+    "name": "Lance",
+    "level": "1",
+    "type": "biotic",
+    "attackType": [
+      "Ranged Attack"
+    ],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "force"
+    ],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "50m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": "x",
+    "primes": null,
+    "availableClasses": [
+      "adept",
+      "sentinel",
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Anti-shield",
+        "description": "Lance deals an additional 2d4 lightning damage. This damage increases by 2d4 for each spell slot level above the first."
+      },
+      {
+        "name": "Improved Damage",
+        "description": "Increase the damage die type to d12."
+      }
+    ]
+  },
+  {
+    "id": "lash",
+    "name": "Lash",
+    "level": "2",
+    "type": "biotic",
+    "attackType": [
+      "Ranged Attack"
+    ],
+    "effect": [
+      "damage",
+      "control"
+    ],
+    "damageType": [
+      "force"
+    ],
+    "castingTime": "Action",
+    "duration": "1 minute",
+    "concentration": true,
+    "distance": {
+      "range": "20m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": "force",
+    "availableClasses": [
+      "adept",
+      "sentinel",
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Improved Grapple",
+        "description": "The grappled creature has disadvantage when trying to escape."
+      },
+      {
+        "name": "Improved Damage",
+        "description": "Increase the damage die type to d12."
+      }
+    ]
+  },
+  {
+    "id": "lift",
+    "name": "Lift",
+    "level": "0",
+    "type": "biotic",
+    "attackType": [],
+    "effect": [
+      "control"
+    ],
+    "damageType": [],
+    "castingTime": "Action",
+    "duration": "10 minutes",
+    "concentration": true,
+    "distance": {
+      "range": "40m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "adept",
+      "sentinel",
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Magician",
+        "description": "You can exert fine motor control over the object, such as manipulating a simple tool or removing an object from a container."
+      },
+      {
+        "name": "Improved Lift",
+        "description": "You can manipulate an object that weighs up to 25 kgs (~55 pounds)."
+      }
+    ]
+  },
+  {
+    "id": "neural_shock",
+    "name": "Neural Shock",
+    "level": "x",
+    "type": "tech",
+    "attackType": [
+      "CON Save"
+    ],
+    "effect": [
+      "debuff"
+    ],
+    "damageType": [],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "20m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "engineer",
+      "infiltrator"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Damage",
+        "description": "A creature takes Xd6 psychic damage on a failed save or half as much damage on a successful one where X is the number of tech points spent."
+      },
+      {
+        "name": "Paralyze",
+        "description": "If a creature fails the saving throw, it is paralyzed for 1 turn."
+      }
+    ]
+  },
+  {
+    "id": "nightshade_blade",
+    "name": "Nightshade Blade",
+    "level": null,
+    "type": "combat",
+    "attackType": [
+      "Ranged Attack",
+      " CON Save"
+    ],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "poison"
+    ],
+    "castingTime": "Attack",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "10m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "infiltrator",
+      "soldier"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Paralyze",
+        "description": "A creature that fails the Constitution saving throw becomes {paralyzed} until the end of your next turn."
+      },
+      {
+        "name": "Improved Poison",
+        "description": "The creature has disadvantage on its Constitution saving throw."
+      }
+    ]
+  },
+  {
+    "id": "nova",
+    "name": "Nova",
+    "level": "0",
+    "type": "biotic",
+    "attackType": [
+      "DEX Save"
+    ],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "force"
+    ],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "Self",
+      "aoeType": "sphere",
+      "aoeDistance": "2m"
+    },
+    "detonates": "x",
+    "primes": null,
+    "availableClasses": [
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Improved Damage",
+        "description": "Increase the damage die to d12."
+      },
+      {
+        "name": "Half blast",
+        "description": "When you cast nova, it consumes one half of your remaining barrier ticks (rounded up), but deals damage as if you had used all of your remaining barrier ticks."
+      }
+    ]
+  },
+  {
+    "id": "overload",
+    "name": "Overload",
+    "level": "x",
+    "type": "tech",
+    "attackType": [
+      "DEX Save"
+    ],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "lightning"
+    ],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "20m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": "lightning",
+    "availableClasses": [
+      "engineer",
+      "infiltrator",
+      "sentinel"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Extended Leap",
+        "description": "Overload can leap to targets within 10m."
+      },
+      {
+        "name": "Heavy Overload",
+        "description": "Increase the damage die type to d6"
+      }
+    ]
+  },
+  {
+    "id": "phase_disruptor",
+    "name": "Phase Disruptor",
+    "level": "0",
+    "type": "biotic",
+    "attackType": [
+      "Ranged Attack"
+    ],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "force"
+    ],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "40m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": "x",
+    "primes": null,
+    "availableClasses": [
+      "adept",
+      "sentinel",
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Improved Damage",
+        "description": "Increase the damage die type to d6."
+      },
+      {
+        "name": "Cripple",
+        "description": "Creature's hit by Phase Disruptor have disadvantage on their next attack roll."
+      }
+    ]
+  },
+  {
+    "id": "poison_spray",
+    "name": "Poison Spray",
+    "level": "1",
+    "type": "tech",
+    "attackType": [
+      "CON Save"
+    ],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "poison"
+    ],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "2m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "engineer",
+      "infiltrator"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Pepper spray",
+        "description": "Creatures that fail the Constitution saving throw are also blinded for 1 minute."
+      },
+      {
+        "name": "Poison Cloud",
+        "description": "Create a 2m-radius cloud of poison that persists for 1 minute. Each creature that enters the sphere for the first time on a turn or ends its turn there must make the Constitution saving throw."
+      }
+    ]
+  },
+  {
+    "id": "pull",
+    "name": "Pull",
+    "level": "1",
+    "type": "biotic",
+    "attackType": [
+      "Ranged Attack"
+    ],
+    "effect": [
+      "control"
+    ],
+    "damageType": [],
+    "castingTime": "Action",
+    "duration": "10 minutes",
+    "concentration": true,
+    "distance": {
+      "range": "30m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": "force",
+    "availableClasses": [
+      "adept",
+      "sentinel",
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Heavy Pull",
+        "description": "You may target a Large or smaller creature or object."
+      },
+      {
+        "name": "Grip",
+        "description": "While maintaining this spell, you may use your bonus action to increase pressure around the target, dealing 2d6 bludgeoning damage."
+      }
+    ]
+  },
+  {
+    "id": "reave",
+    "name": "Reave",
+    "level": "1",
+    "type": "biotic",
+    "attackType": [
+      "Ranged Attack"
+    ],
+    "effect": [
+      "damage",
+      "debuff"
+    ],
+    "damageType": [
+      "necrotic"
+    ],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "50m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": "necrotic",
+    "availableClasses": [
+      "adept"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Area Reave",
+        "description": "The orb becomes unstable and explodes when it reaches the target. Hit or miss, the target and each creature within 2m of it must succeed on a Constitution saving throw or take 2d6 necrotic damage. This damage increases by 2d6 for each spell slot level above the first."
+      },
+      {
+        "name": "Immediate Detonation",
+        "description": "When you hit a target with reave, it detonates the primed condition at the end of your turn."
+      }
+    ]
+  },
+  {
+    "id": "sabotage",
+    "name": "Sabotage",
+    "level": "2",
+    "type": "tech",
+    "attackType": [],
+    "effect": [
+      "debuff",
+      "control"
+    ],
+    "damageType": [],
+    "castingTime": "Action",
+    "duration": "Infinite",
+    "concentration": false,
+    "distance": {
+      "range": "20m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "engineer",
+      "infiltrator"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Multi-Weapon",
+        "description": "You can target 3 weapons at once."
+      },
+      {
+        "name": "Backfire",
+        "description": "After the weapon fires, it deals 2d6 thunder damage to the attacking creature."
+      }
+    ]
+  },
+  {
+    "id": "salvo",
+    "name": "Salvo",
+    "level": "x",
+    "type": "tech",
+    "attackType": [],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "fire"
+    ],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "20m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": "x",
+    "primes": null,
+    "availableClasses": [
+      "engineer",
+      "infiltrator",
+      "sentinel"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Exploding Salvo",
+        "description": "Each dart deals an additional 1d4 thunder damage."
+      },
+      {
+        "name": "Blinding Salvo",
+        "description": "The darts explode in a bright flash of light. Targets no longer take damage but must make a Constitution saving throw. On a failed save, a target is blinded until the end of your next turn."
+      }
+    ]
+  },
+  {
+    "id": "sentry_turret",
+    "name": "Sentry Turret",
+    "level": "5",
+    "type": "tech",
+    "attackType": [],
+    "effect": [
+      "summon"
+    ],
+    "damageType": [],
+    "castingTime": "Action",
+    "duration": "1 minute",
+    "concentration": false,
+    "distance": {
+      "range": "Touch",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "engineer"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Cryo Ammo",
+        "description": "The turret's mass accelerator machinegun deals 7 (2d6) piercing and 7 (2d6) cold damage. Any creature that fails the saving throw is {frozen} until the end of the turret's next turn."
+      },
+      {
+        "name": "Shields",
+        "description": "The turret has 30 shield points (0 regen)."
+      }
+    ]
+  },
+  {
+    "id": "shocking_grasp",
+    "name": "Shocking Grasp",
+    "level": "x",
+    "type": "tech",
+    "attackType": [],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "Touch",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": "lightning",
+    "availableClasses": [
+      "engineer",
+      "infiltrator"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Reach",
+        "description": "Increase the range to 4m."
+      },
+      {
+        "name": "Improved Shock",
+        "description": "Increase the damage die to d8."
+      }
+    ]
+  },
+  {
+    "id": "shockwave",
+    "name": "Shockwave",
+    "level": "1",
+    "type": "biotic",
+    "attackType": [
+      "DEX Save"
+    ],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "force"
+    ],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "Self",
+      "aoeType": "line",
+      "aoeDistance": "10m"
+    },
+    "detonates": "x",
+    "primes": null,
+    "availableClasses": [
+      "adept",
+      "sentinel",
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Controlled Shockwave",
+        "description": "The shockwave travels 16m. You may change the direct of the line every 4m."
+      },
+      {
+        "name": "Improved Damage",
+        "description": "Increase damage die type to d10"
+      }
+    ]
+  },
+  {
+    "id": "siege_pulse",
+    "name": "Siege Pulse",
+    "level": null,
+    "type": "combat",
+    "attackType": [
+      "CON Save"
+    ],
+    "effect": [
+      "damage",
+      "control"
+    ],
+    "damageType": [
+      "psychic"
+    ],
+    "castingTime": "Attack",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "Self",
+      "aoeType": "sphere",
+      "aoeDistance": "4m"
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "soldier"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Improved Pulse",
+        "description": "Add your STR or DEX modifier to the DC of the saving throw. You choose which one."
+      },
+      {
+        "name": "Lingering Pulse",
+        "description": "Creatures hit by siege pulse have disadvantage on melee and ranged attacks until the end of your next turn."
+      }
+    ]
+  },
+  {
+    "id": "singularity",
+    "name": "Singularity",
+    "level": "3",
+    "type": "biotic",
+    "attackType": [
+      "STR Save"
+    ],
+    "effect": [
+      "control"
+    ],
+    "damageType": [],
+    "castingTime": "Action",
+    "duration": "1 minute",
+    "concentration": true,
+    "distance": {
+      "range": "30m",
+      "aoeType": "sphere",
+      "aoeDistance": "4m"
+    },
+    "detonates": null,
+    "primes": "force",
+    "availableClasses": [
+      "adept"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Heavy Singularity",
+        "description": "Creatures have disadvantage when making the Strength saving throw or Strength (Athletics) check."
+      },
+      {
+        "name": "Damage",
+        "description": "Any creature within singularity's radius is primed (necrotic) and takes 1d8 necrotic damage at the end of each of your turns."
+      }
+    ]
+  },
+  {
+    "id": "slam",
+    "name": "Slam",
+    "level": "0",
+    "type": "biotic",
+    "attackType": [],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "bludgeoning"
+    ],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "30m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "adept",
+      "sentinel",
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Stun",
+        "description": "If the target is a creature, it must pass a Constitution saving throw or becomes stunned until the end of your next turn."
+      },
+      {
+        "name": "Reaction",
+        "description": "When a creature or object you can see becomes lifted, you may cast Slam on it as a reaction."
+      }
+    ]
+  },
+  {
+    "id": "slow_fall",
+    "name": "Slow Fall",
+    "level": "0",
+    "type": "biotic",
+    "attackType": [],
+    "effect": [
+      "movement"
+    ],
+    "damageType": [],
+    "castingTime": "Reaction, which you take when you or a creature within 10m of you falls",
+    "duration": "1 minute",
+    "concentration": true,
+    "distance": {
+      "range": "10m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "adept",
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Improved Duration",
+        "description": "Increase the duration to 5 minutes"
+      },
+      {
+        "name": "Navigate",
+        "description": "As you fall, you can direct your fall by 2m in any direction except up. You may do this once per round."
+      }
+    ]
+  },
+  {
+    "id": "snap_freeze",
+    "name": "Snap Freeze",
+    "level": "5",
+    "type": "tech",
+    "attackType": [
+      "STR Save"
+    ],
+    "effect": [
+      "control",
+      "damage"
+    ],
+    "damageType": [
+      "cold"
+    ],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": true,
+    "distance": {
+      "range": "20m",
+      "aoeType": "sphere",
+      "aoeDistance": "10m"
+    },
+    "detonates": null,
+    "primes": "cold",
+    "availableClasses": [
+      "engineer",
+      "infiltrator"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Lasting Freeze",
+        "description": "A creature frozen by Snap Freeze continues to take 1d6 cold damage at the start of its turn for 1 minute."
+      },
+      {
+        "name": "Brittle Freeze",
+        "description": "Successful attacks against a creature that is frozen by Snap Freeze deal an additional 1d4 cold damage."
+      }
+    ]
+  },
+  {
+    "id": "stasis",
+    "name": "Stasis",
+    "level": "2",
+    "type": "biotic",
+    "attackType": [
+      "STR Save"
+    ],
+    "effect": [
+      "control",
+      "debuff"
+    ],
+    "damageType": [],
+    "castingTime": "Action",
+    "duration": "1 minute",
+    "concentration": true,
+    "distance": {
+      "range": "30m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": "force",
+    "availableClasses": [
+      "adept",
+      "sentinel",
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Shatter",
+        "description": "When stasis ends via a successful saving throw or detonating attack, the target takes 2d8 force damage for each round of combat it was in stasis."
+      },
+      {
+        "name": "Deep Stasis",
+        "description": "The creature has disadvantage on its saving throws to escape Stasis."
+      }
+    ]
+  },
+  {
+    "id": "stimulant_pack",
+    "name": "Stimulant Pack",
+    "level": null,
+    "type": "combat",
+    "attackType": [],
+    "effect": [
+      "buff"
+    ],
+    "damageType": [],
+    "castingTime": "Bonus",
+    "duration": "10 minutes",
+    "concentration": false,
+    "distance": {
+      "range": "Self",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "infiltrator",
+      "soldier"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Friendly",
+        "description": "You can inject a creature within melee range with the stimulant pack"
+      },
+      {
+        "name": "Improved Attack",
+        "description": "You can choose to apply the advantage to your next damage roll"
+      }
+    ]
+  },
+  {
+    "id": "storm",
+    "name": "Storm",
+    "level": "4",
+    "type": "biotic",
+    "attackType": [
+      "STR Save"
+    ],
+    "effect": [
+      "damage",
+      "control"
+    ],
+    "damageType": [
+      "force",
+      "necrotic"
+    ],
+    "castingTime": "Action",
+    "duration": "1 minute",
+    "concentration": true,
+    "distance": {
+      "range": "20m",
+      "aoeType": "sphere",
+      "aoeDistance": "8m"
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "adept",
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Necrotic Bolts",
+        "description": "Until the spell ends, you can use a bonus action on each of your turns to cause a bolt of necrotic energy to leap from the center of the sphere toward one creature you choose within 20m of the center. Make a ranged spell attack. You have advantage on the attack roll if the target is in the sphere. On a hit, the target takes 4d10 necrotic damage. Necrotic bolts can detonate primed targets."
+      },
+      {
+        "name": "Growing Storm",
+        "description": "While the spell is maintained, the storm's radius grows by 2m at the start of your turn."
+      }
+    ]
+  },
+  {
+    "id": "submission_net",
+    "name": "Submission Net",
+    "level": "2",
+    "type": "tech",
+    "attackType": [
+      "STR Save",
+      " DEX Save"
+    ],
+    "effect": [
+      "control"
+    ],
+    "damageType": [
+      "lightning"
+    ],
+    "castingTime": "Action",
+    "duration": "1 minute",
+    "concentration": false,
+    "distance": {
+      "range": "20m",
+      "aoeType": "cylinder",
+      "aoeDistance": "4m"
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "engineer",
+      "infiltrator",
+      "sentinel"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Electrified Net",
+        "description": "If you have a submission net deployed, you can use your bonus action to spend XTP, sending electric currents through one net. Each creature within the net takes Xd6 lightning damage."
+      },
+      {
+        "name": "Anti-Tech",
+        "description": "If a creature you can see begins to cast a Tech spell, you can use your reaction to cast submission net."
+      }
+    ]
+  },
+  {
+    "id": "tactical_scan",
+    "name": "Tactical Scan",
+    "level": null,
+    "type": "combat",
+    "attackType": [],
+    "effect": [
+      "debuff"
+    ],
+    "damageType": [],
+    "castingTime": "Action",
+    "duration": "1 minute",
+    "concentration": false,
+    "distance": {
+      "range": "20m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "infiltrator",
+      "soldier"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Area Scan",
+        "description": "Scan a 6m cube. You gain the advantage and critical bonus on all creatures within the area."
+      },
+      {
+        "name": "Telegraphed Attacks",
+        "description": "You're HUD alerts you when the creature is about to attack. It has disadvantage on ranged and melee attacks and you have advantage on any saving throws caused by spells and abilities of the creature."
+      }
+    ]
+  },
+  {
+    "id": "target_painting",
+    "name": "Target Painting",
+    "level": "2",
+    "type": "tech",
+    "attackType": [
+      "DEX Save"
+    ],
+    "effect": [
+      "debuff"
+    ],
+    "damageType": [],
+    "castingTime": "Action",
+    "duration": "1 round",
+    "concentration": false,
+    "distance": {
+      "range": "30m",
+      "aoeType": "cube",
+      "aoeDistance": "8m"
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "engineer",
+      "infiltrator",
+      "sentinel"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Heavy Weapon Sync",
+        "description": "Information about the painted targets sync with heavy weapon systems. Any creature that would make a saving throw to avoid heavy weapon damage has disadvantage on the saving throw."
+      },
+      {
+        "name": "Lasting Scan",
+        "description": "You may cast Target Painting for 4 tech points, increase the duration of the effect to 2 rounds of combat."
+      }
+    ]
+  },
+  {
+    "id": "throw",
+    "name": "Throw",
+    "level": "0",
+    "type": "biotic",
+    "attackType": [
+      "Ranged Attack"
+    ],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "force"
+    ],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "40m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": "x",
+    "primes": null,
+    "availableClasses": [
+      "adept",
+      "sentinel",
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Radial Blast",
+        "description": "On a hit, the damage is dealt to each creature within a 2m radius of the target."
+      },
+      {
+        "name": "Improved Damage",
+        "description": "Increase the damage die type to d12"
+      }
+    ]
+  },
+  {
+    "id": "turbocharge",
+    "name": "Turbocharge",
+    "level": null,
+    "type": "combat",
+    "attackType": [],
+    "effect": [
+      "buff"
+    ],
+    "damageType": [],
+    "castingTime": "Bonus Action",
+    "duration": "1 Turn",
+    "concentration": false,
+    "distance": {
+      "range": "Self",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "soldier"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Improved Damage",
+        "description": "+2 damage with the turbocharged weapon"
+      },
+      {
+        "name": "Improved Accuracy",
+        "description": "The DC of the Dexterity saving throw is increased to 18"
+      }
+    ]
+  },
+  {
+    "id": "unity",
+    "name": "Unity",
+    "level": "x",
+    "type": "tech",
+    "attackType": [],
+    "effect": [
+      "heal"
+    ],
+    "damageType": [],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "Touch",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "engineer",
+      "sentinel"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Unrestricted",
+        "description": "There is no limit to the amount of TP you may spend on this ability."
+      },
+      {
+        "name": "Quick",
+        "description": "You can use Unity as a reaction to the creature falling unconscious or dying."
+      }
+    ]
+  },
+  {
+    "id": "vortex",
+    "name": "Vortex",
+    "level": "3",
+    "type": "biotic",
+    "attackType": [
+      "DEX Save"
+    ],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "force"
+    ],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "Self",
+      "aoeType": "cone",
+      "aoeDistance": "10m"
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "adept",
+      "sentinel",
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Radial",
+        "description": "You may cast the vortex in a 6m radius sphere centered on you instead."
+      },
+      {
+        "name": "Damage",
+        "description": "Increase the damage to d12"
+      }
+    ]
+  },
+  {
+    "id": "warp",
+    "name": "Warp",
+    "level": "2",
+    "type": "biotic",
+    "attackType": [
+      "Ranged Attack"
+    ],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "necrotic"
+    ],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "40m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": "necrotic",
+    "availableClasses": [
+      "adept",
+      "sentinel",
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Internal Bleeding",
+        "description": "The shifting causes internal bleeding. At the start of each of your turns, the target suffers 1d6 damage from blood loss, bypassing its shields. This effect ends if the creature uses medi-gel or if it or another creature passes a DC 10 Wisdom (Medicine) check to stabilize the bleeding."
+      },
+      {
+        "name": "Disorient",
+        "description": "A target hit by warp must pass a Constitution saving throw. On a failed save, the force of warp is so intense the target is stunned until the end of its next turn."
+      }
+    ]
+  }
+]

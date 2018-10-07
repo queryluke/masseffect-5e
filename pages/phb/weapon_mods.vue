@@ -24,6 +24,7 @@
   import WeaponModFilters from '~/components/weapon_mod/WeaponModFilters.vue'
   import WeaponModList from '~/components/weapon_mod/WeaponModList.vue'
   import MobileFilterContainer from '~/components/MobileFilterContainer.vue'
+  import items from '~/static/data/weapon_mods'
 
   // State
   import {createNamespacedHelpers} from 'vuex'
@@ -32,7 +33,7 @@
   export default {
     components: { WeaponModFilters, WeaponModList, MobileFilterContainer },
     computed: {
-      ...mapGetters(['getItems', 'order', 'sortBy', 'filters', 'searchString']),
+      ...mapGetters(['order', 'sortBy', 'filters', 'searchString']),
       search: {
         get () {
           return this.searchString
@@ -83,20 +84,16 @@
         return data
       }
     },
-    created () {
-      this.items = this.getItems(this.itemKey)
+    data () {
       const noteOptions = new Set()
-      for (const item of this.items) {
+      for (const item of items) {
         for (const note of item.notes.split(',').map(n => n.trim())) {
           noteOptions.add(note)
         }
       }
-      this.noteOptions = [...noteOptions].sort()
-    },
-    data () {
       return {
-        items: [],
-        noteOptions: [],
+        items,
+        noteOptions: [...noteOptions].sort(),
         itemKey: 'weaponMods'
       }
     },

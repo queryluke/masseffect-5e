@@ -26,6 +26,7 @@
   import BookmarkButton from '~/components/BookmarkButton.vue'
   import MobileFilterContainer from '~/components/list/MobileFilterContainer.vue'
   import {AverageFromDie} from '~/mixins/averageFromDie'
+  import items from '~/static/data/weapons'
 
   // State
   import {createNamespacedHelpers} from 'vuex'
@@ -39,7 +40,7 @@
       BookmarkButton
     },
     computed: {
-      ...mapGetters(['getItems', 'order', 'sortBy', 'filters', 'searchString']),
+      ...mapGetters(['order', 'sortBy', 'filters', 'searchString']),
       search: {
         get () {
           return this.searchString
@@ -53,7 +54,7 @@
         let sortBy = this.sortBy.key
         let order = this.order
         let self = this
-        data.sort(function (a, b) {
+        this.items.sort(function (a, b) {
           switch (sortBy) {
             case 'type':
             case 'name':
@@ -87,12 +88,9 @@
         return data
       }
     },
-    created () {
-      this.items = this.getItems(this.itemKey)
-    },
     data () {
       return {
-        items: [],
+        items,
         itemKey: 'weapons'
       }
     },

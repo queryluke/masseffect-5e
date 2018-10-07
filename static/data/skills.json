@@ -9,24 +9,6 @@
     "id": "acrobatics"
   },
   {
-    "name": "Animal Handling",
-    "new": null,
-    "removed": "x",
-    "micon": null,
-    "link": null,
-    "description": null,
-    "id": "animal_handling"
-  },
-  {
-    "name": "Arcana",
-    "new": null,
-    "removed": "x",
-    "micon": null,
-    "link": null,
-    "description": null,
-    "id": "arcana"
-  },
-  {
     "name": "Athletics",
     "new": null,
     "removed": null,
@@ -108,15 +90,6 @@
     "id": "medicine"
   },
   {
-    "name": "Nature",
-    "new": null,
-    "removed": "x",
-    "micon": null,
-    "link": null,
-    "description": null,
-    "id": "nature"
-  },
-  {
     "name": "Perception",
     "new": null,
     "removed": null,
@@ -142,15 +115,6 @@
     "link": "Charisma",
     "description": "When you attempt to influence someone or a group of people with tact, social graces, or good nature, the GM might ask you to make a Charisma (Persuasion) check. Typically, you use persuasion when acting in good faith, to foster friendships, make cordial requests, or exhibit proper etiquette. Examples of persuading others include convincing a chamberlain to let your party see the king, negotiating peace between warring tribes, or inspiring a crowd of townsfolk.",
     "id": "persuasion"
-  },
-  {
-    "name": "Religion",
-    "new": null,
-    "removed": "x",
-    "micon": null,
-    "link": null,
-    "description": null,
-    "id": "religion"
   },
   {
     "name": "Science",

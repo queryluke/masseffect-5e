@@ -23,6 +23,7 @@
   import SpellList from '~/components/spell/SpellList.vue'
   import SpellFilters from '~/components/spell/SpellFilters.vue'
   import MobileFilterContainer from '~/components/MobileFilterContainer.vue'
+  import items from '~/static/data/spells'
 
   // State
   import {createNamespacedHelpers} from 'vuex'
@@ -35,7 +36,7 @@
       SpellFilters
     },
     computed: {
-      ...mapGetters(['getItems', 'order', 'sortBy', 'filters', 'searchString']),
+      ...mapGetters(['order', 'sortBy', 'filters', 'searchString']),
       search: {
         get () {
           return this.searchString
@@ -85,12 +86,9 @@
         return data
       }
     },
-    created () {
-      this.items = this.getItems(this.itemKey)
-    },
     data () {
       return {
-        items: [],
+        items,
         itemKey: 'spells'
       }
     },
