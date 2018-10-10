@@ -11,19 +11,19 @@
   "actions": [
     {
       "type": "melee",
-      "name": "Bash",
+      "name": "Claw",
       "range": 2,
       "target": "one target",
-      "hit": "[dmg: 1d8 + str] bludgeoning damage.",
+      "hit": "7 (1d8 + 3) slashing damage.",
       "miss": null,
-      "attackMod": 1
+      "attackMod": 3
     },
     {
       "type": "ranged",
       "name": "Eye Cannon",
       "range": 60,
       "target": "one target",
-      "hit": "[dmg: 3d6 + dex] radiant damage.",
+      "hit": "13 (3d6 + 3) radiant damage.",
       "miss": null,
       "attackMod": 5
     }
@@ -31,7 +31,6 @@
   "alignment": "Lawful Neutral",
   "barrier": null,
   "conditionImmunities": [
-    "petrified",
     "poisoned"
   ],
   "cr": "3",
@@ -105,12 +104,16 @@
   ],
   "spellcasting": {
     "level": "innate",
-    "perDay": null,
-    "tpSpent": "1",
-    "dc": 11,
-    "hit": 3,
-    "spells": [
-      "sabotage"
+    "mod": "int",
+    "spellList": [
+      {
+        "perDay": "At will",
+        "spells": [
+          {
+            "id": "sabotage"
+          }
+        ]
+      }
     ]
   },
   "type": "Synthetic",

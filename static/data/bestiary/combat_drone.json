@@ -14,7 +14,7 @@
       "name": "Shock Attack",
       "range": 10,
       "target": "one target",
-      "hit": "[dmg: 1d6 + dex] lightning damage.",
+      "hit": "5 (1d6 + 2) lightning damage.",
       "miss": null,
       "attackMod": 4
     }
@@ -62,12 +62,16 @@
   ],
   "spellcasting": {
     "level": "innate",
-    "perDay": "3",
-    "tpSpent": "1",
-    "dc": 10,
-    "hit": 2,
-    "spells": [
-      "sabotage"
+    "mod": "int",
+    "spellList": [
+      {
+        "perDay": "3/day",
+        "spells": [
+          {
+            "id": "sabotage"
+          }
+        ]
+      }
     ]
   },
   "type": "Synthetic",

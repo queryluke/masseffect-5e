@@ -574,7 +574,7 @@
   {
     "id": "cryo_beam",
     "name": "Cryo Beam",
-    "level": "x",
+    "level": 1,
     "type": "tech",
     "attackType": [
       "DEX save",
@@ -615,7 +615,7 @@
   {
     "id": "cryo_blast",
     "name": "Cryo Blast",
-    "level": "x",
+    "level": 1,
     "type": "tech",
     "attackType": [
       "Ranged Attack",
@@ -734,7 +734,7 @@
   {
     "id": "decoy",
     "name": "Decoy",
-    "level": "x",
+    "level": 1,
     "type": "tech",
     "attackType": [],
     "effect": [
@@ -769,7 +769,7 @@
   {
     "id": "defense_matrix",
     "name": "Defense Matrix",
-    "level": "x",
+    "level": 1,
     "type": "tech",
     "attackType": [],
     "effect": [
@@ -877,7 +877,7 @@
   {
     "id": "electric_slash",
     "name": "Electric Slash",
-    "level": "x",
+    "level": 1,
     "type": "tech",
     "attackType": [
       "CON Save"
@@ -916,7 +916,7 @@
   {
     "id": "energy_drain",
     "name": "Energy Drain",
-    "level": "x",
+    "level": 1,
     "type": "tech",
     "attackType": [
       "Ranged Attack"
@@ -955,7 +955,7 @@
   {
     "id": "first_aid",
     "name": "First Aid",
-    "level": "x",
+    "level": 1,
     "type": "tech",
     "attackType": [],
     "effect": [
@@ -991,7 +991,7 @@
   {
     "id": "flamethrower",
     "name": "Flamethrower",
-    "level": "x",
+    "level": 1,
     "type": "tech",
     "attackType": [
       "DEX Save"
@@ -1285,7 +1285,7 @@
   {
     "id": "incinerate",
     "name": "Incinerate",
-    "level": "x",
+    "level": 1,
     "type": "tech",
     "attackType": [
       "Ranged Attack"
@@ -1442,7 +1442,7 @@
   {
     "id": "neural_shock",
     "name": "Neural Shock",
-    "level": "x",
+    "level": 1,
     "type": "tech",
     "attackType": [
       "CON Save"
@@ -1557,7 +1557,7 @@
   {
     "id": "overload",
     "name": "Overload",
-    "level": "x",
+    "level": 1,
     "type": "tech",
     "attackType": [
       "DEX Save"
@@ -1789,7 +1789,7 @@
   {
     "id": "salvo",
     "name": "Salvo",
-    "level": "x",
+    "level": 1,
     "type": "tech",
     "attackType": [],
     "effect": [
@@ -1861,7 +1861,7 @@
   {
     "id": "shocking_grasp",
     "name": "Shocking Grasp",
-    "level": "x",
+    "level": 1,
     "type": "tech",
     "attackType": [],
     "effect": [
@@ -2427,7 +2427,7 @@
   {
     "id": "unity",
     "name": "Unity",
-    "level": "x",
+    "level": 1,
     "type": "tech",
     "attackType": [],
     "effect": [

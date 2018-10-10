@@ -10,7 +10,7 @@
   "ac": "16",
   "actions": [
     {
-      "type": "common",
+      "type": "standard",
       "name": "Multiattack",
       "description": "The collector captain makes two Collector Assault Rifle attacks."
     },

@@ -14,7 +14,7 @@
       "name": "Pulse Cannon",
       "range": 20,
       "target": "one target",
-      "hit": "[dmg: 1d10 + dex] radiant damage.",
+      "hit": "5 (1d10) radiant damage.",
       "miss": null,
       "attackMod": 2
     },
@@ -28,7 +28,6 @@
   "alignment": "Lawful Neutral",
   "barrier": null,
   "conditionImmunities": [
-    "petrified",
     "poisoned"
   ],
   "cr": "1/4",

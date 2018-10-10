@@ -14,7 +14,7 @@
       "name": "Claw",
       "range": 2,
       "target": "one target",
-      "hit": "[dmg: 6d10 + str] piercing damage.",
+      "hit": "38 (6d10 + 5) piercing damage.",
       "miss": null,
       "attackMod": 9
     },

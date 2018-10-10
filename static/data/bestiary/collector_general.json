@@ -14,7 +14,7 @@
       "name": "Bash",
       "range": 2,
       "target": "one target",
-      "hit": "[dmg: 1d8 + str] bludgeoning damage.",
+      "hit": "13 (3d8) bludgeoning damage and the target must succeed on a DC 13 Constitution saving throw or become stunned until the end of its next turn.",
       "miss": null,
       "attackMod": 4
     }
@@ -79,41 +79,13 @@
   ],
   "spellcasting": {
     "level": "12",
-    "dc": 16,
-    "hit": 8,
-    "mod": "Charisma",
+    "mod": "cha",
     "spellList": [
       "dark_channel",
       "pull",
       "reave",
       "shockwave",
       "singularity"
-    ],
-    "spells": [
-      {
-        "level": "cantrip",
-        "spells": []
-      },
-      {
-        "level": "1",
-        "slots": "5",
-        "spells": []
-      },
-      {
-        "level": "2",
-        "slots": "4",
-        "spells": []
-      },
-      {
-        "level": "3",
-        "slots": "3",
-        "spells": []
-      },
-      {
-        "level": "4",
-        "slots": "2",
-        "spells": []
-      }
     ]
   },
   "type": "Organic",

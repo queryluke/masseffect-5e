@@ -14,7 +14,7 @@
       "name": "Mass Accelerator Cannon",
       "range": 120,
       "target": "one target",
-      "hit": "[dmg: 5d8] radiant damage.",
+      "hit": "22 (5d8) radiant damage.",
       "miss": null,
       "attackMod": 6
     }

@@ -11,7 +11,7 @@
   "actions": [
     {
       "type": "ranged",
-      "name": "Acid Spit---rachni_soldier",
+      "name": "Acid Spit",
       "range": 20,
       "target": "one target",
       "hit": "7 (2d6) acid damage and 7 (2d6) necrotic damage. This damage bypasses shields.",
@@ -20,10 +20,10 @@
     },
     {
       "type": "melee",
-      "name": "Impale---rachni_soldier",
+      "name": "Impale",
       "range": 4,
       "target": "one target",
-      "hit": "[dmg: 1d10 + dex] and 2 (1d4) acid damage.",
+      "hit": "8 (1d10 + 3) and 2 (1d4) acid damage.",
       "miss": null,
       "attackMod": 5
     }

@@ -10,7 +10,7 @@
   "ac": "18",
   "actions": [
     {
-      "type": "common",
+      "type": "standard",
       "name": "Multiattack",
       "description": "The adjutant makes two Arm Cannon attacks."
     },
@@ -86,17 +86,14 @@
   ],
   "spellcasting": {
     "level": "innate",
-    "dc": 12,
-    "hit": 4,
-    "mod": "Charisma",
+    "mod": "cha",
     "spellList": [
-      "3-singularity"
-    ],
-    "spells": [
       {
-        "level": "3",
+        "perDay": "3/day",
         "spells": [
-          "singularity"
+          {
+            "id": "singularity"
+          }
         ]
       }
     ]

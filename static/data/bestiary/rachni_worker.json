@@ -11,16 +11,16 @@
   "actions": [
     {
       "type": "standard",
-      "name": "Acid Splash---rachni_worker",
+      "name": "Acid Splash",
       "recharge": "Recharge 4-6",
-      "description": "The rachni worker spits acit at one target within 10m or two targets within 10m if both targets are within 2m of each other. A target must succeed on a Dexterity saving throw or take 3 (1d6) acid damage."
+      "description": "The rachni worker spits acid at one target within 10m or two targets within 10m if both targets are within 2m of each other. A target must succeed on a Dexterity saving throw or take 3 (1d6) acid damage."
     },
     {
       "type": "melee",
-      "name": "Bite---rachni_worker",
+      "name": "Bite",
       "range": 2,
       "target": "one target",
-      "hit": "[dmg: 1d6 + dex] piercing damage.",
+      "hit": "3 (1d6) piercing damage.",
       "miss": null,
       "attackMod": 2
     }

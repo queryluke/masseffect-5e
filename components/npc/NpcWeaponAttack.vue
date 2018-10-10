@@ -50,7 +50,8 @@
       },
       damageText () {
         const npcHit = this.weapon.npcHit ? ` and ${this.weapon.npcHit}` : ''
-        return `${this.damage} (${this.weapon.damage} + ${this.attackMod}) ${this.weapon.dmgType} damage${npcHit}`
+        const attackModText = this.attackMod > 0 ? ` + ${this.attackMod}` : ''
+        return `${this.damage} (${this.weapon.damage}${attackModText}) ${this.weapon.dmgType} damage${npcHit}`
       }
     },
     data () {

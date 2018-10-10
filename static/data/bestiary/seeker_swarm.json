@@ -14,7 +14,7 @@
       "name": "Sting",
       "range": 2,
       "target": "one target",
-      "hit": "[dmg: 1d4 + dex] poison damage and the target must succeed on a DC 13 Constitution saving throw or has disadvantage on its next attack roll.",
+      "hit": "2 (1d4) poison damage and the target must succeed on a DC 13 Constitution saving throw or has disadvantage on its next attack roll.",
       "miss": null,
       "attackMod": 2
     }

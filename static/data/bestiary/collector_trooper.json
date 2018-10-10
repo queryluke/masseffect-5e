@@ -10,8 +10,13 @@
   "ac": "15",
   "actions": [
     {
-      "type": "grenade",
-      "id": "frag_grenade"
+      "type": "melee",
+      "name": "Claw",
+      "range": 2,
+      "target": "one target",
+      "hit": "9 (2d6 + 2) slashing damage.",
+      "miss": null,
+      "attackMod": 3
     },
     {
       "type": "weapon",
@@ -27,13 +32,8 @@
       "attackMod": 4
     },
     {
-      "type": "melee",
-      "name": "Weapon Strike",
-      "range": 2,
-      "target": "one target",
-      "hit": "[dmg: 1d6 + str] bludgeoning damage.",
-      "miss": null,
-      "attackMod": 3
+      "type": "grenade",
+      "id": "frag_grenade"
     }
   ],
   "alignment": "Lawful evil",

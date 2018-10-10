@@ -11,7 +11,7 @@
   "actions": [
     {
       "type": "ranged",
-      "name": "Mass Accelerator Machinegun---geth_colossus",
+      "name": "Mass Accelerator Machinegun",
       "range": 120,
       "target": "one target",
       "hit": "19 (3d12) piercing damage and 19 (3d12) radiant damage. The geth colossus can make a burst fire attack instead.",

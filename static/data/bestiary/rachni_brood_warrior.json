@@ -10,13 +10,13 @@
   "ac": "15",
   "actions": [
     {
-      "type": "common",
+      "type": "standard",
       "name": "Multiattack",
       "description": "The brood warrior makes two Impale attacks or attempts to grapple a creature and makes an Impale attack."
     },
     {
       "type": "ranged",
-      "name": "Acid Spit---rachni_brood_warrior",
+      "name": "Acid Spit",
       "range": 20,
       "target": "one target",
       "hit": "7 (2d6) acid damage and 7 (2d6) necrotic damage. This damage bypasses shields.",
@@ -25,10 +25,10 @@
     },
     {
       "type": "melee",
-      "name": "Impale---rachni_brood_warroir",
+      "name": "Impale",
       "range": 4,
       "target": "one target",
-      "hit": "[dmg: 2d10 + str] and 5 (1d10) acid damage.",
+      "hit": "15 (2d10 + 4) and 5 (1d10) acid damage.",
       "miss": null,
       "attackMod": 6
     }
@@ -85,24 +85,22 @@
   ],
   "spellcasting": {
     "level": "innate",
-    "dc": 12,
-    "hit": 4,
-    "mod": "Wisdom",
+    "mod": "wis",
     "spellList": [
-      "5-warp",
-      "3-stasis"
-    ],
-    "spells": [
       {
-        "level": "5",
+        "perDay": "3/day",
         "spells": [
-          "warp"
+          {
+            "id": "stasis"
+          }
         ]
       },
       {
-        "level": " 3",
+        "perDay": "5/day",
         "spells": [
-          "stasis"
+          {
+            "id": "warp"
+          }
         ]
       }
     ]

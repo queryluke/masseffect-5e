@@ -10,7 +10,7 @@
   "ac": "14",
   "actions": [
     {
-      "type": "common",
+      "type": "standard",
       "name": "Multiattack",
       "description": "The centurion makes two M-96 Mattock attacks or two Stun Baton attacks."
     },

@@ -11,10 +11,10 @@
   "actions": [
     {
       "type": "melee",
-      "name": "Bite---varren",
+      "name": "Bite",
       "range": 2,
       "target": "one target",
-      "hit": "[dmg: 2d4 + dex] piercing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked {prone}.",
+      "hit": "6 (2d4 + 2) piercing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked {prone}.",
       "miss": null,
       "attackMod": 4
     }

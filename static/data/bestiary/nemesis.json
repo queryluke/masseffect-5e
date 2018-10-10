@@ -12,15 +12,6 @@
     {
       "type": "weapon",
       "id": "m-98_widow"
-    },
-    {
-      "type": "melee",
-      "name": "Weapon Strike",
-      "range": 2,
-      "target": "one target",
-      "hit": "[dmg: 1d6 + str] bludgeoning damage.",
-      "miss": null,
-      "attackMod": 2
     }
   ],
   "alignment": "Neutral Evil",

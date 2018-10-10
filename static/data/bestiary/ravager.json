@@ -10,7 +10,7 @@
   "ac": "12",
   "actions": [
     {
-      "type": "common",
+      "type": "standard",
       "name": "Multiattack",
       "description": "The ravager makes two twin artillery cannon attacks."
     },
@@ -25,7 +25,7 @@
       "name": "Twin Artillery Cannons",
       "range": 60,
       "target": "one target",
-      "hit": "[dmg: 3d10 + dex] piercing damage and 10 (3d6) acid damage.",
+      "hit": "18 (3d10 + 2) piercing damage and 10 (3d6) acid damage.",
       "miss": null,
       "attackMod": 5
     }

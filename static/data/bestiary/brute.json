@@ -10,7 +10,7 @@
   "ac": "18",
   "actions": [
     {
-      "type": "common",
+      "type": "standard",
       "name": "Multiattack",
       "description": "The brute makes two Smash attacks or two Clobber attacks."
     },
@@ -19,7 +19,7 @@
       "name": "Clobber",
       "range": 2,
       "target": "one prone creature",
-      "hit": "[dmg: 5d12 + str] bludgeoning damage.",
+      "hit": "37 (5d12 + 5) bludgeoning damage.",
       "miss": null,
       "attackMod": 9
     },
@@ -28,7 +28,7 @@
       "name": "Smash",
       "range": 2,
       "target": "one target",
-      "hit": "[dmg: 3d8 + str] bludgeoning damage.",
+      "hit": "17 (3d8 + 5) bludgeoning damage.",
       "miss": null,
       "attackMod": 9
     }

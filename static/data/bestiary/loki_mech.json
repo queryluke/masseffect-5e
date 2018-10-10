@@ -45,7 +45,7 @@
       "description": "The LOKI mech is incapable of complex combat tactics. It never seeks cover and cannot take the Hide, Dodge, Help, or Disengage actions."
     },
     {
-      "name": "Post-mortem Explosion---loki_mech",
+      "name": "Post-mortem Explosion",
       "recharge": null,
       "description": "When the LOKI mech is reduced to 0 hit points, it self-destructs. Each creature within a 2m radius sphere must succeed on a DC 10 Dexterity saving throw or take 5 (2d4) thunder damage."
     }
@@ -80,12 +80,16 @@
   ],
   "spellcasting": {
     "level": "innate",
-    "perDay": "5",
-    "tpSpent": "1",
-    "dc": 9,
-    "hit": 1,
-    "spells": [
-      "shocking_grasp"
+    "mod": "int",
+    "spellList": [
+      {
+        "perDay": "5/day",
+        "spells": [
+          {
+            "id": "shocking grasp"
+          }
+        ]
+      }
     ]
   },
   "type": "Synthetic",

@@ -14,7 +14,7 @@
       "name": "Suicide Attack",
       "range": 2,
       "target": "one target",
-      "hit": "[dmg: 1d6] acid damage and the swarmer explodes (its hit points immediately fall to 0).",
+      "hit": "3 (1d6) acid damage and the swarmer explodes (its hit points immediately fall to 0).",
       "miss": null,
       "attackMod": 3
     }

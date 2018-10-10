@@ -20,7 +20,7 @@
       "name": "Pincer",
       "range": 2,
       "target": "one target",
-      "hit": "[dmg: 1d4 + dex] piercing damage plus 2 (1d4) fire damage.",
+      "hit": "4 (1d4 + 2) piercing damage plus 2 (1d4) fire damage.",
       "miss": null,
       "attackMod": 4
     }

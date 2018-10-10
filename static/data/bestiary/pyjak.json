@@ -11,10 +11,10 @@
   "actions": [
     {
       "type": "melee",
-      "name": "Bite---pyjak",
+      "name": "Bite",
       "range": 2,
       "target": "one target",
-      "hit": "[dmg: 1d4 + str] piercing damage.",
+      "hit": "1 (1d4 - 1) piercing damage.",
       "miss": null,
       "attackMod": 1
     }

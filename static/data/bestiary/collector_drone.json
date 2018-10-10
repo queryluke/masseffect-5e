@@ -10,17 +10,17 @@
   "ac": "13",
   "actions": [
     {
-      "type": "weapon",
-      "id": "collector_assault_rifle"
-    },
-    {
       "type": "melee",
-      "name": "Weapon Strike",
+      "name": "Weapon Bash",
       "range": 2,
       "target": "one target",
-      "hit": "[dmg: 1d6 + str] bludgeoning damage.",
+      "hit": "3 (1d6) bludgeoning damage.",
       "miss": null,
       "attackMod": 2
+    },
+    {
+      "type": "weapon",
+      "id": "collector_assault_rifle"
     }
   ],
   "alignment": "Lawful evil",

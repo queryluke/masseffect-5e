@@ -10,7 +10,7 @@
   "ac": "14",
   "actions": [
     {
-      "type": "common",
+      "type": "standard",
       "name": "Multiattack",
       "description": "The geth hunter makes two Geth Plasma Shotgun attacks."
     },
@@ -23,21 +23,11 @@
       "name": "Tactical Cloak",
       "recharge": "3/Day",
       "description": "As a bonus action, the geth hunter activates its tactical cloak, becoming {invisible}. When the geth hunter makes a melee, ranged, or uses a tech or combat power, tactical cloak ends."
-    },
-    {
-      "type": "melee",
-      "name": "Weapon Strike",
-      "range": 2,
-      "target": "one target",
-      "hit": "[dmg: 1d6 + str] bludgeoning damage.",
-      "miss": null,
-      "attackMod": 4
     }
   ],
   "alignment": "Lawful Neutral",
   "barrier": null,
   "conditionImmunities": [
-    "petrified",
     "poisoned"
   ],
   "cr": "4",
@@ -46,9 +36,7 @@
     "psychic"
   ],
   "damageResistances": [],
-  "damageVulnerabilities": [
-    "lightning"
-  ],
+  "damageVulnerabilities": [],
   "features": [
     {
       "name": "Assassination",

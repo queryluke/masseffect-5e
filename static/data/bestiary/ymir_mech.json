@@ -11,7 +11,7 @@
   "actions": [
     {
       "type": "ranged",
-      "name": "Mass Accelerator Machinegun---ymir_mech",
+      "name": "Mass Accelerator Machinegun",
       "range": 60,
       "target": "one target",
       "hit": "16 (3d10) piercing damage and 16 (3d10) radiant damage. The ymir mech can make a burst fire attack instead.",
@@ -47,7 +47,7 @@
   ],
   "features": [
     {
-      "name": "Post-mortem Explosion---ymir_mech",
+      "name": "Post-mortem Explosion",
       "recharge": null,
       "description": "When the YMIR mech is reduced to 0 hit points, it self-destructs. Each creature within a 6m radius sphere must make a DC 15 Dexterity saving throw. On a failed save, a creature takes 22 (4d10) thunder damage or half as much on a successful one."
     }

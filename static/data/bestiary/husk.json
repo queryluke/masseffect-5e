@@ -14,7 +14,7 @@
       "name": "Swipe",
       "range": 2,
       "target": "one target",
-      "hit": "[dmg: 1d6 + str] slashing damage, and the creature is grappled (escape DC 13). A creature that is grappled by the husk takes 11 (3d6) necrotic damage at the start of each of the husk's turns. The husk can't make swipe attacks on any other target while grappling a creature in this way.",
+      "hit": "4 (1d6 + 1) slashing damage, and the creature is grappled (escape DC 13). A creature that is grappled by the husk takes 11 (3d6) necrotic damage at the start of each of the husk's turns. The husk can't make swipe attacks on any other target while grappling a creature in this way.",
       "miss": null,
       "attackMod": 3
     }

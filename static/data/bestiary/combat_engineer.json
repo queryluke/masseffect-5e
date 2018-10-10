@@ -10,7 +10,7 @@
   "ac": "14",
   "actions": [
     {
-      "type": "common",
+      "type": "standard",
       "name": "Multiattack",
       "description": "The combat engineer makes two M-5 Phalanx attacks."
     },

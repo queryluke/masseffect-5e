@@ -10,7 +10,7 @@
   "ac": "22",
   "actions": [
     {
-      "type": "common",
+      "type": "standard",
       "name": "Multiattack",
       "description": "The thresher maw can use its Frightful Presence. It then makes four attacks: one with its grasp, two with its tail, one with its acid spit. It can use its Swallow instead of its grasp."
     },
@@ -21,16 +21,16 @@
       "target": "one target",
       "hit": "The thresher maw targets a 6m radius within 60m and launches a glob of acid that coats the area. Each creature within the area must succeed on a DC 22 Dexterity saving throw, taking 44 (8d10) acid damage on a failed save, or half as much on a successful one. Until the end of the thresher maw's next turn, each creature that enters the area or ends its turn there must also make the saving throw.",
       "miss": null,
-      "attackMod": 8
+      "attackMod": 7
     },
     {
       "type": "melee",
       "name": "Grasp",
       "range": 4,
       "target": "one target",
-      "hit": "[dmg: 2d12 + str] bludgeoning damage and 13 (2d12) acid damage. If the target is a creature, it is grappled (escape DC 22). Until this grapple ends, the target is restrained, and the thresher maw can't grasp another target.",
+      "hit": "29 (3d12 + 10) bludgeoning damage and 13 (2d12) acid damage. If the target is a creature, it is grappled (escape DC 22). Until this grapple ends, the target is restrained, and the thresher maw can't grasp another target.",
       "miss": null,
-      "attackMod": 18
+      "attackMod": 17
     },
     {
       "type": "standard",
@@ -43,9 +43,9 @@
       "name": "Tail",
       "range": 8,
       "target": "one target",
-      "hit": "[dmg: 4d6 + str] bludgeoning damage. If the target is a creature, it must succeed on a DC 22 Strength saving throw or be knocked prone.",
+      "hit": "24 (4d6 + 10) bludgeoning damage. If the target is a creature, it must succeed on a DC 22 Strength saving throw or be knocked prone.",
       "miss": null,
-      "attackMod": 18
+      "attackMod": 17
     }
   ],
   "alignment": "Unaligned",
@@ -94,7 +94,7 @@
     }
   ],
   "hp": {
-    "numDice": 30,
+    "numDice": 27,
     "die": 20
   },
   "id": "thresher_maw",
@@ -107,7 +107,7 @@
       "description": "The thresher maw makes an acid spit attack."
     },
     {
-      "name": "Move---thresher_maw",
+      "name": "Move",
       "cost": 1,
       "description": "The thresher maw moves up to half its speed."
     },

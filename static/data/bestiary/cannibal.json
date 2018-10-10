@@ -10,20 +10,16 @@
   "ac": "13",
   "actions": [
     {
-      "type": "common",
+      "type": "standard",
       "name": "Multiattack",
       "description": "The cannibal makes 2 Arm Cannon attacks."
-    },
-    {
-      "type": "grenade",
-      "id": "frag_grenade"
     },
     {
       "type": "ranged",
       "name": "Arm Cannon",
       "range": 20,
       "target": "one target",
-      "hit": "[dmg: 1d10 + dex] piercing damage.",
+      "hit": "5 (1d10) piercing damage.",
       "miss": null,
       "attackMod": 2
     },
@@ -32,9 +28,13 @@
       "name": "Bash",
       "range": 2,
       "target": "one target",
-      "hit": "[dmg: 1d8 + str] bludgeoning damage.",
+      "hit": "5 (1d8 + 1) bludgeoning damage.",
       "miss": null,
       "attackMod": 3
+    },
+    {
+      "type": "grenade",
+      "id": "frag_grenade"
     },
     {
       "type": "standard",

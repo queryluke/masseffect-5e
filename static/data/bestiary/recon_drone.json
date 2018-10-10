@@ -14,7 +14,7 @@
       "name": "Pulse Rifle",
       "range": 60,
       "target": "one target",
-      "hit": "[dmg: 1d4 + dex] radiant damage.",
+      "hit": "5 (1d4 + 3) radiant damage.",
       "miss": null,
       "attackMod": 5
     },
@@ -22,13 +22,12 @@
       "type": "standard",
       "name": "Tactical Cloak",
       "recharge": "3/Day",
-      "description": "As a bonus action, the recon drone activates its tactical cloak, becoming {invisible}. When the recon drone makes a melee, ranged, or uses a tech or combat power, tactical cloak ends."
+      "description": "As a bonus action, the recon drone activates its tactical cloak, becoming invisible. When the recon drone makes a melee, ranged, or uses a tech or combat power, tactical cloak ends."
     }
   ],
   "alignment": "Neutral",
   "barrier": null,
   "conditionImmunities": [
-    "petrified",
     "poisoned"
   ],
   "cr": "1/8",
@@ -55,8 +54,8 @@
   "savingThrows": [],
   "senses": [
     {
-      "sense": "infared",
-      "range": null
+      "sense": "infrared vision",
+      "range": 20
     }
   ],
   "size": "Small",

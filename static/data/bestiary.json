@@ -83,7 +83,7 @@
     "ac": "18",
     "actions": [
       {
-        "type": "common",
+        "type": "standard",
         "name": "Multiattack",
         "description": "The adjutant makes two Arm Cannon attacks."
       },
@@ -159,17 +159,14 @@
     ],
     "spellcasting": {
       "level": "innate",
-      "dc": 12,
-      "hit": 4,
-      "mod": "Charisma",
+      "mod": "cha",
       "spellList": [
-        "3-singularity"
-      ],
-      "spells": [
         {
-          "level": "3",
+          "perDay": "3/day",
           "spells": [
-            "singularity"
+            {
+              "id": "singularity"
+            }
           ]
         }
       ]
@@ -435,7 +432,7 @@
         "name": "Impale",
         "range": 2,
         "target": "one target",
-        "hit": "[dmg: 3d8 + str] piercing damage.",
+        "hit": "13 (3d8) piercing damage.",
         "miss": null,
         "attackMod": 5
       },
@@ -443,7 +440,7 @@
         "type": "standard",
         "name": "Wail",
         "recharge": "Recharge 5-6",
-        "description": "The banshee lets out a wail. Each creature within 60m that can hear the wail must make DC 17 Wisdom saving throw. On a failed save a creature is {frightened} for 1 minute."
+        "description": "The banshee lets out a wail. Each creature within 60m that can hear the wail must make DC 17 Wisdom saving throw. On a failed save a creature is frightened for 1 minute."
       }
     ],
     "alignment": "Lawful evil",
@@ -457,7 +454,7 @@
       {
         "name": "Barrier",
         "recharge": "3/Day",
-        "description": "As an action or bonus action, the banshee gains [bt]."
+        "description": "As an action or bonus action, the banshee gains 20 barrier ticks."
       }
     ],
     "hp": {
@@ -512,44 +509,28 @@
       }
     ],
     "spellcasting": {
-      "level": "15",
-      "dc": 18,
-      "hit": 10,
-      "mod": "Charisma",
+      "level": "innate",
+      "mod": "cha",
       "spellList": [
-        "charge",
-        "nova",
-        "warp"
-      ],
-      "spells": [
         {
-          "level": "cantrip",
-          "spells": []
+          "perDay": "At will",
+          "spells": [
+            {
+              "id": "charge"
+            },
+            {
+              "id": "nova"
+            }
+          ]
         },
         {
-          "level": "1",
-          "slots": "5",
-          "spells": []
-        },
-        {
-          "level": "2",
-          "slots": "5",
-          "spells": []
-        },
-        {
-          "level": "3",
-          "slots": "4",
-          "spells": []
-        },
-        {
-          "level": "4",
-          "slots": "4",
-          "spells": []
-        },
-        {
-          "level": "5",
-          "slots": "2",
-          "spells": []
+          "perDay": "6/day",
+          "spells": [
+            {
+              "id": "warp",
+              "higherLevel": 4
+            }
+          ]
         }
       ]
     },
@@ -568,7 +549,7 @@
     "ac": "18",
     "actions": [
       {
-        "type": "common",
+        "type": "standard",
         "name": "Multiattack",
         "description": "The brute makes two Smash attacks or two Clobber attacks."
       },
@@ -577,7 +558,7 @@
         "name": "Clobber",
         "range": 2,
         "target": "one prone creature",
-        "hit": "[dmg: 5d12 + str] bludgeoning damage.",
+        "hit": "37 (5d12 + 5) bludgeoning damage.",
         "miss": null,
         "attackMod": 9
       },
@@ -586,7 +567,7 @@
         "name": "Smash",
         "range": 2,
         "target": "one target",
-        "hit": "[dmg: 3d8 + str] bludgeoning damage.",
+        "hit": "17 (3d8 + 5) bludgeoning damage.",
         "miss": null,
         "attackMod": 9
       }
@@ -661,20 +642,16 @@
     "ac": "13",
     "actions": [
       {
-        "type": "common",
+        "type": "standard",
         "name": "Multiattack",
         "description": "The cannibal makes 2 Arm Cannon attacks."
-      },
-      {
-        "type": "grenade",
-        "id": "frag_grenade"
       },
       {
         "type": "ranged",
         "name": "Arm Cannon",
         "range": 20,
         "target": "one target",
-        "hit": "[dmg: 1d10 + dex] piercing damage.",
+        "hit": "5 (1d10) piercing damage.",
         "miss": null,
         "attackMod": 2
       },
@@ -683,9 +660,13 @@
         "name": "Bash",
         "range": 2,
         "target": "one target",
-        "hit": "[dmg: 1d8 + str] bludgeoning damage.",
+        "hit": "5 (1d8 + 1) bludgeoning damage.",
         "miss": null,
         "attackMod": 3
+      },
+      {
+        "type": "grenade",
+        "id": "frag_grenade"
       },
       {
         "type": "standard",
@@ -750,7 +731,7 @@
     "ac": "14",
     "actions": [
       {
-        "type": "common",
+        "type": "standard",
         "name": "Multiattack",
         "description": "The centurion makes two M-96 Mattock attacks or two Stun Baton attacks."
       },
@@ -835,22 +816,22 @@
     "ac": "14",
     "actions": [
       {
-        "type": "common",
+        "type": "standard",
         "name": "Multiattack",
-        "description": "The collector assassin makes two Particle Rifle attacks."
+        "description": "The collector assassin makes two Particle Rifle."
+      },
+      {
+        "type": "melee",
+        "name": "Claw",
+        "range": 2,
+        "target": "one target",
+        "hit": "11 (2d6 + 4) slashing damage.",
+        "miss": null,
+        "attackMod": 2
       },
       {
         "type": "weapon",
         "id": "particle_rifle"
-      },
-      {
-        "type": "melee",
-        "name": "Weapon Strike",
-        "range": 2,
-        "target": "one target",
-        "hit": "[dmg: 1d6 + str] bludgeoning damage.",
-        "miss": null,
-        "attackMod": 2
       }
     ],
     "alignment": "Lawful evil",
@@ -917,7 +898,7 @@
     "ac": "16",
     "actions": [
       {
-        "type": "common",
+        "type": "standard",
         "name": "Multiattack",
         "description": "The collector captain makes two Collector Assault Rifle attacks."
       },
@@ -1010,17 +991,17 @@
     "ac": "13",
     "actions": [
       {
-        "type": "weapon",
-        "id": "collector_assault_rifle"
-      },
-      {
         "type": "melee",
-        "name": "Weapon Strike",
+        "name": "Weapon Bash",
         "range": 2,
         "target": "one target",
-        "hit": "[dmg: 1d6 + str] bludgeoning damage.",
+        "hit": "3 (1d6) bludgeoning damage.",
         "miss": null,
         "attackMod": 2
+      },
+      {
+        "type": "weapon",
+        "id": "collector_assault_rifle"
       }
     ],
     "alignment": "Lawful evil",
@@ -1091,7 +1072,7 @@
         "name": "Bash",
         "range": 2,
         "target": "one target",
-        "hit": "[dmg: 1d8 + str] bludgeoning damage.",
+        "hit": "13 (3d8) bludgeoning damage and the target must succeed on a DC 13 Constitution saving throw or become stunned until the end of its next turn.",
         "miss": null,
         "attackMod": 4
       }
@@ -1156,41 +1137,13 @@
     ],
     "spellcasting": {
       "level": "12",
-      "dc": 16,
-      "hit": 8,
-      "mod": "Charisma",
+      "mod": "cha",
       "spellList": [
         "dark_channel",
         "pull",
         "reave",
         "shockwave",
         "singularity"
-      ],
-      "spells": [
-        {
-          "level": "cantrip",
-          "spells": []
-        },
-        {
-          "level": "1",
-          "slots": "5",
-          "spells": []
-        },
-        {
-          "level": "2",
-          "slots": "4",
-          "spells": []
-        },
-        {
-          "level": "3",
-          "slots": "3",
-          "spells": []
-        },
-        {
-          "level": "4",
-          "slots": "2",
-          "spells": []
-        }
       ]
     },
     "type": "Organic",
@@ -1208,9 +1161,18 @@
     "ac": "16",
     "actions": [
       {
-        "type": "common",
+        "type": "standard",
         "name": "Multiattack",
         "description": "The collector guardian makes two Collector Assault Rifle attacks."
+      },
+      {
+        "type": "melee",
+        "name": "Weapon Bash",
+        "range": 2,
+        "target": "one target",
+        "hit": "12 (2d8 + 3) bludgeoning damage.",
+        "miss": null,
+        "attackMod": 5
       },
       {
         "type": "weapon",
@@ -1221,15 +1183,6 @@
         "name": "Hex Shield",
         "recharge": "1/Day",
         "description": "As a bonus action, the collector guardian generates a 2m tall and wide, hexagon-shaped shield with 5AC and 50 shield points which offers full-cover."
-      },
-      {
-        "type": "melee",
-        "name": "Weapon Strike",
-        "range": 2,
-        "target": "one target",
-        "hit": "[dmg: 1d6 + str] bludgeoning damage.",
-        "miss": null,
-        "attackMod": 5
       }
     ],
     "alignment": "Lawful evil",
@@ -1301,8 +1254,13 @@
     "ac": "15",
     "actions": [
       {
-        "type": "grenade",
-        "id": "frag_grenade"
+        "type": "melee",
+        "name": "Claw",
+        "range": 2,
+        "target": "one target",
+        "hit": "9 (2d6 + 2) slashing damage.",
+        "miss": null,
+        "attackMod": 3
       },
       {
         "type": "weapon",
@@ -1318,13 +1276,8 @@
         "attackMod": 4
       },
       {
-        "type": "melee",
-        "name": "Weapon Strike",
-        "range": 2,
-        "target": "one target",
-        "hit": "[dmg: 1d6 + str] bludgeoning damage.",
-        "miss": null,
-        "attackMod": 3
+        "type": "grenade",
+        "id": "frag_grenade"
       }
     ],
     "alignment": "Lawful evil",
@@ -1395,7 +1348,7 @@
         "name": "Shock Attack",
         "range": 10,
         "target": "one target",
-        "hit": "[dmg: 1d6 + dex] lightning damage.",
+        "hit": "5 (1d6 + 2) lightning damage.",
         "miss": null,
         "attackMod": 4
       }
@@ -1443,12 +1396,16 @@
     ],
     "spellcasting": {
       "level": "innate",
-      "perDay": "3",
-      "tpSpent": "1",
-      "dc": 10,
-      "hit": 2,
-      "spells": [
-        "sabotage"
+      "mod": "int",
+      "spellList": [
+        {
+          "perDay": "3/day",
+          "spells": [
+            {
+              "id": "sabotage"
+            }
+          ]
+        }
       ]
     },
     "type": "Synthetic",
@@ -1466,7 +1423,7 @@
     "ac": "14",
     "actions": [
       {
-        "type": "common",
+        "type": "standard",
         "name": "Multiattack",
         "description": "The combat engineer makes two M-5 Phalanx attacks."
       },
@@ -1542,7 +1499,7 @@
         "name": "Bash",
         "range": 2,
         "target": "one target",
-        "hit": "[dmg: 1d8 + str] bludgeoning damage.",
+        "hit": "7 (1d8 + 3) bludgeoning damage.",
         "miss": null,
         "attackMod": 4
       }
@@ -1550,7 +1507,6 @@
     "alignment": "Neutral",
     "barrier": null,
     "conditionImmunities": [
-      "petrified",
       "poisoned"
     ],
     "cr": "1/2",
@@ -1619,7 +1575,6 @@
     "alignment": "Neutral",
     "barrier": null,
     "conditionImmunities": [
-      "petrified",
       "poisoned"
     ],
     "cr": "1/8",
@@ -1669,7 +1624,7 @@
     "ac": "16",
     "actions": [
       {
-        "type": "common",
+        "type": "standard",
         "name": "Multiattack",
         "description": "The dragoon makes three Omni-whip attacks"
       },
@@ -1741,7 +1696,7 @@
         "name": "Mass Accelerator Cannon",
         "range": 120,
         "target": "one target",
-        "hit": "[dmg: 5d8] radiant damage.",
+        "hit": "22 (5d8) radiant damage.",
         "miss": null,
         "attackMod": 6
       }
@@ -1812,19 +1767,19 @@
     "actions": [
       {
         "type": "melee",
-        "name": "Pounce---fenris_mech",
+        "name": "Pounce",
         "range": 4,
         "target": "one target",
-        "hit": "[dmg: 2d6 + str] bludgeoning damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
+        "hit": "8 (2d6 + 1) bludgeoning damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
         "miss": null,
         "attackMod": 3
       },
       {
         "type": "melee",
-        "name": "Stun---fenris_mech",
+        "name": "Stun",
         "range": 2,
         "target": "one prone target",
-        "hit": "[dmg: 2d8] lightning damage. If the target is a creature, it must succeed on a DC 13 Constitution saving throw or be stunned until the end of its next turn.",
+        "hit": "9 (2d8) lightning damage. If the target is a creature, it must succeed on a DC 13 Constitution saving throw or be stunned until the end of its next turn.",
         "miss": null,
         "attackMod": 3
       }
@@ -1832,7 +1787,6 @@
     "alignment": "Neutral",
     "barrier": null,
     "conditionImmunities": [
-      "petrified",
       "poisoned"
     ],
     "cr": "1/2",
@@ -1888,12 +1842,16 @@
     ],
     "spellcasting": {
       "level": "innate",
-      "perDay": "10",
-      "tpSpent": "2",
-      "dc": 10,
-      "hit": 2,
-      "spells": [
-        "shocking_grasp"
+      "mod": "int",
+      "spellList": [
+        {
+          "perDay": "3/day",
+          "spells": [
+            {
+              "id": "shocking grasp"
+            }
+          ]
+        }
       ]
     },
     "type": "Synthetic",
@@ -1912,7 +1870,7 @@
     "actions": [
       {
         "type": "ranged",
-        "name": "Mass Accelerator Machinegun---geth_armature",
+        "name": "Mass Accelerator Machinegun",
         "range": 120,
         "target": "one target",
         "hit": "19 (3d12) piercing damage and 19 (3d12) radiant damage. The geth armature can make a burst fire attack instead.",
@@ -2078,12 +2036,16 @@
     ],
     "spellcasting": {
       "level": "innate",
-      "perDay": null,
-      "tpSpent": "2",
-      "dc": 12,
-      "hit": 4,
-      "spells": [
-        "overload"
+      "mod": "int",
+      "spellList": [
+        {
+          "perDay": "At will",
+          "spells": [
+            {
+              "id": "overload"
+            }
+          ]
+        }
       ]
     },
     "type": "Synthetic",
@@ -2102,7 +2064,7 @@
     "actions": [
       {
         "type": "ranged",
-        "name": "Mass Accelerator Machinegun---geth_colossus",
+        "name": "Mass Accelerator Machinegun",
         "range": 120,
         "target": "one target",
         "hit": "19 (3d12) piercing damage and 19 (3d12) radiant damage. The geth colossus can make a burst fire attack instead.",
@@ -2228,7 +2190,7 @@
     "ac": "14",
     "actions": [
       {
-        "type": "common",
+        "type": "standard",
         "name": "Multiattack",
         "description": "The geth hunter makes two Geth Plasma Shotgun attacks."
       },
@@ -2241,21 +2203,11 @@
         "name": "Tactical Cloak",
         "recharge": "3/Day",
         "description": "As a bonus action, the geth hunter activates its tactical cloak, becoming {invisible}. When the geth hunter makes a melee, ranged, or uses a tech or combat power, tactical cloak ends."
-      },
-      {
-        "type": "melee",
-        "name": "Weapon Strike",
-        "range": 2,
-        "target": "one target",
-        "hit": "[dmg: 1d6 + str] bludgeoning damage.",
-        "miss": null,
-        "attackMod": 4
       }
     ],
     "alignment": "Lawful Neutral",
     "barrier": null,
     "conditionImmunities": [
-      "petrified",
       "poisoned"
     ],
     "cr": "4",
@@ -2264,9 +2216,7 @@
       "psychic"
     ],
     "damageResistances": [],
-    "damageVulnerabilities": [
-      "lightning"
-    ],
+    "damageVulnerabilities": [],
     "features": [
       {
         "name": "Assassination",
@@ -2325,28 +2275,27 @@
     "ac": "15",
     "actions": [
       {
-        "type": "common",
+        "type": "standard",
         "name": "Multiattack",
         "description": "The geth juggernaut makes two Bash attacks."
       },
       {
-        "type": "weapon",
-        "id": "geth_plasma_smg"
-      },
-      {
         "type": "melee",
-        "name": "Bash---geth_juggernaut",
+        "name": "Bash",
         "range": 2,
         "target": "one target",
-        "hit": "[dmg: 2d8 + str] bludgeoning damage.",
+        "hit": "14 (2d8 + 5) bludgeoning damage.",
         "miss": null,
         "attackMod": 8
+      },
+      {
+        "type": "weapon",
+        "id": "geth_plasma_smg"
       }
     ],
     "alignment": "Lawful Neutral",
     "barrier": null,
     "conditionImmunities": [
-      "petrified",
       "poisoned"
     ],
     "cr": "8",
@@ -2359,9 +2308,7 @@
       "piercing",
       "slashing"
     ],
-    "damageVulnerabilities": [
-      "lightning"
-    ],
+    "damageVulnerabilities": [],
     "features": [
       {
         "name": "Aggressive",
@@ -2410,9 +2357,18 @@
     "ac": "18",
     "actions": [
       {
-        "type": "common",
+        "type": "standard",
         "name": "Multiattack",
         "description": "The geth prime makes two Geth Pulse Rifle attacks."
+      },
+      {
+        "type": "melee",
+        "name": "Weapon Bash",
+        "range": 2,
+        "target": "one target",
+        "hit": "8 (1d10 + 3) bludgeoning damage.",
+        "miss": null,
+        "attackMod": 7
       },
       {
         "type": "weapon",
@@ -2435,21 +2391,11 @@
         "name": "Summon Geth Turret",
         "recharge": "1/Day",
         "description": "The geth prime summons a Geth Turret."
-      },
-      {
-        "type": "melee",
-        "name": "Weapon Strike---geth_prime",
-        "range": 2,
-        "target": "one target",
-        "hit": "[dmg: 1d10 + str] bludgeoning damage.",
-        "miss": null,
-        "attackMod": 7
       }
     ],
     "alignment": "Lawful Neutral",
     "barrier": null,
     "conditionImmunities": [
-      "petrified",
       "poisoned"
     ],
     "cr": "9",
@@ -2458,9 +2404,7 @@
       "psychic"
     ],
     "damageResistances": [],
-    "damageVulnerabilities": [
-      "lightning"
-    ],
+    "damageVulnerabilities": [],
     "features": [],
     "hp": {
       "numDice": 20,
@@ -2525,19 +2469,19 @@
     "actions": [
       {
         "type": "melee",
-        "name": "Bash",
+        "name": "Claw",
         "range": 2,
         "target": "one target",
-        "hit": "[dmg: 1d8 + str] bludgeoning damage.",
+        "hit": "7 (1d8 + 3) slashing damage.",
         "miss": null,
-        "attackMod": 1
+        "attackMod": 3
       },
       {
         "type": "ranged",
         "name": "Eye Cannon",
         "range": 60,
         "target": "one target",
-        "hit": "[dmg: 3d6 + dex] radiant damage.",
+        "hit": "13 (3d6 + 3) radiant damage.",
         "miss": null,
         "attackMod": 5
       }
@@ -2545,7 +2489,6 @@
     "alignment": "Lawful Neutral",
     "barrier": null,
     "conditionImmunities": [
-      "petrified",
       "poisoned"
     ],
     "cr": "3",
@@ -2619,12 +2562,16 @@
     ],
     "spellcasting": {
       "level": "innate",
-      "perDay": null,
-      "tpSpent": "1",
-      "dc": 11,
-      "hit": 3,
-      "spells": [
-        "sabotage"
+      "mod": "int",
+      "spellList": [
+        {
+          "perDay": "At will",
+          "spells": [
+            {
+              "id": "sabotage"
+            }
+          ]
+        }
       ]
     },
     "type": "Synthetic",
@@ -2642,28 +2589,27 @@
     "ac": "13",
     "actions": [
       {
-        "type": "common",
+        "type": "standard",
         "name": "Multiattack",
         "description": "The geth trooper makes two Geth Pulse Rifle attacks."
-      },
-      {
-        "type": "weapon",
-        "id": "geth_pulse_rifle"
       },
       {
         "type": "melee",
         "name": "Weapon Strike",
         "range": 2,
         "target": "one target",
-        "hit": "[dmg: 1d6 + str] bludgeoning damage.",
+        "hit": "4 (1d6 + 1) bludgeoning damage.",
         "miss": null,
         "attackMod": 3
+      },
+      {
+        "type": "weapon",
+        "id": "geth_pulse_rifle"
       }
     ],
     "alignment": "Lawful Neutral",
     "barrier": null,
     "conditionImmunities": [
-      "petrified",
       "poisoned"
     ],
     "cr": "2",
@@ -2717,7 +2663,7 @@
         "name": "Pulse Cannon",
         "range": 20,
         "target": "one target",
-        "hit": "[dmg: 1d10 + dex] radiant damage.",
+        "hit": "5 (1d10) radiant damage.",
         "miss": null,
         "attackMod": 2
       },
@@ -2731,7 +2677,6 @@
     "alignment": "Lawful Neutral",
     "barrier": null,
     "conditionImmunities": [
-      "petrified",
       "poisoned"
     ],
     "cr": "1/4",
@@ -2785,17 +2730,17 @@
     "ac": "18",
     "actions": [
       {
-        "type": "common",
+        "type": "standard",
         "name": "Multiattack",
         "description": "The guardian makes two M-358 Talon attacks."
       },
       {
         "type": "weapon",
-        "id": "m-358_talon"
+        "id": "stun_baton"
       },
       {
         "type": "weapon",
-        "id": "stun_baton"
+        "id": "m-358_talon"
       }
     ],
     "alignment": "Neutral",
@@ -2851,9 +2796,18 @@
     "ac": "16",
     "actions": [
       {
-        "type": "common",
+        "type": "standard",
         "name": "Multiattack",
         "description": "The harvester can use its Frightful Presence. It then makes three attacks: one with its acid spit and two with its stomp."
+      },
+      {
+        "type": "melee",
+        "name": "Stomp",
+        "range": 4,
+        "target": "one target",
+        "hit": "15 (2d6 + 8) piercing damage.",
+        "miss": null,
+        "attackMod": 14
       },
       {
         "type": "ranged",
@@ -2872,15 +2826,6 @@
         "hit": "If the harvester is within a region that contains Klixen, it begins the fight by droping 1d10 Klixen in a 6m by 20m area.",
         "miss": null,
         "attackMod": null
-      },
-      {
-        "type": "melee",
-        "name": "Stomp",
-        "range": 4,
-        "target": "one target",
-        "hit": "[dmg: 2d6 + str] piercing damage.",
-        "miss": null,
-        "attackMod": 14
       }
     ],
     "alignment": "Unaligned",
@@ -2968,7 +2913,7 @@
         "name": "Swipe",
         "range": 2,
         "target": "one target",
-        "hit": "[dmg: 1d6 + str] slashing damage, and the creature is grappled (escape DC 13). A creature that is grappled by the husk takes 11 (3d6) necrotic damage at the start of each of the husk's turns. The husk can't make swipe attacks on any other target while grappling a creature in this way.",
+        "hit": "4 (1d6 + 1) slashing damage, and the creature is grappled (escape DC 13). A creature that is grappled by the husk takes 11 (3d6) necrotic damage at the start of each of the husk's turns. The husk can't make swipe attacks on any other target while grappling a creature in this way.",
         "miss": null,
         "attackMod": 3
       }
@@ -3041,7 +2986,7 @@
         "name": "Pincer",
         "range": 2,
         "target": "one target",
-        "hit": "[dmg: 1d4 + dex] piercing damage plus 2 (1d4) fire damage.",
+        "hit": "4 (1d4 + 2) piercing damage plus 2 (1d4) fire damage.",
         "miss": null,
         "attackMod": 4
       }
@@ -3144,7 +3089,7 @@
         "description": "The LOKI mech is incapable of complex combat tactics. It never seeks cover and cannot take the Hide, Dodge, Help, or Disengage actions."
       },
       {
-        "name": "Post-mortem Explosion---loki_mech",
+        "name": "Post-mortem Explosion",
         "recharge": null,
         "description": "When the LOKI mech is reduced to 0 hit points, it self-destructs. Each creature within a 2m radius sphere must succeed on a DC 10 Dexterity saving throw or take 5 (2d4) thunder damage."
       }
@@ -3179,12 +3124,16 @@
     ],
     "spellcasting": {
       "level": "innate",
-      "perDay": "5",
-      "tpSpent": "1",
-      "dc": 9,
-      "hit": 1,
-      "spells": [
-        "shocking_grasp"
+      "mod": "int",
+      "spellList": [
+        {
+          "perDay": "5/day",
+          "spells": [
+            {
+              "id": "shocking grasp"
+            }
+          ]
+        }
       ]
     },
     "type": "Synthetic",
@@ -3202,7 +3151,7 @@
     "ac": "15",
     "actions": [
       {
-        "type": "common",
+        "type": "standard",
         "name": "Multiattack",
         "description": "The marauder makes 2 Phaeston attacks."
       },
@@ -3277,15 +3226,6 @@
       {
         "type": "weapon",
         "id": "m-98_widow"
-      },
-      {
-        "type": "melee",
-        "name": "Weapon Strike",
-        "range": 2,
-        "target": "one target",
-        "hit": "[dmg: 1d6 + str] bludgeoning damage.",
-        "miss": null,
-        "attackMod": 2
       }
     ],
     "alignment": "Neutral Evil",
@@ -3369,7 +3309,7 @@
     "ac": "17",
     "actions": [
       {
-        "type": "common",
+        "type": "standard",
         "name": "Multiattack",
         "description": "The phantom makes three Monomolecular Blade attacks or one Palm Blaster attack and two Monomolecular  Blade (one-handed) attacks."
       },
@@ -3459,7 +3399,7 @@
         "name": "Claw",
         "range": 2,
         "target": "one target",
-        "hit": "[dmg: 6d10 + str] piercing damage.",
+        "hit": "38 (6d10 + 5) piercing damage.",
         "miss": null,
         "attackMod": 9
       },
@@ -3560,10 +3500,10 @@
     "actions": [
       {
         "type": "melee",
-        "name": "Bite---pyjak",
+        "name": "Bite",
         "range": 2,
         "target": "one target",
-        "hit": "[dmg: 1d4 + str] piercing damage.",
+        "hit": "1 (1d4 - 1) piercing damage.",
         "miss": null,
         "attackMod": 1
       }
@@ -3623,13 +3563,13 @@
     "ac": "15",
     "actions": [
       {
-        "type": "common",
+        "type": "standard",
         "name": "Multiattack",
         "description": "The brood warrior makes two Impale attacks or attempts to grapple a creature and makes an Impale attack."
       },
       {
         "type": "ranged",
-        "name": "Acid Spit---rachni_brood_warrior",
+        "name": "Acid Spit",
         "range": 20,
         "target": "one target",
         "hit": "7 (2d6) acid damage and 7 (2d6) necrotic damage. This damage bypasses shields.",
@@ -3638,10 +3578,10 @@
       },
       {
         "type": "melee",
-        "name": "Impale---rachni_brood_warroir",
+        "name": "Impale",
         "range": 4,
         "target": "one target",
-        "hit": "[dmg: 2d10 + str] and 5 (1d10) acid damage.",
+        "hit": "15 (2d10 + 4) and 5 (1d10) acid damage.",
         "miss": null,
         "attackMod": 6
       }
@@ -3698,24 +3638,22 @@
     ],
     "spellcasting": {
       "level": "innate",
-      "dc": 12,
-      "hit": 4,
-      "mod": "Wisdom",
+      "mod": "wis",
       "spellList": [
-        "5-warp",
-        "3-stasis"
-      ],
-      "spells": [
         {
-          "level": "5",
+          "perDay": "3/day",
           "spells": [
-            "warp"
+            {
+              "id": "stasis"
+            }
           ]
         },
         {
-          "level": " 3",
+          "perDay": "5/day",
           "spells": [
-            "stasis"
+            {
+              "id": "warp"
+            }
           ]
         }
       ]
@@ -3735,25 +3673,25 @@
     "ac": "21",
     "actions": [
       {
-        "type": "common",
+        "type": "standard",
         "name": "Multiattack",
         "description": "The rachni queen makes one bite attack and two impale attacks."
       },
       {
         "type": "melee",
-        "name": "Bite---rachni_queen",
+        "name": "Bite",
         "range": 4,
         "target": "one target",
-        "hit": "[dmg: 3d12 + str] piercing damage.",
+        "hit": "26 (3d12 + 7) piercing damage.",
         "miss": null,
         "attackMod": 13
       },
       {
         "type": "melee",
-        "name": "Impale---rachni_queen",
+        "name": "Impale",
         "range": 8,
         "target": "one target",
-        "hit": "[dmg: 4d10 + str] piercing damage.",
+        "hit": "29 (4d10 + 7) piercing damage.",
         "miss": null,
         "attackMod": 13
       }
@@ -3831,7 +3769,7 @@
     "actions": [
       {
         "type": "ranged",
-        "name": "Acid Spit---rachni_soldier",
+        "name": "Acid Spit",
         "range": 20,
         "target": "one target",
         "hit": "7 (2d6) acid damage and 7 (2d6) necrotic damage. This damage bypasses shields.",
@@ -3840,10 +3778,10 @@
       },
       {
         "type": "melee",
-        "name": "Impale---rachni_soldier",
+        "name": "Impale",
         "range": 4,
         "target": "one target",
-        "hit": "[dmg: 1d10 + dex] and 2 (1d4) acid damage.",
+        "hit": "8 (1d10 + 3) and 2 (1d4) acid damage.",
         "miss": null,
         "attackMod": 5
       }
@@ -3916,16 +3854,16 @@
     "actions": [
       {
         "type": "standard",
-        "name": "Acid Splash---rachni_worker",
+        "name": "Acid Splash",
         "recharge": "Recharge 4-6",
-        "description": "The rachni worker spits acit at one target within 10m or two targets within 10m if both targets are within 2m of each other. A target must succeed on a Dexterity saving throw or take 3 (1d6) acid damage."
+        "description": "The rachni worker spits acid at one target within 10m or two targets within 10m if both targets are within 2m of each other. A target must succeed on a Dexterity saving throw or take 3 (1d6) acid damage."
       },
       {
         "type": "melee",
-        "name": "Bite---rachni_worker",
+        "name": "Bite",
         "range": 2,
         "target": "one target",
-        "hit": "[dmg: 1d6 + dex] piercing damage.",
+        "hit": "3 (1d6) piercing damage.",
         "miss": null,
         "attackMod": 2
       }
@@ -3982,7 +3920,7 @@
     "ac": "15",
     "actions": [
       {
-        "type": "common",
+        "type": "standard",
         "name": "Multiattack",
         "description": "The rampart mech makes two omni-blade attacks."
       },
@@ -4065,7 +4003,7 @@
     "ac": "12",
     "actions": [
       {
-        "type": "common",
+        "type": "standard",
         "name": "Multiattack",
         "description": "The ravager makes two twin artillery cannon attacks."
       },
@@ -4080,7 +4018,7 @@
         "name": "Twin Artillery Cannons",
         "range": 60,
         "target": "one target",
-        "hit": "[dmg: 3d10 + dex] piercing damage and 10 (3d6) acid damage.",
+        "hit": "18 (3d10 + 2) piercing damage and 10 (3d6) acid damage.",
         "miss": null,
         "attackMod": 5
       }
@@ -4143,7 +4081,7 @@
     "ac": "20",
     "actions": [
       {
-        "type": "common",
+        "type": "standard",
         "name": "Multiattack",
         "description": "The reaper harvester makes two harvester cannon attacks."
       },
@@ -4241,7 +4179,7 @@
         "name": "Pulse Rifle",
         "range": 60,
         "target": "one target",
-        "hit": "[dmg: 1d4 + dex] radiant damage.",
+        "hit": "5 (1d4 + 3) radiant damage.",
         "miss": null,
         "attackMod": 5
       },
@@ -4249,13 +4187,12 @@
         "type": "standard",
         "name": "Tactical Cloak",
         "recharge": "3/Day",
-        "description": "As a bonus action, the recon drone activates its tactical cloak, becoming {invisible}. When the recon drone makes a melee, ranged, or uses a tech or combat power, tactical cloak ends."
+        "description": "As a bonus action, the recon drone activates its tactical cloak, becoming invisible. When the recon drone makes a melee, ranged, or uses a tech or combat power, tactical cloak ends."
       }
     ],
     "alignment": "Neutral",
     "barrier": null,
     "conditionImmunities": [
-      "petrified",
       "poisoned"
     ],
     "cr": "1/8",
@@ -4282,8 +4219,8 @@
     "savingThrows": [],
     "senses": [
       {
-        "sense": "infared",
-        "range": null
+        "sense": "infrared vision",
+        "range": 20
       }
     ],
     "size": "Small",
@@ -4321,7 +4258,7 @@
         "name": "Defibrillators",
         "range": 2,
         "target": "one target",
-        "hit": "1d4 lightning damage.",
+        "hit": "2 (1d4) lightning damage.",
         "miss": null,
         "attackMod": 3
       },
@@ -4335,7 +4272,6 @@
     "alignment": "Neutral",
     "barrier": null,
     "conditionImmunities": [
-      "petrified",
       "poisoned"
     ],
     "cr": "1/8",
@@ -4375,12 +4311,16 @@
     ],
     "spellcasting": {
       "level": "innate",
-      "perDay": "3",
-      "tpSpent": "1",
-      "dc": 10,
-      "hit": 2,
-      "spells": [
-        "first_aid"
+      "mod": "int",
+      "spellList": [
+        {
+          "perDay": "3/day",
+          "spells": [
+            {
+              "id": "first aid"
+            }
+          ]
+        }
       ]
     },
     "type": "Synthetic",
@@ -4402,7 +4342,7 @@
         "name": "Distortion Rocket",
         "range": 30,
         "target": "one target",
-        "hit": "2d6 thunder damage.",
+        "hit": "7 (2d6) thunder damage.",
         "miss": null,
         "attackMod": 2
       }
@@ -4410,7 +4350,6 @@
     "alignment": "Neutral",
     "barrier": null,
     "conditionImmunities": [
-      "petrified",
       "poisoned"
     ],
     "cr": "1/4",
@@ -4464,7 +4403,7 @@
         "name": "Bash",
         "range": 2,
         "target": "one target",
-        "hit": "[dmg: 1d8 + str] bludgeoning damage.",
+        "hit": "8 (1d8 + 4) bludgeoning damage.",
         "miss": null,
         "attackMod": 8
       },
@@ -4535,7 +4474,7 @@
         "name": "Plague Sting",
         "range": 2,
         "target": "one target",
-        "hit": "[dmg: 1d4 + dex] poison damage and 2 (1d4) necrotic damage. The target must succeed on DC 13 Constitution saving throw or has disadvantage on its next attack roll.",
+        "hit": "3 (1d4 + 1) poison damage and 2 (1d4) necrotic damage. The target must succeed on DC 13 Constitution saving throw or has disadvantage on its next attack roll.",
         "miss": null,
         "attackMod": 3
       }
@@ -4591,7 +4530,7 @@
         "name": "Sting",
         "range": 2,
         "target": "one target",
-        "hit": "[dmg: 1d4 + dex] poison damage and the target must succeed on a DC 13 Constitution saving throw or has disadvantage on its next attack roll.",
+        "hit": "2 (1d4) poison damage and the target must succeed on a DC 13 Constitution saving throw or has disadvantage on its next attack roll.",
         "miss": null,
         "attackMod": 2
       }
@@ -4655,7 +4594,6 @@
     "alignment": "Neutral",
     "barrier": null,
     "conditionImmunities": [
-      "petrified",
       "poisoned"
     ],
     "cr": "1",
@@ -4697,12 +4635,16 @@
     ],
     "spellcasting": {
       "level": "innate",
-      "perDay": "5",
-      "tpSpent": "2",
-      "dc": 10,
-      "hit": 2,
-      "spells": [
-        "flamethrower"
+      "mod": "int",
+      "spellList": [
+        {
+          "perDay": "3/day",
+          "spells": [
+            {
+              "id": "flamethrower"
+            }
+          ]
+        }
       ]
     },
     "type": "Synthetic",
@@ -4724,7 +4666,7 @@
         "name": "Suicide Attack",
         "range": 2,
         "target": "one target",
-        "hit": "[dmg: 1d6] acid damage and the swarmer explodes (its hit points immediately fall to 0).",
+        "hit": "3 (1d6) acid damage and the swarmer explodes (its hit points immediately fall to 0).",
         "miss": null,
         "attackMod": 3
       }
@@ -4789,7 +4731,7 @@
     "ac": "22",
     "actions": [
       {
-        "type": "common",
+        "type": "standard",
         "name": "Multiattack",
         "description": "The thresher maw can use its Frightful Presence. It then makes four attacks: one with its grasp, two with its tail, one with its acid spit. It can use its Swallow instead of its grasp."
       },
@@ -4800,16 +4742,16 @@
         "target": "one target",
         "hit": "The thresher maw targets a 6m radius within 60m and launches a glob of acid that coats the area. Each creature within the area must succeed on a DC 22 Dexterity saving throw, taking 44 (8d10) acid damage on a failed save, or half as much on a successful one. Until the end of the thresher maw's next turn, each creature that enters the area or ends its turn there must also make the saving throw.",
         "miss": null,
-        "attackMod": 8
+        "attackMod": 7
       },
       {
         "type": "melee",
         "name": "Grasp",
         "range": 4,
         "target": "one target",
-        "hit": "[dmg: 2d12 + str] bludgeoning damage and 13 (2d12) acid damage. If the target is a creature, it is grappled (escape DC 22). Until this grapple ends, the target is restrained, and the thresher maw can't grasp another target.",
+        "hit": "29 (3d12 + 10) bludgeoning damage and 13 (2d12) acid damage. If the target is a creature, it is grappled (escape DC 22). Until this grapple ends, the target is restrained, and the thresher maw can't grasp another target.",
         "miss": null,
-        "attackMod": 18
+        "attackMod": 17
       },
       {
         "type": "standard",
@@ -4822,9 +4764,9 @@
         "name": "Tail",
         "range": 8,
         "target": "one target",
-        "hit": "[dmg: 4d6 + str] bludgeoning damage. If the target is a creature, it must succeed on a DC 22 Strength saving throw or be knocked prone.",
+        "hit": "24 (4d6 + 10) bludgeoning damage. If the target is a creature, it must succeed on a DC 22 Strength saving throw or be knocked prone.",
         "miss": null,
-        "attackMod": 18
+        "attackMod": 17
       }
     ],
     "alignment": "Unaligned",
@@ -4873,7 +4815,7 @@
       }
     ],
     "hp": {
-      "numDice": 30,
+      "numDice": 27,
       "die": 20
     },
     "id": "thresher_maw",
@@ -4953,7 +4895,6 @@
     "alignment": "Neutral",
     "barrier": null,
     "conditionImmunities": [
-      "petrified",
       "poisoned"
     ],
     "cr": "1",
@@ -5016,10 +4957,10 @@
     "actions": [
       {
         "type": "melee",
-        "name": "Bite---varren",
+        "name": "Bite",
         "range": 2,
         "target": "one target",
-        "hit": "[dmg: 2d4 + dex] piercing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked {prone}.",
+        "hit": "6 (2d4 + 2) piercing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked {prone}.",
         "miss": null,
         "attackMod": 4
       }
@@ -5084,10 +5025,10 @@
     "actions": [
       {
         "type": "melee",
-        "name": "Bite---varren-alpha",
+        "name": "Bite",
         "range": 2,
         "target": "one target",
-        "hit": "[dmg: 2d6 + dex] piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be knocked {prone}.",
+        "hit": "9 (2d6 + 2) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be knocked {prone}.",
         "miss": null,
         "attackMod": 4
       }
@@ -5151,7 +5092,7 @@
     "ac": "14",
     "actions": [
       {
-        "type": "common",
+        "type": "standard",
         "name": "Multiattack",
         "description": "The adjutant makes two Arm Cannon attacks."
       },
@@ -5160,7 +5101,7 @@
         "name": "Arm Cannon",
         "range": 20,
         "target": "one target",
-        "hit": "[dmg: 1d10 + dex] piercing damage.",
+        "hit": "8 (1d10 + 3) piercing damage.",
         "miss": null,
         "attackMod": 5
       },
@@ -5169,7 +5110,7 @@
         "name": "Bash",
         "range": 2,
         "target": "one target",
-        "hit": "[dmg: 1d8 + str] bludgeoning damage.",
+        "hit": "4 (1d8) bludgeoning damage.",
         "miss": null,
         "attackMod": 2
       },
@@ -5178,7 +5119,7 @@
         "name": "Reaper Infection",
         "range": 2,
         "target": "one organic creature that is grappled by the [name], incapacitated, or restrained",
-        "hit": "[dmg: 1d6 + str] piercing damage plus 10 (3d6) necrotic damage. The target's hit point maximum is reduced by an amount equal to the necrotic damage taken. The reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0. An organic creature slain in this way becomes a Weakened Adjutant and becomes an Adjutant after a long rest.",
+        "hit": "3 (1d6) piercing damage plus 10 (3d6) necrotic damage. The target's hit point maximum is reduced by an amount equal to the necrotic damage taken. The reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0. An organic creature slain in this way becomes a Weakened Adjutant and becomes an Adjutant after a long rest.",
         "miss": null,
         "attackMod": 2
       }
@@ -5234,25 +5175,25 @@
     "ac": "17",
     "actions": [
       {
-        "type": "common",
+        "type": "standard",
         "name": "Multiattack",
         "description": "The yahg makes three attacks: one with its bite and two with its claws."
       },
       {
         "type": "melee",
-        "name": "Bite---yahg",
+        "name": "Bite",
         "range": 2,
         "target": "one target",
-        "hit": "[dmg: 2d10 + str] piercing damage.",
+        "hit": "15 (2d10 + 4) piercing damage.",
         "miss": null,
         "attackMod": 7
       },
       {
         "type": "melee",
-        "name": "Claw---yahg",
+        "name": "Claw",
         "range": 4,
         "target": "one target",
-        "hit": "[dmg: 2d8 + str] slashing damage.",
+        "hit": "13 (2d8 + 4) slashing damage.",
         "miss": null,
         "attackMod": 7
       }
@@ -5338,7 +5279,7 @@
     "actions": [
       {
         "type": "ranged",
-        "name": "Mass Accelerator Machinegun---ymir_mech",
+        "name": "Mass Accelerator Machinegun",
         "range": 60,
         "target": "one target",
         "hit": "16 (3d10) piercing damage and 16 (3d10) radiant damage. The ymir mech can make a burst fire attack instead.",
@@ -5374,7 +5315,7 @@
     ],
     "features": [
       {
-        "name": "Post-mortem Explosion---ymir_mech",
+        "name": "Post-mortem Explosion",
         "recharge": null,
         "description": "When the YMIR mech is reduced to 0 hit points, it self-destructs. Each creature within a 6m radius sphere must make a DC 15 Dexterity saving throw. On a failed save, a creature takes 22 (4d10) thunder damage or half as much on a successful one."
       }

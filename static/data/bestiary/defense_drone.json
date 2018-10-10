@@ -14,7 +14,7 @@
       "name": "Bash",
       "range": 2,
       "target": "one target",
-      "hit": "[dmg: 1d8 + str] bludgeoning damage.",
+      "hit": "7 (1d8 + 3) bludgeoning damage.",
       "miss": null,
       "attackMod": 4
     }
@@ -22,7 +22,6 @@
   "alignment": "Neutral",
   "barrier": null,
   "conditionImmunities": [
-    "petrified",
     "poisoned"
   ],
   "cr": "1/2",

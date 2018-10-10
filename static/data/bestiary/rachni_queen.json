@@ -10,25 +10,25 @@
   "ac": "21",
   "actions": [
     {
-      "type": "common",
+      "type": "standard",
       "name": "Multiattack",
       "description": "The rachni queen makes one bite attack and two impale attacks."
     },
     {
       "type": "melee",
-      "name": "Bite---rachni_queen",
+      "name": "Bite",
       "range": 4,
       "target": "one target",
-      "hit": "[dmg: 3d12 + str] piercing damage.",
+      "hit": "26 (3d12 + 7) piercing damage.",
       "miss": null,
       "attackMod": 13
     },
     {
       "type": "melee",
-      "name": "Impale---rachni_queen",
+      "name": "Impale",
       "range": 8,
       "target": "one target",
-      "hit": "[dmg: 4d10 + str] piercing damage.",
+      "hit": "29 (4d10 + 7) piercing damage.",
       "miss": null,
       "attackMod": 13
     }

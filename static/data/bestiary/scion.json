@@ -14,7 +14,7 @@
       "name": "Bash",
       "range": 2,
       "target": "one target",
-      "hit": "[dmg: 1d8 + str] bludgeoning damage.",
+      "hit": "8 (1d8 + 4) bludgeoning damage.",
       "miss": null,
       "attackMod": 8
     },

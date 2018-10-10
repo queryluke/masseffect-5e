@@ -10,25 +10,25 @@
   "ac": "17",
   "actions": [
     {
-      "type": "common",
+      "type": "standard",
       "name": "Multiattack",
       "description": "The yahg makes three attacks: one with its bite and two with its claws."
     },
     {
       "type": "melee",
-      "name": "Bite---yahg",
+      "name": "Bite",
       "range": 2,
       "target": "one target",
-      "hit": "[dmg: 2d10 + str] piercing damage.",
+      "hit": "15 (2d10 + 4) piercing damage.",
       "miss": null,
       "attackMod": 7
     },
     {
       "type": "melee",
-      "name": "Claw---yahg",
+      "name": "Claw",
       "range": 4,
       "target": "one target",
-      "hit": "[dmg: 2d8 + str] slashing damage.",
+      "hit": "13 (2d8 + 4) slashing damage.",
       "miss": null,
       "attackMod": 7
     }

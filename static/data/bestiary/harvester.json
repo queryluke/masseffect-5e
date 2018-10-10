@@ -10,9 +10,18 @@
   "ac": "16",
   "actions": [
     {
-      "type": "common",
+      "type": "standard",
       "name": "Multiattack",
       "description": "The harvester can use its Frightful Presence. It then makes three attacks: one with its acid spit and two with its stomp."
+    },
+    {
+      "type": "melee",
+      "name": "Stomp",
+      "range": 4,
+      "target": "one target",
+      "hit": "15 (2d6 + 8) piercing damage.",
+      "miss": null,
+      "attackMod": 14
     },
     {
       "type": "ranged",
@@ -31,15 +40,6 @@
       "hit": "If the harvester is within a region that contains Klixen, it begins the fight by droping 1d10 Klixen in a 6m by 20m area.",
       "miss": null,
       "attackMod": null
-    },
-    {
-      "type": "melee",
-      "name": "Stomp",
-      "range": 4,
-      "target": "one target",
-      "hit": "[dmg: 2d6 + str] piercing damage.",
-      "miss": null,
-      "attackMod": 14
     }
   ],
   "alignment": "Unaligned",
