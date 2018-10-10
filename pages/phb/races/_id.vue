@@ -34,7 +34,13 @@
                   br
                   span {{ race.size }}
                 v-flex.xs6.sm3.text-xs-center
-                  strong Sexy Level
+                  v-tooltip(bottom)
+                    span(slot="activator")
+                      strong
+                        a(href="http://www.polygon.com/2017/3/20/14980436/mass-effect-sexiest-character-aliens-ranked" target="_blank").black--text.
+                          Sexy Level
+                        v-icon(size="16").ml-1 help
+                    span What is sexy level? ... A joke. But please read this very scientific article linked here
                   br
                   span {{ race.sexyLevel }}
               div.hr
