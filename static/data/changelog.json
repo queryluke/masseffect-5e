@@ -1,6 +1,15 @@
 [
   {
     "layout": "post",
+    "title": "v0.9.0",
+    "description": "",
+    "date": "2018-08-26T00:00:00.000Z",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/eb/Noveria-Mira_core_activation_mini-game.png/revision/latest?cb=20090220023955",
+    "slug": "0.9.0",
+    "url": "/changelog/0.9.0"
+  },
+  {
+    "layout": "post",
     "title": "v0.8.4",
     "description": "Printable PDF",
     "date": "2018-08-26T00:00:00.000Z",

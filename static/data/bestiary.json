@@ -1805,7 +1805,7 @@
         "description": "As a bonus action, the fenris mech can move up to its speed toward a hostile creature that it can see."
       },
       {
-        "name": "Post-mortem Explosion---fenris_mech",
+        "name": "Post-mortem Explosion",
         "recharge": null,
         "description": "If damage reduces the FENRIS mech to 3 or fewer hit points, it deactivates its primary systems and remains stationary. Any additinonal damage done to the mech while in this state causes it to explode. Any creature within a 4m radius sphere must succeed on a DC 13 Constitution saving throw or take 7 (3d4) lightning damage."
       }
@@ -4828,7 +4828,7 @@
         "description": "The thresher maw makes an acid spit attack."
       },
       {
-        "name": "Move---thresher_maw",
+        "name": "Move",
         "cost": 1,
         "description": "The thresher maw moves up to half its speed."
       },

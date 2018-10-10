@@ -23,7 +23,7 @@ availableClasses:
 - soldier
 advancementOptions:
 - name: Anti-Flesh
-  description: The Beehive deals double damage to {unprotected}, organic targets.
+  description: The Beehive deals double damage to organic targets that have 0 shield points.
 - name: Remote Deploy
   description: As an action, you can set up your Beehive in a separate location. Once
     it is deployed you can use an Attack action to fire it.
