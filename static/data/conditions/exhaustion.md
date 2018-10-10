@@ -15,6 +15,8 @@ Level | Effect
 5 | Speed reduced to 0
 6 | Death
 
+<br>
+
 If an already exhausted creature suffers another effect that causes exhaustion, its current level of exhaustion increases by the amount specified in the effect's description.
 
 A creature suffers the effect of its current level of exhaustion as well as all lower levels. For example, a creature suffering level 2 exhaustion has its speed halved and has disadvantage on ability checks.
