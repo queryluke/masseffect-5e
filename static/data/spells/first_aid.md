@@ -1,7 +1,7 @@
 ---
 id: first_aid
 name: First Aid
-level: x
+level: 1
 type: tech
 attackType: []
 effect:

@@ -1,7 +1,7 @@
 ---
 id: overload
 name: Overload
-level: x
+level: 1
 type: tech
 attackType:
 - DEX Save

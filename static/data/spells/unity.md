@@ -1,7 +1,7 @@
 ---
 id: unity
 name: Unity
-level: x
+level: 1
 type: tech
 attackType: []
 effect:

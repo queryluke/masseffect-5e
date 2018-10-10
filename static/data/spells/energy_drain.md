@@ -1,7 +1,7 @@
 ---
 id: energy_drain
 name: Energy Drain
-level: x
+level: 1
 type: tech
 attackType:
 - Ranged Attack

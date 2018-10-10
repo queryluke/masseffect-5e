@@ -1,7 +1,7 @@
 ---
 id: salvo
 name: Salvo
-level: x
+level: 1
 type: tech
 attackType: []
 effect:

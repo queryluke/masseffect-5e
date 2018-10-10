@@ -1,7 +1,7 @@
 ---
 id: decoy
 name: Decoy
-level: x
+level: 1
 type: tech
 attackType: []
 effect:

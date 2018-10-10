@@ -1,7 +1,7 @@
 ---
 id: cryo_blast
 name: Cryo Blast
-level: x
+level: 1
 type: tech
 attackType:
 - Ranged Attack

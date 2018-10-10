@@ -1,7 +1,7 @@
 ---
 id: defense_matrix
 name: Defense Matrix
-level: x
+level: 1
 type: tech
 attackType: []
 effect:

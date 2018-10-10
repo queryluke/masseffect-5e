@@ -1,7 +1,7 @@
 ---
 id: neural_shock
 name: Neural Shock
-level: x
+level: 1
 type: tech
 attackType:
 - CON Save

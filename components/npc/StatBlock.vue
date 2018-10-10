@@ -79,13 +79,13 @@
   import NpcAttack from '~/components/npc/NpcAttack.vue'
   import NpcGrenade from '~/components/npc/NpcGrenade.vue'
   import NpcWeaponAttack from '~/components/npc/NpcWeaponAttack.vue'
-  import NpcBiotics from '~/components/npc/NpcBiotics.vue'
+  import NpcSpellcasting from '~/components/npc/NpcSpellcasting.vue'
   import NpcLegendaryAction from '~/components/npc/NpcLegendaryAction'
 
   export default {
     components: {
       NpcAttack,
-      NpcBiotics,
+      NpcSpellcasting,
       NpcFeature,
       NpcGrenade,
       NpcWeaponAttack,

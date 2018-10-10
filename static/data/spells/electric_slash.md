@@ -1,7 +1,7 @@
 ---
 id: electric_slash
 name: Electric Slash
-level: x
+level: 1
 type: tech
 attackType:
 - CON Save

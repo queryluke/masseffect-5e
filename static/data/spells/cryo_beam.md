@@ -1,7 +1,7 @@
 ---
 id: cryo_beam
 name: Cryo Beam
-level: x
+level: 1
 type: tech
 attackType:
 - DEX save

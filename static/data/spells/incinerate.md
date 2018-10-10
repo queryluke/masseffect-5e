@@ -1,7 +1,7 @@
 ---
 id: incinerate
 name: Incinerate
-level: x
+level: 1
 type: tech
 attackType:
 - Ranged Attack

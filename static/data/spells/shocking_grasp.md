@@ -1,7 +1,7 @@
 ---
 id: shocking_grasp
 name: Shocking Grasp
-level: x
+level: 1
 type: tech
 attackType: []
 effect:

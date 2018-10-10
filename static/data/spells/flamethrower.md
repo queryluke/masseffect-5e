@@ -1,7 +1,7 @@
 ---
 id: flamethrower
 name: Flamethrower
-level: x
+level: 1
 type: tech
 attackType:
 - DEX Save
