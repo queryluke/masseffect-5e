@@ -1,42 +1,134 @@
 const fs = require('fs')
 const fm = require('front-matter')
-const jsonDirs = ['classes']
+const jsonDirs = ['classes', 'bestiary']
 const mdDirs = ['backgrounds', 'rules', 'grenades', 'tools', 'conditions', 'class_features', 'changelog', 'races', 'feats', 'spells']
 
 /*****
  * Static file generation
  */
 
-// const races = require('./data/races.json')
-// const feats = require('./data/feats.json')
-// // const racialTraits = require('./data/racial_traits.json')
-// // // one time process
-// for (const g of feats.data) {
-//   const id = g.id.replace(/_/g, '-')
-//   // const acText = g.available_classes.split(',').map(c => {
-//   //   return `  - ${c.trim().toLowerCase()}`
-//   // }).join('\n')
-//   // const increaseText = g.increases.split(',').map(c => {
-//   //   return `  - amount: ${c.trim().substring(1, 2)}\n    ability: ${c.trim().substring(3)}`
-//   // }).join('\n')
-//   // const startingFeats = feats.data.filter(f => f[g.id] === 'x').map(f => `  - ${f.id.replace(/_/g, '-')}`).join('\n')
-//   // const traits = racialTraits.data.filter(f => f[g.id] === 'x').map(f => `  - ${f.id.replace(/_/g, '-')}`).join('\n')
-//   // const galaxy = g.galaxy.split(',').map(f => `  - ${f.trim()}`).join('\n')
-//   //
-//   // let text = `---\nid: ${id}\nname: ${g.name}\ngalaxy: \n${galaxy}\nalignment: ${g.alignment}`
-//   // text += `\navailableClasses:\n${acText}\nsexyLevel: ${g.sexy_level}\nabilityScoreIncrease:\n${increaseText}`
-//   // text += `\nsize: ${g.size}\nspeed: ${g.speed}\nsnippet: ${g.snippet}\nstartingCredits: ${g.optional_starting_credits}`
-//   // text += `\nbodyImg: ${g.body}\nimg: ${g.card}\nstartingFeats: \n${startingFeats}\ntraits: \n${traits}\nage: \n---`
-//   const isNew = g.page_number ? 'new: true\n' : ''
-//   let text = `---\nid: ${id}\nname: ${g.name}\nnote: ${g.notes}\nprerequisite: ${g.prerequisite}\n${isNew}---\n`
-//   if (g.description.length > 0) {
-//     for (const line of g.description) {
-//       text += `\n${line.data}`
-//     }
-//   } else {
-//     text += `Player's Handbook, p. ${g.page_number}`
+// const monsters = require('./data/bestiary.json')
+// const feats = require('./data/monster_features.json')
+// const featIds = feats.data.map(f => f.id)
+//
+// // one time process
+// for (const monster of monsters.data) {
+//   const stuff = feats.data.filter(f => monster.featuresActionsReactions.includes(f.id))
+//   const weapons = monster.featuresActionsReactions.filter(f => !featIds.includes(f))
+//   for (const w of weapons) {
+//     monster.actions.push({type: 'weapon', id: w})
 //   }
-//   fs.writeFileSync(`./static/data/feats/${id}.md`, text)
+//
+//   /*
+//   Example die rolls
+//   [
+//     {type: 'attack', hit: 4, damage: "1d6"},
+//     {type: 'attack', hit: 4, damage: "1d6 + 4"},
+//     {type: 'attack', hit: 4, damage: "1d6 + 4 + 3d7"},
+//     {type: 'saving-throw', dc: 17, ability: 'constitution', damage: "3d4", halfDamage: true}
+//   ]
+//   */
+//   for (const s of stuff) {
+//     switch (s.type) {
+//       case 'reaction': {
+//         monster.reactions.push(
+//           {
+//             name: s.name,
+//             recharge: s.recharge,
+//             description: s.description.replace('[name]', monster.name.toLowerCase()).trim()
+//           }
+//         )
+//         break
+//       }
+//       case 'legendary': {
+//         monster.legendaryActions.push(
+//           {
+//             name: s.name,
+//             cost: s.recharge ? parseInt(s.recharge.replace(/\D/g, ''), 10) : 1,
+//             description: s.description.replace(/\[name]/g, monster.name.toLowerCase()).replace(/\[dc]/g, monster.dc).trim()
+//           }
+//         )
+//         break
+//       }
+//       case 'lair': {
+//         monster.lairActions.push(
+//           {
+//             name: s.name,
+//             description: s.description.replace(/\[name]/g, monster.name.toLowerCase()).replace(/\[dc]/g, monster.dc).trim()
+//           }
+//         )
+//         break
+//       }
+//       case 'feature': {
+//         monster.features.push(
+//           {
+//             name: s.name,
+//             recharge: s.recharge,
+//             description: s.description.replace(/\[name]/g, monster.name.toLowerCase()).replace(/\[dc]/g, monster.dc).trim()
+//           }
+//         )
+//         break
+//       }
+//       case 'action': {
+//         monster.actions.push(
+//           {
+//             type: 'standard',
+//             name: s.name,
+//             recharge: s.recharge,
+//             description: s.description.replace(/\[name]/g, monster.name.toLowerCase()).replace(/\[dc]/g, monster.dc).trim()
+//           }
+//         )
+//         break
+//       }
+//       default: {
+//         let score = monster.abilityScores[s.attackMod]
+//         score = score >= 10 ? Math.floor((score - 10) / 2) : Math.ceil((score - 10) / 2)
+//         const toHit = score + parseInt(monster.profBonus, 10)
+//         monster.actions.push(
+//           {
+//             type: s.type,
+//             name: s.name,
+//             range: parseInt(s.range, 10),
+//             target: s.numberOfTargets,
+//             hit: s.description.replace(/\[name]/g, monster.name.toLowerCase()).replace(/\[dc]/g, monster.dc).trim(),
+//             miss: s.miss,
+//             attackMod: toHit
+//           }
+//         )
+//         break
+//       }
+//     }
+//   }
+//   delete monster.featuresActionsReactions
+//   delete monster.xp
+//   delete monster.dc
+//   if (monster.techcasting) {
+//     monster.spellcasting = monster.techcasting
+//   }
+//   delete monster.techcasting
+//   monster.hp = {
+//     numDice: parseInt(monster.hp.numDice),
+//     die: parseInt(monster.hp.die, 10),
+//   }
+//   monster.senses = monster.senses.map(s => {
+//     const pieces = s.trim().split(' ')
+//     return {sense: pieces[0], range: parseInt(pieces[1].replace(/\D/g, ''))}
+//   })
+//   monster.profBonus = parseInt(monster.profBonus)
+//   if (monster.speed) {
+//     monster.speed = monster.speed.split(',').map(s => {
+//       const pieces = s.trim().split(' ')
+//       const type = pieces[1] ? pieces[0] : 'walk'
+//       let range = pieces[1] ? pieces[1] : pieces[0]
+//       range = parseInt(range.replace(/\D/g, ''))
+//       return {type, range}
+//     })
+//   } else {
+//     monster.speed = [{type: 'stationary', range: 0}]
+//   }
+//   const ordered = {}
+//   Object.keys(monster).sort().forEach((key) => { ordered[key] = monster[key] })
+//   fs.writeFileSync(`./static/data/bestiary/${monster.id}.json`, JSON.stringify(ordered, null, 2))
 // }
 
 for (let dir of mdDirs) {
@@ -79,7 +171,7 @@ for (let dir of mdDirs) {
 for (let dir of jsonDirs) {
   const path = `./static/data/${dir}`
   const files = fs.readdirSync(path)
-  const items = files.map(file => JSON.parse(fs.readFileSync(`${path}/${file}`, 'utf8')))
+  let items = files.map(file => JSON.parse(fs.readFileSync(`${path}/${file}`, 'utf8')))
   fs.writeFileSync(`${path}.json`, JSON.stringify(items, null, 2))
 }
 

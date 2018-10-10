@@ -1,0 +1,118 @@
+{
+  "abilityScores": {
+    "str": 20,
+    "dex": 10,
+    "con": 20,
+    "int": 18,
+    "wis": 10,
+    "cha": 9
+  },
+  "ac": "20",
+  "actions": [
+    {
+      "type": "melee",
+      "name": "Smash",
+      "range": 2,
+      "target": "one target",
+      "hit": "18 (3d8 + 5) bludgeoning damage.",
+      "miss": null,
+      "attackMod": 10
+    },
+    {
+      "type": "ranged",
+      "name": "Mass Accelerator Cannon",
+      "range": 120,
+      "target": "one target",
+      "hit": "22 (5d8) radiant damage.",
+      "miss": null,
+      "attackMod": 9
+    },
+    {
+      "type": "standard",
+      "name": "Rocket Launcher",
+      "recharge": "Recharge 5-6",
+      "description": "The atlas targets an area within 60m. Each creature within 6m of the target must make a DC 18 Dexterity saving throw. On a failed save, a creature takes 52 (8d12) thunder damage or half as much damage on a successful one."
+    },
+    {
+      "type": "grenade",
+      "id": "smoke_grenade"
+    }
+  ],
+  "alignment": "Neutral",
+  "barrier": null,
+  "conditionImmunities": [
+    "blinded",
+    "deafened",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "stunned"
+  ],
+  "cr": "14",
+  "damageImmunities": [
+    "poison",
+    "psychic"
+  ],
+  "damageResistances": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "damageVulnerabilities": [
+    "lightning"
+  ],
+  "features": [],
+  "hp": {
+    "numDice": 14,
+    "die": 10
+  },
+  "id": "atlas",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/1/16/ME3_Cerberus_Atlas.png/revision/latest/scale-to-width-down/700?cb=20120322140845",
+  "lairActions": [],
+  "legendaryActions": [
+    {
+      "name": "Eject",
+      "cost": 3,
+      "description": "The pilot of the Atlas ejects, landing in an unoccupied space within 40m. The pilot is an Assault Trooper. The Atlas then self-destructs. Each creature within a 6m radius must make a DC 18 Dexterity saving throw. On a failed save, a creature takes 39 (6d12) thunder damage or half as much on a successful one."
+    },
+    {
+      "name": "Mass Accelerator Cannon Attack",
+      "cost": 1,
+      "description": "The atlas makes a Mass Accelerator Cannon attack."
+    },
+    {
+      "name": "Smash Attack",
+      "cost": 1,
+      "description": "The atlas makes a Smash attack."
+    }
+  ],
+  "name": "Atlas",
+  "profBonus": 5,
+  "reactions": [],
+  "savingThrows": [
+    "str",
+    "int"
+  ],
+  "senses": [
+    {
+      "sense": "darkvision",
+      "range": 20
+    }
+  ],
+  "size": "Large",
+  "skills": [],
+  "sp": {
+    "shields": 50,
+    "regen": "5"
+  },
+  "speed": [
+    {
+      "type": "walk",
+      "range": 6
+    }
+  ],
+  "spellcasting": false,
+  "type": "Synthetic",
+  "unit": "Cerberus"
+}

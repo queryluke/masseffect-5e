@@ -1,0 +1,59 @@
+{
+  "abilityScores": {
+    "str": 12,
+    "dex": 13,
+    "con": 14,
+    "int": 10,
+    "wis": 10,
+    "cha": 10
+  },
+  "ac": "14",
+  "actions": [
+    {
+      "type": "weapon",
+      "id": "stun_baton"
+    },
+    {
+      "type": "weapon",
+      "id": "m-25_hornet"
+    },
+    {
+      "type": "grenade",
+      "id": "frag_grenade"
+    }
+  ],
+  "alignment": "Neutral",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "1",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [],
+  "hp": {
+    "numDice": 6,
+    "die": 8
+  },
+  "id": "assault_trooper",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/1/1c/ME3_Cerberus_Assault_Trooper.png/revision/latest/scale-to-width-down/514?cb=20120322151133",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Assault Trooper",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [
+    "dex"
+  ],
+  "senses": [],
+  "size": "Medium",
+  "skills": [],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Cerberus"
+}

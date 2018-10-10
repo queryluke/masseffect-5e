@@ -1,0 +1,80 @@
+{
+  "abilityScores": {
+    "str": 10,
+    "dex": 16,
+    "con": 8,
+    "int": 11,
+    "wis": 12,
+    "cha": 5
+  },
+  "ac": "13",
+  "actions": [
+    {
+      "type": "ranged",
+      "name": "Pulse Rifle",
+      "range": 60,
+      "target": "one target",
+      "hit": "[dmg: 1d4 + dex] radiant damage.",
+      "miss": null,
+      "attackMod": 5
+    },
+    {
+      "type": "standard",
+      "name": "Tactical Cloak",
+      "recharge": "3/Day",
+      "description": "As a bonus action, the recon drone activates its tactical cloak, becoming {invisible}. When the recon drone makes a melee, ranged, or uses a tech or combat power, tactical cloak ends."
+    }
+  ],
+  "alignment": "Neutral",
+  "barrier": null,
+  "conditionImmunities": [
+    "petrified",
+    "poisoned"
+  ],
+  "cr": "1/8",
+  "damageImmunities": [
+    "poison",
+    "psychic"
+  ],
+  "damageResistances": [],
+  "damageVulnerabilities": [
+    "lightning"
+  ],
+  "features": [],
+  "hp": {
+    "numDice": 2,
+    "die": 6
+  },
+  "id": "recon_drone",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/29/Geth_Recon_Drone_ME2.png/revision/latest/scale-to-width-down/350?cb=20100627032507",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Recon Drone",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [
+    {
+      "sense": "infared",
+      "range": null
+    }
+  ],
+  "size": "Small",
+  "skills": [
+    "perception",
+    "stealth"
+  ],
+  "sp": {
+    "shields": 5,
+    "regen": "5"
+  },
+  "speed": [
+    {
+      "type": "fly",
+      "range": 16
+    }
+  ],
+  "spellcasting": false,
+  "type": "Synthetic",
+  "unit": "Mech"
+}

@@ -1,33 +1,21 @@
 import Vue from 'vue'
 
-import abilityBonus from './abilityBonus'
 import article from './article'
 import featureTitle from './featureTitle'
 import formatDate from './formatDate'
 import groupDigits from './groupDigits'
 import listOfChoices from './listOfChoices'
-import npcBarrier from './npcBarrier'
-import npcDamage from './npcDamage'
-import npcDc from './npcDc'
-import npcName from './npcName'
-import npcSavingThrows from './npcSavingThrows'
 import ordinal from './ordinal'
 import removeActionId from './removeActionId'
 import titlecase from './titlecase'
 import weaponRange from './weaponRange'
 
 const customFilters = {
-  abilityBonus,
   article,
   featureTitle,
   formatDate,
   groupDigits,
   listOfChoices,
-  npcBarrier,
-  npcDamage,
-  npcDc,
-  npcName,
-  npcSavingThrows,
   ordinal,
   removeActionId,
   titlecase,

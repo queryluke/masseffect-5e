@@ -10,53 +10,53 @@
       div.hr
       ul.list-unstyled.pl-0
         li #[strong Armor Class] {{ stats.ac }}
-        li #[strong Hit Points] {{ renderPoints(stats.hp) }}
+        li #[strong Hit Points] {{ hitPoints }}
         li(v-if="stats.sp") #[strong Shield Points] {{ stats.sp.shields }} ({{ stats.sp.regen }} regen)
         li(v-if="stats.barrier") #[strong Barrier] {{ stats.barrier }} {{ stats.barrier | pluralize('tick') }}
-        li #[strong Speed] {{ stats.speed }}
+        li #[strong Speed] {{ speed }}
       div.hr
       v-container.py-0
         v-layout
           v-flex(xs2 v-for="(score, ability) in stats.abilityScores" v-bind:key="ability").text-xs-center
             p.ma-0 #[strong {{ ability.toUpperCase() }}]
-            p.ma-0 {{ score }} ({{ score | abilityBonus }})
+            p.ma-0 {{ score }} ({{ abilityBonus(score)  }})
       div.hr
       ul.list-unstyled.pl-0
-        li(v-if="hasFeature('savingThrows')") #[strong Saving Throws] {{ stats | npcSavingThrows }}
+        li(v-if="hasFeature('savingThrows')") #[strong Saving Throws] {{ savingThrows }}
         li(v-if="skills") #[strong Skills] {{ skills }}
         li(v-if="hasFeature('damageVulnerabilities')") #[strong Damage Vulnerabilities] {{ stats.damageVulnerabilities.join(', ') }}
         li(v-if="hasFeature('damageResistances')") #[strong Damage Resistances] {{ stats.damageResistances.join(', ') }}
         li(v-if="hasFeature('damageImmunities')") #[strong Damage Immunities] {{ stats.damageImmunities.join(', ') }}
         li(v-if="hasFeature('conditionImmunities')") #[strong Condition Immunities] {{ stats.conditionImmunities.join(', ') }}
-        li(v-if="hasFeature('senses')") #[strong Senses] {{ stats.senses.join(', ') }}
-        li #[strong Challenge] {{ stats.cr }} ({{ stats.xp }} XP)
+        li #[strong Senses] {{ senses }}
+        li #[strong Challenge] {{ stats.cr }} ({{ xp(stats.cr) }} XP)
       div.hr
       p(v-for="feature in stats.features" v-bind:key="feature.id")
-        npc-common-feature(:feature="feature" v-bind:npc="stats")
-      npc-biotics(v-if="stats.spellcasting" v-bind:stats="stats")
-      npc-tech(v-if="stats.techcasting" v-bind:stats="stats")
+        npc-feature(:feature="feature")
+      //npc-spellcasting(v-if="stats.spellcasting" v-bind:spellcasting="stats.spellcasting")
+      //npc-tech(v-if="stats.techcasting" v-bind:stats="stats")
       p(v-if="hasFeature('actions')").title.underline-heading.small-caps Actions
-      div(v-for="(action, index) in stats.actions" v-bind:key="index")
-        div(v-if="action.type === 'attack'")
-          npc-attack(:feature="action" v-bind:npc="stats")
-        p(v-else-if="action.type === 'common'")
-          npc-common-feature(:feature="action" v-bind:npc="stats")
+      div(v-for="action in stats.actions" v-bind:key="action.name")
+        npc-feature(v-if="action.type === 'standard'" v-bind:feature="action")
+        npc-weapon-attack(v-else-if="action.type === 'weapon'" v-bind:id="action.id" v-bind:abilityScores="stats.abilityScores" v-bind:profBonus="stats.profBonus")
+        npc-grenade(v-else-if="action.type === 'grenade'" v-bind:id="action.id" v-bind:profBonus="stats.profBonus")
+        npc-attack(v-else v-bind:attack="action" v-bind:abilityScores="stats.abilityScores" v-bind:profBonus="stats.profBonus")
       div(v-if="hasFeature('legendaryActions')")
         p.title.underline-heading.small-caps Legendary Actions
         p.
           The {{ stats.name }} can take 3 legendary actions, choosing from the options below. Only one legendary action can
           be used at a time and only at the end of another creature's turn. The {{ stats.name }} regains spent legendary
           actions at the start of his turn.
-        p(v-for="la in stats.legendaryActions" v-bind:key="la.id")
-          npc-common-feature(:feature="la" v-bind:npc="stats")
-      div(v-if="hasFeature('lairActions')")
+        p(v-for="la in legendaryActions" v-bind:key="la.name")
+          npc-legendary-action(:action="la")
+      //div(v-if="hasFeature('lairActions')")
         p.title.underline-heading.small-caps Lair Actions
         p.
           On initiative count 20 (losing initiative ties), the {{ stats.name }} takes a lair action to cause one of the
           following effects; it can't use the same effect two rounds in a row:
         ul
           li(v-for="(action, index) in stats.lairActions" v-bind:key="index") {{ action.description }}
-      div(v-if="hasFeature('reactions')")
+      //div(v-if="hasFeature('reactions')")
         p.title.underline-heading.small-caps Reactions
         p(v-for="reaction in stats.reactions" v-bind:key="reaction.id")
           npc-common-feature(:feature="reaction" v-bind:npc="stats")
@@ -73,54 +73,142 @@
 <script>
   import {AbilityScoreBonus} from '~/mixins/abilityScoreBonus'
   import {DieFromAverage} from '~/mixins/dieFromAverage'
-  import NpcCommonFeature from '~/components/npc/NpcCommonFeature.vue'
+  import {AverageFromDie} from '~/mixins/averageFromDie'
+  import {xp} from '~/mixins/xp'
+  import NpcFeature from '~/components/npc/NpcFeature.vue'
   import NpcAttack from '~/components/npc/NpcAttack.vue'
+  import NpcGrenade from '~/components/npc/NpcGrenade.vue'
+  import NpcWeaponAttack from '~/components/npc/NpcWeaponAttack.vue'
   import NpcBiotics from '~/components/npc/NpcBiotics.vue'
-  import NpcTech from '~/components/npc/NpcTech.vue'
+  import NpcLegendaryAction from '~/components/npc/NpcLegendaryAction'
 
   export default {
     components: {
       NpcAttack,
-      NpcCommonFeature,
       NpcBiotics,
-      NpcTech
+      NpcFeature,
+      NpcGrenade,
+      NpcWeaponAttack,
+      NpcLegendaryAction
     },
     computed: {
-      skills () {
-        if (this.stats.skills && this.stats.skills.length) {
-          return this.stats.skills.map(skill => {
-            return `${skill.name} +${skill.bonus}`
-          }).join(', ')
+      hitPoints () {
+        let mod = this.abilityScoreBonus(this.stats.abilityScores.con) * this.stats.hp.numDice
+        const average = this.averageFromDie(`${this.stats.hp.numDice}d${this.stats.hp.die}`) + mod
+        if (mod > 0) {
+          mod = ` + ${mod}`
+        } else if (mod < 0) {
+          mod = ` - ${mod * -1}`
+        } else {
+          mod = ''
         }
-        return false
+        return `${average} (${this.stats.hp.numDice}d${this.stats.hp.die}${mod})`
+      },
+      legendaryActions () {
+        if (this.stats.legendaryActions) {
+          return this.stats.legendaryActions.sort((a, b) => {
+            return a.cost === b.cost
+              ? a.name > b.name ? 1 : -1
+              : a.cost > b.cost ? 1 : -1
+          })
+        }
+        return []
+      },
+      passivePerception () {
+        const skillText = this.skills
+        const hasPerception = skillText && skillText.match(/perception/) ? this.stats.profBonus : 0
+        return `Passive Perception ${10 + this.abilityScoreBonus(this.stats.abilityScores.wis) + hasPerception}`
+      },
+      savingThrows () {
+        const abilityMap = {
+          str: 'Strength',
+          dex: 'Dexterity',
+          con: 'Constitution',
+          int: 'Intelligence',
+          wis: 'Wisdom',
+          cha: 'Charisma'
+        }
+        return this.stats.savingThrows.map(st => {
+          const name = abilityMap[st]
+          let bonus = this.abilityScoreBonus(this.stats.abilityScores[st]) + parseInt(this.stats.profBonus, 10)
+          bonus = bonus > 0 ? bonus : 0
+          return `${name} +${bonus}`
+        }).join(', ')
+      },
+      senses () {
+        let senses = ''
+        if (this.stats.senses && this.stats.senses.length > 0) {
+          senses = this.stats.senses.map(s => `${s.sense} ${s.range}m`).join(', ')
+          // return this.stats.senses.map(s => `${s.sense} ${s.range}m`).push(this.passivePerception)
+        }
+        return senses === '' ? this.passivePerception : `${senses}, ${this.passivePerception}`
+      },
+      skills () {
+        if (this.stats.skills.length === 0) {
+          return false
+        }
+        return this.stats.skills.map(skillKey => {
+          let skill = skillKey
+          let bonus = this.stats.profBonus
+          if (skill.match(/\*/)) {
+            bonus *= 2
+            skill = skill.replace('*', '')
+          }
+          const ability = this.skillsMap[skill]
+          if (!ability) {
+            console.log(`could not find ${skill} from ${this.stats.name}`)
+            return false
+          }
+          const score = this.stats.abilityScores[ability]
+          bonus += this.abilityScoreBonus(score)
+          return `${this.$options.filters.titlecase(skill)} +${bonus}`
+        }).join(', ')
+      },
+      speed () {
+        return this.stats.speed.map(speed => {
+          return speed.type === 'walk' ? `${speed.range}m` : `${speed.type} ${speed.range}m`
+        }).join(', ')
       }
     },
     data () {
       return {
-        imageDialog: false
+        imageDialog: false,
+        skillsMap: {
+          acrobatics: 'dex',
+          athletics: 'str',
+          deception: 'cha',
+          electronics: 'int',
+          engineering: 'int',
+          history: 'int',
+          insight: 'wis',
+          intimidation: 'cha',
+          investigation: 'int',
+          medicine: 'wis',
+          perception: 'wis',
+          performance: 'cha',
+          persuasion: 'cha',
+          science: 'int',
+          'sleight of hand': 'dex',
+          stealth: 'dex',
+          survival: 'wis',
+          'vehicle handling': 'dex'
+        }
       }
     },
     methods: {
-      renderPoints (pointObject) {
-        if (pointObject) {
-          let mod = ''
-          if (pointObject.mod > 0) {
-            mod = ` + ${pointObject.mod}`
-          } else if (pointObject.mod < 0) {
-            mod = ` - ${pointObject.mod * -1}`
-          }
-          return `${pointObject.average} (${pointObject.numDice}d${pointObject.die}${mod})`
-        } else {
-          return '0'
-        }
-      },
       hasFeature (feature) {
         return this.stats[feature] && this.stats[feature].length > 0
+      },
+      abilityBonus (score) {
+        const abilityScoreBonus = this.abilityScoreBonus(score)
+        return abilityScoreBonus >= 0 ? `+${abilityScoreBonus}` : abilityScoreBonus
       }
     },
     mixins: [
       AbilityScoreBonus,
-      DieFromAverage
+      AverageFromDie,
+      DieFromAverage,
+      xp
     ],
     props: ['stats']
   }

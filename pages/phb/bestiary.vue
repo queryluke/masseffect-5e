@@ -23,7 +23,7 @@
   import BestiaryList from '~/components/bestiary/BestiaryList.vue'
   import BestiaryFilters from '~/components/bestiary/BestiaryFilters.vue'
   import MobileFilterContainer from '~/components/list/MobileFilterContainer.vue'
-  import {ConfigureMonsters} from '~/mixins/monsters'
+  import items from '~/static/data/bestiary'
   import {CrToInt} from '~/mixins/crToInt'
 
   // State
@@ -80,7 +80,6 @@
     },
     created () {
       const self = this
-      this.items = this.getMonsters()
       const crOptions = new Set()
       const unitOptions = new Set()
       for (const item of this.items) {
@@ -96,7 +95,7 @@
     },
     data () {
       return {
-        items: [],
+        items,
         itemKey: 'monsters'
       }
     },
@@ -112,6 +111,6 @@
     methods: {
       ...mapActions(['updateSearchString'])
     },
-    mixins: [ConfigureMonsters, CrToInt]
+    mixins: [CrToInt]
   }
 </script>

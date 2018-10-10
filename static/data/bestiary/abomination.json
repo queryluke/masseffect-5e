@@ -1,0 +1,72 @@
+{
+  "abilityScores": {
+    "str": 13,
+    "dex": 8,
+    "con": 14,
+    "int": 3,
+    "wis": 6,
+    "cha": 5
+  },
+  "ac": "11",
+  "actions": [
+    {
+      "type": "melee",
+      "name": "Grapple",
+      "range": 2,
+      "target": "one target",
+      "hit": "The creature is grappled (escape DC 11). At the start of the abomination's next turn, it uses Post-Mortem Explosion.",
+      "miss": null,
+      "attackMod": 3
+    }
+  ],
+  "alignment": "Lawful evil",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "1",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Aggressive",
+      "recharge": null,
+      "description": "As a bonus action, the abomination can move up to its speed toward a hostile creature that it can see."
+    },
+    {
+      "name": "Post-Mortem Explosion",
+      "recharge": null,
+      "description": "When the abomination dies, it explodes in a burst of necrotic energy. Each creature within 2m of it must succeed on a DC 14 Dexterity saving throw, taking 28 (8d6) necrotic damage on a failed save, or half as much damage on a successful one. A creature that is grappled by the abomination automatically fails its saving throw."
+    }
+  ],
+  "hp": {
+    "numDice": 4,
+    "die": 8
+  },
+  "id": "abomination",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/8/8e/AbominationME3.jpg/revision/latest/scale-to-width-down/316?cb=20121201211954",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Abomination",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [
+    "wis"
+  ],
+  "senses": [
+    {
+      "sense": "darkvision",
+      "range": 20
+    }
+  ],
+  "size": "Medium",
+  "skills": [],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "spellcasting": false,
+  "type": "Synorg",
+  "unit": "Reaper"
+}

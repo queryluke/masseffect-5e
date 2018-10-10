@@ -1,0 +1,5419 @@
+[
+  {
+    "abilityScores": {
+      "str": 13,
+      "dex": 8,
+      "con": 14,
+      "int": 3,
+      "wis": 6,
+      "cha": 5
+    },
+    "ac": "11",
+    "actions": [
+      {
+        "type": "melee",
+        "name": "Grapple",
+        "range": 2,
+        "target": "one target",
+        "hit": "The creature is grappled (escape DC 11). At the start of the abomination's next turn, it uses Post-Mortem Explosion.",
+        "miss": null,
+        "attackMod": 3
+      }
+    ],
+    "alignment": "Lawful evil",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "1",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Aggressive",
+        "recharge": null,
+        "description": "As a bonus action, the abomination can move up to its speed toward a hostile creature that it can see."
+      },
+      {
+        "name": "Post-Mortem Explosion",
+        "recharge": null,
+        "description": "When the abomination dies, it explodes in a burst of necrotic energy. Each creature within 2m of it must succeed on a DC 14 Dexterity saving throw, taking 28 (8d6) necrotic damage on a failed save, or half as much damage on a successful one. A creature that is grappled by the abomination automatically fails its saving throw."
+      }
+    ],
+    "hp": {
+      "numDice": 4,
+      "die": 8
+    },
+    "id": "abomination",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/8/8e/AbominationME3.jpg/revision/latest/scale-to-width-down/316?cb=20121201211954",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Abomination",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [
+      "wis"
+    ],
+    "senses": [
+      {
+        "sense": "darkvision",
+        "range": 20
+      }
+    ],
+    "size": "Medium",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synorg",
+    "unit": "Reaper"
+  },
+  {
+    "abilityScores": {
+      "str": 15,
+      "dex": 18,
+      "con": 16,
+      "int": 10,
+      "wis": 8,
+      "cha": 12
+    },
+    "ac": "18",
+    "actions": [
+      {
+        "type": "common",
+        "name": "Multiattack",
+        "description": "The adjutant makes two Arm Cannon attacks."
+      },
+      {
+        "type": "ranged",
+        "name": "Arm Cannon",
+        "range": 20,
+        "target": "one target",
+        "hit": "9 (1d10 + 4) piercing damage.",
+        "miss": null,
+        "attackMod": 7
+      },
+      {
+        "type": "melee",
+        "name": "Bash",
+        "range": 2,
+        "target": "one target",
+        "hit": "7 (1d8 + 3) bludgeoning damage.",
+        "miss": null,
+        "attackMod": 5
+      },
+      {
+        "type": "melee",
+        "name": "Reaper Infection",
+        "range": 2,
+        "target": "one organic creature that is grappled by the adjutant, incapacitated, or restrained",
+        "hit": "6 (1d6 + 3) piercing damage plus 10 (3d6) necrotic damage. The target's hit point maximum is reduced by an amount equal to the necrotic damage taken. The reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0. An organic creature slain in this way becomes a Weakened Adjutant and becomes an Adjutant after a long rest.",
+        "miss": null,
+        "attackMod": 5
+      }
+    ],
+    "alignment": "Lawful Evil",
+    "barrier": "6",
+    "conditionImmunities": [],
+    "cr": "6",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Grappler",
+        "recharge": null,
+        "description": "The adjutant has advantage on attack rolls against any creature grappled by it."
+      }
+    ],
+    "hp": {
+      "numDice": 15,
+      "die": 10
+    },
+    "id": "adjutant",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/98/ME3_adjutant.png/revision/latest/scale-to-width-down/700?cb=20121128185320",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Adjutant",
+    "profBonus": 3,
+    "reactions": [],
+    "savingThrows": [
+      "dex"
+    ],
+    "senses": [
+      {
+        "sense": "darkvision",
+        "range": 20
+      }
+    ],
+    "size": "Large",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "spellcasting": {
+      "level": "innate",
+      "dc": 12,
+      "hit": 4,
+      "mod": "Charisma",
+      "spellList": [
+        "3-singularity"
+      ],
+      "spells": [
+        {
+          "level": "3",
+          "spells": [
+            "singularity"
+          ]
+        }
+      ]
+    },
+    "type": "Synorg",
+    "unit": "Cerberus"
+  },
+  {
+    "abilityScores": {
+      "str": 11,
+      "dex": 14,
+      "con": 11,
+      "int": 10,
+      "wis": 10,
+      "cha": 6
+    },
+    "ac": "12",
+    "actions": [
+      {
+        "type": "ranged",
+        "name": "Pulse Cannon",
+        "range": 20,
+        "target": "one target",
+        "hit": "7 (1d10 + 2) radiant damage.",
+        "miss": null,
+        "attackMod": 4
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [
+      "poisoned"
+    ],
+    "cr": "1/2",
+    "damageImmunities": [
+      "poison",
+      "psychic"
+    ],
+    "damageResistances": [],
+    "damageVulnerabilities": [
+      "lightning"
+    ],
+    "features": [],
+    "hp": {
+      "numDice": 3,
+      "die": 6
+    },
+    "id": "assault_drone",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/ea/Defense_Drone.png/revision/latest/scale-to-width-down/606?cb=20120407052056",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Assault Drone",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Small",
+    "skills": [],
+    "sp": {
+      "shields": 5,
+      "regen": "5"
+    },
+    "speed": [
+      {
+        "type": "fly",
+        "range": 10
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synthetic",
+    "unit": "Mech"
+  },
+  {
+    "abilityScores": {
+      "str": 12,
+      "dex": 13,
+      "con": 14,
+      "int": 10,
+      "wis": 10,
+      "cha": 10
+    },
+    "ac": "14",
+    "actions": [
+      {
+        "type": "weapon",
+        "id": "stun_baton"
+      },
+      {
+        "type": "weapon",
+        "id": "m-25_hornet"
+      },
+      {
+        "type": "grenade",
+        "id": "frag_grenade"
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "1",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [],
+    "hp": {
+      "numDice": 6,
+      "die": 8
+    },
+    "id": "assault_trooper",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/1/1c/ME3_Cerberus_Assault_Trooper.png/revision/latest/scale-to-width-down/514?cb=20120322151133",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Assault Trooper",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [
+      "dex"
+    ],
+    "senses": [],
+    "size": "Medium",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Cerberus"
+  },
+  {
+    "abilityScores": {
+      "str": 20,
+      "dex": 10,
+      "con": 20,
+      "int": 18,
+      "wis": 10,
+      "cha": 9
+    },
+    "ac": "20",
+    "actions": [
+      {
+        "type": "melee",
+        "name": "Smash",
+        "range": 2,
+        "target": "one target",
+        "hit": "18 (3d8 + 5) bludgeoning damage.",
+        "miss": null,
+        "attackMod": 10
+      },
+      {
+        "type": "ranged",
+        "name": "Mass Accelerator Cannon",
+        "range": 120,
+        "target": "one target",
+        "hit": "22 (5d8) radiant damage.",
+        "miss": null,
+        "attackMod": 9
+      },
+      {
+        "type": "standard",
+        "name": "Rocket Launcher",
+        "recharge": "Recharge 5-6",
+        "description": "The atlas targets an area within 60m. Each creature within 6m of the target must make a DC 18 Dexterity saving throw. On a failed save, a creature takes 52 (8d12) thunder damage or half as much damage on a successful one."
+      },
+      {
+        "type": "grenade",
+        "id": "smoke_grenade"
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [
+      "blinded",
+      "deafened",
+      "grappled",
+      "paralyzed",
+      "petrified",
+      "poisoned",
+      "stunned"
+    ],
+    "cr": "14",
+    "damageImmunities": [
+      "poison",
+      "psychic"
+    ],
+    "damageResistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "damageVulnerabilities": [
+      "lightning"
+    ],
+    "features": [],
+    "hp": {
+      "numDice": 14,
+      "die": 10
+    },
+    "id": "atlas",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/1/16/ME3_Cerberus_Atlas.png/revision/latest/scale-to-width-down/700?cb=20120322140845",
+    "lairActions": [],
+    "legendaryActions": [
+      {
+        "name": "Eject",
+        "cost": 3,
+        "description": "The pilot of the Atlas ejects, landing in an unoccupied space within 40m. The pilot is an Assault Trooper. The Atlas then self-destructs. Each creature within a 6m radius must make a DC 18 Dexterity saving throw. On a failed save, a creature takes 39 (6d12) thunder damage or half as much on a successful one."
+      },
+      {
+        "name": "Mass Accelerator Cannon Attack",
+        "cost": 1,
+        "description": "The atlas makes a Mass Accelerator Cannon attack."
+      },
+      {
+        "name": "Smash Attack",
+        "cost": 1,
+        "description": "The atlas makes a Smash attack."
+      }
+    ],
+    "name": "Atlas",
+    "profBonus": 5,
+    "reactions": [],
+    "savingThrows": [
+      "str",
+      "int"
+    ],
+    "senses": [
+      {
+        "sense": "darkvision",
+        "range": 20
+      }
+    ],
+    "size": "Large",
+    "skills": [],
+    "sp": {
+      "shields": 50,
+      "regen": "5"
+    },
+    "speed": [
+      {
+        "type": "walk",
+        "range": 6
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synthetic",
+    "unit": "Cerberus"
+  },
+  {
+    "abilityScores": {
+      "str": 11,
+      "dex": 16,
+      "con": 11,
+      "int": 12,
+      "wis": 18,
+      "cha": 20
+    },
+    "ac": "16",
+    "actions": [
+      {
+        "type": "melee",
+        "name": "Impale",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 3d8 + str] piercing damage.",
+        "miss": null,
+        "attackMod": 5
+      },
+      {
+        "type": "standard",
+        "name": "Wail",
+        "recharge": "Recharge 5-6",
+        "description": "The banshee lets out a wail. Each creature within 60m that can hear the wail must make DC 17 Wisdom saving throw. On a failed save a creature is {frightened} for 1 minute."
+      }
+    ],
+    "alignment": "Lawful evil",
+    "barrier": "20",
+    "conditionImmunities": [],
+    "cr": "13",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Barrier",
+        "recharge": "3/Day",
+        "description": "As an action or bonus action, the banshee gains [bt]."
+      }
+    ],
+    "hp": {
+      "numDice": 30,
+      "die": 10
+    },
+    "id": "banshee",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/eb/ME3_Banshee.png/revision/latest/scale-to-width-down/548?cb=20120319210941",
+    "lairActions": [],
+    "legendaryActions": [
+      {
+        "name": "Cast a Spell",
+        "cost": 3,
+        "description": "The banshee casts a spell from its list of prepared spells, using a spell slot as normal."
+      },
+      {
+        "name": "Impale Attack",
+        "cost": 1,
+        "description": "The banshee uses its imaple attack."
+      },
+      {
+        "name": "Wail Attack",
+        "cost": 2,
+        "description": "The banshee uses its wail."
+      }
+    ],
+    "name": "Banshee",
+    "profBonus": 5,
+    "reactions": [
+      {
+        "name": "Teleporting Dodge",
+        "recharge": "1/Turn",
+        "description": "In response to making a Dexterity saving throw, the banshee can use its reaction to teleport up to 4m away. If it is still within the affected area, it has advantage on the saving throw."
+      }
+    ],
+    "savingThrows": [
+      "dex",
+      "wis"
+    ],
+    "senses": [
+      {
+        "sense": "darkvision",
+        "range": 20
+      }
+    ],
+    "size": "Large",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 6
+      }
+    ],
+    "spellcasting": {
+      "level": "15",
+      "dc": 18,
+      "hit": 10,
+      "mod": "Charisma",
+      "spellList": [
+        "charge",
+        "nova",
+        "warp"
+      ],
+      "spells": [
+        {
+          "level": "cantrip",
+          "spells": []
+        },
+        {
+          "level": "1",
+          "slots": "5",
+          "spells": []
+        },
+        {
+          "level": "2",
+          "slots": "5",
+          "spells": []
+        },
+        {
+          "level": "3",
+          "slots": "4",
+          "spells": []
+        },
+        {
+          "level": "4",
+          "slots": "4",
+          "spells": []
+        },
+        {
+          "level": "5",
+          "slots": "2",
+          "spells": []
+        }
+      ]
+    },
+    "type": "Synorg",
+    "unit": "Reaper"
+  },
+  {
+    "abilityScores": {
+      "str": 20,
+      "dex": 12,
+      "con": 18,
+      "int": 9,
+      "wis": 6,
+      "cha": 12
+    },
+    "ac": "18",
+    "actions": [
+      {
+        "type": "common",
+        "name": "Multiattack",
+        "description": "The brute makes two Smash attacks or two Clobber attacks."
+      },
+      {
+        "type": "melee",
+        "name": "Clobber",
+        "range": 2,
+        "target": "one prone creature",
+        "hit": "[dmg: 5d12 + str] bludgeoning damage.",
+        "miss": null,
+        "attackMod": 9
+      },
+      {
+        "type": "melee",
+        "name": "Smash",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 3d8 + str] bludgeoning damage.",
+        "miss": null,
+        "attackMod": 9
+      }
+    ],
+    "alignment": "Lawful evil",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "10",
+    "damageImmunities": [],
+    "damageResistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Blood Frenzy",
+        "recharge": null,
+        "description": "The brute has advantage on melee attack rolls against any creature that doesn't have all its hit points."
+      },
+      {
+        "name": "Brutal Charge",
+        "recharge": null,
+        "description": "If the brute moves at least 6m straight toward a target and then hits it with a smash attack on the same turn, the target takes an extra 7 (2d6) damage. If the target is a creature, it must succeed on a DC 17 Strength saving throw or be knocked prone."
+      }
+    ],
+    "hp": {
+      "numDice": 13,
+      "die": 10
+    },
+    "id": "brute",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/90/ME3_Brute.png/revision/latest/scale-to-width-down/700?cb=20120320023753",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Brute",
+    "profBonus": 4,
+    "reactions": [],
+    "savingThrows": [
+      "str",
+      "con"
+    ],
+    "senses": [
+      {
+        "sense": "darkvision",
+        "range": 20
+      }
+    ],
+    "size": "Large",
+    "skills": [
+      "athletics"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 14
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synorg",
+    "unit": "Reaper"
+  },
+  {
+    "abilityScores": {
+      "str": 13,
+      "dex": 10,
+      "con": 10,
+      "int": 8,
+      "wis": 5,
+      "cha": 3
+    },
+    "ac": "13",
+    "actions": [
+      {
+        "type": "common",
+        "name": "Multiattack",
+        "description": "The cannibal makes 2 Arm Cannon attacks."
+      },
+      {
+        "type": "grenade",
+        "id": "frag_grenade"
+      },
+      {
+        "type": "ranged",
+        "name": "Arm Cannon",
+        "range": 20,
+        "target": "one target",
+        "hit": "[dmg: 1d10 + dex] piercing damage.",
+        "miss": null,
+        "attackMod": 2
+      },
+      {
+        "type": "melee",
+        "name": "Bash",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 1d8 + str] bludgeoning damage.",
+        "miss": null,
+        "attackMod": 3
+      },
+      {
+        "type": "standard",
+        "name": "Cannibalize",
+        "recharge": "1/Day",
+        "description": "The cannibal spends its action consuming a creature with 0 hit points within 2m. At the start of its next turn it gains 5 AC and 1d8 hit points and the consumed creature (including all of its weapons, armor, and items) is completely dissolved. If the creature is a player character, it dies. Cannibals prefer to use their cannibalize action over any other."
+      }
+    ],
+    "alignment": "Lawful evil",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "2",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Pack Tactics",
+        "recharge": null,
+        "description": "The cannibal has advantage on an attack roll against a creature if at least one of the cannibal's allies is within 2m of the creature and the ally isn't incapacitated."
+      }
+    ],
+    "hp": {
+      "numDice": 16,
+      "die": 8
+    },
+    "id": "cannibal",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/1/1b/ME3_Cannibal.png/revision/latest/scale-to-width-down/339?cb=20120320020900",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Cannibal",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [
+      {
+        "sense": "darkvision",
+        "range": 20
+      }
+    ],
+    "size": "Medium",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 8
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synorg",
+    "unit": "Reaper"
+  },
+  {
+    "abilityScores": {
+      "str": 14,
+      "dex": 14,
+      "con": 16,
+      "int": 11,
+      "wis": 9,
+      "cha": 12
+    },
+    "ac": "14",
+    "actions": [
+      {
+        "type": "common",
+        "name": "Multiattack",
+        "description": "The centurion makes two M-96 Mattock attacks or two Stun Baton attacks."
+      },
+      {
+        "type": "weapon",
+        "id": "stun_baton"
+      },
+      {
+        "type": "weapon",
+        "id": "m-96_mattock"
+      },
+      {
+        "type": "grenade",
+        "id": "frag_grenade"
+      },
+      {
+        "type": "grenade",
+        "id": "smoke_grenade"
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "4",
+    "damageImmunities": [],
+    "damageResistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Aggressive",
+        "recharge": null,
+        "description": "As a bonus action, the centurion can move up to its speed toward a hostile creature that it can see."
+      }
+    ],
+    "hp": {
+      "numDice": 7,
+      "die": 8
+    },
+    "id": "centurion",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/3f/ME3_Cerberus_Centurion.png/revision/latest/scale-to-width-down/417?cb=20120322145316",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Centurion",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [
+      {
+        "sense": "infrared",
+        "range": null
+      }
+    ],
+    "size": "Medium",
+    "skills": [],
+    "sp": {
+      "shields": 10,
+      "regen": "10"
+    },
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Cerberus"
+  },
+  {
+    "abilityScores": {
+      "str": 10,
+      "dex": 18,
+      "con": 10,
+      "int": 8,
+      "wis": 8,
+      "cha": 8
+    },
+    "ac": "14",
+    "actions": [
+      {
+        "type": "common",
+        "name": "Multiattack",
+        "description": "The collector assassin makes two Particle Rifle attacks."
+      },
+      {
+        "type": "weapon",
+        "id": "particle_rifle"
+      },
+      {
+        "type": "melee",
+        "name": "Weapon Strike",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 1d6 + str] bludgeoning damage.",
+        "miss": null,
+        "attackMod": 2
+      }
+    ],
+    "alignment": "Lawful evil",
+    "barrier": "4",
+    "conditionImmunities": [],
+    "cr": "3",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Possessed Collector",
+        "recharge": null,
+        "description": "When the collector assassin is possessed by a harbinger it gains temporary hit points equal to its total hit points and 6 barrier ticks. While it has barrier ticks it also gains resistance to bludgeoning, piercing, and slashing damage."
+      }
+    ],
+    "hp": {
+      "numDice": 10,
+      "die": 8
+    },
+    "id": "collector_assassin",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/6/69/Collector_Assassin.png/revision/latest/scale-to-width-down/350?cb=20100623060453",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Collector Assassin",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [
+      "dex"
+    ],
+    "senses": [
+      {
+        "sense": "darkvision",
+        "range": 20
+      }
+    ],
+    "size": "Medium",
+    "skills": [
+      "athletics"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      },
+      {
+        "type": "fly",
+        "range": 6
+      }
+    ],
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Collector"
+  },
+  {
+    "abilityScores": {
+      "str": 15,
+      "dex": 18,
+      "con": 14,
+      "int": 11,
+      "wis": 14,
+      "cha": 14
+    },
+    "ac": "16",
+    "actions": [
+      {
+        "type": "common",
+        "name": "Multiattack",
+        "description": "The collector captain makes two Collector Assault Rifle attacks."
+      },
+      {
+        "type": "weapon",
+        "id": "collector_assault_rifle"
+      },
+      {
+        "type": "standard",
+        "name": "Leadership",
+        "recharge": "Recharges after a Short or Long rest",
+        "description": "For 1 minute, the collector captain can utter a special command or warning whenever a non-hostile creature that it can see within 10m of it makes an attack roll or a saving throw. The creature can add a d4 to its role provided it can hear and understand the collector captain. A creature can benefit from only one Leadership die at a time. This effect ends if the collector captain is incapacitated."
+      },
+      {
+        "type": "standard",
+        "name": "Summon Seeker Swarm",
+        "recharge": "Recharge 5-6",
+        "description": "The collector captain summons 1d4 seeker swarms at an unoccupied space it can see within 10m."
+      }
+    ],
+    "alignment": "Lawful evil",
+    "barrier": "6",
+    "conditionImmunities": [],
+    "cr": "7",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Pack Tactics",
+        "recharge": null,
+        "description": "The collector captain has advantage on an attack roll against a creature if at least one of the collector captain's allies is within 2m of the creature and the ally isn't incapacitated."
+      },
+      {
+        "name": "Possessed Captain",
+        "recharge": null,
+        "description": "When the captain is possessed by a harbinger it gains temporary hit points equal to its total hit points and 8 barrier ticks. While it has barrier ticks it also gains resistance to bludgeoning, piercing, and slashing damage. Instead of summoning a seaker swarm, it summons a seeker plague."
+      }
+    ],
+    "hp": {
+      "numDice": 19,
+      "die": 8
+    },
+    "id": "collector_captain",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/8/8f/Collector_CapME3.jpg/revision/latest/scale-to-width-down/335?cb=20121201212047",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Collector Captain",
+    "profBonus": 3,
+    "reactions": [],
+    "savingThrows": [
+      "dex",
+      "con"
+    ],
+    "senses": [
+      {
+        "sense": "darkvision",
+        "range": 20
+      }
+    ],
+    "size": "Medium",
+    "skills": [
+      "athletics",
+      "science",
+      "survival"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      },
+      {
+        "type": "fly",
+        "range": 6
+      }
+    ],
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Collector"
+  },
+  {
+    "abilityScores": {
+      "str": 10,
+      "dex": 10,
+      "con": 10,
+      "int": 8,
+      "wis": 8,
+      "cha": 8
+    },
+    "ac": "13",
+    "actions": [
+      {
+        "type": "weapon",
+        "id": "collector_assault_rifle"
+      },
+      {
+        "type": "melee",
+        "name": "Weapon Strike",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 1d6 + str] bludgeoning damage.",
+        "miss": null,
+        "attackMod": 2
+      }
+    ],
+    "alignment": "Lawful evil",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "1",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Possessed Collector",
+        "recharge": null,
+        "description": "When the collector drone is possessed by a harbinger it gains temporary hit points equal to its total hit points and 6 barrier ticks. While it has barrier ticks it also gains resistance to bludgeoning, piercing, and slashing damage."
+      }
+    ],
+    "hp": {
+      "numDice": 7,
+      "die": 8
+    },
+    "id": "collector_drone",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/a/a3/Collector.png/revision/latest/scale-to-width-down/331?cb=20100130000709",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Collector Drone",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [
+      "dex"
+    ],
+    "senses": [
+      {
+        "sense": "darkvision",
+        "range": 20
+      }
+    ],
+    "size": "Medium",
+    "skills": [
+      "athletics"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      },
+      {
+        "type": "fly",
+        "range": 6
+      }
+    ],
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Collector"
+  },
+  {
+    "abilityScores": {
+      "str": 10,
+      "dex": 12,
+      "con": 12,
+      "int": 14,
+      "wis": 16,
+      "cha": 18
+    },
+    "ac": "16",
+    "actions": [
+      {
+        "type": "melee",
+        "name": "Bash",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 1d8 + str] bludgeoning damage.",
+        "miss": null,
+        "attackMod": 4
+      }
+    ],
+    "alignment": "Lawful Evil",
+    "barrier": "20",
+    "conditionImmunities": [
+      "charmed"
+    ],
+    "cr": "11",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [],
+    "hp": {
+      "numDice": 25,
+      "die": 10
+    },
+    "id": "collector_general",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/3c/Collectors_Leader_Character_Shot.png/revision/latest/scale-to-width-down/350?cb=20091119091650",
+    "lairActions": [],
+    "legendaryActions": [
+      {
+        "name": "Assume Control",
+        "cost": 2,
+        "description": "The harbinger targets a friendly collector that is not incapacitated. The target creature becomes possessed and gains the benefits listed on its monster sheet. The harbinger can only assume control of one creature at a time. While it is assuming control, its speed becomes 0, attacking creatures have advantage, it automatically fails Strength and Dexterity saving throws, and it cannot cast any spells. If the harbinger is incapacitated, assume control ends. The harbinger can use its bonus action to end assume control. As a result, the targeted creature loses all benefits including any temporary hit points and barrier ticks."
+      },
+      {
+        "name": "Bash Attack",
+        "cost": 1,
+        "description": "The collector general makes one bash attack."
+      },
+      {
+        "name": "Cast a Spell",
+        "cost": 3,
+        "description": "The collector general casts a spell from its list of prepared spells, using a spell slot as normal."
+      }
+    ],
+    "name": "Collector General",
+    "profBonus": 4,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [
+      {
+        "sense": "darkvision",
+        "range": 20
+      }
+    ],
+    "size": "Large",
+    "skills": [
+      "history",
+      "perception",
+      "science",
+      "persuasion",
+      "deception"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "spellcasting": {
+      "level": "12",
+      "dc": 16,
+      "hit": 8,
+      "mod": "Charisma",
+      "spellList": [
+        "dark_channel",
+        "pull",
+        "reave",
+        "shockwave",
+        "singularity"
+      ],
+      "spells": [
+        {
+          "level": "cantrip",
+          "spells": []
+        },
+        {
+          "level": "1",
+          "slots": "5",
+          "spells": []
+        },
+        {
+          "level": "2",
+          "slots": "4",
+          "spells": []
+        },
+        {
+          "level": "3",
+          "slots": "3",
+          "spells": []
+        },
+        {
+          "level": "4",
+          "slots": "2",
+          "spells": []
+        }
+      ]
+    },
+    "type": "Organic",
+    "unit": "Collector"
+  },
+  {
+    "abilityScores": {
+      "str": 16,
+      "dex": 15,
+      "con": 16,
+      "int": 8,
+      "wis": 8,
+      "cha": 9
+    },
+    "ac": "16",
+    "actions": [
+      {
+        "type": "common",
+        "name": "Multiattack",
+        "description": "The collector guardian makes two Collector Assault Rifle attacks."
+      },
+      {
+        "type": "weapon",
+        "id": "collector_assault_rifle"
+      },
+      {
+        "type": "standard",
+        "name": "Hex Shield",
+        "recharge": "1/Day",
+        "description": "As a bonus action, the collector guardian generates a 2m tall and wide, hexagon-shaped shield with 5AC and 50 shield points which offers full-cover."
+      },
+      {
+        "type": "melee",
+        "name": "Weapon Strike",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 1d6 + str] bludgeoning damage.",
+        "miss": null,
+        "attackMod": 5
+      }
+    ],
+    "alignment": "Lawful evil",
+    "barrier": "5",
+    "conditionImmunities": [],
+    "cr": "4",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Possessed Collector",
+        "recharge": null,
+        "description": "When the collector guardian is possessed by a harbinger it gains temporary hit points equal to its total hit points and 6 barrier ticks. While it has barrier ticks it also gains resistance to bludgeoning, piercing, and slashing damage."
+      },
+      {
+        "name": "Warp Ammo",
+        "recharge": null,
+        "description": "Successful ranged attacks on a target with an active barrier will strip away 2 barrier ticks and reduce the damage reduction by half. Warp ammo can detonate primed targets."
+      }
+    ],
+    "hp": {
+      "numDice": 10,
+      "die": 8
+    },
+    "id": "collector_guardian",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/c/ce/Collector_Guardian.png/revision/latest/scale-to-width-down/350?cb=20100623060233",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Collector Guardian",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [
+      "con"
+    ],
+    "senses": [
+      {
+        "sense": "darkvision",
+        "range": 20
+      }
+    ],
+    "size": "Medium",
+    "skills": [
+      "athletics"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      },
+      {
+        "type": "fly",
+        "range": 6
+      }
+    ],
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Collector"
+  },
+  {
+    "abilityScores": {
+      "str": 13,
+      "dex": 14,
+      "con": 12,
+      "int": 11,
+      "wis": 12,
+      "cha": 8
+    },
+    "ac": "15",
+    "actions": [
+      {
+        "type": "grenade",
+        "id": "frag_grenade"
+      },
+      {
+        "type": "weapon",
+        "id": "collector_smg"
+      },
+      {
+        "type": "ranged",
+        "name": "Collector Web",
+        "range": 10,
+        "target": "one target",
+        "hit": "The target is restrained by organic webbing. As an action, the restrained target can make a DC 14 Strength check, bursting the webbing on a success. The webbing can also be attacked and destroyed (AC 10; hp 5; vulnerability to fire damage; immunity to bludgeoning, poison, and psychic damage).",
+        "miss": null,
+        "attackMod": 4
+      },
+      {
+        "type": "melee",
+        "name": "Weapon Strike",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 1d6 + str] bludgeoning damage.",
+        "miss": null,
+        "attackMod": 3
+      }
+    ],
+    "alignment": "Lawful evil",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "3",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Possessed Collector",
+        "recharge": null,
+        "description": "When the collector trooper is possessed by a harbinger it gains temporary hit points equal to its total hit points and 6 barrier ticks. While it has barrier ticks it also gains resistance to bludgeoning, piercing, and slashing damage."
+      }
+    ],
+    "hp": {
+      "numDice": 14,
+      "die": 8
+    },
+    "id": "collector_trooper",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/d/d3/Collector_TrooperME3.jpg/revision/latest/scale-to-width-down/350?cb=20121201212208",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Collector Trooper",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [
+      "dex"
+    ],
+    "senses": [
+      {
+        "sense": "darkvision",
+        "range": 20
+      }
+    ],
+    "size": "Medium",
+    "skills": [
+      "athletics"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      },
+      {
+        "type": "fly",
+        "range": 6
+      }
+    ],
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Collector"
+  },
+  {
+    "abilityScores": {
+      "str": 12,
+      "dex": 14,
+      "con": 12,
+      "int": 10,
+      "wis": 8,
+      "cha": 6
+    },
+    "ac": "13",
+    "actions": [
+      {
+        "type": "ranged",
+        "name": "Shock Attack",
+        "range": 10,
+        "target": "one target",
+        "hit": "[dmg: 1d6 + dex] lightning damage.",
+        "miss": null,
+        "attackMod": 4
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [
+      "petrified",
+      "poisoned"
+    ],
+    "cr": "1/4",
+    "damageImmunities": [
+      "poison",
+      "psychic"
+    ],
+    "damageResistances": [],
+    "damageVulnerabilities": [
+      "lightning"
+    ],
+    "features": [],
+    "hp": {
+      "numDice": 3,
+      "die": 6
+    },
+    "id": "combat_drone",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/4/44/Me3_combat_drone.png/revision/latest/scale-to-width-down/480?cb=20120720164039",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Combat Drone",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Small",
+    "skills": [],
+    "sp": {
+      "shields": 10,
+      "regen": "5"
+    },
+    "speed": [
+      {
+        "type": "fly",
+        "range": 14
+      }
+    ],
+    "spellcasting": {
+      "level": "innate",
+      "perDay": "3",
+      "tpSpent": "1",
+      "dc": 10,
+      "hit": 2,
+      "spells": [
+        "sabotage"
+      ]
+    },
+    "type": "Synthetic",
+    "unit": "Mech"
+  },
+  {
+    "abilityScores": {
+      "str": 11,
+      "dex": 16,
+      "con": 12,
+      "int": 16,
+      "wis": 13,
+      "cha": 16
+    },
+    "ac": "14",
+    "actions": [
+      {
+        "type": "common",
+        "name": "Multiattack",
+        "description": "The combat engineer makes two M-5 Phalanx attacks."
+      },
+      {
+        "type": "weapon",
+        "id": "m-5_phalanx"
+      },
+      {
+        "type": "standard",
+        "name": "Repair",
+        "recharge": null,
+        "description": "The combat engineer uses its action to repair a friendly, synthetic target within 2m for 1d8 hit points."
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "3",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Deploy Turret",
+        "recharge": null,
+        "description": "The combat engineer is equipped with 1 Turret (see Bestiary). As an action, the combat engineer can deploy the Turret on a level surface within 2m. The Turret is controlled by the combat engineer and takes its turn at the end of the combat engineer's turn. The combat engineer can use an action to stow the Turret, placing it at another location with a subsequent action."
+      }
+    ],
+    "hp": {
+      "numDice": 14,
+      "die": 8
+    },
+    "id": "combat_engineer",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/5/54/ME3_Cerberus_Combat_Engineer.png/revision/latest/scale-to-width-down/214?cb=20120322145158",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Combat Engineer",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Medium",
+    "skills": [
+      "electronics"
+    ],
+    "sp": {
+      "shields": 20,
+      "regen": "10"
+    },
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Cerberus"
+  },
+  {
+    "abilityScores": {
+      "str": 15,
+      "dex": 10,
+      "con": 14,
+      "int": 12,
+      "wis": 10,
+      "cha": 7
+    },
+    "ac": "14",
+    "actions": [
+      {
+        "type": "melee",
+        "name": "Bash",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 1d8 + str] bludgeoning damage.",
+        "miss": null,
+        "attackMod": 4
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [
+      "petrified",
+      "poisoned"
+    ],
+    "cr": "1/2",
+    "damageImmunities": [
+      "poison",
+      "psychic"
+    ],
+    "damageResistances": [],
+    "damageVulnerabilities": [
+      "lightning"
+    ],
+    "features": [],
+    "hp": {
+      "numDice": 4,
+      "die": 6
+    },
+    "id": "defense_drone",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/e0/Info_Drone.png/revision/latest/scale-to-width-down/531?cb=20100908213419",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Defense Drone",
+    "profBonus": 2,
+    "reactions": [
+      {
+        "name": "Guard",
+        "recharge": null,
+        "description": "When a creature the defense drone can see attacks a target other than itself that is within 2m of it, it can use its reaction to impose disadvantage on the attack roll."
+      }
+    ],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Small",
+    "skills": [],
+    "sp": {
+      "shields": 5,
+      "regen": "5"
+    },
+    "speed": [
+      {
+        "type": "fly",
+        "range": 10
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synthetic",
+    "unit": "Mech"
+  },
+  {
+    "abilityScores": {
+      "str": 8,
+      "dex": 14,
+      "con": 8,
+      "int": 8,
+      "wis": 8,
+      "cha": 8
+    },
+    "ac": "8",
+    "actions": [
+      {
+        "type": "standard",
+        "name": "Kamikaze Attack",
+        "recharge": null,
+        "description": "When the disruption drone is within 2m of an enemy creature, it explodes. Each creature within a 2m radius must make a DC 13 Dexterity saving throw. On a failed save, a creature takes 1d12 thunder damage, or half as much on a successful one."
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [
+      "petrified",
+      "poisoned"
+    ],
+    "cr": "1/8",
+    "damageImmunities": [
+      "poison",
+      "psychic"
+    ],
+    "damageResistances": [],
+    "damageVulnerabilities": [
+      "lightning"
+    ],
+    "features": [],
+    "hp": {
+      "numDice": 2,
+      "die": 6
+    },
+    "id": "disruption_drone",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/b/b6/ME3_disruption_drone.png/revision/latest/scale-to-width-down/350?cb=20130308125421",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Disruption Drone",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Small",
+    "skills": [],
+    "speed": [
+      {
+        "type": "fly",
+        "range": 16
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synthetic",
+    "unit": "Mech"
+  },
+  {
+    "abilityScores": {
+      "str": 12,
+      "dex": 18,
+      "con": 13,
+      "int": 14,
+      "wis": 12,
+      "cha": 13
+    },
+    "ac": "16",
+    "actions": [
+      {
+        "type": "common",
+        "name": "Multiattack",
+        "description": "The dragoon makes three Omni-whip attacks"
+      },
+      {
+        "type": "weapon",
+        "id": "omni-whip"
+      },
+      {
+        "type": "weapon",
+        "id": "m-25_hornet"
+      }
+    ],
+    "alignment": "Neutral Evil",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "5",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Aggressive",
+        "recharge": null,
+        "description": "As a bonus action, the dragoon can move up to its speed toward a hostile creature that it can see."
+      }
+    ],
+    "hp": {
+      "numDice": 20,
+      "die": 8
+    },
+    "id": "dragoon",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/01/Cerberus_dragoon_smash.png/revision/latest?cb=20121013090412",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Dragoon",
+    "profBonus": 3,
+    "reactions": [],
+    "savingThrows": [
+      "dex"
+    ],
+    "senses": [],
+    "size": "Medium",
+    "skills": [
+      "acrobatics"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 12
+      }
+    ],
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Cerberus"
+  },
+  {
+    "abilityScores": {
+      "str": 20,
+      "dex": 4,
+      "con": 24,
+      "int": 16,
+      "wis": 18,
+      "cha": 8
+    },
+    "ac": "20",
+    "actions": [
+      {
+        "type": "ranged",
+        "name": "Mass Accelerator Cannon",
+        "range": 120,
+        "target": "one target",
+        "hit": "[dmg: 5d8] radiant damage.",
+        "miss": null,
+        "attackMod": 6
+      }
+    ],
+    "alignment": "Lawful Neutral",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "6",
+    "damageImmunities": [],
+    "damageResistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Slow Moving",
+        "recharge": null,
+        "description": "The elcor has disadvantage on all Dexterity saving throws and skill checks."
+      }
+    ],
+    "hp": {
+      "numDice": 10,
+      "die": 10
+    },
+    "id": "elcor",
+    "image": "https://pre00.deviantart.net/0c66/th/pre/f/2012/139/9/3/mass_effect__elcor_warriors_by_lipatov-d50d2p0.jpg",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Elcor",
+    "profBonus": 3,
+    "reactions": [],
+    "savingThrows": [
+      "str",
+      "con"
+    ],
+    "senses": [],
+    "size": "Large",
+    "skills": [
+      "history",
+      "insight"
+    ],
+    "sp": {
+      "shields": 50,
+      "regen": "10"
+    },
+    "speed": [
+      {
+        "type": "walk",
+        "range": 4
+      }
+    ],
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Alien"
+  },
+  {
+    "abilityScores": {
+      "str": 12,
+      "dex": 16,
+      "con": 11,
+      "int": 10,
+      "wis": 14,
+      "cha": 8
+    },
+    "ac": "14",
+    "actions": [
+      {
+        "type": "melee",
+        "name": "Pounce---fenris_mech",
+        "range": 4,
+        "target": "one target",
+        "hit": "[dmg: 2d6 + str] bludgeoning damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
+        "miss": null,
+        "attackMod": 3
+      },
+      {
+        "type": "melee",
+        "name": "Stun---fenris_mech",
+        "range": 2,
+        "target": "one prone target",
+        "hit": "[dmg: 2d8] lightning damage. If the target is a creature, it must succeed on a DC 13 Constitution saving throw or be stunned until the end of its next turn.",
+        "miss": null,
+        "attackMod": 3
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [
+      "petrified",
+      "poisoned"
+    ],
+    "cr": "1/2",
+    "damageImmunities": [
+      "poison",
+      "psychic"
+    ],
+    "damageResistances": [],
+    "damageVulnerabilities": [
+      "lightning"
+    ],
+    "features": [
+      {
+        "name": "Aggressive",
+        "recharge": null,
+        "description": "As a bonus action, the fenris mech can move up to its speed toward a hostile creature that it can see."
+      },
+      {
+        "name": "Post-mortem Explosion---fenris_mech",
+        "recharge": null,
+        "description": "If damage reduces the FENRIS mech to 3 or fewer hit points, it deactivates its primary systems and remains stationary. Any additinonal damage done to the mech while in this state causes it to explode. Any creature within a 4m radius sphere must succeed on a DC 13 Constitution saving throw or take 7 (3d4) lightning damage."
+      }
+    ],
+    "hp": {
+      "numDice": 10,
+      "die": 6
+    },
+    "id": "fenris_mech",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/32/ME2_FENRIS_Mech.png/revision/latest/scale-to-width-down/350?cb=20120419003938",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "FENRIS Mech",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [
+      "dex"
+    ],
+    "senses": [
+      {
+        "sense": "infrared",
+        "range": null
+      }
+    ],
+    "size": "Small",
+    "skills": [
+      "perception"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 14
+      }
+    ],
+    "spellcasting": {
+      "level": "innate",
+      "perDay": "10",
+      "tpSpent": "2",
+      "dc": 10,
+      "hit": 2,
+      "spells": [
+        "shocking_grasp"
+      ]
+    },
+    "type": "Synthetic",
+    "unit": "Mech"
+  },
+  {
+    "abilityScores": {
+      "str": 22,
+      "dex": 10,
+      "con": 25,
+      "int": 18,
+      "wis": 6,
+      "cha": 8
+    },
+    "ac": "15",
+    "actions": [
+      {
+        "type": "ranged",
+        "name": "Mass Accelerator Machinegun---geth_armature",
+        "range": 120,
+        "target": "one target",
+        "hit": "19 (3d12) piercing damage and 19 (3d12) radiant damage. The geth armature can make a burst fire attack instead.",
+        "miss": null,
+        "attackMod": 9
+      },
+      {
+        "type": "standard",
+        "name": "Siege Cannon",
+        "recharge": null,
+        "description": "The geth armature targets a creature within 60m and launches a homing projectile. The target must make a DC 18 Dexterity saving throw. On a failed save, the target takes 55 (10d10) radiant damage, or half as much on a successful one."
+      },
+      {
+        "type": "standard",
+        "name": "Siege Pulse",
+        "recharge": "Recharge 6",
+        "description": "The geth armature releases a burst of electrostatic energy that disrupts armor biofeedback. Each creature within a 6m radius must make a DC 18 Constitution saving throw. On a failed save, a creature wearing armor looses 1d4 to their Strength and Dexterity ability scores. This loss ends if the armor is repaired, removed, or replaced."
+      }
+    ],
+    "alignment": "Lawful Neutral",
+    "barrier": null,
+    "conditionImmunities": [
+      "charmed",
+      "deafened",
+      "frightened",
+      "frozen",
+      "grappled",
+      "invisible",
+      "lifted",
+      "paralyzed",
+      "petrified",
+      "poisoned",
+      "restrained",
+      "stunned"
+    ],
+    "cr": "15",
+    "damageImmunities": [
+      "poison",
+      "psychic"
+    ],
+    "damageResistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "damageVulnerabilities": [
+      "lightning"
+    ],
+    "features": [
+      {
+        "name": "Repair Protocol",
+        "recharge": "3/Day",
+        "description": "If the geth armature starts its turn with 0 shield points, it activates its repair protocol, collapsing into a compact shell. Until the start of its next turn, its speed becomes 0m and it can take no Actions, but it is immune to all damage. At the start of its next turn, it regains 50 shields points."
+      }
+    ],
+    "hp": {
+      "numDice": 10,
+      "die": 12
+    },
+    "id": "geth_armature",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/a/a9/ArmatureLanding.png/revision/latest/scale-to-width-down/350?cb=20090125024722",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Geth Armature",
+    "profBonus": 5,
+    "reactions": [],
+    "savingThrows": [
+      "int"
+    ],
+    "senses": [
+      {
+        "sense": "darkvision",
+        "range": 20
+      },
+      {
+        "sense": "infrared",
+        "range": null
+      }
+    ],
+    "size": "Huge",
+    "skills": [
+      "perception"
+    ],
+    "sp": {
+      "shields": 100,
+      "regen": "0"
+    },
+    "speed": [
+      {
+        "type": "walk",
+        "range": 6
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synthetic",
+    "unit": "Geth"
+  },
+  {
+    "abilityScores": {
+      "str": 6,
+      "dex": 18,
+      "con": 6,
+      "int": 14,
+      "wis": 10,
+      "cha": 8
+    },
+    "ac": "16",
+    "actions": [
+      {
+        "type": "grenade",
+        "id": "multi-frag_grenade"
+      }
+    ],
+    "alignment": "Lawful Neutral",
+    "barrier": null,
+    "conditionImmunities": [
+      "petrified",
+      "poisoned"
+    ],
+    "cr": "2",
+    "damageImmunities": [
+      "poison",
+      "psychic"
+    ],
+    "damageResistances": [],
+    "damageVulnerabilities": [
+      "lightning"
+    ],
+    "features": [],
+    "hp": {
+      "numDice": 10,
+      "die": 6
+    },
+    "id": "geth_bomber",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/01/ME3_geth_bomber_AAA.png/revision/latest/scale-to-width-down/700?cb=20130313175937",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Geth Bomber",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [
+      "dex"
+    ],
+    "senses": [
+      {
+        "sense": "darkvision",
+        "range": 60
+      }
+    ],
+    "size": "Small",
+    "skills": [
+      "perception"
+    ],
+    "sp": {
+      "shields": 15,
+      "regen": "5"
+    },
+    "speed": [
+      {
+        "type": "fly",
+        "range": 10
+      }
+    ],
+    "spellcasting": {
+      "level": "innate",
+      "perDay": null,
+      "tpSpent": "2",
+      "dc": 12,
+      "hit": 4,
+      "spells": [
+        "overload"
+      ]
+    },
+    "type": "Synthetic",
+    "unit": "Geth"
+  },
+  {
+    "abilityScores": {
+      "str": 28,
+      "dex": 8,
+      "con": 28,
+      "int": 20,
+      "wis": 6,
+      "cha": 8
+    },
+    "ac": "17",
+    "actions": [
+      {
+        "type": "ranged",
+        "name": "Mass Accelerator Machinegun---geth_colossus",
+        "range": 120,
+        "target": "one target",
+        "hit": "19 (3d12) piercing damage and 19 (3d12) radiant damage. The geth colossus can make a burst fire attack instead.",
+        "miss": null,
+        "attackMod": 12
+      },
+      {
+        "type": "standard",
+        "name": "Siege Cannon",
+        "recharge": null,
+        "description": "The geth colossus targets a creature within 60m and launches a homing projectile. The target must make a DC 20 Dexterity saving throw. On a failed save, the target takes 55 (10d10) radiant damage, or half as much on a successful one."
+      },
+      {
+        "type": "standard",
+        "name": "Siege Pulse",
+        "recharge": "Recharge 6",
+        "description": "The geth colossus releases a burst of electrostatic energy that disrupts armor biofeedback. Each creature within a 6m radius must make a DC 20 Constitution saving throw. On a failed save, a creature wearing armor looses 1d4 to their Strength and Dexterity ability scores. This loss ends if the armor is repaired, removed, or replaced."
+      }
+    ],
+    "alignment": "Lawful Neutral",
+    "barrier": null,
+    "conditionImmunities": [
+      "charmed",
+      "deafened",
+      "frightened",
+      "frozen",
+      "grappled",
+      "invisible",
+      "lifted",
+      "paralyzed",
+      "petrified",
+      "poisoned",
+      "restrained",
+      "stunned"
+    ],
+    "cr": "21",
+    "damageImmunities": [
+      "poison",
+      "psychic"
+    ],
+    "damageResistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "damageVulnerabilities": [
+      "lightning"
+    ],
+    "features": [
+      {
+        "name": "Repair Protocol",
+        "recharge": "3/Day",
+        "description": "If the geth colossus starts its turn with 0 shield points, it activates its repair protocol, collapsing into a compact shell. Until the start of its next turn, its speed becomes 0m and it can take no Actions, but it is immune to all damage. At the start of its next turn, it regains 50 shields points."
+      }
+    ],
+    "hp": {
+      "numDice": 9,
+      "die": 20
+    },
+    "id": "geth_colossus",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/6/64/Geth_Colossus_01.jpg/revision/latest/scale-to-width-down/350?cb=20080922231050",
+    "lairActions": [],
+    "legendaryActions": [
+      {
+        "name": "Mass Accelerator Machinegun Attack",
+        "cost": 1,
+        "description": "The geth colossus makes a Mass Accelerator Machinegun attack."
+      },
+      {
+        "name": "Siege Cannon Attack",
+        "cost": 1,
+        "description": "The geth colossus makes a Siege Cannon attack."
+      },
+      {
+        "name": "Siege Pulse Attack",
+        "cost": 2,
+        "description": "The geth colossus uses its Siege Pulse"
+      }
+    ],
+    "name": "Geth Colossus",
+    "profBonus": 7,
+    "reactions": [],
+    "savingThrows": [
+      "int"
+    ],
+    "senses": [
+      {
+        "sense": "darkvision",
+        "range": 20
+      },
+      {
+        "sense": "infrared",
+        "range": null
+      }
+    ],
+    "size": "Gargantuan",
+    "skills": [
+      "perception"
+    ],
+    "sp": {
+      "shields": 100,
+      "regen": "0"
+    },
+    "speed": [
+      {
+        "type": "walk",
+        "range": 6
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synthetic",
+    "unit": "Geth"
+  },
+  {
+    "abilityScores": {
+      "str": 14,
+      "dex": 14,
+      "con": 16,
+      "int": 16,
+      "wis": 12,
+      "cha": 10
+    },
+    "ac": "14",
+    "actions": [
+      {
+        "type": "common",
+        "name": "Multiattack",
+        "description": "The geth hunter makes two Geth Plasma Shotgun attacks."
+      },
+      {
+        "type": "weapon",
+        "id": "geth_plasma_shotgun"
+      },
+      {
+        "type": "standard",
+        "name": "Tactical Cloak",
+        "recharge": "3/Day",
+        "description": "As a bonus action, the geth hunter activates its tactical cloak, becoming {invisible}. When the geth hunter makes a melee, ranged, or uses a tech or combat power, tactical cloak ends."
+      },
+      {
+        "type": "melee",
+        "name": "Weapon Strike",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 1d6 + str] bludgeoning damage.",
+        "miss": null,
+        "attackMod": 4
+      }
+    ],
+    "alignment": "Lawful Neutral",
+    "barrier": null,
+    "conditionImmunities": [
+      "petrified",
+      "poisoned"
+    ],
+    "cr": "4",
+    "damageImmunities": [
+      "poison",
+      "psychic"
+    ],
+    "damageResistances": [],
+    "damageVulnerabilities": [
+      "lightning"
+    ],
+    "features": [
+      {
+        "name": "Assassination",
+        "recharge": null,
+        "description": "Once per turn, the geth hunter can deal an extra 7 (2d6) damage to one creature it hits with an attack if it has advantage on the attack roll. The attack must be made with a melee or ranged weapon."
+      }
+    ],
+    "hp": {
+      "numDice": 8,
+      "die": 8
+    },
+    "id": "geth_hunter",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/b/be/ME3_Geth_Hunter.png/revision/latest/scale-to-width-down/300?cb=20120326002931",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Geth Hunter",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [
+      "int"
+    ],
+    "senses": [
+      {
+        "sense": "darkvision",
+        "range": 60
+      }
+    ],
+    "size": "Medium",
+    "skills": [
+      "electronics",
+      "stealth"
+    ],
+    "sp": {
+      "shields": 20,
+      "regen": "10"
+    },
+    "speed": [
+      {
+        "type": "walk",
+        "range": 14
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synthetic",
+    "unit": "Geth"
+  },
+  {
+    "abilityScores": {
+      "str": 20,
+      "dex": 11,
+      "con": 18,
+      "int": 13,
+      "wis": 8,
+      "cha": 4
+    },
+    "ac": "15",
+    "actions": [
+      {
+        "type": "common",
+        "name": "Multiattack",
+        "description": "The geth juggernaut makes two Bash attacks."
+      },
+      {
+        "type": "weapon",
+        "id": "geth_plasma_smg"
+      },
+      {
+        "type": "melee",
+        "name": "Bash---geth_juggernaut",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 2d8 + str] bludgeoning damage.",
+        "miss": null,
+        "attackMod": 8
+      }
+    ],
+    "alignment": "Lawful Neutral",
+    "barrier": null,
+    "conditionImmunities": [
+      "petrified",
+      "poisoned"
+    ],
+    "cr": "8",
+    "damageImmunities": [
+      "poison",
+      "psychic"
+    ],
+    "damageResistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "damageVulnerabilities": [
+      "lightning"
+    ],
+    "features": [
+      {
+        "name": "Aggressive",
+        "recharge": null,
+        "description": "As a bonus action, the geth juggernaut can move up to its speed toward a hostile creature that it can see."
+      }
+    ],
+    "hp": {
+      "numDice": 14,
+      "die": 10
+    },
+    "id": "geth_juggernaut",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/a/a4/Geth_Destroyer_ME2.png/revision/latest/scale-to-width-down/350?cb=20100625040647",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Geth Juggernaut",
+    "profBonus": 3,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Large",
+    "skills": [],
+    "sp": {
+      "shields": 20,
+      "regen": "5"
+    },
+    "speed": [
+      {
+        "type": "walk",
+        "range": 12
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synthetic",
+    "unit": "Geth"
+  },
+  {
+    "abilityScores": {
+      "str": 16,
+      "dex": 18,
+      "con": 16,
+      "int": 14,
+      "wis": 10,
+      "cha": 10
+    },
+    "ac": "18",
+    "actions": [
+      {
+        "type": "common",
+        "name": "Multiattack",
+        "description": "The geth prime makes two Geth Pulse Rifle attacks."
+      },
+      {
+        "type": "weapon",
+        "id": "geth_pulse_rifle"
+      },
+      {
+        "type": "standard",
+        "name": "Radar Jamming",
+        "recharge": null,
+        "description": "The geth prime releases an emp burst that temporarily disables targeting systems. Each hostile creature within a 10m radius has disadvantage on ranged weapon attack rolls until the start of the geth prime's next turn."
+      },
+      {
+        "type": "standard",
+        "name": "Summon Combat Drone",
+        "recharge": "3/Day",
+        "description": "The geth prime summons a Combat Drone. It can only have 1 Combat Drone active at a time."
+      },
+      {
+        "type": "standard",
+        "name": "Summon Geth Turret",
+        "recharge": "1/Day",
+        "description": "The geth prime summons a Geth Turret."
+      },
+      {
+        "type": "melee",
+        "name": "Weapon Strike---geth_prime",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 1d10 + str] bludgeoning damage.",
+        "miss": null,
+        "attackMod": 7
+      }
+    ],
+    "alignment": "Lawful Neutral",
+    "barrier": null,
+    "conditionImmunities": [
+      "petrified",
+      "poisoned"
+    ],
+    "cr": "9",
+    "damageImmunities": [
+      "poison",
+      "psychic"
+    ],
+    "damageResistances": [],
+    "damageVulnerabilities": [
+      "lightning"
+    ],
+    "features": [],
+    "hp": {
+      "numDice": 20,
+      "die": 10
+    },
+    "id": "geth_prime",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/c/c9/ME3_Geth_Prime.png/revision/latest/scale-to-width-down/229?cb=20120403192110",
+    "lairActions": [],
+    "legendaryActions": [
+      {
+        "name": "Activate Radar Jamming",
+        "cost": 2,
+        "description": "The geth prime activates its radar jamming."
+      },
+      {
+        "name": "Geth Pulse Rifle Attack",
+        "cost": 1,
+        "description": "The geth prime makes a Geth Pulse Rifle attack."
+      },
+      {
+        "name": "Summon Turret or Drone",
+        "cost": 3,
+        "description": "The geth prime uses its Summon Drone or Summon Geth Turret action."
+      }
+    ],
+    "name": "Geth Prime",
+    "profBonus": 4,
+    "reactions": [],
+    "savingThrows": [
+      "con",
+      "int"
+    ],
+    "senses": [],
+    "size": "Large",
+    "skills": [
+      "electronics"
+    ],
+    "sp": {
+      "shields": 30,
+      "regen": "10"
+    },
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synthetic",
+    "unit": "Geth"
+  },
+  {
+    "abilityScores": {
+      "str": 8,
+      "dex": 16,
+      "con": 8,
+      "int": 12,
+      "wis": 14,
+      "cha": 5
+    },
+    "ac": "14",
+    "actions": [
+      {
+        "type": "melee",
+        "name": "Bash",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 1d8 + str] bludgeoning damage.",
+        "miss": null,
+        "attackMod": 1
+      },
+      {
+        "type": "ranged",
+        "name": "Eye Cannon",
+        "range": 60,
+        "target": "one target",
+        "hit": "[dmg: 3d6 + dex] radiant damage.",
+        "miss": null,
+        "attackMod": 5
+      }
+    ],
+    "alignment": "Lawful Neutral",
+    "barrier": null,
+    "conditionImmunities": [
+      "petrified",
+      "poisoned"
+    ],
+    "cr": "3",
+    "damageImmunities": [
+      "poison",
+      "psychic"
+    ],
+    "damageResistances": [],
+    "damageVulnerabilities": [
+      "lightning"
+    ],
+    "features": [
+      {
+        "name": "Assassination",
+        "recharge": null,
+        "description": "Once per turn, the geth stalker can deal an extra 7 (2d6) damage to one creature it hits with an attack if it has advantage on the attack roll. The attack must be made with a melee or ranged weapon."
+      },
+      {
+        "name": "Avoidance",
+        "recharge": null,
+        "description": "If the geth stalker subjected to an effect that allows it to make a saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails."
+      },
+      {
+        "name": "Leap",
+        "recharge": null,
+        "description": "The geth stalker can leap up to one half its speed."
+      },
+      {
+        "name": "Spider Climb",
+        "recharge": null,
+        "description": "The geth stalker can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      }
+    ],
+    "hp": {
+      "numDice": 18,
+      "die": 8
+    },
+    "id": "geth_stalker",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/ec/ME_geth_stalker.png/revision/latest/scale-to-width-down/350?cb=20130517141111",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Geth Stalker",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [
+      "dex"
+    ],
+    "senses": [
+      {
+        "sense": "darkvision",
+        "range": 30
+      },
+      {
+        "sense": "infrared",
+        "range": null
+      }
+    ],
+    "size": "Medium",
+    "skills": [
+      "perception"
+    ],
+    "sp": {
+      "shields": 5,
+      "regen": "5"
+    },
+    "speed": [
+      {
+        "type": "walk",
+        "range": 16
+      }
+    ],
+    "spellcasting": {
+      "level": "innate",
+      "perDay": null,
+      "tpSpent": "1",
+      "dc": 11,
+      "hit": 3,
+      "spells": [
+        "sabotage"
+      ]
+    },
+    "type": "Synthetic",
+    "unit": "Geth"
+  },
+  {
+    "abilityScores": {
+      "str": 12,
+      "dex": 14,
+      "con": 11,
+      "int": 12,
+      "wis": 8,
+      "cha": 8
+    },
+    "ac": "13",
+    "actions": [
+      {
+        "type": "common",
+        "name": "Multiattack",
+        "description": "The geth trooper makes two Geth Pulse Rifle attacks."
+      },
+      {
+        "type": "weapon",
+        "id": "geth_pulse_rifle"
+      },
+      {
+        "type": "melee",
+        "name": "Weapon Strike",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 1d6 + str] bludgeoning damage.",
+        "miss": null,
+        "attackMod": 3
+      }
+    ],
+    "alignment": "Lawful Neutral",
+    "barrier": null,
+    "conditionImmunities": [
+      "petrified",
+      "poisoned"
+    ],
+    "cr": "2",
+    "damageImmunities": [
+      "poison",
+      "psychic"
+    ],
+    "damageResistances": [],
+    "damageVulnerabilities": [
+      "lightning"
+    ],
+    "features": [],
+    "hp": {
+      "numDice": 16,
+      "die": 8
+    },
+    "id": "geth_trooper",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/c/cf/ME3_Geth_Trooper.png/revision/latest/scale-to-width-down/238?cb=20120315171310",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Geth Trooper",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Medium",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synthetic",
+    "unit": "Geth"
+  },
+  {
+    "abilityScores": {
+      "str": 10,
+      "dex": 10,
+      "con": 10,
+      "int": 10,
+      "wis": 8,
+      "cha": 8
+    },
+    "ac": "12",
+    "actions": [
+      {
+        "type": "ranged",
+        "name": "Pulse Cannon",
+        "range": 20,
+        "target": "one target",
+        "hit": "[dmg: 1d10 + dex] radiant damage.",
+        "miss": null,
+        "attackMod": 2
+      },
+      {
+        "type": "standard",
+        "name": "Shield Restore",
+        "recharge": "Recharge 5-6",
+        "description": "The geth turret restores 9 (2d8) shield points to a friendly creature within 4m."
+      }
+    ],
+    "alignment": "Lawful Neutral",
+    "barrier": null,
+    "conditionImmunities": [
+      "petrified",
+      "poisoned"
+    ],
+    "cr": "1/4",
+    "damageImmunities": [
+      "poison",
+      "psychic"
+    ],
+    "damageResistances": [],
+    "damageVulnerabilities": [
+      "lightning"
+    ],
+    "features": [],
+    "hp": {
+      "numDice": 2,
+      "die": 6
+    },
+    "id": "geth_turret",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/b/b0/ME3_Geth_Turret.png/revision/latest/scale-to-width-down/350?cb=20120326000908",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Geth Turret",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Small",
+    "skills": [],
+    "sp": {
+      "shields": 5,
+      "regen": "5"
+    },
+    "speed": [
+      {
+        "type": "fly",
+        "range": 6
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synthetic",
+    "unit": "Geth"
+  },
+  {
+    "abilityScores": {
+      "str": 16,
+      "dex": 12,
+      "con": 15,
+      "int": 11,
+      "wis": 10,
+      "cha": 12
+    },
+    "ac": "18",
+    "actions": [
+      {
+        "type": "common",
+        "name": "Multiattack",
+        "description": "The guardian makes two M-358 Talon attacks."
+      },
+      {
+        "type": "weapon",
+        "id": "m-358_talon"
+      },
+      {
+        "type": "weapon",
+        "id": "stun_baton"
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "5",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Heavy Shield",
+        "recharge": null,
+        "description": "While the guardian has their Heavy Shield equipped, it gains +2 AC and has resistance bludgeoning, piercing, and slashing damage."
+      }
+    ],
+    "hp": {
+      "numDice": 20,
+      "die": 8
+    },
+    "id": "guardian",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/3f/ME3_Cerberus_Guardian.png/revision/latest/scale-to-width-down/350?cb=20120321201359",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Guardian",
+    "profBonus": 3,
+    "reactions": [],
+    "savingThrows": [
+      "str"
+    ],
+    "senses": [],
+    "size": "Medium",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 6
+      }
+    ],
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Cerberus"
+  },
+  {
+    "abilityScores": {
+      "str": 26,
+      "dex": 14,
+      "con": 24,
+      "int": 16,
+      "wis": 15,
+      "cha": 16
+    },
+    "ac": "16",
+    "actions": [
+      {
+        "type": "common",
+        "name": "Multiattack",
+        "description": "The harvester can use its Frightful Presence. It then makes three attacks: one with its acid spit and two with its stomp."
+      },
+      {
+        "type": "ranged",
+        "name": "Acid Spit",
+        "range": 60,
+        "target": "one target",
+        "hit": "The harvester targets a 6m radius within 60m and launches a glob of acid that coats the area. Each creature within the area must succeed on a DC 19 Dexterity saving throw, taking 44 (8d10) acid damage on a failed save, or half as much on a successful one. Until the end of the harvester's next turn, each creature that enters the area or ends its turn there must also make the saving throw.",
+        "miss": null,
+        "attackMod": 8
+      },
+      {
+        "type": "regional",
+        "name": "Drop Klixen",
+        "range": null,
+        "target": null,
+        "hit": "If the harvester is within a region that contains Klixen, it begins the fight by droping 1d10 Klixen in a 6m by 20m area.",
+        "miss": null,
+        "attackMod": null
+      },
+      {
+        "type": "melee",
+        "name": "Stomp",
+        "range": 4,
+        "target": "one target",
+        "hit": "[dmg: 2d6 + str] piercing damage.",
+        "miss": null,
+        "attackMod": 14
+      }
+    ],
+    "alignment": "Unaligned",
+    "barrier": null,
+    "conditionImmunities": [
+      "poisoned"
+    ],
+    "cr": "19",
+    "damageImmunities": [
+      "poison"
+    ],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Frightful Presence",
+        "recharge": null,
+        "description": "Each creature of the harvester's choice that is within 60m of the name and aware of it must succeed on a DC 19 Wisdom saving throw or become {frightened} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the harvester's Frightful Presence for the next 24 hours."
+      }
+    ],
+    "hp": {
+      "numDice": 26,
+      "die": 12
+    },
+    "id": "harvester",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/92/ME2_Harvester.jpg/revision/latest/scale-to-width-down/200?cb=20100210004033",
+    "lairActions": [],
+    "legendaryActions": [
+      {
+        "name": "Detect",
+        "cost": 1,
+        "description": "The harvester makes a Wisdom (Perception) check."
+      },
+      {
+        "name": "Stomp Attack",
+        "cost": 1,
+        "description": "The harvester makes a stomp attack."
+      },
+      {
+        "name": "Trample Attack",
+        "cost": 2,
+        "description": "The harvester moves 10m in a straight line moving over Large or smaller creature in its path. Each creature caught in its path must succeed on a DC 19 Dexterity saving throw or take [dmg: 2d6 + 8] piercing damage and be knocked {prone}. The harvester cannot move through a Huge or larger creature."
+      }
+    ],
+    "name": "Harvester",
+    "profBonus": 6,
+    "reactions": [],
+    "savingThrows": [
+      "str",
+      "con",
+      "wis"
+    ],
+    "senses": [],
+    "size": "Huge",
+    "skills": [
+      "perception"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 20
+      },
+      {
+        "type": "fly",
+        "range": 30
+      }
+    ],
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Alien"
+  },
+  {
+    "abilityScores": {
+      "str": 13,
+      "dex": 8,
+      "con": 14,
+      "int": 3,
+      "wis": 6,
+      "cha": 5
+    },
+    "ac": "11",
+    "actions": [
+      {
+        "type": "melee",
+        "name": "Swipe",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 1d6 + str] slashing damage, and the creature is grappled (escape DC 13). A creature that is grappled by the husk takes 11 (3d6) necrotic damage at the start of each of the husk's turns. The husk can't make swipe attacks on any other target while grappling a creature in this way.",
+        "miss": null,
+        "attackMod": 3
+      }
+    ],
+    "alignment": "Lawful evil",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "1/2",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Aggressive",
+        "recharge": null,
+        "description": "As a bonus action, the husk can move up to its speed toward a hostile creature that it can see."
+      }
+    ],
+    "hp": {
+      "numDice": 1,
+      "die": 8
+    },
+    "id": "husk",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/27/ME3_Husk.png/revision/latest/scale-to-width-down/350?cb=20120320012912",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Husk",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [
+      "wis"
+    ],
+    "senses": [
+      {
+        "sense": "darkvision",
+        "range": 20
+      }
+    ],
+    "size": "Medium",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synorg",
+    "unit": "Reaper"
+  },
+  {
+    "abilityScores": {
+      "str": 12,
+      "dex": 14,
+      "con": 12,
+      "int": 5,
+      "wis": 10,
+      "cha": 7
+    },
+    "ac": "14",
+    "actions": [
+      {
+        "type": "standard",
+        "name": "Fire Breath",
+        "recharge": "Recharge 6",
+        "description": "The klixen exhales a 6-meter cone of fire. Each creature in that area must make a DC 14 Dexterity saving throw, taking 10 (3d6) fire damage on a failed save, or half as much damage on a successful one."
+      },
+      {
+        "type": "melee",
+        "name": "Pincer",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 1d4 + dex] piercing damage plus 2 (1d4) fire damage.",
+        "miss": null,
+        "attackMod": 4
+      }
+    ],
+    "alignment": "Unaligned",
+    "barrier": null,
+    "conditionImmunities": [
+      "poisoned"
+    ],
+    "cr": "1",
+    "damageImmunities": [
+      "fire",
+      "poison"
+    ],
+    "damageResistances": [],
+    "damageVulnerabilities": [
+      "cold"
+    ],
+    "features": [
+      {
+        "name": "Death Burst",
+        "recharge": null,
+        "description": "When the klixen dies, it explodes in a burst of lava. Each creature within 2m of it must make a DC 14 Dexterity saving throw, taking 10 (3d6) fire damage on a failed save, or half as much damage on a successful one."
+      },
+      {
+        "name": "Heated Body",
+        "recharge": null,
+        "description": "A creature that touches the klixen or hits it with a melee attack while within 2m of it takes 3 (1d6) fire damage."
+      }
+    ],
+    "hp": {
+      "numDice": 5,
+      "die": 8
+    },
+    "id": "klixen",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/2f/ME2_Klixen.PNG/revision/latest/scale-to-width-down/350?cb=20100703065034",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Klixen",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Medium",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Alien"
+  },
+  {
+    "abilityScores": {
+      "str": 10,
+      "dex": 12,
+      "con": 11,
+      "int": 8,
+      "wis": 6,
+      "cha": 5
+    },
+    "ac": "10",
+    "actions": [
+      {
+        "type": "weapon",
+        "id": "m-4_shuriken"
+      },
+      {
+        "type": "weapon",
+        "id": "m-3_predator"
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [
+      "petrified",
+      "poisoned"
+    ],
+    "cr": "1/8",
+    "damageImmunities": [
+      "poison",
+      "psychic"
+    ],
+    "damageResistances": [],
+    "damageVulnerabilities": [
+      "lightning"
+    ],
+    "features": [
+      {
+        "name": "Chatter (variant)",
+        "recharge": null,
+        "description": "The LOKI mech can be programmed with pre-recorded phrases, which it utters occasionally during combat. Each hostile creature that hears the phrase much pass a Wisdom saving throw. On a failure, a creature becomes unnerved by the phrase and can only target the LOKI mech when making attack rolls or using damaging spells. On a success, a creature is unaffected and is immune to the LOKI mech's Chatter. The DC of the saving throw is dependant on the phrase, but cannot be higher than 12."
+      },
+      {
+        "name": "Limited Tactics",
+        "recharge": null,
+        "description": "The LOKI mech is incapable of complex combat tactics. It never seeks cover and cannot take the Hide, Dodge, Help, or Disengage actions."
+      },
+      {
+        "name": "Post-mortem Explosion---loki_mech",
+        "recharge": null,
+        "description": "When the LOKI mech is reduced to 0 hit points, it self-destructs. Each creature within a 2m radius sphere must succeed on a DC 10 Dexterity saving throw or take 5 (2d4) thunder damage."
+      }
+    ],
+    "hp": {
+      "numDice": 5,
+      "die": 8
+    },
+    "id": "loki_mech",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/c/c0/ME2_Loki_Mech.png/revision/latest?cb=20120917060158",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "LOKI Mech",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [
+      {
+        "sense": "infrared",
+        "range": null
+      }
+    ],
+    "size": "Medium",
+    "skills": [
+      "perception"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 8
+      }
+    ],
+    "spellcasting": {
+      "level": "innate",
+      "perDay": "5",
+      "tpSpent": "1",
+      "dc": 9,
+      "hit": 1,
+      "spells": [
+        "shocking_grasp"
+      ]
+    },
+    "type": "Synthetic",
+    "unit": "Mech"
+  },
+  {
+    "abilityScores": {
+      "str": 12,
+      "dex": 16,
+      "con": 13,
+      "int": 8,
+      "wis": 11,
+      "cha": 8
+    },
+    "ac": "15",
+    "actions": [
+      {
+        "type": "common",
+        "name": "Multiattack",
+        "description": "The marauder makes 2 Phaeston attacks."
+      },
+      {
+        "type": "weapon",
+        "id": "phaeston"
+      },
+      {
+        "type": "standard",
+        "name": "Create Armor Plating",
+        "recharge": "Recharge 5-6",
+        "description": "The marauder coats a friendly husk, abomination, or cannibal in a scab-like armor plating, increasing the target's AC by 2."
+      }
+    ],
+    "alignment": "Lawful evil",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "2",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [],
+    "hp": {
+      "numDice": 8,
+      "die": 8
+    },
+    "id": "marauder",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/9b/ME3_Marauder.png/revision/latest/scale-to-width-down/219?cb=20120313015215",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Marauder",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [
+      "dex"
+    ],
+    "senses": [
+      {
+        "sense": "darkvision",
+        "range": 20
+      }
+    ],
+    "size": "Medium",
+    "skills": [
+      "survival"
+    ],
+    "sp": {
+      "shields": 15,
+      "regen": "15"
+    },
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synorg",
+    "unit": "Reaper"
+  },
+  {
+    "abilityScores": {
+      "str": 8,
+      "dex": 20,
+      "con": 11,
+      "int": 16,
+      "wis": 13,
+      "cha": 14
+    },
+    "ac": "16",
+    "actions": [
+      {
+        "type": "weapon",
+        "id": "m-98_widow"
+      },
+      {
+        "type": "melee",
+        "name": "Weapon Strike",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 1d6 + str] bludgeoning damage.",
+        "miss": null,
+        "attackMod": 2
+      }
+    ],
+    "alignment": "Neutral Evil",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "6",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Pack Tactics",
+        "recharge": null,
+        "description": "The nemesis has advantage on an attack roll against a creature if at least one of the nemesis's allies is within 2m of the creature and the ally isn't incapacitated."
+      },
+      {
+        "name": "Self-Destruct",
+        "recharge": null,
+        "description": "When the nemesis dies, it explodes. Each creature within 4m of it must make a DC 15 Dexterity saving throw, taking [dmg] thunder damage on a failed save, or half as much damage on a successful one."
+      },
+      {
+        "name": "Shadow Cloak",
+        "recharge": null,
+        "description": "While in dim light or darkness, the nemesis can take the Hide action as a bonus action."
+      },
+      {
+        "name": "Surprise Attack",
+        "recharge": null,
+        "description": "If the nemesis surprises a creature and hits it with an attack during the first round of combat, the target takes an extra [dmg] damage from the attack."
+      }
+    ],
+    "hp": {
+      "numDice": 15,
+      "die": 8
+    },
+    "id": "nemesis",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/a/aa/ME3_Cerberus_Nemesis.png/revision/latest/scale-to-width-down/338?cb=20120314005634",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Nemesis",
+    "profBonus": 3,
+    "reactions": [],
+    "savingThrows": [
+      "dex"
+    ],
+    "senses": [
+      {
+        "sense": "darkvision",
+        "range": 60
+      }
+    ],
+    "size": "Medium",
+    "skills": [
+      "perception",
+      "stealth",
+      "survival"
+    ],
+    "sp": {
+      "shields": 20,
+      "regen": "10"
+    },
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Cerberus"
+  },
+  {
+    "abilityScores": {
+      "str": 16,
+      "dex": 22,
+      "con": 12,
+      "int": 11,
+      "wis": 15,
+      "cha": 15
+    },
+    "ac": "17",
+    "actions": [
+      {
+        "type": "common",
+        "name": "Multiattack",
+        "description": "The phantom makes three Monomolecular Blade attacks or one Palm Blaster attack and two Monomolecular  Blade (one-handed) attacks."
+      },
+      {
+        "type": "weapon",
+        "id": "monomolecular_blade"
+      },
+      {
+        "type": "ranged",
+        "name": "Palm Blaster",
+        "range": 4,
+        "target": "one target",
+        "hit": "16 (3d10) thunder damage.",
+        "miss": null,
+        "attackMod": 9
+      }
+    ],
+    "alignment": "Neutral Evil",
+    "barrier": "8",
+    "conditionImmunities": [],
+    "cr": "7",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Aggressive",
+        "recharge": null,
+        "description": "As a bonus action, the phantom can move up to its speed toward a hostile creature that it can see."
+      },
+      {
+        "name": "Avoidance",
+        "recharge": null,
+        "description": "If the phantom subjected to an effect that allows it to make a saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails."
+      },
+      {
+        "name": "Barrier",
+        "recharge": "3/Day",
+        "description": "As an action or bonus action, the phantom gains [bt]."
+      }
+    ],
+    "hp": {
+      "numDice": 20,
+      "die": 8
+    },
+    "id": "phantom",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/4/4d/ME3_Cerberus_Phantom.png/revision/latest/scale-to-width-down/699?cb=20120325214910",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Phantom",
+    "profBonus": 3,
+    "reactions": [],
+    "savingThrows": [
+      "dex"
+    ],
+    "senses": [],
+    "size": "Medium",
+    "skills": [
+      "acrobatics",
+      "electronics",
+      "perception",
+      "stealth"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 14
+      }
+    ],
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Cerberus"
+  },
+  {
+    "abilityScores": {
+      "str": 20,
+      "dex": 19,
+      "con": 21,
+      "int": 11,
+      "wis": 14,
+      "cha": 10
+    },
+    "ac": "20",
+    "actions": [
+      {
+        "type": "melee",
+        "name": "Claw",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 6d10 + str] piercing damage.",
+        "miss": null,
+        "attackMod": 9
+      },
+      {
+        "type": "standard",
+        "name": "Pounce",
+        "recharge": "Recharge 5-6",
+        "description": "The praetorian pounces to a location within 14m and makes a claw attack."
+      },
+      {
+        "type": "standard",
+        "name": "Twin Particle Beams",
+        "recharge": "Recharge 5-6",
+        "description": "The praetorian shoots particle beams in a 10m line that is 4m wide originating from itself. Each creature within the area must make a DC 18 Dexterity saving throw. On a failed save a creature takes 54 (12d8) radiant damage or half as much on a successful one."
+      }
+    ],
+    "alignment": "Lawful evil",
+    "barrier": "10",
+    "conditionImmunities": [
+      "charmed",
+      "grappled",
+      "paralyzed",
+      "petrified",
+      "poisoned"
+    ],
+    "cr": "12",
+    "damageImmunities": [],
+    "damageResistances": [
+      "force",
+      "necrotic"
+    ],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Possessed Praetorian",
+        "recharge": null,
+        "description": "When the praetorian is possessed by a harbinger it gains 10 barrier ticks and while it has barrier ticks it also gains resistance to bludgeoning, piercing, and slashing damage. It can use its action to launch 2 missiles at a single or different target creatures within 60m. Each target must make a DC 18 Dexterity saving throw. On a failed save a target takes 33 (6d10) thunder damage, or half as much on a successful one. Once the praetorian fires its missiles, it cannot do so again."
+      }
+    ],
+    "hp": {
+      "numDice": 13,
+      "die": 10
+    },
+    "id": "praetorian",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/09/PraetorianME3.jpg/revision/latest/scale-to-width-down/700?cb=20121201212320",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Praetorian",
+    "profBonus": 4,
+    "reactions": [
+      {
+        "name": "Negation Barrier",
+        "recharge": "3/Day",
+        "description": "When targeted by a biotic spell or tech power, the praetorian can use its reaction to gain 2 barrier ticks and gain resistance to force, necrotic, cold, lightning, and fire damage until the start of its next turn."
+      }
+    ],
+    "savingThrows": [
+      "dex",
+      "con",
+      "str"
+    ],
+    "senses": [
+      {
+        "sense": "darkvision",
+        "range": 20
+      }
+    ],
+    "size": "Large",
+    "skills": [
+      "acrobatics",
+      "athletics",
+      "perception"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      },
+      {
+        "type": "fly",
+        "range": 10
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synorg",
+    "unit": "Collector"
+  },
+  {
+    "abilityScores": {
+      "str": 8,
+      "dex": 14,
+      "con": 11,
+      "int": 8,
+      "wis": 12,
+      "cha": 6
+    },
+    "ac": "12",
+    "actions": [
+      {
+        "type": "melee",
+        "name": "Bite---pyjak",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 1d4 + str] piercing damage.",
+        "miss": null,
+        "attackMod": 1
+      }
+    ],
+    "alignment": "Unaligned",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "0",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Pack Tactics",
+        "recharge": null,
+        "description": "The pyjak has advantage on an attack roll against a creature if at least one of the pyjak's allies is within 2m of the creature and the ally isn't incapacitated."
+      }
+    ],
+    "hp": {
+      "numDice": 1,
+      "die": 6
+    },
+    "id": "pyjak",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/c/c4/Spacemonkey.jpg/revision/latest/scale-to-width-down/200?cb=20080727175830",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Pyjak",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Small",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      },
+      {
+        "type": "climb",
+        "range": 6
+      }
+    ],
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Alien"
+  },
+  {
+    "abilityScores": {
+      "str": 19,
+      "dex": 12,
+      "con": 17,
+      "int": 7,
+      "wis": 15,
+      "cha": 7
+    },
+    "ac": "15",
+    "actions": [
+      {
+        "type": "common",
+        "name": "Multiattack",
+        "description": "The brood warrior makes two Impale attacks or attempts to grapple a creature and makes an Impale attack."
+      },
+      {
+        "type": "ranged",
+        "name": "Acid Spit---rachni_brood_warrior",
+        "range": 20,
+        "target": "one target",
+        "hit": "7 (2d6) acid damage and 7 (2d6) necrotic damage. This damage bypasses shields.",
+        "miss": null,
+        "attackMod": 3
+      },
+      {
+        "type": "melee",
+        "name": "Impale---rachni_brood_warroir",
+        "range": 4,
+        "target": "one target",
+        "hit": "[dmg: 2d10 + str] and 5 (1d10) acid damage.",
+        "miss": null,
+        "attackMod": 6
+      }
+    ],
+    "alignment": "Unaligned",
+    "barrier": "5",
+    "conditionImmunities": [],
+    "cr": "4",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Barrier",
+        "recharge": "3/Day",
+        "description": "As an action or bonus action, the rachni brood warrior gains [bt]."
+      },
+      {
+        "name": "Grappler",
+        "recharge": null,
+        "description": "The rachni brood warrior has advantage on attack rolls against any creature grappled by it."
+      }
+    ],
+    "hp": {
+      "numDice": 12,
+      "die": 10
+    },
+    "id": "rachni_brood_warrior",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/e5/Rachni_Brood_Warrior.PNG/revision/latest/scale-to-width-down/700?cb=20100824160815",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Rachni Brood Warrior",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [
+      "con",
+      "wis"
+    ],
+    "senses": [
+      {
+        "sense": "blindsight",
+        "range": 4
+      }
+    ],
+    "size": "Large",
+    "skills": [
+      "perception"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "spellcasting": {
+      "level": "innate",
+      "dc": 12,
+      "hit": 4,
+      "mod": "Wisdom",
+      "spellList": [
+        "5-warp",
+        "3-stasis"
+      ],
+      "spells": [
+        {
+          "level": "5",
+          "spells": [
+            "warp"
+          ]
+        },
+        {
+          "level": " 3",
+          "spells": [
+            "stasis"
+          ]
+        }
+      ]
+    },
+    "type": "Organic",
+    "unit": "Rachni"
+  },
+  {
+    "abilityScores": {
+      "str": 25,
+      "dex": 10,
+      "con": 18,
+      "int": 22,
+      "wis": 25,
+      "cha": 18
+    },
+    "ac": "21",
+    "actions": [
+      {
+        "type": "common",
+        "name": "Multiattack",
+        "description": "The rachni queen makes one bite attack and two impale attacks."
+      },
+      {
+        "type": "melee",
+        "name": "Bite---rachni_queen",
+        "range": 4,
+        "target": "one target",
+        "hit": "[dmg: 3d12 + str] piercing damage.",
+        "miss": null,
+        "attackMod": 13
+      },
+      {
+        "type": "melee",
+        "name": "Impale---rachni_queen",
+        "range": 8,
+        "target": "one target",
+        "hit": "[dmg: 4d10 + str] piercing damage.",
+        "miss": null,
+        "attackMod": 13
+      }
+    ],
+    "alignment": "Lawful neutral",
+    "barrier": null,
+    "conditionImmunities": [
+      "charmed"
+    ],
+    "cr": "18",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [],
+    "hp": {
+      "numDice": 22,
+      "die": 20
+    },
+    "id": "rachni_queen",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/38/Noveria_rachni_queen.png/revision/latest/scale-to-width-down/700?cb=20090919061419",
+    "lairActions": [
+      {
+        "name": "Call Workers",
+        "description": "The rachni queen summons 1d10 + 3 rachni workers. These arrive at the beginning of the queen's next turn and take their turn on the queen's initiative."
+      },
+      {
+        "name": "Call Soldiers",
+        "description": "The rachni queen summons 1d6 + 1 rachni workers. These arrive at the beginning of the queen's next turn and take their turn on the queen's initiative."
+      },
+      {
+        "name": "Call Brood Warrior",
+        "description": "The rachni queen summons one rachni brood warrior. It arrives at the beginning of the queen's next turn and takes its turn on the queen's initiative."
+      }
+    ],
+    "legendaryActions": [],
+    "name": "Rachni Queen",
+    "profBonus": 6,
+    "reactions": [],
+    "savingThrows": [
+      "wis",
+      "con",
+      "str"
+    ],
+    "senses": [
+      {
+        "sense": "blindsight",
+        "range": 10
+      }
+    ],
+    "size": "Gargantuan",
+    "skills": [
+      "perception",
+      "history"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 6
+      }
+    ],
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Rachni"
+  },
+  {
+    "abilityScores": {
+      "str": 14,
+      "dex": 16,
+      "con": 12,
+      "int": 2,
+      "wis": 11,
+      "cha": 4
+    },
+    "ac": "14",
+    "actions": [
+      {
+        "type": "ranged",
+        "name": "Acid Spit---rachni_soldier",
+        "range": 20,
+        "target": "one target",
+        "hit": "7 (2d6) acid damage and 7 (2d6) necrotic damage. This damage bypasses shields.",
+        "miss": null,
+        "attackMod": 5
+      },
+      {
+        "type": "melee",
+        "name": "Impale---rachni_soldier",
+        "range": 4,
+        "target": "one target",
+        "hit": "[dmg: 1d10 + dex] and 2 (1d4) acid damage.",
+        "miss": null,
+        "attackMod": 5
+      }
+    ],
+    "alignment": "Unaligned",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "1",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Ambusher",
+        "recharge": null,
+        "description": "The rachni soldier has advantage on attack rolls against any creature it has surprised."
+      },
+      {
+        "name": "Grappler",
+        "recharge": null,
+        "description": "The rachni soldier has advantage on attack rolls against any creature grappled by it."
+      }
+    ],
+    "hp": {
+      "numDice": 8,
+      "die": 8
+    },
+    "id": "rachni_soldier",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/4/4f/Codex_ME_-_Rachni.png/revision/latest?cb=20140820042133",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Rachni Soldier",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [
+      "con",
+      "wis"
+    ],
+    "senses": [
+      {
+        "sense": "blindsight",
+        "range": 4
+      }
+    ],
+    "size": "Medium",
+    "skills": [
+      "stealth",
+      "perception"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Rachni"
+  },
+  {
+    "abilityScores": {
+      "str": 8,
+      "dex": 10,
+      "con": 12,
+      "int": 1,
+      "wis": 7,
+      "cha": 3
+    },
+    "ac": "13",
+    "actions": [
+      {
+        "type": "standard",
+        "name": "Acid Splash---rachni_worker",
+        "recharge": "Recharge 4-6",
+        "description": "The rachni worker spits acit at one target within 10m or two targets within 10m if both targets are within 2m of each other. A target must succeed on a Dexterity saving throw or take 3 (1d6) acid damage."
+      },
+      {
+        "type": "melee",
+        "name": "Bite---rachni_worker",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 1d6 + dex] piercing damage.",
+        "miss": null,
+        "attackMod": 2
+      }
+    ],
+    "alignment": "Unaligned",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "1/8",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [],
+    "hp": {
+      "numDice": 2,
+      "die": 6
+    },
+    "id": "rachni_worker",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/e0/Rachni_Worker.png/revision/latest?cb=20100824223955",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Rachni Worker",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [
+      "wis"
+    ],
+    "senses": [
+      {
+        "sense": "blindsight",
+        "range": 4
+      }
+    ],
+    "size": "Small",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 12
+      }
+    ],
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Rachni"
+  },
+  {
+    "abilityScores": {
+      "str": 16,
+      "dex": 15,
+      "con": 8,
+      "int": 16,
+      "wis": 11,
+      "cha": 8
+    },
+    "ac": "15",
+    "actions": [
+      {
+        "type": "common",
+        "name": "Multiattack",
+        "description": "The rampart mech makes two omni-blade attacks."
+      },
+      {
+        "type": "weapon",
+        "id": "omni-blade"
+      },
+      {
+        "type": "weapon",
+        "id": "m-23_katana"
+      },
+      {
+        "type": "standard",
+        "name": "Hex Shield",
+        "recharge": "1/Day",
+        "description": "As a bonus action, the rampart mech generates a 2m tall and wide, hexagon-shaped shield with 5AC and 50 shield points which offers full-cover."
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [
+      "petrified",
+      "poisoned"
+    ],
+    "cr": "2",
+    "damageImmunities": [
+      "poison",
+      "psychic"
+    ],
+    "damageResistances": [],
+    "damageVulnerabilities": [
+      "lightning"
+    ],
+    "features": [
+      {
+        "name": "Aggressive",
+        "recharge": null,
+        "description": "As a bonus action, the rampart mech can move up to its speed toward a hostile creature that it can see."
+      },
+      {
+        "name": "Post-Mortem Vent",
+        "recharge": null,
+        "description": "When the rampart mech dies, it vents excess heat from its weapon and armor in a 2m radius until the start of its next turn. Each creature that enters the radius for the first time or ends its turn there takes [dmg] radiant damage."
+      }
+    ],
+    "hp": {
+      "numDice": 15,
+      "die": 8
+    },
+    "id": "rampart_mech",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/6/60/ME3-Rampart-Mech.png/revision/latest/scale-to-width-down/287?cb=20121128090615",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Rampart Mech",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Medium",
+    "skills": [],
+    "speed": [
+      {
+        "type": "stationary",
+        "range": 0
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synthetic",
+    "unit": "Mech"
+  },
+  {
+    "abilityScores": {
+      "str": 16,
+      "dex": 14,
+      "con": 10,
+      "int": 8,
+      "wis": 11,
+      "cha": 11
+    },
+    "ac": "12",
+    "actions": [
+      {
+        "type": "common",
+        "name": "Multiattack",
+        "description": "The ravager makes two twin artillery cannon attacks."
+      },
+      {
+        "type": "standard",
+        "name": "Acid Splash",
+        "recharge": "Recharge 5-6",
+        "description": "The ravager spits acid in a 6m cube. Each creature in that line must make a DC 15 Dexterity saving throw, taking 27 (6d8) acid damage on a failed save, or half as much damage on a successful one."
+      },
+      {
+        "type": "ranged",
+        "name": "Twin Artillery Cannons",
+        "range": 60,
+        "target": "one target",
+        "hit": "[dmg: 3d10 + dex] piercing damage and 10 (3d6) acid damage.",
+        "miss": null,
+        "attackMod": 5
+      }
+    ],
+    "alignment": "Lawful evil",
+    "barrier": null,
+    "conditionImmunities": [
+      "charmed"
+    ],
+    "cr": "6",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Egg Sacs",
+        "recharge": "4",
+        "description": "If the ravager takes piercing or slashing damage that is not from the result of a critical hit one of its egg sacs explodes, releasing 1d10 swarmers."
+      }
+    ],
+    "hp": {
+      "numDice": 20,
+      "die": 10
+    },
+    "id": "ravager",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/7/7b/ME3_Ravager.png/revision/latest/scale-to-width-down/350?cb=20120319195950",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Ravager",
+    "profBonus": 3,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [
+      {
+        "sense": "darkvision",
+        "range": 20
+      }
+    ],
+    "size": "Large",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synorg",
+    "unit": "Reaper"
+  },
+  {
+    "abilityScores": {
+      "str": 27,
+      "dex": 10,
+      "con": 25,
+      "int": 11,
+      "wis": 12,
+      "cha": 16
+    },
+    "ac": "20",
+    "actions": [
+      {
+        "type": "common",
+        "name": "Multiattack",
+        "description": "The reaper harvester makes two harvester cannon attacks."
+      },
+      {
+        "type": "standard",
+        "name": "Harvester Cannon",
+        "recharge": null,
+        "description": "The reaper harvester targets a location within 30m. Each creature within a 6m radius must make a Dexterity saving throw. On a failed save a creature takes 3d10 force and 3d10 thunder damage, or half as much damage on a successful one."
+      }
+    ],
+    "alignment": "Lawful evil",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "20",
+    "damageImmunities": [],
+    "damageResistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "damageVulnerabilities": [],
+    "features": [],
+    "hp": {
+      "numDice": 27,
+      "die": 12
+    },
+    "id": "reaper_harvester",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/a/ae/ME3_Harvester.png/revision/latest/scale-to-width-down/350?cb=20120320013110",
+    "lairActions": [],
+    "legendaryActions": [
+      {
+        "name": "Detect",
+        "cost": 1,
+        "description": "The reaper harvester makes a Wisdom (Perception) check."
+      },
+      {
+        "name": "Harvester Cannon Attack",
+        "cost": 2,
+        "description": "The reaper harvester makes a harvester cannon attack."
+      },
+      {
+        "name": "Spawn Husks",
+        "cost": 3,
+        "description": "The reaper harvester releases 1d10 Husks from its body."
+      }
+    ],
+    "name": "Reaper Harvester",
+    "profBonus": 6,
+    "reactions": [],
+    "savingThrows": [
+      "con",
+      "wis"
+    ],
+    "senses": [
+      {
+        "sense": "darkvision",
+        "range": 40
+      }
+    ],
+    "size": "Huge",
+    "skills": [
+      "perception"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 14
+      },
+      {
+        "type": "burrow",
+        "range": 14
+      },
+      {
+        "type": "fly",
+        "range": 26
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synorg",
+    "unit": "Reaper"
+  },
+  {
+    "abilityScores": {
+      "str": 10,
+      "dex": 16,
+      "con": 8,
+      "int": 11,
+      "wis": 12,
+      "cha": 5
+    },
+    "ac": "13",
+    "actions": [
+      {
+        "type": "ranged",
+        "name": "Pulse Rifle",
+        "range": 60,
+        "target": "one target",
+        "hit": "[dmg: 1d4 + dex] radiant damage.",
+        "miss": null,
+        "attackMod": 5
+      },
+      {
+        "type": "standard",
+        "name": "Tactical Cloak",
+        "recharge": "3/Day",
+        "description": "As a bonus action, the recon drone activates its tactical cloak, becoming {invisible}. When the recon drone makes a melee, ranged, or uses a tech or combat power, tactical cloak ends."
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [
+      "petrified",
+      "poisoned"
+    ],
+    "cr": "1/8",
+    "damageImmunities": [
+      "poison",
+      "psychic"
+    ],
+    "damageResistances": [],
+    "damageVulnerabilities": [
+      "lightning"
+    ],
+    "features": [],
+    "hp": {
+      "numDice": 2,
+      "die": 6
+    },
+    "id": "recon_drone",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/29/Geth_Recon_Drone_ME2.png/revision/latest/scale-to-width-down/350?cb=20100627032507",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Recon Drone",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [
+      {
+        "sense": "infared",
+        "range": null
+      }
+    ],
+    "size": "Small",
+    "skills": [
+      "perception",
+      "stealth"
+    ],
+    "sp": {
+      "shields": 5,
+      "regen": "5"
+    },
+    "speed": [
+      {
+        "type": "fly",
+        "range": 16
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synthetic",
+    "unit": "Mech"
+  },
+  {
+    "abilityScores": {
+      "str": 8,
+      "dex": 12,
+      "con": 10,
+      "int": 11,
+      "wis": 11,
+      "cha": 6
+    },
+    "ac": "11",
+    "actions": [
+      {
+        "type": "melee",
+        "name": "Defibrillators",
+        "range": 2,
+        "target": "one target",
+        "hit": "1d4 lightning damage.",
+        "miss": null,
+        "attackMod": 3
+      },
+      {
+        "type": "standard",
+        "name": "Stabalize",
+        "recharge": "Recharges after a Short or Long rest",
+        "description": "The repair drone can stabalize a friendly creature within 2m."
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [
+      "petrified",
+      "poisoned"
+    ],
+    "cr": "1/8",
+    "damageImmunities": [
+      "poison",
+      "psychic"
+    ],
+    "damageResistances": [],
+    "damageVulnerabilities": [
+      "lightning"
+    ],
+    "features": [],
+    "hp": {
+      "numDice": 2,
+      "die": 6
+    },
+    "id": "repair_drone",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/21/Maintenance_Drone.png/revision/latest/scale-to-width-down/350?cb=20100909024927",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Repair Drone",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Small",
+    "skills": [],
+    "sp": {
+      "shields": 5,
+      "regen": "5"
+    },
+    "speed": [
+      {
+        "type": "fly",
+        "range": 12
+      }
+    ],
+    "spellcasting": {
+      "level": "innate",
+      "perDay": "3",
+      "tpSpent": "1",
+      "dc": 10,
+      "hit": 2,
+      "spells": [
+        "first_aid"
+      ]
+    },
+    "type": "Synthetic",
+    "unit": "Mech"
+  },
+  {
+    "abilityScores": {
+      "str": 10,
+      "dex": 10,
+      "con": 10,
+      "int": 10,
+      "wis": 10,
+      "cha": 4
+    },
+    "ac": "11",
+    "actions": [
+      {
+        "type": "ranged",
+        "name": "Distortion Rocket",
+        "range": 30,
+        "target": "one target",
+        "hit": "2d6 thunder damage.",
+        "miss": null,
+        "attackMod": 2
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [
+      "petrified",
+      "poisoned"
+    ],
+    "cr": "1/4",
+    "damageImmunities": [
+      "poison",
+      "psychic"
+    ],
+    "damageResistances": [],
+    "damageVulnerabilities": [
+      "lightning"
+    ],
+    "features": [],
+    "hp": {
+      "numDice": 2,
+      "die": 6
+    },
+    "id": "rocket_drone",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/2f/Virmire_geth_rocket_drone.png/revision/latest/scale-to-width-down/640?cb=20091209133938",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Rocket Drone",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Small",
+    "skills": [],
+    "speed": [
+      {
+        "type": "fly",
+        "range": 10
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synthetic",
+    "unit": "Mech"
+  },
+  {
+    "abilityScores": {
+      "str": 18,
+      "dex": 11,
+      "con": 16,
+      "int": 6,
+      "wis": 6,
+      "cha": 5
+    },
+    "ac": "18",
+    "actions": [
+      {
+        "type": "melee",
+        "name": "Bash",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 1d8 + str] bludgeoning damage.",
+        "miss": null,
+        "attackMod": 8
+      },
+      {
+        "type": "standard",
+        "name": "Salvo",
+        "recharge": "Recharge 4-6",
+        "description": "The scion targets three locations within 30m and launches an explosive blast to each. The locations can be the same or different. Each creature within a 6m radius of a target location must make a DC 16 Dexterity saving throw. On a failed save a creature takes 15 (3d10) thunder damage or half as much on a successful one."
+      }
+    ],
+    "alignment": "Lawful evil",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "9",
+    "damageImmunities": [],
+    "damageResistances": [
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "damageVulnerabilities": [],
+    "features": [],
+    "hp": {
+      "numDice": 7,
+      "die": 8
+    },
+    "id": "scion",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/d/da/ScionME3.jpg/revision/latest/scale-to-width-down/350?cb=20121201212433",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Scion",
+    "profBonus": 4,
+    "reactions": [],
+    "savingThrows": [
+      "con"
+    ],
+    "senses": [
+      {
+        "sense": "darkvision",
+        "range": 20
+      }
+    ],
+    "size": "Medium",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 8
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synorg",
+    "unit": "Reaper"
+  },
+  {
+    "abilityScores": {
+      "str": 4,
+      "dex": 12,
+      "con": 10,
+      "int": 10,
+      "wis": 8,
+      "cha": 6
+    },
+    "ac": "13",
+    "actions": [
+      {
+        "type": "melee",
+        "name": "Plague Sting",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 1d4 + dex] poison damage and 2 (1d4) necrotic damage. The target must succeed on DC 13 Constitution saving throw or has disadvantage on its next attack roll.",
+        "miss": null,
+        "attackMod": 3
+      }
+    ],
+    "alignment": "Lawful Evil",
+    "barrier": "1",
+    "conditionImmunities": [],
+    "cr": "1/4",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [],
+    "hp": {
+      "numDice": 4,
+      "die": 6
+    },
+    "id": "seeker_plague",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/9f/SwarmME3_Plague.jpg/revision/latest/scale-to-width-down/350?cb=20121201212536",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Seeker Plague",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [
+      "dex"
+    ],
+    "senses": [],
+    "size": "Small",
+    "skills": [],
+    "speed": [
+      {
+        "type": "fly",
+        "range": 10
+      }
+    ],
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Collector"
+  },
+  {
+    "abilityScores": {
+      "str": 2,
+      "dex": 10,
+      "con": 8,
+      "int": 10,
+      "wis": 8,
+      "cha": 5
+    },
+    "ac": "13",
+    "actions": [
+      {
+        "type": "melee",
+        "name": "Sting",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 1d4 + dex] poison damage and the target must succeed on a DC 13 Constitution saving throw or has disadvantage on its next attack roll.",
+        "miss": null,
+        "attackMod": 2
+      }
+    ],
+    "alignment": "Lawful Evil",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "1/8",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [],
+    "hp": {
+      "numDice": 4,
+      "die": 6
+    },
+    "id": "seeker_swarm",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/8/8f/SwarmME3.jpg/revision/latest/scale-to-width-down/350?cb=20121201212516",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Seeker Swarm",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [
+      "dex"
+    ],
+    "senses": [],
+    "size": "Small",
+    "skills": [],
+    "speed": [
+      {
+        "type": "fly",
+        "range": 10
+      }
+    ],
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Collector"
+  },
+  {
+    "abilityScores": {
+      "str": 10,
+      "dex": 10,
+      "con": 10,
+      "int": 10,
+      "wis": 10,
+      "cha": 10
+    },
+    "ac": "14",
+    "actions": [
+      {
+        "type": "ranged",
+        "name": "Mass Accelerator Machinegun",
+        "range": 60,
+        "target": "one target",
+        "hit": "7 (2d6) piercing damage and 7 (2d6) radiant damage. The sentry turret can make a burst fire attack instead.",
+        "miss": null,
+        "attackMod": 2
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [
+      "petrified",
+      "poisoned"
+    ],
+    "cr": "1",
+    "damageImmunities": [
+      "poison",
+      "psychic"
+    ],
+    "damageResistances": [],
+    "damageVulnerabilities": [
+      "lightning"
+    ],
+    "features": [
+      {
+        "name": "Stationary",
+        "recharge": null,
+        "description": "The sentry turret automatically fails Strength and Dexterity saving throws and skill checks."
+      }
+    ],
+    "hp": {
+      "numDice": 22,
+      "die": 6
+    },
+    "id": "sentry_turret",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/f/f8/ME3_Sentry_Turret.png/revision/latest/scale-to-width-down/100?cb=20180206214039",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Sentry Turret",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Small",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 0
+      }
+    ],
+    "spellcasting": {
+      "level": "innate",
+      "perDay": "5",
+      "tpSpent": "2",
+      "dc": 10,
+      "hit": 2,
+      "spells": [
+        "flamethrower"
+      ]
+    },
+    "type": "Synthetic",
+    "unit": "Mech"
+  },
+  {
+    "abilityScores": {
+      "str": 4,
+      "dex": 12,
+      "con": 8,
+      "int": 4,
+      "wis": 4,
+      "cha": 4
+    },
+    "ac": "10",
+    "actions": [
+      {
+        "type": "melee",
+        "name": "Suicide Attack",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 1d6] acid damage and the swarmer explodes (its hit points immediately fall to 0).",
+        "miss": null,
+        "attackMod": 3
+      }
+    ],
+    "alignment": "Lawful evil",
+    "barrier": null,
+    "conditionImmunities": [
+      "charmed"
+    ],
+    "cr": "1/8",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Aggressive",
+        "recharge": null,
+        "description": "As a bonus action, the swarmer can move up to its speed toward a hostile creature that it can see."
+      }
+    ],
+    "hp": {
+      "numDice": 3,
+      "die": 4
+    },
+    "id": "swarmer",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/8/82/ME3_Swarmer.png/revision/latest/scale-to-width-down/350?cb=20120319204747",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Swarmer",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [
+      "dex"
+    ],
+    "senses": [
+      {
+        "sense": "darkvision",
+        "range": 20
+      }
+    ],
+    "size": "Tiny",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 12
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synorg",
+    "unit": "Reaper"
+  },
+  {
+    "abilityScores": {
+      "str": 30,
+      "dex": 11,
+      "con": 30,
+      "int": 3,
+      "wis": 11,
+      "cha": 11
+    },
+    "ac": "22",
+    "actions": [
+      {
+        "type": "common",
+        "name": "Multiattack",
+        "description": "The thresher maw can use its Frightful Presence. It then makes four attacks: one with its grasp, two with its tail, one with its acid spit. It can use its Swallow instead of its grasp."
+      },
+      {
+        "type": "ranged",
+        "name": "Acid Spit",
+        "range": 60,
+        "target": "one target",
+        "hit": "The thresher maw targets a 6m radius within 60m and launches a glob of acid that coats the area. Each creature within the area must succeed on a DC 22 Dexterity saving throw, taking 44 (8d10) acid damage on a failed save, or half as much on a successful one. Until the end of the thresher maw's next turn, each creature that enters the area or ends its turn there must also make the saving throw.",
+        "miss": null,
+        "attackMod": 8
+      },
+      {
+        "type": "melee",
+        "name": "Grasp",
+        "range": 4,
+        "target": "one target",
+        "hit": "[dmg: 2d12 + str] bludgeoning damage and 13 (2d12) acid damage. If the target is a creature, it is grappled (escape DC 22). Until this grapple ends, the target is restrained, and the thresher maw can't grasp another target.",
+        "miss": null,
+        "attackMod": 18
+      },
+      {
+        "type": "standard",
+        "name": "Swallow",
+        "recharge": null,
+        "description": "The thresher maw makes one grasp attack against a Large or smaller creature it is grappling. If the attack hits, the target takes the grasp's damage, the target is swallowed, and the grapple ends. While swallowed, the creature is blinded and restrained, it has total cover against attacks and other effects outside the thresher maw, and it takes 56 (16d6) acid damage at the start of each of the thresher maw's turns.\n--If the thresher maw takes 60 damage or more on a single turn from a creature inside it, the thresher maw must succeed on a DC 20 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 4m of the thresher maw. If the thresher maw dies, a swallowed creature is no longer restrained by it and can escape from the corpse by using 12m of movement, exiting prone."
+      },
+      {
+        "type": "melee",
+        "name": "Tail",
+        "range": 8,
+        "target": "one target",
+        "hit": "[dmg: 4d6 + str] bludgeoning damage. If the target is a creature, it must succeed on a DC 22 Strength saving throw or be knocked prone.",
+        "miss": null,
+        "attackMod": 18
+      }
+    ],
+    "alignment": "Unaligned",
+    "barrier": null,
+    "conditionImmunities": [
+      "charmed",
+      "frightened",
+      "paralyzed",
+      "frozen",
+      "lifted"
+    ],
+    "cr": "28",
+    "damageImmunities": [],
+    "damageResistances": [
+      "acid",
+      "bludgeoning",
+      "cold",
+      "fire",
+      "force",
+      "lightning",
+      "piercing",
+      "poison",
+      "slashing"
+    ],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Destroy Terrain",
+        "recharge": null,
+        "description": "When the thresher maw moves via burrowing, the ground it moves through becomes difficult terrain."
+      },
+      {
+        "name": "Frightful Presence",
+        "recharge": null,
+        "description": "Each creature of the thresher maw's choice that is within 60m of the name and aware of it must succeed on a DC 22 Wisdom saving throw or become {frightened} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the thresher maw's Frightful Presence for the next 24 hours."
+      },
+      {
+        "name": "Legendary Resistance",
+        "recharge": "3/Day",
+        "description": "If the thresher maw fails a saving throw, it can choose to succeed instead."
+      },
+      {
+        "name": "Siege Monster",
+        "recharge": null,
+        "description": "The thresher maw deals double damage to objects and structures."
+      }
+    ],
+    "hp": {
+      "numDice": 30,
+      "die": 20
+    },
+    "id": "thresher_maw",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/9e/Thresher_Maw_ME2.png/revision/latest?cb=20100704014552",
+    "lairActions": [],
+    "legendaryActions": [
+      {
+        "name": "Acid Spit Attack",
+        "cost": 2,
+        "description": "The thresher maw makes an acid spit attack."
+      },
+      {
+        "name": "Move---thresher_maw",
+        "cost": 1,
+        "description": "The thresher maw moves up to half its speed."
+      },
+      {
+        "name": "Tail Attack",
+        "cost": 1,
+        "description": "The thresher maw makes a tail attack."
+      }
+    ],
+    "name": "Thresher Maw",
+    "profBonus": 8,
+    "reactions": [],
+    "savingThrows": [
+      "str",
+      "con"
+    ],
+    "senses": [
+      {
+        "sense": "blindsight",
+        "range": 10
+      },
+      {
+        "sense": "tremorsense",
+        "range": 20
+      }
+    ],
+    "size": "Gargantuan",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 20
+      },
+      {
+        "type": "burrow",
+        "range": 12
+      }
+    ],
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Alien"
+  },
+  {
+    "abilityScores": {
+      "str": 1,
+      "dex": 1,
+      "con": 8,
+      "int": 10,
+      "wis": 6,
+      "cha": 1
+    },
+    "ac": "12",
+    "actions": [
+      {
+        "type": "ranged",
+        "name": "Mass Accelerator Machinegun",
+        "range": 60,
+        "target": "one target",
+        "hit": "7 (2d6) piercing damage and 7 (2d6) radiant damage. The turret can make a burst fire attack instead.",
+        "miss": null,
+        "attackMod": 2
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [
+      "petrified",
+      "poisoned"
+    ],
+    "cr": "1",
+    "damageImmunities": [
+      "poison",
+      "psychic"
+    ],
+    "damageResistances": [
+      "bludgeoning"
+    ],
+    "damageVulnerabilities": [
+      "lightning"
+    ],
+    "features": [
+      {
+        "name": "Stationary",
+        "recharge": null,
+        "description": "The turret automatically fails Strength and Dexterity saving throws and skill checks."
+      }
+    ],
+    "hp": {
+      "numDice": 10,
+      "die": 6
+    },
+    "id": "turret",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/0c/ME3_Cerberus_Turret.png/revision/latest/scale-to-width-down/350?cb=20120322141943",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Turret",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Small",
+    "skills": [],
+    "sp": {
+      "shields": 10,
+      "regen": "0"
+    },
+    "speed": [
+      {
+        "type": "walk",
+        "range": 0
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synthetic",
+    "unit": "Mech"
+  },
+  {
+    "abilityScores": {
+      "str": 12,
+      "dex": 15,
+      "con": 12,
+      "int": 3,
+      "wis": 12,
+      "cha": 6
+    },
+    "ac": "13",
+    "actions": [
+      {
+        "type": "melee",
+        "name": "Bite---varren",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 2d4 + dex] piercing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked {prone}.",
+        "miss": null,
+        "attackMod": 4
+      }
+    ],
+    "alignment": "Unaligned",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "1/4",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Keen Hearing and Smell",
+        "recharge": null,
+        "description": "The varren has advantage on Wisdom (Perception) checks that rely on hearing or smell."
+      },
+      {
+        "name": "Pack Tactics",
+        "recharge": null,
+        "description": "The varren has advantage on an attack roll against a creature if at least one of the varren's allies is within 2m of the creature and the ally isn't incapacitated."
+      }
+    ],
+    "hp": {
+      "numDice": 2,
+      "die": 8
+    },
+    "id": "varren",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/f/f5/Varren.png/revision/latest?cb=20100220175817",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Varren",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Medium",
+    "skills": [
+      "perception",
+      "stealth"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 16
+      }
+    ],
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Alien"
+  },
+  {
+    "abilityScores": {
+      "str": 17,
+      "dex": 15,
+      "con": 15,
+      "int": 3,
+      "wis": 12,
+      "cha": 7
+    },
+    "ac": "14",
+    "actions": [
+      {
+        "type": "melee",
+        "name": "Bite---varren-alpha",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 2d6 + dex] piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be knocked {prone}.",
+        "miss": null,
+        "attackMod": 4
+      }
+    ],
+    "alignment": "Unaligned",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "1",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Keen Hearing and Smell",
+        "recharge": null,
+        "description": "The varren alpha has advantage on Wisdom (Perception) checks that rely on hearing or smell."
+      },
+      {
+        "name": "Pack Tactics",
+        "recharge": null,
+        "description": "The varren alpha has advantage on an attack roll against a creature if at least one of the varren alpha's allies is within 2m of the creature and the ally isn't incapacitated."
+      }
+    ],
+    "hp": {
+      "numDice": 5,
+      "die": 10
+    },
+    "id": "varren_alpha",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/6/63/Codex_ME_-_Varren.png/revision/latest/scale-to-width-down/200?cb=20140820063614",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Varren Alpha",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Large",
+    "skills": [
+      "perception",
+      "stealth"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 20
+      }
+    ],
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Alien"
+  },
+  {
+    "abilityScores": {
+      "str": 10,
+      "dex": 16,
+      "con": 10,
+      "int": 8,
+      "wis": 10,
+      "cha": 8
+    },
+    "ac": "14",
+    "actions": [
+      {
+        "type": "common",
+        "name": "Multiattack",
+        "description": "The adjutant makes two Arm Cannon attacks."
+      },
+      {
+        "type": "ranged",
+        "name": "Arm Cannon",
+        "range": 20,
+        "target": "one target",
+        "hit": "[dmg: 1d10 + dex] piercing damage.",
+        "miss": null,
+        "attackMod": 5
+      },
+      {
+        "type": "melee",
+        "name": "Bash",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 1d8 + str] bludgeoning damage.",
+        "miss": null,
+        "attackMod": 2
+      },
+      {
+        "type": "melee",
+        "name": "Reaper Infection",
+        "range": 2,
+        "target": "one organic creature that is grappled by the [name], incapacitated, or restrained",
+        "hit": "[dmg: 1d6 + str] piercing damage plus 10 (3d6) necrotic damage. The target's hit point maximum is reduced by an amount equal to the necrotic damage taken. The reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0. An organic creature slain in this way becomes a Weakened Adjutant and becomes an Adjutant after a long rest.",
+        "miss": null,
+        "attackMod": 2
+      }
+    ],
+    "alignment": "Lawful Evil",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "2",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Grappler",
+        "recharge": null,
+        "description": "The weakened adjutant has advantage on attack rolls against any creature grappled by it."
+      }
+    ],
+    "hp": {
+      "numDice": 10,
+      "die": 10
+    },
+    "id": "weakened_adjutant",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/4/46/EPP_-_adjutant_1.png/revision/latest/scale-to-width-down/640?cb=20121202170742",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Weakened Adjutant",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Large",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 8
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synorg",
+    "unit": "Cerberus"
+  },
+  {
+    "abilityScores": {
+      "str": 18,
+      "dex": 12,
+      "con": 15,
+      "int": 18,
+      "wis": 16,
+      "cha": 10
+    },
+    "ac": "17",
+    "actions": [
+      {
+        "type": "common",
+        "name": "Multiattack",
+        "description": "The yahg makes three attacks: one with its bite and two with its claws."
+      },
+      {
+        "type": "melee",
+        "name": "Bite---yahg",
+        "range": 2,
+        "target": "one target",
+        "hit": "[dmg: 2d10 + str] piercing damage.",
+        "miss": null,
+        "attackMod": 7
+      },
+      {
+        "type": "melee",
+        "name": "Claw---yahg",
+        "range": 4,
+        "target": "one target",
+        "hit": "[dmg: 2d8 + str] slashing damage.",
+        "miss": null,
+        "attackMod": 7
+      }
+    ],
+    "alignment": "Chaotic Evil",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "8",
+    "damageImmunities": [],
+    "damageResistances": [
+      "poison"
+    ],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Assassinate",
+        "recharge": null,
+        "description": "During its first turn, the yahg has advantage on attack rolls against any creature that hasn't taken a turn. Any hit the yahg scores against a surprised creature is a critical hit."
+      },
+      {
+        "name": "Avoidance",
+        "recharge": null,
+        "description": "If the yahg subjected to an effect that allows it to make a saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails."
+      },
+      {
+        "name": "Sneak Attack",
+        "recharge": null,
+        "description": "The yahg  deals an extra 13 (4d6) damage when it hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 2m of an ally of the yahg that isn't incapacitated and the yahg doesn't have disadvantage on the attack roll."
+      }
+    ],
+    "hp": {
+      "numDice": 21,
+      "die": 10
+    },
+    "id": "yahg",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/34/ME3_Yahg.png/revision/latest/scale-to-width-down/230?cb=20120322212821",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Yahg",
+    "profBonus": 3,
+    "reactions": [],
+    "savingThrows": [
+      "str",
+      "dex",
+      "wis",
+      "int"
+    ],
+    "senses": [
+      {
+        "sense": "blindsight",
+        "range": 6
+      }
+    ],
+    "size": "Large",
+    "skills": [
+      "acrobatics",
+      "athletics",
+      "deception",
+      "insight*",
+      "perception",
+      "stealth*"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 16
+      }
+    ],
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Alien"
+  },
+  {
+    "abilityScores": {
+      "str": 20,
+      "dex": 6,
+      "con": 18,
+      "int": 16,
+      "wis": 8,
+      "cha": 12
+    },
+    "ac": "18",
+    "actions": [
+      {
+        "type": "ranged",
+        "name": "Mass Accelerator Machinegun---ymir_mech",
+        "range": 60,
+        "target": "one target",
+        "hit": "16 (3d10) piercing damage and 16 (3d10) radiant damage. The ymir mech can make a burst fire attack instead.",
+        "miss": null,
+        "attackMod": 7
+      },
+      {
+        "type": "standard",
+        "name": "Rocket Launcher",
+        "recharge": "Recharge 5-6",
+        "description": "The ymir mech targets an area within 60m. Each creature within 6m of the target must make a DC 18 Dexterity saving throw. On a failed save, a creature takes 52 (8d12) thunder damage or half as much damage on a successful one."
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [
+      "petrified",
+      "poisoned"
+    ],
+    "cr": "11",
+    "damageImmunities": [
+      "poison",
+      "psychic"
+    ],
+    "damageResistances": [
+      "cold",
+      "bludgeoning",
+      "piercing",
+      "slashing"
+    ],
+    "damageVulnerabilities": [
+      "lightning"
+    ],
+    "features": [
+      {
+        "name": "Post-mortem Explosion---ymir_mech",
+        "recharge": null,
+        "description": "When the YMIR mech is reduced to 0 hit points, it self-destructs. Each creature within a 6m radius sphere must make a DC 15 Dexterity saving throw. On a failed save, a creature takes 22 (4d10) thunder damage or half as much on a successful one."
+      }
+    ],
+    "hp": {
+      "numDice": 17,
+      "die": 10
+    },
+    "id": "ymir_mech",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/5/5f/ME2_YMIR_Mech.png/revision/latest/scale-to-width-down/700?cb=20120419005946",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "YMIR Mech",
+    "profBonus": 4,
+    "reactions": [],
+    "savingThrows": [
+      "str",
+      "int"
+    ],
+    "senses": [
+      {
+        "sense": "infared",
+        "range": null
+      }
+    ],
+    "size": "Large",
+    "skills": [],
+    "sp": {
+      "shields": 50,
+      "regen": "10"
+    },
+    "speed": [
+      {
+        "type": "walk",
+        "range": 6
+      }
+    ],
+    "spellcasting": false,
+    "type": "Synthetic",
+    "unit": "Mech"
+  }
+]

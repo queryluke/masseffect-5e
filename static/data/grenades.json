@@ -1,6 +1,6 @@
 [
   {
-    "id": "arc-grenade",
+    "id": "arc_grenade",
     "name": "Arc Grenade",
     "damage": "3d6",
     "range": "10m",
@@ -8,7 +8,7 @@
     "damageType": "lightning"
   },
   {
-    "id": "cain-trip-mine",
+    "id": "cain_trip_mine",
     "name": "Cain Trip Mine",
     "damage": "2d12",
     "range": "20m",
@@ -16,7 +16,7 @@
     "damageType": "thunder"
   },
   {
-    "id": "cluster-grenade",
+    "id": "cluster_grenade",
     "name": "Cluster Grenade",
     "damage": "2d6",
     "range": "10m",
@@ -24,7 +24,7 @@
     "damageType": "thunder"
   },
   {
-    "id": "flashbang-grenade",
+    "id": "flashbang_grenade",
     "name": "Flashbang Grenade",
     "damage": "none",
     "range": "10m",
@@ -32,7 +32,7 @@
     "damageType": "utility"
   },
   {
-    "id": "frag-grenade",
+    "id": "frag_grenade",
     "name": "Frag Grenade",
     "damage": "3d12",
     "range": "10m",
@@ -40,7 +40,7 @@
     "damageType": "piercing"
   },
   {
-    "id": "homing-grenade",
+    "id": "homing_grenade",
     "name": "Homing Grenade",
     "damage": "1d6",
     "range": "10m",
@@ -48,7 +48,7 @@
     "damageType": "thunder"
   },
   {
-    "id": "inferno-grenade",
+    "id": "inferno_grenade",
     "name": "Inferno Grenade",
     "damage": "3d4",
     "range": "10m",
@@ -56,7 +56,7 @@
     "damageType": "fire"
   },
   {
-    "id": "lift-grenade",
+    "id": "lift_grenade",
     "name": "Lift Grenade",
     "damage": "none",
     "range": "10m",
@@ -64,7 +64,7 @@
     "damageType": "utility"
   },
   {
-    "id": "multi-frag-grenade",
+    "id": "multi-frag_grenade",
     "name": "Multi-frag Grenade",
     "damage": "1d4",
     "range": "10m",
@@ -72,7 +72,7 @@
     "damageType": "piercing"
   },
   {
-    "id": "proximity-mine",
+    "id": "proximity_mine",
     "name": "Proximity Mine",
     "damage": "1d8",
     "range": "Touch",
@@ -80,7 +80,7 @@
     "damageType": "thunder"
   },
   {
-    "id": "recon-mine",
+    "id": "recon_mine",
     "name": "Recon Mine",
     "damage": "2d4",
     "range": "10m",
@@ -88,7 +88,7 @@
     "damageType": "thunder"
   },
   {
-    "id": "smoke-grenade",
+    "id": "smoke_grenade",
     "name": "Smoke Grenade",
     "damage": "none",
     "range": "10m",
@@ -96,7 +96,7 @@
     "damageType": null
   },
   {
-    "id": "sticky-grenade",
+    "id": "sticky_grenade",
     "name": "Sticky Grenade",
     "damage": "3d6",
     "range": "10m",

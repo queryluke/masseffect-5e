@@ -1,13 +1,30 @@
 <template lang="pug">
   div
-    p.mb-0 #[strong #[em {{ feature.name | removeActionId }}].]&nbsp;#[em {{ feature.attackType }} Weapon Attack]: {{ feature.description.attack | npcName(npc.name) | npcDc(npc) }}
-    p(:class="[feature.description.miss ? 'my-0' : 'mt-0']") #[em Hit]: {{ feature.description.hit | npcName(npc.name) | npcDc(npc) | npcDamage(npc) }}
-    p(v-if="feature.description.miss").mt-0 #[em Miss]: {{ feature.description.miss | npcName(npc.name) | npcDc(npc) }}
+    p.mb-0
+      strong
+        em {{ attack.name }}.
+      em.ml-1 {{ attack.type | capitalize }} Weapon Attack:
+      span.ml-1 +{{ attack.attackMod }} to hit,
+      span.ml-1 {{ range }},
+      span.ml-1 {{ attack.target }}.
+      p(:class="[attack.miss ? 'my-0' : 'mt-0']") #[em Hit]: {{ attack.hit }}
+      p(v-if="attack.miss").mt-0 #[em Miss]: {{ attack.miss }}
 </template>
 
 <script>
   export default {
-    props: ['feature', 'npc']
+    computed: {
+      range () {
+        if (this.attack.type === 'melee') {
+          return `reach ${this.attack.range}m`
+        }
+        if (this.attack.type === 'ranged') {
+          return `range ${this.attack.range}/${this.attack.range * 3}m`
+        }
+        return ''
+      }
+    },
+    props: ['attack']
   }
 </script>
 
