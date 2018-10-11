@@ -359,39 +359,57 @@
     "hash": "armor"
   },
   {
+    "length": null,
+    "title": "Custom Armor",
+    "new": true,
+    "section": 6,
+    "subSection": 3,
+    "id": "06-03-custom-armor",
+    "hash": "custom-armor"
+  },
+  {
     "length": 5158,
     "title": "Weapons",
     "change": true,
     "section": 6,
-    "subSection": 3,
-    "id": "06-03-weapons",
+    "subSection": 4,
+    "id": "06-04-weapons",
     "hash": "weapons"
   },
   {
-    "length": 1237,
-    "title": "Thermal Clips",
+    "length": 742,
+    "title": "Mods",
     "new": true,
     "section": 6,
-    "subSection": 4,
-    "id": "06-04-thermal-clips",
-    "hash": "thermal-clips"
+    "subSection": 5,
+    "id": "06-05-mods",
+    "hash": "mods"
   },
   {
     "length": 1284,
     "title": "Medi-gel",
     "new": true,
     "section": 6,
-    "subSection": 5,
-    "id": "06-05-medi-gel",
+    "subSection": 6,
+    "id": "06-06-medi-gel",
     "hash": "medi-gel"
+  },
+  {
+    "length": 1237,
+    "title": "Thermal Clips",
+    "new": true,
+    "section": 6,
+    "subSection": 7,
+    "id": "06-07-thermal-clips",
+    "hash": "thermal-clips"
   },
   {
     "length": 818,
     "title": "Grenades & Mines",
     "new": true,
     "section": 6,
-    "subSection": 6,
-    "id": "06-06-grenades",
+    "subSection": 8,
+    "id": "06-08-grenades",
     "hash": "grenades"
   },
   {
@@ -399,8 +417,8 @@
     "title": "Heavy Weapon Charges",
     "new": true,
     "section": 6,
-    "subSection": 7,
-    "id": "06-07-heavy-weapon-charges",
+    "subSection": 9,
+    "id": "06-09-heavy-weapon-charges",
     "hash": "heavy-weapon-charges"
   },
   {
@@ -408,8 +426,8 @@
     "title": "Omni-gel",
     "new": true,
     "section": 6,
-    "subSection": 8,
-    "id": "06-08-omni-gel",
+    "subSection": 10,
+    "id": "06-10-omni-gel",
     "hash": "omni-gel"
   },
   {
@@ -417,8 +435,8 @@
     "title": "Tools & Kits",
     "change": true,
     "section": 6,
-    "subSection": 9,
-    "id": "06-09-tools-kits",
+    "subSection": 11,
+    "id": "06-11-tools-kits",
     "hash": "tools-kits"
   },
   {

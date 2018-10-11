@@ -7,10 +7,7 @@ new: true
 Omni-gel is a technological material that can be obtained by breaking down unwanted items, such as weapons, armor, and
 upgrades. Doing so will usually give an amount of omni-gel based on the item that was dismantled.
 
-- Armor and Weapon Mods: 1 omni-gel
-- Heavy Pistols, SMGs, Head armor, Leg armor, Arm armor: 2 omni-gel
-- Assault Rifles, Shotguns, Sniper Rifles, Chest Armor: 3 omni-gel
-- Heavy Weapon: 4 omni-gel
+<ai-dialog title="Omni-gel Yield" component="omni-gel-yield"></ai-dialog>
 
 <br>
 

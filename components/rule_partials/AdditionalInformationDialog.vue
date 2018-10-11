@@ -32,6 +32,7 @@
   import MulticlassingPrereqsTable from './MulticlassingPrereqsTable.vue'
   import MulticlassingProfsTable from './MulticlassingProfsTable.vue'
   import MulticlassingTechTable from './MulticlassingTechTable.vue'
+  import OmniGelYield from './OmniGelYield.vue'
   import SizeCategory from './SizeCategory.vue'
   import TypicalDifficultyClassesTable from './TypicalDifficultyClassesTable.vue'
   import TravelPace from './TravelPace.vue'
@@ -56,6 +57,7 @@
       MulticlassingPrereqsTable,
       MulticlassingProfsTable,
       MulticlassingTechTable,
+      OmniGelYield,
       SizeCategory,
       TypicalDifficultyClassesTable,
       TravelPace,

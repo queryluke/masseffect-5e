@@ -75,17 +75,4 @@ You can holster one weapon you're wielding or draw one weapon you're carrying as
 However, to holster one weapon *then* draw a second weapon would require an action.
 But the GM might allow a Sleight of Hand check to see if you can holster and draw at the cost of your bonus action.
 
-
-### Weapon Mods <v-chip color="secondary" text-color="white" class="v-chip--x-small">new</v-chip>
-Weapons can be improved by adding _weapon mods_. Each weapon has 4 mod slots: Magazine, Body, Core, and Barrel.
-The weapon is only allowed one mod per slot. For example, the M-8 Avenger cannot have the Ultralight Materials and the
-Precision Scope, because both of those mods utilize the Body slot. Unlike armor mods, weapon mods can be removed from
-weapons without any damage to the weapon or mod. In this example, the player could choose to replace Ultralight Materials for the Precision Scope.
-
-Additionally, some mods are limited by weapon type. For example, the Stunner mod is only available for placement on Heavy
-Pistols and SMGs.
-
-You cannot add weapon mods to _special_ or _melee_ weapons.
-
-
 <source-reference pages="64-68"></source-reference>
