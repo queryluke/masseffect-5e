@@ -552,38 +552,38 @@
   },
   {
     "length": null,
-    "title": "Biotics",
+    "title": "What is a Spell?",
     "new": true,
     "section": 10,
     "subSection": 2,
-    "id": "10-02-biotics",
-    "hash": "biotics"
+    "id": "10-02-spell-types",
+    "hash": "spell-types"
   },
   {
-    "length": null,
-    "title": "Tech",
-    "new": true,
+    "length": 1240,
+    "title": "Spell Level",
+    "change": true,
     "section": 10,
     "subSection": 3,
-    "id": "10-03-tech",
-    "hash": "tech"
+    "id": "10-03-spell-level",
+    "hash": "spell-level"
   },
   {
-    "length": null,
-    "title": "Combat",
-    "new": true,
+    "length": 1465,
+    "title": "Learning Spells",
+    "change": true,
     "section": 10,
     "subSection": 4,
-    "id": "10-04-combat",
-    "hash": "combat"
+    "id": "10-04-learning-spells",
+    "hash": "learning-spells"
   },
   {
     "length": null,
     "title": "Casting a Spell",
     "change": true,
     "section": 10,
-    "subSection": 5,
-    "id": "10-05-casting-a-spell",
+    "subSection": 6,
+    "id": "10-06-casting-a-spell",
     "hash": "casting-a-spell"
   },
   {
@@ -591,8 +591,8 @@
     "title": "Primers and Detonators",
     "new": true,
     "section": 10,
-    "subSection": 6,
-    "id": "10-06-primer-and-detonators",
+    "subSection": 7,
+    "id": "10-07-primer-and-detonators",
     "hash": "primer-and-detonators"
   }
 ]
