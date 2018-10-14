@@ -1,7 +1,7 @@
 ---
 id: stimulant_pack
 name: Stimulant Pack
-level: 
+level: 0
 type: combat
 attackType: []
 effect:
@@ -19,6 +19,7 @@ primes:
 availableClasses:
 - infiltrator
 - soldier
+- vanguard
 advancementOptions:
 - name: Friendly
   description: You can inject a creature within melee range with the stimulant pack

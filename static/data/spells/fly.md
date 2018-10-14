@@ -1,7 +1,7 @@
 ---
 id: fly
 name: Fly
-level: '2'
+level: 2
 type: biotic
 attackType: []
 effect:

@@ -2,6 +2,6 @@
 id: biotic_attacks
 name: Biotic Attacks
 ---
-Choose 2 biotic spells. Casting either of those spells counts as an Attack action.
+Choose one biotic cantrip you know and one biotic spell of 1st level you know. You may cast either spell as an attack.
 
 By spending 8 hours training, you can exchange one or both of the spells you chose for different spells of the same levels.

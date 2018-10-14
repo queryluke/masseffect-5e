@@ -1,7 +1,7 @@
 ---
 id: biotic_orbs
 name: Biotic Orbs
-level: '2'
+level: 2
 type: biotic
 attackType:
 - Ranged Attack

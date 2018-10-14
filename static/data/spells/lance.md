@@ -1,7 +1,7 @@
 ---
 id: lance
 name: Lance
-level: '1'
+level: 1
 type: biotic
 attackType:
 - Ranged Attack

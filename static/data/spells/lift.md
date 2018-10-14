@@ -1,7 +1,7 @@
 ---
 id: lift
 name: Lift
-level: '0'
+level: 0
 type: biotic
 attackType: []
 effect:

@@ -37,14 +37,14 @@
         data.sort(function (a, b) {
           switch (sortBy) {
             case 'type':
-              if (a[sortBy] === b[sortBy]) {
-                if (a.level === b.level) {
+              if (a.level === b.level) {
+                if (a.type === b.type) {
                   return (a.name > b.name ? 1 : -1) * order
                 } else {
-                  return (a.level > b.level ? 1 : -1) * order
+                  return (a.type > b.type ? 1 : -1) * order
                 }
               } else {
-                return (a[sortBy] > b[sortBy] ? 1 : -1) * order
+                return (a.level > b.level ? 1 : -1) * order
               }
             default:
               return (a[sortBy] === b[sortBy] ? 0 : a[sortBy] > b[sortBy] ? 1 : -1) * order

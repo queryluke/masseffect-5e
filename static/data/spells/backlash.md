@@ -1,7 +1,7 @@
 ---
 id: backlash
 name: Backlash
-level: '2'
+level: 2
 type: biotic
 attackType: []
 effect:

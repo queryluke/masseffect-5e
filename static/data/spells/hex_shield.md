@@ -1,7 +1,7 @@
 ---
 id: hex_shield
 name: Hex Shield
-level: 
+level: 0
 type: combat
 attackType: []
 effect:

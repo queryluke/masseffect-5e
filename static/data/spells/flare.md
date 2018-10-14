@@ -1,7 +1,7 @@
 ---
 id: flare
 name: Flare
-level: '4'
+level: 4
 type: biotic
 attackType:
 - DEX Save

@@ -2,10 +2,7 @@
 id: makeshift_grenades_1
 name: Makeshift Grenades
 ---
-Your omni-tool is so advanced, you can use tech points to create a specific grenade. Choose a grenade from the grenade 
-list, it is permanently programmed into your Omni-tool.
+You've programmed your omni-tool to transform omni-gel into grenades. Choose two grenades from the grenade
+list. As an action, you can spend 1 omni-gel to create and use a grenade of that type.
 
-As an action, you can spend 3 tech points to create and use a grenade of that type. You cannot replenish a grenade or 
-gift a grenade with this ability.
-
-You can spend 8 hours of programming to exchange your selected grenade with a different one.
+You can spend 8 hours of programming to exchange a selected grenade with a different one.

@@ -2,7 +2,7 @@
 id: drone
 name: Drone
 ---
-As an Action, spend 2 tech points to summon one of the following drones: assault, combat, defense, disruption, recon, or rocket.
+As an Action, spend 1 tech point to summon one of the following drones: assault, combat, defense, disruption, recon, or rocket.
 The stat blocks for the drones can be found in the [bestiary](/phb/bestiary)
 
 When summoned, the drone has additional hit point equal to twice your engineer level and you add your proficiency bonus to all

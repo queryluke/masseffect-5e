@@ -1,7 +1,7 @@
 ---
 id: reave
 name: Reave
-level: '1'
+level: 1
 type: biotic
 attackType:
 - Ranged Attack

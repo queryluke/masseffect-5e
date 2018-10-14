@@ -1,7 +1,7 @@
 ---
 id: guidance
 name: Guidance
-level: '1'
+level: 1
 type: tech
 attackType: []
 effect:

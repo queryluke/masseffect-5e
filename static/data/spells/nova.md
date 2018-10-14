@@ -1,7 +1,7 @@
 ---
 id: nova
 name: Nova
-level: '0'
+level: 0
 type: biotic
 attackType:
 - DEX Save

@@ -1,7 +1,7 @@
 ---
 id: submission_net
 name: Submission Net
-level: '2'
+level: 2
 type: tech
 attackType:
 - STR Save

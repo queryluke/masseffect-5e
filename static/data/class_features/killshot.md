@@ -2,5 +2,5 @@
 id: killshot
 name: Killshot
 ---
-When you attack and hit a creature that is surprised, it must make a Constitution saving throw (DC 8 + your Dexterity 
-modifier + your proficiency bonus). On a failed save, double the damage of your attack against the creature.
+Your proficiency with sniper rifles is beyond measure allowing you to target the weakest points of your enemy.
+When you apply your sneak attack damage to an attack made with a sniper rifle, add 3d6 to the damage roll.

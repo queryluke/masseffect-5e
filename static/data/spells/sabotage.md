@@ -1,7 +1,7 @@
 ---
 id: sabotage
 name: Sabotage
-level: '2'
+level: 2
 type: tech
 attackType: []
 effect:

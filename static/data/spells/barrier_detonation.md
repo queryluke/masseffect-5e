@@ -1,7 +1,7 @@
 ---
 id: barrier_detonation
 name: Barrier Detonation
-level: '0'
+level: 0
 type: biotic
 attackType: []
 effect:

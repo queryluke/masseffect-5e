@@ -542,7 +542,7 @@
     "hash": "shields"
   },
   {
-    "length": null,
+    "length": 449,
     "title": "What is a Spell?",
     "change": true,
     "section": 10,
@@ -551,7 +551,7 @@
     "hash": "what-is-a-spell"
   },
   {
-    "length": null,
+    "length": 1317,
     "title": "What is a Spell?",
     "new": true,
     "section": 10,
@@ -576,6 +576,15 @@
     "subSection": 4,
     "id": "10-04-learning-spells",
     "hash": "learning-spells"
+  },
+  {
+    "length": 2278,
+    "title": "Spell Slots",
+    "change": true,
+    "section": 10,
+    "subSection": 5,
+    "id": "10-05-spell-slots",
+    "hash": "spell-slots"
   },
   {
     "length": null,

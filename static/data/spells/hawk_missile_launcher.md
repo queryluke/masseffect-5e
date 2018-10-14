@@ -1,7 +1,7 @@
 ---
 id: hawk_missile_launcher
 name: Hawk Missile Launcher
-level: 
+level: 0
 type: combat
 attackType:
 - Ranged Attack

@@ -1,7 +1,7 @@
 ---
 id: beehive
 name: Beehive
-level: 
+level: 0
 type: combat
 attackType:
 - DEX save

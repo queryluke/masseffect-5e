@@ -1,7 +1,7 @@
 ---
 id: ballistic_blades
 name: Ballistic Blades
-level: 
+level: 0
 type: combat
 attackType:
 - Ranged Attack
@@ -21,6 +21,7 @@ primes:
 availableClasses:
 - infiltrator
 - soldier
+- vanguard
 advancementOptions:
 - name: Bleeding Blades
   description: On a hit, the target takes an additional 3d12 damage at the start

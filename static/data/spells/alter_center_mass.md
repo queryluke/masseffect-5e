@@ -1,7 +1,7 @@
 ---
 id: alter_center_mass
 name: Alter Center Mass
-level: '1'
+level: 1
 type: biotic
 attackType:
 - CON Save

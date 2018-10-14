@@ -1,7 +1,7 @@
 ---
 id: biotic_sphere
 name: Biotic Sphere
-level: '4'
+level: 4
 type: biotic
 attackType: []
 effect:

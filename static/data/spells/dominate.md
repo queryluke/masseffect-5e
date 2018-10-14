@@ -1,7 +1,7 @@
 ---
 id: dominate
 name: Dominate
-level: '3'
+level: 3
 type: biotic
 attackType:
 - WIS Save

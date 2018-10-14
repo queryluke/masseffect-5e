@@ -1,7 +1,7 @@
 ---
 id: warp
 name: Warp
-level: '2'
+level: 2
 type: biotic
 attackType:
 - Ranged Attack

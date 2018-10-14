@@ -1,7 +1,7 @@
 ---
 id: turbocharge
 name: Turbocharge
-level: 
+level: 0
 type: combat
 attackType: []
 effect:

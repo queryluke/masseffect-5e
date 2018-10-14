@@ -2,9 +2,7 @@
 id: synchronized_assault
 name: Synchronized Assault
 ---
-You may use a reaction to sync the targeting computers of all your allies who are not incapacitated. You target an enemy, 
-painting them with an infrared beam that lets all of your affected allies (and yourself) make an attack roll on that target 
-using their weapon during your turn. If your affected ally has already taken their turn, they may still make an attack on 
-the designated enemy, and if they have not yet taken their turn, they make the attack with advantage.
+Starting at {{ level }} level, you gain the ability to unleash a devastating combination of your allies' abilities. As a
+bonus action, select up to five allies within 60m. They can use their reactions to immediately take actions.
 
-Once you use Synchronized Assault, you must finish a long rest before you can use it again.
+Once you use this ability, you cannot use it again until you complete a long rest.

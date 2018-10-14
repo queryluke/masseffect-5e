@@ -1,7 +1,7 @@
 ---
 id: biotic_punch
 name: Biotic Punch
-level: '0'
+level: 0
 type: biotic
 attackType:
 - Melee Spell Attack

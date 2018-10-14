@@ -1,7 +1,7 @@
 ---
 id: biotic_wall
 name: Biotic Wall
-level: '3'
+level: 3
 type: biotic
 attackType: []
 effect:

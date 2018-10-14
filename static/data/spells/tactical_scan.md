@@ -1,7 +1,7 @@
 ---
 id: tactical_scan
 name: Tactical Scan
-level: 
+level: 0
 type: combat
 attackType: []
 effect:

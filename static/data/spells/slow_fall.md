@@ -1,7 +1,7 @@
 ---
 id: slow_fall
 name: Slow Fall
-level: '0'
+level: 0
 type: biotic
 attackType: []
 effect:

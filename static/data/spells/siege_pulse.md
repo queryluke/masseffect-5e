@@ -1,7 +1,7 @@
 ---
 id: siege_pulse
 name: Siege Pulse
-level: 
+level: 0
 type: combat
 attackType:
 - CON Save
@@ -21,6 +21,7 @@ detonates:
 primes: 
 availableClasses:
 - soldier
+- vanguard
 advancementOptions:
 - name: Improved Pulse
   description: Add your STR or DEX modifier to the DC of the saving throw. You choose

@@ -19,3 +19,4 @@ it to the damage roll. You can use this ability after rolling damage. If the att
 saving throw to maintain concentration, it has disadvantage on that save.
 * When you are hit by a melee attack, if you are currently holding your Weapon of Choice, you can expend one superiority 
 die as a reaction, adding the number rolled to your AC. If the attack still hits, you take half damage from it.
+

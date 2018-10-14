@@ -16,13 +16,8 @@
     },
     computed: {
       level () {
-        return this.ctx('level')
-      },
-      newSpellLevelMax () {
-        if (this.context.newSpellLevelMax) {
-          return this.$options.filters.ordinal(this.context.level)
-        }
-        return ''
+        const level = this.ctx('level')
+        return `${this.$options.filters.ordinal(level)}`
       }
     },
     created () {

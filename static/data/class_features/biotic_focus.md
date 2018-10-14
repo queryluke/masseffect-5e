@@ -9,4 +9,6 @@ speed and strength. You gain the following benefits for 1 minute:
 * +4 to all melee weapon damage rolls.
 * You have advantage on Strength and Dexterity saving throws.
 
+<br>
+
 Once you use this feature, you can't use it again until you finish a long rest.

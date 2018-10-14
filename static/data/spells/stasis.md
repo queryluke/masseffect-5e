@@ -1,7 +1,7 @@
 ---
 id: stasis
 name: Stasis
-level: '2'
+level: 2
 type: biotic
 attackType:
 - STR Save

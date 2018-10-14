@@ -1,7 +1,7 @@
 ---
 id: fortification
 name: Fortification
-level: 
+level: 0
 type: combat
 attackType: []
 effect:
@@ -18,6 +18,7 @@ detonates:
 primes: 
 availableClasses:
 - soldier
+- vanguard
 advancementOptions:
 - name: Lasting Fortification
   description: Fortification lasts an additional turn.

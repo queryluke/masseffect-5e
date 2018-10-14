@@ -1,7 +1,7 @@
 ---
 id: nightshade_blade
 name: Nightshade Blade
-level: 
+level: 0
 type: combat
 attackType:
 - Ranged Attack
@@ -22,6 +22,7 @@ primes:
 availableClasses:
 - infiltrator
 - soldier
+- vanguard
 advancementOptions:
 - name: Paralyze
   description: A creature that fails the Constitution saving throw becomes {paralyzed}

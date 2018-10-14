@@ -1,7 +1,7 @@
 ---
 id: throw
 name: Throw
-level: '0'
+level: 0
 type: biotic
 attackType:
 - Ranged Attack

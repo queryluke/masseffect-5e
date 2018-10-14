@@ -1,7 +1,7 @@
 ---
 id: biotic_slash
 name: Biotic Slash
-level: '1'
+level: 1
 type: biotic
 attackType: []
 effect:

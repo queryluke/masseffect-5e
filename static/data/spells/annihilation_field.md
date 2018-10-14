@@ -1,7 +1,7 @@
 ---
 id: annihilation_field
 name: Annihilation Field
-level: '4'
+level: 4
 type: biotic
 attackType:
 - CON Save
@@ -20,7 +20,6 @@ detonates:
 primes: necrotic
 availableClasses:
 - adept
-- vanguard
 advancementOptions:
 - name: Disorient
   description: Creatures that fail the Constitution saving throw have disadvantage on their next attack roll.

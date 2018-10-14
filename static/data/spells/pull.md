@@ -1,7 +1,7 @@
 ---
 id: pull
 name: Pull
-level: '1'
+level: 1
 type: biotic
 attackType:
 - Ranged Attack

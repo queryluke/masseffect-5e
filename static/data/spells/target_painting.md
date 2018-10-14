@@ -1,7 +1,7 @@
 ---
 id: target_painting
 name: Target Painting
-level: '2'
+level: 2
 type: tech
 attackType:
 - DEX Save

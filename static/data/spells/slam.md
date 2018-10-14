@@ -1,7 +1,7 @@
 ---
 id: slam
 name: Slam
-level: '0'
+level: 0
 type: biotic
 attackType: []
 effect:

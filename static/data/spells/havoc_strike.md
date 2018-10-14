@@ -1,7 +1,7 @@
 ---
 id: havoc_strike
 name: Havoc Strike
-level: 
+level: 0
 type: combat
 attackType:
 - DEX Save
@@ -20,6 +20,7 @@ detonates:
 primes: 
 availableClasses:
 - soldier
+- vanguard
 advancementOptions:
 - name: Improved Distance
   description: You can jump up to 12m.

@@ -1,7 +1,7 @@
 ---
 id: dark_channel
 name: Dark Channel
-level: '0'
+level: 0
 type: biotic
 attackType:
 - Ranged Attack

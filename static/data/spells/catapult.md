@@ -1,7 +1,7 @@
 ---
 id: catapult
 name: Catapult
-level: '1'
+level: 1
 type: biotic
 attackType:
 - DEX Save

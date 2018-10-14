@@ -1,7 +1,7 @@
 ---
 id: phase_disruptor
 name: Phase Disruptor
-level: '0'
+level: 0
 type: biotic
 attackType:
 - Ranged Attack

@@ -1,7 +1,19 @@
 [
   {
+    "id": "a_touch_of_force",
+    "name": "A Touch of Force"
+  },
+  {
     "id": "ability_score_improvement",
     "name": "Ability Score Improvement"
+  },
+  {
+    "id": "adaptive_tech_armor",
+    "name": "Adaptive Tech Armor"
+  },
+  {
+    "id": "additional_fighting_style",
+    "name": "Additional Fighting Style"
   },
   {
     "id": "adrenaline_rush_1",
@@ -10,6 +22,10 @@
   {
     "id": "adrenaline_rush_2",
     "name": "Adrenaline Rush"
+  },
+  {
+    "id": "advanced_combat_powers",
+    "name": "Advanced Combat Powers"
   },
   {
     "id": "advanced_tech_armor",
@@ -36,6 +52,10 @@
     "name": "Bend Luck"
   },
   {
+    "id": "biometric_feedback",
+    "name": "Biometric Feedback"
+  },
+  {
     "id": "biotic_attacks",
     "name": "Biotic Attacks"
   },
@@ -50,10 +70,6 @@
   {
     "id": "biotic_control",
     "name": "Biotic Control"
-  },
-  {
-    "id": "biotic_enfilade",
-    "name": "Biotic Enfilade"
   },
   {
     "id": "biotic_focus",
@@ -76,12 +92,12 @@
     "name": "Biotic Mastery"
   },
   {
-    "id": "biotic_powers",
-    "name": "Biotic Powers"
+    "id": "biotic_recovery",
+    "name": "Biotic Recovery"
   },
   {
-    "id": "biotic_slash_2",
-    "name": "Improved Biotic Slash"
+    "id": "biotic_recovery_nemesis",
+    "name": "Biotic Recovery"
   },
   {
     "id": "biotic_split",
@@ -92,8 +108,16 @@
     "name": "Biotic Surge"
   },
   {
-    "id": "biotic_wealth",
-    "name": "Biotic Wealth"
+    "id": "blindsense",
+    "name": "Blindsense"
+  },
+  {
+    "id": "blitz",
+    "name": "Blitz"
+  },
+  {
+    "id": "bombardment",
+    "name": "Bombardment"
   },
   {
     "id": "brutal_critical_1",
@@ -108,12 +132,12 @@
     "name": "Brutal Critical"
   },
   {
-    "id": "careful_eyes",
-    "name": "Careful Eyes"
+    "id": "call_shots",
+    "name": "Call the Shots"
   },
   {
-    "id": "close-quarters_shooter",
-    "name": "Close-Quarters Shooter"
+    "id": "careful_eyes",
+    "name": "Careful Eyes"
   },
   {
     "id": "combat_heuristics",
@@ -140,12 +164,16 @@
     "name": "Dark Biotics"
   },
   {
-    "id": "deadeye",
-    "name": "Deadeye"
+    "id": "death_strike",
+    "name": "Death Strike"
   },
   {
     "id": "devastating_critical",
     "name": "Devastating Critical"
+  },
+  {
+    "id": "disrupting_attack",
+    "name": "Disrupting Attack"
   },
   {
     "id": "drone",
@@ -168,18 +196,6 @@
     "name": "Drone's Defense"
   },
   {
-    "id": "dropshot",
-    "name": "Dropshot"
-  },
-  {
-    "id": "ear_for_deceit",
-    "name": "Ear for Deceit"
-  },
-  {
-    "id": "elegant_maneuver",
-    "name": "Elegant Maneuver"
-  },
-  {
     "id": "elusive",
     "name": "Elusive"
   },
@@ -188,12 +204,20 @@
     "name": "Empowered Biotics"
   },
   {
+    "id": "enfilade",
+    "name": "Enfilade"
+  },
+  {
     "id": "engineers_efficiency",
     "name": "Engineer's Efficiency"
   },
   {
     "id": "evasion",
     "name": "Evasion"
+  },
+  {
+    "id": "ever_ready",
+    "name": "Ever Ready"
   },
   {
     "id": "expert_biotic",
@@ -216,16 +240,8 @@
     "name": "Extra Attack"
   },
   {
-    "id": "eye_for_detail",
-    "name": "Eye for Detail"
-  },
-  {
-    "id": "eye_for_weakness",
-    "name": "Eye for Weakness"
-  },
-  {
-    "id": "fast_hands",
-    "name": "Fast Hands"
+    "id": "fighting_spirit",
+    "name": "Fighting Spirit"
   },
   {
     "id": "fighting_style",
@@ -234,6 +250,10 @@
   {
     "id": "focused_biotics",
     "name": "Focused Biotics"
+  },
+  {
+    "id": "hardened_tech_armor",
+    "name": "Hardened Tech Armor"
   },
   {
     "id": "heavy_barrier",
@@ -252,22 +272,6 @@
     "name": "Improved Barrier"
   },
   {
-    "id": "improved_tech_armor_1",
-    "name": "Improved Tech Armor"
-  },
-  {
-    "id": "improved_tech_armor_2",
-    "name": "Improved Tech Armor"
-  },
-  {
-    "id": "improved_weapon_superiority_1",
-    "name": "Improved Weapon Superiority"
-  },
-  {
-    "id": "improved_weapon_superiority_2",
-    "name": "Improved Weapon Superiority"
-  },
-  {
     "id": "indomitable_1",
     "name": "Indomitable"
   },
@@ -276,20 +280,32 @@
     "name": "Indomitable"
   },
   {
-    "id": "infiltration",
-    "name": "Infiltration"
-  },
-  {
-    "id": "insightful_fighting",
-    "name": "Insightful Fighting"
-  },
-  {
     "id": "invention",
     "name": "Invention"
   },
   {
+    "id": "jack_of_all_trades",
+    "name": "Jack of All Trades"
+  },
+  {
     "id": "killshot",
     "name": "Killshot"
+  },
+  {
+    "id": "l5t_1",
+    "name": "L5t Implant (3rd-level)"
+  },
+  {
+    "id": "l5t_2",
+    "name": "L5t Implant (4th-level)"
+  },
+  {
+    "id": "l5t_3",
+    "name": "L5t Implant (4th-level)"
+  },
+  {
+    "id": "l5t_4",
+    "name": "L5t Implant (5th-level)"
   },
   {
     "id": "makeshift_grenades_1",
@@ -300,16 +316,16 @@
     "name": "Makeshift Grenades"
   },
   {
-    "id": "master_duelist",
-    "name": "Master Duelist"
-  },
-  {
     "id": "master_tactician",
     "name": "Master Tactician"
   },
   {
     "id": "medi-gel_enhancements",
     "name": "Medi-gel Enhancements"
+  },
+  {
+    "id": "melee_prowess",
+    "name": "Melee Prowess"
   },
   {
     "id": "metabiotics_1",
@@ -328,12 +344,20 @@
     "name": "Omni-Shield"
   },
   {
+    "id": "onslaught",
+    "name": "Onslaught"
+  },
+  {
     "id": "opportunist",
     "name": "Opportunist"
   },
   {
     "id": "overchannel",
     "name": "Overchannel"
+  },
+  {
+    "id": "overwatch",
+    "name": "Overwatch"
   },
   {
     "id": "paint_by_number",
@@ -352,11 +376,7 @@
     "name": "Pure Biotics"
   },
   {
-    "id": "quick_cast_1",
-    "name": "Quick Cast"
-  },
-  {
-    "id": "quick_cast_2",
+    "id": "quick_cast",
     "name": "Quick Cast"
   },
   {
@@ -364,8 +384,16 @@
     "name": "Rapid Strike"
   },
   {
-    "id": "relentless",
-    "name": "Relentless"
+    "id": "recharge",
+    "name": "Recharge (1d4)"
+  },
+  {
+    "id": "recharge_2",
+    "name": "Recharge (1d6)"
+  },
+  {
+    "id": "recharge_3",
+    "name": "Recharge (1d8)"
   },
   {
     "id": "reliable_talent",
@@ -380,8 +408,20 @@
     "name": "Repair Drone"
   },
   {
+    "id": "reset",
+    "name": "Reset"
+  },
+  {
     "id": "retaliation",
     "name": "Retaliation"
+  },
+  {
+    "id": "sabotage",
+    "name": "Sabotage"
+  },
+  {
+    "id": "saboteurs_reflexes",
+    "name": "Saboteur's Reflexes"
   },
   {
     "id": "saboteurs_touch",
@@ -392,12 +432,20 @@
     "name": "Sculpt Biotics"
   },
   {
+    "id": "sculpt_spells",
+    "name": "Sculpt Spells"
+  },
+  {
     "id": "shadow_strike",
     "name": "Shadow Strike"
   },
   {
     "id": "shield_boost",
     "name": "Shield Boost"
+  },
+  {
+    "id": "shotgun_savvy",
+    "name": "Shotgun Savvy"
   },
   {
     "id": "signature_biotics",
@@ -408,12 +456,16 @@
     "name": "Silent Cloak"
   },
   {
-    "id": "snap_shot",
-    "name": "Snap Shot"
+    "id": "slippery_mind",
+    "name": "Slippery Mind"
   },
   {
     "id": "sneak_attack",
     "name": "Sneak Attack"
+  },
+  {
+    "id": "spell_steal",
+    "name": "Spell Steal"
   },
   {
     "id": "steady_aim",
@@ -424,16 +476,20 @@
     "name": "Strafe"
   },
   {
+    "id": "strength_before_death",
+    "name": "Strength before Death"
+  },
+  {
     "id": "stroke_of_luck",
     "name": "Stroke of Luck"
   },
   {
-    "id": "subclass",
-    "name": "Subclass Feature"
+    "id": "stunning_strike",
+    "name": "Stunning Strike"
   },
   {
-    "id": "sudden_strike",
-    "name": "Sudden Strike"
+    "id": "subclass",
+    "name": "Subclass Feature"
   },
   {
     "id": "supply_pylon",
@@ -460,20 +516,32 @@
     "name": "Tactical Cloak"
   },
   {
+    "id": "tactical_focus",
+    "name": "Tactical Focus"
+  },
+  {
+    "id": "tactical_focus_2",
+    "name": "Additional Tactic"
+  },
+  {
+    "id": "tactical_maneuvers",
+    "name": "Tactical Maneuvers"
+  },
+  {
+    "id": "tactical_range_1",
+    "name": "Tactical Focus Range"
+  },
+  {
+    "id": "tactical_range_2",
+    "name": "Tactical Focus Range"
+  },
+  {
     "id": "tactical_reload",
     "name": "Tactical Reload"
   },
   {
     "id": "tech_armor",
     "name": "Tech Armor"
-  },
-  {
-    "id": "tech_armor_overload_1",
-    "name": "Tech Armor Overload"
-  },
-  {
-    "id": "tech_armor_overload_2",
-    "name": "Tech Armor Overload"
   },
   {
     "id": "tech_aura_1",
@@ -488,20 +556,24 @@
     "name": "Tech Aura"
   },
   {
-    "id": "tech_power",
-    "name": "Tech Power"
-  },
-  {
-    "id": "techcombat_power",
-    "name": "Tech/Combat Power"
+    "id": "tech_points",
+    "name": "Tech Points"
   },
   {
     "id": "teleporting_dodge",
     "name": "Teleporting Dodge"
   },
   {
+    "id": "tireless_spirit",
+    "name": "Tireless Spirit"
+  },
+  {
     "id": "uncanny_dodge",
     "name": "Uncanny Dodge"
+  },
+  {
+    "id": "unyielding_assault",
+    "name": "Unyielding Assault"
   },
   {
     "id": "up_close_and_personal",
@@ -524,19 +596,11 @@
     "name": "Weapon of Choice"
   },
   {
-    "id": "weapon_training",
-    "name": "Weapon Training"
+    "id": "weapon_proficiency",
+    "name": "Weapon Proficiency"
   },
   {
-    "id": "zero-sum_1",
-    "name": "Zero-Sum"
-  },
-  {
-    "id": "zero-sum_2",
-    "name": "Zero-Sum"
-  },
-  {
-    "id": "zero-sum_3",
+    "id": "zero-sum",
     "name": "Zero-Sum"
   }
 ]

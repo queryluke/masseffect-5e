@@ -1,7 +1,7 @@
 ---
 id: ai_hacking
 name: AI Hacking
-level: '3'
+level: 3
 type: tech
 attackType:
 - INT Save

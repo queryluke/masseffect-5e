@@ -1,7 +1,7 @@
 ---
 id: poison_spray
 name: Poison Spray
-level: '1'
+level: 1
 type: tech
 attackType:
 - CON Save

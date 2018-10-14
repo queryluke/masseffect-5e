@@ -1,7 +1,7 @@
 ---
 id: singularity
 name: Singularity
-level: '3'
+level: 3
 type: biotic
 attackType:
 - STR Save

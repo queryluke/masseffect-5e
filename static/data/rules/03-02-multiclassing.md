@@ -67,14 +67,29 @@ more than two attacks with this feature unless it says you do (as the soldier's 
 
 <h4 class="mt-3 subheading">Spellcasting <v-chip color="orange accent-2" text-color="black" class="v-chip--x-small">change</v-chip></h4>
 
-__Biotic Spell Slots & Cantrips__: You determine your available spell slots and cantrips by adding together all your
+__Spells known and prepared__: You determine what spells you know and can prepare for each class individually, as if you were a single-classed member
+of that class. If you are an adept 4/engineer 3, for example, you know six 1st-level adept spells and five adept cantrips
+based on your levels in the adept class. As 3rd-level engineer, you can prepare 3 engineer spells. If your Intelligence
+is 16, you can prepare six engineer spells.
+
+Each spell you know and prepare is associated with one of your classes, and you use the spellcasting ability of that
+class when you cast the spell.
+
+You can only use spell slots to cast biotic spells and you can only use tech points to cast tech spells. The exception
+is Sentinels that can use their spell slots to cast biotic or tech spells.
+
+<br>
+
+__Biotic Spell Slots__: You determine your available spell slots and cantrips by adding together all your
 levels in the adept class and half your levels (rounded down) in the sentinel and vanguard classes. Use this total to determine
 your spell slots and cantrips by consulting the Multiclassing Biotics table.
 
 <ai-dialog title="Multiclassing Biotics table" component="multiclassing-biotics-table"></ai-dialog>
 
-__Tech Points & Memory__ You determine your tech points and max memory to spend on tech powers by adding together all
-your levels in the engineer class and half your levels (rounded down) in the infiltrator and sentinel classes. Use this
+<br>
+
+__Tech Points & Tech Point Limit__ You determine your tech points and tech point limit by adding together all
+your levels in the engineer class and half your levels (rounded down) in the infiltrator class. Use this
 total to determine your tech points and memory by consulting the Multiclassing Tech table.
 
 <ai-dialog title="Multiclassing Tech table" component="multiclassing-Tech-table"></ai-dialog>

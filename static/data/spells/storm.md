@@ -1,7 +1,7 @@
 ---
 id: storm
 name: Storm
-level: '4'
+level: 4
 type: biotic
 attackType:
 - STR Save
@@ -22,7 +22,6 @@ detonates:
 primes: 
 availableClasses:
 - adept
-- vanguard
 advancementOptions:
 - name: Necrotic Bolts
   description: Until the spell ends, you can use a bonus action on each of your turns

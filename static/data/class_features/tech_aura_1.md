@@ -2,11 +2,10 @@
 id: tech_aura_1
 name: Tech Aura
 ---
-In addition to the standard defensive AI, you've augmented your Tech Armor to run different AI packages. The packages can 
-hook into nearby armor systems. You and any friendly creature within 10m of you gain the effect of the
-package. When you activate Tech Armor, you can only choose a single package to run.
-
-Learn 2 AI packages from the list below (you've already learned the Defensive package).
+In addition to the standard defensive VI, you've augmented your Tech Armor to run different VI packages. When you activate
+tech armor, you can choose to run a different VI package instead. You and any friendly creature within 10m of you gain
+the effect of the package. Each package, except your standard defense package, lasts 10 minutes or until you activate
+another package.
 
 Package | Effect
 --- | ---
@@ -14,6 +13,9 @@ Defensive | This is the standard Tech Armor package. It does not affect allies.
 Anti-biotic | Resistance to force and necrotic damage.
 Anti-tech | Resistance to fire and cold damage.
 Grounded | Resistance to lightning damage.
-Reactive | At your spellcasting modifier to Strength or Dexterity saving throws.
-Speed | Increase speed by 6m and can take the Disengage action as a bonus action.
+Reactive | Add your spellcasting modifier to Strength or Dexterity saving throws.
+Speed | Increase speed by 6m. Can take the Disengage action as a bonus action.
 Regen | Regenerate shield points equal to your spellcasting modifier on the start of each of your turns.
+Inspiring Music | Advantage on saving throws against becoming frightened or charmed.
+Brute force | Creatures within your aura deal an additional 1d8 bludgeoning damage with melee attacks.
+Negation Field | Creatures within your aura can't be primed.

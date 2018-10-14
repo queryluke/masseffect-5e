@@ -1,7 +1,7 @@
 ---
 id: dark_sphere
 name: Dark Sphere
-level: '3'
+level: 3
 type: biotic
 attackType:
 - DEX save
