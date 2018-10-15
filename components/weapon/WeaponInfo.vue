@@ -15,10 +15,7 @@
       v-flex.xs12.sm3.attribute.mb-2
         label Range
         div {{ weapon | weaponRange }}
-      v-flex(v-if="weapon.type === 'Melee'").xs12.sm3.attribute.mb-2
-        label Min STR
-        div {{ weapon.minStr }}
-      v-flex(v-else).xs12.sm3.attribute.mb-2
+      v-flex.xs12.sm3.attribute.mb-2
         label(v-if="weapon.type === 'Heavy Weapon'") Charges
         label(v-else) Heat
         div {{ weapon.heat }}
@@ -26,13 +23,10 @@
         label Weight
         div {{ weapon.weight}}
     div.hr
-    div.mt-3
-      me-element(:text="weapon.notes")
+    div.mt-3 {{ weapon.notes }}
 </template>
 
 <script>
-  import MeElement from '~/components/MeElement.vue'
-
   export default {
     data () {
       return {
@@ -44,9 +38,6 @@
         }
       }
     },
-    props: ['weapon'],
-    components: {
-      MeElement
-    }
+    props: ['weapon']
   }
 </script>

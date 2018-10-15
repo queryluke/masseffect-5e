@@ -574,11 +574,10 @@
   {
     "id": "cryo_beam",
     "name": "Cryo Beam",
-    "level": 1,
+    "level": 3,
     "type": "tech",
     "attackType": [
-      "DEX save",
-      " STR save"
+      "STR save"
     ],
     "effect": [
       "damage"
@@ -587,12 +586,12 @@
       "cold"
     ],
     "castingTime": "Action",
-    "duration": "Instant",
+    "duration": "instant",
     "concentration": false,
     "distance": {
       "range": "Self",
-      "aoeType": "cube",
-      "aoeDistance": "6m"
+      "aoeType": "line",
+      "aoeDistance": "8m"
     },
     "detonates": null,
     "primes": "cold",
@@ -604,11 +603,11 @@
     "advancementOptions": [
       {
         "name": "Brittle Freeze",
-        "description": "Creatures that fail the Constitution saving throw suffer a -1 AC penalty"
+        "description": "Shields no longer provide advantage on the saving throw. On a successful save, a creature is primed cold until the end of your next turn."
       },
       {
         "name": "Frozen Ground",
-        "description": "Cryo beam leaves a patch of ice on the ground that lasts for 1 min. Each creature that moves into or out of the patch must pass a Dexterity saving throw. On a failed save, slips and falls [Prone], ending its movement."
+        "description": "Cryo beam leaves a patch of ice on the ground that lasts for 1 min. The ground is considered difficult terrain."
       }
     ]
   },
@@ -619,7 +618,7 @@
     "type": "tech",
     "attackType": [
       "Ranged Attack",
-      " STR save"
+      "STR save"
     ],
     "effect": [
       "damage",
@@ -632,7 +631,7 @@
     "duration": "Instant",
     "concentration": false,
     "distance": {
-      "range": "20m",
+      "range": "50m",
       "aoeType": null,
       "aoeDistance": null
     },
@@ -646,11 +645,11 @@
     "advancementOptions": [
       {
         "name": "Ice Lance",
-        "description": "Transform the attack into a deadly lance. The attack can no longer freeze or slow the target, but you add 1d6 piercing damage for each tech point spent."
+        "description": "Transform the attack into a deadly lance. Make a ranged spell attack on a target within range. On a hit, the target takes 1d8 cold and 2d4 piercing damage for a 1st-level version and an additional 1d8 and 2d4 for each slot level above the 1st."
       },
       {
         "name": "Frigid Air",
-        "description": "The blast snap freezes the air around the target in a 2m radius. Each creature that enters the frozen space for the first time on a turn or ends its turn there must pass a Constitution saving throw or take 2d4 cold damage."
+        "description": "The blast creates a pocket of frigid air that lasts until the end of your next turn. Each creature that enters the frozen space for the first time on a turn or ends its turn there becomes primed cold until the end of its next turn and must succeed a Constitution saving throw or take 2d6 cold damage."
       }
     ]
   },
@@ -758,11 +757,11 @@
     "advancementOptions": [
       {
         "name": "Explosive",
-        "description": "As an action, you can spend 1 tech point to detonate your Decoy. Each creature within 4m must make a Dexterity saving throw. On a failed save, a creature takes 3d6 thunder damage or half as much on a successful one."
+        "description": "As an action, you can detonate your Decoy. Each creature within 4m of the decoy must make a Dexterity saving throw. On a failed save, a creature takes 3d6 thunder damage or half as much on a successful one."
       },
       {
         "name": "Improved Decoy",
-        "description": "Your Decoy becomes so life-like that creatures have disadvantage on the Wisdom (Perception) check."
+        "description": "Your decoy becomes so life-like that creatures have disadvantage on the Wisdom (Perception) check."
       }
     ]
   },
@@ -776,9 +775,9 @@
       "buff"
     ],
     "damageType": [],
-    "castingTime": "Action",
-    "duration": "1 minute",
-    "concentration": false,
+    "castingTime": "Bonus Action",
+    "duration": "10 minutes",
+    "concentration": true,
     "distance": {
       "range": "Self",
       "aoeType": null,
@@ -794,11 +793,11 @@
     "advancementOptions": [
       {
         "name": "Shield",
-        "description": "Deploy the matrix as a stationary shield. Up to 2 creatures of medium size can stand behind the shield, gaining the resistance benefit when attacked by creatures from the other side of the shield."
+        "description": "Deploy the matrix as a stationary shield. Up to 2 creatures of medium size can stand behind the shield, gaining half-cover. It lasts 1 minute and no longer requires concentration."
       },
       {
-        "name": "Improved Defense",
-        "description": "Gain a +2 bonus to your AC while Defense Matrix is active."
+        "name": "Custom Current",
+        "description": "When you cast defense matrix, choose one damage type. You have resistance to that type while defense matrix is active."
       }
     ]
   },
@@ -877,7 +876,7 @@
   {
     "id": "electric_slash",
     "name": "Electric Slash",
-    "level": 1,
+    "level": 2,
     "type": "tech",
     "attackType": [
       "CON Save"
@@ -931,7 +930,7 @@
     "duration": "Instant",
     "concentration": false,
     "distance": {
-      "range": "20m",
+      "range": "50m",
       "aoeType": null,
       "aoeDistance": null
     },
@@ -943,12 +942,12 @@
     ],
     "advancementOptions": [
       {
-        "name": "Improved Damage",
-        "description": "Increase the damage die type to d6."
+        "name": "Linked Current",
+        "description": "On a successful hit, you can designate yourself or an ally within range of the ability to direct a positive current to. Instead of gaining shield points, this current doubles a creature's waking speed for 1d4 rounds. Using this advanced tech skill more than once does not stack the speed boost."
       },
       {
         "name": "Improved Regen",
-        "description": "If you are wearing armor, gain shield points equal to your damage roll."
+        "description": "On a successful hit, you regain shield points equal to the amount of lightning damage dealt."
       }
     ]
   },
@@ -991,7 +990,7 @@
   {
     "id": "flamethrower",
     "name": "Flamethrower",
-    "level": 1,
+    "level": 3,
     "type": "tech",
     "attackType": [
       "DEX Save"
@@ -1024,7 +1023,7 @@
       },
       {
         "name": "Exhaust",
-        "description": "The flames leave behind a thick smoke for 1 turn. Creatures have disadvantage while making ranged weapon attacks against you until the start of your next turn."
+        "description": "The flames create a thick smoke in an 8m cube that must encompass the cone. The area is considered heavily obscured until the end of your next turn."
       }
     ]
   },
@@ -1302,7 +1301,7 @@
     "duration": "Instant",
     "concentration": false,
     "distance": {
-      "range": "20m",
+      "range": "40m",
       "aoeType": null,
       "aoeDistance": null
     },
@@ -1316,11 +1315,11 @@
     "advancementOptions": [
       {
         "name": "Frozen Combo",
-        "description": "Deal double damage to frozen targets."
+        "description": "When you hit a creature or object with incinerate, if the target is primed cold, you deal a critical hit."
       },
       {
         "name": "Radial Blast",
-        "description": "On a miss, the target creature takes half the damage."
+        "description": "On a miss, the target makes a Dexterity saving throw. On a failed save, the target takes half damage."
       }
     ]
   },
@@ -1457,7 +1456,7 @@
     "duration": "Instant",
     "concentration": false,
     "distance": {
-      "range": "20m",
+      "range": "50m",
       "aoeType": null,
       "aoeDistance": null
     },
@@ -1470,11 +1469,11 @@
     "advancementOptions": [
       {
         "name": "Damage",
-        "description": "A creature takes Xd6 psychic damage on a failed save or half as much damage on a successful one where X is the number of tech points spent."
+        "description": "The target takes 2d6 psychic damage when hit by the ion laser. This damage increases by 2d6 for each slot level above the 1st."
       },
       {
         "name": "Paralyze",
-        "description": "If a creature fails the saving throw, it is paralyzed for 1 turn."
+        "description": "If a creature fails the saving throw, it is paralyzed until the end of its next turn."
       }
     ]
   },
@@ -1575,7 +1574,7 @@
     "duration": "Instant",
     "concentration": false,
     "distance": {
-      "range": "20m",
+      "range": "40m",
       "aoeType": null,
       "aoeDistance": null
     },
@@ -1589,11 +1588,11 @@
     "advancementOptions": [
       {
         "name": "Extended Leap",
-        "description": "Overload can leap to targets within 10m."
+        "description": "Overload can leap to as many as five other targets within 10m."
       },
       {
         "name": "Heavy Overload",
-        "description": "Increase the damage die type to d6"
+        "description": "Increase the damage die type to d8."
       }
     ]
   },
@@ -1799,13 +1798,13 @@
       "damage"
     ],
     "damageType": [
-      "fire"
+      "radiant"
     ],
     "castingTime": "Action",
     "duration": "Instant",
     "concentration": false,
     "distance": {
-      "range": "20m",
+      "range": "50m",
       "aoeType": null,
       "aoeDistance": null
     },
@@ -1823,7 +1822,7 @@
       },
       {
         "name": "Blinding Salvo",
-        "description": "The darts explode in a bright flash of light. Targets no longer take damage but must make a Constitution saving throw. On a failed save, a target is blinded until the end of your next turn."
+        "description": "When you cast salvo, you may create phosphorous darts instead. The darts no longer deal damage and cannot detonate primed targets. Instead, each dart explodes in a bright flash of light. Each creature hit by a dart must succeed on a Constitution saving throw or becomes blinded until the end of your next turn."
       }
     ]
   },
@@ -1866,7 +1865,10 @@
     "name": "Shocking Grasp",
     "level": 1,
     "type": "tech",
-    "attackType": [],
+    "attackType": [
+      "melee spell",
+      "CON save"
+    ],
     "effect": [
       "damage"
     ],
@@ -1887,12 +1889,12 @@
     ],
     "advancementOptions": [
       {
-        "name": "Reach",
-        "description": "Increase the range to 4m."
+        "name": "Restoring Shock",
+        "description": "Gain shield points equal to half the damage dealt. This cannot increase your shield points beyond their maximum capacity."
       },
       {
         "name": "Improved Shock",
-        "description": "Increase the damage die to d8."
+        "description": "Increase the range to 4m and damage to d8."
       }
     ]
   },
@@ -2431,7 +2433,7 @@
   {
     "id": "unity",
     "name": "Unity",
-    "level": 1,
+    "level": 2,
     "type": "tech",
     "attackType": [],
     "effect": [
@@ -2442,7 +2444,7 @@
     "duration": "Instant",
     "concentration": false,
     "distance": {
-      "range": "Touch",
+      "range": "30m",
       "aoeType": null,
       "aoeDistance": null
     },
@@ -2454,12 +2456,12 @@
     ],
     "advancementOptions": [
       {
-        "name": "Unrestricted",
-        "description": "There is no limit to the amount of TP you may spend on this ability."
+        "name": "Unrestricted (engineer only)",
+        "description": "Engineers can spend any amount of tech points to cast this spell. They are not limited by their Tech Point Limit column."
       },
       {
-        "name": "Quick",
-        "description": "You can use Unity as a reaction to the creature falling unconscious or dying."
+        "name": "Shield restore",
+        "description": "When you cast this at 1st level, creatures also gain 1d4 shield points. This increases by 1d4 for each spell slot above the 2nd."
       }
     ]
   },

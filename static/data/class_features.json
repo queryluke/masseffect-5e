@@ -596,10 +596,6 @@
     "name": "Weapon of Choice"
   },
   {
-    "id": "weapon_proficiency",
-    "name": "Weapon Proficiency"
-  },
-  {
     "id": "zero-sum",
     "name": "Zero-Sum"
   }

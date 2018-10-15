@@ -9,21 +9,13 @@
     "heat": "3",
     "damage": "2d6",
     "range": "10",
-    "minStr": null,
-    "tags": "Arc, Unique, Two-handed",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Deals and additional 1d6 damage to synthetic targets."
-      }
-    ],
+    "tags": "Arc, Special, Two-handed",
+    "notes": "Deals and additional 1d6 damage to synthetic targets.",
     "npcHit": "deals half of the damage roll as lightning damage to 1 additional creature within 2m of the target. Deals an additional 1d6 damage to synthetic targets.",
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "lightning",
     "image": "http://vignette3.wikia.nocookie.net/masseffect/images/9/9e/ME3_Adas_Anti-Synthetic_Assault_Rifle.png/revision/latest/scale-to-width-down/200?cb=20120809190433",
-    "id": "adas_anti-synthetic_rifle",
-    "notes_text_dump": "Dealsandadditional1d6damagetosynthetictargets"
+    "id": "adas_anti-synthetic_rifle"
   },
   {
     "name": "Cerberus Harrier ",
@@ -35,17 +27,13 @@
     "heat": "6",
     "damage": "2d6",
     "range": "60",
-    "minStr": null,
     "tags": "Two-handed, Burst Fire",
-    "notes": [
-
-    ],
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette1.wikia.nocookie.net/masseffect/images/0/0d/ME3_Cerberus_Harrier.png/revision/latest?cb=20120530214013http://vignette3.wikia.nocookie.net/masseffect/images/5/56/ME3_Chakram_Assault_Rifle.png/revision/latest?cb=20120317175958",
-    "id": "cerberus_harrier",
-    "notes_text_dump": ""
+    "id": "cerberus_harrier"
   },
   {
     "name": "Chakram Launcher",
@@ -57,21 +45,13 @@
     "heat": "4",
     "damage": "1d8",
     "range": "80",
-    "minStr": null,
-    "tags": "Charge, Two-handed",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "On a hit, deals an additional 2d4 thunder damage for each time the weapon was charged."
-      }
-    ],
+    "tags": "Two-handed",
+    "notes": "Use a bonus action to charge the weapon before firing, consuming 2 heat. On a hit, it deals an additional 1d8 piercing and 2d4 thunder damage.",
     "npcHit": "5 (2d4) thunder damage.",
-    "addDmg": "5",
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette3.wikia.nocookie.net/masseffect/images/5/56/ME3_Chakram_Assault_Rifle.png/revision/latest?cb=20120317175958",
-    "id": "chakram_launcher",
-    "notes_text_dump": "Onahitdealsanadditional2d4thunderdamageforeachtimetheweaponwascharged"
+    "id": "chakram_launcher"
   },
   {
     "name": "Collector Assault Rifle",
@@ -83,21 +63,13 @@
     "heat": "8",
     "damage": "4d4",
     "range": "20",
-    "minStr": null,
-    "tags": "Unique, Two-handed, Burst Fire",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "The Collector Assault Rifle does not use thermal clips. Instead use a d8 to track the \"heat\". Whenever you make a ranged attack with the weapon, spin down the die 1 face. Every round that you don't fire the weapon, spin the die up 1 face. This represents the weapon internally cooling off. If you ever spin down the die to 0, the weapon jams and cannot be fired again this combat."
-      }
-    ],
+    "tags": "Special, Two-handed, Burst Fire",
+    "notes": "The Collector Assault Rifle does not use thermal clips. Instead use a d8 to track the \"heat\". Whenever you make a ranged attack with the weapon, spin down the die 1 face. Every round that you don't fire the weapon, spin the die up 1 face. This represents the weapon internally cooling off. If you ever spin down the die to 0, the weapon jams and cannot be fired again this combat.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "https://vignette.wikia.nocookie.net/masseffect/images/f/f8/ME3_Collector_Assault_Rifle.png/revision/latest/scale-to-width-down/350?cb=20120317180554",
-    "id": "collector_assault_rifle",
-    "notes_text_dump": "TheCollectorAssaultRifledoesnotusethermalclipsInsteadusead8totracktheheatWheneveryoumakearangedattackwiththeweaponspindownthedie1faceEveryroundthatyoudontfiretheweaponspinthedieup1faceThisrepresentstheweaponinternallycoolingoffIfyoueverspindownthedieto0theweaponjamsandcannotbefiredagainthiscombat"
+    "id": "collector_assault_rifle"
   },
   {
     "name": "Geth Pulse Rifle",
@@ -109,21 +81,13 @@
     "heat": "9",
     "damage": "2d6",
     "range": "40",
-    "minStr": null,
     "tags": "Two-handed, Burst Fire",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Deals radiant damage."
-      }
-    ],
+    "notes": "Deals radiant damage.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "radiant",
     "image": "http://vignette1.wikia.nocookie.net/masseffect/images/9/92/ME3_Geth_Pulse_Assault_Rifle.png/revision/latest?cb=20120317181047",
-    "id": "geth_pulse_rifle",
-    "notes_text_dump": "Dealsradiantdamage"
+    "id": "geth_pulse_rifle"
   },
   {
     "name": "M-15 Vindicator",
@@ -135,17 +99,13 @@
     "heat": "12",
     "damage": "1d10",
     "range": "50",
-    "minStr": null,
     "tags": "Two-handed, Burst Fire",
-    "notes": [
-
-    ],
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette2.wikia.nocookie.net/masseffect/images/7/7d/ME3_Vindicator_Assault_Rifle.png/revision/latest?cb=20120317173921",
-    "id": "m-15_vindicator",
-    "notes_text_dump": ""
+    "id": "m-15_vindicator"
   },
   {
     "name": "M-37 Falcon",
@@ -157,21 +117,13 @@
     "heat": "8",
     "damage": "1d8",
     "range": "10",
-    "minStr": null,
     "tags": "Two-handed, Double Tap",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Instead of making a ranged weapon attack, the target makes a Dexterity saving throw (DC 8 + DEX modifier). Do not add your DEX modifier to a Double Tap atttack. If you are proficient with Assault Rifles, add your proficiency bonus to the DC. On a failed save, the target takes 1d8 thunder damage, or half as much on a successful one."
-      }
-    ],
+    "notes": "Instead of making a ranged weapon attack, the target makes a Dexterity saving throw (DC 8 + DEX modifier). Do not add your DEX modifier to a Double Tap atttack. If you are proficient with Assault Rifles, add your proficiency bonus to the DC. On a failed save, the target takes 1d8 thunder damage, or half as much on a successful one.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "thunder",
     "image": "http://vignette2.wikia.nocookie.net/masseffect/images/8/8a/ME3_Falcon_Assault_Rifle.png/revision/latest?cb=20120317172936",
-    "id": "m-37_falcon",
-    "notes_text_dump": "InsteadofmakingarangedweaponattackthetargetmakesaDexteritysavingthrowDC8DEXmodifierDonotaddyourDEXmodifiertoaDoubleTapatttackIfyouareproficientwithAssaultRiflesaddyourproficiencybonustotheDCOnafailedsavethetargettakes1d8thunderdamageorhalfasmuchonasuccessfulone"
+    "id": "m-37_falcon"
   },
   {
     "name": "M-55 Argus",
@@ -183,17 +135,13 @@
     "heat": "9",
     "damage": "1d12",
     "range": "20",
-    "minStr": null,
     "tags": "Two-handed, Burst Fire",
-    "notes": [
-
-    ],
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette2.wikia.nocookie.net/masseffect/images/9/95/ME3_Argus_Assault_Rifle.png/revision/latest?cb=20120317173420",
-    "id": "m-55_argus",
-    "notes_text_dump": ""
+    "id": "m-55_argus"
   },
   {
     "name": "M-7 Lancer",
@@ -205,26 +153,13 @@
     "heat": "8",
     "damage": "2d6",
     "range": "20",
-    "minStr": null,
     "tags": "Two-handed, Burst Fire",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Somewhat of a relic and hard to come by, the M-7 does not use thermal clips. Instead use a d8 to track the \"heat\". Whenever you make a ranged attack with the weapon, spin down the die 1 face. Every round that you don't fire the weapon, spin the die up 2 faces. This represents the weapon internally cooling off. If you ever spin down the die to 0, the weapon jams and cannot be fired again this combat."
-      },
-      {
-        "id": 2,
-        "type": "line",
-        "data": "It cannot benefit from Magazine mods."
-      }
-    ],
+    "notes": "Somewhat of a relic and hard to come by, the M-7 does not use thermal clips. Instead use a d8 to track the \"heat\". Whenever you make a ranged attack with the weapon, spin down the die 1 face. Every round that you don't fire the weapon, spin the die up 2 faces. This represents the weapon internally cooling off. If you ever spin down the die to 0, the weapon jams and cannot be fired again this combat. It cannot benefit from Magazine mods.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette4.wikia.nocookie.net/masseffect/images/c/c6/ME3_Lancer_AS.png/revision/latest?cb=20130227094559",
-    "id": "m-7_lancer",
-    "notes_text_dump": "SomewhatofarelicandhardtocomebytheM7doesnotusethermalclipsInsteadusead8totracktheheatWheneveryoumakearangedattackwiththeweaponspindownthedie1faceEveryroundthatyoudontfiretheweaponspinthedieup2facesThisrepresentstheweaponinternallycoolingoffIfyoueverspindownthedieto0theweaponjamsandcannotbefiredagainthiscombatItcannotbenefitfromMagazinemods"
+    "id": "m-7_lancer"
   },
   {
     "name": "M-76 Revenant",
@@ -236,17 +171,13 @@
     "heat": "6",
     "damage": "3d4",
     "range": "10",
-    "minStr": null,
     "tags": "Two-handed, Burst Fire",
-    "notes": [
-
-    ],
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette2.wikia.nocookie.net/masseffect/images/1/17/ME3_Revenant_Assault_Rifle.png/revision/latest?cb=20120317174455",
-    "id": "m-76_revenant",
-    "notes_text_dump": ""
+    "id": "m-76_revenant"
   },
   {
     "name": "M-8 Avenger",
@@ -258,17 +189,13 @@
     "heat": "9",
     "damage": "1d8",
     "range": "20",
-    "minStr": null,
     "tags": "Two-handed, Burst Fire",
-    "notes": [
-
-    ],
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette4.wikia.nocookie.net/masseffect/images/2/29/ME3_Avenger_Assault_Rifle.png/revision/latest?cb=20120317171316",
-    "id": "m-8_avenger",
-    "notes_text_dump": ""
+    "id": "m-8_avenger"
   },
   {
     "name": "M-96 Mattock",
@@ -280,17 +207,13 @@
     "heat": "15",
     "damage": "1d8",
     "range": "40",
-    "minStr": null,
     "tags": "Two-handed, Double Tap",
-    "notes": [
-
-    ],
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette4.wikia.nocookie.net/masseffect/images/9/93/ME3_Mattock_Assault_Rifle.png/revision/latest?cb=20120317182842",
-    "id": "m-96_mattock",
-    "notes_text_dump": ""
+    "id": "m-96_mattock"
   },
   {
     "name": "M-99 Saber",
@@ -302,30 +225,13 @@
     "heat": "8",
     "damage": "3d6",
     "range": "50",
-    "minStr": null,
-    "tags": "Two-handed, Unique, Double Tap",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Custom made for its owner, when you purchase this weapon, you may choose one of the following:"
-      },
-      {
-        "id": 2,
-        "type": "list",
-        "data": [
-          "Increase damage of this weapon to d8",
-          "Reloading this weapon is a bonus action",
-          "+2 on ranged attack rolls made with the weapon"
-        ]
-      }
-    ],
+    "tags": "Two-handed, Special, Double Tap",
+    "notes": "Custom made for its owner, when you purchase this weapon, you may choose one of the following: Increase damage of this weapon to d8,  reloading this weapon is a bonus action, or +2 on ranged attack rolls made with the weapon.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette4.wikia.nocookie.net/masseffect/images/6/65/ME3_Saber_Assault_Rifle.png/revision/latest?cb=20120317175044",
-    "id": "m-99_saber",
-    "notes_text_dump": "CustommadeforitsownerwhenyoupurchasethisweaponyoumaychooseoneofthefollowinglistIncreasedamageofthisweapontod8Reloadingthisweaponisabonusaction2onrangedattackrollsmadewiththeweaponlist"
+    "id": "m-99_saber"
   },
   {
     "name": "N7 Typhoon",
@@ -337,21 +243,13 @@
     "heat": "6",
     "damage": "2d8",
     "range": "20",
-    "minStr": null,
-    "tags": "Two-handed, Burst Fire",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "AC +1 when holding this weapon."
-      }
-    ],
+    "tags": "Two-handed, Burst Fire, Heavy",
+    "notes": "AC +1 when holding this weapon.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette4.wikia.nocookie.net/masseffect/images/a/ab/ME3_Typhoon_Assault_Rifle.png/revision/latest?cb=20120714073139",
-    "id": "n7_typhoon",
-    "notes_text_dump": "AC1whenholdingthisweapon"
+    "id": "n7_typhoon"
   },
   {
     "name": "N7 Valkyrie",
@@ -363,17 +261,13 @@
     "heat": "4",
     "damage": "2d8",
     "range": "30",
-    "minStr": null,
     "tags": "Two-handed",
-    "notes": [
-
-    ],
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette1.wikia.nocookie.net/masseffect/images/0/08/ME3_N7_Valkyrie_Assault_Rifle.png/revision/latest?cb=20120317181450",
-    "id": "n7_valkyrie",
-    "notes_text_dump": ""
+    "id": "n7_valkyrie"
   },
   {
     "name": "Particle Rifle",
@@ -385,26 +279,13 @@
     "heat": "6",
     "damage": "2d10",
     "range": "10",
-    "minStr": null,
-    "tags": "Unique, Two-handed, Burst Fire",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "The Particle Rifle does not use thermal clips. Instead use a d6 to track the \"heat\". Whenever you make a ranged attack with the weapon, spin down the die 1 face. Every round that you don't fire the weapon, spin the die up 1 face. This represents the weapon internally cooling off. If you ever spin down the die to 0, the weapon jams and cannot be fired again this combat."
-      },
-      {
-        "id": 2,
-        "type": "line",
-        "data": "Deals radiant damage."
-      }
-    ],
+    "tags": "Special, Two-handed, Burst Fire",
+    "notes": "The Particle Rifle does not use thermal clips. Instead use a d6 to track the \"heat\". Whenever you make a ranged attack with the weapon, spin down the die 1 face. Every round that you don't fire the weapon, spin the die up 1 face. This represents the weapon internally cooling off. If you ever spin down the die to 0, the weapon jams and cannot be fired again this combat. Deals radiant damage.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "radiant",
     "image": "https://vignette.wikia.nocookie.net/masseffect/images/6/61/ME3_Particle_Assault_Rifle.png/revision/latest/scale-to-width-down/350?cb=20120317181936",
-    "id": "particle_rifle",
-    "notes_text_dump": "TheParticleRifledoesnotusethermalclipsInsteadusead6totracktheheatWheneveryoumakearangedattackwiththeweaponspindownthedie1faceEveryroundthatyoudontfiretheweaponspinthedieup1faceThisrepresentstheweaponinternallycoolingoffIfyoueverspindownthedieto0theweaponjamsandcannotbefiredagainthiscombatDealsradiantdamage"
+    "id": "particle_rifle"
   },
   {
     "name": "Phaeston",
@@ -416,17 +297,13 @@
     "heat": "12",
     "damage": "2d4",
     "range": "20",
-    "minStr": null,
     "tags": "Two-handed, Burst Fire",
-    "notes": [
-
-    ],
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette1.wikia.nocookie.net/masseffect/images/1/11/ME3_Phaeston_Assault_Rifle.png/revision/latest?cb=20120317182349",
-    "id": "phaeston",
-    "notes_text_dump": ""
+    "id": "phaeston"
   },
   {
     "name": "Striker Assault Rifle",
@@ -438,21 +315,13 @@
     "heat": "12",
     "damage": "1d12",
     "range": "10",
-    "minStr": null,
     "tags": "Two-handed",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "After making a ranged attack with the Striker, you may choose to enter the {targeting} condition. At the start of your next turn, all ranged attacks made with the Striker deal an additional 1d12 damage, at the cost of 2 heat per attack. This bonus continues to stack at the start of your turn until the targeting condition ends or until the Striker must be reloaded. For example, the 3rd round would deal 3d12 for 3 heat per attack, etc."
-      }
-    ],
+    "notes": "After making a ranged attack with the Striker, you may choose to enter the {targeting} condition. At the start of your next turn, all ranged attacks made with the Striker deal an additional 1d12 damage, at the cost of 2 heat per attack. This bonus continues to stack at the start of your turn until the targeting condition ends or until the Striker must be reloaded. For example, the 3rd round would deal 3d12 for 3 heat per attack, etc.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette2.wikia.nocookie.net/masseffect/images/f/fb/ME3_Striker_Assault_Rifle.png/revision/latest?cb=20120411201310",
-    "id": "striker_assault_rifle",
-    "notes_text_dump": "AftermakingarangedattackwiththeStrikeryoumaychoosetoenterthetargetingconditionAtthestartofyournextturnallrangedattacksmadewiththeStrikerdealanadditional1d12damageatthecostof2heatperattackThisbonuscontinuestostackatthestartofyourturnuntilthetargetingconditionendsoruntiltheStrikermustbereloadedForexamplethe3rdroundwoulddeal3d12for3heatperattacketc"
+    "id": "striker_assault_rifle"
   },
   {
     "name": "Acolyte",
@@ -464,21 +333,13 @@
     "heat": "6",
     "damage": "1d6",
     "range": "20",
-    "minStr": null,
-    "tags": "Charge, Double Tap",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Deals force damage. Damage done by this weapon cannot be reduced by using barrier ticks."
-      }
-    ],
+    "tags": "Light",
+    "notes": "Deals force damage. Damage done by this weapon cannot be reduced by using barrier ticks. Use a bonus action to charge the weapon before firing, consuming 2 heat. On a hit, it deals an additional 2d6 force damage.",
     "npcHit": "the target cannot use barrier ticks to reduce the attack damage.",
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "force",
     "image": "http://vignette3.wikia.nocookie.net/masseffect/images/b/b9/ME3_Acolyte_Pistol.png/revision/latest?cb=20120714073045",
-    "id": "acolyte",
-    "notes_text_dump": "DealsforcedamageDamagedonebythisweaponcannotbereducedbyusingbarrierticks"
+    "id": "acolyte"
   },
   {
     "name": "Arc Pistol",
@@ -490,17 +351,13 @@
     "heat": "18",
     "damage": "1d6",
     "range": "30",
-    "minStr": null,
-    "tags": "Arc, Charge, Unique, Double Tap",
-    "notes": [
-
-    ],
+    "tags": "Arc, Special, Light",
+    "notes": "Use a bonus action to charge the weapon before firing, consuming 2 heat. On a hit, it deals an additional 2d6 lightning damage.",
     "npcHit": "deals half of the damage roll as lightning damage to 1 additional creature within 2m of the target.",
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "lightning",
     "image": "http://vignette1.wikia.nocookie.net/masseffect/images/e/e8/ME3_Arc_Heavy_Pistol.png/revision/latest?cb=20120317185747",
-    "id": "arc_pistol",
-    "notes_text_dump": ""
+    "id": "arc_pistol"
   },
   {
     "name": "Executioner Pistol",
@@ -512,17 +369,13 @@
     "heat": "1",
     "damage": "2d12",
     "range": "30",
-    "minStr": null,
     "tags": null,
-    "notes": [
-
-    ],
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette1.wikia.nocookie.net/masseffect/images/9/95/ME3_Executioner_Pistol.png/revision/latest?cb=20121029075230",
-    "id": "executioner_pistol",
-    "notes_text_dump": ""
+    "id": "executioner_pistol"
   },
   {
     "name": "M-11 Suppressor",
@@ -534,17 +387,13 @@
     "heat": "8",
     "damage": "1d6",
     "range": "20",
-    "minStr": null,
-    "tags": "Silent, Double Tap",
-    "notes": [
-
-    ],
+    "tags": "Silent, Double Tap, Light",
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette1.wikia.nocookie.net/masseffect/images/8/84/ME3_Suppressor.png/revision/latest?cb=20130227094606",
-    "id": "m-11_suppressor",
-    "notes_text_dump": ""
+    "id": "m-11_suppressor"
   },
   {
     "name": "M-3 Predator",
@@ -556,17 +405,13 @@
     "heat": "15",
     "damage": "1d4",
     "range": "20",
-    "minStr": null,
-    "tags": "Double Tap",
-    "notes": [
-
-    ],
+    "tags": "Double Tap, Light",
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette1.wikia.nocookie.net/masseffect/images/c/c8/ME3_Predator_Heavy_Pistol.png/revision/latest?cb=20120317185446",
-    "id": "m-3_predator",
-    "notes_text_dump": ""
+    "id": "m-3_predator"
   },
   {
     "name": "M-358 Talon",
@@ -578,17 +423,13 @@
     "heat": "6",
     "damage": "2d6",
     "range": "10",
-    "minStr": null,
-    "tags": "Double Tap",
-    "notes": [
-
-    ],
+    "tags": "Double Tap, Light",
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette1.wikia.nocookie.net/masseffect/images/9/99/ME3_Talon_Heavy_Pistol.png/revision/latest?cb=20120317185721",
-    "id": "m-358_talon",
-    "notes_text_dump": ""
+    "id": "m-358_talon"
   },
   {
     "name": "M-5 Phalanx",
@@ -600,17 +441,13 @@
     "heat": "12",
     "damage": "1d4",
     "range": "20",
-    "minStr": null,
-    "tags": "Double Tap, Hip Fire",
-    "notes": [
-
-    ],
+    "tags": "Double Tap, Hip Fire, Light",
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette4.wikia.nocookie.net/masseffect/images/a/ae/ME3_Phalanx_Heavy_Pistol.png/revision/latest?cb=20120317185535",
-    "id": "m-5_phalanx",
-    "notes_text_dump": ""
+    "id": "m-5_phalanx"
   },
   {
     "name": "M-6 Carnifex",
@@ -622,17 +459,13 @@
     "heat": "10",
     "damage": "1d8",
     "range": "30",
-    "minStr": null,
-    "tags": "Double Tap",
-    "notes": [
-
-    ],
+    "tags": "Double Tap, Light",
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette1.wikia.nocookie.net/masseffect/images/8/88/ME3_Carnifex_Heavy_Pistol.png/revision/latest?cb=20120317185613",
-    "id": "m-6_carnifex",
-    "notes_text_dump": ""
+    "id": "m-6_carnifex"
   },
   {
     "name": "M-77 Paladin",
@@ -644,17 +477,13 @@
     "heat": "8",
     "damage": "1d10",
     "range": "30",
-    "minStr": null,
-    "tags": "Double Tap",
-    "notes": [
-
-    ],
+    "tags": "Double Tap, Light",
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette3.wikia.nocookie.net/masseffect/images/4/43/ME3_Paladin_Heavy_Pistol.png/revision/latest?cb=20120317185630",
-    "id": "m-77_paladin",
-    "notes_text_dump": ""
+    "id": "m-77_paladin"
   },
   {
     "name": "N7 Eagle",
@@ -666,17 +495,13 @@
     "heat": "12",
     "damage": "2d4",
     "range": "20",
-    "minStr": null,
-    "tags": "Burst Fire",
-    "notes": [
-
-    ],
+    "tags": "Burst Fire, Light",
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette1.wikia.nocookie.net/masseffect/images/0/01/ME3_N7_Eagle_Heavy_Pistol.png/revision/latest?cb=20120317185811",
-    "id": "n7_eagle",
-    "notes_text_dump": ""
+    "id": "n7_eagle"
   },
   {
     "name": "Scorpion",
@@ -688,21 +513,13 @@
     "heat": "6",
     "damage": "1d6",
     "range": "20",
-    "minStr": null,
-    "tags": "Unique, Double Tap",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Deals thunder damage. Missed shots adhere to nearby surfaces and do 1d4 thunder damage instead to the target instead."
-      }
-    ],
+    "tags": "Special, Double Tap",
+    "notes": "Deals thunder damage. Missed shots adhere to nearby surfaces and do 1d4 thunder damage instead to the target instead.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": "2 (1d4) thunder damage",
     "dmgType": "thunder",
     "image": "http://vignette3.wikia.nocookie.net/masseffect/images/4/40/ME3_Scorpion_Heavy_Pistol.png/revision/latest?cb=20120317185843",
-    "id": "scorpion",
-    "notes_text_dump": "DealsthunderdamageMissedshotsadheretonearbysurfacesanddo1d4thunderdamageinsteadtothetargetinstead"
+    "id": "scorpion"
   },
   {
     "name": "Cobra Missile Launcher",
@@ -714,21 +531,13 @@
     "heat": "4",
     "damage": "8d12",
     "range": "120",
-    "minStr": null,
-    "tags": "Unique, Two-handed",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Choose a creature within 60m that you can see and begin Targeting. At the start of your turn, if are still Targeting, you fire a missile that deals 8d12 thunder damage."
-      }
-    ],
+    "tags": "Special, Two-handed, Heavy",
+    "notes": "Choose a creature within 60m that you can see and begin Targeting. At the start of your turn, if are still Targeting, you fire a missile that deals 8d12 thunder damage.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "thunder",
     "image": "http://vignette2.wikia.nocookie.net/masseffect/images/f/f9/ME3_Hydra_Heavy_Weapon.png/revision/latest?cb=20120317194543",
-    "id": "cobra_missile_launcher",
-    "notes_text_dump": "Chooseacreaturewithin60mthatyoucanseeandbeginTargetingAtthestartofyourturnifarestillTargetingyoufireamissilethatdeals8d12thunderdamage"
+    "id": "cobra_missile_launcher"
   },
   {
     "name": "Geth Spitfire",
@@ -740,21 +549,13 @@
     "heat": "3",
     "damage": "12d4",
     "range": "20",
-    "minStr": null,
-    "tags": "Unique, Two-handed",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Release a torrent of bullets in a sweeping arc in front of you until the start of your next turn. You are considered to be Targeting until the start of your next turn. Creatures that enter or move within a 10m cone in front of you make a Dexterity saving throw. On a failed save, a creature takes 12d4 piercing damage. On a success, a creature takes half damage. Each turn uses a charge."
-      }
-    ],
+    "tags": "Special, Two-handed, Heavy",
+    "notes": "Release a torrent of bullets in a sweeping arc in front of you until the start of your next turn. You are considered to be Targeting until the start of your next turn. Creatures that enter or move within a 10m cone in front of you make a Dexterity saving throw. On a failed save, a creature takes 12d4 piercing damage. On a success, a creature takes half damage. Each turn uses a charge.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette3.wikia.nocookie.net/masseffect/images/b/b6/ME3_Geth_Antivirus_Heavy_Weapon.png/revision/latest?cb=20120317195710",
-    "id": "geth_spitfire",
-    "notes_text_dump": "ReleaseatorrentofbulletsinasweepingarcinfrontofyouuntilthestartofyournextturnYouareconsideredtobeTargetinguntilthestartofyournextturnCreaturesthatenterormovewithina10mconeinfrontofyoumakeaDexteritysavingthrowOnafailedsaveacreaturetakes12d4piercingdamageOnasuccessacreaturetakeshalfdamageEachturnusesacharge"
+    "id": "geth_spitfire"
   },
   {
     "name": "M-451 Firestorm",
@@ -766,21 +567,13 @@
     "heat": "10",
     "damage": "4d6",
     "range": "6",
-    "minStr": null,
-    "tags": "Unique, Two-handed",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Sweep fire across the battlefield. Creatures within a 6m cone must make a Dexterity saving throw (DC 13). On a failed save, a creature takes 4d6 fire damage, or half as much damage on a successful one."
-      }
-    ],
+    "tags": "Special, Two-handed",
+    "notes": "Sweep fire across the battlefield. Creatures within a 6m cone must make a Dexterity saving throw (DC 13). On a failed save, a creature takes 4d6 fire damage, or half as much damage on a successful one.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "fire",
     "image": "http://vignette2.wikia.nocookie.net/masseffect/images/5/5a/ME3_Firestorm_Heavy_Weapon.png/revision/latest?cb=20120317194412",
-    "id": "m-451_firestorm",
-    "notes_text_dump": "SweepfireacrossthebattlefieldCreatureswithina6mconemustmakeaDexteritysavingthrowDC13Onafailedsaveacreaturetakes4d6firedamageorhalfasmuchdamageonasuccessfulone"
+    "id": "m-451_firestorm"
   },
   {
     "name": "M-560 Hydra",
@@ -792,21 +585,13 @@
     "heat": "1",
     "damage": "4d12",
     "range": "120",
-    "minStr": null,
-    "tags": "Unique, Two-handed",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Choose a creature within 60m that you can see and begin Targeting. At the start of your turn, if are still Targeting, fire a unique missile at the target. When the missile hits, it deploys 3 shaped charges. The first disrupts any barriers or shields, completely removing all barrier ticks and shield points. The second charge cripples armor; the creature has their AC reduced by 3 for the remainder of combat. The final charge deals explodes and the creature must make a Constitution saving throw (DC 18). On a failed save the creature takes 4d12 thunder damage or half as much on a successful one."
-      }
-    ],
+    "tags": "Special, Two-handed, Heavy",
+    "notes": "Choose a creature within 60m that you can see and begin Targeting. At the start of your turn, if are still Targeting, fire a unique missile at the target. When the missile hits, it deploys 3 shaped charges. The first disrupts any barriers or shields, completely removing all barrier ticks and shield points. The second charge cripples armor; the creature has their AC reduced by 3 for the remainder of combat. The final charge deals explodes and the creature must make a Constitution saving throw (DC 18). On a failed save the creature takes 4d12 thunder damage or half as much on a successful one.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "thunder",
     "image": "http://vignette2.wikia.nocookie.net/masseffect/images/f/f9/ME3_Hydra_Heavy_Weapon.png/revision/latest?cb=20120317194543",
-    "id": "m-560_hydra",
-    "notes_text_dump": "Chooseacreaturewithin60mthatyoucanseeandbeginTargetingAtthestartofyourturnifarestillTargetingfireauniquemissileatthetargetWhenthemissilehitsitdeploys3shapedchargesThefirstdisruptsanybarriersorshieldscompletelyremovingallbarrierticksandshieldpointsThesecondchargecripplesarmorthecreaturehastheirACreducedby3fortheremainderofcombatThefinalchargedealsexplodesandthecreaturemustmakeaConstitutionsavingthrowDC18Onafailedsavethecreaturetakes4d12thunderdamageorhalfasmuchonasuccessfulone"
+    "id": "m-560_hydra"
   },
   {
     "name": "M-597 Landon",
@@ -818,21 +603,13 @@
     "heat": "10",
     "damage": "4d8",
     "range": "120",
-    "minStr": null,
-    "tags": "Unique, Two-handed",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Spend a round Targeting as you sweep the battlefield for all enemies. At the start of your next turn, if you are still targeting, choose up to 10 enemy creatures and launch a miniature missile at them, dealing 4d8 thunder damage. You cannot target a creature twice. Each missile used consumes a weapon charge."
-      }
-    ],
+    "tags": "Special, Two-handed, Heavy",
+    "notes": "Spend a round Targeting as you sweep the battlefield for all enemies. At the start of your next turn, if you are still targeting, choose up to 10 enemy creatures and launch a miniature missile at them, dealing 4d8 thunder damage. You cannot target a creature twice. Each missile used consumes a weapon charge.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "thunder",
     "image": "http://vignette4.wikia.nocookie.net/masseffect/images/6/61/ME3_Ladon_Codex_Rip.png/revision/latest?cb=20140106114047",
-    "id": "m-597_landon",
-    "notes_text_dump": "SpendaroundTargetingasyousweepthebattlefieldforallenemiesAtthestartofyournextturnifyouarestilltargetingchooseupto10enemycreaturesandlaunchaminiaturemissileatthemdealing4d8thunderdamageYoucannottargetacreaturetwiceEachmissileusedconsumesaweaponcharge"
+    "id": "m-597_landon"
   },
   {
     "name": "M-920 Cain",
@@ -844,21 +621,13 @@
     "heat": "5",
     "damage": "7d12",
     "range": "120",
-    "minStr": null,
-    "tags": "Unique, Two-handed",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Spend a round Targeting, charging up the Cain's core. At the start of your turn, if you are still Targeting, you can choose to continue Targeting to increase the power of the blast. You can continue Targeting as long as the Cain has weapon charges left. When you're ready to release the blast, choose a fixed point within 60m. You release a small nuclear explosion in the area. Roll X + 5d12 where X is the number of charges you use multiplied by 2. Any creature within 2m automatically fails the saving throw. Creatures within 10m make a Dexterity saving throw. On a failed save, a creature takes radiant damage equal to your roll. On a success, a creature takes half damage."
-      }
-    ],
+    "tags": "Special, Two-handed, Heavy",
+    "notes": "Spend a round Targeting, charging up the Cain's core. At the start of your turn, if you are still Targeting, you can choose to continue Targeting to increase the power of the blast. You can continue Targeting as long as the Cain has weapon charges left. When you're ready to release the blast, choose a fixed point within 60m. You release a small nuclear explosion in the area. Roll X + 5d12 where X is the number of charges you use multiplied by 2. Any creature within 2m automatically fails the saving throw. Creatures within 10m make a Dexterity saving throw. On a failed save, a creature takes radiant damage equal to your roll. On a success, a creature takes half damage.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "radiant",
     "image": "http://vignette2.wikia.nocookie.net/masseffect/images/b/bf/ME3_Cain_Heavy_Weapon.png/revision/latest?cb=20120317195513",
-    "id": "m-920_cain",
-    "notes_text_dump": "SpendaroundTargetingcharginguptheCainscoreAtthestartofyourturnifyouarestillTargetingyoucanchoosetocontinueTargetingtoincreasethepoweroftheblastYoucancontinueTargetingaslongastheCainhasweaponchargesleftWhenyourereadytoreleasetheblastchooseafixedpointwithin60mYoureleaseasmallnuclearexplosionintheareaRollX5d12whereXisthenumberofchargesyouusemultipliedby2Anycreaturewithin2mautomaticallyfailsthesavingthrowCreatureswithin10mmakeaDexteritysavingthrowOnafailedsaveacreaturetakesradiantdamageequaltoyourrollOnasuccessacreaturetakeshalfdamage"
+    "id": "m-920_cain"
   },
   {
     "name": "ML-77 Missile Launcher",
@@ -870,21 +639,13 @@
     "heat": "6",
     "damage": "6d12",
     "range": "60",
-    "minStr": null,
-    "tags": "Unique, Two-handed",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Choose a creature within 60m that you can see and fire a missle at it. Each creature within a 4m cube of the target, including the target, must make a Dexterity saving throw (DC 14). On a failed save a creature takes 6d12 thunder damge or half as much on a successful one."
-      }
-    ],
+    "tags": "Special, Two-handed, Heavy",
+    "notes": "Choose a creature within 60m that you can see and fire a missle at it. Each creature within a 4m cube of the target, including the target, must make a Dexterity saving throw (DC 14). On a failed save a creature takes 6d12 thunder damge or half as much on a successful one.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "thunder",
     "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/e7/Codex_ME2_-_Missile_Launcher.png/revision/latest/scale-to-width-down/200?cb=20140823053914",
-    "id": "ml-77_missile_launcher",
-    "notes_text_dump": "Chooseacreaturewithin60mthatyoucanseeandfireamissleatitEachcreaturewithina4mcubeofthetargetincludingthetargetmustmakeaDexteritysavingthrowDC14Onafailedsaveacreaturetakes6d12thunderdamgeorhalfasmuchonasuccessfulone"
+    "id": "ml-77_missile_launcher"
   },
   {
     "name": "Reaper Blackstar",
@@ -896,21 +657,13 @@
     "heat": "1",
     "damage": "15d10",
     "range": "120",
-    "minStr": null,
-    "tags": "Unique, Two-handed",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Choose a creature within 60m that you can see and begin Targeting that creature. At the start of your turn, if you are still Targeting, fire a sub-atomic particle beam at the creature dealing 15d10 necrotic damage."
-      }
-    ],
+    "tags": "Special, Two-handed, Heavy",
+    "notes": "Choose a creature within 60m that you can see and begin Targeting that creature. At the start of your turn, if you are still Targeting, fire a sub-atomic particle beam at the creature dealing 15d10 necrotic damage.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "necrotic",
     "image": "http://vignette2.wikia.nocookie.net/masseffect/images/6/69/ME3_Reaper_Blackstar_Heavy_Weapon.png/revision/latest?cb=20120317194848",
-    "id": "reaper_blackstar",
-    "notes_text_dump": "Chooseacreaturewithin60mthatyoucanseeandbeginTargetingthatcreatureAtthestartofyourturnifyouarestillTargetingfireasubatomicparticlebeamatthecreaturedealing15d10necroticdamage"
+    "id": "reaper_blackstar"
   },
   {
     "name": "Sync Laser",
@@ -922,21 +675,13 @@
     "heat": "2",
     "damage": "8d12",
     "range": "120",
-    "minStr": null,
-    "tags": "Unique, Two-handed",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Spend a round Targeting a 10m x 20m rectangle, up to 60m away. At the start of your turn, if you are still targeting, call down an orbital strike. Creatures within the rectangle make a Dexterity saving throw. On a failed save, a creature takes 8d12 thunder damage. On a success, a creature takes half damage."
-      }
-    ],
+    "tags": "Special, Two-handed, Heavy",
+    "notes": "Spend a round Targeting a 10m x 20m rectangle, up to 60m away. At the start of your turn, if you are still targeting, call down an orbital strike. Creatures within the rectangle make a Dexterity saving throw. On a failed save, a creature takes 8d12 thunder damage. On a success, a creature takes half damage.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "thunder",
     "image": "http://vignette2.wikia.nocookie.net/masseffect/images/3/3d/ME3_Sync_Laser_Heavy_Weapon.png/revision/latest?cb=20120317195655",
-    "id": "sync_laser",
-    "notes_text_dump": "SpendaroundTargetinga10mx20mrectangleupto60mawayAtthestartofyourturnifyouarestilltargetingcalldownanorbitalstrikeCreatureswithintherectanglemakeaDexteritysavingthrowOnafailedsaveacreaturetakes8d12thunderdamageOnasuccessacreaturetakeshalfdamage"
+    "id": "sync_laser"
   },
   {
     "name": "Asari Huntress Sword",
@@ -948,21 +693,13 @@
     "heat": null,
     "damage": "1d8",
     "range": "2",
-    "minStr": "8",
     "tags": "Slashing, Finesse, Light",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Kinetic energy from successful melee attacks grant a minor biotic boost. When you hit with an attack using this weapon, as a bonus action, you may cast a biotic cantrip."
-      }
-    ],
+    "notes": "Kinetic energy from successful melee attacks grant a minor biotic boost. When you hit with an attack using this weapon, as a bonus action, you may cast a biotic cantrip.",
     "npcHit": "the attacker may cast a biotic cantrip as a bonus action.",
-    "addDmg": "3",
+    "npcMiss": null,
     "dmgType": "slashing",
     "image": null,
-    "id": "asari_huntress_sword",
-    "notes_text_dump": "KineticenergyfromsuccessfulmeleeattacksgrantaminorbioticboostWhenyouhitwithanattackusingthisweaponasabonusactionyoumaycastabioticcantrip"
+    "id": "asari_huntress_sword"
   },
   {
     "name": "Kahjean Venom Dagger",
@@ -974,21 +711,13 @@
     "heat": null,
     "damage": "1d4",
     "range": "2",
-    "minStr": "8",
     "tags": "Piercing, Finesse, Light",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "When you hit with an attack using this weapon, the target must make a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way."
-      }
-    ],
+    "notes": "When you hit with an attack using this weapon, the target must make a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.",
     "npcHit": "the target must make a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.",
-    "addDmg": "10",
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": null,
-    "id": "kahjean_venom_dagger",
-    "notes_text_dump": "WhenyouhitwithanattackusingthisweaponthetargetmustmakeaDC11Constitutionsavingthrowtaking103d6poisondamageonafailedsaveorhalfasmuchdamageonasuccessfuloneIfthepoisondamagereducesthetargetto0hitpointsthetargetisstablebutpoisonedfor1hourevenafterregaininghitpointsandisparalyzedwhilepoisonedinthisway"
+    "id": "kahjean_venom_dagger"
   },
   {
     "name": "Krogan Warhammer",
@@ -1000,26 +729,13 @@
     "heat": null,
     "damage": "2d6",
     "range": "2",
-    "minStr": "16",
-    "tags": "Bludgeoning, Two-handed, Versatile*",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "When you hit with an attack using this weapon, the target must succeed on a Strength saving throw (DC = 8+Proficiency Bonus+ Strength modifier) or is knocked {prone}."
-      },
-      {
-        "id": 2,
-        "type": "line",
-        "data": "*If wielded by a Krogan or another creature with a minimum Strength ability score of 18, this weapon becomes Versatile (1d12 for single-handed)"
-      }
-    ],
+    "tags": "Bludgeoning, Two-handed, Heavy, Versatile*",
+    "notes": "When you hit with an attack using this weapon, the target must succeed on a Strength saving throw (DC = 8+Proficiency Bonus+ Strength modifier) or is knocked prone. If wielded by a Krogan or another creature with a minimum Strength ability score of 18, this weapon becomes Versatile (1d12 for single-handed)",
     "npcHit": "the target must succeed on a Strength saving throw (DC 13) or is knocked {prone}. ",
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "bludgeoning",
     "image": null,
-    "id": "krogan_warhammer",
-    "notes_text_dump": "WhenyouhitwithanattackusingthisweaponthetargetmustsucceedonaStrengthsavingthrowDC8ProficiencyBonusStrengthmodifierorisknockedproneIfwieldedbyaKroganoranothercreaturewithaminimumStrengthabilityscoreof18thisweaponbecomesVersatile1d12forsinglehanded"
+    "id": "krogan_warhammer"
   },
   {
     "name": "Monomolecular Blade",
@@ -1031,17 +747,13 @@
     "heat": null,
     "damage": "1d10",
     "range": "2",
-    "minStr": "8",
     "tags": "Slashing, Versatile (2d6), Finesse",
-    "notes": [
-
-    ],
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "slashing",
     "image": null,
-    "id": "monomolecular_blade",
-    "notes_text_dump": ""
+    "id": "monomolecular_blade"
   },
   {
     "name": "Omni-Blade",
@@ -1053,21 +765,13 @@
     "heat": null,
     "damage": "1d8",
     "range": "2",
-    "minStr": "1",
     "tags": "Light, Finesse",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Drawing the Omni-Blade is a free action. Having this weapon equipped does not require a weapon slot."
-      }
-    ],
+    "notes": "Drawing the Omni-Blade is a free action. Having this weapon equipped does not require a weapon slot.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "slashing",
     "image": null,
-    "id": "omni-blade",
-    "notes_text_dump": "DrawingtheOmniBladeisafreeactionHavingthisweaponequippeddoesnotrequireaweaponslot"
+    "id": "omni-blade"
   },
   {
     "name": "Omni-Hammer",
@@ -1079,21 +783,13 @@
     "heat": null,
     "damage": "1d10",
     "range": "2",
-    "minStr": "1",
     "tags": "Bludgeoning, Light",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Drawing the Omni-Hammer is a free action. Having this weapon equipped does not require a weapon slot."
-      }
-    ],
+    "notes": "Drawing the Omni-Hammer is a free action. Having this weapon equipped does not require a weapon slot.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "bludgeoning",
     "image": null,
-    "id": "omni-hammer",
-    "notes_text_dump": "DrawingtheOmniHammerisafreeactionHavingthisweaponequippeddoesnotrequireaweaponslot"
+    "id": "omni-hammer"
   },
   {
     "name": "Omni-Taser",
@@ -1105,21 +801,13 @@
     "heat": null,
     "damage": "1d4",
     "range": "2",
-    "minStr": "1",
     "tags": "Lightning, Light, Finesse",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Drawing the Omni-Taser is a free action. Having this weapon equipped does not require a weapon slot."
-      }
-    ],
+    "notes": "Drawing the Omni-Taser is a free action. Having this weapon equipped does not require a weapon slot.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "lightning",
     "image": null,
-    "id": "omni-taser",
-    "notes_text_dump": "DrawingtheOmniTaserisafreeactionHavingthisweaponequippeddoesnotrequireaweaponslot"
+    "id": "omni-taser"
   },
   {
     "name": "Omni-Torch",
@@ -1131,21 +819,13 @@
     "heat": null,
     "damage": "1d6",
     "range": "2",
-    "minStr": "1",
     "tags": "Fire, Light",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Drawing the Omni-Torch is a free action. Having this weapon equipped does not require a weapon slot. Deals an additional 1d4 fire damage to {unprotected}, organic targets."
-      }
-    ],
-    "npcHit": "if the target is {unprotected} and organic, it takes an additional 2 (1d4) fire damage.",
-    "addDmg": "2",
+    "notes": "Drawing the Omni-Torch is a free action. Having this weapon equipped does not require a weapon slot.",
+    "npcHit": null,
+    "npcMiss": null,
     "dmgType": "fire",
     "image": null,
-    "id": "omni-torch",
-    "notes_text_dump": "DrawingtheOmniTorchisafreeactionHavingthisweaponequippeddoesnotrequireaweaponslotDealsanadditional1d4firedamagetounprotectedorganictargets"
+    "id": "omni-torch"
   },
   {
     "name": "Omni-Whip",
@@ -1157,21 +837,13 @@
     "heat": null,
     "damage": "2d4",
     "range": "4",
-    "minStr": "1",
     "tags": "Lightning, Finesse, Reach",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Drawing the Omni-Whip is a free action. Having this weapon equipped does not require a weapon slot."
-      }
-    ],
+    "notes": "Drawing the Omni-Whip is a free action. Having this weapon equipped does not require a weapon slot.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "lightning",
     "image": null,
-    "id": "omni-whip",
-    "notes_text_dump": "DrawingtheOmniWhipisafreeactionHavingthisweaponequippeddoesnotrequireaweaponslot"
+    "id": "omni-whip"
   },
   {
     "name": "Riot Shield",
@@ -1183,21 +855,13 @@
     "heat": null,
     "damage": null,
     "range": null,
-    "minStr": "10",
     "tags": null,
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "+2 AC"
-      }
-    ],
+    "notes": "+2 AC",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": null,
-    "id": "riot_shield",
-    "notes_text_dump": "2AC"
+    "id": "riot_shield"
   },
   {
     "name": "Sawblade",
@@ -1209,21 +873,13 @@
     "heat": null,
     "damage": "1d10",
     "range": "2",
-    "minStr": "14",
     "tags": "Slashing, Two-Handed",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Deals an additional 1d6 slashing damage to {unprotected} targets."
-      }
-    ],
-    "npcHit": "if the target is {unprotected}, it takes an additional 3 (1d6) slashing damage on the start of its next turn.",
-    "addDmg": "3",
+    "notes": "When you hit an organic target with an attack, it takes an additional 2d6 damage at the start of its turn due to blood loss.",
+    "npcHit": "if the target is organic, it takes an additional 7 (2d6) damage at the start of its next turn due to blood loss.",
+    "npcMiss": null,
     "dmgType": "slashing",
     "image": null,
-    "id": "sawblade",
-    "notes_text_dump": "Dealsanadditional1d6slashingdamagetounprotectedtargets"
+    "id": "sawblade"
   },
   {
     "name": "Stun Baton",
@@ -1235,21 +891,13 @@
     "heat": null,
     "damage": "1d6",
     "range": "2",
-    "minStr": "8",
     "tags": "Bludgeoning, Light",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "When you hit with an attack using this weapon, the target takes and additional 1d4 lightning damage. If the target is {unprotected} and maintaining a concentration spell, it automatically fails its saving throw to maintain that spell."
-      }
-    ],
-    "npcHit": "the target takes 2 (1d4) lightning damage. If the target is {unprotected} and maintaining a concentration spell, it automatically fails its saving throw to maintain that spell.",
-    "addDmg": "2",
+    "notes": "When you hit with an attack using this weapon, the target takes and additional 1d4 lightning damage. If the target maintaining a concentration spell, it automatically fails its saving throw to maintain that spell.",
+    "npcHit": "the target takes 2 (1d4) lightning damage. If the target is maintaining a concentration spell, it automatically fails its saving throw to maintain that spell.",
+    "npcMiss": null,
     "dmgType": "bludgeoning",
     "image": null,
-    "id": "stun_baton",
-    "notes_text_dump": "Whenyouhitwithanattackusingthisweaponthetargettakesandadditional1d4lightningdamageIfthetargetisunprotectedandmaintainingaconcentrationspellitautomaticallyfailsitssavingthrowtomaintainthatspell"
+    "id": "stun_baton"
   },
   {
     "name": "AT-12 Raider",
@@ -1261,17 +909,13 @@
     "heat": "2",
     "damage": "2d8",
     "range": "2",
-    "minStr": null,
     "tags": "Two-handed, Hip Fire, Double Tap",
-    "notes": [
-
-    ],
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette2.wikia.nocookie.net/masseffect/images/3/3f/ME3_Raider_Shotgun.png/revision/latest?cb=20120317200919",
-    "id": "at-12_raider",
-    "notes_text_dump": ""
+    "id": "at-12_raider"
   },
   {
     "name": "Disciple",
@@ -1283,21 +927,13 @@
     "heat": "4",
     "damage": "2d4",
     "range": "4",
-    "minStr": null,
     "tags": "Two-handed, Hip Fire",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Deals bludgeoning damage. On a hit, the target must make a Constitution saving throw (DC 8) or becomes {stunned}."
-      }
-    ],
+    "notes": "Deals bludgeoning damage. On a hit, the target must make a Constitution saving throw (DC 8) or becomes {stunned}.",
     "npcHit": "the target must make a Constitution saving throw (DC 8) or becomes {stunned}",
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "bludgeoning",
     "image": "http://vignette4.wikia.nocookie.net/masseffect/images/6/6a/ME3_Disciple_Shotgun.png/revision/latest?cb=20120317201011",
-    "id": "disciple",
-    "notes_text_dump": "DealsbludgeoningdamageOnahitthetargetmustmakeaConstitutionsavingthrowDC8orbecomesstunned"
+    "id": "disciple"
   },
   {
     "name": "Geth Plasma Shotgun",
@@ -1309,21 +945,13 @@
     "heat": "5",
     "damage": "2d10",
     "range": "6",
-    "minStr": null,
-    "tags": "Two-handed, Hip Fire, Charge",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Deals radiant damage."
-      }
-    ],
+    "tags": "Two-handed, Hip Fire",
+    "notes": "Deals radiant damage. Use a bonus action to charge the weapon before firing, consumig 2 heat. On a hit, it deals an additional 2d10 radiant damage.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "radiant",
     "image": "http://vignette4.wikia.nocookie.net/masseffect/images/b/b9/ME3_Geth_Plasma_Shotgun.png/revision/latest?cb=20120317201115",
-    "id": "geth_plasma_shotgun",
-    "notes_text_dump": "Dealsradiantdamage"
+    "id": "geth_plasma_shotgun"
   },
   {
     "name": "Graal Spike Thrower",
@@ -1335,21 +963,13 @@
     "heat": "3",
     "damage": "2d6",
     "range": "8",
-    "minStr": null,
     "tags": "Two-handed, Hip Fire",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Deals an additional 1d6 damage to {unprotected} targets."
-      }
-    ],
-    "npcHit": "if the target is {unprotected}, it takes an additional 3 (1d6) damage.",
-    "addDmg": "3",
+    "notes": "When you hit an organic target with an attack, it takes an additional 2d6 damage at the start of its turn due to blood loss.",
+    "npcHit": "if the target is organic, it takes an additional 7 (2d6) damage at the start of its next turn due to blood loss.",
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette1.wikia.nocookie.net/masseffect/images/b/b1/ME3_Graal_Spike_Thrower_Shotgun.png/revision/latest?cb=20120317201204",
-    "id": "graal_spike_thrower",
-    "notes_text_dump": "Dealsanadditional1d6damagetounprotectedtargets"
+    "id": "graal_spike_thrower"
   },
   {
     "name": "M-11 Wraith",
@@ -1361,17 +981,13 @@
     "heat": "2",
     "damage": "3d6",
     "range": "6",
-    "minStr": null,
     "tags": "Two-handed, Hip Fire",
-    "notes": [
-
-    ],
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette3.wikia.nocookie.net/masseffect/images/4/45/ME3_Wraith_Shotgun.png/revision/latest?cb=20120317200422",
-    "id": "m-11_wraith",
-    "notes_text_dump": ""
+    "id": "m-11_wraith"
   },
   {
     "name": "M-22 Eviscerator",
@@ -1383,17 +999,13 @@
     "heat": "3",
     "damage": "2d8",
     "range": "6",
-    "minStr": null,
     "tags": "Two-handed, Hip Fire",
-    "notes": [
-
-    ],
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette3.wikia.nocookie.net/masseffect/images/e/e0/ME3_Eviscerator_Shotgun.png/revision/latest?cb=20120317200519",
-    "id": "m-22_eviscerator",
-    "notes_text_dump": ""
+    "id": "m-22_eviscerator"
   },
   {
     "name": "M-23 Katana",
@@ -1405,17 +1017,13 @@
     "heat": "5",
     "damage": "2d6",
     "range": "4",
-    "minStr": null,
     "tags": "Two-handed, Hip Fire",
-    "notes": [
-
-    ],
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette1.wikia.nocookie.net/masseffect/images/a/a2/ME3_Katana_Shotgun.png/revision/latest?cb=20120317200552",
-    "id": "m-23_katana",
-    "notes_text_dump": ""
+    "id": "m-23_katana"
   },
   {
     "name": "M-27 Scimitar",
@@ -1427,17 +1035,13 @@
     "heat": "9",
     "damage": "2d4",
     "range": "4",
-    "minStr": null,
     "tags": "Two-handed, Hip Fire, Double Tap",
-    "notes": [
-
-    ],
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette4.wikia.nocookie.net/masseffect/images/0/0d/ME3_Scimitar_Shotgun.png/revision/latest?cb=20120317200715",
-    "id": "m-27_scimitar",
-    "notes_text_dump": ""
+    "id": "m-27_scimitar"
   },
   {
     "name": "M-300 Claymore",
@@ -1449,17 +1053,13 @@
     "heat": "1",
     "damage": "3d8",
     "range": "4",
-    "minStr": null,
-    "tags": "Two-handed, Hip Fire",
-    "notes": [
-
-    ],
+    "tags": "Two-handed, Hip Fire, Heavy",
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette4.wikia.nocookie.net/masseffect/images/a/a2/ME3_Claymore_Shotgun.png/revision/latest?cb=20120317200800",
-    "id": "m-300_claymore",
-    "notes_text_dump": ""
+    "id": "m-300_claymore"
   },
   {
     "name": "N7 Crusader",
@@ -1471,17 +1071,13 @@
     "heat": "4",
     "damage": "2d10",
     "range": "8",
-    "minStr": null,
-    "tags": "Two-handed, Hip Fire, Double Tap",
-    "notes": [
-
-    ],
+    "tags": "Two-handed, Hip Fire, Double Tap, Heavy",
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette2.wikia.nocookie.net/masseffect/images/3/3a/ME3_N7_Crusader_Shotgun.png/revision/latest?cb=20120317201234",
-    "id": "n7_crusader",
-    "notes_text_dump": ""
+    "id": "n7_crusader"
   },
   {
     "name": "N7 Piranha",
@@ -1493,21 +1089,13 @@
     "heat": "6",
     "damage": "2d4",
     "range": "4",
-    "minStr": null,
     "tags": "Two-handed, Hip Fire",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "When fired make a single attack roll against all creatures in a 4m cone. All creatures with AC less than the attack are hit."
-      }
-    ],
+    "notes": "When fired make a single attack roll against all creatures in a 4m cone. All creatures with AC less than the attack are hit.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette2.wikia.nocookie.net/masseffect/images/c/c4/ME3_Piranha_Assault_Shotgun.png/revision/latest?cb=20120714073110",
-    "id": "n7_piranha",
-    "notes_text_dump": "Whenfiredmakeasingleattackrollagainstallcreaturesina4mconeAllcreatureswithAClessthantheattackarehit"
+    "id": "n7_piranha"
   },
   {
     "name": "Reegar Carbine",
@@ -1519,17 +1107,13 @@
     "heat": "20",
     "damage": "1d12",
     "range": "6",
-    "minStr": null,
-    "tags": "Two-handed, Hip Fire, Arc, Unique",
-    "notes": [
-
-    ],
+    "tags": "Two-handed, Hip Fire, Arc, Special",
+    "notes": null,
     "npcHit": "deals half of the damage roll  as lightning damage to 1 additional creature within 2m of the target.",
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "lightning",
     "image": "http://vignette2.wikia.nocookie.net/masseffect/images/6/60/ME3_Reegar_Carbine.png/revision/latest?cb=20120530214009",
-    "id": "reegar_carbine",
-    "notes_text_dump": ""
+    "id": "reegar_carbine"
   },
   {
     "name": "Venom Shotgun",
@@ -1541,21 +1125,13 @@
     "heat": "4",
     "damage": "2d10",
     "range": "10",
-    "minStr": null,
-    "tags": "Two-handed, Hip Fire, Unique, Charge",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Deals thunder damage. Instead of making a ranged weapon attack, target creature makes a Dexterity saving throw (DC13). On a successful save, it takes half as much damage."
-      }
-    ],
+    "tags": "Two-handed, Hip Fire, Special",
+    "notes": "Deals thunder damage. Use a bonus action to charge the weapon before firing, consumig 2 heat. It deals an additional  2d10 thunder damage. Instead of making a ranged weapon attack, target a creature that makes a Dexterity saving throw (DC13). On a successful save, it takes half as much damage.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "thunder",
     "image": "http://vignette1.wikia.nocookie.net/masseffect/images/7/76/ME3_Venom_Shotgun.png/revision/latest?cb=20121029075317",
-    "id": "venom_shotgun",
-    "notes_text_dump": "DealsthunderdamageInsteadofmakingarangedweaponattacktargetcreaturemakesaDexteritysavingthrowDC13Onasuccessfulsaveittakeshalfasmuchdamage"
+    "id": "venom_shotgun"
   },
   {
     "name": "Blood Pack Punisher",
@@ -1567,21 +1143,13 @@
     "heat": "6",
     "damage": "3d4",
     "range": "6",
-    "minStr": null,
     "tags": "Hip Fire, Burst Fire",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "+1 to hit targets within normal range"
-      }
-    ],
+    "notes": "+1 to hit targets within normal range",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette1.wikia.nocookie.net/masseffect/images/1/17/ME3_Blood_Pack_Punisher_Smg.png/revision/latest?cb=20120809190511",
-    "id": "blood_pack_punisher",
-    "notes_text_dump": "1tohittargetswithinnormalrange"
+    "id": "blood_pack_punisher"
   },
   {
     "name": "Collector SMG",
@@ -1593,21 +1161,13 @@
     "heat": "6",
     "damage": "2d8",
     "range": "10",
-    "minStr": null,
-    "tags": "Unique, Two-handed, Burst Fire",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "The Collector SMG does not use thermal clips. Instead use a d6 to track the \"heat\". Whenever you make a ranged attack with the weapon, spin down the die 1 face. Every round that you don't fire the weapon, spin the die up 1 face. This represents the weapon internally cooling off. If you ever spin down the die to 0, the weapon jams and cannot be fired again this combat."
-      }
-    ],
+    "tags": "Special, Two-handed, Burst Fire, Light",
+    "notes": "The Collector SMG does not use thermal clips. Instead use a d6 to track the \"heat\". Whenever you make a ranged attack with the weapon, spin down the die 1 face. Every round that you don't fire the weapon, spin the die up 1 face. This represents the weapon internally cooling off. If you ever spin down the die to 0, the weapon jams and cannot be fired again this combat.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "https://vignette.wikia.nocookie.net/masseffect/images/6/68/ME3_Collector_SMG.png/revision/latest/scale-to-width-down/350?cb=20121009204046",
-    "id": "collector_smg",
-    "notes_text_dump": "TheCollectorSMGdoesnotusethermalclipsInsteadusead6totracktheheatWheneveryoumakearangedattackwiththeweaponspindownthedie1faceEveryroundthatyoudontfiretheweaponspinthedieup1faceThisrepresentstheweaponinternallycoolingoffIfyoueverspindownthedieto0theweaponjamsandcannotbefiredagainthiscombat"
+    "id": "collector_smg"
   },
   {
     "name": "Geth Plasma SMG",
@@ -1619,21 +1179,13 @@
     "heat": "12",
     "damage": "4d4",
     "range": "18",
-    "minStr": null,
-    "tags": "Unique, Burst Fire",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Deals radiant damage."
-      }
-    ],
+    "tags": "Special, Burst Fire",
+    "notes": "Deals radiant damage.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "radiant",
     "image": "http://vignette4.wikia.nocookie.net/masseffect/images/9/9c/ME3_Geth_Plasma_SMG.png/revision/latest?cb=20120411201332",
-    "id": "geth_plasma_smg",
-    "notes_text_dump": "Dealsradiantdamage"
+    "id": "geth_plasma_smg"
   },
   {
     "name": "M-12 Locust",
@@ -1645,17 +1197,13 @@
     "heat": "3",
     "damage": "3d4",
     "range": "10",
-    "minStr": null,
-    "tags": "Hip Fire, Burst Fire",
-    "notes": [
-
-    ],
+    "tags": "Hip Fire, Burst Fire, Light",
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette2.wikia.nocookie.net/masseffect/images/f/fb/ME3_Locust_Smg.png/revision/latest?cb=20120317184530",
-    "id": "m-12_locust",
-    "notes_text_dump": ""
+    "id": "m-12_locust"
   },
   {
     "name": "M-25 Hornet",
@@ -1667,17 +1215,13 @@
     "heat": "6",
     "damage": "2d4",
     "range": "8",
-    "minStr": null,
-    "tags": "Double Tap, Hip Fire, Burst Fire",
-    "notes": [
-
-    ],
+    "tags": "Double Tap, Hip Fire, Burst Fire, Light",
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette3.wikia.nocookie.net/masseffect/images/6/66/ME3_Hornet_Smg.png/revision/latest?cb=20120317184337",
-    "id": "m-25_hornet",
-    "notes_text_dump": ""
+    "id": "m-25_hornet"
   },
   {
     "name": "M-4 Shuriken",
@@ -1689,17 +1233,13 @@
     "heat": "3",
     "damage": "2d4",
     "range": "4",
-    "minStr": null,
-    "tags": "Hip Fire, Burst Fire",
-    "notes": [
-
-    ],
+    "tags": "Hip Fire, Burst Fire, Light",
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette1.wikia.nocookie.net/masseffect/images/8/8b/ME3_Shuriken_Smg.png/revision/latest?cb=20120317184559",
-    "id": "m-4_shuriken",
-    "notes_text_dump": ""
+    "id": "m-4_shuriken"
   },
   {
     "name": "M-9 Tempest",
@@ -1711,17 +1251,13 @@
     "heat": "6",
     "damage": "2d6",
     "range": "10",
-    "minStr": null,
-    "tags": "Hip Fire, Burst Fire",
-    "notes": [
-
-    ],
+    "tags": "Hip Fire, Burst Fire, Light",
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette2.wikia.nocookie.net/masseffect/images/1/14/ME3_Tempest_Smg.png/revision/latest?cb=20120317184648",
-    "id": "m-9_tempest",
-    "notes_text_dump": ""
+    "id": "m-9_tempest"
   },
   {
     "name": "N7 Hurricane",
@@ -1733,17 +1269,13 @@
     "heat": "6",
     "damage": "3d6",
     "range": "6",
-    "minStr": null,
     "tags": "Hip Fire, Burst Fire",
-    "notes": [
-
-    ],
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette4.wikia.nocookie.net/masseffect/images/e/e9/ME3_N7_Hurricane_Smg.png/revision/latest?cb=20120317184439",
-    "id": "n7_hurricane",
-    "notes_text_dump": ""
+    "id": "n7_hurricane"
   },
   {
     "name": "Black Widow",
@@ -1755,21 +1287,13 @@
     "heat": "3",
     "damage": "2d12",
     "range": "100",
-    "minStr": null,
-    "tags": "Two-handed, Burst Fire",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Ignores half cover. On a hit, if the target is not behind cover, it takes an additional 1d4 damage."
-      }
-    ],
+    "tags": "Two-handed, Burst Fire, Heavy",
+    "notes": "Ignores half cover. On a hit, if the target is not behind cover, it takes an additional 1d4 damage.",
     "npcHit": "if the target is not behind cover, it takes and additional 1d4 damage.",
-    "addDmg": "2",
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette2.wikia.nocookie.net/masseffect/images/4/44/ME3_Black_Widow_Sniper_Rifle.png/revision/latest?cb=20120317191926",
-    "id": "black_widow",
-    "notes_text_dump": "IgnoreshalfcoverOnahitifthetargetisnotbehindcoverittakesanadditional1d4damage"
+    "id": "black_widow"
   },
   {
     "name": "Javelin",
@@ -1781,21 +1305,13 @@
     "heat": "1",
     "damage": "1d12",
     "range": "100",
-    "minStr": null,
-    "tags": "Two-handed, Unique",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Ignores half and three-quarters cover"
-      }
-    ],
+    "tags": "Two-handed, Special, Heavy",
+    "notes": "Ignores half and three-quarters cover",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette2.wikia.nocookie.net/masseffect/images/7/7b/ME3_Javelin_Sniper_Rifle.png/revision/latest?cb=20120317192031",
-    "id": "javelin",
-    "notes_text_dump": "Ignoreshalfandthreequarterscover"
+    "id": "javelin"
   },
   {
     "name": "Kishock Harpoon Gun",
@@ -1807,21 +1323,13 @@
     "heat": "1",
     "damage": "3d6",
     "range": "80",
-    "minStr": null,
-    "tags": "Two-handed, Charge",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "On a hit, the target makes a Constitution (DC 13) saving throw. On a failed save, the target takes an additional 3d6 damage at the start of their turn due to blood loss."
-      }
-    ],
+    "tags": "Two-handed",
+    "notes": "A target hit by this weapon makes a Constitution (DC 13) saving throw. On a failed save, the target takes an additional 3d6 damage at the start of their turn due to blood loss.",
     "npcHit": "the target makes a Constitution (DC 13) saving throw. On a failed save, the target takes an additional 10 (3d6) damage at the start of their turn due to blood loss.",
-    "addDmg": "7",
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette4.wikia.nocookie.net/masseffect/images/d/db/ME3_Kishock_Harpoon_Gun.png/revision/latest?cb=20120411201323",
-    "id": "kishock_harpoon_gun",
-    "notes_text_dump": "OnahitthetargetmakesaConstitutionDC13savingthrowOnafailedsavethetargettakesanadditional3d6damageatthestartoftheirturnduetobloodloss"
+    "id": "kishock_harpoon_gun"
   },
   {
     "name": "Krysae Sniper Rifle",
@@ -1833,21 +1341,13 @@
     "heat": "3",
     "damage": "2d4",
     "range": "80",
-    "minStr": null,
     "tags": "Two-handed, Hip Fire, Double Tap",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "+2 damage to synthorganic enemies"
-      }
-    ],
+    "notes": "+2 damage to synthorganic enemies",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette1.wikia.nocookie.net/masseffect/images/2/2f/ME3_Krysae_Sniper_Rifle.png/revision/latest?cb=20120530214006",
-    "id": "krysae_sniper_rifle",
-    "notes_text_dump": "2damagetosynthorganicenemies"
+    "id": "krysae_sniper_rifle"
   },
   {
     "name": "M-13 Raptor",
@@ -1859,17 +1359,13 @@
     "heat": "15",
     "damage": "1d8",
     "range": "60",
-    "minStr": null,
     "tags": "Two-handed, Double Tap, Hip Fire",
-    "notes": [
-
-    ],
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette3.wikia.nocookie.net/masseffect/images/7/70/ME3_Raptor_Sniper_Rifle.png/revision/latest?cb=20120317191426",
-    "id": "m-13_raptor",
-    "notes_text_dump": ""
+    "id": "m-13_raptor"
   },
   {
     "name": "M-29 Incisor",
@@ -1881,17 +1377,13 @@
     "heat": "3",
     "damage": "3d6",
     "range": "60",
-    "minStr": null,
     "tags": "Two-handed, Burst Fire",
-    "notes": [
-
-    ],
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette2.wikia.nocookie.net/masseffect/images/d/dc/ME3_Incisor_Sniper_Rifle.png/revision/latest?cb=20120317191319",
-    "id": "m-29_incisor",
-    "notes_text_dump": ""
+    "id": "m-29_incisor"
   },
   {
     "name": "M-90 Indra",
@@ -1903,17 +1395,13 @@
     "heat": "9",
     "damage": "2d8",
     "range": "60",
-    "minStr": null,
     "tags": "Two-handed, Burst Fire",
-    "notes": [
-
-    ],
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette4.wikia.nocookie.net/masseffect/images/b/b6/ME3_Indra_Sniper_Rifle.png/revision/latest?cb=20120317191212",
-    "id": "m-90_indra",
-    "notes_text_dump": ""
+    "id": "m-90_indra"
   },
   {
     "name": "M-92 Mantis",
@@ -1925,17 +1413,13 @@
     "heat": "1",
     "damage": "2d8",
     "range": "80",
-    "minStr": null,
     "tags": "Two-handed",
-    "notes": [
-
-    ],
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette2.wikia.nocookie.net/masseffect/images/7/7b/ME3_Mantis_Sniper_Rifle.png/revision/latest?cb=20120317191621",
-    "id": "m-92_mantis",
-    "notes_text_dump": ""
+    "id": "m-92_mantis"
   },
   {
     "name": "M-97 Viper",
@@ -1947,21 +1431,13 @@
     "heat": "6",
     "damage": "1d12",
     "range": "100",
-    "minStr": null,
     "tags": "Two-handed, Double Tap",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "You can reload this weapon as a bonus action."
-      }
-    ],
+    "notes": "You can reload this weapon as a bonus action.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette3.wikia.nocookie.net/masseffect/images/5/52/ME3_Viper_Sniper_Rifle.png/revision/latest?cb=20120317191749",
-    "id": "m-97_viper",
-    "notes_text_dump": "Youcanreloadthisweaponasabonusaction"
+    "id": "m-97_viper"
   },
   {
     "name": "M-98 Widow",
@@ -1973,21 +1449,13 @@
     "heat": "1",
     "damage": "2d12",
     "range": "80",
-    "minStr": null,
-    "tags": "Two-handed",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "Ignores half cover. On a hit, if the target is not behind cover, it takes an additional 1d4 damage."
-      }
-    ],
+    "tags": "Two-handed, Heavy",
+    "notes": "Ignores half cover. On a hit, if the target is not behind cover, it takes an additional 1d4 damage.",
     "npcHit": "if the target is not behind cover, it takes and additional 1d4 damage.",
-    "addDmg": "2",
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette2.wikia.nocookie.net/masseffect/images/1/1d/ME3_Widow_Sniper_Rifle.png/revision/latest?cb=20120317191850",
-    "id": "m-98_widow",
-    "notes_text_dump": "IgnoreshalfcoverOnahitifthetargetisnotbehindcoverittakesanadditional1d4damage"
+    "id": "m-98_widow"
   },
   {
     "name": "N7 Valiant",
@@ -1999,17 +1467,13 @@
     "heat": "3",
     "damage": "2d8",
     "range": "100",
-    "minStr": null,
     "tags": "Two-handed, Double Tap",
-    "notes": [
-
-    ],
+    "notes": null,
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "http://vignette4.wikia.nocookie.net/masseffect/images/1/14/ME3_N7_Valiant_Sniper_Rifle.png/revision/latest?cb=20120317192204",
-    "id": "n7_valiant",
-    "notes_text_dump": ""
+    "id": "n7_valiant"
   },
   {
     "name": "Collector Sniper Rifle",
@@ -2021,20 +1485,12 @@
     "heat": "4",
     "damage": "1d12",
     "range": "60",
-    "minStr": null,
     "tags": "Two-handed, Burst Fire",
-    "notes": [
-      {
-        "id": 1,
-        "type": "line",
-        "data": "The Collector Sniper Rifle does not use thermal clips. Instead use a d4 to track the \"heat\". Whenever you make a ranged attack with the weapon, spin down the die 1 face. Every round that you don't fire the weapon, spin the die up 1 face. This represents the weapon internally cooling off. If you ever spin down the die to 0, the weapon jams and cannot be fired again this combat."
-      }
-    ],
+    "notes": "The Collector Sniper Rifle does not use thermal clips. Instead use a d4 to track the \"heat\". Whenever you make a ranged attack with the weapon, spin down the die 1 face. Every round that you don't fire the weapon, spin the die up 1 face. This represents the weapon internally cooling off. If you ever spin down the die to 0, the weapon jams and cannot be fired again this combat.",
     "npcHit": null,
-    "addDmg": null,
+    "npcMiss": null,
     "dmgType": "piercing",
     "image": "https://vignette.wikia.nocookie.net/masseffect/images/4/40/ME3_Collector_Sniper_Rifle.png/revision/latest/scale-to-width-down/200?cb=20121009204028",
-    "id": "collector_sniper_rifle",
-    "notes_text_dump": "TheCollectorSniperRifledoesnotusethermalclipsInsteadusead4totracktheheatWheneveryoumakearangedattackwiththeweaponspindownthedie1faceEveryroundthatyoudontfiretheweaponspinthedieup1faceThisrepresentstheweaponinternallycoolingoffIfyoueverspindownthedieto0theweaponjamsandcannotbefiredagainthiscombat"
+    "id": "collector_sniper_rifle"
   }
 ]

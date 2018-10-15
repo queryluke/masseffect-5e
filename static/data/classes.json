@@ -550,7 +550,6 @@
         "title": "Tech Point Limit"
       }
     ],
-    "spellcasting": "Engineers use a highly modified Omni-tool that requires a keen intellect to maintain. As an Engineer, you use your Intelligence whenever a spell refers to your spellcasting ability. In addition, you use your Intelligence modifier when setting the saving throw DC for a tech spell you cast and when making an attack roll with one.\n",
     "progression": [
       {
         "level": 1,
@@ -560,7 +559,7 @@
         ],
         "barrierTicks": null,
         "techPoints": 2,
-        "techPointLimit": 2
+        "techPointLimit": 1
       },
       {
         "level": 2,
@@ -736,7 +735,7 @@
             "jack_of_all_trades"
           ],
           [
-            "extra_attack"
+            "extra_attack_1"
           ],
           [
             "disrupting_attack"
@@ -1548,7 +1547,7 @@
             "tactical_range_2"
           ],
           [
-            "",
+            "tactical_maneuvers",
             "tactical_focus_2"
           ],
           [

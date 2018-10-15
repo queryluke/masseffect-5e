@@ -49,6 +49,6 @@ def generate_config_file(page)
 
   data = $collection
 
-  File.open("data/#{page[:type]}.json", 'wb') {|f| f.write JSON.pretty_generate(data) }
+  File.open("../static/data/#{page[:type]}.json", 'wb') {|f| f.write JSON.pretty_generate(data) }
 
 end
