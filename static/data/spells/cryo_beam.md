@@ -1,22 +1,21 @@
 ---
 id: cryo_beam
 name: Cryo Beam
-level: 1
+level: 3
 type: tech
 attackType:
-- DEX save
-- " STR save"
+- STR save
 effect:
 - damage
 damageType:
 - cold
 castingTime: Action
-duration: Instant
+duration: instant
 concentration: false
 distance:
   range: Self
-  aoeType: cube
-  aoeDistance: 6m
+  aoeType: line
+  aoeDistance: 8m
 detonates: 
 primes: cold
 availableClasses:
@@ -25,13 +24,22 @@ availableClasses:
 - sentinel
 advancementOptions:
 - name: Brittle Freeze
-  description: Creatures that fail the Constitution saving throw suffer a -1 AC penalty
+  description: Shields no longer provide advantage on the saving throw. On a successful save, a creature is primed
+    cold until the end of your next turn.
 - name: Frozen Ground
-  description: Cryo beam leaves a patch of ice on the ground that lasts for 1 min.
-    Each creature that moves into or out of the patch must pass a Dexterity saving
-    throw. On a failed save, slips and falls [Prone], ending its movement.
+  description: Cryo beam leaves a patch of ice on the ground that lasts for 1 min. The ground is considered difficult terrain.
 ---
-You spend tech points to blast a stream of liquid hydrogen from your omni-tool. Each creature in a 6m cube becomes
-{primed-cold} until the end of its next turn and must make a Constitution saving throw. A creature takes Xd8 cold damage
-on a failed save, or half as much damage on a successful one where X is the number of tech points spent. If the target is
-{unprotected}, it must pass a Strength saving throw or becomes {frozen} until the end of its next turn.
+
+Blast a continuous stream of liquid hydrogen from your omni-tool in an 8m long by 2m wide line. Each creature in the beam
+must make a Strength saving throw. On a failed save, a creature takes 6d8 cold damage and then becomes <condition id="frozen"/>
+until the start of your next turn. On a successful save, a creature takes half as much damage and isn't frozen by this spell.
+Creatures with at least 1 shield point have advantage on this saving throw.
+
+A creature must also make the saving throw when it enters the beam's space for the first time on a turn or ends its turn there.
+
+At the start of your turn, you may spend your action and 1 additional tech point to continue casting the beam. Your
+movement speed is 2m while casting it in this manner. The spell ends if you become incapacitated.
+
+__At Higher Levels__: When you cast this spell using a spell slot of 4th level or higher, the damage increases by 2d8
+and the length of the beam increases by 2m for each slot level above 3rd.
+
