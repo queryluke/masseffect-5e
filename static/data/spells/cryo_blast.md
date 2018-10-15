@@ -27,7 +27,8 @@ availableClasses:
 advancementOptions:
 - name: Ice Lance
   description: Transform the attack into a deadly lance. Make a ranged spell attack on a target within range. On a hit,
-    the target takes 1d8 cold and 2d4 piercing damage for each tech point spent.
+    the target takes 1d8 cold and 2d4 piercing damage for a 1st-level version and an additional 1d8 and 2d4 for each
+    slot level above the 1st.
 - name: Frigid Air
   description: The blast creates a pocket of frigid air that lasts until the end of your next turn. Each creature that
     enters the frozen space for the first time on a turn or ends its turn there becomes primed cold until the end of

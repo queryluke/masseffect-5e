@@ -12,7 +12,7 @@ castingTime: Action
 duration: Instant
 concentration: false
 distance:
-  range: 20m
+  range: 50m
   aoeType: 
   aoeDistance: 
 detonates: 
@@ -22,9 +22,10 @@ availableClasses:
 - infiltrator
 advancementOptions:
 - name: Damage
-  description: A creature takes Xd6 psychic damage on a failed save or half as much
-    damage on a successful one where X is the number of tech points spent.
+  description: The target takes 2d6 psychic damage when hit by the ion laser. This damage increases by 2d6 for each slot level above the 1st.
 - name: Paralyze
-  description: If a creature fails the saving throw, it is paralyzed for 1 turn.
+  description: If a creature fails the saving throw, it is paralyzed until the end of its next turn.
 ---
-You spend tech points to flash an ion laser at an organic creature within range. The creature makes a Constitution saving throw. The DC of this throw is increased by 1 for each tech point spent. On a failed save, the creature has disadvantage on the next melee or ranged attack it makes and can't take reactions until the start of its next turn.
+Flash an ion laser at an organic creature within range. The creature makes a Charisma saving throw. On a failed save,
+the creature has disadvantage on melee and ranged attack attack rolls and can't take reactions until the end of its
+next turn.
