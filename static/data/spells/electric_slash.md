@@ -1,7 +1,7 @@
 ---
 id: electric_slash
 name: Electric Slash
-level: 1
+level: 2
 type: tech
 attackType:
 - CON Save
@@ -29,4 +29,9 @@ advancementOptions:
   description: Creatures that fail the saving throw are paralyzed until the end of
     their next turn.
 ---
-Spend X tech points to unleash a wave of electric energy in an 8m cone originating from you. Each creature must make a Constitution saving throw. On a failed save, a creature takes Xd8 lightning damage or half as much damage on a successful one.
+Fabricate an electrified whip that lashes out in front of you in an 8m cone. Each creature must make a Constitution saving
+throw. On a failed save, a creature takes 7d6 lightning damage or half as much damage on a successful one.
+
+
+__At Higher Levels__: When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 2d6 for
+each spell slot above the 2nd.
