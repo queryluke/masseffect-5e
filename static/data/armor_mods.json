@@ -6,7 +6,7 @@
     "feature": "Resistance to piercing damage.",
     "cost": "30000",
     "manu": "Alliance",
-    "notes": "Damage Resistance",
+    "notes": "Resistance",
     "id": "ablative_coating_chest"
   },
   {
@@ -23,20 +23,20 @@
     "name": "Amplifier Plates",
     "type": "Arms",
     "description": "Includes an internal micro-control system to maximize resources.",
-    "feature": "Reduce tech point costs by 1, to a minimum of 1. This cannot be used to cast tech powers beyond your max tech point limit.",
-    "cost": "20000",
+    "feature": "+1 bonus to spell damage rolls",
+    "cost": "12000",
     "manu": "Elanus Risk Control Services",
-    "notes": "Reduce Tech Cost",
+    "notes": "Extra Damage",
     "id": "amplifier_plates_arms"
   },
   {
     "name": "Archon AI",
     "type": "Head",
-    "description": "An efficiency algorithm to balance processing power for biotic amps. A heads-up display and voice command software allows users to micromanage the systems, reducing the cooldown period between energy expenditures.",
-    "feature": "On a short rest, gain a number of spell slots equal to half your level (rounded down, minimum 1) by spell slot level. For a lvl 10 Adept, you could gain five 1st-level slots OR two 2nd-level slots & one 1st-level slot OR one 3rd-level slot & one 2nd-level slot, etc.",
-    "cost": "24000",
+    "description": "An efficiency algorithm to balance processing power for biotic amps and omni-tools. A heads-up display and voice command software allows users to micromanage the systems, reducing the cooldown period between energy expenditures.",
+    "feature": "You can regain one 1st-level spell slot or one tech point as an action. You can’t use this property again until you finish a long rest.",
+    "cost": "30000",
     "manu": "Rosenkov Materials",
-    "notes": "Spell Slot Regen",
+    "notes": "Spell Regen",
     "id": "archon_ai_head"
   },
   {
@@ -116,27 +116,27 @@
     "feature": "The armor contains a mass effect barrier with 3 barrier ticks. You cannot use these additional barrier ticks for biotic spells, they are only for damage reduction. The barrier ticks recharge after a short rest.",
     "cost": "24000",
     "manu": "Armali Council",
-    "notes": "Barrier",
+    "notes": "Special",
     "id": "barrier_chest"
   },
   {
     "name": "Battle Telemetry",
     "type": "Arms",
     "description": "Battle telemetry systems increase the efficiency of your biotic amplifiers and omni-tool.",
-    "feature": "Increase your tech regen die type by 1 (e.g., from a d4 to d6). Max d12.",
-    "cost": "12000",
+    "feature": "You can regain one 1st-level spell slot or one tech point as an action. You can’t use this property again until you finish a long rest.",
+    "cost": "30000",
     "manu": "Rosenkov Materials",
-    "notes": "Tech Regen",
+    "notes": "Spell Regen",
     "id": "battle_telemetry_arms"
   },
   {
     "name": "Battle Telemetry",
     "type": "Chest",
     "description": "Battle telemetry systems increase the efficiency of your biotic amplifiers and omni-tool.",
-    "feature": "Increase your tech regen die type by 1 (e.g., from a d4 to d6). Max d12.",
-    "cost": "12000",
+    "feature": "You can regain one 1st-level spell slot or one tech point as an action. You can’t use this property again until you finish a long rest.",
+    "cost": "30000",
     "manu": "Rosenkov Materials",
-    "notes": "Tech Regen",
+    "notes": "Spell Regen",
     "id": "battle_telemetry_chest"
   },
   {
@@ -186,7 +186,7 @@
     "feature": "Resistance to lightning.",
     "cost": "15000",
     "manu": "Cerberus Skunkworks",
-    "notes": "Damage Resistance",
+    "notes": "Resistance",
     "id": "cleats_legs"
   },
   {
@@ -206,8 +206,18 @@
     "feature": "Resistance to fire and cold damage.",
     "cost": "30000",
     "manu": "Devlon Industries",
-    "notes": "Damage Resistance",
+    "notes": "Resistance",
     "id": "environmental_regulators_chest"
+  },
+  {
+    "name": "ER Jetpack",
+    "type": "Chest",
+    "description": "An advanced jetpack that can be used for longer than the standard version, but takes longer to recharge.",
+    "feature": "As a bonus action, activate the jetpack to gain flying 6m for 10 minutes. This device cannot be used again until you finish a long rest.",
+    "cost": "18000",
+    "manu": "Elanus Risk Control Services",
+    "notes": "Movement",
+    "id": "er_jetpack_chest"
   },
   {
     "name": "Focus Modulator",
@@ -226,7 +236,7 @@
     "feature": "Resistance to cold, fire, force, lightning, and necrotic damage types.",
     "cost": "75000",
     "manu": "Elanus Risk Control Services",
-    "notes": "Damage Resistance",
+    "notes": "Resistance",
     "id": "hardened_weave_chest"
   },
   {
@@ -260,6 +270,26 @@
     "id": "hip_holster_legs"
   },
   {
+    "name": "Jetpack",
+    "type": "Chest",
+    "description": "This propulsion device generates mass effect fields for lift and gyroscopic atitude adjusters to maneuver the wearer for a short duration.",
+    "feature": "As a bonus action, activate the jetpack to gain flying 6m for 1 minute. This device cannot be used again until you finish a short rest.",
+    "cost": "10000",
+    "manu": "Elanus Risk Control Services",
+    "notes": "Movement",
+    "id": "jetpack_chest"
+  },
+  {
+    "name": "Jump Jets",
+    "type": "Legs",
+    "description": "Quickly compresses the atmosphere and ejects it from boosters built into the soles of the boots, allowing for longer jumps and brief hovering.",
+    "feature": "Your jump distance is tripled. If you jump straight up, you can hover at the apex of your jump for 1 round of combat (6 sec). ",
+    "cost": "14000",
+    "manu": "Elanus Risk Control Services",
+    "notes": "Movement",
+    "id": "jump_jets_legs"
+  },
+  {
     "name": "Life Support Webbing",
     "type": "Legs",
     "description": "A net of micro-stimulants and medi-gel in order to increase the chances of survival for aid workers and military personnel working in hostile environments.",
@@ -276,7 +306,7 @@
     "feature": "If you are standing on a metal surface, you are immune to being lifted. Otherwise, if you would make a saving throw against being lifted, you have advantage.",
     "cost": "25000",
     "manu": "Any",
-    "notes": "Condition Immunity",
+    "notes": "Immunity",
     "id": "mag_latches_legs"
   },
   {
@@ -328,6 +358,16 @@
     "manu": "Jormungand Technology",
     "notes": "Special",
     "id": "personal_disruptor_torpedoes_arms"
+  },
+  {
+    "name": "QR Jetpack",
+    "type": "Chest",
+    "description": "A better model of the standard jetpack that has a larger batter reserve, allowing for more uses before recharging.",
+    "feature": "As a bonus action, activate the jetpack to gain flying 6m for 1 minute. You may use this 3 times per short rest.",
+    "cost": "22000",
+    "manu": "Elanus Risk Control Services",
+    "notes": "Movement",
+    "id": "qr_jetpack_chest"
   },
   {
     "name": "Recharge Capacitor",
@@ -426,7 +466,7 @@
     "feature": "Resistance to thunder.",
     "cost": "15000",
     "manu": "Devlon Industries",
-    "notes": "Damage Resistance",
+    "notes": "Resistance",
     "id": "shock_absorbers_legs"
   },
   {
@@ -446,7 +486,7 @@
     "feature": "Resistance to radiant damage.",
     "cost": "15000",
     "manu": "Devlon Industries",
-    "notes": "Damage Resistance",
+    "notes": "Resistance",
     "id": "teflon_coating_chest"
   },
   {
@@ -456,7 +496,7 @@
     "feature": "You are immune to being frozen.",
     "cost": "25000",
     "manu": "Devlon Industries",
-    "notes": "Condition Immunity",
+    "notes": "Immunity",
     "id": "thermal_armor_chest"
   },
   {
@@ -466,7 +506,7 @@
     "feature": "Resistance to acid and poison damage. You have advantage on Constitution saving throws that would cause you to be poisoned.",
     "cost": "15000",
     "manu": "Batarian State Arms",
-    "notes": "Damage Resistance, Special",
+    "notes": "Resistance, Special",
     "id": "toxic_resistance_chest"
   },
   {
@@ -488,45 +528,5 @@
     "manu": "Tyriel Advanced Communications Corporation",
     "notes": "Special",
     "id": "voice_modulator_head"
-  },
-  {
-    "name": "Jetpack",
-    "type": "Chest",
-    "description": "This propulsion device generates mass effect fields for lift and gyroscopic atitude adjusters to maneuver the wearer for a short duration.",
-    "feature": "As a bonus action, activate the jetpack to gain flying 6m for 1 minute. This device cannot be used again until you finish a short rest.",
-    "cost": "10000",
-    "manu": "Elanus Risk Control Services",
-    "notes": "Movement",
-    "id": "jetpack_chest"
-  },
-  {
-    "name": "QR Jetpack",
-    "type": "Chest",
-    "description": "A better model of the standard jetpack that has a larger batter reserve, allowing for more uses before recharging.",
-    "feature": "As a bonus action, activate the jetpack to gain flying 6m for 1 minute. You may use this 3 times per short rest.",
-    "cost": "22000",
-    "manu": "Elanus Risk Control Services",
-    "notes": "Movement",
-    "id": "qr_jetpack_chest"
-  },
-  {
-    "name": "Explorer's Jetpack",
-    "type": "Chest",
-    "description": "An advanced jetpack that can be used for longer than the standard version, but takes longer to recharge.",
-    "feature": "As a bonus action, activate the jetpack to gain flying 6m for 10 minutes. This device cannot be used again until you finish a long rest.",
-    "cost": "18000",
-    "manu": "Elanus Risk Control Services",
-    "notes": "Movement",
-    "id": "explorers_jetpack_chest"
-  },
-  {
-    "name": "Jump Jets",
-    "type": "Legs",
-    "description": "Quickly compresses the atmosphere and ejects it from boosters built into the soles of the boots, allowing for longer jumps and brief hovering.",
-    "feature": "Your jump distance is tripled. If you jump straight up, you can hover at the apex of your jump for 1 round of combat (6 sec). ",
-    "cost": "14000",
-    "manu": "Elanus Risk Control Services",
-    "notes": "Movement",
-    "id": "jump_jets_legs"
   }
 ]
