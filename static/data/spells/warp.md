@@ -33,7 +33,7 @@ advancementOptions:
 ---
 Make a ranged spell attack on an organic creature you can see within range. On a hit, you generate a rapidly shifting mass
 effect field inside the target dealing necrotic damage equal to 3d10 + your spellcasting ability modifier. In addition,
-the target is primed (necrotic) until the end of its next turn. This damage bypasses shields.
+the target is <condition id="primed" sub="necrotic"/> until the end of your next turn. This damage bypasses shields.
 
 __At Higher Levels__: When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 2d10 for
 each slot level above the 2nd.

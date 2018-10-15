@@ -28,7 +28,7 @@ advancementOptions:
     bypasses shields and does not proc an opportunity to end Dominate.
 ---
 Target an organic creature within 30m. It must succeed on a Wisdom saving throw or it becomes Dominated (it is considered
-charmed and can't use spells or abilities). If you or creatures that are friendly to you are fighting it, it has advantage
+<condition id="charmed"/> and can't use spells or abilities). If you or creatures that are friendly to you are fighting it, it has advantage
 on the saving throw.
 
 On its turn, the dominated creature attacks the closest creature hostile to the spell caster, making a ranged weapon

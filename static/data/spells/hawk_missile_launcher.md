@@ -9,7 +9,7 @@ effect:
 - damage
 damageType:
 - thunder
-castingTime: Attack
+castingTime: Bonus Action
 duration: Instant
 concentration: false
 distance:
@@ -23,9 +23,13 @@ availableClasses:
 advancementOptions:
 - name: Anti-Shield
   description: The missile detonates a small EMP, transforming the damage to lightning.
-- name: Improved Damage
-  description: Increase the damage to 5d6
+- name: Three-headed beast
+  description: Your missile splits into three separate missile, each dealing equal damage. You can direct the missiles
+    at the same target or at different ones.
 ---
-As an Attack action, activate your personal shoulder cannon: The Hawk Missile Launcher. This attack automatically hits a target within range dealing 3d6 thunder damage.
-The Hawk Missile Launcher has 2 charges. You regain all charges on a long rest.
-This feature's damage increases by 3d6 when you reach 5th level (6d6), 11th level (9d6), 17th level (12d6)
+Activate your personal shoulder cannon: The Hawk Missile Launcher. This attack automatically hits a target within range
+dealing 3d6 thunder damage.
+
+You can use the Hawk Missile Launcher twice per long rest.
+
+This feature's damage increases by 3d6 when you reach 5th level (6d6), 11th level (9d6), 17th level (12d6).

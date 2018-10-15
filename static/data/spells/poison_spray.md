@@ -30,4 +30,9 @@ advancementOptions:
     creature that enters the sphere for the first time on a turn or ends its turn
     there must make the Constitution saving throw.
 ---
-Spend 1 tech point to shoot an aerosol spray of noxious chemicals from your omni-tool at a creature within melee range. The creature must succeed on a Constitution saving throw or take 1d12 poison damage and becomes poisoned until the end of your next turn. The DC of the saving throw is increased by 2 for each additional tech point you spend.
+Shoot an aerosol spray of noxious chemicals from your omni-tool at a creature within melee range. The creature must
+succeed on a Constitution saving throw or take 2d12 poison damage and becomes <condition id="poisoned"/> until the end
+of your next turn.
+
+__At Higher Levels__: When you cast this spell using a spell slot of 2nd level or higher, the damage increases
+by 2d12 for each slot level above 1st.

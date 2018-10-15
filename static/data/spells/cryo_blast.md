@@ -39,5 +39,10 @@ range. Each creature within the sphere has its movement reduced by 4m until the 
 Strength saving throw. On a failed saved, a creature becomes <condition id="frozen"/> until the start of your next turn.
 A target with at least 1 shield point has advantage on this saving throw.
 
+If the blast strikes a body of water or a liquid that is principally water (not including water-based creatures), it
+freezes the liquid to a depth of 15 centimeters over an area 10m. This ice lasts for 1 minute. Creatures that were
+swimming on the surface of frozen water are trapped in the ice. A trapped creature can use an action to make a Strength
+check against your spell save DC to break free.
+
 __At Higher Levels__: When you cast this spell using a spell slot of 2nd level or higher, the radius of the blast increases
 by 2m for each slot level above 1st.

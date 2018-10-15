@@ -9,10 +9,10 @@ effect:
 - control
 damageType: []
 castingTime: Action
-duration: Instant
-concentration: false
+duration: 1 minute
+concentration: true
 distance:
-  range: 20m
+  range: 30m
   aoeType: 
   aoeDistance: 
 detonates: 
@@ -24,10 +24,21 @@ advancementOptions:
 - name: Total Control
   description: You take the hacked synthetic's action. You may use its spells and
     abilities.
-- name: Damage
-  description: While the synthetic is hacked, it takes 2d6 shock damage at the end
-    of its turn. This damage does not proc an opportunity to end the spell.
+- name: Power Down
+  description: When you have a creature hacked, you may use your action to attempt to shut it down. To do so, make
+    and intelligence check contested by the hacked creatures intelligence. If you win the contest, the creature becomes
+    incapacitated for 1 hour and the spell ends.
 ---
-Spend 3 tech points per creature size and choose a synthetic within 20m (e.g. 3 tech points for small, 6 tech points for medium, 9 tech points for large). The synthetic must succeed on an Intelligence saving throw or becomes hacked (considered {charmed}). A hacked synthetic won't attack friendly creatures and can't use spells or abilities.
-On its turn, the hacked synthetic attacks the closest hostile creature, making a ranged weapon attack or melee attack if it does not have a weapon. If it doesn't have a weapon and there are no hostile creatures within melee range, the hacked synthetic uses its turn to dash towards the closest hostile creature.
-Each time the synthetic takes damage, it makes a new Intelligence saving throw against the spell. If the saving throw succeeds, the spell ends.
+Target a synthetic creature within 30m. It must succeed on an Intelligence saving throw or it becomes Hacked (it is considered
+<condition id="charmed"/> and can't use spells or abilities). If you or creatures that are friendly to you are fighting it, it has advantage
+on the saving throw.
+
+On its turn, the hacked creature attacks the closest creature hostile to the spell caster, making a ranged weapon
+attack or melee attack if it does not have a weapon. If there are no hostile creatures within range, the hacked
+creature uses its turn to dash towards the closest hostile creature.
+
+Each time the hacked creature takes damage, it makes a new Intelligence saving throw against the spell. If the saving throw
+succeeds, the spell ends.
+
+__At Higher Levels__. When you cast this spell using a 4th-level spell slot, the duration is concentration, up to 10
+minutes. When you use a 5th-level spell slot, the duration is concentration, up to 1 hour.

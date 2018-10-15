@@ -1,7 +1,7 @@
 ---
 id: cryo_beam
 name: Cryo Beam
-level: 3
+level: 2
 type: tech
 attackType:
 - STR save
@@ -31,7 +31,7 @@ advancementOptions:
 ---
 
 Blast a continuous stream of liquid hydrogen from your omni-tool in an 8m long by 2m wide line. Each creature in the beam
-must make a Strength saving throw. On a failed save, a creature takes 6d8 cold damage and then becomes <condition id="frozen"/>
+must make a Strength saving throw. On a failed save, a creature takes 5d8 cold damage and then becomes <condition id="frozen"/>
 until the start of your next turn. On a successful save, a creature takes half as much damage and isn't frozen by this spell.
 Creatures with at least 1 shield point have advantage on this saving throw.
 
@@ -42,4 +42,3 @@ movement speed is 2m while casting it in this manner. The spell ends if you beco
 
 __At Higher Levels__: When you cast this spell using a spell slot of 4th level or higher, the damage increases by 2d8
 and the length of the beam increases by 2m for each slot level above 3rd.
-

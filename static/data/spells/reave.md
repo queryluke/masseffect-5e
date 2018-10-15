@@ -32,9 +32,9 @@ advancementOptions:
     at the end of your turn.
 ---
 Hurl an orb of dark energy at one creature within range. Make a range spell attack against the target. On a hit, you
-deal 2d10 necrotic damage and the target becomes primed(necrotic) until the end of your next turn. The target also has
-disadvantage on their next attack, ability check, or saving throw. This disadvantage lasts one minute or until the target
-becomes incapacitated.
+deal 2d10 necrotic damage and the target becomes <condition id="primed" sub="necrotic"/> until the end of your next turn.
+The target also has disadvantage on their next attack, ability check, or saving throw. This disadvantage lasts one minute
+or until the target becomes incapacitated.
 
 __At Higher Levels__: When you cast this spell using a spell slot of 2nd level or higher, increase the damage by 2d10
 for each level above the 1st.

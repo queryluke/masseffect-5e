@@ -24,5 +24,8 @@ advancementOptions:
 - name: Improved Accuracy
   description: The DC of the Dexterity saving throw is increased to 18
 ---
-As a bonus action, activate a subroutine that temporarily vents weapon heat through your armor to improve thermal clip efficiency and weapon damage. Until the end of your turn, the weapon your currently holding gains Burst Fire, the heat expense from using Burst Fire is 2, and you may use Burst Fire an Attack action.
+Activate a subroutine that temporarily vents weapon heat through your armor to improve thermal clip efficiency and
+weapon damage. Until the end of your turn, the weapon your currently holding gains Burst Fire, the heat expense from
+using Burst Fire is 2, and you may use Burst Fire an Attack action.
+
 You must finish a short or long rest before using Turbocharge again.

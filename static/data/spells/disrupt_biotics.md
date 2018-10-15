@@ -1,17 +1,17 @@
 ---
 id: disrupt_biotics
 name: Disrupt Biotics
-level: '5'
+level: 2
 type: tech
 attackType: []
 effect:
 - control
 damageType: []
-castingTime: Reaction
+castingTime: Reaction, which you take when you see a creature casting a biotic spell
 duration: 
 concentration: false
 distance:
-  range: 20m
+  range: 30m
   aoeType: 
   aoeDistance: 
 detonates: 
@@ -22,11 +22,16 @@ availableClasses:
 - sentinel
 advancementOptions:
 - name: Lockdown
-  description: If you succeed on your ability check, you overload the target's biotic
-    implant and it cannot cast biotic spells until the end of its next turn.
+  description: If you successfully disrupt the spell, you overload the target's biotic
+    implant and it cannot cast biotic spells until the end of your next turn.
 - name: Psychic Strain
-  description: If succeed on the ability check, the target takes Xd6 psychic damage,
-    where X is the level of the spell. Targets take 1d4 psychic damage for cantrips.
+  description: If successfully disrupt the spell, the target takes Xd10 psychic damage,
+    where X is the level of the spell. Targets take 1d6 psychic damage for disrupted cantrips.
 ---
-Spend 5 tech points to attempt to interrupt a creature in the process of casting a biotic spell. Make an ability check using your tech ability. The DC equals 10 + the spell's level (0 for cantrips). On a success, the creature's spell fails and has no effect.
-Each additional tech point spent reduces the DC by 1.
+Attempt to interrupt a creature in the process of casting a biotic spell. If the creature is casting a spell of 2nd level
+or lower, its spell fails and has no effect. If it is casting a spell of 3rd level or higher, make an ability check
+using your spellcasting ability. The DC equals 10 + twice spell's level. On a success, the creature's spell fails and
+has no effect.
+
+__At Higher Levels__. When you cast this spell using a spell slot of 3rd level or higher, the interrupted spell has no
+effect if its level is less than or equal to the level of the spell slot you used.

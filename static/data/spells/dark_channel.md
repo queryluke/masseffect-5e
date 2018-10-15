@@ -29,8 +29,8 @@ advancementOptions:
   description: Increase the damage die type to d10
 ---
 Make a ranged spell attack on a creature you can see within range. On a hit, you plague the target with a persistent,
-damaging biotic field. The creature is primed (necrotic) and takes 1d6 necrotic damage and 1d6 necrotic damage at the
-start of your turn while you maintain the spell. If the creature dies, Dark Channel transfers to the nearest hostile
-creature within 10m of the target.
+damaging biotic field. The creature is <condition id="primed" sub="necrotic"/> and takes 1d6 necrotic damage and 1d6
+necrotic damage at the start of your turn while you maintain the spell. If the creature dies, dark channel transfers to
+the nearest hostile creature within 10m of the target.
 
 The damage increases by 1d6 when you reach the 5th level (2d6), 11th level (3d6) and 17th level (4d6).

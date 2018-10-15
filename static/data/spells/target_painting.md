@@ -1,7 +1,7 @@
 ---
 id: target_painting
 name: Target Painting
-level: 2
+level: 1
 type: tech
 attackType:
 - DEX Save
@@ -9,7 +9,7 @@ effect:
 - debuff
 damageType: []
 castingTime: Action
-duration: 1 round
+duration: 1 turn
 concentration: false
 distance:
   range: 30m
@@ -27,8 +27,10 @@ advancementOptions:
     Any creature that would make a saving throw to avoid heavy weapon damage has disadvantage
     on the saving throw.
 - name: Lasting Scan
-  description: You may cast Target Painting for 4 tech points, increase the duration
-    of the effect to 2 rounds of combat.
+  description: Becomes a concentration spell wit a duration of 1 minute.
 ---
-Spend 2 tech points to paint an 8m cube within range. Until the end of your next turn, any creature in the area when the spell is cast is highlighted on all friendly creatures HUDs if it fails a Dexterity saving throw.
-Any attack roll against an affected creature or object has advantage if the attacker can see it, and the affected creature or object can't benefit from being invisible.
+Scan an 8m cube within range. Until the end of your next turn, any creature in the area when the spell is cast is
+highlighted on all friendly creatures HUDs if it fails a Dexterity saving throw.
+
+Any attack roll against an affected creature or object has advantage if the attacker can see it, and the affected
+creature or object can't benefit from being invisible.

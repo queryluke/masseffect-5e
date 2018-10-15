@@ -7,7 +7,7 @@ attackType: []
 effect:
 - warding
 damageType: []
-castingTime: Bonus
+castingTime: Bonus Action
 duration: Instant
 concentration: false
 distance:
@@ -24,6 +24,9 @@ advancementOptions:
 - name: Large Shield
   description: The Shield covers a 4m wide area.
 ---
-As a bonus action, you toss a portable shield generator onto the ground in front of you. It generates 2m tall and wide, hexagon-shaped shield with 5AC and 50 shield points.
+Toss a portable shield generator onto the ground in front of you. It generates 2m tall and wide, hexagon-shaped shield
+with 5 AC and 50 shield points.
+
 As long as the Hex Shield has shield points, it provides full cover to creatures behind it.
+
 Hex shield regains all shield points on a long rest.

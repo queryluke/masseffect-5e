@@ -32,4 +32,4 @@ advancementOptions:
 Target a lifted creature or object and slam it to the ground dealing 2d8 bludgeoning damage and knocking it prone. The
 target is no longer lifted.
 
-The number of targets increases by 1 when you reach 5th level (2), 11th level (3) and 17th level (4)
+The number of targets increases by 1 when you reach 5th level (2), 11th level (3) and 17th level (4).

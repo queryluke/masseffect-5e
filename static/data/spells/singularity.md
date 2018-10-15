@@ -28,7 +28,8 @@ advancementOptions:
 Create a negative mass effect field in a 4m sphere at a target location within range. Each creature or object within the
 sphere's radius must succeed on a Strength saving throw or becomes lifted. Only Medium or smaller creature and objects
 are affected. Any creature or object that enters the sphere for the first time or ends its turn there must succeed on a
-Strength (Athletics) check or they are drawn into the sphere and become lifted.
+Strength (Athletics) check or they are drawn into the sphere and become lifted. Creatures with at least 1 shield point
+have advantage on the Strength saving throw or Strength (Athletics) check.
 
 __At Higher Levels__: When you cast this spell using a spell slot of 4th level or higher, increase the size of the sphere
 by 4m per spell slot above the 3rd.
