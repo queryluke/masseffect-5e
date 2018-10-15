@@ -598,5 +598,69 @@
   {
     "id": "zero-sum",
     "name": "Zero-Sum"
+  },
+  {
+    "id": "zz_biotic_enfilade",
+    "name": "Biotic Enfilade"
+  },
+  {
+    "id": "zz_close-quarters_shooter",
+    "name": "Close-quarters Shooter"
+  },
+  {
+    "id": "zz_combat_heuristics",
+    "name": "Combat Heuristics"
+  },
+  {
+    "id": "zz_deadeye",
+    "name": "Deadeye"
+  },
+  {
+    "id": "zz_dropshot",
+    "name": "Dropshot"
+  },
+  {
+    "id": "zz_eye_for_weakness",
+    "name": "Eye for Weakness"
+  },
+  {
+    "id": "zz_infiltration",
+    "name": "Infiltration"
+  },
+  {
+    "id": "zz_insightful_fighting",
+    "name": "Insightful Fighting"
+  },
+  {
+    "id": "zz_killshot",
+    "name": "Killshot"
+  },
+  {
+    "id": "zz_master_duelist",
+    "name": "Master Duelist"
+  },
+  {
+    "id": "zz_saboteurs_touch",
+    "name": "Saboteur's Touch"
+  },
+  {
+    "id": "zz_snap_shot",
+    "name": "Snap shot"
+  },
+  {
+    "id": "zz_steady_aim",
+    "name": "Steady Aim"
+  },
+  {
+    "id": "zz_synchronized_assault",
+    "name": "Synchronized Assault"
+  },
+  {
+    "id": "zz_tactical_advantage",
+    "name": "Tactical Advantage"
+  },
+  {
+    "id": "zz_weapon_training",
+    "name": "Weapon Training"
   }
 ]

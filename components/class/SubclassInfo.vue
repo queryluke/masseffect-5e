@@ -3,7 +3,7 @@
     v-expansion-panel
       v-expansion-panel-content(v-for="(subclass, index) of item.subclasses" v-bind:key="index")
         div(slot="header")
-          div {{ subclass.name }}
+          div {{ subclass.name }} #[span(v-if="subclass.source") ({{ subclass.source }})]
           div.caption.hidden-sm-and-down {{ subclass.description }}
         v-card.grey.lighten-2
           v-card-text
