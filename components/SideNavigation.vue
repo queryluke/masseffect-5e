@@ -63,7 +63,7 @@
             ]
           },
           {
-            title: 'Player Options',
+            title: 'Characters',
             icon: 'face',
             items: [
               { href: '/phb/classes', title: 'Classes' },

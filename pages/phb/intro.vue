@@ -5,6 +5,7 @@
       h3.display-3.hidden-sm-and-down Player's Handbook Introduction
       p.title v{{ version }}
       v-btn(to="/changelog" nuxt).primary Changelog
+      v-btn(to="/contributing" nuxt).primary.ml-2 Feedback
     div(v-for="(rule, index) in rules" v-bind:key="index")
       rule-card(:id="rule.id")
 </template>

@@ -7,11 +7,13 @@ takes that storytelling to the stars. Both shares elements with childhood games 
 D&D is driven by imagination. It’s about picturing the alien landscape beneath the two-sunned sky and imagining how a
 N7 soldier might react to the challenges that scene presents.
 
-<v-card><v-card-text>
 <v-alert :value="true" type="info">
 In Mass Effect 5e, the Dungeon Master is called the Galaxy Master (tm tm tm)
 </v-alert>
 
+<br>
+
+<v-card><v-card-text>
 __Galaxy Master (GM)__: You arrived on Asteroid 2179 JK178 on a UT-47 Kodiak. Approaching the station’s hangar, a missile
 lock alarm sounds in the cockpit. Your pilot, Harcourt Finn, immediately took evasive action and put down on the opposite
 side of the asteroid. Scans indicate the automated defensive system should extend around the entire asteroid but appears
@@ -19,9 +21,9 @@ to be dormant on the side opposite the station entrance. Having no other options
 on your armor and set out on foot across the asteroid’s surface. After a quick 3 kilometer jaunt you arrive at the edge
 of the asteroid. Looking down, you can see the hangar doors sealed tight. You’ll have to find another way in …
 \
-__Amanda (playing Muradin)__: I want to scan the area for movement or any immediate threats.
+__Amanda (playing Melphine)__: I want to scan the area for movement or any immediate threats.
 \
-__Amie (playing Todd)__: The drop to the hanger door looks pretty far? I want to test how much gravity the asteroid has.
+__Amie (playing Telos)__: The drop to the hanger door looks pretty far? I want to test how much gravity the asteroid has.
 Do I think we can easily drop down to it without injuring ourselves or flying off into space?
 </v-card-text></v-card>
 
@@ -43,7 +45,7 @@ __GM__: Of course!
 \
 __Amanda (rolling a d20)__: Rats. Eight.
 \
-__GM__: No movement that you can see. And Amie, Todd is assessing the drop to the hanger bay?
+__GM__: No movement that you can see. And Amie, Telos is assessing the drop to the hanger bay?
 </v-card-text></v-card>
 
 In the Mass Effect 5e game, each player creates an operative (also called a character) and teams up with other
