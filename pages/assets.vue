@@ -49,18 +49,12 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+import classes from '~/static/data/classes'
 
 export default {
-  computed: {
-    ...mapGetters(['getData'])
-  },
-  created () {
-    this.classes = this.getData('classes')
-  },
   data () {
     return {
-      classes: []
+      classes
     }
   },
   head () {

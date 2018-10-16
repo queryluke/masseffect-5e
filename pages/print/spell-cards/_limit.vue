@@ -1,30 +1,24 @@
 <template lang="pug">
   div
-    spell-card(v-for="spell in spells" v-bind:spell="spell" v-bind:key="spell.id")
+    spell-card(v-for="spell in items" v-bind:spell="spell" v-bind:key="spell.id")
 </template>
 
 <script>
   import SpellCard from '~/components/cards/SpellCard.vue'
-  import {mapGetters} from 'vuex'
+  import spells from '~/static/data/spells.json'
 
   export default {
-    created () {
-      this.spells = this.getData('spells')
-      if (this.$route.params.limit) {
-        this.limit = this.$route.params.limit
-        this.spells = this.spells.filter(spell => spell.availableClasses.includes(this.limit))
-      }
-    },
     components: {
       SpellCard
     },
-    computed: {
-      ...mapGetters(['getData'])
-    },
     data () {
+      let items = spells
+      const limit = this.$route.params.limit
+      if (limit) {
+        items = items.filter(spell => spell.availableClasses.includes(limit))
+      }
       return {
-        spells: [],
-        limit: null
+        items
       }
     },
     head () {
