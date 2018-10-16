@@ -60,14 +60,14 @@
     "cost": 500
   },
   {
-    "id": "starship_system_cyber_warfare",
-    "name": "Starship System (Cyber Warfare)",
+    "id": "starship_system_power_core",
+    "name": "Starship System (Power Core)",
     "type": "starship",
     "cost": null
   },
   {
-    "id": "starship_system_defenses",
-    "name": "Starship System (Defenses)",
+    "id": "starship_system_cyber_warfare",
+    "name": "Starship System (Cyber Warfare)",
     "type": "starship",
     "cost": null
   },
@@ -75,17 +75,11 @@
     "id": "starship_system_helm",
     "name": "Starship System (Helm)",
     "type": "starship",
-    "cost": null
+    "cost": 0
   },
   {
     "id": "starship_system_navigation",
     "name": "Starship System (Navigation)",
-    "type": "starship",
-    "cost": null
-  },
-  {
-    "id": "starship_system_power_core",
-    "name": "Starship System (Power Core)",
     "type": "starship",
     "cost": null
   },

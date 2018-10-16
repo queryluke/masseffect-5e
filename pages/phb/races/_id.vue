@@ -60,6 +60,9 @@
                     span(v-for="(feat, index) in race.startingFeats.options" v-bind:key="feat")
                       feat(v-bind:id="feat").ml-1
                       span(v-if="index + 1 < race.startingFeats.options.length") ,
+              trait
+                span(slot="header") Optional Starting Credits
+                span(slot="text") {{ race.startingCredits }}
       v-flex.hidden-sm-and-down.md3
         v-img(:src="race.bodyImg" height="80vh")
         p(v-if="id == 'prothean'").text-xs-center #[small #[em image courtesy of JTickner]]
@@ -74,21 +77,6 @@
 
   export default {
     components: { MeIcon, Increases, Trait, RacialTrait, Feat },
-    created () {
-      /*
-      this.id = this.$route.params.id
-      let races = this.getMutableData('races')
-      let race = races.find((value) => {
-        return value.id === this.id
-      })
-
-      let index = races.indexOf(race)
-      this.previous_race = races[index - 1] ? races[index - 1] : {}
-      this.next_race = races[index + 1] ? races[index + 1] : {}
-      race.available_classes = race.available_classes.split(',').map((v) => v.trim())
-      this.race = race
-      */
-    },
     data () {
       const race = require(`~/static/data/races/${this.$route.params.id}.md`)
       return {

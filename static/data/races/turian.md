@@ -59,5 +59,6 @@ startingFeats:
 traits: 
   - thulium-skin
   - turian-toughness
+  - martial-training
 age: 
 ---

@@ -2,4 +2,4 @@
 id: lucky
 name: Lucky
 ---
-Gain the Lucky feat
+Gain the Lucky feat.

@@ -2,4 +2,6 @@
 id: living-construct
 name: Living Construct
 ---
-You are immune to disease and the {poisoned} condition. You do not need to eat or breathe. Instead of sleeping, you enter an inactive state for 4 hours each day. You do not dream in this state; you are fully aware of your surroundings and notice approaching enemies and other events as normal.
+You are immune to psychic and poison damage, the poisoned condition, and disease. You do not need to eat, drink, or breathe.
+When you take a long rest, you must spend at least six hours in an inactive, motionless state, rather than sleeping.
+In this state, you appear inert, but it doesn’t render you unconscious, and you can see and hear as normal.

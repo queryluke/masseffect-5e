@@ -21,12 +21,10 @@ startingCredits: Instead of your class's starting equipment, you may start with 
 bodyImg: http://vignette2.wikia.nocookie.net/masseffect/images/7/72/Geth_Engineer_MP.png/revision/latest/scale-to-width-down/500
 img: https://vignette.wikia.nocookie.net/masseffect/images/7/7b/Legion%27s_posse.png/revision/latest/scale-to-width-down/640?cb=20130516170119
 traits:
-  - composite-plating
-  - hunter-mode
-  - innate-shielding
-  - keen-senses
   - living-construct
-  - no-feats
+  - integrated-protection
+  - hunter-mode
   - repair-matrix
-age: 
+  - no-feats
+age:
 ---

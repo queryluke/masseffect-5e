@@ -21,10 +21,42 @@ startingCredits: Instead of your class's starting equipment, you may start with 
 bodyImg: https://vignette.wikia.nocookie.net/masseffect/images/0/06/ME3_Alliance_Infiltration_Unit_Infiltrator.png/revision/latest/scale-to-width-down/500?cb=20130227102713
 img: https://vignette.wikia.nocookie.net/masseffect/images/3/39/Cronos_station_edi_and_vendetta.png/revision/latest/scale-to-width-down/640?cb=20120715085530
 traits: 
-  - composite-plating
-  - innate-shielding
-  - keen-senses
   - living-construct
+  - integrated-protection
   - repair-matrix
-age: 
+startingFeats:
+  count: 1
+  options:
+    - a-beautiful-mine
+    - alert
+    - athlete
+    - big-game-hunter
+    - biotic-slayer
+    - charger
+    - dual-wielder
+    - durable
+    - enhanced-optics
+    - featherlight
+    - grappler
+    - grenadier
+    - heavily-armored
+    - hair-trigger
+    - linguist
+    - lucky
+    - melee-specialist
+    - mobile
+    - moderately-armored
+    - observant
+    - resilient
+    - savage-attacker
+    - sentinel
+    - sharpshooter
+    - skilled
+    - skulker
+    - squad-leader
+    - tavern-brawler
+    - tough
+    - wealth-of-knowledge
+    - weapon-master
+age:
 ---

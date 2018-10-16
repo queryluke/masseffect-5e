@@ -792,7 +792,8 @@
         ]
       },
       {
-        "name": "Demolisher (v0.8.4)",
+        "name": "Demolisher",
+        "source": "v0.8.4",
         "description": "Demolishers are explosive specialists with eye for combat. While not as skilled as a Soldier or Infiltrator, they make up for it with by covering the battlefield with grenades and heavy weapon fire.",
         "features": [
           [
@@ -1205,7 +1206,8 @@
         ]
       },
       {
-        "name": "Saboteur (v0.8.4)",
+        "name": "Saboteur",
+        "source": "v0.8.4",
         "description": "Saboteurs are infiltration experts. They use a sharp mind to subtly affect the outcome of battles.",
         "features": [
           [
@@ -1223,7 +1225,8 @@
         ]
       },
       {
-        "name": "Operative (v0.8.4)",
+        "name": "Operative",
+        "source": "v0.8.4",
         "description": "Operatives are ranged specialists that rely on gunplay and a keen eye to take out enemies from a distance.",
         "features": [
           [
@@ -1660,7 +1663,8 @@
         ]
       },
       {
-        "name": "Mastermind (v0.8.4)",
+        "name": "Mastermind",
+        "source": "v0.8.4",
         "description": "Masterminds are the top strategists and battlefield experts. They can easily turn the tides by calling out orders or synchronizing troop movements.",
         "features": [
           [
@@ -1988,7 +1992,8 @@
         ]
       },
       {
-        "name": "Sharpshooter (v0.8.4)",
+        "name": "Sharpshooter",
+        "source": "v0.8.4",
         "description": "Sharpshooters use pinpoint accuracy and target weak points on their opponents, resulting a massive amounts of bonus damage.",
         "features": [
           [

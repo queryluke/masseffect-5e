@@ -1,8 +1,9 @@
 <template lang="pug">
   trait
     span(slot="header") {{ name }}
-    template(slot="text").markdown-content
-      markdown-content(:component="item.vue")
+    template(slot="text")
+      div.markdown-content
+        markdown-content(:component="item.vue")
 </template>
 
 <script>

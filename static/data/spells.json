@@ -12,10 +12,10 @@
     ],
     "damageType": [],
     "castingTime": "Action",
-    "duration": "Instant",
-    "concentration": false,
+    "duration": "1 minute",
+    "concentration": true,
     "distance": {
-      "range": "20m",
+      "range": "30m",
       "aoeType": null,
       "aoeDistance": null
     },
@@ -31,8 +31,8 @@
         "description": "You take the hacked synthetic's action. You may use its spells and abilities."
       },
       {
-        "name": "Damage",
-        "description": "While the synthetic is hacked, it takes 2d6 shock damage at the end of its turn. This damage does not proc an opportunity to end the spell."
+        "name": "Power Down",
+        "description": "When you have a creature hacked, you may use your action to attempt to shut it down. To do so, make and intelligence check contested by the hacked creatures intelligence. If you win the contest, the creature becomes incapacitated for 1 hour and the spell ends."
       }
     ]
   },
@@ -180,11 +180,11 @@
     "advancementOptions": [
       {
         "name": "Bleeding Blades",
-        "description": "On a hit, the target takes an additional 3d12 damage at the start of their turn due to blood loss. This damage bypasses shields."
+        "description": "On a hit, the target takes an additional 3d12 damage at the start of its turn due to blood loss. This damage bypasses shields."
       },
       {
         "name": "Exploding blades",
-        "description": "On a hit, the target takes an additional 3d12 thunder damage and must pass a Constitution saving throw (DC 8 + proficiency bonus) or becomes {stunned} until the end of your next turn."
+        "description": "On a hit, the target takes an additional 1d12 thunder damage and must pass a Constitution saving throw (DC 8 + proficiency bonus) or becomes stunned until the end of your next turn."
       }
     ]
   },
@@ -216,11 +216,11 @@
     "advancementOptions": [
       {
         "name": "Shaped Lift",
-        "description": "You may choose the shape of the detonation"
+        "description": "You may choose the shape of the detonation into a cone, cube, or cylinder. You may also shape it into a line, if you do, the line is twice as long as the sphere's radius and 2m wide."
       },
       {
         "name": "Heavy Lift",
-        "description": "Large and smaller creatures and objects are affected."
+        "description": "Large creatures are effected. If you spend at least 4 barrier ticks, Huge creatures must make the saving throw."
       }
     ]
   },
@@ -255,11 +255,11 @@
     "advancementOptions": [
       {
         "name": "Anti-Flesh",
-        "description": "The Beehive deals double damage to organic targets that have 0 shield points."
+        "description": "Deals twice as much damage to organic creatures with no shield points."
       },
       {
         "name": "Remote Deploy",
-        "description": "As an action, you can set up your Beehive in a separate location. Once it is deployed you can use an Attack action to fire it."
+        "description": "As an action, you can set up your Beehive in a separate location. Once it is deployed you can use an Attack action to fire it. You can also fire it as a reaction whenever a creature enters its 6m cone."
       }
     ]
   },
@@ -547,7 +547,7 @@
     "damageType": [
       "bludgeoning"
     ],
-    "castingTime": "Bonus",
+    "castingTime": "Bonus Action",
     "duration": "Instant",
     "concentration": false,
     "distance": {
@@ -563,18 +563,18 @@
     "advancementOptions": [
       {
         "name": "Stunning Shot",
-        "description": "A creature hit by Concussive Shot must make a Constitution saving throw (DC 8 + proficiency bonus + DEX modifier). On a failed save, the creature is {stunned} until the end of your next turn."
+        "description": "A creature hit by concussive shot must make a Constitution saving throw instead of a Strength saving throw. On a failed save, the creature is stunned until the end of its next turn."
       },
       {
         "name": "Improved shot",
-        "description": "Increase the bonus damage of Concussive shot to d12."
+        "description": "Increase the bonus damage of concussive shot to d12."
       }
     ]
   },
   {
     "id": "cryo_beam",
     "name": "Cryo Beam",
-    "level": 3,
+    "level": 2,
     "type": "tech",
     "attackType": [
       "STR save"
@@ -804,18 +804,18 @@
   {
     "id": "disrupt_biotics",
     "name": "Disrupt Biotics",
-    "level": "5",
+    "level": 2,
     "type": "tech",
     "attackType": [],
     "effect": [
       "control"
     ],
     "damageType": [],
-    "castingTime": "Reaction",
+    "castingTime": "Reaction, which you take when you see a creature casting a biotic spell",
     "duration": null,
     "concentration": false,
     "distance": {
-      "range": "20m",
+      "range": "30m",
       "aoeType": null,
       "aoeDistance": null
     },
@@ -829,11 +829,11 @@
     "advancementOptions": [
       {
         "name": "Lockdown",
-        "description": "If you succeed on your ability check, you overload the target's biotic implant and it cannot cast biotic spells until the end of its next turn."
+        "description": "If you successfully disrupt the spell, you overload the target's biotic implant and it cannot cast biotic spells until the end of your next turn."
       },
       {
         "name": "Psychic Strain",
-        "description": "If succeed on the ability check, the target takes Xd6 psychic damage, where X is the level of the spell. Targets take 1d4 psychic damage for cantrips."
+        "description": "If successfully disrupt the spell, the target takes Xd10 psychic damage, where X is the level of the spell. Targets take 1d6 psychic damage for disrupted cantrips."
       }
     ]
   },
@@ -1111,7 +1111,7 @@
       "buff"
     ],
     "damageType": [],
-    "castingTime": "Reaction",
+    "castingTime": "Reaction, which you take when you are targeted by an attack you can see",
     "duration": "Instant",
     "concentration": false,
     "distance": {
@@ -1132,7 +1132,7 @@
       },
       {
         "name": "Venting Fortification",
-        "description": "When fortification ends, the currents are sent to your gauntlets. Your next Omni-tool attack is made at advantage and deals an additional 2d10 bludgeoning damage."
+        "description": "When fortification ends, the currents are sent to your gauntlets. Your next melee weapon attack is made at advantage and deals an additional 2d10 bludgeoning damage."
       }
     ]
   },
@@ -1146,11 +1146,11 @@
       "buff"
     ],
     "damageType": [],
-    "castingTime": "Action",
+    "castingTime": "Bonus Action",
     "duration": "10 minutes",
     "concentration": false,
     "distance": {
-      "range": "10m",
+      "range": "30m",
       "aoeType": null,
       "aoeDistance": null
     },
@@ -1225,7 +1225,7 @@
     "damageType": [
       "thunder"
     ],
-    "castingTime": "Attack",
+    "castingTime": "Bonus Action",
     "duration": "Instant",
     "concentration": false,
     "distance": {
@@ -1244,8 +1244,8 @@
         "description": "The missile detonates a small EMP, transforming the damage to lightning."
       },
       {
-        "name": "Improved Damage",
-        "description": "Increase the damage to 5d6"
+        "name": "Three-headed beast",
+        "description": "Your missile splits into three separate missile, each dealing equal damage. You can direct the missiles at the same target or at different ones."
       }
     ]
   },
@@ -1259,7 +1259,7 @@
       "warding"
     ],
     "damageType": [],
-    "castingTime": "Bonus",
+    "castingTime": "Bonus Action",
     "duration": "Instant",
     "concentration": false,
     "distance": {
@@ -1478,13 +1478,13 @@
     ]
   },
   {
-    "id": "nightshade_blade",
-    "name": "Nightshade Blade",
+    "id": "nightshade_blades",
+    "name": "Nightshade Blades",
     "level": 0,
     "type": "combat",
     "attackType": [
       "Ranged Attack",
-      " CON Save"
+      "CON Save"
     ],
     "effect": [
       "damage"
@@ -1510,10 +1510,10 @@
     "advancementOptions": [
       {
         "name": "Paralyze",
-        "description": "A creature that fails the Constitution saving throw becomes {paralyzed} until the end of your next turn."
+        "description": "A creature that fails the Constitution saving throw becomes paralyzed until the end of your next turn."
       },
       {
-        "name": "Improved Poison",
+        "name": "Powerful Poison",
         "description": "The creature has disadvantage on its Constitution saving throw."
       }
     ]
@@ -1755,7 +1755,7 @@
   {
     "id": "sabotage",
     "name": "Sabotage",
-    "level": 2,
+    "level": 1,
     "type": "tech",
     "attackType": [],
     "effect": [
@@ -1767,7 +1767,7 @@
     "duration": "Infinite",
     "concentration": false,
     "distance": {
-      "range": "20m",
+      "range": "30m",
       "aoeType": null,
       "aoeDistance": null
     },
@@ -1779,8 +1779,8 @@
     ],
     "advancementOptions": [
       {
-        "name": "Multi-Weapon",
-        "description": "You can target 3 weapons at once."
+        "name": "Primed",
+        "description": "After the weapon fires, it vents its heat and the attacking creature becomes primed (fire) until the start of its next turn."
       },
       {
         "name": "Backfire",
@@ -1829,7 +1829,7 @@
   {
     "id": "sentry_turret",
     "name": "Sentry Turret",
-    "level": "5",
+    "level": 3,
     "type": "tech",
     "attackType": [],
     "effect": [
@@ -1851,8 +1851,8 @@
     ],
     "advancementOptions": [
       {
-        "name": "Cryo Ammo",
-        "description": "The turret's mass accelerator machinegun deals 7 (2d6) piercing and 7 (2d6) cold damage. Any creature that fails the saving throw is {frozen} until the end of the turret's next turn."
+        "name": "Cryo Turret",
+        "description": "The turret's mass accelerator machinegun deals 7 (2d6) piercing and 7 (2d6) cold damage. Instead of flamethrower, the turret can innately cast cryo beam 5 times per day."
       },
       {
         "name": "Shields",
@@ -1953,7 +1953,7 @@
     "damageType": [
       "psychic"
     ],
-    "castingTime": "Attack",
+    "castingTime": "Action",
     "duration": "Instant",
     "concentration": false,
     "distance": {
@@ -1970,11 +1970,11 @@
     "advancementOptions": [
       {
         "name": "Improved Pulse",
-        "description": "Add your STR or DEX modifier to the DC of the saving throw. You choose which one."
+        "description": "Add your Constitution modifier to the DC of the saving throw as you increase the frequency of the pulse to a level you can barely withstand."
       },
       {
         "name": "Lingering Pulse",
-        "description": "Creatures hit by siege pulse have disadvantage on melee and ranged attacks until the end of your next turn."
+        "description": "Each creature that takes psychic damage from siege pulse has disadvantage on its melee or ranged attack rolls until the start of your next turn."
       }
     ]
   },
@@ -2090,14 +2090,13 @@
   {
     "id": "snap_freeze",
     "name": "Snap Freeze",
-    "level": "5",
+    "level": 3,
     "type": "tech",
     "attackType": [
-      "STR Save"
+      "Ranged Spell Attack"
     ],
     "effect": [
-      "control",
-      "damage"
+      "control"
     ],
     "damageType": [
       "cold"
@@ -2106,24 +2105,25 @@
     "duration": "Instant",
     "concentration": true,
     "distance": {
-      "range": "20m",
-      "aoeType": "sphere",
-      "aoeDistance": "10m"
+      "range": "30m",
+      "aoeType": null,
+      "aoeDistance": null
     },
     "detonates": null,
     "primes": "cold",
     "availableClasses": [
       "engineer",
+      "sentinel",
       "infiltrator"
     ],
     "advancementOptions": [
       {
-        "name": "Lasting Freeze",
-        "description": "A creature frozen by Snap Freeze continues to take 1d6 cold damage at the start of its turn for 1 minute."
+        "name": "Solid Freeze",
+        "description": "The ice solid like a rock. Creatures have disadvantage on their Strength checks to break it."
       },
       {
         "name": "Brittle Freeze",
-        "description": "Successful attacks against a creature that is frozen by Snap Freeze deal an additional 1d4 cold damage."
+        "description": "A critical success on the Strength check completely shatters the affected creature's appendage. If legs, it falls prone and looses half its remaining hit points. If head, it immediately dies."
       }
     ]
   },
@@ -2176,7 +2176,7 @@
       "buff"
     ],
     "damageType": [],
-    "castingTime": "Bonus",
+    "castingTime": "Bonus Action",
     "duration": "10 minutes",
     "concentration": false,
     "distance": {
@@ -2194,11 +2194,11 @@
     "advancementOptions": [
       {
         "name": "Friendly",
-        "description": "You can inject a creature within melee range with the stimulant pack"
+        "description": "You can inject a willing creature within melee range with the stimulant pack."
       },
       {
-        "name": "Improved Attack",
-        "description": "You can choose to apply the advantage to your next damage roll"
+        "name": "High Tolerance",
+        "description": "You can use stimulant pack twice long rest."
       }
     ]
   },
@@ -2249,7 +2249,7 @@
     "type": "tech",
     "attackType": [
       "STR Save",
-      " DEX Save"
+      "DEX Save"
     ],
     "effect": [
       "control"
@@ -2261,7 +2261,7 @@
     "duration": "1 minute",
     "concentration": false,
     "distance": {
-      "range": "20m",
+      "range": "30m",
       "aoeType": "cylinder",
       "aoeDistance": "4m"
     },
@@ -2275,11 +2275,11 @@
     "advancementOptions": [
       {
         "name": "Electrified Net",
-        "description": "If you have a submission net deployed, you can use your bonus action to spend XTP, sending electric currents through one net. Each creature within the net takes Xd6 lightning damage."
+        "description": "If you have a submission net deployed, you can use your bonus action to send electric currents through it. Each creature within the net takes 2d6 lightning damage."
       },
       {
         "name": "Anti-Tech",
-        "description": "If a creature you can see begins to cast a Tech spell, you can use your reaction to cast submission net."
+        "description": "If a creature you can see begins to cast a tech spell, you can use your reaction to cast submission net."
       }
     ]
   },
@@ -2293,11 +2293,11 @@
       "debuff"
     ],
     "damageType": [],
-    "castingTime": "Action",
+    "castingTime": "Bonus Action",
     "duration": "1 minute",
     "concentration": false,
     "distance": {
-      "range": "20m",
+      "range": "30m",
       "aoeType": null,
       "aoeDistance": null
     },
@@ -2310,18 +2310,18 @@
     "advancementOptions": [
       {
         "name": "Area Scan",
-        "description": "Scan a 6m cube. You gain the advantage and critical bonus on all creatures within the area."
+        "description": "Scan a 6m cube. Each creature within the cube must make the Charisma (Deception) check against your Wisdom (Insight). This feature only effects a single target, but you can choose one creature from the ones that failed the contested check."
       },
       {
         "name": "Telegraphed Attacks",
-        "description": "You're HUD alerts you when the creature is about to attack. It has disadvantage on ranged and melee attacks and you have advantage on any saving throws caused by spells and abilities of the creature."
+        "description": "Your HUD alerts you when the creature is about to attack. It has disadvantage on ranged and melee attacks and you have advantage on any saving throws caused by spells and abilities of the creature."
       }
     ]
   },
   {
     "id": "target_painting",
     "name": "Target Painting",
-    "level": 2,
+    "level": 1,
     "type": "tech",
     "attackType": [
       "DEX Save"
@@ -2331,7 +2331,7 @@
     ],
     "damageType": [],
     "castingTime": "Action",
-    "duration": "1 round",
+    "duration": "1 turn",
     "concentration": false,
     "distance": {
       "range": "30m",
@@ -2352,7 +2352,7 @@
       },
       {
         "name": "Lasting Scan",
-        "description": "You may cast Target Painting for 4 tech points, increase the duration of the effect to 2 rounds of combat."
+        "description": "Becomes a concentration spell wit a duration of 1 minute."
       }
     ]
   },
