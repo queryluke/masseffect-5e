@@ -80,6 +80,7 @@
               { href: '/phb/weapon-mods', title: 'Weapon Mods' },
               { href: '/phb/armor/mods', title: 'Armor Mods' },
               { href: '/phb/armor/sets', title: 'Armor Sets' },
+              { href: '/phb/programs', title: 'Omni-tool Programs' },
               { href: '/phb/grenades', title: 'Grenades' },
               { href: '/phb/tools-kits', title: 'Tools & Kits' }
             ]

@@ -90,28 +90,32 @@
             v-card-title(primaryTitle)
               div.headline {{ loot.credits | groupDigits(',') }} credits
             v-card-text
-              div(v-if="loot.thermalClips > 0 || loot.heavyWeapon > 0")
-                div.subheading.grey--text.text--darken-1 Ammo
+              div(v-if="loot.thermalClips > 0 || loot.heavyWeapon > 0 || loot.omniGel > 0 || loot.grenades.length > 0 || loot.medigel.length > 0")
+                div.subheading.grey--text.text--darken-1 Consumables
                 span(v-if="loot.thermalClips > 0").pl-2 {{ loot.thermalClips }} thermal clips
                 div(v-if="loot.heavyWeapon > 0").pl-2 {{ loot.heavyWeapon }} heavy weapon charges
-              div(v-if="loot.medigel.length > 0")
-                div.subheading.grey--text.text--darken-1 Medigel
-                span.pl-2 {{ loot.medigel.map((mg) => `${mg.count} ${mg.type}`).join(', ') }}
-              div(v-if="loot.grenades.length > 0")
-                div.subheading.grey--text.text--darken-1 Grenades & Mines
-                span.pl-2 {{ loot.grenades.map((g) => `${g.count} ${g.grenade.name}`).join(', ') }}
-              div(v-if="loot.weapons.length > 0")
+                div(v-if="loot.omniGel > 0").pl-2 {{ loot.omniGel }} omni-gel
+                div(v-if="loot.medigel.length > 0")
+                  div.body-2 Medigel
+                  span.pl-2 {{ loot.medigel.map((mg) => `${mg.count} ${mg.type}`).join(', ') }}
+                div(v-if="loot.grenades.length > 0")
+                  div.body-2 Grenades & Mines
+                  span.pl-2 {{ loot.grenades.map((g) => `${g.count} ${g.grenade.name}`).join(', ') }}
+              div(v-if="loot.weapons.length > 0").mt-2
                 div.subheading.grey--text.text--darken-1 Weapons
                 span.pl-2 {{ loot.weapons.map((weapon) => weapon.name).join(', ') }}
-              div(v-if="loot.mods.filter((mod) => mod.hasOwnProperty('placement')).length > 0")
+              div(v-if="loot.mods.filter((mod) => mod.hasOwnProperty('placement')).length > 0").mt-2
                 div.subheading.grey--text.text--darken-1 Weapon Mods
                 span.pl-2 {{ loot.mods.filter((mod) => mod.hasOwnProperty('placement')).map((mod) => mod.name).join(', ') }}
-              div(v-if="loot.armor.length > 0")
+              div(v-if="loot.armor.length > 0").mt-2
                 div.subheading.grey--text.text--darken-1 Armor Sets
                 span.pl-2 {{ loot.armor.map((armor) => armor.name).join(', ') }}
-              div(v-if="loot.mods.filter((mod) => !mod.hasOwnProperty('placement')).length > 0")
+              div(v-if="loot.mods.filter((mod) => !mod.hasOwnProperty('placement')).length > 0").mt-2
                 div.subheading.grey--text.text--darken-1 Armor Mods
                 span.pl-2 {{ loot.mods.filter((mod) => !mod.hasOwnProperty('placement')).map((mod) => mod.name).join(', ') }}
+              div(v-if="loot.programs.length > 0").mt-2
+                div.subheading.grey--text.text--darken-1 Omni-tool Programs
+                span.pl-2 {{ loot.programs.map((program) => program.name).join(', ') }}
             v-card-actions
               v-btn(@click="removeLoot(index)" flat color="primary") #[v-icon(left) remove_circle] Remove
       v-layout(v-if="loots.length > 0")
@@ -120,19 +124,22 @@
 </template>
 
 <script>
-  import {mapGetters} from 'vuex'
   import {RandomValue} from '~/mixins/randomValue'
+  import grenades from '~/static/data/grenades'
+  import weapons from '~/static/data/weapons'
+  import armorSets from '~/static/data/armor_sets'
+  import weaponMods from '~/static/data/weapon_mods'
+  import armorMods from '~/static/data/armor_mods'
+  import programs from '~/static/data/programs'
 
   export default {
     components: {},
     created () {
-      this.cache.grenades = this.getData('grenades')
-      this.cache.weapons = this.getData('weapons')
-      this.cache.armor = this.getData('armorSets')
-      this.cache.mods = this.getData('weaponMods').concat(this.getData('armorMods'))
-    },
-    computed: {
-      ...mapGetters(['getData'])
+      this.cache.grenades = grenades
+      this.cache.weapons = weapons
+      this.cache.armor = armorSets
+      this.cache.mods = weaponMods.concat(armorMods)
+      this.cache.programs = programs
     },
     data () {
       return {
@@ -165,8 +172,8 @@
               { min: 1, max: 25, roll: null },
               { min: 26, max: 50, roll: 6, table: 'a' },
               { min: 51, max: 75, roll: 4, table: 'b' },
-              { min: 76, max: 90, roll: 1, table: 'e' },
-              { min: 91, max: 97, roll: 1, table: 'd' },
+              { min: 76, max: 90, roll: 2, table: 'e' },
+              { min: 91, max: 97, roll: 2, table: 'd' },
               { min: 98, max: 100, roll: 1, table: 'f' }
             ]
           },
@@ -180,7 +187,7 @@
               { min: 46, max: 60, roll: 4, table: 'c' },
               { min: 61, max: 75, roll: 4, table: 'd' },
               { min: 76, max: 90, roll: 4, table: 'e' },
-              { min: 91, max: 100, roll: 1, table: 'f' }
+              { min: 91, max: 100, roll: 2, table: 'f' }
             ]
           },
           {
@@ -215,25 +222,29 @@
         ],
         rewardTables: {
           a: [
-            { min: 1, max: 25, reward: () => this.addThOrHw('thermalClips', 10), text: '10 Thermal Clips' },
-            { min: 26, max: 50, reward: () => this.addMedigel(1, 'standard'), text: '1 standard medi-gel' },
-            { min: 51, max: 70, reward: () => this.addGrenade(1), text: '1 random grenade' },
-            { min: 71, max: 80, reward: () => this.addGrenade(2), text: '2 random grenades' },
-            { min: 81, max: 90, reward: () => this.addWeapon('common'), text: '1 common weapon' },
-            { min: 90, max: 95, reward: () => this.addMedigel(1, 'enhanced'), text: '1 enhanced medi-gel' },
+            { min: 1, max: 15, reward: () => this.addThOrHw('omniGel', this.randomAmount(0, 1, 4)), text: '1d4 omni-gel' },
+            { min: 16, max: 35, reward: () => this.addMedigel(1, 'standard'), text: '1 standard medi-gel' },
+            { min: 35, max: 50, reward: () => this.addGrenade(1), text: '1 random grenade' },
+            { min: 51, max: 60, reward: () => this.addGrenade(2), text: '2 random grenades' },
+            { min: 61, max: 80, reward: () => this.addWeapon('common'), text: '1 common weapon' },
+            { min: 81, max: 95, reward: () => this.addProgram('uncommon'), text: '1 uncommon or lower omni-tool program' },
             { min: 96, max: 100, reward: () => this.addModOrArmor('mods', 0, 3000), text: '1 random armor or weapon mod of 3,000 credits or less' }
           ],
           b: [
             { min: 1, max: 15, reward: () => this.addMedigel(1, 'enhanced'), text: '1 enhanced medi-gel' },
-            { min: 16, max: 54, reward: () => this.addGrenade(2), text: '2 random grenades' },
+            { min: 16, max: 25, reward: () => this.addThOrHw('omniGel', this.randomAmount(1, 2, 4)), text: '2d4 + 1 omni-gel' },
+            { min: 26, max: 44, reward: () => this.addGrenade(2), text: '2 random grenades' },
             { min: 55, max: 64, reward: () => this.addWeapon('common'), text: '1 common weapon' },
-            { min: 65, max: 77, reward: () => this.addModOrArmor('mods', 0, 5000) },
-            { min: 78, max: 90, reward: () => this.addThOrHw('heavyWeapon', 3), text: '3 heavy weapon charges' },
-            { min: 91, max: 100, reward: () => this.addWeapon('uncommon'), text: '1 uncommon weapon' }
+            { min: 65, max: 74, reward: () => this.addModOrArmor('mods', 0, 5000) },
+            { min: 75, max: 84, reward: () => this.addProgram('uncommon'), text: '1 uncommon or lower omni-tool program' },
+            { min: 75, max: 94, reward: () => this.addThOrHw('heavyWeapon', 3), text: '3 heavy weapon charges' },
+            { min: 95, max: 100, reward: () => this.addWeapon('uncommon'), text: '1 uncommon weapon' }
           ],
           c: [
             { min: 1, max: 15, reward: () => this.addMedigel(1, 'enhanced'), text: '1 enhanced medi-gel' },
-            { min: 16, max: 45, reward: () => this.addGrenade(3), text: '3 random grenades' },
+            { min: 16, max: 25, reward: () => this.addThOrHw('omniGel', this.randomAmount(2, 1, 8)), text: '1d8 + 2 omni-gel' },
+            { min: 26, max: 35, reward: () => this.addProgram('uncommon'), text: '1 uncommon or lower omni-tool program' },
+            { min: 36, max: 45, reward: () => this.addGrenade(3), text: '3 random grenades' },
             { min: 46, max: 60, reward: () => this.addWeapon('uncommon'), text: '1 uncommon weapon' },
             { min: 61, max: 73, reward: () => this.addModOrArmor('mods', 0, 10000), text: '1 random armor or weapon mod of 10,000 credits or less' },
             { min: 74, max: 85, reward: () => this.addThOrHw('heavyWeapon', 5), text: '5 heavy weapon charges' },
@@ -241,23 +252,26 @@
             { min: 91, max: 100, reward: () => this.addMedigel(1, 'superior'), text: '1 superior medi-gel' }
           ],
           d: [
-            { min: 1, max: 20, reward: () => this.addMedigel(2, 'standard'), text: '2 standard medi-gel' },
-            { min: 21, max: 40, reward: () => this.addMedigel(2, 'enhanced'), text: '2 enhanced medi-gel' },
+            { min: 1, max: 20, reward: () => this.addThOrHw('omniGel', this.randomAmount(1, 1, 6)), text: '1d6 + 1 omni-gel' },
+            { min: 21, max: 40, reward: () => this.addProgram('rare'), text: '1 rare or lower omni-tool program' },
             { min: 41, max: 60, reward: () => this.addGrenade(3), text: '3 random grenades' },
-            { min: 61, max: 80, reward: () => this.addThOrHw('heavyWeapon', 3), text: '3 heavy weapon charges' },
+            { min: 61, max: 70, reward: () => this.addMedigel(2, 'enhanced'), text: '2 enhanced medi-gel' },
+            { min: 71, max: 80, reward: () => this.addThOrHw('heavyWeapon', 3), text: '3 heavy weapon charges' },
             { min: 81, max: 90, reward: () => this.addMedigel(2, 'superior'), text: '2 superior medi-gel' },
             { min: 91, max: 95, reward: () => this.addMedigel(1, 'ultimate'), text: '1 ultimate medi-gel' },
             { min: 96, max: 100, reward: () => this.addMedigel(2, 'ultimate'), text: '2 ultimate medi-gel' }
           ],
           e: [
-            { min: 1, max: 30, reward: () => this.addWeapon('common'), text: '1 common weapon' },
-            { min: 31, max: 60, reward: () => this.addWeapon('uncommon'), text: '1 uncommon weapon' },
+            { min: 1, max: 10, reward: () => this.addWeapon('common'), text: '1 common weapon' },
+            { min: 11, max: 40, reward: () => this.addWeapon('uncommon'), text: '1 uncommon weapon' },
+            { min: 41, max: 60, reward: () => this.addProgram('rare'), text: '1 rare or lower omni-tool program' },
             { min: 61, max: 80, reward: () => this.addModOrArmor('mods', 0, 5000), text: '1 random armor or weapon mod of 5,000 credits or less' },
             { min: 81, max: 90, reward: () => this.addModOrArmor('mods', 0, 10000), text: '1 random armor or weapon mod of 10,000 credits or less' },
             { min: 91, max: 100, reward: () => this.addModOrArmor('armor', 0, 20000), text: '1 random armor set of 20,000 credits or less' }
           ],
           f: [
-            { min: 1, max: 30, reward: () => this.addWeapon('uncommon'), text: '1 uncommon weapon' },
+            { min: 1, max: 10, reward: () => this.addWeapon('uncommon'), text: '1 uncommon weapon' },
+            { min: 11, max: 30, reward: () => this.addProgram('rare'), text: '1 rare or lower omni-tool program' },
             { min: 31, max: 60, reward: () => this.addWeapon('rare'), text: '1 rare weapon' },
             { min: 61, max: 80, reward: () => this.addModOrArmor('mods', 0, 10000), text: '1 random armor or weapon mod of 10,000 credits or less' },
             { min: 81, max: 90, reward: () => this.addModOrArmor('mods', 5000, 15000), text: '1 random 5,000 - 15,000 credit armor or weapon mod' },
@@ -266,15 +280,17 @@
           g: [
             { min: 1, max: 30, reward: () => this.addWeapon('rare'), text: '1 rare weapon' },
             { min: 31, max: 60, reward: () => this.addWeapon('very rare'), text: '1 very rare weapon' },
-            { min: 61, max: 80, reward: () => this.addModOrArmor('mods', 5000, 15000), text: '1 random 5,000 - 15,000 credit armor or weapon mod' },
+            { min: 61, max: 70, reward: () => this.addProgram('very rare'), text: '1 very rare or lower omni-tool program' },
+            { min: 71, max: 80, reward: () => this.addModOrArmor('mods', 5000, 15000), text: '1 random 5,000 - 15,000 credit armor or weapon mod' },
             { min: 81, max: 90, reward: () => this.addModOrArmor('mods', 15000, 30000), text: '1 random 15,000 - 30,000 credit armor or weapon mod' },
             { min: 91, max: 100, reward: () => this.addModOrArmor('armor', 20000, 40000), text: '1 random 20,000 - 40,000 armor set' }
           ],
           h: [
             { min: 1, max: 10, reward: () => this.addWeapon('rare'), text: '1 rare weapon' },
-            { min: 11, max: 45, reward: () => this.addWeapon('very rare'), text: '1 very rare weapon' },
-            { min: 46, max: 75, reward: () => this.addModOrArmor('mods', 15000, 100000000000), text: '1 random armor or weapon mod of 15,000 credits or more' },
-            { min: 76, max: 100, reward: () => this.addModOrArmor('armor', 30000, 100000000000), text: '1 random armor set of 30,000 credits or more' }
+            { min: 11, max: 35, reward: () => this.addWeapon('very rare'), text: '1 very rare weapon' },
+            { min: 36, max: 60, reward: () => this.addProgram('legendary'), text: '1 legendary or lower omni-tool program' },
+            { min: 61, max: 80, reward: () => this.addModOrArmor('mods', 15000, 100000000000), text: '1 random armor or weapon mod of 15,000 credits or more' },
+            { min: 81, max: 100, reward: () => this.addModOrArmor('armor', 30000, 100000000000), text: '1 random armor set of 30,000 credits or more' }
           ]
         }
       }
@@ -329,6 +345,12 @@
         })
         this.workingLoot[itemType].push(this.randomValue(availableItems))
       },
+      addProgram (maxRarity) {
+        const rarities = ['legendary', 'very rare', 'rare', 'uncommon', 'common']
+        const availableRarities = rarities.splice(rarities.indexOf(maxRarity))
+        const availablePrograms = this.cache.programs.filter(item => availableRarities.includes(item.rarity))
+        this.workingLoot.programs.push(this.randomValue(availablePrograms))
+      },
       clearLoot () {
         this.loots = []
       },
@@ -382,12 +404,22 @@
           credits: 0,
           thermalClips: 0,
           heavyWeapon: 0,
+          omniGel: 0,
           medigel: [],
           grenades: [],
           weapons: [],
           armor: [],
-          mods: []
+          mods: [],
+          programs: []
         }
+      },
+      randomAmount (flat, numRolls, max) {
+        let amount = flat
+        for (let i = 0; i < numRolls; i++) {
+          amount += this.randomRoll(max)
+        }
+        console.log(amount)
+        return amount
       },
       randomRoll (max) {
         return Math.floor(Math.random() * max) + 1

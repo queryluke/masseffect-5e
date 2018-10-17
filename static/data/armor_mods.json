@@ -528,5 +528,55 @@
     "manu": "Tyriel Advanced Communications Corporation",
     "notes": "Special",
     "id": "voice_modulator_head"
+  },
+  {
+    "name": "Enviro-Systems",
+    "type": "Chest",
+    "description": "An activatible hermetic seal against vacuum or underwater pressure. While most armors act as space-suits, they aren't necessarily graded for more than a few hours of vacuum exposure, nor are they graded for underwater performance where water pressure can be crushing.",
+    "feature": "As a free action, you gain Water Breathing and the ability to breathe indefinitely in zero-oxygen environments for the next 24 hours. If you are not wearing a helmet, the suit creates a hard light helment that equalizes preassure around your head.",
+    "cost": "2000",
+    "manu": "Devlon Industries",
+    "notes": "Special",
+    "id": "enviro-systems_chest"
+  },
+  {
+    "name": "Echo Cancel",
+    "type": "Legs",
+    "description": "Specifically attuned mass effect fields in your armor's boots that are keyed to sound waves.",
+    "feature": "Your footsteps make no noise and you have advantage on Dexterity (Stealth) checks that rely on remaining silent.",
+    "cost": "4000",
+    "manu": "Elanus Risk Control Services",
+    "notes": "Special",
+    "id": "echo_cancel_legs"
+  },
+  {
+    "name": "Night Sight",
+    "type": "Head",
+    "description": "A standard night-vision mod issued to infantry across the galaxy.",
+    "feature": "Your optic sensors now have darkvision out to a range of 60m. If you already have darkvision, activating this program increases its range by 60m.",
+    "cost": "1000",
+    "manu": "Alliance",
+    "notes": "Special",
+    "id": "night_sight_head"
+  },
+  {
+    "name": "Reactive Kinetic Compensator",
+    "type": "Chest",
+    "description": "A vi-response program that generates a burst of hard light between the layers of the user's armor to reduce trauma from otherwise-lethal hits.",
+    "feature": "Any critical hit against you becomes a normal hit.",
+    "cost": "12000",
+    "manu": "Armax Arsenal",
+    "notes": "Special",
+    "id": "reactive_kinetic_compensator_chest"
+  },
+  {
+    "name": "Zoom Enhance",
+    "type": "Head",
+    "description": "Fine-tuned lenses that fit over your armor's optics, enhancing your ability to see minute details.",
+    "feature": "You have advantage on Intelligence (Investigation) checks that rely on sight while searching an area or studying an object within a range of 2m.",
+    "cost": "3000",
+    "manu": "Sirta Foundation",
+    "notes": "Special",
+    "id": "zoom_enhance_head"
   }
 ]

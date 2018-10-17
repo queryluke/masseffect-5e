@@ -44,7 +44,7 @@
   },
   {
     "length": 4794,
-    "title": "missions",
+    "title": "Missions",
     "section": 1,
     "subSection": 6,
     "id": "01-06-adventures",
@@ -438,6 +438,15 @@
     "subSection": 11,
     "id": "06-11-tools-kits",
     "hash": "tools-kits"
+  },
+  {
+    "length": null,
+    "title": "Omni-tool Programs",
+    "new": true,
+    "section": 6,
+    "subSection": 12,
+    "id": "06-12-omni-tool-programs",
+    "hash": "omni-tool-programs"
   },
   {
     "length": 980,

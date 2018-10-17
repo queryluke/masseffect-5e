@@ -1,6 +1,6 @@
 ---
 length: 4794
-title: missions
+title: Missions
 ---
 
 The game consists of a group of characters embarking on a mission that the Galaxy Master presents to them. Each

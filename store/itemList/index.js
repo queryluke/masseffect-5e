@@ -29,6 +29,10 @@ export default {
       monsters: {
         cr: [],
         unit: []
+      },
+      programs: {
+        rarity: [],
+        installation: false
       }
     },
     mobileFilterDialog: false,

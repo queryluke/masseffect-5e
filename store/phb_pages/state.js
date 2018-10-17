@@ -90,6 +90,10 @@ export default {
     'phb-tools-kits': {
       name: 'Tools & Kits'
     },
+    'phb-programs': {
+      name: 'Omni-Tool Programs',
+      list: true
+    },
     'phb-bestiary': {
       name: 'Bestiary',
       list: true

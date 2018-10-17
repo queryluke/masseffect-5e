@@ -1,7 +1,7 @@
 const fs = require('fs')
 const fm = require('front-matter')
 const jsonDirs = ['classes', 'bestiary']
-const mdDirs = ['backgrounds', 'rules', 'grenades', 'tools', 'conditions', 'class_features', 'changelog', 'races', 'feats', 'spells']
+const mdDirs = ['backgrounds', 'rules', 'grenades', 'tools', 'conditions', 'class_features', 'changelog', 'races', 'feats', 'spells', 'programs']
 
 /*****
  * Static file generation
