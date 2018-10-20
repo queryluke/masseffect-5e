@@ -45,8 +45,10 @@ character can ride at a gallop for about an hour, covering twice the usual dista
 available every 12 to 15 kilometers (8-10 miles), characters can cover larger distances at this pace, but this is very
 rare except in densely populated areas.
 
-Characters in transports are limited to the speed of the vehicle, and they don't suffer penalties for a fast pace or gain
-benefits from a slow pace. Depending on the vehicle and the size of the crew, transports might be able to travel for up to 24 hours per day.
+Characters in transports choose a pace as normal. The __range__ statistic on transports indicates how far the transport can
+travel in a 24 hour period for a _normal_ pace. If you're moving at fast pace, you can double the range and half it for a
+slow pace. Transports do not suffer exhaustion as a living mount would, but characters still need to pilot the vehicle.
+In general, characters can only pilot vehicle for 16 hours at a time before needing to rest.
 
 More details about travelling in transports and starships is provided in the <nuxt-link to="needsLink!!!">vehicles</nuxt-link> section.
 

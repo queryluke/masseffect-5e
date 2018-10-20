@@ -7,7 +7,7 @@ attackType: []
 effect:
 - debuff
 damageType: []
-castingTime: Bonus Action
+castingTime: Action
 duration: 1 minute
 concentration: false
 distance:

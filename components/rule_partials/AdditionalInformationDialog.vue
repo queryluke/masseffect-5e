@@ -33,6 +33,7 @@
   import MulticlassingProfsTable from './MulticlassingProfsTable.vue'
   import MulticlassingTechTable from './MulticlassingTechTable.vue'
   import OmniGelYield from './OmniGelYield.vue'
+  import ShipUpgrades from './ShipUpgrades.vue'
   import SizeCategory from './SizeCategory.vue'
   import TypicalDifficultyClassesTable from './TypicalDifficultyClassesTable.vue'
   import TravelPace from './TravelPace.vue'
@@ -58,6 +59,7 @@
       MulticlassingProfsTable,
       MulticlassingTechTable,
       OmniGelYield,
+      ShipUpgrades,
       SizeCategory,
       TypicalDifficultyClassesTable,
       TravelPace,

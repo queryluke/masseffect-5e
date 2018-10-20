@@ -64,17 +64,6 @@ armor set cannot wear additional armor on their chest, legs, or arms. But they c
 __Full Set__ is a set that contains all 4 pieces of armor: head, chest, arms, and legs.
 
 
-<v-alert type="info" :value="true">
-<p><strong>EXAMPLE ARMOR CREATION</strong></p>
-<p>Imogen wants to create a fancy chest piece for her character Tiiva. She wants to add another mod slot for a
-maximum of 3 armor mods. Tiiva spends 4 long rests (8 hours in each rest) and 20 omni-gel to create a medium piece of
-chest armor. Alternatively, she could have spent 30,000 credits to purchase the armor piece. Next Imogen spends 30,000 credits
-on the ablative coating mod. She also looted an asymmetric defense layer mod from a previous
-mission. She spends 2 more long rests applying those mods, giving her chest armor resistance to piercing damage
-and +2 AC. She leaves her third slot empty for the time being, hoping to loot another mod and fit it in later.</p>
-</v-alert>
-
-<br>
 
 ### Environmental Protection <v-chip color="secondary" text-color="white" class="v-chip--x-small">new</v-chip>
 All armor provides basic environmental protection from the vacuum of space or hazardous atmospheres. Armor supplies enough
