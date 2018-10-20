@@ -89,25 +89,13 @@
 
 <script>
   import AboutCard from '~/components/cards/AboutCard.vue'
-  import {mapGetters} from 'vuex'
+  import attributions from '~/static/data/attributions'
 
   export default {
     components: {AboutCard},
-    computed: {
-      ...mapGetters(['getData']),
-      attributions () {
-        return this.getData('attributions')
-      }
-    },
     data () {
       return {
-        luke: {
-          games: {
-            me1: ['vanguard', 'sentinel'],
-            me2: ['sentinel', 'engineer', 'vanguard', 'adept', 'soldier'],
-            me3: ['sentinel', 'engineer', 'vanguard', 'infiltrator']
-          }
-        },
+        attributions,
         contributors: [
           {
             name: 'RJ Haggerty, a.k.a SleightxHope',

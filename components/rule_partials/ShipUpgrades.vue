@@ -4,7 +4,7 @@
       p.title.mt-5 {{ item.system }}
       v-data-table(v-bind:headers="headers" v-bind:items="generateUpgradeList(item)" hide-actions).mt-0
         template(slot="items" slot-scope="props")
-          td {{ props.item.cost }}
+          td {{ props.item.cost | groupDigits(',') }}
           td {{ props.item.effect }}
 </template>
 
@@ -48,7 +48,7 @@
       }
     },
     methods: {
-      generateUpgrageList (system) {
+      generateUpgradeList (system) {
         const upgrades = []
         for (let i = 1; i < 6; i++) {
           upgrades.push({cost: this.costs[i - 1], effect: `+${i} ${system.effect}`})

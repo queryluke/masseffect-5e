@@ -1,4 +1,3 @@
-import data from './data'
 const config = require('~/package.json')
 
 export default {
@@ -7,7 +6,6 @@ export default {
   classes: [],
   classFeatures: [],
   conditions: [],
-  data,
   encounter: {
     npcs: {
       list: [],

@@ -492,6 +492,46 @@
     "hash": "cost-of-things"
   },
   {
+    "length": 539,
+    "title": "Concept",
+    "section": 8,
+    "subSection": 1,
+    "id": "08-01-vehicle-concept",
+    "hash": "vehicle-concept"
+  },
+  {
+    "length": 794,
+    "title": "Transports vs Starships",
+    "section": 8,
+    "subSection": 2,
+    "id": "08-02-transports-starships",
+    "hash": "transports-starships"
+  },
+  {
+    "length": 794,
+    "title": "Basic Information",
+    "section": 8,
+    "subSection": 3,
+    "id": "08-03-basic-information",
+    "hash": "basic-information"
+  },
+  {
+    "length": 794,
+    "title": "Systems",
+    "section": 8,
+    "subSection": 4,
+    "id": "08-04-systems",
+    "hash": "systems"
+  },
+  {
+    "length": 794,
+    "title": "Upgrades",
+    "section": 8,
+    "subSection": 5,
+    "id": "08-05-upgrades",
+    "hash": "upgrades"
+  },
+  {
     "length": 6137,
     "title": "The Order of Combat",
     "section": 9,

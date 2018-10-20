@@ -34,17 +34,22 @@ a list of common systems and their benefits but GMs can make additional systems 
 
 Each system also provides a list of Downtime Activities, meaning players can participate in one of the Downtime Activity
 listed while on board the ship during a long rest. The Downtime Training has a list of tool and/or weapon proficiencies
-that can be learned from participating in the Downtime Activity: Training.
+that can be learned from participating in the <nuxt-link to="needsLink!!!">Downtime Activity: Training</nuxt-link>.
 
 #### Additional Starship System
 
-Name | Benefit
---- | ---
-Armory | Acts as a Weapon and Armor workbench for the purposes of installing equipment mods (weapons and armor). __Downtime Activity__ - Crafting, Training (armorsmith’s workbench, tailor’s tools, tinker’s tools, weaponsmith’s workbench)
-Medbay | When onboard the ship, players that expend a hit die on a short rest gain the maximum possible hit points. __Downtime Activity__ - Practice a Profession, Training (medical kit)
-Exonet Array | Advantage on Investigation and History checks made while onboard. __Downtime Activity__ - Practice a Profession, Research, Training (hacking tools)
-Luxury Kitchen | When you roll a d6 to determine how many crew become disgruntled, subtract 1 from the roll. __Downtime Activity__ - Training (brewer’s supplies, chemist’s supplies, cook’s utensils)
-Rec Room | When you roll a d6 to determine how many crew become disgruntled, subtract 2 from the roll. __Downtime Activity__ - Training (disguise kit, gaming set, musical instrument, painter’s supplies)
-Weapon Range | __Downtime Activity__ - Training in additional weapon proficiencies
-VR Training | __Downtime Activity__ - Training (any starship system, vehicles)
-Crash couches | When you succeed on a Hard Maneuver, characters on board your ship have advantage on their Constitution saving throw.
+__Armory__. Acts as a Weapon and Armor workbench for the purposes of installing equipment mods (weapons and armor). _Downtime Activity_ - Crafting, Training (armorsmith’s workbench, tailor’s tools, tinker’s tools, weaponsmith’s workbench)
+
+__Medbay__. When onboard the ship, players that expend a hit die on a short rest gain the maximum possible hit points. _Downtime Activity_ - Practice a Profession, Training (medical kit)
+
+__Exonet__. Advantage on Investigation and History checks made while onboard. _Downtime Activity_ - Practice a Profession, Research, Training (hacking tools)
+
+__Luxury Kitchen__. When you roll a d6 to determine how many crew become disgruntled, subtract 1 from the roll. _Downtime Activity_ - Training (brewer’s supplies, chemist’s supplies, cook’s utensils)
+
+__Rec Room__. When you roll a d6 to determine how many crew become disgruntled, subtract 2 from the roll. _Downtime Activity_ - Training (disguise kit, gaming set, musical instrument, painter’s supplies)
+
+__Weapon Range__. _Downtime Activity_ - Training in additional weapon proficiencies
+
+__VR Training__. _Downtime Activity_ - Training (any starship system, vehicles)
+
+__Crash couches__. When you succeed on a Hard Maneuver, characters on board your ship have advantage on their Constitution saving throw.
