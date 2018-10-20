@@ -7,7 +7,7 @@ new: true
 For characters that want to create unique armor pieces, they can craft or purchase upgradable armor pieces. To craft armor
 pieces, your character needs to be proficient with Armorsmith's or Tailor's tools. Then they must spend the necessary
 amount of time and omni-gel as listed in the Customizable Armor Costs table. _Note: it takes much less time and resources to craft
-these basic armor pieces than it does to craft armor sets due to the simplicity of the armor you character is creating_.
+these basic armor pieces than it does to craft armor sets due to the simplicity of the armor your character is creating_.
 
 Characters may instead purchase customizable armor for the cost listed in the Customizable Armor Costs table.
 
