@@ -1,7 +1,7 @@
 export const Type = {
   methods: {
-    setGruntType (grunt) {
-      grunt.type = grunt.race.name === 'Geth' || grunt.race.name === 'Unshackled AI' ? 'Synthetic' : 'Organic'
+    setGruntType () {
+      this.grunt.type = this.race.id === 'geth' || this.race.id === 'unshackled-ai' ? 'Synthetic' : 'Organic'
     }
   }
 }

@@ -1,17 +1,17 @@
 export const Ac = {
   methods: {
-    setGruntAc (config, grunt) {
+    setGruntAc () {
+      this.grunt.ac = 10
       const acModArray = [-2, -1, -1, 0, 1, 1, 2]
 
-      if (grunt.race.id === 'geth' || grunt.race.id === 'unshackled-ai') {
-        grunt.ac = 13 + this.abilityScoreBonus(grunt.abilityScores.dex)
+      if (['geth', 'unschackled-ai'].includes(this.race.id)) {
+        this.grunt.ac = 13 + this.abilityScoreBonus(this.grunt.abilityScores.dex) + this.cr.profBonus
         return
       }
-
-      if (grunt.sc.id === 'adept' || grunt.sc.id === 'infiltrator') {
+      if (['adept', 'infiltrator'].includes(this.sc.id)) {
         acModArray.push(-2)
         acModArray.push(-2)
-      } else if (grunt.sc.id === 'soldier' || grunt.sc.id === 'sentinel') {
+      } else if (['soldier', 'sentinel'].includes(this.sc.id)) {
         acModArray.push(2)
         acModArray.push(2)
       } else {
@@ -21,10 +21,10 @@ export const Ac = {
 
       let acMod = this.randomValue(acModArray)
 
-      if (grunt.race.id === 'krogan') {
+      if (this.race.id === 'krogan') {
         acMod++
       }
-      grunt.ac = config.cr.acDc + acMod
+      this.grunt.ac = this.cr.acDc + acMod
     }
   }
 }

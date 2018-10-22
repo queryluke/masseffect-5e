@@ -60,13 +60,13 @@
     "cost": 500
   },
   {
-    "id": "starship_system_power_core",
+    "id": "starship_system_drive",
     "name": "Starship System (Power Core)",
     "type": "starship",
     "cost": null
   },
   {
-    "id": "starship_system_cyber_warfare",
+    "id": "starship_system_ews",
     "name": "Starship System (Cyber Warfare)",
     "type": "starship",
     "cost": null
@@ -84,7 +84,7 @@
     "cost": null
   },
   {
-    "id": "starship_system_specialty",
+    "id": "starship_system_sensors",
     "name": "Starship System (Specialty)",
     "type": "starship",
     "cost": null

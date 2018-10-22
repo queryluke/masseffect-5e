@@ -1,5 +1,5 @@
 ---
-id: starship_system_cyber_warfare
+id: starship_system_ews
 name: "Starship System (Cyber Warfare)"
 type: starship
 cost: null

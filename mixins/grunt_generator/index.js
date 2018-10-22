@@ -1,109 +1,140 @@
-import {AbilityScoreBonus} from '../abilityScoreBonus'
-import {AbilityScores} from './AbilityScores'
-import {Ac} from './Ac'
-import {Actions} from './Actions'
-import {AverageFromDie} from '../averageFromDie'
+/*
 import {BestiaryHelpers} from '../bestiaryHelpers'
-import {Biotics} from './Biotics'
 import {DieFromAverage} from '../dieFromAverage'
 import {Helpers} from './Helpers'
 import {Hp} from './Hp'
-import {Id} from './Id'
 import {Features} from './Features'
-import {Name} from './Name'
 import {NumberRange} from '../numberRange'
-import {RandomValue} from '../randomValue'
-import {SavingThrows} from './SavingThrows'
 import {Senses} from './Senses'
+*/
+
+import {AbilityScoreBonus} from '../abilityScoreBonus'
+import {Ac} from './Ac'
+import {AverageFromDie} from '../averageFromDie'
+import {AbilityScores} from './AbilityScores'
+import {Actions} from './Actions'
+import {Alignment} from './Alignmnet'
+import {Features} from './Features'
+import {Id} from './Id'
+import {Image} from './Image'
+import {InnateSpellcasting} from './InnateSpellcasting'
+import {Name} from './Name'
+import {Rivs} from './Rivs'
+import {SavingThrows} from './SavingThrows'
 import {Skills} from './Skills'
+import {Spellcasting} from './Spellcasting'
 import {Speed} from './Speed'
-import {Tech} from './Tech'
 import {Type} from './Type'
-import {Weapons} from './Weapons'
-import {mapGetters} from 'vuex'
+import {RandomValue} from '../randomValue'
+import {CrToInt} from '../crToInt'
+
+// data
+import races from '~/static/data/races'
+import classes from '~/static/data/classes'
+import crs from '~/static/data/stats_by_cr'
+import spells from '~/static/data/spells'
+import weapons from '~/static/data/weapons'
+import grenades from '~/static/data/grenades'
+
+// options
+import {createNamespacedHelpers} from 'vuex'
+const {mapGetters} = createNamespacedHelpers('gruntGenerator')
 
 export const GruntGenerator = {
+  computed: {
+    ...mapGetters({ selectedCr: 'cr' }),
+    ...mapGetters({ selectedRace: 'race' }),
+    ...mapGetters({ selectedClass: 'sc' }),
+    crMetaLevel () {
+      if (this.cr) {
+        return parseFloat(this.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(this.cr.cr) / 4)
+      }
+      return 0
+    }
+  },
+  data () {
+    return {
+      grunt: {},
+      spells,
+      weapons,
+      grenades,
+      dpr: {
+        weapon: 0,
+        spell: 0,
+        grenade: 0,
+        heavyWeapon: 0
+      },
+      adjustments: {
+        dpr: 0,
+        hit: 0,
+        hp: 0,
+        ac: 0
+      }
+    }
+  },
   mixins: [
     AbilityScoreBonus,
-    AbilityScores,
     Ac,
+    AbilityScores,
     Actions,
+    Alignment,
     AverageFromDie,
-    BestiaryHelpers,
-    Biotics,
-    DieFromAverage,
-    Helpers,
-    Hp,
-    Id,
     Features,
+    Id,
+    Image,
+    InnateSpellcasting,
     Name,
-    NumberRange,
-    RandomValue,
+    Rivs,
     SavingThrows,
-    Senses,
     Skills,
+    Spellcasting,
     Speed,
-    Tech,
     Type,
-    Weapons
+    RandomValue,
+    CrToInt
   ],
-  computed: {
-    ...mapGetters(['getData', 'getMutableData'])
-  },
   methods: {
-    generateGrunt (cr, race, sc) {
-      const config = {
-        cr,
-        effective: {
-          ac: 0,
-          hp: 0,
-          atk: 0,
-          dc: 0,
-          dmg: 0
-        },
-        resistances: false,
-        quarianCybEn: false,
-        targetDamage: {dmgMin: 0, dmgMax: 5},
-        allowHeavyWeapons: true,
-        allowMeleeWeapons: true
-      }
-      const grunt = {
-        actions: [],
-        alignment: 'any alignment',
-        conditionImmunities: [],
-        damageVulnerabilities: [],
-        damageImmunities: [],
-        cr: cr.cr,
-        xp: cr.xp,
-        dc: cr.acDc,
-        damageResistances: [],
-        features: [],
-        profBonus: cr.profBonus,
-        race,
-        reactions: [],
-        savingThrows: [],
-        sc,
-        senses: [],
-        size: 'Medium',
-        skills: [],
-        spellcasting: false,
-        techcasting: false,
-        barrier: false
-      }
+    generateGrunt () {
+      this.cr = this.selectedCr && this.selectedCr.cr ? this.selectedCr : this.randomValue(crs)
+      this.race = this.selectedRace && this.selectedRace.id ? this.selectedRace : this.randomValue(races)
+      this.sc = this.selectedClass && this.selectedClass.id ? this.selectedClass : this.randomValue(classes)
 
-      this.setGruntName(grunt)
-      this.setGruntType(grunt)
-      this.setGruntAbilityScores(config, grunt)
-      this.setGruntFeatures(config, grunt)
-      this.setGruntSkills(config, grunt)
-      this.setGruntSavingThrows(config, grunt)
-      this.setGruntAc(config, grunt)
-      this.setGruntHp(config, grunt)
-      this.setGruntSpeed(config, grunt)
-      this.setGruntSenses(config, grunt)
-      this.setGruntActions(config, grunt)
-      this.setGruntId(grunt)
-      return grunt
+      this.resetDpr()
+      this.setGruntAbilityScores()
+      this.setGruntName()
+      this.setGruntId()
+      this.setGruntImage()
+      this.setGruntAlignment()
+      this.setGruntRivs()
+      this.setGruntSavingThrows()
+      this.setGruntInnateSpellcasting()
+      this.setGruntSpellcasting()
+      this.setGruntActions()
+      this.setGruntSpeed()
+      this.setGruntSkills()
+      this.setGruntFeatures()
+      this.setGruntAc()
+
+      this.grunt.lairActions = []
+      this.grunt.profBonus = this.cr.profBonus
+      this.grunt.size = 'Medium'
+      this.grunt.cr = this.cr.cr
+      this.grunt.unit = ''
+      console.log(this.grunt)
+    },
+    resetDpr () {
+      this.dpr = {
+        weapon: 0,
+        spell: 0,
+        grenade: 0,
+        heavyWeapon: 0
+      }
+      this.adjustments = {
+        dpr: 0,
+        hit: 0,
+        hp: 0,
+        ac: 0
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
 ---
-id: starship_system_specialty
+id: starship_system_sensors
 name: "Starship System (Specialty)"
 type: starship
 cost: null

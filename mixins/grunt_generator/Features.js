@@ -1,70 +1,87 @@
+import vanguard from '~/static/data/classes/vanguard'
+
 export const Features = {
-  methods: {
-    setGruntFeatures (config, grunt) {
-      const crMetaLevel = parseFloat(config.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(config.cr.cr) / 4)
-      const features = this.getMutableData('monsterFeatures')
-
-      // Set base features
-      const mandatoryFeatures = features.filter(feature => {
-        return feature[grunt.race.id] === 'a' || feature[grunt.sc.id] === 'a'
-      })
-      for (const feature of mandatoryFeatures) {
-        this.addFeature(config, grunt, feature)
+  computed: {
+    aggressive () {
+      this.adjustments.dpr += 2
+      return {
+        name: 'Aggressive',
+        recharge: null,
+        description: `As a bonus action, the ${this.sc.id} can move up to its speed toward a hostile creature that it can see.`
       }
-
-      // Set additional features
-      const availableFeatures = features.filter(feature => {
-        return feature[grunt.race.id] === 'x'
-      })
-      const numFeatures = this.randomValue(this.numFeatureWeights[crMetaLevel])
-      for (let i = 1; i <= numFeatures; i++) {
-        const feature = this.randomValue(availableFeatures)
-        this.addFeature(config, grunt, feature)
-        availableFeatures.splice(availableFeatures.indexOf(feature), 1)
-      }
-
-      grunt.damageResistances = Array.from(new Set(grunt.damageResistances))
-      grunt.conditionImmunities = Array.from(new Set(grunt.conditionImmunities))
     },
-    addFeature (config, grunt, feature) {
-      feature = this.setFeatureDamage(feature, config.cr.cr)
-      switch (feature.type) {
-        case 'condition': {
-          grunt.conditionImmunities = grunt.conditionImmunities.concat(feature.description.split(',').map(imm => {
-            return imm.trim()
-          }))
-          break
-        }
-        case 'resistance': {
-          grunt.damageResistances = grunt.damageResistances.concat(feature.description.split(',').map(res => {
-            return res.trim()
-          }))
-          config.resistances = true
-          break
-        }
-        case 'reaction': {
-          grunt.reactions.push(feature)
-          if (feature.crKey) {
-            config.effective[feature.crKey] += parseInt(feature.crEffect, 10)
-          }
-          break
-        }
-        case 'action': {
-          grunt.actions.push({
-            type: 'common',
-            name: feature.name,
-            recharge: feature.recharge,
-            description: feature.description
-          })
-          break
-        }
-        default: {
-          grunt.features.push(feature)
-          if (feature.crKey) {
-            config.effective[feature.crKey] += parseInt(feature.crEffect, 10)
-          }
-        }
+    ambusher () {
+      this.adjustments.hit += 1
+      return {
+        name: 'Ambusher',
+        recharge: null,
+        description: `The ${this.sc.id} has advantage on attack rolls against any creature it has surprised.`
       }
+    },
+    amphibious () {
+      return {
+        name: 'Amphibious',
+        recharge: null,
+        description: 'Can breathe both air and water.'
+      }
+    },
+    darkvision () {
+      return {
+        name: 'darkvision',
+        range: 20
+      }
+    },
+    barrier () {
+      const spellcastingLevel = this.sc.id === 'vanguard' ? this.cr.spellcastingLevel : Math.ceil(this.cr.spellcastingLevel / 2)
+      const vanguardProgression = vanguard.progression.find(p => p.level === spellcastingLevel)
+      this.grunt.barrier = vanguardProgression.barrierTicks
+      this.adjustments.hp += (4 * vanguardProgression.barrierTicks)
+      return {
+        name: 'Barrier',
+        recharge: `${vanguardProgression.barrierUses}/Day`,
+        description: `As an action or bonus action, the ${this.sc.id} gains ${vanguardProgression.barrierTicks} barrier ticks.`
+      }
+    },
+    tacticalCloak () {
+      this.adjustments.ac += 1
+      return {
+        name: 'Tactical Cloak',
+        recharge: `${this.crMetaLevel + 1}/Day`,
+        description: 'As a bonus action, the infiltrator may cast Tactical Cloak, becoming invisible. When it makes a melee, ranged, or tech attack, tactical cloak ends.'
+      }
+    },
+    sneakAttack () {
+      const sneakAttackDie = `${Math.ceil(this.crMetaLevel + 1 + (this.crMetaLevel / 2))}d6`
+      const extraDmg = this.averageFromDie(sneakAttackDie)
+      this.adjustments.dpr += extraDmg
+      return {
+        name: 'Sneak Attack',
+        recharge: '1/Turn',
+        description: `The infiltrator deals an extra ${extraDmg} (${sneakAttackDie}) damage when it hits a target with a weapon attack and has advantage on the attack roll, ` +
+        'or when the target is within 5 feet of an ally of the infiltrator that isn\'t incapacitated and the infiltrator doesn\'t have disadvantage on the attack roll.'
+      }
+    }
+  },
+  methods: {
+    setGruntFeatures () {
+      this.grunt.features = []
+      this.grunt.reactions = []
+      this.grunt.senses = []
+      this.grunt.barrier = null
+      // mandatory
+      if (this.sc.id === 'infiltrator') {
+        this.addFeature('tacticalCloak', 'features')
+        this.addFeature('sneakAttack', 'features')
+      }
+      if (['vanguard', 'adept', 'sentinel'].includes(this.sc.id)) {
+        this.addFeature('barrier', 'features')
+      }
+      if (this.race.id === 'drell') {
+        this.addFeature('darkvision', 'senses')
+      }
+    },
+    addFeature (name, type) {
+      this.grunt[type].push(this[name])
     }
   },
   data () {

@@ -1,5 +1,5 @@
 ---
-id: show_stopper.md
+id: show_stopper
 name: Show_Stopper.exe
 rarity: uncommon
 activation: false

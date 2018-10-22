@@ -1,5 +1,5 @@
 ---
-id: starship_system_power_core
+id: starship_system_drive
 name: "Starship System (Power Core)"
 type: starship
 cost: null

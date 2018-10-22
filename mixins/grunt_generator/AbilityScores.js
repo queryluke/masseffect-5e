@@ -1,13 +1,13 @@
 export const AbilityScores = {
   methods: {
-    setGruntAbilityScores (config, grunt) {
-      grunt.abilityScores = {
-        str: 0,
-        dex: 0,
-        con: 0,
-        int: 0,
-        wis: 0,
-        cha: 0
+    setGruntAbilityScores () {
+      this.grunt.abilityScores = {
+        str: 1,
+        dex: 1,
+        con: 1,
+        int: 1,
+        wis: 1,
+        cha: 1
       }
       const classStats = {
         adept: {wis: 5, dex: 4, cha: 1},
@@ -18,7 +18,7 @@ export const AbilityScores = {
         vanguard: {str: 5, wis: 4, con: 2},
         none: {dex: 5, str: 3, con: 2}
       }
-      if (grunt.race.id === 'asari') {
+      if (this.race.id === 'asari') {
         classStats.adept = {cha: 5, dex: 4, wis: 1}
         classStats.sentinel = {cha: 5, int: 4, dex: 2}
         classStats.vanguard = {str: 5, cha: 4, con: 2}
@@ -26,19 +26,19 @@ export const AbilityScores = {
       const standardArray = [15, 14, 13, 12, 10, 8]
 
       // Create stat weights
-      const statWeights = classStats[grunt.sc.id]
+      const statWeights = classStats[this.sc.id]
 
       const weightedAbilitySelection = {
-        increase: Object.keys(grunt.abilityScores),
-        reduction: Object.keys(grunt.abilityScores)
+        increase: Object.keys(this.grunt.abilityScores),
+        reduction: Object.keys(this.grunt.abilityScores)
       }
       // Set base ability scores & setup the weighted ability selection
-      const abilities = Object.keys(grunt.abilityScores)
+      const abilities = Object.keys(this.grunt.abilityScores)
       for (const w in statWeights) {
         if (Object.prototype.hasOwnProperty.call(statWeights, w)) {
           const weightedArray = standardArray.slice(0, (standardArray.length - statWeights[w]))
           const score = this.randomValue(weightedArray)
-          grunt.abilityScores[w] = score
+          this.grunt.abilityScores[w] = score
           standardArray.splice(standardArray.indexOf(score), 1)
           abilities.splice(abilities.indexOf(w), 1)
           let i = 0
@@ -50,38 +50,38 @@ export const AbilityScores = {
       }
       for (const ability of abilities) {
         const score = this.randomValue(standardArray)
-        grunt.abilityScores[ability] = score
+        this.grunt.abilityScores[ability] = score
         standardArray.splice(standardArray.indexOf(score), 1)
         weightedAbilitySelection.reduction.push(ability)
         weightedAbilitySelection.reduction.push(ability)
       }
       // Set boosts based on CR
-      if (config.cr.abIncrease) {
-        const increase = this.randomValue(config.cr.abIncrease)
+      if (this.cr.abIncrease) {
+        const increase = this.randomValue(this.cr.abIncrease)
         for (let i = 0; i < increase; i++) {
           const ability = this.randomValue(weightedAbilitySelection.increase)
-          grunt.abilityScores[ability]++
+          this.grunt.abilityScores[ability]++
         }
       }
       // Set decreases based on CR
-      if (config.cr.abReduction) {
-        const reduction = this.randomValue(config.cr.abReduction)
+      if (this.cr.abReduction) {
+        const reduction = this.randomValue(this.cr.abReduction)
         for (let i = 0; i < reduction; i++) {
           const ability = this.randomValue(weightedAbilitySelection.reduction)
-          if (grunt.abilityScores[ability] === 1) {
+          if (this.grunt.abilityScores[ability] === 1) {
             continue
           }
-          grunt.abilityScores[ability]--
+          this.grunt.abilityScores[ability]--
         }
       }
 
       // add race attributes
-      switch (grunt.race.id) {
+      switch (this.race.id) {
         case 'human': {
           let ability = this.randomValue(weightedAbilitySelection.increase)
-          grunt.abilityScores[ability] += 2
+          this.grunt.abilityScores[ability] += 2
           ability = this.randomValue(weightedAbilitySelection.increase)
-          grunt.abilityScores[ability]++
+          this.grunt.abilityScores[ability]++
           break
         }
         case 'unshackled_ai': {
@@ -89,21 +89,19 @@ export const AbilityScores = {
             return ability === 'int'
           })
           const ability = this.randomValue(filteredInt)
-          grunt.abilityScores[ability]++
-          grunt.abilityScores.int += 2
+          this.grunt.abilityScores[ability]++
+          this.grunt.abilityScores.int += 2
           break
         }
         default: {
-          const increases = grunt.race.increases.split(',')
+          const increases = this.race.abilityScoreIncrease
           for (const inc of increases) {
-            const ability = inc.toLowerCase().replace(/[^a-z]/g, '').slice(0, 3)
-            const increase = parseInt(inc.replace(/\D/, ''), 10)
-            grunt.abilityScores[ability] += increase
+            const ability = inc.ability.toLowerCase().slice(0, 3)
+            const increase = parseInt(inc.amount, 10)
+            this.grunt.abilityScores[ability] += increase
           }
         }
       }
-
-      return grunt.abilityScores
     }
   }
 }

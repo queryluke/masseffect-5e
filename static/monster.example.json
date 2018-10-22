@@ -67,7 +67,8 @@
   "legendaryActions": [
     {
       "name": "Legendary action name",
-      "cost": "Legendary action cost (1-3)"
+      "cost": 1,
+      "description": "legendary action description"
     }
   ],
   "name": "Monster name",
@@ -104,6 +105,10 @@
     }
 
   ],
+  "sp": {
+    "shields": 30,
+    "regen": 10
+  },
   "innateSpellcasting": {
     "level": "innate",
     "mod": "cha",

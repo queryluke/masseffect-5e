@@ -1,6 +1,6 @@
 <template lang="pug">
   dl
-    template(v-for="dmg in damage_types")
+    template(v-for="dmg in damageTypes")
       dt {{ dmg.type }}
       dd {{ dmg.note }}
 </template>
@@ -12,7 +12,7 @@
     components: { RuleCard },
     data () {
       return {
-        damage_types: [
+        damageTypes: [
           { type: 'Acid', note: 'The corrosive spray of a chemical and the dissolving enzymes secreted by thresher maw spit deal damage.' },
           { type: 'Bludgeoning', note: 'Blunt force attacks - hammers, falling, constriction, and the like - deal bludgeoning damage.' },
           { type: 'Cold', note: 'The painful chill from a cryo beam breath deal cold damage.' },
