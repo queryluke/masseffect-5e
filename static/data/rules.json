@@ -652,5 +652,31 @@
     "subSection": 7,
     "id": "10-07-primer-and-detonators",
     "hash": "primer-and-detonators"
+  },
+  {
+    "length": null,
+    "title": "Overview",
+    "section": 11,
+    "subSection": 1,
+    "id": "11-01-monster-overview",
+    "hash": "monster-overview"
+  },
+  {
+    "length": null,
+    "title": "Monster Types",
+    "change": true,
+    "section": 11,
+    "subSection": 2,
+    "id": "11-02-monster-types",
+    "hash": "monster-types"
+  },
+  {
+    "length": null,
+    "title": "Getting Monsters",
+    "change": true,
+    "section": 11,
+    "subSection": 3,
+    "id": "11-03-getting-monsters",
+    "hash": "getting-monsters"
   }
 ]

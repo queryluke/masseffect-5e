@@ -40,6 +40,10 @@ export default {
       name: 'Spellcasting',
       rules: 10
     },
+    'phb-rules-monsters': {
+      name: 'Monsters',
+      rules: 11
+    },
     'phb-appendix-conditions': {
       name: 'Conditions'
     },

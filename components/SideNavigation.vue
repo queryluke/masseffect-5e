@@ -59,7 +59,8 @@
               { title: 'Finances', icon: 'money', href: '/phb/rules/finances' },
               { title: 'Vehicles', icon: '', href: '/phb/rules/vehicles' },
               { title: 'Combat', icon: '', href: '/phb/rules/combat' },
-              { title: 'Spellcasting', icon: '', href: '/phb/rules/spellcasting' }
+              { title: 'Spellcasting', icon: '', href: '/phb/rules/spellcasting' },
+              { title: 'Monsters', icon: '', href: '/phb/rules/monsters' }
             ]
           },
           {
