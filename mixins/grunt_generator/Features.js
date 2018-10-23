@@ -51,7 +51,7 @@ export const Features = {
       }
     },
     sneakAttack () {
-      const sneakAttackDie = `${Math.ceil(this.crMetaLevel + 1 + (this.crMetaLevel / 2))}d6`
+      const sneakAttackDie = `${(1 + this.crMetaLevel) + Math.floor(this.crMetaLevel / 2)}d6`
       const extraDmg = this.averageFromDie(sneakAttackDie)
       this.adjustments.dpr += extraDmg
       return {
@@ -73,7 +73,7 @@ export const Features = {
         this.addFeature('tacticalCloak', 'features')
         this.addFeature('sneakAttack', 'features')
       }
-      if (['vanguard', 'adept', 'sentinel'].includes(this.sc.id)) {
+      if (['vanguard', 'adept', 'sentinel'].includes(this.sc.id) && this.cr.spellcastingLevel !== false) {
         this.addFeature('barrier', 'features')
       }
       if (this.race.id === 'drell') {

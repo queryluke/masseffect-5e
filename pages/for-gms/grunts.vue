@@ -16,12 +16,11 @@
           v-flex(xs12)
             grunt-options
           v-flex(xs8 offset-xs2).mt-3
-            v-btn(@click="getGrunt()" block color="primary") Generate
-    p {{ grunt }}
-    // v-container
+            v-btn(@click="generateGrunt()" block color="primary") Generate
+    v-container
       v-layout
         v-flex(xs12 sm10 offset-sm1 lg8 offset-lg2)
-          v-card(v-if="grunt")
+          v-card(v-if="generated")
             v-card-text
               stat-block(:stats="grunt")
             v-card-actions
@@ -41,12 +40,7 @@
       GruntOptions
     },
     layout: 'phb',
-    mixins: [GruntGenerator],
-    methods: {
-      getGrunt () {
-        this.generateGrunt()
-      }
-    }
+    mixins: [GruntGenerator]
   }
 
   //    created () {

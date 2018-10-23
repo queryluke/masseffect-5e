@@ -23,14 +23,12 @@
       },
       cantrips () {
         return this.castable.filter(s => parseInt(s.level, 10) === 0)
-      }
-    },
-    data () {
-      const spellSlots = adept.progression.find(p => parseInt(p.level, 10) === parseInt(this.spellcasting.level, 10)).spellSlots
-      const castable = spells.filter(s => this.spellcasting.spellList.includes(s.id))
-      return {
-        castable,
-        spellSlots
+      },
+      spellSlots () {
+        return adept.progression.find(p => parseInt(p.level, 10) === parseInt(this.spellcasting.level, 10)).spellSlots
+      },
+      castable () {
+        return spells.filter(s => this.spellcasting.spellList.includes(s.id))
       }
     },
     props: ['spellcasting']

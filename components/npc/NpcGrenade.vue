@@ -11,12 +11,9 @@
     computed: {
       text () {
         return this.grenade.body.replace('As an Action, t', 'T')
-      }
-    },
-    data () {
-      const grenade = require(`~/static/data/grenades/${this.id}.md`)
-      return {
-        grenade
+      },
+      grenade () {
+        return require(`~/static/data/grenades/${this.id}.md`)
       }
     },
     props: ['id', 'profBonus']

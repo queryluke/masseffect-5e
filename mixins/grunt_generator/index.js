@@ -1,13 +1,3 @@
-/*
-import {BestiaryHelpers} from '../bestiaryHelpers'
-import {DieFromAverage} from '../dieFromAverage'
-import {Helpers} from './Helpers'
-import {Hp} from './Hp'
-import {Features} from './Features'
-import {NumberRange} from '../numberRange'
-import {Senses} from './Senses'
-*/
-
 import {AbilityScoreBonus} from '../abilityScoreBonus'
 import {Ac} from './Ac'
 import {AverageFromDie} from '../averageFromDie'
@@ -15,6 +5,7 @@ import {AbilityScores} from './AbilityScores'
 import {Actions} from './Actions'
 import {Alignment} from './Alignmnet'
 import {Features} from './Features'
+import {Hp} from './Hp'
 import {Id} from './Id'
 import {Image} from './Image'
 import {InnateSpellcasting} from './InnateSpellcasting'
@@ -44,13 +35,7 @@ export const GruntGenerator = {
   computed: {
     ...mapGetters({ selectedCr: 'cr' }),
     ...mapGetters({ selectedRace: 'race' }),
-    ...mapGetters({ selectedClass: 'sc' }),
-    crMetaLevel () {
-      if (this.cr) {
-        return parseFloat(this.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(this.cr.cr) / 4)
-      }
-      return 0
-    }
+    ...mapGetters({ selectedClass: 'sc' })
   },
   data () {
     return {
@@ -58,6 +43,7 @@ export const GruntGenerator = {
       spells,
       weapons,
       grenades,
+      crMetaLevel: 0,
       dpr: {
         weapon: 0,
         spell: 0,
@@ -69,7 +55,8 @@ export const GruntGenerator = {
         hit: 0,
         hp: 0,
         ac: 0
-      }
+      },
+      generated: false
     }
   },
   mixins: [
@@ -80,6 +67,7 @@ export const GruntGenerator = {
     Alignment,
     AverageFromDie,
     Features,
+    Hp,
     Id,
     Image,
     InnateSpellcasting,
@@ -99,7 +87,7 @@ export const GruntGenerator = {
       this.race = this.selectedRace && this.selectedRace.id ? this.selectedRace : this.randomValue(races)
       this.sc = this.selectedClass && this.selectedClass.id ? this.selectedClass : this.randomValue(classes)
 
-      this.resetDpr()
+      this.reset()
       this.setGruntAbilityScores()
       this.setGruntName()
       this.setGruntId()
@@ -107,6 +95,7 @@ export const GruntGenerator = {
       this.setGruntAlignment()
       this.setGruntRivs()
       this.setGruntSavingThrows()
+      this.setGruntType()
       this.setGruntInnateSpellcasting()
       this.setGruntSpellcasting()
       this.setGruntActions()
@@ -114,15 +103,22 @@ export const GruntGenerator = {
       this.setGruntSkills()
       this.setGruntFeatures()
       this.setGruntAc()
-
+      this.setGruntHp()
       this.grunt.lairActions = []
       this.grunt.profBonus = this.cr.profBonus
-      this.grunt.size = 'Medium'
+      this.grunt.size = this.race.id === 'volus' ? 'Small' : 'Medium'
       this.grunt.cr = this.cr.cr
       this.grunt.unit = ''
-      console.log(this.grunt)
+      this.generated = true
+      console.log([this.dpr, this.adjustments])
     },
-    resetDpr () {
+    reset () {
+      this.generated = false
+      this.grunt = {}
+      this.crMetaLevel = 0
+      if (this.cr) {
+        this.crMetaLevel = parseFloat(this.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(this.cr.cr) / 4)
+      }
       this.dpr = {
         weapon: 0,
         spell: 0,

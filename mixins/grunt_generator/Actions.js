@@ -28,6 +28,9 @@ export const Actions = {
       // Add weapons
       for (const weapon of attack.weapons) {
         this.grunt.actions.push(this.generateWeaponAction(weapon))
+        if (weapon.attack.bonus > this.adjustments.hit) {
+          this.adjustments.hit = weapon.attack.bonus
+        }
       }
       // Add grenades
       const hasGrenades = Math.floor(Math.random() * 100) < (this.crMetaLevel + 1) * 10
@@ -42,7 +45,7 @@ export const Actions = {
         }
       }
       // Add Heavy Weapons
-      const hasHw = Math.floor(Math.random() * 100) < (this.crMetaLevel + 1) * 5
+      const hasHw = Math.floor(Math.random() * 100) < (this.crMetaLevel * 5)
       if (hasHw) {
         const hw = this.randomValue(this.weapons.filter(w => w.type === 'Heavy Weapon'))
         this.grunt.actions.push(this.generateWeaponAction(hw))
@@ -51,7 +54,7 @@ export const Actions = {
       // Add legendary actions
       if (attack.type === 'legendary') {
         // weapon attack
-        let text = `${attack.weapons[0].name}`
+        let text = ` ${attack.weapons[0].name}`
         if (attack.weapons.length > 1) {
           text += ` or its ${attack.weapons[1].name}`
         }
@@ -119,8 +122,8 @@ export const Actions = {
             weaponAction = {
               type: 'standard',
               name: weapon.name,
-              recharge: `(${weapon.heat} ${weapon.heat > 1 ? 'charges' : 'charge'})`,
-              description: weapon.description
+              recharge: `${weapon.heat} ${weapon.heat > 1 ? 'charges' : 'charge'}`,
+              description: weapon.notes
             }
           }
       }

@@ -4,6 +4,7 @@ export const Spellcasting = {
   data () {
     return {
       spellDpr: {
+        0: 7,
         1: 15,
         2: 32,
         3: 49,
@@ -13,18 +14,19 @@ export const Spellcasting = {
   },
   methods: {
     setGruntSpellcasting () {
-      if (this.sc.id === 'soldier') {
+      if (this.sc.id === 'soldier' || this.cr.spellcastingLevel === false) {
         this.grunt.spellcasting = false
         return
       }
       const spellcastingLevel = ['engineer', 'adept'].includes(this.sc.id) ? this.cr.spellcastingLevel : Math.ceil(this.cr.spellcastingLevel / 2)
       const adeptProgression = adept.progression.find(p => p.level === spellcastingLevel)
+      const spellSlots = adeptProgression.spellSlots
       let maxLevelSpell = 1
-      if (adeptProgression.spellSlots['4']) {
+      if (spellSlots['4']) {
         maxLevelSpell = 4
-      } else if (adeptProgression.spellSlots['3']) {
+      } else if (spellSlots['3']) {
         maxLevelSpell = 3
-      } else if (adeptProgression.spellSlots['2']) {
+      } else if (spellSlots['2']) {
         maxLevelSpell = 2
       }
       const availableSpells = this.spells.filter(s => s.availableClasses.includes(this.sc.id) && s.level <= maxLevelSpell && s.level > 0)
