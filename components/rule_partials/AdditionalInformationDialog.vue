@@ -38,6 +38,9 @@
   import TypicalDifficultyClassesTable from './TypicalDifficultyClassesTable.vue'
   import TravelPace from './TravelPace.vue'
   import WeaponProperties from './WeaponProperties.vue'
+  import WithoutMaintenance from './WithoutMaintenance.vue'
+  import DisgruntledCrew from './DisgruntledCrew.vue'
+  import GalaxyMap from './GalaxyMap.vue'
 
   export default {
     components: {
@@ -64,6 +67,9 @@
       TypicalDifficultyClassesTable,
       TravelPace,
       WeaponProperties,
+      WithoutMaintenance,
+      DisgruntledCrew,
+      GalaxyMap,
       MarkdownContent
     },
     computed: {

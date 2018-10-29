@@ -525,11 +525,27 @@
   },
   {
     "length": 794,
-    "title": "Upgrades",
+    "title": "Crew",
     "section": 8,
     "subSection": 5,
-    "id": "08-05-upgrades",
-    "hash": "upgrades"
+    "id": "08-05-crew",
+    "hash": "crew"
+  },
+  {
+    "length": 794,
+    "title": "Starship Combat",
+    "section": 8,
+    "subSection": 6,
+    "id": "08-06-starship-combat",
+    "hash": "starship-combat"
+  },
+  {
+    "length": 794,
+    "title": "Travel",
+    "section": 8,
+    "subSection": 7,
+    "id": "08-07-travel",
+    "hash": "travel"
   },
   {
     "length": 6137,
@@ -673,7 +689,6 @@
   {
     "length": null,
     "title": "Getting Monsters",
-    "change": true,
     "section": 11,
     "subSection": 3,
     "id": "11-03-getting-monsters",

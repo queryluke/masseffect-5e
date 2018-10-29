@@ -84,3 +84,8 @@ leisure activities, police force, politics, etc. Think of dreadnaughts as a smal
 of Andromeda were dreadnoughts as are the Liveships that the quarian race inhabits. The ships are so costly to make
 that the total number of dreadnoughts in the Milky Way is less than 200 with most races having only one or none. It’s
 impossible to land Dreadnoughts on planets safely.
+
+### Cost
+The costs listed for vehicles represent their market value. Some vehicles, instead, are __military__ meaning the vehicles
+cannot be purchased on the open market. Instead, characters will need inside connects, the black market, or luck
+to acquire these vehicles.
