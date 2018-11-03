@@ -1,6 +1,7 @@
 <template lang="pug">
   v-container(:class="{ 'px-0': $vuetify.breakpoint.xsOnly }" )
     h2.display-1.hidden-sm-and-down Tools & Kits
+    p #[nuxt-link(to="/phb/rules/equipment#tools-kits") Tools & Kits rules]
     v-expansion-panel.my-5
       v-expansion-panel-content(v-for="item in items" v-bind:key="item.id")
         div(slot="header") {{ item.name }}

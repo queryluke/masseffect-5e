@@ -4,6 +4,7 @@
     // Search functions for large screens
     div.hidden-sm-and-down
       h2.display-1 Weapons
+      p Read the #[nuxt-link(to="/phb/rules/equipment#weapons") Weapon Rules] to understand the changes from 5th Edition to Mass Effect 5e.
       v-layout(row wrap)
         v-flex(md4).px-1
           v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")

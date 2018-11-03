@@ -4,6 +4,7 @@
     // Search functions for large screens
     div.hidden-sm-and-down
       h2.display-1 Spells
+      p #[nuxt-link(to="/phb/rules/spellcasting") Spellcasting Rules]
       v-layout(row wrap)
         v-flex(md4).px-1
           v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")

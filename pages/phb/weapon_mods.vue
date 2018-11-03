@@ -4,7 +4,7 @@
     // Search functions for large screens
     div.hidden-sm-and-down
       h2.display-1 Weapon Mods
-      p Read the #[router-link(to="/phb/rules/weapons#weapon-customization") Weapon Customization Rules] to understand how weapons customization works.
+      p Read the #[router-link(to="/phb/rules/equipments#mods") Weapon Customization Rules] to understand how weapon modding works.
       v-layout(row wrap)
         v-flex(xs12)
           v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")

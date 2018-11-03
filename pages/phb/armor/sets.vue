@@ -4,6 +4,7 @@
     // Search functions for large screens
     div.hidden-sm-and-down
       h2.display-1 Armor Sets
+      p #[nuxt-link(to="/phb/rules/equipment#armor") Armor Rules]
       p.
         Pre-made armor sets are cheaper than creating a full set of custom armor. However, they cannot be customized or upgraded
         in any way. To learn about creating additional armor sets, read the #[nuxt-link(to="/for-gms/armor-creation") Creating Armor guide].

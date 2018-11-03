@@ -4,7 +4,7 @@
     // Search functions for large screens
     div.hidden-sm-and-down
       h2.display-1 Armor Mods
-      p Read the #[nuxt-link(to="/phb/rules/armor#armor-customization") Armor Rules] to understand how armor customization works.
+      p Read the #[nuxt-link(to="/phb/rules/equipment#custom-armor") Armor Rules] to understand how armor customization works.
       v-layout(row wrap)
         v-flex(xs4).px-1
           v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
