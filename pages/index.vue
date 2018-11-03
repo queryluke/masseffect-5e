@@ -77,13 +77,12 @@
     section
       v-container(grid-list-xl).mt-5
         v-layout(row align-center wrap)
-          // Interactive Handbook
           v-flex(xs12 md7)
             v-card.elevation-0.transparent
               v-card-title(primary-title)
-                div.headline Interactive Handbook
+                div.headline Interactive Manual
               v-card-text.
-                Our player's handbook is more than a PDF. It's a fully navigable web app that allows you to browse rules, search for items and spells,
+                Our player's manual is more than a PDF. It's a fully navigable web app that allows you to browse rules, search for items and spells,
                 and create bookmarks for frequently used information.
               v-card-actions
                 v-btn(to="/phb/intro" flat) Get Started #[v-icon chevron_right]

@@ -1,7 +1,7 @@
 export default {
   pages: {
     'phb-intro': {
-      name: 'Player\'s Handbook - Intro',
+      name: 'Player\'s Manual  - Intro',
       rules: 1
     },
     'phb-rules-character-creation': {

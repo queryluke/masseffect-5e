@@ -5,7 +5,7 @@ export default {
   mobileFilterDialog: false,
   pageTitle: 'Mass Effect 5e',
   primaryNavigation: [
-    { route: '/phb/intro', title: 'Player\'s Handbook' },
+    { route: '/phb/intro', title: 'Player\'s Manual' },
     { route: '/assets', title: 'Assets' },
     { route: '/changelog', title: 'Changelog' },
     { route: '/about', title: 'About' },

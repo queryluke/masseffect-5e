@@ -17,7 +17,7 @@
             v-list-tile-content
               v-list-tile-title {{ item.title }}
     v-toolbar(dense fixed id="spvToolbar")
-      v-toolbar-title Mass Effect 5e #[span.hidden-xs-only -  Player's Handbook #[small.hidden-sm-and-down (Single Page Version)]]
+      v-toolbar-title Mass Effect 5e #[span.hidden-xs-only -  Player's Manual #[small.hidden-sm-and-down (Single Page Version)]]
       v-spacer
       v-btn(icon @click="drawer = !drawer") #[v-icon view_list]
     // Frontmatter
@@ -25,7 +25,7 @@
       div.my-5.text-xs-center
         img(src="/images/me5e_logo_notm.png" id="phbLogo" alt="Mass Effect 5e Logo").mb-4
         h1.sr-only Mass Effect 5e
-        h2.display-3 Player's Handbook
+        h2.display-3 Player's Manual
         p.title v{{ version }}
       div.my-5.text-xs-center
         p.title Contact Us: #[a(mailto="info@n7.world") info@n7.world]
@@ -46,7 +46,7 @@
         v-flex(xs12 sm8 lg6)
           v-alert(:value="true" type="warning").black--text.
             This page is generated from components in the web version of the site. Except for the table of contents, links and buttons
-            #[em within] this document will link out to the web version of the Player's Handbook. At some point in the future,
+            #[em within] this document will link out to the web version of the Player's Manual. At some point in the future,
             we will create a better PDF version of the rules.
 
     section(id="download").page
@@ -181,7 +181,7 @@
       h3(id="feats").display-2.anchor-pad Feats
       h4.display-1.mt-3 Removed
       p.
-        The following feats from the 5th Edition Player's Handbook are not available. The have been removed due to
+        The following feats from the 5th Edition Player's Manual are not available. The have been removed due to
         consistency errors, like #[em Crossbow Expert], since there are no crossbows in this game: {{ feats.notAvailable.join(', ') }}
       h4.display-1 New
       div(v-for="feat in feats.newFeats" v-bind:key="feat.name").my-3
@@ -394,9 +394,9 @@
     },
     head () {
       return {
-        title: `Mass Effect 5e | Printable Player's Handbook`,
+        title: `Mass Effect 5e | Printable Player's Manual`,
         meta: [
-          { hid: 'description', name: 'description', content: 'Printable version of the player\'s handbook' }
+          { hid: 'description', name: 'description', content: 'Printable version of the player\'s manual' }
         ]
       }
     },

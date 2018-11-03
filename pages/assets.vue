@@ -16,7 +16,7 @@
         v-flex(xs12 sm4)
           v-btn(block href="https://drive.google.com/open?id=1SPghERVzFgEva4C11xRbnuc8i1RYKBbu" target="_blank").primary by theNamelessOne
     // PDF of Rules
-    h2.display-2.text-xs-center.mt-5 Player's Handbook
+    h2.display-2.text-xs-center.mt-5 Player's Manual
     v-container(grid-list-xl)
       v-layout(row wrap justify-center)
         v-flex(xs12 sm6 md4)
@@ -25,7 +25,7 @@
             will work on an official PDF version of the rules after our v1.0.0 release.
       v-layout(row wrap justify-center)
         v-flex(xs12 sm6 md4)
-          v-btn(block href="https://drive.google.com/open?id=1eDfgpG3JplKUjrIdySJKmyC4qxTi2MUT" target="_blank").primary Player's Handbook PDF
+          v-btn(block href="https://drive.google.com/open?id=1eDfgpG3JplKUjrIdySJKmyC4qxTi2MUT" target="_blank").primary Player's Manual PDF
     // Tokens
     h2.display-2.text-xs-center.mt-5 NPC Tokens
     v-container(grid-list-xl)

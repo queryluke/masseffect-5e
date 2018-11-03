@@ -40,7 +40,7 @@
       return {
         items: [
           {
-            header: 'Player\'s Handbook'
+            header: 'Player\'s Manual'
           },
           {
             title: 'Introduction',
@@ -136,7 +136,8 @@
           { title: 'Get Involved', href: '/contributing' },
           { title: 'About the Project', href: '/about' },
           { title: `Changelog`, href: '/changelog' },
-          { title: `Offline / PDF version`, href: '/print/pdf' }
+          { title: `Offline / PDF version`, href: '/print/pdf' },
+          { title: `License`, href: '/license' }
         ]
       }
     }

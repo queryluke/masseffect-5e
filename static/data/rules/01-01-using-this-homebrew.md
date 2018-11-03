@@ -1,7 +1,7 @@
 ---
 length: 1208
 new: true
-title: About the Player's Handbook
+title: About the Player's Manual
 ---
 
 Mass Effect 5e is a homebrew for Dungeons and Dragons 5th edition which allows you to play a tabletop roleplaying game
