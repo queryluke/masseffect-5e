@@ -256,7 +256,7 @@
     "id": "envoy"
   },
   {
-    "name": "et3",
+    "name": "ET3",
     "vehicle": {
       "type": "transport",
       "subtype": "land"
@@ -601,7 +601,7 @@
     "id": "m35_mako"
   },
   {
-    "name": "Normandy Class Frigate",
+    "name": "Normandy-class Frigate",
     "vehicle": {
       "type": "starship"
     },
@@ -872,7 +872,7 @@
     "id": "verrikan"
   },
   {
-    "name": "X3M",
+    "name": "X3M (shuttle car)",
     "vehicle": {
       "type": "transport",
       "subtype": "air"

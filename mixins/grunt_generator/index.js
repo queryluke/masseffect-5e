@@ -110,7 +110,7 @@ export const GruntGenerator = {
       this.grunt.cr = this.cr.cr
       this.grunt.unit = ''
       this.generated = true
-      console.log([this.dpr, this.adjustments])
+      // console.log([this.dpr, this.adjustments])
     },
     reset () {
       this.generated = false
