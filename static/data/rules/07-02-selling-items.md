@@ -10,7 +10,7 @@ fencers interested in your loot.
 ### Arms, Armor, and Other Equipment
 As a general rule, undamaged weapons, armor, and other equipment fetch half their cost when sold in a market. Weapons
 and armor used by mercenaries are rarely in good enough condition to sell. Instead, you may opt to break these items down
-into <nuxt-link to="needsLink!!!">omni-gel</nuxt-link>.
+into <nuxt-link to="/phb/rules/equipment#omni-gel">omni-gel</nuxt-link>.
 
 ### Gems, Jewelry, Art Objects, and Artifacts
 These items retain their full value in the marketplace, and you can either trade them in for credits or use them as currency

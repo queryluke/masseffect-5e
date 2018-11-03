@@ -15,7 +15,8 @@ is roughly equivalent across races, but the variability changes based on race. L
 variability, whereas short-lived races (salarians and vorcha) have a high variability.
 
 Your Strength score limits the amount of gear you can carry and armor you can wear. Try not to purchase equipment with
-a total weight exceeding your Strength score times 2. "[Using Ability Scores](needsLink)" has more information on carrying capacity.
+a total weight exceeding your Strength score times 2. <nuxt-link to="/phb/rules/using-ability-scores#strength">Using Ability Scores</nuxt-link>
+has more information on carrying capacity.
 
 ### Armor Class
 
@@ -23,7 +24,8 @@ Your Armor Class (AC) represents how well your character avoids being wounded in
 AC include the armor you wear and your Dexterity modifier. Not all characters wear armor, however.
 
 Without armor, your character’s AC equals 10 + his or her Dexterity modifier. If your character wears armor,
-calculate your AC using the rules in the [Equipment](needsLink!!!) section. Record your AC on your character sheet.
+calculate your AC using the rules in the <nuxt-link to="/phb/rules/equipment#armor">Armor</nuxt-link> section. Record
+your AC on your character sheet.
 
 Your character needs to be proficient with armor to wear and use it effectively, and your armor proficiencies are
 determined by your class. There are drawbacks to wearing armor if you lack the required proficiency, as explained in

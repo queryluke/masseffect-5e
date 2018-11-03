@@ -73,7 +73,7 @@ the game. All three follow these simple steps.
 #### 1. Roll the die and add a modifier.
 Roll a d20 and add the relevant modifier. This is typically the modifier derived from one of the six ability scores, and
 it sometimes includes a proficiency bonus to reflect a character’s particular skill. (See
-<a href="needsLink!!!">Step-By-Step Characters</a> for details on each ability and how to determine an
+<nuxt-link to="/phb/rules/character-creation">Step-By-Step Characters</nuxt-link> for details on each ability and how to determine an
 ability’s modifier.)
 
 #### 2. Apply circumstantial bonuses and penalties.
@@ -87,7 +87,7 @@ attack rolls, and saving throws succeed or fail.
 The target number for an ability check or a saving throw is called a __Difficulty Class (DC)__. The target number for an
 attack roll is called an __Armor Class (AC)__.
 
-This simple rule governs the resolution of most tasks in D&D play. <a href="needsLink!!!">Using Ability Scores</a>
+This simple rule governs the resolution of most tasks in D&D play. <nuxt-link to="/phb/rules/using-ability-scores">Using Ability Scores</nuxt-link>
 provides more detailed rules for using the d20 in the game.
 
 ### Advantage and Disadvantage
@@ -97,7 +97,8 @@ have either advantage or disadvantage, you roll a second d20 when you make the r
 you have advantage, and use the lower roll if you have disadvantage. For example, if you have disadvantage and roll a 17
 and a 5, you use the 5. If you instead have advantage and roll those numbers, you use the 17.
 
-More detailed rules for advantage and disadvantage are presented in the <a href="needsLink!!!">Using Ability Scores</a> section.
+More detailed rules for advantage and disadvantage are presented in the
+<nuxt-link to="/phb/rules/using-ability-scores#advantage-and-disadvantage">Using Ability Scores</nuxt-link> section.
 
 ### Specific Beats General
 This compendium contains rules that govern how the game plays. That said, many racial traits, class features, spells,

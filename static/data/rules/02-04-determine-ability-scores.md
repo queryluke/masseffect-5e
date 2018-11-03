@@ -6,8 +6,8 @@ title: '3. Determine Ability Scores'
 Much of what your character does in the game depends on his or her six abilities: __Strength__, __Dexterity__, __Constitution__,
 __Intelligence__, __Wisdom__, and __Charisma__. Each ability has a score, which is a number you record on your character sheet.
 
-The six abilities and their use in the game are described in the [Using Ability Scores](needsLink!!) section. The Ability
-Score Summary provides a quick reference for what qualities are measured by each ability, what races
+The six abilities and their use in the game are described in the <nuxt-link to="/phb/rules/using-ability-scores">Using Ability Scores</nuxt-link>
+section. The Ability Score Summary provides a quick reference for what qualities are measured by each ability, what races
 increases which abilities, and what classes consider each ability particularly important.
 
 <ai-dialog title="Ability Score summary" component="ability-score-summary"></ai-dialog>

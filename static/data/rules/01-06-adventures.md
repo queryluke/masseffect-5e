@@ -44,11 +44,11 @@ __Social interaction__ features the operatives talking to someone (or something)
 captured soldier reveal the passcode to the enemies stronghold, getting information from a rescued prisoner, pleading for
 mercy from an krogan chieftain, or persuading a talkative unshackled AI to unlock a navigation route to a distant planet.
 
-The rules in <a href="needsLink!!!">Using Ability Scores</a> and <a href="needsLink!!!">Adventuring</a> support exploration
-and social interaction, as do many class features in <a href="needsLink!!!">Classes</a> and personality traits
-in <a href="needsLink!!!">Personality and Backgrounds</a>.
+The rules in <nuxt-link to="/phb/rules/using-ability-scores">Using Ability Scores</nuxt-link> and
+<nuxt-link to="/phb/rules/missions">Missions</nuxt-link> support exploration
+and social interaction.
 
-__Combat__, the focus of the <a href="needsLink!!!">Combat</a> section, involves characters and other creatures
+__Combat__, the focus of the <nuxt-link to="/phb/rules/combat">Combat</nuxt-link> section, involves characters and other creatures
 shooting weapons, casting biotics and tech, maneuvering for position, and so on—all in an effort to defeat their opponents,
 whether that means killing every enemy, taking captives, or forcing a rout. Combat is the most structured element of a
 game session, with creatures taking turns to make sure that everyone gets a chance to act. Even in the context of a

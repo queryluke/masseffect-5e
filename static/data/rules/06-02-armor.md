@@ -19,7 +19,7 @@ proficiency with, you cannot cast Biotics or Tech and Combat powers.
 __Armor Class (AC)__. Armor protects its wearer from attacks. The armor you wear determines your base Armor Class.
 
 __Shield Points__. <v-chip color="secondary" text-color="white" class="v-chip--x-small">new</v-chip> All armor chest pieces
-provides some amount of shield points. See the <nuxt-link to="needsLink!!!">Shields</nuxt-link> of the combat section for
+provides some amount of shield points. See the <nuxt-link to="/phb/rules/combat#shields">Shields</nuxt-link> of the combat section for
 more information.
 
 

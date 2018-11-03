@@ -50,7 +50,7 @@ travel in a 24 hour period for a _normal_ pace. If you're moving at fast pace, y
 slow pace. Transports do not suffer exhaustion as a living mount would, but characters still need to pilot the vehicle.
 In general, characters can only pilot vehicle for 16 hours at a time before needing to rest.
 
-More details about travelling in transports and starships is provided in the <nuxt-link to="needsLink!!!">vehicles</nuxt-link> section.
+More details about travelling in transports and starships is provided in the <nuxt-link to="/phb/rules/vehicles">vehicles</nuxt-link> section.
 
 <ai-dialog title="Travel Pace table" component="travel-pace"></ai-dialog>
 

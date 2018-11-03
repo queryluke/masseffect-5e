@@ -60,7 +60,7 @@ respectively. So a character who has proficiency in the Stealth skill is particu
 to sneaking and hiding.
 
 The skills related to each ability score are shown in the following list. No skills are related to Constitution. See an
-ability's description in the [Appendix X](needsLink) for examples of how to use a skill associated with an ability.
+ability's description in the <nuxt-link to="/phb/appendix/skills">Appendix: Skills</nuxt-link> for examples of how to use a skill associated with an ability.
 
 #### Strength
 - Athletics

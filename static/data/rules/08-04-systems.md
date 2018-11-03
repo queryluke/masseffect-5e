@@ -40,7 +40,7 @@ can also be upgraded. The Ship Upgrades table provides a list of common systems 
 
 Some systems provide a list of Downtime Activities, meaning players can participate in one of the Downtime Activity
 listed while on board the ship during a long rest. The Downtime Training has a list of tool and/or weapon proficiencies
-that can be learned from participating in the <nuxt-link to="needsLink!!!">Downtime Activity: Training</nuxt-link>.
+that can be learned from participating in the <nuxt-link to="/phb/rules/missions#between-missions">Downtime Activity: Training</nuxt-link>.
 
 Adding a new system or installing an upgrade takes 8 hours of uninterrupted work. You can either pay a skilled
 hireling for a days work or you can make the upgrades yourself.
