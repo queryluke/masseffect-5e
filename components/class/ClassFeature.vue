@@ -6,14 +6,12 @@
 
 <script>
   export default {
-    computed: {
-      item () {
-        if (this.id) {
-          return require(`~/static/data/class_features/${this.id}.md`)
-        }
-      },
-      level () {
-        return '10'
+    created () {
+      this.item = require(`~/static/data/class_features/${this.id}.md`)
+    },
+    data () {
+      return {
+        item: {}
       }
     },
     props: {

@@ -403,8 +403,7 @@
     "detonates": null,
     "primes": null,
     "availableClasses": [
-      "adept",
-      "sentinel"
+      "adept"
     ],
     "advancementOptions": [
       {

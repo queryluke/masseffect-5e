@@ -84,25 +84,11 @@
     "id": "resistance"
   },
   {
-    "mechanic": "tech points",
-    "description": "Reduce tech point cost",
-    "amount": "reduce by 1 tp",
-    "cost": "20000",
-    "id": "tech_points"
-  },
-  {
     "mechanic": "ac",
     "description": "Increase AC",
     "amount": "1",
     "cost": "20000",
     "id": "ac"
-  },
-  {
-    "mechanic": "tech regen",
-    "description": "Increase TP regeneration die",
-    "amount": "1 die type",
-    "cost": "12000",
-    "id": "tech_regen"
   },
   {
     "mechanic": "stabalize",
@@ -145,5 +131,19 @@
     "amount": "1 die",
     "cost": "12000",
     "id": "improved_medi-gel"
+  },
+  {
+    "mechanic": "spell bonus",
+    "description": "you gain a +X bonus to spell attack rolls and to the saving throw DCs of your spells.",
+    "amount": "1",
+    "cost": "15000",
+    "id": "spell_bonus"
+  },
+  {
+    "mechanic": "spell regen",
+    "description": "You can regain 1 1st-level spell slot or one tech point as an action. You can’t use this property again until you finish a long rest.",
+    "amount": "-",
+    "cost": "30000",
+    "id": "spell_regen"
   }
 ]

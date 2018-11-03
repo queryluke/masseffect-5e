@@ -71,7 +71,8 @@ __Cruisers__ are middleweight ships that can either transport large amounts of s
 firepower. Military cruisers tend to be the front-line of the battle and have powerful weapons, shields, and armor.
 Cruisers typically have crews of 20 - 100 and are able to land on planets.
 
-__Carriers__ are large ships meant to carry transports (star fighters and drop ships). Carriers are primarily military
+__Carriers__, also called _freighters_,
+are large ships meant to carry transports (star fighters and drop ships). Carriers are primarily military
 in nature though some venture capitalists have used carriers for mining operations and colonizing efforts. Carriers are
 typically weak in combat, being slow and lacking much firepower or shielding. Instead, carriers utilize their transports
 for offense and defense. Carriers are built in space and are too large to land on planets (purposefully). Instead, most
@@ -89,3 +90,12 @@ impossible to land Dreadnoughts on planets safely.
 The costs listed for vehicles represent their market value. Some vehicles, instead, are __military__ meaning the vehicles
 cannot be purchased on the open market. Instead, characters will need inside connects, the black market, or luck
 to acquire these vehicles.
+
+### CR
+Transports have a CR between 0 and 30, which is based on its hp, ac, and damage. Starships have a `+` symbol after
+their CR, which indicates that this CR is a relative representation based on other starships. It is unlikely that operatives
+will destroy a starship with traditional weapons. Instead they'll likely have to use other vehicles. For example,
+a starship with a CR of `12+` has the same XP reward as a level CR creature when the operatives destroy it
+using other vehicles. If operatives did manage to destroy the vehicle using traditional means, we recommend
+providing XP equal to the standard amount multiplied by 10. For example, a cr 12 creature provides 8,400 XP. If players
+destroyed this with traditional means, the GM can reward 84,000 XP.

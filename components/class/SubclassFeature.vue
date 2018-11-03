@@ -2,7 +2,7 @@
   div
     div(v-for="(subclass, index) in item.subclasses" v-bind:key="index")
       p.display-1.font-weight-thin.mb-2 {{ subclass.name.toUpperCase() }} #[small(v-if="subclass.source") ({{ subclass.source }})]
-      div(v-for="featureId in subclass.features[featureIndex]")
+      div(v-for="featureId in subclass.features[featureIndex]" v-bind:key="featureId")
         class-feature(v-bind:id="featureId" v-bind:featureLevel="level")
       div(:class="primaryColor" v-if="subclass.features.length > index + 1").hr
 </template>

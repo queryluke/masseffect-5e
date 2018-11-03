@@ -1,7 +1,20 @@
 const fs = require('fs')
 const fm = require('front-matter')
 const jsonDirs = ['classes', 'bestiary']
-const mdDirs = ['backgrounds', 'rules', 'grenades', 'tools', 'conditions', 'class_features', 'changelog', 'races', 'feats', 'spells', 'programs']
+const mdDirs = [
+  'backgrounds',
+  'rules',
+  'grenades',
+  'tools',
+  'conditions',
+  'class_features',
+  'changelog',
+  'races',
+  'feats',
+  'spells',
+  'programs',
+  'vehicles'
+]
 
 /*****
  * Static file generation
@@ -150,6 +163,9 @@ for (let dir of mdDirs) {
         item.subSection = Number.parseInt(fileParts[1])
         item.id = file.replace(/\.md$/g, '')
         item.hash = fileParts.splice(2).join('-').replace(/\.md$/g, '')
+        break
+      case 'vehicles':
+        item.id = file.replace(/.md$/, '')
         break
       default:
         break

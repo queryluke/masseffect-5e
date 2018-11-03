@@ -18,7 +18,6 @@ detonates:
 primes: 
 availableClasses:
 - adept
-- sentinel
 advancementOptions:
 - name: Infuse Ammo
   description: Friendly creatures inside the sphere add 1d6 force damage to all ranged weapon attacks against creatures

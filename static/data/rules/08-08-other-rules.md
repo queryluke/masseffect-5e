@@ -19,7 +19,8 @@ Whether or not the characters know of a location is dependant of __Star Maps__. 
 by Sectors (the large groupings of clusters) or by clusters.
 
 ### Variant: Mining & Probes
-Ships can be equipped with Mining Probes for the cost of 100 credits/probe. When orbiting a celestial body,
+Ships can be equipped with Mining Probes. Each probe costs 100 credits and ships have a capacity based on its size:
+10 for frigates, 20 for carriers, 50 for cruisers, and 100 for dreadnoughts. When orbiting a celestial body,
 an operative can use the ship's SSC system to expend a Mining Probe and make a DC 15 Intelligence (Investigation) check. The
 DC of this check is determined by how "rich" the planet is.
 
@@ -58,7 +59,7 @@ Fuel in Mass Effect 5e is an abstract concept. Most ships can mine and create fu
 the Galaxy. Fuel is represented by the ships range (how far it can travel in 24 hours). If you would like to keep track
 of fuel, the GM can use the following Variant: Fuel rules.
 
-You "tank" is the size of your range multiplied by 3. Each time you expend 1 range, you also expend 1 charge from your
+You "tank" capacity is equal to your ship's range multiplied by 3. Each time you expend 1 range, you also expend 1 charge from your
 tank. You can either spend a long rest on an asteroid or planet mining fuel or you can refuel at a space port. To mine
 fuel use the Variant: Mining rules above. On a success, roll a d8 and regain that many charges.
 

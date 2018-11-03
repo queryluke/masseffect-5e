@@ -22,20 +22,6 @@ GSHEETS = [
         camel: true
     },
     {
-        type: 'monster_features',
-        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTIwlLPyS6hKc2XoW5tm901kmWbiZD_cHiUBWrH2V-ceinyWWz5SiGFfnRehK4CWrewGWubXBldbesh/pub?gid=1564226847&single=true&output=csv',
-        renderables: [],
-        id: 'name',
-        camel: true
-    },
-    {
-        type: 'bestiary',
-        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTIwlLPyS6hKc2XoW5tm901kmWbiZD_cHiUBWrH2V-ceinyWWz5SiGFfnRehK4CWrewGWubXBldbesh/pub?gid=0&single=true&output=csv',
-        renderables: [],
-        id: 'name',
-        camel: true
-    },
-    {
         type: 'weapon_mods',
         url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRphibK9-tEg_9zoirocbeKnHIJpDSSVr721q4D5Wq9M4Eupx_vVJqVUzamgbHhM4bhyHrKn9PxQ0MV/pub?gid=0&single=true&output=csv',
         id: 'name',
@@ -44,6 +30,12 @@ GSHEETS = [
     {
         type: 'commonplace_items',
         url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ5DO-4Giug9mwmDRyBRQBkAJS8NqaqhXqN25fcIRN23oa58KdAZy0m15XDBMYvF7VOMomWWi_2NaIp/pub?output=csv',
+        id: 'name',
+        camel: true
+    },
+    {
+        type: 'ship_upgrades',
+        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTAQk1m0TSXGyCUqFXKlKQ-ZHQ7Z6J4FvTvUjWU5bQ1X_4aXXmZ3zOIEf971-TcMPiXocrmFL0Uu-3F/pub?gid=0&single=true&output=csv',
         id: 'name',
         camel: true
     }
