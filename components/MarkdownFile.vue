@@ -7,19 +7,28 @@
   import MarkdownContent from '~/components/MarkdownContent.vue'
 
   export default {
-    name: 'markdown-file',
+    name: 'MarkdownFile',
     components: {MarkdownContent},
+    props: {
+      id: {
+        type: String,
+        default: ''
+      },
+      itemType: {
+        type: String,
+        default: ''
+      },
+      header: {
+        type: Object,
+        default: () => { return {} }
+      }
+    },
     computed: {
       item () {
         if (this.id) {
           return require(`~/static/data/${this.itemType}/${this.id}.md`)
         }
       }
-    },
-    props: {
-      id: String,
-      itemType: String,
-      header: Object
     }
   }
 </script>

@@ -14,6 +14,18 @@
   const {mapActions, mapGetters} = createNamespacedHelpers('itemList')
 
   export default {
+    props: {
+      itemKey: {
+        type: String,
+        default: ''
+      }
+    },
+    data () {
+      return {
+        typeOptions: [ 'Assault Rifle', 'Heavy Pistol', 'Heavy Weapon', 'Melee', 'SMG', 'Shotgun', 'Sniper Rifle' ],
+        rarityOptions: [ 'Common', 'Uncommon', 'Rare', 'Very Rare' ]
+      }
+    },
     computed: {
       ...mapGetters(['filters']),
       typeFilter: {
@@ -33,20 +45,13 @@
         }
       }
     },
-    data () {
-      return {
-        typeOptions: [ 'Assault Rifle', 'Heavy Pistol', 'Heavy Weapon', 'Melee', 'SMG', 'Shotgun', 'Sniper Rifle' ],
-        rarityOptions: [ 'Common', 'Uncommon', 'Rare', 'Very Rare' ]
-      }
-    },
     methods: {
       ...mapActions(['updateFilter']),
       reset () {
         this.rarityFilter = []
         this.typeFilter = []
       }
-    },
-    props: ['itemKey']
+    }
   }
 </script>
 

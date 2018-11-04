@@ -10,7 +10,12 @@
 
 <script>
   export default {
-    props: ['id']
+    props: {
+      id: {
+        type: String,
+        default: ''
+      }
+    }
   }
 </script>
 

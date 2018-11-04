@@ -46,6 +46,23 @@
     components: {
       AdvancedOption, SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect
     },
+    props: {
+      spell: {
+        type: Object,
+        default: () => { return {} }
+      }
+    },
+    data () {
+      return {
+        primeTypeCss: {
+          force: 'purple--text text--darken-1',
+          necrotic: 'blue-grey--text text--darken-2',
+          fire: 'deep-orange--text text--darken-1',
+          cold: 'cyan--text text--darken-1',
+          lightning: 'blue--text text--darken-1'
+        }
+      }
+    },
     computed: {
       cardType () {
         return `${this.spell.type}-card`
@@ -65,19 +82,7 @@
         }
         return text
       }
-    },
-    data () {
-      return {
-        primeTypeCss: {
-          force: 'purple--text text--darken-1',
-          necrotic: 'blue-grey--text text--darken-2',
-          fire: 'deep-orange--text text--darken-1',
-          cold: 'cyan--text text--darken-1',
-          lightning: 'blue--text text--darken-1'
-        }
-      }
-    },
-    props: ['spell']
+    }
   }
 </script>
 

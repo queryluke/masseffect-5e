@@ -18,6 +18,11 @@
 
 <script>
   export default {
-    props: ['mod']
+    props: {
+      mod: {
+        type: Object,
+        default: () => { return {} }
+      },
+    }
   }
 </script>

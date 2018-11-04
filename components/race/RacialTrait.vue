@@ -11,6 +11,12 @@
 
   export default {
     components: {Trait},
+    props: {
+      id: {
+        type: String,
+        default: ''
+      }
+    },
     computed: {
       name () {
         return this.item.attributes.name
@@ -20,7 +26,6 @@
           return require(`~/static/data/traits/${this.id}.md`)
         }
       }
-    },
-    props: ['id']
+    }
   }
 </script>

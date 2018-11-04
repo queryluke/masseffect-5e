@@ -9,7 +9,12 @@
 
 <script>
   export default {
-    props: ['spellcasting']
+    props: {
+      spellcasting: {
+        type: Object,
+        default: () => { return {} }
+      }
+    },
   }
 </script>
 

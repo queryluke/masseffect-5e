@@ -48,9 +48,29 @@
 
   import {createNamespacedHelpers} from 'vuex'
   const {mapActions, mapGetters} = createNamespacedHelpers('gruntGenerator')
-  // const {mapGetters} = createNamespacedHelpers('gruntGenerator')
 
   export default {
+    props: {
+      itemKey: {
+        type: String,
+        default: ''
+      },
+      unitOptions: {
+        type: Object,
+        default: () => { return {} }
+      },
+      crOptions: {
+        type: Object,
+        default: () => { return {} }
+      }
+    },
+    data () {
+      return {
+        races,
+        classes,
+        crs
+      }
+    },
     computed: {
       ...mapGetters(['cr', 'race', 'sc']),
       selectedCr: {
@@ -78,13 +98,6 @@
         }
       }
     },
-    data () {
-      return {
-        races,
-        classes,
-        crs
-      }
-    },
     methods: {
       ...mapActions(['setCr', 'setRace', 'setClass']),
       reset () {
@@ -92,8 +105,7 @@
         this.selectedRace = {}
         this.selectedClass = {}
       }
-    },
-    props: ['itemKey', 'unitOptions', 'crOptions']
+    }
   }
 </script>
 

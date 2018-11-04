@@ -126,6 +126,51 @@
       NpcWeaponAttack,
       NpcLegendaryAction
     },
+    mixins: [
+      AbilityScoreBonus,
+      AverageFromDie,
+      DieFromAverage,
+      xp
+    ],
+    props: {
+      stats: {
+        type: Object,
+        default: () => { return {} }
+      }
+    },
+    data () {
+      return {
+        imageDialog: false,
+        skillsMap: {
+          acrobatics: 'dex',
+          athletics: 'str',
+          deception: 'cha',
+          electronics: 'int',
+          engineering: 'int',
+          history: 'int',
+          insight: 'wis',
+          intimidation: 'cha',
+          investigation: 'int',
+          medicine: 'wis',
+          perception: 'wis',
+          performance: 'cha',
+          persuasion: 'cha',
+          science: 'int',
+          'sleight of hand': 'dex',
+          stealth: 'dex',
+          survival: 'wis',
+          'vehicle handling': 'dex'
+        },
+        abilityMap: {
+          str: 'Strength',
+          dex: 'Dexterity',
+          con: 'Constitution',
+          int: 'Intelligence',
+          wis: 'Wisdom',
+          cha: 'Charisma'
+        }
+      }
+    },
     computed: {
       hitPoints () {
         let mod = this.abilityScoreBonus(this.stats.abilityScores.con) * this.stats.hp.numDice
@@ -141,7 +186,8 @@
       },
       legendaryActions () {
         if (this.stats.legendaryActions) {
-          return this.stats.legendaryActions.sort((a, b) => {
+          const actions = this.stats.legendaryActions
+          return actions.sort((a, b) => {
             return a.cost === b.cost
               ? a.name > b.name ? 1 : -1
               : a.cost > b.cost ? 1 : -1
@@ -206,39 +252,6 @@
         return 0
       }
     },
-    data () {
-      return {
-        imageDialog: false,
-        skillsMap: {
-          acrobatics: 'dex',
-          athletics: 'str',
-          deception: 'cha',
-          electronics: 'int',
-          engineering: 'int',
-          history: 'int',
-          insight: 'wis',
-          intimidation: 'cha',
-          investigation: 'int',
-          medicine: 'wis',
-          perception: 'wis',
-          performance: 'cha',
-          persuasion: 'cha',
-          science: 'int',
-          'sleight of hand': 'dex',
-          stealth: 'dex',
-          survival: 'wis',
-          'vehicle handling': 'dex'
-        },
-        abilityMap: {
-          str: 'Strength',
-          dex: 'Dexterity',
-          con: 'Constitution',
-          int: 'Intelligence',
-          wis: 'Wisdom',
-          cha: 'Charisma'
-        }
-      }
-    },
     methods: {
       hasFeature (feature) {
         return this.stats[feature] && this.stats[feature].length > 0
@@ -247,14 +260,7 @@
         const abilityScoreBonus = this.abilityScoreBonus(score)
         return abilityScoreBonus >= 0 ? `+${abilityScoreBonus}` : abilityScoreBonus
       }
-    },
-    mixins: [
-      AbilityScoreBonus,
-      AverageFromDie,
-      DieFromAverage,
-      xp
-    ],
-    props: ['stats']
+    }
   }
 </script>
 

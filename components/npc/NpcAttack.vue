@@ -13,6 +13,12 @@
 
 <script>
   export default {
+    props: {
+      attack: {
+        type: Object,
+        default: () => { return {} }
+      }
+    },
     computed: {
       range () {
         if (this.attack.type === 'melee') {
@@ -23,8 +29,7 @@
         }
         return ''
       }
-    },
-    props: ['attack']
+    }
   }
 </script>
 

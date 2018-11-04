@@ -41,9 +41,6 @@
       ArmorSetInfo,
       BookmarkButton
     },
-    computed: {
-      ...mapGetters(['bookmarksGroupedByType'])
-    },
     data () {
       return {
         headers: {
@@ -58,6 +55,9 @@
           npc: 'Npcs'
         }
       }
+    },
+    computed: {
+      ...mapGetters(['bookmarksGroupedByType'])
     },
     head () {
       return {

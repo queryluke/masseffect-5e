@@ -19,6 +19,21 @@
   import {AverageFromDie} from '~/mixins/averageFromDie'
 
   export default {
+    mixins: [AbilityScoreBonus, AverageFromDie],
+    props: {
+      id: {
+        type: String,
+        default: ''
+      },
+      abilityScores: {
+        type: Object,
+        default: () => { return {} }
+      },
+      profBonus: {
+        type: Number,
+        default: 2
+      }
+    },
     computed: {
       attackMod () {
         const tags = this.tags
@@ -67,9 +82,7 @@
         }
         return weapon
       }
-    },
-    mixins: [AbilityScoreBonus, AverageFromDie],
-    props: ['id', 'abilityScores', 'profBonus']
+    }
   }
 </script>
 

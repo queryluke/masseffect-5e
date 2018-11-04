@@ -40,6 +40,13 @@
       WeaponList,
       BookmarkButton
     },
+    mixins: [AverageFromDie],
+    data () {
+      return {
+        items,
+        itemKey: 'weapons'
+      }
+    },
     computed: {
       ...mapGetters(['order', 'sortBy', 'filters', 'searchString']),
       search: {
@@ -55,7 +62,7 @@
         let sortBy = this.sortBy.key
         let order = this.order
         let self = this
-        this.items.sort(function (a, b) {
+        data.slice().sort(function (a, b) {
           switch (sortBy) {
             case 'type':
             case 'name':
@@ -76,8 +83,7 @@
           data = data.filter((item) => {
             let nameMatch = item.name.toLowerCase().indexOf(this.search.toLowerCase()) >= 0
             let typeMatch = item.type.toLowerCase().indexOf(this.search.toLowerCase()) >= 0
-            let noteMatch = item.notes_text_dump.toLowerCase().indexOf(this.search.toLowerCase()) >= 0
-            return nameMatch || typeMatch || noteMatch
+            return nameMatch || typeMatch
           })
         }
         for (const key in this.filters[this.itemKey]) {
@@ -87,12 +93,6 @@
           }
         }
         return data
-      }
-    },
-    data () {
-      return {
-        items,
-        itemKey: 'weapons'
       }
     },
     head () {
@@ -106,7 +106,6 @@
     layout: 'phb',
     methods: {
       ...mapActions(['updateSearchString'])
-    },
-    mixins: [AverageFromDie]
+    }
   }
 </script>

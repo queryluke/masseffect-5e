@@ -134,13 +134,7 @@
 
   export default {
     components: {},
-    created () {
-      this.cache.grenades = grenades
-      this.cache.weapons = weapons
-      this.cache.armor = armorSets
-      this.cache.mods = weaponMods.concat(armorMods)
-      this.cache.programs = programs
-    },
+    mixins: [RandomValue],
     data () {
       return {
         lootTableDialog: false,
@@ -295,6 +289,13 @@
         }
       }
     },
+    created () {
+      this.cache.grenades = grenades
+      this.cache.weapons = weapons
+      this.cache.armor = armorSets
+      this.cache.mods = weaponMods.concat(armorMods)
+      this.cache.programs = programs
+    },
     head () {
       return {
         title: 'Mass Effect 5e | GM Tools - Loot Generator',
@@ -427,7 +428,6 @@
       removeLoot (index) {
         this.loots.splice(index, 1)
       }
-    },
-    mixins: [RandomValue]
+    }
   }
 </script>

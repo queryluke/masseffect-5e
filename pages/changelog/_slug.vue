@@ -13,16 +13,16 @@
 
 <script>
   export default {
+    data () {
+      return {
+        id: this.$route.params.slug
+      }
+    },
     computed: {
       post () {
         if (this.id) {
           return require(`~/static/data/changelog/${this.id}.md`)
         }
-      }
-    },
-    data () {
-      return {
-        id: this.$route.params.slug
       }
     },
     head () {

@@ -25,17 +25,6 @@
   import { mapGetters } from 'vuex'
 
   export default {
-    computed: {
-      ...mapGetters(['bookmarkCount', 'getVersion']),
-      isActive: {
-        get () {
-          return this.$store.state.sidebar
-        },
-        set (val) {
-          this.$store.commit('toggleSidebar', val)
-        }
-      }
-    },
     data () {
       return {
         items: [
@@ -139,6 +128,17 @@
           { title: `Offline / PDF version`, href: '/print/pdf' },
           { title: `License`, href: '/license' }
         ]
+      }
+    },
+    computed: {
+      ...mapGetters(['bookmarkCount', 'getVersion']),
+      isActive: {
+        get () {
+          return this.$store.state.sidebar
+        },
+        set (val) {
+          this.$store.commit('toggleSidebar', val)
+        }
       }
     }
   }

@@ -10,7 +10,12 @@
 
 <script>
   export default {
-    props: ['action']
+    props: {
+      action: {
+        type: Object,
+        default: () => { return {} }
+      }
+    },
   }
 </script>
 

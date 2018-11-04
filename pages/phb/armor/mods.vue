@@ -32,6 +32,19 @@
 
   export default {
     components: { ArmorModFilters, ArmorModList, MobileFilterContainer },
+    data () {
+      const noteOptions = new Set()
+      for (const item of items) {
+        for (const note of item.notes.split(',').map(n => n.trim())) {
+          noteOptions.add(note)
+        }
+      }
+      return {
+        items,
+        noteOptions: [...noteOptions].sort(),
+        itemKey: 'armorMods'
+      }
+    },
     computed: {
       ...mapGetters(['order', 'sortBy', 'filters', 'searchString']),
       search: {
@@ -73,19 +86,6 @@
           })
         }
         return data
-      }
-    },
-    data () {
-      const noteOptions = new Set()
-      for (const item of items) {
-        for (const note of item.notes.split(',').map(n => n.trim())) {
-          noteOptions.add(note)
-        }
-      }
-      return {
-        items,
-        noteOptions: [...noteOptions].sort(),
-        itemKey: 'armorMods'
       }
     },
     head () {

@@ -30,6 +30,12 @@
     components: {
       WeaponInfo, WeaponType, BookmarkButton, SortOptions
     },
+    props: {
+      items: {
+        type: Array,
+        default: () => { return [] }
+      }
+    },
     data () {
       return {
         headers: [
@@ -42,8 +48,7 @@
           { key: 'cost', label: 'Cost', classes: 'hidden-md-and-down lg2', sortable: true }
         ]
       }
-    },
-    props: ['items']
+    }
   }
 </script>
 

@@ -30,17 +30,17 @@
       BookmarkButton,
       VehicleInfo
     },
+    data () {
+      return {
+        items
+      }
+    },
     computed: {
       transports () {
         return this.items.filter(v => v.vehicle.type === 'transport')
       },
       starships () {
         return this.items.filter(v => v.vehicle.type === 'starship')
-      }
-    },
-    data () {
-      return {
-        items
       }
     }
   }

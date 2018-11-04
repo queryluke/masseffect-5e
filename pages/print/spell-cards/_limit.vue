@@ -8,6 +8,7 @@
   import spells from '~/static/data/spells.json'
 
   export default {
+    name: 'PrintSpellCards',
     components: {
       SpellCard
     },
@@ -29,8 +30,7 @@
         ]
       }
     },
-    layout: 'print',
-    name: 'PrintSpellCards'
+    layout: 'print'
   }
 </script>
 

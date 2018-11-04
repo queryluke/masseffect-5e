@@ -11,6 +11,11 @@
 
 <script>
   export default {
-    props: ['program']
+    props: {
+      program: {
+        type: Object,
+        default: () => { return {} }
+      },
+    }
   }
 </script>

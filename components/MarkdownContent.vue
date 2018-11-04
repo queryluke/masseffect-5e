@@ -7,7 +7,7 @@
   import VehicleList from '~/components/vehicle/VehicleList.vue'
 
   export default {
-    name: 'markdown-content',
+    name: 'MarkdownContent',
     components: {
       AiDialog,
       SkillList,
@@ -15,6 +15,21 @@
       CostOfThings,
       Condition,
       VehicleList
+    },
+    props: {
+      component: {
+        type: Object,
+        default: () => { return {} }
+      },
+      context: {
+        type: Object,
+        default: () => { return {} }
+      }
+    },
+    data () {
+      return {
+        templateRender: null
+      }
     },
     computed: {
       level () {
@@ -26,23 +41,12 @@
       this.templateRender = new Function(this.component.render)()
       this.$options.staticRenderFns = new Function(this.component.staticRenderFns)()
     },
-    data () {
-      return {
-        templateRender: null
-      }
-    },
     methods: {
       ctx (key) {
         if (this.context) {
           return this.context[key] ? this.context[key] : key
         }
         return key
-      }
-    },
-    props: {
-      component: Object,
-      context: {
-        type: Object
       }
     },
     render (createElement) {

@@ -22,6 +22,12 @@
     components: {
       Increases
     },
+    props: {
+      data: {
+        type: Object,
+        default: () => { return {} }
+      }
+    },
     computed: {
       traitList () {
         return this.data.traits.map(t => this.$options.filters.capitalize(t)).join(', ')
@@ -36,7 +42,6 @@
         }
         return text
       }
-    },
-    props: ['data']
+    }
   }
 </script>

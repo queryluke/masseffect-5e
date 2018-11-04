@@ -9,12 +9,10 @@
 <script>
   import skills from '~/static/data/skills.json'
   export default {
-    computed: {
-      items () {
-        if (this.abilityLimit) {
-          return this.skills.filter(s => s.link === this.abilityLimit)
-        }
-        return this.skills
+    props: {
+      abilityLimit: {
+        type: String,
+        default: ''
       }
     },
     data () {
@@ -22,8 +20,13 @@
         skills
       }
     },
-    props: {
-      abilityLimit: String
+    computed: {
+      items () {
+        if (this.abilityLimit) {
+          return this.skills.filter(s => s.link === this.abilityLimit)
+        }
+        return this.skills
+      }
     }
   }
 </script>

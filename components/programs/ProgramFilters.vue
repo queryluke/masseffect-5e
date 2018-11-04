@@ -14,6 +14,17 @@
   const {mapActions, mapGetters} = createNamespacedHelpers('itemList')
 
   export default {
+    props: {
+      itemKey: {
+        type: String,
+        default: ''
+      },
+    },
+    data () {
+      return {
+        rarityOptions: ['uncommon', 'rare', 'very rare', 'legendary']
+      }
+    },
     computed: {
       ...mapGetters(['filters']),
       rarityFilter: {
@@ -33,19 +44,13 @@
         }
       }
     },
-    data () {
-      return {
-        rarityOptions: ['uncommon', 'rare', 'very rare', 'legendary']
-      }
-    },
     methods: {
       ...mapActions(['updateFilter']),
       reset () {
         this.rarityFilter = []
         this.installationFilter = false
       }
-    },
-    props: ['itemKey']
+    }
   }
 </script>
 

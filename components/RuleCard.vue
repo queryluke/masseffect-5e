@@ -12,6 +12,12 @@
 
   export default {
     components: {MarkdownContent},
+    props: {
+      id: {
+        type: String,
+        default: ''
+      }
+    },
     computed: {
       item () {
         return require(`~/static/data/rules/${this.id}.md`)
@@ -28,9 +34,6 @@
       hash () {
         return this.id.split('-').splice(2).join('-')
       }
-    },
-    props: {
-      id: String
     }
   }
 </script>

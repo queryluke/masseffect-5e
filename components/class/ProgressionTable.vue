@@ -37,15 +37,25 @@
 
   export default {
     components: { ClassFeature, SubclassFeature },
-    computed: {
-      spellSlotArray () {
-        return this.item.spellSlots ? [...Array(this.item.maxSpellSlot).keys()] : []
+    props: {
+      item: {
+        type: Object,
+        default: () => { return {} }
+      },
+      colors: {
+        type: Object,
+        default: () => { return {} }
       }
     },
     data () {
       return {
         dialog: false,
         selectedLevel: null
+      }
+    },
+    computed: {
+      spellSlotArray () {
+        return this.item.spellSlots ? [...Array(this.item.maxSpellSlot).keys()] : []
       }
     },
     methods: {
@@ -72,8 +82,7 @@
           this.selectedLevel = row
         }
       }
-    },
-    props: ['item', 'colors']
+    }
   }
 </script>
 

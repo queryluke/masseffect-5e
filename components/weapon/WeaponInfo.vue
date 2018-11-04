@@ -28,6 +28,12 @@
 
 <script>
   export default {
+    props: {
+      weapon: {
+        type: Object,
+        default: () => { return {} }
+      },
+    },
     data () {
       return {
         colors: {
@@ -37,7 +43,6 @@
           'Very Rare': 'deep-purple accent-1'
         }
       }
-    },
-    props: ['weapon']
+    }
   }
 </script>

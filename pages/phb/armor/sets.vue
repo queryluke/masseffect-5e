@@ -38,6 +38,21 @@
 
   export default {
     components: { ArmorSetFilters, ArmorSetList, MobileFilterContainer },
+    data () {
+      const noteOptions = new Set()
+      for (const item of items) {
+        if (item.notes) {
+          for (const note of item.notes.split(',').map(n => n.trim())) {
+            noteOptions.add(note)
+          }
+        }
+      }
+      return {
+        items,
+        noteOptions: [...noteOptions].sort(),
+        itemKey: 'armorSets'
+      }
+    },
     computed: {
       ...mapGetters(['order', 'sortBy', 'filters', 'searchString']),
       search: {
@@ -86,21 +101,6 @@
           })
         }
         return data
-      }
-    },
-    data () {
-      const noteOptions = new Set()
-      for (const item of items) {
-        if (item.notes) {
-          for (const note of item.notes.split(',').map(n => n.trim())) {
-            noteOptions.add(note)
-          }
-        }
-      }
-      return {
-        items,
-        noteOptions: [...noteOptions].sort(),
-        itemKey: 'armorSets'
       }
     },
     head () {

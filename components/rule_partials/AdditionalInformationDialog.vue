@@ -72,11 +72,18 @@
       GalaxyMap,
       MarkdownContent
     },
-    computed: {
-      item () {
-        if (this.mdFile) {
-          return this.mdFile.split('/')
-        }
+    props: {
+      title: {
+        type: String,
+        default: ''
+      },
+      component: {
+        type: String,
+        default: ''
+      },
+      mdFile: {
+        type: String,
+        default: ''
       }
     },
     data () {
@@ -84,10 +91,12 @@
         showAddInfoDialog: false
       }
     },
-    props: {
-      title: String,
-      component: String,
-      mdFile: String
+    computed: {
+      item () {
+        if (this.mdFile) {
+          return this.mdFile.split('/')
+        }
+      }
     }
   }
 </script>

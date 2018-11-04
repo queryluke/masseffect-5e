@@ -22,6 +22,16 @@
   import {mapGetters, mapActions} from 'vuex'
 
   export default {
+    props: {
+      headers: {
+        type: Array,
+        default: () => { return [] }
+      },
+      defaultSort: {
+        type: String,
+        default: ''
+      }
+    },
     computed: {
       ...mapGetters('itemList', {
         getOrder: 'order',
@@ -58,8 +68,7 @@
           this.sortBy = header
         }
       }
-    },
-    props: ['headers', 'defaultSort']
+    }
   }
 </script>
 

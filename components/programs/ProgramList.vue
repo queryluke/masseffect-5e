@@ -25,6 +25,12 @@
     components: {
       SortOptions, ProgramInfo, BookmarkButton
     },
+    props: {
+      items: {
+        type: Array,
+        default: () => { return [] }
+      }
+    },
     data () {
       return {
         headers: [
@@ -33,8 +39,7 @@
           { label: 'Requires Installation', key: 'installation', classes: 'xs3' }
         ]
       }
-    },
-    props: ['items']
+    }
   }
 </script>
 

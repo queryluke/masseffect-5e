@@ -17,14 +17,20 @@
 
   export default {
     components: { ClassFeature },
+    props: {
+      item: {
+        type: Object,
+        default: () => { return {} }
+      },
+      primaryColor: {
+        type: String,
+        default: ''
+      }
+    },
     computed: {
       subClassFeatureLevels () {
         return this.item.progression.filter(level => level.features.includes('subclass'))
       }
-    },
-    props: {
-      item: Object,
-      primaryColor: String
     }
   }
 </script>

@@ -34,6 +34,11 @@ export default {
     PhbToolbar,
     SideNavigation
   },
+  data () {
+    return {
+      searchActive: false
+    }
+  },
   computed: {
     ...mapGetters(['searchString']),
     search: {
@@ -47,11 +52,6 @@ export default {
   },
   created () {
     this.search = ''
-  },
-  data () {
-    return {
-      searchActive: false
-    }
   },
   methods: {
     ...mapActions(['updateSearchString', 'toggleMobileFilterDialog'])

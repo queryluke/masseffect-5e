@@ -5,8 +5,11 @@
 
 <script>
   export default {
-    created () {
-      this.type = this.weapon.type.replace(/\s/, '_').toLowerCase()
+    props: {
+      weapon: {
+        type: Object,
+        default: () => { return {} }
+      }
     },
     data () {
       return {
@@ -19,7 +22,9 @@
         }
       }
     },
-    props: ['weapon']
+    created () {
+      this.type = this.weapon.type.replace(/\s/, '_').toLowerCase()
+    }
   }
 </script>
 

@@ -7,7 +7,17 @@
 
 <script>
   export default {
-    props: ['spell'],
+    props: {
+      spell: {
+        type: Object,
+        default: () => { return {} }
+      },
+    },
+    data () {
+      return {
+        level: ''
+      }
+    },
     created () {
       switch (this.spell.level) {
         case 0:
@@ -24,11 +34,6 @@
           break
         default:
           this.level = `${this.spell.level}th-level`
-      }
-    },
-    data () {
-      return {
-        level: ''
       }
     }
   }

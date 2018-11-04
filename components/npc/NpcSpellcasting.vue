@@ -10,6 +10,12 @@
   import adept from '~/static/data/classes/adept'
 
   export default {
+    props: {
+      spellcasting: {
+        type: Object,
+        default: () => { return {} }
+      }
+    },
     computed: {
       spellList () {
         const spellList = []
@@ -30,8 +36,7 @@
       castable () {
         return spells.filter(s => this.spellcasting.spellList.includes(s.id))
       }
-    },
-    props: ['spellcasting']
+    }
   }
 </script>
 

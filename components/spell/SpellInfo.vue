@@ -58,6 +58,12 @@
     components: {
       SpellClassList, AdvancedOption, SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect
     },
+    props: {
+      spell: {
+        type: Object,
+        default: () => { return {} }
+      },
+    },
     data () {
       return {
         primeTypeCss: {
@@ -68,7 +74,6 @@
           lightning: 'blue--text text--darken-1'
         }
       }
-    },
-    props: ['spell']
+    }
   }
 </script>

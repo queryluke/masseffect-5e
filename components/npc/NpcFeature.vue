@@ -10,7 +10,12 @@
 
 <script>
   export default {
-    props: ['feature']
+    props: {
+      feature: {
+        type: Object,
+        default: () => { return {} }
+      }
+    },
   }
 </script>
 

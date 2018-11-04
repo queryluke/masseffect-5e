@@ -28,6 +28,16 @@
 
   export default {
     components: { SubclassInfo, SpellList, ClassTabs, ClassAttributes, ProgressionTable, MeIcon },
+    data () {
+      const id = this.$route.params.id
+      const item = require(`~/static/data/classes/${this.$route.params.id}.json`)
+      const spells = require(`~/static/data/spells`).filter(spell => spell.availableClasses.includes(id))
+      return {
+        id,
+        item,
+        spells
+      }
+    },
     computed: {
       ...mapGetters(['colors', 'order', 'sortBy']),
       filteredSpells () {
@@ -51,16 +61,6 @@
           }
         })
         return data
-      }
-    },
-    data () {
-      const id = this.$route.params.id
-      const item = require(`~/static/data/classes/${this.$route.params.id}.json`)
-      const spells = require(`~/static/data/spells`).filter(spell => spell.availableClasses.includes(id))
-      return {
-        id,
-        item,
-        spells
       }
     },
     head () {

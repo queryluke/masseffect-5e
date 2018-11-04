@@ -6,17 +6,23 @@
 
 <script>
   export default {
-    created () {
-      this.item = require(`~/static/data/class_features/${this.id}.md`)
+    props: {
+      id: {
+        type: String,
+        default: ''
+      },
+      featureLevel: {
+        type: Object,
+        default: () => { return {} }
+      }
     },
     data () {
       return {
         item: {}
       }
     },
-    props: {
-      id: String,
-      featureLevel: Object
+    created () {
+      this.item = require(`~/static/data/class_features/${this.id}.md`)
     }
   }
 </script>

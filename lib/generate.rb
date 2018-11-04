@@ -21,7 +21,6 @@ class String
   end
 end
 
-require_relative 'configure_monster'
 require_relative 'generate_model'
 require_relative 'generate_config_file'
 require_relative 'config_weapon_mods'

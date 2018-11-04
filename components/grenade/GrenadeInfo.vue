@@ -23,6 +23,11 @@
 
 <script>
   export default {
-    props: ['grenade']
+    props: {
+      grenade: {
+        type: Object,
+        default: () => { return {} }
+      },
+    }
   }
 </script>

@@ -4,7 +4,7 @@
       v-flex(xs12 md4)
         v-select(:items="placementOptions" v-model="placementFilter" label="Placement" multiple menu-props="{maxHeight:'400'}")
       v-flex(xs12 md4)
-        v-select(:items="weaponTypeOptions" v-model="weaponTypeFilter" label="Weapon Availability" menu-props="{maxHeight:'400'}")
+        v-select(:items="weaponTypeOptions" v-model="weaponTypeFilter" label="Weapon Availability" multiple menu-props="{maxHeight:'400'}")
       v-flex(xs12 md4)
         v-select(:items="noteOptions" v-model="noteFilter" label="Benefits" multiple menu-props="{maxHeight:'400'}")
       v-flex(xs12).text-xs-center.hidden-md-and-up
@@ -16,6 +16,22 @@
   const {mapActions, mapGetters} = createNamespacedHelpers('itemList')
 
   export default {
+    props: {
+      itemKey: {
+        type: String,
+        default: ''
+      },
+      noteOptions: {
+        type: Array,
+        default: () => { return [] }
+      }
+    },
+    data () {
+      return {
+        placementOptions: ['Body', 'Barrel', 'Ammo', 'Magazine'],
+        weaponTypeOptions: ['Assault Rifle', 'Heavy Pistol', 'SMG', 'Shotgun', 'Sniper Rifle']
+      }
+    },
     computed: {
       ...mapGetters(['filters']),
       placementFilter: {
@@ -43,18 +59,6 @@
         }
       }
     },
-    data () {
-      return {
-        placementOptions: ['Body', 'Barrel', 'Ammo', 'Magazine'],
-        weaponTypeOptions: [
-          {value: 'assaultRifle', text: 'Assault Rifle'},
-          {value: 'heavyPistol', text: 'Heavy Pistol'},
-          {value: 'smg', text: 'SMG'},
-          {value: 'shotgun', text: 'Shotgun'},
-          {value: 'sniperRifle', text: 'Sniper Rifle'}
-        ]
-      }
-    },
     methods: {
       ...mapActions(['updateFilter']),
       reset () {
@@ -62,8 +66,7 @@
         this.weaponTypeFilter = []
         this.noteFilter = []
       }
-    },
-    props: ['itemKey', 'noteOptions']
+    }
   }
 </script>
 

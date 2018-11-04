@@ -36,6 +36,13 @@
       BestiaryFilters,
       MobileFilterContainer
     },
+    mixins: [CrToInt],
+    data () {
+      return {
+        items,
+        itemKey: 'monsters'
+      }
+    },
     computed: {
       ...mapGetters(['order', 'sortBy', 'filters', 'searchString']),
       search: {
@@ -93,12 +100,6 @@
       })
       this.unitOptions = [...unitOptions].sort()
     },
-    data () {
-      return {
-        items,
-        itemKey: 'monsters'
-      }
-    },
     head () {
       return {
         title: 'Mass Effect 5e | Bestiary',
@@ -110,7 +111,6 @@
     layout: 'phb',
     methods: {
       ...mapActions(['updateSearchString'])
-    },
-    mixins: [CrToInt]
+    }
   }
 </script>

@@ -16,6 +16,16 @@
 
 <script>
   export default {
+    props: {
+      id: {
+        type: String,
+        default: ''
+      },
+      sub: {
+        type: String,
+        default: ''
+      }
+    },
     data () {
       return {
         dialog: false,
@@ -27,10 +37,6 @@
           lightning: 'blue--text text--darken-1'
         }
       }
-    },
-    props: {
-      id: String,
-      sub: String
     }
   }
 </script>

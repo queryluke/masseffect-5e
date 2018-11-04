@@ -36,6 +36,12 @@
       SpellList,
       SpellFilters
     },
+    data () {
+      return {
+        items,
+        itemKey: 'spells'
+      }
+    },
     computed: {
       ...mapGetters(['order', 'sortBy', 'filters', 'searchString']),
       search: {
@@ -85,12 +91,6 @@
           })
         }
         return data
-      }
-    },
-    data () {
-      return {
-        items,
-        itemKey: 'spells'
       }
     },
     head () {

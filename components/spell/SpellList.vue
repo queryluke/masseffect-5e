@@ -37,6 +37,12 @@
     components: {
       SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect, SpellInfo, BookmarkButton, SortOptions
     },
+    props: {
+      items: {
+        type: Array,
+        default: () => { return [] }
+      }
+    },
     data () {
       return {
         headers: [
@@ -48,8 +54,7 @@
           { label: 'Damage/Effect', key: 'damage', classes: 'hidden-md-and-down lg2' }
         ]
       }
-    },
-    props: ['items']
+    }
   }
 </script>
 

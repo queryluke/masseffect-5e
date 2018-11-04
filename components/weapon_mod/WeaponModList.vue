@@ -26,6 +26,12 @@
     components: {
       SortOptions, WeaponModInfo, BookmarkButton
     },
+    props: {
+      items: {
+        type: Array,
+        default: () => { return [] }
+      }
+    },
     data () {
       return {
         headers: [
@@ -36,8 +42,7 @@
           { label: 'Notes', key: 'notes', classes: 'hidden-sm-and-down md3 lg4' }
         ]
       }
-    },
-    props: ['items']
+    }
   }
 </script>
 

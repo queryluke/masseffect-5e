@@ -39,6 +39,12 @@
       ProgramList,
       BookmarkButton
     },
+    data () {
+      return {
+        items,
+        itemKey: 'programs'
+      }
+    },
     computed: {
       ...mapGetters(['order', 'sortBy', 'filters', 'searchString']),
       search: {
@@ -53,7 +59,7 @@
         let data = this.items
         let sortBy = this.sortBy.key
         let order = this.order
-        this.items.sort(function (a, b) {
+        data.sort(function (a, b) {
           return (a[sortBy] === b[sortBy] ? 0 : a[sortBy] > b[sortBy] ? 1 : -1) * order
         })
         if (this.search) {
@@ -66,12 +72,6 @@
           data = data.filter(item => item.installation)
         }
         return data
-      }
-    },
-    data () {
-      return {
-        items,
-        itemKey: 'programs'
       }
     },
     head () {

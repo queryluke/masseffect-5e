@@ -14,9 +14,10 @@
 
 <script>
   export default {
-    computed: {
-      name () {
-        return this.id.replace(/-/g, ' ')
+    props: {
+      id: {
+        type: String,
+        default: ''
       }
     },
     data () {
@@ -24,9 +25,11 @@
         dialog: false
       }
     },
-    props: {
-      id: String
-    }
+    computed: {
+      name () {
+        return this.id.replace(/-/g, ' ')
+      }
+    },
   }
 </script>
 

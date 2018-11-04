@@ -12,13 +12,26 @@
   import {mapActions, mapGetters} from 'vuex'
 
   export default {
+    props: {
+      card: {
+        type: Object,
+        default: () => { return {} }
+      },
+      type: {
+        type: String,
+        default: ''
+      },
+      props: {
+        type: Object,
+        default: () => { return {} }
+      },
+    },
     computed: {
       ...mapGetters(['isBookmarked'])
     },
     methods: {
       ...mapActions(['addBookmark', 'removeBookmark'])
     },
-    props: ['card', 'type', 'props']
   }
 </script>
 

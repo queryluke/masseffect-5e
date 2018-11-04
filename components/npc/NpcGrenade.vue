@@ -8,6 +8,16 @@
 
 <script>
   export default {
+    props: {
+      id: {
+        type: String,
+        default: ''
+      },
+      profBonus: {
+        type: Number,
+        default: 2
+      }
+    },
     computed: {
       text () {
         return this.grenade.body.replace('As an Action, t', 'T')
@@ -15,8 +25,7 @@
       grenade () {
         return require(`~/static/data/grenades/${this.id}.md`)
       }
-    },
-    props: ['id', 'profBonus']
+    }
   }
 </script>
 

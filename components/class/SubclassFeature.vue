@@ -12,6 +12,20 @@
 
   export default {
     components: { ClassFeature },
+    props: {
+      item: {
+        type: Object,
+        default: () => { return {} }
+      },
+      level: {
+        type: Object,
+        default: () => { return {} }
+      },
+      primaryColor: {
+        type: String,
+        default: ''
+      }
+    },
     computed: {
       featureIndex () {
         let index = 0
@@ -24,11 +38,6 @@
           }
         }
       }
-    },
-    props: {
-      item: Object,
-      level: Object,
-      primaryColor: String
     }
   }
 </script>

@@ -32,6 +32,19 @@
 
   export default {
     components: { WeaponModFilters, WeaponModList, MobileFilterContainer },
+    data () {
+      const noteOptions = new Set()
+      for (const item of items) {
+        for (const note of item.notes.split(',').map(n => n.trim())) {
+          noteOptions.add(note)
+        }
+      }
+      return {
+        items,
+        noteOptions: [...noteOptions].sort(),
+        itemKey: 'weaponMods'
+      }
+    },
     computed: {
       ...mapGetters(['order', 'sortBy', 'filters', 'searchString']),
       search: {
@@ -64,9 +77,10 @@
           data = data.filter(item => this.filters.weaponMods.placement.includes(item.placement))
         }
         if (this.filters.weaponMods.weaponType.length > 0) {
+          console.log(this.filters.weaponMods.weaponType)
           data = data.filter(item => {
-            for (const t of this.filters.weaponMods.weaponType) {
-              if (item[t]) {
+            for (const type of item.availability.split(',').map(n => n.trim())) {
+              if (this.filters.weaponMods.weaponType.includes(type) || type === 'All') {
                 return item
               }
             }
@@ -82,19 +96,6 @@
           })
         }
         return data
-      }
-    },
-    data () {
-      const noteOptions = new Set()
-      for (const item of items) {
-        for (const note of item.notes.split(',').map(n => n.trim())) {
-          noteOptions.add(note)
-        }
-      }
-      return {
-        items,
-        noteOptions: [...noteOptions].sort(),
-        itemKey: 'weaponMods'
       }
     },
     head () {

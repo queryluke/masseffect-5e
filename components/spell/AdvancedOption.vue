@@ -6,7 +6,14 @@
 
 <script>
   export default {
-    props: ['option']
+    props: {
+      option: {
+        type: Object,
+        default: () => {
+          return {}
+        }
+      }
+    }
   }
 </script>
 

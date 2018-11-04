@@ -6,12 +6,14 @@
 
 <script>
   export default {
-    computed: {
-      link () {
-        return this.sources[this.source].link
+    props: {
+      pages: {
+        type: String,
+        default: ''
       },
-      title () {
-        return this.sources[this.source].title
+      source: {
+        type: String,
+        default: 'srd'
       }
     },
     data () {
@@ -28,11 +30,12 @@
         }
       }
     },
-    props: {
-      pages: String,
-      source: {
-        type: String,
-        default: 'srd'
+    computed: {
+      link () {
+        return this.sources[this.source].link
+      },
+      title () {
+        return this.sources[this.source].title
       }
     }
   }

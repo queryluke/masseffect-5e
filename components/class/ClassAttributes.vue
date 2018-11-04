@@ -26,7 +26,16 @@
 
 <script>
   export default {
-    props: ['item', 'primaryColor']
+    props: {
+      item: {
+        type: Object,
+        default: () => { return {} }
+      },
+      primaryColor: {
+        type: String,
+        default: ''
+      }
+    }
   }
 </script>
 

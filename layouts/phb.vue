@@ -46,6 +46,12 @@ export default {
     PhbToolbar,
     SideNavigation
   },
+  data () {
+    return {
+      searchActive: false,
+      ruleList: this.$vuetify.breakpoint.mdAndUp
+    }
+  },
   computed: {
     ...mapGetters(['pages', 'searchString']),
     page () {
@@ -65,12 +71,6 @@ export default {
   },
   created () {
     this.search = ''
-  },
-  data () {
-    return {
-      searchActive: false,
-      ruleList: this.$vuetify.breakpoint.mdAndUp
-    }
   },
   methods: {
     ...mapActions(['updateSearchString', 'toggleMobileFilterDialog']),

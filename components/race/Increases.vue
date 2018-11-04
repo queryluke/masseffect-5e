@@ -4,12 +4,17 @@
 
 <script>
   export default {
+    props: {
+      data: {
+        type: Array,
+        default: () => { return [] }
+      }
+    },
     computed: {
       text () {
         return this.data.map(i => this.increase(i)).join(', ')
       }
     },
-    props: ['data'],
     methods: {
       increase (data) {
         return `+${data.amount} ${data.ability}`
