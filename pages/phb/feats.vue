@@ -16,16 +16,18 @@
       v-expansion-panel-content(v-for="feat in items" v-bind:feat="feat" v-bind:key="feat.name").large-panel
         div(slot="header")
           v-layout
-            v-flex.xs2.md1
+            v-flex.xs2.sm1
               v-avatar(:class="[feat.new ? 'deep-purple' : 'deep-orange']" size="30px")
                 span(v-if="feat.new").white--text New
                 span(v-else).white--text PHB
-            v-flex.xs10.md3.pt-1
+            v-flex.xs10.sm5.lg2.pt-1
               strong {{ feat.name }}
-            v-flex.hidden-sm-and-down.md-8.pt-1 {{ feat.note }}
+            v-flex.hidden-md-and-down.lg3
+              div(v-if="feat.prerequisite") {{ feat.prerequisite }}
+              div(v-else) -
+            v-flex.hidden-xs-only.sm6.lg6 {{ feat.note }}
         v-card
           v-card-text.grey.lighten-3
-            p(v-if="feat.page_number") p. {{ feat.page_number }}
             markdown-file(:id="feat.id" itemType="feats")
 </template>
 

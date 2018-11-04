@@ -3,257 +3,210 @@
     "id": "a-beautiful-mine",
     "name": "A Beautiful Mine",
     "note": "You're an ace with explosives.",
-    "prerequisite": null
+    "new": true
   },
   {
     "id": "actor",
     "name": "Actor",
-    "note": "+1 Charisma, skilled at mimicry and dramatics",
-    "prerequisite": null,
-    "new": true
+    "note": "+1 Charisma, skilled at mimicry and dramatics"
   },
   {
     "id": "alert",
     "name": "Alert",
-    "note": "+5 to Initiative, can't be surprised, no advantage for hidden attackers",
-    "prerequisite": null,
-    "new": true
+    "note": "+5 to Initiative, can't be surprised, no advantage for hidden attackers"
   },
   {
     "id": "athlete",
     "name": "Athlete",
-    "note": "+1 to Strength or Dexterity - you have undergone extensive physical training",
-    "prerequisite": null,
-    "new": true
+    "note": "+1 to Strength or Dexterity - you have undergone extensive physical training"
   },
   {
     "id": "big-game-hunter",
     "name": "Big Game Hunter",
     "note": "+1 Strength, additional damage to larger, organic creatures",
-    "prerequisite": null
+    "new": true
   },
   {
     "id": "biotic-slayer",
     "name": "Biotic Slayer",
-    "note": "You have practiced techniques useful in melee combat against biotic wielders",
-    "prerequisite": null,
-    "new": true
+    "note": "You have practiced techniques useful in melee combat against biotic wielders"
   },
   {
     "id": "charger",
     "name": "Charger",
-    "note": "Make a melee attack or shove after the Dash action",
-    "prerequisite": null,
-    "new": true
+    "note": "Make a melee attack or shove after the Dash action"
   },
   {
     "id": "dual-wielder",
     "name": "Dual Wielder",
-    "note": "+1 AC bonus, wield heavier weapons, draw or stow two weapons at once",
-    "prerequisite": null,
-    "new": true
+    "note": "+1 AC bonus, wield heavier weapons, draw or stow two weapons at once"
   },
   {
     "id": "durable",
     "name": "Durable",
-    "note": "+1 Constitution, minimum Con modifier x2 on spent Hit Dice",
-    "prerequisite": null,
-    "new": true
+    "note": "+1 Constitution, minimum Con modifier x2 on spent Hit Dice"
   },
   {
     "id": "elemental-adept",
     "name": "Elemental Adept",
     "note": "Spells you cast ignore resistance to damage of the chosen type",
-    "prerequisite": null,
-    "new": true
+    "prerequisite": "The ability to cast at least one spell"
   },
   {
     "id": "enhanced-optics",
     "name": "Enhanced Optics",
     "note": "Increased vision. Proficiency in Perception, Investigation, and Insight",
-    "prerequisite": null
+    "new": true
   },
   {
     "id": "featherlight",
     "name": "Featherlight",
     "note": "+1 Dexterity, increased speed and you don't set off weight based traps",
-    "prerequisite": null
+    "prerequisite": "Dexterity 12 or higher",
+    "new": true
   },
   {
     "id": "grappler",
     "name": "Grappler",
     "note": "Hold your own in close-quarters grappling",
-    "prerequisite": null,
-    "new": true
+    "prerequisite": "Strength 13 or higher"
   },
   {
     "id": "grenadier",
     "name": "Grenadier",
-    "note": "Additional grenades. Can throw grenades for as an action for additional benefits.",
-    "prerequisite": null
+    "note": "Additional grenades. Can throw grenades as an action for additional benefits.",
+    "prerequisite": "Dexterity or Strength 12 or higher",
+    "new": true
   },
   {
     "id": "hair-trigger",
     "name": "Hair Trigger",
     "note": "+1 Dexterity, mastery of Double Tap weapons",
-    "prerequisite": null
+    "prerequisite": "Dexterity 13 or higher",
+    "new": true
   },
   {
     "id": "heavily-armored",
     "name": "Heavily Armored",
     "note": "+1 Strength, proficiency with heavy armor",
-    "prerequisite": null,
-    "new": true
+    "prerequisite": "Proficiency with medium armor"
   },
   {
     "id": "heavy-armor-master",
     "name": "Heavy Armor Master",
     "note": "+1 Strength, damage reduction from nonmagical weapons",
-    "prerequisite": null,
-    "new": true
+    "prerequisite": "Proficiency with heavy armor"
   },
   {
     "id": "keen-mind",
     "name": "Keen Mind",
-    "note": "+1 Intelligence, track time, direction, and detail with uncanny precision",
-    "prerequisite": null,
-    "new": true
+    "note": "+1 Intelligence, track time, direction, and detail with uncanny precision"
   },
   {
     "id": "lightly-armored",
     "name": "Lightly Armored",
-    "note": "+1 Strength or Dexterity, proficiency with light armor",
-    "prerequisite": null,
-    "new": true
+    "note": "+1 Strength or Dexterity, proficiency with light armor"
   },
   {
     "id": "linguist",
     "name": "Linguist",
-    "note": "+1 Intelligence, additional languages, create written ciphers",
-    "prerequisite": null,
-    "new": true
+    "note": "+1 Intelligence, additional languages, create written ciphers"
   },
   {
     "id": "lucky",
     "name": "Lucky",
-    "note": "You have inexplicable luck",
-    "prerequisite": null,
-    "new": true
+    "note": "You have inexplicable luck"
   },
   {
     "id": "medium-armor-master",
     "name": "Medium Armor Master",
     "note": "You have practiced moving in medium armor",
-    "prerequisite": null,
-    "new": true
+    "prerequisite": "Proficiency with medium armor"
   },
   {
     "id": "melee-specialist",
     "name": "Melee Specialist",
-    "note": "+1 Strength or Dexterity, additional attacks with melee weapons",
-    "prerequisite": null
+    "note": "+1 Strength or Dexterity, additional attacks with melee weapons"
   },
   {
     "id": "mobile",
     "name": "Mobile",
-    "note": "You are exceptionally speedy and agile",
-    "prerequisite": null,
-    "new": true
+    "note": "You are exceptionally speedy and agile"
   },
   {
     "id": "moderately-armored",
     "name": "Moderately Armored",
     "note": "+1 Strength or Dexterity, proficiency with medium armor and shields",
-    "prerequisite": null,
-    "new": true
+    "prerequisite": "Proficiency with light armor"
   },
   {
     "id": "observant",
     "name": "Observant",
-    "note": "+1 Wisdom, quick to notice details of your environment",
-    "prerequisite": null,
-    "new": true
+    "note": "+1 Wisdom, quick to notice details of your environment"
   },
   {
     "id": "resilient",
     "name": "Resilient",
-    "note": "+1 and proficiency with saving throws to a chosen ability score",
-    "prerequisite": null,
-    "new": true
+    "note": "+1 and proficiency with saving throws to a chosen ability score"
   },
   {
     "id": "savage-attacker",
     "name": "Savage Attacker",
-    "note": "Reroll damage dice for melee weapon attacks",
-    "prerequisite": null,
-    "new": true
+    "note": "Reroll damage dice for melee weapon attacks"
   },
   {
     "id": "sentinel",
     "name": "Sentinel",
-    "note": "Take advantage of every drop in any enemy's guard",
-    "prerequisite": null,
-    "new": true
+    "note": "Take advantage of every drop in any enemy's guard"
   },
   {
     "id": "sharpshooter",
     "name": "Sharpshooter",
-    "note": "Ranged weapons mastery - make shots that others find impossible",
-    "prerequisite": null,
-    "new": true
+    "note": "Ranged weapons mastery - make shots that others find impossible"
   },
   {
     "id": "skilled",
     "name": "Skilled",
-    "note": "Gain proficiency in 3 additional skills",
-    "prerequisite": null,
-    "new": true
+    "note": "Gain proficiency in 3 additional skills"
   },
   {
     "id": "skulker",
     "name": "Skulker",
     "note": "You are expert at slinking through shadows",
-    "prerequisite": null,
-    "new": true
+    "prerequisite": "Dexterity 13 or higher."
   },
   {
     "id": "squad-leader",
     "name": "Squad Leader",
     "note": "Heal and inspire allies to overcome negative conditions.",
-    "prerequisite": null
+    "new": true
   },
   {
     "id": "tavern-brawler",
     "name": "Tavern Brawler",
-    "note": "+1 Strength or Constitution, improved improvised weapons",
-    "prerequisite": null,
-    "new": true
+    "note": "+1 Strength or Constitution, improved improvised weapons"
   },
   {
     "id": "tough",
     "name": "Tough",
-    "note": "Gain +2 hit points per character level",
-    "prerequisite": null,
-    "new": true
+    "note": "Gain +2 hit points per character level"
   },
   {
     "id": "war-caster",
     "name": "War Caster",
     "note": "You have practiced casting spells in the midst of combat",
-    "prerequisite": null,
-    "new": true
+    "prerequisite": "The ability to cast at least one spell"
   },
   {
     "id": "wealth-of-knowledge",
     "name": "Wealth of Knowledge",
     "note": "+1 Intelligence, advantage on Intelligence based skill checks",
-    "prerequisite": null
+    "prerequisite": "Intelligence 13 or higher",
+    "new": true
   },
   {
     "id": "weapon-master",
     "name": "Weapon Master",
-    "note": "+1 Strength or Dexterity, 2 additional weapon proficiencies",
-    "prerequisite": null,
-    "new": true
+    "note": "+1 Strength or Dexterity, 2 additional weapon proficiencies"
   }
 ]
