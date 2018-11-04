@@ -215,7 +215,7 @@
           {
             name: 'Roll 20 Character Sheets',
             image: '/images/spells/combat.svg',
-            desc: 'EnricoDandolo1, John'
+            desc: 'EnricoDandolo1, John G.'
           },
           {
             name: 'GameMasterPo',
