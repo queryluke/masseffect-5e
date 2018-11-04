@@ -89,7 +89,6 @@
 
 <script>
   import RuleCard from '~/components/cards/RuleCard'
-  import {mapActions} from 'vuex'
   import mechanics from '~/static/data/armor_mechanics'
 
   export default {
@@ -107,9 +106,6 @@
         ]
       }
     },
-    layout: 'phb',
-    methods: {
-      ...mapActions(['showGlobalDialog'])
-    }
+    layout: 'phb'
   }
 </script>
