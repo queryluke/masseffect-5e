@@ -114,7 +114,7 @@ divide the sum by 10. Then find the CR associated with that hit point value on t
 is greater than the AC on the Monster Stats table, increase the defensive CR by 1 for every 2 points above the target AC.
 
 #### Final CR
-The final CR is the average of the offensive and defensive CR, rounded up. If this is for a starship, notate a `+` symbol
+The final CR is the average of the offensive and defensive CR, rounded up. If this is for a starship, notate a __+__ symbol
 beside the CR.
 
 #### Transport example:
@@ -123,12 +123,12 @@ beside the CR.
 - SP: 0
 - Attacks: 35 & 55
 
-`Offensive CR = (35 + 55) / 2 = 45`, corresponds with a CR of 7
+__Offensive CR = (35 + 55) / 2 = 45__, corresponds with a CR of 7
 
-`Defensive CR = 250 + 0 = 250`, corresponds with a CR of 12. However, the target AC for CR 12 is only 17. So the final Defensive
+__Defensive CR = 250 + 0 = 250__, corresponds with a CR of 12. However, the target AC for CR 12 is only 17. So the final Defensive
 CR become 13 (+1 because the AC is 20).
 
-`Final CR = (13 + 7) / 2 = 10`
+__Final CR = (13 + 7) / 2 = 10__
 
 #### Starship example:
 - AC: 25
@@ -136,12 +136,12 @@ CR become 13 (+1 because the AC is 20).
 - SP: 600
 - Attack: 1100 & 900
 
-`Offensive CR = ((1100 + 900) / 2) / 10 = 100`, corresponds with a CR of 16
+__Offensive CR = ((1100 + 900) / 2) / 10 = 100__, corresponds with a CR of 16
 
-`Defensive CR = (2500 + 600) / 10 = 310`, corresponds with a CR of 16. However, the target AC for CR 16 is only 18. So the final Defensive
+__Defensive CR = (2500 + 600) / 10 = 310__, corresponds with a CR of 16. However, the target AC for CR 16 is only 18. So the final Defensive
 CR become 19 (+3 because the AC is 25).
 
-`Final CR = (16 + 19) / 2 = 17.5 = 18+`
+__Final CR = (16 + 19) / 2 = 17.5 = 18+__
 
 ### Additional Details
 Finally, write a short description about your vehicle and notate if it has any special abilities, additional systems,

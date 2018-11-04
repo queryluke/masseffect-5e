@@ -22,8 +22,8 @@ export default {
   },
   props: {
     error: {
-      type: String,
-      default: () => { return '' }
+      type: Object,
+      default: () => { return {} }
     }
   }
 }

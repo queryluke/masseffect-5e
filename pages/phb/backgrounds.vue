@@ -5,7 +5,7 @@
       The sample backgrounds presented here provide both concrete benefits (features, proficiencies, and languages) and
       roleplaying suggestions.
     p.
-      If you create new backgrounds for your campaign, #[a(mailto="info@n7.world") let us know] so we can include them and give you credit!
+      If you create new backgrounds for your campaign, #[nuxt-link(to="/contributing") let us know] so we can include them and give you credit!
     v-expansion-panel.mb-2
       v-expansion-panel-content(v-for="item in backgrounds" v-bind:key="item.id").large-panel
         div(slot="header") {{ item.name }}
