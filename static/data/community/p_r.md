@@ -2,7 +2,7 @@
 name: "Additional Paragon / Renegade Rules"
 ---
 
-If you want to add some additional mechanics to the <nuxt-link to="/phb/rules/beyond-first-level#paragon-renegade>Paragon & Renegade</nuxt-link>
+If you want to add some additional mechanics to the <nuxt-link to="/phb/rules/beyond-first-level#paragon-renegade">Paragon & Renegade</nuxt-link>
 rules, consider the following. _These rules are in addition to the Paragon & Renegade rules_.
 
 When your Paragon or Renegade score is higher than the other, choose 2 Charisma-linked skills. You always have advantage
