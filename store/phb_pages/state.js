@@ -50,6 +50,9 @@ export default {
     'phb-appendix-skills': {
       name: 'Skills'
     },
+    'phb-appendix-found-codices': {
+      name: 'Found Codices'
+    },
     'phb-classes': {
       name: 'Classes'
     },

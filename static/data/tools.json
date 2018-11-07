@@ -61,15 +61,15 @@
   },
   {
     "id": "starship_system_drive",
-    "name": "Starship System (Power Core)",
+    "name": "Starship System (Drive)",
     "type": "starship",
-    "cost": null
+    "cost": 0
   },
   {
     "id": "starship_system_ews",
-    "name": "Starship System (Cyber Warfare)",
+    "name": "Starship System (EWS)",
     "type": "starship",
-    "cost": null
+    "cost": 0
   },
   {
     "id": "starship_system_helm",
@@ -84,10 +84,10 @@
     "cost": null
   },
   {
-    "id": "starship_system_sensors",
-    "name": "Starship System (Specialty)",
+    "id": "starship_system_ssc",
+    "name": "Starship System (SSC)",
     "type": "starship",
-    "cost": null
+    "cost": 0
   },
   {
     "id": "starship_system_weapons",

@@ -62,7 +62,7 @@
         let sortBy = this.sortBy.key
         let order = this.order
         let self = this
-        data.slice().sort(function (a, b) {
+        data.sort(function (a, b) {
           switch (sortBy) {
             case 'type':
             case 'name':

@@ -90,7 +90,8 @@
             icon: 'vertical_split',
             items: [
               { href: '/phb/appendix/conditions', title: 'Conditions' },
-              { href: '/phb/appendix/skills', title: 'Skills' }
+              { href: '/phb/appendix/skills', title: 'Skills' },
+              { href: '/phb/appendix/found-codices', title: 'Found Codices' }
             ]
           },
           {

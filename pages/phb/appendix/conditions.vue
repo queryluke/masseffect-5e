@@ -27,7 +27,7 @@
     },
     head () {
       return {
-        title: 'Mass Effect 5e | Rules - General',
+        title: 'Mass Effect 5e | Appendix - Conditions',
         meta: [
           { hid: 'description', name: 'description', content: 'There are new conditions in Mass Effect 5e that add variety to combat.' }
         ]

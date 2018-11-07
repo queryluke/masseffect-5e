@@ -226,7 +226,7 @@
             name: 'Other Shout outs!',
             image: 'https://vignette.wikia.nocookie.net/masseffect/images/3/32/ME1_Paragon.png/revision/latest?cb=20120309175829',
             desc: 'Mel Bee, Joey C., Connor C., MonocledMutineer, kstrtroi, HadesJester, Lodus, BenutzernameIstBereitsVergeben ' +
-            ' Dor, J. Tickner, fkzd, Gabe,  and any one who has contacted us with ideas or words of motivation!'
+            ' Dor, J. Tickner, fkzd, Gabe, and any one who has contacted us with ideas or words of motivation!'
           }
         ]
       }
