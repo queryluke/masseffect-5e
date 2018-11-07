@@ -55,6 +55,12 @@
     v-container(grid-list-xl)
       v-layout(row wrap justify-center)
         v-flex(xs12 sm6 md4)
+          v-alert(:value="true" type="warning").black--text
+            p.
+              A new Player's Manual for v0.9.0 will be available this weekend: November 10th, 2018
+    //v-container(grid-list-xl)
+      v-layout(row wrap justify-center)
+        v-flex(xs12 sm6 md4)
           v-alert(:value="true" type="warning").black--text.
             The PDF is auto-generated from compoents on the website, therefore is very barebones and aesthetically limited. We
             will work on an official PDF version of the rules after our v1.0.0 release.
