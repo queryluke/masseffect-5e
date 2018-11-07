@@ -28,7 +28,7 @@ And in some rare cases a small group of a race may have found passage onboard an
 <a href="http://masseffect.wikia.com/wiki/Batarian_Scrapper" target="_blank">were recruited</a>
 as security assets on Ark Paarchero. Therefore, most races are available in either setting. There are a few few races that
 we've deemed inappropriate for Andromeda settings, but the final ruling is at the discretion of your Galaxy Master.
-See the ["A Universe to Explore"](/phb/intro#universe-to-explore) section for more information about the two Galaxies.
+See the <nuxt-link to="/phb/intro#universe-to-explore">A Universe to Explore</nuxt-link> section for more information about the two Galaxies.
 
 <h3 class="mt-3">Class Restrictions <v-chip color="secondary" text-color="white" class="v-chip--x-small">new</v-chip></h3>
 In Mass Effect 5e, class options are restricted by the selected race. The primary reason is that biotic abilities available
