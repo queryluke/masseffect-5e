@@ -12,7 +12,17 @@ override subsystems and take full control of the craft.
 __Vehicle Handling__. You ability in the pilot seat gives you additional insight when taking the Maneuver or Hard Maneuver
 action during starship combat.
 
-__Investigation__. You gain additional insight when reviewing flight patterns and ship's logs.
+__Insight__. Gain additional insight when assessing the tales of others' piloting feats.
 
-__Engineering__. You have a pretty good understanding of how much a vehicle can handle. You gain additional insight
-when assessing how
+__Performance__. Gain additional insight when using Air or Space transports or Starships to make fantastic maneuvers
+or awe-inspiring piloting feats.
+
+__Practiced Maneuver__. Once per long rest, you can execute a practiced maneuver. Gain the benefits of a Hard Maneuver.
+Creatures on board your ship automatically succeed their Constitution saving throws. 
+
+Activity | DC
+--- | ---
+Hastily leave orbit under duress | 15
+Crash land | 20  
+Navigated a asteroid field or through obstacles | varies 
+

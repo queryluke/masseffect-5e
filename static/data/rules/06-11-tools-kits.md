@@ -19,9 +19,21 @@ Thus, to make tool proficiencies more attractive, Xanathar's Guide to Everything
 skills. The first is that combining a tool with a skill gives the player advantage when making the skill check.
 The second benefit is that tools provide additional non-combat features.
 
+__Advantage or Added Benefit__. When the character combines their tool proficiency with a skill, they gain _additional insight_ 
+which means the operative either gains advantage on the skill check or the can gain an added benefit, decided by the GM. 
+
 For example, a character that is proficient with Hacking Tools gains advantage when combining their tool proficiency
-with an Intelligence (Investigation) check when utilizing networked systems (like the exonet). The same character
-can perform activities during a short rest such as falsifying electronic documents.
+with an Intelligence (Investigation) check when utilizing networked systems (like the exonet) or they might gain
+and added benefit, such as finding some additional information or key codes.
+
+__Unique Skill__. Operatives proficient in a tool have a unique activity they can perform during a sort or long rest.
+For example, a character proficient with Armorsmith's Workbench can craft armor or attempt to remove mods. 
+
+__Sampe Activities__. Each tool also has sample activity DCs. These are examples and not an exhaustive list. GMs can adjust
+DCs or create new activities as they see fit. These activities require a skill check, but the skill used it up to the GM.
+For example, an operative proficient with hacking tools can disable a security system. This would likely require an
+Intelligence (Electronics) check, but if the security system required splicing wires, it might require a Dexterity (Sleight of Hand)
+check instead.
 
 <v-btn to="/phb/tools-kits" color="primary">Tools & Kits</v-btn>
 
