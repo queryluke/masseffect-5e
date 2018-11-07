@@ -1,9 +1,9 @@
 {
-  "id": "sentinel",
-  "name": "Sentinel",
-  "description": "The Sentinel is able to combine tech and biotics to manipulate the environment, disable and track enemies, or defend the party. In addition to complete weapons training, Sentinels are equipped with an advanced shield that makes taking cover much less necessary and rushing their enemies much more productive. Because Sentinels have access to both biotic spells and tech powers and use Charisma as their spellcasting modifier.\n",
+  "id": "alt_sentinel",
+  "name": "Sentinel (Alternative)",
+  "description": "The Sentinel is able to combine tech and biotics to manipulate the environment, disable and track enemies, or defend the party. In addition to complete weapons training, Sentinels are equipped with an advanced shield that makes taking cover much less necessary and rushing their enemies much more productive. Because Sentinels have access to both biotic spells and tech powers, they have two Spellcasting Skills, Spell Attack Modifiers, and Spell Save DCs. Intelligence is the skill used for all tech powers, and Wisdom is used as the skill for all biotic powers.\n",
   "snippet": "Sentinels are unique, bringing both tech and biotic abilities to the battlefield.\n",
-  "primaryAbility": "Charisma",
+  "primaryAbility": "Int or Wis",
   "hitDie": 10,
   "minHitDieRoll": 6,
   "armorProficiencies": [
@@ -79,12 +79,14 @@
       "title": "Spells Known"
     },
     {
-      "title": "Spell Slots"
+      "title": "Tech Points"
     },
     {
-      "title": "Spell Level"
+      "title": "Tech Point Limit"
     }
   ],
+  "spellSlots": true,
+  "maxSpellSlot": 3,
   "progression": [
     {
       "level": 1,
@@ -96,9 +98,14 @@
       "barrierUses": 2,
       "barrierTicks": 3,
       "cantrips": 2,
-      "spellsKnown": 2,
-      "spellSlots": 1,
-      "spellLevel": 1
+      "spellsKnown": 3,
+      "techPoints": 2,
+      "techPointLimit": 1,
+      "spellSlots": {
+        "1": null,
+        "2": null,
+        "3": null
+      }
     },
     {
       "level": 2,
@@ -109,9 +116,14 @@
       "barrierUses": 2,
       "barrierTicks": 3,
       "cantrips": 2,
-      "spellsKnown": 3,
-      "spellSlots": 2,
-      "spellLevel": 1
+      "spellsKnown": 4,
+      "techPoints": 2,
+      "techPointLimit": 1,
+      "spellSlots": {
+        "1": "2",
+        "2": null,
+        "3": null
+      }
     },
     {
       "level": 3,
@@ -122,9 +134,14 @@
       "barrierUses": 3,
       "barrierTicks": 3,
       "cantrips": 2,
-      "spellsKnown": 4,
-      "spellSlots": 2,
-      "spellLevel": 1
+      "spellsKnown": 5,
+      "techPoints": 3,
+      "techPointLimit": 1,
+      "spellSlots": {
+        "1": "3",
+        "2": null,
+        "3": null
+      }
     },
     {
       "level": 4,
@@ -135,9 +152,14 @@
       "barrierUses": 3,
       "barrierTicks": 3,
       "cantrips": 3,
-      "spellsKnown": 5,
-      "spellSlots": 2,
-      "spellLevel": 1
+      "spellsKnown": 6,
+      "techPoints": 4,
+      "techPointLimit": 1,
+      "spellSlots": {
+        "1": "4",
+        "2": null,
+        "3": null
+      }
     },
     {
       "level": 5,
@@ -146,9 +168,14 @@
       "barrierUses": 3,
       "barrierTicks": 4,
       "cantrips": 3,
-      "spellsKnown": 6,
-      "spellSlots": 2,
-      "spellLevel": 2
+      "spellsKnown": 7,
+      "techPoints": 6,
+      "techPointLimit": 1,
+      "spellSlots": {
+        "1": "6",
+        "2": null,
+        "3": null
+      }
     },
     {
       "level": 6,
@@ -159,9 +186,14 @@
       "barrierUses": 4,
       "barrierTicks": 4,
       "cantrips": 3,
-      "spellsKnown": 7,
-      "spellSlots": 2,
-      "spellLevel": 2
+      "spellsKnown": 8,
+      "techPoints": 6,
+      "techPointLimit": 1,
+      "spellSlots": {
+        "1": "6",
+        "2": null,
+        "3": null
+      }
     },
     {
       "level": 7,
@@ -172,9 +204,14 @@
       "barrierUses": 4,
       "barrierTicks": 4,
       "cantrips": 3,
-      "spellsKnown": 8,
-      "spellSlots": 2,
-      "spellLevel": 2
+      "spellsKnown": 9,
+      "techPoints": 7,
+      "techPointLimit": 1,
+      "spellSlots": {
+        "1": "7",
+        "2": null,
+        "3": null
+      }
     },
     {
       "level": 8,
@@ -185,9 +222,14 @@
       "barrierUses": 4,
       "barrierTicks": 4,
       "cantrips": 3,
-      "spellsKnown": 9,
-      "spellSlots": 2,
-      "spellLevel": 2
+      "spellsKnown": 10,
+      "techPoints": 7,
+      "techPointLimit": 1,
+      "spellSlots": {
+        "1": "7",
+        "2": null,
+        "3": null
+      }
     },
     {
       "level": 9,
@@ -196,9 +238,14 @@
       "barrierUses": 4,
       "barrierTicks": 5,
       "cantrips": 3,
-      "spellsKnown": 10,
-      "spellSlots": 2,
-      "spellLevel": 3
+      "spellsKnown": 11,
+      "techPoints": 11,
+      "techPointLimit": 2,
+      "spellSlots": {
+        "1": "7",
+        "2": "2",
+        "3": null
+      }
     },
     {
       "level": 10,
@@ -209,22 +256,30 @@
       "barrierUses": 4,
       "barrierTicks": 5,
       "cantrips": 4,
-      "spellsKnown": 10,
-      "spellSlots": 2,
-      "spellLevel": 3
+      "spellsKnown": 12,
+      "techPoints": 11,
+      "techPointLimit": 2,
+      "spellSlots": {
+        "1": "7",
+        "2": "2",
+        "3": null
+      }
     },
     {
       "level": 11,
       "proficiencyBonus": 4,
-      "features": [
-        "l5t_1"
-      ],
+      "features": [],
       "barrierUses": 4,
       "barrierTicks": 5,
       "cantrips": 4,
-      "spellsKnown": 11,
-      "spellSlots": 3,
-      "spellLevel": 3
+      "spellsKnown": 13,
+      "techPoints": 13,
+      "techPointLimit": 2,
+      "spellSlots": {
+        "1": "7",
+        "2": "3",
+        "3": null
+      }
     },
     {
       "level": 12,
@@ -235,22 +290,30 @@
       "barrierUses": 5,
       "barrierTicks": 5,
       "cantrips": 4,
-      "spellsKnown": 11,
-      "spellSlots": 3,
-      "spellLevel": 3
+      "spellsKnown": 14,
+      "techPoints": 13,
+      "techPointLimit": 2,
+      "spellSlots": {
+        "1": "7",
+        "2": "3",
+        "3": null
+      }
     },
     {
       "level": 13,
       "proficiencyBonus": 5,
-      "features": [
-        "l5t_2"
-      ],
+      "features": [],
       "barrierUses": 5,
       "barrierTicks": 6,
       "cantrips": 4,
-      "spellsKnown": 12,
-      "spellSlots": 3,
-      "spellLevel": 3
+      "spellsKnown": 15,
+      "techPoints": 15,
+      "techPointLimit": 2,
+      "spellSlots": {
+        "1": "7",
+        "2": "4",
+        "3": null
+      }
     },
     {
       "level": 14,
@@ -261,22 +324,30 @@
       "barrierUses": 5,
       "barrierTicks": 6,
       "cantrips": 4,
-      "spellsKnown": 12,
-      "spellSlots": 3,
-      "spellLevel": 3
+      "spellsKnown": 16,
+      "techPoints": 15,
+      "techPointLimit": 2,
+      "spellSlots": {
+        "1": "7",
+        "2": "4",
+        "3": null
+      }
     },
     {
       "level": 15,
       "proficiencyBonus": 5,
-      "features": [
-        "l5t_3"
-      ],
+      "features": [],
       "barrierUses": 5,
       "barrierTicks": 6,
       "cantrips": 4,
-      "spellsKnown": 13,
-      "spellSlots": 3,
-      "spellLevel": 3
+      "spellsKnown": 17,
+      "techPoints": 17,
+      "techPointLimit": 2,
+      "spellSlots": {
+        "1": "7",
+        "2": "5",
+        "3": null
+      }
     },
     {
       "level": 16,
@@ -287,22 +358,30 @@
       "barrierUses": 5,
       "barrierTicks": 6,
       "cantrips": 4,
-      "spellsKnown": 13,
-      "spellSlots": 3,
-      "spellLevel": 3
+      "spellsKnown": 18,
+      "techPoints": 17,
+      "techPointLimit": 2,
+      "spellSlots": {
+        "1": "7",
+        "2": "5",
+        "3": null
+      }
     },
     {
       "level": 17,
       "proficiencyBonus": 6,
-      "features": [
-        "l5t_4"
-      ],
+      "features": [],
       "barrierUses": 6,
       "barrierTicks": 7,
       "cantrips": 4,
-      "spellsKnown": 14,
-      "spellSlots": 4,
-      "spellLevel": 3
+      "spellsKnown": 19,
+      "techPoints": 20,
+      "techPointLimit": 3,
+      "spellSlots": {
+        "1": "7",
+        "2": "6",
+        "3": "1"
+      }
     },
     {
       "level": 18,
@@ -313,9 +392,14 @@
       "barrierUses": 6,
       "barrierTicks": 7,
       "cantrips": 4,
-      "spellsKnown": 14,
-      "spellSlots": 4,
-      "spellLevel": 3
+      "spellsKnown": 20,
+      "techPoints": 20,
+      "techPointLimit": 3,
+      "spellSlots": {
+        "1": "7",
+        "2": "6",
+        "3": "1"
+      }
     },
     {
       "level": 19,
@@ -326,9 +410,14 @@
       "barrierUses": 6,
       "barrierTicks": 8,
       "cantrips": 4,
-      "spellsKnown": 15,
-      "spellSlots": 4,
-      "spellLevel": 3
+      "spellsKnown": 21,
+      "techPoints": 23,
+      "techPointLimit": 3,
+      "spellSlots": {
+        "1": "7",
+        "2": "6",
+        "3": "2"
+      }
     },
     {
       "level": 20,
@@ -339,9 +428,14 @@
       "barrierUses": 6,
       "barrierTicks": 8,
       "cantrips": 4,
-      "spellsKnown": 15,
-      "spellSlots": 4,
-      "spellLevel": 3
+      "spellsKnown": 22,
+      "techPoints": 25,
+      "techPointLimit": 3,
+      "spellSlots": {
+        "1": "7",
+        "2": "6",
+        "3": "2"
+      }
     }
   ],
   "subclasses": [

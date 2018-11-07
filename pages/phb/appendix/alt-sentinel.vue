@@ -2,19 +2,15 @@
   v-container(:class="{ 'pa-0': $vuetify.breakpoint.smAndDown }" fluid)
     v-layout(row).hidden-sm-and-down
       v-avatar(size="128" tile)
-        img(:src="`/images/classes/${id}.svg`")
+        img(:src="`/images/classes/sentinel.svg`")
       div.pl-5
         h2.display-3 {{ item.name }}
         p {{ item.description}}
-        p(v-if="id === 'sentinel'")
-          em.
-            If you enjoyed the split casting ability of the pre-v0.9.0 sentinels, check out the
-            #[nuxt-link(to="/phb/appendix/alt-sentinel") Alternative Sentinel] progression.
     v-card(:class="{ 'pt-4': $vuetify.breakpoint.smAndDown }")
       class-tabs.mb-3
-        progression-table(:item="item" v-bind:colors="colors[item.id]" slot="progression_table_tab_content")
-        class-attributes(:item="item" v-bind:primaryColor="colors[item.id].primary" slot="attributes_tab_content")
-        subclass-info(:item="item" v-bind:primaryColor="colors[item.id].primary" slot="subclasses_tab_content")
+        progression-table(:item="item" v-bind:colors="colors['sentinel']" slot="progression_table_tab_content")
+        class-attributes(:item="item" v-bind:primaryColor="colors['sentinel'].primary" slot="attributes_tab_content")
+        subclass-info(:item="item" v-bind:primaryColor="colors['sentinel'].primary" slot="subclasses_tab_content")
         spell-list(:items="filteredSpells" slot="spell_list_tab_content")
 </template>
 
@@ -33,9 +29,9 @@
   export default {
     components: { SubclassInfo, SpellList, ClassTabs, ClassAttributes, ProgressionTable, MeIcon },
     data () {
-      const id = this.$route.params.id
-      const item = require(`~/static/data/classes/${this.$route.params.id}.json`)
-      const spells = require(`~/static/data/spells`).filter(spell => spell.availableClasses.includes(id))
+      const id = 'alt_sentinel'
+      const item = require(`~/static/data/alt_sentinel.json`)
+      const spells = require(`~/static/data/spells`).filter(spell => spell.availableClasses.includes('sentinel'))
       return {
         id,
         item,
@@ -69,9 +65,9 @@
     },
     head () {
       return {
-        title: `Mass Effect 5e | Classes - ${this.item.name}`,
+        title: `Mass Effect 5e | Classes - Alt Sentinel`,
         meta: [
-          { hid: 'description', name: 'description', content: `Learn more about the ${this.item.name} class, including Progression table, subclasses, proficiencies, and starting equipment` }
+          { hid: 'description', name: 'description', content: `Learn more about the alternative sentinel class, including Progression table, subclasses, proficiencies, and starting equipment` }
         ]
       }
     },

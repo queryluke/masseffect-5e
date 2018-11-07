@@ -91,7 +91,8 @@
             items: [
               { href: '/phb/appendix/conditions', title: 'Conditions' },
               { href: '/phb/appendix/skills', title: 'Skills' },
-              { href: '/phb/appendix/found-codices', title: 'Found Codices' }
+              { href: '/phb/appendix/found-codices', title: 'Found Codices' },
+              { href: '/phb/appendix/alt-sentinel', title: 'Alt Sentinel' }
             ]
           },
           {

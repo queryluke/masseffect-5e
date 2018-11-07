@@ -53,6 +53,9 @@ export default {
     'phb-appendix-found-codices': {
       name: 'Found Codices'
     },
+    'phb-appendix-alt-sentinel': {
+      name: 'Alt Sentinel'
+    },
     'phb-classes': {
       name: 'Classes'
     },
