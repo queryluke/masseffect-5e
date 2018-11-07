@@ -5,55 +5,55 @@
         v-layout(column align-center justify-center).white--text
           img(src="/images/me5e_logo_notm.png" alt="mass effect 5e").mt-5.me-title-logo
           h1.display-1.mt-5 About #[span.sr-only Mass Effect 5e]
+    // Creators
     section
       v-layout(column wrap align-center).my-5
         v-flex(xs12 sm8).my-3
           div.text-xs-center
-            h2.headline Creators
+            h2.display-3.font-weight-light Creators
         v-flex(xs12)
           v-container(grid-list-xl)
             v-layout(row wrap)
-              v-flex(xs12 md6 d-flex)
+              v-flex(xs12 md6 d-flex v-for="creator in creators" v-bind:key="creator.name")
                 v-card.elevation-0.transparent
                   v-card-text.text-xs-center
                     v-avatar(size="128")
-                      img(src="https://avatars0.githubusercontent.com/u/12414786?s=460&v=4" alt="Luke A")
+                      img(:src="creator.image" v-bind:alt="creator.name")
                   v-card-title(primary-title).layout.column.justify-center.text-xs-center.pb-0
                     v-flex.pb-0
-                      div.headline Luke Aeschleman
+                      div.headline {{ creator.name }}
                     v-flex.pt-1
-                      div Creator, Site Developer
+                      div {{ creator.title }}
                   v-card-text.pt-0
-                    p.
-                      Luke is a web developer, librarian, and mediocre DM, who decided one day (after only 2 years to TRPG experience) that he wanted
-                      to play Mass Effect while rolling dice. He fell in love with the Mass Effect Universe after playing Mass Effect 2 (noob!). But he's since
-                      amassed a number of playthroughs for all the games. He's also spent WAY too much time playing ME3 Multiplayer. By
-                      day, Luke is a Digital Technologies Development Librarian at NC State University. By night, he wrangles 3 dogs, DMs, codes, watches
-                      baseball, and practices Si Lum Kung-Fu.
-              v-flex(xs12 md6 d-flex)
+                    p {{ creator.desc }}
+    // Designers
+    section
+      v-layout(column wrap align-center).my-5
+        v-flex(xs12 sm8).my-3
+          div.text-xs-center
+            h2.display-2.font-weight-light Designers
+        v-flex(xs12)
+          v-container(grid-list-xl)
+            v-layout(row wrap)
+              v-flex(xs12 md4 d-flex v-for="designer in designers" v-bind:key="designer.name")
                 v-card.elevation-0.transparent
                   v-card-text.text-xs-center
-                    v-avatar(size="128")
-                      img(src="https://avatars0.githubusercontent.com/u/679172?s=460&v=4" alt="Hugh T")
+                    v-avatar(size="92")
+                      img(:src="designer.image" v-bind:alt="designer.name")
                   v-card-title(primary-title).layout.column.justify-center.text-xs-center.pb-0
                     v-flex.pb-0
-                      div.headline Hugh Thompson
-                    v-flex.pt-1
-                      div Editor
+                      div.headline {{ designer.name }}
                   v-card-text.pt-0
-                    p.
-                      Hugh is a TRPG enthusiast, both as a GM and a player. But, more importantly, Hugh has as much love for Mass Effect
-                      as anyone. With a keen eye for detail, Hugh takes a lot of the random crap Luke comes up with, strips away the
-                      verbiage and creates actionable rules and changes. By day, Hugh is the Director of Technology Solutions and Web Development
-                      at Rock, Paper, Scissors. He's also a dad and a hard-style strength training enthusiast.
+                    p {{ designer.desc }}
+    // Contributors
     section
       v-layout(row wrap justify-center)
         v-flex(xs12 sm8).my-3
           div.text-xs-center
-            h2.headline Contributors
+            h2.display-1.font-weight-light Contributors
             p.
-              Since we're currently a team of two, we have to give major credit to the list of people who've contributed
-              in a variety of ways.
+              Thank you to everyone who has contributed to this system by sharing ideas, playtesting, creating assets,
+              and much more!!!
         v-flex(xs12 sm8).mb-2
           v-list(three-line)
             template(v-for="item in contributors")
@@ -89,33 +89,56 @@
 
 <script>
   import AboutCard from '~/components/cards/AboutCard.vue'
-  import {mapGetters} from 'vuex'
+  import attributions from '~/static/data/attributions'
 
   export default {
     components: {AboutCard},
-    computed: {
-      ...mapGetters(['getData']),
-      attributions () {
-        return this.getData('attributions')
-      }
-    },
     data () {
       return {
-        luke: {
-          games: {
-            me1: ['vanguard', 'sentinel'],
-            me2: ['sentinel', 'engineer', 'vanguard', 'adept', 'soldier'],
-            me3: ['sentinel', 'engineer', 'vanguard', 'infiltrator']
-          }
-        },
-        contributors: [
+        attributions,
+        creators: [
           {
-            name: 'RJ Haggerty, a.k.a SleightxHope',
+            name: 'Luke Aeschleman',
+            image: 'https://avatars0.githubusercontent.com/u/12414786?s=460&v=4',
+            title: 'Creator, Site Developer',
+            desc: 'Luke is a web developer, librarian, and DM, who decided that he wanted to play Mass Effect while ' +
+            'rolling dice. He fell in love with the Mass Effect Universe after playing Mass Effect 2. But he\'s since ' +
+            'amassed a number of playthroughs for all the games. He\'s also spent WAY too much time playing ME3 Multiplayer. ' +
+            'By day, Luke is a Digital Technologies Development Librarian at NC State University. By night, he wrangles ' +
+            '3 dogs, DMs, codes, watches baseball, and practices Si Lum Kung-Fu.'
+          },
+          {
+            name: 'Hugh Thompson',
+            image: 'https://avatars0.githubusercontent.com/u/679172?s=460&v=4',
+            title: 'Editor',
+            desc: 'Hugh is a TRPG enthusiast, both as a GM and a player. But, more importantly, Hugh has as much love for Mass Effect ' +
+            'as anyone. With a keen eye for detail, Hugh takes a lot of the random crap Luke comes up with, strips away the ' +
+            'verbiage and creates actionable rules and changes. By day, Hugh is the Director of Technology Solutions and Web Development ' +
+            'at Rock, Paper, Scissors. He\'s also a dad and a hard-style strength training enthusiast.'
+          }
+        ],
+        designers: [
+          {
+            name: 'RJ Haggerty, a.k.a. SleightxHope',
             image: 'https://avatars3.githubusercontent.com/u/31451010?s=460&v=4',
             desc: 'Before RJ, this system was just a silly thing Hugh and Luke were doing in their spare time. But RJ\'s contributions' +
             ' really got the ball rolling. The current shape of the classes (subclasses, class features, and progression) are' +
-            ' thanks to RJ, but he\'s also had a hand in weapon and armor mods and play testing'
+            ' thanks to RJ, but he\'s also had a hand in weapon and armor mod, play testing, and creating omni-tool programs.'
           },
+          {
+            name: 'Benjamin McPherson',
+            image: 'https://avatars3.githubusercontent.com/u/1324851?s=400&v=4',
+            desc: 'Ben has been poring through the rule set and pointing out OP mechanics and faulty site bugs.' +
+            ' He also took the lead for the Prothean & Angara races, a number of spells, and the Google Sheet character sheet.'
+          },
+          {
+            name: 'Adam, a.k.a. TheMarmotKing',
+            image: 'https://avatars3.githubusercontent.com/u/37369223?s=460&v=4',
+            desc: 'Adam has provided a lot of invaluable feedback and started many conversations. Most notably, Adam' +
+            ' has taken the lead on balancing and reviewing the spell list.'
+          },
+        ],
+        contributors: [
           {
             name: 'Alex Needleman',
             image: '/images/spells/tech.svg',
@@ -124,33 +147,86 @@
             ' involved in the creation of weapon mods.'
           },
           {
-            name: 'Adam, a.k.a. TheMarmotKing',
-            image: 'https://avatars3.githubusercontent.com/u/37369223?s=460&v=4',
-            desc: 'Adam has provided a lot of invaluable feedback and started many conversations. Most notably, you can thank' +
-            ' him for the recent boost in class spell acquisition. '
-          },
-          {
-            name: 'Benjamin McPherson',
-            image: 'https://avatars3.githubusercontent.com/u/1324851?s=400&v=4',
-            desc: 'Ben has been poring through the rule set and pointing out OP mechanics and faulty site bugs.' +
-            ' He\'s also been working on new content including races, spells, and assets. Thank him for the Angara and Protheans!'
-          },
-          {
             name: 'Noel Moriarty',
-            image: 'https://avatars1.githubusercontent.com/u/38429874?s=460&v=4',
+            image: 'https://avatars1.githubusercontent.com/u/38429874?s=88&v=4',
             desc: 'Nmmoriarty is a wizard at breaking down rules and theorycrafting. This calculated approach has been invaluable' +
             ' in making a balanced yet intriguing system.'
           },
           {
             name: 'Duneday',
-            image: 'https://avatars1.githubusercontent.com/u/38437397?s=460&v=4',
+            image: 'https://avatars1.githubusercontent.com/u/38437397?s=88&v=4',
             desc: 'Duneday has contributed a lot of class improvement ideas, especially with Sentinels and was a major part of the Race audit'
+          },
+          {
+            name: 'damuttley',
+            image: 'https://avatars1.githubusercontent.com/u/38440736?s=88&v=4',
+            desc: 'Race improvements'
+          },
+          {
+            name: 'SrShdw',
+            image: 'https://avatars2.githubusercontent.com/u/38442553?s=88&v=4',
+            desc: 'Race improvements'
+          },
+          {
+            name: 'BLUEmusta',
+            image: 'https://avatars3.githubusercontent.com/u/38446290?s=88&v=4',
+            desc: 'Race & Vanguard improvements'
+          },
+          {
+            name: 'RexThePig',
+            image: 'https://avatars2.githubusercontent.com/u/33875334?s=88&v=4',
+            desc: 'Bestiary improvements & ideas'
+          },
+          {
+            name: 'tioeduardo27',
+            image: 'https://avatars3.githubusercontent.com/u/5409752?s=88&v=4',
+            desc: 'Paragon & Renegade concept'
+          },
+          {
+            name: 'kstrtroi',
+            image: 'https://avatars1.githubusercontent.com/u/39886442?s=88&v=4',
+            desc: 'Incredible PDF design ideas'
+          },
+          {
+            name: 'David T.',
+            image: '/images/spells/combat.svg',
+            desc: 'Design help'
+          },
+          {
+            name: 'Andrew Ouellette',
+            image: '/images/spells/biotic.svg',
+            desc: 'Roll 20 Tokens'
+          },
+          {
+            name: 'Dakota P.',
+            image: 'https://lh6.googleusercontent.com/-4XMXwoyE7fA/AAAAAAAAAAI/AAAAAAAAABE/rfPtjzkQRCg/w80-h80/photo.jpg',
+            desc: 'Kath Hounds'
+          },
+          {
+            name: 'Mikolaj',
+            image: '/images/spells/tech.svg',
+            desc: 'Hanar concept'
+          },
+          {
+            name: 'Fillable Character Sheet PDFs',
+            image: '/images/spells/biotic.svg',
+            desc: 'TheNamelessOne, Thessian Shadow, Szirach'
+          },
+          {
+            name: 'Roll 20 Character Sheets',
+            image: '/images/spells/combat.svg',
+            desc: 'EnricoDandolo1, John G.'
+          },
+          {
+            name: 'GameMasterPo',
+            image: 'https://avatars0.githubusercontent.com/u/44739269?s=88&v=4',
+            desc: 'Alternate Google Sheets character sheet'
           },
           {
             name: 'Other Shout outs!',
             image: 'https://vignette.wikia.nocookie.net/masseffect/images/3/32/ME1_Paragon.png/revision/latest?cb=20120309175829',
-            desc: 'damuttley, SrShdw, BLUEmusta, Mel Bee, Joey C., Connor C., RexThePig, MonocledMutineer, tioeduardo27, kstrtroi, HadesJester, Lodus,' +
-            ' and any one who has contacted us with ideas or words of motivation!'
+            desc: 'Mel Bee, Joey C., Connor C., MonocledMutineer, kstrtroi, HadesJester, Lodus, BenutzernameIstBereitsVergeben ' +
+            ' Dor, J. Tickner, fkzd, Gabe, and any one who has contacted us with ideas or words of motivation!'
           }
         ]
       }

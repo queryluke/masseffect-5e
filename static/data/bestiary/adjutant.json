@@ -1,0 +1,103 @@
+{
+  "abilityScores": {
+    "str": 15,
+    "dex": 18,
+    "con": 16,
+    "int": 10,
+    "wis": 8,
+    "cha": 12
+  },
+  "ac": "18",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Multiattack",
+      "description": "The adjutant makes two Arm Cannon attacks."
+    },
+    {
+      "type": "ranged",
+      "name": "Arm Cannon",
+      "range": 20,
+      "target": "one target",
+      "hit": "9 (1d10 + 4) piercing damage.",
+      "miss": null,
+      "attackMod": 7
+    },
+    {
+      "type": "melee",
+      "name": "Bash",
+      "range": 2,
+      "target": "one target",
+      "hit": "7 (1d8 + 3) bludgeoning damage.",
+      "miss": null,
+      "attackMod": 5
+    },
+    {
+      "type": "melee",
+      "name": "Reaper Infection",
+      "range": 2,
+      "target": "one organic creature that is grappled by the adjutant, incapacitated, or restrained",
+      "hit": "6 (1d6 + 3) piercing damage plus 10 (3d6) necrotic damage. The target's hit point maximum is reduced by an amount equal to the necrotic damage taken. The reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0. An organic creature slain in this way becomes a Weakened Adjutant and becomes an Adjutant after a long rest.",
+      "miss": null,
+      "attackMod": 5
+    }
+  ],
+  "alignment": "Lawful Evil",
+  "barrier": "6",
+  "conditionImmunities": [],
+  "cr": "6",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Grappler",
+      "recharge": null,
+      "description": "The adjutant has advantage on attack rolls against any creature grappled by it."
+    }
+  ],
+  "hp": {
+    "numDice": 15,
+    "die": 10
+  },
+  "id": "adjutant",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/98/ME3_adjutant.png/revision/latest/scale-to-width-down/700?cb=20121128185320",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Adjutant",
+  "profBonus": 3,
+  "reactions": [],
+  "savingThrows": [
+    "dex"
+  ],
+  "senses": [
+    {
+      "sense": "darkvision",
+      "range": 20
+    }
+  ],
+  "size": "Large",
+  "skills": [],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "spellcasting": {
+    "level": "innate",
+    "mod": "cha",
+    "spellList": [
+      {
+        "perDay": "3/day",
+        "spells": [
+          {
+            "id": "singularity"
+          }
+        ]
+      }
+    ]
+  },
+  "type": "Synorg",
+  "unit": "Cerberus"
+}

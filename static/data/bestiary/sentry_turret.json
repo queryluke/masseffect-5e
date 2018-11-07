@@ -1,0 +1,80 @@
+{
+  "abilityScores": {
+    "str": 10,
+    "dex": 10,
+    "con": 10,
+    "int": 10,
+    "wis": 10,
+    "cha": 10
+  },
+  "ac": "14",
+  "actions": [
+    {
+      "type": "ranged",
+      "name": "Mass Accelerator Machinegun",
+      "range": 60,
+      "target": "one target",
+      "hit": "7 (2d6) piercing damage and 7 (2d6) radiant damage. The sentry turret can make a burst fire attack instead.",
+      "miss": null,
+      "attackMod": 2
+    }
+  ],
+  "alignment": "Neutral",
+  "barrier": null,
+  "conditionImmunities": [
+    "poisoned"
+  ],
+  "cr": "1",
+  "damageImmunities": [
+    "poison",
+    "psychic"
+  ],
+  "damageResistances": [],
+  "damageVulnerabilities": [
+    "lightning"
+  ],
+  "features": [
+    {
+      "name": "Stationary",
+      "recharge": null,
+      "description": "The sentry turret automatically fails Strength and Dexterity saving throws and skill checks."
+    }
+  ],
+  "hp": {
+    "numDice": 22,
+    "die": 6
+  },
+  "id": "sentry_turret",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/f/f8/ME3_Sentry_Turret.png/revision/latest/scale-to-width-down/100?cb=20180206214039",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Sentry Turret",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Small",
+  "skills": [],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 0
+    }
+  ],
+  "spellcasting": {
+    "level": "innate",
+    "mod": "int",
+    "spellList": [
+      {
+        "perDay": "3/day",
+        "spells": [
+          {
+            "id": "flamethrower"
+          }
+        ]
+      }
+    ]
+  },
+  "type": "Synthetic",
+  "unit": "Mech"
+}

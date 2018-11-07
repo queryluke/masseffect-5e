@@ -18,18 +18,11 @@
 </template>
 
 <script>
-  import {mapGetters} from 'vuex'
-
+  import items from '~/static/data/classes'
   export default {
-    computed: {
-      ...mapGetters(['getData'])
-    },
-    created () {
-      this.items = this.getData('classes')
-    },
     data () {
       return {
-        items: []
+        items
       }
     },
     head () {

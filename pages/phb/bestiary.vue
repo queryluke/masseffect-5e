@@ -23,7 +23,7 @@
   import BestiaryList from '~/components/bestiary/BestiaryList.vue'
   import BestiaryFilters from '~/components/bestiary/BestiaryFilters.vue'
   import MobileFilterContainer from '~/components/list/MobileFilterContainer.vue'
-  import {ConfigureMonsters} from '~/mixins/monsters'
+  import items from '~/static/data/bestiary'
   import {CrToInt} from '~/mixins/crToInt'
 
   // State
@@ -35,6 +35,13 @@
       BestiaryList,
       BestiaryFilters,
       MobileFilterContainer
+    },
+    mixins: [CrToInt],
+    data () {
+      return {
+        items,
+        itemKey: 'monsters'
+      }
     },
     computed: {
       ...mapGetters(['order', 'sortBy', 'filters', 'searchString']),
@@ -80,7 +87,6 @@
     },
     created () {
       const self = this
-      this.items = this.getMonsters()
       const crOptions = new Set()
       const unitOptions = new Set()
       for (const item of this.items) {
@@ -94,12 +100,6 @@
       })
       this.unitOptions = [...unitOptions].sort()
     },
-    data () {
-      return {
-        items: [],
-        itemKey: 'monsters'
-      }
-    },
     head () {
       return {
         title: 'Mass Effect 5e | Bestiary',
@@ -111,7 +111,6 @@
     layout: 'phb',
     methods: {
       ...mapActions(['updateSearchString'])
-    },
-    mixins: [ConfigureMonsters, CrToInt]
+    }
   }
 </script>

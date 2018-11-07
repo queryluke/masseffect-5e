@@ -18,6 +18,16 @@
   import {createNamespacedHelpers} from 'vuex'
   const {mapActions, mapGetters} = createNamespacedHelpers('phb')
   export default {
+    props: {
+      extended: {
+        type: Boolean,
+        default: false
+      },
+      clippedRight: {
+        type: Boolean,
+        default: false
+      }
+    },
     computed: {
       ...mapGetters(['pages', 'primaryNavigation']),
       pageName () {
@@ -33,16 +43,6 @@
     },
     methods: {
       ...mapActions(['toggleSidebar'])
-    },
-    props: {
-      extended: {
-        type: Boolean,
-        default: false
-      },
-      clippedRight: {
-        type: Boolean,
-        default: false
-      }
     }
   }
 </script>

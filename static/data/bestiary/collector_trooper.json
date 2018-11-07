@@ -1,0 +1,90 @@
+{
+  "abilityScores": {
+    "str": 13,
+    "dex": 14,
+    "con": 12,
+    "int": 11,
+    "wis": 12,
+    "cha": 8
+  },
+  "ac": "15",
+  "actions": [
+    {
+      "type": "melee",
+      "name": "Claw",
+      "range": 2,
+      "target": "one target",
+      "hit": "9 (2d6 + 2) slashing damage.",
+      "miss": null,
+      "attackMod": 3
+    },
+    {
+      "type": "weapon",
+      "id": "collector_smg"
+    },
+    {
+      "type": "ranged",
+      "name": "Collector Web",
+      "range": 10,
+      "target": "one target",
+      "hit": "The target is restrained by organic webbing. As an action, the restrained target can make a DC 14 Strength check, bursting the webbing on a success. The webbing can also be attacked and destroyed (AC 10; hp 5; vulnerability to fire damage; immunity to bludgeoning, poison, and psychic damage).",
+      "miss": null,
+      "attackMod": 4
+    },
+    {
+      "type": "grenade",
+      "id": "frag_grenade"
+    }
+  ],
+  "alignment": "Lawful evil",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "3",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Possessed Collector",
+      "recharge": null,
+      "description": "When the collector trooper is possessed by a harbinger it gains temporary hit points equal to its total hit points and 6 barrier ticks. While it has barrier ticks it also gains resistance to bludgeoning, piercing, and slashing damage."
+    }
+  ],
+  "hp": {
+    "numDice": 14,
+    "die": 8
+  },
+  "id": "collector_trooper",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/d/d3/Collector_TrooperME3.jpg/revision/latest/scale-to-width-down/350?cb=20121201212208",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Collector Trooper",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [
+    "dex"
+  ],
+  "senses": [
+    {
+      "sense": "darkvision",
+      "range": 20
+    }
+  ],
+  "size": "Medium",
+  "skills": [
+    "athletics"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    },
+    {
+      "type": "fly",
+      "range": 6
+    }
+  ],
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Collector"
+}

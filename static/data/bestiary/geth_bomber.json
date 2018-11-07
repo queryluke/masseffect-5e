@@ -1,0 +1,83 @@
+{
+  "abilityScores": {
+    "str": 6,
+    "dex": 18,
+    "con": 6,
+    "int": 14,
+    "wis": 10,
+    "cha": 8
+  },
+  "ac": "16",
+  "actions": [
+    {
+      "type": "grenade",
+      "id": "multi-frag_grenade"
+    }
+  ],
+  "alignment": "Lawful Neutral",
+  "barrier": null,
+  "conditionImmunities": [
+    "petrified",
+    "poisoned"
+  ],
+  "cr": "2",
+  "damageImmunities": [
+    "poison",
+    "psychic"
+  ],
+  "damageResistances": [],
+  "damageVulnerabilities": [
+    "lightning"
+  ],
+  "features": [],
+  "hp": {
+    "numDice": 10,
+    "die": 6
+  },
+  "id": "geth_bomber",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/01/ME3_geth_bomber_AAA.png/revision/latest/scale-to-width-down/700?cb=20130313175937",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Geth Bomber",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [
+    "dex"
+  ],
+  "senses": [
+    {
+      "sense": "darkvision",
+      "range": 60
+    }
+  ],
+  "size": "Small",
+  "skills": [
+    "perception"
+  ],
+  "sp": {
+    "shields": 15,
+    "regen": "5"
+  },
+  "speed": [
+    {
+      "type": "fly",
+      "range": 10
+    }
+  ],
+  "spellcasting": {
+    "level": "innate",
+    "mod": "int",
+    "spellList": [
+      {
+        "perDay": "At will",
+        "spells": [
+          {
+            "id": "overload"
+          }
+        ]
+      }
+    ]
+  },
+  "type": "Synthetic",
+  "unit": "Geth"
+}

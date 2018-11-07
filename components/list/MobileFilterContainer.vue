@@ -13,13 +13,18 @@ import {createNamespacedHelpers} from 'vuex'
 const {mapActions, mapGetters} = createNamespacedHelpers('itemList')
 
 export default {
+  props: {
+    title: {
+      type: String,
+      default: ''
+    }
+  },
   computed: {
     ...mapGetters(['mobileFilterDialog'])
   },
   methods: {
     ...mapActions(['toggleMobileFilterDialog'])
-  },
-  props: ['title']
+  }
 }
 </script>
 

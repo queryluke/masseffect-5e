@@ -1,0 +1,736 @@
+[
+  {
+    "id": "angara",
+    "name": "Angara",
+    "galaxy": [
+      "Andromeda"
+    ],
+    "alignment": "Angara are emotional creatures and strongly community oriented. Their emotion-driven tendencies makes them often chaotic neutral or chaotic good.",
+    "availableClasses": [
+      "engineer",
+      "infiltrator",
+      "soldier"
+    ],
+    "sexyLevel": 4,
+    "abilityScoreIncrease": [
+      {
+        "amount": 2,
+        "ability": "Charisma"
+      },
+      {
+        "amount": 1,
+        "ability": "Constitution"
+      }
+    ],
+    "size": "Medium",
+    "speed": "10m",
+    "snippet": "The Angara are the only known extant sapient race native to the Heleus Cluster of the Andromeda galaxy, and arose on the planet Havarl.",
+    "startingCredits": "Instead of your class's starting equipment, you may start with 6d8 x 1000 + 10,000 credits to buy your own equipment.",
+    "bodyImg": "/images/races/angara.png",
+    "img": "https://vignette.wikia.nocookie.net/masseffect/images/4/44/Angara_trailer_mugs.png/revision/latest/scale-to-width-down/640?cb=20170127022744",
+    "traits": [
+      "survivalist",
+      "bio-electric-focus",
+      "bio-electric-ward",
+      "solar-dependency"
+    ],
+    "age": null
+  },
+  {
+    "id": "asari",
+    "name": "Asari",
+    "galaxy": [
+      "Andromeda",
+      "Milky Way"
+    ],
+    "alignment": "Tend towards neutral as a species. Most Maiden stage Asari are chaotic, Matrons level out to neutral, Matriarchs are heavily lawful.",
+    "availableClasses": [
+      "adept",
+      "engineer",
+      "infiltrator",
+      "sentinel",
+      "soldier",
+      "vanguard"
+    ],
+    "sexyLevel": 8,
+    "abilityScoreIncrease": [
+      {
+        "amount": 2,
+        "ability": "Charisma"
+      },
+      {
+        "amount": 1,
+        "ability": "Wisdom"
+      }
+    ],
+    "size": "Medium",
+    "speed": "10m",
+    "snippet": "The asari, native to the planet Thessia, are often considered the most influential and respected sentient species in the galaxy, and are known for their elegance, diplomacy, and biotic aptitude.",
+    "startingCredits": "Instead of your class's starting equipment, you may start with 10d4 x 1000 + 10,000 credits to buy your own equipment.",
+    "bodyImg": "http://vignette2.wikia.nocookie.net/masseffect/images/d/dc/Asari_Justicar_MP.png/revision/latest/scale-to-width-down/500",
+    "img": "https://vignette.wikia.nocookie.net/masseffect/images/a/a7/Samara_vs_Morinth.png/revision/latest/scale-to-width-down/640?cb=20130521073819",
+    "traits": [
+      "biotic-initiate",
+      "innate-biotics",
+      "mind-meld",
+      "skill-versatility"
+    ],
+    "age": null
+  },
+  {
+    "id": "batarian",
+    "name": "Batarian",
+    "galaxy": [
+      "Andromeda",
+      "Milky Way"
+    ],
+    "alignment": "Tend towards lawful evil, although there are definite outliers on the moral spectrum.",
+    "availableClasses": [
+      "adept",
+      "engineer",
+      "infiltrator",
+      "sentinel",
+      "soldier",
+      "vanguard"
+    ],
+    "sexyLevel": 1,
+    "abilityScoreIncrease": [
+      {
+        "amount": 2,
+        "ability": "Constitution"
+      },
+      {
+        "amount": 1,
+        "ability": "Charisma"
+      }
+    ],
+    "size": "Medium",
+    "speed": "10m",
+    "snippet": "A race of four-eyed bipeds native to the world of Khar'shan, the batarians are a disreputable species that chose to isolate itself from the rest of the galaxy.",
+    "startingCredits": "Instead of your class's starting equipment, you may start with 6d8 x 1000 + 10,000 credits to buy your own equipment.",
+    "bodyImg": "http://vignette1.wikia.nocookie.net/masseffect/images/b/b2/Batarian_MP.png/revision/latest/scale-to-width-down/500",
+    "img": "https://vignette.wikia.nocookie.net/masseffect/images/5/5f/Balak_ME_adversaryshot.png/revision/latest/scale-to-width-down/422?cb=20140812140358",
+    "startingFeats": {
+      "count": 1,
+      "options": [
+        "a-beautiful-mine",
+        "big-game-hunter",
+        "biotic-slayer",
+        "charger",
+        "dual-wielder",
+        "durable",
+        "featherlight",
+        "grappler",
+        "grenadier",
+        "heavily-armored",
+        "hair-trigger",
+        "heavy-armor-master",
+        "melee-specialist",
+        "moderately-armored",
+        "resilient",
+        "savage-attacker",
+        "sentinel",
+        "squad-leader",
+        "tavern-brawler",
+        "tough",
+        "weapon-master"
+      ]
+    },
+    "traits": [
+      "saving-face",
+      "shrewd-negotiator"
+    ],
+    "age": null
+  },
+  {
+    "id": "drell",
+    "name": "Drell",
+    "galaxy": [
+      "Andromeda",
+      "Milky Way"
+    ],
+    "alignment": "Their religious influences set the Drell firmly in a trend towards lawful neutral, but this is often dependent on their station in life and career.",
+    "availableClasses": [
+      "adept",
+      "infiltrator",
+      "soldier",
+      "vanguard"
+    ],
+    "sexyLevel": 10,
+    "abilityScoreIncrease": [
+      {
+        "amount": 2,
+        "ability": "Dexterity"
+      },
+      {
+        "amount": 1,
+        "ability": "Wisdom"
+      }
+    ],
+    "size": "Medium",
+    "speed": "12m",
+    "snippet": "The drell are a reptile-like race that were rescued from their dying homeworld by the hanar following first contact between the two. Since then, the drell have remained loyal to the hanar for their camaraderie and have fit comfortably into galactic civilization.",
+    "startingCredits": "Instead of your class's starting equipment, you may start with 6d8 x 1000 + 10,000 credits to buy your own equipment.",
+    "bodyImg": "http://vignette2.wikia.nocookie.net/masseffect/images/a/ad/Drell_MP.png/revision/latest/scale-to-width-down/500",
+    "img": "https://vignette.wikia.nocookie.net/masseffect/images/c/cf/Drell_biotic_field.png/revision/latest/scale-to-width-down/640?cb=20130623224527",
+    "startingFeats": {
+      "count": 1,
+      "options": [
+        "actor",
+        "alert",
+        "big-game-hunter",
+        "dual-wielder",
+        "featherlight",
+        "grenadier",
+        "heavily-armored",
+        "hair-trigger",
+        "heavy-armor-master",
+        "keen-mind",
+        "linguist",
+        "melee-specialist",
+        "mobile",
+        "moderately-armored",
+        "observant",
+        "skulker",
+        "squad-leader"
+      ]
+    },
+    "traits": [
+      "darkvision",
+      "eidetic-memory",
+      "hallucinogen",
+      "keen-senses"
+    ],
+    "age": null
+  },
+  {
+    "id": "geth",
+    "name": "Geth",
+    "galaxy": [
+      "Milky Way"
+    ],
+    "alignment": "Your standard Geth platform is neutral good, wanting to prosper and communicate with others, defending themselves only if threatened. Heretics are lawful evil, serving the Reapers and slavishly accomplishing their will.",
+    "availableClasses": [
+      "engineer",
+      "infiltrator",
+      "soldier"
+    ],
+    "sexyLevel": 6,
+    "abilityScoreIncrease": [
+      {
+        "amount": 2,
+        "ability": "Intelligence"
+      },
+      {
+        "amount": 1,
+        "ability": "Strength"
+      }
+    ],
+    "size": "Medium",
+    "speed": "10m",
+    "snippet": "The geth (\"Servant of the People\" in Khelish) are a race of networked artificial intelligences that reside beyond the Perseus Veil.",
+    "startingCredits": "Instead of your class's starting equipment, you may start with 2d10 x 1000 + 10,000 credits to buy your own equipment.",
+    "bodyImg": "http://vignette2.wikia.nocookie.net/masseffect/images/7/72/Geth_Engineer_MP.png/revision/latest/scale-to-width-down/500",
+    "img": "https://vignette.wikia.nocookie.net/masseffect/images/7/7b/Legion%27s_posse.png/revision/latest/scale-to-width-down/640?cb=20130516170119",
+    "traits": [
+      "living-construct",
+      "integrated-protection",
+      "hunter-mode",
+      "repair-matrix",
+      "no-feats"
+    ],
+    "age": null
+  },
+  {
+    "id": "human",
+    "name": "Human",
+    "galaxy": [
+      "Andromeda",
+      "Milky Way"
+    ],
+    "alignment": "Any and all across the spectrum.",
+    "availableClasses": [
+      "adept",
+      "engineer",
+      "infiltrator",
+      "sentinel",
+      "soldier",
+      "vanguard"
+    ],
+    "sexyLevel": 5,
+    "abilityScoreIncrease": [
+      {
+        "amount": 1,
+        "ability": "to two ability scores"
+      }
+    ],
+    "size": "Medium",
+    "speed": "10m",
+    "snippet": "Humans, from the planet Earth, are the newest sentient species of notable size to enter the galactic stage and are the most rapidly expanding and developing.",
+    "startingCredits": "Instead of your class's starting equipment, you may start with 8d6 x 1000 + 10,000 credits to buy your own equipment.",
+    "bodyImg": "http://vignette4.wikia.nocookie.net/masseffect/images/2/2e/Human_Female_Infiltrator_MP.png/revision/latest/scale-to-width-down/500",
+    "img": "https://vignette.wikia.nocookie.net/masseffect/images/7/7c/Grissom_Academy_Students.png/revision/latest/scale-to-width-down/640?cb=20120312230100",
+    "startingFeats": {
+      "count": 2,
+      "options": [
+        "a-beautiful-mine",
+        "alert",
+        "athlete",
+        "big-game-hunter",
+        "biotic-slayer",
+        "charger",
+        "dual-wielder",
+        "durable",
+        "elemental-adept",
+        "enhanced-optics",
+        "featherlight",
+        "grappler",
+        "grenadier",
+        "heavily-armored",
+        "hair-trigger",
+        "linguist",
+        "lucky",
+        "medium-armor-master",
+        "melee-specialist",
+        "mobile",
+        "moderately-armored",
+        "observant",
+        "resilient",
+        "savage-attacker",
+        "sentinel",
+        "sharpshooter",
+        "skilled",
+        "skulker",
+        "squad-leader",
+        "tavern-brawler",
+        "tough",
+        "wealth-of-knowledge",
+        "weapon-master"
+      ]
+    },
+    "traits": null,
+    "age": null
+  },
+  {
+    "id": "krogan",
+    "name": "Krogan",
+    "galaxy": [
+      "Andromeda",
+      "Milky Way"
+    ],
+    "alignment": "Tend towards lawful as a species, with clan rituals and traditions holding heavy sway. Morality varies widely.",
+    "availableClasses": [
+      "adept",
+      "engineer",
+      "sentinel",
+      "soldier",
+      "vanguard"
+    ],
+    "sexyLevel": 7,
+    "abilityScoreIncrease": [
+      {
+        "amount": 2,
+        "ability": "Strength"
+      },
+      {
+        "amount": 1,
+        "ability": "Constitution"
+      }
+    ],
+    "size": "Medium",
+    "speed": "10m",
+    "snippet": "The krogan are a species of large reptilian bipeds native to the planet Tuchanka, a world known for its harsh environments, scarce resources, and overabundance of vicious predators.",
+    "startingCredits": "Instead of your class's starting equipment, you may start with 10d4 x 1000 + 10,000 credits to buy your own equipment.",
+    "bodyImg": "http://vignette4.wikia.nocookie.net/masseffect/images/6/66/Krogan_MP.png/revision/latest/scale-to-width-down/500",
+    "img": "https://vignette.wikia.nocookie.net/masseffect/images/0/03/Wreav_rally_-_destroy_2.png/revision/latest/scale-to-width-down/640?cb=20130215150038",
+    "traits": [
+      "menacing",
+      "natural-armor",
+      "powerful-build",
+      "rage",
+      "relentless"
+    ],
+    "age": null
+  },
+  {
+    "id": "prothean",
+    "name": "Prothean",
+    "galaxy": [
+      "Milky Way"
+    ],
+    "alignment": "Protheans come from a society that was heavily regulated and favored the strong. They are generally lawful neutral.",
+    "availableClasses": [
+      "adept",
+      "soldier",
+      "vanguard"
+    ],
+    "sexyLevel": 6,
+    "abilityScoreIncrease": [
+      {
+        "amount": 2,
+        "ability": "Wisdom"
+      },
+      {
+        "amount": 1,
+        "ability": "Dexterity"
+      }
+    ],
+    "size": "Medium",
+    "speed": "10m",
+    "snippet": "The protheans are an ancient alien race which mysteriously vanished over 50,000 years ago. Though there is evidence that some still survive in stasis pods.",
+    "startingCredits": "Instead of your class's starting equipment, you may start with 2d10 x 1000 + 10,000 credits to buy your own equipment.",
+    "bodyImg": "/images/races/prothean.png",
+    "img": "https://vignette.wikia.nocookie.net/masseffect/images/e/e9/Eden_Prime_50kya_-_Javik_squad.png/revision/latest/scale-to-width-down/640?cb=20141206072802",
+    "traits": [
+      "all-seeing-eyes",
+      "quad-strand-dna",
+      "psychometry",
+      "avatar-optional",
+      "all-eyes-on-you"
+    ],
+    "age": null
+  },
+  {
+    "id": "quarian",
+    "name": "Quarian",
+    "galaxy": [
+      "Andromeda",
+      "Milky Way"
+    ],
+    "alignment": "The proximity and longstanding traditions of the Migrant Fleet make Quarians very lawful as a race, occasionally drifting toward neutral. Morality can vary but tends towards neutral or good.",
+    "availableClasses": [
+      "engineer",
+      "infiltrator",
+      "soldier"
+    ],
+    "sexyLevel": 8,
+    "abilityScoreIncrease": [
+      {
+        "amount": 2,
+        "ability": "Intelligence"
+      },
+      {
+        "amount": 1,
+        "ability": "Constitution"
+      }
+    ],
+    "size": "Medium",
+    "speed": "10m",
+    "snippet": "The quarians are a nomadic species of humanoid aliens known for their skills with technology and synthetic intelligence.",
+    "startingCredits": "Instead of your class's starting equipment, you may start with 8d6 x 1000 + 10,000 credits to buy your own equipment.",
+    "bodyImg": "http://vignette3.wikia.nocookie.net/masseffect/images/0/0c/Quarian_MP.png/revision/latest/scale-to-width-down/500",
+    "img": "https://vignette.wikia.nocookie.net/masseffect/images/f/fc/Enter_the_admirals.png/revision/latest/scale-to-width-down/640?cb=20121114134430",
+    "startingFeats": {
+      "count": 1,
+      "options": [
+        "a-beautiful-mine",
+        "big-game-hunter",
+        "biotic-slayer",
+        "enhanced-optics",
+        "featherlight",
+        "grenadier",
+        "heavily-armored",
+        "hair-trigger",
+        "keen-mind",
+        "linguist",
+        "medium-armor-master",
+        "mobile",
+        "moderately-armored",
+        "observant",
+        "sharpshooter",
+        "skilled",
+        "squad-leader",
+        "wealth-of-knowledge"
+      ]
+    },
+    "traits": [
+      "cybernetic-augmentation",
+      "hermetic-suit"
+    ],
+    "age": null
+  },
+  {
+    "id": "salarian",
+    "name": "Salarian",
+    "galaxy": [
+      "Andromeda",
+      "Milky Way"
+    ],
+    "alignment": "Tend to be measured and intellectual, leaning neutral whether lawful, chaotic, evil or good.",
+    "availableClasses": [
+      "engineer",
+      "infiltrator",
+      "soldier"
+    ],
+    "sexyLevel": 6,
+    "abilityScoreIncrease": [
+      {
+        "amount": 2,
+        "ability": "Intelligence"
+      },
+      {
+        "amount": 1,
+        "ability": "Dexterity"
+      }
+    ],
+    "size": "Medium",
+    "speed": "10m",
+    "snippet": "The second species to join the Citadel, the salarians are warm-blooded amphibians native to the planet Sur'Kesh. Salarians possess a hyperactive metabolism; they think fast, talk fast, and move fast.",
+    "startingCredits": "Instead of your class's starting equipment, you may start with 4d12 x 1000 + 10,000 credits to buy your own equipment.",
+    "bodyImg": "http://vignette2.wikia.nocookie.net/masseffect/images/b/ba/Salarian_MP.png/revision/latest/scale-to-width-down/500",
+    "img": "https://vignette.wikia.nocookie.net/masseffect/images/3/39/Mordin_-_objection_noted.png/revision/latest/scale-to-width-down/640?cb=20141223052318",
+    "startingFeats": {
+      "count": 1,
+      "options": [
+        "a-beautiful-mine",
+        "actor",
+        "alert",
+        "athlete",
+        "biotic-slayer",
+        "featherlight",
+        "grenadier",
+        "heavily-armored",
+        "hair-trigger",
+        "keen-mind",
+        "linguist",
+        "mobile",
+        "moderately-armored",
+        "observant",
+        "sharpshooter",
+        "skilled",
+        "skulker",
+        "squad-leader",
+        "wealth-of-knowledge"
+      ]
+    },
+    "traits": [
+      "amphibious",
+      "high-speed-metabolism",
+      "photographic-memory"
+    ],
+    "age": null
+  },
+  {
+    "id": "turian",
+    "name": "Turian",
+    "galaxy": [
+      "Andromeda",
+      "Milky Way"
+    ],
+    "alignment": "Tend away from evil, heavily lean towards lawful as a culture. Outliers tend to be chaotic as a reaction to the culture.",
+    "availableClasses": [
+      "engineer",
+      "infiltrator",
+      "sentinel",
+      "soldier",
+      "vanguard"
+    ],
+    "sexyLevel": 9,
+    "abilityScoreIncrease": [
+      {
+        "amount": 2,
+        "ability": "Constitution"
+      },
+      {
+        "amount": 1,
+        "ability": "Strength"
+      }
+    ],
+    "size": "Medium",
+    "speed": "10m",
+    "snippet": "Known for their militaristic and disciplined culture, the turians were the third race to join the Citadel Council. They gained their Council seat after defeating the hostile krogan for the Council during the Krogan Rebellions.",
+    "startingCredits": "Instead of your class's starting equipment, you may start with 8d6 x 1000 + 10,000 credits to buy your own equipment.",
+    "bodyImg": "http://vignette2.wikia.nocookie.net/masseffect/images/2/2a/Turian_MP.png/revision/latest/scale-to-width-down/500",
+    "img": "https://vignette.wikia.nocookie.net/masseffect/images/4/41/Garrus3.png/revision/latest/scale-to-width-down/640?cb=20090625020040",
+    "startingFeats": {
+      "count": 1,
+      "options": [
+        "a-beautiful-mine",
+        "alert",
+        "athlete",
+        "big-game-hunter",
+        "biotic-slayer",
+        "charger",
+        "dual-wielder",
+        "durable",
+        "enhanced-optics",
+        "featherlight",
+        "grappler",
+        "grenadier",
+        "heavily-armored",
+        "hair-trigger",
+        "heavy-armor-master",
+        "keen-mind",
+        "medium-armor-master",
+        "melee-specialist",
+        "mobile",
+        "moderately-armored",
+        "observant",
+        "resilient",
+        "savage-attacker",
+        "sentinel",
+        "sharpshooter",
+        "skilled",
+        "squad-leader",
+        "tavern-brawler",
+        "tough",
+        "weapon-master"
+      ]
+    },
+    "traits": [
+      "thulium-skin",
+      "turian-toughness",
+      "martial-training"
+    ],
+    "age": null
+  },
+  {
+    "id": "unshackled-ai",
+    "name": "Unshackled AI",
+    "galaxy": [
+      "Milky Way"
+    ],
+    "alignment": "Vary as wildly as their circumstances and personalities allow.",
+    "availableClasses": [
+      "engineer",
+      "infiltrator",
+      "soldier"
+    ],
+    "sexyLevel": "Varies",
+    "abilityScoreIncrease": [
+      {
+        "amount": 2,
+        "ability": "Intelligence"
+      },
+      {
+        "amount": 1,
+        "ability": "to one ability except intelligence"
+      }
+    ],
+    "size": "Medium",
+    "speed": "10m",
+    "snippet": "AIs are considered illegal by the Council, but that hasn't stopped corporations like Cerberus from innovating. As an unshackled AI, you might be have been mass produced like the Alliance Infiltration Units, or you may be an experiment gone wrong.",
+    "startingCredits": "Instead of your class's starting equipment, you may start with 2d10 x 1000 + 10,000 credits to buy your own equipment.",
+    "bodyImg": "https://vignette.wikia.nocookie.net/masseffect/images/0/06/ME3_Alliance_Infiltration_Unit_Infiltrator.png/revision/latest/scale-to-width-down/500?cb=20130227102713",
+    "img": "https://vignette.wikia.nocookie.net/masseffect/images/3/39/Cronos_station_edi_and_vendetta.png/revision/latest/scale-to-width-down/640?cb=20120715085530",
+    "traits": [
+      "living-construct",
+      "integrated-protection",
+      "repair-matrix"
+    ],
+    "startingFeats": {
+      "count": 1,
+      "options": [
+        "a-beautiful-mine",
+        "alert",
+        "athlete",
+        "big-game-hunter",
+        "biotic-slayer",
+        "charger",
+        "dual-wielder",
+        "durable",
+        "enhanced-optics",
+        "featherlight",
+        "grappler",
+        "grenadier",
+        "heavily-armored",
+        "hair-trigger",
+        "linguist",
+        "lucky",
+        "melee-specialist",
+        "mobile",
+        "moderately-armored",
+        "observant",
+        "resilient",
+        "savage-attacker",
+        "sentinel",
+        "sharpshooter",
+        "skilled",
+        "skulker",
+        "squad-leader",
+        "tavern-brawler",
+        "tough",
+        "wealth-of-knowledge",
+        "weapon-master"
+      ]
+    },
+    "age": null
+  },
+  {
+    "id": "volus",
+    "name": "Volus",
+    "galaxy": [
+      "Andromeda",
+      "Milky Way"
+    ],
+    "alignment": "Their society tends towards lawful as a whole, with clans fighting over economic resources and aggressive negotiating, even if they are individually chaotic individuals. They tend towards neutral morality.",
+    "availableClasses": [
+      "adept",
+      "engineer",
+      "sentinel",
+      "vanguard"
+    ],
+    "sexyLevel": 3,
+    "abilityScoreIncrease": [
+      {
+        "amount": 2,
+        "ability": "Wisdom"
+      },
+      {
+        "amount": 1,
+        "ability": "Intelligence"
+      }
+    ],
+    "size": "Small",
+    "speed": "8m",
+    "snippet": "The volus hail from Irune, which possesses a high-pressure greenhouse atmosphere able to support an ammonia-based biochemistry. As a result, the volus must wear pressure suits and breathers when dealing with other species.",
+    "startingCredits": "Instead of your class's starting equipment, 10d6 x 1000 + 10,000 credits to buy your own equipment.",
+    "bodyImg": "http://vignette1.wikia.nocookie.net/masseffect/images/3/3e/ME3_Volus_Adept.png/revision/latest/scale-to-width-down/500",
+    "img": "https://vignette.wikia.nocookie.net/masseffect/images/b/b4/Volus.jpg/revision/latest/scale-to-width-down/640?cb=20121009195731",
+    "traits": [
+      "fury-of-the-small",
+      "lucky",
+      "savvy-dealings"
+    ],
+    "age": null
+  },
+  {
+    "id": "vorcha",
+    "name": "Vorcha",
+    "galaxy": [
+      "Milky Way"
+    ],
+    "alignment": "Tend towards chaotic evil, almost always chaotic even if their morality is strengthened.",
+    "availableClasses": [
+      "engineer",
+      "infiltrator",
+      "sentinel",
+      "soldier"
+    ],
+    "sexyLevel": 0,
+    "abilityScoreIncrease": [
+      {
+        "amount": 2,
+        "ability": "Dexterity"
+      },
+      {
+        "amount": 1,
+        "ability": "Constitution"
+      }
+    ],
+    "size": "Medium",
+    "speed": "14m",
+    "snippet": "Known for their unique biology and aggressive behavior, the vorcha of Heshtok are a primitive race that live among the galaxy's darker and more dangerous locations, such as Omega.",
+    "startingCredits": "Instead of your class's starting equipment, you may start with 4d12 x 1000 + 10,000 credits to buy your own equipment.",
+    "bodyImg": "http://vignette1.wikia.nocookie.net/masseffect/images/d/d8/ME3_Vorcha_Hunter.png/revision/latest/scale-to-width-down/500",
+    "img": "https://vignette.wikia.nocookie.net/masseffect/images/d/d6/Omega_vermin.png/revision/latest/scale-to-width-down/640?cb=20140624121030",
+    "traits": [
+      "bite",
+      "bloodlust",
+      "hungry-jaws",
+      "non-differentiated-cells",
+      "limited-regeneration"
+    ],
+    "age": null
+  }
+]

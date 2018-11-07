@@ -1,0 +1,427 @@
+{
+  "id": "infiltrator",
+  "name": "Infiltrator",
+  "description": "The Infiltrator is a tech-savvy warrior, able to win battles by quickly disabling and killing enemies. These soldiers focus on unlocking alternate routes, gaining access to good equipment, and obtaining an advantageous position over enemies in combat.\n",
+  "snippet": "Infiltrators are tech and combat specialists with the unique ability to cloak themselves.\n",
+  "primaryAbility": "Dexterity",
+  "hitDie": 8,
+  "minHitDieRoll": 5,
+  "armorProficiencies": [
+    "Light"
+  ],
+  "weaponProficiencyChoices": 2,
+  "weaponProficiencies": {
+    "required": [
+      "Heavy Pistols"
+    ],
+    "optional": [
+      "Assault Rifles",
+      "Melee",
+      "SMGs",
+      "Sniper Rifles"
+    ]
+  },
+  "savingThrows": [
+    "Dexterity",
+    "Intelligence"
+  ],
+  "skillChoices": 3,
+  "skillProficiencies": [
+    "Athletics",
+    "Acrobatics",
+    "Deception",
+    "Electronics",
+    "History",
+    "Insight",
+    "Investigation",
+    "Perception",
+    "Persuasion",
+    "Sleight of Hand",
+    "Stealth",
+    "Vehicle Handling"
+  ],
+  "startingRangedWeaponChoices": 1,
+  "startingRangedWeapons": [
+    "M-3 Predator",
+    "M-4 Shuriken",
+    "M-92 Mantis"
+  ],
+  "startingMeleeWeaponChoices": 1,
+  "startingMeleeWeapons": [
+    "Omni-Taser",
+    "Omni-Blade",
+    "Monomolecular Blade"
+  ],
+  "startingArmor": [
+    "Stock Light Armor"
+  ],
+  "progressionHeaders": [
+    {
+      "title": "Level"
+    },
+    {
+      "title": "Proficiency Bonus"
+    },
+    {
+      "title": "Sneak Attack Damage",
+      "key": "sneakAttack"
+    },
+    {
+      "title": "Features"
+    },
+    {
+      "title": "Tactical Cloak Uses"
+    },
+    {
+      "title": "Combat Powers",
+      "key": "cantrips"
+    },
+    {
+      "title": "Tech Points"
+    },
+    {
+      "title": "Tech Point Limit"
+    }
+  ],
+  "progression": [
+    {
+      "level": 1,
+      "proficiencyBonus": 2,
+      "sneakAttack": "1d6",
+      "features": [
+        "tactical_cloak",
+        "expertise",
+        "sneak_attack"
+      ],
+      "tacticalCloakUses": 2,
+      "cantrips": "-",
+      "techPoints": 2,
+      "techPointLimit": 1
+    },
+    {
+      "level": 2,
+      "proficiencyBonus": 2,
+      "sneakAttack": "1d6",
+      "features": [
+        "cunning_action",
+        "combat_powers"
+      ],
+      "tacticalCloakUses": 2,
+      "cantrips": 1,
+      "techPoints": 2,
+      "techPointLimit": 1
+    },
+    {
+      "level": 3,
+      "proficiencyBonus": 2,
+      "sneakAttack": "2d6",
+      "features": [
+        "subclass"
+      ],
+      "tacticalCloakUses": 2,
+      "cantrips": 1,
+      "techPoints": 3,
+      "techPointLimit": 1
+    },
+    {
+      "level": 4,
+      "proficiencyBonus": 2,
+      "sneakAttack": "2d6",
+      "features": [
+        "ability_score_improvement"
+      ],
+      "tacticalCloakUses": 2,
+      "cantrips": 1,
+      "techPoints": 4,
+      "techPointLimit": 1
+    },
+    {
+      "level": 5,
+      "proficiencyBonus": 3,
+      "sneakAttack": "3d6",
+      "features": [
+        "uncanny_dodge"
+      ],
+      "tacticalCloakUses": 2,
+      "cantrips": 1,
+      "techPoints": 6,
+      "techPointLimit": 1
+    },
+    {
+      "level": 6,
+      "proficiencyBonus": 3,
+      "sneakAttack": "3d6",
+      "features": [
+        "expertise"
+      ],
+      "tacticalCloakUses": 3,
+      "cantrips": 2,
+      "techPoints": 6,
+      "techPointLimit": 1
+    },
+    {
+      "level": 7,
+      "proficiencyBonus": 3,
+      "sneakAttack": "4d6",
+      "features": [
+        "evasion"
+      ],
+      "tacticalCloakUses": 3,
+      "cantrips": 2,
+      "techPoints": 7,
+      "techPointLimit": 1
+    },
+    {
+      "level": 8,
+      "proficiencyBonus": 3,
+      "sneakAttack": "4d6",
+      "features": [
+        "ability_score_improvement"
+      ],
+      "tacticalCloakUses": 3,
+      "cantrips": 2,
+      "techPoints": 7,
+      "techPointLimit": 1
+    },
+    {
+      "level": 9,
+      "proficiencyBonus": 4,
+      "sneakAttack": "5d6",
+      "features": [
+        "subclass"
+      ],
+      "tacticalCloakUses": 3,
+      "cantrips": 2,
+      "techPoints": 11,
+      "techPointLimit": 2
+    },
+    {
+      "level": 10,
+      "proficiencyBonus": 4,
+      "sneakAttack": "5d6",
+      "features": [
+        "ability_score_improvement"
+      ],
+      "tacticalCloakUses": 3,
+      "cantrips": 2,
+      "techPoints": 11,
+      "techPointLimit": 2
+    },
+    {
+      "level": 11,
+      "proficiencyBonus": 4,
+      "sneakAttack": "6d6",
+      "features": [
+        "reliable_talent"
+      ],
+      "tacticalCloakUses": 4,
+      "cantrips": 3,
+      "techPoints": 13,
+      "techPointLimit": 2
+    },
+    {
+      "level": 12,
+      "proficiencyBonus": 4,
+      "sneakAttack": "6d6",
+      "features": [
+        "ability_score_improvement"
+      ],
+      "tacticalCloakUses": 4,
+      "cantrips": 3,
+      "techPoints": 13,
+      "techPointLimit": 2
+    },
+    {
+      "level": 13,
+      "proficiencyBonus": 5,
+      "sneakAttack": "7d6",
+      "features": [
+        "subclass"
+      ],
+      "tacticalCloakUses": 4,
+      "cantrips": 3,
+      "techPoints": 15,
+      "techPointLimit": 2
+    },
+    {
+      "level": 14,
+      "proficiencyBonus": 5,
+      "sneakAttack": "7d6",
+      "features": [
+        "blindsense"
+      ],
+      "tacticalCloakUses": 4,
+      "cantrips": 3,
+      "techPoints": 15,
+      "techPointLimit": 2
+    },
+    {
+      "level": 15,
+      "proficiencyBonus": 5,
+      "sneakAttack": "8d6",
+      "features": [
+        "slippery_mind"
+      ],
+      "tacticalCloakUses": 4,
+      "cantrips": 3,
+      "techPoints": 17,
+      "techPointLimit": 2
+    },
+    {
+      "level": 16,
+      "proficiencyBonus": 5,
+      "sneakAttack": "8d6",
+      "features": [
+        "ability_score_improvement"
+      ],
+      "tacticalCloakUses": 4,
+      "cantrips": 4,
+      "techPoints": 17,
+      "techPointLimit": 2
+    },
+    {
+      "level": 17,
+      "proficiencyBonus": 6,
+      "sneakAttack": "9d6",
+      "features": [
+        "subclass"
+      ],
+      "tacticalCloakUses": 4,
+      "cantrips": 4,
+      "techPoints": 20,
+      "techPointLimit": 3
+    },
+    {
+      "level": 18,
+      "proficiencyBonus": 6,
+      "sneakAttack": "9d6",
+      "features": [
+        "elusive"
+      ],
+      "tacticalCloakUses": 5,
+      "cantrips": 4,
+      "techPoints": 20,
+      "techPointLimit": 3
+    },
+    {
+      "level": 19,
+      "proficiencyBonus": 6,
+      "sneakAttack": "10d6",
+      "features": [
+        "ability_score_improvement"
+      ],
+      "tacticalCloakUses": 5,
+      "cantrips": 4,
+      "techPoints": 23,
+      "techPointLimit": 3
+    },
+    {
+      "level": 20,
+      "proficiencyBonus": 6,
+      "sneakAttack": "10d6",
+      "features": [
+        "stroke_of_luck"
+      ],
+      "tacticalCloakUses": 5,
+      "cantrips": 4,
+      "techPoints": 25,
+      "techPointLimit": 3
+    }
+  ],
+  "subclasses": [
+    {
+      "name": "Shadow",
+      "description": "Shadow Infiltrators are melee specialists that make heavy use of their tactical cloak and stealth to close the distance between themselves and their target.",
+      "features": [
+        [
+          "up_close_and_personal"
+        ],
+        [
+          "silent_cloak",
+          "melee_prowess"
+        ],
+        [
+          "shadow_strike"
+        ],
+        [
+          "death_strike"
+        ]
+      ]
+    },
+    {
+      "name": "Sniper",
+      "description": "Snipers are ranged specialists that have an affinity for sniper rifles.",
+      "features": [
+        [
+          "steady_aim"
+        ],
+        [
+          "careful_eyes"
+        ],
+        [
+          "overwatch"
+        ],
+        [
+          "killshot"
+        ]
+      ]
+    },
+    {
+      "name": "Saboteur",
+      "description": "Saboteurs are tech savvy infiltrators that use cloak and dagger tactics to control the outcome of battles.",
+      "features": [
+        [
+          "saboteurs_touch",
+          "combat_heuristics"
+        ],
+        [
+          "tactical_ambush"
+        ],
+        [
+          "misdirection"
+        ],
+        [
+          "saboteurs_reflexes"
+        ]
+      ]
+    },
+    {
+      "name": "Saboteur",
+      "source": "v0.8.4",
+      "description": "Saboteurs are infiltration experts. They use a sharp mind to subtly affect the outcome of battles.",
+      "features": [
+        [
+          "zz_insightful_fighting"
+        ],
+        [
+          "zz_infiltration"
+        ],
+        [
+          "zz_saboteurs_touch"
+        ],
+        [
+          "zz_eye_for_weakness"
+        ]
+      ]
+    },
+    {
+      "name": "Operative",
+      "source": "v0.8.4",
+      "description": "Operatives are ranged specialists that rely on gunplay and a keen eye to take out enemies from a distance.",
+      "features": [
+        [
+          "zz_dropshot"
+        ],
+        [
+          "zz_deadeye"
+        ],
+        [
+          "zz_combat_heuristics"
+        ],
+        [
+          "zz_killshot"
+        ]
+      ]
+    }
+  ]
+}

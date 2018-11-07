@@ -24,7 +24,7 @@
         v-card-text
           div(v-for="feature in selectedLevel.features" v-bind:key="feature").mt-3
             subclass-feature(v-if="feature === 'subclass'" v-bind:item="item" v-bind:level="selectedLevel" v-bind:primaryColor="colors.primary")
-            class-feature(v-else v-bind:id="feature" v-bind:level="selectedLevel")
+            class-feature(v-else v-bind:id="feature" v-bind:featureLevel="selectedLevel")
         v-card-actions
           v-btn(@click="dialog=false" flat="flat") Close
 </template>
@@ -32,18 +32,19 @@
 <script>
   import _ from 'lodash'
   import ClassFeature from '~/components/class/ClassFeature.vue'
+  import features from '~/static/data/class_features'
   import SubclassFeature from '~/components/class/SubclassFeature.vue'
-
-  // State
-  import {createNamespacedHelpers} from 'vuex'
-  const {mapGetters} = createNamespacedHelpers('classPage')
 
   export default {
     components: { ClassFeature, SubclassFeature },
-    computed: {
-      ...mapGetters(['getData']),
-      spellSlotArray () {
-        return this.item.spellSlots ? [...Array(this.item.maxSpellSlot).keys()] : []
+    props: {
+      item: {
+        type: Object,
+        default: () => { return {} }
+      },
+      colors: {
+        type: Object,
+        default: () => { return {} }
       }
     },
     data () {
@@ -52,22 +53,19 @@
         selectedLevel: null
       }
     },
+    computed: {
+      spellSlotArray () {
+        return this.item.spellSlots ? [...Array(this.item.maxSpellSlot).keys()] : []
+      }
+    },
     methods: {
       featureList (level) {
-        return this.getData('classFeatures').filter(feature => level.features.includes(feature.id)).map(feature => {
+        return features.filter(feature => level.features.includes(feature.id)).map(feature => {
           switch (feature.id) {
-            case 'biotic_powers':
-              return `${feature.name}(${level.newBioticSpellCount}:${level.newSpellLevelMax})`
-            case 'tech_power':
-              return `${feature.name}(${level.newTechSpellCount})`
-            case 'techcombat_power':
-              return `${feature.name}(${level.newTechSpellCount})`
             case 'extra_attack_2':
             case 'extra_attack_3':
             case 'brutal_critical_2':
             case 'brutal_critical_3':
-            case 'zero-sum_2':
-            case 'zero-sum_3':
             case 'adrenaline_rush_2':
               return `${feature.name}(${feature.id.split('_')[feature.id.split('_').length - 1]})`
             default:
@@ -84,8 +82,7 @@
           this.selectedLevel = row
         }
       }
-    },
-    props: ['item', 'colors']
+    }
   }
 </script>
 

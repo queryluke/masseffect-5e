@@ -1,0 +1,93 @@
+{
+  "abilityScores": {
+    "str": 10,
+    "dex": 12,
+    "con": 12,
+    "int": 14,
+    "wis": 16,
+    "cha": 18
+  },
+  "ac": "16",
+  "actions": [
+    {
+      "type": "melee",
+      "name": "Bash",
+      "range": 2,
+      "target": "one target",
+      "hit": "13 (3d8) bludgeoning damage and the target must succeed on a DC 13 Constitution saving throw or become stunned until the end of its next turn.",
+      "miss": null,
+      "attackMod": 4
+    }
+  ],
+  "alignment": "Lawful Evil",
+  "barrier": "20",
+  "conditionImmunities": [
+    "charmed"
+  ],
+  "cr": "11",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [],
+  "hp": {
+    "numDice": 25,
+    "die": 10
+  },
+  "id": "collector_general",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/3c/Collectors_Leader_Character_Shot.png/revision/latest/scale-to-width-down/350?cb=20091119091650",
+  "lairActions": [],
+  "legendaryActions": [
+    {
+      "name": "Assume Control",
+      "cost": 2,
+      "description": "The harbinger targets a friendly collector that is not incapacitated. The target creature becomes possessed and gains the benefits listed on its monster sheet. The harbinger can only assume control of one creature at a time. While it is assuming control, its speed becomes 0, attacking creatures have advantage, it automatically fails Strength and Dexterity saving throws, and it cannot cast any spells. If the harbinger is incapacitated, assume control ends. The harbinger can use its bonus action to end assume control. As a result, the targeted creature loses all benefits including any temporary hit points and barrier ticks."
+    },
+    {
+      "name": "Bash Attack",
+      "cost": 1,
+      "description": "The collector general makes one bash attack."
+    },
+    {
+      "name": "Cast a Spell",
+      "cost": 3,
+      "description": "The collector general casts a spell from its list of prepared spells, using a spell slot as normal."
+    }
+  ],
+  "name": "Collector General",
+  "profBonus": 4,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [
+    {
+      "sense": "darkvision",
+      "range": 20
+    }
+  ],
+  "size": "Large",
+  "skills": [
+    "history",
+    "perception",
+    "science",
+    "persuasion",
+    "deception"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "spellcasting": {
+    "level": "12",
+    "mod": "cha",
+    "spellList": [
+      "dark_channel",
+      "pull",
+      "reave",
+      "shockwave",
+      "singularity"
+    ]
+  },
+  "type": "Organic",
+  "unit": "Collector"
+}

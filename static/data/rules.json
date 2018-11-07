@@ -1,0 +1,721 @@
+[
+  {
+    "length": 1208,
+    "new": true,
+    "title": "About the Player's Manual",
+    "section": 1,
+    "subSection": 1,
+    "id": "01-01-using-this-homebrew",
+    "hash": "using-this-homebrew"
+  },
+  {
+    "length": 4962,
+    "title": "Introduction",
+    "section": 1,
+    "subSection": 2,
+    "id": "01-02-introduction",
+    "hash": "introduction"
+  },
+  {
+    "length": 3007,
+    "new": true,
+    "title": "A Universe to Explore",
+    "section": 1,
+    "subSection": 3,
+    "id": "01-03-universe-to-explore",
+    "hash": "universe-to-explore"
+  },
+  {
+    "length": 0,
+    "new": true,
+    "title": "Using these Rules",
+    "section": 1,
+    "subSection": 4,
+    "id": "01-04-using-these-rules",
+    "hash": "using-these-rules"
+  },
+  {
+    "length": 8266,
+    "title": "How to Play",
+    "section": 1,
+    "subSection": 5,
+    "id": "01-05-how-to-play",
+    "hash": "how-to-play"
+  },
+  {
+    "length": 4794,
+    "title": "Missions",
+    "section": 1,
+    "subSection": 6,
+    "id": "01-06-adventures",
+    "hash": "adventures"
+  },
+  {
+    "length": 1539,
+    "title": "Overview",
+    "section": 2,
+    "subSection": 1,
+    "id": "02-01-step-by-step-characters",
+    "hash": "step-by-step-characters"
+  },
+  {
+    "length": 4361,
+    "change": true,
+    "title": "1. Choose a Race",
+    "section": 2,
+    "subSection": 2,
+    "id": "02-02-choose-a-race",
+    "hash": "choose-a-race"
+  },
+  {
+    "length": 4948,
+    "title": "2. Choose a Class",
+    "section": 2,
+    "subSection": 3,
+    "id": "02-03-choose-a-class",
+    "hash": "choose-a-class"
+  },
+  {
+    "length": 3730,
+    "title": "3. Determine Ability Scores",
+    "section": 2,
+    "subSection": 4,
+    "id": "02-04-determine-ability-scores",
+    "hash": "determine-ability-scores"
+  },
+  {
+    "length": 2220,
+    "title": "4. Describe Your Character",
+    "section": 2,
+    "subSection": 5,
+    "id": "02-05-describe-your-character",
+    "hash": "describe-your-character"
+  },
+  {
+    "length": 2062,
+    "title": "4.a Appearance",
+    "section": 2,
+    "subSection": 6,
+    "id": "02-06-appearance",
+    "hash": "appearance"
+  },
+  {
+    "length": 2631,
+    "title": "4.b Alignment",
+    "section": 2,
+    "subSection": 7,
+    "id": "02-07-alignment",
+    "hash": "alignment"
+  },
+  {
+    "length": 1882,
+    "title": "4.c Background",
+    "section": 2,
+    "subSection": 8,
+    "id": "02-08-background",
+    "hash": "background"
+  },
+  {
+    "length": 4770,
+    "title": "4.d Personality",
+    "section": 2,
+    "subSection": 9,
+    "id": "02-09-personality",
+    "hash": "personality"
+  },
+  {
+    "length": 720,
+    "change": true,
+    "title": "4.e Languages",
+    "section": 2,
+    "subSection": 10,
+    "id": "02-10-languages",
+    "hash": "languages"
+  },
+  {
+    "length": 3555,
+    "change": true,
+    "title": "5. Choose Equipment",
+    "section": 2,
+    "subSection": 11,
+    "id": "02-11-choose-equipment",
+    "hash": "choose-equipment"
+  },
+  {
+    "length": 654,
+    "title": "Coming Together",
+    "section": 2,
+    "subSection": 12,
+    "id": "02-12-coming-together",
+    "hash": "coming-together"
+  },
+  {
+    "length": 1539,
+    "title": "Overview",
+    "section": 3,
+    "subSection": 1,
+    "id": "03-01-beyond-first-level",
+    "hash": "beyond-first-level"
+  },
+  {
+    "length": 1539,
+    "change": true,
+    "title": "Multiclassing",
+    "section": 3,
+    "subSection": 2,
+    "id": "03-02-multiclassing",
+    "hash": "multiclassing"
+  },
+  {
+    "length": 1539,
+    "title": "Inspiration",
+    "section": 3,
+    "subSection": 3,
+    "id": "03-03-inspiration",
+    "hash": "inspiration"
+  },
+  {
+    "length": 3178,
+    "new": true,
+    "title": "Variant: Paragon & Renegade",
+    "section": 3,
+    "subSection": 4,
+    "id": "03-04-paragon-renegade",
+    "hash": "paragon-renegade"
+  },
+  {
+    "length": 866,
+    "title": "Overview",
+    "section": 4,
+    "subSection": 1,
+    "id": "04-01-using-ability-scores",
+    "hash": "using-ability-scores"
+  },
+  {
+    "length": 885,
+    "title": "Ability Scores and Modifiers",
+    "section": 4,
+    "subSection": 2,
+    "id": "04-02-ability-scores-and-modifiers",
+    "hash": "ability-scores-and-modifiers"
+  },
+  {
+    "length": 1689,
+    "title": "Advantage and Disadvantage",
+    "section": 4,
+    "subSection": 3,
+    "id": "04-03-advantage-and-disadvantage",
+    "hash": "advantage-and-disadvantage"
+  },
+  {
+    "length": 1750,
+    "title": "Proficiency Bonus",
+    "section": 4,
+    "subSection": 4,
+    "id": "04-04-proficiency-bonus",
+    "hash": "proficiency-bonus"
+  },
+  {
+    "length": 8215,
+    "change": true,
+    "title": "Ability Checks",
+    "section": 4,
+    "subSection": 5,
+    "id": "04-05-ability-checks",
+    "hash": "ability-checks"
+  },
+  {
+    "length": 4840,
+    "change": true,
+    "title": "Strength",
+    "section": 4,
+    "subSection": 6,
+    "id": "04-06-strength",
+    "hash": "strength"
+  },
+  {
+    "length": 4634,
+    "change": true,
+    "title": "Dexterity",
+    "section": 4,
+    "subSection": 7,
+    "id": "04-07-dexterity",
+    "hash": "dexterity"
+  },
+  {
+    "length": 1688,
+    "title": "Constitution",
+    "section": 4,
+    "subSection": 8,
+    "id": "04-08-constitution",
+    "hash": "constitution"
+  },
+  {
+    "length": 3102,
+    "change": true,
+    "title": "Intelligence",
+    "section": 4,
+    "subSection": 9,
+    "id": "04-09-intelligence",
+    "hash": "intelligence"
+  },
+  {
+    "length": 3102,
+    "title": "Wisdom",
+    "section": 4,
+    "subSection": 10,
+    "id": "04-10-wisdom",
+    "hash": "wisdom"
+  },
+  {
+    "length": 3102,
+    "title": "Charisma",
+    "section": 4,
+    "subSection": 11,
+    "id": "04-11-charisma",
+    "hash": "charisma"
+  },
+  {
+    "length": 3102,
+    "title": "Saving Throws",
+    "section": 4,
+    "subSection": 12,
+    "id": "04-12-saving-throws",
+    "hash": "saving-throws"
+  },
+  {
+    "length": 1043,
+    "title": "Overview",
+    "section": 5,
+    "subSection": 1,
+    "id": "05-01-missions",
+    "hash": "missions"
+  },
+  {
+    "length": 1119,
+    "title": "Time",
+    "section": 5,
+    "subSection": 2,
+    "id": "05-02-time",
+    "hash": "time"
+  },
+  {
+    "length": 1043,
+    "title": "Movement",
+    "change": true,
+    "section": 5,
+    "subSection": 3,
+    "id": "05-03-movement",
+    "hash": "movement"
+  },
+  {
+    "length": 7372,
+    "title": "The Environment",
+    "change": true,
+    "section": 5,
+    "subSection": 4,
+    "id": "05-04-environment",
+    "hash": "environment"
+  },
+  {
+    "length": 4573,
+    "title": "Social Interaction",
+    "section": 5,
+    "subSection": 5,
+    "id": "05-05-social-interaction",
+    "hash": "social-interaction"
+  },
+  {
+    "length": 2003,
+    "title": "Resting",
+    "section": 5,
+    "subSection": 6,
+    "id": "05-06-resting",
+    "hash": "resting"
+  },
+  {
+    "length": 6127,
+    "title": "Between Missions",
+    "section": 5,
+    "subSection": 7,
+    "id": "05-07-between-missions",
+    "hash": "between-missions"
+  },
+  {
+    "length": 974,
+    "title": "Starting Equipment",
+    "section": 6,
+    "subSection": 1,
+    "id": "06-01-starting-equipment",
+    "hash": "starting-equipment"
+  },
+  {
+    "length": 7139,
+    "title": "Armor",
+    "change": true,
+    "section": 6,
+    "subSection": 2,
+    "id": "06-02-armor",
+    "hash": "armor"
+  },
+  {
+    "length": null,
+    "title": "Custom Armor",
+    "new": true,
+    "section": 6,
+    "subSection": 3,
+    "id": "06-03-custom-armor",
+    "hash": "custom-armor"
+  },
+  {
+    "length": 5158,
+    "title": "Weapons",
+    "change": true,
+    "section": 6,
+    "subSection": 4,
+    "id": "06-04-weapons",
+    "hash": "weapons"
+  },
+  {
+    "length": 742,
+    "title": "Mods",
+    "new": true,
+    "section": 6,
+    "subSection": 5,
+    "id": "06-05-mods",
+    "hash": "mods"
+  },
+  {
+    "length": 1284,
+    "title": "Medi-gel",
+    "new": true,
+    "section": 6,
+    "subSection": 6,
+    "id": "06-06-medi-gel",
+    "hash": "medi-gel"
+  },
+  {
+    "length": 1237,
+    "title": "Thermal Clips",
+    "new": true,
+    "section": 6,
+    "subSection": 7,
+    "id": "06-07-thermal-clips",
+    "hash": "thermal-clips"
+  },
+  {
+    "length": 818,
+    "title": "Grenades & Mines",
+    "new": true,
+    "section": 6,
+    "subSection": 8,
+    "id": "06-08-grenades",
+    "hash": "grenades"
+  },
+  {
+    "length": 819,
+    "title": "Heavy Weapon Charges",
+    "new": true,
+    "section": 6,
+    "subSection": 9,
+    "id": "06-09-heavy-weapon-charges",
+    "hash": "heavy-weapon-charges"
+  },
+  {
+    "length": 747,
+    "title": "Omni-gel",
+    "new": true,
+    "section": 6,
+    "subSection": 10,
+    "id": "06-10-omni-gel",
+    "hash": "omni-gel"
+  },
+  {
+    "length": null,
+    "title": "Tools & Kits",
+    "change": true,
+    "section": 6,
+    "subSection": 11,
+    "id": "06-11-tools-kits",
+    "hash": "tools-kits"
+  },
+  {
+    "length": null,
+    "title": "Omni-tool Programs",
+    "new": true,
+    "section": 6,
+    "subSection": 12,
+    "id": "06-12-omni-tool-programs",
+    "hash": "omni-tool-programs"
+  },
+  {
+    "length": 980,
+    "title": "Wealth",
+    "change": true,
+    "section": 7,
+    "subSection": 1,
+    "id": "07-01-wealth",
+    "hash": "wealth"
+  },
+  {
+    "length": 1140,
+    "title": "Selling Items",
+    "section": 7,
+    "subSection": 2,
+    "id": "07-02-selling-items",
+    "hash": "selling-items"
+  },
+  {
+    "length": 4573,
+    "title": "Discounts",
+    "new": true,
+    "section": 7,
+    "subSection": 3,
+    "id": "07-03-discounts",
+    "hash": "discounts"
+  },
+  {
+    "length": 5512,
+    "title": "Lifestyle Expenses",
+    "section": 7,
+    "subSection": 4,
+    "id": "07-04-lifestyle-expenses",
+    "hash": "lifestyle-expenses"
+  },
+  {
+    "length": 4573,
+    "title": "Cost of things",
+    "change": true,
+    "section": 7,
+    "subSection": 5,
+    "id": "07-05-cost-of-things",
+    "hash": "cost-of-things"
+  },
+  {
+    "length": 539,
+    "title": "Concept",
+    "section": 8,
+    "subSection": 1,
+    "id": "08-01-vehicle-concept",
+    "hash": "vehicle-concept"
+  },
+  {
+    "length": 794,
+    "title": "Transports vs Starships",
+    "section": 8,
+    "subSection": 2,
+    "id": "08-02-transports-starships",
+    "hash": "transports-starships"
+  },
+  {
+    "length": 794,
+    "title": "Basic Information",
+    "section": 8,
+    "subSection": 3,
+    "id": "08-03-basic-information",
+    "hash": "basic-information"
+  },
+  {
+    "length": 794,
+    "title": "Systems",
+    "section": 8,
+    "subSection": 4,
+    "id": "08-04-systems",
+    "hash": "systems"
+  },
+  {
+    "length": 794,
+    "title": "Crew",
+    "section": 8,
+    "subSection": 5,
+    "id": "08-05-crew",
+    "hash": "crew"
+  },
+  {
+    "length": 794,
+    "title": "Starship Combat",
+    "section": 8,
+    "subSection": 6,
+    "id": "08-06-starship-combat",
+    "hash": "starship-combat"
+  },
+  {
+    "length": 794,
+    "title": "Travel",
+    "section": 8,
+    "subSection": 7,
+    "id": "08-07-travel",
+    "hash": "travel"
+  },
+  {
+    "length": 794,
+    "title": "Variant Rules",
+    "section": 8,
+    "subSection": 8,
+    "id": "08-08-other-rules",
+    "hash": "other-rules"
+  },
+  {
+    "length": 794,
+    "title": "Vehicle List",
+    "section": 8,
+    "subSection": 9,
+    "id": "08-09-vehicle-list",
+    "hash": "vehicle-list"
+  },
+  {
+    "length": 794,
+    "title": "Creating New Vehicles",
+    "section": 8,
+    "subSection": 10,
+    "id": "08-10-creating-vehicles",
+    "hash": "creating-vehicles"
+  },
+  {
+    "length": 6137,
+    "title": "The Order of Combat",
+    "section": 9,
+    "subSection": 1,
+    "id": "09-01-order-of-combat",
+    "hash": "order-of-combat"
+  },
+  {
+    "length": 6186,
+    "title": "Movement & Position",
+    "section": 9,
+    "subSection": 2,
+    "id": "09-02-movement-and-position",
+    "hash": "movement-and-position"
+  },
+  {
+    "length": 6893,
+    "title": "Actions in Combat",
+    "change": true,
+    "section": 9,
+    "subSection": 3,
+    "id": "09-03-actions-in-combat",
+    "hash": "actions-in-combat"
+  },
+  {
+    "length": 9095,
+    "title": "Making an Attack",
+    "section": 9,
+    "subSection": 4,
+    "id": "09-04-making-an-attack",
+    "hash": "making-an-attack"
+  },
+  {
+    "length": 2197,
+    "title": "Cover",
+    "change": true,
+    "section": 9,
+    "subSection": 5,
+    "id": "09-05-cover",
+    "hash": "cover"
+  },
+  {
+    "length": 9433,
+    "title": "Damage and Healing",
+    "section": 9,
+    "subSection": 6,
+    "id": "09-06-damage-and-healing",
+    "hash": "damage-and-healing"
+  },
+  {
+    "length": 6186,
+    "title": "Shields",
+    "new": true,
+    "section": 9,
+    "subSection": 7,
+    "id": "09-07-shields",
+    "hash": "shields"
+  },
+  {
+    "length": 449,
+    "title": "What is a Spell?",
+    "change": true,
+    "section": 10,
+    "subSection": 1,
+    "id": "10-01-what-is-a-spell",
+    "hash": "what-is-a-spell"
+  },
+  {
+    "length": 1317,
+    "title": "What is a Spell?",
+    "new": true,
+    "section": 10,
+    "subSection": 2,
+    "id": "10-02-spell-types",
+    "hash": "spell-types"
+  },
+  {
+    "length": 1240,
+    "title": "Spell Level",
+    "change": true,
+    "section": 10,
+    "subSection": 3,
+    "id": "10-03-spell-level",
+    "hash": "spell-level"
+  },
+  {
+    "length": 1465,
+    "title": "Learning Spells",
+    "change": true,
+    "section": 10,
+    "subSection": 4,
+    "id": "10-04-learning-spells",
+    "hash": "learning-spells"
+  },
+  {
+    "length": 2278,
+    "title": "Spell Slots",
+    "change": true,
+    "section": 10,
+    "subSection": 5,
+    "id": "10-05-spell-slots",
+    "hash": "spell-slots"
+  },
+  {
+    "length": null,
+    "title": "Casting a Spell",
+    "change": true,
+    "section": 10,
+    "subSection": 6,
+    "id": "10-06-casting-a-spell",
+    "hash": "casting-a-spell"
+  },
+  {
+    "length": 6186,
+    "title": "Primers and Detonators",
+    "new": true,
+    "section": 10,
+    "subSection": 7,
+    "id": "10-07-primer-and-detonators",
+    "hash": "primer-and-detonators"
+  },
+  {
+    "length": null,
+    "title": "Overview",
+    "section": 11,
+    "subSection": 1,
+    "id": "11-01-monster-overview",
+    "hash": "monster-overview"
+  },
+  {
+    "length": null,
+    "title": "Monster Types",
+    "change": true,
+    "section": 11,
+    "subSection": 2,
+    "id": "11-02-monster-types",
+    "hash": "monster-types"
+  },
+  {
+    "length": null,
+    "title": "Getting Monsters",
+    "section": 11,
+    "subSection": 3,
+    "id": "11-03-getting-monsters",
+    "hash": "getting-monsters"
+  }
+]

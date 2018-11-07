@@ -1,0 +1,97 @@
+{
+  "abilityScores": {
+    "str": 10,
+    "dex": 12,
+    "con": 11,
+    "int": 8,
+    "wis": 6,
+    "cha": 5
+  },
+  "ac": "10",
+  "actions": [
+    {
+      "type": "weapon",
+      "id": "m-4_shuriken"
+    },
+    {
+      "type": "weapon",
+      "id": "m-3_predator"
+    }
+  ],
+  "alignment": "Neutral",
+  "barrier": null,
+  "conditionImmunities": [
+    "petrified",
+    "poisoned"
+  ],
+  "cr": "1/8",
+  "damageImmunities": [
+    "poison",
+    "psychic"
+  ],
+  "damageResistances": [],
+  "damageVulnerabilities": [
+    "lightning"
+  ],
+  "features": [
+    {
+      "name": "Chatter (variant)",
+      "recharge": null,
+      "description": "The LOKI mech can be programmed with pre-recorded phrases, which it utters occasionally during combat. Each hostile creature that hears the phrase much pass a Wisdom saving throw. On a failure, a creature becomes unnerved by the phrase and can only target the LOKI mech when making attack rolls or using damaging spells. On a success, a creature is unaffected and is immune to the LOKI mech's Chatter. The DC of the saving throw is dependant on the phrase, but cannot be higher than 12."
+    },
+    {
+      "name": "Limited Tactics",
+      "recharge": null,
+      "description": "The LOKI mech is incapable of complex combat tactics. It never seeks cover and cannot take the Hide, Dodge, Help, or Disengage actions."
+    },
+    {
+      "name": "Post-mortem Explosion",
+      "recharge": null,
+      "description": "When the LOKI mech is reduced to 0 hit points, it self-destructs. Each creature within a 2m radius sphere must succeed on a DC 10 Dexterity saving throw or take 5 (2d4) thunder damage."
+    }
+  ],
+  "hp": {
+    "numDice": 5,
+    "die": 8
+  },
+  "id": "loki_mech",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/c/c0/ME2_Loki_Mech.png/revision/latest?cb=20120917060158",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "LOKI Mech",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [
+    {
+      "sense": "infrared",
+      "range": null
+    }
+  ],
+  "size": "Medium",
+  "skills": [
+    "perception"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 8
+    }
+  ],
+  "spellcasting": {
+    "level": "innate",
+    "mod": "int",
+    "spellList": [
+      {
+        "perDay": "5/day",
+        "spells": [
+          {
+            "id": "shocking grasp"
+          }
+        ]
+      }
+    ]
+  },
+  "type": "Synthetic",
+  "unit": "Mech"
+}

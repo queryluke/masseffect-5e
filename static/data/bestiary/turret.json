@@ -1,0 +1,73 @@
+{
+  "abilityScores": {
+    "str": 1,
+    "dex": 1,
+    "con": 8,
+    "int": 10,
+    "wis": 6,
+    "cha": 1
+  },
+  "ac": "12",
+  "actions": [
+    {
+      "type": "ranged",
+      "name": "Mass Accelerator Machinegun",
+      "range": 60,
+      "target": "one target",
+      "hit": "7 (2d6) piercing damage and 7 (2d6) radiant damage. The turret can make a burst fire attack instead.",
+      "miss": null,
+      "attackMod": 2
+    }
+  ],
+  "alignment": "Neutral",
+  "barrier": null,
+  "conditionImmunities": [
+    "poisoned"
+  ],
+  "cr": "1",
+  "damageImmunities": [
+    "poison",
+    "psychic"
+  ],
+  "damageResistances": [
+    "bludgeoning"
+  ],
+  "damageVulnerabilities": [
+    "lightning"
+  ],
+  "features": [
+    {
+      "name": "Stationary",
+      "recharge": null,
+      "description": "The turret automatically fails Strength and Dexterity saving throws and skill checks."
+    }
+  ],
+  "hp": {
+    "numDice": 10,
+    "die": 6
+  },
+  "id": "turret",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/0c/ME3_Cerberus_Turret.png/revision/latest/scale-to-width-down/350?cb=20120322141943",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Turret",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Small",
+  "skills": [],
+  "sp": {
+    "shields": 10,
+    "regen": "0"
+  },
+  "speed": [
+    {
+      "type": "walk",
+      "range": 0
+    }
+  ],
+  "spellcasting": false,
+  "type": "Synthetic",
+  "unit": "Mech"
+}

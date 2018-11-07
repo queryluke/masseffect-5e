@@ -1,0 +1,441 @@
+{
+  "id": "sentinel",
+  "name": "Sentinel",
+  "description": "The Sentinel is able to combine tech and biotics to manipulate the environment, disable and track enemies, or defend the party. In addition to complete weapons training, Sentinels are equipped with an advanced shield that makes taking cover much less necessary and rushing their enemies much more productive. Because Sentinels have access to both biotic spells and tech powers and use Charisma as their spellcasting modifier.\n",
+  "snippet": "Sentinels are unique, bringing both tech and biotic abilities to the battlefield.\n",
+  "primaryAbility": "Charisma",
+  "hitDie": 10,
+  "minHitDieRoll": 6,
+  "armorProficiencies": [
+    "Light",
+    "Medium",
+    "Heavy"
+  ],
+  "weaponProficiencyChoices": 2,
+  "weaponProficiencies": {
+    "required": [
+      "Heavy Pistols"
+    ],
+    "optional": [
+      "Assault Rifles",
+      "Melee",
+      "Shotguns",
+      "SMGs"
+    ]
+  },
+  "savingThrows": [
+    "Charisma",
+    "Constitution"
+  ],
+  "skillChoices": 3,
+  "skillProficiencies": [
+    "Athletics",
+    "Engineering",
+    "Insight",
+    "Intimidation",
+    "Medicine",
+    "Persuasion",
+    "Science",
+    "Survival"
+  ],
+  "startingRangedWeaponChoices": 1,
+  "startingRangedWeapons": [
+    "M-3 Predator",
+    "M-4 Shuriken",
+    "M-8 Avenger"
+  ],
+  "startingMeleeWeaponChoices": 1,
+  "startingMeleeWeapons": [
+    "Omni-Blade",
+    "Omni-Hammer",
+    "Monomolecular Blade",
+    "Riot Shield"
+  ],
+  "startingArmor": [
+    "Stock Light Armor",
+    "Stock Medium Armor",
+    "Stock Heavy Armor"
+  ],
+  "progressionHeaders": [
+    {
+      "title": "Level"
+    },
+    {
+      "title": "Proficiency Bonus"
+    },
+    {
+      "title": "Features"
+    },
+    {
+      "title": "Barrier Uses"
+    },
+    {
+      "title": "Barrier Ticks"
+    },
+    {
+      "title": "Cantrips"
+    },
+    {
+      "title": "Spells Known"
+    },
+    {
+      "title": "Spell Slots"
+    },
+    {
+      "title": "Spell Level"
+    }
+  ],
+  "progression": [
+    {
+      "level": 1,
+      "proficiencyBonus": 2,
+      "features": [
+        "tech_armor",
+        "barrier"
+      ],
+      "barrierUses": 2,
+      "barrierTicks": 3,
+      "cantrips": 2,
+      "spellsKnown": 2,
+      "spellSlots": 1,
+      "spellLevel": 1
+    },
+    {
+      "level": 2,
+      "proficiencyBonus": 2,
+      "features": [
+        "fighting_style"
+      ],
+      "barrierUses": 2,
+      "barrierTicks": 3,
+      "cantrips": 2,
+      "spellsKnown": 3,
+      "spellSlots": 2,
+      "spellLevel": 1
+    },
+    {
+      "level": 3,
+      "proficiencyBonus": 2,
+      "features": [
+        "subclass"
+      ],
+      "barrierUses": 3,
+      "barrierTicks": 3,
+      "cantrips": 2,
+      "spellsKnown": 4,
+      "spellSlots": 2,
+      "spellLevel": 1
+    },
+    {
+      "level": 4,
+      "proficiencyBonus": 2,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "barrierUses": 3,
+      "barrierTicks": 3,
+      "cantrips": 3,
+      "spellsKnown": 5,
+      "spellSlots": 2,
+      "spellLevel": 1
+    },
+    {
+      "level": 5,
+      "proficiencyBonus": 3,
+      "features": [],
+      "barrierUses": 3,
+      "barrierTicks": 4,
+      "cantrips": 3,
+      "spellsKnown": 6,
+      "spellSlots": 2,
+      "spellLevel": 2
+    },
+    {
+      "level": 6,
+      "proficiencyBonus": 3,
+      "features": [
+        "quick_cast"
+      ],
+      "barrierUses": 4,
+      "barrierTicks": 4,
+      "cantrips": 3,
+      "spellsKnown": 7,
+      "spellSlots": 2,
+      "spellLevel": 2
+    },
+    {
+      "level": 7,
+      "proficiencyBonus": 3,
+      "features": [
+        "subclass"
+      ],
+      "barrierUses": 4,
+      "barrierTicks": 4,
+      "cantrips": 3,
+      "spellsKnown": 8,
+      "spellSlots": 2,
+      "spellLevel": 2
+    },
+    {
+      "level": 8,
+      "proficiencyBonus": 3,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "barrierUses": 4,
+      "barrierTicks": 4,
+      "cantrips": 3,
+      "spellsKnown": 9,
+      "spellSlots": 2,
+      "spellLevel": 2
+    },
+    {
+      "level": 9,
+      "proficiencyBonus": 4,
+      "features": [],
+      "barrierUses": 4,
+      "barrierTicks": 5,
+      "cantrips": 3,
+      "spellsKnown": 10,
+      "spellSlots": 2,
+      "spellLevel": 3
+    },
+    {
+      "level": 10,
+      "proficiencyBonus": 4,
+      "features": [
+        "subclass"
+      ],
+      "barrierUses": 4,
+      "barrierTicks": 5,
+      "cantrips": 4,
+      "spellsKnown": 10,
+      "spellSlots": 2,
+      "spellLevel": 3
+    },
+    {
+      "level": 11,
+      "proficiencyBonus": 4,
+      "features": [
+        "l5t_1"
+      ],
+      "barrierUses": 4,
+      "barrierTicks": 5,
+      "cantrips": 4,
+      "spellsKnown": 11,
+      "spellSlots": 3,
+      "spellLevel": 3
+    },
+    {
+      "level": 12,
+      "proficiencyBonus": 4,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "barrierUses": 5,
+      "barrierTicks": 5,
+      "cantrips": 4,
+      "spellsKnown": 11,
+      "spellSlots": 3,
+      "spellLevel": 3
+    },
+    {
+      "level": 13,
+      "proficiencyBonus": 5,
+      "features": [
+        "l5t_2"
+      ],
+      "barrierUses": 5,
+      "barrierTicks": 6,
+      "cantrips": 4,
+      "spellsKnown": 12,
+      "spellSlots": 3,
+      "spellLevel": 3
+    },
+    {
+      "level": 14,
+      "proficiencyBonus": 5,
+      "features": [
+        "subclass"
+      ],
+      "barrierUses": 5,
+      "barrierTicks": 6,
+      "cantrips": 4,
+      "spellsKnown": 12,
+      "spellSlots": 3,
+      "spellLevel": 3
+    },
+    {
+      "level": 15,
+      "proficiencyBonus": 5,
+      "features": [
+        "l5t_3"
+      ],
+      "barrierUses": 5,
+      "barrierTicks": 6,
+      "cantrips": 4,
+      "spellsKnown": 13,
+      "spellSlots": 3,
+      "spellLevel": 3
+    },
+    {
+      "level": 16,
+      "proficiencyBonus": 5,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "barrierUses": 5,
+      "barrierTicks": 6,
+      "cantrips": 4,
+      "spellsKnown": 13,
+      "spellSlots": 3,
+      "spellLevel": 3
+    },
+    {
+      "level": 17,
+      "proficiencyBonus": 6,
+      "features": [
+        "l5t_4"
+      ],
+      "barrierUses": 6,
+      "barrierTicks": 7,
+      "cantrips": 4,
+      "spellsKnown": 14,
+      "spellSlots": 4,
+      "spellLevel": 3
+    },
+    {
+      "level": 18,
+      "proficiencyBonus": 6,
+      "features": [
+        "subclass"
+      ],
+      "barrierUses": 6,
+      "barrierTicks": 7,
+      "cantrips": 4,
+      "spellsKnown": 14,
+      "spellSlots": 4,
+      "spellLevel": 3
+    },
+    {
+      "level": 19,
+      "proficiencyBonus": 6,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "barrierUses": 6,
+      "barrierTicks": 8,
+      "cantrips": 4,
+      "spellsKnown": 15,
+      "spellSlots": 4,
+      "spellLevel": 3
+    },
+    {
+      "level": 20,
+      "proficiencyBonus": 6,
+      "features": [
+        "reset"
+      ],
+      "barrierUses": 6,
+      "barrierTicks": 8,
+      "cantrips": 4,
+      "spellsKnown": 15,
+      "spellSlots": 4,
+      "spellLevel": 3
+    }
+  ],
+  "subclasses": [
+    {
+      "name": "Bastion",
+      "description": "Bastion sentinels are battlefield leaders. They can easily turn the tides by calling out orders, inspiring troops, and synchronizing troop movements.",
+      "features": [
+        [
+          "tactical_focus",
+          "master_tactician"
+        ],
+        [
+          "ever_ready",
+          "tactical_focus_2",
+          "tactical_range_1"
+        ],
+        [
+          "call_shots",
+          "tactical_range_2"
+        ],
+        [
+          "tactical_maneuvers",
+          "tactical_focus_2"
+        ],
+        [
+          "synchronized_assault"
+        ]
+      ]
+    },
+    {
+      "name": "Juggernaut",
+      "description": "Juggernauts are living tanks and nearly impossible to take down. Their tech armor upgrades make sure they can take a hit, or one hundred, without so much as a scratch.",
+      "features": [
+        [
+          "assault_armor"
+        ],
+        [
+          "hardened_tech_armor"
+        ],
+        [
+          "advanced_tech_armor"
+        ],
+        [
+          "unyielding_assault"
+        ],
+        [
+          "adaptive_tech_armor"
+        ]
+      ]
+    },
+    {
+      "name": "Guardian",
+      "description": "Guardians support and buff party members by utilizing different AI packages from their Tech Armor ability and protecting them with their Omni-Shield. They're also one of the most skilled classes, gaining the Expertise feature twice.",
+      "features": [
+        [
+          "expertise",
+          "omni-shield"
+        ],
+        [
+          "tech_aura_1"
+        ],
+        [
+          "expertise",
+          "sculpt_spells"
+        ],
+        [
+          "tech_aura_2"
+        ],
+        [
+          "tech_aura_3"
+        ]
+      ]
+    },
+    {
+      "name": "Mastermind",
+      "source": "v0.8.4",
+      "description": "Masterminds are the top strategists and battlefield experts. They can easily turn the tides by calling out orders or synchronizing troop movements.",
+      "features": [
+        [
+          "master_tactician"
+        ],
+        [
+          "zz_biotic_enfilade"
+        ],
+        [
+          "zz_tactical_advantage"
+        ],
+        [
+          "zz_master_duelist"
+        ],
+        [
+          "zz_synchronized_assault"
+        ]
+      ]
+    }
+  ]
+}

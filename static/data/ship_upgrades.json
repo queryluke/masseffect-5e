@@ -1,0 +1,330 @@
+[
+  {
+    "name": "Multi-directional Thrusters I",
+    "system": "Helm",
+    "effect": "+1 Speed and +1 bonus to Maneuver and Hard Maneuver Rolls",
+    "prerequisite": "-",
+    "cost": "200000",
+    "id": "multi-directional_thrusters_i"
+  },
+  {
+    "name": "Multi-directional Thrusters II",
+    "system": "Helm",
+    "effect": "+2 Speed and +2 bonus to Maneuver and Hard Maneuver Rolls",
+    "prerequisite": "Multi-directional Thrusters I",
+    "cost": "40000",
+    "id": "multi-directional_thrusters_ii"
+  },
+  {
+    "name": "Multi-directional Thrusters III",
+    "system": "Helm",
+    "effect": "+3 Speed and +3 bonus to Maneuver and Hard Maneuver Rolls",
+    "prerequisite": "Multi-directional Thrusters II",
+    "cost": "80000",
+    "id": "multi-directional_thrusters_iii"
+  },
+  {
+    "name": "Multi-directional Thrusters IV",
+    "system": "Helm",
+    "effect": "+4 Speed and +4 bonus to Maneuver and Hard Maneuver Rolls",
+    "prerequisite": "Multi-directional Thrusters III",
+    "cost": "120000",
+    "id": "multi-directional_thrusters_iv"
+  },
+  {
+    "name": "Multi-directional Thrusters V",
+    "system": "Helm",
+    "effect": "+5 Speed and +5 bonus to Maneuver and Hard Maneuver Rolls",
+    "prerequisite": "Multi-directional Thrusters IV",
+    "cost": "200000",
+    "id": "multi-directional_thrusters_v"
+  },
+  {
+    "name": "Advanced Targeting System I",
+    "system": "Weapons",
+    "effect": "+1 bonus to weapon attack rolls",
+    "prerequisite": "-",
+    "cost": "50000",
+    "id": "advanced_targeting_system_i"
+  },
+  {
+    "name": "Advanced Targeting System II",
+    "system": "Weapons",
+    "effect": "+2 bonus to weapon attack rolls",
+    "prerequisite": "Advanced Targeting System I",
+    "cost": "75000",
+    "id": "advanced_targeting_system_ii"
+  },
+  {
+    "name": "Advanced Targeting System III",
+    "system": "Weapons",
+    "effect": "+3 bonus to weapon attack rolls",
+    "prerequisite": "Advanced Targeting System II",
+    "cost": "100000",
+    "id": "advanced_targeting_system_iii"
+  },
+  {
+    "name": "Advanced Targeting System IV",
+    "system": "Weapons",
+    "effect": "+4 bonus to weapon attack rolls",
+    "prerequisite": "Advanced Targeting System III",
+    "cost": "125000",
+    "id": "advanced_targeting_system_iv"
+  },
+  {
+    "name": "Advanced Targeting System V",
+    "system": "Weapons",
+    "effect": "+5 bonus to weapon attack rolls",
+    "prerequisite": "Advanced Targeting System IV",
+    "cost": "150000",
+    "id": "advanced_targeting_system_v"
+  },
+  {
+    "name": "GEB Mobius Algorithm",
+    "system": "EWS",
+    "effect": "+1 to Harden and Sabotage rolls.",
+    "prerequisite": "-",
+    "cost": "75000",
+    "id": "geb_mobius_algorithm"
+  },
+  {
+    "name": "Quantum Computing Processor",
+    "system": "EWS",
+    "effect": "For each Quantum Computing Processor installed, gain an additional +1 to Harden and Sabotage rolls. You can have up to 4 QCPs installed",
+    "prerequisite": "GEB Mobius Algorithm",
+    "cost": "300000",
+    "id": "quantum_computing_processor"
+  },
+  {
+    "name": "Advanced Mineral Scanner",
+    "system": "SSC",
+    "effect": "+5 to Intelligence (Investigation) checks when scanning a celestial body for minerals",
+    "prerequisite": "-",
+    "cost": "150000",
+    "id": "advanced_mineral_scanner"
+  },
+  {
+    "name": "Advanced Ship Scanner I",
+    "system": "SSC",
+    "effect": "+1 bonus to Scan rolls",
+    "prerequisite": "-",
+    "cost": "50000",
+    "id": "advanced_ship_scanner_i"
+  },
+  {
+    "name": "Advanced Ship Scanner II",
+    "system": "SSC",
+    "effect": "+2 bonus to Scan rolls",
+    "prerequisite": "Advanced Ship Scanner I",
+    "cost": "50000",
+    "id": "advanced_ship_scanner_ii"
+  },
+  {
+    "name": "Advanced Ship Scanner III",
+    "system": "SSC",
+    "effect": "+3 bonus to Scan rolls",
+    "prerequisite": "Advanced Ship Scanner II",
+    "cost": "50000",
+    "id": "advanced_ship_scanner_iii"
+  },
+  {
+    "name": "Advanced Ship Scanner IV",
+    "system": "SSC",
+    "effect": "+4 bonus to Scan rolls",
+    "prerequisite": "Advanced Ship Scanner III",
+    "cost": "50000",
+    "id": "advanced_ship_scanner_iv"
+  },
+  {
+    "name": "Advanced Ship Scanner V",
+    "system": "SSC",
+    "effect": "+5 bonus to Scan rolls",
+    "prerequisite": "Advanced Ship Scanner IV",
+    "cost": "50000",
+    "id": "advanced_ship_scanner_v"
+  },
+  {
+    "name": "Auxillary Power Cells I",
+    "system": "Drive",
+    "effect": "+1 range and +1 bonus to Restore rolls",
+    "prerequisite": "-",
+    "cost": "500000",
+    "id": "auxillary_power_cells_i"
+  },
+  {
+    "name": "Auxillary Power Cells II",
+    "system": "Drive",
+    "effect": "+2 range and +2 bonus to Restore rolls",
+    "prerequisite": "Auxillary Power Cells I",
+    "cost": "500000",
+    "id": "auxillary_power_cells_ii"
+  },
+  {
+    "name": "Auxillary Power Cells III",
+    "system": "Drive",
+    "effect": "+3 range and +3 bonus to Restore rolls",
+    "prerequisite": "Auxillary Power Cells II",
+    "cost": "500000",
+    "id": "auxillary_power_cells_iii"
+  },
+  {
+    "name": "Auxillary Power Cells IV",
+    "system": "Drive",
+    "effect": "+4 range and +4 bonus to Restore rolls",
+    "prerequisite": "Auxillary Power Cells III",
+    "cost": "500000",
+    "id": "auxillary_power_cells_iv"
+  },
+  {
+    "name": "Auxillary Power Cells V",
+    "system": "Drive",
+    "effect": "+5 range and +5 bonus to Restore rolls",
+    "prerequisite": "Auxillary Power Cells IV",
+    "cost": "500000",
+    "id": "auxillary_power_cells_v"
+  },
+  {
+    "name": "Medbay",
+    "system": "Special",
+    "effect": "When onboard the ship, players that expend a hit die on a short rest gain the maximum possible hit points. Downtime Activity - Practice a Profession, Training (medical kit)",
+    "prerequisite": "-",
+    "cost": "300000",
+    "id": "medbay"
+  },
+  {
+    "name": "Exonet Array",
+    "system": "Special",
+    "effect": "Advantage on Investigation and History checks made while onboard. Downtime Activity - Practice a Profession, Research, Training (hacking tools)",
+    "prerequisite": "-",
+    "cost": "150000",
+    "id": "exonet_array"
+  },
+  {
+    "name": "Luxury Kitchen. ",
+    "system": "Special",
+    "effect": "When you roll a d6 to determine how many crew become disgruntled, subtract 1 from the roll. Downtime Activity - Training (brewer’s supplies, chemist’s supplies, cook’s utensils)",
+    "prerequisite": "-",
+    "cost": "50000",
+    "id": "luxury_kitchen"
+  },
+  {
+    "name": "Rec Room",
+    "system": "Special",
+    "effect": "When you roll a d6 to determine how many crew become disgruntled, subtract 2 from the roll. Downtime Activity - Training (disguise kit, gaming set, musical instrument, painter’s supplies)",
+    "prerequisite": "-",
+    "cost": "100000",
+    "id": "rec_room"
+  },
+  {
+    "name": "Weapon Range",
+    "system": "Special",
+    "effect": "Downtime Activity - Training in additional weapon proficiencies",
+    "prerequisite": "-",
+    "cost": "75000",
+    "id": "weapon_range"
+  },
+  {
+    "name": "VR Training",
+    "system": "Special",
+    "effect": "Downtime Activity - Training (any starship system, vehicles)",
+    "prerequisite": "-",
+    "cost": "30000",
+    "id": "vr_training"
+  },
+  {
+    "name": "Armory",
+    "system": "Special",
+    "effect": "Acts as a Weapon and Armor workbench for the purposes of installing equipment mods (weapons and armor). Downtime Activity - Crafting, Training (armorsmith’s workbench, tailor’s tools, tinker’s tools, weaponsmith’s workbench)",
+    "prerequisite": "-",
+    "cost": "350000",
+    "id": "armory"
+  },
+  {
+    "name": "Crash Couches",
+    "system": "Special",
+    "effect": "When you succeed on a Hard Maneuver, characters on board your ship have advantage on their Constitution saving throw.",
+    "prerequisite": "-",
+    "cost": "125000",
+    "id": "crash_couches"
+  },
+  {
+    "name": "Extended Fuel Cells",
+    "system": "Special",
+    "effect": "Your fuel capacity is equal to your ship's range multiplied by 6.",
+    "prerequisite": "-",
+    "cost": "150000",
+    "id": "extended_fuel_cells"
+  },
+  {
+    "name": "Heavy Ship Armor I",
+    "system": "-",
+    "effect": "+1 AC",
+    "prerequisite": "-",
+    "cost": "300000",
+    "id": "heavy_ship_armor_i"
+  },
+  {
+    "name": "Heavy Ship Armor II",
+    "system": "-",
+    "effect": "+2 AC",
+    "prerequisite": "Heavy Ship Armor I",
+    "cost": "350000",
+    "id": "heavy_ship_armor_ii"
+  },
+  {
+    "name": "Heavy Ship Armor III",
+    "system": "-",
+    "effect": "+3 AC",
+    "prerequisite": "Heavy Ship Armor II",
+    "cost": "425000",
+    "id": "heavy_ship_armor_iii"
+  },
+  {
+    "name": "Heavy Ship Armor IV",
+    "system": "-",
+    "effect": "+4 AC",
+    "prerequisite": "Heavy Ship Armor III",
+    "cost": "525000",
+    "id": "heavy_ship_armor_iv"
+  },
+  {
+    "name": "Heavy Ship Armor V",
+    "system": "-",
+    "effect": "+5 AC",
+    "prerequisite": "Heavy Ship Armor IV",
+    "cost": "650000",
+    "id": "heavy_ship_armor_v"
+  },
+  {
+    "name": "Multicore Shielding",
+    "system": "-",
+    "effect": "+50 shields for each Milticore Shielding installed. Maximum 10.",
+    "prerequisite": "-",
+    "cost": "175000",
+    "id": "multicore_shielding"
+  },
+  {
+    "name": "Thanix Cannon",
+    "system": "-",
+    "effect": "Recharge (4-6). 2600 (4d12[x100]) lightning damage",
+    "prerequisite": "-",
+    "cost": "2000000",
+    "id": "thanix_cannon"
+  },
+  {
+    "name": "Experimental AI",
+    "system": "-",
+    "effect": "Starts as a level 1 NPC with a proficiency bonus of +2. When you take the Defer action in starship combat, add the AI's proficiency bonus to the roll. After a starship encounter, divvy up experience among all players and the AI. The AI's level and proficeincy bonus increases at the same rate of a player character.",
+    "prerequisite": "-",
+    "cost": "1000000",
+    "id": "experimental_ai"
+  },
+  {
+    "name": "GARDIAN",
+    "system": "-",
+    "effect": "Once per round, the GARDIAN system targets up to 4 transports within range (~ 1km), dealing 250 (1d4[x100]) radiant damage to each target. This can also be used as a reaction to a torpedo or missile attack, immediately nullifying the attack.",
+    "prerequisite": "-",
+    "cost": "3000000",
+    "id": "gardian"
+  }
+]

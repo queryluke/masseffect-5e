@@ -1,0 +1,903 @@
+[
+  {
+    "name": "A-61 Mantis Gunship",
+    "vehicle": {
+      "type": "transport",
+      "subtype": "air or space"
+    },
+    "size": "huge",
+    "ac": 22,
+    "hp": 350,
+    "sp": 50,
+    "speed": 10,
+    "range": "2000km",
+    "crew": {
+      "min": 2,
+      "max": 8
+    },
+    "cargo": 4,
+    "systems": [
+      {
+        "type": "combined",
+        "crew": 1,
+        "systems": [
+          "Helm",
+          "Weapons"
+        ]
+      },
+      {
+        "type": "combined",
+        "crew": 1,
+        "systems": [
+          "SSC",
+          "EWS"
+        ]
+      }
+    ],
+    "weapons": [
+      {
+        "name": "M350 mass-accelerator autocannons",
+        "damage": "70 (2d6[x10]) piercing damage"
+      },
+      {
+        "name": "Inferno PKRs (16 charges)",
+        "damage": "160 (3d10[x10]) fire damage to a 10m-radius sphere. Half damage on a successful DC 18 Dexterity saving throw."
+      }
+    ],
+    "cr": 21,
+    "cost": "military",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/99/ME3_Gunships.png/revision/latest/scale-to-width-down/733?cb=20120412020735",
+    "id": "a-61_mantis_gunship"
+  },
+  {
+    "name": "Asari Cruiser",
+    "vehicle": {
+      "type": "starship"
+    },
+    "size": "cruiser",
+    "ac": 18,
+    "hp": 2000,
+    "sp": 1500,
+    "speed": 3,
+    "range": "8 ftlu",
+    "crew": {
+      "min": 16,
+      "max": 70
+    },
+    "cargo": 80,
+    "systems": [
+      {
+        "type": "Helm",
+        "crew": 2
+      },
+      {
+        "type": "Navigation",
+        "crew": 2
+      },
+      {
+        "type": "SSC",
+        "crew": 1
+      },
+      {
+        "type": "EWS",
+        "crew": 2
+      },
+      {
+        "type": "Drive",
+        "crew": 6
+      },
+      {
+        "type": "Weapons",
+        "crew": 3
+      }
+    ],
+    "weapons": [
+      {
+        "name": "Twin-Mass Accelerator Cannons",
+        "damage": "900 (2d8[x100]) radiant damage."
+      }
+    ],
+    "cr": "17+",
+    "cost": "military",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/e8/WA_AsariCruiser.png/revision/latest?cb=20120326173630&format=original",
+    "id": "asari_cruiser"
+  },
+  {
+    "name": "Athabasca-class Carrier",
+    "vehicle": {
+      "type": "starship"
+    },
+    "size": "carrier",
+    "ac": 14,
+    "hp": 4200,
+    "sp": 500,
+    "speed": 1,
+    "range": "3 ftlu",
+    "crew": {
+      "min": 8,
+      "max": "100+"
+    },
+    "cargo": "100+",
+    "systems": [
+      {
+        "type": "Helm",
+        "crew": 2
+      },
+      {
+        "type": "Navigation",
+        "crew": 2
+      },
+      {
+        "type": "SSC",
+        "crew": 2
+      },
+      {
+        "type": "EWS",
+        "crew": 2
+      },
+      {
+        "type": "Drive",
+        "crew": 2
+      }
+    ],
+    "cr": "21+",
+    "cost": 4000000,
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/a/ad/MSV_Strontium_Mule.png/revision/latest/scale-to-width-down/600?cb=20140517123905",
+    "id": "athabasca"
+  },
+  {
+    "name": "Destiny Ascension",
+    "vehicle": {
+      "type": "starship"
+    },
+    "size": "dreadnought",
+    "ac": 28,
+    "hp": 8000,
+    "sp": 2000,
+    "speed": 1,
+    "range": "1 ftlu",
+    "crew": {
+      "min": 68,
+      "max": 12000
+    },
+    "cargo": "100+",
+    "systems": [
+      {
+        "type": "Helm",
+        "crew": 5
+      },
+      {
+        "type": "Navigation",
+        "crew": 6
+      },
+      {
+        "type": "SSC",
+        "crew": 10
+      },
+      {
+        "type": "EWS",
+        "crew": 12
+      },
+      {
+        "type": "Drive",
+        "crew": 20
+      },
+      {
+        "type": "Weapons",
+        "crew": 15
+      }
+    ],
+    "weapons": [
+      {
+        "name": "Main Cannon (Recharge 5-6)",
+        "damage": "2600 (4d12[x100]) radiant damage."
+      },
+      {
+        "name": "Anti-Fighter Turrets",
+        "damage": "700 (2d6[x100]) radiant damage."
+      },
+      {
+        "name": "Long Range Beam Cannon",
+        "damage": "1100 (2d10[x100]) radiant damage."
+      }
+    ],
+    "cr": "28+",
+    "cost": "military",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/e8/DestinyAscensionFlyby.png/revision/latest/scale-to-width-down/640?cb=20091227112422",
+    "id": "destiny_acension"
+  },
+  {
+    "name": "Envoy-class Frigate",
+    "vehicle": {
+      "type": "starship"
+    },
+    "size": "frigate",
+    "ac": 13,
+    "hp": 1350,
+    "sp": 350,
+    "speed": 5,
+    "range": "3 ftlu",
+    "crew": {
+      "min": 4,
+      "max": 10
+    },
+    "cargo": 8,
+    "systems": [
+      {
+        "type": "Helm",
+        "crew": 1
+      },
+      {
+        "type": "combined",
+        "crew": 1,
+        "systems": [
+          "Navigation",
+          "SCC",
+          "EWS"
+        ]
+      },
+      {
+        "type": "Weapons",
+        "crew": 1
+      },
+      {
+        "type": "Drive",
+        "crew": 1
+      }
+    ],
+    "weapons": [
+      {
+        "name": "Mass Accelerator Cannon",
+        "damage": "350 (1d6[x100]) radiant damage."
+      }
+    ],
+    "cr": "6+",
+    "cost": 1350000,
+    "id": "envoy"
+  },
+  {
+    "name": "ET3",
+    "vehicle": {
+      "type": "transport",
+      "subtype": "land"
+    },
+    "size": "large",
+    "ac": 16,
+    "hp": 150,
+    "sp": 0,
+    "speed": 4,
+    "range": "500km",
+    "crew": {
+      "min": 1,
+      "max": 8
+    },
+    "cargo": 2,
+    "systems": [
+      {
+        "type": "Helm",
+        "crew": 1
+      }
+    ],
+    "weapons": null,
+    "cr": 3,
+    "cost": 10000,
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/8/86/Haestrom_ET3.jpg/revision/latest/scale-to-width-down/800?cb=20100713050104",
+    "id": "et3"
+  },
+  {
+    "name": "Everest-class Dreadnought",
+    "vehicle": {
+      "type": "starship"
+    },
+    "size": "dreadnought",
+    "ac": 25,
+    "hp": 6500,
+    "sp": 1500,
+    "speed": 1,
+    "range": "3 ftlu",
+    "crew": {
+      "min": 24,
+      "max": "1000+"
+    },
+    "cargo": "100+",
+    "systems": [
+      {
+        "type": "Helm",
+        "crew": 3
+      },
+      {
+        "type": "Navigation",
+        "crew": 2
+      },
+      {
+        "type": "SSC",
+        "crew": 5
+      },
+      {
+        "type": "EWS",
+        "crew": 4
+      },
+      {
+        "type": "Drive",
+        "crew": 6
+      },
+      {
+        "type": "Weapons",
+        "crew": 4
+      }
+    ],
+    "weapons": [
+      {
+        "name": "Main Cannon",
+        "damage": "2200 (4d10[x100]) piercing damage."
+      }
+    ],
+    "cr": "28+",
+    "cost": "military",
+    "id": "everest"
+  },
+  {
+    "name": "Kowloon-class Carrier",
+    "vehicle": {
+      "type": "starship"
+    },
+    "size": "carrier",
+    "ac": 13,
+    "hp": 3500,
+    "sp": 700,
+    "speed": 1,
+    "range": "2 ftlu",
+    "crew": {
+      "min": 8,
+      "max": "100+"
+    },
+    "cargo": "100+",
+    "systems": [
+      {
+        "type": "Helm",
+        "crew": 2
+      },
+      {
+        "type": "Navigation",
+        "crew": 2
+      },
+      {
+        "type": "SSC",
+        "crew": 2
+      },
+      {
+        "type": "EWS",
+        "crew": 2
+      },
+      {
+        "type": "Drive",
+        "crew": 2
+      }
+    ],
+    "cr": "20+",
+    "cost": 3250000,
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/b/b6/MSV_basic_freighter_2_SLI.png/revision/latest?cb=20140906122415&format=original",
+    "id": "kowloon"
+  },
+  {
+    "name": "Lacus-class Frigate",
+    "vehicle": {
+      "type": "starship"
+    },
+    "size": "frigate",
+    "ac": 15,
+    "hp": 1500,
+    "sp": 500,
+    "speed": 2,
+    "range": "10 ftlu",
+    "crew": {
+      "min": 4,
+      "max": 10
+    },
+    "cargo": 30,
+    "systems": [
+      {
+        "type": "Helm",
+        "crew": 1
+      },
+      {
+        "type": "combined",
+        "crew": 1,
+        "systems": [
+          "Navigation",
+          "SCC"
+        ]
+      },
+      {
+        "type": "Weapons",
+        "crew": 1
+      },
+      {
+        "type": "Drive",
+        "crew": 1
+      }
+    ],
+    "weapons": [
+      {
+        "name": "Anti-Fighter Machine Cannons",
+        "damage": "250 (1d4[x100]) piercing damage."
+      },
+      {
+        "name": "Disruptor Torpedoes (10 charges)",
+        "damage": "350 (1d6[x100]) thunder damage and 350 (1d6[x100]) force damage. This damage bypasses shields."
+      }
+    ],
+    "cr": "14+",
+    "cost": 800000,
+    "id": "lacus"
+  },
+  {
+    "name": "M-080",
+    "vehicle": {
+      "type": "transport",
+      "subtype": "land"
+    },
+    "size": "large",
+    "ac": 20,
+    "hp": 250,
+    "sp": 0,
+    "speed": 5,
+    "range": "500km",
+    "crew": {
+      "min": 2,
+      "max": 6
+    },
+    "cargo": 2,
+    "systems": [
+      {
+        "type": "Helm",
+        "crew": 1
+      },
+      {
+        "type": "Weapons",
+        "crew": 1
+      }
+    ],
+    "weapons": [
+      {
+        "name": "Machine Gun",
+        "damage": "35 (1d6[x10]) piercing damage."
+      },
+      {
+        "name": "Mass Accelerator Cannon",
+        "damage": "55 (1d10[x10]) radiant damage."
+      }
+    ],
+    "cr": 3,
+    "cost": "military",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/9a/M-080_Variant.jpg/revision/latest/scale-to-width-down/640?cb=20100626213952",
+    "id": "m-080"
+  },
+  {
+    "name": "M-44 Hammerhead",
+    "vehicle": {
+      "type": "transport",
+      "subtype": "land or sea"
+    },
+    "size": "large",
+    "ac": 14,
+    "hp": 180,
+    "sp": 0,
+    "speed": 15,
+    "range": "2500km",
+    "crew": {
+      "min": 1,
+      "max": 3
+    },
+    "cargo": 1,
+    "systems": [
+      {
+        "type": "combined",
+        "crew": 1,
+        "systems": [
+          "Helm",
+          "SSC",
+          "Weapons",
+          "EWS"
+        ]
+      }
+    ],
+    "weapons": [
+      {
+        "name": "Main Cannon",
+        "damage": "45 (1d8[x10]) thunder damage."
+      }
+    ],
+    "cr": 7,
+    "cost": "military",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/90/M-44_Hammerhead_2160p.png/revision/latest/scale-to-width-down/640?cb=20141021172824",
+    "id": "m-44_hammerhead"
+  },
+  {
+    "name": "M29 Grizzly",
+    "vehicle": {
+      "type": "transport",
+      "subtype": "land"
+    },
+    "size": "huge",
+    "ac": 25,
+    "hp": 350,
+    "sp": 0,
+    "speed": 2,
+    "range": "350km",
+    "crew": {
+      "min": 2,
+      "max": 6
+    },
+    "cargo": 3,
+    "systems": [
+      {
+        "type": "combined",
+        "crew": 1,
+        "systems": [
+          "Helm",
+          "Drive",
+          "SSC"
+        ]
+      },
+      {
+        "type": "Weapons",
+        "crew": 1
+      }
+    ],
+    "weapons": [
+      {
+        "name": "Main Cannon",
+        "damage": "70 (2d6[x10]) thunder damage."
+      }
+    ],
+    "cr": 14,
+    "cost": "military",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/e5/M-29_Grizzly_on_Feros.png/revision/latest/scale-to-width-down/640?cb=20100831073900",
+    "id": "m29_grizzly"
+  },
+  {
+    "name": "M35 Mako",
+    "vehicle": {
+      "type": "transport",
+      "subtype": "land"
+    },
+    "size": "large",
+    "ac": 16,
+    "hp": 150,
+    "sp": 50,
+    "speed": 8,
+    "range": "1000km",
+    "crew": {
+      "min": 1,
+      "max": 3
+    },
+    "cargo": 1,
+    "systems": [
+      {
+        "type": "combined",
+        "crew": 1,
+        "systems": [
+          "Helm",
+          "SSC",
+          "Weapons",
+          "EWS"
+        ]
+      }
+    ],
+    "weapons": [
+      {
+        "name": "Machine Gun",
+        "damage": "35 (1d6[x10]) piercing damage."
+      },
+      {
+        "name": "Mass Accelerator Cannon",
+        "damage": "55 (1d10[x10]) radiant damage."
+      }
+    ],
+    "cr": 6,
+    "cost": "military",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/b/bd/Mako_2.jpg/revision/latest/scale-to-width-down/640?cb=20111101095511",
+    "id": "m35_mako"
+  },
+  {
+    "name": "Normandy-class Frigate",
+    "vehicle": {
+      "type": "starship"
+    },
+    "size": "frigate",
+    "ac": 18,
+    "hp": 1700,
+    "sp": 500,
+    "speed": 10,
+    "range": "6 ftlu",
+    "crew": {
+      "min": 6,
+      "max": 20
+    },
+    "cargo": 10,
+    "systems": [
+      {
+        "type": "Helm",
+        "crew": 1
+      },
+      {
+        "type": "combined",
+        "crew": 1,
+        "systems": [
+          "Navigation",
+          "SCC"
+        ]
+      },
+      {
+        "type": "EWS",
+        "crew": 1
+      },
+      {
+        "type": "Weapons",
+        "crew": 1
+      },
+      {
+        "type": "Drive",
+        "crew": 2
+      }
+    ],
+    "weapons": [
+      {
+        "name": "Javelin Disruptor Torpedoes (20 charges)",
+        "damage": "350 (1d6[x100]) thunder and 250 (1d4[x100]) force damage. This damage bypasses shields."
+      }
+    ],
+    "cr": "11+",
+    "cost": "military",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/1/11/Mass_Effect_Normandy_SR2.png/revision/latest/scale-to-width-down/640?cb=20091227112049",
+    "id": "normandy"
+  },
+  {
+    "name": "Reaper Capital Ship",
+    "vehicle": {
+      "type": "starship"
+    },
+    "size": "dreadnought",
+    "ac": 30,
+    "hp": 10000,
+    "sp": 5000,
+    "speed": 4,
+    "range": "2 ftlu",
+    "crew": {
+      "min": 0,
+      "max": 0
+    },
+    "cargo": 0,
+    "systems": [
+      {
+        "type": "combined",
+        "crew": 0,
+        "systems": [
+          "Helm",
+          "Navigation",
+          "Weapons",
+          "Drive"
+        ]
+      }
+    ],
+    "weapons": [
+      {
+        "name": "Magnetohydrodynamic Cannon (Recharge 6)",
+        "damage": "5500 (10d10[x100]) radiant damage."
+      },
+      {
+        "name": "Tendril Cannon",
+        "damage": "1300 (3d8[x100]) radiant damage."
+      }
+    ],
+    "cr": "30+",
+    "cost": "none",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/b/b9/Harby_ME3_physical_appearance.png/revision/latest/scale-to-width-down/417?cb=20140625102120",
+    "id": "reaper_capital_ship"
+  },
+  {
+    "name": "Reaper Destroyer",
+    "vehicle": {
+      "type": "starship"
+    },
+    "size": "cruiser",
+    "ac": 20,
+    "hp": 2900,
+    "sp": 500,
+    "speed": 12,
+    "range": "7 ftlu",
+    "crew": {
+      "min": 0,
+      "max": 0
+    },
+    "cargo": 0,
+    "systems": [
+      {
+        "type": "combined",
+        "crew": 0,
+        "systems": [
+          "Helm",
+          "Navigation",
+          "Weapons",
+          "Drive"
+        ]
+      }
+    ],
+    "weapons": [
+      {
+        "name": "Main Cannon",
+        "damage": "1100 (2d10[x100]) radiant damage."
+      }
+    ],
+    "cr": "17+",
+    "cost": "none",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/6/68/Rannoch_Destroyer_Shot.png/revision/latest/scale-to-width-down/422?cb=20120714191503",
+    "id": "reaper_destroyer"
+  },
+  {
+    "name": "Turian Hierarchy Destroyer",
+    "vehicle": {
+      "type": "starship"
+    },
+    "size": "cruiser",
+    "ac": 22,
+    "hp": 2300,
+    "sp": 600,
+    "speed": 2,
+    "range": "5 ftlu",
+    "crew": {
+      "min": 11,
+      "max": 50
+    },
+    "cargo": 45,
+    "systems": [
+      {
+        "type": "Helm",
+        "crew": 2
+      },
+      {
+        "type": "Navigation",
+        "crew": 1
+      },
+      {
+        "type": "SSC",
+        "crew": 2
+      },
+      {
+        "type": "EWS",
+        "crew": 1
+      },
+      {
+        "type": "Drive",
+        "crew": 3
+      },
+      {
+        "type": "Weapons",
+        "crew": 2
+      }
+    ],
+    "weapons": [
+      {
+        "name": "Main Cannon",
+        "damage": "1100 (2d10[x100]) radiant damage."
+      }
+    ],
+    "cr": "16+",
+    "cost": "military",
+    "id": "turian_cruiser"
+  },
+  {
+    "name": "UT-47 Kodiak Drop Shuttle",
+    "vehicle": {
+      "type": "transport",
+      "subtype": "air and space"
+    },
+    "size": "large",
+    "ac": 15,
+    "hp": 200,
+    "sp": 200,
+    "speed": 10,
+    "range": "1200km (or 1 ftlu)",
+    "crew": {
+      "min": 1,
+      "max": 14
+    },
+    "cargo": 2,
+    "systems": [
+      {
+        "type": "combined",
+        "crew": 1,
+        "systems": [
+          "Helm",
+          "SSC",
+          "Drive",
+          "Navigation"
+        ]
+      }
+    ],
+    "cr": 10,
+    "cost": "military",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/06/ME2_Cerberus_Kodiak_Shuttle.png/revision/latest/scale-to-width-down/640?cb=20120419010558",
+    "id": "ut-47_kodiak"
+  },
+  {
+    "name": "Verrikan Class Frigate",
+    "vehicle": {
+      "type": "starship"
+    },
+    "size": "frigate",
+    "ac": 24,
+    "hp": 2200,
+    "sp": 1000,
+    "speed": 6,
+    "range": "4 ftlu",
+    "crew": {
+      "min": 4,
+      "max": 15
+    },
+    "cargo": 15,
+    "systems": [
+      {
+        "type": "combined",
+        "crew": 1,
+        "systems": [
+          "Helm",
+          "Navigation",
+          "SCC"
+        ]
+      },
+      {
+        "type": "Weapons",
+        "crew": 1
+      },
+      {
+        "type": "Drive",
+        "crew": 1
+      }
+    ],
+    "weapons": [
+      {
+        "name": "Forward Mass Accelerator Cannon",
+        "damage": "350 (1d6[x100]) radiant damage."
+      },
+      {
+        "name": "Heavy Torpedoes (10 charges)",
+        "damage": "650 (1d12[x100]) thunder damage."
+      }
+    ],
+    "cr": "14+",
+    "cost": "military",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/07/Foundation_11_-_verrikan.png/revision/latest/scale-to-width-down/640?cb=20140530090547",
+    "id": "verrikan"
+  },
+  {
+    "name": "X3M (shuttle car)",
+    "vehicle": {
+      "type": "transport",
+      "subtype": "air"
+    },
+    "size": "large",
+    "ac": 12,
+    "hp": 100,
+    "sp": 0,
+    "speed": 4,
+    "range": "1000km",
+    "crew": {
+      "min": 1,
+      "max": 4
+    },
+    "cargo": 1,
+    "systems": [
+      {
+        "type": "Helm",
+        "crew": 1
+      }
+    ],
+    "weapons": null,
+    "cr": 1,
+    "cost": 35000,
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/c/c1/Shuttlesdocked.png/revision/latest/scale-to-width-down/640?cb=20100214080418",
+    "id": "x3m"
+  }
+]

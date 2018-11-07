@@ -1,0 +1,93 @@
+{
+  "abilityScores": {
+    "str": 20,
+    "dex": 12,
+    "con": 18,
+    "int": 9,
+    "wis": 6,
+    "cha": 12
+  },
+  "ac": "18",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Multiattack",
+      "description": "The brute makes two Smash attacks or two Clobber attacks."
+    },
+    {
+      "type": "melee",
+      "name": "Clobber",
+      "range": 2,
+      "target": "one prone creature",
+      "hit": "37 (5d12 + 5) bludgeoning damage.",
+      "miss": null,
+      "attackMod": 9
+    },
+    {
+      "type": "melee",
+      "name": "Smash",
+      "range": 2,
+      "target": "one target",
+      "hit": "17 (3d8 + 5) bludgeoning damage.",
+      "miss": null,
+      "attackMod": 9
+    }
+  ],
+  "alignment": "Lawful evil",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "10",
+  "damageImmunities": [],
+  "damageResistances": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Blood Frenzy",
+      "recharge": null,
+      "description": "The brute has advantage on melee attack rolls against any creature that doesn't have all its hit points."
+    },
+    {
+      "name": "Brutal Charge",
+      "recharge": null,
+      "description": "If the brute moves at least 6m straight toward a target and then hits it with a smash attack on the same turn, the target takes an extra 7 (2d6) damage. If the target is a creature, it must succeed on a DC 17 Strength saving throw or be knocked prone."
+    }
+  ],
+  "hp": {
+    "numDice": 13,
+    "die": 10
+  },
+  "id": "brute",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/90/ME3_Brute.png/revision/latest/scale-to-width-down/700?cb=20120320023753",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Brute",
+  "profBonus": 4,
+  "reactions": [],
+  "savingThrows": [
+    "str",
+    "con"
+  ],
+  "senses": [
+    {
+      "sense": "darkvision",
+      "range": 20
+    }
+  ],
+  "size": "Large",
+  "skills": [
+    "athletics"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 14
+    }
+  ],
+  "spellcasting": false,
+  "type": "Synorg",
+  "unit": "Reaper"
+}

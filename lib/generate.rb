@@ -21,14 +21,7 @@ class String
   end
 end
 
-require_relative 'config_races'
-require_relative 'configure_monster'
-require_relative 'create_class_list'
-require_relative 'insert_dd'
-require_relative 'config_spells'
-require_relative 'generate_renderable'
 require_relative 'generate_model'
-require_relative 'ordinalize'
 require_relative 'generate_config_file'
 require_relative 'config_weapon_mods'
 require_relative 'config_commonplace_items'

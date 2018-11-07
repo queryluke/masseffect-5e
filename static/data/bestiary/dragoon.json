@@ -1,0 +1,68 @@
+{
+  "abilityScores": {
+    "str": 12,
+    "dex": 18,
+    "con": 13,
+    "int": 14,
+    "wis": 12,
+    "cha": 13
+  },
+  "ac": "16",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Multiattack",
+      "description": "The dragoon makes three Omni-whip attacks"
+    },
+    {
+      "type": "weapon",
+      "id": "omni-whip"
+    },
+    {
+      "type": "weapon",
+      "id": "m-25_hornet"
+    }
+  ],
+  "alignment": "Neutral Evil",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "5",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Aggressive",
+      "recharge": null,
+      "description": "As a bonus action, the dragoon can move up to its speed toward a hostile creature that it can see."
+    }
+  ],
+  "hp": {
+    "numDice": 20,
+    "die": 8
+  },
+  "id": "dragoon",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/01/Cerberus_dragoon_smash.png/revision/latest?cb=20121013090412",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Dragoon",
+  "profBonus": 3,
+  "reactions": [],
+  "savingThrows": [
+    "dex"
+  ],
+  "senses": [],
+  "size": "Medium",
+  "skills": [
+    "acrobatics"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 12
+    }
+  ],
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Cerberus"
+}

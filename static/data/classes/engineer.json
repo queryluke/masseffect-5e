@@ -1,0 +1,339 @@
+{
+  "id": "engineer",
+  "name": "Engineer",
+  "description": "The Engineer is a tech specialist, able to quickly and easily manipulate the environment with specific talents, and repair or modify technical equipment. Gameplay focus is on shaping the battlefield during combat, healing the party, and debuffing enemies (disabling weapons and lowering shields).\n",
+  "snippet": "Engineers are tech specialists, the only class able to employ combat drones on the battlefield.\n",
+  "primaryAbility": "Intelligence",
+  "hitDie": 8,
+  "minHitDieRoll": 5,
+  "armorProficiencies": [
+    "Light",
+    "Medium"
+  ],
+  "weaponProficiencyChoices": 1,
+  "weaponProficiencies": {
+    "required": [
+      "Heavy Pistols"
+    ],
+    "optional": [
+      "Assault Rifles",
+      "Melee",
+      "SMGs"
+    ]
+  },
+  "savingThrows": [
+    "Constitution",
+    "Intelligence"
+  ],
+  "skillChoices": 3,
+  "skillProficiencies": [
+    "Athletics",
+    "Electronics",
+    "Engineering",
+    "History",
+    "Investigation",
+    "Medicine",
+    "Science",
+    "Vehicle Handling"
+  ],
+  "startingRangedWeaponChoices": 1,
+  "startingRangedWeapons": [
+    "M-3 Predator",
+    "M-4 Shuriken",
+    "M-8 Avenger"
+  ],
+  "startingMeleeWeaponChoices": 1,
+  "startingMeleeWeapons": [
+    "Omni-Taser",
+    "Omni-Blade",
+    "Omni-Torch"
+  ],
+  "startingArmor": [
+    "Stock Light Armor",
+    "Stock Medium Armor"
+  ],
+  "progressionHeaders": [
+    {
+      "title": "Level"
+    },
+    {
+      "title": "Proficiency Bonus"
+    },
+    {
+      "title": "Features"
+    },
+    {
+      "title": "Tech Points"
+    },
+    {
+      "title": "Tech Point Limit"
+    }
+  ],
+  "progression": [
+    {
+      "level": 1,
+      "proficiencyBonus": 2,
+      "features": [
+        "drone"
+      ],
+      "barrierTicks": null,
+      "techPoints": 2,
+      "techPointLimit": 1
+    },
+    {
+      "level": 2,
+      "proficiencyBonus": 2,
+      "features": [
+        "subclass"
+      ],
+      "techPoints": 4,
+      "techPointLimit": 1
+    },
+    {
+      "level": 3,
+      "proficiencyBonus": 2,
+      "features": [
+        "engineers_efficiency"
+      ],
+      "techPoints": 5,
+      "techPointLimit": 1
+    },
+    {
+      "level": 4,
+      "proficiencyBonus": 2,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "techPoints": 7,
+      "techPointLimit": 1
+    },
+    {
+      "level": 5,
+      "proficiencyBonus": 3,
+      "features": [],
+      "techPoints": 11,
+      "techPointLimit": 2
+    },
+    {
+      "level": 6,
+      "proficiencyBonus": 3,
+      "features": [
+        "subclass"
+      ],
+      "techPoints": 13,
+      "techPointLimit": 2
+    },
+    {
+      "level": 7,
+      "proficiencyBonus": 3,
+      "features": [
+        "recharge"
+      ],
+      "techPoints": 15,
+      "techPointLimit": 2
+    },
+    {
+      "level": 8,
+      "proficiencyBonus": 3,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "techPoints": 17,
+      "techPointLimit": 2
+    },
+    {
+      "level": 9,
+      "proficiencyBonus": 4,
+      "features": [],
+      "techPoints": 20,
+      "techPointLimit": 3
+    },
+    {
+      "level": 10,
+      "proficiencyBonus": 4,
+      "features": [
+        "subclass"
+      ],
+      "techPoints": 23,
+      "techPointLimit": 3
+    },
+    {
+      "level": 11,
+      "proficiencyBonus": 4,
+      "features": [
+        "recharge_2"
+      ],
+      "techPoints": 26,
+      "techPointLimit": 3
+    },
+    {
+      "level": 12,
+      "proficiencyBonus": 4,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "techPoints": 26,
+      "techPointLimit": 3
+    },
+    {
+      "level": 13,
+      "proficiencyBonus": 5,
+      "features": [],
+      "techPoints": 30,
+      "techPointLimit": 4
+    },
+    {
+      "level": 14,
+      "proficiencyBonus": 5,
+      "features": [
+        "subclass"
+      ],
+      "techPoints": 30,
+      "techPointLimit": 4
+    },
+    {
+      "level": 15,
+      "proficiencyBonus": 5,
+      "features": [
+        "recharge_3"
+      ],
+      "techPoints": 34,
+      "techPointLimit": 4
+    },
+    {
+      "level": 16,
+      "proficiencyBonus": 5,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "techPoints": 34,
+      "techPointLimit": 4
+    },
+    {
+      "level": 17,
+      "proficiencyBonus": 6,
+      "features": [],
+      "techPoints": 39,
+      "techPointLimit": 5
+    },
+    {
+      "level": 18,
+      "proficiencyBonus": 6,
+      "features": [
+        "subclass"
+      ],
+      "techPoints": 42,
+      "techPointLimit": 5
+    },
+    {
+      "level": 19,
+      "proficiencyBonus": 6,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "techPoints": 45,
+      "techPointLimit": 6
+    },
+    {
+      "level": 20,
+      "proficiencyBonus": 6,
+      "features": [
+        "invention"
+      ],
+      "techPoints": 50,
+      "techPointLimit": 6
+    }
+  ],
+  "subclasses": [
+    {
+      "name": "Mastermind",
+      "description": "Masterminds are highly-intellectual and skilled individuals, using strategy and perfectly timed attacks to win in battle.",
+      "features": [
+        [
+          "enfilade",
+          "jack_of_all_trades"
+        ],
+        [
+          "extra_attack_1"
+        ],
+        [
+          "disrupting_attack"
+        ],
+        [
+          "tactical_advantage"
+        ],
+        [
+          "spell_steal"
+        ]
+      ]
+    },
+    {
+      "name": "Drone Jockey",
+      "description": "A drone jockey forms a bond with their mechanical companion, giving it a body, name and increasing its potency on the battlefield.",
+      "features": [
+        [
+          "drone_companion",
+          "drones_bond"
+        ],
+        [
+          "coordinated_attack"
+        ],
+        [
+          "drones_defense_1"
+        ],
+        [
+          "assault_protocol"
+        ],
+        [
+          "drones_defense_2"
+        ]
+      ]
+    },
+    {
+      "name": "Medic",
+      "description": "The name says it all. As a medic, you'll be one on the field that can dress a wound and get your comrades back into fighting shape.",
+      "features": [
+        [
+          "repair_drone_1"
+        ],
+        [
+          "medi-gel_enhancements"
+        ],
+        [
+          "shield_boost"
+        ],
+        [
+          "repair_drone_2"
+        ],
+        [
+          "supply_pylon"
+        ]
+      ]
+    },
+    {
+      "name": "Demolisher",
+      "source": "v0.8.4",
+      "description": "Demolishers are explosive specialists with eye for combat. While not as skilled as a Soldier or Infiltrator, they make up for it with by covering the battlefield with grenades and heavy weapon fire.",
+      "features": [
+        [
+          "advanced_weapon_holsters",
+          "zz_weapon_training"
+        ],
+        [
+          "makeshift_grenades_1",
+          "extra_attack_1"
+        ],
+        [
+          "heavy_weapon_hack",
+          "fighting_style"
+        ],
+        [
+          "makeshift_grenades_2"
+        ],
+        [
+          "paint_by_number"
+        ]
+      ]
+    }
+  ]
+}

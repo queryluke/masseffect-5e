@@ -1,0 +1,329 @@
+{
+  "id": "soldier",
+  "name": "Soldier",
+  "description": "The Soldier is a tough warrior, able to deal with a range of combat situations. The Soldier gets improved health and has the widest selection of weapons. No one is tougher or more effective at taking down enemies with gunfire.\n",
+  "snippet": "Soldiers are pure combat specialists effective at taking down enemies with gunfire.\n",
+  "primaryAbility": "Strength or Dexterity",
+  "hitDie": 10,
+  "minHitDieRoll": 6,
+  "armorProficiencies": [
+    "Light",
+    "Medium",
+    "Heavy"
+  ],
+  "weaponProficiencyChoices": 0,
+  "weaponProficiencies": {
+    "required": [
+      "Assault Rifles",
+      "Heavy Pistols",
+      "Melee",
+      "Shotguns",
+      "SMGs",
+      "Sniper Rifles"
+    ]
+  },
+  "savingThrows": [
+    "Strength",
+    "Dexterity"
+  ],
+  "skillChoices": 3,
+  "skillProficiencies": [
+    "Acrobatics",
+    "Athletics",
+    "History",
+    "Intimidation",
+    "Medicine",
+    "Perception",
+    "Persuasion",
+    "Stealth",
+    "Survival",
+    "Vehicle Handling"
+  ],
+  "startingRangedWeaponChoices": 2,
+  "startingRangedWeapons": [
+    "M-3 Predator",
+    "M-4 Shuriken",
+    "M-8 Avenger",
+    "M-92 Mantis",
+    "M-23 Katana"
+  ],
+  "startingMeleeWeaponChoices": 1,
+  "startingMeleeWeapons": [
+    "Omni-Blade",
+    "Omni-Hammer"
+  ],
+  "startingArmor": [
+    "Stock Light Armor",
+    "Stock Medium Armor",
+    "Stock Heavy Armor"
+  ],
+  "progressionHeaders": [
+    {
+      "title": "Level"
+    },
+    {
+      "title": "Proficiency Bonus"
+    },
+    {
+      "title": "Features"
+    },
+    {
+      "title": "Combat Powers",
+      "key": "cantrips"
+    }
+  ],
+  "spellSlots": false,
+  "maxSpellSlot": 0,
+  "progression": [
+    {
+      "level": 1,
+      "proficiencyBonus": 2,
+      "features": [
+        "fighting_style"
+      ],
+      "cantrips": 1
+    },
+    {
+      "level": 2,
+      "proficiencyBonus": 2,
+      "features": [
+        "adrenaline_rush_1"
+      ],
+      "cantrips": 1
+    },
+    {
+      "level": 3,
+      "proficiencyBonus": 2,
+      "features": [
+        "subclass"
+      ],
+      "cantrips": 1
+    },
+    {
+      "level": 4,
+      "proficiencyBonus": 2,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "cantrips": 2
+    },
+    {
+      "level": 5,
+      "proficiencyBonus": 3,
+      "features": [
+        "extra_attack_1"
+      ],
+      "cantrips": 2
+    },
+    {
+      "level": 6,
+      "proficiencyBonus": 3,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "cantrips": 2
+    },
+    {
+      "level": 7,
+      "proficiencyBonus": 3,
+      "features": [
+        "subclass",
+        "tactical_reload"
+      ],
+      "cantrips": 2
+    },
+    {
+      "level": 8,
+      "proficiencyBonus": 3,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "cantrips": 3
+    },
+    {
+      "level": 9,
+      "proficiencyBonus": 4,
+      "features": [
+        "indomitable_1"
+      ],
+      "cantrips": 3
+    },
+    {
+      "level": 10,
+      "proficiencyBonus": 4,
+      "features": [
+        "subclass"
+      ],
+      "cantrips": 3
+    },
+    {
+      "level": 11,
+      "proficiencyBonus": 4,
+      "features": [
+        "extra_attack_2"
+      ],
+      "cantrips": 3
+    },
+    {
+      "level": 12,
+      "proficiencyBonus": 4,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "cantrips": 4
+    },
+    {
+      "level": 13,
+      "proficiencyBonus": 5,
+      "features": [
+        "indomitable_2"
+      ],
+      "cantrips": 4
+    },
+    {
+      "level": 14,
+      "proficiencyBonus": 5,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "cantrips": 4
+    },
+    {
+      "level": 15,
+      "proficiencyBonus": 5,
+      "features": [
+        "subclass"
+      ],
+      "cantrips": 5
+    },
+    {
+      "level": 16,
+      "proficiencyBonus": 5,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "cantrips": 5
+    },
+    {
+      "level": 17,
+      "proficiencyBonus": 6,
+      "features": [
+        "adrenaline_rush_2"
+      ],
+      "cantrips": 5
+    },
+    {
+      "level": 18,
+      "proficiencyBonus": 6,
+      "features": [
+        "subclass"
+      ],
+      "cantrips": 6
+    },
+    {
+      "level": 19,
+      "proficiencyBonus": 6,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "cantrips": 6
+    },
+    {
+      "level": 20,
+      "proficiencyBonus": 6,
+      "features": [
+        "extra_attack_3"
+      ],
+      "cantrips": 6
+    }
+  ],
+  "subclasses": [
+    {
+      "name": "Havoc",
+      "description": "GUNS!!! GRENADES!!! EXPLOSIONS!!!",
+      "features": [
+        [
+          "advanced_weapon_holsters",
+          "makeshift_grenades_1"
+        ],
+        [
+          "advanced_combat_powers"
+        ],
+        [
+          "heavy_weapon_hack"
+        ],
+        [
+          "makeshift_grenades_2"
+        ],
+        [
+          "paint_by_number"
+        ]
+      ]
+    },
+    {
+      "name": "Weapon Master",
+      "description": "Weapon masters train extensively in the art of a single weapon, giving them powerful advantages when using a weapon of that type.",
+      "features": [
+        [
+          "weapon_of_choice_1"
+        ],
+        [
+          "strafe"
+        ],
+        [
+          "weapon_of_choice_2"
+        ],
+        [
+          "devastating_critical"
+        ],
+        [
+          "weapon_of_choice_3"
+        ]
+      ]
+    },
+    {
+      "name": "Gladiator",
+      "description": "Gladiators are pure-combatants, focused on winning at all costs and being nearly impossible to take down.",
+      "features": [
+        [
+          "fighting_spirit"
+        ],
+        [
+          "vengeance"
+        ],
+        [
+          "tireless_spirit",
+          "additional_fighting_style"
+        ],
+        [
+          "rapid_strike"
+        ],
+        [
+          "strength_before_death"
+        ]
+      ]
+    },
+    {
+      "name": "Sharpshooter",
+      "source": "v0.8.4",
+      "description": "Sharpshooters use pinpoint accuracy and target weak points on their opponents, resulting a massive amounts of bonus damage.",
+      "features": [
+        [
+          "zz_steady_aim"
+        ],
+        [
+          "careful_eyes"
+        ],
+        [
+          "zz_close-quarters_shooter"
+        ],
+        [
+          "rapid_strike"
+        ],
+        [
+          "zz_snap_shot"
+        ]
+      ]
+    }
+  ]
+}

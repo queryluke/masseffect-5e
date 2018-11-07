@@ -1,0 +1,111 @@
+{
+  "abilityScores": {
+    "str": 16,
+    "dex": 18,
+    "con": 16,
+    "int": 14,
+    "wis": 10,
+    "cha": 10
+  },
+  "ac": "18",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Multiattack",
+      "description": "The geth prime makes two Geth Pulse Rifle attacks."
+    },
+    {
+      "type": "melee",
+      "name": "Weapon Bash",
+      "range": 2,
+      "target": "one target",
+      "hit": "8 (1d10 + 3) bludgeoning damage.",
+      "miss": null,
+      "attackMod": 7
+    },
+    {
+      "type": "weapon",
+      "id": "geth_pulse_rifle"
+    },
+    {
+      "type": "standard",
+      "name": "Radar Jamming",
+      "recharge": null,
+      "description": "The geth prime releases an emp burst that temporarily disables targeting systems. Each hostile creature within a 10m radius has disadvantage on ranged weapon attack rolls until the start of the geth prime's next turn."
+    },
+    {
+      "type": "standard",
+      "name": "Summon Combat Drone",
+      "recharge": "3/Day",
+      "description": "The geth prime summons a Combat Drone. It can only have 1 Combat Drone active at a time."
+    },
+    {
+      "type": "standard",
+      "name": "Summon Geth Turret",
+      "recharge": "1/Day",
+      "description": "The geth prime summons a Geth Turret."
+    }
+  ],
+  "alignment": "Lawful Neutral",
+  "barrier": null,
+  "conditionImmunities": [
+    "poisoned"
+  ],
+  "cr": "9",
+  "damageImmunities": [
+    "poison",
+    "psychic"
+  ],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [],
+  "hp": {
+    "numDice": 20,
+    "die": 10
+  },
+  "id": "geth_prime",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/c/c9/ME3_Geth_Prime.png/revision/latest/scale-to-width-down/229?cb=20120403192110",
+  "lairActions": [],
+  "legendaryActions": [
+    {
+      "name": "Activate Radar Jamming",
+      "cost": 2,
+      "description": "The geth prime activates its radar jamming."
+    },
+    {
+      "name": "Geth Pulse Rifle Attack",
+      "cost": 1,
+      "description": "The geth prime makes a Geth Pulse Rifle attack."
+    },
+    {
+      "name": "Summon Turret or Drone",
+      "cost": 3,
+      "description": "The geth prime uses its Summon Drone or Summon Geth Turret action."
+    }
+  ],
+  "name": "Geth Prime",
+  "profBonus": 4,
+  "reactions": [],
+  "savingThrows": [
+    "con",
+    "int"
+  ],
+  "senses": [],
+  "size": "Large",
+  "skills": [
+    "electronics"
+  ],
+  "sp": {
+    "shields": 30,
+    "regen": "10"
+  },
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "spellcasting": false,
+  "type": "Synthetic",
+  "unit": "Geth"
+}

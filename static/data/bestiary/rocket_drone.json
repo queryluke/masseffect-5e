@@ -1,0 +1,61 @@
+{
+  "abilityScores": {
+    "str": 10,
+    "dex": 10,
+    "con": 10,
+    "int": 10,
+    "wis": 10,
+    "cha": 4
+  },
+  "ac": "11",
+  "actions": [
+    {
+      "type": "ranged",
+      "name": "Distortion Rocket",
+      "range": 30,
+      "target": "one target",
+      "hit": "7 (2d6) thunder damage.",
+      "miss": null,
+      "attackMod": 2
+    }
+  ],
+  "alignment": "Neutral",
+  "barrier": null,
+  "conditionImmunities": [
+    "poisoned"
+  ],
+  "cr": "1/4",
+  "damageImmunities": [
+    "poison",
+    "psychic"
+  ],
+  "damageResistances": [],
+  "damageVulnerabilities": [
+    "lightning"
+  ],
+  "features": [],
+  "hp": {
+    "numDice": 2,
+    "die": 6
+  },
+  "id": "rocket_drone",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/2f/Virmire_geth_rocket_drone.png/revision/latest/scale-to-width-down/640?cb=20091209133938",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Rocket Drone",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Small",
+  "skills": [],
+  "speed": [
+    {
+      "type": "fly",
+      "range": 10
+    }
+  ],
+  "spellcasting": false,
+  "type": "Synthetic",
+  "unit": "Mech"
+}

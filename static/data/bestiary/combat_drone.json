@@ -1,0 +1,79 @@
+{
+  "abilityScores": {
+    "str": 12,
+    "dex": 14,
+    "con": 12,
+    "int": 10,
+    "wis": 8,
+    "cha": 6
+  },
+  "ac": "13",
+  "actions": [
+    {
+      "type": "ranged",
+      "name": "Shock Attack",
+      "range": 10,
+      "target": "one target",
+      "hit": "5 (1d6 + 2) lightning damage.",
+      "miss": null,
+      "attackMod": 4
+    }
+  ],
+  "alignment": "Neutral",
+  "barrier": null,
+  "conditionImmunities": [
+    "petrified",
+    "poisoned"
+  ],
+  "cr": "1/4",
+  "damageImmunities": [
+    "poison",
+    "psychic"
+  ],
+  "damageResistances": [],
+  "damageVulnerabilities": [
+    "lightning"
+  ],
+  "features": [],
+  "hp": {
+    "numDice": 3,
+    "die": 6
+  },
+  "id": "combat_drone",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/4/44/Me3_combat_drone.png/revision/latest/scale-to-width-down/480?cb=20120720164039",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Combat Drone",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Small",
+  "skills": [],
+  "sp": {
+    "shields": 10,
+    "regen": "5"
+  },
+  "speed": [
+    {
+      "type": "fly",
+      "range": 14
+    }
+  ],
+  "spellcasting": {
+    "level": "innate",
+    "mod": "int",
+    "spellList": [
+      {
+        "perDay": "3/day",
+        "spells": [
+          {
+            "id": "sabotage"
+          }
+        ]
+      }
+    ]
+  },
+  "type": "Synthetic",
+  "unit": "Mech"
+}

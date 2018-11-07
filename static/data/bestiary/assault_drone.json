@@ -1,0 +1,65 @@
+{
+  "abilityScores": {
+    "str": 11,
+    "dex": 14,
+    "con": 11,
+    "int": 10,
+    "wis": 10,
+    "cha": 6
+  },
+  "ac": "12",
+  "actions": [
+    {
+      "type": "ranged",
+      "name": "Pulse Cannon",
+      "range": 20,
+      "target": "one target",
+      "hit": "7 (1d10 + 2) radiant damage.",
+      "miss": null,
+      "attackMod": 4
+    }
+  ],
+  "alignment": "Neutral",
+  "barrier": null,
+  "conditionImmunities": [
+    "poisoned"
+  ],
+  "cr": "1/2",
+  "damageImmunities": [
+    "poison",
+    "psychic"
+  ],
+  "damageResistances": [],
+  "damageVulnerabilities": [
+    "lightning"
+  ],
+  "features": [],
+  "hp": {
+    "numDice": 3,
+    "die": 6
+  },
+  "id": "assault_drone",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/ea/Defense_Drone.png/revision/latest/scale-to-width-down/606?cb=20120407052056",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Assault Drone",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Small",
+  "skills": [],
+  "sp": {
+    "shields": 5,
+    "regen": "5"
+  },
+  "speed": [
+    {
+      "type": "fly",
+      "range": 10
+    }
+  ],
+  "spellcasting": false,
+  "type": "Synthetic",
+  "unit": "Mech"
+}

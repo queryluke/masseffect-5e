@@ -22,11 +22,16 @@
 
 <script>
   export default {
+    props: {
+      set: {
+        type: Object,
+        default: () => { return {} }
+      },
+    },
     computed: {
       benefits () {
         return this.set.feature ? this.set.feature.split('--').map(f => f.trim()) : []
       }
-    },
-    props: ['set']
+    }
   }
 </script>

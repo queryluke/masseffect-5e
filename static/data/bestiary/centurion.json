@@ -1,0 +1,85 @@
+{
+  "abilityScores": {
+    "str": 14,
+    "dex": 14,
+    "con": 16,
+    "int": 11,
+    "wis": 9,
+    "cha": 12
+  },
+  "ac": "14",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Multiattack",
+      "description": "The centurion makes two M-96 Mattock attacks or two Stun Baton attacks."
+    },
+    {
+      "type": "weapon",
+      "id": "stun_baton"
+    },
+    {
+      "type": "weapon",
+      "id": "m-96_mattock"
+    },
+    {
+      "type": "grenade",
+      "id": "frag_grenade"
+    },
+    {
+      "type": "grenade",
+      "id": "smoke_grenade"
+    }
+  ],
+  "alignment": "Neutral",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "4",
+  "damageImmunities": [],
+  "damageResistances": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Aggressive",
+      "recharge": null,
+      "description": "As a bonus action, the centurion can move up to its speed toward a hostile creature that it can see."
+    }
+  ],
+  "hp": {
+    "numDice": 7,
+    "die": 8
+  },
+  "id": "centurion",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/3f/ME3_Cerberus_Centurion.png/revision/latest/scale-to-width-down/417?cb=20120322145316",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Centurion",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [
+    {
+      "sense": "infrared",
+      "range": null
+    }
+  ],
+  "size": "Medium",
+  "skills": [],
+  "sp": {
+    "shields": 10,
+    "regen": "10"
+  },
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Cerberus"
+}

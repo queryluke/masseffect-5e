@@ -1,0 +1,71 @@
+{
+  "abilityScores": {
+    "str": 10,
+    "dex": 10,
+    "con": 10,
+    "int": 10,
+    "wis": 8,
+    "cha": 8
+  },
+  "ac": "12",
+  "actions": [
+    {
+      "type": "ranged",
+      "name": "Pulse Cannon",
+      "range": 20,
+      "target": "one target",
+      "hit": "5 (1d10) radiant damage.",
+      "miss": null,
+      "attackMod": 2
+    },
+    {
+      "type": "standard",
+      "name": "Shield Restore",
+      "recharge": "Recharge 5-6",
+      "description": "The geth turret restores 9 (2d8) shield points to a friendly creature within 4m."
+    }
+  ],
+  "alignment": "Lawful Neutral",
+  "barrier": null,
+  "conditionImmunities": [
+    "poisoned"
+  ],
+  "cr": "1/4",
+  "damageImmunities": [
+    "poison",
+    "psychic"
+  ],
+  "damageResistances": [],
+  "damageVulnerabilities": [
+    "lightning"
+  ],
+  "features": [],
+  "hp": {
+    "numDice": 2,
+    "die": 6
+  },
+  "id": "geth_turret",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/b/b0/ME3_Geth_Turret.png/revision/latest/scale-to-width-down/350?cb=20120326000908",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Geth Turret",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Small",
+  "skills": [],
+  "sp": {
+    "shields": 5,
+    "regen": "5"
+  },
+  "speed": [
+    {
+      "type": "fly",
+      "range": 6
+    }
+  ],
+  "spellcasting": false,
+  "type": "Synthetic",
+  "unit": "Geth"
+}

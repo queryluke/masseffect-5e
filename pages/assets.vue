@@ -1,13 +1,13 @@
 <template lang="pug">
   v-content
     // Character Sheets
-    h2.display-2.text-xs-center.mt-5 Character Sheets
+    h2.display-3.font-weight-thin.text-xs-center.mt-5 Character Sheets
     v-container(grid-list-xl)
-      h3.text-xs-center.title Printable
+      h3.text-xs-center.display-1 Printable
       v-layout(row wrap justify-center)
         v-flex(xs12 sm6 md4)
-          v-btn(block href="https://drive.google.com/open?id=1aBCbmwDgmChg6d6K0yegHTab-R6cQD28" target="_blank").primary Standard
-      h3.text-xs-center.title.mt-4 Fillable
+          v-btn(block href="https://drive.google.com/open?id=1aBCbmwDgmChg6d6K0yegHTab-R6cQD28" target="_blank").primary Official
+      h3.text-xs-center.display-1.mt-4 Fillable
       v-layout(row wrap justify-center)
         v-flex(xs12 sm4)
           v-btn(block href="https://drive.google.com/open?id=1gF1Y2KPgICj3rTJx6EYlJ__inGRSKMGX" target="_blank").primary by Szirach
@@ -15,9 +15,50 @@
           v-btn(block href="https://drive.google.com/open?id=1eXwjbZQH5z7ACZw60WJ2AMKla94quGAD" target="_blank").primary by Thessian Shadow
         v-flex(xs12 sm4)
           v-btn(block href="https://drive.google.com/open?id=1SPghERVzFgEva4C11xRbnuc8i1RYKBbu" target="_blank").primary by theNamelessOne
-    // PDF of Rules
-    h2.display-2.text-xs-center.mt-5 Player's Handbook
+      h3.text-xs-center.display-1.mt-4 Google Sheets
+      v-layout(row wrap justify-center)
+        v-flex(xs12 sm4)
+          v-btn(block href="https://docs.google.com/spreadsheets/d/1eEbLhu-w016G2AhjVvO2x_p3AGQrqUj_aVc8om4SKZs/edit?usp=sharing" target="_blank").primary by Ben McPherson
+        v-flex(xs12 sm4)
+          v-btn(block href="https://docs.google.com/spreadsheets/d/1r-JCa_rqmKSp7-UKf1EP67w6Dl_Pm_JEdaZJMS-R22Y/edit?usp=sharing" target="_blank").primary by GameMasterPo
+
+    // Roll20
+    h2.display-3.font-weight-thin.text-xs-center.mt-5 Roll20
     v-container(grid-list-xl)
+      // Character sheets
+      h3.text-xs-center.display-1 Character Sheets
+      v-layout(row wrap justify-center)
+        v-flex(xs12 sm6 md4)
+          v-card
+            v-card-title
+              p.title by John G.
+            v-card-text
+              p.
+                When you create a new game in Roll20, search for #[em Mass Effect] in the character sheet select dropdown.
+                Choose the one under the #[strong Dungeons and Dragons] header.
+        v-flex(xs12 sm6 md4)
+          v-card
+            v-card-title
+              p.title by EnricoDandolo1
+            v-card-text
+              p.mb-0.
+                An alternate take by EnricoDandolo1. You can upload the files to Roll20.
+              v-btn(flat href="https://drive.google.com/drive/folders/18-rNxocsUeByAI9dF8Qv5IzJD6rMn77Y?usp=sharing" target="_blank").primary Files
+      // Tokens
+      h3.text-xs-center.display-1 Tokens
+      v-layout(row wrap justify-center)
+        v-flex(xs12 sm6 md4)
+          v-btn(block href="https://drive.google.com/open?id=1SfFEb6jgh2J2SXIiWVUB5XtrSSQ3GEi8" target="_blank").primary by Andrew Ouellette
+
+    // PDF of Rules
+    h2.display-3.font-weight-thin.text-xs-center.mt-5 Player's Manual
+    v-container(grid-list-xl)
+      v-layout(row wrap justify-center)
+        v-flex(xs12 sm6 md4)
+          v-alert(:value="true" type="warning").black--text
+            p.
+              A new Player's Manual for v0.9.0 will be available this weekend: November 10th, 2018
+    //v-container(grid-list-xl)
       v-layout(row wrap justify-center)
         v-flex(xs12 sm6 md4)
           v-alert(:value="true" type="warning").black--text.
@@ -25,15 +66,10 @@
             will work on an official PDF version of the rules after our v1.0.0 release.
       v-layout(row wrap justify-center)
         v-flex(xs12 sm6 md4)
-          v-btn(block href="https://drive.google.com/open?id=1eDfgpG3JplKUjrIdySJKmyC4qxTi2MUT" target="_blank").primary Player's Handbook PDF
-    // Tokens
-    h2.display-2.text-xs-center.mt-5 NPC Tokens
-    v-container(grid-list-xl)
-      v-layout(row wrap justify-center)
-        v-flex(xs12 sm6 md4)
-          v-btn(block href="https://drive.google.com/open?id=1SfFEb6jgh2J2SXIiWVUB5XtrSSQ3GEi8" target="_blank").primary by Andrew Ouellette
+          v-btn(block href="https://drive.google.com/open?id=1eDfgpG3JplKUjrIdySJKmyC4qxTi2MUT" target="_blank").primary Player's Manual PDF
+
     // Spell Cards
-    h2.display-2.text-xs-center.mt-5 Spell Cards
+    h2.display-3.font-weight-thin.text-xs-center.mt-5 Spell Cards
     v-container(grid-list-xl)
       v-layout(row wrap).mb-5
         v-flex(v-for="item in classes" v-bind:key="item.id").xs12.sm6.md4
@@ -49,18 +85,12 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+import classes from '~/static/data/classes'
 
 export default {
-  computed: {
-    ...mapGetters(['getData'])
-  },
-  created () {
-    this.classes = this.getData('classes')
-  },
   data () {
     return {
-      classes: []
+      classes
     }
   },
   head () {

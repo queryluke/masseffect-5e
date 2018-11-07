@@ -1,0 +1,56 @@
+{
+  "abilityScores": {
+    "str": 2,
+    "dex": 10,
+    "con": 8,
+    "int": 10,
+    "wis": 8,
+    "cha": 5
+  },
+  "ac": "13",
+  "actions": [
+    {
+      "type": "melee",
+      "name": "Sting",
+      "range": 2,
+      "target": "one target",
+      "hit": "2 (1d4) poison damage and the target must succeed on a DC 13 Constitution saving throw or has disadvantage on its next attack roll.",
+      "miss": null,
+      "attackMod": 2
+    }
+  ],
+  "alignment": "Lawful Evil",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "1/8",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [],
+  "hp": {
+    "numDice": 4,
+    "die": 6
+  },
+  "id": "seeker_swarm",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/8/8f/SwarmME3.jpg/revision/latest/scale-to-width-down/350?cb=20121201212516",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Seeker Swarm",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [
+    "dex"
+  ],
+  "senses": [],
+  "size": "Small",
+  "skills": [],
+  "speed": [
+    {
+      "type": "fly",
+      "range": 10
+    }
+  ],
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Collector"
+}

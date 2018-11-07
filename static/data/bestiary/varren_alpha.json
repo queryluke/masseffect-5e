@@ -1,0 +1,68 @@
+{
+  "abilityScores": {
+    "str": 17,
+    "dex": 15,
+    "con": 15,
+    "int": 3,
+    "wis": 12,
+    "cha": 7
+  },
+  "ac": "14",
+  "actions": [
+    {
+      "type": "melee",
+      "name": "Bite",
+      "range": 2,
+      "target": "one target",
+      "hit": "9 (2d6 + 2) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be knocked prone.",
+      "miss": null,
+      "attackMod": 4
+    }
+  ],
+  "alignment": "Unaligned",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "1",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Keen Hearing and Smell",
+      "recharge": null,
+      "description": "The varren alpha has advantage on Wisdom (Perception) checks that rely on hearing or smell."
+    },
+    {
+      "name": "Pack Tactics",
+      "recharge": null,
+      "description": "The varren alpha has advantage on an attack roll against a creature if at least one of the varren alpha's allies is within 2m of the creature and the ally isn't incapacitated."
+    }
+  ],
+  "hp": {
+    "numDice": 5,
+    "die": 10
+  },
+  "id": "varren_alpha",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/6/63/Codex_ME_-_Varren.png/revision/latest/scale-to-width-down/200?cb=20140820063614",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Varren Alpha",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Large",
+  "skills": [
+    "perception",
+    "stealth"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 20
+    }
+  ],
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Alien"
+}

@@ -1,0 +1,121 @@
+{
+  "abilityScores": {
+    "str": 8,
+    "dex": 16,
+    "con": 8,
+    "int": 12,
+    "wis": 14,
+    "cha": 5
+  },
+  "ac": "14",
+  "actions": [
+    {
+      "type": "melee",
+      "name": "Claw",
+      "range": 2,
+      "target": "one target",
+      "hit": "7 (1d8 + 3) slashing damage.",
+      "miss": null,
+      "attackMod": 3
+    },
+    {
+      "type": "ranged",
+      "name": "Eye Cannon",
+      "range": 60,
+      "target": "one target",
+      "hit": "13 (3d6 + 3) radiant damage.",
+      "miss": null,
+      "attackMod": 5
+    }
+  ],
+  "alignment": "Lawful Neutral",
+  "barrier": null,
+  "conditionImmunities": [
+    "poisoned"
+  ],
+  "cr": "3",
+  "damageImmunities": [
+    "poison",
+    "psychic"
+  ],
+  "damageResistances": [],
+  "damageVulnerabilities": [
+    "lightning"
+  ],
+  "features": [
+    {
+      "name": "Assassination",
+      "recharge": null,
+      "description": "Once per turn, the geth stalker can deal an extra 7 (2d6) damage to one creature it hits with an attack if it has advantage on the attack roll. The attack must be made with a melee or ranged weapon."
+    },
+    {
+      "name": "Avoidance",
+      "recharge": null,
+      "description": "If the geth stalker subjected to an effect that allows it to make a saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails."
+    },
+    {
+      "name": "Leap",
+      "recharge": null,
+      "description": "The geth stalker can leap up to one half its speed."
+    },
+    {
+      "name": "Spider Climb",
+      "recharge": null,
+      "description": "The geth stalker can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+    }
+  ],
+  "hp": {
+    "numDice": 18,
+    "die": 8
+  },
+  "id": "geth_stalker",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/ec/ME_geth_stalker.png/revision/latest/scale-to-width-down/350?cb=20130517141111",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Geth Stalker",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [
+    "dex"
+  ],
+  "senses": [
+    {
+      "sense": "darkvision",
+      "range": 30
+    },
+    {
+      "sense": "infrared",
+      "range": null
+    }
+  ],
+  "size": "Medium",
+  "skills": [
+    "perception"
+  ],
+  "sp": {
+    "shields": 5,
+    "regen": "5"
+  },
+  "speed": [
+    {
+      "type": "walk",
+      "range": 16
+    }
+  ],
+  "spellcasting": {
+    "level": "innate",
+    "mod": "int",
+    "spellList": [
+      {
+        "perDay": "At will",
+        "spells": [
+          {
+            "id": "sabotage"
+          }
+        ]
+      }
+    ]
+  },
+  "type": "Synthetic",
+  "unit": "Geth"
+}

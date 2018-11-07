@@ -29,6 +29,10 @@ export default {
       monsters: {
         cr: [],
         unit: []
+      },
+      programs: {
+        rarity: [],
+        installation: false
       }
     },
     mobileFilterDialog: false,
@@ -61,7 +65,6 @@ export default {
     type: state => state.type,
     rarity: state => state.rarity,
     searchString: state => state.searchString,
-    getItems: (state, getters, rootState, rootStateGetters) => (name) => rootStateGetters.getData(name),
     filters: state => state.filters,
     mobileFilterDialog: state => state.mobileFilterDialog
   }

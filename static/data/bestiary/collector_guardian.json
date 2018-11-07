@@ -1,0 +1,93 @@
+{
+  "abilityScores": {
+    "str": 16,
+    "dex": 15,
+    "con": 16,
+    "int": 8,
+    "wis": 8,
+    "cha": 9
+  },
+  "ac": "16",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Multiattack",
+      "description": "The collector guardian makes two Collector Assault Rifle attacks."
+    },
+    {
+      "type": "melee",
+      "name": "Weapon Bash",
+      "range": 2,
+      "target": "one target",
+      "hit": "12 (2d8 + 3) bludgeoning damage.",
+      "miss": null,
+      "attackMod": 5
+    },
+    {
+      "type": "weapon",
+      "id": "collector_assault_rifle"
+    },
+    {
+      "type": "standard",
+      "name": "Hex Shield",
+      "recharge": "1/Day",
+      "description": "As a bonus action, the collector guardian generates a 2m tall and wide, hexagon-shaped shield with 5AC and 50 shield points which offers full-cover."
+    }
+  ],
+  "alignment": "Lawful evil",
+  "barrier": "5",
+  "conditionImmunities": [],
+  "cr": "4",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Possessed Collector",
+      "recharge": null,
+      "description": "When the collector guardian is possessed by a harbinger it gains temporary hit points equal to its total hit points and 6 barrier ticks. While it has barrier ticks it also gains resistance to bludgeoning, piercing, and slashing damage."
+    },
+    {
+      "name": "Warp Ammo",
+      "recharge": null,
+      "description": "Successful ranged attacks on a target with an active barrier will strip away 2 barrier ticks and reduce the damage reduction by half. Warp ammo can detonate primed targets."
+    }
+  ],
+  "hp": {
+    "numDice": 10,
+    "die": 8
+  },
+  "id": "collector_guardian",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/c/ce/Collector_Guardian.png/revision/latest/scale-to-width-down/350?cb=20100623060233",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Collector Guardian",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [
+    "con"
+  ],
+  "senses": [
+    {
+      "sense": "darkvision",
+      "range": 20
+    }
+  ],
+  "size": "Medium",
+  "skills": [
+    "athletics"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    },
+    {
+      "type": "fly",
+      "range": 6
+    }
+  ],
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Collector"
+}

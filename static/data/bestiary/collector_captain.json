@@ -1,0 +1,93 @@
+{
+  "abilityScores": {
+    "str": 15,
+    "dex": 18,
+    "con": 14,
+    "int": 11,
+    "wis": 14,
+    "cha": 14
+  },
+  "ac": "16",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Multiattack",
+      "description": "The collector captain makes two Collector Assault Rifle attacks."
+    },
+    {
+      "type": "weapon",
+      "id": "collector_assault_rifle"
+    },
+    {
+      "type": "standard",
+      "name": "Leadership",
+      "recharge": "Recharges after a Short or Long rest",
+      "description": "For 1 minute, the collector captain can utter a special command or warning whenever a non-hostile creature that it can see within 10m of it makes an attack roll or a saving throw. The creature can add a d4 to its role provided it can hear and understand the collector captain. A creature can benefit from only one Leadership die at a time. This effect ends if the collector captain is incapacitated."
+    },
+    {
+      "type": "standard",
+      "name": "Summon Seeker Swarm",
+      "recharge": "Recharge 5-6",
+      "description": "The collector captain summons 1d4 seeker swarms at an unoccupied space it can see within 10m."
+    }
+  ],
+  "alignment": "Lawful evil",
+  "barrier": "6",
+  "conditionImmunities": [],
+  "cr": "7",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Pack Tactics",
+      "recharge": null,
+      "description": "The collector captain has advantage on an attack roll against a creature if at least one of the collector captain's allies is within 2m of the creature and the ally isn't incapacitated."
+    },
+    {
+      "name": "Possessed Captain",
+      "recharge": null,
+      "description": "When the captain is possessed by a harbinger it gains temporary hit points equal to its total hit points and 8 barrier ticks. While it has barrier ticks it also gains resistance to bludgeoning, piercing, and slashing damage. Instead of summoning a seaker swarm, it summons a seeker plague."
+    }
+  ],
+  "hp": {
+    "numDice": 19,
+    "die": 8
+  },
+  "id": "collector_captain",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/8/8f/Collector_CapME3.jpg/revision/latest/scale-to-width-down/335?cb=20121201212047",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Collector Captain",
+  "profBonus": 3,
+  "reactions": [],
+  "savingThrows": [
+    "dex",
+    "con"
+  ],
+  "senses": [
+    {
+      "sense": "darkvision",
+      "range": 20
+    }
+  ],
+  "size": "Medium",
+  "skills": [
+    "athletics",
+    "science",
+    "survival"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    },
+    {
+      "type": "fly",
+      "range": 6
+    }
+  ],
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Collector"
+}

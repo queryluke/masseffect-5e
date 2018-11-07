@@ -1,97 +1,60 @@
 export default {
   pages: {
     'phb-intro': {
-      name: 'Player\'s Handbook - Intro',
-      rules: [
-        'basics',
-        'changes-and-additions',
-        'character-creation-and-leveling',
-        'starting-your-campaign',
-        'web-app-tools',
-        'questions-and-feedback'
-      ]
+      name: 'Player\'s Manual  - Intro',
+      rules: 1
     },
-    'phb-rules-general': {
-      name: 'Rules - General',
-      rules: [
-        'galaxy-master',
-        'distance',
-        'lifting-and-carrying',
-        'encumbrance',
-        'race-class-restrictions',
-        'creature-types',
-        'infrared-vision',
-        'paragon-and-renegade',
-        'sexy-level'
-      ]
+    'phb-rules-character-creation': {
+      name: 'Step-By-Step Characters',
+      rules: 2
+    },
+    'phb-rules-beyond-first-level': {
+      name: 'Beyond 1st Level',
+      rules: 3
+    },
+    'phb-rules-using-ability-scores': {
+      name: 'Using Ability Scores',
+      rules: 4
+    },
+    'phb-rules-missions': {
+      name: 'Missions',
+      rules: 5
+    },
+    'phb-rules-equipment': {
+      name: 'Equipment',
+      rules: 6
+    },
+    'phb-rules-finances': {
+      name: 'Finances',
+      rules: 7
+    },
+    'phb-rules-vehicles': {
+      name: 'Vehicles',
+      rules: 8
     },
     'phb-rules-combat': {
-      name: 'Rules - Combat',
-      rules: [
-        'shields',
-        'cover',
-        'reloading',
-        'rapid-reload',
-        'primers-and-detonators',
-        'creature-types',
-        'damage-types',
-        'conditions'
-      ]
+      name: 'Combat',
+      rules: 9
     },
     'phb-rules-spellcasting': {
-      name: 'Rules - Spellcasting',
-      rules: [
-        'ability-nomenclature',
-        'advancement-options',
-        'primers-and-detonators'
-      ]
+      name: 'Spellcasting',
+      rules: 10
     },
-    'phb-rules-weapons': {
-      name: 'Rules - Weapons',
-      rules: [
-        'weapon-stats',
-        'reloading',
-        'rapid-reload',
-        'carrying-weapons',
-        'weapon-proficiency',
-        'weapon-attributes',
-        'melee-weapons',
-        'heavy-weapons',
-        'weapon-customization'
-      ]
+    'phb-rules-monsters': {
+      name: 'Monsters',
+      rules: 11
     },
-    'phb-rules-armor': {
-      name: 'Rules - Armor',
-      rules: [
-        'armor-overview',
-        'armor-pieces',
-        'armor-customization'
-      ]
-    },
-    'phb-rules-expenses': {
-      name: 'Rules - Expenses',
-      rules: [
-        'currency',
-        'lifestyle-expenses',
-        'cost-of-things',
-        'buying-and-selling'
-      ]
-    },
-    'phb-rules-multiclassing': {
-      name: 'Rules - Multiclassing',
-      rules: [
-        'multiclassing-prereqs',
-        'multiclassing-profs',
-        'multiclassing-biotics',
-        'multiclassing-barrier',
-        'multiclassing-tech'
-      ]
-    },
-    'phb-rules-conditions': {
+    'phb-appendix-conditions': {
       name: 'Conditions'
     },
-    'phb-rules-skills': {
+    'phb-appendix-skills': {
       name: 'Skills'
+    },
+    'phb-appendix-found-codices': {
+      name: 'Found Codices'
+    },
+    'phb-appendix-alt-sentinel': {
+      name: 'Alt Sentinel'
     },
     'phb-classes': {
       name: 'Classes'
@@ -131,22 +94,15 @@ export default {
       name: 'Armor Sets',
       list: true
     },
-    'phb-items': {
-      name: 'Other Items',
-      rules: [
-        'thermal-clips',
-        'medi-gel',
-        'grenades',
-        'heavy-weapon-charges',
-        'omni-gel',
-        'tools-kits'
-      ]
-    },
-    'phb-items-grenades': {
+    'phb-grenades': {
       name: 'Grenades'
     },
-    'phb-items-tools-kits': {
+    'phb-tools-kits': {
       name: 'Tools & Kits'
+    },
+    'phb-programs': {
+      name: 'Omni-Tool Programs',
+      list: true
     },
     'phb-bestiary': {
       name: 'Bestiary',

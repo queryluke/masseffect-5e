@@ -41,11 +41,27 @@
   import SpellRangeArea from '~/components/spell/SpellRangeArea.vue'
   import SpellDamageEffect from '~/components/spell/SpellDamageEffect.vue'
   import AdvancedOption from '~/components/spell/AdvancedOption.vue'
-  import MarkdownFile from '~/components/MarkdownFile.vue'
 
   export default {
     components: {
-      AdvancedOption, SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect, MarkdownFile
+      AdvancedOption, SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect
+    },
+    props: {
+      spell: {
+        type: Object,
+        default: () => { return {} }
+      }
+    },
+    data () {
+      return {
+        primeTypeCss: {
+          force: 'purple--text text--darken-1',
+          necrotic: 'blue-grey--text text--darken-2',
+          fire: 'deep-orange--text text--darken-1',
+          cold: 'cyan--text text--darken-1',
+          lightning: 'blue--text text--darken-1'
+        }
+      }
     },
     computed: {
       cardType () {
@@ -66,19 +82,7 @@
         }
         return text
       }
-    },
-    data () {
-      return {
-        primeTypeCss: {
-          force: 'purple--text text--darken-1',
-          necrotic: 'blue-grey--text text--darken-2',
-          fire: 'deep-orange--text text--darken-1',
-          cold: 'cyan--text text--darken-1',
-          lightning: 'blue--text text--darken-1'
-        }
-      }
-    },
-    props: ['spell']
+    }
   }
 </script>
 

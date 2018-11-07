@@ -1,7 +1,7 @@
 export const AbilityScoreBonus = {
   methods: {
     abilityScoreBonus (score) {
-      return score >= 10 ? Math.floor((score - 10) / 2) : Math.ceil((score - 10) / 2)
+      return Math.floor((parseInt(score, 10) - 10) / 2)
     }
   }
 }

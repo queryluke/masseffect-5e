@@ -1,0 +1,111 @@
+{
+  "abilityScores": {
+    "str": 22,
+    "dex": 10,
+    "con": 25,
+    "int": 18,
+    "wis": 6,
+    "cha": 8
+  },
+  "ac": "15",
+  "actions": [
+    {
+      "type": "ranged",
+      "name": "Mass Accelerator Machinegun",
+      "range": 120,
+      "target": "one target",
+      "hit": "19 (3d12) piercing damage and 19 (3d12) radiant damage. The geth armature can make a burst fire attack instead.",
+      "miss": null,
+      "attackMod": 9
+    },
+    {
+      "type": "standard",
+      "name": "Siege Cannon",
+      "recharge": null,
+      "description": "The geth armature targets a creature within 60m and launches a homing projectile. The target must make a DC 18 Dexterity saving throw. On a failed save, the target takes 55 (10d10) radiant damage, or half as much on a successful one."
+    },
+    {
+      "type": "standard",
+      "name": "Siege Pulse",
+      "recharge": "Recharge 6",
+      "description": "The geth armature releases a burst of electrostatic energy that disrupts armor biofeedback. Each creature within a 6m radius must make a DC 18 Constitution saving throw. On a failed save, a creature wearing armor looses 1d4 to their Strength and Dexterity ability scores. This loss ends if the armor is repaired, removed, or replaced."
+    }
+  ],
+  "alignment": "Lawful Neutral",
+  "barrier": null,
+  "conditionImmunities": [
+    "charmed",
+    "deafened",
+    "frightened",
+    "frozen",
+    "grappled",
+    "invisible",
+    "lifted",
+    "paralyzed",
+    "petrified",
+    "poisoned",
+    "restrained",
+    "stunned"
+  ],
+  "cr": "15",
+  "damageImmunities": [
+    "poison",
+    "psychic"
+  ],
+  "damageResistances": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "damageVulnerabilities": [
+    "lightning"
+  ],
+  "features": [
+    {
+      "name": "Repair Protocol",
+      "recharge": "3/Day",
+      "description": "If the geth armature starts its turn with 0 shield points, it activates its repair protocol, collapsing into a compact shell. Until the start of its next turn, its speed becomes 0m and it can take no Actions, but it is immune to all damage. At the start of its next turn, it regains 50 shields points."
+    }
+  ],
+  "hp": {
+    "numDice": 10,
+    "die": 12
+  },
+  "id": "geth_armature",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/a/a9/ArmatureLanding.png/revision/latest/scale-to-width-down/350?cb=20090125024722",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Geth Armature",
+  "profBonus": 5,
+  "reactions": [],
+  "savingThrows": [
+    "int"
+  ],
+  "senses": [
+    {
+      "sense": "darkvision",
+      "range": 20
+    },
+    {
+      "sense": "infrared",
+      "range": null
+    }
+  ],
+  "size": "Huge",
+  "skills": [
+    "perception"
+  ],
+  "sp": {
+    "shields": 100,
+    "regen": "0"
+  },
+  "speed": [
+    {
+      "type": "walk",
+      "range": 6
+    }
+  ],
+  "spellcasting": false,
+  "type": "Synthetic",
+  "unit": "Geth"
+}

@@ -1,0 +1,67 @@
+{
+  "abilityScores": {
+    "str": 13,
+    "dex": 8,
+    "con": 14,
+    "int": 3,
+    "wis": 6,
+    "cha": 5
+  },
+  "ac": "11",
+  "actions": [
+    {
+      "type": "melee",
+      "name": "Swipe",
+      "range": 2,
+      "target": "one target",
+      "hit": "4 (1d6 + 1) slashing damage, and the creature is grappled (escape DC 13). A creature that is grappled by the husk takes 11 (3d6) necrotic damage at the start of each of the husk's turns. The husk can't make swipe attacks on any other target while grappling a creature in this way.",
+      "miss": null,
+      "attackMod": 3
+    }
+  ],
+  "alignment": "Lawful evil",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "1/2",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Aggressive",
+      "recharge": null,
+      "description": "As a bonus action, the husk can move up to its speed toward a hostile creature that it can see."
+    }
+  ],
+  "hp": {
+    "numDice": 1,
+    "die": 8
+  },
+  "id": "husk",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/27/ME3_Husk.png/revision/latest/scale-to-width-down/350?cb=20120320012912",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Husk",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [
+    "wis"
+  ],
+  "senses": [
+    {
+      "sense": "darkvision",
+      "range": 20
+    }
+  ],
+  "size": "Medium",
+  "skills": [],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "spellcasting": false,
+  "type": "Synorg",
+  "unit": "Reaper"
+}

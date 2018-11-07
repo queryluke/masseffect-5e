@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Blinded",
+    "id": "blinded"
+  },
+  {
+    "name": "Charmed",
+    "id": "charmed"
+  },
+  {
+    "name": "Deafened",
+    "id": "deafened"
+  },
+  {
+    "name": "Exhaustion",
+    "id": "exhaustion"
+  },
+  {
+    "name": "Frightened",
+    "id": "frightened"
+  },
+  {
+    "name": "Frozen",
+    "id": "frozen"
+  },
+  {
+    "name": "Grappled",
+    "id": "grappled"
+  },
+  {
+    "name": "Incapacitated",
+    "id": "incapacitated"
+  },
+  {
+    "name": "Invisible",
+    "id": "invisible"
+  },
+  {
+    "name": "Lifted",
+    "id": "lifted"
+  },
+  {
+    "name": "Paralyzed",
+    "id": "paralyzed"
+  },
+  {
+    "name": "Poisoned",
+    "id": "poisoned"
+  },
+  {
+    "name": "Primed",
+    "id": "primed"
+  },
+  {
+    "name": "Prone",
+    "id": "prone"
+  },
+  {
+    "name": "Restrained",
+    "id": "restrained"
+  },
+  {
+    "name": "Stunned",
+    "id": "stunned"
+  },
+  {
+    "name": "Targeting",
+    "id": "targeting"
+  },
+  {
+    "name": "Unconscious",
+    "id": "unconscious"
+  }
+]

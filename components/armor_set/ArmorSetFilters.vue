@@ -16,6 +16,22 @@
   const {mapActions, mapGetters} = createNamespacedHelpers('itemList')
 
   export default {
+    props: {
+      itemKey: {
+        type: String,
+        default: ''
+      },
+      noteOptions: {
+        type: Array,
+        default: () => { return [] }
+      }
+    },
+    data () {
+      return {
+        typeOptions: ['Chest', 'Head', 'Arms', 'Legs', 'Body Armor', 'Full Set'],
+        armorTypeOptions: ['Light', 'Medium', 'Heavy']
+      }
+    },
     computed: {
       ...mapGetters(['filters']),
       typeFilter: {
@@ -43,12 +59,6 @@
         }
       }
     },
-    data () {
-      return {
-        typeOptions: ['Chest', 'Head', 'Arms', 'Legs', 'Body Armor', 'Full Set'],
-        armorTypeOptions: ['Light', 'Medium', 'Heavy']
-      }
-    },
     methods: {
       ...mapActions(['updateFilter']),
       reset () {
@@ -56,8 +66,7 @@
         this.armorTypeFilter = []
         this.noteFilter = []
       }
-    },
-    props: ['itemKey', 'noteOptions']
+    }
   }
 </script>
 

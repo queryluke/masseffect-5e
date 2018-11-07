@@ -1,0 +1,82 @@
+{
+  "abilityScores": {
+    "str": 10,
+    "dex": 18,
+    "con": 10,
+    "int": 8,
+    "wis": 8,
+    "cha": 8
+  },
+  "ac": "14",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Multiattack",
+      "description": "The collector assassin makes two Particle Rifle."
+    },
+    {
+      "type": "melee",
+      "name": "Claw",
+      "range": 2,
+      "target": "one target",
+      "hit": "11 (2d6 + 4) slashing damage.",
+      "miss": null,
+      "attackMod": 2
+    },
+    {
+      "type": "weapon",
+      "id": "particle_rifle"
+    }
+  ],
+  "alignment": "Lawful evil",
+  "barrier": "4",
+  "conditionImmunities": [],
+  "cr": "3",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Possessed Collector",
+      "recharge": null,
+      "description": "When the collector assassin is possessed by a harbinger it gains temporary hit points equal to its total hit points and 6 barrier ticks. While it has barrier ticks it also gains resistance to bludgeoning, piercing, and slashing damage."
+    }
+  ],
+  "hp": {
+    "numDice": 10,
+    "die": 8
+  },
+  "id": "collector_assassin",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/6/69/Collector_Assassin.png/revision/latest/scale-to-width-down/350?cb=20100623060453",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Collector Assassin",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [
+    "dex"
+  ],
+  "senses": [
+    {
+      "sense": "darkvision",
+      "range": 20
+    }
+  ],
+  "size": "Medium",
+  "skills": [
+    "athletics"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    },
+    {
+      "type": "fly",
+      "range": 6
+    }
+  ],
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Collector"
+}

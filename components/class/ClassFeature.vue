@@ -1,31 +1,28 @@
 <template lang="pug">
-  div.markdown-file
-    p.title {{ item.name }}
-    div(v-html="markdownFile")
+  div.markdown-content
+    p.title {{ item.attributes.name }}
+    markdown-content(:component="item.vue" v-bind:context="featureLevel")
 </template>
 
 <script>
-  import {mapGetters} from 'vuex'
-  import {EnhanceMarkdown} from '~/mixins/enhanceMarkdown.js'
-
   export default {
-    computed: {
-      ...mapGetters(['getData']),
-      item () {
-        const item = this.getData('classFeatures').find(item => item.id === this.id)
-        if (typeof item === 'undefined') {
-          console.log(`Could not find ${this.id}`)
-        }
-        return item
+    props: {
+      id: {
+        type: String,
+        default: ''
       },
-      markdownFile () {
-        return this.enhanceMarkdown(require(`~/data/class_features/${this.item.id}.md`), this.level)
+      featureLevel: {
+        type: Object,
+        default: () => { return {} }
       }
     },
-    mixins: [EnhanceMarkdown],
-    props: {
-      id: String,
-      level: Object
+    data () {
+      return {
+        item: {}
+      }
+    },
+    created () {
+      this.item = require(`~/static/data/class_features/${this.id}.md`)
     }
   }
 </script>

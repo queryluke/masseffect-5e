@@ -1,0 +1,85 @@
+{
+  "abilityScores": {
+    "str": 14,
+    "dex": 16,
+    "con": 12,
+    "int": 2,
+    "wis": 11,
+    "cha": 4
+  },
+  "ac": "14",
+  "actions": [
+    {
+      "type": "ranged",
+      "name": "Acid Spit",
+      "range": 20,
+      "target": "one target",
+      "hit": "7 (2d6) acid damage and 7 (2d6) necrotic damage. This damage bypasses shields.",
+      "miss": null,
+      "attackMod": 5
+    },
+    {
+      "type": "melee",
+      "name": "Impale",
+      "range": 4,
+      "target": "one target",
+      "hit": "8 (1d10 + 3) and 2 (1d4) acid damage.",
+      "miss": null,
+      "attackMod": 5
+    }
+  ],
+  "alignment": "Unaligned",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "1",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Ambusher",
+      "recharge": null,
+      "description": "The rachni soldier has advantage on attack rolls against any creature it has surprised."
+    },
+    {
+      "name": "Grappler",
+      "recharge": null,
+      "description": "The rachni soldier has advantage on attack rolls against any creature grappled by it."
+    }
+  ],
+  "hp": {
+    "numDice": 8,
+    "die": 8
+  },
+  "id": "rachni_soldier",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/4/4f/Codex_ME_-_Rachni.png/revision/latest?cb=20140820042133",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Rachni Soldier",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [
+    "con",
+    "wis"
+  ],
+  "senses": [
+    {
+      "sense": "blindsight",
+      "range": 4
+    }
+  ],
+  "size": "Medium",
+  "skills": [
+    "stealth",
+    "perception"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Rachni"
+}

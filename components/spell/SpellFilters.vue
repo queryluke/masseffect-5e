@@ -14,23 +14,10 @@
   const {mapActions, mapGetters} = createNamespacedHelpers('itemList')
 
   export default {
-    computed: {
-      ...mapGetters(['filters']),
-      typeFilter: {
-        get () {
-          return this.filters[this.itemKey].type
-        },
-        set (value) {
-          this.updateFilter({key: this.itemKey, filterKey: 'type', value})
-        }
-      },
-      classFilter: {
-        get () {
-          return this.filters[this.itemKey].availableClasses
-        },
-        set (value) {
-          this.updateFilter({key: this.itemKey, filterKey: 'availableClasses', value})
-        }
+    props: {
+      itemKey: {
+        type: String,
+        default: ''
       }
     },
     data () {
@@ -50,14 +37,32 @@
         ]
       }
     },
+    computed: {
+      ...mapGetters(['filters']),
+      typeFilter: {
+        get () {
+          return this.filters[this.itemKey].type
+        },
+        set (value) {
+          this.updateFilter({key: this.itemKey, filterKey: 'type', value})
+        }
+      },
+      classFilter: {
+        get () {
+          return this.filters[this.itemKey].availableClasses
+        },
+        set (value) {
+          this.updateFilter({key: this.itemKey, filterKey: 'availableClasses', value})
+        }
+      }
+    },
     methods: {
       ...mapActions(['updateFilter']),
       reset () {
         this.classFilter = []
         this.typeFilter = []
       }
-    },
-    props: ['itemKey']
+    }
   }
 </script>
 

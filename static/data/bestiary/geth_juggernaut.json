@@ -1,0 +1,82 @@
+{
+  "abilityScores": {
+    "str": 20,
+    "dex": 11,
+    "con": 18,
+    "int": 13,
+    "wis": 8,
+    "cha": 4
+  },
+  "ac": "15",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Multiattack",
+      "description": "The geth juggernaut makes two Bash attacks."
+    },
+    {
+      "type": "melee",
+      "name": "Bash",
+      "range": 2,
+      "target": "one target",
+      "hit": "14 (2d8 + 5) bludgeoning damage.",
+      "miss": null,
+      "attackMod": 8
+    },
+    {
+      "type": "weapon",
+      "id": "geth_plasma_smg"
+    }
+  ],
+  "alignment": "Lawful Neutral",
+  "barrier": null,
+  "conditionImmunities": [
+    "poisoned"
+  ],
+  "cr": "8",
+  "damageImmunities": [
+    "poison",
+    "psychic"
+  ],
+  "damageResistances": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Aggressive",
+      "recharge": null,
+      "description": "As a bonus action, the geth juggernaut can move up to its speed toward a hostile creature that it can see."
+    }
+  ],
+  "hp": {
+    "numDice": 14,
+    "die": 10
+  },
+  "id": "geth_juggernaut",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/a/a4/Geth_Destroyer_ME2.png/revision/latest/scale-to-width-down/350?cb=20100625040647",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Geth Juggernaut",
+  "profBonus": 3,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Large",
+  "skills": [],
+  "sp": {
+    "shields": 20,
+    "regen": "5"
+  },
+  "speed": [
+    {
+      "type": "walk",
+      "range": 12
+    }
+  ],
+  "spellcasting": false,
+  "type": "Synthetic",
+  "unit": "Geth"
+}

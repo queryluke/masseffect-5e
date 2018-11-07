@@ -1,32 +1,33 @@
 export const Speed = {
   methods: {
-    setGruntSpeed (config, grunt) {
-      switch (grunt.race.id) {
+    setGruntSpeed () {
+      let range = 10
+      switch (this.race.id) {
         case 'volus': {
-          grunt.speed = '8m'
+          range = 8
           break
         }
         case 'quarian': {
-          if (this.randomValue([1, 2, 3]) === 3 && !config.quarianCybEn) {
-            grunt.speed = '12m'
-            config.quarianCybEn = true
+          if (this.randomValue([1, 2, 3]) === 3) {
+            range = 12
           } else {
-            grunt.speed = '10m'
+            range = 10
           }
           break
         }
         case 'drell': {
-          grunt.speed = '12m'
+          range = 12
           break
         }
         case 'vorcha': {
-          grunt.speed = '14m'
+          range = 14
           break
         }
         default: {
-          grunt.speed = '10m'
+          range = 10
         }
       }
+      this.grunt.speed = [{type: 'walk', range}]
     }
   }
 }

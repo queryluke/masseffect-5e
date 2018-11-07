@@ -1,0 +1,72 @@
+{
+  "abilityScores": {
+    "str": 11,
+    "dex": 16,
+    "con": 12,
+    "int": 16,
+    "wis": 13,
+    "cha": 16
+  },
+  "ac": "14",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Multiattack",
+      "description": "The combat engineer makes two M-5 Phalanx attacks."
+    },
+    {
+      "type": "weapon",
+      "id": "m-5_phalanx"
+    },
+    {
+      "type": "standard",
+      "name": "Repair",
+      "recharge": null,
+      "description": "The combat engineer uses its action to repair a friendly, synthetic target within 2m for 1d8 hit points."
+    }
+  ],
+  "alignment": "Neutral",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "3",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Deploy Turret",
+      "recharge": null,
+      "description": "The combat engineer is equipped with 1 Turret (see Bestiary). As an action, the combat engineer can deploy the Turret on a level surface within 2m. The Turret is controlled by the combat engineer and takes its turn at the end of the combat engineer's turn. The combat engineer can use an action to stow the Turret, placing it at another location with a subsequent action."
+    }
+  ],
+  "hp": {
+    "numDice": 14,
+    "die": 8
+  },
+  "id": "combat_engineer",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/5/54/ME3_Cerberus_Combat_Engineer.png/revision/latest/scale-to-width-down/214?cb=20120322145158",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Combat Engineer",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Medium",
+  "skills": [
+    "electronics"
+  ],
+  "sp": {
+    "shields": 20,
+    "regen": "10"
+  },
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Cerberus"
+}

@@ -7,7 +7,8 @@
             v-list-tile-content
               v-list-tile-title {{ item.title }}
           template(v-for="(subItem, i) in item.items")
-            v-list-tile(:key="i" v-bind="{to: subItem.href, href: subItem.href }" ripple nuxt)
+            v-divider(v-if="item.divider")
+            v-list-tile(v-else :key="i" v-bind="{to: subItem.href, href: subItem.href }" ripple nuxt)
               v-list-tile-content
                 v-list-tile-title {{ subItem.title }}
         v-subheader(v-else-if="item.header") {{ item.header }}
@@ -24,22 +25,11 @@
   import { mapGetters } from 'vuex'
 
   export default {
-    computed: {
-      ...mapGetters(['bookmarkCount', 'getVersion']),
-      isActive: {
-        get () {
-          return this.$store.state.sidebar
-        },
-        set (val) {
-          this.$store.commit('toggleSidebar', val)
-        }
-      }
-    },
     data () {
       return {
         items: [
           {
-            header: 'Player\'s Handbook'
+            header: 'Player\'s Manual'
           },
           {
             title: 'Introduction',
@@ -50,19 +40,20 @@
             title: 'Rules',
             icon: 'gavel',
             items: [
-              { href: '/phb/rules/general', title: 'General' },
-              { href: '/phb/rules/combat', title: 'Combat' },
-              { href: '/phb/rules/spellcasting', title: 'Spellcasting' },
-              { href: '/phb/rules/weapons', title: 'Weapons' },
-              { href: '/phb/rules/armor', title: 'Armor' },
-              { href: '/phb/rules/expenses', title: 'Expenses' },
-              { href: '/phb/rules/multiclassing', title: 'Multiclassing' },
-              { href: '/phb/rules/skills', title: 'Skills' },
-              { href: '/phb/rules/conditions', title: 'Conditions' }
+              { title: 'Step-by-step Characters', icon: 'supervised_user_circle', href: '/phb/rules/character-creation' },
+              { title: 'Beyond 1st Level', icon: 'tending_up', href: '/phb/rules/beyond-first-level' },
+              { title: 'Using Ability Scores', icon: 'gamepad', href: '/phb/rules/using-ability-scores' },
+              { title: 'Missions', icon: 'map', href: '/phb/rules/missions' },
+              { title: 'Equipment', icon: 'category', href: '/phb/rules/equipment' },
+              { title: 'Finances', icon: 'money', href: '/phb/rules/finances' },
+              { title: 'Vehicles', icon: '', href: '/phb/rules/vehicles' },
+              { title: 'Combat', icon: '', href: '/phb/rules/combat' },
+              { title: 'Spellcasting', icon: '', href: '/phb/rules/spellcasting' },
+              { title: 'Monsters', icon: '', href: '/phb/rules/monsters' }
             ]
           },
           {
-            title: 'Player Options',
+            title: 'Characters',
             icon: 'face',
             items: [
               { href: '/phb/classes', title: 'Classes' },
@@ -79,7 +70,9 @@
               { href: '/phb/weapon-mods', title: 'Weapon Mods' },
               { href: '/phb/armor/mods', title: 'Armor Mods' },
               { href: '/phb/armor/sets', title: 'Armor Sets' },
-              { href: '/phb/items', title: 'Other Items' }
+              { href: '/phb/programs', title: 'Omni-tool Programs' },
+              { href: '/phb/grenades', title: 'Grenades' },
+              { href: '/phb/tools-kits', title: 'Tools & Kits' }
             ]
           },
           {
@@ -91,6 +84,16 @@
             title: 'Bestiary',
             icon: 'pets',
             href: '/phb/bestiary'
+          },
+          {
+            title: 'Appendix',
+            icon: 'vertical_split',
+            items: [
+              { href: '/phb/appendix/conditions', title: 'Conditions' },
+              { href: '/phb/appendix/skills', title: 'Skills' },
+              { href: '/phb/appendix/found-codices', title: 'Found Codices' },
+              { href: '/phb/appendix/alt-sentinel', title: 'Alt Sentinel' }
+            ]
           },
           {
             title: 'Bookmarks',
@@ -124,8 +127,20 @@
           { title: 'Get Involved', href: '/contributing' },
           { title: 'About the Project', href: '/about' },
           { title: `Changelog`, href: '/changelog' },
-          { title: `Offline / PDF version`, href: '/print/pdf' }
+          // { title: `Offline / PDF version`, href: '/print/pdf' },
+          { title: `License`, href: '/license' }
         ]
+      }
+    },
+    computed: {
+      ...mapGetters(['bookmarkCount', 'getVersion']),
+      isActive: {
+        get () {
+          return this.$store.state.sidebar
+        },
+        set (val) {
+          this.$store.commit('toggleSidebar', val)
+        }
       }
     }
   }

@@ -4,7 +4,7 @@
     // Search functions for large screens
     div.hidden-sm-and-down
       h2.display-1 Armor Mods
-      p Read the #[nuxt-link(to="/phb/rules/armor#armor-customization") Armor Rules] to understand how armor customization works.
+      p Read the #[nuxt-link(to="/phb/rules/equipment#custom-armor") Armor Rules] to understand how armor customization works.
       v-layout(row wrap)
         v-flex(xs4).px-1
           v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
@@ -24,7 +24,7 @@
   import ArmorModFilters from '~/components/armor_mod/ArmorModFilters.vue'
   import ArmorModList from '~/components/armor_mod/ArmorModList.vue'
   import MobileFilterContainer from '~/components/MobileFilterContainer.vue'
-  import ArmorMods from '~/data/armor_mods.json'
+  import items from '~/static/data/armor_mods.json'
 
   // State
   import {createNamespacedHelpers} from 'vuex'
@@ -32,6 +32,19 @@
 
   export default {
     components: { ArmorModFilters, ArmorModList, MobileFilterContainer },
+    data () {
+      const noteOptions = new Set()
+      for (const item of items) {
+        for (const note of item.notes.split(',').map(n => n.trim())) {
+          noteOptions.add(note)
+        }
+      }
+      return {
+        items,
+        noteOptions: [...noteOptions].sort(),
+        itemKey: 'armorMods'
+      }
+    },
     computed: {
       ...mapGetters(['order', 'sortBy', 'filters', 'searchString']),
       search: {
@@ -73,20 +86,6 @@
           })
         }
         return data
-      }
-    },
-    data () {
-      const items = ArmorMods.data
-      const noteOptions = new Set()
-      for (const item of items) {
-        for (const note of item.notes.split(',').map(n => n.trim())) {
-          noteOptions.add(note)
-        }
-      }
-      return {
-        items,
-        noteOptions: [...noteOptions].sort(),
-        itemKey: 'armorMods'
       }
     },
     head () {

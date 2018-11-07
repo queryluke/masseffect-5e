@@ -1,0 +1,103 @@
+{
+  "abilityScores": {
+    "str": 12,
+    "dex": 16,
+    "con": 11,
+    "int": 10,
+    "wis": 14,
+    "cha": 8
+  },
+  "ac": "14",
+  "actions": [
+    {
+      "type": "melee",
+      "name": "Pounce",
+      "range": 4,
+      "target": "one target",
+      "hit": "8 (2d6 + 1) bludgeoning damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
+      "miss": null,
+      "attackMod": 3
+    },
+    {
+      "type": "melee",
+      "name": "Stun",
+      "range": 2,
+      "target": "one prone target",
+      "hit": "9 (2d8) lightning damage. If the target is a creature, it must succeed on a DC 13 Constitution saving throw or be stunned until the end of its next turn.",
+      "miss": null,
+      "attackMod": 3
+    }
+  ],
+  "alignment": "Neutral",
+  "barrier": null,
+  "conditionImmunities": [
+    "poisoned"
+  ],
+  "cr": "1/2",
+  "damageImmunities": [
+    "poison",
+    "psychic"
+  ],
+  "damageResistances": [],
+  "damageVulnerabilities": [
+    "lightning"
+  ],
+  "features": [
+    {
+      "name": "Aggressive",
+      "recharge": null,
+      "description": "As a bonus action, the fenris mech can move up to its speed toward a hostile creature that it can see."
+    },
+    {
+      "name": "Post-mortem Explosion",
+      "recharge": null,
+      "description": "If damage reduces the FENRIS mech to 3 or fewer hit points, it deactivates its primary systems and remains stationary. Any additinonal damage done to the mech while in this state causes it to explode. Any creature within a 4m radius sphere must succeed on a DC 13 Constitution saving throw or take 7 (3d4) lightning damage."
+    }
+  ],
+  "hp": {
+    "numDice": 10,
+    "die": 6
+  },
+  "id": "fenris_mech",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/32/ME2_FENRIS_Mech.png/revision/latest/scale-to-width-down/350?cb=20120419003938",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "FENRIS Mech",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [
+    "dex"
+  ],
+  "senses": [
+    {
+      "sense": "infrared",
+      "range": null
+    }
+  ],
+  "size": "Small",
+  "skills": [
+    "perception"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 14
+    }
+  ],
+  "spellcasting": {
+    "level": "innate",
+    "mod": "int",
+    "spellList": [
+      {
+        "perDay": "3/day",
+        "spells": [
+          {
+            "id": "shocking grasp"
+          }
+        ]
+      }
+    ]
+  },
+  "type": "Synthetic",
+  "unit": "Mech"
+}

@@ -1,22 +1,40 @@
 <template lang="pug">
-  v-container(fluid)
-    h2.display-1.hidden-sm-and-down Bookmarks
-    v-layout(row wrap v-for="(cards, type) of bookmarksGroupedByType" v-bind:key="type")
+  v-container(fluid grid-list-xl)
+    v-speed-dial(v-model="fab" right bottom direction="top" fixed transition="slide-x-reverse-transition")
+      v-btn(slot="activator" v-model="fab" color="primary" dark fab)
+        v-icon apps
+        v-icon close
+      v-btn(v-for="group of grouped"
+          v-bind:key="group.icon"
+          v-on:click="goToMark(`#${group.icon}`)"
+          v-bind:color="group.color"
+          fab dark small
+          v-if="group.marks.length > 0"
+        )
+        v-icon {{ group.icon }}
+
+
+    h2.display-3.hidden-sm-and-down Bookmarks
+    v-layout(row wrap v-for="group of grouped" v-bind:key="group.icon" v-if="group.marks.length > 0").mt-5
       v-flex(xs12)
-        h3.headline {{ headers[type] }}
-      v-flex(v-for="(card, index) in cards" v-bind:key="index" xs12 lg6)
+        h3(:id="group.icon").display-2 {{ group.title }}
+      v-flex(v-for="(mark, index) in group.marks" v-bind:key="index" xs12 lg6)
         v-card.ma-1
           v-card-text
-            spell-info(:spell="card" v-if="type === 'spell'")
-            weapon-info(:weapon="card" v-else-if="type === 'weapon'")
-            grenade-info(:grenade="card" v-else-if="type === 'grenade'")
-            stat-block(:stats="card" v-else-if="type === 'npc'")
-            weapon-mod-info(:mod="card" v-else-if="type === 'weaponMod'")
-            armor-mod-info(:mod="card" v-else-if="type === 'armorMod'")
-            armor-set-info(:mod="card" v-else-if="type === 'armorSet'")
-            markdown-file(:id="card.id" v-bind:itemType="type" v-else)
+            spell-info(:spell="mark.card" v-if="mark.type === 'spell'")
+            weapon-info(:weapon="mark.card" v-else-if="mark.type === 'weapon'")
+            grenade-info(:grenade="mark.card" v-else-if="mark.type === 'grenade'")
+            stat-block(:stats="mark.card" v-else-if="mark.type === 'npc'")
+            weapon-mod-info(:mod="mark.card" v-else-if="mark.type === 'weaponMod'")
+            armor-mod-info(:mod="mark.card" v-else-if="mark.type === 'armorMod'")
+            armor-set-info(:set="mark.card" v-else-if="mark.type === 'armorSet'")
+            vehicle-info(:item="mark.card" v-else-if="mark.type === 'vehicle'")
+            program-info(:program="mark.card" v-else-if="mark.type === 'program'")
+            div(v-else)
+              p.headline {{ mark.card.name }}
+              markdown-file(:id="mark.card.id" v-bind:itemType="mark.type" )
           v-card-actions
-            bookmark-button(:card="card" v-bind:type="type" v-bind:props="{flat: true}")
+            bookmark-button(:card="mark.card" v-bind:type="mark.type" v-bind:props="{flat: true}")
 </template>
 
 <script>
@@ -25,11 +43,12 @@
   import WeaponInfo from '~/components/weapon/WeaponInfo.vue'
   import BookmarkButton from '~/components/BookmarkButton.vue'
   import StatBlock from '~/components/npc/StatBlock.vue'
-  import GrenadeInfo from '~/components/GrenadeInfo.vue'
+  import GrenadeInfo from '~/components/grenade/GrenadeInfo.vue'
   import WeaponModInfo from '~/components/weapon_mod/WeaponModInfo.vue'
   import ArmorModInfo from '~/components/armor_mod/ArmorModInfo.vue'
   import ArmorSetInfo from '~/components/armor_set/ArmorSetInfo.vue'
-  import MarkdownFile from '~/components/MarkdownFile.vue'
+  import VehicleInfo from '~/components/vehicle/VehicleInfo.vue'
+  import ProgramInfo from '~/components/programs/ProgramInfo.vue'
 
   export default {
     components: {
@@ -40,30 +59,70 @@
       WeaponModInfo,
       ArmorModInfo,
       ArmorSetInfo,
-      BookmarkButton,
-      MarkdownFile
-    },
-    computed: {
-      ...mapGetters(['bookmarksGroupedByType'])
+      VehicleInfo,
+      ProgramInfo,
+      BookmarkButton
     },
     data () {
       return {
-        headers: {
-          kits: 'Tools & Kits',
-          backgrounds: 'Backgrounds',
-          spell: 'Spells',
-          grenade: 'Grenades & Mines',
-          weapon: 'Weapons',
-          weaponMod: 'Weapon Mods',
-          armorMod: 'Armor Mods',
-          armorSet: 'Armor Sets',
-          npc: 'Npcs'
+        fab: false,
+        groups: [
+          {
+            title: 'Equipment',
+            icon: 'build',
+            color: 'orange',
+            group: ['tools', 'grenade', 'weapon', 'weaponMod', 'armorMod', 'armorSet', 'program'],
+            marks: []
+          },
+          {
+            title: 'Spells',
+            icon: 'whatshot',
+            color: 'cyan',
+            group: ['spell'],
+            marks: []
+          },
+          {
+            title: 'Npcs',
+            icon: 'pets',
+            color: 'purple',
+            group: ['npc'],
+            marks: []
+          },
+          {
+            title: 'Vehicles',
+            icon: 'flight_takeoff',
+            color: 'green',
+            group: ['vehicle'],
+            marks: []
+          }
+        ]
+      }
+    },
+    computed: {
+      ...mapGetters(['bookmarks']),
+      grouped () {
+        const g = this.groups.map(g => {
+          g.marks = []
+          return g
+        })
+        for (const bm of this.bookmarks) {
+          for (const type of g) {
+            if (type.group.includes(bm.type)) {
+              type.marks.push(bm)
+            }
+          }
         }
+        return g
+      }
+    },
+    methods: {
+      goToMark (id) {
+        this.$vuetify.goTo(id, { offset: -68 })
       }
     },
     head () {
       return {
-        title: 'Mass Effect 5e | Player\'s Handbook - Bookmarks',
+        title: 'Mass Effect 5e | Player\'s Manual - Bookmarks',
         meta: [
           { hid: 'description', name: 'description', content: 'Keep your favorite weapons, enemies, and spells close at hand with our nifty bookmark tool.' }
         ]

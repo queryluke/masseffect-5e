@@ -1,0 +1,67 @@
+{
+  "abilityScores": {
+    "str": 8,
+    "dex": 10,
+    "con": 12,
+    "int": 1,
+    "wis": 7,
+    "cha": 3
+  },
+  "ac": "13",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Acid Splash",
+      "recharge": "Recharge 4-6",
+      "description": "The rachni worker spits acid at one target within 10m or two targets within 10m if both targets are within 2m of each other. A target must succeed on a Dexterity saving throw or take 3 (1d6) acid damage."
+    },
+    {
+      "type": "melee",
+      "name": "Bite",
+      "range": 2,
+      "target": "one target",
+      "hit": "3 (1d6) piercing damage.",
+      "miss": null,
+      "attackMod": 2
+    }
+  ],
+  "alignment": "Unaligned",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "1/8",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [],
+  "hp": {
+    "numDice": 2,
+    "die": 6
+  },
+  "id": "rachni_worker",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/e0/Rachni_Worker.png/revision/latest?cb=20100824223955",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Rachni Worker",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [
+    "wis"
+  ],
+  "senses": [
+    {
+      "sense": "blindsight",
+      "range": 4
+    }
+  ],
+  "size": "Small",
+  "skills": [],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 12
+    }
+  ],
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Rachni"
+}

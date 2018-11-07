@@ -26,6 +26,12 @@
       BookmarkButton,
       SortOptions
     },
+    props: {
+      items: {
+        type: Array,
+        default: () => { return [] }
+      }
+    },
     data () {
       return {
         headers: [
@@ -34,8 +40,7 @@
           { label: 'CR', key: 'cr', classes: 'xs2', sortable: true }
         ]
       }
-    },
-    props: ['items']
+    }
   }
 </script>
 

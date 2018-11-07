@@ -1,0 +1,68 @@
+{
+  "abilityScores": {
+    "str": 12,
+    "dex": 15,
+    "con": 12,
+    "int": 3,
+    "wis": 12,
+    "cha": 6
+  },
+  "ac": "13",
+  "actions": [
+    {
+      "type": "melee",
+      "name": "Bite",
+      "range": 2,
+      "target": "one target",
+      "hit": "7 (2d4 + 2) piercing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
+      "miss": null,
+      "attackMod": 4
+    }
+  ],
+  "alignment": "Unaligned",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "1/4",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Keen Hearing and Smell",
+      "recharge": null,
+      "description": "The varren has advantage on Wisdom (Perception) checks that rely on hearing or smell."
+    },
+    {
+      "name": "Pack Tactics",
+      "recharge": null,
+      "description": "The varren has advantage on an attack roll against a creature if at least one of the varren's allies is within 2m of the creature and the ally isn't incapacitated."
+    }
+  ],
+  "hp": {
+    "numDice": 2,
+    "die": 8
+  },
+  "id": "varren",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/f/f5/Varren.png/revision/latest?cb=20100220175817",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Varren",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Medium",
+  "skills": [
+    "perception",
+    "stealth"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 16
+    }
+  ],
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Alien"
+}

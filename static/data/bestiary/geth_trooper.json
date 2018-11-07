@@ -1,0 +1,70 @@
+{
+  "abilityScores": {
+    "str": 12,
+    "dex": 14,
+    "con": 11,
+    "int": 12,
+    "wis": 8,
+    "cha": 8
+  },
+  "ac": "13",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Multiattack",
+      "description": "The geth trooper makes two Geth Pulse Rifle attacks."
+    },
+    {
+      "type": "melee",
+      "name": "Weapon Strike",
+      "range": 2,
+      "target": "one target",
+      "hit": "4 (1d6 + 1) bludgeoning damage.",
+      "miss": null,
+      "attackMod": 3
+    },
+    {
+      "type": "weapon",
+      "id": "geth_pulse_rifle"
+    }
+  ],
+  "alignment": "Lawful Neutral",
+  "barrier": null,
+  "conditionImmunities": [
+    "poisoned"
+  ],
+  "cr": "2",
+  "damageImmunities": [
+    "poison",
+    "psychic"
+  ],
+  "damageResistances": [],
+  "damageVulnerabilities": [
+    "lightning"
+  ],
+  "features": [],
+  "hp": {
+    "numDice": 16,
+    "die": 8
+  },
+  "id": "geth_trooper",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/c/cf/ME3_Geth_Trooper.png/revision/latest/scale-to-width-down/238?cb=20120315171310",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Geth Trooper",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Medium",
+  "skills": [],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "spellcasting": false,
+  "type": "Synthetic",
+  "unit": "Geth"
+}

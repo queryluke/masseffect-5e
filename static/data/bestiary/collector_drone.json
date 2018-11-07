@@ -1,0 +1,77 @@
+{
+  "abilityScores": {
+    "str": 10,
+    "dex": 10,
+    "con": 10,
+    "int": 8,
+    "wis": 8,
+    "cha": 8
+  },
+  "ac": "13",
+  "actions": [
+    {
+      "type": "melee",
+      "name": "Weapon Bash",
+      "range": 2,
+      "target": "one target",
+      "hit": "3 (1d6) bludgeoning damage.",
+      "miss": null,
+      "attackMod": 2
+    },
+    {
+      "type": "weapon",
+      "id": "collector_assault_rifle"
+    }
+  ],
+  "alignment": "Lawful evil",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "1",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Possessed Collector",
+      "recharge": null,
+      "description": "When the collector drone is possessed by a harbinger it gains temporary hit points equal to its total hit points and 6 barrier ticks. While it has barrier ticks it also gains resistance to bludgeoning, piercing, and slashing damage."
+    }
+  ],
+  "hp": {
+    "numDice": 7,
+    "die": 8
+  },
+  "id": "collector_drone",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/a/a3/Collector.png/revision/latest/scale-to-width-down/331?cb=20100130000709",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Collector Drone",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [
+    "dex"
+  ],
+  "senses": [
+    {
+      "sense": "darkvision",
+      "range": 20
+    }
+  ],
+  "size": "Medium",
+  "skills": [
+    "athletics"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    },
+    {
+      "type": "fly",
+      "range": 6
+    }
+  ],
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Collector"
+}

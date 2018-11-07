@@ -1,44 +1,87 @@
-// Dynamic Route generation
+/*****
+ * Static Files
+ */
 const fs = require('fs')
+const fm = require('front-matter')
+const jsonDirs = ['classes', 'bestiary']
+const mdDirs = [
+  'backgrounds',
+  'rules',
+  'grenades',
+  'tools',
+  'conditions',
+  'class_features',
+  'changelog',
+  'races',
+  'feats',
+  'spells',
+  'programs',
+  'vehicles'
+]
+for (let dir of mdDirs) {
+  const path = `./static/data/${dir}`
+  const files = fs.readdirSync(path)
+
+  const items = files.map((file) => {
+    const fc = fm(fs.readFileSync(`${path}/${file}`, 'utf8'))
+    let item = Object.assign(fc.attributes, {})
+    switch (dir) {
+      case 'changelog':
+        item.date = new Date(item.date)
+        item.slug = file.replace(/.md$/, '')
+        item.url = `/changelog/${item.slug}`
+        break
+      case 'rules':
+        const fileParts = file.split('-')
+        item.section = Number.parseInt(fileParts[0])
+        item.subSection = Number.parseInt(fileParts[1])
+        item.id = file.replace(/\.md$/g, '')
+        item.hash = fileParts.splice(2).join('-').replace(/\.md$/g, '')
+        break
+      case 'vehicles':
+        item.id = file.replace(/.md$/, '')
+        break
+      default:
+        break
+    }
+    return item
+  })
+
+  switch (dir) {
+    case 'changelog':
+      items.reverse()
+      break
+    default:
+      break
+  }
+  fs.writeFileSync(`${path}.json`, JSON.stringify(items, null, 2))
+}
+// process jsDirs
+for (let dir of jsonDirs) {
+  const path = `./static/data/${dir}`
+  const files = fs.readdirSync(path)
+  let items = files.map(file => JSON.parse(fs.readFileSync(`${path}/${file}`, 'utf8')))
+  fs.writeFileSync(`${path}.json`, JSON.stringify(items, null, 2))
+}
+
+/*****
+ * Dynamic Route Generation
+ */
 const routes = []
-fs.readdirSync('./data/classes').map(file => {
+fs.readdirSync('./static/data/classes').map(file => {
   const id = file.replace(/.json$/, '')
   routes.push(`/phb/classes/${id}`)
   routes.push(`/print/spell-cards/${id}`)
 })
-require('./data/races.json').data.map(r => routes.push(`/phb/races/${r.id}`))
+// require('./data/races.json').data.map(r => routes.push(`/phb/races/${r.id}`))
 
-require('fs').readdirSync('./data/changelog').map((file) => {
+fs.readdirSync('./static/data/changelog').map((file) => {
   routes.push('/changelog/' + (file.replace(/\.md$/g, '')))
 })
 
+
 module.exports = {
-  /*
-  ** Build configuration
-  */
-  build: {
-    vendor: [
-      '~/plugins/vuetify.js'
-    ],
-    extractCSS: true,
-    /*
-    ** Run ESLint on save
-    */
-    extend (config, ctx) {
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-    }
-  },
-  css: [
-    '~/assets/style/app.styl'
-  ],
-  debug: true,
+  mode: 'spa',
   /*
   ** Headers of the page
   */
@@ -55,18 +98,39 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
     ]
   },
+  /*
+  ** Customize the progress-bar color
+  */
+  loading: { color: '#b71c1c' },
+
+  /*
+  ** Routes
+  */
   generate: {
     routes
   },
+
   /*
-  ** Customize the progress bar color
+  ** Global CSS
   */
-  loading: { color: '#b71c1c' },
+  css: [
+    '~/assets/style/app.styl'
+  ],
+
   /*
-  ** Modules
+  ** Plugins to load before mounting the App
+  */
+  plugins: [
+    '@/plugins/vuetify',
+    { src: '@/plugins/persistentState.js', ssr: false },
+    '@/plugins/filters/index.js',
+    '@/plugins/vue2-filters',
+    '@/plugins/globals'
+  ],
+  /*
+  ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/markdownit',
     '@nuxtjs/google-analytics'
   ],
   'google-analytics': {
@@ -81,19 +145,10 @@ module.exports = {
       }
     }
   },
-  markdownit: {
-    preset: 'default',
-    linkify: true,
-    use: [
-      'markdown-it-meta'
-    ]
-  },
-  plugins: [
-    '~/plugins/vuetify.js',
-    { src: '~/plugins/persistentState.js', ssr: false },
-    '~/plugins/filters/index.js',
-    '~/plugins/vue2-filters'
-  ],
+
+  /*
+  ** Router Scroll behavior
+  */
   router: {
     scrollBehavior: (to, from, savedPosition) => {
       let position = false
@@ -124,6 +179,34 @@ module.exports = {
           resolve(position)
         })
       })
+    }
+  },
+
+  /*
+  ** Build configuration
+  */
+  build: {
+    /*
+    ** You can extend webpack config here
+    */
+    extend(config, ctx) {
+      // Frontmatter loader
+      config.module.rules.push({
+        test: /\.md$/,
+        loader: 'frontmatter-markdown-loader',
+        options: {
+          vue: true
+        }
+      })
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
+      }
     }
   }
 }

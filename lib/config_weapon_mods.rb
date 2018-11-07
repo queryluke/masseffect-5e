@@ -39,6 +39,11 @@ def availability(model)
   ['assault_rifle','heavy_pistol', 'smg', 'shotgun', 'sniper_rifle'].each do |w|
     availability << w.split('_').map{ |w| w.capitalize }.join(' ') unless model[w.camelize(false)].nil?
   end
+  model.delete('assaultRifle')
+  model.delete('heavyPistol')
+  model.delete('smg')
+  model.delete('shotgun')
+  model.delete('sniperRifle')
   availability.length == 5 ? 'All' : availability.join(', ')
 end
 

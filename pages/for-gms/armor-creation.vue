@@ -89,19 +89,13 @@
 
 <script>
   import RuleCard from '~/components/cards/RuleCard'
-  import {mapActions, mapGetters} from 'vuex'
+  import mechanics from '~/static/data/armor_mechanics'
 
   export default {
     components: { RuleCard },
-    computed: {
-      ...mapGetters(['getData'])
-    },
-    created () {
-      this.mechanics = this.getData('armorMechanics')
-    },
     data () {
       return {
-        mechanics: []
+        mechanics
       }
     },
     head () {
@@ -112,9 +106,6 @@
         ]
       }
     },
-    layout: 'phb',
-    methods: {
-      ...mapActions(['showGlobalDialog'])
-    }
+    layout: 'phb'
   }
 </script>

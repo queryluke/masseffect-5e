@@ -1,0 +1,95 @@
+{
+  "abilityScores": {
+    "str": 25,
+    "dex": 10,
+    "con": 18,
+    "int": 22,
+    "wis": 25,
+    "cha": 18
+  },
+  "ac": "21",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Multiattack",
+      "description": "The rachni queen makes one bite attack and two impale attacks."
+    },
+    {
+      "type": "melee",
+      "name": "Bite",
+      "range": 4,
+      "target": "one target",
+      "hit": "26 (3d12 + 7) piercing damage.",
+      "miss": null,
+      "attackMod": 13
+    },
+    {
+      "type": "melee",
+      "name": "Impale",
+      "range": 8,
+      "target": "one target",
+      "hit": "29 (4d10 + 7) piercing damage.",
+      "miss": null,
+      "attackMod": 13
+    }
+  ],
+  "alignment": "Lawful neutral",
+  "barrier": null,
+  "conditionImmunities": [
+    "charmed"
+  ],
+  "cr": "18",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [],
+  "hp": {
+    "numDice": 22,
+    "die": 20
+  },
+  "id": "rachni_queen",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/38/Noveria_rachni_queen.png/revision/latest/scale-to-width-down/700?cb=20090919061419",
+  "lairActions": [
+    {
+      "name": "Call Workers",
+      "description": "The rachni queen summons 1d10 + 3 rachni workers. These arrive at the beginning of the queen's next turn and take their turn on the queen's initiative."
+    },
+    {
+      "name": "Call Soldiers",
+      "description": "The rachni queen summons 1d6 + 1 rachni workers. These arrive at the beginning of the queen's next turn and take their turn on the queen's initiative."
+    },
+    {
+      "name": "Call Brood Warrior",
+      "description": "The rachni queen summons one rachni brood warrior. It arrives at the beginning of the queen's next turn and takes its turn on the queen's initiative."
+    }
+  ],
+  "legendaryActions": [],
+  "name": "Rachni Queen",
+  "profBonus": 6,
+  "reactions": [],
+  "savingThrows": [
+    "wis",
+    "con",
+    "str"
+  ],
+  "senses": [
+    {
+      "sense": "blindsight",
+      "range": 10
+    }
+  ],
+  "size": "Gargantuan",
+  "skills": [
+    "perception",
+    "history"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 6
+    }
+  ],
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Rachni"
+}

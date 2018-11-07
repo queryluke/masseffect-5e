@@ -14,7 +14,16 @@
 
 <script>
   export default {
-    props: ['post', 'height']
+    props: {
+      post: {
+        type: Object,
+        default: () => { return {} }
+      },
+      height: {
+        type: String,
+        default: ''
+      }
+    }
   }
 </script>
 

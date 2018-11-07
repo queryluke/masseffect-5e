@@ -1,52 +1,34 @@
 <template lang="pug">
   v-container
-    h2.display-1.hidden-sm-and-down Combat
-    p {{ description }}
-    div(v-for="(rule, index) in pages[$route.name].rules" v-bind:key="index")
-      component(v-bind:is="rule")
+    h2.display-1.hidden-sm-and-down {{ title }}
+    div(v-for="(rule, index) in rules" v-bind:key="index")
+      rule-card(:id="rule.id")
 </template>
 
 <script>
-  // Rule Cards
-  import {
-    Shields,
-    Reloading,
-    RapidReload,
-    PrimersAndDetonators,
-    CreatureTypes,
-    DamageTypes,
-    Conditions,
-    Cover
-  } from '~/components/phb/'
-
+  import RuleCard from '~/components/RuleCard.vue'
+  import rules from '~/static/data/rules'
   import {mapGetters} from 'vuex'
 
   export default {
-    components: {
-      Shields,
-      Reloading,
-      RapidReload,
-      PrimersAndDetonators,
-      CreatureTypes,
-      DamageTypes,
-      Conditions,
-      Cover
-    },
+    components: {RuleCard},
     computed: {
       ...mapGetters('phb', {
+        version: 'version',
         pages: 'pages'
-      })
-    },
-    data () {
-      return {
-        description: 'Combat is very similar to D&D 5th edition, with a few additional rules and defensive mechanics that add Mass Effect flavor to the system.'
+      }),
+      rules () {
+        return rules.filter(rule => rule.section === this.pages[this.$route.name].rules)
+      },
+      title () {
+        return this.pages[this.$route.name].name
       }
     },
     head () {
       return {
-        title: 'Mass Effect 5e | Rules - Combat',
+        title: `Mass Effect 5e | ${this.title}`,
         meta: [
-          { hid: 'description', name: 'description', content: this.description }
+          { hid: 'description', name: 'description', content: 'Combat is very similar to D&D 5th edition, with a few additional rules and defensive mechanics that add Mass Effect flavor to the system.' }
         ]
       }
     },

@@ -1,0 +1,103 @@
+{
+  "abilityScores": {
+    "str": 18,
+    "dex": 12,
+    "con": 15,
+    "int": 18,
+    "wis": 16,
+    "cha": 10
+  },
+  "ac": "17",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Multiattack",
+      "description": "The yahg makes three attacks: one with its bite and two with its claws."
+    },
+    {
+      "type": "melee",
+      "name": "Bite",
+      "range": 2,
+      "target": "one target",
+      "hit": "15 (2d10 + 4) piercing damage.",
+      "miss": null,
+      "attackMod": 7
+    },
+    {
+      "type": "melee",
+      "name": "Claw",
+      "range": 4,
+      "target": "one target",
+      "hit": "13 (2d8 + 4) slashing damage.",
+      "miss": null,
+      "attackMod": 7
+    }
+  ],
+  "alignment": "Chaotic Evil",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "8",
+  "damageImmunities": [],
+  "damageResistances": [
+    "poison"
+  ],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Assassinate",
+      "recharge": null,
+      "description": "During its first turn, the yahg has advantage on attack rolls against any creature that hasn't taken a turn. Any hit the yahg scores against a surprised creature is a critical hit."
+    },
+    {
+      "name": "Avoidance",
+      "recharge": null,
+      "description": "If the yahg subjected to an effect that allows it to make a saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails."
+    },
+    {
+      "name": "Sneak Attack",
+      "recharge": null,
+      "description": "The yahg  deals an extra 13 (4d6) damage when it hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 2m of an ally of the yahg that isn't incapacitated and the yahg doesn't have disadvantage on the attack roll."
+    }
+  ],
+  "hp": {
+    "numDice": 21,
+    "die": 10
+  },
+  "id": "yahg",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/34/ME3_Yahg.png/revision/latest/scale-to-width-down/230?cb=20120322212821",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Yahg",
+  "profBonus": 3,
+  "reactions": [],
+  "savingThrows": [
+    "str",
+    "dex",
+    "wis",
+    "int"
+  ],
+  "senses": [
+    {
+      "sense": "blindsight",
+      "range": 6
+    }
+  ],
+  "size": "Large",
+  "skills": [
+    "acrobatics",
+    "athletics",
+    "deception",
+    "insight*",
+    "perception",
+    "stealth*"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 16
+    }
+  ],
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Alien"
+}

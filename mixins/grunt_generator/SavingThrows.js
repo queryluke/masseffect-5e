@@ -1,35 +1,23 @@
 export const SavingThrows = {
   methods: {
-    setGruntSavingThrows (config, grunt) {
-      const crMetaLevel = parseFloat(config.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(config.cr.cr) / 4)
-      let numSavingThrows = this.randomValue(this.savingThrowWeights[crMetaLevel])
-      const savingThrows = this.savingThrows.slice(0)
-      if (grunt.sc.id !== 'none') {
-        const classSavingThrows = grunt.sc.savingThrows.map(st => {
-          return st.toLowerCase().trim().slice(0, 3)
-        })
-        for (const classSt of classSavingThrows) {
-          if (numSavingThrows > 0) {
-            const abilityScoreBonus = this.abilityScoreBonus(grunt.abilityScores[classSt]) + config.cr.profBonus
-            if (abilityScoreBonus > 0) {
-              savingThrows.splice(savingThrows.indexOf(classSt), 1)
-              grunt.savingThrows.push(classSt)
-              numSavingThrows--
-            }
-          }
+    setGruntSavingThrows () {
+      this.grunt.savingThrows = []
+      let numSavingThrows = this.randomValue(this.savingThrowWeights[this.crMetaLevel])
+      const savingThrows = this.savingThrows.slice()
+      const classSavingThrows = this.sc.savingThrows.map(st => {
+        return st.toLowerCase().trim().slice(0, 3)
+      })
+      for (const classSt of classSavingThrows) {
+        if (numSavingThrows > 0) {
+          savingThrows.splice(savingThrows.indexOf(classSt), 1)
+          this.grunt.savingThrows.push(classSt)
+          numSavingThrows--
         }
       }
       for (let i = 1; i <= numSavingThrows; i++) {
         const savingThrow = this.randomValue(savingThrows)
-        const abilityScoreBonus = this.abilityScoreBonus(savingThrow) + config.cr.profBonus
-        if (abilityScoreBonus > 0) {
-          savingThrows.splice(savingThrows.indexOf(savingThrow), 1)
-          grunt.savingThrows.push(savingThrow)
-        }
-      }
-
-      if (grunt.savingThrows.length > 2) {
-        config.effective.ac += 2
+        savingThrows.splice(savingThrows.indexOf(savingThrow), 1)
+        this.grunt.savingThrows.push(savingThrow)
       }
     }
   },

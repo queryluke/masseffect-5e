@@ -1,0 +1,84 @@
+[
+  {
+    "name": "Arc",
+    "new": true,
+    "description": "Deals lightning damage. On a hit, deals half of the damage dealt to 1 additional creature within 2m of the hit target. If there is more than one creature within 2m of the initial target, choose the second target randomly."
+  },
+  {
+    "name": "Burst Fire",
+    "new": true,
+    "description": "Can make a normal single-target attack, or it can spray a 4m-cube area within normal range with shots. Each creature in the area must succeed on a DC 15 Dexterity saving throw or take the weapon's normal damage. This action uses 3 heat."
+  },
+  {
+    "name": "Double Tap",
+    "new": true,
+    "description": "When you make a ranged attack with this weapon, you can use your bonus action to make a second ranged attack. You do not add your ability modifier to the damage of the bonus attack, unless that modifier is negative. The second attack may be on the same or a different target."
+  },
+  {
+    "name": "Finesse",
+    "description": "When making an attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls."
+  },
+  {
+    "name": "Heat",
+    "new": true,
+    "description": "The number of times a weapon can be fired before it must be reloaded. If the weapon has a heat of 1 and you fire it, you must reload the weapon with a fresh thermal clip before firing it again. Reloading takes an action."
+  },
+  {
+    "name": "Heavy",
+    "change": true,
+    "description": "Requires a minimum Strength score of 15. Creatures with a Strength score lower than 15 have disadvantage on attack rolls with heavy weapons as its size and bulk is to cumbersome to use effectively."
+  },
+  {
+    "name": "Hip Fire",
+    "new": true,
+    "description": "When making a ranged attack on a target creature within 2m, you do not have disadvantage on the attack roll."
+  },
+  {
+    "name": "Light",
+    "description": "A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons."
+  },
+  {
+    "name": "Melee",
+    "new": true,
+    "description": "Damage resulting from melee weapon attacks by-pass shields."
+  },
+  {
+    "name": "Range",
+    "description": "A weapon that can be used to make a ranged attack has a range in parentheses. The range lists two numbers. The first is the weapon's normal range in meters, and the second indicates the weapon's long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range."
+  },
+  {
+    "name": "Reach",
+    "description": "This weapon adds 5 feet to your reach when you attack with it, as well as when determining your reach for opportunity attacks with it."
+  },
+  {
+    "name": "Recoil",
+    "new": true,
+    "description": "A weapon with the Recoil property generates a lot of kickback when fired. You use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls."
+  },
+  {
+    "name": "Silent",
+    "new": true,
+    "description": "Makes no noise when used to make an attack roll."
+  },
+  {
+    "name": "Special",
+    "change": true,
+    "description": "A weapon with the special property has unusual rules governing its use explained in the weapon notes. Additionally, special weapons cannot be improved by weapon mods."
+  },
+  {
+    "name": "Two-handed",
+    "description": "This weapon requires two hands when you attack with it. "
+  },
+  {
+    "name": "Thrown",
+    "description": "If a weapon has the thrown property, you can throw the weapon to make a ranged attack. If the weapon is a melee weapon, you use the same ability modifier for that attack roll and damage roll that you would use for a melee attack with the weapon."
+  },
+  {
+    "name": "Versatile",
+    "description": "This weapon can be used with one or two hands. A damage value in parentheses appears with the property--the damage when the weapon is used with two hands to make a melee attack."
+  },
+  {
+    "name": "Weight",
+    "description": "The weight in kilograms. Primarily used for the Variant: Encumbrance rule."
+  }
+]

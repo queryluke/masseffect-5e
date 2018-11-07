@@ -1,0 +1,322 @@
+[
+  {
+    "name": "Extended Barrel I",
+    "description": "Lengthens barrel, creating greater bullet velocity and impact.",
+    "feature": "+1 on damage rolls made with this weapon.",
+    "cost": "5000",
+    "placement": "Barrel",
+    "notes": "Extra Damage",
+    "id": "extended_barrel_i",
+    "availability": "Assault Rifle, Heavy Pistol, Smg, Sniper Rifle"
+  },
+  {
+    "name": "Extended Barrel II",
+    "description": "Lengthens barrel, creating greater bullet velocity and impact.",
+    "feature": "+2 on damage rolls made with this weapon.",
+    "cost": "10000",
+    "placement": "Barrel",
+    "notes": "Extra Damage",
+    "id": "extended_barrel_ii",
+    "availability": "Assault Rifle, Heavy Pistol, Smg, Sniper Rifle"
+  },
+  {
+    "name": "Extended Barrel III",
+    "description": "Lengthens barrel, creating greater bullet velocity and impact.",
+    "feature": "+3 on damage rolls made with this weapon.",
+    "cost": "15000",
+    "placement": "Barrel",
+    "notes": "Extra Damage",
+    "id": "extended_barrel_iii",
+    "availability": "Assault Rifle, Heavy Pistol, Smg, Sniper Rifle"
+  },
+  {
+    "name": "Omni-Blade Attachment",
+    "description": "Attach an omni-blade (bayonet) to the weapon.",
+    "feature": "In addition to it's other properties, this weapon is also considered a melee weapon. It has the finesse property and successful melee attacks deal 1d8 piercing damage.",
+    "cost": "10000",
+    "placement": "Barrel",
+    "notes": "Melee Attacks",
+    "id": "omni-blade_attachment",
+    "availability": "Assault Rifle"
+  },
+  {
+    "name": "High-Caliber Barrel I",
+    "description": "Superior kinetic coils increase shot penetration and damage.",
+    "feature": "+1 on damage rolls made with this weapon. Ignores half cover.",
+    "cost": "12000",
+    "placement": "Barrel",
+    "notes": "Extra Damage, Special",
+    "id": "high-caliber_barrel_i",
+    "availability": "All"
+  },
+  {
+    "name": "High-Caliber Barrel II",
+    "description": "Superior kinetic coils increase shot penetration and damage.",
+    "feature": "+2 on damage rolls made with this weapon. Ignores half cover.",
+    "cost": "17000",
+    "placement": "Barrel",
+    "notes": "Extra Damage, Special",
+    "id": "high-caliber_barrel_ii",
+    "availability": "All"
+  },
+  {
+    "name": "High-Caliber Barrel III",
+    "description": "Superior kinetic coils increase shot penetration and damage.",
+    "feature": "+3 on damage rolls made with this weapon. Ignores half cover.",
+    "cost": "22000",
+    "placement": "Barrel",
+    "notes": "Extra Damage, Special",
+    "id": "high-caliber_barrel_iii",
+    "availability": "All"
+  },
+  {
+    "name": "Stunner",
+    "description": "Small attachment to muzzle, causing shock damage to meleed targets.",
+    "feature": "In addition to it's other properties, this weapon is also considered a melee weapon. Successful melee attacks deal 1d6 bludgeoning + 1d4 piercing damage and if the target is maintaining a concentration spell it automatically fails its saving throw to maintain the spell.",
+    "cost": "20000",
+    "placement": "Barrel",
+    "notes": "Melee Attacks",
+    "id": "stunner",
+    "availability": "Heavy Pistol, Smg"
+  },
+  {
+    "name": "Cranial Trauma System",
+    "description": "Increase headshot lethality by balancing barrel calibration so that ammunition pierces bone and explodes in soft tissue.",
+    "feature": "When you roll a critical hit with this weapon, roll 1 additional damage die.",
+    "cost": "8000",
+    "placement": "Barrel",
+    "notes": "Special",
+    "id": "cranial_trauma_system",
+    "availability": "Heavy Pistol"
+  },
+  {
+    "name": "Stability Damper I",
+    "description": "Distributes recoil with sliding system of counterweights compatible with kinetic coil generators, reducing weapon kickback.",
+    "feature": "+1 on ranged attack rolls made with this weapon.",
+    "cost": "5000",
+    "placement": "Body",
+    "notes": "Attack Bonus",
+    "id": "stability_damper_i",
+    "availability": "Assault Rifle, Smg, Shotgun, Sniper Rifle"
+  },
+  {
+    "name": "Stability Damper II",
+    "description": "Distributes recoil with sliding system of counterweights compatible with kinetic coil generators, reducing weapon kickback.",
+    "feature": "+2 on ranged attack rolls made with this weapon.",
+    "cost": "10000",
+    "placement": "Body",
+    "notes": "Attack Bonus",
+    "id": "stability_damper_ii",
+    "availability": "Assault Rifle, Smg, Shotgun, Sniper Rifle"
+  },
+  {
+    "name": "Stability Damper III",
+    "description": "Distributes recoil with sliding system of counterweights compatible with kinetic coil generators, reducing weapon kickback.",
+    "feature": "+3 on ranged attack rolls made with this weapon.",
+    "cost": "15000",
+    "placement": "Body",
+    "notes": "Attack Bonus",
+    "id": "stability_damper_iii",
+    "availability": "Assault Rifle, Smg, Shotgun, Sniper Rifle"
+  },
+  {
+    "name": "Precision Scope",
+    "description": "Simple 4x optical scope to enhance stability while zoomed.",
+    "feature": "Double the weapons normal and long range. +1 on ranged attack rolls made with this weapon.",
+    "cost": "10000",
+    "placement": "Body",
+    "notes": "Increased Range, Attack Bonus",
+    "id": "precision_scope",
+    "availability": "Assault Rifle, Heavy Pistol, Smg"
+  },
+  {
+    "name": "Thermal Scope",
+    "description": "Detects creatures using thermal signatures.",
+    "feature": "Looking through the scope gives the wielder Infrared Vision. When making a ranged weapon attack, you may choose whether or not to use Infrared Vision.",
+    "cost": "20000",
+    "placement": "Body",
+    "notes": "Special",
+    "id": "thermal_scope",
+    "availability": "Assault Rifle, Sniper Rifle"
+  },
+  {
+    "name": "Ultralight Materials",
+    "description": "Superior lightweight alloys replace weapon parts, making weapon less obtrusive and easier to handle.",
+    "feature": "Reduces the weapon's weight by one half. The weapon gains the Light property.",
+    "cost": "8000",
+    "placement": "Body",
+    "notes": "Reduced Weight",
+    "id": "ultralight_materials",
+    "availability": "All"
+  },
+  {
+    "name": "Power Magnifier",
+    "description": "Generator designed to enhance the effectiveness of tech or biotic attacks.",
+    "feature": "+1 on spell damage rolls while holding this weapon.",
+    "cost": "12000",
+    "placement": "Body",
+    "notes": "Extra Damage",
+    "id": "power_magnifier",
+    "availability": "Heavy Pistol, Smg"
+  },
+  {
+    "name": "Concentration Mod",
+    "description": "Biometric sensors and auto-targeting software adjust to the user's pulse and breath rate, assisting aim.",
+    "feature": "If you reduce your speed to 0 for the turn, ranged attack rolls with this weapon score critical hits on rolls of 19 & 20.",
+    "cost": "12000",
+    "placement": "Body",
+    "notes": "Special",
+    "id": "concentration_mod",
+    "availability": "Sniper Rifle"
+  },
+  {
+    "name": "Piercing Ammo",
+    "description": "Capacitor boosts kinetic coil generators, increasing shot penetration.",
+    "feature": "Damage done by this weapon cannot be reduced by piercing damage resistance.",
+    "cost": "20000",
+    "placement": "Ammo",
+    "notes": "Ignore Resistance",
+    "id": "piercing_ammo",
+    "availability": "Assault Rifle, Heavy Pistol, Sniper Rifle"
+  },
+  {
+    "name": "Shredder Ammo",
+    "description": "Shoot pellets covered in Tungsten for increased damage.",
+    "feature": "You may use a bonus action to toggle the following effect on or off: damage type becomes slashing. Damage done by this weapon cannot be reduced by slashing damage resistance.",
+    "cost": "20000",
+    "placement": "Ammo",
+    "notes": "Damage Augment, Ignore Resistance",
+    "id": "shredder_ammo",
+    "availability": "Shotgun"
+  },
+  {
+    "name": "Quick Release Magazine",
+    "description": "State of the art thermal clip housing allows for faster ejection and insertion.",
+    "feature": "You may reload this weapon as a bonus action.",
+    "cost": "15000",
+    "placement": "Magazine",
+    "notes": "Special",
+    "id": "quick_release_magazine",
+    "availability": "Assault Rifle, Heavy Pistol, Smg, Sniper Rifle"
+  },
+  {
+    "name": "Magazine Upgrade",
+    "description": "Increases magazine capacity, allowing more shots before reload.",
+    "feature": "Weapon gains additional heat equal to 1/2 its base heat (rounded down). ",
+    "cost": "8000",
+    "placement": "Magazine",
+    "notes": "Additional Heat",
+    "id": "magazine_upgrade",
+    "availability": "All"
+  },
+  {
+    "name": "Extended Magazine",
+    "description": "Increases magazine capacity, allowing more shots before reload.",
+    "feature": "Weapon gains a additional heat equal to its base heat.",
+    "cost": "16000",
+    "placement": "Magazine",
+    "notes": "Additional Heat",
+    "id": "extended_magazine",
+    "availability": "All"
+  },
+  {
+    "name": "Heat Sink",
+    "description": "Greatly improves your weapons cooling capacity.",
+    "feature": "Weapon gains additional heat equal to double its base heat.",
+    "cost": "32000",
+    "placement": "Magazine",
+    "notes": "Additional Heat",
+    "id": "heat_sink",
+    "availability": "All"
+  },
+  {
+    "name": "Cryo Ammo",
+    "description": "Fire supercooled projectiles.",
+    "feature": "You may use a bonus action to toggle the following effect on or off: damage type becomes cold. Successful ranged weapon attacks cause the target to become {primed-cold} and reduce its movement speed by half until the end of its next turn.",
+    "cost": "20000",
+    "placement": "Ammo",
+    "notes": "Damage Augment, Primes",
+    "id": "cryo_ammo",
+    "availability": "All"
+  },
+  {
+    "name": "Disruptor Ammo",
+    "description": "Fire statically charged projectiles.",
+    "feature": "You may use a bonus action to toggle the following effect on or off: damage type becomes lightning, Successful ranged attacks can detonate primed targets or cause the target to become {primed-lightning} until the end of its next turn.",
+    "cost": "20000",
+    "placement": "Ammo",
+    "notes": "Damage Augment, Primes, Detonates",
+    "id": "disruptor_ammo",
+    "availability": "All"
+  },
+  {
+    "name": "Incendiary Ammo",
+    "description": "Fire super-heated plasma.",
+    "feature": "You may use a bonus action to toggle the following effect on or off: damage type becomes fire. Successful ranged attacks deal an additional 1d4 fire damage and the target becomes {primed-fire} until the end of it's next turn.",
+    "cost": "20000",
+    "placement": "Ammo",
+    "notes": "Damage Augment, Extra Damage, Primes",
+    "id": "incendiary_ammo",
+    "availability": "All"
+  },
+  {
+    "name": "Warp Ammo",
+    "description": "Fire tiny dark matter charges.",
+    "feature": "You may use a bonus action to toggle the following effect on or off: damage type becomes necrotic damage. Successful ranged attacks detonate primed targets and a target with an active barrier will have 2 barrier ticks removed and cannot benefit from the barriers damage reduction for this attack.",
+    "cost": "20000",
+    "placement": "Ammo",
+    "notes": "Damage Augment, Ignore Resistance, Detonates",
+    "id": "warp_ammo",
+    "availability": "All"
+  },
+  {
+    "name": "Explosive Ammo",
+    "description": "Fire exploding projectiles",
+    "feature": "You may use a bonus action to toggle the following effect on or off: Successful ranged attacks deal and additional 1d8 thunder damage, but each attack drains 2 heat.",
+    "cost": "15000",
+    "placement": "Ammo",
+    "notes": "Extra Damage",
+    "id": "explosive_ammo",
+    "availability": "All"
+  },
+  {
+    "name": "Phasic Ammo",
+    "description": "Fire projectiles that vibrate rapidly, allowing them to bypass kenetic barriers.",
+    "feature": "You may use a bonus action to toggle the following effect on or off: -2 on ranged weapon damage rolls, but all damage done bypasses shields.",
+    "cost": "15000",
+    "placement": "Ammo",
+    "notes": "Special",
+    "id": "phasic_ammo",
+    "availability": "All"
+  },
+  {
+    "name": "Combat Sensor",
+    "description": "Scanning radar that alerts you when enemies are within your vicinity.",
+    "feature": "While this weapon is equipped, you have advantage on initiative rolls. In addition, you and any of your companions within 10m of you can't be surprised, except when incapacitated. The sensor awakens you and your companions within range if any of you are sleeping naturally when combat begins.",
+    "cost": "20000",
+    "placement": "Body",
+    "notes": "Special",
+    "id": "combat_sensor",
+    "availability": "All"
+  },
+  {
+    "name": "High-Velocity Barrel I",
+    "description": "Increase bullet velocity to ensure bullets pierce armor.",
+    "feature": "When you roll a 1 on a damage die for an attack you make with this weapon, you can reroll the die and must use the new roll, even if the new roll is a 1.",
+    "cost": "20000",
+    "placement": "Barrel",
+    "notes": "Damage Reroll",
+    "id": "high-velocity_barrel_i",
+    "availability": "All"
+  },
+  {
+    "name": "High-Velocity Barrel II",
+    "description": "Increase bullet velocity to ensure bullets pierce armor.",
+    "feature": "When you roll a 1 or 2 on a damage die for an attack you make with this weapon, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2.",
+    "cost": "40000",
+    "placement": "Barrel",
+    "notes": "Damage Reroll",
+    "id": "high-velocity_barrel_ii",
+    "availability": "All"
+  }
+]

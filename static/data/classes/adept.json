@@ -1,0 +1,480 @@
+{
+  "id": "adept",
+  "name": "Adept",
+  "description": "Adepts are biotic specialists, capable of disabling and killing enemies with raw biotic power. While they lack advanced combat training, they are the best at defeating enemies without firing a shot. They are outfitted with L5x implants that can spawn a micro-singularity, damaging enemies and pulling them into the air.",
+  "snippet": "The Adept is the ultimate biotic, able to affect the physical world with the power of the mind.",
+  "primaryAbility": "Wisdom",
+  "hitDie": 6,
+  "minHitDieRoll": 4,
+  "armorProficiencies": [
+    "Light"
+  ],
+  "weaponProficiencyChoices": 1,
+  "weaponProficiencies": {
+    "required": [
+      "Heavy Pistols"
+    ],
+    "optional": [
+      "Melee",
+      "SMGs"
+    ]
+  },
+  "savingThrows": [
+    "Charisma",
+    "Wisdom"
+  ],
+  "skillChoices": 3,
+  "skillProficiencies": [
+    "Acrobatics",
+    "Deception",
+    "History",
+    "Insight",
+    "Intimidation",
+    "Performance",
+    "Sleight of hand",
+    "Survival"
+  ],
+  "startingRangedWeaponChoices": 1,
+  "startingRangedWeapons": [
+    "M-3 Predator",
+    "M-4 Shuriken"
+  ],
+  "startingMeleeWeaponChoices": 1,
+  "startingMeleeWeapons": [
+    "Omni-Blade",
+    "Monomolecular Blade"
+  ],
+  "startingArmor": [
+    "Stock Light Armor"
+  ],
+  "progressionHeaders": [
+    {
+      "title": "Level"
+    },
+    {
+      "title": "Proficiency Bonus"
+    },
+    {
+      "title": "Features"
+    },
+    {
+      "title": "Barrier Uses"
+    },
+    {
+      "title": "Barrier Ticks"
+    },
+    {
+      "title": "Cantrips"
+    },
+    {
+      "title": "Spells Known"
+    }
+  ],
+  "spellSlots": true,
+  "maxSpellSlot": 5,
+  "progression": [
+    {
+      "level": 1,
+      "proficiencyBonus": 2,
+      "features": [
+        "barrier",
+        "biotic_recovery"
+      ],
+      "barrierUses": 2,
+      "barrierTicks": 2,
+      "cantrips": 4,
+      "spellsKnown": 3,
+      "spellSlots": {
+        "1": "2",
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null
+      }
+    },
+    {
+      "level": 2,
+      "proficiencyBonus": 2,
+      "features": [
+        "subclass"
+      ],
+      "barrierUses": 2,
+      "barrierTicks": 2,
+      "cantrips": 4,
+      "spellsKnown": 4,
+      "spellSlots": {
+        "1": "4",
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null
+      }
+    },
+    {
+      "level": 3,
+      "proficiencyBonus": 2,
+      "features": [],
+      "barrierUses": 3,
+      "barrierTicks": 2,
+      "cantrips": 5,
+      "spellsKnown": 5,
+      "spellSlots": {
+        "1": "6",
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null
+      }
+    },
+    {
+      "level": 4,
+      "proficiencyBonus": 2,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "barrierUses": 3,
+      "barrierTicks": 2,
+      "cantrips": 5,
+      "spellsKnown": 6,
+      "spellSlots": {
+        "1": "7",
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null
+      }
+    },
+    {
+      "level": 5,
+      "proficiencyBonus": 3,
+      "features": [],
+      "barrierUses": 3,
+      "barrierTicks": 2,
+      "cantrips": 5,
+      "spellsKnown": 7,
+      "spellSlots": {
+        "1": "7",
+        "2": "2",
+        "3": null,
+        "4": null,
+        "5": null
+      }
+    },
+    {
+      "level": 6,
+      "proficiencyBonus": 3,
+      "features": [
+        "subclass"
+      ],
+      "barrierUses": 4,
+      "barrierTicks": 2,
+      "cantrips": 5,
+      "spellsKnown": 8,
+      "spellSlots": {
+        "1": "7",
+        "2": "3",
+        "3": null,
+        "4": null,
+        "5": null
+      }
+    },
+    {
+      "level": 7,
+      "proficiencyBonus": 3,
+      "features": [],
+      "barrierUses": 4,
+      "barrierTicks": 3,
+      "cantrips": 6,
+      "spellsKnown": 9,
+      "spellSlots": {
+        "1": "7",
+        "2": "4",
+        "3": null,
+        "4": null,
+        "5": null
+      }
+    },
+    {
+      "level": 8,
+      "proficiencyBonus": 3,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "barrierUses": 4,
+      "barrierTicks": 3,
+      "cantrips": 6,
+      "spellsKnown": 10,
+      "spellSlots": {
+        "1": "7",
+        "2": "5",
+        "3": null,
+        "4": null,
+        "5": null
+      }
+    },
+    {
+      "level": 9,
+      "proficiencyBonus": 4,
+      "features": [],
+      "barrierUses": 4,
+      "barrierTicks": 3,
+      "cantrips": 6,
+      "spellsKnown": 11,
+      "spellSlots": {
+        "1": "7",
+        "2": "6",
+        "3": "1",
+        "4": null,
+        "5": null
+      }
+    },
+    {
+      "level": 10,
+      "proficiencyBonus": 4,
+      "features": [
+        "subclass"
+      ],
+      "barrierUses": 4,
+      "barrierTicks": 3,
+      "cantrips": 6,
+      "spellsKnown": 12,
+      "spellSlots": {
+        "1": "7",
+        "2": "6",
+        "3": "2",
+        "4": null,
+        "5": null
+      }
+    },
+    {
+      "level": 11,
+      "proficiencyBonus": 4,
+      "features": [],
+      "barrierUses": 4,
+      "barrierTicks": 3,
+      "cantrips": 7,
+      "spellsKnown": 13,
+      "spellSlots": {
+        "1": "7",
+        "2": "6",
+        "3": "3",
+        "4": null,
+        "5": null
+      }
+    },
+    {
+      "level": 12,
+      "proficiencyBonus": 4,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "barrierUses": 5,
+      "barrierTicks": 3,
+      "cantrips": 7,
+      "spellsKnown": 14,
+      "spellSlots": {
+        "1": "7",
+        "2": "6",
+        "3": "3",
+        "4": null,
+        "5": null
+      }
+    },
+    {
+      "level": 13,
+      "proficiencyBonus": 5,
+      "features": [],
+      "barrierUses": 5,
+      "barrierTicks": 4,
+      "cantrips": 7,
+      "spellsKnown": 15,
+      "spellSlots": {
+        "1": "7",
+        "2": "6",
+        "3": "3",
+        "4": "1",
+        "5": null
+      }
+    },
+    {
+      "level": 14,
+      "proficiencyBonus": 5,
+      "features": [
+        "subclass"
+      ],
+      "barrierUses": 5,
+      "barrierTicks": 4,
+      "cantrips": 7,
+      "spellsKnown": 16,
+      "spellSlots": {
+        "1": "7",
+        "2": "6",
+        "3": "3",
+        "4": "1",
+        "5": null
+      }
+    },
+    {
+      "level": 15,
+      "proficiencyBonus": 5,
+      "features": [],
+      "barrierUses": 5,
+      "barrierTicks": 4,
+      "cantrips": 8,
+      "spellsKnown": 17,
+      "spellSlots": {
+        "1": "7",
+        "2": "6",
+        "3": "3",
+        "4": "2",
+        "5": null
+      }
+    },
+    {
+      "level": 16,
+      "proficiencyBonus": 5,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "barrierUses": 5,
+      "barrierTicks": 4,
+      "cantrips": 8,
+      "spellsKnown": 18,
+      "spellSlots": {
+        "1": "7",
+        "2": "6",
+        "3": "3",
+        "4": "2",
+        "5": null
+      }
+    },
+    {
+      "level": 17,
+      "proficiencyBonus": 6,
+      "features": [
+        "empowered_biotics"
+      ],
+      "barrierUses": 6,
+      "barrierTicks": 4,
+      "cantrips": 8,
+      "spellsKnown": 19,
+      "spellSlots": {
+        "1": "7",
+        "2": "6",
+        "3": "3",
+        "4": "2",
+        "5": "1"
+      }
+    },
+    {
+      "level": 18,
+      "proficiencyBonus": 6,
+      "features": [
+        "biotic_mastery"
+      ],
+      "barrierUses": 6,
+      "barrierTicks": 4,
+      "cantrips": 8,
+      "spellsKnown": 20,
+      "spellSlots": {
+        "1": "7",
+        "2": "6",
+        "3": "4",
+        "4": "2",
+        "5": "1"
+      }
+    },
+    {
+      "level": 19,
+      "proficiencyBonus": 6,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "barrierUses": 6,
+      "barrierTicks": 5,
+      "cantrips": 8,
+      "spellsKnown": 21,
+      "spellSlots": {
+        "1": "7",
+        "2": "6",
+        "3": "5",
+        "4": "2",
+        "5": "1"
+      }
+    },
+    {
+      "level": 20,
+      "proficiencyBonus": 6,
+      "features": [
+        "signature_biotics"
+      ],
+      "barrierUses": 6,
+      "barrierTicks": 5,
+      "cantrips": 8,
+      "spellsKnown": 22,
+      "spellSlots": {
+        "1": "7",
+        "2": "6",
+        "3": "5",
+        "4": "3",
+        "5": "1"
+      }
+    }
+  ],
+  "subclasses": [
+    {
+      "name": "Commando",
+      "description": "Commandos don't need heavy weapons because they ARE the heavy weapon. Their features improve both the damage potential and throughput of their biotic spells, making them a deadly force.",
+      "features": [
+        [
+          "pure_biotics"
+        ],
+        [
+          "expert_biotic"
+        ],
+        [
+          "biotic_split"
+        ],
+        [
+          "overchannel"
+        ]
+      ]
+    },
+    {
+      "name": "Blackstar",
+      "description": "Blackstars prefer controlling the battlefield over raw power. They can shape their biotic powers to avoid hurting friends and gain unique benefits to biotic control spells like Life, Singularity, and Stasis.",
+      "features": [
+        [
+          "sculpt_biotics"
+        ],
+        [
+          "bend_luck"
+        ],
+        [
+          "focused_biotics"
+        ],
+        [
+          "biotic_control"
+        ]
+      ]
+    },
+    {
+      "name": "Disruptor",
+      "description": "Disruptors have learned to tap into dark energy, improving biotic abilities that tear apart their adversaries from within. They also specialize in maintaining spells with intense focus.",
+      "features": [
+        [
+          "dark_biotics"
+        ],
+        [
+          "biotic_surge"
+        ],
+        [
+          "potent_biotics"
+        ],
+        [
+          "biotic_concentration"
+        ]
+      ]
+    }
+  ]
+}

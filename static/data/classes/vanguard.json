@@ -1,0 +1,478 @@
+{
+  "id": "vanguard",
+  "name": "Vanguard",
+  "description": "Vanguards are feared for their high-risk high-reward combat style, closing quickly on enemies and destroying them at close range with weapons and biotic abilities. They are outfitted with L5n implants, enabling them to perform a biotic charge that strikes the opponent with incredible force while closing distance.\n",
+  "snippet": "Vanguards have a high-risk high-reward combat style, using biotics and melee strikes.\n",
+  "primaryAbility": "Strength or Wisdom",
+  "hitDie": 12,
+  "minHitDieRoll": 7,
+  "armorProficiencies": [
+    "Light",
+    "Medium"
+  ],
+  "weaponProficiencyChoices": 1,
+  "weaponProficiencies": {
+    "required": [
+      "Heavy Pistols",
+      "Melee"
+    ],
+    "optional": [
+      "Shotguns",
+      "SMGs"
+    ]
+  },
+  "savingThrows": [
+    "Strength",
+    "Wisdom"
+  ],
+  "skillChoices": 3,
+  "skillProficiencies": [
+    "Acrobatics",
+    "Athletics",
+    "Deception",
+    "Insight",
+    "Intimidation",
+    "Performance",
+    "Persuasion",
+    "Sleight of Hand",
+    "Survival"
+  ],
+  "startingRangedWeaponChoices": 1,
+  "startingRangedWeapons": [
+    "M-3 Predator",
+    "M-4 Shuriken",
+    "M-23 Katana"
+  ],
+  "startingMeleeWeaponChoices": 1,
+  "startingMeleeWeapons": [
+    "Omni-Blade",
+    "Omni-Hammer",
+    "Monomolecular Blade",
+    "Riot Shield"
+  ],
+  "startingArmor": [
+    "Stock Light Armor",
+    "Stock Medium Armor"
+  ],
+  "progressionHeaders": [
+    {
+      "title": "Level"
+    },
+    {
+      "title": "Proficiency Bonus"
+    },
+    {
+      "title": "Features"
+    },
+    {
+      "title": "Barrier Uses"
+    },
+    {
+      "title": "Barrier Ticks"
+    },
+    {
+      "title": "Cantrips"
+    },
+    {
+      "title": "Spells Known"
+    }
+  ],
+  "spellSlots": true,
+  "maxSpellSlot": 3,
+  "progression": [
+    {
+      "level": 1,
+      "proficiencyBonus": 2,
+      "features": [
+        "barrier",
+        "fighting_style"
+      ],
+      "barrierUses": 2,
+      "barrierTicks": 3,
+      "cantrips": 4,
+      "spellsKnown": "-",
+      "spellSlots": {
+        "1": null,
+        "2": null,
+        "3": null
+      }
+    },
+    {
+      "level": 2,
+      "proficiencyBonus": 2,
+      "features": [
+        "danger_sense",
+        "zero-sum"
+      ],
+      "barrierUses": 2,
+      "barrierTicks": 3,
+      "cantrips": 4,
+      "spellsKnown": 2,
+      "spellSlots": {
+        "1": "2",
+        "2": null,
+        "3": null
+      }
+    },
+    {
+      "level": 3,
+      "proficiencyBonus": 2,
+      "features": [
+        "subclass"
+      ],
+      "barrierUses": 3,
+      "barrierTicks": 3,
+      "cantrips": 4,
+      "spellsKnown": 3,
+      "spellSlots": {
+        "1": "3",
+        "2": null,
+        "3": null
+      }
+    },
+    {
+      "level": 4,
+      "proficiencyBonus": 2,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "barrierUses": 3,
+      "barrierTicks": 4,
+      "cantrips": 5,
+      "spellsKnown": 3,
+      "spellSlots": {
+        "1": "4",
+        "2": null,
+        "3": null
+      }
+    },
+    {
+      "level": 5,
+      "proficiencyBonus": 3,
+      "features": [
+        "extra_attack_1"
+      ],
+      "barrierUses": 3,
+      "barrierTicks": 4,
+      "cantrips": 5,
+      "spellsKnown": 4,
+      "spellSlots": {
+        "1": "6",
+        "2": null,
+        "3": null
+      }
+    },
+    {
+      "level": 6,
+      "proficiencyBonus": 3,
+      "features": [
+        "subclass"
+      ],
+      "barrierUses": 4,
+      "barrierTicks": 4,
+      "cantrips": 5,
+      "spellsKnown": 4,
+      "spellSlots": {
+        "1": "6",
+        "2": null,
+        "3": null
+      }
+    },
+    {
+      "level": 7,
+      "proficiencyBonus": 3,
+      "features": [
+        "tactical_barrier"
+      ],
+      "barrierUses": 4,
+      "barrierTicks": 5,
+      "cantrips": 5,
+      "spellsKnown": 5,
+      "spellSlots": {
+        "1": "7",
+        "2": null,
+        "3": null
+      }
+    },
+    {
+      "level": 8,
+      "proficiencyBonus": 3,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "barrierUses": 4,
+      "barrierTicks": 5,
+      "cantrips": 5,
+      "spellsKnown": 5,
+      "spellSlots": {
+        "1": "7",
+        "2": null,
+        "3": null
+      }
+    },
+    {
+      "level": 9,
+      "proficiencyBonus": 4,
+      "features": [
+        "brutal_critical_1"
+      ],
+      "barrierUses": 4,
+      "barrierTicks": 5,
+      "cantrips": 5,
+      "spellsKnown": 6,
+      "spellSlots": {
+        "1": "7",
+        "2": "2",
+        "3": null
+      }
+    },
+    {
+      "level": 10,
+      "proficiencyBonus": 4,
+      "features": [
+        "subclass"
+      ],
+      "barrierUses": 4,
+      "barrierTicks": 6,
+      "cantrips": 6,
+      "spellsKnown": 6,
+      "spellSlots": {
+        "1": "7",
+        "2": "2",
+        "3": null
+      }
+    },
+    {
+      "level": 11,
+      "proficiencyBonus": 4,
+      "features": [
+        "heavy_barrier"
+      ],
+      "barrierUses": 4,
+      "barrierTicks": 6,
+      "cantrips": 6,
+      "spellsKnown": 6,
+      "spellSlots": {
+        "1": "7",
+        "2": "3",
+        "3": null
+      }
+    },
+    {
+      "level": 12,
+      "proficiencyBonus": 4,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "barrierUses": 5,
+      "barrierTicks": 6,
+      "cantrips": 6,
+      "spellsKnown": 7,
+      "spellSlots": {
+        "1": "7",
+        "2": "3",
+        "3": null
+      }
+    },
+    {
+      "level": 13,
+      "proficiencyBonus": 5,
+      "features": [
+        "brutal_critical_2"
+      ],
+      "barrierUses": 5,
+      "barrierTicks": 7,
+      "cantrips": 6,
+      "spellsKnown": 8,
+      "spellSlots": {
+        "1": "7",
+        "2": "4",
+        "3": null
+      }
+    },
+    {
+      "level": 14,
+      "proficiencyBonus": 5,
+      "features": [
+        "subclass"
+      ],
+      "barrierUses": 5,
+      "barrierTicks": 7,
+      "cantrips": 6,
+      "spellsKnown": 8,
+      "spellSlots": {
+        "1": "7",
+        "2": "4",
+        "3": null
+      }
+    },
+    {
+      "level": 15,
+      "proficiencyBonus": 5,
+      "features": [
+        "retaliation"
+      ],
+      "barrierUses": 5,
+      "barrierTicks": 7,
+      "cantrips": 6,
+      "spellsKnown": 9,
+      "spellSlots": {
+        "1": "7",
+        "2": "5",
+        "3": null
+      }
+    },
+    {
+      "level": 16,
+      "proficiencyBonus": 5,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "barrierUses": 5,
+      "barrierTicks": 8,
+      "cantrips": 6,
+      "spellsKnown": 9,
+      "spellSlots": {
+        "1": "7",
+        "2": "5",
+        "3": null
+      }
+    },
+    {
+      "level": 17,
+      "proficiencyBonus": 6,
+      "features": [
+        "brutal_critical_3"
+      ],
+      "barrierUses": 6,
+      "barrierTicks": 8,
+      "cantrips": 6,
+      "spellsKnown": 10,
+      "spellSlots": {
+        "1": "7",
+        "2": "6",
+        "3": "1"
+      }
+    },
+    {
+      "level": 18,
+      "proficiencyBonus": 6,
+      "features": [
+        "subclass"
+      ],
+      "barrierUses": 6,
+      "barrierTicks": 9,
+      "cantrips": 6,
+      "spellsKnown": 10,
+      "spellSlots": {
+        "1": "7",
+        "2": "6",
+        "3": "1"
+      }
+    },
+    {
+      "level": 19,
+      "proficiencyBonus": 6,
+      "features": [
+        "ability_score_improvement"
+      ],
+      "barrierUses": 6,
+      "barrierTicks": 9,
+      "cantrips": 6,
+      "spellsKnown": 11,
+      "spellSlots": {
+        "1": "7",
+        "2": "6",
+        "3": "2"
+      }
+    },
+    {
+      "level": 20,
+      "proficiencyBonus": 6,
+      "features": [
+        "primal_biotics"
+      ],
+      "barrierUses": 6,
+      "barrierTicks": 10,
+      "cantrips": 6,
+      "spellsKnown": 11,
+      "spellSlots": {
+        "1": "7",
+        "2": "6",
+        "3": "2"
+      }
+    }
+  ],
+  "subclasses": [
+    {
+      "name": "Battle Master",
+      "description": "Battle masters use their barrier to execute unique maneuvers on the battlefield, controlling and harrying enemy forces.",
+      "features": [
+        [
+          "biotic_maneuvers_1"
+        ],
+        [
+          "biotic_focus"
+        ],
+        [
+          "improved_barrier_1",
+          "biotic_maneuvers_2"
+        ],
+        [
+          "biotic_maneuvers_2",
+          "extra_attack_2"
+        ],
+        [
+          "improved_barrier_2",
+          "opportunist"
+        ]
+      ]
+    },
+    {
+      "name": "Shock Trooper",
+      "description": "Shock troopers like to fight up close and personal, using charge to dash around the battlefield and ripping enemies apart with shotgun blasts.",
+      "features": [
+        [
+          "biotic_bull_rush"
+        ],
+        [
+          "stunning_strike"
+        ],
+        [
+          "shotgun_savvy",
+          "onslaught"
+        ],
+        [
+          "a_touch_of_force"
+        ],
+        [
+          "blitz"
+        ]
+      ]
+    },
+    {
+      "name": "Nemesis",
+      "description": "Nemesis vanguards prefer distance and using biotic powers. While they lack the raw power of an adept, they're more crafty and harder to take down.",
+      "features": [
+        [
+          "biotic_recovery_nemesis",
+          "metabiotics_1"
+        ],
+        [
+          "biotic_attacks"
+        ],
+        [
+          "metabiotics_2",
+          "biotic_fury"
+        ],
+        [
+          "teleporting_dodge",
+          "metabiotics_2"
+        ],
+        [
+          "bombardment"
+        ]
+      ]
+    }
+  ]
+}

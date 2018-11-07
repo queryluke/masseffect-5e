@@ -1,0 +1,110 @@
+{
+  "abilityScores": {
+    "str": 19,
+    "dex": 12,
+    "con": 17,
+    "int": 7,
+    "wis": 15,
+    "cha": 7
+  },
+  "ac": "15",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Multiattack",
+      "description": "The brood warrior makes two Impale attacks or attempts to grapple a creature and makes an Impale attack."
+    },
+    {
+      "type": "ranged",
+      "name": "Acid Spit",
+      "range": 20,
+      "target": "one target",
+      "hit": "7 (2d6) acid damage and 7 (2d6) necrotic damage. This damage bypasses shields.",
+      "miss": null,
+      "attackMod": 3
+    },
+    {
+      "type": "melee",
+      "name": "Impale",
+      "range": 4,
+      "target": "one target",
+      "hit": "15 (2d10 + 4) and 5 (1d10) acid damage.",
+      "miss": null,
+      "attackMod": 6
+    }
+  ],
+  "alignment": "Unaligned",
+  "barrier": "5",
+  "conditionImmunities": [],
+  "cr": "4",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Barrier",
+      "recharge": "3/Day",
+      "description": "As an action or bonus action, the rachni brood warrior gains [bt]."
+    },
+    {
+      "name": "Grappler",
+      "recharge": null,
+      "description": "The rachni brood warrior has advantage on attack rolls against any creature grappled by it."
+    }
+  ],
+  "hp": {
+    "numDice": 12,
+    "die": 10
+  },
+  "id": "rachni_brood_warrior",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/e5/Rachni_Brood_Warrior.PNG/revision/latest/scale-to-width-down/700?cb=20100824160815",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Rachni Brood Warrior",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [
+    "con",
+    "wis"
+  ],
+  "senses": [
+    {
+      "sense": "blindsight",
+      "range": 4
+    }
+  ],
+  "size": "Large",
+  "skills": [
+    "perception"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "spellcasting": {
+    "level": "innate",
+    "mod": "wis",
+    "spellList": [
+      {
+        "perDay": "3/day",
+        "spells": [
+          {
+            "id": "stasis"
+          }
+        ]
+      },
+      {
+        "perDay": "5/day",
+        "spells": [
+          {
+            "id": "warp"
+          }
+        ]
+      }
+    ]
+  },
+  "type": "Organic",
+  "unit": "Rachni"
+}

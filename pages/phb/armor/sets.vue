@@ -4,6 +4,7 @@
     // Search functions for large screens
     div.hidden-sm-and-down
       h2.display-1 Armor Sets
+      p #[nuxt-link(to="/phb/rules/equipment#armor") Armor Rules]
       p.
         Pre-made armor sets are cheaper than creating a full set of custom armor. However, they cannot be customized or upgraded
         in any way. To learn about creating additional armor sets, read the #[nuxt-link(to="/for-gms/armor-creation") Creating Armor guide].
@@ -29,6 +30,7 @@
   import ArmorSetFilters from '~/components/armor_set/ArmorSetFilters.vue'
   import ArmorSetList from '~/components/armor_set/ArmorSetList.vue'
   import MobileFilterContainer from '~/components/MobileFilterContainer.vue'
+  import items from '~/static/data/armor_sets'
 
   // State
   import {createNamespacedHelpers} from 'vuex'
@@ -36,8 +38,23 @@
 
   export default {
     components: { ArmorSetFilters, ArmorSetList, MobileFilterContainer },
+    data () {
+      const noteOptions = new Set()
+      for (const item of items) {
+        if (item.notes) {
+          for (const note of item.notes.split(',').map(n => n.trim())) {
+            noteOptions.add(note)
+          }
+        }
+      }
+      return {
+        items,
+        noteOptions: [...noteOptions].sort(),
+        itemKey: 'armorSets'
+      }
+    },
     computed: {
-      ...mapGetters(['getItems', 'order', 'sortBy', 'filters', 'searchString']),
+      ...mapGetters(['order', 'sortBy', 'filters', 'searchString']),
       search: {
         get () {
           return this.searchString
@@ -84,25 +101,6 @@
           })
         }
         return data
-      }
-    },
-    created () {
-      this.items = this.getItems(this.itemKey)
-      const noteOptions = new Set()
-      for (const item of this.items) {
-        if (item.notes) {
-          for (const note of item.notes.split(',').map(n => n.trim())) {
-            noteOptions.add(note)
-          }
-        }
-      }
-      this.noteOptions = [...noteOptions].sort()
-    },
-    data () {
-      return {
-        items: [],
-        noteOptions: [],
-        itemKey: 'armorSets'
       }
     },
     head () {

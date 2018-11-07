@@ -26,6 +26,12 @@
     components: {
       SortOptions, ArmorSetInfo, BookmarkButton
     },
+    props: {
+      items: {
+        type: Array,
+        default: () => { return [] }
+      }
+    },
     data () {
       return {
         headers: [
@@ -36,8 +42,7 @@
           { label: 'Notes', key: 'notes', classes: 'hidden-md-and-down lg4' }
         ]
       }
-    },
-    props: ['items']
+    }
   }
 </script>
 

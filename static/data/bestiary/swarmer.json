@@ -1,0 +1,69 @@
+{
+  "abilityScores": {
+    "str": 4,
+    "dex": 12,
+    "con": 8,
+    "int": 4,
+    "wis": 4,
+    "cha": 4
+  },
+  "ac": "10",
+  "actions": [
+    {
+      "type": "melee",
+      "name": "Suicide Attack",
+      "range": 2,
+      "target": "one target",
+      "hit": "3 (1d6) acid damage and the swarmer explodes (its hit points immediately fall to 0).",
+      "miss": null,
+      "attackMod": 3
+    }
+  ],
+  "alignment": "Lawful evil",
+  "barrier": null,
+  "conditionImmunities": [
+    "charmed"
+  ],
+  "cr": "1/8",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Aggressive",
+      "recharge": null,
+      "description": "As a bonus action, the swarmer can move up to its speed toward a hostile creature that it can see."
+    }
+  ],
+  "hp": {
+    "numDice": 3,
+    "die": 4
+  },
+  "id": "swarmer",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/8/82/ME3_Swarmer.png/revision/latest/scale-to-width-down/350?cb=20120319204747",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Swarmer",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [
+    "dex"
+  ],
+  "senses": [
+    {
+      "sense": "darkvision",
+      "range": 20
+    }
+  ],
+  "size": "Tiny",
+  "skills": [],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 12
+    }
+  ],
+  "spellcasting": false,
+  "type": "Synorg",
+  "unit": "Reaper"
+}

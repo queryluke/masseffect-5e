@@ -14,6 +14,20 @@
   const {mapActions, mapGetters} = createNamespacedHelpers('itemList')
 
   export default {
+    props: {
+      itemKey: {
+        type: String,
+        default: ''
+      },
+      crOptions: {
+        type: Array,
+        default: () => { return [] }
+      },
+      unitOptions: {
+        type: Array,
+        default: () => { return [] }
+      }
+    },
     computed: {
       ...mapGetters(['filters']),
       unitFilter: {
@@ -39,8 +53,7 @@
         this.crFilter = []
         this.unitFilter = []
       }
-    },
-    props: ['itemKey', 'unitOptions', 'crOptions']
+    }
   }
 </script>
 

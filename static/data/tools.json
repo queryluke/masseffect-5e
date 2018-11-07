@@ -1,0 +1,128 @@
+[
+  {
+    "id": "armorsmiths_workbench",
+    "name": "Armorsmith's Workbench",
+    "type": "artisan",
+    "cost": 6000
+  },
+  {
+    "id": "brewers_supplies",
+    "name": "Brewer's Supplies",
+    "type": "artisan",
+    "cost": 1000
+  },
+  {
+    "id": "chemists_supplies",
+    "name": "Chemist's Supplies",
+    "type": "artisan",
+    "cost": 4000
+  },
+  {
+    "id": "cooks_utensils",
+    "name": "Cook's Utensils",
+    "type": "artisan",
+    "cost": 1000
+  },
+  {
+    "id": "disguise_kit",
+    "name": "Disguise Kit",
+    "type": null,
+    "cost": 2500
+  },
+  {
+    "id": "gaming_set",
+    "name": "Gaming Set",
+    "type": "gaming",
+    "cost": 100
+  },
+  {
+    "id": "hacking_tools",
+    "name": "Hacking Tools",
+    "type": null,
+    "cost": 5000
+  },
+  {
+    "id": "medical_kit",
+    "name": "Medical Kit",
+    "type": null,
+    "cost": 5000
+  },
+  {
+    "id": "musical_instrument",
+    "name": "Musical Instrument",
+    "type": "artisan",
+    "cost": 1000
+  },
+  {
+    "id": "painters_supplies",
+    "name": "Painter's Supplies",
+    "type": "artisan",
+    "cost": 500
+  },
+  {
+    "id": "starship_system_drive",
+    "name": "Starship System (Drive)",
+    "type": "starship",
+    "cost": 0
+  },
+  {
+    "id": "starship_system_ews",
+    "name": "Starship System (EWS)",
+    "type": "starship",
+    "cost": 0
+  },
+  {
+    "id": "starship_system_helm",
+    "name": "Starship System (Helm)",
+    "type": "starship",
+    "cost": 0
+  },
+  {
+    "id": "starship_system_navigation",
+    "name": "Starship System (Navigation)",
+    "type": "starship",
+    "cost": null
+  },
+  {
+    "id": "starship_system_ssc",
+    "name": "Starship System (SSC)",
+    "type": "starship",
+    "cost": 0
+  },
+  {
+    "id": "starship_system_weapons",
+    "name": "Starship System (Weapons)",
+    "type": "starship",
+    "cost": null
+  },
+  {
+    "id": "tailors_tools",
+    "name": "Tailor's Tools",
+    "type": "artisan",
+    "cost": 6000
+  },
+  {
+    "id": "thieves_tools",
+    "name": "Thieves' tools",
+    "type": null,
+    "cost": 3000
+  },
+  {
+    "id": "tinkers_tools",
+    "name": "Tinker's Tools",
+    "type": "artisan",
+    "cost": 3000
+  },
+  {
+    "id": "vehicles",
+    "name": "Vehicles",
+    "type": null,
+    "cost": null
+  },
+  {
+    "id": "weaponsmiths_workbench",
+    "name": "Weaponsmith's Workbench",
+    "type": "artisan",
+    "cost": 6000
+  }
+]

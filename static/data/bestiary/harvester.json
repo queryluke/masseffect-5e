@@ -1,0 +1,113 @@
+{
+  "abilityScores": {
+    "str": 26,
+    "dex": 14,
+    "con": 24,
+    "int": 16,
+    "wis": 15,
+    "cha": 16
+  },
+  "ac": "16",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Multiattack",
+      "description": "The harvester can use its Frightful Presence. It then makes three attacks: one with its acid spit and two with its stomp."
+    },
+    {
+      "type": "melee",
+      "name": "Stomp",
+      "range": 4,
+      "target": "one target",
+      "hit": "15 (2d6 + 8) piercing damage.",
+      "miss": null,
+      "attackMod": 14
+    },
+    {
+      "type": "ranged",
+      "name": "Acid Spit",
+      "range": 60,
+      "target": "one target",
+      "hit": "The harvester targets a 6m radius within 60m and launches a glob of acid that coats the area. Each creature within the area must succeed on a DC 19 Dexterity saving throw, taking 44 (8d10) acid damage on a failed save, or half as much on a successful one. Until the end of the harvester's next turn, each creature that enters the area or ends its turn there must also make the saving throw.",
+      "miss": null,
+      "attackMod": 8
+    },
+    {
+      "type": "regional",
+      "name": "Drop Klixen",
+      "range": null,
+      "target": null,
+      "hit": "If the harvester is within a region that contains Klixen, it begins the fight by droping 1d10 Klixen in a 6m by 20m area.",
+      "miss": null,
+      "attackMod": null
+    }
+  ],
+  "alignment": "Unaligned",
+  "barrier": null,
+  "conditionImmunities": [
+    "poisoned"
+  ],
+  "cr": "19",
+  "damageImmunities": [
+    "poison"
+  ],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Frightful Presence",
+      "recharge": null,
+      "description": "Each creature of the harvester's choice that is within 60m of the name and aware of it must succeed on a DC 19 Wisdom saving throw or become {frightened} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the harvester's Frightful Presence for the next 24 hours."
+    }
+  ],
+  "hp": {
+    "numDice": 26,
+    "die": 12
+  },
+  "id": "harvester",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/92/ME2_Harvester.jpg/revision/latest/scale-to-width-down/200?cb=20100210004033",
+  "lairActions": [],
+  "legendaryActions": [
+    {
+      "name": "Detect",
+      "cost": 1,
+      "description": "The harvester makes a Wisdom (Perception) check."
+    },
+    {
+      "name": "Stomp Attack",
+      "cost": 1,
+      "description": "The harvester makes a stomp attack."
+    },
+    {
+      "name": "Trample Attack",
+      "cost": 2,
+      "description": "The harvester moves 10m in a straight line moving over Large or smaller creature in its path. Each creature caught in its path must succeed on a DC 19 Dexterity saving throw or take [dmg: 2d6 + 8] piercing damage and be knocked {prone}. The harvester cannot move through a Huge or larger creature."
+    }
+  ],
+  "name": "Harvester",
+  "profBonus": 6,
+  "reactions": [],
+  "savingThrows": [
+    "str",
+    "con",
+    "wis"
+  ],
+  "senses": [],
+  "size": "Huge",
+  "skills": [
+    "perception"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 20
+    },
+    {
+      "type": "fly",
+      "range": 30
+    }
+  ],
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Alien"
+}

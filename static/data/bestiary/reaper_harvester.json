@@ -1,0 +1,94 @@
+{
+  "abilityScores": {
+    "str": 27,
+    "dex": 10,
+    "con": 25,
+    "int": 11,
+    "wis": 12,
+    "cha": 16
+  },
+  "ac": "20",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Multiattack",
+      "description": "The reaper harvester makes two harvester cannon attacks."
+    },
+    {
+      "type": "standard",
+      "name": "Harvester Cannon",
+      "recharge": null,
+      "description": "The reaper harvester targets a location within 30m. Each creature within a 6m radius must make a Dexterity saving throw. On a failed save a creature takes 3d10 force and 3d10 thunder damage, or half as much damage on a successful one."
+    }
+  ],
+  "alignment": "Lawful evil",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "20",
+  "damageImmunities": [],
+  "damageResistances": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "damageVulnerabilities": [],
+  "features": [],
+  "hp": {
+    "numDice": 27,
+    "die": 12
+  },
+  "id": "reaper_harvester",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/a/ae/ME3_Harvester.png/revision/latest/scale-to-width-down/350?cb=20120320013110",
+  "lairActions": [],
+  "legendaryActions": [
+    {
+      "name": "Detect",
+      "cost": 1,
+      "description": "The reaper harvester makes a Wisdom (Perception) check."
+    },
+    {
+      "name": "Harvester Cannon Attack",
+      "cost": 2,
+      "description": "The reaper harvester makes a harvester cannon attack."
+    },
+    {
+      "name": "Spawn Husks",
+      "cost": 3,
+      "description": "The reaper harvester releases 1d10 Husks from its body."
+    }
+  ],
+  "name": "Reaper Harvester",
+  "profBonus": 6,
+  "reactions": [],
+  "savingThrows": [
+    "con",
+    "wis"
+  ],
+  "senses": [
+    {
+      "sense": "darkvision",
+      "range": 40
+    }
+  ],
+  "size": "Huge",
+  "skills": [
+    "perception"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 14
+    },
+    {
+      "type": "burrow",
+      "range": 14
+    },
+    {
+      "type": "fly",
+      "range": 26
+    }
+  ],
+  "spellcasting": false,
+  "type": "Synorg",
+  "unit": "Reaper"
+}

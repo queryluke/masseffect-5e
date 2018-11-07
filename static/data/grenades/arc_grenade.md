@@ -1,0 +1,10 @@
+---
+id: arc_grenade
+name: Arc Grenade
+damage: 3d6
+range: 10m
+blast: 4m
+damageType: lightning
+---
+As an Action, target an area within 10m. Each creature within 4m of the target must make a DC 13 Dexterity saving throw.
+A creature takes 3d6 lightning damage on a failed save, or half as much damage on a successful one.

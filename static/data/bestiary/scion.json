@@ -1,0 +1,71 @@
+{
+  "abilityScores": {
+    "str": 18,
+    "dex": 11,
+    "con": 16,
+    "int": 6,
+    "wis": 6,
+    "cha": 5
+  },
+  "ac": "18",
+  "actions": [
+    {
+      "type": "melee",
+      "name": "Bash",
+      "range": 2,
+      "target": "one target",
+      "hit": "8 (1d8 + 4) bludgeoning damage.",
+      "miss": null,
+      "attackMod": 8
+    },
+    {
+      "type": "standard",
+      "name": "Salvo",
+      "recharge": "Recharge 4-6",
+      "description": "The scion targets three locations within 30m and launches an explosive blast to each. The locations can be the same or different. Each creature within a 6m radius of a target location must make a DC 16 Dexterity saving throw. On a failed save a creature takes 15 (3d10) thunder damage or half as much on a successful one."
+    }
+  ],
+  "alignment": "Lawful evil",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "9",
+  "damageImmunities": [],
+  "damageResistances": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "damageVulnerabilities": [],
+  "features": [],
+  "hp": {
+    "numDice": 7,
+    "die": 8
+  },
+  "id": "scion",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/d/da/ScionME3.jpg/revision/latest/scale-to-width-down/350?cb=20121201212433",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Scion",
+  "profBonus": 4,
+  "reactions": [],
+  "savingThrows": [
+    "con"
+  ],
+  "senses": [
+    {
+      "sense": "darkvision",
+      "range": 20
+    }
+  ],
+  "size": "Medium",
+  "skills": [],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 8
+    }
+  ],
+  "spellcasting": false,
+  "type": "Synorg",
+  "unit": "Reaper"
+}

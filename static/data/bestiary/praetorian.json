@@ -1,0 +1,104 @@
+{
+  "abilityScores": {
+    "str": 20,
+    "dex": 19,
+    "con": 21,
+    "int": 11,
+    "wis": 14,
+    "cha": 10
+  },
+  "ac": "20",
+  "actions": [
+    {
+      "type": "melee",
+      "name": "Claw",
+      "range": 2,
+      "target": "one target",
+      "hit": "38 (6d10 + 5) piercing damage.",
+      "miss": null,
+      "attackMod": 9
+    },
+    {
+      "type": "standard",
+      "name": "Pounce",
+      "recharge": "Recharge 5-6",
+      "description": "The praetorian pounces to a location within 14m and makes a claw attack."
+    },
+    {
+      "type": "standard",
+      "name": "Twin Particle Beams",
+      "recharge": "Recharge 5-6",
+      "description": "The praetorian shoots particle beams in a 10m line that is 4m wide originating from itself. Each creature within the area must make a DC 18 Dexterity saving throw. On a failed save a creature takes 54 (12d8) radiant damage or half as much on a successful one."
+    }
+  ],
+  "alignment": "Lawful evil",
+  "barrier": "10",
+  "conditionImmunities": [
+    "charmed",
+    "grappled",
+    "paralyzed",
+    "petrified",
+    "poisoned"
+  ],
+  "cr": "12",
+  "damageImmunities": [],
+  "damageResistances": [
+    "force",
+    "necrotic"
+  ],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Possessed Praetorian",
+      "recharge": null,
+      "description": "When the praetorian is possessed by a harbinger it gains 10 barrier ticks and while it has barrier ticks it also gains resistance to bludgeoning, piercing, and slashing damage. It can use its action to launch 2 missiles at a single or different target creatures within 60m. Each target must make a DC 18 Dexterity saving throw. On a failed save a target takes 33 (6d10) thunder damage, or half as much on a successful one. Once the praetorian fires its missiles, it cannot do so again."
+    }
+  ],
+  "hp": {
+    "numDice": 13,
+    "die": 10
+  },
+  "id": "praetorian",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/09/PraetorianME3.jpg/revision/latest/scale-to-width-down/700?cb=20121201212320",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Praetorian",
+  "profBonus": 4,
+  "reactions": [
+    {
+      "name": "Negation Barrier",
+      "recharge": "3/Day",
+      "description": "When targeted by a biotic spell or tech power, the praetorian can use its reaction to gain 2 barrier ticks and gain resistance to force, necrotic, cold, lightning, and fire damage until the start of its next turn."
+    }
+  ],
+  "savingThrows": [
+    "dex",
+    "con",
+    "str"
+  ],
+  "senses": [
+    {
+      "sense": "darkvision",
+      "range": 20
+    }
+  ],
+  "size": "Large",
+  "skills": [
+    "acrobatics",
+    "athletics",
+    "perception"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    },
+    {
+      "type": "fly",
+      "range": 10
+    }
+  ],
+  "spellcasting": false,
+  "type": "Synorg",
+  "unit": "Collector"
+}

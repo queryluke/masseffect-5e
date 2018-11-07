@@ -1,0 +1,217 @@
+[
+  {
+    "id": "artisan",
+    "name": "Artisan",
+    "skill_proficiencies": [
+      "insight",
+      "persuasion"
+    ],
+    "tool_proficiencies": [
+      "artisan_tool"
+    ],
+    "starting_credits": 1500
+  },
+  {
+    "id": "bureaucrat",
+    "name": "Bureaucrat",
+    "skill_proficiencies": [
+      "deception",
+      "persuasion",
+      "history",
+      "insight",
+      "investigation",
+      "perception"
+    ],
+    "starting_credits": 5000
+  },
+  {
+    "id": "colonist",
+    "name": "Colonist",
+    "skill_proficiencies": [
+      "survival",
+      "vehicle_handling",
+      "medicine",
+      "science"
+    ],
+    "tool_proficiencies": [
+      "artisan_tool",
+      "medical_kit",
+      "tinkers_tools",
+      "vehicles"
+    ],
+    "starting_credits": 500
+  },
+  {
+    "id": "crewman",
+    "name": "Crewman",
+    "skill_proficiencies": [
+      "electronics",
+      "engineering"
+    ],
+    "tool_proficiencies": [
+      "starship_system"
+    ],
+    "starting_credits": 1000
+  },
+  {
+    "id": "criminal",
+    "name": "Criminal",
+    "skill_proficiencies": [
+      "acrobatics",
+      "stealth",
+      "deception",
+      "intimidation",
+      "perception",
+      "sleight_of_hand",
+      "vehicle_handling"
+    ],
+    "tool_proficiencies": [
+      "thieves_tools",
+      "gaming_set"
+    ],
+    "starting_credits": 1500
+  },
+  {
+    "id": "doctor",
+    "name": "Doctor",
+    "skill_proficiencies": [
+      "medicine",
+      "science"
+    ],
+    "tool_proficiencies": [
+      "medical_kit"
+    ],
+    "starting_credits": 3000
+  },
+  {
+    "id": "entertainer",
+    "name": "Entertainer",
+    "skill_proficiencies": [
+      "acrobatics",
+      "performance"
+    ],
+    "tool_proficiencies": [
+      "disguise_kit",
+      "musical_instrument"
+    ],
+    "starting_credits": 2000
+  },
+  {
+    "id": "escort",
+    "name": "Escort",
+    "skill_proficiencies": [
+      "insight",
+      "performance"
+    ],
+    "tool_proficiencies": [
+      "musical_instrument"
+    ],
+    "starting_credits": 5000
+  },
+  {
+    "id": "experiment",
+    "name": "Experiment",
+    "skill_proficiencies": [
+      "science",
+      "survival"
+    ],
+    "starting_credits": 5000
+  },
+  {
+    "id": "faction-agent",
+    "name": "Faction Agent",
+    "skill_proficiencies": [
+      "deception",
+      "investigation",
+      "persuasion",
+      "stealth"
+    ],
+    "tool_proficiencies": [
+      "disguise_kit",
+      "thieves_tools",
+      "hacking_tools"
+    ],
+    "starting_credits": 3000
+  },
+  {
+    "id": "pilot",
+    "name": "Pilot",
+    "skill_proficiencies": [
+      "perception",
+      "vehicle_handling"
+    ],
+    "tool_proficiencies": [
+      "vehicles",
+      "starship_system_helm",
+      "starship_system_navigation"
+    ],
+    "starting_credits": 2500
+  },
+  {
+    "id": "scholar",
+    "name": "Scholar",
+    "skill_proficiencies": [
+      "history",
+      "science"
+    ],
+    "tool_proficiencies": [
+      "artisan",
+      "starship_system",
+      "gaming_set",
+      "medical_kit"
+    ],
+    "starting_credits": 3000
+  },
+  {
+    "id": "scrapper",
+    "name": "Scrapper",
+    "skill_proficiencies": [
+      "engineering",
+      "survival"
+    ],
+    "tool_proficiencies": [
+      "tinkers_tools",
+      "starship_system"
+    ],
+    "starting_credits": 500
+  },
+  {
+    "id": "sysop",
+    "name": "SysOp",
+    "skill_proficiencies": [
+      "electronics",
+      "investigation"
+    ],
+    "tool_proficiencies": [
+      "hacking_tools",
+      "starship_system"
+    ],
+    "starting_credits": 1000
+  },
+  {
+    "id": "urchin",
+    "name": "Urchin",
+    "skill_proficiencies": [
+      "sleight_of_hand",
+      "stealth"
+    ],
+    "tool_proficiencies": [
+      "disguise_kit",
+      "thieves_tools"
+    ],
+    "starting_credits": 1000
+  },
+  {
+    "id": "veteran",
+    "name": "Veteran",
+    "skill_proficiencies": [
+      "athletics",
+      "perception"
+    ],
+    "tool_proficiencies": [
+      "gaming_set",
+      "starship_system"
+    ],
+    "starting_credits": 1000
+  }
+]

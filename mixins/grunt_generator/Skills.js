@@ -1,33 +1,26 @@
+import skills from '~/static/data/skills'
+
 export const Skills = {
   methods: {
-    setGruntSkills (config, grunt) {
-      const numSkills = parseFloat(config.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(config.cr.cr) / 4)
-      let skills = this.getMutableData('skills').filter(skill => skill.removed !== 'x')
+    setGruntSkills () {
+      this.grunt.skills = []
+      const classSkills = this.sc.skillProficiencies.map(skill => {
+        return skill.toLowerCase().trim().replace(/ /g, '_')
+      })
+      let skillOptions = skills.filter(skill => {
+        return classSkills.includes(skill.id)
+      })
 
-      if (grunt.sc.id !== 'none') {
-        const classSkills = grunt.sc.skillProficiencies.map(skill => {
-          return skill.toLowerCase().trim().replace(/ /g, '_')
-        })
-        skills = skills.filter(skill => {
-          return classSkills.includes(skill.id)
-        })
+      let numProficient = this.randomValue(this.proficientWeights[this.crMetaLevel])
+      for (let i = 1; i <= numProficient; i++) {
+        const skill = this.randomValue(skillOptions)
+        this.grunt.skills.push(skill.id)
       }
 
-      let numProficient = this.randomValue(this.proficientWeights[numSkills])
-      for (let i = 1; i <= numSkills; i++) {
-        const skill = this.randomValue(skills)
-        const skillLinkAbbr = skill.link.slice(0, 3).toLowerCase()
-        let abilityScoreBonus = this.abilityScoreBonus(grunt.abilityScores[skillLinkAbbr])
-        if (numProficient > 0) {
-          abilityScoreBonus += config.cr.profBonus
-          numProficient--
-        }
-        if (abilityScoreBonus > 0) {
-          skills.splice(skills.indexOf(skill), 1)
-          skill.bonus = abilityScoreBonus
-          grunt.skills.push(skill)
-        }
+      if (['drell', 'unshackled_ai', 'geth'].includes(this.race.id)) {
+        this.grunt.skills.push('perception')
       }
+      this.grunt.skills = [...new Set(this.grunt.skills)]
     }
   },
   data () {

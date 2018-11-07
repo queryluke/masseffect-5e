@@ -1,0 +1,121 @@
+{
+  "abilityScores": {
+    "str": 11,
+    "dex": 16,
+    "con": 11,
+    "int": 12,
+    "wis": 18,
+    "cha": 20
+  },
+  "ac": "16",
+  "actions": [
+    {
+      "type": "melee",
+      "name": "Impale",
+      "range": 2,
+      "target": "one target",
+      "hit": "13 (3d8) piercing damage.",
+      "miss": null,
+      "attackMod": 5
+    },
+    {
+      "type": "standard",
+      "name": "Wail",
+      "recharge": "Recharge 5-6",
+      "description": "The banshee lets out a wail. Each creature within 60m that can hear the wail must make DC 17 Wisdom saving throw. On a failed save a creature is frightened for 1 minute."
+    }
+  ],
+  "alignment": "Lawful evil",
+  "barrier": "20",
+  "conditionImmunities": [],
+  "cr": "13",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Barrier",
+      "recharge": "3/Day",
+      "description": "As an action or bonus action, the banshee gains 20 barrier ticks."
+    }
+  ],
+  "hp": {
+    "numDice": 30,
+    "die": 10
+  },
+  "id": "banshee",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/eb/ME3_Banshee.png/revision/latest/scale-to-width-down/548?cb=20120319210941",
+  "lairActions": [],
+  "legendaryActions": [
+    {
+      "name": "Cast a Spell",
+      "cost": 3,
+      "description": "The banshee casts a spell from its list of prepared spells, using a spell slot as normal."
+    },
+    {
+      "name": "Impale Attack",
+      "cost": 1,
+      "description": "The banshee uses its imaple attack."
+    },
+    {
+      "name": "Wail Attack",
+      "cost": 2,
+      "description": "The banshee uses its wail."
+    }
+  ],
+  "name": "Banshee",
+  "profBonus": 5,
+  "reactions": [
+    {
+      "name": "Teleporting Dodge",
+      "recharge": "1/Turn",
+      "description": "In response to making a Dexterity saving throw, the banshee can use its reaction to teleport up to 4m away. If it is still within the affected area, it has advantage on the saving throw."
+    }
+  ],
+  "savingThrows": [
+    "dex",
+    "wis"
+  ],
+  "senses": [
+    {
+      "sense": "darkvision",
+      "range": 20
+    }
+  ],
+  "size": "Large",
+  "skills": [],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 6
+    }
+  ],
+  "spellcasting": {
+    "level": "innate",
+    "mod": "cha",
+    "spellList": [
+      {
+        "perDay": "At will",
+        "spells": [
+          {
+            "id": "charge"
+          },
+          {
+            "id": "nova"
+          }
+        ]
+      },
+      {
+        "perDay": "6/day",
+        "spells": [
+          {
+            "id": "warp",
+            "higherLevel": 4
+          }
+        ]
+      }
+    ]
+  },
+  "type": "Synorg",
+  "unit": "Reaper"
+}

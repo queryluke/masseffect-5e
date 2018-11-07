@@ -1,0 +1,71 @@
+{
+  "abilityScores": {
+    "str": 15,
+    "dex": 10,
+    "con": 14,
+    "int": 12,
+    "wis": 10,
+    "cha": 7
+  },
+  "ac": "14",
+  "actions": [
+    {
+      "type": "melee",
+      "name": "Bash",
+      "range": 2,
+      "target": "one target",
+      "hit": "7 (1d8 + 3) bludgeoning damage.",
+      "miss": null,
+      "attackMod": 4
+    }
+  ],
+  "alignment": "Neutral",
+  "barrier": null,
+  "conditionImmunities": [
+    "poisoned"
+  ],
+  "cr": "1/2",
+  "damageImmunities": [
+    "poison",
+    "psychic"
+  ],
+  "damageResistances": [],
+  "damageVulnerabilities": [
+    "lightning"
+  ],
+  "features": [],
+  "hp": {
+    "numDice": 4,
+    "die": 6
+  },
+  "id": "defense_drone",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/e0/Info_Drone.png/revision/latest/scale-to-width-down/531?cb=20100908213419",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Defense Drone",
+  "profBonus": 2,
+  "reactions": [
+    {
+      "name": "Guard",
+      "recharge": null,
+      "description": "When a creature the defense drone can see attacks a target other than itself that is within 2m of it, it can use its reaction to impose disadvantage on the attack roll."
+    }
+  ],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Small",
+  "skills": [],
+  "sp": {
+    "shields": 5,
+    "regen": "5"
+  },
+  "speed": [
+    {
+      "type": "fly",
+      "range": 10
+    }
+  ],
+  "spellcasting": false,
+  "type": "Synthetic",
+  "unit": "Mech"
+}

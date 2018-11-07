@@ -6,27 +6,16 @@
       div.pl-5
         h2.display-3 {{ item.name }}
         p {{ item.description}}
+        p(v-if="id === 'sentinel'")
+          em.
+            If you enjoyed the split casting ability of the pre-v0.9.0 sentinels, check out the
+            #[nuxt-link(to="/phb/appendix/alt-sentinel") Alternative Sentinel] progression.
     v-card(:class="{ 'pt-4': $vuetify.breakpoint.smAndDown }")
       class-tabs.mb-3
         progression-table(:item="item" v-bind:colors="colors[item.id]" slot="progression_table_tab_content")
         class-attributes(:item="item" v-bind:primaryColor="colors[item.id].primary" slot="attributes_tab_content")
         subclass-info(:item="item" v-bind:primaryColor="colors[item.id].primary" slot="subclasses_tab_content")
         spell-list(:items="filteredSpells" slot="spell_list_tab_content")
-    v-layout(row grow).my-0.mt-4
-      v-flex(v-if="previous.name").primary.pa-0.xs6
-        v-list(:class="previous.colors.primary" dark).py-0
-          v-list-tile(:to="{ name: 'phb-classes-id', params: { id: previous.id }}" ripple)
-            v-icon(dark).mr-5.hidden-xs-only chevron_left
-            v-list-tile-content
-              v-list-tile-sub-title Previous Class:
-              v-list-tile-title(v-text="previous.name")
-      v-flex(v-if="next.name" v-bind:class="{ 'offset-xs6': !previous.name }").primary.pa-0.xs6
-        v-list(:class="next.colors.primary" dark).py-0
-          v-list-tile(:to="{ name: 'phb-classes-id', params: { id: next.id }}" ripple)
-            v-list-tile-content
-              v-list-tile-sub-title.text-xs-right Next Class:
-              v-list-tile-title.text-xs-right(v-text="next.name")
-            v-icon(dark).ml-5.hidden-xs-only chevron_right
 </template>
 
 <script>
@@ -43,8 +32,18 @@
 
   export default {
     components: { SubclassInfo, SpellList, ClassTabs, ClassAttributes, ProgressionTable, MeIcon },
+    data () {
+      const id = this.$route.params.id
+      const item = require(`~/static/data/classes/${this.$route.params.id}.json`)
+      const spells = require(`~/static/data/spells`).filter(spell => spell.availableClasses.includes(id))
+      return {
+        id,
+        item,
+        spells
+      }
+    },
     computed: {
-      ...mapGetters(['getData', 'colors', 'order', 'sortBy']),
+      ...mapGetters(['colors', 'order', 'sortBy']),
       filteredSpells () {
         const data = this.spells
         let sortBy = this.sortBy.key
@@ -52,40 +51,20 @@
         data.sort(function (a, b) {
           switch (sortBy) {
             case 'type':
-              if (a[sortBy] === b[sortBy]) {
-                if (a.level === b.level) {
+              if (a.level === b.level) {
+                if (a.type === b.type) {
                   return (a.name > b.name ? 1 : -1) * order
                 } else {
-                  return (a.level > b.level ? 1 : -1) * order
+                  return (a.type > b.type ? 1 : -1) * order
                 }
               } else {
-                return (a[sortBy] > b[sortBy] ? 1 : -1) * order
+                return (a.level > b.level ? 1 : -1) * order
               }
             default:
               return (a[sortBy] === b[sortBy] ? 0 : a[sortBy] > b[sortBy] ? 1 : -1) * order
           }
         })
         return data
-      }
-    },
-    created () {
-      this.id = this.$route.params.id
-      let classes = this.getData('classes')
-      this.item = classes.find(value => value.id === this.id)
-      this.spells = this.getData('spells').filter(spell => spell.availableClasses.includes(this.id))
-      let index = classes.indexOf(this.item)
-      this.previous = classes[index - 1] ? classes[index - 1] : {}
-      this.previous.colors = this.colors[this.previous.id]
-      this.next = classes[index + 1] ? classes[index + 1] : {}
-      this.next.colors = this.colors[this.next.id]
-    },
-    data () {
-      return {
-        id: '',
-        item: {},
-        spells: {},
-        next: {},
-        previous: {}
       }
     },
     head () {

@@ -4,6 +4,7 @@
     // Search functions for large screens
     div.hidden-sm-and-down
       h2.display-1 Spells
+      p #[nuxt-link(to="/phb/rules/spellcasting") Spellcasting Rules]
       v-layout(row wrap)
         v-flex(md4).px-1
           v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
@@ -23,6 +24,7 @@
   import SpellList from '~/components/spell/SpellList.vue'
   import SpellFilters from '~/components/spell/SpellFilters.vue'
   import MobileFilterContainer from '~/components/MobileFilterContainer.vue'
+  import items from '~/static/data/spells'
 
   // State
   import {createNamespacedHelpers} from 'vuex'
@@ -34,8 +36,14 @@
       SpellList,
       SpellFilters
     },
+    data () {
+      return {
+        items,
+        itemKey: 'spells'
+      }
+    },
     computed: {
-      ...mapGetters(['getItems', 'order', 'sortBy', 'filters', 'searchString']),
+      ...mapGetters(['order', 'sortBy', 'filters', 'searchString']),
       search: {
         get () {
           return this.searchString
@@ -83,15 +91,6 @@
           })
         }
         return data
-      }
-    },
-    created () {
-      this.items = this.getItems(this.itemKey)
-    },
-    data () {
-      return {
-        items: [],
-        itemKey: 'spells'
       }
     },
     head () {

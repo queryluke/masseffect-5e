@@ -14,6 +14,21 @@
   const {mapActions, mapGetters} = createNamespacedHelpers('itemList')
 
   export default {
+    props: {
+      itemKey: {
+        type: String,
+        default: ''
+      },
+      noteOptions: {
+        type: Array,
+        default: () => { return [] }
+      }
+    },
+    data () {
+      return {
+        typeOptions: ['Chest', 'Head', 'Arms', 'Legs']
+      }
+    },
     computed: {
       ...mapGetters(['filters']),
       typeFilter: {
@@ -33,19 +48,13 @@
         }
       }
     },
-    data () {
-      return {
-        typeOptions: ['Chest', 'Head', 'Arms', 'Legs']
-      }
-    },
     methods: {
       ...mapActions(['updateFilter']),
       reset () {
         this.typeFilter = []
         this.noteFilter = []
       }
-    },
-    props: ['itemKey', 'noteOptions']
+    }
   }
 </script>
 

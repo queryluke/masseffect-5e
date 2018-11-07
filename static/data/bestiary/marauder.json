@@ -1,0 +1,73 @@
+{
+  "abilityScores": {
+    "str": 12,
+    "dex": 16,
+    "con": 13,
+    "int": 8,
+    "wis": 11,
+    "cha": 8
+  },
+  "ac": "15",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Multiattack",
+      "description": "The marauder makes 2 Phaeston attacks."
+    },
+    {
+      "type": "weapon",
+      "id": "phaeston"
+    },
+    {
+      "type": "standard",
+      "name": "Create Armor Plating",
+      "recharge": "Recharge 5-6",
+      "description": "The marauder coats a friendly husk, abomination, or cannibal in a scab-like armor plating, increasing the target's AC by 2."
+    }
+  ],
+  "alignment": "Lawful evil",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "2",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [],
+  "hp": {
+    "numDice": 8,
+    "die": 8
+  },
+  "id": "marauder",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/9b/ME3_Marauder.png/revision/latest/scale-to-width-down/219?cb=20120313015215",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Marauder",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [
+    "dex"
+  ],
+  "senses": [
+    {
+      "sense": "darkvision",
+      "range": 20
+    }
+  ],
+  "size": "Medium",
+  "skills": [
+    "survival"
+  ],
+  "sp": {
+    "shields": 15,
+    "regen": "15"
+  },
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "spellcasting": false,
+  "type": "Synorg",
+  "unit": "Reaper"
+}

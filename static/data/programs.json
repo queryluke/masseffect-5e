@@ -1,0 +1,117 @@
+[
+  {
+    "id": "active_camo",
+    "name": "Active_Camo.exe",
+    "rarity": "uncommon",
+    "installation": true
+  },
+  {
+    "id": "all_terrain",
+    "name": "All_Terrain.exe",
+    "rarity": "uncommon",
+    "installation": true
+  },
+  {
+    "id": "cardio_muscular_optimizer",
+    "name": "Cardio_Muscular_Optimizer.exe",
+    "rarity": "rare",
+    "installation": true
+  },
+  {
+    "id": "cognition_booster",
+    "name": "Cognition_Booster.exe",
+    "rarity": "uncommon",
+    "installation": true
+  },
+  {
+    "id": "deflector_array",
+    "name": "Deflector_Array.exe",
+    "rarity": "rare",
+    "installation": true
+  },
+  {
+    "id": "distortion_veil",
+    "name": "Distortion_Veil.exe",
+    "rarity": "rare",
+    "installation": true
+  },
+  {
+    "id": "double_time",
+    "name": "Double_Time.exe",
+    "rarity": "rare",
+    "installation": true
+  },
+  {
+    "id": "em_trail_scrambler",
+    "name": "EM_Trail_Scrambler.exe",
+    "rarity": "uncommon",
+    "installation": true
+  },
+  {
+    "id": "experimental_barrier_generator",
+    "name": "Experimental_Barrier_Generator.exe",
+    "rarity": "rare",
+    "installation": false
+  },
+  {
+    "id": "expert_hand",
+    "name": "Expert_Hand.exe",
+    "rarity": "uncommon",
+    "installation": true
+  },
+  {
+    "id": "flash_hypno",
+    "name": "Flash_Hypno.exe",
+    "rarity": "uncommon",
+    "installation": true
+  },
+  {
+    "id": "primal_tap",
+    "name": "Primal_Tap.exe",
+    "rarity": "varies",
+    "installation": true
+  },
+  {
+    "id": "quantum_displacer",
+    "name": "Quantum_Displacer.exe",
+    "rarity": "rare",
+    "installation": true,
+    "gel": 3
+  },
+  {
+    "id": "show_stopper",
+    "name": "Show_Stopper.exe",
+    "rarity": "uncommon",
+    "activation": false
+  },
+  {
+    "id": "spotter_support_system",
+    "name": "Spotter_Support_System.exe",
+    "rarity": "uncommon",
+    "installation": true
+  },
+  {
+    "id": "terra_angelis",
+    "name": "Terra_Angelis.exe",
+    "rarity": "legendary",
+    "installation": true
+  },
+  {
+    "id": "thermic_overvent",
+    "name": "Thermic_Overvent.exe",
+    "rarity": "uncommon",
+    "installation": false
+  },
+  {
+    "id": "threat_assessment",
+    "name": "Threat_Assessment.exe",
+    "rarity": "uncommon",
+    "installation": true
+  },
+  {
+    "id": "trace_signal_jammer",
+    "name": "Trace_Signal_Jammer.exe",
+    "rarity": "uncommon",
+    "installation": true
+  }
+]

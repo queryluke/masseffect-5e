@@ -1,0 +1,106 @@
+[
+  {
+    "id": "arc_grenade",
+    "name": "Arc Grenade",
+    "damage": "3d6",
+    "range": "10m",
+    "blast": "4m",
+    "damageType": "lightning"
+  },
+  {
+    "id": "cain_trip_mine",
+    "name": "Cain Trip Mine",
+    "damage": "2d12",
+    "range": "20m",
+    "blast": "2m",
+    "damageType": "thunder"
+  },
+  {
+    "id": "cluster_grenade",
+    "name": "Cluster Grenade",
+    "damage": "2d6",
+    "range": "10m",
+    "blast": "6m",
+    "damageType": "thunder"
+  },
+  {
+    "id": "flashbang_grenade",
+    "name": "Flashbang Grenade",
+    "damage": "none",
+    "range": "10m",
+    "blast": "4m",
+    "damageType": "utility"
+  },
+  {
+    "id": "frag_grenade",
+    "name": "Frag Grenade",
+    "damage": "3d12",
+    "range": "10m",
+    "blast": "4m",
+    "damageType": "piercing"
+  },
+  {
+    "id": "homing_grenade",
+    "name": "Homing Grenade",
+    "damage": "1d6",
+    "range": "10m",
+    "blast": "2m",
+    "damageType": "thunder"
+  },
+  {
+    "id": "inferno_grenade",
+    "name": "Inferno Grenade",
+    "damage": "3d4",
+    "range": "10m",
+    "blast": "4m",
+    "damageType": "fire"
+  },
+  {
+    "id": "lift_grenade",
+    "name": "Lift Grenade",
+    "damage": "none",
+    "range": "10m",
+    "blast": "4m",
+    "damageType": "utility"
+  },
+  {
+    "id": "multi-frag_grenade",
+    "name": "Multi-frag Grenade",
+    "damage": "1d4",
+    "range": "10m",
+    "blast": "4m",
+    "damageType": "piercing"
+  },
+  {
+    "id": "proximity_mine",
+    "name": "Proximity Mine",
+    "damage": "1d8",
+    "range": "Touch",
+    "blast": "2m",
+    "damageType": "thunder"
+  },
+  {
+    "id": "recon_mine",
+    "name": "Recon Mine",
+    "damage": "2d4",
+    "range": "10m",
+    "blast": "2m",
+    "damageType": "thunder"
+  },
+  {
+    "id": "smoke_grenade",
+    "name": "Smoke Grenade",
+    "damage": "none",
+    "range": "10m",
+    "blast": "4m",
+    "damageType": null
+  },
+  {
+    "id": "sticky_grenade",
+    "name": "Sticky Grenade",
+    "damage": "3d6",
+    "range": "10m",
+    "blast": "4m",
+    "damageType": "thunder"
+  }
+]

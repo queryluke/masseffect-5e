@@ -1,0 +1,78 @@
+{
+  "abilityScores": {
+    "str": 12,
+    "dex": 14,
+    "con": 12,
+    "int": 5,
+    "wis": 10,
+    "cha": 7
+  },
+  "ac": "14",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Fire Breath",
+      "recharge": "Recharge 6",
+      "description": "The klixen exhales a 6-meter cone of fire. Each creature in that area must make a DC 14 Dexterity saving throw, taking 10 (3d6) fire damage on a failed save, or half as much damage on a successful one."
+    },
+    {
+      "type": "melee",
+      "name": "Pincer",
+      "range": 2,
+      "target": "one target",
+      "hit": "4 (1d4 + 2) piercing damage plus 2 (1d4) fire damage.",
+      "miss": null,
+      "attackMod": 4
+    }
+  ],
+  "alignment": "Unaligned",
+  "barrier": null,
+  "conditionImmunities": [
+    "poisoned"
+  ],
+  "cr": "1",
+  "damageImmunities": [
+    "fire",
+    "poison"
+  ],
+  "damageResistances": [],
+  "damageVulnerabilities": [
+    "cold"
+  ],
+  "features": [
+    {
+      "name": "Death Burst",
+      "recharge": null,
+      "description": "When the klixen dies, it explodes in a burst of lava. Each creature within 2m of it must make a DC 14 Dexterity saving throw, taking 10 (3d6) fire damage on a failed save, or half as much damage on a successful one."
+    },
+    {
+      "name": "Heated Body",
+      "recharge": null,
+      "description": "A creature that touches the klixen or hits it with a melee attack while within 2m of it takes 3 (1d6) fire damage."
+    }
+  ],
+  "hp": {
+    "numDice": 5,
+    "die": 8
+  },
+  "id": "klixen",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/2f/ME2_Klixen.PNG/revision/latest/scale-to-width-down/350?cb=20100703065034",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Klixen",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Medium",
+  "skills": [],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Alien"
+}

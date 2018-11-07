@@ -7,7 +7,14 @@
 
 <script>
   export default {
-    props: ['availableClasses']
+    props: {
+      availableClasses: {
+        type: Array,
+        default: () => {
+          return []
+        }
+      }
+    }
   }
 </script>
 

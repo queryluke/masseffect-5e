@@ -1,0 +1,66 @@
+{
+  "abilityScores": {
+    "str": 16,
+    "dex": 12,
+    "con": 15,
+    "int": 11,
+    "wis": 10,
+    "cha": 12
+  },
+  "ac": "18",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Multiattack",
+      "description": "The guardian makes two M-358 Talon attacks."
+    },
+    {
+      "type": "weapon",
+      "id": "stun_baton"
+    },
+    {
+      "type": "weapon",
+      "id": "m-358_talon"
+    }
+  ],
+  "alignment": "Neutral",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "5",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Heavy Shield",
+      "recharge": null,
+      "description": "While the guardian has their Heavy Shield equipped, it gains +2 AC and has resistance bludgeoning, piercing, and slashing damage."
+    }
+  ],
+  "hp": {
+    "numDice": 20,
+    "die": 8
+  },
+  "id": "guardian",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/3f/ME3_Cerberus_Guardian.png/revision/latest/scale-to-width-down/350?cb=20120321201359",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Guardian",
+  "profBonus": 3,
+  "reactions": [],
+  "savingThrows": [
+    "str"
+  ],
+  "senses": [],
+  "size": "Medium",
+  "skills": [],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 6
+    }
+  ],
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Cerberus"
+}

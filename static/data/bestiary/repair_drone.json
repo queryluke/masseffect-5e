@@ -1,0 +1,84 @@
+{
+  "abilityScores": {
+    "str": 8,
+    "dex": 12,
+    "con": 10,
+    "int": 11,
+    "wis": 11,
+    "cha": 6
+  },
+  "ac": "11",
+  "actions": [
+    {
+      "type": "melee",
+      "name": "Defibrillators",
+      "range": 2,
+      "target": "one target",
+      "hit": "2 (1d4) lightning damage.",
+      "miss": null,
+      "attackMod": 3
+    },
+    {
+      "type": "standard",
+      "name": "Stabalize",
+      "recharge": "Recharges after a Short or Long rest",
+      "description": "The repair drone can stabalize a friendly creature within 2m."
+    }
+  ],
+  "alignment": "Neutral",
+  "barrier": null,
+  "conditionImmunities": [
+    "poisoned"
+  ],
+  "cr": "1/8",
+  "damageImmunities": [
+    "poison",
+    "psychic"
+  ],
+  "damageResistances": [],
+  "damageVulnerabilities": [
+    "lightning"
+  ],
+  "features": [],
+  "hp": {
+    "numDice": 2,
+    "die": 6
+  },
+  "id": "repair_drone",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/21/Maintenance_Drone.png/revision/latest/scale-to-width-down/350?cb=20100909024927",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Repair Drone",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Small",
+  "skills": [],
+  "sp": {
+    "shields": 5,
+    "regen": "5"
+  },
+  "speed": [
+    {
+      "type": "fly",
+      "range": 12
+    }
+  ],
+  "spellcasting": {
+    "level": "innate",
+    "mod": "int",
+    "spellList": [
+      {
+        "perDay": "3/day",
+        "spells": [
+          {
+            "id": "first aid"
+          }
+        ]
+      }
+    ]
+  },
+  "type": "Synthetic",
+  "unit": "Mech"
+}

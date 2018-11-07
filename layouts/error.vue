@@ -20,6 +20,11 @@ export default {
     MainFooter,
     MainToolbar
   },
-  props: ['error']
+  props: {
+    error: {
+      type: Object,
+      default: () => { return {} }
+    }
+  }
 }
 </script>

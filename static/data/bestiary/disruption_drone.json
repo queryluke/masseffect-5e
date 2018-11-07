@@ -1,0 +1,58 @@
+{
+  "abilityScores": {
+    "str": 8,
+    "dex": 14,
+    "con": 8,
+    "int": 8,
+    "wis": 8,
+    "cha": 8
+  },
+  "ac": "8",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Kamikaze Attack",
+      "recharge": null,
+      "description": "When the disruption drone is within 2m of an enemy creature, it explodes. Each creature within a 2m radius must make a DC 13 Dexterity saving throw. On a failed save, a creature takes 1d12 thunder damage, or half as much on a successful one."
+    }
+  ],
+  "alignment": "Neutral",
+  "barrier": null,
+  "conditionImmunities": [
+    "poisoned"
+  ],
+  "cr": "1/8",
+  "damageImmunities": [
+    "poison",
+    "psychic"
+  ],
+  "damageResistances": [],
+  "damageVulnerabilities": [
+    "lightning"
+  ],
+  "features": [],
+  "hp": {
+    "numDice": 2,
+    "die": 6
+  },
+  "id": "disruption_drone",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/b/b6/ME3_disruption_drone.png/revision/latest/scale-to-width-down/350?cb=20130308125421",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Disruption Drone",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Small",
+  "skills": [],
+  "speed": [
+    {
+      "type": "fly",
+      "range": 16
+    }
+  ],
+  "spellcasting": false,
+  "type": "Synthetic",
+  "unit": "Mech"
+}

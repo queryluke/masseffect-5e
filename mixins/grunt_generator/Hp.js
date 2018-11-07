@@ -1,64 +1,116 @@
+import stats from '~/static/data/stats_by_cr'
+
 export const Hp = {
+  data () {
+    return {
+      baseShields: {
+        0: {shields: [null, null, 5, 5, 10], regen: [null, null, 5, 5, 10]},
+        1: {shields: [5, 5, 10, 10, 15], regen: [5, 5, 5, 10, 10]},
+        2: {shields: [5, 10, 15, 20, 25], regen: [5, 10, 10, 10, 15]},
+        3: {shields: [10, 15, 20, 20, 30], regen: [10, 10, 15, 15, 15]}
+      }
+    }
+  },
   methods: {
-    setGruntHp (config, grunt) {
-      let hpRange = this.createNumberRange(config.cr.hpMin, config.cr.hpMax)
-      const oneQuarterOfRange = Math.floor(hpRange.length / 4)
-      if (config.effective.resistances) {
-        hpRange = hpRange.slice(0, hpRange.length - (oneQuarterOfRange * 2))
-      } else {
-        hpRange = hpRange.slice(oneQuarterOfRange, hpRange.length - oneQuarterOfRange)
-      }
-
-      // Base HP calcs
-      let targetHp = this.randomValue(hpRange)
-      let maxHp = config.cr.hpMax
-
-      // Has Shields?
-      const shields = Math.floor(Math.random() * 100) > 15
+    setGruntHp () {
+      this.grunt.sp = null
+      this.grunt.hp = {numDie: 1, die: 4}
+      // shields
+      const baseShields = this.baseShields[this.crMetaLevel]
+      const shields = this.randomValue(baseShields.shields)
       if (shields) {
-        const crMetaLevel = parseFloat(config.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(config.cr.cr) / 4)
-        grunt.sp = {
-          shields: crMetaLevel * 10,
-          regen: crMetaLevel * 10 / 2
-        }
-        const adjustment = grunt.sp.shields + grunt.sp.regen
-        targetHp -= adjustment
-        maxHp -= adjustment
+        const regen = this.randomValue(baseShields.regen.filter(r => r && r <= shields))
+        this.grunt.sp = {shields, regen}
+        this.adjustments.hp += (shields + regen)
       }
+      // **********************************
+      // What is the offensive CR?
+      // ***
+      // Find the dpr cr
+      const finalDpr = Math.max(...Object.values(this.dpr)) + this.adjustments.dpr
+      // Offensive CR > 12
+      let dprCr = {}
+      if (finalDpr > 81) {
+        dprCr = this.createNewCrFromDamage(finalDpr)
+      } else {
+        dprCr = stats.find(s => {
+          return s.dmgMin <= finalDpr && s.dmgMax >= finalDpr
+        })
+      }
+      const finalAtk = this.adjustments.hit + this.cr.profBonus
+      let hitDiff = (finalAtk - dprCr.attackBonus) / 2
+      hitDiff = hitDiff >= 0 ? Math.floor(hitDiff) : Math.ceil(hitDiff)
+      const offensiveCrId = dprCr.id + hitDiff
+      // **********************************
+      // What is the target defensive CR, based on offensive CR?
+      // ***
+      let targetDefensiveCrId = this.cr.id
+      if (offensiveCrId !== targetDefensiveCrId) {
+        targetDefensiveCrId = (this.cr.id * 2) - offensiveCrId
+      }
+      const targetDefensiveCr = this.getCrById(targetDefensiveCrId)
+      // **********************************
+      // What is the ac adjustment?
+      // ***
+      const finalAc = this.grunt.ac + this.adjustments.ac
+      let acDiff = (finalAc - targetDefensiveCr.acDc) / 2
+      acDiff = acDiff >= 0 ? Math.floor(acDiff) : Math.ceil(acDiff)
+      const hpCrId = targetDefensiveCrId - acDiff
+      const hpCr = this.getCrById(hpCrId)
 
-      const avgRoll = grunt.race.id === 'volus' ? 3.5 : 4.5
-      let conMod = this.abilityScoreBonus(grunt.abilityScores.con)
+      // **********************************
+      // Calc HP
+      // ***
+      // Multipliers
       let multiplicativeMod = 1
-      if (config.effective.resistances) {
-        if (parseInt(config.cr.cr, 10) < 5) {
+      if (this.grunt.damageResistances.length > 3 || this.grunt.damageImmunities.length > 1) {
+        const crInt = this.crToInt(this.cr.cr)
+        if (crInt < 5) {
           multiplicativeMod = 2
-        } else if (parseInt(config.cr.cr, 10) < 11) {
+        } else if (crInt < 11) {
           multiplicativeMod = 1.5
         } else {
           multiplicativeMod = 1.25
         }
       }
-
-      if (grunt.race.id === 'turian') {
+      // Die Type (size)
+      const dieType = this.race.id === 'volus' ? 6 : 8
+      const averageRoll = (dieType + 1) / 2
+      // Con Modifier
+      let conMod = this.abilityScoreBonus(this.grunt.abilityScores.con)
+      if (this.race.id === 'turian') {
         conMod += 2
       }
-
-      // generate the hp
+      // Calculation
       let numDice = 0
       let average = 0
-      let max = 0
-      const maxRoll = this.dieFromAverage(avgRoll)
-      while (average <= targetHp && max <= maxHp) {
+      const minHp = hpCr.hpMin - this.adjustments.hp
+      while (average < minHp) {
         numDice++
-        average = ((numDice * avgRoll) + (numDice * conMod)) * multiplicativeMod
-        max = numDice * maxRoll * multiplicativeMod
+        average = ((numDice * averageRoll) + (numDice * conMod)) * multiplicativeMod
       }
-      grunt.hp = {
-        die: maxRoll,
-        avgRoll,
-        average: Math.floor(average),
+      this.grunt.hp = {
         numDice,
-        mod: conMod * numDice
+        die: dieType
+      }
+    },
+    getCrById (id) {
+      return id > 15 ? this.createNewCr(id - 15) : stats.find(cr => cr.id === id)
+    },
+    createNewCrFromDamage (damage) {
+      const numIncrements = Math.ceil((damage - 81) / 5)
+      return this.createNewCr(numIncrements)
+    },
+    createNewCr (numIncrements) {
+      return {
+        id: 15 + numIncrements,
+        cr: 12 + numIncrements,
+        profBonus: 6 + Math.floor(numIncrements / 4),
+        acDc: 18 + Math.floor(numIncrements / 3),
+        hpMin: 237 + (numIncrements * 8),
+        hpMax: 251 + (numIncrements * 8),
+        attackBonus: 8 + (numIncrements / 2),
+        generated: true
       }
     }
   }

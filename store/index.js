@@ -9,6 +9,7 @@ import getters from './getters'
 import phb from './phb_pages'
 import classPage from './class_page'
 import itemList from './itemList'
+import gruntGenerator from './grunt_generator'
 
 const createStore = () => {
   return new Vuex.Store({
@@ -19,7 +20,8 @@ const createStore = () => {
     modules: {
       phb,
       classPage,
-      itemList
+      itemList,
+      gruntGenerator
     }
   })
 }

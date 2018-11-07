@@ -1,0 +1,91 @@
+{
+  "abilityScores": {
+    "str": 20,
+    "dex": 6,
+    "con": 18,
+    "int": 16,
+    "wis": 8,
+    "cha": 12
+  },
+  "ac": "18",
+  "actions": [
+    {
+      "type": "ranged",
+      "name": "Mass Accelerator Machinegun",
+      "range": 60,
+      "target": "one target",
+      "hit": "16 (3d10) piercing damage and 16 (3d10) radiant damage. The ymir mech can make a burst fire attack instead.",
+      "miss": null,
+      "attackMod": 7
+    },
+    {
+      "type": "standard",
+      "name": "Rocket Launcher",
+      "recharge": "Recharge 5-6",
+      "description": "The ymir mech targets an area within 60m. Each creature within 6m of the target must make a DC 18 Dexterity saving throw. On a failed save, a creature takes 52 (8d12) thunder damage or half as much damage on a successful one."
+    }
+  ],
+  "alignment": "Neutral",
+  "barrier": null,
+  "conditionImmunities": [
+    "petrified",
+    "poisoned"
+  ],
+  "cr": "11",
+  "damageImmunities": [
+    "poison",
+    "psychic"
+  ],
+  "damageResistances": [
+    "cold",
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "damageVulnerabilities": [
+    "lightning"
+  ],
+  "features": [
+    {
+      "name": "Post-mortem Explosion",
+      "recharge": null,
+      "description": "When the YMIR mech is reduced to 0 hit points, it self-destructs. Each creature within a 6m radius sphere must make a DC 15 Dexterity saving throw. On a failed save, a creature takes 22 (4d10) thunder damage or half as much on a successful one."
+    }
+  ],
+  "hp": {
+    "numDice": 17,
+    "die": 10
+  },
+  "id": "ymir_mech",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/5/5f/ME2_YMIR_Mech.png/revision/latest/scale-to-width-down/700?cb=20120419005946",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "YMIR Mech",
+  "profBonus": 4,
+  "reactions": [],
+  "savingThrows": [
+    "str",
+    "int"
+  ],
+  "senses": [
+    {
+      "sense": "infared",
+      "range": null
+    }
+  ],
+  "size": "Large",
+  "skills": [],
+  "sp": {
+    "shields": 50,
+    "regen": "10"
+  },
+  "speed": [
+    {
+      "type": "walk",
+      "range": 6
+    }
+  ],
+  "spellcasting": false,
+  "type": "Synthetic",
+  "unit": "Mech"
+}

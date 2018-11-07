@@ -1,0 +1,74 @@
+{
+  "abilityScores": {
+    "str": 20,
+    "dex": 4,
+    "con": 24,
+    "int": 16,
+    "wis": 18,
+    "cha": 8
+  },
+  "ac": "20",
+  "actions": [
+    {
+      "type": "ranged",
+      "name": "Mass Accelerator Cannon",
+      "range": 120,
+      "target": "one target",
+      "hit": "22 (5d8) radiant damage.",
+      "miss": null,
+      "attackMod": 6
+    }
+  ],
+  "alignment": "Lawful Neutral",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "6",
+  "damageImmunities": [],
+  "damageResistances": [
+    "bludgeoning",
+    "piercing",
+    "slashing"
+  ],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Slow Moving",
+      "recharge": null,
+      "description": "The elcor has disadvantage on all Dexterity saving throws and skill checks."
+    }
+  ],
+  "hp": {
+    "numDice": 10,
+    "die": 10
+  },
+  "id": "elcor",
+  "image": "https://pre00.deviantart.net/0c66/th/pre/f/2012/139/9/3/mass_effect__elcor_warriors_by_lipatov-d50d2p0.jpg",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Elcor",
+  "profBonus": 3,
+  "reactions": [],
+  "savingThrows": [
+    "str",
+    "con"
+  ],
+  "senses": [],
+  "size": "Large",
+  "skills": [
+    "history",
+    "insight"
+  ],
+  "sp": {
+    "shields": 50,
+    "regen": "10"
+  },
+  "speed": [
+    {
+      "type": "walk",
+      "range": 4
+    }
+  ],
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Alien"
+}
