@@ -5,6 +5,7 @@
       p.red--text.text--darken-4.headline.small-caps.mb-0
         strong {{ stats.name }}
         span(v-if="stats.unit" style="text-transform: uppercase").body-2.grey--text.text--darken-4.pl-2 ({{ stats.unit }})
+      p(v-if="stats.author").subheading.my-2 created by {{ stats.author }}
       p #[em {{ stats.size }} {{ stats.type }}, {{ stats.alignment }}]
 
     // Stats

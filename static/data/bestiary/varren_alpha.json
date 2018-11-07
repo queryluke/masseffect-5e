@@ -14,7 +14,7 @@
       "name": "Bite",
       "range": 2,
       "target": "one target",
-      "hit": "9 (2d6 + 2) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be knocked {prone}.",
+      "hit": "9 (2d6 + 2) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be knocked prone.",
       "miss": null,
       "attackMod": 4
     }

@@ -1,0 +1,88 @@
+{
+  "abilityScores": {
+    "str": 16,
+    "dex": 15,
+    "con": 16,
+    "int": 5,
+    "wis": 14,
+    "cha": 6
+  },
+  "ac": "14",
+  "actions": [
+    {
+      "type": "melee",
+      "name": "Gore",
+      "range": 2,
+      "target": "one target",
+      "hit": "12 (3d4 + 5) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be knocked prone.",
+      "miss": null,
+      "attackMod": 4
+    },
+    {
+      "type": "melee",
+      "name": "Maul",
+      "range": 2,
+      "target": "one target",
+      "hit": "11 (2d8 + 2) piercing damage.",
+      "miss": "Hit or miss, if the target is a creature, it must succeed on a DC 12 Dexterity saving throw or be knocked prone and is grappled. A creature takes half damage on a successful saving throw.",
+      "attackMod": 3
+    },
+    {
+      "type": "standard",
+      "name": "Howl",
+      "recharge": null,
+      "description": "Each other kath hound within 20m that is not incapacitated gains +2 Dexterity and +1 Wisdom for 1 minute. Kath hounds can only benefit from one Howl at a time."
+    }
+  ],
+  "alignment": "Unaligned",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "1",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Keen Hearing and Smell",
+      "recharge": null,
+      "description": "The kath hound has advantage on Wisdom (Perception) checks that rely on hearing or smell."
+    },
+    {
+      "name": "Pack Tactics",
+      "recharge": null,
+      "description": "The kath hound has advantage on an attack roll against a creature if at least one of the kath hound's allies is within 2m of the creature and the ally isn't incapacitated."
+    },
+    {
+      "name": "Grappler",
+      "recharge": null,
+      "description": "The kath hound has advantage on attack rolls against any creature grappled by it."
+    }
+  ],
+  "hp": {
+    "numDice": 5,
+    "die": 8
+  },
+  "id": "horned_kath_hound",
+  "image": "https://vignette.wikia.nocookie.net/starwars/images/5/5b/HornedKathhound.jpg/revision/latest/scale-to-width-down/448?cb=20091107052416",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Horned Kath Hound",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Medium",
+  "skills": [
+    "perception"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 18
+    }
+  ],
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Alien",
+  "author": "Dakota P."
+}
