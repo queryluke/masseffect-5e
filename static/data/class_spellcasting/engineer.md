@@ -10,7 +10,7 @@ of the Engineer table.
 For example, a 9th-level engineer can cast spells for 1, 2, or 3 tech points.
 
 You prepare the list of engineer spells that are available for you to cast, choosing from the engineer spell list.
-When you do so, choose a number of engineer spells equal to your Intelligence modifier + half your engineer level
+When you do so, choose a number of engineer spells equal to your Intelligence modifier + your engineer level
 (minimum of one spell).
 
 You may prepare the advanced version of a spell for the cost of 2 regular versions. You may only prepare one advanced
