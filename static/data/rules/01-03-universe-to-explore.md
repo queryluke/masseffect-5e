@@ -22,7 +22,7 @@ the wiki</a> has plenty of information.
 
 Both galaxies share the same characteristics that are nascent to Mass Effect, i.e. biotics, tech, and space travel, but
 each galaxy offers its own zeitgeist and challenges. The Milky Way is mostly explored and contains extensive urban environments.
-You could easily set an entire campaign on a single planet and, depending on when you set you campaign
+You could easily set an entire campaign on a single planet and, depending on when you set your campaign
 on the timeline, you might also deal with the impending invasion of <a href="http://masseffect.wikia.com/wiki/Reaper" target="_blank">the Reapers</a>.
 In contrast, Andromeda is themed for exploration, survival, and being a pioneer. An operatives' primary goal is that of
 setting up a thriving civilization in the new galaxy and uncovering its mysterious past. In short, the Milky Way
@@ -35,5 +35,5 @@ even if the setting is a published world.
 
 <v-alert :value="true" type="info">
 It is unlikely that your GM will have the campaign span between the two galaxies. The passengers of Andromeda's arks
-spent 600 years in cryo sleep. But you could certain spend part of your campaign in the Milky Way and take a 600 year nap!
+spent 600 years in cryo-sleep. But you could certainly spend part of your campaign in the Milky Way and take a 600-year nap!
 </v-alert>

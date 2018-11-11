@@ -20,7 +20,7 @@
                 Mass Effect 5e lets you take the immersive and cooperative story-telling gameplay of Dungeons & Dragons 5th edition
                 and experience new adventures in the Mass Effect universe. Go exploring in the Outer Terminus. Stop a political assassination
                 on Thessia. Battle the Reaper invasion on Earth, Palavan, or Sur'Kesh. Solve crimes as a C-SEC officer on the Citadel.
-                With Mass Effect 5e, the adventure is in your hands. You can play anywhere in the Mass Effect time line, create
+                With Mass Effect 5e, the adventure is in your hands. You can play anywhere in the Mass Effect timeline, create
                 new worlds, or revisit old ones. So, gear up and start making your own journey.
         v-layout(column wrap align-center)
           v-flex(xs12)
@@ -108,8 +108,7 @@
               v-card-title(primary-title)
                 div.headline Tabletop Assets
               v-card-text.
-                We've also got a host of tabletop rpg assets: a custom-made character sheet and printable spell cards. In addition,
-                we're working on VTT maps, tokens, and plenty of other goodies.
+                We've also got a host of tabletop RPG assets: custom-made character sheets, printable spell cards, and Roll20 tokens.
               v-card-actions
                 v-btn(to="/assets" flat) Print #[v-icon chevron_right]
           v-flex(md5).hidden-sm-and-down.text-xs-center

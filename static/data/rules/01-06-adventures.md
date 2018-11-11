@@ -38,11 +38,11 @@ __Exploration__ includes both the operatives’ movement through the world and t
 that require their attention. Exploration is the give-and-take of the players describing what they want their characters
 to do, and the Galaxy Master telling the players what happens as a result. On a large scale, that might involve the
 characters spending a day crossing an icy plain or an hour making their way through tunnels of city's transit tube. On
-the smallest scale, it could mean one character pushing a button on console to see what happens.
+the smallest scale, it could mean one character pushing a button on the console to see what happens.
 
 __Social interaction__ features the operatives talking to someone (or something) else. It might mean demanding that a
 captured soldier reveal the passcode to the enemies stronghold, getting information from a rescued prisoner, pleading for
-mercy from an krogan chieftain, or persuading a talkative unshackled AI to unlock a navigation route to a distant planet.
+mercy from a krogan chieftain, or persuading a talkative unshackled AI to unlock a navigation route to a distant planet.
 
 The rules in <nuxt-link to="/phb/rules/using-ability-scores">Using Ability Scores</nuxt-link> and
 <nuxt-link to="/phb/rules/missions">Missions</nuxt-link> support exploration

@@ -4,7 +4,7 @@ new: true
 title: Using these Rules
 ---
 
-This manual uses the <a href="http://dnd.wizards.com/articles/features/basicrules" target="_blank">Dungeons & Dragons 5th Edition Basid Rules</a>
+This manual uses the <a href="http://dnd.wizards.com/articles/features/basicrules" target="_blank">Dungeons & Dragons 5th Edition Basic Rules</a>
 as its core rule set. If you have never played D&D 5e, we recommend that you familiarize yourself with the basic rules
 first. Most of those rules are replicated and referenced in the rules section of this Player's Manual.
 
@@ -15,7 +15,7 @@ Not repeated here are basic rules for Dungeon (Galaxy) Masters which have additi
 The __Rules__ dropdown on the left contains the necessary information you need for creating characters, going on missions,
 leveling up, casting spells, and acquiring all the different types of equipment and vehicles available to you. Sections
 that contain significant changes are:
-- <nuxt-link to="/phb/rules/equipment">Equipment</nuxt-link>, which includes brand new rules for armor, weapons, and mods
+- <nuxt-link to="/phb/rules/equipment">Equipment</nuxt-link>, which includes brand-new rules for armor, weapons, and mods
 - <nuxt-link to="/phb/rules/combat">Combat</nuxt-link>, which includes information on kinetic barriers (shields)
 - <nuxt-link to="/phb/rules/vehicles">Vehicles</nuxt-link>, which contains a "bolt-on" set of rules for traveling through the galaxy
 

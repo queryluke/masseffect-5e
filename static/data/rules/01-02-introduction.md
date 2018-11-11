@@ -4,7 +4,7 @@ title: Introduction
 ---
 The Dungeons & Dragons roleplaying game is about storytelling in worlds of swords and sorcery and Mass Effect 5e
 takes that storytelling to the stars. Both shares elements with childhood games of make-believe. Like those games,
-D&D is driven by imagination. It’s about picturing the alien landscape beneath the two-sunned sky and imagining how a
+D&D is driven by imagination. It’s about picturing the alien landscape beneath the two-sunned sky and imagining how an
 N7 soldier might react to the challenges that scene presents.
 
 <v-alert :value="true" type="info">
@@ -18,7 +18,7 @@ __Galaxy Master (GM)__: You arrived on Asteroid 2179 JK178 on a UT-47 Kodiak. Ap
 lock alarm sounds in the cockpit. Your pilot, Harcourt Finn, immediately took evasive action and put down on the opposite
 side of the asteroid. Scans indicate the automated defensive system should extend around the entire asteroid but appears
 to be dormant on the side opposite the station entrance. Having no other options, you double-checked the pressure seals
-on your armor and set out on foot across the asteroid’s surface. After a quick 3 kilometer jaunt you arrive at the edge
+on your armor and set out on foot across the asteroid’s surface. After a quick 3 kilometer jaunt, you arrive at the edge
 of the asteroid. Looking down, you can see the hangar doors sealed tight. You’ll have to find another way in …
 \
 __Amanda (playing Melphine)__: I want to scan the area for movement or any immediate threats.
@@ -37,7 +37,7 @@ __Galaxy Master (GM)__: OK, one at a time. Amanda, you’re looking for threats?
 \
 __Amanda__: Yeah. Is there any movement in the area?
 \
-__GM__: Make an Wisdom check.
+__GM__: Make a Wisdom check.
 \
 __Amanda__: Does my Perception skill apply?
 \
@@ -49,23 +49,23 @@ __GM__: No movement that you can see. And Amie, Telos is assessing the drop to t
 </v-card-text></v-card>
 
 In the Mass Effect 5e game, each player creates an operative (also called a character) and teams up with other
-operatives (played by friends). Working together, the group might explore a derelict starship, a the slums of an inhabited asteroid,
-a the glorious streets of an advanced civilization, a ancient temple deep in a jungle, or the steppes of a mining colony.
+operatives (played by friends). Working together, the group might explore a derelict starship, the slums of an inhabited asteroid,
+the glorious streets of an advanced civilization, an ancient temple deep in a jungle, or the steppes of a mining colony.
 The operatives can solve puzzles, talk with other characters, battle alien monsters, and discover advanced technologies
 and relics from a past age.
 
 One player, however, takes on the role of the Galaxy Master (GM), the game’s lead storyteller and referee. The GM creates
 missions for the characters, who navigate its hazards and decide which paths to explore. The GM might describe the
 entrance to Osiris Station, and the players decide what they want their operatives to do. Will they jump down to the hanger bay?
-Propel themselves with jetpacks? Or use a biotic's powers to increase their mass, "affixing" themselves to the asteroids
-crust? Then the GM determines the results of the operatives’ actions and narrates what they experience. Because the GM
+Propel themselves with jetpacks? Or use a biotic's powers to increase their mass, "affixing" themselves to the surface of 
+the asteroid? Then the GM determines the results of the operatives’ actions and narrates what they experience. Because the GM
 can improvise to react to anything the players attempt, D&D (and Mass Effect 5e) is infinitely flexible, and each
 mission can be exciting and unexpected.
 
 The game has no real end; when one story or quest wraps up, another one can begin, creating an ongoing story called a
 __campaign__. Many people who play the game keep their campaigns going for months or years, meeting with their friends
 every week or so to pick up the story where they left off. The operatives grow in might as the campaign continues. Each
-monster defeated, each mission completed, and each gadget recovered not only adds to the continuing story, but also
+monster defeated, each mission completed, and each gadget recovered not only adds to the continuing story but also
 earns the operatives new capabilities. This increase in power is reflected by an operative’s level.
 
 There’s no winning and losing in the Dungeons & Dragons game—at least, not the way those terms are usually understood.
