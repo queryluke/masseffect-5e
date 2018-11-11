@@ -1,16 +1,22 @@
 <template lang="pug">
   span
-    v-btn(color="primary" dark @click.stop="showAddInfoDialog = true") {{ title }}
-    v-dialog(v-model="showAddInfoDialog" v-bind:fullscreen="this.$vuetify.breakpoint.xsOnly" transition="dialog-bottom-transition" width="70vw" scrollable hide-overlay)
-      v-card(tile)
-        v-toolbar(card dark color="primary")
-          v-btn(icon dark @click.native="showAddInfoDialog = false")
-            v-icon close
-          v-toolbar-title {{ title }}
-        v-card-text
-          v-container(grid-list-lg fluid)
-            component(v-if="component" v-bind:is="component")
-            markdown-file(v-if="item" v-bind:itemType="item[0]" v-bind:id="item[1]")
+    span.ai-dialog
+      v-btn(color="primary" dark @click.stop="showAddInfoDialog = true") {{ title }}
+      v-dialog(v-model="showAddInfoDialog" v-bind:fullscreen="this.$vuetify.breakpoint.xsOnly" transition="dialog-bottom-transition" width="70vw" scrollable hide-overlay)
+        v-card(tile)
+          v-toolbar(card dark color="primary")
+            v-btn(icon dark @click.native="showAddInfoDialog = false")
+              v-icon close
+            v-toolbar-title {{ title }}
+          v-card-text
+            v-container(grid-list-lg fluid)
+              component(v-if="component" v-bind:is="component")
+              markdown-file(v-if="item" v-bind:itemType="item[0]" v-bind:id="item[1]")
+    span.ai-table
+      p.title {{ title }}
+      component(v-if="component" v-bind:is="component")
+      markdown-file(v-if="item" v-bind:itemType="item[0]" v-bind:id="item[1]")
+
 </template>
 
 <script>
@@ -101,3 +107,16 @@
   }
 </script>
 
+<style>
+  @media screen {
+    .ai-table {
+      display: none;
+    }
+  }
+
+  @media print {
+    .ai-dialog {
+      display: none;
+    }
+  }
+</style>

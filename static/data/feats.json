@@ -108,11 +108,6 @@
     "note": "+1 Strength or Dexterity, proficiency with light armor"
   },
   {
-    "id": "linguist",
-    "name": "Linguist",
-    "note": "+1 Intelligence, additional languages, create written ciphers"
-  },
-  {
     "id": "lucky",
     "name": "Lucky",
     "note": "You have inexplicable luck"

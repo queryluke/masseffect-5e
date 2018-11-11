@@ -6,10 +6,7 @@
 </template>
 
 <script>
-  import RuleCard from '~/components/cards/RuleCard.vue'
-
   export default {
-    components: { RuleCard },
     data () {
       return {
         damageTypes: [

@@ -1,25 +1,28 @@
 <template lang="pug">
-  //main
+  main
     v-navigation-drawer(v-model="drawer" fixed clipped floating right id="spvNavDrawer" class="blue-grey lighten-5")
-      v-list(dense)
-        template(v-for="item in tocA.slice(0).concat(tocB)")
+      v-list(dense).pb-5
+        template(v-for="item in toc")
           v-list-group(v-if="item.lookup" no-action)
             v-list-tile(slot="activator" ripple)
               v-list-tile-content
                 v-list-tile-title {{ item.title }}
             template(v-for="(subItem, i) in tocLookup(item.lookup)")
-              v-list-tile(:key="i" v-bind:href="subItem.anchor" ripple rel="noopener")
+              v-list-tile(:key="i" ripple rel="noopener" v-on:click="goToRule(`${subItem.anchor}`)")
                 v-list-tile-content
                   v-list-tile-title {{ subItem.title }}
+                    v-chip(v-if="subItem.new" color="secondary" text-color="white" disabled).pa-0.v-chip--x-small new
+                    v-chip(v-if="subItem.change" color="orange accent-2" text-color="black" disabled).pa-0.v-chip--x-small change
           v-subheader(v-else-if="item.header") {{ item.header }}
           v-divider(v-else-if="item.divider")
-          v-list-tile(v-else v-bind:href="item.anchor" ripple rel="noopener")
+          v-list-tile(v-else ripple rel="noopener" v-on:click="goToRule(`${item.anchor}`)")
             v-list-tile-content
               v-list-tile-title {{ item.title }}
-    v-toolbar(dense fixed id="spvToolbar")
+    v-toolbar(fixed id="spvToolbar")
       v-toolbar-title Mass Effect 5e #[span.hidden-xs-only -  Player's Manual #[small.hidden-sm-and-down (Single Page Version)]]
       v-spacer
       v-btn(icon @click="drawer = !drawer") #[v-icon view_list]
+
     // Frontmatter
     section.page
       div.my-5.text-xs-center
@@ -29,19 +32,7 @@
         p.title v{{ version }}
       div.my-5.text-xs-center
         p.title Contact Us: #[a(mailto="info@n7.world") info@n7.world]
-          p.body-1.ma-0 #[strong Disclaimer]
-          p.caption.ma-0.
-            This Homebrew supplement is not sanctioned by or affiliated with #[a(href="https://www.ea.com" target="_blank") Electronic Arts Inc],
-            #[a(href="http://www.bioware.com/en/" target="_blank") BioWare],
-            #[a(href="http://company.wizards.com/" target="_blank") Wizards of the Coast], or any other rights-holding company or entity.
-          p.caption.ma-0.
-            This conversion of the #[a(href="http://dnd.wizards.com/" target="_blank") Dungeon's and Dragons 5th Ed] is licensed under
-            #[a(href="https://github.com/queryluke/masseffect-5e/blob/master/LICENSE.txt" target="_blank") GNU General Public License v3.0]
-          p.caption.ma-0.mb-2.
-            Except where otherwise noted, images on this site are from the #[a(href="http://masseffect.wikia.com/wiki/Mass_Effect_Wiki" target="_blank") Mass Effect Wikia]
-            and are licensed under a #[a(href="http://creativecommons.org/licenses/by/4.0/" target="_blank") Creative Commons Attribution 4.0 International license].
-          div This homebrew is licensed under GPL-3.0
-          div © Mass Effect 5e {{ new Date().getFullYear() }}
+        div © Mass Effect 5e {{ new Date().getFullYear() }}
       v-layout(row justify-center)
         v-flex(xs12 sm8 lg6)
           v-alert(:value="true" type="warning").black--text.
@@ -49,8 +40,9 @@
             #[em within] this document will link out to the web version of the Player's Manual. At some point in the future,
             we will create a better PDF version of the rules.
 
+    // Download
     section(id="download").page
-      h3.display-2 Create and offline version (cached or PDF)
+      h3.display-1 Create and offline version (cached or PDF)
       p #[em source: #[a(href="https://www.pcworld.com/article/3003651/mobile/4-ways-to-save-a-web-page-on-an-iphone-or-android-phone.html" target="_blank") PC World | 4 ways to save a web page on an iPhone or Android phone]]
 
       h4.title On a Desktop/Laptop?
@@ -85,23 +77,12 @@
       p Go ahead and open a webpage in Safari, tap the Action button (again, it’s the square button with the upward arrow), then tap a Save PDF button in the top row (at the very least, there should be a Save PDF to iBooks button).
       p If you’re a Dropbox user, the Save to Dropbox option under the iOS Action button will save webpages as PDFs to your Dropbox account.
 
-
     // Print-only Table of Contents
     section(id="tableOfContents").page
       h3.display-2 Table of Contents
       v-layout(row)
-        v-flex(md6)
-          div(v-for="item in tocA")
-            div(v-if="item.lookup") {{ item.title }}
-              ul.toc-list
-                li(v-for="(subItem, i) in tocLookup(item.lookup)" v-bind:key="i")
-                  a(:href="subItem.anchor").xref {{ subItem.title }}
-            div(v-else-if="item.header").toc-header {{ item.header }}
-            div(v-else-if="item.divider").toc-divider
-            div(v-else).toc-item
-              a(v-bind:href="item.anchor").xref {{ item.title }}
-        v-flex(md6)
-          div(v-for="item in tocB")
+        v-flex(md4 v-for="(third, index) in tocThirds" v-bind:key="index")
+          div(v-for="item in third")
             div(v-if="item.lookup") {{ item.title }}
               ul.toc-list
                 li(v-for="(subItem, i) in tocLookup(item.lookup)" v-bind:key="i")
@@ -111,35 +92,32 @@
             div(v-else).toc-item
               a(v-bind:href="item.anchor").xref {{ item.title }}
 
+    // License
+    section(id="phb-license").page
+      license
+
     // Rules
-    section(v-for="(page, key) in pages" v-bind:key="key" v-if="page.rules && key !== 'phb-items'" v-bind:id="key").page
-      rule-helper(:title="page.name" v-bind:rules="page.rules")
+    section(v-for="(page, key) in pages" v-bind:key="key" v-if="page.rules" v-bind:id="key").page
+      h2.display-1 {{ page.name }}
+      div(v-for="(rule, index) in pageRules(page.rules)" v-bind:key="index")
+        rule-card(:id="rule.id")
 
     // Races
     section.page
       h3.display-2 Races
-      div(v-for="race in races" v-bind:key="race.id" v-bind:id="race.id").anchor-pad
+      div(v-for="race in races" v-bind:key="race.id" v-bind:id="race.id").pdf-page
         h4.display-1.pt-3 {{ race.name }}
-        p {{ race.snippet}}
         v-layout(row wrap).race-row
           v-flex(xs12 md8)
-            h5.title Available Classes
-            p {{ race.available_classes }}
-            h5.title Racial Traits
-            race-trait(:text="race.increases" title="Ability Score Increase")
-            race-trait(:text="race.alignment" title="Alignment")
-            race-trait(:text="race.size" title="Size")
-            race-trait(:text="race.speed" title="Speed")
-            race-trait(:text="race.sexy_level" title="Sexy Level")
-            race-trait(:text="race.optional_starting_credits" title="Optional Starting Credits")
-            race-trait(v-for="trait in racialTraits(race.id)" v-bind:key="trait.id" v-bind:element="trait.description" v-bind:title="trait.name")
+            race-info(:race="race")
           v-flex(hidden-sm-and-down md4)
-            img(:src="race.body" height="400px")
+            img(:src="race.bodyImg" height="800px")
+            p(v-if="race.id == 'prothean'").text-xs-center #[small #[em image courtesy of JTickner]]
 
     // Classes
     section.page
       h3.display-2 Classes
-      div(v-for="item in classes" v-bind:key="item.id" v-bind:id="item.id").anchor-pad.class-page
+      div(v-for="item in classes" v-bind:key="item.id" v-bind:id="item.id").pdf-page
         h4.display-1.pt-3
           v-avatar(size="48" tile)
             img(:src="`/images/classes/${item.id}.svg`")
@@ -155,52 +133,50 @@
             div.
               When your reach {{ feature.level.level | ordinal }}, and again at {{ abiLevels(feature.levels) }}
           div(v-else)
-            p.title.mb-0 {{ feature.name }}
-            div(v-html="markdownFile('class_features', feature.id, feature.level)")
-          div(v-if="feature.addl")
-            div(v-for="(f, index) in feature.addl" v-bind:key="index" v-html="markdownFile('class_features', f.feature, f.level)")
+            class-feature(:id="feature.id" v-bind:featureLevel="feature.level")
         div(:class="colors[item.id].primary").hr
         p.headline Subclasses
-          div(v-for="subclass of item.subclasses" v-bind:key="subclass.name")
-            p.title.mb-0 {{ subclass.name }}
+          div(v-for="(subclass, index) of item.subclasses" v-bind:key="`${item.id}-subclass-${index}`")
+            p.display-1.font-weight-thin.mb-2 {{ subclass.name.toUpperCase() }} #[small(v-if="subclass.source") ({{ subclass.source }})]
             p {{ subclass.description }}
-            div(v-for="(features, i) in subclass.features" v-bind:key="i").class-feature
+            div(v-for="(features, i) in subclass.features" v-bind:key="`${item.id}-subclass-${index}-${i}`").class-feature
               div(v-for="f in features" v-bind:key="f")
-                p.body-2.mb-0 {{ getItem('classFeatures', f).name }}
-                div(v-html="markdownFile('class_features', f, subClassFeatureLevels(item, i))")
+                class-feature(:id="f" v-bind:featureLevel="subClassFeatureLevels(item, i)")
 
     // Backgrounds
     section.page
-      h3(id="backgrounds").display-2.anchor-pad Backgrounds
-      div(v-for="item in getData('backgrounds')" v-bind:key="item.id").my-3
+      h3(id="backgrounds").display-2 Backgrounds
+      div(v-for="item in backgrounds" v-bind:key="item.id").my-5
         h4.display-1 {{ item.name }}
-        div(v-html="markdownFile('backgrounds', item.id)").class-feature
+        markdown-file(:id="item.id" itemType="backgrounds")
 
     // Feats
     section.page
-      h3(id="feats").display-2.anchor-pad Feats
+      h3(id="feats").display-2 Feats
       h4.display-1.mt-3 Removed
       p.
         The following feats from the 5th Edition Player's Manual are not available. The have been removed due to
-        consistency errors, like #[em Crossbow Expert], since there are no crossbows in this game: {{ feats.notAvailable.join(', ') }}
+        consistency errors, like #[em Crossbow Expert], since there are no crossbows in this game: Crossbow Expert,
+        Defensive Duelist, Dungeon Delver, Great Weapon Master, Healer, Inspiring Leader, Linguist, Magic Initiate,
+        Martial Adept, Polearm Master, Spell Sniper.
+      h4.display-1.mt-3 Feat Changes
+      p #[strong Mage Slayer] name changed to #[strong Biotic Slayer].
+      p #[strong Elemental Adept]. Your options for damage types are: Fire, Cold, Lightning, Force, and Necrotic
+      p #[strong Weapon Master]. You gain proficiency with 2 weapon types instead of 4.
       h4.display-1 New
-      div(v-for="feat in feats.newFeats" v-bind:key="feat.name").my-3
+      div(v-for="feat in newFeats" v-bind:key="feat.name").my-3
         h5.title {{ feat.name }}
-        me-element(:text="feat.description").class-feature
+        markdown-file(:id="feat.id" itemType="feats")
 
     // Weapons
     section.page
       h3.display-2 Weapons
-      div.mt-3
-        thermal-clips
       div(v-for="type in weaponTypes" v-bind:key="type")
-        h4(:id="`${type.replace(' ', '_').toLowerCase()}`").display-1.anchor-pad {{ type }}s
-        div(v-if="type === 'Heavy Weapon'").mt-3
-          heavy-weapon-charges
+        h4(:id="`${type.replace(' ', '_').toLowerCase()}`").display-1 {{ type }}s
         v-layout(row wrap)
-          v-flex(v-for="weapon in getData('weapons').filter(weapon => weapon.type === type)" v-bind:key="weapon.id" xs12 md6 d-flex).pa-1
+          v-flex(v-for="weapon in weapons.filter(weapon => weapon.type === type)" v-bind:key="weapon.id" xs12 md6 d-flex).pa-1
             weapon-info(:weapon="weapon").info-card
-      h4(id="weapon_mods").display-1.anchor-pad Weapon Mods
+      h4(id="weapon_mods").display-1 Weapon Mods
       table.table
         thead
           tr #[th Name] #[th Cost] #[th Placement] #[th Weapon(s)] #[th Description]
@@ -215,17 +191,7 @@
     // Armor
     section.page
       h3.display-2 Armor
-      h4(id="armor_mods").display-1.anchor-pad Armor Mods
-      table.table
-        thead
-          tr #[th Name] #[th Cost] #[th Type] #[th Description]
-        tbody
-          tr(v-for="mod in armorMods" v-bind:key="mod.id")
-            td {{ mod.name }}
-            td {{ mod.cost | groupDigits(',') }}
-            td {{ mod.type }}
-            td {{ mod.feature }}
-      h4(id="armor_sets").display-1.anchor-pad Armor Sets
+      h4(id="armor_sets").display-1 Armor Sets
       table.table
         thead
           tr #[th Name] #[th Cost] #[th Type] #[th Armor] #[th Description]
@@ -238,39 +204,57 @@
             td
               ul(v-if="mod.feature")
                 li(v-for="(f, index) in mod.feature.split('--').map(f => f.trim())" v-bind:key="index") {{ f }}
+      h4(id="armor_mods").display-1 Armor Mods
+      table.table
+        thead
+          tr #[th Name] #[th Cost] #[th Type] #[th Description]
+        tbody
+          tr(v-for="mod in armorMods" v-bind:key="mod.id")
+            td {{ mod.name }}
+            td {{ mod.cost | groupDigits(',') }}
+            td {{ mod.type }}
+            td {{ mod.feature }}
 
-    //Other Items
+    // grenades
     section.page
-      h3.display-2 Other Items
-      div(id="grenades-mines").anchor-pad
-        grenades
-        table.table
-          thead
-            tr #[th Name] #[th Description]
-          tbody
-            tr(v-for="g in grenades" v-bind:key="g.id")
-              td {{ g.name }}
-              td.class-feature
-                me-element(:text="g.desc")
+      h3(id="grenades-mines").display-2 Grenades
+      v-layout(row wrap)
+        v-flex(v-for="g in grenades" v-bind:key="g.id" xs12 md6 d-flex).pa-1
+          v-card
+            v-card-text
+              p.title.mb-0 {{ g.name }}
+              div.hr
+              markdown-file(:id="g.id" itemType="grenades")
 
-      div(id="medi-gel").anchor-pad
-        medi-gel
+    // programs
+    section.page
+      h3(id="programs").display-2 Omni-tool Programs
+      v-layout(row wrap)
+        v-flex(v-for="p in programs" v-bind:key="p.id" xs12 md6 d-flex).pa-1
+          v-card
+            v-card-text
+              p.title.mb-0 {{ p.name }}
+              p(v-if="p.installation").body-1 #[em requires installation]
+              div.hr
+              markdown-file(:id="p.id" itemType="programs")
 
-      div(id="omni-gel").anchor-pad
-        omni-gel
-
-      div(id="tools-kits").anchor-pad
-        tools-kits
-        div(v-for="item in getData('kits')" v-bind:key="item.id").class-feature
-          p.title.mb-0 {{ item.name }}
-          p.body-1 Cost: {{ item.cost }}
-          div(v-html="markdownFile('kits', item.id)")
+    // programs
+    section.page
+      h3(id="tools-kits").display-2 Tools & Kits
+      v-layout(row wrap)
+        v-flex(v-for="item in tools" v-bind:key="item.id" xs12 md6 d-flex).pa-1
+          v-card
+            v-card-text
+              p.title.mb-0 {{ item.name }}
+              p.body-1 Cost: {{ item.cost }}
+              div.hr
+              markdown-file(:id="item.id" itemType="tools")
 
     // Spells
     section.page
       h3(id="spells").display-2 Spells
       v-layout(row wrap)
-        v-flex(v-for="spell in getData('spells')" v-bind:key="spell.id" xs12 md6 d-flex).pa-3
+        v-flex(v-for="spell in spells" v-bind:key="spell.id" xs12 md6 d-flex).pa-3
           spell-info(v-bind:spell="spell" v-bind:key="spell.id").info-card
 
     // Bestiary
@@ -280,116 +264,210 @@
         v-flex(v-for="npc in bestiary" v-bind:key="npc.id" xs12 md6 d-flex).pa-3
           stat-block(:stats="npc").info-card
 
+    // Spells
+    section.page
+      h3(id="vehicles").display-2 Vehicles
+      h4.display-1 Transports
+      v-layout(row wrap)
+        v-flex(v-for="item in transports" v-bind:key="item.id" xs12 md6 d-flex).pa-3
+          vehicle-info(:item="item").info-card
+      h4.display-1 Starships
+      v-layout(row wrap)
+        v-flex(v-for="item in starships" v-bind:key="item.id" xs12 md6 d-flex).pa-3
+          vehicle-info(:item="item").info-card
+
+    // Conditions
+    section.page
+      h3(id="conditions").display-2 Conditions
+      div(v-for="condition in conditions" v-bind:key="condition.id").my-3
+        p.title.mb-0 {{ condition.name }}
+        markdown-file(:id="condition.id" itemType="conditions")
+
+    // Skills
+    section.page
+      h3(id="skills").display-2 Skills
+      div(v-for="skill in skills" v-bind:key="skill.id").my-3
+        p.title.mb-0 {{ skill.name }}
+          span.body-1.pl-2 {{ skill.link }}
+        p {{ skill.description }}
+
+    // codices
+    section.page
+      h3(id="found-codices").display-2 Found Codices
+      v-card.elevation-0.transparent
+        v-card-title.headline {{ pr.attributes.name }}
+          small.ml-3
+            em by tioeduardo27
+        v-card-text.markdown-content
+          markdown-content(:component="pr.vue")
+      v-card.elevation-0.transparent.mt-5
+        v-card-title.headline {{ weaponStrength.attributes.name }}
+          small.ml-3
+            em by SleightxHope
+        v-card-text.markdown-content
+          markdown-content(:component="weaponStrength.vue")
+      v-card.elevation-0.transparent.mt-5
+        v-card-title.headline Elcor
+          small.ml-3
+            em by Ben McPherson
+        v-card-text
+          v-card
+            race-info(:race="elcor.attributes")
+      v-card.elevation-0.transparent.mt-5
+        v-card-title.headline Hanar
+          small.ml-3
+            em by Mikolaj
+        v-card-text
+          v-card
+            race-info(:race="hanar.attributes")
+
+      // Alt Sentinel
+      section.page
+        h3(id="alt-sentinel").display-2 Alternate Sentinel Progression
+        progression-table(:item="altSentinel" v-bind:colors="colors['sentinel']")
+        class-attributes(:item="altSentinel" v-bind:primaryColor="colors['sentinel'].primary")
+
+      // Creating Armor
+      section.page
+        h3(id="creating-armor").display-2 Creating Armor
+        creating-armor
+
 </template>
 
 <script>
-  /*
-  import RuleHelper from '~/components/pdf/RuleHelper.vue'
-  import RaceTrait from '~/components/pdf/RaceTrait.vue'
+  // Data
+  import classes from '~/static/data/classes'
+  import races from '~/static/data/races'
+  import rules from '~/static/data/rules'
+  import backgrounds from '~/static/data/backgrounds'
+  import feats from '~/static/data/feats'
+  import weapons from '~/static/data/weapons'
+  import weaponMods from '~/static/data/weapon_mods'
+  import armorSets from '~/static/data/armor_sets'
+  import armorMods from '~/static/data/armor_mods'
+  import grenades from '~/static/data/grenades'
+  import programs from '~/static/data/programs'
+  import tools from '~/static/data/tools'
+  import spells from '~/static/data/spells'
+  import bestiary from '~/static/data/bestiary'
+  import conditions from '~/static/data/conditions'
+  import skills from '~/static/data/skills'
+  import pr from '~/static/data/community/p_r.md'
+  import weaponStrength from '~/static/data/community/weapon_strength.md'
+  import hanar from '~/static/data/community/hanar.md'
+  import elcor from '~/static/data/community/elcor.md'
+  import altSentinel from '~/static/data/alt_sentinel'
+  import vehicles from '~/static/data/vehicles'
+
+  // Components
+  import License from '~/components/License.vue'
+  import RuleCard from '~/components/RuleCard.vue'
+  import RaceInfo from '~/components/race/RaceInfo.vue'
   import ProgressionTable from '~/components/class/ProgressionTable.vue'
   import ClassAttributes from '~/components/class/ClassAttributes.vue'
-  import MeElement from '~/components/MeElement.vue'
+  import ClassFeature from '~/components/class/ClassFeature.vue'
   import WeaponInfo from '~/components/weapon/WeaponInfo.vue'
-  import HeavyWeaponCharges from '~/components/phb/HeavyWeaponCharges.vue'
-  import ThermalClips from '~/components/phb/ThermalClips.vue'
-  import Grenades from '~/components/phb/Grenades.vue'
-  import OmniGel from '~/components/phb/OmniGel.vue'
-  import ToolsKits from '~/components/phb/ToolsKits.vue'
-  import SpellCard from '~/components/cards/SpellCard.vue'
-  import SpellInfo from '~/components/pdf/SpellInfo.vue'
+  import SpellInfo from '~/components/spell/SpellInfo.vue'
   import StatBlock from '~/components/npc/StatBlock.vue'
-  import {EnhanceMarkdown} from '~/mixins/enhanceMarkdown.js'
-  import {ConfigureMonsters} from '~/mixins/monsters'
-  import {mapGetters} from 'vuex'
+  import CreatingArmor from '~/components/CreatingArmorInfo'
+  import VehicleInfo from '~/components/vehicle/VehicleInfo.vue'
 
-  // Straight Imports....will need to switch to this eventually
-  import ArmorMods from '~/data/armor_mods.json'
+  import {mapGetters} from 'vuex'
 
   export default {
     components: {
-      RuleHelper,
-      RaceTrait,
+      License,
+      RuleCard,
+      RaceInfo,
       ProgressionTable,
       ClassAttributes,
-      MeElement,
+      ClassFeature,
       WeaponInfo,
-      HeavyWeaponCharges,
-      ThermalClips,
-      Grenades,
-      MediGel,
-      OmniGel,
-      SpellCard,
       SpellInfo,
-      ToolsKits,
-      StatBlock
+      StatBlock,
+      CreatingArmor,
+      VehicleInfo
+    },
+    data () {
+      const newFeats = feats.filter(f => f.new)
+      const weaponTypes = ['Assault Rifle', 'Heavy Pistol', 'Melee', 'Shotgun', 'SMG', 'Sniper Rifle', 'Heavy Weapon']
+      return {
+        drawer: null,
+        classes,
+        races,
+        rules,
+        weaponTypes,
+        backgrounds,
+        newFeats,
+        weapons,
+        weaponMods: weaponMods.sort((a, b) => a.name === b.name ? 0 : a.name > b.name ? 1 : -1),
+        armorSets: armorSets.sort((a, b) => {
+          return a.type === b.type
+            ? a.name === b.name ? 0 : a.name > b.name ? 1 : -1
+            : a.type > b.type ? 1 : -1
+        }),
+        armorMods: armorMods.sort((a, b) => a.name === b.name ? 0 : a.name > b.name ? 1 : -1),
+        grenades: grenades.sort((a, b) => a.name === b.name ? 0 : a.name > b.name ? 1 : -1),
+        programs: programs.sort((a, b) => a.name === b.name ? 0 : a.name > b.name ? 1 : -1),
+        tools: tools.sort((a, b) => a.name === b.name ? 0 : a.name > b.name ? 1 : -1),
+        spells: spells.sort((a, b) => a.name === b.name ? 0 : a.name > b.name ? 1 : -1),
+        bestiary: bestiary.sort((a, b) => a.name === b.name ? 0 : a.name > b.name ? 1 : -1),
+        conditions: conditions.sort((a, b) => a.name === b.name ? 0 : a.name > b.name ? 1 : -1),
+        skills: skills.sort((a, b) => a.name === b.name ? 0 : a.name > b.name ? 1 : -1),
+        pr,
+        weaponStrength,
+        hanar,
+        elcor,
+        altSentinel,
+        transports: vehicles.filter(v => v.vehicle.type === 'transport'),
+        starships: vehicles.filter(v => v.vehicle.type === 'starship')
+      }
     },
     computed: {
-      ...mapGetters(['getData', 'getMutableData']),
       ...mapGetters('phb', {
         version: 'version',
         pages: 'pages'
       }),
       ...mapGetters('classPage', {
         colors: 'colors'
-      })
-    },
-    created () {
-      this.spells = this.getData('spells')
-      this.races = this.getData('races')
-      this.classes = this.getData('classes')
-      const featData = this.getData('feats')
-      this.feats = {
-        notAvailable: featData.filter(feat => feat.not_available !== null).map(feat => feat.name),
-        phbFeats: featData.filter(feat => feat.page_number !== null && feat.not_available === null),
-        newFeats: featData.filter(feat => feat.page_number === null && feat.not_available === null)
-      }
-      this.weaponMods = this.getData('weaponMods').sort((a, b) => a.name === b.name ? 0 : a.name > b.name ? 1 : -1)
-      this.armorSets = this.getData('armorSets').sort((a, b) => {
-        return a.type === b.type
-          ? a.name === b.name ? 0 : a.name > b.name ? 1 : -1
-          : a.type > b.type ? 1 : -1
-      })
-      this.grenades = this.getData('grenades').sort((a, b) => a.name === b.name ? 0 : a.name > b.name ? 1 : -1)
-      this.bestiary = this.getMonsters().sort((a, b) => a.name === b.name ? 0 : a.name > b.name ? 1 : -1)
-    },
-    data () {
-      const weaponTypes = ['Assault Rifle', 'Heavy Pistol', 'Melee', 'Shotgun', 'SMG', 'Sniper Rifle', 'Heavy Weapon']
-      return {
-        drawer: null,
-        tocA: [
-          { header: 'Preface' },
-          { title: 'Introduction', anchor: '#phb-intro' },
-          { divider: true },
-          { header: 'Rules' },
-          { title: 'General', lookup: 'phb-rules-general' },
-          { title: 'Combat', lookup: 'phb-rules-combat' },
-          { title: 'Spellcasting', lookup: 'phb-rules-spellcasting' },
-          { title: 'Weapons', lookup: 'phb-rules-weapons' },
-          { title: 'Armor', lookup: 'phb-rules-armor' },
-          { title: 'Expenses', lookup: 'phb-rules-expenses' },
-          { title: 'Multiclassing', lookup: 'phb-rules-multiclassing' }
-        ],
-        tocB: [
-          { divider: true },
-          { header: 'Player Options' },
-          { title: 'Races', lookup: 'races' },
-          { title: 'Classes', lookup: 'classes' },
-          { title: 'Backgrounds', anchor: '#backgrounds' },
-          { title: 'Feats', anchor: '#feats' },
-          { divider: true },
-          { header: 'Appendices' },
-          { title: 'Weapons', lookup: 'weapons' },
-          { title: 'Armor', lookup: 'armor' },
-          { title: 'Other Items', lookup: 'other-items' },
-          { title: 'Spells', anchor: '#spells' },
-          { title: 'Bestiary', anchor: '#bestiary' }
-        ],
-        weaponTypes,
-        armorMods: ArmorMods.data.sort((a, b) => {
-          return a.type === b.type
-            ? a.name === b.name ? 0 : a.name > b.name ? 1 : -1
-            : a.type > b.type ? 1 : -1
+      }),
+      toc () {
+        const rulePages = Object.values(this.pages).filter(p => p.rules).map(p => {
+          return {title: p.name, lookup: p.rules}
         })
+        return [
+          {header: 'Preface'},
+          {title: 'License', anchor: '#phb-license'},
+          {title: 'Introduction', anchor: '#phb-intro'},
+          {divider: true},
+          {header: 'Rules'},
+        ].concat(rulePages)
+        .concat([
+          {divider: true},
+          {header: 'Player Options'},
+          {title: 'Races', lookup: 'races'},
+          {title: 'Classes', lookup: 'classes'},
+          {title: 'Backgrounds', anchor: '#backgrounds'},
+          {title: 'Feats', anchor: '#feats'},
+          {divider: true},
+          {header: 'Equipment'},
+          {title: 'Weapons', lookup: 'weapons'},
+          {title: 'Armor', lookup: 'armor'},
+          {title: 'Grenades & Mines', anchor: '#grenades-mines'},
+          {title: 'Omni-tool Programs', anchor: '#programs'},
+          {title: 'Tools & Kits', anchor: '#tools-kits'},
+          {divider: true},
+          {title: 'Spells', anchor: '#spells'},
+          {title: 'Bestiary', anchor: '#bestiary'},
+          {title: 'Vehicles', anchor: '#vehicles'},
+          {title: 'Appendix', lookup: 'appendix'}
+        ])
+      },
+      tocThirds () {
+        const firstThird = this.toc.slice(0,10)
+        const secondThird = this.toc.slice(10, 17)
+        const thridThird = this.toc.slice(17, this.toc.length)
+        return [firstThird, secondThird, thridThird]
       }
     },
     head () {
@@ -401,9 +479,8 @@
       }
     },
     layout: 'print',
-    mixins: [EnhanceMarkdown, ConfigureMonsters],
     methods: {
-      tocLookup (id) {
+      tocLookup(id) {
         let items = []
         switch (id) {
           case 'classes':
@@ -418,44 +495,32 @@
             break
           case 'weapons':
             items = this.weaponTypes.map(type => {
-              return { title: type, anchor: `#${type.replace(' ', '_').toLowerCase()}` }
+              return {title: type, anchor: `#${type.replace(' ', '_').toLowerCase()}`}
             })
-            items.unshift({ title: 'Thermal Clips', anchor: '#thermal_clips' })
-            items.push({ title: 'Mods', anchor: '#weapon_mods' })
+            items.push({title: 'Mods', anchor: '#weapon_mods'})
             break
           case 'armor':
-            items.push({ title: 'Mods', anchor: '#armor_mods' })
-            items.push({ title: 'Sets', anchor: '#armor_sets' })
+            items = [
+              {title: 'Sets', anchor: '#armor_sets'},
+              {title: 'Mods', anchor: '#armor_mods'}
+            ]
             break
-          case 'other-items':
-            items.push({ title: 'Grenades & Mines', anchor: '#grenades-mines' })
-            items.push({ title: 'Medi-gel', anchor: '#medi-gel' })
-            items.push({ title: 'Omni-gel', anchor: '#omni-gel' })
-            items.push({ title: 'Tools & Kits', anchor: '#tools-kits' })
+          case 'appendix':
+            items = [
+              {title: 'Conditions', anchor: '#conditions'},
+              {title: 'Skills', anchor: '#skills'},
+              {title: 'Found Codices', anchor: '#found-codices'},
+              {title: 'Alternate Sentinel', anchor: '#alt-sentinel'},
+              {title: 'Creating Armor', anchor: '#creating-armor'},
+            ]
             break
           default:
-            for (const rule of this.pages[id].rules) {
-              const title = this.$options.filters.capitalize(rule.replace(/-/g, ' '))
-              items.push({title, anchor: `#${rule}`})
+            const rules = this.pageRules(id)
+            for (const rule of rules) {
+              items.push({title: rule.title, anchor: `#${rule.hash}`, new: rule.new, change: rule.change })
             }
         }
         return items
-      },
-      racialTraits (id) {
-        const availableFeats = this.getMutableData('feats').filter((feat) => feat[id] !== null).map((feat) => feat.name)
-        return this.getMutableData('racialTraits').filter((trait) => trait[id] !== null).map((trait) => {
-          for (let line of trait.description) {
-            if (/{feats}/.test(line.data)) {
-              line.data = line.data.replace(/{feats}/, availableFeats.join(', '))
-            }
-          }
-          return trait
-        })
-      },
-      abiLevels (levels) {
-        levels = levels.map(l => this.$options.filters.ordinal(l))
-        const last = levels.pop()
-        return levels.join(', ') + ', and ' + last
       },
       classFeatures (c) {
         const features = [{id: 'ability_score_improvement', levels: [], level: false}]
@@ -488,7 +553,6 @@
             } else {
               features.push({
                 id: fName,
-                name: this.getItem('classFeatures', feature).name,
                 level: level,
                 addl: []
               })
@@ -499,18 +563,22 @@
           return a.level.level === b.level.level ? 0 : a.level.level > b.level.level ? 1 : -1
         })
       },
+      abiLevels (levels) {
+        levels = levels.map(l => this.$options.filters.ordinal(l))
+        const last = levels.pop()
+        return levels.join(', ') + ', and ' + last
+      },
       subClassFeatureLevels (c, index) {
         return c.progression.filter(level => level.features.includes('subclass'))[index]
       },
-      getItem (type, id) {
-        return this.getData(type).find(item => item.id === id)
+      pageRules(section) {
+        return this.rules.filter(r => r.section === section).filter(r => r.hash !== 'vehicle-list')
       },
-      markdownFile (dir, id, options = {}) {
-        return this.enhanceMarkdown(require(`~/data/${dir}/${id}.md`), options)
+      goToRule (rule) {
+        this.$vuetify.goTo(rule, { offset: -58 })
       }
     }
   }
-  */
 </script>
 
 <style>
@@ -542,10 +610,6 @@
     font-weight: 600;
   }
 
-  .anchor-pad {
-    padding-top: 55px;
-  }
-
   .info-card {
     padding: 4px;
     border: 3px solid #eee
@@ -571,11 +635,6 @@
     border-bottom: 1px solid #ddd;
   }
 
-  #spvNavDrawer {
-    height: calc(100vh - 48px);
-    top: 48px;
-    z-index: 6;
-  }
   #spvToolbar {
     z-index: 6;
   }
@@ -595,6 +654,10 @@
   }
 
   @media print {
+    .v-image {
+      display: none;
+    }
+
     main {
       margin-left: 0;
     }
@@ -620,7 +683,7 @@
       display: none;
     }
 
-    .anchor-pad {
+     {
       padding-top: 0;
     }
 
@@ -646,7 +709,7 @@
       border-bottom: none;
       page-break-after: always;
     }
-    .class-page {
+    .pdf-page {
       page-break-after: always;
     }
 

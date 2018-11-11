@@ -4,7 +4,7 @@ new: true
 title: Using these Rules
 ---
 
-This manual uses the <a href="href="http://dnd.wizards.com/articles/features/basicrules">Dungeons & Dragons 5th Edition Basid Rules</a>
+This manual uses the <a href="http://dnd.wizards.com/articles/features/basicrules" target="_blank">Dungeons & Dragons 5th Edition Basid Rules</a>
 as its core rule set. If you have never played D&D 5e, we recommend that you familiarize yourself with the basic rules
 first. Most of those rules are replicated and referenced in the rules section of this Player's Manual.
 
