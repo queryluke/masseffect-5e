@@ -105,7 +105,7 @@
     // Races
     section.page
       h3.display-2 Races
-      div(v-for="race in races" v-bind:key="race.id" v-bind:id="race.id").anchor-pad.pdf-page
+      div(v-for="race in races" v-bind:key="race.id" v-bind:id="race.id").pdf-page
         h4.display-1.pt-3 {{ race.name }}
         v-layout(row wrap).race-row
           v-flex(xs12 md8)
@@ -117,7 +117,7 @@
     // Classes
     section.page
       h3.display-2 Classes
-      div(v-for="item in classes" v-bind:key="item.id" v-bind:id="item.id").anchor-pad.pdf-page
+      div(v-for="item in classes" v-bind:key="item.id" v-bind:id="item.id").pdf-page
         h4.display-1.pt-3
           v-avatar(size="48" tile)
             img(:src="`/images/classes/${item.id}.svg`")
@@ -145,14 +145,14 @@
 
     // Backgrounds
     section.page
-      h3(id="backgrounds").display-2.anchor-pad Backgrounds
+      h3(id="backgrounds").display-2 Backgrounds
       div(v-for="item in backgrounds" v-bind:key="item.id").my-5
         h4.display-1 {{ item.name }}
         markdown-file(:id="item.id" itemType="backgrounds")
 
     // Feats
     section.page
-      h3(id="feats").display-2.anchor-pad Feats
+      h3(id="feats").display-2 Feats
       h4.display-1.mt-3 Removed
       p.
         The following feats from the 5th Edition Player's Manual are not available. The have been removed due to
@@ -169,18 +169,14 @@
         markdown-file(:id="feat.id" itemType="feats")
 
     // Weapons
-    //section.page
+    section.page
       h3.display-2 Weapons
-      div.mt-3
-        thermal-clips
       div(v-for="type in weaponTypes" v-bind:key="type")
-        h4(:id="`${type.replace(' ', '_').toLowerCase()}`").display-1.anchor-pad {{ type }}s
-        div(v-if="type === 'Heavy Weapon'").mt-3
-          heavy-weapon-charges
+        h4(:id="`${type.replace(' ', '_').toLowerCase()}`").display-1 {{ type }}s
         v-layout(row wrap)
-          v-flex(v-for="weapon in getData('weapons').filter(weapon => weapon.type === type)" v-bind:key="weapon.id" xs12 md6 d-flex).pa-1
+          v-flex(v-for="weapon in weapons.filter(weapon => weapon.type === type)" v-bind:key="weapon.id" xs12 md6 d-flex).pa-1
             weapon-info(:weapon="weapon").info-card
-      h4(id="weapon_mods").display-1.anchor-pad Weapon Mods
+      h4(id="weapon_mods").display-1 Weapon Mods
       table.table
         thead
           tr #[th Name] #[th Cost] #[th Placement] #[th Weapon(s)] #[th Description]
@@ -193,19 +189,9 @@
             td {{ mod.feature }}
 
     // Armor
-    //section.page
+    section.page
       h3.display-2 Armor
-      h4(id="armor_mods").display-1.anchor-pad Armor Mods
-      table.table
-        thead
-          tr #[th Name] #[th Cost] #[th Type] #[th Description]
-        tbody
-          tr(v-for="mod in armorMods" v-bind:key="mod.id")
-            td {{ mod.name }}
-            td {{ mod.cost | groupDigits(',') }}
-            td {{ mod.type }}
-            td {{ mod.feature }}
-      h4(id="armor_sets").display-1.anchor-pad Armor Sets
+      h4(id="armor_sets").display-1 Armor Sets
       table.table
         thead
           tr #[th Name] #[th Cost] #[th Type] #[th Armor] #[th Description]
@@ -218,47 +204,121 @@
             td
               ul(v-if="mod.feature")
                 li(v-for="(f, index) in mod.feature.split('--').map(f => f.trim())" v-bind:key="index") {{ f }}
+      h4(id="armor_mods").display-1 Armor Mods
+      table.table
+        thead
+          tr #[th Name] #[th Cost] #[th Type] #[th Description]
+        tbody
+          tr(v-for="mod in armorMods" v-bind:key="mod.id")
+            td {{ mod.name }}
+            td {{ mod.cost | groupDigits(',') }}
+            td {{ mod.type }}
+            td {{ mod.feature }}
 
-    //Other Items
-    //section.page
-      h3.display-2 Other Items
-      div(id="grenades-mines").anchor-pad
-        grenades
-        table.table
-          thead
-            tr #[th Name] #[th Description]
-          tbody
-            tr(v-for="g in grenades" v-bind:key="g.id")
-              td {{ g.name }}
-              td.class-feature
-                me-element(:text="g.desc")
+    // grenades
+    section.page
+      h3(id="grenades-mines").display-2 Grenades
+      v-layout(row wrap)
+        v-flex(v-for="g in grenades" v-bind:key="g.id" xs12 md6 d-flex).pa-1
+          v-card
+            v-card-text
+              p.title.mb-0 {{ g.name }}
+              div.hr
+              markdown-file(:id="g.id" itemType="grenades")
 
-      div(id="medi-gel").anchor-pad
-        medi-gel
+    // programs
+    section.page
+      h3(id="programs").display-2 Omni-tool Programs
+      v-layout(row wrap)
+        v-flex(v-for="p in programs" v-bind:key="p.id" xs12 md6 d-flex).pa-1
+          v-card
+            v-card-text
+              p.title.mb-0 {{ p.name }}
+              p(v-if="p.installation").body-1 #[em requires installation]
+              div.hr
+              markdown-file(:id="p.id" itemType="programs")
 
-      div(id="omni-gel").anchor-pad
-        omni-gel
-
-      div(id="tools-kits").anchor-pad
-        tools-kits
-        div(v-for="item in getData('kits')" v-bind:key="item.id").class-feature
-          p.title.mb-0 {{ item.name }}
-          p.body-1 Cost: {{ item.cost }}
-          div(v-html="markdownFile('kits', item.id)")
+    // programs
+    section.page
+      h3(id="tools-kits").display-2 Tools & Kits
+      v-layout(row wrap)
+        v-flex(v-for="item in tools" v-bind:key="item.id" xs12 md6 d-flex).pa-1
+          v-card
+            v-card-text
+              p.title.mb-0 {{ item.name }}
+              p.body-1 Cost: {{ item.cost }}
+              div.hr
+              markdown-file(:id="item.id" itemType="tools")
 
     // Spells
-    //section.page
+    section.page
       h3(id="spells").display-2 Spells
       v-layout(row wrap)
-        v-flex(v-for="spell in getData('spells')" v-bind:key="spell.id" xs12 md6 d-flex).pa-3
+        v-flex(v-for="spell in spells" v-bind:key="spell.id" xs12 md6 d-flex).pa-3
           spell-info(v-bind:spell="spell" v-bind:key="spell.id").info-card
 
     // Bestiary
-    //section.page
+    section.page
       h3(id="bestiary").display-2 Bestiary
       v-layout(row wrap)
         v-flex(v-for="npc in bestiary" v-bind:key="npc.id" xs12 md6 d-flex).pa-3
           stat-block(:stats="npc").info-card
+
+    // Conditions
+    section.page
+      h3(id="conditions").display-2 Conditions
+      div(v-for="condition in conditions" v-bind:key="condition.id").my-3
+        p.title.mb-0 {{ condition.name }}
+        markdown-file(:id="condition.id" itemType="conditions")
+
+    // Skills
+    section.page
+      h3(id="skills").display-2 Skills
+      div(v-for="skill in skills" v-bind:key="skill.id").my-3
+        p.title.mb-0 {{ skill.name }}
+          span.body-1.pl-2 {{ skill.link }}
+        p {{ skill.description }}
+
+    // codices
+    section.page
+      h3(id="found-codices").display-2 Found Codices
+      v-card.elevation-0.transparent
+        v-card-title.headline {{ pr.attributes.name }}
+          small.ml-3
+            em by tioeduardo27
+        v-card-text.markdown-content
+          markdown-content(:component="pr.vue")
+      v-card.elevation-0.transparent.mt-5
+        v-card-title.headline {{ weaponStrength.attributes.name }}
+          small.ml-3
+            em by SleightxHope
+        v-card-text.markdown-content
+          markdown-content(:component="weaponStrength.vue")
+      v-card.elevation-0.transparent.mt-5
+        v-card-title.headline Elcor
+          small.ml-3
+            em by Ben McPherson
+        v-card-text
+          v-card
+            race-info(:race="elcor.attributes")
+      v-card.elevation-0.transparent.mt-5
+        v-card-title.headline Hanar
+          small.ml-3
+            em by Mikolaj
+        v-card-text
+          v-card
+            race-info(:race="hanar.attributes")
+
+      // Alt Sentinel
+      section.page
+        h3(id="alt-sentinel").display-2 Alternate Sentinel Progression
+        progression-table(:item="altSentinel" v-bind:colors="colors['sentinel']")
+        class-attributes(:item="altSentinel" v-bind:primaryColor="colors['sentinel'].primary")
+
+      // Creating Armor
+      section.page
+        h3(id="creating-armor").display-2 Creating Armor
+        creating-armor
 
 </template>
 
@@ -269,6 +329,22 @@
   import rules from '~/static/data/rules'
   import backgrounds from '~/static/data/backgrounds'
   import feats from '~/static/data/feats'
+  import weapons from '~/static/data/weapons'
+  import weaponMods from '~/static/data/weapon_mods'
+  import armorSets from '~/static/data/armor_sets'
+  import armorMods from '~/static/data/armor_mods'
+  import grenades from '~/static/data/grenades'
+  import programs from '~/static/data/programs'
+  import tools from '~/static/data/tools'
+  import spells from '~/static/data/spells'
+  import bestiary from '~/static/data/bestiary'
+  import conditions from '~/static/data/conditions'
+  import skills from '~/static/data/skills'
+  import pr from '~/static/data/community/p_r.md'
+  import weaponStrength from '~/static/data/community/weapon_strength.md'
+  import hanar from '~/static/data/community/hanar.md'
+  import elcor from '~/static/data/community/elcor.md'
+  import altSentinel from '~/static/data/alt_sentinel'
 
   // Components
   import License from '~/components/License.vue'
@@ -277,6 +353,10 @@
   import ProgressionTable from '~/components/class/ProgressionTable.vue'
   import ClassAttributes from '~/components/class/ClassAttributes.vue'
   import ClassFeature from '~/components/class/ClassFeature.vue'
+  import WeaponInfo from '~/components/weapon/WeaponInfo.vue'
+  import SpellInfo from '~/components/spell/SpellInfo.vue'
+  import StatBlock from '~/components/npc/StatBlock.vue'
+  import CreatingArmor from '~/components/CreatingArmorInfo'
 
   import {mapGetters} from 'vuex'
 
@@ -287,7 +367,11 @@
       RaceInfo,
       ProgressionTable,
       ClassAttributes,
-      ClassFeature
+      ClassFeature,
+      WeaponInfo,
+      SpellInfo,
+      StatBlock,
+      CreatingArmor
     },
     data () {
       const newFeats = feats.filter(f => f.new)
@@ -299,7 +383,27 @@
         rules,
         weaponTypes,
         backgrounds,
-        newFeats
+        newFeats,
+        weapons,
+        weaponMods: weaponMods.sort((a, b) => a.name === b.name ? 0 : a.name > b.name ? 1 : -1),
+        armorSets: armorSets.sort((a, b) => {
+          return a.type === b.type
+            ? a.name === b.name ? 0 : a.name > b.name ? 1 : -1
+            : a.type > b.type ? 1 : -1
+        }),
+        armorMods: armorMods.sort((a, b) => a.name === b.name ? 0 : a.name > b.name ? 1 : -1),
+        grenades: grenades.sort((a, b) => a.name === b.name ? 0 : a.name > b.name ? 1 : -1),
+        programs: programs.sort((a, b) => a.name === b.name ? 0 : a.name > b.name ? 1 : -1),
+        tools: tools.sort((a, b) => a.name === b.name ? 0 : a.name > b.name ? 1 : -1),
+        spells: spells.sort((a, b) => a.name === b.name ? 0 : a.name > b.name ? 1 : -1),
+        bestiary: bestiary.sort((a, b) => a.name === b.name ? 0 : a.name > b.name ? 1 : -1),
+        conditions: conditions.sort((a, b) => a.name === b.name ? 0 : a.name > b.name ? 1 : -1),
+        skills: skills.sort((a, b) => a.name === b.name ? 0 : a.name > b.name ? 1 : -1),
+        pr,
+        weaponStrength,
+        hanar,
+        elcor,
+        altSentinel
       }
     },
     computed: {
@@ -332,7 +436,9 @@
           {header: 'Equipment'},
           {title: 'Weapons', lookup: 'weapons'},
           {title: 'Armor', lookup: 'armor'},
-          {title: 'Other Items', lookup: 'other-items'},
+          {title: 'Grenades & Mines', anchor: '#grenades-mines'},
+          {title: 'Omni-tool Programs', anchor: '#programs'},
+          {title: 'Tools & Kits', anchor: '#tools-kits'},
           {divider: true},
           {title: 'Spells', anchor: '#spells'},
           {title: 'Bestiary', anchor: '#bestiary'},
@@ -377,15 +483,8 @@
             break
           case 'armor':
             items = [
-              {title: 'Mods', anchor: '#armor_mods'},
-              {title: 'Sets', anchor: '#armor_sets'}
-            ]
-            break
-          case 'other-items':
-            items = [
-              {title: 'Grenades & Mines', anchor: '#grenades-mines'},
-              {title: 'Omni-tool Programs', anchor: '#programs'},
-              {title: 'Tools & Kits', anchor: '#tools-kits'}
+              {title: 'Sets', anchor: '#armor_sets'},
+              {title: 'Mods', anchor: '#armor_mods'}
             ]
             break
           case 'appendix':
@@ -493,10 +592,6 @@
     font-weight: 600;
   }
 
-  .anchor-pad {
-    padding-top: 55px;
-  }
-
   .info-card {
     padding: 4px;
     border: 3px solid #eee
@@ -570,7 +665,7 @@
       display: none;
     }
 
-    .anchor-pad {
+     {
       padding-top: 0;
     }
 
