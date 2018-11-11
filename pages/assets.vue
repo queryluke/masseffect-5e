@@ -55,18 +55,14 @@
     v-container(grid-list-xl)
       v-layout(row wrap justify-center)
         v-flex(xs12 sm6 md4)
-          v-alert(:value="true" type="warning").black--text
-            p.
-              A new Player's Manual for v0.9.0 will be available this weekend: November 10th, 2018
-    //v-container(grid-list-xl)
-      v-layout(row wrap justify-center)
-        v-flex(xs12 sm6 md4)
           v-alert(:value="true" type="warning").black--text.
             The PDF is auto-generated from compoents on the website, therefore is very barebones and aesthetically limited. We
             will work on an official PDF version of the rules after our v1.0.0 release.
       v-layout(row wrap justify-center)
         v-flex(xs12 sm6 md4)
-          v-btn(block href="https://drive.google.com/open?id=1eDfgpG3JplKUjrIdySJKmyC4qxTi2MUT" target="_blank").primary Player's Manual PDF
+          v-btn(block href="https://drive.google.com/open?id=1DutYdSFORN7-jLi2r9-bpCK763je-k9h" target="_blank").primary v0.8.4
+        v-flex(xs12 sm6 md4)
+          v-btn(block href="https://drive.google.com/open?id=1H6ywGQ80GPqoIYh0cvHnqs5UdEV5QZib" target="_blank").primary v0.9.0
 
     // Spell Cards
     h2.display-3.font-weight-thin.text-xs-center.mt-5 Spell Cards

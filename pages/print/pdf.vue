@@ -264,6 +264,18 @@
         v-flex(v-for="npc in bestiary" v-bind:key="npc.id" xs12 md6 d-flex).pa-3
           stat-block(:stats="npc").info-card
 
+    // Spells
+    section.page
+      h3(id="vehicles").display-2 Vehicles
+      h4.display-1 Transports
+      v-layout(row wrap)
+        v-flex(v-for="item in transports" v-bind:key="item.id" xs12 md6 d-flex).pa-3
+          vehicle-info(:item="item").info-card
+      h4.display-1 Starships
+      v-layout(row wrap)
+        v-flex(v-for="item in starships" v-bind:key="item.id" xs12 md6 d-flex).pa-3
+          vehicle-info(:item="item").info-card
+
     // Conditions
     section.page
       h3(id="conditions").display-2 Conditions
@@ -345,6 +357,7 @@
   import hanar from '~/static/data/community/hanar.md'
   import elcor from '~/static/data/community/elcor.md'
   import altSentinel from '~/static/data/alt_sentinel'
+  import vehicles from '~/static/data/vehicles'
 
   // Components
   import License from '~/components/License.vue'
@@ -357,6 +370,7 @@
   import SpellInfo from '~/components/spell/SpellInfo.vue'
   import StatBlock from '~/components/npc/StatBlock.vue'
   import CreatingArmor from '~/components/CreatingArmorInfo'
+  import VehicleInfo from '~/components/vehicle/VehicleInfo.vue'
 
   import {mapGetters} from 'vuex'
 
@@ -371,7 +385,8 @@
       WeaponInfo,
       SpellInfo,
       StatBlock,
-      CreatingArmor
+      CreatingArmor,
+      VehicleInfo
     },
     data () {
       const newFeats = feats.filter(f => f.new)
@@ -403,7 +418,9 @@
         weaponStrength,
         hanar,
         elcor,
-        altSentinel
+        altSentinel,
+        transports: vehicles.filter(v => v.vehicle.type === 'transport'),
+        starships: vehicles.filter(v => v.vehicle.type === 'starship')
       }
     },
     computed: {
@@ -442,6 +459,7 @@
           {divider: true},
           {title: 'Spells', anchor: '#spells'},
           {title: 'Bestiary', anchor: '#bestiary'},
+          {title: 'Vehicles', anchor: '#vehicles'},
           {title: 'Appendix', lookup: 'appendix'}
         ])
       },
@@ -554,7 +572,7 @@
         return c.progression.filter(level => level.features.includes('subclass'))[index]
       },
       pageRules(section) {
-        return this.rules.filter(r => r.section === section)
+        return this.rules.filter(r => r.section === section).filter(r => r.hash !== 'vehicle-list')
       },
       goToRule (rule) {
         this.$vuetify.goTo(rule, { offset: -58 })
