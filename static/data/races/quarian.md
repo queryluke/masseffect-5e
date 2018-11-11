@@ -33,7 +33,6 @@ startingFeats:
     - heavily-armored
     - hair-trigger
     - keen-mind
-    - linguist
     - medium-armor-master
     - mobile
     - moderately-armored

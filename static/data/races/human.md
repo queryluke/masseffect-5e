@@ -40,7 +40,6 @@ startingFeats:
     - grenadier
     - heavily-armored
     - hair-trigger
-    - linguist
     - lucky
     - medium-armor-master
     - melee-specialist

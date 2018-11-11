@@ -35,7 +35,6 @@ startingFeats:
     - hair-trigger
     - heavy-armor-master
     - keen-mind
-    - linguist
     - melee-specialist
     - mobile
     - moderately-armored

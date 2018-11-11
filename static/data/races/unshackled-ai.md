@@ -41,7 +41,6 @@ startingFeats:
     - grenadier
     - heavily-armored
     - hair-trigger
-    - linguist
     - lucky
     - melee-specialist
     - mobile

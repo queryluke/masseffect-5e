@@ -34,7 +34,6 @@ startingFeats:
     - heavily-armored
     - hair-trigger
     - keen-mind
-    - linguist
     - mobile
     - moderately-armored
     - observant
