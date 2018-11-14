@@ -4,7 +4,7 @@ title: 'Ability Scores and Modifiers'
 ---
 
 Each of a creature's abilities has a score, a number that defines the magnitude of that ability. An ability score is not
-just a measure of innate capabilities, but also encompasses a creature's training and competence in activities related
+just a measure of innate capabilities but also encompasses a creature's training and competence in activities related
 to that ability.
 
 A score of 10 or 11 is the normal human average, but operatives and many monsters are a cut above average in most
