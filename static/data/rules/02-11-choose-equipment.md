@@ -50,7 +50,7 @@ _recoil_ property, such as the M-300 Claymore, can use your Strength modifier in
 <v-alert type="info" :value="true">
 <strong>BUILDING KALEEM, STEP 5</strong><br>
 Sam writes down the starting equipment from the engineer class and the scrapper background. Her starting equipment
-includes Stock Medium Armor which (after addting her Dexterity modifier) gives Kaleem an Armor Class of 16.
+includes Stock Medium Armor which (after adding her Dexterity modifier) gives Kaleem an Armor Class of 16.
 
 For Kaleem’s weapons, Sam chooses an M-8 Avenger (because she took the Assault Rifle proficiency) and an Omni-torch.
 Her M-8 Avenger is a ranged weapon, so Kaleem uses her Dexterity modifier for her attacks and damage. Her attack bonus is
