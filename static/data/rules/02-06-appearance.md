@@ -13,7 +13,7 @@ character does or does not conform to the broader culture’s expectations of se
 
 You don’t need to be confined to binary notions of sex and gender. For example, asari only have a single "gender", which
 is generally seen by other races as female (they also utilize female pronouns). But an asari considers herself as androgynous
-or hermaphroditic. You could also play a male character who presents himself as a femail, a woman who feels trapped in
+or hermaphroditic. You could also play a male character who presents himself as a female, a woman who feels trapped in
 a male body, or a tough looking female krogan who hates being mistaken for a male. Likewise, your character’s
 sexual orientation is for you to decide.
 
@@ -28,8 +28,8 @@ you might want to give your character an unusual or memorable physical character
 
 <v-alert type="info" :value="true">
 <strong>BUILDING KALEEM, STEP 4.A</strong><br>
-Sam fills in some of Kaleems’s basic details: her name, her sex (female), her height and weight, and the fact that she
-is missing a cranial ridge (making her unattractive being by salarain standards).
+Sam fills in some of Kaleem’s basic details: her name, her sex (female), her height and weight, and the fact that she
+is missing a cranial ridge (making her unattractive being by salarian standards).
 </v-alert>
 
 <source-reference pages="8-9, 33" source="basic"></source-reference>
