@@ -5,7 +5,7 @@ title: '1. Choose a Race'
 ---
 
 Every character belongs to a race, one of the many intelligent humanoid species in the Mass Effect Universe. The most
-common player character races are asari, humans, krogan, salarians, and turains. Some races also have subraces, such as
+common player character races are asari, humans, krogan, salarians, and turians. Some races also have subraces, such as
 pure-blood asari or tank-bred krogan. The [Races](/phb/races) section provides more information about these races.
 
 The race you choose contributes to your character’s identity in an important way, by establishing a general appearance
