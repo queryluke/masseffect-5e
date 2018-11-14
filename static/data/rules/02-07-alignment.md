@@ -42,7 +42,7 @@ Some Krogan, batarians, and some Vorcha are chaotic evil.
 <v-alert type="info" :value="true">
 <strong>BUILDING KALEEM, STEP 4.B</strong><br>
 Sam picks a lawful alignment for Kaleem, as she buys into the tradition of the Blue Suns and respects their codes. Kaleem's
-lack of empathy make her neutral in her disposition for moral codes.
+lack of empathy makes her neutral in her disposition for moral codes.
 </v-alert>
 
 <source-reference pages="8-9, 33-34" source="basic"></source-reference>
