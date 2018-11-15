@@ -4,7 +4,7 @@ title: 'Heavy Weapon Charges'
 new: true
 ---
 
-Heavy weapons require __charges__ to be used. A charge is a generic term that can refer to a missle, energy source, or
+Heavy weapons require __charges__ to be used. A charge is a generic term that can refer to a missile, energy source, or
 raw material.
 
 ### Resupplying: ~5,000 credits
