@@ -4,7 +4,7 @@ title: 'Selling Items'
 ---
 
 Opportunities abound to find tech, gadgets, equipment, weapons, armor, and more throughout the galaxy. Normally, you can
-sell your bounty when you return to a civilized planet or space port, provided that you can find buyers, entrepreneurs, and
+sell your bounty when you return to a civilized planet or spaceport, provided that you can find buyers, entrepreneurs, and
 fencers interested in your loot.
 
 ### Arms, Armor, and Other Equipment
