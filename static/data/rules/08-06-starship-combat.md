@@ -9,12 +9,12 @@ add any bonus to their initiative rolls. You may use the vehicles’ speed to br
 
 The primary difference in starship combat is that operatives on board a starship have an additional list of actions
 they can make on their turn. Most actions require the player to be stationed at the necessary __system__. When an
-encounter begins, operatives may choose to “Report to battlestations” and place themselves at a specific system.
+encounter begins, operatives may choose to “Report to battle stations” and place themselves at a specific system.
 
 ### Starship Actions
 
 #### Attack - Weapon System
-Make an ranged attack roll. Do not add your proficiency bonus unless you are proficient with Starship Systems (Weapons).
+Make a ranged attack roll. Do not add your proficiency bonus unless you are proficient with Starship Systems (Weapons).
 
 #### Targeted Attack - Weapon System
 Name a system on a target vehicle and make a ranged attack roll. The target’s AC has a +5 bonus against this attack. On
@@ -39,15 +39,15 @@ Make a DC 15 Intelligence (Engineering) check. On a success, you patch some dama
 Make a DC 20 Intelligence (Engineering) check. On a success, you manage to repair major damage, restoring 150 hit points.
 
 #### System Repair - Disabled System
-To take this action, you must be located at a system that is __disabled__. Make an DC 20 Intelligence (Engineering) check.
-On a success, the system is is repaired and can be used again.
+To take this action, you must be located at a system that is __disabled__. Make a DC 20 Intelligence (Engineering) check.
+On a success, the system is repaired and can be used again.
 
 #### Restore - Drive
 Make a DC 15 Intelligence (Engineering) check. On a success, you’re able to reroute power to your shields, restoring 100
 shield points.
 
 #### Harden - EWS
-Make an DC 10 Intelligence (Electronics) check. On a success, you harden the security of your EWS until the start of
+Make a DC 10 Intelligence (Electronics) check. On a success, you harden the security of your EWS until the start of
 your next turn. While hardened, any attempt to sabotage your ship will have disadvantage.
 
 #### Sabotage - EWS
@@ -85,7 +85,7 @@ creature. The creature gains advantage the next time it takes an action with the
 
 #### Defer to VI - Anywhere
 Use your Action to defer to the ship’s onboard VI. You may have it take any of the Starship System actions. When you do
-so, roll a d20 to make the check or attack. You cannot not add any modifiers or bonuses to the roll.
+so, roll a d20 to make the check or attack. You cannot add any modifiers or bonuses to the roll.
 
 
 
