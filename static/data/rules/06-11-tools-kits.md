@@ -7,7 +7,7 @@ change: true
 A tool helps you to do something you couldn't otherwise do, such as craft or repair an item, forge a document, or hack
 a security system. Your race, class, background, or feats give you proficiency with certain tools. Proficiency with a
 tool allows you to add your proficiency bonus to any ability check you make using that tool. Tool use is not tied to
-a single ability, since proficiency with a tool represents broader knowledge of its use.
+a single ability since proficiency with a tool represents broader knowledge of its use.
 
 ### Tool Proficiency <v-chip color="orange accent-2" text-color="black" class="v-chip--x-small">change</v-chip>
 
@@ -24,12 +24,12 @@ which means the operative either gains advantage on the skill check or the can g
 
 For example, a character that is proficient with Hacking Tools gains advantage when combining their tool proficiency
 with an Intelligence (Investigation) check when utilizing networked systems (like the exonet) or they might gain
-and added benefit, such as finding some additional information or key codes.
+an added benefit, such as finding some additional information or key codes.
 
 __Unique Skill__. Operatives proficient in a tool have a unique activity they can perform during a sort or long rest.
 For example, a character proficient with Armorsmith's Workbench can craft armor or attempt to remove mods. 
 
-__Sampe Activities__. Each tool also has sample activity DCs. These are examples and not an exhaustive list. GMs can adjust
+__Sample Activities__. Each tool also has sample activity DCs. These are examples and not an exhaustive list. GMs can adjust
 DCs or create new activities as they see fit. These activities require a skill check, but the skill used it up to the GM.
 For example, an operative proficient with hacking tools can disable a security system. This would likely require an
 Intelligence (Electronics) check, but if the security system required splicing wires, it might require a Dexterity (Sleight of Hand)
