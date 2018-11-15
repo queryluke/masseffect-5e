@@ -19,9 +19,9 @@ a distance.
 You must be proficient with a weapon type to add your proficiency modifier to the attack roll. There are 7 distinct weapon
 types and all weapons fall into one of the following types.
 
-- __Assault Rifles__. The most common weapons of the military. These are generall medium-range weapons that dealt average damage with a high heat capacity.
+- __Assault Rifles__. The most common weapons of the military. These are generally medium-range weapons that deal average damage with a high heat capacity.
 - __Heavy Pistols__. The most common gun type in the Mass Effect universe. Simple but effective.
-- __Sub-machine Guns (SMGS)__. Single-handed, rapid fire weapons that have a short range.
+- __Sub-machine Guns (SMGs)__. Single-handed, rapid fire weapons that have a short range.
 - __Shotguns__. Close-range, high-damage blasts.
 - __Sniper Rifles__. Precision instruments meant for long range or stealthy combat.
 - __Melee__. Used in close-quarters combat. _Damage resulting from melee weapon attacks by-pass shields_.
@@ -45,8 +45,8 @@ a club (melee weapon). At the GM's option, a character proficient with a weapon 
 that weapon and use his or her proficiency bonus.
 
 An object that bears no resemblance to a weapon deals 1d4 damage (the GM assigns a damage type appropriate to the object).
-If a character uses a ranged weapon to make a melee attack, or throws a melee weapon that does not have the thrown property,
-it also deals 1d4 damage. An improvised thrown weapon has a normal range of 10 meters and a long range of 30 meters.
+If a character uses a ranged weapon to make a melee attack or throws a melee weapon that does not have the thrown property,
+it also deals 1d4 damage. An improvised thrown weapon has a normal range of 6 meters and a long range of 18 meters. Light improvised thrown weapons have ranges of 10m and 30m, and heavy improvised ranged weapons have ranges of 4m and 12m.
 
 
 
@@ -60,7 +60,7 @@ about using thermal clips can be found below.
 Heavy Weapons use Charges to track the number of times they can be fired. If you run out of Charges your weapon is nothing more than a hunk of metal.
 
 #### Targeting
-Most Heavy Weapons also use the Targeting condition. Targeting means painting the battlefield, or keeping a lock on one or more creatures for
+Most Heavy Weapons also use the Targeting condition. Targeting means painting the battlefield or keeping a lock on one or more creatures for
 a single round of combat. Targeting is considered a free action, as long as you've already drawn the heavy weapon,
 i.e., you can choose to pick-up or equip a weapon as your action, then begin targeting as a free action before your turn ends.
 If you're already holding the weapon, you might use an ability as your action and then begin targeting.
