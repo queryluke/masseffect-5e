@@ -13,11 +13,11 @@ This represents how much damage a vehicle or starship can take before it is dest
 
 ### Shield Points
 Shields for vehicles and starships work generally the same as in the main <nuxt-link to="/phb/combat#shields"/>ME5e rules</nuxt-link>,
-with notable exception: Vehicle shields can only be regenerated in combat when players attempt the
+with a notable exception: Vehicle shields can only be regenerated in combat when players attempt the
 Restore action (explained later in this section).
 
 ### Speed
-For vehicles speed is relative to other vehicles and is represented as a static number not as meters. For
+For vehicles, speed is relative to other vehicles and is represented as a static number not as meters. For
 the purposes of combat, it represents the number of playmat spaces the vehicle can move on its turn when moving
 at a normal pace.
 
@@ -34,7 +34,7 @@ will most likely be made at disadvantage, again at the GM’s discretion.
 
 ### Crew Capacity
 The total number of sentient organisms that a ship can accommodate. This is a combination of active crew and any passengers.
-In some cases this number can be expanded by using cargo capacity, below.
+In some cases, this number can be expanded by using cargo capacity, below.
 
 ### Cargo Capacity
 How much “stuff” a vehicle can hold. This is measured in Megagrams (also known as a “tonne” or “metric ton”).
@@ -42,7 +42,7 @@ How much “stuff” a vehicle can hold. This is measured in Megagrams (also kno
 __1 Mg = 1,000 kg = 2,204 lbs.__
 
 This will be rounded to the nearest 0.5 mg (500 kg). When calculating cargo
-capacity, we suggest using this as a guideline to estimate cargo capacity rather than getting bogged-down in specific
+capacity, we suggest using this as a guideline to estimate cargo capacity rather than getting bogged down in specific
 calculations. For points of reference, a small hatchback car weighs just over 1 Mg while the largest tanker ships
 in the world have a capacity of over 200,000 Mg.
 
@@ -54,11 +54,11 @@ operate these individual systems. Generally speaking, small vehicles, especially
 will not have designated systems.
 
 ### Weapons
-__Weapons__, in many cases will refer to a specific system or systems on a vehicle. Vehicle-mounted weapons will
+__Weapons__, in many cases, will refer to a specific system or systems on a vehicle. Vehicle-mounted weapons will
 typically have a multiplier after their damage roll to represent how powerful they are. For example, a cruiser’s mass
 accelerator cannon has a damage roll of 2d6[x100] and an M35 Mako’s coaxial machine-gun has a damage roll of 2d6[x10].
 In these situations, you roll and add damage dice and any bonuses as usual. After you have determined your result,
-multiply the total by the amount indicated. In our example, if both weapons roll a __7__ fo their damage, the cruiser
+multiply the total by the amount indicated. In our example, if both weapons roll a __7__ for their damage, the cruiser
 deals __700__ damage and the Mako deals __70__.
 
 ### Size
@@ -70,19 +70,19 @@ __Frigates__ are light transport vehicles, usually used for exploration, transpo
 funded excursions, or stealth transport. The Normandy is an example of a frigate. Frigates can land on planets and
 typically host a crew of 5-20.
 
-__Cruisers__ are middleweight ships that can either transport large amounts of supplies from place to place, or focus on
+__Cruisers__ are middleweight ships that can either transport large amounts of supplies from place to place or focus on
 firepower. Military cruisers tend to be the front-line of the battle and have powerful weapons, shields, and armor.
 Cruisers typically have crews of 20 - 100 and are able to land on planets.
 
 __Carriers__, also called _freighters_,
-are large ships meant to carry transports (star fighters and drop ships). Carriers are primarily military
+are large ships meant to carry transports (starfighters and dropships). Carriers are primarily military
 in nature though some venture capitalists have used carriers for mining operations and colonizing efforts. Carriers are
 typically weak in combat, being slow and lacking much firepower or shielding. Instead, carriers utilize their transports
 for offense and defense. Carriers are built in space and are too large to land on planets (purposefully). Instead, most
 carriers use drop ships for planetary exploration. Carriers can support crews in the hundreds.
 
 __Dreadnoughts__ are the largest class of ship, generally a kilometer or more long with incredible firepower that’s
-harnessed in a main cannon able to decimate entire cities, squads of enemy fighters, and other dreadnoughts. Dreadnoughts
+harnessed in the main cannon which is able to decimate entire cities, squads of enemy fighters, and other dreadnoughts. Dreadnoughts
 are meant for extended life in space, usually hosting a crew in the thousands and a self-sustaining ecosystem of shops,
 leisure activities, police force, politics, etc. Think of dreadnaughts as a small town floating through space. The arks
 of Andromeda were dreadnoughts as are the Liveships that the quarian race inhabits. The ships are so costly to make
@@ -97,7 +97,7 @@ to acquire these vehicles.
 ### CR
 Transports have a CR between 0 and 30, which is based on its hp, ac, and damage. Starships have a __+__ symbol after
 their CR, which indicates that this CR is a relative representation based on other starships. It is unlikely that operatives
-will destroy a starship with traditional weapons. Instead they'll likely have to use other vehicles. For example,
+will destroy a starship with traditional weapons. Instead, they'll likely have to use other vehicles. For example,
 a starship with a CR of __12+__ has the same XP reward as a level CR creature when the operatives destroy it
 using other vehicles. If operatives did manage to destroy the vehicle using traditional means, we recommend
 providing XP equal to the standard amount multiplied by 10. For example, a cr 12 creature provides 8,400 XP. If players
