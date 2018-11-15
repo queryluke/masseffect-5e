@@ -8,7 +8,7 @@ new: true
 rounds downrange the fastest. As such, detachable heat sinks, known as thermal clips, were adopted first by the geth,
 and shortly thereafter by organic arms manufacturers. Ammunition may never be a concern with modern arms, but the
 availability of thermal clips is; weapons without thermal clips have nowhere to disperse their heat and are incapable of
-firing. Luckily, thermal clips litter modern battlefields, and can be obtained from fallen enemies or found around the
+firing. Luckily, thermal clips litter modern battlefields and can be obtained from fallen enemies or found around the
 environment.
 
 ### Using Thermal Clips
