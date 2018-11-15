@@ -15,7 +15,7 @@ Electronics, Engineering, History, Investigation, and Science skills reflect apt
 - __*Other Intelligence Checks*__. The GM might call for an Intelligence check when you try to accomplish tasks like the following:
   - Estimate the value of a piece of tech
   - Create a false ID badge
-  - Forge a electronic document
+  - Forge an electronic document
   - Recall lore about an ancient civilization
   - Win a game of skill
 
