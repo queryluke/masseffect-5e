@@ -8,14 +8,14 @@ encouraged that you and/or your GM create vehicles of their own to use in your c
 when creating your vehicle.
 
 ### Create a concept
-First you'll want to create a concept for your vehicle. What is its main purpose (defense, offense, transport, smuggling, etc).
-What race(s) are associated with the vehicle? Is it unqiue or mass produced? What does it look like? What size is it?
+First, you'll want to create a concept for your vehicle. What is its main purpose (defense, offense, transport, smuggling, etc)?
+What race(s) are associated with the vehicle? Is it unique or mass produced? What does it look like? What size is it?
 
 If you're looking for inspiration, check out <a href="https://www.deviantart.com/euderion/gallery/40849119/MASS-EFFECT" target="_blank">Euderion's vehicle creations on DeviantArt</a>.
 
 ### Name
-First you'll need a good name for your vehicle. Mass produced vehicles typically have some sort of manufacturing number
-combined with a codename or nickname. If your vehicle is a unqiue creation, it might have a symbolic name.
+Next, you'll need a good name for your vehicle. Mass produced vehicles typically have some sort of manufacturing number
+combined with a codename or nickname. If your vehicle is a unique creation, it might have a symbolic name.
 
 ### Vehicle Type
 The vehicle type should be either __transport__ or __starship__. If you've selected transport, designate which
@@ -26,7 +26,7 @@ If you're creating a transport, choose the size from standard sizes: Medium, Lar
 choose one of Frigate, Cruiser, Carrier, or Dreadnought.
 
 ### Speed
-A vehicles speed is somewhat abstract. Mechanically, it represents the number of playmat spaces it can more in one turn.
+A vehicles speed is somewhat abstract. Mechanically, it represents the number of playmat spaces it can move in one turn.
 This assumes the vehicle is moving an average pace and slow enough to turn and maneuver. Speed should range from 1 to 15.
 
 ### Range
@@ -97,7 +97,7 @@ Dreadnought | 1000+
 ### Weapons
 
 Decide what weapons are equipped on the vehicle. For transports, damage rolls are multiplied by 10 and by 100 for
-starships. Its also ok for the vehicle to have no weapons.
+starships. It's also ok for the vehicle to have no weapons.
 
 ### CR
 
@@ -106,7 +106,7 @@ Guide, pg. 274.
 
 #### Offensive CR
 First, find the offensive CR by calculating the average of all the damaging attacks. If this is a starship, additionally
-divide the average by 10. Then find the CR associate with that damage on the Monster Stats table.
+divide the average by 10. Then find the CR associated with that damage on the Monster Stats table.
 
 #### Defensive CR
 Next, find the defensive CR by adding the hull point and shield points together. If this is a starship, additionally,
@@ -126,7 +126,7 @@ beside the CR.
 __Offensive CR = (35 + 55) / 2 = 45__, corresponds with a CR of 7
 
 __Defensive CR = 250 + 0 = 250__, corresponds with a CR of 12. However, the target AC for CR 12 is only 17. So the final Defensive
-CR become 13 (+1 because the AC is 20).
+CR becomes 13 (+1 because the AC is 20).
 
 __Final CR = (13 + 7) / 2 = 10__
 
@@ -139,7 +139,7 @@ __Final CR = (13 + 7) / 2 = 10__
 __Offensive CR = ((1100 + 900) / 2) / 10 = 100__, corresponds with a CR of 16
 
 __Defensive CR = (2500 + 600) / 10 = 310__, corresponds with a CR of 16. However, the target AC for CR 16 is only 18. So the final Defensive
-CR become 19 (+3 because the AC is 25).
+CR becomes 19 (+3 because the AC is 25).
 
 __Final CR = (16 + 19) / 2 = 17.5 = 18+__
 
