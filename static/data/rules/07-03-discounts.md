@@ -4,7 +4,7 @@ title: 'Discounts'
 new: true
 ---
 
-Long time Mass Effect players will certainly want to reference Shepard's ability to secure discounts from local shops. One option
+Longtime Mass Effect players will certainly want to reference Shepard's ability to secure discounts from local shops. One option
 is to have players make Intimidation or Persuasion checks (with or without Paragon/Renegade scores). However, for
 added variety and randomness, you can use the following set of rules.
 
@@ -24,9 +24,9 @@ Finally, the GM or player rolls a d100 adding the modifier from the previous ste
 
 1d100 | Result
 --- | ---
-<= 10 | The shopkeeper is furious that you would attempt to cheat them out of their wares. They will not do business with your or your party.
+<= 10 | The shopkeeper is furious that you would attempt to cheat them out of their wares. They will not do business with you or your party.
 11-30 | The shopkeeper sees through your ruse. If you're going to play it that way, you'll have to pay 10% more.
 31-50 | The shopkeeper is unmoved. They aren't going to give you a discount, but they're not shutting their doors either.
 51-70 | The shopkeeper has seen these ploys before, but you gave him a good chuckle, for that, you get a 10% discount.
 71-90 | Better to work with you than against you, the shopkeeper offers you a 20% discount.
->= 91 | Either completely enthralled with your proposal, or scared out of their wits, the shopkeeper offers you a on-time discount of 50% off, and a lifetime discount of 20% off.
+>= 91 | Either completely enthralled with your proposal, or scared out of their wits, the shopkeeper offers you a one-item discount of 50% off, and a lifetime discount of 20% off.
