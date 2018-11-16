@@ -203,7 +203,7 @@
             desc: 'Kath Hounds'
           },
           {
-            name: 'Mikolaj',
+            name: 'Avezebra',
             image: '/images/spells/tech.svg',
             desc: 'Hanar concept'
           },
