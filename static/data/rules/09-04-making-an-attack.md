@@ -94,7 +94,7 @@ Strength modifier. You are proficient with your unarmed strikes.
 #### Gun strikes <v-chip color="secondary" text-color="white" class="v-chip--x-small">new</v-chip>
 Instead of using a weapon to make a melee weapon attack, you can use your ranged weapon, hitting a target with the butt of
 the gun. On a hit, a gun strike deals bludgeoning damage equal to 1d4 + your Strength modifier. You are proficient with
-gun strikes if your are proficient with the type of gun.
+gun strikes if you are proficient with the type of gun.
 
 #### Opportunity Attacks
 In a fight, everyone is constantly watching for a chance to strike an enemy who is fleeing or passing by. Such a
