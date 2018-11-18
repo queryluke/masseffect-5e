@@ -7,19 +7,19 @@ new: true
 >Kinetic barriers, colloquially called "shields", provide protection against most mass accelerator weapons. Whether on
 a starship or a soldier's suit of armor, the basic principle remains the same. Kinetic barriers are repulsive mass effect
 fields projected from tiny emitters. These shields safely deflect small objects traveling at rapid velocities. This
-affords protection from bullets and other dangerous projectiles, but still allows the user to sit down without knocking
+affords protection from bullets and other dangerous projectiles but still allows the user to sit down without knocking
 away their chair. The shielding afforded by kinetic barriers does not protect against extremes of temperature, toxins,
 or radiation.
 
 ### Shield Points
-Shield points are special type of regenerating hit points that protect your from fast moving projectiles and can provided
+Shield points are a special type of regenerating hit points that protect your from fast-moving projectiles and provide
 advantage in certain situations against some tech and biotic powers.
 
 
 
 ### Shield devices
-All armor chest pieces come standard with _5 shield points_ and a _regen of 5_. However more advanced mods and armor
-sets can provided additional shields. Additionally, personal shield generators are available which can provide shields
+All armor chest pieces come standard with _5 shield points_ and a _regen of 5_. However, more advanced mods and armor
+sets can provide additional shields. Additionally, personal shield generators are available which can provide shields
 without the operative equipping armor.
 
 
@@ -35,7 +35,7 @@ All damage resulting from a melee weapon attacks bypass shield points.
 
 
 ### Shield Regeneration
-Your armor's shield points are managed by the on-board VI, which is taxed during combat as it manages other systems: your
+Your armor's shield points are managed by the onboard VI, which is taxed during combat as it manages other systems: your
 omni-tool or biotic implant, HUD, etc. Thus, once a threat is properly neutralized, or you are able to temporarily remove
 yourself from the fray, your VI can route power back into your shields for immediate regeneration.
 
@@ -66,7 +66,7 @@ he has taken no damage since the end of his last turn and his shields begin to r
 Todd now has 14 shield points total. Todd takes his turn as he normally would.
 
 An adept spots Todd and hits him with a Warp spell. This bypasses Todd's shields and deals 13 necrotic damage. But it
-does not end his shield regeneration. If this damage have been from an Assault Rifle or an Incinerate spell, Todd's shield
+does not end his shield regeneration. If this damage had been from an Assault Rifle or an Incinerate spell, Todd's shield
 regeneration would have ended.
 
 On Todd's next turn, he gains another 10 shield points, putting him back to his maximum capacity of 20 and the regeneration
