@@ -15,6 +15,6 @@ attack the primed condition ends and the detonation causes an explosive effect o
 There are five primed types: Force, Necrotic, Fire, Cold, or Lightning each with its own unique detonating effect.
 
 A creature can suffer from multiple primed types simultaneously as long as each type is different. When detonated, all
-explosions happen at once centered on the location of the primed target. The GM decideds which effects happen in which order.
+explosions happen at once centered on the location of the primed target. The GM decides which effects happen in which order.
 
 <ai-dialog title="Primed Condition" mdFile="conditions/primed"></ai-dialog>
