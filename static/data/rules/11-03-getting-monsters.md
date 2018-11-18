@@ -9,7 +9,7 @@ existing creature to make it into something more useful for you, perhaps by borr
 monster or by creating your own!
 
 ### Using 5th Edition Monsters
-You can also include any of the monsters from 5th Edition core rulebooks in any of your campaigns. However some may require
+You can also include any of the monsters from 5th Edition core rulebooks in any of your campaigns. However, some may require
 "re-skinning," meaning you alter the monster's stat block, replacing 5th edition spells with biotics or tech, or
 re-conceptualize the animal into some newly-discovered alien.
 
