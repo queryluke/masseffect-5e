@@ -14,7 +14,7 @@ distance, lift them into the air, generate gravitational vortices to tear obstac
 protective barriers. Biotic spells are available for Adepts, Sentinels, and Vanguards.
 
 #### Tech
-Tech spells rely on the character's omni-tool: a multipurpose diagnostic and manufacturing tool as well as computer used
+Tech spells rely on the character's omni-tool: a multipurpose diagnostic and manufacturing tool as well as a computer used
 for a variety of civilian and battlefield tasks, such as hacking, decryption, or repair. Higher-end omni-tools are
 equipped by Engineers, Sentinels, and Infiltrators to make use of their tech talents and powers. When activated, an
 omni-tool can appear over either of a person's forearms and/or hands, and occasionally both, as an orange hologram.
