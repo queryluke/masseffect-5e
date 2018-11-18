@@ -40,7 +40,7 @@ spend tech points. If you want to try casting the spell again, you must start ov
 
 ### Range
 The target of a spell must be within the spell's range. For a spell like lance, the target is a creature. For a spell
-like havok strike, the target is the point in space where your character lands emitting a violent shockwave.
+like havoc strike, the target is the point in space where your character lands emitting a violent shockwave.
 
 Most spells have ranges expressed in meters. Some spells can target only a creature (including you) that you touch.
 Other spells, such as the fortification spell, affect only you. These spells have a range of self.
@@ -81,7 +81,7 @@ Normal activity, such as moving and attacking, doesn't interfere with concentrat
 requires concentration. You can't concentrate on two spells at once.
 - __Taking damage__. Whenever you take damage while you are concentrating on a spell, you must make a Constitution saving
 throw to maintain your concentration. The DC equals 10 or half the damage you take, whichever number is higher. If you take
-damage from multiple sources, such as an bullet and an engineer's salvo, you make a separate saving throw for each source of damage.
+damage from multiple sources, such as a bullet and an engineer's salvo, you make a separate saving throw for each source of damage.
 - __Being incapacitated or killed__. You lose concentration on a spell if you are incapacitated or if you die.
 - The GM might also decide that certain environmental phenomena, such as getting sucked out of an airlock, require you
 to succeed on a DC 10 Constitution saving throw to maintain concentration on a spell.
