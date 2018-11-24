@@ -13,7 +13,7 @@ __Skill Proficiencies__. Electronics and Engineering
 
 __Tool Proficiencies__. Two starship systems of your choice.
 
-__Equipment__. A pressurized space suit, set of common clothes, a gaming set, and 1000 credits.
+__Equipment__. A pressurized space suit, a set of common clothes, a gaming set, and 1000 credits.
 
 __Feature: Transport's Passage__. When you need to, you can secure free passage on a starship for yourself and your adventuring
 companions. You might voyage on the ship you served on, or another ship you have good relations with (perhaps one captained
