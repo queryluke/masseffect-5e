@@ -2,7 +2,7 @@
 id: biotic_control
 name: Biotic Control
 ---
-At {{ level }} level, you've increase your mastery with biotic spells that control the battlefield. Gain the following 
+At {{ level }} level, you've increased your mastery with biotic spells that control the battlefield. Gain the following 
 benefits to the spells below:
 
 Spell | Improvement
