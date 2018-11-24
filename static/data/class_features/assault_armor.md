@@ -8,7 +8,7 @@ that can see you must make a Wisdom saving throw (DC = 8 + proficiency bonus + s
 a creature is compelled to attack you while your Tech Armor is active. A creature that is compelled to attack you always 
 targets you when it makes a weapon or spell attack.
 
-Each time a creature that is compelled to attack you takes damage from source other than you, it makes a new Wisdom saving 
+Each time a creature that is compelled to attack you takes damage from a source other than you, it makes a new Wisdom saving 
 throw against the spell. If the saving throw succeeds, the creature is no longer compelled to attack you and is immune to
 Assault Armor for the next 24 hours.
 
