@@ -2,7 +2,7 @@
 id: medi-gel_enhancements
 name: Medi-gel Enhancements
 ---
-You can spend 6 hours in a lab or similar environment using drugs to enhance the capabilities of standard medi-gel. It 
+You can spend 6 hours in a lab, or similar environment, using drugs to enhance the capabilities of standard medi-gel. It 
 takes 2 hours to craft a single enhancement, but you can apply that benefit to any number of medi-gel cartridges. To craft 
 another enhancement takes an additional 6 hours. Instead of using time to limit this feature, your GM can choose to allow 
 you to add X divided by 2 (rounded up) enhancements, where X is your Intelligence modifier; then, you must finish a long 
