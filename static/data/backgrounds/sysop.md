@@ -56,7 +56,7 @@ d6 | Ideal
 d6 | Bond
 --- | ---
 1 | I want to create a true AI.
-2	| I have a collection of valuable pop-culture artifacts that's worth a fortune.
+2	| I have a collection of valuable pop-culture artifacts that are worth a fortune.
 3 | I want to make my family proud.
 4 | I stole secrets from a local government or organization. They're coming after me.
 5	| My laziness caused the death of innocent people. I will never make that mistake again.
