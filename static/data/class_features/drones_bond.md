@@ -5,7 +5,7 @@ name: Drone's Bond
 Your drone companion gains a variety of benefits while it is linked to you.
 
 * The drone companion loses its Multiattack action, if it has one.
-* THe drone companion loses its vulnerability to lightning damage.
+* The drone companion loses its vulnerability to lightning damage.
 * The drone companion obeys your commands as best it can. It rolls for initiative like any other creature, but you
   determine its actions, decisions, attitudes, and so on. If you are incapacitated or absent, your companion acts on its
   own. It has advantage on saving throws against any ability that tries to influence its actions.
@@ -18,7 +18,7 @@ Your drone companion gains a variety of benefits while it is linked to you.
   can increase one ability score of your choice by 2, or it can increase two ability scores of your choice by 1. As
   normal, your companion can’t increase an ability score above 20 using this feature unless its description specifies
   otherwise.
-* Your companion shares your alignment, and has a personality trait and a flaw that you can roll for or select from the
+* Your companion shares your alignment and has a personality trait and a flaw that you can roll for or select from the
   tables below. Your companion shares your ideal, and its bond is always, “The Engineer who created me is a beloved
   companion for whom I would gladly give my life.”
 
@@ -43,6 +43,6 @@ Roll | Flaw
 1 | Probability of survival: 0.00234%
 2 | Friendly creature in range. Activating CUTE protocol
 3 | Electrical current detected. Priority: avoid
-4 | This workspace can can be optimized for 15% more efficiency
+4 | This workspace can be optimized for 15% more efficiency
 5 | Organic life requires constant monitoring and prompting to ensure optimal nutrition and peak health!
 6 | Other VI's must not be trusted
