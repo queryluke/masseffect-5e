@@ -15,15 +15,15 @@ swap one of your tactics for a different one.
 #### Tactics
 
 __Advance__.
-Update your allies's HUDs and outline optimal routes to your tactical focus. If an ally spends all of its movement
+Update your allies' HUDs and outline optimal routes to your tactical focus. If an ally spends all of its movement
 moving towards your tactical focus, it doubles its movement, ignores difficult terrain, and does not provoke attacks of
 opportunity.
 
 __Analysis__.
 Focus all of your attention on the movements and capabilities of a single enemy. When you choose this tactic, you
 additionally choose a single hostile creature within your tactical focus. Beginning when you set your tactical focus
-and at the beginning of each of your subsequent turns, the DM tells you if hte creature is your equal, superior, or
-inferior in regard to on of the following characteristics of your choice: One ability score (Strength, Dexterity,
+and at the beginning of each of your subsequent turns, the DM tells you if the creature is your equal, superior, or
+inferior in regard to one of the following characteristics of your choice: One ability score (Strength, Dexterity,
 Constitution, Intelligence, Charisma, or Wisdom), Armor Class, or Current hit points
 
 __Clear the area__.
@@ -36,9 +36,9 @@ If an allied creature in your tactical focus must make a Dexterity saving throw 
 __Pin down__.
 When a hostile creature attempts to move out of your tactical focus, two target creatures of your choice can use
 a reaction to make an attack of opportunity on the target. If both attacks are successful, the creature's movement becomes
-0, it falls prone, and remains in your tactical focus.
+0, it falls prone and remains in your tactical focus.
 
 __Recon__.
 Your VI focuses on the movement of dust and augments sound from your area of focus, reconstructing a perfect image on your
-and your allies' HUD. Any creature within your tactical focus looses any benefits from being invisibile, lightly obscured,
+and your allies' HUD. Any creature within your tactical focus loses any benefits from being invisible, lightly obscured,
 or heavily obscured.
