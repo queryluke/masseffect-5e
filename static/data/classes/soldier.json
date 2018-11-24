@@ -306,7 +306,7 @@
     {
       "name": "Sharpshooter",
       "source": "v0.8.4",
-      "description": "Sharpshooters use pinpoint accuracy and target weak points on their opponents, resulting a massive amounts of bonus damage.",
+      "description": "Sharpshooters use pinpoint accuracy and target weak points on their opponents, resulting in massive amounts of bonus damage.",
       "features": [
         [
           "zz_steady_aim"
