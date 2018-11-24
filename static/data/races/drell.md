@@ -18,7 +18,7 @@ abilityScoreIncrease:
     ability: Wisdom
 size: Medium
 speed: 12m
-snippet: The drell are a reptile-like race that were rescued from their dying homeworld by the hanar following first contact between the two. Since then, the drell have remained loyal to the hanar for their camaraderie and have fit comfortably into galactic civilization.
+snippet: The drell are a reptile-like race that was rescued from their dying homeworld by the hanar following the first contact between the two. Since then, the drell have remained loyal to the hanar for their camaraderie and have fit comfortably into galactic civilization.
 startingCredits: Instead of your class's starting equipment, you may start with 6d8 x 1000 + 10,000 credits to buy your own equipment.
 bodyImg: http://vignette2.wikia.nocookie.net/masseffect/images/a/ad/Drell_MP.png/revision/latest/scale-to-width-down/500
 img: https://vignette.wikia.nocookie.net/masseffect/images/c/cf/Drell_biotic_field.png/revision/latest/scale-to-width-down/640?cb=20130623224527
