@@ -6,7 +6,7 @@ You've bolstered your armor with a powerful, defense-oriented AI. As a bonus act
 activate your Tech Armor.
 
 When activated, tech armor creates a new kinetic barrier that has additional hit points. Add your Sentinel level to your
-spellcasting modifier, then multiply the sum by 3. The result is the amount of additional hit points provided by your
+spellcasting modifier, then multiply the sum by 3. The result is the number of additional hit points provided by your
 tech armor. Whenever you take damage, the tech armor takes the damage instead. If this damage reduces tech
 armor to 0 hit points, remaining damage is done to your then shields (if any), then your hit points.
 
