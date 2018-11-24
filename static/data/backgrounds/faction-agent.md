@@ -36,20 +36,20 @@ are more than hired mercenaries and are supportive of their faction's efforts.
 
 ### Suggested Characteristics
 Faction Agents are shaped by their experience in the line of duty. The beliefs, laws, and practices of their faction can
-affect their mannerisms and ideals. Their flaws might be some hidden hypocrisy that counteracts the tennats of their faction.
+affect their mannerisms and ideals. Their flaws might be some hidden hypocrisy that counteracts the tenets of their faction.
 For example, a Shadow Broker Agent that secretly wants transparency of information. Or they might have an ideal or bond
 that is taken to an extreme, such as a Cerberus agent that hates all non-human races and kills them whenever possible.
 
 
 d8 | Personality Trait
 --- | ---
-1 | I idolize a particular leader of my faction, and constantly refer to that person’s deeds and example.
+1 | I idolize a particular leader of my faction and constantly refer to that person’s deeds and example.
 2 | I can find common ground between the fiercest enemies, empathizing with them and always working toward peace.
 3 | I see opportunities in every social interaction. People are puppets and I am the puppeteer.
 4 | Nothing can shake my optimistic attitude.
 5 | I quote (or misquote) historical figures in almost every situation.
 6 | I am tolerant (or intolerant) of other factions.
-7 | I’ve enjoyed fine food, drink, and high society among my factions’s elite. Rough living grates on me.
+7 | I’ve enjoyed fine food, drink, and high society among my factions’ elite. Rough living grates on me.
 8 | When I enter a room, I immediately begin looking for the biggest threat.
 
 <br>
@@ -80,7 +80,7 @@ d6 | Flaw
 --- | ---
 1 | I judge others harshly, and myself even more severely.
 2 | I put too much trust in those who wield power within my faction.
-3 | I'm took quick to trust those who support my faction's ideals.
+3 | I'm too quick to trust those who support my faction's ideals.
 4 | I am inflexible in my thinking.
 5 | I am suspicious of strangers and expect the worst of them.
 6 | Once I pick a goal, I become obsessed with it to the detriment of everything else in my life.
