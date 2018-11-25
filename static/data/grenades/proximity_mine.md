@@ -6,7 +6,7 @@ range: Touch
 blast: 2m
 damageType: thunder
 ---
-As an Action, place a proximity mine within 2m. The first creature, besides yourself, that comes within 2m of the mine
+Place a proximity mine within 2m. The first creature, besides yourself, that comes within 2m of the mine
 takes 1d8 thunder damage.
 
 Creatures need to pass a DC 10 Wisdom (Perception) check to notice the mine.

@@ -6,5 +6,5 @@ range: 10m
 blast: 6m
 damageType: thunder
 ---
-As an Action, target an area within 10m. Each creature within 6m of the target must make a DC 16 Dexterity saving throw.
+Target an area within 10m. Each creature within 6m of the target must make a DC 16 Dexterity saving throw.
 A creature takes 2d6 thunder damage on a failed save, or half as much damage on a successful one.

@@ -5,7 +5,7 @@
     "galaxy": [
       "Andromeda"
     ],
-    "alignment": "Angara are emotional creatures and strongly community oriented. Their emotion-driven tendencies makes them often chaotic neutral or chaotic good.",
+    "alignment": "Angara are emotional creatures and strongly community oriented. Their emotion-driven tendencies make them often chaotic neutral or chaotic good.",
     "availableClasses": [
       "engineer",
       "infiltrator",
@@ -24,7 +24,7 @@
     ],
     "size": "Medium",
     "speed": "10m",
-    "snippet": "The Angara are the only known extant sapient race native to the Heleus Cluster of the Andromeda galaxy, and arose on the planet Havarl.",
+    "snippet": "The Angara are the only known extant sapient race native to the Heleus Cluster of the Andromeda galaxy and arose on the planet Havarl.",
     "startingCredits": "Instead of your class's starting equipment, you may start with 6d8 x 1000 + 10,000 credits to buy your own equipment.",
     "bodyImg": "/images/races/angara.png",
     "img": "https://vignette.wikia.nocookie.net/masseffect/images/4/44/Angara_trailer_mugs.png/revision/latest/scale-to-width-down/640?cb=20170127022744",
@@ -43,7 +43,7 @@
       "Andromeda",
       "Milky Way"
     ],
-    "alignment": "Tend towards neutral as a species. Most Maiden stage Asari are chaotic, Matrons level out to neutral, Matriarchs are heavily lawful.",
+    "alignment": "Tend toward neutral as a species. Most Maiden stage asari are chaotic, Matrons level out to neutral, Matriarchs are heavily lawful.",
     "availableClasses": [
       "adept",
       "engineer",
@@ -65,7 +65,7 @@
     ],
     "size": "Medium",
     "speed": "10m",
-    "snippet": "The asari, native to the planet Thessia, are often considered the most influential and respected sentient species in the galaxy, and are known for their elegance, diplomacy, and biotic aptitude.",
+    "snippet": "The asari, native to the planet Thessia, are often considered the most influential and respected sentient species in the galaxy and are known for their elegance, diplomacy, and biotic aptitude.",
     "startingCredits": "Instead of your class's starting equipment, you may start with 10d4 x 1000 + 10,000 credits to buy your own equipment.",
     "bodyImg": "http://vignette2.wikia.nocookie.net/masseffect/images/d/dc/Asari_Justicar_MP.png/revision/latest/scale-to-width-down/500",
     "img": "https://vignette.wikia.nocookie.net/masseffect/images/a/a7/Samara_vs_Morinth.png/revision/latest/scale-to-width-down/640?cb=20130521073819",
@@ -169,7 +169,7 @@
     ],
     "size": "Medium",
     "speed": "12m",
-    "snippet": "The drell are a reptile-like race that were rescued from their dying homeworld by the hanar following first contact between the two. Since then, the drell have remained loyal to the hanar for their camaraderie and have fit comfortably into galactic civilization.",
+    "snippet": "The drell are a reptile-like race that was rescued from their dying homeworld by the hanar following the first contact between the two. Since then, the drell have remained loyal to the hanar for their camaraderie and have fit comfortably into galactic civilization.",
     "startingCredits": "Instead of your class's starting equipment, you may start with 6d8 x 1000 + 10,000 credits to buy your own equipment.",
     "bodyImg": "http://vignette2.wikia.nocookie.net/masseffect/images/a/ad/Drell_MP.png/revision/latest/scale-to-width-down/500",
     "img": "https://vignette.wikia.nocookie.net/masseffect/images/c/cf/Drell_biotic_field.png/revision/latest/scale-to-width-down/640?cb=20130623224527",
@@ -337,7 +337,7 @@
     ],
     "size": "Medium",
     "speed": "10m",
-    "snippet": "The krogan are a species of large reptilian bipeds native to the planet Tuchanka, a world known for its harsh environments, scarce resources, and overabundance of vicious predators.",
+    "snippet": "The krogan are a species of large reptilian bipeds native to the planet Tuchanka, a world known for its harsh environments, scarce resources, and an overabundance of vicious predators.",
     "startingCredits": "Instead of your class's starting equipment, you may start with 10d4 x 1000 + 10,000 credits to buy your own equipment.",
     "bodyImg": "http://vignette4.wikia.nocookie.net/masseffect/images/6/66/Krogan_MP.png/revision/latest/scale-to-width-down/500",
     "img": "https://vignette.wikia.nocookie.net/masseffect/images/0/03/Wreav_rally_-_destroy_2.png/revision/latest/scale-to-width-down/640?cb=20130215150038",
@@ -715,7 +715,7 @@
     ],
     "size": "Medium",
     "speed": "14m",
-    "snippet": "Known for their unique biology and aggressive behavior, the vorcha of Heshtok are a primitive race that live among the galaxy's darker and more dangerous locations, such as Omega.",
+    "snippet": "Known for their unique biology and aggressive behavior, the vorcha of Heshtok are a primitive race that lives among the galaxy's darker and more dangerous locations, such as Omega.",
     "startingCredits": "Instead of your class's starting equipment, you may start with 4d12 x 1000 + 10,000 credits to buy your own equipment.",
     "bodyImg": "http://vignette1.wikia.nocookie.net/masseffect/images/d/d8/ME3_Vorcha_Hunter.png/revision/latest/scale-to-width-down/500",
     "img": "https://vignette.wikia.nocookie.net/masseffect/images/d/d6/Omega_vermin.png/revision/latest/scale-to-width-down/640?cb=20140624121030",

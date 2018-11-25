@@ -6,7 +6,7 @@ range: 20m
 blast: 2m
 damageType: thunder
 ---
-As an Action, launch a Cain Trip Mine to a point you can see within 20m. The mine affixes to a solid surface and projects
+Launch a Cain Trip Mine to a point you can see within 20m. The mine affixes to a solid surface and projects
 a beam 6m tripwire. When a creature or object passes through the tripwire, the mine explodes. Any creature within a 2m
 sphere must make a DC 13 Dexterity saving throw. A creature takes 2d12 thunder damage on a failed save or half as much
 damage on a successful one.

@@ -6,7 +6,7 @@ range: 10m
 blast: 4m
 damageType: thunder
 ---
-As an Action, target an area within 10m. At the beginning of your next turn, creatures within 4m of the target must make
+Target an area within 10m. At the beginning of your next turn, creatures within 4m of the target must make
 a DC 13 Dexterity saving throw. On a failed save, a creature takes 3d6 thunder damage or half as much damage on a
 successful one.
 
