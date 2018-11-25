@@ -145,5 +145,6 @@
     ]
   },
   "type": "Synorg",
-  "unit": "Reaper"
+  "unit": "Reaper",
+  "author": "Author Name"
 }

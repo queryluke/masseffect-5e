@@ -1,0 +1,84 @@
+{
+  "abilityScores": {
+    "str": 12,
+    "dex": 15,
+    "con": 11,
+    "int": 13,
+    "wis": 12,
+    "cha": 10
+  },
+  "ac": "12",
+  "actions": [
+    {
+      "type": "weapon",
+      "id": "m-92_mantis"
+    },
+    {
+      "type": "weapon",
+      "id": "m-4_shuriken"
+    }
+  ],
+  "alignment": "Neutral",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "1",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Surprise Attack",
+      "recharge": null,
+      "description": "If the sniper surprises a creature and hits it with an attack during the first round of combat, the target takes an extra 10 (3d6) damage from the attack."
+    }
+  ],
+  "hp": {
+    "numDice": 6,
+    "die": 8
+  },
+  "id": "sniper",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/e6/Codex_ME_-_Mass_Accelerators.png/revision/latest?cb=20140820141725",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Sniper",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [
+    {
+      "sense": "darkvision",
+      "range": 60
+    }
+  ],
+  "size": "Medium",
+  "skills": [
+    "perception", "stealth"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "sp": {
+    "shields": 5,
+    "regen": 5
+  },
+  "spellcasting": {
+    "level": "innate",
+    "mod": "int",
+    "spellList": [
+      {
+        "perDay": "5/day",
+        "spells": [
+          {
+            "id": "concussive shot"
+          }
+        ]
+      }
+    ]
+  },
+  "type": "Organic or Synthetic",
+  "unit": "Archetype",
+  "author": "Dakota P."
+}
