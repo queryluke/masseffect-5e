@@ -28,7 +28,7 @@
       // Character sheets
       h3.text-xs-center.display-1 Character Sheets
       v-layout(row wrap justify-center)
-        v-flex(xs12 sm6 md4)
+        //v-flex(xs12 sm6 md4)
           v-card
             v-card-title
               p.title by John G.
