@@ -1,0 +1,80 @@
+{
+  "abilityScores": {
+    "str": 12,
+    "dex": 15,
+    "con": 13,
+    "int": 11,
+    "wis": 12,
+    "cha": 12
+  },
+  "ac": "14",
+  "actions": [
+    {
+      "type": "weapon",
+      "id": "m-27_scimitar"
+    }
+  ],
+  "alignment": "Neutral",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "3",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Tech Armor",
+      "recharge": "1/Day",
+      "description": "As a bonus action, the centurion can activate its Tech Armor. It immediately gains 20 temporary hit points. While the centurion has at least 1 of these temporary hit points remaining, it has +2 AC."
+    },
+    {
+      "name": "Disruptor Ammo",
+      "recharge": null,
+      "description": "When the centurion hits with its M-27 Scimitar, if the target is primed, the target detonates. Otherwise, the target becomes primed: lightning until the end of the centurion's next turn."
+    },
+    {
+      "name": "Shotgun Marksman",
+      "recharge": null,
+      "description": "The centurion gains a +4 bonus to ranged weapon attacks with shotguns if the target is within normal range."
+    }
+  ],
+  "hp": {
+    "numDice": 10,
+    "die": 8
+  },
+  "id": "blue_suns_centurion",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/22/Blue_Suns_Centurion.png/revision/latest/scale-to-width-down/348?cb=20100621022434",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Blue Suns Centurion",
+  "profBonus": 2,
+  "reactions": [
+    {
+      "name": "Tech Armor",
+      "recharge": null,
+      "description": "As a reaction to taking damage, the centurion can activate its tech armor."
+    }
+  ],
+  "savingThrows": [
+    "str"
+  ],
+  "senses": [],
+  "size": "Medium",
+  "skills": [
+    "survival"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "sp": {
+    "shields": 15,
+    "regen": 5
+  },
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Blue Suns",
+  "author": "Dakota P."
+}

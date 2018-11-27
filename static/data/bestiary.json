@@ -720,6 +720,460 @@
   },
   {
     "abilityScores": {
+      "str": 12,
+      "dex": 15,
+      "con": 13,
+      "int": 11,
+      "wis": 12,
+      "cha": 12
+    },
+    "ac": "14",
+    "actions": [
+      {
+        "type": "weapon",
+        "id": "m-27_scimitar"
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "3",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Tech Armor",
+        "recharge": "1/Day",
+        "description": "As a bonus action, the centurion can activate its Tech Armor. It immediately gains 20 temporary hit points. While the centurion has at least 1 of these temporary hit points remaining, it has +2 AC."
+      },
+      {
+        "name": "Disruptor Ammo",
+        "recharge": null,
+        "description": "When the centurion hits with its M-27 Scimitar, if the target is primed, the target detonates. Otherwise, the target becomes primed: lightning until the end of the centurion's next turn."
+      },
+      {
+        "name": "Shotgun Marksman",
+        "recharge": null,
+        "description": "The centurion gains a +4 bonus to ranged weapon attacks with shotguns if the target is within normal range."
+      }
+    ],
+    "hp": {
+      "numDice": 10,
+      "die": 8
+    },
+    "id": "blue_suns_centurion",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/22/Blue_Suns_Centurion.png/revision/latest/scale-to-width-down/348?cb=20100621022434",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Blue Suns Centurion",
+    "profBonus": 2,
+    "reactions": [
+      {
+        "name": "Tech Armor",
+        "recharge": null,
+        "description": "As a reaction to taking damage, the centurion can activate its tech armor."
+      }
+    ],
+    "savingThrows": [
+      "str"
+    ],
+    "senses": [],
+    "size": "Medium",
+    "skills": [
+      "survival"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "sp": {
+      "shields": 15,
+      "regen": 5
+    },
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Blue Suns",
+    "author": "Dakota P."
+  },
+  {
+    "abilityScores": {
+      "str": 13,
+      "dex": 12,
+      "con": 14,
+      "int": 11,
+      "wis": 10,
+      "cha": 10
+    },
+    "ac": "13",
+    "actions": [
+      {
+        "type": "standard",
+        "name": "ML-77 Missile Launcher",
+        "recharge": "6 charges",
+        "description": "Choose a creature within 60m that you can see and fire a missile at it. Each creature within a 4m cube of the target, including the target, must make a DC 14 Dexterity saving throw. On a failed save a creature takes 39 (6d12) thunder damage or half as much on a successful one."
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "2",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Tech Armor",
+        "recharge": "1/Day",
+        "description": "As a bonus action, the heavy can activate its Tech Armor. It immediately gains 10 temporary hit points. While the heavy has at least 1 of these temporary hit points remaining, it has +2 AC."
+      }
+    ],
+    "hp": {
+      "numDice": 4,
+      "die": 8
+    },
+    "id": "blue_suns_heavy",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/e0/Blue_Suns_Heavy.png/revision/latest/scale-to-width-down/348?cb=20100621035327",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Blue Suns Heavy",
+    "profBonus": 2,
+    "reactions": [
+      {
+        "name": "Tech Armor",
+        "recharge": null,
+        "description": "As a reaction to taking damage, the heavy can activate its tech armor."
+      }
+    ],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Medium",
+    "skills": [
+      "survival"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "sp": {
+      "shields": 10,
+      "regen": 0
+    },
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Blue Suns",
+    "author": "Dakota P."
+  },
+  {
+    "abilityScores": {
+      "str": 13,
+      "dex": 16,
+      "con": 14,
+      "int": 15,
+      "wis": 12,
+      "cha": 14
+    },
+    "ac": "16",
+    "actions": [
+      {
+        "type": "standard",
+        "name": "Multiattack",
+        "description": "The legate makes 2 attacks with its M-76 Revenant or M-300 Claymore."
+      },
+      {
+        "type": "weapon",
+        "id": "m-76_revenant"
+      },
+      {
+        "type": "weapon",
+        "id": "m-300_claymore"
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "5",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Tech Armor",
+        "recharge": "1/Day",
+        "description": "As a bonus action, the legate can activate its Tech Armor. It immediately gains 30 temporary hit points. While the legate has at least 1 of these temporary hit points remaining, it has +2 AC and resistance to bludgeoning, piercing, and slashing damage."
+      },
+      {
+        "name": "Incendiary Ammo",
+        "recharge": null,
+        "description": "When the centurion hits with its M-76 Revenant or M-300 Claymore, the target takes an additional 1d4 fire damage and becomes primed: fire until the end of the legate's next turn."
+      },
+      {
+        "name": "Leadership",
+        "recharge": "Recharges after a Short or Long Rest",
+        "description": "For 1 minute, the legate can utter a special command or warning whenever a non-hostile creature that it can see within 10m of it makes an attack roll or a saving throw. The creature can add a d4 to its roll provided it can hear and understand the legate. A creature can benefit from only one Leadership die at a time. This effect ends if the legate is incapacitated."
+      }
+    ],
+    "hp": {
+      "numDice": 20,
+      "die": 8
+    },
+    "id": "blue_suns_legate",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/8/8c/Blue_Suns_Commander.png/revision/latest/scale-to-width-down/369?cb=20100626053904",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Blue Suns Legate",
+    "profBonus": 3,
+    "reactions": [
+      {
+        "name": "Tech Armor",
+        "recharge": null,
+        "description": "As a reaction to taking damage, the legate can activate its tech armor."
+      }
+    ],
+    "savingThrows": [
+      "con",
+      "wis"
+    ],
+    "senses": [],
+    "size": "Medium",
+    "skills": [
+      "survival",
+      "perception",
+      "athletics"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "sp": {
+      "shields": 20,
+      "regen": 10
+    },
+    "spellcasting": {
+      "level": "innate",
+      "mod": "int",
+      "spellList": [
+        {
+          "perDay": "3/day",
+          "spells": [
+            {
+              "id": "target painting"
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Organic",
+    "unit": "Blue Suns",
+    "author": "Dakota P."
+  },
+  {
+    "abilityScores": {
+      "str": 12,
+      "dex": 14,
+      "con": 13,
+      "int": 9,
+      "wis": 10,
+      "cha": 10
+    },
+    "ac": "12",
+    "actions": [
+      {
+        "type": "weapon",
+        "id": "m-15_vindicator"
+      },
+      {
+        "type": "grenade",
+        "id": "inferno_grenade"
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "1/2",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Tech Armor",
+        "recharge": "1/Day",
+        "description": "As a bonus action, the legionnaire can activate its Tech Armor. It immediately gains 10 temporary hit points. While the legionnaire has at least 1 of these temporary hit points remaining, it has +2 AC."
+      },
+      {
+        "name": "Disruptor Ammo",
+        "recharge": null,
+        "description": "When the legionnaire hits with its M-15 Vindicator, if the target is primed, the target detonates. Otherwise, the target becomes primed: lightning until the end of the legionnaire's next turn."
+      }
+    ],
+    "hp": {
+      "numDice": 3,
+      "die": 8
+    },
+    "id": "blue_suns_legionnaire",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/94/Blue_Suns_Legionnaire.png/revision/latest/scale-to-width-down/369?cb=20100626080854",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Blue Suns Legionnaire",
+    "profBonus": 2,
+    "reactions": [
+      {
+        "name": "Tech Armor",
+        "recharge": null,
+        "description": "As a reaction to taking damage, the legionnaire can activate its tech armor."
+      }
+    ],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Medium",
+    "skills": [
+      "survival"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "sp": {
+      "shields": 5,
+      "regen": 5
+    },
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Blue Suns",
+    "author": "Dakota P."
+  },
+  {
+    "abilityScores": {
+      "str": 12,
+      "dex": 12,
+      "con": 16,
+      "int": 11,
+      "wis": 12,
+      "cha": 10
+    },
+    "ac": "13",
+    "actions": [
+      {
+        "type": "standard",
+        "name": "M-451 Firestorm",
+        "recharge": "10 charges",
+        "description": "Creatures within a 6m cone must make a DC 13 Dexterity saving throw. On a failed save, a creature takes 14 (4d6) fire damage, or half as much damage on a successful one."
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "1/4",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Aggressive",
+        "recharge": null,
+        "description": "As a bonus action, the pyro can move up to its speed toward a hostile creature that it can see."
+      }
+    ],
+    "hp": {
+      "numDice": 8,
+      "die": 8
+    },
+    "id": "blue_suns_pyro",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/c/c2/Blue_Suns_Pyro_2.png/revision/latest/scale-to-width-down/347?cb=20100621035042",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Blue Suns Pyro",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Medium",
+    "skills": [
+      "survival"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "sp": {
+      "shields": 10,
+      "regen": 0
+    },
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Blue Suns",
+    "author": "Dakota P."
+  },
+  {
+    "abilityScores": {
+      "str": 11,
+      "dex": 12,
+      "con": 11,
+      "int": 8,
+      "wis": 9,
+      "cha": 8
+    },
+    "ac": "11",
+    "actions": [
+      {
+        "type": "weapon",
+        "id": "m-8_avenger"
+      },
+      {
+        "type": "weapon",
+        "id": "m-23_katana"
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "1/4",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [],
+    "hp": {
+      "numDice": 3,
+      "die": 8
+    },
+    "id": "blue_suns_trooper",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/1/13/Blue_Suns_Trooper.png/revision/latest/scale-to-width-down/369?cb=20100626054323",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Blue Suns Trooper",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Medium",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "sp": {
+      "shields": 5,
+      "regen": 5
+    },
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "Blue Suns",
+    "author": "Dakota P."
+  },
+  {
+    "abilityScores": {
       "str": 20,
       "dex": 12,
       "con": 18,

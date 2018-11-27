@@ -35,7 +35,7 @@
         v-flex(xs12)
           v-container(grid-list-xl)
             v-layout(row wrap)
-              v-flex(xs12 md4 d-flex v-for="designer in designers" v-bind:key="designer.name")
+              v-flex(xs12 sm6 md3 d-flex v-for="designer in designers" v-bind:key="designer.name")
                 v-card.elevation-0.transparent
                   v-card-text.text-xs-center
                     v-avatar(size="92")
@@ -137,6 +137,13 @@
             desc: 'Adam has provided a lot of invaluable feedback and started many conversations. Most notably, Adam' +
             ' has taken the lead on balancing and reviewing the spell list.'
           },
+          {
+            name: 'Dakota P.',
+            image: '/images/misc/dakota_p.png',
+            desc: 'Dakota is working through the backlog of needed monsters and creating unique stat blocks for Mass Effect 5e,' +
+            ' including some fun stat blocks from other Sci-fi classics like the Kath Hound from BioWare\'s Knights of the Old Republic.'+
+            ' Keep your eyes on the Bestiary for all of the unique creations.'
+          }
         ],
         contributors: [
           {
@@ -196,11 +203,6 @@
             name: 'Andrew Ouellette',
             image: '/images/spells/biotic.svg',
             desc: 'Roll 20 Tokens'
-          },
-          {
-            name: 'Dakota P.',
-            image: 'https://lh6.googleusercontent.com/-4XMXwoyE7fA/AAAAAAAAAAI/AAAAAAAAABE/rfPtjzkQRCg/w80-h80/photo.jpg',
-            desc: 'Kath Hounds'
           },
           {
             name: 'Mikolaj',

@@ -1,0 +1,103 @@
+{
+  "abilityScores": {
+    "str": 13,
+    "dex": 16,
+    "con": 14,
+    "int": 15,
+    "wis": 12,
+    "cha": 14
+  },
+  "ac": "16",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Multiattack",
+      "description": "The legate makes 2 attacks with its M-76 Revenant or M-300 Claymore."
+    },
+    {
+      "type": "weapon",
+      "id": "m-76_revenant"
+    },
+    {
+      "type": "weapon",
+      "id": "m-300_claymore"
+    }
+  ],
+  "alignment": "Neutral",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "5",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Tech Armor",
+      "recharge": "1/Day",
+      "description": "As a bonus action, the legate can activate its Tech Armor. It immediately gains 30 temporary hit points. While the legate has at least 1 of these temporary hit points remaining, it has +2 AC and resistance to bludgeoning, piercing, and slashing damage."
+    },
+    {
+      "name": "Incendiary Ammo",
+      "recharge": null,
+      "description": "When the centurion hits with its M-76 Revenant or M-300 Claymore, the target takes an additional 1d4 fire damage and becomes primed: fire until the end of the legate's next turn."
+    },
+    {
+      "name": "Leadership",
+      "recharge": "Recharges after a Short or Long Rest",
+      "description": "For 1 minute, the legate can utter a special command or warning whenever a non-hostile creature that it can see within 10m of it makes an attack roll or a saving throw. The creature can add a d4 to its roll provided it can hear and understand the legate. A creature can benefit from only one Leadership die at a time. This effect ends if the legate is incapacitated."
+    }
+  ],
+  "hp": {
+    "numDice": 20,
+    "die": 8
+  },
+  "id": "blue_suns_legate",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/8/8c/Blue_Suns_Commander.png/revision/latest/scale-to-width-down/369?cb=20100626053904",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Blue Suns Legate",
+  "profBonus": 3,
+  "reactions": [
+    {
+      "name": "Tech Armor",
+      "recharge": null,
+      "description": "As a reaction to taking damage, the legate can activate its tech armor."
+    }
+  ],
+  "savingThrows": [
+    "con",
+    "wis"
+  ],
+  "senses": [],
+  "size": "Medium",
+  "skills": [
+    "survival", "perception", "athletics"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "sp": {
+    "shields": 20,
+    "regen": 10
+  },
+  "spellcasting": {
+    "level": "innate",
+    "mod": "int",
+    "spellList": [
+      {
+        "perDay": "3/day",
+        "spells": [
+          {
+            "id": "target painting"
+          }
+        ]
+      }
+    ]
+  },
+  "type": "Organic",
+  "unit": "Blue Suns",
+  "author": "Dakota P."
+}
