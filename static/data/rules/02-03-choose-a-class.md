@@ -24,7 +24,7 @@ game, or if you are joining an existing ME5e campaign, your GM might decide to h
 assumption that your character has already survived a few harrowing missions.
 
 Record your level on your character sheet. If you’re starting at a higher level, record the additional elements your
-class gives you for your levels past 1st. Also record your experience points. A 1st-level character has 0 XP. A higher-level
+class gives you for your levels past 1st. Also, record your experience points. A 1st-level character has 0 XP. A higher-level
 character typically begins with the minimum amount of XP required to reach that level (see “Beyond 1st Level” later in this section).
 
 ### Hit Points and Hit Die
@@ -35,7 +35,7 @@ At 1st level, your character has 1 Hit Die, and the die type is determined by yo
 to the highest roll of that die, as indicated in your class description. (You also add your Constitution modifier, which
 you’ll determine in step 3.) This is also your hit point maximum.
 
-Record your character’s hit points on your character sheet. Also record the type of Hit Die your character uses and the
+Record your character’s hit points on your character sheet. Also, record the type of Hit Die your character uses and the
 number of Hit Dice you have. After you rest, you can spend Hit Dice to regain hit points (see
 <nuxt-link to="/phb/rules/missions#resting">Resting</nuxt-link> in the Missions section).
 
@@ -63,11 +63,11 @@ add it only once, multiply it only once, and halve it only once.
 
 <v-alert type="info" :value="true">
 <strong>BUILDING KALEEM, STEP 2</strong><br>
-Sam imagines Keleem firing tech spells from the safety of cover. She makes Kaleem an engineer and notes the engineers’s
+Sam imagines Keleem firing tech spells from the safety of cover. She makes Kaleem an engineer and notes the engineers’
 proficiencies and 1st-level class features on her character sheet.
 
 As a 1st-level engineer, Kaleem has 1 Hit Die, a d8, and starts with hit points equal to 8 + her Constitution modifier.
-Sam notes this, and will record the final number after she determines Kaleem’s Constitution score (see step 3). Sam also
+Sam notes this and will record the final number after she determines Kaleem’s Constitution score (see step 3). Sam also
 notes the proficiency bonus for a 1st-level character, which is +2.
 </v-alert>
 

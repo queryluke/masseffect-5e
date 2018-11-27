@@ -10,7 +10,7 @@ in this section cover some of the most important ways in which adventurers inter
 ### Falling
 A fall from a great height is a common hazard, especially since many urban environments reach the skies. At the end of a
 fall, a creature takes 1d6 bludgeoning damage for every 4 meters (~10 ft) it fell, to a maximum of 20d6. The creature
-lands prone, unless it avoids taking damage from the fall.
+lands prone unless it avoids taking damage from the fall.
 
 ### Suffocating
 A creature can hold its breath for a number of minutes equal to 1 + its Constitution modifier (minimum of 30 seconds).
@@ -23,10 +23,10 @@ For example, a creature with a Constitution of 14 can hold its breath for 3 minu
 rounds to reach air before it drops to 0 hit points.
 
 ### Space <v-chip color="secondary" text-color="white" class="v-chip--x-small">new</v-chip>
-The vacuum of space will kill any organic (and most synthorganic creatures) in a matter of minutes, unless that creature
+The vacuum of space will kill any organic (and most synthorganic creatures) in a matter of minutes unless that creature
 has some specific resilience to surviving in a vacuum. A creature in the vacuum of space without an appropriate environmental
 suit will remain conscious for a number of rounds equal to 1 + its Constitution modifier (minimum 1). After that time passes,
-the creature immediate becomes incapacitated and tt can survive in space a number of minutes equal to 1 + its Constitution
+the creature immediate becomes incapacitated and it can survive in space a number of minutes equal to 1 + its Constitution
 modifier (minimum 1) after which it dies.
 
 ### Vision and Light
@@ -99,12 +99,12 @@ that his or her character is doing something, such as interacting with a termina
 happens.
 
 For example, a character might decide to interact with a terminal, which might, in turn, open a door, raise an alarm, or
-give the character access to a map of the building. If the terminal is protected security, though, a character might need
-to hack it. In such a situation, the GM might call for a Intelligence (Electronics) check to see whether the character can
+give the character access to a map of the building. If the terminal is protected via security, though, a character might need
+to hack it. In such a situation, the GM might call for an Intelligence (Electronics) check to see whether the character can
 bypass the security. The GM sets the DC for any such check based on the difficulty of the task.
 
 Characters can also damage objects with their weapons, biotics, and tech. Objects are immune to poison and psychic damage,
-but otherwise they can be affected by physical attacks much like creatures can. The GM determines an object's Armor Class
+but otherwise, they can be affected by physical attacks much as creatures can. The GM determines an object's Armor Class
 and hit points, and might decide that certain objects have resistance or immunity to certain kinds of attacks.
 (It's hard to cut a cable with a hammer, for example.) Objects always fail Strength and Dexterity saving throws, and
 they are immune to effects that require other saves. When an object drops to 0 hit points, it breaks.

@@ -28,7 +28,7 @@ reciprocal feelings they will fulfill your request to the best of their abilitie
 <div class="hr"></div>
 
 ### Suggested Characteristics
-When creating a Escort, think about how they feel about their situation. Do they enjoy their work? Do they hate it?
+When creating an Escort, think about how they feel about their situation. Do they enjoy their work? Do they hate it?
 Is there a reason they're doing it? This can be useful in deciding how your Courtesan will act.
 
 d8 | Personality Trait
@@ -38,8 +38,8 @@ d8 | Personality Trait
 3 | I am unafraid to get up-close and "personal" with most people or in most situations.
 4 | I keep silent about any shortcomings I may be experiencing. I can't stand being pitied.
 5 | I am extremely flirtatious, even with friends.
-6 | I prefer to leave things finished, rather then let bygones be bygones.
-7 | I love being the center of attention, and dislike those who take that from me.
+6 | I prefer to leave things finished, rather than let bygones be bygones.
+7 | I love being the center of attention and dislike those who take that from me.
 8 | I am quite hesitant to name my profession when asked about it.
 
 <br>

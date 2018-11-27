@@ -28,7 +28,7 @@ is reflected by higher-than-average ability scores.
 ### Experience Points
 The experience point cost to gain a level is always based on your total character level, as shown in the Character
 Advancement table, not your level in a particular class. So, if you are an engineer 6/adept 1, you must gain enough XP
-to reach 8th level before you can take your second level as an adept or your seventh level as a engineer.
+to reach 8th level before you can take your second level as an adept or your seventh level as an engineer.
 
 ### Hit Points and Hit Dice
 You gain the hit points from your new class as described for levels after 1st. You gain the 1st-level hit points for a
@@ -67,9 +67,9 @@ more than two attacks with this feature unless it says you do (as the soldier's 
 
 <h4 class="mt-3 subheading">Spellcasting <v-chip color="orange accent-2" text-color="black" class="v-chip--x-small">change</v-chip></h4>
 
-__Spells known and prepared__: You determine what spells you know and can prepare for each class individually, as if you were a single-classed member
+__Spells known and prepared__: You determine what spells you know and can prepare for each class individually as if you were a single-classed member
 of that class. If you are an adept 4/engineer 3, for example, you know six 1st-level adept spells and five adept cantrips
-based on your levels in the adept class. As 3rd-level engineer, you can prepare 3 engineer spells. If your Intelligence
+based on your levels in the adept class. As a 3rd-level engineer, you can prepare 3 engineer spells. If your Intelligence
 is 16, you can prepare six engineer spells.
 
 Each spell you know and prepare is associated with one of your classes, and you use the spellcasting ability of that

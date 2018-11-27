@@ -109,7 +109,7 @@
     "shields": 30,
     "regen": 10
   },
-  "innateSpellcasting": {
+  "spellcasting (innate example)": {
     "level": "innate",
     "mod": "cha",
     "spellList": [
@@ -145,5 +145,6 @@
     ]
   },
   "type": "Synorg",
-  "unit": "Reaper"
+  "unit": "Reaper",
+  "author": "Author Name"
 }

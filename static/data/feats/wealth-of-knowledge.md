@@ -9,4 +9,4 @@ new: true
 Your grasp of random factoids knows no bounds.
 
 - Increase your Intelligence score by 1, to a maximum of 20.
-- You have advantage on the first Intelligence based skill check you make after a short rest.
+- You have advantage on the first Intelligence-based skill check you make after a short rest.

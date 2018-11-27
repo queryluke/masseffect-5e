@@ -8,8 +8,8 @@ Wealth appears in many forms in a Mass Effect 5e galaxy. Credits, precious metal
 property can reflect your character’s financial well-being. Members of the lower classes trade in goods, bartering for
 what they need and paying taxes in all aspects of life.
 
-Members of the upper class trade either in legal rights, such as the rights to a mining facility, a asteroid point, or
-land on a eezo rich planet, or in equipment and tech, measuring tech by profitability rather than the credits. Only
+Members of the upper-class trade either in legal rights, such as the rights to a mining facility, an asteroid point, or
+land on an eezo rich planet or in equipment and tech, measuring tech by profitability rather than the credits. Only
 shopkeepers, operatives, and those offering professional services for hire commonly deal in credits.
 
 ### Currency <v-chip color="orange accent-2" text-color="black" class="v-chip--x-small">change</v-chip>

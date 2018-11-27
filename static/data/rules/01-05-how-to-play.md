@@ -7,12 +7,12 @@ The play of the Dungeons & Dragons game (and by extension, Mass Effect 5e) unfol
 
 ### 1. The GM describes the environment.
 The GM tells the players where their operatives are and what’s around them, presenting the basic scope of options that
-present themselves (how many airlocks lead out of a space station, what’s on a table, who’s in the night club, and so on).
+present themselves (how many airlocks lead out of a space station, what’s on a table, who’s in the nightclub, and so on).
 
 ### 2. The players describe what they want to do.
 Sometimes one player speaks for the whole party, saying, “We’ll take the east door,” for example. Other times, different
 operatives do different things: one operative might search a lock box while a second examines an esoteric symbol
-spray painted on a wall and a third keeps a look out for thugs. The players don’t need to take turns, but the DM listens
+spray painted on a wall and a third keeps a lookout for thugs. The players don’t need to take turns, but the DM listens
 to every player and decides how to resolve those actions.
 
 Sometimes, resolving a task is easy. If an operative wants to walk across a room and open a door, the GM might just say
@@ -108,7 +108,7 @@ the rest of the game works. Remember this: If a specific rule contradicts a gene
 Exceptions to the rules are often minor. For instance, many operatives don’t have proficiency with shotguns, but every
 soldier does because of a class trait. That trait creates a minor exception in the game. Other examples of rule-breaking
 are more conspicuous. For instance, an operative can’t normally fly, but some spells and armor mods make that possible.
-Biotics and tech accounts for most of the major exceptions to the rules.
+Biotics and tech account for most of the major exceptions to the rules.
 
 ### Round Down
 There’s one more general rule you need to know at the outset. Whenever you divide a number in the game, round down if you

@@ -1,0 +1,58 @@
+{
+  "abilityScores": {
+    "str": 11,
+    "dex": 12,
+    "con": 11,
+    "int": 8,
+    "wis": 9,
+    "cha": 8
+  },
+  "ac": "11",
+  "actions": [
+    {
+      "type": "weapon",
+      "id": "m-8_avenger"
+    },
+    {
+      "type": "weapon",
+      "id": "m-23_katana"
+    }
+  ],
+  "alignment": "Neutral",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "1/4",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [],
+  "hp": {
+    "numDice": 3,
+    "die": 8
+  },
+  "id": "blue_suns_trooper",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/1/13/Blue_Suns_Trooper.png/revision/latest/scale-to-width-down/369?cb=20100626054323",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Blue Suns Trooper",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Medium",
+  "skills": [],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "sp": {
+    "shields": 5,
+    "regen": 5
+  },
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Blue Suns",
+  "author": "Dakota P."
+}

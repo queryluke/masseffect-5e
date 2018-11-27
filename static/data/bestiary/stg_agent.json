@@ -1,0 +1,101 @@
+{
+  "abilityScores": {
+    "str": 10,
+    "dex": 16,
+    "con": 11,
+    "int": 15,
+    "wis": 14,
+    "cha": 12
+  },
+  "ac": "16",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Multiattack",
+      "description": "The agent makes 2 attacks with its Scorpion."
+    },
+    {
+      "type": "weapon",
+      "id": "scorpion"
+    },
+    {
+      "type": "grenade",
+      "id": "flashbang_grenade"
+    },
+    {
+      "type": "standard",
+      "name": "Explosive Decoy",
+      "recharge": null,
+      "description": "As an action, the agent detonates its active Decoy. Each creature within 4m of the decoy must make a Dexterity saving throw. On a failed save, a creature takes 3d6 thunder damage or half as much on a successful one."
+    }
+  ],
+  "alignment": "Lawful neutral",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "3",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Surprise Attack",
+      "recharge": null,
+      "description": "If the agent surprises a creature and hits it with an attack during the first round of combat, the target takes an extra 10 (3d6) damage from the attack."
+    }
+  ],
+  "hp": {
+    "numDice": 12,
+    "die": 8
+  },
+  "id": "stg_agent",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/7/7c/STG_busybodies.png/revision/latest/scale-to-width-down/640?cb=20141208193957",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Salarian STG Agent",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [
+    "int"
+  ],
+  "senses":  [],
+  "size": "Medium",
+  "skills": [
+    "stealth", "survival"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "sp": {
+    "shields": 10,
+    "regen": 5
+  },
+  "spellcasting": {
+    "level": "innate",
+    "mod": "int",
+    "spellList": [
+      {
+        "perDay": "3/day",
+        "spells": [
+          {
+            "id": "decoy"
+          }
+        ]
+      },
+      {
+        "perDay": "5/day",
+        "spells": [
+          {
+            "id": "overload",
+            "higherLevel": 2
+          }
+        ]
+      }
+    ]
+  },
+  "type": "Organic",
+  "unit": "Archetype",
+  "author": "Dakota P."
+}

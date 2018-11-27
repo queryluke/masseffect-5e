@@ -6,7 +6,7 @@ range: 10m
 blast: 2m
 damageType: thunder
 ---
-As an Action, launch a recon mine to a location of your choice within 10m. It first sticks to the target location then
+Launch a recon mine to a location of your choice within 10m. It first sticks to the target location then
 scans enemies within a 10m cone, relaying tactical weak points about the enemy's armor and location. After your turn ends,
 any hostile that walks through the scanning cone loses 1 AC. Each creature can only be affected by this debuff once.
 

@@ -24,7 +24,7 @@ The Acrobatics, Sleight of Hand, Stealth and Vehicle Handling skills reflect apt
 ### Attack Rolls and Damage
 You add your Dexterity modifier to your attack roll and your damage roll when attacking with a ranged weapon, such as an
 assault rifle or a sub-machine gun (SMG). You can also add your Dexterity modifier to your attack roll and your damage
-roll when attacking with a melee weapon that has the _finesse_ property, such as a omni-blade or a monomolecular blade.
+roll when attacking with a melee weapon that has the _finesse_ property, such as an omni-blade or a monomolecular blade.
 
 ### Armor Class
 Depending on the armor you wear, you might add some or all of your Dexterity modifier to your Armor Class.

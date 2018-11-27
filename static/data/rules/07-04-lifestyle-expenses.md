@@ -24,7 +24,7 @@ wretched lifestyle presents abundant dangers. Violence, disease, and hunger foll
 people covet your armor, weapons, and gear, which represent a fortune by their standards. You are beneath the notice
 of most people.
 
-__Squalid__. You live in the slums, a condemned buiding, a repurposed shipping container, or a roach-infested boarding
+__Squalid__. You live in the slums, a condemned building, a repurposed shipping container, or a roach-infested boarding
 house in the worst part of town. You have shelter from the elements, but you live in a desperate and often violent
 environment, in places rife with disease, hunger, and misfortune. You are beneath the notice of most people, and you
 have few legal protections. Most people at this lifestyle level have suffered some terrible setback. They might be
@@ -37,7 +37,7 @@ You benefit from some legal protections, but you still have to contend with viol
 lifestyle level tend to be unskilled laborers, thieves, mercenaries, and other disreputable types.
 
 __Modest__. A modest lifestyle keeps you out of the slums and ensures that you can maintain your equipment. You live in
-an older part of of the city, renting a room in a crowded apartment. You don't go hungry or thirsty, and your living
+an older part of the city, renting a room in a crowded apartment. You don't go hungry or thirsty, and your living
 conditions are clean, if simple. Ordinary people living modest lifestyles include soldiers with families, laborers, students,
 service workers.
 
@@ -54,7 +54,7 @@ to maintain your home or run day to day errands.
 __Aristocratic__. You live a life of plenty and comfort. You move in circles populated by the most powerful people in
 the community. You have excellent lodgings, perhaps a mansion in the nicest part of town or a luxurious suite. You dine
 at the best restaurants, retain the most skilled and fashionable tailor, and have workers attending to your every need.
-You receive invitations to the social gatherings of the rich and powerful, and spend evenings in the company of politicians,
+You receive invitations to the social gatherings of the rich and powerful and spend evenings in the company of politicians,
 community leaders, and other elite persons. You must also contend with the highest levels of deceit and treachery. The
 wealthier you are, the greater the chance you will be drawn into political intrigue as a pawn or participant.
 

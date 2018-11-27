@@ -4,7 +4,7 @@ title: '4.c Background'
 ---
 
 Every story has a beginning. Your character’s background reveals where you came from, how you became an operative, and
-your place in the galaxy. Your soldier might have been a mercenary or a former Specter. Your adept could have been an
+your place in the galaxy. Your soldier might have been a mercenary or a former Specter. Your adept could have been a
 government experiment or a celebrated artisan. Your infiltrator might be a political assassin or gathered intel for the
 Shadow Broker.
 
@@ -20,7 +20,7 @@ information you develop, on your character sheet.
 <v-alert type="info" :value="true">
 <strong>BUILDING KALEEM, STEP 4.C</strong><br>
 Sam decides that Kaleem comes from a lowly background, rummaging the slums of Omega. When she was caught stealing equipment
-from the Blue Suns, the general spared her life b ut put her to work scrapping and repairing weapons, mechs, and other tech.
+from the Blue Suns, the general spared her life but put her to work scrapping and repairing weapons, mechs, and other tech.
 Sam chooses the scrapper background fro Kaleem. She notes the proficiencies and special feature this background gives her.
 </v-alert>
 

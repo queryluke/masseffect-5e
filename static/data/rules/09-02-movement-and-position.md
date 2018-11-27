@@ -40,7 +40,7 @@ staircases - the setting of a typical fight contains difficult terrain.
 Every meter of movement in difficult terrain costs 1 extra meter. This rule is true even if multiple things in a space
 count as difficult terrain.
 
-Low furniture, crates, trashcans, rubble, undergrowth, steep stairs, snow, and shallow bogs are examples of difficult
+Low furniture, crates, trash cans, rubble, undergrowth, steep stairs, snow, and shallow bogs are examples of difficult
 terrain. The space of another creature, whether hostile or not, also counts as difficult terrain.
 
 
@@ -70,7 +70,7 @@ Around You Here are a few examples of the sorts of thing you can do in tandem wi
 - extinguish a small flame
 - put your ear to a door
 - kick a small stone
-- tap the floor with you sword
+- tap the floor with your weapon
 - hand an item to another character
 
 <br>

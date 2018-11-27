@@ -23,7 +23,7 @@ Starships have a x100 modifier.
 
 ### EWS (Electronic Warfare Suite)
 The ships EWS protects the vehicle from hacking attempts but also allows the crew to attempt to hack other ships.
-Players must be a the EWS system to take the Harden or Sabotage action in combat.
+Players must be at the EWS system to take the Harden or Sabotage action in combat.
 
 ### SSC (Sensors, Scanners, and Communications)
 Every vehicle comes with at least some modicum of sensors, scanners, and communication systems. Sensors and scanners
@@ -31,7 +31,7 @@ allow players to scan planets and satellites for composites and valuable materia
 other ships and planets. Players must be at the Sensors systems to take the Scan action during combat.
 
 ### Drive
-The drive and engineering deck are the heart of the ship. Damage to a ship’s drive can render it immobile and shutdown
+The drive and engineering deck are the heart of the ship. Damage to a ship’s drive can render it immobile and shut down
 other vital systems. Players at the Engineering system can attempt the Restore action in combat.
 
 ### Additional Systems & Upgrades
@@ -56,7 +56,7 @@ Maintenance can be performed by a skilled hireling for 3000 credits over 2 long 
 member (as discussed below).
 
 #### Replacing systems
-If a system breaks and must be replaced, you loose any upgrades to that system and must purchase a new one for 300,000
+If a system breaks and must be replaced, you lose any upgrades to that system and must purchase a new one for 300,000
 credits.
 
 <ai-dialog title="Months Without Maintenance" component="without-maintenance"/>

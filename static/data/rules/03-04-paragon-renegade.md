@@ -8,9 +8,9 @@ With the Variant: Paragon & Renegade (P/R) rule, players accrue points in either
 bonuses to skill checks.
 
 ### Earning Points
-The primary way to each Paragon or Renegade points is by taking actions or role playing that personality. This mechanic
-works similarly rewarding Inspiration (described above), except the reward can be 1-5 points based on the impact of the
-choice and weather the choice aligns with Paragon or Renegade. GMs can also reward points to the entire party based on a
+The primary way to each Paragon or Renegade points is by taking actions or role-playing that personality. This mechanic
+works similarly rewarding Inspiration (described above), but the reward can be 1-5 points based on the impact of the
+choice and whether the choice aligns with Paragon or Renegade. GMs can also reward points to the entire party based on a
 decision they make while playing the game. Did the party destroy the potentially life-threatening biological weapon
 (Renegade) or send it to authorities for research in vaccinations (Paragon).
 
@@ -43,7 +43,7 @@ Renegade choices are decisive and final, emotional, gain immediate results, and 
 - Acrobatics: jump in front of a bullet to protect someone
 - Athletics: Hold fast a door why your party escapes a threat
 - Intimidation: Threaten someone with justice
-- Medicine: Stabalize an enemy because they might provide information
+- Medicine: Stabilize an enemy because they might provide information
 - Vehicle Handling: Lead your chasers right to the authorities
 
 #### Renegade examples

@@ -23,7 +23,7 @@ You're an artist in the pilot seat, giving you the following benefits based on y
 
 Proficiency | Benefit
 --- | ---
-Starship systems (helm) | You're far travelled an have insight into customs and dangers of all planets connected to a major trade route.
+Starship systems (helm) | You're far traveled an have insight into customs and dangers of all planets connected to a major trade route.
 Starship system (navigation) | Your ship's range is increased by 1
 Vehicles (air) | You have advantage when making checks to fly through stormy weather
 Vehicles (land) | You have advantage when making checks to drive over difficult terrain
@@ -33,7 +33,7 @@ Vehicles (water) | The time it takes to get from one location to another is redu
 <div class="hr"></div>
 
 ### Suggested Characteristics
-The scale of a pilots travels could be limited to a single planet, system, or across the entire galaxy. But all pilots
+The scale of a pilot's travels could be limited to a single planet, system, or across the entire galaxy. But all pilots
 are most comfortable on the move and never stay in one place very long, always seeking a new adventure or experience.
 
 d6 | Personality Trait

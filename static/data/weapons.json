@@ -640,7 +640,7 @@
     "damage": "6d12",
     "range": "60",
     "tags": "Special, Two-handed, Heavy",
-    "notes": "Choose a creature within 60m that you can see and fire a missle at it. Each creature within a 4m cube of the target, including the target, must make a Dexterity saving throw (DC 14). On a failed save a creature takes 6d12 thunder damge or half as much on a successful one.",
+    "notes": "Choose a creature within 60m that you can see and fire a missile at it. Each creature within a 4m cube of the target, including the target, must make a DC 14 Dexterity saving throw (DC 14). On a failed save a creature takes 39 (6d12) thunder damage or half as much on a successful one.",
     "npcHit": null,
     "npcMiss": null,
     "dmgType": "thunder",

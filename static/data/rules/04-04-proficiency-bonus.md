@@ -16,7 +16,7 @@ suggests that your proficiency bonus applies more than once to the same roll, yo
 divide it only once.
 
 By the same token, if a feature or effect allows you to multiply your proficiency bonus when making an ability check that
-wouldn’t normally benefit from your proficiency bonus, you still don’t add the bonus to the check. For that check your
+wouldn’t normally benefit from your proficiency bonus, you still don’t add the bonus to the check. For that check, your
 proficiency bonus is 0, given the fact that multiplying 0 by any number is still 0. For instance, if you lack proficiency
 in the History skill, you gain no benefit from a feature that lets you double your proficiency bonus when you make
 Intelligence (History) checks.

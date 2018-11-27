@@ -57,11 +57,11 @@ What’s the one person, concept, or event that you are terrified of? What are y
 <v-alert type="info" :value="true">
 <strong>BUILDING KALEEM, STEP 4.D</strong><br>
 Sam has a pretty clear picture of Kaleem’s personality in mind, so she skips the personality traits suggested in the scrapper
-background, noting instead that Kaleem is a aloof and soft-spoken. She is distrustful of strangers, but fiercely loyal to her friends.
+background, noting instead that Kaleem is aloof and soft-spoken. She is distrustful of strangers but fiercely loyal to her friends.
 She chooses the ideal of change from the list in her background, noting that Kaleem believes that the only constant in the universe
 is change.
 
-Given her history, Kaleem’s bond is obvious: she owes her life to the Blue Suns. Her flaw is that she lack empathy which
+Given her history, Kaleem’s bond is obvious: she owes her life to the Blue Suns. Her flaw is that she lacks empathy which
 has caused her to do some morally questionable deeds without thinking twice.
 </v-alert>
 

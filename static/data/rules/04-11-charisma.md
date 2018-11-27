@@ -15,7 +15,7 @@ and Persuasion skills reflect aptitude in certain kinds of Charisma checks.
 <skill-list abilityLimit="Charisma"></skill-list>
 - __*Other Charisma Checks*__. The GM might call for a Charisma check when you try to accomplish tasks like the following:
   - Find the best person to talk to for news, rumors, and gossip
-  - Blend into a crowd to get the sense of key topics of conversation
+  - Blend into a crowd to get a sense of key topics of conversation
 
 &nbsp;
 

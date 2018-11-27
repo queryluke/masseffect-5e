@@ -4,7 +4,7 @@ title: '4. Describe Your Character'
 ---
 
 Once you know the basic game aspects of your character, it’s time to flesh him or her out as a person. Your character’s
-name, physical description and personality might be the first things that the other players at the table learn about you.
+name, physical description, and personality might be the first things that the other players at the table learn about you.
 It’s worth thinking about how these characteristics reflect the character you have in mind.
 
 ### Your Character's Abilities
@@ -31,7 +31,7 @@ character with a low Charisma might come across as abrasive, inarticulate, or ti
 
 <v-alert type="info" :value="true">
 <strong>BUILDING KALEEM, STEP 4</strong><br>
-Sam lets her ability scores influence the type of character Kaleem is: her high Intelligence suggest an rapid focused
+Sam lets her ability scores influence the type of character Kaleem is: her high Intelligence suggests a rapid, focused
 mind, higher Strength and Constitution suggest a healthy, athletic body, and her low Charisma suggests stand-offish or
 awkward social decorum.
 </v-alert>

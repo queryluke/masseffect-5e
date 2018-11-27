@@ -24,7 +24,7 @@ you cast the advanced version of it. You can only learn one advancement for each
 
 ### Spellcasting Ability
 
-Sentinels use a unique L5t biotic implant that integrates with their omni-tool and harnesses their willpower. As an Sentinel,
+Sentinels use a unique L5t biotic implant that integrates with their omni-tool and harnesses their willpower. As a Sentinel,
 you use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier
 when setting the saving throw DC for a spell you cast and when making an attack roll with one.
 

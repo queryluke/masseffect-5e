@@ -7,4 +7,4 @@ choose one 1st-level spell from that same list. You learn that spell and can cas
 it, you must finish a long rest before you can cast it again.
 
 Neither of the cantrips nor the spell can be an advanced version. But you can learn or prepare an advanced version of
-the spell as your class premits.
+the spell as your class permits.

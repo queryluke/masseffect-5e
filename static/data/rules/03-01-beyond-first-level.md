@@ -25,7 +25,7 @@ increases by 8 (1 additional hit point for each level).
 
 ### XP and Proficiency Bonus Progression
 
-The Character Advancement table summarizes the XP you need to advance in levels from level 1 through level 20, and the
+The Character Advancement table summarizes the XP you need to advance in levels from level 1 through level 20 and the
 proficiency bonus for a character of that level. Consult the information in your character's class description to see
 what other improvements you gain at each level.
 

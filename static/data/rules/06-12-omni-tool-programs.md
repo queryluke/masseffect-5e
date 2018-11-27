@@ -11,13 +11,13 @@ reuse of salvaged equipment.
 
 Most omni-tools come with a standard set of functionality, including scanning, remote interfacing, and some fabricator
 designs.  However, there exist in the galaxy a number of advanced omni-tool programs that are not available for the general
-population's consumption. These programs tend to be of military design, experimental hacks, or deprecated programs
+population's consumption. These programs tend to be of military design, experimental hacks or deprecated programs
 that have been scrubbed from the exonet.
 
 ### Installation
 
 Some omni-tool programs require an operative to integrate the module into the tool's microframe before the benefits can
-be used. This is process called Installation, and certain programs have a prerequisite for it.
+be used. This process is called Installation, and certain programs have a prerequisite for it.
 
 Installation requires an operative to spend a short rest focused on only installing and debugging the program. If the short
 rest is interrupted, the installation attempt fails. Otherwise, at the end of the short rest, the operative gains the

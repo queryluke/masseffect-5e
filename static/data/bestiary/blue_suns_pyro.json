@@ -1,0 +1,64 @@
+{
+  "abilityScores": {
+    "str": 12,
+    "dex": 12,
+    "con": 16,
+    "int": 11,
+    "wis": 12,
+    "cha": 10
+  },
+  "ac": "13",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "M-451 Firestorm",
+      "recharge": "10 charges",
+      "description": "Creatures within a 6m cone must make a DC 13 Dexterity saving throw. On a failed save, a creature takes 14 (4d6) fire damage, or half as much damage on a successful one."
+    }
+  ],
+  "alignment": "Neutral",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "1/4",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Aggressive",
+      "recharge": null,
+      "description": "As a bonus action, the pyro can move up to its speed toward a hostile creature that it can see."
+    }
+  ],
+  "hp": {
+    "numDice": 8,
+    "die": 8
+  },
+  "id": "blue_suns_pyro",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/c/c2/Blue_Suns_Pyro_2.png/revision/latest/scale-to-width-down/347?cb=20100621035042",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Blue Suns Pyro",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Medium",
+  "skills": [
+    "survival"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "sp": {
+    "shields": 10,
+    "regen": 0
+  },
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Blue Suns",
+  "author": "Dakota P."
+}

@@ -12,7 +12,7 @@ a character can use at each character level.
 When a character casts a spell, he or she expends a slot of that spell's level or higher, effectively "filling" a slot
 with the spell. You can think of a spell slot as a groove of a certain size - small for a 1st-level slot, larger for a
 spell of higher level. A 1st-level spell fits into a slot of any size, but a 4th-level spell fits only in a 4th-level slot.
-So when an adept casts lance, a 1st-level spell, he or she spends one 1st-level slots.
+So when an adept casts lance, a 1st-level spell, he or she spends one 1st-level slot.
 
 Finishing a long rest restores any expended spell slots.
 

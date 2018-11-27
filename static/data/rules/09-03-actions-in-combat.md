@@ -13,7 +13,7 @@ what kind of roll you need to make, if any, to determine success or failure.
 
 
 ### Attack
-The most common action to take in combat is the Attack action, whether you are swinging a sword, firing an gun, or brawling
+The most common action to take in combat is the Attack action, whether you are swinging a sword, firing a gun, or brawling
 with your fists.
 
 With this action, you make one melee or ranged attack. See the "Making an Attack" section for the rules that govern attacks.
@@ -103,7 +103,7 @@ holding, returning the weapon's heat to its maximum value.
 At the start of your turn, if you are holding only a single weapon, you may use a Bonus Action to attempt a Rapid Reload.
 Make a DC 15 Dexterity (Sleight of Hand) check. On a success, you reload the weapon you're currently holding and may continue your turn as normal.
 On a failure, you must take the Reload action this turn. On a critical failure, the thermal clip drops from your hand,
-your weapon is not reloaded, and your lose your Action.
+your weapon is not reloaded, and you lose your Action.
 
 *Why is this a variant rule?* Although there are class features and weapon mods that allow you to reload as a bonus action,
 this variant rule gives all classes a potential chance to reload as a bonus action. In turn, this increases the number of

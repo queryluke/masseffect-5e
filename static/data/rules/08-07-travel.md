@@ -40,7 +40,7 @@ land might take a little longer.
 #### Starships
 To travel from system to system, or cluster to cluster, your party will need to use a starship. Every 
 starship has a __range__ attribute which represents the number of system and cluster jumps it can make in a 24 
-hour period. Travelling between systems in a cluster or jumping from one cluster to another takes 1 range.
+hour period. Traveling between systems in a cluster or jumping from one cluster to another takes 1 range.
 
 Traveling between systems is the same as traveling between planets. You can move to any other system within a cluster
 and it costs 1 range. A starship with 3 range that starts on Tuchanka can leave the planet an arrive in

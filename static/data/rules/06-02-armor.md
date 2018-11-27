@@ -6,8 +6,8 @@ change: true
 
 To survive in the galaxy, your character needs to wear armor. Not only does armor abate damage from extremely powerful,
 futuristic weapons but armor also supplies __shield points__, also called shields (outlined below). Luckily, almost all
-garments in the mass effect would provide some for of protection. Diaphanous night-gowns can even provide a modicum of
-protection. Thus, in Mass Effect 5e, almost all operatives a wearing armor and afforded shield points, unless they player
+garments in the mass effect world provide some form of protection. Diaphanous night-gowns can even provide a modicum of
+protection. Thus, in Mass Effect 5e, almost all operatives are wearing armor and re afforded shield points, unless the player
 or GM explicitly states your character is not wearing armor.
 
 __Armor Proficiency__. Just like 5th edition, anyone can put on armor. However, only those proficient in the armor type
@@ -19,7 +19,7 @@ proficiency with, you cannot cast Biotics or Tech and Combat powers.
 __Armor Class (AC)__. Armor protects its wearer from attacks. The armor you wear determines your base Armor Class.
 
 __Shield Points__. <v-chip color="secondary" text-color="white" class="v-chip--x-small">new</v-chip> All armor chest pieces
-provides some amount of shield points. See the <nuxt-link to="/phb/rules/combat#shields">Shields</nuxt-link> of the combat section for
+provide some amount of shield points. See the <nuxt-link to="/phb/rules/combat#shields">Shields</nuxt-link> of the combat section for
 more information.
 
 
@@ -30,7 +30,7 @@ __Head__, __Chest__, __Arms__, and __Legs__.
 
 Your base AC is 10 and each piece of armor provides an AC bonus depending on its type and placement as listed in
 the Armor / AC table. Additionally, there are bonuses and limitations for the combination of armor types you are wearing,
-explained in the Armor Bonues and Limitations table.
+explained in the Armor Bonuses and Limitations table.
 
 For simplicity's sake, you cannot mix armor *within* placements. I.e., you cannot have a heavy piece of on your right arm
 and a light piece of armor on your left.

@@ -10,7 +10,7 @@ While Omni-Shield is deployed, you gain the following:
 * If wielding a single-handed ranged or melee weapon, gain +2 AC and a +2 bonus to Dexterity saving throws.
 * If a creature within 2m of you is attacked, you may use your reaction to impose disadvantage on that attack.
 * As an attack action, you may make a melee attack roll. On a hit, deal 1d12 bludgeoning damage. You may shove a
-hit creature backwards 2m.
+hit creature backward 2m.
 
 <br>
 

@@ -26,8 +26,8 @@ They will shield you from the law or anyone else searching for you, though they 
 <div class="hr"></div>
 
 ### Suggested Characteristics
-A colonist is generally not far travelled and has lived most their life on a single planet. However, colonies can vary in size,
-governmental structure, and socio-economic status. Colonists look on their humble origins as a virtue, not a shortcoming,
+A colonist is generally not far traveled and has lived most their life on a single planet. However, colonies can vary in size,
+governmental structure, and socioeconomic status. Colonists see their humble origins as a virtue, not a shortcoming,
 and their home communities remain very important to them.
 
 d8 | Personality Trait

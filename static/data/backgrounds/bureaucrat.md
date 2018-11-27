@@ -77,7 +77,7 @@ d6 | Bond
 3 | I care more about finding the truth above all other things. Transparency is my highest priority.
 4 | The law does not necessarily mean justice. I oppose those who use the law to extract anything but justice.
 5 | I seek to help those in need by teaching law, literacy, and good management.
-6 | I may not be from a well-know lineage of my race, but with my knowledge of governance I can become a powerful leader.
+6 | I may not be from a well-known lineage of my race, but with my knowledge of governance, I can become a powerful leader.
 
 <br>
 

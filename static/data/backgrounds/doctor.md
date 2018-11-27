@@ -19,7 +19,7 @@ __Equipment__. A medical kit, a set of scrubs that are resistant to bodily fluid
 
 __Feature: House Calls__. Your talents make you highly sought after, particularly in regions or communities with little
 access to medicine. Those who recognize you as a doctor may request your services, and may offer you a reward in return
-should you choose to provide services for them. You might be able to receive free or discounted food and lodging,
+should you choose to provide services for them. You might be able to receive free or discounted food and lodging
 or gain access to normally off-limits locations by leveraging your position as a doctor if your services are needed.
 
 <div class="hr"></div>
@@ -31,10 +31,10 @@ desire to "fix what is broken", although some view this ability as a means to an
 d8 | Personality Trait
 --- | ---
 1 | I am sympathetic to anyone in pain.
-2 | I have a tendency to become focuses on my work to the exclusion of everyone else.
+2 | I have a tendency to become focused on my work to the exclusion of everyone else.
 3 | I like to explain my theories of medicine to anyone who will listen.
 4 | I have seen too much horror to be affected by scenes of suffering.
-5 | I am skeptical of homeopathic methods and religion, and instead I trust in the sciences.
+5 | I am skeptical of homeopathic methods and religion, and instead, I trust in the sciences.
 6 | When someone is injured, I will drop all other responsibilities to tend to them.
 7 | I am constantly taking note of potential signs and symptoms in the people I meet.
 8 | I take every opportunity I can get to wash my hands.
@@ -59,7 +59,7 @@ d6 | Bond
 3 | I am working on a cure for the disease that decimated my home.
 4 | Someone I loved died of a genetic illness. I spend my life studying the prevention of genetic defects.
 5 | I am compiling my medical discoveries in a series of private articles, which I won't release until my death.
-6 | I was involved in a illegal experiment and am afraid of being discovered.
+6 | I was involved in an illegal experiment and am afraid of being discovered.
 
 <br>
 

@@ -20,7 +20,7 @@ up to 10 omni-gel, and 500 credits.
 
 __Feature: Another Alien's Trash...__. You see value in mechanical junk, broken machines, and antiquated equipment. Sometimes
 you can repair an item to working conditions and sell it to a collector for a profit. You have exonet connections and knowledge
-of what collectors want what objects. You also have encyclopedia knowledge about what gear, weapons, and devices contain
+of what collectors want what objects. You also have encyclopedic knowledge about what gear, weapons, and devices contain
 valuable or rare materials and you know how to salvage those materials from the containing items.
 
 <div class="hr"></div>
@@ -31,7 +31,7 @@ Scrappers are hoarders, inventors, crafters, and tinkerers. To them, everything 
 d6 | Personality Trait
 --- | ---
 1 | I prefer the company of VI and AI to organic beings.
-2 | I can't pass up the chance to root through someones trash and look for "valuables".
+2 | I can't pass up the chance to root through someone's trash and look for "valuables".
 3 | I often anthropomorphize machines and inanimate objects.
 4 | I'm constantly creating random objects out of junk.
 5 | I'm fairly naive about subjects other than electronics and engineering.
@@ -45,10 +45,10 @@ d6 | Ideal
 --- | ---
 1	| Invention. I create for the sake of creation, not for money or fame. (Any)
 2	| Greed. You can break something that works perfectly and get paid to fix it. (Evil)
-3	| Perfection. This is a correct way to do everything. (Lawful)
+3	| Perfection. There is a correct way to do everything. (Lawful)
 4	| Aspiration. I want to create something that changes the galaxy. (Neutral)
 5	| Protection. I must do everything possible to save perfectly good things from being discarded. (Good)
-6	| Indifferent. Everything breaks and everyone dies. There isn't much point is trying to save things. (Chaotic)
+6	| Indifferent. Everything breaks and everyone dies. There isn't much point in trying to save things. (Chaotic)
 
 <br>
 
@@ -66,7 +66,7 @@ d6 | Bond
 d6 | Flaw
 --- | ---
 1 | I constantly chide people for throwing things away and describe the numerous ways they could have reused the item.
-2 | I like to dismantle and reconstruct things that are in perfectly working order (sometimes they break...)
+2 | I like to dismantle and reconstruct things that are in perfect working order (sometimes they break...)
 3 | I talk to myself, and I don’t make friends easily.
 4 | I hate to shower and give off quite a funky smell.
 5	| I don't really understand the concept of "personal space."

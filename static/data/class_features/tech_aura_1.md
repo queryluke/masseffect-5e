@@ -4,7 +4,7 @@ name: Tech Aura
 ---
 In addition to the standard defensive VI, you've augmented your Tech Armor to run different VI packages. When you activate
 tech armor, you can choose to run a different VI package instead. When you activate an alternate package, you
-do not gain hit points, instead you and any friendly creature within 10m of you gain
+do not gain hit points, instead, you and any friendly creature within 10m of you gain
 the effect of the package for 1 hour. You may only have one tech armor active at once.
 
 Package | Effect

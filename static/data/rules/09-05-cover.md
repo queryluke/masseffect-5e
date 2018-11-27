@@ -18,7 +18,7 @@ whether that creature is an enemy or a friend.
 
 ### Three-quarters Cover
 A target with three-quarters cover has a +5 bonus to AC and Dexterity saving throws. A target has three-quarters cover
-if about three-quarters of it is covered by an obstacle. The obstacle might be a doorway, an large crate, or a thick tree trunk.
+if about three-quarters of it is covered by an obstacle. The obstacle might be a doorway, a large crate, or a thick tree trunk.
 
 ### Total Cover
 A target with total cover can't be targeted directly by an attack or a spell, although some spells can reach such a
@@ -28,7 +28,7 @@ target by including it in an area of effect. A target has total cover if it is c
 
 #### Size
 Size matters. If the target is one size larger than the creature providing cover, the target has no cover. If the target
-is one size smaller than the creature providing cover, ther target has three-quarters cover.
+is one size smaller than the creature providing cover, the target has three-quarters cover.
 
 #### High Ground
 Flying enemies or creatures on high ground are able to shoot over cover depending on the type of cover provided

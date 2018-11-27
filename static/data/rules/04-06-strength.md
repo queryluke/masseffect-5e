@@ -17,7 +17,7 @@ to otherwise apply brute force to a situation. The Athletics skill reflects apti
   - Force open a stuck, locked, or barred door
   - Break free of bonds
   - Push through a tunnel that is too small
-  - Hang on to a hover card while being dragged behind it
+  - Hang on to a hover car while being dragged behind it
   - Tip over a dormant mech
   - Restraining an elcor
 
@@ -25,8 +25,8 @@ to otherwise apply brute force to a situation. The Athletics skill reflects apti
 
 ### Attack Rolls and Damage
 You add your Strength modifier to your attack roll and your damage roll when attacking with a melee weapon such as
-a omni-hammer, a monomolecular blade, or a krogan warhammer. Additionally, ranged weapon marked with the _Recoil_ property
-allow you to overcome the kickback of the weapon with brute force. You may apply your Strength modifer to your attack roll
+an omni-hammer, a monomolecular blade, or a krogan warhammer. Additionally, ranged weapon marked with the _Recoil_ property
+allow you to overcome the kickback of the weapon with brute force. You may apply your Strength modifier to your attack roll
 and damage roll when attacking with _Recoil_ weapons.
 
 ### Lifting and Carrying <v-chip color="orange accent-2" text-color="black" class="v-chip--x-small">change</v-chip>

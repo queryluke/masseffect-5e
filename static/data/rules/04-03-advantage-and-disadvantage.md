@@ -15,7 +15,7 @@ If circumstances cause a roll to have both advantage and disadvantage, you are c
 you roll one d20. This is true even if multiple circumstances impose disadvantage and only one grants advantage or vice
 versa. In such a situation, you have neither advantage nor disadvantage.
 
-When you have advantage or disadvantage and something in the game, such as the volus's Lucky trait, lets you reroll the
+When you have advantage or disadvantage and something in the game, such as the volus' Lucky trait, lets you reroll the
 d20, you can reroll only one of the dice. You choose which one. For example, if a volus has advantage or disadvantage on
 an ability check and rolls a 1 and a 13, the volus could use the Lucky trait to reroll the 1.
 

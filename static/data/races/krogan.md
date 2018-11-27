@@ -19,7 +19,7 @@ abilityScoreIncrease:
     ability: Constitution
 size: Medium
 speed: 10m
-snippet: The krogan are a species of large reptilian bipeds native to the planet Tuchanka, a world known for its harsh environments, scarce resources, and overabundance of vicious predators.
+snippet: The krogan are a species of large reptilian bipeds native to the planet Tuchanka, a world known for its harsh environments, scarce resources, and an overabundance of vicious predators.
 startingCredits: Instead of your class's starting equipment, you may start with 10d4 x 1000 + 10,000 credits to buy your own equipment.
 bodyImg: http://vignette4.wikia.nocookie.net/masseffect/images/6/66/Krogan_MP.png/revision/latest/scale-to-width-down/500
 img: https://vignette.wikia.nocookie.net/masseffect/images/0/03/Wreav_rally_-_destroy_2.png/revision/latest/scale-to-width-down/640?cb=20130215150038
