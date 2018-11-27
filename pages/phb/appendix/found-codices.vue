@@ -35,7 +35,7 @@
         v-card.elevation-0.transparent
           v-card-title.headline Hanar
             small.ml-3
-              em by Mikolaj
+              em by Avezebra
           v-card-text
             v-card
               race-info(:race="hanar.attributes")
