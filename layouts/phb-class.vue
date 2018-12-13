@@ -21,7 +21,7 @@
 
     // Content
     v-content.blue-grey.lighten-4
-      h1.sr-only Mass Effect 5e - Player's Handbook
+      h1.sr-only Mass Effect 5e - Player's Manual
       nuxt
 </template>
 
