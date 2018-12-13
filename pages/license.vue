@@ -11,7 +11,7 @@
     components: {License},
     head () {
       return {
-        title: 'Mass Effect 5e | License',
+        title: 'License | Mass Effect 5e',
         meta: [
           { hid: 'description', name: 'description', content: 'Mass Effect 5e License' }
         ]

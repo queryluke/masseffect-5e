@@ -24,7 +24,7 @@
     },
     head () {
       return {
-        title: `Mass Effect 5e | Spell Cards${this.limit ? ` - ${this.limit}` : ''}`,
+        title: `Spell Cards${this.limit ? ` - ${this.limit}` : ''} | Mass Effect 5e`,
         meta: [
           { hid: 'description', name: 'description', content: 'Printable Spell Cards for Mass Effect 5e' }
         ]

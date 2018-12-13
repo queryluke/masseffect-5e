@@ -61,7 +61,7 @@
     },
     head () {
       return {
-        title: 'Mass Effect 5e | Appendix - Found Codices',
+        title: 'Found Codices - Appendix | Mass Effect 5e',
         meta: [
           { hid: 'description', name: 'description', content: 'Community rules to try out!' }
         ]

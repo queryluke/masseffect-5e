@@ -100,7 +100,7 @@
     },
     head () {
       return {
-        title: 'Mass Effect 5e | Equipment - Weapon Mods',
+        title: 'Weapon Mods - Equipment | Mass Effect 5e',
         meta: [
           { hid: 'description', name: 'description', content: 'Mass Effect 5e comes with a full set of weapon  mods that let you customize your weapon to your needs.' }
         ]

@@ -298,7 +298,7 @@
     },
     head () {
       return {
-        title: 'Mass Effect 5e | GM Tools - Loot Generator',
+        title: 'Loot Generator - GM Tools | Mass Effect 5e',
         meta: [
           { id: 'description', name: 'description', content: 'A quick and easy way to decide loot.' }
         ]

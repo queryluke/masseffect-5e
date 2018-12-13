@@ -105,7 +105,7 @@
     },
     head () {
       return {
-        title: 'Mass Effect 5e | Equipment - Pre-made Armor Sets',
+        title: 'Pre-made Armor Sets - Equipment | Mass Effect 5e',
         meta: [
           { hid: 'description', name: 'description', content: 'These pre-made armor sets are available as cheap alternatives to custom modding.' }
         ]

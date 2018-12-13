@@ -11,7 +11,7 @@
     components: { CreatingArmor },
     head () {
       return {
-        title: 'Mass Effect 5e | For GMs - Customizing Armor',
+        title: 'Customizing Armor - For GMs | Mass Effect 5e',
         meta: [
           { hid: 'description', name: 'description', content: 'Learn how to create new armor sets and mods' }
         ]
