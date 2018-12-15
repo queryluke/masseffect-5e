@@ -42,7 +42,7 @@
     },
     head () {
       return {
-        title: 'Mass Effect 5e | Feats',
+        title: 'Feats | Mass Effect 5e',
         meta: [
           { hid: 'description', name: 'description', content: 'New feats available! Plus a curated list of D&D 5th edition feats.' }
         ]

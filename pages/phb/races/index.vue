@@ -19,7 +19,7 @@
     },
     head () {
       return {
-        title: 'Mass Effect 5e | Races',
+        title: 'Races | Mass Effect 5e',
         meta: [
           { hid: 'description', name: 'description', content: 'Every race you need for a deeply involved Mass Effect Campaign.' }
         ]

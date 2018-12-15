@@ -97,7 +97,7 @@
     },
     head () {
       return {
-        title: 'Mass Effect 5e | Equipment - Weapons',
+        title: 'Weapons - Equipment | Mass Effect 5e',
         meta: [
           { hid: 'description', name: 'description', content: 'The Mass Effect 5e arsenal has over 80 unique weapons designed to match the game\'s weaponry' }
         ]

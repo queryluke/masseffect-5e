@@ -235,7 +235,7 @@
     },
     head () {
       return {
-        title: 'Mass Effect 5e | About',
+        title: 'About | Mass Effect 5e',
         meta: [
           { hid: 'description', name: 'description', content: 'Learn more about the Mass Effect 5e creators and contributors.' }
         ]

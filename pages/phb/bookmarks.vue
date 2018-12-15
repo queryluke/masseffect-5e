@@ -122,7 +122,7 @@
     },
     head () {
       return {
-        title: 'Mass Effect 5e | Player\'s Manual - Bookmarks',
+        title: 'Bookmarks | Mass Effect 5e',
         meta: [
           { hid: 'description', name: 'description', content: 'Keep your favorite weapons, enemies, and spells close at hand with our nifty bookmark tool.' }
         ]

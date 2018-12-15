@@ -34,6 +34,14 @@
   import BookmarkButton from '~/components/BookmarkButton.vue'
 
   export default {
+    head () {
+      return {
+        title: 'Grunt Generator - For GMs | Mass Effect 5e',
+        meta: [
+          { hid: 'description', name: 'description', content: 'Generate random monster and NPC stats for easier encounter building' }
+        ]
+      }
+    },
     components: {
       BookmarkButton,
       StatBlock,

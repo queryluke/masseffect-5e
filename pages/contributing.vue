@@ -176,7 +176,7 @@
   export default {
     head () {
       return {
-        title: 'Mass Effect 5e | Feedback',
+        title: 'Feedback | Mass Effect 5e',
         meta: [
           { hid: 'description', name: 'description', content: 'Learn how to contribute and provide feedback.' }
         ]

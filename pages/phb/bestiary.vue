@@ -102,7 +102,7 @@
     },
     head () {
       return {
-        title: 'Mass Effect 5e | Bestiary',
+        title: 'Bestiary | Mass Effect 5e',
         meta: [
           { hid: 'description', name: 'description', content: 'Give your player\'s a unique challenge with over 100 custom made Mass Effect enemies! ' }
         ]

@@ -39,7 +39,7 @@
     },
     head () {
       return {
-        title: 'Mass Effect 5e | Appendix - Skills',
+        title: 'Skills - Appendix | Mass Effect 5e',
         meta: [
           { hid: 'description', name: 'description', content: 'Mass Effect 5e comes with a few futuristic skill options!' }
         ]

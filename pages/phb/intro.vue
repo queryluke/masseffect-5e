@@ -28,7 +28,7 @@
     },
     head () {
       return {
-        title: 'Mass Effect 5e | Player\'s Manual',
+        title: 'Player\'s Manual | Mass Effect 5e',
         meta: [
           { hid: 'description', name: 'description', content: 'Want to play D&D in the Mass Effect Universe? Learn how to get started.' }
         ]

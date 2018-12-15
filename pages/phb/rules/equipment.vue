@@ -26,7 +26,7 @@
     },
     head () {
       return {
-        title: `Mass Effect 5e | ${this.title}`,
+        title: `${this.title} | Mass Effect 5e`,
         meta: [
           { hid: 'description', name: 'description', content: 'Near gear? Mass Effect 5e has a lot of it.' }
         ]

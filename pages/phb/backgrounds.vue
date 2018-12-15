@@ -30,7 +30,7 @@
     },
     head () {
       return {
-        title: 'Mass Effect 5e | Backgrounds',
+        title: 'Backgrounds | Mass Effect 5e',
         meta: [
           { hid: 'description', name: 'description', content: 'Backgrounds provide additional flavor and benefits to your character.' }
         ]

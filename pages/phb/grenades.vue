@@ -12,7 +12,7 @@
     components: { GrenadeList },
     head () {
       return {
-        title: 'Mass Effect 5e | Appendix - Grenades & Mines',
+        title: 'Grenades & Mines - Appendix | Mass Effect 5e',
         meta: [
           { hid: 'description', name: 'description', content: 'Grenades offer an offensive boost while mines can be used like D&D traps.' }
         ]

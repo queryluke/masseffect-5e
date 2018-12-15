@@ -26,7 +26,7 @@
     },
     head () {
       return {
-        title: `Mass Effect 5e | ${this.title}`,
+        title: `${this.title} | Mass Effect 5e`,
         meta: [
           { hid: 'description', name: 'description', content: 'Combat is very similar to D&D 5th edition, with a few additional rules and defensive mechanics that add Mass Effect flavor to the system.' }
         ]

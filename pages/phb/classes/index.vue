@@ -27,7 +27,7 @@
     },
     head () {
       return {
-        title: 'Mass Effect 5e | Classes',
+        title: 'Classes | Mass Effect 5e',
         meta: [
           { hid: 'description', name: 'description', content: 'Choose your favorite Mass Effect class, each with 3 subclasses to provide variety to the game.' }
         ]

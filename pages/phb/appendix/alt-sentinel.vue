@@ -65,7 +65,7 @@
     },
     head () {
       return {
-        title: `Mass Effect 5e | Classes - Alt Sentinel`,
+        title: `Alt Sentinel - Classes | Mass Effect 5e`,
         meta: [
           { hid: 'description', name: 'description', content: `Learn more about the alternative sentinel class, including Progression table, subclasses, proficiencies, and starting equipment` }
         ]
