@@ -24,10 +24,19 @@ you cast the advanced version of it. You can only learn one advancement for each
 
 ### Spellcasting Ability
 
-Sentinels use a unique L5t biotic implant that integrates with their omni-tool and harnesses their willpower. As a Sentinel,
-you use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier
-when setting the saving throw DC for a spell you cast and when making an attack roll with one.
+Sentinels use a unique L5t biotic implant that integrates with the operative's omni-tool maximizes their innate talents.
+As a sentinel you choose your spellcasting modifier from Charisma, Intelligence, or Wisdom. 
 
-__Spell save DC__ = 8 + your proficiency bonus + your Charisma modifier
+- Choosing Charisma means that your operative has immense willpower and uses it to overcome the mental strain of casting 
+  biotic spells and interfacing with their omni-tool. They use their innate talent to maximize the potency of their spells.
+- Choosing Intelligence means that your operative takes advantage of their omni-tool, using it to assist in the casting
+  of biotic spells. Their keen intellect helps them choose strategic targets to maximize the potency of their spells.
+- Choosing Wisdom means that your operative has unmatched concentration and can use the physical mnemonics of their
+  biotic implant to cast tech spells with their omni-tool. Their patience and insight maximizes the potency of their spells.
 
-__Spell attack modifier__ = your proficiency bonus + your Charisma modifier
+You use your selected ability whenever a spell refers to your spellcasting ability. In addition, you use your selected
+ability's modifier when setting the saving throw DC for a spell you cast and when making an attack roll with one.
+
+__Spell save DC__ = 8 + your proficiency bonus + your selected ability modifier
+
+__Spell attack modifier__ = your proficiency bonus + your selected ability modifier
