@@ -1,9 +1,5 @@
 [
   {
-    "id": "a_touch_of_force",
-    "name": "A Touch of Force"
-  },
-  {
     "id": "ability_score_improvement",
     "name": "Ability Score Improvement"
   },
@@ -42,6 +38,10 @@
   {
     "id": "assault_protocol",
     "name": "Assault Protocol"
+  },
+  {
+    "id": "a_touch_of_force",
+    "name": "A Touch of Force"
   },
   {
     "id": "barrier",
@@ -180,10 +180,6 @@
     "name": "Drone"
   },
   {
-    "id": "drone_companion",
-    "name": "Drone Companion"
-  },
-  {
     "id": "drones_bond",
     "name": "Drone's Bond"
   },
@@ -194,6 +190,10 @@
   {
     "id": "drones_defense_2",
     "name": "Drone's Defense"
+  },
+  {
+    "id": "drone_companion",
+    "name": "Drone Companion"
   },
   {
     "id": "elusive",
@@ -220,12 +220,12 @@
     "name": "Ever Ready"
   },
   {
-    "id": "expert_biotic",
-    "name": "Expert Biotic"
-  },
-  {
     "id": "expertise",
     "name": "Expertise"
+  },
+  {
+    "id": "expert_biotic",
+    "name": "Expert Biotic"
   },
   {
     "id": "extra_attack_1",
