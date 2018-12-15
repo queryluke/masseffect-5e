@@ -2837,7 +2837,7 @@
         "type": "standard",
         "name": "Tactical Cloak",
         "recharge": "3/Day",
-        "description": "As a bonus action, the geth hunter activates its tactical cloak, becoming {invisible}. When the geth hunter makes a melee, ranged, or uses a tech or combat power, tactical cloak ends."
+        "description": "As a bonus action, the geth hunter activates its tactical cloak, becoming invisible for 1 minute. When the geth hunter makes a melee or ranged attack or uses a tech or combat power, tactical cloak ends."
       }
     ],
     "alignment": "Lawful Neutral",
@@ -4049,7 +4049,7 @@
       {
         "name": "Self-Destruct",
         "recharge": null,
-        "description": "When the nemesis dies, it explodes. Each creature within 4m of it must make a DC 15 Dexterity saving throw, taking [dmg] thunder damage on a failed save, or half as much damage on a successful one."
+        "description": "When the nemesis dies, it explodes. Each creature within 4m of it must make a DC 15 Dexterity saving throw, taking 33 (6d10) thunder damage on a failed save, or half as much damage on a successful one."
       },
       {
         "name": "Shadow Cloak",
@@ -4133,7 +4133,7 @@
       }
     ],
     "alignment": "Neutral Evil",
-    "barrier": "8",
+    "barrier": 8,
     "conditionImmunities": [],
     "cr": "7",
     "damageImmunities": [],
@@ -4742,6 +4742,12 @@
         "name": "Hex Shield",
         "recharge": "1/Day",
         "description": "As a bonus action, the rampart mech generates a 2m tall and wide, hexagon-shaped shield with 5AC and 50 shield points which offers full-cover."
+      },
+      {
+        "type": "standard",
+        "name": "Tactical Cloak",
+        "recharge": "1/Day",
+        "description": "As a bonus action, the rampart mech activates its tactical cloak, becoming invisible for 1 minute. When the rampart mech makes a melee or ranged attack or uses a tech or combat power, tactical cloak ends."
       }
     ],
     "alignment": "Neutral",
@@ -4768,7 +4774,7 @@
       {
         "name": "Post-Mortem Vent",
         "recharge": null,
-        "description": "When the rampart mech dies, it vents excess heat from its weapon and armor in a 2m radius until the start of its next turn. Each creature that enters the radius for the first time or ends its turn there takes [dmg] radiant damage."
+        "description": "When the rampart mech dies, it vents excess heat from its weapon and armor in a 2m radius until the start of its next turn. Each creature that enters the radius for the first time or ends its turn there takes 18 (4d8) radiant damage."
       }
     ],
     "hp": {
@@ -4788,8 +4794,8 @@
     "skills": [],
     "speed": [
       {
-        "type": "stationary",
-        "range": 0
+        "type": "walk",
+        "range": 10
       }
     ],
     "spellcasting": false,
@@ -4992,7 +4998,7 @@
         "type": "standard",
         "name": "Tactical Cloak",
         "recharge": "3/Day",
-        "description": "As a bonus action, the recon drone activates its tactical cloak, becoming invisible. When the recon drone makes a melee, ranged, or uses a tech or combat power, tactical cloak ends."
+        "description": "As a bonus action, the recon drone activates its tactical cloak, becoming invisible for 1 minute. When the recon drome makes a melee or ranged attack or uses a tech or combat power, tactical cloak ends."
       }
     ],
     "alignment": "Neutral",
