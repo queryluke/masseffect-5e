@@ -22,7 +22,7 @@
       "type": "standard",
       "name": "Tactical Cloak",
       "recharge": "3/Day",
-      "description": "As a bonus action, the recon drone activates its tactical cloak, becoming invisible. When the recon drone makes a melee, ranged, or uses a tech or combat power, tactical cloak ends."
+      "description": "As a bonus action, the recon drone activates its tactical cloak, becoming invisible for 1 minute. When the recon drome makes a melee or ranged attack or uses a tech or combat power, tactical cloak ends."
     }
   ],
   "alignment": "Neutral",
