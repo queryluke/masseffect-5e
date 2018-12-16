@@ -355,7 +355,7 @@
       "buff"
     ],
     "damageType": [
-      "fore"
+      "force"
     ],
     "castingTime": "Bonus Action",
     "duration": "1 minute",
@@ -511,9 +511,7 @@
     "duration": "Instant",
     "concentration": false,
     "distance": {
-      "range": "10m",
-      "aoeType": "sphere",
-      "aoeDistance": "2m"
+      "range": "14m"
     },
     "detonates": "x",
     "primes": null,
@@ -523,11 +521,11 @@
     "advancementOptions": [
       {
         "name": "Barrier Regen",
-        "description": "After you cast Charge, if you have an active barrier, regain half of your barrier ticks and reset the duration of your barrier to 1 minute."
+        "description": "After you cast Charge, if you have an active barrier, regain 2 barrier ticks and reset the duration of your barrier to 1 minute."
       },
       {
         "name": "Area Charge",
-        "description": "On a hit, each creature within 2m of the target must make a Dexterity saving throw. On a failed save, a creature takes damage equal to the initial target and becomes prone, or half as much damage on a successful one."
+        "description": "Each creature within 4m of the target must make the Dexterity saving throw."
       }
     ]
   },
@@ -1244,7 +1242,7 @@
       },
       {
         "name": "Three-headed beast",
-        "description": "Your missile splits into three separate missile, each dealing equal damage. You can direct the missiles at the same target or at different ones."
+        "description": "Your missile splits into three separate missile, each dealing 1d6 damage (2d6 at 5th level, 3d6 at 11th level and 4d6 at 17th level). You can direct the missiles at the same target or at different ones."
       }
     ]
   },
