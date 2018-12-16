@@ -1,0 +1,87 @@
+{
+  "abilityScores": {
+    "str": 18,
+    "dex": 15,
+    "con": 22,
+    "int": 11,
+    "wis": 14,
+    "cha": 12
+  },
+  "ac": "18",
+  "actions": [
+    {
+      "type": "weapon",
+      "id": "krogan_warhammer"
+    },
+    {
+      "type": "weapon",
+      "id": "m-300_claymore"
+    }
+  ],
+  "alignment": "Chaotic evil",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "5",
+  "damageImmunities": [],
+  "damageResistances": [
+    "necrotic"
+  ],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Aggressive",
+      "recharge": null,
+      "description": "As a bonus action, the warlord can move up to its speed toward a hostile creature that it can see."
+    },
+    {
+      "name": "Tech Armor",
+      "recharge": "1/Day",
+      "description": "As a bonus action, the warlord can activate its Tech Armor. It immediately gains 30 temporary hit points. While the legate has at least 1 of these temporary hit points remaining, it has +2 AC and resistance to bludgeoning, piercing, and slashing damage."
+    },
+    {
+      "name": "Rage",
+      "recharge": "Recharges after a Short or Long Rest",
+      "description": "If the warlord begins its turn with less than half of its hit points, it enters into a rage for 1 minute. While in a rage, all melee weapon attacks deal 5 additional bludgeoning damage."
+    },
+    {
+      "name": "Biotic Hammer",
+      "recharge": "Recharge 5-6",
+      "description": "Before making an attack with its Krogan Warhammer, the warlord can charge the weapon with biotic force. On a hit, the attack deals an additional 9 (2d8) force damage and detonates the target if it was primed."
+    },
+    {
+      "name": "Electrical Hammer",
+      "recharge": "Recharge 5-6",
+      "description": "Before making an attack with its Krogan Warhammer, the warlord can charge the weapon with electricity. On a hit, the attack deals an additional 7 (2d6) lightning damage and the target must succeed on a DC 15 Constitution saving throw or become stunned until the end of its next turn."
+    }
+  ],
+  "hp": {
+    "numDice": 8,
+    "die": 8
+  },
+  "id": "blood_pack_warlord",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/b/b6/ME3_Krogan_Warlord_Sentinel.png/revision/latest/scale-to-width-down/240?cb=20130227103010",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Blood Pack Warlord",
+  "profBonus": 4,
+  "reactions": [],
+  "savingThrows": [
+    "con",
+    "str"
+  ],
+  "senses": [],
+  "size": "Medium",
+  "skills": [
+    "athletics"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 8
+    }
+  ],
+  "sp": null,
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Archetype"
+}

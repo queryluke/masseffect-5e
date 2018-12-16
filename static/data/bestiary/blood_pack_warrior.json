@@ -1,0 +1,76 @@
+{
+  "abilityScores": {
+    "str": 16,
+    "dex": 13,
+    "con": 17,
+    "int": 7,
+    "wis": 12,
+    "cha": 10
+  },
+  "ac": "16",
+  "actions": [
+    {
+      "type": "weapon",
+      "id": "m-27_scimitar"
+    }
+  ],
+  "alignment": "Chaotic evil",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "3",
+  "damageImmunities": [],
+  "damageResistances": [
+    "necrotic"
+  ],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Aggressive",
+      "recharge": null,
+      "description": "As a bonus action, the warrior can move up to its speed toward a hostile creature that it can see."
+    },
+    {
+      "name": "Shotgun Specialist",
+      "recharge": null,
+      "description": "The warrior has advantage on shotgun weapon attacks against targets within the normal range of the shotgun."
+    },
+    {
+      "name": "Regeneration",
+      "recharge": null,
+      "description": "The warrior regains 4 hit points at the start of its turn. If the warrior takes fire damage, this trait doesn't function at the start of the warrior's next turn. The warrior dies only if it starts its turn with 0 hit points and doesn't regenerate."
+    },
+    {
+      "name": "Incendiary Ammo",
+      "recharge": null,
+      "description": "When the warrior hits with its M-27 Scimitar, the target takes an additional 1d4 fire damage and becomes primed: fire until the end of the warrior's next turn."
+    }
+  ],
+  "hp": {
+    "numDice": 8,
+    "die": 8
+  },
+  "id": "blood_pack_warrior",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/e8/Blood_Pack_Warrior.png/revision/latest/scale-to-width-down/352?cb=20100621023223",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Blood Pack Warrior",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [
+    "con"
+  ],
+  "senses": [],
+  "size": "Medium",
+  "skills": [],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "sp": null,
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Archetype",
+  "author": "Dakota P."
+}

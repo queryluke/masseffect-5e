@@ -26,7 +26,7 @@
     },
     head () {
       return {
-        title: `Mass Effect 5e | ${this.title}`,
+        title: `${this.title} | Mass Effect 5e`,
         meta: [
           { hid: 'description', name: 'description', content: 'Learn how to PEW PEW correctly with our spellcasting guide.' }
         ]

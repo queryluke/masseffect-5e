@@ -1,0 +1,83 @@
+{
+  "abilityScores": {
+    "str": 11,
+    "dex": 12,
+    "con": 11,
+    "int": 4,
+    "wis": 4,
+    "cha": 6
+  },
+  "ac": "11",
+  "actions": [
+    {
+      "type": "melee",
+      "name": "Claws",
+      "range": 2,
+      "target": "one target",
+      "hit": "4 (1d6 + 1) slashing damage.",
+      "miss": null,
+      "attackMod": 1
+    },
+    {
+      "type": "weapon",
+      "id": "m-3_predator"
+    },
+    {
+      "type": "weapon",
+      "id": "m-8_avenger"
+    }
+  ],
+  "alignment": "Chaotic evil",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "1/4",
+  "damageImmunities": [],
+  "damageResistances": [
+    "poison"
+  ],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Aggressive",
+      "recharge": null,
+      "description": "As a bonus action, the trooper can move up to its speed toward a hostile creature that it can see."
+    },
+    {
+      "name": "Regeneration",
+      "recharge": null,
+      "description": "The trooper regains 4 hit points at the start of its turn. If the trooper takes fire damage, this trait doesn't function at the start of the trooper's next turn. The trooper dies only if it starts its turn with 0 hit points and doesn't regenerate."
+    }
+  ],
+  "hp": {
+    "numDice": 8,
+    "die": 8
+  },
+  "id": "blood_pack_trooper",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/8/80/ME2_blood_pack_trooper.png/revision/latest/scale-to-width-down/305?cb=20140516115803",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Blood Pack Trooper",
+  "profBonus": 2,
+  "reactions": [
+    {
+      "name": "Fortification",
+      "recharge": "Recharges after a Short or Long Rest",
+      "description": "As a reaction to being hit by an attack the trooper can see, it gains a +5 bonus to its AC until the start of its next turn (including against the triggering attack)."
+    }
+  ],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Medium",
+  "skills": [],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 14
+    }
+  ],
+  "sp": null,
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Archetype",
+  "author": "Dakota P."
+}

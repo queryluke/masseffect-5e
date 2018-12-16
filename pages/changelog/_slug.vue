@@ -27,7 +27,7 @@
     },
     head () {
       return {
-        title: `Mass Effect 5e | Changelog - ${this.post.attributes.title}`,
+        title: `${this.post.attributes.title} - Changelog | Mass Effect 5e`,
         meta: [
           { hid: 'description', name: 'description', content: this.post.attributes.description }
         ]

@@ -76,7 +76,7 @@
     },
     head () {
       return {
-        title: 'Mass Effect 5e | Equipment - Programs',
+        title: 'Programs - Equipment | Mass Effect 5e',
         meta: [
           { hid: 'description', name: 'description', content: 'Mass Effect 5e useds omni-tool programs in places of 5th editions magic items.' }
         ]

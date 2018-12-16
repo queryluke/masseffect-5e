@@ -8,7 +8,7 @@ effect:
 - damage
 - buff
 damageType:
-- fore
+- force
 castingTime: Bonus Action
 duration: 1 minute
 concentration: true

@@ -29,7 +29,7 @@
     }
   ],
   "alignment": "Neutral Evil",
-  "barrier": "8",
+  "barrier": 8,
   "conditionImmunities": [],
   "cr": "7",
   "damageImmunities": [],

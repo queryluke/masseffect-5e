@@ -27,6 +27,12 @@
       "name": "Hex Shield",
       "recharge": "1/Day",
       "description": "As a bonus action, the rampart mech generates a 2m tall and wide, hexagon-shaped shield with 5AC and 50 shield points which offers full-cover."
+    },
+    {
+      "type": "standard",
+      "name": "Tactical Cloak",
+      "recharge": "1/Day",
+      "description": "As a bonus action, the rampart mech activates its tactical cloak, becoming invisible for 1 minute. When the rampart mech makes a melee or ranged attack or uses a tech or combat power, tactical cloak ends."
     }
   ],
   "alignment": "Neutral",
@@ -53,7 +59,7 @@
     {
       "name": "Post-Mortem Vent",
       "recharge": null,
-      "description": "When the rampart mech dies, it vents excess heat from its weapon and armor in a 2m radius until the start of its next turn. Each creature that enters the radius for the first time or ends its turn there takes [dmg] radiant damage."
+      "description": "When the rampart mech dies, it vents excess heat from its weapon and armor in a 2m radius until the start of its next turn. Each creature that enters the radius for the first time or ends its turn there takes 18 (4d8) radiant damage."
     }
   ],
   "hp": {
@@ -73,8 +79,8 @@
   "skills": [],
   "speed": [
     {
-      "type": "stationary",
-      "range": 0
+      "type": "walk",
+      "range": 10
     }
   ],
   "spellcasting": false,

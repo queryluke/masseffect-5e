@@ -1,6 +1,15 @@
 [
   {
     "layout": "post",
+    "title": "Road to Version 1.0",
+    "description": "Additions and playtesting changes",
+    "date": "2018-12-15T05:00:00.000Z",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/c/cf/Codex_ME_-_FTL_Drive.png/revision/latest?cb=20140820095603&format=original",
+    "slug": "0.9.1",
+    "url": "/changelog/0.9.1"
+  },
+  {
+    "layout": "post",
     "title": "Happy N7 Day!!!",
     "description": "We have a lot of fun changes for Mass Effect 5e in version 0.9.0",
     "date": "2018-11-08T00:00:00.000Z",

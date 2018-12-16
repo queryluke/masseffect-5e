@@ -1,0 +1,81 @@
+{
+  "abilityScores": {
+    "str": 12,
+    "dex": 16,
+    "con": 15,
+    "int": 13,
+    "wis": 9,
+    "cha": 10
+  },
+  "ac": "17",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Particle Beam",
+      "description": "The oculus fires a persistent particle beam that is 20m long and 2m wide that lasts until the start of the oculus's next turn. While firing the beam, the oculus's speed becomes 0. Each creature that is within the beam's path or that moves into the beam's path for the first time on its turn must make a DC 16 Constitution saving throw. On a failed save, a creature takes 66 (12d10) radiant damage, or half as much on a successful save."
+    },
+    {
+      "type": "melee",
+      "name": "Crush",
+      "range": 10,
+      "target": "one target",
+      "hit": "17 (4d6 + 3) bludgeoning damage.",
+      "miss": null,
+      "attackMod": 3
+    }
+  ],
+  "alignment": "Lawful evil",
+  "barrier": null,
+  "conditionImmunities": [
+    "blinded",
+    "deafened",
+    "frightened",
+    "lifted",
+    "paralyzed",
+    "poisoned",
+    "prone"
+  ],
+  "cr": "11",
+  "damageImmunities": [
+    "poison"
+  ],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+  ],
+  "hp": {
+    "numDice": 22,
+    "die": 10
+  },
+  "id": "oculus",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/ed/Oculus_Combat.png/revision/latest?cb=20100731075649&format=original",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Oculus",
+  "profBonus": 4,
+  "reactions": [],
+  "savingThrows": [
+    "dex",
+    "con"
+  ],
+  "senses": [
+    {
+      "sense": "infrared vision",
+      "range": 30
+    }
+  ],
+  "size": "Large",
+  "skills": [
+    "perception"
+  ],
+  "speed": [
+    {
+      "type": "fly",
+      "range": 20
+    }
+  ],
+  "sp": null,
+  "spellcasting": false,
+  "type": "Synthetic",
+  "unit": "Reaper"
+}

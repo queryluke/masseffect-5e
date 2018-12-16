@@ -30,7 +30,7 @@
     {
       "name": "Self-Destruct",
       "recharge": null,
-      "description": "When the nemesis dies, it explodes. Each creature within 4m of it must make a DC 15 Dexterity saving throw, taking [dmg] thunder damage on a failed save, or half as much damage on a successful one."
+      "description": "When the nemesis dies, it explodes. Each creature within 4m of it must make a DC 15 Dexterity saving throw, taking 33 (6d10) thunder damage on a failed save, or half as much damage on a successful one."
     },
     {
       "name": "Shadow Cloak",

@@ -22,7 +22,7 @@
     },
     head () {
       return {
-        title: `Mass Effect 5e | Races - ${this.race.name}`,
+        title: `${this.race.name} - Races | Mass Effect 5e`,
         meta: [
           { hid: 'description', name: 'description', content: `Learn more about the ${this.race.name} race, including alignment, available classes, and racial traits` }
         ]

@@ -91,7 +91,7 @@ export default {
   },
   head () {
     return {
-      title: 'Mass Effect 5e | Assets',
+      title: 'Assets | Mass Effect 5e',
       meta: [
         { hid: 'description', name: 'description', content: 'Mass Effect 5e is more than a rule set. We have also created character sheets, spell cards, and other great tabletop assets.' }
       ]

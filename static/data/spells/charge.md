@@ -14,23 +14,20 @@ castingTime: Action
 duration: Instant
 concentration: false
 distance:
-  range: 10m
-  aoeType: sphere
-  aoeDistance: 2m
+  range: 14m
 detonates: x
 primes: 
 availableClasses:
 - vanguard
 advancementOptions:
 - name: Barrier Regen
-  description: After you cast Charge, if you have an active barrier, regain half of
-    your barrier ticks and reset the duration of your barrier to 1 minute.
+  description: After you cast Charge, if you have an active barrier, regain 2 barrier ticks and reset the 
+    duration of your barrier to 1 minute.
 - name: Area Charge
-  description: On a hit, each creature within 2m of the target must make a Dexterity saving throw. On a failed save, a
-    creature takes damage equal to the initial target and becomes prone, or half as much damage on a successful one.
+  description: Each creature within 4m of the target must make the Dexterity saving throw.
 ---
-Make a ranged spell attack on a creature or object you can see within range. On a hit, alter your mass and use
-the target's mass to pull yourself to its location with incredible force (this movement does not provoke opportunity attacks).
-The target takes 1d6 force damage and becomes <condition id="prone">.
+Choose a creature or object within range use the target's mass to pull yourself to its location with incredible force 
+(this movement does not provoke opportunity attacks). The target must make a Dexterity saving throw.
+On a failed save the target takes 1d10 force damage and becomes <condition id="prone">.
 
-The damage increases by 1d6 when you reach the 5th level (2d6), 11th level (3d6) and 17th level (4d6).
+The damage increases by 1d6 when you reach the 5th level (2d10), 11th level (3d10) and 17th level (4d10).
