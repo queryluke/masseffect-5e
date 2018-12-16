@@ -29,11 +29,10 @@
   "barrier": null,
   "conditionImmunities": [],
   "cr": "2",
-  "damageImmunities": [
-    "necrotic",
+  "damageImmunities": [],
+  "damageResistances": [
     "poison"
   ],
-  "damageResistances": [],
   "damageVulnerabilities": [],
   "features": [
     {

@@ -1,0 +1,81 @@
+{
+  "abilityScores": {
+    "str": 13,
+    "dex": 11,
+    "con": 13,
+    "int": 4,
+    "wis": 4,
+    "cha": 6
+  },
+  "ac": "11",
+  "actions": [
+    {
+      "type": "melee",
+      "name": "Claws",
+      "range": 2,
+      "target": "one target",
+      "hit": "4 (1d6 + 1) slashing damage.",
+      "miss": null,
+      "attackMod": 1
+    },
+    {
+      "type": "standard",
+      "name": "M-451 Firestorm",
+      "recharge": "10 charges",
+      "description": "Creatures within a 6m cone must make a DC 13 Dexterity saving throw. On a failed save, a creature takes 14 (4d6) fire damage, or half as much damage on a successful one."
+    }
+  ],
+  "alignment": "Chaotic evil",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "1",
+  "damageImmunities": [],
+  "damageResistances": [
+    "poison"
+  ],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Aggressive",
+      "recharge": null,
+      "description": "As a bonus action, the pyro can move up to its speed toward a hostile creature that it can see."
+    },
+    {
+      "name": "Regeneration",
+      "recharge": null,
+      "description": "The pyro regains 4 hit points at the start of its turn. If the pyro takes fire damage, this trait doesn't function at the start of the pyro's next turn. The pyro dies only if it starts its turn with 0 hit points and doesn't regenerate."
+    }
+  ],
+  "hp": {
+    "numDice": 6,
+    "die": 8
+  },
+  "id": "blood_pack_pyro",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/ec/Blood_Pack_Pyro.png/revision/latest/scale-to-width-down/348?cb=20100621053224",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Blood Pack Pyro",
+  "profBonus": 2,
+  "reactions": [
+    {
+      "name": "Fortification",
+      "recharge": "Recharges after a Short or Long Rest",
+      "description": "As a reaction to being hit by an attack the pyro can see, it gains a +5 bonus to its AC until the start of its next turn (including against the triggering attack)."
+    }
+  ],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Medium",
+  "skills": [],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 12
+    }
+  ],
+  "sp": null,
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "Archetype",
+  "author": "Dakota P."
+}

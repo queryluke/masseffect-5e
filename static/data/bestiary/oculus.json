@@ -36,7 +36,9 @@
     "prone"
   ],
   "cr": "11",
-  "damageImmunities": [],
+  "damageImmunities": [
+    "poison"
+  ],
   "damageResistances": [],
   "damageVulnerabilities": [],
   "features": [
