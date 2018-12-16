@@ -11,6 +11,13 @@
           pleas #[nuxt-link(to="/contributing") let us know what you think].
       v-flex.xs12
         v-card.elevation-0.transparent
+          v-card-title.headline {{ indoc.attributes.name }}
+            small.ml-3
+              em inspired by Stephen W.
+          v-card-text.markdown-content
+            markdown-content(:component="indoc.vue")
+      v-flex.xs12
+        v-card.elevation-0.transparent
           v-card-title.headline {{ pr.attributes.name }}
             small.ml-3
               em by tioeduardo27
@@ -47,6 +54,7 @@
   import weaponStrength from '~/static/data/community/weapon_strength.md'
   import hanar from '~/static/data/community/hanar.md'
   import elcor from '~/static/data/community/elcor.md'
+  import indoc from '~/static/data/community/indoctrination.md'
   import RaceInfo from '~/components/race/RaceInfo.vue'
 
   export default {
@@ -56,7 +64,8 @@
         pr,
         weaponStrength,
         hanar,
-        elcor
+        elcor,
+        indoc
       }
     },
     head () {

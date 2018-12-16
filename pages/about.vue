@@ -225,6 +225,11 @@
             desc: 'Alternate Google Sheets character sheet'
           },
           {
+            name: 'Stephen W.',
+            image: '/images/spells/tech.svg',
+            desc: 'Indoctrination ideas'
+          },
+          {
             name: 'Other Shout outs!',
             image: 'https://vignette.wikia.nocookie.net/masseffect/images/3/32/ME1_Paragon.png/revision/latest?cb=20120309175829',
             desc: 'Mel Bee, Joey C., Connor C., MonocledMutineer, kstrtroi, HadesJester, Lodus, BenutzernameIstBereitsVergeben ' +
