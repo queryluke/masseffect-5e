@@ -1,7 +1,7 @@
 ---
 id: cognition_booster
 name: Cognition_Booster.exe
-rarity: uncommon
+rarity: rare
 installation: true
 ---
 This program diverts positive energy from your omni-tool to the nerve clusters in your brain, accelerating your thought
