@@ -33,7 +33,7 @@
             },
             {
               name: 'Soldier',
-              prof: '1 weapon type'
+              prof: '2 weapon types'
             },
             {
               name: 'Vanguard',
