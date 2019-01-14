@@ -131,7 +131,7 @@
           div(v-if="feature.id === 'ability_score_improvement'").mb-2
             p.title.mb-0 Ability Score Improvement
             div.
-              When your reach {{ feature.level.level | ordinal }}, and again at {{ abiLevels(feature.levels) }}
+              When you reach {{ feature.level.level | ordinal }}, and again at {{ abiLevels(feature.levels) }}
           div(v-else)
             class-feature(:id="feature.id" v-bind:featureLevel="feature.level")
         div(:class="colors[item.id].primary").hr
@@ -532,9 +532,10 @@
             }
             // force ability scores
             if (feature === 'ability_score_improvement') {
-              features[0].levels.push(level.level)
               if (!features[0].level) {
                 features[0].level = level
+              } else {
+                features[0].levels.push(level.level)
               }
               continue
             }
