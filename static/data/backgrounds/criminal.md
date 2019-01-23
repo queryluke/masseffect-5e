@@ -19,7 +19,7 @@ __Skill Proficiencies__. See _Specialty_ below.
 
 __Tool Proficiencies__. One type of gaming set, thieves' tools
 
-__Equipment__. Thieves' tools, a gaming set, a set of common clothes, and {{ starting_credits }} credits.
+__Equipment__. Thieves' tools, a gaming set, a set of common clothes, and 1,500 credits.
 
 __Feature: Criminal Contact__. You have a reliable and trustworthy contact who acts as your liaison to a network of other criminals.
 
