@@ -13,19 +13,30 @@
       li #[strong Saving Throws:] {{ item.savingThrows.join(' & ') }}
       li #[strong Skills:] {{ item.skillProficiencies | listOfChoices(item.skillChoices) }}
     div(:class="primaryColor").hr
-    p(v-if="item.id === 'soldier'").headline Combat Powers
-    p(v-else).headline Spellcasting
-    markdown-file(:id="item.id" itemType="class_spellcasting").mx-4
-    div(:class="primaryColor").hr
     p.headline Starting Equipment
     ul.mb-4.ml-3
       li {{ item.startingRangedWeapons | listOfChoices(item.startingRangedWeaponChoices) }}
       li {{ item.startingMeleeWeapons | listOfChoices(item.startingMeleeWeaponChoices) }}
       li {{ item.startingArmor | listOfChoices }}
+    div(:class="primaryColor").hr
+    p.headline Features
+    div.mx-4
+      p(v-if="item.id === 'soldier'").title Combat Powers
+      p(v-else).title Spellcasting
+      markdown-file(:id="item.id" itemType="class_spellcasting")
+      div(:class="primaryColor").hr
+      div(v-for="level in item.progression" v-bind:key="level.level")
+        div(v-for="featureId in level.features" v-bind:key="featureId")
+          class-feature(v-bind:id="featureId" v-bind:featureLevel="level")
+        div(:class="primaryColor" v-if="level.level != 20 && level.features.length > 0").hr
+
 </template>
 
 <script>
+  import ClassFeature from '~/components/class/ClassFeature.vue'
+
   export default {
+    components: { ClassFeature },
     props: {
       item: {
         type: Object,
