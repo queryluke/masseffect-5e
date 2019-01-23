@@ -21,23 +21,23 @@
             },
             {
               name: 'Engineer',
-              prof: 'Medium Armor'
+              prof: 'Assault Rifles, Medium Armor'
             },
             {
               name: 'Infiltrator',
-              prof: 'Sniper Rifles'
+              prof: 'Sniper Rifles and Melee Weapons'
             },
             {
               name: 'Sentinel',
-              prof: 'Heavy Armor'
+              prof: 'Medium Armor, Heavy Armor, and choose 1 weapon type from Assault Rifles, Melee, Shotguns, or SMGS'
             },
             {
               name: 'Soldier',
-              prof: '2 weapon types'
+              prof: '2 weapon types, Medium Armor, Heavy Armor'
             },
             {
               name: 'Vanguard',
-              prof: 'Shotguns'
+              prof: 'Shotguns, Medium Armor'
             }
           ]
         }
