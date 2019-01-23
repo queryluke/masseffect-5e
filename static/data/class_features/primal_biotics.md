@@ -2,4 +2,4 @@
 id: primal_biotics
 name: Primal Biotics
 ---
-Your Strength and Constitution scores increase by 4. Your maximum for those scores is now 24.
+At {{ level }} level, your Strength and Constitution scores increase by 4. Your maximum for those scores is now 24.

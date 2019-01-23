@@ -20,7 +20,7 @@
   {
     "id": "cognition_booster",
     "name": "Cognition_Booster.exe",
-    "rarity": "uncommon",
+    "rarity": "rare",
     "installation": true
   },
   {
@@ -105,7 +105,7 @@
   {
     "id": "threat_assessment",
     "name": "Threat_Assessment.exe",
-    "rarity": "uncommon",
+    "rarity": "rare",
     "installation": true
   },
   {

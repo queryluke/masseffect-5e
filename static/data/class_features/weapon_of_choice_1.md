@@ -2,7 +2,7 @@
 id: weapon_of_choice_1
 name: Weapon of Choice
 ---
-You have undergone extensive training with a single weapon type. Choose a weapon type which becomes your Weapon of Choice. 
+By {{ level }} level, you have undergone extensive training with a single weapon type. Choose a weapon type which becomes your Weapon of Choice. 
 When you are holding your Weapon of Choice you gain a set of abilities that are fueled by special dice called superiority dice. 
 You may spend 1 month of intensive training to exchange your Weapon of Choice with another weapon type.
 
