@@ -7,11 +7,17 @@
     // Main toolbar
     v-toolbar(dark fixed app clipped-left tabs)
       v-toolbar-side-icon(v-on:click="toggleSidebar").hidden-lg-and-up
-      v-toolbar-title
-        nuxt-link(to="/").nav-brand.hidden-sm-and-down
+      v-toolbar-title(v-if="$vuetify.breakpoint.mdAndUp")
+        nuxt-link(to="/").nav-brand
           img(src="/images/me5e.svg")
           span Mass Effect 5e
-        span.hidden-md-and-up Class - {{ $route.params.id | capitalize }}
+      v-menu(:nudge-width="100" v-if="$vuetify.breakpoint.smAndDown")
+        v-toolbar-title(slot="activator")
+          span Class - {{ $route.params.id | capitalize }}
+          v-icon arrow_drop_down
+        v-list
+          v-list-tile(v-for="item in classes" v-bind:key="item" v-bind="{to: { name: 'phb-classes-id', params: { id: item }}}")
+            v-list-tile-title {{ item | capitalize }}
       v-spacer
       v-toolbar-items.hidden-sm-and-down
         v-btn(v-for="(item, index) in primaryNavigation" v-bind:key="index" v-bind:to="item.route" flat)
@@ -39,7 +45,7 @@ export default {
     SideNavigation
   },
   computed: {
-    ...mapGetters(['active', 'tabs', 'primaryNavigation', 'colors']),
+    ...mapGetters(['active', 'tabs', 'primaryNavigation', 'colors', 'classes']),
     activeTab: {
       get () {
         return this.active
