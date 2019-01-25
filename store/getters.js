@@ -17,5 +17,6 @@ export default {
   primaryNavigation: state => state.primaryNavigation,
   sidebar: state => state.sidebar,
   rulebar: state => state.rulebar,
+  searchbar: state => state.searchbar,
   races: state => state.races
 }

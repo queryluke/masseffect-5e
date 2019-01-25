@@ -15,5 +15,6 @@ export default {
   races: ['angara', 'asari', 'batarian', 'drell', 'geth', 'human', 'krogan', 'prothean', 'quarian', 'salarian', 'turian', 'unshackled-ai', 'volus', 'vorcha'],
   sidebar: true,
   rulebar: true,
+  searchbar: false,
   version: config.version
 }

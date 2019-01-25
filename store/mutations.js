@@ -14,6 +14,9 @@ export default {
   setRulebar (state, payload) {
     state.rulebar = payload
   },
+  setSearchbar (state, payload) {
+    state.searchbar = payload
+  },
   update (state, payload) {
     state[payload.key] = payload.items
   }

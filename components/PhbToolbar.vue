@@ -33,7 +33,7 @@
       v-tab(v-for="tab in classTabs" v-bind:key="tab.id" v-bind:href="`#${tab.id}`" ripple) {{ tab.name }}
 
     span.hidden-md-and-up
-      v-btn(icon @click="searchActive = true" v-if="page.list") #[v-icon search]
+      v-btn(icon @click="setSearchbar(true)" v-if="page.list") #[v-icon search]
       v-btn(icon @click="toggleMobileFilterDialog" v-if="page.list")  #[v-icon filter_list]
       v-btn(icon dark @click="toggleRulebar" v-if="page.rules") #[v-icon view_list]
 </template>
@@ -44,7 +44,7 @@
 
   export default {
     computed: {
-      ...mapGetters(['pages', 'primaryNavigation', 'races', 'classes', 'activeClassTab', 'classTabs']),
+      ...mapGetters(['pages', 'primaryNavigation', 'races', 'classes', 'activeClassTab', 'classTabs', 'searchbar']),
       classTab: {
         get () {
           return this.activeClassTab
@@ -83,7 +83,7 @@
       }
     },
     methods: {
-      ...mapActions(['toggleSidebar','updateActiveClassTab', 'toggleRulebar', 'toggleMobileFilterDialog']),
+      ...mapActions(['toggleSidebar','updateActiveClassTab', 'toggleRulebar', 'toggleMobileFilterDialog', 'setSearchbar'])
     }
   }
 </script>

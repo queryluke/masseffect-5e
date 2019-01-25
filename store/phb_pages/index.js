@@ -22,6 +22,9 @@ export default {
     },
     setRulebar({dispatch}, payload) {
       dispatch('setRulebar', payload, {root: true})
+    },
+    setSearchbar({dispatch}, payload) {
+      dispatch('setSearchbar', payload, {root: true})
     }
   },
   getters: {
@@ -33,6 +36,7 @@ export default {
     primaryNavigation: (state, getters, rootState) => rootState.primaryNavigation,
     races: (state, getters, rootState) => rootState.races,
     rulebar: (state, getters, rootState) => rootState.rulebar,
+    searchbar: (state, getters, rootState) => rootState.searchbar,
     searchString: (state, getters, rootState) => rootState.itemList.searchString,
     version: (state, getters, rootState, rootGetters) => rootGetters.getVersion
   }

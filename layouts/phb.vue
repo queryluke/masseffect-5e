@@ -5,11 +5,11 @@
     side-navigation
 
     // Main toolbar
-    phb-toolbar(v-if="!searchActive")
+    phb-toolbar(v-if="!searchbar")
 
     // Search Toolbar
-    v-toolbar(light v-if="searchActive").hidden-md-and-up
-      v-btn(@click="searchActive = false; search = ''" icon) #[v-icon arrow_back]
+    v-toolbar(light v-if="searchbar").hidden-md-and-up
+      v-btn(@click="setSearchbar(false); search = ''" icon) #[v-icon arrow_back]
       v-text-field(v-model="search" single-line full-width hide-details label="Search")
 
     // Jump Links
@@ -42,13 +42,8 @@ export default {
     PhbToolbar,
     SideNavigation
   },
-  data () {
-    return {
-      searchActive: false,
-    }
-  },
   computed: {
-    ...mapGetters(['pages', 'searchString', 'rulebar']),
+    ...mapGetters(['pages', 'searchString', 'rulebar', 'searchbar']),
     page () {
       return this.pages[this.$route.name] ? this.pages[this.$route.name] : {}
     },
@@ -75,9 +70,10 @@ export default {
   created () {
     this.search = ''
     this.rulebarVisible = this.$vuetify.breakpoint.mdAndUp
+    this.setSearchbar(false)
   },
   methods: {
-    ...mapActions(['updateSearchString', 'setRulebar']),
+    ...mapActions(['updateSearchString', 'setRulebar', 'setSearchbar']),
     goToRule (rule) {
       this.$vuetify.goTo(rule, { offset: -58 })
       if (this.$vuetify.breakpoint.smAndDown) {

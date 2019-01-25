@@ -16,5 +16,8 @@ export default {
   },
   setRulebar ({commit}, payload) {
     commit('setRulebar', payload)
+  },
+  setSearchbar ({commit}, payload) {
+    commit('setSearchbar', payload)
   }
 }
