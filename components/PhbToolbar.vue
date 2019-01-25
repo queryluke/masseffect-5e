@@ -1,12 +1,24 @@
 <template lang="pug">
   v-toolbar(dark fixed app clipped-left :clipped-right="clippedRight")
+
     v-toolbar-side-icon(v-on:click="toggleSidebar").hidden-lg-and-up
-    v-toolbar-title
+    // Race mobile display
+    v-menu(:nudge-width="100" v-if="$vuetify.breakpoint.smAndDown && $route.name === 'phb-races-id'")
+      v-toolbar-title(slot="activator")
+        span {{ pageName }}
+        v-icon arrow_drop_down
+      v-list
+        v-list-tile(v-for="item in races" v-bind:key="item" v-bind="{to: { name: 'phb-races-id', params: { id: item }}}")
+          v-list-tile-title {{ item | fidtt }}
+    // All other mobile displays
+    v-toolbar-title(v-else)
       nuxt-link(to="/").nav-brand.hidden-sm-and-down
         img(src="/images/me5e.svg")
         span Mass Effect 5e
       span.hidden-md-and-up {{ pageName }}
+
     v-spacer
+
     v-toolbar-items.hidden-sm-and-down
       v-btn(v-for="(item, index) in primaryNavigation" v-bind:key="index" v-bind:to="item.route" flat)
         span {{ item.title }}
@@ -29,12 +41,13 @@
       }
     },
     computed: {
-      ...mapGetters(['pages', 'primaryNavigation']),
+      ...mapGetters(['pages', 'primaryNavigation', 'races']),
       pageName () {
         const page = this.pages[this.$route.name]
+        const fancyParam = this.$route.params.id === 'unshackled-ai' ? 'Unshackled AI' : this.$options.filters.capitalize(this.$route.params.id)
         if (this.pages[this.$route.name]) {
           return this.$route.params.id
-            ? `${page.name} - ${this.$options.filters.capitalize(this.$route.params.id)}`
+            ? `${page.name} - ${fancyParam}`
             : page.name
         } else {
           return ''

@@ -11,6 +11,7 @@ export default {
     { route: '/about', title: 'About' },
     { route: '/contributing', title: 'Feedback' }
   ],
+  races: ['angara', 'asari', 'batarian', 'drell', 'geth', 'human', 'krogan', 'prothean', 'quarian', 'salarian', 'turian', 'unshackled-ai', 'volus', 'vorcha'],
   sidebar: true,
   version: config.version
 }

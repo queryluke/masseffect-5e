@@ -20,6 +20,7 @@ export default {
     pages: state => state.pages,
     searchString: (state, getters, rootState) => rootState.itemList.searchString,
     primaryNavigation: (state, getters, rootState) => rootState.primaryNavigation,
+    races: (state, getters, rootState) => rootState.races,
     version: (state, getters, rootState, rootGetters) => rootGetters.getVersion
   }
 }

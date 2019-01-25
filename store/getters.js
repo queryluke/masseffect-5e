@@ -2,28 +2,19 @@ export default {
   bookmarkCount: (state, getters) => {
     return getters.bookmarks.length
   },
-  bookmarks: state => {
-    return state.bookmarks
-  },
+  bookmarks: state => state.bookmarks,
   bookmarksGroupedByType: (state, getters) => {
     return getters.bookmarks.reduce((rv, x) => {
       (rv[x.type] = rv[x.type] || []).push(x.card)
       return rv
     }, {})
   },
-  getVersion: state => {
-    return state.version
-  },
+  getVersion: state => state.version,
   isBookmarked: (state, getters) => card => {
     return getters.bookmarks.find(bookmark => bookmark.card.id === card.id) !== undefined
   },
-  mobileFilterDialog: state => {
-    return state.mobileFilterDialog
-  },
-  primaryNavigation: (state) => {
-    return state.primaryNavigation
-  },
-  sidebar: state => {
-    return state.sidebar
-  }
+  mobileFilterDialog: state => state.mobileFilterDialog,
+  primaryNavigation: state => state.primaryNavigation,
+  sidebar: state => state.sidebar,
+  races: state => state.races
 }
