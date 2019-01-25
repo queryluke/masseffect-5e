@@ -16,5 +16,6 @@ export default {
   mobileFilterDialog: state => state.mobileFilterDialog,
   primaryNavigation: state => state.primaryNavigation,
   sidebar: state => state.sidebar,
+  rulebar: state => state.rulebar,
   races: state => state.races
 }

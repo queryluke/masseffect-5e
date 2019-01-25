@@ -16,8 +16,7 @@ export default {
       sentinel: { primary: 'green darken-2', link: 'teal--text text--darken-4' },
       soldier: { primary: 'primary', link: '' },
       vanguard: { primary: 'indigo darken-4', link: 'indigo--text darken-4' }
-    },
-    classes: ['adept', 'engineer', 'infiltrator', 'sentinel', 'soldier', 'vanguard']
+    }
   },
   mutations: {
     setActiveTab (state, payload) {
@@ -37,7 +36,7 @@ export default {
     tabs: state => state.tabs,
     primaryNavigation: (state, getters, rootState) => rootState.primaryNavigation,
     colors: state => state.colors,
-    classes: state => state.classes,
+    classes: (state, getters, rootState) => rootState.classes,
     order: (state, getters, rootState) => rootState.itemList.order,
     sortBy: (state, getters, rootState) => rootState.itemList.sortBy
   }

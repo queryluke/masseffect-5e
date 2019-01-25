@@ -5,11 +5,7 @@
     side-navigation
 
     // Main toolbar
-    phb-toolbar(v-if="!searchActive" v-bind:clippedRight="typeof page.rules !== 'undefined'")
-      template(slot="toolbarItems")
-        v-btn(icon @click="searchActive = true" v-if="page.list") #[v-icon search]
-        v-btn(icon @click="toggleMobileFilterDialog" v-if="page.list")  #[v-icon filter_list]
-        v-btn(icon dark @click="ruleList = !ruleList" v-if="page.rules") #[v-icon view_list]
+    phb-toolbar(v-if="!searchActive")
 
     // Search Toolbar
     v-toolbar(light v-if="searchActive").hidden-md-and-up
@@ -17,7 +13,7 @@
       v-text-field(v-model="search" single-line full-width hide-details label="Search")
 
     // Jump Links
-    v-navigation-drawer(v-model="ruleList" fixed right clipped app width="225" mobile-break-point="960" v-if="page.rules")
+    v-navigation-drawer(v-model="rulebarVisible" fixed right clipped app width="225" mobile-break-point="960" v-if="page.rules")
       v-list(dense)
         v-subheader Jump to
         v-list-tile(ripple v-for="(rule, index) in rules" v-bind:key="index" v-on:click="goToRule(`#${rule.hash}`)")
@@ -49,11 +45,10 @@ export default {
   data () {
     return {
       searchActive: false,
-      ruleList: this.$vuetify.breakpoint.mdAndUp
     }
   },
   computed: {
-    ...mapGetters(['pages', 'searchString']),
+    ...mapGetters(['pages', 'searchString', 'rulebar']),
     page () {
       return this.pages[this.$route.name] ? this.pages[this.$route.name] : {}
     },
@@ -67,17 +62,26 @@ export default {
       set (value) {
         this.updateSearchString(value)
       }
+    },
+    rulebarVisible: {
+      get () {
+        return this.rulebar
+      },
+      set (value) {
+        this.setRulebar(value)
+      }
     }
   },
   created () {
     this.search = ''
+    this.rulebarVisible = this.$vuetify.breakpoint.mdAndUp
   },
   methods: {
-    ...mapActions(['updateSearchString', 'toggleMobileFilterDialog']),
+    ...mapActions(['updateSearchString', 'setRulebar']),
     goToRule (rule) {
       this.$vuetify.goTo(rule, { offset: -58 })
       if (this.$vuetify.breakpoint.smAndDown) {
-        this.ruleList = false
+        this.rulebarVisible = false
       }
     }
   }

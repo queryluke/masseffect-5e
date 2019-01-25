@@ -13,14 +13,27 @@ export default {
     },
     updateSearchString ({dispatch}, payload) {
       dispatch('itemList/updateSearchString', payload, {root: true})
+    },
+    updateActiveClassTab({dispatch}, payload) {
+      dispatch('classPage/setActiveTab', payload, {root: true})
+    },
+    toggleRulebar({dispatch}) {
+      dispatch('toggleRulebar', null, {root: true})
+    },
+    setRulebar({dispatch}, payload) {
+      dispatch('setRulebar', payload, {root: true})
     }
   },
   getters: {
+    activeClassTab: (state, getters, rootState) => rootState.classPage.active,
+    classes: (state, getters, rootState) => rootState.classes,
+    classTabs: (state, getters, rootState) => rootState.classPage.tabs,
     mobileFilterDialog: (state, getters, rootState) => rootState.itemList.mobileFilterDialog,
     pages: state => state.pages,
-    searchString: (state, getters, rootState) => rootState.itemList.searchString,
     primaryNavigation: (state, getters, rootState) => rootState.primaryNavigation,
     races: (state, getters, rootState) => rootState.races,
+    rulebar: (state, getters, rootState) => rootState.rulebar,
+    searchString: (state, getters, rootState) => rootState.itemList.searchString,
     version: (state, getters, rootState, rootGetters) => rootGetters.getVersion
   }
 }

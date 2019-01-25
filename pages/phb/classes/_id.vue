@@ -85,6 +85,6 @@
         ]
       }
     },
-    layout: 'phb-class'
+    layout: 'phb'
   }
 </script>
