@@ -4,6 +4,7 @@
       v-card-text
         p.headline Background Information
         p {{ race.snippet}}
+        // markdown-file(:id="race.id" itemType="races")
         v-btn(:href="`http://masseffect.wikia.com/wiki/${ race.id == 'unshackled_ai' ? 'Artificial_Intelligence' : race.name }`" target="_blank" color="primary").
           Read more #[v-icon keyboard_arrow_right]
 
@@ -21,26 +22,21 @@
         p.subheading.hidden-screen Available Classes: #[small {{ race.availableClasses.join(', ') }}]
         p.headline {{ race.name }} Traits
         trait
-          span(slot="header") Speed
-          span(slot="text") {{ race.speed }}
+          span(slot="header") Ability Score Increase
+          template(slot="text")
+            increases(:data="race.abilityScoreIncrease")
         trait
-          span(slot="header") Size
-          span(slot="text") {{ race.size }}
-        trait
-          span(slot="header")
-            span Sexy Level
-            a(href="http://www.polygon.com/2017/3/20/14980436/mass-effect-sexiest-character-aliens-ranked" target="_blank").black--text.ml-1
-              v-tooltip(bottom)
-                v-icon(slot="activator") help
-                span What is sexy level? ... A joke. But please read this very scientific article linked here
-          span(slot="text") {{ race.sexyLevel }}
+          span(slot="header") Age
+          span(slot="text") {{ race.age }}
         trait
           span(slot="header") Alignment
           span(slot="text") {{ race.alignment }}
         trait
-          span(slot="header") Ability Score Increase
-          template(slot="text")
-            increases(:data="race.abilityScoreIncrease")
+          span(slot="header") Size
+          span(slot="text") {{ race.size }}
+        trait
+          span(slot="header") Speed
+          span(slot="text") {{ race.speed }}
         racial-trait(v-for="trait in race.traits" v-bind:key="trait" v-bind:id="trait")
         trait(v-if="race.startingFeats")
           span(slot="header") {{ race.startingFeats.count | pluralize('Feat') }}
@@ -61,9 +57,10 @@
   import Trait from '~/components/race/Trait.vue'
   import RacialTrait from '~/components/race/RacialTrait.vue'
   import Feat from '~/components/Feat.vue'
+  import MarkdownFile from '~/components/MarkdownFile.vue'
 
   export default {
-    components: { MeIcon, Increases, Trait, RacialTrait, Feat },
+    components: { MeIcon, Increases, Trait, RacialTrait, Feat, MarkdownFile },
     props: {
       race: {
         type: Object,
