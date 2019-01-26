@@ -49,6 +49,11 @@
         trait
           span(slot="header") Optional Starting Credits
           span(slot="text") {{ race.startingCredits }}
+
+    // Variants
+    v-card(v-if="race.variants").mt-3
+      v-card-text
+        variant(v-for="variant in race.variants" v-bind:key="variant" v-bind:id="variant")
 </template>
 
 <script>
@@ -57,10 +62,10 @@
   import Trait from '~/components/race/Trait.vue'
   import RacialTrait from '~/components/race/RacialTrait.vue'
   import Feat from '~/components/Feat.vue'
-  import MarkdownFile from '~/components/MarkdownFile.vue'
+  import Variant from '~/components/race/Variant.vue'
 
   export default {
-    components: { MeIcon, Increases, Trait, RacialTrait, Feat, MarkdownFile },
+    components: { MeIcon, Increases, Trait, RacialTrait, Feat, Variant },
     props: {
       race: {
         type: Object,

@@ -28,7 +28,7 @@
         span {{ item.title }}
 
     // Tabs
-    v-tabs(v-if="classPage" slot="extension" v-model="classTab" color="grey darken-4"
+    v-tabs(v-if="classPage && $vuetify.breakpoint.smAndDown" slot="extension" v-model="classTab" color="grey darken-4"
             slider-color="white" id="mobileTabs" grow show-arrows).hidden-md-and-up
       v-tab(v-for="tab in classTabs" v-bind:key="tab.id" v-bind:href="`#${tab.id}`" ripple) {{ tab.name }}
 

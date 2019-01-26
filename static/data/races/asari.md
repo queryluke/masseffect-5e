@@ -30,6 +30,8 @@ traits:
   - natural-diplomat
 age: Asari are very long lived and can reach ages of over 1000 years.
 raceType: standard
+variants:
+ - ardat-yakshi 
 ---
 
 Asari are a race of elegant, mono-gendered humanoids. The asari resemble female humans with blue or purple skin and a 
