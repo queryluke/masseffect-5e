@@ -2,9 +2,9 @@
   div
     v-card.mt-3.hidden-print
       v-card-text
-        p.headline Background Information
-        p {{ race.snippet}}
-        // markdown-file(:id="race.id" itemType="races")
+        // p.headline Background Information
+        // p {{ race.snippet}}
+        markdown-file(:id="race.id" itemType="races")
         v-btn(:href="`http://masseffect.wikia.com/wiki/${ race.id == 'unshackled_ai' ? 'Artificial_Intelligence' : race.name }`" target="_blank" color="primary").
           Read more #[v-icon keyboard_arrow_right]
 
