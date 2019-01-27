@@ -25,7 +25,6 @@ bodyImg: http://vignette1.wikia.nocookie.net/masseffect/images/b/b2/Batarian_MP.
 img: https://vignette.wikia.nocookie.net/masseffect/images/5/5f/Balak_ME_adversaryshot.png/revision/latest/scale-to-width-down/422?cb=20140812140358
 traits: 
   - four-eyes
-  - darkvision
   - saving-face
   - shrewd-negotiator
 age: Batarians age at about the same rate as humans, though many do not live past 100 due to their caustic and dangerous lifestyles. 
