@@ -1,9 +1,9 @@
 <template lang="pug">
   v-content
     section
-      v-parallax(src="/images/parallax/edi.jpg")
+      v-parallax(src="/images/parallax/edi.jpg" alt="Edi")
         v-layout(column align-center justify-center).white--text
-          img(src="/images/me5e_logo_notm.png" alt="mass effect 5e").mt-5.me-title-logo
+          me-header-logo
           h1.display-1.mt-5 Feedback & Contributing #[span.sr-only for Mass Effect 5e]
     section
       v-layout(row wrap justify-center).mt-5

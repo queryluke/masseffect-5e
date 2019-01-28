@@ -2,9 +2,9 @@
   v-content
     // Main Parallax
     section
-      v-parallax(src="/images/parallax/citadel.png")
+      v-parallax(src="/images/parallax/citadel.jpg" alt="Mass Effect // The Citadel by grndayfrk14")
         v-layout(column align-center justify-center).black--text
-          img(src="/images/me5e_logo_notm.png" alt="mass effect 5e").mt-5.me-title-logo
+          me-header-logo
           h1.sr-only Mass Effect 5e
           h2.headline.mt-4 Mass Effect + D&D 5th Edition
           p.subheading An Unofficial D&D 5th Edition homebrew for Mass Effect
@@ -32,10 +32,10 @@
                   v-card.elevation-0.transparent
                     v-card-text.text-xs-center
                       v-avatar(size="60px")
-                        img(src="/images/races/human.png" alt="Systems Alliance Symbol by Engorn on DeviantArt")
+                        v-img(src="/images/races/human.png" alt="Systems Alliance Symbol by Engorn on DeviantArt")
                       span.mx-2.headline +
                       v-avatar(size="60px" tile)
-                        img(src="/images/classes/vanguard.png" alt="Vanguard Symbol")
+                        v-img(src="/images/classes/vanguard.svg" alt="Vanguard Symbol")
                     v-card-title(primary-title).layout.justify-center
                       div.headline.text-xs-center Mix & Match
                     v-card-text.
@@ -48,7 +48,7 @@
                   v-card.elevation-0.transparent
                     v-card-text.text-xs-center
                       v-avatar(size="60px" tile).primary
-                        img(:src="`/images/weapons/assault_rifle.svg`" alt="Assault Rifle SVG")
+                        v-img(src="/images/weapons/assault_rifle.svg" alt="Assault Rifle SVG")
                     v-card-title(primary-title).layout.justify-center
                       div.headline.text-xs-center Weapons & Armor
                     v-card-text.
@@ -60,7 +60,7 @@
                   v-card.elevation-0.transparent
                     v-card-text.text-xs-center
                       v-avatar(size="60px").primary
-                        img(src="/images/misc/reaper_avatar.jpg" alt="Reaper swarm")
+                        v-img(src="/images/misc/reaper_avatar.jpg" alt="Reaper swarm")
                     v-card-title(primary-title).layout.justify-center
                       div.headline.text-xs-center Unique Enemies
                     v-card-text.
@@ -71,7 +71,7 @@
             v-alert(dismissable type="info" v-model="alert" outline).
               Want to get involved? Check out the #[nuxt-link(to="/contributing" class="light-blue--text text--lighten-1") contributing page] for more information!
     section
-      v-parallax(src="/images/parallax/joker.png")
+      v-parallax(src="/images/parallax/joker.jpg" alt="mass effect 2 by libbabink")
         v-layout(column align-center justify-center).white--text
           h2.parallax-title Play with the best tech
     section
@@ -87,10 +87,10 @@
               v-card-actions
                 v-btn(to="/phb/intro" flat) Get Started #[v-icon chevron_right]
           v-flex(md5).hidden-sm-and-down.text-xs-center
-            img(src="/images/misc/datapad.png" height="300" alt="data pad").px-5
+            v-img(src="/images/misc/datapad.png" height="300" contain alt="data pad").px-5
           // Grunt Generator
           v-flex(md5).hidden-sm-and-down
-            img(src="/images/misc/grunts.png" height="300" alt="").px-5
+            v-img(src="/images/misc/grunts.png" height="300" contain alt="grunt").px-5
           v-flex(xs12 md7)
             v-card.elevation-0.transparent
               v-card-title(primary-title)
@@ -112,9 +112,9 @@
               v-card-actions
                 v-btn(to="/assets" flat) Print #[v-icon chevron_right]
           v-flex(md5).hidden-sm-and-down.text-xs-center
-            img(src="/images/misc/tt_assets.png" height="300").px-5
+            v-img(src="/images/misc/tt_assets.png" contain height="300").px-5
     section
-      v-parallax(src="/images/parallax/illusive.png")
+      v-parallax(src="/images/parallax/illusive.jpg" alt="The Illusive Man by libbabink")
         v-layout(column align-center justify-center)
           h2.parallax-title Latest News
     section

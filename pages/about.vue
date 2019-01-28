@@ -1,9 +1,9 @@
 <template lang="pug">
   v-content
     section
-      v-parallax(src="/images/parallax/milky_way.jpg")
+      v-parallax(src="/images/parallax/milky_way.jpg" alt="The Milky Way")
         v-layout(column align-center justify-center).white--text
-          img(src="/images/me5e_logo_notm.png" alt="mass effect 5e").mt-5.me-title-logo
+          me-header-logo
           h1.display-1.mt-5 About #[span.sr-only Mass Effect 5e]
     // Creators
     section
