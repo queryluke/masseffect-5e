@@ -35,10 +35,8 @@ explained in the Armor Bonuses and Limitations table.
 For simplicity's sake, you cannot mix armor *within* placements. I.e., you cannot have a heavy piece of on your right arm
 and a light piece of armor on your left.
 
-<v-layout :align-start="true" class="row wrap">
 <ai-dialog title="Armor / AC" component="armor-ac"></ai-dialog>
 <ai-dialog title="Armor Bonuses and Limitations" component="armor-bonuses-limitations"></ai-dialog>
-</v-layout>
 
 <br>
 
