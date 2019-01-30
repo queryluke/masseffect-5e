@@ -8,6 +8,5 @@ module.exports = {
   transform: {
     '^.+\\.js$': 'babel-jest',
     '.*\\.(vue)$': 'vue-jest'
-  },
-  setupFilesAfterEnv: ['jest-expect-message']
+  }
 }

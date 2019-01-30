@@ -57,6 +57,10 @@ export const Hp = {
       acDiff = acDiff >= 0 ? Math.floor(acDiff) : Math.ceil(acDiff)
       const hpCrId = targetDefensiveCrId - acDiff
       const hpCr = this.getCrById(hpCrId)
+      if (hpCr === undefined) {
+        console.log(`finalAc = ${finalAc}, acDiff = ${acDiff}, targetDefensiveCrId = ${targetDefensiveCrId}, hpCrId = ${hpCrId}`)
+      }
+
 
       // **********************************
       // Calc HP
@@ -95,7 +99,13 @@ export const Hp = {
       }
     },
     getCrById (id) {
-      return id > 15 ? this.createNewCr(id - 15) : stats.find(cr => cr.id === id)
+      if (id > 15) {
+        return this.createNewCr(id - 15)
+      } else if (id < 1){
+        return stats.find(cr => cr.id === 1)
+      } else {
+        return stats.find(cr => cr.id === id)
+      }
     },
     createNewCrFromDamage (damage) {
       const numIncrements = Math.ceil((damage - 81) / 5)
