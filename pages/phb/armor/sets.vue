@@ -10,8 +10,21 @@
     div.mb-5.hidden-sm-and-down
       h2.display-1 Armor Sets
       p.
-        An armor set can be one or more pieces of armor. #[strong Full Set] means the armor consists of Head, Chest, Arms, and Legs pieces.
-        #[strong Body Armor] consists of a Chest, Arms and Legs piece. To gain the benefits from a Full Set or Body Armor, you must be wearing all peices of the set.
+        An armor set can be one or more pieces of armor.
+      ul
+        li #[strong Full Set] means the armor consists of Head, Chest, Arms, and Legs pieces of the armor's type (Light, Medium, of Heavy).
+        li #[strong Body Armor] consists of a Chest, Arms and Legs pieces of the armor's type (Light, Medium, of Heavy).
+      v-alert(:value="true" type="info")
+        p.
+          To gain the #[strong Set Benefits] from a #[strong Full Set] or #[strong Body Armor], you must be wearing all peices of the set.
+          However, you always gain the AC from wearing the individual pieces.
+        p.body-2.mb-0 EXAMPLE
+        ul
+          li Head: Death Mask (Heavy), +2 AC, +1 on melee attack and damage rolls
+          li Chest: Blood Dragon Armor (Medium), 2 AC as a Medium Chest Armor Piece, No other benefits (incomplete set)
+          li Arms: Blood Dragon Armor (Medium), 1 AC as a Medium Arm Armor Piece, No other benefits (incomplete set)
+          li Legs: Cerberus Assault Armor (Heavy), 2 AC as a Heavy Lef Armor Piece, No other benefits (incomplete set)
+          li #[strong Total]: 17 AC, +1 on melee attack and damage rolls
       div.hr.mb-0
       v-card(elevation="0")
         v-card-text
