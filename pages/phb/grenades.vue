@@ -1,7 +1,13 @@
 <template lang="pug">
   v-container(:class="{ 'px-0': $vuetify.breakpoint.xsOnly }" )
-    h2.display-1.hidden-sm-and-down Grenades
-    p #[nuxt-link(to="/phb/rules/equipment#grenades") Grenade Rules]
+
+    div.text-md-right
+      v-btn(to="/phb/rules/equipment#grenades" nuxt outline color="secondary") Grenade Rules
+
+    div.mb-5.hidden-sm-and-down
+      h2.display-1 Grenades
+      div.hr.mb-5
+
     grenade-list.mt-5
 </template>
 

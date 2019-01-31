@@ -1,21 +1,25 @@
 <template lang="pug">
   v-container(:class="{ 'px-0': $vuetify.breakpoint.xsOnly }" )
 
+    div.text-md-right
+      v-btn(to="/phb/rules/equipment#armor" nuxt outline color="secondary") Armor Rules
+      v-btn(to="/for-gms/armor-creation" nuxt outline color="secondary") Creating Armor
+
     // Search functions for large screens
-    div.hidden-sm-and-down
+    // Search functions for large screens
+    div.mb-5.hidden-sm-and-down
       h2.display-1 Armor Sets
-      p #[nuxt-link(to="/phb/rules/equipment#armor") Armor Rules]
       p.
-        Pre-made armor sets are cheaper than creating a full set of custom armor. However, they cannot be customized or upgraded
-        in any way. To learn about creating additional armor sets, read the #[nuxt-link(to="/for-gms/armor-creation") Creating Armor guide].
-      p.
-        An armor set can be one or more pieces of armor. "Full Set" means the armor consists of Head, Chest, Arms, and Legs pieces.
-        "Body Armor" consists of a Chest, Arms and Legs piece. To gain the benefits from a Full Set or Body Armor, you must be wearing all peices of the set.
-      v-layout(row wrap)
-        v-flex(xs12)
-          v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
-        v-flex(xs12)
-          armor-set-filters(:itemKey="itemKey" v-bind:noteOptions="noteOptions")
+        An armor set can be one or more pieces of armor. #[strong Full Set] means the armor consists of Head, Chest, Arms, and Legs pieces.
+        #[strong Body Armor] consists of a Chest, Arms and Legs piece. To gain the benefits from a Full Set or Body Armor, you must be wearing all peices of the set.
+      div.hr.mb-0
+      v-card(elevation="0")
+        v-card-text
+          v-layout(row wrap)
+            v-flex(xs12)
+              v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
+            v-flex(xs12)
+              armor-set-filters(:itemKey="itemKey" v-bind:noteOptions="noteOptions")
 
     // List
     armor-set-list(:items="filtered")
