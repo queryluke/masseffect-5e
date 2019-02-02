@@ -24,7 +24,6 @@ startingCredits: Instead of your class's starting equipment, you may start with 
 bodyImg: http://vignette2.wikia.nocookie.net/masseffect/images/d/dc/Asari_Justicar_MP.png/revision/latest/scale-to-width-down/500
 img: https://vignette.wikia.nocookie.net/masseffect/images/a/a7/Samara_vs_Morinth.png/revision/latest/scale-to-width-down/640?cb=20130521073819
 traits:
-  - biotic-initiate
   - innate-biotics
   - mind-meld
   - natural-diplomat

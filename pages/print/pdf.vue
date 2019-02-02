@@ -307,19 +307,11 @@
         v-card-text.markdown-content
           markdown-content(:component="weaponStrength.vue")
       v-card.elevation-0.transparent.mt-5
-        v-card-title.headline Elcor
+        v-card-title.headline {{ indoc.attributes.name }}
           small.ml-3
-            em by Ben McPherson
-        v-card-text
-          v-card
-            race-info(:race="elcor.attributes")
-      v-card.elevation-0.transparent.mt-5
-        v-card-title.headline Hanar
-          small.ml-3
-            em by Mikolaj
-        v-card-text
-          v-card
-            race-info(:race="hanar.attributes")
+            em inspired by Stephen W.
+        v-card-text.markdown-content
+          markdown-content(:component="indoc.vue")
 
       // Alt Sentinel
       section.page
@@ -354,8 +346,7 @@
   import skills from '~/static/data/skills'
   import pr from '~/static/data/community/p_r.md'
   import weaponStrength from '~/static/data/community/weapon_strength.md'
-  import hanar from '~/static/data/community/hanar.md'
-  import elcor from '~/static/data/community/elcor.md'
+  import indoc from '~/static/data/community/indoctrination.md'
   import altSentinel from '~/static/data/alt_sentinel'
   import vehicles from '~/static/data/vehicles'
 
@@ -416,9 +407,8 @@
         skills: skills.sort((a, b) => a.name === b.name ? 0 : a.name > b.name ? 1 : -1),
         pr,
         weaponStrength,
-        hanar,
-        elcor,
         altSentinel,
+        indoc,
         transports: vehicles.filter(v => v.vehicle.type === 'transport'),
         starships: vehicles.filter(v => v.vehicle.type === 'starship')
       }
