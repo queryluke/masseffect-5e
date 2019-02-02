@@ -2,4 +2,5 @@
 id: all-seeing-eyes
 name: All-seeing Eyes
 ---
-You have proficiency in Perception. You have truesight up to 20m.
+Your four eyes can look in multiple directions and have a nascent ability to see cloaked objects. 
+You have truesight up to 10m and proficiency in Perception. 
