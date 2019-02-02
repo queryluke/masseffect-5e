@@ -14,7 +14,7 @@ unshackled AI, you might be have been mass produced like the Alliance Infiltrati
   
   __Alignment__. If you are still following your programming you would be lawful with morality based on your purpose. If you have a glitch in your programming you might be chaotic. 
   
-  __Feat__. Choose one [feat](/phb/feats).   
+  __Feat__. You gain one feat of your choice. 
   
 </div>
 

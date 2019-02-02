@@ -257,17 +257,16 @@
       }
     ],
     "size": "Due to their long tentacles, hanar \"stand\" about as tall as humans. Their bodies are around 1.5 meters long (4-5'). Your size is Medium.",
-    "speed": "Hanar rely on contra-gravitic levitation packs when not in water environments. You can hover 1-2 meters off the ground and move 10m. Additionally, you have a swim speed of 10m.",
+    "speed": "Hanar rely on contra-gravitic levitation packs when not in water environments. You have a hover speed of 10m. Additionally, you have a swim speed of 10m.",
     "snippet": "The hanar are a species resembling Earth's jellyfish and are one of the few non-bipedal Citadel races. Hanar are known for their intense politeness when speaking and their strong religious beliefs.",
     "startingCredits": "Instead of your class's starting equipment, you may start with 6d8 x 1000 + 10,000 credits to buy your own equipment.",
-    "bodyImg": "https://vignette.wikia.nocookie.net/masseffect/images/a/a8/Codex_ME_-_Hanar.png/revision/latest?cb=20140820045523&format=original",
+    "bodyImg": "/images/races/hanar.png",
     "img": "https://vignette.wikia.nocookie.net/masseffect/images/4/47/Delan.png/revision/latest/scale-to-width-down/640?cb=20090121013825",
     "traits": [
       "amphibious",
       "bioluminescence",
       "fragile",
-      "tentacles",
-      "last-resort"
+      "tentacles"
     ],
     "age": "Hanar usually reach maturity around 40 years and typically live to be 180 years old.",
     "raceType": "expanded"
@@ -279,7 +278,7 @@
       "Andromeda",
       "Milky Way"
     ],
-    "alignment": "Any and all across the spectrum.",
+    "alignment": "Humans tend toward no particular alignment. The best and the worst are found among them.",
     "availableClasses": [
       "adept",
       "engineer",
@@ -288,58 +287,23 @@
       "soldier",
       "vanguard"
     ],
-    "sexyLevel": 5,
     "abilityScoreIncrease": [
       {
         "amount": 1,
-        "ability": "to two ability scores"
+        "ability": "to all of your ability scores"
       }
     ],
-    "size": "Medium",
-    "speed": "10m",
+    "size": "Humans vary widely in height and build, from barely 1.5 meters to well over 2 meters tall. Regardless of your position in that range, your size is Medium.",
+    "speed": "Your base walking speed is 10m.",
     "snippet": "Humans, from the planet Earth, are the newest sentient species of notable size to enter the galactic stage and are the most rapidly expanding and developing.",
     "startingCredits": "Instead of your class's starting equipment, you may start with 8d6 x 1000 + 10,000 credits to buy your own equipment.",
     "bodyImg": "http://vignette4.wikia.nocookie.net/masseffect/images/2/2e/Human_Female_Infiltrator_MP.png/revision/latest/scale-to-width-down/500",
     "img": "https://vignette.wikia.nocookie.net/masseffect/images/7/7c/Grissom_Academy_Students.png/revision/latest/scale-to-width-down/640?cb=20120312230100",
-    "startingFeats": {
-      "count": 2,
-      "options": [
-        "a-beautiful-mine",
-        "alert",
-        "athlete",
-        "big-game-hunter",
-        "biotic-slayer",
-        "charger",
-        "dual-wielder",
-        "durable",
-        "elemental-adept",
-        "enhanced-optics",
-        "featherlight",
-        "grappler",
-        "grenadier",
-        "heavily-armored",
-        "hair-trigger",
-        "lucky",
-        "medium-armor-master",
-        "melee-specialist",
-        "mobile",
-        "moderately-armored",
-        "observant",
-        "resilient",
-        "savage-attacker",
-        "sentinel",
-        "sharpshooter",
-        "skilled",
-        "skulker",
-        "squad-leader",
-        "tavern-brawler",
-        "tough",
-        "wealth-of-knowledge",
-        "weapon-master"
-      ]
-    },
-    "traits": null,
-    "age": null
+    "age": "Humans reach adulthood in their late teens and live between 125 and 150 years.",
+    "raceType": "standard",
+    "variants": [
+      "variant-human"
+    ]
   },
   {
     "id": "krogan",
