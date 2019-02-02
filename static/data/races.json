@@ -68,11 +68,11 @@
     "bodyImg": "http://vignette2.wikia.nocookie.net/masseffect/images/d/dc/Asari_Justicar_MP.png/revision/latest/scale-to-width-down/500",
     "img": "https://vignette.wikia.nocookie.net/masseffect/images/a/a7/Samara_vs_Morinth.png/revision/latest/scale-to-width-down/640?cb=20130521073819",
     "traits": [
-      "biotic-initiate",
+      "innate-biotics",
       "mind-meld",
       "natural-diplomat"
     ],
-    "age": "Asari are very long lived and can reach ages of over 1000 years.",
+    "age": "Asari are very long-lived and can reach ages of over 1000 years.",
     "raceType": "standard",
     "variants": [
       "ardat-yakshi"
@@ -132,7 +132,6 @@
       "soldier",
       "vanguard"
     ],
-    "sexyLevel": 10,
     "abilityScoreIncrease": [
       {
         "amount": 2,
@@ -143,40 +142,57 @@
         "ability": "Wisdom"
       }
     ],
-    "size": "Medium",
-    "speed": "12m",
+    "size": "Drell range from under 5 to over 6 feet tall and have slender builds. Your size is Medium.",
+    "speed": "Their light frames and wiry strength make drell slightly faster than other races. Your base walking speed is 12m.",
     "snippet": "The drell are a reptile-like race that was rescued from their dying homeworld by the hanar following the first contact between the two. Since then, the drell have remained loyal to the hanar for their camaraderie and have fit comfortably into galactic civilization.",
     "startingCredits": "Instead of your class's starting equipment, you may start with 6d8 x 1000 + 10,000 credits to buy your own equipment.",
     "bodyImg": "http://vignette2.wikia.nocookie.net/masseffect/images/a/ad/Drell_MP.png/revision/latest/scale-to-width-down/500",
     "img": "https://vignette.wikia.nocookie.net/masseffect/images/c/cf/Drell_biotic_field.png/revision/latest/scale-to-width-down/640?cb=20130623224527",
-    "startingFeats": {
-      "count": 1,
-      "options": [
-        "actor",
-        "alert",
-        "big-game-hunter",
-        "dual-wielder",
-        "featherlight",
-        "grenadier",
-        "heavily-armored",
-        "hair-trigger",
-        "heavy-armor-master",
-        "keen-mind",
-        "melee-specialist",
-        "mobile",
-        "moderately-armored",
-        "observant",
-        "skulker",
-        "squad-leader"
-      ]
-    },
     "traits": [
-      "darkvision",
       "eidetic-memory",
-      "hallucinogen",
-      "keen-senses"
+      "natural-hunters",
+      "raw-agility"
     ],
-    "age": null
+    "age": "Drell have slightly shorter lifespans of 85 years, on average. However, Kepral's Syndrome - a unique, incurable disease caused by long-term exposure to humid climates - is the leading cause of death.",
+    "raceType": "standard"
+  },
+  {
+    "id": "elcor",
+    "name": "Elcor",
+    "galaxy": [
+      "Milky Way",
+      "Andromeda"
+    ],
+    "alignment": "Elcor are methodical, deliberate creatures that never act on irrational decisions. The typical Elcor is often neutral or lawful.",
+    "availableClasses": [
+      "engineer",
+      "soldier"
+    ],
+    "abilityScoreIncrease": [
+      {
+        "amount": 2,
+        "ability": "Constitution"
+      },
+      {
+        "amount": 1,
+        "ability": "Wisdom"
+      }
+    ],
+    "size": "Elcor stand between 2 and 2.5 meters tall (7-8 feet). Your size is Medium.",
+    "speed": "Elcor are relatively slow compared to other races. Your base walking speed is 6m.",
+    "snippet": "The elcor are a Citadel species native to the high-gravity world Dekuuna. They are massive creatures, standing on four muscular legs for increased stability. Elcor move slowly, an evolved response to an environment where a fall can be lethal.",
+    "startingCredits": "Instead of your class's starting equipment, you may start with 10d6 x 1000 + 10,000 credits to buy your own equipment.",
+    "bodyImg": "/images/races/elcor.png",
+    "img": "/images/races/elcor_card.jpg",
+    "traits": [
+      "careful",
+      "stability",
+      "thick-hide",
+      "unstealthy",
+      "quadrupedal"
+    ],
+    "age": "The average elcor lives to be around 300 years old. 100-year-old elcor are considered young.",
+    "raceType": "expanded"
   },
   {
     "id": "geth",
@@ -213,6 +229,42 @@
       "hunter-mode",
       "repair-matrix",
       "no-feats"
+    ],
+    "age": null
+  },
+  {
+    "id": "hanar",
+    "name": "Hanar",
+    "galaxy": [
+      "Milky Way"
+    ],
+    "alignment": "Tend towards lawful due to their religious beliefs.",
+    "availableClasses": [
+      "adept",
+      "engineer"
+    ],
+    "sexyLevel": "Out of scale",
+    "abilityScoreIncrease": [
+      {
+        "amount": 2,
+        "ability": "Wisdom"
+      },
+      {
+        "amount": 1,
+        "ability": "Strength"
+      }
+    ],
+    "size": "Medium",
+    "speed": "hover 10m",
+    "snippet": "The hanar are a species resembling Earth's jellyfish and are one of the few non-bipedal Citadel races. Hanar are known for their intense politeness when speaking and their strong religious beliefs.",
+    "startingCredits": "Instead of your class's starting equipment, you may start with 6d8 x 1000 + 10,000 credits to buy your own equipment.",
+    "bodyImg": "https://vignette.wikia.nocookie.net/masseffect/images/a/a8/Codex_ME_-_Hanar.png/revision/latest?cb=20140820045523&format=original",
+    "img": "https://vignette.wikia.nocookie.net/masseffect/images/4/47/Delan.png/revision/latest/scale-to-width-down/640?cb=20090121013825",
+    "traits": [
+      "fragility",
+      "multi-casting",
+      "soul-gazing",
+      "last-resort"
     ],
     "age": null
   },

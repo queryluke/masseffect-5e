@@ -30,7 +30,7 @@
     },
     computed: {
       traitList () {
-        return this.data.traits.map(t => this.$options.filters.capitalize(t)).join(', ')
+        return this.data.traits.map(t => this.$options.filters.titlecase(t.replace(/-/g,' '))).join(', ')
       },
       traitSummary () {
         let text = ''

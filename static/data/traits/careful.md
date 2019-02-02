@@ -2,4 +2,5 @@
 id: careful
 name: Careful
 ---
-You take a disadvantage to Initiative rolls. You also have proficiency in Insight and Perception. 
+You have proficiency in Insight and Perception. But your careful nature makes you slow to act, giving you disadvantage on 
+Initiative rolls.  

@@ -10,7 +10,6 @@ availableClasses:
   - infiltrator
   - soldier
   - vanguard
-sexyLevel: 10
 abilityScoreIncrease:
   - amount: 2
     ability: Dexterity
