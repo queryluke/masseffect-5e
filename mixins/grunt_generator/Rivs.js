@@ -29,7 +29,6 @@ export const Rivs = {
       this.grunt.damageVulnerabilities = this.applyRandomRiv(this.vulnerabilities, damageTypes)
       switch (this.race.id) {
         case 'geth':
-        case 'unshackled-ai':
           this.grunt.damageImmunities.push('poison', 'psychic')
           this.grunt.conditionImmunities.push('poisoned')
           this.grunt.damageImmunities = [...new Set(this.grunt.damageImmunities)]

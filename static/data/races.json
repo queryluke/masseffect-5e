@@ -166,19 +166,20 @@
     "alignment": "Elcor are methodical, deliberate creatures that never act on irrational decisions. The typical Elcor is often neutral or lawful.",
     "availableClasses": [
       "engineer",
+      "infiltrator",
       "soldier"
     ],
     "abilityScoreIncrease": [
       {
         "amount": 2,
-        "ability": "Constitution"
+        "ability": "Strength"
       },
       {
         "amount": 1,
         "ability": "Wisdom"
       }
     ],
-    "size": "Elcor stand between 2 and 2.5 meters tall (7-8 feet). Your size is Medium.",
+    "size": "Elcor stand between 2 and 2.5 meters tall (7-8 feet) at the shoulder. Your size is Medium.",
     "speed": "Elcor are relatively slow compared to other races. Your base walking speed is 6m.",
     "snippet": "The elcor are a Citadel species native to the high-gravity world Dekuuna. They are massive creatures, standing on four muscular legs for increased stability. Elcor move slowly, an evolved response to an environment where a fall can be lethal.",
     "startingCredits": "Instead of your class's starting equipment, you may start with 10d6 x 1000 + 10,000 credits to buy your own equipment.",
@@ -186,10 +187,9 @@
     "img": "/images/races/elcor_card.jpg",
     "traits": [
       "careful",
-      "stability",
-      "thick-hide",
-      "unstealthy",
-      "quadrupedal"
+      "quadrupedal",
+      "shoulder-mounts",
+      "thick-hide"
     ],
     "age": "The average elcor lives to be around 300 years old. 100-year-old elcor are considered young.",
     "raceType": "expanded"
@@ -206,7 +206,6 @@
       "infiltrator",
       "soldier"
     ],
-    "sexyLevel": 6,
     "abilityScoreIncrease": [
       {
         "amount": 2,
@@ -217,8 +216,8 @@
         "ability": "Strength"
       }
     ],
-    "size": "Medium",
-    "speed": "10m",
+    "size": "Standard geth are around 2 meters tall (6'5\"). Your size is Medium.",
+    "speed": "Your base walking speed is 10m.",
     "snippet": "The geth (\"Servant of the People\" in Khelish) are a race of networked artificial intelligences that reside beyond the Perseus Veil.",
     "startingCredits": "Instead of your class's starting equipment, you may start with 2d10 x 1000 + 10,000 credits to buy your own equipment.",
     "bodyImg": "http://vignette2.wikia.nocookie.net/masseffect/images/7/72/Geth_Engineer_MP.png/revision/latest/scale-to-width-down/500",
@@ -230,7 +229,9 @@
       "repair-matrix",
       "no-feats"
     ],
-    "age": null
+    "age": "Geth do not age, as they are constructs, and live as long as their bodies are not destroyed.",
+    "raceType": "expanded",
+    "variant": "unshackled-ai"
   },
   {
     "id": "hanar",
@@ -606,77 +607,6 @@
       "turian-toughness",
       "martial-training"
     ],
-    "age": null
-  },
-  {
-    "id": "unshackled-ai",
-    "name": "Unshackled AI",
-    "galaxy": [
-      "Milky Way"
-    ],
-    "alignment": "Vary as wildly as their circumstances and personalities allow.",
-    "availableClasses": [
-      "engineer",
-      "infiltrator",
-      "soldier"
-    ],
-    "sexyLevel": "Varies",
-    "abilityScoreIncrease": [
-      {
-        "amount": 2,
-        "ability": "Intelligence"
-      },
-      {
-        "amount": 1,
-        "ability": "to one ability except intelligence"
-      }
-    ],
-    "size": "Medium",
-    "speed": "10m",
-    "snippet": "AIs are considered illegal by the Council, but that hasn't stopped corporations like Cerberus from innovating. As an unshackled AI, you might be have been mass produced like the Alliance Infiltration Units, or you may be an experiment gone wrong.",
-    "startingCredits": "Instead of your class's starting equipment, you may start with 2d10 x 1000 + 10,000 credits to buy your own equipment.",
-    "bodyImg": "https://vignette.wikia.nocookie.net/masseffect/images/0/06/ME3_Alliance_Infiltration_Unit_Infiltrator.png/revision/latest/scale-to-width-down/500?cb=20130227102713",
-    "img": "https://vignette.wikia.nocookie.net/masseffect/images/3/39/Cronos_station_edi_and_vendetta.png/revision/latest/scale-to-width-down/640?cb=20120715085530",
-    "traits": [
-      "living-construct",
-      "integrated-protection",
-      "repair-matrix"
-    ],
-    "startingFeats": {
-      "count": 1,
-      "options": [
-        "a-beautiful-mine",
-        "alert",
-        "athlete",
-        "big-game-hunter",
-        "biotic-slayer",
-        "charger",
-        "dual-wielder",
-        "durable",
-        "enhanced-optics",
-        "featherlight",
-        "grappler",
-        "grenadier",
-        "heavily-armored",
-        "hair-trigger",
-        "lucky",
-        "melee-specialist",
-        "mobile",
-        "moderately-armored",
-        "observant",
-        "resilient",
-        "savage-attacker",
-        "sentinel",
-        "sharpshooter",
-        "skilled",
-        "skulker",
-        "squad-leader",
-        "tavern-brawler",
-        "tough",
-        "wealth-of-knowledge",
-        "weapon-master"
-      ]
-    },
     "age": null
   },
   {

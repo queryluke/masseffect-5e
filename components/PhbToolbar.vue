@@ -57,10 +57,9 @@
         return this.pages[this.$route.name] ? this.pages[this.$route.name] : {}
       },
       pageName () {
-        const fancyParam = this.$route.params.id === 'unshackled-ai' ? 'Unshackled AI' : this.$options.filters.capitalize(this.$route.params.id)
         if (this.pages[this.$route.name]) {
           return this.$route.params.id
-            ? `${this.page.name} - ${fancyParam}`
+            ? `${this.page.name} - ${this.$options.filters.capitalize(this.$route.params.id)}`
             : this.page.name
         } else {
           return ''
