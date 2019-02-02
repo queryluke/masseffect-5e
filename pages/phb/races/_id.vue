@@ -15,7 +15,7 @@
                   v-list-tile-title {{ item | fidtt }}
         race-info(:race="race")
       v-flex.hidden-sm-and-down.md3
-        v-img(:src="race.bodyImg" height="80vh")
+        v-img(:src="race.bodyImg" height="80vh" contain)
         p(v-if="id == 'prothean'").text-xs-center #[small #[em image courtesy of JTickner]]
 </template>
 
