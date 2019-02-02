@@ -27,7 +27,7 @@ traits:
   - innate-biotics
   - mind-meld
   - natural-diplomat
-age: Asari are very long lived and can reach ages of over 1000 years.
+age: Asari are very long-lived and can reach ages of over 1000 years.
 raceType: standard
 variants:
  - ardat-yakshi 
