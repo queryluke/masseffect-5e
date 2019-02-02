@@ -40,16 +40,16 @@ Geth think, feel, and experience the world in a totally unique way.
 "Does this unit have a soul?" asked the geth. That question would change the relationship of quarians and geth forever. 
 The quarians responded with an attempted termination of all geth. The newly sentient geth resisted the genocide of 
 their masters in a war dubbed "the Morning War". As many geth were designed as tools of war, the quarians were quickly 
-and easily defeated. Because the constructs were acting out of self defense, when the enemy began retreating from their 
-homeland of Rannoch, the geth did not pursue, and allows their masters to leave in peace.
+and easily defeated. Because the constructs were acting out of self-defense, when the enemy began retreating from their 
+homeland of Rannoch, the geth did not pursue and allowed their masters to leave in peace.
 
 ## Incomprehensible Mind
-Geth minds are quite anomolous. As they were designed to follow predetermined steps and commands, and with their minds 
-powered from a centralize network, their way of thinking is essentially unique and different than the chaotic organic 
+Geth minds are quite anomalous. As they were designed to follow predetermined steps and commands, and with their minds 
+powered from a centralized network, their way of thinking is essentially unique and different than the chaotic organic 
 minds of humanoids. Their thoughts can be compared to a program or process which systematically follows steps to come 
-to a conclusion, run many times in different ways, until the geth comes to a consensus of the correct course of action. 
+to a conclusion, run many times in different ways until the geth comes to a consensus of the correct course of action. 
 Geth do not experience emotion or desire - not in the same way a humanoid does, anyway. Additionally, due to their 
-innate ability to network with other geth, geth see themselves as a unit of a larger and more complex whole, and even 
+innate ability to network with other geth, geth see themselves as a unit of a larger and more complex whole and even 
 the individual processes that make up a single geth as being equal constituents that contribute to that geth unit.
 
 ## Beyond the Veil
@@ -62,7 +62,7 @@ quests.
 Geth have no use for names among themselves but will adopt names for the sake of interacting with other races. 
 However, the geth do not often see themselves as individuals. Many geth use plural pronouns such as "us" and "we". 
 As a result, the names geth take are normally synonyms or words for groups. Geth with individuality, especially those 
-who have been separate from their kind for an extended time, do exist. Those geth still use words for names, though 
+who have been separated from their kind for an extended time, do exist. Those geth still use words for names, though 
 they give themselves a more personally fitting name.
 
 __Geth Names__: Armada, Army, Batallion, Brigade, Cabal, Caucus, Congregate, Coterie, Guild, Horde, Host, Legion, Myriad, Phalanx, Proletariat, Throng, Troop, Union
