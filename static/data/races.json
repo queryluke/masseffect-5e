@@ -231,7 +231,9 @@
     ],
     "age": "Geth do not age, as they are constructs, and live as long as their bodies are not destroyed.",
     "raceType": "expanded",
-    "variant": "unshackled-ai"
+    "variants": [
+      "unshackled-ai"
+    ]
   },
   {
     "id": "hanar",

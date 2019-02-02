@@ -32,9 +32,22 @@
     "note": "You have practiced techniques useful in melee combat against biotic wielders"
   },
   {
+    "id": "card-shark",
+    "name": "Card Shark",
+    "note": "No one can beat you in games of chance.",
+    "prerequisite": "Charisma 12 or higher",
+    "new": true
+  },
+  {
     "id": "charger",
     "name": "Charger",
     "note": "Make a melee attack or shove after the Dash action"
+  },
+  {
+    "id": "come-get-me",
+    "name": "Come Get Me",
+    "note": "Draw the enemy fire.",
+    "new": true
   },
   {
     "id": "dual-wielder",
@@ -63,6 +76,12 @@
     "name": "Featherlight",
     "note": "+1 Dexterity, increased speed and you don't set off weight based traps",
     "prerequisite": "Dexterity 12 or higher",
+    "new": true
+  },
+  {
+    "id": "grace-under-fire",
+    "name": "Grace Under Fire",
+    "note": "Keep a cool head when attacked",
     "new": true
   },
   {
@@ -133,6 +152,12 @@
     "name": "Moderately Armored",
     "note": "+1 Strength or Dexterity, proficiency with medium armor and shields",
     "prerequisite": "Proficiency with light armor"
+  },
+  {
+    "id": "nerves-of-steel",
+    "name": "Nerves of Steel",
+    "note": "You are resistant to becoming frightened and stunned.",
+    "new": true
   },
   {
     "id": "observant",
