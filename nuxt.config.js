@@ -76,7 +76,7 @@ fs.readdirSync('./static/data/classes').map(file => {
   routes.push(`/print/spell-cards/${id}`)
 })
 fs.readdirSync('./static/data/races').map(file => {
-  const id = file.replace(/.json$/, '')
+  const id = file.replace(/.md$/, '')
   routes.push(`/phb/races/${id}`)
 })
 
@@ -103,6 +103,15 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
     ]
   },
+
+  /*
+  ** manifest for nuxt-pwa
+  */
+  manifest: {
+    name: 'Mass Effect 5e',
+    lang: 'en'
+  },
+
   /*
   ** Customize the progress-bar color
   */
