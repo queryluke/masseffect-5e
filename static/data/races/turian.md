@@ -62,3 +62,5 @@ traits:
   - martial-training
 age: 
 ---
+
+<source-reference pages="12-13" source="races" :additional="[{source: 'wiki', pages: 'Turian'}]"></source-reference>
