@@ -35,3 +35,16 @@
     }
   }
 </script>
+
+<style lang="scss">
+  .news-post .markdown-content {
+    h2 {
+      border-bottom: 1px solid gray;
+      margin-top: 2em;
+    }
+
+    ul {
+      margin-top: 0;
+    }
+  }
+</style>

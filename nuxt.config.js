@@ -75,7 +75,10 @@ fs.readdirSync('./static/data/classes').map(file => {
   routes.push(`/phb/classes/${id}`)
   routes.push(`/print/spell-cards/${id}`)
 })
-// require('./data/races.json').data.map(r => routes.push(`/phb/races/${r.id}`))
+fs.readdirSync('./static/data/races').map(file => {
+  const id = file.replace(/.json$/, '')
+  routes.push(`/phb/races/${id}`)
+})
 
 fs.readdirSync('./static/data/changelog').map((file) => {
   routes.push('/changelog/' + (file.replace(/\.md$/g, '')))
