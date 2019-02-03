@@ -11,6 +11,13 @@
     "note": "+1 Charisma, skilled at mimicry and dramatics"
   },
   {
+    "id": "additional-augment",
+    "name": "Additional Augment",
+    "note": "Gain another cybernetic augmentation",
+    "prerequisite": "Quarian",
+    "new": true
+  },
+  {
     "id": "alert",
     "name": "Alert",
     "note": "+5 to Initiative, can't be surprised, no advantage for hidden attackers"
@@ -47,6 +54,13 @@
     "id": "come-get-me",
     "name": "Come Get Me",
     "note": "Draw the enemy fire.",
+    "new": true
+  },
+  {
+    "id": "cranial-bruiser",
+    "name": "Cranial Bruiser",
+    "note": "Headbutt stuff!",
+    "prerequisite": "Krogan",
     "new": true
   },
   {
@@ -216,6 +230,13 @@
     "name": "War Caster",
     "note": "You have practiced casting spells in the midst of combat",
     "prerequisite": "The ability to cast at least one spell"
+  },
+  {
+    "id": "warlords-blood-rage",
+    "name": "Warlord's Blood Rage",
+    "note": "An even deadlier blood rage.",
+    "prerequisite": "Krogan",
+    "new": true
   },
   {
     "id": "wealth-of-knowledge",
