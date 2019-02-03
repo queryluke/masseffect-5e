@@ -36,6 +36,7 @@ export default {
     tabs: state => state.tabs,
     primaryNavigation: (state, getters, rootState) => rootState.primaryNavigation,
     colors: state => state.colors,
+    classes: (state, getters, rootState) => rootState.classes,
     order: (state, getters, rootState) => rootState.itemList.order,
     sortBy: (state, getters, rootState) => rootState.itemList.sortBy
   }

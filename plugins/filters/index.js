@@ -8,6 +8,7 @@ import listOfChoices from './listOfChoices'
 import ordinal from './ordinal'
 import removeActionId from './removeActionId'
 import titlecase from './titlecase'
+import fidtt from './fidtt'
 import weaponRange from './weaponRange'
 
 const customFilters = {
@@ -19,6 +20,7 @@ const customFilters = {
   ordinal,
   removeActionId,
   titlecase,
+  fidtt,
   weaponRange
 }
 

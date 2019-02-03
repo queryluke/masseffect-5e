@@ -2,7 +2,7 @@
 id: overchannel
 name: Overchannel
 ---
-You can increase the power of your simpler biotics. When you cast a biotic spell of 1st or 2nd level that deals damage, 
+Beginning at {{ level }} level, you can increase the power of your simpler biotics. When you cast a biotic spell of 1st or 2nd level that deals damage, 
 you can deal maximum damage with that spell.
 
 The first time you do so, you suffer no adverse effect. If you use this feature again before you finish a long rest, you 

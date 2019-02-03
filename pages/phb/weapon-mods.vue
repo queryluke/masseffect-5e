@@ -1,15 +1,20 @@
 <template lang="pug">
   v-container(:class="{ 'px-0': $vuetify.breakpoint.xsOnly }" )
 
+    div.text-md-right
+      v-btn(to="/phb/rules/equipment#mods" nuxt outline color="secondary") Weapon Mod Rules
+
     // Search functions for large screens
-    div.hidden-sm-and-down
+    div.mb-5.hidden-sm-and-down
       h2.display-1 Weapon Mods
-      p Read the #[router-link(to="/phb/rules/equipments#mods") Weapon Customization Rules] to understand how weapon modding works.
-      v-layout(row wrap)
-        v-flex(xs12)
-          v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
-        v-flex(xs12)
-          weapon-mod-filters(:itemKey="itemKey" v-bind:noteOptions="noteOptions")
+      div.hr.mb-0
+      v-card(elevation="0")
+        v-card-text
+          v-layout(row wrap)
+            v-flex(xs12)
+              v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
+            v-flex(xs12)
+              weapon-mod-filters(:itemKey="itemKey" v-bind:noteOptions="noteOptions")
 
     // List
     weapon-mod-list(:items="filtered")
@@ -18,6 +23,7 @@
     mobile-filter-container(title="Filter Weapon Mods")
       template(slot="filters")
         weapon-mod-filters(:itemKey="itemKey" v-bind:noteOptions="noteOptions")
+
 </template>
 
 <script>

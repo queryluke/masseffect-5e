@@ -30,30 +30,12 @@
               em by SleightxHope
           v-card-text.markdown-content
             markdown-content(:component="weaponStrength.vue")
-      v-flex.xs12.mt-5
-        v-card.elevation-0.transparent
-          v-card-title.headline Elcor
-            small.ml-3
-              em by Ben McPherson
-          v-card-text
-            v-card
-              race-info(:race="elcor.attributes")
-      v-flex.xs12.mt-5
-        v-card.elevation-0.transparent
-          v-card-title.headline Hanar
-            small.ml-3
-              em by Avezebra
-          v-card-text
-            v-card
-              race-info(:race="hanar.attributes")
 
 </template>
 
 <script>
   import pr from '~/static/data/community/p_r.md'
   import weaponStrength from '~/static/data/community/weapon_strength.md'
-  import hanar from '~/static/data/community/hanar.md'
-  import elcor from '~/static/data/community/elcor.md'
   import indoc from '~/static/data/community/indoctrination.md'
   import RaceInfo from '~/components/race/RaceInfo.vue'
 
@@ -63,8 +45,6 @@
       return {
         pr,
         weaponStrength,
-        hanar,
-        elcor,
         indoc
       }
     },

@@ -2,7 +2,7 @@
   v-container(fluid)
     h2.display-3.my-3 Races
     v-layout(row wrap)
-      v-flex(v-for="race in items" v-bind:key="race.id" d-flex).xs12.sm6.md4
+      v-flex(v-for="race in items" v-bind:key="race.id" d-flex).xs12.sm6.md4.mb-4
         race-card(:data="race")
 </template>
 

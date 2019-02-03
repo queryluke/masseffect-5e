@@ -1,14 +1,20 @@
 <template lang="pug">
   v-container(:class="{ 'px-0': $vuetify.breakpoint.xsOnly }" )
 
+    div.text-md-right
+      v-btn(to="/phb/rules/monsters" nuxt outline color="secondary") Monster Rules
+
     // Search functions for large screens
-    div.hidden-sm-and-down
+    div.mb-5.hidden-sm-and-down
       h2.display-1 Bestiary
-      v-layout(row wrap)
-        v-flex(md4).px-1
-          v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
-        v-flex(md8).px-1
-          bestiary-filters(:itemKey="itemKey" v-bind:crOptions="crOptions" v-bind:unitOptions="unitOptions")
+      div.hr.mb-0
+      v-card(elevation="0")
+        v-card-text
+          v-layout(row wrap)
+            v-flex(md4).px-1
+              v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
+            v-flex(md8).px-1
+              bestiary-filters(:itemKey="itemKey" v-bind:crOptions="crOptions" v-bind:unitOptions="unitOptions")
 
     // Spell List
     bestiary-list(:items="filtered")

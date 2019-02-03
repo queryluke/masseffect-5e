@@ -1,15 +1,20 @@
 <template lang="pug">
   v-container(:class="{ 'px-0': $vuetify.breakpoint.xsOnly }" )
 
+    div.text-md-right
+      v-btn(to="/phb/rules/equipment#weapons" nuxt outline color="secondary") Weapon Rules
+
     // Search functions for large screens
-    div.hidden-sm-and-down
+    div.mb-5.hidden-sm-and-down
       h2.display-1 Weapons
-      p Read the #[nuxt-link(to="/phb/rules/equipment#weapons") Weapon Rules] to understand the changes from 5th Edition to Mass Effect 5e.
-      v-layout(row wrap)
-        v-flex(md4).px-1
-          v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
-        v-flex(md8).px-1
-          weapon-filters(:itemKey="itemKey")
+      div.hr.mb-0
+      v-card(elevation="0")
+        v-card-text
+          v-layout(row wrap)
+            v-flex(md4).px-1
+              v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
+            v-flex(md8).px-1
+              weapon-filters(:itemKey="itemKey")
 
     // List
     weapon-list(:items="filtered")

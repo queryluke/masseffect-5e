@@ -222,14 +222,14 @@
             { min: 51, max: 60, reward: () => this.addGrenade(2), text: '2 random grenades' },
             { min: 61, max: 80, reward: () => this.addWeapon('common'), text: '1 common weapon' },
             { min: 81, max: 95, reward: () => this.addProgram('uncommon'), text: '1 uncommon or lower omni-tool program' },
-            { min: 96, max: 100, reward: () => this.addModOrArmor('mods', 0, 3000), text: '1 random armor or weapon mod of 3,000 credits or less' }
+            { min: 96, max: 100, reward: () => this.addModOrArmor('mods', 0, 3000), text: '1 random armor or weapon mod worth 3,000 credits or less' }
           ],
           b: [
             { min: 1, max: 15, reward: () => this.addMedigel(1, 'enhanced'), text: '1 enhanced medi-gel' },
             { min: 16, max: 25, reward: () => this.addThOrHw('omniGel', this.randomAmount(1, 2, 4)), text: '2d4 + 1 omni-gel' },
             { min: 26, max: 44, reward: () => this.addGrenade(2), text: '2 random grenades' },
             { min: 55, max: 64, reward: () => this.addWeapon('common'), text: '1 common weapon' },
-            { min: 65, max: 74, reward: () => this.addModOrArmor('mods', 0, 5000) },
+            { min: 65, max: 74, reward: () => this.addModOrArmor('mods', 0, 5000), text: '1 random armor or weapon mod worth 5,000 credits or less' },
             { min: 75, max: 84, reward: () => this.addProgram('uncommon'), text: '1 uncommon or lower omni-tool program' },
             { min: 75, max: 94, reward: () => this.addThOrHw('heavyWeapon', 3), text: '3 heavy weapon charges' },
             { min: 95, max: 100, reward: () => this.addWeapon('uncommon'), text: '1 uncommon weapon' }
@@ -308,7 +308,7 @@
     methods: {
       rollText (itemRoll) {
         if (!itemRoll.roll) {
-          return ''
+          return 'Nothing extra'
         }
         const die = itemRoll.roll === 1 ? 1 : `1d${itemRoll.roll}`
         const plural = itemRoll.roll === 1 ? '' : 's'

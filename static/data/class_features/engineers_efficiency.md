@@ -2,7 +2,7 @@
 id: engineers_efficiency
 name: Engineer's Efficiency
 ---
-Starting at the {{ level }} level, you're able to optimize a basic tech spell. Choose one of the following
+Starting at {{ level }} level, you're able to optimize a basic tech spell. Choose one of the following
 tech powers: Cryo Blast, Incinerate, or Overload. You always have this spell prepared. You may cast a 1 tech point version
 of this spell without expending any tech points. If you cast the power at a high level, you must spend all tech points as normal.
 

@@ -16,6 +16,7 @@
         div {{ set.cost | groupDigits(',') }}
       v-flex.xs12
         div.hr
+        p(v-if="benefits.length > 0").ma-0.body-2 Set Benefits
         ul
           li(v-for="(f, index) in benefits" v-bind:key="index") {{ f }}
 </template>

@@ -2,4 +2,4 @@
 id: thick-hide
 name: Thick Hide
 ---
-When not wearing armour, your AC is 13 + your Constitution modifier.
+Your base AC is 12 and you determine your AC using your Constitution modifier instead of your Dexterity modifier.

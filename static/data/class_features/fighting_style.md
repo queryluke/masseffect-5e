@@ -2,7 +2,7 @@
 id: fighting_style
 name: Fighting Style
 ---
-Choose a fighting style from the list below.
+At {{ level }} level, choose a fighting style from the list below.
 
 Style | Perk
 --- | ---

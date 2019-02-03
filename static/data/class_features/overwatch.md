@@ -2,7 +2,7 @@
 id: overwatch
 name: Overwatch
 ---
-At the {{ level }} level, you've become attuned to monitoring the movements of the battlefield, taking advantage of
+At {{ level }} level, you've become attuned to monitoring the movements of the battlefield, taking advantage of
 when enemies break cover.
 
 At the end of each of your turns, you may ready the following action. Choose up to 5 creatures you can see that are behind

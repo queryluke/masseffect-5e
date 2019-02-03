@@ -1,7 +1,13 @@
 <template lang="pug">
   v-container
     div.my-5.text-xs-center
-      img(src="/images/me5e_logo_notm.png" id="phbLogo").mb-4
+      img(
+        srcset="/images/me5e_logo_450w.png 450w, /images/me5e_logo_600w.png 600w, /images/me5e_logo_720w.png 720w, /images/me5e_logo_900w.png 900w"
+        sizes="(max-width: 320px) 320px, (max-width: 480px) 480px, (max-width: 600px) 600px, (max-width: 720px) 720px, (max-width: 900px) 900px, (max-width: 1200px) 450px, 450px"
+        src="/images/me5e_logo_450w.png"
+        alt="Mass Effect 5e logo"
+        id="phbLogo"
+      ).mb-4
       h3.display-3.hidden-sm-and-down Player's Manual - Introduction
       p.title v{{ version }}
       v-btn(to="/changelog" nuxt).primary Changelog

@@ -2,7 +2,7 @@
   div
     v-tabs(v-model="activeTab" v-bind:slider-color="sliderColor" id="desktopTabs" grow).hidden-sm-and-down
       v-tab(v-for="tab in tabs" v-bind:key="tab.id" v-bind:href="`#${tab.id}`" v-bind:class="textColor" ripple) {{ tab.name }}
-    v-tabs-items(v-model="active")
+    v-tabs-items(v-model="activeTab")
       v-tab-item(v-for="tab in tabs" v-bind:key="tab.id" v-bind:value="tab.id")
         div.pa-2
           slot(:name="tab.slot")

@@ -1,21 +1,38 @@
 <template lang="pug">
   v-container(:class="{ 'px-0': $vuetify.breakpoint.xsOnly }" )
 
+    div.text-md-right
+      v-btn(to="/phb/rules/equipment#armor" nuxt outline color="secondary") Armor Rules
+      v-btn(to="/for-gms/armor-creation" nuxt outline color="secondary") Creating Armor
+
     // Search functions for large screens
-    div.hidden-sm-and-down
+    // Search functions for large screens
+    div.mb-5.hidden-sm-and-down
       h2.display-1 Armor Sets
-      p #[nuxt-link(to="/phb/rules/equipment#armor") Armor Rules]
       p.
-        Pre-made armor sets are cheaper than creating a full set of custom armor. However, they cannot be customized or upgraded
-        in any way. To learn about creating additional armor sets, read the #[nuxt-link(to="/for-gms/armor-creation") Creating Armor guide].
-      p.
-        An armor set can be one or more pieces of armor. "Full Set" means the armor consists of Head, Chest, Arms, and Legs pieces.
-        "Body Armor" consists of a Chest, Arms and Legs piece. To gain the benefits from a Full Set or Body Armor, you must be wearing all peices of the set.
-      v-layout(row wrap)
-        v-flex(xs12)
-          v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
-        v-flex(xs12)
-          armor-set-filters(:itemKey="itemKey" v-bind:noteOptions="noteOptions")
+        An armor set can be one or more pieces of armor.
+      ul
+        li #[strong Full Set] means the armor consists of Head, Chest, Arms, and Legs pieces of the armor's type (Light, Medium, of Heavy).
+        li #[strong Body Armor] consists of a Chest, Arms and Legs pieces of the armor's type (Light, Medium, of Heavy).
+      v-alert(:value="true" type="info")
+        p.
+          To gain the #[strong Set Benefits] from a #[strong Full Set] or #[strong Body Armor], you must be wearing all peices of the set.
+          However, you always gain the AC from wearing the individual pieces.
+        p.body-2.mb-0 EXAMPLE
+        ul
+          li Head: Death Mask (Heavy), +2 AC, +1 on melee attack and damage rolls
+          li Chest: Blood Dragon Armor (Medium), 2 AC as a Medium Chest Armor Piece, No other benefits (incomplete set)
+          li Arms: Blood Dragon Armor (Medium), 1 AC as a Medium Arm Armor Piece, No other benefits (incomplete set)
+          li Legs: Cerberus Assault Armor (Heavy), 2 AC as a Heavy Lef Armor Piece, No other benefits (incomplete set)
+          li #[strong Total]: 17 AC, +1 on melee attack and damage rolls
+      div.hr.mb-0
+      v-card(elevation="0")
+        v-card-text
+          v-layout(row wrap)
+            v-flex(xs12)
+              v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
+            v-flex(xs12)
+              armor-set-filters(:itemKey="itemKey" v-bind:noteOptions="noteOptions")
 
     // List
     armor-set-list(:items="filtered")

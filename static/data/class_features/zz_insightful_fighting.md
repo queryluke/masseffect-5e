@@ -3,7 +3,7 @@ id: zz_insightful_fighting
 name: Insightful Fighting
 ---
 ### Ear for Deceit
-You develop a talent for picking out lies. Whenever you make a Wisdom (Insight) check to determine whether a creature is lying, treat a roll of 7 or lower on the d20 as an 8.
+At {{ level }} level, you develop a talent for picking out lies. Whenever you make a Wisdom (Insight) check to determine whether a creature is lying, treat a roll of 7 or lower on the d20 as an 8.
 
 ### Eye for Detail
 

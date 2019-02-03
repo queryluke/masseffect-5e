@@ -131,7 +131,7 @@
           div(v-if="feature.id === 'ability_score_improvement'").mb-2
             p.title.mb-0 Ability Score Improvement
             div.
-              When your reach {{ feature.level.level | ordinal }}, and again at {{ abiLevels(feature.levels) }}
+              When you reach {{ feature.level.level | ordinal }}, and again at {{ abiLevels(feature.levels) }}
           div(v-else)
             class-feature(:id="feature.id" v-bind:featureLevel="feature.level")
         div(:class="colors[item.id].primary").hr
@@ -307,19 +307,11 @@
         v-card-text.markdown-content
           markdown-content(:component="weaponStrength.vue")
       v-card.elevation-0.transparent.mt-5
-        v-card-title.headline Elcor
+        v-card-title.headline {{ indoc.attributes.name }}
           small.ml-3
-            em by Ben McPherson
-        v-card-text
-          v-card
-            race-info(:race="elcor.attributes")
-      v-card.elevation-0.transparent.mt-5
-        v-card-title.headline Hanar
-          small.ml-3
-            em by Mikolaj
-        v-card-text
-          v-card
-            race-info(:race="hanar.attributes")
+            em inspired by Stephen W.
+        v-card-text.markdown-content
+          markdown-content(:component="indoc.vue")
 
       // Alt Sentinel
       section.page
@@ -354,8 +346,7 @@
   import skills from '~/static/data/skills'
   import pr from '~/static/data/community/p_r.md'
   import weaponStrength from '~/static/data/community/weapon_strength.md'
-  import hanar from '~/static/data/community/hanar.md'
-  import elcor from '~/static/data/community/elcor.md'
+  import indoc from '~/static/data/community/indoctrination.md'
   import altSentinel from '~/static/data/alt_sentinel'
   import vehicles from '~/static/data/vehicles'
 
@@ -416,9 +407,8 @@
         skills: skills.sort((a, b) => a.name === b.name ? 0 : a.name > b.name ? 1 : -1),
         pr,
         weaponStrength,
-        hanar,
-        elcor,
         altSentinel,
+        indoc,
         transports: vehicles.filter(v => v.vehicle.type === 'transport'),
         starships: vehicles.filter(v => v.vehicle.type === 'starship')
       }
@@ -532,9 +522,10 @@
             }
             // force ability scores
             if (feature === 'ability_score_improvement') {
-              features[0].levels.push(level.level)
               if (!features[0].level) {
                 features[0].level = level
+              } else {
+                features[0].levels.push(level.level)
               }
               continue
             }

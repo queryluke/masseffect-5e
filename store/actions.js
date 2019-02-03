@@ -10,5 +10,14 @@ export default {
   },
   toggleSidebar ({getters, commit}) {
     commit('toggleSidebar', !getters.sidebar)
+  },
+  toggleRulebar ({getters, commit}) {
+    commit('setRulebar', !getters.rulebar)
+  },
+  setRulebar ({commit}, payload) {
+    commit('setRulebar', payload)
+  },
+  setSearchbar ({commit}, payload) {
+    commit('setSearchbar', payload)
   }
 }

@@ -11,7 +11,6 @@
       "infiltrator",
       "soldier"
     ],
-    "sexyLevel": 4,
     "abilityScoreIncrease": [
       {
         "amount": 2,
@@ -22,8 +21,8 @@
         "ability": "Constitution"
       }
     ],
-    "size": "Medium",
-    "speed": "10m",
+    "size": "Angara are slightly taller, on average, than humans, ranging from 174cm (5'8\") to 204cm (6'8\"). Your size is Medium.",
+    "speed": "Your base walking speed is 10m.",
     "snippet": "The Angara are the only known extant sapient race native to the Heleus Cluster of the Andromeda galaxy and arose on the planet Havarl.",
     "startingCredits": "Instead of your class's starting equipment, you may start with 6d8 x 1000 + 10,000 credits to buy your own equipment.",
     "bodyImg": "/images/races/angara.png",
@@ -34,7 +33,8 @@
       "bio-electric-ward",
       "solar-dependency"
     ],
-    "age": null
+    "age": "Angara have a standard lifespan of about 150 years, although some have been known to live past 200.",
+    "raceType": "expanded"
   },
   {
     "id": "asari",
@@ -43,7 +43,7 @@
       "Andromeda",
       "Milky Way"
     ],
-    "alignment": "Tend toward neutral as a species. Most Maiden stage asari are chaotic, Matrons level out to neutral, Matriarchs are heavily lawful.",
+    "alignment": "Asari are biased towards goodness, but exhibit a range of alignments not dissimilar to humans. Most Maiden stage asari are chaotic, Matrons level out to neutral, Matriarchs are heavily lawful.",
     "availableClasses": [
       "adept",
       "engineer",
@@ -52,7 +52,6 @@
       "soldier",
       "vanguard"
     ],
-    "sexyLevel": 8,
     "abilityScoreIncrease": [
       {
         "amount": 2,
@@ -63,19 +62,22 @@
         "ability": "Wisdom"
       }
     ],
-    "size": "Medium",
-    "speed": "10m",
+    "size": "Asari have builds incredibly similar to female humans. Your size is Medium.",
+    "speed": "Your base walking speed is 10m.",
     "snippet": "The asari, native to the planet Thessia, are often considered the most influential and respected sentient species in the galaxy and are known for their elegance, diplomacy, and biotic aptitude.",
     "startingCredits": "Instead of your class's starting equipment, you may start with 10d4 x 1000 + 10,000 credits to buy your own equipment.",
     "bodyImg": "http://vignette2.wikia.nocookie.net/masseffect/images/d/dc/Asari_Justicar_MP.png/revision/latest/scale-to-width-down/500",
     "img": "https://vignette.wikia.nocookie.net/masseffect/images/a/a7/Samara_vs_Morinth.png/revision/latest/scale-to-width-down/640?cb=20130521073819",
     "traits": [
-      "biotic-initiate",
       "innate-biotics",
       "mind-meld",
-      "skill-versatility"
+      "natural-diplomat"
     ],
-    "age": null
+    "age": "Asari are very long-lived and can reach ages of over 1000 years.",
+    "raceType": "standard",
+    "variants": [
+      "ardat-yakshi"
+    ]
   },
   {
     "id": "batarian",
@@ -84,7 +86,7 @@
       "Andromeda",
       "Milky Way"
     ],
-    "alignment": "Tend towards lawful evil, although there are definite outliers on the moral spectrum.",
+    "alignment": "Because of the tenets of Hegemony, batarians tend to be lawful evil, although there are outliers on the moral spectrum.",
     "availableClasses": [
       "adept",
       "engineer",
@@ -93,7 +95,6 @@
       "soldier",
       "vanguard"
     ],
-    "sexyLevel": 1,
     "abilityScoreIncrease": [
       {
         "amount": 2,
@@ -104,43 +105,19 @@
         "ability": "Charisma"
       }
     ],
-    "size": "Medium",
-    "speed": "10m",
+    "size": "Batarian bodies are similar to humans, with the exception of a large forehead to accommodate their additional four eyes, making them about 15cm (6\") taller. Your size is Medium.",
+    "speed": "Your base walking speed is 10m.",
     "snippet": "A race of four-eyed bipeds native to the world of Khar'shan, the batarians are a disreputable species that chose to isolate itself from the rest of the galaxy.",
     "startingCredits": "Instead of your class's starting equipment, you may start with 6d8 x 1000 + 10,000 credits to buy your own equipment.",
     "bodyImg": "http://vignette1.wikia.nocookie.net/masseffect/images/b/b2/Batarian_MP.png/revision/latest/scale-to-width-down/500",
     "img": "https://vignette.wikia.nocookie.net/masseffect/images/5/5f/Balak_ME_adversaryshot.png/revision/latest/scale-to-width-down/422?cb=20140812140358",
-    "startingFeats": {
-      "count": 1,
-      "options": [
-        "a-beautiful-mine",
-        "big-game-hunter",
-        "biotic-slayer",
-        "charger",
-        "dual-wielder",
-        "durable",
-        "featherlight",
-        "grappler",
-        "grenadier",
-        "heavily-armored",
-        "hair-trigger",
-        "heavy-armor-master",
-        "melee-specialist",
-        "moderately-armored",
-        "resilient",
-        "savage-attacker",
-        "sentinel",
-        "squad-leader",
-        "tavern-brawler",
-        "tough",
-        "weapon-master"
-      ]
-    },
     "traits": [
+      "four-eyes",
       "saving-face",
       "shrewd-negotiator"
     ],
-    "age": null
+    "age": "Batarians age at about the same rate as humans, though many do not live past 100 due to their caustic and dangerous lifestyles.",
+    "raceType": "expanded"
   },
   {
     "id": "drell",
@@ -156,7 +133,6 @@
       "soldier",
       "vanguard"
     ],
-    "sexyLevel": 10,
     "abilityScoreIncrease": [
       {
         "amount": 2,
@@ -167,40 +143,57 @@
         "ability": "Wisdom"
       }
     ],
-    "size": "Medium",
-    "speed": "12m",
+    "size": "Drell range from under 5 to over 6 feet tall and have slender builds. Your size is Medium.",
+    "speed": "Their light frames and wiry strength make drell slightly faster than other races. Your base walking speed is 12m.",
     "snippet": "The drell are a reptile-like race that was rescued from their dying homeworld by the hanar following the first contact between the two. Since then, the drell have remained loyal to the hanar for their camaraderie and have fit comfortably into galactic civilization.",
     "startingCredits": "Instead of your class's starting equipment, you may start with 6d8 x 1000 + 10,000 credits to buy your own equipment.",
     "bodyImg": "http://vignette2.wikia.nocookie.net/masseffect/images/a/ad/Drell_MP.png/revision/latest/scale-to-width-down/500",
     "img": "https://vignette.wikia.nocookie.net/masseffect/images/c/cf/Drell_biotic_field.png/revision/latest/scale-to-width-down/640?cb=20130623224527",
-    "startingFeats": {
-      "count": 1,
-      "options": [
-        "actor",
-        "alert",
-        "big-game-hunter",
-        "dual-wielder",
-        "featherlight",
-        "grenadier",
-        "heavily-armored",
-        "hair-trigger",
-        "heavy-armor-master",
-        "keen-mind",
-        "melee-specialist",
-        "mobile",
-        "moderately-armored",
-        "observant",
-        "skulker",
-        "squad-leader"
-      ]
-    },
     "traits": [
-      "darkvision",
       "eidetic-memory",
-      "hallucinogen",
-      "keen-senses"
+      "natural-hunters",
+      "raw-agility"
     ],
-    "age": null
+    "age": "Drell have slightly shorter lifespans of 85 years, on average. However, Kepral's Syndrome - a unique, incurable disease caused by long-term exposure to humid climates - is the leading cause of death.",
+    "raceType": "standard"
+  },
+  {
+    "id": "elcor",
+    "name": "Elcor",
+    "galaxy": [
+      "Milky Way",
+      "Andromeda"
+    ],
+    "alignment": "Elcor are methodical, deliberate creatures that never act on irrational decisions. The typical Elcor is often neutral or lawful.",
+    "availableClasses": [
+      "engineer",
+      "infiltrator",
+      "soldier"
+    ],
+    "abilityScoreIncrease": [
+      {
+        "amount": 2,
+        "ability": "Strength"
+      },
+      {
+        "amount": 1,
+        "ability": "Wisdom"
+      }
+    ],
+    "size": "Elcor stand between 2 and 2.5 meters tall (7-8 feet) at the shoulder. Your size is Medium.",
+    "speed": "Elcor are relatively slow compared to other races. Your base walking speed is 6m.",
+    "snippet": "The elcor are a Citadel species native to the high-gravity world Dekuuna. They are massive creatures, standing on four muscular legs for increased stability. Elcor move slowly, an evolved response to an environment where a fall can be lethal.",
+    "startingCredits": "Instead of your class's starting equipment, you may start with 10d6 x 1000 + 10,000 credits to buy your own equipment.",
+    "bodyImg": "/images/races/elcor.png",
+    "img": "/images/races/elcor_card.jpg",
+    "traits": [
+      "careful",
+      "quadrupedal",
+      "shoulder-mounts",
+      "thick-hide"
+    ],
+    "age": "The average elcor lives to be around 300 years old. 100-year-old elcor are considered young.",
+    "raceType": "expanded"
   },
   {
     "id": "geth",
@@ -214,7 +207,6 @@
       "infiltrator",
       "soldier"
     ],
-    "sexyLevel": 6,
     "abilityScoreIncrease": [
       {
         "amount": 2,
@@ -225,8 +217,8 @@
         "ability": "Strength"
       }
     ],
-    "size": "Medium",
-    "speed": "10m",
+    "size": "Standard geth are around 2 meters tall (6'5\"). Your size is Medium.",
+    "speed": "Your base walking speed is 10m.",
     "snippet": "The geth (\"Servant of the People\" in Khelish) are a race of networked artificial intelligences that reside beyond the Perseus Veil.",
     "startingCredits": "Instead of your class's starting equipment, you may start with 2d10 x 1000 + 10,000 credits to buy your own equipment.",
     "bodyImg": "http://vignette2.wikia.nocookie.net/masseffect/images/7/72/Geth_Engineer_MP.png/revision/latest/scale-to-width-down/500",
@@ -238,7 +230,47 @@
       "repair-matrix",
       "no-feats"
     ],
-    "age": null
+    "age": "Geth do not age, as they are constructs, and live as long as their bodies are not destroyed.",
+    "raceType": "expanded",
+    "variants": [
+      "unshackled-ai"
+    ]
+  },
+  {
+    "id": "hanar",
+    "name": "Hanar",
+    "galaxy": [
+      "Milky Way"
+    ],
+    "alignment": "Most hanar are lawful due to the religious influence on their society.",
+    "availableClasses": [
+      "adept",
+      "engineer"
+    ],
+    "abilityScoreIncrease": [
+      {
+        "amount": 2,
+        "ability": "Wisdom"
+      },
+      {
+        "amount": 1,
+        "ability": "Charisma"
+      }
+    ],
+    "size": "Due to their long tentacles, hanar \"stand\" about as tall as humans. Their bodies are around 1.5 meters long (4-5'). Your size is Medium.",
+    "speed": "Hanar rely on contra-gravitic levitation packs when not in water environments. You have a hover speed of 10m. Additionally, you have a swim speed of 10m.",
+    "snippet": "The hanar are a species resembling Earth's jellyfish and are one of the few non-bipedal Citadel races. Hanar are known for their intense politeness when speaking and their strong religious beliefs.",
+    "startingCredits": "Instead of your class's starting equipment, you may start with 6d8 x 1000 + 10,000 credits to buy your own equipment.",
+    "bodyImg": "/images/races/hanar.png",
+    "img": "https://vignette.wikia.nocookie.net/masseffect/images/4/47/Delan.png/revision/latest/scale-to-width-down/640?cb=20090121013825",
+    "traits": [
+      "amphibious",
+      "bioluminescence",
+      "fragile",
+      "tentacles"
+    ],
+    "age": "Hanar usually reach maturity around 40 years and typically live to be 180 years old.",
+    "raceType": "expanded"
   },
   {
     "id": "human",
@@ -247,7 +279,7 @@
       "Andromeda",
       "Milky Way"
     ],
-    "alignment": "Any and all across the spectrum.",
+    "alignment": "Humans tend toward no particular alignment. The best and the worst are found among them.",
     "availableClasses": [
       "adept",
       "engineer",
@@ -256,58 +288,23 @@
       "soldier",
       "vanguard"
     ],
-    "sexyLevel": 5,
     "abilityScoreIncrease": [
       {
         "amount": 1,
-        "ability": "to two ability scores"
+        "ability": "to all of your ability scores"
       }
     ],
-    "size": "Medium",
-    "speed": "10m",
+    "size": "Humans vary widely in height and build, from barely 1.5 meters to well over 2 meters tall. Regardless of your position in that range, your size is Medium.",
+    "speed": "Your base walking speed is 10m.",
     "snippet": "Humans, from the planet Earth, are the newest sentient species of notable size to enter the galactic stage and are the most rapidly expanding and developing.",
     "startingCredits": "Instead of your class's starting equipment, you may start with 8d6 x 1000 + 10,000 credits to buy your own equipment.",
     "bodyImg": "http://vignette4.wikia.nocookie.net/masseffect/images/2/2e/Human_Female_Infiltrator_MP.png/revision/latest/scale-to-width-down/500",
     "img": "https://vignette.wikia.nocookie.net/masseffect/images/7/7c/Grissom_Academy_Students.png/revision/latest/scale-to-width-down/640?cb=20120312230100",
-    "startingFeats": {
-      "count": 2,
-      "options": [
-        "a-beautiful-mine",
-        "alert",
-        "athlete",
-        "big-game-hunter",
-        "biotic-slayer",
-        "charger",
-        "dual-wielder",
-        "durable",
-        "elemental-adept",
-        "enhanced-optics",
-        "featherlight",
-        "grappler",
-        "grenadier",
-        "heavily-armored",
-        "hair-trigger",
-        "lucky",
-        "medium-armor-master",
-        "melee-specialist",
-        "mobile",
-        "moderately-armored",
-        "observant",
-        "resilient",
-        "savage-attacker",
-        "sentinel",
-        "sharpshooter",
-        "skilled",
-        "skulker",
-        "squad-leader",
-        "tavern-brawler",
-        "tough",
-        "wealth-of-knowledge",
-        "weapon-master"
-      ]
-    },
-    "traits": null,
-    "age": null
+    "age": "Humans reach adulthood in their late teens and live between 125 and 150 years.",
+    "raceType": "standard",
+    "variants": [
+      "variant-human"
+    ]
   },
   {
     "id": "krogan",
@@ -316,7 +313,7 @@
       "Andromeda",
       "Milky Way"
     ],
-    "alignment": "Tend towards lawful as a species, with clan rituals and traditions holding heavy sway. Morality varies widely.",
+    "alignment": "Krogan are highly predisposed towards chaos, as their culture is violent, selfish, and brutal. While evil is more common among krogan, those of good and neutral alignments do exist among them. Good krogan especially find it difficult to thrive in Tuchanka and krogan society.",
     "availableClasses": [
       "adept",
       "engineer",
@@ -324,31 +321,31 @@
       "soldier",
       "vanguard"
     ],
-    "sexyLevel": 7,
     "abilityScoreIncrease": [
       {
         "amount": 2,
-        "ability": "Strength"
+        "ability": "Constitution"
       },
       {
         "amount": 1,
-        "ability": "Constitution"
+        "ability": "Strength"
       }
     ],
-    "size": "Medium",
-    "speed": "10m",
+    "size": "Krogan stand at over 2 meters tall (~7') and weigh close to 400 pounds. Your size is Medium.",
+    "speed": "You have a base walking speed of 10 meters. Your speed is not slowed by heavy armor.",
     "snippet": "The krogan are a species of large reptilian bipeds native to the planet Tuchanka, a world known for its harsh environments, scarce resources, and an overabundance of vicious predators.",
     "startingCredits": "Instead of your class's starting equipment, you may start with 10d4 x 1000 + 10,000 credits to buy your own equipment.",
     "bodyImg": "http://vignette4.wikia.nocookie.net/masseffect/images/6/66/Krogan_MP.png/revision/latest/scale-to-width-down/500",
     "img": "https://vignette.wikia.nocookie.net/masseffect/images/0/03/Wreav_rally_-_destroy_2.png/revision/latest/scale-to-width-down/640?cb=20130215150038",
     "traits": [
+      "blood-rage",
+      "extremophile",
       "menacing",
-      "natural-armor",
       "powerful-build",
-      "rage",
-      "relentless"
+      "toughness"
     ],
-    "age": null
+    "age": "Krogan can live well over a thousand years due to their natural hardiness.",
+    "raceType": "standard"
   },
   {
     "id": "prothean",
@@ -362,7 +359,6 @@
       "soldier",
       "vanguard"
     ],
-    "sexyLevel": 6,
     "abilityScoreIncrease": [
       {
         "amount": 2,
@@ -373,8 +369,8 @@
         "ability": "Dexterity"
       }
     ],
-    "size": "Medium",
-    "speed": "10m",
+    "size": "Protheans are slightly taller than humans but generally never taller than 2 meters (6'5\"). Your size is Medium.",
+    "speed": "Your base walking speed is 10m.",
     "snippet": "The protheans are an ancient alien race which mysteriously vanished over 50,000 years ago. Though there is evidence that some still survive in stasis pods.",
     "startingCredits": "Instead of your class's starting equipment, you may start with 2d10 x 1000 + 10,000 credits to buy your own equipment.",
     "bodyImg": "/images/races/prothean.png",
@@ -382,11 +378,10 @@
     "traits": [
       "all-seeing-eyes",
       "quad-strand-dna",
-      "psychometry",
-      "avatar-optional",
-      "all-eyes-on-you"
+      "psychometry"
     ],
-    "age": null
+    "age": "Protheans live between 300 and 400 years, reaching adulthood in their early teens.",
+    "raceType": "expanded"
   },
   {
     "id": "quarian",
@@ -395,7 +390,7 @@
       "Andromeda",
       "Milky Way"
     ],
-    "alignment": "The proximity and longstanding traditions of the Migrant Fleet make Quarians very lawful as a race, occasionally drifting toward neutral. Morality can vary but tends towards neutral or good.",
+    "alignment": "The proximity and longstanding traditions of the Migrant Fleet make Quarians very lawful as a race, occasionally drifting toward neutral. Morality can vary but tends towards neutral or good, as evil quarians are typically exiled from the Flotilla.",
     "availableClasses": [
       "engineer",
       "infiltrator",
@@ -404,47 +399,26 @@
     "sexyLevel": 8,
     "abilityScoreIncrease": [
       {
-        "amount": 2,
+        "amount": 1,
         "ability": "Intelligence"
       },
       {
         "amount": 1,
-        "ability": "Constitution"
+        "ability": "Dexterity"
       }
     ],
-    "size": "Medium",
-    "speed": "10m",
+    "size": "Quarians have builds similar to humans. Your size is Medium.",
+    "speed": "Your base walking speed is 10m.",
     "snippet": "The quarians are a nomadic species of humanoid aliens known for their skills with technology and synthetic intelligence.",
     "startingCredits": "Instead of your class's starting equipment, you may start with 8d6 x 1000 + 10,000 credits to buy your own equipment.",
     "bodyImg": "http://vignette3.wikia.nocookie.net/masseffect/images/0/0c/Quarian_MP.png/revision/latest/scale-to-width-down/500",
     "img": "https://vignette.wikia.nocookie.net/masseffect/images/f/fc/Enter_the_admirals.png/revision/latest/scale-to-width-down/640?cb=20121114134430",
-    "startingFeats": {
-      "count": 1,
-      "options": [
-        "a-beautiful-mine",
-        "big-game-hunter",
-        "biotic-slayer",
-        "enhanced-optics",
-        "featherlight",
-        "grenadier",
-        "heavily-armored",
-        "hair-trigger",
-        "keen-mind",
-        "medium-armor-master",
-        "mobile",
-        "moderately-armored",
-        "observant",
-        "sharpshooter",
-        "skilled",
-        "squad-leader",
-        "wealth-of-knowledge"
-      ]
-    },
     "traits": [
-      "cybernetic-augmentation",
-      "hermetic-suit"
+      "hermetic-suit",
+      "cybernetic-augmentation"
     ],
-    "age": null
+    "age": "Quarians have lifespans similar to humans.",
+    "raceType": "standard"
   },
   {
     "id": "salarian",
@@ -453,7 +427,7 @@
       "Andromeda",
       "Milky Way"
     ],
-    "alignment": "Tend to be measured and intellectual, leaning neutral whether lawful, chaotic, evil or good.",
+    "alignment": "Salarians can have dubious morals, especially when it comes to experiments and advancing technology. Neutrality is a common alignment for salarians.",
     "availableClasses": [
       "engineer",
       "infiltrator",
@@ -470,41 +444,20 @@
         "ability": "Dexterity"
       }
     ],
-    "size": "Medium",
-    "speed": "10m",
+    "size": "Salarians are tall with elongated bodies, with a height between 6 and 7 feet yet a weight below 100 lbs. Your size is Medium.",
+    "speed": "Your base walking speed is 10 meters.",
     "snippet": "The second species to join the Citadel, the salarians are warm-blooded amphibians native to the planet Sur'Kesh. Salarians possess a hyperactive metabolism; they think fast, talk fast, and move fast.",
     "startingCredits": "Instead of your class's starting equipment, you may start with 4d12 x 1000 + 10,000 credits to buy your own equipment.",
     "bodyImg": "http://vignette2.wikia.nocookie.net/masseffect/images/b/ba/Salarian_MP.png/revision/latest/scale-to-width-down/500",
     "img": "https://vignette.wikia.nocookie.net/masseffect/images/3/39/Mordin_-_objection_noted.png/revision/latest/scale-to-width-down/640?cb=20141223052318",
-    "startingFeats": {
-      "count": 1,
-      "options": [
-        "a-beautiful-mine",
-        "actor",
-        "alert",
-        "athlete",
-        "biotic-slayer",
-        "featherlight",
-        "grenadier",
-        "heavily-armored",
-        "hair-trigger",
-        "keen-mind",
-        "mobile",
-        "moderately-armored",
-        "observant",
-        "sharpshooter",
-        "skilled",
-        "skulker",
-        "squad-leader",
-        "wealth-of-knowledge"
-      ]
-    },
     "traits": [
       "amphibious",
       "high-speed-metabolism",
-      "photographic-memory"
+      "photographic-memory",
+      "twice-as-bright"
     ],
-    "age": null
+    "age": "Salarians have an extremely high metabolism that causes a short life span. Salarians rarely reach ages over 40 years of age.",
+    "raceType": "standard"
   },
   {
     "id": "turian",
@@ -513,7 +466,7 @@
       "Andromeda",
       "Milky Way"
     ],
-    "alignment": "Tend away from evil, heavily lean towards lawful as a culture. Outliers tend to be chaotic as a reaction to the culture.",
+    "alignment": "Turians are a highly militaristic and disciplined race. Turians are born and raised in strict law and order and as a result are inclined towards lawful alignments, but it is not uncommon for neutral or chaotic turians to leave Palaven in search of freedom from command.",
     "availableClasses": [
       "engineer",
       "infiltrator",
@@ -521,135 +474,33 @@
       "soldier",
       "vanguard"
     ],
-    "sexyLevel": 9,
     "abilityScoreIncrease": [
       {
-        "amount": 2,
+        "amount": 1,
         "ability": "Constitution"
+      },
+      {
+        "amount": 1,
+        "ability": "Dexterity"
       },
       {
         "amount": 1,
         "ability": "Strength"
       }
     ],
-    "size": "Medium",
-    "speed": "10m",
+    "size": "Turians are taller than humans, standing over 2 meters tall (6'5\"). Your size is Medium.",
+    "speed": "You have a base walking speed of 10 meters.",
     "snippet": "Known for their militaristic and disciplined culture, the turians were the third race to join the Citadel Council. They gained their Council seat after defeating the hostile krogan for the Council during the Krogan Rebellions.",
     "startingCredits": "Instead of your class's starting equipment, you may start with 8d6 x 1000 + 10,000 credits to buy your own equipment.",
     "bodyImg": "http://vignette2.wikia.nocookie.net/masseffect/images/2/2a/Turian_MP.png/revision/latest/scale-to-width-down/500",
     "img": "https://vignette.wikia.nocookie.net/masseffect/images/4/41/Garrus3.png/revision/latest/scale-to-width-down/640?cb=20090625020040",
-    "startingFeats": {
-      "count": 1,
-      "options": [
-        "a-beautiful-mine",
-        "alert",
-        "athlete",
-        "big-game-hunter",
-        "biotic-slayer",
-        "charger",
-        "dual-wielder",
-        "durable",
-        "enhanced-optics",
-        "featherlight",
-        "grappler",
-        "grenadier",
-        "heavily-armored",
-        "hair-trigger",
-        "heavy-armor-master",
-        "keen-mind",
-        "medium-armor-master",
-        "melee-specialist",
-        "mobile",
-        "moderately-armored",
-        "observant",
-        "resilient",
-        "savage-attacker",
-        "sentinel",
-        "sharpshooter",
-        "skilled",
-        "squad-leader",
-        "tavern-brawler",
-        "tough",
-        "weapon-master"
-      ]
-    },
     "traits": [
-      "thulium-skin",
-      "turian-toughness",
-      "martial-training"
+      "brothers-in-arms",
+      "martial-training",
+      "thulium-skin"
     ],
-    "age": null
-  },
-  {
-    "id": "unshackled-ai",
-    "name": "Unshackled AI",
-    "galaxy": [
-      "Milky Way"
-    ],
-    "alignment": "Vary as wildly as their circumstances and personalities allow.",
-    "availableClasses": [
-      "engineer",
-      "infiltrator",
-      "soldier"
-    ],
-    "sexyLevel": "Varies",
-    "abilityScoreIncrease": [
-      {
-        "amount": 2,
-        "ability": "Intelligence"
-      },
-      {
-        "amount": 1,
-        "ability": "to one ability except intelligence"
-      }
-    ],
-    "size": "Medium",
-    "speed": "10m",
-    "snippet": "AIs are considered illegal by the Council, but that hasn't stopped corporations like Cerberus from innovating. As an unshackled AI, you might be have been mass produced like the Alliance Infiltration Units, or you may be an experiment gone wrong.",
-    "startingCredits": "Instead of your class's starting equipment, you may start with 2d10 x 1000 + 10,000 credits to buy your own equipment.",
-    "bodyImg": "https://vignette.wikia.nocookie.net/masseffect/images/0/06/ME3_Alliance_Infiltration_Unit_Infiltrator.png/revision/latest/scale-to-width-down/500?cb=20130227102713",
-    "img": "https://vignette.wikia.nocookie.net/masseffect/images/3/39/Cronos_station_edi_and_vendetta.png/revision/latest/scale-to-width-down/640?cb=20120715085530",
-    "traits": [
-      "living-construct",
-      "integrated-protection",
-      "repair-matrix"
-    ],
-    "startingFeats": {
-      "count": 1,
-      "options": [
-        "a-beautiful-mine",
-        "alert",
-        "athlete",
-        "big-game-hunter",
-        "biotic-slayer",
-        "charger",
-        "dual-wielder",
-        "durable",
-        "enhanced-optics",
-        "featherlight",
-        "grappler",
-        "grenadier",
-        "heavily-armored",
-        "hair-trigger",
-        "lucky",
-        "melee-specialist",
-        "mobile",
-        "moderately-armored",
-        "observant",
-        "resilient",
-        "savage-attacker",
-        "sentinel",
-        "sharpshooter",
-        "skilled",
-        "skulker",
-        "squad-leader",
-        "tavern-brawler",
-        "tough",
-        "wealth-of-knowledge",
-        "weapon-master"
-      ]
-    },
-    "age": null
+    "age": "Turians have natural lifespans comparable to humans.",
+    "raceType": "standard"
   },
   {
     "id": "volus",
@@ -658,14 +509,13 @@
       "Andromeda",
       "Milky Way"
     ],
-    "alignment": "Their society tends towards lawful as a whole, with clans fighting over economic resources and aggressive negotiating, even if they are individually chaotic individuals. They tend towards neutral morality.",
+    "alignment": "Volus society tends towards lawful as a whole, with clans fighting over economic resources and aggressive negotiating, even if they are individually chaotic individuals. They tend towards neutral morality.",
     "availableClasses": [
       "adept",
       "engineer",
       "sentinel",
       "vanguard"
     ],
-    "sexyLevel": 3,
     "abilityScoreIncrease": [
       {
         "amount": 2,
@@ -676,18 +526,20 @@
         "ability": "Intelligence"
       }
     ],
-    "size": "Small",
-    "speed": "8m",
+    "size": "Volus are between 1 and 1.5 metes (3-4'). Your size is Small.",
+    "speed": "Your base walking speed is 8m.",
     "snippet": "The volus hail from Irune, which possesses a high-pressure greenhouse atmosphere able to support an ammonia-based biochemistry. As a result, the volus must wear pressure suits and breathers when dealing with other species.",
     "startingCredits": "Instead of your class's starting equipment, 10d6 x 1000 + 10,000 credits to buy your own equipment.",
     "bodyImg": "http://vignette1.wikia.nocookie.net/masseffect/images/3/3e/ME3_Volus_Adept.png/revision/latest/scale-to-width-down/500",
     "img": "https://vignette.wikia.nocookie.net/masseffect/images/b/b4/Volus.jpg/revision/latest/scale-to-width-down/640?cb=20121009195731",
     "traits": [
       "fury-of-the-small",
+      "hermetic-suit",
       "lucky",
       "savvy-dealings"
     ],
-    "age": null
+    "age": "Most volus reach adulthood around their 50th year and live to be around 200 years-old.",
+    "raceType": "expanded"
   },
   {
     "id": "vorcha",
@@ -695,14 +547,13 @@
     "galaxy": [
       "Milky Way"
     ],
-    "alignment": "Tend towards chaotic evil, almost always chaotic even if their morality is strengthened.",
+    "alignment": "Most vorcha are chaotic evil or almost always chaotic even if their morality is strengthened.",
     "availableClasses": [
       "engineer",
       "infiltrator",
       "sentinel",
       "soldier"
     ],
-    "sexyLevel": 0,
     "abilityScoreIncrease": [
       {
         "amount": 2,
@@ -713,19 +564,19 @@
         "ability": "Constitution"
       }
     ],
-    "size": "Medium",
-    "speed": "14m",
+    "size": "Vorcha are taller on average than humans (though they naturally slouch) and relatively slender. Your size is Medium.",
+    "speed": "Your base walking speed is 14m.",
     "snippet": "Known for their unique biology and aggressive behavior, the vorcha of Heshtok are a primitive race that lives among the galaxy's darker and more dangerous locations, such as Omega.",
     "startingCredits": "Instead of your class's starting equipment, you may start with 4d12 x 1000 + 10,000 credits to buy your own equipment.",
     "bodyImg": "http://vignette1.wikia.nocookie.net/masseffect/images/d/d8/ME3_Vorcha_Hunter.png/revision/latest/scale-to-width-down/500",
     "img": "https://vignette.wikia.nocookie.net/masseffect/images/d/d6/Omega_vermin.png/revision/latest/scale-to-width-down/640?cb=20140624121030",
     "traits": [
+      "adaptation",
       "bite",
-      "bloodlust",
-      "hungry-jaws",
       "non-differentiated-cells",
       "limited-regeneration"
     ],
-    "age": null
+    "age": "Vorcha have extremely short lifespans and only live for 20 years. They reach adulthood shortly after their first year.",
+    "raceType": "expanded"
   }
 ]

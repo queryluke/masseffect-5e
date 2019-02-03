@@ -9,14 +9,14 @@ tool_proficiencies:
   - starship_system
   - gaming_set
   - medical_kit
-starting_credits: 3000
+starting_credits: 2000
 ---
 
 
 __Skill Proficiencies__. Medicine, Science
 
 __Equipment__. A VI that assists in looking up, recalling, storing information. It is intelligent enough to have conversations
-with, providing a sounding board for your ideas and hypotheses.
+with, providing a sounding board for your ideas and hypotheses. Additionally, you have 2,000 credits.
 
 __Feature: Researcher__. When you attempt to learn or recall information, if you do not know it immediately, you often
 know where and from whom you can obtain it. Usually, this information comes from the exonet or other learned person or

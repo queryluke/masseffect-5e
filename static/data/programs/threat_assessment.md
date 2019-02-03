@@ -1,7 +1,7 @@
 ---
 id: threat_assessment
 name: Threat_Assessment.exe
-rarity: uncommon
+rarity: rare
 installation: true
 ---
 Your omni-tool powers a specialized VI whose purpose is to detect incoming threats and identify them for the user. This

@@ -79,3 +79,9 @@ dist
 
 # IDE
 .idea
+
+# Service worker
+sw.*
+
+# Mac
+.DS_Store

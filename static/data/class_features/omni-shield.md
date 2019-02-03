@@ -2,7 +2,7 @@
 id: omni-shield
 name: Omni-Shield
 ---
-Starting at the {{ level }} level, you've mastered the omni-shield. As a bonus action, create a large kinetic shield out 
+Starting at {{ level }} level, you've mastered the omni-shield. As a bonus action, create a large kinetic shield out 
 of your omni-tool that lasts one minute. You can end Omni-shield at any point as a free action.
 
 While Omni-Shield is deployed, you gain the following:

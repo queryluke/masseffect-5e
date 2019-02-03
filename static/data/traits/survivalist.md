@@ -2,4 +2,4 @@
 id: survivalist
 name: Survivalist
 ---
-You have proficiency in Survival.
+Angara have a knack for living in harsh environments. You have proficiency in Survival.

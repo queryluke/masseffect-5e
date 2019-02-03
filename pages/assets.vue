@@ -56,13 +56,12 @@
       v-layout(row wrap justify-center)
         v-flex(xs12 sm6 md4)
           v-alert(:value="true" type="warning").black--text.
-            The PDF is auto-generated from compoents on the website, therefore is very barebones and aesthetically limited. We
-            will work on an official PDF version of the rules after our v1.0.0 release.
+            The PDF is auto-generated from components on the website, therefore is very barebones and aesthetically limited. We
+            will work on an official PDF version of the rules after our v1.0.0 release. The link below will take you
+            to a Google Drive folder that has all of the past version PDFs (since we started doing that)
       v-layout(row wrap justify-center)
-        v-flex(xs12 sm6 md4)
-          v-btn(block href="https://drive.google.com/open?id=1DutYdSFORN7-jLi2r9-bpCK763je-k9h" target="_blank").primary v0.8.4
-        v-flex(xs12 sm6 md4)
-          v-btn(block href="https://drive.google.com/open?id=1H6ywGQ80GPqoIYh0cvHnqs5UdEV5QZib" target="_blank").primary v0.9.0
+      v-flex(xs12 sm6 md4)
+        v-btn(block href="https://drive.google.com/open?id=1eDfgpG3JplKUjrIdySJKmyC4qxTi2MUT" target="_blank").primary PDF Player's Manual
 
     // Spell Cards
     h2.display-3.font-weight-thin.text-xs-center.mt-5 Spell Cards

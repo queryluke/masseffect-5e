@@ -1,15 +1,20 @@
 <template lang="pug">
   v-container(:class="{ 'px-0': $vuetify.breakpoint.xsOnly }" )
 
+    div.text-md-right
+      v-btn(to="/phb/rules/equipment#custom-armor" nuxt outline color="secondary") Armor Mod Rules
+
     // Search functions for large screens
-    div.hidden-sm-and-down
+    div.mb-5.hidden-sm-and-down
       h2.display-1 Armor Mods
-      p Read the #[nuxt-link(to="/phb/rules/equipment#custom-armor") Armor Rules] to understand how armor customization works.
-      v-layout(row wrap)
-        v-flex(xs4).px-1
-          v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
-        v-flex(xs8).px-1
-          armor-mod-filters(:itemKey="itemKey" v-bind:noteOptions="noteOptions")
+      div.hr.mb-0
+      v-card(elevation="0")
+        v-card-text
+          v-layout(row wrap)
+            v-flex(xs4).px-1
+              v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
+            v-flex(xs8).px-1
+              armor-mod-filters(:itemKey="itemKey" v-bind:noteOptions="noteOptions")
 
     // List
     armor-mod-list(:items="filtered")

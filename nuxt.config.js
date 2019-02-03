@@ -1,3 +1,5 @@
+const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
+
 /*****
  * Static Files
  */
@@ -73,7 +75,10 @@ fs.readdirSync('./static/data/classes').map(file => {
   routes.push(`/phb/classes/${id}`)
   routes.push(`/print/spell-cards/${id}`)
 })
-// require('./data/races.json').data.map(r => routes.push(`/phb/races/${r.id}`))
+fs.readdirSync('./static/data/races').map(file => {
+  const id = file.replace(/.json$/, '')
+  routes.push(`/phb/races/${id}`)
+})
 
 fs.readdirSync('./static/data/changelog').map((file) => {
   routes.push('/changelog/' + (file.replace(/\.md$/g, '')))
@@ -131,7 +136,8 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/pwa'
   ],
   'google-analytics': {
     id: 'UA-83740704-2',
@@ -186,6 +192,13 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    transpile: ['vuetify/lib'],
+    plugins: [new VuetifyLoaderPlugin()],
+    loaders: {
+      stylus: {
+        import: ['~assets/style/variables.styl']
+      }
+    },
     /*
     ** You can extend webpack config here
     */

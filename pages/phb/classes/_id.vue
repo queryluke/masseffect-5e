@@ -4,7 +4,17 @@
       v-avatar(size="128" tile)
         img(:src="`/images/classes/${id}.svg`")
       div.pl-5
-        h2.display-3 {{ item.name }}
+        v-layout(row)
+          v-flex(md8)
+            h2.display-3 {{ item.name }}
+          v-flex(md4).text-xs-right
+            v-menu
+              v-btn(slot="activator" v-bind:color="colors[item.id].primary" dark)
+                span {{ item.name }}
+                v-icon arrow_drop_down
+              v-list
+                v-list-tile(v-for="item in classes" v-bind:key="item" v-bind="{to: { name: 'phb-classes-id', params: { id: item }}}")
+                  v-list-tile-title {{ item | capitalize }}
         p {{ item.description}}
         p(v-if="id === 'sentinel'")
           em.
@@ -43,7 +53,7 @@
       }
     },
     computed: {
-      ...mapGetters(['colors', 'order', 'sortBy']),
+      ...mapGetters(['colors', 'order', 'sortBy', 'classes']),
       filteredSpells () {
         const data = this.spells
         let sortBy = this.sortBy.key
@@ -75,6 +85,6 @@
         ]
       }
     },
-    layout: 'phb-class'
+    layout: 'phb'
   }
 </script>

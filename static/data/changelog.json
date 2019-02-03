@@ -1,10 +1,19 @@
 [
   {
     "layout": "post",
+    "title": "Version 0.9.2",
+    "description": "Updated races, new feats, and bug fixes",
+    "date": "2019-02-03T00:00:00.000Z",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/4/4d/Council_Hologram-Ambassador_Meeting_2.png/revision/latest?cb=20091227112411",
+    "slug": "0.9.2",
+    "url": "/changelog/0.9.2"
+  },
+  {
+    "layout": "post",
     "title": "Road to Version 1.0",
     "description": "Additions and playtesting changes",
     "date": "2018-12-15T05:00:00.000Z",
-    "image": "https://vignette.wikia.nocookie.net/masseffect/images/c/cf/Codex_ME_-_FTL_Drive.png/revision/latest?cb=20140820095603&format=original",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/9f/Normandy_using_a_Mass_Relay_01.jpg/revision/latest/scale-to-width-down/640?cb=20090127140715",
     "slug": "0.9.1",
     "url": "/changelog/0.9.1"
   },
