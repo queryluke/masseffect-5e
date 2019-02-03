@@ -23,6 +23,7 @@
     mobile-filter-container(title="Filter Weapon Mods")
       template(slot="filters")
         weapon-mod-filters(:itemKey="itemKey" v-bind:noteOptions="noteOptions")
+
 </template>
 
 <script>
