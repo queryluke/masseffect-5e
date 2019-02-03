@@ -25,6 +25,7 @@ traits:
   - bio-electric-ward
   - solar-dependency
 age: Angara have a standard lifespan of about 150 years, although some have been known to live past 200.
+raceType: expanded
 ---
 
 The angara are warm-blooded mammals with relatively broad shoulders, narrow waists and skin colors of blue or mauve, 

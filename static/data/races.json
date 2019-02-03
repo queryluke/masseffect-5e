@@ -33,7 +33,8 @@
       "bio-electric-ward",
       "solar-dependency"
     ],
-    "age": "Angara have a standard lifespan of about 150 years, although some have been known to live past 200."
+    "age": "Angara have a standard lifespan of about 150 years, although some have been known to live past 200.",
+    "raceType": "expanded"
   },
   {
     "id": "asari",
