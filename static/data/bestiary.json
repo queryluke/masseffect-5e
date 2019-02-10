@@ -3158,12 +3158,6 @@
       {
         "type": "weapon",
         "id": "geth_plasma_shotgun"
-      },
-      {
-        "type": "standard",
-        "name": "Tactical Cloak",
-        "recharge": "3/Day",
-        "description": "As a bonus action, the geth hunter activates its tactical cloak, becoming invisible for 1 minute. When the geth hunter makes a melee or ranged attack or uses a tech or combat power, tactical cloak ends."
       }
     ],
     "alignment": "Lawful Neutral",
@@ -3183,6 +3177,11 @@
         "name": "Assassination",
         "recharge": null,
         "description": "Once per turn, the geth hunter can deal an extra 7 (2d6) damage to one creature it hits with an attack if it has advantage on the attack roll. The attack must be made with a melee or ranged weapon."
+      },
+      {
+        "name": "Tactical Cloak",
+        "recharge": "3/Day",
+        "description": "As a bonus action, the geth hunter activates its tactical cloak, becoming invisible for 1 minute. When the geth hunter makes a melee or ranged attack or uses a tech or combat power, tactical cloak ends."
       }
     ],
     "hp": {
@@ -4559,7 +4558,7 @@
       {
         "name": "Barrier",
         "recharge": "3/Day",
-        "description": "As an action or bonus action, the phantom gains [bt]."
+        "description": "As an action or bonus action, the phantom gains 8 barrier ticks."
       }
     ],
     "hp": {
@@ -4808,7 +4807,7 @@
       {
         "name": "Barrier",
         "recharge": "3/Day",
-        "description": "As an action or bonus action, the rachni brood warrior gains [bt]."
+        "description": "As an action or bonus action, the rachni brood warrior gains 5 barrier ticks."
       },
       {
         "name": "Grappler",
@@ -5142,18 +5141,6 @@
       {
         "type": "weapon",
         "id": "m-23_katana"
-      },
-      {
-        "type": "standard",
-        "name": "Hex Shield",
-        "recharge": "1/Day",
-        "description": "As a bonus action, the rampart mech generates a 2m tall and wide, hexagon-shaped shield with 5AC and 50 shield points which offers full-cover."
-      },
-      {
-        "type": "standard",
-        "name": "Tactical Cloak",
-        "recharge": "1/Day",
-        "description": "As a bonus action, the rampart mech activates its tactical cloak, becoming invisible for 1 minute. When the rampart mech makes a melee or ranged attack or uses a tech or combat power, tactical cloak ends."
       }
     ],
     "alignment": "Neutral",
@@ -5176,6 +5163,16 @@
         "name": "Aggressive",
         "recharge": null,
         "description": "As a bonus action, the rampart mech can move up to its speed toward a hostile creature that it can see."
+      },
+      {
+        "name": "Hex Shield",
+        "recharge": "1/Day",
+        "description": "As a bonus action, the rampart mech generates a 2m tall and wide, hexagon-shaped shield with 5AC and 50 shield points which offers full-cover."
+      },
+      {
+        "name": "Tactical Cloak",
+        "recharge": "1/Day",
+        "description": "As a bonus action, the rampart mech activates its tactical cloak, becoming invisible for 1 minute. When the rampart mech makes a melee or ranged attack or uses a tech or combat power, tactical cloak ends."
       },
       {
         "name": "Post-Mortem Vent",
@@ -5399,12 +5396,6 @@
         "hit": "5 (1d4 + 3) radiant damage.",
         "miss": null,
         "attackMod": 5
-      },
-      {
-        "type": "standard",
-        "name": "Tactical Cloak",
-        "recharge": "3/Day",
-        "description": "As a bonus action, the recon drone activates its tactical cloak, becoming invisible for 1 minute. When the recon drome makes a melee or ranged attack or uses a tech or combat power, tactical cloak ends."
       }
     ],
     "alignment": "Neutral",
@@ -5421,7 +5412,13 @@
     "damageVulnerabilities": [
       "lightning"
     ],
-    "features": [],
+    "features": [
+      {
+        "name": "Tactical Cloak",
+        "recharge": "3/Day",
+        "description": "As a bonus action, the recon drone activates its tactical cloak, becoming invisible for 1 minute. When the recon drome makes a melee or ranged attack or uses a tech or combat power, tactical cloak ends."
+      }
+    ],
     "hp": {
       "numDice": 2,
       "die": 6
