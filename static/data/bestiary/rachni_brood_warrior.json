@@ -44,7 +44,7 @@
     {
       "name": "Barrier",
       "recharge": "3/Day",
-      "description": "As an action or bonus action, the rachni brood warrior gains [bt]."
+      "description": "As an action or bonus action, the rachni brood warrior gains 5 barrier ticks."
     },
     {
       "name": "Grappler",

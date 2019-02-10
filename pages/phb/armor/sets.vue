@@ -23,7 +23,7 @@
           li Head: Death Mask (Heavy), +2 AC, +1 on melee attack and damage rolls
           li Chest: Blood Dragon Armor (Medium), 2 AC as a Medium Chest Armor Piece, No other benefits (incomplete set)
           li Arms: Blood Dragon Armor (Medium), 1 AC as a Medium Arm Armor Piece, No other benefits (incomplete set)
-          li Legs: Cerberus Assault Armor (Heavy), 2 AC as a Heavy Lef Armor Piece, No other benefits (incomplete set)
+          li Legs: Cerberus Assault Armor (Heavy), 2 AC as a Heavy Leg Armor Piece, No other benefits (incomplete set)
           li #[strong Total]: 17 AC, +1 on melee attack and damage rolls
       div.hr.mb-0
       v-card(elevation="0")

@@ -17,12 +17,6 @@
     {
       "type": "weapon",
       "id": "geth_plasma_shotgun"
-    },
-    {
-      "type": "standard",
-      "name": "Tactical Cloak",
-      "recharge": "3/Day",
-      "description": "As a bonus action, the geth hunter activates its tactical cloak, becoming invisible for 1 minute. When the geth hunter makes a melee or ranged attack or uses a tech or combat power, tactical cloak ends."
     }
   ],
   "alignment": "Lawful Neutral",
@@ -42,6 +36,11 @@
       "name": "Assassination",
       "recharge": null,
       "description": "Once per turn, the geth hunter can deal an extra 7 (2d6) damage to one creature it hits with an attack if it has advantage on the attack roll. The attack must be made with a melee or ranged weapon."
+    },
+    {
+      "name": "Tactical Cloak",
+      "recharge": "3/Day",
+      "description": "As a bonus action, the geth hunter activates its tactical cloak, becoming invisible for 1 minute. When the geth hunter makes a melee or ranged attack or uses a tech or combat power, tactical cloak ends."
     }
   ],
   "hp": {

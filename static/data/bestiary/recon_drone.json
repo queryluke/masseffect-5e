@@ -17,12 +17,6 @@
       "hit": "5 (1d4 + 3) radiant damage.",
       "miss": null,
       "attackMod": 5
-    },
-    {
-      "type": "standard",
-      "name": "Tactical Cloak",
-      "recharge": "3/Day",
-      "description": "As a bonus action, the recon drone activates its tactical cloak, becoming invisible for 1 minute. When the recon drome makes a melee or ranged attack or uses a tech or combat power, tactical cloak ends."
     }
   ],
   "alignment": "Neutral",
@@ -39,7 +33,13 @@
   "damageVulnerabilities": [
     "lightning"
   ],
-  "features": [],
+  "features": [
+    {
+      "name": "Tactical Cloak",
+      "recharge": "3/Day",
+      "description": "As a bonus action, the recon drone activates its tactical cloak, becoming invisible for 1 minute. When the recon drome makes a melee or ranged attack or uses a tech or combat power, tactical cloak ends."
+    }
+  ],
   "hp": {
     "numDice": 2,
     "die": 6

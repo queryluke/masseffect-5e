@@ -8,7 +8,7 @@ activate your Tech Armor.
 When activated, tech armor creates a new kinetic barrier that has additional hit points. Add your Sentinel level to your
 spellcasting modifier, then multiply the sum by 3. The result is the number of additional hit points provided by your
 tech armor. Whenever you take damage, the tech armor takes the damage instead. If this damage reduces tech
-armor to 0 hit points, remaining damage is done to your then shields (if any), then your hit points.
+armor to 0 hit points, remaining damage is done to your shields (if any), then your hit points.
 
 Tech armor lasts 1 minute or until it is reduced to 0 hit points. Alternatively, You can use your action to overload your
 Tech Armor. Each creature within 4m must make a Constitution saving throw. On a failed save, a creature takes force

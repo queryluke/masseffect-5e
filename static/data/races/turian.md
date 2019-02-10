@@ -62,8 +62,7 @@ Despite the ranked structure, turians entertain many freedoms as long as they pe
 on others freedoms or responsibilities.
 
 ## Reflective Carapace
-The homeland of the turians, Palaven, is flush with strange vents in the ground that release a gas which erodes the 
-atmosphere. The result is a high level of dangerous radiation that permeates through. Turians have evolved semi-metallic 
+The homeland of the turians, Palaven, has a high level of solar radiation. Turians have evolved semi-metallic 
 carapaces that reflect the dangerous radiation, protecting their inners from the solar rays. These exoskeletons, however, 
 do not protect the turian from physical damage such as wounds and do not provide any natural armor.
 

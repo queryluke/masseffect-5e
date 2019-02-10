@@ -21,18 +21,6 @@
     {
       "type": "weapon",
       "id": "m-23_katana"
-    },
-    {
-      "type": "standard",
-      "name": "Hex Shield",
-      "recharge": "1/Day",
-      "description": "As a bonus action, the rampart mech generates a 2m tall and wide, hexagon-shaped shield with 5AC and 50 shield points which offers full-cover."
-    },
-    {
-      "type": "standard",
-      "name": "Tactical Cloak",
-      "recharge": "1/Day",
-      "description": "As a bonus action, the rampart mech activates its tactical cloak, becoming invisible for 1 minute. When the rampart mech makes a melee or ranged attack or uses a tech or combat power, tactical cloak ends."
     }
   ],
   "alignment": "Neutral",
@@ -55,6 +43,16 @@
       "name": "Aggressive",
       "recharge": null,
       "description": "As a bonus action, the rampart mech can move up to its speed toward a hostile creature that it can see."
+    },
+    {
+      "name": "Hex Shield",
+      "recharge": "1/Day",
+      "description": "As a bonus action, the rampart mech generates a 2m tall and wide, hexagon-shaped shield with 5AC and 50 shield points which offers full-cover."
+    },
+    {
+      "name": "Tactical Cloak",
+      "recharge": "1/Day",
+      "description": "As a bonus action, the rampart mech activates its tactical cloak, becoming invisible for 1 minute. When the rampart mech makes a melee or ranged attack or uses a tech or combat power, tactical cloak ends."
     },
     {
       "name": "Post-Mortem Vent",

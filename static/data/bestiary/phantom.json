@@ -49,7 +49,7 @@
     {
       "name": "Barrier",
       "recharge": "3/Day",
-      "description": "As an action or bonus action, the phantom gains [bt]."
+      "description": "As an action or bonus action, the phantom gains 8 barrier ticks."
     }
   ],
   "hp": {

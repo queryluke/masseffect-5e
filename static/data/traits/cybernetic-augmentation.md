@@ -32,7 +32,7 @@ __Peak Fitness__. You have proficiency in either the Acrobatics or Athletics ski
 <br>
 
 ### Ocular
-Quarians with ocular augments replace their eyes with enchanted orbs that allow their sight to persist even in the most 
+Quarians with ocular augments replace their eyes with enhanced optics that allow their sight to persist even in the most 
 unfavorable conditions.
 
 __Darkvision__. You can see in dim light within 20 meters of you as if it were bright light, and in darkness as if it were 

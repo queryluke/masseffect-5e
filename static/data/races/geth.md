@@ -53,8 +53,8 @@ innate ability to network with other geth, geth see themselves as a unit of a la
 the individual processes that make up a single geth as being equal constituents that contribute to that geth unit.
 
 ## Beyond the Veil
-Geth primarily remain in the land of Rannoch, protected by the Perseus Veil: a mysterious cloud that spans around the 
-borders of Rannoch. They live in peace, but some geth find themselves seeking knowledge of what is beyond their realm. 
+Geth primarily remain in the Perseus Veil: huge nebula of opaque gas and dust that separates geth space from the 
+Terminus Systems. They live in peace, but some geth find themselves seeking knowledge of what is beyond their realm. 
 The primary motivation of the geth who leave Rannoch is to acquire and compile information, though some geth pursue other 
 quests.
 
