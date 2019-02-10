@@ -30,6 +30,6 @@ advancementOptions:
 Activate your personal shoulder cannon: The Hawk Missile Launcher. This attack automatically hits a target within range
 dealing 3d6 thunder damage.
 
-You can use the Hawk Missile Launcher once per long rest.
+You can use the Hawk Missile Launcher once per short rest.
 
 This feature's damage increases by 3d6 when you reach 5th level (6d6), 11th level (9d6), 17th level (12d6).
