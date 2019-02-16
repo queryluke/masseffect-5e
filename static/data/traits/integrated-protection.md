@@ -22,7 +22,7 @@ You have 5 shields (regen 5). You can upgrade these by using armor mods.
 ### Armor Mods
 
 You can augment your armor by integrating armor mods into your system. You can spend 8 hours removing, adding, or
-replacing a mod. When you remove or replace a mod in this way, the replaced or removed mod is lost. I cannot be salvaged,
+replacing a mod. When you remove or replace a mod in this way, the replaced or removed mod is lost. The mod cannot be salvaged,
 not even with the assistance of Armorsmith's or Tailor's tools.
 
 You have 2 chest mod slots, 1 mod slot in your arms, legs, and head each. You cannot add new slots in any way.

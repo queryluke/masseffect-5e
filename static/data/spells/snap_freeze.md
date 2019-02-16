@@ -7,11 +7,12 @@ attackType:
 - Ranged Spell Attack
 effect:
 - control
+- damage
 damageType:
 - cold
 castingTime: Action
 duration: Instant
-concentration: true
+concentration: false
 distance:
   range: 30m
   aoeType:
