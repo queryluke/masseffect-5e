@@ -13,13 +13,14 @@ abilityScoreIncrease:
   - amount: 1
     ability: Charisma
 size: Due to their long tentacles, hanar "stand" about as tall as humans. Their bodies are around 1.5 meters long (4-5'). Your size is Medium.
-speed: Hanar rely on contra-gravitic levitation packs when not in water environments. You have a hover speed of 10m. Additionally, you have a swim speed of 10m.
+speed: Hanar are a water-based lifeform and have a swim speed of 10m. They rely on contra-gravitic levitation packs when not in water environments.
 snippet: The hanar are a species resembling Earth's jellyfish and are one of the few non-bipedal Citadel races. Hanar are known for their intense politeness when speaking and their strong religious beliefs.
 startingCredits: Instead of your class's starting equipment, you may start with 6d8 x 1000 + 10,000 credits to buy your own equipment.
 bodyImg: /images/races/hanar.png
 img: https://vignette.wikia.nocookie.net/masseffect/images/4/47/Delan.png/revision/latest/scale-to-width-down/640?cb=20090121013825
 traits:
   - amphibious
+  - contra-gravitic-levitation
   - bioluminescence
   - fragile
   - tentacles

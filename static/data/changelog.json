@@ -1,6 +1,15 @@
 [
   {
     "layout": "post",
+    "title": "Version 0.9.3",
+    "description": "",
+    "date": "2019-02-03T00:00:00.000Z",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/4/4d/Council_Hologram-Ambassador_Meeting_2.png/revision/latest?cb=20091227112411",
+    "slug": "0.9.3",
+    "url": "/changelog/0.9.3"
+  },
+  {
+    "layout": "post",
     "title": "Version 0.9.2",
     "description": "Updated races, new feats, and bug fixes",
     "date": "2019-02-03T00:00:00.000Z",
