@@ -8,7 +8,7 @@ effect:
 - buff
 damageType: []
 castingTime: Bonus Action
-duration: 10 minutes
+duration: 1 minute
 concentration: false
 distance:
   range: Self
