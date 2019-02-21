@@ -13,7 +13,7 @@ For example, if you know the 1st-level spell lance and have a 1st-level and a 2n
 cast lance using either slot.
 
 ### Spells Known of 1st Level and Higher
-You know two 1st-level spells of your choice from the adept spell list.
+You know three 1st-level spells of your choice from the adept spell list.
 
 The Spells Known column of the Adept table shows when you learn more adept spells of your choice. Each of these spells
 must be of a level for which you have spell slots. For instance, when you reach 3rd level in this class, you can learn
