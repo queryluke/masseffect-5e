@@ -23,7 +23,7 @@ bodyImg: http://vignette1.wikia.nocookie.net/masseffect/images/3/3e/ME3_Volus_Ad
 img: https://vignette.wikia.nocookie.net/masseffect/images/b/b4/Volus.jpg/revision/latest/scale-to-width-down/640?cb=20121009195731
 traits:
   - fury-of-the-small
-  - hermetic-suit
+  - hermetic-suit-volus
   - lucky
   - savvy-dealings
 age: Most volus reach adulthood around their 50th year and live to be around 200 years-old.
@@ -35,11 +35,12 @@ hail from Irune, which possesses a high-pressure greenhouse atmosphere able to s
 
 ## Mysterious Biology
 The volus are unable to survive unprotected in an atmosphere more suitable to humans and other carbon-based lifeforms, 
-and as such require pressurized, protective suits capable of providing the proper atmosphere. Unlike quarians, who can
-withstand brief periods outside their suit, volus choose never to take theirs off, especially in the presence of other
-races. Therefore, little is known about their physiology. Despite individuals distinctly sounding like males or 
-females to human listeners, volus genders are a mystery as well. The volus themselves consider the question both 
-intrusive and hilariously irrelevant. 
+and as such require pressurized, protective suits capable of providing the proper atmosphere. Traditional nitrogen/oxygen 
+air mixtures are poisonous to them, and in the low pressure atmospheres tolerable to most species, their flesh will actually 
+split open.Unlike quarians, who can withstand brief periods outside their suit, volus choose never to take theirs off, 
+especially in the presence of other races. Therefore, little is known about their physiology. Despite individuals distinctly 
+sounding like males or females to human listeners, volus genders are a mystery as well. The volus themselves consider 
+the question both intrusive and hilariously irrelevant. 
 
 ## Trade Warriors
 The volus homeworld Irune is remarkable for having done away with warfare as an institution of the state. Instead,
