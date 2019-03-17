@@ -16,7 +16,7 @@
     "feature": "When you roll a 1 or 2 on a damage die for an attack you make with a melee weapon, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. ",
     "cost": "40000",
     "manu": "Ariake Technologies",
-    "notes": "Damage Reroll",
+    "notes": "Extra Damage",
     "id": "adrenaline_regulator_chest"
   },
   {
@@ -32,8 +32,8 @@
   {
     "name": "Archon AI",
     "type": "Head",
-    "description": "An efficiency algorithm to balance processing power for biotic amps and omni-tools. A heads-up display and voice command software allows users to micromanage the systems, reducing the cooldown period between energy expenditures.",
-    "feature": "You regain 1d4 worth of spell slots or tech points on a short rest.",
+    "description": "An efficient algorithm to balance processing power for biotic amps and omni-tools. A heads-up display and voice command software allows users to micromanage the systems, reducing the cooldown period between energy expenditures.",
+    "feature": "You regain 1d4 worth of spell slots or tech points when you take a short rest.",
     "cost": "30000",
     "manu": "Rosenkov Materials",
     "notes": "Spell Regen",
@@ -46,7 +46,7 @@
     "feature": "+2 AC",
     "cost": "50000",
     "manu": "Rosenkov Materials",
-    "notes": "AC Bonus",
+    "notes": "AC",
     "id": "asymmetric_defense_layer_chest"
   },
   {
@@ -56,7 +56,7 @@
     "feature": "When you lose hit points, as a reaction, you may expend a charge of medi-gel.",
     "cost": "8000",
     "manu": "Any",
-    "notes": "Reaction",
+    "notes": "Heal",
     "id": "autogel_arms"
   },
   {
@@ -66,7 +66,7 @@
     "feature": "When you lose hit points, as a reaction, you may expend a charge of medi-gel.",
     "cost": "8000",
     "manu": "Any",
-    "notes": "Reaction",
+    "notes": "Heal",
     "id": "autogel_legs"
   },
   {
@@ -106,7 +106,7 @@
     "feature": "Choose Assault Rifle, Shotgun, Sniper Rifle or Melee weapon. Gain an additional weapon slot for that specific weapon type. If using the Variant: Encumbrance rule, increase your Carry Weight by 10.",
     "cost": "6000",
     "manu": "Any",
-    "notes": "Capacity",
+    "notes": "Item Capacity",
     "id": "back_holster_chest"
   },
   {
@@ -123,7 +123,7 @@
     "name": "Battle Telemetry",
     "type": "Arms",
     "description": "Battle telemetry systems increase the efficiency of your biotic amplifiers and omni-tool.",
-    "feature": "You regain 1d4 worth of spell slots or tech points on a short rest.",
+    "feature": "You regain 1d4 worth of spell slots or tech points when you take a short rest.",
     "cost": "30000",
     "manu": "Rosenkov Materials",
     "notes": "Spell Regen",
@@ -133,7 +133,7 @@
     "name": "Battle Telemetry",
     "type": "Chest",
     "description": "Battle telemetry systems increase the efficiency of your biotic amplifiers and omni-tool.",
-    "feature": "You regain 1d4 worth of spell slots or tech points on a short rest.",
+    "feature": "You regain 1d4 worth of spell slots or tech points when you take a short rest.",
     "cost": "30000",
     "manu": "Rosenkov Materials",
     "notes": "Spell Regen",
@@ -156,7 +156,7 @@
     "feature": "+1 AC",
     "cost": "20000",
     "manu": "Kassa Fabrication",
-    "notes": "AC Bonus",
+    "notes": "AC",
     "id": "ceramic_weave_chest"
   },
   {
@@ -166,7 +166,7 @@
     "feature": "Increase your grenade capacity by 4",
     "cost": "6000",
     "manu": "Elkoss Combine",
-    "notes": "Capacity",
+    "notes": "Item Capacity",
     "id": "chest_holster_-_grenades_chest"
   },
   {
@@ -176,7 +176,7 @@
     "feature": "Increase your thermal clip capacity by 8",
     "cost": "2000",
     "manu": "Elkoss Combine",
-    "notes": "Capacity",
+    "notes": "Item Capacity",
     "id": "chest_holster_-_thermal_clips_chest"
   },
   {
@@ -196,7 +196,7 @@
     "feature": "+3 AC",
     "cost": "90000",
     "manu": "Cerberus Skunkworks",
-    "notes": "AC Bonus",
+    "notes": "AC",
     "id": "energized_plating_chest"
   },
   {
@@ -246,7 +246,7 @@
     "feature": "Increase your grenade capacity by 2",
     "cost": "3000",
     "manu": "Armax Arsenal",
-    "notes": "Capacity",
+    "notes": "Item Capacity",
     "id": "hip_caddy_-_grenades_legs"
   },
   {
@@ -256,7 +256,7 @@
     "feature": "Increase your thermal clip capacity by 4.",
     "cost": "1000",
     "manu": "Armax Arsenal",
-    "notes": "Capacity",
+    "notes": "Item Capacity",
     "id": "hip_caddy_-_thermal_clips_legs"
   },
   {
@@ -266,13 +266,13 @@
     "feature": "Choose Heavy Pistol, SMG, or Melee weapon with a Min STR score of 11 or less. Gain an additional weapon slot for that specific weapon type. If using the Variant: Encumbrance rule, increase your Carry Weight by 5.",
     "cost": "3000",
     "manu": "Any",
-    "notes": "Capacity",
+    "notes": "Item Capacity",
     "id": "hip_holster_legs"
   },
   {
     "name": "Jetpack",
     "type": "Chest",
-    "description": "This propulsion device generates mass effect fields for lift and gyroscopic atitude adjusters to maneuver the wearer for a short duration.",
+    "description": "This propulsion device generates mass effect fields for lift and gyroscopic attitude adjusters to maneuver the wearer for a short duration.",
     "feature": "As a bonus action, activate the jetpack to gain flying 6m for 1 minute. This device cannot be used again until you finish a short rest.",
     "cost": "60000",
     "manu": "Elanus Risk Control Services",
@@ -306,7 +306,7 @@
     "feature": "If you are standing on a metal surface, you are immune to being lifted. Otherwise, if you would make a saving throw against being lifted, you have advantage.",
     "cost": "50000",
     "manu": "Any",
-    "notes": "Immunity",
+    "notes": "Special",
     "id": "mag_latches_legs"
   },
   {
@@ -336,7 +336,7 @@
     "feature": "Increase your thermal clip capacity by 2",
     "cost": "500",
     "manu": "Elkoss Combine",
-    "notes": "Capacity",
+    "notes": "Item Capacity",
     "id": "offhand_ammo_pack_arms"
   },
   {
@@ -346,14 +346,14 @@
     "feature": "Your heavy weapons have 2 additional charges.",
     "cost": "10000",
     "manu": "Jormungand Technology",
-    "notes": "Capacity",
+    "notes": "Item Capacity",
     "id": "ordinance_packs_legs"
   },
   {
     "name": "Personal Disruptor Torpedoes",
     "type": "Arms",
     "description": "A \"micro gravitic\" personal weapon that effectively fires small disruptor torpedoes.",
-    "feature": "Choose a target location within 30m. Creatures within a 4m sphere of the target must make a dexterity saving throw. On a failed save, a creature takes 3d12 force damage, or have as much damage on a successful one. You must finish a short rest, allowing the weapon to recharge before using it again.",
+    "feature": "Choose a target location within 30m. Creatures within a 4m sphere of the target must make a Dexterity saving throw. On a failed save, a creature takes 3d12 force damage, or have as much damage on a successful one. You must finish a short rest, allowing the weapon to recharge before using it again.",
     "cost": "25000",
     "manu": "Jormungand Technology",
     "notes": "Special",
@@ -372,21 +372,21 @@
   {
     "name": "Recharge Capacitor",
     "type": "Chest",
-    "description": "Micro wells store part of the energy directed at the armor and use it to jump start the kinetic barrier recharge cycle.",
-    "feature": "Once per short rest, as a reaction to taking damage, you may jumpstart your shield regen and immediately gain shield points equal to your regen amount.",
+    "description": "Microwells store part of the energy directed at the armor and use it to jump-start the kinetic barrier recharge cycle.",
+    "feature": "Once per short rest, as a reaction to taking damage, you may jump-start your shield regen and immediately gain shield points equal to your regen amount.",
     "cost": "15000",
     "manu": "Armax Arsenal",
-    "notes": "Shield Jumpstart",
+    "notes": "Shield jump-start",
     "id": "recharge_capacitor_chest"
   },
   {
     "name": "Recharge Capacitor",
     "type": "Head",
-    "description": "Micro wells store part of the energy directed at the armor and use it to jump start the kinetic barrier recharge cycle.",
-    "feature": "Once per short rest, as a reaction to taking damage, you may jumpstart your shield regen and immediately gain shield points equal to your regen amount.",
+    "description": "Microwells store part of the energy directed at the armor and use it to jump start the kinetic barrier recharge cycle.",
+    "feature": "Once per short rest, as a reaction to taking damage, you may jump-start your shield regen and immediately gain shield points equal to your regen amount.",
     "cost": "15000",
     "manu": "Alliance",
-    "notes": "Shield Jumpstart",
+    "notes": "Shield jump-start",
     "id": "recharge_capacitor_head"
   },
   {
@@ -406,7 +406,7 @@
     "feature": "When you roll a 1 or 2 on a damage die for an attack you make with a biotic spell, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. ",
     "cost": "40000",
     "manu": "Serrice Council",
-    "notes": "Damage Reroll",
+    "notes": "Extra Damage",
     "id": "savant_biotic_amp_head"
   },
   {
@@ -416,7 +416,7 @@
     "feature": "Increase your shield points by 5.",
     "cost": "10000",
     "manu": "Alliance",
-    "notes": "Shield Capacity",
+    "notes": "Shields",
     "id": "sentry_system_head"
   },
   {
@@ -426,7 +426,7 @@
     "feature": "Increase your shield points by 5.",
     "cost": "10000",
     "manu": "Any",
-    "notes": "Shield Capacity",
+    "notes": "Shields",
     "id": "shield_battery_chest"
   },
   {
@@ -436,7 +436,7 @@
     "feature": "Increase your shield points by 5.",
     "cost": "10000",
     "manu": "Armax Arsenal",
-    "notes": "Shield Capacity",
+    "notes": "Shields",
     "id": "shield_capacity_arms"
   },
   {
@@ -446,7 +446,7 @@
     "feature": "Increase your shield points by 15.",
     "cost": "50000",
     "manu": "Alliance",
-    "notes": "Shield Capacity",
+    "notes": "Shields",
     "id": "shield_interface_chest"
   },
   {
@@ -456,7 +456,7 @@
     "feature": "Increase your shield points by 10.",
     "cost": "25000",
     "manu": "Armax Arsenal",
-    "notes": "Shield Capacity",
+    "notes": "Shields",
     "id": "shield_modulator_chest"
   },
   {
@@ -482,7 +482,7 @@
   {
     "name": "Teflon Coating",
     "type": "Chest",
-    "description": "A spray of teflon that reflects mutliple types of radiation.",
+    "description": "A spray of Teflon that reflects multiple types of radiation.",
     "feature": "Resistance to radiant damage.",
     "cost": "15000",
     "manu": "Devlon Industries",
@@ -496,7 +496,7 @@
     "feature": "You are immune to being frozen.",
     "cost": "35000",
     "manu": "Devlon Industries",
-    "notes": "Immunity",
+    "notes": "Special",
     "id": "thermal_armor_chest"
   },
   {
@@ -516,7 +516,7 @@
     "feature": "When you roll a 1 or 2 on a damage die for an attack you make with a tech power, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. ",
     "cost": "40000",
     "manu": "Alliance",
-    "notes": "Damage Reroll",
+    "notes": "Extra Damage",
     "id": "umbra_ai_head"
   },
   {
@@ -526,14 +526,14 @@
     "feature": "+2 to Persuasion and Intimidation checks",
     "cost": "12000",
     "manu": "Tyriel Advanced Communications Corporation",
-    "notes": "Special",
+    "notes": "Ability/Skill Bonus",
     "id": "voice_modulator_head"
   },
   {
     "name": "Enviro-Systems",
     "type": "Chest",
-    "description": "An activatible hermetic seal against vacuum or underwater pressure. While most armors act as space-suits, they aren't necessarily graded for more than a few hours of vacuum exposure, nor are they graded for underwater performance where water pressure can be crushing.",
-    "feature": "As a free action, you gain Water Breathing and the ability to breathe indefinitely in zero-oxygen environments for the next 24 hours. If you are not wearing a helmet, the suit creates a hard light helment that equalizes preassure around your head.",
+    "description": "An activatable hermetic seal against vacuum or underwater pressure. While most armors act as space-suits, they aren't necessarily graded for more than a few hours of vacuum exposure, nor are they graded for underwater performance where water pressure can be crushing.",
+    "feature": "As a free action, you gain Water Breathing and the ability to breathe indefinitely in zero-oxygen environments for the next 24 hours. If you are not wearing a helmet, the suit creates a hard light helmet that equalizes pressure around your head.",
     "cost": "6000",
     "manu": "Devlon Industries",
     "notes": "Special",
@@ -546,7 +546,7 @@
     "feature": "Your footsteps make no noise and you have advantage on Dexterity (Stealth) checks that rely on remaining silent.",
     "cost": "4000",
     "manu": "Elanus Risk Control Services",
-    "notes": "Special",
+    "notes": "Ability/Skill Bonus",
     "id": "echo_cancel_legs"
   },
   {
@@ -556,7 +556,7 @@
     "feature": "You gain darkvision 30m.",
     "cost": "10000",
     "manu": "Alliance",
-    "notes": "Special",
+    "notes": "Vision",
     "id": "night_sight_head"
   },
   {
@@ -566,7 +566,7 @@
     "feature": "Any critical hit against you becomes a normal hit.",
     "cost": "20000",
     "manu": "Armax Arsenal",
-    "notes": "Special",
+    "notes": "Null Critical",
     "id": "reactive_kinetic_compensator_chest"
   },
   {
@@ -576,7 +576,7 @@
     "feature": "You have advantage on Intelligence (Investigation) checks that rely on sight while searching an area or studying an object within a range of 2m.",
     "cost": "15000",
     "manu": "Sirta Foundation",
-    "notes": "Special",
+    "notes": "Ability/Skill Bonus",
     "id": "zoom_enhance_head"
   },
   {
@@ -593,7 +593,7 @@
     "name": "Battlefield Assist Module",
     "type": "Chest",
     "description": "A special VI that reroutes all power to your armor's defenses when vital signs are low.",
-    "feature": "At the start of your turn, if you have less than one quarter of your hit points remaining, you can use a bonus action to cast Defense Matrix (Custom Current). It lasts 1 minute and does not require concentration. You may use this feature once per long rest.",
+    "feature": "At the start of your turn, if you have less than one-quarter of your hit points remaining, you can use a bonus action to cast Defense Matrix (Custom Current). It lasts 1 minute and does not require concentration. You may use this feature once per long rest.",
     "cost": "38000",
     "manu": "Devlon Industries",
     "notes": "Special",
@@ -603,7 +603,7 @@
     "name": "EC Counter",
     "type": "Arms",
     "description": "Uses an electrical conduit to automatically counter-attack melee combatants.",
-    "feature": "Whenever you are hit with a melee attack, the attacking creature take 2d4 lightning damage and must succeed on a DC 10 Constitutuion saving throw or becomes stunned until the start of your next turn. This effect can only happen once per round (every 6 seconds).",
+    "feature": "Whenever you are hit with a melee attack, the attacking creature takes 2d4 lightning damage and must succeed on a DC 10 Constitution saving throw or becomes stunned until the start of your next turn. This effect can only happen once per round (every 6 seconds).",
     "cost": "22000",
     "manu": "Armax Arsenal",
     "notes": "Special",
@@ -612,7 +612,7 @@
   {
     "name": "Equilibrium Regulator",
     "type": "Head",
-    "description": "Stabalizes your HUD while running which allows you to take quick shots while running.",
+    "description": "Stabilizes your HUD while running which allows you to take quick shots while running.",
     "feature": "When you take the Dash action on your turn, you can use a bonus action to make one weapon attack.",
     "cost": "30000",
     "manu": "Alliance",
