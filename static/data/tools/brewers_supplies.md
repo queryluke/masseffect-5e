@@ -6,7 +6,7 @@ cost: 1000
 ---
 
 Brewing is the art of producing beer, mead, wine, and liquor. Not only does brewing create alcoholic beverages, but the
-process of brewing purifies water. Brewing beer, mead, and wine takes weeks of fermentation, but only a few hours of work.
+process of brewing purifies water. Brewing beer, mead, or wine takes weeks of fermentation, but only a few hours of work.
 You can further distill fermented beverages to create liquor.
 
 __Components__. A large glass jug, a quantity of hops, a siphon, and several feet of tubing, bottles, and a distiller.

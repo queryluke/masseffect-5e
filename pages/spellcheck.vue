@@ -14,19 +14,25 @@
       p {{ item.feature }}
       p {{ item.setBonus }}
 
+    // Class Features
+    // div(v-for="item in classFeatures" v-bind:key="item.id")
+      class-feature(:id="item.id" v-bind:featureLevel="{level: 1}")
+
     // Feats
     // div(v-for="item in feats" v-bind:key="item.id" v-if="item.new")
       p.title {{ item.name }}
       markdown-file(:id="item.id" itemType="feats")
 
-    // Feats
+    // Grenades
     // div(v-for="item in grenades" v-bind:key="item.id")
       p.title {{ item.name }}
       markdown-file(:id="item.id" itemType="grenades")
 
-    // Class Features
-    div(v-for="item in classFeatures" v-bind:key="item.id")
-      class-feature(:id="item.id" v-bind:featureLevel="{level: 1}")
+    // Tools
+    div(v-for="item in tools" v-bind:key="item.id")
+      p.title {{ item.name }}
+      markdown-file(:id="item.id" itemType="tools")
+
 
 
 
@@ -36,9 +42,10 @@
 <script>
   import armorMods from '~/static/data/armor_mods.json'
   import armorSets from '~/static/data/armor_sets.json'
+  import classFeatures from '~/static/data/class_features.json'
   import feats from '~/static/data/feats.json'
   import grenades from '~/static/data/grenades.json'
-  import classFeatures from '~/static/data/class_features.json'
+  import tools from '~/static/data/tools.json'
 
   import classFeature from '~/components/class/ClassFeature.vue'
 
@@ -49,9 +56,10 @@
       return {
         armorMods,
         armorSets,
+        classFeatures,
         feats,
         grenades,
-        classFeatures
+        tools
       }
     },
     head () {

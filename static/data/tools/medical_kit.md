@@ -12,7 +12,7 @@ and a pouch that can carry up to 4 medi-gel.
 
 __Insight__. When you spend 1 minute observing an organic creature, you gain additional insight on if the creature is injured or weakened.
 
-__Investigation__. When you investigate a dead organic creature, you gain insight on what caused its death and how long ago it died.
+__Investigation__. When you investigate a dead organic creature, you gain insight into what caused its death and how long ago it died.
 
 __Medicine__. You can spend a medi-gel to gain advantage when stabilizing a creature.
 

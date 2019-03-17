@@ -5,7 +5,7 @@ type: artisan
 cost: 6000
 ---
 
-An armorsmith's workbench allows you to work with alloys and ceramic plates, letting you to reshape armor for different races,
+An armorsmith's workbench allows you to work with alloys and ceramic plates, letting you reshape armor for different races,
 repair damage, or install armor mods.
 
 __Components__. All the necessary tools to work with medium and heavy armor.
@@ -16,7 +16,7 @@ __Investigation__. You can spot clues and make deductions that others might over
 
 
 ### Activities
-With access to your workbench, you can perform one the following activities as part of a long rest.
+With access to your workbench, you can perform one of the following activities as part of a long rest.
 
 * __Install mod__. Install an armor mod into a piece of heavy or medium armor.
 * __Augment or repair armor__. Adjust a suit of heavy or medium armor to fit another race or repair a piece of used

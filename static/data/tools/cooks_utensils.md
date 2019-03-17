@@ -18,7 +18,7 @@ into nourishing meals.
 
 __Prepare Meals__. As part of a short rest, you can prepare a tasty meal that helps your companions regain their strength.
 You and up to five creatures of your choice regain 1 extra hit point per Hit Die spent during a short rest, provided you have
-access to your cook's utensils and low grade provisions. If you use mid-grade provisions, gain 2 extra hit points per Hit Die
+access to your cook's utensils and low-grade provisions. If you use mid-grade provisions, gain 2 extra hit points per Hit Die
 spent. And if you use high-grade provisions, gain 3 extra hit points per Hit Die spent.
 
 Activity | DC

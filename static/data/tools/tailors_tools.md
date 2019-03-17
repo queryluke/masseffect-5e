@@ -15,7 +15,7 @@ __History__. Your expertise lends you additional insight when examining light ar
 __Investigation__. You can spot clues and make deductions that others might overlook when an investigation involves light armor.
 
 ### Activities
-With access to your tools, you can perform one the following activities as part of a long rest.
+With access to your tools, you can perform one of the following activities as part of a long rest.
 
 * __Install mod__. Install an armor mod into a piece of light armor.
 * __Augment or repair armor__. Adjust a suit of light armor to fit another race or repair a piece of light armor.

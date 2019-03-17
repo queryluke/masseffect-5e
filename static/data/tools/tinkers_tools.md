@@ -5,10 +5,10 @@ type: artisan
 cost: 3000
 ---
 
-A set of tinker's tools is designed to create small, inventive devices from onmi-gel. Some examples include a motion sensor,
+A set of tinker's tools is designed to create small, inventive devices from omni-gel. Some examples include a motion sensor,
 a desalinator, a compass, a light source, or a small EMP device.
 
-__Components__. Tinker's tools include a variety of hand tools, a wires, scraps of metal, batteries, micro circuit boards,
+__Components__. Tinker's tools include a variety of hand tools, wires, scraps of metal, batteries, microcircuit boards,
 adhesives, paint, and a pouch that can hold up to 10 omni-gel canisters.
 
 __History__. You can determine the age and origin of objects, even if you have only a few pieces remaining from the original.

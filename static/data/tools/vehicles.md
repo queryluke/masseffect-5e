@@ -6,7 +6,7 @@ cost: null
 ---
 
 Proficiency with a vehicle applies to one type of environment. The proficiency reflects the ability to navigate and maneuver
-within the environment and is not limited to a specific vehicle. For example, a hover craft could be a land or water vehicle.
+within the environment and is not limited to a specific vehicle. For example, a hovercraft could be a land or water vehicle.
 
 ### Vehicle Types
 
@@ -18,7 +18,7 @@ within the environment and is not limited to a specific vehicle. For example, a 
 __Engineering__. Vehicle proficiency combined with knowledge of engineering improves your ability to repair, maintain,
 or assess vehicles of that type.
 
-__Insight__. You knowledge about vehicles of this type make it easy to discern the veracity of others' boasts about their piloting
+__Insight__. Your knowledge about vehicles of this type makes it easy to discern the veracity of others' boasts about their piloting
 skills and past stunts.
 
 __Investigation__. You gain insight into the environment's conditions and the safety of traveling within the conditions.
