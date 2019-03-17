@@ -15,9 +15,14 @@
       p {{ item.setBonus }}
 
     // Feats
-    div(v-for="item in feats" v-bind:key="item.id" v-if="item.new")
+    // div(v-for="item in feats" v-bind:key="item.id" v-if="item.new")
       p.title {{ item.name }}
       markdown-file(:id="item.id" itemType="feats")
+
+    // Feats
+    div(v-for="item in grenades" v-bind:key="item.id")
+      p.title {{ item.name }}
+      markdown-file(:id="item.id" itemType="grenades")
 
 
 
@@ -28,6 +33,7 @@
   import armorMods from '~/static/data/armor_mods.json'
   import armorSets from '~/static/data/armor_sets.json'
   import feats from '~/static/data/feats.json'
+  import grenades from '~/static/data/grenades.json'
 
 
   export default {
@@ -35,7 +41,8 @@
       return {
         armorMods,
         armorSets,
-        feats
+        feats,
+        grenades
       }
     },
     head () {
