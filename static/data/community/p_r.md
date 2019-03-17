@@ -7,7 +7,7 @@ rules, consider the following. _These rules are in addition to the Paragon & Ren
 
 When your Paragon or Renegade score is higher than the other, choose 2 Charisma-linked skills. You always have advantage
 when rolling those skills, but you have disadvantage when rolling the other 2 Charisma-linked skills. You can
-adjust your selected skills whenever you paragon or renegade scores advance beyond the other.
+adjust your selected skills whenever your paragon or renegade scores advance beyond the other.
 
 <v-alert :value="true" type="info">
 
@@ -17,7 +17,7 @@ Campbell's character, Negomi, has 55 Renegade and 20 Paragon points. He chooses 
 __Renegade Skills__. Whenever Negomi makes a Performance or Intimidation check, she makes that check with Advantage.
 But if Negomi makes a Persuasion or Deception check, those are made at disadvantage.
 
-If, over the course of a few levels, Negomi gains 40 Paragon poins and 0 Renegade points (60 and 55, respectively),
+If, over the course of a few levels, Negomi gains 40 Paragon points and 0 Renegade points (60 and 55, respectively),
 Campbell can choose 2 new skills (or the same ones) for Negomi to have advantage.
 
 </v-alert>
@@ -25,8 +25,8 @@ Campbell can choose 2 new skills (or the same ones) for Negomi to have advantage
 <br>
 
 The benefit of this rule is that it rewards players for role-playing a Paragon or Renegade character. There are
-4 Charisma-linked skills that can be roll-played to either Paragon or Renegade. When the player selects their chosen 
-Charisma benefits, they should roleplay to those strengths. If the player treats this benefits as purely mechanical, the 
+4 Charisma-linked skills that can be role-played to either Paragon or Renegade. When the player selects their chosen 
+Charisma benefits, they should roleplay to those strengths. If the player treats these benefits as purely mechanical, the 
 GM can choose not to award the advantage.
 
 Skill | Paragon-esque | Renegade-esque

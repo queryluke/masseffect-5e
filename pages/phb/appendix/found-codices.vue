@@ -8,7 +8,7 @@
           Mass Effect 5e has gathered a substantial following in the past year. This new section collects a number of
           great ideas from the community that have yet to be playtested, an so, are not part of the official system.
           Essentially, this is the Mass Effect 5e version of Unearthed Arcana. If you playtest the following rules and ideas
-          pleas #[nuxt-link(to="/contributing") let us know what you think].
+          please #[nuxt-link(to="/contributing") let us know what you think].
       v-flex.xs12
         v-card.elevation-0.transparent
           v-card-title.headline {{ indoc.attributes.name }}
