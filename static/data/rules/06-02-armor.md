@@ -7,7 +7,7 @@ change: true
 To survive in the galaxy, your character needs to wear armor. Not only does armor abate damage from extremely powerful,
 futuristic weapons but armor also supplies __shield points__, also called shields (outlined below). Luckily, almost all
 garments in the mass effect world provide some form of protection. Diaphanous night-gowns can even provide a modicum of
-protection. Thus, in Mass Effect 5e, almost all operatives are wearing armor and re afforded shield points, unless the player
+protection. Thus, in Mass Effect 5e, almost all operatives are wearing armor and are afforded shield points, unless the player
 or GM explicitly states your character is not wearing armor.
 
 __Armor Proficiency__. Just like 5th edition, anyone can put on armor. However, only those proficient in the armor type
@@ -56,11 +56,19 @@ customize armor sets with armor mods and you cannot salvage a beneficial aspect 
 
 Armor sets have an armor type (light, medium, or heavy) which you use for calculating your character's AC.
 
-__Body Armor__ is a set that contains 3 pieces of armor: chest, legs, and arms. A character that is wearing the BT Suit
-armor set cannot wear additional armor on their chest, legs, or arms. But they could wear a Capacitor Helmet (medium head armor).
+__Body Armor__ is a special type of armor piece that consists of 3 pieces of armor: Chest, Arms, and Legs. Body 
+armor is completely integrated (all or none), therefore, you cannot swap out pieces from other sets. I.e., if you're 
+wearing the Duelist body armor, you cannot replace the legs from it with the Lockdown Greaves. This rule is, of course, flexible,
+as GMs might allow this type of tinkering in exchange for time, credits, and/or skill checks. 
 
-__Full Set__ is a set that contains all 4 pieces of armor: head, chest, arms, and legs.
+__Set Bonuses__ are additional benefits you receive from wearing multiple pieces from the same set, signifying the armors
+component pieces working together for a unified integration. Armor with the same base name is part of a set, e.g. __Colossus__ _[item]_. 
 
+You only receive the benefit once per set and the benefit is end immediately if you fall below the threshold. For example, 
+a set provides +1 AC for wearing 2 of 4 pieces and +1 AC for wearing 4 of 4 pieces. If you are wearing the head and chest 
+pieces, you gain +1 AC (in addition to any benefits provided from the set pieces you are wearing). _Note: You __do not__ 
+gain +1 AC for the head and +1 AC for the chest_. As soon as you remove either the head piece or the chest piece, you loose
+the +1 AC.
 
 
 ### Environmental Protection <v-chip color="secondary" text-color="white" class="v-chip--x-small">new</v-chip>
