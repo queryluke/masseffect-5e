@@ -9,7 +9,7 @@ On a failed save, the creature takes 4d8 bludgeoning damage and is knocked prone
 Once the pylon has landed, friendly creatures (including you) within melee range can spend 1 action accessing the pylon 
 to gain a single resource listed below:
 
-* Gain 1 heavy heapon ammo charge 
+* Gain 1 heavy weapon ammo charge 
 * Gain 5 tech points
 * Gain 5 levels worth of spell slots 
 * Gain 2 enhanced medi-gel 

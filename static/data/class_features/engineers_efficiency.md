@@ -8,7 +8,7 @@ of this spell without expending any tech points. If you cast the power at a high
 
 You can prepare the advanced version of the selected spell at the cost of 1 prepared spell.
 
-You can cast more potent version of this spell at higher levels. A 2 tech point version at 7th,
+You can cast a more potent version of this spell at higher levels. A 2 tech point version at 7th,
 3 tech point version at 11th, and 4 tech point version at 15th.
 
 If you wish to apply this feature to a spell you've already learned, you may choose to learn or advance a different tech
