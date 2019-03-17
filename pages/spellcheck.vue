@@ -29,9 +29,15 @@
       markdown-file(:id="item.id" itemType="grenades")
 
     // Tools
-    div(v-for="item in tools" v-bind:key="item.id")
+    // div(v-for="item in tools" v-bind:key="item.id")
       p.title {{ item.name }}
       markdown-file(:id="item.id" itemType="tools")
+
+    // Weapon Mods
+    div(v-for="item in weaponMods" v-bind:key="item.id")
+      p.title {{ item.name }}
+      p {{ item.description }}
+      p {{ item.feature }}
 
 
 
@@ -46,6 +52,7 @@
   import feats from '~/static/data/feats.json'
   import grenades from '~/static/data/grenades.json'
   import tools from '~/static/data/tools.json'
+  import weaponMods from '~/static/data/weapon_mods.json'
 
   import classFeature from '~/components/class/ClassFeature.vue'
 
@@ -59,7 +66,8 @@
         classFeatures,
         feats,
         grenades,
-        tools
+        tools,
+        weaponMods
       }
     },
     head () {
