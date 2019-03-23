@@ -39,6 +39,12 @@
       p {{ item.description }}
       p {{ item.feature }}
 
+    // Weapons
+    div(v-for="item in weapons" v-bind:key="item.id")
+      p.title {{ item.name }}
+      p {{ item.notes }}
+      p {{ item.tags }}
+
 
 </template>
 
@@ -50,6 +56,7 @@
   import grenades from '~/static/data/grenades.json'
   import tools from '~/static/data/tools.json'
   import weaponMods from '~/static/data/weapon_mods.json'
+  import weapons from '~/static/data/weapons.json'
 
   import classFeature from '~/components/class/ClassFeature.vue'
 
@@ -64,7 +71,8 @@
         feats,
         grenades,
         tools,
-        weaponMods
+        weaponMods,
+        weapons
       }
     },
     head () {

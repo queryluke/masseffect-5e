@@ -5,6 +5,7 @@ import GalaxyMap from '~/components/rule_partials/GalaxyMap.vue'
 import MeHeaderLogo from '~/components/MeHeaderLogo'
 import SimpleCard from '~/components/cards/SimpleCard'
 import AiDialog from '~/components/rule_partials/AdditionalInformationDialog'
+import WeaponProp from '~/components/WeaponProp'
 
 // Because Vue-loader dynamically adds vue components as needed
 // Any vue components used in the .md files need to be loaded globally
@@ -24,4 +25,5 @@ Vue.component('v-btn', VBtn)
 Vue.component('v-icon', VIcon)
 Vue.component('simple-card', SimpleCard)
 Vue.component('ai-dialog', AiDialog)
+Vue.component('weapon-prop', WeaponProp)
 
