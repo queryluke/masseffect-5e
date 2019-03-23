@@ -18,6 +18,11 @@
     // div(v-for="item in classFeatures" v-bind:key="item.id")
       class-feature(:id="item.id" v-bind:featureLevel="{level: 1}")
 
+    // Conditions
+    // div(v-for="item in conditions" v-bind:key="item.id")
+      p.title {{ item.name }}
+      markdown-file(:id="item.id" itemType="conditions")
+
     // Feats
     // div(v-for="item in feats" v-bind:key="item.id" v-if="item.new")
       p.title {{ item.name }}
@@ -29,13 +34,12 @@
       markdown-file(:id="item.id" itemType="grenades")
 
     // Spells
-    div(v-for="item in spells" v-bind:key="item.id")
+    // div(v-for="item in spells" v-bind:key="item.id")
       p.title {{ item.name }}
       markdown-file(:id="item.id" itemType="spells")
       div(v-for="(option, i) in item.advancementOptions" v-bind:key="i")
         p {{ option.name }}
         p {{ option.description }}
-
 
     // Tools
     // div(v-for="item in tools" v-bind:key="item.id")
@@ -66,6 +70,7 @@
   import armorMods from '~/static/data/armor_mods.json'
   import armorSets from '~/static/data/armor_sets.json'
   import classFeatures from '~/static/data/class_features.json'
+  import conditions from '~/static/data/conditions.json'
   import feats from '~/static/data/feats.json'
   import grenades from '~/static/data/grenades.json'
   import tools from '~/static/data/tools.json'
@@ -85,6 +90,7 @@
         armorMods,
         armorSets,
         classFeatures,
+        conditions,
         feats,
         grenades,
         spells,
