@@ -6,7 +6,7 @@ GSHEETS = [
     },
     {
         type: 'weapons',
-        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSq70x_GZuDKcELgX8k_7Hd6nLGu3DoIEdDwP-YEGjUU-ghGc7ot_Q7140FZwGbEalHgzPwVm4BN8y_/pub?gid=0&single=true&output=csv',
+        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTgi5nlXCxDVp59241YyQeVKP3Qs9KgGPxZUPoG7f7Wfj7h36Xb14ml8OuwiMd86prSBRlDjFhlWzrR/pub?gid=0&single=true&output=csv',
         id: 'name',
         camel: true
     },

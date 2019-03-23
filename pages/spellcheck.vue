@@ -34,13 +34,10 @@
       markdown-file(:id="item.id" itemType="tools")
 
     // Weapon Mods
-    div(v-for="item in weaponMods" v-bind:key="item.id")
+    // div(v-for="item in weaponMods" v-bind:key="item.id")
       p.title {{ item.name }}
       p {{ item.description }}
       p {{ item.feature }}
-
-
-
 
 
 </template>
