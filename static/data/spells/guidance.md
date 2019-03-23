@@ -21,7 +21,7 @@ availableClasses:
 - infiltrator
 - sentinel
 advancementOptions:
-- name: Multi Tap
+- name: Multi-Tap
   description: Guidance can be active on up to 3 different targets.
 - name: Improved Tap
   description: Increase the die type to d10

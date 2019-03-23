@@ -24,7 +24,7 @@ availableClasses:
 advancementOptions:
 - name: Linked Current
   description:  On a successful hit, you can designate yourself or an ally within range of the ability to direct a
-    positive current to. Instead of gaining shield points, this current doubles a creature's waking speed for 1d4 rounds.
+    positive current. Instead of gaining shield points, this current doubles a creature's waking speed for 1d4 rounds.
     Using this advanced tech skill more than once does not stack the speed boost.
 - name: Improved Regen
   description: On a successful hit, you regain shield points equal to the amount of lightning damage dealt.

@@ -24,7 +24,7 @@ advancementOptions:
 - name: Anti-Shield
   description: The missile detonates a small EMP, transforming the damage to lightning.
 - name: Three-headed beast
-  description: Your missile splits into three separate missile, each dealing 1d6 damage (2d6 at 5th level, 3d6 at 11th level
+  description: Your missile splits into three separate missiles, each dealing 1d6 damage (2d6 at 5th level, 3d6 at 11th level
     and 4d6 at 17th level). You can direct the missiles at the same target or at different ones.
 ---
 Activate your personal shoulder cannon: The Hawk Missile Launcher. This attack automatically hits a target within range

@@ -27,7 +27,7 @@ advancementOptions:
     Any creature that would make a saving throw to avoid heavy weapon damage has disadvantage
     on the saving throw.
 - name: Lasting Scan
-  description: Becomes a concentration spell wit a duration of 1 minute.
+  description: Becomes a concentration spell with a duration of 1 minute.
 ---
 Scan an 8m cube within range. Until the end of your next turn, any creature in the area when the spell is cast is
 highlighted on all friendly creatures HUDs if it fails a Dexterity saving throw.

@@ -23,7 +23,7 @@ availableClasses:
 advancementOptions:
 - name: Durable
   description: Increase the aegis's hit points to 30.
-- name: Counter strike
+- name: Counterstrike
   description: If you cast Backlash as a reaction against a melee attack, gain an attack of opportunity against the attacking creature.
 ---
 Generate a frontal biotic aegis barrier with 15 hit points. If a creature you can see hits you with an attack while the

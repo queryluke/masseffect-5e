@@ -28,6 +28,15 @@
       p.title {{ item.name }}
       markdown-file(:id="item.id" itemType="grenades")
 
+    // Spells
+    div(v-for="item in spells" v-bind:key="item.id")
+      p.title {{ item.name }}
+      markdown-file(:id="item.id" itemType="spells")
+      div(v-for="(option, i) in item.advancementOptions" v-bind:key="i")
+        p {{ option.name }}
+        p {{ option.description }}
+
+
     // Tools
     // div(v-for="item in tools" v-bind:key="item.id")
       p.title {{ item.name }}
@@ -46,7 +55,7 @@
       p {{ item.tags }}
 
     // Vehicles
-    div(v-for="item in vehicles" v-bind:key="item.id")
+    // div(v-for="item in vehicles" v-bind:key="item.id")
       vehicle-info(:item="item")
 
 
@@ -63,6 +72,7 @@
   import weaponMods from '~/static/data/weapon_mods.json'
   import weapons from '~/static/data/weapons.json'
   import vehicles from '~/static/data/vehicles.json'
+  import spells from '~/static/data/spells.json'
 
   import classFeature from '~/components/class/ClassFeature.vue'
   import vehicleInfo from '~/components/vehicle/VehicleInfo.vue'
@@ -77,6 +87,7 @@
         classFeatures,
         feats,
         grenades,
+        spells,
         tools,
         weaponMods,
         weapons,

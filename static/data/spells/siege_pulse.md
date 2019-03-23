@@ -39,8 +39,8 @@ Synthetic creatures have advantage on this saving throw.
 
 The first time you use siege pulse, your armor suffers no adverse effect. If you use this feature again before you
 finish a short rest, your shields run the risk of overloading. Roll a d20, immediately after you cast it. On a roll of 5 or
-lower, your shields overload. You loose all shield points take 2d12 lightning damage. You cannot gain shield points unless
+lower, your shields overload. You lose all shield points take 2d12 lightning damage. You cannot gain shield points unless
 you equip new armor or repair your armor. Each time you use this feature again before finishing a short rest, the target
-number increases by 5 (10 on the third cast, 15 on the fourth, etc).
+DC increases by 5 (10 on the third cast, 15 on the fourth, etc).
 
 This feature's psychic damage increases by 1d8 when you reach 5th level (3d8), 11th level (4d8), 17th level (5d8).
