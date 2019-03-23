@@ -72,7 +72,8 @@
               { href: '/phb/armor/sets', title: 'Armor Sets' },
               { href: '/phb/programs', title: 'Omni-tool Programs' },
               { href: '/phb/grenades', title: 'Grenades' },
-              { href: '/phb/tools-kits', title: 'Tools & Kits' }
+              { href: '/phb/tools-kits', title: 'Tools & Kits' },
+              { href: '/phb/vehicles', title: 'Vehicles' }
             ]
           },
           {

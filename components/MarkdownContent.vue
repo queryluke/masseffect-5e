@@ -4,7 +4,6 @@
   import SourceReference from '~/components/rule_partials/SourceReference.vue'
   import CostOfThings from '~/components/rule_partials/CostOfThings.vue'
   import Condition from '~/components/Condition.vue'
-  import VehicleList from '~/components/vehicle/VehicleList.vue'
 
   export default {
     name: 'MarkdownContent',
@@ -13,8 +12,7 @@
       SkillList,
       SourceReference,
       CostOfThings,
-      Condition,
-      VehicleList
+      Condition
     },
     props: {
       component: {
