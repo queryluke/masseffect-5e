@@ -4,21 +4,21 @@ name: Show_Stopper.exe
 rarity: uncommon
 activation: false
 ---
-This suite of programs contains a subset holographic displays. A full suite has 20 displays. A used program is usually
+This suite of programs contains a subset of holographic displays. A full suite has 20 displays. A used program is usually
 missing 1d20 − 1 displays.
 
-The creator of this program, a human hacker known as Gahri Gi'gax, wrote a randomization algorithm into its use. You can use
+The creator of this program, a human hacker, known as Gahri Gi'gax, wrote a randomization algorithm into its use. You can use
 an action to activate a display at random from the program, spawning a holographic image within 12m of you.
 
 The image of one or more creatures forms over the targeted area and remains until dispelled. The holographic creature
 appears real, of the appropriate size, and behaves as if it were a real creature except that it can do no harm. While
 you are within 50m of the hologram and can see it, you can use an action to move it anywhere within 12m of the initial
-location. Any physical interaction with the hologram reveals it to be an illusion, because objects pass through it.
+location. Any physical interaction with the hologram reveals it to be an illusion because objects pass through it.
 Someone who uses an action to visually inspect the creature identifies it as a hologram with a successful DC 15
 Intelligence (Investigation) check. The creature then appears translucent.
 
 The hologram lasts 1 hour or until you cancel the display. At which point, the display removes itself from the suite.
-Once you have used all of the displays, the programs deletes itself from your omni-tool.
+Once you have used all of the displays, the program deletes itself from your omni-tool.
 
 1d20 | Illusion
 --- | ---

@@ -6,7 +6,7 @@ installation: true
 ---
 _Can only be used by humans_
 
-This is an experimental, Cerberus-funded VI was created in the pursuit of an perfect AI that will put the protection of
+This is an experimental, Cerberus-funded VI was created in the pursuit of a perfect AI that will put the protection of
 humanity first and foremost. While it never achieved true AI status, this VI is highly advanced and single-mindedly
 devoted to protecting & enabling humanity.
 

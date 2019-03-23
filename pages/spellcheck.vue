@@ -33,6 +33,11 @@
       p.title {{ item.name }}
       markdown-file(:id="item.id" itemType="grenades")
 
+    // Programs
+    div(v-for="item in programs" v-bind:key="item.id")
+      p.title {{ item.name }}
+      markdown-file(:id="item.id" itemType="programs")
+
     // Spells
     // div(v-for="item in spells" v-bind:key="item.id")
       p.title {{ item.name }}
@@ -73,11 +78,12 @@
   import conditions from '~/static/data/conditions.json'
   import feats from '~/static/data/feats.json'
   import grenades from '~/static/data/grenades.json'
+  import programs from '~/static/data/programs.json'
+  import spells from '~/static/data/spells.json'
   import tools from '~/static/data/tools.json'
   import weaponMods from '~/static/data/weapon_mods.json'
   import weapons from '~/static/data/weapons.json'
   import vehicles from '~/static/data/vehicles.json'
-  import spells from '~/static/data/spells.json'
 
   import classFeature from '~/components/class/ClassFeature.vue'
   import vehicleInfo from '~/components/vehicle/VehicleInfo.vue'
@@ -93,6 +99,7 @@
         conditions,
         feats,
         grenades,
+        programs,
         spells,
         tools,
         weaponMods,
