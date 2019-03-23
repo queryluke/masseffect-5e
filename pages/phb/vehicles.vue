@@ -3,7 +3,7 @@
     h2.display-1.hidden-sm-and-down Vehicles
     div.text-md-right
       v-btn(to="/phb/rules/vehicles" nuxt outline color="secondary") Vehicle Rules
-      v-btn(href="https://goo.gl/forms/C5mi48VXnHw8wrYx1" target="_blank" outline color="secondary") Submit Your Own
+      v-btn(href="https://goo.gl/forms/C5mi48VXnHw8wrYx1" target="_blank" outline color="secondary") Submit Your Idea
     vehicle-list
 
 </template>

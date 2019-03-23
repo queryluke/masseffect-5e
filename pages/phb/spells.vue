@@ -3,6 +3,7 @@
 
     div.text-md-right
       v-btn(to="/phb/rules/spellcasting" nuxt outline color="secondary") Spellcasting Rules
+      v-btn(href="https://goo.gl/forms/HYhp8prpwKfKqCP83" target="_blank" outline color="secondary") Submit Your Idea
 
     // Search functions for large screens
     div.mb-5.hidden-sm-and-down

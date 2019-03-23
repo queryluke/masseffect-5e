@@ -3,6 +3,7 @@
 
     div.text-md-right
       v-btn(to="/phb/rules/monsters" nuxt outline color="secondary") Monster Rules
+      v-btn(href="https://docs.google.com/spreadsheets/d/18AJJLaqv3vM-RS4HKF0khirPeXIpls1zrltJx22-6Lw/edit?usp=sharing" target="_blank" outline color="secondary") Submit Your Idea
 
     // Search functions for large screens
     div.mb-5.hidden-sm-and-down

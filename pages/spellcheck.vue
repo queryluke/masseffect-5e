@@ -34,7 +34,7 @@
       markdown-file(:id="item.id" itemType="grenades")
 
     // Programs
-    div(v-for="item in programs" v-bind:key="item.id")
+    // div(v-for="item in programs" v-bind:key="item.id")
       p.title {{ item.name }}
       markdown-file(:id="item.id" itemType="programs")
 
