@@ -35,11 +35,11 @@
     "id": "auto-gel"
   },
   {
-    "mechanic": "auto-stabalize",
-    "description": "Instantly stabalize when you drop below 0 hit points.",
+    "mechanic": "auto-stabilize",
+    "description": "Instantly stabilize when you drop below 0 hit points.",
     "amount": "1 per long rest",
     "cost": "35000",
-    "id": "auto-stabalize"
+    "id": "auto-stabilize"
   },
   {
     "mechanic": "avoidance",
@@ -231,11 +231,11 @@
     "id": "st-condition"
   },
   {
-    "mechanic": "stabalize",
-    "description": "Instantly stabalize a companion",
+    "mechanic": "stabilize",
+    "description": "Instantly stabilize a companion",
     "amount": "1 per long rest",
     "cost": "20000",
-    "id": "stabalize"
+    "id": "stabilize"
   },
   {
     "mechanic": "thermal clips",
