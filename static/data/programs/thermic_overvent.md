@@ -10,4 +10,4 @@ with a range of 240m. You can hurl them at one target or several. Make a ranged 
 the target takes 2d6 fire damage. When you make the attacks, make them with a modifier of +5 to the attack roll. The
 omni-tool then needs time to compensate and repair itself, rendering this program inoperative until the end of a long rest.
 
-__Single-use__: Once you use this program, it deletes itself from your omni-tool.
+__Unstable__: When you acquire this program, it can be used 1d6 times before the code becomes too unstable to use.
