@@ -40,10 +40,15 @@
       p {{ item.feature }}
 
     // Weapons
-    div(v-for="item in weapons" v-bind:key="item.id")
+    // div(v-for="item in weapons" v-bind:key="item.id")
       p.title {{ item.name }}
       p {{ item.notes }}
       p {{ item.tags }}
+
+    // Vehicles
+    div(v-for="item in vehicles" v-bind:key="item.id")
+      vehicle-info(:item="item")
+
 
 
 </template>
@@ -57,12 +62,14 @@
   import tools from '~/static/data/tools.json'
   import weaponMods from '~/static/data/weapon_mods.json'
   import weapons from '~/static/data/weapons.json'
+  import vehicles from '~/static/data/vehicles.json'
 
   import classFeature from '~/components/class/ClassFeature.vue'
+  import vehicleInfo from '~/components/vehicle/VehicleInfo.vue'
 
 
   export default {
-    components: {classFeature},
+    components: {classFeature, vehicleInfo},
     data () {
       return {
         armorMods,
@@ -72,7 +79,8 @@
         grenades,
         tools,
         weaponMods,
-        weapons
+        weapons,
+        vehicles
       }
     },
     head () {

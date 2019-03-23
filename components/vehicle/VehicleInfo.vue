@@ -35,7 +35,7 @@
           strong(v-if="system.type === 'combined'") Combined, #[em {{ system.systems.join(" / ") }}]:
           strong(v-else) {{ system.type }}:
           span.ml-1 {{ system.crew }} crew
-        li #[strong Cargo Capacity]: {{ item.cargo }} tonnes
+        li #[strong Cargo Capacity]: {{ item.cargo }} {{ item.cargo | pluralize('tonne') }}
     div(v-if="item.weapons").mb-2
       p.title Weapons
       ul.mb-2

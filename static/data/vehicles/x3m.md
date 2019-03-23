@@ -29,7 +29,7 @@ them reserved for the pilot. From either the forward left or right seat, a pilot
 through the use of a haptic adaptive interface. The canopy of the shuttle is divided into two sections - a central
 section which lifts up, and a clamshell door. The windows of the vehicle can be darkened for the privacy of the
 passengers. Due to the limited storage space, passengers are limited to what they can carry or store on their bodies.
-Rear of this compartment, there is the propulsive drive powered by a mass effect field.
+To the rear of this compartment, there is the propulsive drive powered by a mass effect field.
 
 X3Ms come in a variety of models. Some are smaller with only 1 or 2 seats like the Tess Auburn 2166 aircar. Models
 like the C-111 Skyline Shuttle are meant for public transportation and can carry up to 10 passengers. Some models
