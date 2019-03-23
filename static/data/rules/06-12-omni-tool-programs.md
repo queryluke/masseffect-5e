@@ -45,4 +45,10 @@ Omni-tool programs that don't require installation are single-use and cost a num
 Once used, the program is completely wiped. As with installed programs, attempts to recreate these pieces of code can be
 costly, even deadly.
 
+### Unstable Programs
+
+Unstable Programs are entirely experimental, therefore the number of times you can run the program varies widely. In some
+cases, unstable programs are single-use programs that are hacked for multiple uses. A GM can create an Unstable Program
+from a Single-Use program by assigning a die roll (d4, d6, etc) to the number of times the program can be used.
+
 <v-btn to="/phb/programs" color="primary">Omni-tool programs</v-btn>
