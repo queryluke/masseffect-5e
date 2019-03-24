@@ -38,5 +38,11 @@ GSHEETS = [
         url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTAQk1m0TSXGyCUqFXKlKQ-ZHQ7Z6J4FvTvUjWU5bQ1X_4aXXmZ3zOIEf971-TcMPiXocrmFL0Uu-3F/pub?gid=0&single=true&output=csv',
         id: 'name',
         camel: true
+    },
+    {
+        type: 'random_height_weight',
+        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSHgX2QcNPaQhi_hyAAdLpzJaR1N2oTARlcPNEh0ZBVIb14CtbAp4-6m4Io_lcaANiA0PKEsid9_Y7E/pub?output=csv',
+        id: 'race',
+        camel: true
     }
 ]

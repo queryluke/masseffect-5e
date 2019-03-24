@@ -47,6 +47,7 @@
   import WithoutMaintenance from './WithoutMaintenance.vue'
   import DisgruntledCrew from './DisgruntledCrew.vue'
   import GalaxyMap from './GalaxyMap.vue'
+  import RandomHeightWeight from './RandomHeightWeight.vue'
 
   export default {
     components: {
@@ -76,6 +77,7 @@
       WithoutMaintenance,
       DisgruntledCrew,
       GalaxyMap,
+      RandomHeightWeight,
       MarkdownContent
     },
     props: {
