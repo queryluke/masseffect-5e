@@ -18,7 +18,14 @@
           td(data-table-key="Mod Slots") 2 (3)
           td(data-table-key="Crafting") 24 hours & 10 omni-gel
         tr
-          td(data-table-key="Placement") Arms & Legs
+          td(data-table-key="Placement") Arms
+          td(data-table-key="Light") 2,000
+          td(data-table-key="Medium") 3,000
+          td(data-table-key="Heavy") 4,000
+          td(data-table-key="Mod Slots") 0 (2)
+          td(data-table-key="Crafting") 8 hours & 2 omni-gel
+        tr
+          td(data-table-key="Placement") Legs
           td(data-table-key="Light") 2,000
           td(data-table-key="Medium") 3,000
           td(data-table-key="Heavy") 4,000

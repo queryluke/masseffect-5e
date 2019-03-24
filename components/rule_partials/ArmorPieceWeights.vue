@@ -13,7 +13,12 @@
         td(data-table-key="Medium") 6
         td(data-table-key="Heavy") 10
       tr
-        td(data-table-key="Placement") Arms & Legs
+        td(data-table-key="Placement") Arms
+        td(data-table-key="Light") 1
+        td(data-table-key="Medium") 2
+        td(data-table-key="Heavy") 3
+      tr
+        td(data-table-key="Placement") Legs
         td(data-table-key="Light") 1
         td(data-table-key="Medium") 2
         td(data-table-key="Heavy") 3
