@@ -52,8 +52,8 @@ the following conditions on your turn:
 - Have full cover at the end of your turn
 
 Then, if you take no damage until the start of your next turn, your shields begin to regenerate and you gain shield
-points equal to your armor's regen stat. You continue to gain shield points equal to your regen stat until your shield
-points reach maximum capacity or you take any damage that would reduce its shield points.
+points equal to your armor's regen stat. You continue to gain shield points equal to your regen stat at the start of each
+of your turns. If you take damage or you reach your maximum shield point capacity, the regeneration ends.
 
 <v-alert :value="true" type="info">
 <p><strong>SHIELD REGENERATION EXAMPLE</strong></p>

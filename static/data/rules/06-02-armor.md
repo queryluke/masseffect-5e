@@ -14,7 +14,7 @@ __Armor Proficiency__. Just like 5th edition, anyone can put on armor. However, 
 know how to wear it effectively. Your class gives you proficiency with certain types of armor (light, medium, or heavy).
 If you are wearing 2 or more pieces of armor that you lack proficiency with, you have disadvantage on any ability check,
 saving throw, or Attack roll that involves Strength or Dexterity. If you are wearing 4 pieces of armor you lack
-proficiency with, you cannot cast Biotics or Tech and Combat powers.
+proficiency with, you cannot cast spells.
 
 __Armor Class (AC)__. Armor protects its wearer from attacks. The armor you wear determines your base Armor Class.
 
