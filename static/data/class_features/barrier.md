@@ -3,7 +3,9 @@ id: barrier
 name: Barrier
 ---
 As an action or bonus action, you create a biotic barrier around you that reduces incoming damage and fuels certain 
-biotic abilities. Upon activating, you gain barrier ticks equal to the maximum shown on your class progression table.
+biotic abilities. You gain barrier ticks equal to the Barrier Ticks column shown on your class progression table. You total
+barrier ticks cannot exceed the amount listed in the Barrier Ticks column of your class progression table, so when any barrier
+ticks gained in excess of this number are lost.
 
 Whenever you take damage while barrier is active, remove 1 barrier tick and reduce the damage by 1d8.
 
