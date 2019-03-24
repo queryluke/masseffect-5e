@@ -26,16 +26,16 @@
                       div {{ creator.title }}
                   v-card-text.pt-0
                     p {{ creator.desc }}
-    // Designers
+    // Pro Contributors
     section
       v-layout(column wrap align-center).my-5
         v-flex(xs12 sm8).my-3
           div.text-xs-center
-            h2.display-2.font-weight-light Designers
+            h2.display-2.font-weight-light Pro Contributors
         v-flex(xs12)
           v-container(grid-list-xl)
-            v-layout(row wrap)
-              v-flex(xs12 sm6 md3 d-flex v-for="designer in designers" v-bind:key="designer.name")
+            v-layout(row wrap justify-center)
+              v-flex(xs12 sm6 md4 d-flex v-for="designer in designers" v-bind:key="designer.name")
                 v-card.elevation-0.transparent
                   v-card-text.text-xs-center
                     v-avatar(size="92")
@@ -143,6 +143,13 @@
             desc: 'Dakota is working through the backlog of needed monsters and creating unique stat blocks for Mass Effect 5e,' +
             ' including some fun stat blocks from other Sci-fi classics like the Kath Hound from BioWare\'s Knights of the Old Republic.'+
             ' Keep your eyes on the Bestiary for all of the unique creations.'
+          },
+          {
+            name: 'RexThePig',
+            image: 'https://avatars2.githubusercontent.com/u/33875334?s=88&v=4',
+            desc: 'RTP has been a huge help in identifying gaps in the content, like creating a full list of all the possible' +
+            'monsters. RTP created the sheet that can be used with Kobold Club\'s encounter builder, the random height and weight table' +
+            'and provides through insight about all the version changes.'
           }
         ],
         contributors: [
@@ -178,11 +185,6 @@
             name: 'BLUEmusta',
             image: 'https://avatars3.githubusercontent.com/u/38446290?s=88&v=4',
             desc: 'Race & Vanguard improvements'
-          },
-          {
-            name: 'RexThePig',
-            image: 'https://avatars2.githubusercontent.com/u/33875334?s=88&v=4',
-            desc: 'Bestiary improvements & ideas'
           },
           {
             name: 'tioeduardo27',
@@ -227,6 +229,11 @@
           {
             name: 'Stephen W.',
             image: '/images/spells/tech.svg',
+            desc: 'Indoctrination ideas'
+          },
+          {
+            name: '/u/thestray',
+            image: '/images/spells/biotic.svg',
             desc: 'Indoctrination ideas'
           },
           {
