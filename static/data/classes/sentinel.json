@@ -398,7 +398,7 @@
       "features": [
         [
           "expertise",
-          "omni-shield"
+          "omni-shield_1"
         ],
         [
           "tech_aura_1"
@@ -408,7 +408,8 @@
           "sculpt_spells"
         ],
         [
-          "tech_aura_2"
+          "tech_aura_2",
+          "omni-shield_2"
         ],
         [
           "tech_aura_3"

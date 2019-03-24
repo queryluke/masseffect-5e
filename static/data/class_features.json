@@ -340,7 +340,11 @@
     "name": "Misdirection"
   },
   {
-    "id": "omni-shield",
+    "id": "omni-shield_1",
+    "name": "Omni-Shield"
+  },
+  {
+    "id": "omni-shield_2",
     "name": "Omni-Shield"
   },
   {
