@@ -382,7 +382,10 @@
       "psychometry"
     ],
     "age": "Protheans live between 300 and 400 years, reaching adulthood in their early teens.",
-    "raceType": "expanded"
+    "raceType": "expanded",
+    "variants": [
+      "awakened-collector"
+    ]
   },
   {
     "id": "quarian",

@@ -32,7 +32,7 @@
       },
       {
         "name": "Power Down",
-        "description": "When you have a creature hacked, you may use your action to attempt to shut it down. To do so, make and intelligence check contested by the hacked creatures intelligence. If you win the contest, the creature becomes incapacitated for 1 hour and the spell ends."
+        "description": "When you have a creature hacked, you may use your action to attempt to shut it down. To do so, make an Intelligence check contested by the hacked creature's Intelligence check. If you win the contest, the creature becomes incapacitated for 1 hour and the spell ends."
       }
     ]
   },
@@ -143,7 +143,7 @@
         "description": "Increase the aegis's hit points to 30."
       },
       {
-        "name": "Counter strike",
+        "name": "Counterstrike",
         "description": "If you cast Backlash as a reaction against a melee attack, gain an attack of opportunity against the attacking creature."
       }
     ]
@@ -220,7 +220,7 @@
       },
       {
         "name": "Heavy Lift",
-        "description": "Large creatures are effected. If you spend at least 4 barrier ticks, Huge creatures must make the saving throw."
+        "description": "Large creatures are affected. If you spend at least 4 barrier ticks, Huge creatures must make the saving throw."
       }
     ]
   },
@@ -330,7 +330,7 @@
     "advancementOptions": [
       {
         "name": "Improved Orbs",
-        "description": "You many expend 2 orbs to cast a spell using your highest available spell slot."
+        "description": "You may expend 2 orbs to cast a spell using your highest available spell slot."
       },
       {
         "name": "Retribution",
@@ -523,7 +523,7 @@
       },
       {
         "name": "Counterstrike",
-        "description": "You may cast catapult as a reaction when you see a creature within 30m of you casting a spell or making a weapon attack. If the object would strike a creature casting a spell, the creature automatically fails its Dexterity saving throw and must succeed on a Constitution saving throw or the spell fails and has no effect (DC 10 or half the damage done by catapult, whichever is higher). If object would strike a creature making a weapon attack, you impose disadvantage on the attack roll whether or not the creature fails its Dexterity saving throw."
+        "description": "You may cast catapult as a reaction when you see a creature within 30m of you casting a spell or making a weapon attack. If the object would strike a creature casting a spell, the creature automatically fails its Dexterity saving throw and must succeed on a Constitution saving throw or the spell fails and has no effect (DC 10 or half the damage done by catapult, whichever is higher). If an object would strike a creature making a weapon attack, you impose disadvantage on the attack roll whether or not the creature fails its Dexterity saving throw."
       }
     ]
   },
@@ -975,7 +975,7 @@
     "advancementOptions": [
       {
         "name": "Linked Current",
-        "description": "On a successful hit, you can designate yourself or an ally within range of the ability to direct a positive current to. Instead of gaining shield points, this current doubles a creature's waking speed for 1d4 rounds. Using this advanced tech skill more than once does not stack the speed boost."
+        "description": "On a successful hit, you can designate yourself or an ally within range of the ability to direct a positive current. Instead of gaining shield points, this current doubles a creature's waking speed for 1d4 rounds. Using this advanced tech skill more than once does not stack the speed boost."
       },
       {
         "name": "Improved Regen",
@@ -1195,7 +1195,7 @@
     ],
     "advancementOptions": [
       {
-        "name": "Multi Tap",
+        "name": "Multi-Tap",
         "description": "Guidance can be active on up to 3 different targets."
       },
       {
@@ -1277,7 +1277,7 @@
       },
       {
         "name": "Three-headed beast",
-        "description": "Your missile splits into three separate missile, each dealing 1d6 damage (2d6 at 5th level, 3d6 at 11th level and 4d6 at 17th level). You can direct the missiles at the same target or at different ones."
+        "description": "Your missile splits into three separate missiles, each dealing 1d6 damage (2d6 at 5th level, 3d6 at 11th level and 4d6 at 17th level). You can direct the missiles at the same target or at different ones."
       }
     ]
   },
@@ -1625,7 +1625,7 @@
       },
       {
         "name": "Half blast",
-        "description": "When you cast nova, it consumes one half of your remaining barrier ticks (rounded up), but deals damage as if you had used all of your remaining barrier ticks."
+        "description": "When you cast nova, it consumes half of your remaining barrier ticks (rounded up) but deals damage as if you had used all of your remaining barrier ticks."
       }
     ]
   },
@@ -1705,7 +1705,7 @@
       },
       {
         "name": "Cripple",
-        "description": "Creature's hit by Phase Disruptor have disadvantage on their next attack roll."
+        "description": "A creature hit by Phase Disruptor has disadvantage on its next attack roll."
       }
     ]
   },
@@ -1929,7 +1929,7 @@
       },
       {
         "name": "Shields",
-        "description": "The turret has 30 shield points (0 regen)."
+        "description": "The turret has 30 shield points (regen 0)."
       }
     ]
   },
@@ -2003,7 +2003,7 @@
     "advancementOptions": [
       {
         "name": "Controlled Shockwave",
-        "description": "The shockwave travels 16m. You may change the direct of the line every 4m."
+        "description": "The shockwave travels 16m. You may change the direction of the line every 4m."
       },
       {
         "name": "Improved Damage",
@@ -2197,7 +2197,7 @@
       },
       {
         "name": "Brittle Freeze",
-        "description": "A critical success on the Strength check completely shatters the affected creature's appendage. If legs, it falls prone and looses half its remaining hit points. If head, it immediately dies."
+        "description": "A critical success on the Strength check completely shatters the affected creature's appendage. If legs, it falls prone and loses half its remaining hit points. If head, it immediately dies."
       }
     ]
   },
@@ -2384,7 +2384,7 @@
     "advancementOptions": [
       {
         "name": "Area Scan",
-        "description": "Scan a 6m cube. Each creature within the cube must make the Charisma (Deception) check against your Wisdom (Insight). This feature only effects a single target, but you can choose one creature from the ones that failed the contested check."
+        "description": "Scan a 6m cube. Each creature within the cube must make the Charisma (Deception) check against your Wisdom (Insight). This feature only affects a single target, but you can choose one creature from the ones that failed the contested check."
       },
       {
         "name": "Telegraphed Attacks",
@@ -2426,7 +2426,7 @@
       },
       {
         "name": "Lasting Scan",
-        "description": "Becomes a concentration spell wit a duration of 1 minute."
+        "description": "Becomes a concentration spell with a duration of 1 minute."
       }
     ]
   },
