@@ -40,6 +40,11 @@
   "damageVulnerabilities": [],
   "features": [
     {
+      "name": "Barrier",
+      "recharge": null,
+      "description": "When the collector captain is dealt damage, if it has any barrier ticks remaining, remove one barrier tick and reduce the damage by 1d8."
+    },
+    {
       "name": "Pack Tactics",
       "recharge": null,
       "description": "The collector captain has advantage on an attack roll against a creature if at least one of the collector captain's allies is within 2m of the creature and the ally isn't incapacitated."

@@ -29,7 +29,7 @@
     }
   ],
   "alignment": "Neutral Evil",
-  "barrier": 8,
+  "barrier": "8",
   "conditionImmunities": [],
   "cr": "7",
   "damageImmunities": [],
@@ -49,7 +49,7 @@
     {
       "name": "Barrier",
       "recharge": "3/Day",
-      "description": "As an action or bonus action, the phantom gains 8 barrier ticks."
+      "description": "As an action or bonus action, the phantom gains 8 barrier ticks. When the phantom is dealt damage, if it has any barrier ticks remaining, remove one barrier tick and reduce the damage by 1d8."
     }
   ],
   "hp": {

@@ -169,6 +169,9 @@
           int: 'Intelligence',
           wis: 'Wisdom',
           cha: 'Charisma'
+        },
+        barrierFeature: {
+          name: 'Barrier'
         }
       }
     },

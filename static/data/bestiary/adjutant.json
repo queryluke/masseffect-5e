@@ -51,6 +51,11 @@
   "damageVulnerabilities": [],
   "features": [
     {
+      "name": "Barrier",
+      "recharge": null,
+      "description": "When the adjutant is dealt damage, if it has any barrier ticks remaining, remove one barrier tick and reduce the damage by 1d8."
+    },
+    {
       "name": "Grappler",
       "recharge": null,
       "description": "The adjutant has advantage on attack rolls against any creature grappled by it."
