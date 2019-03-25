@@ -25,7 +25,7 @@ advancementOptions:
   description: The DC of the Dexterity saving throw is increased to 18
 ---
 Activate a subroutine that temporarily vents weapon heat through your armor to improve thermal clip efficiency and
-weapon damage. Until the end of your turn, the weapon your currently holding gains Burst Fire, the heat cost for making
+weapon damage. Until the end of your turn, the weapon you're currently holding gains Burst Fire, the heat cost for making
 a Burst Fire attack is reduced by 1 heat, and you may make a Burst Fire attack as an Attack action.
 
 You must finish a short or long rest before using Turbocharge again.
