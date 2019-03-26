@@ -26,7 +26,7 @@ advancementOptions:
     abilities.
 - name: Power Down
   description: When you have a creature hacked, you may use your action to attempt to shut it down. To do so, make
-    and intelligence check contested by the hacked creatures intelligence. If you win the contest, the creature becomes
+    an Intelligence check contested by the hacked creature's Intelligence check. If you win the contest, the creature becomes
     incapacitated for 1 hour and the spell ends.
 ---
 Target a synthetic creature within 30m. It must succeed on an Intelligence saving throw or it becomes Hacked (it is considered

@@ -14,7 +14,7 @@ of cards or a board and tokens.
 __History__. Your mastery of a game includes knowledge of its history, as well as of important events it was connected
 to or prominent historical figures involved with it.
 
-__Insight__. Playing games with someone is a good way to gain understanding of their personality, granting you a better
+__Insight__. Playing games with someone is a good way to gain an understanding of their personality, granting you a better
 ability to discern their lies from their truths and read their mood.
 
 

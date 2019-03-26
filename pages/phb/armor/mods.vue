@@ -3,6 +3,7 @@
 
     div.text-md-right
       v-btn(to="/phb/rules/equipment#custom-armor" nuxt outline color="secondary") Armor Mod Rules
+      v-btn(href="https://goo.gl/forms/SJQUNWG5YkvBLjug1" target="_blank" outline color="secondary") Submit Your Idea
 
     // Search functions for large screens
     div.mb-5.hidden-sm-and-down

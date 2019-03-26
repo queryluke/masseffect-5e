@@ -34,7 +34,7 @@
           when figuring out the lowest potency amount.
         p.title Cost
         p.
-          Figuring out the cost is mostly guesswork. Low cost mechanics have minor combat applications, such as
+          Figuring out the cost is mostly guesswork. Low-cost mechanics have minor combat applications, such as
           additional carrying capacity or minor speed boosts. These range from 1,000 to 5,000 credits.
           Mods that increase survivability (shields, AC, resistances) or damage should range between 5,000 and 20,000 credits
         p.title Current Mechanic List
@@ -43,7 +43,7 @@
             tr.text-xs-left
               th Rule addition/exception
               th Potency
-              th Cost per Potency
+              th Cost
           tbody
             tr(v-for="(mechanic, index) in mechanics")
               td(data-table-key="Rule") {{ mechanic.description }}
@@ -54,16 +54,23 @@
       template(slot="text")
         p.
           Creating a custom armor mod simply requires combining a slot (head, chest, arms, or legs), one or more mechanics, and a potency for
-          each mechanic. Determine the cost of the mod by adding each mechanic cost (cost * potentcy)
+          each mechanic. Each potency is 2.5 times more expensive than it's previous level. If you have a potency of 1, the final cost equals the value
+          in the Cost column. If you have a potency of 2, the final cost equals the value in the Cost column times 2.5. If you
+          have a potency of 3, the final cost equals the value in the Cost column times 5.
         div.mx-3.pa-2.grey.lighten-2
           p.subheading Example: +10 shields, +1 AC
           ol.pl-3
             li Slot = Chest
-            li Mechanic 1 = +10 sheilds (2 potency * 10,000 credits) = 20,000 credtis
-            li Mechanic 2 = +1 AC (1 potency * 8,000 credits) = 8,000 credits
-            li Mod Cost = 28,000 credits
+            li Mechanic 1 = +10 sheilds (potency 2)
+            li Cost 1 = 10,000 * 2.5 = 25,000
+            li Mechanic 2 = +5 sheild regen (potency 1)
+            li Cost 2 = 8,000
+            li Mechanic 2 = +3 AC (potency 3)
+            li Cost 2 = 20,000 * 5 = 100,000
+            li Mod Cost = 133,000
         v-alert(type="info" value="true").mt-4.
-          When creating new mods, be mindful that their benefits can stack. You wouldn't want to create a +3 AC armor mod for the head, chest, arms, and legs &mdash; this would result in a player being able to attain +12 AC.
+          When creating new mods, be mindful that their benefits can stack. You wouldn't want to create a +3 AC armor mod
+          for the head, chest, arms, and legs &mdash; this would result in a player being able to attain +12 AC.
     rule-card
       span(slot="header") Creating Armor Sets
       template(slot="text")
@@ -74,14 +81,27 @@
         p.
           First, decide the type of armor (light, medium, or heavy) and which pieces it will contain.
           Then find the base cost by using the costs defined in the #[a(v-on:click="showGlobalDialog('armor-customization')") creating armor table].
-          Next, decide what mechanics (and their potency) you want to add to the armor. Calculate the total cost of all your mechanics, add it to the base cost of your armor, then reduce the amount by 15%.
+          Next, decide what mechanics (and their potency) you want to add to the armor. Calculate the total cost of all your mechanics, add it to the base cost of your armor piece.
+        p.
+          Next, you can decide if there are benefits for wearing multiple pieces of the armor. Benefits can be mechanics (with a potency)
+          or a unique mechanic. Calculate the total of the of all set bonuses and distribute that total evenly across the armor pieces.
+        p.
+          Finally, with all costs calculated, reduce the total amount of each armor piece by 15%.
         div.mx-3.pa-2.grey.lighten-2
           p.subheading Example:
-          ol.pl-3
-            li Medium Body Armor = 16,000 (Chest = 10,000, Arms = 3,000, Legs = 3,000)
-            li Mechanics = Resistance to Slashing, Bludgeoning, & Piercing (15,000 for slashing, 15,000 for bludgeoning, 30,000 for piercing)
-            li Subtotal = 76,000
-            li Total = 64,600 credits = 76,000 -  (76,000 * .15)
+          ol.pl-3.mt-2
+            li Set Piece 1 = Medium Body Armor = 16,000 (Chest = 10,000, Arms = 3,000, Legs = 3,000)
+            li Set Piece 1 Mechanics = AC +2 (as a mod, this costs 50,000)
+            li Set Piece 1 Subtotal = 66,000
+          ol.pl-3.mt-2
+            li Set Piece 2 = Medium Head = 5,000
+            li Set Piece 2 Mechanics = Darkvision, toggled as a #[em free] action (as a mod, 3,000, slight increase for free action)
+            li Set Piece 2 Subtotal = 8,000
+          ol.pl-3.mt-2
+            li Set Bonus (2 of 2): +10 Shields (as a mod, 25,000)
+            li Divide set bonus by number of pieces: 12,500
+            li Set Piece 1 Total = 12,500 + 66,000 - ((12,500 + 66,000) * 0.15) = 66,725
+            li Set Piece 1 Total = 12,500 + 8,000 - ((12,500 + 8,000) * 0.15) = 17,425
         v-alert(type="info" v-bind:value="true").mt-4.
           When creating armor sets, the cost is just a rule of thumb. If an armor set seems too expensive or cheap, raise or lower the cost to your needs.
 </template>

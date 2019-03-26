@@ -15,7 +15,7 @@ __Investigation__. Gain additional insight when investigating power sources and 
 __History__. Gain additional insight when recalling information about ancient or groundbreaking starship drives.
 
 __Repair Engine__.
-With 8 hours of work and the necessary materials you can patch a vehicle engine. The patched engine
+With 8 hours of work and the necessary materials, you can patch a vehicle engine. The patched engine
 can power the vehicle for 2 days worth of range. With 20 hours of work and the necessary materials, you can
 completely repair a vehicle engine to a working state.
 

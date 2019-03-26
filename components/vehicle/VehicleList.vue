@@ -9,7 +9,7 @@
             vehicle-info(:item="item").mt-2
           v-card-actions
             bookmark-button(:card="item" type="vehicle" v-bind:props="{flat: true}")
-    p.headline Starships
+    p.headline.mt-5 Starships
     v-expansion-panel.my-2
       v-expansion-panel-content(v-for="item in starships" v-bind:key="item.id")
         div(slot="header") {{ item.name }}

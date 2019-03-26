@@ -24,8 +24,8 @@ advancementOptions:
 - name: Improved Damage
   description: Increase the damage die to d12.
 - name: Half blast
-  description: When you cast nova, it consumes one half of your remaining barrier
-    ticks (rounded up), but deals damage as if you had used all of your remaining
+  description: When you cast nova, it consumes half of your remaining barrier
+    ticks (rounded up) but deals damage as if you had used all of your remaining
     barrier ticks.
 ---
 Transfer the energy of your barrier into a biotic explosion, consuming your remaining barrier ticks. Creatures within a

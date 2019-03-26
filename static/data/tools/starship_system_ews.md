@@ -13,7 +13,7 @@ __Electronics__. Gain additional insight when taking the Sabotage or Harden chec
 __Investigation__. Gain additional insight when recognizing or discovering malicious code within your starship system's network.
 
 __History__. You know a variety of techniques used in cyber warfare. Gain additional insight when recalling information
-about cyber security and and the outcomes of hacking starship systems. 
+about cybersecurity and the outcomes of hacking starship systems. 
 
 __Countermeasures__. With 8 hours of work, you can write custom algorithms that harden your starship against sabotage attacks.
 Increase the DC of the next Sabotage action against your starship by 5.

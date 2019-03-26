@@ -17,7 +17,7 @@
       ul.list-unstyled.pl-0
         li #[strong Armor Class] {{ stats.ac }}
         li #[strong Hit Points] {{ hitPoints }}
-        li(v-if="stats.sp") #[strong Shield Points] {{ stats.sp.shields }} ({{ stats.sp.regen }} regen)
+        li(v-if="stats.sp") #[strong Shield Points] {{ stats.sp.shields }} (regen {{ regen }})
         li(v-if="stats.barrier") #[strong Barrier] {{ stats.barrier }} {{ stats.barrier | pluralize('tick') }}
         li #[strong Speed] {{ speed }}
 
@@ -157,10 +157,10 @@
           performance: 'cha',
           persuasion: 'cha',
           science: 'int',
-          'sleight of hand': 'dex',
+          'sleight_of_hand': 'dex',
           stealth: 'dex',
           survival: 'wis',
-          'vehicle handling': 'dex'
+          'vehicle_handling': 'dex'
         },
         abilityMap: {
           str: 'Strength',
@@ -169,6 +169,9 @@
           int: 'Intelligence',
           wis: 'Wisdom',
           cha: 'Charisma'
+        },
+        barrierFeature: {
+          name: 'Barrier'
         }
       }
     },
@@ -249,6 +252,15 @@
       spellHit () {
         if (this.stats.spellcasting) {
           return this.stats.profBonus + this.abilityScoreBonus(this.stats.abilityScores[this.stats.spellcasting.mod])
+        }
+        return 0
+      },
+      regen () {
+        if (this.stats.sp && this.stats.sp.regen) {
+          const regen = parseInt(this.stats.sp.regen, 10)
+          if (regen > 0) {
+            return regen
+          }
         }
         return 0
       }

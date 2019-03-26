@@ -24,7 +24,7 @@ availableClasses:
 - vanguard
 advancementOptions:
 - name: Controlled Shockwave
-  description: The shockwave travels 16m. You may change the direct of the line every
+  description: The shockwave travels 16m. You may change the direction of the line every
     4m.
 - name: Improved Damage
   description: Increase damage die type to d10

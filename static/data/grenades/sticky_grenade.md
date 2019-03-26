@@ -11,6 +11,8 @@ a DC 13 Dexterity saving throw. On a failed save, a creature takes 3d6 thunder d
 successful one.
 
 With a sticky grenade, you may choose to make a melee weapon attack on a target creature within 2m instead or a ranged
-weapon attack on a target creature within 10m instead. Add you Dexterity modifier to the attack. Do not add your
+weapon attack on a target creature within 10m instead. Add your Dexterity modifier to the attack. Do not add your
 proficiency bonus to the attack unless you have the Grenadier feat. On a hit, the grenade hits and sticks to the target,
 and when it explodes, the target automatically fails its saving throw. On a miss, the grenade lands in the creature's square.
+
+__At higher marks__: When you use this grenade at Mark II or higher, the damage increases by 1d6 for each mark above the first.

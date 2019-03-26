@@ -59,9 +59,11 @@ Fuel in Mass Effect 5e is an abstract concept. Most ships can mine and create fu
 the Galaxy. Fuel is represented by the __range__ of the ship (how far it can travel in 24 hours). If you would like to keep track
 of fuel, the GM can use the following Variant: Fuel rules.
 
-You "tank" capacity is equal to your ship's range multiplied by 3. Each time you expend 1 range, you also expend 1 charge from your
+Your "tank" capacity is equal to your ship's range multiplied by 3. Each time you expend 1 range, you also expend 1 charge from your
 tank. You can either spend a long rest on an asteroid or planet mining fuel or you can refuel at a spaceport. To mine
 fuel use the Variant: Mining rules above. On a success, roll a d8 and regain that many charges.
 
 Alternatively, you can pay to refuel at a spaceport. The average rate is 1,000 credits per charge in your tank, but this
 might increase or decrease based on the port.
+
+<v-btn to="/phb/vehicles" color="primary">Vehicle List</v-btn>

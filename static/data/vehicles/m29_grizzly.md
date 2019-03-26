@@ -30,5 +30,4 @@ cost: military
 image: https://vignette.wikia.nocookie.net/masseffect/images/e/e5/M-29_Grizzly_on_Feros.png/revision/latest/scale-to-width-down/640?cb=20100831073900
 ---
 
-The M-080 is a large infantry fighting vehicle, or IFV. This class of vehicle is equipped with a turret with two
-coaxial barrels: the machine gun and main cannon. Like the M29 Grizzly and the M35 Mako, the M-080 is equipped with six wheels.
+The M29 "Grizzly" Infantry Fighting Vehicle (IFV) was the standard "battle taxi" of Systems Alliance Marines for nearly thirty years.

@@ -5,12 +5,12 @@ type: starship
 cost: null
 ---
 
-Proficiency with a starship's navigation involves plotting courses between cluster and solar systems.
+Proficiency with a starship's navigation involves plotting courses between clusters and solar systems.
 
 __Investigation__. You gain additional insight when reviewing flight patterns and ship's logs.
 
 __Survival__. When your ship is on its last leg, you have a better chance of guiding it to safety. Gain additional
-insight when try to find safe harbor or safe planets to land.
+insight when you try to find safe harbor or safe planets to land.
 
 __Science__. Your experience navigating the galaxy gives you additional insight when taking the Flee action during 
 starship combat.

@@ -1,10 +1,12 @@
 <template lang="pug">
-  v-data-table(v-bind:headers="headers" v-bind:items="items" hide-actions)
-    template(slot="items" slot-scope="props")
-      td(data-table-key="headers[0].short") {{ props.item.condition }}
-      td(data-table-key="headers[1].short") {{ props.item.dex }}
-      td(data-table-key="headers[2].short") {{ props.item.str }}
-      td(data-table-key="headers[3].short") {{ props.item.stealth }}
+  div
+    v-data-table(v-bind:headers="headers" v-bind:items="items" hide-actions)
+      template(slot="items" slot-scope="props")
+        td(data-table-key="headers[0].short") {{ props.item.condition }}
+        td(data-table-key="headers[1].short") {{ props.item.dex }}
+        td(data-table-key="headers[2].short") {{ props.item.str }}
+        td(data-table-key="headers[3].short") {{ props.item.stealth }}
+    v-alert(value="true" type="info") #[strong Body Armor] is considered three pieces (arms, chest, and legs)
 </template>
 
 <script>
@@ -19,15 +21,39 @@
         ],
         items: [
           {
-            condition: '...one or more pieces of Heavy armor',
+            condition: '...three or more pieces of Heavy armor',
             dex: 'none',
             str: '16',
             stealth: 'disadvantage'
           },
           {
-            condition: '...one or more pieces of Medium armor',
+            condition: '...two pieces of Heavy armor',
+            dex: 'none',
+            str: '15',
+            stealth: 'disadvantage'
+          },
+          {
+            condition: '...one piece of Heavy armor',
+            dex: 'none',
+            str: '13',
+            stealth: 'disadvantage'
+          },
+          {
+            condition: '...three or more pieces of Medium armor',
+            dex: 'Max +2 bonus from Dexterity modifier',
+            str: '13',
+            stealth: 'disadvantage'
+          },
+          {
+            condition: '...two pieces of Medium armor',
             dex: 'Max +2 bonus from Dexterity modifier',
             str: '12',
+            stealth: '-'
+          },
+          {
+            condition: '...one piece of Medium armor',
+            dex: 'Max +2 bonus from Dexterity modifier',
+            str: '-',
             stealth: '-'
           },
           {

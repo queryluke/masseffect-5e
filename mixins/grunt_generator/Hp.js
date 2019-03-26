@@ -4,10 +4,10 @@ export const Hp = {
   data () {
     return {
       baseShields: {
-        0: {shields: [null, null, 5, 5, 10], regen: [null, null, 5, 5, 10]},
-        1: {shields: [5, 5, 10, 10, 15], regen: [5, 5, 5, 10, 10]},
-        2: {shields: [5, 10, 15, 20, 25], regen: [5, 10, 10, 10, 15]},
-        3: {shields: [10, 15, 20, 20, 30], regen: [10, 10, 15, 15, 15]}
+        0: {shields: [0, 0, 5, 5, 10], regen: [0, 0, 0, 5, 5]},
+        1: {shields: [5, 5, 5, 10, 10], regen: [0, 0, 5, 5, 10]},
+        2: {shields: [5, 10, 15, 20, 20], regen: [5, 5, 10, 10, 10]},
+        3: {shields: [10, 15, 20, 25, 30], regen: [10, 10, 15, 15, 15]}
       }
     }
   },
@@ -19,10 +19,11 @@ export const Hp = {
       const baseShields = this.baseShields[this.crMetaLevel]
       const shields = this.randomValue(baseShields.shields)
       if (shields) {
-        const regen = this.randomValue(baseShields.regen.filter(r => r && r <= shields))
+        const regen = this.randomValue(baseShields.regen.filter(r => r <= shields))
         this.grunt.sp = {shields, regen}
         this.adjustments.hp += (shields + regen)
       }
+
       // **********************************
       // What is the offensive CR?
       // ***
@@ -83,12 +84,13 @@ export const Hp = {
       // Con Modifier
       let conMod = this.abilityScoreBonus(this.grunt.abilityScores.con)
       if (this.race.id === 'turian') {
-        conMod += 2
+        conMod += 1
       }
       // Calculation
       let numDice = 0
       let average = 0
-      const minHp = hpCr.hpMin - this.adjustments.hp
+      const hpDiff = hpCr.hpMin - this.adjustments.hp
+      const minHp = hpDiff < 0 ? hpCr.hpMin : hpDiff
       while (average < minHp) {
         numDice++
         average = ((numDice * averageRoll) + (numDice * conMod)) * multiplicativeMod

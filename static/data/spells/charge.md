@@ -26,7 +26,7 @@ advancementOptions:
 - name: Area Charge
   description: Each creature within 4m of the target must make the Dexterity saving throw.
 ---
-Choose a creature or object within range use the target's mass to pull yourself to its location with incredible force 
+Choose a creature or object within range and use the target's mass to pull yourself to its location with incredible force 
 (this movement does not provoke opportunity attacks). The target must make a Dexterity saving throw.
 On a failed save the target takes 1d10 force damage and becomes <condition id="prone">.
 

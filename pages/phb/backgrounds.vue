@@ -1,11 +1,13 @@
 <template lang="pug">
   v-container
     h2.display-1.hidden-sm-and-down Backgrounds
+
+    div.text-md-right
+      v-btn(href="https://goo.gl/forms/NYusnuMF3vJBX2FR2" target="_blank" outline color="secondary") Submit Your Idea
+
     p.
       The sample backgrounds presented here provide both concrete benefits (features, proficiencies, and languages) and
       roleplaying suggestions.
-    p.
-      If you create new backgrounds for your campaign, #[nuxt-link(to="/contributing") let us know] so we can include them and give you credit!
     v-expansion-panel.mb-2
       v-expansion-panel-content(v-for="item in backgrounds" v-bind:key="item.id").large-panel
         div(slot="header") {{ item.name }}

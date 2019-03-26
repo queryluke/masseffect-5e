@@ -6,7 +6,7 @@ new: true
 ---
 
 Traveling the galaxy has exposed you to violence and cruelty, been deceived and seen almost every trick in the book. Not 
-much can make you flinch any more. You gain the following benefits and features:
+much can make you flinch anymore. You gain the following benefits and features:
 
 - You have advantage on all saving throws made to resist becoming charmed, frightened, and stunned.
 - While charmed, frightened, or stunned, you can use a bonus action on your turn to repeat the saving throw to end the 

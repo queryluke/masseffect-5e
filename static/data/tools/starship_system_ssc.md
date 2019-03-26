@@ -18,7 +18,7 @@ __Science__. Gain additional insight when scanning unknown celestial objects for
 
 Activity | DC
 --- | ---
-Recognize an sensor anomaly | varies
+Recognize a sensor anomaly | varies
 Boost communications signal | 15
 Scramble a signal | 20
 Improvise a communications array | 25

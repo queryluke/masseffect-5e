@@ -34,7 +34,7 @@ advancementOptions:
     a creature casting a spell, the creature automatically fails its Dexterity saving
     throw and must succeed on a Constitution saving throw or the spell fails and has
     no effect (DC 10 or half the damage done by catapult, whichever is higher). If
-    object would strike a creature making a weapon attack, you impose disadvantage
+    an object would strike a creature making a weapon attack, you impose disadvantage
     on the attack roll whether or not the creature fails its Dexterity saving throw.
 ---
 Choose one object weighing 1 to 10 kilos (about 2 to 20 lbs.) within range that isn't being worn or carried. The object

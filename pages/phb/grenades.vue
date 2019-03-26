@@ -3,6 +3,7 @@
 
     div.text-md-right
       v-btn(to="/phb/rules/equipment#grenades" nuxt outline color="secondary") Grenade Rules
+      v-btn(href="https://goo.gl/forms/OP9kypSVFxDT8C5l2" target="_blank" outline color="secondary") Submit Your Idea
 
     div.mb-5.hidden-sm-and-down
       h2.display-1 Grenades

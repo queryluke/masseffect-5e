@@ -23,7 +23,7 @@ advancementOptions:
   description: The turret's mass accelerator machinegun deals 7 (2d6) piercing and
     7 (2d6) cold damage. Instead of flamethrower, the turret can innately cast cryo beam 5 times per day.
 - name: Shields
-  description: The turret has 30 shield points (0 regen).
+  description: The turret has 30 shield points (regen 0).
 ---
 Construct a sentry turret in an unoccupied space within 2m. You have complete control over the turret. Any hacking
 attempts on the turret are rolled against your Intelligence, not the turret's.

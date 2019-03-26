@@ -24,7 +24,7 @@ availableClasses:
 - vanguard
 advancementOptions:
 - name: Improved Orbs
-  description: You many expend 2 orbs to cast a spell using your highest available spell slot.
+  description: You may expend 2 orbs to cast a spell using your highest available spell slot.
 - name: Retribution
   description: As a reaction to taking damage, you may expend all of your remaining biotic orbs. For each expended orb,
     make a ranged spell attack on a target you can see within range. You can direct all attacks to hit one creature or several.

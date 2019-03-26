@@ -1,5 +1,5 @@
 <template lang="pug">
-  span.condition
+  span.inline-dialog
     a(@click="dialog = true")
       span(v-if="id === 'primed'" v-bind:class="primeTypeCss[sub]") {{ id }} ({{ sub }})
       span(v-else) {{ id }}
@@ -40,9 +40,3 @@
     }
   }
 </script>
-
-<style>
-  .condition .v-dialog__container {
-    display: inline !important;
-  }
-</style>

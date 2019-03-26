@@ -34,4 +34,4 @@ throw (DC 8 + proficiency bonus + DEX modifier) or are knocked <condition id="pr
 
 The damage increases by 1d8 when you reach the 5th level (2d8), 11th level (3d8) and 17th level (4d8).
 
-You have 3 charges of Concussive Shot. You regain all of your charges on a long rest.
+You have 3 charges of Concussive Shot. You regain all of your charges when you finish a long rest.

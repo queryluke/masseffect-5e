@@ -4,7 +4,7 @@ name: Experimental_Barrier_Generator.exe
 rarity: rare
 installation: false
 ---
-Convert 10 omni-gel into 1d4+4 black beads that measure 2 centimeter in diameter but weigh nothing. These beads are held
+Convert 10 omni-gel into 1d4+4 black beads that measure 2 centimeters in diameter but weigh nothing. These beads are held
 in place on the user's wrist by the omni-tool's hard light field.
 
 As an action, you can launch a bead at a target location within 30m. The bead explodes on impact and is destroyed. Each

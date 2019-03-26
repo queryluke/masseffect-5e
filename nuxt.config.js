@@ -146,7 +146,8 @@ module.exports = {
   */
   modules: [
     '@nuxtjs/google-analytics',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/sitemap'
   ],
   'google-analytics': {
     id: 'UA-83740704-2',
@@ -195,6 +196,13 @@ module.exports = {
         })
       })
     }
+  },
+  sitemap: {
+    hostname: 'https://n7.world',
+    exclude: [
+      '/static/data'
+    ],
+    routes: routes
   },
 
   /*

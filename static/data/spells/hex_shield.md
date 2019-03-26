@@ -29,4 +29,4 @@ with 5 AC and 50 shield points.
 
 As long as the Hex Shield has shield points, it provides full cover to creatures behind it.
 
-Hex shield regains all shield points on a long rest.
+Hex shield regains all shield points when you finish a long rest.

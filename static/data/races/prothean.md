@@ -25,6 +25,8 @@ traits:
   - psychometry
 age: Protheans live between 300 and 400 years, reaching adulthood in their early teens.
 raceType: expanded
+variants:
+  - awakened-collector
 ---
 
 The Protheans are an ancient alien race which mysteriously vanished over 50,000 years ago. The Protheans arose from a 

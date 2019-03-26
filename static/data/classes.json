@@ -924,7 +924,7 @@
         "sneakAttack": "1d6",
         "features": [
           "cunning_action",
-          "combat_powers"
+          "combat_power"
         ],
         "tacticalCloakUses": 2,
         "cantrips": 1,
@@ -1645,7 +1645,7 @@
         "features": [
           [
             "expertise",
-            "omni-shield"
+            "omni-shield_1"
           ],
           [
             "tech_aura_1"
@@ -1655,7 +1655,8 @@
             "sculpt_spells"
           ],
           [
-            "tech_aura_2"
+            "tech_aura_2",
+            "omni-shield_2"
           ],
           [
             "tech_aura_3"

@@ -1,31 +1,10 @@
 [
   {
-    "mechanic": "sp",
-    "description": "Additional shield points (regen remains base 5)",
-    "amount": "5",
-    "cost": "10000",
-    "id": "sp"
-  },
-  {
-    "mechanic": "shield regen",
-    "description": "Increase shield regen",
-    "amount": "5",
-    "cost": "8000",
-    "id": "shield_regen"
-  },
-  {
-    "mechanic": "attack bonus",
-    "description": "+X to melee weapon attack and damage rolls",
+    "mechanic": "ac",
+    "description": "Increase AC",
     "amount": "1",
-    "cost": "12000",
-    "id": "attack_bonus"
-  },
-  {
-    "mechanic": "damage reroll",
-    "description": "reroll any 1 on your [biotic, tech, or melee] damage rolls",
-    "amount": "1 damage type",
     "cost": "20000",
-    "id": "damage_reroll"
+    "id": "ac"
   },
   {
     "mechanic": "adv damage reroll",
@@ -35,88 +14,18 @@
     "id": "adv_damage_reroll"
   },
   {
-    "mechanic": "thermal clips",
-    "description": "Increase thermal clip capacity",
-    "amount": "4",
-    "cost": "1000",
-    "id": "thermal_clips"
-  },
-  {
-    "mechanic": "grenades",
-    "description": "Increase grenade capacity",
-    "amount": "2",
-    "cost": "3000",
-    "id": "grenades"
-  },
-  {
-    "mechanic": "medi-gel",
-    "description": "Increase Medi-gel capacity",
-    "amount": "2",
-    "cost": "2000",
-    "id": "medi-gel"
-  },
-  {
-    "mechanic": "hw",
-    "description": "Increase Heavy Weapon charges",
-    "amount": "1",
-    "cost": "5000",
-    "id": "hw"
-  },
-  {
-    "mechanic": "weapons",
-    "description": "Additional weapon slot",
-    "amount": "1 for small weapons, 2 for large weapons",
-    "cost": "3000",
-    "id": "weapons"
-  },
-  {
-    "mechanic": "immnunity",
-    "description": "Damage or Condition Immunity",
-    "amount": "1 damage type or condition (cannot be piercing, slashing, or bludgeoning)",
-    "cost": "25000",
-    "id": "immnunity"
-  },
-  {
-    "mechanic": "resistance",
-    "description": "Resistance to a damage type",
-    "amount": "1 damage type (double the cost for piercing)",
+    "mechanic": "advantage skill",
+    "description": "Advantage on skill check",
+    "amount": "1 skill type",
     "cost": "15000",
-    "id": "resistance"
+    "id": "advantage_skill"
   },
   {
-    "mechanic": "ac",
-    "description": "Increase AC",
+    "mechanic": "attack bonus",
+    "description": "+X to melee weapon attack and damage rolls",
     "amount": "1",
-    "cost": "20000",
-    "id": "ac"
-  },
-  {
-    "mechanic": "stabalize",
-    "description": "Instantly stabalize a companion",
-    "amount": "1 per long rest",
-    "cost": "20000",
-    "id": "stabalize"
-  },
-  {
-    "mechanic": "auto-stabalize",
-    "description": "Instantly stabalize when you drop below 0 hit points.",
-    "amount": "1 per long rest",
-    "cost": "35000",
-    "id": "auto-stabalize"
-  },
-  {
-    "mechanic": "speed",
-    "description": "Increase speed",
-    "amount": "2m",
-    "cost": "3000",
-    "id": "speed"
-  },
-  {
-    "mechanic": "st",
-    "description": "Advantage on saving throws",
-    "amount": "1 ability type",
-    "cost": "30000",
-    "id": "st"
+    "cost": "12000",
+    "id": "attack_bonus"
   },
   {
     "mechanic": "auto-gel",
@@ -126,6 +35,69 @@
     "id": "auto-gel"
   },
   {
+    "mechanic": "auto-stabilize",
+    "description": "Instantly stabilize when you drop below 0 hit points.",
+    "amount": "1 per long rest",
+    "cost": "35000",
+    "id": "auto-stabilize"
+  },
+  {
+    "mechanic": "avoidance",
+    "description": "When subjected to an effect that lets you make a saving throw to take half damage, take no damage on a success.",
+    "amount": "1 saving throw type",
+    "cost": "45000",
+    "id": "avoidance"
+  },
+  {
+    "mechanic": "bonus ability",
+    "description": "Increases one ability score by 1-5",
+    "amount": "5",
+    "cost": "33000",
+    "id": "bonus_ability"
+  },
+  {
+    "mechanic": "condition-immunity",
+    "description": "Condition Immunity",
+    "amount": "1 condition",
+    "cost": "35000",
+    "id": "condition-immunity"
+  },
+  {
+    "mechanic": "damage reroll",
+    "description": "reroll any 1 on your [biotic, tech, or melee] damage rolls",
+    "amount": "1 damage type",
+    "cost": "20000",
+    "id": "damage_reroll"
+  },
+  {
+    "mechanic": "damage-immunity",
+    "description": "Damage immunity",
+    "amount": "1 damage type",
+    "cost": "55000",
+    "id": "damage-immunity"
+  },
+  {
+    "mechanic": "darkvision",
+    "description": "Darkvision up to certain distance. Can be toggled as bonus action.",
+    "amount": "20m",
+    "cost": "2000",
+    "id": "darkvision"
+  },
+  {
+    "mechanic": "grenades",
+    "description": "Increase grenade capacity",
+    "amount": "2",
+    "cost": "3000",
+    "id": "grenades"
+  },
+  {
+    "mechanic": "hw",
+    "description": "Increase Heavy Weapon charges",
+    "amount": "1",
+    "cost": "5000",
+    "id": "hw"
+  },
+  {
     "mechanic": "improved medi-gel",
     "description": "Additional hit die when expending medi-gel",
     "amount": "1 die",
@@ -133,17 +105,157 @@
     "id": "improved_medi-gel"
   },
   {
+    "mechanic": "infrared vision",
+    "description": "Infrared vision up to certain distance. Can be toggled as bonus action.",
+    "amount": "20m",
+    "cost": "4000",
+    "id": "infrared_vision"
+  },
+  {
+    "mechanic": "medi-gel",
+    "description": "Increase Medi-gel capacity",
+    "amount": "2",
+    "cost": "2000",
+    "id": "medi-gel"
+  },
+  {
+    "mechanic": "null critical",
+    "description": "While you're wearing it, any critical hit against you becomes a normal hit.",
+    "amount": "-",
+    "cost": "20000",
+    "id": "null_critical"
+  },
+  {
+    "mechanic": "null-difficult terrain",
+    "description": "Ignore movement penalties of difficult terrain.",
+    "amount": "-",
+    "cost": "10000",
+    "id": "null-difficult_terrain"
+  },
+  {
+    "mechanic": "null-movement",
+    "description": "If an effect moves you against your will along the ground, you can use your reaction to reduce the distance you are moved by up to 10 feet.",
+    "amount": "-",
+    "cost": "5000",
+    "id": "null-movement"
+  },
+  {
+    "mechanic": "null-proficiency",
+    "description": "Wearing this armor does not require the character to be proficient with the armor type (i.e., anyone can wear it).",
+    "amount": "1x Medium, 2.5x Heavy",
+    "cost": "27000",
+    "id": "null-proficiency"
+  },
+  {
+    "mechanic": "resistance-piercing",
+    "description": "Resistance to piercing damage",
+    "amount": "-",
+    "cost": "50000",
+    "id": "resistance-piercing"
+  },
+  {
+    "mechanic": "resistance-spell",
+    "description": "Resistance to cold, fire, force, lightning, or necrotic damage",
+    "amount": "1 damage type",
+    "cost": "20000",
+    "id": "resistance-spell"
+  },
+  {
+    "mechanic": "resistance-uncommon",
+    "description": "Resistance to acid, poison, psychic, radiant, or thunder",
+    "amount": "1 damage type",
+    "cost": "15000",
+    "id": "resistance-uncommon"
+  },
+  {
+    "mechanic": "resistance-weapon",
+    "description": "Resistance to bludgeoning or slashing",
+    "amount": "1 damage type",
+    "cost": "25000",
+    "id": "resistance-weapon"
+  },
+  {
+    "mechanic": "shield jumpstart",
+    "description": "Once per short rest, as a reaction to taking damage, you may jumpstart your shield regen and immediately gain shield points equal to your regen amount.",
+    "amount": "-",
+    "cost": "15000",
+    "id": "shield_jumpstart"
+  },
+  {
+    "mechanic": "shield regen",
+    "description": "Increase shield regen",
+    "amount": "5",
+    "cost": "8000",
+    "id": "shield_regen"
+  },
+  {
+    "mechanic": "sp",
+    "description": "Additional shield points (regen remains base 5)",
+    "amount": "5",
+    "cost": "10000",
+    "id": "sp"
+  },
+  {
+    "mechanic": "speed",
+    "description": "Increase speed",
+    "amount": "2m",
+    "cost": "3000",
+    "id": "speed"
+  },
+  {
     "mechanic": "spell bonus",
     "description": "you gain a +X bonus to spell attack rolls and to the saving throw DCs of your spells.",
     "amount": "1",
-    "cost": "15000",
+    "cost": "20000",
     "id": "spell_bonus"
   },
   {
     "mechanic": "spell regen",
-    "description": "You can regain 1 1st-level spell slot or one tech point as an action. You can’t use this property again until you finish a long rest.",
-    "amount": "-",
+    "description": "You regain 1d4 worth of spell slots or tech points on a short rest.",
+    "amount": "1 die",
     "cost": "30000",
     "id": "spell_regen"
+  },
+  {
+    "mechanic": "st",
+    "description": "Advantage on saving throws",
+    "amount": "1 saving throw type",
+    "cost": "35000",
+    "id": "st"
+  },
+  {
+    "mechanic": "st-condition",
+    "description": "Advantage on a saving throw against one condition",
+    "amount": "1 condition",
+    "cost": "15000",
+    "id": "st-condition"
+  },
+  {
+    "mechanic": "stabilize",
+    "description": "Instantly stabilize a companion",
+    "amount": "1 per long rest",
+    "cost": "20000",
+    "id": "stabilize"
+  },
+  {
+    "mechanic": "thermal clips",
+    "description": "Increase thermal clip capacity",
+    "amount": "4",
+    "cost": "1000",
+    "id": "thermal_clips"
+  },
+  {
+    "mechanic": "truesight",
+    "description": "Truesight up to certain distance. Can be toggled as bonus action.",
+    "amount": "20m",
+    "cost": "12000",
+    "id": "truesight"
+  },
+  {
+    "mechanic": "weapons",
+    "description": "Additional weapon slot",
+    "amount": "1 for small weapons, 2 for large weapons",
+    "cost": "3000",
+    "id": "weapons"
   }
 ]

@@ -28,7 +28,7 @@ advancementOptions:
   description: As a bonus action, you can either move the wall up to 6m in any direction, rotate the wall up to 180 degrees,
     or reshape the wall within the parameters listed above.
 ---
-With an immense positive charge, create an invisible mass effect field that acts like a wall at a point you choose within
+With an immense positive charge, create an invisible mass effect field that acts as a wall at a point you choose within
 range. The wall appears in any orientation you choose, as a horizontal or vertical barrier or at an angle. It can be free
 floating or resting on a solid surface. You can form it into a hemispherical dome or a sphere with a radius of up to 4m,
 or you can shape a flat surface made up of ten 2m by 2m panels. Each panel must be contiguous with another panel. In any

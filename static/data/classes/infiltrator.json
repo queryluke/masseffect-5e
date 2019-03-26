@@ -104,7 +104,7 @@
       "sneakAttack": "1d6",
       "features": [
         "cunning_action",
-        "combat_powers"
+        "combat_power"
       ],
       "tacticalCloakUses": 2,
       "cantrips": 1,

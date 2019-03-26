@@ -113,7 +113,7 @@
   },
   {
     "id": "hair-trigger",
-    "name": "Hair Trigger",
+    "name": "Hair-Trigger",
     "note": "+1 Dexterity, mastery of Double Tap weapons",
     "prerequisite": "Dexterity 13 or higher",
     "new": true

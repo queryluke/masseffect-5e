@@ -26,7 +26,7 @@ advancementOptions:
 - name: Improved Damage
   description: Increase the damage die type to d6.
 - name: Cripple
-  description: Creature's hit by Phase Disruptor have disadvantage on their next attack
+  description: A creature hit by Phase Disruptor has disadvantage on its next attack
     roll.
 ---
 You focus the energy of your barrier into a high-powered beam at a target creature or object within range. Remove 1

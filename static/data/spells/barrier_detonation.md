@@ -25,7 +25,7 @@ advancementOptions:
   description: You may choose the shape of the detonation into a cone, cube, or cylinder. You may also shape it into a line,
     if you do, the line is twice as long as the sphere's radius and 2m wide.
 - name: Heavy Lift
-  description: Large creatures are effected. If you spend at least 4 barrier ticks, Huge creatures must make the saving throw.
+  description: Large creatures are affected. If you spend at least 4 barrier ticks, Huge creatures must make the saving throw.
 ---
 Expend all of your remaining barrier ticks to create a negative mass effect field in a 2m sphere originating from you.
 Each Medium or smaller creature or object within the sphere must succeed on Strength saving throw or becomes

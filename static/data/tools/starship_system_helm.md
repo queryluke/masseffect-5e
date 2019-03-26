@@ -6,10 +6,10 @@ cost: 0
 ---
 
 A Starship's helm is the pilot seat. While most ships can be piloted by VI, the pilot monitors an array of sensors
-and subroutines to optimize the ships flight, make smooth landings, and avoid enemy fire. Pilots can also
+and subroutines to optimize the ship's flight, make smooth landings, and avoid enemy fire. Pilots can also
 override subsystems and take full control of the craft.
 
-__Vehicle Handling__. You ability in the pilot seat gives you additional insight when taking the Maneuver or Hard Maneuver
+__Vehicle Handling__. Your ability in the pilot seat gives you additional insight when taking the Maneuver or Hard Maneuver
 action during starship combat.
 
 __Insight__. Gain additional insight when assessing the tales of others' piloting feats.
@@ -24,5 +24,5 @@ Activity | DC
 --- | ---
 Hastily leave orbit under duress | 15
 Crash land | 20  
-Navigated a asteroid field or through obstacles | varies 
+Navigate an asteroid field or through obstacles | varies 
 

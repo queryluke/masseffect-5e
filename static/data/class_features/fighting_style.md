@@ -6,7 +6,7 @@ At {{ level }} level, choose a fighting style from the list below.
 
 Style | Perk
 --- | ---
-Assault | When you take the burst fire action, the size of the cube increased by 2m and you add your proficiency bonus to the DC of the saving throw.
+Assault | When you make a Burst Fire attack, the DC of the saving throw is 17.
 Brawler | Add your proficiency bonus to your melee attack damage rolls.
 Carnage | When you roll a 1 or 2 on a damage die for an attack you make with a shotgun, you can reroll the die and must use the new roll.
 Close-Quarters Shooter | When making a ranged attack while you are within 2m of a hostile creature, you do not have disadvantage on the attack roll. Your ranged attacks ignore half-cover against targets within 10m of you.

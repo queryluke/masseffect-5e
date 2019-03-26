@@ -8,5 +8,6 @@ Growing up in a harsh environment, your body evolved so you could survive. Choos
 - __Desert__: Constitution +1. Ignore one level of exhaustion.
 - __Frozen__: Resistance to cold damage.
 - __High-gravity__: Strength +1.
+- __Underground__: Darkvision 60m. Blindsight 10m.
 - __Volcanic__: Resistance to fire damage.
 - __Zero-gravity__: While lifted or in zero-g, your speed is 2m and you do not have disadvantage on your attack rolls. 

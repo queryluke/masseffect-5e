@@ -6,7 +6,7 @@ Because the majority of weapons are ranged, there exists an over-representation 
 efforts have been made to reduce this over-representation, the following rules add a unique balance between
 Strength and Dexterity.
 
-__All weapons cause a certain amount of recoil__. This means, operatives must have the requisite strength to effectively
+__All weapons cause a certain amount of recoil__. This means operatives must have the requisite strength to effectively
 fire the weapon. If you do not have the necessary strength, your attack rolls with ranged weapons are made at disadvantage.
 
 __Minimum Strength__. The minimum strength needed to fire a weapon is equal to or greater than the weapon's weight + 8.
@@ -16,7 +16,7 @@ all ranged weapon attacks made with the weapon are made at disadvantage. This ap
 a Krogan Warhammer needs a strength score of 16 or greater, or all melee weapon attacks are made at disadvantage.
 
 __Heavy Weapons__. Most heavy weapons require _targeting_ not a ranged weapon attack. If the operative's strength score
-is below the weapon's weight + 8, the operative's movement become 0 while targeting instead of being reduced by half.
+is below the weapon's weight + 8, the operative's movement becomes 0 while targeting instead of being reduced by half.
 Alternatively, the GM can rule that the heavy weapon is not usable by a character without the requisite strength.
 
 __Ultralight Materials__. Because of this rule, the Ultralight Materials becomes very valuable. You can use the following

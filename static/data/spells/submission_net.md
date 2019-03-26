@@ -37,7 +37,7 @@ location must make a Dexterity saving throw. Any creature that fails the saving 
 becoming <condition id="restrained"/> and cannot cast tech spells.
 
 Until the spell ends, the area is considered difficult terrain. A creature that enters the cylinder for the first time
-on its turn or end its turn there must also make the Dexterity saving throw.
+on its turn or ends its turn there must also make the Dexterity saving throw.
 
 A creature restrained by submission net may use its action to make a Strength (Athletics) check against your spell save
 DC to escape the net. On each attempt, the creature takes 1d6 lightning damage as it struggles against the net. On a

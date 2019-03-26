@@ -85,7 +85,7 @@ such as a hedge or low wall. Otherwise, you hit it.
 
 When you land in difficult terrain, you must succeed on a DC 10 Dexterity (Acrobatics) check to land on your feet. Otherwise, you land prone.
 
-__High Jump__. When you make a high jump, you leap into the air a number of meters equal to 1 + half your Strength modifier
+__High Jump__. When you make a high jump, you leap into the air a number of meters equal to 1 + your Strength modifier divided by three
 (rounded up) if you move at least 4m on foot immediately before the jump. When you make a standing high jump, you can
 jump only half that distance. Either way, each meter you clear on the jump costs a meter of movement. In some circumstances,
 your GM might allow you to make a Strength (Athletics) check to jump higher than you normally can.

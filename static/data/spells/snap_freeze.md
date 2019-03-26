@@ -28,9 +28,9 @@ advancementOptions:
   description: The ice solid like a rock. Creatures have disadvantage on their Strength checks to break it.
 - name: Brittle Freeze
   description: A critical success on the Strength check completely shatters the affected creature's appendage. If legs,
-    it falls prone and looses half its remaining hit points. If head, it immediately dies.
+    it falls prone and loses half its remaining hit points. If head, it immediately dies.
 ---
-Launch a globe of super cooled helium at a target within range. When you cast snap freeze on a target, you call out
+Launch a globe of supercooled helium at a target within range. When you cast snap freeze on a target, you call out
 the location on its body. The location can be body, legs, or head.
 
 __Legs__. +2 bonus to hit. On a hit, the target is frozen to the ground, becoming <condition id="restrained"/> for the next minute.
