@@ -157,10 +157,10 @@
           performance: 'cha',
           persuasion: 'cha',
           science: 'int',
-          'sleight of hand': 'dex',
+          'sleight_of_hand': 'dex',
           stealth: 'dex',
           survival: 'wis',
-          'vehicle handling': 'dex'
+          'vehicle_handling': 'dex'
         },
         abilityMap: {
           str: 'Strength',
@@ -256,8 +256,11 @@
         return 0
       },
       regen () {
-        if (this.stats.sp && this.stats.sp.regen && this.stats.sp.regen.length > 0) {
-          return this.stats.sp.regen
+        if (this.stats.sp && this.stats.sp.regen) {
+          const regen = parseInt(this.stats.sp.regen, 10)
+          if (regen > 0) {
+            return regen
+          }
         }
         return 0
       }
