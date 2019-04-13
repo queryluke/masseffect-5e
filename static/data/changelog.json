@@ -1,6 +1,15 @@
 [
   {
     "layout": "post",
+    "title": "Version 1.0.1",
+    "description": "Minor Fixes, Fillable Character Sheet, Google Sheets Character Sheet",
+    "date": "2019-04-13T00:00:00.000Z",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/20/Hainly_Abrams_charshot.png/revision/latest?cb=20181104194445",
+    "slug": "1.0.1",
+    "url": "/changelog/1.0.1"
+  },
+  {
+    "layout": "post",
     "title": "Version 1.0.0",
     "description": "... 2 years later",
     "date": "2019-03-24T00:00:00.000Z",

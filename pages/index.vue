@@ -67,9 +67,6 @@
                       Our bestiary is filled with iconic Mass Effect enemies custom-made using D&D's Dungeon Master Guide
                       to ensure balanced combat. From Reaper forces to Blue Sun grunts, we've got enough monsters to keep your
                       players engaged and challenged.
-          v-flex(xs12 sm10 md8).my-3
-            v-alert(dismissable type="info" v-model="alert" outline).
-              Want to get involved? Check out the #[nuxt-link(to="/contributing" class="light-blue--text text--lighten-1") contributing page] for more information!
     section
       v-parallax(src="/images/parallax/joker.jpg" alt="mass effect 2 by libbabink")
         v-layout(column align-center justify-center).white--text
@@ -88,31 +85,30 @@
                 v-btn(to="/phb/intro" flat) Get Started #[v-icon chevron_right]
           v-flex(md5).hidden-sm-and-down.text-xs-center
             v-img(src="/images/misc/datapad.png" height="300" contain alt="data pad").px-5
-          // Grunt Generator
+          // Printables
           v-flex(md5).hidden-sm-and-down
-            v-img(src="/images/misc/grunts.png" height="300" contain alt="grunt").px-5
+            v-img(src="/images/misc/tt_assets.png" height="300" contain alt="grunt").px-5
           v-flex(xs12 md7)
             v-card.elevation-0.transparent
               v-card-title(primary-title)
-                div.headline NPC Generator
+                div.headline At-the-table Assets
               v-card-text.
-                Creating NPCs can be a pain, but our Grunt generator is here to help. With the click of a button, you can create unique
-                NPCs (or 'grunts') that are fully compatible with the monster creation guidelines of the Dungeon Master's Guide. The generator
-                applies the correct Challenge Rating, unique class and racial traits, weapons, and spells.
+                We offer a few at-the-table assets like custom-made character sheets, printable spell cards, and Roll20 tokens.
               v-card-actions
                 v-spacer
-                v-btn(to="/for-gms/grunts" flat) Generate #[v-icon chevron_right]
-          // Printables
+                v-btn(to="/assets" flat) Print #[v-icon chevron_right]
+          // Collaborate
           v-flex(xs12 md7)
             v-card.elevation-0.transparent
               v-card-title(primary-title)
-                div.headline Tabletop Assets
+                div.headline Contributors Welcome!
               v-card-text.
-                We've also got a host of tabletop RPG assets: custom-made character sheets, printable spell cards, and Roll20 tokens.
+                Want to get involved? We're always open to content suggestions, feedback, and ideas from the community.
+                Come join the conversation!
               v-card-actions
-                v-btn(to="/assets" flat) Print #[v-icon chevron_right]
+                v-btn(to="/feedback" flat) Contribute #[v-icon chevron_right]
           v-flex(md5).hidden-sm-and-down.text-xs-center
-            v-img(src="/images/misc/tt_assets.png" contain height="300").px-5
+            v-img(src="/images/misc/grunts.png" contain height="300").px-5
     section
       v-parallax(src="/images/parallax/illusive.jpg" alt="The Illusive Man by libbabink")
         v-layout(column align-center justify-center)
