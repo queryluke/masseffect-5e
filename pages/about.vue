@@ -172,48 +172,23 @@
             desc: 'Duneday has contributed a lot of class improvement ideas, especially with Sentinels and was a major part of the Race audit'
           },
           {
-            name: 'damuttley',
-            image: 'https://avatars1.githubusercontent.com/u/38440736?s=88&v=4',
-            desc: 'Race improvements'
+            name: 'GameMasterPo',
+            image: 'https://avatars0.githubusercontent.com/u/44739269?s=88&v=4',
+            desc: 'Alternate Google Sheets character sheet'
           },
           {
-            name: 'SrShdw',
-            image: 'https://avatars2.githubusercontent.com/u/38442553?s=88&v=4',
-            desc: 'Race improvements'
+            name: 'wretchedcrows',
+            image: 'https://styles.redditmedia.com/t5_tgcty/styles/profileIcon_x1i9x8j2pm621.png?width=256&height=256&crop=256:256,smart&s=bf7a16065e5b074ee9ea01dedfc078349e61ec39',
+            desc: 'Created a fillable PDF of the updated official character sheet.'
           },
           {
-            name: 'BLUEmusta',
-            image: 'https://avatars3.githubusercontent.com/u/38446290?s=88&v=4',
-            desc: 'Race & Vanguard improvements'
-          },
-          {
-            name: 'tioeduardo27',
-            image: 'https://avatars3.githubusercontent.com/u/5409752?s=88&v=4',
-            desc: 'Paragon & Renegade concept'
-          },
-          {
-            name: 'kstrtroi',
-            image: 'https://avatars1.githubusercontent.com/u/39886442?s=88&v=4',
-            desc: 'Incredible PDF design ideas'
-          },
-          {
-            name: 'David T.',
-            image: '/images/spells/combat.svg',
-            desc: 'Design help'
-          },
-          {
-            name: 'Andrew Ouellette',
+            name: '/u/thestray',
             image: '/images/spells/biotic.svg',
-            desc: 'Roll 20 Tokens'
+            desc: 'A lot of the character descriptions were based on thestray\'s homebrew, Races of the Relay',
           },
           {
-            name: 'Avezebra',
+            name: 'Original Fillable Character Sheet PDFs',
             image: '/images/spells/tech.svg',
-            desc: 'Hanar concept'
-          },
-          {
-            name: 'Fillable Character Sheet PDFs',
-            image: '/images/spells/biotic.svg',
             desc: 'TheNamelessOne, Thessian Shadow, Szirach'
           },
           {
@@ -222,24 +197,19 @@
             desc: 'EnricoDandolo1, John G.'
           },
           {
-            name: 'GameMasterPo',
-            image: 'https://avatars0.githubusercontent.com/u/44739269?s=88&v=4',
-            desc: 'Alternate Google Sheets character sheet'
-          },
-          {
-            name: 'Stephen W.',
-            image: '/images/spells/tech.svg',
-            desc: 'Indoctrination ideas'
-          },
-          {
-            name: '/u/thestray',
+            name: 'Content reviews, concepts, and ideas',
             image: '/images/spells/biotic.svg',
-            desc: 'Indoctrination ideas'
+            desc: 'Avezebra, damuttley, SrShdw, BLUEmusta, tioeduardo27'
+          },
+          {
+            name: 'kstrtroi',
+            image: 'https://avatars1.githubusercontent.com/u/39886442?s=88&v=4',
+            desc: 'Incredible PDF design ideas'
           },
           {
             name: 'Other Shout outs!',
             image: 'https://vignette.wikia.nocookie.net/masseffect/images/3/32/ME1_Paragon.png/revision/latest?cb=20120309175829',
-            desc: 'Mel Bee, Joey C., Connor C., MonocledMutineer, kstrtroi, HadesJester, Lodus, BenutzernameIstBereitsVergeben ' +
+            desc: 'Stephen W., Andrew Ouellette, David T., Mel Bee, Joey C., Connor C., MonocledMutineer, kstrtroi, HadesJester, Lodus, BenutzernameIstBereitsVergeben ' +
             ' Dor, J. Tickner, fkzd, Gabe, and any one who has contacted us with ideas or words of motivation!'
           }
         ]

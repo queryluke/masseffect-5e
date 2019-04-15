@@ -7,14 +7,9 @@
       v-layout(row wrap justify-center)
         v-flex(xs12 sm6 md4)
           v-btn(block href="https://drive.google.com/open?id=1aBCbmwDgmChg6d6K0yegHTab-R6cQD28" target="_blank").primary Official
-      h3.text-xs-center.display-1.mt-4 Fillable
-      v-layout(row wrap justify-center)
         v-flex(xs12 sm4)
-          v-btn(block href="https://drive.google.com/open?id=1gF1Y2KPgICj3rTJx6EYlJ__inGRSKMGX" target="_blank").primary by Szirach
-        v-flex(xs12 sm4)
-          v-btn(block href="https://drive.google.com/open?id=1eXwjbZQH5z7ACZw60WJ2AMKla94quGAD" target="_blank").primary by Thessian Shadow
-        v-flex(xs12 sm4)
-          v-btn(block href="https://drive.google.com/open?id=1SPghERVzFgEva4C11xRbnuc8i1RYKBbu" target="_blank").primary by theNamelessOne
+          v-btn(block href="https://drive.google.com/open?id=10oQ1UTmimRmKe-XXajEpeERhfRQAL-ro" target="_blank").primary Fillable
+          div.text-xs-center created by #[a(href="https://www.reddit.com/user/wretchedcrows" target="_blank" class="blue--text text--lighten-3") /u/wretchedcrows]
       h3.text-xs-center.display-1.mt-4 Google Sheets
       v-layout(row wrap justify-center)
         v-flex(xs12 sm4)
