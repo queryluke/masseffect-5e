@@ -4,7 +4,7 @@ name: Neural Shock
 level: 1
 type: tech
 attackType:
-- CON Save
+- CHA Save
 effect:
 - debuff
 damageType: []
