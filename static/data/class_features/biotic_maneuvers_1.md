@@ -2,7 +2,7 @@
 id: biotic_maneuvers_1
 name: Biotic Maneuvers
 ---
-At {{ level }} level, you learn maneuvers that are fueled by your barrier ticks. You can use only one maneuver per attack. Some of your maneuvers 
+At {{ level }} level, you learn three maneuvers that are fueled by your barrier ticks. You can use only one maneuver per attack. Some of your maneuvers 
 require your target to make a saving throw to resist the maneuver effects. The saving throw DC is 8 + your proficiency
 bonus + your spellcasting ability modifier.
 
