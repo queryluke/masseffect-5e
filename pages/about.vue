@@ -182,6 +182,11 @@
             desc: 'Created a fillable PDF of the updated official character sheet.'
           },
           {
+            name: 'Connor Maxwell',
+            image: '/images/classes/engineer.svg',
+            desc: 'Collector Ship vehicle'
+          },
+          {
             name: '/u/thestray',
             image: '/images/spells/biotic.svg',
             desc: 'A lot of the character descriptions were based on thestray\'s homebrew, Races of the Relay',
