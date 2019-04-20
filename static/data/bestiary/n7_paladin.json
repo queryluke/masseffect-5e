@@ -1,0 +1,114 @@
+{
+  "abilityScores": {
+    "str": 14,
+    "dex": 12,
+    "con": 16,
+    "int": 13,
+    "wis": 13,
+    "cha": 16
+  },
+  "ac": "16",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Multiattack",
+      "description": "The N7 Paladin makes two N7 Hurricane attacks."
+    },
+    {
+      "type": "weapon",
+      "id": "n7_hurricane"
+    }
+  ],
+  "alignment": "Lawful Neutral",
+  "barrier": 5,
+  "conditionImmunities": [],
+  "cr": "7",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Barrier",
+      "recharge": "1/Day",
+      "description": "As a bonus action, the N7 Paladin gains 5 barrier ticks."
+    },
+    {
+      "name": "N7 Training",
+      "recharge": null,
+      "description": "The N7 Paladin has advantage on its first attack roll each turn."
+    },
+    {
+      "name": "Omni-Shield",
+      "recharge": "1/Day",
+      "description": "As a bonus action, the N7 Paladin deploys its omni-shield, lasting 1 minute. While the shield is deployed, the N7 Paladin gains +2 AC and can make a melee weapon attack with the shield: +5 to hit, 2m reach, 1d12 bludgeoning damage."
+    },
+    {
+      "name": "Variant: Fire-Shield",
+      "recharge": "1/Day",
+      "description": "Gain all the benefits of Omni-Shield. In addition, targets hit by the Fire-Shield take 3d10 fire damage. This damage detonates primed targets, but the N7 Sentinel immune by any detonating effects."
+    },
+    {
+      "name": "Variant: Cryo-Shield",
+      "recharge": "1/Day",
+      "description": "Gain all the benefits of Omni-Shield. In addition, a creature hit by the Cryo-Shield take 1d8 cold damage and must succeed on a DC 13 Strength saving throw or become Frozen until the end its next turn."
+    }
+  ],
+  "hp": {
+    "numDice": 17,
+    "die": 8
+  },
+  "id": "n7_paladin",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/8/83/N7_Paladin_Sentinel_MP.png/revision/latest/scale-to-width-down/250?cb=20120717151128",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "N7 Paladin",
+  "profBonus": 3,
+  "reactions": [],
+  "savingThrows": [
+    "con"
+  ],
+  "senses": [],
+  "size": "Medium",
+  "skills": [
+    "survival*"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "sp": {
+    "shields": 20,
+    "regen": 10
+  },
+  "spellcasting": {
+    "level": "innate",
+    "mod": "cha",
+    "spellList": [
+      {
+        "perDay": "At will",
+        "spells": [
+          {
+            "id": "incinerate"
+          }
+        ]
+      },
+      {
+        "perDay": "3/Day",
+        "spells": [
+          {
+            "id": "energy_drain"
+          },
+          {
+            "id": "snap_freeze",
+            "higherLevel": 4
+          }
+        ]
+      }
+    ]
+  },
+  "type": "Organic",
+  "unit": "N7",
+  "author": "Dakota P."
+}

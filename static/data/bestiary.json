@@ -4384,6 +4384,424 @@
   },
   {
     "abilityScores": {
+      "str": 13,
+      "dex": 16,
+      "con": 14,
+      "int": 13,
+      "wis": 13,
+      "cha": 14
+    },
+    "ac": "15",
+    "actions": [
+      {
+        "type": "standard",
+        "name": "Multiattack",
+        "description": "The N7 demolisher makes three weapon attacks or two weapon attacks and uses one grenade."
+      },
+      {
+        "type": "weapon",
+        "id": "n7_eagle"
+      },
+      {
+        "type": "weapon",
+        "id": "n7_hurricane"
+      },
+      {
+        "type": "grenade",
+        "id": "arc_grenade"
+      },
+      {
+        "type": "grenade",
+        "id": "homing_grenade"
+      },
+      {
+        "type": "standard",
+        "name": "Repair",
+        "recharge": null,
+        "description": "The N7 demolisher uses its action to repair a friendly, synthetic target within 2m for 2d8 hit points."
+      },
+      {
+        "type": "standard",
+        "name": "Deploy Shield Pylon",
+        "recharge": "1/Day",
+        "description": "The N7 demolisher deploys a Shield Pylon to an unoccupied space within 2m. The pylon has AC 10, 25 hit points and provides half cover. At the end of the N7 demolisher's turn, any fiendly creature within 4m of the pylon gains 2 shield points. Shield points gained this way cannot exceed the creatures maximum shield points."
+      }
+    ],
+    "alignment": "Lawful Neutral",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "5",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "N7 Training",
+        "recharge": null,
+        "description": "The N7 demolisher has advantage on its first attack roll each turn."
+      }
+    ],
+    "hp": {
+      "numDice": 15,
+      "die": 8
+    },
+    "id": "n7_demolisher",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/04/N7_Demolisher_Engineer_MP.png/revision/latest/scale-to-width-down/250?cb=20120717151043",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "N7 Demolisher",
+    "profBonus": 3,
+    "reactions": [],
+    "savingThrows": [
+      "con",
+      "dex"
+    ],
+    "senses": [],
+    "size": "Medium",
+    "skills": [
+      "vehicle_handling",
+      "engineering",
+      "survival*"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "sp": {
+      "shields": 20,
+      "regen": 10
+    },
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "N7",
+    "author": "Dakota P."
+  },
+  {
+    "abilityScores": {
+      "str": 14,
+      "dex": 12,
+      "con": 16,
+      "int": 13,
+      "wis": 13,
+      "cha": 16
+    },
+    "ac": "16",
+    "actions": [
+      {
+        "type": "standard",
+        "name": "Multiattack",
+        "description": "The N7 Paladin makes two N7 Hurricane attacks."
+      },
+      {
+        "type": "weapon",
+        "id": "n7_hurricane"
+      }
+    ],
+    "alignment": "Lawful Neutral",
+    "barrier": 5,
+    "conditionImmunities": [],
+    "cr": "7",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Barrier",
+        "recharge": "1/Day",
+        "description": "As a bonus action, the N7 Paladin gains 5 barrier ticks."
+      },
+      {
+        "name": "N7 Training",
+        "recharge": null,
+        "description": "The N7 Paladin has advantage on its first attack roll each turn."
+      },
+      {
+        "name": "Omni-Shield",
+        "recharge": "1/Day",
+        "description": "As a bonus action, the N7 Paladin deploys its omni-shield, lasting 1 minute. While the shield is deployed, the N7 Paladin gains +2 AC and can make a melee weapon attack with the shield: +5 to hit, 2m reach, 1d12 bludgeoning damage."
+      },
+      {
+        "name": "Variant: Fire-Shield",
+        "recharge": "1/Day",
+        "description": "Gain all the benefits of Omni-Shield. In addition, targets hit by the Fire-Shield take 3d10 fire damage. This damage detonates primed targets, but the N7 Sentinel immune by any detonating effects."
+      },
+      {
+        "name": "Variant: Cryo-Shield",
+        "recharge": "1/Day",
+        "description": "Gain all the benefits of Omni-Shield. In addition, a creature hit by the Cryo-Shield take 1d8 cold damage and must succeed on a DC 13 Strength saving throw or become Frozen until the end its next turn."
+      }
+    ],
+    "hp": {
+      "numDice": 17,
+      "die": 8
+    },
+    "id": "n7_paladin",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/8/83/N7_Paladin_Sentinel_MP.png/revision/latest/scale-to-width-down/250?cb=20120717151128",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "N7 Paladin",
+    "profBonus": 3,
+    "reactions": [],
+    "savingThrows": [
+      "con"
+    ],
+    "senses": [],
+    "size": "Medium",
+    "skills": [
+      "survival*"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "sp": {
+      "shields": 20,
+      "regen": 10
+    },
+    "spellcasting": {
+      "level": "innate",
+      "mod": "cha",
+      "spellList": [
+        {
+          "perDay": "At will",
+          "spells": [
+            {
+              "id": "incinerate"
+            }
+          ]
+        },
+        {
+          "perDay": "3/Day",
+          "spells": [
+            {
+              "id": "energy_drain"
+            },
+            {
+              "id": "snap_freeze",
+              "higherLevel": 4
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Organic",
+    "unit": "N7",
+    "author": "Dakota P."
+  },
+  {
+    "abilityScores": {
+      "str": 12,
+      "dex": 18,
+      "con": 14,
+      "int": 16,
+      "wis": 11,
+      "cha": 12
+    },
+    "ac": "15",
+    "actions": [
+      {
+        "type": "standard",
+        "name": "Multiattack",
+        "description": "The N7 Slayer makes three monomolecular blade attacks."
+      },
+      {
+        "type": "weapon",
+        "id": "m-97_viper"
+      }
+    ],
+    "alignment": "Lawful Neutral",
+    "barrier": false,
+    "conditionImmunities": [],
+    "cr": "7",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Assassinate",
+        "recharge": null,
+        "description": "During its first turn, the N7 Shadow has advantage on attack rolls against any creature that hasn't taken a turn. Any hit the N7 Shadow scores against a surprised creature is a critical hit."
+      },
+      {
+        "name": "Evasion",
+        "recharge": null,
+        "description": "If the N7 Shadow is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, the N7 Shadow instead takes no damage if it succeeds on the saving throw, and only half damage if it fails."
+      },
+      {
+        "name": "N7 Training",
+        "recharge": null,
+        "description": "The N7 Slayer has advantage on its first attack roll each turn."
+      },
+      {
+        "name": "Sneak Attack",
+        "recharge": null,
+        "description": "Once per turn, the N7 Shadow deals an extra 14 (4d6) damage when it hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 feet of an ally of the N7 Shadow that isn't incapacitated and the N7 Shadow doesn't have disadvantage on the attack roll."
+      },
+      {
+        "name": "Tactical Cloak",
+        "recharge": "3/Day",
+        "description": "As a bonus action, the N7 Shadow activates its tactical cloak, becoming invisible for 1 minute. When the N7 Shadow makes a melee or ranged attack or uses a tech or combat power, tactical cloak ends."
+      }
+    ],
+    "hp": {
+      "numDice": 11,
+      "die": 8
+    },
+    "id": "n7_shadow",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/08/N7_Shadow_Infiltrator_MP.png/revision/latest/scale-to-width-down/250?cb=20120717151201",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "N7 Shadow",
+    "profBonus": 3,
+    "reactions": [],
+    "savingThrows": [
+      "dex"
+    ],
+    "senses": [],
+    "size": "Medium",
+    "skills": [
+      "acrobatics",
+      "survival*"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 12
+      }
+    ],
+    "sp": {
+      "shields": 20,
+      "regen": 10
+    },
+    "spellcasting": {
+      "level": "innate",
+      "mod": "int",
+      "spellList": [
+        {
+          "perDay": "4/Day",
+          "spells": [
+            {
+              "id": "electric_slash",
+              "higherLevel": 3
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Organic",
+    "unit": "N7",
+    "author": "Dakota P."
+  },
+  {
+    "abilityScores": {
+      "str": 16,
+      "dex": 14,
+      "con": 13,
+      "int": 13,
+      "wis": 14,
+      "cha": 12
+    },
+    "ac": "14",
+    "actions": [
+      {
+        "type": "standard",
+        "name": "Multiattack",
+        "description": "The N7 Slayer makes three monomolecular blade attacks or two N7 Piranha attacks."
+      },
+      {
+        "type": "weapon",
+        "id": "monomolecular_blade"
+      },
+      {
+        "type": "weapon",
+        "id": "n7_piranha"
+      }
+    ],
+    "alignment": "Lawful Neutral",
+    "barrier": 5,
+    "conditionImmunities": [],
+    "cr": "5",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Aggressive",
+        "recharge": null,
+        "description": "As a bonus action, the N7 Slayer can move up to its speed toward a hostile creature that it can see."
+      },
+      {
+        "name": "Avoidance",
+        "recharge": null,
+        "description": "If the N7 Slayer is subjected to an effect that allows it to make a saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails."
+      },
+      {
+        "name": "Barrier",
+        "recharge": "2/Day",
+        "description": "As an action or bonus action, the N7 Slayer gains 5 barrier ticks."
+      },
+      {
+        "name": "N7 Training",
+        "recharge": null,
+        "description": "The N7 Slayer has advantage on its first attack roll each turn."
+      }
+    ],
+    "hp": {
+      "numDice": 14,
+      "die": 8
+    },
+    "id": "n7_slayer",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/97/N7_Slayer_Vanguard_MP.png/revision/latest/scale-to-width-down/250?cb=20120717151234",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "N7 Slayer",
+    "profBonus": 3,
+    "reactions": [
+      {
+        "name": "Parry and Counter",
+        "recharge": null,
+        "description": "The N7 Slayer adds 3 to its AC against one melee that would hit it. To do so, it must be able to see the target and be wielding a melee weapon. If the attack misses, the N7 Slayer can make one melee attack against the attacker if it is within its reach."
+      }
+    ],
+    "savingThrows": [
+      "str",
+      "dex"
+    ],
+    "senses": [],
+    "size": "Medium",
+    "skills": [
+      "acrobatics",
+      "survival*"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 14
+      }
+    ],
+    "sp": {
+      "shields": 15,
+      "regen": 5
+    },
+    "spellcasting": {
+      "level": 9,
+      "mod": "wis",
+      "spellList": [
+        "charge",
+        "phase_disruptor",
+        "biotic_slash"
+      ]
+    },
+    "type": "Organic",
+    "unit": "N7",
+    "author": "Dakota P."
+  },
+  {
+    "abilityScores": {
       "str": 8,
       "dex": 20,
       "con": 11,

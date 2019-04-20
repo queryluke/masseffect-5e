@@ -1,0 +1,96 @@
+{
+  "abilityScores": {
+    "str": 13,
+    "dex": 16,
+    "con": 14,
+    "int": 13,
+    "wis": 13,
+    "cha": 14
+  },
+  "ac": "15",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Multiattack",
+      "description": "The N7 demolisher makes three weapon attacks or two weapon attacks and uses one grenade."
+    },
+    {
+      "type": "weapon",
+      "id": "n7_eagle"
+    },
+    {
+      "type": "weapon",
+      "id": "n7_hurricane"
+    },
+    {
+      "type": "grenade",
+      "id": "arc_grenade"
+    },
+    {
+      "type": "grenade",
+      "id": "homing_grenade"
+    },
+    {
+      "type": "standard",
+      "name": "Repair",
+      "recharge": null,
+      "description": "The N7 demolisher uses its action to repair a friendly, synthetic target within 2m for 2d8 hit points."
+    },
+    {
+      "type": "standard",
+      "name": "Deploy Shield Pylon",
+      "recharge": "1/Day",
+      "description": "The N7 demolisher deploys a Shield Pylon to an unoccupied space within 2m. The pylon has AC 10, 25 hit points and provides half cover. At the end of the N7 demolisher's turn, any fiendly creature within 4m of the pylon gains 2 shield points. Shield points gained this way cannot exceed the creatures maximum shield points."
+    }
+  ],
+  "alignment": "Lawful Neutral",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "5",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "N7 Training",
+      "recharge": null,
+      "description": "The N7 demolisher has advantage on its first attack roll each turn."
+    }
+  ],
+  "hp": {
+    "numDice": 15,
+    "die": 8
+  },
+  "id": "n7_demolisher",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/04/N7_Demolisher_Engineer_MP.png/revision/latest/scale-to-width-down/250?cb=20120717151043",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "N7 Demolisher",
+  "profBonus": 3,
+  "reactions": [],
+  "savingThrows": [
+    "con",
+    "dex"
+  ],
+  "senses": [],
+  "size": "Medium",
+  "skills": [
+    "vehicle_handling",
+    "engineering",
+    "survival*"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "sp": {
+    "shields": 20,
+    "regen": 10
+  },
+  "spellcasting": false,
+  "type": "Organic",
+  "unit": "N7",
+  "author": "Dakota P."
+}
