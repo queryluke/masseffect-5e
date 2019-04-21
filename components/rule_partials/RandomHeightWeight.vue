@@ -1,5 +1,7 @@
 <template lang="pug">
   div
+    p #[strong Calculating Random Height]: Base Height + Height Modifier Roll
+    p #[strong Calculating Random Weight]: Base Weight + (Height Modifier Roll x Weight Modifier Roll)
     div(v-for="table in tables" v-bind:key="table.name").mb-4
       p.headline {{ table.name }}
       table.table
