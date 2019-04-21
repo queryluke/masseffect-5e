@@ -30,7 +30,7 @@ advancementOptions:
   description: You can transport Large or smaller creatures and objects as long as the total weight does not exceed four times your carrying capacity.
 ---
 Choose a creature or object within range and use the target's mass to pull yourself to its location 
-(this movement does not provoke opportunity attacks).  Each creature within 4m of the target must make Dexterity saving 
+(this movement does not provoke opportunity attacks). Each creature within 4m of the target must make Dexterity saving 
 throw, taking 4d10 force damage on a failed save, or half as much on a successful one. 
 
 Additionally, you may transport any number of creatures or objects with you to the target location. To 
