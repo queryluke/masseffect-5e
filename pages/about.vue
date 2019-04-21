@@ -167,6 +167,11 @@
             ' in making a balanced yet intriguing system.'
           },
           {
+            name: 'Chris Alley',
+            image: '/images/classes/adept.svg',
+            desc: 'Chris has provided a number of unique and fun new spells.'
+          },
+          {
             name: 'Duneday',
             image: 'https://avatars1.githubusercontent.com/u/38437397?s=88&v=4',
             desc: 'Duneday has contributed a lot of class improvement ideas, especially with Sentinels and was a major part of the Race audit'

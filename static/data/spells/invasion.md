@@ -1,6 +1,7 @@
 ---
 id: invasion
 name: Invasion
+createdBy: Ben McPherson
 level: 1
 type: tech
 attackType:

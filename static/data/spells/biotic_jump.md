@@ -1,6 +1,7 @@
 ---
 id: biotic_jump
 name: Biotic Jump
+createdBy: Ben McPherson
 level: 0
 type: biotic
 attackType: []

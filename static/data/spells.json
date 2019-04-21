@@ -266,6 +266,7 @@
   {
     "id": "biotic_jump",
     "name": "Biotic Jump",
+    "createdBy": "Ben McPherson",
     "level": 0,
     "type": "biotic",
     "attackType": [],
@@ -488,6 +489,41 @@
     ]
   },
   {
+    "id": "blade_armor",
+    "name": "Blade Armor",
+    "level": 0,
+    "type": "combat",
+    "attackType": [],
+    "effect": [
+      "damage",
+      "ward"
+    ],
+    "damageType": [
+      "piercing"
+    ],
+    "castingTime": "Bonus Action or Reaction, which you take when you are dealt damage",
+    "duration": "1 minute",
+    "concentration": false,
+    "distance": {
+      "range": "self"
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "soldier"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Poisoned Armor",
+        "description": "Creatures hit by your blade armor must succeed on a DC 14 Constitution saving throw or become poisoned for 1 hour."
+      },
+      {
+        "name": "Retribution",
+        "description": "When a creature within 2m of you hits you with a melee attack while blade armor is active, you may use your reaction to make a melee weapon attack with blade armor against the creature."
+      }
+    ]
+  },
+  {
     "id": "catapult",
     "name": "Catapult",
     "level": 1,
@@ -682,6 +718,42 @@
       {
         "name": "Frigid Air",
         "description": "The blast creates a pocket of frigid air that lasts until the end of your next turn. Each creature that enters the frozen space for the first time on a turn or ends its turn there becomes primed cold until the end of its next turn and must succeed a Constitution saving throw or take 2d6 cold damage."
+      }
+    ]
+  },
+  {
+    "id": "damping",
+    "name": "Damping",
+    "createdBy": "Ben McPherson",
+    "level": 1,
+    "type": "tech",
+    "attackType": [],
+    "effect": [
+      "debuff",
+      "control"
+    ],
+    "damageType": [],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "30m"
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "engineer",
+      "infiltrator",
+      "sentinel"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Cooldown",
+        "description": "If creature that fails its saving throw casts a tech or biotic spell, it cannot cast another tech or biotic spell until the end of its next turn."
+      },
+      {
+        "name": "Power Damping",
+        "description": "Creatures have disadvantage on the saving throw against this spell."
       }
     ]
   },
@@ -1020,6 +1092,43 @@
     ]
   },
   {
+    "id": "flak_cannon",
+    "name": "Flak Cannon",
+    "createdBy": "Ben McPherson",
+    "level": 0,
+    "type": "combat",
+    "attackType": [],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "piercing"
+    ],
+    "castingTime": "Attack",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "10m",
+      "aoeType": "sphere",
+      "aoeDistance": "4m"
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "soldier"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Shredder",
+        "description": "If a creature with 0 shield points takes damage from Flak Cannon, it becomes wounded. A wounded creature takes 1d4 damage from blood loss at the start of each of its turns. A wounded creature can make a DC 15 Constitution saving throw, ending the effect on a success. Alternatively, any creature (including the wounded creature), can make a DC 15 Wisdom (Medicine) check or use a charge of Medi-gel, ending the effect on a success."
+      },
+      {
+        "name": "Stunner",
+        "description": "When you attack with Flak Cannon, you can choose to fire concussive blasts dealing no damage. Creatures within the sphere must instead make a Constitution saving throw. On a failed save, a creature becomes stunned until the start of your next turn."
+      }
+    ]
+  },
+  {
     "id": "flamethrower",
     "name": "Flamethrower",
     "level": 3,
@@ -1169,6 +1278,44 @@
     ]
   },
   {
+    "id": "gravity_field",
+    "name": "Gravity Field",
+    "createdBy": "Chris Alley",
+    "level": 1,
+    "type": "biotic",
+    "attackType": [
+      "STR save"
+    ],
+    "effect": [
+      "control"
+    ],
+    "damageType": [],
+    "castingTime": "Action",
+    "duration": "1 minute",
+    "concentration": true,
+    "distance": {
+      "range": "30m",
+      "aoeType": "cube",
+      "aoeDistance": "8m"
+    },
+    "detonates": null,
+    "primes": "force",
+    "availableClasses": [
+      "adept",
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Pulsing Field",
+        "description": "As a bonus action, for the duration of the spell, you can force a number of creatures equal to twice the spell level that are within the gravity field to make a Strength saving throw or be restrained until the spell ends."
+      },
+      {
+        "name": "Warping Field",
+        "description": "A creature takes 1d6 necrotic damage per spell level when it enters the gravity field for the first time on a turn or ends its turn there."
+      }
+    ]
+  },
+  {
     "id": "guidance",
     "name": "Guidance",
     "level": 1,
@@ -1282,6 +1429,46 @@
     ]
   },
   {
+    "id": "heavy_charge",
+    "name": "Heavy Charge",
+    "createdBy": "Chris Alley",
+    "level": 2,
+    "type": "biotic",
+    "attackType": [
+      "DEX Save"
+    ],
+    "effect": [
+      "damage",
+      "movement"
+    ],
+    "damageType": [
+      "force"
+    ],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "30m",
+      "aoeType": "sphere",
+      "aoeDistance": "4m"
+    },
+    "detonates": "x",
+    "primes": null,
+    "availableClasses": [
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Stutter Step",
+        "description": "This spell's range is decreased to 12m, but you may cast this spell twice as part of the same action, choosing a different target for each cast. Each cast consumes spell slots as normal."
+      },
+      {
+        "name": "Heavy Step",
+        "description": "You can transport Large or smaller creatures and objects as long as the total weight does not exceed four times your carrying capacity."
+      }
+    ]
+  },
+  {
     "id": "hex_shield",
     "name": "Hex Shield",
     "level": 0,
@@ -1358,6 +1545,7 @@
   {
     "id": "invasion",
     "name": "Invasion",
+    "createdBy": "Ben McPherson",
     "level": 1,
     "type": "tech",
     "attackType": [
@@ -1510,6 +1698,40 @@
       {
         "name": "Improved Lift",
         "description": "You can manipulate an object that weighs up to 25 kgs (~55 pounds)."
+      }
+    ]
+  },
+  {
+    "id": "nanite_cloud",
+    "name": "Nanite Cloud",
+    "createdBy": "Chris Alley",
+    "level": 1,
+    "type": "tech",
+    "attackType": [],
+    "effect": [
+      "ward"
+    ],
+    "damageType": [],
+    "castingTime": "Reaction, which you take when you would take acid, cold, fire, lightning, or thunder damage.",
+    "duration": "1 turn",
+    "concentration": false,
+    "distance": {
+      "range": "self"
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "engineer",
+      "sentinel"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Nanite Grenade",
+        "description": "If this spell is active, you can use a bonus action to compress the nanites into a grenade. The grenade remains stable for 1 hour before becoming inert. To use the grenade, target an area within 10m. Each creature within 4m of the target must make a DC 14 Dexterity saving throw. A creature takes 4d6 damage of the triggering damage type on a failed save, or half as much damage on a successful one. The grenade deals and additional 2d6 damage for each spell level beyond 1st."
+      },
+      {
+        "name": "Aegis",
+        "description": "You may cast this spell as a reaction when a creature within 2m of you takes acid, cold, fire, lightning, or thunder damage. When you cast this spell, you may choose up to 3 creatures including yourself within 2m of you to gain resistance to the chosen damage type until the start of your next turn, including against the triggering attack."
       }
     ]
   },
@@ -1706,6 +1928,43 @@
       {
         "name": "Cripple",
         "description": "A creature hit by Phase Disruptor has disadvantage on its next attack roll."
+      }
+    ]
+  },
+  {
+    "id": "pheromone_spray",
+    "name": "Pheromone Spray",
+    "createdBy": "Chris Alley",
+    "level": 1,
+    "type": "tech",
+    "attackType": [
+      "WIS save"
+    ],
+    "effect": [
+      "control"
+    ],
+    "damageType": [],
+    "castingTime": "Action",
+    "duration": "24 hours",
+    "concentration": false,
+    "distance": {
+      "range": "10m"
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "engineer",
+      "sentinel",
+      "infiltrator"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Loyalty",
+        "description": "If you successfully use this ability on a creature for 30 days in a row, the creature develops a fierce, chemically-induced sense of loyalty to you and remains charmed by you indefinitely."
+      },
+      {
+        "name": "Aggression",
+        "description": "You are able to modify the pheromone cocktail to send creatures into a frenzy. When you use this ability, you may choose to frenzy creatures instead of charming them. A creature that becomes frenzied must use its movement to move towards the nearest creature and attack them if able. A frenzied creature may repeat its save at the end of each of its turns."
       }
     ]
   },
@@ -2431,6 +2690,43 @@
     ]
   },
   {
+    "id": "tear",
+    "name": "Tear",
+    "createdBy": "Chris Alley",
+    "level": 4,
+    "type": "biotic",
+    "attackType": [
+      "DEX save"
+    ],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "necrotic"
+    ],
+    "castingTime": "Action",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "30m"
+    },
+    "detonates": true,
+    "primes": null,
+    "availableClasses": [
+      "adept"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Anti-Biotics",
+        "description": "A creature with an active barrier that is hit by this spell must expend all remaining barrier ticks to reduce the damage. The total damage reduction from the remaining barrier ticks is reduced by half."
+      },
+      {
+        "name": "Anti-Synthetic",
+        "description": "Non-organic creatures or objects take an extra 40 force damage. This spell disintegrates up to a 6m cube of synthetic materials."
+      }
+    ]
+  },
+  {
     "id": "throw",
     "name": "Throw",
     "level": 0,
@@ -2467,6 +2763,42 @@
       {
         "name": "Improved Damage",
         "description": "Increase the damage die type to d12"
+      }
+    ]
+  },
+  {
+    "id": "trophy_system",
+    "name": "Trophy System",
+    "createdBy": "Chris Alley",
+    "level": 0,
+    "type": "combat",
+    "attackType": [],
+    "effect": [
+      "ward"
+    ],
+    "damageType": [],
+    "castingTime": "Reaction, which you take when an explosive projectile is within 6m of you.",
+    "duration": "Instant",
+    "concentration": false,
+    "distance": {
+      "range": "6m",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "infiltrator",
+      "soldier"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Advanced Notice",
+        "description": "The triggering range is increased to 12 meters, and you may detonate the explosive at any point along its trajectory."
+      },
+      {
+        "name": "Dual Trophy",
+        "description": "You may use your trophy system twice between long rests."
       }
     ]
   },
@@ -2616,6 +2948,44 @@
       {
         "name": "Disorient",
         "description": "A target hit by warp must pass a Constitution saving throw. On a failed save, the force of warp is so intense the target is stunned until the end of its next turn."
+      }
+    ]
+  },
+  {
+    "id": "warp_cloud",
+    "name": "Warp Cloud",
+    "createdBy": "Chris Alley",
+    "level": 1,
+    "type": "biotic",
+    "attackType": [],
+    "effect": [
+      "damage"
+    ],
+    "damageType": [
+      "necrotic"
+    ],
+    "castingTime": "Action",
+    "duration": "1 minute",
+    "concentration": true,
+    "distance": {
+      "range": "20m",
+      "aoeType": "cube",
+      "aoeDistance": "2m"
+    },
+    "detonates": null,
+    "primes": "necrotic",
+    "availableClasses": [
+      "adept",
+      "vanguard"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Burst",
+        "description": "As a bonus action, you can end this spell and force each creature within 2 meters of the cloud to make a Dexterity saving throw. A creature takes 4d4 force damage on a failed save or half as much on a successful one. This damage increases by 4d4 force damage per spell level."
+      },
+      {
+        "name": "Shift",
+        "description": "As a bonus action, you can move this cube of warp energy up to 4 meters in any direction you choose. It can pass through solid objects, but you can only control it's movement while you have line of sight."
       }
     ]
   }

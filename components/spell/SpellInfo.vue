@@ -2,7 +2,8 @@
   div
     v-layout
       v-flex.xs12.sm6
-        p.title {{ spell.name }}
+        p.display-1 {{ spell.name }}
+          span(v-if="spell.createdBy").body-1.pl-2 #[em created by: {{ spell.createdBy }}]
         p
           span(:class="primeTypeCss[spell.primes]" v-if="spell.primes") #[strong Primes ({{spell.primes}})]
           span(v-if="spell.primes && spell.detonates").mx-2 |
