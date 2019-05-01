@@ -1,0 +1,96 @@
+{
+  "abilityScores": {
+    "str": 11,
+    "dex": 14,
+    "con": 13,
+    "int": 16,
+    "wis": 14,
+    "cha": 12
+  },
+  "ac": "15",
+  "actions": [
+    {
+      "type": "weapon",
+      "id": "m-9_tempest"
+    },
+    {
+      "type": "standard",
+      "name": "Repair",
+      "recharge": null,
+      "description": "The operative uses its action to repair a friendly, synthetic target within 2m for 1d8 hit points."
+    },
+    {
+      "type": "standard",
+      "name": "Summon Combat Drone",
+      "recharge": "2/Day",
+      "description": "The operative summons a Combat Drone."
+    }
+  ],
+  "alignment": "Neutral",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "3",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Tech Armor",
+      "recharge": "1/Day",
+      "description": "As a bonus action, the operative can activate its Tech Armor. It immediately gains 10 temporary hit points. While the operative has at least 1 of these temporary hit points remaining, it has +2 AC."
+    }
+  ],
+  "hp": {
+    "numDice": 9,
+    "die": 8
+  },
+  "id": "eclipse_operative",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/92/Eclipse_Operative.png/revision/latest?cb=20100704072730",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Eclipse Operative",
+  "profBonus": 2,
+  "reactions": [
+    {
+      "name": "Tech Armor",
+      "recharge": null,
+      "description": "As a reaction to taking damage, the operative can activate its tech armor."
+    }
+  ],
+  "savingThrows": [
+    "int"
+  ],
+  "senses": [],
+  "size": "Medium",
+  "skills": [
+    "electronics"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "sp": {
+    "shields": 10,
+    "regen": 10
+  },
+  "spellcasting": {
+    "level": "innate",
+    "mod": "int",
+    "spellList": [
+      {
+        "perDay": "5",
+        "spells": [
+          {
+            "id": "incinerate",
+            "higherLevel": 2
+          }
+        ]
+      }
+    ]
+  },
+  "type": "Organic",
+  "unit": "Eclipse",
+  "author": "Dakota P."
+}

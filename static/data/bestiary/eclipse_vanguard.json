@@ -1,0 +1,80 @@
+{
+  "abilityScores": {
+    "str": 13,
+    "dex": 13,
+    "con": 14,
+    "int": 14,
+    "wis": 13,
+    "cha": 15
+  },
+  "ac": "14",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Multiattack",
+      "description": "The vanguard makes 2 M-27 Scimitar attacks."
+    },
+    {
+      "type": "weapon",
+      "id": "m-27_scimitar"
+    }
+  ],
+  "alignment": "Neutral",
+  "barrier": 6,
+  "conditionImmunities": [],
+  "cr": "3",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Barrier",
+      "recharge": "3/Day",
+      "description": "As an action or bonus action, the vanguard gains 6 barrier ticks. When the vanguard is dealt damage, if it has any barrier ticks remaining, remove one barrier tick and reduce the damage by 1d8."
+    },
+    {
+      "name": "Tech Armor",
+      "recharge": "1/Day",
+      "description": "As a bonus action, the vanguard can activate its Tech Armor. It immediately gains 10 temporary hit points. While the vanguard has at least 1 of these temporary hit points remaining, it has +2 AC."
+    }
+  ],
+  "hp": {
+    "numDice": 9,
+    "die": 8
+  },
+  "id": "eclipse_vanguard",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/4/45/Eclipse_Vanguard.png/revision/latest?cb=20100624033844",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Eclipse Vanguard",
+  "profBonus": 2,
+  "reactions": [
+    {
+      "name": "Tech Armor",
+      "recharge": null,
+      "description": "As a reaction to taking damage, the operative can activate its tech armor."
+    }
+  ],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Medium",
+  "skills": [],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "sp": null,
+  "spellcasting": {
+    "level": "6",
+    "mod": "cha",
+    "spellList": [
+      "shockwave",
+      "warp"
+    ]
+  },
+  "type": "Organic",
+  "unit": "Eclipse",
+  "author": "Dakota P."
+}

@@ -1,0 +1,78 @@
+{
+  "abilityScores": {
+    "str": 15,
+    "dex": 13,
+    "con": 15,
+    "int": 14,
+    "wis": 14,
+    "cha": 16
+  },
+  "ac": "15",
+  "actions": [
+    {
+      "type": "weapon",
+      "id": "m-300_claymore"
+    },
+    {
+      "type": "standard",
+      "name": "Leadership",
+      "recharge": "Recharges after a Short or Long Rest",
+      "description": "For 1 minute, the commando can utter a special command or warning whenever a nonhostile creature that it can see within 10 meters of it makes an attack roll or a saving throw. The creature can add a d4 to its roll provided it can hear and understand the commando. A creature can benefit from only one Leadership die at a time. This effect ends if the commando is incapacitated."
+    }
+  ],
+  "alignment": "Neutral",
+  "barrier": 10,
+  "conditionImmunities": [],
+  "cr": "5",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Aggressive",
+      "recharge": null,
+      "description": "As a bonus action, the commando can move up to its speed toward a hostile creature it can see."
+    },
+    {
+      "name": "Barrier",
+      "recharge": "3/Day",
+      "description": "As an action or bonus action, the commando gains 10 barrier ticks. When the commando is dealt damage, if it has any barrier ticks remaining, remove one barrier tick and reduce the damage by 1d8."
+    }
+  ],
+  "hp": {
+    "numDice": 16,
+    "die": 8
+  },
+  "id": "eclipse_commando",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/3f/Eclipse_Commando.png/revision/latest?cb=20100625014253",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Eclipse Commando",
+  "profBonus": 3,
+  "reactions": [],
+  "savingThrows": [
+    "wis",
+    "cha"
+  ],
+  "senses": [],
+  "size": "Medium",
+  "skills": [],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "sp": null,
+  "spellcasting": {
+    "level": "12",
+    "mod": "cha",
+    "spellList": [
+      "charge",
+      "warp"
+    ]
+  },
+  "type": "Organic",
+  "unit": "Eclipse",
+  "author": "Dakota P."
+}
