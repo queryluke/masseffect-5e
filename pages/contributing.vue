@@ -63,13 +63,6 @@
         v-layout(row wrap justify-center)
           v-flex(xs12 md4 d-flex)
             v-card(dark)
-              v-card-title(primary-title).title Fillable PDF character sheet
-              v-card-text.pt-0
-                p.
-                  Thessiand Shadow, Szirach, and TheNamelessOne have all created great fillable PDFs (thanks!). But we've made a few changes
-                  to our print version since then, so we're in need of some updates.
-          v-flex(xs12 md4 d-flex)
-            v-card(dark)
               v-card-title(primary-title).title Class specific character sheets
               v-card-text.pt-0
                 p.

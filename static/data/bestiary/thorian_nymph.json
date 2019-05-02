@@ -1,0 +1,72 @@
+{
+  "abilityScores": {
+    "str": 11,
+    "dex": 13,
+    "con": 11,
+    "int": 13,
+    "wis": 11,
+    "cha": 2
+  },
+  "ac": "13",
+  "actions": [
+    {
+      "type": "melee",
+      "name": "Bite",
+      "range": 2,
+      "target": "one target",
+      "hit": "3 (1d4 + 1) piercing damage.",
+      "miss": null,
+      "attackMod": 3
+    },
+    {
+      "type": "ranged",
+      "name": "Acid Spit",
+      "range": 10,
+      "target": "one target",
+      "hit": "7 (2d6) acid and 7 (2d6) necrotic damage.",
+      "miss": null,
+      "attackMod": 3
+    },
+    {
+      "type": "standard",
+      "name": "Release Spores",
+      "recharge": "1/Day",
+      "description": "The nymph releases spores in a 4m-radius sphere lasting until the end of its next turn. A creature that enters the area for the first time on a turn or starts its turn there takes 3 (1d6) psychic damage and must make a DC 13 Wisdom saving throw. On a failed save, a creature becomes paralyzed until the start of its next turn."
+    }
+  ],
+  "alignment": "Lawful evil",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "1/2",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [],
+  "hp": {
+    "numDice": 5,
+    "die": 6
+  },
+  "id": "thorian_nymph",
+  "image": "https://vignette.wikia.nocookie.net/elderscrolls/images/c/c3/Chaurus_3D.png/revision/latest/scale-to-width-down/700?cb=20120612155204",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Thorian Nymph",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Small",
+  "skills": [],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "sp": null,
+  "spellcasting": null,
+  "type": "Organic",
+  "unit": "Thorian",
+  "description": "In its juvenile stage, the Thorian becomes mobile and sneaks aboard unknowing ships to spread across the galaxy.",
+  "author": "Dakota P."
+}

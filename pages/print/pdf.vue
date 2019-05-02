@@ -344,9 +344,6 @@
   import bestiary from '~/static/data/bestiary'
   import conditions from '~/static/data/conditions'
   import skills from '~/static/data/skills'
-  import pr from '~/static/data/community/p_r.md'
-  import weaponStrength from '~/static/data/community/weapon_strength.md'
-  import indoc from '~/static/data/community/indoctrination.md'
   import altSentinel from '~/static/data/alt_sentinel'
   import vehicles from '~/static/data/vehicles'
 
@@ -499,7 +496,6 @@
             items = [
               {title: 'Conditions', anchor: '#conditions'},
               {title: 'Skills', anchor: '#skills'},
-              {title: 'Found Codices', anchor: '#found-codices'},
               {title: 'Alternate Sentinel', anchor: '#alt-sentinel'},
               {title: 'Creating Armor', anchor: '#creating-armor'},
             ]

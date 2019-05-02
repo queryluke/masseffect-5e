@@ -1,0 +1,72 @@
+{
+  "abilityScores": {
+    "str": 10,
+    "dex": 13,
+    "con": 9,
+    "int": 11,
+    "wis": 11,
+    "cha": 2
+  },
+  "ac": "13",
+  "actions": [
+    {
+      "type": "ranged",
+      "name": "Acid Spit",
+      "range": 10,
+      "target": "one target",
+      "hit": "7 (2d6) acid and 7 (2d6) necrotic damage.",
+      "miss": null,
+      "attackMod": 3
+    },
+    {
+      "type": "standard",
+      "name": "Release Spores",
+      "recharge": "1/Day",
+      "description": "The spawn releases spores in a 4m-radius sphere lasting until the end of its next turn. A creature that enters the area for the first time on a turn or starts its turn there takes 3 (1d6) psychic damage and must make a DC 13 Wisdom saving throw. On a failed save, a creature becomes paralyzed until the start of its next turn."
+    }
+  ],
+  "alignment": "Lawful evil",
+  "barrier": null,
+  "conditionImmunities": [
+    "lifted",
+    "prone"
+  ],
+  "cr": "1/4",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Rooted",
+      "recharge": null,
+      "description": "The spawn in rooted in the ground and cannot be moved. It automatically fails Strength and Dexterity saving throws and skill checks."
+    }
+  ],
+  "hp": {
+    "numDice": 3,
+    "die": 6
+  },
+  "id": "thorian_spawn",
+  "image": "https://vignette.wikia.nocookie.net/finalfantasy/images/1/15/Sandragora.jpg/revision/latest?cb=20081018141337",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Thorian Spawn",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Small",
+  "skills": [],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 0
+    }
+  ],
+  "sp": null,
+  "spellcasting": null,
+  "type": "Organic",
+  "unit": "Thorian",
+  "description": "The beginning of a Thorian's life cycle, these stationary plants feed off nutrients from the mother plant while also acting as a last line of defense against intruders.",
+  "author": "Dakota P."
+}

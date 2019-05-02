@@ -1,0 +1,71 @@
+{
+  "abilityScores": {
+    "str": 13,
+    "dex": 11,
+    "con": 15,
+    "int": 2,
+    "wis": 2,
+    "cha": 2
+  },
+  "ac": "13",
+  "actions": [
+    {
+      "type": "melee",
+      "name": "Slash",
+      "range": 2,
+      "target": "one target",
+      "hit": "6 (2d4 + 1) slashing damage.",
+      "miss": null,
+      "attackMod": 3
+    },
+    {
+      "type": "standard",
+      "name": "Acid Vomit",
+      "recharge": "Recharge 4-6",
+      "description": "The creeper regurgitates acid in a 4-meter cone. A creature within the code must succeed on a DC 15 Dexterity saving throw or take 7 (2d6) acid damage."
+    }
+  ],
+  "alignment": "Lawful evil",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "1/4",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [
+    "bludgeoning",
+    "force"
+  ],
+  "features": [
+    {
+      "name": "Hive Mind",
+      "recharge": null,
+      "description": "If the creeper is within 20 meters of a Thorian Controller, it gains +1 to attack and damage rolls, ability checks, and saving throws."
+    }
+  ],
+  "hp": {
+    "numDice": 4,
+    "die": 8
+  },
+  "id": "thorian_creeper",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/e5/Thorian_Creeper.png/revision/latest/scale-to-width-down/424?cb=20140614190322",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Thorian Creeper",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Medium",
+  "skills": [],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "sp": null,
+  "spellcasting": null,
+  "type": "Organic",
+  "unit": "Thorian",
+  "author": "Dakota P."
+}
