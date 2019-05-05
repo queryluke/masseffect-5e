@@ -1,6 +1,7 @@
 [
   {
     "name": "Andromeda Elite Helmet",
+    "rarity": "Rare",
     "type": "Head",
     "armorType": "Light",
     "description": "This special-issue Andromeda Initiative helmet is custom designed for explorers who excel in the Initiative training programs taken on prior to departing for Andromeda. Its Pathfinder-grade construction is strong enough to protect the wearer from the dangers of unexplored space while remaining light enough to allow full mobility.",
@@ -15,6 +16,7 @@
   },
   {
     "name": "Angaran Arms",
+    "rarity": "Rare",
     "type": "Arms",
     "armorType": "Medium",
     "description": "This armor integrates angaran hardware with Initiative software, resulting in a sturdy hardsuit that utilizes technologies unique to the Heleus Cluster. Various adjustments have been made to the design to accommodate non-angaran biology.",
@@ -29,6 +31,7 @@
   },
   {
     "name": "Angaran Chestpiece",
+    "rarity": "Rare",
     "type": "Chest",
     "armorType": "Medium",
     "description": "This armor integrates angaran hardware with Initiative software, resulting in a sturdy hardsuit that utilizes technologies unique to the Heleus Cluster. Various adjustments have been made to the design to accommodate non-angaran biology.",
@@ -43,6 +46,7 @@
   },
   {
     "name": "Angaran Helmet",
+    "rarity": "Rare",
     "type": "Head",
     "armorType": "Medium",
     "description": "This armor integrates angaran hardware with Initiative software, resulting in a sturdy hardsuit that utilizes technologies unique to the Heleus Cluster. Various adjustments have been made to the design to accommodate non-angaran biology.",
@@ -57,6 +61,7 @@
   },
   {
     "name": "Angaran Legs",
+    "rarity": "Rare",
     "type": "Legs",
     "armorType": "Medium",
     "description": "This armor integrates angaran hardware with Initiative software, resulting in a sturdy hardsuit that utilizes technologies unique to the Heleus Cluster. Various adjustments have been made to the design to accommodate non-angaran biology.",
@@ -71,6 +76,7 @@
   },
   {
     "name": "Archon Visor",
+    "rarity": "Uncommon",
     "type": "Head",
     "armorType": "Light",
     "description": "The Archon visor uses an efficient algorithm to balance processing power for omni-tools. A heads-up display and voice command software allows users to micromanage the systems, reducing the cool-down period between energy expenditures.",
@@ -85,6 +91,7 @@
   },
   {
     "name": "Asari Initiate Armor",
+    "rarity": "Spectre",
     "type": "Body Armor",
     "armorType": "Light",
     "description": "Standard issue armor for all Asari infantry. Build-in biotic amps provide a minor boost to biotic powers.",
@@ -99,6 +106,7 @@
   },
   {
     "name": "Assassin Armor",
+    "rarity": "Uncommon",
     "type": "Body Armor",
     "armorType": "Light",
     "description": "Elkoss Combine was commissioned by the Salarian Tactics Group to make a set of armor that would allow their agents to remain unseen and unheard.",
@@ -113,6 +121,7 @@
   },
   {
     "name": "Batarian Talon Gauntlets",
+    "rarity": "Uncommon",
     "type": "Arms",
     "armorType": "Light",
     "description": "A set of spiked, clawed gauntlets that give the appearance of their wearer possessing demonic hands.",
@@ -127,6 +136,7 @@
   },
   {
     "name": "Blood Dragon Armet",
+    "rarity": "Spectre",
     "type": "Head",
     "armorType": "Medium",
     "description": "Originally created for Earth's Urban Combat Championship league, this set of armor has undergone as much or more field testing than those of modern militaries. It uses a unique, proprietary power cell that costs as much as a EUCC rookie's contract. The armor's microframe computer adapts to any top-tier omni-tool, kinetic barrier, or biotic amp, giving breathtaking and error-free performance.",
@@ -141,6 +151,7 @@
   },
   {
     "name": "Blood Dragon Curiass",
+    "rarity": "Spectre",
     "type": "Chest",
     "armorType": "Medium",
     "description": "Originally created for Earth's Urban Combat Championship league, this set of armor has undergone as much or more field testing than those of modern militaries. It uses a unique, proprietary power cell that costs as much as a EUCC rookie's contract. The armor's microframe computer adapts to any top-tier omni-tool, kinetic barrier, or biotic amp, giving breathtaking and error-free performance. The chest and shoulder piece bears the logo of the Edmonton Blood Dragons, and the inside of the armor bears the signatures of the entire team.",
@@ -155,6 +166,7 @@
   },
   {
     "name": "Blood Dragon Greaves",
+    "rarity": "Spectre",
     "type": "Legs",
     "armorType": "Medium",
     "description": "Originally created for Earth's Urban Combat Championship league, this set of armor has undergone as much or more field testing than those of modern militaries. It uses a unique, proprietary power cell that costs as much as a EUCC rookie's contract. The armor's microframe computer adapts to any top-tier omni-tool, kinetic barrier, or biotic amp, giving breathtaking and error-free performance.",
@@ -169,6 +181,7 @@
   },
   {
     "name": "Blood Dragon Vambraces",
+    "rarity": "Spectre",
     "type": "Arms",
     "armorType": "Medium",
     "description": "Originally created for Earth's Urban Combat Championship league, this set of armor has undergone as much or more field testing than those of modern militaries. It uses a unique, proprietary power cell that costs as much as a EUCC rookie's contract. The armor's microframe computer adapts to any top-tier omni-tool, kinetic barrier, or biotic amp, giving breathtaking and error-free performance.",
@@ -183,6 +196,7 @@
   },
   {
     "name": "BT Suit",
+    "rarity": "Rare",
     "type": "Body Armor",
     "armorType": "Light",
     "description": "Equipped with a full battle telemetry system to increase Omni-tool power efficiency.",
@@ -197,6 +211,7 @@
   },
   {
     "name": "Capacitor Helmet",
+    "rarity": "Uncommon",
     "type": "Head",
     "armorType": "Medium",
     "description": "A recent design, this Alliance-made helmet stores micro capacitors in its structure to replenish spent kinetic barriers. The transpari-plast armor panel on its top can be removed to access capacitors for field maintenance.",
@@ -211,6 +226,7 @@
   },
   {
     "name": "Cerberus Ajax Gauntlets",
+    "rarity": "Uncommon",
     "type": "Arms",
     "armorType": "Medium",
     "description": "Among Cerberus soldiers, Ajax armor is favored by those brave or unlucky enough to lead charges to break enemy formations. Its role is to keep the wearer standing and shooting as long as possible. It offers some benefit to omni-tool and biotic amp systems, but its main emphasis is boosting and recharging its kinetic barrier and bleeding off weapon heat through coolant circulation in its gloves. ",
@@ -225,6 +241,7 @@
   },
   {
     "name": "Cerberus Ajax Greaves",
+    "rarity": "Uncommon",
     "type": "Legs",
     "armorType": "Medium",
     "description": "Among Cerberus soldiers, Ajax armor is favored by those brave or unlucky enough to lead charges to break enemy formations. Its role is to keep the wearer standing and shooting as long as possible. It offers some benefit to omni-tool and biotic amp systems, but its main emphasis is boosting and recharging its kinetic barrier and bleeding off weapon heat through coolant circulation in its gloves. ",
@@ -239,6 +256,7 @@
   },
   {
     "name": "Cerberus Ajax Helmet",
+    "rarity": "Uncommon",
     "type": "Head",
     "armorType": "Medium",
     "description": "Among Cerberus soldiers, Ajax armor is favored by those brave or unlucky enough to lead charges to break enemy formations. Its role is to keep the wearer standing and shooting as long as possible. It offers some benefit to omni-tool and biotic amp systems, but its main emphasis is boosting and recharging its kinetic barrier and bleeding off weapon heat through coolant circulation in its gloves. ",
@@ -253,6 +271,7 @@
   },
   {
     "name": "Cerberus Ajax Vest",
+    "rarity": "Uncommon",
     "type": "Chest",
     "armorType": "Medium",
     "description": "Among Cerberus soldiers, Ajax armor is favored by those brave or unlucky enough to lead charges to break enemy formations. Its role is to keep the wearer standing and shooting as long as possible. It offers some benefit to omni-tool and biotic amp systems, but its main emphasis is boosting and recharging its kinetic barrier and bleeding off weapon heat through coolant circulation in its gloves. ",
@@ -267,6 +286,7 @@
   },
   {
     "name": "Cerberus Assault Armor",
+    "rarity": "Rare",
     "type": "Body Armor",
     "armorType": "Heavy",
     "description": "Cerberus assault armor is designed for shock troops, who are expected to turn the tide of battle against creatures or forces that would decimate normal soldiers. The troops demanded three things in its design: shields and armor thick enough to last against a superior foe, and compartments for extra thermal clips. The only drawback of the armor is its weight, which the troops carry as a point of pride. They have a saying: \"Out of shape going in, in shape coming out.\"",
@@ -281,6 +301,7 @@
   },
   {
     "name": "Cerberus Assault Helmet",
+    "rarity": "Rare",
     "type": "Head",
     "armorType": "Heavy",
     "description": "Cerberus assault armor is designed for shock troops, who are expected to turn the tide of battle against creatures or forces that would decimate normal soldiers. The troops demanded three things in its design: shields and armor thick enough to last against a superior foe, and compartments for extra thermal clips. The only drawback of the armor is its weight, which the troops carry as a point of pride. They have a saying: \"Out of shape going in, in shape coming out.\"",
@@ -295,6 +316,7 @@
   },
   {
     "name": "Cerberus Nightmare Boots",
+    "rarity": "Spectre",
     "type": "Legs",
     "armorType": "Light",
     "description": "Nightmare armor is worn by Cerberus Phantoms expecting long-range conflicts. Powerful capacitors deliver punishing energy to the Phantom's weapons, and circulating coolant in its gloves allows for more shots before a given thermal clip overheats. The remaining energy focuses on shield strength and regeneration time to help survivability.",
@@ -309,6 +331,7 @@
   },
   {
     "name": "Cerberus Nightmare Chestpiece",
+    "rarity": "Spectre",
     "type": "Chest",
     "armorType": "Light",
     "description": "Nightmare armor is worn by Cerberus Phantoms expecting long-range conflicts. Powerful capacitors deliver punishing energy to the Phantom's weapons, and circulating coolant in its gloves allows for more shots before a given thermal clip overheats. The remaining energy focuses on shield strength and regeneration time to help survivability.",
@@ -323,6 +346,7 @@
   },
   {
     "name": "Cerberus Nightmare Gloves",
+    "rarity": "Spectre",
     "type": "Arms",
     "armorType": "Light",
     "description": "Nightmare armor is worn by Cerberus Phantoms expecting long-range conflicts. Powerful capacitors deliver punishing energy to the Phantom's weapons, and circulating coolant in its gloves allows for more shots before a given thermal clip overheats. The remaining energy focuses on shield strength and regeneration time to help survivability.",
@@ -337,6 +361,7 @@
   },
   {
     "name": "Cerberus Nightmare Helmet",
+    "rarity": "Spectre",
     "type": "Head",
     "armorType": "Light",
     "description": "Nightmare armor is worn by Cerberus Phantoms expecting long-range conflicts. Powerful capacitors deliver punishing energy to the Phantom's weapons, and circulating coolant in its gloves allows for more shots before a given thermal clip overheats. The remaining energy focuses on shield strength and regeneration time to help survivability.",
@@ -351,6 +376,7 @@
   },
   {
     "name": "Cerberus Shade Armguards",
+    "rarity": "Spectre",
     "type": "Arms",
     "armorType": "Medium",
     "description": "Cerberus Shade armor is worn by Phantoms who need to be prepared for a wide variety of threats. Its capacitors give modest boosts to shields and shield regeneration time. Many small improvements increase the performance of biotic amps and omni-tools, heat management and kinetic coils for ranged weapons, and synthetic muscle assistors for melee capability.",
@@ -365,6 +391,7 @@
   },
   {
     "name": "Cerberus Shade Chestpiece",
+    "rarity": "Spectre",
     "type": "Chest",
     "armorType": "Medium",
     "description": "Cerberus Shade armor is worn by Phantoms who need to be prepared for a wide variety of threats. Its capacitors give modest boosts to shields and shield regeneration time. Many small improvements increase the performance of biotic amps and omni-tools, heat management and kinetic coils for ranged weapons, and synthetic muscle assistors for melee capability.",
@@ -379,6 +406,7 @@
   },
   {
     "name": "Cerberus Shade Helmet",
+    "rarity": "Spectre",
     "type": "Head",
     "armorType": "Medium",
     "description": "Cerberus Shade armor is worn by Phantoms who need to be prepared for a wide variety of threats. Its capacitors give modest boosts to shields and shield regeneration time. Many small improvements increase the performance of biotic amps and omni-tools, heat management and kinetic coils for ranged weapons, and synthetic muscle assistors for melee capability.",
@@ -393,6 +421,7 @@
   },
   {
     "name": "Cerberus Shade Legguards",
+    "rarity": "Spectre",
     "type": "Legs",
     "armorType": "Medium",
     "description": "Cerberus Shade armor is worn by Phantoms who need to be prepared for a wide variety of threats. Its capacitors give modest boosts to shields and shield regeneration time. Many small improvements increase the performance of biotic amps and omni-tools, heat management and kinetic coils for ranged weapons, and synthetic muscle assistors for melee capability.",
@@ -407,6 +436,7 @@
   },
   {
     "name": "Cerberus Spirit Armor",
+    "rarity": "Spectre",
     "type": "Body Armor",
     "armorType": "Light",
     "description": "Spirit armor is worn by Cerberus Phantoms fortunate enough to be biotic or for those who are skilled enough to use highly technical attacks. The armor has small gains for shield strength and regeneration, but where it truly shines is in its capacity to amplify biotic amps and omni-tools. These attacks hit significantly harder and more often, allowing the Phantom to dismantle heavily-armored targets.",
@@ -421,6 +451,7 @@
   },
   {
     "name": "Cerberus Spirit Helmet",
+    "rarity": "Spectre",
     "type": "Head",
     "armorType": "Light",
     "description": "Spirit armor is worn by Cerberus Phantoms fortunate enough to be biotic or for those who are skilled enough to use highly technical attacks. The armor has small gains for shield strength and regeneration, but where it truly shines is in its capacity to amplify biotic amps and omni-tools. These attacks hit significantly harder and more often, allowing the Phantom to dismantle heavily-armored targets.",
@@ -435,6 +466,7 @@
   },
   {
     "name": "Collector Carapace",
+    "rarity": "Rare",
     "type": "Body Armor",
     "armorType": "Heavy",
     "description": "The Collectors' chitinous armor is flexible and even tougher than ballistic fibers. Its organic construction allows it to be self-healing, and the muscle-like tissue that assists movement ensures it is comfortable to wear despite its weight. This suit was originally adapted out of salvaged Collector technology by Cerberus and is incredibly difficult to find on the galactic market.",
@@ -449,6 +481,7 @@
   },
   {
     "name": "Collector Headpiece",
+    "rarity": "Rare",
     "type": "Head",
     "armorType": "Heavy",
     "description": "The Collectors' chitinous armor is flexible and even tougher than ballistic fibers. Its organic construction allows it to be self-healing, and the muscle-like tissue that assists movement ensures it is comfortable to wear despite its weight. This suit was originally adapted out of salvaged Collector technology by Cerberus and is incredibly difficult to find on the galactic market.",
@@ -463,6 +496,7 @@
   },
   {
     "name": "Colossus Chestplate",
+    "rarity": "Rare",
     "type": "Chest",
     "armorType": "Heavy",
     "description": "A bulky, heavy armor set that is difficult to wear for those not in superior shape. But considered the galaxy's best defensive suit.",
@@ -477,6 +511,7 @@
   },
   {
     "name": "Colossus Gauntlets",
+    "rarity": "Rare",
     "type": "Hands",
     "armorType": "Heavy",
     "description": "A bulky, heavy armor set that is difficult to wear for those not in superior shape. But considered the galaxy's best defensive suit.",
@@ -491,6 +526,7 @@
   },
   {
     "name": "Colossus Greaves",
+    "rarity": "Rare",
     "type": "Legs",
     "armorType": "Heavy",
     "description": "A bulky, heavy armor set that is difficult to wear for those not in superior shape. But considered the galaxy's best defensive suit.",
@@ -505,6 +541,7 @@
   },
   {
     "name": "Colossus Helmet",
+    "rarity": "Rare",
     "type": "Head",
     "armorType": "Heavy",
     "description": "A bulky, heavy armor set that is difficult to wear for those not in superior shape. But considered the galaxy's best defensive suit.",
@@ -519,6 +556,7 @@
   },
   {
     "name": "Crisis Armor",
+    "rarity": "Uncommon",
     "type": "Body Armor",
     "armorType": "Heavy",
     "description": "Crisis Armor is manufactured by Jormangund Technology, a rising star of post-contact human industry. The armor is lightweight but provides incredible protection.",
@@ -533,6 +571,7 @@
   },
   {
     "name": "Death Mask",
+    "rarity": "Uncommon",
     "type": "Head",
     "armorType": "Heavy",
     "description": "Developed by Tyriel Advanced Communications Corporation (TACC), the latest version of the Death Mask offers exceptional protection and real-time data feedback that helps coordinate the wearer's melee attacks.",
@@ -547,6 +586,7 @@
   },
   {
     "name": "Deep Space Explorer Armor",
+    "rarity": "Spectre",
     "type": "Body Armor",
     "armorType": "Medium",
     "description": "The Andromeda Initiative's mission is one of discovery and exploration, as well as colonization. Readying personnel to journey into harsh environments-and even the void of space was always part of the plan. Thus, the Initiative's custom Deep Space Explorer (DSE) hardsuit is equipped with multiple environment seals, failsafes, a hefty liquid oxygen supply, a formidable kinetic barrier generator, and an array of scientific instruments. Although many were built, most were mysteriously lost en route to Andromeda.",
@@ -561,6 +601,7 @@
   },
   {
     "name": "Deep Space Explorer Helmet",
+    "rarity": "Spectre",
     "type": "Head",
     "armorType": "Medium",
     "description": "The Andromeda Initiative's mission is one of discovery and exploration, as well as colonization. Readying personnel to journey into harsh environments-and even the void of space was always part of the plan. Thus, the Initiative's custom Deep Space Explorer (DSE) hardsuit is equipped with multiple environment seals, failsafes, a hefty liquid oxygen supply, a formidable kinetic barrier generator, and an array of scientific instruments. Although many were built, most were mysteriously lost en route to Andromeda.",
@@ -575,6 +616,7 @@
   },
   {
     "name": "Delumcore Overlay",
+    "rarity": "Uncommon",
     "type": "Head",
     "armorType": "Heavy",
     "description": "Developed by Delumcore Systems, a VI inside this headgear enhances aim when targeting an enemy's vulnerable points.",
@@ -589,6 +631,7 @@
   },
   {
     "name": "Duelist Armor",
+    "rarity": "Uncommon",
     "type": "Body Armor",
     "armorType": "Light",
     "description": "Duelist armor was originally commissioned to Elanus Risk Control systems for use in cage fighting and other live-action combat sports. The armor focuses on keeping the wearer alive after a fatal wound because managers were tired of losing so many fighters in the ring. The armor is as light as fabric and allows full range of motion.",
@@ -603,6 +646,7 @@
   },
   {
     "name": "Elanus Goliath Gauntlets",
+    "rarity": "Uncommon",
     "type": "Arms",
     "armorType": "Heavy",
     "description": "Arm plating with micro servos that coordinate muscle movements when resistance is encountered.",
@@ -617,6 +661,7 @@
   },
   {
     "name": "Enviro-Greaves",
+    "rarity": "Uncommon",
     "type": "Legs",
     "armorType": "Light",
     "description": "A set of leg armor that makes the user much more maneuverable in a mountainous or aquatic environment with normally unsuitable terrain.",
@@ -631,6 +676,7 @@
   },
   {
     "name": "Freedom Armor",
+    "rarity": "Uncommon",
     "type": "Body Armor",
     "armorType": "Light",
     "description": "Cerberus designed freedom armor to look and feel like standard clothing while providing protection to their agents.",
@@ -645,6 +691,7 @@
   },
   {
     "name": "Gladiator Armor",
+    "rarity": "Uncommon",
     "type": "Body Armor",
     "armorType": "Heavy",
     "description": "Elkoss Combine's Gladiator Armor is a simple upgrade to most heavy armor.",
@@ -659,6 +706,7 @@
   },
   {
     "name": "GUARDIAN Gauntlets",
+    "rarity": "Rare",
     "type": "Arms",
     "armorType": "Medium",
     "description": "Arm gauntlets that contain power cells that fuel a miniature version of a starship's standard GARDIAN point defense lasers.",
@@ -673,6 +721,7 @@
   },
   {
     "name": "Hahne-Kedar Tactical Armor",
+    "rarity": "Uncommon",
     "type": "Chest",
     "armorType": "Heavy",
     "description": "A chest plate that disperses weight in a way that makes carrying more equipment bearable.",
@@ -687,6 +736,7 @@
   },
   {
     "name": "Heleus Armor",
+    "rarity": "Spectre",
     "type": "Body Armor",
     "armorType": "Light",
     "description": "This hardsuit is the ultimate product of Initiative research into Heleus Cluster species. Remnant power sources supply angaran hardware in a frame made possible by kett bio-enhancements and Pathfinder implants. This armor is unequivocally a combat suit, intended for the defense of Initiative and angaran colonies",
@@ -701,6 +751,7 @@
   },
   {
     "name": "Heleus Helmet",
+    "rarity": "Spectre",
     "type": "Head",
     "armorType": "Light",
     "description": "This hardsuit is the ultimate product of Initiative research into Heleus Cluster species. Remnant power sources supply angaran hardware in a frame made possible by kett bio-enhancements and Pathfinder implants. This armor is unequivocally a combat suit, intended for the defense of Initiative and angaran colonies",
@@ -715,6 +766,7 @@
   },
   {
     "name": "Survivor Armor",
+    "rarity": "Rare",
     "type": "Body Armor",
     "armorType": "Medium",
     "description": "A simple set of armor made by Devlon Industries providing moderate protection.",
@@ -729,6 +781,7 @@
   },
   {
     "name": "HyperGuardian Chestplate",
+    "rarity": "Uncommon",
     "type": "Chest",
     "armorType": "Heavy",
     "description": "HyperGuardian hardsuits were built by Kassa Fabrication as a civilian-friendly alternative to the Colossus line intended for private security in heavy-fire situations or extreme environmental conditions. The Initiative considered the bulky and unbreakable HyperGuardian a perfect choice for protecting vulnerable new colonies.",
@@ -743,6 +796,7 @@
   },
   {
     "name": "HyperGuardian Gauntlets",
+    "rarity": "Uncommon",
     "type": "Arms",
     "armorType": "Heavy",
     "description": "HyperGuardian hardsuits were built by Kassa Fabrication as a civilian-friendly alternative to the Colossus line intended for private security in heavy-fire situations or extreme environmental conditions. The Initiative considered the bulky and unbreakable HyperGuardian a perfect choice for protecting vulnerable new colonies.",
@@ -757,6 +811,7 @@
   },
   {
     "name": "HyperGuardian Greaves",
+    "rarity": "Uncommon",
     "type": "Legs",
     "armorType": "Heavy",
     "description": "HyperGuardian hardsuits were built by Kassa Fabrication as a civilian-friendly alternative to the Colossus line intended for private security in heavy-fire situations or extreme environmental conditions. The Initiative considered the bulky and unbreakable HyperGuardian a perfect choice for protecting vulnerable new colonies.",
@@ -771,6 +826,7 @@
   },
   {
     "name": "HyperGuardian Helmet",
+    "rarity": "Uncommon",
     "type": "Head",
     "armorType": "Heavy",
     "description": "HyperGuardian hardsuits were built by Kassa Fabrication as a civilian-friendly alternative to the Colossus line intended for private security in heavy-fire situations or extreme environmental conditions. The Initiative considered the bulky and unbreakable HyperGuardian a perfect choice for protecting vulnerable new colonies.",
@@ -785,6 +841,7 @@
   },
   {
     "name": "Inferno Armor",
+    "rarity": "Rare",
     "type": "Body Armor",
     "armorType": "Medium",
     "description": "Built specifically for Cerberus field officers, the Inferno armor has a VI dedicated to recognizing signs of stress and medical trauma. This application helps assess soldiers but can be useful in any high-risk situations. The Inferno's microframe computer also manages biotic amp and omni-tool power, and microservos help the wearer's movements to counteract the armor's weight.",
@@ -799,6 +856,7 @@
   },
   {
     "name": "Inferno Helmet",
+    "rarity": "Rare",
     "type": "Head",
     "armorType": "Medium",
     "description": "Built specifically for Cerberus field officers, the Inferno armor has a VI dedicated to recognizing signs of stress and medical trauma. This application helps assess soldiers but can be useful in any high-risk situations. The Inferno's microframe computer also manages biotic amp and omni-tool power, and microservos help the wearer's movements to counteract the armor's weight.",
@@ -813,6 +871,7 @@
   },
   {
     "name": "Initiative Chestpiece",
+    "rarity": "Uncommon",
     "type": "Chest",
     "armorType": "Medium",
     "description": "Standard-issue Andromeda Initiative hardsuits are designed for exploration as much as combat, combining jump-jets, high-grade external and internal sensors, and a variety of atmospheric filters with the usual kinetic barrier generators and ceramic armor plating. Personnel equipped in these suits can enter and leave alien biomes without fear of contamination or hostile wildlife.",
@@ -827,6 +886,7 @@
   },
   {
     "name": "Initiative Gauntlets",
+    "rarity": "Uncommon",
     "type": "Arms",
     "armorType": "Medium",
     "description": "Standard-issue Andromeda Initiative hardsuits are designed for exploration as much as combat, combining jump-jets, high-grade external and internal sensors, and a variety of atmospheric filters with the usual kinetic barrier generators and ceramic armor plating. Personnel equipped in these suits can enter and leave alien biomes without fear of contamination or hostile wildlife.",
@@ -841,6 +901,7 @@
   },
   {
     "name": "Initiative Greaves",
+    "rarity": "Uncommon",
     "type": "Legs",
     "armorType": "Medium",
     "description": "Standard-issue Andromeda Initiative hardsuits are designed for exploration as much as combat, combining jump-jets, high-grade external and internal sensors, and a variety of atmospheric filters with the usual kinetic barrier generators and ceramic armor plating. Personnel equipped in these suits can enter and leave alien biomes without fear of contamination or hostile wildlife.",
@@ -855,6 +916,7 @@
   },
   {
     "name": "Initiative Helmet",
+    "rarity": "Uncommon",
     "type": "Head",
     "armorType": "Medium",
     "description": "Standard-issue Andromeda Initiative hardsuits are designed for exploration as much as combat, combining jump-jets, high-grade external and internal sensors, and a variety of atmospheric filters with the usual kinetic barrier generators and ceramic armor plating. Personnel equipped in these suits can enter and leave alien biomes without fear of contamination or hostile wildlife.",
@@ -869,6 +931,7 @@
   },
   {
     "name": "Kestrel Helmet",
+    "rarity": "Rare",
     "type": "Head",
     "armorType": "Light",
     "description": "The Kestrel armor system's helmet forgoes traditional transparent visors in favor of a reinforced faceplate with an internal heads-up display. The display connects to redundant micro cameras to allow naturalistic vision inside the well-padded interior. ",
@@ -883,6 +946,7 @@
   },
   {
     "name": "Kett Chestplate",
+    "rarity": "Rare",
     "type": "Chest",
     "armorType": "Heavy",
     "description": "Although this hardsuit's basic materials-ceramic armor plating and kinetic padding-are Initiative standard, kett biotech permeates the overall design and feeds directly into the user's nervous system. Kett armor enhances combat prowess through chemical regulation and stimulation.",
@@ -897,6 +961,7 @@
   },
   {
     "name": "Kett Greaves",
+    "rarity": "Rare",
     "type": "Legs",
     "armorType": "Heavy",
     "description": "Although this hardsuit's basic materials-ceramic armor plating and kinetic padding-are Initiative standard, kett biotech permeates the overall design and feeds directly into the user's nervous system. Kett armor enhances combat prowess through chemical regulation and stimulation.",
@@ -911,6 +976,7 @@
   },
   {
     "name": "Kett Helmet",
+    "rarity": "Rare",
     "type": "Head",
     "armorType": "Heavy",
     "description": "Although this hardsuit's basic materials-ceramic armor plating and kinetic padding-are Initiative standard, kett biotech permeates the overall design and feeds directly into the user's nervous system. Kett armor enhances combat prowess through chemical regulation and stimulation.",
@@ -925,6 +991,7 @@
   },
   {
     "name": "Kett Vambraces",
+    "rarity": "Rare",
     "type": "Arms",
     "armorType": "Heavy",
     "description": "Although this hardsuit's basic materials-ceramic armor plating and kinetic padding-are Initiative standard, kett biotech permeates the overall design and feeds directly into the user's nervous system. Kett armor enhances combat prowess through chemical regulation and stimulation.",
@@ -939,6 +1006,7 @@
   },
   {
     "name": "Kuwashii Visor",
+    "rarity": "Uncommon",
     "type": "Head",
     "armorType": "Light",
     "description": "Developed by Ariake Technologies, the wearer exchanges full protective coverage for visibility, unencumbered mobility, and increased accuracy.",
@@ -953,6 +1021,7 @@
   },
   {
     "name": "Liberator Armor",
+    "rarity": "Uncommon",
     "type": "Body Armor",
     "armorType": "Light",
     "description": "Devlon Industries' Liberator Armor is a simple upgrade to most light armor.",
@@ -967,6 +1036,7 @@
   },
   {
     "name": "Lockdown Greaves",
+    "rarity": "Uncommon",
     "type": "Legs",
     "armorType": "Heavy",
     "description": "A pair of leg armor pieces that connect the wearer's boots to the suit's power supply, turning the boots into a powerful electromagnet.",
@@ -981,6 +1051,7 @@
   },
   {
     "name": "Skirmish Armor",
+    "rarity": "Uncommon",
     "type": "Body Armor",
     "armorType": "Medium",
     "description": "Batarian State Arms' Skirmish armor provides enhanced speed to better escape the blast of the grenade you just threw.",
@@ -995,6 +1066,7 @@
   },
   {
     "name": "Mantis Armor",
+    "rarity": "Uncommon",
     "type": "Body Armor",
     "armorType": "Light",
     "description": "Hahne-Kedar's line of armor that utilizes arm-length, serrated switchblades in the greaves meant to hook targets. Don't cut yourself!",
@@ -1009,6 +1081,7 @@
   },
   {
     "name": "Maverick Boots",
+    "rarity": "Uncommon",
     "type": "Legs",
     "armorType": "Light",
     "description": "There's nothing elegant about this patchwork hardsuit. It mixes various materials and technology from the Heleus Cluster and its microframe computer runs a jumble of barely linked programs. Despite this, or because of it, the armor is highly effective in combat, with targeting and thermal distribution systems second to none.",
@@ -1023,6 +1096,7 @@
   },
   {
     "name": "Maverick Vest",
+    "rarity": "Uncommon",
     "type": "Chest",
     "armorType": "Light",
     "description": "There's nothing elegant about this patchwork hardsuit. It mixes various materials and technology from the Heleus Cluster and its microframe computer runs a jumble of barely linked programs. Despite this, or because of it, the armor is highly effective in combat, with targeting and thermal distribution systems second to none.",
@@ -1037,6 +1111,7 @@
   },
   {
     "name": "Maverick Visor",
+    "rarity": "Uncommon",
     "type": "Head",
     "armorType": "Light",
     "description": "There's nothing elegant about this patchwork hardsuit. It mixes various materials and technology from the Heleus Cluster and its microframe computer runs a jumble of barely linked programs. Despite this, or because of it, the armor is highly effective in combat, with targeting and thermal distribution systems second to none.",
@@ -1051,6 +1126,7 @@
   },
   {
     "name": "Maverick Wraps",
+    "rarity": "Uncommon",
     "type": "Arms",
     "armorType": "Light",
     "description": "There's nothing elegant about this patchwork hardsuit. It mixes various materials and technology from the Heleus Cluster and its microframe computer runs a jumble of barely linked programs. Despite this, or because of it, the armor is highly effective in combat, with targeting and thermal distribution systems second to none.",
@@ -1065,6 +1141,7 @@
   },
   {
     "name": "Mercenary Armor",
+    "rarity": "Uncommon",
     "type": "Body Armor",
     "armorType": "Light",
     "description": "Basic armor offering a minor upgrade to shield capacitors.",
@@ -1079,6 +1156,7 @@
   },
   {
     "name": "Mnemonic Visor",
+    "rarity": "Uncommon",
     "type": "Head",
     "armorType": "Light",
     "description": "Relatively new to the market, the Mnemonic Visor is difficult to find outside Alliance space. Intended for biotic specialists, this headpiece plugs into the rest of the user's suit, gathering data so it can adapt to the wearer's tactics. It boosts biotic performance at critical moments to allow a soldier to perform with greater power than normally possible.",
@@ -1093,6 +1171,7 @@
   },
   {
     "name": "N7 Defender Armorsuit",
+    "rarity": "Rare",
     "type": "Body Armor",
     "armorType": "Heavy",
     "description": "The Defender Armor is a variation on the N7 Special Forces’ combat gear, built to protect soldiers in long-running engagements where reinforcements may be sparse. When the wearer fires a weapon, the suit's computers divert energy from the main power cell to the gun's kinetic coils, offering an extra punch. The Defender's storage compartments are designed to hold spare thermal clips, while capacitors throughout the armor provide extra power to shields during critical moments in battle. The armor also comes with an injection system built into the suit and neural-linked bio-monitors that help adjust the wearer's breathing rate and adrenaline levels.",
@@ -1107,6 +1186,7 @@
   },
   {
     "name": "N7 Defender Helmet",
+    "rarity": "Rare",
     "type": "Head",
     "armorType": "Heavy",
     "description": "The Defender Armor is a variation on the N7 Special Forces’ combat gear, built to protect soldiers in long-running engagements where reinforcements may be sparse. When the wearer fires a weapon, the suit's computers divert energy from the main power cell to the gun's kinetic coils, offering an extra punch. The Defender's storage compartments are designed to hold spare thermal clips, while capacitors throughout the armor provide extra power to shields during critical moments in battle. The armor also comes with an injection system built into the suit and neural-linked bio-monitors that help adjust the wearer's breathing rate and adrenaline levels.",
@@ -1121,6 +1201,7 @@
   },
   {
     "name": "N7 Chestplate",
+    "rarity": "Rare",
     "type": "Chest",
     "armorType": "Medium",
     "description": "Interlocking plates of thick, ablative ceramic plates. Designed to be light, effective, and easily repaired.",
@@ -1135,6 +1216,7 @@
   },
   {
     "name": "N7 Gauntlets",
+    "rarity": "Rare",
     "type": "Arms",
     "armorType": "Medium",
     "description": "A combination of fabric armor with kinetic padding and plates of ablative ceramic for protection.",
@@ -1149,6 +1231,7 @@
   },
   {
     "name": "N7 Greaves",
+    "rarity": "Rare",
     "type": "Legs",
     "armorType": "Medium",
     "description": "Dual layer of fabric armor and kinetic padding beneath thick plates of ablative ceramic and lined with additional kinetic barriers.",
@@ -1163,6 +1246,7 @@
   },
   {
     "name": "N7 Helmet",
+    "rarity": "Rare",
     "type": "Head",
     "armorType": "Medium",
     "description": "Dual layer of fabric armor and kinetic padding within a lightweight ablative ceramic shell. Comes standard with a suite of communication, navigation, and battlefield awareness software.",
@@ -1177,6 +1261,7 @@
   },
   {
     "name": "Onyx Armor",
+    "rarity": "Uncommon",
     "type": "Body Armor",
     "armorType": "Medium",
     "description": "Onyx Armor is one of Aldrin Labs' armor lines and used by Alliance special forces personnel. A minor upgrade to stock medium armor.",
@@ -1191,6 +1276,7 @@
   },
   {
     "name": "Partisan Armor",
+    "rarity": "Uncommon",
     "type": "Body Armor",
     "armorType": "Medium",
     "description": "Batarian State Arms developed a line of armor meant to protect Batarian soldiers for alien diseases and infections.",
@@ -1205,6 +1291,7 @@
   },
   {
     "name": "Partisan Helmet",
+    "rarity": "Uncommon",
     "type": "Head",
     "armorType": "Medium",
     "description": "Batarian State Arms developed a line of armor meant to protect Batarian soldiers for alien diseases and infections.",
@@ -1219,6 +1306,7 @@
   },
   {
     "name": "Pathfinder Chestpiece",
+    "rarity": "Rare",
     "type": "Chest",
     "armorType": "Medium",
     "description": "Pathfinder hardsuits are heavily modified from the Initiative suit baseline, foregoing certain scientific instruments in favor of added combat capability. The role of a Pathfinder includes threat neutralization, and improved stabilizers and targeting controls help ensure they can protect his or her team.",
@@ -1233,6 +1321,7 @@
   },
   {
     "name": "Pathfinder Gauntlets",
+    "rarity": "Rare",
     "type": "Arms",
     "armorType": "Medium",
     "description": "Pathfinder hardsuits are heavily modified from the Initiative suit baseline, foregoing certain scientific instruments in favor of added combat capability. The role of a Pathfinder includes threat neutralization, and improved stabilizers and targeting controls help ensure they can protect his or her team.",
@@ -1247,6 +1336,7 @@
   },
   {
     "name": "Pathfinder Greaves",
+    "rarity": "Rare",
     "type": "Legs",
     "armorType": "Medium",
     "description": "Pathfinder hardsuits are heavily modified from the Initiative suit baseline, foregoing certain scientific instruments in favor of added combat capability. The role of a Pathfinder includes threat neutralization, and improved stabilizers and targeting controls help ensure they can protect his or her team.",
@@ -1261,6 +1351,7 @@
   },
   {
     "name": "Pathfinder Helmet",
+    "rarity": "Rare",
     "type": "Head",
     "armorType": "Medium",
     "description": "Pathfinder hardsuits are heavily modified from the Initiative suit baseline, foregoing certain scientific instruments in favor of added combat capability. The role of a Pathfinder includes threat neutralization, and improved stabilizers and targeting controls help ensure they can protect his or her team.",
@@ -1275,6 +1366,7 @@
   },
   {
     "name": "Personal Shield Generator",
+    "rarity": "Common",
     "type": "None",
     "armorType": "-",
     "description": "A personal shield generator that offers shields outside of wearing armor.",
@@ -1289,6 +1381,7 @@
   },
   {
     "name": "Power Reservoir Legguards",
+    "rarity": "Uncommon",
     "type": "Legs",
     "armorType": "Medium",
     "description": "A set of greaves that have batteries designed to conserve biotic power.",
@@ -1303,6 +1396,7 @@
   },
   {
     "name": "Predator Armor",
+    "rarity": "Uncommon",
     "type": "Body Armor",
     "armorType": "Medium",
     "description": "Standard issue armor for Turian infantry. The interlocking plates provide increased protection against potentially fatal wounds.",
@@ -1317,6 +1411,7 @@
   },
   {
     "name": "Reckoner-Knight Armet",
+    "rarity": "Spectre",
     "type": "Head",
     "armorType": "Heavy",
     "description": "The Reckoner-Knight armor was originally worn by the winners of Earth's Urban Combat Championship 2186, the Rhode Island Knights. A military-grade version of this equipment was presented to longtime Knight fans at the Alliance's Rhode Island base, in thanks for their passionate (and vocal) support during the EUCC championship matches. Beneath this armor's medieval-gothic facade lie a host of biofeedback systems intended to monitor the wearer's health and combat performance. Micro-servos maximize damage done in close-quarters combat, while a beefed-up power cell feeds energy into weapons systems to increase projectile velocity. Befitting gear originally designed for a full-contact sport, a sophisticated shield system also offers the wearer solid protection from incoming attacks.",
@@ -1331,6 +1426,7 @@
   },
   {
     "name": "Reckoner-Knight Armorsuit",
+    "rarity": "Spectre",
     "type": "Body Armor",
     "armorType": "Heavy",
     "description": "The Reckoner-Knight armor was originally worn by the winners of Earth's Urban Combat Championship 2186, the Rhode Island Knights. A military-grade version of this equipment was presented to longtime Knight fans at the Alliance's Rhode Island base, in thanks for their passionate (and vocal) support during the EUCC championship matches. Beneath this armor's medieval-gothic facade lie a host of biofeedback systems intended to monitor the wearer's health and combat performance. Micro-servos maximize damage done in close-quarters combat, while a beefed-up power cell feeds energy into weapons systems to increase projectile velocity. Befitting gear originally designed for a full-contact sport, a sophisticated shield system also offers the wearer solid protection from incoming attacks.",
@@ -1345,6 +1441,7 @@
   },
   {
     "name": "Recon Hood",
+    "rarity": "Uncommon",
     "type": "Head",
     "armorType": "Light",
     "description": "A hood issued to covert action teams, this model's optic display interfaces with most small arm's auto-targeting software, linking hand and eye for improved accuracy and increased weapon damage. Ballistic-mesh fabric and composite ceramic plating provide necessary armor, and the integral air filter helps in hostile environments. ",
@@ -1359,6 +1456,7 @@
   },
   {
     "name": "Remnant Battery",
+    "rarity": "Rare",
     "type": "Chest",
     "armorType": "Medium",
     "description": "This armor was designed from scratch by the Initiative using Remnant technology. Its servos, microframe computer, and kinetic barrier generators are all dependent on Remnant science and artifacts. This resilient and regenerative hardsuit has an energy surplus, though its internal systems can be difficult to properly monitor.",
@@ -1373,6 +1471,7 @@
   },
   {
     "name": "Remnant Helmet",
+    "rarity": "Rare",
     "type": "Head",
     "armorType": "Medium",
     "description": "This armor was designed from scratch by the Initiative using Remnant technology. Its servos, microframe computer, and kinetic barrier generators are all dependent on Remnant science and artifacts. This resilient and regenerative hardsuit has an energy surplus, though its internal systems can be difficult to properly monitor.",
@@ -1387,6 +1486,7 @@
   },
   {
     "name": "Remnant Tasset",
+    "rarity": "Rare",
     "type": "Legs",
     "armorType": "Medium",
     "description": "This armor was designed from scratch by the Initiative using Remnant technology. Its servos, microframe computer, and kinetic barrier generators are all dependent on Remnant science and artifacts. This resilient and regenerative hardsuit has an energy surplus, though its internal systems can be difficult to properly monitor.",
@@ -1401,6 +1501,7 @@
   },
   {
     "name": "Remnant Vambraces",
+    "rarity": "Rare",
     "type": "Arms",
     "armorType": "Medium",
     "description": "This armor was designed from scratch by the Initiative using Remnant technology. Its servos, microframe computer, and kinetic barrier generators are all dependent on Remnant science and artifacts. This resilient and regenerative hardsuit has an energy surplus, though its internal systems can be difficult to properly monitor.",
@@ -1415,6 +1516,7 @@
   },
   {
     "name": "Rosenkov Reflex Armor",
+    "rarity": "Rare",
     "type": "Chest",
     "armorType": "Heavy",
     "description": "Sturdy armor that gathers real-time battle telemetry and and onboard combat computer that can help a combatant move faster than they can think.",
@@ -1429,6 +1531,7 @@
   },
   {
     "name": "Rosenkov Snaring Gauntlets",
+    "rarity": "Uncommon",
     "type": "Arms",
     "armorType": "Heavy",
     "description": "Arm pieces that were designed with trench warfare in mind, they have strong electromagnets that prove especially useful when regulated by combat computers.",
@@ -1443,6 +1546,7 @@
   },
   {
     "name": "Scavenger Armor",
+    "rarity": "Rare",
     "type": "Body Armor",
     "armorType": "Light",
     "description": "The Auto-Recycling Technical and Combat Interface Armor-a name only slightly less awkward in the original turian-is better known as the Scavenger Hardsuit. Originally built by Armax Arsenal in the Milky Way, the Scavenger incorporates quarian technology that allows the user to better analyze, interface, and integrate foreign components.",
@@ -1457,6 +1561,7 @@
   },
   {
     "name": "Scavenger Helmet",
+    "rarity": "Rare",
     "type": "Head",
     "armorType": "Light",
     "description": "The Auto-Recycling Technical and Combat Interface Armor-a name only slightly less awkward in the original turian-is better known as the Scavenger Hardsuit. Originally built by Armax Arsenal in the Milky Way, the Scavenger incorporates quarian technology that allows the user to better analyze, interface, and integrate foreign components.",
@@ -1471,6 +1576,7 @@
   },
   {
     "name": "Securitel Helmet",
+    "rarity": "Uncommon",
     "type": "Head",
     "armorType": "Medium",
     "description": "The Securitel Helmet was originally designed as riot-gear. It is covered in ablative plating, well-padded to lessen damage from shocks, blows and bullet impacts. The helmet's emitters boost shielding in the rest of the armor, while its onboard computers monitor the wearer's heart-rate and central nervous system.",
@@ -1485,6 +1591,7 @@
   },
   {
     "name": "Sentry Interface",
+    "rarity": "Uncommon",
     "type": "Head",
     "armorType": "Medium",
     "description": "This visor works with the Sentry system, a software application that optimizes an armor suit's microframe computer. When the Sentry system is running, more power can be devoted to shield management.",
@@ -1499,6 +1606,7 @@
   },
   {
     "name": "Serrice Adaptor Gauntlets",
+    "rarity": "Uncommon",
     "type": "Arms",
     "armorType": "Medium",
     "description": "A pair of gauntlets that have micro fabricators in their frames. These can spread omni-gel through the rest of the hardsuit, inuring the combatant to a type of damage.",
@@ -1513,6 +1621,7 @@
   },
   {
     "name": "Serrice Rimebane Armor",
+    "rarity": "Rare",
     "type": "Chest",
     "armorType": "Medium",
     "description": "Chest plating with auxiliary power cells that defrost spots of crystalline ice caused by cryo rounds on impact.",
@@ -1527,6 +1636,7 @@
   },
   {
     "name": "Sirta Parade Armor",
+    "rarity": "Uncommon",
     "type": "Body Armor",
     "armorType": "Light",
     "description": "Glossy armor that shines in the light, designed to look good as its first function.",
@@ -1541,6 +1651,7 @@
   },
   {
     "name": "Stealth Greaves",
+    "rarity": "Uncommon",
     "type": "Legs",
     "armorType": "Light",
     "description": "Greaves that secrete a highly advanced lubricant in the joints.",
@@ -1555,6 +1666,7 @@
   },
   {
     "name": "Stock Heavy Armor",
+    "rarity": "Common",
     "type": "Body Armor",
     "armorType": "Heavy",
     "description": "A cheap and simple set of heavy armor.",
@@ -1569,6 +1681,7 @@
   },
   {
     "name": "Stock Light Armor",
+    "rarity": "Common",
     "type": "Body Armor",
     "armorType": "Light",
     "description": "A cheap and simple set of light armor.",
@@ -1583,6 +1696,7 @@
   },
   {
     "name": "Stock Medium Armor",
+    "rarity": "Common",
     "type": "Body Armor",
     "armorType": "Medium",
     "description": "A cheap and simple set of medium armor.",
@@ -1597,6 +1711,7 @@
   },
   {
     "name": "Strider Legguards",
+    "rarity": "Uncommon",
     "type": "Legs",
     "armorType": "Medium",
     "description": "Greaves that use a set of mass effect field generators to alter the wearer's gravity, making certain maneuvers much more manageable.",
@@ -1611,6 +1726,7 @@
   },
   {
     "name": "Terminus Assault Chestpiece",
+    "rarity": "Uncommon",
     "type": "Chest",
     "armorType": "Heavy",
     "description": "The Terminus Armor is environmentally sealed with an independent air supply for use in space and extreme planetary conditions. Its onboard microframe computer runs a suite of battle management software. To prevent detection by passive thermal sensors, body heat is channeled to the base of the feet and dispersed into the ground.",
@@ -1625,6 +1741,7 @@
   },
   {
     "name": "Terminus Assault Gauntlets",
+    "rarity": "Uncommon",
     "type": "Arms",
     "armorType": "Heavy",
     "description": "The Terminus Armor is environmentally sealed with an independent air supply for use in space and extreme planetary conditions. Its onboard microframe computer runs a suite of battle management software. To prevent detection by passive thermal sensors, body heat is channeled to the base of the feet and dispersed into the ground.",
@@ -1639,6 +1756,7 @@
   },
   {
     "name": "Terminus Assault Greaves",
+    "rarity": "Uncommon",
     "type": "Legs",
     "armorType": "Heavy",
     "description": "The Terminus Armor is environmentally sealed with an independent air supply for use in space and extreme planetary conditions. Its onboard microframe computer runs a suite of battle management software. To prevent detection by passive thermal sensors, body heat is channeled to the base of the feet and dispersed into the ground.",
@@ -1653,6 +1771,7 @@
   },
   {
     "name": "Terminus Assault Helmet",
+    "rarity": "Uncommon",
     "type": "Head",
     "armorType": "Heavy",
     "description": "The Terminus Armor is environmentally sealed with an independent air supply for use in space and extreme planetary conditions. Its onboard microframe computer runs a suite of battle management software. To prevent detection by passive thermal sensors, body heat is channeled to the base of the feet and dispersed into the ground.",
@@ -1667,6 +1786,7 @@
   },
   {
     "name": "Umbra Visor",
+    "rarity": "Rare",
     "type": "Head",
     "armorType": "Light",
     "description": "A next-generation night-vision device that assists targeting. By detecting the focal point of the wearer's eyes and enhancing the image at that location, the visor helps direct a biotic power or a shot from an omni-tool exactly where the wearer is looking.",
@@ -1681,6 +1801,7 @@
   },
   {
     "name": "Warlord Armor",
+    "rarity": "Rare",
     "type": "Body Armor",
     "armorType": "Heavy",
     "description": "A favorite for Krogran gladiators. The armor is finished with a silver polish, which quickly becomes dented, scuffed, and bloodied. These \"battle scars\" tell the tale of a Krogan's feats.",
@@ -1695,10 +1816,11 @@
   },
   {
     "name": "Ursa Armor",
+    "rarity": "Uncommon",
     "type": "Body Armor",
     "armorType": "Medium",
     "description": "Hahne-Kedar's Urse armor is known for its \"think hide\", and is a moderate update over stock armor.",
-    "feature": "20 shields (regen 10). +2 AC",
+    "feature": "20 shields (regen 10). --+2 AC",
     "setBonus": null,
     "cost": "84150",
     "manu": "Hahne-Kedar",
@@ -1709,10 +1831,11 @@
   },
   {
     "name": "Titan Armor",
+    "rarity": "Uncommon",
     "type": "Body Armor",
     "armorType": "Heavy",
     "description": "Titan armor was created by Rosenkov Materials as an upgrade to their other lines of heavy armor.",
-    "feature": "20 shields (regen 5). +2 AC",
+    "feature": "20 shields (regen 5). --+2 AC",
     "setBonus": null,
     "cost": "87550",
     "manu": "Rosenkov Materials",
@@ -1723,6 +1846,7 @@
   },
   {
     "name": "Hoplite Armor",
+    "rarity": "Uncommon",
     "type": "Body Armor",
     "armorType": "Light",
     "description": "With additional research into kinetic barrier devices, Cerberus Skunkworks created the Hoplite Armor. As light and simple as their popular Freedom Armor with a shield generator around the waist, giving it an appearance of ancient Greek hoplites.",

@@ -6,7 +6,8 @@ export default {
     filters: {
       weapons: {
         type: [],
-        rarity: []
+        rarity: [],
+        property: [],
       },
       spells: {
         type: [],
@@ -15,15 +16,18 @@ export default {
       weaponMods: {
         placement: [],
         weaponType: [],
+        rarity: [],
         notes: []
       },
       armorMods: {
         type: [],
+        rarity: [],
         notes: []
       },
       armorSets: {
         type: [],
         armorType: [],
+        rarity: [],
         notes: []
       },
       monsters: {
@@ -36,7 +40,20 @@ export default {
       }
     },
     mobileFilterDialog: false,
-    searchString: ''
+    searchString: '',
+    rarityOptions: ['Common', 'Uncommon', 'Rare', 'Spectre'],
+    rarityColors: {
+      'Common': 'grey darken-3',
+      'Uncommon': 'green darken-3',
+      'Rare': 'blue darken-2',
+      'Spectre': 'purple'
+    },
+    rarityTextColors: {
+      'Common': 'grey--text text--darken-4',
+      'Uncommon': 'green--text text--darken-3',
+      'Rare': 'blue--text text--darken-2',
+      'Spectre': 'purple--text'
+    }
   },
   mutations: {
     update (state, payload) {
@@ -66,6 +83,9 @@ export default {
     rarity: state => state.rarity,
     searchString: state => state.searchString,
     filters: state => state.filters,
-    mobileFilterDialog: state => state.mobileFilterDialog
+    mobileFilterDialog: state => state.mobileFilterDialog,
+    rarityOptions: state => state.rarityOptions,
+    rarityTextColors: state => state.rarityTextColors,
+    rarityColors: state => state.rarityColors
   }
 }

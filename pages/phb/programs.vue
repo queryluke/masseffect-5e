@@ -72,7 +72,7 @@
           data = data.filter((item) => item.name.toLowerCase().indexOf(this.search.toLowerCase()) >= 0)
         }
         if (this.filters[this.itemKey].rarity.length > 0) {
-          data = data.filter(item => this.filters[this.itemKey].rarity.includes(item.rarity))
+          data = data.filter(item => this.filters[this.itemKey].rarity.map(r => r.toLowerCase()).includes(item.rarity))
         }
         if (this.filters[this.itemKey].installation) {
           data = data.filter(item => item.installation)
@@ -80,6 +80,7 @@
         return data
       }
     },
+    middleware: 'resetListFilters',
     head () {
       return {
         title: 'Programs - Equipment | Mass Effect 5e',

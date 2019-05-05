@@ -54,7 +54,7 @@
         return this.weapon.type === 'Melee' ? 'reach' : 'range'
       },
       tags () {
-        return this.weapon.tags.split(',').map(t => t.toLowerCase().trim())
+        return this.weapon.properties.map(t => t.toLowerCase().trim())
       },
       notableTags () {
         const notableTags = ['two-handed', 'double tap', 'hip fire', 'burst fire']

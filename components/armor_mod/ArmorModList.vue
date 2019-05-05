@@ -5,7 +5,8 @@
       v-expansion-panel-content(v-for="item in items" v-bind:key="item.id")
         div(slot="header")
           v-layout
-            v-flex(:class="headers[0].classes") #[strong {{ item.name }}]
+            v-flex(:class="headers[0].classes")
+              div(:class="rarityTextColors[item.rarity]") #[strong {{ item.name }}]
             v-flex(:class="headers[1].classes") {{ item.cost | groupDigits(',') }}
             v-flex(:class="headers[2].classes") {{ item.type }}
             v-flex(:class="headers[3].classes") {{ item.notes }}
@@ -20,6 +21,7 @@
   import SortOptions from '~/components/list/Sort.vue'
   import ArmorModInfo from '~/components/armor_mod/ArmorModInfo.vue'
   import BookmarkButton from '~/components/BookmarkButton.vue'
+  import {mapGetters} from 'vuex'
 
   export default {
     components: {
@@ -40,6 +42,9 @@
           { label: 'Notes', key: 'notes', classes: 'hidden-sm-and-down md4' }
         ]
       }
+    },
+    computed: {
+      ...mapGetters('itemList', ['rarityTextColors'])
     }
   }
 </script>

@@ -5,10 +5,11 @@
       v-expansion-panel-content(v-for="(item, index) in items" v-bind:key="index")
         div(slot="header")
           v-layout
-            v-flex(:class="headers[0].classes") #[strong {{ item.name }}]
+            v-flex(:class="headers[0].classes")
+              div(:class="rarityTextColors[item.rarity]") #[strong {{ item.name }}]
             v-flex(:class="headers[1].classes") {{ item.cost | groupDigits(',') }}
-            v-flex(:class="headers[2].classes") {{ item.type }}
-            v-flex(:class="headers[3].classes") {{ item.armorType }}
+            v-flex(:class="headers[2].classes") {{ item.armorType }}
+            v-flex(:class="headers[3].classes") {{ item.type }}
             v-flex(:class="headers[4].classes") {{ item.notes }}
         v-card.grey.lighten-3
           v-card-text
@@ -21,6 +22,7 @@
   import SortOptions from '~/components/list/Sort.vue'
   import ArmorSetInfo from '~/components/armor_set/ArmorSetInfo.vue'
   import BookmarkButton from '~/components/BookmarkButton.vue'
+  import {mapGetters} from 'vuex'
 
   export default {
     components: {
@@ -35,13 +37,16 @@
     data () {
       return {
         headers: [
-          { label: 'Name', key: 'name', classes: 'xs6 md3 lg2', sortable: true },
-          { label: 'Cost', key: 'cost', classes: 'xs3 md3 lg1', sortable: true },
-          { label: 'Type', key: 'placement', classes: 'xs3 md3 lg1' },
-          { label: 'Armor Type', key: 'weaponType', classes: 'hidden-sm-and-down md3 lg4' },
-          { label: 'Notes', key: 'notes', classes: 'hidden-md-and-down lg4' }
+          { label: 'Name', key: 'name', classes: 'xs6 md4 lg3', sortable: true },
+          { label: 'Cost', key: 'cost', classes: 'xs2 md1', sortable: true },
+          { label: 'Armor Type', key: 'armorType', classes: 'xs2 md1' },
+          { label: 'Type', key: 'placement', classes: 'xs2 md2' },
+          { label: 'Notes', key: 'notes', classes: 'hidden-sm-and-down md4 lg5' }
         ]
       }
+    },
+    computed: {
+      ...mapGetters('itemList', ['rarityTextColors'])
     }
   }
 </script>

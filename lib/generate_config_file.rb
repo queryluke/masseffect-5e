@@ -28,9 +28,6 @@ def generate_config_file(page)
       end
 
       case page[:type]
-        when 'bestiary'
-          next if dup_model['image'].nil?
-          dup_model = configure_monster(dup_model)
         when 'weapon_mods'
           config_weapon_mods(dup_model)
           dup_model = nil
@@ -39,6 +36,10 @@ def generate_config_file(page)
         when 'commonplace_items'
           config_commonplace_items(dup_model)
           dup_model = nil
+        when 'weapons'
+          dup_model['properties'] = []
+          dup_model['properties'] = dup_model['tags'].split(',').map{|t| t.strip} unless dup_model['tags'].nil?
+          dup_model.delete('tags')
         else
           dup_model = dup_model
       end

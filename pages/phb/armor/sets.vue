@@ -90,6 +90,9 @@
         if (this.filters.armorSets.armorType.length > 0) {
           data = data.filter(item => this.filters.armorSets.armorType.includes(item.armorType))
         }
+        if (this.filters.armorSets.rarity.length > 0) {
+          data = data.filter(item => this.filters.armorSets.rarity.includes(item.rarity))
+        }
         if (this.filters.armorSets.notes.length > 0) {
           data = data.filter(item => {
             if (item.notes) {
@@ -104,6 +107,7 @@
         return data
       }
     },
+    middleware: 'resetListFilters',
     head () {
       return {
         title: 'Armor Sets - Equipment | Mass Effect 5e',

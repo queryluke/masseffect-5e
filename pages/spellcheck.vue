@@ -62,7 +62,7 @@
     // div(v-for="item in weapons" v-bind:key="item.id")
       p.title {{ item.name }}
       p {{ item.notes }}
-      p {{ item.tags }}
+      p {{ item.properties.join(', ') }}
 
     // Vehicles
     // div(v-for="item in vehicles" v-bind:key="item.id")

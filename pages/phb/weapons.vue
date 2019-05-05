@@ -12,9 +12,9 @@
       v-card(elevation="0")
         v-card-text
           v-layout(row wrap)
-            v-flex(md4).px-1
+            v-flex(xs12)
               v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
-            v-flex(md8).px-1
+            v-flex(xs12)
               weapon-filters(:itemKey="itemKey")
 
     // List
@@ -95,12 +95,23 @@
         for (const key in this.filters[this.itemKey]) {
           const filter = this.filters[this.itemKey][key]
           if (filter.length > 0) {
-            data = data.filter(item => filter.includes(item[key]))
+            if (key === 'property') {
+              data = data.filter(item => {
+                for (const property of item.properties) {
+                  if (filter.includes(property)) {
+                    return item
+                  }
+                }
+              })
+            } else {
+              data = data.filter(item => filter.includes(item[key]))
+            }
           }
         }
         return data
       }
     },
+    middleware: 'resetListFilters',
     head () {
       return {
         title: 'Weapons - Equipment | Mass Effect 5e',

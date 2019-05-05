@@ -1,7 +1,7 @@
 ---
 id: terra_angelis
 name: Terra_Angelis.exe
-rarity: legendary
+rarity: spectre
 installation: true
 ---
 _Can only be used by humans_

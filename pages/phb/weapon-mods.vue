@@ -83,6 +83,9 @@
         if (this.filters.weaponMods.placement.length > 0) {
           data = data.filter(item => this.filters.weaponMods.placement.includes(item.placement))
         }
+        if (this.filters.weaponMods.rarity.length > 0) {
+          data = data.filter(item => this.filters.weaponMods.rarity.includes(item.rarity))
+        }
         if (this.filters.weaponMods.weaponType.length > 0) {
           console.log(this.filters.weaponMods.weaponType)
           data = data.filter(item => {
@@ -105,6 +108,7 @@
         return data
       }
     },
+    middleware: 'resetListFilters',
     head () {
       return {
         title: 'Weapon Mods - Equipment | Mass Effect 5e',
