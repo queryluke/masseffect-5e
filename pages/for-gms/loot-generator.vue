@@ -303,7 +303,6 @@
       this.cache.weapons = weapons
       this.cache.armor = armorSets
       this.cache.mods = wMods.concat(aMods).concat(pMods)
-      console.log(this.cache.mods)
     },
     head () {
       return {

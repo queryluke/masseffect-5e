@@ -30,6 +30,7 @@
           weapon-prop(:propertyName="prop")
           span(v-if="index + 1 < weapon.properties.length").pa-2 |
       p.mt-2 {{ weapon.notes }}
+      p(v-if="weapon.createdBy") #[small #[em Created By: {{ weapon.createdBy }}]]
 </template>
 
 <script>
