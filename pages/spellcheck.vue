@@ -39,11 +39,12 @@
       markdown-file(:id="item.id" itemType="programs")
 
     // Spells
-    // div(v-for="item in spells" v-bind:key="item.id")
-      p.title {{ item.name }}
+    div(v-for="item in spells" v-bind:key="item.id")
+      h1.title {{ item.name }}
       markdown-file(:id="item.id" itemType="spells")
+      h2.subheading Advanced Options
       div(v-for="(option, i) in item.advancementOptions" v-bind:key="i")
-        p {{ option.name }}
+        h3.body-2 {{ option.name }}
         p {{ option.description }}
 
     // Tools
@@ -61,7 +62,7 @@
     // div(v-for="item in weapons" v-bind:key="item.id")
       p.title {{ item.name }}
       p {{ item.notes }}
-      p {{ item.tags }}
+      p {{ item.properties.join(', ') }}
 
     // Vehicles
     // div(v-for="item in vehicles" v-bind:key="item.id")

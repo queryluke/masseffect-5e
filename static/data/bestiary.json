@@ -685,7 +685,7 @@
     "alignment": "Chaotic evil",
     "barrier": null,
     "conditionImmunities": [],
-    "cr": "2",
+    "cr": "3",
     "damageImmunities": [],
     "damageResistances": [
       "poison"
@@ -2683,6 +2683,476 @@
   },
   {
     "abilityScores": {
+      "str": 15,
+      "dex": 13,
+      "con": 15,
+      "int": 14,
+      "wis": 14,
+      "cha": 16
+    },
+    "ac": "15",
+    "actions": [
+      {
+        "type": "weapon",
+        "id": "m-300_claymore"
+      },
+      {
+        "type": "standard",
+        "name": "Leadership",
+        "recharge": "Recharges after a Short or Long Rest",
+        "description": "For 1 minute, the commando can utter a special command or warning whenever a nonhostile creature that it can see within 10 meters of it makes an attack roll or a saving throw. The creature can add a d4 to its roll provided it can hear and understand the commando. A creature can benefit from only one Leadership die at a time. This effect ends if the commando is incapacitated."
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": 10,
+    "conditionImmunities": [],
+    "cr": "5",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Aggressive",
+        "recharge": null,
+        "description": "As a bonus action, the commando can move up to its speed toward a hostile creature it can see."
+      },
+      {
+        "name": "Barrier",
+        "recharge": "3/Day",
+        "description": "As an action or bonus action, the commando gains 10 barrier ticks. When the commando is dealt damage, if it has any barrier ticks remaining, remove one barrier tick and reduce the damage by 1d8."
+      }
+    ],
+    "hp": {
+      "numDice": 16,
+      "die": 8
+    },
+    "id": "eclipse_commando",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/3/3f/Eclipse_Commando.png/revision/latest?cb=20100625014253",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Eclipse Commando",
+    "profBonus": 3,
+    "reactions": [],
+    "savingThrows": [
+      "wis",
+      "cha"
+    ],
+    "senses": [],
+    "size": "Medium",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "sp": null,
+    "spellcasting": {
+      "level": "12",
+      "mod": "cha",
+      "spellList": [
+        "charge",
+        "warp"
+      ]
+    },
+    "type": "Organic",
+    "unit": "Eclipse",
+    "author": "Dakota P."
+  },
+  {
+    "abilityScores": {
+      "str": 11,
+      "dex": 13,
+      "con": 12,
+      "int": 14,
+      "wis": 13,
+      "cha": 10
+    },
+    "ac": "14",
+    "actions": [
+      {
+        "type": "weapon",
+        "id": "m-6_carnifex"
+      },
+      {
+        "type": "standard",
+        "name": "Repair",
+        "recharge": null,
+        "description": "The engineer uses its action to repair a friendly, synthetic target within 2m for 1d8 hit points."
+      },
+      {
+        "type": "standard",
+        "name": "Summon Combat Drone",
+        "recharge": "1/Day",
+        "description": "The engineer summons a Combat Drone."
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "2",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Tech Armor",
+        "recharge": "1/Day",
+        "description": "As a bonus action, the engineer can activate its Tech Armor. It immediately gains 10 temporary hit points. While the engineer has at least 1 of these temporary hit points remaining, it has +2 AC."
+      }
+    ],
+    "hp": {
+      "numDice": 10,
+      "die": 8
+    },
+    "id": "eclipse_engineer",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/2/25/Eclipse_Engineer.png/revision/latest?cb=20100625014624",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Eclipse Engineer",
+    "profBonus": 2,
+    "reactions": [
+      {
+        "name": "Tech Armor",
+        "recharge": null,
+        "description": "As a reaction to taking damage, the engineer can activate its tech armor."
+      }
+    ],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Medium",
+    "skills": [
+      "electronics"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "sp": {
+      "shields": 10,
+      "regen": 5
+    },
+    "spellcasting": {
+      "level": "innate",
+      "mod": "int",
+      "spellList": [
+        {
+          "perDay": "3",
+          "spells": [
+            {
+              "id": "incinerate",
+              "higherLevel": 2
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Organic",
+    "unit": "Eclipse",
+    "author": "Dakota P."
+  },
+  {
+    "abilityScores": {
+      "str": 12,
+      "dex": 14,
+      "con": 11,
+      "int": 13,
+      "wis": 12,
+      "cha": 10
+    },
+    "ac": "13",
+    "actions": [
+      {
+        "type": "standard",
+        "name": "ML-77 Missile Launcher",
+        "recharge": "5 charges",
+        "description": "Choose a creature within 60m that you can see and fire a missile at it. Each creature within a 4m cube of the target, including the target, must make a DC 14 Dexterity saving throw. On a failed save a creature takes 39 (6d12) thunder damage or half as much on a successful one."
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "4",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [],
+    "hp": {
+      "numDice": 17,
+      "die": 8
+    },
+    "id": "eclipse_heavy",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/4/4d/Eclipse_Heavy.png/revision/latest?cb=20100624034136",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Eclipse Heavy",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Medium",
+    "skills": [
+      "perception"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "sp": {
+      "shields": 5,
+      "regen": 5
+    },
+    "spellcasting": null,
+    "type": "Organic",
+    "unit": "Eclipse",
+    "author": "Dakota P."
+  },
+  {
+    "abilityScores": {
+      "str": 11,
+      "dex": 14,
+      "con": 13,
+      "int": 16,
+      "wis": 14,
+      "cha": 12
+    },
+    "ac": "15",
+    "actions": [
+      {
+        "type": "weapon",
+        "id": "m-9_tempest"
+      },
+      {
+        "type": "standard",
+        "name": "Repair",
+        "recharge": null,
+        "description": "The operative uses its action to repair a friendly, synthetic target within 2m for 1d8 hit points."
+      },
+      {
+        "type": "standard",
+        "name": "Summon Combat Drone",
+        "recharge": "2/Day",
+        "description": "The operative summons a Combat Drone."
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "3",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Tech Armor",
+        "recharge": "1/Day",
+        "description": "As a bonus action, the operative can activate its Tech Armor. It immediately gains 10 temporary hit points. While the operative has at least 1 of these temporary hit points remaining, it has +2 AC."
+      }
+    ],
+    "hp": {
+      "numDice": 9,
+      "die": 8
+    },
+    "id": "eclipse_operative",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/92/Eclipse_Operative.png/revision/latest?cb=20100704072730",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Eclipse Operative",
+    "profBonus": 2,
+    "reactions": [
+      {
+        "name": "Tech Armor",
+        "recharge": null,
+        "description": "As a reaction to taking damage, the operative can activate its tech armor."
+      }
+    ],
+    "savingThrows": [
+      "int"
+    ],
+    "senses": [],
+    "size": "Medium",
+    "skills": [
+      "electronics"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "sp": {
+      "shields": 10,
+      "regen": 10
+    },
+    "spellcasting": {
+      "level": "innate",
+      "mod": "int",
+      "spellList": [
+        {
+          "perDay": "5",
+          "spells": [
+            {
+              "id": "incinerate",
+              "higherLevel": 2
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Organic",
+    "unit": "Eclipse",
+    "author": "Dakota P."
+  },
+  {
+    "abilityScores": {
+      "str": 11,
+      "dex": 13,
+      "con": 9,
+      "int": 12,
+      "wis": 12,
+      "cha": 10
+    },
+    "ac": "12",
+    "actions": [
+      {
+        "type": "weapon",
+        "id": "m-8_avenger"
+      },
+      {
+        "type": "grenade",
+        "id": "flashbang_grenade"
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "1/4",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Pack Tactics",
+        "recharge": null,
+        "description": "The creature has advantage on an attack roll against a creature if at least one of the creature's allies is within 2m of the creature and the ally isn't incapacitated."
+      }
+    ],
+    "hp": {
+      "numDice": 14,
+      "die": 8
+    },
+    "id": "eclipse_trooper",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/9e/Eclipse_Trooper.png/revision/latest?cb=20100625014426",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Eclipse Trooper",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Medium",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "sp": {
+      "shields": 5,
+      "regen": 5
+    },
+    "spellcasting": null,
+    "type": "Organic",
+    "unit": "Eclipse",
+    "author": "Dakota P."
+  },
+  {
+    "abilityScores": {
+      "str": 13,
+      "dex": 13,
+      "con": 14,
+      "int": 14,
+      "wis": 13,
+      "cha": 15
+    },
+    "ac": "14",
+    "actions": [
+      {
+        "type": "standard",
+        "name": "Multiattack",
+        "description": "The vanguard makes 2 M-27 Scimitar attacks."
+      },
+      {
+        "type": "weapon",
+        "id": "m-27_scimitar"
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": 6,
+    "conditionImmunities": [],
+    "cr": "3",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Barrier",
+        "recharge": "3/Day",
+        "description": "As an action or bonus action, the vanguard gains 6 barrier ticks. When the vanguard is dealt damage, if it has any barrier ticks remaining, remove one barrier tick and reduce the damage by 1d8."
+      },
+      {
+        "name": "Tech Armor",
+        "recharge": "1/Day",
+        "description": "As a bonus action, the vanguard can activate its Tech Armor. It immediately gains 10 temporary hit points. While the vanguard has at least 1 of these temporary hit points remaining, it has +2 AC."
+      }
+    ],
+    "hp": {
+      "numDice": 9,
+      "die": 8
+    },
+    "id": "eclipse_vanguard",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/4/45/Eclipse_Vanguard.png/revision/latest?cb=20100624033844",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Eclipse Vanguard",
+    "profBonus": 2,
+    "reactions": [
+      {
+        "name": "Tech Armor",
+        "recharge": null,
+        "description": "As a reaction to taking damage, the operative can activate its tech armor."
+      }
+    ],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Medium",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "sp": null,
+    "spellcasting": {
+      "level": "6",
+      "mod": "cha",
+      "spellList": [
+        "shockwave",
+        "warp"
+      ]
+    },
+    "type": "Organic",
+    "unit": "Eclipse",
+    "author": "Dakota P."
+  },
+  {
+    "abilityScores": {
       "str": 20,
       "dex": 4,
       "con": 24,
@@ -4136,6 +4606,63 @@
   },
   {
     "abilityScores": {
+      "str": 14,
+      "dex": 13,
+      "con": 14,
+      "int": 10,
+      "wis": 8,
+      "cha": 7
+    },
+    "ac": "15",
+    "actions": [
+      {
+        "type": "weapon",
+        "id": "zalkin"
+      },
+      {
+        "type": "grenade",
+        "id": "frag_grenade"
+      }
+    ],
+    "alignment": "Lawful evil",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "1",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [],
+    "hp": {
+      "numDice": 10,
+      "die": 8
+    },
+    "id": "kett_chosen",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/f/fd/MEA_Enemy_Chosen.png/revision/latest?cb=20170705200934",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Kett Chosen",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [
+      "dex"
+    ],
+    "senses": [],
+    "size": "Medium",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "sp": null,
+    "spellcasting": null,
+    "type": "Organic",
+    "unit": "Kett",
+    "author": "Dakota P."
+  },
+  {
+    "abilityScores": {
       "str": 12,
       "dex": 14,
       "con": 12,
@@ -4381,6 +4908,424 @@
     "spellcasting": false,
     "type": "Synorg",
     "unit": "Reaper"
+  },
+  {
+    "abilityScores": {
+      "str": 13,
+      "dex": 16,
+      "con": 14,
+      "int": 13,
+      "wis": 13,
+      "cha": 14
+    },
+    "ac": "15",
+    "actions": [
+      {
+        "type": "standard",
+        "name": "Multiattack",
+        "description": "The N7 demolisher makes three weapon attacks or two weapon attacks and uses one grenade."
+      },
+      {
+        "type": "weapon",
+        "id": "n7_eagle"
+      },
+      {
+        "type": "weapon",
+        "id": "n7_hurricane"
+      },
+      {
+        "type": "grenade",
+        "id": "arc_grenade"
+      },
+      {
+        "type": "grenade",
+        "id": "homing_grenade"
+      },
+      {
+        "type": "standard",
+        "name": "Repair",
+        "recharge": null,
+        "description": "The N7 demolisher uses its action to repair a friendly, synthetic target within 2m for 2d8 hit points."
+      },
+      {
+        "type": "standard",
+        "name": "Deploy Shield Pylon",
+        "recharge": "1/Day",
+        "description": "The N7 demolisher deploys a Shield Pylon to an unoccupied space within 2m. The pylon has AC 10, 25 hit points and provides half cover. At the end of the N7 demolisher's turn, any fiendly creature within 4m of the pylon gains 2 shield points. Shield points gained this way cannot exceed the creatures maximum shield points."
+      }
+    ],
+    "alignment": "Lawful Neutral",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "5",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "N7 Training",
+        "recharge": null,
+        "description": "The N7 demolisher has advantage on its first attack roll each turn."
+      }
+    ],
+    "hp": {
+      "numDice": 15,
+      "die": 8
+    },
+    "id": "n7_demolisher",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/04/N7_Demolisher_Engineer_MP.png/revision/latest/scale-to-width-down/250?cb=20120717151043",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "N7 Demolisher",
+    "profBonus": 3,
+    "reactions": [],
+    "savingThrows": [
+      "con",
+      "dex"
+    ],
+    "senses": [],
+    "size": "Medium",
+    "skills": [
+      "vehicle_handling",
+      "engineering",
+      "survival*"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "sp": {
+      "shields": 20,
+      "regen": 10
+    },
+    "spellcasting": false,
+    "type": "Organic",
+    "unit": "N7",
+    "author": "Dakota P."
+  },
+  {
+    "abilityScores": {
+      "str": 14,
+      "dex": 12,
+      "con": 16,
+      "int": 13,
+      "wis": 13,
+      "cha": 16
+    },
+    "ac": "16",
+    "actions": [
+      {
+        "type": "standard",
+        "name": "Multiattack",
+        "description": "The N7 Paladin makes two N7 Hurricane attacks."
+      },
+      {
+        "type": "weapon",
+        "id": "n7_hurricane"
+      }
+    ],
+    "alignment": "Lawful Neutral",
+    "barrier": 5,
+    "conditionImmunities": [],
+    "cr": "7",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Barrier",
+        "recharge": "1/Day",
+        "description": "As a bonus action, the N7 Paladin gains 5 barrier ticks."
+      },
+      {
+        "name": "N7 Training",
+        "recharge": null,
+        "description": "The N7 Paladin has advantage on its first attack roll each turn."
+      },
+      {
+        "name": "Omni-Shield",
+        "recharge": "1/Day",
+        "description": "As a bonus action, the N7 Paladin deploys its omni-shield, lasting 1 minute. While the shield is deployed, the N7 Paladin gains +2 AC and can make a melee weapon attack with the shield: +5 to hit, 2m reach, 1d12 bludgeoning damage."
+      },
+      {
+        "name": "Variant: Fire-Shield",
+        "recharge": "1/Day",
+        "description": "Gain all the benefits of Omni-Shield. In addition, targets hit by the Fire-Shield take 3d10 fire damage. This damage detonates primed targets, but the N7 Sentinel immune by any detonating effects."
+      },
+      {
+        "name": "Variant: Cryo-Shield",
+        "recharge": "1/Day",
+        "description": "Gain all the benefits of Omni-Shield. In addition, a creature hit by the Cryo-Shield take 1d8 cold damage and must succeed on a DC 13 Strength saving throw or become Frozen until the end its next turn."
+      }
+    ],
+    "hp": {
+      "numDice": 17,
+      "die": 8
+    },
+    "id": "n7_paladin",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/8/83/N7_Paladin_Sentinel_MP.png/revision/latest/scale-to-width-down/250?cb=20120717151128",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "N7 Paladin",
+    "profBonus": 3,
+    "reactions": [],
+    "savingThrows": [
+      "con"
+    ],
+    "senses": [],
+    "size": "Medium",
+    "skills": [
+      "survival*"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "sp": {
+      "shields": 20,
+      "regen": 10
+    },
+    "spellcasting": {
+      "level": "innate",
+      "mod": "cha",
+      "spellList": [
+        {
+          "perDay": "At will",
+          "spells": [
+            {
+              "id": "incinerate"
+            }
+          ]
+        },
+        {
+          "perDay": "3/Day",
+          "spells": [
+            {
+              "id": "energy_drain"
+            },
+            {
+              "id": "snap_freeze",
+              "higherLevel": 4
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Organic",
+    "unit": "N7",
+    "author": "Dakota P."
+  },
+  {
+    "abilityScores": {
+      "str": 12,
+      "dex": 18,
+      "con": 14,
+      "int": 16,
+      "wis": 11,
+      "cha": 12
+    },
+    "ac": "15",
+    "actions": [
+      {
+        "type": "standard",
+        "name": "Multiattack",
+        "description": "The N7 Slayer makes three monomolecular blade attacks."
+      },
+      {
+        "type": "weapon",
+        "id": "m-97_viper"
+      }
+    ],
+    "alignment": "Lawful Neutral",
+    "barrier": false,
+    "conditionImmunities": [],
+    "cr": "7",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Assassinate",
+        "recharge": null,
+        "description": "During its first turn, the N7 Shadow has advantage on attack rolls against any creature that hasn't taken a turn. Any hit the N7 Shadow scores against a surprised creature is a critical hit."
+      },
+      {
+        "name": "Evasion",
+        "recharge": null,
+        "description": "If the N7 Shadow is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, the N7 Shadow instead takes no damage if it succeeds on the saving throw, and only half damage if it fails."
+      },
+      {
+        "name": "N7 Training",
+        "recharge": null,
+        "description": "The N7 Slayer has advantage on its first attack roll each turn."
+      },
+      {
+        "name": "Sneak Attack",
+        "recharge": null,
+        "description": "Once per turn, the N7 Shadow deals an extra 14 (4d6) damage when it hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 feet of an ally of the N7 Shadow that isn't incapacitated and the N7 Shadow doesn't have disadvantage on the attack roll."
+      },
+      {
+        "name": "Tactical Cloak",
+        "recharge": "3/Day",
+        "description": "As a bonus action, the N7 Shadow activates its tactical cloak, becoming invisible for 1 minute. When the N7 Shadow makes a melee or ranged attack or uses a tech or combat power, tactical cloak ends."
+      }
+    ],
+    "hp": {
+      "numDice": 11,
+      "die": 8
+    },
+    "id": "n7_shadow",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/08/N7_Shadow_Infiltrator_MP.png/revision/latest/scale-to-width-down/250?cb=20120717151201",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "N7 Shadow",
+    "profBonus": 3,
+    "reactions": [],
+    "savingThrows": [
+      "dex"
+    ],
+    "senses": [],
+    "size": "Medium",
+    "skills": [
+      "acrobatics",
+      "survival*"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 12
+      }
+    ],
+    "sp": {
+      "shields": 20,
+      "regen": 10
+    },
+    "spellcasting": {
+      "level": "innate",
+      "mod": "int",
+      "spellList": [
+        {
+          "perDay": "4/Day",
+          "spells": [
+            {
+              "id": "electric_slash",
+              "higherLevel": 3
+            }
+          ]
+        }
+      ]
+    },
+    "type": "Organic",
+    "unit": "N7",
+    "author": "Dakota P."
+  },
+  {
+    "abilityScores": {
+      "str": 16,
+      "dex": 14,
+      "con": 13,
+      "int": 13,
+      "wis": 14,
+      "cha": 12
+    },
+    "ac": "14",
+    "actions": [
+      {
+        "type": "standard",
+        "name": "Multiattack",
+        "description": "The N7 Slayer makes three monomolecular blade attacks or two N7 Piranha attacks."
+      },
+      {
+        "type": "weapon",
+        "id": "monomolecular_blade"
+      },
+      {
+        "type": "weapon",
+        "id": "n7_piranha"
+      }
+    ],
+    "alignment": "Lawful Neutral",
+    "barrier": 5,
+    "conditionImmunities": [],
+    "cr": "5",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Aggressive",
+        "recharge": null,
+        "description": "As a bonus action, the N7 Slayer can move up to its speed toward a hostile creature that it can see."
+      },
+      {
+        "name": "Avoidance",
+        "recharge": null,
+        "description": "If the N7 Slayer is subjected to an effect that allows it to make a saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails."
+      },
+      {
+        "name": "Barrier",
+        "recharge": "2/Day",
+        "description": "As an action or bonus action, the N7 Slayer gains 5 barrier ticks."
+      },
+      {
+        "name": "N7 Training",
+        "recharge": null,
+        "description": "The N7 Slayer has advantage on its first attack roll each turn."
+      }
+    ],
+    "hp": {
+      "numDice": 14,
+      "die": 8
+    },
+    "id": "n7_slayer",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/97/N7_Slayer_Vanguard_MP.png/revision/latest/scale-to-width-down/250?cb=20120717151234",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "N7 Slayer",
+    "profBonus": 3,
+    "reactions": [
+      {
+        "name": "Parry and Counter",
+        "recharge": null,
+        "description": "The N7 Slayer adds 3 to its AC against one melee that would hit it. To do so, it must be able to see the target and be wielding a melee weapon. If the attack misses, the N7 Slayer can make one melee attack against the attacker if it is within its reach."
+      }
+    ],
+    "savingThrows": [
+      "str",
+      "dex"
+    ],
+    "senses": [],
+    "size": "Medium",
+    "skills": [
+      "acrobatics",
+      "survival*"
+    ],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 14
+      }
+    ],
+    "sp": {
+      "shields": 15,
+      "regen": 5
+    },
+    "spellcasting": {
+      "level": 9,
+      "mod": "wis",
+      "spellList": [
+        "charge",
+        "phase_disruptor",
+        "biotic_slash"
+      ]
+    },
+    "type": "Organic",
+    "unit": "N7",
+    "author": "Dakota P."
   },
   {
     "abilityScores": {
@@ -5111,7 +6056,7 @@
         "type": "standard",
         "name": "Acid Splash",
         "recharge": "Recharge 4-6",
-        "description": "The rachni worker spits acid at one target within 10m or two targets within 10m if both targets are within 2m of each other. A target must succeed on a Dexterity saving throw or take 3 (1d6) acid damage."
+        "description": "The rachni worker spits acid at one target within 10m or two targets within 10m if both targets are within 2m of each other. A target must succeed on a DC 13 Dexterity saving throw or take 3 (1d6) acid damage."
       },
       {
         "type": "melee",
@@ -5719,6 +6664,57 @@
   },
   {
     "abilityScores": {
+      "str": 9,
+      "dex": 8,
+      "con": 9,
+      "int": 8,
+      "wis": 8,
+      "cha": 12
+    },
+    "ac": "10",
+    "actions": [
+      {
+        "type": "weapon",
+        "id": "m-3_predator"
+      }
+    ],
+    "alignment": "Neutral",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "0",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [],
+    "hp": {
+      "numDice": 3,
+      "die": 8
+    },
+    "id": "security_guard",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/1/1a/Eclipse_Security_Guard.png/revision/latest?cb=20100720085554",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Security Guard",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Medium",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 8
+      }
+    ],
+    "sp": null,
+    "spellcasting": null,
+    "type": "Organic",
+    "unit": "Eclipse",
+    "author": "Dakota P."
+  },
+  {
+    "abilityScores": {
       "str": 4,
       "dex": 12,
       "con": 10,
@@ -6170,6 +7166,467 @@
     "spellcasting": false,
     "type": "Synorg",
     "unit": "Reaper"
+  },
+  {
+    "abilityScores": {
+      "str": 15,
+      "dex": 13,
+      "con": 20,
+      "int": 25,
+      "wis": 26,
+      "cha": 17
+    },
+    "ac": "19",
+    "actions": [
+      {
+        "type": "standard",
+        "name": "Indoctrinate",
+        "recharge": null,
+        "description": "The thorian targets one creature within 120 meters of it that it or one of its controllers, thralls, or creepers can see. That creature must make a DC 17 Wisdom saving throw or suffer a level of indoctrination."
+      },
+      {
+        "type": "standard",
+        "name": "Summon Thrall",
+        "recharge": null,
+        "description": "The thorian summons a thrall to its aid. It arrives on initiative count 20 somewhere along the thorian's root structure."
+      }
+    ],
+    "alignment": "Lawful evil",
+    "barrier": null,
+    "conditionImmunities": [
+      "prone",
+      "lifted"
+    ],
+    "cr": "17",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [
+      "fire"
+    ],
+    "features": [
+      {
+        "name": "Indoctrination",
+        "recharge": null,
+        "description": "Unless a thorian controller is incapacitated, it is a source of indoctrination to all creatures within 1000m of it. See the indoctrination condition."
+      },
+      {
+        "name": "Root Structure",
+        "recharge": null,
+        "description": "One a thorian reaches maturity, it's roots grow at a rate of 2 to 4 meters per year. Over time, these roots create vast tunnel systems and caverns that act as the thorian's lair."
+      },
+      {
+        "name": "Neural Nodes",
+        "recharge": null,
+        "description": "The thorian has 4 + 1d4 neural nodes located along its root structure, spread throughout its lair. At start of its turn, the thorian gains 2d12 points for each remaining neural node. Each node has AC 10 and 30 (6d6 + 10) hit points."
+      }
+    ],
+    "hp": {
+      "numDice": 40,
+      "die": 12
+    },
+    "id": "thorian",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/8/8a/Thorian_charbox.png/revision/latest/scale-to-width-down/700?cb=20140409103930",
+    "lairActions": [
+      {
+        "name": "Create Spawn",
+        "description": "The thorian sprouts 1d12 + 3 thorian spawn. These spawn can appear in an unoccupied space within 2m of any part of the thorian's root structure. The spawn take their turn at the end of the thorian's turn."
+      },
+      {
+        "name": "Summon Creeper",
+        "description": "The thorian summons 1d8 + 4 thorian creepers. These creepers can appear in an unoccupied space within 2m of any part of the thorian's root structure. The creepers take their turn at the end of the thorian's turn."
+      },
+      {
+        "name": "Summon Controller",
+        "description": "The thorian summons 1d4 thorian controllers. These controllers can appear in an unoccupied space within 2m of any part of the thorian's root structure. The controllers take their turn at the end of the thorian's turn."
+      }
+    ],
+    "legendaryActions": [],
+    "name": "Thorian",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Huge",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 0
+      }
+    ],
+    "sp": null,
+    "spellcasting": null,
+    "type": "Organic",
+    "unit": "Thorian",
+    "author": "Dakota P."
+  },
+  {
+    "abilityScores": {
+      "str": 14,
+      "dex": 11,
+      "con": 15,
+      "int": 14,
+      "wis": 12,
+      "cha": 2
+    },
+    "ac": "14",
+    "actions": [
+      {
+        "type": "melee",
+        "name": "Slash",
+        "range": 2,
+        "target": "one target",
+        "hit": "7 (2d4 + 2) slashing damage.",
+        "miss": null,
+        "attackMod": 4
+      },
+      {
+        "type": "standard",
+        "name": "Acid Vomit",
+        "recharge": "Recharge 4-6",
+        "description": "The creeper regurgitates acid in a 4-meter cone. A creature within the code must succeed on a DC 15 Dexterity saving throw or take 14 (4d6) acid damage."
+      }
+    ],
+    "alignment": "Lawful evil",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "1/2",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [
+      "bludgeoning",
+      "force"
+    ],
+    "features": [
+      {
+        "name": "Creeper Resemblance",
+        "recharge": null,
+        "description": "The controller resembles a Thorian creeper. A creature that can see the controller can discern its true nature with a successful DC 15 Intelligence (Science) or Intelligence (Investigation) check."
+      },
+      {
+        "name": "Hive Mind Overseer",
+        "recharge": null,
+        "description": "The controller gains a +1 bonus to its attack and damage rolls, ability checks, and saving throws for each creature within 20 meters of it that has the Hive Mind feature. This bonus cannot exceed +5."
+      },
+      {
+        "name": "Indoctrination",
+        "recharge": null,
+        "description": "Unless a thorian controller is incapacitated, it is a source of indoctrination to all creatures within 100m of it. See the indoctrination condition."
+      }
+    ],
+    "hp": {
+      "numDice": 8,
+      "die": 8
+    },
+    "id": "thorian_controller",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/ee/Test_subject_hyperres.png/revision/latest/scale-to-width-down/180?cb=20131218143230",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Thorian Controller",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Medium",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "sp": null,
+    "spellcasting": null,
+    "type": "Organic",
+    "unit": "Thorian",
+    "author": "Dakota P.",
+    "description": "These creatures act as the eyes, ears, and mouth of the Thorian, issuing its commands while also informing on its enemies."
+  },
+  {
+    "abilityScores": {
+      "str": 13,
+      "dex": 11,
+      "con": 15,
+      "int": 2,
+      "wis": 2,
+      "cha": 2
+    },
+    "ac": "13",
+    "actions": [
+      {
+        "type": "melee",
+        "name": "Slash",
+        "range": 2,
+        "target": "one target",
+        "hit": "6 (2d4 + 1) slashing damage.",
+        "miss": null,
+        "attackMod": 3
+      },
+      {
+        "type": "standard",
+        "name": "Acid Vomit",
+        "recharge": "Recharge 4-6",
+        "description": "The creeper regurgitates acid in a 4-meter cone. A creature within the code must succeed on a DC 15 Dexterity saving throw or take 7 (2d6) acid damage."
+      }
+    ],
+    "alignment": "Lawful evil",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "1/4",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [
+      "bludgeoning",
+      "force"
+    ],
+    "features": [
+      {
+        "name": "Hive Mind",
+        "recharge": null,
+        "description": "If the creeper is within 20 meters of a Thorian Controller, it gains +1 to attack and damage rolls, ability checks, and saving throws."
+      }
+    ],
+    "hp": {
+      "numDice": 4,
+      "die": 8
+    },
+    "id": "thorian_creeper",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/e5/Thorian_Creeper.png/revision/latest/scale-to-width-down/424?cb=20140614190322",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Thorian Creeper",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Medium",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "sp": null,
+    "spellcasting": null,
+    "type": "Organic",
+    "unit": "Thorian",
+    "author": "Dakota P."
+  },
+  {
+    "abilityScores": {
+      "str": 11,
+      "dex": 13,
+      "con": 11,
+      "int": 13,
+      "wis": 11,
+      "cha": 2
+    },
+    "ac": "13",
+    "actions": [
+      {
+        "type": "melee",
+        "name": "Bite",
+        "range": 2,
+        "target": "one target",
+        "hit": "3 (1d4 + 1) piercing damage.",
+        "miss": null,
+        "attackMod": 3
+      },
+      {
+        "type": "ranged",
+        "name": "Acid Spit",
+        "range": 10,
+        "target": "one target",
+        "hit": "7 (2d6) acid and 7 (2d6) necrotic damage.",
+        "miss": null,
+        "attackMod": 3
+      },
+      {
+        "type": "standard",
+        "name": "Release Spores",
+        "recharge": "1/Day",
+        "description": "The nymph releases spores in a 4m-radius sphere lasting until the end of its next turn. A creature that enters the area for the first time on a turn or starts its turn there takes 3 (1d6) psychic damage and must make a DC 13 Wisdom saving throw. On a failed save, a creature becomes paralyzed until the start of its next turn."
+      }
+    ],
+    "alignment": "Lawful evil",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "1/2",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [],
+    "hp": {
+      "numDice": 5,
+      "die": 6
+    },
+    "id": "thorian_nymph",
+    "image": "https://vignette.wikia.nocookie.net/elderscrolls/images/c/c3/Chaurus_3D.png/revision/latest/scale-to-width-down/700?cb=20120612155204",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Thorian Nymph",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Small",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "sp": null,
+    "spellcasting": null,
+    "type": "Organic",
+    "unit": "Thorian",
+    "description": "In its juvenile stage, the Thorian becomes mobile and sneaks aboard unknowing ships to spread across the galaxy.",
+    "author": "Dakota P."
+  },
+  {
+    "abilityScores": {
+      "str": 10,
+      "dex": 13,
+      "con": 9,
+      "int": 11,
+      "wis": 11,
+      "cha": 2
+    },
+    "ac": "13",
+    "actions": [
+      {
+        "type": "ranged",
+        "name": "Acid Spit",
+        "range": 10,
+        "target": "one target",
+        "hit": "7 (2d6) acid and 7 (2d6) necrotic damage.",
+        "miss": null,
+        "attackMod": 3
+      },
+      {
+        "type": "standard",
+        "name": "Release Spores",
+        "recharge": "1/Day",
+        "description": "The spawn releases spores in a 4m-radius sphere lasting until the end of its next turn. A creature that enters the area for the first time on a turn or starts its turn there takes 3 (1d6) psychic damage and must make a DC 13 Wisdom saving throw. On a failed save, a creature becomes paralyzed until the start of its next turn."
+      }
+    ],
+    "alignment": "Lawful evil",
+    "barrier": null,
+    "conditionImmunities": [
+      "lifted",
+      "prone"
+    ],
+    "cr": "1/4",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Rooted",
+        "recharge": null,
+        "description": "The spawn in rooted in the ground and cannot be moved. It automatically fails Strength and Dexterity saving throws and skill checks."
+      }
+    ],
+    "hp": {
+      "numDice": 3,
+      "die": 6
+    },
+    "id": "thorian_spawn",
+    "image": "https://vignette.wikia.nocookie.net/finalfantasy/images/1/15/Sandragora.jpg/revision/latest?cb=20081018141337",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Thorian Spawn",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Small",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 0
+      }
+    ],
+    "sp": null,
+    "spellcasting": null,
+    "type": "Organic",
+    "unit": "Thorian",
+    "description": "The beginning of a Thorian's life cycle, these stationary plants feed off nutrients from the mother plant while also acting as a last line of defense against intruders.",
+    "author": "Dakota P."
+  },
+  {
+    "abilityScores": {
+      "str": 11,
+      "dex": 13,
+      "con": 9,
+      "int": 4,
+      "wis": 5,
+      "cha": 6
+    },
+    "ac": "13",
+    "actions": [
+      {
+        "type": "weapon",
+        "id": "m-3_predator"
+      }
+    ],
+    "alignment": "Lawful evil",
+    "barrier": null,
+    "conditionImmunities": [],
+    "cr": "1/8",
+    "damageImmunities": [],
+    "damageResistances": [],
+    "damageVulnerabilities": [],
+    "features": [
+      {
+        "name": "Hive Mind",
+        "recharge": null,
+        "description": "If the creeper is within 20 meters of a Thorian Controller, it gains +1 to attack and damage rolls, ability checks, and saving throws."
+      },
+      {
+        "name": "Enslaved Mind",
+        "recharge": null,
+        "description": "The thrall loses all levels of indoctrination reverts to its normal self if the controlling Thorian dies."
+      },
+      {
+        "name": "Random Thrall (variant)",
+        "recharge": null,
+        "description": "Thralls can be any organic humanoid with an intelligence of 4 or greater. Instead, you may use the stat block of a randomly generated grunt or other organic humanoid from the bestiary."
+      }
+    ],
+    "hp": {
+      "numDice": 3,
+      "die": 8
+    },
+    "id": "thorian_thrall",
+    "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/eb/Feros_Asari_Clone_and_Thorian.png/revision/latest?cb=20090305015251",
+    "lairActions": [],
+    "legendaryActions": [],
+    "name": "Thorian Thrall",
+    "profBonus": 2,
+    "reactions": [],
+    "savingThrows": [],
+    "senses": [],
+    "size": "Medium",
+    "skills": [],
+    "speed": [
+      {
+        "type": "walk",
+        "range": 10
+      }
+    ],
+    "sp": {
+      "shields": 5,
+      "regen": 0
+    },
+    "spellcasting": null,
+    "type": "Organic",
+    "unit": "Thorian",
+    "description": "The poor slaves of the Thorian, they act as the reminder of the dangers of the frontier. Kill the Thorian to end their suffering.",
+    "author": "Dakota P."
   },
   {
     "abilityScores": {

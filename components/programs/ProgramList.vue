@@ -6,7 +6,8 @@
       v-expansion-panel-content(v-for="item in items" v-bind:key="item.id")
         div(slot="header")
           v-layout
-            v-flex(:class="headers[0].classes") #[strong {{ item.name }}]
+            v-flex(:class="headers[0].classes")
+              div(:class="rarityTextColors[rarityForColor(item.rarity)]") #[strong {{ item.name }}]
             v-flex(:class="headers[1].classes") {{ item.rarity | titlecase }}
             v-flex(:class="headers[2].classes") {{ item.installation ? 'Yes' : '--' }}
         v-card.grey.lighten-3
@@ -20,6 +21,7 @@
   import SortOptions from '~/components/list/Sort.vue'
   import ProgramInfo from '~/components/programs/ProgramInfo.vue'
   import BookmarkButton from '~/components/BookmarkButton.vue'
+  import {mapGetters} from 'vuex'
 
   export default {
     components: {
@@ -38,6 +40,14 @@
           { label: 'Rarity', key: 'rarity', classes: 'xs3' },
           { label: 'Requires Installation', key: 'installation', classes: 'xs3' }
         ]
+      }
+    },
+    computed: {
+      ...mapGetters('itemList', ['rarityTextColors']),
+    },
+    methods: {
+      rarityForColor (string) {
+        return this.$options.filters.titlecase(string)
       }
     }
   }

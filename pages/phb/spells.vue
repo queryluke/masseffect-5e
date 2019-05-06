@@ -99,6 +99,7 @@
         return data
       }
     },
+    middleware: 'resetListFilters',
     head () {
       return {
         title: 'Powers: Biotics, Tech and Combat | Mass Effect 5e',

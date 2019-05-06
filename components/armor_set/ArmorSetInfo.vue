@@ -3,6 +3,7 @@
     v-layout
       v-flex.xs12
         h4.headline {{ set.name }}
+          v-chip(:color="rarityColors[set.rarity]" small dark).ml-3.text-uppercase {{ set.rarity }}
           v-chip(v-if="andromeda" small dark color="secondary").ml-3 Andromeda
         p #[em {{ set.description }}]
     v-layout(row wrap flex-start)
@@ -28,6 +29,8 @@
 </template>
 
 <script>
+  import {mapGetters} from 'vuex'
+
   export default {
     props: {
       set: {
@@ -36,6 +39,7 @@
       },
     },
     computed: {
+      ...mapGetters('itemList', ['rarityColors']),
       benefits () {
         return this.set.feature ? this.set.feature.split('--').map(f => f.trim()) : []
       },

@@ -1,0 +1,71 @@
+{
+  "abilityScores": {
+    "str": 11,
+    "dex": 13,
+    "con": 9,
+    "int": 4,
+    "wis": 5,
+    "cha": 6
+  },
+  "ac": "13",
+  "actions": [
+    {
+      "type": "weapon",
+      "id": "m-3_predator"
+    }
+  ],
+  "alignment": "Lawful evil",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "1/8",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Hive Mind",
+      "recharge": null,
+      "description": "If the creeper is within 20 meters of a Thorian Controller, it gains +1 to attack and damage rolls, ability checks, and saving throws."
+    },
+    {
+      "name": "Enslaved Mind",
+      "recharge": null,
+      "description": "The thrall loses all levels of indoctrination reverts to its normal self if the controlling Thorian dies."
+    },
+    {
+      "name": "Random Thrall (variant)",
+      "recharge": null,
+      "description": "Thralls can be any organic humanoid with an intelligence of 4 or greater. Instead, you may use the stat block of a randomly generated grunt or other organic humanoid from the bestiary."
+    }
+  ],
+  "hp": {
+    "numDice": 3,
+    "die": 8
+  },
+  "id": "thorian_thrall",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/eb/Feros_Asari_Clone_and_Thorian.png/revision/latest?cb=20090305015251",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Thorian Thrall",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Medium",
+  "skills": [],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "sp": {
+    "shields": 5,
+    "regen": 0
+  },
+  "spellcasting": null,
+  "type": "Organic",
+  "unit": "Thorian",
+  "description": "The poor slaves of the Thorian, they act as the reminder of the dangers of the frontier. Kill the Thorian to end their suffering.",
+  "author": "Dakota P."
+}

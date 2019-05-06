@@ -44,8 +44,8 @@ times your Strength score. While pushing or dragging weight in excess of your ca
 __Size & Strength__. Larger creatures can bear more weight, whereas Tiny creatures can carry less. For each size category
 above Medium, double the creature's carrying capacity and the amount it can push, drag, or lift. For a Tiny creature, halve these weights.
 \
-__Weapons__. You have 2 weapon slots and can equip a single weapon in either slot. Weapons equipped in a slot do not
-affect your carry capacity. Any additional weapons you pick up count against your carry capacity.
+__Weapons__. You have 4 weapon slots and can equip a single weapon in any slot. _Two-handed_ weapons require 2 weapon slots. 
+Weapons equipped in a slot do not affect your carry capacity. Any additional weapons you pick up count against your carry capacity.
 \
 __Armor__. The Armor Bonuses and Limitations table has a minimum Strength score for the combination of armor types. You
 must meet or exceed that score.

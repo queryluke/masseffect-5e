@@ -28,6 +28,6 @@ advancementOptions:
 ---
 Choose a creature or object within range and use the target's mass to pull yourself to its location with incredible force 
 (this movement does not provoke opportunity attacks). The target must make a Dexterity saving throw.
-On a failed save the target takes 1d10 force damage and becomes <condition id="prone">.
+On a failed save the target takes 1d10 force damage and becomes <condition id="prone">. Charge ignores half cover.
 
-The damage increases by 1d6 when you reach the 5th level (2d10), 11th level (3d10) and 17th level (4d10).
+The damage increases by 1d10 when you reach the 5th level (2d10), 11th level (3d10) and 17th level (4d10).

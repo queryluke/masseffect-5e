@@ -1,6 +1,7 @@
 [
   {
     "name": "Ablative Coating",
+    "rarity": "Spectre",
     "type": "Chest",
     "description": "Ablative coating is designed to chip away when impacted, redirecting the energy of incoming projectiles away from the body.",
     "feature": "Resistance to piercing damage.",
@@ -11,6 +12,7 @@
   },
   {
     "name": "Adrenaline Regulator",
+    "rarity": "Rare",
     "type": "Chest",
     "description": "Biofeedback system regulating wearer's adrenaline surges.",
     "feature": "When you roll a 1 or 2 on a damage die for an attack you make with a melee weapon, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. ",
@@ -21,6 +23,7 @@
   },
   {
     "name": "Amplifier Plates",
+    "rarity": "Rare",
     "type": "Arms",
     "description": "Includes an internal micro-control system to maximize resources.",
     "feature": "+1 bonus to spell damage rolls",
@@ -31,6 +34,7 @@
   },
   {
     "name": "Archon AI",
+    "rarity": "Spectre",
     "type": "Head",
     "description": "An efficient algorithm to balance processing power for biotic amps and omni-tools. A heads-up display and voice command software allows users to micromanage the systems, reducing the cooldown period between energy expenditures.",
     "feature": "You regain 1d4 worth of spell slots or tech points when you take a short rest.",
@@ -41,6 +45,7 @@
   },
   {
     "name": "Asymmetric Defense Layer",
+    "rarity": "Rare",
     "type": "Chest",
     "description": "Offering increased protection where it's needed most, Rosenkov Materials' proprietary coating process increases stopping power of standard ceramic armor.",
     "feature": "+2 AC",
@@ -51,6 +56,7 @@
   },
   {
     "name": "Autogel",
+    "rarity": "Uncommon",
     "type": "Arms",
     "description": "Microprocessors in this interface monitor vital functions and release small localized doses of medi-gel to accelerate the healing process. Manually timed heavy doses of medi-gel can be released in response to major trauma.",
     "feature": "When you lose hit points, as a reaction, you may expend a charge of medi-gel.",
@@ -61,6 +67,7 @@
   },
   {
     "name": "Autogel",
+    "rarity": "Uncommon",
     "type": "Legs",
     "description": "Microprocessors in this interface monitor vital functions and release small localized doses of medi-gel to accelerate the healing process. Manually timed heavy doses of medi-gel can be released in response to major trauma.",
     "feature": "When you lose hit points, as a reaction, you may expend a charge of medi-gel.",
@@ -71,6 +78,7 @@
   },
   {
     "name": "Auxiliary Shield Emitters",
+    "rarity": "Uncommon",
     "type": "Arms",
     "description": "Micro-capacitors that release energy to speed up shield regeneration.",
     "feature": "Increase your shield regen by 5.",
@@ -81,6 +89,7 @@
   },
   {
     "name": "Auxiliary Shield Emitters",
+    "rarity": "Uncommon",
     "type": "Chest",
     "description": "Micro-capacitors that release energy to speed up shield regeneration.",
     "feature": "Increase your shield regen by 5.",
@@ -91,6 +100,7 @@
   },
   {
     "name": "Auxiliary Shield Emitters",
+    "rarity": "Uncommon",
     "type": "Legs",
     "description": "Micro-capacitors that release energy to speed up shield regeneration.",
     "feature": "Increase your shield regen by 5.",
@@ -101,9 +111,10 @@
   },
   {
     "name": "Back Holster",
+    "rarity": "Common",
     "type": "Chest",
     "description": "A back holster designed to hold a larger weapon.",
-    "feature": "Choose Assault Rifle, Shotgun, Sniper Rifle or Melee weapon. Gain an additional weapon slot for that specific weapon type. If using the Variant: Encumbrance rule, increase your Carry Weight by 10.",
+    "feature": "Gain 2 additional weapon slots. If using the Variant: Encumbrance rule, increase your Carry Weight by 10.",
     "cost": "6000",
     "manu": "Any",
     "notes": "Item Capacity",
@@ -111,6 +122,7 @@
   },
   {
     "name": "Barrier",
+    "rarity": "Rare",
     "type": "Chest",
     "description": "Eezo oscillator provides a biotic-like barrier.",
     "feature": "The armor contains a mass effect barrier with 3 barrier ticks. You cannot use these additional barrier ticks for biotic spells, they are only for damage reduction. The barrier ticks recharge after a short rest.",
@@ -121,6 +133,7 @@
   },
   {
     "name": "Battle Telemetry",
+    "rarity": "Spectre",
     "type": "Arms",
     "description": "Battle telemetry systems increase the efficiency of your biotic amplifiers and omni-tool.",
     "feature": "You regain 1d4 worth of spell slots or tech points when you take a short rest.",
@@ -131,6 +144,7 @@
   },
   {
     "name": "Battle Telemetry",
+    "rarity": "Spectre",
     "type": "Chest",
     "description": "Battle telemetry systems increase the efficiency of your biotic amplifiers and omni-tool.",
     "feature": "You regain 1d4 worth of spell slots or tech points when you take a short rest.",
@@ -141,6 +155,7 @@
   },
   {
     "name": "Bladed Wristguards",
+    "rarity": "Uncommon",
     "type": "Arms",
     "description": "Reinforce armor with razor-sharp blades that deal damage to melee attackers.",
     "feature": "When you are hit with a melee attack, deal 1d6 piercing damage back at the attacker.",
@@ -151,6 +166,7 @@
   },
   {
     "name": "Ceramic Weave",
+    "rarity": "Uncommon",
     "type": "Chest",
     "description": "Elite personal protection equipment includes a series of interlocking ceramic plates covered in a proprietary tungsten alloy weave for maximum stopping power.",
     "feature": "+1 AC",
@@ -161,6 +177,7 @@
   },
   {
     "name": "Chest Holster - Grenades",
+    "rarity": "Uncommon",
     "type": "Chest",
     "description": "A holster designed to hold combat grenades.",
     "feature": "Increase your grenade capacity by 4",
@@ -171,6 +188,7 @@
   },
   {
     "name": "Chest Holster - Thermal Clips",
+    "rarity": "Uncommon",
     "type": "Chest",
     "description": "A holster designed to hold thermal clips.",
     "feature": "Increase your thermal clip capacity by 8",
@@ -181,6 +199,7 @@
   },
   {
     "name": "Cleats",
+    "rarity": "Uncommon",
     "type": "Legs",
     "description": "Copper microfilaments in your boots ground you and abate electrical shock.",
     "feature": "Resistance to lightning.",
@@ -191,6 +210,7 @@
   },
   {
     "name": "Energized Plating",
+    "rarity": "Spectre",
     "type": "Chest",
     "description": "A prototype upgrade designed specifically for heavy combat use, it provides maximum protection for the user",
     "feature": "+3 AC",
@@ -201,6 +221,7 @@
   },
   {
     "name": "Environmental Regulators",
+    "rarity": "Rare",
     "type": "Chest",
     "description": "Temperature controls use liquid nitrogen and plasma to keep your suit at a constant temperature.",
     "feature": "Resistance to fire and cold damage.",
@@ -211,6 +232,7 @@
   },
   {
     "name": "ER Jetpack",
+    "rarity": "Rare",
     "type": "Chest",
     "description": "An advanced jetpack that can be used for longer than the standard version, but takes longer to recharge.",
     "feature": "As a bonus action, activate the jetpack to gain flying 6m for 10 minutes. This device cannot be used again until you finish a long rest.",
@@ -221,6 +243,7 @@
   },
   {
     "name": "Focus Modulator",
+    "rarity": "Uncommon",
     "type": "Head",
     "description": "Your headwear filters out distracting movement and sounds from sources other than your target.",
     "feature": "As a bonus action, you choose a creature you can see within 30m. For the next minute, you deal an extra 1d6 damage to the target whenever you hit it with a weapon attack, and you have advantage on any Wisdom (Perception) or Wisdom (Survival) check you make to find it. You can use this feature 3 times per long rest.",
@@ -231,6 +254,7 @@
   },
   {
     "name": "Hardened Weave",
+    "rarity": "Spectre",
     "type": "Chest",
     "description": "A complex filament network of element zero microcores combined with advanced firewall technology provides protection against both biotic and tech attacks.",
     "feature": "Resistance to cold, fire, force, lightning, and necrotic damage types.",
@@ -241,6 +265,7 @@
   },
   {
     "name": "Hip Caddy - Grenades",
+    "rarity": "Common",
     "type": "Legs",
     "description": "A simple device designed to hold combat grenades.",
     "feature": "Increase your grenade capacity by 2",
@@ -251,6 +276,7 @@
   },
   {
     "name": "Hip Caddy - Thermal Clips",
+    "rarity": "Common",
     "type": "Legs",
     "description": "A simple device designed to hold additional thermal clips.",
     "feature": "Increase your thermal clip capacity by 4.",
@@ -261,9 +287,10 @@
   },
   {
     "name": "Hip Holster",
+    "rarity": "Common",
     "type": "Legs",
     "description": "An additional hip holster designed to hold a small weapon.",
-    "feature": "Choose Heavy Pistol, SMG, or Melee weapon with a Min STR score of 11 or less. Gain an additional weapon slot for that specific weapon type. If using the Variant: Encumbrance rule, increase your Carry Weight by 5.",
+    "feature": "Gain 1 additional weapon slot. If using the Variant: Encumbrance rule, increase your Carry Weight by 5.",
     "cost": "3000",
     "manu": "Any",
     "notes": "Item Capacity",
@@ -271,6 +298,7 @@
   },
   {
     "name": "Jetpack",
+    "rarity": "Rare",
     "type": "Chest",
     "description": "This propulsion device generates mass effect fields for lift and gyroscopic attitude adjusters to maneuver the wearer for a short duration.",
     "feature": "As a bonus action, activate the jetpack to gain flying 6m for 1 minute. This device cannot be used again until you finish a short rest.",
@@ -281,6 +309,7 @@
   },
   {
     "name": "Jump Jets",
+    "rarity": "Uncommon",
     "type": "Legs",
     "description": "Quickly compresses the atmosphere and ejects it from boosters built into the soles of the boots, allowing for longer jumps and brief hovering.",
     "feature": "Your jump distance is tripled. If you jump straight up, you can hover at the apex of your jump until the start of your next turn, at which point, you fall slowly back to the ground, taking half of your movement speed for this turn. ",
@@ -291,6 +320,7 @@
   },
   {
     "name": "Life Support Webbing",
+    "rarity": "Uncommon",
     "type": "Legs",
     "description": "A net of micro-stimulants and medi-gel in order to increase the chances of survival for aid workers and military personnel working in hostile environments.",
     "feature": "Increases your maximum exhaustion by 1 level. At the first level, you suffer no negative effects.",
@@ -301,6 +331,7 @@
   },
   {
     "name": "Mag Latches",
+    "rarity": "Rare",
     "type": "Legs",
     "description": "Powerful magnets keep you grounded.",
     "feature": "If you are standing on a metal surface, you are immune to being lifted. Otherwise, if you would make a saving throw against being lifted, you have advantage.",
@@ -311,6 +342,7 @@
   },
   {
     "name": "Microservos",
+    "rarity": "Uncommon",
     "type": "Legs",
     "description": "Microservos coordinate your melee strikes.",
     "feature": "+1 bonus to melee attack and damage rolls",
@@ -321,6 +353,7 @@
   },
   {
     "name": "Microservos",
+    "rarity": "Rare",
     "type": "Arms",
     "description": "Microservos coordinate your melee strikes.",
     "feature": "+2 bonus to melee attack and damage rolls",
@@ -331,6 +364,7 @@
   },
   {
     "name": "Offhand Ammo Pack",
+    "rarity": "Common",
     "type": "Arms",
     "description": "A simple but popular modification favored among mercenary groups and military personnel on active assignment.",
     "feature": "Increase your thermal clip capacity by 2",
@@ -341,6 +375,7 @@
   },
   {
     "name": "Ordinance Packs",
+    "rarity": "Uncommon",
     "type": "Legs",
     "description": "Co-developed by the Rahael Group and Beckmann Financial to solve the issue of munitions storage for Heavy Weapon class engagement tools.",
     "feature": "Your heavy weapons have 2 additional charges.",
@@ -351,6 +386,7 @@
   },
   {
     "name": "Personal Disruptor Torpedoes",
+    "rarity": "Spectre",
     "type": "Arms",
     "description": "A \"micro gravitic\" personal weapon that effectively fires small disruptor torpedoes.",
     "feature": "Choose a target location within 30m. Creatures within a 4m sphere of the target must make a Dexterity saving throw. On a failed save, a creature takes 3d12 force damage, or have as much damage on a successful one. You must finish a short rest, allowing the weapon to recharge before using it again.",
@@ -361,6 +397,7 @@
   },
   {
     "name": "QR Jetpack",
+    "rarity": "Spectre",
     "type": "Chest",
     "description": "A better model of the standard jetpack that has a larger batter reserve, allowing for more uses before recharging.",
     "feature": "As a bonus action, activate the jetpack to gain flying 6m for 1 minute. You may use this 3 times per short rest.",
@@ -371,6 +408,7 @@
   },
   {
     "name": "Recharge Capacitor",
+    "rarity": "Rare",
     "type": "Chest",
     "description": "Microwells store part of the energy directed at the armor and use it to jump-start the kinetic barrier recharge cycle.",
     "feature": "Once per short rest, as a reaction to taking damage, you may jump-start your shield regen and immediately gain shield points equal to your regen amount.",
@@ -381,6 +419,7 @@
   },
   {
     "name": "Recharge Capacitor",
+    "rarity": "Rare",
     "type": "Head",
     "description": "Microwells store part of the energy directed at the armor and use it to jump start the kinetic barrier recharge cycle.",
     "feature": "Once per short rest, as a reaction to taking damage, you may jump-start your shield regen and immediately gain shield points equal to your regen amount.",
@@ -391,6 +430,7 @@
   },
   {
     "name": "Revive AI",
+    "rarity": "Rare",
     "type": "Chest",
     "description": "This AI monitors your vitals and attempts to stabilize you if become incapacitated.",
     "feature": "Once per long rest, if you fall below 0 hit points you immediately become stabilized.",
@@ -401,6 +441,7 @@
   },
   {
     "name": "Savant Biotic Amp",
+    "rarity": "Rare",
     "type": "Head",
     "description": "One of the most powerful biotic amps on the market. Serrice Council amps are incredibly rare—and highly prized—items on the galactic market.",
     "feature": "When you roll a 1 or 2 on a damage die for an attack you make with a biotic spell, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. ",
@@ -411,6 +452,7 @@
   },
   {
     "name": "Sentry System",
+    "rarity": "Uncommon",
     "type": "Head",
     "description": "A software application that optimizes an armor suit's microframe computer. When the Sentry system is running, more power can be devoted to shield management.",
     "feature": "Increase your shield points by 5.",
@@ -421,6 +463,7 @@
   },
   {
     "name": "Shield Battery",
+    "rarity": "Uncommon",
     "type": "Chest",
     "description": "An increased shield battery for your kinetic barrier.",
     "feature": "Increase your shield points by 5.",
@@ -431,6 +474,7 @@
   },
   {
     "name": "Shield Capacity",
+    "rarity": "Uncommon",
     "type": "Arms",
     "description": "Micro-harmonic oscillators to reduce stress on the kinetic barriers ensuring suit integrity when faced with incoming projectiles.",
     "feature": "Increase your shield points by 5.",
@@ -441,6 +485,7 @@
   },
   {
     "name": "Shield Interface",
+    "rarity": "Spectre",
     "type": "Chest",
     "description": "Advanced VI systems monitor incoming enemy fire to redirect energy to vulnerable points, maximizing the effectiveness of a suit's kinetic barrier shields.",
     "feature": "Increase your shield points by 15.",
@@ -451,6 +496,7 @@
   },
   {
     "name": "Shield Modulator",
+    "rarity": "Rare",
     "type": "Chest",
     "description": "A series of ultra-efficient storage cells augment the existing power in the operation of the wearer's kinetic barrier.",
     "feature": "Increase your shield points by 10.",
@@ -461,6 +507,7 @@
   },
   {
     "name": "Shock absorbers",
+    "rarity": "Uncommon",
     "type": "Legs",
     "description": "Made for explosive mining on asteroids, these shock absorbers distribute energy from powerful blasts, reducing damage to the wearer.",
     "feature": "Resistance to thunder.",
@@ -471,6 +518,7 @@
   },
   {
     "name": "Stimulator Conduits",
+    "rarity": "Common",
     "type": "Legs",
     "description": "Incorporates a series of beryllium and tungsten braces and micro-servos to support and enhance the natural movements of the wearer for short periods of time.",
     "feature": "Increase your speed by 6m.",
@@ -481,6 +529,7 @@
   },
   {
     "name": "Teflon Coating",
+    "rarity": "Uncommon",
     "type": "Chest",
     "description": "A spray of Teflon that reflects multiple types of radiation.",
     "feature": "Resistance to radiant damage.",
@@ -491,6 +540,7 @@
   },
   {
     "name": "Thermal Armor",
+    "rarity": "Uncommon",
     "type": "Chest",
     "description": "Heat regulators keep your armor warm in the coldest environments.",
     "feature": "You are immune to being frozen.",
@@ -501,6 +551,7 @@
   },
   {
     "name": "Toxic Resistance",
+    "rarity": "Uncommon",
     "type": "Chest",
     "description": "Specially-sealed body armor and biotoxin blood filters provide increased protection against radiation, gases, and a host of other toxins.",
     "feature": "Resistance to acid and poison damage. You have advantage on Constitution saving throws that would cause you to be poisoned.",
@@ -511,6 +562,7 @@
   },
   {
     "name": "Umbra AI",
+    "rarity": "Rare",
     "type": "Head",
     "description": "By detecting the focal point of the wearer's eyes and enhancing the image at that location, the visor helps direct a biotic power or a shot from an omni-tool exactly where the wearer is looking.",
     "feature": "When you roll a 1 or 2 on a damage die for an attack you make with a tech power, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. ",
@@ -521,6 +573,7 @@
   },
   {
     "name": "Voice Modulator",
+    "rarity": "Common",
     "type": "Head",
     "description": "Includes an advanced audio processing package that allows unprecedented clarity and resonance for spoken communication.",
     "feature": "+2 to Persuasion and Intimidation checks",
@@ -531,6 +584,7 @@
   },
   {
     "name": "Enviro-Systems",
+    "rarity": "Common",
     "type": "Chest",
     "description": "An activatable hermetic seal against vacuum or underwater pressure. While most armors act as space-suits, they aren't necessarily graded for more than a few hours of vacuum exposure, nor are they graded for underwater performance where water pressure can be crushing.",
     "feature": "As a free action, you gain Water Breathing and the ability to breathe indefinitely in zero-oxygen environments for the next 24 hours. If you are not wearing a helmet, the suit creates a hard light helmet that equalizes pressure around your head.",
@@ -541,6 +595,7 @@
   },
   {
     "name": "Echo Cancel",
+    "rarity": "Common",
     "type": "Legs",
     "description": "Specifically attuned mass effect fields in your armor's boots that are keyed to sound waves.",
     "feature": "Your footsteps make no noise and you have advantage on Dexterity (Stealth) checks that rely on remaining silent.",
@@ -551,6 +606,7 @@
   },
   {
     "name": "Night Sight",
+    "rarity": "Uncommon",
     "type": "Head",
     "description": "A standard night-vision mod issued to infantry across the galaxy.",
     "feature": "You gain darkvision 30m.",
@@ -561,6 +617,7 @@
   },
   {
     "name": "Reactive Kinetic Compensator",
+    "rarity": "Uncommon",
     "type": "Chest",
     "description": "A vi-response program that generates a burst of hard light between the layers of the user's armor to reduce trauma from otherwise-lethal hits.",
     "feature": "Any critical hit against you becomes a normal hit.",
@@ -571,6 +628,7 @@
   },
   {
     "name": "Zoom Enhance",
+    "rarity": "Uncommon",
     "type": "Head",
     "description": "Fine-tuned lenses that fit over your armor's optics, enhancing your ability to see minute details.",
     "feature": "You have advantage on Intelligence (Investigation) checks that rely on sight while searching an area or studying an object within a range of 2m.",
@@ -581,6 +639,7 @@
   },
   {
     "name": "Aerial Performance Optimizer",
+    "rarity": "Rare",
     "type": "Chest",
     "description": "Enhance your jet pack or jump jet armor modification with an advanced aerial lubricant and stabilizer.",
     "feature": "Requires a Jump Jet or Jetpack mod also be installed. When you are hovering (via Jump Jets) or flying (via Jetpack), you have a +2 bonus to all attack and damage rolls.",
@@ -591,6 +650,7 @@
   },
   {
     "name": "Battlefield Assist Module",
+    "rarity": "Spectre",
     "type": "Chest",
     "description": "A special VI that reroutes all power to your armor's defenses when vital signs are low.",
     "feature": "At the start of your turn, if you have less than one-quarter of your hit points remaining, you can use a bonus action to cast Defense Matrix (Custom Current). It lasts 1 minute and does not require concentration. You may use this feature once per long rest.",
@@ -601,6 +661,7 @@
   },
   {
     "name": "EC Counter",
+    "rarity": "Rare",
     "type": "Arms",
     "description": "Uses an electrical conduit to automatically counter-attack melee combatants.",
     "feature": "Whenever you are hit with a melee attack, the attacking creature takes 2d4 lightning damage and must succeed on a DC 10 Constitution saving throw or becomes stunned until the start of your next turn. This effect can only happen once per round (every 6 seconds).",
@@ -611,6 +672,7 @@
   },
   {
     "name": "Equilibrium Regulator",
+    "rarity": "Uncommon",
     "type": "Head",
     "description": "Stabilizes your HUD while running which allows you to take quick shots while running.",
     "feature": "When you take the Dash action on your turn, you can use a bonus action to make one weapon attack.",
@@ -621,6 +683,7 @@
   },
   {
     "name": "Medi-gel Regulator",
+    "rarity": "Spectre",
     "type": "Chest",
     "description": "Circulates medi-gel through your body, increasing vitality.",
     "feature": "Gain 1 additional hit point for each level you have gained.",

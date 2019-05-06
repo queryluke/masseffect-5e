@@ -12,7 +12,7 @@ starting_credits: 1000
 
 __Skill Proficiencies__. Athletics, Perception
 
-__Tool Proficiencies__. One gaming set and choose one among starship system (weapons), starship system (defenses), starship (specialty)
+__Tool Proficiencies__. One gaming set and one starship system
 
 __Equipment__. An insignia of rank, a trophy taken from a fallen enemy, a gaming set, a set of common clothes, a military uniform,
 and 1000 credits

@@ -15,5 +15,5 @@ Version | STR Score | Rarity
 Mark I | 19 | Uncommon
 Mark II | 21 | Rare
 Mark III | 23 | Rare
-Mark IV | 26 | Legendary
-Mark V | 29 | Legendary
+Mark IV | 26 | Spectre
+Mark V | 29 | Spectre

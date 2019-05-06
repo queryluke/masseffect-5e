@@ -3,7 +3,6 @@ id: quantum_displacer
 name: Quantum_Displacer.exe
 rarity: rare
 installation: true
-gel: 3
 ---
 Your omni-tool is equipped with a highly experimental quantum device. You can spend a bonus action and 3 omni-gel to designate
 an open space within 60m, and instantly teleport there.

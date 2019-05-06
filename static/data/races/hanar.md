@@ -3,6 +3,7 @@ id: hanar
 name: Hanar
 galaxy: 
   - Milky Way
+  - Andromeda
 alignment: Most hanar are lawful due to the religious influence on their society.
 availableClasses:
   - adept

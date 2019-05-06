@@ -6,9 +6,9 @@
     "heightModifier": "2d10",
     "heightModifierCm": "5d10",
     "baseWeight": "110 lb",
-    "weightKg": "243",
-    "weightModifier": "(2d4) lb",
-    "weightModifierKg": "(4d4) kg",
+    "weightKg": "50",
+    "weightModifier": "2d4",
+    "weightModifierKg": "(1d4 / 2)",
     "id": "human"
   },
   {
@@ -18,9 +18,9 @@
     "heightModifier": "2d6",
     "heightModifierCm": "5d6",
     "baseWeight": "145 lb",
-    "weightKg": "320",
-    "weightModifier": "(2d4) lb",
-    "weightModifierKg": "(4d4) kg",
+    "weightKg": "66",
+    "weightModifier": "2d4",
+    "weightModifierKg": "(1d4 / 2)",
     "id": "angaran"
   },
   {
@@ -30,9 +30,9 @@
     "heightModifier": "2d10",
     "heightModifierCm": "5d10",
     "baseWeight": "105 lb",
-    "weightKg": "232",
-    "weightModifier": "(2d4) lb",
-    "weightModifierKg": "(4d4) kg",
+    "weightKg": "48",
+    "weightModifier": "2d4",
+    "weightModifierKg": "(1d4 / 2)",
     "id": "asari"
   },
   {
@@ -42,9 +42,9 @@
     "heightModifier": "2d10",
     "heightModifierCm": "5d10",
     "baseWeight": "115 lb",
-    "weightKg": "254",
-    "weightModifier": "(2d4) lb",
-    "weightModifierKg": "(4d4) kg",
+    "weightKg": "52",
+    "weightModifier": "2d4",
+    "weightModifierKg": "(1d4 / 2)",
     "id": "batarian"
   },
   {
@@ -54,9 +54,9 @@
     "heightModifier": "2d10",
     "heightModifierCm": "5d10",
     "baseWeight": "90 lb",
-    "weightKg": "198",
-    "weightModifier": "(1d4) lb",
-    "weightModifierKg": "(2d4) kg",
+    "weightKg": "41",
+    "weightModifier": "1d4",
+    "weightModifierKg": "(1d4 / 4)",
     "id": "drell"
   },
   {
@@ -66,9 +66,9 @@
     "heightModifier": "2d8",
     "heightModifierCm": "5d8",
     "baseWeight": "2,000 lb",
-    "weightKg": "4410",
-    "weightModifier": "(2d20) b",
-    "weightModifierKg": "(4d20) kg",
+    "weightKg": "907",
+    "weightModifier": "2d20",
+    "weightModifierKg": "(1d20 / 2)",
     "id": "elcor"
   },
   {
@@ -78,7 +78,7 @@
     "heightModifier": "0",
     "heightModifierCm": null,
     "baseWeight": "250 lb",
-    "weightKg": "551",
+    "weightKg": "113",
     "weightModifier": "0 lb",
     "weightModifierKg": "0 kg",
     "id": "geth"
@@ -102,9 +102,9 @@
     "heightModifier": "2d6",
     "heightModifierCm": "5d6",
     "baseWeight": "75 lb",
-    "weightKg": "165",
-    "weightModifier": "(1d6) lb",
-    "weightModifierKg": "(2d6) kg",
+    "weightKg": "34",
+    "weightModifier": "1d6",
+    "weightModifierKg": "(1d6 / 2)",
     "id": "hanar_length"
   },
   {
@@ -114,9 +114,9 @@
     "heightModifier": "2d4",
     "heightModifierCm": "5d4",
     "baseWeight": "330 lb",
-    "weightKg": "728",
-    "weightModifier": "(2d20) lb",
-    "weightModifierKg": "(4d20) kg",
+    "weightKg": "150",
+    "weightModifier": "2d20",
+    "weightModifierKg": "(1d20 / 2)",
     "id": "krogan"
   },
   {
@@ -126,9 +126,9 @@
     "heightModifier": "2d10",
     "heightModifierCm": "5d10",
     "baseWeight": "115 lb",
-    "weightKg": "254",
-    "weightModifier": "(2d4) lb",
-    "weightModifierKg": "(4d4) kg",
+    "weightKg": "52",
+    "weightModifier": "2d4",
+    "weightModifierKg": "(1d4 / 2)",
     "id": "prothean"
   },
   {
@@ -138,9 +138,9 @@
     "heightModifier": "2d10",
     "heightModifierCm": "5d10",
     "baseWeight": "110 lb",
-    "weightKg": "243",
-    "weightModifier": "(2d4) lb",
-    "weightModifierKg": "(4d4) kg",
+    "weightKg": "50",
+    "weightModifier": "2d4",
+    "weightModifierKg": "(1d4 / 2)",
     "id": "quarian"
   },
   {
@@ -150,9 +150,9 @@
     "heightModifier": "2d8",
     "heightModifierCm": "5d8",
     "baseWeight": "70 lb",
-    "weightKg": "154",
-    "weightModifier": "(2d4) lb",
-    "weightModifierKg": "(4d4) kg",
+    "weightKg": "32",
+    "weightModifier": "2d4",
+    "weightModifierKg": "(1d4 / 2)",
     "id": "salarian"
   },
   {
@@ -162,9 +162,9 @@
     "heightModifier": "2d4",
     "heightModifierCm": "5d4",
     "baseWeight": "115 lb",
-    "weightKg": "254",
-    "weightModifier": "(2d10) lb",
-    "weightModifierKg": "(4d10) kg",
+    "weightKg": "52",
+    "weightModifier": "2d10",
+    "weightModifierKg": "(1d10 / 2)",
     "id": "turian"
   },
   {
@@ -174,9 +174,9 @@
     "heightModifier": "2d10",
     "heightModifierCm": "5d10",
     "baseWeight": "224 lb",
-    "weightKg": "494",
-    "weightModifier": "(2d8) lb",
-    "weightModifierKg": "(4d8) kg",
+    "weightKg": "102",
+    "weightModifier": "2d8",
+    "weightModifierKg": "(1d8 / 2)",
     "id": "unshackled_ai"
   },
   {
@@ -186,9 +186,9 @@
     "heightModifier": "2d6",
     "heightModifierCm": "5d6",
     "baseWeight": "60 lb",
-    "weightKg": "132",
-    "weightModifier": "1 lb",
-    "weightModifierKg": "2 kg",
+    "weightKg": "27",
+    "weightModifier": "1",
+    "weightModifierKg": "0.5",
     "id": "volus"
   },
   {
@@ -198,9 +198,9 @@
     "heightModifier": "2d10",
     "heightModifierCm": "5d10",
     "baseWeight": "112 lb",
-    "weightKg": "247",
-    "weightModifier": "(2d4) lb",
-    "weightModifierKg": "(4d4) kg",
+    "weightKg": "51",
+    "weightModifier": "2d4",
+    "weightModifierKg": "(1d4 / 2)",
     "id": "vorcha"
   }
 ]

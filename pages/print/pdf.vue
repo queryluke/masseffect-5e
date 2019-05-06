@@ -291,28 +291,6 @@
           span.body-1.pl-2 {{ skill.link }}
         p {{ skill.description }}
 
-    // codices
-    section.page
-      h3(id="found-codices").display-2 Found Codices
-      v-card.elevation-0.transparent
-        v-card-title.headline {{ pr.attributes.name }}
-          small.ml-3
-            em by tioeduardo27
-        v-card-text.markdown-content
-          markdown-content(:component="pr.vue")
-      v-card.elevation-0.transparent.mt-5
-        v-card-title.headline {{ weaponStrength.attributes.name }}
-          small.ml-3
-            em by SleightxHope
-        v-card-text.markdown-content
-          markdown-content(:component="weaponStrength.vue")
-      v-card.elevation-0.transparent.mt-5
-        v-card-title.headline {{ indoc.attributes.name }}
-          small.ml-3
-            em inspired by Stephen W.
-        v-card-text.markdown-content
-          markdown-content(:component="indoc.vue")
-
       // Alt Sentinel
       section.page
         h3(id="alt-sentinel").display-2 Alternate Sentinel Progression
@@ -344,9 +322,6 @@
   import bestiary from '~/static/data/bestiary'
   import conditions from '~/static/data/conditions'
   import skills from '~/static/data/skills'
-  import pr from '~/static/data/community/p_r.md'
-  import weaponStrength from '~/static/data/community/weapon_strength.md'
-  import indoc from '~/static/data/community/indoctrination.md'
   import altSentinel from '~/static/data/alt_sentinel'
   import vehicles from '~/static/data/vehicles'
 
@@ -405,10 +380,7 @@
         bestiary: bestiary.sort((a, b) => a.name === b.name ? 0 : a.name > b.name ? 1 : -1),
         conditions: conditions.sort((a, b) => a.name === b.name ? 0 : a.name > b.name ? 1 : -1),
         skills: skills.sort((a, b) => a.name === b.name ? 0 : a.name > b.name ? 1 : -1),
-        pr,
-        weaponStrength,
         altSentinel,
-        indoc,
         transports: vehicles.filter(v => v.vehicle.type === 'transport'),
         starships: vehicles.filter(v => v.vehicle.type === 'starship')
       }
@@ -499,7 +471,6 @@
             items = [
               {title: 'Conditions', anchor: '#conditions'},
               {title: 'Skills', anchor: '#skills'},
-              {title: 'Found Codices', anchor: '#found-codices'},
               {title: 'Alternate Sentinel', anchor: '#alt-sentinel'},
               {title: 'Creating Armor', anchor: '#creating-armor'},
             ]

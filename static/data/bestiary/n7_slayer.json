@@ -1,0 +1,104 @@
+{
+  "abilityScores": {
+    "str": 16,
+    "dex": 14,
+    "con": 13,
+    "int": 13,
+    "wis": 14,
+    "cha": 12
+  },
+  "ac": "14",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Multiattack",
+      "description": "The N7 Slayer makes three monomolecular blade attacks or two N7 Piranha attacks."
+    },
+    {
+      "type": "weapon",
+      "id": "monomolecular_blade"
+    },
+    {
+      "type": "weapon",
+      "id": "n7_piranha"
+    }
+  ],
+  "alignment": "Lawful Neutral",
+  "barrier": 5,
+  "conditionImmunities": [],
+  "cr": "5",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [
+    {
+      "name": "Aggressive",
+      "recharge": null,
+      "description": "As a bonus action, the N7 Slayer can move up to its speed toward a hostile creature that it can see."
+    },
+    {
+      "name": "Avoidance",
+      "recharge": null,
+      "description": "If the N7 Slayer is subjected to an effect that allows it to make a saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails."
+    },
+    {
+      "name": "Barrier",
+      "recharge": "2/Day",
+      "description": "As an action or bonus action, the N7 Slayer gains 5 barrier ticks."
+    },
+    {
+      "name": "N7 Training",
+      "recharge": null,
+      "description": "The N7 Slayer has advantage on its first attack roll each turn."
+    }
+  ],
+  "hp": {
+    "numDice": 14,
+    "die": 8
+  },
+  "id": "n7_slayer",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/9/97/N7_Slayer_Vanguard_MP.png/revision/latest/scale-to-width-down/250?cb=20120717151234",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "N7 Slayer",
+  "profBonus": 3,
+  "reactions": [
+    {
+      "name": "Parry and Counter",
+      "recharge": null,
+      "description": "The N7 Slayer adds 3 to its AC against one melee that would hit it. To do so, it must be able to see the target and be wielding a melee weapon. If the attack misses, the N7 Slayer can make one melee attack against the attacker if it is within its reach."
+    }
+  ],
+  "savingThrows": [
+    "str",
+    "dex"
+  ],
+  "senses": [],
+  "size": "Medium",
+  "skills": [
+    "acrobatics",
+    "survival*"
+  ],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 14
+    }
+  ],
+  "sp": {
+    "shields": 15,
+    "regen": 5
+  },
+  "spellcasting": {
+    "level": 9,
+    "mod": "wis",
+    "spellList": [
+      "charge",
+      "phase_disruptor",
+      "biotic_slash"
+    ]
+  },
+  "type": "Organic",
+  "unit": "N7",
+  "author": "Dakota P."
+}

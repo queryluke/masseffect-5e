@@ -4,7 +4,7 @@
       v-parallax(src="/images/parallax/edi.jpg" alt="Edi")
         v-layout(column align-center justify-center).white--text
           me-header-logo
-          h1.display-1.mt-5 Feedback & Contributing #[span.sr-only for Mass Effect 5e]
+          h1.sr-only Feedback & Contributing for Mass Effect 5e
     section
       v-layout(row wrap justify-center).mt-5
         v-flex(xs12)
@@ -61,13 +61,6 @@
 
       v-container(grid-list-xl)
         v-layout(row wrap justify-center)
-          v-flex(xs12 md4 d-flex)
-            v-card(dark)
-              v-card-title(primary-title).title Fillable PDF character sheet
-              v-card-text.pt-0
-                p.
-                  Thessiand Shadow, Szirach, and TheNamelessOne have all created great fillable PDFs (thanks!). But we've made a few changes
-                  to our print version since then, so we're in need of some updates.
           v-flex(xs12 md4 d-flex)
             v-card(dark)
               v-card-title(primary-title).title Class specific character sheets

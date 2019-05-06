@@ -1,0 +1,95 @@
+{
+  "abilityScores": {
+    "str": 15,
+    "dex": 13,
+    "con": 20,
+    "int": 25,
+    "wis": 26,
+    "cha": 17
+  },
+  "ac": "19",
+  "actions": [
+    {
+      "type": "standard",
+      "name": "Indoctrinate",
+      "recharge": null,
+      "description": "The thorian targets one creature within 120 meters of it that it or one of its controllers, thralls, or creepers can see. That creature must make a DC 17 Wisdom saving throw or suffer a level of indoctrination."
+    },
+    {
+      "type": "standard",
+      "name": "Summon Thrall",
+      "recharge": null,
+      "description": "The thorian summons a thrall to its aid. It arrives on initiative count 20 somewhere along the thorian's root structure."
+    }
+  ],
+  "alignment": "Lawful evil",
+  "barrier": null,
+  "conditionImmunities": [
+    "prone",
+    "lifted"
+  ],
+  "cr": "17",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [
+    "fire"
+  ],
+  "features": [
+    {
+      "name": "Indoctrination",
+      "recharge": null,
+      "description": "Unless a thorian controller is incapacitated, it is a source of indoctrination to all creatures within 1000m of it. See the indoctrination condition."
+    },
+    {
+      "name": "Root Structure",
+      "recharge": null,
+      "description": "One a thorian reaches maturity, it's roots grow at a rate of 2 to 4 meters per year. Over time, these roots create vast tunnel systems and caverns that act as the thorian's lair."
+    },
+    {
+      "name": "Neural Nodes",
+      "recharge": null,
+      "description": "The thorian has 4 + 1d4 neural nodes located along its root structure, spread throughout its lair. At start of its turn, the thorian gains 2d12 points for each remaining neural node. Each node has AC 10 and 30 (6d6 + 10) hit points."
+    }
+  ],
+  "hp": {
+    "numDice": 40,
+    "die": 12
+  },
+  "id": "thorian",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/8/8a/Thorian_charbox.png/revision/latest/scale-to-width-down/700?cb=20140409103930",
+  "lairActions": [
+    {
+      "name": "Create Spawn",
+      "description": "The thorian sprouts 1d12 + 3 thorian spawn. These spawn can appear in an unoccupied space within 2m of any part of the thorian's root structure. The spawn take their turn at the end of the thorian's turn."
+    },
+    {
+      "name": "Summon Creeper",
+      "description": "The thorian summons 1d8 + 4 thorian creepers. These creepers can appear in an unoccupied space within 2m of any part of the thorian's root structure. The creepers take their turn at the end of the thorian's turn."
+    },
+    {
+      "name": "Summon Controller",
+      "description": "The thorian summons 1d4 thorian controllers. These controllers can appear in an unoccupied space within 2m of any part of the thorian's root structure. The controllers take their turn at the end of the thorian's turn."
+    }
+  ],
+  "legendaryActions": [],
+  "name": "Thorian",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Huge",
+  "skills": [],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 0
+    }
+  ],
+  "sp": null,
+  "spellcasting": null,
+  "type": "Organic",
+  "unit": "Thorian",
+  "author": "Dakota P."
+}
+
+

@@ -12,9 +12,9 @@
       v-card(elevation="0")
         v-card-text
           v-layout(row wrap)
-            v-flex(xs4).px-1
+            v-flex(xs12)
               v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
-            v-flex(xs8).px-1
+            v-flex(xs12)
               armor-mod-filters(:itemKey="itemKey" v-bind:noteOptions="noteOptions")
 
     // List
@@ -82,6 +82,9 @@
         if (this.filters.armorMods.type.length > 0) {
           data = data.filter(item => this.filters.armorMods.type.includes(item.type))
         }
+        if (this.filters.armorMods.rarity.length > 0) {
+          data = data.filter(item => this.filters.armorMods.rarity.includes(item.rarity))
+        }
         if (this.filters.armorMods.notes.length > 0) {
           data = data.filter(item => {
             for (const note of item.notes.split(',').map(n => n.trim())) {
@@ -94,6 +97,7 @@
         return data
       }
     },
+    middleware: 'resetListFilters',
     head () {
       return {
         title: 'Armor Mods - Equipment | Mass Effect 5e',

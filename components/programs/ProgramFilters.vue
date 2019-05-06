@@ -20,13 +20,8 @@
         default: ''
       },
     },
-    data () {
-      return {
-        rarityOptions: ['uncommon', 'rare', 'very rare', 'legendary']
-      }
-    },
     computed: {
-      ...mapGetters(['filters']),
+      ...mapGetters(['filters', 'rarityOptions']),
       rarityFilter: {
         get () {
           return this.filters[this.itemKey].rarity

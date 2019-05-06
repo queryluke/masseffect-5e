@@ -75,8 +75,7 @@
     "id": "quantum_displacer",
     "name": "Quantum_Displacer.exe",
     "rarity": "rare",
-    "installation": true,
-    "gel": 3
+    "installation": true
   },
   {
     "id": "show_stopper",
@@ -93,7 +92,7 @@
   {
     "id": "terra_angelis",
     "name": "Terra_Angelis.exe",
-    "rarity": "legendary",
+    "rarity": "spectre",
     "installation": true
   },
   {

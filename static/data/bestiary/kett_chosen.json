@@ -1,0 +1,57 @@
+{
+  "abilityScores": {
+    "str": 14,
+    "dex": 13,
+    "con": 14,
+    "int": 10,
+    "wis": 8,
+    "cha": 7
+  },
+  "ac": "15",
+  "actions": [
+    {
+      "type": "weapon",
+      "id": "zalkin"
+    },
+    {
+      "type": "grenade",
+      "id": "frag_grenade"
+    }
+  ],
+  "alignment": "Lawful evil",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "1",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [],
+  "hp": {
+    "numDice": 10,
+    "die": 8
+  },
+  "id": "kett_chosen",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/f/fd/MEA_Enemy_Chosen.png/revision/latest?cb=20170705200934",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Kett Chosen",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [
+    "dex"
+  ],
+  "senses": [],
+  "size": "Medium",
+  "skills": [],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "sp": null,
+  "spellcasting": null,
+  "type": "Organic",
+  "unit": "Kett",
+  "author": "Dakota P."
+}

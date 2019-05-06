@@ -104,18 +104,18 @@
               div(v-if="loot.weapons.length > 0").mt-2
                 div.subheading.grey--text.text--darken-1 Weapons
                 span.pl-2 {{ loot.weapons.map((weapon) => weapon.name).join(', ') }}
-              div(v-if="loot.mods.filter((mod) => mod.hasOwnProperty('placement')).length > 0").mt-2
+              div(v-if="loot.mods.filter((mod) => mod.groupType === 'weapon').length > 0").mt-2
                 div.subheading.grey--text.text--darken-1 Weapon Mods
-                span.pl-2 {{ loot.mods.filter((mod) => mod.hasOwnProperty('placement')).map((mod) => mod.name).join(', ') }}
+                span.pl-2 {{ loot.mods.filter((mod) => mod.groupType === 'weapon').map((mod) => mod.name).join(', ') }}
               div(v-if="loot.armor.length > 0").mt-2
                 div.subheading.grey--text.text--darken-1 Armor Sets
                 span.pl-2 {{ loot.armor.map((armor) => armor.name).join(', ') }}
-              div(v-if="loot.mods.filter((mod) => !mod.hasOwnProperty('placement')).length > 0").mt-2
+              div(v-if="loot.mods.filter((mod) => mod.groupType === 'armor').length > 0").mt-2
                 div.subheading.grey--text.text--darken-1 Armor Mods
-                span.pl-2 {{ loot.mods.filter((mod) => !mod.hasOwnProperty('placement')).map((mod) => mod.name).join(', ') }}
-              div(v-if="loot.programs.length > 0").mt-2
-                div.subheading.grey--text.text--darken-1 Omni-tool Programs
-                span.pl-2 {{ loot.programs.map((program) => program.name).join(', ') }}
+                span.pl-2 {{ loot.mods.filter((mod) => mod.groupType === 'armor').map((mod) => mod.name).join(', ') }}
+              div(v-if="loot.mods.filter((mod) => mod.groupType === 'program').length > 0").mt-2
+                div.subheading.grey--text.text--darken-1 Omni-Tool Programs
+                span.pl-2 {{ loot.mods.filter((mod) => mod.groupType === 'program').map((mod) => mod.name).join(', ') }}
             v-card-actions
               v-btn(@click="removeLoot(index)" flat color="primary") #[v-icon(left) remove_circle] Remove
       v-layout(v-if="loots.length > 0")
@@ -221,33 +221,33 @@
             { min: 35, max: 50, reward: () => this.addGrenade(1), text: '1 random grenade' },
             { min: 51, max: 60, reward: () => this.addGrenade(2), text: '2 random grenades' },
             { min: 61, max: 80, reward: () => this.addWeapon('common'), text: '1 common weapon' },
-            { min: 81, max: 95, reward: () => this.addProgram('uncommon'), text: '1 uncommon or lower omni-tool program' },
-            { min: 96, max: 100, reward: () => this.addModOrArmor('mods', 0, 3000), text: '1 random armor or weapon mod worth 3,000 credits or less' }
+            { min: 81, max: 95, reward: () => this.addMod('uncommon'), text: '1 common or uncommon mod or program' },
+            { min: 96, max: 100, reward: () => this.addArmor('uncommon'), text: '1 uncommon armor set piece' }
           ],
           b: [
             { min: 1, max: 15, reward: () => this.addMedigel(1, 'enhanced'), text: '1 enhanced medi-gel' },
             { min: 16, max: 25, reward: () => this.addThOrHw('omniGel', this.randomAmount(1, 2, 4)), text: '2d4 + 1 omni-gel' },
             { min: 26, max: 44, reward: () => this.addGrenade(2), text: '2 random grenades' },
             { min: 55, max: 64, reward: () => this.addWeapon('common'), text: '1 common weapon' },
-            { min: 65, max: 74, reward: () => this.addModOrArmor('mods', 0, 5000), text: '1 random armor or weapon mod worth 5,000 credits or less' },
-            { min: 75, max: 84, reward: () => this.addProgram('uncommon'), text: '1 uncommon or lower omni-tool program' },
+            { min: 65, max: 74, reward: () => this.addMod('uncommon'), text: '1 common or uncommon mod or program' },
+            { min: 75, max: 84, reward: () => this.addArmor('uncommon'), text: '1 uncommon armor set piece' },
             { min: 75, max: 94, reward: () => this.addThOrHw('heavyWeapon', 3), text: '3 heavy weapon charges' },
             { min: 95, max: 100, reward: () => this.addWeapon('uncommon'), text: '1 uncommon weapon' }
           ],
           c: [
             { min: 1, max: 15, reward: () => this.addMedigel(1, 'enhanced'), text: '1 enhanced medi-gel' },
             { min: 16, max: 25, reward: () => this.addThOrHw('omniGel', this.randomAmount(2, 1, 8)), text: '1d8 + 2 omni-gel' },
-            { min: 26, max: 35, reward: () => this.addProgram('uncommon'), text: '1 uncommon or lower omni-tool program' },
+            { min: 26, max: 35, reward: () => this.addMod('uncommon'), text: '1 common or uncommon mod or program' },
             { min: 36, max: 45, reward: () => this.addGrenade(3), text: '3 random grenades' },
             { min: 46, max: 60, reward: () => this.addWeapon('uncommon'), text: '1 uncommon weapon' },
-            { min: 61, max: 73, reward: () => this.addModOrArmor('mods', 0, 10000), text: '1 random armor or weapon mod of 10,000 credits or less' },
+            { min: 61, max: 73, reward: () => this.addArmor('uncommon'), text: '1 uncommon armor set piece' },
             { min: 74, max: 85, reward: () => this.addThOrHw('heavyWeapon', 5), text: '5 heavy weapon charges' },
-            { min: 86, max: 90, reward: () => this.addModOrArmor('armor', 0, 20000), text: '1 random armor set of 20,000 credits or less' },
+            { min: 86, max: 90, reward: () => this.addMod('rare'), text: '1 rare mod or program' },
             { min: 91, max: 100, reward: () => this.addMedigel(1, 'superior'), text: '1 superior medi-gel' }
           ],
           d: [
             { min: 1, max: 20, reward: () => this.addThOrHw('omniGel', this.randomAmount(1, 1, 6)), text: '1d6 + 1 omni-gel' },
-            { min: 21, max: 40, reward: () => this.addProgram('rare'), text: '1 rare or lower omni-tool program' },
+            { min: 21, max: 40, reward: () => this.addMod('rare'), text: '1 rare mod or program' },
             { min: 41, max: 60, reward: () => this.addGrenade(3), text: '3 random grenades' },
             { min: 61, max: 70, reward: () => this.addMedigel(2, 'enhanced'), text: '2 enhanced medi-gel' },
             { min: 71, max: 80, reward: () => this.addThOrHw('heavyWeapon', 3), text: '3 heavy weapon charges' },
@@ -258,43 +258,51 @@
           e: [
             { min: 1, max: 10, reward: () => this.addWeapon('common'), text: '1 common weapon' },
             { min: 11, max: 40, reward: () => this.addWeapon('uncommon'), text: '1 uncommon weapon' },
-            { min: 41, max: 60, reward: () => this.addProgram('rare'), text: '1 rare or lower omni-tool program' },
-            { min: 61, max: 80, reward: () => this.addModOrArmor('mods', 0, 5000), text: '1 random armor or weapon mod of 5,000 credits or less' },
-            { min: 81, max: 90, reward: () => this.addModOrArmor('mods', 0, 10000), text: '1 random armor or weapon mod of 10,000 credits or less' },
-            { min: 91, max: 100, reward: () => this.addModOrArmor('armor', 0, 20000), text: '1 random armor set of 20,000 credits or less' }
+            { min: 41, max: 60, reward: () => this.addMod('uncommon'), text: '1 uncommon or common mod or program' },
+            { min: 61, max: 80, reward: () => this.addMod('rare'), text: '1 rare mod or program' },
+            { min: 81, max: 90, reward: () => this.addArmor('uncommon'), text: '1 uncommon armor set piece' },
+            { min: 91, max: 100, reward: () => this.addArmor('rare'), text: '1 rare armor set piece' }
           ],
           f: [
             { min: 1, max: 10, reward: () => this.addWeapon('uncommon'), text: '1 uncommon weapon' },
-            { min: 11, max: 30, reward: () => this.addProgram('rare'), text: '1 rare or lower omni-tool program' },
-            { min: 31, max: 60, reward: () => this.addWeapon('rare'), text: '1 rare weapon' },
-            { min: 61, max: 80, reward: () => this.addModOrArmor('mods', 0, 10000), text: '1 random armor or weapon mod of 10,000 credits or less' },
-            { min: 81, max: 90, reward: () => this.addModOrArmor('mods', 5000, 15000), text: '1 random 5,000 - 15,000 credit armor or weapon mod' },
-            { min: 91, max: 100, reward: () => this.addModOrArmor('armor', 0, 30000), text: '1 random armor set of 30,000 credits or less' }
+            { min: 11, max: 30, reward: () => this.addWeapon('rare'), text: '1 rare weapon' },
+            { min: 31, max: 70, reward: () => this.addMod('rare'), text: '1 rare mod or program' },
+            { min: 71, max: 100, reward: () => this.addArmor('rare'), text: '1 rare armor set piece' },
           ],
           g: [
             { min: 1, max: 30, reward: () => this.addWeapon('rare'), text: '1 rare weapon' },
-            { min: 31, max: 60, reward: () => this.addWeapon('very rare'), text: '1 very rare weapon' },
-            { min: 61, max: 70, reward: () => this.addProgram('very rare'), text: '1 very rare or lower omni-tool program' },
-            { min: 71, max: 80, reward: () => this.addModOrArmor('mods', 5000, 15000), text: '1 random 5,000 - 15,000 credit armor or weapon mod' },
-            { min: 81, max: 90, reward: () => this.addModOrArmor('mods', 15000, 30000), text: '1 random 15,000 - 30,000 credit armor or weapon mod' },
-            { min: 91, max: 100, reward: () => this.addModOrArmor('armor', 20000, 40000), text: '1 random 20,000 - 40,000 armor set' }
+            { min: 31, max: 60, reward: () => this.addWeapon('spectre'), text: '1 spectre weapon' },
+            { min: 61, max: 70, reward: () => this.addMod('rare'), text: '1 rare mod or program' },
+            { min: 71, max: 80, reward: () => this.addMod('spectre'), text: '1 spectre mod or program' },
+            { min: 81, max: 90, reward: () => this.addArmor('rare'), text: '1 rare armor set piece' },
+            { min: 91, max: 100, reward: () => this.addArmor('spectre'), text: '1 spectre armor set piece' }
           ],
           h: [
             { min: 1, max: 10, reward: () => this.addWeapon('rare'), text: '1 rare weapon' },
-            { min: 11, max: 35, reward: () => this.addWeapon('very rare'), text: '1 very rare weapon' },
-            { min: 36, max: 60, reward: () => this.addProgram('legendary'), text: '1 legendary or lower omni-tool program' },
-            { min: 61, max: 80, reward: () => this.addModOrArmor('mods', 15000, 100000000000), text: '1 random armor or weapon mod of 15,000 credits or more' },
-            { min: 81, max: 100, reward: () => this.addModOrArmor('armor', 30000, 100000000000), text: '1 random armor set of 30,000 credits or more' }
+            { min: 11, max: 40, reward: () => this.addWeapon('spectre'), text: '1 spectre weapon' },
+            { min: 41, max: 70, reward: () => this.addMod('spectre'), text: '1 spectre mod or program' },
+            { min: 71, max: 100, reward: () => this.addArmor('spectre'), text: '1 spectre armor set piece' },
           ]
         }
       }
     },
     created () {
+      const wMods = weaponMods.map(m => {
+        m.groupType = 'weapon'
+        return m
+      })
+      const aMods = armorMods.map(m => {
+        m.groupType = 'armor'
+        return m
+      })
+      const pMods = programs.map(m => {
+        m.groupType = 'program'
+        return m
+      })
       this.cache.grenades = grenades
       this.cache.weapons = weapons
       this.cache.armor = armorSets
-      this.cache.mods = weaponMods.concat(armorMods)
-      this.cache.programs = programs
+      this.cache.mods = wMods.concat(aMods).concat(pMods)
     },
     head () {
       return {
@@ -338,19 +346,17 @@
         const availableWeapons = this.cache.weapons.filter((weapon) => weapon.rarity.toLowerCase() === rarity.toLowerCase())
         this.workingLoot.weapons.push(this.randomValue(availableWeapons))
       },
-      addModOrArmor (itemType, minCost, maxCost) {
-        const availableItems = this.cache[itemType].filter((item) => {
-          const itemCost = parseInt(item.cost)
-          const excludedItems = ['stock_light_armor', 'stock_medium_armor', 'stock_heavy_armor']
-          return itemCost >= minCost && itemCost <= maxCost && !excludedItems.includes(item.id)
+      addMod (rarity) {
+        const availableItems = this.cache.mods.filter(mod => {
+          return mod.rarity.toLowerCase() === rarity.toLowerCase()
+            || mod.rarity === 'varies'
+            || (rarity.toLowerCase() === 'uncommon' && mod.rarity.toLowerCase() === 'common')
         })
-        this.workingLoot[itemType].push(this.randomValue(availableItems))
+        this.workingLoot.mods.push(this.randomValue(availableItems))
       },
-      addProgram (maxRarity) {
-        const rarities = ['legendary', 'very rare', 'rare', 'uncommon', 'common']
-        const availableRarities = rarities.splice(rarities.indexOf(maxRarity))
-        const availablePrograms = this.cache.programs.filter(item => availableRarities.includes(item.rarity))
-        this.workingLoot.programs.push(this.randomValue(availablePrograms))
+      addArmor (rarity) {
+        const availableItems = this.cache.armor.filter(armor => armor.rarity.toLowerCase() === rarity.toLowerCase())
+        this.workingLoot.armor.push(this.randomValue(availableItems))
       },
       clearLoot () {
         this.loots = []
@@ -411,7 +417,6 @@
           weapons: [],
           armor: [],
           mods: [],
-          programs: []
         }
       },
       randomAmount (flat, numRolls, max) {

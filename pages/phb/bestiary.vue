@@ -107,6 +107,7 @@
       })
       this.unitOptions = [...unitOptions].sort()
     },
+    middleware: 'resetListFilters',
     head () {
       return {
         title: 'Bestiary | Mass Effect 5e',

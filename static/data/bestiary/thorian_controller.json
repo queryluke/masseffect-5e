@@ -1,0 +1,82 @@
+{
+  "abilityScores": {
+    "str": 14,
+    "dex": 11,
+    "con": 15,
+    "int": 14,
+    "wis": 12,
+    "cha": 2
+  },
+  "ac": "14",
+  "actions": [
+    {
+      "type": "melee",
+      "name": "Slash",
+      "range": 2,
+      "target": "one target",
+      "hit": "7 (2d4 + 2) slashing damage.",
+      "miss": null,
+      "attackMod": 4
+    },
+    {
+      "type": "standard",
+      "name": "Acid Vomit",
+      "recharge": "Recharge 4-6",
+      "description": "The creeper regurgitates acid in a 4-meter cone. A creature within the code must succeed on a DC 15 Dexterity saving throw or take 14 (4d6) acid damage."
+    }
+  ],
+  "alignment": "Lawful evil",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "1/2",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [
+    "bludgeoning",
+    "force"
+  ],
+  "features": [
+    {
+      "name": "Creeper Resemblance",
+      "recharge": null,
+      "description": "The controller resembles a Thorian creeper. A creature that can see the controller can discern its true nature with a successful DC 15 Intelligence (Science) or Intelligence (Investigation) check."
+    },
+    {
+      "name": "Hive Mind Overseer",
+      "recharge": null,
+      "description": "The controller gains a +1 bonus to its attack and damage rolls, ability checks, and saving throws for each creature within 20 meters of it that has the Hive Mind feature. This bonus cannot exceed +5."
+    },
+    {
+      "name": "Indoctrination",
+      "recharge": null,
+      "description": "Unless a thorian controller is incapacitated, it is a source of indoctrination to all creatures within 100m of it. See the indoctrination condition."
+    }
+  ],
+  "hp": {
+    "numDice": 8,
+    "die": 8
+  },
+  "id": "thorian_controller",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/e/ee/Test_subject_hyperres.png/revision/latest/scale-to-width-down/180?cb=20131218143230",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Thorian Controller",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Medium",
+  "skills": [],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 10
+    }
+  ],
+  "sp": null,
+  "spellcasting": null,
+  "type": "Organic",
+  "unit": "Thorian",
+  "author": "Dakota P.",
+  "description": "These creatures act as the eyes, ears, and mouth of the Thorian, issuing its commands while also informing on its enemies."
+}

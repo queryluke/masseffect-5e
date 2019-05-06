@@ -1,0 +1,51 @@
+{
+  "abilityScores": {
+    "str": 9,
+    "dex": 8,
+    "con": 9,
+    "int": 8,
+    "wis": 8,
+    "cha": 12
+  },
+  "ac": "10",
+  "actions": [
+    {
+      "type": "weapon",
+      "id": "m-3_predator"
+    }
+  ],
+  "alignment": "Neutral",
+  "barrier": null,
+  "conditionImmunities": [],
+  "cr": "0",
+  "damageImmunities": [],
+  "damageResistances": [],
+  "damageVulnerabilities": [],
+  "features": [],
+  "hp": {
+    "numDice": 3,
+    "die": 8
+  },
+  "id": "security_guard",
+  "image": "https://vignette.wikia.nocookie.net/masseffect/images/1/1a/Eclipse_Security_Guard.png/revision/latest?cb=20100720085554",
+  "lairActions": [],
+  "legendaryActions": [],
+  "name": "Security Guard",
+  "profBonus": 2,
+  "reactions": [],
+  "savingThrows": [],
+  "senses": [],
+  "size": "Medium",
+  "skills": [],
+  "speed": [
+    {
+      "type": "walk",
+      "range": 8
+    }
+  ],
+  "sp": null,
+  "spellcasting": null,
+  "type": "Organic",
+  "unit": "Eclipse",
+  "author": "Dakota P."
+}

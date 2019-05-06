@@ -7,20 +7,17 @@
       v-layout(row wrap justify-center)
         v-flex(xs12 sm6 md4)
           v-btn(block href="https://drive.google.com/open?id=1aBCbmwDgmChg6d6K0yegHTab-R6cQD28" target="_blank").primary Official
-      h3.text-xs-center.display-1.mt-4 Fillable
-      v-layout(row wrap justify-center)
         v-flex(xs12 sm4)
-          v-btn(block href="https://drive.google.com/open?id=1gF1Y2KPgICj3rTJx6EYlJ__inGRSKMGX" target="_blank").primary by Szirach
-        v-flex(xs12 sm4)
-          v-btn(block href="https://drive.google.com/open?id=1eXwjbZQH5z7ACZw60WJ2AMKla94quGAD" target="_blank").primary by Thessian Shadow
-        v-flex(xs12 sm4)
-          v-btn(block href="https://drive.google.com/open?id=1SPghERVzFgEva4C11xRbnuc8i1RYKBbu" target="_blank").primary by theNamelessOne
+          v-btn(block href="https://drive.google.com/open?id=10oQ1UTmimRmKe-XXajEpeERhfRQAL-ro" target="_blank").primary Fillable
+          div.text-xs-center created by #[a(href="https://www.reddit.com/user/wretchedcrows" target="_blank" class="blue--text text--lighten-3") /u/wretchedcrows]
       h3.text-xs-center.display-1.mt-4 Google Sheets
       v-layout(row wrap justify-center)
         v-flex(xs12 sm4)
-          v-btn(block href="https://docs.google.com/spreadsheets/d/1eEbLhu-w016G2AhjVvO2x_p3AGQrqUj_aVc8om4SKZs/edit?usp=sharing" target="_blank").primary by Ben McPherson
+          v-btn(block href="https://drive.google.com/open?id=1tpYcan_DbAzfqfszz_2GHYEX6UrliiqewNiEieIPy5Y" target="_blank").primary Official
         v-flex(xs12 sm4)
-          v-btn(block href="https://docs.google.com/spreadsheets/d/1r-JCa_rqmKSp7-UKf1EP67w6Dl_Pm_JEdaZJMS-R22Y/edit?usp=sharing" target="_blank").primary by GameMasterPo
+          v-btn(block href="https://drive.google.com/open?id=1NesskTT0bxRF2D4ImuyWUo1Mu389Q-KP3uo934mQF-w" target="_blank").primary by Ben McPherson
+        v-flex(xs12 sm4)
+          v-btn(block href="https://drive.google.com/open?id=1r-JCa_rqmKSp7-UKf1EP67w6Dl_Pm_JEdaZJMS-R22Y" target="_blank").primary by GameMasterPo
 
     // Roll20
     h2.display-3.font-weight-thin.text-xs-center.mt-5 Roll20
@@ -54,14 +51,14 @@
     h2.display-3.font-weight-thin.text-xs-center.mt-5 Player's Manual
     v-container(grid-list-xl)
       v-layout(row wrap justify-center)
-        v-flex(xs12 sm6 md4)
+        v-flex(xs12 sm6)
           v-alert(:value="true" type="warning").black--text.
             The PDF is auto-generated from components on the website, therefore is very barebones and aesthetically limited. We
             will work on an official PDF version of the rules after our v1.0.0 release. The link below will take you
             to a Google Drive folder that has all of the past version PDFs (since we started doing that)
       v-layout(row wrap justify-center)
-      v-flex(xs12 sm6 md4)
-        v-btn(block href="https://drive.google.com/open?id=1eDfgpG3JplKUjrIdySJKmyC4qxTi2MUT" target="_blank").primary PDF Player's Manual
+        v-flex(xs12 sm6 md4)
+          v-btn(block href="https://drive.google.com/open?id=1eDfgpG3JplKUjrIdySJKmyC4qxTi2MUT" target="_blank").primary PDF Player's Manual
 
     // Spell Cards
     h2.display-3.font-weight-thin.text-xs-center.mt-5 Spell Cards
