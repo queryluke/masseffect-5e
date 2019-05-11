@@ -79,7 +79,7 @@ fs.readdirSync('./static/data/bestiary').map(file => {
   const id = file.replace(/.json$/, '')
   routes.push(`/phb/bestiary/${id}`)
 })
-for (let v of ['backgrounds', 'races']) {
+for (let v of ['backgrounds', 'feats', 'races']) {
   fs.readdirSync(`./static/data/${v}`).map(file => {
     const id = file.replace(/.md$/, '')
     routes.push(`/phb/${v}/${id}`)
