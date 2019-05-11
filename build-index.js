@@ -26,7 +26,7 @@ function setType(dir) {
   const types = [
     { type: 'character', items: ['backgrounds', 'feats', 'races', 'traits', 'subraces'] },
     { type: 'equipment', items: ['grenades', 'programs', 'tools', 'vehicles', 'armor_mods', 'armor_sets', 'weapon_mods', 'weapons'] },
-    { type: 'rule', items: ['conditions', 'rules', 'weapon_properties'] },
+    { type: 'rule', items: ['conditions', 'rules'] },
     { type: 'spell', items: ['spells'] },
     { type: 'bestiary', items: ['bestiary'] },
   ]
@@ -73,7 +73,6 @@ const jsonFiles = [
   'armor_sets',
   'bestiary',
   'weapon_mods',
-  'weapon_properties',
   'weapons',
 ]
 
@@ -184,11 +183,6 @@ for (let file of jsonFiles) {
         if (thing.notes) {
           item.body += `\n${thing.notes}`
         }
-        break
-      case 'weapon_properties':
-        item.body = thing.description
-        item.id = nameToId(thing.name)
-        item.subType = 'weapon property'
         break
       case 'bestiary':
         item.subType = null

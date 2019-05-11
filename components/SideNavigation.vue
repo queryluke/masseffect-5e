@@ -92,6 +92,7 @@
             items: [
               { href: '/phb/appendix/conditions', title: 'Conditions' },
               { href: '/phb/appendix/skills', title: 'Skills' },
+              { href: '/phb/appendix/weapon-properties', title: 'Weapon Properties' },
             ]
           },
           {

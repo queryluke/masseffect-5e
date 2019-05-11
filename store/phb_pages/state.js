@@ -50,6 +50,9 @@ export default {
     'phb-appendix-skills': {
       name: 'Skills'
     },
+    'phb-appendix-weapon-properties': {
+      name: 'Weapon Properties'
+    },
     'phb-appendix-found-codices': {
       name: 'Found Codices'
     },
@@ -110,6 +113,9 @@ export default {
     'phb-bestiary': {
       name: 'Bestiary',
       list: true
+    },
+    'phb-bestiary-id': {
+      name: 'Bestiary',
     },
     'phb-bookmarks': {
       name: 'Bookmarks'
