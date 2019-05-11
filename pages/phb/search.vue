@@ -1,7 +1,7 @@
 <template lang="pug">
   v-container
     div.mb-5
-      h2.display-1.hidden-sm-and-down Search
+      h2.display-1.hidden-sm-and-down Search the Player's Manual
       div.hr.mb-0
       v-card(elevation="0")
         v-card-text
@@ -56,7 +56,7 @@
             this.field('subType')
             this.field('qualifiers')
             this.field('body')
-            this.metadataWhitelist = ['position']
+            // this.metadataWhitelist = ['position']
 
             docs.forEach(function (doc) {
               this.add(doc)

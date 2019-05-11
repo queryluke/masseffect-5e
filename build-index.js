@@ -96,7 +96,7 @@ for (let dir of mdDirs) {
     // set the type and subtype
     let item = {
       type: setType(dir),
-      subType: dir.substring(0, dir.length - 1),
+      subType: dir,
       qualifiers: []
     }
 
@@ -171,7 +171,7 @@ for (let file of jsonFiles) {
       id: thing.id,
       title: thing.name,
       type: setType(file),
-      subType: file.substring(0, file.length - 1).replace('_',' '),
+      subType: file.replace('_',' '),
       qualifiers: []
     }
 
@@ -254,7 +254,7 @@ for (let klass of classes) {
     id: klass.id,
     title: klass.name,
     type: 'character',
-    subType: 'class',
+    subType: 'classes',
     qualifiers: [klass.name],
     body: klass.description
   }
@@ -292,7 +292,7 @@ function createScfItem(id, level, klass, prependBody) {
     id: cf.attributes.id,
     title: cf.attributes.name,
     type: 'character',
-    subType: 'class',
+    subType: 'classes',
     qualifiers: [klass],
     body: cleanBody(body)
   }

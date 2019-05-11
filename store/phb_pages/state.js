@@ -74,6 +74,9 @@ export default {
     'phb-backgrounds': {
       name: 'Backgrounds'
     },
+    'phb-backgrounds-id': {
+      name: 'Backgrounds'
+    },
     'phb-weapons': {
       name: 'Weapons',
       list: true

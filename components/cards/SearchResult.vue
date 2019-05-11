@@ -3,7 +3,8 @@
     v-btn(small fab flat absolute right @click="showFull = !showFull").mt-3
       v-icon {{ showIcon }}
     v-card-title.pb-0
-      div.headline {{ doc.title }}
+      div.headline
+        nuxt-link(:to="link").black--text {{ doc.title }}
       div.body-2
         span(:class="typeColors[doc.type]").text-uppercase {{ doc.type }}
         span(v-if="doc.subType").pl-1.body-1 - {{ doc.subType | titlecase }}
@@ -51,6 +52,14 @@
       },
       showIcon () {
         return this.showFull ? 'keyboard_arrow_up' : 'keyboard_arrow_down'
+      },
+      link () {
+        if (this.doc.subType) {
+          switch(this.doc.subType) {
+            default:
+              return `/phb/${this.doc.subType}`
+          }
+        }
       }
     }
   }
@@ -62,6 +71,12 @@
   }
   .search-result .v-card__title {
     display: block;
+  }
+  .search-result a {
+    text-decoration: none;
+  }
+  .search-result a:hover, .search-result a:focus  {
+    text-decoration: underline;
   }
 </style>
 

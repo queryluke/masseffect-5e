@@ -75,11 +75,16 @@ fs.readdirSync('./static/data/classes').map(file => {
   routes.push(`/phb/classes/${id}`)
   routes.push(`/print/spell-cards/${id}`)
 })
-fs.readdirSync('./static/data/races').map(file => {
-  const id = file.replace(/.md$/, '')
-  routes.push(`/phb/races/${id}`)
+fs.readdirSync('./static/data/bestiary').map(file => {
+  const id = file.replace(/.json$/, '')
+  routes.push(`/phb/bestiary/${id}`)
 })
-
+for (let v of ['backgrounds', 'races']) {
+  fs.readdirSync(`./static/data/${v}`).map(file => {
+    const id = file.replace(/.md$/, '')
+    routes.push(`/phb/${v}/${id}`)
+  })
+}
 fs.readdirSync('./static/data/changelog').map((file) => {
   routes.push('/changelog/' + (file.replace(/\.md$/g, '')))
 })
