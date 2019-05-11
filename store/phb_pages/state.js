@@ -74,9 +74,6 @@ export default {
     'phb-feats': {
       name: 'Feats'
     },
-    'phb-feats-id': {
-      name: 'Feats'
-    },
     'phb-backgrounds': {
       name: 'Backgrounds'
     },
