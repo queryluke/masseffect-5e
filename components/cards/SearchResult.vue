@@ -3,10 +3,9 @@
     v-btn(small fab flat absolute right @click="showFull = !showFull").mt-3
       v-icon {{ showIcon }}
     v-card-title.pb-0
-      div.headline
-        nuxt-link(:to="link").black--text {{ doc.title }}
+      div.headline {{ doc.title }}
       div.body-2
-        span(:class="typeColors[doc.type]").text-uppercase {{ doc.type }}
+        span(:class="typeColors[doc.type]").text-uppercase {{ doc.subType || doc.type }}
         span(v-if="doc.subType").pl-1.body-1 - {{ doc.subType | titlecase }}
         span(v-if="doc.qualifiers.length > 0").pl-1.body-1 ({{ doc.qualifiers.join(', ') }})
     v-card-text(@click="showFull = !showFull")
@@ -52,14 +51,6 @@
       },
       showIcon () {
         return this.showFull ? 'keyboard_arrow_up' : 'keyboard_arrow_down'
-      },
-      link () {
-        if (this.doc.subType) {
-          switch(this.doc.subType) {
-            default:
-              return `/phb/${this.doc.subType}`
-          }
-        }
       }
     }
   }
