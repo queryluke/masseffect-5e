@@ -46,20 +46,24 @@
     },
     methods: {
       getResults () {
-        const idx = lunr(function () {
-          this.ref('id')
-          this.field('title')
-          this.field('type')
-          this.field('subType')
-          this.field('qualifiers')
-          this.field('body')
-          this.metadataWhitelist = ['position']
+        if (this.search === ''){
+          this.results = []
+        } else {
+          const idx = lunr(function () {
+            this.ref('id')
+            this.field('title')
+            this.field('type')
+            this.field('subType')
+            this.field('qualifiers')
+            this.field('body')
+            this.metadataWhitelist = ['position']
 
-          docs.forEach(function (doc) {
-            this.add(doc)
-          }, this)
-        })
-        this.results = idx.search(this.search)
+            docs.forEach(function (doc) {
+              this.add(doc)
+            }, this)
+          })
+          this.results = idx.search(this.search)
+        }
         this.searching = false
       },
       getDoc (ref) {

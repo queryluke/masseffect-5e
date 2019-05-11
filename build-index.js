@@ -38,6 +38,14 @@ function nameToId(string) {
  return string.toLowerCase().replace(/[^\w-]/,'_')
 }
 
+function cleanBody(text) {
+  return text.replace(/<condition(.*)\/>/, (match) => {
+    const condition = match.match(/id="(.*?)"/)
+    const sub = match.match(/sub="(.*?)"/)
+    return sub && sub[1] ? `${condition[1]}-${sub[1]}` : condition[1]
+  })
+}
+
 // "bestiary"
 const mdDirs = [
   // must go first
@@ -97,7 +105,7 @@ for (let dir of mdDirs) {
       case 'races':
         item.id = fc.attributes.id
         item.title = fc.attributes.name
-        item.body = fc.body
+        item.body = cleanBody(fc.body)
         item.body += `\n\n__Age__: ${fc.attributes.age}`
         item.body += `\n\n__Alignment__: ${fc.attributes.alignment}`
         item.body += `\n\n__Size__: ${fc.attributes.size}`
@@ -121,10 +129,10 @@ for (let dir of mdDirs) {
         }
         break
       case 'spells':
-        item.subType = null
+        item.subType = fc.attributes.type
         item.title = fc.attributes.name
         item.id = fc.attributes.id
-        item.body = fc.body
+        item.body = cleanBody(fc.body)
         if (fc.attributes.advancementOptions) {
           item.body += `\n\n__${fc.attributes.advancementOptions[0].name}__: ${fc.attributes.advancementOptions[0].description}`
           item.body += `\n\n__${fc.attributes.advancementOptions[1].name}__: ${fc.attributes.advancementOptions[1].description}`
@@ -133,7 +141,7 @@ for (let dir of mdDirs) {
       case 'vehicles':
         item.title = fc.attributes.name
         item.id = item.title.toLowerCase().replace(/\W/,'_')
-        item.body = fc.body
+        item.body = cleanBody(fc.body)
         if (fc.attributes.weapons) {
           for (let attack of fc.attributes.weapons) {
             item.body += `\n\n__${attack.name}__. ${attack.damage}`
@@ -143,7 +151,7 @@ for (let dir of mdDirs) {
       default:
         item.title = fc.attributes.name || fc.attributes.title
         item.id = fc.attributes.id || nameToId(item.title)
-        item.body = fc.body
+        item.body = cleanBody(fc.body)
         break
     }
     searchItems.push(item)
@@ -286,7 +294,7 @@ function createScfItem(id, level, klass, prependBody) {
     type: 'character',
     subType: 'class',
     qualifiers: [klass],
-    body
+    body: cleanBody(body)
   }
 }
 

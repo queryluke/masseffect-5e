@@ -108,7 +108,7 @@
     ],
     "title": "Contra-gravitic Levitation",
     "id": "contra-gravitic-levitation",
-    "body": "When not in water, you use a contra-gravitic levitation pack to move. It provides a walking speed of 10m, though\nyou actually hover between 1 and 2 meters from the ground. You are immune to becoming <condition id=\"prone\"/> and you ignore any penalties\ncaused by difficult terrain.\n\nHowever, when you suffer a critical hit, you must roll a d20. On a 1 or a 2, the device malfunctions and you fall to the\nground. Your walking speed becomes 0 and you are considered <condition id=\"prone\"/>. You or another creature can use an \nAction to repair the pack with a successful DC 15 Intelligence (Engineering) check.\n"
+    "body": "When not in water, you use a contra-gravitic levitation pack to move. It provides a walking speed of 10m, though\nyou actually hover between 1 and 2 meters from the ground. You are immune to becoming prone and you ignore any penalties\ncaused by difficult terrain.\n\nHowever, when you suffer a critical hit, you must roll a d20. On a 1 or a 2, the device malfunctions and you fall to the\nground. Your walking speed becomes 0 and you are considered <condition id=\"prone\"/>. You or another creature can use an \nAction to repair the pack with a successful DC 15 Intelligence (Engineering) check.\n"
   },
   {
     "type": "character",
@@ -468,7 +468,7 @@
     ],
     "title": "Tentacles",
     "id": "tentacles",
-    "body": "You have six tentacles instead of arms that can grip tightly but can't lift anything heavier than a few kilograms, meaning\nyou can only wield weapons with the _light_ property. \n\nAs an action, you can use one of your tentacles to try to grapple a creature. Each one is also a \nnatural weapon, which you can use to make an unarmed strike. If you hit with it, the target takes bludgeoning \ndamage equal to 1d6 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike. \nImmediately after hitting, you can try to grapple the target as a bonus action.\n\nAs an action, you can secrete a natural toxin from one of your tentacles. If a creature is grappled by the tentacle,\nit must succeed a DC 11 Constitution saving throw of becomes <condition id=\"poisoned\"/> for 1 hour. The DC of this\nsaving throw increases with your level: DC 13 at the 5th level, DC 15 at the 11th level, and DC 17 at the 17th level.\n\n\n"
+    "body": "You have six tentacles instead of arms that can grip tightly but can't lift anything heavier than a few kilograms, meaning\nyou can only wield weapons with the _light_ property. \n\nAs an action, you can use one of your tentacles to try to grapple a creature. Each one is also a \nnatural weapon, which you can use to make an unarmed strike. If you hit with it, the target takes bludgeoning \ndamage equal to 1d6 + your Strength modifier, instead of the bludgeoning damage normal for an unarmed strike. \nImmediately after hitting, you can try to grapple the target as a bonus action.\n\nAs an action, you can secrete a natural toxin from one of your tentacles. If a creature is grappled by the tentacle,\nit must succeed a DC 11 Constitution saving throw of becomes poisoned for 1 hour. The DC of this\nsaving throw increases with your level: DC 13 at the 5th level, DC 15 at the 11th level, and DC 17 at the 17th level.\n\n\n"
   },
   {
     "type": "character",
@@ -724,7 +724,7 @@
     "qualifiers": [],
     "title": "Frozen",
     "id": "frozen",
-    "body": "* A frozen creature is <condition id=\"incapacitated\"/> and can't move or speak.\n* The creature is <condition id=\"primed\" sub=\"cold\"/>. Any detonating attack ends the lifted condition after resolving\nthe detonation effect.\n* The creature automatically fails Dexterity saving throws. Attack rolls against the creature have advantage.\n"
+    "body": "* A frozen creature is incapacitated and can't move or speak.\n* The creature is <condition id=\"primed\" sub=\"cold\"/>. Any detonating attack ends the lifted condition after resolving\nthe detonation effect.\n* The creature automatically fails Dexterity saving throws. Attack rolls against the creature have advantage.\n"
   },
   {
     "type": "rule",
@@ -732,7 +732,7 @@
     "qualifiers": [],
     "title": "Grappled",
     "id": "grappled",
-    "body": "* A grappled creature's speed becomes 0, and it can't benefit from any bonus to its speed.\n* The condition ends if the grappler is <condition id=\"incapacitated\"/>.\n* The condition also ends if an effect removes the grappled creature from the reach of the grappler or grappling effect,\nsuch as when a creature is hurled away by the throw spell.\n"
+    "body": "* A grappled creature's speed becomes 0, and it can't benefit from any bonus to its speed.\n* The condition ends if the grappler is incapacitated.\n* The condition also ends if an effect removes the grappled creature from the reach of the grappler or grappling effect,\nsuch as when a creature is hurled away by the throw spell.\n"
   },
   {
     "type": "rule",
@@ -764,7 +764,7 @@
     "qualifiers": [],
     "title": "Lifted",
     "id": "lifted",
-    "body": "* A lifted creature is <condition id=\"restrained\"/>.\n* The creature is <condition id=\"primed\" sub=\"force\"/>. Any detonating attack ends the lifted condition after resolving the\ndetonation effect.\n* Any lifted object has no mass and is dangled in the air by a temporary mass effect field. Thus, a lifted creature can be\npushed, pulled, or otherwise manipulated for varying results.\n"
+    "body": "* A lifted creature is restrained.\n* The creature is <condition id=\"primed\" sub=\"force\"/>. Any detonating attack ends the lifted condition after resolving the\ndetonation effect.\n* Any lifted object has no mass and is dangled in the air by a temporary mass effect field. Thus, a lifted creature can be\npushed, pulled, or otherwise manipulated for varying results.\n"
   },
   {
     "type": "rule",
@@ -772,7 +772,7 @@
     "qualifiers": [],
     "title": "Paralyzed",
     "id": "paralyzed",
-    "body": "* A paralyzed creature is <condition id=\"incapacitated\"/> and can't move or speak.\n* The creature automatically fails Strength and Dexterity saving throws. Attack rolls against the creature have advantage.\n* Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.\n"
+    "body": "* A paralyzed creature is incapacitated and can't move or speak.\n* The creature automatically fails Strength and Dexterity saving throws. Attack rolls against the creature have advantage.\n* Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.\n"
   },
   {
     "type": "rule",
@@ -812,7 +812,7 @@
     "qualifiers": [],
     "title": "Stunned",
     "id": "stunned",
-    "body": "* A stunned creature is <condition id=\"incapacitated\"/>, can't move, and can speak only falteringly.\n* The creature automatically fails Strength and Dexterity saving throws.\n* Attack rolls against the creature have advantage.\n"
+    "body": "* A stunned creature is incapacitated, can't move, and can speak only falteringly.\n* The creature automatically fails Strength and Dexterity saving throws.\n* Attack rolls against the creature have advantage.\n"
   },
   {
     "type": "rule",
@@ -1212,7 +1212,7 @@
     "qualifiers": [],
     "title": "Flashbang Grenade",
     "id": "flashbang_grenade",
-    "body": "Target an area within 10m. Each creature within 4m of the target must make a DC 13 Constitution saving throw.\nOn a failed save, a creature is <condition id=\"blinded\"/> until the end of your next turn.\n\n__At higher marks__: When you use this grenade at Mark II or higher, the DC of the Constitution saving throw increases\nby 1 for each mark above the first.\n"
+    "body": "Target an area within 10m. Each creature within 4m of the target must make a DC 13 Constitution saving throw.\nOn a failed save, a creature is blinded until the end of your next turn.\n\n__At higher marks__: When you use this grenade at Mark II or higher, the DC of the Constitution saving throw increases\nby 1 for each mark above the first.\n"
   },
   {
     "type": "equipment",
@@ -1244,7 +1244,7 @@
     "qualifiers": [],
     "title": "Lift Grenade",
     "id": "lift_grenade",
-    "body": "Target an area within 10m. Each creature within 4m of the target must make a DC 13 Strength saving throw.\nOn a failed save, a creature is <condition id=\"lifted\"/> until the end of your next turn.\n\n__At higher marks__: When you use this grenade at Mark II or higher, the DC of the Strength saving throw increases\nby 1 for each mark above the first.\n"
+    "body": "Target an area within 10m. Each creature within 4m of the target must make a DC 13 Strength saving throw.\nOn a failed save, a creature is lifted until the end of your next turn.\n\n__At higher marks__: When you use this grenade at Mark II or higher, the DC of the Strength saving throw increases\nby 1 for each mark above the first.\n"
   },
   {
     "type": "equipment",
@@ -2108,7 +2108,7 @@
     "qualifiers": [],
     "title": "Movement & Position",
     "id": "movement_& position",
-    "body": "\nIn combat, characters and monsters are in constant motion, often using movement and position to gain the upper hand.\n\nOn your turn, you can move a distance up to your speed. You can use as much or as little of your speed as you like on your\nturn, following the rules here.\n\nYour movement can include jumping, climbing, and swimming. These different modes of movement can be combined with walking,\nor they can constitute your entire move. However you're moving, you deduct the distance of each part of your move from your\nspeed until it is used up or until you are done moving.\n\n\n\n### Breaking Up Your Move\nYou can break up your movement on your turn, using some of your speed before and after your action. For example, if you\nhave a speed of 10 meters, you can move 4 meters, take your action, and then move 6 meters.\n\n#### Moving between Attacks\nIf you take an action that includes more than one weapon attack, you can break up your movement even further by moving\nbetween those attacks. For example, a soldier who can make two attacks with the Extra Attack feature and who has a speed\nof 10 meters could move 4 meters, make an attack, move 4 meters, and then attack again.\n\n#### Using Different Speeds\nIf you have more than one speed, such as your walking speed and a flying speed, you can switch back and forth between your\nspeeds during your move. Whenever you switch, subtract the distance you've already moved from the new speed. The result\ndetermines how much farther you can move. If the result is 0 or less, you can't use the new speed during the current move.\n\nFor example, if you have a speed of 10 and a flying speed of 20 because you're wearing a jetpack, you could fly 10 meters,\nthen walk 4 meters, and then leap into the air to fly 6 meters more.\n\n\n\n### Difficult Terrain\nCombat rarely takes place in bare rooms or on featureless plains. Boulder-strewn caverns, briar-choked forests, treacherous\nstaircases - the setting of a typical fight contains difficult terrain.\n\nEvery meter of movement in difficult terrain costs 1 extra meter. This rule is true even if multiple things in a space\ncount as difficult terrain.\n\nLow furniture, crates, trash cans, rubble, undergrowth, steep stairs, snow, and shallow bogs are examples of difficult\nterrain. The space of another creature, whether hostile or not, also counts as difficult terrain.\n\n\n\n### Being Prone\nCombatants often find themselves lying on the ground, either because they are knocked down or because they throw themselves\ndown. In the game, they are <condition id=\"prone\"/>. You can drop prone without using any of your speed. Standing up takes\nmore effort; doing so costs an amount of movement equal to half your speed. For example, if your speed is 10 meters, you must\nspend 5 meters of movement to stand up. You can't stand up if you don't have enough movement left or if your speed is 0.\n\nTo move while prone, you must crawl. Every foot of movement while crawling costs 1 extra meter. Crawling 1 meter in difficult\nterrain, therefore, costs 3 meters of movement.\n\n### Interacting with Objects\nAround You Here are a few examples of the sorts of thing you can do in tandem with your movement and action:\n\n- draw *or* sheathe a sword\n- open or close a door\n- withdraw a medi-gel from your armor\n- pick up a dropped weapon\n- take a datapad from a table\n- remove your helmet\n- stuff some food into your mouth\n- plant a banner in the ground\n- drink all the ale in a flagon\n- throw a lever or a switch\n- extinguish a small flame\n- put your ear to a door\n- kick a small stone\n- tap the floor with your weapon\n- hand an item to another character\n\n<br>\n\n### Moving Around Other Creatures\nYou can move through a nonhostile creature's space. In contrast, you can move through a hostile creature's space only if\nthe creature is at least two sizes larger or smaller than you. Remember that another creature's space is difficult terrain for you.\n\nWhether a creature is a friend or an enemy, you can't willingly end your move in its space.\n\nIf you leave a hostile creature's reach during your move, you provoke an opportunity attack, as explained later.\n\n### Flying Movement\nFlying creatures enjoy many benefits of mobility, but they must also deal with the danger of falling. If a flying creature\nis knocked prone, has its speed reduced to 0, or is otherwise deprived of the ability to move, the creature falls, unless\nit has the ability to hover or it is being held aloft by biotics, such as by the fly spell.\n\n\n\n### Creature Size\nEach creature takes up a different amount of space. The Size Categories table shows how much space a creature of a\nparticular size controls in combat. Objects sometimes use the same size categories.\n\n<ai-dialog title=\"Size Category\" component=\"size-category\"></ai-dialog>\n\n<br>\n\n#### Space\nA creature's space is the area in feet that it effectively controls in combat, not an expression of its physical\ndimensions. A typical Medium creature isn't 2 meters wide, for example, but it does control a space that wide. If a\nMedium asari stands in a 2‐meter-wide doorway, other creatures can't get through unless the asari lets them.\n\nA creature's space also reflects the area it needs to fight effectively. For that reason, there's a limit to the number\nof creatures that can surround another creature in combat. Assuming Medium combatants, eight creatures can fit in a 2-meter\nradius around another one.\n\nBecause larger creatures take up more space, fewer of them can surround a creature. If five Large creatures crowd around\na Medium or smaller one, there's little room for anyone else. In contrast, as many as twenty Medium creatures can surround\na Gargantuan one.\n\n#### Squeezing into a Smaller Space\nA creature can squeeze through a space that is large enough for a creature one size smaller than it. Thus, a Large creature\ncan squeeze through a passage that's only 2 meters wide. While squeezing through a space, a creature must spend 1 extra\nmeter for every meter it moves there, and it has disadvantage on attack rolls and Dexterity saving throws. Attack rolls\nagainst the creature have advantage while it's in the smaller space.\n\n<source-reference pages=\"91-92\"></source-reference>\n"
+    "body": "\nIn combat, characters and monsters are in constant motion, often using movement and position to gain the upper hand.\n\nOn your turn, you can move a distance up to your speed. You can use as much or as little of your speed as you like on your\nturn, following the rules here.\n\nYour movement can include jumping, climbing, and swimming. These different modes of movement can be combined with walking,\nor they can constitute your entire move. However you're moving, you deduct the distance of each part of your move from your\nspeed until it is used up or until you are done moving.\n\n\n\n### Breaking Up Your Move\nYou can break up your movement on your turn, using some of your speed before and after your action. For example, if you\nhave a speed of 10 meters, you can move 4 meters, take your action, and then move 6 meters.\n\n#### Moving between Attacks\nIf you take an action that includes more than one weapon attack, you can break up your movement even further by moving\nbetween those attacks. For example, a soldier who can make two attacks with the Extra Attack feature and who has a speed\nof 10 meters could move 4 meters, make an attack, move 4 meters, and then attack again.\n\n#### Using Different Speeds\nIf you have more than one speed, such as your walking speed and a flying speed, you can switch back and forth between your\nspeeds during your move. Whenever you switch, subtract the distance you've already moved from the new speed. The result\ndetermines how much farther you can move. If the result is 0 or less, you can't use the new speed during the current move.\n\nFor example, if you have a speed of 10 and a flying speed of 20 because you're wearing a jetpack, you could fly 10 meters,\nthen walk 4 meters, and then leap into the air to fly 6 meters more.\n\n\n\n### Difficult Terrain\nCombat rarely takes place in bare rooms or on featureless plains. Boulder-strewn caverns, briar-choked forests, treacherous\nstaircases - the setting of a typical fight contains difficult terrain.\n\nEvery meter of movement in difficult terrain costs 1 extra meter. This rule is true even if multiple things in a space\ncount as difficult terrain.\n\nLow furniture, crates, trash cans, rubble, undergrowth, steep stairs, snow, and shallow bogs are examples of difficult\nterrain. The space of another creature, whether hostile or not, also counts as difficult terrain.\n\n\n\n### Being Prone\nCombatants often find themselves lying on the ground, either because they are knocked down or because they throw themselves\ndown. In the game, they are prone. You can drop prone without using any of your speed. Standing up takes\nmore effort; doing so costs an amount of movement equal to half your speed. For example, if your speed is 10 meters, you must\nspend 5 meters of movement to stand up. You can't stand up if you don't have enough movement left or if your speed is 0.\n\nTo move while prone, you must crawl. Every foot of movement while crawling costs 1 extra meter. Crawling 1 meter in difficult\nterrain, therefore, costs 3 meters of movement.\n\n### Interacting with Objects\nAround You Here are a few examples of the sorts of thing you can do in tandem with your movement and action:\n\n- draw *or* sheathe a sword\n- open or close a door\n- withdraw a medi-gel from your armor\n- pick up a dropped weapon\n- take a datapad from a table\n- remove your helmet\n- stuff some food into your mouth\n- plant a banner in the ground\n- drink all the ale in a flagon\n- throw a lever or a switch\n- extinguish a small flame\n- put your ear to a door\n- kick a small stone\n- tap the floor with your weapon\n- hand an item to another character\n\n<br>\n\n### Moving Around Other Creatures\nYou can move through a nonhostile creature's space. In contrast, you can move through a hostile creature's space only if\nthe creature is at least two sizes larger or smaller than you. Remember that another creature's space is difficult terrain for you.\n\nWhether a creature is a friend or an enemy, you can't willingly end your move in its space.\n\nIf you leave a hostile creature's reach during your move, you provoke an opportunity attack, as explained later.\n\n### Flying Movement\nFlying creatures enjoy many benefits of mobility, but they must also deal with the danger of falling. If a flying creature\nis knocked prone, has its speed reduced to 0, or is otherwise deprived of the ability to move, the creature falls, unless\nit has the ability to hover or it is being held aloft by biotics, such as by the fly spell.\n\n\n\n### Creature Size\nEach creature takes up a different amount of space. The Size Categories table shows how much space a creature of a\nparticular size controls in combat. Objects sometimes use the same size categories.\n\n<ai-dialog title=\"Size Category\" component=\"size-category\"></ai-dialog>\n\n<br>\n\n#### Space\nA creature's space is the area in feet that it effectively controls in combat, not an expression of its physical\ndimensions. A typical Medium creature isn't 2 meters wide, for example, but it does control a space that wide. If a\nMedium asari stands in a 2‐meter-wide doorway, other creatures can't get through unless the asari lets them.\n\nA creature's space also reflects the area it needs to fight effectively. For that reason, there's a limit to the number\nof creatures that can surround another creature in combat. Assuming Medium combatants, eight creatures can fit in a 2-meter\nradius around another one.\n\nBecause larger creatures take up more space, fewer of them can surround a creature. If five Large creatures crowd around\na Medium or smaller one, there's little room for anyone else. In contrast, as many as twenty Medium creatures can surround\na Gargantuan one.\n\n#### Squeezing into a Smaller Space\nA creature can squeeze through a space that is large enough for a creature one size smaller than it. Thus, a Large creature\ncan squeeze through a passage that's only 2 meters wide. While squeezing through a space, a creature must spend 1 extra\nmeter for every meter it moves there, and it has disadvantage on attack rolls and Dexterity saving throws. Attack rolls\nagainst the creature have advantage while it's in the smaller space.\n\n<source-reference pages=\"91-92\"></source-reference>\n"
   },
   {
     "type": "rule",
@@ -2124,7 +2124,7 @@
     "qualifiers": [],
     "title": "Making an Attack",
     "id": "making_an attack",
-    "body": "\nWhether you're striking with a melee weapon, firing a weapon at range, or making an attack roll as part of a spell, an\nattack has a simple structure.\n\n1. __Choose a target__. Pick a target within your attack's range: a creature, an object, or a location.\n2. __Determine modifiers__. The GM determines whether the target has cover and whether you have advantage or disadvantage\nagainst the target. In addition, spells, special abilities, and other effects can apply penalties or bonuses to your attack roll.\n3. __Resolve the attack__. You make the attack roll. On a hit, you roll damage, unless the particular attack has rules\nthat specify otherwise. Some attacks cause special effects in addition to or instead of damage.\n\n<br>\n\nIf there's ever any question whether something you're doing counts as an attack, the rule is simple: if you're making an\nattack roll, you're making an attack.\n\n\n\n### Attack Rolls\nWhen you make an attack, your attack roll determines whether the attack hits or misses. To make an attack roll, roll a\nd20 and add the appropriate modifiers. If the total of the roll plus modifiers equals or exceeds the target's Armor Class\n(AC), the attack hits. The AC of a character is determined at character creation, whereas the AC of a monster is in its\nstat block.\n\n#### Modifiers to the Roll\nWhen a character makes an attack roll, the two most common modifiers to the roll are an ability modifier and the character's\nproficiency bonus. When a monster makes an attack roll, it uses whatever modifier is provided in its stat block.\n\n___Ability Modifier__. The ability modifier used for a melee weapon attack is Strength, and the ability modifier used for\na ranged weapon attack is Dexterity. Weapons that have the finesse, thrown, or recoil property break this rule. Some spells\nalso require an attack roll. The ability modifier used for a spell attack depends on the spellcasting ability of the spellcaster.\n\n__Proficiency Bonus__. You add your proficiency bonus to your attack roll when you attack using a weapon with which you\nhave proficiency, as well as when you attack with a spell.\n\n#### Rolling 1 or 20\nSometimes lady luck blesses or curses a combatant, causing the novice to hit and the veteran to miss.\n\nIf the d20 roll for an attack is a 20, the attack hits regardless of any modifiers or the target's AC. This is called a\ncritical hit, which is explained later in this chapter.\n\nIf the d20 roll for an attack is a 1, the attack misses regardless of any modifiers or the target's AC.\n\n\n\n### Unseen Attackers and Targets\nCombatants often try to escape their foes' notice by hiding, casting tactical cloak, or lurking in darkness.\n\nWhen you attack a target that you can't see, you have disadvantage on the attack roll. This is true whether you're guessing\nthe target's location or you're targeting a creature you can hear but not see. If the target isn't in the location you\ntargeted, you automatically miss, but the GM typically just says that the attack missed, not whether you guessed the\ntarget's location correctly.\n\nWhen a creature can't see you, you have advantage on attack rolls against it. If you are hidden - -both unseen and\nunheard - when you make an attack, you give away your location when the attack hits or misses.\n\n\n\n### Ranged Attacks\nWhen you make a ranged attack, you fire a gun or otherwise send projectiles to strike a foe at a distance. A monster might\nshoot spines from its tail. Many spells also involve making a ranged attack.\n\n#### Range\nYou can make ranged attacks only against targets within a specified range.\n\nIf a ranged attack, such as one made with a spell, has a single range, you can't attack a target beyond this range.\n\nSome ranged attacks, such as those made with a gun, have two ranges. The smaller number is the normal range, and the larger\nnumber is the long range. Your attack roll has disadvantage when your target is beyond normal range, and you can't attack\na target beyond the long range.\n\n#### Ranged Attacks in Close Combat\nAiming a ranged attack is more difficult when a foe is next to you. When you make a ranged attack with a weapon, a spell,\nor some other means, you have disadvantage on the attack roll if you are within 2 meters of a hostile creature who can\nsee you and who isn't incapacitated.\n\n\n\n### Melee Attacks\nUsed in hand-to-hand combat, a melee attack allows you to attack a foe within your reach. A melee attack typically uses a\nhandheld weapon such as a sword, a warhammer, or an omni-tool. A typical monster makes a melee attack when it strikes\nwith its claws, horns, teeth, tentacles, or other body part. A few spells also involve making a melee attack.\n\nMost creatures have a 2-meter reach and can thus attack targets within 2 meters of them when making a melee attack. Certain\ncreatures (typically those larger than Medium) have melee attacks with a greater reach than 2 meters, as noted in their descriptions.\n\nInstead of using a weapon to make a melee weapon attack, you can use an unarmed strike: a punch, kick, head-butt, or similar\nforceful blow (none of which count as weapons). On a hit, an unarmed strike deals bludgeoning damage equal to 1 + your\nStrength modifier. You are proficient with your unarmed strikes.\n\n#### Gun strikes <v-chip color=\"secondary\" text-color=\"white\" class=\"v-chip--x-small\">new</v-chip>\nInstead of using a weapon to make a melee weapon attack, you can use your ranged weapon, hitting a target with the butt of\nthe gun. On a hit, a gun strike deals bludgeoning damage equal to 1d4 + your Strength modifier. You are proficient with\ngun strikes if you are proficient with the type of gun.\n\n#### Opportunity Attacks\nIn a fight, everyone is constantly watching for a chance to strike an enemy who is fleeing or passing by. Such a\nstrike is called an opportunity attack.\n\nYou can make an opportunity attack when a hostile creature that you can see moves out of your reach. To make the\nopportunity attack, you use your reaction to make one melee attack against the provoking creature. The attack occurs\nright before the creature leaves your reach.\n\nYou can avoid provoking an opportunity attack by taking the Disengage action. You also don't provoke an opportunity\nattack when someone or something moves you without using your movement, action, or reaction. For example, you don't provoke\nan opportunity attack if an explosion hurls you out of a foe's reach or if an adept lifts you off the ground with Pull.\n\n#### Two-Weapon Fighting\nWhen you take the Attack action and attack with a light melee weapon that you're holding in one hand, you can use a\nbonus action to attack with a different light melee weapon that you're holding in the other hand. You don't add your\nability modifier to the damage of the bonus attack, unless that modifier is negative.\n\nIf either weapon has the thrown property, you can throw the weapon, instead of making a melee attack with it.\n\n\n\n### Contests in Combat\nBattle often involves pitting your prowess against that of your foe. Such a challenge is represented by a contest. This\nsection includes the most common contests that require an action in combat: grappling and shoving a creature. The\nGM can use these contests as models for improvising others.\n\n#### Grappling\nWhen you want to grab a creature or wrestle with it, you can use the Attack action to make a special melee attack, a grapple.\nIf you're able to make multiple attacks with the Attack action, this attack replaces one of them.\n\nThe target of your grapple must be no more than one size larger than you and must be within your reach. Using at least\none free hand, you try to seize the target by making a grapple check instead of an attack roll: a Strength (Athletics)\ncheck contested by the target's Strength (Athletics) or Dexterity (Acrobatics) check (the target chooses the ability to use).\nIf you succeed, you subject the target to the <condition id=\"grappled\"/>. The condition specifies the things that end it,\nand you can release the target whenever you like (no action required).\n\n__Escaping a Grapple__. A grappled creature can use its action to escape. To do so, it must succeed on a Strength (Athletics)\nor Dexterity (Acrobatics) check contested by your Strength (Athletics) check.\n\n__Moving a Grappled Creature__. When you move, you can drag or carry the grappled creature with you, but your speed is\nhalved, unless the creature is two or more sizes smaller than you.\n\n#### Shoving a Creature\nUsing the Attack action, you can make a special melee attack to shove a creature, either to knock it prone or push it\naway from you. If you're able to make multiple attacks with the Attack action, this attack replaces one of them.\n\nThe target must be no more than one size larger than you and must be within your reach. Instead of making an attack roll,\nyou make a Strength (Athletics) check contested by the target's Strength (Athletics) or Dexterity (Acrobatics) check\n(the target chooses the ability to use). If you win the contest, you either knock the target prone or push it 2 meters\naway from you.\n\n<source-reference pages=\"94-96\"></source-reference>\n"
+    "body": "\nWhether you're striking with a melee weapon, firing a weapon at range, or making an attack roll as part of a spell, an\nattack has a simple structure.\n\n1. __Choose a target__. Pick a target within your attack's range: a creature, an object, or a location.\n2. __Determine modifiers__. The GM determines whether the target has cover and whether you have advantage or disadvantage\nagainst the target. In addition, spells, special abilities, and other effects can apply penalties or bonuses to your attack roll.\n3. __Resolve the attack__. You make the attack roll. On a hit, you roll damage, unless the particular attack has rules\nthat specify otherwise. Some attacks cause special effects in addition to or instead of damage.\n\n<br>\n\nIf there's ever any question whether something you're doing counts as an attack, the rule is simple: if you're making an\nattack roll, you're making an attack.\n\n\n\n### Attack Rolls\nWhen you make an attack, your attack roll determines whether the attack hits or misses. To make an attack roll, roll a\nd20 and add the appropriate modifiers. If the total of the roll plus modifiers equals or exceeds the target's Armor Class\n(AC), the attack hits. The AC of a character is determined at character creation, whereas the AC of a monster is in its\nstat block.\n\n#### Modifiers to the Roll\nWhen a character makes an attack roll, the two most common modifiers to the roll are an ability modifier and the character's\nproficiency bonus. When a monster makes an attack roll, it uses whatever modifier is provided in its stat block.\n\n___Ability Modifier__. The ability modifier used for a melee weapon attack is Strength, and the ability modifier used for\na ranged weapon attack is Dexterity. Weapons that have the finesse, thrown, or recoil property break this rule. Some spells\nalso require an attack roll. The ability modifier used for a spell attack depends on the spellcasting ability of the spellcaster.\n\n__Proficiency Bonus__. You add your proficiency bonus to your attack roll when you attack using a weapon with which you\nhave proficiency, as well as when you attack with a spell.\n\n#### Rolling 1 or 20\nSometimes lady luck blesses or curses a combatant, causing the novice to hit and the veteran to miss.\n\nIf the d20 roll for an attack is a 20, the attack hits regardless of any modifiers or the target's AC. This is called a\ncritical hit, which is explained later in this chapter.\n\nIf the d20 roll for an attack is a 1, the attack misses regardless of any modifiers or the target's AC.\n\n\n\n### Unseen Attackers and Targets\nCombatants often try to escape their foes' notice by hiding, casting tactical cloak, or lurking in darkness.\n\nWhen you attack a target that you can't see, you have disadvantage on the attack roll. This is true whether you're guessing\nthe target's location or you're targeting a creature you can hear but not see. If the target isn't in the location you\ntargeted, you automatically miss, but the GM typically just says that the attack missed, not whether you guessed the\ntarget's location correctly.\n\nWhen a creature can't see you, you have advantage on attack rolls against it. If you are hidden - -both unseen and\nunheard - when you make an attack, you give away your location when the attack hits or misses.\n\n\n\n### Ranged Attacks\nWhen you make a ranged attack, you fire a gun or otherwise send projectiles to strike a foe at a distance. A monster might\nshoot spines from its tail. Many spells also involve making a ranged attack.\n\n#### Range\nYou can make ranged attacks only against targets within a specified range.\n\nIf a ranged attack, such as one made with a spell, has a single range, you can't attack a target beyond this range.\n\nSome ranged attacks, such as those made with a gun, have two ranges. The smaller number is the normal range, and the larger\nnumber is the long range. Your attack roll has disadvantage when your target is beyond normal range, and you can't attack\na target beyond the long range.\n\n#### Ranged Attacks in Close Combat\nAiming a ranged attack is more difficult when a foe is next to you. When you make a ranged attack with a weapon, a spell,\nor some other means, you have disadvantage on the attack roll if you are within 2 meters of a hostile creature who can\nsee you and who isn't incapacitated.\n\n\n\n### Melee Attacks\nUsed in hand-to-hand combat, a melee attack allows you to attack a foe within your reach. A melee attack typically uses a\nhandheld weapon such as a sword, a warhammer, or an omni-tool. A typical monster makes a melee attack when it strikes\nwith its claws, horns, teeth, tentacles, or other body part. A few spells also involve making a melee attack.\n\nMost creatures have a 2-meter reach and can thus attack targets within 2 meters of them when making a melee attack. Certain\ncreatures (typically those larger than Medium) have melee attacks with a greater reach than 2 meters, as noted in their descriptions.\n\nInstead of using a weapon to make a melee weapon attack, you can use an unarmed strike: a punch, kick, head-butt, or similar\nforceful blow (none of which count as weapons). On a hit, an unarmed strike deals bludgeoning damage equal to 1 + your\nStrength modifier. You are proficient with your unarmed strikes.\n\n#### Gun strikes <v-chip color=\"secondary\" text-color=\"white\" class=\"v-chip--x-small\">new</v-chip>\nInstead of using a weapon to make a melee weapon attack, you can use your ranged weapon, hitting a target with the butt of\nthe gun. On a hit, a gun strike deals bludgeoning damage equal to 1d4 + your Strength modifier. You are proficient with\ngun strikes if you are proficient with the type of gun.\n\n#### Opportunity Attacks\nIn a fight, everyone is constantly watching for a chance to strike an enemy who is fleeing or passing by. Such a\nstrike is called an opportunity attack.\n\nYou can make an opportunity attack when a hostile creature that you can see moves out of your reach. To make the\nopportunity attack, you use your reaction to make one melee attack against the provoking creature. The attack occurs\nright before the creature leaves your reach.\n\nYou can avoid provoking an opportunity attack by taking the Disengage action. You also don't provoke an opportunity\nattack when someone or something moves you without using your movement, action, or reaction. For example, you don't provoke\nan opportunity attack if an explosion hurls you out of a foe's reach or if an adept lifts you off the ground with Pull.\n\n#### Two-Weapon Fighting\nWhen you take the Attack action and attack with a light melee weapon that you're holding in one hand, you can use a\nbonus action to attack with a different light melee weapon that you're holding in the other hand. You don't add your\nability modifier to the damage of the bonus attack, unless that modifier is negative.\n\nIf either weapon has the thrown property, you can throw the weapon, instead of making a melee attack with it.\n\n\n\n### Contests in Combat\nBattle often involves pitting your prowess against that of your foe. Such a challenge is represented by a contest. This\nsection includes the most common contests that require an action in combat: grappling and shoving a creature. The\nGM can use these contests as models for improvising others.\n\n#### Grappling\nWhen you want to grab a creature or wrestle with it, you can use the Attack action to make a special melee attack, a grapple.\nIf you're able to make multiple attacks with the Attack action, this attack replaces one of them.\n\nThe target of your grapple must be no more than one size larger than you and must be within your reach. Using at least\none free hand, you try to seize the target by making a grapple check instead of an attack roll: a Strength (Athletics)\ncheck contested by the target's Strength (Athletics) or Dexterity (Acrobatics) check (the target chooses the ability to use).\nIf you succeed, you subject the target to the grappled. The condition specifies the things that end it,\nand you can release the target whenever you like (no action required).\n\n__Escaping a Grapple__. A grappled creature can use its action to escape. To do so, it must succeed on a Strength (Athletics)\nor Dexterity (Acrobatics) check contested by your Strength (Athletics) check.\n\n__Moving a Grappled Creature__. When you move, you can drag or carry the grappled creature with you, but your speed is\nhalved, unless the creature is two or more sizes smaller than you.\n\n#### Shoving a Creature\nUsing the Attack action, you can make a special melee attack to shove a creature, either to knock it prone or push it\naway from you. If you're able to make multiple attacks with the Attack action, this attack replaces one of them.\n\nThe target must be no more than one size larger than you and must be within your reach. Instead of making an attack roll,\nyou make a Strength (Athletics) check contested by the target's Strength (Athletics) or Dexterity (Acrobatics) check\n(the target chooses the ability to use). If you win the contest, you either knock the target prone or push it 2 meters\naway from you.\n\n<source-reference pages=\"94-96\"></source-reference>\n"
   },
   {
     "type": "rule",
@@ -2232,15 +2232,15 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "AI Hacking",
     "id": "ai_hacking",
-    "body": "Target a synthetic creature within 30m. It must succeed on an Intelligence saving throw or it becomes Hacked (it is considered\n<condition id=\"charmed\"/> and can't use spells or abilities). If you or creatures that are friendly to you are fighting it, it has advantage\non the saving throw.\n\nOn its turn, the hacked creature attacks the closest creature hostile to the spell caster, making a ranged weapon\nattack or melee attack if it does not have a weapon. If there are no hostile creatures within range, the hacked\ncreature uses its turn to dash towards the closest hostile creature.\n\nEach time the hacked creature takes damage, it makes a new Intelligence saving throw against the spell. If the saving throw\nsucceeds, the spell ends.\n\n__At Higher Levels__. When you cast this spell using a 4th-level spell slot, the duration is concentration, up to 10\nminutes. When you use a 5th-level spell slot, the duration is concentration, up to 1 hour.\n\n\n__Total Control__: You take the hacked synthetic's action. You may use its spells and abilities.\n\n__Power Down__: When you have a creature hacked, you may use your action to attempt to shut it down. To do so, make an Intelligence check contested by the hacked creature's Intelligence check. If you win the contest, the creature becomes incapacitated for 1 hour and the spell ends."
+    "body": "Target a synthetic creature within 30m. It must succeed on an Intelligence saving throw or it becomes Hacked (it is considered\ncharmed and can't use spells or abilities). If you or creatures that are friendly to you are fighting it, it has advantage\non the saving throw.\n\nOn its turn, the hacked creature attacks the closest creature hostile to the spell caster, making a ranged weapon\nattack or melee attack if it does not have a weapon. If there are no hostile creatures within range, the hacked\ncreature uses its turn to dash towards the closest hostile creature.\n\nEach time the hacked creature takes damage, it makes a new Intelligence saving throw against the spell. If the saving throw\nsucceeds, the spell ends.\n\n__At Higher Levels__. When you cast this spell using a 4th-level spell slot, the duration is concentration, up to 10\nminutes. When you use a 5th-level spell slot, the duration is concentration, up to 1 hour.\n\n\n__Total Control__: You take the hacked synthetic's action. You may use its spells and abilities.\n\n__Power Down__: When you have a creature hacked, you may use your action to attempt to shut it down. To do so, make an Intelligence check contested by the hacked creature's Intelligence check. If you win the contest, the creature becomes incapacitated for 1 hour and the spell ends."
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Alter Center Mass",
     "id": "alter_center_mass",
@@ -2248,15 +2248,15 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Annihilation Field",
     "id": "annihilation_field",
-    "body": "Spin a field of dark energy originating from you in a 4m radius sphere. The field moves with you and reduces your walking\nspeed by half.\n\nEach creature within the sphere must make a Constitution saving throw. A creature takes 12d6 necrotic damage on a failed\nsave or half as much damage on a successful one. A creature must also make the saving throw when it enters the field's\nspace for the first time on a turn or ends its turn there.\n\nAny creature within the sphere is <condition id=\"primed\" sub=\"necrotic\"/>. This condition ends immediately if the creature leaves the sphere.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 5th level, increase the radius by 4m.\n\n__Disorient__: Creatures that fail the Constitution saving throw have disadvantage on their next attack roll.\n\n__Phasic__: Annihilation Field's damage bypasses shields."
+    "body": "Spin a field of dark energy originating from you in a 4m radius sphere. The field moves with you and reduces your walking\nspeed by half.\n\nEach creature within the sphere must make a Constitution saving throw. A creature takes 12d6 necrotic damage on a failed\nsave or half as much damage on a successful one. A creature must also make the saving throw when it enters the field's\nspace for the first time on a turn or ends its turn there.\n\nAny creature within the sphere is primed-necrotic. This condition ends immediately if the creature leaves the sphere.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 5th level, increase the radius by 4m.\n\n__Disorient__: Creatures that fail the Constitution saving throw have disadvantage on their next attack roll.\n\n__Phasic__: Annihilation Field's damage bypasses shields."
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Backlash",
     "id": "backlash",
@@ -2264,7 +2264,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "combat",
     "qualifiers": [],
     "title": "Ballistic Blades",
     "id": "ballistic_blades",
@@ -2272,15 +2272,15 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Barrier Detonation",
     "id": "barrier_detonation",
-    "body": "Expend all of your remaining barrier ticks to create a negative mass effect field in a 2m sphere originating from you.\nEach Medium or smaller creature or object within the sphere must succeed on Strength saving throw or becomes\n<condition id=\"lifted\"/> until the end of your next turn. If you expend at least 4 barrier ticks, Large targets must make\nthe saving throw. Creatures with at least 1 shield point have advantage on this saving throw.\n\nIncrease the range of the sphere by 2m at 5th level (4m), 11th level (6m), and 17th level (8m).\n\n\n__Shaped Lift__: You may choose the shape of the detonation into a cone, cube, or cylinder. You may also shape it into a line, if you do, the line is twice as long as the sphere's radius and 2m wide.\n\n__Heavy Lift__: Large creatures are affected. If you spend at least 4 barrier ticks, Huge creatures must make the saving throw."
+    "body": "Expend all of your remaining barrier ticks to create a negative mass effect field in a 2m sphere originating from you.\nEach Medium or smaller creature or object within the sphere must succeed on Strength saving throw or becomes\nlifted until the end of your next turn. If you expend at least 4 barrier ticks, Large targets must make\nthe saving throw. Creatures with at least 1 shield point have advantage on this saving throw.\n\nIncrease the range of the sphere by 2m at 5th level (4m), 11th level (6m), and 17th level (8m).\n\n\n__Shaped Lift__: You may choose the shape of the detonation into a cone, cube, or cylinder. You may also shape it into a line, if you do, the line is twice as long as the sphere's radius and 2m wide.\n\n__Heavy Lift__: Large creatures are affected. If you spend at least 4 barrier ticks, Huge creatures must make the saving throw."
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "combat",
     "qualifiers": [],
     "title": "Beehive",
     "id": "beehive",
@@ -2288,7 +2288,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Biotic Jump",
     "id": "biotic_jump",
@@ -2296,7 +2296,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Biotic Orbs",
     "id": "biotic_orbs",
@@ -2304,7 +2304,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Biotic Punch",
     "id": "biotic_punch",
@@ -2312,7 +2312,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Biotic Slash",
     "id": "biotic_slash",
@@ -2320,7 +2320,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Biotic Sphere",
     "id": "biotic_sphere",
@@ -2328,7 +2328,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Biotic Wall",
     "id": "biotic_wall",
@@ -2336,7 +2336,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "combat",
     "qualifiers": [],
     "title": "Blade Armor",
     "id": "blade_armor",
@@ -2344,7 +2344,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Catapult",
     "id": "catapult",
@@ -2352,7 +2352,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Charge",
     "id": "charge",
@@ -2360,31 +2360,31 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "combat",
     "qualifiers": [],
     "title": "Concussive Shot",
     "id": "concussive_shot",
-    "body": "Load a specialized thermal clip into the weapon you are currently holding. Until you reload, any successful ranged\nattacks deal an additional 1d8 bludgeoning damage and medium-sized or smaller creatures must pass a Strength saving\nthrow (DC 8 + proficiency bonus + DEX modifier) or are knocked <condition id=\"prone\"/>.\n\nThe damage increases by 1d8 when you reach the 5th level (2d8), 11th level (3d8) and 17th level (4d8).\n\nYou have 3 charges of Concussive Shot. You regain all of your charges when you finish a long rest.\n\n\n__Stunning Shot__: A creature hit by concussive shot must make a Constitution saving throw instead of a Strength saving throw. On a failed save, the creature is stunned until the end of its next turn.\n\n__Improved shot__: Increase the bonus damage of concussive shot to d12."
+    "body": "Load a specialized thermal clip into the weapon you are currently holding. Until you reload, any successful ranged\nattacks deal an additional 1d8 bludgeoning damage and medium-sized or smaller creatures must pass a Strength saving\nthrow (DC 8 + proficiency bonus + DEX modifier) or are knocked prone.\n\nThe damage increases by 1d8 when you reach the 5th level (2d8), 11th level (3d8) and 17th level (4d8).\n\nYou have 3 charges of Concussive Shot. You regain all of your charges when you finish a long rest.\n\n\n__Stunning Shot__: A creature hit by concussive shot must make a Constitution saving throw instead of a Strength saving throw. On a failed save, the creature is stunned until the end of its next turn.\n\n__Improved shot__: Increase the bonus damage of concussive shot to d12."
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "Cryo Beam",
     "id": "cryo_beam",
-    "body": "\nBlast a continuous stream of liquid hydrogen from your omni-tool in an 8m long by 2m wide line. Each creature in the beam\nmust make a Strength saving throw. On a failed save, a creature takes 5d8 cold damage and then becomes <condition id=\"frozen\"/>\nuntil the start of your next turn. On a successful save, a creature takes half as much damage and isn't frozen by this spell.\nCreatures with at least 1 shield point have advantage on this saving throw.\n\nA creature must also make the saving throw when it enters the beam's space for the first time on a turn or ends its turn there.\n\nAt the start of your turn, you may spend your action and 1 additional tech point to continue casting the beam. Your\nmovement speed is 2m while casting it in this manner. The spell ends if you become incapacitated.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 4th level or higher, the damage increases by 2d8\nand the length of the beam increases by 2m for each slot level above 3rd.\n\n\n__Brittle Freeze__: Shields no longer provide advantage on the saving throw. On a successful save, a creature is primed cold until the end of your next turn.\n\n__Frozen Ground__: Cryo beam leaves a patch of ice on the ground that lasts for 1 min. The ground is considered difficult terrain."
+    "body": "\nBlast a continuous stream of liquid hydrogen from your omni-tool in an 8m long by 2m wide line. Each creature in the beam\nmust make a Strength saving throw. On a failed save, a creature takes 5d8 cold damage and then becomes frozen\nuntil the start of your next turn. On a successful save, a creature takes half as much damage and isn't frozen by this spell.\nCreatures with at least 1 shield point have advantage on this saving throw.\n\nA creature must also make the saving throw when it enters the beam's space for the first time on a turn or ends its turn there.\n\nAt the start of your turn, you may spend your action and 1 additional tech point to continue casting the beam. Your\nmovement speed is 2m while casting it in this manner. The spell ends if you become incapacitated.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 4th level or higher, the damage increases by 2d8\nand the length of the beam increases by 2m for each slot level above 3rd.\n\n\n__Brittle Freeze__: Shields no longer provide advantage on the saving throw. On a successful save, a creature is primed cold until the end of your next turn.\n\n__Frozen Ground__: Cryo beam leaves a patch of ice on the ground that lasts for 1 min. The ground is considered difficult terrain."
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "Cryo Blast",
     "id": "cryo_blast",
-    "body": "Fire a mass of supercooled, subatomic particles. The particles explode in a 2m-radius sphere centered on a point within\nrange. Each creature within the sphere has its movement reduced by 4m until the start of your next turn and must make a\nStrength saving throw. On a failed saved, a creature becomes <condition id=\"frozen\"/> until the start of your next turn.\nA target with at least 1 shield point has advantage on this saving throw.\n\nIf the blast strikes a body of water or a liquid that is principally water (not including water-based creatures), it\nfreezes the liquid to a depth of 15 centimeters over an area 10m. This ice lasts for 1 minute. Creatures that were\nswimming on the surface of frozen water are trapped in the ice. A trapped creature can use an action to make a Strength\ncheck against your spell save DC to break free.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 2nd level or higher, the radius of the blast increases\nby 2m for each slot level above 1st.\n\n\n__Ice Lance__: Transform the attack into a deadly lance. Make a ranged spell attack on a target within range. On a hit, the target takes 1d8 cold and 2d4 piercing damage for a 1st-level version and an additional 1d8 and 2d4 for each slot level above the 1st.\n\n__Frigid Air__: The blast creates a pocket of frigid air that lasts until the end of your next turn. Each creature that enters the frozen space for the first time on a turn or ends its turn there becomes primed cold until the end of its next turn and must succeed a Constitution saving throw or take 2d6 cold damage."
+    "body": "Fire a mass of supercooled, subatomic particles. The particles explode in a 2m-radius sphere centered on a point within\nrange. Each creature within the sphere has its movement reduced by 4m until the start of your next turn and must make a\nStrength saving throw. On a failed saved, a creature becomes frozen until the start of your next turn.\nA target with at least 1 shield point has advantage on this saving throw.\n\nIf the blast strikes a body of water or a liquid that is principally water (not including water-based creatures), it\nfreezes the liquid to a depth of 15 centimeters over an area 10m. This ice lasts for 1 minute. Creatures that were\nswimming on the surface of frozen water are trapped in the ice. A trapped creature can use an action to make a Strength\ncheck against your spell save DC to break free.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 2nd level or higher, the radius of the blast increases\nby 2m for each slot level above 1st.\n\n\n__Ice Lance__: Transform the attack into a deadly lance. Make a ranged spell attack on a target within range. On a hit, the target takes 1d8 cold and 2d4 piercing damage for a 1st-level version and an additional 1d8 and 2d4 for each slot level above the 1st.\n\n__Frigid Air__: The blast creates a pocket of frigid air that lasts until the end of your next turn. Each creature that enters the frozen space for the first time on a turn or ends its turn there becomes primed cold until the end of its next turn and must succeed a Constitution saving throw or take 2d6 cold damage."
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "Damping",
     "id": "damping",
@@ -2392,23 +2392,23 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Dark Channel",
     "id": "dark_channel",
-    "body": "Make a ranged spell attack on a creature you can see within range. On a hit, you plague the target with a persistent,\ndamaging biotic field. The creature is <condition id=\"primed\" sub=\"necrotic\"/> and takes 1d6 necrotic damage and 1d6\nnecrotic damage at the start of your turn while you maintain the spell. If the creature dies, dark channel transfers to\nthe nearest hostile creature within 10m of the target.\n\nThe damage increases by 1d6 when you reach the 5th level (2d6), 11th level (3d6) and 17th level (4d6).\n\n\n__Cripple__: If the affected creature would make a saving throw or attack roll, as a reaction you may increase the severity of Dark Channel. The affected creature must roll a d4 and subtract the number rolled from the attack roll or saving throw.\n\n__Improved Damage__: Increase the damage die type to d10"
+    "body": "Make a ranged spell attack on a creature you can see within range. On a hit, you plague the target with a persistent,\ndamaging biotic field. The creature is primed-necrotic and takes 1d6 necrotic damage and 1d6\nnecrotic damage at the start of your turn while you maintain the spell. If the creature dies, dark channel transfers to\nthe nearest hostile creature within 10m of the target.\n\nThe damage increases by 1d6 when you reach the 5th level (2d6), 11th level (3d6) and 17th level (4d6).\n\n\n__Cripple__: If the affected creature would make a saving throw or attack roll, as a reaction you may increase the severity of Dark Channel. The affected creature must roll a d4 and subtract the number rolled from the attack roll or saving throw.\n\n__Improved Damage__: Increase the damage die type to d10"
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Dark Sphere",
     "id": "dark_sphere",
-    "body": "Launch a slow-moving, 4m wide sphere of dark energy in a straight line in front of you. It moves 4m this turn and at the\nend of each of your subsequent turns. Each creature caught in the sphere's path becomes <condition id=\"primed\" sub=\"necrotic\"/>\nuntil the end of its next turn and must make a Constitution saving throw. On a failed save, a creature takes necrotic damage equal to 6d8 +\nyour spellcasting ability modifier, or half as much on a successful one.\n\nAt the start of your turn, if the sphere has traveled at least 20m, it detonates and the spell ends. Each creature within\na 6m radius must make a Constitution saving throw. On a failed save a creature takes necrotic damage equal to 6d8 +\nyour spellcasting ability modifier or half as much damage on a successful one. This damage detonates any primed targets.\n\nYou can use an action to detonate the sphere before it travels 20m. If you lose concentration while casting the spell,\nit does not detonate.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 4th level or higher, the damage increases by 2d8\nfor each slot level above 3rd.\n\n__Control__: Before the sphere moves, you may change its direction and speed. Its speed becomes 4m, 6m, or 8m.\n\n__Amplify__: Add 1d8 to the detonation damage for each 4m the sphere travels."
+    "body": "Launch a slow-moving, 4m wide sphere of dark energy in a straight line in front of you. It moves 4m this turn and at the\nend of each of your subsequent turns. Each creature caught in the sphere's path becomes primed-necrotic\nuntil the end of its next turn and must make a Constitution saving throw. On a failed save, a creature takes necrotic damage equal to 6d8 +\nyour spellcasting ability modifier, or half as much on a successful one.\n\nAt the start of your turn, if the sphere has traveled at least 20m, it detonates and the spell ends. Each creature within\na 6m radius must make a Constitution saving throw. On a failed save a creature takes necrotic damage equal to 6d8 +\nyour spellcasting ability modifier or half as much damage on a successful one. This damage detonates any primed targets.\n\nYou can use an action to detonate the sphere before it travels 20m. If you lose concentration while casting the spell,\nit does not detonate.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 4th level or higher, the damage increases by 2d8\nfor each slot level above 3rd.\n\n__Control__: Before the sphere moves, you may change its direction and speed. Its speed becomes 4m, 6m, or 8m.\n\n__Amplify__: Add 1d8 to the detonation damage for each 4m the sphere travels."
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "Decoy",
     "id": "decoy",
@@ -2416,7 +2416,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "Defense Matrix",
     "id": "defense_matrix",
@@ -2424,7 +2424,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "Disrupt Biotics",
     "id": "disrupt_biotics",
@@ -2432,15 +2432,15 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Dominate",
     "id": "dominate",
-    "body": "Target an organic creature within 30m. It must succeed on a Wisdom saving throw or it becomes Dominated (it is considered\n<condition id=\"charmed\"/> and can't use spells or abilities). If you or creatures that are friendly to you are fighting it, it has advantage\non the saving throw.\n\nOn its turn, the dominated creature attacks the closest creature hostile to the spell caster, making a ranged weapon\nattack or melee attack if it does not have a weapon. If there are no hostile creatures within range, the dominated\ncreature uses its turn to dash towards the closest hostile creature.\n\nEach time the dominated creature takes damage, it makes a new Wisdom saving throw against the spell. If the saving throw\nsucceeds, the spell ends.\n\n__At Higher Levels__. When you cast this spell using a 4th-level spell slot, the duration is concentration, up to 10\nminutes. When you use a 5th-level spell slot, the duration is concentration, up to 1 hour.\n\n\n__Total Control__: You take the dominated creature's action. You may use its spells and abilities.\n\n__Damage__: While the creature is dominated, it takes 4d6 psychic damage at the end of its turn. This damage bypasses shields and does not proc an opportunity to end Dominate."
+    "body": "Target an organic creature within 30m. It must succeed on a Wisdom saving throw or it becomes Dominated (it is considered\ncharmed and can't use spells or abilities). If you or creatures that are friendly to you are fighting it, it has advantage\non the saving throw.\n\nOn its turn, the dominated creature attacks the closest creature hostile to the spell caster, making a ranged weapon\nattack or melee attack if it does not have a weapon. If there are no hostile creatures within range, the dominated\ncreature uses its turn to dash towards the closest hostile creature.\n\nEach time the dominated creature takes damage, it makes a new Wisdom saving throw against the spell. If the saving throw\nsucceeds, the spell ends.\n\n__At Higher Levels__. When you cast this spell using a 4th-level spell slot, the duration is concentration, up to 10\nminutes. When you use a 5th-level spell slot, the duration is concentration, up to 1 hour.\n\n\n__Total Control__: You take the dominated creature's action. You may use its spells and abilities.\n\n__Damage__: While the creature is dominated, it takes 4d6 psychic damage at the end of its turn. This damage bypasses shields and does not proc an opportunity to end Dominate."
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "Electric Slash",
     "id": "electric_slash",
@@ -2448,7 +2448,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "Energy Drain",
     "id": "energy_drain",
@@ -2456,7 +2456,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "First Aid",
     "id": "first_aid",
@@ -2464,7 +2464,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "combat",
     "qualifiers": [],
     "title": "Flak Cannon",
     "id": "flak_cannon",
@@ -2472,23 +2472,23 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "Flamethrower",
     "id": "flamethrower",
-    "body": "Overload your omni-tool's acetylene torch, spewing flames in front of you. Each creature within an 8m cone is\n<condition id=\"primed\" sub=\"fire\"/> until the start of your next turn and must make a Dexterity saving throw. A creature\ntakes 6d10 fire damage on a failed save or half as much damage on a successful one.\n\nAt the start of your turn, you may spend your action and 1 additional tech point to continue casting this power. Your\nmovement speed is 2m while casting it in this manner. The spell ends if you become incapacitated.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 4th level or higher, the damage increases by 2d10\nfor each slot level above 3rd.\n\n\n__Concentrated Burn__: Increase the damage to d12 and the distance to 12m, but the area-of-effect is now a line instead of a cone.\n\n__Exhaust__: The flames create a thick smoke in an 8m cube that must encompass the cone. The area is considered heavily obscured until the end of your next turn."
+    "body": "Overload your omni-tool's acetylene torch, spewing flames in front of you. Each creature within an 8m cone is\nprimed-fire until the start of your next turn and must make a Dexterity saving throw. A creature\ntakes 6d10 fire damage on a failed save or half as much damage on a successful one.\n\nAt the start of your turn, you may spend your action and 1 additional tech point to continue casting this power. Your\nmovement speed is 2m while casting it in this manner. The spell ends if you become incapacitated.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 4th level or higher, the damage increases by 2d10\nfor each slot level above 3rd.\n\n\n__Concentrated Burn__: Increase the damage to d12 and the distance to 12m, but the area-of-effect is now a line instead of a cone.\n\n__Exhaust__: The flames create a thick smoke in an 8m cube that must encompass the cone. The area is considered heavily obscured until the end of your next turn."
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Flare",
     "id": "flare",
-    "body": "Rapidly altering the mass of air particles creates radioactive projectiles that seek out the targets and explode. Choose\nup to 4 creatures that you can see within range. Each creature must make a Constitution saving throw. On a failed save,\na creature is <condition id=\"blinded\"/> until the end of your next turn and takes radiant damage equal to 6d12. On a\nsuccessful save, a creature takes half damage but suffers no other negative effect.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 5th level, increase the damage by 2d12.\n\n\n__Improved Blind__: Each creature is blinded no matter the result of its saving throw.\n\n__Heat seeking flare__: Instead of choosing 4 targets, you may instead choose 1. If you do so, the target has disadvantage on the saving throw. Increase the damage by 4d12."
+    "body": "Rapidly altering the mass of air particles creates radioactive projectiles that seek out the targets and explode. Choose\nup to 4 creatures that you can see within range. Each creature must make a Constitution saving throw. On a failed save,\na creature is blinded until the end of your next turn and takes radiant damage equal to 6d12. On a\nsuccessful save, a creature takes half damage but suffers no other negative effect.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 5th level, increase the damage by 2d12.\n\n\n__Improved Blind__: Each creature is blinded no matter the result of its saving throw.\n\n__Heat seeking flare__: Instead of choosing 4 targets, you may instead choose 1. If you do so, the target has disadvantage on the saving throw. Increase the damage by 4d12."
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Fly",
     "id": "fly",
@@ -2496,7 +2496,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "combat",
     "qualifiers": [],
     "title": "Fortification",
     "id": "fortification",
@@ -2504,15 +2504,15 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Gravity Field",
     "id": "gravity_field",
-    "body": "You create an field of unstable gravity in a 6 meter cube starting from a point within range.  For the duration, this \nspace becomes difficult terrain.  \n\nA creature in the area when you cast the spell must succeed on a Strength saving throw or be <condition id=\"restrained\"/> \nuntil the spell ends. A creature restrained by this spell can use its action to make a Strength check against your \nspell save DC. On a success, it frees itself.  \n\nWhen the spell ends, the gravity field dissipates.\n\n\n__Pulsing Field__: As a bonus action, for the duration of the spell, you can force a number of creatures equal to twice the spell level that are within the gravity field to make a Strength saving throw or be restrained until the spell ends.\n\n__Warping Field__: A creature takes 1d6 necrotic damage per spell level when it enters the gravity field for the first time on a turn or ends its turn there."
+    "body": "You create an field of unstable gravity in a 6 meter cube starting from a point within range.  For the duration, this \nspace becomes difficult terrain.  \n\nA creature in the area when you cast the spell must succeed on a Strength saving throw or be restrained \nuntil the spell ends. A creature restrained by this spell can use its action to make a Strength check against your \nspell save DC. On a success, it frees itself.  \n\nWhen the spell ends, the gravity field dissipates.\n\n\n__Pulsing Field__: As a bonus action, for the duration of the spell, you can force a number of creatures equal to twice the spell level that are within the gravity field to make a Strength saving throw or be restrained until the spell ends.\n\n__Warping Field__: A creature takes 1d6 necrotic damage per spell level when it enters the gravity field for the first time on a turn or ends its turn there."
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "Guidance",
     "id": "guidance",
@@ -2520,7 +2520,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "combat",
     "qualifiers": [],
     "title": "Havoc Strike",
     "id": "havoc_strike",
@@ -2528,7 +2528,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "combat",
     "qualifiers": [],
     "title": "Hawk Missile Launcher",
     "id": "hawk_missile_launcher",
@@ -2536,7 +2536,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Heavy Charge",
     "id": "heavy_charge",
@@ -2544,7 +2544,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "combat",
     "qualifiers": [],
     "title": "Hex Shield",
     "id": "hex_shield",
@@ -2552,15 +2552,15 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "Incinerate",
     "id": "incinerate",
-    "body": "Hurl a high-explosive, plasma round at a creature or object within range. Make a ranged spell attack against the target.\nOn a hit, the target is <condition id=\"primed\" sub=\"fire\"/> until the end of your next turn and takes 2d10 fire damage.\nA flammable object hit by this spell ignites if it isn't being worn or carried.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 2nd level or higher, the damage increases\nby 2d10 for each slot level above 1st.\n\n\n__Frozen Combo__: When you hit a creature or object with incinerate, if the target is primed cold, you deal a critical hit.\n\n__Radial Blast__: On a miss, the target makes a Dexterity saving throw. On a failed save, the target takes half damage."
+    "body": "Hurl a high-explosive, plasma round at a creature or object within range. Make a ranged spell attack against the target.\nOn a hit, the target is primed-fire until the end of your next turn and takes 2d10 fire damage.\nA flammable object hit by this spell ignites if it isn't being worn or carried.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 2nd level or higher, the damage increases\nby 2d10 for each slot level above 1st.\n\n\n__Frozen Combo__: When you hit a creature or object with incinerate, if the target is primed cold, you deal a critical hit.\n\n__Radial Blast__: On a miss, the target makes a Dexterity saving throw. On a failed save, the target takes half damage."
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "Invasion",
     "id": "invasion",
@@ -2568,7 +2568,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Lance",
     "id": "lance",
@@ -2576,15 +2576,15 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Lash",
     "id": "lash",
-    "body": "Make a ranged spell attack on a target you can see within range. On a hit, the target takes 4d8 force damage and becomes\n<condition id=\"grappled\"/>. While grappled the creature is <condition id=\"primed\" sub=\"force\"/>. To escape the grapple,\nthe creature must succeed on a contested Strength (Athletics) check against your Constitution. This spell also ends if\nthe creature is hit with a detonating attack or if you move more than 20m away from the target.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 3rd or higher, the damage increases by 2d8 for each\nslot level above the 2nd.\n\n\n__Improved Grapple__: The grappled creature has disadvantage when trying to escape.\n\n__Improved Damage__: Increase the damage die type to d12."
+    "body": "Make a ranged spell attack on a target you can see within range. On a hit, the target takes 4d8 force damage and becomes\ngrappled-force. To escape the grapple,\nthe creature must succeed on a contested Strength (Athletics) check against your Constitution. This spell also ends if\nthe creature is hit with a detonating attack or if you move more than 20m away from the target.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 3rd or higher, the damage increases by 2d8 for each\nslot level above the 2nd.\n\n\n__Improved Grapple__: The grappled creature has disadvantage when trying to escape.\n\n__Improved Damage__: Increase the damage die type to d12."
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Lift",
     "id": "lift",
@@ -2592,7 +2592,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "Nanite Cloud",
     "id": "nanite_cloud",
@@ -2600,7 +2600,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "Neural Shock",
     "id": "neural_shock",
@@ -2608,15 +2608,15 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "combat",
     "qualifiers": [],
     "title": "Nightshade Blades",
     "id": "nightshade_blades",
-    "body": "Your omni-tool is equipped with three microscopic, poison-tipped blades that are able to pierce through shields and armor.\nMake a ranged weapon attack on a creature you can see within range, expending one blade. You add your proficiency bonus\nto this roll. On a hit, the target takes 1d12 poison damage and must succeed on a Constitution saving throw (DC 8 + proficiency bonus)\nor becomes <condition id=\"poisoned\"/> until it finishes a short rest. All damage caused by nightshade blades bypasses shields.\n\nYou must be within melee range and use an action to recover a blade, at which point you can reapply your poison and reload\nit into your omni-tool during a short rest. If you fail to recover your blades, you can create 3 new ones for 1 hour of work\nduring a long rest.\n\nThis feature's damage increases by 1d12 when you reach 5th level (2d12), 11th level (3d12), 17th level (4d12).\n\n\n__Paralyze__: A creature that fails the Constitution saving throw becomes paralyzed until the end of your next turn.\n\n__Powerful Poison__: The creature has disadvantage on its Constitution saving throw."
+    "body": "Your omni-tool is equipped with three microscopic, poison-tipped blades that are able to pierce through shields and armor.\nMake a ranged weapon attack on a creature you can see within range, expending one blade. You add your proficiency bonus\nto this roll. On a hit, the target takes 1d12 poison damage and must succeed on a Constitution saving throw (DC 8 + proficiency bonus)\nor becomes poisoned until it finishes a short rest. All damage caused by nightshade blades bypasses shields.\n\nYou must be within melee range and use an action to recover a blade, at which point you can reapply your poison and reload\nit into your omni-tool during a short rest. If you fail to recover your blades, you can create 3 new ones for 1 hour of work\nduring a long rest.\n\nThis feature's damage increases by 1d12 when you reach 5th level (2d12), 11th level (3d12), 17th level (4d12).\n\n\n__Paralyze__: A creature that fails the Constitution saving throw becomes paralyzed until the end of your next turn.\n\n__Powerful Poison__: The creature has disadvantage on its Constitution saving throw."
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Nova",
     "id": "nova",
@@ -2624,15 +2624,15 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "Overload",
     "id": "overload",
-    "body": "Unleash an electrostatic discharge at a creature or object within range. Three bolts then leap from that target to as\nmany as three other targets, each of which must be within 6m of the first target. A target can be a creature or an\nobject and can be targeted by only one of the bolts.\n\nA target becomes <condition id=\"primed\" sub=\"lightning\"/> until the start of your next turn and must make a Dexterity\nsaving throw. The target takes 3d6 lightning damage on a failed save, or half as much on a successful one.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 2nd level or higher, the damage increases\nby 2d6 for each slot level above 1st.\n\n\n__Extended Leap__: Overload can leap to as many as five other targets within 10m.\n\n__Heavy Overload__: Increase the damage die type to d8."
+    "body": "Unleash an electrostatic discharge at a creature or object within range. Three bolts then leap from that target to as\nmany as three other targets, each of which must be within 6m of the first target. A target can be a creature or an\nobject and can be targeted by only one of the bolts.\n\nA target becomes primed-lightning until the start of your next turn and must make a Dexterity\nsaving throw. The target takes 3d6 lightning damage on a failed save, or half as much on a successful one.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 2nd level or higher, the damage increases\nby 2d6 for each slot level above 1st.\n\n\n__Extended Leap__: Overload can leap to as many as five other targets within 10m.\n\n__Heavy Overload__: Increase the damage die type to d8."
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Phase Disruptor",
     "id": "phase_disruptor",
@@ -2640,39 +2640,39 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "Pheromone Spray",
     "id": "pheromone_spray",
-    "body": "\nA spray of chemical pheromones lets you convince a beast that you mean it no harm. Choose an organic creature that you can see \nwithin range. It must see you and be capable of smelling. If the creature's Intelligence is 4 or higher, the spell fails. \nOtherwise, the beast must succeed on a Wisdom saving throw or be <condition id=\"charmed\"/> by you for the ability's duration. \nIf you or one of your companions harms the creature, the effect ends.\n\n__At Higher Levels__. When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional \ncreature for each slot level above 1st.\n\n\n__Loyalty__: If you successfully use this ability on a creature for 30 days in a row, the creature develops a fierce, chemically-induced sense of loyalty to you and remains charmed by you indefinitely.\n\n__Aggression__: You are able to modify the pheromone cocktail to send creatures into a frenzy. When you use this ability, you may choose to frenzy creatures instead of charming them. A creature that becomes frenzied must use its movement to move towards the nearest creature and attack them if able. A frenzied creature may repeat its save at the end of each of its turns."
+    "body": "\nA spray of chemical pheromones lets you convince a beast that you mean it no harm. Choose an organic creature that you can see \nwithin range. It must see you and be capable of smelling. If the creature's Intelligence is 4 or higher, the spell fails. \nOtherwise, the beast must succeed on a Wisdom saving throw or be charmed by you for the ability's duration. \nIf you or one of your companions harms the creature, the effect ends.\n\n__At Higher Levels__. When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional \ncreature for each slot level above 1st.\n\n\n__Loyalty__: If you successfully use this ability on a creature for 30 days in a row, the creature develops a fierce, chemically-induced sense of loyalty to you and remains charmed by you indefinitely.\n\n__Aggression__: You are able to modify the pheromone cocktail to send creatures into a frenzy. When you use this ability, you may choose to frenzy creatures instead of charming them. A creature that becomes frenzied must use its movement to move towards the nearest creature and attack them if able. A frenzied creature may repeat its save at the end of each of its turns."
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "Poison Spray",
     "id": "poison_spray",
-    "body": "Shoot an aerosol spray of noxious chemicals from your omni-tool at a creature within melee range. The creature must\nsucceed on a Constitution saving throw or take 2d12 poison damage and becomes <condition id=\"poisoned\"/> until the end\nof your next turn.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 2nd level or higher, the damage increases\nby 2d12 for each slot level above 1st.\n\n\n__Pepper spray__: Creatures that fail the Constitution saving throw are also blinded for 1 minute.\n\n__Poison Cloud__: Create a 2m-radius cloud of poison that persists for 1 minute. Each creature that enters the sphere for the first time on a turn or ends its turn there must make the Constitution saving throw."
+    "body": "Shoot an aerosol spray of noxious chemicals from your omni-tool at a creature within melee range. The creature must\nsucceed on a Constitution saving throw or take 2d12 poison damage and becomes poisoned until the end\nof your next turn.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 2nd level or higher, the damage increases\nby 2d12 for each slot level above 1st.\n\n\n__Pepper spray__: Creatures that fail the Constitution saving throw are also blinded for 1 minute.\n\n__Poison Cloud__: Create a 2m-radius cloud of poison that persists for 1 minute. Each creature that enters the sphere for the first time on a turn or ends its turn there must make the Constitution saving throw."
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Pull",
     "id": "pull",
-    "body": "Make a ranged spell attack on a Medium or smaller creature or object within range. On a success, you create a mass\neffect field around the target and it becomes <condition id=\"lifted\"/> 2m in the air. While you maintain this spell, as a bonus action,\nyou can move the target up to 4m in any direction. If you move the target further than 30m away from you, the spell ends\nand the target falls to the ground.\n\n\n__Heavy Pull__: You may target a Large or smaller creature or object.\n\n__Grip__: While maintaining this spell, you may use your bonus action to increase pressure around the target, dealing 2d6 bludgeoning damage."
+    "body": "Make a ranged spell attack on a Medium or smaller creature or object within range. On a success, you create a mass\neffect field around the target and it becomes lifted 2m in the air. While you maintain this spell, as a bonus action,\nyou can move the target up to 4m in any direction. If you move the target further than 30m away from you, the spell ends\nand the target falls to the ground.\n\n\n__Heavy Pull__: You may target a Large or smaller creature or object.\n\n__Grip__: While maintaining this spell, you may use your bonus action to increase pressure around the target, dealing 2d6 bludgeoning damage."
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Reave",
     "id": "reave",
-    "body": "Hurl an orb of dark energy at one creature within range. Make a range spell attack against the target. On a hit, you\ndeal 2d10 necrotic damage and the target becomes <condition id=\"primed\" sub=\"necrotic\"/> until the end of your next turn.\nThe target also has disadvantage on their next attack, ability check, or saving throw. This disadvantage lasts one minute\nor until the target becomes incapacitated.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 2nd level or higher, increase the damage by 2d10\nfor each level above the 1st.\n\n\n__Area Reave__: The orb becomes unstable and explodes when it reaches the target. Hit or miss, the target and each creature within 2m of it must succeed on a Constitution saving throw or take 2d6 necrotic damage. This damage increases by 2d6 for each spell slot level above the first.\n\n__Immediate Detonation__: When you hit a target with reave, it detonates the primed condition at the end of your turn."
+    "body": "Hurl an orb of dark energy at one creature within range. Make a range spell attack against the target. On a hit, you\ndeal 2d10 necrotic damage and the target becomes primed-necrotic until the end of your next turn.\nThe target also has disadvantage on their next attack, ability check, or saving throw. This disadvantage lasts one minute\nor until the target becomes incapacitated.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 2nd level or higher, increase the damage by 2d10\nfor each level above the 1st.\n\n\n__Area Reave__: The orb becomes unstable and explodes when it reaches the target. Hit or miss, the target and each creature within 2m of it must succeed on a Constitution saving throw or take 2d6 necrotic damage. This damage increases by 2d6 for each spell slot level above the first.\n\n__Immediate Detonation__: When you hit a target with reave, it detonates the primed condition at the end of your turn."
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "Sabotage",
     "id": "sabotage",
@@ -2680,7 +2680,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "Salvo",
     "id": "salvo",
@@ -2688,7 +2688,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "Sentry Turret",
     "id": "sentry_turret",
@@ -2696,31 +2696,31 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "Shocking Grasp",
     "id": "shocking_grasp",
-    "body": "Send an electric shock from your omni-tool to a creature you try to touch. Make a melee spell attack against the target.\nYou have advantage on the attack roll if the target is wearing armor. On a hit, the target becomes\n<condition id=\"primed\" sub=\"lightning\"/> until the end of your next turn and takes 1d6 lightning damage.\nThen the target must succeed on a Constitution saving throw or become stunned until the end of your next turn. A target\nwith at least 1 shield point has advantage on this saving throw.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 2nd level or higher, the damage increases\nby 2d6 for each slot level above 1st.\n\n\n__Restoring Shock__: Gain shield points equal to half the damage dealt. This cannot increase your shield points beyond their maximum capacity.\n\n__Improved Shock__: Increase the range to 4m and damage to d8."
+    "body": "Send an electric shock from your omni-tool to a creature you try to touch. Make a melee spell attack against the target.\nYou have advantage on the attack roll if the target is wearing armor. On a hit, the target becomes\nprimed-lightning until the end of your next turn and takes 1d6 lightning damage.\nThen the target must succeed on a Constitution saving throw or become stunned until the end of your next turn. A target\nwith at least 1 shield point has advantage on this saving throw.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 2nd level or higher, the damage increases\nby 2d6 for each slot level above 1st.\n\n\n__Restoring Shock__: Gain shield points equal to half the damage dealt. This cannot increase your shield points beyond their maximum capacity.\n\n__Improved Shock__: Increase the range to 4m and damage to d8."
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Shockwave",
     "id": "shockwave",
-    "body": "Create a cascading shockwave in a 2m wide by 10m long line originating from you. Each creature caught in the line must\nmake a Dexterity saving throw. On a failed save, a creature takes 3d6 force damage and is knocked <condition id=\"prone\"/>.\nOn a successful save, a creature takes half as much damage.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 2d6 for\neach slot level above the 1st.\n\n\n__Controlled Shockwave__: The shockwave travels 16m. You may change the direction of the line every 4m.\n\n__Improved Damage__: Increase damage die type to d10"
+    "body": "Create a cascading shockwave in a 2m wide by 10m long line originating from you. Each creature caught in the line must\nmake a Dexterity saving throw. On a failed save, a creature takes 3d6 force damage and is knocked prone.\nOn a successful save, a creature takes half as much damage.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 2d6 for\neach slot level above the 1st.\n\n\n__Controlled Shockwave__: The shockwave travels 16m. You may change the direction of the line every 4m.\n\n__Improved Damage__: Increase damage die type to d10"
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "combat",
     "qualifiers": [],
     "title": "Siege Pulse",
     "id": "siege_pulse",
-    "body": "Spend 5 shield points as you overload your shield capacitors causing a loud, painfully intense kinetic wave to\nerupt in a 4m-radius sphere centered on you. Each creature within the sphere becomes <condition id=\"deafened\"/> and must\nmake a Constitution saving throw (DC 8 + proficiency bonus). On a failed save, a creature takes\n2d8 psychic damage and is <condition id=\"stunned\"/> until the end of your next turn. On a successful save, a creature takes\nhalf as much psychic damage.\n\nSynthetic creatures have advantage on this saving throw.\n\nThe first time you use siege pulse, your armor suffers no adverse effect. If you use this feature again before you\nfinish a short rest, your shields run the risk of overloading. Roll a d20, immediately after you cast it. On a roll of 5 or\nlower, your shields overload. You lose all shield points take 2d12 lightning damage. You cannot gain shield points unless\nyou equip new armor or repair your armor. Each time you use this feature again before finishing a short rest, the target\nDC increases by 5 (10 on the third cast, 15 on the fourth, etc).\n\nThis feature's psychic damage increases by 1d8 when you reach 5th level (3d8), 11th level (4d8), 17th level (5d8).\n\n\n__Improved Pulse__: Add your Constitution modifier to the DC of the saving throw as you increase the frequency of the pulse to a level you can barely withstand.\n\n__Lingering Pulse__: Each creature that takes psychic damage from siege pulse has disadvantage on its melee or ranged attack rolls until the start of your next turn."
+    "body": "Spend 5 shield points as you overload your shield capacitors causing a loud, painfully intense kinetic wave to\nerupt in a 4m-radius sphere centered on you. Each creature within the sphere becomes deafened and must\nmake a Constitution saving throw (DC 8 + proficiency bonus). On a failed save, a creature takes\n2d8 psychic damage and is <condition id=\"stunned\"/> until the end of your next turn. On a successful save, a creature takes\nhalf as much psychic damage.\n\nSynthetic creatures have advantage on this saving throw.\n\nThe first time you use siege pulse, your armor suffers no adverse effect. If you use this feature again before you\nfinish a short rest, your shields run the risk of overloading. Roll a d20, immediately after you cast it. On a roll of 5 or\nlower, your shields overload. You lose all shield points take 2d12 lightning damage. You cannot gain shield points unless\nyou equip new armor or repair your armor. Each time you use this feature again before finishing a short rest, the target\nDC increases by 5 (10 on the third cast, 15 on the fourth, etc).\n\nThis feature's psychic damage increases by 1d8 when you reach 5th level (3d8), 11th level (4d8), 17th level (5d8).\n\n\n__Improved Pulse__: Add your Constitution modifier to the DC of the saving throw as you increase the frequency of the pulse to a level you can barely withstand.\n\n__Lingering Pulse__: Each creature that takes psychic damage from siege pulse has disadvantage on its melee or ranged attack rolls until the start of your next turn."
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Singularity",
     "id": "singularity",
@@ -2728,7 +2728,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Slam",
     "id": "slam",
@@ -2736,7 +2736,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Slow Fall",
     "id": "slow_fall",
@@ -2744,15 +2744,15 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "Snap Freeze",
     "id": "snap_freeze",
-    "body": "Launch a globe of supercooled helium at a target within range. When you cast snap freeze on a target, you call out\nthe location on its body. The location can be body, legs, or head.\n\n__Legs__. +2 bonus to hit. On a hit, the target is frozen to the ground, becoming <condition id=\"restrained\"/> for the next minute.\nAny creature, including the affected creature, can use its action to make a Strength check against your spell save DC to try and break\nthe ice. On a success, the affected creature is freed but suffers 6d4 bludgeoning damage.\n\n__Body__. On a hit, the target takes 6d8 cold damage.\n\n__Head (available only on Large or smaller creatures)__. -5 penalty to hit. On a hit, the creatures head becomes encased\nin ice and it becomes <condition id=\"blinded\"/> and <condition id=\"deafened\"/> for the next minute. Any creature,\nincluding the affected creature, can use an action to make a Strength check against your spell save DC to try and break the ice.\nOn a success, the affected creature is freed but suffers 6d12 bludgeoning damage.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 4th level or higher, the damage increases\nby 2d4 (for legs), 2d8 (for body), or 2d12 (for head) for each slot level above 3rd.\n\n\n__Solid Freeze__: The ice solid like a rock. Creatures have disadvantage on their Strength checks to break it.\n\n__Brittle Freeze__: A critical success on the Strength check completely shatters the affected creature's appendage. If legs, it falls prone and loses half its remaining hit points. If head, it immediately dies."
+    "body": "Launch a globe of supercooled helium at a target within range. When you cast snap freeze on a target, you call out\nthe location on its body. The location can be body, legs, or head.\n\n__Legs__. +2 bonus to hit. On a hit, the target is frozen to the ground, becoming restrained for the next minute.\nAny creature, including the affected creature, can use its action to make a Strength check against your spell save DC to try and break\nthe ice. On a success, the affected creature is freed but suffers 6d4 bludgeoning damage.\n\n__Body__. On a hit, the target takes 6d8 cold damage.\n\n__Head (available only on Large or smaller creatures)__. -5 penalty to hit. On a hit, the creatures head becomes encased\nin ice and it becomes <condition id=\"blinded\"/> and <condition id=\"deafened\"/> for the next minute. Any creature,\nincluding the affected creature, can use an action to make a Strength check against your spell save DC to try and break the ice.\nOn a success, the affected creature is freed but suffers 6d12 bludgeoning damage.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 4th level or higher, the damage increases\nby 2d4 (for legs), 2d8 (for body), or 2d12 (for head) for each slot level above 3rd.\n\n\n__Solid Freeze__: The ice solid like a rock. Creatures have disadvantage on their Strength checks to break it.\n\n__Brittle Freeze__: A critical success on the Strength check completely shatters the affected creature's appendage. If legs, it falls prone and loses half its remaining hit points. If head, it immediately dies."
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Stasis",
     "id": "stasis",
@@ -2760,7 +2760,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "combat",
     "qualifiers": [],
     "title": "Stimulant Pack",
     "id": "stimulant_pack",
@@ -2768,7 +2768,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Storm",
     "id": "storm",
@@ -2776,15 +2776,15 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "Submission Net",
     "id": "submission_net",
-    "body": "Shoot a swarm of miniature pylons to a target location within 30m. Each creature within a 4m cylinder of the target\nlocation must make a Dexterity saving throw. Any creature that fails the saving throw is trapped in an electrified net,\nbecoming <condition id=\"restrained\"/> and cannot cast tech spells.\n\nUntil the spell ends, the area is considered difficult terrain. A creature that enters the cylinder for the first time\non its turn or ends its turn there must also make the Dexterity saving throw.\n\nA creature restrained by submission net may use its action to make a Strength (Athletics) check against your spell save\nDC to escape the net. On each attempt, the creature takes 1d6 lightning damage as it struggles against the net. On a\nsuccess, the creature is no longer restrained.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 3rd level or higher, increase the size of the\nnet by 2m for each spell slot about the 2nd.\n\n\n__Electrified Net__: If you have a submission net deployed, you can use your bonus action to send electric currents through it. Each creature within the net takes 2d6 lightning damage.\n\n__Anti-Tech__: If a creature you can see begins to cast a tech spell, you can use your reaction to cast submission net."
+    "body": "Shoot a swarm of miniature pylons to a target location within 30m. Each creature within a 4m cylinder of the target\nlocation must make a Dexterity saving throw. Any creature that fails the saving throw is trapped in an electrified net,\nbecoming restrained and cannot cast tech spells.\n\nUntil the spell ends, the area is considered difficult terrain. A creature that enters the cylinder for the first time\non its turn or ends its turn there must also make the Dexterity saving throw.\n\nA creature restrained by submission net may use its action to make a Strength (Athletics) check against your spell save\nDC to escape the net. On each attempt, the creature takes 1d6 lightning damage as it struggles against the net. On a\nsuccess, the creature is no longer restrained.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 3rd level or higher, increase the size of the\nnet by 2m for each spell slot about the 2nd.\n\n\n__Electrified Net__: If you have a submission net deployed, you can use your bonus action to send electric currents through it. Each creature within the net takes 2d6 lightning damage.\n\n__Anti-Tech__: If a creature you can see begins to cast a tech spell, you can use your reaction to cast submission net."
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "combat",
     "qualifiers": [],
     "title": "Tactical Scan",
     "id": "tactical_scan",
@@ -2792,7 +2792,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "Target Painting",
     "id": "target_painting",
@@ -2800,7 +2800,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Tear",
     "id": "tear",
@@ -2808,7 +2808,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Throw",
     "id": "throw",
@@ -2816,7 +2816,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "combat",
     "qualifiers": [],
     "title": "Trophy System",
     "id": "trophy_system",
@@ -2824,7 +2824,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "combat",
     "qualifiers": [],
     "title": "Turbocharge",
     "id": "turbocharge",
@@ -2832,7 +2832,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "tech",
     "qualifiers": [],
     "title": "Unity",
     "id": "unity",
@@ -2840,7 +2840,7 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Vortex",
     "id": "vortex",
@@ -2848,19 +2848,19 @@
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Warp",
     "id": "warp",
-    "body": "Make a ranged spell attack on an organic creature you can see within range. On a hit, you generate a rapidly shifting mass\neffect field inside the target dealing necrotic damage equal to 3d10 + your spellcasting ability modifier. In addition,\nthe target is <condition id=\"primed\" sub=\"necrotic\"/> until the end of your next turn. This damage bypasses shields.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 2d10 for\neach slot level above the 2nd.\n\n\n__Internal Bleeding__: The shifting causes internal bleeding. At the start of each of your turns, the target suffers 1d6 damage from blood loss, bypassing its shields. This effect ends if the creature uses medi-gel or if it or another creature passes a DC 10 Wisdom (Medicine) check to stabilize the bleeding.\n\n__Disorient__: A target hit by warp must pass a Constitution saving throw. On a failed save, the force of warp is so intense the target is stunned until the end of its next turn."
+    "body": "Make a ranged spell attack on an organic creature you can see within range. On a hit, you generate a rapidly shifting mass\neffect field inside the target dealing necrotic damage equal to 3d10 + your spellcasting ability modifier. In addition,\nthe target is primed-necrotic until the end of your next turn. This damage bypasses shields.\n\n__At Higher Levels__: When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 2d10 for\neach slot level above the 2nd.\n\n\n__Internal Bleeding__: The shifting causes internal bleeding. At the start of each of your turns, the target suffers 1d6 damage from blood loss, bypassing its shields. This effect ends if the creature uses medi-gel or if it or another creature passes a DC 10 Wisdom (Medicine) check to stabilize the bleeding.\n\n__Disorient__: A target hit by warp must pass a Constitution saving throw. On a failed save, the force of warp is so intense the target is stunned until the end of its next turn."
   },
   {
     "type": "spell",
-    "subType": null,
+    "subType": "biotic",
     "qualifiers": [],
     "title": "Warp Cloud",
     "id": "warp_cloud",
-    "body": "You fill the air with a highly concentrated warp field 2 meters on each side at a point within range.  A creature takes\n4d4 necrotic damage when it enters the spell area for the first time on a turn or starts its turn there. A creature\nwithin the cloud is <condition id=\"primed\" sub=\"necrotic\"/>.\n\n__At Higher Levels__. When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 4d4 \nfor each slot level above 1st.\n\n\n__Burst__: As a bonus action, you can end this spell and force each creature within 2 meters of the cloud to make a Dexterity saving throw. A creature takes 4d4 force damage on a failed save or half as much on a successful one. This damage increases by 4d4 force damage per spell level.\n\n__Shift__: As a bonus action, you can move this cube of warp energy up to 4 meters in any direction you choose. It can pass through solid objects, but you can only control it's movement while you have line of sight."
+    "body": "You fill the air with a highly concentrated warp field 2 meters on each side at a point within range.  A creature takes\n4d4 necrotic damage when it enters the spell area for the first time on a turn or starts its turn there. A creature\nwithin the cloud is primed-necrotic.\n\n__At Higher Levels__. When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 4d4 \nfor each slot level above 1st.\n\n\n__Burst__: As a bonus action, you can end this spell and force each creature within 2 meters of the cloud to make a Dexterity saving throw. A creature takes 4d4 force damage on a failed save or half as much on a successful one. This damage increases by 4d4 force damage per spell level.\n\n__Shift__: As a bonus action, you can move this cube of warp energy up to 4 meters in any direction you choose. It can pass through solid objects, but you can only control it's movement while you have line of sight."
   },
   {
     "type": "equipment",
@@ -7504,7 +7504,7 @@
     "qualifiers": [
       "Engineer"
     ],
-    "body": "### Demolisher\nAt 18th level, you become a heavy weapon artist and a targeting laser is your paintbrush. When using a Heavy Weapon that requires a round of\n<condition id=\"targeting\" />, you may target and fire on the same turn.\n"
+    "body": "### Demolisher\nAt 18th level, you become a heavy weapon artist and a targeting laser is your paintbrush. When using a Heavy Weapon that requires a round of\ntargeting, you may target and fire on the same turn.\n"
   },
   {
     "id": "ability_score_improvement",
@@ -7544,7 +7544,7 @@
     "qualifiers": [
       "Infiltrator"
     ],
-    "body": "As an action, you activate your tactical cloak, becoming <condition id=\"invisible\"/>. Tactical cloak lasts 1 minute or\nuntil you make an attack, cast a spell, use a grenade or mine, or fire a heavy weapon.\n\nOnce you have used tactical cloak the maximum number of times for your Infiltrator level,\nyou must finish a short rest before you can use it again. You may use tactical 2 times at 1st level, 3 at 6th, 4 at 11th,\nand 5 at 18th.\n"
+    "body": "As an action, you activate your tactical cloak, becoming invisible. Tactical cloak lasts 1 minute or\nuntil you make an attack, cast a spell, use a grenade or mine, or fire a heavy weapon.\n\nOnce you have used tactical cloak the maximum number of times for your Infiltrator level,\nyou must finish a short rest before you can use it again. You may use tactical 2 times at 1st level, 3 at 6th, 4 at 11th,\nand 5 at 18th.\n"
   },
   {
     "id": "expertise",
@@ -7994,7 +7994,7 @@
     "qualifiers": [
       "Sentinel"
     ],
-    "body": "### Bastion\nAt 3rd level, your tactical acumen and predictive VI algorithms allow you to provide direction to your\nallies that can tilt a battle in your favor.\n\nAs a bonus action, you can select an area within 30m on the ground that measures 6m on each side. This area is your tactical focus.\nIt remains your tactical focus until you use this ability again or you become <condition id=\"incapacitated\"/>.\n\nWhen you select an area as your tactical focus, you choose one of your tactics to apply to that area. You gain three\ntactics at 3rd level. You gain an additional tactic at 7th and 14th level. Each time you complete a long rest, you can\nswap one of your tactics for a different one.\n\n#### Tactics\n\n__Advance__.\nUpdate your allies' HUDs and outline optimal routes to your tactical focus. If an ally spends all of its movement\nmoving towards your tactical focus, it doubles its movement, ignores difficult terrain, and does not provoke attacks of\nopportunity.\n\n__Analysis__.\nFocus all of your attention on the movements and capabilities of a single enemy. When you choose this tactic, you\nadditionally choose a single hostile creature within your tactical focus. Beginning when you set your tactical focus\nand at the beginning of each of your subsequent turns, the DM tells you if the creature is your equal, superior, or\ninferior in regard to one of the following characteristics of your choice: One ability score (Strength, Dexterity,\nConstitution, Intelligence, Charisma, or Wisdom), Armor Class, or Current hit points\n\n__Clear the area__.\nPick out weak spots on your targets that force them out of your tactical focus. If an ally hit s a creature in your\ntactical focus with a weapon attack, the ally can move that creature 2m.\n\n__Heads up__.\nIf an allied creature in your tactical focus must make a Dexterity saving throw it has advantage on that saving throw.\n\n__Pin down__.\nWhen a hostile creature attempts to move out of your tactical focus, two target creatures of your choice can use\na reaction to make an attack of opportunity on the target. If both attacks are successful, the creature's movement becomes\n0, it falls prone and remains in your tactical focus.\n\n__Recon__.\nYour VI focuses on the movement of dust and augments sound from your area of focus, reconstructing a perfect image on your\nand your allies' HUD. Any creature within your tactical focus loses any benefits from being invisible, lightly obscured,\nor heavily obscured.\n"
+    "body": "### Bastion\nAt 3rd level, your tactical acumen and predictive VI algorithms allow you to provide direction to your\nallies that can tilt a battle in your favor.\n\nAs a bonus action, you can select an area within 30m on the ground that measures 6m on each side. This area is your tactical focus.\nIt remains your tactical focus until you use this ability again or you become incapacitated.\n\nWhen you select an area as your tactical focus, you choose one of your tactics to apply to that area. You gain three\ntactics at 3rd level. You gain an additional tactic at 7th and 14th level. Each time you complete a long rest, you can\nswap one of your tactics for a different one.\n\n#### Tactics\n\n__Advance__.\nUpdate your allies' HUDs and outline optimal routes to your tactical focus. If an ally spends all of its movement\nmoving towards your tactical focus, it doubles its movement, ignores difficult terrain, and does not provoke attacks of\nopportunity.\n\n__Analysis__.\nFocus all of your attention on the movements and capabilities of a single enemy. When you choose this tactic, you\nadditionally choose a single hostile creature within your tactical focus. Beginning when you set your tactical focus\nand at the beginning of each of your subsequent turns, the DM tells you if the creature is your equal, superior, or\ninferior in regard to one of the following characteristics of your choice: One ability score (Strength, Dexterity,\nConstitution, Intelligence, Charisma, or Wisdom), Armor Class, or Current hit points\n\n__Clear the area__.\nPick out weak spots on your targets that force them out of your tactical focus. If an ally hit s a creature in your\ntactical focus with a weapon attack, the ally can move that creature 2m.\n\n__Heads up__.\nIf an allied creature in your tactical focus must make a Dexterity saving throw it has advantage on that saving throw.\n\n__Pin down__.\nWhen a hostile creature attempts to move out of your tactical focus, two target creatures of your choice can use\na reaction to make an attack of opportunity on the target. If both attacks are successful, the creature's movement becomes\n0, it falls prone and remains in your tactical focus.\n\n__Recon__.\nYour VI focuses on the movement of dust and augments sound from your area of focus, reconstructing a perfect image on your\nand your allies' HUD. Any creature within your tactical focus loses any benefits from being invisible, lightly obscured,\nor heavily obscured.\n"
   },
   {
     "id": "master_tactician",
@@ -8274,7 +8274,7 @@
     "qualifiers": [
       "Sentinel"
     ],
-    "body": "### Guardian\nStarting at 14th level, you can transform your omni-shield into a fire shield or cryo shield.\n\n__Fire Shield__. Gain all the benefits of Omni-Shield. In addition, a target hit by a Fire Shield attack takes 3d10 fire damage. \nThis damage detonates primed targets, but you are immune to any detonating effects.\n\n__Cryo Shield__. Gain all the benefits of Omni-Shield. In addition, a target hit by a Cryo Shield attack takes 1d8 cold \ndamage and must succeed on a DC 13 Strength saving throw or become <condition id=\"frozen\"/> until the end its next turn.\n"
+    "body": "### Guardian\nStarting at 14th level, you can transform your omni-shield into a fire shield or cryo shield.\n\n__Fire Shield__. Gain all the benefits of Omni-Shield. In addition, a target hit by a Fire Shield attack takes 3d10 fire damage. \nThis damage detonates primed targets, but you are immune to any detonating effects.\n\n__Cryo Shield__. Gain all the benefits of Omni-Shield. In addition, a target hit by a Cryo Shield attack takes 1d8 cold \ndamage and must succeed on a DC 13 Strength saving throw or become frozen until the end its next turn.\n"
   },
   {
     "id": "zz_master_duelist",
@@ -8714,7 +8714,7 @@
     "qualifiers": [
       "Soldier"
     ],
-    "body": "### Havoc\nAt 18th level, you become a heavy weapon artist and a targeting laser is your paintbrush. When using a Heavy Weapon that requires a round of\n<condition id=\"targeting\" />, you may target and fire on the same turn.\n"
+    "body": "### Havoc\nAt 18th level, you become a heavy weapon artist and a targeting laser is your paintbrush. When using a Heavy Weapon that requires a round of\ntargeting, you may target and fire on the same turn.\n"
   },
   {
     "id": "weapon_of_choice_3",
@@ -8894,7 +8894,7 @@
     "qualifiers": [
       "Vanguard"
     ],
-    "body": "### Shock Trooper\nStarting at 6th level, you can focus your barrier into the impact of your charge spell. When you hit a creature\nwith your charge cantrip, you can spend 1 barrier tick to attempt a stunning strike. The target must succeed on a Constitution\nsaving throw or be <condition id=\"stunned\"/> until the end of your next turn.\n"
+    "body": "### Shock Trooper\nStarting at 6th level, you can focus your barrier into the impact of your charge spell. When you hit a creature\nwith your charge cantrip, you can spend 1 barrier tick to attempt a stunning strike. The target must succeed on a Constitution\nsaving throw or be stunned until the end of your next turn.\n"
   },
   {
     "id": "biotic_attacks",

@@ -2,12 +2,14 @@
   v-card.search-result
     v-btn(small fab flat absolute right @click="showFull = !showFull").mt-3
       v-icon {{ showIcon }}
-    v-card-text(@click="showFull = !showFull")
+    v-card-title.pb-0
       div.headline {{ doc.title }}
       div.body-2
-        span.text-uppercase {{ doc.type }}
-        span.ml-3 {{ doc.subType | titlecase }}
-      div(v-html="rendered").mt-3
+        span(:class="typeColors[doc.type]").text-uppercase {{ doc.type }}
+        span(v-if="doc.subType").pl-1.body-1 - {{ doc.subType | titlecase }}
+        span(v-if="doc.qualifiers.length > 0").pl-1.body-1 ({{ doc.qualifiers.join(', ') }})
+    v-card-text(@click="showFull = !showFull")
+      div(v-html="rendered")
 
 </template>
 
@@ -31,11 +33,11 @@
     data () {
       return {
         typeColors: {
-          character: '',
-          equipment: '',
-          rule: '',
-          spell: '',
-          bestiary: ''
+          character: 'light-green--text text--darken-4',
+          equipment: 'deep-orange--text text--darken-4',
+          rule: 'secondary--text',
+          spell: 'purple--text',
+          bestiary: 'primary--text'
         },
         showFull: false
       }
@@ -57,6 +59,9 @@
 <style>
   .search-result p {
     margin-bottom: .5em;
+  }
+  .search-result .v-card__title {
+    display: block;
   }
 </style>
 
