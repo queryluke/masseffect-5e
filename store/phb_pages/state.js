@@ -77,9 +77,6 @@ export default {
     'phb-backgrounds': {
       name: 'Backgrounds'
     },
-    'phb-backgrounds-id': {
-      name: 'Backgrounds'
-    },
     'phb-weapons': {
       name: 'Weapons',
       list: true
@@ -113,9 +110,6 @@ export default {
     'phb-bestiary': {
       name: 'Bestiary',
       list: true
-    },
-    'phb-bestiary-id': {
-      name: 'Bestiary',
     },
     'phb-bookmarks': {
       name: 'Bookmarks'
