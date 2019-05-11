@@ -1,17 +1,55 @@
 const fs = require('fs')
 const fm = require('front-matter')
-const md = require('markdown-it')({
-  html: true,
-})
+// const md = require('markdown-it')({
+//   html: true,
+// })
+// const lunr = require('lunr')
 
+function ordinal (value) {
+  const j = value % 10
+  const k = value % 100
+  if (j === 1 && k !== 11) {
+    return `${value}st`
+  }
+  if (j === 2 && k !== 12) {
+    return `${value}nd`
+  }
+  if (j === 3 && k !== 13) {
+    return `${value}rd`
+  }
+  return `${value}th`
+}
+
+
+
+function setType(dir) {
+  const types = [
+    { type: 'character', items: ['backgrounds', 'feats', 'races', 'traits', 'subraces'] },
+    { type: 'equipment', items: ['grenades', 'programs', 'tools', 'vehicles', 'armor_mods', 'armor_sets', 'weapon_mods', 'weapons'] },
+    { type: 'rule', items: ['conditions', 'rules', 'weapon_properties'] },
+    { type: 'spell', items: ['spells'] },
+    { type: 'bestiary', items: ['bestiary'] },
+  ]
+
+  return types.find(t => t.items.includes(dir)).type
+}
+
+function nameToId(string) {
+ return string.toLowerCase().replace(/[^\w-]/,'_')
+}
 
 // "bestiary"
 const mdDirs = [
+  // must go first
+  'traits',
+  'subraces',
+  // can go in any order
   'backgrounds',
   'conditions',
   'feats',
   'grenades',
   'programs',
+  'races',
   'rules',
   'spells',
   'tools',
@@ -21,10 +59,6 @@ const mdDirs = [
 
 // classes
 // class_features
-// races
-  // subraces
-  // traits
-// bestiary
 
 const jsonFiles = [
   'armor_mods',
@@ -37,6 +71,7 @@ const jsonFiles = [
 
 
 const searchItems = []
+const racialTraits = []
 
 
 /******************
@@ -54,10 +89,37 @@ for (let dir of mdDirs) {
     let item = {
       type: setType(dir),
       subType: dir.substring(0, dir.length - 1),
+      qualifiers: []
     }
 
     // create normalized content
     switch (dir) {
+      case 'races':
+        item.id = fc.attributes.id
+        item.title = fc.attributes.name
+        item.body = fc.body
+        item.body += `\n\n__Age__: ${fc.attributes.age}`
+        item.body += `\n\n__Alignment__: ${fc.attributes.alignment}`
+        item.body += `\n\n__Size__: ${fc.attributes.size}`
+        item.body += `\n\n__Speed__: ${fc.attributes.speed}`
+        item.body += `\n\n__Starting Credits__: ${fc.attributes.startingCredits}`
+        if (fc.attributes.traits) {
+          for (let trait of fc.attributes.traits) {
+            const index = searchItems.findIndex(si => si.id === trait)
+            if (index > -1) {
+              searchItems[index].qualifiers.push(fc.attributes.name)
+            }
+          }
+        }
+        if (fc.attributes.variants) {
+          for (let subrace of fc.attributes.variants) {
+            const index = searchItems.findIndex(si => si.id.replace('_','-') === subrace)
+            if (index > -1) {
+              searchItems[index].qualifiers.push(fc.attributes.name)
+            }
+          }
+        }
+        break
       case 'spells':
         item.subType = null
         item.title = fc.attributes.name
@@ -80,7 +142,7 @@ for (let dir of mdDirs) {
         break
       default:
         item.title = fc.attributes.name || fc.attributes.title
-        item.id = fc.attributes.id || item.title.toLowerCase().replace(/\W/,'_')
+        item.id = fc.attributes.id || nameToId(item.title)
         item.body = fc.body
         break
     }
@@ -102,6 +164,7 @@ for (let file of jsonFiles) {
       title: thing.name,
       type: setType(file),
       subType: file.substring(0, file.length - 1).replace('_',' '),
+      qualifiers: []
     }
 
     switch (file) {
@@ -114,6 +177,11 @@ for (let file of jsonFiles) {
           item.body += `\n${thing.notes}`
         }
         break
+      case 'weapon_properties':
+        item.body = thing.description
+        item.id = nameToId(thing.name)
+        item.subType = 'weapon property'
+        break
       case 'bestiary':
         item.subType = null
         item.body = ''
@@ -121,7 +189,7 @@ for (let file of jsonFiles) {
           const splitKey = key.split(' ')
           const attrKey = `${splitKey[0].toLowerCase()}${splitKey[1] || ''}`
           if (thing[attrKey].length > 0) {
-            let groupString = `#### ${key}`
+            let groupString = `### ${key}\n`
             for (let v  of thing[attrKey]) {
               let string = `__${v.name}__`
               switch(v.type) {
@@ -146,49 +214,101 @@ for (let file of jsonFiles) {
                   }
                   string += `. ${v.description}`
               }
-              groupString += `\n${string}`
+              groupString += `${string}\n\n`
             }
             item.body += `${groupString}\n\n`
           }
         }
         break
       default:
-        item.body += ''
+        item.body = ''
         if (thing.feature) {
-          item.body += thing.feature
+          item.body += `${thing.feature}\n\n`
         }
         if (thing.setBonus) {
-          item.body += `\n\n${thing.setBonus}`
+          item.body += `${thing.setBonus}\n\n`
         }
-        item.body += `\n\n${thing.description}`
+        item.body += `${thing.description}`
         break
     }
     searchItems.push(item)
   }
 }
 
+/******************
+ Classes
+ */
 
-function setType(dir) {
-  const types = [
-    { type: 'character', items: ['backgrounds', 'feats'] },
-    { type: 'equipment', items: ['grenades', 'programs', 'tools', 'vehicles', 'armor_mods', 'armor_sets', 'weapon_mods', 'weapons'] },
-    { type: 'rule', items: ['conditions', 'rules', 'weapon_properties'] },
-    { type: 'spell', items: ['spells'] },
-    { type: 'bestiary', items: ['bestiary'] },
-  ]
+const classes = JSON.parse(fs.readFileSync(`./static/data/classes.json`, 'utf8'))
+for (let klass of classes) {
 
-  return types.find(t => t.items.includes(dir)).type
+  let item = {
+    id: klass.id,
+    title: klass.name,
+    type: 'character',
+    subType: 'class',
+    qualifiers: [klass.name],
+    body: klass.description
+  }
+
+  const spellcasting = fm(fs.readFileSync(`./static/data/class_spellcasting/${klass.id}.md`, 'utf8'))
+  item.body += `\n\n## Spell Casting\n${spellcasting.body}`
+
+  searchItems.push(item)
+
+  let subclassFeatureIndex = 0;
+  for (let p of klass.progression) {
+    for (let f of p.features) {
+      if (f === 'subclass') {
+        for (let sc of klass.subclasses) {
+          const prepend = `### ${sc.name}`
+          for (let scf of sc.features[subclassFeatureIndex]) {
+            searchItems.push(createScfItem(scf, p.level, klass.name, prepend))
+          }
+        }
+        subclassFeatureIndex++
+      } else {
+        searchItems.push(createScfItem(f, p.level, klass.name))
+      }
+    }
+  }
+}
+
+function createScfItem(id, level, klass, prependBody) {
+  const cf = fm(fs.readFileSync(`./static/data/class_features/${id}.md`, 'utf8'))
+  let body = cf.body.replace('{{ level }}', ordinal(level))
+  if (prependBody) {
+    body = `${prependBody}\n${body}`
+  }
+  return {
+    id: cf.attributes.id,
+    title: cf.attributes.name,
+    type: 'character',
+    subType: 'class',
+    qualifiers: [klass],
+    body
+  }
 }
 
 
-// process jsDirs
-// for (let dir of jsonDirs) {
-//   const path = `./static/data/${dir}`
-//   const files = fs.readdirSync(path)
-//   let items = files.map(file => JSON.parse(fs.readFileSync(`${path}/${file}`, 'utf8')))
-//   fs.writeFileSync(`${path}.json`, JSON.stringify(items, null, 2))
-// }
+// const idx = lunr(function () {
+//   this.ref('id')
+//   this.field('title')
+//   this.field('type')
+//   this.field('subType')
+//   this.field('qualifiers')
+//   this.field('body')
+//
+//   searchItems.forEach(function (doc) {
+//     this.add(doc)
+//   }, this)
+// })
 
-
+searchItems.forEach((i) => {
+  if (!i.id) {
+    console.log(i)
+  }
+})
 
 fs.writeFileSync(`./static/data/search/documents.json`, JSON.stringify(searchItems, null, 2))
+// fs.writeFileSync(`./static/data/search/index.json`, JSON.stringify(idx, null, 2))

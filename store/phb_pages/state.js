@@ -122,6 +122,9 @@ export default {
     },
     'for-gms-encounter-builder': {
       name: 'Encounter Builder'
+    },
+    'phb-search': {
+      name: 'Search'
     }
   }
 }
