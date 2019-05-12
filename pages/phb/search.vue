@@ -1,17 +1,24 @@
 <template lang="pug">
   v-container
     div.mb-5
-      h2.display-1.hidden-sm-and-down Search the Player's Manual
+      h2.display-1.hidden-sm-and-down Search
       div.hr.mb-0
       v-card(elevation="0")
         v-card-text
-          v-layout(row wrap)
-            v-flex(md12).px-1
-              v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
-            // v-flex(md8).px-1
-              spell-filters(:itemKey="itemKey")
+          v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
+          v-layout(row wrap).mt-3
+            v-flex(v-for="(sf, i) in searchFilters" v-bind:key="sf.id" xs6 md2 :offset-md1="i === 0")
+              v-btn(@click="setFilter(sf.id)" v-bind:outline="!filters.includes(sf.id)" v-bind:color="sf.color" fab v-bind:title="sf.id" dark)
+                v-icon {{ sf.icon }}
     div(v-if="results.length > 0")
-      search-result(v-for="result in results" v-bind:key="result.ref" v-bind:doc="getDoc(result.ref)" v-bind:result="result").mb-3
+      search-result(
+        v-if="show(result.ref)"
+        v-for="result in results"
+        v-bind:key="result.ref"
+        v-bind:doc="getDoc(result.ref)"
+        v-bind:result="result"
+      ).mb-2
+        p {{ show(result.ref) }}
     div(v-if="searching")
       p searching
 
@@ -31,11 +38,12 @@
     data () {
       return {
         searching: false,
+        filters: [],
         results: []
       }
     },
     computed: {
-      ...mapGetters(['phbSearch']),
+      ...mapGetters(['phbSearch', 'searchFilters']),
       search: {
         get () {
           return this.phbSearch
@@ -49,7 +57,7 @@
       search () {
         this.results = []
         this.debouncedGetResults()
-      }
+      },
     },
     created () {
       this.debouncedGetResults = _.debounce(this.getResults, 500)
@@ -60,10 +68,18 @@
     },
     methods: {
       ...mapActions(['setPhbSearch']),
+      setFilter (id) {
+        if (this.filters.includes(id)) {
+          this.filters.splice(this.filters.indexOf(id),1)
+        } else {
+          this.filters.push(id)
+        }
+      },
       getResults () {
         if (this.search === ''){
           this.results = []
         } else {
+          const filters = this.filters
           const idx = lunr(function () {
             this.ref('id')
             this.field('title')
@@ -83,6 +99,12 @@
       },
       getDoc (ref) {
         return docs.find(d => d.id === ref)
+      },
+      show (ref) {
+        if (this.filters.length > 0) {
+          return this.filters.includes(this.getDoc(ref).type)
+        }
+        return true
       }
     },
     head () {

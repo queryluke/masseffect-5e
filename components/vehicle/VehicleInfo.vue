@@ -1,6 +1,7 @@
 <template lang="pug">
   div
-    p.display-1.font-weight-thin.mb-2 {{ item.name }}
+    p.display-1.font-weight-thin.mb-2
+      span(v-if="title") {{ item.name }}
       span(v-if="item.createdBy").body-1.pl-2 #[em created by: {{ item.createdBy }}]
     p.title {{ item.size | capitalize }} {{ item.vehicle.type | capitalize }}
       span(v-if="item.vehicle.subtype").ml-1 ({{ item.vehicle.subtype }})
@@ -53,6 +54,10 @@
         type: Object,
         default: () => { return {} }
       },
+      title: {
+        type: Boolean,
+        default: true
+      }
     }
   }
 </script>

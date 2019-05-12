@@ -3,7 +3,9 @@ const fm = require('front-matter')
 const md = require('markdown-it')({
   html: true,
 })
-// const lunr = require('lunr')
+
+import phbStore from './store/phb_pages/state.js'
+const pages = Object.entries(phbStore.pages)
 
 function ordinal (value) {
   const j = value % 10
@@ -35,17 +37,17 @@ function setType(dir) {
 }
 
 function nameToId(string) {
- return string.toLowerCase().replace(/[^\w-]/,'_')
+ return string.toLowerCase().replace(/[^\w-]/g,'_')
 }
 
 function cleanBody(text) {
-  let returnText = text.replace(/<condition(.*)\/>/, (match) => {
+  let returnText = text.replace(/<condition(.*)\/>/g, (match) => {
     const condition = match.match(/id="(.*?)"/)
     const sub = match.match(/sub="(.*?)"/)
     return sub && sub[1] ? `${condition[1]}-${sub[1]}` : condition[1]
   })
   returnText = md.render(returnText)
-  returnText = returnText.replace(/<*.?\/?>/,'')
+  returnText = returnText.replace(/<\/?.*?\/?>/g,'')
   return returnText
 }
 
@@ -61,7 +63,6 @@ const mdDirs = [
   'grenades',
   'programs',
   'races',
-  'rules',
   'spells',
   'tools',
   'vehicles'
@@ -77,12 +78,11 @@ const jsonFiles = [
   'bestiary',
   'weapon_mods',
   'weapons',
+  'rules'
 ]
 
 
 const searchItems = []
-const racialTraits = []
-
 
 /******************
   MD Dirs
@@ -99,7 +99,8 @@ for (let dir of mdDirs) {
     let item = {
       type: setType(dir),
       subType: dir,
-      qualifiers: []
+      qualifiers: [],
+      link: null
     }
 
     // create normalized content
@@ -114,11 +115,16 @@ for (let dir of mdDirs) {
         body.push(fc.attributes.speed)
         body.push(fc.attributes.startingCredits)
         item.body = body.join(' ')
+        item.link = `/phb/races/${fc.attributes.id}`
         if (fc.attributes.traits) {
           for (let trait of fc.attributes.traits) {
             const index = searchItems.findIndex(si => si.id === trait)
             if (index > -1) {
-              searchItems[index].qualifiers.push(fc.attributes.name)
+              if (searchItems[index].qualifiers.length > 0) {
+                searchItems[index].qualifiers[0] += ` + ${fc.attributes.name}`
+              } else {
+                searchItems[index].qualifiers.push(fc.attributes.name)
+              }
             }
           }
         }
@@ -127,12 +133,14 @@ for (let dir of mdDirs) {
             const index = searchItems.findIndex(si => si.id.replace('_','-') === subrace)
             if (index > -1) {
               searchItems[index].qualifiers.push(fc.attributes.name)
+              searchItems[index].qualifiers.push('Variant')
+              searchItems[index].link = `/phb/races/${fc.attributes.id}`
             }
           }
         }
         break
       case 'spells':
-        item.subType = fc.attributes.type
+        item.qualifiers.push(fc.attributes.type)
         item.title = fc.attributes.name
         item.id = fc.attributes.id
         item.body = cleanBody(fc.body)
@@ -143,7 +151,7 @@ for (let dir of mdDirs) {
         break
       case 'vehicles':
         item.title = fc.attributes.name
-        item.id = item.title.toLowerCase().replace(/\W/,'_')
+        item.id = file.replace(/.md$/, '')
         item.body = cleanBody(fc.body)
         if (fc.attributes.weapons) {
           for (let attack of fc.attributes.weapons) {
@@ -151,6 +159,10 @@ for (let dir of mdDirs) {
           }
         }
         break
+      case 'rules':
+        const rule = ruleList.find(r => r.id === fc.attributes.id)
+        console.log(rule)
+        // item.link =
       default:
         item.title = fc.attributes.name || fc.attributes.title
         item.id = fc.attributes.id || nameToId(item.title)
@@ -174,11 +186,26 @@ for (let file of jsonFiles) {
       id: thing.id,
       title: thing.name,
       type: setType(file),
-      subType: file.replace('_',' '),
-      qualifiers: []
+      subType: file,
+      qualifiers: [],
+      link: null
     }
 
     switch (file) {
+      case 'rules':
+        const page = pages.find(p => p[1].rules && p[1].rules === thing.section)
+        item.title = thing.title
+        const splits = page[0].split('-')
+        let link = `/${splits[0]}/${splits[1]}`
+        if (splits[2]) {
+          link += `/${splits.slice(2).join('-')}`
+        }
+        link += `#${thing.hash}`
+        item.link = link
+        item.qualifiers.push(page[1].name)
+        const fc = fm(fs.readFileSync(`./static/data/rules/${thing.id}.md`, 'utf8'))
+        item.body = cleanBody(fc.body)
+        break
       case 'weapons':
         item.body = ''
         if (thing.properties.length > 0) {
@@ -189,7 +216,8 @@ for (let file of jsonFiles) {
         }
         break
       case 'bestiary':
-        item.subType = null
+        item.subType = 'bestiary'
+        item.qualifiers.push(thing.unit)
         item.body = ''
         for (let key of ['Actions', 'Features', 'Reactions', 'Lair Actions', 'Legendary Actions']) {
           const splitKey = key.split(' ')
@@ -254,7 +282,8 @@ for (let klass of classes) {
     type: 'character',
     subType: 'classes',
     qualifiers: [klass.name],
-    body: klass.description
+    body: klass.description,
+    link: `/phb/classes/${klass.id}`
   }
 
   const spellcasting = fm(fs.readFileSync(`./static/data/class_spellcasting/${klass.id}.md`, 'utf8'))

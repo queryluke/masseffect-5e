@@ -21,15 +21,15 @@
       v-flex(v-for="(mark, index) in group.marks" v-bind:key="index" xs12 lg6)
         v-card.ma-1
           v-card-text
-            spell-info(:spell="mark.card" v-if="mark.type === 'spell'")
-            weapon-info(:weapon="mark.card" v-else-if="mark.type === 'weapon'")
-            grenade-info(:grenade="mark.card" v-else-if="mark.type === 'grenade'")
+            spell-info(:item="mark.card" v-if="mark.type === 'spell'")
             stat-block(:stats="mark.card" v-else-if="mark.type === 'npc'")
-            weapon-mod-info(:mod="mark.card" v-else-if="mark.type === 'weaponMod'")
-            armor-mod-info(:mod="mark.card" v-else-if="mark.type === 'armorMod'")
-            armor-set-info(:set="mark.card" v-else-if="mark.type === 'armorSet'")
+            weapon-info(:item="mark.card" v-else-if="mark.type === 'weapon'")
+            grenade-info(:item="mark.card" v-else-if="mark.type === 'grenade'")
+            weapon-mod-info(:item="mark.card" v-else-if="mark.type === 'weaponMod'")
+            armor-mod-info(:item="mark.card" v-else-if="mark.type === 'armorMod'")
+            armor-set-info(:item="mark.card" v-else-if="mark.type === 'armorSet'")
             vehicle-info(:item="mark.card" v-else-if="mark.type === 'vehicle'")
-            program-info(:program="mark.card" v-else-if="mark.type === 'program'")
+            program-info(:item="mark.card" v-else-if="mark.type === 'program'")
             div(v-else)
               p.headline {{ mark.card.name }}
               markdown-file(:id="mark.card.id" v-bind:itemType="mark.type" )
@@ -118,7 +118,7 @@
     methods: {
       goToMark (id) {
         this.$vuetify.goTo(id, { offset: -68 })
-      }
+      },
     },
     head () {
       return {

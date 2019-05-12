@@ -1,13 +1,12 @@
 <template lang="pug">
   div
-    h4.headline {{ program.name }}
-      v-chip(:color="rarityColors[rarityForColor]" small dark).ml-3.text-uppercase {{ program.rarity }}
-    p
-      em.
-        {{ program.rarity | titlecase }} #[span(v-if="program.installation") (requires installation)]
+    p.display-1.font-weight-thin.mb-2
+      span(v-if="title") {{ item.name }}
+    span(:class="rarityTextColors[rarityForColor]").text-uppercase.body-2 {{ item.rarity | titlecase }}
+    span(v-if="item.installation").pl-1 #[em (requires installation)]
     div.hr
     div
-      markdown-file(:id="program.id" itemType="programs")
+      markdown-file(:id="item.id" itemType="programs")
 </template>
 
 <script>
@@ -15,15 +14,19 @@
 
   export default {
     props: {
-      program: {
+      item: {
         type: Object,
         default: () => { return {} }
       },
+      title: {
+        type: Boolean,
+        default: true
+      }
     },
     computed: {
-      ...mapGetters('itemList', ['rarityColors']),
+      ...mapGetters('itemList', ['rarityTextColors']),
       rarityForColor () {
-        return this.$options.filters.titlecase(this.program.rarity)
+        return this.$options.filters.titlecase(this.item.rarity)
       }
     }
   }

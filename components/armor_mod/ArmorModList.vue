@@ -12,7 +12,7 @@
             v-flex(:class="headers[3].classes") {{ item.notes }}
         v-card.grey.lighten-3
           v-card-text
-            armor-mod-info(:mod="item").mt-2
+            armor-mod-info(:item="item").mt-2
           v-card-actions
             bookmark-button(:card="item" type="armorMod" v-bind:props="{flat: true}")
 </template>

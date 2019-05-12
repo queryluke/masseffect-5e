@@ -19,5 +19,6 @@ export default {
   rulebar: state => state.rulebar,
   searchbar: state => state.searchbar,
   races: state => state.races,
-  phbSearch: state => state.phbSearch
+  phbSearch: state => state.phbSearch,
+  searchFilters: state => state.searchFilters
 }

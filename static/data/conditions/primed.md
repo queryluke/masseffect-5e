@@ -3,12 +3,12 @@ name: Primed
 id: primed
 ---
 
-* A primed creature that is hit with a spell or ability that detonates primed targets immediate suffers one of the effects below.
-* The effect is based on the ability that initially primed the creature. It can be one of Force, Necrotic, Fire, Cold, and Lightning.
 
-<br>
+* When a primed creature is hit with a spell or ability that __detonates__, the primed condition explodes, resulting
+in one of the following effect. After resolving the effect, the primed condition ends.
 
-Type | Explosion
+
+Primed Type | Explosion
 --- | ---
 Force | The primed target takes 2d6 force damage, is knocked back 6m and becomes prone.
 Necrotic | The primed target takes 1d12 necrotic damage and must succeed on a DC 13 Constitution saving throw or becomes stunned until the end of its next turn.

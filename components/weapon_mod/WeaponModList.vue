@@ -13,7 +13,7 @@
             v-flex(:class="headers[3].classes").mt-1 {{ item.notes }}
         v-card.grey.lighten-3
           v-card-text
-            weapon-mod-info(:mod="item").mt-2
+            weapon-mod-info(:item="item").mt-2
           v-card-actions
             bookmark-button(:card="item" type="weaponMod" v-bind:props="{flat: true}")
 </template>
@@ -37,9 +37,9 @@
     data () {
       return {
         headers: [
-          { label: 'Name', key: 'name', classes: 'xs6 md3 lg3', sortable: true },
-          { label: 'Cost', key: 'cost', classes: 'xs3 md3 lg2', sortable: true },
-          { label: 'Placement', key: 'placement', classes: 'xs3 md3 lg2' },
+          { label: 'Name', key: 'name', classes: 'xs6 md5 lg3', sortable: true },
+          { label: 'Cost', key: 'cost', classes: 'xs3 md2 lg2', sortable: true },
+          { label: 'Placement', key: 'placement', classes: 'xs3 md2 lg2' },
           { label: 'Notes', key: 'notes', classes: 'hidden-sm-and-down md3 lg5' }
         ]
       }

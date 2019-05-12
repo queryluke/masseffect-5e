@@ -2,22 +2,23 @@
   div
     v-layout
       v-flex.xs12
-        h4.headline {{ mod.name }}
-          v-chip(:color="rarityColors[mod.rarity]" small dark).ml-3.text-uppercase {{ mod.rarity }}
-        p #[em {{ mod.description }}]
+        p.display-1.font-weight-thin.mb-2
+          span(v-if="title") {{ item.name }}
+        span(:class="rarityTextColors[item.rarity]").text-uppercase.body-2 {{ item.rarity }}
+        p #[em {{ item.description }}]
     v-layout(row wrap flex-start)
       v-flex.xs4.attribute.mb-2
         label Placement
-        div {{ mod.placement }}
+        div {{ item.placement }}
       v-flex.xs4.attribute.mb-2
         label Weapon Availability
-        div {{ mod.availability }}
+        div {{ item.availability }}
       v-flex.xs4.attribute.mb-2
         label Cost
-        div {{ mod.cost | groupDigits(',') }}
+        div {{ item.cost | groupDigits(',') }}
       v-flex.xs12
         div.hr
-        p {{ mod.feature }}
+        p {{ item.feature }}
 </template>
 
 <script>
@@ -25,13 +26,17 @@
 
   export default {
     props: {
-      mod: {
+      item: {
         type: Object,
         default: () => { return {} }
       },
+      title: {
+        type: Boolean,
+        default: true
+      }
     },
     computed: {
-      ...mapGetters('itemList', ['rarityColors'])
+      ...mapGetters('itemList', ['rarityTextColors'])
     }
   }
 </script>
