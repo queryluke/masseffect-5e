@@ -5,7 +5,7 @@
       div.hr.mb-0
       v-card(elevation="0")
         v-card-text
-          v-text-field(append-icon="search" label="Search" single-line hide-details v-model="search")
+          v-text-field(append-icon="search" label="Search" single-line hide-details clearable v-model="search")
           v-layout(row wrap).mt-3
             v-flex(v-for="(sf, i) in searchFilters" v-bind:key="sf.id" xs6 md2 :offset-md1="i === 0")
               v-btn(@click="setFilter(sf.id)" v-bind:outline="!filters.includes(sf.id)" v-bind:color="sf.color" fab v-bind:title="sf.id" dark)
@@ -80,7 +80,7 @@
         }
       },
       getResults () {
-        if (this.search === ''){
+        if (this.search === '' || this.search === null || typeof(this.search) === 'undefined'){
           this.results = []
         } else {
           const idx = lunr(function () {
