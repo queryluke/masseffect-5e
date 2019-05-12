@@ -16,5 +16,6 @@ export default {
   sidebar: true,
   rulebar: true,
   searchbar: false,
+  phbSearch: '',
   version: config.version
 }

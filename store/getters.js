@@ -18,5 +18,6 @@ export default {
   sidebar: state => state.sidebar,
   rulebar: state => state.rulebar,
   searchbar: state => state.searchbar,
-  races: state => state.races
+  races: state => state.races,
+  phbSearch: state => state.phbSearch
 }

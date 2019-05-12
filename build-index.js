@@ -1,8 +1,8 @@
 const fs = require('fs')
 const fm = require('front-matter')
-// const md = require('markdown-it')({
-//   html: true,
-// })
+const md = require('markdown-it')({
+  html: true,
+})
 // const lunr = require('lunr')
 
 function ordinal (value) {
@@ -39,11 +39,14 @@ function nameToId(string) {
 }
 
 function cleanBody(text) {
-  return text.replace(/<condition(.*)\/>/, (match) => {
+  let returnText = text.replace(/<condition(.*)\/>/, (match) => {
     const condition = match.match(/id="(.*?)"/)
     const sub = match.match(/sub="(.*?)"/)
     return sub && sub[1] ? `${condition[1]}-${sub[1]}` : condition[1]
   })
+  returnText = md.render(returnText)
+  returnText = returnText.replace(/<*.?\/?>/,'')
+  return returnText
 }
 
 // "bestiary"
@@ -104,12 +107,13 @@ for (let dir of mdDirs) {
       case 'races':
         item.id = fc.attributes.id
         item.title = fc.attributes.name
-        item.body = cleanBody(fc.body)
-        item.body += `\n\n__Age__: ${fc.attributes.age}`
-        item.body += `\n\n__Alignment__: ${fc.attributes.alignment}`
-        item.body += `\n\n__Size__: ${fc.attributes.size}`
-        item.body += `\n\n__Speed__: ${fc.attributes.speed}`
-        item.body += `\n\n__Starting Credits__: ${fc.attributes.startingCredits}`
+        const body = [cleanBody(fc.body)]
+        body.push(fc.attributes.age)
+        body.push(fc.attributes.alignment)
+        body.push(fc.attributes.size)
+        body.push(fc.attributes.speed)
+        body.push(fc.attributes.startingCredits)
+        item.body = body.join(' ')
         if (fc.attributes.traits) {
           for (let trait of fc.attributes.traits) {
             const index = searchItems.findIndex(si => si.id === trait)

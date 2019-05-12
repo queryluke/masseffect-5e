@@ -23,28 +23,43 @@
   const _ = require('lodash')
 
   import SearchResult from '~/components/cards/SearchResult.vue'
+  import {mapActions, mapGetters} from 'vuex'
+
 
   export default {
     components: {SearchResult},
     data () {
       return {
-        search: '',
         searching: false,
         results: []
       }
     },
+    computed: {
+      ...mapGetters(['phbSearch']),
+      search: {
+        get () {
+          return this.phbSearch
+        },
+        set (value) {
+          this.setPhbSearch(value)
+        }
+      },
+    },
     watch: {
       search () {
         this.results = []
-        this.searching = true
         this.debouncedGetResults()
-
       }
     },
     created () {
       this.debouncedGetResults = _.debounce(this.getResults, 500)
+      if (this.search !== ''){
+        this.debouncedGetResults()
+        this.searching = true
+      }
     },
     methods: {
+      ...mapActions(['setPhbSearch']),
       getResults () {
         if (this.search === ''){
           this.results = []
@@ -56,7 +71,7 @@
             this.field('subType')
             this.field('qualifiers')
             this.field('body')
-            // this.metadataWhitelist = ['position']
+            this.metadataWhitelist = ['position']
 
             docs.forEach(function (doc) {
               this.add(doc)
