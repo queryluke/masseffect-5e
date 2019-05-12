@@ -145,8 +145,8 @@ for (let dir of mdDirs) {
         item.id = fc.attributes.id
         item.body = cleanBody(fc.body)
         if (fc.attributes.advancementOptions) {
-          item.body += `\n\n__${fc.attributes.advancementOptions[0].name}__: ${fc.attributes.advancementOptions[0].description}`
-          item.body += `\n\n__${fc.attributes.advancementOptions[1].name}__: ${fc.attributes.advancementOptions[1].description}`
+          item.body += ` ${fc.attributes.advancementOptions[0].description}`
+          item.body += ` ${fc.attributes.advancementOptions[1].description}`
         }
         break
       case 'vehicles':
@@ -155,14 +155,10 @@ for (let dir of mdDirs) {
         item.body = cleanBody(fc.body)
         if (fc.attributes.weapons) {
           for (let attack of fc.attributes.weapons) {
-            item.body += `\n\n__${attack.name}__. ${attack.damage}`
+            item.body += ` ${attack.damage}`
           }
         }
         break
-      case 'rules':
-        const rule = ruleList.find(r => r.id === fc.attributes.id)
-        console.log(rule)
-        // item.link =
       default:
         item.title = fc.attributes.name || fc.attributes.title
         item.id = fc.attributes.id || nameToId(item.title)
@@ -212,7 +208,7 @@ for (let file of jsonFiles) {
           item.body += thing.properties.join(', ')
         }
         if (thing.notes) {
-          item.body += `\n${thing.notes}`
+          item.body += ` ${thing.notes}`
         }
         break
       case 'bestiary':
@@ -223,44 +219,44 @@ for (let file of jsonFiles) {
           const splitKey = key.split(' ')
           const attrKey = `${splitKey[0].toLowerCase()}${splitKey[1] || ''}`
           if (thing[attrKey].length > 0) {
-            let groupString = `### ${key}\n`
+            let groupString = ` ${key}`
             for (let v  of thing[attrKey]) {
-              let string = `__${v.name}__`
+              let string = ` ${v.name}`
               switch(v.type) {
                 case 'weapon':
                 case 'grenade':
                   continue
                 case 'melee':
-                  string += `. _Melee Weapon Attack_: +${v.attackMod} to hit, reach ${v.range}m, ${v.target}\n_Hit_: ${v.hit}`
+                  string += ` Melee Weapon Attack +${v.attackMod} to hit, reach ${v.range}m, ${v.target} Hit ${v.hit}`
                   if (v.miss) {
-                    string += `\n_Miss: ${v.miss}`
+                    string += ` Miss: ${v.miss}`
                   }
                   break
                 case 'ranged':
-                  string += `. _Ranged Weapon Attack_: +${v.attackMod} to hit, range ${v.range}/${v.range * 3}m, ${v.target}\n_Hit_: ${v.hit}`
+                  string += ` Ranged Weapon Attack +${v.attackMod} to hit, range ${v.range}/${v.range * 3}m, ${v.target} Hit ${v.hit}`
                   if (v.miss) {
-                    string += `\n_Miss: ${v.miss}`
+                    string += ` Miss ${v.miss}`
                   }
                   break
                 default:
                   if (v.recharge) {
                     string += ` (${v.recharge})`
                   }
-                  string += `. ${v.description}`
+                  string += ` ${v.description}`
               }
-              groupString += `${string}\n\n`
+              groupString += `${string} `
             }
-            item.body += `${groupString}\n\n`
+            item.body += `${groupString} `
           }
         }
         break
       default:
         item.body = ''
         if (thing.feature) {
-          item.body += `${thing.feature}\n\n`
+          item.body += `${thing.feature} `
         }
         if (thing.setBonus) {
-          item.body += `${thing.setBonus}\n\n`
+          item.body += `${thing.setBonus} `
         }
         item.body += `${thing.description}`
         break
@@ -287,57 +283,43 @@ for (let klass of classes) {
   }
 
   const spellcasting = fm(fs.readFileSync(`./static/data/class_spellcasting/${klass.id}.md`, 'utf8'))
-  item.body += `\n\n## Spell Casting\n${spellcasting.body}`
+  item.body += ` Spell Casting ${spellcasting.body}`
 
   searchItems.push(item)
 
   let subclassFeatureIndex = 0;
   for (let p of klass.progression) {
     for (let f of p.features) {
+      if (f === 'ability_score_improvement') {
+        continue
+      }
       if (f === 'subclass') {
         for (let sc of klass.subclasses) {
-          const prepend = `### ${sc.name}`
           for (let scf of sc.features[subclassFeatureIndex]) {
-            searchItems.push(createScfItem(scf, p.level, klass.name, prepend))
+            searchItems.push(createScfItem(scf, p.level, [klass.name, sc.name]))
           }
         }
         subclassFeatureIndex++
       } else {
-        searchItems.push(createScfItem(f, p.level, klass.name))
+        searchItems.push(createScfItem(f, p.level, [klass.name]))
       }
     }
   }
 }
 
-function createScfItem(id, level, klass, prependBody) {
+function createScfItem(id, level, qualifiers) {
   const cf = fm(fs.readFileSync(`./static/data/class_features/${id}.md`, 'utf8'))
-  let body = cf.body.replace('{{ level }}', ordinal(level))
-  if (prependBody) {
-    body = `${prependBody}\n${body}`
-  }
+  const nthLevel = ordinal(level)
+  qualifiers.push(`${nthLevel}-level`)
   return {
-    id: cf.attributes.id,
+    id: `${cf.attributes.id}---${qualifiers[0]}`,
     title: cf.attributes.name,
     type: 'character',
-    subType: 'classes',
-    qualifiers: [klass],
-    body: cleanBody(body)
+    subType: 'class_features',
+    qualifiers: qualifiers,
+    body: cleanBody(cf.body.replace('{{ level }}', nthLevel))
   }
 }
-
-
-// const idx = lunr(function () {
-//   this.ref('id')
-//   this.field('title')
-//   this.field('type')
-//   this.field('subType')
-//   this.field('qualifiers')
-//   this.field('body')
-//
-//   searchItems.forEach(function (doc) {
-//     this.add(doc)
-//   }, this)
-// })
 
 searchItems.forEach((i) => {
   if (!i.id) {

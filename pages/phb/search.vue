@@ -85,7 +85,7 @@
         } else {
           const idx = lunr(function () {
             this.ref('id')
-            this.field('title')
+            this.field('title', {boost: 3})
             this.field('type')
             this.field('subType')
             this.field('qualifiers')

@@ -11,6 +11,7 @@
         p(v-html="description")
       div(v-show="showFull")
         markdown-file(v-if="mdComponents.includes(doc.subType)" v-bind:id="doc.id" v-bind:itemType="doc.subType")
+        markdown-file(v-if="doc.subType === 'class_features'" v-bind:id="doc.id.split('---')[0]" itemType="class_features" v-bind:context="levelContext")
         component(v-if="infoComponents.includes(doc.subType)" v-bind:is="component" v-bind="infoItem")
         stat-block(v-if="doc.subType === 'bestiary'" v-bind:stats="infoItem")
 
@@ -61,7 +62,8 @@
           tools: 'tools & kits',
           armor_mods: 'armor mods',
           armor_sets: 'armor mods',
-          weapon_mods: 'weapon mods'
+          weapon_mods: 'weapon mods',
+          class_features: 'class features'
         },
         mdComponents: ['backgrounds', 'conditions', 'feats', 'tools'],
         infoComponents: ['grenades', 'programs', 'spells', 'vehicles', 'armor_mods', 'armor_sets', 'weapons', 'weapon_mods']
@@ -95,9 +97,6 @@
         const endMark = `</span>`
         let text = this.snippets.map((s) => {
           let string = this.doc.body.substring(s.start, s.end)
-          if (s.end < 1) {
-            string = this.doc.body.substring(s.start)
-          }
           let totalIncrease = 0
           for(let p of s.positions) {
             const hlStart = p[0] - s.start + totalIncrease
@@ -123,11 +122,15 @@
                 const resultLength = position[1]
 
                 const start = resultStart - 30 <= 0 ? 0 : this.doc.body.indexOf(' ', (resultStart - 30))
-                const end = this.doc.body.indexOf(' ', (resultStart + resultLength + 100))
+                let end = this.doc.body.indexOf(' ', (resultStart + resultLength + 100))
+                if (end < 0) {
+                  end = 1000000
+                }
 
                 // check for existing snippet
                 let skip = false
                 snippets.forEach((s, index) => {
+
                   // If the start of the result is within an existing snippet
                   if (resultStart >= s.start && resultStart <= s.end) {
                     // extend the length of the snippet only if the length of the result exceeds the snippets end
@@ -172,9 +175,10 @@
       subType () {
         return this.subTypeNames[this.doc.subType] || this.doc.subType
       },
-      qualifiers () {
-        if (this.doc.qualifiers.length > 0) {
-          return `> ${this.doc.qualifiers.join(' > ')}`
+      levelContext() {
+        if (this.doc.subType === 'class_features') {
+          const level = this.doc.qualifiers[this.doc.qualifiers.length - 1].replace(/\D/g, '')
+          return { level }
         }
       }
     },
