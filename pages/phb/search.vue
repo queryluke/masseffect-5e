@@ -19,8 +19,11 @@
         v-bind:result="result"
       ).mb-2
         p {{ show(result.ref) }}
-    div(v-if="searching")
-      p searching
+    div.text-xs-center
+      div(v-if="searching")
+        v-progress-circular(size="70" width="7" color="primary" indeterminate)
+      div(v-else-if="search !== '' && results.length === 0")
+        p.headline.font-weight-thin #[em No results found]
 
 </template>
 
@@ -57,6 +60,7 @@
       search () {
         this.results = []
         this.debouncedGetResults()
+        this.searching = true
       },
     },
     created () {
@@ -79,7 +83,6 @@
         if (this.search === ''){
           this.results = []
         } else {
-          const filters = this.filters
           const idx = lunr(function () {
             this.ref('id')
             this.field('title')
