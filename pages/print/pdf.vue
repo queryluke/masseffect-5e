@@ -175,7 +175,7 @@
         h4(:id="`${type.replace(' ', '_').toLowerCase()}`").display-1 {{ type }}s
         v-layout(row wrap)
           v-flex(v-for="weapon in weapons.filter(weapon => weapon.type === type)" v-bind:key="weapon.id" xs12 md6 d-flex).pa-1
-            weapon-info(:weapon="weapon").info-card
+            weapon-info(:item="weapon").info-card
       h4(id="weapon_mods").display-1 Weapon Mods
       table.table
         thead
@@ -255,7 +255,7 @@
       h3(id="spells").display-2 Spells
       v-layout(row wrap)
         v-flex(v-for="spell in spells" v-bind:key="spell.id" xs12 md6 d-flex).pa-3
-          spell-info(v-bind:spell="spell" v-bind:key="spell.id").info-card
+          spell-info(v-bind:item="spell" v-bind:key="spell.id").info-card
 
     // Bestiary
     section.page
@@ -264,7 +264,7 @@
         v-flex(v-for="npc in bestiary" v-bind:key="npc.id" xs12 md6 d-flex).pa-3
           stat-block(:stats="npc").info-card
 
-    // Spells
+    // vehicles
     section.page
       h3(id="vehicles").display-2 Vehicles
       h4.display-1 Transports
