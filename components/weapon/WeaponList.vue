@@ -15,7 +15,7 @@
             v-flex(:class="headers[5].classes").mt-1 {{ item.cost | groupDigits(',') }}
         v-card.grey.lighten-3
           v-card-text
-            weapon-info(:weapon="item").mt-2
+            weapon-info(:item="item").mt-2
           v-card-actions
             bookmark-button(:card="item" type="weapon" v-bind:props="{flat: true}")
 </template>

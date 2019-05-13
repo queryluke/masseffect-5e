@@ -19,7 +19,7 @@
               spell-damage-effect(:spell="item")
         v-card.grey.lighten-3
           v-card-text
-            spell-info(:spell="item").mt-2
+            spell-info(:item="item").mt-2
           v-card-actions
             bookmark-button(:card="item" type="spell" v-bind:props="{flat: true}")
 </template>

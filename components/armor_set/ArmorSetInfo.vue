@@ -2,20 +2,21 @@
   div
     v-layout
       v-flex.xs12
-        h4.headline {{ set.name }}
-          v-chip(:color="rarityColors[set.rarity]" small dark).ml-3.text-uppercase {{ set.rarity }}
-          v-chip(v-if="andromeda" small dark color="secondary").ml-3 Andromeda
-        p #[em {{ set.description }}]
+        p.display-1.font-weight-thin.mb-2
+          span(v-if="title") {{ item.name }}
+        span(:class="rarityTextColors[item.rarity]").text-uppercase.body-2 {{ item.rarity }}
+        span(v-if="andromeda").text-uppercase.body-2.secondary--text.ml-3 Andromeda
+        p #[em {{ item.description }}]
     v-layout(row wrap flex-start)
       v-flex.xs4.attribute.mb-2
         label Type
-        div {{ set.type }}
+        div {{ item.type }}
       v-flex.xs4.attribute.mb-2
         label Armor Type
-        div {{ set.armorType }}
+        div {{ item.armorType }}
       v-flex.xs4.attribute.mb-2
         label Cost
-        div {{ set.cost | groupDigits(',') }}
+        div {{ item.cost | groupDigits(',') }}
       v-flex.xs12
         div.hr
         ul.list-unstyled
@@ -33,21 +34,25 @@
 
   export default {
     props: {
-      set: {
+      item: {
         type: Object,
         default: () => { return {} }
       },
+      title: {
+        type: Boolean,
+        default: true
+      }
     },
     computed: {
-      ...mapGetters('itemList', ['rarityColors']),
+      ...mapGetters('itemList', ['rarityTextColors']),
       benefits () {
-        return this.set.feature ? this.set.feature.split('--').map(f => f.trim()) : []
+        return this.item.feature ? this.item.feature.split('--').map(f => f.trim()) : []
       },
       setBonus () {
-        return this.set.setBonus ? this.set.setBonus.split('--').map(f => f.trim()) : []
+        return this.item.setBonus ? this.item.setBonus.split('--').map(f => f.trim()) : []
       },
       andromeda () {
-        return this.set.andromeda === 'x'
+        return this.item.andromeda === 'x'
       }
     },
     methods: {

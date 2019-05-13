@@ -16,5 +16,13 @@ export default {
   sidebar: true,
   rulebar: true,
   searchbar: false,
+  phbSearch: '',
+  searchFilters: [
+    { id: 'character', textColor: 'light-green--text text--darken-4', color: 'light-green darken-4', icon: 'face' },
+    { id: 'equipment', textColor: 'deep-orange--text text--darken-4', color: 'deep-orange darken-4', icon: 'build' },
+    { id: 'rule', textColor: 'secondary--text', color: 'secondary', icon: 'gavel' },
+    { id: 'spell', textColor: 'purple--text', color: 'purple', icon: 'whatshot' },
+    { id: 'bestiary', textColor: 'primary--text', color: 'primary', icon: 'pets' }
+  ],
   version: config.version
 }

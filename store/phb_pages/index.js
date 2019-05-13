@@ -25,7 +25,7 @@ export default {
     },
     setSearchbar({dispatch}, payload) {
       dispatch('setSearchbar', payload, {root: true})
-    }
+    },
   },
   getters: {
     activeClassTab: (state, getters, rootState) => rootState.classPage.active,

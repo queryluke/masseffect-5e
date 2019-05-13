@@ -12,7 +12,7 @@
             v-flex(:class="headers[2].classes") {{ item.installation ? 'Yes' : '--' }}
         v-card.grey.lighten-3
           v-card-text
-            program-info(:program="item").mt-2
+            program-info(:item="item").mt-2
           v-card-actions
             bookmark-button(:card="item" type="program" v-bind:props="{flat: true}")
 </template>

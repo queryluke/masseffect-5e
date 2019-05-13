@@ -39,7 +39,7 @@
       markdown-file(:id="item.id" itemType="programs")
 
     // Spells
-    div(v-for="item in spells" v-bind:key="item.id")
+    // div(v-for="item in spells" v-bind:key="item.id")
       h1.title {{ item.name }}
       markdown-file(:id="item.id" itemType="spells")
       h2.subheading Advanced Options

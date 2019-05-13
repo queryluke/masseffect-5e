@@ -1,5 +1,15 @@
 <template lang="pug">
   v-navigation-drawer(fixed clipped app v-model="isActive")
+    v-text-field(
+      append-icon="search"
+      label="Search"
+      single-line
+      hide-details
+      solo
+      v-model="search"
+      v-on:keyup.enter="submit"
+      clearable
+    ).ma-2
     v-list(dense)
       template(v-for="item in items")
         v-list-group(v-if="item.items" v-bind:prepend-icon="item.icon" no-action)
@@ -22,11 +32,12 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
+  import {mapActions, mapGetters} from 'vuex'
 
   export default {
     data () {
       return {
+        search: '',
         items: [
           {
             header: 'Player\'s Manual'
@@ -92,6 +103,7 @@
             items: [
               { href: '/phb/appendix/conditions', title: 'Conditions' },
               { href: '/phb/appendix/skills', title: 'Skills' },
+              { href: '/phb/appendix/weapon-properties', title: 'Weapon Properties' },
             ]
           },
           {
@@ -140,6 +152,15 @@
         set (val) {
           this.$store.commit('toggleSidebar', val)
         }
+      },
+    },
+    methods: {
+      ...mapActions(['setPhbSearch']),
+      submit() {
+        this.setPhbSearch(this.search)
+        this.$router.push({
+          path: '/phb/search'
+        })
       }
     }
   }

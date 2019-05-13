@@ -50,6 +50,9 @@ export default {
     'phb-appendix-skills': {
       name: 'Skills'
     },
+    'phb-appendix-weapon-properties': {
+      name: 'Weapon Properties'
+    },
     'phb-appendix-found-codices': {
       name: 'Found Codices'
     },
@@ -122,6 +125,9 @@ export default {
     },
     'for-gms-encounter-builder': {
       name: 'Encounter Builder'
+    },
+    'phb-search': {
+      name: 'Search'
     }
   }
 }

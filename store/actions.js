@@ -19,5 +19,8 @@ export default {
   },
   setSearchbar ({commit}, payload) {
     commit('setSearchbar', payload)
+  },
+  setPhbSearch ({commit}, payload) {
+    commit('setPhbSearch', payload)
   }
 }

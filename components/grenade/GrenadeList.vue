@@ -10,7 +10,7 @@
           v-flex.hidden-sm-and-down.md2 {{ grenade.blast }}
       v-card.grey.lighten-3
         v-card-text
-          grenade-info(:grenade="grenade")
+          grenade-info(:item="grenade")
         v-card-actions
           bookmark-button(:card="grenade" type="grenade" v-bind:props="{flat: true}")
 </template>

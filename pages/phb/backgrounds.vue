@@ -13,7 +13,7 @@
         div(slot="header") {{ item.name }}
         v-card.grey.lighten-3
           v-card-text
-            p.title {{ item.name }}
+            p.display-1.font-weight-thin {{ item.name }}
             markdown-file(:id="item.id" itemType="backgrounds")
 </template>
 

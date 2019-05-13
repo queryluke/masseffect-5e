@@ -1,6 +1,6 @@
 <template lang="pug">
   div.markdown-content
-    markdown-content(:component="item.vue")
+    markdown-content(:component="item.vue" v-bind:context="context")
 </template>
 
 <script>
@@ -19,6 +19,10 @@
         default: ''
       },
       header: {
+        type: Object,
+        default: () => { return {} }
+      },
+      context: {
         type: Object,
         default: () => { return {} }
       }

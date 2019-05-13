@@ -32,6 +32,7 @@
             v-flex.hidden-xs-only.sm6.lg6 {{ feat.note }}
         v-card
           v-card-text.grey.lighten-3
+            p.display-1.font-weight-thin {{ feat.name }}
             div(v-if="feat.prerequisite")
               p #[strong Prerequisite]: #[em {{ feat.prerequisite }}]
             markdown-file(:id="feat.id" itemType="feats")
