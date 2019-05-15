@@ -37,7 +37,6 @@
   export default {
     data () {
       return {
-        search: '',
         items: [
           {
             header: 'Player\'s Manual'
@@ -144,7 +143,7 @@
       }
     },
     computed: {
-      ...mapGetters(['bookmarkCount', 'getVersion']),
+      ...mapGetters(['bookmarkCount', 'getVersion', 'phbSearch']),
       isActive: {
         get () {
           return this.$store.state.sidebar
@@ -153,14 +152,25 @@
           this.$store.commit('toggleSidebar', val)
         }
       },
+      search: {
+        get () {
+          return this.phbSearch
+        },
+        set (val) {
+          this.setPhbSearch(val)
+        }
+      }
+
     },
     methods: {
       ...mapActions(['setPhbSearch']),
       submit() {
-        this.setPhbSearch(this.search)
         this.$router.push({
           path: '/phb/search'
         })
+        if (this.$vuetify.breakpoint.mdAndDown) {
+          this.isActive = false
+        }
       }
     }
   }
