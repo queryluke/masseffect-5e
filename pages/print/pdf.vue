@@ -1,5 +1,5 @@
 <template lang="pug">
-  main
+  main(id="pdf")
     v-navigation-drawer(v-model="drawer" fixed clipped floating right id="spvNavDrawer" class="blue-grey lighten-5")
       v-list(dense).pb-5
         template(v-for="item in toc")
@@ -543,15 +543,65 @@
   }
 </script>
 
-<style>
+<style lang="scss">
 
-  main {
-    margin-left: 10px;
-  }
+  main#pdf {
+    margin-left: 10px;\
+    #phbLogo {
+      width: 100%;
+      height: auto;
+    }
 
-  #phbLogo {
-    width: 100%;
-    height: auto;
+    #tableOfContents {
+      display: none;
+    }
+    .toc-header {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .info-card {
+      padding: 4px;
+      border: 3px solid #eee
+    }
+
+    .class-feature {
+      margin-bottom: 2em;
+    }
+    .class-feature .title {
+      margin-bottom: 0;
+    }
+    .class-feature p {
+      margin-bottom: 5px;
+    }
+
+    section.page:first-of-type {
+      margin-top: 150px;
+    }
+    section.page {
+      max-width: 1200px;
+      margin: auto;
+      padding: 3em 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    #spvToolbar {
+      z-index: 6;
+    }
+
+    .table, table.v-table, .table.alt-table {
+      margin: 10px;
+      border: 1px solid #ddd;
+    }
+
+    .table thead, table.v-table thead, .table.alt-table thead {
+      border-bottom: 2px solid #bbb;
+    }
+
+    .table thead tr, .table tbody td, .table thead th, table.v-table thead tr, table.v-table tbody td, table.v-table tbody th {
+      height: auto !important;
+      padding: 0 4px !important;
+    }
   }
 
   @media screen and (min-width: 960px) {
@@ -559,128 +609,73 @@
       width: auto;
       height: 90px;
     }
-    main {
+    main#pdf {
       margin-left: 0;
     }
   }
 
-  #tableOfContents {
-    display: none;
-  }
-  .toc-header {
-    font-size: 18px;
-    font-weight: 600;
-  }
-
-  .info-card {
-    padding: 4px;
-    border: 3px solid #eee
-  }
-
-  .class-feature {
-    margin-bottom: 2em;
-  }
-  .class-feature .title {
-    margin-bottom: 0;
-  }
-  .class-feature p {
-    margin-bottom: 5px;
-  }
-
-  section.page:first-of-type {
-    margin-top: 150px;
-  }
-  section.page {
-    max-width: 1200px;
-    margin: auto;
-    padding: 3em 0;
-    border-bottom: 1px solid #ddd;
-  }
-
-  #spvToolbar {
-    z-index: 6;
-  }
-
-  .table, table.v-table, .table.alt-table {
-    margin: 10px;
-    border: 1px solid #ddd;
-  }
-
-  .table thead, table.v-table thead, .table.alt-table thead {
-    border-bottom: 2px solid #bbb;
-  }
-
-  .table thead tr, .table tbody td, .table thead th, table.v-table thead tr, table.v-table tbody td, table.v-table tbody th {
-    height: auto !important;
-    padding: 0 4px !important;
-  }
 
   @media print {
     .v-image {
       display: none;
     }
 
-    main {
+    main#pdf {
       margin-left: 0;
-    }
-
-    #tableOfContents {
-      display: block;
-    }
-
-    p, li, div {
-      font-size: 12px;
-      line-height: 16px;
-    }
-
-    p, div {
-      margin-bottom: 8px;
-    }
-
-    #spvNavDrawer, #spvToolbar, #download {
-      display: none;
-    }
-
-    .full-width-td {
-      display: none;
-    }
-
-     {
-      padding-top: 0;
-    }
-
-    .layout.row .flex.md8 {
-      width: 75%;
-      flex-basis: 75%;
-    }
-
-    .layout.row .flex.md6 {
-      width: 50%;
-      flex-basis: 50%;
-    }
-
-    .layout.row .flex.md4, .layout.row .flex.sm3 {
-      width: 25%;
-      flex-basis: 25%;
-    }
-
-    section.page {
-      width: 100%;
-      max-width: 100%;
-      padding: 0;
-      border-bottom: none;
-      page-break-after: always;
-    }
-    .pdf-page {
-      page-break-after: always;
-    }
-
-    @page:right{
-      @bottom-right {
-        content: counter(page);
+      #tableOfContents {
+        display: block;
       }
-    }
 
-    #phbLogo { width: 6in }
+      p, li, div {
+        font-size: 12px;
+        line-height: 16px;
+      }
+
+      p, div {
+        margin-bottom: 8px;
+      }
+
+      #spvNavDrawer, #spvToolbar, #download {
+        display: none;
+      }
+
+      .full-width-td {
+        display: none;
+      }
+
+      .layout.row .flex.md8 {
+        width: 75%;
+        flex-basis: 75%;
+      }
+
+      .layout.row .flex.md6 {
+        width: 50%;
+        flex-basis: 50%;
+      }
+
+      .layout.row .flex.md4, .layout.row .flex.sm3 {
+        width: 25%;
+        flex-basis: 25%;
+      }
+
+      section.page {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        border-bottom: none;
+        page-break-after: always;
+      }
+      .pdf-page {
+        page-break-after: always;
+      }
+
+      @page:right{
+        @bottom-right {
+          content: counter(page);
+        }
+      }
+
+      #phbLogo { width: 6in }
+    }
   }
 </style>
