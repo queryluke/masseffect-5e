@@ -19,6 +19,7 @@
       v-flex.xs12
         div.hr
         p {{ item.feature }}
+      p(v-if="item.createdBy") #[small #[em Created By: {{ item.createdBy }}]]
 </template>
 
 <script>
