@@ -11,5 +11,5 @@ You can prepare the advanced version of the selected spell at the cost of 1 prep
 You can cast a more potent version of this spell at higher levels. A 2 tech point version at 7th,
 3 tech point version at 11th, and 4 tech point version at 15th.
 
-If you wish to apply this feature to a spell you've already learned, you may choose to learn or advance a different tech
-power instead.
+With 8 hours of programming your omni-tool, you can exchange the selected spell with either Cryo Blast, Incinerate, or Overload.
+ 
