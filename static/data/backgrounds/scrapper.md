@@ -12,7 +12,7 @@ starting_credits: 500
 
 __Skill Proficiencies__. Engineering, Survival
 
-__Tool Proficiencies__. Tinker's tools and your choice of either starship system (power core), starship system (defenses),
+__Tool Proficiencies__. Tinker's tools and your choice of either starship system (drive), starship system (SSC),
 or starship system (weapons)
 
 __Equipment__. Tinker's tools, a set of common clothes, 2 omni-gel, a backpack of mechanical trinkets and scraps that can also carry

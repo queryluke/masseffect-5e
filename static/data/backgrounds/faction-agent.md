@@ -15,9 +15,7 @@ starting_credits: 3000
 
 __Skill Proficiencies__. Choose two among Deception, Investigation, Persuasion, or Stealth.
 
-__Tool Proficiencies__. Disguise kit and your choice of thieves' tools, hacking tools,
-starship system (cyber warfare), starship system (defenses), starship system (navigation), starship system (specialty),
-or starship system (weapons)
+__Tool Proficiencies__. Disguise kit and your choice of thieves' tools, hacking tools, or one starship system.
 
 __Equipment__. A disguise kit, a set thieves' tools or hacking tools, a badge or emblem of your faction,
 a set of bio-encryption keys, and 1,000 credits

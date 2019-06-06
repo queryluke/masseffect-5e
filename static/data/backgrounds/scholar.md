@@ -28,14 +28,14 @@ You gain a tool proficiency based on your choice.
 
 1d8 | Field of Study | Proficiency
 --- | --- | ---
-1 | Chemistry | Chemist's kit or Brewer's kit
+1 | Chemistry | Chemist's supplies or brewer's supplies
 2	| Astronomy | Starship system (navigation)
-3	| Engineering | Tinker's Tools
-4	| Physics | Starship system (power core)
-5	| Computer Science | Starship system (cyber warfare)
+3	| Engineering | Tinker's tools
+4	| Physics | Starship system (drive)
+5	| Computer Science | Starship system (EWS)
 6	| Biology | Medical kit
 7	| Philosophy | choose either one musical instrument or one gaming set
-8	| General Studies | Starship system (specialty)
+8	| General Studies | choose either brewer's supplies, hacking tools, or starship system (SSC) 
 
 <div class="hr"></div>
 

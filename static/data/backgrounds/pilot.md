@@ -13,7 +13,7 @@ starting_credits: 2500
 
 __Skill Proficiencies__. Perception, Vehicle Handling
 
-__Tool Proficiencies__. Choose two from among starship systems (helm), starship systems (navigation), vehicles (air),
+__Tool Proficiencies__. Choose two from among starship system (helm), starship system (navigation), vehicles (air),
 vehicles (land), vehicles (space), or vehicles (water)
 
 __Equipment__. A uniform, a collection of maps, 2,500 credits
