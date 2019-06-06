@@ -33,7 +33,7 @@
     }
   ],
   "hp": {
-    "numDice": 14,
+    "numDice": 4,
     "die": 8
   },
   "id": "eclipse_trooper",
