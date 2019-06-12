@@ -124,7 +124,7 @@
               {href: '/for-gms/loot-generator', title: 'Loot Generator'},
               {href: '/for-gms/grunts', title: 'Grunt Generator'},
               {href: '/for-gms/armor-creation', title: 'Creating Armor'},
-              {href: '/for-gms/encounter-builder', title: 'Encounter Builder'}
+              {href: '/for-gms/encounter-builder', title: 'Encounter Builder'},
             ]
           },
           {
