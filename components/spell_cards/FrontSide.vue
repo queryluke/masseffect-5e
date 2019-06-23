@@ -50,6 +50,10 @@
       spell: {
         type: Object,
         default: () => { return {} }
+      },
+      cardOption: {
+        type: String,
+        default: 'single'
       }
     },
     data () {
@@ -86,60 +90,3 @@
   }
 </script>
 
-<style lang="stylus">
-  biotic-color = #6467b9;
-  tech-color = #d98300;
-  combat-color = #d42620;
-
-  .spell-card
-    float:left;
-    font-size:10px;
-    margin:0.3in;
-    padding:0.1in;
-    width:3.5in;
-    height:5in;
-    overflow:hidden;
-    page-break-after: always;
-    page-break-inside: avoid;
-
-    .spell-text p {
-      margin-bottom: 3px;
-    }
-
-    .aoe-icon {
-      width: 15px;
-      height: 15px;
-    }
-    label
-      text-transform: uppercase;
-
-    table
-      width: 100%;
-      font-size: 10px;
-      border-top: solid 0.05in black;
-      border-bottom: solid 0.05in black;
-
-      td
-        width: 50%;
-
-  .biotic-card
-    background-color: biotic-color
-    table
-      border-color: biotic-color
-    label
-      color: biotic-color
-
-  .tech-card
-    background-color: tech-color
-    table
-      border-color: tech-color
-    label
-      color: tech-color
-
-  .combat-card
-    background-color: combat-color
-    table
-      border-color: combat-color
-    label
-      color: combat-color
-</style>
