@@ -125,6 +125,7 @@
               {href: '/for-gms/grunts', title: 'Grunt Generator'},
               {href: '/for-gms/armor-creation', title: 'Creating Armor'},
               {href: '/for-gms/encounter-builder', title: 'Encounter Builder'},
+              {href: '/missions', title: 'Missions'},
             ]
           },
           {
