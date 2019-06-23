@@ -36,15 +36,19 @@ end
 
 def availability(model)
   availability = []
-  ['assault_rifle','heavy_pistol', 'smg', 'shotgun', 'sniper_rifle'].each do |w|
-    availability << w.split('_').map{ |w| w.capitalize }.join(' ') unless model[w.camelize(false)].nil?
-  end
+  availability << 'Assault Rifle' if model['assaultRifle']
   model.delete('assaultRifle')
+  availability << 'Heavy Pistol' if model['heavyPistol']
   model.delete('heavyPistol')
+  availability << 'SMG' if model['smg']
   model.delete('smg')
+  availability << 'Shotgun' if model['shotgun']
   model.delete('shotgun')
+  availability << 'Sniper Rifle' if model['sniperRifle']
   model.delete('sniperRifle')
-  availability.length == 5 ? 'All' : availability.join(', ')
+  availability << 'Melee' if model['melee']
+  model.delete('melee')
+  availability
 end
 
 def roman_numeral(level)

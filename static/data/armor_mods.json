@@ -691,5 +691,27 @@
     "manu": "Alliance",
     "notes": "Special",
     "id": "medi-gel_regulator_chest"
+  },
+  {
+    "name": "Tactical Holsters",
+    "rarity": "Uncommon",
+    "type": "Chest",
+    "description": "Magnetic clips that use VI sensors to lock and unlock holstered weapons into position, greatly increasing the time needed to exchange weapons in combat.",
+    "feature": "You can holster one weapon then draw another weapon as a free action.",
+    "cost": "8000",
+    "manu": "Alliance",
+    "notes": "Special",
+    "id": "tactical_holsters_chest"
+  },
+  {
+    "name": "Tactical Holsters",
+    "rarity": "Uncommon",
+    "type": "Legs",
+    "description": "Magnetic clips that use VI sensors to lock and unlock holstered weapons into position, greatly increasing the time needed to exchange weapons in combat.",
+    "feature": "You can holster one weapon then draw another weapon as a free action.",
+    "cost": "8000",
+    "manu": "Alliance",
+    "notes": "Special",
+    "id": "tactical_holsters_legs"
   }
 ]

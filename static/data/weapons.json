@@ -1326,7 +1326,8 @@
     "id": "kahjean_venom_dagger",
     "properties": [
       "Finesse",
-      "Light"
+      "Light",
+      "Thrown"
     ]
   },
   {
@@ -1339,7 +1340,7 @@
     "heat": null,
     "damage": "1d8",
     "range": "2",
-    "notes": "Versatile (1d10). When you deal damage with this weapon, you gain hit point equal to half the damage dealt. Hit point gained this way cannot be more than your hit point maximum.",
+    "notes": "Versatile (1d10). When you deal damage with this weapon, you gain hit points equal to half the damage dealt. Hit point gained this way cannot be more than your hit point maximum.",
     "npcHit": null,
     "npcMiss": null,
     "dmgType": "slashing",
@@ -1441,7 +1442,8 @@
     "id": "omni-blade",
     "properties": [
       "Light",
-      "Finesse"
+      "Finesse",
+      "Special"
     ]
   },
   {
@@ -1464,7 +1466,8 @@
     "id": "omni-hammer",
     "properties": [
       "Bludgeoning",
-      "Light"
+      "Light",
+      "Special"
     ]
   },
   {
@@ -1487,7 +1490,8 @@
     "id": "omni-taser",
     "properties": [
       "Finesse",
-      "Light"
+      "Light",
+      "Special"
     ]
   },
   {
@@ -1509,7 +1513,8 @@
     "createdBy": null,
     "id": "omni-torch",
     "properties": [
-      "Light"
+      "Light",
+      "Special"
     ]
   },
   {
@@ -1532,7 +1537,8 @@
     "id": "omni-whip",
     "properties": [
       "Finesse",
-      "Reach"
+      "Reach",
+      "Special"
     ]
   },
   {
