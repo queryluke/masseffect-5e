@@ -140,6 +140,7 @@
       page-break-after: always;
       page-break-inside: avoid;
       padding: 0.1in;
+      border-radius: 10px;
 
       &.single {
         font-size:10px;
@@ -155,6 +156,10 @@
         margin: 0.08333in;
       }
 
+      .v-card {
+        border-radius: 5px;
+      }
+
       .spell-text p {
         margin-bottom: 3px;
       }
@@ -168,22 +173,17 @@
         text-transform: uppercase;
       }
 
-      table {
-        width: 100%;
-        font-size: 10px;
-        border-top: solid 0.05in black;
-        border-bottom: solid 0.05in black;
-
-        td {
-          width: 50%;
-        }
+      .spell-info {
+        border: 5px solid black;
+        border-right: none;
+        border-left: none;
       }
     }
 
     .biotic-card {
       background-color: $biotic-color;
 
-      table {
+      .spell-info {
         border-color: $biotic-color;
       }
       label {
@@ -194,7 +194,7 @@
     .tech-card {
       background-color: $tech-color;
 
-      table {
+      .spell-info {
         border-color: $tech-color;
       }
       label {
@@ -205,7 +205,7 @@
     .combat-card {
       background-color: $combat-color;
 
-      table {
+      .spell-info {
         border-color: $combat-color;
       }
       label {

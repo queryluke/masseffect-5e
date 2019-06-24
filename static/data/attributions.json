@@ -60,34 +60,70 @@
     "source": "https://www.flickr.com/photos/151138113@N08/36714274741/"
   },
   {
-    "title":"Cube",
+    "title":"Isometric shape cube",
     "path": "/images/aoe/cube.svg",
-    "attribution": "Cube by Hopkins from the Noun Project",
-    "source":"https://thenounproject.com/search/?q=cube&i=912031"
+    "attribution": "Isometric shape cube by icon 54 from the Noun Project",
+    "source":"https://thenounproject.com/term/isometric-shape-cube/1552573/"
   },
   {
     "title": "line",
     "path": "/images/aoe/line.svg",
     "attribution": "line by Adnen Kadri from the Noun Project",
-    "source": "https://thenounproject.com/search/?q=line&i=919807"
+    "source": "https://thenounproject.com/search/?q=line%20path&i=834147"
   },
   {
-    "title": "cone",
+    "title": "Cone geometric shape",
     "path": "/images/aoe/cone.svg",
-    "attribution": "cone by Lalitha from the Noun Project",
-    "source": "https://thenounproject.com/search/?q=cone&i=1165087"
+    "attribution": "Cone geometric shape by icon 54 from the Noun Project",
+    "source": "https://thenounproject.com/term/cone-geometric-shape/1552567/"
   },
   {
     "title": "Sphere",
     "path": "/images/aoe/sphere.svg",
-    "attribution": "Sphere by Randomhero from the Noun Project",
-    "source": "https://thenounproject.com/search/?q=sphere&i=647481"
+    "attribution": "Sphere by icon 54 from the Noun Project",
+    "source": "https://thenounproject.com/term/sphere/1552590/"
   },
   {
-    "title": "Cylinder",
+    "title": "Cylinder shape rod",
     "path": "/images/aoe/cylinder.svg",
-    "attribution": "Cylinder by Lalitha from the Noun Project",
-    "source": "https://thenounproject.com/search/?q=cylinder&i=1165108"
+    "attribution": "Cylinder shape rod by icon 54 from the Noun Project",
+    "source": "https://thenounproject.com/term/cylinder-shape-rod/1552571/"
+  },
+  {
+    "title": "Electricity",
+    "path": "/images/spells/lightning.svg",
+    "attribution": "Electricity by yudi from the Noun Project",
+    "source": "https://thenounproject.com/term/electricity/1890678/"
+  },
+  {
+    "title": "explosion",
+    "path": "/images/spells/detonate.svg",
+    "attribution": "explosion by Marco Livolsi from the Noun Project",
+    "source": "https://thenounproject.com/term/explosion/2253872/"
+  },
+  {
+    "title": "Snowflake",
+    "path": "/images/spells/cold.svg",
+    "attribution": "Snowflake by Landan Lloyd from the Noun Project",
+    "source": "https://thenounproject.com/term/snowflake/1541877/"
+  },
+  {
+    "title": "Fire",
+    "path": "/images/spells/fire.svg",
+    "attribution": "Fire by Vectors Market from the Noun Project",
+    "source": "https://thenounproject.com/term/fire/1932875/"
+  },
+  {
+    "title": "skill magic shock",
+    "path": "/images/spells/necrotic.svg",
+    "attribution": "skill magic shock by Maxicons from the Noun Project",
+    "source": "https://thenounproject.com/term/skill-magic-shock/2360168/"
+  },
+  {
+    "title": "effect teleport",
+    "path": "/images/spells/force.svg",
+    "attribution": "effect teleport by Maxicons from the Noun Project",
+    "source": "https://thenounproject.com/term/effect-teleport/2360029/"
   }
 ]
 

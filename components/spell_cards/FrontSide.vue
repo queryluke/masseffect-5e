@@ -3,28 +3,20 @@
     v-card(height="100%").elevation-0
       v-layout(row wrap)
         v-flex(xs12).text-xs-center.py-1
-          p.title.mb-1 {{ spell.name }}
-          span {{ cardTags.join(" &bull; ") }}
-          table
-            tr
-              td
-                label Casting Time
-                div {{ spell.castingTime }}
-              td
-                label Range (AOE)
-                div
-                  spell-range-area(:spell="spell")
-            tr
-              td
-                label Duration
-                div
-                  spell-duration(:spell="spell", :verbose="true")
-              td
-                label
-                  span(v-if="spell.primes") Primes
-                  span(v-if="spell.primes && spell.detonates").mx-2 &&
-                  span(v-if="spell.detonates") Detonates
-                div(v-if="spell.primes") {{spell.primes}}
+          p.title.mb-0.text-uppercase.font-weight-black {{ spell.name }}
+        v-flex(xs12).text-xs-center.spell-info
+          v-layout(row)
+            v-flex(xs4)
+              label Casting Time
+              div {{ castingTime }}
+            v-flex(xs4)
+              label Range (AOE)
+              div
+                spell-range-area(:spell="spell", :size="12")
+            v-flex(xs4)
+              label Duration
+              div
+                spell-duration(:spell="spell", :verbose="false", :c-size="12")
         v-flex.pa-1.spell-text
           markdown-file(:id="spell.id" itemType="spells")
           div.adv-options.mt-1
@@ -32,6 +24,8 @@
             div(v-for="(option, i) in spell.advancementOptions" v-bind:key="i")
               p #[strong {{ option.name }}]: {{ option.description }}
               p(v-if="i == 0").text-xs-center #[strong --OR--]
+      v-avatar(size="20" color="white" v-if="spell.primes").primes
+        img(:src="`/images/spells/${spell.primes}.svg`" v-bind:alt="spell.primes")
 
 </template>
 
@@ -68,6 +62,13 @@
       }
     },
     computed: {
+      castingTime () {
+        if (this.spell.castingTime.match(/reaction/gi)) {
+          return 'Reaction'
+        } else {
+          return this.spell.castingTime
+        }
+      },
       cardType () {
         return `${this.spell.type}-card`
       },
@@ -89,4 +90,3 @@
     }
   }
 </script>
-
