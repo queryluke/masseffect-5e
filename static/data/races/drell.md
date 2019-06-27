@@ -15,7 +15,7 @@ abilityScoreIncrease:
     ability: Dexterity
   - amount: 1
     ability: Wisdom
-size: Drell range from under 5 to over 6 feet tall and have slender builds. Your size is Medium.
+size: Drell range from under 150 to 180 cm tall and have slender builds. Your size is Medium.
 speed: Their light frames and wiry strength make drell slightly faster than other races. Your base walking speed is 12m.
 snippet: The drell are a reptile-like race that was rescued from their dying homeworld by the hanar following the first contact between the two. Since then, the drell have remained loyal to the hanar for their camaraderie and have fit comfortably into galactic civilization.
 startingCredits: Instead of your class's starting equipment, you may start with 6d8 x 1000 + 10,000 credits to buy your own equipment.

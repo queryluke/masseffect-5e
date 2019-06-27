@@ -15,7 +15,7 @@ abilityScoreIncrease:
     ability: Intelligence
   - amount: 1
     ability: Dexterity
-size: Salarians are tall with elongated bodies, with a height between 6 and 7 feet yet a weight below 100 lbs. Your size is Medium.
+size: Salarians are tall with elongated bodies, with a height between 180 and 210 cm (6 to 7 feet), yet a weight below 100 lbs. Your size is Medium.
 speed: Your base walking speed is 10 meters.
 snippet: The second species to join the Citadel, the salarians are warm-blooded amphibians native to the planet Sur'Kesh. Salarians possess a hyperactive metabolism; they think fast, talk fast, and move fast.
 startingCredits: Instead of your class's starting equipment, you may start with 4d12 x 1000 + 10,000 credits to buy your own equipment.
