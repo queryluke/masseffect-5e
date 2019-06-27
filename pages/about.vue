@@ -169,7 +169,7 @@
           {
             name: 'Chris Alley',
             image: '/images/classes/adept.svg',
-            desc: 'Chris has provided a number of unique and fun new spells.'
+            desc: 'Chris has provided a number of unique and fun new spells, weapons, and other content.'
           },
           {
             name: 'Duneday',
