@@ -7,6 +7,7 @@
           v-layout
             v-flex(:class="headers[0].classes")
               div(:class="rarityTextColors[item.rarity]" style="margin-bottom: -8px") #[strong {{ item.name }}]
+                v-chip(v-if="item.andromeda" color="secondary" dark flat).ml-2.v-chip--x-small Andromeda
               small {{ item.type }}
             v-flex(:class="headers[1].classes").mt-1 {{ item.damage }}
             v-flex(:class="headers[2].classes").mt-1 {{ item.heat }}

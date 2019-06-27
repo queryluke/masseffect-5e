@@ -4,7 +4,7 @@
       span(v-if="!verbose")
         v-avatar(color="black", :size="cSize" alt="concentration")
           span(class="white--text") C
-        span - {{ minDuration }}
+        span  ({{ minDuration }})
       span(v-else) Concentration, up to {{ spell.duration }}
     span(v-else) {{ spell.duration }}
 </template>

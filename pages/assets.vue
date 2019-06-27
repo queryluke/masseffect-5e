@@ -25,6 +25,12 @@
       // Character sheets
       h3.text-xs-center.display-1 Character Sheets
       v-layout(row wrap justify-center)
+        v-flex(xs12 sm6 md4)
+          v-card
+            v-card-text
+              p.
+                Sadly, a change in the Roll20 interface has broken the Roll20 character sheets by John G. and EnricoDandolo1.
+                If you're savvy with Roll20 code and can help out, please let us know!
         //v-flex(xs12 sm6 md4)
           v-card
             v-card-title
@@ -33,7 +39,7 @@
               p.
                 When you create a new game in Roll20, search for #[em Mass Effect] in the character sheet select dropdown.
                 Choose the one under the #[strong Dungeons and Dragons] header.
-        v-flex(xs12 sm6 md4)
+        // v-flex(xs12 sm6 md4)
           v-card
             v-card-title
               p.title by EnricoDandolo1
@@ -64,27 +70,14 @@
     h2.display-3.font-weight-thin.text-xs-center.mt-5 Spell Cards
     v-container(grid-list-xl)
       v-layout(row wrap).mb-5
-        v-flex(v-for="item in classes" v-bind:key="item.id").xs12.sm6.md4
-          v-card(hover v-bind:to="`/print/spell-cards/${item.id}`").ma-2
-            v-img(:src="`/images/classes/${item.id}.svg`" height="100px" contain)
-              v-container(fill-height fluid)
-                v-layout(fill-height)
-                  v-flex(xs12 align-end flexbox)
-                    h3.title {{ item.name }} #[span.sr-only Spell Cards]
         v-flex(xs12 sm6 offset-sm3 md4 offset-md4)
-          v-btn(block to="/print/spell-cards" ).primary All Spell Cards
+          v-btn(block to="/print/spell-cards" ).primary Spell Cards
 
 </template>
 
 <script>
-import classes from '~/static/data/classes'
 
 export default {
-  data () {
-    return {
-      classes
-    }
-  },
   head () {
     return {
       title: 'Assets | Mass Effect 5e',
