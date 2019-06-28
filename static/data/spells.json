@@ -1336,7 +1336,7 @@
     "distance": {
       "range": "30m",
       "aoeType": "cube",
-      "aoeDistance": "8m"
+      "aoeDistance": "6m"
     },
     "detonates": null,
     "primes": "force",
