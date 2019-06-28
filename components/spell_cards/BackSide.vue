@@ -1,56 +1,50 @@
 <template lang="pug">
   div(:class="cardType").spell-card
-    v-card(height="100%").elevation-0
-      p back
-
+    v-card(height="100%" v-bind:color="cardColor").elevation-0
+      v-layout(fill-height align-center v-if="cardOption === 'single'").pa-2
+        v-img(src="/images/me5e_logo_720w.png" style="margin-top: -3em;")
+      div(v-else)
+        v-layout(row wrap)
+          v-flex(xs12).text-xs-center
+            div.mb-0.text-uppercase.font-weight-black.subheading.text-xs-center {{ spell.name }}
+          v-flex(xs12).text-xs-center.spell-info
+            spell-class-list(:availableClasses="spell.availableClasses" v-bind:size="24" justify="justify-center")
+          v-flex(xs12).pa-1.spell-text
+            div.adv-options.mt-1
+              div.text-xs-center
+                label Advanced Options
+              div(v-for="(option, i) in spell.advancementOptions" v-bind:key="i")
+                p #[strong {{ option.name }}]: {{ option.description }}
 </template>
 
 <script>
-  import SpellType from '~/components/spell/SpellType.vue'
-  import SpellDuration from '~/components/spell/SpellDuration.vue'
-  import SpellRangeArea from '~/components/spell/SpellRangeArea.vue'
-  import SpellDamageEffect from '~/components/spell/SpellDamageEffect.vue'
+  import SpellClassList from '~/components/spell/SpellClassList.vue'
   import AdvancedOption from '~/components/spell/AdvancedOption.vue'
 
   export default {
     components: {
-      AdvancedOption, SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect
+      AdvancedOption, SpellClassList
     },
     props: {
       spell: {
         type: Object,
         default: () => { return {} }
-      }
-    },
-    data () {
-      return {
-        primeTypeCss: {
-          force: 'purple--text text--darken-1',
-          necrotic: 'blue-grey--text text--darken-2',
-          fire: 'deep-orange--text text--darken-1',
-          cold: 'cyan--text text--darken-1',
-          lightning: 'blue--text text--darken-1'
-        }
+      },
+      cardOption: {
+        type: String,
+        default: 'single'
       }
     },
     computed: {
-      cardType () {
-        return `${this.spell.type}-card`
+      cardColor () {
+        return this.cardOption === 'single' ? 'blue-grey lighten-4' : ''
       },
-      cardTags () {
-        let text = []
-        if (this.spell.level) {
-          let spellLevel = this.spell.level === '0' ? 'Cantrip' : this.$options.filters.ordinal(this.spell.level) + ' level'
-          text.push(spellLevel)
+      cardType () {
+        if (this.cardOption === 'single') {
+          return 'gen-card'
+        } else {
+          return `${this.spell.type}-card`
         }
-        for (const i of this.spell.effect) {
-          if (i === 'damage') {
-            text.push(`${i} (${this.spell.damageType.join(', ')})`)
-          } else {
-            text.push(i)
-          }
-        }
-        return text
       }
     }
   }

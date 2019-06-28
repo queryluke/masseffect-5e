@@ -33,7 +33,7 @@ Choose a creature or object within range and use the target's mass to pull yours
 (this movement does not provoke opportunity attacks). Each creature within 4m of the target must make Dexterity saving 
 throw, taking 4d10 force damage on a failed save, or half as much on a successful one. 
 
-Additionally, you may transport any number of creatures or objects with you to the target location. To 
+You may transport any number of creatures or objects with you to the target location. To 
 do so, each creature or object must be within 2m of you when you cast this spell and the total weight of all creatures and 
 objects cannot exceed twice your carrying capacity. A creature transported this way must be willing and of your
 size or smaller and the target location must have an unoccupied space for the creature to be transported to. A creature or 

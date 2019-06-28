@@ -19,39 +19,51 @@
         v-flex(xs12 sm4)
           v-btn(block href="https://drive.google.com/open?id=1r-JCa_rqmKSp7-UKf1EP67w6Dl_Pm_JEdaZJMS-R22Y" target="_blank").primary by GameMasterPo
 
+    // Premade
+    h2.display-3.font-weight-thin.text-xs-center.mt-5 Premade Characters
+    v-container(grid-list-xl)
+      v-layout(row wrap justify-center)
+        v-flex(xs12 sm4)
+          v-btn(block href="https://drive.google.com/open?id=1XlaCFmUpouNIaQSa1w8SnFRNEQrDcfpX" target="_blank").primary Official
+          p More coming soon!
+
+
     // Roll20
     h2.display-3.font-weight-thin.text-xs-center.mt-5 Roll20
     v-container(grid-list-xl)
-      // Character sheets
-      h3.text-xs-center.display-1 Character Sheets
-      v-layout(row wrap justify-center)
-        v-flex(xs12 sm6 md4)
-          v-card
-            v-card-text
-              p.
-                Sadly, a change in the Roll20 interface has broken the Roll20 character sheets by John G. and EnricoDandolo1.
-                If you're savvy with Roll20 code and can help out, please let us know!
-        //v-flex(xs12 sm6 md4)
-          v-card
-            v-card-title
-              p.title by John G.
-            v-card-text
-              p.
-                When you create a new game in Roll20, search for #[em Mass Effect] in the character sheet select dropdown.
-                Choose the one under the #[strong Dungeons and Dragons] header.
-        // v-flex(xs12 sm6 md4)
-          v-card
-            v-card-title
-              p.title by EnricoDandolo1
-            v-card-text
-              p.mb-0.
-                An alternate take by EnricoDandolo1. You can upload the files to Roll20.
-              v-btn(flat href="https://drive.google.com/drive/folders/18-rNxocsUeByAI9dF8Qv5IzJD6rMn77Y?usp=sharing" target="_blank").primary Files
-      // Tokens
-      h3.text-xs-center.display-1 Tokens
-      v-layout(row wrap justify-center)
-        v-flex(xs12 sm6 md4)
-          v-btn(block href="https://drive.google.com/open?id=1SfFEb6jgh2J2SXIiWVUB5XtrSSQ3GEi8" target="_blank").primary by Andrew Ouellette
+      v-layout(row wrap)
+        v-flex(xs12 md6)
+          // Character sheets
+          h3.text-xs-center.display-1 Character Sheets
+          v-layout(row wrap justify-center)
+            v-flex(xs12)
+              v-card
+                v-card-text
+                  p.
+                    Sadly, a change in the Roll20 interface has broken the Roll20 character sheets by John G. and EnricoDandolo1.
+                    If you're savvy with Roll20 code and can help out, please let us know!
+            //v-flex(xs12 sm6 md4)
+              v-card
+                v-card-title
+                  p.title by John G.
+                v-card-text
+                  p.
+                    When you create a new game in Roll20, search for #[em Mass Effect] in the character sheet select dropdown.
+                    Choose the one under the #[strong Dungeons and Dragons] header.
+            // v-flex(xs12 sm6 md4)
+              v-card
+                v-card-title
+                  p.title by EnricoDandolo1
+                v-card-text
+                  p.mb-0.
+                    An alternate take by EnricoDandolo1. You can upload the files to Roll20.
+                  v-btn(flat href="https://drive.google.com/drive/folders/18-rNxocsUeByAI9dF8Qv5IzJD6rMn77Y?usp=sharing" target="_blank").primary Files
+        v-flex(xs12 sm6)
+          // Tokens
+          h3.text-xs-center.display-1 Tokens
+          v-layout(row wrap justify-center)
+            v-flex(xs12 sm6 md4)
+              v-btn(block href="https://drive.google.com/open?id=1SfFEb6jgh2J2SXIiWVUB5XtrSSQ3GEi8" target="_blank").primary by Andrew Ouellette
 
     // PDF of Rules
     h2.display-3.font-weight-thin.text-xs-center.mt-5 Player's Manual

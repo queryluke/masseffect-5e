@@ -29,18 +29,15 @@ advancementOptions:
   description: Each creature that takes psychic damage from siege pulse has disadvantage on its melee or ranged
     attack rolls until the start of your next turn.
 ---
-Spend 5 shield points as you overload your shield capacitors causing a loud, painfully intense kinetic wave to
-erupt in a 4m-radius sphere centered on you. Each creature within the sphere becomes <condition id="deafened"/> and must
+Spend 5 shield points as you overload your shield capacitors causing a loud, kinetic wave to erupt in a 4m-radius 
+sphere centered on you. Each creature within the sphere becomes <condition id="deafened"/> and must
 make a Constitution saving throw (DC 8 + proficiency bonus). On a failed save, a creature takes
-2d8 psychic damage and is <condition id="stunned"/> until the end of your next turn. On a successful save, a creature takes
-half as much psychic damage.
+2d8 psychic damage and is <condition id="stunned"/> until the end of your next turn. On a successful save, a creature 
+takes half as much damage. Synthetic creatures have advantage on this saving throw.
 
-Synthetic creatures have advantage on this saving throw.
-
-The first time you use siege pulse, your armor suffers no adverse effect. If you use this feature again before you
-finish a short rest, your shields run the risk of overloading. Roll a d20, immediately after you cast it. On a roll of 5 or
-lower, your shields overload. You lose all shield points take 2d12 lightning damage. You cannot gain shield points unless
-you equip new armor or repair your armor. Each time you use this feature again before finishing a short rest, the target
-DC increases by 5 (10 on the third cast, 15 on the fourth, etc).
+The first time you use siege pulse, your armor suffers no adverse effect. If you use this spell again before you
+finish a short rest, roll a d20. On a 5 or lower you shields overload. You lose 
+all shield points, take 2d12 lightning damage, and cannot gain shield points unless you repair your armor. Each time you 
+use this feature again before finishing a short rest, you suffer a -5 penalty to the roll.
 
 This feature's psychic damage increases by 1d8 when you reach 5th level (3d8), 11th level (4d8), 17th level (5d8).

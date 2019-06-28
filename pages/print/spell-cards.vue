@@ -15,18 +15,19 @@
         v-flex(xs12 sm6 md3 d-flex)
           v-checkbox(v-model="back" label="Include Standard back?" v-if="selectedCardOption === 'single'")
     div#spell-preview
-      div(v-for="(c, i) in chunked" v-bind:key="i").spell-page__print
-        v-layout(row wrap)
-          div(v-for="spell in c" v-bind:key="spell.id")
-            front-side(v-bind:spell="spell" v-bind:cardOption="selectedCardOption" v-bind:class="selectedCardOption").spell-card__print
+      div(v-for="(c, i) in chunked" v-bind:key="i")
+        div.spell-page__print
+          v-layout(row wrap)
+            div(v-for="spell in c" v-bind:key="spell.id")
+              front-side(v-bind:spell="spell" v-bind:cardOption="selectedCardOption" v-bind:class="selectedCardOption").spell-card__print
         div.hr.page-indicator
-        div(v-if="selectedPrintOption === 'auto' && (selectedCardOption === 'double' || back)")
+        div(v-if="selectedPrintOption === 'auto' && (selectedCardOption === 'double' || back)").spell-page__print
           v-layout(row wrap)
             div(v-for="spell in reversedChunks[i]" v-bind:key="spell.id")
               back-side(v-bind:spell="spell" v-bind:cardOption="selectedCardOption" v-bind:class="selectedCardOption").spell-card__print
-          div.hr.page-indicator
+        div(v-if="selectedPrintOption === 'auto' && (selectedCardOption === 'double' || back)").hr.page-indicator
       div(v-for="(c, i) in reversedChunks" v-bind:key="`back-${i}`" v-if="selectedPrintOption === 'manual' && (selectedCardOption === 'double' || back)").spell-page__print
-        v-layout(row wrap)
+        v-layout(row wrap :justify-end="selectedPrintOption === 'manual'")
           div(v-for="spell in c" v-bind:key="spell.id")
             back-side(v-bind:spell="spell" v-bind:cardOption="selectedCardOption" v-bind:class="selectedCardOption").spell-card__print
         div.hr.page-indicator
@@ -146,14 +147,26 @@
         font-size:10px;
         width:3.5in;
         height:5in;
-        margin: .25in
+        margin: .25in;
+
+        .spell-tags {
+          height: 22px
+        }
       }
 
       &.double {
-        font-size:10px;
+        font-size: 6pt;
         width:2.5in;
         height:3.5in;
         margin: 0.08333in;
+
+        .spell-text {
+          text-align: justify;
+        }
+
+        .spell-tags {
+          height: 15px;
+        }
       }
 
       .v-card {
@@ -177,6 +190,13 @@
         border: 5px solid black;
         border-right: none;
         border-left: none;
+      }
+
+      .spell-tags {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 2px;
       }
     }
 
@@ -212,11 +232,31 @@
         color: $combat-color;
       }
     }
+
+    .gen-card {
+      background-color: black;
+    }
   }
 
   @media print {
     .sc--page {
       margin: auto;
+    }
+    .container {
+      padding: 0;
+    }
+    .spell-page__print {
+      width: 8.5in;
+      height: 11in;
+      margin: 0;
+      padding: .25in;
+      page-break-inside: avoid;
+    }
+    .v-content {
+      padding: 0 !important;
+    }
+    .v-toolbar, .options, .page-indicator {
+      display: none;
     }
     .application.theme--light {
       background-color: #fff;

@@ -225,6 +225,42 @@
     ]
   },
   {
+    "id": "bec_field",
+    "name": "B.E.C. Field",
+    "createdBy": "Chris Alley",
+    "level": 3,
+    "type": "tech",
+    "attackType": [],
+    "effect": [
+      "buff"
+    ],
+    "damageType": [],
+    "castingTime": "Action",
+    "duration": "1 hour",
+    "concentration": false,
+    "distance": {
+      "range": "self",
+      "aoeType": null,
+      "aoeDistance": null
+    },
+    "detonates": null,
+    "primes": null,
+    "availableClasses": [
+      "engineer",
+      "infiltrator"
+    ],
+    "advancementOptions": [
+      {
+        "name": "Reactive",
+        "description": "When you are hit by a ranged attack while the this spell is active, you may use your reaction to deal the cold damage to a creature within 2 meters of you."
+      },
+      {
+        "name": "Cold Aura",
+        "description": "While the BEC field is active, you are immune to the Frozen condition. Creatures that take damage from this spell are primed (cold)."
+      }
+    ]
+  },
+  {
     "id": "beehive",
     "name": "Beehive",
     "level": 0,
@@ -559,7 +595,7 @@
       },
       {
         "name": "Counterstrike",
-        "description": "You may cast catapult as a reaction when you see a creature within 30m of you casting a spell or making a weapon attack. If the object would strike a creature casting a spell, the creature automatically fails its Dexterity saving throw and must succeed on a Constitution saving throw or the spell fails and has no effect (DC 10 or half the damage done by catapult, whichever is higher). If an object would strike a creature making a weapon attack, you impose disadvantage on the attack roll whether or not the creature fails its Dexterity saving throw."
+        "description": "As a reaction, which you take when a creature within 30m you casts a spell or makes an attack. Fling the object toward the creature which fails its Dexterity saving throw. If the creature was casting a spell, it must succeed on a Constitution saving throw or he spell fails (DC 10 or half the Catapult damage, whichever is higher). If the creature was attacking, it has disadvantage on the attack roll."
       }
     ]
   },
@@ -713,11 +749,11 @@
     "advancementOptions": [
       {
         "name": "Ice Lance",
-        "description": "Transform the attack into a deadly lance. Make a ranged spell attack on a target within range. On a hit, the target takes 1d8 cold and 2d4 piercing damage for a 1st-level version and an additional 1d8 and 2d4 for each slot level above the 1st."
+        "description": "Transform the blast into a deadly lance. Make a ranged spell attack dealing 1d8 cold and 2d4 piercing damage. It deals an additional 1d8 and 2d4 for each slot level above the 1st."
       },
       {
         "name": "Frigid Air",
-        "description": "The blast creates a pocket of frigid air that lasts until the end of your next turn. Each creature that enters the frozen space for the first time on a turn or ends its turn there becomes primed cold until the end of its next turn and must succeed a Constitution saving throw or take 2d6 cold damage."
+        "description": "The blast creates a pocket of frigid air that lasts until the end of your next turn. Each creature that enters the frozen space for the first time on a turn or ends its turn there becomes primed cold until the end of its next turn and takes 2d6 cold damage."
       }
     ]
   },
@@ -1731,11 +1767,11 @@
     "advancementOptions": [
       {
         "name": "Nanite Grenade",
-        "description": "If this spell is active, you can use a bonus action to compress the nanites into a grenade. The grenade remains stable for 1 hour before becoming inert. To use the grenade, target an area within 10m. Each creature within 4m of the target must make a DC 14 Dexterity saving throw. A creature takes 4d6 damage of the triggering damage type on a failed save, or half as much damage on a successful one. The grenade deals and additional 2d6 damage for each spell level beyond 1st."
+        "description": "While active, use a bonus action to compress the nanites into a grenade. The grenade remains stable for 1 hour before becoming inert. The grenade has a 10m range, 4m blast radius, DC 14 Dexterity saving throw and deals 4d6 damage of the triggering damage type. The grenade deals and additional 2d6 damage for each spell level beyond 1st."
       },
       {
         "name": "Aegis",
-        "description": "You may cast this spell as a reaction when a creature within 2m of you takes acid, cold, fire, lightning, or thunder damage. When you cast this spell, you may choose up to 3 creatures including yourself within 2m of you to gain resistance to the chosen damage type until the start of your next turn, including against the triggering attack."
+        "description": "You may cast this spell as a reaction when a creature within 2m of you takes acid, cold, fire, lightning, or thunder damage. Choose up to 3 creatures including yourself within 2m of you to gain resistance to the chosen damage type until the start of your next turn, including against the triggering attack."
       }
     ]
   },

@@ -3042,7 +3042,7 @@
       }
     ],
     "hp": {
-      "numDice": 14,
+      "numDice": 4,
       "die": 8
     },
     "id": "eclipse_trooper",
@@ -5166,7 +5166,7 @@
       {
         "name": "Sneak Attack",
         "recharge": null,
-        "description": "Once per turn, the N7 Shadow deals an extra 14 (4d6) damage when it hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 2 meterss of an ally of the N7 Shadow that isn't incapacitated and the N7 Shadow doesn't have disadvantage on the attack roll."
+        "description": "Once per turn, the N7 Shadow deals an extra 14 (4d6) damage when it hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 2 meters of an ally of the N7 Shadow that isn't incapacitated and the N7 Shadow doesn't have disadvantage on the attack roll."
       },
       {
         "name": "Tactical Cloak",
