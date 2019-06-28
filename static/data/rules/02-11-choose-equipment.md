@@ -54,10 +54,11 @@ includes Stock Medium Armor which (after adding her Dexterity modifier) gives Ka
 
 For Kaleem’s weapons, Sam chooses an M-8 Avenger (because she took the Assault Rifle proficiency) and an Omni-torch.
 Her M-8 Avenger is a ranged weapon, so Kaleem uses her Dexterity modifier for her attacks and damage. Her attack bonus is
-her Dexterity modifier (+2) plus her proficiency bonus (+2), for a total of +2. The M-8 Avenger deals 1d8 piercing damage,
-and Kaleem adds her Dexterity modifier to the damage when she hits, for a total of 1d8 + 2 piercing damage. When using the
-Omni-torch, a melee weapon, Kaleem uses her Strength modifier (+1) but she does not add her proficiency bonus because
-she is not proficient with melee weapons. The weapon deals 1d6 + 1 fire damage when it hits.
+her Dexterity modifier (+2) plus her proficiency bonus (+2), for a total of +4. The M-8 Avenger deals 1d8 piercing damage,
+and Kaleem adds her Dexterity modifier to the damage when she hits, for a total of 1d8 + 2 piercing damage. Notice, 
+she does not add her proficiency bonus to the damage roll, only the attack roll. When using the
+Omni-torch, a melee weapon, Kaleem adds her Strength modifier (+1) to the attack roll and the damage roll. But, because 
+she is not proficient with melee weapons, she does not add her proficiency bonus to the attack roll.
 </v-alert>
 
 <source-reference pages="9" source="basic"></source-reference>

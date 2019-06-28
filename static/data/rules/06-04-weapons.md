@@ -68,8 +68,8 @@ If you're already holding the weapon, you might use an ability as your action an
 
 
 ### Carrying, Holstering, and Drawing Weapons <v-chip color="secondary" text-color="white" class="v-chip--x-small">new</v-chip>
-You can carry 2 weapons into combat unless a feature or armor mod allows you to carry more. If using the Variant: Encumbrance
-rule, you can carry as many weapons as your carry capacity will allow.
+You have 4 weapon slots unless a feature or armor mod allows you to have more. __Two-handed__ weapons take up 2 slots. 
+If using the Variant: Encumbrance rule, you can carry as many weapons as your carry capacity will allow.
 
 You can holster one weapon you're wielding or draw one weapon you're carrying as a free action. This is true for all weapon types.
 However, to holster one weapon *then* draw a second weapon would require an action.

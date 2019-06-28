@@ -12,13 +12,14 @@
         div {{ item.placement }}
       v-flex.xs4.attribute.mb-2
         label Weapon Availability
-        div {{ item.availability }}
+        div {{ availability }}
       v-flex.xs4.attribute.mb-2
         label Cost
         div {{ item.cost | groupDigits(',') }}
       v-flex.xs12
         div.hr
         p {{ item.feature }}
+      p(v-if="item.createdBy") #[small #[em Created By: {{ item.createdBy }}]]
 </template>
 
 <script>
@@ -36,7 +37,15 @@
       }
     },
     computed: {
-      ...mapGetters('itemList', ['rarityTextColors'])
+      ...mapGetters('itemList', ['rarityTextColors']),
+      // TODO: This could be a mixin or model
+      availability() {
+        if (['Assault Rifle', 'Heavy Pistol', 'Shotgun', 'Sniper Rifle', 'SMG'].every(val => this.item.availability.includes(val))) {
+          return 'Any ranged weapon'
+        } else {
+          return this.item.availability.join(', ')
+        }
+      }
     }
   }
 </script>

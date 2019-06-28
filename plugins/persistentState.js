@@ -5,7 +5,8 @@ export default ({store}) => {
     paths: [
       'gruntConfig',
       'encounter',
-      'bookmarks'
+      'bookmarks',
+      'diceRoller.rolls'
     ]
   })(store)
 }

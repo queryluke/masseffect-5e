@@ -12,7 +12,7 @@ starting_credits: 1000
 
 __Skill Proficiencies__. Electronics, Investigation
 
-__Tool Proficiencies__. Hacking tools and starship system (cyber warfare)
+__Tool Proficiencies__. Hacking tools and starship system (EWS)
 
 __Equipment__. Hacking tools, a bio-authentication encryption key for your omni-tool, a set of common clothes, and 1,000
 credits.

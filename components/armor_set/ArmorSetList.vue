@@ -7,6 +7,7 @@
           v-layout
             v-flex(:class="headers[0].classes")
               div(:class="rarityTextColors[item.rarity]") #[strong {{ item.name }}]
+                v-chip(v-if="item.andromeda" color="secondary" dark flat).ml-2.v-chip--x-small Andromeda
             v-flex(:class="headers[1].classes") {{ item.cost | groupDigits(',') }}
             v-flex(:class="headers[2].classes") {{ item.armorType }}
             v-flex(:class="headers[3].classes") {{ item.type }}

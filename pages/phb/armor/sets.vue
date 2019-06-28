@@ -69,11 +69,9 @@
         let sortBy = this.sortBy.key
         let order = this.order
         data.sort(function (a, b) {
-          data.sort(function (a, b) {
-            const aSort = sortBy === 'cost' ? parseInt(a[sortBy], 10) : a[sortBy]
-            const bSort = sortBy === 'cost' ? parseInt(b[sortBy], 10) : b[sortBy]
-            return (aSort === bSort ? 0 : aSort > bSort ? 1 : -1) * order
-          })
+          const aSort = sortBy === 'cost' ? parseInt(a[sortBy], 10) : a[sortBy]
+          const bSort = sortBy === 'cost' ? parseInt(b[sortBy], 10) : b[sortBy]
+          return (aSort === bSort ? 0 : aSort > bSort ? 1 : -1) * order
         })
         if (this.search) {
           data = data.filter((item) => {

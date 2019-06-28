@@ -25,8 +25,9 @@ without the operative equipping armor.
 
 
 ### Damage
-If you have at least 1 shield point when you take damage, the is applied it is subtracted from your shield points first,
-then from your hit points. Some abilities "bypass" your shield points. In these instances, you subtract damage from your
+When you have shield points and take damage, the shield points are lost first, and any leftover damage carries over to 
+your normal hit points. For example, if you have 5 shield points and take 7 damage, you lose the shield points and then 
+take 2 damage. Some abilities "bypass" your shield points. In these instances, you subtract damage from your
 hit points leaving your shield points unchanged.
 
 #### Melee Weapons

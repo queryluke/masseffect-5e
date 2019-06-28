@@ -126,6 +126,9 @@ export default {
     'for-gms-encounter-builder': {
       name: 'Encounter Builder'
     },
+    'for-gms-dice-roller': {
+      name: 'Dice Roller'
+    },
     'phb-search': {
       name: 'Search'
     }

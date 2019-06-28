@@ -3,7 +3,7 @@
     span {{ spell.distance.range }}
     span(v-if="spell.distance.aoeDistance").ml-1
       span ({{ spell.distance.aoeDistance }}
-      v-avatar(size="18" tile)
+      v-avatar(:size="size" tile).ml-1
         v-img(:src="`/images/aoe/${spell.distance.aoeType}.svg`" v-bind:alt="spell.distance.aoeType")
       span )
 </template>
@@ -15,6 +15,10 @@
         type: Object,
         default: () => { return {} }
       },
+      size: {
+        type: Number,
+        default: 18
+      }
     }
   }
 </script>

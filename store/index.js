@@ -10,6 +10,7 @@ import phb from './phb_pages'
 import classPage from './class_page'
 import itemList from './itemList'
 import gruntGenerator from './grunt_generator'
+import diceRoller from './diceRoller'
 
 const createStore = () => {
   return new Vuex.Store({
@@ -21,7 +22,8 @@ const createStore = () => {
       phb,
       classPage,
       itemList,
-      gruntGenerator
+      gruntGenerator,
+      diceRoller
     }
   })
 }

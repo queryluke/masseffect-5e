@@ -322,7 +322,7 @@
   {
     "name": "GARDIAN",
     "system": "-",
-    "effect": "Once per round, the GARDIAN system targets up to 4 transports within range (~ 1km), dealing 250 (1d4[x100]) radiant damage to each target. This can also be used as a reaction to a torpedo or missile attack, immediately nullifying the attack.",
+    "effect": "Once per round, the GARDIAN system targets up to 4 transports within range (~1 km), dealing 250 (1d4[x100]) radiant damage to each target. This can also be used as a reaction to a torpedo or missile attack, immediately nullifying the attack.",
     "prerequisite": "-",
     "cost": "3000000",
     "id": "gardian"

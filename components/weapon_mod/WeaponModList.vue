@@ -7,7 +7,7 @@
           v-layout
             v-flex(:class="headers[0].classes")
               div(:class="rarityTextColors[item.rarity]" style="margin-bottom: -8px") #[strong {{ item.name }}]
-              small {{ item.availability }}
+              small {{ availability(item) }}
             v-flex(:class="headers[1].classes").mt-1 {{ item.cost | groupDigits(',') }}
             v-flex(:class="headers[2].classes").mt-1 {{ item.placement }}
             v-flex(:class="headers[3].classes").mt-1 {{ item.notes }}
@@ -46,6 +46,16 @@
     },
     computed: {
       ...mapGetters('itemList', ['rarityTextColors'])
+    },
+    methods: {
+      // TODO: This could be a mixin or model
+      availability(item) {
+        if (['Assault Rifle', 'Heavy Pistol', 'Shotgun', 'Sniper Rifle', 'SMG'].every(val => item.availability.includes(val))) {
+          return 'Any ranged weapon'
+        } else {
+          return item.availability.join(', ')
+        }
+      }
     }
   }
 </script>

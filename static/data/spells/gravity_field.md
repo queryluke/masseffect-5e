@@ -15,7 +15,7 @@ concentration: true
 distance:
   range: 30m
   aoeType: cube
-  aoeDistance: 8m
+  aoeDistance: 6m
 detonates: 
 primes: force
 availableClasses:
@@ -29,7 +29,7 @@ advancementOptions:
   description: A creature takes 1d6 necrotic damage per spell level when it enters the gravity field for the first time 
     on a turn or ends its turn there.
 ---
-You create an field of unstable gravity in a 6 meter cube starting from a point within range.  For the duration, this 
+You create an field of unstable gravity in a 6-meter cube starting from a point within range.  For the duration, this 
 space becomes difficult terrain.  
 
 A creature in the area when you cast the spell must succeed on a Strength saving throw or be <condition id="restrained"/> 

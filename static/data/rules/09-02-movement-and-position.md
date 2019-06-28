@@ -99,7 +99,7 @@ particular size controls in combat. Objects sometimes use the same size categori
 <br>
 
 #### Space
-A creature's space is the area in feet that it effectively controls in combat, not an expression of its physical
+A creature's space is the area in meters that it effectively controls in combat, not an expression of its physical
 dimensions. A typical Medium creature isn't 2 meters wide, for example, but it does control a space that wide. If a
 Medium asari stands in a 2‐meter-wide doorway, other creatures can't get through unless the asari lets them.
 

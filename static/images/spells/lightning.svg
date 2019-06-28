@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="300px" width="300px" fill="#1E88E5" xml:space="preserve" version="1.0" style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;" viewBox="0 0 171 236" x="0px" y="0px" fill-rule="evenodd" clip-rule="evenodd">
+  <defs>
+    <style type="text/css">
+      .fil0 {fill:#1E88E5}
+    </style>
+  </defs>
+  <g>
+    <polygon class="fil0" points="63,18 18,108 27,118 0,165 87,165 47,236 61,236 142,140 61,135 82,103 68,96 126,16 "/>
+    <polygon class="fil0" points="92,2 87,13 137,11 79,91 93,98 72,130 153,135 68,235 77,235 171,124 90,120 111,87 97,80 155,0 "/>
+  </g>
+</svg>

@@ -12,7 +12,7 @@ starting_credits: 1000
 
 __Skill Proficiencies__. Sleight of Hand, Stealth
 
-__Tool Proficiencies__. Disguise Kit, thieves' tools
+__Tool Proficiencies__. Disguise kit, thieves' tools
 
 __Equipment__. A small shiv, an electronic map of your city, a pet vermin, a set of poor clothes, and 100 credits
 

@@ -27,15 +27,15 @@ advancementOptions:
 ---
 
 As a bonus action or as a reaction to taking damage, you reinforce your armor with razor-sharp blades that damage 
-nearby enemies. Until the spell ends, you AC increases by 2 but you are unable to take the Dodge and you 
-have disadvantage on Dexterity saving throws. You can use a bonus action to deactivate blade armor.
+nearby enemies. Until the spell ends, you AC increases by 2 but you are unable to Dodge and have disadvantage on Dexterity 
+saving throws. You can use a bonus action to deactivate blade armor.
 
 While blade armor is active, it is considered a melee weapon that deals 1d6 piercing damage. If a creature is grappled by
 you, you have advantage on attack rolls made with blade armor against the grappled creature. 
 
-When you use the Attack action to grapple a creature, you have advantage on your Strength (Athletics) check and the 
-target takes 1d6 piercing damage if your grapple check succeeds. A creature that is grappled by you while blade armor 
-is active take 1d6 piercing damage each time it attempts to escape from the grapple.
+You have advantage on your Strength (Athletics) to grapple and deal 1d6 piercing damage when you grapple the target. 
+A creature that is grappled by you while blade armor is active take 1d6 piercing damage each time it attempts to 
+escape from the grapple.
 
 You must finish a long rest before you can use this ability again.
 

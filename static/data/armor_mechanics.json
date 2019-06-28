@@ -134,17 +134,10 @@
   },
   {
     "mechanic": "null-movement",
-    "description": "If an effect moves you against your will along the ground, you can use your reaction to reduce the distance you are moved by up to 10 feet.",
+    "description": "If an effect moves you against your will along the ground, you can use your reaction to reduce the distance you are moved by up to 4 meters.",
     "amount": "-",
     "cost": "5000",
     "id": "null-movement"
-  },
-  {
-    "mechanic": "null-proficiency",
-    "description": "Wearing this armor does not require the character to be proficient with the armor type (i.e., anyone can wear it).",
-    "amount": "1x Medium, 2.5x Heavy",
-    "cost": "27000",
-    "id": "null-proficiency"
   },
   {
     "mechanic": "resistance-piercing",
@@ -175,11 +168,11 @@
     "id": "resistance-weapon"
   },
   {
-    "mechanic": "shield jumpstart",
-    "description": "Once per short rest, as a reaction to taking damage, you may jumpstart your shield regen and immediately gain shield points equal to your regen amount.",
+    "mechanic": "shield jump-start",
+    "description": "Once per short rest, as a reaction to taking damage, you may jump-start your shield regen and immediately gain shield points equal to your regen amount.",
     "amount": "-",
     "cost": "15000",
-    "id": "shield_jumpstart"
+    "id": "shield_jump-start"
   },
   {
     "mechanic": "shield regen",
@@ -211,7 +204,7 @@
   },
   {
     "mechanic": "spell regen",
-    "description": "You regain 1d4 worth of spell slots or tech points on a short rest.",
+    "description": "You regain 1d4 worth of spell slots or tech points when you take a short rest.",
     "amount": "1 die",
     "cost": "30000",
     "id": "spell_regen"

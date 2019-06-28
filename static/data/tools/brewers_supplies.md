@@ -9,7 +9,7 @@ Brewing is the art of producing beer, mead, wine, and liquor. Not only does brew
 process of brewing purifies water. Brewing beer, mead, or wine takes weeks of fermentation, but only a few hours of work.
 You can further distill fermented beverages to create liquor.
 
-__Components__. A large glass jug, a quantity of hops, a siphon, and several feet of tubing, bottles, and a distiller.
+__Components__. A large glass jug, a quantity of hops, a siphon, and several meters of tubing, bottles, and a distiller.
 
 __History__. Proficiency with brewer's supplies gives you additional insight on Intelligence (History) checks concerning
 events that involve alcohol as a significant element.

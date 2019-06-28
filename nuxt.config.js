@@ -8,7 +8,6 @@ const routes = []
 fs.readdirSync('./static/data/classes').map(file => {
   const id = file.replace(/.json$/, '')
   routes.push(`/phb/classes/${id}`)
-  routes.push(`/print/spell-cards/${id}`)
 })
 fs.readdirSync(`./static/data/races`).map(file => {
   const id = file.replace(/.md$/, '')

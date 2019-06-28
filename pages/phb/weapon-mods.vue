@@ -89,8 +89,8 @@
         if (this.filters.weaponMods.weaponType.length > 0) {
           console.log(this.filters.weaponMods.weaponType)
           data = data.filter(item => {
-            for (const type of item.availability.split(',').map(n => n.trim())) {
-              if (this.filters.weaponMods.weaponType.includes(type) || type === 'All') {
+            for (const type of item.availability) {
+              if (this.filters.weaponMods.weaponType.includes(type)) {
                 return item
               }
             }

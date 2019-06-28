@@ -20,15 +20,13 @@ availableClasses:
 - sentinel
 advancementOptions:
 - name: Nanite Grenade     
-  description: If this spell is active, you can use a bonus action to compress the nanites into a grenade. 
-    The grenade remains stable for 1 hour before becoming inert. To use the grenade, target an area within 10m. Each 
-    creature within 4m of the target must make a DC 14 Dexterity saving throw. A creature takes 4d6 damage of the triggering 
-    damage type on a failed save, or half as much damage on a successful one. The grenade deals and additional 2d6 damage
-    for each spell level beyond 1st.
+  description: While active, use a bonus action to compress the nanites into a grenade. The grenade remains stable for 1 hour before becoming inert.
+    The grenade has a 10m range, 4m blast radius, DC 14 Dexterity saving throw and deals 4d6 damage of the triggering 
+    damage type. The grenade deals and additional 2d6 damage for each spell level beyond 1st. 
 - name: Aegis   
   description: You may cast this spell as a reaction when a creature within 2m of you takes acid, cold, fire, lightning, or thunder damage. 
-    When you cast this spell, you may choose up to 3 creatures including yourself within 2m of you to gain resistance to 
-    the chosen damage type until the start of your next turn, including against the triggering attack.
+    Choose up to 3 creatures including yourself within 2m of you to gain resistance to the chosen damage type until the start of your next turn, 
+    including against the triggering attack.
 ---
 
 Deploy a cloud of fabricated nanites from your omni-tool that swarm and capture incoming energy from an attack, lessening 

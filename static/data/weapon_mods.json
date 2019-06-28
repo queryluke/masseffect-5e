@@ -7,8 +7,15 @@
     "cost": "52000",
     "placement": "Ammo",
     "notes": "Augmentation",
+    "createdBy": null,
     "id": "beam_emitter",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Bio-Converter",
@@ -18,8 +25,15 @@
     "cost": "33000",
     "placement": "Magazine",
     "notes": "Special",
+    "createdBy": null,
     "id": "bio-converter",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Burst Fire System",
@@ -29,8 +43,15 @@
     "cost": "13000",
     "placement": "Ammo",
     "notes": "Augmentation",
+    "createdBy": null,
     "id": "burst_fire_system",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Combat Sensor",
@@ -40,8 +61,15 @@
     "cost": "20000",
     "placement": "Body",
     "notes": "Special",
+    "createdBy": null,
     "id": "combat_sensor",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Concentration Mod",
@@ -51,8 +79,11 @@
     "cost": "12000",
     "placement": "Body",
     "notes": "Special",
+    "createdBy": null,
     "id": "concentration_mod",
-    "availability": "Sniper Rifle"
+    "availability": [
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Cranial Trauma System",
@@ -62,8 +93,11 @@
     "cost": "8000",
     "placement": "Barrel",
     "notes": "Special",
+    "createdBy": null,
     "id": "cranial_trauma_system",
-    "availability": "Heavy Pistol"
+    "availability": [
+      "Heavy Pistol"
+    ]
   },
   {
     "name": "Cryo Ammo",
@@ -73,8 +107,15 @@
     "cost": "20000",
     "placement": "Ammo",
     "notes": "Damage Augment, Primes",
+    "createdBy": null,
     "id": "cryo_ammo",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Disruptor Ammo",
@@ -84,8 +125,15 @@
     "cost": "20000",
     "placement": "Ammo",
     "notes": "Damage Augment, Primes, Detonates",
+    "createdBy": null,
     "id": "disruptor_ammo",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Electrical Conduits",
@@ -95,8 +143,15 @@
     "cost": "15000",
     "placement": "Ammo",
     "notes": "Augmentation",
+    "createdBy": null,
     "id": "electrical_conduits",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Explosive Ammo",
@@ -106,8 +161,15 @@
     "cost": "15000",
     "placement": "Ammo",
     "notes": "Extra Damage",
+    "createdBy": null,
     "id": "explosive_ammo",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Extended Barrel I",
@@ -117,8 +179,14 @@
     "cost": "5000",
     "placement": "Barrel",
     "notes": "Extra Damage",
+    "createdBy": null,
     "id": "extended_barrel_i",
-    "availability": "Assault Rifle, Heavy Pistol, Smg, Sniper Rifle"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Extended Barrel II",
@@ -128,8 +196,14 @@
     "cost": "12500",
     "placement": "Barrel",
     "notes": "Extra Damage",
+    "createdBy": null,
     "id": "extended_barrel_ii",
-    "availability": "Assault Rifle, Heavy Pistol, Smg, Sniper Rifle"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Extended Barrel III",
@@ -139,8 +213,14 @@
     "cost": "25000",
     "placement": "Barrel",
     "notes": "Extra Damage",
+    "createdBy": null,
     "id": "extended_barrel_iii",
-    "availability": "Assault Rifle, Heavy Pistol, Smg, Sniper Rifle"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Extended Magazine",
@@ -150,8 +230,15 @@
     "cost": "20000",
     "placement": "Magazine",
     "notes": "Additional Heat",
+    "createdBy": null,
     "id": "extended_magazine",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Grenade Launcher",
@@ -161,8 +248,15 @@
     "cost": "48000",
     "placement": "Ammo",
     "notes": "Augmentation",
+    "createdBy": null,
     "id": "grenade_launcher",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Heat Sink",
@@ -172,8 +266,15 @@
     "cost": "40000",
     "placement": "Magazine",
     "notes": "Additional Heat",
+    "createdBy": null,
     "id": "heat_sink",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "High-Caliber Barrel I",
@@ -183,8 +284,15 @@
     "cost": "12000",
     "placement": "Barrel",
     "notes": "Extra Damage, Special",
+    "createdBy": null,
     "id": "high-caliber_barrel_i",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "High-Caliber Barrel II",
@@ -194,8 +302,15 @@
     "cost": "19500",
     "placement": "Barrel",
     "notes": "Extra Damage, Special",
+    "createdBy": null,
     "id": "high-caliber_barrel_ii",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "High-Caliber Barrel III",
@@ -205,8 +320,15 @@
     "cost": "32000",
     "placement": "Barrel",
     "notes": "Extra Damage, Special",
+    "createdBy": null,
     "id": "high-caliber_barrel_iii",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "High-Velocity Barrel I",
@@ -216,8 +338,15 @@
     "cost": "20000",
     "placement": "Barrel",
     "notes": "Damage Reroll",
+    "createdBy": null,
     "id": "high-velocity_barrel_i",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "High-Velocity Barrel II",
@@ -227,8 +356,15 @@
     "cost": "50000",
     "placement": "Barrel",
     "notes": "Damage Reroll",
+    "createdBy": null,
     "id": "high-velocity_barrel_ii",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Incendiary Ammo",
@@ -238,8 +374,15 @@
     "cost": "20000",
     "placement": "Ammo",
     "notes": "Damage Augment, Extra Damage, Primes",
+    "createdBy": null,
     "id": "incendiary_ammo",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Magazine Upgrade",
@@ -249,8 +392,15 @@
     "cost": "8000",
     "placement": "Magazine",
     "notes": "Additional Heat",
+    "createdBy": null,
     "id": "magazine_upgrade",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Omni-Blade Attachment",
@@ -260,8 +410,11 @@
     "cost": "10000",
     "placement": "Barrel",
     "notes": "Melee Attacks",
+    "createdBy": null,
     "id": "omni-blade_attachment",
-    "availability": "Assault Rifle"
+    "availability": [
+      "Assault Rifle"
+    ]
   },
   {
     "name": "Phasic Ammo",
@@ -271,8 +424,15 @@
     "cost": "15000",
     "placement": "Ammo",
     "notes": "Special",
+    "createdBy": null,
     "id": "phasic_ammo",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Piercing Ammo",
@@ -282,19 +442,31 @@
     "cost": "20000",
     "placement": "Ammo",
     "notes": "Ignore Resistance",
+    "createdBy": null,
     "id": "piercing_ammo",
-    "availability": "Assault Rifle, Heavy Pistol, Sniper Rifle"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Plasma Charge System",
     "description": "Augment the weapons firing system to plasma rounds.",
     "rarity": "Spectre",
-    "feature": "The weapon loses the Burst Fire and Double Tap property. Its damage type becomes fire. Hit or miss, each creature within 2m or the target takes 2d10 radiant damage. Use a bonus action to charge the weapon before firing, consuming 2 heat. If charged, increase the hit or miss radiant damage to 4d10.",
+    "feature": "The weapon loses the Burst Fire and Double Tap property. Its damage type becomes radiant. Hit or miss, each creature within 2m or the target takes 2d10 radiant damage. Use a bonus action to charge the weapon before firing, consuming 2 heat. If charged, increase the hit or miss radiant damage to 4d10.",
     "cost": "69000",
     "placement": "Ammo",
     "notes": "Augmentation",
+    "createdBy": null,
     "id": "plasma_charge_system",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Power Magnifier",
@@ -304,19 +476,28 @@
     "cost": "12000",
     "placement": "Body",
     "notes": "Extra Damage",
+    "createdBy": null,
     "id": "power_magnifier",
-    "availability": "Heavy Pistol, Smg"
+    "availability": [
+      "Heavy Pistol",
+      "SMG"
+    ]
   },
   {
     "name": "Precision Scope",
     "description": "Simple 4x optical scope to enhance stability while zoomed.",
     "rarity": "Uncommon",
-    "feature": "Double the weapons normal and long range. +1 on ranged attack rolls made with this weapon.",
+    "feature": "Double the weapon's normal and long range. +1 on ranged attack rolls made with this weapon.",
     "cost": "10000",
     "placement": "Body",
     "notes": "Increased Range, Attack Bonus",
+    "createdBy": null,
     "id": "precision_scope",
-    "availability": "Assault Rifle, Heavy Pistol, Smg"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG"
+    ]
   },
   {
     "name": "Quick Release Magazine",
@@ -326,8 +507,14 @@
     "cost": "15000",
     "placement": "Magazine",
     "notes": "Special",
+    "createdBy": null,
     "id": "quick_release_magazine",
-    "availability": "Assault Rifle, Heavy Pistol, Smg, Sniper Rifle"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Rebalanced Field Coils",
@@ -337,8 +524,15 @@
     "cost": "18000",
     "placement": "Magazine",
     "notes": "Extra Damage",
+    "createdBy": null,
     "id": "rebalanced_field_coils",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Seeking Plasma System",
@@ -348,8 +542,15 @@
     "cost": "75000",
     "placement": "Ammo",
     "notes": "Augmentation",
+    "createdBy": null,
     "id": "seeking_plasma_system",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Shredder Ammo",
@@ -359,8 +560,11 @@
     "cost": "20000",
     "placement": "Ammo",
     "notes": "Damage Augment, Ignore Resistance",
+    "createdBy": null,
     "id": "shredder_ammo",
-    "availability": "Shotgun"
+    "availability": [
+      "Shotgun"
+    ]
   },
   {
     "name": "Single Fire System",
@@ -370,8 +574,15 @@
     "cost": "15000",
     "placement": "Ammo",
     "notes": "Augmentation",
+    "createdBy": null,
     "id": "single_fire_system",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Stability Damper I",
@@ -381,8 +592,14 @@
     "cost": "5000",
     "placement": "Body",
     "notes": "Attack Bonus",
+    "createdBy": null,
     "id": "stability_damper_i",
-    "availability": "Assault Rifle, Smg, Shotgun, Sniper Rifle"
+    "availability": [
+      "Assault Rifle",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Stability Damper II",
@@ -392,8 +609,14 @@
     "cost": "12500",
     "placement": "Body",
     "notes": "Attack Bonus",
+    "createdBy": null,
     "id": "stability_damper_ii",
-    "availability": "Assault Rifle, Smg, Shotgun, Sniper Rifle"
+    "availability": [
+      "Assault Rifle",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Stability Damper III",
@@ -403,19 +626,32 @@
     "cost": "25000",
     "placement": "Body",
     "notes": "Attack Bonus",
+    "createdBy": null,
     "id": "stability_damper_iii",
-    "availability": "Assault Rifle, Smg, Shotgun, Sniper Rifle"
+    "availability": [
+      "Assault Rifle",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Sticky Grenade Launcher",
     "description": "Augment the weapons firing system to a sticky grenade launcher.",
     "rarity": "Spectre",
-    "feature": "The weapon loses the Burst Fire. Its damage type becomes thunder. On a hit, the target takes an additional 3d6 thunder damage and becomes prone. On a miss, the grenade lands 4m beyond the target. At the end of your turn, each creature within 2m of the grenade must succeed on a DC 10 Dexterity saving throw or take 3d6 thunder damage.",
+    "feature": "The weapon loses the Burst Fire property. Its damage type becomes thunder. On a hit, the target takes an additional 3d6 thunder damage and becomes prone. On a miss, the grenade lands 4m beyond the target. At the end of your turn, each creature within 2m of the grenade must succeed on a DC 10 Dexterity saving throw or take 3d6 thunder damage.",
     "cost": "65000",
     "placement": "Ammo",
     "notes": "Augmentation",
+    "createdBy": null,
     "id": "sticky_grenade_launcher",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Stunner",
@@ -425,8 +661,12 @@
     "cost": "25000",
     "placement": "Barrel",
     "notes": "Melee Attacks",
+    "createdBy": null,
     "id": "stunner",
-    "availability": "Heavy Pistol, Smg"
+    "availability": [
+      "Heavy Pistol",
+      "SMG"
+    ]
   },
   {
     "name": "Thermal Scope",
@@ -436,8 +676,12 @@
     "cost": "20000",
     "placement": "Body",
     "notes": "Special",
+    "createdBy": null,
     "id": "thermal_scope",
-    "availability": "Assault Rifle, Sniper Rifle"
+    "availability": [
+      "Assault Rifle",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Ultralight Materials",
@@ -447,8 +691,15 @@
     "cost": "8000",
     "placement": "Body",
     "notes": "Reduced Weight",
+    "createdBy": null,
     "id": "ultralight_materials",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Ultralight Materials II",
@@ -458,8 +709,15 @@
     "cost": "20000",
     "placement": "Body",
     "notes": "Reduced Weight",
+    "createdBy": null,
     "id": "ultralight_materials_ii",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Vintage Heat Sink",
@@ -469,8 +727,15 @@
     "cost": "13000",
     "placement": "Magazine",
     "notes": "Special",
+    "createdBy": null,
     "id": "vintage_heat_sink",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
   },
   {
     "name": "Warp Ammo",
@@ -480,7 +745,142 @@
     "cost": "20000",
     "placement": "Ammo",
     "notes": "Damage Augment, Ignore Resistance, Detonates",
+    "createdBy": null,
     "id": "warp_ammo",
-    "availability": "All"
+    "availability": [
+      "Assault Rifle",
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun",
+      "Sniper Rifle"
+    ]
+  },
+  {
+    "name": "Long Barrel",
+    "description": "Long barrels allows normally short range weapons to operate at greater distances, but with trade-offs in handling.",
+    "rarity": "Uncommon",
+    "feature": "The weapon loses the Hip Fire property. Double the weapon's normal and long range.",
+    "cost": "8000",
+    "placement": "Barrel",
+    "notes": "Increased Range",
+    "createdBy": "Chris Alley",
+    "id": "long_barrel",
+    "availability": [
+      "Heavy Pistol",
+      "SMG",
+      "Shotgun"
+    ]
+  },
+  {
+    "name": "Shotgun Choke",
+    "description": "This barrel extension tightens the spread of the shotgun's pellets increasing its effective firing distance and damage, but decreasing its close-quarters capabilities.",
+    "rarity": "Rare",
+    "feature": "The weapon loses the Hip Fire property. Double the weapon's normal and long range. +1 to weapon damage rolls made with this weapon.",
+    "cost": "12500",
+    "placement": "Barrel",
+    "notes": "Increased Range, Extra Damage",
+    "createdBy": "A. Charlton",
+    "id": "shotgun_choke",
+    "availability": [
+      "Shotgun"
+    ]
+  },
+  {
+    "name": "Gyroscope",
+    "description": "A small device that uses mass effect fields to stabilize the weapon when in flight.",
+    "rarity": "Rare",
+    "feature": "The weapon gains the Thrown property. If it already has the Thrown property, it gains +1 to hit with a ranged weapon attack.",
+    "cost": "10000",
+    "placement": "Grip",
+    "notes": "Special",
+    "createdBy": "Chris Alley",
+    "id": "gyroscope",
+    "availability": [
+      "Melee"
+    ]
+  },
+  {
+    "name": "Extended Grip",
+    "description": "This grip adheres to any existing weapon providing additional power or reach.",
+    "rarity": "Uncommon",
+    "feature": "The weapon loses the Finesse and Light properties. If the weapon has the Versatile property, remove it and add the Two-handed and Reach properties. Otherwise, add the Versatile property and increase the damage dice by one die type for a Versatile attack.",
+    "cost": "8000",
+    "placement": "Grip",
+    "notes": "Special",
+    "createdBy": "Chris Alley",
+    "id": "extended_grip",
+    "availability": [
+      "Melee"
+    ]
+  },
+  {
+    "name": "Counterweight",
+    "description": "Further balance your weapon making it easier to strike in combat.",
+    "rarity": "Uncommon",
+    "feature": "+1 on melee attack rolls made with this weapon.",
+    "cost": "5000",
+    "placement": "Grip",
+    "notes": "Attack Bonus",
+    "createdBy": null,
+    "id": "counterweight",
+    "availability": [
+      "Melee"
+    ]
+  },
+  {
+    "name": "Energy Channel",
+    "description": "Divert power from your kinetic barrier into an electric discharge.",
+    "rarity": "Spectre",
+    "feature": "When you hit with a melee attack with this weapon, you may deal 5 additional lightning damage and remove 5 shield points. You cannot use this if you have 0 shield points.",
+    "cost": "32000",
+    "placement": "Strike",
+    "notes": "Extra Damage, Special",
+    "createdBy": null,
+    "id": "energy_channel",
+    "availability": [
+      "Melee"
+    ]
+  },
+  {
+    "name": "Honed Strike",
+    "description": "Improve the strike of your weapon to deal additional damage.",
+    "rarity": "Uncommon",
+    "feature": "+1 on damage rolls made with this weapon.",
+    "cost": "5000",
+    "placement": "Strike",
+    "notes": "Extra Damage",
+    "createdBy": "Chris Alley",
+    "id": "honed_strike",
+    "availability": [
+      "Melee"
+    ]
+  },
+  {
+    "name": "Poisoned Alloys",
+    "description": "For millenia, beings have been dipping their blades in poison, allowing the simplest wound to cripple their enemy. With advancements in metalwork and weaponsmithing, now the blade can be infused with poison.",
+    "rarity": "Rare",
+    "feature": "Requires a melee weapon that deals slashing or puncture damage. When you hit with a melee attack with this weapon, the target must make a DC 13 Constiution saving throw or become poisoned for 1 hour.",
+    "cost": "15000",
+    "placement": "Strike",
+    "notes": "Special",
+    "createdBy": null,
+    "id": "poisoned_alloys",
+    "availability": [
+      "Melee"
+    ]
+  },
+  {
+    "name": "Probability Modulator",
+    "description": "An advanced VI embedded in the strike of the weapon that reads kinetic vibrations and learns to increase the probability of vicious blows.",
+    "rarity": "Spectre",
+    "feature": "Attacks made with this weapon score a critical hit on a roll of 19 or 20.",
+    "cost": "42000",
+    "placement": "Strike",
+    "notes": "Special",
+    "createdBy": "Chris Alley",
+    "id": "probability_modulator",
+    "availability": [
+      "Melee"
+    ]
   }
 ]

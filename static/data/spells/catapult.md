@@ -29,13 +29,10 @@ advancementOptions:
     exceed the maximum weight limit of the spell (10 kilos at 1st level, 12 kilos
     at 2nd level, etc).
 - name: Counterstrike
-  description: You may cast catapult as a reaction when you see a creature within
-    30m of you casting a spell or making a weapon attack. If the object would strike
-    a creature casting a spell, the creature automatically fails its Dexterity saving
-    throw and must succeed on a Constitution saving throw or the spell fails and has
-    no effect (DC 10 or half the damage done by catapult, whichever is higher). If
-    an object would strike a creature making a weapon attack, you impose disadvantage
-    on the attack roll whether or not the creature fails its Dexterity saving throw.
+  description: As a reaction, which you take when a creature within 30m you casts a spell or makes an attack. Fling
+    the object toward the creature which fails its Dexterity saving throw. If the creature was casting a 
+    spell, it must succeed on a Constitution saving throw or he spell fails (DC 10 or half the Catapult damage, whichever is higher). 
+    If the creature was attacking, it has disadvantage on the attack roll.
 ---
 Choose one object weighing 1 to 10 kilos (about 2 to 20 lbs.) within range that isn't being worn or carried. The object
 flies in a straight line up to 30m in a direction you choose before falling to the ground, stopping early if it impacts

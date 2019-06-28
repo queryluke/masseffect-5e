@@ -1,6 +1,6 @@
 {
   "name": "masseffect-5e",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Mass Effect + D&D 5e",
   "author": "Luke Aeschleman <lukeaeschleman@gmail.com>",
   "private": true,
@@ -17,14 +17,14 @@
     "data": "node -r esm build-data.js"
   },
   "dependencies": {
-    "@nuxtjs/google-analytics": "^2.0.2",
+    "@nuxtjs/google-analytics": "^2.2.0",
     "@nuxtjs/pwa": "^2.6.0",
     "cross-env": "^5.2.0",
     "date-format-lite": "^17.7.0",
     "lunr": "^2.3.6",
-    "nuxt": "^2.3.4",
+    "nuxt": "^2.8.0",
     "vue2-filters": "^0.3.0",
-    "vuetify": "^1.3.14",
+    "vuetify": "^1.5.14",
     "vuetify-loader": "^1.0.8",
     "vuex-persistedstate": "^2.5.4"
   },
