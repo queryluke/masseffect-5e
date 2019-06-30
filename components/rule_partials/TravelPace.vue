@@ -9,11 +9,11 @@
         th(v-for="header in headers" v-bind:key="header") {{ header }}
     tbody
       tr(v-for="(item, index) in items" v-bind:key="item.pace")
-        td(data-table-key="headers[index].text") {{ item.pace }}
-        td(data-table-key="headers[index].text") {{ item.perMinute }}
-        td(data-table-key="headers[index].text") {{ item.perHour }}
-        td(data-table-key="headers[index].text") {{ item.perDay }}
-        td(data-table-key="headers[index].text") {{ item.effect }}
+        td(:data-table-key="headers[0]") {{ item.pace }}
+        td(:data-table-key="headers[1]") {{ item.perMinute }}
+        td(:data-table-key="headers[2]") {{ item.perHour }}
+        td(:data-table-key="headers[3]") {{ item.perDay }}
+        td(:data-table-key="headers[4]") {{ item.effect }}
 </template>
 
 <script>
