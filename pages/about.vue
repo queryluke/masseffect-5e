@@ -204,7 +204,7 @@
           {
             name: 'Roll 20 Character Sheets',
             image: '/images/spells/combat.svg',
-            desc: 'EnricoDandolo1, John G.'
+            desc: 'EnricoDandolo1, John G., Danrconway, Smeeg699'
           },
           {
             name: 'Content reviews, concepts, and ideas',

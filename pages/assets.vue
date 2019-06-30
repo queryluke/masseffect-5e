@@ -34,30 +34,19 @@
       v-layout(row wrap)
         v-flex(xs12 md6)
           // Character sheets
-          h3.text-xs-center.display-1 Character Sheets
+          h3.text-xs-center.display-1 Character Sheets (Beta)
           v-layout(row wrap justify-center)
             v-flex(xs12)
               v-card
                 v-card-text
                   p.
-                    Sadly, a change in the Roll20 interface has broken the Roll20 character sheets by John G. and EnricoDandolo1.
-                    If you're savvy with Roll20 code and can help out, please let us know!
-            //v-flex(xs12 sm6 md4)
-              v-card
-                v-card-title
-                  p.title by John G.
-                v-card-text
-                  p.
-                    When you create a new game in Roll20, search for #[em Mass Effect] in the character sheet select dropdown.
-                    Choose the one under the #[strong Dungeons and Dragons] header.
-            // v-flex(xs12 sm6 md4)
-              v-card
-                v-card-title
-                  p.title by EnricoDandolo1
-                v-card-text
-                  p.mb-0.
-                    An alternate take by EnricoDandolo1. You can upload the files to Roll20.
-                  v-btn(flat href="https://drive.google.com/drive/folders/18-rNxocsUeByAI9dF8Qv5IzJD6rMn77Y?usp=sharing" target="_blank").primary Files
+                    Thanks #[a(href="https://www.reddit.com/u/Danrconway/" target="_blank" class="blue--text text--lighten-3") /u/Danrconway]
+                    and #[a(href="https://www.reddit.com/u/Smeeg699/" target="_blank" class="blue--text text--lighten-3") u/Smeeg699] for working
+                    on some updated Roll20 Character Sheets.
+                v-card-actions
+                  v-btn(flat href="https://drive.google.com/drive/folders/1kBZKPVFHqtHK-vfxwQbK3rmUagS9lhAc" target="_blank").primary Files
+                  v-btn(flat href="https://www.reddit.com/r/masseffect5e/comments/c7h01l/updated_roll20_sheet/" target="_blank").primary Follow Progress
+
         v-flex(xs12 sm6)
           // Tokens
           h3.text-xs-center.display-1 Tokens
