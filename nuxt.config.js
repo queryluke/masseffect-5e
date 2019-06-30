@@ -19,6 +19,10 @@ fs.readdirSync('./static/data/changelog').map((file) => {
 
 
 module.exports = {
+  server: {
+    port: 3000,
+    host: '0.0.0.0'
+  },
   mode: 'spa',
   /*
   ** Headers of the page
