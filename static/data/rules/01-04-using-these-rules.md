@@ -34,7 +34,7 @@ __Spells & Powers__ contains the list of all the new Spells in this homebrew.
 
 __Bestiary__ has entirely new monsters and aliens to fight.
 
-The __Appendix__ has information on the new and removed Skills and Conditions.
+The __Appendix__ has information on Skills (including new and removed), Conditions, and Weapon Properties.
 
 __GM Tools__ contains a number of interesting tools to assist Galaxy Masters in running the game.
 

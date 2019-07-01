@@ -6,13 +6,13 @@ title: How to Play
 The play of the Dungeons & Dragons game (and by extension, Mass Effect 5e) unfolds according to this basic pattern.
 
 ### 1. The GM describes the environment.
-The GM tells the players where their operatives are and what’s around them, presenting the basic scope of options that
+The GM tells the players where their operatives are and what’s around them, detailing the basic scope of options that
 present themselves (how many airlocks lead out of a space station, what’s on a table, who’s in the nightclub, and so on).
 
 ### 2. The players describe what they want to do.
 Sometimes one player speaks for the whole party, saying, “We’ll take the east door,” for example. Other times, different
 operatives do different things: one operative might search a lock box while a second examines an esoteric symbol
-spray painted on a wall and a third keeps a lookout for thugs. The players don’t need to take turns, but the DM listens
+spray-painted on a wall and a third keeps a lookout for thugs. The players don’t need to take turns, but the DM listens
 to every player and decides how to resolve those actions.
 
 Sometimes, resolving a task is easy. If an operative wants to walk across a room and open a door, the GM might just say
@@ -24,7 +24,7 @@ happens, often relying on the roll of a die to determine the results of an actio
 
 Describing the results often leads to another decision point, which brings the flow of the game right back to step 1.
 
-This pattern holds whether the operatives are cautiously exploring a derelict ship, talking to a devious politician, or
+This pattern holds, whether the operatives are cautiously exploring a derelict ship, talking to a devious politician, or
 locked in a firefight against a squad of Batarian extremists. In certain situations, particularly combat, the action is
 more structured and the players (and GM) do take turns choosing and resolving actions. But most of the time, play is
 fluid and flexible, adapting to the circumstances of the mission.

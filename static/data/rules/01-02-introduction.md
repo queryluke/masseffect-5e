@@ -16,7 +16,7 @@ In Mass Effect 5e, the Dungeon Master is called the Galaxy Master (tm tm tm)
 <simple-card><template slot="text">
 __Galaxy Master (GM)__: You arrived on Asteroid 2179 JK178 on a UT-47 Kodiak. Approaching the station’s hangar, a missile
 lock alarm sounds in the cockpit. Your pilot, Harcourt Finn, immediately took evasive action and put down on the opposite
-side of the asteroid. Scans indicate the automated defensive system should extend around the entire asteroid but appears
+side of the asteroid. Scans indicate the automated defense system should extend around the entire asteroid but appears
 to be dormant on the side opposite the station entrance. Having no other options, you double-checked the pressure seals
 on your armor and set out on foot across the asteroid’s surface. After a quick 3 kilometer jaunt, you arrive at the edge
 of the asteroid. Looking down, you can see the hangar doors sealed tight. You’ll have to find another way in …
@@ -29,7 +29,7 @@ Do I think we can easily drop down to it without injuring ourselves or flying of
 
 Unlike a game of make-believe, D&D gives structure to the stories, a way of determining the consequences of the operatives’
 action. Players roll dice to resolve whether their attacks hit or miss or whether their operatives can scale a cliff,
-roll away from the strike of a biotic blase, or pull off some other dangerous task. Anything is possible,
+roll away from the strike of a biotic attack, or pull off some other dangerous task. Anything is possible,
 but the dice make some outcomes more probable than others.
 
 <simple-card><template slot="text">
@@ -43,7 +43,7 @@ __Amanda__: Does my Perception skill apply?
 \
 __GM__: Of course!
 \
-__Amanda (rolling a d20)__: Rats. Eight.
+__Amanda (rolling a d20)__: Rats. I rolled a six, plus two for my perception skill modifier. So, Eight.
 \
 __GM__: No movement that you can see. And Amie, Telos is assessing the drop to the hanger bay?
 </template></simple-card>
