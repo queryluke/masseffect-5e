@@ -4,7 +4,6 @@
     div.text-md-right
       v-btn(to="/phb/rules/equipment#armor" nuxt outline color="secondary") Armor Rules
       v-btn(to="/for-gms/armor-creation" nuxt outline color="secondary") Creating Armor
-      v-btn(href="https://goo.gl/forms/d3Cqwqks1nHGrvfp2" target="_blank" outline color="secondary") Submit Your Idea
 
     // Search functions for large screens
     div.mb-5.hidden-sm-and-down

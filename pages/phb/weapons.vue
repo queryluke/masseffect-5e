@@ -3,7 +3,6 @@
 
     div.text-md-right
       v-btn(to="/phb/rules/equipment#weapons" nuxt outline color="secondary") Weapon Rules
-      v-btn(href="https://goo.gl/forms/pQS1leX183MSOLO32" target="_blank" outline color="secondary") Submit Your Idea
 
     // Search functions for large screens
     div.mb-5.hidden-sm-and-down

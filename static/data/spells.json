@@ -2060,7 +2060,7 @@
     ],
     "damageType": [],
     "castingTime": "Action",
-    "duration": "10 minutes",
+    "duration": "1 round",
     "concentration": true,
     "distance": {
       "range": "30m",

@@ -2,9 +2,6 @@
   v-container
     h2.display-1.hidden-sm-and-down Feats
 
-    div.text-md-right
-      v-btn(href="https://goo.gl/forms/iLn41ukYlOkDy1dF2" target="_blank" outline color="secondary") Submit Your Idea
-
     p.
       A feat represents a talent or an area of expertise that gives a character special capabilities. It embodies
       training, experience, and abilities beyond what a class provides. Mass Effect 5e uses a number of feats in the

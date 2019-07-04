@@ -2,9 +2,6 @@
   v-container
     h2.display-1.hidden-sm-and-down Backgrounds
 
-    div.text-md-right
-      v-btn(href="https://goo.gl/forms/NYusnuMF3vJBX2FR2" target="_blank" outline color="secondary") Submit Your Idea
-
     p.
       The sample backgrounds presented here provide both concrete benefits (features, proficiencies, and languages) and
       roleplaying suggestions.

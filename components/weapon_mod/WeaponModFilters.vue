@@ -30,7 +30,7 @@
     },
     data () {
       return {
-        placementOptions: ['Body', 'Barrel', 'Ammo', 'Magazine'],
+        placementOptions: ['Body', 'Barrel', 'Ammo', 'Magazine', 'Grip', 'Strike'],
         weaponTypeOptions: ['Assault Rifle', 'Heavy Pistol', 'Melee', 'SMG', 'Shotgun', 'Sniper Rifle']
       }
     },

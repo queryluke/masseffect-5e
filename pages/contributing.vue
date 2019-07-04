@@ -40,17 +40,8 @@
           div.text-xs-center.mt-4
             h3.headline Content Submission
             p.
-              With the release of v1.0.0, we're looking to the community more than ever for content creation! We've created a number
-              of content submission forms.
-            v-layout(row wrap justify-center)
-              v-flex(xs12 sm6 md4)
-                v-menu
-                  v-btn(slot="activator" color="primary")
-                    span Submission Forms
-                    v-icon arrow_drop_down
-                  v-list
-                    v-list-tile(v-for="item in forms" v-bind:key="item.name" v-bind:href="item.href" target="_blank")
-                      v-list-tile-title {{ item.name }}
+              With the release of v1.1.2, we've moved our submission workflow to reddit.
+            v-btn(slot="activator" color="primary" href="https://www.reddit.com/r/masseffect5e/wiki/submissions/guidelines" target="_blank") Submission Guidelines
 
         v-flex(xs12).mt-5
           div.text-xs-center.mt-4
@@ -101,24 +92,6 @@
 
 <script>
   export default {
-    data () {
-      return {
-        forms: [
-          {name: 'Armor Mods', href: 'https://docs.google.com/forms/d/e/1FAIpQLSfCroP8SyHjiwgVSIbfXohT3BdfGQ_Ga9-BTUiUJtoQfyWBYA/viewform?usp=sf_link'},
-          {name: 'Armor Sets', href: 'https://docs.google.com/forms/d/e/1FAIpQLSf9s8R78NInfJ66ePXWJhqajiPWYAHKEmZtzW6IjRkvHtEGwA/viewform?usp=sf_link'},
-          {name: 'Backgrounds', href: 'https://docs.google.com/forms/d/e/1FAIpQLScmYO1qBEldpT9nwOcQMEcuiXGKLIUhzEozjaEA_Ja8qg5H4w/viewform?usp=sf_link'},
-          {name: 'Feats', href: 'https://docs.google.com/forms/d/e/1FAIpQLSe4_gBwyqIBZVdV1Lzxfc9QSSrQ-Z2o2fs_Jjz5b0Vnt7aNJw/viewform?usp=sf_link'},
-          {name: 'Grenades', href: 'https://docs.google.com/forms/d/e/1FAIpQLSdRpmAxbmY6u5ug4VpJPXW79CPaVqQ6l9jWJ8jz-wwSR1sHGA/viewform?usp=sf_link'},
-          {name: 'Omni-Tool Programs', href: 'https://docs.google.com/forms/d/e/1FAIpQLScAaoh5S4C4pGgKsp-JizWguCwZT5jNzYBS9VgC4InCd5hDwg/viewform?usp=sf_link'},
-          {name: 'Spells', href: 'https://docs.google.com/forms/d/e/1FAIpQLSd-zIA31mbvveON91vEg-G-YAtsp3G2kAD5Ag_rpCla9zJkXQ/viewform?usp=sf_link'},
-          {name: 'Tools & Kits', href: 'https://docs.google.com/forms/d/e/1FAIpQLSd2VxyasTnUudl9jeoaLPpU01FoNnCgRNFTnKNaKcoMYRsiWw/viewform?usp=sf_link'},
-          {name: 'Vehicles', href: 'https://docs.google.com/forms/d/e/1FAIpQLSczhcQ-Ww4rol9KzDUtyzDdiG8nluIm8yMp6Iz3dzZ2BGWH8A/viewform?usp=sf_link'},
-          {name: 'Weapon Mods', href: 'https://docs.google.com/forms/d/e/1FAIpQLSfJe9l5YLlI9zP_gII26RMJORB_QRrcIm-XV3MjG3PwT7Nf6A/viewform?usp=sf_link'},
-          {name: 'Weapons', href: 'https://docs.google.com/forms/d/e/1FAIpQLSfbs7y0_3dsAjLoJYQW5Wj23uqVlMdvqOsaa9Jl5yhDBn3krw/viewform?usp=sf_link'}
-
-        ]
-      }
-    },
     head () {
       return {
         title: 'Feedback | Mass Effect 5e',
