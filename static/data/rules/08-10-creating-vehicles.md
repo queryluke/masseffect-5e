@@ -83,7 +83,7 @@ Type | Max Crew
 --- | ---
 Medium | 1
 Large | 2-3
-Hugh | 6-8
+Huge | 6-8
 Gargantuan | 10-20
 Frigate | 20-30
 Cruiser | 30-100
