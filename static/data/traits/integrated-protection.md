@@ -3,7 +3,7 @@ id: integrated-protection
 name: Integrated Protection
 ---
 Your body has built-in defensive layers, which determine your armor class. You gain no benefit from wearing armor,
-but if you are using a shield, you apply its bonus as normal.
+but if you are wielding a weapon or shield that provides additional AC, you apply its bonus as normal.
 
 You can alter your armor type for 2 omni-gel each time you finish a long rest. Choose one mode to adopt from the
 Integrated Protection table, provided you meet the mode’s prerequisite.
