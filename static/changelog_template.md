@@ -8,6 +8,8 @@ image:
 
 # vx.x.x
 
+## Highlights
+
 ## Rules
 
 ## Classes

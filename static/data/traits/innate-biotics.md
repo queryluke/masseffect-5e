@@ -7,7 +7,7 @@ to project their will onto the world. As an Asari, you use your Charisma wheneve
 ability. In addition, you use your Charisma modifier when setting the saving throw DC for a biotic spell you cast and
 when making an attack roll with one.
 
-Choose a class: Adept or Vanguard. You learn two cantrips of your choice from that class’s spell list. In addition,
+Choose a class: Adept or Vanguard. You learn two biotic cantrips of your choice from that class’s spell list. In addition,
 choose one 1st-level spell from that same list. You learn that spell and can cast it at its lowest level. Once you cast
 it, you must finish a long rest before you can cast it again.
 
