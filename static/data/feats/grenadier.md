@@ -8,6 +8,7 @@ new: true
 
 - +2 grenade capacity
 - __Improvised Grenades__. You can make grenades from scrap metal and scavenged materials. Acquire 1 frag grenade every long rest.
+The Mark of the frag grenade is equal to your level divided by three, minimum 1.
 
 When you use a grenade, you may choose to make a ranged weapon attack on a creature instead of choosing a target location.
 Add your dexterity or strength modifier (your choice) and proficiency bonus to the attack roll. On a hit, the grenade
