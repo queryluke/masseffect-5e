@@ -2,7 +2,7 @@
 id: bec_field
 name: B.E.C. Field
 createdBy: Chris Alley
-level: 3
+level: 1
 type: tech
 attackType: []
 effect:
