@@ -8,8 +8,8 @@
         v-flex(xs12 sm6 md4)
           v-btn(block href="https://drive.google.com/open?id=1aBCbmwDgmChg6d6K0yegHTab-R6cQD28" target="_blank").primary Official
         v-flex(xs12 sm4)
-          v-btn(block href="https://drive.google.com/open?id=10oQ1UTmimRmKe-XXajEpeERhfRQAL-ro" target="_blank").primary Fillable
-          div.text-xs-center created by #[a(href="https://www.reddit.com/user/wretchedcrows" target="_blank" class="blue--text text--lighten-3") /u/wretchedcrows]
+          v-btn(block href="https://drive.google.com/open?id=1GLotuedjZ7AtLMhooBmhEFSU8TRuI4A7" target="_blank").primary Fillable
+          div.text-xs-center created by #[a(href="https://www.reddit.com/user/rpk0714" target="_blank" class="blue--text text--lighten-3") /u/rpk0714]
       h3.text-xs-center.display-1.mt-4 Google Sheets
       v-layout(row wrap justify-center)
         v-flex(xs12 sm4)

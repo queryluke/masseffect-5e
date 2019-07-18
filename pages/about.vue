@@ -66,7 +66,7 @@
               v-divider(inset)
         v-flex(xs12 sm8)
           v-card.elevation-0.transparent
-            v-alert(type="info" v-bind:value="true" outline).
+            v-alert(type="info" color="light-blue" v-bind:value="true" outline).
               If, we've missed anyone it was merely an oversight on our part and not intentional.
               Feel free to contact us and we'll be happy to give you a shout out. If you're on the list and want to be
               removed, have your name changed, or update your picture, contact us as well.
@@ -84,7 +84,7 @@
           v-flex(v-for="att in attributions" v-bind:key="att.attribution" xs12 sm6 md4 lg3 d-flex)
             v-card(:href="att.source" v-bind:alt="att.title" target="_blank" hover)
               v-img(:src="att.path" height="200px" contain).blue-grey.lighten-5
-              v-card-title(color="grey darken-3") {{ att.attribution }}
+              v-card-title(color="grey darken-3" v-html="att.attribution")
 </template>
 
 <script>
@@ -154,73 +154,33 @@
         ],
         contributors: [
           {
-            name: 'Alex Needleman',
+            name: 'Roll 20 Character Sheets',
+            image: '/images/spells/combat.svg',
+            desc: 'Danrconway, Smeeg699, EnricoDandolo1, John G.'
+          },
+          {
+            name: 'Character Sheets',
             image: '/images/spells/tech.svg',
-            desc: 'Alex is a thorough and detail-oriented play tester who has pointed out many anomalies and problematic' +
-            ' features. He\'s also been working on a set of VTT maps that we hope to feature on the site soon. He has also been heavily' +
-            ' involved in the creation of weapon mods.'
+            desc: '/u/rpk0714, /u/wretchedcrows, Gamemaster Po, TheNamelessOne, Thessian Shadow, Szirachm'
           },
           {
-            name: 'Noel Moriarty',
-            image: 'https://avatars1.githubusercontent.com/u/38429874?s=88&v=4',
-            desc: 'Nmmoriarty is a wizard at breaking down rules and theorycrafting. This calculated approach has been invaluable' +
-            ' in making a balanced yet intriguing system.'
-          },
-          {
-            name: 'Chris Alley',
-            image: '/images/classes/adept.svg',
-            desc: 'Chris has provided a number of unique and fun new spells, weapons, and other content.'
-          },
-          {
-            name: 'Duneday',
-            image: 'https://avatars1.githubusercontent.com/u/38437397?s=88&v=4',
-            desc: 'Duneday has contributed a lot of class improvement ideas, especially with Sentinels and was a major part of the Race audit'
-          },
-          {
-            name: 'GameMasterPo',
-            image: 'https://avatars0.githubusercontent.com/u/44739269?s=88&v=4',
-            desc: 'Alternate Google Sheets character sheet'
-          },
-          {
-            name: 'wretchedcrows',
-            image: 'https://styles.redditmedia.com/t5_tgcty/styles/profileIcon_x1i9x8j2pm621.png?width=256&height=256&crop=256:256,smart&s=bf7a16065e5b074ee9ea01dedfc078349e61ec39',
-            desc: 'Created a fillable PDF of the updated official character sheet.'
-          },
-          {
-            name: 'Connor Maxwell',
-            image: '/images/classes/engineer.svg',
-            desc: 'Collector Ship vehicle'
+            name: 'Content Contributors',
+            image: '/images/spells/biotic.svg',
+            desc: 'Chris Alley, Connor Maxwell, A. Charlton'
           },
           {
             name: '/u/thestray',
-            image: '/images/spells/biotic.svg',
-            desc: 'A lot of the character descriptions were based on thestray\'s homebrew, Races of the Relay',
-          },
-          {
-            name: 'Original Fillable Character Sheet PDFs',
-            image: '/images/spells/tech.svg',
-            desc: 'TheNamelessOne, Thessian Shadow, Szirach'
-          },
-          {
-            name: 'Roll 20 Character Sheets',
             image: '/images/spells/combat.svg',
-            desc: 'EnricoDandolo1, John G., Danrconway, Smeeg699'
-          },
-          {
-            name: 'Content reviews, concepts, and ideas',
-            image: '/images/spells/biotic.svg',
-            desc: 'Avezebra, damuttley, SrShdw, BLUEmusta, tioeduardo27'
-          },
-          {
-            name: 'kstrtroi',
-            image: 'https://avatars1.githubusercontent.com/u/39886442?s=88&v=4',
-            desc: 'Incredible PDF design ideas'
+            desc: 'A lot of the character descriptions were based on thestray\'s homebrew, ' +
+            '<a href="https://drive.google.com/file/d/1NnYN-UNJ2jK75PkvD2TTRqoLzjA80ONu/view" target="_blank" class="light-blue--text">Races of the Relay</a>',
           },
           {
             name: 'Other Shout outs!',
             image: 'https://vignette.wikia.nocookie.net/masseffect/images/3/32/ME1_Paragon.png/revision/latest?cb=20120309175829',
-            desc: 'Stephen W., Andrew Ouellette, David T., Mel Bee, Joey C., Connor C., MonocledMutineer, kstrtroi, HadesJester, Lodus, BenutzernameIstBereitsVergeben ' +
-            ' Dor, J. Tickner, fkzd, Gabe, and any one who has contacted us with ideas or words of motivation!'
+            desc: 'Alex Needleman, Nmmoriarty, Duneday,damuttley, SrShdw, BLUEmusta,  Stephen W., Andrew Ouellette, David T., ' +
+            'Mel Bee, Joey C., Connor C., MonocledMutineer, kstrtroi, HadesJester, Lodus, BenutzernameIstBereitsVergeben, ' +
+            'Dor, J. Tickner, fkzd, Gabe, kstrtroi, all the others in the reddit community any one who has contacted us ' +
+            'with ideas or words of motivation!'
           }
         ]
       }
