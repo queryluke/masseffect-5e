@@ -30,7 +30,7 @@ advancementOptions:
   description: Increase the damage die type to d12.
 ---
 Release a lance of energy at a creature within range. Make a ranged spell attack against the target. On a hit, the target
-takes force damage equal to 3d8 + your biotic modifier.
+takes force damage equal to 3d8 + your spellcasting ability modifier.
 
 __At Higher Levels__: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 2d8
 for each slot level above the 1st.

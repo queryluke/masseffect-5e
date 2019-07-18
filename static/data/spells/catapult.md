@@ -25,7 +25,7 @@ availableClasses:
 advancementOptions:
 - name: Salvo
   description: When you cast Salvo, you may target a number of objects equal to or
-    less than your spellcasting modifier. The combined weight of the objects cannot
+    less than your spellcasting ability modifier. The combined weight of the objects cannot
     exceed the maximum weight limit of the spell (10 kilos at 1st level, 12 kilos
     at 2nd level, etc).
 - name: Counterstrike
