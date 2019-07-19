@@ -25,7 +25,7 @@ startingCredits: Instead of your class's starting equipment, you may start with 
 bodyImg: http://vignette2.wikia.nocookie.net/masseffect/images/2/2a/Turian_MP.png/revision/latest/scale-to-width-down/500
 img: https://vignette.wikia.nocookie.net/masseffect/images/4/41/Garrus3.png/revision/latest/scale-to-width-down/640?cb=20090625020040
 traits: 
-  - brothers-in-arms
+  - esprit-de-corps
   - martial-training
   - thulium-skin
 age: Turians have natural lifespans comparable to humans.
