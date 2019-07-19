@@ -4,6 +4,12 @@
     h2.display-3.font-weight-thin.text-xs-center.mt-5 Character Sheets
     v-container(grid-list-xl)
       h3.text-xs-center.display-1 Printable
+      h5.text-xs-center.title.mt-3 Version 2
+      v-layout(row wrap justify-center)
+        v-flex(xs12 sm6 md4)
+          v-btn(block href="https://drive.google.com/open?id=1wN7ALQLWtKoBmqOJtW10H7KpsYkjCM_A" target="_blank").primary Generic
+          div.text-xs-center created by Chris "OodSigma13" Dickson
+      h5.text-xs-center.title.mt-3 Version 1
       v-layout(row wrap justify-center)
         v-flex(xs12 sm6 md4)
           v-btn(block href="https://drive.google.com/open?id=1aBCbmwDgmChg6d6K0yegHTab-R6cQD28" target="_blank").primary Official
