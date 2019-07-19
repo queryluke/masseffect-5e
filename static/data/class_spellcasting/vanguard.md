@@ -19,7 +19,7 @@ The Spells Known column of the Vanguard table shows when you learn more vanguard
 must be of a level for which you have spell slots. For instance, when you reach 9th level in this class, you can learn
 one new spell of 1st or 2nd level.
 
-Additionally, when you learn a new spell, you may instead choose one of the vanguard spells you know and learn an advanced
+Additionally, when you learn a new spell, you may instead choose one of the spells you know and learn an advanced
 version of it. You select one of the advancement options listed in the spell description. Whenever you cast the spell,
 you cast the advanced version of it. You can only learn one advancement for each spell.
 

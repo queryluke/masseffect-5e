@@ -18,7 +18,7 @@ The Spells Known column of the Sentinel table shows when you learn more sentinel
 and higher. A spell you choose must be of a level no higher than what's shown in the table's Slot Level column for your
 level. When you reach 5th level, for example, you learn a new sentinel spell, which can be 1st or 2nd level.
 
-Additionally, when you gain a level in this class, you can choose one of the sentinel spells you know and learn an advanced
+Additionally, when you learn a new spell, you may instead choose one of the spells you know and learn an advanced
 version of it. You select one of the advancement options listed in the spell description. Whenever you cast the spell,
 you cast the advanced version of it. You can only learn one advancement for each spell.
 
