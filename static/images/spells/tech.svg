@@ -1,9 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg width="195mm" height="195mm" viewBox="40.507999420166016 40.507999420166016 609.9290161132812 609.9290161132812" id="svg2" version="1.1" xmlns="http://www.w3.org/2000/svg">
-  <g id="layer1" transform="translate(0,-361.41754)">
-    <g id="g4149" transform="matrix(0.89366306,0,0,0.89366306,36.63725,64.570287)" style="fill:#000000">
-      <circle style="opacity:1;fill:#d98300;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:16.78484726;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="path4187" cx="345.58344" cy="718.74921" r="330.06232"/>
-      <path style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:8.33983707;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" d="M 535.55153,609.07025 345.58774,499.39564 155.61533,609.07025 l 0,219.35785 9.23322,5.32554 180.73919,104.34909 189.96379,-109.67463 z m -36.91559,21.3107 0,176.7278 -117.44009,67.01309 -0.40102,-66.27553 75.40612,-37.91886 -0.3305,-112.65181 -74.16152,-35.12924 1.4485,110.10018 -37.18272,29.29443 -37.57138,-29.21593 -0.65588,-110.95743 -73.03331,36.49376 -0.51403,109.3756 72.73557,40.81476 -0.0586,65.39477 -114.3461,-66.33768 0,-176.72781 153.05684,-88.36387 z" id="path6005"/>
-    </g>
-  </g>
+<!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 552.8 552.8" style="enable-background:new 0 0 552.8 552.8;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#081826;}
+	.st1{fill:#C5791E;}
+	.st2{fill:#FFFFFF;}
+</style>
+<g id="bg" inkscape:version="0.91 r13725" sodipodi:docname="adept.svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg">
+	
+		<sodipodi:namedview  bordercolor="#666666" borderopacity="1.0" id="base" inkscape:current-layer="layer1" inkscape:cx="-129.55511" inkscape:cy="304.64766" inkscape:document-units="px" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="1017" inkscape:window-maximized="1" inkscape:window-width="1920" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:zoom="0.98994949" pagecolor="#ffffff" showgrid="true" showguides="false">
+		<inkscape:grid  id="grid4169" type="xygrid"></inkscape:grid>
+	</sodipodi:namedview>
+	<circle id="path8598_4_" class="st0" cx="277.4" cy="263.4" r="183.9"/>
+	<polyline class="st0" points="232.2,104.3 232.2,42.3 322.3,42.3 322.3,104.3 	"/>
+	<polyline class="st0" points="323.1,421.9 323.1,484.3 231.4,484.3 231.4,421.9 	"/>
+	<polyline class="st0" points="435.2,216.8 498.6,216.8 498.6,310.1 435.2,310.1 	"/>
+	<polyline class="st0" points="118.8,309.3 56.2,309.3 56.2,217.6 118.8,217.6 	"/>
+	<polyline class="st0" points="132.8,183.6 88.7,139.5 153.4,74.9 197.4,118.9 	"/>
+	<polyline class="st0" points="421.8,342.9 466.1,387.1 401,452.2 356.7,408 	"/>
+	<polyline class="st0" points="356.7,118.9 401.4,74.2 466.5,139.3 421.8,184 	"/>
+	<polyline class="st0" points="197.4,407.9 153.5,451.9 88.8,387.2 132.8,343.2 	"/>
+</g>
+<g id="Layer_3">
+	<circle id="path8598_1_" class="st1" cx="277.4" cy="263.4" r="180.5"/>
+	<polyline class="st1" points="234.9,102.6 234.9,45.7 319.6,45.7 319.6,102.6 	"/>
+	<polyline class="st1" points="319.6,424.3 319.6,481.1 234.9,481.1 234.9,424.3 	"/>
+	<circle id="path8598_2_" class="st0" cx="277.4" cy="263.4" r="150.8"/>
+	<polyline class="st1" points="438.1,221.1 494.9,221.1 494.9,305.8 438.1,305.8 	"/>
+	<polyline class="st1" points="116.4,305.8 59.6,305.8 59.6,221.1 116.4,221.1 	"/>
+	<polyline class="st1" points="133.6,179.6 93.4,139.4 153.3,79.5 193.5,119.7 	"/>
+	<polyline class="st1" points="421,347.2 461.1,387.4 401.2,447.3 361,407.1 	"/>
+	<polyline class="st1" points="361,119.7 401.2,79.5 461.1,139.4 421,179.6 	"/>
+	<polyline class="st1" points="193.5,407.1 153.3,447.3 93.4,387.4 133.6,347.2 	"/>
+</g>
+<g id="Layer_2">
+	<g>
+		
+			<rect x="224.7" y="243.3" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -102.6162 271.8761)" class="st0" width="104.3" height="32.9"/>
+		<polygon class="st2" points="353.2,203.5 279.4,277.2 259.2,257.1 333,183.3 334.8,201.7 		"/>
+		<polygon class="st2" points="367.9,156.7 311.8,212.8 308.1,176.1 331.2,153.1 		"/>
+		<polygon class="st2" points="323.6,224.7 379.8,168.6 383.4,205.3 360.4,228.3 		"/>
+		<polygon class="st2" points="197.2,319.1 270.9,245.4 291.1,265.6 217.4,339.3 215.6,320.9 		"/>
+		<polygon class="st2" points="182.4,366 238.6,309.8 242.2,346.6 219.2,369.6 		"/>
+		<polygon class="st2" points="226.7,297.9 170.5,354.1 166.9,317.3 189.9,294.3 		"/>
+	</g>
+</g>
 </svg>

@@ -56,6 +56,7 @@
             v-card(dark)
               v-card-title(primary-title).title Class specific character sheets
               v-card-text.pt-0
+                p.light-blue--text.title #[v-icon(color="light-blue") warning] In Progress
                 p.
                   With only 6 classes, it makes sense to adjust the character sheets with class specific information
                   and boxes. If you'd like to work on this, we can send you the original InDesign files so you can
@@ -64,12 +65,14 @@
             v-card(dark)
               v-card-title(primary-title).title Roll20 Character Sheet
               v-card-text.pt-0
+                p.light-blue--text.title #[v-icon(color="light-blue") warning] In Progress
                 p.
                   Roll20 has had a few updates, and we've not had time to update the Roll 20 character sheet.
           v-flex(xs12 md4 d-flex)
             v-card(dark)
               v-card-title(primary-title).title Icon design
               v-card-text.pt-0
+                p.light-blue--text.title #[v-icon(color="light-blue") warning] In Progress
                 p.
                   The site uses Material Design Icons, icons from the Noun Project, and originally created icons.
                   We'd love for someone to create a new set of icons for us, one that reflects the Mass Effect universe.
@@ -78,6 +81,7 @@
             v-card(dark)
               v-card-title(primary-title).title PDF of rules
               v-card-text.pt-0
+                p.light-blue--text.title #[v-icon(color="light-blue") warning] In Progress
                 p.
                   We've been waiting on a more stable version of the ruleset to ask for this one. But as we slowly approach
                   v1.0.0, it makes sense to go ahead an look for contributors.

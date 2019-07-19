@@ -1,6 +1,6 @@
 <template lang="pug">
   span
-    v-avatar(size="25")
+    v-avatar(size="30")
       img(:src="`/images/spells/${spell.type}.svg`")
     span  {{ level }}
 </template>
