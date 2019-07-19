@@ -161,7 +161,7 @@
           {
             name: 'Character Sheets',
             image: '/images/spells/tech.svg',
-            desc: '/u/rpk0714, /u/wretchedcrows, Gamemaster Po, TheNamelessOne, Thessian Shadow, Szirachm'
+            desc: '/u/rpk0714, /u/IdonMezzedUp, /u/wretchedcrows, Gamemaster Po, TheNamelessOne, Thessian Shadow, Szirachm'
           },
           {
             name: 'Content Contributors',
