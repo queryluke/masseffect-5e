@@ -9,7 +9,7 @@ effect:
 - debuff
 damageType: []
 castingTime: Action
-duration: 1 turn
+duration: 1 round
 concentration: false
 distance:
   range: 30m

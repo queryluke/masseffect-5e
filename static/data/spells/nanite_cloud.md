@@ -9,7 +9,7 @@ effect:
 - ward
 damageType: []
 castingTime: Reaction, which you take when you would take acid, cold, fire, lightning, or thunder damage.
-duration: 1 turn
+duration: 1 round
 concentration: false
 distance:
   range: self
