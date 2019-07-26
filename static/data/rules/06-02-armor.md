@@ -68,7 +68,7 @@ as GMs might allow this type of tinkering in exchange for time, credits, and/or 
 __Set Bonuses__ are additional benefits you receive from wearing multiple pieces from the same set, signifying the armors
 component pieces working together for a unified integration. Armor with the same base name is part of a set, e.g. __Colossus__ _[item]_. 
 
-You only receive the benefit once per set and the benefit is end immediately if you fall below the threshold. For example, 
+You only receive the benefit once per set and the benefit ends immediately if you fall below the threshold. For example, 
 a set provides +1 AC for wearing 2 of 4 pieces and +1 AC for wearing 4 of 4 pieces. If you are wearing the head and chest 
 pieces, you gain +1 AC (in addition to any benefits provided from the set pieces you are wearing). _Note: You __do not__ 
 gain +1 AC for the head and +1 AC for the chest_. As soon as you remove either the head piece or the chest piece, you loose
