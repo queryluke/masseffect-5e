@@ -20,7 +20,7 @@ skills. The first is that combining a tool with a skill gives the player advanta
 The second benefit is that tools provide additional non-combat features.
 
 __Advantage or Added Benefit__. When the character combines their tool proficiency with a skill, they gain _additional insight_ 
-which means the operative either gains advantage on the skill check or the can gain an added benefit, decided by the GM. 
+which means the operative either gains advantage on the skill check or they can gain an added benefit, decided by the GM. 
 
 For example, a character that is proficient with Hacking Tools gains advantage when combining their tool proficiency
 with an Intelligence (Investigation) check when utilizing networked systems (like the exonet) or they might gain
