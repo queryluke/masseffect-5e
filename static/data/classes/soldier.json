@@ -208,7 +208,8 @@
       "level": 17,
       "proficiencyBonus": 6,
       "features": [
-        "adrenaline_rush_2"
+        "adrenaline_rush_2",
+        "indomitable_3"
       ],
       "cantrips": 5
     },

@@ -67,6 +67,8 @@
             case 'brutal_critical_2':
             case 'brutal_critical_3':
             case 'adrenaline_rush_2':
+            case 'indomitable_2':
+            case 'indomitable_3':
               return `${feature.name}(${feature.id.split('_')[feature.id.split('_').length - 1]})`
             default:
               return feature.name
