@@ -790,31 +790,6 @@
             "supply_pylon"
           ]
         ]
-      },
-      {
-        "name": "Demolisher",
-        "source": "v0.8.4",
-        "description": "Demolishers are explosive specialists with an eye for combat. While not as skilled as a Soldier or Infiltrator, they make up for it with by covering the battlefield with grenades and heavy weapon fire.",
-        "features": [
-          [
-            "advanced_weapon_holsters",
-            "zz_weapon_training"
-          ],
-          [
-            "makeshift_grenades_1",
-            "extra_attack_1"
-          ],
-          [
-            "heavy_weapon_hack",
-            "fighting_style"
-          ],
-          [
-            "makeshift_grenades_2"
-          ],
-          [
-            "paint_by_number"
-          ]
-        ]
       }
     ]
   },
@@ -1202,44 +1177,6 @@
           ],
           [
             "saboteurs_reflexes"
-          ]
-        ]
-      },
-      {
-        "name": "Saboteur",
-        "source": "v0.8.4",
-        "description": "Saboteurs are infiltration experts. They use a sharp mind to subtly affect the outcome of battles.",
-        "features": [
-          [
-            "zz_insightful_fighting"
-          ],
-          [
-            "zz_infiltration"
-          ],
-          [
-            "zz_saboteurs_touch"
-          ],
-          [
-            "zz_eye_for_weakness"
-          ]
-        ]
-      },
-      {
-        "name": "Operative",
-        "source": "v0.8.4",
-        "description": "Operatives are ranged specialists that rely on gunplay and a keen eye to take out enemies from a distance.",
-        "features": [
-          [
-            "zz_dropshot"
-          ],
-          [
-            "zz_deadeye"
-          ],
-          [
-            "zz_combat_heuristics"
-          ],
-          [
-            "zz_killshot"
           ]
         ]
       }
@@ -1662,28 +1599,6 @@
             "tech_aura_3"
           ]
         ]
-      },
-      {
-        "name": "Mastermind",
-        "source": "v0.8.4",
-        "description": "Masterminds are the top strategists and battlefield experts. They can easily turn the tides by calling out orders or synchronizing troop movements.",
-        "features": [
-          [
-            "master_tactician"
-          ],
-          [
-            "zz_biotic_enfilade"
-          ],
-          [
-            "zz_tactical_advantage"
-          ],
-          [
-            "zz_master_duelist"
-          ],
-          [
-            "zz_synchronized_assault"
-          ]
-        ]
       }
     ]
   },
@@ -1989,28 +1904,6 @@
           ],
           [
             "strength_before_death"
-          ]
-        ]
-      },
-      {
-        "name": "Sharpshooter",
-        "source": "v0.8.4",
-        "description": "Sharpshooters use pinpoint accuracy and target weak points on their opponents, resulting in massive amounts of bonus damage.",
-        "features": [
-          [
-            "zz_steady_aim"
-          ],
-          [
-            "careful_eyes"
-          ],
-          [
-            "zz_close-quarters_shooter"
-          ],
-          [
-            "rapid_strike"
-          ],
-          [
-            "zz_snap_shot"
           ]
         ]
       }
