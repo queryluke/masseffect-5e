@@ -642,7 +642,8 @@
         "level": 11,
         "proficiencyBonus": 4,
         "features": [
-          "recharge_2"
+          "recharge_2",
+          "improved_efficiency"
         ],
         "techPoints": 26,
         "techPointLimit": 3
