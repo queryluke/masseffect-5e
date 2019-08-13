@@ -2357,7 +2357,6 @@
     "alignment": "Neutral",
     "barrier": null,
     "conditionImmunities": [
-      "petrified",
       "poisoned"
     ],
     "cr": "1/4",
