@@ -60,10 +60,8 @@ about using thermal clips can be found below.
 Heavy Weapons use Charges to track the number of times they can be fired. If you run out of Charges your weapon is nothing more than a hunk of metal.
 
 #### Targeting
-Most Heavy Weapons also use the Targeting condition. Targeting means painting the battlefield or keeping a lock on one or more creatures for
-a single round of combat. Targeting is considered a free action, as long as you've already drawn the heavy weapon,
-i.e., you can choose to pick-up or equip a weapon as your action, then begin targeting as a free action before your turn ends.
-If you're already holding the weapon, you might use an ability as your action and then begin targeting.
+Most Heavy Weapons also use the Targeting condition. Targeting means painting the battlefield or keeping a lock on one 
+or more creatures for a single round of combat. More information about targeting can be found in <nuxt-link to="/phb/appendix/conditions">conditions appendix</nuxt-link>.
 
 
 
