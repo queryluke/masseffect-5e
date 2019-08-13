@@ -34,7 +34,7 @@ While blade armor is active, it is considered a melee weapon that deals 1d6 pier
 you, you have advantage on attack rolls made with blade armor against the grappled creature. 
 
 You have advantage on your Strength (Athletics) to grapple and deal 1d6 piercing damage when you grapple the target. 
-A creature that is grappled by you while blade armor is active take 1d6 piercing damage each time it attempts to 
+A creature that is grappled by you while blade armor is active takes 1d6 piercing damage each time it attempts to 
 escape from the grapple.
 
 You must finish a long rest before you can use this ability again.
