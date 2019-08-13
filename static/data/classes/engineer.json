@@ -10,6 +10,12 @@
     "Light",
     "Medium"
   ],
+  "toolProficiencies": [
+    "Armorsmith's Workbench",
+    "Tailor's Tools",
+    "Tinker's Tools",
+    "Weaponsmith's Workbench"
+  ],
   "weaponProficiencyChoices": 1,
   "weaponProficiencies": {
     "required": [

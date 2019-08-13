@@ -491,6 +491,12 @@
       "Light",
       "Medium"
     ],
+    "toolProficiencies": [
+      "Armorsmith's Workbench",
+      "Tailor's Tools",
+      "Tinker's Tools",
+      "Weaponsmith's Workbench"
+    ],
     "weaponProficiencyChoices": 1,
     "weaponProficiencies": {
       "required": [
@@ -804,6 +810,10 @@
     "minHitDieRoll": 5,
     "armorProficiencies": [
       "Light"
+    ],
+    "toolProficiencies": [
+      "Hacking Tools",
+      "Thieves' Tools"
     ],
     "weaponProficiencyChoices": 2,
     "weaponProficiencies": {

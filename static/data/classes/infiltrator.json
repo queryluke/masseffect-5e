@@ -9,6 +9,10 @@
   "armorProficiencies": [
     "Light"
   ],
+  "toolProficiencies": [
+    "Hacking Tools",
+    "Thieves' Tools"
+  ],
   "weaponProficiencyChoices": 2,
   "weaponProficiencies": {
     "required": [
