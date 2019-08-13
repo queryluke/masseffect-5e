@@ -26,7 +26,7 @@ __Feature: Criminal Contact__. You have a reliable and trustworthy contact who a
 __Specialty__. There are many kinds of criminals and each has their own special set of skills. Choose the role you played in your criminal
 life, or roll on the table below.
 
-1d8 |	Specialty | Skill Proficiencies
+d8 |	Specialty | Skill Proficiencies
 --- | --- | ---
 1	| Assassin | Acrobatics, Stealth
 2	| Blackmailer | Deception, Intimidation

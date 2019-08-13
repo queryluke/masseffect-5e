@@ -28,7 +28,7 @@ valuable or rare materials and you know how to salvage those materials from the 
 ### Suggested Characteristics
 Scrappers are hoarders, inventors, crafters, and tinkerers. To them, everything has value and can be reused or repurposed.
 
-d6 | Personality Trait
+d8 | Personality Trait
 --- | ---
 1 | I prefer the company of VI and AI to organic beings.
 2 | I can't pass up the chance to root through someone's trash and look for "valuables".

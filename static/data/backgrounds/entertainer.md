@@ -26,7 +26,7 @@ take a liking to you.
 __Specialty__. A good entertainer is versatile, spicing up every performance with a variety of different routines. Choose
 one to three routines or roll on the table below to define your expertise as an entertainer.
 
-1d8 | Routines
+d8 | Routines
 --- | ---
 1 | Comedian
 2 | Dancer

@@ -26,7 +26,7 @@ simply cannot be found.
 __Specialty__. To determine the nature of your scholarly training, roll a d8 or choose from the options in the table below.
 You gain a tool proficiency based on your choice.
 
-1d8 | Field of Study | Proficiency
+d8 | Field of Study | Proficiency
 --- | --- | ---
 1 | Chemistry | Chemist's supplies or brewer's supplies
 2	| Astronomy | Starship system (navigation)

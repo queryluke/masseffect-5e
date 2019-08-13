@@ -25,7 +25,7 @@ usually gain access to friendly military encampments and fortresses where your r
 __Specialty__. During your time as a soldier, you had a specific role to play in your unit or army. Roll a d8 or choose
 from the options in the table below to determine your role:
 
-1d8 | Role
+d8 | Role
 --- | ---
 1	| Infantry
 2	| Medic
