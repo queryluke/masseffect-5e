@@ -35,7 +35,7 @@
   ],
   "features": [],
   "hp": {
-    "numDice": 3,
+    "numDice": 6,
     "die": 6
   },
   "id": "combat_drone",

@@ -329,7 +329,7 @@
     ],
     "features": [],
     "hp": {
-      "numDice": 3,
+      "numDice": 5,
       "die": 6
     },
     "id": "assault_drone",
@@ -2370,7 +2370,7 @@
     ],
     "features": [],
     "hp": {
-      "numDice": 3,
+      "numDice": 6,
       "die": 6
     },
     "id": "combat_drone",
@@ -2520,7 +2520,7 @@
     ],
     "features": [],
     "hp": {
-      "numDice": 4,
+      "numDice": 6,
       "die": 6
     },
     "id": "defense_drone",
@@ -2593,7 +2593,7 @@
       }
     ],
     "hp": {
-      "numDice": 2,
+      "numDice": 4,
       "die": 6
     },
     "id": "disruption_drone",
@@ -6414,7 +6414,7 @@
       }
     ],
     "hp": {
-      "numDice": 2,
+      "numDice": 4,
       "die": 6
     },
     "id": "recon_drone",
@@ -6493,7 +6493,7 @@
     ],
     "features": [],
     "hp": {
-      "numDice": 2,
+      "numDice": 5,
       "die": 6
     },
     "id": "repair_drone",
@@ -6571,7 +6571,7 @@
     ],
     "features": [],
     "hp": {
-      "numDice": 2,
+      "numDice": 5,
       "die": 6
     },
     "id": "rocket_drone",

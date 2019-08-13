@@ -35,7 +35,7 @@
   ],
   "features": [],
   "hp": {
-    "numDice": 3,
+    "numDice": 5,
     "die": 6
   },
   "id": "assault_drone",

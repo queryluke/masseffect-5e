@@ -35,7 +35,7 @@
   ],
   "features": [],
   "hp": {
-    "numDice": 4,
+    "numDice": 6,
     "die": 6
   },
   "id": "defense_drone",

@@ -41,7 +41,7 @@
   ],
   "features": [],
   "hp": {
-    "numDice": 2,
+    "numDice": 5,
     "die": 6
   },
   "id": "repair_drone",
