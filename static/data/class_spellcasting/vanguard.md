@@ -1,5 +1,5 @@
 ### Cantrips
-At 1st level, you know four cantrips of your choice from the vanguard spell list. You learn additional vanguard cantrips of
+At 1st level, you know two cantrips of your choice from the vanguard spell list. You learn additional vanguard cantrips of
 your choice at higher levels, as shown in the Cantrips column of the Vanguard table.
 
 Instead of learning a new cantrip, you may instead learn the advanced version of a cantrip you already know.
