@@ -180,11 +180,11 @@
     "advancementOptions": [
       {
         "name": "Bleeding Blades",
-        "description": "On a hit, the target takes an additional 3d12 damage at the start of its turn due to blood loss. This damage bypasses shields."
+        "description": "On a hit, the target takes an additional 3d10 damage at the start of its turn due to blood loss. This damage bypasses shields."
       },
       {
         "name": "Exploding blades",
-        "description": "On a hit, the target takes an additional 1d12 thunder damage and must pass a Constitution saving throw (DC 8 + proficiency bonus) or becomes stunned until the end of your next turn."
+        "description": "On a hit, the target takes an additional 1d10 thunder damage and must pass a Constitution saving throw (DC 8 + proficiency bonus) or becomes stunned until the end of your next turn."
       }
     ]
   },
@@ -642,22 +642,22 @@
     "level": 0,
     "type": "combat",
     "attackType": [
-      "Ranged Attack"
+      "Ranged Attack",
+      "CON Save"
     ],
     "effect": [
-      "damage",
-      "buff"
+      "damage"
     ],
     "damageType": [
-      "bludgeoning"
+      "thunder"
     ],
     "castingTime": "Bonus Action",
     "duration": "Instant",
     "concentration": false,
     "distance": {
       "range": "Self",
-      "aoeType": null,
-      "aoeDistance": null
+      "aoeType": "sphere",
+      "aoeDistance": "4m"
     },
     "detonates": "x",
     "primes": null,
@@ -667,11 +667,11 @@
     "advancementOptions": [
       {
         "name": "Stunning Shot",
-        "description": "A creature hit by concussive shot must make a Constitution saving throw instead of a Strength saving throw. On a failed save, the creature is stunned until the end of its next turn."
+        "description": "If the ranged attack hits and the target fails its Constitution saving throw, it becomes stunned until the end of its next turn."
       },
       {
-        "name": "Improved shot",
-        "description": "Increase the bonus damage of concussive shot to d12."
+        "name": "Force Shot",
+        "description": "On a hit, a medium or smaller target is pushed 6m away from you. Each other medium or smaller creature within the sphere is pushed 2m away from the center. If a creature can't occupy the next space it would be pushed into, it is instead knock prone in the space it currently occupies."
       }
     ]
   },
@@ -1464,7 +1464,7 @@
       },
       {
         "name": "Three-headed beast",
-        "description": "Your missile splits into three separate missiles, each dealing 1d6 damage (2d6 at 5th level, 3d6 at 11th level and 4d6 at 17th level). You can direct the missiles at the same target or at different ones."
+        "description": "Your missile splits into three separate missiles, each dealing 1d4 damage (2d4 at 5th level, 3d4 at 11th level and 4d4 at 17th level). You can direct the missiles at the same target or at different ones."
       }
     ]
   },
@@ -2325,7 +2325,7 @@
     "damageType": [
       "psychic"
     ],
-    "castingTime": "Action",
+    "castingTime": "Bonus Action",
     "duration": "Instant",
     "concentration": false,
     "distance": {
