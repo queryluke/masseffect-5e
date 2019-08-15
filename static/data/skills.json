@@ -95,7 +95,7 @@
     "removed": null,
     "micon": "hearing",
     "link": "Wisdom",
-    "description": "Your Wisdom (Perception) check lets you spot, hear, or otherwise detect the presence of something. It measures your general awareness of your surroundings and the keenness of your senses. For example, you might try to hear a conversation through a closed door, eavesdrop under an open window, or hear Monsters moving stealthily in the forest. Or you might try to spot things that are obscured or easy to miss, whether they are orcs lying in ambush on a road, thugs hiding in the shadows of an alley, or candlelight under a closed secret door.",
+    "description": "Your Wisdom (Perception) check lets you spot, hear, or otherwise detect the presence of something. It measures your general awareness of your surroundings and the keenness of your senses. For example, you might try to hear a conversation through a closed door, eavesdrop under an open window, or hear operatives moving stealthily in the forest. Or you might try to spot things that are obscured or easy to miss, whether they are husks lying in ambush in an ancient prothean ruin, mercenaries hiding in the shadows of an alley, or florescent light under a closed secret door.",
     "id": "perception"
   },
   {
@@ -113,7 +113,7 @@
     "removed": null,
     "micon": "record_voice_over",
     "link": "Charisma",
-    "description": "When you attempt to influence someone or a group of people with tact, social graces, or good nature, the GM might ask you to make a Charisma (Persuasion) check. Typically, you use persuasion when acting in good faith, to foster friendships, make cordial requests, or exhibit proper etiquette. Examples of persuading others include convincing a chamberlain to let your party see the king, negotiating peace between warring tribes, or inspiring a crowd of townsfolk.",
+    "description": "When you attempt to influence someone or a group of people with tact, social graces, or good nature, the GM might ask you to make a Charisma (Persuasion) check. Typically, you use persuasion when acting in good faith, to foster friendships, make cordial requests, or exhibit proper etiquette. Examples of persuading others include convincing a politician to let your party see the councilor, negotiating peace between warring krogan tribes, or inspiring a crowd of colonist.",
     "id": "persuasion"
   },
   {
