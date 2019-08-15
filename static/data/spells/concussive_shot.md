@@ -5,33 +5,35 @@ level: 0
 type: combat
 attackType:
 - Ranged Attack
+- CON Save
 effect:
 - damage
-- buff
 damageType:
-- bludgeoning
+- thunder
 castingTime: Bonus Action
 duration: Instant
 concentration: false
 distance:
   range: Self
-  aoeType: 
-  aoeDistance: 
+  aoeType: sphere
+  aoeDistance: 4m
 detonates: x
 primes: 
 availableClasses:
 - soldier
 advancementOptions:
 - name: Stunning Shot
-  description: A creature hit by concussive shot must make a Constitution saving throw instead of a Strength saving throw.
-    On a failed save, the creature is stunned until the end of its next turn.
-- name: Improved shot
-  description: Increase the bonus damage of concussive shot to d12.
+  description: If the ranged attack hits and the target fails its Constitution saving throw, it becomes stunned until 
+    the end of its next turn.
+- name: Force Shot
+  description: On a hit, a medium or smaller target is pushed 6m away from you. Each other medium or smaller creature 
+    within the sphere is pushed 2m away from the center. If a creature can't occupy the next space it would be pushed 
+    into, it is instead knock prone in the space it currently occupies.
 ---
-Load a specialized thermal clip into the weapon you are currently holding. Until you reload, any successful ranged
-attacks deal an additional 1d8 bludgeoning damage and medium-sized or smaller creatures must pass a Strength saving
-throw (DC 8 + proficiency bonus + DEX modifier) or are knocked <condition id="prone"/>.
+Load and fire a specialized thermal clip into the weapon you are currently wielding. Make a ranged weapon attack on a 
+target within the weapon's range. On a hit, the target takes damage equal to your weapon's base damage and any primed
+conditions are detonated. Hit or miss, each creature or object within 4m radius sphere centered on the target must make 
+a Constitution saving throw. The DC of this saving throw is 8 + your proficiency bonus + your Dexterity modifier. 
 
-The damage increases by 1d8 when you reach the 5th level (2d8), 11th level (3d8) and 17th level (4d8).
-
-You have 3 charges of Concussive Shot. You regain all of your charges when you finish a long rest.
+The thermal clip is then exhausted and you must reload your weapon. You have two concussive shot thermal clips, which 
+recharge on a short or long rest.
