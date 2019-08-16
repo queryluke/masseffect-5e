@@ -30,8 +30,8 @@ advancementOptions:
   description: A critical success on the Strength check completely shatters the affected creature's appendage. If legs,
     it falls prone and loses half its remaining hit points. If head, it immediately dies.
 ---
-Launch a globe of supercooled helium at a target within range. When you cast snap freeze on a target, you call out
-the location on its body. The location can be body, legs, or head.
+Launch a globe of supercooled helium. Make a ranged spell attack on a target within range, choosing a location on its 
+body. The location can be body, legs, or head.
 
 __Legs__. +2 bonus to hit. The target is <condition id="restrained"/> for the next minute. Any creature can use its 
 action to make a Strength check against your spell save DC to try and break the ice. On a success, the affected 
