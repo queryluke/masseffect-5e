@@ -1,7 +1,9 @@
 <template lang="pug">
   div(:class="cardType").spell-card
     v-card(height="100%").elevation-0
-      v-layout(row wrap)
+      v-layout(fill-height align-center v-if="spell.id === 'spacer'").pa-2
+        v-img(src="/images/me5e_logo_720w.png" style="margin-top: -3em;")
+      v-layout(row wrap v-else)
         v-flex(xs12 :class="{'py-1': singleSide, 'text-xs-center': !singleSide}")
           v-layout(row :justify-space-between="singleSide")
             v-flex(:class="titleSize").mb-0.text-uppercase.font-weight-black {{ spell.name }}
@@ -97,7 +99,11 @@
         return this.singleSide ? 18 : 13
       },
       cardType () {
-        return `${this.spell.type}-card`
+        if (this.spell.id === 'spacer') {
+          return 'gen-card'
+        } else {
+          return `${this.spell.type}-card`
+        }
       },
       spellLevel () {
         return this.spell.level.toString() === '0' ? 'Cantrip' : this.$options.filters.ordinal(this.spell.level) + ' level'

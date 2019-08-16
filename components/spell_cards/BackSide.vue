@@ -1,7 +1,7 @@
 <template lang="pug">
   div(:class="cardType").spell-card
     v-card(height="100%" v-bind:color="cardColor").elevation-0
-      v-layout(fill-height align-center v-if="cardOption === 'single'").pa-2
+      v-layout(fill-height align-center v-if="cardOption === 'single' || spell.id === 'spacer'").pa-2
         v-img(src="/images/me5e_logo_720w.png" style="margin-top: -3em;")
       div(v-else)
         v-layout(row wrap)
@@ -40,7 +40,7 @@
         return this.cardOption === 'single' ? 'blue-grey lighten-4' : ''
       },
       cardType () {
-        if (this.cardOption === 'single') {
+        if (this.cardOption === 'single' || this.spell.id === 'spacer') {
           return 'gen-card'
         } else {
           return `${this.spell.type}-card`

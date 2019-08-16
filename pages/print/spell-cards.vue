@@ -88,7 +88,11 @@
         const numSpells = spells.length
         const chunkSize = this.selectedCardOption === 'single' ? 4 : 9;
         for (let i = 0; i < numSpells; i += chunkSize) {
-          chunks.push(spells.slice(i, i + chunkSize));
+          const chunk = spells.slice(i, i + chunkSize)
+          while (chunk.length < chunkSize) {
+            chunk.push({id: 'spacer'})
+          }
+          chunks.push(chunk);
         }
         return chunks
       },
