@@ -56,7 +56,7 @@ Maintenance can be performed by a skilled hireling for 3000 credits over 2 long 
 member (as discussed below).
 
 #### Replacing systems
-If a system breaks and must be replaced, you lose any upgrades to that system and must purchase a new one for 300,000
-credits.
+If a system breaks and must be replaced, you lose any benefits that system provides until your replace it. Replacing a 
+broken system costs 300,000 or the price of the system in the ship upgrades table, whichever is lower.
 
 <ai-dialog title="Months Without Maintenance" component="without-maintenance"/>
