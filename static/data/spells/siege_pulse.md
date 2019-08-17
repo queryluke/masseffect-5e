@@ -10,7 +10,7 @@ effect:
 - control
 damageType:
 - psychic
-castingTime: Bonus Action
+castingTime: Action
 duration: Instant
 concentration: false
 distance:
