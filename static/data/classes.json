@@ -1696,7 +1696,7 @@
         "features": [
           "fighting_style"
         ],
-        "cantrips": 2
+        "cantrips": 1
       },
       {
         "level": 2,
@@ -1704,7 +1704,7 @@
         "features": [
           "adrenaline_rush_1"
         ],
-        "cantrips": 2
+        "cantrips": 1
       },
       {
         "level": 3,
@@ -1712,7 +1712,7 @@
         "features": [
           "subclass"
         ],
-        "cantrips": 2
+        "cantrips": 1
       },
       {
         "level": 4,
@@ -1720,7 +1720,7 @@
         "features": [
           "ability_score_improvement"
         ],
-        "cantrips": 3
+        "cantrips": 2
       },
       {
         "level": 5,
@@ -1728,7 +1728,7 @@
         "features": [
           "extra_attack_1"
         ],
-        "cantrips": 3
+        "cantrips": 2
       },
       {
         "level": 6,
@@ -1736,7 +1736,7 @@
         "features": [
           "ability_score_improvement"
         ],
-        "cantrips": 3
+        "cantrips": 2
       },
       {
         "level": 7,
@@ -1745,7 +1745,7 @@
           "subclass",
           "tactical_reload"
         ],
-        "cantrips": 3
+        "cantrips": 2
       },
       {
         "level": 8,
@@ -1753,7 +1753,7 @@
         "features": [
           "ability_score_improvement"
         ],
-        "cantrips": 4
+        "cantrips": 3
       },
       {
         "level": 9,
@@ -1761,7 +1761,7 @@
         "features": [
           "indomitable_1"
         ],
-        "cantrips": 4
+        "cantrips": 3
       },
       {
         "level": 10,
@@ -1769,7 +1769,7 @@
         "features": [
           "subclass"
         ],
-        "cantrips": 4
+        "cantrips": 3
       },
       {
         "level": 11,
@@ -1777,7 +1777,7 @@
         "features": [
           "extra_attack_2"
         ],
-        "cantrips": 5
+        "cantrips": 3
       },
       {
         "level": 12,
@@ -1785,7 +1785,7 @@
         "features": [
           "ability_score_improvement"
         ],
-        "cantrips": 5
+        "cantrips": 4
       },
       {
         "level": 13,
@@ -1793,7 +1793,7 @@
         "features": [
           "indomitable_2"
         ],
-        "cantrips": 5
+        "cantrips": 4
       },
       {
         "level": 14,
@@ -1801,7 +1801,7 @@
         "features": [
           "ability_score_improvement"
         ],
-        "cantrips": 6
+        "cantrips": 4
       },
       {
         "level": 15,
@@ -1809,7 +1809,7 @@
         "features": [
           "subclass"
         ],
-        "cantrips": 6
+        "cantrips": 5
       },
       {
         "level": 16,
@@ -1817,7 +1817,7 @@
         "features": [
           "ability_score_improvement"
         ],
-        "cantrips": 6
+        "cantrips": 5
       },
       {
         "level": 17,
@@ -1826,7 +1826,7 @@
           "adrenaline_rush_2",
           "indomitable_3"
         ],
-        "cantrips": 7
+        "cantrips": 5
       },
       {
         "level": 18,
@@ -1834,7 +1834,7 @@
         "features": [
           "subclass"
         ],
-        "cantrips": 7
+        "cantrips": 6
       },
       {
         "level": 19,
@@ -1842,7 +1842,7 @@
         "features": [
           "ability_score_improvement"
         ],
-        "cantrips": 8
+        "cantrips": 6
       },
       {
         "level": 20,
@@ -1850,7 +1850,7 @@
         "features": [
           "extra_attack_3"
         ],
-        "cantrips": 8
+        "cantrips": 6
       }
     ],
     "subclasses": [

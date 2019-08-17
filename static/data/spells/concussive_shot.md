@@ -33,10 +33,7 @@ advancementOptions:
 Load and fire a specialized thermal clip into the weapon you are currently wielding. Make a ranged weapon attack on a 
 target within the weapon's range. On a hit, the target takes damage equal to your weapon's base damage and any primed
 conditions are detonated. Hit or miss, each creature or object within 4m radius sphere centered on the target must make 
-a Constitution saving throw. The DC of this saving throw is 8 + your proficiency bonus + your Dexterity modifier. A creature
-takes 2d4 thunder damage on a failed save or half as much on a successful one.
+a Constitution saving throw. The DC of this saving throw is 8 + your proficiency bonus + your Dexterity modifier. 
 
 The thermal clip is then exhausted and you must reload your weapon. You have two concussive shot thermal clips, which 
 recharge on a short or long rest.
-
-The thunder damage of this feature increases by 2d4 when you reach 5th level (4d4), 11th level (6d4), and 17th level (8d4).
