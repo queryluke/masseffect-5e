@@ -117,7 +117,7 @@
         "features": [],
         "barrierUses": 3,
         "barrierTicks": 2,
-        "cantrips": 4,
+        "cantrips": 5,
         "spellsKnown": 5,
         "spellSlots": {
           "1": "6",
@@ -185,7 +185,7 @@
         "features": [],
         "barrierUses": 4,
         "barrierTicks": 3,
-        "cantrips": 5,
+        "cantrips": 6,
         "spellsKnown": 9,
         "spellSlots": {
           "1": "7",
@@ -203,7 +203,7 @@
         ],
         "barrierUses": 4,
         "barrierTicks": 3,
-        "cantrips": 5,
+        "cantrips": 6,
         "spellsKnown": 10,
         "spellSlots": {
           "1": "7",
@@ -219,7 +219,7 @@
         "features": [],
         "barrierUses": 4,
         "barrierTicks": 3,
-        "cantrips": 5,
+        "cantrips": 6,
         "spellsKnown": 11,
         "spellSlots": {
           "1": "7",
@@ -253,7 +253,7 @@
         "features": [],
         "barrierUses": 4,
         "barrierTicks": 3,
-        "cantrips": 6,
+        "cantrips": 7,
         "spellsKnown": 13,
         "spellSlots": {
           "1": "7",
@@ -271,7 +271,7 @@
         ],
         "barrierUses": 5,
         "barrierTicks": 3,
-        "cantrips": 6,
+        "cantrips": 7,
         "spellsKnown": 14,
         "spellSlots": {
           "1": "7",
@@ -287,7 +287,7 @@
         "features": [],
         "barrierUses": 5,
         "barrierTicks": 4,
-        "cantrips": 6,
+        "cantrips": 7,
         "spellsKnown": 15,
         "spellSlots": {
           "1": "7",
@@ -305,7 +305,7 @@
         ],
         "barrierUses": 5,
         "barrierTicks": 4,
-        "cantrips": 6,
+        "cantrips": 7,
         "spellsKnown": 16,
         "spellSlots": {
           "1": "7",
@@ -321,7 +321,7 @@
         "features": [],
         "barrierUses": 5,
         "barrierTicks": 4,
-        "cantrips": 6,
+        "cantrips": 8,
         "spellsKnown": 17,
         "spellSlots": {
           "1": "7",
@@ -339,7 +339,7 @@
         ],
         "barrierUses": 5,
         "barrierTicks": 4,
-        "cantrips": 6,
+        "cantrips": 8,
         "spellsKnown": 18,
         "spellSlots": {
           "1": "7",
@@ -357,7 +357,7 @@
         ],
         "barrierUses": 6,
         "barrierTicks": 4,
-        "cantrips": 6,
+        "cantrips": 8,
         "spellsKnown": 19,
         "spellSlots": {
           "1": "7",
@@ -375,7 +375,7 @@
         ],
         "barrierUses": 6,
         "barrierTicks": 4,
-        "cantrips": 6,
+        "cantrips": 8,
         "spellsKnown": 20,
         "spellSlots": {
           "1": "7",
@@ -393,7 +393,7 @@
         ],
         "barrierUses": 6,
         "barrierTicks": 5,
-        "cantrips": 6,
+        "cantrips": 8,
         "spellsKnown": 21,
         "spellSlots": {
           "1": "7",
@@ -411,7 +411,7 @@
         ],
         "barrierUses": 6,
         "barrierTicks": 5,
-        "cantrips": 6,
+        "cantrips": 8,
         "spellsKnown": 22,
         "spellSlots": {
           "1": "7",
@@ -2012,7 +2012,7 @@
         ],
         "barrierUses": 2,
         "barrierTicks": 3,
-        "cantrips": 2,
+        "cantrips": 4,
         "spellsKnown": "-",
         "spellSlots": {
           "1": null,
@@ -2029,7 +2029,7 @@
         ],
         "barrierUses": 2,
         "barrierTicks": 3,
-        "cantrips": 2,
+        "cantrips": 4,
         "spellsKnown": 2,
         "spellSlots": {
           "1": "2",
@@ -2045,7 +2045,7 @@
         ],
         "barrierUses": 3,
         "barrierTicks": 3,
-        "cantrips": 2,
+        "cantrips": 4,
         "spellsKnown": 3,
         "spellSlots": {
           "1": "3",
@@ -2061,7 +2061,7 @@
         ],
         "barrierUses": 3,
         "barrierTicks": 4,
-        "cantrips": 3,
+        "cantrips": 5,
         "spellsKnown": 3,
         "spellSlots": {
           "1": "4",
@@ -2077,7 +2077,7 @@
         ],
         "barrierUses": 3,
         "barrierTicks": 4,
-        "cantrips": 3,
+        "cantrips": 5,
         "spellsKnown": 4,
         "spellSlots": {
           "1": "6",
@@ -2093,7 +2093,7 @@
         ],
         "barrierUses": 4,
         "barrierTicks": 4,
-        "cantrips": 3,
+        "cantrips": 5,
         "spellsKnown": 4,
         "spellSlots": {
           "1": "6",
@@ -2109,7 +2109,7 @@
         ],
         "barrierUses": 4,
         "barrierTicks": 5,
-        "cantrips": 3,
+        "cantrips": 5,
         "spellsKnown": 5,
         "spellSlots": {
           "1": "7",
@@ -2125,7 +2125,7 @@
         ],
         "barrierUses": 4,
         "barrierTicks": 5,
-        "cantrips": 4,
+        "cantrips": 5,
         "spellsKnown": 5,
         "spellSlots": {
           "1": "7",
@@ -2141,7 +2141,7 @@
         ],
         "barrierUses": 4,
         "barrierTicks": 5,
-        "cantrips": 4,
+        "cantrips": 5,
         "spellsKnown": 6,
         "spellSlots": {
           "1": "7",
@@ -2157,7 +2157,7 @@
         ],
         "barrierUses": 4,
         "barrierTicks": 6,
-        "cantrips": 4,
+        "cantrips": 6,
         "spellsKnown": 6,
         "spellSlots": {
           "1": "7",
@@ -2173,7 +2173,7 @@
         ],
         "barrierUses": 4,
         "barrierTicks": 6,
-        "cantrips": 4,
+        "cantrips": 6,
         "spellsKnown": 6,
         "spellSlots": {
           "1": "7",
@@ -2189,7 +2189,7 @@
         ],
         "barrierUses": 5,
         "barrierTicks": 6,
-        "cantrips": 5,
+        "cantrips": 6,
         "spellsKnown": 7,
         "spellSlots": {
           "1": "7",
@@ -2205,7 +2205,7 @@
         ],
         "barrierUses": 5,
         "barrierTicks": 7,
-        "cantrips": 5,
+        "cantrips": 6,
         "spellsKnown": 8,
         "spellSlots": {
           "1": "7",
@@ -2221,7 +2221,7 @@
         ],
         "barrierUses": 5,
         "barrierTicks": 7,
-        "cantrips": 5,
+        "cantrips": 6,
         "spellsKnown": 8,
         "spellSlots": {
           "1": "7",
@@ -2237,7 +2237,7 @@
         ],
         "barrierUses": 5,
         "barrierTicks": 7,
-        "cantrips": 5,
+        "cantrips": 6,
         "spellsKnown": 9,
         "spellSlots": {
           "1": "7",
@@ -2253,7 +2253,7 @@
         ],
         "barrierUses": 5,
         "barrierTicks": 8,
-        "cantrips": 5,
+        "cantrips": 6,
         "spellsKnown": 9,
         "spellSlots": {
           "1": "7",
@@ -2269,7 +2269,7 @@
         ],
         "barrierUses": 6,
         "barrierTicks": 8,
-        "cantrips": 5,
+        "cantrips": 6,
         "spellsKnown": 10,
         "spellSlots": {
           "1": "7",
@@ -2285,7 +2285,7 @@
         ],
         "barrierUses": 6,
         "barrierTicks": 9,
-        "cantrips": 5,
+        "cantrips": 6,
         "spellsKnown": 10,
         "spellSlots": {
           "1": "7",
@@ -2301,7 +2301,7 @@
         ],
         "barrierUses": 6,
         "barrierTicks": 9,
-        "cantrips": 5,
+        "cantrips": 6,
         "spellsKnown": 11,
         "spellSlots": {
           "1": "7",
@@ -2317,7 +2317,7 @@
         ],
         "barrierUses": 6,
         "barrierTicks": 10,
-        "cantrips": 5,
+        "cantrips": 6,
         "spellsKnown": 11,
         "spellSlots": {
           "1": "7",
