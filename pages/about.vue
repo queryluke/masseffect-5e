@@ -119,6 +119,12 @@
         ],
         designers: [
           {
+            name: 'Chris "OodSigma13" Dickson',
+            image: '/images/classes/infiltrator.svg',
+            desc: 'Chris has basically become the in-house designer. He\'s responsible for the new class and spell icons and' +
+            ' updated character sheet.'
+          },
+          {
             name: 'RJ Haggerty, a.k.a. SleightxHope',
             image: 'https://avatars3.githubusercontent.com/u/31451010?s=460&v=4',
             desc: 'Before RJ, this system was just a silly thing Hugh and Luke were doing in their spare time. But RJ\'s contributions' +
