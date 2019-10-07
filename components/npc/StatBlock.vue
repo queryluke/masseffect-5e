@@ -57,7 +57,7 @@
           p.mb-0.
             #[strong #[em Spellcasting].] The {{ stats.name.toLowerCase() }} is {{ stats.spellcasting.level | article }} {{ stats.spellcasting.level | ordinal }}-level
             spellcaster. Its spellcasting ability is {{ abilityMap[stats.spellcasting.mod] }} (spell save DC {{ spellSaveDc }}, +{{ spellHit }} to hit with spell attacks).
-            The {{ stats.name.toLowerCase() }} has the following biotic spells:
+            The {{ stats.name.toLowerCase() }} has the following spells:
           npc-spellcasting(v-bind:spellcasting="stats.spellcasting")
 
       // Actions
@@ -74,7 +74,7 @@
         p.
           The {{ stats.name.toLowerCase() }} can take 3 legendary actions, choosing from the options below. Only one legendary action can
           be used at a time and only at the end of another creature's turn. The {{ stats.name }} regains spent legendary
-          actions at the start of his turn.
+          actions at the start of its turn.
         p(v-for="la in legendaryActions" v-bind:key="la.name")
           npc-legendary-action(:action="la")
 
