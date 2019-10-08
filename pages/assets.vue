@@ -1,78 +1,73 @@
 <template lang="pug">
-  v-content
-    // Character Sheets
-    h2.display-3.font-weight-thin.text-xs-center.mt-5 Character Sheets
-    v-container(grid-list-xl)
-      h3.text-xs-center.display-1 Printable
-      h5.text-xs-center.title.mt-3 Version 2
-      v-layout(row wrap justify-center)
-        v-flex(xs12 sm6 md4 lg3 xl2)
-          v-btn(block href="https://drive.google.com/open?id=1wN7ALQLWtKoBmqOJtW10H7KpsYkjCM_A" target="_blank").primary Generic
-          div.text-xs-center created by Chris "OodSigma13" Dickson
-      h5.text-xs-center.title.mt-3 Version 1
-      v-layout(row wrap justify-center)
-        v-flex(xs12 sm6 md4 lg3 xl2)
-          v-btn(block href="https://drive.google.com/open?id=1aBCbmwDgmChg6d6K0yegHTab-R6cQD28" target="_blank").primary Official
-        v-flex(xs12 sm6 md4 lg3 xl2)
-          v-btn(block href="https://drive.google.com/open?id=1GLotuedjZ7AtLMhooBmhEFSU8TRuI4A7" target="_blank").primary Fillable
-          div.text-xs-center created by #[a(href="https://www.reddit.com/user/rpk0714" target="_blank" class="blue--text text--lighten-3") /u/rpk0714]
-      h3.text-xs-center.display-1.mt-4 Google Sheets
-      v-layout(row wrap justify-center)
-        v-flex(xs12 sm6 md4 lg3 xl2)
-          v-btn(block href="https://drive.google.com/open?id=1mj7JDIerstCcQjowNsfasNr42CcKCFrOIf3RPYRC1DA" target="_blank").primary Official
-        v-flex(xs12 sm6 md4 lg3 xl2)
-          v-btn(block href="https://drive.google.com/open?id=1NesskTT0bxRF2D4ImuyWUo1Mu389Q-KP3uo934mQF-w" target="_blank").primary by Ben McPherson
-        v-flex(xs12 sm6 md4 lg3 xl2)
-          v-btn(block href="https://drive.google.com/open?id=1r-JCa_rqmKSp7-UKf1EP67w6Dl_Pm_JEdaZJMS-R22Y" target="_blank").primary by GameMasterPo
+  v-content.blue-grey.lighten-4
+    v-container
+      // PDF of Rules
+      h2.display-1.font-weight-thin Player's Manual PDF
+      v-btn(to="/print/pdf") View
 
-    // Premade
-    h2.display-3.font-weight-thin.text-xs-center.mt-5 Premade Characters
-    v-container(grid-list-xl)
-      v-layout(row wrap justify-center)
-        v-flex(xs12 sm6 md4 lg3 xl2)
-          v-btn(block href="https://drive.google.com/open?id=1XlaCFmUpouNIaQSa1w8SnFRNEQrDcfpX" target="_blank").primary Official
-          p More coming soon!
+      hr.ma-3
 
+      // Character Sheets
+      h2.display-1.font-weight-thin Character Sheets
+      h3.title.mt-3 Printable
 
-    // Roll20
-    h2.display-3.font-weight-thin.text-xs-center.mt-5 Roll20
-    v-container(grid-list-xl)
-      v-layout(row wrap justify-center)
-        v-flex(xs12 sm6 md4)
-          // Character sheets
-          h3.text-xs-center.display-1 Character Sheets (Beta)
-          v-layout(row wrap justify-center)
-            v-flex(xs12)
-              v-card
-                v-card-text
-                  p.
-                    Thanks #[a(href="https://www.reddit.com/u/Danrconway/" target="_blank" class="blue--text text--lighten-3") /u/Danrconway]
-                    and #[a(href="https://www.reddit.com/u/Smeeg699/" target="_blank" class="blue--text text--lighten-3") u/Smeeg699] for working
-                    on some updated Roll20 Character Sheets.
-                v-card-actions
-                  v-btn(flat href="https://drive.google.com/drive/folders/1kBZKPVFHqtHK-vfxwQbK3rmUagS9lhAc" target="_blank").primary Files
-                  v-btn(flat href="https://www.reddit.com/r/masseffect5e/comments/c7h01l/updated_roll20_sheet/" target="_blank").primary Follow Progress
+      h4 Version 2
+      ul
+        li
+          a(href="https://drive.google.com/open?id=1wN7ALQLWtKoBmqOJtW10H7KpsYkjCM_A" target="_blank") Generic
+      p created by Chris "OodSigma13" Dickson
 
-        v-flex(xs12 sm6 md4)
-          // Tokens
-          h3.text-xs-center.display-1 Tokens
-          v-layout(row wrap justify-center)
-            v-flex(xs12 sm6 md4)
-              v-btn(block href="https://drive.google.com/open?id=1SfFEb6jgh2J2SXIiWVUB5XtrSSQ3GEi8" target="_blank").primary by Andrew Ouellette
+      h4 Version 1
+      ul
+        li
+          a(href="https://drive.google.com/open?id=1aBCbmwDgmChg6d6K0yegHTab-R6cQD28" target="_blank") Official
+        li
+          a(href="https://drive.google.com/open?id=1GLotuedjZ7AtLMhooBmhEFSU8TRuI4A7" target="_blank") Fillable by /u/rpk0714
 
-    // PDF of Rules
-    h2.display-3.font-weight-thin.text-xs-center.mt-5 Player's Manual
-    v-container(grid-list-xl)
-      v-layout(row wrap justify-center)
-        v-flex(xs12 sm6 md4 lg3 xl2)
-          v-btn(block to="/print/pdf" target="_blank").primary PDF Player's Manual
+      h3.title.mt-3 Google Sheets
+      ul
+        li
+          a(href="https://drive.google.com/open?id=1mj7JDIerstCcQjowNsfasNr42CcKCFrOIf3RPYRC1DA" target="_blank") Official
+        li
+          a(href="https://drive.google.com/open?id=1NesskTT0bxRF2D4ImuyWUo1Mu389Q-KP3uo934mQF-w" target="_blank") by Ben McPherson
+        li
+          a(href="https://drive.google.com/open?id=1r-JCa_rqmKSp7-UKf1EP67w6Dl_Pm_JEdaZJMS-R22Y" target="_blank") by GameMasterPo
 
-    // Spell Cards
-    h2.display-3.font-weight-thin.text-xs-center.mt-5 Spell Cards
-    v-container(grid-list-xl)
-      v-layout(row wrap justify-center).mb-5
-        v-flex(xs12 sm6 md4 lg3 xl2)
-          v-btn(block to="/print/spell-cards" ).primary Spell Cards
+      // Roll20
+      h3.title.mt-3 Roll20
+      p.
+        An official Roll20 Character Sheet has proved to be a very difficult task. There have been a number of attempts, which are
+        linked below. Mileage may vary. If you do get a version working, please let us know.
+      ul
+        li
+          a(href="https://www.reddit.com/r/masseffect5e/comments/cqwokr/updated_roll20_5e_ogl_sheet/" target="_blank") by u/Kiva126
+        li
+          a(href="https://www.reddit.com/r/masseffect5e/comments/c7h01l/updated_roll20_sheet/" target="_blank") by /u/Danrconway
+
+      hr.ma-3
+
+      // Spell Cards
+      h2.display-1.font-weight-thin Spell Cards
+      v-btn(to="/print/spell-cards") View
+
+      hr.ma-3
+
+      // Premade
+      h2.display-1.font-weight-thin Premade Characters
+      p If you'd like to contribute more pregens see #[a(href="https://www.reddit.com/r/masseffect5e/comments/ch190c/pregens/" target="_blank") this post].
+      v-btn(href="https://drive.google.com/open?id=1XlaCFmUpouNIaQSa1w8SnFRNEQrDcfpX" target="_blank") View
+
+      hr.ma-3
+
+      h2.display-1.font-weight-thin Other
+      ul
+        li
+          a(href="https://drive.google.com/open?id=1SfFEb6jgh2J2SXIiWVUB5XtrSSQ3GEi8" target="_blank") Roll20 Tokens by Andrew Ouellette
+        li
+          a(href="https://drive.google.com/file/d/0BxLeDaHVwlDzcjZtRFFjWUFQb0dGS0NEcV9nQm8xbkw5d0tV/view?usp=sharing" target="_blank") Printable Tabletop Tokens by B. Coar
+        li
+          a(href="https://drive.google.com/open?id=0BxLeDaHVwlDzczdTZlBNOERsR2Z4cVN2WVI2dG9LYlBFbFlv" target="_blank") Spell Card Box by B. Coar
+
 
 </template>
 
@@ -86,7 +81,6 @@ export default {
         { hid: 'description', name: 'description', content: 'Mass Effect 5e is more than a rule set. We have also created character sheets, spell cards, and other great tabletop assets.' }
       ]
     }
-  },
-  layout: 'dark'
+  }
 }
 </script>
