@@ -415,28 +415,6 @@
           "tech_aura_3"
         ]
       ]
-    },
-    {
-      "name": "Mastermind",
-      "source": "v0.8.4",
-      "description": "Masterminds are the top strategists and battlefield experts. They can easily turn the tides by calling out orders or synchronizing troop movements.",
-      "features": [
-        [
-          "master_tactician"
-        ],
-        [
-          "zz_biotic_enfilade"
-        ],
-        [
-          "zz_tactical_advantage"
-        ],
-        [
-          "zz_master_duelist"
-        ],
-        [
-          "zz_synchronized_assault"
-        ]
-      ]
     }
   ]
 }

@@ -23,3 +23,12 @@ thermal clips at a gun shop or military depot for about 100 credits.
 
 __Note__: Because thermal clips are so easily attainable, GMs might find it more manageable to simply not keep track of
 thermal clips and assume players will always have a steady supply available to them.
+
+### Variant: Venting
+Instead of thermal clips, each weapon's heat indicates the number of times it can be fired before it overheats. Replace 
+any reference to Reloading with Venting. Venting works exactly the same as reloading, taking some amount of time to vent 
+the weapons heat (instead of reloading a thermal clip).
+
+If a weapon is not fired for a full round of combat, it naturally regains 1 heat. Additionally, any weapon that is at 0 
+heat can be fired, but it automatically jams and cannot be used until after a long rest.
+

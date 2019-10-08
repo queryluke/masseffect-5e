@@ -65,14 +65,22 @@ armor is completely integrated (all or none), therefore, you cannot swap out pie
 wearing the Duelist body armor, you cannot replace the legs from it with the Lockdown Greaves. This rule is, of course, flexible,
 as GMs might allow this type of tinkering in exchange for time, credits, and/or skill checks. 
 
+
 __Set Bonuses__ are additional benefits you receive from wearing multiple pieces from the same set, signifying the armors
 component pieces working together for a unified integration. Armor with the same base name is part of a set, e.g. __Colossus__ _[item]_. 
 
 You only receive the benefit once per set and the benefit ends immediately if you fall below the threshold. For example, 
-a set provides +1 AC for wearing 2 of 4 pieces and +1 AC for wearing 4 of 4 pieces. If you are wearing the head and chest 
-pieces, you gain +1 AC (in addition to any benefits provided from the set pieces you are wearing). _Note: You __do not__ 
-gain +1 AC for the head and +1 AC for the chest_. As soon as you remove either the head piece or the chest piece, you loose
-the +1 AC.
+if a set provides:
+
+##### Medium Armor
+- __Set Bonus (2 of 4)__: +1 AC 
+- __Set Bonus (4 of 4)__: +1 AC
+
+
+If you are wearing the head and chest pieces, you gain +0 AC from the helmet and +2 AC from the chest piece (as calculated 
+using the Armor / AC table). In addition you gain +1 AC from wearing 2 pieces of the set. Note, you _do not_ gain +1 AC 
+for the head _and_ +1 AC for the chest. As soon as you remove either the helmet or the chest 
+apiece, you loose the +1 AC bonus.
 
 
 ### Environmental Protection <v-chip color="secondary" text-color="white" class="v-chip--x-small">new</v-chip>

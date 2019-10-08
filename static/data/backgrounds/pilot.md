@@ -36,7 +36,7 @@ Vehicles (water) | The time it takes to get from one location to another is redu
 The scale of a pilot's travels could be limited to a single planet, system, or across the entire galaxy. But all pilots
 are most comfortable on the move and never stay in one place very long, always seeking a new adventure or experience.
 
-d6 | Personality Trait
+d8 | Personality Trait
 --- | ---
 1 | In my experience, its best do something first and ask for forgiveness later.
 2 | When it comes to my preferred vehicle, there is no one better than myself and piloting it.

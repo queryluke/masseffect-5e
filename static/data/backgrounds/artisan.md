@@ -22,7 +22,7 @@ artisans of your trade. As long as you remain in a city, you can easily find wor
 
 __Trade__. Each artisan has special skills in a trade. Choose the trade, or roll on the table below.
 
-1d8 |	Trade | Artisan Tool
+d8 |	Trade | Artisan Tool
 --- | --- | ---
 1	| Armorsmith | Armorsmith's Workbench
 2	| Brewer | Brewer's Supplies

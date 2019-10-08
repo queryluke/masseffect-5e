@@ -2,5 +2,6 @@
 id: invention
 name: Invention
 ---
-At {{ level }} level, you create an invention. The invention should be condoned by the DM to not be overpowered. But 
-should give you, your party, your drones, etc an advantage.
+
+At {{ level }}, you create an invention. Work with your GM to decide on what the invention should be. Some ideas 
+include a drone upgrade (weapon, armor, shield, etc), a new spell, an improved omni-tool battery, etc.

@@ -329,7 +329,7 @@
     ],
     "features": [],
     "hp": {
-      "numDice": 3,
+      "numDice": 5,
       "die": 6
     },
     "id": "assault_drone",
@@ -1755,8 +1755,8 @@
     "savingThrows": [],
     "senses": [
       {
-        "sense": "infrared",
-        "range": null
+        "sense": "infrared vision",
+        "range": 10
       }
     ],
     "size": "Medium",
@@ -2357,7 +2357,6 @@
     "alignment": "Neutral",
     "barrier": null,
     "conditionImmunities": [
-      "petrified",
       "poisoned"
     ],
     "cr": "1/4",
@@ -2371,7 +2370,7 @@
     ],
     "features": [],
     "hp": {
-      "numDice": 3,
+      "numDice": 6,
       "die": 6
     },
     "id": "combat_drone",
@@ -2521,7 +2520,7 @@
     ],
     "features": [],
     "hp": {
-      "numDice": 4,
+      "numDice": 6,
       "die": 6
     },
     "id": "defense_drone",
@@ -2570,7 +2569,7 @@
         "type": "standard",
         "name": "Kamikaze Attack",
         "recharge": null,
-        "description": "When the disruption drone is within 2m of an enemy creature, it explodes. Each creature within a 2m radius must make a DC 13 Dexterity saving throw. On a failed save, a creature takes 1d12 thunder damage, or half as much on a successful one."
+        "description": "The disruption can use its action to immediately reduce its hit points to 0."
       }
     ],
     "alignment": "Neutral",
@@ -2587,9 +2586,14 @@
     "damageVulnerabilities": [
       "lightning"
     ],
-    "features": [],
+    "features": [
+      {
+        "name": "Post-mortem explosion",
+        "description": "When the disruption drone drops to 0 hit points it explodes. Each creature within a 2m radius must make a DC 13 Dexterity saving throw. On a failed save, a creature takes 13 (2d12) thunder damage, or half as much on a successful one."
+      }
+    ],
     "hp": {
-      "numDice": 2,
+      "numDice": 4,
       "die": 6
     },
     "id": "disruption_drone",
@@ -3297,8 +3301,8 @@
     ],
     "senses": [
       {
-        "sense": "infrared",
-        "range": null
+        "sense": "infrared vision",
+        "range": 20
       }
     ],
     "size": "Small",
@@ -3417,8 +3421,8 @@
         "range": 20
       },
       {
-        "sense": "infrared",
-        "range": null
+        "sense": "infrared vision",
+        "range": 20
       }
     ],
     "size": "Huge",
@@ -3627,8 +3631,8 @@
         "range": 20
       },
       {
-        "sense": "infrared",
-        "range": null
+        "sense": "infrared vision",
+        "range": 20
       }
     ],
     "size": "Gargantuan",
@@ -4012,8 +4016,8 @@
         "range": 30
       },
       {
-        "sense": "infrared",
-        "range": null
+        "sense": "infrared vision",
+        "range": 30
       }
     ],
     "size": "Medium",
@@ -4805,8 +4809,8 @@
     "savingThrows": [],
     "senses": [
       {
-        "sense": "infrared",
-        "range": null
+        "sense": "infrared vision",
+        "range": 20
       }
     ],
     "size": "Medium",
@@ -6410,7 +6414,7 @@
       }
     ],
     "hp": {
-      "numDice": 2,
+      "numDice": 4,
       "die": 6
     },
     "id": "recon_drone",
@@ -6489,7 +6493,7 @@
     ],
     "features": [],
     "hp": {
-      "numDice": 2,
+      "numDice": 5,
       "die": 6
     },
     "id": "repair_drone",
@@ -6546,7 +6550,7 @@
         "name": "Distortion Rocket",
         "range": 30,
         "target": "one target",
-        "hit": "7 (2d6) thunder damage.",
+        "hit": "9 (2d8) thunder damage.",
         "miss": null,
         "attackMod": 2
       }
@@ -6556,7 +6560,7 @@
     "conditionImmunities": [
       "poisoned"
     ],
-    "cr": "1/4",
+    "cr": "1/2",
     "damageImmunities": [
       "poison",
       "psychic"
@@ -6567,7 +6571,7 @@
     ],
     "features": [],
     "hp": {
-      "numDice": 2,
+      "numDice": 5,
       "die": 6
     },
     "id": "rocket_drone",

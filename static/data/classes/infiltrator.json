@@ -9,6 +9,10 @@
   "armorProficiencies": [
     "Light"
   ],
+  "toolProficiencies": [
+    "Hacking Tools",
+    "Thieves' Tools"
+  ],
   "weaponProficiencyChoices": 2,
   "weaponProficiencies": {
     "required": [
@@ -382,44 +386,6 @@
         ],
         [
           "saboteurs_reflexes"
-        ]
-      ]
-    },
-    {
-      "name": "Saboteur",
-      "source": "v0.8.4",
-      "description": "Saboteurs are infiltration experts. They use a sharp mind to subtly affect the outcome of battles.",
-      "features": [
-        [
-          "zz_insightful_fighting"
-        ],
-        [
-          "zz_infiltration"
-        ],
-        [
-          "zz_saboteurs_touch"
-        ],
-        [
-          "zz_eye_for_weakness"
-        ]
-      ]
-    },
-    {
-      "name": "Operative",
-      "source": "v0.8.4",
-      "description": "Operatives are ranged specialists that rely on gunplay and a keen eye to take out enemies from a distance.",
-      "features": [
-        [
-          "zz_dropshot"
-        ],
-        [
-          "zz_deadeye"
-        ],
-        [
-          "zz_combat_heuristics"
-        ],
-        [
-          "zz_killshot"
         ]
       ]
     }

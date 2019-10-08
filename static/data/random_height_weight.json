@@ -73,14 +73,14 @@
   },
   {
     "race": "Geth",
-    "base": "6'5\"",
-    "baseCm": "196",
-    "heightModifier": "0",
-    "heightModifierCm": null,
-    "baseWeight": "250 lb",
-    "weightKg": "113",
-    "weightModifier": "0 lb",
-    "weightModifierKg": "0 kg",
+    "base": "4'8\"",
+    "baseCm": "142",
+    "heightModifier": "2d10",
+    "heightModifierCm": "5d10",
+    "baseWeight": "224 lb",
+    "weightKg": "102",
+    "weightModifier": "2d8",
+    "weightModifierKg": "(1d8 / 2)",
     "id": "geth"
   },
   {
@@ -166,18 +166,6 @@
     "weightModifier": "2d10",
     "weightModifierKg": "(1d10 / 2)",
     "id": "turian"
-  },
-  {
-    "race": "Unshackled AI",
-    "base": "4'8\"",
-    "baseCm": "142",
-    "heightModifier": "2d10",
-    "heightModifierCm": "5d10",
-    "baseWeight": "224 lb",
-    "weightKg": "102",
-    "weightModifier": "2d8",
-    "weightModifierKg": "(1d8 / 2)",
-    "id": "unshackled_ai"
   },
   {
     "race": "Volus",

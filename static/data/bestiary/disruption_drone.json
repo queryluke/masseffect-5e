@@ -13,7 +13,7 @@
       "type": "standard",
       "name": "Kamikaze Attack",
       "recharge": null,
-      "description": "When the disruption drone is within 2m of an enemy creature, it explodes. Each creature within a 2m radius must make a DC 13 Dexterity saving throw. On a failed save, a creature takes 1d12 thunder damage, or half as much on a successful one."
+      "description": "The disruption can use its action to immediately reduce its hit points to 0."
     }
   ],
   "alignment": "Neutral",
@@ -30,9 +30,14 @@
   "damageVulnerabilities": [
     "lightning"
   ],
-  "features": [],
+  "features": [
+    {
+      "name": "Post-mortem explosion",
+      "description": "When the disruption drone drops to 0 hit points it explodes. Each creature within a 2m radius must make a DC 13 Dexterity saving throw. On a failed save, a creature takes 13 (2d12) thunder damage, or half as much on a successful one."
+    }
+  ],
   "hp": {
-    "numDice": 2,
+    "numDice": 4,
     "die": 6
   },
   "id": "disruption_drone",

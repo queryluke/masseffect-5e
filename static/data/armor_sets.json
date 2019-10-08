@@ -1086,7 +1086,7 @@
     "armorType": "Light",
     "description": "There's nothing elegant about this patchwork hardsuit. It mixes various materials and technology from the Heleus Cluster and its microframe computer runs a jumble of barely linked programs. Despite this, or because of it, the armor is highly effective in combat, with targeting and thermal distribution systems second to none.",
     "feature": "Increase thermal clip capacity by 4.",
-    "setBonus": "Set bonus (2 of 4): Roll one additional weapon damage die when determining the extra damage for a critical hit with a weapon attack. --Set bonus (4 of 4): Whenever you roll a 19 or higher on a weapon attack roll, consider it a critical hit.",
+    "setBonus": "Set bonus (2 of 4): Roll one additional weapon damage die when determining the extra damage for a critical hit with a weapon attack. --Set bonus (4 of 4): Whenever you roll an 18 or higher on a weapon attack roll, consider it a critical hit.",
     "cost": "5050",
     "manu": "Nexus Exiles",
     "image": "https://vignette.wikia.nocookie.net/masseffect/images/0/09/MEA_Maverick_Deadeye_Legs.png/revision/latest/scale-to-width-down/350?cb=20180511231159",

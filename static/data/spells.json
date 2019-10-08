@@ -2687,7 +2687,7 @@
       },
       {
         "name": "Telegraphed Attacks",
-        "description": "Your HUD alerts you when the creature is about to attack. It has disadvantage on ranged and melee attacks and you have advantage on any saving throws caused by spells and abilities of the creature."
+        "description": "Your HUD alerts you when the creature is about to attack. It has disadvantage on ranged and melee attacks against you and you have advantage on any saving throws caused by spells and abilities of the creature."
       }
     ]
   },

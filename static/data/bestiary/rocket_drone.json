@@ -14,7 +14,7 @@
       "name": "Distortion Rocket",
       "range": 30,
       "target": "one target",
-      "hit": "7 (2d6) thunder damage.",
+      "hit": "9 (2d8) thunder damage.",
       "miss": null,
       "attackMod": 2
     }
@@ -24,7 +24,7 @@
   "conditionImmunities": [
     "poisoned"
   ],
-  "cr": "1/4",
+  "cr": "1/2",
   "damageImmunities": [
     "poison",
     "psychic"
@@ -35,7 +35,7 @@
   ],
   "features": [],
   "hp": {
-    "numDice": 2,
+    "numDice": 5,
     "die": 6
   },
   "id": "rocket_drone",

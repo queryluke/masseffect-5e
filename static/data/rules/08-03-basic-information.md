@@ -22,7 +22,8 @@ the purposes of combat, it represents the number of playmat spaces the vehicle c
 at a normal pace.
 
 ### Range
-Range represents how far the vehicle can travel in one 24 period. For starships, range is used in conjunction with
+Range represents how far the vehicle can travel in one 24 period. For starships, range is represented in "Faster-than-light-units"
+or FTLUs and is used in conjunction with
 the Galaxy Map. Each line indicates the travel time between star systems, which you subtract from the starships range.
 Travel to planets within a star systems costs 1 range. You can read more about range for starships in the
 <nuxt-link to="/phb/vehicles#travelling-the-galaxy">Traveling the Galaxy section</nuxt-link>

@@ -2,6 +2,7 @@
 id: melee-specialist
 name: Melee Specialist
 note: +1 Strength or Dexterity, additional attacks with melee weapons
+new: true
 ---
 
 You've trained extensively in melee weapon combat.

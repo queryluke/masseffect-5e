@@ -64,8 +64,8 @@
   "savingThrows": [],
   "senses": [
     {
-      "sense": "infrared",
-      "range": null
+      "sense": "infrared vision",
+      "range": 20
     }
   ],
   "size": "Medium",

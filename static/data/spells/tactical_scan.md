@@ -25,7 +25,7 @@ advancementOptions:
     This feature only affects a single target, but you can choose one creature from the ones that failed the contested check.
 - name: Telegraphed Attacks
   description: Your HUD alerts you when the creature is about to attack. It has
-    disadvantage on ranged and melee attacks and you have advantage on any saving
+    disadvantage on ranged and melee attacks against you and you have advantage on any saving
     throws caused by spells and abilities of the creature.
 ---
 Spend your action scanning a creature you can see, studying its movement and revealing weaknesses.

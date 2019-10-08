@@ -9,6 +9,9 @@
     p.headline Proficiencies
     ul.list-unstyled
       li #[strong Armor:] {{ item.armorProficiencies.join(', ') }}
+      li #[strong Tools:] &nbsp;
+        span(v-if="item.toolProficiencies") Choose one from {{ item.toolProficiencies | listOfChoices(1) }}
+        span(v-else) None
       li #[strong Weapons:] {{ item.weaponProficiencies | listOfChoices(item.weaponProficiencyChoices) }}
       li #[strong Saving Throws:] {{ item.savingThrows.join(' & ') }}
       li #[strong Skills:] {{ item.skillProficiencies | listOfChoices(item.skillChoices) }}

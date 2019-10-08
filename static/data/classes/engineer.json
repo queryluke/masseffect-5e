@@ -10,6 +10,12 @@
     "Light",
     "Medium"
   ],
+  "toolProficiencies": [
+    "Armorsmith's Workbench",
+    "Tailor's Tools",
+    "Tinker's Tools",
+    "Weaponsmith's Workbench"
+  ],
   "weaponProficiencyChoices": 1,
   "weaponProficiencies": {
     "required": [
@@ -161,7 +167,8 @@
       "level": 11,
       "proficiencyBonus": 4,
       "features": [
-        "recharge_2"
+        "recharge_2",
+        "improved_efficiency"
       ],
       "techPoints": 26,
       "techPointLimit": 3
@@ -307,31 +314,6 @@
         ],
         [
           "supply_pylon"
-        ]
-      ]
-    },
-    {
-      "name": "Demolisher",
-      "source": "v0.8.4",
-      "description": "Demolishers are explosive specialists with an eye for combat. While not as skilled as a Soldier or Infiltrator, they make up for it with by covering the battlefield with grenades and heavy weapon fire.",
-      "features": [
-        [
-          "advanced_weapon_holsters",
-          "zz_weapon_training"
-        ],
-        [
-          "makeshift_grenades_1",
-          "extra_attack_1"
-        ],
-        [
-          "heavy_weapon_hack",
-          "fighting_style"
-        ],
-        [
-          "makeshift_grenades_2"
-        ],
-        [
-          "paint_by_number"
         ]
       ]
     }

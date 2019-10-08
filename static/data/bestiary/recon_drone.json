@@ -41,7 +41,7 @@
     }
   ],
   "hp": {
-    "numDice": 2,
+    "numDice": 4,
     "die": 6
   },
   "id": "recon_drone",

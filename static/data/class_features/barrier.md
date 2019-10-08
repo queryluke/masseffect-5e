@@ -13,6 +13,6 @@ any remaining damage it to other hit pools like tech armor, shields, temporary h
 Barrier lasts 1 minute. It ends early if you are knocked unconscious or have no barrier ticks remaining. 
 You can also end barrier at any time as a free action. When Barrier ends, you lose any remaining barrier ticks.
 
-Once you have used barrier the maximum number of times for your Adept, Sentinel, or Vanguard level (whichever is highest),
+Once you have used barrier the maximum number of times for your combined Adept, Sentinel, and/or Vanguard levels,
 you must finish a short rest before you can use it again. You may use barrier 2 times at 1st level, 3 at 3rd, 4 at 6th,
 5 at 12th, and 6 at 17th.

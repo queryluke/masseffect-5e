@@ -208,7 +208,8 @@
       "level": 17,
       "proficiencyBonus": 6,
       "features": [
-        "adrenaline_rush_2"
+        "adrenaline_rush_2",
+        "indomitable_3"
       ],
       "cantrips": 5
     },
@@ -300,28 +301,6 @@
         ],
         [
           "strength_before_death"
-        ]
-      ]
-    },
-    {
-      "name": "Sharpshooter",
-      "source": "v0.8.4",
-      "description": "Sharpshooters use pinpoint accuracy and target weak points on their opponents, resulting in massive amounts of bonus damage.",
-      "features": [
-        [
-          "zz_steady_aim"
-        ],
-        [
-          "careful_eyes"
-        ],
-        [
-          "zz_close-quarters_shooter"
-        ],
-        [
-          "rapid_strike"
-        ],
-        [
-          "zz_snap_shot"
         ]
       ]
     }
