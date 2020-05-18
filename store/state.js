@@ -10,7 +10,8 @@ export default {
     { route: '/assets', title: 'Assets' },
     { route: '/changelog', title: 'Changelog' },
     { route: '/about', title: 'About' },
-    { route: '/contributing', title: 'Feedback' }
+    { route: '/contributing', title: 'Feedback' },
+    { route: '/character-builder', title: 'Character Builder'}
   ],
   races: ['angara', 'asari', 'batarian', 'drell', 'elcor', 'geth', 'hanar', 'human', 'krogan', 'prothean', 'quarian', 'salarian', 'turian', 'volus', 'vorcha'],
   sidebar: true,
