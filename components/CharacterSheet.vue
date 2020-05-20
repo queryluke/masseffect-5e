@@ -71,36 +71,50 @@
         // Stats
         v-flex(xs8 text-xs-center)
           h2 Stats
-          v-data-table(:headers="stats_table.headers" :items="stats_table.items")
+          v-data-table(:headers="stats_table.headers" :items="stats_table.items" class="stats-table-area" hide-actions="true")
             template(v-slot:items="props")
               td {{props.item.label}}
-              td {{props.item.str}}
-              td {{props.item.dex}}
-              td {{props.item.con}}
-              td {{props.item.int}}
-              td {{props.item.wis}}
-              td {{props.item.cha}}
+              td(class="stat-num") {{props.item.str}}
+              td(class="stat-num") {{props.item.dex}}
+              td(class="stat-num") {{props.item.con}}
+              td(class="stat-num") {{props.item.int}}
+              td(class="stat-num") {{props.item.wis}}
+              td(class="stat-num") {{props.item.cha}}
 
           v-layout(text-xs-left)
             v-flex(class="stats-label")
               h3 Raw Values
             v-flex
-              v-text-field(v-model="character.dex")
+              v-text-field(v-model="character.stats.str")
             v-flex
-              v-text-field(v-model="character.dex")
+              v-text-field(v-model="character.stats.dex")
             v-flex
-              v-text-field(v-model="character.dex")
+              v-text-field(v-model="character.stats.con")
             v-flex
-              v-text-field(v-model="character.dex")
+              v-text-field(v-model="character.stats.int")
             v-flex
-              v-text-field(v-model="character.dex")
+              v-text-field(v-model="character.stats.wis")
             v-flex
-              v-text-field(v-model="character.dex")
+              v-text-field(v-model="character.stats.cha")
 </template>
 
 <style lang="scss">
+
   .stats-label {
-    width: 300px;
+    text-align: center;
+    margin-top: 20px;
+    width: 280px;
+  }
+
+  .stats-table-area {
+    table.v-table {
+      thead th {
+        font-size: 20px !important;
+      }
+      td.stat-num {
+        font-size: 18px !important;
+      }
+    }
   }
 </style>
 
@@ -111,7 +125,10 @@ export default {
       name: "Garrus Vakarian",
       level: 2,
       race: "Turian",
-      background: "Sniper"
+      background: "Sniper",
+      stats: {
+        str: 16, dex: 14, con: 13, int: 10, wis: 14, cha: 8
+      }
     },
     skills_table: {
       search: '',
