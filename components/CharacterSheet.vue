@@ -60,7 +60,7 @@
           h2 Skills
           v-card-title
             v-text-field(v-model="skills_table.search" append-icon="mdi-magnify" label="Search" single-line hide-details)
-          v-data-table(:headers="skills_table.headers" :items="skills_table.items" :search="skills_table.search" hide-actions="true")
+          v-data-table(:headers="skills_table.headers" :items="skills_table.items" :search="skills_table.search" :hide-actions="true")
             template(v-slot:items="props")
               td {{props.item.roll >= 0 ? '+' : '-'}} {{Math.abs(props.item.roll)}}
               td {{props.item.skill}}
@@ -71,48 +71,80 @@
         // Stats
         v-flex(xs8 text-xs-center)
           h2 Stats
-          v-data-table(:headers="stats_table.headers" :items="stats_table.items" class="stats-table-area" hide-actions="true")
+          v-data-table(:headers="stats_table.headers" :items="stats_table.items" class="stats-table-area"
+            :hide-actions="true" :disable-initial-sort="false" :must-sort="true")
             template(v-slot:items="props")
               td {{props.item.label}}
-              td(class="stat-num") {{props.item.str}}
-              td(class="stat-num") {{props.item.dex}}
-              td(class="stat-num") {{props.item.con}}
-              td(class="stat-num") {{props.item.int}}
-              td(class="stat-num") {{props.item.wis}}
-              td(class="stat-num") {{props.item.cha}}
+              // Numbers
+              td(class="stat-num" v-if="!props.item.isCheckbox") {{props.item.str}}
+              td(class="stat-num" v-if="!props.item.isCheckbox") {{props.item.dex}}
+              td(class="stat-num" v-if="!props.item.isCheckbox") {{props.item.con}}
+              td(class="stat-num" v-if="!props.item.isCheckbox") {{props.item.int}}
+              td(class="stat-num" v-if="!props.item.isCheckbox") {{props.item.wis}}
+              td(class="stat-num" v-if="!props.item.isCheckbox") {{props.item.cha}}
 
-          v-layout(text-xs-left)
-            v-flex(class="stats-label")
+              // Checkboxes
+              td(class="stat-checkbox" v-if="props.item.isCheckbox")
+                v-checkbox(v-model="props.item.str" class="align-center justify-center")
+              td(class="stat-checkbox" v-if="props.item.isCheckbox")
+                v-checkbox(v-model="props.item.dex" class="align-center justify-center")
+              td(class="stat-checkbox" v-if="props.item.isCheckbox")
+                v-checkbox(v-model="props.item.con" class="align-center justify-center")
+              td(class="stat-checkbox" v-if="props.item.isCheckbox")
+                v-checkbox(v-model="props.item.int" class="align-center justify-center")
+              td(class="stat-checkbox" v-if="props.item.isCheckbox")
+                v-checkbox(v-model="props.item.wis" class="align-center justify-center")
+              td(class="stat-checkbox" v-if="props.item.isCheckbox")
+                v-checkbox(v-model="props.item.cha" class="align-center justify-center")
+
+          v-layout(text-xs-left class="raw-value-area")
+            span(class="stats-label")
               h3 Raw Values
             v-flex
-              v-text-field(v-model="character.stats.str")
+              v-text-field(v-model="character.stats.str" class="raw-value-field")
             v-flex
-              v-text-field(v-model="character.stats.dex")
+              v-text-field(v-model="character.stats.dex" class="raw-value-field")
             v-flex
-              v-text-field(v-model="character.stats.con")
+              v-text-field(v-model="character.stats.con" class="raw-value-field")
             v-flex
-              v-text-field(v-model="character.stats.int")
+              v-text-field(v-model="character.stats.int" class="raw-value-field")
             v-flex
-              v-text-field(v-model="character.stats.wis")
+              v-text-field(v-model="character.stats.wis" class="raw-value-field")
             v-flex
-              v-text-field(v-model="character.stats.cha")
+              v-text-field(v-model="character.stats.cha" class="raw-value-field")
 </template>
 
 <style lang="scss">
 
-  .stats-label {
-    text-align: center;
-    margin-top: 20px;
-    width: 280px;
+  .raw-value-area {
+    input {
+      text-align: center;
+    }
+    .stats-label {
+      text-align: center;
+      margin-top: 20px;
+      width: 250px;
+    }
+    .raw-value-field {
+      font-size: 12px !important;
+      padding: 8px
+    }
   }
 
   .stats-table-area {
+
+    .stat-checkbox .v-input__slot {
+      margin: 0;
+    }
+
     table.v-table {
       thead th {
         font-size: 20px !important;
+        text-align: center !important;
       }
       td.stat-num {
         font-size: 18px !important;
+        text-align: center;
       }
     }
   }
@@ -161,20 +193,23 @@ export default {
     },
     stats_table: {
       headers: [
-        {text: '', value: 'label', align: 'start'},
-        {text: 'STR',value: 'str'},
-        {text: 'DEX',value: 'dex'},
-        {text: 'CON',value: 'con'},
-        {text: 'INT',value: 'int'},
-        {text: 'WIS',value: 'wis'},
-        {text: 'CHA',value: 'cha'}
+        {text: '', value: 'label', align: 'start', sortable: false},
+        {text: 'STR',value: 'str', sortable: false},
+        {text: 'DEX',value: 'dex', sortable: false},
+        {text: 'CON',value: 'con', sortable: false},
+        {text: 'INT',value: 'int', sortable: false},
+        {text: 'WIS',value: 'wis', sortable: false},
+        {text: 'CHA',value: 'cha', sortable: false}
       ],
       items: [
         {
-          label: "Ability Scores", str: 0, dex: 0, con: 0, int: 0, wis: 0, cha: 0
+          isCheckbox: false, label: "Ability Scores", str: 0, dex: 0, con: 0, int: 0, wis: 0, cha: 0
         },
         {
-          label: "Saving Throws", str: 0, dex: 0, con: 0, int: 0, wis: 0, cha: 0
+          isCheckbox: false, label: "Saving Throws", str: 0, dex: 0, con: 0, int: 0, wis: 0, cha: 0
+        },
+        {
+          isCheckbox: true, label: "Proficiency", str: false, dex: false, con: false, int: false, wis: false, cha: false
         }
       ]
     }
