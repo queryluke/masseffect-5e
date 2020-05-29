@@ -71,31 +71,19 @@
         // Stats
         v-flex(xs8 text-xs-center)
           h2 Stats
+
           v-data-table(:headers="stats_table.headers" :items="stats_table.items" class="stats-table-area"
             :hide-actions="true" :disable-initial-sort="false" :must-sort="true")
             template(v-slot:items="props")
               td {{props.item.label}}
               // Numbers
-              td(class="stat-num" v-if="!props.item.isCheckbox") {{props.item.str}}
-              td(class="stat-num" v-if="!props.item.isCheckbox") {{props.item.dex}}
-              td(class="stat-num" v-if="!props.item.isCheckbox") {{props.item.con}}
-              td(class="stat-num" v-if="!props.item.isCheckbox") {{props.item.int}}
-              td(class="stat-num" v-if="!props.item.isCheckbox") {{props.item.wis}}
-              td(class="stat-num" v-if="!props.item.isCheckbox") {{props.item.cha}}
+              td(class="stat-num") {{props.item.str}}
+              td(class="stat-num") {{props.item.dex}}
+              td(class="stat-num") {{props.item.con}}
+              td(class="stat-num") {{props.item.int}}
+              td(class="stat-num") {{props.item.wis}}
+              td(class="stat-num") {{props.item.cha}}
 
-              // Checkboxes
-              td(class="stat-checkbox" v-if="props.item.isCheckbox")
-                v-checkbox(v-model="props.item.str" class="align-center justify-center")
-              td(class="stat-checkbox" v-if="props.item.isCheckbox")
-                v-checkbox(v-model="props.item.dex" class="align-center justify-center")
-              td(class="stat-checkbox" v-if="props.item.isCheckbox")
-                v-checkbox(v-model="props.item.con" class="align-center justify-center")
-              td(class="stat-checkbox" v-if="props.item.isCheckbox")
-                v-checkbox(v-model="props.item.int" class="align-center justify-center")
-              td(class="stat-checkbox" v-if="props.item.isCheckbox")
-                v-checkbox(v-model="props.item.wis" class="align-center justify-center")
-              td(class="stat-checkbox" v-if="props.item.isCheckbox")
-                v-checkbox(v-model="props.item.cha" class="align-center justify-center")
 
           v-layout(text-xs-left class="raw-value-area")
             span(class="stats-label")
@@ -164,6 +152,7 @@ export default {
       "Soldier": ["Havoc","Weapon Master","Gladiator"],
       "Vanguard": ["Battle Master", "Shock Trooper", "Nemesis"]
     },
+    // This is just placeholder. There should be an option to save/load this from JSON
     character: {
       name: "Garrus Vakarian",
       level: 2,
@@ -175,6 +164,26 @@ export default {
         str: 16, dex: 14, con: 13, int: 10, wis: 14, cha: 8
       },
       proficiencies: {
+        skills: {
+          acrobatics: true,
+          athletics: true,
+          deception: false,
+          electronics: false,
+          engineering: false,
+          history: false,
+          insight: false,
+          intimidation: false,
+          investigation: false,
+          medicine: false,
+          perception: false,
+          performance: false,
+          persuasion: false,
+          science: false,
+          slight_of_hand: false,
+          stealth: false,
+          survival: true,
+          vehicle_handling: false
+        },
         armor: {
           light: false,
           medium: true,
@@ -230,19 +239,37 @@ export default {
         {text: 'INT',value: 'int', sortable: false},
         {text: 'WIS',value: 'wis', sortable: false},
         {text: 'CHA',value: 'cha', sortable: false}
-      ],
-      items: [
-        {
-          isCheckbox: false, label: "Ability Scores", str: 0, dex: 0, con: 0, int: 0, wis: 0, cha: 0
-        },
-        {
-          isCheckbox: false, label: "Saving Throws", str: 0, dex: 0, con: 0, int: 0, wis: 0, cha: 0
-        },
-        {
-          isCheckbox: true, label: "Proficiency", str: false, dex: false, con: false, int: false, wis: false, cha: false
-        }
       ]
     }
-  })
+  }),
+
+  mounted:function() {
+    this.getStatsTableItems();
+  },
+
+  methods: {
+    getStatsTableItems: function() {
+      this.stats_table.items = [
+        {
+          label: "Ability Scores",
+          str: this.calcAbilityMod(this.character.stats.str),
+          dex: this.calcAbilityMod(this.character.stats.dex),
+          con: this.calcAbilityMod(this.character.stats.con), 
+          int: this.calcAbilityMod(this.character.stats.int),
+          wis: this.calcAbilityMod(this.character.stats.wis),
+          cha: this.calcAbilityMod(this.character.stats.cha)
+        },
+        {
+          label: "Saving Throws", str: 0, dex: 0, con: 0, int: 0, wis: 0, cha: 0
+        },
+        {
+          label: "Proficiency", str: false, dex: false, con: false, int: false, wis: false, cha: false
+        }
+      ]
+    },
+    calcAbilityMod: function(ability_score) {
+      return Math.floor((ability_score - 10) / 2)
+    }
+  }
 };
 </script>
