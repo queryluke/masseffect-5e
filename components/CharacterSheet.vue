@@ -243,13 +243,24 @@ export default {
     }
   }),
 
-  mounted:function() {
-    this.getStatsTableItems();
+  watch: {
+    character: {
+      handler: function() {
+        console.log("[bdc4] - Character data changed; Watch triggered!");
+        this.stats_table.items = this.updateStatsTableItems();
+      },
+      deep: true
+    }
+  },
+  
+  created: function() {
+    this.stats_table.items = this.updateStatsTableItems();
   },
 
   methods: {
-    getStatsTableItems: function() {
-      this.stats_table.items = [
+    updateStatsTableItems: function() {
+      console.log("[bdc4] - Updating Stats Table...");
+      return [
         {
           label: "Ability Scores",
           str: this.calcAbilityMod(this.character.stats.str),
@@ -271,5 +282,7 @@ export default {
       return Math.floor((ability_score - 10) / 2)
     }
   }
+
+  
 };
 </script>
