@@ -19,13 +19,13 @@
               v-text-field(v-model="character.level" label="Level")
             
             v-flex
-              v-select(v-model="character.race" :items="['Turian','Human']" label="Race")
+              v-select(v-model="character.race" :items="races" label="Race")
             
             v-flex
-              v-select(v-model="character.class" :items="['Sniper','Shadow','Saboteur']" label="Class")
+              v-select(v-model="character.class" :items="classes" label="Class")
 
             v-flex
-              v-select(v-model="character.subclass" :items="['Infiltrator','Adept','Soldier']" label="Sub-Class")
+              v-select(v-model="character.subclass" :items="subclasses[character.class]" label="Sub-Class")
 
             v-flex
               v-select(v-model="character.subclass" :items="['Colonist','Doctor']" label="Background")
@@ -153,13 +153,43 @@
 <script>
 export default {
   data: () => ({
+    races: ["Angara","Batarian","Drell","Elcor","Geth","Hanar","Human",
+    "Krogan","Prothean","Quarian","Salarian","Turian","Volus","Vorcha"],
+    classes: ["Adept","Engineer","Infiltrator","Sentinel","Soldier","Vanguard"],
+    subclasses: {
+      "Adept": ["Commando", "Blackstar", "Distruptor"],
+      "Engineer": ["Mastermind","Drone Jockey", "Medic"],
+      "Infiltrator": ["Shadow","Sniper","Saboteur"],
+      "Sentinel": ["Bastion", "Juggernaut", "Guardian"],
+      "Soldier": ["Havoc","Weapon Master","Gladiator"],
+      "Vanguard": ["Battle Master", "Shock Trooper", "Nemesis"]
+    },
     character: {
       name: "Garrus Vakarian",
       level: 2,
       race: "Turian",
-      background: "Sniper",
+      class: "Infiltrator",
+      subclass: "Sniper",
+      background: "",
       stats: {
         str: 16, dex: 14, con: 13, int: 10, wis: 14, cha: 8
+      },
+      proficiencies: {
+        armor: {
+          light: false,
+          medium: true,
+          heavy: false
+        },
+        weapons: {
+          pistol: false,
+          smg: false,
+          assault_rifle: false,
+          shotgun: false,
+          sniper_rifle: true,
+          melee: false,
+          heavy_weapons: false
+        },
+        other: []
       }
     },
     skills_table: {
