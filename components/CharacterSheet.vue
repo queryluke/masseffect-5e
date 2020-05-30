@@ -77,13 +77,27 @@
             template(v-slot:items="props")
               td {{props.item.label}}
               // Numbers
-              td(class="stat-num") {{props.item.str}}
-              td(class="stat-num") {{props.item.dex}}
-              td(class="stat-num") {{props.item.con}}
-              td(class="stat-num") {{props.item.int}}
-              td(class="stat-num") {{props.item.wis}}
-              td(class="stat-num") {{props.item.cha}}
+              td(class="stat-num" v-if="!props.item.isCheckbox") {{props.item.str}}
+              td(class="stat-num" v-if="!props.item.isCheckbox") {{props.item.dex}}
+              td(class="stat-num" v-if="!props.item.isCheckbox") {{props.item.con}}
+              td(class="stat-num" v-if="!props.item.isCheckbox") {{props.item.int}}
+              td(class="stat-num" v-if="!props.item.isCheckbox") {{props.item.wis}}
+              td(class="stat-num" v-if="!props.item.isCheckbox") {{props.item.cha}}
 
+              // Proficiencies
+              td(class="stat-num" v-if="props.item.isCheckbox") 
+                v-checkbox(v-model="character.proficiencies.stats.str")
+                div {{stats_table.items[1].str}}{{props.item.str}}
+              td(class="stat-num" v-if="props.item.isCheckbox")
+                v-checkbox(v-model="character.proficiencies.stats.dex")
+              td(class="stat-num" v-if="props.item.isCheckbox")
+                v-checkbox(v-model="character.proficiencies.stats.con")
+              td(class="stat-num" v-if="props.item.isCheckbox")
+                v-checkbox(v-model="character.proficiencies.stats.int")
+              td(class="stat-num" v-if="props.item.isCheckbox")
+                v-checkbox(v-model="character.proficiencies.stats.wis")
+              td(class="stat-num" v-if="props.item.isCheckbox")
+                v-checkbox(v-model="character.proficiencies.stats.cha")
 
           v-layout(text-xs-left class="raw-value-area")
             span(class="stats-label")
@@ -164,6 +178,9 @@ export default {
         str: 16, dex: 14, con: 13, int: 10, wis: 14, cha: 8
       },
       proficiencies: {
+        stats: {
+          str: true, dex: false, con: true, int: false, wis: false, cha: false
+        },
         skills: {
           acrobatics: true,
           athletics: true,
@@ -245,16 +262,14 @@ export default {
 
   watch: {
     character: {
+      immediate: true,
+      deep: true,
       handler: function() {
         console.log("[bdc4] - Character data changed; Watch triggered!");
         this.stats_table.items = this.updateStatsTableItems();
-      },
-      deep: true
+        console.log("stats table", this.stats_table);
+      }
     }
-  },
-  
-  created: function() {
-    this.stats_table.items = this.updateStatsTableItems();
   },
 
   methods: {
@@ -262,7 +277,7 @@ export default {
       console.log("[bdc4] - Updating Stats Table...");
       return [
         {
-          label: "Ability Scores",
+          label: "Ability Modifiers",
           str: this.calcAbilityMod(this.character.stats.str),
           dex: this.calcAbilityMod(this.character.stats.dex),
           con: this.calcAbilityMod(this.character.stats.con), 
@@ -271,15 +286,40 @@ export default {
           cha: this.calcAbilityMod(this.character.stats.cha)
         },
         {
-          label: "Saving Throws", str: 0, dex: 0, con: 0, int: 0, wis: 0, cha: 0
+          label: "Saving Throws",
+          str: this.calcAbilitySavingThrow(this.character.stats.str, this.character.proficiencies.stats.str),
+          dex: this.calcAbilitySavingThrow(this.character.stats.dex, this.character.proficiencies.stats.dex),
+          con: this.calcAbilitySavingThrow(this.character.stats.con, this.character.proficiencies.stats.con), 
+          int: this.calcAbilitySavingThrow(this.character.stats.int, this.character.proficiencies.stats.int),
+          wis: this.calcAbilitySavingThrow(this.character.stats.wis, this.character.proficiencies.stats.wis),
+          cha: this.calcAbilitySavingThrow(this.character.stats.cha, this.character.proficiencies.stats.cha)
         },
         {
-          label: "Proficiency", str: false, dex: false, con: false, int: false, wis: false, cha: false
+          isCheckbox: true,
+          label: "Proficiency",
+          str: this.character.proficiencies.stats.str,
+          dex: this.character.proficiencies.stats.dex,
+          con: this.character.proficiencies.stats.con,
+          int: this.character.proficiencies.stats.int,
+          wis: this.character.proficiencies.stats.wis,
+          cha: this.character.proficiencies.stats.cha
         }
       ]
     },
     calcAbilityMod: function(ability_score) {
       return Math.floor((ability_score - 10) / 2)
+    },
+    calcAbilitySavingThrow: function(ability_score, isProf) {
+      var num = this.calcAbilityMod(ability_score);
+      if (isProf) {
+       num += this.calcProfBonus(this.character.level)
+      }
+      //if (ability_score == 16) console.log("Calculating Saving Throw", num);
+      return num;
+
+    },
+    calcProfBonus: function(level) {
+      return Math.ceil(level/4) + 1;
     }
   }
 
