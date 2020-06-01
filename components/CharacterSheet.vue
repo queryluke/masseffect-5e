@@ -72,48 +72,37 @@
         v-flex(xs8 text-xs-center)
           h2 Stats
 
-          v-data-table(:headers="stats_table.headers" :items="stats_table.items" class="stats-table-area"
-            :hide-actions="true" :disable-initial-sort="false" :must-sort="true")
-            template(v-slot:items="props")
-              td {{props.item.label}}
-              // Numbers
-              td(class="stat-num" v-if="!props.item.isCheckbox") {{props.item.str}}
-              td(class="stat-num" v-if="!props.item.isCheckbox") {{props.item.dex}}
-              td(class="stat-num" v-if="!props.item.isCheckbox") {{props.item.con}}
-              td(class="stat-num" v-if="!props.item.isCheckbox") {{props.item.int}}
-              td(class="stat-num" v-if="!props.item.isCheckbox") {{props.item.wis}}
-              td(class="stat-num" v-if="!props.item.isCheckbox") {{props.item.cha}}
+          div(class="stats-table-area")
+            div(class="v-table__overflow")
+              table(class="v-datatable v-table theme--light")
+                thead
+                  tr
+                    th(role="columnheader" class="column text-xs-start")
+                    th(role="columnheader" class="column text-xs-left" v-for="stat in ['str','dex','con','int','wis','cha']")
+                      span(style="text-transform: uppercase;") {{stat}}
+                  tr(class="v-datatable__progress")
+                    th(colspan="7" class="column")
+                tbody
+                  tr
+                    td Ability Modifiers
+                    td(v-for="stat in ['str','dex','con','int','wis','cha']")
+                      div {{(calcAbilityMod(character.stats[stat]) >= 0 ? '+' : '') + calcAbilityMod(character.stats[stat])}}
+                  
+                  tr
+                    td Saving Throws
+                    td(v-for="stat in ['str','dex','con','int','wis','cha']")
+                      div {{(calcAbilitySavingThrow(character.stats[stat], character.proficiencies.stats[stat]) >= 0 ? '+' : '') + calcAbilitySavingThrow(character.stats[stat], character.proficiencies.stats[stat])}}
 
-              // Proficiencies
-              td(class="stat-num" v-if="props.item.isCheckbox") 
-                v-checkbox(v-model="character.proficiencies.stats.str")
-                div {{stats_table.items[1].str}}{{props.item.str}}
-              td(class="stat-num" v-if="props.item.isCheckbox")
-                v-checkbox(v-model="character.proficiencies.stats.dex")
-              td(class="stat-num" v-if="props.item.isCheckbox")
-                v-checkbox(v-model="character.proficiencies.stats.con")
-              td(class="stat-num" v-if="props.item.isCheckbox")
-                v-checkbox(v-model="character.proficiencies.stats.int")
-              td(class="stat-num" v-if="props.item.isCheckbox")
-                v-checkbox(v-model="character.proficiencies.stats.wis")
-              td(class="stat-num" v-if="props.item.isCheckbox")
-                v-checkbox(v-model="character.proficiencies.stats.cha")
+                  tr
+                    td Proficiency
+                    td(v-for="stat in ['str','dex','con','int','wis','cha']")
+                      v-checkbox(v-model="character.proficiencies.stats[stat]")
+                  
+                  tr(class="raw-value-area")
+                    td(style="font-weight: bold;") Raw Values
+                    td(v-for="stat in ['str','dex','con','int','wis','cha']")
+                      v-text-field(v-model="character.stats[stat]" class="raw-value-field")
 
-          v-layout(text-xs-left class="raw-value-area")
-            span(class="stats-label")
-              h3 Raw Values
-            v-flex
-              v-text-field(v-model="character.stats.str" class="raw-value-field")
-            v-flex
-              v-text-field(v-model="character.stats.dex" class="raw-value-field")
-            v-flex
-              v-text-field(v-model="character.stats.con" class="raw-value-field")
-            v-flex
-              v-text-field(v-model="character.stats.int" class="raw-value-field")
-            v-flex
-              v-text-field(v-model="character.stats.wis" class="raw-value-field")
-            v-flex
-              v-text-field(v-model="character.stats.cha" class="raw-value-field")
 </template>
 
 <style lang="scss">
@@ -122,11 +111,6 @@
     input {
       text-align: center;
     }
-    .stats-label {
-      text-align: center;
-      margin-top: 20px;
-      width: 250px;
-    }
     .raw-value-field {
       font-size: 12px !important;
       padding: 8px
@@ -134,11 +118,13 @@
   }
 
   .stats-table-area {
-
-    .stat-checkbox .v-input__slot {
-      margin: 0;
+    .v-input__control {
+      margin: auto;
     }
-
+    .v-input__slot {
+        margin-top: 12px;
+        margin-bottom: 0px;
+    }
     table.v-table {
       thead th {
         font-size: 20px !important;
@@ -246,17 +232,6 @@ export default {
           adv: false
         }
       ]
-    },
-    stats_table: {
-      headers: [
-        {text: '', value: 'label', align: 'start', sortable: false},
-        {text: 'STR',value: 'str', sortable: false},
-        {text: 'DEX',value: 'dex', sortable: false},
-        {text: 'CON',value: 'con', sortable: false},
-        {text: 'INT',value: 'int', sortable: false},
-        {text: 'WIS',value: 'wis', sortable: false},
-        {text: 'CHA',value: 'cha', sortable: false}
-      ]
     }
   }),
 
@@ -266,46 +241,11 @@ export default {
       deep: true,
       handler: function() {
         console.log("[bdc4] - Character data changed; Watch triggered!");
-        this.stats_table.items = this.updateStatsTableItems();
-        console.log("stats table", this.stats_table);
       }
     }
   },
 
   methods: {
-    updateStatsTableItems: function() {
-      console.log("[bdc4] - Updating Stats Table...");
-      return [
-        {
-          label: "Ability Modifiers",
-          str: this.calcAbilityMod(this.character.stats.str),
-          dex: this.calcAbilityMod(this.character.stats.dex),
-          con: this.calcAbilityMod(this.character.stats.con), 
-          int: this.calcAbilityMod(this.character.stats.int),
-          wis: this.calcAbilityMod(this.character.stats.wis),
-          cha: this.calcAbilityMod(this.character.stats.cha)
-        },
-        {
-          label: "Saving Throws",
-          str: this.calcAbilitySavingThrow(this.character.stats.str, this.character.proficiencies.stats.str),
-          dex: this.calcAbilitySavingThrow(this.character.stats.dex, this.character.proficiencies.stats.dex),
-          con: this.calcAbilitySavingThrow(this.character.stats.con, this.character.proficiencies.stats.con), 
-          int: this.calcAbilitySavingThrow(this.character.stats.int, this.character.proficiencies.stats.int),
-          wis: this.calcAbilitySavingThrow(this.character.stats.wis, this.character.proficiencies.stats.wis),
-          cha: this.calcAbilitySavingThrow(this.character.stats.cha, this.character.proficiencies.stats.cha)
-        },
-        {
-          isCheckbox: true,
-          label: "Proficiency",
-          str: this.character.proficiencies.stats.str,
-          dex: this.character.proficiencies.stats.dex,
-          con: this.character.proficiencies.stats.con,
-          int: this.character.proficiencies.stats.int,
-          wis: this.character.proficiencies.stats.wis,
-          cha: this.character.proficiencies.stats.cha
-        }
-      ]
-    },
     calcAbilityMod: function(ability_score) {
       return Math.floor((ability_score - 10) / 2)
     },
