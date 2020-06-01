@@ -41,7 +41,7 @@
               v-text-field(v-model="character.movement" label="Movement")
             
             v-flex
-              v-text-field(v-model="character.proficiency" label="Proficiency") 
+              v-text-field(v-model="characterProf" label="Proficiency") 
 
             v-flex
               v-text-field(v-model="character.xp" label="XP") 
@@ -58,12 +58,12 @@
         // Skills
         v-flex(xs4 text-xs-center)
           h2 Skills
-          v-card-title
-            v-text-field(v-model="skills_table.search" append-icon="mdi-magnify" label="Search" single-line hide-details)
-          v-data-table(:headers="skills_table.headers" :items="skills_table.items" :search="skills_table.search" :hide-actions="true")
+          //v-card-title
+          //v-text-field(v-model="skills_table.search" append-icon="mdi-magnify" label="Search" single-line hide-details)
+          v-data-table(:headers="skills_table.headers" :items="character.skills" :search="skills_table.search" :hide-actions="true")
             template(v-slot:items="props")
-              td {{props.item.roll >= 0 ? '+' : '-'}} {{Math.abs(props.item.roll)}}
-              td {{props.item.skill}}
+              td {{calcSkillMod(props.item.stat, props.item.prof)}}
+              td {{props.item.label}}
               td
                 v-select(v-model="props.item.prof" :items="[0,.5,1,2]")
               td 
@@ -78,29 +78,29 @@
                 thead
                   tr
                     th(role="columnheader" class="column text-xs-start")
-                    th(role="columnheader" class="column text-xs-left" v-for="stat in ['str','dex','con','int','wis','cha']")
+                    th(role="columnheader" class="column text-xs-left" v-for="stat in stat_names")
                       span(style="text-transform: uppercase;") {{stat}}
                   tr(class="v-datatable__progress")
                     th(colspan="7" class="column")
                 tbody
                   tr
                     td Ability Modifiers
-                    td(v-for="stat in ['str','dex','con','int','wis','cha']")
+                    td(v-for="stat in stat_names" class="stat-num")
                       div {{(calcAbilityMod(character.stats[stat]) >= 0 ? '+' : '') + calcAbilityMod(character.stats[stat])}}
                   
                   tr
                     td Saving Throws
-                    td(v-for="stat in ['str','dex','con','int','wis','cha']")
+                    td(v-for="stat in stat_names" class="stat-num")
                       div {{(calcAbilitySavingThrow(character.stats[stat], character.proficiencies.stats[stat]) >= 0 ? '+' : '') + calcAbilitySavingThrow(character.stats[stat], character.proficiencies.stats[stat])}}
 
                   tr
                     td Proficiency
-                    td(v-for="stat in ['str','dex','con','int','wis','cha']")
+                    td(v-for="stat in stat_names")
                       v-checkbox(v-model="character.proficiencies.stats[stat]")
                   
                   tr(class="raw-value-area")
                     td(style="font-weight: bold;") Raw Values
-                    td(v-for="stat in ['str','dex','con','int','wis','cha']")
+                    td(v-for="stat in stat_names")
                       v-text-field(v-model="character.stats[stat]" class="raw-value-field")
 
 </template>
@@ -125,7 +125,7 @@
         margin-top: 12px;
         margin-bottom: 0px;
     }
-    table.v-table {
+    table {
       thead th {
         font-size: 20px !important;
         text-align: center !important;
@@ -141,6 +141,9 @@
 <script>
 export default {
   data: () => ({
+    stat_names: ['str','dex','con','int','wis','cha'],
+    skill_names: ['acrobatics','athletics','deception','electronics','engineering','history','insight','intimidation',
+    'investigation','medicine','perception','performance','persuasion','science','slight_of_hand','stealth','survival','vehicle_handling'],
     races: ["Angara","Batarian","Drell","Elcor","Geth","Hanar","Human",
     "Krogan","Prothean","Quarian","Salarian","Turian","Volus","Vorcha"],
     classes: ["Adept","Engineer","Infiltrator","Sentinel","Soldier","Vanguard"],
@@ -163,29 +166,29 @@ export default {
       stats: {
         str: 16, dex: 14, con: 13, int: 10, wis: 14, cha: 8
       },
+      skills: [
+          {label: "Acrobatics", prof: 1, advantage: false, stat: "dex"},
+          {label: "Athletics", prof: 0, advantage: false, stat: "str"},
+          {label: "Deception", prof: 0, advantage: false, stat: "cha"},
+          {label: "Electronics", prof: 0, advantage: false, stat: "int"},
+          {label: "Engineering", prof: 0, advantage: false, stat: "int"},
+          {label: "History", prof: 0, advantage: false, stat: "int"},
+          {label: "Insight", prof: 0, advantage: false, stat: "wis"},
+          {label: "Intimidation", prof: 0, advantage: false, stat: "cha"},
+          {label: "Investigation", prof: 0, advantage: false, stat: "int"},
+          {label: "Medicine", prof: 0, advantage: false, stat: "wis"},
+          {label: "Perception", prof: 0, advantage: false, stat: "wis"},
+          {label: "Performance", prof: 0, advantage: false, stat: "cha"},
+          {label: "Persuasion", prof: 0, advantage: false, stat: "cha"},
+          {label: "Science", prof: 0, advantage: false, stat: "int"},
+          {label: "Slight of Hand", prof: 0, advantage: false, stat: "dex"},
+          {label: "Stealth", prof: 0, advantage: false, stat: "dex"},
+          {label: "Survival", prof: 0, advantage: false, stat: "wis"},
+          {label: "Vehicle Handling", prof: 0, advantage: false, stat: "dex"}
+        ],
       proficiencies: {
         stats: {
           str: true, dex: false, con: true, int: false, wis: false, cha: false
-        },
-        skills: {
-          acrobatics: true,
-          athletics: true,
-          deception: false,
-          electronics: false,
-          engineering: false,
-          history: false,
-          insight: false,
-          intimidation: false,
-          investigation: false,
-          medicine: false,
-          perception: false,
-          performance: false,
-          persuasion: false,
-          science: false,
-          slight_of_hand: false,
-          stealth: false,
-          survival: true,
-          vehicle_handling: false
         },
         armor: {
           light: false,
@@ -208,32 +211,18 @@ export default {
       search: '',
       headers: [
         {text: 'Roll',align: 'start',value: 'roll'},
-        {text: 'Skill',value: 'skill'},
+        {text: 'Skill',value: 'label'},
         {text: 'Prof',value: 'prof'},
         {text: 'Adv',value: 'adv'}
-      ],
-      items: [
-        {
-          roll: 3,
-          skill: 'Stealth',
-          prof: 0,
-          adv: false
-        },
-        {
-          roll: 3,
-          skill: 'Athletics',
-          prof: 0,
-          adv: false
-        },
-        {
-          roll: -4,
-          skill: 'Science',
-          prof: 0,
-          adv: false
-        }
       ]
     }
   }),
+
+  computed: {
+    characterProf: function() {
+      return this.calcProfBonus(this.character.level);
+    }
+  },
 
   watch: {
     character: {
@@ -260,6 +249,13 @@ export default {
     },
     calcProfBonus: function(level) {
       return Math.ceil(level/4) + 1;
+    },
+    calcSkillMod: function(ability_str, prof_score) {
+      var baseMod = this.calcAbilityMod(this.character.stats[ability_str]);
+      if (prof_score > 0) {
+        baseMod += Math.floor(prof_score * this.calcProfBonus(this.character.level));
+      }
+      return baseMod;
     }
   }
 
