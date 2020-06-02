@@ -4,12 +4,12 @@
       
       // Character Name and ME5e Logo
       v-layout(row wrap)
-        v-flex(xs8)
+        v-flex(xs8 class="character-name")
           v-text-field(v-model="character.name" label="Character Name")
 
         v-flex(xs4)
           img(title="Mass Effect 5e Logo" src="/images/me5e_logo_450w.png" alt="Mass Effect 5e logo")
-      
+
       // Top level character info
       v-layout
         // Mods and class info
@@ -49,27 +49,40 @@
         // Character Image
         v-flex(xs3)
           img(:title="character.name"
-            src="https://vignette.wikia.nocookie.net/masseffect/images/3/36/Garrus_Character_Shot.png/revision/latest/scale-to-width-down/350?cb=20100323054855"
+            :src="character.image"
             alt="Character Image"
             style="height: 200px;")
-
+          v-dialog(v-model="dialog" width="500")
+            template(v-slot:activator="{ on }")
+              v-btn(color="red lighten-2" dark v-on="on") Change Image
+            
+            v-card
+              v-card-title
+                div Change Image URL
+              v-card-text
+                v-text-field(v-model="character.image")
       // Skills and Stats
       v-layout(row text-xs-left)
         // Skills
         v-flex(xs4 text-xs-center)
           h2 Skills
           //v-card-title
-          //v-text-field(v-model="skills_table.search" append-icon="mdi-magnify" label="Search" single-line hide-details)
+          v-text-field(v-model="skills_table.search" append-icon="mdi-magnify" label="Search" single-line hide-details)
           v-data-table(:headers="skills_table.headers" :items="character.skills" :search="skills_table.search" :hide-actions="true")
             template(v-slot:items="props")
-              td {{calcSkillMod(props.item.stat, props.item.prof)}}
-              td {{props.item.label}}
-              td
+              td(style="width: 10%;")
+                div {{(calcSkillMod(props.item.stat, props.item.prof) >= 0 ? '+' : '') + calcSkillMod(props.item.stat, props.item.prof)}}
+              td(style="width: 70%;") {{props.item.label}}
+              td(style="width: 10%;")
                 v-select(v-model="props.item.prof" :items="[0,.5,1,2]")
-              td 
-                v-checkbox(v-model="props.item.adv")
+              td(style="width: 10%;") 
+                v-checkbox(v-model="props.item.advantage")
+        
+        // Padding
+        v-flex(xs1)
+
         // Stats
-        v-flex(xs8 text-xs-center)
+        v-flex(xs7 text-xs-center)
           h2 Stats
 
           div(class="stats-table-area")
@@ -107,6 +120,10 @@
 
 <style lang="scss">
 
+  .character-name input {
+    font-size: 30px;
+  }
+
   .raw-value-area {
     input {
       text-align: center;
@@ -141,6 +158,7 @@
 <script>
 export default {
   data: () => ({
+    dialog: false,
     stat_names: ['str','dex','con','int','wis','cha'],
     skill_names: ['acrobatics','athletics','deception','electronics','engineering','history','insight','intimidation',
     'investigation','medicine','perception','performance','persuasion','science','slight_of_hand','stealth','survival','vehicle_handling'],
@@ -158,6 +176,7 @@ export default {
     // This is just placeholder. There should be an option to save/load this from JSON
     character: {
       name: "Garrus Vakarian",
+      image: "https://vignette.wikia.nocookie.net/masseffect/images/3/36/Garrus_Character_Shot.png/revision/latest/scale-to-width-down/350?cb=20100323054855",
       level: 2,
       race: "Turian",
       class: "Infiltrator",
@@ -213,7 +232,7 @@ export default {
         {text: 'Roll',align: 'start',value: 'roll'},
         {text: 'Skill',value: 'label'},
         {text: 'Prof',value: 'prof'},
-        {text: 'Adv',value: 'adv'}
+        {text: 'Adv',value: 'advantage'}
       ]
     }
   }),
