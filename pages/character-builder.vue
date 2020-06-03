@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import CharacterBuilder from "~/components/CharacterSheet.vue";
+import CharacterBuilder from "~/components/CharacterSheet.vue"
 export default {
   components: { CharacterBuilder }
 };

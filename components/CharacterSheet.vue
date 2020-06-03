@@ -66,67 +66,95 @@
                 div Change Image URL
               v-card-text
                 v-text-field(v-model="character.image")
-      // Skills and Stats
-      v-layout(row text-xs-left)
-        // Skills
-        v-flex(xs4 text-xs-center)
-          h2 Skills
-          //v-card-title
-          v-text-field(v-model="skills_table.search" append-icon="mdi-magnify" label="Search" single-line hide-details)
-          v-data-table(:headers="skills_table.headers" :items="character.skills" :search="skills_table.search" :hide-actions="true")
-            template(v-slot:items="props")
-              td(style="width: 10%;")
-                div {{(calcSkillMod(props.item.stat, props.item.prof) >= 0 ? '+' : '') + calcSkillMod(props.item.stat, props.item.prof)}}
-              td(style="width: 70%;") {{props.item.label}}
-              td(style="width: 10%;")
-                v-select(v-model="props.item.prof" :items="[0,.5,1,2]")
-              td(style="width: 10%;") 
-                v-checkbox(v-model="props.item.advantage")
-        
-        // Padding
-        v-flex(xs1)
+      
+      // Tab Area
+      v-layout
+        v-tabs(:grow="true")
+          v-tab(key="stats") Skills and Stats
+          v-tab(key="weapons") Weapons and Armor
+          v-tab(key="race") Character Info
+          v-tab(key="powers") Powers
+          v-tab(key="equipment") Equipment and Wealth
+          v-tab(key="other") Roleplaying / Other
+            
+          v-tab-item(key="stats")
+            // Skills and Stats
+            v-layout(row class="skills-area")
+              // Skills
+              v-flex(xs4 text-xs-center)
+                h2 Skills
+                //v-card-title
+                v-text-field(v-model="skills_table.search" append-icon="mdi-magnify" label="Search" single-line hide-details)
+                v-data-table(:headers="skills_table.headers" :items="character.skills" :search="skills_table.search" :hide-actions="true")
+                  template(v-slot:items="props")
+                    td(style="width: 10%;")
+                      div {{(calcSkillMod(props.item.stat, props.item.prof) >= 0 ? '+' : '') + calcSkillMod(props.item.stat, props.item.prof)}}
+                    td(style="width: 70%;") {{props.item.label}}
+                    td(style="width: 10%;")
+                      v-select(v-model="props.item.prof" :items="[0,.5,1,2]")
+                    td(style="width: 10%;") 
+                      v-checkbox(v-model="props.item.advantage")
+              
+              
+              // Padding
+              v-flex(xs1)
+              // Stats
+              v-flex(xs7 text-xs-center)
+                h2 Stats
 
-        // Stats
-        v-flex(xs7 text-xs-center)
-          h2 Stats
+                div(class="stats-table-area")
+                  div(class="v-table__overflow")
+                    table(class="v-datatable v-table theme--light")
+                      thead
+                        tr
+                          th(role="columnheader" class="column text-xs-start")
+                          th(role="columnheader" class="column text-xs-left" v-for="stat in stat_names")
+                            span(style="text-transform: uppercase;") {{stat}}
+                        tr(class="v-datatable__progress")
+                          th(colspan="7" class="column")
+                      tbody
+                        tr(class="raw-value-area")
+                          td(style="font-weight: bold;") Ability Scores
+                          td(v-for="stat in stat_names")
+                            v-text-field(v-model="character.stats[stat]" class="raw-value-field")
 
-          div(class="stats-table-area")
-            div(class="v-table__overflow")
-              table(class="v-datatable v-table theme--light")
-                thead
-                  tr
-                    th(role="columnheader" class="column text-xs-start")
-                    th(role="columnheader" class="column text-xs-left" v-for="stat in stat_names")
-                      span(style="text-transform: uppercase;") {{stat}}
-                  tr(class="v-datatable__progress")
-                    th(colspan="7" class="column")
-                tbody
-                  tr
-                    td Ability Modifiers
-                    td(v-for="stat in stat_names" class="stat-num")
-                      div {{(calcAbilityMod(character.stats[stat]) >= 0 ? '+' : '') + calcAbilityMod(character.stats[stat])}}
-                  
-                  tr
-                    td Saving Throws
-                    td(v-for="stat in stat_names" class="stat-num")
-                      div {{(calcAbilitySavingThrow(character.stats[stat], character.proficiencies.stats[stat]) >= 0 ? '+' : '') + calcAbilitySavingThrow(character.stats[stat], character.proficiencies.stats[stat])}}
+                        tr
+                          td Ability Modifiers
+                          td(v-for="stat in stat_names" class="stat-num")
+                            div {{(calcAbilityMod(character.stats[stat]) >= 0 ? '+' : '') + calcAbilityMod(character.stats[stat])}}
+                        
+                        tr
+                          td Saving Throws
+                          td(v-for="stat in stat_names" class="stat-num")
+                            div {{(calcAbilitySavingThrow(character.stats[stat], character.proficiencies.stats[stat]) >= 0 ? '+' : '') + calcAbilitySavingThrow(character.stats[stat], character.proficiencies.stats[stat])}}
 
-                  tr
-                    td Proficiency
-                    td(v-for="stat in stat_names")
-                      v-checkbox(v-model="character.proficiencies.stats[stat]")
-                  
-                  tr(class="raw-value-area")
-                    td(style="font-weight: bold;") Raw Values
-                    td(v-for="stat in stat_names")
-                      v-text-field(v-model="character.stats[stat]" class="raw-value-field")
+                        tr
+                          td Proficiency
+                          td(v-for="stat in stat_names")
+                            v-checkbox(v-model="character.proficiencies.stats[stat]")
+                        
+                        
 
+
+          
+          v-tab-item(key="weapons")
+            div(class="padding-top: 20px; width: 100%;")
+              h3(style="text-align: left;") Weapons and Spells
+              weapon-list(:items="character_weapons")
+          v-tab-item(key="race")
+          v-tab-item(key="powers")
+          v-tab-item(key="equipment")
+          v-tab-item(key="other")
 </template>
 
 <style lang="scss">
 
   .character-name input {
     font-size: 30px;
+  }
+
+  .skills-area {
+    padding-top: 20px;
   }
 
   .raw-value-area {
@@ -161,10 +189,16 @@
 </style>
 
 <script>
-import documents from '../static/data/search/documents.json';
+import documents from '../static/data/search/documents.json'
+import weapons from '../static/data/weapons.json'
+import WeaponList from '~/components/weapon/WeaponList.vue'
+
 export default {
+  components: {WeaponList},
   data: () => ({
     dialog: false,
+    tab: false,
+    weapons: weapons || "not found",
     documents: documents || "not found",
     stat_names: ['str','dex','con','int','wis','cha'],
     skill_names: ['acrobatics','athletics','deception','electronics','engineering','history','insight','intimidation',
@@ -231,7 +265,10 @@ export default {
           heavy_weapons: false
         },
         other: []
-      }
+      },
+      weapons: [
+        'black_widow'
+      ]
     },
     skills_table: {
       search: '',
@@ -253,6 +290,17 @@ export default {
     },
     backgrounds: function() {
       return this.getDocuments('character','backgrounds');
+    },
+    character_weapons: function() { // take the weapons array in character and parse down the weapons list
+      // There has to be a better way to do this...
+      var weapons = [];
+      const charWeapons = this.character.weapons;
+      this.weapons.forEach(function(w) {
+        if (charWeapons.includes(w.id)) {
+          weapons.push(w);
+        }
+      });
+      return weapons;
     }
   },
 
