@@ -119,6 +119,16 @@
         ],
         designers: [
           {
+            name: 'Bryce Gelinas',
+            image: '/images/misc/bryce.jpg',
+            desc: 'Bryce is the master-coder behind the online character sheet! Though in the early stages, the addition will be invaluable for all you digital-table-toppers. Be sure to leave feedback on the Discord server.'
+          },
+          {
+            name: 'Noblesse Oblige',
+            image: '/images/classes/engineer.svg',
+            desc: 'Noblesse is the Discord admin extraordinaire and a great resource for getting feedback, answering questions, and all-around Mass Effect lore.'
+          },
+          {
             name: 'Chris "OodSigma13" Dickson',
             image: '/images/classes/infiltrator.svg',
             desc: 'Chris has basically become the in-house designer. He\'s responsible for the new class and spell icons and' +
