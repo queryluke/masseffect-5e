@@ -33,7 +33,7 @@
               v-select(v-model="character.subclass" :items="subclasses[character.class]" label="Sub-Class")
 
             v-flex
-              v-select(v-model="character.subclass" :items="['Colonist','Doctor']" label="Background")
+              v-select(v-model="character.background" :items="backgrounds" item-text="title" item-value="id" label="Background")
           
           v-layout(row)
             v-flex
@@ -161,9 +161,11 @@
 </style>
 
 <script>
+import documents from '../static/data/search/documents.json';
 export default {
   data: () => ({
     dialog: false,
+    documents: documents || "not found",
     stat_names: ['str','dex','con','int','wis','cha'],
     skill_names: ['acrobatics','athletics','deception','electronics','engineering','history','insight','intimidation',
     'investigation','medicine','perception','performance','persuasion','science','slight_of_hand','stealth','survival','vehicle_handling'],
@@ -245,6 +247,12 @@ export default {
   computed: {
     characterProf: function() {
       return this.calcProfBonus(this.character.level);
+    },
+    character_docs: function() {
+      return this.getDocuments('character');
+    },
+    backgrounds: function() {
+      return this.getDocuments('character','backgrounds');
     }
   },
 
@@ -259,6 +267,17 @@ export default {
   },
 
   methods: {
+    getDocuments: function(type, subType) {
+      var docs = this.documents.filter(function(doc) {
+        return doc.type == type;
+      });
+      if (subType) {
+        docs = docs.filter(function(doc) {
+          return doc.subType == subType;
+        });
+      }
+      return docs;
+    },
     calcAbilityMod: function(ability_score) {
       return Math.floor((ability_score - 10) / 2)
     },
