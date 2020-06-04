@@ -8,9 +8,7 @@
           v-text-field(v-model="character.name" label="Character Name")
         
         v-flex(xs4)
-          v-btn(@click="saveFile()") Save Character Sheet
-          input(type="file" ref="file" style="display: none" @change="loadTextFromFile" @load="character = $event")
-          v-btn(@click="$refs.file.click()") Load Character Sheet
+          save-load(:character="character")
 
         v-flex(xs4)
           img(title="Mass Effect 5e Logo" src="/images/me5e_logo_450w.png" alt="Mass Effect 5e logo")
@@ -57,7 +55,7 @@
             :src="character.image"
             alt="Character Image"
             style="height: 200px;")
-          v-dialog(v-model="dialog" width="500")
+          v-dialog(v-model="image_picker" width="500")
             template(v-slot:activator="{ on }")
               v-btn(color="red lighten-2" dark v-on="on") Change Image
             
@@ -68,8 +66,8 @@
                 v-text-field(v-model="character.image")
       
       // Tab Area
-      v-layout
-        v-tabs(:grow="true")
+      v-layout(style="width: 100%;")
+        v-tabs(:grow="true" style="width: 100%;")
           v-tab(key="stats") Skills and Stats
           v-tab(key="weapons") Weapons and Armor
           v-tab(key="race") Character Info
@@ -79,7 +77,7 @@
             
           v-tab-item(key="stats")
             // Skills and Stats
-            v-layout(row class="skills-area")
+            v-layout(row class="item-area")
               // Skills
               v-flex(xs4 text-xs-center)
                 h2 Skills
@@ -137,10 +135,16 @@
 
 
           
-          v-tab-item(key="weapons")
-            div(class="padding-top: 20px; width: 100%;")
-              h3(style="text-align: left;") Weapons and Spells
+          v-tab-item(key="weapons" style="text-align: left;")
+            div(class="item-area")
+              h2 Weapons and Spells
               weapon-list(:items="character_weapons")
+              v-btn(color="red lighten-2" dark @click.stop="pickWeapon = true") Add Weapon
+              v-dialog(v-model="pickWeapon" width="80%")
+                v-card
+                  weapon-picker(:character="character")
+            div(class="item-area")
+              h2 Armor
           v-tab-item(key="race")
           v-tab-item(key="powers")
           v-tab-item(key="equipment")
@@ -153,7 +157,7 @@
     font-size: 30px;
   }
 
-  .skills-area {
+  .item-area {
     padding-top: 20px;
   }
 
@@ -189,15 +193,23 @@
 </style>
 
 <script>
-import documents from '../static/data/search/documents.json'
-import weapons from '../static/data/weapons.json'
+
+import documents from '~/static/data/search/documents.json'
+import weapons from '~/static/data/weapons.json'
+import armor from '~/static/data/armor_sets.json'
+
+import SaveLoad from '~/components/character_builder/CharacterSaveLoad.vue'
+import WeaponPicker from '~/pages/weapon-picker.vue'
+import CharacterWeaponList from '~/components/character_builder/CharacterWeaponList.vue'
 import WeaponList from '~/components/weapon/WeaponList.vue'
 
 export default {
-  components: {WeaponList},
+  components: {SaveLoad, CharacterWeaponList, WeaponList, WeaponPicker},
   data: () => ({
-    dialog: false,
+    image_picker: false,
+    pickWeapon: false,
     tab: false,
+    armor: armor || "not found",
     weapons: weapons || "not found",
     documents: documents || "not found",
     stat_names: ['str','dex','con','int','wis','cha'],
@@ -266,6 +278,13 @@ export default {
         },
         other: []
       },
+      armor: {
+        head: undefined,
+        arms: undefined,
+        chest: undefined,
+        legs: undefined,
+        set: undefined
+      },
       weapons: [
         'black_widow'
       ]
@@ -301,6 +320,9 @@ export default {
         }
       });
       return weapons;
+    },
+    character_armor: function() {
+      return "fix me" 
     }
   },
 
@@ -347,37 +369,6 @@ export default {
         baseMod += Math.floor(prof_score * this.calcProfBonus(this.character.level));
       }
       return baseMod;
-    },
-    saveFile: function() {
-        const data = JSON.stringify(this.character);
-        const blob = new Blob([data], {type: 'text/plain'})
-        const e = document.createEvent('MouseEvents');
-        const a = document.createElement('a');
-        const filename = this.character.name.replace(/[^a-z0-9]/gi, '_').toLowerCase()
-
-        a.download = filename + ".json";
-        a.href = window.URL.createObjectURL(blob);
-        a.dataset.downloadurl = ['text/json', a.download, a.href].join(':');
-        e.initEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-        a.dispatchEvent(e);
-    },
-    loadTextFromFile(ev) {
-      const file = ev.target.files[0];
-      const reader = new FileReader();
-      
-      console.log(file);
-      if (!file) return;
-      reader.readAsText(file);
-      
-      reader.onload = e => {
-        console.log(e.target.result);
-        const dataDump = e.target.result;
-        if (dataDump && dataDump != '') {
-          this.character = JSON.parse(e.target.result);
-        }
-        this.$emit("load", e.target.result);
-      }
-      
     }
   }
 
