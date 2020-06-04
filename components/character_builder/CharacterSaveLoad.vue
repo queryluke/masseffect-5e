@@ -19,7 +19,7 @@
         const blob = new Blob([data], {type: 'text/plain'})
         const e = document.createEvent('MouseEvents');
         const a = document.createElement('a');
-        const filename = this.character.name.replace(/[^a-z0-9]/gi, '_').toLowerCase()
+        const filename = this.character.name.replace(/[^a-z0-9]/gi, '');//.toLowerCase()
 
         a.download = filename + ".json";
         a.href = window.URL.createObjectURL(blob);
@@ -39,9 +39,10 @@
           console.log(e.target.result);
           const dataDump = e.target.result;
           if (dataDump && dataDump != '') {
-            this.character = JSON.parse(e.target.result);
+            console.log("[bdc4] - triggering load event...")
+            var char = JSON.parse(e.target.result);
+            this.$emit("load", char);
           }
-          this.$emit("load", e.target.result);
         }
         
       }

@@ -8,7 +8,7 @@
           v-text-field(v-model="character.name" label="Character Name")
         
         v-flex(xs4)
-          save-load(:character="character")
+          save-load(:character="character" @load="character = $event")
 
         v-flex(xs4)
           img(title="Mass Effect 5e Logo" src="/images/me5e_logo_450w.png" alt="Mass Effect 5e logo")
