@@ -1,8 +1,8 @@
 <template lang="pug">
   div
-    v-btn(@click="saveFile()") Save Character Sheet
+    v-btn(@click="saveFile()") Export Character Sheet
     input(type="file" ref="file" style="display: none" @change="loadTextFromFile" @load="character = $event")
-    v-btn(@click="$refs.file.click()") Load Character Sheet
+    v-btn(@click="$refs.file.click()") Import Character Sheet
 </template>
 
 <script>

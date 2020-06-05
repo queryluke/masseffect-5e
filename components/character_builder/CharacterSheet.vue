@@ -215,7 +215,7 @@ export default {
     stat_names: ['str','dex','con','int','wis','cha'],
     skill_names: ['acrobatics','athletics','deception','electronics','engineering','history','insight','intimidation',
     'investigation','medicine','perception','performance','persuasion','science','slight_of_hand','stealth','survival','vehicle_handling'],
-    races: ["Angara","Batarian","Drell","Elcor","Geth","Hanar","Human",
+    races: ["Angara","Asari","Batarian","Drell","Elcor","Geth","Hanar","Human",
     "Krogan","Prothean","Quarian","Salarian","Turian","Volus","Vorcha"],
     classes: ["Adept","Engineer","Infiltrator","Sentinel","Soldier","Vanguard"],
     subclasses: {
@@ -226,71 +226,7 @@ export default {
       "Soldier": ["Havoc","Weapon Master","Gladiator"],
       "Vanguard": ["Battle Master", "Shock Trooper", "Nemesis"]
     },
-    character: false,
-    // This is just placeholder. There should be an option to save/load this from JSON
-    /*
-    character: {
-      name: "Garrus Vakarian",
-      image: "https://vignette.wikia.nocookie.net/masseffect/images/3/36/Garrus_Character_Shot.png/revision/latest/scale-to-width-down/350?cb=20100323054855",
-      level: 2,
-      race: "Turian",
-      class: "Infiltrator",
-      subclass: "Sniper",
-      background: "",
-      stats: {
-        str: 16, dex: 14, con: 13, int: 10, wis: 14, cha: 8
-      },
-      skills: [
-          {label: "Acrobatics", prof: 1, advantage: false, stat: "dex"},
-          {label: "Athletics", prof: 0, advantage: false, stat: "str"},
-          {label: "Deception", prof: 0, advantage: false, stat: "cha"},
-          {label: "Electronics", prof: 0, advantage: false, stat: "int"},
-          {label: "Engineering", prof: 0, advantage: false, stat: "int"},
-          {label: "History", prof: 0, advantage: false, stat: "int"},
-          {label: "Insight", prof: 0, advantage: false, stat: "wis"},
-          {label: "Intimidation", prof: 0, advantage: false, stat: "cha"},
-          {label: "Investigation", prof: 0, advantage: false, stat: "int"},
-          {label: "Medicine", prof: 0, advantage: false, stat: "wis"},
-          {label: "Perception", prof: 0, advantage: false, stat: "wis"},
-          {label: "Performance", prof: 0, advantage: false, stat: "cha"},
-          {label: "Persuasion", prof: 0, advantage: false, stat: "cha"},
-          {label: "Science", prof: 0, advantage: false, stat: "int"},
-          {label: "Slight of Hand", prof: 0, advantage: false, stat: "dex"},
-          {label: "Stealth", prof: 0, advantage: false, stat: "dex"},
-          {label: "Survival", prof: 0, advantage: false, stat: "wis"},
-          {label: "Vehicle Handling", prof: 0, advantage: false, stat: "dex"}
-        ],
-      proficiencies: {
-        stats: {
-          str: true, dex: false, con: true, int: false, wis: false, cha: false
-        },
-        armor: {
-          light: false,
-          medium: true,
-          heavy: false
-        },
-        weapons: {
-          pistol: false,
-          smg: false,
-          assault_rifle: false,
-          shotgun: false,
-          sniper_rifle: true,
-          melee: false,
-          heavy_weapons: false
-        },
-        other: []
-      },
-      armor: {
-        head: undefined,
-        arms: undefined,
-        chest: undefined,
-        legs: undefined,
-        set: undefined
-      },
-      weapons: [
-        'black_widow'
-      ]
-    },*/
+    character: false, // Need this for reactive binding
     skills_table: {
       search: '',
       headers: [
@@ -341,7 +277,6 @@ export default {
   },
 
   created() {
-    console.log(this.$store.state.characterBuilder.character);
     this.character = this.$store.state.characterBuilder.character;
   },
 

@@ -4,7 +4,7 @@ export default {
     // Default "empty" character data model
     character: {
       name: "New Character",
-      image: "https://vignette.wikia.nocookie.net/masseffect/images/3/36/Garrus_Character_Shot.png/revision/latest/scale-to-width-down/350?cb=20100323054855",
+      image: "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png", 
       level: 1,
       race: "",
       class: "",
