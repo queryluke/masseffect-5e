@@ -138,11 +138,20 @@
           v-tab-item(key="weapons" style="text-align: left;")
             div(class="item-area")
               h2 Weapons and Spells
-              weapon-list(:items="character_weapons")
-              v-btn(color="red lighten-2" dark @click.stop="pickWeapon = true") Add Weapon
+              weapon-list(:items="character.weapons")
+              v-btn(color="red lighten-2" dark @click="pickWeapon = true") Add Weapon
+              v-btn(v-if="character.weapons.length" color="red lighten-2" dark @click="removeWeapon = true") Remove Weapon
+              // Adding Weapon
               v-dialog(v-model="pickWeapon" width="80%")
                 v-card
-                  weapon-picker(:character="character")
+                  weapon-picker(:character="character" v-on:close-dialog="pickWeapon = false")
+              // Removing Weapon
+              v-dialog(v-model="removeWeapon" width="600px")
+                v-card
+                  div(v-for="(wep, ind) in character.weapons") 
+                    v-btn(@click="character.weapons.splice(ind, 1)") X
+                    span {{wep.name}}
+              
             div(class="item-area")
               h2 Armor
           v-tab-item(key="race")
@@ -208,6 +217,7 @@ export default {
   data: () => ({
     image_picker: false,
     pickWeapon: false,
+    removeWeapon: false,
     tab: false,
     armor: armor || "not found",
     weapons: weapons || "not found",
@@ -247,20 +257,6 @@ export default {
     },
     backgrounds: function() {
       return this.getDocuments('character','backgrounds');
-    },
-    character_weapons: function() { // take the weapons array in character and parse down the weapons list
-      // There has to be a better way to do this...
-      var weapons = [];
-      const charWeapons = this.character.weapons;
-      this.weapons.forEach(function(w) {
-        if (charWeapons.includes(w.id)) {
-          weapons.push(w);
-        }
-      });
-      return weapons;
-    },
-    character_armor: function() {
-      return "fix me" 
     }
   },
 
@@ -269,6 +265,8 @@ export default {
       immediate: true,
       deep: true,
       handler: function() {
+        this.pickWeapon = false;
+        this.removeWeapon = false;
         if (this.character) {
           this.$store.commit('characterBuilder/save', this.character);
         }

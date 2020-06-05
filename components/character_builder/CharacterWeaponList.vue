@@ -19,7 +19,7 @@
           v-card-text
             weapon-info(:item="item").mt-2
           v-card-actions
-            v-btn(@click='addItemToCharacter(item.id)') Add Weapon to Character
+            v-btn(@click='addItemToCharacter(item)') Add Weapon to Character
             bookmark-button(:card="item" type="weapon" v-bind:props="{flat: true}")
             
 </template>
@@ -64,9 +64,10 @@
       checkIfEquipped: function(item_id) {
         return this.character.weapons.includes(item_id); 
       },
-      addItemToCharacter: function(item_id) {
-        console.log(item_id);
-        this.character.weapons.push(item_id);
+      addItemToCharacter: function(item) {
+        console.log(item);
+        this.character.weapons.push(item);
+        this.$emit("close-dialog", item);
       }
     }
   }
