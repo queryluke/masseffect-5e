@@ -11,6 +11,7 @@ import classPage from './class_page'
 import itemList from './itemList'
 import gruntGenerator from './grunt_generator'
 import diceRoller from './diceRoller'
+import characterBuilder from './character_builder'
 
 const createStore = () => {
   return new Vuex.Store({
@@ -23,7 +24,8 @@ const createStore = () => {
       classPage,
       itemList,
       gruntGenerator,
-      diceRoller
+      diceRoller,
+      characterBuilder
     }
   })
 }

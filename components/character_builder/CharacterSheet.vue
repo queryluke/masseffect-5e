@@ -226,7 +226,9 @@ export default {
       "Soldier": ["Havoc","Weapon Master","Gladiator"],
       "Vanguard": ["Battle Master", "Shock Trooper", "Nemesis"]
     },
+    character: false,
     // This is just placeholder. There should be an option to save/load this from JSON
+    /*
     character: {
       name: "Garrus Vakarian",
       image: "https://vignette.wikia.nocookie.net/masseffect/images/3/36/Garrus_Character_Shot.png/revision/latest/scale-to-width-down/350?cb=20100323054855",
@@ -288,7 +290,7 @@ export default {
       weapons: [
         'black_widow'
       ]
-    },
+    },*/
     skills_table: {
       search: '',
       headers: [
@@ -331,9 +333,16 @@ export default {
       immediate: true,
       deep: true,
       handler: function() {
-        console.log("[bdc4] - Character data changed; Watch triggered!");
+        if (this.character) {
+          this.$store.commit('characterBuilder/save', this.character);
+        }
       }
     }
+  },
+
+  created() {
+    console.log(this.$store.state.characterBuilder.character);
+    this.character = this.$store.state.characterBuilder.character;
   },
 
   methods: {
