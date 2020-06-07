@@ -179,6 +179,9 @@
                       tr
                         td Spell DC
                         td {{calcSpellDC(character.stats.int)}}
+                      tr
+                        td Tech Point Limit
+                        td {{tech_point_limit}}
                   h3(style="padding-top: 12px;") Tech Points
                   div(class="tech-button-area")
                     v-btn(@click="character.tech.tech_points = 0") Min
@@ -186,16 +189,7 @@
                     h2(class="points-text") {{character.tech.tech_points}} / {{tech_point_max}}
                     v-btn(@click="character.tech.tech_points++" :disabled="character.tech.tech_points >= tech_point_max") +
                     v-btn(@click="character.tech.tech_points = tech_point_max") Max
-                  //v-layout(row)
-                    v-flex(xs3 style="align-self: center;")
-                      v-subheader Current:
-                    v-flex(xs9)
-                      v-select(v-model="character.tech.tech_points")
-                  
-                    v-flex(xs3 style="align-self: center;")
-                      v-subheader Max:
-                    v-flex(xs9)
-                      v-text-field(readonly value="2") 
+
                 v-flex(md4)
                   h2 Biotics
 
@@ -299,15 +293,6 @@ export default {
     'investigation','medicine','perception','performance','persuasion','science','slight_of_hand','stealth','survival','vehicle_handling'],
     races: ["Angara","Asari","Batarian","Drell","Elcor","Geth","Hanar","Human",
     "Krogan","Prothean","Quarian","Salarian","Turian","Volus","Vorcha"],
-    classes: ["Adept","Engineer","Infiltrator","Sentinel","Soldier","Vanguard"],
-    subclasses: {
-      "Adept": ["Commando", "Blackstar", "Distruptor"],
-      "Engineer": ["Mastermind","Drone Jockey", "Medic"],
-      "Infiltrator": ["Shadow","Sniper","Saboteur"],
-      "Sentinel": ["Bastion", "Juggernaut", "Guardian"],
-      "Soldier": ["Havoc","Weapon Master","Gladiator"],
-      "Vanguard": ["Battle Master", "Shock Trooper", "Nemesis"]
-    },
     character: false, // Need this for reactive binding
     skills_table: {
       search: '',
@@ -336,6 +321,14 @@ export default {
         tpm = this.character.class.progression[this.character.level - 1].techPoints || 0;
       } finally {
         return tpm;
+      }
+    },
+    tech_point_limit: function() {
+      var tpl = 0;
+      try {
+        tpl = this.character.class.progression[this.character.level - 1].techPointLimit || 0;
+      } finally {
+        return tpl;
       }
     }
   },

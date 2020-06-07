@@ -62,7 +62,7 @@ export default {
       },
       weapons: [],
       tech: {
-        tech_points: 0
+        tech_points: 1
       }
     }
   },
