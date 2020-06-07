@@ -137,7 +137,7 @@
           
           v-tab-item(key="weapons" style="text-align: left;")
             div(class="item-area")
-              h2 Weapons and Spells
+              h2 Weapons
               weapon-list(:items="character.weapons")
               v-btn(color="red lighten-2" dark @click="pickWeapon = true") Add Weapon
               v-btn(v-if="character.weapons.length" color="red lighten-2" dark @click="removeWeapon = true") Remove Weapon
@@ -151,11 +151,43 @@
                   div(v-for="(wep, ind) in character.weapons") 
                     v-btn(@click="character.weapons.splice(ind, 1)") X
                     span {{wep.name}}
-              
+
             div(class="item-area")
               h2 Armor
           v-tab-item(key="race")
           v-tab-item(key="powers")
+            div(class="item-area")
+              //h2 Powers
+              v-layout(row)
+                v-flex(md4)
+                  h2 Combat
+                  table(class="power-header-table")
+                    tbody
+                      tr
+                        td STR DC
+                        td(style="text-align: center;") {{calcSpellDC(character.stats.str)}} 
+                      tr
+                        td DEX DC
+                        td(style="text-align: center;") {{calcSpellDC(character.stats.dex)}}
+                      tr
+                        td Spell Attack
+                        td(style="text-align: center;") {{((calcProfBonus(character.level)+calcAbilityMod(character.stats.int)) >= 0 ? '+' : '-')}}{{calcProfBonus(character.level)+calcAbilityMod(character.stats.int)}}
+                v-flex(md4)
+                  h2 Tech
+                  table(class="power-header-table")
+                    tbody
+                      tr
+                        td Spell DC
+                        td {{calcSpellDC(character.stats.int)}}
+                  h3(style="padding-top: 12px;") Tech Points
+                  v-layout(row)
+                    v-flex(xs6)
+                      v-text-field(v-model="character.tech.tech_points" label="Current") 
+                    v-flex(xs6)
+                      v-text-field(readonly label="Max" value="2") 
+                v-flex(md4)
+                  h2 Biotics
+
           v-tab-item(key="equipment")
           v-tab-item(key="other")
 </template>
@@ -168,6 +200,18 @@
 
   .item-area {
     padding-top: 20px;
+  }
+
+  .power-header-table {
+    tr {
+      text-align: center;
+    }
+    td {
+      border: 1px solid black;
+      min-width: 180px;
+      min-height: 120px;
+      font-size: 18px;
+    }
   }
 
   .raw-value-area {
@@ -311,6 +355,9 @@ export default {
         baseMod += Math.floor(prof_score * this.calcProfBonus(this.character.level));
       }
       return baseMod;
+    },
+    calcSpellDC: function(ability_score) {
+      return 8+this.calcProfBonus(this.character.level)+this.calcAbilityMod(ability_score);
     }
   }
 

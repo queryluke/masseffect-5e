@@ -60,7 +60,10 @@ export default {
         legs: undefined,
         set: undefined
       },
-      weapons: []
+      weapons: [],
+      tech: {
+        tech_points: 0
+      }
     }
   },
   mutations: {
