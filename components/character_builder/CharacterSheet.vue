@@ -159,6 +159,13 @@
             div(class="item-area")
               //h2 Powers
               v-layout(row)
+                v-flex(md6)
+                  v-select(label="Caster Attribute" v-model="character.caster_attribute"
+                  :items="[{text: 'Intelligence', value: 'int'},{text: 'Wisdom', value: 'wis'},{text: 'Charisma', value: 'cha'}]")
+
+              h2(v-if="!character.caster_attribute") Please first select an attribute.
+
+              v-layout(row v-if="character.caster_attribute")
                 v-flex(md4)
                   h2 Combat
                   table(class="power-header-table")
@@ -170,15 +177,18 @@
                         td DEX DC
                         td(style="text-align: center;") {{calcSpellDC(character.stats.dex)}}
                       tr
-                        td Spell Attack
+                        td Power Attack Modifier
                         td(style="text-align: center;") {{((calcProfBonus(character.level)+calcAbilityMod(character.stats.int)) >= 0 ? '+' : '-')}}{{calcProfBonus(character.level)+calcAbilityMod(character.stats.int)}}
+                
                 v-flex(md4)
                   h2 Tech
                   table(class="power-header-table")
                     tbody
                       tr
-                        td Spell DC
-                        td {{calcSpellDC(character.stats.int)}}
+                        td
+                          span Spell DC 
+                          span(style="text-transform: uppercase;") ({{character.caster_attribute}})
+                        td {{calcSpellDC(caster_attribute)}}
                       tr
                         td Tech Point Limit
                         td {{tech_point_limit}}
@@ -192,7 +202,17 @@
 
                 v-flex(md4)
                   h2 Biotics
-
+                  table(class="power-header-table")
+                    tbody
+                      tr
+                        td 
+                          span Spell DC 
+                          span(style="text-transform: uppercase;") ({{character.caster_attribute}})
+                        td {{calcSpellDC(caster_attribute)}}
+                      tr
+                        td Power Attack Modifier
+                        td(style="text-align: center;") {{((calcProfBonus(character.level)+calcAbilityMod(caster_attribute)) >= 0 ? '+' : '-')}}{{calcProfBonus(character.level)+calcAbilityMod(caster_attribute)}}
+                  
           v-tab-item(key="equipment")
           v-tab-item(key="other")
 </template>
@@ -314,6 +334,9 @@ export default {
     },
     backgrounds: function() {
       return this.getDocuments('character','backgrounds');
+    },
+    caster_attribute: function() {
+      return this.character.stats[this.character.caster_attribute];
     },
     tech_point_max: function() {
       var tpm = 0;
