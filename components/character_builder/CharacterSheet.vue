@@ -25,10 +25,10 @@
               v-select(v-model="character.race" :items="races" label="Race")
             
             v-flex
-              v-select(v-model="character.class" :items="classes" label="Class")
+              v-select(v-model="character.class" :items="$options.class_data" item-text="name" label="Class" return-object)
 
             v-flex
-              v-select(v-model="character.subclass" :items="subclasses[character.class]" label="Sub-Class")
+              v-select(v-model="character.subclass" :items="character.class.subclasses" item-text="name" label="Sub-Class" return-object)
 
             v-flex
               v-select(v-model="character.background" :items="backgrounds" item-text="title" item-value="id" label="Background")
@@ -180,11 +180,22 @@
                         td Spell DC
                         td {{calcSpellDC(character.stats.int)}}
                   h3(style="padding-top: 12px;") Tech Points
-                  v-layout(row)
-                    v-flex(xs6)
-                      v-text-field(v-model="character.tech.tech_points" label="Current") 
-                    v-flex(xs6)
-                      v-text-field(readonly label="Max" value="2") 
+                  div(class="tech-button-area")
+                    v-btn(@click="character.tech.tech_points = 0") Min
+                    v-btn(@click="character.tech.tech_points--" :disabled="character.tech.tech_points <= 0") -
+                    h2(class="points-text") {{character.tech.tech_points}} / {{tech_point_max}}
+                    v-btn(@click="character.tech.tech_points++" :disabled="character.tech.tech_points >= tech_point_max") +
+                    v-btn(@click="character.tech.tech_points = tech_point_max") Max
+                  //v-layout(row)
+                    v-flex(xs3 style="align-self: center;")
+                      v-subheader Current:
+                    v-flex(xs9)
+                      v-select(v-model="character.tech.tech_points")
+                  
+                    v-flex(xs3 style="align-self: center;")
+                      v-subheader Max:
+                    v-flex(xs9)
+                      v-text-field(readonly value="2") 
                 v-flex(md4)
                   h2 Biotics
 
@@ -201,7 +212,15 @@
   .item-area {
     padding-top: 20px;
   }
-
+  .tech-button-area {
+    .v-btn {
+      min-width: 0px;
+    }
+    .points-text {
+      display: inline;
+      margin: 15px;
+    }
+  }
   .power-header-table {
     tr {
       text-align: center;
@@ -256,12 +275,21 @@ import WeaponPicker from '~/pages/weapon-picker.vue'
 import CharacterWeaponList from '~/components/character_builder/CharacterWeaponList.vue'
 import WeaponList from '~/components/weapon/WeaponList.vue'
 
+import AdeptData from "~/static/data/classes/adept.json"; 
+import EngineerData from "~/static/data/classes/engineer.json"; 
+import InfiltratorData from "~/static/data/classes/infiltrator.json"; 
+import SentinelData from "~/static/data/classes/sentinel.json"; 
+import SoldierData from "~/static/data/classes/soldier.json";
+import VanguardData from "~/static/data/classes/vanguard.json";
+
 export default {
   components: {SaveLoad, CharacterWeaponList, WeaponList, WeaponPicker},
+  class_data: [AdeptData,EngineerData,InfiltratorData,SentinelData,SoldierData,VanguardData],
   data: () => ({
     image_picker: false,
     pickWeapon: false,
     removeWeapon: false,
+    classData: [AdeptData,EngineerData,InfiltratorData,SentinelData,SoldierData,VanguardData],
     tab: false,
     armor: armor || "not found",
     weapons: weapons || "not found",
@@ -301,6 +329,14 @@ export default {
     },
     backgrounds: function() {
       return this.getDocuments('character','backgrounds');
+    },
+    tech_point_max: function() {
+      var tpm = 0;
+      try {
+        tpm = this.character.class.progression[this.character.level - 1].techPoints || 0;
+      } finally {
+        return tpm;
+      }
     }
   },
 
