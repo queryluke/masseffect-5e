@@ -155,18 +155,23 @@
             div(class="item-area")
               h2 Armor
           v-tab-item(key="race")
+          
+          
           v-tab-item(key="powers")
             div(class="item-area")
-              //h2 Powers
+              
               v-layout(row)
-                v-flex(md6)
-                  v-select(label="Caster Attribute" v-model="character.caster_attribute"
+                
+                v-flex(md2)
+                  v-select(label="Power Ability Attribute" v-model="character.power_attribute"
                   :items="[{text: 'Intelligence', value: 'int'},{text: 'Wisdom', value: 'wis'},{text: 'Charisma', value: 'cha'}]")
+                  v-select(readonly label="Power Attack Modifier" :items="[power_ability_modifier]" :value="power_ability_modifier")
+                
+                v-flex(md1)
+                
+                h2(v-if="!character.power_attribute") Please first select an attribute.
 
-              h2(v-if="!character.caster_attribute") Please first select an attribute.
-
-              v-layout(row v-if="character.caster_attribute")
-                v-flex(md4)
+                v-flex(v-if="hasPowers(combatPowers) && character.power_attribute")
                   h2 Combat
                   table(class="power-header-table")
                     tbody
@@ -178,17 +183,17 @@
                         td(style="text-align: center;") {{calcSpellDC(character.stats.dex)}}
                       tr
                         td Power Attack Modifier
-                        td(style="text-align: center;") {{((calcProfBonus(character.level)+calcAbilityMod(character.stats.int)) >= 0 ? '+' : '-')}}{{calcProfBonus(character.level)+calcAbilityMod(character.stats.int)}}
+                        td(style="text-align: center;") {{((calcProfBonus(character.level)+calcAbilityMod(power_attribute)) >= 0 ? '+' : '-')}}{{calcProfBonus(character.level)+calcAbilityMod(power_attribute)}}
                 
-                v-flex(md4)
+                v-flex(v-if="hasPowers(techPowers) && character.power_attribute")
                   h2 Tech
                   table(class="power-header-table")
                     tbody
                       tr
                         td
                           span Spell DC 
-                          span(style="text-transform: uppercase;") ({{character.caster_attribute}})
-                        td {{calcSpellDC(caster_attribute)}}
+                          span(style="text-transform: uppercase;") ({{character.power_attribute}})
+                        td {{calcSpellDC(power_attribute)}}
                       tr
                         td Tech Point Limit
                         td {{tech_point_limit}}
@@ -200,18 +205,18 @@
                     v-btn(@click="character.tech.tech_points++" :disabled="character.tech.tech_points >= tech_point_max") +
                     v-btn(@click="character.tech.tech_points = tech_point_max") Max
 
-                v-flex(md4)
+                v-flex(v-if="hasPowers(bioticPowers) && character.power_attribute")
                   h2 Biotics
                   table(class="power-header-table")
                     tbody
                       tr
                         td 
                           span Spell DC 
-                          span(style="text-transform: uppercase;") ({{character.caster_attribute}})
-                        td {{calcSpellDC(caster_attribute)}}
+                          span(style="text-transform: uppercase;") ({{character.power_attribute}})
+                        td {{calcSpellDC(power_attribute)}}
                       tr
                         td Power Attack Modifier
-                        td(style="text-align: center;") {{((calcProfBonus(character.level)+calcAbilityMod(caster_attribute)) >= 0 ? '+' : '-')}}{{calcProfBonus(character.level)+calcAbilityMod(caster_attribute)}}
+                        td(style="text-align: center;") {{((calcProfBonus(character.level)+calcAbilityMod(power_attribute)) >= 0 ? '+' : '-')}}{{calcProfBonus(character.level)+calcAbilityMod(power_attribute)}}
                   
           v-tab-item(key="equipment")
           v-tab-item(key="other")
@@ -236,6 +241,7 @@
     }
   }
   .power-header-table {
+    margin: auto;
     tr {
       text-align: center;
     }
@@ -304,6 +310,9 @@ export default {
     pickWeapon: false,
     removeWeapon: false,
     classData: [AdeptData,EngineerData,InfiltratorData,SentinelData,SoldierData,VanguardData],
+    combatPowers: ["soldier","vanguard","infiltrator"],
+    techPowers: ["engineer","sentinel","infiltrator"],
+    bioticPowers: ["adept","vanguard","sentinel"],
     tab: false,
     armor: armor || "not found",
     weapons: weapons || "not found",
@@ -335,8 +344,11 @@ export default {
     backgrounds: function() {
       return this.getDocuments('character','backgrounds');
     },
-    caster_attribute: function() {
-      return this.character.stats[this.character.caster_attribute];
+    power_attribute: function() {
+      return this.character.stats[this.character.power_attribute];
+    },
+    power_ability_modifier: function() {
+      return this.calcProfBonus(this.character.level)+this.calcAbilityMod(this.power_attribute)
     },
     tech_point_max: function() {
       var tpm = 0;
@@ -375,6 +387,16 @@ export default {
   },
 
   methods: {
+    hasPowers: function(power_arr) {
+      var c_id = this.character.class.id;
+      var arr = power_arr;
+      for(var ind in arr) {
+        console.log(arr[ind]);
+        if (arr[ind] == c_id) {
+          return true;
+        }
+      }
+    },
     getDocuments: function(type, subType) {
       var docs = this.documents.filter(function(doc) {
         return doc.type == type;
