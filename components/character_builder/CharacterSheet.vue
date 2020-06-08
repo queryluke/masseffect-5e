@@ -197,13 +197,8 @@
                       tr
                         td Tech Point Limit
                         td {{tech_point_limit}}
-                  h3(style="padding-top: 12px;") Tech Points
-                  div(class="tech-button-area")
-                    v-btn(@click="character.tech.tech_points = 0") Min
-                    v-btn(@click="character.tech.tech_points--" :disabled="character.tech.tech_points <= 0") -
-                    h2(class="points-text") {{character.tech.tech_points}} / {{tech_point_max}}
-                    v-btn(@click="character.tech.tech_points++" :disabled="character.tech.tech_points >= tech_point_max") +
-                    v-btn(@click="character.tech.tech_points = tech_point_max") Max
+                  character-power-counter(label="Tech Points" :value="character.tech.tech_points" :max-value="tech_point_max" 
+                  @change="character.tech.tech_points = $event")
 
                 v-flex(v-if="hasPowers(bioticPowers) && character.power_attribute")
                   h2 Biotics
@@ -214,10 +209,10 @@
                           span Spell DC 
                           span(style="text-transform: uppercase;") ({{character.power_attribute}})
                         td {{calcSpellDC(power_attribute)}}
-                      tr
-                        td Power Attack Modifier
-                        td(style="text-align: center;") {{((calcProfBonus(character.level)+calcAbilityMod(power_attribute)) >= 0 ? '+' : '-')}}{{calcProfBonus(character.level)+calcAbilityMod(power_attribute)}}
-                  
+
+                  div(v-for="(slot, ind) in spell_slots")
+                    character-power-counter( :value="character.biotics.spell_slots[ind]" :max-value="Number(slot)" v-if="slot"
+                    @change="character.biotics.spell_slots[ind] = $event" :label="'Level '+ind+' Spell Slot'" )
           v-tab-item(key="equipment")
           v-tab-item(key="other")
 </template>
@@ -293,6 +288,7 @@ import armor from '~/static/data/armor_sets.json'
 import SaveLoad from '~/components/character_builder/CharacterSaveLoad.vue'
 import WeaponPicker from '~/pages/weapon-picker.vue'
 import CharacterWeaponList from '~/components/character_builder/CharacterWeaponList.vue'
+import CharacterPowerCounter from '~/components/character_builder/CharacterPowerCounter.vue'
 import WeaponList from '~/components/weapon/WeaponList.vue'
 
 import AdeptData from "~/static/data/classes/adept.json"; 
@@ -303,7 +299,7 @@ import SoldierData from "~/static/data/classes/soldier.json";
 import VanguardData from "~/static/data/classes/vanguard.json";
 
 export default {
-  components: {SaveLoad, CharacterWeaponList, WeaponList, WeaponPicker},
+  components: {SaveLoad, CharacterWeaponList, CharacterPowerCounter, WeaponList, WeaponPicker},
   class_data: [AdeptData,EngineerData,InfiltratorData,SentinelData,SoldierData,VanguardData],
   data: () => ({
     image_picker: false,
@@ -365,6 +361,14 @@ export default {
       } finally {
         return tpl;
       }
+    },
+    spell_slots: function() {
+      var slots = {};
+      try {
+        slots = this.character.class.progression[this.character.level - 1].spellSlots;
+      } finally {
+        return slots;
+      }
     }
   },
 
@@ -391,7 +395,6 @@ export default {
       var c_id = this.character.class.id;
       var arr = power_arr;
       for(var ind in arr) {
-        console.log(arr[ind]);
         if (arr[ind] == c_id) {
           return true;
         }

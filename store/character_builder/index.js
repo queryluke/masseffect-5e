@@ -63,6 +63,15 @@ export default {
       weapons: [],
       tech: {
         tech_points: 1
+      },
+      biotics: {
+        spell_slots: {
+          1: 1,
+          2: 2,
+          3: 3,
+          4: 4,
+          5: 5
+        }
       }
     }
   },
