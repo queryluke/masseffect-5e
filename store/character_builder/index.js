@@ -53,13 +53,7 @@ export default {
         },
         other: []
       },
-      armor: {
-        head: undefined,
-        arms: undefined,
-        chest: undefined,
-        legs: undefined,
-        set: undefined
-      },
+      armor: [],
       weapons: [],
       powers: [],
       tech: {

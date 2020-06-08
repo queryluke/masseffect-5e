@@ -140,22 +140,14 @@
           v-tab-item(key="weapons" style="text-align: left;")
             div(class="item-area")
               h2 Weapons
-              weapon-list(:items="character.weapons")
-              v-btn(color="red lighten-2" dark @click="pickWeapon = true") Add Weapon
-              v-btn(v-if="character.weapons.length" color="red lighten-2" dark @click="removeWeapon = true") Remove Weapon
-              // Adding Weapon
-              v-dialog(v-model="pickWeapon" width="80%")
-                v-card
-                  weapon-picker(:character="character" v-on:close-dialog="pickWeapon = false")
-              // Removing Weapon
-              v-dialog(v-model="removeWeapon" width="600px")
-                v-card
-                  div(v-for="(wep, ind) in character.weapons") 
-                    v-btn(@click="character.weapons.splice(ind, 1)") X
-                    span {{wep.name}}
+              v-autocomplete(v-model="character.weapons" label="Equipped Weapons" :items="weapons" item-text="name" return-object multiple)
+              weapon-list(:items="character.weapons" v-if="character.weapons.length")
 
             div(class="item-area")
               h2 Armor
+              v-autocomplete(v-model="character.armor" label="Equipped Armor" :items="armor" item-text="name" return-object multiple)
+              armor-list(:items="character.armor" v-if="character.armor.length")
+
           v-tab-item(key="race")
           
           
@@ -311,11 +303,10 @@ import armor from '~/static/data/armor_sets.json'
 import powers from '~/static/data/spells'
 
 import SaveLoad from '~/components/character_builder/CharacterSaveLoad.vue'
-import WeaponPicker from '~/pages/weapon-picker.vue'
-import CharacterWeaponList from '~/components/character_builder/CharacterWeaponList.vue'
 import CharacterPowerCounter from '~/components/character_builder/CharacterPowerCounter.vue'
 import WeaponList from '~/components/weapon/WeaponList.vue'
 import SpellList from '~/components/spell/SpellList.vue'
+import ArmorList from '~/components/armor_set/ArmorSetList.vue'
 
 import AdeptData from "~/static/data/classes/adept.json"; 
 import EngineerData from "~/static/data/classes/engineer.json"; 
@@ -325,7 +316,7 @@ import SoldierData from "~/static/data/classes/soldier.json";
 import VanguardData from "~/static/data/classes/vanguard.json";
 
 export default {
-  components: {SaveLoad, CharacterWeaponList, CharacterPowerCounter, WeaponList, SpellList, WeaponPicker},
+  components: {SaveLoad, CharacterPowerCounter, WeaponList, ArmorList, SpellList},
   class_data: [AdeptData,EngineerData,InfiltratorData,SentinelData,SoldierData,VanguardData],
   data: () => ({
     image_picker: false,
