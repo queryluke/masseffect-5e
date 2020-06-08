@@ -70,7 +70,7 @@
         v-tabs(:grow="true" style="width: 100%;")
           v-tab(key="stats") Skills and Stats
           v-tab(key="weapons") Weapons and Armor
-          v-tab(key="race") Character Info
+          v-tab(key="character-info") Character Info
           v-tab(key="powers") Powers
           v-tab(key="equipment") Equipment and Wealth
           v-tab(key="other") Roleplaying / Other
@@ -134,9 +134,6 @@
                             v-checkbox(v-model="character.proficiencies.stats[stat]")
                         
                         
-
-
-          
           v-tab-item(key="weapons" style="text-align: left;")
             div(class="item-area")
               h2 Weapons
@@ -148,9 +145,22 @@
               v-autocomplete(v-model="character.armor" label="Equipped Armor" :items="armor" item-text="name" return-object multiple)
               armor-list(:items="character.armor" v-if="character.armor.length")
 
-          v-tab-item(key="race")
-          
-          
+          v-tab-item(key="character-info")
+            div(class="item-area character-info-area")
+              h3 Racial Traits
+              br
+              v-autocomplete(v-model="character.traits" label="Selected Traits" :items="racial_traits" item-text="title" return-object multiple)
+              
+              h3 Class Features
+              br
+              v-autocomplete(v-model="character.class_features" label="Selected Class Features" :items="class_features" item-text="title" return-object multiple)
+
+              h3 Feats
+              br
+              v-autocomplete(v-model="character.feats" label="Selected Feats" :items="feats" item-text="name" return-object multiple)
+
+              h3 Other
+
           v-tab-item(key="powers")
             div(class="item-area")
               
@@ -242,6 +252,13 @@
   .item-area {
     padding-top: 20px;
   }
+
+  .character-info-area {
+    h3 {
+      text-align: left;
+    }
+  }
+
   .tech-button-area {
     .v-btn {
       min-width: 0px;
@@ -301,6 +318,7 @@ import documents from '~/static/data/search/documents.json'
 import weapons from '~/static/data/weapons.json'
 import armor from '~/static/data/armor_sets.json'
 import powers from '~/static/data/spells'
+import feats from '~/static/data/feats.json'
 
 import SaveLoad from '~/components/character_builder/CharacterSaveLoad.vue'
 import CharacterPowerCounter from '~/components/character_builder/CharacterPowerCounter.vue'
@@ -331,6 +349,7 @@ export default {
     weapons: weapons || "not found",
     documents: documents || "not found",
     powers: powers || "not found",
+    feats: feats || "not found",
     stat_names: ['str','dex','con','int','wis','cha'],
     skill_names: ['acrobatics','athletics','deception','electronics','engineering','history','insight','intimidation',
     'investigation','medicine','perception','performance','persuasion','science','slight_of_hand','stealth','survival','vehicle_handling'],
@@ -354,6 +373,12 @@ export default {
     },
     character_docs: function() {
       return this.getDocuments('character');
+    },
+    racial_traits: function(){
+      return this.getDocuments('character','traits');
+    },
+    class_features: function(){
+      return this.getDocuments('character','class_features');
     },
     backgrounds: function() {
       return this.getDocuments('character','backgrounds');
