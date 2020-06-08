@@ -83,15 +83,17 @@
                 h2 Skills
                 //v-card-title
                 v-text-field(v-model="skills_table.search" append-icon="mdi-magnify" label="Search" single-line hide-details)
-                v-data-table(:headers="skills_table.headers" :items="character.skills" :search="skills_table.search" :hide-actions="true")
-                  template(v-slot:items="props")
-                    td(style="width: 10%;")
-                      div {{(calcSkillMod(props.item.stat, props.item.prof) >= 0 ? '+' : '') + calcSkillMod(props.item.stat, props.item.prof)}}
-                    td(style="width: 70%;") {{props.item.label}}
-                    td(style="width: 10%;")
-                      v-select(v-model="props.item.prof" :items="[0,.5,1,2]")
-                    td(style="width: 10%;") 
-                      v-checkbox(v-model="props.item.advantage")
+                v-layout(column style="height: 500px")
+                  v-flex(md6 style="overflow: auto")
+                    v-data-table(class="skills-table" :headers="skills_table.headers" :items="character.skills" :search="skills_table.search" :hide-actions="true")
+                      template(v-slot:items="props")
+                        td(style="width: 10%;")
+                          div {{(calcSkillMod(props.item.stat, props.item.prof) >= 0 ? '+' : '') + calcSkillMod(props.item.stat, props.item.prof)}}
+                        td(style="width: 70%;") {{props.item.label}}
+                        td(style="width: 10%;")
+                          v-select(v-model="props.item.prof" :items="[0,.5,1,2]")
+                        td(style="width: 10%;") 
+                          v-checkbox(v-model="props.item.advantage")
               
               
               // Padding
@@ -213,6 +215,22 @@
                   div(v-for="(slot, ind) in spell_slots")
                     character-power-counter( :value="character.biotics.spell_slots[ind]" :max-value="Number(slot)" v-if="slot"
                     @change="character.biotics.spell_slots[ind] = $event" :label="'Level '+ind+' Spell Slot'" )
+
+                v-flex(v-if="character.class.id == 'sentinel' && character.power_attribute")
+                  h2 Sentinel
+                   table(class="power-header-table")
+                    tbody
+                      tr
+                        td
+                          span Spell DC 
+                          span(style="text-transform: uppercase;") ({{character.power_attribute}})
+                        td {{calcSpellDC(power_attribute)}}
+                      tr
+                        td Spell Level
+                        td {{spell_level_limit}}
+                  character-power-counter(label="Spell Slots" :value="character.tech.tech_points" :max-value="spell_slots" 
+                  @change="character.tech.tech_points = $event")
+
           v-tab-item(key="equipment")
           v-tab-item(key="other")
 </template>
@@ -307,8 +325,8 @@ export default {
     removeWeapon: false,
     classData: [AdeptData,EngineerData,InfiltratorData,SentinelData,SoldierData,VanguardData],
     combatPowers: ["soldier","vanguard","infiltrator"],
-    techPowers: ["engineer","sentinel","infiltrator"],
-    bioticPowers: ["adept","vanguard","sentinel"],
+    techPowers: ["engineer","infiltrator"],
+    bioticPowers: ["adept","vanguard"],
     tab: false,
     armor: armor || "not found",
     weapons: weapons || "not found",
@@ -362,10 +380,18 @@ export default {
         return tpl;
       }
     },
+    spell_level_limit: function() {
+      var sll = 0;
+      try {
+        sll = this.character.class.progression[this.character.level - 1].spellLevel || 0;
+      } finally {
+        return sll;
+      }
+    },
     spell_slots: function() {
       var slots = {};
       try {
-        slots = this.character.class.progression[this.character.level - 1].spellSlots;
+        slots = this.character.class.progression[this.character.level - 1].spellSlots || 0;
       } finally {
         return slots;
       }
