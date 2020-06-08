@@ -61,6 +61,7 @@ export default {
         set: undefined
       },
       weapons: [],
+      powers: [],
       tech: {
         tech_points: 1
       },

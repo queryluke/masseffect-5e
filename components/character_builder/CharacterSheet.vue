@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-form(on-submit="return false;")
+  div
     v-container(grid-list-md text-xs-center)
       
       // Character Name and ME5e Logo
@@ -231,6 +231,12 @@
                   character-power-counter(label="Spell Slots" :value="character.tech.tech_points" :max-value="spell_slots" 
                   @change="character.tech.tech_points = $event")
 
+              v-layout(row)
+                v-flex(style="text-align: left;")
+                  v-autocomplete(v-model="character.powers" label="Powers" :items="powers" item-text="name" return-object multiple)
+                  spell-list(:items="character.powers" v-if="character.powers.length")
+                  h2(v-if="!character.powers.length") Use the search above to add powers
+
           v-tab-item(key="equipment")
           v-tab-item(key="other")
 </template>
@@ -302,12 +308,14 @@
 import documents from '~/static/data/search/documents.json'
 import weapons from '~/static/data/weapons.json'
 import armor from '~/static/data/armor_sets.json'
+import powers from '~/static/data/spells'
 
 import SaveLoad from '~/components/character_builder/CharacterSaveLoad.vue'
 import WeaponPicker from '~/pages/weapon-picker.vue'
 import CharacterWeaponList from '~/components/character_builder/CharacterWeaponList.vue'
 import CharacterPowerCounter from '~/components/character_builder/CharacterPowerCounter.vue'
 import WeaponList from '~/components/weapon/WeaponList.vue'
+import SpellList from '~/components/spell/SpellList.vue'
 
 import AdeptData from "~/static/data/classes/adept.json"; 
 import EngineerData from "~/static/data/classes/engineer.json"; 
@@ -317,7 +325,7 @@ import SoldierData from "~/static/data/classes/soldier.json";
 import VanguardData from "~/static/data/classes/vanguard.json";
 
 export default {
-  components: {SaveLoad, CharacterWeaponList, CharacterPowerCounter, WeaponList, WeaponPicker},
+  components: {SaveLoad, CharacterWeaponList, CharacterPowerCounter, WeaponList, SpellList, WeaponPicker},
   class_data: [AdeptData,EngineerData,InfiltratorData,SentinelData,SoldierData,VanguardData],
   data: () => ({
     image_picker: false,
@@ -331,6 +339,7 @@ export default {
     armor: armor || "not found",
     weapons: weapons || "not found",
     documents: documents || "not found",
+    powers: powers || "not found",
     stat_names: ['str','dex','con','int','wis','cha'],
     skill_names: ['acrobatics','athletics','deception','electronics','engineering','history','insight','intimidation',
     'investigation','medicine','perception','performance','persuasion','science','slight_of_hand','stealth','survival','vehicle_handling'],
