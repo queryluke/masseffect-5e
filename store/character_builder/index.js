@@ -12,6 +12,7 @@ export default {
       background: "",
       other_info: [],
       health: 0,
+      max_health: 5,
       shields: 0,
       barrier_ticks: 0,
       stats: {

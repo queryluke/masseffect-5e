@@ -35,6 +35,9 @@
           
           v-layout(row)
             v-flex
+              v-text-field(v-model="character.max_health" label="Max HP")
+            
+            v-flex
               v-text-field(v-model="character.ac" label="AC")
             
             v-flex
@@ -52,15 +55,15 @@
           v-layout(row)
             v-flex
               v-card
-                character-power-counter(label="Health" :value="character.health" :max-value="10" 
+                character-power-counter(label="Health" :value="character.health" :max-value="Number(character.max_health)" 
                   @change="character.health = $event" :show-min="false" :show-max="true")
             v-flex
               v-card
-                character-power-counter(label="Shields" :value="character.shields" :max-value="10" 
+                character-power-counter(label="Shields" :value="character.shields" :max-value="5" 
                   @change="character.shields = $event" :show-min="false" :show-max="true")
             v-flex
               v-card
-                character-power-counter(label="Barrier Ticks" :value="character.barrier_ticks" :max-value="10" 
+                character-power-counter(label="Barrier Ticks" :value="character.barrier_ticks" :max-value="character.class.progression[character.level-1].barrierTicks || 0" 
                   @change="character.barrier_ticks = $event" :show-min="false" :show-max="true")
         
         // Character Image
@@ -302,7 +305,10 @@
                           span Spell DC 
                           span(style="text-transform: uppercase;") ({{character.power_attribute}})
                         td {{calcSpellDC(power_attribute)}}
-
+                  div
+                    character-power-counter(label="Barrier Uses Remaining" :value="character.barrier_uses"
+                    :max-value="character.class.progression[character.level-1].barrierUses || 0" 
+                    @change="character.barrier_uses = $event")
                   div(v-for="(slot, ind) in spell_slots")
                     character-power-counter( :value="character.biotics.spell_slots[ind]" :max-value="Number(slot)" v-if="slot"
                     @change="character.biotics.spell_slots[ind] = $event" :label="'Level '+ind+' Spell Slot'" )
