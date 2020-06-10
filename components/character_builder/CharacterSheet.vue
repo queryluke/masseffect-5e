@@ -61,7 +61,7 @@
               v-card
                 character-power-counter(label="Shields" :value="character.shields" :max-value="5" 
                   @change="character.shields = $event" :show-min="false" :show-max="true")
-            v-flex
+            v-flex(v-if="hasPowers(bioticPowers) || character.class.id == 'sentinel'")
               v-card
                 character-power-counter(label="Barrier Ticks" :value="character.barrier_ticks" :max-value="character.class.progression[character.level-1].barrierTicks || 0" 
                   @change="character.barrier_ticks = $event" :show-min="false" :show-max="true")
@@ -309,6 +309,7 @@
                     character-power-counter(label="Barrier Uses Remaining" :value="character.barrier_uses"
                     :max-value="character.class.progression[character.level-1].barrierUses || 0" 
                     @change="character.barrier_uses = $event")
+
                   div(v-for="(slot, ind) in spell_slots")
                     character-power-counter( :value="character.biotics.spell_slots[ind]" :max-value="Number(slot)" v-if="slot"
                     @change="character.biotics.spell_slots[ind] = $event" :label="'Level '+ind+' Spell Slot'" )
@@ -325,8 +326,14 @@
                       tr
                         td Spell Level
                         td {{spell_level_limit}}
-                  character-power-counter(label="Spell Slots" :value="character.tech.tech_points" :max-value="spell_slots" 
-                  @change="character.tech.tech_points = $event")
+                  div
+                    character-power-counter(label="Barrier Uses Remaining" :value="character.barrier_uses"
+                    :max-value="character.class.progression[character.level-1].barrierUses || 0" 
+                    @change="character.barrier_uses = $event")
+                  
+                  div
+                    character-power-counter(label="Spell Slots" :value="character.tech.tech_points" :max-value="spell_slots" 
+                      @change="character.tech.tech_points = $event")
 
               v-layout(row)
                 v-flex(style="text-align: left;")
