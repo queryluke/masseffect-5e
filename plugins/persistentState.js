@@ -6,7 +6,8 @@ export default ({store}) => {
       'gruntConfig',
       'encounter',
       'bookmarks',
-      'diceRoller.rolls'
+      'diceRoller.rolls',
+      'characterBuilder.character'
     ]
   })(store)
 }
