@@ -2,11 +2,11 @@
   div
     h3(style="padding-top: 12px;") {{label}}
     div(class="counter-area")
-      v-btn(@click="val = minValue") Min
+      v-btn(@click="val = minValue" v-if="showMin") Min
       v-btn(@click="val--" :disabled="val <= 0") -
       h2(class="points-text") {{val}} / {{maxValue}}
       v-btn(@click="val++" :disabled="val >= maxValue") +
-      v-btn(@click="val = maxValue") Max
+      v-btn(@click="val = maxValue" v-if="showMax") Max
     
 </template>
 
@@ -40,6 +40,14 @@ export default {
     maxValue: {
       type: Number,
       default: () => {return 0}
+    },
+    showMin: {
+      type: Boolean,
+      default: true
+    },
+    showMax: {
+      type: Boolean,
+      default: true
     }
   },
   data: () => ({

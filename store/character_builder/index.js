@@ -11,6 +11,9 @@ export default {
       subclass: "",
       background: "",
       other_info: [],
+      health: 0,
+      shields: 0,
+      barrier_ticks: 0,
       stats: {
         str: 10, dex: 10, con: 10, int: 10, wis: 10, cha: 10
       },

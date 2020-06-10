@@ -47,33 +47,49 @@
               v-text-field(v-model="characterProf" label="Proficiency") 
 
             v-flex
-              v-text-field(v-model="character.xp" label="XP") 
+              v-text-field(v-model="character.xp" label="XP")
+          
+          v-layout(row)
+            v-flex
+              v-card
+                character-power-counter(label="Health" :value="character.health" :max-value="10" 
+                  @change="character.health = $event" :show-min="false" :show-max="true")
+            v-flex
+              v-card
+                character-power-counter(label="Shields" :value="character.shields" :max-value="10" 
+                  @change="character.shields = $event" :show-min="false" :show-max="true")
+            v-flex
+              v-card
+                character-power-counter(label="Barrier Ticks" :value="character.barrier_ticks" :max-value="10" 
+                  @change="character.barrier_ticks = $event" :show-min="false" :show-max="true")
         
         // Character Image
         v-flex(xs3)
-          img(:title="character.name"
-            :src="character.image"
-            alt="Character Image"
-            style="height: 200px;")
-          v-dialog(v-model="image_picker" width="500")
-            template(v-slot:activator="{ on }")
-              v-btn(color="red lighten-2" dark v-on="on") Change Image
-            
-            v-card
-              v-card-title
-                div Change Image URL
-              v-card-text
-                v-text-field(v-model="character.image")
+          div
+            img(:title="character.name"
+              :src="character.image"
+              alt="Character Image"
+              style="height: 200px;")
+          div
+            v-dialog(v-model="image_picker" width="500")
+              template(v-slot:activator="{ on }")
+                v-btn(color="primary" dark v-on="on") Change Image
+              
+              v-card
+                v-card-title
+                  div Change Image URL
+                v-card-text
+                  v-text-field(v-model="character.image")
       
       // Tab Area
-      v-layout(style="width: 100%;")
-        v-tabs(:grow="true" style="width: 100%;")
+      v-card(style="width: 100%;")
+        v-tabs(:grow="true" style="width: 100%; padding: 15px;" slider-color="primary")
           v-tab(key="stats") Skills and Stats
           v-tab(key="weapons") Weapons and Armor
           v-tab(key="character-info") Character Info
           v-tab(key="powers") Powers
-          v-tab(key="equipment") Equipment and Wealth
-          v-tab(key="other") Roleplaying / Other
+          //v-tab(key="equipment") Equipment and Wealth
+          //v-tab(key="other") Roleplaying / Other
             
           v-tab-item(key="stats")
             // Skills and Stats
@@ -83,8 +99,8 @@
                 h2 Skills
                 //v-card-title
                 v-text-field(v-model="skills_table.search" append-icon="mdi-magnify" label="Search" single-line hide-details)
-                v-layout(column style="height: 500px")
-                  v-flex(md6 style="overflow: auto")
+                v-layout(column)
+                  v-flex(md6)
                     v-data-table(class="skills-table" :headers="skills_table.headers" :items="character.skills" :search="skills_table.search" :hide-actions="true")
                       template(v-slot:items="props")
                         td(style="width: 10%;")
@@ -238,12 +254,13 @@
               
               v-layout(row)
                 
-                v-flex(md2)
+                v-flex(md1)
+
+                v-flex(md2 style="float: right;")
                   v-select(label="Power Ability Attribute" v-model="character.power_attribute"
                   :items="[{text: 'Intelligence', value: 'int'},{text: 'Wisdom', value: 'wis'},{text: 'Charisma', value: 'cha'}]")
                   v-select(readonly label="Power Attack Modifier" :items="[power_ability_modifier]" :value="power_ability_modifier")
                 
-                v-flex(md1)
                 
                 h2(v-if="!character.power_attribute") Please first select an attribute.
 
@@ -311,8 +328,8 @@
                   spell-list(:items="character.powers" v-if="character.powers.length")
                   h2(v-if="!character.powers.length") Use the search above to add powers
 
-          v-tab-item(key="equipment")
-          v-tab-item(key="other")
+          //v-tab-item(key="equipment")
+          //v-tab-item(key="other")
 </template>
 
 <style lang="scss">
