@@ -146,20 +146,58 @@
               armor-list(:items="character.armor" v-if="character.armor.length")
 
           v-tab-item(key="character-info")
-            div(class="item-area character-info-area")
-              h3 Racial Traits
-              br
-              v-autocomplete(v-model="character.traits" label="Selected Traits" :items="racial_traits" item-text="title" return-object multiple)
-              
-              h3 Class Features
-              br
-              v-autocomplete(v-model="character.class_features" label="Selected Class Features" :items="class_features" item-text="title" return-object multiple)
+            div.item-area.character-info-area
 
-              h3 Feats
-              br
-              v-autocomplete(v-model="character.feats" label="Selected Feats" :items="feats" item-text="name" return-object multiple)
+              v-stepper(v-model="selected_character_info_tab" vertical)
+                v-layout(row)
+                  v-flex(md2)
+                    v-stepper-step(step="traits" @click="selected_character_info_tab = 'traits'") Traits
+                    v-stepper-step(step="class-features" @click="selected_character_info_tab = 'class-features'") Class Features
+                    v-stepper-step(step="feats" @click="selected_character_info_tab = 'feats'") Feats
+                    v-stepper-step(step="backgrounds" @click="selected_character_info_tab = 'backgrounds'") Backgrounds
+                    v-stepper-step(step="other" @click="selected_character_info_tab = 'other'") Other
+                    
+                  v-flex(md10 style="min-height: 200px;")
+                    v-stepper-content(step="traits")
+                      h3 Traits
+                      br
+                      v-autocomplete(v-model="character.traits" label="Selected Traits" :items="racial_traits" item-text="title" return-object multiple)
+                      racial-trait.text-xs-left(v-for="trait in character.traits" v-bind:key="trait.id" v-bind:id="trait.id")
+                  
+                    v-stepper-content(step="class-features")
+                        h3 Class Features
+                        br
+                        v-autocomplete(v-model="character.class_features" label="Selected Class Features" :items="class_features" item-text="name" return-object multiple)
+                        class-feature.text-xs-left(v-for="feature in character.class_features" v-bind:id="feature.id") 
+                    
+                    v-stepper-content(step="feats")
+                      h3 Feats
+                      br
+                      v-autocomplete(v-model="character.feats" label="Selected Feats" :items="feats" item-text="name" return-object multiple)
+                      v-expansion-panel.my-5
+                        v-expansion-panel-content(v-for="feat in character.feats")
+                          div(slot="header")
+                            v-layout
+                              v-flex.xs2.sm1
+                                v-avatar(:class="[feat.new ? 'deep-purple' : 'deep-orange']" size="30px")
+                                  span(v-if="feat.new").white--text New
+                                  span(v-else).white--text PHB
+                              v-flex.xs10.sm5.lg2.pt-1
+                                strong {{ feat.name }}
+                              v-flex.hidden-md-and-down.lg3
+                                div(v-if="feat.prerequisite") {{ feat.prerequisite }}
+                                div(v-else) -
+                              v-flex.hidden-xs-only.sm6.lg6 {{ feat.note }}
+                          v-card
+                            v-card-text.grey.lighten-3
+                              p.display-1.font-weight-thin {{ feat.name }}
+                              div(v-if="feat.prerequisite")
+                                p #[strong Prerequisite]: #[em {{ feat.prerequisite }}]
+                              markdown-file(:id="feat.id" itemType="feats")
+                    
+                    v-stepper-content(step="backgrounds")
 
-              h3 Other
+                    v-stepper-content(step="other")
 
           v-tab-item(key="powers")
             div(class="item-area")
@@ -255,7 +293,7 @@
 
   .character-info-area {
     h3 {
-      text-align: left;
+      //text-align: left;
     }
   }
 
@@ -313,7 +351,6 @@
 </style>
 
 <script>
-
 import documents from '~/static/data/search/documents.json'
 import weapons from '~/static/data/weapons.json'
 import armor from '~/static/data/armor_sets.json'
@@ -325,6 +362,8 @@ import CharacterPowerCounter from '~/components/character_builder/CharacterPower
 import WeaponList from '~/components/weapon/WeaponList.vue'
 import SpellList from '~/components/spell/SpellList.vue'
 import ArmorList from '~/components/armor_set/ArmorSetList.vue'
+import RacialTrait from '~/components/race/RacialTrait.vue'
+import ClassFeature from '~/components/class/ClassFeature.vue'
 
 import AdeptData from "~/static/data/classes/adept.json"; 
 import EngineerData from "~/static/data/classes/engineer.json"; 
@@ -334,10 +373,11 @@ import SoldierData from "~/static/data/classes/soldier.json";
 import VanguardData from "~/static/data/classes/vanguard.json";
 
 export default {
-  components: {SaveLoad, CharacterPowerCounter, WeaponList, ArmorList, SpellList},
+  components: {SaveLoad, CharacterPowerCounter, WeaponList, ArmorList, SpellList, RacialTrait, ClassFeature},
   class_data: [AdeptData,EngineerData,InfiltratorData,SentinelData,SoldierData,VanguardData],
   data: () => ({
     image_picker: false,
+    selected_character_info_tab: "traits",
     pickWeapon: false,
     removeWeapon: false,
     classData: [AdeptData,EngineerData,InfiltratorData,SentinelData,SoldierData,VanguardData],
@@ -378,7 +418,8 @@ export default {
       return this.getDocuments('character','traits');
     },
     class_features: function(){
-      return this.getDocuments('character','class_features');
+      return require(`~/static/data/class_features.json`)
+      //return this.getDocuments('character','class_features');
     },
     backgrounds: function() {
       return this.getDocuments('character','backgrounds');
