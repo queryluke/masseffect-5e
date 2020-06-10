@@ -148,14 +148,14 @@
           v-tab-item(key="character-info")
             div.item-area.character-info-area
 
-              v-stepper(v-model="selected_character_info_tab" vertical)
+              v-stepper(v-model="selected_character_info_tab" vertical non-linear)
                 v-layout(row)
                   v-flex(md2)
-                    v-stepper-step(step="traits" @click="selected_character_info_tab = 'traits'") Traits
-                    v-stepper-step(step="class-features" @click="selected_character_info_tab = 'class-features'") Class Features
-                    v-stepper-step(step="feats" @click="selected_character_info_tab = 'feats'") Feats
-                    v-stepper-step(step="backgrounds" @click="selected_character_info_tab = 'backgrounds'") Backgrounds
-                    v-stepper-step(step="other" @click="selected_character_info_tab = 'other'") Other
+                    v-stepper-step(editable step="traits" edit-icon="mdi-checkbox-blank-circle") Traits
+                    v-stepper-step(editable step="class-features") Class Features
+                    v-stepper-step(editable step="feats") Feats
+                    v-stepper-step(editable step="backgrounds") Backgrounds
+                    v-stepper-step(editable step="other") Other
                     
                   v-flex(md10 style="min-height: 200px;")
                     v-stepper-content(step="traits")
@@ -292,8 +292,8 @@
   }
 
   .character-info-area {
-    h3 {
-      //text-align: left;
+    .v-stepper__step__step {
+      display: none;
     }
   }
 
