@@ -31,7 +31,7 @@
               v-select(v-model="character.subclass" :items="character.class.subclasses" item-text="name" label="Sub-Class" return-object)
 
             v-flex
-              v-select(v-model="character.background" :items="backgrounds" item-text="title" item-value="id" label="Background")
+              v-select(v-model="character.background" :items="backgrounds" item-text="name" label="Background" return-object)
           
           v-layout(row)
             v-flex
@@ -158,19 +158,19 @@
                     v-stepper-step(editable step="other") Other
                     
                   v-flex(md10 style="min-height: 200px;")
-                    v-stepper-content(step="traits")
+                    v-stepper-content(step="traits" v-if="selected_character_info_tab == 'traits'")
                       h3 Traits
                       br
                       v-autocomplete(v-model="character.traits" label="Selected Traits" :items="racial_traits" item-text="title" return-object multiple)
                       racial-trait.text-xs-left(v-for="trait in character.traits" v-bind:key="trait.id" v-bind:id="trait.id")
                   
-                    v-stepper-content(step="class-features")
+                    v-stepper-content(step="class-features" v-if="selected_character_info_tab == 'class-features'")
                         h3 Class Features
                         br
                         v-autocomplete(v-model="character.class_features" label="Selected Class Features" :items="class_features" item-text="name" return-object multiple)
                         class-feature.text-xs-left(v-for="feature in character.class_features" v-bind:id="feature.id") 
                     
-                    v-stepper-content(step="feats")
+                    v-stepper-content(step="feats" v-if="selected_character_info_tab == 'feats'")
                       h3 Feats
                       br
                       v-autocomplete(v-model="character.feats" label="Selected Feats" :items="feats" item-text="name" return-object multiple)
@@ -195,9 +195,43 @@
                                 p #[strong Prerequisite]: #[em {{ feat.prerequisite }}]
                               markdown-file(:id="feat.id" itemType="feats")
                     
-                    v-stepper-content(step="backgrounds")
+                    v-stepper-content(step="backgrounds" v-if="selected_character_info_tab == 'backgrounds'")
+                      h3 Backgrounds
+                      br
+                      v-autocomplete(v-model="character.backgrounds" label="Selected Backgrounds" :items="backgrounds" item-text="name" return-object multiple)
+                      v-expansion-panel.mb-2
+                        v-expansion-panel-content(v-for="item in character.backgrounds" v-bind:key="item.id").large-panel
+                          div(slot="header") {{ item.name }}
+                          v-card.grey.lighten-3
+                            v-card-text
+                              p.display-1.font-weight-thin {{ item.name }}
+                              markdown-file(:id="item.id" itemType="backgrounds")
 
-                    v-stepper-content(step="other")
+                    v-stepper-content.text-xs-left(step="other" v-if="selected_character_info_tab == 'other'")
+                      h3 Other
+                      br
+                      v-sheet(color="grey")
+                        v-expansion-panel
+                          v-expansion-panel-content(v-for="(info, ind) in character.other_info")
+                            template(v-slot:header)
+                              div.title {{info.title}}
+                            v-card
+                              v-card-text {{info.description}}
+                              v-card-actions(style="float: right;")
+                                v-btn(icon color="primary"
+                                @click="character.other_info.splice(ind, 1)")
+                                  v-icon delete
+
+                          v-expansion-panel-content
+                            template(v-slot:header)
+                                div + Add Info
+                            v-card
+                              v-card-text
+                                v-text-field(v-model="other_info.title" label="Title")
+                                v-text-field(v-model="other_info.description" label="Description")
+                              v-card-actions(style="float: right;")
+                                v-btn(@click="character.other_info.push({title: other_info.title, description: other_info.description})") Save
+
 
           v-tab-item(key="powers")
             div(class="item-area")
@@ -295,6 +329,9 @@
     .v-stepper__step__step {
       display: none;
     }
+    .v-stepper__wrapper {
+      height: inherit !important;
+    }
   }
 
   .tech-button-area {
@@ -356,6 +393,7 @@ import weapons from '~/static/data/weapons.json'
 import armor from '~/static/data/armor_sets.json'
 import powers from '~/static/data/spells'
 import feats from '~/static/data/feats.json'
+import backgrounds from '~/static/data/backgrounds.json'
 
 import SaveLoad from '~/components/character_builder/CharacterSaveLoad.vue'
 import CharacterPowerCounter from '~/components/character_builder/CharacterPowerCounter.vue'
@@ -385,11 +423,13 @@ export default {
     techPowers: ["engineer","infiltrator"],
     bioticPowers: ["adept","vanguard"],
     tab: false,
+    other_info: {},
     armor: armor || "not found",
     weapons: weapons || "not found",
     documents: documents || "not found",
     powers: powers || "not found",
     feats: feats || "not found",
+    backgrounds: backgrounds || "not found",
     stat_names: ['str','dex','con','int','wis','cha'],
     skill_names: ['acrobatics','athletics','deception','electronics','engineering','history','insight','intimidation',
     'investigation','medicine','perception','performance','persuasion','science','slight_of_hand','stealth','survival','vehicle_handling'],
@@ -420,9 +460,6 @@ export default {
     class_features: function(){
       return require(`~/static/data/class_features.json`)
       //return this.getDocuments('character','class_features');
-    },
-    backgrounds: function() {
-      return this.getDocuments('character','backgrounds');
     },
     power_attribute: function() {
       return this.character.stats[this.character.power_attribute];
