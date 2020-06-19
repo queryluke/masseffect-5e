@@ -13,17 +13,10 @@
               v-flex(xs12 md4 d-flex)
                 v-card.elevation-0.transparent
                   v-card-text.text-xs-center.pb-0.mb-0
-                    v-avatar(size="64").primary
-                      v-icon feedback
+                    v-avatar(size="64" color="transparent" tile)
+                      img(src="/images/misc/Discord-Logo-Color.svg" alt="Discord Logo")
                   v-card-title(primary-title).layout.column.justify-center.text-xs-center.pb-0
-                    div.headline #[a(href="https://goo.gl/forms/3wZj8QhlsLv3XOJw1" target="_blank").blue--text.text--lighten-3 Feedback form]
-              v-flex(xs12 md4 d-flex)
-                v-card.elevation-0.transparent
-                  v-card-text.text-xs-center.pb-0.mb-0
-                    v-avatar(size="64").blue
-                      v-icon email
-                  v-card-title(primary-title).layout.column.justify-center.text-xs-center.pb-0
-                    div.headline #[a(mailto="info@n7.world").blue--text.text--lighten-3 info@n7.world]
+                    div.headline #[a(href="https://discord.gg/c2UnqkH" target="_blank").blue--text.text--lighten-3 Discord]
               v-flex(xs12 md4 d-flex)
                 v-card.elevation-0.transparent
                   v-card-text.text-xs-center.pb-0.mb-0
@@ -31,18 +24,19 @@
                       img(src="/images/misc/Reddit_Mark_OnDark.png" alt="Reddit Logo")
                   v-card-title(primary-title).layout.column.justify-center.text-xs-center.pb-0
                     div.headline #[a(href="https://www.reddit.com/r/masseffect5e/" target="_blank").blue--text.text--lighten-3 /r/masseffect5e]
+              v-flex(xs12 md4 d-flex)
+                v-card.elevation-0.transparent
+                  v-card-text.text-xs-center.pb-0.mb-0
+                    v-avatar(size="64").blue
+                      v-icon email
+                  v-card-title(primary-title).layout.column.justify-center.text-xs-center.pb-0
+                    div.headline #[a(mailto="info@n7.world").blue--text.text--lighten-3 info@n7.world]
     section
       v-layout(row wrap justify-center).mt-5
         v-flex(xs12 sm10 md8).my-3
           div.text-xs-center
-            h2.display-2 Collaborators wanted!
-        v-flex(xs12)
-          div.text-xs-center.mt-4
-            h3.headline Content Submission
-            p.
-              With the release of v1.1.2, we've moved our submission workflow to reddit.
-            v-btn(slot="activator" color="primary" href="https://www.reddit.com/r/masseffect5e/wiki/submissions/guidelines" target="_blank") Submission Guidelines
-
+            h2.display-2 Feedback & Ideas Welcome!
+            p Discord is by far the most active community. But reddit is available as well. Finally, email is available if you want to start a dialog with the creator.
 </template>
 
 <script>

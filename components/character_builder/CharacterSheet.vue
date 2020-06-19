@@ -1,12 +1,12 @@
 <template lang="pug">
   div
     v-container(grid-list-md text-xs-center)
-      
+
       // Character Name and ME5e Logo
       v-layout(row wrap)
         v-flex(xs4 class="character-name")
           v-text-field(v-model="character.name" label="Character Name")
-        
+
         v-flex(xs4)
           save-load(:character="character" @load="character = $event")
 
@@ -20,10 +20,10 @@
           v-layout(row)
             v-flex
               v-text-field(v-model="character.level" label="Level")
-            
+
             v-flex
               v-select(v-model="character.race" :items="races" label="Race")
-            
+
             v-flex
               v-select(v-model="character.class" :items="$options.class_data" item-text="name" label="Class" return-object)
 
@@ -32,40 +32,40 @@
 
             v-flex
               v-select(v-model="character.background" :items="backgrounds" item-text="name" label="Background" return-object)
-          
+
           v-layout(row)
             v-flex
               v-text-field(v-model="character.max_health" label="Max HP")
-            
+
             v-flex
               v-text-field(v-model="character.ac" label="AC")
-            
+
             v-flex
-              v-text-field(v-model="character.initiative" label="Initiative") 
+              v-text-field(v-model="character.initiative" label="Initiative")
 
             v-flex
               v-text-field(v-model="character.movement" label="Movement")
-            
+
             v-flex
-              v-text-field(v-model="characterProf" label="Proficiency") 
+              v-text-field(v-model="characterProf" label="Proficiency")
 
             v-flex
               v-text-field(v-model="character.xp" label="XP")
-          
+
           v-layout(row)
             v-flex
               v-card
-                character-power-counter(label="Health" :value="character.health" :max-value="Number(character.max_health)" 
+                character-power-counter(label="Health" :value="character.health" :max-value="Number(character.max_health)"
                   @change="character.health = $event" :show-min="false" :show-max="true")
             v-flex
               v-card
-                character-power-counter(label="Shields" :value="character.shields" :max-value="5" 
+                character-power-counter(label="Shields" :value="character.shields" :max-value="5"
                   @change="character.shields = $event" :show-min="false" :show-max="true")
             v-flex(v-if="hasPowers(bioticPowers) || character.class.id == 'sentinel'")
               v-card
-                character-power-counter(label="Barrier Ticks" :value="character.barrier_ticks" :max-value="character.class.progression[character.level-1].barrierTicks || 0" 
+                character-power-counter(label="Barrier Ticks" :value="character.barrier_ticks" :max-value="character.class.progression[character.level-1].barrierTicks || 0"
                   @change="character.barrier_ticks = $event" :show-min="false" :show-max="true")
-        
+
         // Character Image
         v-flex(xs3)
           div
@@ -77,13 +77,13 @@
             v-dialog(v-model="image_picker" width="500")
               template(v-slot:activator="{ on }")
                 v-btn(color="primary" dark v-on="on") Change Image
-              
+
               v-card
                 v-card-title
                   div Change Image URL
                 v-card-text
                   v-text-field(v-model="character.image")
-      
+
       // Tab Area
       v-card(style="width: 100%;")
         v-tabs(:grow="true" style="width: 100%; padding: 15px;" slider-color="primary")
@@ -93,7 +93,7 @@
           v-tab(key="powers") Powers
           //v-tab(key="equipment") Equipment and Wealth
           //v-tab(key="other") Roleplaying / Other
-            
+
           v-tab-item(key="stats")
             // Skills and Stats
             v-layout(row class="item-area")
@@ -111,10 +111,10 @@
                         td(style="width: 70%;") {{props.item.label}}
                         td(style="width: 10%;")
                           v-select(v-model="props.item.prof" :items="[0,.5,1,2]")
-                        td(style="width: 10%;") 
+                        td(style="width: 10%;")
                           v-checkbox(v-model="props.item.advantage")
-              
-              
+
+
               // Padding
               v-flex(xs1)
               // Stats
@@ -141,7 +141,7 @@
                           td Ability Modifiers
                           td(v-for="stat in stat_names" class="stat-num")
                             div {{(calcAbilityMod(character.stats[stat]) >= 0 ? '+' : '') + calcAbilityMod(character.stats[stat])}}
-                        
+
                         tr
                           td Saving Throws
                           td(v-for="stat in stat_names" class="stat-num")
@@ -151,8 +151,8 @@
                           td Proficiency
                           td(v-for="stat in stat_names")
                             v-checkbox(v-model="character.proficiencies.stats[stat]")
-                        
-                        
+
+
           v-tab-item(key="weapons" style="text-align: left;")
             div(class="item-area")
               h2 Weapons
@@ -175,26 +175,26 @@
                     v-stepper-step(editable step="feats") Feats
                     v-stepper-step(editable step="backgrounds") Backgrounds
                     v-stepper-step(editable step="other") Other
-                    
+
                   v-flex(md10 style="min-height: 200px;")
                     v-stepper-content(step="traits" v-if="selected_character_info_tab == 'traits'")
                       h3 Traits
                       br
                       v-autocomplete(v-model="character.traits" label="Selected Traits" :items="racial_traits" item-text="title" return-object multiple)
                       racial-trait.text-xs-left(v-for="trait in character.traits" v-bind:key="trait.id" v-bind:id="trait.id")
-                  
+
                     v-stepper-content(step="class-features" v-if="selected_character_info_tab == 'class-features'")
                         h3 Class Features
                         br
                         v-autocomplete(v-model="character.class_features" label="Selected Class Features" :items="class_features" item-text="name" return-object multiple)
-                        class-feature.text-xs-left(v-for="feature in character.class_features" v-bind:id="feature.id") 
-                    
+                        class-feature.text-xs-left(v-for="feature in character.class_features" v-bind:key="feature.id" v-bind:id="feature.id")
+
                     v-stepper-content(step="feats" v-if="selected_character_info_tab == 'feats'")
                       h3 Feats
                       br
                       v-autocomplete(v-model="character.feats" label="Selected Feats" :items="feats" item-text="name" return-object multiple)
                       v-expansion-panel.my-5
-                        v-expansion-panel-content(v-for="feat in character.feats")
+                        v-expansion-panel-content(v-for="feat in character.feats" :key="feat.id")
                           div(slot="header")
                             v-layout
                               v-flex.xs2.sm1
@@ -213,7 +213,7 @@
                               div(v-if="feat.prerequisite")
                                 p #[strong Prerequisite]: #[em {{ feat.prerequisite }}]
                               markdown-file(:id="feat.id" itemType="feats")
-                    
+
                     v-stepper-content(step="backgrounds" v-if="selected_character_info_tab == 'backgrounds'")
                       h3 Backgrounds
                       br
@@ -231,7 +231,7 @@
                       br
                       v-sheet(color="grey")
                         v-expansion-panel
-                          v-expansion-panel-content(v-for="(info, ind) in character.other_info")
+                          v-expansion-panel-content(v-for="(info, ind) in character.other_info" :key="ind")
                             template(v-slot:header)
                               div.title {{info.title}}
                             v-card
@@ -254,17 +254,17 @@
 
           v-tab-item(key="powers")
             div(class="item-area")
-              
+
               v-layout(row)
-                
+
                 v-flex(md1)
 
                 v-flex(md2 style="float: right;")
                   v-select(label="Power Ability Attribute" v-model="character.power_attribute"
                   :items="[{text: 'Intelligence', value: 'int'},{text: 'Wisdom', value: 'wis'},{text: 'Charisma', value: 'cha'}]")
                   v-select(readonly label="Power Attack Modifier" :items="[power_ability_modifier]" :value="power_ability_modifier")
-                
-                
+
+
                 h2(v-if="!character.power_attribute") Please first select an attribute.
 
                 v-flex(v-if="hasPowers(combatPowers) && character.power_attribute")
@@ -273,27 +273,27 @@
                     tbody
                       tr
                         td STR DC
-                        td(style="text-align: center;") {{calcSpellDC(character.stats.str)}} 
+                        td(style="text-align: center;") {{calcSpellDC(character.stats.str)}}
                       tr
                         td DEX DC
                         td(style="text-align: center;") {{calcSpellDC(character.stats.dex)}}
                       tr
                         td Power Attack Modifier
                         td(style="text-align: center;") {{((calcProfBonus(character.level)+calcAbilityMod(power_attribute)) >= 0 ? '+' : '-')}}{{calcProfBonus(character.level)+calcAbilityMod(power_attribute)}}
-                
+
                 v-flex(v-if="hasPowers(techPowers) && character.power_attribute")
                   h2 Tech
                   table(class="power-header-table")
                     tbody
                       tr
                         td
-                          span Spell DC 
+                          span Spell DC
                           span(style="text-transform: uppercase;") ({{character.power_attribute}})
                         td {{calcSpellDC(power_attribute)}}
                       tr
                         td Tech Point Limit
                         td {{tech_point_limit}}
-                  character-power-counter(label="Tech Points" :value="character.tech.tech_points" :max-value="tech_point_max" 
+                  character-power-counter(label="Tech Points" :value="character.tech.tech_points" :max-value="tech_point_max"
                   @change="character.tech.tech_points = $event")
 
                 v-flex(v-if="hasPowers(bioticPowers) && character.power_attribute")
@@ -301,13 +301,13 @@
                   table(class="power-header-table")
                     tbody
                       tr
-                        td 
-                          span Spell DC 
+                        td
+                          span Spell DC
                           span(style="text-transform: uppercase;") ({{character.power_attribute}})
                         td {{calcSpellDC(power_attribute)}}
                   div
                     character-power-counter(label="Barrier Uses Remaining" :value="character.barrier_uses"
-                    :max-value="character.class.progression[character.level-1].barrierUses || 0" 
+                    :max-value="character.class.progression[character.level-1].barrierUses || 0"
                     @change="character.barrier_uses = $event")
 
                   div(v-for="(slot, ind) in spell_slots")
@@ -316,11 +316,11 @@
 
                 v-flex(v-if="character.class.id == 'sentinel' && character.power_attribute")
                   h2 Sentinel
-                   table(class="power-header-table")
+                  table(class="power-header-table")
                     tbody
                       tr
                         td
-                          span Spell DC 
+                          span Spell DC
                           span(style="text-transform: uppercase;") ({{character.power_attribute}})
                         td {{calcSpellDC(power_attribute)}}
                       tr
@@ -328,11 +328,11 @@
                         td {{spell_level_limit}}
                   div
                     character-power-counter(label="Barrier Uses Remaining" :value="character.barrier_uses"
-                    :max-value="character.class.progression[character.level-1].barrierUses || 0" 
+                    :max-value="character.class.progression[character.level-1].barrierUses || 0"
                     @change="character.barrier_uses = $event")
-                  
+
                   div
-                    character-power-counter(label="Spell Slots" :value="character.tech.tech_points" :max-value="spell_slots" 
+                    character-power-counter(label="Spell Slots" :value="character.tech.tech_points" :max-value="spell_slots"
                       @change="character.tech.tech_points = $event")
 
               v-layout(row)
@@ -433,10 +433,10 @@ import ArmorList from '~/components/armor_set/ArmorSetList.vue'
 import RacialTrait from '~/components/race/RacialTrait.vue'
 import ClassFeature from '~/components/class/ClassFeature.vue'
 
-import AdeptData from "~/static/data/classes/adept.json"; 
-import EngineerData from "~/static/data/classes/engineer.json"; 
-import InfiltratorData from "~/static/data/classes/infiltrator.json"; 
-import SentinelData from "~/static/data/classes/sentinel.json"; 
+import AdeptData from "~/static/data/classes/adept.json";
+import EngineerData from "~/static/data/classes/engineer.json";
+import InfiltratorData from "~/static/data/classes/infiltrator.json";
+import SentinelData from "~/static/data/classes/sentinel.json";
 import SoldierData from "~/static/data/classes/soldier.json";
 import VanguardData from "~/static/data/classes/vanguard.json";
 
@@ -597,6 +597,6 @@ export default {
     }
   }
 
-  
+
 };
 </script>
