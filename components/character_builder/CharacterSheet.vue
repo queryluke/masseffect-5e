@@ -178,33 +178,29 @@
 
                   v-flex(md10 style="min-height: 200px;")
                     v-stepper-content(step="traits" v-if="selected_character_info_tab == 'traits'")
-                      h3 Traits
-                      br
-                      v-layout
-                        v-flex
-                          v-autocomplete(label="Search for Trait..." :items="character_traits" v-model="selected_trait" item-text="title" return-object)
-                        v-flex
-                          v-btn(
-                            @click="character.traits.push('<h1>'+selected_trait.title+'</h1><p>'+selected_trait.body+'</p>'); selected_trait = '';"
-                            v-if="selected_trait != '' ") Add Selected Trait
-                      v-layout
-                        v-expansion-panel.mb-2
-                          v-expansion-panel-content(v-for="(traitData, ind) in character.traits" :key="ind").large-panel
-                            div(slot="header") {{getHeading(character.traits[ind])}}
-                            v-card.grey.lighten-3
-                              v-card-text
-                                Editor(:content="character.traits[ind]" :key="ind"
-                                v-on:update:content="character.traits[ind] = $event; updateCharacter();"
-                                v-on:remove:content="character.traits.splice(ind, 1); updateCharacter();")
-                      v-layout.xs-text-left()
-                        v-btn(@click="character.traits.push('<h1>New Item</h1>')") Add Custom Entry
-
-                      //racial-trait.text-xs-left(v-for="trait in character.traits" v-bind:key="trait.id" v-bind:id="trait.id")
+                      document-collector(
+                        heading="Traits"
+                        :docs="character_traits"
+                        :character_table="character.traits"
+                        v-on:add="character.traits.push($event)"
+                        v-on:modify="character.traits[$event.index] = $event.html; updateCharacter();"
+                        v-on:remove="character.traits.splice($event.index, 1); updateCharacter();"
+                      )
 
                     v-stepper-content(step="class-features" v-if="selected_character_info_tab == 'class-features'")
+                      document-collector(
+                        heading="Traits"
+                        :docs="character_traits"
+                        :character_table="character.traits"
+                        v-on:add="character.traits.push($event)"
+                        v-on:modify="character.traits[$event.index] = $event.html; updateCharacter();"
+                        v-on:remove="character.traits.splice($event.index, 1); updateCharacter();"
+                      )
+                    //v-stepper-content(step="class-features" v-if="selected_character_info_tab == 'class-features'")
                         h3 Class Features
                         br
-                        v-autocomplete(v-model="character.class_features" label="Selected Class Features" :items="class_features" item-text="name" return-object multiple)
+                        v-autocomplete(v-model="character.class_features" label="Selected Class Features" 
+                        :items="class_features" item-text="name" return-object multiple)
                         class-feature.text-xs-left(v-for="feature in character.class_features" v-bind:key="feature.id" v-bind:id="feature.id")
 
                     v-stepper-content(step="feats" v-if="selected_character_info_tab == 'feats'")
@@ -450,7 +446,8 @@ import SpellList from '~/components/spell/SpellList.vue'
 import ArmorList from '~/components/armor_set/ArmorSetList.vue'
 import RacialTrait from '~/components/race/RacialTrait.vue'
 import ClassFeature from '~/components/class/ClassFeature.vue'
-import Editor from '~/components/character_builder/Editor';
+import DocumentCollector from '~/components/character_builder/DocumentCollector.vue';
+import Editor from '~/components/character_builder/Editor.vue';
 
 import AdeptData from "~/static/data/classes/adept.json";
 import EngineerData from "~/static/data/classes/engineer.json";
@@ -460,7 +457,7 @@ import SoldierData from "~/static/data/classes/soldier.json";
 import VanguardData from "~/static/data/classes/vanguard.json";
 
 export default {
-  components: {SaveLoad, CharacterPowerCounter, WeaponList, ArmorList, SpellList, RacialTrait, ClassFeature, Editor},
+  components: {SaveLoad, CharacterPowerCounter, WeaponList, ArmorList, SpellList, RacialTrait, ClassFeature, DocumentCollector, Editor},
   class_data: [AdeptData,EngineerData,InfiltratorData,SentinelData,SoldierData,VanguardData],
   data: () => ({
     image_picker: false,
@@ -619,15 +616,6 @@ export default {
     },
     calcSpellDC: function(ability_score) {
       return 8+this.calcProfBonus(this.character.level)+this.calcAbilityMod(ability_score);
-    },
-    getHeading: function(html) {
-      var heading = /(?<=\>)(?!\<)(.*?)(?=\<)(?<!\>)/.exec(html)[0] || "No Heading Found";
-      const headingLength = 50;
-      if (heading.length > headingLength) {
-        heading = heading.substring(0, 50);
-        heading += "...";
-      }
-      return heading;
     }
   }
 

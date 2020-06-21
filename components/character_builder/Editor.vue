@@ -31,10 +31,6 @@ export default {
       type: String,
       default: () => {return "Add Description Here!"}
     },
-    info_array: {
-      type: Array,
-      default: () => {return []}
-    },
     index: {
       type: Number,
       default: () => {return -1}
@@ -70,11 +66,17 @@ export default {
   },
   methods: {
     save: function() {
-      this.$emit("update:content", this.html);
+      this.$emit("update:content", {
+        index: this.index,
+        html: this.html
+      });
       this.editMode = false;
     },
     remove: function() {
-      this.$emit("remove:content", null);
+      this.$emit("remove:content", {
+        index: this.index,
+        html: this.html
+      });
       this.editMode = false;
     }
   }
