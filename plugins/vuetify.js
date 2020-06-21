@@ -1,5 +1,12 @@
 import Vue from 'vue'
-import Vuetify from 'vuetify/lib'
+import Vuetify, {
+  VApp, // required
+  VTooltip,
+  VToolbar,
+  VCard,
+  VIcon,
+  VBtn
+} from 'vuetify/lib'
 import colors from 'vuetify/es5/util/colors'
 
 Vue.use(Vuetify, {
@@ -11,5 +18,12 @@ Vue.use(Vuetify, {
     warning: colors.amber.base,
     error: colors.red.accent2,
     success: colors.green.base
+  },
+  components: {
+    VTooltip,
+    VToolbar,
+    VCard,
+    VIcon,
+    VBtn,
   }
 })

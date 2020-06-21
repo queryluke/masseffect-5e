@@ -11,6 +11,8 @@ export default {
       subclass: "",
       background: "",
       other_info: [],
+      traits: [],
+      feats: [],
       health: 0,
       max_health: 5,
       shields: 0,
