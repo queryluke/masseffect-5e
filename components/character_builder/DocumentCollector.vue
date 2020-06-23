@@ -12,15 +12,15 @@
           v-if="search.model != '' ") Add Selected Item
     v-layout
       v-expansion-panel.mb-2
-        v-expansion-panel-content(v-for="(item, ind) in character_table" :key="ind + '-' + type").large-panel
+        v-expansion-panel-content(v-for="(item, ind) in character_table" :key="ind + '-' + type + getHeading(character_table[ind])").large-panel
           div(slot="header") {{getHeading(character_table[ind])}}
           v-card.grey.lighten-3
             v-card-text
-              Editor(:content="character_table[ind]" :index="ind"
+              Editor(:content="item" :index="ind"
                 @update:content="modifyTable($event); $forceUpdate();"
-                @remove:content="removeFromTable($event)")
+                @remove:content="removeFromTable($event); $forceUpdate();")
     v-layout.xs-text-left()
-      v-btn(@click="addToTable(undefined, '<h1>New Item</h1>')") Add Custom Entry
+      v-btn(@click="addToTable(undefined, '<h1>New Item ' + (character_table.length+1) + '</h1>')") Add Custom Entry
 </template>
 
 <script>
