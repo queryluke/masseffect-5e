@@ -180,21 +180,25 @@
                     v-stepper-content(step="traits" v-if="selected_character_info_tab == 'traits'")
                       document-collector(
                         heading="Traits"
+                        type="traits"
                         :docs="character_traits"
                         :character_table="character.traits"
-                        v-on:add="character.traits.push($event)"
-                        v-on:modify="character.traits[$event.index] = $event.html; updateCharacter();"
-                        v-on:remove="character.traits.splice($event.index, 1); updateCharacter();"
+                        item-text="title"
+                        v-on:traits:add="character.traits.push($event)"
+                        v-on:traits:modify="character.traits[$event.index] = $event.html; updateCharacter();"
+                        v-on:traits:remove="character.traits.splice($event.index, 1); updateCharacter();"
                       )
 
                     v-stepper-content(step="class-features" v-if="selected_character_info_tab == 'class-features'")
                       document-collector(
-                        heading="Traits"
-                        :docs="character_traits"
-                        :character_table="character.traits"
-                        v-on:add="character.traits.push($event)"
-                        v-on:modify="character.traits[$event.index] = $event.html; updateCharacter();"
-                        v-on:remove="character.traits.splice($event.index, 1); updateCharacter();"
+                        heading="Class Features"
+                        type="class-features"
+                        :docs="class_features"
+                        :character_table="character.class_features"
+                        item-text="name"
+                        v-on:class-features:add="character.class_features.push($event)"
+                        v-on:class-features:modify="character.class_features[$event.index] = $event.html; updateCharacter();"
+                        v-on:class-features:remove="character.class_features.splice($event.index, 1); updateCharacter();"
                       )
                     //v-stepper-content(step="class-features" v-if="selected_character_info_tab == 'class-features'")
                         h3 Class Features
@@ -202,8 +206,19 @@
                         v-autocomplete(v-model="character.class_features" label="Selected Class Features" 
                         :items="class_features" item-text="name" return-object multiple)
                         class-feature.text-xs-left(v-for="feature in character.class_features" v-bind:key="feature.id" v-bind:id="feature.id")
-
+                    
                     v-stepper-content(step="feats" v-if="selected_character_info_tab == 'feats'")
+                      document-collector(
+                        heading="Feats"
+                        type="feats"
+                        :docs="feats"
+                        :character_table="character.feats"
+                        title="name"
+                        v-on:feats:add="character.feats.push($event)"
+                        v-on:feats:modify="character.feats[$event.index] = $event.html; updateCharacter();"
+                        v-on:feats:remove="character.feats.splice($event.index, 1); updateCharacter();"
+                      )
+                    //v-stepper-content(step="feats" v-if="selected_character_info_tab == 'feats'")
                       h3 Feats
                       br
                       v-autocomplete(v-model="character.feats" label="Selected Feats" :items="feats" item-text="name" return-object multiple)

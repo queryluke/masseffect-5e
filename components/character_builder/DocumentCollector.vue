@@ -5,22 +5,22 @@
     v-layout
       v-flex
         v-autocomplete(label="Search the documentation..." :items="docs" v-model="search.model"
-        :item-text="search.title" return-object)
+        :item-text="itemText" return-object)
       v-flex
         v-btn(
-          @click="addToTable('<h1>'+search.model[title]+'</h1><p>'+search.model[body]+'</p>'); search.model = '';"
+          @click="addToTable(search.model); search.model = '';"
           v-if="search.model != '' ") Add Selected Item
     v-layout
       v-expansion-panel.mb-2
-        v-expansion-panel-content(v-for="(item, ind) in character_table").large-panel
+        v-expansion-panel-content(v-for="(item, ind) in character_table" :key="ind + '-' + type").large-panel
           div(slot="header") {{getHeading(character_table[ind])}}
           v-card.grey.lighten-3
             v-card-text
               Editor(:content="character_table[ind]" :index="ind"
-                @update:content="modifyTable($event)"
+                @update:content="modifyTable($event); $forceUpdate();"
                 @remove:content="removeFromTable($event)")
     v-layout.xs-text-left()
-      v-btn(@click="addToTable('<h1>New Item</h1>')") Add Custom Entry
+      v-btn(@click="addToTable(undefined, '<h1>New Item</h1>')") Add Custom Entry
 </template>
 
 <script>
@@ -30,17 +30,21 @@ import Editor from '~/components/character_builder/Editor.vue';
 export default {
   components: {Editor},
   props: {
+    template: {
+      type: String,
+      default: () => {return '<h1>Item not found in docs</h1>'}
+    },
     heading: {
       type: String,
       default: () => {return "Please Specify a Heading Text"}
     },
-    title: {
+    itemText: {
       type: String,
       default: () => {return "title"}
     },
-    body: {
+    type: {
       type: String,
-      default: () => {return "body"}
+      default: () => {return "default"}
     },
     docs: {
       type: Array,
@@ -54,28 +58,54 @@ export default {
   data: function() {
     return {
       search: {
-        model: '',
-        title: this.title,
-        body: this.body,
+        model: ''
       }
+    }
+  },
+  computed: {
+    event: function() {
+      return this.type;
     }
   },
   methods: {
     // Bubbles up the value to the inherited character array (ie: traits)
-    addToTable: function(value) {
-      this.$emit("add", value);
+    addToTable: function(model, value) {
+      
+      if (!value) {
+        switch(this.type) {
+          case 'traits':
+            value = '<h1>'+model.title+'</h1><p>'+model.body+'</p>'
+            break;
+          case 'class-features':
+            model = require(`~/static/data/class_features/${model.id}.md`);
+            value = '<h1>'+model.attributes.name+'</h1>'  + model.html;
+            break;
+          default:
+            value = '<h1>Not Found</h1>';
+        }
+      }
+
+      console.log("Payload for add event: ", value);
+      this.$emit(this.event+":add", value);
+
+      
     },
     removeFromTable: function(event) {
       console.log("Payload for remove event: ", event);
-      this.$emit("remove", event);
+      this.$emit(this.event+":remove", event);
     },
     modifyTable: function(event) {
       console.log("Payload for modify event: ", event);
-      this.$emit("modify", event);
+      this.$emit(this.event+":modify", event);
     },
     // Grabs the text out of the first found tag in the html
     getHeading: function(html) {
-      var heading = /(?<=\>)(?!\<)(.*?)(?=\<)(?<!\>)/.exec(html)[0] || "No Heading Found";
+      var heading = "No Heading Found";
+      try {
+        heading = /(?<=\>)(?!\<)(.*?)(?=\<)(?<!\>)/.exec(html)[0];
+      } catch {
+        heading = "No Heading Found";
+      }
       const headingLength = 50;
       if (heading.length > headingLength) {
         heading = heading.substring(0, 50);

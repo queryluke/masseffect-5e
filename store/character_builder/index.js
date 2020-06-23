@@ -12,6 +12,7 @@ export default {
       background: "",
       other_info: [],
       traits: [],
+      class_features: [],
       feats: [],
       health: 0,
       max_health: 5,
