@@ -171,7 +171,7 @@
                 v-layout(row)
                   v-flex(md2)
                     v-stepper-step(editable step="traits" edit-icon="mdi-checkbox-blank-circle") Traits
-                    v-stepper-step(editable step="class-features") Class Features
+                    v-stepper-step(editable step="class_features") Class Features
                     v-stepper-step(editable step="feats") Feats
                     v-stepper-step(editable step="backgrounds") Backgrounds
                     v-stepper-step(editable step="other") Other
@@ -189,97 +189,52 @@
                         v-on:traits:remove="character.traits.splice($event.index, 1); updateCharacter();"
                       )
 
-                    v-stepper-content(step="class-features" v-if="selected_character_info_tab == 'class-features'")
+                    v-stepper-content(step="class_features" v-if="selected_character_info_tab == 'class_features'")
                       document-collector(
                         heading="Class Features"
-                        type="class-features"
+                        type="class_features"
                         :docs="class_features"
                         :character_table="character.class_features"
                         item-text="name"
-                        v-on:class-features:add="character.class_features.push($event)"
-                        v-on:class-features:modify="character.class_features[$event.index] = $event.html; updateCharacter();"
-                        v-on:class-features:remove="character.class_features.splice($event.index, 1); updateCharacter();"
+                        v-on:class_features:add="character.class_features.push($event)"
+                        v-on:class_features:modify="character.class_features[$event.index] = $event.html; updateCharacter();"
+                        v-on:class_features:remove="character.class_features.splice($event.index, 1); updateCharacter();"
                       )
-                    //v-stepper-content(step="class-features" v-if="selected_character_info_tab == 'class-features'")
-                        h3 Class Features
-                        br
-                        v-autocomplete(v-model="character.class_features" label="Selected Class Features" 
-                        :items="class_features" item-text="name" return-object multiple)
-                        class-feature.text-xs-left(v-for="feature in character.class_features" v-bind:key="feature.id" v-bind:id="feature.id")
-                    
+
                     v-stepper-content(step="feats" v-if="selected_character_info_tab == 'feats'")
                       document-collector(
                         heading="Feats"
                         type="feats"
                         :docs="feats"
                         :character_table="character.feats"
-                        title="name"
+                        item-text="name"
                         v-on:feats:add="character.feats.push($event)"
                         v-on:feats:modify="character.feats[$event.index] = $event.html; updateCharacter();"
                         v-on:feats:remove="character.feats.splice($event.index, 1); updateCharacter();"
                       )
-                    //v-stepper-content(step="feats" v-if="selected_character_info_tab == 'feats'")
-                      h3 Feats
-                      br
-                      v-autocomplete(v-model="character.feats" label="Selected Feats" :items="feats" item-text="name" return-object multiple)
-                      v-expansion-panel.my-5
-                        v-expansion-panel-content(v-for="feat in character.feats" :key="feat.id")
-                          div(slot="header")
-                            v-layout
-                              v-flex.xs2.sm1
-                                v-avatar(:class="[feat.new ? 'deep-purple' : 'deep-orange']" size="30px")
-                                  span(v-if="feat.new").white--text New
-                                  span(v-else).white--text PHB
-                              v-flex.xs10.sm5.lg2.pt-1
-                                strong {{ feat.name }}
-                              v-flex.hidden-md-and-down.lg3
-                                div(v-if="feat.prerequisite") {{ feat.prerequisite }}
-                                div(v-else) -
-                              v-flex.hidden-xs-only.sm6.lg6 {{ feat.note }}
-                          v-card
-                            v-card-text.grey.lighten-3
-                              p.display-1.font-weight-thin {{ feat.name }}
-                              div(v-if="feat.prerequisite")
-                                p #[strong Prerequisite]: #[em {{ feat.prerequisite }}]
-                              markdown-file(:id="feat.id" itemType="feats")
 
                     v-stepper-content(step="backgrounds" v-if="selected_character_info_tab == 'backgrounds'")
-                      h3 Backgrounds
-                      br
-                      v-autocomplete(v-model="character.backgrounds" label="Selected Backgrounds" :items="backgrounds" item-text="name" return-object multiple)
-                      v-expansion-panel.mb-2
-                        v-expansion-panel-content(v-for="item in character.backgrounds" v-bind:key="item.id").large-panel
-                          div(slot="header") {{ item.name }}
-                          v-card.grey.lighten-3
-                            v-card-text
-                              p.display-1.font-weight-thin {{ item.name }}
-                              markdown-file(:id="item.id" itemType="backgrounds")
-
+                      document-collector(
+                          heading="Backgrounds"
+                          type="backgrounds"
+                          :docs="backgrounds"
+                          :character_table="character.backgrounds"
+                          item-text="name"
+                          v-on:backgrounds:add="character.backgrounds.push($event)"
+                          v-on:backgrounds:modify="character.backgrounds[$event.index] = $event.html; updateCharacter();"
+                          v-on:backgrounds:remove="character.backgrounds.splice($event.index, 1); updateCharacter();"
+                        )
+                    
                     v-stepper-content.text-xs-left(step="other" v-if="selected_character_info_tab == 'other'")
-                      h3 Other
-                      br
-                      v-sheet(color="grey")
-                        v-expansion-panel
-                          v-expansion-panel-content(v-for="(info, ind) in character.other_info" :key="ind")
-                            template(v-slot:header)
-                              div.title {{info.title}}
-                            v-card
-                              v-card-text {{info.description}}
-                              v-card-actions(style="float: right;")
-                                v-btn(icon color="primary"
-                                @click="character.other_info.splice(ind, 1)")
-                                  v-icon delete
-
-                          v-expansion-panel-content
-                            template(v-slot:header)
-                                div + Add Info
-                            v-card
-                              v-card-text
-                                v-text-field(v-model="other_info.title" label="Title")
-                                v-text-field(v-model="other_info.description" label="Description")
-                              v-card-actions(style="float: right;")
-                                v-btn(@click="character.other_info.push({title: other_info.title, description: other_info.description})") Save
-
+                      document-collector(
+                          heading="Other"
+                          type="other"
+                          :show-search="false"
+                          :character_table="character.other_info"
+                          v-on:other:add="character.other_info.push($event)"
+                          v-on:other:modify="character.other_info[$event.index] = $event.html; updateCharacter();"
+                          v-on:other:remove="character.other_info.splice($event.index, 1); updateCharacter();"
+                        )
 
           v-tab-item(key="powers")
             div(class="item-area")

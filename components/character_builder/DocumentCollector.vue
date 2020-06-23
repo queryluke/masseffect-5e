@@ -2,7 +2,7 @@
   div
     h3 {{heading}}
     br
-    v-layout
+    v-layout(v-if="showSearch")
       v-flex
         v-autocomplete(label="Search the documentation..." :items="docs" v-model="search.model"
         :item-text="itemText" return-object)
@@ -30,6 +30,10 @@ import Editor from '~/components/character_builder/Editor.vue';
 export default {
   components: {Editor},
   props: {
+    showSearch: {
+      type: Boolean,
+      default: () => {return true;}
+    },
     template: {
       type: String,
       default: () => {return '<h1>Item not found in docs</h1>'}
@@ -70,25 +74,16 @@ export default {
   methods: {
     // Bubbles up the value to the inherited character array (ie: traits)
     addToTable: function(model, value) {
-      
       if (!value) {
-        switch(this.type) {
-          case 'traits':
-            value = '<h1>'+model.title+'</h1><p>'+model.body+'</p>'
-            break;
-          case 'class-features':
-            model = require(`~/static/data/class_features/${model.id}.md`);
-            value = '<h1>'+model.attributes.name+'</h1>'  + model.html;
-            break;
-          default:
-            value = '<h1>Not Found</h1>';
+        try {
+          model = require(`~/static/data/${this.type}/${model.id}.md`);//'<h1>'+model.title+'</h1><p>'+model.body+'</p>'
+          value = '<h1>'+model.attributes.name+'</h1>'  + model.html;
+        } catch {
+          value = '<h1>Not Found</h1><p>Something went wrong when trying to add this item...</p>';
         }
       }
-
       console.log("Payload for add event: ", value);
       this.$emit(this.event+":add", value);
-
-      
     },
     removeFromTable: function(event) {
       console.log("Payload for remove event: ", event);

@@ -14,6 +14,7 @@ export default {
       traits: [],
       class_features: [],
       feats: [],
+      backgrounds: [],
       health: 0,
       max_health: 5,
       shields: 0,
