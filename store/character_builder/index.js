@@ -3,6 +3,7 @@ export default {
   state: {
     // Default "empty" character data model
     character: {
+      version: "1.0.0",
       name: "New Character",
       image: "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png", 
       level: 1,

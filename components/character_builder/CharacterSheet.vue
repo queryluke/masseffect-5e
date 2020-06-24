@@ -8,7 +8,7 @@
           v-text-field(v-model="character.name" label="Character Name")
 
         v-flex(xs4)
-          save-load(:character="character" @load="character = $event")
+          save-load(:character="character" @load="loadCharacterFromFile($event)")
 
         v-flex(xs4)
           img(title="Mass Effect 5e Logo" src="/images/me5e_logo_450w.png" alt="Mass Effect 5e logo")
@@ -535,10 +535,19 @@ export default {
   },
 
   created() {
+    console.log("Character before create: ", this.character);
     this.character = this.$store.state.characterBuilder.character;
+    console.log("Character after create: ", this.character);
   },
 
   methods: {
+    loadCharacterFromFile: function(payload) {
+      var merge = {
+        ...this.character,
+        ...payload
+      }
+      this.character = merge;
+    },
     updateCharacter: function() {
       if (this.character) {
         this.$store.commit('characterBuilder/save', this.character);
