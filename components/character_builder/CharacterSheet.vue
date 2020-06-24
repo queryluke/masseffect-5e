@@ -17,54 +17,52 @@
       v-layout
         // Mods and class info
         v-flex(xs9)
+          // Row 1
           v-layout(row)
             v-flex
-              v-text-field(v-model="character.level" label="Level")
-
+              v-text-field(v-model="character.level" label="Level" type="number" :min="1" :max="20"
+              :rules="[v => (v <= 20 && v >= 1) || 'Level must be between 1-20']") 
             v-flex
               v-select(v-model="character.race" :items="races" label="Race")
-
             v-flex
               v-select(v-model="character.class" :items="$options.class_data" item-text="name" label="Class" return-object)
-
             v-flex
               v-select(v-model="character.subclass" :items="character.class.subclasses" item-text="name" label="Sub-Class" return-object)
-
             v-flex
               v-select(v-model="character.background" :items="backgrounds" item-text="name" label="Background" return-object)
-
+          // Row 2
           v-layout(row)
-            v-flex
-              v-text-field(v-model="character.max_health" label="Max HP")
-
             v-flex
               v-text-field(v-model="character.ac" label="AC")
-
             v-flex
               v-text-field(v-model="character.initiative" label="Initiative")
-
             v-flex
               v-text-field(v-model="character.movement" label="Movement")
-
             v-flex
               v-text-field(v-model="characterProf" label="Proficiency")
-
             v-flex
               v-text-field(v-model="character.xp" label="XP")
-
-          v-layout(row)
+          // Health, Shields, Barrier
+          v-layout.counter-area(row)
             v-flex
               v-card
                 character-power-counter(label="Health" :value="character.health" :max-value="Number(character.max_health)"
-                  @change="character.health = $event" :show-min="false" :show-max="true")
+                  @change="character.health = $event" :show-min="false")
+                v-text-field(style="padding: 30px 30px 0;" v-model="character.max_health" label="Max HP")
             v-flex
               v-card
-                character-power-counter(label="Shields" :value="character.shields" :max-value="5"
-                  @change="character.shields = $event" :show-min="false" :show-max="true")
+                character-power-counter(label="Shields" :value="character.shields" :max-value="Number(character.max_shields)"
+                  @change="character.shields = $event" :show-min="false")
+                v-text-field(style="padding: 30px 30px 0;" v-model="character.max_shields" label="Max Shields")
+
             v-flex(v-if="hasPowers(bioticPowers) || character.class.id == 'sentinel'")
               v-card
                 character-power-counter(label="Barrier Ticks" :value="character.barrier_ticks" :max-value="character.class.progression[character.level-1].barrierTicks || 0"
-                  @change="character.barrier_ticks = $event" :show-min="false" :show-max="true")
+                  @change="character.barrier_ticks = $event" :show-min="false")
+                character-power-counter(label="Barrier Uses Remaining" :value="character.barrier_uses"
+                    :max-value="character.class.progression[character.level-1].barrierUses || 0" :show-min="false"
+                    @change="character.barrier_uses = $event")
+                
 
         // Character Image
         v-flex(xs3)
@@ -289,10 +287,6 @@
                           span Spell DC
                           span(style="text-transform: uppercase;") ({{character.power_attribute}})
                         td {{calcSpellDC(power_attribute)}}
-                  div
-                    character-power-counter(label="Barrier Uses Remaining" :value="character.barrier_uses"
-                    :max-value="character.class.progression[character.level-1].barrierUses || 0"
-                    @change="character.barrier_uses = $event")
 
                   div(v-for="(slot, ind) in spell_slots")
                     character-power-counter( :value="character.biotics.spell_slots[ind]" :max-value="Number(slot)" v-if="slot"
@@ -310,10 +304,6 @@
                       tr
                         td Spell Level
                         td {{spell_level_limit}}
-                  div
-                    character-power-counter(label="Barrier Uses Remaining" :value="character.barrier_uses"
-                    :max-value="character.class.progression[character.level-1].barrierUses || 0"
-                    @change="character.barrier_uses = $event")
 
                   div
                     character-power-counter(label="Spell Slots" :value="character.tech.tech_points" :max-value="spell_slots"
@@ -333,6 +323,12 @@
 
   .character-name input {
     font-size: 30px;
+  }
+
+  .counter-area {
+    .v-card {
+      min-height: 180px;
+    }
   }
 
   .item-area {
@@ -516,6 +512,9 @@ export default {
       } finally {
         return slots;
       }
+    },
+    character_level: function() {
+      return this.character.level;
     }
   },
 
@@ -528,6 +527,10 @@ export default {
           this.$store.commit('characterBuilder/save', this.character);
         }
       }
+    },
+    character_level:  function(newVal, oldVal) {
+      console.log("Character Level Changed")
+      this.character.level = Math.max(1, Math.min(newVal, 20));
     }
   },
 

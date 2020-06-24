@@ -18,6 +18,7 @@ export default {
       health: 0,
       max_health: 5,
       shields: 0,
+      max_shields: 5,
       barrier_ticks: 0,
       stats: {
         str: 10, dex: 10, con: 10, int: 10, wis: 10, cha: 10
