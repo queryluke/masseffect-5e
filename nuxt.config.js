@@ -74,6 +74,7 @@ module.exports = {
   plugins: [
     '@/plugins/vuetify',
     { src: '@/plugins/persistentState.js', ssr: false },
+    { src: '@/plugins/TiptapVuetify', mode: 'client' },
     '@/plugins/filters/index.js',
     '@/plugins/vue2-filters',
     '@/plugins/globals'
@@ -146,7 +147,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    transpile: ['vuetify/lib'],
+    transpile: ['vuetify/lib', 'tiptap-vuetify'],
     plugins: [new VuetifyLoaderPlugin()],
     loaders: {
       stylus: {

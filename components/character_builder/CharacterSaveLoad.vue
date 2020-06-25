@@ -2,7 +2,22 @@
   div
     v-btn(@click="saveFile()") Export Character Sheet
     input(type="file" ref="file" style="display: none" @change="loadTextFromFile" @load="character = $event")
-    v-btn(@click="$refs.file.click()") Import Character Sheet
+    
+    v-dialog(v-model="dialog" width="500")
+      template(v-slot:activator="{on}")
+        v-btn(v-on="on") Import Character Sheet
+      
+      v-card
+        v-card-title(primary-title)
+          h1 Warning!!
+        v-card-text()
+         p Importing a character will overwrite your currently open character.
+         p Are you sure you want to continue?
+        v-divider
+        v-card-actions
+          v-btn(color="primary" @click="dialog = false;") No
+          v-btn(@click="$refs.file.click(); dialog = false;") Yes
+
 </template>
 
 <script>
@@ -11,6 +26,11 @@
       character: {
         type: Object,
         default: () => {return {} }
+      }
+    },
+    data: function() {
+      return {
+        dialog: false
       }
     },
     methods: {
