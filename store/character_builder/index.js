@@ -3,6 +3,7 @@ export default {
   state: {
     // Default "empty" character data model
     character: {
+      version: "1.0.0",
       name: "New Character",
       image: "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png", 
       level: 1,
@@ -11,9 +12,14 @@ export default {
       subclass: "",
       background: "",
       other_info: [],
+      traits: [],
+      class_features: [],
+      feats: [],
+      backgrounds: [],
       health: 0,
       max_health: 5,
       shields: 0,
+      max_shields: 5,
       barrier_ticks: 0,
       stats: {
         str: 10, dex: 10, con: 10, int: 10, wis: 10, cha: 10

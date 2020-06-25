@@ -8,7 +8,7 @@
           v-text-field(v-model="character.name" label="Character Name")
 
         v-flex(xs4)
-          save-load(:character="character" @load="character = $event")
+          save-load(:character="character" @load="loadCharacterFromFile($event)")
 
         v-flex(xs4)
           img(title="Mass Effect 5e Logo" src="/images/me5e_logo_450w.png" alt="Mass Effect 5e logo")
@@ -17,54 +17,52 @@
       v-layout
         // Mods and class info
         v-flex(xs9)
+          // Row 1
           v-layout(row)
             v-flex
-              v-text-field(v-model="character.level" label="Level")
-
+              v-text-field(v-model="character.level" label="Level" type="number" :min="1" :max="20"
+              :rules="[v => (v <= 20 && v >= 1) || 'Level must be between 1-20']") 
             v-flex
               v-select(v-model="character.race" :items="races" label="Race")
-
             v-flex
               v-select(v-model="character.class" :items="$options.class_data" item-text="name" label="Class" return-object)
-
             v-flex
               v-select(v-model="character.subclass" :items="character.class.subclasses" item-text="name" label="Sub-Class" return-object)
-
             v-flex
               v-select(v-model="character.background" :items="backgrounds" item-text="name" label="Background" return-object)
-
+          // Row 2
           v-layout(row)
-            v-flex
-              v-text-field(v-model="character.max_health" label="Max HP")
-
             v-flex
               v-text-field(v-model="character.ac" label="AC")
-
             v-flex
               v-text-field(v-model="character.initiative" label="Initiative")
-
             v-flex
               v-text-field(v-model="character.movement" label="Movement")
-
             v-flex
               v-text-field(v-model="characterProf" label="Proficiency")
-
             v-flex
               v-text-field(v-model="character.xp" label="XP")
-
-          v-layout(row)
+          // Health, Shields, Barrier
+          v-layout.counter-area(row)
             v-flex
               v-card
                 character-power-counter(label="Health" :value="character.health" :max-value="Number(character.max_health)"
-                  @change="character.health = $event" :show-min="false" :show-max="true")
+                  @change="character.health = $event" :show-min="false")
+                v-text-field(style="padding: 30px 30px 0;" v-model="character.max_health" label="Max HP")
             v-flex
               v-card
-                character-power-counter(label="Shields" :value="character.shields" :max-value="5"
-                  @change="character.shields = $event" :show-min="false" :show-max="true")
+                character-power-counter(label="Shields" :value="character.shields" :max-value="Number(character.max_shields)"
+                  @change="character.shields = $event" :show-min="false")
+                v-text-field(style="padding: 30px 30px 0;" v-model="character.max_shields" label="Max Shields")
+
             v-flex(v-if="hasPowers(bioticPowers) || character.class.id == 'sentinel'")
               v-card
                 character-power-counter(label="Barrier Ticks" :value="character.barrier_ticks" :max-value="character.class.progression[character.level-1].barrierTicks || 0"
-                  @change="character.barrier_ticks = $event" :show-min="false" :show-max="true")
+                  @change="character.barrier_ticks = $event" :show-min="false")
+                character-power-counter(label="Barrier Uses Remaining" :value="character.barrier_uses"
+                    :max-value="character.class.progression[character.level-1].barrierUses || 0" :show-min="false"
+                    @change="character.barrier_uses = $event")
+                
 
         // Character Image
         v-flex(xs3)
@@ -171,86 +169,70 @@
                 v-layout(row)
                   v-flex(md2)
                     v-stepper-step(editable step="traits" edit-icon="mdi-checkbox-blank-circle") Traits
-                    v-stepper-step(editable step="class-features") Class Features
+                    v-stepper-step(editable step="class_features") Class Features
                     v-stepper-step(editable step="feats") Feats
                     v-stepper-step(editable step="backgrounds") Backgrounds
                     v-stepper-step(editable step="other") Other
 
                   v-flex(md10 style="min-height: 200px;")
                     v-stepper-content(step="traits" v-if="selected_character_info_tab == 'traits'")
-                      h3 Traits
-                      br
-                      v-autocomplete(v-model="character.traits" label="Selected Traits" :items="racial_traits" item-text="title" return-object multiple)
-                      racial-trait.text-xs-left(v-for="trait in character.traits" v-bind:key="trait.id" v-bind:id="trait.id")
+                      document-collector(
+                        heading="Traits"
+                        type="traits"
+                        :docs="character_traits"
+                        :character_table="character.traits"
+                        item-text="title"
+                        v-on:traits:add="character.traits.push($event)"
+                        v-on:traits:modify="character.traits[$event.index] = $event.html; updateCharacter();"
+                        v-on:traits:remove="character.traits.splice($event.index, 1); updateCharacter();"
+                      )
 
-                    v-stepper-content(step="class-features" v-if="selected_character_info_tab == 'class-features'")
-                        h3 Class Features
-                        br
-                        v-autocomplete(v-model="character.class_features" label="Selected Class Features" :items="class_features" item-text="name" return-object multiple)
-                        class-feature.text-xs-left(v-for="feature in character.class_features" v-bind:key="feature.id" v-bind:id="feature.id")
+                    v-stepper-content(step="class_features" v-if="selected_character_info_tab == 'class_features'")
+                      document-collector(
+                        heading="Class Features"
+                        type="class_features"
+                        :docs="class_features"
+                        :character_table="character.class_features"
+                        item-text="name"
+                        v-on:class_features:add="character.class_features.push($event)"
+                        v-on:class_features:modify="character.class_features[$event.index] = $event.html; updateCharacter();"
+                        v-on:class_features:remove="character.class_features.splice($event.index, 1); updateCharacter();"
+                      )
 
                     v-stepper-content(step="feats" v-if="selected_character_info_tab == 'feats'")
-                      h3 Feats
-                      br
-                      v-autocomplete(v-model="character.feats" label="Selected Feats" :items="feats" item-text="name" return-object multiple)
-                      v-expansion-panel.my-5
-                        v-expansion-panel-content(v-for="feat in character.feats" :key="feat.id")
-                          div(slot="header")
-                            v-layout
-                              v-flex.xs2.sm1
-                                v-avatar(:class="[feat.new ? 'deep-purple' : 'deep-orange']" size="30px")
-                                  span(v-if="feat.new").white--text New
-                                  span(v-else).white--text PHB
-                              v-flex.xs10.sm5.lg2.pt-1
-                                strong {{ feat.name }}
-                              v-flex.hidden-md-and-down.lg3
-                                div(v-if="feat.prerequisite") {{ feat.prerequisite }}
-                                div(v-else) -
-                              v-flex.hidden-xs-only.sm6.lg6 {{ feat.note }}
-                          v-card
-                            v-card-text.grey.lighten-3
-                              p.display-1.font-weight-thin {{ feat.name }}
-                              div(v-if="feat.prerequisite")
-                                p #[strong Prerequisite]: #[em {{ feat.prerequisite }}]
-                              markdown-file(:id="feat.id" itemType="feats")
+                      document-collector(
+                        heading="Feats"
+                        type="feats"
+                        :docs="feats"
+                        :character_table="character.feats"
+                        item-text="name"
+                        v-on:feats:add="character.feats.push($event)"
+                        v-on:feats:modify="character.feats[$event.index] = $event.html; updateCharacter();"
+                        v-on:feats:remove="character.feats.splice($event.index, 1); updateCharacter();"
+                      )
 
                     v-stepper-content(step="backgrounds" v-if="selected_character_info_tab == 'backgrounds'")
-                      h3 Backgrounds
-                      br
-                      v-autocomplete(v-model="character.backgrounds" label="Selected Backgrounds" :items="backgrounds" item-text="name" return-object multiple)
-                      v-expansion-panel.mb-2
-                        v-expansion-panel-content(v-for="item in character.backgrounds" v-bind:key="item.id").large-panel
-                          div(slot="header") {{ item.name }}
-                          v-card.grey.lighten-3
-                            v-card-text
-                              p.display-1.font-weight-thin {{ item.name }}
-                              markdown-file(:id="item.id" itemType="backgrounds")
-
+                      document-collector(
+                          heading="Backgrounds"
+                          type="backgrounds"
+                          :docs="backgrounds"
+                          :character_table="character.backgrounds"
+                          item-text="name"
+                          v-on:backgrounds:add="character.backgrounds.push($event)"
+                          v-on:backgrounds:modify="character.backgrounds[$event.index] = $event.html; updateCharacter();"
+                          v-on:backgrounds:remove="character.backgrounds.splice($event.index, 1); updateCharacter();"
+                        )
+                    
                     v-stepper-content.text-xs-left(step="other" v-if="selected_character_info_tab == 'other'")
-                      h3 Other
-                      br
-                      v-sheet(color="grey")
-                        v-expansion-panel
-                          v-expansion-panel-content(v-for="(info, ind) in character.other_info" :key="ind")
-                            template(v-slot:header)
-                              div.title {{info.title}}
-                            v-card
-                              v-card-text {{info.description}}
-                              v-card-actions(style="float: right;")
-                                v-btn(icon color="primary"
-                                @click="character.other_info.splice(ind, 1)")
-                                  v-icon delete
-
-                          v-expansion-panel-content
-                            template(v-slot:header)
-                                div + Add Info
-                            v-card
-                              v-card-text
-                                v-text-field(v-model="other_info.title" label="Title")
-                                v-text-field(v-model="other_info.description" label="Description")
-                              v-card-actions(style="float: right;")
-                                v-btn(@click="character.other_info.push({title: other_info.title, description: other_info.description})") Save
-
+                      document-collector(
+                          heading="Other"
+                          type="other"
+                          :show-search="false"
+                          :character_table="character.other_info"
+                          v-on:other:add="character.other_info.push($event)"
+                          v-on:other:modify="character.other_info[$event.index] = $event.html; updateCharacter();"
+                          v-on:other:remove="character.other_info.splice($event.index, 1); updateCharacter();"
+                        )
 
           v-tab-item(key="powers")
             div(class="item-area")
@@ -305,10 +287,6 @@
                           span Spell DC
                           span(style="text-transform: uppercase;") ({{character.power_attribute}})
                         td {{calcSpellDC(power_attribute)}}
-                  div
-                    character-power-counter(label="Barrier Uses Remaining" :value="character.barrier_uses"
-                    :max-value="character.class.progression[character.level-1].barrierUses || 0"
-                    @change="character.barrier_uses = $event")
 
                   div(v-for="(slot, ind) in spell_slots")
                     character-power-counter( :value="character.biotics.spell_slots[ind]" :max-value="Number(slot)" v-if="slot"
@@ -326,10 +304,6 @@
                       tr
                         td Spell Level
                         td {{spell_level_limit}}
-                  div
-                    character-power-counter(label="Barrier Uses Remaining" :value="character.barrier_uses"
-                    :max-value="character.class.progression[character.level-1].barrierUses || 0"
-                    @change="character.barrier_uses = $event")
 
                   div
                     character-power-counter(label="Spell Slots" :value="character.tech.tech_points" :max-value="spell_slots"
@@ -349,6 +323,12 @@
 
   .character-name input {
     font-size: 30px;
+  }
+
+  .counter-area {
+    .v-card {
+      min-height: 180px;
+    }
   }
 
   .item-area {
@@ -432,6 +412,8 @@ import SpellList from '~/components/spell/SpellList.vue'
 import ArmorList from '~/components/armor_set/ArmorSetList.vue'
 import RacialTrait from '~/components/race/RacialTrait.vue'
 import ClassFeature from '~/components/class/ClassFeature.vue'
+import DocumentCollector from '~/components/character_builder/DocumentCollector.vue';
+import Editor from '~/components/character_builder/Editor.vue';
 
 import AdeptData from "~/static/data/classes/adept.json";
 import EngineerData from "~/static/data/classes/engineer.json";
@@ -441,11 +423,12 @@ import SoldierData from "~/static/data/classes/soldier.json";
 import VanguardData from "~/static/data/classes/vanguard.json";
 
 export default {
-  components: {SaveLoad, CharacterPowerCounter, WeaponList, ArmorList, SpellList, RacialTrait, ClassFeature},
+  components: {SaveLoad, CharacterPowerCounter, WeaponList, ArmorList, SpellList, RacialTrait, ClassFeature, DocumentCollector, Editor},
   class_data: [AdeptData,EngineerData,InfiltratorData,SentinelData,SoldierData,VanguardData],
   data: () => ({
     image_picker: false,
     selected_character_info_tab: "traits",
+    selected_trait: "",
     pickWeapon: false,
     removeWeapon: false,
     classData: [AdeptData,EngineerData,InfiltratorData,SentinelData,SoldierData,VanguardData],
@@ -474,7 +457,8 @@ export default {
         {text: 'Prof',value: 'prof'},
         {text: 'Adv',value: 'advantage'}
       ]
-    }
+    },
+    componentKey: 0
   }),
 
   computed: {
@@ -484,7 +468,7 @@ export default {
     character_docs: function() {
       return this.getDocuments('character');
     },
-    racial_traits: function(){
+    character_traits: function(){
       return this.getDocuments('character','traits');
     },
     class_features: function(){
@@ -528,6 +512,9 @@ export default {
       } finally {
         return slots;
       }
+    },
+    character_level: function() {
+      return this.character.level;
     }
   },
 
@@ -536,20 +523,37 @@ export default {
       immediate: true,
       deep: true,
       handler: function() {
-        this.pickWeapon = false;
-        this.removeWeapon = false;
         if (this.character) {
           this.$store.commit('characterBuilder/save', this.character);
         }
       }
+    },
+    character_level:  function(newVal, oldVal) {
+      console.log("Character Level Changed")
+      this.character.level = Math.max(1, Math.min(newVal, 20));
     }
   },
 
   created() {
+    console.log("Character before create: ", this.character);
     this.character = this.$store.state.characterBuilder.character;
+    console.log("Character after create: ", this.character);
   },
 
   methods: {
+    loadCharacterFromFile: function(payload) {
+      var merge = {
+        ...this.character,
+        ...payload
+      }
+      this.character = merge;
+    },
+    updateCharacter: function() {
+      if (this.character) {
+        this.$store.commit('characterBuilder/save', this.character);
+      }
+      this.$forceUpdate();
+    },
     hasPowers: function(power_arr) {
       var c_id = this.character.class.id;
       var arr = power_arr;
