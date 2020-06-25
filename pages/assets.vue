@@ -1,5 +1,6 @@
 <template lang="pug">
   v-content.blue-grey.lighten-4
+
     v-container
       // PDF of Rules
       h2.display-1.font-weight-thin Player's Manual PDF
@@ -24,12 +25,16 @@
         li
           a(href="https://drive.google.com/drive/folders/1WpR2M9CpNKKRYTS_Gzi3Woq8NscRkxOY?usp=sharing" target="_blank") Other items (spell card box, equipment sheets, etc.)
 
+      v-alert(:value="true" type="info").mt-3.
+        Please note that you have view-only access to these documents. If you would like to edit a document (such as using a character sheet for your
+        own character), you will need to make a copy of the document: #[strong File > Make a copy]. If that option is greyed out, you need to sign
+        into your google account to make a copy in your personal Google Drive.
+
       hr.ma-3
 
       // Spell Cards
       h2.display-1.font-weight-thin Spell Cards
       v-btn(to="/print/spell-cards") View
-
 </template>
 
 <script>
