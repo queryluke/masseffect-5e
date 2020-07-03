@@ -12,58 +12,57 @@
 </template>
 
 <script>
-  import weaponProperties from '~/static/data/weapon_properties.json'
-  import {createNamespacedHelpers} from 'vuex'
-  const {mapActions, mapGetters} = createNamespacedHelpers('itemList')
+import { createNamespacedHelpers } from 'vuex'
+import weaponProperties from '~/static/data/weapon_properties.json'
+const { mapActions, mapGetters } = createNamespacedHelpers('itemList')
 
-  export default {
-    props: {
-      itemKey: {
-        type: String,
-        default: ''
-      }
-    },
-    data () {
-      const propertyOptions = weaponProperties.map(p => p.name).filter(p => !['Heat','Melee','Range','Weight'].includes(p))
-      return {
-        typeOptions: [ 'Assault Rifle', 'Heavy Pistol', 'Heavy Weapon', 'Melee', 'SMG', 'Shotgun', 'Sniper Rifle' ],
-        propertyOptions
-      }
-    },
-    computed: {
-      ...mapGetters(['filters', 'rarityOptions']),
-      typeFilter: {
-        get () {
-          return this.filters[this.itemKey].type
-        },
-        set (value) {
-          this.updateFilter({key: this.itemKey, filterKey: 'type', value})
-        }
+export default {
+  props: {
+    itemKey: {
+      type: String,
+      default: ''
+    }
+  },
+  data () {
+    const propertyOptions = weaponProperties.map(p => p.name).filter(p => !['Heat', 'Melee', 'Range', 'Weight'].includes(p))
+    return {
+      typeOptions: ['Assault Rifle', 'Heavy Pistol', 'Heavy Weapon', 'Melee', 'SMG', 'Shotgun', 'Sniper Rifle'],
+      propertyOptions
+    }
+  },
+  computed: {
+    ...mapGetters(['filters', 'rarityOptions']),
+    typeFilter: {
+      get () {
+        return this.filters[this.itemKey].type
       },
-      rarityFilter: {
-        get () {
-          return this.filters[this.itemKey].rarity
-        },
-        set (value) {
-          this.updateFilter({key: this.itemKey, filterKey: 'rarity', value})
-        }
-      },
-      propertyFilter: {
-        get () {
-          return this.filters[this.itemKey].property
-        },
-        set (value) {
-          this.updateFilter({key: this.itemKey, filterKey: 'property', value})
-        }
+      set (value) {
+        this.updateFilter({ key: this.itemKey, filterKey: 'type', value })
       }
     },
-    methods: {
-      ...mapActions(['updateFilter']),
-      reset () {
-        this.rarityFilter = []
-        this.typeFilter = []
+    rarityFilter: {
+      get () {
+        return this.filters[this.itemKey].rarity
+      },
+      set (value) {
+        this.updateFilter({ key: this.itemKey, filterKey: 'rarity', value })
+      }
+    },
+    propertyFilter: {
+      get () {
+        return this.filters[this.itemKey].property
+      },
+      set (value) {
+        this.updateFilter({ key: this.itemKey, filterKey: 'property', value })
       }
     }
+  },
+  methods: {
+    ...mapActions(['updateFilter']),
+    reset () {
+      this.rarityFilter = []
+      this.typeFilter = []
+    }
   }
+}
 </script>
-

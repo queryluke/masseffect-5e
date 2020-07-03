@@ -9,16 +9,16 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      spell: {
-        type: Object,
-        default: () => { return {} }
-      },
-      size: {
-        type: Number,
-        default: 18
-      }
+export default {
+  props: {
+    spell: {
+      type: Object,
+      default: () => { return {} }
+    },
+    size: {
+      type: Number,
+      default: 18
     }
   }
+}
 </script>

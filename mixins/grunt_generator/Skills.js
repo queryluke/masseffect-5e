@@ -4,14 +4,14 @@ export const Skills = {
   methods: {
     setGruntSkills () {
       this.grunt.skills = []
-      const classSkills = this.sc.skillProficiencies.map(skill => {
+      const classSkills = this.sc.skillProficiencies.map((skill) => {
         return skill.toLowerCase().trim().replace(/ /g, '_')
       })
-      let skillOptions = skills.filter(skill => {
+      const skillOptions = skills.filter((skill) => {
         return classSkills.includes(skill.id)
       })
 
-      let numProficient = this.randomValue(this.proficientWeights[this.crMetaLevel])
+      const numProficient = this.randomValue(this.proficientWeights[this.crMetaLevel])
       for (let i = 1; i <= numProficient; i++) {
         const skill = this.randomValue(skillOptions)
         this.grunt.skills.push(skill.id)

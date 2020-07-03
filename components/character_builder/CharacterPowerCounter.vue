@@ -7,7 +7,7 @@
       h2(class="points-text") {{val}} / {{maxValue}}
       v-btn(@click="val++" :disabled="val >= maxValue") +
       v-btn(@click="val = maxValue" v-if="showMax") Max
-    
+
 </template>
 
 <style lang="scss">
@@ -24,22 +24,22 @@
 
 <script>
 export default {
-  props: {  
+  props: {
     label: {
       type: String,
-      default: () => {return "Label"}
+      default: () => { return 'Label' }
     },
     value: {
       type: Number,
-      default: () => {return 0}
+      default: () => { return 0 }
     },
     minValue: {
       type: Number,
-      default: () => {return 0}
+      default: () => { return 0 }
     },
     maxValue: {
       type: Number,
-      default: () => {return 0}
+      default: () => { return 0 }
     },
     showMin: {
       type: Boolean,
@@ -54,13 +54,13 @@ export default {
     val: 0
   }),
   watch: {
-    val: function(value) {
-      this.$emit("change", value);
-      return value;
+    val (value) {
+      this.$emit('change', value)
+      return value
     }
   },
-  created() {
-    this.val = this.value;
+  created () {
+    this.val = this.value
   }
 }
 </script>

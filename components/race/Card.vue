@@ -16,32 +16,32 @@
 </template>
 
 <script>
-  import Increases from '~/components/race/Increases.vue'
+import Increases from '~/components/race/Increases.vue'
 
-  export default {
-    components: {
-      Increases
+export default {
+  components: {
+    Increases
+  },
+  props: {
+    data: {
+      type: Object,
+      default: () => { return {} }
+    }
+  },
+  computed: {
+    traitList () {
+      return this.data.traits.map(t => this.$options.filters.titlecase(t.replace(/-/g, ' '))).join(', ')
     },
-    props: {
-      data: {
-        type: Object,
-        default: () => { return {} }
+    traitSummary () {
+      let text = ''
+      if (this.data.traits) {
+        text += `, ${this.traitList}`
       }
-    },
-    computed: {
-      traitList () {
-        return this.data.traits.map(t => this.$options.filters.titlecase(t.replace(/-/g,' '))).join(', ')
-      },
-      traitSummary () {
-        let text = ''
-        if (this.data.traits) {
-          text += `, ${this.traitList}`
-        }
-        if (this.data.startingFeats) {
-          text += `, and choose ${this.data.startingFeats.count} ${this.$options.filters.pluralize(this.data.startingFeats.count, 'feat')}`
-        }
-        return text
+      if (this.data.startingFeats) {
+        text += `, and choose ${this.data.startingFeats.count} ${this.$options.filters.pluralize(this.data.startingFeats.count, 'feat')}`
       }
+      return text
     }
   }
+}
 </script>

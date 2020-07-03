@@ -131,7 +131,7 @@ export const Actions = {
     },
     getAttackOptions () {
       const weapons = this.weapons
-        .filter(weapon => {
+        .filter((weapon) => {
           return weapon.damage !== null &&
             this.gruntWeaponRarity[this.crMetaLevel].includes(weapon.rarity) &&
             weapon.type !== 'Heavy Weapon'
@@ -167,7 +167,7 @@ export const Actions = {
       }
 
       // dual wielding
-      const dualOpts = weapons.filter(weapon => {
+      const dualOpts = weapons.filter((weapon) => {
         return (weapon.type === 'Heavy Pistol' || weapon.type === 'SMG' || weapon.type === 'Melee') && !/two/gi.test(weapon.tags)
       })
       const combinations = []

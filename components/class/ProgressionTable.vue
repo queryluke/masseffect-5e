@@ -30,61 +30,60 @@
 </template>
 
 <script>
-  import _ from 'lodash'
-  import ClassFeature from '~/components/class/ClassFeature.vue'
-  import features from '~/static/data/class_features'
-  import SubclassFeature from '~/components/class/SubclassFeature.vue'
+import _ from 'lodash'
+import ClassFeature from '~/components/class/ClassFeature.vue'
+import features from '~/static/data/class_features'
+import SubclassFeature from '~/components/class/SubclassFeature.vue'
 
-  export default {
-    components: { ClassFeature, SubclassFeature },
-    props: {
-      item: {
-        type: Object,
-        default: () => { return {} }
-      },
-      colors: {
-        type: Object,
-        default: () => { return {} }
-      }
+export default {
+  components: { ClassFeature, SubclassFeature },
+  props: {
+    item: {
+      type: Object,
+      default: () => { return {} }
     },
-    data () {
-      return {
-        dialog: false,
-        selectedLevel: null
-      }
-    },
-    computed: {
-      spellSlotArray () {
-        return this.item.spellSlots ? [...Array(this.item.maxSpellSlot).keys()] : []
-      }
-    },
-    methods: {
-      featureList (level) {
-        return features.filter(feature => level.features.includes(feature.id)).map(feature => {
-          switch (feature.id) {
-            case 'extra_attack_2':
-            case 'extra_attack_3':
-            case 'brutal_critical_2':
-            case 'brutal_critical_3':
-            case 'adrenaline_rush_2':
-            case 'indomitable_2':
-            case 'indomitable_3':
-              return `${feature.name}(${feature.id.split('_')[feature.id.split('_').length - 1]})`
-            default:
-              return feature.name
-          }
-        }).join(', ')
-      },
-      headerKey (header) {
-        return header.key ? header.key : _.camelCase(header.title)
-      },
-      tableClick (row) {
-        if (this.$vuetify.breakpoint.mdAndUp) {
-          this.dialog = true
-          this.selectedLevel = row
+    colors: {
+      type: Object,
+      default: () => { return {} }
+    }
+  },
+  data () {
+    return {
+      dialog: false,
+      selectedLevel: null
+    }
+  },
+  computed: {
+    spellSlotArray () {
+      return this.item.spellSlots ? [...Array(this.item.maxSpellSlot).keys()] : []
+    }
+  },
+  methods: {
+    featureList (level) {
+      return features.filter(feature => level.features.includes(feature.id)).map((feature) => {
+        switch (feature.id) {
+          case 'extra_attack_2':
+          case 'extra_attack_3':
+          case 'brutal_critical_2':
+          case 'brutal_critical_3':
+          case 'adrenaline_rush_2':
+          case 'indomitable_2':
+          case 'indomitable_3':
+            return `${feature.name}(${feature.id.split('_')[feature.id.split('_').length - 1]})`
+          default:
+            return feature.name
         }
+      }).join(', ')
+    },
+    headerKey (header) {
+      return header.key ? header.key : _.camelCase(header.title)
+    },
+    tableClick (row) {
+      if (this.$vuetify.breakpoint.mdAndUp) {
+        this.dialog = true
+        this.selectedLevel = row
       }
     }
   }
+}
 </script>
-

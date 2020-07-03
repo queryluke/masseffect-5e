@@ -12,24 +12,23 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      attack: {
-        type: Object,
-        default: () => { return {} }
+export default {
+  props: {
+    attack: {
+      type: Object,
+      default: () => { return {} }
+    }
+  },
+  computed: {
+    range () {
+      if (this.attack.type === 'melee') {
+        return `reach ${this.attack.range}m`
       }
-    },
-    computed: {
-      range () {
-        if (this.attack.type === 'melee') {
-          return `reach ${this.attack.range}m`
-        }
-        if (this.attack.type === 'ranged') {
-          return `range ${this.attack.range}/${this.attack.range * 3}m`
-        }
-        return ''
+      if (this.attack.type === 'ranged') {
+        return `range ${this.attack.range}/${this.attack.range * 3}m`
       }
+      return ''
     }
   }
+}
 </script>
-

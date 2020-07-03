@@ -36,20 +36,19 @@
 </template>
 
 <script>
-  import ClassFeature from '~/components/class/ClassFeature.vue'
+import ClassFeature from '~/components/class/ClassFeature.vue'
 
-  export default {
-    components: { ClassFeature },
-    props: {
-      item: {
-        type: Object,
-        default: () => { return {} }
-      },
-      primaryColor: {
-        type: String,
-        default: ''
-      }
+export default {
+  components: { ClassFeature },
+  props: {
+    item: {
+      type: Object,
+      default: () => { return {} }
+    },
+    primaryColor: {
+      type: String,
+      default: ''
     }
   }
+}
 </script>
-

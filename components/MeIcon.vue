@@ -4,18 +4,18 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      type: {
-        type: String,
-        default: ''
-      },
-      name: {
-        type: String,
-        default: ''
-      }
+export default {
+  props: {
+    type: {
+      type: String,
+      default: ''
+    },
+    name: {
+      type: String,
+      default: ''
     }
   }
+}
 </script>
 
 <style>

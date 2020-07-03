@@ -23,29 +23,29 @@
 </template>
 
 <script>
-  import {mapGetters} from 'vuex'
+import { mapGetters } from 'vuex'
 
-  export default {
-    props: {
-      item: {
-        type: Object,
-        default: () => { return {} }
-      },
-      title: {
-        type: Boolean,
-        default: true
-      }
+export default {
+  props: {
+    item: {
+      type: Object,
+      default: () => { return {} }
     },
-    computed: {
-      ...mapGetters('itemList', ['rarityTextColors']),
-      // TODO: This could be a mixin or model
-      availability() {
-        if (['Assault Rifle', 'Heavy Pistol', 'Shotgun', 'Sniper Rifle', 'SMG'].every(val => this.item.availability.includes(val))) {
-          return 'Any ranged weapon'
-        } else {
-          return this.item.availability.join(', ')
-        }
+    title: {
+      type: Boolean,
+      default: true
+    }
+  },
+  computed: {
+    ...mapGetters('itemList', ['rarityTextColors']),
+    // TODO: This could be a mixin or model
+    availability () {
+      if (['Assault Rifle', 'Heavy Pistol', 'Shotgun', 'Sniper Rifle', 'SMG'].every(val => this.item.availability.includes(val))) {
+        return 'Any ranged weapon'
+      } else {
+        return this.item.availability.join(', ')
       }
     }
   }
+}
 </script>

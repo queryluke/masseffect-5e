@@ -7,27 +7,27 @@
 </template>
 
 <script>
-  import items from '~/static/data/races'
-  import RaceCard from '~/components/race/Card.vue'
+import items from '~/static/data/races'
+import RaceCard from '~/components/race/Card.vue'
 
-  export default {
-    components: { RaceCard },
-    data () {
-      return {
-        items
-      }
-    },
-    head () {
-      return {
-        title: 'Races | Mass Effect 5e',
-        meta: [
-          { hid: 'description', name: 'description', content: 'Every race you need for a deeply involved Mass Effect Campaign.' }
-        ]
-      }
-    },
-    layout: 'phb',
-    methods: {
-
+export default {
+  components: { RaceCard },
+  data () {
+    return {
+      items
     }
-  }
+  },
+  methods: {
+
+  },
+  head () {
+    return {
+      title: 'Races | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Every race you need for a deeply involved Mass Effect Campaign.' }
+      ]
+    }
+  },
+  layout: 'phb'
+}
 </script>

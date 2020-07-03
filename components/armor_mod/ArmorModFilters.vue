@@ -12,60 +12,59 @@
 </template>
 
 <script>
-  import {createNamespacedHelpers} from 'vuex'
-  const {mapActions, mapGetters} = createNamespacedHelpers('itemList')
+import { createNamespacedHelpers } from 'vuex'
+const { mapActions, mapGetters } = createNamespacedHelpers('itemList')
 
-  export default {
-    props: {
-      itemKey: {
-        type: String,
-        default: ''
+export default {
+  props: {
+    itemKey: {
+      type: String,
+      default: ''
+    },
+    noteOptions: {
+      type: Array,
+      default: () => { return [] }
+    }
+  },
+  data () {
+    return {
+      typeOptions: ['Chest', 'Head', 'Arms', 'Legs']
+    }
+  },
+  computed: {
+    ...mapGetters(['filters', 'rarityOptions']),
+    typeFilter: {
+      get () {
+        return this.filters[this.itemKey].type
       },
-      noteOptions: {
-        type: Array,
-        default: () => { return [] }
+      set (value) {
+        this.updateFilter({ key: this.itemKey, filterKey: 'type', value })
       }
     },
-    data () {
-      return {
-        typeOptions: ['Chest', 'Head', 'Arms', 'Legs']
+    noteFilter: {
+      get () {
+        return this.filters[this.itemKey].notes
+      },
+      set (value) {
+        this.updateFilter({ key: this.itemKey, filterKey: 'notes', value })
       }
     },
-    computed: {
-      ...mapGetters(['filters', 'rarityOptions']),
-      typeFilter: {
-        get () {
-          return this.filters[this.itemKey].type
-        },
-        set (value) {
-          this.updateFilter({key: this.itemKey, filterKey: 'type', value})
-        }
+    rarityFilter: {
+      get () {
+        return this.filters[this.itemKey].rarity
       },
-      noteFilter: {
-        get () {
-          return this.filters[this.itemKey].notes
-        },
-        set (value) {
-          this.updateFilter({key: this.itemKey, filterKey: 'notes', value})
-        }
-      },
-      rarityFilter: {
-        get () {
-          return this.filters[this.itemKey].rarity
-        },
-        set (value) {
-          this.updateFilter({key: this.itemKey, filterKey: 'rarity', value})
-        }
-      }
-    },
-    methods: {
-      ...mapActions(['updateFilter']),
-      reset () {
-        this.typeFilter = []
-        this.noteFilter = []
-        this.rarityFilter = []
+      set (value) {
+        this.updateFilter({ key: this.itemKey, filterKey: 'rarity', value })
       }
     }
+  },
+  methods: {
+    ...mapActions(['updateFilter']),
+    reset () {
+      this.typeFilter = []
+      this.noteFilter = []
+      this.rarityFilter = []
+    }
   }
+}
 </script>
-

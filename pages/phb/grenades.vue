@@ -12,18 +12,18 @@
 </template>
 
 <script>
-  import GrenadeList from '~/components/grenade/GrenadeList.vue'
+import GrenadeList from '~/components/grenade/GrenadeList.vue'
 
-  export default {
-    components: { GrenadeList },
-    head () {
-      return {
-        title: 'Grenades & Mines - Appendix | Mass Effect 5e',
-        meta: [
-          { hid: 'description', name: 'description', content: 'Grenades offer an offensive boost while mines can be used like D&D traps.' }
-        ]
-      }
-    },
-    layout: 'phb'
-  }
+export default {
+  components: { GrenadeList },
+  head () {
+    return {
+      title: 'Grenades & Mines - Appendix | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Grenades offer an offensive boost while mines can be used like D&D traps.' }
+      ]
+    }
+  },
+  layout: 'phb'
+}
 </script>

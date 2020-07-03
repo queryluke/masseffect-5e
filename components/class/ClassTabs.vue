@@ -9,33 +9,33 @@
 </template>
 
 <script>
-  // State
-  import {createNamespacedHelpers} from 'vuex'
-  const {mapActions, mapGetters} = createNamespacedHelpers('classPage')
+// State
+import { createNamespacedHelpers } from 'vuex'
+const { mapActions, mapGetters } = createNamespacedHelpers('classPage')
 
-  export default {
-    computed: {
-      ...mapGetters(['active', 'tabs', 'colors']),
-      activeTab: {
-        get () {
-          return this.active
-        },
-        set (value) {
-          this.setActiveTab(value)
-        }
+export default {
+  computed: {
+    ...mapGetters(['active', 'tabs', 'colors']),
+    activeTab: {
+      get () {
+        return this.active
       },
-      sliderColor () {
-        return this.colors[this.$route.params.id] ? this.colors[this.$route.params.id].primary : 'primary'
-      },
-      textColor () {
-        const colorArray = this.sliderColor.split(' ')
-        return `${colorArray[0]}--text ${colorArray[1] ? 'text--' + colorArray[1] : ''}`
+      set (value) {
+        this.setActiveTab(value)
       }
     },
-    methods: {
-      ...mapActions(['setActiveTab', 'toggleSidebar'])
+    sliderColor () {
+      return this.colors[this.$route.params.id] ? this.colors[this.$route.params.id].primary : 'primary'
+    },
+    textColor () {
+      const colorArray = this.sliderColor.split(' ')
+      return `${colorArray[0]}--text ${colorArray[1] ? 'text--' + colorArray[1] : ''}`
     }
+  },
+  methods: {
+    ...mapActions(['setActiveTab', 'toggleSidebar'])
   }
+}
 </script>
 
 <style>
@@ -43,4 +43,3 @@
     color: rgba(0, 0, 0, .87)
   }
 </style>
-

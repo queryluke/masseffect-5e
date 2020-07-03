@@ -26,90 +26,90 @@
 </template>
 
 <script>
-  import SpellList from '~/components/spell/SpellList.vue'
-  import SpellFilters from '~/components/spell/SpellFilters.vue'
-  import MobileFilterContainer from '~/components/MobileFilterContainer.vue'
-  import items from '~/static/data/spells'
+import { createNamespacedHelpers } from 'vuex'
+import SpellList from '~/components/spell/SpellList.vue'
+import SpellFilters from '~/components/spell/SpellFilters.vue'
+import MobileFilterContainer from '~/components/MobileFilterContainer.vue'
+import items from '~/static/data/spells'
 
-  // State
-  import {createNamespacedHelpers} from 'vuex'
-  const {mapActions, mapGetters} = createNamespacedHelpers('itemList')
+// State
+const { mapActions, mapGetters } = createNamespacedHelpers('itemList')
 
-  export default {
-    components: {
-      MobileFilterContainer,
-      SpellList,
-      SpellFilters
-    },
-    data () {
-      return {
-        items,
-        itemKey: 'spells'
+export default {
+  components: {
+    MobileFilterContainer,
+    SpellList,
+    SpellFilters
+  },
+  data () {
+    return {
+      items,
+      itemKey: 'spells'
+    }
+  },
+  computed: {
+    ...mapGetters(['order', 'sortBy', 'filters', 'searchString']),
+    search: {
+      get () {
+        return this.searchString
+      },
+      set (value) {
+        this.updateSearchString(value)
       }
     },
-    computed: {
-      ...mapGetters(['order', 'sortBy', 'filters', 'searchString']),
-      search: {
-        get () {
-          return this.searchString
-        },
-        set (value) {
-          this.updateSearchString(value)
-        }
-      },
-      filtered () {
-        let data = this.items
-        let sortBy = this.sortBy.key
-        let order = this.order
-        data.sort(function (a, b) {
-          switch (sortBy) {
-            case 'type':
-              if (a[sortBy] === b[sortBy]) {
-                if (a.level === b.level) {
-                  return (a.name > b.name ? 1 : -1) * order
-                } else {
-                  return (a.level > b.level ? 1 : -1) * order
-                }
+    filtered () {
+      let data = this.items
+      const sortBy = this.sortBy.key
+      const order = this.order
+      data.sort(function (a, b) {
+        switch (sortBy) {
+          case 'type':
+            if (a[sortBy] === b[sortBy]) {
+              if (a.level === b.level) {
+                return (a.name > b.name ? 1 : -1) * order
               } else {
-                return (a[sortBy] > b[sortBy] ? 1 : -1) * order
+                return (a.level > b.level ? 1 : -1) * order
               }
-            default:
-              return (a[sortBy] === b[sortBy] ? 0 : a[sortBy] > b[sortBy] ? 1 : -1) * order
+            } else {
+              return (a[sortBy] > b[sortBy] ? 1 : -1) * order
+            }
+          default:
+            return (a[sortBy] === b[sortBy] ? 0 : a[sortBy] > b[sortBy] ? 1 : -1) * order
+        }
+      })
+      if (this.search) {
+        data = data.filter((spell) => {
+          const nameMatch = spell.name.toLowerCase().includes(this.searchString.toLowerCase())
+          return nameMatch
+        })
+      }
+      if (this.filters.spells.type.length > 0) {
+        data = data.filter(spell => this.filters.spells.type.includes(spell.type))
+      }
+      if (this.filters.spells.availableClasses.length > 0) {
+        data = data.filter((spell) => {
+          for (const c of this.filters.spells.availableClasses) {
+            if (spell.availableClasses.includes(c)) {
+              return spell
+            }
           }
         })
-        if (this.search) {
-          data = data.filter((spell) => {
-            let nameMatch = spell.name.toLowerCase().indexOf(this.searchString.toLowerCase()) >= 0
-            return nameMatch
-          })
-        }
-        if (this.filters.spells.type.length > 0) {
-          data = data.filter(spell => this.filters.spells.type.includes(spell.type))
-        }
-        if (this.filters.spells.availableClasses.length > 0) {
-          data = data.filter(spell => {
-            for (const c of this.filters.spells.availableClasses) {
-              if (spell.availableClasses.includes(c)) {
-                return spell
-              }
-            }
-          })
-        }
-        return data
       }
-    },
-    middleware: 'resetListFilters',
-    head () {
-      return {
-        title: 'Powers: Biotics, Tech and Combat | Mass Effect 5e',
-        meta: [
-          { hid: 'description', name: 'description', content: 'Dozens of unique and re-skinned D&D spells are available as Biotic, Tech, and Combat powers' }
-        ]
-      }
-    },
-    layout: 'phb',
-    methods: {
-      ...mapActions(['updateSearchString'])
+      return data
     }
+  },
+  middleware: 'resetListFilters',
+  head () {
+    return {
+      title: 'Powers: Biotics, Tech and Combat | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Dozens of unique and re-skinned D&D spells are available as Biotic, Tech, and Combat powers' }
+      ]
+    }
+  },
+  layout: 'phb',
+  methods: {
+    ...mapActions(['updateSearchString'])
   }
+}
 </script>

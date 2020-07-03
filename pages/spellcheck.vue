@@ -68,51 +68,48 @@
     // div(v-for="item in vehicles" v-bind:key="item.id")
       vehicle-info(:item="item")
 
-
-
 </template>
 
 <script>
-  import armorMods from '~/static/data/armor_mods.json'
-  import armorSets from '~/static/data/armor_sets.json'
-  import classFeatures from '~/static/data/class_features.json'
-  import conditions from '~/static/data/conditions.json'
-  import feats from '~/static/data/feats.json'
-  import grenades from '~/static/data/grenades.json'
-  import programs from '~/static/data/programs.json'
-  import spells from '~/static/data/spells.json'
-  import tools from '~/static/data/tools.json'
-  import weaponMods from '~/static/data/weapon_mods.json'
-  import weapons from '~/static/data/weapons.json'
-  import vehicles from '~/static/data/vehicles.json'
+import armorMods from '~/static/data/armor_mods.json'
+import armorSets from '~/static/data/armor_sets.json'
+import classFeatures from '~/static/data/class_features.json'
+import conditions from '~/static/data/conditions.json'
+import feats from '~/static/data/feats.json'
+import grenades from '~/static/data/grenades.json'
+import programs from '~/static/data/programs.json'
+import spells from '~/static/data/spells.json'
+import tools from '~/static/data/tools.json'
+import weaponMods from '~/static/data/weapon_mods.json'
+import weapons from '~/static/data/weapons.json'
+import vehicles from '~/static/data/vehicles.json'
 
-  import classFeature from '~/components/class/ClassFeature.vue'
-  import vehicleInfo from '~/components/vehicle/VehicleInfo.vue'
+import classFeature from '~/components/class/ClassFeature.vue'
+import vehicleInfo from '~/components/vehicle/VehicleInfo.vue'
 
-
-  export default {
-    components: {classFeature, vehicleInfo},
-    data () {
-      return {
-        armorMods,
-        armorSets,
-        classFeatures,
-        conditions,
-        feats,
-        grenades,
-        programs,
-        spells,
-        tools,
-        weaponMods,
-        weapons,
-        vehicles
-      }
-    },
-    head () {
-      return {
-        title: `Mass Effect 5e`
-      }
-    },
-    layout: 'print'
-  }
+export default {
+  components: { classFeature, vehicleInfo },
+  data () {
+    return {
+      armorMods,
+      armorSets,
+      classFeatures,
+      conditions,
+      feats,
+      grenades,
+      programs,
+      spells,
+      tools,
+      weaponMods,
+      weapons,
+      vehicles
+    }
+  },
+  head () {
+    return {
+      title: 'Mass Effect 5e'
+    }
+  },
+  layout: 'print'
+}
 </script>

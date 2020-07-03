@@ -27,101 +27,101 @@
 </template>
 
 <script>
-  import WeaponList from '~/components/weapon/WeaponList.vue'
-  import WeaponFilters from '~/components/weapon/WeaponFilters.vue'
-  import BookmarkButton from '~/components/BookmarkButton.vue'
-  import MobileFilterContainer from '~/components/list/MobileFilterContainer.vue'
-  import {AverageFromDie} from '~/mixins/averageFromDie'
-  import items from '~/static/data/weapons'
+import { createNamespacedHelpers } from 'vuex'
+import WeaponList from '~/components/weapon/WeaponList.vue'
+import WeaponFilters from '~/components/weapon/WeaponFilters.vue'
+import BookmarkButton from '~/components/BookmarkButton.vue'
+import MobileFilterContainer from '~/components/list/MobileFilterContainer.vue'
+import { AverageFromDie } from '~/mixins/averageFromDie'
+import items from '~/static/data/weapons'
 
-  // State
-  import {createNamespacedHelpers} from 'vuex'
-  const {mapActions, mapGetters} = createNamespacedHelpers('itemList')
+// State
+const { mapActions, mapGetters } = createNamespacedHelpers('itemList')
 
-  export default {
-    components: {
-      MobileFilterContainer,
-      WeaponFilters,
-      WeaponList,
-      BookmarkButton
-    },
-    mixins: [AverageFromDie],
-    data () {
-      return {
-        items,
-        itemKey: 'weapons'
-      }
-    },
-    computed: {
-      ...mapGetters(['order', 'sortBy', 'filters', 'searchString']),
-      search: {
-        get () {
-          return this.searchString
-        },
-        set (value) {
-          this.updateSearchString(value)
-        }
-      },
-      filtered () {
-        let data = this.items
-        let sortBy = this.sortBy.key
-        let order = this.order
-        let self = this
-        data.sort(function (a, b) {
-          switch (sortBy) {
-            case 'type':
-            case 'name':
-              a = a[sortBy]
-              b = b[sortBy]
-              break
-            case 'damage':
-              a = self.averageFromDie(a.damage)
-              b = self.averageFromDie(b.damage)
-              break
-            default:
-              a = a[sortBy] ? parseInt(a[sortBy].replace(/\D/, ''), 10) : 0
-              b = b[sortBy] ? parseInt(b[sortBy].replace(/\D/, ''), 10) : 0
-          }
-          return (a === b ? 0 : a > b ? 1 : -1) * order
-        })
-        if (this.search) {
-          data = data.filter((item) => {
-            let nameMatch = item.name.toLowerCase().indexOf(this.search.toLowerCase()) >= 0
-            let typeMatch = item.type.toLowerCase().indexOf(this.search.toLowerCase()) >= 0
-            return nameMatch || typeMatch
-          })
-        }
-        for (const key in this.filters[this.itemKey]) {
-          const filter = this.filters[this.itemKey][key]
-          if (filter.length > 0) {
-            if (key === 'property') {
-              data = data.filter(item => {
-                for (const property of item.properties) {
-                  if (filter.includes(property)) {
-                    return item
-                  }
-                }
-              })
-            } else {
-              data = data.filter(item => filter.includes(item[key]))
-            }
-          }
-        }
-        return data
-      }
-    },
-    middleware: 'resetListFilters',
-    head () {
-      return {
-        title: 'Weapons - Equipment | Mass Effect 5e',
-        meta: [
-          { hid: 'description', name: 'description', content: 'The Mass Effect 5e arsenal has over 80 unique weapons designed to match the game\'s weaponry' }
-        ]
-      }
-    },
-    layout: 'phb',
-    methods: {
-      ...mapActions(['updateSearchString'])
+export default {
+  components: {
+    MobileFilterContainer,
+    WeaponFilters,
+    WeaponList,
+    BookmarkButton
+  },
+  mixins: [AverageFromDie],
+  data () {
+    return {
+      items,
+      itemKey: 'weapons'
     }
+  },
+  computed: {
+    ...mapGetters(['order', 'sortBy', 'filters', 'searchString']),
+    search: {
+      get () {
+        return this.searchString
+      },
+      set (value) {
+        this.updateSearchString(value)
+      }
+    },
+    filtered () {
+      let data = this.items
+      const sortBy = this.sortBy.key
+      const order = this.order
+      const self = this
+      data.sort(function (a, b) {
+        switch (sortBy) {
+          case 'type':
+          case 'name':
+            a = a[sortBy]
+            b = b[sortBy]
+            break
+          case 'damage':
+            a = self.averageFromDie(a.damage)
+            b = self.averageFromDie(b.damage)
+            break
+          default:
+            a = a[sortBy] ? parseInt(a[sortBy].replace(/\D/, ''), 10) : 0
+            b = b[sortBy] ? parseInt(b[sortBy].replace(/\D/, ''), 10) : 0
+        }
+        return (a === b ? 0 : a > b ? 1 : -1) * order
+      })
+      if (this.search) {
+        data = data.filter((item) => {
+          const nameMatch = item.name.toLowerCase().includes(this.search.toLowerCase())
+          const typeMatch = item.type.toLowerCase().includes(this.search.toLowerCase())
+          return nameMatch || typeMatch
+        })
+      }
+      for (const key in this.filters[this.itemKey]) {
+        const filter = this.filters[this.itemKey][key]
+        if (filter.length > 0) {
+          if (key === 'property') {
+            data = data.filter((item) => {
+              for (const property of item.properties) {
+                if (filter.includes(property)) {
+                  return item
+                }
+              }
+            })
+          } else {
+            data = data.filter(item => filter.includes(item[key]))
+          }
+        }
+      }
+      return data
+    }
+  },
+  middleware: 'resetListFilters',
+  head () {
+    return {
+      title: 'Weapons - Equipment | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'The Mass Effect 5e arsenal has over 80 unique weapons designed to match the game\'s weaponry' }
+      ]
+    }
+  },
+  layout: 'phb',
+  methods: {
+    ...mapActions(['updateSearchString'])
   }
+}
 </script>

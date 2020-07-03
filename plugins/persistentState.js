@@ -1,6 +1,6 @@
 import createPersistedState from 'vuex-persistedstate'
 
-export default ({store}) => {
+export default ({ store }) => {
   createPersistedState({
     paths: [
       'gruntConfig',

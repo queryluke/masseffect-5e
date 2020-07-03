@@ -17,33 +17,33 @@
 </template>
 
 <script>
-  import {DiceRoller} from '~/mixins/diceRoller'
-  import RollLog from '~/components/dice_roller/RollLog.vue'
+import { DiceRoller } from '~/mixins/diceRoller'
+import RollLog from '~/components/dice_roller/RollLog.vue'
 
-  export default {
-    components: {RollLog},
-    mixins: [DiceRoller],
-    data () {
-      return {
-        formula: ''
-      }
-    },
-    methods: {
-      rollDice() {
-        console.log(this.formula)
-        const roll = this.rollFromString(this.formula)
-        console.log(roll)
-        this.setRoll(roll)
-      }
-    },
-    head () {
-      return {
-        title: 'Dice Roller - For GMs | Mass Effect 5e',
-        meta: [
-          { hid: 'description', name: 'description', content: 'Simple Dice Roller' }
-        ]
-      }
-    },
-    layout: 'phb'
-  }
+export default {
+  components: { RollLog },
+  mixins: [DiceRoller],
+  data () {
+    return {
+      formula: ''
+    }
+  },
+  methods: {
+    rollDice () {
+      console.log(this.formula)
+      const roll = this.rollFromString(this.formula)
+      console.log(roll)
+      this.setRoll(roll)
+    }
+  },
+  head () {
+    return {
+      title: 'Dice Roller - For GMs | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Simple Dice Roller' }
+      ]
+    }
+  },
+  layout: 'phb'
+}
 </script>

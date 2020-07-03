@@ -6,23 +6,22 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      availableClasses: {
-        type: Array,
-        default: () => {
-          return []
-        }
-      },
-      size: {
-        type: Number,
-        default: 50
-      },
-      justify: {
-        type: String,
-        default: 'justify-end'
+export default {
+  props: {
+    availableClasses: {
+      type: Array,
+      default: () => {
+        return []
       }
+    },
+    size: {
+      type: Number,
+      default: 50
+    },
+    justify: {
+      type: String,
+      default: 'justify-end'
     }
   }
+}
 </script>
-

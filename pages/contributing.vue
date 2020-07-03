@@ -40,15 +40,15 @@
 </template>
 
 <script>
-  export default {
-    head () {
-      return {
-        title: 'Feedback | Mass Effect 5e',
-        meta: [
-          { hid: 'description', name: 'description', content: 'Learn how to contribute and provide feedback.' }
-        ]
-      }
-    },
-    layout: 'dark'
-  }
+export default {
+  head () {
+    return {
+      title: 'Feedback | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Learn how to contribute and provide feedback.' }
+      ]
+    }
+  },
+  layout: 'dark'
+}
 </script>

@@ -29,13 +29,13 @@
 </template>
 
 <script>
+import { createNamespacedHelpers } from 'vuex'
 import SideNavigation from '~/components/SideNavigation.vue'
 import PhbToolbar from '~/components/PhbToolbar.vue'
 import rules from '~/static/data/rules'
 
 // State
-import {createNamespacedHelpers} from 'vuex'
-const {mapActions, mapGetters} = createNamespacedHelpers('phb')
+const { mapActions, mapGetters } = createNamespacedHelpers('phb')
 
 export default {
   components: {

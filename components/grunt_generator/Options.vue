@@ -42,70 +42,69 @@
 </template>
 
 <script>
-  import races from '~/static/data/races'
-  import crs from '~/static/data/stats_by_cr'
-  import classes from '~/static/data/classes'
+import { createNamespacedHelpers } from 'vuex'
+import races from '~/static/data/races'
+import crs from '~/static/data/stats_by_cr'
+import classes from '~/static/data/classes'
 
-  import {createNamespacedHelpers} from 'vuex'
-  const {mapActions, mapGetters} = createNamespacedHelpers('gruntGenerator')
+const { mapActions, mapGetters } = createNamespacedHelpers('gruntGenerator')
 
-  export default {
-    props: {
-      itemKey: {
-        type: String,
-        default: ''
+export default {
+  props: {
+    itemKey: {
+      type: String,
+      default: ''
+    },
+    unitOptions: {
+      type: Object,
+      default: () => { return {} }
+    },
+    crOptions: {
+      type: Object,
+      default: () => { return {} }
+    }
+  },
+  data () {
+    return {
+      races,
+      classes,
+      crs
+    }
+  },
+  computed: {
+    ...mapGetters(['cr', 'race', 'sc']),
+    selectedCr: {
+      get () {
+        return this.cr
       },
-      unitOptions: {
-        type: Object,
-        default: () => { return {} }
-      },
-      crOptions: {
-        type: Object,
-        default: () => { return {} }
+      set (value) {
+        this.setCr(value)
       }
     },
-    data () {
-      return {
-        races,
-        classes,
-        crs
+    selectedRace: {
+      get () {
+        return this.race
+      },
+      set (value) {
+        this.setRace(value)
       }
     },
-    computed: {
-      ...mapGetters(['cr', 'race', 'sc']),
-      selectedCr: {
-        get () {
-          return this.cr
-        },
-        set (value) {
-          this.setCr(value)
-        }
+    selectedClass: {
+      get () {
+        return this.sc
       },
-      selectedRace: {
-        get () {
-          return this.race
-        },
-        set (value) {
-          this.setRace(value)
-        }
-      },
-      selectedClass: {
-        get () {
-          return this.sc
-        },
-        set (value) {
-          this.setClass(value)
-        }
-      }
-    },
-    methods: {
-      ...mapActions(['setCr', 'setRace', 'setClass']),
-      reset () {
-        this.selectedCr = {}
-        this.selectedRace = {}
-        this.selectedClass = {}
+      set (value) {
+        this.setClass(value)
       }
     }
+  },
+  methods: {
+    ...mapActions(['setCr', 'setRace', 'setClass']),
+    reset () {
+      this.selectedCr = {}
+      this.selectedRace = {}
+      this.selectedClass = {}
+    }
   }
+}
 </script>
-

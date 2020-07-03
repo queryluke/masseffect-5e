@@ -23,15 +23,15 @@
 </template>
 
 <script>
-  export default {
-    head () {
-      return {
-        title: 'Encounter Builder - For GMs | Mass Effect 5e',
-        meta: [
-          { hid: 'description', name: 'description', content: 'Import the Mass Effect 5e Bestiary into Kobold Club' }
-        ]
-      }
-    },
-    layout: 'phb'
-  }
+export default {
+  head () {
+    return {
+      title: 'Encounter Builder - For GMs | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Import the Mass Effect 5e Bestiary into Kobold Club' }
+      ]
+    }
+  },
+  layout: 'phb'
+}
 </script>

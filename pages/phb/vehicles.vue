@@ -8,18 +8,18 @@
 </template>
 
 <script>
-  import VehicleList from '~/components/vehicle/VehicleList.vue'
+import VehicleList from '~/components/vehicle/VehicleList.vue'
 
-  export default {
-    components: {VehicleList},
-    head () {
-      return {
-        title: 'Vehicles | Mass Effect 5e',
-        meta: [
-          { hid: 'description', name: 'description', content: 'A list of unique vehicles to use in your Mass Effect 5e game.' }
-        ]
-      }
-    },
-    layout: 'phb'
-  }
+export default {
+  components: { VehicleList },
+  head () {
+    return {
+      title: 'Vehicles | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'A list of unique vehicles to use in your Mass Effect 5e game.' }
+      ]
+    }
+  },
+  layout: 'phb'
+}
 </script>

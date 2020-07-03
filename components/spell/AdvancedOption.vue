@@ -5,15 +5,14 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      option: {
-        type: Object,
-        default: () => {
-          return {}
-        }
+export default {
+  props: {
+    option: {
+      type: Object,
+      default: () => {
+        return {}
       }
     }
   }
+}
 </script>
-

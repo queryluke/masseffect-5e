@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import {createNamespacedHelpers} from 'vuex'
-const {mapActions, mapGetters} = createNamespacedHelpers('phb')
+import { createNamespacedHelpers } from 'vuex'
+const { mapActions, mapGetters } = createNamespacedHelpers('phb')
 
 export default {
   computed: {
@@ -21,4 +21,3 @@ export default {
   }
 }
 </script>
-

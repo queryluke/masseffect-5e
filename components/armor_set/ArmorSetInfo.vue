@@ -30,40 +30,40 @@
 </template>
 
 <script>
-  import {mapGetters} from 'vuex'
+import { mapGetters } from 'vuex'
 
-  export default {
-    props: {
-      item: {
-        type: Object,
-        default: () => { return {} }
-      },
-      title: {
-        type: Boolean,
-        default: true
-      }
+export default {
+  props: {
+    item: {
+      type: Object,
+      default: () => { return {} }
     },
-    computed: {
-      ...mapGetters('itemList', ['rarityTextColors']),
-      benefits () {
-        return this.item.feature ? this.item.feature.split('--').map(f => f.trim()) : []
-      },
-      setBonus () {
-        return this.item.setBonus ? this.item.setBonus.split('--').map(f => f.trim()) : []
-      },
-      andromeda () {
-        return this.item.andromeda === 'x'
-      }
+    title: {
+      type: Boolean,
+      default: true
+    }
+  },
+  computed: {
+    ...mapGetters('itemList', ['rarityTextColors']),
+    benefits () {
+      return this.item.feature ? this.item.feature.split('--').map(f => f.trim()) : []
     },
-    methods: {
-      setBonusGroup(bonus) {
-        const match = bonus.match(/\d of \d/)
-        return match ? match[0] : ''
-      },
-      setBonusText(bonus) {
-        const split = bonus.split(':')
-        return split[1] ? split[1] : ''
-      }
+    setBonus () {
+      return this.item.setBonus ? this.item.setBonus.split('--').map(f => f.trim()) : []
+    },
+    andromeda () {
+      return this.item.andromeda === 'x'
+    }
+  },
+  methods: {
+    setBonusGroup (bonus) {
+      const match = bonus.match(/\d of \d/)
+      return match ? match[0] : ''
+    },
+    setBonusText (bonus) {
+      const split = bonus.split(':')
+      return split[1] ? split[1] : ''
     }
   }
+}
 </script>

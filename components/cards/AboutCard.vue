@@ -16,30 +16,30 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      person: {
-        type: Object,
-        default: () => { return {} }
-      }
-    },
-    data () {
-      return {
-        meLogos: {
-          'me1': {
-            image: 'https://vignette.wikia.nocookie.net/masseffect/images/8/86/MELogo.png/revision/latest?cb=20110304183233',
-            alt: 'Mass Effect Logo'
-          },
-          'me2': {
-            image: 'https://vignette.wikia.nocookie.net/masseffect/images/0/01/ME2Logo.png/revision/latest/scale-to-width-down/639?cb=20090319203459',
-            alt: 'Mass Effect 2 Logo'
-          },
-          'me3': {
-            image: 'https://vignette.wikia.nocookie.net/masseffect/images/e/e5/ME3Logo.png/revision/latest/scale-to-width-down/639?cb=20110425122702',
-            alt: 'Mass Effect 3 Logo'
-          }
+export default {
+  props: {
+    person: {
+      type: Object,
+      default: () => { return {} }
+    }
+  },
+  data () {
+    return {
+      meLogos: {
+        me1: {
+          image: 'https://vignette.wikia.nocookie.net/masseffect/images/8/86/MELogo.png/revision/latest?cb=20110304183233',
+          alt: 'Mass Effect Logo'
+        },
+        me2: {
+          image: 'https://vignette.wikia.nocookie.net/masseffect/images/0/01/ME2Logo.png/revision/latest/scale-to-width-down/639?cb=20090319203459',
+          alt: 'Mass Effect 2 Logo'
+        },
+        me3: {
+          image: 'https://vignette.wikia.nocookie.net/masseffect/images/e/e5/ME3Logo.png/revision/latest/scale-to-width-down/639?cb=20110425122702',
+          alt: 'Mass Effect 3 Logo'
         }
       }
     }
   }
+}
 </script>

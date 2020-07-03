@@ -5,8 +5,7 @@
 </template>
 
 <script>
-  export default {
-    name: 'SimpleCard'
-  }
+export default {
+  name: 'SimpleCard'
+}
 </script>
-

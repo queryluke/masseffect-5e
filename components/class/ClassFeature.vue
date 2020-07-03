@@ -5,24 +5,24 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      id: {
-        type: String,
-        default: ''
-      },
-      featureLevel: {
-        type: Object,
-        default: () => { return {} }
-      }
+export default {
+  props: {
+    id: {
+      type: String,
+      default: ''
     },
-    data () {
-      return {
-        item: {}
-      }
-    },
-    created () {
-      this.item = require(`~/static/data/class_features/${this.id}.md`)
+    featureLevel: {
+      type: Object,
+      default: () => { return {} }
     }
+  },
+  data () {
+    return {
+      item: {}
+    }
+  },
+  created () {
+    this.item = require(`~/static/data/class_features/${this.id}.md`)
   }
+}
 </script>

@@ -7,25 +7,26 @@
 </template>
 
 <script>
-  import Trait from '~/components/race/Trait.vue'
+import Trait from '~/components/race/Trait.vue'
 
-  export default {
-    components: {Trait},
-    props: {
-      id: {
-        type: String,
-        default: ''
-      }
+export default {
+  components: { Trait },
+  props: {
+    id: {
+      type: String,
+      default: ''
+    }
+  },
+  computed: {
+    name () {
+      return this.item.attributes.name
     },
-    computed: {
-      name () {
-        return this.item.attributes.name
-      },
-      item () {
-        if (this.id) {
-          return require(`~/static/data/traits/${this.id}.md`)
-        }
+    item () {
+      if (this.id) {
+        return require(`~/static/data/traits/${this.id}.md`)
       }
+      return ''
     }
   }
+}
 </script>

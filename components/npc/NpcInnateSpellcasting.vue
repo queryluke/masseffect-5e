@@ -8,13 +8,12 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      spellcasting: {
-        type: Object,
-        default: () => { return {} }
-      }
-    },
+export default {
+  props: {
+    spellcasting: {
+      type: Object,
+      default: () => { return {} }
+    }
   }
+}
 </script>
-

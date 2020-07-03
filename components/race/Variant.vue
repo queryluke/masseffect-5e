@@ -7,22 +7,23 @@
 
 <script>
 
-  export default {
-    props: {
-      id: {
-        type: String,
-        default: ''
-      }
+export default {
+  props: {
+    id: {
+      type: String,
+      default: ''
+    }
+  },
+  computed: {
+    name () {
+      return this.item.attributes.name
     },
-    computed: {
-      name () {
-        return this.item.attributes.name
-      },
-      item () {
-        if (this.id) {
-          return require(`~/static/data/subraces/${this.id}.md`)
-        }
+    item () {
+      if (this.id) {
+        return require(`~/static/data/subraces/${this.id}.md`)
       }
+      return ''
     }
   }
+}
 </script>

@@ -39,50 +39,50 @@
 </template>
 
 <script>
-  import {createNamespacedHelpers} from 'vuex'
-  const {mapActions, mapGetters} = createNamespacedHelpers('phb')
+import { createNamespacedHelpers } from 'vuex'
+const { mapActions, mapGetters } = createNamespacedHelpers('phb')
 
-  export default {
-    computed: {
-      ...mapGetters(['pages', 'primaryNavigation', 'races', 'classes', 'activeClassTab', 'classTabs', 'searchbar']),
-      classTab: {
-        get () {
-          return this.activeClassTab
-        },
-        set (value) {
-          this.updateActiveClassTab(value)
-        }
+export default {
+  computed: {
+    ...mapGetters(['pages', 'primaryNavigation', 'races', 'classes', 'activeClassTab', 'classTabs', 'searchbar']),
+    classTab: {
+      get () {
+        return this.activeClassTab
       },
-      page () {
-        return this.pages[this.$route.name] ? this.pages[this.$route.name] : {}
-      },
-      pageName () {
-        if (this.pages[this.$route.name]) {
-          return this.$route.params.id
-            ? `${this.page.name} - ${this.$options.filters.capitalize(this.$route.params.id)}`
-            : this.page.name
-        } else {
-          return ''
-        }
-      },
-      classPage () {
-        return this.$route.name === 'phb-classes-id'
-      },
-      racePage () {
-        return this.$route.name === 'phb-races-id'
-      },
-      toolbarMenuItems () {
-        if (this.classPage) {
-          return this.classes
-        }
-        if (this.racePage) {
-          return this.races
-        }
-        return false
+      set (value) {
+        this.updateActiveClassTab(value)
       }
     },
-    methods: {
-      ...mapActions(['toggleSidebar','updateActiveClassTab', 'toggleRulebar', 'toggleMobileFilterDialog', 'setSearchbar'])
+    page () {
+      return this.pages[this.$route.name] ? this.pages[this.$route.name] : {}
+    },
+    pageName () {
+      if (this.pages[this.$route.name]) {
+        return this.$route.params.id
+          ? `${this.page.name} - ${this.$options.filters.capitalize(this.$route.params.id)}`
+          : this.page.name
+      } else {
+        return ''
+      }
+    },
+    classPage () {
+      return this.$route.name === 'phb-classes-id'
+    },
+    racePage () {
+      return this.$route.name === 'phb-races-id'
+    },
+    toolbarMenuItems () {
+      if (this.classPage) {
+        return this.classes
+      }
+      if (this.racePage) {
+        return this.races
+      }
+      return false
     }
+  },
+  methods: {
+    ...mapActions(['toggleSidebar', 'updateActiveClassTab', 'toggleRulebar', 'toggleMobileFilterDialog', 'setSearchbar'])
   }
+}
 </script>

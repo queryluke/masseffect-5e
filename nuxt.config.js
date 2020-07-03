@@ -1,34 +1,24 @@
+import colors from 'vuetify/es5/util/colors'
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
-const fs = require('fs')
 
-/*****
- * Dynamic Route Generation
- */
-const routes = []
-fs.readdirSync('./static/data/classes').map(file => {
-  const id = file.replace(/.json$/, '')
-  routes.push(`/phb/classes/${id}`)
-})
-fs.readdirSync(`./static/data/races`).map(file => {
-  const id = file.replace(/.md$/, '')
-  routes.push(`/phb/races/${id}`)
-})
-fs.readdirSync('./static/data/changelog').map((file) => {
-  routes.push('/changelog/' + (file.replace(/\.md$/g, '')))
-})
-
-
-module.exports = {
-  server: {
-    port: 3000,
-    host: '0.0.0.0'
-  },
+export default {
+  /*
+  ** Nuxt rendering mode
+  ** See https://nuxtjs.org/api/configuration-mode
+  */
   mode: 'spa',
   /*
+  ** Nuxt target
+  ** See https://nuxtjs.org/api/configuration-target
+  */
+  target: 'static',
+  /*
   ** Headers of the page
+  ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-    title: 'Mass Effect 5e',
+    titleTemplate: '%s - ' + 'Mass Effect 5e',
+    title: 'Mass Effect 5e' || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -36,145 +26,84 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'D&D 5th Edition Homebrew featuring the Mass Effect Universe' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-
-  /*
-  ** manifest for nuxt-pwa
-  */
-  manifest: {
-    name: 'Mass Effect 5e',
-    lang: 'en'
-  },
-
   /*
   ** Customize the progress-bar color
   */
   loading: { color: '#b71c1c' },
-
-  /*
-  ** Routes
-  */
-  generate: {
-    routes
-  },
-
   /*
   ** Global CSS
   */
   css: [
-    '~/assets/style/app.styl'
   ],
-
   /*
   ** Plugins to load before mounting the App
+  ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    '@/plugins/vuetify',
     { src: '@/plugins/persistentState.js', ssr: false },
     { src: '@/plugins/TiptapVuetify', mode: 'client' },
     '@/plugins/filters/index.js',
-    '@/plugins/vue2-filters',
-    '@/plugins/globals'
+    '@/plugins/vue2-filters'
+  ],
+  /*
+  ** Auto import components
+  ** See https://nuxtjs.org/api/configuration-components
+  */
+  components: true,
+  /*
+  ** Nuxt.js dev-modules
+  */
+  buildModules: [
+    // Doc: https://github.com/nuxt-community/eslint-module
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/vuetify'
   ],
   /*
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/google-analytics',
-    '@nuxtjs/pwa',
-    '@nuxtjs/sitemap'
+    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/axios',
+    '@nuxtjs/pwa'
   ],
-  'google-analytics': {
-    id: 'UA-83740704-2',
-    autoTracking: {
-      pageviewTemplate: route => {
-        return {
-          page: route.path,
-          title: document.title,
-          location: window.location.href
+  googleAnalytics: {
+    id: 'UA-83740704-2'
+  },
+  /*
+  ** Axios module configuration
+  ** See https://axios.nuxtjs.org/options
+  */
+  axios: {},
+  /*
+  ** vuetify module configuration
+  ** https://github.com/nuxt-community/vuetify-module
+  */
+  vuetify: {
+    customVariables: ['~/assets/variables.scss'],
+    theme: {
+      dark: true,
+      themes: {
+        light: {
+          primary: colors.red.darken4,
+          accent: colors.lightBlue.darken1,
+          secondary: colors.indigo.darken4,
+          info: colors.cyan.lighten1,
+          warning: colors.amber.lighten1,
+          error: colors.pink.lighten1,
+          success: colors.lightGreen.lighten1
         }
       }
     }
   },
-
-  /*
-  ** Router Scroll behavior
-  */
-  router: {
-    scrollBehavior: (to, from, savedPosition) => {
-      let position = false
-
-      // if no children detected
-      if (to.matched.length < 2) {
-        // scroll to the top of the page
-        position = { x: 0, y: 0 }
-      } else if (to.matched.some((r) => r.components.default.options.scrollToTop)) {
-        // if one of the children has scrollToTop option set to true
-        position = { x: 0, y: 0 }
-      }
-
-      // savedPosition is only available for popstate navigations (back button)
-      if (savedPosition) {
-        position = savedPosition
-      }
-
-      return new Promise(resolve => {
-        // wait for the out transition to complete (if necessary)
-        window.$nuxt.$once('triggerScroll', () => {
-          // coords will be used if no selector is provided,
-          // or if the selector didn't match any element.
-          if (to.hash && document.querySelector(to.hash)) {
-            // scroll to anchor by returning the selector
-            position = { selector: to.hash, offset: { x: 0, y: 56 } }
-          }
-          resolve(position)
-        })
-      })
-    }
-  },
-  sitemap: {
-    hostname: 'https://n7.world',
-    exclude: [
-      '/static/data'
-    ],
-    routes: routes
-  },
-
   /*
   ** Build configuration
+  ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
     transpile: ['vuetify/lib', 'tiptap-vuetify'],
-    plugins: [new VuetifyLoaderPlugin()],
-    loaders: {
-      stylus: {
-        import: ['~assets/style/variables.styl']
-      }
-    },
-    /*
-    ** You can extend webpack config here
-    */
-    extend(config, ctx) {
-      // Frontmatter loader
-      config.module.rules.push({
-        test: /\.md$/,
-        loader: 'frontmatter-markdown-loader',
-        options: {
-          vue: true
-        }
-      })
-      // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-    }
+    plugins: [new VuetifyLoaderPlugin()]
   }
 }

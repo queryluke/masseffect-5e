@@ -16,31 +16,30 @@
 </template>
 
 <script>
-  import BookmarkButton from '~/components/BookmarkButton.vue'
-  import StatBlock from '~/components/npc/StatBlock.vue'
-  import SortOptions from '~/components/list/Sort.vue'
+import BookmarkButton from '~/components/BookmarkButton.vue'
+import StatBlock from '~/components/npc/StatBlock.vue'
+import SortOptions from '~/components/list/Sort.vue'
 
-  export default {
-    components: {
-      StatBlock,
-      BookmarkButton,
-      SortOptions
-    },
-    props: {
-      items: {
-        type: Array,
-        default: () => { return [] }
-      }
-    },
-    data () {
-      return {
-        headers: [
-          { label: 'Name', key: 'name', classes: 'xs6', sortable: true },
-          { label: 'Faction', key: 'unit', classes: 'xs4', sortable: true },
-          { label: 'CR', key: 'cr', classes: 'xs2', sortable: true }
-        ]
-      }
+export default {
+  components: {
+    StatBlock,
+    BookmarkButton,
+    SortOptions
+  },
+  props: {
+    items: {
+      type: Array,
+      default: () => { return [] }
+    }
+  },
+  data () {
+    return {
+      headers: [
+        { label: 'Name', key: 'name', classes: 'xs6', sortable: true },
+        { label: 'Faction', key: 'unit', classes: 'xs4', sortable: true },
+        { label: 'CR', key: 'cr', classes: 'xs2', sortable: true }
+      ]
     }
   }
+}
 </script>
-

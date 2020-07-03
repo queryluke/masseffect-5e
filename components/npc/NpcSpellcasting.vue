@@ -6,37 +6,36 @@
 </template>
 
 <script>
-  import spells from '~/static/data/spells'
-  import adept from '~/static/data/classes/adept'
+import spells from '~/static/data/spells'
+import adept from '~/static/data/classes/adept'
 
-  export default {
-    props: {
-      spellcasting: {
-        type: Object,
-        default: () => { return {} }
-      }
+export default {
+  props: {
+    spellcasting: {
+      type: Object,
+      default: () => { return {} }
+    }
+  },
+  computed: {
+    spellList () {
+      const spellList = []
+      Object.entries(this.spellSlots).forEach(([key, value]) => {
+        if (value) {
+          const spellsInLevel = this.castable.filter(s => parseInt(s.level, 10) === parseInt(key, 10))
+          spellList.push({ level: key, slots: value, spells: spellsInLevel })
+        }
+      })
+      return spellList
     },
-    computed: {
-      spellList () {
-        const spellList = []
-        Object.entries(this.spellSlots).forEach(([key, value]) => {
-          if (value) {
-            const spellsInLevel = this.castable.filter(s => parseInt(s.level, 10) === parseInt(key, 10))
-            spellList.push({level: key, slots: value, spells: spellsInLevel})
-          }
-        })
-        return spellList
-      },
-      cantrips () {
-        return this.castable.filter(s => parseInt(s.level, 10) === 0)
-      },
-      spellSlots () {
-        return adept.progression.find(p => parseInt(p.level, 10) === parseInt(this.spellcasting.level, 10)).spellSlots
-      },
-      castable () {
-        return spells.filter(s => this.spellcasting.spellList.includes(s.id))
-      }
+    cantrips () {
+      return this.castable.filter(s => parseInt(s.level, 10) === 0)
+    },
+    spellSlots () {
+      return adept.progression.find(p => parseInt(p.level, 10) === parseInt(this.spellcasting.level, 10)).spellSlots
+    },
+    castable () {
+      return spells.filter(s => this.spellcasting.spellList.includes(s.id))
     }
   }
+}
 </script>
-

@@ -8,32 +8,32 @@
 </template>
 
 <script>
-  import MarkdownContent from '~/components/MarkdownContent.vue'
+import MarkdownContent from '~/components/MarkdownContent.vue'
 
-  export default {
-    components: {MarkdownContent},
-    props: {
-      id: {
-        type: String,
-        default: ''
-      }
+export default {
+  components: { MarkdownContent },
+  props: {
+    id: {
+      type: String,
+      default: ''
+    }
+  },
+  computed: {
+    item () {
+      return require(`~/static/data/rules/${this.id}.md`)
     },
-    computed: {
-      item () {
-        return require(`~/static/data/rules/${this.id}.md`)
-      },
-      title () {
-        return this.item.attributes.title
-      },
-      newRule () {
-        return this.item.attributes.new
-      },
-      changeRule () {
-        return this.item.attributes.change
-      },
-      hash () {
-        return this.id.split('-').splice(2).join('-')
-      }
+    title () {
+      return this.item.attributes.title
+    },
+    newRule () {
+      return this.item.attributes.new
+    },
+    changeRule () {
+      return this.item.attributes.change
+    },
+    hash () {
+      return this.id.split('-').splice(2).join('-')
     }
   }
+}
 </script>

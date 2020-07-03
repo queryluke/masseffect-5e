@@ -6,13 +6,12 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      spell: {
-        type: Object,
-        default: () => { return {} }
-      },
+export default {
+  props: {
+    spell: {
+      type: Object,
+      default: () => { return {} }
     }
   }
+}
 </script>
-

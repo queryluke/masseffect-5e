@@ -1,4 +1,8 @@
 import Vue from 'vue'
+import VChip from 'vuetify/lib/components/VChip'
+import VAlert from 'vuetify/lib/components/VAlert'
+import VBtn from 'vuetify/lib/components/VBtn'
+import VIcon from 'vuetify/lib/components/VIcon'
 import MarkdownFile from '~/components/MarkdownFile.vue'
 import MarkdownContent from '~/components/MarkdownContent.vue'
 import GalaxyMap from '~/components/rule_partials/GalaxyMap.vue'
@@ -10,10 +14,6 @@ import WeaponProp from '~/components/WeaponProp'
 // Because Vue-loader dynamically adds vue components as needed
 // Any vue components used in the .md files need to be loaded globally
 // TODO: Reduce these where possible
-import VChip from 'vuetify/lib/components/VChip'
-import VAlert from 'vuetify/lib/components/VAlert'
-import VBtn from 'vuetify/lib/components/VBtn'
-import VIcon from 'vuetify/lib/components/VIcon'
 
 Vue.component('markdown-file', MarkdownFile)
 Vue.component('markdown-content', MarkdownContent)
@@ -26,4 +26,3 @@ Vue.component('v-icon', VIcon)
 Vue.component('simple-card', SimpleCard)
 Vue.component('ai-dialog', AiDialog)
 Vue.component('weapon-prop', WeaponProp)
-

@@ -27,70 +27,70 @@
 </template>
 
 <script>
-  import ProgramList from '~/components/programs/ProgramList.vue'
-  import ProgramFilters from '~/components/programs/ProgramFilters.vue'
-  import BookmarkButton from '~/components/BookmarkButton.vue'
-  import MobileFilterContainer from '~/components/list/MobileFilterContainer.vue'
-  import items from '~/static/data/programs'
+import { createNamespacedHelpers } from 'vuex'
+import ProgramList from '~/components/programs/ProgramList.vue'
+import ProgramFilters from '~/components/programs/ProgramFilters.vue'
+import BookmarkButton from '~/components/BookmarkButton.vue'
+import MobileFilterContainer from '~/components/list/MobileFilterContainer.vue'
+import items from '~/static/data/programs'
 
-  // State
-  import {createNamespacedHelpers} from 'vuex'
-  const {mapActions, mapGetters} = createNamespacedHelpers('itemList')
+// State
+const { mapActions, mapGetters } = createNamespacedHelpers('itemList')
 
-  export default {
-    components: {
-      MobileFilterContainer,
-      ProgramFilters,
-      ProgramList,
-      BookmarkButton
-    },
-    data () {
-      return {
-        items,
-        itemKey: 'programs'
-      }
-    },
-    computed: {
-      ...mapGetters(['order', 'sortBy', 'filters', 'searchString']),
-      search: {
-        get () {
-          return this.searchString
-        },
-        set (value) {
-          this.updateSearchString(value)
-        }
-      },
-      filtered () {
-        let data = this.items
-        let sortBy = this.sortBy.key
-        let order = this.order
-        data.sort(function (a, b) {
-          return (a[sortBy] === b[sortBy] ? 0 : a[sortBy] > b[sortBy] ? 1 : -1) * order
-        })
-        if (this.search) {
-          data = data.filter((item) => item.name.toLowerCase().indexOf(this.search.toLowerCase()) >= 0)
-        }
-        if (this.filters[this.itemKey].rarity.length > 0) {
-          data = data.filter(item => this.filters[this.itemKey].rarity.map(r => r.toLowerCase()).includes(item.rarity))
-        }
-        if (this.filters[this.itemKey].installation) {
-          data = data.filter(item => item.installation)
-        }
-        return data
-      }
-    },
-    middleware: 'resetListFilters',
-    head () {
-      return {
-        title: 'Programs - Equipment | Mass Effect 5e',
-        meta: [
-          { hid: 'description', name: 'description', content: 'Mass Effect 5e useds omni-tool programs in places of 5th editions magic items.' }
-        ]
-      }
-    },
-    layout: 'phb',
-    methods: {
-      ...mapActions(['updateSearchString'])
+export default {
+  components: {
+    MobileFilterContainer,
+    ProgramFilters,
+    ProgramList,
+    BookmarkButton
+  },
+  data () {
+    return {
+      items,
+      itemKey: 'programs'
     }
+  },
+  computed: {
+    ...mapGetters(['order', 'sortBy', 'filters', 'searchString']),
+    search: {
+      get () {
+        return this.searchString
+      },
+      set (value) {
+        this.updateSearchString(value)
+      }
+    },
+    filtered () {
+      let data = this.items
+      const sortBy = this.sortBy.key
+      const order = this.order
+      data.sort(function (a, b) {
+        return (a[sortBy] === b[sortBy] ? 0 : a[sortBy] > b[sortBy] ? 1 : -1) * order
+      })
+      if (this.search) {
+        data = data.filter(item => item.name.toLowerCase().includes(this.search.toLowerCase()))
+      }
+      if (this.filters[this.itemKey].rarity.length > 0) {
+        data = data.filter(item => this.filters[this.itemKey].rarity.map(r => r.toLowerCase()).includes(item.rarity))
+      }
+      if (this.filters[this.itemKey].installation) {
+        data = data.filter(item => item.installation)
+      }
+      return data
+    }
+  },
+  middleware: 'resetListFilters',
+  head () {
+    return {
+      title: 'Programs - Equipment | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Mass Effect 5e useds omni-tool programs in places of 5th editions magic items.' }
+      ]
+    }
+  },
+  layout: 'phb',
+  methods: {
+    ...mapActions(['updateSearchString'])
   }
+}
 </script>

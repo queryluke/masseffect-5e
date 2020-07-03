@@ -20,29 +20,29 @@
 </template>
 
 <script>
-  import RaceInfo from '~/components/race/RaceInfo.vue'
-  import {mapGetters} from 'vuex'
+import { mapGetters } from 'vuex'
+import RaceInfo from '~/components/race/RaceInfo.vue'
 
-  export default {
-    components: {RaceInfo},
-    data () {
-      const race = require(`~/static/data/races/${this.$route.params.id}.md`)
-      return {
-        race: race.attributes,
-        id: this.$route.params.id
-      }
-    },
-    computed: {
-      ...mapGetters(['races']),
-    },
-    head () {
-      return {
-        title: `${this.race.name} - Races | Mass Effect 5e`,
-        meta: [
-          { hid: 'description', name: 'description', content: this.race.snippet }
-        ]
-      }
-    },
-    layout: 'phb'
-  }
+export default {
+  components: { RaceInfo },
+  data () {
+    const race = require(`~/static/data/races/${this.$route.params.id}.md`)
+    return {
+      race: race.attributes,
+      id: this.$route.params.id
+    }
+  },
+  computed: {
+    ...mapGetters(['races'])
+  },
+  head () {
+    return {
+      title: `${this.race.name} - Races | Mass Effect 5e`,
+      meta: [
+        { hid: 'description', name: 'description', content: this.race.snippet }
+      ]
+    }
+  },
+  layout: 'phb'
+}
 </script>

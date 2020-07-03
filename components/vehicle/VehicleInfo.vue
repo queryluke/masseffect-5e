@@ -48,16 +48,16 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      item: {
-        type: Object,
-        default: () => { return {} }
-      },
-      title: {
-        type: Boolean,
-        default: true
-      }
+export default {
+  props: {
+    item: {
+      type: Object,
+      default: () => { return {} }
+    },
+    title: {
+      type: Boolean,
+      default: true
     }
   }
+}
 </script>

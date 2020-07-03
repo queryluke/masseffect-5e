@@ -11,14 +11,14 @@ export default {
     }
   },
   actions: {
-    setCr ({commit}, payload) {
-      commit('update', {key: 'cr', value: payload})
+    setCr ({ commit }, payload) {
+      commit('update', { key: 'cr', value: payload })
     },
-    setRace ({commit}, payload) {
-      commit('update', {key: 'race', value: payload})
+    setRace ({ commit }, payload) {
+      commit('update', { key: 'race', value: payload })
     },
-    setClass ({commit}, payload) {
-      commit('update', {key: 'sc', value: payload})
+    setClass ({ commit }, payload) {
+      commit('update', { key: 'sc', value: payload })
     }
   },
   getters: {

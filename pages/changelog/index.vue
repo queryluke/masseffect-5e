@@ -9,24 +9,24 @@
 </template>
 
 <script>
-  import items from '~/static/data/changelog'
-  import PostCard from '~/components/cards/PostCard.vue'
+import items from '~/static/data/changelog'
+import PostCard from '~/components/cards/PostCard.vue'
 
-  export default {
-    components: { PostCard },
-    data () {
-      return {
-        items
-      }
-    },
-    head () {
-      return {
-        title: `Changelog | Mass Effect 5e`,
-        meta: [
-          { hid: 'description', name: 'description', content: 'Keep up-to-date with all the Mass Effect 5e system rule additions and updates.' }
-        ]
-      }
-    },
-    layout: 'dark'
-  }
+export default {
+  components: { PostCard },
+  data () {
+    return {
+      items
+    }
+  },
+  head () {
+    return {
+      title: 'Changelog | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Keep up-to-date with all the Mass Effect 5e system rule additions and updates.' }
+      ]
+    }
+  },
+  layout: 'dark'
+}
 </script>

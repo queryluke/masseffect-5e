@@ -12,31 +12,32 @@
 </template>
 
 <script>
-  import weaponProperties from '~/static/data/weapon_properties.json'
+import weaponProperties from '~/static/data/weapon_properties.json'
 
-  export default {
-    name: 'WeaponProp',
-    props: {
-      propertyName: {
-        type: String,
-        default: ''
-      },
+export default {
+  name: 'WeaponProp',
+  props: {
+    propertyName: {
+      type: String,
+      default: ''
+    }
+  },
+  data () {
+    return {
+      dialog: false,
+      weaponProperties
+    }
+  },
+  computed: {
+    property () {
+      return weaponProperties.find(i => i.name === this.propertyName)
     },
-    data () {
-      return {
-        dialog: false,
-        weaponProperties
+    text () {
+      if (this.property) {
+        return this.property.description
       }
-    },
-    computed: {
-      property () {
-        return weaponProperties.find(i => i.name === this.propertyName)
-      },
-      text () {
-        if (this.property) {
-          return this.property.description
-        }
-      }
+      return ''
     }
   }
+}
 </script>

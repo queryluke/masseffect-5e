@@ -15,28 +15,28 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      id: {
-        type: String,
-        default: ''
-      },
-      sub: {
-        type: String,
-        default: ''
-      }
+export default {
+  props: {
+    id: {
+      type: String,
+      default: ''
     },
-    data () {
-      return {
-        dialog: false,
-        primeTypeCss: {
-          force: 'purple--text text--darken-1',
-          necrotic: 'blue-grey--text text--darken-2',
-          fire: 'deep-orange--text text--darken-1',
-          cold: 'cyan--text text--darken-1',
-          lightning: 'blue--text text--darken-1'
-        }
+    sub: {
+      type: String,
+      default: ''
+    }
+  },
+  data () {
+    return {
+      dialog: false,
+      primeTypeCss: {
+        force: 'purple--text text--darken-1',
+        necrotic: 'blue-grey--text text--darken-2',
+        fire: 'deep-orange--text text--darken-1',
+        cold: 'cyan--text text--darken-1',
+        lightning: 'blue--text text--darken-1'
       }
     }
   }
+}
 </script>

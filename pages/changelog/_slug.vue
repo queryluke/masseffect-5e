@@ -12,28 +12,29 @@
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        id: this.$route.params.slug
+export default {
+  data () {
+    return {
+      id: this.$route.params.slug
+    }
+  },
+  computed: {
+    post () {
+      if (this.id) {
+        return require(`~/static/data/changelog/${this.id}.md`)
       }
-    },
-    computed: {
-      post () {
-        if (this.id) {
-          return require(`~/static/data/changelog/${this.id}.md`)
-        }
-      }
-    },
-    head () {
-      return {
-        title: `${this.post.attributes.title} - Changelog | Mass Effect 5e`,
-        meta: [
-          { hid: 'description', name: 'description', content: this.post.attributes.description }
-        ]
-      }
+      return ''
+    }
+  },
+  head () {
+    return {
+      title: `${this.post.attributes.title} - Changelog | Mass Effect 5e`,
+      meta: [
+        { hid: 'description', name: 'description', content: this.post.attributes.description }
+      ]
     }
   }
+}
 </script>
 
 <style lang="scss">

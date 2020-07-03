@@ -7,23 +7,23 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      id: {
-        type: String,
-        default: ''
-      },
-      profBonus: {
-        type: Number,
-        default: 2
-      }
+export default {
+  props: {
+    id: {
+      type: String,
+      default: ''
     },
-    computed: {
-      grenade () {
-        return require(`~/static/data/grenades/${this.id}.md`)
-      }
+    profBonus: {
+      type: Number,
+      default: 2
+    }
+  },
+  computed: {
+    grenade () {
+      return require(`~/static/data/grenades/${this.id}.md`)
     }
   }
+}
 </script>
 
 <style lang="scss">

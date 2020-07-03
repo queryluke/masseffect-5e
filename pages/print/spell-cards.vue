@@ -35,89 +35,89 @@
 </template>
 
 <script>
-  import FrontSide from '~/components/spell_cards/FrontSide.vue'
-  import BackSide from '~/components/spell_cards/BackSide.vue'
-  import spells from '~/static/data/spells.json'
+import FrontSide from '~/components/spell_cards/FrontSide.vue'
+import BackSide from '~/components/spell_cards/BackSide.vue'
+import spells from '~/static/data/spells.json'
 
-  export default {
-    name: 'PrintSpellCards',
-    components: {
-      FrontSide,
-      BackSide
-    },
-    data () {
-      return {
-        classes: ['Adept', 'Engineer', 'Infiltrator', 'Sentinel', 'Soldier', 'Vanguard'],
-        selectedClasses: [],
-        types: ['Biotic', 'Tech', 'Combat'],
-        selectedTypes: [],
-        cardOptions: [
-          {text: 'Single Sided', value: 'single'},
-          {text: 'Double Sided', value: 'double'}
-        ],
-        selectedCardOption: 'single',
-        printOptions: [
-          {text: 'Auto', value: 'auto'},
-          {text: 'Manual', value: 'manual'},
-        ],
-        selectedPrintOption: 'auto',
-        back: false,
-        spells
-      }
-    },
-    computed: {
-      filtered () {
-        let data = this.spells
-        if (this.selectedClasses.length > 0) {
-          data = data.filter(spell => {
-            for (const c of this.selectedClasses.map(sc => sc.toLowerCase())) {
-              if (spell.availableClasses.includes(c)) {
-                return spell
-              }
+export default {
+  name: 'PrintSpellCards',
+  components: {
+    FrontSide,
+    BackSide
+  },
+  data () {
+    return {
+      classes: ['Adept', 'Engineer', 'Infiltrator', 'Sentinel', 'Soldier', 'Vanguard'],
+      selectedClasses: [],
+      types: ['Biotic', 'Tech', 'Combat'],
+      selectedTypes: [],
+      cardOptions: [
+        { text: 'Single Sided', value: 'single' },
+        { text: 'Double Sided', value: 'double' }
+      ],
+      selectedCardOption: 'single',
+      printOptions: [
+        { text: 'Auto', value: 'auto' },
+        { text: 'Manual', value: 'manual' }
+      ],
+      selectedPrintOption: 'auto',
+      back: false,
+      spells
+    }
+  },
+  computed: {
+    filtered () {
+      let data = this.spells
+      if (this.selectedClasses.length > 0) {
+        data = data.filter((spell) => {
+          for (const c of this.selectedClasses.map(sc => sc.toLowerCase())) {
+            if (spell.availableClasses.includes(c)) {
+              return spell
             }
-          })
-        }
-        if (this.selectedTypes.length > 0) {
-          data = data.filter(spell => this.selectedTypes.map(t => t.toLowerCase()).includes(spell.type))
-        }
-        return data
-      },
-      chunked () {
-        let chunks = []
-        const spells = this.filtered
-        const numSpells = spells.length
-        const chunkSize = this.selectedCardOption === 'single' ? 4 : 9;
-        for (let i = 0; i < numSpells; i += chunkSize) {
-          const chunk = spells.slice(i, i + chunkSize)
-          while (chunk.length < chunkSize) {
-            chunk.push({id: 'spacer'})
           }
-          chunks.push(chunk);
-        }
-        return chunks
-      },
-      reversedChunks () {
-        const chunks = this.chunked
-        const rowSize = this.selectedCardOption === 'single' ? 2 : 3;
-        return chunks.map((chunk) => {
-          const reversedChunk = []
-          for (let i = 0; i < chunk.length; i += rowSize) {
-            const miniChunk = chunk.slice(i, i + rowSize)
-            reversedChunk.push(...miniChunk.reverse())
-          }
-          return reversedChunk
         })
       }
-    },
-    head () {
-      return {
-        title: `Spell Cards | Mass Effect 5e`,
-        meta: [
-          { hid: 'description', name: 'description', content: 'Printable Spell Cards for Mass Effect 5e' }
-        ]
+      if (this.selectedTypes.length > 0) {
+        data = data.filter(spell => this.selectedTypes.map(t => t.toLowerCase()).includes(spell.type))
       }
+      return data
+    },
+    chunked () {
+      const chunks = []
+      const spells = this.filtered
+      const numSpells = spells.length
+      const chunkSize = this.selectedCardOption === 'single' ? 4 : 9
+      for (let i = 0; i < numSpells; i += chunkSize) {
+        const chunk = spells.slice(i, i + chunkSize)
+        while (chunk.length < chunkSize) {
+          chunk.push({ id: 'spacer' })
+        }
+        chunks.push(chunk)
+      }
+      return chunks
+    },
+    reversedChunks () {
+      const chunks = this.chunked
+      const rowSize = this.selectedCardOption === 'single' ? 2 : 3
+      return chunks.map((chunk) => {
+        const reversedChunk = []
+        for (let i = 0; i < chunk.length; i += rowSize) {
+          const miniChunk = chunk.slice(i, i + rowSize)
+          reversedChunk.push(...miniChunk.reverse())
+        }
+        return reversedChunk
+      })
+    }
+  },
+  head () {
+    return {
+      title: 'Spell Cards | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Printable Spell Cards for Mass Effect 5e' }
+      ]
     }
   }
+}
 </script>
 
 <style lang="scss">
@@ -133,7 +133,6 @@
 
   .spell-page__print {
     margin: .25in;
-
 
     $biotic-color: #6467b9;
     $tech-color: #d98300;
@@ -268,4 +267,3 @@
   }
 
 </style>
-

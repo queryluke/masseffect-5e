@@ -18,34 +18,34 @@
 </template>
 
 <script>
-  import SpellClassList from '~/components/spell/SpellClassList.vue'
-  import AdvancedOption from '~/components/spell/AdvancedOption.vue'
+import SpellClassList from '~/components/spell/SpellClassList.vue'
+import AdvancedOption from '~/components/spell/AdvancedOption.vue'
 
-  export default {
-    components: {
-      AdvancedOption, SpellClassList
+export default {
+  components: {
+    AdvancedOption, SpellClassList
+  },
+  props: {
+    spell: {
+      type: Object,
+      default: () => { return {} }
     },
-    props: {
-      spell: {
-        type: Object,
-        default: () => { return {} }
-      },
-      cardOption: {
-        type: String,
-        default: 'single'
-      }
+    cardOption: {
+      type: String,
+      default: 'single'
+    }
+  },
+  computed: {
+    cardColor () {
+      return this.cardOption === 'single' ? 'blue-grey lighten-4' : ''
     },
-    computed: {
-      cardColor () {
-        return this.cardOption === 'single' ? 'blue-grey lighten-4' : ''
-      },
-      cardType () {
-        if (this.cardOption === 'single' || this.spell.id === 'spacer') {
-          return 'gen-card'
-        } else {
-          return `${this.spell.type}-card`
-        }
+    cardType () {
+      if (this.cardOption === 'single' || this.spell.id === 'spacer') {
+        return 'gen-card'
+      } else {
+        return `${this.spell.type}-card`
       }
     }
   }
+}
 </script>

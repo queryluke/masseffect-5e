@@ -12,31 +12,30 @@
       div(v-if="!editMode")
         div(v-html="html")
         v-btn(v-if="!editMode" @click="editMode = true;") Edit
-    
-      
 
 </template>
 
 <script>
 // import the component and the necessary extensions
-import { TiptapVuetify, Heading, Bold, Italic, Strike, Underline, Code, CodeBlock, Paragraph, BulletList, OrderedList,
+import {
+  TiptapVuetify, Heading, Bold, Italic, Strike, Underline, Code, CodeBlock, Paragraph, BulletList, OrderedList,
   ListItem, Link, Blockquote, HardBreak, HorizontalRule, History
 } from 'tiptap-vuetify'
 
 export default {
   // specify TiptapVuetify component in "components"
-  components: {TiptapVuetify},
+  components: { TiptapVuetify },
   props: {
     content: {
       type: String,
-      default: () => {return "Add Description Here!"}
+      default: () => { return 'Add Description Here!' }
     },
     index: {
       type: Number,
-      default: () => {return -1}
+      default: () => { return -1 }
     }
   },
-  data: function() {
+  data () {
     return {
       editMode: false,
       // declare extensions you want to use
@@ -65,19 +64,19 @@ export default {
     }
   },
   methods: {
-    save: function() {
-      this.$emit("update:content", {
+    save () {
+      this.$emit('update:content', {
         index: this.index,
         html: this.html
-      });
-      this.editMode = false;
+      })
+      this.editMode = false
     },
-    remove: function() {
-      this.$emit("remove:content", {
+    remove () {
+      this.$emit('remove:content', {
         index: this.index,
         html: this.html
-      });
-      this.editMode = false;
+      })
+      this.editMode = false
     }
   }
 }

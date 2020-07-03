@@ -18,38 +18,37 @@
 </template>
 
 <script>
-  import SortOptions from '~/components/list/Sort.vue'
-  import ProgramInfo from '~/components/programs/ProgramInfo.vue'
-  import BookmarkButton from '~/components/BookmarkButton.vue'
-  import {mapGetters} from 'vuex'
+import { mapGetters } from 'vuex'
+import SortOptions from '~/components/list/Sort.vue'
+import ProgramInfo from '~/components/programs/ProgramInfo.vue'
+import BookmarkButton from '~/components/BookmarkButton.vue'
 
-  export default {
-    components: {
-      SortOptions, ProgramInfo, BookmarkButton
-    },
-    props: {
-      items: {
-        type: Array,
-        default: () => { return [] }
-      }
-    },
-    data () {
-      return {
-        headers: [
-          { label: 'Name', key: 'name', classes: 'xs6', sortable: true },
-          { label: 'Rarity', key: 'rarity', classes: 'xs3' },
-          { label: 'Requires Installation', key: 'installation', classes: 'xs3' }
-        ]
-      }
-    },
-    computed: {
-      ...mapGetters('itemList', ['rarityTextColors']),
-    },
-    methods: {
-      rarityForColor (string) {
-        return this.$options.filters.titlecase(string)
-      }
+export default {
+  components: {
+    SortOptions, ProgramInfo, BookmarkButton
+  },
+  props: {
+    items: {
+      type: Array,
+      default: () => { return [] }
+    }
+  },
+  data () {
+    return {
+      headers: [
+        { label: 'Name', key: 'name', classes: 'xs6', sortable: true },
+        { label: 'Rarity', key: 'rarity', classes: 'xs3' },
+        { label: 'Requires Installation', key: 'installation', classes: 'xs3' }
+      ]
+    }
+  },
+  computed: {
+    ...mapGetters('itemList', ['rarityTextColors'])
+  },
+  methods: {
+    rarityForColor (string) {
+      return this.$options.filters.titlecase(string)
     }
   }
+}
 </script>
-

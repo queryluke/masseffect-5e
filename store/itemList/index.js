@@ -7,7 +7,7 @@ export default {
       weapons: {
         type: [],
         rarity: [],
-        property: [],
+        property: []
       },
       spells: {
         type: [],
@@ -43,16 +43,16 @@ export default {
     searchString: '',
     rarityOptions: ['Common', 'Uncommon', 'Rare', 'Spectre'],
     rarityColors: {
-      'Common': 'grey darken-3',
-      'Uncommon': 'green darken-3',
-      'Rare': 'blue darken-2',
-      'Spectre': 'purple'
+      Common: 'grey darken-3',
+      Uncommon: 'green darken-3',
+      Rare: 'blue darken-2',
+      Spectre: 'purple'
     },
     rarityTextColors: {
-      'Common': 'grey--text text--darken-4',
-      'Uncommon': 'green--text text--darken-3',
-      'Rare': 'blue--text text--darken-2',
-      'Spectre': 'purple--text'
+      Common: 'grey--text text--darken-4',
+      Uncommon: 'green--text text--darken-3',
+      Rare: 'blue--text text--darken-2',
+      Spectre: 'purple--text'
     }
   },
   mutations: {
@@ -61,19 +61,19 @@ export default {
     }
   },
   actions: {
-    updateList ({commit}, payload) {
+    updateList ({ commit }, payload) {
       commit('update', payload)
     },
-    toggleMobileFilterDialog ({commit, getters}) {
-      commit('update', {key: 'mobileFilterDialog', value: !getters.mobileFilterDialog})
+    toggleMobileFilterDialog ({ commit, getters }) {
+      commit('update', { key: 'mobileFilterDialog', value: !getters.mobileFilterDialog })
     },
-    updateSearchString ({commit}, payload) {
-      commit('update', {key: 'searchString', value: payload})
+    updateSearchString ({ commit }, payload) {
+      commit('update', { key: 'searchString', value: payload })
     },
-    updateFilter ({getters, commit}, payload) {
+    updateFilter ({ getters, commit }, payload) {
       const currentFilters = getters.filters
       currentFilters[payload.key][payload.filterKey] = payload.value
-      commit('update', {key: 'filters', value: currentFilters})
+      commit('update', { key: 'filters', value: currentFilters })
     }
   },
   getters: {

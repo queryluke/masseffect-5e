@@ -135,22 +135,22 @@
 </template>
 
 <script>
-  import recentPosts from '~/static/data/changelog.json'
-  import PostCard from '~/components/cards/PostCard.vue'
+import recentPosts from '~/static/data/changelog.json'
+import PostCard from '~/components/cards/PostCard.vue'
 
-  export default {
-    components: { PostCard },
-    data () {
-      return { alert: true, recentPosts }
-    },
-    head () {
-      return {
-        title: `Mass Effect 5e`,
-        meta: [
-          { hid: 'description', name: 'description', content: 'Ever wanted to play D&D in the Mass Effect Universe? Mass Effect 5e has you covered.' }
-        ]
-      }
-    },
-    layout: 'dark'
-  }
+export default {
+  components: { PostCard },
+  data () {
+    return { alert: true, recentPosts }
+  },
+  head () {
+    return {
+      title: 'Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Ever wanted to play D&D in the Mass Effect Universe? Mass Effect 5e has you covered.' }
+      ]
+    }
+  },
+  layout: 'dark'
+}
 </script>

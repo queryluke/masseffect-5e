@@ -15,11 +15,11 @@
 </template>
 
 <script>
-  export default {
-    computed: {
-      license () {
-        return require('~/OGL.md')
-      }
+export default {
+  computed: {
+    license () {
+      return ''
     }
   }
+}
 </script>

@@ -26,98 +26,98 @@
 </template>
 
 <script>
-  import BestiaryList from '~/components/bestiary/BestiaryList.vue'
-  import BestiaryFilters from '~/components/bestiary/BestiaryFilters.vue'
-  import MobileFilterContainer from '~/components/list/MobileFilterContainer.vue'
-  import items from '~/static/data/bestiary'
-  import {CrToInt} from '~/mixins/crToInt'
+import { createNamespacedHelpers } from 'vuex'
+import BestiaryList from '~/components/bestiary/BestiaryList.vue'
+import BestiaryFilters from '~/components/bestiary/BestiaryFilters.vue'
+import MobileFilterContainer from '~/components/list/MobileFilterContainer.vue'
+import items from '~/static/data/bestiary'
+import { CrToInt } from '~/mixins/crToInt'
 
-  // State
-  import {createNamespacedHelpers} from 'vuex'
-  const {mapActions, mapGetters} = createNamespacedHelpers('itemList')
+// State
+const { mapActions, mapGetters } = createNamespacedHelpers('itemList')
 
-  export default {
-    components: {
-      BestiaryList,
-      BestiaryFilters,
-      MobileFilterContainer
-    },
-    mixins: [CrToInt],
-    data () {
-      return {
-        items,
-        itemKey: 'monsters'
-      }
-    },
-    computed: {
-      ...mapGetters(['order', 'sortBy', 'filters', 'searchString']),
-      search: {
-        get () {
-          return this.searchString
-        },
-        set (value) {
-          this.updateSearchString(value)
-        }
-      },
-      filtered () {
-        let data = this.items
-        let sortBy = this.sortBy.key
-        let order = this.order
-        data.sort((a, b) => {
-          switch (sortBy) {
-            case 'cr':
-              a = this.crToInt(a[sortBy])
-              b = this.crToInt(b[sortBy])
-              break
-            default:
-              a = a[sortBy]
-              b = b[sortBy]
-          }
-          return (a === b ? 0 : a > b ? 1 : -1) * order
-        })
-        if (this.search) {
-          data = data.filter((monster) => {
-            let nameMatch = monster.name.toLowerCase().indexOf(this.search.toLowerCase()) >= 0
-            let unitMatch = monster.unit.toLowerCase().indexOf(this.search.toLowerCase()) >= 0
-            return nameMatch || unitMatch
-          })
-        }
-        for (const key in this.filters[this.itemKey]) {
-          const filter = this.filters[this.itemKey][key]
-          if (filter.length > 0) {
-            data = data.filter(item => filter.includes(item[key]))
-          }
-        }
-        return data
-      }
-    },
-    created () {
-      const self = this
-      const crOptions = new Set()
-      const unitOptions = new Set()
-      for (const item of this.items) {
-        crOptions.add(item.cr)
-        unitOptions.add(item.unit)
-      }
-      this.crOptions = [...crOptions].sort((a, b) => {
-        const aSort = self.crToInt(a)
-        const bSort = self.crToInt(b)
-        return aSort === bSort ? 0 : aSort > bSort ? 1 : -1
-      })
-      this.unitOptions = [...unitOptions].sort()
-    },
-    middleware: 'resetListFilters',
-    head () {
-      return {
-        title: 'Bestiary | Mass Effect 5e',
-        meta: [
-          { hid: 'description', name: 'description', content: 'Give your player\'s a unique challenge with over 100 custom made Mass Effect enemies! ' }
-        ]
-      }
-    },
-    layout: 'phb',
-    methods: {
-      ...mapActions(['updateSearchString'])
+export default {
+  components: {
+    BestiaryList,
+    BestiaryFilters,
+    MobileFilterContainer
+  },
+  mixins: [CrToInt],
+  data () {
+    return {
+      items,
+      itemKey: 'monsters'
     }
+  },
+  computed: {
+    ...mapGetters(['order', 'sortBy', 'filters', 'searchString']),
+    search: {
+      get () {
+        return this.searchString
+      },
+      set (value) {
+        this.updateSearchString(value)
+      }
+    },
+    filtered () {
+      let data = this.items
+      const sortBy = this.sortBy.key
+      const order = this.order
+      data.sort((a, b) => {
+        switch (sortBy) {
+          case 'cr':
+            a = this.crToInt(a[sortBy])
+            b = this.crToInt(b[sortBy])
+            break
+          default:
+            a = a[sortBy]
+            b = b[sortBy]
+        }
+        return (a === b ? 0 : a > b ? 1 : -1) * order
+      })
+      if (this.search) {
+        data = data.filter((monster) => {
+          const nameMatch = monster.name.toLowerCase().includes(this.search.toLowerCase())
+          const unitMatch = monster.unit.toLowerCase().includes(this.search.toLowerCase())
+          return nameMatch || unitMatch
+        })
+      }
+      for (const key in this.filters[this.itemKey]) {
+        const filter = this.filters[this.itemKey][key]
+        if (filter.length > 0) {
+          data = data.filter(item => filter.includes(item[key]))
+        }
+      }
+      return data
+    }
+  },
+  created () {
+    const self = this
+    const crOptions = new Set()
+    const unitOptions = new Set()
+    for (const item of this.items) {
+      crOptions.add(item.cr)
+      unitOptions.add(item.unit)
+    }
+    this.crOptions = [...crOptions].sort((a, b) => {
+      const aSort = self.crToInt(a)
+      const bSort = self.crToInt(b)
+      return aSort === bSort ? 0 : aSort > bSort ? 1 : -1
+    })
+    this.unitOptions = [...unitOptions].sort()
+  },
+  middleware: 'resetListFilters',
+  head () {
+    return {
+      title: 'Bestiary | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Give your player\'s a unique challenge with over 100 custom made Mass Effect enemies! ' }
+      ]
+    }
+  },
+  layout: 'phb',
+  methods: {
+    ...mapActions(['updateSearchString'])
   }
+}
 </script>

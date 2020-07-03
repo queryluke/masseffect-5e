@@ -25,36 +25,35 @@
 </template>
 
 <script>
-  import SpellType from '~/components/spell/SpellType.vue'
-  import SpellDuration from '~/components/spell/SpellDuration.vue'
-  import SpellRangeArea from '~/components/spell/SpellRangeArea.vue'
-  import SpellDamageEffect from '~/components/spell/SpellDamageEffect.vue'
-  import SpellInfo from '~/components/spell/SpellInfo.vue'
-  import BookmarkButton from '~/components/BookmarkButton.vue'
-  import SortOptions from '~/components/list/Sort.vue'
+import SpellType from '~/components/spell/SpellType.vue'
+import SpellDuration from '~/components/spell/SpellDuration.vue'
+import SpellRangeArea from '~/components/spell/SpellRangeArea.vue'
+import SpellDamageEffect from '~/components/spell/SpellDamageEffect.vue'
+import SpellInfo from '~/components/spell/SpellInfo.vue'
+import BookmarkButton from '~/components/BookmarkButton.vue'
+import SortOptions from '~/components/list/Sort.vue'
 
-  export default {
-    components: {
-      SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect, SpellInfo, BookmarkButton, SortOptions
-    },
-    props: {
-      items: {
-        type: Array,
-        default: () => { return [] }
-      }
-    },
-    data () {
-      return {
-        headers: [
-          { label: 'Type/Level', key: 'type', classes: 'xs4 sm3 lg2', sortable: true },
-          { label: 'Name', key: 'name', classes: 'xs8 sm9 lg2', sortable: true },
-          { label: 'Duration', key: 'duration', classes: 'hidden-md-and-down lg2' },
-          { label: 'Range (Area)', key: 'range', classes: 'hidden-md-and-down lg2' },
-          { label: 'Attack', key: 'attack', classes: 'hidden-md-and-down lg2' },
-          { label: 'Damage/Effect', key: 'damage', classes: 'hidden-md-and-down lg2' }
-        ]
-      }
+export default {
+  components: {
+    SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect, SpellInfo, BookmarkButton, SortOptions
+  },
+  props: {
+    items: {
+      type: Array,
+      default: () => { return [] }
+    }
+  },
+  data () {
+    return {
+      headers: [
+        { label: 'Type/Level', key: 'type', classes: 'xs4 sm3 lg2', sortable: true },
+        { label: 'Name', key: 'name', classes: 'xs8 sm9 lg2', sortable: true },
+        { label: 'Duration', key: 'duration', classes: 'hidden-md-and-down lg2' },
+        { label: 'Range (Area)', key: 'range', classes: 'hidden-md-and-down lg2' },
+        { label: 'Attack', key: 'attack', classes: 'hidden-md-and-down lg2' },
+        { label: 'Damage/Effect', key: 'damage', classes: 'hidden-md-and-down lg2' }
+      ]
     }
   }
+}
 </script>
-

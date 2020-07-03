@@ -43,78 +43,79 @@
 </template>
 
 <script>
-  import SpellType from '~/components/spell/SpellType.vue'
-  import SpellDuration from '~/components/spell/SpellDuration.vue'
-  import SpellRangeArea from '~/components/spell/SpellRangeArea.vue'
-  import SpellDamageEffect from '~/components/spell/SpellDamageEffect.vue'
-  import SpellClassList from '~/components/spell/SpellClassList.vue'
-  import AdvancedOption from '~/components/spell/AdvancedOption.vue'
+import SpellType from '~/components/spell/SpellType.vue'
+import SpellDuration from '~/components/spell/SpellDuration.vue'
+import SpellRangeArea from '~/components/spell/SpellRangeArea.vue'
+import SpellDamageEffect from '~/components/spell/SpellDamageEffect.vue'
+import SpellClassList from '~/components/spell/SpellClassList.vue'
+import AdvancedOption from '~/components/spell/AdvancedOption.vue'
 
-  export default {
-    components: {
-      AdvancedOption, SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect, SpellClassList
+export default {
+  components: {
+    AdvancedOption, SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect, SpellClassList
+  },
+  props: {
+    spell: {
+      type: Object,
+      default: () => { return {} }
     },
-    props: {
-      spell: {
-        type: Object,
-        default: () => { return {} }
-      },
-      cardOption: {
-        type: String,
-        default: 'single'
-      }
-    },
-    data () {
-      return {
-        primeTypeCss: {
-          force: 'purple--text text--darken-1',
-          necrotic: 'blue-grey--text text--darken-2',
-          fire: 'deep-orange--text text--darken-1',
-          cold: 'cyan--text text--darken-1',
-          lightning: 'blue--text text--darken-1'
-        }
-      }
-    },
-    computed: {
-      singleSide () {
-        return this.cardOption === 'single'
-      },
-      titleSize () {
-        return this.singleSide ? 'title ml-2 xs8' : 'subheading text-xs-center xs12'
-      },
-      classSize () {
-        return this.singleSide ? 24 : 16
-      },
-      castingTime () {
-        if (this.spell.castingTime.match(/reaction/gi)) {
-          return 'Reaction'
-        } else {
-          return this.spell.castingTime
-        }
-      },
-      aoeSize () {
-        return this.singleSide ? 12 : 9
-      },
-      primeSize () {
-        return this.singleSide ? 18 : 13
-      },
-      cardType () {
-        if (this.spell.id === 'spacer') {
-          return 'gen-card'
-        } else {
-          return `${this.spell.type}-card`
-        }
-      },
-      spellLevel () {
-        return this.spell.level.toString() === '0' ? 'Cantrip' : this.$options.filters.ordinal(this.spell.level) + ' level'
-      },
-      spellTags () {
-        if (this.spell.attackType.length > 0) {
-          return this.spell.attackType.join(', ')
-        } else if (this.spell.effect.length > 0) {
-          return this.spell.effect.join(', ')
-        }
+    cardOption: {
+      type: String,
+      default: 'single'
+    }
+  },
+  data () {
+    return {
+      primeTypeCss: {
+        force: 'purple--text text--darken-1',
+        necrotic: 'blue-grey--text text--darken-2',
+        fire: 'deep-orange--text text--darken-1',
+        cold: 'cyan--text text--darken-1',
+        lightning: 'blue--text text--darken-1'
       }
     }
+  },
+  computed: {
+    singleSide () {
+      return this.cardOption === 'single'
+    },
+    titleSize () {
+      return this.singleSide ? 'title ml-2 xs8' : 'subheading text-xs-center xs12'
+    },
+    classSize () {
+      return this.singleSide ? 24 : 16
+    },
+    castingTime () {
+      if (this.spell.castingTime.match(/reaction/gi)) {
+        return 'Reaction'
+      } else {
+        return this.spell.castingTime
+      }
+    },
+    aoeSize () {
+      return this.singleSide ? 12 : 9
+    },
+    primeSize () {
+      return this.singleSide ? 18 : 13
+    },
+    cardType () {
+      if (this.spell.id === 'spacer') {
+        return 'gen-card'
+      } else {
+        return `${this.spell.type}-card`
+      }
+    },
+    spellLevel () {
+      return this.spell.level.toString() === '0' ? 'Cantrip' : this.$options.filters.ordinal(this.spell.level) + ' level'
+    },
+    spellTags () {
+      if (this.spell.attackType.length > 0) {
+        return this.spell.attackType.join(', ')
+      } else if (this.spell.effect.length > 0) {
+        return this.spell.effect.join(', ')
+      }
+      return ''
+    }
   }
+}
 </script>

@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import {createNamespacedHelpers} from 'vuex'
-const {mapActions, mapGetters} = createNamespacedHelpers('itemList')
+import { createNamespacedHelpers } from 'vuex'
+const { mapActions, mapGetters } = createNamespacedHelpers('itemList')
 
 export default {
   props: {
@@ -27,4 +27,3 @@ export default {
   }
 }
 </script>
-

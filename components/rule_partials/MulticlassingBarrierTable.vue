@@ -11,13 +11,13 @@
 </template>
 
 <script>
-  import vanguard from '~/static/data/classes/vanguard.json'
+import vanguard from '~/static/data/classes/vanguard.json'
 
-  export default {
-    data () {
-      return {
-        vanguard
-      }
+export default {
+  data () {
+    return {
+      vanguard
     }
   }
+}
 </script>

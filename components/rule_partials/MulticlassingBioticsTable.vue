@@ -15,13 +15,13 @@
 </template>
 
 <script>
-  import adept from '~/static/data/classes/adept.json'
+import adept from '~/static/data/classes/adept.json'
 
-  export default {
-    data () {
-      return {
-        adept
-      }
+export default {
+  data () {
+    return {
+      adept
     }
   }
+}
 </script>

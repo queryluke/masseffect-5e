@@ -21,27 +21,27 @@
 </template>
 
 <script>
-  import BookmarkButton from '~/components/BookmarkButton.vue'
-  import VehicleInfo from '~/components/vehicle/VehicleInfo.vue'
-  import items from '~/static/data/vehicles'
+import BookmarkButton from '~/components/BookmarkButton.vue'
+import VehicleInfo from '~/components/vehicle/VehicleInfo.vue'
+import items from '~/static/data/vehicles'
 
-  export default {
-    components: {
-      BookmarkButton,
-      VehicleInfo
+export default {
+  components: {
+    BookmarkButton,
+    VehicleInfo
+  },
+  data () {
+    return {
+      items
+    }
+  },
+  computed: {
+    transports () {
+      return this.items.filter(v => v.vehicle.type === 'transport')
     },
-    data () {
-      return {
-        items
-      }
-    },
-    computed: {
-      transports () {
-        return this.items.filter(v => v.vehicle.type === 'transport')
-      },
-      starships () {
-        return this.items.filter(v => v.vehicle.type === 'starship')
-      }
+    starships () {
+      return this.items.filter(v => v.vehicle.type === 'starship')
     }
   }
+}
 </script>

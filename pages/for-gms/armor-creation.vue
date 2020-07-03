@@ -5,18 +5,18 @@
 </template>
 
 <script>
-  import CreatingArmor from '~/components/CreatingArmorInfo'
+import CreatingArmor from '~/components/CreatingArmorInfo'
 
-  export default {
-    components: { CreatingArmor },
-    head () {
-      return {
-        title: 'Customizing Armor - For GMs | Mass Effect 5e',
-        meta: [
-          { hid: 'description', name: 'description', content: 'Learn how to create new armor sets and mods' }
-        ]
-      }
-    },
-    layout: 'phb'
-  }
+export default {
+  components: { CreatingArmor },
+  head () {
+    return {
+      title: 'Customizing Armor - For GMs | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Learn how to create new armor sets and mods' }
+      ]
+    }
+  },
+  layout: 'phb'
+}
 </script>

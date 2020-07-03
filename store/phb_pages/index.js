@@ -5,27 +5,27 @@ export default {
   state,
   mutations: {},
   actions: {
-    toggleSidebar ({dispatch}) {
+    toggleSidebar ({ dispatch }) {
       dispatch('toggleSidebar', null, { root: true })
     },
-    toggleMobileFilterDialog ({dispatch}) {
-      dispatch('itemList/toggleMobileFilterDialog', null, {root: true})
+    toggleMobileFilterDialog ({ dispatch }) {
+      dispatch('itemList/toggleMobileFilterDialog', null, { root: true })
     },
-    updateSearchString ({dispatch}, payload) {
-      dispatch('itemList/updateSearchString', payload, {root: true})
+    updateSearchString ({ dispatch }, payload) {
+      dispatch('itemList/updateSearchString', payload, { root: true })
     },
-    updateActiveClassTab({dispatch}, payload) {
-      dispatch('classPage/setActiveTab', payload, {root: true})
+    updateActiveClassTab ({ dispatch }, payload) {
+      dispatch('classPage/setActiveTab', payload, { root: true })
     },
-    toggleRulebar({dispatch}) {
-      dispatch('toggleRulebar', null, {root: true})
+    toggleRulebar ({ dispatch }) {
+      dispatch('toggleRulebar', null, { root: true })
     },
-    setRulebar({dispatch}, payload) {
-      dispatch('setRulebar', payload, {root: true})
+    setRulebar ({ dispatch }, payload) {
+      dispatch('setRulebar', payload, { root: true })
     },
-    setSearchbar({dispatch}, payload) {
-      dispatch('setSearchbar', payload, {root: true})
-    },
+    setSearchbar ({ dispatch }, payload) {
+      dispatch('setSearchbar', payload, { root: true })
+    }
   },
   getters: {
     activeClassTab: (state, getters, rootState) => rootState.classPage.active,

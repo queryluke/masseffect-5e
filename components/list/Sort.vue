@@ -19,56 +19,55 @@
 </template>
 
 <script>
-  import {mapGetters, mapActions} from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
-  export default {
-    props: {
-      headers: {
-        type: Array,
-        default: () => { return [] }
+export default {
+  props: {
+    headers: {
+      type: Array,
+      default: () => { return [] }
+    },
+    defaultSort: {
+      type: String,
+      default: ''
+    }
+  },
+  computed: {
+    ...mapGetters('itemList', {
+      getOrder: 'order',
+      getSortBy: 'sortBy'
+    }),
+    order: {
+      get () {
+        return this.getOrder
       },
-      defaultSort: {
-        type: String,
-        default: ''
+      set (value) {
+        this.updateList({ key: 'order', value })
       }
     },
-    computed: {
-      ...mapGetters('itemList', {
-        getOrder: 'order',
-        getSortBy: 'sortBy'
-      }),
-      order: {
-        get () {
-          return this.getOrder
-        },
-        set (value) {
-          this.updateList({key: 'order', value: value})
-        }
+    sortBy: {
+      get () {
+        return this.getSortBy
       },
-      sortBy: {
-        get () {
-          return this.getSortBy
-        },
-        set (value) {
-          this.updateList({key: 'sortBy', value: value})
-        }
+      set (value) {
+        this.updateList({ key: 'sortBy', value })
       }
-    },
-    created () {
-      if (!this.headers.includes(this.sortBy)) {
-        this.sortBy = this.headers[this.defaultSort]
-      }
-    },
-    methods: {
-      ...mapActions('itemList', ['updateList']),
-      sort (header) {
-        if (this.sortBy === header) {
-          this.order = this.order * -1
-        } else {
-          this.sortBy = header
-        }
+    }
+  },
+  created () {
+    if (!this.headers.includes(this.sortBy)) {
+      this.sortBy = this.headers[this.defaultSort]
+    }
+  },
+  methods: {
+    ...mapActions('itemList', ['updateList']),
+    sort (header) {
+      if (this.sortBy === header) {
+        this.order = this.order * -1
+      } else {
+        this.sortBy = header
       }
     }
   }
+}
 </script>
-

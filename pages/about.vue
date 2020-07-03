@@ -88,127 +88,127 @@
 </template>
 
 <script>
-  import AboutCard from '~/components/cards/AboutCard.vue'
-  import attributions from '~/static/data/attributions'
+import AboutCard from '~/components/cards/AboutCard.vue'
+import attributions from '~/static/data/attributions'
 
-  export default {
-    components: {AboutCard},
-    data () {
-      return {
-        attributions,
-        creators: [
-          {
-            name: 'Luke Aeschleman',
-            image: 'https://avatars0.githubusercontent.com/u/12414786?s=460&v=4',
-            title: 'Creator, Site Developer',
-            desc: 'Luke is a web developer, librarian, and DM, who decided that he wanted to play Mass Effect while ' +
+export default {
+  components: { AboutCard },
+  data () {
+    return {
+      attributions,
+      creators: [
+        {
+          name: 'Luke Aeschleman',
+          image: 'https://avatars0.githubusercontent.com/u/12414786?s=460&v=4',
+          title: 'Creator, Site Developer',
+          desc: 'Luke is a web developer, librarian, and DM, who decided that he wanted to play Mass Effect while ' +
             'rolling dice. He fell in love with the Mass Effect Universe after playing Mass Effect 2. But he\'s since ' +
             'amassed a number of playthroughs for all the games. He\'s also spent WAY too much time playing ME3 Multiplayer. ' +
             'By day, Luke is a Digital Technologies Development Librarian at NC State University. By night, he wrangles ' +
             '3 dogs, DMs, codes, watches baseball, and practices Si Lum Kung-Fu.'
-          },
-          {
-            name: 'Hugh Thompson',
-            image: 'https://avatars0.githubusercontent.com/u/679172?s=460&v=4',
-            title: 'Editor',
-            desc: 'Hugh is a TRPG enthusiast, both as a GM and a player. But, more importantly, Hugh has as much love for Mass Effect ' +
+        },
+        {
+          name: 'Hugh Thompson',
+          image: 'https://avatars0.githubusercontent.com/u/679172?s=460&v=4',
+          title: 'Editor',
+          desc: 'Hugh is a TRPG enthusiast, both as a GM and a player. But, more importantly, Hugh has as much love for Mass Effect ' +
             'as anyone. With a keen eye for detail, Hugh takes a lot of the random crap Luke comes up with, strips away the ' +
             'verbiage and creates actionable rules and changes. By day, Hugh is the Director of Technology Solutions and Web Development ' +
             'at Rock, Paper, Scissors. He\'s also a dad and a hard-style strength training enthusiast.'
-          }
-        ],
-        designers: [
-          {
-            name: 'Bryce Gelinas',
-            image: '/images/misc/bryce.jpg',
-            desc: 'Bryce is the master-coder behind the online character sheet! Though in the early stages, the addition will be invaluable for all you digital-table-toppers. Be sure to leave feedback on the Discord server.'
-          },
-          {
-            name: 'Noblesse Oblige',
-            image: '/images/classes/engineer.svg',
-            desc: 'Noblesse is the Discord admin extraordinaire and a great resource for getting feedback, answering questions, and all-around Mass Effect lore.'
-          },
-          {
-            name: 'Chris "OodSigma13" Dickson',
-            image: '/images/classes/infiltrator.svg',
-            desc: 'Chris has basically become the in-house designer. He\'s responsible for the new class and spell icons and' +
+        }
+      ],
+      designers: [
+        {
+          name: 'Bryce Gelinas',
+          image: '/images/misc/bryce.jpg',
+          desc: 'Bryce is the master-coder behind the online character sheet! Though in the early stages, the addition will be invaluable for all you digital-table-toppers. Be sure to leave feedback on the Discord server.'
+        },
+        {
+          name: 'Noblesse Oblige',
+          image: '/images/classes/engineer.svg',
+          desc: 'Noblesse is the Discord admin extraordinaire and a great resource for getting feedback, answering questions, and all-around Mass Effect lore.'
+        },
+        {
+          name: 'Chris "OodSigma13" Dickson',
+          image: '/images/classes/infiltrator.svg',
+          desc: 'Chris has basically become the in-house designer. He\'s responsible for the new class and spell icons and' +
             ' updated character sheet.'
-          },
-          {
-            name: 'RJ Haggerty, a.k.a. SleightxHope',
-            image: 'https://avatars3.githubusercontent.com/u/31451010?s=460&v=4',
-            desc: 'Before RJ, this system was just a silly thing Hugh and Luke were doing in their spare time. But RJ\'s contributions' +
+        },
+        {
+          name: 'RJ Haggerty, a.k.a. SleightxHope',
+          image: 'https://avatars3.githubusercontent.com/u/31451010?s=460&v=4',
+          desc: 'Before RJ, this system was just a silly thing Hugh and Luke were doing in their spare time. But RJ\'s contributions' +
             ' really got the ball rolling. The current shape of the classes (subclasses, class features, and progression) are' +
             ' thanks to RJ, but he\'s also had a hand in weapon and armor mod, play testing, and creating omni-tool programs.'
-          },
-          {
-            name: 'Benjamin McPherson',
-            image: 'https://avatars3.githubusercontent.com/u/1324851?s=400&v=4',
-            desc: 'Ben has been poring through the rule set and pointing out OP mechanics and faulty site bugs.' +
+        },
+        {
+          name: 'Benjamin McPherson',
+          image: 'https://avatars3.githubusercontent.com/u/1324851?s=400&v=4',
+          desc: 'Ben has been poring through the rule set and pointing out OP mechanics and faulty site bugs.' +
             ' He also took the lead for the Prothean & Angara races, a number of spells, and the Google Sheet character sheet.'
-          },
-          {
-            name: 'Adam, a.k.a. TheMarmotKing',
-            image: 'https://avatars3.githubusercontent.com/u/37369223?s=460&v=4',
-            desc: 'Adam has provided a lot of invaluable feedback and started many conversations. Most notably, Adam' +
+        },
+        {
+          name: 'Adam, a.k.a. TheMarmotKing',
+          image: 'https://avatars3.githubusercontent.com/u/37369223?s=460&v=4',
+          desc: 'Adam has provided a lot of invaluable feedback and started many conversations. Most notably, Adam' +
             ' has taken the lead on balancing and reviewing the spell list.'
-          },
-          {
-            name: 'Dakota P.',
-            image: '/images/misc/dakota_p.png',
-            desc: 'Dakota is working through the backlog of needed monsters and creating unique stat blocks for Mass Effect 5e,' +
-            ' including some fun stat blocks from other Sci-fi classics like the Kath Hound from BioWare\'s Knights of the Old Republic.'+
+        },
+        {
+          name: 'Dakota P.',
+          image: '/images/misc/dakota_p.png',
+          desc: 'Dakota is working through the backlog of needed monsters and creating unique stat blocks for Mass Effect 5e,' +
+            ' including some fun stat blocks from other Sci-fi classics like the Kath Hound from BioWare\'s Knights of the Old Republic.' +
             ' Keep your eyes on the Bestiary for all of the unique creations.'
-          },
-          {
-            name: 'RexThePig',
-            image: 'https://avatars2.githubusercontent.com/u/33875334?s=88&v=4',
-            desc: 'RTP has been a huge help in identifying gaps in the content, like creating a full list of all the possible' +
+        },
+        {
+          name: 'RexThePig',
+          image: 'https://avatars2.githubusercontent.com/u/33875334?s=88&v=4',
+          desc: 'RTP has been a huge help in identifying gaps in the content, like creating a full list of all the possible' +
             'monsters. RTP created the sheet that can be used with Kobold Club\'s encounter builder, the random height and weight table' +
             'and provides through insight about all the version changes.'
-          }
-        ],
-        contributors: [
-          {
-            name: 'Roll 20 Character Sheets',
-            image: '/images/spells/combat.svg',
-            desc: 'Danrconway, Smeeg699, EnricoDandolo1, John G.'
-          },
-          {
-            name: 'Character Sheets',
-            image: '/images/spells/tech.svg',
-            desc: '/u/rpk0714, /u/IdonMezzedUp, /u/wretchedcrows, Gamemaster Po, TheNamelessOne, Thessian Shadow, Szirachm'
-          },
-          {
-            name: 'Content Contributors',
-            image: '/images/spells/biotic.svg',
-            desc: 'Chris Alley, Connor Maxwell, A. Charlton'
-          },
-          {
-            name: '/u/thestray',
-            image: '/images/spells/combat.svg',
-            desc: 'A lot of the character descriptions were based on thestray\'s homebrew, ' +
-            '<a href="https://drive.google.com/file/d/1NnYN-UNJ2jK75PkvD2TTRqoLzjA80ONu/view" target="_blank" class="light-blue--text">Races of the Relay</a>',
-          },
-          {
-            name: 'Other Shout outs!',
-            image: 'https://vignette.wikia.nocookie.net/masseffect/images/3/32/ME1_Paragon.png/revision/latest?cb=20120309175829',
-            desc: 'Alex Needleman, Nmmoriarty, Duneday,damuttley, SrShdw, BLUEmusta,  Stephen W., Andrew Ouellette, David T., ' +
+        }
+      ],
+      contributors: [
+        {
+          name: 'Roll 20 Character Sheets',
+          image: '/images/spells/combat.svg',
+          desc: 'Danrconway, Smeeg699, EnricoDandolo1, John G.'
+        },
+        {
+          name: 'Character Sheets',
+          image: '/images/spells/tech.svg',
+          desc: '/u/rpk0714, /u/IdonMezzedUp, /u/wretchedcrows, Gamemaster Po, TheNamelessOne, Thessian Shadow, Szirachm'
+        },
+        {
+          name: 'Content Contributors',
+          image: '/images/spells/biotic.svg',
+          desc: 'Chris Alley, Connor Maxwell, A. Charlton'
+        },
+        {
+          name: '/u/thestray',
+          image: '/images/spells/combat.svg',
+          desc: 'A lot of the character descriptions were based on thestray\'s homebrew, ' +
+            '<a href="https://drive.google.com/file/d/1NnYN-UNJ2jK75PkvD2TTRqoLzjA80ONu/view" target="_blank" class="light-blue--text">Races of the Relay</a>'
+        },
+        {
+          name: 'Other Shout outs!',
+          image: 'https://vignette.wikia.nocookie.net/masseffect/images/3/32/ME1_Paragon.png/revision/latest?cb=20120309175829',
+          desc: 'Alex Needleman, Nmmoriarty, Duneday,damuttley, SrShdw, BLUEmusta,  Stephen W., Andrew Ouellette, David T., ' +
             'Mel Bee, Joey C., Connor C., MonocledMutineer, kstrtroi, HadesJester, Lodus, BenutzernameIstBereitsVergeben, ' +
             'Dor, J. Tickner, fkzd, Gabe, kstrtroi, all the others in the reddit community any one who has contacted us ' +
             'with ideas or words of motivation!'
-          }
-        ]
-      }
-    },
-    head () {
-      return {
-        title: 'About | Mass Effect 5e',
-        meta: [
-          { hid: 'description', name: 'description', content: 'Learn more about the Mass Effect 5e creators and contributors.' }
-        ]
-      }
-    },
-    layout: 'dark'
-  }
+        }
+      ]
+    }
+  },
+  head () {
+    return {
+      title: 'About | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Learn more about the Mass Effect 5e creators and contributors.' }
+      ]
+    }
+  },
+  layout: 'dark'
+}
 </script>

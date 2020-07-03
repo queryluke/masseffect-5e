@@ -9,29 +9,28 @@
 </template>
 
 <script>
-  import {mapActions, mapGetters} from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
-  export default {
+export default {
+  props: {
+    card: {
+      type: Object,
+      default: () => { return {} }
+    },
+    type: {
+      type: String,
+      default: ''
+    },
     props: {
-      card: {
-        type: Object,
-        default: () => { return {} }
-      },
-      type: {
-        type: String,
-        default: ''
-      },
-      props: {
-        type: Object,
-        default: () => { return {} }
-      },
-    },
-    computed: {
-      ...mapGetters(['isBookmarked'])
-    },
-    methods: {
-      ...mapActions(['addBookmark', 'removeBookmark'])
-    },
+      type: Object,
+      default: () => { return {} }
+    }
+  },
+  computed: {
+    ...mapGetters(['isBookmarked'])
+  },
+  methods: {
+    ...mapActions(['addBookmark', 'removeBookmark'])
   }
+}
 </script>
-

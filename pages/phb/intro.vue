@@ -17,31 +17,31 @@
 </template>
 
 <script>
-  import RuleCard from '~/components/RuleCard.vue'
-  import rules from '~/static/data/rules'
-  import {mapGetters} from 'vuex'
+import { mapGetters } from 'vuex'
+import RuleCard from '~/components/RuleCard.vue'
+import rules from '~/static/data/rules'
 
-  export default {
-    components: {RuleCard},
-    computed: {
-      ...mapGetters('phb', {
-        version: 'version',
-        pages: 'pages'
-      }),
-      rules () {
-        return rules.filter(rule => rule.section === this.pages[this.$route.name].rules)
-      }
-    },
-    head () {
-      return {
-        title: 'Player\'s Manual | Mass Effect 5e',
-        meta: [
-          { hid: 'description', name: 'description', content: 'Want to play D&D in the Mass Effect Universe? Learn how to get started.' }
-        ]
-      }
-    },
-    layout: 'phb'
-  }
+export default {
+  components: { RuleCard },
+  computed: {
+    ...mapGetters('phb', {
+      version: 'version',
+      pages: 'pages'
+    }),
+    rules () {
+      return rules.filter(rule => rule.section === this.pages[this.$route.name].rules)
+    }
+  },
+  head () {
+    return {
+      title: 'Player\'s Manual | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Want to play D&D in the Mass Effect Universe? Learn how to get started.' }
+      ]
+    }
+  },
+  layout: 'phb'
+}
 </script>
 
 <style lang="scss">

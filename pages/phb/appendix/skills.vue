@@ -24,27 +24,27 @@
 </template>
 
 <script>
-  import items from '~/static/data/skills'
+import items from '~/static/data/skills'
 
-  export default {
-    data () {
-      return {
-        items,
-        headers: [
-          { text: 'Name', value: 'name', align: 'left' },
-          { text: 'Ability', value: 'link', align: 'left' },
-          { text: 'Description', value: 'description', sortable: false, align: 'left' }
-        ]
-      }
-    },
-    head () {
-      return {
-        title: 'Skills - Appendix | Mass Effect 5e',
-        meta: [
-          { hid: 'description', name: 'description', content: 'Mass Effect 5e comes with a few futuristic skill options!' }
-        ]
-      }
-    },
-    layout: 'phb'
-  }
+export default {
+  data () {
+    return {
+      items,
+      headers: [
+        { text: 'Name', value: 'name', align: 'left' },
+        { text: 'Ability', value: 'link', align: 'left' },
+        { text: 'Description', value: 'description', sortable: false, align: 'left' }
+      ]
+    }
+  },
+  head () {
+    return {
+      title: 'Skills - Appendix | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Mass Effect 5e comes with a few futuristic skill options!' }
+      ]
+    }
+  },
+  layout: 'phb'
+}
 </script>

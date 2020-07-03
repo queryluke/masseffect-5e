@@ -36,22 +36,22 @@
 </template>
 
 <script>
-  import items from '~/static/data/feats.json'
+import items from '~/static/data/feats.json'
 
-  export default {
-    data () {
-      return {
-        items
-      }
-    },
-    head () {
-      return {
-        title: 'Feats | Mass Effect 5e',
-        meta: [
-          { hid: 'description', name: 'description', content: 'New feats available! Plus a curated list of D&D 5th edition feats.' }
-        ]
-      }
-    },
-    layout: 'phb'
-  }
+export default {
+  data () {
+    return {
+      items
+    }
+  },
+  head () {
+    return {
+      title: 'Feats | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'New feats available! Plus a curated list of D&D 5th edition feats.' }
+      ]
+    }
+  },
+  layout: 'phb'
+}
 </script>

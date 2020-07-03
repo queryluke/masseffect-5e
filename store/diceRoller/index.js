@@ -1,7 +1,7 @@
 export default {
   namespaced: true,
   state: {
-    rolls: [],
+    rolls: []
   },
   mutations: {
     addRoll (state, payload) {
@@ -9,17 +9,17 @@ export default {
     },
     clearRolls (state) {
       state.rolls = []
-    },
+    }
   },
   actions: {
-    addRoll ({commit}, payload) {
+    addRoll ({ commit }, payload) {
       commit('addRoll', payload)
     },
-    clearRolls ({commit}) {
+    clearRolls ({ commit }) {
       commit('clearRolls')
     }
   },
   getters: {
-    rolls: state => state.rolls,
+    rolls: state => state.rolls
   }
 }

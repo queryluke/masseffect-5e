@@ -20,7 +20,7 @@ export default {
   update (state, payload) {
     state[payload.key] = payload.items
   },
-  setPhbSearch(state, payload) {
+  setPhbSearch (state, payload) {
     state.phbSearch = payload
   }
 }

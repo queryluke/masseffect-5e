@@ -21,7 +21,7 @@
           v-layout(row)
             v-flex
               v-text-field(v-model="character.level" label="Level" type="number" :min="1" :max="20"
-              :rules="[v => (v <= 20 && v >= 1) || 'Level must be between 1-20']") 
+              :rules="[v => (v <= 20 && v >= 1) || 'Level must be between 1-20']")
             v-flex
               v-select(v-model="character.race" :items="races" label="Race")
             v-flex
@@ -62,7 +62,6 @@
                 character-power-counter(label="Barrier Uses Remaining" :value="character.barrier_uses"
                     :max-value="character.class.progression[character.level-1].barrierUses || 0" :show-min="false"
                     @change="character.barrier_uses = $event")
-                
 
         // Character Image
         v-flex(xs3)
@@ -112,7 +111,6 @@
                         td(style="width: 10%;")
                           v-checkbox(v-model="props.item.advantage")
 
-
               // Padding
               v-flex(xs1)
               // Stats
@@ -149,7 +147,6 @@
                           td Proficiency
                           td(v-for="stat in stat_names")
                             v-checkbox(v-model="character.proficiencies.stats[stat]")
-
 
           v-tab-item(key="weapons" style="text-align: left;")
             div(class="item-area")
@@ -222,7 +219,7 @@
                           v-on:backgrounds:modify="character.backgrounds[$event.index] = $event.html; updateCharacter();"
                           v-on:backgrounds:remove="character.backgrounds.splice($event.index, 1); updateCharacter();"
                         )
-                    
+
                     v-stepper-content.text-xs-left(step="other" v-if="selected_character_info_tab == 'other'")
                       document-collector(
                           heading="Other"
@@ -245,7 +242,6 @@
                   v-select(label="Power Ability Attribute" v-model="character.power_attribute"
                   :items="[{text: 'Intelligence', value: 'int'},{text: 'Wisdom', value: 'wis'},{text: 'Charisma', value: 'cha'}]")
                   v-select(readonly label="Power Attack Modifier" :items="[power_ability_modifier]" :value="power_ability_modifier")
-
 
                 h2(v-if="!character.power_attribute") Please first select an attribute.
 
@@ -412,195 +408,197 @@ import SpellList from '~/components/spell/SpellList.vue'
 import ArmorList from '~/components/armor_set/ArmorSetList.vue'
 import RacialTrait from '~/components/race/RacialTrait.vue'
 import ClassFeature from '~/components/class/ClassFeature.vue'
-import DocumentCollector from '~/components/character_builder/DocumentCollector.vue';
-import Editor from '~/components/character_builder/Editor.vue';
+import DocumentCollector from '~/components/character_builder/DocumentCollector.vue'
+import Editor from '~/components/character_builder/Editor.vue'
 
-import AdeptData from "~/static/data/classes/adept.json";
-import EngineerData from "~/static/data/classes/engineer.json";
-import InfiltratorData from "~/static/data/classes/infiltrator.json";
-import SentinelData from "~/static/data/classes/sentinel.json";
-import SoldierData from "~/static/data/classes/soldier.json";
-import VanguardData from "~/static/data/classes/vanguard.json";
+import AdeptData from '~/static/data/classes/adept.json'
+import EngineerData from '~/static/data/classes/engineer.json'
+import InfiltratorData from '~/static/data/classes/infiltrator.json'
+import SentinelData from '~/static/data/classes/sentinel.json'
+import SoldierData from '~/static/data/classes/soldier.json'
+import VanguardData from '~/static/data/classes/vanguard.json'
 
 export default {
-  components: {SaveLoad, CharacterPowerCounter, WeaponList, ArmorList, SpellList, RacialTrait, ClassFeature, DocumentCollector, Editor},
-  class_data: [AdeptData,EngineerData,InfiltratorData,SentinelData,SoldierData,VanguardData],
+  components: { SaveLoad, CharacterPowerCounter, WeaponList, ArmorList, SpellList, RacialTrait, ClassFeature, DocumentCollector, Editor },
+  class_data: [AdeptData, EngineerData, InfiltratorData, SentinelData, SoldierData, VanguardData],
+  computed: {
+    characterProf () {
+      return this.calcProfBonus(this.character.level)
+    },
+    character_docs () {
+      return this.getDocuments('character')
+    },
+    character_traits () {
+      return this.getDocuments('character', 'traits')
+    },
+    class_features () {
+      return require('~/static/data/class_features.json')
+      // return this.getDocuments('character','class_features');
+    },
+    power_attribute () {
+      return this.character.stats[this.character.power_attribute]
+    },
+    power_ability_modifier () {
+      return this.calcProfBonus(this.character.level) + this.calcAbilityMod(this.power_attribute)
+    },
+    tech_point_max () {
+      let tpm = 0
+      try {
+        tpm = this.character.class.progression[this.character.level - 1].techPoints || 0
+      } catch (err) {
+        console.log(err)
+      }
+      return tpm
+    },
+    tech_point_limit () {
+      let tpl = 0
+      try {
+        tpl = this.character.class.progression[this.character.level - 1].techPointLimit || 0
+      } catch (err) {
+        console.log(err)
+      }
+      return tpl
+    },
+    spell_level_limit () {
+      let sll = 0
+      try {
+        sll = this.character.class.progression[this.character.level - 1].spellLevel || 0
+      } catch (err) {
+        console.log(err)
+      }
+      return sll
+    },
+    spell_slots () {
+      let slots = {}
+      try {
+        slots = this.character.class.progression[this.character.level - 1].spellSlots || 0
+      } catch (err) {
+        console.log(err)
+      }
+      return slots
+    },
+    character_level () {
+      return this.character.level
+    }
+  },
+
   data: () => ({
     image_picker: false,
-    selected_character_info_tab: "traits",
-    selected_trait: "",
+    selected_character_info_tab: 'traits',
+    selected_trait: '',
     pickWeapon: false,
     removeWeapon: false,
-    classData: [AdeptData,EngineerData,InfiltratorData,SentinelData,SoldierData,VanguardData],
-    combatPowers: ["soldier","vanguard","infiltrator"],
-    techPowers: ["engineer","infiltrator"],
-    bioticPowers: ["adept","vanguard"],
+    classData: [AdeptData, EngineerData, InfiltratorData, SentinelData, SoldierData, VanguardData],
+    combatPowers: ['soldier', 'vanguard', 'infiltrator'],
+    techPowers: ['engineer', 'infiltrator'],
+    bioticPowers: ['adept', 'vanguard'],
     tab: false,
     other_info: {},
-    armor: armor || "not found",
-    weapons: weapons || "not found",
-    documents: documents || "not found",
-    powers: powers || "not found",
-    feats: feats || "not found",
-    backgrounds: backgrounds || "not found",
-    stat_names: ['str','dex','con','int','wis','cha'],
-    skill_names: ['acrobatics','athletics','deception','electronics','engineering','history','insight','intimidation',
-    'investigation','medicine','perception','performance','persuasion','science','slight_of_hand','stealth','survival','vehicle_handling'],
-    races: ["Angara","Asari","Batarian","Drell","Elcor","Geth","Hanar","Human",
-    "Krogan","Prothean","Quarian","Salarian","Turian","Volus","Vorcha"],
+    armor: armor || 'not found',
+    weapons: weapons || 'not found',
+    documents: documents || 'not found',
+    powers: powers || 'not found',
+    feats: feats || 'not found',
+    backgrounds: backgrounds || 'not found',
+    stat_names: ['str', 'dex', 'con', 'int', 'wis', 'cha'],
+    skill_names: ['acrobatics', 'athletics', 'deception', 'electronics', 'engineering', 'history', 'insight', 'intimidation',
+      'investigation', 'medicine', 'perception', 'performance', 'persuasion', 'science', 'slight_of_hand', 'stealth', 'survival', 'vehicle_handling'],
+    races: ['Angara', 'Asari', 'Batarian', 'Drell', 'Elcor', 'Geth', 'Hanar', 'Human',
+      'Krogan', 'Prothean', 'Quarian', 'Salarian', 'Turian', 'Volus', 'Vorcha'],
     character: false, // Need this for reactive binding
     skills_table: {
       search: '',
       headers: [
-        {text: 'Roll',align: 'start',value: 'roll'},
-        {text: 'Skill',value: 'label'},
-        {text: 'Prof',value: 'prof'},
-        {text: 'Adv',value: 'advantage'}
+        { text: 'Roll', align: 'start', value: 'roll' },
+        { text: 'Skill', value: 'label' },
+        { text: 'Prof', value: 'prof' },
+        { text: 'Adv', value: 'advantage' }
       ]
     },
     componentKey: 0
   }),
 
-  computed: {
-    characterProf: function() {
-      return this.calcProfBonus(this.character.level);
-    },
-    character_docs: function() {
-      return this.getDocuments('character');
-    },
-    character_traits: function(){
-      return this.getDocuments('character','traits');
-    },
-    class_features: function(){
-      return require(`~/static/data/class_features.json`)
-      //return this.getDocuments('character','class_features');
-    },
-    power_attribute: function() {
-      return this.character.stats[this.character.power_attribute];
-    },
-    power_ability_modifier: function() {
-      return this.calcProfBonus(this.character.level)+this.calcAbilityMod(this.power_attribute)
-    },
-    tech_point_max: function() {
-      var tpm = 0;
-      try {
-        tpm = this.character.class.progression[this.character.level - 1].techPoints || 0;
-      } finally {
-        return tpm;
-      }
-    },
-    tech_point_limit: function() {
-      var tpl = 0;
-      try {
-        tpl = this.character.class.progression[this.character.level - 1].techPointLimit || 0;
-      } finally {
-        return tpl;
-      }
-    },
-    spell_level_limit: function() {
-      var sll = 0;
-      try {
-        sll = this.character.class.progression[this.character.level - 1].spellLevel || 0;
-      } finally {
-        return sll;
-      }
-    },
-    spell_slots: function() {
-      var slots = {};
-      try {
-        slots = this.character.class.progression[this.character.level - 1].spellSlots || 0;
-      } finally {
-        return slots;
-      }
-    },
-    character_level: function() {
-      return this.character.level;
-    }
-  },
-
   watch: {
     character: {
       immediate: true,
       deep: true,
-      handler: function() {
+      handler () {
         if (this.character) {
-          this.$store.commit('characterBuilder/save', this.character);
+          this.$store.commit('characterBuilder/save', this.character)
         }
       }
     },
-    character_level:  function(newVal, oldVal) {
-      console.log("Character Level Changed")
-      this.character.level = Math.max(1, Math.min(newVal, 20));
+    character_level (newVal, oldVal) {
+      console.log('Character Level Changed')
+      this.character.level = Math.max(1, Math.min(newVal, 20))
     }
   },
 
-  created() {
-    console.log("Character before create: ", this.character);
-    this.character = this.$store.state.characterBuilder.character;
-    console.log("Character after create: ", this.character);
+  created () {
+    console.log('Character before create: ', this.character)
+    this.character = this.$store.state.characterBuilder.character
+    console.log('Character after create: ', this.character)
   },
 
   methods: {
-    loadCharacterFromFile: function(payload) {
-      var merge = {
+    loadCharacterFromFile (payload) {
+      const merge = {
         ...this.character,
         ...payload
       }
-      this.character = merge;
+      this.character = merge
     },
-    updateCharacter: function() {
+    updateCharacter () {
       if (this.character) {
-        this.$store.commit('characterBuilder/save', this.character);
+        this.$store.commit('characterBuilder/save', this.character)
       }
-      this.$forceUpdate();
+      this.$forceUpdate()
     },
-    hasPowers: function(power_arr) {
-      var c_id = this.character.class.id;
-      var arr = power_arr;
-      for(var ind in arr) {
-        if (arr[ind] == c_id) {
-          return true;
+    hasPowers (powerArr) {
+      const cId = this.character.class.id
+      const arr = powerArr
+      for (const ind in arr) {
+        if (arr[ind] === cId) {
+          return true
         }
       }
     },
-    getDocuments: function(type, subType) {
-      var docs = this.documents.filter(function(doc) {
-        return doc.type == type;
-      });
+    getDocuments (type, subType) {
+      let docs = this.documents.filter(function (doc) {
+        return doc.type === type
+      })
       if (subType) {
-        docs = docs.filter(function(doc) {
-          return doc.subType == subType;
-        });
+        docs = docs.filter(function (doc) {
+          return doc.subType === subType
+        })
       }
-      return docs;
+      return docs
     },
-    calcAbilityMod: function(ability_score) {
-      return Math.floor((ability_score - 10) / 2)
+    calcAbilityMod (abilityScore) {
+      return Math.floor((abilityScore - 10) / 2)
     },
-    calcAbilitySavingThrow: function(ability_score, isProf) {
-      var num = this.calcAbilityMod(ability_score);
+    calcAbilitySavingThrow (abilityScore, isProf) {
+      let num = this.calcAbilityMod(abilityScore)
       if (isProf) {
-       num += this.calcProfBonus(this.character.level)
+        num += this.calcProfBonus(this.character.level)
       }
-      //if (ability_score == 16) console.log("Calculating Saving Throw", num);
-      return num;
-
+      // if (ability_score == 16) console.log("Calculating Saving Throw", num);
+      return num
     },
-    calcProfBonus: function(level) {
-      return Math.ceil(level/4) + 1;
+    calcProfBonus (level) {
+      return Math.ceil(level / 4) + 1
     },
-    calcSkillMod: function(ability_str, prof_score) {
-      var baseMod = this.calcAbilityMod(this.character.stats[ability_str]);
-      if (prof_score > 0) {
-        baseMod += Math.floor(prof_score * this.calcProfBonus(this.character.level));
+    calcSkillMod (abilityStr, profScore) {
+      let baseMod = this.calcAbilityMod(this.character.stats[abilityStr])
+      if (profScore > 0) {
+        baseMod += Math.floor(profScore * this.calcProfBonus(this.character.level))
       }
-      return baseMod;
+      return baseMod
     },
-    calcSpellDC: function(ability_score) {
-      return 8+this.calcProfBonus(this.character.level)+this.calcAbilityMod(ability_score);
+    calcSpellDC (abilityScore) {
+      return 8 + this.calcProfBonus(this.character.level) + this.calcAbilityMod(abilityScore)
     }
   }
 
-
-};
+}
 </script>

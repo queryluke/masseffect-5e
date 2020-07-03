@@ -24,10 +24,10 @@ export default {
     }
   },
   actions: {
-    toggleSidebar ({dispatch}) {
+    toggleSidebar ({ dispatch }) {
       dispatch('toggleSidebar', null, { root: true })
     },
-    setActiveTab ({commit}, payload) {
+    setActiveTab ({ commit }, payload) {
       commit('setActiveTab', payload)
     }
   },

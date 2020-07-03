@@ -25,41 +25,41 @@
 
 <script>
 
-import Editor from '~/components/character_builder/Editor.vue';
+import Editor from '~/components/character_builder/Editor.vue'
 
 export default {
-  components: {Editor},
+  components: { Editor },
   props: {
     showSearch: {
       type: Boolean,
-      default: () => {return true;}
+      default: () => { return true }
     },
     template: {
       type: String,
-      default: () => {return '<h1>Item not found in docs</h1>'}
+      default: () => { return '<h1>Item not found in docs</h1>' }
     },
     heading: {
       type: String,
-      default: () => {return "Please Specify a Heading Text"}
+      default: () => { return 'Please Specify a Heading Text' }
     },
     itemText: {
       type: String,
-      default: () => {return "title"}
+      default: () => { return 'title' }
     },
     type: {
       type: String,
-      default: () => {return "default"}
+      default: () => { return 'default' }
     },
     docs: {
       type: Array,
-      default: () => {return []}
+      default: () => { return [] }
     },
     character_table: {
       type: Array,
-      default: () => {return []}
+      default: () => { return [] }
     }
   },
-  data: function() {
+  data () {
     return {
       search: {
         model: ''
@@ -67,46 +67,46 @@ export default {
     }
   },
   computed: {
-    event: function() {
-      return this.type;
+    event () {
+      return this.type
     }
   },
   methods: {
     // Bubbles up the value to the inherited character array (ie: traits)
-    addToTable: function(model, value) {
+    addToTable (model, value) {
       if (!value) {
         try {
-          model = require(`~/static/data/${this.type}/${model.id}.md`);//'<h1>'+model.title+'</h1><p>'+model.body+'</p>'
-          value = '<h1>'+model.attributes.name+'</h1>'  + model.html;
+          model = require(`~/static/data/${this.type}/${model.id}.md`)// '<h1>'+model.title+'</h1><p>'+model.body+'</p>'
+          value = '<h1>' + model.attributes.name + '</h1>' + model.html
         } catch {
-          value = '<h1>Not Found</h1><p>Something went wrong when trying to add this item...</p>';
+          value = '<h1>Not Found</h1><p>Something went wrong when trying to add this item...</p>'
         }
       }
-      console.log("Payload for add event: ", value);
-      this.$emit(this.event+":add", value);
+      console.log('Payload for add event: ', value)
+      this.$emit(this.event + ':add', value)
     },
-    removeFromTable: function(event) {
-      console.log("Payload for remove event: ", event);
-      this.$emit(this.event+":remove", event);
+    removeFromTable (event) {
+      console.log('Payload for remove event: ', event)
+      this.$emit(this.event + ':remove', event)
     },
-    modifyTable: function(event) {
-      console.log("Payload for modify event: ", event);
-      this.$emit(this.event+":modify", event);
+    modifyTable (event) {
+      console.log('Payload for modify event: ', event)
+      this.$emit(this.event + ':modify', event)
     },
     // Grabs the text out of the first found tag in the html
-    getHeading: function(html) {
-      var heading = "No Heading Found";
+    getHeading (html) {
+      let heading = 'No Heading Found'
       try {
-        heading = /(?<=\>)(?!\<)(.*?)(?=\<)(?<!\>)/.exec(html)[0];
+        heading = /(?<=>)(?!<)(.*?)(?=<)(?<!>)/.exec(html)[0]
       } catch {
-        heading = "No Heading Found";
+        heading = 'No Heading Found'
       }
-      const headingLength = 50;
+      const headingLength = 50
       if (heading.length > headingLength) {
-        heading = heading.substring(0, 50);
-        heading += "...";
+        heading = heading.substring(0, 50)
+        heading += '...'
       }
-      return heading;
+      return heading
     }
   }
 }

@@ -27,7 +27,7 @@ export const Speed = {
           range = 10
         }
       }
-      this.grunt.speed = [{type: 'walk', range}]
+      this.grunt.speed = [{ type: 'walk', range }]
     }
   }
 }

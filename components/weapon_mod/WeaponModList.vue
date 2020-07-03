@@ -19,44 +19,43 @@
 </template>
 
 <script>
-  import SortOptions from '~/components/list/Sort.vue'
-  import WeaponModInfo from '~/components/weapon_mod/WeaponModInfo.vue'
-  import BookmarkButton from '~/components/BookmarkButton.vue'
-  import {mapGetters} from 'vuex'
+import { mapGetters } from 'vuex'
+import SortOptions from '~/components/list/Sort.vue'
+import WeaponModInfo from '~/components/weapon_mod/WeaponModInfo.vue'
+import BookmarkButton from '~/components/BookmarkButton.vue'
 
-  export default {
-    components: {
-      SortOptions, WeaponModInfo, BookmarkButton
-    },
-    props: {
-      items: {
-        type: Array,
-        default: () => { return [] }
-      }
-    },
-    data () {
-      return {
-        headers: [
-          { label: 'Name', key: 'name', classes: 'xs6 md5 lg3', sortable: true },
-          { label: 'Cost', key: 'cost', classes: 'xs3 md2 lg2', sortable: true },
-          { label: 'Placement', key: 'placement', classes: 'xs3 md2 lg2' },
-          { label: 'Notes', key: 'notes', classes: 'hidden-sm-and-down md3 lg5' }
-        ]
-      }
-    },
-    computed: {
-      ...mapGetters('itemList', ['rarityTextColors'])
-    },
-    methods: {
-      // TODO: This could be a mixin or model
-      availability(item) {
-        if (['Assault Rifle', 'Heavy Pistol', 'Shotgun', 'Sniper Rifle', 'SMG'].every(val => item.availability.includes(val))) {
-          return 'Any ranged weapon'
-        } else {
-          return item.availability.join(', ')
-        }
+export default {
+  components: {
+    SortOptions, WeaponModInfo, BookmarkButton
+  },
+  props: {
+    items: {
+      type: Array,
+      default: () => { return [] }
+    }
+  },
+  data () {
+    return {
+      headers: [
+        { label: 'Name', key: 'name', classes: 'xs6 md5 lg3', sortable: true },
+        { label: 'Cost', key: 'cost', classes: 'xs3 md2 lg2', sortable: true },
+        { label: 'Placement', key: 'placement', classes: 'xs3 md2 lg2' },
+        { label: 'Notes', key: 'notes', classes: 'hidden-sm-and-down md3 lg5' }
+      ]
+    }
+  },
+  computed: {
+    ...mapGetters('itemList', ['rarityTextColors'])
+  },
+  methods: {
+    // TODO: This could be a mixin or model
+    availability (item) {
+      if (['Assault Rifle', 'Heavy Pistol', 'Shotgun', 'Sniper Rifle', 'SMG'].every(val => item.availability.includes(val))) {
+        return 'Any ranged weapon'
+      } else {
+        return item.availability.join(', ')
       }
     }
   }
+}
 </script>
-

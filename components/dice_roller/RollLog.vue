@@ -7,18 +7,18 @@
 </template>
 
 <script>
-  import RollSet from '~/components/dice_roller/RollSet.vue'
+import { createNamespacedHelpers } from 'vuex'
+import RollSet from '~/components/dice_roller/RollSet.vue'
 
-  import {createNamespacedHelpers} from 'vuex'
-  const {mapGetters, mapActions} = createNamespacedHelpers('diceRoller')
+const { mapGetters, mapActions } = createNamespacedHelpers('diceRoller')
 
-  export default {
-    components: {RollSet},
-    computed: {
-      ...mapGetters(['rolls'])
-    },
-    methods: {
-      ...mapActions(['clearRolls'])
-    }
+export default {
+  components: { RollSet },
+  computed: {
+    ...mapGetters(['rolls'])
+  },
+  methods: {
+    ...mapActions(['clearRolls'])
   }
+}
 </script>

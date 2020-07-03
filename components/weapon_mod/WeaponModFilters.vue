@@ -14,70 +14,69 @@
 </template>
 
 <script>
-  import {createNamespacedHelpers} from 'vuex'
-  const {mapActions, mapGetters} = createNamespacedHelpers('itemList')
+import { createNamespacedHelpers } from 'vuex'
+const { mapActions, mapGetters } = createNamespacedHelpers('itemList')
 
-  export default {
-    props: {
-      itemKey: {
-        type: String,
-        default: ''
+export default {
+  props: {
+    itemKey: {
+      type: String,
+      default: ''
+    },
+    noteOptions: {
+      type: Array,
+      default: () => { return [] }
+    }
+  },
+  data () {
+    return {
+      placementOptions: ['Body', 'Barrel', 'Ammo', 'Magazine', 'Grip', 'Strike'],
+      weaponTypeOptions: ['Assault Rifle', 'Heavy Pistol', 'Melee', 'SMG', 'Shotgun', 'Sniper Rifle']
+    }
+  },
+  computed: {
+    ...mapGetters(['filters', 'rarityOptions']),
+    placementFilter: {
+      get () {
+        return this.filters[this.itemKey].placement
       },
-      noteOptions: {
-        type: Array,
-        default: () => { return [] }
+      set (value) {
+        this.updateFilter({ key: this.itemKey, filterKey: 'placement', value })
       }
     },
-    data () {
-      return {
-        placementOptions: ['Body', 'Barrel', 'Ammo', 'Magazine', 'Grip', 'Strike'],
-        weaponTypeOptions: ['Assault Rifle', 'Heavy Pistol', 'Melee', 'SMG', 'Shotgun', 'Sniper Rifle']
+    weaponTypeFilter: {
+      get () {
+        return this.filters[this.itemKey].weaponType
+      },
+      set (value) {
+        this.updateFilter({ key: this.itemKey, filterKey: 'weaponType', value })
       }
     },
-    computed: {
-      ...mapGetters(['filters', 'rarityOptions']),
-      placementFilter: {
-        get () {
-          return this.filters[this.itemKey].placement
-        },
-        set (value) {
-          this.updateFilter({key: this.itemKey, filterKey: 'placement', value})
-        }
+    noteFilter: {
+      get () {
+        return this.filters[this.itemKey].notes
       },
-      weaponTypeFilter: {
-        get () {
-          return this.filters[this.itemKey].weaponType
-        },
-        set (value) {
-          this.updateFilter({key: this.itemKey, filterKey: 'weaponType', value})
-        }
-      },
-      noteFilter: {
-        get () {
-          return this.filters[this.itemKey].notes
-        },
-        set (value) {
-          this.updateFilter({key: this.itemKey, filterKey: 'notes', value})
-        }
-      },
-      rarityFilter: {
-        get () {
-          return this.filters[this.itemKey].rarity
-        },
-        set (value) {
-          this.updateFilter({key: this.itemKey, filterKey: 'rarity', value})
-        }
+      set (value) {
+        this.updateFilter({ key: this.itemKey, filterKey: 'notes', value })
       }
     },
-    methods: {
-      ...mapActions(['updateFilter']),
-      reset () {
-        this.placementFilter = []
-        this.weaponTypeFilter = []
-        this.noteFilter = []
-        this.rarityFilter = []
+    rarityFilter: {
+      get () {
+        return this.filters[this.itemKey].rarity
+      },
+      set (value) {
+        this.updateFilter({ key: this.itemKey, filterKey: 'rarity', value })
       }
     }
+  },
+  methods: {
+    ...mapActions(['updateFilter']),
+    reset () {
+      this.placementFilter = []
+      this.weaponTypeFilter = []
+      this.noteFilter = []
+      this.rarityFilter = []
+    }
   }
+}
 </script>
-

@@ -49,19 +49,19 @@
 </template>
 
 <script>
-  import MeIcon from '~/components/MeIcon.vue'
-  import Increases from '~/components/race/Increases.vue'
-  import Trait from '~/components/race/Trait.vue'
-  import RacialTrait from '~/components/race/RacialTrait.vue'
-  import Variant from '~/components/race/Variant.vue'
+import MeIcon from '~/components/MeIcon.vue'
+import Increases from '~/components/race/Increases.vue'
+import Trait from '~/components/race/Trait.vue'
+import RacialTrait from '~/components/race/RacialTrait.vue'
+import Variant from '~/components/race/Variant.vue'
 
-  export default {
-    components: { MeIcon, Increases, Trait, RacialTrait, Variant },
-    props: {
-      race: {
-        type: Object,
-        default: () => { return {} }
-      }
+export default {
+  components: { MeIcon, Increases, Trait, RacialTrait, Variant },
+  props: {
+    race: {
+      type: Object,
+      default: () => { return {} }
     }
   }
+}
 </script>

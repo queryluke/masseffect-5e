@@ -16,26 +16,26 @@
 </template>
 
 <script>
-  import items from '~/static/data/weapon_properties'
+import items from '~/static/data/weapon_properties'
 
-  export default {
-    data () {
-      return {
-        items,
-        headers: [
-          { text: 'Name', value: 'name', align: 'left' },
-          { text: 'Description', value: 'description', sortable: false, align: 'left' }
-        ]
-      }
-    },
-    head () {
-      return {
-        title: 'Weapon Properties - Appendix | Mass Effect 5e',
-        meta: [
-          { hid: 'description', name: 'description', content: 'Mass Effect 5e comes with some new and fun weapon properties!' }
-        ]
-      }
-    },
-    layout: 'phb'
-  }
+export default {
+  data () {
+    return {
+      items,
+      headers: [
+        { text: 'Name', value: 'name', align: 'left' },
+        { text: 'Description', value: 'description', sortable: false, align: 'left' }
+      ]
+    }
+  },
+  head () {
+    return {
+      title: 'Weapon Properties - Appendix | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Mass Effect 5e comes with some new and fun weapon properties!' }
+      ]
+    }
+  },
+  layout: 'phb'
+}
 </script>

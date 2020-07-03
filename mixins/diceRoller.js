@@ -1,14 +1,14 @@
-import {NumberRange} from './numberRange'
-import {RandomValue} from './randomValue'
+import { createNamespacedHelpers } from 'vuex'
+import { NumberRange } from './numberRange'
+import { RandomValue } from './randomValue'
 
-import {createNamespacedHelpers} from 'vuex'
-const {mapActions} = createNamespacedHelpers('diceRoller')
+const { mapActions } = createNamespacedHelpers('diceRoller')
 
 export const DiceRoller = {
   mixins: [NumberRange, RandomValue],
   methods: {
     ...mapActions(['addRoll']),
-    rollFromString(string) {
+    rollFromString (string) {
       console.log(string)
       const split = string.split('d')
       console.log(split)
@@ -32,17 +32,17 @@ export const DiceRoller = {
       console.log(roll)
       return roll
     },
-    rollMany(many) {
+    rollMany (many) {
       const rolls = []
-      if (Array.isArray(many)){
+      if (Array.isArray(many)) {
         for (const roll of many) {
           rolls.push(this.rollFromString(roll))
         }
       }
       return rolls
     },
-    setRoll(rolls, from = null) {
-      if (!Array.isArray(rolls)){
+    setRoll (rolls, from = null) {
+      if (!Array.isArray(rolls)) {
         rolls = [rolls]
       }
       rolls = rolls.filter(r => r !== null)
@@ -50,10 +50,10 @@ export const DiceRoller = {
         return
       }
       console.log(rolls)
-      this.addRoll ({
+      this.addRoll({
         from: from || 'Dice Roller',
         rolls,
-        total: rolls.map(r => r.values.reduce((a,b) => a + b, 0) + r.bonus).reduce((a,b) => a + b, 0)
+        total: rolls.map(r => r.values.reduce((a, b) => a + b, 0) + r.bonus).reduce((a, b) => a + b, 0)
       })
     },
     roll (numDice, faces, bonus) {

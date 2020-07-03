@@ -10,18 +10,18 @@ export const AbilityScores = {
         cha: 1
       }
       const classStats = {
-        adept: {wis: 5, dex: 4, cha: 1},
-        engineer: {int: 5, dex: 4, con: 1},
-        infiltrator: {dex: 5, int: 4, str: 3},
-        sentinel: {wis: 5, int: 4, dex: 2},
-        soldier: {dex: 5, str: 4, con: 3},
-        vanguard: {str: 5, wis: 4, con: 2},
-        none: {dex: 5, str: 3, con: 2}
+        adept: { wis: 5, dex: 4, cha: 1 },
+        engineer: { int: 5, dex: 4, con: 1 },
+        infiltrator: { dex: 5, int: 4, str: 3 },
+        sentinel: { wis: 5, int: 4, dex: 2 },
+        soldier: { dex: 5, str: 4, con: 3 },
+        vanguard: { str: 5, wis: 4, con: 2 },
+        none: { dex: 5, str: 3, con: 2 }
       }
       if (this.race.id === 'asari') {
-        classStats.adept = {cha: 5, dex: 4, wis: 1}
-        classStats.sentinel = {cha: 5, int: 4, dex: 2}
-        classStats.vanguard = {str: 5, cha: 4, con: 2}
+        classStats.adept = { cha: 5, dex: 4, wis: 1 }
+        classStats.sentinel = { cha: 5, int: 4, dex: 2 }
+        classStats.vanguard = { str: 5, cha: 4, con: 2 }
       }
       const standardArray = [15, 14, 13, 12, 10, 8]
 
@@ -85,7 +85,7 @@ export const AbilityScores = {
           break
         }
         case 'unshackled_ai': {
-          const filteredInt = weightedAbilitySelection.increase.filter(ability => {
+          const filteredInt = weightedAbilitySelection.increase.filter((ability) => {
             return ability === 'int'
           })
           const ability = this.randomValue(filteredInt)

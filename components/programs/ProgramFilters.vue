@@ -10,42 +10,41 @@
 </template>
 
 <script>
-  import {createNamespacedHelpers} from 'vuex'
-  const {mapActions, mapGetters} = createNamespacedHelpers('itemList')
+import { createNamespacedHelpers } from 'vuex'
+const { mapActions, mapGetters } = createNamespacedHelpers('itemList')
 
-  export default {
-    props: {
-      itemKey: {
-        type: String,
-        default: ''
+export default {
+  props: {
+    itemKey: {
+      type: String,
+      default: ''
+    }
+  },
+  computed: {
+    ...mapGetters(['filters', 'rarityOptions']),
+    rarityFilter: {
+      get () {
+        return this.filters[this.itemKey].rarity
       },
-    },
-    computed: {
-      ...mapGetters(['filters', 'rarityOptions']),
-      rarityFilter: {
-        get () {
-          return this.filters[this.itemKey].rarity
-        },
-        set (value) {
-          this.updateFilter({key: this.itemKey, filterKey: 'rarity', value})
-        }
-      },
-      installationFilter: {
-        get () {
-          return this.filters[this.itemKey].activation
-        },
-        set (value) {
-          this.updateFilter({key: this.itemKey, filterKey: 'installation', value})
-        }
+      set (value) {
+        this.updateFilter({ key: this.itemKey, filterKey: 'rarity', value })
       }
     },
-    methods: {
-      ...mapActions(['updateFilter']),
-      reset () {
-        this.rarityFilter = []
-        this.installationFilter = false
+    installationFilter: {
+      get () {
+        return this.filters[this.itemKey].activation
+      },
+      set (value) {
+        this.updateFilter({ key: this.itemKey, filterKey: 'installation', value })
       }
     }
+  },
+  methods: {
+    ...mapActions(['updateFilter']),
+    reset () {
+      this.rarityFilter = []
+      this.installationFilter = false
+    }
   }
+}
 </script>
-

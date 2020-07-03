@@ -15,26 +15,26 @@
 </template>
 
 <script>
-  import backgrounds from '~/static/data/backgrounds.json'
-  import BookmarkButton from '~/components/BookmarkButton.vue'
+import backgrounds from '~/static/data/backgrounds.json'
+import BookmarkButton from '~/components/BookmarkButton.vue'
 
-  export default {
-    components: {
-      BookmarkButton
-    },
-    data () {
-      return {
-        backgrounds
-      }
-    },
-    head () {
-      return {
-        title: 'Backgrounds | Mass Effect 5e',
-        meta: [
-          { hid: 'description', name: 'description', content: 'Backgrounds provide additional flavor and benefits to your character.' }
-        ]
-      }
-    },
-    layout: 'phb'
-  }
+export default {
+  components: {
+    BookmarkButton
+  },
+  data () {
+    return {
+      backgrounds
+    }
+  },
+  head () {
+    return {
+      title: 'Backgrounds | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Backgrounds provide additional flavor and benefits to your character.' }
+      ]
+    }
+  },
+  layout: 'phb'
+}
 </script>

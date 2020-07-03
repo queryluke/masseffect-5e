@@ -9,13 +9,12 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      action: {
-        type: Object,
-        default: () => { return {} }
-      }
-    },
+export default {
+  props: {
+    action: {
+      type: Object,
+      default: () => { return {} }
+    }
   }
+}
 </script>
-

@@ -6,32 +6,32 @@
 </template>
 
 <script>
-  import RuleCard from '~/components/RuleCard.vue'
-  import rules from '~/static/data/rules'
-  import {mapGetters} from 'vuex'
+import { mapGetters } from 'vuex'
+import RuleCard from '~/components/RuleCard.vue'
+import rules from '~/static/data/rules'
 
-  export default {
-    components: {RuleCard},
-    computed: {
-      ...mapGetters('phb', {
-        version: 'version',
-        pages: 'pages'
-      }),
-      rules () {
-        return rules.filter(rule => rule.section === this.pages[this.$route.name].rules)
-      },
-      title () {
-        return this.pages[this.$route.name].name
-      }
+export default {
+  components: { RuleCard },
+  computed: {
+    ...mapGetters('phb', {
+      version: 'version',
+      pages: 'pages'
+    }),
+    rules () {
+      return rules.filter(rule => rule.section === this.pages[this.$route.name].rules)
     },
-    head () {
-      return {
-        title: `${this.title} | Mass Effect 5e`,
-        meta: [
-          { hid: 'description', name: 'description', content: 'Learn how to make a character in Mass Effect 5e' }
-        ]
-      }
-    },
-    layout: 'phb'
-  }
+    title () {
+      return this.pages[this.$route.name].name
+    }
+  },
+  head () {
+    return {
+      title: `${this.title} | Mass Effect 5e`,
+      meta: [
+        { hid: 'description', name: 'description', content: 'Learn how to make a character in Mass Effect 5e' }
+      ]
+    }
+  },
+  layout: 'phb'
+}
 </script>

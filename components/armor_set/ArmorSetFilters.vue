@@ -14,70 +14,69 @@
 </template>
 
 <script>
-  import {createNamespacedHelpers} from 'vuex'
-  const {mapActions, mapGetters} = createNamespacedHelpers('itemList')
+import { createNamespacedHelpers } from 'vuex'
+const { mapActions, mapGetters } = createNamespacedHelpers('itemList')
 
-  export default {
-    props: {
-      itemKey: {
-        type: String,
-        default: ''
+export default {
+  props: {
+    itemKey: {
+      type: String,
+      default: ''
+    },
+    noteOptions: {
+      type: Array,
+      default: () => { return [] }
+    }
+  },
+  data () {
+    return {
+      typeOptions: ['Chest', 'Head', 'Arms', 'Legs', 'Body Armor', 'Full Set'],
+      armorTypeOptions: ['Light', 'Medium', 'Heavy']
+    }
+  },
+  computed: {
+    ...mapGetters(['filters', 'rarityOptions']),
+    typeFilter: {
+      get () {
+        return this.filters[this.itemKey].type
       },
-      noteOptions: {
-        type: Array,
-        default: () => { return [] }
+      set (value) {
+        this.updateFilter({ key: this.itemKey, filterKey: 'type', value })
       }
     },
-    data () {
-      return {
-        typeOptions: ['Chest', 'Head', 'Arms', 'Legs', 'Body Armor', 'Full Set'],
-        armorTypeOptions: ['Light', 'Medium', 'Heavy']
+    armorTypeFilter: {
+      get () {
+        return this.filters[this.itemKey].armorType
+      },
+      set (value) {
+        this.updateFilter({ key: this.itemKey, filterKey: 'armorType', value })
       }
     },
-    computed: {
-      ...mapGetters(['filters', 'rarityOptions']),
-      typeFilter: {
-        get () {
-          return this.filters[this.itemKey].type
-        },
-        set (value) {
-          this.updateFilter({key: this.itemKey, filterKey: 'type', value})
-        }
+    noteFilter: {
+      get () {
+        return this.filters[this.itemKey].notes
       },
-      armorTypeFilter: {
-        get () {
-          return this.filters[this.itemKey].armorType
-        },
-        set (value) {
-          this.updateFilter({key: this.itemKey, filterKey: 'armorType', value})
-        }
-      },
-      noteFilter: {
-        get () {
-          return this.filters[this.itemKey].notes
-        },
-        set (value) {
-          this.updateFilter({key: this.itemKey, filterKey: 'notes', value})
-        }
-      },
-      rarityFilter: {
-        get () {
-          return this.filters[this.itemKey].rarity
-        },
-        set (value) {
-          this.updateFilter({key: this.itemKey, filterKey: 'rarity', value})
-        }
+      set (value) {
+        this.updateFilter({ key: this.itemKey, filterKey: 'notes', value })
       }
     },
-    methods: {
-      ...mapActions(['updateFilter']),
-      reset () {
-        this.typeFilter = []
-        this.armorTypeFilter = []
-        this.noteFilter = []
-        this.rarityFilter = []
+    rarityFilter: {
+      get () {
+        return this.filters[this.itemKey].rarity
+      },
+      set (value) {
+        this.updateFilter({ key: this.itemKey, filterKey: 'rarity', value })
       }
     }
+  },
+  methods: {
+    ...mapActions(['updateFilter']),
+    reset () {
+      this.typeFilter = []
+      this.armorTypeFilter = []
+      this.noteFilter = []
+      this.rarityFilter = []
+    }
   }
+}
 </script>
-

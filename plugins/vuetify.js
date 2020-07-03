@@ -24,6 +24,6 @@ Vue.use(Vuetify, {
     VToolbar,
     VCard,
     VIcon,
-    VBtn,
+    VBtn
   }
 })

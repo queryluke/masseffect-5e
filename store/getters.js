@@ -10,7 +10,7 @@ export default {
     }, {})
   },
   getVersion: state => state.version,
-  isBookmarked: (state, getters) => card => {
+  isBookmarked: (state, getters) => (card) => {
     return getters.bookmarks.find(bookmark => bookmark.card.id === card.id) !== undefined
   },
   mobileFilterDialog: state => state.mobileFilterDialog,

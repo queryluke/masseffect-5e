@@ -28,84 +28,84 @@
 </template>
 
 <script>
-  import {GruntGenerator} from '~/mixins/grunt_generator'
-  import GruntOptions from '~/components/grunt_generator/Options.vue'
-  import StatBlock from '~/components/npc/StatBlock.vue'
-  import BookmarkButton from '~/components/BookmarkButton.vue'
+import { GruntGenerator } from '~/mixins/grunt_generator'
+import GruntOptions from '~/components/grunt_generator/Options.vue'
+import StatBlock from '~/components/npc/StatBlock.vue'
+import BookmarkButton from '~/components/BookmarkButton.vue'
 
-  export default {
-    head () {
-      return {
-        title: 'Grunt Generator - For GMs | Mass Effect 5e',
-        meta: [
-          { hid: 'description', name: 'description', content: 'Generate random monster and NPC stats for easier encounter building' }
-        ]
-      }
-    },
-    components: {
-      BookmarkButton,
-      StatBlock,
-      GruntOptions
-    },
-    layout: 'phb',
-    mixins: [GruntGenerator]
-  }
+export default {
+  components: {
+    BookmarkButton,
+    StatBlock,
+    GruntOptions
+  },
+  mixins: [GruntGenerator],
+  head () {
+    return {
+      title: 'Grunt Generator - For GMs | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Generate random monster and NPC stats for easier encounter building' }
+      ]
+    }
+  },
+  layout: 'phb'
+}
 
-  //    created () {
-  //      this.crs = this.getData('statsByCr')
-  //
-  //      // Setup races
-  //      this.races = this.getMutableData('races').map((race) => {
-  //        // expand available classes
-  //        race.available_classes = race.available_classes.split(',').map((v) => v.trim())
-  //        return race
-  //      })
-  //      this.races.unshift({id: 'random', name: 'Random'})
-  //
-  //      // Setup classes
-  //      this.classes = this.getMutableData('classes')
-  //      this.classes.unshift({id: 'random', name: 'Random'})
-  //    },
-  //    computed: {
-  //      race: {
-  //        get () {
-  //          return this.getGruntConfig('race')
-  //        },
-  //        set (value) {
-  //          this.updateGruntConfig({key: 'race', value})
-  //        }
-  //      },
-  //      sc: {
-  //        get () {
-  //          return this.getGruntConfig('sc')
-  //        },
-  //        set (value) {
-  //          this.updateGruntConfig({key: 'sc', value})
-  //        }
-  //      },
-  //      cr: {
-  //        get () {
-  //          return this.getGruntConfig('cr')
-  //        },
-  //        set (value) {
-  //          this.updateGruntConfig({key: 'cr', value})
-  //        }
-  //      }
-  //    },
-  //    data () {
-  //      return {
-  //        crs: [],
-  //        races: [],
-  //        classes: [],
-  //        grunt: false
-  //      }
-  //    },
-  //    head () {
-  //      return {
-  //        title: 'Mass Effect 5e | GM Tools - Grunt Generator',
-  //        meta: [
-  //          { hid: 'description', name: 'description', content: 'Need a quick NPC? Our grunt generator can create millions of NPC combinations in seconds.' }
-  //        ]
-  //      }
-  //    },
+//    created () {
+//      this.crs = this.getData('statsByCr')
+//
+//      // Setup races
+//      this.races = this.getMutableData('races').map((race) => {
+//        // expand available classes
+//        race.available_classes = race.available_classes.split(',').map((v) => v.trim())
+//        return race
+//      })
+//      this.races.unshift({id: 'random', name: 'Random'})
+//
+//      // Setup classes
+//      this.classes = this.getMutableData('classes')
+//      this.classes.unshift({id: 'random', name: 'Random'})
+//    },
+//    computed: {
+//      race: {
+//        get () {
+//          return this.getGruntConfig('race')
+//        },
+//        set (value) {
+//          this.updateGruntConfig({key: 'race', value})
+//        }
+//      },
+//      sc: {
+//        get () {
+//          return this.getGruntConfig('sc')
+//        },
+//        set (value) {
+//          this.updateGruntConfig({key: 'sc', value})
+//        }
+//      },
+//      cr: {
+//        get () {
+//          return this.getGruntConfig('cr')
+//        },
+//        set (value) {
+//          this.updateGruntConfig({key: 'cr', value})
+//        }
+//      }
+//    },
+//    data () {
+//      return {
+//        crs: [],
+//        races: [],
+//        classes: [],
+//        grunt: false
+//      }
+//    },
+//    head () {
+//      return {
+//        title: 'Mass Effect 5e | GM Tools - Grunt Generator',
+//        meta: [
+//          { hid: 'description', name: 'description', content: 'Need a quick NPC? Our grunt generator can create millions of NPC combinations in seconds.' }
+//        ]
+//      }
+//    },
 </script>

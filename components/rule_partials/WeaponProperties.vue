@@ -11,13 +11,13 @@
 </template>
 
 <script>
-  import weaponProperties from '~/static/data/weapon_properties.json'
+import weaponProperties from '~/static/data/weapon_properties.json'
 
-  export default {
-    data () {
-      return {
-        weaponProperties
-      }
+export default {
+  data () {
+    return {
+      weaponProperties
     }
   }
+}
 </script>

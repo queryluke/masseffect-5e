@@ -3,14 +3,14 @@ export default {
   state: {
     // Default "empty" character data model
     character: {
-      version: "1.0.0",
-      name: "New Character",
-      image: "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png", 
+      version: '1.0.0',
+      name: 'New Character',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png',
       level: 1,
-      race: "",
-      class: "",
-      subclass: "",
-      background: "",
+      race: '',
+      class: '',
+      subclass: '',
+      background: '',
       other_info: [],
       traits: [],
       class_features: [],
@@ -25,25 +25,25 @@ export default {
         str: 10, dex: 10, con: 10, int: 10, wis: 10, cha: 10
       },
       skills: [
-          {label: "Acrobatics", prof: 0, advantage: false, stat: "dex"},
-          {label: "Athletics", prof: 0, advantage: false, stat: "str"},
-          {label: "Deception", prof: 0, advantage: false, stat: "cha"},
-          {label: "Electronics", prof: 0, advantage: false, stat: "int"},
-          {label: "Engineering", prof: 0, advantage: false, stat: "int"},
-          {label: "History", prof: 0, advantage: false, stat: "int"},
-          {label: "Insight", prof: 0, advantage: false, stat: "wis"},
-          {label: "Intimidation", prof: 0, advantage: false, stat: "cha"},
-          {label: "Investigation", prof: 0, advantage: false, stat: "int"},
-          {label: "Medicine", prof: 0, advantage: false, stat: "wis"},
-          {label: "Perception", prof: 0, advantage: false, stat: "wis"},
-          {label: "Performance", prof: 0, advantage: false, stat: "cha"},
-          {label: "Persuasion", prof: 0, advantage: false, stat: "cha"},
-          {label: "Science", prof: 0, advantage: false, stat: "int"},
-          {label: "Slight of Hand", prof: 0, advantage: false, stat: "dex"},
-          {label: "Stealth", prof: 0, advantage: false, stat: "dex"},
-          {label: "Survival", prof: 0, advantage: false, stat: "wis"},
-          {label: "Vehicle Handling", prof: 0, advantage: false, stat: "dex"}
-        ],
+        { label: 'Acrobatics', prof: 0, advantage: false, stat: 'dex' },
+        { label: 'Athletics', prof: 0, advantage: false, stat: 'str' },
+        { label: 'Deception', prof: 0, advantage: false, stat: 'cha' },
+        { label: 'Electronics', prof: 0, advantage: false, stat: 'int' },
+        { label: 'Engineering', prof: 0, advantage: false, stat: 'int' },
+        { label: 'History', prof: 0, advantage: false, stat: 'int' },
+        { label: 'Insight', prof: 0, advantage: false, stat: 'wis' },
+        { label: 'Intimidation', prof: 0, advantage: false, stat: 'cha' },
+        { label: 'Investigation', prof: 0, advantage: false, stat: 'int' },
+        { label: 'Medicine', prof: 0, advantage: false, stat: 'wis' },
+        { label: 'Perception', prof: 0, advantage: false, stat: 'wis' },
+        { label: 'Performance', prof: 0, advantage: false, stat: 'cha' },
+        { label: 'Persuasion', prof: 0, advantage: false, stat: 'cha' },
+        { label: 'Science', prof: 0, advantage: false, stat: 'int' },
+        { label: 'Slight of Hand', prof: 0, advantage: false, stat: 'dex' },
+        { label: 'Stealth', prof: 0, advantage: false, stat: 'dex' },
+        { label: 'Survival', prof: 0, advantage: false, stat: 'wis' },
+        { label: 'Vehicle Handling', prof: 0, advantage: false, stat: 'dex' }
+      ],
       proficiencies: {
         stats: {
           str: false, dex: false, con: false, int: false, wis: false, cha: false
@@ -83,7 +83,7 @@ export default {
   },
   mutations: {
     save (state, data) {
-      state.character = data;
+      state.character = data
     }
   }
 }

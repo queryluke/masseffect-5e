@@ -22,37 +22,35 @@
 </template>
 
 <script>
-  import WeaponInfo from '~/components/weapon/WeaponInfo.vue'
-  import BookmarkButton from '~/components/BookmarkButton.vue'
-  import SortOptions from '~/components/list/Sort.vue'
-  import {mapGetters} from 'vuex'
+import { mapGetters } from 'vuex'
+import WeaponInfo from '~/components/weapon/WeaponInfo.vue'
+import BookmarkButton from '~/components/BookmarkButton.vue'
+import SortOptions from '~/components/list/Sort.vue'
 
-
-  export default {
-    components: {
-      WeaponInfo, BookmarkButton, SortOptions
-    },
-    props: {
-      items: {
-        type: Array,
-        default: () => { return [] }
-      }
-    },
-    data () {
-      return {
-        headers: [
-          { key: 'name', label: 'Name', classes: 'xs8 sm9 lg4', sortable: true },
-          { key: 'damage', label: 'Damage', classes: 'xs4 sm3 lg2', sortable: true },
-          { key: 'heat', label: 'Heat', classes: 'hidden-md-and-down lg2', sortable: true },
-          { key: 'range', label: 'Range', classes: 'hidden-md-and-down lg2', sortable: true },
-          { key: 'weight', label: 'Weight', classes: 'hidden-md-and-down lg2', sortable: true },
-          { key: 'cost', label: 'Cost', classes: 'hidden-md-and-down lg2', sortable: true }
-        ]
-      }
-    },
-    computed: {
-      ...mapGetters('itemList', ['rarityTextColors'])
+export default {
+  components: {
+    WeaponInfo, BookmarkButton, SortOptions
+  },
+  props: {
+    items: {
+      type: Array,
+      default: () => { return [] }
     }
+  },
+  data () {
+    return {
+      headers: [
+        { key: 'name', label: 'Name', classes: 'xs8 sm9 lg4', sortable: true },
+        { key: 'damage', label: 'Damage', classes: 'xs4 sm3 lg2', sortable: true },
+        { key: 'heat', label: 'Heat', classes: 'hidden-md-and-down lg2', sortable: true },
+        { key: 'range', label: 'Range', classes: 'hidden-md-and-down lg2', sortable: true },
+        { key: 'weight', label: 'Weight', classes: 'hidden-md-and-down lg2', sortable: true },
+        { key: 'cost', label: 'Cost', classes: 'hidden-md-and-down lg2', sortable: true }
+      ]
+    }
+  },
+  computed: {
+    ...mapGetters('itemList', ['rarityTextColors'])
   }
+}
 </script>
-

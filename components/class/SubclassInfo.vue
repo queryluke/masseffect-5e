@@ -10,26 +10,26 @@
 </template>
 
 <script>
-  import ClassFeature from '~/components/class/ClassFeature.vue'
+import ClassFeature from '~/components/class/ClassFeature.vue'
 
-  export default {
-    components: { ClassFeature },
-    props: {
-      item: {
-        type: Object,
-        default: () => { return {} }
-      },
-      primaryColor: {
-        type: String,
-        default: ''
-      }
+export default {
+  components: { ClassFeature },
+  props: {
+    item: {
+      type: Object,
+      default: () => { return {} }
     },
-    computed: {
-      subClassFeatureLevels () {
-        return this.item.progression.filter(level => level.features.includes('subclass'))
-      }
+    primaryColor: {
+      type: String,
+      default: ''
+    }
+  },
+  computed: {
+    subClassFeatureLevels () {
+      return this.item.progression.filter(level => level.features.includes('subclass'))
     }
   }
+}
 </script>
 
 <style>
@@ -37,4 +37,3 @@
     height: 64px !important;
   }
 </style>
-

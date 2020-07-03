@@ -35,21 +35,21 @@
 
 <script>
 
-  import {mapGetters} from 'vuex'
+import { mapGetters } from 'vuex'
 
-  export default {
-    props: {
-      item: {
-        type: Object,
-        default: () => { return {} }
-      },
-      title: {
-        type: Boolean,
-        default: true
-      }
+export default {
+  props: {
+    item: {
+      type: Object,
+      default: () => { return {} }
     },
-    computed: {
-      ...mapGetters('itemList', ['rarityTextColors'])
+    title: {
+      type: Boolean,
+      default: true
     }
+  },
+  computed: {
+    ...mapGetters('itemList', ['rarityTextColors'])
   }
+}
 </script>

@@ -10,25 +10,25 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      spell: {
-        type: Object,
-        default: () => { return {} }
-      },
-      verbose: {
-        type: Boolean,
-        default: () => { return true }
-      },
-      cSize: {
-        type: Number,
-        default: 18
-      }
+export default {
+  props: {
+    spell: {
+      type: Object,
+      default: () => { return {} }
     },
-    computed: {
-      minDuration () {
-        return this.spell.duration.replace(/minute/, 'min')
-      }
+    verbose: {
+      type: Boolean,
+      default: () => { return true }
+    },
+    cSize: {
+      type: Number,
+      default: 18
+    }
+  },
+  computed: {
+    minDuration () {
+      return this.spell.duration.replace(/minute/, 'min')
     }
   }
+}
 </script>

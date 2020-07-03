@@ -10,50 +10,49 @@
 </template>
 
 <script>
-  import {createNamespacedHelpers} from 'vuex'
-  const {mapActions, mapGetters} = createNamespacedHelpers('itemList')
+import { createNamespacedHelpers } from 'vuex'
+const { mapActions, mapGetters } = createNamespacedHelpers('itemList')
 
-  export default {
-    props: {
-      itemKey: {
-        type: String,
-        default: ''
+export default {
+  props: {
+    itemKey: {
+      type: String,
+      default: ''
+    },
+    crOptions: {
+      type: Array,
+      default: () => { return [] }
+    },
+    unitOptions: {
+      type: Array,
+      default: () => { return [] }
+    }
+  },
+  computed: {
+    ...mapGetters(['filters']),
+    unitFilter: {
+      get () {
+        return this.filters[this.itemKey].unit
       },
-      crOptions: {
-        type: Array,
-        default: () => { return [] }
-      },
-      unitOptions: {
-        type: Array,
-        default: () => { return [] }
+      set (value) {
+        this.updateFilter({ key: this.itemKey, filterKey: 'unit', value })
       }
     },
-    computed: {
-      ...mapGetters(['filters']),
-      unitFilter: {
-        get () {
-          return this.filters[this.itemKey].unit
-        },
-        set (value) {
-          this.updateFilter({key: this.itemKey, filterKey: 'unit', value})
-        }
+    crFilter: {
+      get () {
+        return this.filters[this.itemKey].cr
       },
-      crFilter: {
-        get () {
-          return this.filters[this.itemKey].cr
-        },
-        set (value) {
-          this.updateFilter({key: this.itemKey, filterKey: 'cr', value})
-        }
-      }
-    },
-    methods: {
-      ...mapActions(['updateFilter']),
-      reset () {
-        this.crFilter = []
-        this.unitFilter = []
+      set (value) {
+        this.updateFilter({ key: this.itemKey, filterKey: 'cr', value })
       }
     }
+  },
+  methods: {
+    ...mapActions(['updateFilter']),
+    reset () {
+      this.crFilter = []
+      this.unitFilter = []
+    }
   }
+}
 </script>
-

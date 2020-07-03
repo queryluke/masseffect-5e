@@ -49,37 +49,37 @@
 </template>
 
 <script>
-  import SpellType from '~/components/spell/SpellType.vue'
-  import SpellDuration from '~/components/spell/SpellDuration.vue'
-  import SpellRangeArea from '~/components/spell/SpellRangeArea.vue'
-  import SpellDamageEffect from '~/components/spell/SpellDamageEffect.vue'
-  import AdvancedOption from '~/components/spell/AdvancedOption.vue'
-  import SpellClassList from '~/components/spell/SpellClassList.vue'
+import SpellType from '~/components/spell/SpellType.vue'
+import SpellDuration from '~/components/spell/SpellDuration.vue'
+import SpellRangeArea from '~/components/spell/SpellRangeArea.vue'
+import SpellDamageEffect from '~/components/spell/SpellDamageEffect.vue'
+import AdvancedOption from '~/components/spell/AdvancedOption.vue'
+import SpellClassList from '~/components/spell/SpellClassList.vue'
 
-  export default {
-    components: {
-      SpellClassList, AdvancedOption, SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect
+export default {
+  components: {
+    SpellClassList, AdvancedOption, SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect
+  },
+  props: {
+    item: {
+      type: Object,
+      default: () => { return {} }
     },
-    props: {
-      item: {
-        type: Object,
-        default: () => { return {} }
-      },
-      title: {
-        type: Boolean,
-        default: true
-      }
-    },
-    data () {
-      return {
-        primeTypeCss: {
-          force: 'purple--text text--darken-1',
-          necrotic: 'blue-grey--text text--darken-2',
-          fire: 'deep-orange--text text--darken-1',
-          cold: 'cyan--text text--darken-1',
-          lightning: 'blue--text text--darken-1'
-        }
+    title: {
+      type: Boolean,
+      default: true
+    }
+  },
+  data () {
+    return {
+      primeTypeCss: {
+        force: 'purple--text text--darken-1',
+        necrotic: 'blue-grey--text text--darken-2',
+        fire: 'deep-orange--text text--darken-1',
+        cold: 'cyan--text text--darken-1',
+        lightning: 'blue--text text--darken-1'
       }
     }
   }
+}
 </script>

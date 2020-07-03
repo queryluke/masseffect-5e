@@ -17,22 +17,22 @@
 </template>
 
 <script>
-  import items from '~/static/data/conditions.json'
+import items from '~/static/data/conditions.json'
 
-  export default {
-    data () {
-      return {
-        items
-      }
-    },
-    head () {
-      return {
-        title: 'Conditions - Appendix | Mass Effect 5e',
-        meta: [
-          { hid: 'description', name: 'description', content: 'There are new conditions in Mass Effect 5e that add variety to combat.' }
-        ]
-      }
-    },
-    layout: 'phb'
-  }
+export default {
+  data () {
+    return {
+      items
+    }
+  },
+  head () {
+    return {
+      title: 'Conditions - Appendix | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'There are new conditions in Mass Effect 5e that add variety to combat.' }
+      ]
+    }
+  },
+  layout: 'phb'
+}
 </script>

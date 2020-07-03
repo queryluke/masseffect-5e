@@ -28,96 +28,95 @@
 </template>
 
 <script>
-  const docs = require('../../static/data/search/documents.json')
-  const lunr = require('lunr')
-  const _ = require('lodash')
+import { mapActions, mapGetters } from 'vuex'
+import SearchResult from '~/components/cards/SearchResult.vue'
 
-  import SearchResult from '~/components/cards/SearchResult.vue'
-  import {mapActions, mapGetters} from 'vuex'
+const lunr = require('lunr')
+const _ = require('lodash')
+const docs = require('../../static/data/search/documents.json')
 
-
-  export default {
-    components: {SearchResult},
-    data () {
-      return {
-        searching: false,
-        filters: [],
-        results: []
+export default {
+  components: { SearchResult },
+  data () {
+    return {
+      searching: false,
+      filters: [],
+      results: []
+    }
+  },
+  computed: {
+    ...mapGetters(['phbSearch', 'searchFilters']),
+    search: {
+      get () {
+        return this.phbSearch
+      },
+      set (value) {
+        this.setPhbSearch(value)
+      }
+    }
+  },
+  watch: {
+    search () {
+      this.results = []
+      this.debouncedGetResults()
+      this.searching = true
+    }
+  },
+  created () {
+    this.debouncedGetResults = _.debounce(this.getResults, 500)
+    if (this.search !== '') {
+      this.debouncedGetResults()
+      this.searching = true
+    }
+  },
+  methods: {
+    ...mapActions(['setPhbSearch']),
+    setFilter (id) {
+      if (this.filters.includes(id)) {
+        this.filters.splice(this.filters.indexOf(id), 1)
+      } else {
+        this.filters.push(id)
       }
     },
-    computed: {
-      ...mapGetters(['phbSearch', 'searchFilters']),
-      search: {
-        get () {
-          return this.phbSearch
-        },
-        set (value) {
-          this.setPhbSearch(value)
-        }
-      },
-    },
-    watch: {
-      search () {
+    getResults () {
+      if (this.search === '' || this.search === null || typeof (this.search) === 'undefined') {
         this.results = []
-        this.debouncedGetResults()
-        this.searching = true
-      },
-    },
-    created () {
-      this.debouncedGetResults = _.debounce(this.getResults, 500)
-      if (this.search !== ''){
-        this.debouncedGetResults()
-        this.searching = true
-      }
-    },
-    methods: {
-      ...mapActions(['setPhbSearch']),
-      setFilter (id) {
-        if (this.filters.includes(id)) {
-          this.filters.splice(this.filters.indexOf(id),1)
-        } else {
-          this.filters.push(id)
-        }
-      },
-      getResults () {
-        if (this.search === '' || this.search === null || typeof(this.search) === 'undefined'){
-          this.results = []
-        } else {
-          const idx = lunr(function () {
-            this.ref('id')
-            this.field('title', {boost: 3})
-            this.field('type')
-            this.field('subType')
-            this.field('qualifiers')
-            this.field('body')
-            this.metadataWhitelist = ['position']
+      } else {
+        const idx = lunr(function () {
+          this.ref('id')
+          this.field('title', { boost: 3 })
+          this.field('type')
+          this.field('subType')
+          this.field('qualifiers')
+          this.field('body')
+          this.metadataWhitelist = ['position']
 
-            docs.forEach(function (doc) {
-              this.add(doc)
-            }, this)
-          })
-          this.results = idx.search(this.search)
-        }
-        this.searching = false
-      },
-      getDoc (ref) {
-        return docs.find(d => d.id === ref)
-      },
-      show (ref) {
-        if (this.filters.length > 0) {
-          return this.filters.includes(this.getDoc(ref).type)
-        }
-        return true
+          docs.forEach(function (doc) {
+            this.add(doc)
+          }, this)
+        })
+        this.results = idx.search(this.search)
       }
+      this.searching = false
     },
-    head () {
-      return {
-        title: 'Search | Mass Effect 5e',
-        meta: [
-          { hid: 'description', name: 'description', content: 'Search Mass Effect 5e rules, spells, class features, etc.' }
-        ]
+    getDoc (ref) {
+      return docs.find(d => d.id === ref)
+    },
+    show (ref) {
+      if (this.filters.length > 0) {
+        return this.filters.includes(this.getDoc(ref).type)
       }
-    },
-    layout: 'phb'
-  }
+      return true
+    }
+  },
+  head () {
+    return {
+      title: 'Search | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Search Mass Effect 5e rules, spells, class features, etc.' }
+      ]
+    }
+  },
+  layout: 'phb'
+}
 </script>

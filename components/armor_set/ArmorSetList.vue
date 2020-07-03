@@ -20,35 +20,34 @@
 </template>
 
 <script>
-  import SortOptions from '~/components/list/Sort.vue'
-  import ArmorSetInfo from '~/components/armor_set/ArmorSetInfo.vue'
-  import BookmarkButton from '~/components/BookmarkButton.vue'
-  import {mapGetters} from 'vuex'
+import { mapGetters } from 'vuex'
+import SortOptions from '~/components/list/Sort.vue'
+import ArmorSetInfo from '~/components/armor_set/ArmorSetInfo.vue'
+import BookmarkButton from '~/components/BookmarkButton.vue'
 
-  export default {
-    components: {
-      SortOptions, ArmorSetInfo, BookmarkButton
-    },
-    props: {
-      items: {
-        type: Array,
-        default: () => { return [] }
-      }
-    },
-    data () {
-      return {
-        headers: [
-          { label: 'Name', key: 'name', classes: 'xs6 md4 lg3', sortable: true },
-          { label: 'Cost', key: 'cost', classes: 'xs2 md1', sortable: true },
-          { label: 'Armor Type', key: 'armorType', classes: 'xs2 md1' },
-          { label: 'Type', key: 'placement', classes: 'xs2 md2' },
-          { label: 'Notes', key: 'notes', classes: 'hidden-sm-and-down md4 lg5' }
-        ]
-      }
-    },
-    computed: {
-      ...mapGetters('itemList', ['rarityTextColors'])
+export default {
+  components: {
+    SortOptions, ArmorSetInfo, BookmarkButton
+  },
+  props: {
+    items: {
+      type: Array,
+      default: () => { return [] }
     }
+  },
+  data () {
+    return {
+      headers: [
+        { label: 'Name', key: 'name', classes: 'xs6 md4 lg3', sortable: true },
+        { label: 'Cost', key: 'cost', classes: 'xs2 md1', sortable: true },
+        { label: 'Armor Type', key: 'armorType', classes: 'xs2 md1' },
+        { label: 'Type', key: 'placement', classes: 'xs2 md2' },
+        { label: 'Notes', key: 'notes', classes: 'hidden-sm-and-down md4 lg5' }
+      ]
+    }
+  },
+  computed: {
+    ...mapGetters('itemList', ['rarityTextColors'])
   }
+}
 </script>
-

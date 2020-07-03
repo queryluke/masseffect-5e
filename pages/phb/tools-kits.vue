@@ -22,26 +22,26 @@
 </template>
 
 <script>
-  import tools from '~/static/data/tools.json'
-  import BookmarkButton from '~/components/BookmarkButton.vue'
+import tools from '~/static/data/tools.json'
+import BookmarkButton from '~/components/BookmarkButton.vue'
 
-  export default {
-    components: {
-      BookmarkButton
-    },
-    data () {
-      return {
-        items: tools
-      }
-    },
-    head () {
-      return {
-        title: 'Tools & Kits - Equipment | Mass Effect 5e',
-        meta: [
-          { hid: 'description', name: 'description', content: 'Tools and Kits provide a wide variety of combat flavor and uses' }
-        ]
-      }
-    },
-    layout: 'phb'
-  }
+export default {
+  components: {
+    BookmarkButton
+  },
+  data () {
+    return {
+      items: tools
+    }
+  },
+  head () {
+    return {
+      title: 'Tools & Kits - Equipment | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Tools and Kits provide a wide variety of combat flavor and uses' }
+      ]
+    }
+  },
+  layout: 'phb'
+}
 </script>

@@ -4,23 +4,23 @@ export const Hp = {
   data () {
     return {
       baseShields: {
-        0: {shields: [0, 0, 5, 5, 10], regen: [0, 0, 0, 5, 5]},
-        1: {shields: [5, 5, 5, 10, 10], regen: [0, 0, 5, 5, 10]},
-        2: {shields: [5, 10, 15, 20, 20], regen: [5, 5, 10, 10, 10]},
-        3: {shields: [10, 15, 20, 25, 30], regen: [10, 10, 15, 15, 15]}
+        0: { shields: [0, 0, 5, 5, 10], regen: [0, 0, 0, 5, 5] },
+        1: { shields: [5, 5, 5, 10, 10], regen: [0, 0, 5, 5, 10] },
+        2: { shields: [5, 10, 15, 20, 20], regen: [5, 5, 10, 10, 10] },
+        3: { shields: [10, 15, 20, 25, 30], regen: [10, 10, 15, 15, 15] }
       }
     }
   },
   methods: {
     setGruntHp () {
       this.grunt.sp = null
-      this.grunt.hp = {numDie: 1, die: 4}
+      this.grunt.hp = { numDie: 1, die: 4 }
       // shields
       const baseShields = this.baseShields[this.crMetaLevel]
       const shields = this.randomValue(baseShields.shields)
       if (shields) {
         const regen = this.randomValue(baseShields.regen.filter(r => r <= shields))
-        this.grunt.sp = {shields, regen}
+        this.grunt.sp = { shields, regen }
         this.adjustments.hp += (shields + regen)
       }
 
@@ -34,7 +34,7 @@ export const Hp = {
       if (finalDpr > 81) {
         dprCr = this.createNewCrFromDamage(finalDpr)
       } else {
-        dprCr = stats.find(s => {
+        dprCr = stats.find((s) => {
           return s.dmgMin <= finalDpr && s.dmgMax >= finalDpr
         })
       }
@@ -61,7 +61,6 @@ export const Hp = {
       if (hpCr === undefined) {
         console.log(`finalAc = ${finalAc}, acDiff = ${acDiff}, targetDefensiveCrId = ${targetDefensiveCrId}, hpCrId = ${hpCrId}`)
       }
-
 
       // **********************************
       // Calc HP
@@ -103,7 +102,7 @@ export const Hp = {
     getCrById (id) {
       if (id > 15) {
         return this.createNewCr(id - 15)
-      } else if (id < 1){
+      } else if (id < 1) {
         return stats.find(cr => cr.id === 1)
       } else {
         return stats.find(cr => cr.id === id)

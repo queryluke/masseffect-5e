@@ -38,45 +38,45 @@
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        missions: [
-          {
-            name: 'Raid of the Basking Fish',
-            levels: '1st Level',
-            author: 'Mike Towle',
-            href: 'https://drive.google.com/open?id=0BxLeDaHVwlDzWUNJb29zMkpiZS1LazItQ3l0aEozWWJWSnBn',
-            feedback: '',
-            img: '/images/missions/raid_of_the_basking_fish.jpg'
-          },
-          {
-            name: 'Getting Down to Business',
-            levels: '1st Level',
-            author: 'Ryan Clinch',
-            href: 'https://drive.google.com/open?id=14eOWfAq6htG-16vQQrFUvDX-pfoYPONP',
-            feedback: '',
-            img: '/images/missions/getting_down_to_business.png'
-          },
-          {
-            name: 'Osiris Station',
-            levels: '4th to 5th level',
-            author: 'Hugh Thompson',
-            href: 'https://drive.google.com/open?id=1YGOeTyLIuAyh9it6SVwWMXKXlyYnAW-TkITcHbkqebc',
-            feedback: '',
-            img: '/images/missions/osiris_station.jpg'
-          },
-        ]
-      }
-    },
-    head () {
-      return {
-        title: 'Missions | Mass Effect 5e',
-        meta: [
-          { hid: 'description', name: 'description', content: 'Pre-written adventures and missions for Mass Effect 5e.' }
-        ]
-      }
-    },
-    layout: 'dark'
-  }
+export default {
+  data () {
+    return {
+      missions: [
+        {
+          name: 'Raid of the Basking Fish',
+          levels: '1st Level',
+          author: 'Mike Towle',
+          href: 'https://drive.google.com/open?id=0BxLeDaHVwlDzWUNJb29zMkpiZS1LazItQ3l0aEozWWJWSnBn',
+          feedback: '',
+          img: '/images/missions/raid_of_the_basking_fish.jpg'
+        },
+        {
+          name: 'Getting Down to Business',
+          levels: '1st Level',
+          author: 'Ryan Clinch',
+          href: 'https://drive.google.com/open?id=14eOWfAq6htG-16vQQrFUvDX-pfoYPONP',
+          feedback: '',
+          img: '/images/missions/getting_down_to_business.png'
+        },
+        {
+          name: 'Osiris Station',
+          levels: '4th to 5th level',
+          author: 'Hugh Thompson',
+          href: 'https://drive.google.com/open?id=1YGOeTyLIuAyh9it6SVwWMXKXlyYnAW-TkITcHbkqebc',
+          feedback: '',
+          img: '/images/missions/osiris_station.jpg'
+        }
+      ]
+    }
+  },
+  head () {
+    return {
+      title: 'Missions | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Pre-written adventures and missions for Mass Effect 5e.' }
+      ]
+    }
+  },
+  layout: 'dark'
+}
 </script>

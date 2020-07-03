@@ -13,7 +13,6 @@
         )
         v-icon {{ group.icon }}
 
-
     h2.display-3.hidden-sm-and-down Bookmarks
     v-layout(row wrap v-for="group of grouped" v-bind:key="group.icon" v-if="group.marks.length > 0").mt-5
       v-flex(xs12)
@@ -38,96 +37,96 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
-  import SpellInfo from '~/components/spell/SpellInfo.vue'
-  import WeaponInfo from '~/components/weapon/WeaponInfo.vue'
-  import BookmarkButton from '~/components/BookmarkButton.vue'
-  import StatBlock from '~/components/npc/StatBlock.vue'
-  import GrenadeInfo from '~/components/grenade/GrenadeInfo.vue'
-  import WeaponModInfo from '~/components/weapon_mod/WeaponModInfo.vue'
-  import ArmorModInfo from '~/components/armor_mod/ArmorModInfo.vue'
-  import ArmorSetInfo from '~/components/armor_set/ArmorSetInfo.vue'
-  import VehicleInfo from '~/components/vehicle/VehicleInfo.vue'
-  import ProgramInfo from '~/components/programs/ProgramInfo.vue'
+import { mapGetters } from 'vuex'
+import SpellInfo from '~/components/spell/SpellInfo.vue'
+import WeaponInfo from '~/components/weapon/WeaponInfo.vue'
+import BookmarkButton from '~/components/BookmarkButton.vue'
+import StatBlock from '~/components/npc/StatBlock.vue'
+import GrenadeInfo from '~/components/grenade/GrenadeInfo.vue'
+import WeaponModInfo from '~/components/weapon_mod/WeaponModInfo.vue'
+import ArmorModInfo from '~/components/armor_mod/ArmorModInfo.vue'
+import ArmorSetInfo from '~/components/armor_set/ArmorSetInfo.vue'
+import VehicleInfo from '~/components/vehicle/VehicleInfo.vue'
+import ProgramInfo from '~/components/programs/ProgramInfo.vue'
 
-  export default {
-    components: {
-      GrenadeInfo,
-      StatBlock,
-      SpellInfo,
-      WeaponInfo,
-      WeaponModInfo,
-      ArmorModInfo,
-      ArmorSetInfo,
-      VehicleInfo,
-      ProgramInfo,
-      BookmarkButton
-    },
-    data () {
-      return {
-        fab: false,
-        groups: [
-          {
-            title: 'Equipment',
-            icon: 'build',
-            color: 'orange',
-            group: ['tools', 'grenade', 'weapon', 'weaponMod', 'armorMod', 'armorSet', 'program'],
-            marks: []
-          },
-          {
-            title: 'Spells',
-            icon: 'whatshot',
-            color: 'cyan',
-            group: ['spell'],
-            marks: []
-          },
-          {
-            title: 'Npcs',
-            icon: 'pets',
-            color: 'purple',
-            group: ['npc'],
-            marks: []
-          },
-          {
-            title: 'Vehicles',
-            icon: 'flight_takeoff',
-            color: 'green',
-            group: ['vehicle'],
-            marks: []
-          }
-        ]
-      }
-    },
-    computed: {
-      ...mapGetters(['bookmarks']),
-      grouped () {
-        const g = this.groups.map(g => {
-          g.marks = []
-          return g
-        })
-        for (const bm of this.bookmarks) {
-          for (const type of g) {
-            if (type.group.includes(bm.type)) {
-              type.marks.push(bm)
-            }
+export default {
+  components: {
+    GrenadeInfo,
+    StatBlock,
+    SpellInfo,
+    WeaponInfo,
+    WeaponModInfo,
+    ArmorModInfo,
+    ArmorSetInfo,
+    VehicleInfo,
+    ProgramInfo,
+    BookmarkButton
+  },
+  data () {
+    return {
+      fab: false,
+      groups: [
+        {
+          title: 'Equipment',
+          icon: 'build',
+          color: 'orange',
+          group: ['tools', 'grenade', 'weapon', 'weaponMod', 'armorMod', 'armorSet', 'program'],
+          marks: []
+        },
+        {
+          title: 'Spells',
+          icon: 'whatshot',
+          color: 'cyan',
+          group: ['spell'],
+          marks: []
+        },
+        {
+          title: 'Npcs',
+          icon: 'pets',
+          color: 'purple',
+          group: ['npc'],
+          marks: []
+        },
+        {
+          title: 'Vehicles',
+          icon: 'flight_takeoff',
+          color: 'green',
+          group: ['vehicle'],
+          marks: []
+        }
+      ]
+    }
+  },
+  computed: {
+    ...mapGetters(['bookmarks']),
+    grouped () {
+      const g = this.groups.map((g) => {
+        g.marks = []
+        return g
+      })
+      for (const bm of this.bookmarks) {
+        for (const type of g) {
+          if (type.group.includes(bm.type)) {
+            type.marks.push(bm)
           }
         }
-        return g
       }
-    },
-    methods: {
-      goToMark (id) {
-        this.$vuetify.goTo(id, { offset: -68 })
-      },
-    },
-    head () {
-      return {
-        title: 'Bookmarks | Mass Effect 5e',
-        meta: [
-          { hid: 'description', name: 'description', content: 'Keep your favorite weapons, enemies, and spells close at hand with our nifty bookmark tool.' }
-        ]
-      }
-    },
-    layout: 'phb'
-  }
+      return g
+    }
+  },
+  methods: {
+    goToMark (id) {
+      this.$vuetify.goTo(id, { offset: -68 })
+    }
+  },
+  head () {
+    return {
+      title: 'Bookmarks | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Keep your favorite weapons, enemies, and spells close at hand with our nifty bookmark tool.' }
+      ]
+    }
+  },
+  layout: 'phb'
+}
 </script>

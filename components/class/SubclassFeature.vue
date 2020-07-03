@@ -8,36 +8,37 @@
 </template>
 
 <script>
-  import ClassFeature from '~/components/class/ClassFeature.vue'
+import ClassFeature from '~/components/class/ClassFeature.vue'
 
-  export default {
-    components: { ClassFeature },
-    props: {
-      item: {
-        type: Object,
-        default: () => { return {} }
-      },
-      level: {
-        type: Object,
-        default: () => { return {} }
-      },
-      primaryColor: {
-        type: String,
-        default: ''
-      }
+export default {
+  components: { ClassFeature },
+  props: {
+    item: {
+      type: Object,
+      default: () => { return {} }
     },
-    computed: {
-      featureIndex () {
-        let index = 0
-        for (const level of this.item.progression) {
-          if (this.level === level) {
-            return index
-          }
-          if (level.features.includes('subclass')) {
-            index++
-          }
+    level: {
+      type: Object,
+      default: () => { return {} }
+    },
+    primaryColor: {
+      type: String,
+      default: ''
+    }
+  },
+  computed: {
+    featureIndex () {
+      let index = 0
+      for (const level of this.item.progression) {
+        if (this.level === level) {
+          return index
+        }
+        if (level.features.includes('subclass')) {
+          index++
         }
       }
+      return ''
     }
   }
+}
 </script>

@@ -11,7 +11,7 @@ export default {
     { route: '/changelog', title: 'Changelog' },
     { route: '/about', title: 'About' },
     { route: '/contributing', title: 'Feedback' },
-    { route: '/character-builder', title: 'Character Builder (BETA)'}
+    { route: '/character-builder', title: 'Character Builder (BETA)' }
   ],
   races: ['angara', 'asari', 'batarian', 'drell', 'elcor', 'geth', 'hanar', 'human', 'krogan', 'prothean', 'quarian', 'salarian', 'turian', 'volus', 'vorcha'],
   sidebar: true,

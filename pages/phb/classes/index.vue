@@ -18,26 +18,26 @@
 </template>
 
 <script>
-  import items from '~/static/data/classes'
-  export default {
-    data () {
-      return {
-        items
-      }
-    },
-    head () {
-      return {
-        title: 'Classes | Mass Effect 5e',
-        meta: [
-          { hid: 'description', name: 'description', content: 'Choose your favorite Mass Effect class, each with 3 subclasses to provide variety to the game.' }
-        ]
-      }
-    },
-    layout: 'phb',
-    methods: {
-      savingThrows (item) {
-        return item.savingThrows.map(st => this.$options.filters.capitalize(st)).join(' & ')
-      }
+import items from '~/static/data/classes'
+export default {
+  data () {
+    return {
+      items
     }
-  }
+  },
+  methods: {
+    savingThrows (item) {
+      return item.savingThrows.map(st => this.$options.filters.capitalize(st)).join(' & ')
+    }
+  },
+  head () {
+    return {
+      title: 'Classes | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Choose your favorite Mass Effect class, each with 3 subclasses to provide variety to the game.' }
+      ]
+    }
+  },
+  layout: 'phb'
+}
 </script>

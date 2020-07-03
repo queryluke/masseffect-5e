@@ -13,18 +13,18 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      post: {
-        type: Object,
-        default: () => { return {} }
-      },
-      height: {
-        type: String,
-        default: ''
-      }
+export default {
+  props: {
+    post: {
+      type: Object,
+      default: () => { return {} }
+    },
+    height: {
+      type: String,
+      default: ''
     }
   }
+}
 </script>
 
 <style lang="scss">

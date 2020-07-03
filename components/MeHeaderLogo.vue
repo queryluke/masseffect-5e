@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  export default {
-    name: 'MeHeaderLogo'
-  }
+export default {
+  name: 'MeHeaderLogo'
+}
 </script>
