@@ -233,6 +233,7 @@ export default {
         }
         const ability = this.skillsMap[skill]
         if (!ability) {
+          // eslint-disable-next-line
           console.log(`could not find ${skill} from ${this.stats.name}`)
           return false
         }

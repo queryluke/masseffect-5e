@@ -1,0 +1,35 @@
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.text--shadow {
+  text-shadow: 0 0 5px #000;
+}
+
+.theme--dark.v-application {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.theme--light.v-application {
+  background: #cfd8dc;
+}
+
+.v-alert__content p {
+  margin-bottom: 0;
+}
+
+.v-card.blockquote-card {
+
+  margin-bottom: 1em;
+
+  p {
+    margin-bottom: 0;
+  }
+}

@@ -108,15 +108,16 @@
 
 <script>
 import RuleCard from '~/components/cards/AltRuleCard.vue'
-import mechanics from '~/static/data/armor_mechanics'
 
 export default {
   components: { RuleCard },
   data () {
     return {
-      mechanics
+      mechanics: []
     }
+  },
+  created () {
+    this.mechanics = this.$store.dispatch('FETCH_DATA', 'armor-mechanics')
   }
-
 }
 </script>

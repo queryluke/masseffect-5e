@@ -1,5 +1,4 @@
 import colors from 'vuetify/es5/util/colors'
-const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 
 export default {
   /*
@@ -46,13 +45,14 @@ export default {
     { src: '@/plugins/persistentState.js', ssr: false },
     { src: '@/plugins/TiptapVuetify', mode: 'client' },
     '@/plugins/filters/index.js',
-    '@/plugins/vue2-filters'
+    '@/plugins/vue2-filters',
+    '@/plugins/globals'
   ],
   /*
   ** Auto import components
   ** See https://nuxtjs.org/api/configuration-components
   */
-  components: true,
+  components: false,
   /*
   ** Nuxt.js dev-modules
   */
@@ -76,7 +76,10 @@ export default {
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
-  axios: {},
+  axios: {
+    // baseURL: 'https://raw.githubusercontent.com/queryluke/masseffect-5e-data/master/.me5e/'
+    baseURL: '/.me5e/'
+  },
   /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module
@@ -87,10 +90,19 @@ export default {
       dark: true,
       themes: {
         light: {
-          primary: colors.red.darken4,
+          primary: colors.indigo.darken4,
           accent: colors.lightBlue.darken1,
-          secondary: colors.indigo.darken4,
-          info: colors.cyan.lighten1,
+          secondary: colors.red.darken4,
+          info: colors.lightBlue.darken3,
+          warning: colors.amber.lighten1,
+          error: colors.pink.lighten1,
+          success: colors.lightGreen.lighten1
+        },
+        dark: {
+          primary: colors.lightBlue.darken1,
+          accent: colors.indigo.darken4,
+          secondary: colors.red.darken4,
+          info: colors.lightBlue.darken3,
           warning: colors.amber.lighten1,
           error: colors.pink.lighten1,
           success: colors.lightGreen.lighten1
@@ -103,7 +115,6 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
-    transpile: ['vuetify/lib', 'tiptap-vuetify'],
-    plugins: [new VuetifyLoaderPlugin()]
+    transpile: ['vuetify/lib', 'tiptap-vuetify']
   }
 }

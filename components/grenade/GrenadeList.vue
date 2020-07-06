@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import grenades from '~/static/data/grenades.json'
 import GrenadeInfo from '~/components/grenade/GrenadeInfo.vue'
 import BookmarkButton from '~/components/BookmarkButton.vue'
 
@@ -27,8 +26,11 @@ export default {
   },
   data () {
     return {
-      items: grenades
+      items: []
     }
+  },
+  created () {
+    this.items = this.$store.dispatch('FETCH_DATA', 'grenades')
   }
 }
 </script>

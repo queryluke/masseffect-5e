@@ -50,15 +50,17 @@ export default {
     loadTextFromFile (ev) {
       const file = ev.target.files[0]
       const reader = new FileReader()
-
+      // eslint-disable-next-line
       console.log(file)
       if (!file) { return }
       reader.readAsText(file)
 
       reader.onload = (e) => {
+        // eslint-disable-next-line
         console.log(e.target.result)
         const dataDump = e.target.result
         if (dataDump && dataDump !== '') {
+          // eslint-disable-next-line
           console.log('[bdc4] - triggering load event...')
           const char = JSON.parse(e.target.result)
           this.$emit('load', char)

@@ -6,14 +6,19 @@
 </template>
 
 <script>
-import spells from '~/static/data/spells'
-import adept from '~/static/data/classes/adept'
-
 export default {
   props: {
     spellcasting: {
       type: Object,
       default: () => { return {} }
+    }
+  },
+  data () {
+    return {
+      spells: [],
+      adept: {
+        progression: []
+      }
     }
   },
   computed: {
@@ -31,11 +36,19 @@ export default {
       return this.castable.filter(s => parseInt(s.level, 10) === 0)
     },
     spellSlots () {
-      return adept.progression.find(p => parseInt(p.level, 10) === parseInt(this.spellcasting.level, 10)).spellSlots
+      return this.adept.progression.find(p => parseInt(p.level, 10) === parseInt(this.spellcasting.level, 10)).spellSlots
     },
     castable () {
-      return spells.filter(s => this.spellcasting.spellList.includes(s.id))
+      return this.spells.filter(s => this.spellcasting.spellList.includes(s.id))
     }
+  },
+  async created () {
+    const data = await Promise.all([
+      this.$store.dispatch('FETCH_DATA', 'spells'),
+      this.$store.dispatch('FETCH_ITEM', { endpoint: 'spells', id: 'adept' })
+    ])
+    this.spells = data[0]
+    this.adept = data[1]
   }
 }
 </script>

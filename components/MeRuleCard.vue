@@ -1,0 +1,32 @@
+<template>
+  <div :id="item.id" class="mb-10">
+    <div class="headline my-3">
+      {{ item.title }}
+      <v-chip v-if="item.new" color="info" text-color="white" class="ml-3" small>
+        new
+      </v-chip>
+      <v-chip v-if="item.change" color="warning" text-color="black" class="ml-3" small>
+        change
+      </v-chip>
+    </div>
+    <v-progress-linear :value="100" color="primary" height="3" class="mb-3" />
+    <div>
+      <me-markdown :content="item.html" />
+    </div>
+  </div>
+</template>
+
+<script>
+
+export default {
+  name: 'MeRuleCard',
+  props: {
+    item: {
+      type: Object,
+      default: () => {
+        return {}
+      }
+    }
+  }
+}
+</script>

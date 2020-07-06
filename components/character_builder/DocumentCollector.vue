@@ -12,15 +12,15 @@
           v-if="search.model != '' ") Add Selected Item
     v-layout
       v-expansion-panel.mb-2
-        v-expansion-panel-content(v-for="(item, ind) in character_table" :key="ind + '-' + type + getHeading(character_table[ind])").large-panel
-          div(slot="header") {{getHeading(character_table[ind])}}
+        v-expansion-panel-content(v-for="(item, ind) in characterTable" :key="ind + '-' + type + getHeading(characterTable[ind])").large-panel
+          div(slot="header") {{getHeading(characterTable[ind])}}
           v-card.grey.lighten-3
             v-card-text
               Editor(:content="item" :index="ind"
                 @update:content="modifyTable($event); $forceUpdate();"
                 @remove:content="removeFromTable($event); $forceUpdate();")
     v-layout.xs-text-left()
-      v-btn(@click="addToTable(undefined, '<h1>New Item ' + (character_table.length+1) + '</h1>')") Add Custom Entry
+      v-btn(@click="addToTable(undefined, '<h1>New Item ' + (characterTable.length+1) + '</h1>')") Add Custom Entry
 </template>
 
 <script>
@@ -54,7 +54,7 @@ export default {
       type: Array,
       default: () => { return [] }
     },
-    character_table: {
+    characterTable: {
       type: Array,
       default: () => { return [] }
     }
@@ -73,23 +73,26 @@ export default {
   },
   methods: {
     // Bubbles up the value to the inherited character array (ie: traits)
-    addToTable (model, value) {
+    async addToTable (model, value) {
       if (!value) {
         try {
-          model = require(`~/static/data/${this.type}/${model.id}.md`)// '<h1>'+model.title+'</h1><p>'+model.body+'</p>'
-          value = '<h1>' + model.attributes.name + '</h1>' + model.html
+          model = await this.$store.dispatch('FETCH_ITEM', { endpoint: this.type, id: model.id }) // '<h1>'+model.title+'</h1><p>'+model.body+'</p>'
+          value = '<h1>' + model.name + '</h1>' + model.html
         } catch {
           value = '<h1>Not Found</h1><p>Something went wrong when trying to add this item...</p>'
         }
       }
+      // eslint-disable-next-line
       console.log('Payload for add event: ', value)
       this.$emit(this.event + ':add', value)
     },
     removeFromTable (event) {
+      // eslint-disable-next-line
       console.log('Payload for remove event: ', event)
       this.$emit(this.event + ':remove', event)
     },
     modifyTable (event) {
+      // eslint-disable-next-line
       console.log('Payload for modify event: ', event)
       this.$emit(this.event + ':modify', event)
     },

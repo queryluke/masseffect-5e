@@ -1,28 +1,28 @@
-<template lang="pug">
-  div.markdown-content
-    p.title {{ item.attributes.name }}
-    markdown-content(:component="item.vue" v-bind:context="featureLevel")
+<template>
+  <div>
+    <p class="title">
+      {{ item.name }}
+    </p>
+    <me-html :content="item.html" />
+  </div>
 </template>
 
 <script>
 export default {
   props: {
-    id: {
-      type: String,
-      default: ''
+    item: {
+      type: Object,
+      default: () => {
+        return {
+          name: '',
+          html: ''
+        }
+      }
     },
     featureLevel: {
       type: Object,
       default: () => { return {} }
     }
-  },
-  data () {
-    return {
-      item: {}
-    }
-  },
-  created () {
-    this.item = require(`~/static/data/class_features/${this.id}.md`)
   }
 }
 </script>

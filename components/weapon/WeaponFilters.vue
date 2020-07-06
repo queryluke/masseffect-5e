@@ -13,7 +13,6 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
-import weaponProperties from '~/static/data/weapon_properties.json'
 const { mapActions, mapGetters } = createNamespacedHelpers('itemList')
 
 export default {
@@ -24,10 +23,9 @@ export default {
     }
   },
   data () {
-    const propertyOptions = weaponProperties.map(p => p.name).filter(p => !['Heat', 'Melee', 'Range', 'Weight'].includes(p))
     return {
       typeOptions: ['Assault Rifle', 'Heavy Pistol', 'Heavy Weapon', 'Melee', 'SMG', 'Shotgun', 'Sniper Rifle'],
-      propertyOptions
+      propertyOptions: []
     }
   },
   computed: {
@@ -56,6 +54,10 @@ export default {
         this.updateFilter({ key: this.itemKey, filterKey: 'property', value })
       }
     }
+  },
+  async created () {
+    const data = await this.$store.dispatch('FETCH_DATA', 'weapon-properties')
+    this.propertyOptions = data.map(p => p.name).filter(p => !['Heat', 'Melee', 'Range', 'Weight'].includes(p))
   },
   methods: {
     ...mapActions(['updateFilter']),

@@ -32,7 +32,6 @@
 <script>
 import _ from 'lodash'
 import ClassFeature from '~/components/class/ClassFeature.vue'
-import features from '~/static/data/class_features'
 import SubclassFeature from '~/components/class/SubclassFeature.vue'
 
 export default {
@@ -50,7 +49,9 @@ export default {
   data () {
     return {
       dialog: false,
-      selectedLevel: null
+      selectedLevel: null,
+      // TODO
+      features: []
     }
   },
   computed: {
@@ -60,7 +61,7 @@ export default {
   },
   methods: {
     featureList (level) {
-      return features.filter(feature => level.features.includes(feature.id)).map((feature) => {
+      return this.features.filter(feature => level.features.includes(feature.id)).map((feature) => {
         switch (feature.id) {
           case 'extra_attack_2':
           case 'extra_attack_3':

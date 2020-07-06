@@ -2,7 +2,7 @@
   v-container(grid-list-md).pa-0
     v-layout(row justify-center wrap)
       v-flex(xs12 md6)
-        v-select(:items="typeOptions" v-model="typeFilter" label="Spell Type" multiple menu-props="{maxHeight:'400'}")
+
       v-flex(xs12 md6)
         v-select(:items="classOptions" v-model="classFilter" label="Classes" multiple menu-props="{maxHeight:'400'}")
       v-flex(xs12).text-xs-center.hidden-md-and-up

@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-content
+  div
     section
       v-parallax(src="/images/parallax/critical_mission_failure.jpg")
     section(style="margin-top: -50px;")
@@ -12,19 +12,14 @@
 </template>
 
 <script>
-import MainToolbar from '~/components/MainToolbar.vue'
-import MainFooter from '~/components/MainFooter.vue'
 
 export default {
-  components: {
-    MainFooter,
-    MainToolbar
-  },
   props: {
     error: {
       type: Object,
       default: () => { return {} }
     }
-  }
+  },
+  layout: 'info'
 }
 </script>

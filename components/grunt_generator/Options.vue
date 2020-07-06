@@ -43,9 +43,6 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
-import races from '~/static/data/races'
-import crs from '~/static/data/stats_by_cr'
-import classes from '~/static/data/classes'
 
 const { mapActions, mapGetters } = createNamespacedHelpers('gruntGenerator')
 
@@ -66,9 +63,9 @@ export default {
   },
   data () {
     return {
-      races,
-      classes,
-      crs
+      races: [],
+      classes: [],
+      crs: []
     }
   },
   computed: {
@@ -97,6 +94,16 @@ export default {
         this.setClass(value)
       }
     }
+  },
+  async created () {
+    const data = await Promise.all([
+      this.$store.dispatch('FETCH_DATA', 'races'),
+      this.$store.dispatch('FETCH_DATA', 'classes'),
+      this.$store.dispatch('FETCH_DATA', 'stats-by-cr')
+    ])
+    this.races = data[0]
+    this.classes = data[1]
+    this.cr = data[2]
   },
   methods: {
     ...mapActions(['setCr', 'setRace', 'setClass']),

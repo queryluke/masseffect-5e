@@ -23,7 +23,6 @@
 <script>
 import BookmarkButton from '~/components/BookmarkButton.vue'
 import VehicleInfo from '~/components/vehicle/VehicleInfo.vue'
-import items from '~/static/data/vehicles'
 
 export default {
   components: {
@@ -32,7 +31,7 @@ export default {
   },
   data () {
     return {
-      items
+      items: []
     }
   },
   computed: {
@@ -42,6 +41,9 @@ export default {
     starships () {
       return this.items.filter(v => v.vehicle.type === 'starship')
     }
+  },
+  async created () {
+    this.items = await this.$store.dispatch('FETCH_DATA', 'vehicles')
   }
 }
 </script>

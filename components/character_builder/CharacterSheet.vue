@@ -394,112 +394,20 @@
 </style>
 
 <script>
-import documents from '~/static/data/search/documents.json'
-import weapons from '~/static/data/weapons.json'
-import armor from '~/static/data/armor_sets.json'
-import powers from '~/static/data/spells'
-import feats from '~/static/data/feats.json'
-import backgrounds from '~/static/data/backgrounds.json'
-
-import SaveLoad from '~/components/character_builder/CharacterSaveLoad.vue'
-import CharacterPowerCounter from '~/components/character_builder/CharacterPowerCounter.vue'
-import WeaponList from '~/components/weapon/WeaponList.vue'
-import SpellList from '~/components/spell/SpellList.vue'
-import ArmorList from '~/components/armor_set/ArmorSetList.vue'
-import RacialTrait from '~/components/race/RacialTrait.vue'
-import ClassFeature from '~/components/class/ClassFeature.vue'
-import DocumentCollector from '~/components/character_builder/DocumentCollector.vue'
-import Editor from '~/components/character_builder/Editor.vue'
-
-import AdeptData from '~/static/data/classes/adept.json'
-import EngineerData from '~/static/data/classes/engineer.json'
-import InfiltratorData from '~/static/data/classes/infiltrator.json'
-import SentinelData from '~/static/data/classes/sentinel.json'
-import SoldierData from '~/static/data/classes/soldier.json'
-import VanguardData from '~/static/data/classes/vanguard.json'
+import { mapGetters } from 'vuex'
 
 export default {
-  components: { SaveLoad, CharacterPowerCounter, WeaponList, ArmorList, SpellList, RacialTrait, ClassFeature, DocumentCollector, Editor },
-  class_data: [AdeptData, EngineerData, InfiltratorData, SentinelData, SoldierData, VanguardData],
-  computed: {
-    characterProf () {
-      return this.calcProfBonus(this.character.level)
-    },
-    character_docs () {
-      return this.getDocuments('character')
-    },
-    character_traits () {
-      return this.getDocuments('character', 'traits')
-    },
-    class_features () {
-      return require('~/static/data/class_features.json')
-      // return this.getDocuments('character','class_features');
-    },
-    power_attribute () {
-      return this.character.stats[this.character.power_attribute]
-    },
-    power_ability_modifier () {
-      return this.calcProfBonus(this.character.level) + this.calcAbilityMod(this.power_attribute)
-    },
-    tech_point_max () {
-      let tpm = 0
-      try {
-        tpm = this.character.class.progression[this.character.level - 1].techPoints || 0
-      } catch (err) {
-        console.log(err)
-      }
-      return tpm
-    },
-    tech_point_limit () {
-      let tpl = 0
-      try {
-        tpl = this.character.class.progression[this.character.level - 1].techPointLimit || 0
-      } catch (err) {
-        console.log(err)
-      }
-      return tpl
-    },
-    spell_level_limit () {
-      let sll = 0
-      try {
-        sll = this.character.class.progression[this.character.level - 1].spellLevel || 0
-      } catch (err) {
-        console.log(err)
-      }
-      return sll
-    },
-    spell_slots () {
-      let slots = {}
-      try {
-        slots = this.character.class.progression[this.character.level - 1].spellSlots || 0
-      } catch (err) {
-        console.log(err)
-      }
-      return slots
-    },
-    character_level () {
-      return this.character.level
-    }
-  },
-
   data: () => ({
     image_picker: false,
     selected_character_info_tab: 'traits',
     selected_trait: '',
     pickWeapon: false,
     removeWeapon: false,
-    classData: [AdeptData, EngineerData, InfiltratorData, SentinelData, SoldierData, VanguardData],
     combatPowers: ['soldier', 'vanguard', 'infiltrator'],
     techPowers: ['engineer', 'infiltrator'],
     bioticPowers: ['adept', 'vanguard'],
     tab: false,
     other_info: {},
-    armor: armor || 'not found',
-    weapons: weapons || 'not found',
-    documents: documents || 'not found',
-    powers: powers || 'not found',
-    feats: feats || 'not found',
-    backgrounds: backgrounds || 'not found',
     stat_names: ['str', 'dex', 'con', 'int', 'wis', 'cha'],
     skill_names: ['acrobatics', 'athletics', 'deception', 'electronics', 'engineering', 'history', 'insight', 'intimidation',
       'investigation', 'medicine', 'perception', 'performance', 'persuasion', 'science', 'slight_of_hand', 'stealth', 'survival', 'vehicle_handling'],
@@ -517,6 +425,94 @@ export default {
     },
     componentKey: 0
   }),
+  computed: {
+    ...mapGetters(['getData']),
+    // Base Data
+    classData () {
+      return this.getData('classes').filter(i => i.id !== 'alt-sentinel')
+    },
+    armor () {
+      return this.getData('armor')
+    },
+    weapons () {
+      return this.getData('weapons')
+    },
+    documents () {
+      return this.getData('search-index')
+    },
+    powers () {
+      return this.getData('powers')
+    },
+    feats () {
+      return this.getData('feats')
+    },
+    backgrounds () {
+      return this.getData('backgrounds')
+    },
+    // CS Data
+    characterProf () {
+      return this.calcProfBonus(this.character.level)
+    },
+    character_docs () {
+      return this.getDocuments('character')
+    },
+    character_traits () {
+      return this.getDocuments('character', 'traits')
+    },
+    class_features () {
+      return this.getData('class-features')
+      // return this.getDocuments('character','class_features');
+    },
+    power_attribute () {
+      return this.character.stats[this.character.power_attribute]
+    },
+    power_ability_modifier () {
+      return this.calcProfBonus(this.character.level) + this.calcAbilityMod(this.power_attribute)
+    },
+    tech_point_max () {
+      let tpm = 0
+      try {
+        tpm = this.character.class.progression[this.character.level - 1].techPoints || 0
+      } catch (err) {
+        // eslint-disable-next-line
+        console.log(err)
+      }
+      return tpm
+    },
+    tech_point_limit () {
+      let tpl = 0
+      try {
+        tpl = this.character.class.progression[this.character.level - 1].techPointLimit || 0
+      } catch (err) {
+        // eslint-disable-next-line
+        console.log(err)
+      }
+      return tpl
+    },
+    spell_level_limit () {
+      let sll = 0
+      try {
+        sll = this.character.class.progression[this.character.level - 1].spellLevel || 0
+      } catch (err) {
+        // eslint-disable-next-line
+        console.log(err)
+      }
+      return sll
+    },
+    spell_slots () {
+      let slots = {}
+      try {
+        slots = this.character.class.progression[this.character.level - 1].spellSlots || 0
+      } catch (err) {
+        // eslint-disable-next-line
+        console.log(err)
+      }
+      return slots
+    },
+    character_level () {
+      return this.character.level
+    }
+  },
 
   watch: {
     character: {
@@ -529,14 +525,17 @@ export default {
       }
     },
     character_level (newVal, oldVal) {
+      // eslint-disable-next-line
       console.log('Character Level Changed')
       this.character.level = Math.max(1, Math.min(newVal, 20))
     }
   },
 
   created () {
+    // eslint-disable-next-line
     console.log('Character before create: ', this.character)
-    this.character = this.$store.state.characterBuilder.character
+    this.character = this.$store.state.getters['characterBuilder/character']
+    // eslint-disable-next-line
     console.log('Character after create: ', this.character)
   },
 

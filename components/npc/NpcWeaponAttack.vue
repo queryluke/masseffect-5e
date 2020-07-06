@@ -14,16 +14,23 @@
 </template>
 
 <script>
-import weapons from '~/static/data/weapons'
 import { AbilityScoreBonus } from '~/mixins/abilityScoreBonus'
 import { AverageFromDie } from '~/mixins/averageFromDie'
 
 export default {
   mixins: [AbilityScoreBonus, AverageFromDie],
   props: {
-    id: {
-      type: String,
-      default: ''
+    weapon: {
+      type: Object,
+      default: () => {
+        return {
+          name: 'NOT FOUND',
+          tags: '',
+          type: '',
+          damage: '1d4',
+          range: 2
+        }
+      }
     },
     abilityScores: {
       type: Object,
@@ -67,20 +74,6 @@ export default {
       const npcHit = this.weapon.npcHit ? ` and ${this.weapon.npcHit}` : ''
       const attackModText = this.attackMod > 0 ? ` + ${this.attackMod}` : ''
       return `${this.damage} (${this.weapon.damage}${attackModText}) ${this.weapon.dmgType} damage${npcHit}`
-    },
-    weapon () {
-      let weapon = weapons.find(w => w.id === this.id)
-      if (typeof (weapon) === 'undefined') {
-        console.log(`could not find ${this.id}`)
-        weapon = {
-          name: 'NOT FOUND',
-          tags: '',
-          type: '',
-          damage: '1d4',
-          range: 2
-        }
-      }
-      return weapon
     }
   }
 }
