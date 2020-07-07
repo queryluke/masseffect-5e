@@ -60,7 +60,7 @@ export const getters = {
 
 export const mutations = {
   setData (state, { endpoint, data }) {
-    state.data[endpoint] = data
+    state.data = { ...state.data, [endpoint]: data }
   },
   drawer (state, value) {
     state.drawer = value

@@ -429,7 +429,7 @@ export default {
   computed: {
     ...mapGetters(['getData']),
     // Base Data
-    classData () {
+    classes () {
       return this.getData('classes').filter(i => i.id !== 'alt-sentinel')
     },
     armor () {
