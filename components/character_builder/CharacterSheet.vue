@@ -25,7 +25,7 @@
             v-flex
               v-select(v-model="character.race" :items="races" label="Race")
             v-flex
-              v-select(v-model="character.class" :items="$options.class_data" item-text="name" label="Class" return-object)
+              v-select(v-model="character.class" :items="classData" item-text="name" label="Class" return-object)
             v-flex
               v-select(v-model="character.subclass" :items="character.class.subclasses" item-text="name" label="Sub-Class" return-object)
             v-flex
@@ -157,7 +157,7 @@
             div(class="item-area")
               h2 Armor
               v-autocomplete(v-model="character.armor" label="Equipped Armor" :items="armor" item-text="name" return-object multiple)
-              armor-list(:items="character.armor" v-if="character.armor.length")
+              armor-set-list(:items="character.armor" v-if="character.armor.length")
 
           v-tab-item(key="character-info")
             div.item-area.character-info-area
@@ -429,7 +429,7 @@ export default {
   computed: {
     ...mapGetters(['getData']),
     // Base Data
-    classes () {
+    classData () {
       return this.getData('classes').filter(i => i.id !== 'alt-sentinel')
     },
     armor () {
@@ -442,7 +442,7 @@ export default {
       return this.getData('search-index')
     },
     powers () {
-      return this.getData('powers')
+      return this.getData('spells')
     },
     feats () {
       return this.getData('feats')

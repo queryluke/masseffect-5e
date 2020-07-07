@@ -76,13 +76,18 @@ export default {
     },
     infoItem () {
       if (this.doc.subType === 'bestiary') {
-        return require(`~/static/data/bestiary/${this.doc.id}.json`)
+        // TODO
+        return '' // require(`~/static/data/bestiary/${this.doc.id}.json`)
       } else {
-        const items = require(`~/static/data/${this.doc.subType}.json`)
+        // TODO
+        // const items = require(`~/static/data/${this.doc.subType}.json`)
+        return ''
+        /*
         return {
           item: items.find(i => i.id === this.doc.id),
           title: false
         }
+        */
       }
     },
     component () {
