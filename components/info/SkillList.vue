@@ -2,7 +2,7 @@
   ul
     li(v-for="item in items" v-bind:key="item.id").
       #[strong #[em {{ item.name }}]]
-      #[v-chip(v-if="item.new" color="secondary" text-color="white" class="pa-0 v-chip--x-small" disabled) new].
+      #[v-chip(v-if="item.new" color="info" x-small) new].
       {{ item.description }}
 </template>
 

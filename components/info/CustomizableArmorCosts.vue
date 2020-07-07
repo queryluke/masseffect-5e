@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    table.table
+    v-simple-table
       thead
         tr
           th Slot / Type

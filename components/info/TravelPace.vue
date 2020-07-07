@@ -1,5 +1,5 @@
 <template lang="pug">
-  table.table
+  v-simple-table
     thead
       tr
         th

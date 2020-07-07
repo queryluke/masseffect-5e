@@ -11,7 +11,7 @@
     </div>
     <v-progress-linear :value="100" color="primary" height="3" class="mb-3" />
     <div>
-      <me-markdown :content="item.html" />
+      <me-html :content="item.html" />
     </div>
   </div>
 </template>

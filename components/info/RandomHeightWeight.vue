@@ -1,17 +1,25 @@
 <template lang="pug">
-  div
+  div.mt-10
     p #[strong Calculating Random Height]: Base Height + Height Modifier Roll
     p #[strong Calculating Random Weight]: Base Weight + (Height Modifier Roll x Weight Modifier Roll)
-    div(v-for="table in tables" v-bind:key="table.name").mb-4
-      p.headline {{ table.name }}
-      table.table
+    div(v-if="imperial")
+      p.headline Imperial
+      v-simple-table
         thead
           tr
-            th(v-for="h in table.headers" v-bind:key="h.key") {{ h.display }}
+            th(v-for="h in imperialTable" :key="h.key") {{ h.display }}
         tbody
-          tr(v-for="stat in stats" v-bind:key="stat.id")
-            td(v-for="h in table.headers" v-bind:key="h.key" v-bind:data-table-key="h.display") {{ stat[h.key] }}
-      div(v-if="table.name === 'Metric'").hr
+          tr(v-for="stat in stats" :key="stat.id")
+            td(v-for="h in imperialTable" :key="h.key") {{ stat[h.key] }}
+    div(v-else)
+      p.headline Metric
+      v-simple-table
+        thead
+          tr
+            th(v-for="h in metricTable" :key="h.key") {{ h.display }}
+        tbody
+          tr(v-for="stat in stats" :key="stat.id")
+            td(v-for="h in metricTable" :key="h.key") {{ stat[h.key] }}
 </template>
 
 <script>
@@ -19,32 +27,29 @@ export default {
   data () {
     return {
       stats: [],
-      tables: [
-        {
-          name: 'Metric',
-          headers: [
-            { key: 'race', display: 'Race' },
-            { key: 'baseCm', display: 'Base Height (cm)' },
-            { key: 'heightModifierCm', display: 'Height Modifier' },
-            { key: 'weightKg', display: 'Base Weight (kg)' },
-            { key: 'weightModifierKg', display: 'Weight Modifier' }
-          ]
-        },
-        {
-          name: 'Imperial',
-          headers: [
-            { key: 'race', display: 'Race' },
-            { key: 'base', display: 'Base Height' },
-            { key: 'heightModifier', display: 'Height Modifier' },
-            { key: 'baseWeight', display: 'Base Weight' },
-            { key: 'weightModifier', display: 'Weight Modifier' }
-          ]
-        }
+      metricTable: [
+        { key: 'race', display: 'Race' },
+        { key: 'baseCm', display: 'Base Height (cm)' },
+        { key: 'heightModifierCm', display: 'Height Modifier' },
+        { key: 'weightKg', display: 'Base Weight (kg)' },
+        { key: 'weightModifierKg', display: 'Weight Modifier' }
+      ],
+      imperialTable: [
+        { key: 'race', display: 'Race' },
+        { key: 'base', display: 'Base Height' },
+        { key: 'heightModifier', display: 'Height Modifier' },
+        { key: 'baseWeight', display: 'Base Weight' },
+        { key: 'weightModifier', display: 'Weight Modifier' }
       ]
     }
   },
-  created () {
-    this.stats = this.$store.dispatch('FETCH_DATA', 'random-height-weight')
+  computed: {
+    imperial () {
+      return this.$store.getters['user/imperial']
+    }
+  },
+  async created () {
+    this.stats = await this.$store.dispatch('FETCH_DATA', 'random-height-weight')
   }
 }
 </script>

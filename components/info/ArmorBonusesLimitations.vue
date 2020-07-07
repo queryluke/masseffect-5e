@@ -1,12 +1,12 @@
 <template lang="pug">
   div
-    v-data-table(v-bind:headers="headers" v-bind:items="items" hide-actions)
+    v-data-table(v-bind:headers="headers" v-bind:items="items" hide-default-footer :items-per-page="-1")
       template(slot="items" slot-scope="props")
         td(data-table-key="headers[0].short") {{ props.item.condition }}
         td(data-table-key="headers[1].short") {{ props.item.dex }}
         td(data-table-key="headers[2].short") {{ props.item.str }}
         td(data-table-key="headers[3].short") {{ props.item.stealth }}
-    v-alert(value="true" type="info") #[strong Body Armor] is considered three pieces (arms, chest, and legs)
+    v-alert(value type="info") #[strong Body Armor] is considered three pieces (arms, chest, and legs)
 </template>
 
 <script>

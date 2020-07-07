@@ -1,12 +1,5 @@
 <template lang="pug">
-  div
-    v-data-table(v-bind:headers="headers" v-bind:items="items" hide-actions).mt-0
-      template(slot="items" slot-scope="props")
-        td {{ props.item.name }}
-        td {{ props.item.system }}
-        td {{ props.item.cost | groupDigits(',') }}
-        td {{ props.item.prerequisite }}
-        td {{ props.item.effect }}
+  v-data-table(v-bind:headers="headers" v-bind:items="items" hide-default-footer :items-per-page="-1").mt-0
 </template>
 
 <script>
@@ -23,8 +16,8 @@ export default {
       items: []
     }
   },
-  created () {
-    this.items = this.$store.dispatch('FETCH_DATA', 'ship-upgrades')
+  async created () {
+    this.items = await this.$store.dispatch('FETCH_DATA', 'ship-upgrades')
   }
 }
 </script>

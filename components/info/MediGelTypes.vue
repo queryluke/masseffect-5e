@@ -1,5 +1,5 @@
 <template lang="pug">
-  table.my-2.table
+  v-simple-table
     thead
       tr
         th(v-for="header in headers" v-bind:key="header.value") {{ header.text }}

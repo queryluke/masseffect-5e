@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-data-table(v-bind:headers="profs.headers" v-bind:items="profs.items" hide-actions)
+  v-data-table(v-bind:headers="profs.headers" v-bind:items="profs.items" hide-default-footer :items-per-page="-1")
     template(slot="items" slot-scope="props")
       td {{ props.item.size }}
       td {{ props.item.space }}

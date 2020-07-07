@@ -16,6 +16,7 @@
 
 <script>
 export default {
+  name: 'MeCondition',
   props: {
     id: {
       type: String,

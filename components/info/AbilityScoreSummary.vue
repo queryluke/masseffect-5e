@@ -1,11 +1,11 @@
 <template lang="pug">
-  v-layout.row.wrap
-    v-flex(v-for="score in scores" v-bind:key="score.name").mt-3
+  v-row
+    v-col(cols="12" md="4" v-for="score in scores" :key="score.name")
       div.title {{ score.name }}
       dl
-        dt Measures
+        dt.font-weight-bold Measures
         dd {{ score.measures }}
-        dt Important For
+        dt.font-weight-bold Important For
         dd {{ score.important }}
 </template>
 

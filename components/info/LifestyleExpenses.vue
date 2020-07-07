@@ -1,8 +1,5 @@
 <template lang="pug">
-    v-data-table(v-bind:headers="headers" v-bind:items="items" hide-actions)
-      template(slot="items" slot-scope="props")
-        td {{ props.item.name }}
-        td {{ props.item.cost }}
+    v-data-table(:headers="headers" :items="items" hide-default-footer :items-per-page="-1")
 </template>
 
 <script>
@@ -10,8 +7,8 @@ export default {
   data () {
     return {
       headers: [
-        { text: 'Lifestyle', value: 'lifestyle', align: 'left', sortable: false },
-        { text: 'Credits/Day', value: 'credits', sortable: false, align: 'left' }
+        { text: 'Lifestyle', value: 'name', align: 'left', sortable: false },
+        { text: 'Credits/Day', value: 'cost', sortable: false, align: 'left' }
       ],
       items: [
         {
