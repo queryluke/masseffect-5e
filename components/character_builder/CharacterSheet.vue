@@ -8,7 +8,7 @@
           v-text-field(v-model="character.name" label="Character Name")
 
         v-flex(xs4)
-          save-load(:character="character" @load="loadCharacterFromFile($event)")
+          character-save-load(:character="character" @load="loadCharacterFromFile($event)")
 
         v-flex(xs4)
           img(title="Mass Effect 5e Logo" src="/images/me5e_logo_450w.png" alt="Mass Effect 5e logo")
@@ -395,6 +395,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import cloneDeep from 'lodash/cloneDeep'
 
 export default {
   data: () => ({
@@ -534,7 +535,7 @@ export default {
   created () {
     // eslint-disable-next-line
     console.log('Character before create: ', this.character)
-    this.character = this.$store.state.getters['characterBuilder/character']
+    this.character = cloneDeep(this.$store.state.characterBuilder.character)
     // eslint-disable-next-line
     console.log('Character after create: ', this.character)
   },

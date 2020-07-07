@@ -1,3 +1,4 @@
+import cloneDeep from 'lodash/cloneDeep'
 
 export const state = () => ({
   // Default "empty" character data model
@@ -87,6 +88,6 @@ export const getters = {
 
 export const mutations = {
   save (state, data) {
-    state.character = data
+    state.character = cloneDeep(data)
   }
 }

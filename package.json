@@ -18,6 +18,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.11.0",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
+    "lodash": "^4.17.15",
     "lunr": "^2.3.8",
     "nuxt": "^2.13.0",
     "tiptap-vuetify": "^2.23.0",
