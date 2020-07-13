@@ -20,7 +20,6 @@ export default {
   async created () {
     const data = await this.$store.dispatch('FETCH_DATA', 'commonplace-items')
     this.items = groupBy(data, 'type')
-    console.log(this.items)
   }
 }
 </script>

@@ -1,6 +1,7 @@
 <template>
   <v-app-bar
     app
+    dark
     :clipped-left="clippedLeft"
     :clipped-right="clippedRight"
   >
@@ -23,7 +24,7 @@
       </v-btn>
     </v-toolbar-items>
     <!-- jumplink nav -->
-    <v-btn v-if="$vuetify.breakpoint.mdAndDown" icon @click.stop="jumpNav = !jumpNav">
+    <v-btn v-if="$vuetify.breakpoint.mdAndDown && hasJumpNav" icon @click.stop="jumpNav = !jumpNav">
       <v-icon>mdi-page-layout-sidebar-right</v-icon>
     </v-btn>
     <v-menu v-if="$vuetify.breakpoint.mdAndDown" bottom left>
@@ -50,6 +51,10 @@ export default {
       default: false
     },
     clippedRight: {
+      type: Boolean,
+      default: false
+    },
+    hasJumpNav: {
       type: Boolean,
       default: false
     }

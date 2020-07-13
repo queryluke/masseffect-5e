@@ -5,7 +5,6 @@ import featureTitle from './featureTitle'
 import formatDate from './formatDate'
 import groupDigits from './groupDigits'
 import listOfChoices from './listOfChoices'
-import ordinal from './ordinal'
 import removeActionId from './removeActionId'
 import titlecase from './titlecase'
 import fidtt from './fidtt'
@@ -17,7 +16,6 @@ const customFilters = {
   formatDate,
   groupDigits,
   listOfChoices,
-  ordinal,
   removeActionId,
   titlecase,
   fidtt,

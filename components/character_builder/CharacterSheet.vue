@@ -308,7 +308,7 @@
               v-layout(row)
                 v-flex(style="text-align: left;")
                   v-autocomplete(v-model="character.powers" label="Powers" :items="powers" item-text="name" return-object multiple)
-                  spell-list(:items="character.powers" v-if="character.powers.length")
+                  me-power-list(:items="character.powers" v-if="character.powers.length > 0")
                   h2(v-if="!character.powers.length") Use the search above to add powers
 
           //v-tab-item(key="equipment")
@@ -442,7 +442,7 @@ export default {
       return this.getData('search-index')
     },
     powers () {
-      return this.getData('spells')
+      return this.getData('powers')
     },
     feats () {
       return this.getData('feats')

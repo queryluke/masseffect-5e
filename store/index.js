@@ -34,8 +34,8 @@ export const getters = {
     return typeof state.data[endpoint] === 'undefined' ? false : state.data[endpoint]
   },
   mobileFilterDialog: state => state.mobileFilterDialog,
-  pageTitle: state => state.pageTitle,
   pageSearch: state => state.pageSearch,
+  pageTitle: state => state.pageTitle,
   // legacy
   bookmarkCount: (state, getters) => {
     return getters.bookmarks.length

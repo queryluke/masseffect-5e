@@ -43,17 +43,7 @@
 </template>
 
 <script>
-import SpellType from '~/components/spell/SpellType.vue'
-import SpellDuration from '~/components/spell/SpellDuration.vue'
-import SpellRangeArea from '~/components/spell/SpellRangeArea.vue'
-import SpellDamageEffect from '~/components/spell/SpellDamageEffect.vue'
-import SpellClassList from '~/components/spell/SpellClassList.vue'
-import AdvancedOption from '~/components/spell/AdvancedOption.vue'
-
 export default {
-  components: {
-    AdvancedOption, SpellType, SpellDuration, SpellRangeArea, SpellDamageEffect, SpellClassList
-  },
   props: {
     spell: {
       type: Object,

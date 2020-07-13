@@ -77,8 +77,8 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: 'https://raw.githubusercontent.com/queryluke/masseffect-5e-data/master/.me5e/'
-    // baseURL: '/.me5e/'
+    // baseURL: 'https://raw.githubusercontent.com/queryluke/masseffect-5e-data/master/.me5e/'
+    baseURL: '/.me5e/'
   },
   /*
   ** vuetify module configuration

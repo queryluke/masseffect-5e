@@ -128,7 +128,7 @@ export default {
         {
           name: 'Spells & Powers',
           icon: 'mdi-fire',
-          to: '/spells'
+          to: '/powers'
         },
         {
           name: 'Bestiary',

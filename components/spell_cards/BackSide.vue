@@ -18,13 +18,7 @@
 </template>
 
 <script>
-import SpellClassList from '~/components/spell/SpellClassList.vue'
-import AdvancedOption from '~/components/spell/AdvancedOption.vue'
-
 export default {
-  components: {
-    AdvancedOption, SpellClassList
-  },
   props: {
     spell: {
       type: Object,
