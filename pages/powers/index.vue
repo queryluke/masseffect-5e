@@ -1,5 +1,5 @@
 <template>
-  <v-container :class="{ 'px-0': $vuetify.breakpoint.xsOnly }">
+  <v-container>
     <me-list-page
       :loading="loading"
       :title="title"

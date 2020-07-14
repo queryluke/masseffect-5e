@@ -24,31 +24,21 @@
       <me-power-level :item="item" />
     </template>
     <template v-slot:header.name="{ item }">
-      <div :class="padding">
-        <strong>
-          {{ item.name }}
-        </strong>
-      </div>
+      <strong>
+        {{ item.name }}
+      </strong>
     </template>
     <template v-slot:header.duration="{ item }">
-      <div :class="padding">
-        <me-power-duration :item="item" abbr />
-      </div>
+      <me-power-duration :item="item" abbr />
     </template>
     <template v-slot:header.range="{ item }">
-      <div :class="padding">
-        <me-power-range :item="item" />
-      </div>
+      <me-power-range :item="item" />
     </template>
     <template v-slot:header.attack="{ item }">
-      <div :class="padding">
-        <me-power-attack :item="item" abbr />
-      </div>
+      <me-power-attack :item="item" abbr />
     </template>
     <template v-slot:header.effect="{ item }">
-      <div :class="padding">
-        <me-power-effect :item="item" abbr />
-      </div>
+      <me-power-effect :item="item" abbr />
     </template>
     <template v-slot:body="{ item }">
       <me-power-info :item="item" />

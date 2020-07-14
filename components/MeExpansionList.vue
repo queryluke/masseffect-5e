@@ -9,9 +9,9 @@
           <v-slide-x-transition leave-absolute hide-on-leave>
             <span v-if="open" key="1">
               <slot name="header.expanded" :item="item">
-                <span class="text-title">
+                <p class="text-h6 text-md-h4 mb-0">
                   {{ item.name }}
-                </span>
+                </p>
               </slot>
             </span>
             <v-row v-else no-gutters>
@@ -36,7 +36,9 @@
       </v-expansion-panel-header>
       <v-expansion-panel-content>
         <slot name="body" :item="item">
-          {{ item }}
+          <div v-if="item.html" class="text-body-2">
+            <me-html :content="item.html" />
+          </div>
         </slot>
       </v-expansion-panel-content>
     </v-expansion-panel>

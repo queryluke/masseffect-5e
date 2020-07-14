@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <div>
     <!-- page header -->
     <div v-if="$vuetify.breakpoint.mdAndUp">
       <!-- Rule link -->
@@ -119,7 +119,7 @@
         </v-list>
       </template>
     </me-mobile-sort>
-  </v-container>
+  </div>
 </template>
 
 <script>
