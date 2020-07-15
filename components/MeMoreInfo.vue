@@ -14,17 +14,20 @@
     </template>
 
     <v-card>
-      <v-toolbar color="secondary">
-        <v-btn icon @click="dialog=false">
-          <v-icon>mdi-close</v-icon>
-        </v-btn>
-        <v-toolbar-title>
-          {{ title }}
-        </v-toolbar-title>
-      </v-toolbar>
+      <v-card-title>
+        {{ title }}
+      </v-card-title>
       <v-card-text>
         <component :is="component" v-if="component" />
       </v-card-text>
+      <v-card-actions>
+        <v-btn
+          text
+          @click="dialog = false"
+        >
+          Close
+        </v-btn>
+      </v-card-actions>
     </v-card>
   </v-dialog>
 </template>

@@ -1,17 +1,34 @@
-<template lang="pug">
-  span.inline-dialog
-    a(@click="dialog = true")
-      span(v-if="id === 'primed'" v-bind:class="primeTypeCss[sub]") {{ id }} ({{ sub }})
-      span(v-else) {{ id }}
-    v-dialog(v-model="dialog" v-bind:fullscreen="this.$vuetify.breakpoint.xsOnly" transition="dialog-bottom-transition" width="70vw" scrollable hide-overlay)
-      v-card(tile)
-        v-toolbar(card dark color="primary")
-          v-btn(icon dark @click.native="dialog = false")
-            v-icon close
-          v-toolbar-title {{ id | capitalize }}
-        v-card-text
-          v-container(grid-list-lg fluid)
-            markdown-file(:id="id" itemType="conditions")
+<template>
+  <v-dialog
+    v-model="dialog"
+    :fullscreen="this.$vuetify.breakpoint.xsOnly"
+    :transition="transition"
+    width="70vw"
+    scrollable
+  >
+    <template v-slot:activator="{ on }">
+      <a
+        :class="stringCss"
+        v-on="on"
+      >{{ text }}</a>
+    </template>
+    <v-card>
+      <v-card-title>
+        {{ item.name }}
+      </v-card-title>
+      <v-card-text>
+        <me-html :content="item.html" />
+      </v-card-text>
+      <v-card-actions>
+        <v-btn
+          text
+          @click.native="dialog = false"
+        >
+          Close
+        </v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-dialog>
 </template>
 
 <script>
@@ -30,14 +47,29 @@ export default {
   data () {
     return {
       dialog: false,
-      primeTypeCss: {
-        force: 'purple--text text--darken-1',
-        necrotic: 'blue-grey--text text--darken-2',
-        fire: 'deep-orange--text text--darken-1',
-        cold: 'cyan--text text--darken-1',
-        lightning: 'blue--text text--darken-1'
+      item: {
+        name: '',
+        html: ''
       }
     }
+  },
+  computed: {
+    text () {
+      return this.sub !== '' ? `${this.id}: ${this.sub}` : this.id
+    },
+    primeTypeText () {
+      return this.$store.getters['config/primeTypeText']
+    },
+    stringCss () {
+      const mode = this.$vuetify.theme.dark ? 'dark' : 'light'
+      return this.id === 'primed' ? this.primeTypeText[mode][this.sub] : ''
+    },
+    transition () {
+      return this.$vuetify.breakpoint.xsOnly ? 'dialog-bottom-transition' : 'dialog-transition'
+    }
+  },
+  async created () {
+    this.item = await this.$store.dispatch('FETCH_ITEM', { endpoint: 'conditions', id: this.id })
   }
 }
 </script>

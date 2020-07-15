@@ -141,6 +141,7 @@ export default {
           items: [
             { to: '/appendix/conditions', name: 'Conditions' },
             { to: '/appendix/skills', name: 'Skills' },
+            { to: '/appendix/tool-profs', name: 'Tool Proficiencies' },
             { to: '/appendix/weapon-properties', name: 'Weapon Properties' }
           ]
         },
