@@ -39,28 +39,12 @@
 <script>
 export default {
   async fetch () {
-    this.items = await this.$store.dispatch('FETCH_DATA', 'skills')
     this.$store.commit('pageTitle', 'Skills')
+    this.items = await this.$store.dispatch('FETCH_DATA', 'skills')
   },
   data () {
     return {
-      dialog: false,
-      items: [],
-      headers: [
-        { text: 'Name', value: 'name', align: 'left' },
-        { text: 'Ability', value: 'link', align: 'left' }
-      ],
-      item: {
-        name: '',
-        link: '',
-        description: ''
-      }
-    }
-  },
-  methods: {
-    showSkill (item) {
-      this.item = item
-      this.dialog = true
+      items: []
     }
   },
   head () {

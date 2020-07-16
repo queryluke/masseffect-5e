@@ -29,8 +29,8 @@
 <script>
 export default {
   async fetch () {
-    this.items = await this.$store.dispatch('FETCH_DATA', 'tool-profs')
     this.$store.commit('pageTitle', 'Tool Proficiencies')
+    this.items = await this.$store.dispatch('FETCH_DATA', 'tool-profs')
   },
   data () {
     return {

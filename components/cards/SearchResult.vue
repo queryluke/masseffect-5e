@@ -19,7 +19,6 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import WeaponInfo from '~/components/weapon/WeaponInfo.vue'
 import StatBlock from '~/components/npc/StatBlock.vue'
 import GrenadeInfo from '~/components/grenade/GrenadeInfo.vue'
 import WeaponModInfo from '~/components/weapon_mod/WeaponModInfo.vue'
@@ -33,7 +32,6 @@ export default {
   components: {
     GrenadeInfo,
     StatBlock,
-    WeaponInfo,
     WeaponModInfo,
     ArmorModInfo,
     ArmorSetInfo,

@@ -2,7 +2,7 @@
   <v-container>
     <me-list-page
       :loading="loading"
-      :title="title"
+      :title="pageTitle"
       :rule-link="ruleLink"
       :filters="filters"
       :headers="headers"
@@ -19,6 +19,7 @@
 <script>
 export default {
   async fetch () {
+    this.$store.commit('pageTitle', 'Powers')
     this.items = await this.$store.dispatch('FETCH_DATA', 'powers')
     this.loading = false
   },
@@ -26,7 +27,6 @@ export default {
     return {
       items: [],
       loading: true,
-      title: 'Spells',
       ruleLink: {
         to: '/manual/spellcasting',
         name: 'Spellcasting Rules'
@@ -59,10 +59,10 @@ export default {
   computed: {
     headers () {
       return this.$store.getters['config/powerHeaders']
+    },
+    pageTitle () {
+      return this.$store.getters.pageTitle
     }
-  },
-  created () {
-    this.$store.commit('pageTitle', 'Powers')
   },
   head () {
     return {

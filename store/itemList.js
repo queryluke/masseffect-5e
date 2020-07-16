@@ -39,7 +39,11 @@ export const state = () => ({
   },
   mobileFilterDialog: false,
   searchString: '',
-  rarityOptions: ['Common', 'Uncommon', 'Rare', 'Spectre'],
+  rarityOptions: {
+    name: 'Rarity',
+    key: 'rarity',
+    options: ['Common', 'Uncommon', 'Rare', 'Spectre']
+  },
   rarityColors: {
     Common: 'grey darken-3',
     Uncommon: 'green darken-3',

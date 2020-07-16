@@ -4,24 +4,23 @@
     :items="items"
   >
     <template v-slot:header.expanded="{ item }">
-      <v-row align-content="start" justify="start">
+      <me-item-title
+        :title="item.name"
+        avatar
+        :avatar-src="`/images/powers/${item.type}.svg`"
+      />
+    </template>
+    <template v-slot:header.level="{ item }">
+      <v-row no-gutters>
         <v-col cols="auto">
-          <v-avatar :size="$vuetify.breakpoint.smAndDown ? 35 : 45">
+          <v-avatar size="30" class="my-n2">
             <v-img :src="`/images/powers/${item.type}.svg`" />
           </v-avatar>
         </v-col>
-        <v-col cols="auto">
-          <p class="text-h6 text-md-h4 mb-0">
-            {{ item.name }}
-          </p>
+        <v-col clas="auto">
+          <me-power-level :item="item" class="pl-9" />
         </v-col>
       </v-row>
-    </template>
-    <template v-slot:header.level="{ item }">
-      <v-avatar size="30">
-        <v-img :src="`/images/powers/${item.type}.svg`" />
-      </v-avatar>
-      <me-power-level :item="item" />
     </template>
     <template v-slot:header.name="{ item }">
       <strong>
@@ -60,11 +59,6 @@ export default {
     bookmarkable: {
       type: Boolean,
       default: true
-    }
-  },
-  data () {
-    return {
-      padding: 'pt-2'
     }
   },
   computed: {

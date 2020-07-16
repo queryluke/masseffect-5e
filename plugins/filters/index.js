@@ -8,7 +8,6 @@ import listOfChoices from './listOfChoices'
 import removeActionId from './removeActionId'
 import titlecase from './titlecase'
 import fidtt from './fidtt'
-import weaponRange from './weaponRange'
 
 const customFilters = {
   article,
@@ -18,8 +17,7 @@ const customFilters = {
   listOfChoices,
   removeActionId,
   titlecase,
-  fidtt,
-  weaponRange
+  fidtt
 }
 
 const Filters = {

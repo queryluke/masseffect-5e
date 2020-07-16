@@ -15,8 +15,8 @@
 <script>
 export default {
   async fetch () {
-    this.items = await this.$store.dispatch('FETCH_DATA', 'conditions')
     this.$store.commit('pageTitle', 'Conditions')
+    this.items = await this.$store.dispatch('FETCH_DATA', 'conditions')
   },
   data () {
     return {

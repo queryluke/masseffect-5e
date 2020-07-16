@@ -20,7 +20,7 @@
       :headers="headers"
     >
       <template v-slot:header.indicator="{ item }">
-        <v-avatar :class="[item.new ? 'deep-purple' : 'deep-orange']" size="30px" class="white--text text-caption">
+        <v-avatar :class="[item.new ? 'deep-purple' : 'deep-orange']" size="30px" class="white--text text-caption my-n2">
           {{ item.new ? 'New' : 'PHB' }}
         </v-avatar>
       </template>

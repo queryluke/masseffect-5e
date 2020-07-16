@@ -152,7 +152,7 @@
             div(class="item-area")
               h2 Weapons
               v-autocomplete(v-model="character.weapons" label="Equipped Weapons" :items="weapons" item-text="name" return-object multiple)
-              weapon-list(:items="character.weapons" v-if="character.weapons.length")
+              me-weapon-list(:items="character.weapons" :bookmarkable="false" v-if="character.weapons.length")
 
             div(class="item-area")
               h2 Armor

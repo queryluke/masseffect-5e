@@ -39,36 +39,34 @@
     <!-- desktop sort -->
     <div v-if="$vuetify.breakpoint.mdAndUp">
       <slot name="desktopSort">
-        <div class="pr-6">
-          <v-row class="px-6">
-            <v-col
-              v-for="header in headers"
-              :key="header.key"
-              :cols="header.cols"
-              :sm="header.sm || header.cols"
-              :md="header.md || header.sm || header.cols"
-              :lg="header.lg || header.md || header.sm || header.cols"
-              :xl="header.xl || header.lg || header.md || header.sm || header.cols"
-              :class="header.classes"
-              class="pl-0"
+        <v-row class="ml-3 mr-15" no-gutters>
+          <v-col
+            v-for="header in headers"
+            :key="header.key"
+            :cols="header.cols"
+            :sm="header.sm || header.cols"
+            :md="header.md || header.sm || header.cols"
+            :lg="header.lg || header.md || header.sm || header.cols"
+            :xl="header.xl || header.lg || header.md || header.sm || header.cols"
+            :class="header.classes"
+            class="pl-0"
+          >
+            <v-btn
+              v-if="isSortable(header)"
+              text
+              small
+              @click="updateSortBy(header)"
             >
-              <v-btn
-                v-if="isSortable(header)"
-                text
-                small
-                @click="updateSortBy(header)"
-              >
-                {{ header.label }}
-                <v-icon small>
-                  {{ icon(header) }}
-                </v-icon>
-              </v-btn>
-              <span v-else class="text-caption text-uppercase font-weight-bold pt-1">
-                {{ header.label }}
-              </span>
-            </v-col>
-          </v-row>
-        </div>
+              {{ header.label }}
+              <v-icon small>
+                {{ icon(header) }}
+              </v-icon>
+            </v-btn>
+            <span v-else class="text-caption text-uppercase font-weight-bold pt-1 pl-3">
+              {{ header.label }}
+            </span>
+          </v-col>
+        </v-row>
       </slot>
     </div>
 

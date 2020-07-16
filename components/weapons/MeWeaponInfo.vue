@@ -1,0 +1,84 @@
+<template>
+  <div>
+    <me-weapon-title v-if="title" :item="item" />
+    <v-row>
+      <v-col cols="12" md="8">
+        <v-row>
+          <v-col>
+            <span v-for="(prop, index) in item.properties" :key="index">
+              <me-weapon-prop :id="prop" />
+              <span v-if="index + 1 < item.properties.length" class="pa-2">|</span>
+            </span>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="6" lg="3">
+            <me-item-stat label="Damage">
+              <template v-slot:stat>
+                {{ item.damage }} <em>{{ item.dmgType }}</em>
+              </template>
+            </me-item-stat>
+          </v-col>
+          <v-col cols="6" lg="3">
+            <me-item-stat label="Range">
+              <template v-slot:stat>
+                <me-weapon-range :item="item" />
+              </template>
+            </me-item-stat>
+          </v-col>
+          <v-col cols="6" lg="3">
+            <me-item-stat label="Heat">
+              <template v-slot:stat>
+                {{ item.heat }}
+              </template>
+            </me-item-stat>
+          </v-col>
+          <v-col cols="6" lg="3">
+            <me-item-stat label="Weight">
+              <template v-slot:stat>
+                {{ item.weight }}
+              </template>
+            </me-item-stat>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col class="text-body-2">
+            {{ item.notes }}
+          </v-col>
+        </v-row>
+      </v-col>
+      <v-col cols="12" md="4">
+        <v-img :src="item.image" />
+      </v-col>
+    </v-row>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    item: {
+      type: Object,
+      default: () => { return {} }
+    },
+    title: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    headers () {
+      return this.$store.getters['config/weaponHeaders']
+    },
+    rarityTextColors () {
+      const mode = this.$vuetify.theme.dark ? 'dark' : 'light'
+      return this.$store.getters['config/rarityTextColors'][mode]
+    }
+  },
+  methods: {
+    textColor (rarity) {
+      return this.rarityTextColors[rarity]
+    }
+  }
+}
+</script>

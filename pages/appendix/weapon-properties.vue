@@ -20,8 +20,8 @@
 <script>
 export default {
   async fetch () {
-    this.items = await this.$store.dispatch('FETCH_DATA', 'weapon-properties')
     this.$store.commit('pageTitle', 'Weapon Properties')
+    this.items = await this.$store.dispatch('FETCH_DATA', 'weapon-properties')
   },
   data () {
     return {

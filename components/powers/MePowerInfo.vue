@@ -1,5 +1,11 @@
 <template>
   <div>
+    <me-item-title
+      v-if="title"
+      :title="item.name"
+      avatar
+      :avatar-src="`/images/powers/${item.type}.svg`"
+    />
     <v-row>
       <v-col cols="6" md="3">
         <me-item-stat label="Level">
@@ -103,6 +109,10 @@ export default {
     item: {
       type: Object,
       default: () => { return {} }
+    },
+    title: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
