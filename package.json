@@ -53,7 +53,7 @@
     "frontmatter-markdown-loader": "^1.8.0",
     "fs": "0.0.1-security",
     "jest": "^24.0.0",
-    "lodash": "^4.17.14",
+    "lodash": "^4.17.19",
     "markdown-it-meta": "0.0.1",
     "node-sass": "^4.10.0",
     "nodemon": "^1.18.9",
