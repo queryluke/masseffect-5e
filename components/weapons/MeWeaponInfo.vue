@@ -15,7 +15,7 @@
           <v-col cols="6" lg="3">
             <me-item-stat label="Damage">
               <template v-slot:stat>
-                {{ item.damage }} <em>{{ item.dmgType }}</em>
+                {{ item.damage }} {{ item.dmgType }}
               </template>
             </me-item-stat>
           </v-col>
@@ -43,12 +43,15 @@
         </v-row>
         <v-row>
           <v-col class="text-body-2">
-            {{ item.notes }}
+            <p>
+              {{ item.notes }}
+            </p>
+            <me-andromeda-chip v-if="item.andromeda" />
           </v-col>
         </v-row>
       </v-col>
       <v-col cols="12" md="4">
-        <v-img :src="item.image" />
+        <v-img v-if="item.image" :src="item.image" />
       </v-col>
     </v-row>
   </div>

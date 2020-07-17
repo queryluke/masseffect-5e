@@ -118,7 +118,7 @@ export default {
             { to: '/weapons', name: 'Weapons' },
             { to: '/weapon-mods', name: 'Weapon Mods' },
             { to: '/armor-mods', name: 'Armor Mods' },
-            { to: '/armor', name: 'Armor Sets' },
+            { to: '/armor', name: 'Armor' },
             { to: '/programs', name: 'Omni-tool Programs' },
             { to: '/grenades', name: 'Grenades' },
             { to: '/tools-kits', name: 'Tools & Kits' },

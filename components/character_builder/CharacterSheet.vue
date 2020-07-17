@@ -157,7 +157,7 @@
             div(class="item-area")
               h2 Armor
               v-autocomplete(v-model="character.armor" label="Equipped Armor" :items="armor" item-text="name" return-object multiple)
-              armor-set-list(:items="character.armor" v-if="character.armor.length")
+              me-armor-list(:items="character.armor" v-if="character.armor.length")
 
           v-tab-item(key="character-info")
             div.item-area.character-info-area

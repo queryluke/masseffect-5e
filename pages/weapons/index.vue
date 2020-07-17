@@ -8,6 +8,7 @@
       :headers="headers"
       :items="items"
       default-sort="name"
+      :custom-sort="customSort"
     >
       <template v-if="!loading" v-slot:list="{ displayItems }">
         <me-weapon-list :items="displayItems" />
@@ -17,7 +18,10 @@
 </template>
 
 <script>
+import { AverageFromDie } from '~/mixins/averageFromDie'
+
 export default {
+  mixins: [AverageFromDie],
   async fetch () {
     this.$store.commit('pageTitle', 'Weapons')
     this.items = await this.$store.dispatch('FETCH_DATA', 'weapons')
@@ -55,6 +59,31 @@ export default {
     },
     headers () {
       return this.$store.getters['config/weaponHeaders']
+    }
+  },
+  methods: {
+    customSort (items, sortBy, sortDesc) {
+      const desc = sortDesc ? 1 : -1
+      items.sort((a, b) => {
+        let aVal = a[sortBy]
+        let bVal = b[sortBy]
+        switch (sortBy) {
+          case 'type':
+          case 'name':
+            break
+          case 'damage':
+            aVal = this.averageFromDie(a.damage)
+            bVal = this.averageFromDie(b.damage)
+            break
+          default:
+            aVal = a[sortBy] ? parseInt(a[sortBy].replace(/\D/, ''), 10) : 0
+            bVal = b[sortBy] ? parseInt(b[sortBy].replace(/\D/, ''), 10) : 0
+        }
+        return aVal === bVal
+          ? a.id > b.id ? desc : desc * -1
+          : aVal > bVal ? desc : desc * -1
+      })
+      return items
     }
   },
   head () {

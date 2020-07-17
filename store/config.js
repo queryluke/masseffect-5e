@@ -21,6 +21,13 @@ export const state = () => ({
     { key: 'weight', label: 'Weight', cols: 2, classes: 'd-none d-lg-flex' },
     { key: 'cost', label: 'Cost', cols: 2, classes: 'd-none d-lg-flex' }
   ],
+  armorHeaders: [
+    { key: 'name', label: 'Name', cols: 6, sm: 5, md: 4, lg: 3 },
+    { key: 'cost', label: 'Cost', cols: 2, sm: 2, md: 1, classes: 'd-none d-sm-flex' },
+    { key: 'armorType', label: 'Armor Type', cols: 3, sm: 2 },
+    { key: 'type', label: 'Type', cols: 3, md: 2 },
+    { key: 'notes', label: 'Notes', cols: 3, lg: 4, classes: 'd-none d-md-flex', sortable: false }
+  ],
   rarityOptions: {
     name: 'Rarity',
     key: 'rarity',
@@ -67,6 +74,7 @@ export const state = () => ({
 })
 
 export const getters = {
+  armorHeaders: state => state.armorHeaders,
   featHeaders: state => state.featHeaders,
   powerHeaders: state => state.powerHeaders,
   primeTypeText: state => state.primeTypeText,
