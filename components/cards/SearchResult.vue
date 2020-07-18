@@ -19,25 +19,9 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import StatBlock from '~/components/npc/StatBlock.vue'
-import GrenadeInfo from '~/components/grenade/GrenadeInfo.vue'
-import WeaponModInfo from '~/components/weapon_mod/WeaponModInfo.vue'
-import ArmorModInfo from '~/components/armor_mod/ArmorModInfo.vue'
-import ArmorSetInfo from '~/components/armor_set/ArmorSetInfo.vue'
-import VehicleInfo from '~/components/vehicle/VehicleInfo.vue'
-import ProgramInfo from '~/components/programs/ProgramInfo.vue'
 
 export default {
   name: 'SearchResult',
-  components: {
-    GrenadeInfo,
-    StatBlock,
-    WeaponModInfo,
-    ArmorModInfo,
-    ArmorSetInfo,
-    VehicleInfo,
-    ProgramInfo
-  },
   props: {
     doc: {
       type: Object,

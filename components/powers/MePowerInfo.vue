@@ -9,62 +9,48 @@
     <v-row>
       <v-col cols="6" md="3">
         <me-item-stat label="Level">
-          <template v-slot:stat>
-            <me-power-level :item="item" />
-          </template>
+          <me-power-level :item="item" />
         </me-item-stat>
       </v-col>
       <v-col cols="6" md="3">
         <me-item-stat label="Casting Time">
-          <template v-slot:stat>
-            {{ item.castingTime }}
-          </template>
+          {{ item.castingTime }}
         </me-item-stat>
       </v-col>
       <v-col cols="6" md="3">
         <me-item-stat label="Duration">
-          <template v-slot:stat>
-            <me-power-duration :item="item" />
-          </template>
+          <me-power-duration :item="item" />
         </me-item-stat>
       </v-col>
       <v-col cols="6" md="3">
         <me-item-stat label="Range / Area">
-          <template v-slot:stat>
-            <me-power-range :item="item" />
-          </template>
+          <me-power-range :item="item" />
         </me-item-stat>
       </v-col>
       <v-col cols="6" md="3">
         <me-item-stat label="Primes / Detonates">
-          <template v-slot:stat>
-            <span v-if="item.primes" :class="pdCss(item.primes)">
-              Primes ({{ item.primes }})
-            </span>
-            <span v-if="item.primes && item.detonates" class="mx-1">
-              |
-            </span>
-            <span v-if="item.detonates" :class="pdCss('detonates')">
-              Detonates
-            </span>
-            <span v-if="!item.detonates && !item.primes">
-              -
-            </span>
-          </template>
+          <span v-if="item.primes" :class="pdCss(item.primes)">
+            Primes ({{ item.primes }})
+          </span>
+          <span v-if="item.primes && item.detonates" class="mx-1">
+            |
+          </span>
+          <span v-if="item.detonates" :class="pdCss('detonates')">
+            Detonates
+          </span>
+          <span v-if="!item.detonates && !item.primes">
+            -
+          </span>
         </me-item-stat>
       </v-col>
       <v-col cols="6" md="3">
         <me-item-stat label="Attack Type">
-          <template v-slot:stat>
-            <me-power-attack :item="item" />
-          </template>
+          <me-power-attack :item="item" />
         </me-item-stat>
       </v-col>
       <v-col cols="6" md="3">
         <me-item-stat label="Damage / Effect">
-          <template v-slot:stat>
-            <me-power-effect :item="item" />
-          </template>
+          <me-power-effect :item="item" />
         </me-item-stat>
       </v-col>
       <v-col cols="6" md="3">

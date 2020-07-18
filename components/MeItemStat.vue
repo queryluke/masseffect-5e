@@ -4,7 +4,7 @@
       {{ label }}
     </div>
     <div class="text-body-2">
-      <slot name="stat" />
+      <slot />
     </div>
   </div>
 </template>

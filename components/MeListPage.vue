@@ -13,7 +13,7 @@
       <slot name="pageHeader">
         <me-page-title :title="title" />
         <v-row>
-          <v-col>
+          <v-col cols="12">
             <v-text-field
               v-model="search"
               append-icon="mdi-magnify"

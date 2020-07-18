@@ -14,30 +14,22 @@
         <v-row>
           <v-col cols="6" lg="3">
             <me-item-stat label="Damage">
-              <template v-slot:stat>
-                {{ item.damage }} {{ item.dmgType }}
-              </template>
+              {{ item.damage }} {{ item.dmgType }}
             </me-item-stat>
           </v-col>
           <v-col cols="6" lg="3">
             <me-item-stat label="Range">
-              <template v-slot:stat>
-                <me-weapon-range :item="item" />
-              </template>
+              <me-weapon-range :item="item" />
             </me-item-stat>
           </v-col>
           <v-col cols="6" lg="3">
             <me-item-stat label="Heat">
-              <template v-slot:stat>
-                {{ item.heat }}
-              </template>
+              {{ item.heat }}
             </me-item-stat>
           </v-col>
           <v-col cols="6" lg="3">
             <me-item-stat label="Weight">
-              <template v-slot:stat>
-                {{ item.weight }}
-              </template>
+              {{ item.weight }}
             </me-item-stat>
           </v-col>
         </v-row>

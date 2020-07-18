@@ -43,9 +43,6 @@ export default {
     }
   },
   computed: {
-    headers () {
-      return this.$store.getters['config/weaponHeaders']
-    },
     rarityTextColors () {
       const mode = this.$vuetify.theme.dark ? 'dark' : 'light'
       return this.$store.getters['config/rarityTextColors'][mode]
