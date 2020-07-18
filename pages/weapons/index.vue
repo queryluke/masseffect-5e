@@ -45,7 +45,7 @@ export default {
         {
           name: 'Type',
           key: 'type',
-          options: ['Assault Rifle', 'Heavy Pistol', 'Heavy Weapon', 'Melee', 'SMG', 'Shotgun', 'Sniper Rifle']
+          options: [...new Set(this.items.map(i => i.type))]
         },
         {
           name: 'Properties',

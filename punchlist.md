@@ -1,0 +1,5 @@
+- [ ] move rarity text color to mixin
+- [ ] add quick link to mod type and gear type (url param)
+- [ ] add medi-gel to gear
+- [ ] add thermal clips to gear
+- [ ] Update all HW text

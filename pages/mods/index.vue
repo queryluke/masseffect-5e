@@ -69,7 +69,7 @@ export default {
   },
   head () {
     return {
-      title: 'Mods - Equipment | Mass Effect 5e',
+      title: 'Gear - Equipment | Mass Effect 5e',
       meta: [
         { hid: 'description', name: 'description', content: 'Mass Effect 5e comes with a full set of armor and weapon mods that let you customize your gear to your needs.' }
       ]

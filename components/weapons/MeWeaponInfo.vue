@@ -60,20 +60,6 @@ export default {
       type: Boolean,
       default: false
     }
-  },
-  computed: {
-    headers () {
-      return this.$store.getters['config/weaponHeaders']
-    },
-    rarityTextColors () {
-      const mode = this.$vuetify.theme.dark ? 'dark' : 'light'
-      return this.$store.getters['config/rarityTextColors'][mode]
-    }
-  },
-  methods: {
-    textColor (rarity) {
-      return this.rarityTextColors[rarity]
-    }
   }
 }
 </script>

@@ -35,6 +35,11 @@ export const state = () => ({
     { key: 'availability', label: 'For', cols: 3, sortable: false },
     { key: 'notes', label: 'Notes', cols: 3, classes: 'd-none d-md-flex', sortable: false }
   ],
+  gearHeaders: [
+    { key: 'name', label: 'Name', cols: 6 },
+    { key: 'cost', label: 'Cost', cols: 3 },
+    { key: 'weight', label: 'Weight', cols: 3 }
+  ],
   rarityOptions: {
     name: 'Rarity',
     key: 'rarity',
@@ -83,6 +88,7 @@ export const state = () => ({
 export const getters = {
   armorHeaders: state => state.armorHeaders,
   featHeaders: state => state.featHeaders,
+  gearHeaders: state => state.gearHeaders,
   modHeaders: state => state.modHeaders,
   powerHeaders: state => state.powerHeaders,
   primeTypeText: state => state.primeTypeText,
