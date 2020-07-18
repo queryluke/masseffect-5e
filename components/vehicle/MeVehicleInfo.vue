@@ -2,13 +2,12 @@
   div
     p.display-1.font-weight-thin.mb-2
       span(v-if="title") {{ item.name }}
-      span(v-if="item.createdBy").body-1.pl-2 #[em created by: {{ item.createdBy }}]
     p.title {{ item.size | capitalize }} {{ item.vehicle.type | capitalize }}
       span(v-if="item.vehicle.subtype").ml-1 ({{ item.vehicle.subtype }})
     v-layout(align-center justify-space-between row)
       p.subheading CR: {{ item.cr }}
       p.subheading Cost: {{ item.cost | groupDigits(',') }}
-    div.hr
+    v-progress-linear(:value="100" color="secondary")
     v-container.py-0
       v-layout
         v-flex(xs6 md4 lg2).text-xs-center.my-2
@@ -29,7 +28,7 @@
         v-flex(xs6 md4 lg2).text-xs-center.my-2
           p.ma-0 #[strong Crew]
           p.ma-0 min: {{ item.crew.min }} | max: {{ item.crew.max }}
-    div.hr
+    v-progress-linear(:value="100" color="secondary")
     div.mb-2
       p.title Systems
       ul.mb-2
@@ -44,7 +43,7 @@
         li(v-for="weapon in item.weapons" v-bind:key="weapon.name") #[strong {{ weapon.name }}.] {{ weapon.damage }}
     div
       p.title Description
-      markdown-file(:id="item.id" itemType="vehicles")
+      me-html(:content="item.html")
 </template>
 
 <script>
