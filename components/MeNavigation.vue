@@ -17,11 +17,14 @@
               {{ page.name }}
             </v-list-item-title>
           </v-list-item-content>
+          <v-list-item-avatar v-if="page.name === 'Bookmarks'" :size="20" color="secondary">
+            <span class="text-caption white--text">{{ bookmarkCount }}</span>
+          </v-list-item-avatar>
         </v-list-item>
         <v-subheader v-if="page.header" :key="index">
           {{ page.header }}
         </v-subheader>
-        <v-list-group v-if="page.items" :key="index" :prepend-icon="page.icon">
+        <v-list-group v-if="page.items" :key="index" :prepend-icon="page.icon" :group="groupNamespace(page)">
           <template v-slot:activator>
             <v-list-item-content>
               <v-list-item-title>{{ page.name }}</v-list-item-title>
@@ -135,6 +138,7 @@ export default {
         {
           name: 'Appendix',
           icon: 'mdi-view-split-vertical',
+          group: 'appendix',
           items: [
             { to: '/appendix/conditions', name: 'Conditions' },
             { to: '/appendix/skills', name: 'Skills' },
@@ -156,6 +160,7 @@ export default {
         {
           name: 'For GMs',
           icon: 'mdi-puzzle',
+          group: 'for-gms',
           items: [
             { to: '/for-gms/loot-generator', name: 'Loot Generator' },
             { to: '/for-gms/grunts', name: 'Grunt Generator' },
@@ -203,12 +208,21 @@ export default {
     },
     version () {
       return this.$store.getters.version
+    },
+    bookmarkCount () {
+      return this.$store.getters['user/bookmarkCount']
     }
   },
   methods: {
     toggleDarkMode () {
       this.$store.commit('user/TOGGLE_DARK_MODE')
       this.$vuetify.theme.dark = this.$store.getters['user/darkMode']
+    },
+    groupNamespace (group) {
+      return (group.group || this.unstructuredRegexpRouteMatch(group.items))
+    },
+    unstructuredRegexpRouteMatch (items) {
+      return `(${items.map(i => i.to).join('|')})`
     }
   }
 }

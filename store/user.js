@@ -7,7 +7,15 @@ export const state = () => ({
 export const getters = {
   darkMode: state => state.darkMode,
   imperial: state => state.imperial,
+  bookmarkCount: (state) => {
+    let count = 0
+    for (const key in state.bookmarks) {
+      count += state.bookmarks[key].length
+    }
+    return count
+  },
   bookmarkBagExists: state => type => typeof state.bookmarks[type] !== 'undefined',
+  bookmarks: state => state.bookmarks,
   isBookmarked: (state, getters) => (type, item) => {
     if (!getters.bookmarkBagExists(type)) {
       return false

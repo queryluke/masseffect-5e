@@ -1,5 +1,5 @@
 <template>
-  <v-btn :color="color" @click="toggleBookmark">
+  <v-btn :color="color" dark @click="toggleBookmark">
     <v-icon left>
       {{ icon }}
     </v-icon>

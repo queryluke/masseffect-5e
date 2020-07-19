@@ -6,3 +6,5 @@
 - [ ] Check sorting of filter options
 - [ ] persistent store converter
 - [ ] bestiary custom sort for CR and other filters?
+- [ ] rename vehicle rules page (to prevent overlap with vehicle list page)
+- [ ] figure out how to "freeze" v1.2 as a site

@@ -7,7 +7,8 @@ export default ({ store }) => {
       'encounter',
       'bookmarks',
       'diceRoller.rolls',
-      'characterBuilder.character'
+      'characterBuilder.character',
+      'user.bookmarks'
     ]
   })(store)
 }

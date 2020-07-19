@@ -3,7 +3,10 @@
     h2.display-1.hidden-sm-and-down Vehicles
     div.text-md-right
       v-btn(to="/phb/rules/vehicles" nuxt outlined color="primary") Vehicle Rules
-    me-vehicle-list(v-if="!loading" :items="items")
+    p.headline Transports
+      me-vehicle-list(v-if="!loading" :items="transports")
+    p.headline Starships
+      me-vehicle-list(v-if="!loading" :items="starships")
 
 </template>
 
@@ -18,6 +21,14 @@ export default {
     return {
       items: [],
       loading: true
+    }
+  },
+  computed: {
+    transports () {
+      return this.items.filter(v => v.vehicle.type === 'transport')
+    },
+    starships () {
+      return this.items.filter(v => v.vehicle.type === 'starship')
     }
   },
   head () {
