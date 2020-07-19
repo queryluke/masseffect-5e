@@ -98,7 +98,7 @@ export default {
             { name: 'Vehicles', icon: '', to: '/manual/vehicles' },
             { name: 'Combat', icon: '', to: '/manual/combat' },
             { name: 'Spellcasting', icon: '', to: '/manual/spellcasting' },
-            { name: 'Monsters', icon: '', to: '/manual/monsters' }
+            { name: 'About the Bestiary', icon: '', to: '/manual/bestiary' }
           ]
         },
         {

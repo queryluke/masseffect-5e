@@ -12,7 +12,7 @@
     </v-col>
     <v-col cols="auto">
       <div class="text-h6 text-md-h4">
-        <slot name="title" :item="item">
+        <slot name="title">
           {{ title }}
         </slot>
       </div>
@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  name: 'MePowerType',
+  name: 'MeItemTitle',
   props: {
     item: {
       type: Object,

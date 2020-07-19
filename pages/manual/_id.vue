@@ -58,7 +58,7 @@ export default {
         vehicles: 'Vehicles',
         combat: 'Combat',
         spellcasting: 'Spellcasting',
-        monsters: 'Monsters'
+        bestiary: 'Bestiary'
       },
       rules: []
     }

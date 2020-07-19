@@ -1,16 +1,5 @@
-<template lang="pug">
-  div
-    p.mb-0
-      strong
-        em {{ weapon.name }}
-          span(v-if="notableTags.length > 0").ml-1 ({{ notableTags.join(', ') }})
-        span .
-      em.ml-1 {{ attackType | capitalize }} Weapon Attack:
-      span.ml-1 +{{ attackMod + profBonus }} to hit,
-      span.ml-1 {{ rangeType }} {{ weapon | weaponRange }},
-      span.ml-1 one target.
-      p(:class="[weapon.npcMiss ? 'my-0' : 'mt-0']") #[em Hit]: {{ damageText }}
-      p(v-if="weapon.npcMiss").mt-0 #[em Miss]: {{ weapon.npcMiss }}
+<template>
+  <me-npc-attack v-if="!loading" :attack="attack" :recharge="recharge" />
 </template>
 
 <script>
@@ -20,28 +9,52 @@ import { AverageFromDie } from '~/mixins/averageFromDie'
 export default {
   mixins: [AbilityScoreBonus, AverageFromDie],
   props: {
-    weapon: {
-      type: Object,
-      default: () => {
-        return {
-          name: 'NOT FOUND',
-          tags: '',
-          type: '',
-          damage: '1d4',
-          range: 2
-        }
-      }
+    id: {
+      type: String,
+      required: true
     },
     abilityScores: {
       type: Object,
-      default: () => { return {} }
+      default: () => {
+        return {
+          str: 10,
+          dex: 10
+        }
+      }
     },
     profBonus: {
       type: Number,
       default: 2
     }
   },
+  data () {
+    return {
+      loading: true,
+      weapon: {
+        name: 'NOT FOUND',
+        tags: '',
+        type: '',
+        damage: '1d4',
+        range: 2,
+        properties: []
+      }
+    }
+  },
   computed: {
+    attack () {
+      return {
+        name: this.weapon.name,
+        type: this.attackType,
+        attackMod: this.attackMod + this.profBonus,
+        range: this.weapon.range,
+        hit: this.damageText,
+        target: 'one target',
+        miss: this.weapon.npcMiss ? this.weapon.npcMiss : false
+      }
+    },
+    recharge () {
+      return this.notableTags.length > 0 ? this.notableTags.join(', ') : false
+    },
     attackMod () {
       const tags = this.tags
       let abilityMod = 0
@@ -57,9 +70,6 @@ export default {
     attackType () {
       return this.weapon.type === 'Melee' ? 'melee' : 'ranged'
     },
-    rangeType () {
-      return this.weapon.type === 'Melee' ? 'reach' : 'range'
-    },
     tags () {
       return this.weapon.properties.map(t => t.toLowerCase().trim())
     },
@@ -73,8 +83,12 @@ export default {
     damageText () {
       const npcHit = this.weapon.npcHit ? ` and ${this.weapon.npcHit}` : ''
       const attackModText = this.attackMod > 0 ? ` + ${this.attackMod}` : ''
-      return `${this.damage} (${this.weapon.damage}${attackModText}) ${this.weapon.dmgType} damage${npcHit}`
+      return `${this.damage} (${this.weapon.damage}${attackModText}) ${this.weapon.dmgType} damage${npcHit}.`
     }
+  },
+  async created () {
+    this.weapon = await this.$store.dispatch('FETCH_ITEM', { endpoint: 'weapons', id: this.id })
+    this.loading = false
   }
 }
 </script>

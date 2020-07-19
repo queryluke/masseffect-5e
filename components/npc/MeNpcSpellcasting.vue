@@ -1,7 +1,7 @@
 <template lang="pug">
-  div.mb-3
+  div(v-if="!loading").mb-3.text-body-2
     p.my-0 Cantrips (at will): #[em {{ cantrips.map(spell => spell.name.toLowerCase()).join(', ') }}]
-    p(v-for="item in spellList" v-bind:key="item.level").my-0 {{ item.level | ordinal }} level ({{ item.slots }} {{ item.slots | pluralize('slot') }})
+    p(v-for="item in spellList" v-bind:key="item.level").my-0 {{ ordinal(item.level) }} level ({{ item.slots }} {{ item.slots | pluralize('slot') }})
       span(v-if="item.spells.length > 0") : #[em {{ item.spells.map(spell => spell.name.toLowerCase()).join(', ') }}]
 </template>
 
@@ -15,6 +15,7 @@ export default {
   },
   data () {
     return {
+      loading: true,
       spells: [],
       adept: {
         progression: []
@@ -44,11 +45,17 @@ export default {
   },
   async created () {
     const data = await Promise.all([
-      this.$store.dispatch('FETCH_DATA', 'spells'),
-      this.$store.dispatch('FETCH_ITEM', { endpoint: 'spells', id: 'adept' })
+      this.$store.dispatch('FETCH_DATA', 'powers'),
+      this.$store.dispatch('FETCH_ITEM', { endpoint: 'classes', id: 'adept' })
     ])
     this.spells = data[0]
     this.adept = data[1]
+    this.loading = false
+  },
+  methods: {
+    ordinal (level) {
+      return `${level}${this.$options.filters.ordinal(level)}`
+    }
   }
 }
 </script>

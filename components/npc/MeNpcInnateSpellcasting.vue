@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.mb-3
+  div.mb-3.text-body-2
     p(v-for="(item, index) in spellcasting.spellList" v-bind:key="index").my-0 {{ item.perDay }}:
       span(v-for="(spell, index) in item.spells" v-bind:key="spell.id").ml-1
         span #[em {{ spell.id }}]

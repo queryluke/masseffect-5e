@@ -3,3 +3,6 @@
 - [ ] add medi-gel to gear
 - [ ] add thermal clips to gear
 - [ ] Update all HW text
+- [ ] Check sorting of filter options
+- [ ] persistent store converter
+- [ ] bestiary custom sort for CR and other filters?

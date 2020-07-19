@@ -18,7 +18,7 @@
           </v-avatar>
         </v-col>
         <v-col clas="auto">
-          <me-power-level :item="item" class="pl-9" />
+          <me-power-level :item="item" :class="$vuetify.breakpoint.smAndDown ? 'pl-2' : 'pl-9'" />
         </v-col>
       </v-row>
     </template>

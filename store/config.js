@@ -40,6 +40,11 @@ export const state = () => ({
     { key: 'cost', label: 'Cost', cols: 3 },
     { key: 'weight', label: 'Weight', cols: 3 }
   ],
+  npcHeaders: [
+    { key: 'name', label: 'Name', cols: 6 },
+    { key: 'unit', label: 'Faction', cols: 3 },
+    { key: 'cr', label: 'CR', cols: 3 }
+  ],
   rarityOptions: {
     name: 'Rarity',
     key: 'rarity',
@@ -90,6 +95,7 @@ export const getters = {
   featHeaders: state => state.featHeaders,
   gearHeaders: state => state.gearHeaders,
   modHeaders: state => state.modHeaders,
+  npcHeaders: state => state.npcHeaders,
   powerHeaders: state => state.powerHeaders,
   primeTypeText: state => state.primeTypeText,
   weaponHeaders: state => state.weaponHeaders,
