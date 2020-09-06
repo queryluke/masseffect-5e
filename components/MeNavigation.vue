@@ -175,8 +175,7 @@ export default {
         {
           header: 'Mass Effect 5e'
         },
-        { name: 'Get Involved', to: '/contributing' },
-        { name: 'About the Project', to: '/about' },
+        { name: 'Get Involved', to: '/about' },
         { name: 'Changelog', to: '/changelog' },
         { name: 'Offline / PDF version', to: '/print/pdf' },
         { name: 'License', to: '/license' }

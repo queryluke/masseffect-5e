@@ -1,5 +1,5 @@
 <template>
-  <v-card :to="news.url" nuxt hover>
+  <v-card :to="url" nuxt hover>
     <v-img :src="news.image" :height="height" />
     <div class="date-grid text-xs-center" :style="gridStyle">
       <span class="month date-part">{{ month }}</span>
@@ -41,6 +41,9 @@ export default {
     },
     day () {
       return this.parsedDate.getDate()
+    },
+    url () {
+      return `changelog/${this.news.id}`
     },
     gridStyle () {
       return {

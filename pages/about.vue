@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-content
+  div
     section
       v-parallax(src="/images/parallax/milky_way.jpg" alt="The Milky Way")
         v-row(justify="center")
@@ -11,27 +11,36 @@
               alt="Mass Effect 5e logo"
             ).mt-10
             h1.sr-only Mass Effect 5e
-            h2.text-h4.mt-10 About
+            h2.text-h4.white--text.mt-10 About
     section
       v-container
         v-row(justify="center").mt-5
           v-col(cols="12" sm="10" md="8").my-3
             div.text-center
-              h3.headline Begin your journey
+              h3.text-h4 Join the Community
+        v-row(justify="space-around").mt-5
+          v-col(v-for="community in communities" :key="community.name" cols="12" sm="6" md="4" lg="3")
+            v-card(to="community.link" target="_blank" dark).text-center
+              v-card-text
+                v-img(:src="community.image" v-bind:alt="community.alt" height="80" contain)
+        v-row(justify="center").mt-15
+          v-col(cols="12" sm="10" md="8").my-3
+            div.text-center
+              h3.text-h4 About Mass Effect 5e
               p.
                 Mass Effect 5e is a fan-made, D&D 5th Edition, homebrew project that started in early 2016. The core
                 ruleset and website were created by Luke A with guidance from Hugh T. Luke continues to maintain the
                 website, actively develops new features and changes, and filters community-made content.
-        v-row(justify="center").mt-5
+        v-row(justify="center")
           v-col(cols="12")
-            p.text-h4 Contributors
+            p.text-h5 Contributors
             p.
               Mass Effect 5e has had dozens of people who've contributed in a variety of ways, both large and small.
               The following list represents the people who've contributed to the project in a major way, be it helping
               moderate the discord server or subreddit, site and character sheet design, or being actively involved in the
               development of the game. Not everyone on this list is still actively involved and these people are presented in
               no particular order.
-        v-row(justify="center").mt-5
+        v-row(justify="center")
           v-col(v-for="person in people" :key="person.name" cols="12" sm="6" md="4" lg="3")
             v-card.elevation-0.transparent.text-center
               v-card-text
@@ -39,9 +48,9 @@
                   v-img(:src="person.image" v-bind:alt="person.name")
                 p.text-center.text-h6.mb-1 {{ person.name }}
                 p.text-subtitle-1 {{ person.roles }}
-        v-row(justify="center").mt-5
+        v-row(justify="center")
             v-col(cols="12")
-              p.text-h4 Shout Outs
+              p.text-h5 Shout Outs
               p.
                 In addition to the above, the system has had many contributors who've added invaluable feedback, shared ideas,
                 created assets, playtested, and much more. If we've missed anyone, it was not on purpose!
@@ -49,12 +58,11 @@
                 {{ shoutouts.join(', ') }}
     section
       v-container
-        v-row(justify="center").mt-5
+        v-row(justify="center").mt-15
           v-col(cols="12")
             p.text-h4 Image Attributions
             p.
-              Finally, there are a host of Creative Commons images that I've used, so I'd like to attribute and thank
-              these indirect contributors. Any images not listed were either created by Mass Effect 5e contributors or come from the the
+              Any images not listed were either created by Mass Effect 5e contributors or come from the the
               #[a(href="http://masseffect.wikia.com/wiki/Mass_Effect_Wiki" target="_blank") Mass Effect Wiki].
         v-row
           v-col(v-for="att in attributions" v-bind:key="att.attribution" cols="12" sm="6" md="4" lg="3")
@@ -79,7 +87,21 @@ export default {
     return {
       attributions: [],
       people: [],
-      shoutouts: []
+      shoutouts: [],
+      communities: [
+        {
+          name: 'Discord',
+          image: '/images/misc/discord.svg',
+          alt: 'Discord Logo',
+          link: 'https://discord.gg/c2UnqkH'
+        },
+        {
+          name: 'Reddit',
+          image: '/images/misc/Reddit_Lockup_OnDark.svg',
+          alt: 'Reddit Logo',
+          link: 'https://www.reddit.com/r/masseffect5e/'
+        }
+      ]
     }
   },
   head () {

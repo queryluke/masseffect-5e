@@ -66,7 +66,6 @@ export default {
         { to: '/assets', name: 'Assets' },
         { to: '/changelog', name: 'Changelog' },
         { to: '/about', name: 'About' },
-        { to: '/contributing', name: 'Feedback' },
         { to: '/character-builder', name: 'Character Builder (BETA)' }
       ]
     }
