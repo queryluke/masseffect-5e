@@ -8,7 +8,7 @@
         {{ item.rarity }} {{ item.type }} <span v-if="item.subType">({{ item.subType }})</span>
       </div>
       <div v-if="item.cost !== 0" class="text-caption">
-        {{ item.cost | groupDigits(',') }}
+        {{ item.cost | groupDigits(',') }} credits
       </div>
     </template>
   </me-item-title>

@@ -2,54 +2,65 @@
   v-content
     section
       v-parallax(src="/images/parallax/milky_way.jpg" alt="The Milky Way")
-        v-layout(column align-center justify-center).white--text
-          me-header-logo
-          h1.text-h3.mt-5 About #[span.sr-only Mass Effect 5e]
+        v-row(justify="center")
+          v-col(cols="12" sm="10" md="8" lg="6" xl="4").black--text.text-center.mt-10
+            v-img(
+              srcset="/images/me5e_logo_450w.png 450w, /images/me5e_logo_600w.png 600w, /images/me5e_logo_720w.png 720w, /images/me5e_logo_900w.png 900w, /images/me5e_logo_1200w.png 1200w"
+              sizes="(max-width: 320px) 320px, (max-width: 480px) 480px, (max-width: 600px) 600px, (max-width: 720px) 600px, (max-width: 900px) 720px, (max-width: 1200px) 900px, 1200px"
+              src="/images/me5e_logo_1200w.png"
+              alt="Mass Effect 5e logo"
+            ).mt-10
+            h1.sr-only Mass Effect 5e
+            h2.text-h4.mt-10 About
     section
-      v-row(justify="center")
-        v-col(cols="12" md="10" xl="8")
-          p.
-            Mass Effect 5e is a fan-made, D&D 5th Edition, homebrew project that started in early 2016. The core
-            ruleset and website were created by Luke A with guidance from Hugh T. Luke continues to maintain the
-            website, actively develops new features and changes, and filters community-made content.
+      v-container
+        v-row(justify="center").mt-5
+          v-col(cols="12" sm="10" md="8").my-3
+            div.text-center
+              h3.headline Begin your journey
+              p.
+                Mass Effect 5e is a fan-made, D&D 5th Edition, homebrew project that started in early 2016. The core
+                ruleset and website were created by Luke A with guidance from Hugh T. Luke continues to maintain the
+                website, actively develops new features and changes, and filters community-made content.
+        v-row(justify="center").mt-5
+          v-col(cols="12")
+            p.text-h4 Contributors
+            p.
+              Mass Effect 5e has had dozens of people who've contributed in a variety of ways, both large and small.
+              The following list represents the people who've contributed to the project in a major way, be it helping
+              moderate the discord server or subreddit, site and character sheet design, or being actively involved in the
+              development of the game. Not everyone on this list is still actively involved and these people are presented in
+              no particular order.
+        v-row(justify="center").mt-5
+          v-col(v-for="person in people" :key="person.name" cols="12" sm="6" md="4" lg="3")
+            v-card.elevation-0.transparent.text-center
+              v-card-text
+                v-avatar(size="92")
+                  v-img(:src="person.image" v-bind:alt="person.name")
+                p.text-center.text-h6.mb-1 {{ person.name }}
+                p.text-subtitle-1 {{ person.roles }}
+        v-row(justify="center").mt-5
+            v-col(cols="12")
+              p.text-h4 Shout Outs
+              p.
+                In addition to the above, the system has had many contributors who've added invaluable feedback, shared ideas,
+                created assets, playtested, and much more. If we've missed anyone, it was not on purpose!
+              p.
+                {{ shoutouts.join(', ') }}
     section
-      p.text-h4 Contributors
-      p.
-        Mass Effect 5e has had dozens of people who've contributed in a variety of ways, both large and small.
-        The following list is represents the people who've contributed to the project in a major way, be it helping
-        moderate the discord server or subreddit, site and character sheet design, or being actively involved in the
-        development of the game. Not everyone on this list is still actively involved and these people are presented in
-        no particular order.
-    // Pro Contributors
-    section
-      v-row(justify="center")
-        v-col(v-for="person in people" :key="person.name" cols="12" sm="6" md="4" lg="3")
-          v-card.elevation-0.transparent.text-xs-center
-            v-card-text
-              v-avatar(size="92")
-                v-img(:src="person.image" v-bind:alt="person.name")
-            v-card-title.text-center.text-h6 {{ person.name }}
-            v-card-text
-              p.text-overline {{ person.roles }}
-    // Contributors
-    section
-      p.text-h4 Shout outs
-      p.
-        In addition to the above, the system has had many contributors who've added invaluabe feedback, shared ideas,
-        created assets, playtested, and much more. If we've missed anyone, it was not on purpose!
-      p.
-        {{ shoutouts.join(', ') }}
-    section
-      p.text-h4 Image Attributions
-      p.
-        Finally, there are a host of Creative Commons images that I've used, so I'd like to attribute and thank
-        these indirect contributors. Any images not listed were either created by Mass Effect 5e contributors or come from the the
-        #[a(href="http://masseffect.wikia.com/wiki/Mass_Effect_Wiki" target="_blank") Mass Effect Wiki].
-      v-row
-        v-col(v-for="att in attributions" v-bind:key="att.attribution" cols="12" sm="6" md="4" lg="3")
-          v-card(:href="att.source" v-bind:alt="att.title" target="_blank" hover)
-            v-img(:src="att.path" height="200px" contain).blue-grey.lighten-5
-            v-card-title(color="grey darken-3" v-html="att.attribution")
+      v-container
+        v-row(justify="center").mt-5
+          v-col(cols="12")
+            p.text-h4 Image Attributions
+            p.
+              Finally, there are a host of Creative Commons images that I've used, so I'd like to attribute and thank
+              these indirect contributors. Any images not listed were either created by Mass Effect 5e contributors or come from the the
+              #[a(href="http://masseffect.wikia.com/wiki/Mass_Effect_Wiki" target="_blank") Mass Effect Wiki].
+        v-row
+          v-col(v-for="att in attributions" v-bind:key="att.attribution" cols="12" sm="6" md="4" lg="3")
+            v-card(:href="att.source" v-bind:alt="att.title" target="_blank" hover)
+              v-img(:src="att.path" height="200px" contain).blue-grey.lighten-5
+              v-card-title(color="grey darken-3" v-html="att.attribution")
 </template>
 
 <script>
