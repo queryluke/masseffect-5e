@@ -165,8 +165,7 @@ export default {
             { to: '/for-gms/loot-generator', name: 'Loot Generator' },
             { to: '/for-gms/grunts', name: 'Grunt Generator' },
             { to: '/for-gms/armor-creation', name: 'Creating Armor' },
-            { to: '/for-gms/encounter-builder', name: 'Encounter Builder' },
-            { to: '/missions', name: 'Missions' }
+            { to: '/for-gms/encounter-builder', name: 'Encounter Builder' }
           ]
         },
         {
