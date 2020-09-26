@@ -9,27 +9,20 @@ export const DiceRoller = {
   methods: {
     ...mapActions(['addRoll']),
     rollFromString (string) {
-      console.log(string)
       const split = string.split('d')
-      console.log(split)
       if (!split[0] || !split[1]) {
         return null
       }
       const numDice = Number.parseInt(split[0].trim(), 10)
-      console.log(numDice)
       const splitRange = split[1].split('+')
-      console.log(splitRange)
       const faces = Number.parseInt(splitRange[0].trim(), 10)
-      console.log(faces)
 
       let bonus = 0
       if (typeof splitRange[1] === 'string') {
         bonus = Number.parseInt(splitRange[1].trim(), 10)
       }
-      console.log(bonus)
       const roll = this.roll(numDice, faces, bonus)
       roll.text = string
-      console.log(roll)
       return roll
     },
     rollMany (many) {
@@ -49,7 +42,6 @@ export const DiceRoller = {
       if (!rolls[0]) {
         return
       }
-      console.log(rolls)
       this.addRoll({
         from: from || 'Dice Roller',
         rolls,

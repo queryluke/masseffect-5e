@@ -1,5 +1,3 @@
-import adept from '~/static/data/classes/adept'
-
 export const Spellcasting = {
   data () {
     return {
@@ -12,6 +10,11 @@ export const Spellcasting = {
       }
     }
   },
+  computed: {
+    adept () {
+      return this.$store.getters.getItem('classes', 'adept')
+    }
+  },
   methods: {
     setGruntSpellcasting () {
       if (this.sc.id === 'soldier' || this.cr.spellcastingLevel === false) {
@@ -19,7 +22,7 @@ export const Spellcasting = {
         return
       }
       const spellcastingLevel = ['engineer', 'adept'].includes(this.sc.id) ? this.cr.spellcastingLevel : Math.ceil(this.cr.spellcastingLevel / 2)
-      const adeptProgression = adept.progression.find(p => p.level === spellcastingLevel)
+      const adeptProgression = this.adept.progression.find(p => p.level === spellcastingLevel)
       const spellSlots = adeptProgression.spellSlots
       let maxLevelSpell = 1
       if (spellSlots['4']) {

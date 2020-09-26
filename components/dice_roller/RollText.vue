@@ -1,6 +1,5 @@
-<template lang="pug">
-    span.
-      ({{ roll.text }}): {{ display }}
+<template>
+  <span>({{ roll.text }}): {{ display }}</span>
 </template>
 
 <script>

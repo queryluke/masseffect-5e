@@ -1,6 +1,3 @@
-import DamageTypes from '~/components/rule_partials/DamageTypes.vue'
-import conditions from '~/static/data/conditions'
-
 export const Rivs = {
   data () {
     return {
@@ -21,8 +18,8 @@ export const Rivs = {
   },
   methods: {
     setGruntRivs () {
-      const damageTypes = this.damageTypes.map(dt => dt.type.toLowerCase())
-      const conditionOptions = conditions.filter(c => !['targeting', 'incapacitated', 'unconscious'].includes(c.id)).map(c => c.id)
+      const damageTypes = ['acid', 'bludgeoning', 'cold', 'fire', 'force', 'lightning', 'necrotic', 'piercing', 'poison', 'psychic', 'radiant', 'slashing', 'thunder']
+      const conditionOptions = ['blinded', 'charmed', 'deafened', 'frightened', 'grappled', 'lifted', 'paralyzed', 'poisoned', 'primed', 'prone', 'restrained', 'stunned']
       this.grunt.conditionImmunities = this.applyRandomRiv(this.immunities[this.crMetaLevel], conditionOptions)
       this.grunt.damageImmunities = this.applyRandomRiv(this.immunities[this.crMetaLevel], damageTypes)
       this.grunt.damageResistances = this.applyRandomRiv(this.resistances[this.crMetaLevel], damageTypes)
@@ -50,6 +47,5 @@ export const Rivs = {
       }
       return [...new Set(riv)]
     }
-  },
-  mixins: [DamageTypes]
+  }
 }

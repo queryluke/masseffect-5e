@@ -1,13 +1,17 @@
-import skills from '~/static/data/skills'
 
 export const Skills = {
+  computed: {
+    skills () {
+      return this.$store.getters.getData('skills')
+    }
+  },
   methods: {
     setGruntSkills () {
       this.grunt.skills = []
       const classSkills = this.sc.skillProficiencies.map((skill) => {
         return skill.toLowerCase().trim().replace(/ /g, '_')
       })
-      const skillOptions = skills.filter((skill) => {
+      const skillOptions = this.skills.filter((skill) => {
         return classSkills.includes(skill.id)
       })
 

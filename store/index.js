@@ -33,6 +33,10 @@ export const getters = {
   getData: state => (endpoint) => {
     return typeof state.data[endpoint] === 'undefined' ? false : state.data[endpoint]
   },
+  getItem: (state, getters) => (endpoint, id) => {
+    const data = getters.getData(endpoint)
+    return data === false ? false : data.find(d => d.id === id)
+  },
   mobileFilterDialog: state => state.mobileFilterDialog,
   pageSearch: state => state.pageSearch,
   pageTitle: state => state.pageTitle,

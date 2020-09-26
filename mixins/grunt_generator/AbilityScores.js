@@ -84,15 +84,6 @@ export const AbilityScores = {
           this.grunt.abilityScores[ability]++
           break
         }
-        case 'unshackled_ai': {
-          const filteredInt = weightedAbilitySelection.increase.filter((ability) => {
-            return ability === 'int'
-          })
-          const ability = this.randomValue(filteredInt)
-          this.grunt.abilityScores[ability]++
-          this.grunt.abilityScores.int += 2
-          break
-        }
         default: {
           const increases = this.race.abilityScoreIncrease
           for (const inc of increases) {

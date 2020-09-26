@@ -23,7 +23,12 @@
           </v-col>
           <v-col>
             <v-btn color="secondary" to="/contributing" nuxt>
-              Get Involved
+              Join the community
+            </v-btn>
+          </v-col>
+          <v-col>
+            <v-btn color="secondary" to="/license" nuxt>
+              License
             </v-btn>
           </v-col>
         </v-row>

@@ -1,5 +1,3 @@
-import stats from '~/static/data/stats_by_cr'
-
 export const Hp = {
   data () {
     return {
@@ -9,6 +7,11 @@ export const Hp = {
         2: { shields: [5, 10, 15, 20, 20], regen: [5, 5, 10, 10, 10] },
         3: { shields: [10, 15, 20, 25, 30], regen: [10, 10, 15, 15, 15] }
       }
+    }
+  },
+  computed: {
+    stats () {
+      return this.$store.getters.getData('stats-by-cr')
     }
   },
   methods: {
@@ -34,32 +37,33 @@ export const Hp = {
       if (finalDpr > 81) {
         dprCr = this.createNewCrFromDamage(finalDpr)
       } else {
-        dprCr = stats.find((s) => {
+        dprCr = this.stats.find((s) => {
           return s.dmgMin <= finalDpr && s.dmgMax >= finalDpr
         })
       }
       const finalAtk = this.adjustments.hit + this.cr.profBonus
       let hitDiff = (finalAtk - dprCr.attackBonus) / 2
       hitDiff = hitDiff >= 0 ? Math.floor(hitDiff) : Math.ceil(hitDiff)
-      const offensiveCrId = dprCr.id + hitDiff
+      const offensiveCrNorm = dprCr.normalized + hitDiff
       // **********************************
       // What is the target defensive CR, based on offensive CR?
       // ***
-      let targetDefensiveCrId = this.cr.id
-      if (offensiveCrId !== targetDefensiveCrId) {
-        targetDefensiveCrId = (this.cr.id * 2) - offensiveCrId
+      let targetDefensiveCrNorm = this.cr.normalized
+      if (offensiveCrNorm !== targetDefensiveCrNorm) {
+        targetDefensiveCrNorm = (this.cr.normalized * 2) - offensiveCrNorm
       }
-      const targetDefensiveCr = this.getCrById(targetDefensiveCrId)
+      console.log(targetDefensiveCrNorm)
+      const targetDefensiveCr = this.getCrByNormalized(targetDefensiveCrNorm)
       // **********************************
       // What is the ac adjustment?
       // ***
       const finalAc = this.grunt.ac + this.adjustments.ac
       let acDiff = (finalAc - targetDefensiveCr.acDc) / 2
       acDiff = acDiff >= 0 ? Math.floor(acDiff) : Math.ceil(acDiff)
-      const hpCrId = targetDefensiveCrId - acDiff
-      const hpCr = this.getCrById(hpCrId)
+      const hpCrId = targetDefensiveCrNorm - acDiff
+      const hpCr = this.getCrByNormalized(hpCrId)
       if (hpCr === undefined) {
-        console.log(`finalAc = ${finalAc}, acDiff = ${acDiff}, targetDefensiveCrId = ${targetDefensiveCrId}, hpCrId = ${hpCrId}`)
+        // console.log(`finalAc = ${finalAc}, acDiff = ${acDiff}, targetDefensiveCrId = ${targetDefensiveCrId}, hpCrId = ${hpCrId}`)
       }
 
       // **********************************
@@ -99,13 +103,13 @@ export const Hp = {
         die: dieType
       }
     },
-    getCrById (id) {
-      if (id > 15) {
-        return this.createNewCr(id - 15)
-      } else if (id < 1) {
-        return stats.find(cr => cr.id === 1)
+    getCrByNormalized (normalized) {
+      if (normalized > 15) {
+        return this.createNewCr(normalized - 15)
+      } else if (normalized < 1) {
+        return this.stats.find(cr => cr.normalized === 1)
       } else {
-        return stats.find(cr => cr.id === id)
+        return this.stats.find(cr => cr.normalized === normalized)
       }
     },
     createNewCrFromDamage (damage) {
@@ -114,7 +118,8 @@ export const Hp = {
     },
     createNewCr (numIncrements) {
       return {
-        id: 15 + numIncrements,
+        id: `${15 + numIncrements}000`,
+        normalized: 15 + numIncrements,
         cr: 12 + numIncrements,
         profBonus: 6 + Math.floor(numIncrements / 4),
         acDc: 18 + Math.floor(numIncrements / 3),

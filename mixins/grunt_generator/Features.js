@@ -1,7 +1,8 @@
-import vanguard from '~/static/data/classes/vanguard'
-
 export const Features = {
   computed: {
+    vanguard () {
+      return this.$store.getters.getItem('classes', 'vanguard')
+    },
     aggressive () {
       this.adjustments.dpr += 2
       return {
@@ -33,7 +34,7 @@ export const Features = {
     },
     barrier () {
       const spellcastingLevel = this.sc.id === 'vanguard' ? this.cr.spellcastingLevel : Math.ceil(this.cr.spellcastingLevel / 2)
-      const vanguardProgression = vanguard.progression.find(p => p.level === spellcastingLevel)
+      const vanguardProgression = this.vanguard.progression.find(p => p.level === spellcastingLevel)
       this.grunt.barrier = vanguardProgression.barrierTicks
       this.adjustments.hp += (4 * vanguardProgression.barrierTicks)
       return {

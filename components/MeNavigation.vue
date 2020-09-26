@@ -155,29 +155,31 @@ export default {
           divider: true
         },
         {
-          header: 'Tools'
+          header: 'Site Tools & Guides'
         },
         {
-          name: 'For GMs',
-          icon: 'mdi-puzzle',
-          group: 'for-gms',
+          name: 'Characer Builder (beta)',
+          to: '/character-builder'
+        },
+        {
+          name: 'Generators',
+          icon: 'mdi-cog-sync',
+          group: 'generator',
           items: [
-            { to: '/for-gms/loot-generator', name: 'Loot Generator' },
-            { to: '/for-gms/grunts', name: 'Grunt Generator' },
-            { to: '/for-gms/armor-creation', name: 'Creating Armor' },
-            { to: '/for-gms/encounter-builder', name: 'Encounter Builder' }
+            { to: '/generators/loot', name: 'Loot Generator' },
+            { to: '/generators/npc', name: 'NPC Generator' }
           ]
         },
         {
-          divider: true
-        },
-        {
-          header: 'Mass Effect 5e'
-        },
-        { name: 'Get Involved', to: '/about' },
-        { name: 'Changelog', to: '/changelog' },
-        { name: 'Offline / PDF version', to: '/print/pdf' },
-        { name: 'License', to: '/license' }
+          name: 'Guides',
+          icon: 'mdi-puzzle',
+          group: 'guide',
+          items: [
+            { to: '/guide/armor-creation', name: 'Creating Armor' },
+            { to: '/guide/vehicle-creation', name: 'Creating Vehicles' },
+            { to: '/guide/encounter-creation', name: 'Creating Encounters' }
+          ]
+        }
       ]
     }
   },
@@ -220,7 +222,7 @@ export default {
       return (group.group || this.unstructuredRegexpRouteMatch(group.items))
     },
     unstructuredRegexpRouteMatch (items) {
-      return `(${items.map(i => i.to).join('|')})`
+      return `(${items.map(i => i.to.replace(/-/g, '').replace(/\//g, '')).join('|')})`
     }
   }
 }

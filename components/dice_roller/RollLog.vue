@@ -1,19 +1,30 @@
-<template lang="pug">
-  v-sheet(color="red lighten-4")
-    div.text-xs-center
-        v-btn(@click="clearRolls") Clear Log
-    div(v-for="(roll, i) in rolls" v-bind:key="i")
-      roll-set(:roll="roll")
+<template>
+  <div>
+    <v-row justify="end">
+      <v-col>
+        <v-btn @click="clearRolls">
+          Clear Log
+        </v-btn>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col cols="12">
+        <v-card v-for="(roll, i) in rolls" :key="i" shaped class="mb-3">
+          <v-card-text>
+            <roll-set :roll="roll" />
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+  </div>
 </template>
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
-import RollSet from '~/components/dice_roller/RollSet.vue'
 
 const { mapGetters, mapActions } = createNamespacedHelpers('diceRoller')
 
 export default {
-  components: { RollSet },
   computed: {
     ...mapGetters(['rolls'])
   },

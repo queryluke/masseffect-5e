@@ -4,7 +4,7 @@ export const Ac = {
       this.grunt.ac = 10
       const acModArray = [-2, -1, -1, 0, 1, 1, 2]
 
-      if (['geth', 'unschackled-ai'].includes(this.race.id)) {
+      if (this.race.id === 'geth') {
         this.grunt.ac = 13 + this.abilityScoreBonus(this.grunt.abilityScores.dex) + this.cr.profBonus
         return
       }

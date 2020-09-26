@@ -20,14 +20,6 @@ import { Spellcasting } from './Spellcasting'
 import { Speed } from './Speed'
 import { Type } from './Type'
 
-// data
-import races from '~/static/data/races'
-import classes from '~/static/data/classes'
-import crs from '~/static/data/stats_by_cr'
-import spells from '~/static/data/spells'
-import weapons from '~/static/data/weapons'
-import grenades from '~/static/data/grenades'
-
 // options
 const { mapGetters } = createNamespacedHelpers('gruntGenerator')
 
@@ -35,14 +27,29 @@ export const GruntGenerator = {
   computed: {
     ...mapGetters({ selectedCr: 'cr' }),
     ...mapGetters({ selectedRace: 'race' }),
-    ...mapGetters({ selectedClass: 'sc' })
+    ...mapGetters({ selectedClass: 'sc' }),
+    crs () {
+      return this.$store.getters.getData('stats-by-cr')
+    },
+    classes () {
+      return this.$store.getters.getData('classes')
+    },
+    races () {
+      return this.$store.getters.getData('species')
+    },
+    spells () {
+      return this.$store.getters.getData('powers')
+    },
+    weapons () {
+      return this.$store.getters.getData('weapons')
+    },
+    grenades () {
+      return this.$store.getters.getData('gear').filter(g => g.type === 'Grenade')
+    }
   },
   data () {
     return {
       grunt: {},
-      spells,
-      weapons,
-      grenades,
       crMetaLevel: 0,
       dpr: {
         weapon: 0,
@@ -83,9 +90,9 @@ export const GruntGenerator = {
   ],
   methods: {
     generateGrunt () {
-      this.cr = this.selectedCr && this.selectedCr.cr ? this.selectedCr : this.randomValue(crs)
-      this.race = this.selectedRace && this.selectedRace.id ? this.selectedRace : this.randomValue(races)
-      this.sc = this.selectedClass && this.selectedClass.id ? this.selectedClass : this.randomValue(classes)
+      this.cr = this.selectedCr && this.selectedCr.cr ? this.selectedCr : this.randomValue(this.crs)
+      this.race = this.selectedRace && this.selectedRace.id ? this.selectedRace : this.randomValue(this.races)
+      this.sc = this.selectedClass && this.selectedClass.id ? this.selectedClass : this.randomValue(this.classes)
 
       this.reset()
       this.setGruntAbilityScores()
