@@ -1,48 +1,5 @@
 <template>
-  <v-row>
-    <v-col sm="4">
-      <v-select
-        v-model="selectedCr"
-        :items="crs"
-        label="Select a Challenge Rating"
-        item-text="cr"
-        item-value="cr"
-        return-object
-        single-line
-        menu-props="bottom"
-        hint="Challenge Rating"
-        persistent-hint
-      />
-    </v-col>
-    <v-col sm="4">
-      <v-select
-        v-model="selectedClass"
-        :items="classes"
-        label="Select a Class"
-        item-text="name"
-        item-value="id"
-        return-object
-        single-line
-        menu-props="bottom"
-        hint="Class"
-        persistent-hint
-      />
-    </v-col>
-    <v-col sm="4">
-      <v-select
-        v-model="selectedRace"
-        :items="races"
-        label="Select a Race"
-        item-text="name"
-        item-value="id"
-        return-object
-        single-line
-        menu-props="bottom"
-        hint="Race"
-        persistent-hint
-      />
-    </v-col>
-  </v-row>
+
 </template>
 
 <script>
