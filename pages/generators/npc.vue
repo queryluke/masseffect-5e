@@ -133,7 +133,7 @@ export default {
       this.options = {
         cr: this.selectedCr === null ? this.randomValue(this.crs) : this.selectedCr,
         klass: this.selectedCl === null ? this.randomValue(this.classes) : this.selectedCl,
-        species: this.selectedSp === null ? this.randomValue(this.species) : this.selectedSp,
+        species: this.selectedSp === null ? this.randomValue(this.species) : this.selectedSp
       }
     }
   },

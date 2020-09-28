@@ -5,15 +5,18 @@
     :clipped-left="clippedLeft"
     :clipped-right="clippedRight"
   >
+    <!-- Drawer Icon -->
     <v-app-bar-nav-icon
       v-if="clippedLeft"
       @click.stop="drawer = !drawer"
     />
+    <!-- ME5e Icon -->
     <nuxt-link to="/">
       <v-avatar tile size="24">
         <img src="/icon.png" :alt="`Mass Effect 5e icon`">
       </v-avatar>
     </nuxt-link>
+    <!-- Page Title -->
     <v-toolbar-title class="ml-3">
       {{ pageTitle }}
     </v-toolbar-title>
@@ -39,6 +42,14 @@
         </v-list-item>
       </v-list>
     </v-menu>
+
+    <template v-if="tabbed && $vuetify.breakpoint.smAndDown" v-slot:extension>
+      <v-tabs v-model="tab" center-active centered>
+        <v-tab v-for="item in tabs" :key="item">
+          {{ item }}
+        </v-tab>
+      </v-tabs>
+    </template>
   </v-app-bar>
 </template>
 
@@ -55,6 +66,10 @@ export default {
       default: false
     },
     hasJumpNav: {
+      type: Boolean,
+      default: false
+    },
+    tabbed: {
       type: Boolean,
       default: false
     }
@@ -89,6 +104,17 @@ export default {
       set (value) {
         this.$store.commit('jumpNav', value)
       }
+    },
+    tab: {
+      get () {
+        return this.$store.getters['tabbedPage/activeTab']
+      },
+      set (value) {
+        this.$store.commit('tabbedPage/SET_ACTIVE_TAB', value)
+      }
+    },
+    tabs () {
+      return this.$store.getters['tabbedPage/tabs']
     }
   }
 }

@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div class="text-subtitle-2 text-md-h6">
+    <div class="text-subtitle-1 text-md-h5 font-weight-bold">
       {{ label }}
     </div>
-    <div>
+    <p>
       <slot />
-    </div>
+    </p>
   </div>
 </template>
 
@@ -13,7 +13,7 @@
 export default {
   props: {
     label: {
-      type: Text,
+      type: String,
       default: ''
     }
   }

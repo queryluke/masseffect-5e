@@ -1,4 +1,12 @@
 export const state = () => ({
+  abilities: {
+    str: 'Strength',
+    dex: 'Dexterity',
+    con: 'Constitution',
+    int: 'Intelligence',
+    wis: 'Wisdom',
+    cha: 'Charisma'
+  },
   featHeaders: [
     { label: 'Indicator', key: 'indicator', cols: 2, sm: 1, sortable: false },
     { label: 'Name', key: 'name', cols: 10, sm: 5, lg: 2 },
@@ -87,10 +95,19 @@ export const state = () => ({
       lightning: 'blue--text text--lighten-1',
       detonates: 'red--text text--lighten-1'
     }
-  }
+  },
+  searchFilters: [
+    { id: 'character', textColor: 'light-green--text text--darken-4', color: 'light-green darken-4', icon: 'face' },
+    { id: 'equipment', textColor: 'deep-orange--text text--darken-4', color: 'deep-orange darken-4', icon: 'build' },
+    { id: 'rule', textColor: 'secondary--text', color: 'secondary', icon: 'gavel' },
+    { id: 'spell', textColor: 'purple--text', color: 'purple', icon: 'whatshot' },
+    { id: 'bestiary', textColor: 'primary--text', color: 'primary', icon: 'pets' }
+  ]
 })
 
 export const getters = {
+  abilities: state => state.abilities,
+  abilityName: state => abbr => state.abilities[abbr],
   armorHeaders: state => state.armorHeaders,
   featHeaders: state => state.featHeaders,
   gearHeaders: state => state.gearHeaders,

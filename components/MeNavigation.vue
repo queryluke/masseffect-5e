@@ -109,7 +109,7 @@ export default {
           icon: 'mdi-face-agent',
           items: [
             { to: '/classes', name: 'Classes' },
-            { to: '/races', name: 'Races' },
+            { to: '/species', name: 'Species' },
             { to: '/feats', name: 'Feats' },
             { to: '/backgrounds', name: 'Backgrounds' }
           ]
