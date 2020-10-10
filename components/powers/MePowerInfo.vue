@@ -79,7 +79,7 @@
               {{ opt.name }}
             </v-card-title>
             <v-card-text>
-              {{ opt.description }}
+              <me-html :content="opt.description" />
             </v-card-text>
           </v-card>
         </v-col>

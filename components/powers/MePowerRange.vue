@@ -1,10 +1,11 @@
 <template>
   <span>
     <span>
-      {{ item.distance.range }}
+      <me-distance v-if="numericRange" :length="item.distance.range" abbr />
+      <span v-else>{{ item.distance.range }}</span>
     </span>
-    <span v-if="item.distance.aoeDistance" class="ml-1">
-      ({{ item.distance.aoeDistance }}
+    <span v-if="item.distance.aoeDistance" class="ml-1 text-caption">
+      (<me-distance :length="item.distance.aoeDistance" abbr />
       <v-avatar :size="size" tile class="ml-1">
         <v-img :src="`/images/aoe/${filename}.svg`" :alt="item.distance.aoeType" />
       </v-avatar>)
@@ -29,12 +30,15 @@ export default {
     },
     size: {
       type: Number,
-      default: 18
+      default: 14
     }
   },
   computed: {
     filename () {
       return this.$vuetify.theme.dark ? `${this.item.distance.aoeType}-white` : this.item.distance.aoeType
+    },
+    numericRange () {
+      return !isNaN(this.item.distance.range)
     }
   }
 }

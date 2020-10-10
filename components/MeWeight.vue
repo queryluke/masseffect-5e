@@ -1,7 +1,7 @@
 <template>
   <me-metric
-    :value="length"
-    :unit="unit"
+    :value="amount"
+    unit="lb"
     :override="override"
     :abbr="abbr"
     :adj="adj"
@@ -10,9 +10,9 @@
 
 <script>
 export default {
-  name: 'MeDistance',
+  name: 'MeWeight',
   props: {
-    length: {
+    amount: {
       type: [Number, String],
       required: true
     },
@@ -27,15 +27,6 @@ export default {
     abbr: {
       type: Boolean,
       default: false
-    },
-    tiny: {
-      type: Boolean,
-      default: false
-    }
-  },
-  computed: {
-    unit () {
-      return this.tiny ? 'in' : 'ft'
     }
   }
 }

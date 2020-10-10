@@ -145,7 +145,8 @@ export default {
           : this.adj || value === 1 ? this.unitObject.singular : this.unitObject.plural
       }
       text = this.override ? this.override.replace('{metric}', unitText) : unitText
-      hyphen = this.adj ? '-' : ' '
+      hyphen = this.adj ? '-'
+        : this.abbr ? '' : ' '
       return `${value}${hyphen}${text}`
     }
   }
