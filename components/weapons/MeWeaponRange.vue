@@ -1,5 +1,12 @@
 <template>
-  <span>{{ range }}</span>
+  <span>
+    <span v-if="meleeWeapon">
+      <me-distance :length="this.item.range" abbr />
+    </span>
+    <span v-else>
+      (<me-distance :length="this.item.range" num-only />/<me-distance :length="extendedRange" abbr />)
+    </span>
+  </span>
 </template>
 <script>
 export default {
@@ -16,19 +23,13 @@ export default {
     }
   },
   computed: {
-    range () {
+    meleeWeapon () {
+      return this.item.type === 'Melee'
+    },
+    extendedRange () {
       const rangeNum = Number.parseInt(this.item.range, 10)
-      switch (this.item.type) {
-        case 'Melee':
-          // TODO: reach weapons
-          return '2m'
-        case 'Heavy Weapon':
-          return `${rangeNum}m`
-        case 'Shotgun':
-          return `(${rangeNum}/${rangeNum * 2}m)`
-        default:
-          return `(${rangeNum}/${rangeNum * 3}m)`
-      }
+      const multiplier = this.item.type === 'Shotgun' ? 2 : 3
+      return rangeNum * multiplier
     }
   }
 }

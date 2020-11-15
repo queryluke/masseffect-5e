@@ -25,6 +25,10 @@ export default {
     override: {
       type: [Boolean, String],
       default: false
+    },
+    numOnly: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -143,6 +147,9 @@ export default {
         value = parseInt(this.value, 10)
         unitText = this.abbr ? this.unitObject.abbr
           : this.adj || value === 1 ? this.unitObject.singular : this.unitObject.plural
+      }
+      if (this.numOnly) {
+        return value
       }
       text = this.override ? this.override.replace('{metric}', unitText) : unitText
       hyphen = this.adj ? '-'

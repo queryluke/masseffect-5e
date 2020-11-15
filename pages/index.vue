@@ -14,7 +14,7 @@
             h1.sr-only Mass Effect 5e
             h2.black--text.headline.mt-10 Mass Effect + D&D 5th Edition
             p.black--text.subheading An Unofficial D&D 5th Edition homebrew for Mass Effect
-            v-btn(to="/phb/intro" large color="secondary").my-3 Get Started
+            v-btn(to="/manual/intro" large color="secondary").my-3 Get Started
     // Intro Section
     section
       v-container

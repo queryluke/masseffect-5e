@@ -5,6 +5,7 @@
     :override="override"
     :abbr="abbr"
     :adj="adj"
+    :num-only="numOnly"
   />
 </template>
 
@@ -29,6 +30,10 @@ export default {
       default: false
     },
     tiny: {
+      type: Boolean,
+      default: false
+    },
+    numOnly: {
       type: Boolean,
       default: false
     }
