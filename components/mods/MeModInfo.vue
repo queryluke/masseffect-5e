@@ -6,7 +6,7 @@
     </div>
     <v-progress-linear :value="100" color="secondary" :height="2" class="my-2" />
     <div>
-      {{ item.feature }}
+      <me-html :content="item.html" />
     </div>
     <div>
       <v-row>
