@@ -8,7 +8,7 @@
         </div>
         <v-progress-linear :value="100" color="secondary" :height="2" class="my-2" />
         <div v-for="(feature, index) in item.features" :key="index">
-          {{ feature }}
+          <me-html :content="feature" />
         </div>
         <div v-if="item.setBonus.length > 0">
           <ul>
