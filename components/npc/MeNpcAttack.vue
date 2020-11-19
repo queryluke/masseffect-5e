@@ -1,14 +1,19 @@
 <template>
   <me-npc-feature :feature="feature">
     <template v-slot:description>
-      <span class="font-italic">
+      <span class="font-italic font-weight-thin">
         {{ attack.type | capitalize }} Weapon Attack:
       </span>
       <span>
         +{{ attack.attackMod }} to hit,
       </span>
       <span>
-        {{ range }},
+        <span v-if="attack.type === 'melee'">
+          reach <me-distance :length="range" abbr />,
+        </span>
+        <span v-if="attack.type === 'ranged'">
+          range (<me-distance :length="range" numOnly />/<me-distance :length="longRange" abbr />),
+        </span>
       </span>
       <span>
         {{ attack.target }}.
@@ -59,13 +64,10 @@ export default {
       }
     },
     range () {
-      if (this.attack.type === 'melee') {
-        return `reach ${this.attack.range}m`
-      }
-      if (this.attack.type === 'ranged') {
-        return `range ${this.attack.range}/${this.attack.range * 3}m`
-      }
-      return ''
+      return Number.parseInt(this.attack.range, 10)
+    },
+    longRange () {
+      return this.range * 3
     }
   }
 }

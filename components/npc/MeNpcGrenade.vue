@@ -1,7 +1,7 @@
 <template>
   <me-npc-feature v-if="!loading" :feature="feature">
     <template v-slot:description>
-      <me-html :content="html" />
+      <me-html :content="html" inline />
     </template>
   </me-npc-feature>
 </template>

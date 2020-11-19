@@ -7,6 +7,10 @@ export default {
     content: {
       type: String,
       default: ''
+    },
+    inline: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -19,7 +23,7 @@ export default {
   },
   methods: {
     generateTemplate () {
-      const template = `<div>${this.content}</div>`
+      const template = `<div ${this.inline ? 'class="inline-html"' : ''}>${this.content}</div>`
       const { render, staticRenderFns } = compileToFunctions(template)
       this.templateRender = render
       this.$options.staticRenderFns = staticRenderFns
@@ -30,3 +34,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  div.inline-html {
+    display: inline;
+  }
+  div.inline-html > p:first-child{
+    display: inline;
+  }
+</style>

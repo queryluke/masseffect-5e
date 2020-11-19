@@ -1,11 +1,11 @@
 <template>
   <div class="text-body-2 mb-4">
-    <span class="font-weight-bold font-italic">
+    <span class="font-weight-medium font-italic">
       {{ title }}
     </span>
-    <span class="ml-1">
+    <span class="font-weight-light">
       <slot name="description">
-        {{ feature.description }}
+        <me-html :content="feature.description" inline />
       </slot>
     </span>
   </div>

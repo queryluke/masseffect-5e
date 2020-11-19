@@ -111,7 +111,7 @@
           <me-npc-set-title>
             Legendary Actions
           </me-npc-set-title>
-          <p>
+          <p class="body-2">
             The {{ lcName }} can take 3 legendary actions, choosing from the options below. Only one legendary action can
             be used at a time and only at the end of another creature's turn. The {{ lcName }} regains spent legendary
             actions at the start of its turn.
