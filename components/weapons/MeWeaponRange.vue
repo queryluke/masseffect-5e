@@ -1,10 +1,10 @@
 <template>
   <span>
     <span v-if="meleeWeapon">
-      <me-distance :length="this.item.range" abbr />
+      <me-distance :length="item.range" abbr />
     </span>
     <span v-else>
-      (<me-distance :length="this.item.range" num-only />/<me-distance :length="extendedRange" abbr />)
+      (<me-distance :length="item.range" num-only />/<me-distance :length="extendedRange" abbr />)
     </span>
   </span>
 </template>

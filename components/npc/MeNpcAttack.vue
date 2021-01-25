@@ -12,7 +12,7 @@
           reach <me-distance :length="range" abbr />,
         </span>
         <span v-if="attack.type === 'ranged'">
-          range (<me-distance :length="range" numOnly />/<me-distance :length="longRange" abbr />),
+          range (<me-distance :length="range" num-only />/<me-distance :length="longRange" abbr />),
         </span>
       </span>
       <span>
