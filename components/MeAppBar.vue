@@ -44,7 +44,14 @@
     </v-menu>
 
     <template v-if="tabbed && $vuetify.breakpoint.smAndDown" v-slot:extension>
-      <v-tabs v-model="tab" center-active centered>
+      <v-tabs
+        v-model="tab"
+        align-with-title
+        center-active
+        centered
+        show-arrows
+        :color="tabColor"
+      >
         <v-tab v-for="item in tabs" :key="item">
           {{ item }}
         </v-tab>
@@ -115,6 +122,9 @@ export default {
     },
     tabs () {
       return this.$store.getters['tabbedPage/tabs']
+    },
+    tabColor () {
+      return this.$store.getters['tabbedPage/mobileTabColor']
     }
   }
 }

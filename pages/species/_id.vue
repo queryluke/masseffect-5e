@@ -86,6 +86,7 @@ export default {
     this.items = await this.$store.dispatch('FETCH_DATA', 'species')
     this.$store.commit('pageTitle', this.item.name)
     this.$store.commit('tabbedPage/SET_TABS', this.tabs)
+    this.$store.dispatch('tabbedPage/INIT_THEME', { theme: false, isDark: this.$vuetify.theme.isDark })
     this.loading = false
   },
   data () {

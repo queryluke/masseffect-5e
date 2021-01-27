@@ -4,7 +4,7 @@
     <v-row>
       <v-col v-for="item in items" :key="item.id" sm="6" md="4" class="d-flex flex-column">
         <v-card
-          :to="{ name: 'phb-classes-id', params: { id: item.id }}"
+          :to="{ name: 'classes-id', params: { id: item.id }}"
           hover
           class="ma-2"
         >

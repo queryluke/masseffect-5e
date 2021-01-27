@@ -25,8 +25,8 @@ export const getters = {
 }
 
 export const mutations = {
-  TOGGLE_DARK_MODE (state) {
-    state.darkMode = !state.darkMode
+  SET_DARK_MODE (state, value) {
+    state.darkMode = value
   },
   SET_IMPERIAL (state, value) {
     state.imperial = value
@@ -55,5 +55,10 @@ export const actions = {
       }
       commit('ADD_BOOKMARK', { type, item })
     }
+  },
+  TOGGLE_DARK_MODE ({ getters, commit, dispatch }) {
+    const isDark = !getters.darkMode
+    commit('SET_DARK_MODE', isDark)
+    dispatch('tabbedPage/SET_THEME_MODE', isDark, { root: true })
   }
 }

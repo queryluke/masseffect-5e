@@ -102,7 +102,33 @@ export const state = () => ({
     { id: 'rule', textColor: 'secondary--text', color: 'secondary', icon: 'gavel' },
     { id: 'spell', textColor: 'purple--text', color: 'purple', icon: 'whatshot' },
     { id: 'bestiary', textColor: 'primary--text', color: 'primary', icon: 'pets' }
-  ]
+  ],
+  classThemes: {
+    adept: {
+      light: { tabColor: 'deep-purple darken-1', link: 'deep-purple--text' },
+      dark: { tabColor: 'deep-purple lighten-2', link: 'deep-purple--text text--lighten-2' }
+    },
+    engineer: {
+      light: { tabColor: 'amber darken-2', link: 'amber--text text--darken-4' },
+      dark: { tabColor: 'amber darken-2', link: 'amber--text text--darken-4' }
+    },
+    infiltrator: {
+      light: { tabColor: 'deep-orange darken-1', link: 'deep-orange--text text--darken-4' },
+      dark: { tabColor: 'deep-orange darken-1', link: 'deep-orange--text text--darken-4' }
+    },
+    sentinel: {
+      light: { tabColor: 'green darken-2', link: 'teal--text text--darken-4' },
+      dark: { tabColor: 'green darken-2', link: 'teal--text text--darken-4' }
+    },
+    soldier: {
+      light: { tabColor: 'primary', link: '' },
+      dark: { tabColor: 'primary', link: '' }
+    },
+    vanguard: {
+      light: { tabColor: 'indigo darken-4', link: 'indigo--text darken-4' },
+      dark: { tabColor: 'indigo darken-4', link: 'indigo--text darken-4' }
+    }
+  }
 })
 
 export const getters = {
@@ -117,5 +143,6 @@ export const getters = {
   primeTypeText: state => state.primeTypeText,
   weaponHeaders: state => state.weaponHeaders,
   rarityOptions: state => state.rarityOptions,
-  rarityTextColors: state => state.rarityTextColors
+  rarityTextColors: state => state.rarityTextColors,
+  classThemes: state => state.classThemes
 }

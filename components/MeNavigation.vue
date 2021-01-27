@@ -215,7 +215,7 @@ export default {
   },
   methods: {
     toggleDarkMode () {
-      this.$store.commit('user/TOGGLE_DARK_MODE')
+      this.$store.dispatch('user/TOGGLE_DARK_MODE')
       this.$vuetify.theme.dark = this.$store.getters['user/darkMode']
     },
     groupNamespace (group) {

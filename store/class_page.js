@@ -1,12 +1,5 @@
 
 export const state = () => ({
-  tabs: [
-    { name: 'Progression Table', id: 'progression_table', slot: 'progression_table_tab_content' },
-    { name: 'Class Features', id: 'attributes', slot: 'attributes_tab_content' },
-    { name: 'Subclasses', id: 'subclasses', slot: 'subclasses_tab_content' },
-    { name: 'Spell List', id: 'spell_list', slot: 'spell_list_tab_content' }
-  ],
-  active: null,
   colors: {
     '': { primary: 'primary', link: 'red darken-4' },
     adept: { primary: 'deep-purple darken-1', link: 'deep-purple--text' },
