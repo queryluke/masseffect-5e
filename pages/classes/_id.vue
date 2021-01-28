@@ -27,6 +27,7 @@
         </v-tabs>
         <v-tabs-items v-model="tab">
           <v-tab-item class="pa-3">
+            <me-progression-table :id="item.id" />
           </v-tab-item>
           <v-tab-item class="pa-3">
           </v-tab-item>
@@ -76,7 +77,13 @@ const { mapGetters } = createNamespacedHelpers('classPage')
 
 export default {
   async fetch () {
-    this.items = await this.$store.dispatch('FETCH_DATA', 'classes')
+    await Promise.all([
+      this.$store.dispatch('FETCH_DATA', 'classes'),
+      this.$store.dispatch('FETCH_DATA', 'class-features'),
+      this.$store.dispatch('FETCH_DATA', 'subclasses'),
+      this.$store.dispatch('FETCH_DATA', 'powers'),
+      this.$store.dispatch('FETCH_DATA', 'character-progression')
+    ])
     this.$store.commit('pageTitle', this.item.name)
     this.$store.commit('tabbedPage/SET_TABS', this.tabs)
     this.$store.dispatch('tabbedPage/INIT_THEME', { theme: this.item.id, isDark: this.$vuetify.theme.isDark })
@@ -84,7 +91,6 @@ export default {
   },
   data () {
     return {
-      items: [],
       id: this.$route.params.id,
       tabs: ['progression table', 'class features', 'subclasses', 'powers'],
       loading: true
@@ -92,6 +98,9 @@ export default {
   },
   computed: {
     ...mapGetters(['colors', 'order', 'sortBy', 'classes']),
+    items () {
+      return this.$store.getters.getData('classes')
+    },
     item () {
       return this.$store.getters.getItem('classes', this.id)
     },
