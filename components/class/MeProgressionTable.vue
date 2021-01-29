@@ -5,7 +5,12 @@
       :items="progression"
       hide-default-footer
       :items-per-page="-1"
+      dense
+      disable-filtering
+      disable-sort
+      disable-pagination
       class="text-center"
+      @click:row="showFeature"
     >
       <template
         v-slot:header
@@ -25,7 +30,7 @@
         v-slot:item.level="{ item: levelItem }"
       >
         <td
-          :id="levelItem.id"
+          :id="levelItem.cssId"
         >
           {{ levelItem.level }}
         </td>
@@ -40,9 +45,32 @@
       </template>
 
       <template
-        v-slot:item.features="{ item: featureItem }"
+        v-slot:item.features="{ item: featureItem, isMobile }"
       >
-        <td class="text-left">
+        <td
+          v-if="isMobile"
+          class="px-0"
+        >
+          <v-btn
+            v-if="featureItem.features !== '-'"
+            :color="classFillDark"
+            x-small
+            dark
+            block
+            @click="selectedRow = featureItem"
+          >
+            {{ featureItem.features }}
+          </v-btn>
+          <span
+            v-else
+          >
+            -
+          </span>
+        </td>
+        <td
+          v-else
+          class="text-left"
+        >
           {{ featureItem.features }}
         </td>
       </template>
@@ -60,7 +88,7 @@
       >
         <td
           v-if="$vuetify.breakpoint.smAndDown"
-          :id="`${psByPlItem.id}Intersect`"
+          :id="`${psByPlItem.cssId}Intersect`"
           v-intersect="{ handler: onIntersect, threshold: [1] }"
         >
         </td>
@@ -75,7 +103,7 @@
       <v-tabs
         v-model="levelTab"
         dark
-        :background-color="mobileLevelTabsColor"
+        :background-color="classFillDark"
         color="grey grey-lighten-4"
         slider-color="white"
         active-class="white--text"
@@ -86,12 +114,46 @@
         <v-tab
           v-for="level in progression"
           :key="level.id"
-          @click="toLevel(level.id)"
+          @click="toLevel(level.cssId)"
         >
           {{ level.level }}
         </v-tab>
       </v-tabs>
     </v-footer>
+
+    <v-dialog
+      v-model="dialog"
+      :max-width="1200"
+    >
+      <v-card
+        v-if="selectedRow"
+      >
+        <v-toolbar
+          dark
+          :color="classFillDark"
+        >
+          <v-toolbar-title>
+            {{ selectedRow.level }} Level
+          </v-toolbar-title>
+          <v-spacer></v-spacer>
+          <v-btn
+            icon
+            dark
+            @click="dialog = false"
+          >
+            <v-icon>mdi-close</v-icon>
+          </v-btn>
+        </v-toolbar>
+        <v-card-text>
+          <me-class-feature-list
+            :class-id="item.id"
+            :level="selectedLevel"
+            include-subclass
+            show-subclass-header
+          />
+        </v-card-text>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
@@ -106,7 +168,7 @@ export default {
   data () {
     return {
       dialog: false,
-      selectedLevel: null,
+      selectedRow: null,
       levelTab: null,
       stringIds: [
         'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve',
@@ -139,22 +201,20 @@ export default {
         {
           text: 'Level',
           value: 'level',
-          sortable: false,
           class: 'text-center'
         },
         {
           text: 'Proficiency Bonus',
           value: 'proficiencyBonus',
-          sortable: false,
           class: 'text-center'
         }
       ]
       for (const p of this.item.progressionColumns) {
-        array.push({ text: p.name, value: p.key, sortable: false, class: 'text-center' })
+        array.push({ text: p.name, value: p.key, class: 'text-center' })
       }
       // Inject powerslotheader
       if (this.powerCastingColumnCount > 0) {
-        array.splice(array.length - this.powerCastingColumnCount, 0, { text: 'Power Slots by Power Level', value: 'psByPl', sortable: false, class: 'text-center' })
+        array.splice(array.length - this.powerCastingColumnCount, 0, { text: 'Power Slots by Power Level', value: 'psByPl', class: 'text-center' })
       }
       return array
     },
@@ -162,7 +222,8 @@ export default {
       const progression = []
       for (const row of this.characterProgression) {
         const output = {}
-        output.id = `${this.stringIds[row.level - 1]}Level`
+        output.cssId = `${this.stringIds[row.level - 1]}Level`
+        output.id = row.level
         output.level = `${row.level}${this.$options.filters.ordinal(row.level)}`
         output.proficiencyBonus = `+${row.bonus}`
         for (const p of this.item.progressionColumns) {
@@ -182,25 +243,27 @@ export default {
       }
       return progression
     },
-    mobileLevelTabsColor () {
-      return this.$store.getters['config/classThemes'][this.item.id].light.tabColor
+    selectedLevel () {
+      return this.selectedRow ? this.selectedRow.id : false
     },
-    spellSlotArray () {
-      return this.item.spellSlots ? [...Array(this.item.maxSpellSlot).keys()] : []
+    classFillDark () {
+      return this.$store.getters['config/classThemes'][this.item.id].light.tabColor
     }
   },
   methods: {
     featuresByLevel (level) {
-      return this.classFeatures.filter(i => i.level === level)
+      const features = this.classFeatures.filter(i => i.level === level)
+      if (this.item.abiLevels.includes(level)) {
+        features.push({ name: 'Ability Score Increase', id: 'ability-score-increase' })
+      }
+      return features
     },
     getFeatureTextByLevel (level) {
-      if (this.item.abiLevels.includes(level)) {
-        return 'Ability Score Increase'
-      }
       if (this.item.subclassProgression.level.includes(level)) {
         return this.item.subclassProgression.label
       }
-      return this.featuresByLevel(level).map(i => i.name).join(', ')
+      const features = this.featuresByLevel(level).map(i => i.name)
+      return features.length === 0 ? '-' : features.join(', ')
     },
     onIntersect (entries) {
       if (this.goingTo) {
@@ -210,7 +273,7 @@ export default {
       // is located here: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
       if (entries[0].isIntersecting && entries[0].intersectionRatio === 1) {
         const id = entries[0].target.id.replace('Intersect', '')
-        this.levelTab = this.progression.findIndex(i => i.id === id)
+        this.levelTab = this.progression.findIndex(i => i.cssId === id)
       }
     },
     toLevel (target) {
@@ -220,10 +283,12 @@ export default {
         this.goingTo = false
       }, 300)
     },
-    tableClick (row) {
-      if (this.$vuetify.breakpoint.mdAndUp) {
+    showFeature (row) {
+      if (row.features !== '-') {
         this.dialog = true
-        this.selectedLevel = row
+        this.selectedRow = row
+      } else {
+        this.selectedRow = null
       }
     }
   }
