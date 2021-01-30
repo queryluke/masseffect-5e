@@ -162,7 +162,7 @@ export default {
   props: {
     id: {
       type: String,
-      default: ''
+      required: true
     }
   },
   data () {

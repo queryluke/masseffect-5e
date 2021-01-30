@@ -30,6 +30,7 @@
             <me-progression-table :id="item.id" />
           </v-tab-item>
           <v-tab-item class="pa-3">
+            <me-class-attributes :id="item.id" />
           </v-tab-item>
           <v-tab-item class="pa-3">
           </v-tab-item>
