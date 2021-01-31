@@ -33,6 +33,18 @@
             <me-class-attributes :id="item.id" />
           </v-tab-item>
           <v-tab-item class="pa-3">
+            <div
+              v-for="subclass in subclasses"
+              :key="subclass.id"
+            >
+              <me-class-feature-list
+                :class-id="item.id"
+                :subclass-filter="subclass.id"
+                include-subclass
+                show-subclass-desc
+                show-subclass-header
+              />
+            </div>
           </v-tab-item>
           <v-tab-item class="pa-3">
           </v-tab-item>
@@ -104,6 +116,9 @@ export default {
     },
     item () {
       return this.$store.getters.getItem('classes', this.id)
+    },
+    subclasses () {
+      return this.$store.getters.getData('subclasses').filter(i => i.class === this.item.id)
     },
     tab: {
       get () {
