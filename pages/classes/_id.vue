@@ -53,6 +53,7 @@
             </div>
           </v-tab-item>
           <v-tab-item class="pa-3">
+            <me-power-list :items="filteredPowers" />
           </v-tab-item>
         </v-tabs-items>
       </v-col>
@@ -115,27 +116,14 @@ export default {
     tabsMode () {
       return this.$store.getters['config/classThemeTabsMode'](this.item.id)
     },
-    filteredSpells () {
-      const data = this.spells
-      const sortBy = this.sortBy.key
-      const order = this.order
-      data.sort(function (a, b) {
-        switch (sortBy) {
-          case 'type':
-            if (a.level === b.level) {
-              if (a.type === b.type) {
-                return (a.name > b.name ? 1 : -1) * order
-              } else {
-                return (a.type > b.type ? 1 : -1) * order
-              }
-            } else {
-              return (a.level > b.level ? 1 : -1) * order
-            }
-          default:
-            return (a[sortBy] === b[sortBy] ? 0 : a[sortBy] > b[sortBy] ? 1 : -1) * order
-        }
-      })
-      return data
+    filteredPowers () {
+      return this.$store.getters.getData('powers')
+        .filter(i => i.availableClasses.includes(this.item.id))
+        .sort((a, b) => {
+          return a.level === b.level
+            ? a.id > b.id ? 1 : -1
+            : a.level > b.level ? 1 : -1
+        })
     }
   },
   head () {
