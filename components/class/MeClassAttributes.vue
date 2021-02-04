@@ -90,7 +90,7 @@ export default {
       return this.$store.getters.getItem('classes', this.id)
     },
     hrColor () {
-      return this.$store.getters['config/classThemes'][this.item.id][this.$vuetify.theme.isDark ? 'dark' : 'light'].tabColor
+      return this.$store.getters['config/classThemeHrColor'](this.id)
     }
   }
 }

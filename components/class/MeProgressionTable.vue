@@ -29,11 +29,11 @@
       <template
         v-slot:item.level="{ item: levelItem }"
       >
-        <td
+        <span
           :id="levelItem.cssId"
         >
           {{ levelItem.level }}
-        </td>
+        </span>
       </template>
 
       <template
@@ -55,7 +55,7 @@
             v-if="featureItem.features !== '-'"
             :color="classFillDark"
             x-small
-            dark
+            :[textMode]="true"
             block
             @click="selectedRow = featureItem"
           >
@@ -102,11 +102,10 @@
     >
       <v-tabs
         v-model="levelTab"
-        dark
+        :[textMode]="true"
         :background-color="classFillDark"
-        color="grey grey-lighten-4"
-        slider-color="white"
-        active-class="white--text"
+        :slider-color="levelTabsSlider"
+        :active-class="levelTabsActiveClass"
         center-active
         show-arrows
         centered
@@ -129,7 +128,7 @@
         v-if="selectedRow"
       >
         <v-toolbar
-          dark
+          :[textMode]="true"
           :color="classFillDark"
         >
           <v-toolbar-title>
@@ -138,7 +137,7 @@
           <v-spacer></v-spacer>
           <v-btn
             icon
-            dark
+            :[textMode]="true"
             @click="dialog = false"
           >
             <v-icon>mdi-close</v-icon>
@@ -185,7 +184,7 @@ export default {
       return this.$store.getters.getData('character-progression').slice().sort((a, b) => a.level > b.level ? 1 : -1)
     },
     classFeatures () {
-      return this.$store.getters.getData('class-features')
+      return this.$store.getters.getData('class-features').filter(i => i.class === this.item.id)
     },
     subclasses () {
       return this.$store.getters.getData('subclasses').filter(i => i.class === this.item.id)
@@ -247,7 +246,16 @@ export default {
       return this.selectedRow ? this.selectedRow.id : false
     },
     classFillDark () {
-      return this.$store.getters['config/classThemes'][this.item.id].light.tabColor
+      return this.$store.getters['config/classThemeDark'](this.item.id)
+    },
+    textMode () {
+      return this.$store.getters['config/classThemeTextOnDark'](this.item.id)
+    },
+    levelTabsSlider () {
+      return this.$store.getters['config/isDarkOnlyClassTheme'](this.item.id) ? 'grey darken-3' : 'white'
+    },
+    levelTabsActiveClass () {
+      return this.$store.getters['config/isDarkOnlyClassTheme'](this.item.id) ? 'grey--text text--darken-3' : 'white--text'
     }
   },
   methods: {

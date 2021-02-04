@@ -20,7 +20,13 @@
     </v-row>
     <v-row>
       <v-col cols="12">
-        <v-tabs v-model="tab" class="hidden-sm-and-down mt-5" :color="tabColor">
+        <v-tabs
+          v-model="tab"
+          class="hidden-sm-and-down mt-5"
+          :[tabsMode]="true"
+          :color="tabColor"
+          :background-color="tabsColor"
+        >
           <v-tab v-for="tabItem in tabs" :key="tabItem">
             {{ tabItem }}
           </v-tab>
@@ -55,34 +61,6 @@
 </template>
 
 <script>
-/*
-v-layout(row).hidden-sm-and-down
-    v-avatar(size="128" tile)
-      img(:src="`/images/classes/${id}.svg`")
-    div.pl-5
-      v-layout(row)
-        v-flex(md8)
-          h2.display-3 {{ item.name }}
-        v-flex(md4).text-xs-right
-          v-menu
-            v-btn(slot="activator" v-bind:color="colors[item.id].primary" dark)
-              span {{ item.name }}
-              v-icon arrow_drop_down
-            v-list
-              v-list-tile(v-for="item in classes" v-bind:key="item" v-bind="{to: { name: 'phb-classes-id', params: { id: item }}}")
-                v-list-tile-title {{ item | capitalize }}
-      p {{ item.description}}
-      p(v-if="id === 'sentinel'")
-        em.
-          If you enjoyed the split casting ability of the pre-v0.9.0 sentinels, check out the
-          #[nuxt-link(to="/phb/appendix/alt-sentinel") Alternative Sentinel] progression.
-  v-card(:class="{ 'pt-4': $vuetify.breakpoint.smAndDown }")
-    class-tabs.mb-3
-      progression-table(:item="item" v-bind:colors="colors[item.id]" slot="progression_table_tab_content")
-      class-attributes(:item="item" v-bind:primaryColor="colors[item.id].primary" slot="attributes_tab_content")
-      subclass-info(:item="item" v-bind:primaryColor="colors[item.id].primary" slot="subclasses_tab_content")
-      spell-list(:items="filteredSpells" slot="spell_list_tab_content")
- */
 import { createNamespacedHelpers } from 'vuex'
 
 // State
@@ -99,7 +77,7 @@ export default {
     ])
     this.$store.commit('pageTitle', this.item.name)
     this.$store.commit('tabbedPage/SET_TABS', this.tabs)
-    this.$store.dispatch('tabbedPage/INIT_THEME', { theme: this.item.id, isDark: this.$vuetify.theme.isDark })
+    this.$store.dispatch('tabbedPage/INIT_THEME', this.item.id)
     this.loading = false
   },
   data () {
@@ -129,7 +107,13 @@ export default {
       }
     },
     tabColor () {
-      return this.$store.getters['tabbedPage/tabColor']
+      return this.$store.getters['config/classThemeTabColor'](this.item.id)
+    },
+    tabsColor () {
+      return this.$store.getters['config/classThemeTabsColor'](this.item.id)
+    },
+    tabsMode () {
+      return this.$store.getters['config/classThemeTabsMode'](this.item.id)
     },
     filteredSpells () {
       const data = this.spells

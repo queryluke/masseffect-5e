@@ -29,7 +29,7 @@ export default {
   },
   computed: {
     hrColor () {
-      return this.$store.getters['config/classThemes'][this.item.class][this.$vuetify.theme.isDark ? 'dark' : 'light'].tabColor
+      return this.$store.getters['config/classThemeHrColor'](this.item.class)
     }
   }
 }

@@ -33,20 +33,16 @@ export const mutations = {
 }
 
 export const actions = {
-  INIT_THEME ({ getters, commit, rootGetters, dispatch }, { theme = null, isDark = null }) {
-    let value = false
-    if (theme) {
-      value = rootGetters['config/classThemes'][theme]
-    }
-    commit('SET_THEME', value)
-    commit('SET_MOBILE_TAB_COLOR', getters.theme.dark.tabColor)
-    dispatch('SET_THEME_MODE', isDark)
+  INIT_THEME ({ getters, commit, rootGetters, dispatch }, klass) {
+    commit('SET_THEME', klass || null)
+    dispatch('SET_THEME_MODE')
   },
-  SET_THEME_MODE ({ getters, commit }, isDark) {
+  SET_THEME_MODE ({ getters, commit, rootGetters }) {
     let tabColor = 'primary'
     if (getters.theme) {
-      tabColor = getters.theme[isDark ? 'dark' : 'light'].tabColor
+      tabColor = rootGetters['config/classThemeLight'](getters.theme)
     }
     commit('SET_TAB_COLOR', tabColor)
+    commit('SET_MOBILE_TAB_COLOR', tabColor)
   }
 }
