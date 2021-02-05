@@ -112,20 +112,20 @@ export const state = () => ({
       dark: 'amber darken-1'
     },
     infiltrator: {
-      light: { tabColor: 'deep-orange darken-1', link: 'deep-orange--text text--darken-4' },
-      dark: { tabColor: 'deep-orange darken-1', link: 'deep-orange--text text--darken-4' }
+      dark: 'deep-orange darken-4',
+      light: 'deep-orange'
     },
     sentinel: {
-      light: { tabColor: 'green darken-2', link: 'teal--text text--darken-4' },
-      dark: { tabColor: 'green darken-2', link: 'teal--text text--darken-4' }
+      dark: 'brown',
+      light: 'brown lighten-2'
     },
     soldier: {
-      light: { tabColor: 'primary', link: '' },
-      dark: { tabColor: 'primary', link: '' }
+      dark: 'red darken-4',
+      light: 'red accent-2'
     },
     vanguard: {
-      light: { tabColor: 'indigo darken-4', link: 'indigo--text darken-4' },
-      dark: { tabColor: 'indigo darken-4', link: 'indigo--text darken-4' }
+      dark: 'pink darken-4',
+      light: 'pink lighten-2'
     }
   }
 })
