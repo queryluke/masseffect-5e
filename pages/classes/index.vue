@@ -2,7 +2,14 @@
   <v-container>
     <me-page-title />
     <v-row>
-      <v-col v-for="item in items" :key="item.id" sm="6" md="4" class="d-flex flex-column">
+      <v-col
+        v-for="item in items"
+        :key="item.id"
+        cols="12"
+        sm="6"
+        md="4"
+        class="d-flex flex-column"
+      >
         <v-card
           :to="{ name: 'classes-id', params: { id: item.id }}"
           hover
@@ -57,14 +64,11 @@ export default {
     }
   },
   methods: {
-    savingThrows (item) {
-      return item.savingThrows.map(st => this.$options.filters.capitalize(st)).join(' & ')
-    },
     stats (item) {
       return [
         { title: 'Hit Dice', value: `1d${item.hitDice}` },
         { title: 'Primary Ability', value: item.primaryAbility },
-        { title: 'Saves', value: this.savingThrows(item) }
+        { title: 'Saves', value: item.savingThrows.text }
       ]
     }
   },

@@ -105,28 +105,27 @@ export const state = () => ({
   ],
   classThemes: {
     adept: {
-      light: { tabColor: 'deep-purple darken-1', link: 'deep-purple--text' },
-      dark: { tabColor: 'deep-purple lighten-2', link: 'deep-purple--text text--lighten-2' }
+      dark: 'deep-purple darken-1',
+      light: 'deep-purple lighten-2'
     },
     engineer: {
-      light: { tabColor: 'amber darken-2', link: 'amber--text text--darken-4' },
-      dark: { tabColor: 'amber darken-2', link: 'amber--text text--darken-4' }
+      dark: 'amber darken-1'
     },
     infiltrator: {
-      light: { tabColor: 'deep-orange darken-1', link: 'deep-orange--text text--darken-4' },
-      dark: { tabColor: 'deep-orange darken-1', link: 'deep-orange--text text--darken-4' }
+      dark: 'deep-orange darken-4',
+      light: 'deep-orange'
     },
     sentinel: {
-      light: { tabColor: 'green darken-2', link: 'teal--text text--darken-4' },
-      dark: { tabColor: 'green darken-2', link: 'teal--text text--darken-4' }
+      dark: 'brown',
+      light: 'brown lighten-2'
     },
     soldier: {
-      light: { tabColor: 'primary', link: '' },
-      dark: { tabColor: 'primary', link: '' }
+      dark: 'red darken-4',
+      light: 'red accent-2'
     },
     vanguard: {
-      light: { tabColor: 'indigo darken-4', link: 'indigo--text darken-4' },
-      dark: { tabColor: 'indigo darken-4', link: 'indigo--text darken-4' }
+      dark: 'pink darken-4',
+      light: 'pink lighten-2'
     }
   }
 })
@@ -144,5 +143,41 @@ export const getters = {
   weaponHeaders: state => state.weaponHeaders,
   rarityOptions: state => state.rarityOptions,
   rarityTextColors: state => state.rarityTextColors,
-  classThemes: state => state.classThemes
+  classThemes: state => state.classThemes,
+  darkMode: (state, getters, rootState, rootGetters) => rootGetters['user/darkMode'],
+  isDarkOnlyClassTheme: state => klass => typeof state.classThemes[klass].light === 'undefined',
+  classThemeHrColor: (state, getters) => (klass) => {
+    if (getters.isDarkOnlyClassTheme(klass)) {
+      return state.classThemes[klass].dark
+    }
+    return state.classThemes[klass][getters.darkMode ? 'light' : 'dark']
+  },
+  classThemeTabColor: (state, getters) => (klass) => {
+    if (getters.isDarkOnlyClassTheme(klass)) {
+      return 'grey darken-3'
+    }
+    return state.classThemes[klass][getters.darkMode ? 'light' : 'dark']
+  },
+  classThemeTabsColor: (state, getters) => (klass) => {
+    if (getters.isDarkOnlyClassTheme(klass)) {
+      return state.classThemes[klass].dark
+    }
+    return undefined
+  },
+  classThemeDark: state => (klass) => {
+    return state.classThemes[klass].dark
+  },
+  classThemeLight: (state, getters) => (klass) => {
+    if (getters.isDarkOnlyClassTheme(klass)) {
+      return state.classThemes[klass].dark
+    }
+    return state.classThemes[klass].light
+  },
+  classThemeTextOnDark: (state, getters) => klass => getters.isDarkOnlyClassTheme(klass) ? 'light' : 'dark',
+  classThemeTabsMode: (state, getters) => (klass) => {
+    return getters.isDarkOnlyClassTheme(klass)
+      ? 'light'
+      : getters.darkMode
+        ? 'dark' : 'light'
+  }
 }
