@@ -62,10 +62,6 @@
 </template>
 
 <script>
-import { createNamespacedHelpers } from 'vuex'
-
-// State
-const { mapGetters } = createNamespacedHelpers('classPage')
 
 export default {
   async fetch () {
@@ -89,7 +85,6 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['colors', 'order', 'sortBy', 'classes']),
     items () {
       return this.$store.getters.getData('classes')
     },

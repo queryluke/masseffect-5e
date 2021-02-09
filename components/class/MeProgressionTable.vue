@@ -128,6 +128,7 @@
         v-if="selectedRow"
       >
         <v-toolbar
+          card
           :[textMode]="true"
           :color="classFillDark"
         >
