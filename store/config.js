@@ -56,9 +56,10 @@ export const state = () => ({
   rarityOptions: {
     name: 'Rarity',
     key: 'rarity',
-    options: ['Common', 'Uncommon', 'Rare', 'Spectre']
+    options: ['Varies', 'Common', 'Uncommon', 'Rare', 'Spectre']
   },
   rarityColors: {
+    Varies: 'grey darken-3',
     Common: 'grey darken-3',
     Uncommon: 'green darken-3',
     Rare: 'blue darken-2',
@@ -66,12 +67,14 @@ export const state = () => ({
   },
   rarityTextColors: {
     light: {
+      Varies: 'grey--text text--darken-4',
       Common: 'grey--text text--darken-4',
       Uncommon: 'green--text text--darken-3',
       Rare: 'blue--text text--darken-2',
       Spectre: 'purple--text'
     },
     dark: {
+      Varies: 'grey--text',
       Common: 'grey--text',
       Uncommon: 'green--text text--accent-4',
       Rare: 'blue--text',
