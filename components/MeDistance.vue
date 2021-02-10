@@ -33,6 +33,10 @@ export default {
       type: Boolean,
       default: false
     },
+    large: {
+      type: Boolean,
+      default: false
+    },
     numOnly: {
       type: Boolean,
       default: false
@@ -40,7 +44,11 @@ export default {
   },
   computed: {
     unit () {
-      return this.tiny ? 'in' : 'ft'
+      return this.tiny
+        ? 'in'
+        : this.large
+          ? 'mi'
+          : 'ft'
     }
   }
 }

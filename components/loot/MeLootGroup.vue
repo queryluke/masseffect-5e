@@ -1,6 +1,6 @@
 <template>
-  <v-card>
-    <v-card-title class="text-h6">
+  <v-card outlined class="ma-5">
+    <v-card-title class="text-h5 font-weight-thin">
       {{ title }}
     </v-card-title>
     <v-card-text>

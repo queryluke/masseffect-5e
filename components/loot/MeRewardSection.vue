@@ -1,11 +1,11 @@
 <template>
   <div>
-    <p class="text-subtitle-2">
+    <div class="text-subtitle-2">
       {{ title }}
-    </p>
-    <p>
+    </div>
+    <div>
       {{ rewardString }}
-    </p>
+    </div>
   </div>
 </template>
 
