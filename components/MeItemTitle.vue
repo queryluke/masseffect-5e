@@ -29,12 +29,6 @@
 export default {
   name: 'MeItemTitle',
   props: {
-    item: {
-      type: Object,
-      default: () => {
-        return {}
-      }
-    },
     title: {
       type: String,
       default: ''

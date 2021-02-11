@@ -60,9 +60,9 @@ export default {
         missions: 'Missions',
         equipment: 'Equipment',
         finances: 'Finances',
-        vehicles: 'Vehicles',
+        vehicle: 'Vehicles',
         combat: 'Combat',
-        spellcasting: 'Spellcasting',
+        powercasting: 'Powercasting',
         bestiary: 'Bestiary'
       },
       rules: []

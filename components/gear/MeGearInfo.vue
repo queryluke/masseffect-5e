@@ -1,6 +1,6 @@
 <template>
   <div>
-    <me-gear-title v-if="title" :title="item.name" />
+    <me-gear-title v-if="title" :item="item" />
     <v-row>
       <v-col cols="12" :md="item.image ? 8 : 12" class="text-body-2">
         <me-html :content="item.html" />

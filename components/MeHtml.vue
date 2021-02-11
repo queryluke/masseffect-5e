@@ -18,6 +18,18 @@ export default {
       templateRender: null
     }
   },
+  computed: {
+    loading () {
+      return this.$store.getters.loading
+    }
+  },
+  watch: {
+    loading (newVal) {
+      if (!newVal) {
+        this.generateTemplate()
+      }
+    }
+  },
   created () {
     this.generateTemplate()
   },

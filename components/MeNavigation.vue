@@ -24,7 +24,7 @@
         <v-subheader v-if="page.header" :key="index">
           {{ page.header }}
         </v-subheader>
-        <v-list-group v-if="page.items" :key="index" :prepend-icon="page.icon" :group="groupNamespace(page)">
+        <v-list-group v-if="page.items" :key="index" :prepend-icon="page.icon" :group="group(page.items)" no-action>
           <template v-slot:activator>
             <v-list-item-content>
               <v-list-item-title>{{ page.name }}</v-list-item-title>
@@ -100,7 +100,7 @@ export default {
             { name: 'Finances', icon: 'money', to: '/manual/finances' },
             { name: 'Vehicles', icon: '', to: '/manual/vehicles' },
             { name: 'Combat', icon: '', to: '/manual/combat' },
-            { name: 'Spellcasting', icon: '', to: '/manual/spellcasting' },
+            { name: 'Powercasting', icon: '', to: '/manual/powercasting' },
             { name: 'About the Bestiary', icon: '', to: '/manual/bestiary' }
           ]
         },
@@ -138,9 +138,9 @@ export default {
         {
           name: 'Appendix',
           icon: 'mdi-view-split-vertical',
-          group: 'appendix',
           items: [
             { to: '/appendix/conditions', name: 'Conditions' },
+            { to: '/appendix/random-height-weight', name: 'Random Height & Weight' },
             { to: '/appendix/skills', name: 'Skills' },
             { to: '/appendix/tool-profs', name: 'Tool Proficiencies' },
             { to: '/appendix/weapon-properties', name: 'Weapon Properties' }
@@ -218,11 +218,8 @@ export default {
       this.$store.dispatch('user/TOGGLE_DARK_MODE')
       this.$vuetify.theme.dark = this.$store.getters['user/darkMode']
     },
-    groupNamespace (group) {
-      return (group.group || this.unstructuredRegexpRouteMatch(group.items))
-    },
-    unstructuredRegexpRouteMatch (items) {
-      return `(${items.map(i => i.to.replace(/-/g, '').replace(/\//g, '')).join('|')})`
+    group (items) {
+      return `(${items.map(i => `^${i.to}$`).join('|')})`
     }
   }
 }
