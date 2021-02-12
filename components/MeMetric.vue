@@ -29,6 +29,10 @@ export default {
     numOnly: {
       type: Boolean,
       default: false
+    },
+    textIf: {
+      type: [String, Boolean],
+      default: false
     }
   },
   data () {
@@ -41,7 +45,15 @@ export default {
           convertsTo: 'm',
           conversion: (value) => {
             const converted = (parseInt(value, 10) / 5) * 2
-            return converted > 20 ? (Math.round(converted / 10) * 10) : converted
+            return converted > 20
+              ? (Math.round(converted / 10) * 10)
+              : converted < 2 && converted !== 0
+                ? converted === 0.4
+                  ? 0.5
+                  : converted === 0.8
+                    ? 1
+                    : 1.5
+                : converted
           }
         },
         {
@@ -133,6 +145,14 @@ export default {
       return searchIn.find(i => i.abbr === this.unit)
     },
     displayText () {
+      if (this.textIf) {
+        if (this.imperial && this.textIf === 'imperial') {
+          return this.override
+        }
+        if (this.textIf === 'metric') {
+          return this.override
+        }
+      }
       let value = ''
       let hyphen = ''
       let unitText = ''
@@ -154,6 +174,9 @@ export default {
       text = this.override ? this.override.replace('{metric}', unitText) : unitText
       hyphen = this.adj ? '-'
         : this.abbr ? '' : ' '
+      if (value === 0) {
+        value = ''
+      }
       return `${value}${hyphen}${text}`
     }
   }
