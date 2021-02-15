@@ -41,16 +41,16 @@ export const Hp = {
           return s.dmgMin <= finalDpr && s.dmgMax >= finalDpr
         })
       }
-      const finalAtk = this.adjustments.hit + this.cr.profBonus
+      const finalAtk = this.adjustments.hit + this.options.cr.profBonus
       let hitDiff = (finalAtk - dprCr.attackBonus) / 2
       hitDiff = hitDiff >= 0 ? Math.floor(hitDiff) : Math.ceil(hitDiff)
       const offensiveCrNorm = dprCr.normalized + hitDiff
       // **********************************
       // What is the target defensive CR, based on offensive CR?
       // ***
-      let targetDefensiveCrNorm = this.cr.normalized
+      let targetDefensiveCrNorm = this.options.cr.normalized
       if (offensiveCrNorm !== targetDefensiveCrNorm) {
-        targetDefensiveCrNorm = (this.cr.normalized * 2) - offensiveCrNorm
+        targetDefensiveCrNorm = (this.options.cr.normalized * 2) - offensiveCrNorm
       }
       console.log(targetDefensiveCrNorm)
       const targetDefensiveCr = this.getCrByNormalized(targetDefensiveCrNorm)
@@ -72,7 +72,7 @@ export const Hp = {
       // Multipliers
       let multiplicativeMod = 1
       if (this.grunt.damageResistances.length > 3 || this.grunt.damageImmunities.length > 1) {
-        const crInt = this.crToInt(this.cr.cr)
+        const crInt = this.crToInt(this.options.cr.cr)
         if (crInt < 5) {
           multiplicativeMod = 2
         } else if (crInt < 11) {
@@ -82,11 +82,11 @@ export const Hp = {
         }
       }
       // Die Type (size)
-      const dieType = this.race.id === 'volus' ? 6 : 8
+      const dieType = this.options.species.id === 'volus' ? 6 : 8
       const averageRoll = (dieType + 1) / 2
       // Con Modifier
       let conMod = this.abilityScoreBonus(this.grunt.abilityScores.con)
-      if (this.race.id === 'turian') {
+      if (this.options.species.id === 'turian') {
         conMod += 1
       }
       // Calculation

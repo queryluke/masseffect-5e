@@ -52,7 +52,6 @@ export const mutations = {
 
 export const actions = {
   async FETCH_LOTS ({ getters, commit, dispatch }, endpoints) {
-    commit('isLoading')
     return await Promise.all(endpoints.map(i => dispatch('FETCH_DATA', i)))
   },
   async FETCH_DATA ({ getters, commit }, endpoint) {
@@ -64,7 +63,6 @@ export const actions = {
     return data
   },
   async FETCH_ITEM ({ getters, dispatch, commit }, { endpoint, id }) {
-    commit('isLoading')
     let data = getters.getData(endpoint)
     if (!data) {
       data = await dispatch('FETCH_DATA', endpoint)

@@ -17,13 +17,17 @@ export const Spellcasting = {
   },
   methods: {
     setGruntSpellcasting () {
-      if (this.sc.id === 'soldier' || this.cr.spellcastingLevel === false) {
+      if (this.options.klass.id === 'soldier' || this.options.cr.spellcastingLevel === false) {
         this.grunt.spellcasting = false
         return
       }
-      const spellcastingLevel = ['engineer', 'adept'].includes(this.sc.id) ? this.cr.spellcastingLevel : Math.ceil(this.cr.spellcastingLevel / 2)
-      const adeptProgression = this.adept.progression.find(p => p.level === spellcastingLevel)
-      const spellSlots = adeptProgression.spellSlots
+      const spellcastingLevelIndex = ['engineer', 'adept'].includes(this.options.klass.id) ? this.options.cr.spellcastingLevel : Math.ceil(this.options.cr.spellcastingLevel / 2) - 1
+      const spellSlots = {}
+      for (const col of this.adept.progressionColumns.filter(i => i.ps)) {
+        if (col.values[spellcastingLevelIndex] > 0) {
+          spellSlots[col.name[0]] = col.values[spellcastingLevelIndex]
+        }
+      }
       let maxLevelSpell = 1
       if (spellSlots['4']) {
         maxLevelSpell = 4
@@ -32,29 +36,31 @@ export const Spellcasting = {
       } else if (spellSlots['2']) {
         maxLevelSpell = 2
       }
-      const availableSpells = this.spells.filter(s => s.availableClasses.includes(this.sc.id) && s.level <= maxLevelSpell && s.level > 0)
+      const availableSpells = this.spells.filter(s => s.availableClasses.includes(this.options.klass.id) && s.level <= maxLevelSpell && s.level > 0)
       const knownSpells = []
-      for (let i = 0; i <= (adeptProgression.spellsKnown / 2); i++) {
+      const spellsKnown = this.adept.progressionColumns.find(i => i.key === 'powersKnown')[spellcastingLevelIndex]
+      for (let i = 0; i <= (spellsKnown / 2); i++) {
         const spell = this.randomValue(availableSpells)
         knownSpells.push(spell.id)
         availableSpells.splice(availableSpells.indexOf(spell), 1)
       }
-      if (['sentinel', 'vanguard', 'adept'].includes(this.sc.id)) {
-        const knownCantrips = this.spells.filter(s => s.availableClasses.includes(this.sc.id) && s.level === 0)
-        for (let i = 0; i <= adeptProgression.cantrips; i++) {
+      if (['sentinel', 'vanguard', 'adept'].includes(this.options.klass.id)) {
+        const knownCantrips = this.spells.filter(s => s.availableClasses.includes(this.options.klass.id) && s.level === 0)
+        const cantrips = this.adept.progressionColumns.find(i => i.key === 'cantrips')[spellcastingLevelIndex]
+        for (let i = 0; i <= cantrips; i++) {
           const cantrip = this.randomValue(knownCantrips)
           knownSpells.push(cantrip.id)
         }
       }
-      const spellcastingMod = this.race.id === 'asari'
+      const spellcastingMod = this.options.species.id === 'asari'
         ? 'cha'
-        : ['engineer', 'infiltrator'].includes(this.sc.id)
+        : ['engineer', 'infiltrator'].includes(this.options.klass.id)
           ? 'int'
-          : ['adept', 'vanguard'].includes(this.sc.id)
+          : ['adept', 'vanguard'].includes(this.options.klass.id)
             ? 'wis'
             : 'cha'
       this.grunt.spellcasting = {
-        level: spellcastingLevel,
+        level: spellcastingLevelIndex + 1,
         mod: spellcastingMod,
         spellList: [...new Set(knownSpells)]
       }

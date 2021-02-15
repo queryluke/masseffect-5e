@@ -14,7 +14,7 @@ export const Actions = {
       this.grunt.actions = []
       this.grunt.legendaryActions = []
       const attackOptions = this.getAttackOptions()
-      const filteredAttackOptions = attackOptions.filter(ao => ao.dpr >= this.cr.dmgMin && ao.dpr <= this.cr.dmgMax)
+      const filteredAttackOptions = attackOptions.filter(ao => ao.dpr >= this.options.cr.dmgMin && ao.dpr <= this.options.cr.dmgMax)
       const attack = filteredAttackOptions.length > 0 ? this.randomValue(filteredAttackOptions) : attackOptions.pop()
       this.dpr.weapon = attack.dpr
       // Add multi-attack
@@ -61,14 +61,14 @@ export const Actions = {
         this.grunt.legendaryActions.push({
           name: 'Attack',
           cost: 1,
-          description: `The ${this.sc.id} makes one weapon attack with its${text}.`
+          description: `The ${this.options.klass.id} makes one weapon attack with its${text}.`
         })
         // grenade
         if (hasGrenades) {
           this.grunt.legendaryActions.push({
             name: 'Use grenade',
             cost: 2,
-            description: `The ${this.sc.id} uses one grenade.`
+            description: `The ${this.options.klass.id} uses one grenade.`
           })
         }
         // spellcasting
@@ -76,7 +76,7 @@ export const Actions = {
           this.grunt.legendaryActions.push({
             name: 'Cast a spell',
             cost: 3,
-            description: `The ${this.sc.id} casts a spell.`
+            description: `The ${this.options.klass.id} casts a spell.`
           })
         }
         // Move
@@ -84,7 +84,7 @@ export const Actions = {
           this.grunt.legendaryActions.unshift({
             name: 'Move',
             cost: 1,
-            description: `The ${this.sc.id} moves up to its speed.`
+            description: `The ${this.options.klass.id} moves up to its speed.`
           })
         }
         // Search
@@ -92,7 +92,7 @@ export const Actions = {
           this.grunt.legendaryActions.unshift({
             name: 'Search',
             cost: 1,
-            description: `The ${this.sc.id} takes the Search action.`
+            description: `The ${this.options.klass.id} takes the Search action.`
           })
         }
       }
@@ -107,7 +107,7 @@ export const Actions = {
           weaponAction = {
             type: 'standard',
             name: weapon.name,
-            description: `Target a creature within ${weapon.range}. It makes a DC ${8 + weapon.attack.bonus + this.cr.profBonus} Dexterity saving throw, taking ${this.averageFromDie(weapon.damage)} (${weapon.damage}) thunder damage on a failed save, or have as much damage on a successful one.`
+            description: `Target a creature within ${weapon.range}. It makes a DC ${8 + weapon.attack.bonus + this.options.cr.profBonus} Dexterity saving throw, taking ${this.averageFromDie(weapon.damage)} (${weapon.damage}) thunder damage on a failed save, or have as much damage on a successful one.`
           }
           break
         case 'venom_shotgun':
@@ -230,7 +230,7 @@ export const Actions = {
       return weapon
     },
     generateMultiattackDescription (attack) {
-      const name = this.sc.id
+      const name = this.options.klass.id
       const words = ['', 'one', 'two', 'three', 'four']
       const plural = attack.numAttacks > 1 ? 's' : ''
       let text = `The ${name} makes`

@@ -24,7 +24,7 @@ export const Rivs = {
       this.grunt.damageImmunities = this.applyRandomRiv(this.immunities[this.crMetaLevel], damageTypes)
       this.grunt.damageResistances = this.applyRandomRiv(this.resistances[this.crMetaLevel], damageTypes)
       this.grunt.damageVulnerabilities = this.applyRandomRiv(this.vulnerabilities, damageTypes)
-      switch (this.race.id) {
+      switch (this.options.species.id) {
         case 'geth':
           this.grunt.damageImmunities.push('poison', 'psychic')
           this.grunt.conditionImmunities.push('poisoned')

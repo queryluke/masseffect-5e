@@ -19,7 +19,7 @@ export const InnateSpellcasting = {
   },
   methods: {
     setGruntInnateSpellcasting () {
-      switch (this.race.id) {
+      switch (this.options.species.id) {
         case 'angara':
           this.grunt.innateSpellcasting = {
             level: 'innate',

@@ -37,10 +37,17 @@ export default {
       return this.castable.filter(s => parseInt(s.level, 10) === 0)
     },
     spellSlots () {
-      return this.adept.progression.find(p => parseInt(p.level, 10) === parseInt(this.spellcasting.level, 10)).spellSlots
+      const spellcastingLevelIndex = parseInt(this.powercasting.level, 10) - 1
+      const spellSlots = {}
+      for (const col of this.adept.progressionColumns.filter(i => i.ps)) {
+        if (col.values[spellcastingLevelIndex] > 0) {
+          spellSlots[col.name[0]] = col.values[spellcastingLevelIndex]
+        }
+      }
+      return spellSlots
     },
     castable () {
-      return this.spells.filter(s => this.spellcasting.spellList.includes(s.id))
+      return this.spells.filter(s => this.powercasting.powerList.includes(s.id))
     }
   },
   async created () {

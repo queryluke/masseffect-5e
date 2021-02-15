@@ -47,7 +47,7 @@
 
     <template v-slot:append>
       <v-list dense>
-        <v-subheader>Settings</v-subheader>
+        <v-subheader>Settings {{ $store.getters.loading }}</v-subheader>
         <v-list-item>
           <v-list-item-content>
             <v-list-item-title>Mode: {{ darkMode ? 'Dark' : 'Light' }}</v-list-item-title>

@@ -1,16 +1,16 @@
 <template>
-  <v-container>
+  <me-container>
     <me-page-title />
     <p>
-      This generator creates disposable NPCs based on the Mass Effect archetypes. The #[em Monster Manual] outlines adjusting
+      This generator creates disposable NPCs based on the Mass Effect archetypes. The Monster Manual outlines adjusting
       the provided NPC Archetypes with various races, weapons, and abilities, but this can be rather time consuming.
     </p>
     <p>
       This generator enables you to quickly create random NPCs with a given Challenge Rating (CR). CRs only go up to 12
       because higher CRs represent much more powerful monsters. As a point of reference, a Banshee has a CR of 13, so
-      a grunt with a CR of 12 would represent a #[em very] experienced and deadly NPC.
+      a grunt with a CR of 12 would represent a   very experienced and deadly NPC.
     </p>
-    <v-card v-if="!loading" class="mt-8">
+    <v-card class="mt-8">
       <v-card-text>
         <v-row>
           <v-col sm="4">
@@ -73,24 +73,27 @@
         offset-sm="1"
         offset-lg="2"
       >
-        <v-card v-if="!loading">
+        {{ generated }}
+        {{ $store.getters.loading }}
+        <v-card v-if="generated">
           <v-card-text>
-            <me-stat-block :stats="npc" />
+            <me-stat-block :stats="grunt" />
           </v-card-text>
           <v-card-actions>
-            <me-bookmark :item="npc" type="npc" />
+            <me-bookmark :item="grunt" type="npc" />
           </v-card-actions>
         </v-card>
       </v-col>
     </v-row>
-  </v-container>
+  </me-container>
 </template>
 
 <script>
 import { RandomValue } from '~/mixins/randomValue'
+import { GruntGenerator } from '~/mixins/grunt_generator'
 
 export default {
-  mixins: [RandomValue],
+  mixins: [RandomValue, GruntGenerator],
   async fetch () {
     this.$store.commit('pageTitle', 'NPC Generator')
     await Promise.all([
@@ -102,11 +105,10 @@ export default {
       this.$store.dispatch('FETCH_DATA', 'gear'),
       this.$store.dispatch('FETCH_DATA', 'skills')
     ])
-    this.loading = false
+    this.$store.commit('loaded')
   },
   data () {
     return {
-      loading: true,
       selectedCr: null,
       selectedSp: null,
       selectedCl: null,
@@ -121,11 +123,20 @@ export default {
     crs () {
       return this.$store.getters.getData('stats-by-cr')
     },
+    classes () {
+      return this.$store.getters.getData('classes')
+    },
     species () {
       return this.$store.getters.getData('species')
     },
-    classes () {
-      return this.$store.getters.getData('classes')
+    spells () {
+      return this.$store.getters.getData('powers')
+    },
+    weapons () {
+      return this.$store.getters.getData('weapons')
+    },
+    grenades () {
+      return this.$store.getters.getData('gear').filter(g => g.type === 'Grenade')
     }
   },
   methods: {
@@ -135,6 +146,7 @@ export default {
         klass: this.selectedCl === null ? this.randomValue(this.classes) : this.selectedCl,
         species: this.selectedSp === null ? this.randomValue(this.species) : this.selectedSp
       }
+      this.generateGrunt()
     }
   },
   head () {
