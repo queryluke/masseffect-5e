@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <me-list-page
-      :loading="loading"
+      :pending="$fetchState.pending"
       :title="pageTitle"
       :rule-link="ruleLink"
       :filters="filters"
@@ -9,7 +9,7 @@
       :items="items"
       default-sort="name"
     >
-      <template v-if="!loading" v-slot:list="{ displayItems }">
+      <template v-slot:list="{ displayItems }">
         <me-power-list :items="displayItems" />
       </template>
     </me-list-page>
@@ -21,12 +21,10 @@ export default {
   async fetch () {
     this.$store.commit('pageTitle', 'Powers')
     this.items = await this.$store.dispatch('FETCH_DATA', 'powers')
-    this.loading = false
   },
   data () {
     return {
       items: [],
-      loading: true,
       ruleLink: {
         to: '/manual/spellcasting',
         name: 'Spellcasting Rules'

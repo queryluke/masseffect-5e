@@ -15,27 +15,29 @@
       You must meet any prerequisite specified in a feat to take that feat. If you ever lose a feat’s prerequisite,
       you can’t use that feat until you regain the prerequisite.
     </p>
-    <me-expansion-list
-      :items="items"
-      :headers="headers"
-    >
-      <template v-slot:header.indicator="{ item }">
-        <v-avatar :class="[item.new ? 'deep-purple' : 'deep-orange']" size="30px" class="white--text text-caption my-n2">
-          {{ item.new ? 'New' : 'PHB' }}
-        </v-avatar>
-      </template>
-      <template v-slot:body="{ item }">
-        <p v-if="item.prerequisite">
-          <strong>Prerequisite:</strong>
-          <em class="pl-1">
-            {{ item.prerequisite }}
-          </em>
-        </p>
-        <div class="text-body-2">
-          <me-html :content="item.html" />
-        </div>
-      </template>
-    </me-expansion-list>
+    <me-skeleton-loader :pending="$fetchState.pending" type="expansionList">
+      <me-expansion-list
+        :items="items"
+        :headers="headers"
+      >
+        <template v-slot:header.indicator="{ item }">
+          <v-avatar :class="[item.new ? 'deep-purple' : 'deep-orange']" size="30px" class="white--text text-caption my-n2">
+            {{ item.new ? 'New' : 'PHB' }}
+          </v-avatar>
+        </template>
+        <template v-slot:body="{ item }">
+          <p v-if="item.prerequisite">
+            <strong>Prerequisite:</strong>
+            <em class="pl-1">
+              {{ item.prerequisite }}
+            </em>
+          </p>
+          <div class="text-body-2">
+            <me-html :content="item.html" />
+          </div>
+        </template>
+      </me-expansion-list>
+    </me-skeleton-loader>
   </v-container>
 </template>
 

@@ -5,10 +5,12 @@
       The sample backgrounds presented here provide both concrete benefits (features, proficiencies, and languages) and
       roleplaying suggestions.
     </p>
-    <me-expansion-list
-      :items="items"
-      :headers="[{ label: 'Name', key: 'name' }]"
-    />
+    <me-skeleton-loader :pending="$fetchState.pending" type="expansionList">
+      <me-expansion-list
+        :items="items"
+        :headers="[{ label: 'Name', key: 'name' }]"
+      />
+    </me-skeleton-loader>
   </v-container>
 </template>
 

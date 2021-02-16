@@ -1,13 +1,24 @@
-<template lang="pug">
-  v-container
-    h2.display-1.hidden-sm-and-down Vehicles
-    div.text-md-right
-      v-btn(to="/phb/rules/vehicles" nuxt outlined color="primary") Vehicle Rules
-    p.headline Transports
-      me-vehicle-list(v-if="!loading" :items="transports")
-    p.headline Starships
-      me-vehicle-list(v-if="!loading" :items="starships")
-
+<template>
+  <v-container>
+    <me-page-title />
+    <div class="text-md-right">
+      <v-btn to="/manual/vehicles" nuxt outlined color="primary">
+        Vehicle Rules
+      </v-btn>
+    </div>
+    <p class="text-subtitle-1">
+      Transports
+    </p>
+    <me-skeleton-loader :pending="$fetchState.pending" type="expansionList">
+      <me-vehicle-list :items="transports" />
+    </me-skeleton-loader>
+    <p class="text-subtitle-1">
+      Starships
+    </p>
+    <me-skeleton-loader :pending="$fetchState.pending" type="expansionList">
+      <me-vehicle-list :items="starships" />
+    </me-skeleton-loader>
+  </v-container>
 </template>
 
 <script>

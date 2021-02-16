@@ -3,28 +3,9 @@
     <me-page-title />
     <v-row>
       <v-col v-for="item in items" :key="item.id" sm="6" md="4" class="d-flex flex-column">
-        <v-card
-          :to="{ name: 'species-id', params: { id: item.id } }"
-          nuxt
-          hover
-          class="flex-grow-1"
-        >
-          <v-img :src="item.img" height="200" />
-          <v-card-title>
-            {{ item.name }}
-          </v-card-title>
-          <v-card-text>
-            <p>
-              {{ item.snippet }}
-            </p>
-            <p class="text-subtitle-1 mb-0">
-              Racial Traits
-            </p>
-            <p>
-              <me-species-ability-score-increase-summary :data="item.abilityScoreIncrease" />, {{ item.traits.map(i => i.name).join(', ') }}
-            </p>
-          </v-card-text>
-        </v-card>
+        <me-skeleton-loader :pending="$fetchState.pending" type="card">
+          <me-species-card :item="item" />
+        </me-skeleton-loader>
       </v-col>
     </v-row>
   </v-container>
@@ -39,7 +20,7 @@ export default {
   },
   data () {
     return {
-      items: []
+      items: [...Array(9).keys()]
     }
   },
   head () {
