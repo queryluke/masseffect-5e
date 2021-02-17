@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container v-if="!$fetchState.pending">
     <me-page-title />
     <p>
       The Loot Generator uses random rolls on a set of loot tables to decide loot rewards. Our loot tables aren't as diverse as the ones
@@ -150,18 +150,11 @@ import { RandomValue } from '~/mixins/randomValue'
 export default {
   mixins: [RandomValue],
   async fetch () {
-    await Promise.all([
-      this.$store.dispatch('FETCH_DATA', 'gear'),
-      this.$store.dispatch('FETCH_DATA', 'weapons'),
-      this.$store.dispatch('FETCH_DATA', 'armor'),
-      this.$store.dispatch('FETCH_DATA', 'mods')
-    ])
+    await this.$store.dispatch('FETCH_LOTS', ['gear', 'weapons', 'armor', 'mods'])
     this.$store.commit('pageTitle', 'Loot Generator')
-    this.loading = false
   },
   data () {
     return {
-      loading: true,
       lootTableDialog: false,
       loots: [],
       workingLoot: {},

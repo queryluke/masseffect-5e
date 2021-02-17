@@ -2,7 +2,7 @@ export const Speed = {
   methods: {
     setGruntSpeed () {
       let range = 10
-      switch (this.race.id) {
+      switch (this.options.species.id) {
         case 'volus': {
           range = 8
           break

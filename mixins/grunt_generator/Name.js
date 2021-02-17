@@ -1,7 +1,7 @@
 export const Name = {
   methods: {
     setGruntName () {
-      this.grunt.name = `${this.race.name} ${this.sc.name}`
+      this.grunt.name = `${this.options.species.name} ${this.options.klass.name}`
     }
   }
 }

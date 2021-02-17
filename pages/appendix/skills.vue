@@ -19,20 +19,22 @@
         </p>
       </v-col>
     </v-row>
-    <v-list>
-      <v-list-item
-        v-for="item in items"
-        :key="item.name"
-      >
-        <v-list-item-content>
-          <v-list-item-title>{{ item.name }}</v-list-item-title>
-          <v-list-item-subtitle>{{ item.link }}</v-list-item-subtitle>
-          <div class="text-body-2 font-weight-light">
-            {{ item.description }}
-          </div>
-        </v-list-item-content>
-      </v-list-item>
-    </v-list>
+    <me-skeleton-loader :pending="$fetchState.pending" type="articleList">
+      <v-list>
+        <v-list-item
+          v-for="item in items"
+          :key="item.name"
+        >
+          <v-list-item-content>
+            <v-list-item-title>{{ item.name }}</v-list-item-title>
+            <v-list-item-subtitle>{{ item.link }}</v-list-item-subtitle>
+            <div class="text-body-2 font-weight-light">
+              {{ item.description }}
+            </div>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </me-skeleton-loader>
   </v-container>
 </template>
 

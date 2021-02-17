@@ -1,6 +1,6 @@
 <template>
-  <v-container>
-    <v-row v-if="!loading">
+  <v-container v-if="!$fetchState.pending">
+    <v-row>
       <v-col md="9">
         <me-page-title />
         <v-tabs v-model="tab" class="hidden-sm-and-down mt-5">
@@ -87,13 +87,11 @@ export default {
     this.$store.commit('pageTitle', this.item.name)
     this.$store.commit('tabbedPage/SET_TABS', this.tabs)
     this.$store.dispatch('tabbedPage/INIT_THEME', { theme: false, isDark: this.$vuetify.theme.isDark })
-    this.loading = false
   },
   data () {
     return {
       items: [],
-      id: this.$route.params.id,
-      loading: true
+      id: this.$route.params.id
     }
   },
   computed: {

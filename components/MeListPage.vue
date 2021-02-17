@@ -71,7 +71,9 @@
     </div>
 
     <!-- list -->
-    <slot name="list" :display-items="sortedItems" />
+    <me-skeleton-loader :pending="pending" type="listPage">
+      <slot name="list" :display-items="sortedItems" />
+    </me-skeleton-loader>
 
     <!-- mobile filter dialog -->
     <me-mobile-filters :title="`Filter ${title}`">
@@ -124,6 +126,10 @@
 export default {
   name: 'MeListPage',
   props: {
+    pending: {
+      type: Boolean,
+      default: true
+    },
     items: {
       type: Array,
       required: true

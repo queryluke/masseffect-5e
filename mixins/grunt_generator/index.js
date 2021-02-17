@@ -1,4 +1,3 @@
-import { createNamespacedHelpers } from 'vuex'
 import { AbilityScoreBonus } from '../abilityScoreBonus'
 import { AverageFromDie } from '../averageFromDie'
 import { RandomValue } from '../randomValue'
@@ -20,36 +19,10 @@ import { Spellcasting } from './Spellcasting'
 import { Speed } from './Speed'
 import { Type } from './Type'
 
-// options
-const { mapGetters } = createNamespacedHelpers('gruntGenerator')
-
 export const GruntGenerator = {
-  computed: {
-    ...mapGetters({ selectedCr: 'cr' }),
-    ...mapGetters({ selectedRace: 'race' }),
-    ...mapGetters({ selectedClass: 'sc' }),
-    crs () {
-      return this.$store.getters.getData('stats-by-cr')
-    },
-    classes () {
-      return this.$store.getters.getData('classes')
-    },
-    races () {
-      return this.$store.getters.getData('species')
-    },
-    spells () {
-      return this.$store.getters.getData('powers')
-    },
-    weapons () {
-      return this.$store.getters.getData('weapons')
-    },
-    grenades () {
-      return this.$store.getters.getData('gear').filter(g => g.type === 'Grenade')
-    }
-  },
   data () {
     return {
-      grunt: {},
+      npc: {},
       crMetaLevel: 0,
       dpr: {
         weapon: 0,
@@ -90,10 +63,6 @@ export const GruntGenerator = {
   ],
   methods: {
     generateGrunt () {
-      this.cr = this.selectedCr && this.selectedCr.cr ? this.selectedCr : this.randomValue(this.crs)
-      this.race = this.selectedRace && this.selectedRace.id ? this.selectedRace : this.randomValue(this.races)
-      this.sc = this.selectedClass && this.selectedClass.id ? this.selectedClass : this.randomValue(this.classes)
-
       this.reset()
       this.setGruntAbilityScores()
       this.setGruntName()
@@ -112,19 +81,20 @@ export const GruntGenerator = {
       this.setGruntAc()
       this.setGruntHp()
       this.grunt.lairActions = []
-      this.grunt.profBonus = this.cr.profBonus
-      this.grunt.size = this.race.id === 'volus' ? 'Small' : 'Medium'
-      this.grunt.cr = this.cr.cr
+      this.grunt.profBonus = this.options.cr.profBonus
+      this.grunt.size = this.options.species.id === 'volus' ? 'Small' : 'Medium'
+      this.grunt.cr = this.options.cr.cr
       this.grunt.unit = ''
       this.generated = true
+      console.log(this.grunt)
       // console.log([this.dpr, this.adjustments])
     },
     reset () {
       this.generated = false
       this.grunt = {}
       this.crMetaLevel = 0
-      if (this.cr) {
-        this.crMetaLevel = parseFloat(this.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(this.cr.cr) / 4)
+      if (this.options.cr) {
+        this.crMetaLevel = parseFloat(this.options.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(this.options.cr.cr) / 4)
       }
       this.dpr = {
         weapon: 0,

@@ -8,8 +8,8 @@ export const Skills = {
   methods: {
     setGruntSkills () {
       this.grunt.skills = []
-      const classSkills = this.sc.skillProficiencies.map((skill) => {
-        return skill.toLowerCase().trim().replace(/ /g, '_')
+      const classSkills = this.options.klass.skillProfs.options.items.map((skill) => {
+        return skill.toLowerCase().trim().replace('-', '_')
       })
       const skillOptions = this.skills.filter((skill) => {
         return classSkills.includes(skill.id)
@@ -21,7 +21,7 @@ export const Skills = {
         this.grunt.skills.push(skill.id)
       }
 
-      if (['drell', 'unshackled_ai', 'geth'].includes(this.race.id)) {
+      if (['drell', 'geth'].includes(this.options.species.id)) {
         this.grunt.skills.push('perception')
       }
       this.grunt.skills = [...new Set(this.grunt.skills)]

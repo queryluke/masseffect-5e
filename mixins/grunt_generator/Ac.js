@@ -4,14 +4,14 @@ export const Ac = {
       this.grunt.ac = 10
       const acModArray = [-2, -1, -1, 0, 1, 1, 2]
 
-      if (this.race.id === 'geth') {
-        this.grunt.ac = 13 + this.abilityScoreBonus(this.grunt.abilityScores.dex) + this.cr.profBonus
+      if (this.options.species.id === 'geth') {
+        this.grunt.ac = 13 + this.abilityScoreBonus(this.grunt.abilityScores.dex) + this.options.cr.profBonus
         return
       }
-      if (['adept', 'infiltrator'].includes(this.sc.id)) {
+      if (['adept', 'infiltrator'].includes(this.options.klass.id)) {
         acModArray.push(-2)
         acModArray.push(-2)
-      } else if (['soldier', 'sentinel'].includes(this.sc.id)) {
+      } else if (['soldier', 'sentinel'].includes(this.options.klass.id)) {
         acModArray.push(2)
         acModArray.push(2)
       } else {
@@ -21,10 +21,10 @@ export const Ac = {
 
       let acMod = this.randomValue(acModArray)
 
-      if (this.race.id === 'krogan') {
+      if (this.options.species.id === 'krogan') {
         acMod++
       }
-      this.grunt.ac = this.cr.acDc + acMod
+      this.grunt.ac = this.options.cr.acDc + acMod
     }
   }
 }
