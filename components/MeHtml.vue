@@ -1,8 +1,12 @@
 <script>
 import { compileToFunctions } from 'vue-template-compiler'
+import MeDistance from '~/components/MeDistance'
+import MeCondition from '~/components/MeCondition'
+import MeSourceReference from '~/components/MeSourceReference'
 
 export default {
   name: 'MeHtml',
+  components: { MeCondition, MeDistance, MeSourceReference },
   props: {
     content: {
       type: String,

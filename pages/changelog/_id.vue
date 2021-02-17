@@ -1,24 +1,33 @@
-<template lang="pug">
-  v-container
-    div.news-post
-      h1.display-3 {{ post.title }}
-      h2.subheading #[em {{ parsedDate }}]
-      me-html(:content="post.html" v-if="loading !== true")
-    v-btn(to="/changelog" nuxt).primary
-      v-icon arrow-left
-      span Back to changelog
+<template>
+  <v-container>
+    <div class="news-post mb-5">
+      <h1 class="text-h2">
+        {{ post.title }}
+      </h1>
+      <p class="text-subtitle-1">
+        <em>
+          {{ parsedDate }}
+        </em>
+      </p>
+      <me-html v-if="!$fetchState.pending" :content="post.html" />
+    </div>
+    <v-btn to="/changelog" nuxt class="primary">
+      <v-icon>
+        mdi-arrow-left
+      </v-icon>
+      Back to changelog
+    </v-btn>
+  </v-container>
 </template>
 
 <script>
 export default {
   async fetch () {
     this.post = await this.$store.dispatch('FETCH_ITEM', { endpoint: 'changelog', id: this.$route.params.id })
-    this.loading = false
     this.$store.commit('pageTitle', this.post.title)
   },
   data () {
     return {
-      loading: true,
       post: {
         title: '',
         date: '',

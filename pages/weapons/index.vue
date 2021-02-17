@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <me-list-page
-      :loading="loading"
+      :pending="$fetchState.pending"
       :title="pageTitle"
       :rule-link="ruleLink"
       :filters="filters"
@@ -10,7 +10,7 @@
       default-sort="name"
       :custom-sort="customSort"
     >
-      <template v-if="!loading" v-slot:list="{ displayItems }">
+      <template v-slot:list="{ displayItems }">
         <me-weapon-list :items="displayItems" />
       </template>
     </me-list-page>
@@ -25,12 +25,10 @@ export default {
   async fetch () {
     this.$store.commit('pageTitle', 'Weapons')
     this.items = await this.$store.dispatch('FETCH_DATA', 'weapons')
-    this.loading = false
   },
   data () {
     return {
       items: [],
-      loading: true,
       ruleLink: {
         to: '/manual/equipment#weapons',
         name: 'Weapon Rules'

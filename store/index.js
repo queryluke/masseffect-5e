@@ -6,8 +6,7 @@ export const state = () => ({
   drawer: null,
   jumpNav: null,
   rules: [],
-  version: config.version,
-  loading: true
+  version: config.version
 })
 
 export const getters = {
@@ -22,8 +21,7 @@ export const getters = {
     const data = getters.getData(endpoint)
     return data === false ? false : data.find(d => d.id === id)
   },
-  pageTitle: state => state.pageTitle,
-  loading: state => state.loading
+  pageTitle: state => state.pageTitle
 }
 
 export const mutations = {
@@ -41,12 +39,6 @@ export const mutations = {
   },
   setCurrentRules (state, value) {
     state.rules = value
-  },
-  isLoading (state) {
-    state.loading = true
-  },
-  loaded (state) {
-    state.loading = false
   }
 }
 

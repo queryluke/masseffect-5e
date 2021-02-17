@@ -7,40 +7,42 @@
     <p>
       <strong>Calculating Random Weight.</strong> Base Weight + (Height Modifier Roll x Weight Modifier Roll)
     </p>
-    <v-simple-table>
-      <template v-if="imperial" slot="default">
-        <thead>
-          <tr>
-            <th v-for="h in imperialTable" :key="h.key">
-              {{ h.display }}
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="stat in stats" :key="stat.id">
-            <td v-for="h in imperialTable" :key="h.key">
-              {{ stat[h.key] }}
-            </td>
-          </tr>
-        </tbody>
-      </template>
-      <template v-else slot="default">
-        <thead>
-          <tr>
-            <th v-for="h in metricTable" :key="h.key">
-              {{ h.display }}
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="stat in stats" :key="stat.id">
-            <td v-for="h in metricTable" :key="h.key">
-              {{ stat[h.key] }}
-            </td>
-          </tr>
-        </tbody>
-      </template>
-    </v-simple-table>
+    <me-skeleton-loader :pending="$fetchState.pending" type="table-tbody">
+      <v-simple-table>
+        <template v-if="imperial" slot="default">
+          <thead>
+            <tr>
+              <th v-for="h in imperialTable" :key="h.key">
+                {{ h.display }}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="stat in stats" :key="stat.id">
+              <td v-for="h in imperialTable" :key="h.key">
+                {{ stat[h.key] }}
+              </td>
+            </tr>
+          </tbody>
+        </template>
+        <template v-else slot="default">
+          <thead>
+            <tr>
+              <th v-for="h in metricTable" :key="h.key">
+                {{ h.display }}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="stat in stats" :key="stat.id">
+              <td v-for="h in metricTable" :key="h.key">
+                {{ stat[h.key] }}
+              </td>
+            </tr>
+          </tbody>
+        </template>
+      </v-simple-table>
+    </me-skeleton-loader>
   </v-container>
 </template>
 

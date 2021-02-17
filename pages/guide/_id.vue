@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container v-if="!fetchState.pending">
     <me-page-title :title="pageTitle" />
     <me-rule-card v-for="item in items" :key="item.id" :item="item" />
   </v-container>

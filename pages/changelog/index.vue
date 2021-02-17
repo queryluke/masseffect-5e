@@ -1,8 +1,13 @@
-<template lang="pug">
-  v-container.mt-5
-    v-row(justify="space-around")
-      v-col(v-for="item in items" :key="item.id" cols="12" md="4")
-        me-news-card(:news="item" height="200px")
+<template>
+  <v-container class="mt-5">
+    <v-row justify="space-around">
+      <v-col v-for="(item, index) in items" :key="index" cols="12" md="4">
+        <me-skeleton-loader :pending="$fetchState.pending" type="card">
+          <me-news-card :news="item" height="200px" />
+        </me-skeleton-loader>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -13,7 +18,7 @@ export default {
   },
   data () {
     return {
-      changelog: []
+      changelog: [...Array(9).keys()]
     }
   },
   computed: {

@@ -10,19 +10,21 @@
         </v-btn>
       </v-col>
     </v-row>
-    <me-expansion-list
-      :items="items"
-      :headers="headers"
-    >
-      <template v-slot:header.name="{ item }">
-        <div>
-          {{ item.name }}
-        </div>
-        <div class="text-caption">
-          {{ item.type }}
-        </div>
-      </template>
-    </me-expansion-list>
+    <me-skeleton-loader :pending="$fetchState.pending" type="expansionList">
+      <me-expansion-list
+        :items="items"
+        :headers="headers"
+      >
+        <template v-slot:header.name="{ item }">
+          <div>
+            {{ item.name }}
+          </div>
+          <div class="text-caption">
+            {{ item.type }}
+          </div>
+        </template>
+      </me-expansion-list>
+    </me-skeleton-loader>
   </v-container>
 </template>
 

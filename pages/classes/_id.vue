@@ -1,5 +1,5 @@
 <template>
-  <v-container v-if="!loading">
+  <v-container v-if="!$fetchState.pending">
     <v-row>
       <v-col cols="9" class="d-none d-md-flex">
         <div class="d-flex">
@@ -65,23 +65,15 @@
 
 export default {
   async fetch () {
-    await Promise.all([
-      this.$store.dispatch('FETCH_DATA', 'classes'),
-      this.$store.dispatch('FETCH_DATA', 'class-features'),
-      this.$store.dispatch('FETCH_DATA', 'subclasses'),
-      this.$store.dispatch('FETCH_DATA', 'powers'),
-      this.$store.dispatch('FETCH_DATA', 'character-progression')
-    ])
+    await this.$store.dispatch('FETCH_LOTS', ['classes', 'class-features', 'subclasses', 'powers', 'character-progression'])
     this.$store.commit('pageTitle', this.item.name)
     this.$store.commit('tabbedPage/SET_TABS', this.tabs)
     this.$store.dispatch('tabbedPage/INIT_THEME', this.item.id)
-    this.loading = false
   },
   data () {
     return {
       id: this.$route.params.id,
-      tabs: ['progression table', 'class features', 'subclasses', 'powers'],
-      loading: true
+      tabs: ['progression table', 'class features', 'subclasses', 'powers']
     }
   },
   computed: {

@@ -1,5 +1,5 @@
 <template>
-  <me-container>
+  <v-container v-if="!$fetchState.pending">
     <me-page-title />
     <p>
       This generator creates disposable NPCs based on the Mass Effect archetypes. The Monster Manual outlines adjusting
@@ -96,16 +96,7 @@ export default {
   mixins: [RandomValue, GruntGenerator],
   async fetch () {
     this.$store.commit('pageTitle', 'NPC Generator')
-    await Promise.all([
-      this.$store.dispatch('FETCH_DATA', 'classes'),
-      this.$store.dispatch('FETCH_DATA', 'species'),
-      this.$store.dispatch('FETCH_DATA', 'stats-by-cr'),
-      this.$store.dispatch('FETCH_DATA', 'powers'),
-      this.$store.dispatch('FETCH_DATA', 'weapons'),
-      this.$store.dispatch('FETCH_DATA', 'gear'),
-      this.$store.dispatch('FETCH_DATA', 'skills')
-    ])
-    this.$store.commit('loaded')
+    await this.$store.dispatch('FETCH_LOTS', ['classes', 'species', 'stats-by-cr', 'powers', 'weapons', 'gear', 'skills'])
   },
   data () {
     return {

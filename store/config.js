@@ -130,6 +130,13 @@ export const state = () => ({
       dark: 'pink darken-4',
       light: 'pink lighten-2'
     }
+  },
+  sklTypes: {
+    item: { type: 'paragraph', types: { paragraph: 'text@6' } },
+    expansionList: { type: 'table-tbody', types: { 'table-row': 'table-cell' } },
+    articleList: { type: 'article-list', types: { 'article-list': 'article-divider@12', 'article-divider': 'article, divider' } },
+    listPage: { type: 'list-page', types: { 'list-page': 'table-row-divider@10', 'table-row': 'table-cell@5' } },
+    classPage: { type: 'class-page', types: { 'class-page': 'avatar, article' } }
   }
 })
 
@@ -182,5 +189,6 @@ export const getters = {
       ? 'light'
       : getters.darkMode
         ? 'dark' : 'light'
-  }
+  },
+  sklTypes: state => state.sklTypes
 }

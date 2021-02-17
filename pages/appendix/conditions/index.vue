@@ -5,10 +5,12 @@
       All of the conditions which can affect a character or object are listed below. Note that there are a few new
       conditions in this system in order to maintain consistency with the Mass Effect setting: Frozen, Lifted, Primed
     </p>
-    <me-expansion-list
-      :items="items"
-      :headers="headers"
-    />
+    <me-skeleton-loader :pending="$fetchState.pending" type="expansionList">
+      <me-expansion-list
+        :items="items"
+        :headers="headers"
+      />
+    </me-skeleton-loader>
   </v-container>
 </template>
 
