@@ -52,7 +52,6 @@ export const Hp = {
       if (offensiveCrNorm !== targetDefensiveCrNorm) {
         targetDefensiveCrNorm = (this.options.cr.normalized * 2) - offensiveCrNorm
       }
-      console.log(targetDefensiveCrNorm)
       const targetDefensiveCr = this.getCrByNormalized(targetDefensiveCrNorm)
       // **********************************
       // What is the ac adjustment?

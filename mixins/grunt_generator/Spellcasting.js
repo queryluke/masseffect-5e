@@ -17,11 +17,11 @@ export const Spellcasting = {
   },
   methods: {
     setGruntSpellcasting () {
-      if (this.options.klass.id === 'soldier' || this.options.cr.spellcastingLevel === false) {
-        this.grunt.spellcasting = false
+      if (this.options.klass.id === 'soldier' || this.options.cr.powercastingLevel === false) {
+        this.grunt.powercasting = false
         return
       }
-      const spellcastingLevelIndex = ['engineer', 'adept'].includes(this.options.klass.id) ? this.options.cr.spellcastingLevel : Math.ceil(this.options.cr.spellcastingLevel / 2) - 1
+      const spellcastingLevelIndex = ['engineer', 'adept'].includes(this.options.klass.id) ? this.options.cr.powercastingLevel : Math.ceil(this.options.cr.powercastingLevel / 2) - 1
       const spellSlots = {}
       for (const col of this.adept.progressionColumns.filter(i => i.ps)) {
         if (col.values[spellcastingLevelIndex] > 0) {
@@ -38,7 +38,7 @@ export const Spellcasting = {
       }
       const availableSpells = this.spells.filter(s => s.availableClasses.includes(this.options.klass.id) && s.level <= maxLevelSpell && s.level > 0)
       const knownSpells = []
-      const spellsKnown = this.adept.progressionColumns.find(i => i.key === 'powersKnown')[spellcastingLevelIndex]
+      const spellsKnown = this.adept.progressionColumns.find(i => i.key === 'powersKnown').values[spellcastingLevelIndex]
       for (let i = 0; i <= (spellsKnown / 2); i++) {
         const spell = this.randomValue(availableSpells)
         knownSpells.push(spell.id)
@@ -46,7 +46,7 @@ export const Spellcasting = {
       }
       if (['sentinel', 'vanguard', 'adept'].includes(this.options.klass.id)) {
         const knownCantrips = this.spells.filter(s => s.availableClasses.includes(this.options.klass.id) && s.level === 0)
-        const cantrips = this.adept.progressionColumns.find(i => i.key === 'cantrips')[spellcastingLevelIndex]
+        const cantrips = this.adept.progressionColumns.find(i => i.key === 'cantrips').values[spellcastingLevelIndex]
         for (let i = 0; i <= cantrips; i++) {
           const cantrip = this.randomValue(knownCantrips)
           knownSpells.push(cantrip.id)
@@ -59,10 +59,10 @@ export const Spellcasting = {
           : ['adept', 'vanguard'].includes(this.options.klass.id)
             ? 'wis'
             : 'cha'
-      this.grunt.spellcasting = {
+      this.grunt.powercasting = {
         level: spellcastingLevelIndex + 1,
         mod: spellcastingMod,
-        spellList: [...new Set(knownSpells)]
+        powerList: [...new Set(knownSpells)]
       }
       this.dpr.spell = this.spellDpr[maxLevelSpell]
     }

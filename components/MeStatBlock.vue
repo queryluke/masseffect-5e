@@ -75,10 +75,10 @@
         <p v-for="feature in stats.features" :key="feature.id">
           <me-npc-feature :feature="feature" />
         </p>
-        <div v-if="stats.spellcasting">
-          <me-npc-feature :feature="spellcastingFeature" />
-          <me-npc-innate-spellcasting v-if="spellcastingIsInnate" :spellcasting="stats.spellcasting" />
-          <me-npc-spellcasting v-else :spellcasting="stats.spellcasting" />
+        <div v-if="stats.powercasting">
+          <me-npc-feature :feature="powercastingFeature" />
+          <me-npc-innate-powercasting v-if="powercastingIsInnate" :powercasting="stats.powercasting" />
+          <me-npc-powercasting v-else :powercasting="stats.powercasting" />
         </div>
         <!-- ACTIONS -->
         <div v-if="hasFeature('actions')">
@@ -91,11 +91,6 @@
               v-else-if="action.type === 'weapon'"
               :id="action.id"
               :ability-scores="stats.abilityScores"
-              :prof-bonus="stats.profBonus"
-            />
-            <me-npc-grenade
-              v-else-if="action.type === 'grenade'"
-              :id="action.id"
               :prof-bonus="stats.profBonus"
             />
             <me-npc-attack
@@ -300,33 +295,33 @@ export default {
         return speed.type === 'walk' ? `${speed.range}m` : `${speed.type} ${speed.range}m`
       }).join(', ')
     },
-    spellcastingFeature () {
+    powercastingFeature () {
       return {
-        name: this.spellcastingIsInnate ? 'Innate Powers' : 'Powercasting',
+        name: this.powercastingIsInnate ? 'Innate Powers' : 'Powercasting',
         recharge: false,
-        description: this.spellcastingIsInnate ? this.spellcastingParagraphInnate : this.spellcastingParagraph
+        description: this.powercastingIsInnate ? this.powercastingParagraphInnate : this.powercastingParagraph
       }
     },
-    spellcastingIsInnate () {
-      return this.stats.spellcasting.level === 'innate'
+    powercastingIsInnate () {
+      return this.stats.powercasting.level === 'innate'
     },
-    spellcastingParagraphInnate () {
+    powercastingParagraphInnate () {
       return `The ${this.lcName}'s innate powercasting ability is
-        ${this.abilityMap[this.stats.spellcasting.mod]} (spell save DC ${this.spellSaveDc}, +${this.spellHit} to hit with
+        ${this.abilityMap[this.stats.powercasting.mod]} (power save DC ${this.powerSaveDc}, +${this.powerHit} to hit with
         power attacks). It can innately cast the following:`
     },
-    spellcastingParagraph () {
-      return `The ${this.lcName} is ${this.$options.filters.article(this.stats.spellcasting.level)}
-        ${this.stats.spellcasting.level}${this.$options.filters.ordinal(this.stats.spellcasting.level)}-level powercaster.
-        Its powercasting ability is ${this.abilityMap[this.stats.spellcasting.mod]} (power save DC ${this.spellSaveDc},
-        +${this.spellHit} to hit with powers). The ${this.lcName} has the following powers:`
+    powercastingParagraph () {
+      return `The ${this.lcName} is ${this.$options.filters.article(this.stats.powercasting.level)}
+        ${this.stats.powercasting.level}${this.$options.filters.ordinal(this.stats.powercasting.level)}-level powercaster.
+        Its powercasting ability is ${this.abilityMap[this.stats.powercasting.mod]} (power save DC ${this.powerSaveDc},
+        +${this.powerHit} to hit with powers). The ${this.lcName} has the following powers:`
     },
-    spellSaveDc () {
-      return 8 + this.spellHit
+    powerSaveDc () {
+      return 8 + this.powerHit
     },
-    spellHit () {
-      if (this.stats.spellcasting) {
-        return this.stats.profBonus + this.abilityScoreBonus(this.stats.abilityScores[this.stats.spellcasting.mod])
+    powerHit () {
+      if (this.stats.powercasting) {
+        return this.stats.profBonus + this.abilityScoreBonus(this.stats.abilityScores[this.stats.powercasting.mod])
       }
       return 0
     }

@@ -72,12 +72,11 @@
         lg="8"
         offset-sm="1"
         offset-lg="2"
+        class="mt-8"
       >
-        {{ generated }}
-        {{ $store.getters.loading }}
         <v-card v-if="generated">
           <v-card-text>
-            <me-stat-block :stats="grunt" />
+            <me-stat-block :stats="grunt" :title="true" />
           </v-card-text>
           <v-card-actions>
             <me-bookmark :item="grunt" type="npc" />
@@ -85,7 +84,7 @@
         </v-card>
       </v-col>
     </v-row>
-  </me-container>
+  </v-container>
 </template>
 
 <script>

@@ -22,7 +22,7 @@ import { Type } from './Type'
 export const GruntGenerator = {
   data () {
     return {
-      npc: {},
+      grunt: {},
       crMetaLevel: 0,
       dpr: {
         weapon: 0,
@@ -86,7 +86,7 @@ export const GruntGenerator = {
       this.grunt.cr = this.options.cr.cr
       this.grunt.unit = ''
       this.generated = true
-      console.log(this.grunt)
+      // console.log(this.grunt)
       // console.log([this.dpr, this.adjustments])
     },
     reset () {

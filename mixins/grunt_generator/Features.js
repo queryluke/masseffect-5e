@@ -33,17 +33,22 @@ export const Features = {
       }
     },
     barrier () {
-      const spellcastingLevelIndex = this.options.klass.id === 'vanguard' ? this.options.cr.spellcastingLevel : Math.ceil(this.options.cr.spellcastingLevel / 2) - 1
+      const spellcastingLevelIndex = this.options.cr.powercastingLevel
+        ? this.options.klass.id === 'vanguard'
+          ? parseInt(this.options.cr.powercastingLevel, 10)
+          : Math.ceil(parseInt(this.options.cr.powercastingLevel, 10) / 2) - 1
+        : 0
       const barrierTicksArray = this.vanguard.progressionColumns.find(p => p.key === 'barrierTicks')
       const barrierTicks = barrierTicksArray.values[spellcastingLevelIndex]
       const barrierUsesArray = this.vanguard.progressionColumns.find(p => p.key === 'barrierUses')
       this.grunt.barrier = barrierTicks
-      this.adjustments.hp += (4 * barrierTicks)
-      return {
+      const feature = {
         name: 'Barrier',
         recharge: `${barrierUsesArray.values[spellcastingLevelIndex]}/Day`,
         description: `As an action or bonus action, the ${this.options.klass.id} gains ${barrierTicks} barrier ticks.`
       }
+      this.adjustments.hp += (4 * barrierTicks)
+      return feature
     },
     tacticalCloak () {
       this.adjustments.ac += 1
