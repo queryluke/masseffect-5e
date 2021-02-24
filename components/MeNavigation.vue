@@ -157,7 +157,7 @@ export default {
       this.$vuetify.theme.dark = this.$store.getters['user/darkMode']
     },
     group (items) {
-      return `(${items.map(i => `^${i.to}$`).join('|')})`
+      return `(${items.map(i => `(^${i.to}$|^${i.to}/.*?)`).join('|')})`
     },
     submit () {
       this.$router.push({

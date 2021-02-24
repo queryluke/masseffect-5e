@@ -83,7 +83,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     treeShake: {
-      components: ['VSimpleTable', 'VAlert', 'VCard', 'VCardText', 'VChip']
+      components: ['VSimpleTable', 'VAlert', 'VCard', 'VCardText', 'VChip', 'VImg', 'VIcon']
     },
     theme: {
       dark: true,
