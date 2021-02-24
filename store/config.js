@@ -100,11 +100,51 @@ export const state = () => ({
     }
   },
   searchFilters: [
-    { id: 'character', textColor: 'light-green--text text--darken-4', color: 'light-green darken-4', icon: 'face' },
-    { id: 'equipment', textColor: 'deep-orange--text text--darken-4', color: 'deep-orange darken-4', icon: 'build' },
-    { id: 'rule', textColor: 'secondary--text', color: 'secondary', icon: 'gavel' },
-    { id: 'spell', textColor: 'purple--text', color: 'purple', icon: 'whatshot' },
-    { id: 'bestiary', textColor: 'primary--text', color: 'primary', icon: 'pets' }
+    {
+      id: 'character',
+      color: {
+        base: 'light-green',
+        dark: 'darken-1',
+        light: 'darken-4'
+      },
+      icon: 'mdi-face-agent'
+    },
+    {
+      id: 'equipment',
+      color: {
+        base: 'deep-orange',
+        dark: 'lighten-1',
+        light: 'darken-4'
+      },
+      icon: 'mdi-hammer-wrench'
+    },
+    {
+      id: 'rule',
+      color: {
+        base: 'indigo',
+        dark: 'accent-1',
+        light: 'darken-4'
+      },
+      icon: 'mdi-gavel'
+    },
+    {
+      id: 'power',
+      color: {
+        base: 'purple',
+        dark: 'lighten-1',
+        light: 'darken-4'
+      },
+      icon: 'mdi-fire'
+    },
+    {
+      id: 'bestiary',
+      color: {
+        base: 'red',
+        dark: 'lighten-1',
+        light: 'darken-4'
+      },
+      icon: 'mdi-paw'
+    }
   ],
   classThemes: {
     adept: {
@@ -190,5 +230,14 @@ export const getters = {
       : getters.darkMode
         ? 'dark' : 'light'
   },
-  sklTypes: state => state.sklTypes
+  sklTypes: state => state.sklTypes,
+  searchFilters: state => state.searchFilters,
+  searchFilterColor: (state, getters) => (sf) => {
+    const filter = state.searchFilters.find(i => i.id === sf)
+    return `${filter.color.base} ${getters.darkMode ? filter.color.dark : filter.color.light}`
+  },
+  searchFilterTextColor: (state, getters) => (sf) => {
+    const filter = state.searchFilters.find(i => i.id === sf)
+    return `${filter.color.base}--text text--${getters.darkMode ? filter.color.dark : filter.color.light}`
+  }
 }

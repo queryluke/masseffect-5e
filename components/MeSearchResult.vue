@@ -1,32 +1,30 @@
-<template lang="pug">
-  v-card(hover @click="show()").search-result
-    v-card-text
-      div.body-2
-        span(:class="textColor").text-uppercase {{ subType }}
-          span(v-for="q in doc.qualifiers" v-bind:key="q").pl-1 #[v-icon(small) keyboard_arrow_right] {{ q }}
-      div.headline {{ doc.title }}
-        // div.mb-5 {{ result }}
-        // div.mb-5 {{ snippets }}
-      div(v-show="!showFull")
-        p(v-html="description")
-      div(v-show="showFull")
-        markdown-file(v-if="mdComponents.includes(doc.subType)" v-bind:id="doc.id" v-bind:itemType="doc.subType")
-        markdown-file(v-if="doc.subType === 'class_features'" v-bind:id="doc.id.split('---')[0]" itemType="class_features" v-bind:context="levelContext")
-        component(v-if="infoComponents.includes(doc.subType)" v-bind:is="component" v-bind="infoItem")
-        stat-block(v-if="doc.subType === 'bestiary'" v-bind:stats="infoItem")
-
+<template>
+  <v-card hover class="search-result mt-5" @click="show()">
+    <v-card-text>
+      <div class="text-overline" :class="textColor">
+        <span v-for="(q, i) in breadcrumbs" :key="q">
+          <v-icon v-if="i !== 0" small class="mb-1">
+            mdi-chevron-right
+          </v-icon>
+          {{ q }}
+        </span>
+      </div>
+      <div class="text-subtitle-1">
+        {{ result.doc.title }}
+      </div>
+      <div v-if="showFull">
+        <me-html :content="result.doc.html" />
+      </div>
+      <div v-else>
+        <div v-html="description" />
+      </div>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
 export default {
-  name: 'SearchResult',
   props: {
-    doc: {
-      type: Object,
-      default: () => {}
-    },
     result: {
       type: Object,
       default: () => {}
@@ -34,54 +32,34 @@ export default {
   },
   data () {
     return {
-      showFull: false,
-      subTypeNames: {
-        traits: 'racial traits',
-        subraces: 'races',
-        programs: 'omni-tool programs',
-        tools: 'tools & kits',
-        armor_mods: 'armor mods',
-        armor_sets: 'armor mods',
-        weapon_mods: 'weapon mods',
-        class_features: 'class features'
-      },
-      mdComponents: ['backgrounds', 'conditions', 'feats', 'tools'],
-      infoComponents: ['grenades', 'programs', 'spells', 'vehicles', 'armor_mods', 'armor_sets', 'weapons', 'weapon_mods']
+      showFull: false
     }
   },
   computed: {
-    ...mapGetters(['searchFilters']),
-    textColor () {
-      return this.searchFilters.find(sf => sf.id === this.doc.type).textColor
-    },
-    infoItem () {
-      if (this.doc.subType === 'bestiary') {
-        // TODO
-        return '' // require(`~/static/data/bestiary/${this.doc.id}.json`)
-      } else {
-        // TODO
-        // const items = require(`~/static/data/${this.doc.subType}.json`)
-        return ''
-        /*
-        return {
-          item: items.find(i => i.id === this.doc.id),
-          title: false
-        }
-        */
+    breadcrumbs () {
+      const crumbs = [this.result.doc.type]
+      if (this.result.doc.subType) {
+        crumbs.push(this.result.doc.subType)
       }
+      return crumbs.concat(this.result.doc.qualifiers)
     },
-    component () {
-      const name = this.doc.subType.substring(0, this.doc.subType.length - 1).replace('_', '-')
-      return `${name}-info`
+    searchFilters () {
+      return this.$store.getters['config/searchFilters']
+    },
+    textColor () {
+      return this.$store.getters['config/searchFilterTextColor'](this.result.doc.type)
+    },
+    darkMode () {
+      return this.$store.getters['user/darkMode']
     },
     description () {
       if (this.snippets.length === 0) {
-        return this.$options.filters.truncate(this.doc.body, 156)
+        return this.$options.filters.truncate(this.result.doc.body, 156)
       }
-      const mark = '<span class="yellow yellow-accent-2">'
+      const mark = `<span class="${this.darkMode ? 'light-blue darken-4' : 'yellow accent-4'}">`
       const endMark = '</span>'
       let text = this.snippets.map((s) => {
-        let string = this.doc.body.substring(s.start, s.end)
+        let string = this.result.doc.body.substring(s.start, s.end)
         let totalIncrease = 0
         for (const p of s.positions) {
           const hlStart = p[0] - s.start + totalIncrease
@@ -106,8 +84,8 @@ export default {
               const resultStart = position[0]
               const resultLength = position[1]
 
-              const start = resultStart - 30 <= 0 ? 0 : this.doc.body.indexOf(' ', (resultStart - 30))
-              let end = this.doc.body.indexOf(' ', (resultStart + resultLength + 100))
+              const start = resultStart - 30 <= 0 ? 0 : this.result.doc.body.indexOf(' ', (resultStart - 30))
+              let end = this.result.doc.body.indexOf(' ', (resultStart + resultLength + 100))
               if (end < 0) {
                 end = 1000000
               }
@@ -119,7 +97,7 @@ export default {
                 if (resultStart >= s.start && resultStart <= s.end) {
                   // extend the length of the snippet only if the length of the result exceeds the snippets end
                   if ((resultStart + resultLength) > s.end) {
-                    snippets[index].end = this.doc.body.indexOf(' ', (s.end + resultLength))
+                    snippets[index].end = this.result.doc.body.indexOf(' ', (s.end + resultLength))
                   }
                   snippets[index].positions.push(position)
                   skip = true
@@ -129,7 +107,7 @@ export default {
                 if (start >= s.start && start <= s.end) {
                   // extend the length of the snippet only to the resultStart
                   if (resultStart >= s.end) {
-                    snippets[index].end = this.doc.body.indexOf(' ', (resultStart + resultLength))
+                    snippets[index].end = this.result.doc.body.indexOf(' ', (resultStart + resultLength))
                   }
                   snippets[index].positions.push(position)
                   skip = true
@@ -154,23 +132,13 @@ export default {
         })
       })
       return snippets
-    },
-    subType () {
-      return this.subTypeNames[this.doc.subType] || this.doc.subType
-    },
-    levelContext () {
-      if (this.doc.subType === 'class_features') {
-        const level = this.doc.qualifiers[this.doc.qualifiers.length - 1].replace(/\D/g, '')
-        return { level }
-      }
-      return { level: 'test' }
     }
   },
   methods: {
     show () {
-      if (this.doc.link) {
+      if (this.result.doc.link) {
         this.$router.push({
-          path: this.doc.link
+          path: this.result.doc.link
         })
       } else {
         this.showFull = !this.showFull

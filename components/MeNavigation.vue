@@ -4,8 +4,20 @@
     app
     clipped
   >
+    <v-text-field
+      v-model="search"
+      dense
+      append-icon="mdi-magnify"
+      label="Search"
+      single-line
+      hide-details
+      solo
+      clearable
+      class="ma-2"
+      @keyup.enter="submit"
+    />
     <v-list dense>
-      <template v-for="(page, index) in pages">
+      <template v-for="(page, index) in navigation">
         <v-list-item v-if="page.to" :key="index" :to="page.to" nuxt>
           <v-list-item-action v-if="page.icon">
             <v-icon>
@@ -45,32 +57,39 @@
       </template>
     </v-list>
 
-    <template v-slot:append>
-      <v-list dense>
-        <v-subheader>Settings {{ $store.getters.loading }}</v-subheader>
+    <template v-if="$vuetify.breakpoint.mdAndUp" v-slot:append>
+      <v-divider />
+      <me-user-settings />
+      <v-toolbar dense>
+        <v-toolbar-title class="text-body-2">
+          VERSION {{ version }}
+        </v-toolbar-title>
+      </v-toolbar>
+    </template>
+    <template v-else #append>
+      <v-list dense color="grey darken-4" dark>
         <v-list-item>
           <v-list-item-content>
-            <v-list-item-title>Mode: {{ darkMode ? 'Dark' : 'Light' }}</v-list-item-title>
+            <v-list-item-title>
+              VERSION {{ version }}
+            </v-list-item-title>
           </v-list-item-content>
-          <v-list-item-action>
-            <v-btn icon @click="toggleDarkMode">
-              <v-icon>{{ darkModeIcon }}</v-icon>
-            </v-btn>
-          </v-list-item-action>
-        </v-list-item>
-        <v-list-item>
-          <v-list-item-content>
-            <v-list-item-title>Units: {{ imperial ? 'Imperial' : 'Metric' }}</v-list-item-title>
-          </v-list-item-content>
-          <v-list-item-action>
-            <v-switch v-model="imperial" inset dense />
+          <v-list-item-action @click="settingsDialog = !settingsDialog">
+            <v-icon small>
+              mdi-cog
+            </v-icon>
           </v-list-item-action>
         </v-list-item>
       </v-list>
-      <v-toolbar dense>
-        <v-toolbar-title>VERSION {{ version }}</v-toolbar-title>
-      </v-toolbar>
     </template>
+
+    <v-dialog v-if="$vuetify.breakpoint.smAndDown" v-model="settingsDialog">
+      <v-card>
+        <v-card-text>
+          <me-user-settings />
+        </v-card-text>
+      </v-card>
+    </v-dialog>
   </v-navigation-drawer>
 </template>
 
@@ -79,111 +98,27 @@ export default {
   name: 'MeNavigation',
   data () {
     return {
-      pages: [
-        {
-          header: 'Player\'s Manual'
-        },
-        {
-          name: 'Introduction',
-          icon: 'mdi-book-open-variant',
-          to: '/manual/intro'
-        },
-        {
-          name: 'Rules',
-          icon: 'mdi-gavel',
-          items: [
-            { name: 'Step-by-step Characters', icon: 'supervised_user_circle', to: '/manual/character-creation' },
-            { name: 'Beyond 1st Level', icon: 'tending_up', to: '/manual/beyond-first-level' },
-            { name: 'Using Ability Scores', icon: 'gamepad', to: '/manual/using-ability-scores' },
-            { name: 'Missions', icon: 'map', to: '/manual/missions' },
-            { name: 'Equipment', icon: 'category', to: '/manual/equipment' },
-            { name: 'Finances', icon: 'money', to: '/manual/finances' },
-            { name: 'Vehicles', icon: '', to: '/manual/vehicles' },
-            { name: 'Combat', icon: '', to: '/manual/combat' },
-            { name: 'Powercasting', icon: '', to: '/manual/powercasting' },
-            { name: 'About the Bestiary', icon: '', to: '/manual/bestiary' }
-          ]
-        },
-        {
-          name: 'Characters',
-          icon: 'mdi-face-agent',
-          items: [
-            { to: '/classes', name: 'Classes' },
-            { to: '/species', name: 'Species' },
-            { to: '/feats', name: 'Feats' },
-            { to: '/backgrounds', name: 'Backgrounds' }
-          ]
-        },
-        {
-          name: 'Equipment',
-          icon: 'mdi-hammer-wrench',
-          items: [
-            { to: '/weapons', name: 'Weapons' },
-            { to: '/armor', name: 'Armor' },
-            { to: '/mods', name: 'Mods' },
-            { to: '/gear', name: 'Gear' },
-            { to: '/vehicles', name: 'Vehicles' }
-          ]
-        },
-        {
-          name: 'Spells & Powers',
-          icon: 'mdi-fire',
-          to: '/powers'
-        },
-        {
-          name: 'Bestiary',
-          icon: 'mdi-paw',
-          to: '/bestiary'
-        },
-        {
-          name: 'Appendix',
-          icon: 'mdi-view-split-vertical',
-          items: [
-            { to: '/appendix/conditions', name: 'Conditions' },
-            { to: '/appendix/random-height-weight', name: 'Random Height & Weight' },
-            { to: '/appendix/skills', name: 'Skills' },
-            { to: '/appendix/tool-profs', name: 'Tool Proficiencies' },
-            { to: '/appendix/weapon-properties', name: 'Weapon Properties' }
-          ]
-        },
-        {
-          name: 'Bookmarks',
-          icon: 'mdi-book',
-          to: '/bookmarks'
-        },
-        {
-          divider: true
-        },
-        {
-          header: 'Site Tools & Guides'
-        },
-        {
-          name: 'Characer Builder (beta)',
-          to: '/character-builder'
-        },
-        {
-          name: 'Generators',
-          icon: 'mdi-cog-sync',
-          group: 'generator',
-          items: [
-            { to: '/generators/loot', name: 'Loot Generator' },
-            { to: '/generators/npc', name: 'NPC Generator' }
-          ]
-        },
-        {
-          name: 'Guides',
-          icon: 'mdi-puzzle',
-          group: 'guide',
-          items: [
-            { to: '/guide/armor-creation', name: 'Creating Armor' },
-            { to: '/guide/vehicle-creation', name: 'Creating Vehicles' },
-            { to: '/guide/encounter-creation', name: 'Creating Encounters' }
-          ]
-        }
-      ]
+      settingsDialog: false
     }
   },
   computed: {
+    search: {
+      get () {
+        return this.$store.getters['user/search']
+      },
+      set (value) {
+        this.$store.commit('user/SET_SEARCH', value)
+      }
+    },
+    navigation () {
+      let navigation = this.$store.getters.navigation.slice()
+      if (this.$vuetify.breakpoint.mdAndDown) {
+        navigation.push({ divider: true })
+        const addNav = this.$store.getters.mainNavigation.filter(i => !['/manual/intro', '/character-builder'].includes(i.to))
+        navigation = navigation.concat(addNav)
+      }
+      return navigation
+    },
     darkModeIcon () {
       return this.darkMode ? 'mdi-brightness-4' : 'mdi-brightness-5'
     },
@@ -200,6 +135,9 @@ export default {
     },
     drawer: {
       get () {
+        if (this.$vuetify.breakpoint.lgAndUp && this.$nuxt.$route.path === '/') {
+          return false
+        }
         return this.$store.getters.drawer
       },
       set (value) {
@@ -220,6 +158,14 @@ export default {
     },
     group (items) {
       return `(${items.map(i => `^${i.to}$`).join('|')})`
+    },
+    submit () {
+      this.$router.push({
+        path: '/search'
+      })
+      if (this.$vuetify.breakpoint.mdAndDown) {
+        this.drawer = false
+      }
     }
   }
 }

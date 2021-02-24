@@ -1,21 +1,12 @@
 <template>
-  <v-container>
-    <me-page-title />
-    <v-card>
-      <v-card-text>
-        <me-skeleton-loader :pending="$fetchState.pending" type="item">
-          <me-html :content="item.html" />
-        </me-skeleton-loader>
-      </v-card-text>
-    </v-card>
-  </v-container>
+  <me-item-page :pending="$fetchState.pending" :item="item" type="condition" />
 </template>
 
 <script>
 export default {
   async fetch () {
     this.item = await this.$store.dispatch('FETCH_ITEM', { endpoint: 'conditions', id: this.$route.params.id })
-    this.$store.commit('pageTitle', this.item.name)
+    this.$store.commit('pageTitle', 'Conditions')
   },
   data () {
     return {

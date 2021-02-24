@@ -56,8 +56,8 @@ export default {
         },
         {
           title: 'Power Cards',
-          description: 'Need power cards at your table? This page lets you customize the size and printing method to fix your needs.',
-          to: '/print/power-cards'
+          description: 'Need power cards at your table?',
+          link: 'https://drive.google.com/drive/folders/1kGqRyRax980-B7MJ0C85SmijLPMI_FXv?usp=sharing'
         },
         {
           title: 'Character Sheets',

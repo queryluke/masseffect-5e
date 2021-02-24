@@ -3,11 +3,8 @@
     <me-page-title />
     <p>
       With the release of v1.2.0, I've put the entirety of the Player's Manual
-      into <a href="https://homebrewery.naturalcrit.com" target="_blank">Homebrewery</a>. My hope is that this will make
-      it much easier for people to adapt the Player's Manual to their own needs and playstyle.
-    </p>
-    <p>
-      Below you'll find the links each version of the final combined PDF, starting from v0.8.4. This is intended for people
+      into <a href="https://homebrewery.naturalcrit.com" target="_blank">Homebrewery</a>. Below you'll find the links
+      each version of the final combined PDF, starting from v0.8.4. This is intended for people
       who want to use a specific version of the game (i.e., if they felt a previous version was more to their liking).
     </p>
     <p>
@@ -18,7 +15,7 @@
       <v-card-title>Making your own edits</v-card-title>
       <v-card-text>
         <ol>
-          <li>Click the <v-icon>mdi-chevron-down</v-icon> dropdown on the Version you want (note: only available after v1.2.0</li>
+          <li>Click the <v-icon>mdi-chevron-down</v-icon> dropdown on the Version you want (<em>Note: only available after v1.2.0</em>)</li>
           <li>Click the section you want to use. This will navigate you to a raw markdown file.</li>
           <li>Copy the contents of this page (CTRL/CMD + A, then CTRL/CMD + C)</li>
           <li>Next, open up a <a href="https://homebrewery.naturalcrit.com/new" target="_blank">new homebrewery editor</a></li>

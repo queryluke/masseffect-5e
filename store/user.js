@@ -1,7 +1,8 @@
 export const state = () => ({
   darkMode: true,
   imperial: false,
-  bookmarks: {}
+  bookmarks: {},
+  search: null
 })
 
 export const getters = {
@@ -21,7 +22,8 @@ export const getters = {
       return false
     }
     return typeof state.bookmarks[type].find(i => i.id === item.id) !== 'undefined'
-  }
+  },
+  search: state => state.search
 }
 
 export const mutations = {
@@ -42,6 +44,9 @@ export const mutations = {
     if (index > -1) {
       state.bookmarks[type].splice(index)
     }
+  },
+  SET_SEARCH (state, value) {
+    state.search = value
   }
 }
 

@@ -142,6 +142,7 @@
 
 export default {
   async fetch () {
+    this.$store.commit('pageTitle', 'Mass Effect 5e')
     await this.$store.dispatch('FETCH_DATA', 'changelog')
     this.recentPosts = [...this.$store.getters.getData('changelog')].reverse().slice(0, 6)
   },
@@ -158,7 +159,6 @@ export default {
         { hid: 'description', name: 'description', content: 'Ever wanted to play D&D in the Mass Effect Universe? Mass Effect 5e has you covered.' }
       ]
     }
-  },
-  layout: 'info'
+  }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <!-- START: APP BAR -->
-    <me-app-bar clipped-left clipped-right has-jump-nav />
+    <me-app-bar clipped-right has-jump-nav />
     <!-- END: APP BAR -->
 
     <!-- START: NAV DRAWER -->

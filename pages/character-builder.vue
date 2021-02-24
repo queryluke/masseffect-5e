@@ -22,7 +22,6 @@ export default {
     return {
       loading: true
     }
-  },
-  layout: 'info'
+  }
 }
 </script>

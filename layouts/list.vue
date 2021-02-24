@@ -2,11 +2,10 @@
   <v-app>
     <!-- START: APP BAR -->
     <v-slide-y-transition hide-on-leave>
-      <me-app-bar v-if="$vuetify.breakpoint.mdAndUp || (!showSearchBar && $vuetify.breakpoint.smAndDown)" clipped-left />
+      <me-app-bar v-if="$vuetify.breakpoint.mdAndUp || (!showSearchBar && $vuetify.breakpoint.smAndDown)" />
       <v-app-bar
         v-if="showSearchBar && $vuetify.breakpoint.smAndDown"
         app
-        clipped-left
       >
         <v-text-field
           v-model="search"

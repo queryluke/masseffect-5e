@@ -2,12 +2,12 @@
   <v-app-bar
     app
     dark
-    :clipped-left="clippedLeft"
+    clipped-left
     :clipped-right="clippedRight"
   >
     <!-- Drawer Icon -->
     <v-app-bar-nav-icon
-      v-if="clippedLeft"
+      v-if="$vuetify.breakpoint.mdAndDown || $nuxt.$route.path !== '/'"
       @click.stop="drawer = !drawer"
     />
     <!-- ME5e Icon -->
@@ -22,27 +22,16 @@
     </v-toolbar-title>
     <v-spacer />
     <v-toolbar-items v-if="$vuetify.breakpoint.lgAndUp">
-      <v-btn v-for="item in topNavigation" :key="item.name" :to="item.to" text nuxt>
+      <v-btn v-for="item in mainNavigation" :key="item.name" :to="item.to" text nuxt>
         {{ item.name }}
       </v-btn>
     </v-toolbar-items>
     <!-- jumplink nav -->
-    <v-btn v-if="$vuetify.breakpoint.mdAndDown && hasJumpNav" icon @click.stop="jumpNav = !jumpNav">
-      <v-icon>mdi-page-layout-sidebar-right</v-icon>
-    </v-btn>
-    <v-menu v-if="$vuetify.breakpoint.mdAndDown" bottom left>
-      <template v-slot:activator="{ on }">
-        <v-btn icon v-on="on">
-          <v-icon>mdi-dots-vertical</v-icon>
-        </v-btn>
-      </template>
-      <v-list>
-        <v-list-item v-for="item in topNavigation" :key="item.name" :to="item.to" nuxt>
-          <v-list-item-title>{{ item.name }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-menu>
-
+    <v-toolbar-items v-if="$vuetify.breakpoint.mdAndDown">
+      <v-btn v-if="$vuetify.breakpoint.mdAndDown && hasJumpNav" icon @click.stop="jumpNav = !jumpNav">
+        <v-icon>mdi-page-layout-sidebar-right</v-icon>
+      </v-btn>
+    </v-toolbar-items>
     <template v-if="tabbed && $vuetify.breakpoint.smAndDown" v-slot:extension>
       <v-tabs
         v-model="tab"
@@ -64,10 +53,6 @@
 export default {
   name: 'MeAppBar',
   props: {
-    clippedLeft: {
-      type: Boolean,
-      default: false
-    },
     clippedRight: {
       type: Boolean,
       default: false
@@ -83,16 +68,13 @@ export default {
   },
   data () {
     return {
-      topNavigation: [
-        { to: '/manual/intro', name: 'Player\'s Manual' },
-        { to: '/assets', name: 'Assets' },
-        { to: '/changelog', name: 'Changelog' },
-        { to: '/about', name: 'About' },
-        { to: '/character-builder', name: 'Character Builder (BETA)' }
-      ]
+      mobileSearchDialog: false
     }
   },
   computed: {
+    mainNavigation () {
+      return this.$store.getters.mainNavigation
+    },
     pageTitle () {
       return this.$vuetify.breakpoint.smAndDown ? this.$store.getters.pageTitle : 'Mass Effect 5e'
     },
