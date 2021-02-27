@@ -23,6 +23,9 @@
     <template v-slot:header.cost="{ item }">
       {{ item.cost | groupDigits(',') }}
     </template>
+    <template v-slot:header.weight="{ item }">
+      <me-weight :amount="item.weight" num-only />
+    </template>
     <template v-slot:body="{ item }">
       <me-weapon-info :item="item" />
       <me-bookmark v-if="bookmarkable" type="weapon" :item="item" />

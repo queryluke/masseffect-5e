@@ -16,7 +16,22 @@
         <me-html :content="result.doc.html" />
       </div>
       <div v-else>
-        <div v-html="description" />
+        <span v-if="prependEllipses">...</span>
+        <span v-if="noSnippets">
+          {{ description }}
+        </span>
+        <span v-else>
+          <template v-for="(array, index) in description">
+            <template v-for="(v, i) in array">
+              <span :key="`snippet${index}${i}`">
+                <span v-text="v[0]" />
+                <span :class="darkMode ? 'light-blue darken-4' : 'yellow accent-4'" v-text="v[1]" />
+              </span>
+            </template>
+            <span v-if="index + 1 < array.length" :key="`joiningEllipses${index}`">...</span>
+          </template>
+        </span>
+        <span v-if="appendEllipses">...</span>
       </div>
     </v-card-text>
   </v-card>
@@ -56,24 +71,34 @@ export default {
       if (this.snippets.length === 0) {
         return this.$options.filters.truncate(this.result.doc.body, 156)
       }
-      const mark = `<span class="${this.darkMode ? 'light-blue darken-4' : 'yellow accent-4'}">`
-      const endMark = '</span>'
-      let text = this.snippets.map((s) => {
-        let string = this.result.doc.body.substring(s.start, s.end)
-        let totalIncrease = 0
+      // const openMarkLength = 15 + this.darkMode ? 19 : 15
+      // const endMarkLength = 7
+      return this.snippets.map((s) => {
+        const string = this.result.doc.body.substring(s.start, s.end)
+        let inc = 0
+        const array = []
+        // let totalIncrease = 0
         for (const p of s.positions) {
-          const hlStart = p[0] - s.start + totalIncrease
-          string = string.slice(0, hlStart) + mark + string.slice(hlStart)
-          const hlEnd = hlStart + mark.length + p[1]
-          string = string.slice(0, hlEnd) + endMark + string.slice(hlEnd)
-          totalIncrease += mark.length + endMark.length
+          const subArray = []
+          const hlStart = p[0] - s.start
+          const hlEnd = hlStart + p[1]
+          subArray.push(string.slice(inc, hlStart))
+          subArray.push(string.slice(hlStart, hlEnd))
+          array.push(subArray)
+          inc = hlEnd
         }
-        return string
-      }).join('...')
-      if (this.snippets[0] && this.snippets[0].start > 0) {
-        text = '...' + text
-      }
-      return text
+        return array
+      })
+    },
+    noSnippets () {
+      return this.snippets.length === 0
+    },
+    prependEllipses () {
+      return this.snippets[0] && this.snippets[0].start > 0
+    },
+    appendEllipses () {
+      return (this.snippets.length === 0 && this.result.doc.body.length > 156) ||
+        (this.snippets.length > 0 && this.snippets[this.snippets.length - 1].end < this.result.doc.body.length)
     },
     snippets () {
       const snippets = []

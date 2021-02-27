@@ -132,7 +132,8 @@
         sm="6"
         offset-sm="3"
         md="4"
-        offset-md="4">
+        offset-md="4"
+      >
         <v-btn
           block
           @click="clearLoot"

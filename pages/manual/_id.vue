@@ -22,7 +22,7 @@
             </v-btn>
           </v-col>
           <v-col>
-            <v-btn color="secondary" to="/contributing" nuxt>
+            <v-btn color="secondary" to="/about" nuxt>
               Join the community
             </v-btn>
           </v-col>
@@ -60,7 +60,7 @@ export default {
         missions: 'Missions',
         equipment: 'Equipment',
         finances: 'Finances',
-        vehicle: 'Vehicles',
+        vehicles: 'Vehicles',
         combat: 'Combat',
         powercasting: 'Powercasting',
         bestiary: 'Bestiary'

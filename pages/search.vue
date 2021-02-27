@@ -27,25 +27,27 @@
         </v-card>
       </v-col>
     </v-row>
-    <div v-if="filteredResults.length > 0">
-      <template v-for="result in filteredResults">
-        <me-search-result
-          :key="result.ref"
-          :result="result"
-        />
-      </template>
-    </div>
-    <div v-else class="text-center mt-8">
-      <v-progress-circular v-if="searching" size="70" width="7" color="primary" indeterminate />
-      <div v-else-if="search === '' || search === null">
-        <p class="text-h5">
-          Enter a search term
-        </p>
+    <div v-if="!$fetchState.pending">
+      <div v-if="filteredResults.length > 0">
+        <template v-for="result in filteredResults">
+          <me-search-result
+            :key="result.ref"
+            :result="result"
+          />
+        </template>
       </div>
-      <div v-else>
-        <p class="text-h5">
-          No results found
-        </p>
+      <div v-else class="text-center mt-8">
+        <v-progress-circular v-if="searching" size="70" width="7" color="primary" indeterminate />
+        <div v-else-if="search === '' || search === null">
+          <p class="text-h5">
+            Enter a search term
+          </p>
+        </div>
+        <div v-else>
+          <p class="text-h5">
+            No results found
+          </p>
+        </div>
       </div>
     </div>
   </v-container>

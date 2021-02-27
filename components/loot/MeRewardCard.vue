@@ -4,13 +4,13 @@
       <v-toolbar-title>
         Reward #{{ index + 1 }}
       </v-toolbar-title>
-      <v-spacer></v-spacer>
+      <v-spacer />
       <v-tooltip top>
         <template v-slot:activator="{ on, attrs }">
           <v-btn
             icon
-            v-on="on"
             v-bind="attrs"
+            v-on="on"
             @click="$emit('remove-loot', index)"
           >
             <v-icon>
@@ -76,7 +76,7 @@
     </v-card-actions>
     <v-expand-transition>
       <div v-show="show">
-        <v-divider></v-divider>
+        <v-divider />
         <v-card-text>
           <v-list dense two-line>
             <v-subheader>

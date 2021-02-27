@@ -17,8 +17,7 @@
       >
         <thead>
           <tr v-if="item.powercasting && $vuetify.breakpoint.mdAndUp">
-            <th :colspan="powerCastingHeaderOffset">
-            </th>
+            <th :colspan="powerCastingHeaderOffset" />
             <th :colspan="powerCastingColumnCount" class="text-center">
               Power Slots by Power Level
             </th>
@@ -90,8 +89,7 @@
           v-if="$vuetify.breakpoint.smAndDown"
           :id="`${psByPlItem.cssId}Intersect`"
           v-intersect="{ handler: onIntersect, threshold: [1] }"
-        >
-        </td>
+        />
       </template>
     </v-data-table>
 
@@ -135,7 +133,7 @@
           <v-toolbar-title>
             {{ selectedRow.level }} Level
           </v-toolbar-title>
-          <v-spacer></v-spacer>
+          <v-spacer />
           <v-btn
             icon
             :[textMode]="true"

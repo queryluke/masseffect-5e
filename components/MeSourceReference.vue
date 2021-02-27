@@ -1,12 +1,12 @@
 <template>
-  <p class="text-xs-right">
+  <p class="text-right">
     <small>
       <span>
         text adapted from <a :href="link" target="_blank"><em>{{ title }}</em></a>
       </span>
       <span v-if="source !== 'wiki'"> , p. {{ pages }}</span>
-      <span v-for="source in additional" :key="source.source" class="pl-1">
-        & <a :href="generateLink(source.source)" target="_blank"><em>{{ generateTitle(source.source) }}</em></a>
+      <span v-for="src in additional" :key="src.source" class="pl-1">
+        & <a :href="generateLink(src.source)" target="_blank"><em>{{ generateTitle(src.source) }}</em></a>
       </span>
     </small>
   </p>

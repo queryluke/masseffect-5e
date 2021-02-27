@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     generateTemplate () {
-      const template = `<div ${this.inline ? 'class="inline-html"' : ''}>${this.content}</div>`
+      const template = `<div ${this.inline ? 'class="me-html inline-html"' : 'class="me-html text-body-2"'}>${this.content}</div>`
       const { render, staticRenderFns } = compileToFunctions(template)
       this.templateRender = render
       this.$options.staticRenderFns = staticRenderFns
@@ -57,5 +57,8 @@ export default {
   }
   div.inline-html > p:first-child{
     display: inline;
+  }
+  div.me-html > ul {
+    margin-bottom: 1em;
   }
 </style>

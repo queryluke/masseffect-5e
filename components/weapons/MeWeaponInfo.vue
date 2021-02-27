@@ -29,7 +29,7 @@
           </v-col>
           <v-col cols="6" lg="3">
             <me-item-stat label="Weight">
-              {{ item.weight }}
+              <me-weight :amount="item.weight" num-only />
             </me-item-stat>
           </v-col>
         </v-row>

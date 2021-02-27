@@ -85,10 +85,10 @@
           <v-col cols="3" class="text-xs-right">
             <span v-if="power.primes || power.detonates">
               <v-avatar v-if="power.primes" :size="primeSize" color="white" class="primes" tile>
-                <img :src="`/images/powers/${power.primes}.svg`" :alt="power.primes" />
+                <img :src="`/images/powers/${power.primes}.svg`" :alt="power.primes">
               </v-avatar>
               <v-avatar v-if="power.detonates" :size="primeSize" color="white" class="primes" tile>
-                <img src="/images/powers/detonate.svg" :alt="power.primes" />
+                <img src="/images/powers/detonate.svg" :alt="power.primes">
               </v-avatar>
             </span>
           </v-col>

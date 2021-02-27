@@ -35,7 +35,9 @@
     <p class="text-h6 mb-0">
       Starting Equipment
     </p>
-    <p class="text-body-2">You start with the following equipment, in addition to the equipment granted by your background:</p>
+    <p class="text-body-2">
+      You start with the following equipment, in addition to the equipment granted by your background:
+    </p>
     <ul class="text-body-2">
       <li
         v-for="(eq, index) in item.startingEquipment"
