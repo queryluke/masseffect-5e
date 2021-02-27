@@ -6,6 +6,7 @@
     :abbr="abbr"
     :adj="adj"
     :num-only="numOnly"
+    :text-if="textIf"
   />
 </template>
 
@@ -39,6 +40,10 @@ export default {
     },
     numOnly: {
       type: Boolean,
+      default: false
+    },
+    textIf: {
+      type: [String, Boolean],
       default: false
     }
   },

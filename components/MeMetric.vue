@@ -149,9 +149,10 @@ export default {
         if (this.imperial && this.textIf === 'imperial') {
           return this.override
         }
-        if (this.textIf === 'metric') {
+        if (this.textIf === 'metric' && !this.imperial) {
           return this.override
         }
+        return ''
       }
       let value = ''
       let hyphen = ''

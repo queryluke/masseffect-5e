@@ -36,7 +36,7 @@
                 v-card.elevation-0.transparent
                   v-card-text.text-center
                     v-avatar(size="60px")
-                      v-img(src="/images/races/human.png" alt="Systems Alliance Symbol by Engorn on DeviantArt")
+                      v-img(src="/images/species/human.png" alt="Systems Alliance Symbol by Engorn on DeviantArt")
                     span.mx-2.headline +
                     v-avatar(size="60px" tile)
                       v-img(src="/images/classes/vanguard.svg" alt="Vanguard Symbol")
@@ -86,7 +86,7 @@
                 Our player's manual is more than a PDF. It's a fully navigable web app that allows you to browse rules, search for items and spells,
                 and create bookmarks for frequently used information.
               v-card-actions
-                v-btn(to="/phb/intro" text) Get Started #[v-icon mdi-chevron-right]
+                v-btn(to="/manual/intro" text) Get Started #[v-icon mdi-chevron-right]
           v-flex(md5).hidden-sm-and-down.text-center
             v-img(src="/images/misc/datapad.png" height="300" contain alt="data pad").px-5
           // Printables
@@ -110,7 +110,7 @@
                 Want to get involved? We're always open to content suggestions, feedback, and ideas from the community.
                 Come join the conversation!
               v-card-actions
-                v-btn(to="/feedback" text) Contribute #[v-icon mdi-chevron-right]
+                v-btn(to="/about" text) Contribute #[v-icon mdi-chevron-right]
           v-flex(md5).hidden-sm-and-down.text-center
             v-img(src="/images/misc/grunts.png" contain height="300").px-5
     section
