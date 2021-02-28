@@ -20,5 +20,6 @@ export default {
   searchbar: state => state.searchbar,
   races: state => state.races,
   phbSearch: state => state.phbSearch,
-  searchFilters: state => state.searchFilters
+  searchFilters: state => state.searchFilters,
+  versionSnackbar: state => state.versionSnackbar
 }

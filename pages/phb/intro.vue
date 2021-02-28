@@ -2,9 +2,9 @@
   v-container
     div.my-5.text-xs-center
       img(
-        srcset="/images/me5e_logo_450w.png 450w, /images/me5e_logo_600w.png 600w, /images/me5e_logo_720w.png 720w, /images/me5e_logo_900w.png 900w"
+        srcset="/v120/images/me5e_logo_450w.png 450w, /v120/images/me5e_logo_600w.png 600w, /v120/images/me5e_logo_720w.png 720w, /v120/images/me5e_logo_900w.png 900w"
         sizes="(max-width: 320px) 320px, (max-width: 480px) 480px, (max-width: 600px) 600px, (max-width: 720px) 720px, (max-width: 900px) 900px, (max-width: 1200px) 450px, 450px"
-        src="/images/me5e_logo_450w.png"
+        src="/v120/images/me5e_logo_450w.png"
         alt="Mass Effect 5e logo"
         id="phbLogo"
       ).mb-4

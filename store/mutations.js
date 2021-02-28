@@ -22,5 +22,8 @@ export default {
   },
   setPhbSearch(state, payload) {
     state.phbSearch = payload
+  },
+  closeVersionSnackbar(state) {
+    state.versionSnackbar = false
   }
 }

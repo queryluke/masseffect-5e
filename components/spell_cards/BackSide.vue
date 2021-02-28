@@ -2,7 +2,7 @@
   div(:class="cardType").spell-card
     v-card(height="100%" v-bind:color="cardColor").elevation-0
       v-layout(fill-height align-center v-if="cardOption === 'single' || spell.id === 'spacer'").pa-2
-        v-img(src="/images/me5e_logo_720w.png" style="margin-top: -3em;")
+        v-img(src="/v120/images/me5e_logo_720w.png" style="margin-top: -3em;")
       div(v-else)
         v-layout(row wrap)
           v-flex(xs12).text-xs-center

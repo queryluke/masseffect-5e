@@ -1,7 +1,7 @@
 <template lang="pug">
   v-content
     section
-      v-parallax(src="/images/parallax/milky_way.jpg" alt="The Milky Way")
+      v-parallax(src="/v120/images/parallax/milky_way.jpg" alt="The Milky Way")
         v-layout(column align-center justify-center).white--text
           me-header-logo
           h1.display-1.mt-5 About #[span.sr-only Mass Effect 5e]

@@ -1,19 +1,19 @@
 <template lang="pug">
   v-form(on-submit="return false;")
     v-container(grid-list-md text-xs-center)
-      
+
       // Character Name and ME5e Logo
       v-layout(row wrap)
         v-flex(xs4 class="character-name")
           v-text-field(v-model="character.name" label="Character Name")
-        
+
         v-flex(xs4)
           v-btn(@click="saveFile()") Save Character Sheet
           input(type="file" ref="file" style="display: none" @change="loadTextFromFile" @load="character = $event")
           v-btn(@click="$refs.file.click()") Load Character Sheet
 
         v-flex(xs4)
-          img(title="Mass Effect 5e Logo" src="/images/me5e_logo_450w.png" alt="Mass Effect 5e logo")
+          img(title="Mass Effect 5e Logo" src="/v120/images/me5e_logo_450w.png" alt="Mass Effect 5e logo")
 
       // Top level character info
       v-layout
@@ -22,10 +22,10 @@
           v-layout(row)
             v-flex
               v-text-field(v-model="character.level" label="Level")
-            
+
             v-flex
               v-select(v-model="character.race" :items="races" label="Race")
-            
+
             v-flex
               v-select(v-model="character.class" :items="classes" label="Class")
 
@@ -34,23 +34,23 @@
 
             v-flex
               v-select(v-model="character.subclass" :items="['Colonist','Doctor']" label="Background")
-          
+
           v-layout(row)
             v-flex
               v-text-field(v-model="character.ac" label="AC")
-            
+
             v-flex
-              v-text-field(v-model="character.initiative" label="Initiative") 
+              v-text-field(v-model="character.initiative" label="Initiative")
 
             v-flex
               v-text-field(v-model="character.movement" label="Movement")
-            
-            v-flex
-              v-text-field(v-model="characterProf" label="Proficiency") 
 
             v-flex
-              v-text-field(v-model="character.xp" label="XP") 
-        
+              v-text-field(v-model="characterProf" label="Proficiency")
+
+            v-flex
+              v-text-field(v-model="character.xp" label="XP")
+
         // Character Image
         v-flex(xs3)
           img(:title="character.name"
@@ -60,7 +60,7 @@
           v-dialog(v-model="dialog" width="500")
             template(v-slot:activator="{ on }")
               v-btn(color="red lighten-2" dark v-on="on") Change Image
-            
+
             v-card
               v-card-title
                 div Change Image URL
@@ -80,9 +80,9 @@
               td(style="width: 70%;") {{props.item.label}}
               td(style="width: 10%;")
                 v-select(v-model="props.item.prof" :items="[0,.5,1,2]")
-              td(style="width: 10%;") 
+              td(style="width: 10%;")
                 v-checkbox(v-model="props.item.advantage")
-        
+
         // Padding
         v-flex(xs1)
 
@@ -105,7 +105,7 @@
                     td Ability Modifiers
                     td(v-for="stat in stat_names" class="stat-num")
                       div {{(calcAbilityMod(character.stats[stat]) >= 0 ? '+' : '') + calcAbilityMod(character.stats[stat])}}
-                  
+
                   tr
                     td Saving Throws
                     td(v-for="stat in stat_names" class="stat-num")
@@ -115,7 +115,7 @@
                     td Proficiency
                     td(v-for="stat in stat_names")
                       v-checkbox(v-model="character.proficiencies.stats[stat]")
-                  
+
                   tr(class="raw-value-area")
                     td(style="font-weight: bold;") Raw Values
                     td(v-for="stat in stat_names")
@@ -297,11 +297,11 @@ export default {
     loadTextFromFile(ev) {
       const file = ev.target.files[0];
       const reader = new FileReader();
-      
+
       console.log(file);
       if (!file) return;
       reader.readAsText(file);
-      
+
       reader.onload = e => {
         console.log(e.target.result);
         const dataDump = e.target.result;
@@ -310,10 +310,10 @@ export default {
         }
         this.$emit("load", e.target.result);
       }
-      
+
     }
   }
 
-  
+
 };
 </script>

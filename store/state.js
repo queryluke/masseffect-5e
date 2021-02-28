@@ -25,5 +25,6 @@ export default {
     { id: 'spell', textColor: 'purple--text', color: 'purple', icon: 'whatshot' },
     { id: 'bestiary', textColor: 'primary--text', color: 'primary', icon: 'pets' }
   ],
-  version: config.version
+  version: config.version,
+  versionSnackbar: true,
 }

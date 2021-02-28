@@ -11,7 +11,7 @@
           save-load(:character="character" @load="loadCharacterFromFile($event)")
 
         v-flex(xs4)
-          img(title="Mass Effect 5e Logo" src="/images/me5e_logo_450w.png" alt="Mass Effect 5e logo")
+          img(title="Mass Effect 5e Logo" src="/v120/images/me5e_logo_450w.png" alt="Mass Effect 5e logo")
 
       // Top level character info
       v-layout
@@ -21,7 +21,7 @@
           v-layout(row)
             v-flex
               v-text-field(v-model="character.level" label="Level" type="number" :min="1" :max="20"
-              :rules="[v => (v <= 20 && v >= 1) || 'Level must be between 1-20']") 
+              :rules="[v => (v <= 20 && v >= 1) || 'Level must be between 1-20']")
             v-flex
               v-select(v-model="character.race" :items="races" label="Race")
             v-flex
@@ -62,7 +62,7 @@
                 character-power-counter(label="Barrier Uses Remaining" :value="character.barrier_uses"
                     :max-value="character.class.progression[character.level-1].barrierUses || 0" :show-min="false"
                     @change="character.barrier_uses = $event")
-                
+
 
         // Character Image
         v-flex(xs3)
@@ -222,7 +222,7 @@
                           v-on:backgrounds:modify="character.backgrounds[$event.index] = $event.html; updateCharacter();"
                           v-on:backgrounds:remove="character.backgrounds.splice($event.index, 1); updateCharacter();"
                         )
-                    
+
                     v-stepper-content.text-xs-left(step="other" v-if="selected_character_info_tab == 'other'")
                       document-collector(
                           heading="Other"

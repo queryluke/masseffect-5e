@@ -1,7 +1,7 @@
 <template lang="pug">
   v-content
     section
-      v-parallax(src="/images/parallax/illusive.jpg" alt="Illusive Man")
+      v-parallax(src="/v120/images/parallax/illusive.jpg" alt="Illusive Man")
         v-layout(column align-center justify-center).white--text
           me-header-logo
           h1.sr-only Missions

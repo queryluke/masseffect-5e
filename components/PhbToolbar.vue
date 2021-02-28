@@ -16,7 +16,7 @@
     // All other mobile displays
     v-toolbar-title(v-else)
       nuxt-link(to="/").nav-brand.hidden-sm-and-down
-        img(src="/images/me5e.svg")
+        img(src="/v120/images/me5e.svg")
         span Mass Effect 5e
       span.hidden-md-and-up {{ pageName }}
 

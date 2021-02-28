@@ -2,7 +2,7 @@
   div(:class="cardType").spell-card
     v-card(height="100%").elevation-0
       v-layout(fill-height align-center v-if="spell.id === 'spacer'").pa-2
-        v-img(src="/images/me5e_logo_720w.png" style="margin-top: -3em;")
+        v-img(src="/v120/images/me5e_logo_720w.png" style="margin-top: -3em;")
       v-layout(row wrap v-else)
         v-flex(xs12 :class="{'py-1': singleSide, 'text-xs-center': !singleSide}")
           v-layout(row :justify-space-between="singleSide")
@@ -37,7 +37,7 @@
               v-avatar(:size="primeSize" color="white" v-if="spell.primes").primes
                 img(:src="`/images/spells/${spell.primes}.svg`" v-bind:alt="spell.primes" tile)
               v-avatar(:size="primeSize" color="white" v-if="spell.detonates" tile).primes
-                img(src="/images/spells/detonate.svg" alt="detonates")
+                img(src="/v120/images/spells/detonate.svg" alt="detonates")
             span(v-else) &nbsp;
 
 </template>

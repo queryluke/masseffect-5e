@@ -1,7 +1,7 @@
 <template lang="pug">
   v-content
     section
-      v-parallax(src="/images/parallax/edi.jpg" alt="Edi")
+      v-parallax(src="/v120/images/parallax/edi.jpg" alt="Edi")
         v-layout(column align-center justify-center).white--text
           me-header-logo
           h1.sr-only Feedback & Contributing for Mass Effect 5e
@@ -14,14 +14,14 @@
                 v-card.elevation-0.transparent
                   v-card-text.text-xs-center.pb-0.mb-0
                     v-avatar(size="64" color="transparent" tile)
-                      img(src="/images/misc/Discord-Logo-Color.svg" alt="Discord Logo")
+                      img(src="/v120/images/misc/Discord-Logo-Color.svg" alt="Discord Logo")
                   v-card-title(primary-title).layout.column.justify-center.text-xs-center.pb-0
                     div.headline #[a(href="https://discord.gg/c2UnqkH" target="_blank").blue--text.text--lighten-3 Discord]
               v-flex(xs12 md4 d-flex)
                 v-card.elevation-0.transparent
                   v-card-text.text-xs-center.pb-0.mb-0
                     v-avatar(size="64")
-                      img(src="/images/misc/Reddit_Mark_OnDark.png" alt="Reddit Logo")
+                      img(src="/v120/images/misc/Reddit_Mark_OnDark.png" alt="Reddit Logo")
                   v-card-title(primary-title).layout.column.justify-center.text-xs-center.pb-0
                     div.headline #[a(href="https://www.reddit.com/r/masseffect5e/" target="_blank").blue--text.text--lighten-3 /r/masseffect5e]
               v-flex(xs12 md4 d-flex)

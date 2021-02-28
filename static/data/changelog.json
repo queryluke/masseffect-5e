@@ -139,7 +139,7 @@
     "title": "v0.7.0",
     "description": "Geth forces, Race Audit, and a Weapon Balance",
     "date": "2018-05-06T00:00:00.000Z",
-    "image": "/images/misc/ArmatureLanding.png",
+    "image": "/v120/images/misc/ArmatureLanding.png",
     "slug": "0.7.0",
     "url": "/changelog/0.7.0"
   },
@@ -176,7 +176,7 @@
     "title": "Grunt Generator",
     "description": "Infinite NPCs! Our generator can spits out millions of unique NPC combinations",
     "date": "2018-01-20T00:00:00.000Z",
-    "image": "/images/misc/grunts_cropped.png",
+    "image": "/v120/images/misc/grunts_cropped.png",
     "slug": "0.4.2",
     "url": "/changelog/0.4.2"
   },

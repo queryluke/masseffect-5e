@@ -13,7 +13,7 @@ fs.readdirSync(`./static/data/races`).map(file => {
   const id = file.replace(/.md$/, '')
   routes.push(`/phb/races/${id}`)
 })
-fs.readdirSync('./static/data/changelog').map((file) => {
+fs  .readdirSync('./static/data/changelog').map((file) => {
   routes.push('/changelog/' + (file.replace(/\.md$/g, '')))
 })
 
@@ -104,6 +104,7 @@ module.exports = {
   ** Router Scroll behavior
   */
   router: {
+    base: '/v120/',
     scrollBehavior: (to, from, savedPosition) => {
       let position = false
 

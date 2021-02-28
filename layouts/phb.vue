@@ -1,6 +1,6 @@
 <template lang="pug">
   v-app(toolbar)
-
+    me-version-snackbar
     // Side Navigation
     side-navigation
 
@@ -35,10 +35,12 @@ import rules from '~/static/data/rules'
 
 // State
 import {createNamespacedHelpers} from 'vuex'
+import MeVersionSnackbar from "../components/MeVersionSnackbar";
 const {mapActions, mapGetters} = createNamespacedHelpers('phb')
 
 export default {
   components: {
+    MeVersionSnackbar,
     PhbToolbar,
     SideNavigation
   },

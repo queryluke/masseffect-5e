@@ -2,7 +2,7 @@
   v-toolbar(dark fixed app)
     v-toolbar-title
       nuxt-link(to="/").nav-brand
-        img(src="/images/me5e.svg")
+        img(src="/v120/images/me5e.svg")
         span Mass Effect 5e
     v-spacer
     v-toolbar-items.hidden-sm-and-down

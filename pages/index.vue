@@ -2,7 +2,7 @@
   v-content
     // Main Parallax
     section
-      v-parallax(src="/images/parallax/citadel.jpg" alt="Mass Effect // The Citadel by grndayfrk14")
+      v-parallax(src="/v120/images/parallax/citadel.jpg" alt="Mass Effect // The Citadel by grndayfrk14")
         v-layout(column align-center justify-center).black--text
           me-header-logo
           h1.sr-only Mass Effect 5e
@@ -32,10 +32,10 @@
                   v-card.elevation-0.transparent
                     v-card-text.text-xs-center
                       v-avatar(size="60px")
-                        v-img(src="/images/races/human.png" alt="Systems Alliance Symbol by Engorn on DeviantArt")
+                        v-img(src="/v120/images/races/human.png" alt="Systems Alliance Symbol by Engorn on DeviantArt")
                       span.mx-2.headline +
                       v-avatar(size="60px" tile)
-                        v-img(src="/images/classes/vanguard.svg" alt="Vanguard Symbol")
+                        v-img(src="/v120/images/classes/vanguard.svg" alt="Vanguard Symbol")
                     v-card-title(primary-title).layout.justify-center
                       div.headline.text-xs-center Mix & Match
                     v-card-text.
@@ -48,7 +48,7 @@
                   v-card.elevation-0.transparent
                     v-card-text.text-xs-center
                       v-avatar(size="60px" tile).primary
-                        v-img(src="/images/weapons/assault_rifle.svg" alt="Assault Rifle SVG")
+                        v-img(src="/v120/images/weapons/assault_rifle.svg" alt="Assault Rifle SVG")
                     v-card-title(primary-title).layout.justify-center
                       div.headline.text-xs-center Weapons & Armor
                     v-card-text.
@@ -60,7 +60,7 @@
                   v-card.elevation-0.transparent
                     v-card-text.text-xs-center
                       v-avatar(size="60px").primary
-                        v-img(src="/images/misc/reaper_avatar.jpg" alt="Reaper swarm")
+                        v-img(src="/v120/images/misc/reaper_avatar.jpg" alt="Reaper swarm")
                     v-card-title(primary-title).layout.justify-center
                       div.headline.text-xs-center Unique Enemies
                     v-card-text.
@@ -68,7 +68,7 @@
                       to ensure balanced combat. From Reaper forces to Blue Sun grunts, we've got enough monsters to keep your
                       players engaged and challenged.
     section
-      v-parallax(src="/images/parallax/joker.jpg" alt="mass effect 2 by libbabink")
+      v-parallax(src="/v120/images/parallax/joker.jpg" alt="mass effect 2 by libbabink")
         v-layout(column align-center justify-center).white--text
           h2.parallax-title Play with the best tech
     section
@@ -84,10 +84,10 @@
               v-card-actions
                 v-btn(to="/phb/intro" flat) Get Started #[v-icon chevron_right]
           v-flex(md5).hidden-sm-and-down.text-xs-center
-            v-img(src="/images/misc/datapad.png" height="300" contain alt="data pad").px-5
+            v-img(src="/v120/images/misc/datapad.png" height="300" contain alt="data pad").px-5
           // Printables
           v-flex(md5).hidden-sm-and-down
-            v-img(src="/images/misc/tt_assets.png" height="300" contain alt="grunt").px-5
+            v-img(src="/v120/images/misc/tt_assets.png" height="300" contain alt="grunt").px-5
           v-flex(xs12 md7)
             v-card.elevation-0.transparent
               v-card-title(primary-title)
@@ -108,9 +108,9 @@
               v-card-actions
                 v-btn(to="/feedback" flat) Contribute #[v-icon chevron_right]
           v-flex(md5).hidden-sm-and-down.text-xs-center
-            v-img(src="/images/misc/grunts.png" contain height="300").px-5
+            v-img(src="/v120/images/misc/grunts.png" contain height="300").px-5
     section
-      v-parallax(src="/images/parallax/illusive.jpg" alt="The Illusive Man by libbabink")
+      v-parallax(src="/v120/images/parallax/illusive.jpg" alt="The Illusive Man by libbabink")
         v-layout(column align-center justify-center)
           h2.parallax-title Latest News
     section

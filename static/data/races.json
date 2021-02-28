@@ -25,7 +25,7 @@
     "speed": "Your base walking speed is 10m.",
     "snippet": "The Angara are the only known extant sapient race native to the Heleus Cluster of the Andromeda galaxy and arose on the planet Havarl.",
     "startingCredits": "Instead of your class's starting equipment, you may start with 6d8 x 1000 + 10,000 credits to buy your own equipment.",
-    "bodyImg": "/images/races/angara.png",
+    "bodyImg": "/v120/images/races/angara.png",
     "img": "https://vignette.wikia.nocookie.net/masseffect/images/4/44/Angara_trailer_mugs.png/revision/latest/scale-to-width-down/640?cb=20170127022744",
     "traits": [
       "survivalist",
@@ -184,8 +184,8 @@
     "speed": "Elcor are relatively slow compared to other races. Your base walking speed is 6m.",
     "snippet": "The elcor are a Citadel species native to the high-gravity world Dekuuna. They are massive creatures, standing on four muscular legs for increased stability. Elcor move slowly, an evolved response to an environment where a fall can be lethal.",
     "startingCredits": "Instead of your class's starting equipment, you may start with 10d6 x 1000 + 10,000 credits to buy your own equipment.",
-    "bodyImg": "/images/races/elcor.png",
-    "img": "/images/races/elcor_card.jpg",
+    "bodyImg": "/v120/images/races/elcor.png",
+    "img": "/v120/images/races/elcor_card.jpg",
     "traits": [
       "careful",
       "quadrupedal",
@@ -262,7 +262,7 @@
     "speed": "Hanar are a water-based lifeform and have a swim speed of 10m. They rely on contra-gravitic levitation packs when not in water environments.",
     "snippet": "The hanar are a species resembling Earth's jellyfish and are one of the few non-bipedal Citadel races. Hanar are known for their intense politeness when speaking and their strong religious beliefs.",
     "startingCredits": "Instead of your class's starting equipment, you may start with 6d8 x 1000 + 10,000 credits to buy your own equipment.",
-    "bodyImg": "/images/races/hanar.png",
+    "bodyImg": "/v120/images/races/hanar.png",
     "img": "https://vignette.wikia.nocookie.net/masseffect/images/4/47/Delan.png/revision/latest/scale-to-width-down/640?cb=20090121013825",
     "traits": [
       "amphibious",
@@ -375,7 +375,7 @@
     "speed": "Your base walking speed is 10m.",
     "snippet": "The protheans are an ancient alien race which mysteriously vanished over 50,000 years ago. Though there is evidence that some still survive in stasis pods.",
     "startingCredits": "Instead of your class's starting equipment, you may start with 2d10 x 1000 + 10,000 credits to buy your own equipment.",
-    "bodyImg": "/images/races/prothean.png",
+    "bodyImg": "/v120/images/races/prothean.png",
     "img": "https://vignette.wikia.nocookie.net/masseffect/images/e/e9/Eden_Prime_50kya_-_Javik_squad.png/revision/latest/scale-to-width-down/640?cb=20141206072802",
     "traits": [
       "all-seeing-eyes",
