@@ -11,7 +11,7 @@
                 img(:src="meLogos[id].image" alt="meLogos[id].alt" height="40px")
               v-flex
                 v-avatar(size="40" tile v-for="c in pt" v-bind:key="c")
-                  img(:src="`/images/classes/${c}.png`" alt="`${c} symbol`")
+                  img(:src="`/v120/images/classes/${c}.png`" alt="`${c} symbol`")
         v-divider
 </template>
 

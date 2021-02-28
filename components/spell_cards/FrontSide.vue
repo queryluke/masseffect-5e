@@ -35,7 +35,7 @@
           v-flex(xs3).text-xs-right
             span(v-if="spell.primes || spell.detonates")
               v-avatar(:size="primeSize" color="white" v-if="spell.primes").primes
-                img(:src="`/images/spells/${spell.primes}.svg`" v-bind:alt="spell.primes" tile)
+                img(:src="`/v120/images/spells/${spell.primes}.svg`" v-bind:alt="spell.primes" tile)
               v-avatar(:size="primeSize" color="white" v-if="spell.detonates" tile).primes
                 img(src="/v120/images/spells/detonate.svg" alt="detonates")
             span(v-else) &nbsp;

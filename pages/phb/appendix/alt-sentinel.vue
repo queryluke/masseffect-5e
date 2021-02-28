@@ -2,7 +2,7 @@
   v-container(:class="{ 'pa-0': $vuetify.breakpoint.smAndDown }" fluid)
     v-layout(row).hidden-sm-and-down
       v-avatar(size="128" tile)
-        img(:src="`/images/classes/sentinel.svg`")
+        img(:src="`/v120/images/classes/sentinel.svg`")
       div.pl-5
         h2.display-3 {{ item.name }}
         p {{ item.description}}

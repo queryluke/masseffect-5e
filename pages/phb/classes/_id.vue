@@ -2,7 +2,7 @@
   v-container(:class="{ 'pa-0': $vuetify.breakpoint.smAndDown }" fluid)
     v-layout(row).hidden-sm-and-down
       v-avatar(size="128" tile)
-        img(:src="`/images/classes/${id}.svg`")
+        img(:src="`/v120/images/classes/${id}.svg`")
       div.pl-5
         v-layout(row)
           v-flex(md8)

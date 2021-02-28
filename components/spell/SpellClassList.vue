@@ -2,7 +2,7 @@
   v-layout(:class="justify")
     div(v-for="me_class in availableClasses" v-bind:key="me_class")
       v-avatar(:size="size" tile)
-        img(:src="`/images/classes/${me_class}.svg`" v-bind:alt="me_class")
+        img(:src="`/v120/images/classes/${me_class}.svg`" v-bind:alt="me_class")
 </template>
 
 <script>
