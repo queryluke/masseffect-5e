@@ -1,32 +1,37 @@
 <template lang="pug">
   div
     section
-      v-parallax(src="/images/parallax/milky_way.jpg" alt="The Milky Way")
-        v-row(justify="center")
-          v-col(cols="12" sm="10" md="8" lg="6" xl="4").black--text.text-center.mt-10
-            v-img(
-              srcset="/images/me5e_logo_450w.png 450w, /images/me5e_logo_600w.png 600w, /images/me5e_logo_720w.png 720w, /images/me5e_logo_900w.png 900w, /images/me5e_logo_1200w.png 1200w"
-              sizes="(max-width: 320px) 320px, (max-width: 480px) 480px, (max-width: 600px) 600px, (max-width: 720px) 600px, (max-width: 900px) 720px, (max-width: 1200px) 900px, 1200px"
-              src="/images/me5e_logo_1200w.png"
-              alt="Mass Effect 5e logo"
-            ).mt-10
-            h1.sr-only Mass Effect 5e
-            h2.text-h4.white--text.mt-10 About
+      v-row(justify="center")
+        v-col(cols="12" sm="10" md="8" lg="6" xl="4").black--text.text-center.mt-10
+          v-img(
+            srcset="/images/me5e_logo_450w.png 450w, /images/me5e_logo_600w.png 600w, /images/me5e_logo_720w.png 720w, /images/me5e_logo_900w.png 900w, /images/me5e_logo_1200w.png 1200w"
+            sizes="(max-width: 320px) 320px, (max-width: 480px) 480px, (max-width: 600px) 600px, (max-width: 720px) 600px, (max-width: 900px) 720px, (max-width: 1200px) 900px, 1200px"
+            src="/images/me5e_logo_1200w.png"
+            alt="Mass Effect 5e logo"
+          ).mt-10
+          h1.sr-only Mass Effect 5e
     section
       v-container
         v-row(justify="center").mt-5
           v-col(cols="12" sm="10" md="8").my-3
             div.text-center
-              h3.text-h4 Join the Community
+              h2.text-h4 Join the Community
         v-row(justify="space-around").mt-5
           v-col(v-for="community in communities" :key="community.name" cols="12" sm="6" md="4" lg="3")
             v-card(to="community.link" target="_blank" dark).text-center
               v-card-text
                 v-img(:src="community.image" v-bind:alt="community.alt" height="80" contain)
+        v-row(justify="space-around").mt-5
+          v-col(cols="12" md="8" lg="6" xl="4")
+            v-alert(type="info" prominent)
+              v-row(align="center")
+                v-col(class="grow") Found a bug or error on the website, please report it!
+                v-col(class="shrink")
+                  v-btn(href="https://forms.gle/JtGQqS9KxVFQGtAq7" target="_blank") Report bug
         v-row(justify="center").mt-15
           v-col(cols="12" sm="10" md="8").my-3
             div.text-center
-              h3.text-h4 About Mass Effect 5e
+              h2.text-h4 About Mass Effect 5e
               p.
                 Mass Effect 5e is a fan-made, D&D 5th Edition, homebrew project that started in early 2016. The core
                 ruleset and website were created by Luke A with guidance from Hugh T. Luke continues to maintain the
