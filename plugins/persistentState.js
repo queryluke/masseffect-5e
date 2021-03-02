@@ -2,11 +2,8 @@ import createPersistedState from 'vuex-persistedstate'
 
 export default ({ store }) => {
   createPersistedState({
+    key: 'v130',
     paths: [
-      'gruntConfig',
-      'encounter',
-      'bookmarks',
-      'diceRoller.rolls',
       'characterBuilder.character',
       'user.bookmarks'
     ]

@@ -57,32 +57,35 @@
       </template>
     </v-list>
 
-    <template v-if="$vuetify.breakpoint.mdAndUp" v-slot:append>
+    <template #append>
       <v-divider />
-      <me-user-settings />
+      <me-user-settings v-if="$vuetify.breakpoint.mdAndUp" />
       <v-toolbar dense>
-        <v-toolbar-title class="text-body-2">
-          VERSION {{ version }}
-        </v-toolbar-title>
-      </v-toolbar>
-    </template>
-    <template v-else #append>
-      <v-list dense color="grey darken-4" dark>
-        <v-list-item>
-          <v-list-item-content>
-            <v-list-item-title>
+        <v-menu offset-y top>
+          <template v-slot:activator="{ on, attrs }">
+            <v-toolbar-title
+              class="text-body-2"
+              v-bind="attrs"
+              v-on="on"
+            >
               VERSION {{ version }}
-            </v-list-item-title>
-          </v-list-item-content>
-          <v-list-item-action @click="settingsDialog = !settingsDialog">
+              <v-icon>
+                mdi-menu-up
+              </v-icon>
+            </v-toolbar-title>
+          </template>
+          <me-version-menu />
+        </v-menu>
+        <v-spacer />
+        <v-toolbar-items v-if="$vuetify.breakpoint.mdAndDown">
+          <v-btn small text @click="settingsDialog = !settingsDialog">
             <v-icon small>
               mdi-cog
             </v-icon>
-          </v-list-item-action>
-        </v-list-item>
-      </v-list>
+          </v-btn>
+        </v-toolbar-items>
+      </v-toolbar>
     </template>
-
     <v-dialog v-if="$vuetify.breakpoint.smAndDown" v-model="settingsDialog">
       <v-card>
         <v-card-text>
@@ -114,7 +117,9 @@ export default {
       let navigation = this.$store.getters.navigation.slice()
       if (this.$vuetify.breakpoint.mdAndDown) {
         navigation.push({ divider: true })
+        navigation.push({ header: 'Mass Effect 5e' })
         const addNav = this.$store.getters.mainNavigation.filter(i => !['/manual/intro', '/character-builder'].includes(i.to))
+        addNav.push({ to: '/license', name: 'License' })
         navigation = navigation.concat(addNav)
       }
       return navigation
@@ -146,6 +151,9 @@ export default {
     },
     version () {
       return this.$store.getters.version
+    },
+    pastVersions () {
+      return this.$store.getters.pastVersions
     },
     bookmarkCount () {
       return this.$store.getters['user/bookmarkCount']

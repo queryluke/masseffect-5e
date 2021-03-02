@@ -43,12 +43,12 @@ export default {
         {
           name: 'Type',
           key: 'type',
-          options: [...new Set(this.items.map(i => i.type))]
+          options: [...new Set(this.items.map(i => i.type))].sort()
         },
         {
           name: 'Properties',
           key: 'properties',
-          options: [...new Set(this.items.map(i => i.properties).flat())]
+          options: [...new Set(this.items.map(i => i.properties).flat())].sort()
         }
       ]
     },

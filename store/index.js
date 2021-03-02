@@ -7,6 +7,20 @@ export const state = () => ({
   jumpNav: null,
   rules: [],
   version: config.version,
+  pastVersions: [
+    {
+      name: 'v1.2.0',
+      link: 'http://versions.n7.world/v120'
+    },
+    {
+      name: 'v0.9.1',
+      link: 'http://versions.n7.world/v091'
+    },
+    {
+      name: 'v0.8.4',
+      link: 'http://versions.n7.world/v084'
+    }
+  ],
   navigation: [
     {
       header: 'Player\'s Manual'
@@ -133,7 +147,8 @@ export const getters = {
   },
   pageTitle: state => state.pageTitle,
   navigation: state => state.navigation,
-  mainNavigation: state => state.mainNavigation
+  mainNavigation: state => state.mainNavigation,
+  pastVersions: state => state.pastVersions
 }
 
 export const mutations = {
