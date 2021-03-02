@@ -62,6 +62,18 @@ export default {
     margin-bottom: 1em;
   }
 
+  div.me-html > h2 {
+    font-size: 2.125rem!important;
+    line-height: 2.5rem;
+    letter-spacing: .0073529412em!important;
+    margin-top: 2em;
+    margin-bottom: 0;
+  }
+
+  div.me-html > h2 + h3 {
+    margin-top: 10px;
+  }
+
   div.me-html > h3 {
     font-size: 1.5rem!important;
     font-weight: 400;

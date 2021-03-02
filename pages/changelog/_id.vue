@@ -11,7 +11,7 @@
       </p>
       <me-html v-if="!$fetchState.pending" :content="post.html" />
     </div>
-    <v-btn to="/changelog" nuxt class="primary">
+    <v-btn to="/changelog" nuxt color="secondary">
       <v-icon>
         mdi-arrow-left
       </v-icon>
