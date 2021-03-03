@@ -127,8 +127,5 @@ export default {
       theme_color: colors.red.darken4,
       short_name: 'Mass Effect 5e'
     }
-  },
-  router: {
-    base: '/v130/'
   }
 }
