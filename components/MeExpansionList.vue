@@ -41,7 +41,7 @@
         <me-hr color="black" :size="1" />
         <v-row justify="space-between">
           <v-col>
-            <me-bookmark v-if="bookmarkable" :type="type === 'bestiary' ? 'npc' : type" :item="item" />
+            <me-bookmark v-if="bookmarkable" :type="type" :item="item" />
           </v-col>
           <v-col class="text-right">
             <me-permalink :item-id="item.id" :type="type" />

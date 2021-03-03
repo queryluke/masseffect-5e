@@ -55,15 +55,15 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    '@nuxtjs/pwa'
   ],
   /*
   ** Nuxt.js modules
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/axios'
   ],
   googleAnalytics: {
     id: 'UA-83740704-2'
@@ -73,8 +73,8 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    // baseURL: 'https://raw.githubusercontent.com/queryluke/masseffect-5e-data/master/.me5e/'
-    baseURL: '/.me5e/'
+    baseURL: 'https://raw.githubusercontent.com/queryluke/masseffect-5e-data/master/.me5e/'
+    // baseURL: '/.me5e/'
   },
   /*
   ** vuetify module configuration
@@ -116,7 +116,19 @@ export default {
   build: {
     transpile: ['vuetify/lib', 'tiptap-vuetify']
   },
-  generate: {
-    routes: ['/gear/frag-grenade', '/gear/medi-gel']
+  /*
+  ** PWA
+  ** See https://pwa.nuxtjs.org/
+  */
+  pwa: {
+    manifest: {
+      name: 'Mass Effect 5e',
+      lang: 'en',
+      theme_color: colors.red.darken4,
+      short_name: 'Mass Effect 5e'
+    }
+  },
+  router: {
+    base: '/v130/'
   }
 }

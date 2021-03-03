@@ -3,9 +3,9 @@
     <me-page-title />
     <div v-for="(items, type) of bookmarks" :key="type" class="mt-5">
       <p class="text-subtitle mb-1">
-        {{ labels[type] }}
+        {{ types[type].label }}
       </p>
-      <component :is="`me-${type}-list`" :items="items" />
+      <component :is="`me-${types[type].component}-list`" :items="items" />
     </div>
   </v-container>
 </template>
@@ -14,14 +14,35 @@
 export default {
   data () {
     return {
-      labels: {
-        weapon: 'Weapons',
-        armor: 'Armor',
-        gear: 'Gear',
-        mod: 'Mods',
-        vehicle: 'Vehicles',
-        power: 'Powers',
-        npc: 'Npcs'
+      types: {
+        weapons: {
+          label: 'Weapons',
+          component: 'weapon'
+        },
+        armor: {
+          label: 'Armor',
+          component: 'armor'
+        },
+        gear: {
+          label: 'Gear',
+          component: 'gear'
+        },
+        mods: {
+          label: 'Mods',
+          component: 'mod'
+        },
+        vehicle: {
+          label: 'Vehicles',
+          component: 'vehicle'
+        },
+        powers: {
+          label: 'Powers',
+          component: 'power'
+        },
+        bestiary: {
+          label: 'Npcs',
+          component: 'npc'
+        }
       }
     }
   },

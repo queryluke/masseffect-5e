@@ -30,7 +30,7 @@
             </v-list-item-title>
           </v-list-item-content>
           <v-list-item-avatar v-if="page.name === 'Bookmarks'" :size="20" color="secondary">
-            <span class="text-caption white--text">{{ bookmarkCount }}</span>
+            <span class="text-caption white--text" style="padding-left: 6px;">{{ bookmarkCount }}</span>
           </v-list-item-avatar>
         </v-list-item>
         <v-subheader v-if="page.header" :key="index">
