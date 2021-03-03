@@ -39,7 +39,7 @@ export default {
         {
           name: 'Type',
           key: 'placement',
-          options: [...new Set(this.items.map(i => i.type))]
+          options: [...new Set(this.items.map(i => i.type))].sort()
         },
         {
           name: 'Armor Type',
@@ -49,7 +49,7 @@ export default {
         {
           name: 'Benefits',
           key: 'notes',
-          options: [...new Set(this.items.map(i => i.notes).flat())]
+          options: [...new Set(this.items.map(i => i.notes).flat())].sort()
         }
       ]
     },

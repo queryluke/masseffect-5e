@@ -10,7 +10,7 @@
       v-if="includeSubclass"
     >
       <div
-        v-for="(subclassFeatures, scid) in classFeatures.subclass"
+        v-for="(subclassFeatures, scid, subIndex) in classFeatures.subclass"
         :key="scid"
         class="mt-10"
       >
@@ -30,7 +30,9 @@
           :key="scFeature.id"
           :item="scFeature"
           :hr="scIndex !== subclassFeatures.length - 1"
+          :hr-size="1"
         />
+        <me-hr v-if="subIndex !== Object.keys(classFeatures.subclass).length -1" :color="hrColor" :size="6" class="mt-10" />
       </div>
     </div>
   </div>
@@ -104,7 +106,7 @@ export default {
       }
     },
     hrColor () {
-      return this.$store.getters['config/classThemes'][this.item.id][this.$vuetify.theme.isDark ? 'dark' : 'light'].tabColor
+      return this.$store.getters['config/classThemeHrColor'](this.classId)
     }
   },
   methods: {

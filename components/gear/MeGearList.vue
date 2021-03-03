@@ -2,6 +2,7 @@
   <me-expansion-list
     :headers="headers"
     :items="items"
+    type="gear"
   >
     <template v-slot:header.expanded="{ item }">
       <me-gear-title :item="item" />
@@ -19,7 +20,6 @@
     </template>
     <template v-slot:body="{ item }">
       <me-gear-info :item="item" />
-      <me-bookmark v-if="bookmarkable" type="gear" :item="item" />
     </template>
   </me-expansion-list>
 </template>

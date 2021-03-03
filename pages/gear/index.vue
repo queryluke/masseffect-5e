@@ -38,7 +38,7 @@ export default {
         {
           name: 'Type',
           key: 'type',
-          options: [...new Set(this.items.map(i => i.type))]
+          options: [...new Set(this.items.map(i => i.type))].sort()
         },
         rarityOptions
       ]

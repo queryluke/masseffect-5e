@@ -14,6 +14,8 @@
       <me-expansion-list
         :items="items"
         :headers="headers"
+        type="appendix/tool-profs"
+        :bookmarkable="false"
       >
         <template v-slot:header.name="{ item }">
           <div>

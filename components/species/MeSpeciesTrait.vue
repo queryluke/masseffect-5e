@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-subtitle-1 text-md-h5 font-weight-bold">
+    <div class="text-subtitle-1 text-md-h5 font-weight-medium">
       {{ label }}
     </div>
     <p>

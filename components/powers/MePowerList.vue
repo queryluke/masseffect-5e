@@ -2,6 +2,7 @@
   <me-expansion-list
     :headers="headers"
     :items="items"
+    type="powers"
   >
     <template v-slot:header.expanded="{ item }">
       <me-item-title
@@ -41,7 +42,6 @@
     </template>
     <template v-slot:body="{ item }">
       <me-power-info :item="item" />
-      <me-bookmark v-if="bookmarkable" type="power" :item="item" />
     </template>
   </me-expansion-list>
 </template>

@@ -19,6 +19,8 @@
       <me-expansion-list
         :items="items"
         :headers="headers"
+        type="feats"
+        :bookmarkable="false"
       >
         <template v-slot:header.indicator="{ item }">
           <v-avatar :class="[item.new ? 'deep-purple' : 'deep-orange']" size="30px" class="white--text text-caption my-n2">

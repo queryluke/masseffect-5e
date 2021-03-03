@@ -38,6 +38,15 @@
             <me-html :content="item.html" />
           </div>
         </slot>
+        <me-hr color="black" :size="1" />
+        <v-row justify="space-between">
+          <v-col>
+            <me-bookmark v-if="bookmarkable" :type="type === 'bestiary' ? 'npc' : type" :item="item" />
+          </v-col>
+          <v-col class="text-right">
+            <me-permalink :item-id="item.id" :type="type" />
+          </v-col>
+        </v-row>
       </v-expansion-panel-content>
     </v-expansion-panel>
   </v-expansion-panels>
@@ -58,6 +67,14 @@ export default {
       default: () => {
         return []
       }
+    },
+    type: {
+      type: String,
+      required: true
+    },
+    bookmarkable: {
+      type: Boolean,
+      default: true
     }
   },
   methods: {

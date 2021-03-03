@@ -2,6 +2,7 @@
   <me-expansion-list
     :headers="headers"
     :items="items"
+    type="mods"
   >
     <template v-slot:header.expanded="{ item }">
       <me-mod-title :item="item" />
@@ -25,7 +26,6 @@
     </template>
     <template v-slot:body="{ item }">
       <me-mod-info :item="item" />
-      <me-bookmark v-if="bookmarkable" type="mod" :item="item" />
     </template>
   </me-expansion-list>
 </template>

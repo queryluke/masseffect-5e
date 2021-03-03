@@ -43,12 +43,12 @@ export default {
         {
           name: 'Faction',
           key: 'unit',
-          options: [...new Set(this.items.map(i => i.unit))]
+          options: [...new Set(this.items.map(i => i.unit))].sort()
         },
         {
           name: 'Challenge Rating',
           key: 'cr',
-          options: [...new Set(this.items.map(i => i.cr))]
+          options: [...new Set(this.items.map(i => i.cr))].sort((a, b) => Number.parseInt(a) > Number.parseInt(b) ? 1 : -1)
         }
       ]
     }

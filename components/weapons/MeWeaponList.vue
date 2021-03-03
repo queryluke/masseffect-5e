@@ -2,6 +2,7 @@
   <me-expansion-list
     :headers="headers"
     :items="items"
+    type="weapons"
   >
     <template v-slot:header.expanded="{ item }">
       <me-weapon-title :item="item" />
@@ -28,7 +29,6 @@
     </template>
     <template v-slot:body="{ item }">
       <me-weapon-info :item="item" />
-      <me-bookmark v-if="bookmarkable" type="weapon" :item="item" />
     </template>
   </me-expansion-list>
 </template>
@@ -42,10 +42,6 @@ export default {
       default: () => {
         return []
       }
-    },
-    bookmarkable: {
-      type: Boolean,
-      default: true
     }
   },
   computed: {

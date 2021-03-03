@@ -40,7 +40,7 @@
           </v-tab-item>
           <v-tab-item class="pa-3">
             <div
-              v-for="subclass in subclasses"
+              v-for="(subclass, subIndex) in subclasses"
               :key="subclass.id"
             >
               <me-class-feature-list
@@ -50,6 +50,7 @@
                 show-subclass-desc
                 show-subclass-header
               />
+              <me-hr v-if="subIndex !== subclasses.length -1" :color="hrColor" :size="6" class="mt-10" />
             </div>
           </v-tab-item>
           <v-tab-item class="pa-3">
@@ -102,6 +103,9 @@ export default {
     },
     tabsMode () {
       return this.$store.getters['config/classThemeTabsMode'](this.item.id)
+    },
+    hrColor () {
+      return this.$store.getters['config/classThemeHrColor'](this.item.id)
     },
     filteredPowers () {
       return this.$store.getters.getData('powers')

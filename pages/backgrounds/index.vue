@@ -9,6 +9,8 @@
       <me-expansion-list
         :items="items"
         :headers="[{ label: 'Name', key: 'name' }]"
+        :bookmarkable="false"
+        type="backgrounds"
       />
     </me-skeleton-loader>
   </v-container>

@@ -44,17 +44,17 @@ export default {
         {
           name: 'Placement',
           key: 'placement',
-          options: [...new Set(this.items.map(i => i.placement))]
+          options: [...new Set(this.items.map(i => i.placement))].sort()
         },
         {
           name: 'Availability',
           key: 'availability',
-          options: [...new Set(this.items.map(i => i.availability).flat())]
+          options: [...new Set(this.items.map(i => i.availability).flat())].sort()
         },
         {
           name: 'Benefits',
           key: 'notes',
-          options: [...new Set(this.items.map(i => i.notes).flat())]
+          options: [...new Set(this.items.map(i => i.notes).flat())].sort()
         }
       ]
     },

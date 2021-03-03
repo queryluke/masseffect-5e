@@ -2,13 +2,13 @@
   <me-expansion-list
     :headers="headers"
     :items="items"
+    type="bestiary"
   >
     <template v-slot:header.expanded="{ item }">
       <me-npc-title :item="item" />
     </template>
     <template v-slot:body="{ item }">
       <me-stat-block :stats="item" />
-      <me-bookmark v-if="bookmarkable" type="npc" :item="item" />
     </template>
   </me-expansion-list>
 </template>

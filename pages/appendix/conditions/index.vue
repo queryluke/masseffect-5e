@@ -9,6 +9,8 @@
       <me-expansion-list
         :items="items"
         :headers="headers"
+        type="appendix/conditions"
+        :bookmarkable="false"
       />
     </me-skeleton-loader>
   </v-container>

@@ -74,7 +74,7 @@
       </p>
       <v-row justify="center">
         <v-col v-for="opt in item.advancementOptions" :key="opt.name" cols="12" md="6">
-          <v-card>
+          <v-card outlined>
             <v-card-title class="text-subtitle-1">
               {{ opt.name }}
             </v-card-title>

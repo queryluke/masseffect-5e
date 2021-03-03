@@ -10,6 +10,7 @@
     />
     <me-hr
       v-if="hr"
+      :size="hrSize"
       :color="hrColor"
     />
   </div>
@@ -25,6 +26,10 @@ export default {
     hr: {
       type: Boolean,
       default: true
+    },
+    hrSize: {
+      type: Number,
+      default: 4
     }
   },
   computed: {

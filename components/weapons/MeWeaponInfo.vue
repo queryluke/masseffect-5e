@@ -34,7 +34,7 @@
           </v-col>
         </v-row>
         <v-row>
-          <v-col class="text-body-2">
+          <v-col class="text-body-2 mb-3">
             <p>
               {{ item.notes }}
             </p>
