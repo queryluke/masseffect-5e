@@ -1,12 +1,8 @@
 import colors from 'vuetify/es5/util/colors'
-import axios from 'axios'
-
-const dynamicRoutes = async () => {
-
-}
+// import axios from 'axios'
 
 export default {
-  ssr: false,
+  ssr: true,
   /*
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target
@@ -132,7 +128,8 @@ export default {
       theme_color: colors.red.darken4,
       short_name: 'Mass Effect 5e'
     }
-  },
+  }
+  /*
   generate: {
     async routes () {
       const endpoints = ['conditions', 'tool-profs', 'armor', 'backgrounds', 'bestiary', 'changelog', 'classes', 'feats', 'gmg', 'rules', 'powers', 'species', 'weapons']
@@ -160,4 +157,5 @@ export default {
       return routes
     }
   }
+  */
 }
