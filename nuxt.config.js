@@ -144,7 +144,11 @@ export default {
       const routes = []
       for (let i = 0; i < data.length; i++) {
         const endpoint = endpoints[i]
-        const path = endpoint === 'gmg' ? 'guide' : endpoint === 'rules' ? 'manual' : endpoint
+        const path = endpoint === 'gmg'
+          ? 'guide' : endpoint === 'rules'
+            ? 'manual' : endpoint === 'conditions'
+              ? 'appendix/conditions' : endpoint === 'tool-profs'
+                ? 'appendix/tool-profs' : endpoint
         for (const obj of data[i].data) {
           routes.push(`/${path}/${obj.id}`)
         }
