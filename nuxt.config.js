@@ -138,7 +138,7 @@ export default {
       const endpoints = ['conditions', 'tool-profs', 'armor', 'backgrounds', 'bestiary', 'changelog', 'classes', 'feats', 'gmg', 'rules', 'powers', 'species', 'weapons']
       const urls = []
       for (const endpoint of endpoints) {
-        urls.push(axios.get(`https://raw.githubusercontent.com/queryluke/masseffect-5e-data/v130/.me5e/${endpoint}.json`))
+        urls.push(axios.get(`https://raw.githubusercontent.com/queryluke/masseffect-5e-data/master/.me5e/${endpoint}.json`))
       }
       const data = await Promise.all(urls)
       const routes = []
