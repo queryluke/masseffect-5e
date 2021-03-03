@@ -1,4 +1,9 @@
 import colors from 'vuetify/es5/util/colors'
+import axios from 'axios'
+
+const dynamicRoutes = async () => {
+
+}
 
 export default {
   ssr: false,
@@ -126,6 +131,25 @@ export default {
       lang: 'en',
       theme_color: colors.red.darken4,
       short_name: 'Mass Effect 5e'
+    }
+  },
+  generate: {
+    async routes () {
+      const endpoints = ['conditions', 'tool-profs', 'armor', 'backgrounds', 'bestiary', 'changelog', 'classes', 'feats', 'gmg', 'rules', 'powers', 'species', 'weapons']
+      const urls = []
+      for (const endpoint of endpoints) {
+        urls.push(axios.get(`https://raw.githubusercontent.com/queryluke/masseffect-5e-data/master/.me5e/${endpoint}.json`))
+      }
+      const data = await Promise.all(urls)
+      const routes = []
+      for (let i = 0; i < data.length; i++) {
+        const endpoint = endpoints[i]
+        const path = endpoint === 'gmg' ? 'guide' : endpoint === 'rules' ? 'manual' : endpoint
+        for (const obj of data[i].data) {
+          routes.push(`/${path}/${obj.id}`)
+        }
+      }
+      return routes
     }
   }
 }
