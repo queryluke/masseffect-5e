@@ -57,7 +57,7 @@
     "markdown-it-meta": "0.0.1",
     "node-sass": "^4.10.0",
     "nodemon": "^1.18.9",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "pug-loader": "^2.4.0",
     "pug-plain-loader": "^1.0.0",
     "push-dir": "^0.4.1",
