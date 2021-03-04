@@ -13,7 +13,7 @@
           Player's Manual
         </div>
         <p class="title">
-          v{{ version }}
+          {{ version }}
         </p>
         <v-row justify="center">
           <v-col>
@@ -73,7 +73,7 @@ export default {
       return this.$route.params.id === 'intro'
     },
     version () {
-      return this.$store.getters.version
+      return this.$config.version
     },
     pageTitle () {
       return this.titles[this.$route.params.id]

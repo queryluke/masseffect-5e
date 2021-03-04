@@ -1,12 +1,9 @@
-const config = require('~/package.json')
-
 export const state = () => ({
   data: {},
   pageTitle: null,
   drawer: null,
   jumpNav: null,
   rules: [],
-  version: config.version,
   pastVersions: [
     {
       name: 'v1.2.0',
@@ -134,7 +131,6 @@ export const state = () => ({
 })
 
 export const getters = {
-  version: state => state.version,
   drawer: state => state.drawer,
   jumpNav: state => state.jumpNav,
   rules: state => state.rules,
@@ -176,7 +172,7 @@ export const actions = {
   async FETCH_DATA ({ getters, commit }, endpoint) {
     let data = getters.getData(endpoint)
     if (!data) {
-      data = await this.$axios.$get(`${endpoint}.json`)
+      data = await this.$axios.$get(`${endpoint}.json`, { crossDomain: true })
       commit('setData', { endpoint, data })
     }
     return data

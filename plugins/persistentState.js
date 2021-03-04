@@ -1,11 +1,13 @@
 import createPersistedState from 'vuex-persistedstate'
 
-export default ({ store }) => {
+export default ({ app, store }) => {
   createPersistedState({
-    key: 'v130',
+    key: app.$config.version.replace(/\./g, ''),
     paths: [
       'characterBuilder.character',
-      'user.bookmarks'
+      'user.bookmarks',
+      'user.darkMode',
+      'user.imperial'
     ]
   })(store)
 }

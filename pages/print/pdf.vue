@@ -40,7 +40,7 @@ export default {
     return {
       versions: [
         {
-          name: 'v 1.2.0',
+          name: 'v1.2.0',
           changelog: '1-2-0',
           link: 'https://drive.google.com/file/d/1sEDVw7OkUistQUSXcbX8BcLVah4gGnFK/view?usp=sharing',
           sections: [
@@ -55,27 +55,27 @@ export default {
           ]
         },
         {
-          name: 'v 1.1.0',
+          name: 'v1.1.0',
           changelog: '1-1-0',
           link: 'https://drive.google.com/file/d/1DcIQhXi2QuP-EuLGXnkk1rPnPe8Y3xzg/view?usp=sharing'
         },
         {
-          name: 'v 1.0.0',
+          name: 'v1.0.0',
           changelog: '1-0-0',
           link: 'https://drive.google.com/file/d/1PBVKryayPyAUibJ0XiEi2WvGSQGLrP9D/view?usp=sharing'
         },
         {
-          name: 'v 0.9.2',
+          name: 'v0.9.2',
           changelog: '0-9-2',
           link: 'https://drive.google.com/file/d/1hR63JVeS21uYYAnrV8PCCbsHV_jvKm8Y/view?usp=sharing'
         },
         {
-          name: 'v 0.9.0',
+          name: 'v0.9.0',
           changelog: '0-9-0',
           link: 'https://drive.google.com/file/d/1H6ywGQ80GPqoIYh0cvHnqs5UdEV5QZib/view?usp=sharing'
         },
         {
-          name: 'v 0.8.4',
+          name: 'v0.8.4',
           changelog: '0-8-4',
           link: 'https://drive.google.com/file/d/1DutYdSFORN7-jLi2r9-bpCK763je-k9h/view?usp=sharing'
         }

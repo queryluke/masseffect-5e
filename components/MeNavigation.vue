@@ -150,7 +150,7 @@ export default {
       }
     },
     version () {
-      return this.$store.getters.version
+      return this.$config.version
     },
     pastVersions () {
       return this.$store.getters.pastVersions
