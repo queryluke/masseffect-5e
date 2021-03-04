@@ -1,6 +1,4 @@
 import colors from 'vuetify/es5/util/colors'
-import axios from 'axios'
-const baseUrl = `https://data.n7.world/${process.env.VERSION.replace(/\./g, '')}/`
 
 export default {
   ssr: false,
@@ -64,18 +62,18 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    // Doc: https://http.nuxtjs.org/usage
+    '@nuxt/http'
   ],
   googleAnalytics: {
     id: 'UA-83740704-2'
   },
   /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
+  ** http module configuration
+  ** Doc: https://http.nuxtjs.org/usage
   */
-  axios: {
-    baseURL: baseUrl
+  http: {
+    baseURL: `${process.env.API_BASE_URL}/${process.env.VERSION.replace(/\./g, '')}`
     // baseURL: '/.me5e/'
   },
   /*
@@ -131,33 +129,6 @@ export default {
       lang: 'en',
       theme_color: colors.red.darken4,
       short_name: 'Mass Effect 5e'
-    }
-  },
-  generate: {
-    async routes () {
-      const endpoints = ['conditions', 'tool-profs', 'armor', 'backgrounds', 'bestiary', 'changelog', 'classes', 'feats', 'gmg', 'rules', 'powers', 'species', 'weapons']
-      const urls = []
-      for (const endpoint of endpoints) {
-        urls.push(axios.get(`${baseUrl}${endpoint}.json`))
-      }
-      const data = await Promise.all(urls)
-      const routes = []
-      for (let i = 0; i < data.length; i++) {
-        const endpoint = endpoints[i]
-        const path = ['conditions', 'tool-profs'].includes(endpoint) ? `appendix/${endpoint}` : endpoint
-        if (['rules', 'gmg'].includes(endpoint)) {
-          const pages = [...new Set(data[i].data.map(j => j.section))]
-          for (const page of pages) {
-            const rPath = endpoint === 'rules' ? 'manual' : 'guide'
-            routes.push(`/${rPath}/${page}`)
-          }
-        } else {
-          for (const obj of data[i].data) {
-            routes.push(`/${path}/${obj.id}`)
-          }
-        }
-      }
-      return routes
     }
   }
 }

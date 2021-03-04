@@ -172,7 +172,7 @@ export const actions = {
   async FETCH_DATA ({ getters, commit }, endpoint) {
     let data = getters.getData(endpoint)
     if (!data) {
-      data = await this.$axios.$get(`${endpoint}.json`, { crossDomain: true })
+      data = await this.$http.$get(`${endpoint}.json`)
       commit('setData', { endpoint, data })
     }
     return data

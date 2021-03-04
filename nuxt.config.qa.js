@@ -1,7 +1,7 @@
-import base from './nuxt.config.base'
-base.generate.dir = 'dist-qa'
+import prod from './nuxt.config.prod'
+prod.generate.dir = 'dist-qa'
 export default {
-  ...base,
+  ...prod,
   router: {
     base: '/dist-qa/'
   }

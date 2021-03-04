@@ -91,4 +91,4 @@ sw.*
 *.swp
 
 # me data files
-static/.me5e
+static/.data
