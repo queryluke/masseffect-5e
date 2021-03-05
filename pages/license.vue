@@ -14,7 +14,7 @@
     </p>
     <p>
       The Mass Effect 5e website is licensed under <a href="https://github.com/queryluke/masseffect-5e/blob/master/LICENSE.txt" target="_blank">GNU General Public License v3.0</a>.
-      The Open Game Content contained within the Player's Manual is licensed under <a href="https://github.com/queryluke/masseffect-5e-data/blob/master/OGL.md" target="_blank">the Open Game License version 1.0a</a>.
+      The Open Game Content contained within the Player's Manual is licensed under <a href="https://data.n7.world/OGL" target="_blank">the Open Game License version 1.0a</a>.
     </p>
   </v-container>
 </template>
