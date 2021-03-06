@@ -114,7 +114,14 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
-    transpile: ['vuetify/lib', 'tiptap-vuetify']
+    transpile: ['vuetify/lib', 'tiptap-vuetify'],
+    //
+    devMiddleware: {
+      headers: {
+        'Cache-Control': 'no-store',
+        Vary: '*'
+      }
+    }
   },
   publicRuntimeConfig: {
     version: process.env.VERSION

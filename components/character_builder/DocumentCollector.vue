@@ -100,7 +100,8 @@ export default {
     getHeading (html) {
       let heading = 'No Heading Found'
       try {
-        heading = /(?<=>)(?!<)(.*?)(?=<)(?<!>)/.exec(html)[0]
+        // FIXME: the following line breaks safari and iOS mobile browsers
+        // heading = /(?<=>)(?!<)(.*?)(?=<)(?<!>)/.exec(html)[0]
       } catch {
         heading = 'No Heading Found'
       }
