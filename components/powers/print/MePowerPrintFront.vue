@@ -7,7 +7,7 @@
       >
         <v-img
           height="100%"
-          src="/images/me5e_logo_720w.png"
+          :src="require('~/assets/images/me5e_logo_450w.png')"
           style="margin-top: -3em;"
         />
       </div>
@@ -22,7 +22,7 @@
               <v-row justify="start" align-content="center" no-gutters>
                 <v-col v-for="klass in power.availableClasses" :key="klass" cols="auto">
                   <v-avatar size="24" tile>
-                    <v-img :src="`/images/classes/${klass}.svg`" :alt="klass" />
+                    <v-img :src="require(`~/assets/images/classes/${klass}.svg`)" :alt="klass" />
                   </v-avatar>
                 </v-col>
               </v-row>
@@ -85,10 +85,10 @@
           <v-col cols="3" class="text-xs-right">
             <span v-if="power.primes || power.detonates">
               <v-avatar v-if="power.primes" :size="primeSize" color="white" class="primes" tile>
-                <img :src="`/images/powers/${power.primes}.svg`" :alt="power.primes">
+                <img :src="require(`~/assets/images/powers/${power.primes}.svg`)" :alt="power.primes">
               </v-avatar>
               <v-avatar v-if="power.detonates" :size="primeSize" color="white" class="primes" tile>
-                <img src="/images/powers/detonate.svg" :alt="power.primes">
+                <img src="~/assets/images/powers/detonate.svg" :alt="power.primes">
               </v-avatar>
             </span>
           </v-col>

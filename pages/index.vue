@@ -2,13 +2,11 @@
   div
     // Main Parallax
     section
-      v-parallax(src="/images/parallax/citadel.jpg" alt="Mass Effect // The Citadel by grndayfrk14")
+      v-parallax(:src="require(`~/assets/images/parallax/citadel.jpg`)" alt="Mass Effect // The Citadel by grndayfrk14")
         v-row(justify="center")
           v-col(cols="12" sm="10" md="8" lg="6" xl="4").black--text.text-center.mt-10
             v-img(
-              srcset="/images/me5e_logo_450w.png 450w, /images/me5e_logo_600w.png 600w, /images/me5e_logo_720w.png 720w, /images/me5e_logo_900w.png 900w, /images/me5e_logo_1200w.png 1200w"
-              sizes="(max-width: 320px) 320px, (max-width: 480px) 480px, (max-width: 600px) 600px, (max-width: 720px) 600px, (max-width: 900px) 720px, (max-width: 1200px) 900px, 1200px"
-              src="/images/me5e_logo_1200w.png"
+              :src="require('~/assets/images/me5e_logo_1200w.png')"
               alt="Mass Effect 5e logo"
             ).mt-10
             h1.sr-only Mass Effect 5e
@@ -36,10 +34,10 @@
                 v-card.elevation-0.transparent
                   v-card-text.text-center
                     v-avatar(size="60px")
-                      v-img(src="/images/species/human.png" alt="Systems Alliance Symbol by Engorn on DeviantArt")
+                      v-img(:src="require('~/assets/images/misc/sys_alliance.png')" alt="Systems Alliance Symbol by Engorn on DeviantArt")
                     span.mx-2.headline +
                     v-avatar(size="60px" tile)
-                      v-img(src="/images/classes/vanguard.svg" alt="Vanguard Symbol")
+                      v-img(:src="require('~/assets/images/classes/vanguard.svg')" alt="Vanguard Symbol")
                   v-card-title(primary-title).layout.justify-center
                     div.headline.text-center Mix & Match
                   v-card-text.
@@ -52,7 +50,7 @@
                 v-card.elevation-0.transparent
                   v-card-text.text-center
                     v-avatar(size="60px" tile).primary
-                      v-img(src="/images/weapons/assault_rifle.svg" alt="Assault Rifle SVG")
+                      v-img(:src="require('~/assets/images/misc/assault_rifle.svg')" alt="Assault Rifle SVG")
                   v-card-title(primary-title).layout.justify-center
                     div.headline.text-center Weapons & Armor
                   v-card-text.
@@ -64,7 +62,7 @@
                 v-card.elevation-0.transparent
                   v-card-text.text-center
                     v-avatar(size="60px").primary
-                      v-img(src="/images/misc/reaper_avatar.jpg" alt="Reaper swarm")
+                      v-img(:src="require('~/assets/images/misc/reaper_avatar.jpg')" alt="Reaper swarm")
                   v-card-title(primary-title).layout.justify-center
                     div.headline.text-center Unique Enemies
                   v-card-text.
@@ -72,7 +70,7 @@
                     to ensure balanced combat. From Reaper forces to Blue Sun grunts, we've got enough monsters to keep your
                     players engaged and challenged.
     section
-      v-parallax(src="/images/parallax/joker.jpg" alt="mass effect 2 by libbabink")
+      v-parallax(:src="require('~/assets/images/parallax/joker.jpg')" alt="mass effect 2 by libbabink")
         v-layout(column align-center justify-center).white--text
           h2.display-3.font-weight-bold.text--shadow Play with the best tech
     section
@@ -88,10 +86,10 @@
               v-card-actions
                 v-btn(to="/manual/intro" text) Get Started #[v-icon mdi-chevron-right]
           v-flex(md5).hidden-sm-and-down.text-center
-            v-img(src="/images/misc/datapad.png" height="300" contain alt="data pad").px-5
+            v-img(:src="require('~/assets/images/misc/datapad.png')" height="300" contain alt="data pad").px-5
           // Printables
           v-flex(md5).hidden-sm-and-down
-            v-img(src="/images/misc/tt_assets.png" height="300" contain alt="grunt").px-5
+            v-img(:src="require('~/assets/images/misc/tt_assets.png')" height="300" contain alt="grunt").px-5
           v-flex(xs12 md7)
             v-card.elevation-0.transparent
               v-card-title(primary-title)
@@ -112,9 +110,9 @@
               v-card-actions
                 v-btn(to="/about" text) Contribute #[v-icon mdi-chevron-right]
           v-flex(md5).hidden-sm-and-down.text-center
-            v-img(src="/images/misc/grunts.png" contain height="300").px-5
+            v-img(:src="require('~/assets/images/misc/grunts.png')" contain height="300").px-5
     section
-      v-parallax(src="/images/parallax/illusive.jpg" alt="The Illusive Man by libbabink")
+      v-parallax(:src="require('~/assets/images/parallax/illusive.jpg')" alt="The Illusive Man by libbabink")
         v-layout(column align-center justify-center)
           h2.parallax-title Latest News
     section

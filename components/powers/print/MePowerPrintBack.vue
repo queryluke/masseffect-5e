@@ -2,7 +2,7 @@
   <div :class="`${cardType} power-card`">
     <v-sheet height="100%" :color="cardColor" elevation="0">
       <v-row v-if="cardOption === 'single' || power.id === 'spacer'" class="pa-2">
-        <v-img src="/images/me5e_logo_720w.png" style="margin-top: -3em;" />
+        <v-img :src="require('~/assets/images/me5e_logo_450w.png')" style="margin-top: -3em;" />
       </v-row>
       <div v-else>
         <v-row>
@@ -15,7 +15,7 @@
             <v-row justify="center" align-content="center" no-gutters>
               <v-col v-for="klass in power.availableClasses" :key="klass" cols="auto">
                 <v-avatar size="24" tile>
-                  <v-img :src="`/images/classes/${klass}.svg`" :alt="klass" />
+                  <v-img :src="require(`~/assets/images/classes/${klass}.svg`)" :alt="klass" />
                 </v-avatar>
               </v-col>
             </v-row>

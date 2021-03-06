@@ -8,7 +8,7 @@
             size="128"
           >
             <v-img
-              :src="`/images/classes/${item.id}.svg`"
+              :src="require(`~/assets/images/classes/${item.id}.svg`)"
             />
           </v-avatar>
           <div>

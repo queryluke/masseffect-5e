@@ -4,9 +4,7 @@
       v-row(justify="center")
         v-col(cols="12" sm="10" md="8" lg="6" xl="4").black--text.text-center.mt-10
           v-img(
-            srcset="/images/me5e_logo_450w.png 450w, /images/me5e_logo_600w.png 600w, /images/me5e_logo_720w.png 720w, /images/me5e_logo_900w.png 900w, /images/me5e_logo_1200w.png 1200w"
-            sizes="(max-width: 320px) 320px, (max-width: 480px) 480px, (max-width: 600px) 600px, (max-width: 720px) 600px, (max-width: 900px) 720px, (max-width: 1200px) 900px, 1200px"
-            src="/images/me5e_logo_1200w.png"
+            :src="require('~/assets/images/me5e_logo_1200w.png')"
             alt="Mass Effect 5e logo"
           ).mt-10
           h1.sr-only Mass Effect 5e
@@ -20,7 +18,7 @@
           v-col(v-for="community in communities" :key="community.name" cols="12" sm="6" md="4" lg="3")
             v-card(to="community.link" target="_blank" dark).text-center
               v-card-text
-                v-img(:src="community.image" v-bind:alt="community.alt" height="80" contain)
+                v-img(:src="require(`~/assets/images/misc/${community.image}`)" v-bind:alt="community.alt" height="80" contain)
         v-row(justify="space-around").mt-5
           v-col(cols="12" md="8" lg="6" xl="4")
             v-alert(type="info" prominent)
@@ -96,13 +94,13 @@ export default {
       communities: [
         {
           name: 'Discord',
-          image: '/images/misc/discord.svg',
+          image: 'discord.svg',
           alt: 'Discord Logo',
           link: 'https://discord.gg/c2UnqkH'
         },
         {
           name: 'Reddit',
-          image: '/images/misc/Reddit_Lockup_OnDark.svg',
+          image: 'Reddit_Lockup_OnDark.svg',
           alt: 'Reddit Logo',
           link: 'https://www.reddit.com/r/masseffect5e/'
         }

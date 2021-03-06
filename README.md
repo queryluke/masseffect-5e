@@ -18,6 +18,16 @@ $ git clone https://github.com/queryluke/masseffect-5e.git
 # cd to code
 $ cd masseffect-5e
 
+# make .env file
+$ touch .env
+
+# add the following to the .env file
+you can change the version to any of the versions available in the data repo
+```env
+VERSION=v1.3.0
+API_BASE_URL=https://data.n7.world
+```
+
 # install dependencies
 $ npm install # Or yarn install
 

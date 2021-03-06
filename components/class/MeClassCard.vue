@@ -7,7 +7,7 @@
     <v-row>
       <v-col cols="4" sm="3">
         <v-img
-          :src="`/images/classes/${item.id}.svg`"
+          :src="require(`~/assets/images/classes/${item.id}.svg`)"
           height="200px"
           position="right"
         />

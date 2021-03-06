@@ -4,7 +4,7 @@
       <me-item-title
         :title="item.name"
         avatar
-        :avatar-src="`/images/powers/${item.type}.svg`"
+        :avatar-src="require(`~/assets/images/powers/${item.type}.svg`)"
       />
     </template>
     <me-power-info :item="item" />

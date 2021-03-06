@@ -7,7 +7,7 @@
     <span v-if="item.distance.aoeDistance" class="ml-1 text-caption">
       (<me-distance :length="item.distance.aoeDistance" abbr />
       <v-avatar :size="size" tile class="ml-1">
-        <v-img :src="`/images/aoe/${filename}.svg`" :alt="item.distance.aoeType" />
+        <v-img :src="require(`~/assets/images/aoe/${filename}.svg`)" :alt="item.distance.aoeType" />
       </v-avatar>)
     </span>
   </span>

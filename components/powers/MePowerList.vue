@@ -8,14 +8,14 @@
       <me-item-title
         :title="item.name"
         avatar
-        :avatar-src="`/images/powers/${item.type}.svg`"
+        :avatar-src="require(`~/assets/images/powers/${item.type}.svg`)"
       />
     </template>
     <template v-slot:header.level="{ item }">
       <v-row no-gutters>
         <v-col cols="auto">
           <v-avatar size="30" class="my-n2">
-            <v-img :src="`/images/powers/${item.type}.svg`" />
+            <v-img :src="require(`~/assets/images/powers/${item.type}.svg`)" />
           </v-avatar>
         </v-col>
         <v-col clas="auto">

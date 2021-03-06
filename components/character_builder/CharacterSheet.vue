@@ -11,7 +11,7 @@
           character-save-load(:character="character" @load="loadCharacterFromFile($event)")
 
         v-flex(xs4)
-          img(title="Mass Effect 5e Logo" src="/images/me5e_logo_450w.png" alt="Mass Effect 5e logo")
+          img(title="Mass Effect 5e Logo" src="~/assets/images/me5e_logo_450w.png" alt="Mass Effect 5e logo")
 
       // Top level character info
       v-layout

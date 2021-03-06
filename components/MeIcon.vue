@@ -1,6 +1,6 @@
 <template lang="pug">
   span
-    v-img(:src="`/images/${type}/${name}.svg`" class="me-icon" v-bind:title="`${name}`")
+    v-img(:src="require(`~/assets/images/${type}/${name}.svg`)" class="me-icon" v-bind:title="`${name}`")
 </template>
 
 <script>
