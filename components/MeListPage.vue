@@ -77,7 +77,7 @@
 
     <!-- mobile filter dialog -->
     <me-mobile-filters :title="`Filter ${title}`">
-      <template v-slot:filters>
+      <template #filters>
         <v-row class="my-5">
           <v-col v-for="filter in filters" :key="filter.name" cols="12">
             <v-select
@@ -94,7 +94,7 @@
 
     <!-- mobile sort dialog -->
     <me-mobile-sort>
-      <template v-slot:sortables>
+      <template #sortables>
         <v-list>
           <v-subheader>Sort By:</v-subheader>
           <slot name="sortables" />

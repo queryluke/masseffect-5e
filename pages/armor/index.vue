@@ -9,7 +9,7 @@
       :items="items"
       default-sort="name"
     >
-      <template v-slot:list="{ displayItems }">
+      <template #list="{ displayItems }">
         <me-armor-list :items="displayItems" />
       </template>
     </me-list-page>
@@ -18,10 +18,7 @@
 
 <script>
 export default {
-  async fetch () {
-    this.$store.commit('pageTitle', 'Armor')
-    this.items = await this.$store.dispatch('FETCH_DATA', 'armor')
-  },
+  layout: 'list',
   data () {
     return {
       items: [],
@@ -31,6 +28,18 @@ export default {
       }
     }
   },
+  async fetch () {
+    this.$store.commit('pageTitle', 'Armor')
+    this.items = await this.$store.dispatch('FETCH_DATA', 'armor')
+  },
+  head () {
+    return {
+      title: 'Armor - Equipment | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'These pre-made armor pieces are available as mass produced alternatives to custom modding.' }
+      ]
+    }
+  },
   computed: {
     filters () {
       const rarityOptions = this.$store.getters['config/rarityOptions']
@@ -38,12 +47,12 @@ export default {
         rarityOptions,
         {
           name: 'Type',
-          key: 'placement',
+          key: 'type',
           options: [...new Set(this.items.map(i => i.type))].sort()
         },
         {
           name: 'Armor Type',
-          key: 'type',
+          key: 'armorType',
           options: [...new Set(this.items.map(i => i.armorType))]
         },
         {
@@ -59,15 +68,6 @@ export default {
     headers () {
       return this.$store.getters['config/armorHeaders']
     }
-  },
-  head () {
-    return {
-      title: 'Armor - Equipment | Mass Effect 5e',
-      meta: [
-        { hid: 'description', name: 'description', content: 'These pre-made armor pieces are available as mass produced alternatives to custom modding.' }
-      ]
-    }
-  },
-  layout: 'list'
+  }
 }
 </script>
