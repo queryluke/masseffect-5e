@@ -159,6 +159,9 @@ export default {
       return this.$store.getters['user/bookmarkCount']
     }
   },
+  created () {
+    this.$vuetify.theme.dark = this.$store.getters['user/darkMode']
+  },
   methods: {
     toggleDarkMode () {
       this.$store.dispatch('user/TOGGLE_DARK_MODE')
