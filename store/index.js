@@ -98,7 +98,7 @@ export const state = () => ({
     },
     {
       name: 'Characer Builder (beta)',
-      to: '/character-builder',
+      href: 'https://versions.n7.world/v120/character-builder',
       icon: 'mdi-clipboard-account'
     },
     {
@@ -126,7 +126,7 @@ export const state = () => ({
     { to: '/assets', name: 'Assets' },
     { to: '/changelog', name: 'Changelog' },
     { to: '/about', name: 'About' },
-    { to: '/character-builder', name: 'Character Builder (BETA)' }
+    { href: 'https://versions.n7.world/v120/character-builder', name: 'Character Builder (BETA)' }
   ]
 })
 

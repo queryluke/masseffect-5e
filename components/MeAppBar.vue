@@ -22,7 +22,14 @@
     </v-toolbar-title>
     <v-spacer />
     <v-toolbar-items v-if="$vuetify.breakpoint.lgAndUp">
-      <v-btn v-for="item in mainNavigation" :key="item.name" :to="item.to" text nuxt>
+      <v-btn
+        v-for="item in mainNavigation"
+        :key="item.name"
+        :to="item.to"
+        text
+        nuxt
+        :href="item.href"
+      >
         {{ item.name }}
       </v-btn>
     </v-toolbar-items>

@@ -1,5 +1,5 @@
 <template>
-  <v-container v-if="!fetchState.pending">
+  <v-container v-if="!$fetchState.pending">
     <me-page-title :title="pageTitle" />
     <me-rule-card v-for="item in items" :key="item.id" :item="item" />
   </v-container>
@@ -8,13 +8,6 @@
 <script>
 
 export default {
-  async fetch () {
-    this.$store.commit('pageTitle', this.pageTitle)
-    await this.$store.dispatch('FETCH_DATA', 'gmg')
-    this.items = this.$store.getters.getData('gmg')
-      .filter(item => item.section === this.$route.params.id)
-      .sort((a, b) => a.order > b.order ? 1 : -1)
-  },
   data () {
     return {
       titles: {
@@ -25,10 +18,12 @@ export default {
       items: []
     }
   },
-  computed: {
-    pageTitle () {
-      return this.titles[this.$route.params.id]
-    }
+  async fetch () {
+    this.$store.commit('pageTitle', this.pageTitle)
+    await this.$store.dispatch('FETCH_DATA', 'gmg')
+    this.items = this.$store.getters.getData('gmg')
+      .filter(item => item.section === this.$route.params.id)
+      .sort((a, b) => a.order > b.order ? 1 : -1)
   },
   head () {
     return {
@@ -36,6 +31,11 @@ export default {
       meta: [
         { hid: 'description', name: 'description', content: 'The Galaxy Masters section has handy tools and guides for expanding your campaign' }
       ]
+    }
+  },
+  computed: {
+    pageTitle () {
+      return this.titles[this.$route.params.id]
     }
   }
 }

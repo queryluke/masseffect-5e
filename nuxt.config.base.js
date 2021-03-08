@@ -39,7 +39,6 @@ export default {
   */
   plugins: [
     { src: '@/plugins/persistentState.js', ssr: false },
-    { src: '@/plugins/TiptapVuetify', mode: 'client' },
     '@/plugins/filters/index.js',
     '@/plugins/vue2-filters',
     '@/plugins/globals'
@@ -114,7 +113,7 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
-    transpile: ['vuetify/lib', 'tiptap-vuetify'],
+    transpile: ['vuetify/lib'],
     //
     devMiddleware: {
       headers: {
