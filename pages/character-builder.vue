@@ -30,10 +30,7 @@
             <me-character-builder-select :items="backgrounds" label="Background" attr="background" />
           </v-col>
         </v-row>
-        <v-row>
-        </v-row>
       </v-col>
-      <v-col cols="12" lg="8" order="1" order-lg="2" />
     </v-row>
   </v-container>
 </template>
