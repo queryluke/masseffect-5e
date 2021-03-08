@@ -1,8 +1,8 @@
 <template>
   <v-row>
-    <v-col cols="12" xl="6">
+    <v-col cols="12" md="6" class="text-center">
       <v-btn @click="saveFile()">
-        Export Character Sheet
+        Export <span v-if="$vuetify.breakpoint.smAndUp">Character Sheet</span>
       </v-btn>
       <input
         ref="file"
@@ -12,11 +12,11 @@
         @load="character = $event"
       >
     </v-col>
-    <v-col cols="12" xl="6">
+    <v-col cols="12" md="6" class="text-center">
       <v-dialog v-model="dialog" :max-width="500">
         <template #activator="{ on, attrs }">
           <v-btn v-bind="attrs" v-on="on">
-            Import Character Sheet
+            Import <span v-if="$vuetify.breakpoint.smAndUp">Character Sheet</span>
           </v-btn>
         </template>
         <v-card>

@@ -17,8 +17,15 @@ export default {
         return this.$store.getters['user/character'].level
       },
       set (value) {
+        const prog = this.cProg.find(i => i.level === parseInt(value))
+        if (prog) {
+          this.$store.commit('user/UPDATE_CHARACTER', { attr: 'proficiencyBonus', value: prog.bonus })
+        }
         return this.$store.commit('user/UPDATE_CHARACTER', { attr: 'level', value })
       }
+    },
+    cProg () {
+      return this.$store.getters.getData('character-progression')
     }
   }
 }
