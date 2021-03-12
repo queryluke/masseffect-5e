@@ -6,8 +6,8 @@
         v-for="(item, index) in items"
         :key="index"
         cols="12"
-        sm="6"
-        md="4"
+        md="6"
+        xl="4"
         class="d-flex flex-column"
       >
         <me-skeleton-loader :pending="$fetchState.pending" type="card">
