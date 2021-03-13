@@ -3,20 +3,36 @@ export default {
   async fetch () {
     this.heightWeightData = await this.$store.dispatch('FETCH_ITEM', {
       endpoint: 'random-height-weight',
-      id: 'angaran'
+      id: this.speciesData.id
     })
   },
   data () {
     return {
-      id: this.speciesData.id,
-      heightWeightData: [],
+      heightWeightData: {},
       speciesWeight: '',
       speciesHeight: ''
+    }
+  },
+  watch: {
+    speciesData (newVal, oldVal) {
+      this.$fetch()
     }
   },
   computed: {
     imperial () {
       return this.$store.getters['user/imperial']
+    },
+    weight () {
+      return {
+        val: this.imperial ? this.heightWeightData.baseWeight : this.heightWeightData.weightKg + ' kg',
+        mod: this.imperial ? this.heightWeightData.weightModifier : this.heightWeightData.weightModifierKg
+      }
+    },
+    height () {
+      return {
+        val: this.imperial ? this.heightWeightData.base : this.heightWeightData.baseCm + ' cm',
+        mod: this.imperial ? this.heightWeightData.heightModifier : this.heightWeightData.heightModifierCm
+      }
     }
   },
   props: {
@@ -42,15 +58,15 @@ export default {
           h4 Visual Characteristics
           table(:class="$style.bioTable").table
             tbody
-              tr(v-if="speciesData.skinColorOptions")
+              tr(v-if="speciesData.skinColor")
                 td #[strong #[em Skin Color] ]
-                td {{ speciesData.skinColorOptions }}
-              tr(v-if="speciesData.hairColorOptions")
+                td {{ speciesData.skinColor }}
+              tr(v-if="speciesData.hairColor")
                 td #[strong #[em Hair Color] ]
-                td {{ speciesData.hairColorOptions }}
-              tr(v-if="speciesData.eyeColorOptions")
+                td {{ speciesData.hairColor }}
+              tr(v-if="speciesData.eyeColor")
                 td #[strong #[em Eye Color] ]
-                td {{ speciesData.eyeColorOptions }}
+                td {{ speciesData.eyeColor }}
               tr(v-if="speciesData.colorScheme")
                 td #[strong #[em Color Scheme] ]
                 td {{ speciesData.colorScheme }}
@@ -64,17 +80,20 @@ export default {
             tbody
               tr
                 td #[strong #[em Height] ]
-                td {{ speciesData.heightAverage }}
-                td {{ speciesData.heightRollMod }}
+                td {{ height.val }}
+                td {{ height.mod }}
               tr
                 td #[strong #[em Weight] ]
-                td {{ speciesData.weightAverage }}
-                td {{ speciesData.weightRollMod }}
+                td {{ weight.val }}
+                td {{ weight.mod }}
           hr
 
           h4 Sociocultural Characteristics
           table(:class="$style.bioTable").table
             tbody
+              tr(v-if="speciesData.galaxy")
+                td #[strong #[em Galaxy] ]
+                td {{ speciesData.galaxy }}
               tr(v-if="speciesData.homeworld")
                 td #[strong #[em Homeworld] ]
                 td {{ speciesData.homeworld }}
@@ -84,15 +103,13 @@ export default {
               tr(v-if="speciesData.language")
                 td #[strong #[em Language] ]
                 td {{ speciesData.language }}
+              tr(v-if="speciesData.bioticPotential")
+                td #[strong #[em Biotic Potential] ]
+                td {{ speciesData.bioticPotential }}
+        div
+          small
+            i {{speciesData.snippet}}
 
-        //ImageWithLoading(:src="speciesData.imageUrls[0]", height="350", width="350", contain).ma-auto
-      //VueMarkdown(:source="speciesData.flavorText")
-
-      h3 {{ speciesData.name }} Traits
-      p As a {{ speciesData.name }}, you have the following special traits.
-      div(v-for="trait in speciesData.traits", :key="trait.name")
-        //VueMarkdown(:source="'***' + trait.name + '.*** ' + trait.description")
-    Loading(v-else)
 </template>
 
 <style module lang="scss">
