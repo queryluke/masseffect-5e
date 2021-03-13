@@ -16,13 +16,12 @@
 
 export default {
   props: {
-    classId: {
+    id: {
       type: String,
       required: true
     },
     value: {
-      type: Number,
-      required: true
+      type: Number
     },
     tabs: {
       type: Array,
@@ -31,13 +30,13 @@ export default {
   },
   computed: {
     tabColor () {
-      return this.$store.getters['config/classThemeTabColor'](this.classId)
+      return this.$store.getters['config/classThemeTabColor'](this.id)
     },
     tabsColor () {
-      return this.$store.getters['config/classThemeTabsColor'](this.classId)
+      return this.$store.getters['config/classThemeTabsColor'](this.id)
     },
     tabsMode () {
-      return this.$store.getters['config/classThemeTabsMode'](this.classId)
+      return this.$store.getters['config/classThemeTabsMode'](this.id)
     }
   },
   methods: {

@@ -22,7 +22,7 @@
       <v-col cols="12">
         <me-class-tabs
           v-if="$vuetify.breakpoint.mdAndUp"
-          :class-id="id"
+          :id="id"
           :tabs="tabs"
           :value="tab"
           @change="changeTab"
@@ -35,19 +35,7 @@
             <me-class-attributes :id="item.id" />
           </v-tab-item>
           <v-tab-item class="pa-3">
-            <div
-              v-for="(subclass, subIndex) in subclasses"
-              :key="subclass.id"
-            >
-              <me-class-feature-list
-                :class-id="item.id"
-                :subclass-filter="subclass.id"
-                include-subclass
-                show-subclass-desc
-                show-subclass-header
-              />
-              <me-hr v-if="subIndex !== subclasses.length -1" :color="hrColor" :size="6" class="mt-10" />
-            </div>
+            <me-subclass-feature-list :id="item.id" />
           </v-tab-item>
           <v-tab-item class="pa-3">
             <me-power-list :items="filteredPowers" />
@@ -89,9 +77,7 @@ export default {
     item () {
       return this.$store.getters.getItem('classes', this.id)
     },
-    subclasses () {
-      return this.$store.getters.getData('subclasses').filter(i => i.class === this.item.id)
-    },
+
     tab: {
       get () {
         return this.$store.getters['tabbedPage/activeTab']
@@ -99,18 +85,6 @@ export default {
       set (value) {
         this.$store.commit('tabbedPage/SET_ACTIVE_TAB', value)
       }
-    },
-    tabColor () {
-      return this.$store.getters['config/classThemeTabColor'](this.item.id)
-    },
-    tabsColor () {
-      return this.$store.getters['config/classThemeTabsColor'](this.item.id)
-    },
-    tabsMode () {
-      return this.$store.getters['config/classThemeTabsMode'](this.item.id)
-    },
-    hrColor () {
-      return this.$store.getters['config/classThemeHrColor'](this.item.id)
     },
     filteredPowers () {
       return this.$store.getters.getData('powers')
