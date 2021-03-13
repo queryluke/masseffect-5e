@@ -3,6 +3,95 @@ import cloneDeep from 'lodash/cloneDeep'
 export const state = () => ({
   // Default "empty" character data model
   character: {
+    name: '',
+    id: '',
+    userId: '',
+    builderVersion: '0.5.12',
+    image: '',
+    user: '',
+    experiencePoints: 0,
+    species: {
+      name: '',
+      abilityScoreImprovementSelectedOption: 0,
+      abilityScoreImprovement: {}
+    },
+    classes: [],
+    baseAbilityScores: {
+      Strength: 0,
+      Dexterity: 0,
+      Constitution: 0,
+      Intelligence: 0,
+      Wisdom: 0,
+      Charisma: 0
+    },
+    background: {
+      name: '',
+      feat: {
+        name: '',
+        type: 'Feat'
+      }
+    },
+    characteristics: {
+      alignment: '',
+      'Personality Traits': '',
+      Ideal: '',
+      Bond: '',
+      Flaw: '',
+      Gender: '',
+      'Place of Birth': '',
+      Age: '',
+      Height: '',
+      Weight: '',
+      Hair: '',
+      Eyes: '',
+      Skin: '',
+      Appearance: '',
+      Backstory: ''
+    },
+    credits: 0,
+    equipment: [],
+    currentStats: {
+      hitPointsLost: 0,
+      temporaryHitPoints: 0,
+      techPointsUsed: 0,
+      forcePointsUsed: 0,
+      superiorityDiceUsed: 0,
+      hitDiceUsed: {},
+      deathSaves: {
+        successes: 0,
+        failures: 0
+      },
+      hasInspiration: false,
+      featuresTimesUsed: {},
+      conditions: [],
+      exhaustion: 0,
+      highLevelCasting: {
+        level6: false,
+        level7: false,
+        level8: false,
+        level9: false
+      }
+    },
+    tweaks: {},
+    customProficiencies: [],
+    customLanguages: [],
+    customFeatures: [],
+    customFeats: [],
+    customTechPowers: [],
+    customForcePowers: [],
+    customEquipment: [],
+    settings: {
+      isEnforcingForcePrerequisites: true,
+      isFixedHitPoints: false,
+      abilityScoreMethod: 'Standard Array'
+    },
+    notes: '',
+    createdAt: 1615572574654,
+    changedAt: 1615572574654,
+    localId: 'temp-x7vniqzfa'
+  }
+  /*
+  character: {
     version: '1.0.0',
     name: 'New Character',
     image: 'https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png',
@@ -79,7 +168,7 @@ export const state = () => ({
         5: 0
       }
     }
-  }
+  } */
 })
 
 export const getters = {
