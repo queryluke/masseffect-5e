@@ -10,10 +10,11 @@
       disable-sort
       disable-pagination
       class="text-center"
+      mobile-breakpoint="960"
       @click:row="showFeature"
     >
       <template
-        v-slot:header
+        #header
       >
         <thead>
           <tr v-if="item.powercasting && $vuetify.breakpoint.mdAndUp">
@@ -26,7 +27,7 @@
       </template>
 
       <template
-        v-slot:item.level="{ item: levelItem }"
+        #[`item.level`]="{ item: levelItem }"
       >
         <span
           :id="levelItem.cssId"
@@ -36,7 +37,7 @@
       </template>
 
       <template
-        v-slot:header.features="{ header: featureHeader }"
+        #[`header.features`]="{ header: featureHeader }"
       >
         <th class="text-left">
           {{ featureHeader.text }}
@@ -44,7 +45,7 @@
       </template>
 
       <template
-        v-slot:item.features="{ item: featureItem, isMobile }"
+        #[`item.features`]="{ item: featureItem, isMobile }"
       >
         <td
           v-if="isMobile"
@@ -75,15 +76,15 @@
       </template>
 
       <template
-        v-slot:header.psByPl="{ header: psByPlHeader }"
+        #[`header.psByPl`]="{ header: psByPlHeader }"
       >
-        <tr v-if="$vuetify.breakpoint.smAndDown">
-          {{ psByPlHeader }}
+        <tr v-if="$vuetify.breakpoint.xs">
+          {{ psByPlHeader.text }}
         </tr>
       </template>
 
       <template
-        v-slot:item.psByPl="{ item: psByPlItem }"
+        #[`item.psByPl`]="{ item: psByPlItem }"
       >
         <td
           v-if="$vuetify.breakpoint.smAndDown"
