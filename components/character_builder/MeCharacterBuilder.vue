@@ -20,7 +20,7 @@ export default {
       return [{},
         {
           name: 'Species',
-          component: 'MeCharacterBuilderSpeciesSelect',
+          component: 'MeCharacterBuilderSpecies',
           props: {
             items: this.species,
             label: 'Species',
@@ -30,7 +30,7 @@ export default {
         },
         {
           name: 'Class',
-          component: 'MeCharacterBuilderSelect',
+          component: 'MeCharacterBuilderClass',
           props: {
             items: this.classes,
             label: 'Class',

@@ -8,9 +8,7 @@ export default {
   },
   data () {
     return {
-      heightWeightData: {},
-      speciesWeight: '',
-      speciesHeight: ''
+      heightWeightData: {}
     }
   },
   watch: {
@@ -23,15 +21,39 @@ export default {
       return this.$store.getters['user/imperial']
     },
     weight () {
-      return {
-        val: this.imperial ? this.heightWeightData.baseWeight : this.heightWeightData.weightKg + ' kg',
-        mod: this.imperial ? this.heightWeightData.weightModifier : this.heightWeightData.weightModifierKg
+      return function () {
+        const hwd = {
+          val: '',
+          mod: ''
+        }
+        if (!this.heightWeightData) {
+          return hwd
+        } else if (this.imperial) {
+          hwd.val = this.heightWeightData.baseWeight
+          hwd.mod = this.heightWeightData.weightModifier
+        } else {
+          hwd.val = this.heightWeightData.weightKg + ' kg'
+          hwd.mod = this.heightWeightData.weightModifierKg
+        }
+        return hwd
       }
     },
     height () {
-      return {
-        val: this.imperial ? this.heightWeightData.base : this.heightWeightData.baseCm + ' cm',
-        mod: this.imperial ? this.heightWeightData.heightModifier : this.heightWeightData.heightModifierCm
+      return function () {
+        const hwd = {
+          val: '',
+          mod: ''
+        }
+        if (!this.heightWeightData) {
+          return hwd
+        } else if (this.imperial) {
+          hwd.val = this.heightWeightData.base
+          hwd.mod = this.heightWeightData.heightModifier
+        } else {
+          hwd.val = this.heightWeightData.baseCm + ' cm'
+          hwd.mod = this.heightWeightData.heightModifierCm
+        }
+        return hwd
       }
     }
   },
@@ -46,9 +68,6 @@ export default {
 
 <template lang="pug">
   div
-    //vue-headful(v-if="!isHidingBack", :title="title")
-    //BackButton(v-if="!isHidingBack")
-    //CharactersSpeciesDetailHalfHuman(v-if="speciesName.toUpperCase() === 'Half-Human'.toUpperCase()", v-bind="{ speciesData }")
     div(v-if="speciesData").text-left
       div(:class="$style.topSection")
         div(:class="$style.bioBlock").block
@@ -80,12 +99,12 @@ export default {
             tbody
               tr
                 td #[strong #[em Height] ]
-                td {{ height.val }}
-                td {{ height.mod }}
+                td {{ height().val }}
+                td {{ height().mod }}
               tr
                 td #[strong #[em Weight] ]
-                td {{ weight.val }}
-                td {{ weight.mod }}
+                td {{ weight().val }}
+                td {{ weight().mod }}
           hr
 
           h4 Sociocultural Characteristics

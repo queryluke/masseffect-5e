@@ -71,9 +71,15 @@ export default {
     this.$store.commit('tabbedPage/SET_TABS', this.tabs)
     this.$store.dispatch('tabbedPage/INIT_THEME', this.item.id)
   },
+  props: {
+    customId: {
+      type: String,
+      requried: false
+    }
+  },
   data () {
     return {
-      id: this.$route.params.id,
+      id: this.$route.params.id || this.customId,
       tabs: ['progression table', 'class features', 'subclasses', 'powers']
     }
   },
