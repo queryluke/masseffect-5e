@@ -5,10 +5,9 @@
     class="ma-2"
   >
     <v-row>
-      <v-col cols="4" sm="3">
+      <v-col cols="4" sm="3" md="5" xl="4">
         <v-img
           :src="require(`~/assets/images/classes/${item.id}.svg`)"
-          height="200px"
           position="right"
         />
       </v-col>
@@ -19,20 +18,11 @@
         <p class="body-2">
           {{ item.snippet }}
         </p>
-        <div class="d-flex justify-space-around flex-wrap">
-          <div
-            v-for="(stat, index) in stats"
-            :key="index"
-            class="text-center mb-1"
-          >
-            <div class="text-overline mb-n1">
-              {{ stat.title }}
-            </div>
-            <div class="text-body-2">
-              {{ stat.value }}
-            </div>
-          </div>
-        </div>
+        <me-stat-list>
+          <me-stat-list-item v-for="(stat, index) in stats" :key="index" :label="stat.title">
+            {{ stat.value }}
+          </me-stat-list-item>
+        </me-stat-list>
       </v-col>
     </v-row>
   </v-card>

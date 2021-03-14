@@ -26,8 +26,8 @@ export default {
     return {
       items: [],
       ruleLink: {
-        to: '/manual/spellcasting',
-        name: 'Spellcasting Rules'
+        to: '/manual/powercasting',
+        name: 'Powercasting Rules'
       },
       filters: [
         {

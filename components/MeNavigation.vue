@@ -18,7 +18,7 @@
     />
     <v-list dense>
       <template v-for="(page, index) in navigation">
-        <v-list-item v-if="page.to" :key="index" :to="page.to" nuxt>
+        <v-list-item v-if="page.to || page.href" :key="index" :to="page.to" nuxt :href="page.href">
           <v-list-item-action v-if="page.icon">
             <v-icon>
               {{ page.icon }}
@@ -37,7 +37,7 @@
           {{ page.header }}
         </v-subheader>
         <v-list-group v-if="page.items" :key="index" :prepend-icon="page.icon" :group="group(page.items)" no-action>
-          <template v-slot:activator>
+          <template #activator>
             <v-list-item-content>
               <v-list-item-title>{{ page.name }}</v-list-item-title>
             </v-list-item-content>
@@ -62,7 +62,7 @@
       <me-user-settings v-if="$vuetify.breakpoint.mdAndUp" />
       <v-toolbar dense>
         <v-menu offset-y top>
-          <template v-slot:activator="{ on, attrs }">
+          <template #activator="{ on, attrs }">
             <v-toolbar-title
               class="text-body-2"
               v-bind="attrs"
@@ -118,7 +118,7 @@ export default {
       if (this.$vuetify.breakpoint.mdAndDown) {
         navigation.push({ divider: true })
         navigation.push({ header: 'Mass Effect 5e' })
-        const addNav = this.$store.getters.mainNavigation.filter(i => !['/manual/intro', '/character-builder'].includes(i.to))
+        const addNav = this.$store.getters.mainNavigation.filter(i => ['Assets', 'Changelog', 'About'].includes(i.name))
         addNav.push({ to: '/license', name: 'License' })
         navigation = navigation.concat(addNav)
       }
@@ -158,6 +158,9 @@ export default {
     bookmarkCount () {
       return this.$store.getters['user/bookmarkCount']
     }
+  },
+  created () {
+    this.$vuetify.theme.dark = this.$store.getters['user/darkMode']
   },
   methods: {
     toggleDarkMode () {

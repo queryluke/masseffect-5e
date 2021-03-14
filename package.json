@@ -23,7 +23,6 @@
     "lodash": "^4.17.21",
     "lunr": "^2.3.9",
     "nuxt": "^2.14.12",
-    "tiptap-vuetify": "^2.24.0",
     "vue2-filters": "^0.12.0",
     "vuex-persistedstate": "^4.0.0-beta.3"
   },
