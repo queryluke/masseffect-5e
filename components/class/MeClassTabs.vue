@@ -21,7 +21,8 @@ export default {
       required: true
     },
     value: {
-      type: Number
+      type: Number,
+      default: null
     },
     tabs: {
       type: Array,
