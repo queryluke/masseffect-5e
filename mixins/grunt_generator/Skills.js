@@ -1,23 +1,27 @@
-import skills from '~/static/data/skills'
 
 export const Skills = {
+  computed: {
+    skills () {
+      return this.$store.getters.getData('skills')
+    }
+  },
   methods: {
     setGruntSkills () {
       this.grunt.skills = []
-      const classSkills = this.sc.skillProficiencies.map(skill => {
-        return skill.toLowerCase().trim().replace(/ /g, '_')
+      const classSkills = this.options.klass.skillProfs.options.items.map((skill) => {
+        return skill.toLowerCase().trim().replace('-', '_')
       })
-      let skillOptions = skills.filter(skill => {
+      const skillOptions = this.skills.filter((skill) => {
         return classSkills.includes(skill.id)
       })
 
-      let numProficient = this.randomValue(this.proficientWeights[this.crMetaLevel])
+      const numProficient = this.randomValue(this.proficientWeights[this.crMetaLevel])
       for (let i = 1; i <= numProficient; i++) {
         const skill = this.randomValue(skillOptions)
         this.grunt.skills.push(skill.id)
       }
 
-      if (['drell', 'unshackled_ai', 'geth'].includes(this.race.id)) {
+      if (['drell', 'geth'].includes(this.options.species.id)) {
         this.grunt.skills.push('perception')
       }
       this.grunt.skills = [...new Set(this.grunt.skills)]

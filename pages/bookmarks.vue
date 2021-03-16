@@ -1,0 +1,71 @@
+<template>
+  <v-container>
+    <me-page-title />
+    <div v-for="(items, type) of bookmarks" :key="type" class="mt-5">
+      <p class="text-subtitle mb-1">
+        {{ types[type].label }}
+      </p>
+      <component :is="`me-${types[type].component}-list`" :items="items" />
+    </div>
+  </v-container>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      types: {
+        weapons: {
+          label: 'Weapons',
+          component: 'weapon'
+        },
+        armor: {
+          label: 'Armor',
+          component: 'armor'
+        },
+        gear: {
+          label: 'Gear',
+          component: 'gear'
+        },
+        mods: {
+          label: 'Mods',
+          component: 'mod'
+        },
+        vehicle: {
+          label: 'Vehicles',
+          component: 'vehicle'
+        },
+        powers: {
+          label: 'Powers',
+          component: 'power'
+        },
+        bestiary: {
+          label: 'Npcs',
+          component: 'npc'
+        }
+      }
+    }
+  },
+  computed: {
+    bookmarks () {
+      return this.$store.getters['user/bookmarks']
+    }
+  },
+  created () {
+    this.$store.commit('pageTitle', 'Bookmarks')
+  },
+  methods: {
+    goToMark (id) {
+      this.$vuetify.goTo(id, { offset: -68 })
+    }
+  },
+  head () {
+    return {
+      title: 'Bookmarks | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Keep your favorite weapons, enemies, and spells close at hand with our nifty bookmark tool.' }
+      ]
+    }
+  }
+}
+</script>

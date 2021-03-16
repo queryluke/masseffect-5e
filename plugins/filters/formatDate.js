@@ -1,7 +1,5 @@
-require('date-format-lite')
-
 function formatDate (dateString, format) {
-  return dateString.date(format)
+  return dateString
 }
 
 export default formatDate

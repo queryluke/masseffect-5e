@@ -4,7 +4,7 @@ export const SavingThrows = {
       this.grunt.savingThrows = []
       let numSavingThrows = this.randomValue(this.savingThrowWeights[this.crMetaLevel])
       const savingThrows = this.savingThrows.slice()
-      const classSavingThrows = this.sc.savingThrows.map(st => {
+      const classSavingThrows = this.options.klass.savingThrows.mandatory.map((st) => {
         return st.toLowerCase().trim().slice(0, 3)
       })
       for (const classSt of classSavingThrows) {

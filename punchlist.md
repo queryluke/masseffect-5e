@@ -1,0 +1,10 @@
+- [ ] move rarity text color to mixin
+- [ ] add quick link to mod type and gear type (url param)
+- [ ] add medi-gel to gear
+- [ ] add thermal clips to gear
+- [ ] Update all HW text
+- [ ] Check sorting of filter options
+- [ ] persistent store converter
+- [ ] bestiary custom sort for CR and other filters?
+- [ ] rename vehicle rules page (to prevent overlap with vehicle list page)
+- [ ] figure out how to "freeze" v1.2 as a site

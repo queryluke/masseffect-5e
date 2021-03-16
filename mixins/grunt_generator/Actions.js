@@ -4,8 +4,8 @@ export const Actions = {
       gruntWeaponRarity: {
         0: ['Common'],
         1: ['Common', 'Uncommon'],
-        2: ['Common', 'Uncommon', 'Rare'],
-        3: ['Common', 'Uncommon', 'Rare', 'Very Rare']
+        2: ['Common', 'Uncommon', 'Rare', 'Very Rare'],
+        3: ['Common', 'Uncommon', 'Rare', 'Very Rare', 'Spectre']
       }
     }
   },
@@ -14,7 +14,7 @@ export const Actions = {
       this.grunt.actions = []
       this.grunt.legendaryActions = []
       const attackOptions = this.getAttackOptions()
-      const filteredAttackOptions = attackOptions.filter(ao => ao.dpr >= this.cr.dmgMin && ao.dpr <= this.cr.dmgMax)
+      const filteredAttackOptions = attackOptions.filter(ao => ao.dpr >= this.options.cr.dmgMin && ao.dpr <= this.options.cr.dmgMax)
       const attack = filteredAttackOptions.length > 0 ? this.randomValue(filteredAttackOptions) : attackOptions.pop()
       this.dpr.weapon = attack.dpr
       // Add multi-attack
@@ -32,25 +32,6 @@ export const Actions = {
           this.adjustments.hit = weapon.attack.bonus
         }
       }
-      // Add grenades
-      const hasGrenades = Math.floor(Math.random() * 100) < (this.crMetaLevel + 1) * 10
-      if (hasGrenades) {
-        const grenade = this.randomValue(this.grenades)
-        this.grunt.actions.push({
-          type: 'grenade',
-          id: grenade.id
-        })
-        if (grenade.damage !== 'none') {
-          this.dpr.grenade = this.averageFromDie(grenade.damage)
-        }
-      }
-      // Add Heavy Weapons
-      const hasHw = Math.floor(Math.random() * 100) < (this.crMetaLevel * 5)
-      if (hasHw) {
-        const hw = this.randomValue(this.weapons.filter(w => w.type === 'Heavy Weapon'))
-        this.grunt.actions.push(this.generateWeaponAction(hw))
-        this.dpr.heavyWeapon = this.averageFromDie(hw.damage)
-      }
       // Add legendary actions
       if (attack.type === 'legendary') {
         // weapon attack
@@ -61,22 +42,14 @@ export const Actions = {
         this.grunt.legendaryActions.push({
           name: 'Attack',
           cost: 1,
-          description: `The ${this.sc.id} makes one weapon attack with its${text}.`
+          description: `The ${this.options.klass.id} makes one weapon attack with its${text}.`
         })
-        // grenade
-        if (hasGrenades) {
-          this.grunt.legendaryActions.push({
-            name: 'Use grenade',
-            cost: 2,
-            description: `The ${this.sc.id} uses one grenade.`
-          })
-        }
         // spellcasting
         if (this.grunt.spellcasting) {
           this.grunt.legendaryActions.push({
-            name: 'Cast a spell',
+            name: 'Cast a power',
             cost: 3,
-            description: `The ${this.sc.id} casts a spell.`
+            description: `The ${this.options.klass.id} casts a power.`
           })
         }
         // Move
@@ -84,7 +57,7 @@ export const Actions = {
           this.grunt.legendaryActions.unshift({
             name: 'Move',
             cost: 1,
-            description: `The ${this.sc.id} moves up to its speed.`
+            description: `The ${this.options.klass.id} moves up to its speed.`
           })
         }
         // Search
@@ -92,7 +65,7 @@ export const Actions = {
           this.grunt.legendaryActions.unshift({
             name: 'Search',
             cost: 1,
-            description: `The ${this.sc.id} takes the Search action.`
+            description: `The ${this.options.klass.id} takes the Search action.`
           })
         }
       }
@@ -103,46 +76,25 @@ export const Actions = {
         id: weapon.id
       }
       switch (weapon.id) {
-        case 'm-37_falcon':
+        case 'm-37-falcon':
           weaponAction = {
             type: 'standard',
             name: weapon.name,
-            description: `Target a creature within ${weapon.range}. It makes a DC ${8 + weapon.attack.bonus + this.cr.profBonus} Dexterity saving throw, taking ${this.averageFromDie(weapon.damage)} (${weapon.damage}) thunder damage on a failed save, or have as much damage on a successful one.`
+            description: `Target a creature within ${weapon.range}. It makes a DC ${8 + weapon.attack.bonus + this.options.cr.profBonus} Dexterity saving throw, taking ${this.averageFromDie(weapon.damage)} (${weapon.damage}) thunder damage on a failed save, or have as much damage on a successful one.`
           }
           break
-        case 'venom_shotgun':
+        case 'venom-shotgun':
           weaponAction = {
             type: 'standard',
             name: weapon.name,
             description: `Target a creature within  ${weapon.range}. It makes a DC 13 Dexterity saving throw, taking ${this.averageFromDie(weapon.damage)} (${weapon.damage}) thunder damage on a failed save, or have as much damage on a successful one.`
           }
           break
-        default:
-          if (weapon.type === 'Heavy Weapon') {
-            weaponAction = {
-              type: 'standard',
-              name: weapon.name,
-              recharge: `${weapon.heat} ${weapon.heat > 1 ? 'charges' : 'charge'}`,
-              description: weapon.notes
-            }
-          }
       }
       return weaponAction
     },
     getAttackOptions () {
-      const weapons = this.weapons
-        .filter(weapon => {
-          return weapon.damage !== null &&
-            this.gruntWeaponRarity[this.crMetaLevel].includes(weapon.rarity) &&
-            weapon.type !== 'Heavy Weapon'
-        })
-        .map(weapon => this.setWeaponDamage(weapon))
-      // filters can go here, filtering out any weapons from the weapons const
-      /*
-      if (!config.allowHeavyWeapons && weapon.type === 'Heavy Weapon') {
-        continue
-      }
-      */
+      const weapons = this.weapons.map(weapon => this.setWeaponDamage(weapon))
       const attacks = []
       for (const weapon of weapons) {
         for (let i = 1; i <= 3; i++) {
@@ -167,8 +119,8 @@ export const Actions = {
       }
 
       // dual wielding
-      const dualOpts = weapons.filter(weapon => {
-        return (weapon.type === 'Heavy Pistol' || weapon.type === 'SMG' || weapon.type === 'Melee') && !/two/gi.test(weapon.tags)
+      const dualOpts = weapons.filter((weapon) => {
+        return (weapon.type === 'Heavy Pistol' || weapon.type === 'SMG' || weapon.type === 'Melee') && !/two/gi.test(weapon.properties)
       })
       const combinations = []
 
@@ -178,8 +130,8 @@ export const Actions = {
         // each possible off-hand
         for (const off of dualOpts) {
           // Only allow melee/weapon combos if melee has hip fire
-          if ((main.type === 'Melee' && (off.type !== 'Melee' && !/hip/gi.test(off.tags))) ||
-              (off.type === 'Melee' && (main.type !== 'Melee' && !/hip/gi.test(off.tags)))) {
+          if ((main.type === 'Melee' && (off.type !== 'Melee' && !/hip/gi.test(off.properties))) ||
+              (off.type === 'Melee' && (main.type !== 'Melee' && !/hip/gi.test(off.properties)))) {
             continue
           }
           // filter out existing combos
@@ -216,21 +168,19 @@ export const Actions = {
       }
       if (weapon.type === 'Melee') {
         let finalBonus = 0
-        if (/(finesse|recoil)/gi.test(weapon.tags)) {
+        if (/(finesse|recoil)/gi.test(weapon.properties)) {
           finalBonus = strBonus >= dexBonus ? strBonus : dexBonus
         } else {
           finalBonus = strBonus
         }
         weapon.attack.bonus = finalBonus
-      } else if (weapon.type === 'Heavy Weapon') {
-        weapon.attack.bonus = 0
       } else {
         weapon.attack.bonus = dexBonus
       }
       return weapon
     },
     generateMultiattackDescription (attack) {
-      const name = this.sc.id
+      const name = this.options.klass.id
       const words = ['', 'one', 'two', 'three', 'four']
       const plural = attack.numAttacks > 1 ? 's' : ''
       let text = `The ${name} makes`

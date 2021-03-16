@@ -31,7 +31,7 @@ describe('RandomGruntGenerator', () => {
 
   test('creates 1000 random grunts without issue', async () => {
     const testRuns = []
-    for (let i = 0; i < 1000; i++ ) {
+    for (let i = 0; i < 1000; i++) {
       testRuns.push(createAGrunt())
     }
     return Promise.all(testRuns)
@@ -47,9 +47,9 @@ describe('OneOfEachGrunt', () => {
         gruntGenerator: {
           namespaced: true,
           state: {
-            cr: cr,
-            race: race,
-            sc: sc
+            cr,
+            race,
+            sc
           },
           mutations: GruntGeneratorState.mutations,
           actions: GruntGeneratorState.actions,

@@ -10,23 +10,23 @@ export const AbilityScores = {
         cha: 1
       }
       const classStats = {
-        adept: {wis: 5, dex: 4, cha: 1},
-        engineer: {int: 5, dex: 4, con: 1},
-        infiltrator: {dex: 5, int: 4, str: 3},
-        sentinel: {wis: 5, int: 4, dex: 2},
-        soldier: {dex: 5, str: 4, con: 3},
-        vanguard: {str: 5, wis: 4, con: 2},
-        none: {dex: 5, str: 3, con: 2}
+        adept: { wis: 5, dex: 4, cha: 1 },
+        engineer: { int: 5, dex: 4, con: 1 },
+        infiltrator: { dex: 5, int: 4, str: 3 },
+        sentinel: { wis: 5, int: 4, dex: 2 },
+        soldier: { dex: 5, str: 4, con: 3 },
+        vanguard: { str: 5, wis: 4, con: 2 },
+        none: { dex: 5, str: 3, con: 2 }
       }
-      if (this.race.id === 'asari') {
-        classStats.adept = {cha: 5, dex: 4, wis: 1}
-        classStats.sentinel = {cha: 5, int: 4, dex: 2}
-        classStats.vanguard = {str: 5, cha: 4, con: 2}
+      if (this.options.species.id === 'asari') {
+        classStats.adept = { cha: 5, dex: 4, wis: 1 }
+        classStats.sentinel = { cha: 5, int: 4, dex: 2 }
+        classStats.vanguard = { str: 5, cha: 4, con: 2 }
       }
       const standardArray = [15, 14, 13, 12, 10, 8]
 
       // Create stat weights
-      const statWeights = classStats[this.sc.id]
+      const statWeights = classStats[this.options.klass.id]
 
       const weightedAbilitySelection = {
         increase: Object.keys(this.grunt.abilityScores),
@@ -56,16 +56,16 @@ export const AbilityScores = {
         weightedAbilitySelection.reduction.push(ability)
       }
       // Set boosts based on CR
-      if (this.cr.abIncrease) {
-        const increase = this.randomValue(this.cr.abIncrease)
+      if (this.options.cr.abIncrease) {
+        const increase = this.randomValue(this.options.cr.abIncrease)
         for (let i = 0; i < increase; i++) {
           const ability = this.randomValue(weightedAbilitySelection.increase)
           this.grunt.abilityScores[ability]++
         }
       }
       // Set decreases based on CR
-      if (this.cr.abReduction) {
-        const reduction = this.randomValue(this.cr.abReduction)
+      if (this.options.cr.abReduction) {
+        const reduction = this.randomValue(this.options.cr.abReduction)
         for (let i = 0; i < reduction; i++) {
           const ability = this.randomValue(weightedAbilitySelection.reduction)
           if (this.grunt.abilityScores[ability] === 1) {
@@ -76,7 +76,7 @@ export const AbilityScores = {
       }
 
       // add race attributes
-      switch (this.race.id) {
+      switch (this.options.species.id) {
         case 'human': {
           let ability = this.randomValue(weightedAbilitySelection.increase)
           this.grunt.abilityScores[ability] += 2
@@ -84,17 +84,8 @@ export const AbilityScores = {
           this.grunt.abilityScores[ability]++
           break
         }
-        case 'unshackled_ai': {
-          const filteredInt = weightedAbilitySelection.increase.filter(ability => {
-            return ability === 'int'
-          })
-          const ability = this.randomValue(filteredInt)
-          this.grunt.abilityScores[ability]++
-          this.grunt.abilityScores.int += 2
-          break
-        }
         default: {
-          const increases = this.race.abilityScoreIncrease
+          const increases = this.options.species.abilityScoreIncrease
           for (const inc of increases) {
             const ability = inc.ability.toLowerCase().slice(0, 3)
             const increase = parseInt(inc.amount, 10)

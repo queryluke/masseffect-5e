@@ -1,29 +1,37 @@
 import Vue from 'vue'
-import MarkdownFile from '~/components/MarkdownFile.vue'
-import MarkdownContent from '~/components/MarkdownContent.vue'
-import GalaxyMap from '~/components/rule_partials/GalaxyMap.vue'
-import MeHeaderLogo from '~/components/MeHeaderLogo'
-import SimpleCard from '~/components/cards/SimpleCard'
-import AiDialog from '~/components/rule_partials/AdditionalInformationDialog'
-import WeaponProp from '~/components/WeaponProp'
+import upperFirst from 'lodash/upperFirst'
+import camelCase from 'lodash/camelCase'
 
-// Because Vue-loader dynamically adds vue components as needed
-// Any vue components used in the .md files need to be loaded globally
-// TODO: Reduce these where possible
-import VChip from 'vuetify/lib/components/VChip'
-import VAlert from 'vuetify/lib/components/VAlert'
-import VBtn from 'vuetify/lib/components/VBtn'
-import VIcon from 'vuetify/lib/components/VIcon'
+const requireComponent = require.context(
+  // The relative path of the components folder
+  '~/components',
+  // Whether or not to look in subfolders
+  true,
+  // The regular expression used to match base component filenames
+  /[A-Z]\w+\.(vue|js)$/
+)
 
-Vue.component('markdown-file', MarkdownFile)
-Vue.component('markdown-content', MarkdownContent)
-Vue.component('galaxy-map', GalaxyMap)
-Vue.component('me-header-logo', MeHeaderLogo)
-Vue.component('v-chip', VChip)
-Vue.component('v-alert', VAlert)
-Vue.component('v-btn', VBtn)
-Vue.component('v-icon', VIcon)
-Vue.component('simple-card', SimpleCard)
-Vue.component('ai-dialog', AiDialog)
-Vue.component('weapon-prop', WeaponProp)
+requireComponent.keys().forEach((fileName) => {
+  // Get component config
+  const componentConfig = requireComponent(fileName)
 
+  // Get PascalCase name of component
+  const componentName = upperFirst(
+    camelCase(
+      // Gets the file name regardless of folder depth
+      fileName
+        .split('/')
+        .pop()
+        .replace(/\.\w+$/, '')
+    )
+  )
+
+  // Register component globally
+  Vue.component(
+    componentName,
+    // Look for the component options on `.default`, which will
+    // exist if the component was exported with `export default`,
+    // otherwise fall back to module's root.
+    componentConfig.default || componentConfig
+  )
+})

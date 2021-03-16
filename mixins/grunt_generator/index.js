@@ -1,48 +1,28 @@
-import {AbilityScoreBonus} from '../abilityScoreBonus'
-import {Ac} from './Ac'
-import {AverageFromDie} from '../averageFromDie'
-import {AbilityScores} from './AbilityScores'
-import {Actions} from './Actions'
-import {Alignment} from './Alignmnet'
-import {Features} from './Features'
-import {Hp} from './Hp'
-import {Id} from './Id'
-import {Image} from './Image'
-import {InnateSpellcasting} from './InnateSpellcasting'
-import {Name} from './Name'
-import {Rivs} from './Rivs'
-import {SavingThrows} from './SavingThrows'
-import {Skills} from './Skills'
-import {Spellcasting} from './Spellcasting'
-import {Speed} from './Speed'
-import {Type} from './Type'
-import {RandomValue} from '../randomValue'
-import {CrToInt} from '../crToInt'
-
-// data
-import races from '~/static/data/races'
-import classes from '~/static/data/classes'
-import crs from '~/static/data/stats_by_cr'
-import spells from '~/static/data/spells'
-import weapons from '~/static/data/weapons'
-import grenades from '~/static/data/grenades'
-
-// options
-import {createNamespacedHelpers} from 'vuex'
-const {mapGetters} = createNamespacedHelpers('gruntGenerator')
+import { AbilityScoreBonus } from '../abilityScoreBonus'
+import { AverageFromDie } from '../averageFromDie'
+import { RandomValue } from '../randomValue'
+import { CrToInt } from '../crToInt'
+import { Ac } from './Ac'
+import { AbilityScores } from './AbilityScores'
+import { Actions } from './Actions'
+import { Alignment } from './Alignmnet'
+import { Features } from './Features'
+import { Hp } from './Hp'
+import { Id } from './Id'
+import { Image } from './Image'
+import { InnateSpellcasting } from './InnateSpellcasting'
+import { Name } from './Name'
+import { Rivs } from './Rivs'
+import { SavingThrows } from './SavingThrows'
+import { Skills } from './Skills'
+import { Spellcasting } from './Spellcasting'
+import { Speed } from './Speed'
+import { Type } from './Type'
 
 export const GruntGenerator = {
-  computed: {
-    ...mapGetters({ selectedCr: 'cr' }),
-    ...mapGetters({ selectedRace: 'race' }),
-    ...mapGetters({ selectedClass: 'sc' })
-  },
   data () {
     return {
       grunt: {},
-      spells,
-      weapons,
-      grenades,
       crMetaLevel: 0,
       dpr: {
         weapon: 0,
@@ -83,10 +63,6 @@ export const GruntGenerator = {
   ],
   methods: {
     generateGrunt () {
-      this.cr = this.selectedCr && this.selectedCr.cr ? this.selectedCr : this.randomValue(crs)
-      this.race = this.selectedRace && this.selectedRace.id ? this.selectedRace : this.randomValue(races)
-      this.sc = this.selectedClass && this.selectedClass.id ? this.selectedClass : this.randomValue(classes)
-
       this.reset()
       this.setGruntAbilityScores()
       this.setGruntName()
@@ -105,19 +81,20 @@ export const GruntGenerator = {
       this.setGruntAc()
       this.setGruntHp()
       this.grunt.lairActions = []
-      this.grunt.profBonus = this.cr.profBonus
-      this.grunt.size = this.race.id === 'volus' ? 'Small' : 'Medium'
-      this.grunt.cr = this.cr.cr
+      this.grunt.profBonus = this.options.cr.profBonus
+      this.grunt.size = this.options.species.id === 'volus' ? 'Small' : 'Medium'
+      this.grunt.cr = this.options.cr.cr
       this.grunt.unit = ''
       this.generated = true
+      // console.log(this.grunt)
       // console.log([this.dpr, this.adjustments])
     },
     reset () {
       this.generated = false
       this.grunt = {}
       this.crMetaLevel = 0
-      if (this.cr) {
-        this.crMetaLevel = parseFloat(this.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(this.cr.cr) / 4)
+      if (this.options.cr) {
+        this.crMetaLevel = parseFloat(this.options.cr.cr) <= 1 ? 0 : Math.ceil(parseFloat(this.options.cr.cr) / 4)
       }
       this.dpr = {
         weapon: 0,

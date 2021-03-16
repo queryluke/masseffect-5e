@@ -1,13 +1,14 @@
-import vanguard from '~/static/data/classes/vanguard'
-
 export const Features = {
   computed: {
+    vanguard () {
+      return this.$store.getters.getItem('classes', 'vanguard')
+    },
     aggressive () {
       this.adjustments.dpr += 2
       return {
         name: 'Aggressive',
         recharge: null,
-        description: `As a bonus action, the ${this.sc.id} can move up to its speed toward a hostile creature that it can see.`
+        description: `As a bonus action, the ${this.options.klass.id} can move up to its speed toward a hostile creature that it can see.`
       }
     },
     ambusher () {
@@ -15,7 +16,7 @@ export const Features = {
       return {
         name: 'Ambusher',
         recharge: null,
-        description: `The ${this.sc.id} has advantage on attack rolls against any creature it has surprised.`
+        description: `The ${this.options.klass.id} has advantage on attack rolls against any creature it has surprised.`
       }
     },
     amphibious () {
@@ -32,15 +33,22 @@ export const Features = {
       }
     },
     barrier () {
-      const spellcastingLevel = this.sc.id === 'vanguard' ? this.cr.spellcastingLevel : Math.ceil(this.cr.spellcastingLevel / 2)
-      const vanguardProgression = vanguard.progression.find(p => p.level === spellcastingLevel)
-      this.grunt.barrier = vanguardProgression.barrierTicks
-      this.adjustments.hp += (4 * vanguardProgression.barrierTicks)
-      return {
+      const spellcastingLevelIndex = this.options.cr.powercastingLevel
+        ? this.options.klass.id === 'vanguard'
+          ? parseInt(this.options.cr.powercastingLevel, 10)
+          : Math.ceil(parseInt(this.options.cr.powercastingLevel, 10) / 2) - 1
+        : 0
+      const barrierTicksArray = this.vanguard.progressionColumns.find(p => p.key === 'barrierTicks')
+      const barrierTicks = barrierTicksArray.values[spellcastingLevelIndex]
+      const barrierUsesArray = this.vanguard.progressionColumns.find(p => p.key === 'barrierUses')
+      this.grunt.barrier = barrierTicks
+      const feature = {
         name: 'Barrier',
-        recharge: `${vanguardProgression.barrierUses}/Day`,
-        description: `As an action or bonus action, the ${this.sc.id} gains ${vanguardProgression.barrierTicks} barrier ticks.`
+        recharge: `${barrierUsesArray.values[spellcastingLevelIndex]}/Day`,
+        description: `As an action or bonus action, the ${this.options.klass.id} gains ${barrierTicks} barrier ticks.`
       }
+      this.adjustments.hp += (4 * barrierTicks)
+      return feature
     },
     tacticalCloak () {
       this.adjustments.ac += 1
@@ -69,14 +77,14 @@ export const Features = {
       this.grunt.senses = []
       this.grunt.barrier = null
       // mandatory
-      if (this.sc.id === 'infiltrator') {
+      if (this.options.klass.id === 'infiltrator') {
         this.addFeature('tacticalCloak', 'features')
         this.addFeature('sneakAttack', 'features')
       }
-      if (['vanguard', 'adept', 'sentinel'].includes(this.sc.id) && this.cr.spellcastingLevel !== false) {
+      if (['vanguard', 'adept', 'sentinel'].includes(this.options.klass.id) && this.options.cr.spellcastingLevel !== false) {
         this.addFeature('barrier', 'features')
       }
-      if (this.race.id === 'drell') {
+      if (this.options.species.id === 'drell') {
         this.addFeature('darkvision', 'senses')
       }
     },

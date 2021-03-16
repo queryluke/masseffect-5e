@@ -1,32 +1,38 @@
-<template lang="pug">
-  v-content
-    v-container(grid-list-xl).mt-5
-      div.text-xs-center
-        h1.display-2 Changelog
-      v-layout(row wrap).mt-5
-        v-flex(v-for="post in items" v-bind:key="post.slug" xs12 sm6 lg4 d-flex)
-          post-card(:post="post" height="185px")
+<template>
+  <v-container class="mt-5">
+    <v-row justify="space-around">
+      <v-col v-for="(item, index) in items" :key="index" cols="12" md="4">
+        <me-skeleton-loader :pending="$fetchState.pending" type="card">
+          <me-news-card :news="item" height="200px" />
+        </me-skeleton-loader>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
-  import items from '~/static/data/changelog'
-  import PostCard from '~/components/cards/PostCard.vue'
 
-  export default {
-    components: { PostCard },
-    data () {
-      return {
-        items
-      }
-    },
-    head () {
-      return {
-        title: `Changelog | Mass Effect 5e`,
-        meta: [
-          { hid: 'description', name: 'description', content: 'Keep up-to-date with all the Mass Effect 5e system rule additions and updates.' }
-        ]
-      }
-    },
-    layout: 'dark'
+export default {
+  async fetch () {
+    this.changelog = await this.$store.dispatch('FETCH_DATA', 'changelog')
+  },
+  data () {
+    return {
+      changelog: [...Array(9).keys()]
+    }
+  },
+  computed: {
+    items () {
+      return this.changelog.slice().reverse()
+    }
+  },
+  head () {
+    return {
+      title: 'Changelog | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Keep up-to-date with all the Mass Effect 5e system rule additions and updates.' }
+      ]
+    }
   }
+}
 </script>

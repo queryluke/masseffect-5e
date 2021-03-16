@@ -4,7 +4,7 @@ function fidtt (string) {
   if (theString.match(/_/)) {
     delimeter = '_'
   }
-  return theString.split(delimeter).map(v => {
+  return theString.split(delimeter).map((v) => {
     if (['ai'].includes(v)) {
       return v.toUpperCase()
     }
