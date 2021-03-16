@@ -141,7 +141,21 @@ export const mutations = {
   },
   UPDATE_CHARACTER (state, { attr, value }) {
     const character = cloneDeep(state.character)
-    character[attr] = value
+    if (typeof attr === 'string' && attr.includes('.')) {
+      let schema = character // a moving reference to internal objects within obj
+      const pList = attr.split('.')
+      const len = pList.length
+      for (let i = 0; i < len - 1; i++) {
+        const elem = pList[i]
+        if (!schema[elem]) {
+          schema[elem] = {}
+        }
+        schema = schema[elem]
+      }
+      schema[pList[len - 1]] = value
+    } else {
+      character[attr] = value
+    }
     state.character = character
   },
   LOAD_CHARACTER_FROM_FILE (state, data) {

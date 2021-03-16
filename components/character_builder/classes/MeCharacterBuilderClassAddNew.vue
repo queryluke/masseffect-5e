@@ -1,31 +1,64 @@
 <template>
   <div>
-    <h2 class="text-center">Choose a Class</h2>
     <v-select
       :items="filteredClasses"
-      label="Classes"
+      label="Class"
       return-object
       item-text="name"
       v-model="selectedClass"
-      solo
     ></v-select>
     <v-row>
       <v-col>
-        <x-me-class-page v-if="selectedClass" :custom-id="selectedClass.id" :key="selectedClass.id"/>
+        <me-class-tabs
+          v-if="selectedClass && $vuetify.breakpoint.mdAndUp"
+          :id="selectedClass.id"
+          :tabs="tabs"
+          :value="tab"
+          @change="changeTab"
+        />
+        <div class="classInfoSelect">
+          <v-select
+            v-if="selectedClass && $vuetify.breakpoint.smAndDown"
+            :items="tabs"
+            label="Class Info"
+            @change="changeTabByIndex"
+          ></v-select>
+        </div>
+        <v-tabs-items v-model="tab" v-if="selectedClass">
+          <v-tab-item class="pa-3">
+            <me-class-attributes :id="selectedClass.id" />
+          </v-tab-item>
+          <v-tab-item class="pa-3">
+            <me-subclass-feature-list :id="selectedClass.id" />
+          </v-tab-item>
+          <v-tab-item class="pa-3">
+            <me-progression-table :id="selectedClass.id" />
+          </v-tab-item>
+          <v-tab-item class="pa-3">
+            <me-power-list :items="filteredPowers" />
+          </v-tab-item>
+        </v-tabs-items>
       </v-col>
     </v-row>
   </div>
 </template>
 
 <script>
-import MeClassPage from '~/pages/classes/_id.vue'
 export default {
-  components: {
-    XMeClassPage: MeClassPage
-  },
   data () {
     return {
-      selectedClass: null
+      selectedClass: null,
+      tab: null, // so, v-tabs-items uses this as the model. on the class PAGE I use the state of the app
+      tabs: ['class features', 'subclasses', 'progression table', 'powers'] // you can adjust these as needed
+    }
+  },
+  methods: {
+    changeTab (value) {
+      console.log(value)
+      this.tab = value
+    },
+    changeTabByIndex (tabId) {
+      this.tab = this.tabs.indexOf(tabId)
     }
   },
   watch: {
@@ -37,6 +70,7 @@ export default {
           text: this.textColor
         }
       })
+      this.$route.params.id = newVal.id
     }
   },
   computed: {
@@ -61,7 +95,24 @@ export default {
       const b1 = this.classes
       const b2 = this.chosenClasses
       return b1.filter(item1 => !b2.some(item2 => (item2.id === item1.id && item2.name === item1.name)))
+    },
+    filteredPowers () {
+      return this.$store.getters.getData('powers')
+        .filter(i => i.availableClasses.includes(this.selectedClass.id))
+        .sort((a, b) => {
+          return a.level === b.level
+            ? a.id > b.id ? 1 : -1
+            : a.level > b.level ? 1 : -1
+        })
     }
   }
 }
 </script>
+
+<style lang="scss">
+  .classInfoSelect {
+    .v-list-item {
+      text-transform: uppercase;
+    }
+  }
+</style>
