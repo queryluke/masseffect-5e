@@ -136,9 +136,6 @@ export default {
       ]
     }
   },
-  created () {
-    this.$store.commit('pageTitle', 'Mass Effect 5e PDF')
-  },
   head () {
     return {
       title: 'PDF | Mass Effect 5e',
@@ -146,6 +143,9 @@ export default {
         { hid: 'description', name: 'description', content: 'Mass Effect 5e PDF' }
       ]
     }
+  },
+  created () {
+    this.$store.commit('pageTitle', 'Mass Effect 5e PDF')
   }
 }
 </script>
