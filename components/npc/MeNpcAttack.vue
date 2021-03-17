@@ -1,7 +1,7 @@
 <template>
   <me-npc-feature :feature="feature">
-    <template v-slot:description>
-      <span class="font-italic font-weight-thin">
+    <template #description>
+      <span class="font-italic font-weight-light">
         {{ attack.type | capitalize }} Weapon Attack:
       </span>
       <span>

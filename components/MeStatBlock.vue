@@ -19,8 +19,8 @@
           <me-stat-list-item v-if="stats.barrier" label="Barrier">
             {{ stats.barrier }} {{ stats.barrier | pluralize('tick') }}
           </me-stat-list-item>
-          <me-stat-list-item v-if="stats.barrier" label="Speed">
-            {{ speed }}
+          <me-stat-list-item v-if="stats.speed" label="Speed">
+            <me-npc-speed v-for="(npcSpeed, speedIndex) in stats.speed" :key="npcSpeed.type" :speed="npcSpeed" :last="speedIndex === stats.speed.length - 1" />
           </me-stat-list-item>
         </me-stat-list>
         <!-- ABILITIES -->
@@ -288,11 +288,6 @@ export default {
         const score = this.stats.abilityScores[ability]
         bonus += this.abilityScoreBonus(score)
         return `${this.$options.filters.titlecase(skill)} +${bonus}`
-      }).join(', ')
-    },
-    speed () {
-      return this.stats.speed.map((speed) => {
-        return speed.type === 'walk' ? `${speed.range}m` : `${speed.type} ${speed.range}m`
       }).join(', ')
     },
     powercastingFeature () {
