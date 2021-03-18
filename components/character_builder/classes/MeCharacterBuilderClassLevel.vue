@@ -8,6 +8,7 @@
         :items="levelArray"
         v-model="levels"
         label="Number of levels in this class"
+        @change="cleanSubclass"
       />
       <me-character-builder-class-delete
         :item="classData"
@@ -22,7 +23,7 @@
     </v-row>
     <v-row class="hpSlots">
       <v-col
-        sm="1"
+        cols="2"
       >
         <v-select
           :items="hpArray"
@@ -32,7 +33,7 @@
         />
       </v-col>
       <v-col
-        sm="1"
+        cols="2"
         v-for="(hp, index) in [...hitPoints].splice(1)"
         :key="index"
       >
@@ -45,7 +46,18 @@
         />
       </v-col>
     </v-row>
-    {{'hitPoints: '}}{{hitPoints}}
+    <v-row>
+      <v-col>
+        <v-select
+          v-if="levels >= subclassInfo.first"
+          :items="subclassInfo.list"
+          return-object
+          item-text="name"
+          label="Subclass"
+          v-model="charSubclass"
+        />
+      </v-col>
+    </v-row>
   </div>
 </template>
 
@@ -66,8 +78,13 @@ export default {
     }
   },
   methods: {
+    cleanSubclass (level) {
+      if (level < this.subclassInfo.first) {
+        this.charSubclass = undefined
+      }
+    },
     getClassById (inputClass) {
-      return inputClass.id === this.classData.id
+      return (inputClass.id === this.classData.id || inputClass.class === this.classData.id)
     },
     setHpSlots (level) {
       const hpLength = this.hitPoints.length
@@ -100,8 +117,26 @@ export default {
         return this.$store.commit('user/UPDATE_CHARACTER', { attr: 'classes.' + this.classIndex.toString() + '.levels', value })
       }
     },
+    classInfo () {
+      return this.$store.getters.getData('classes').find(this.getClassById)
+    },
+    subclassInfo () {
+      return {
+        list: this.$store.getters.getData('subclasses').filter(this.getClassById),
+        levels: this.classInfo.subclassProgression,
+        first: this.classInfo.subclassProgression.level[0]
+      }
+    },
+    charSubclass: {
+      get () {
+        return this.$store.getters['user/character'].classes[this.classIndex].subclass
+      },
+      set (value) {
+        return this.$store.commit('user/UPDATE_CHARACTER', { attr: 'classes.' + this.classIndex.toString() + '.subclass', value })
+      }
+    },
     hitDie () {
-      return this.$store.getters.getData('classes').find(this.getClassById).hitDice
+      return this.classInfo.hitDice
     },
     hitPoints: {
       get () {

@@ -10,7 +10,7 @@
     <v-row>
       <v-col>
         <me-class-tabs
-          v-if="selectedClass && $vuetify.breakpoint.mdAndUp"
+          v-if="selectedClass && $vuetify.breakpoint.smAndUp"
           :id="selectedClass.id"
           :tabs="tabs"
           :value="tab"
@@ -18,7 +18,7 @@
         />
         <div class="classInfoSelect">
           <v-select
-            v-if="selectedClass && $vuetify.breakpoint.smAndDown"
+            v-if="selectedClass && $vuetify.breakpoint.xs"
             :items="tabs"
             label="Class Info"
             @change="changeTabByIndex"

@@ -10,7 +10,10 @@
             :key="item.id"
           >
             <v-expansion-panel-header>
-              {{item.name + (item.subclass ? ' (' + item.subclass + ')' : '')}}
+              <h3>
+                {{item.name + (item.subclass ? ' (' + item.subclass.name + ') ' + item.levels : '')}}
+                <small class="text-caption ml-3"><i>{{index === 0 ? 'Starting Class' : ''}}</i></small>
+              </h3>
             </v-expansion-panel-header>
             <v-expansion-panel-content>
               <me-character-builder-class-level
@@ -19,7 +22,6 @@
                 :class-data="item"
                 @deleteClass="removeClass(item, index)"
               />
-              {{'item: '}}{{item}}
             </v-expansion-panel-content>
           </v-expansion-panel>
         </v-expansion-panels>
@@ -32,6 +34,7 @@
             v-model="dialog"
             width="100%"
             scrollable
+            fullscreen
           >
             <template v-slot:activator="{ on, attrs }">
               <v-btn
@@ -60,7 +63,6 @@
                     }
                   }"
                 />
-                {{addBtnColor}}
               </v-card-text>
 
               <v-divider></v-divider>
@@ -89,11 +91,6 @@
         </div>
       </v-col>
     </v-row>
-    <v-col>
-      <div v-for="item in classData" :key="item.id">
-        {{item}}
-      </div>
-    </v-col>
   </div>
 </template>
 
