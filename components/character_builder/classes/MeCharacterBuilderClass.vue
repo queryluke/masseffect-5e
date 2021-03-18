@@ -1,14 +1,7 @@
 <template>
   <div>
     <h2 class="text-center">Choose a Class</h2>
-    <v-row class="text-center">
-      <v-col>
-        Current Level: {{level || "None"}}
-      </v-col>
-      <v-col>
-        Current Experience: {{xp || 0}}{{nextLevelInfo ? ' / '+nextLevelInfo.xp : ''}}
-      </v-col>
-    </v-row>
+    <me-character-builder-level-tracker :level="level" :c-prog="cProg"/>
     <v-row>
       <v-col>
         <v-expansion-panels v-if="classData">
@@ -20,24 +13,13 @@
               {{item.name + (item.subclass ? ' (' + item.subclass + ')' : '')}}
             </v-expansion-panel-header>
             <v-expansion-panel-content>
-              <div class="d-flex align-center flex-wrap">
-                  <v-btn class="ms-2">View Class Details</v-btn>
-                  <v-btn class="ms-2">View Subclass Details</v-btn>
-                  <me-character-builder-class-level
-                    class="ms-10 flex"
-                    :class-index="index"
-                    :character-level="level"
-                  />
-                  <v-btn
-                    class="mx-2"
-                    color="red"
-                    @click="removeClass(item,index)"
-                  >
-                    <v-icon dark>
-                      mdi-trash-can
-                    </v-icon>
-                  </v-btn>
-              </div>
+              <me-character-builder-class-level
+                :class-index="index"
+                :character-level="level"
+                :class-data="item"
+                @deleteClass="removeClass(item, index)"
+              />
+              {{'item: '}}{{item}}
             </v-expansion-panel-content>
           </v-expansion-panel>
         </v-expansion-panels>
@@ -111,9 +93,6 @@
       <div v-for="item in classData" :key="item.id">
         {{item}}
       </div>
-      {{cProg}} <br />
-      {{currentLevelInfo}} <br />
-      {{nextLevelInfo}} <br />
     </v-col>
   </div>
 </template>
@@ -123,6 +102,7 @@ export default {
   data () {
     return {
       dialog: false,
+      deleteClassDialog: {},
       selectedClass: {},
       addBtnColor: {
         back: 'primary',
@@ -137,6 +117,7 @@ export default {
         id: sc.id,
         name: sc.name,
         subclass: '',
+        hitPoints: [sc.hitDice],
         levels: 1
       }
       return payload
@@ -149,6 +130,7 @@ export default {
       this.selectedClass = {}
     },
     removeClass (item, index) {
+      this.deleteClassDialog[item.id] = false
       const tempArr = this.classData.slice()
       tempArr.splice(index, 1)
       this.classData = tempArr
@@ -172,16 +154,10 @@ export default {
         return this.$store.getters['user/character'].classes
       },
       set (value) {
-        console.log('saving classData to character', value)
         this.$store.commit('user/UPDATE_CHARACTER', {
           attr: 'classes',
           value
         })
-      }
-    },
-    xp: {
-      get () {
-        return this.$store.getters['user/character'].xp
       }
     },
     level () {
@@ -192,20 +168,11 @@ export default {
       return level
     },
     cProg () {
-      const info = this.$store.getters.getData('character-progression')
-      return info.sort(this.sortByLevels)
+      const progArr = [...this.$store.getters.getData('character-progression')]
+      return progArr.sort(this.sortByLevels)
     },
     currentLevelInfo () {
       return this.cProg[this.level - 1]
-    },
-    nextLevelInfo () {
-      return this.cProg[this.level] || undefined
-    },
-    showLevelUpBtn () {
-      if (!this.nextLevelInfo) {
-        return false
-      }
-      return this.xp >= this.nextLevelInfo.xp
     }
   }
 }
