@@ -38,13 +38,13 @@
             <me-html :content="item.html" />
           </div>
         </slot>
-        <me-hr color="black" :size="1" />
+        <me-hr v-if="showBar" color="black" :size="1" />
         <v-row justify="space-between">
           <v-col>
             <me-bookmark v-if="bookmarkable" :type="type" :item="item" />
           </v-col>
           <v-col class="text-right">
-            <me-permalink :item-id="item.id" :type="type" />
+            <me-permalink v-if="linkable" :item-id="item.id" :type="type" />
           </v-col>
         </v-row>
       </v-expansion-panel-content>
@@ -69,10 +69,18 @@ export default {
       }
     },
     type: {
-      type: String,
-      required: true
+      types: [String, Boolean],
+      default: false
     },
     bookmarkable: {
+      type: Boolean,
+      default: true
+    },
+    linkable: {
+      type: Boolean,
+      default: true
+    },
+    showBar: {
       type: Boolean,
       default: true
     }

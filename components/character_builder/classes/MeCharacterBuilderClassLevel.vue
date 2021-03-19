@@ -1,8 +1,7 @@
 <template>
   <div>
     <div class="d-flex align-center flex-wrap">
-      <v-btn class="mr-2">View Class Details</v-btn>
-      <v-btn>View Subclass Details</v-btn>
+      <v-btn class="mr-2" :href="'/classes/'+classData.id"  target="_blank">View Class Details</v-btn>
       <v-select
         class="ms-2 flex"
         :items="levelArray"
@@ -16,48 +15,6 @@
         v-on="$listeners"
       />
     </div>
-    <v-row>
-      <v-col>
-        <h3>Hit Points</h3>
-      </v-col>
-    </v-row>
-    <v-row class="hpSlots">
-      <v-col
-        cols="2"
-      >
-        <v-select
-          :items="hpArray"
-          :value="hitPoints[0]"
-          label="Lvl. 1"
-          readonly
-        />
-      </v-col>
-      <v-col
-        cols="2"
-        v-for="(hp, index) in [...hitPoints].splice(1)"
-        :key="index"
-      >
-        <!-- TODO: Fix this v-model call to not directly modify the vuex store prop -->
-        <v-select
-          :items="hpArray"
-          :value="[...hitPoints][index+1]"
-          :label="'Lvl. ' + (index+2)"
-          @change="updateHpField(index, $event)"
-        />
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col>
-        <v-select
-          v-if="levels >= subclassInfo.first"
-          :items="subclassInfo.list"
-          return-object
-          item-text="name"
-          label="Subclass"
-          v-model="charSubclass"
-        />
-      </v-col>
-    </v-row>
   </div>
 </template>
 
@@ -160,11 +117,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-  .hpSlots {
-    .v-input {
-      // width: 50px;
-    }
-  }
-</style>

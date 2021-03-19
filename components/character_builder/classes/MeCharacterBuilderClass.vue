@@ -22,11 +22,26 @@
                 :class-data="item"
                 @deleteClass="removeClass(item, index)"
               />
+              <me-character-builder-class-hit-points
+                :class-index="index"
+                :id="item.id"
+              />
+              <me-character-builder-class-features
+                :class-index="index"
+                :id="item.id"
+                :level="item.levels"
+              />
+              <me-character-builder-class-ability-score
+                :id="item.id"
+                :class-index="index"
+                :level="item.levels"
+              />
             </v-expansion-panel-content>
           </v-expansion-panel>
         </v-expansion-panels>
       </v-col>
     </v-row>
+    <!-- Template for New Class Dialog -->
     <v-row>
       <v-col class="text-center">
         <div class="text-center">
@@ -95,7 +110,10 @@
 </template>
 
 <script>
+import MeCharacterBuilderClassFeatures from './MeCharacterBuilderClassFeatures.vue'
+import MeCharacterBuilderClassHitPoints from './MeCharacterBuilderClassHitPoints.vue'
 export default {
+  components: { MeCharacterBuilderClassHitPoints, MeCharacterBuilderClassFeatures },
   data () {
     return {
       dialog: false,
@@ -115,6 +133,7 @@ export default {
         name: sc.name,
         subclass: '',
         hitPoints: [sc.hitDice],
+        abilityScoreImprovements: [],
         levels: 1
       }
       return payload
