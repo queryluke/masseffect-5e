@@ -8,6 +8,7 @@
               outlined
               label="Name"
               v-model="name"
+              @change="updateNameInPage"
             />
             <v-text-field
               :value="image"
@@ -70,6 +71,11 @@
       :label="characteristic"
       @change="newCharacteristic => handleChangeCharacteristic(characteristic, newCharacteristic)"
     />
+    <v-textarea
+      :value="characteristics.Backstory"
+      @change="newCharacteristic => handleChangeCharacteristic('Backstory', newCharacteristic)"
+      auto-grow
+    />
   </div>
 </template>
 
@@ -78,15 +84,15 @@ export default {
   data () {
     return {
       alignmentOptions: [
-        'Lawful Paragon',
-        'Neutral Paragon',
-        'Chaotic Paragon',
+        'Lawful Good',
+        'Neutral Good',
+        'Chaotic Good',
         'Lawful Balanced',
         'Balanced Neutral',
         'Chaotic Balanced',
-        'Lawful Renegade',
-        'Neutral Renegade',
-        'Chaotic Renegade'
+        'Lawful Evil',
+        'Neutral Evil',
+        'Chaotic Evil'
       ],
       characteristicsList: [
         'Personality Traits',
@@ -101,8 +107,7 @@ export default {
         'Hair',
         'Eyes',
         'Skin',
-        'Appearance',
-        'Backstory'
+        'Appearance'
       ]
     }
   },
@@ -149,12 +154,6 @@ export default {
     }
   },
   methods: {
-    handleChangeName (name) {
-      this.$emit('updateCharacter', { name })
-    },
-    handleChangeImage (image) {
-      this.$emit('updateCharacter', { image })
-    },
     handleChangeCharacteristic (characteristic, newCharacteristic) {
       const to = { ...this.characteristics }
       to[characteristic] = newCharacteristic
@@ -169,7 +168,12 @@ export default {
       this.background = to
     },
     handleChangeBackgroundFeature (newFeature) {
-      this.$emit('updateCharacter', { background: { feature: newFeature || '' } })
+      const to = { ...this.background }
+      to.feature = { name: newFeature || '' }
+      this.background = to
+    },
+    updateNameInPage (newName) {
+      this.$store.commit('pageTitle', newName)
     }
   }
 }
