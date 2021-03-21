@@ -75,6 +75,7 @@
       :value="characteristics.Backstory"
       @change="newCharacteristic => handleChangeCharacteristic('Backstory', newCharacteristic)"
       auto-grow
+      label="Backstory"
     />
   </div>
 </template>

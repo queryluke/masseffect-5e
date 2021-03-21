@@ -88,6 +88,9 @@ export const state = () => ({
       isFixedHitPoints: false,
       abilityScoreMethod: 'Standard Array'
     },
+    builder: {
+      currentStep: 1
+    },
     notes: '',
     createdAt: 1615572574654,
     changedAt: 1615572574654,

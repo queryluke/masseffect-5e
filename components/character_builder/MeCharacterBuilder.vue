@@ -1,5 +1,5 @@
 <template>
-  <v-stepper :value="currentStep" @change="newStep =&gt; $emit('goToStep', newStep)">
+  <v-stepper :value="currentStep" @change="newStep => $emit('goToStep', newStep)">
     <v-stepper-header>
       <template v-for="n in numSteps">
         <v-stepper-step
@@ -8,6 +8,7 @@
           :step="n"
           editable="editable"
           edit-icon="fa-check"
+          @click="currentStep = n"
         >
           {{ steps[n].name }}
         </v-stepper-step>
@@ -19,10 +20,7 @@
         <component
           :is="steps[n].component"
           v-bind="steps[n].props"
-          @updateCharacter="newCharacter =&gt; $emit('updateCharacter', newCharacter)"
-          @deleteCharacterProperty="payload =&gt; $emit('deleteCharacterProperty', payload)"
-          @replaceCharacterProperty="payload =&gt; $emit('replaceCharacterProperty', payload)"
-          @replaceCharacterProperties="payload =&gt; $emit('replaceCharacterProperties', payload)"
+          @updateCharacter="newCharacter => $emit('updateCharacter', newCharacter)"
         />
         <div class="d-flex justify-space-around flex-wrap mt-5">
           <v-btn v-if="currentStep > 1" outlined="outlined" width="140" @click="prevStep">
@@ -43,12 +41,16 @@
 
 <script>
 export default {
-  data () {
-    return {
-      currentStep: 0
-    }
-  },
   computed: {
+    currentStep: {
+      get () {
+        return this.$store.getters['user/character'].builder.currentStep
+      },
+      set (value) {
+        console.log(value)
+        return this.$store.commit('user/UPDATE_CHARACTER', { attr: 'builder.currentStep', value })
+      }
+    },
     character () {
       return this.$store.getters['user/character']
     },
@@ -94,12 +96,12 @@ export default {
             scores: this.abilityScores,
             label: 'Ability Scores'
           },
-          isComplete: this.character.classes.length > 0
+          isComplete: this.checkAbs()
         },
         {
           name: 'Character Description',
           component: 'MeCharacterBuilderCharacterDescription',
-          isComplete: this.character.classes.length > 0
+          isComplete: this.character.name !== ''
         }
       ]
     },
@@ -115,6 +117,15 @@ export default {
 
     prevStep () {
       this.currentStep = Math.max(this.currentStep - 1, 1)
+    },
+
+    checkAbs () {
+      for (const char in this.character.baseAbilityScores) {
+        if (this.character.baseAbilityScores[char] === 0) {
+          return false
+        }
+      }
+      return true
     }
   }
 }
