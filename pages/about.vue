@@ -16,7 +16,7 @@
               h2.text-h4 Join the Community
         v-row(justify="space-around").mt-5
           v-col(v-for="community in communities" :key="community.name" cols="12" sm="6" md="4" lg="3")
-            v-card(to="community.link" target="_blank" dark).text-center
+            v-card(:href="community.link" target="_blank" dark).text-center
               v-card-text
                 v-img(:src="require(`~/assets/images/misc/${community.image}`)" v-bind:alt="community.alt" height="80" contain)
         v-row(justify="space-around").mt-5

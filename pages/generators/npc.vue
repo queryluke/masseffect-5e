@@ -93,10 +93,6 @@ import { GruntGenerator } from '~/mixins/grunt_generator'
 
 export default {
   mixins: [RandomValue, GruntGenerator],
-  async fetch () {
-    this.$store.commit('pageTitle', 'NPC Generator')
-    await this.$store.dispatch('FETCH_LOTS', ['classes', 'species', 'stats-by-cr', 'powers', 'weapons', 'gear', 'skills'])
-  },
   data () {
     return {
       selectedCr: null,
@@ -107,6 +103,18 @@ export default {
         klass: null,
         species: null
       }
+    }
+  },
+  async fetch () {
+    this.$store.commit('pageTitle', 'NPC Generator')
+    await this.$store.dispatch('FETCH_LOTS', ['classes', 'species', 'stats-by-cr', 'powers', 'weapons', 'gear', 'skills'])
+  },
+  head () {
+    return {
+      title: 'NPC Generator | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Generate random monster and NPC stats for easier encounter building' }
+      ]
     }
   },
   computed: {
@@ -136,15 +144,9 @@ export default {
         klass: this.selectedCl === null ? this.randomValue(this.classes) : this.selectedCl,
         species: this.selectedSp === null ? this.randomValue(this.species) : this.selectedSp
       }
-      this.generateGrunt()
-    }
-  },
-  head () {
-    return {
-      title: 'NPC Generator | Mass Effect 5e',
-      meta: [
-        { hid: 'description', name: 'description', content: 'Generate random monster and NPC stats for easier encounter building' }
-      ]
+      this.generated = false
+      this.grunt = {}
+      setTimeout(() => this.generateGrunt(), 300)
     }
   }
 }

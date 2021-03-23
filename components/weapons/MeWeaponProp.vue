@@ -1,12 +1,12 @@
 <template>
   <v-dialog
     v-model="dialog"
-    :fullscreen="this.$vuetify.breakpoint.xsOnly"
+    :fullscreen="$vuetify.breakpoint.xsOnly"
     :transition="transition"
     width="70vw"
     scrollable
   >
-    <template v-slot:activator="{ on }">
+    <template #activator="{ on }">
       <a v-on="on">{{ item.name }}</a>
     </template>
     <v-card>
@@ -14,7 +14,7 @@
         {{ item.name }}
       </v-card-title>
       <v-card-text>
-        {{ item.description }}
+        <me-html :content="item.description" />
       </v-card-text>
       <v-card-actions>
         <v-btn

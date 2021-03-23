@@ -21,7 +21,9 @@ export const Spellcasting = {
         this.grunt.powercasting = false
         return
       }
-      const spellcastingLevelIndex = ['engineer', 'adept'].includes(this.options.klass.id) ? this.options.cr.powercastingLevel : Math.ceil(this.options.cr.powercastingLevel / 2) - 1
+      const crPcLevel = this.options.cr.powercastingLevel
+      const pcLevel = ['engineer', 'adept'].includes(this.options.klass.id) ? crPcLevel : Math.ceil(crPcLevel / 2)
+      const spellcastingLevelIndex = pcLevel - 1
       const spellSlots = {}
       for (const col of this.adept.progressionColumns.filter(i => i.ps)) {
         if (col.values[spellcastingLevelIndex] > 0) {
@@ -55,12 +57,12 @@ export const Spellcasting = {
       const spellcastingMod = this.options.species.id === 'asari'
         ? 'cha'
         : ['engineer', 'infiltrator'].includes(this.options.klass.id)
-          ? 'int'
-          : ['adept', 'vanguard'].includes(this.options.klass.id)
-            ? 'wis'
-            : 'cha'
+            ? 'int'
+            : ['adept', 'vanguard'].includes(this.options.klass.id)
+                ? 'wis'
+                : 'cha'
       this.grunt.powercasting = {
-        level: spellcastingLevelIndex + 1,
+        level: pcLevel,
         mod: spellcastingMod,
         powerList: [...new Set(knownSpells)]
       }

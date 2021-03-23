@@ -63,7 +63,6 @@ export const GruntGenerator = {
   ],
   methods: {
     generateGrunt () {
-      this.reset()
       this.setGruntAbilityScores()
       this.setGruntName()
       this.setGruntId()
@@ -90,7 +89,6 @@ export const GruntGenerator = {
       // console.log([this.dpr, this.adjustments])
     },
     reset () {
-      this.generated = false
       this.grunt = {}
       this.crMetaLevel = 0
       if (this.options.cr) {
