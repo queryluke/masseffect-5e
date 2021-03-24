@@ -4,15 +4,23 @@
       v-if="!character"
     />
     <div v-if="character">
-      <div class="text-left">
-        <v-btn
-          text
-          @click="goHome()"
-        >
-          <v-icon class="mdi mdi-cheveron-left">mdi-chevron-left</v-icon>
-          My Characters
-        </v-btn>
-      </div>
+      <v-row>
+        <v-col class="text-left">
+          <v-btn
+            text
+            @click="goHome()"
+          >
+            <v-icon class="mdi mdi-cheveron-left">mdi-chevron-left</v-icon>
+            My Characters
+          </v-btn>
+        </v-col>
+        <v-col class="text-right">
+          <me-character-builder-character-delete
+            :character="character"
+            @deleteCharacter="deleteCharacter"
+          />
+        </v-col>
+      </v-row>
       <v-stepper
         v-if="character"
         :value="currentStep"
@@ -59,9 +67,10 @@
 </template>
 
 <script>
+import MeCharacterBuilderCharacterDelete from './MeCharacterBuilderCharacterDelete.vue'
 import MeCharacterBuilderCharacterSelect from './MeCharacterBuilderCharacterSelect.vue'
 export default {
-  components: { MeCharacterBuilderCharacterSelect },
+  components: { MeCharacterBuilderCharacterSelect, MeCharacterBuilderCharacterDelete },
   computed: {
     character () {
       const char = this.$store.getters['cb/characters'][this.$route.query.cid] || {}
@@ -157,9 +166,15 @@ export default {
       }
       return true
     },
+    deleteCharacter (charId) {
+      console.log('DELETING CHARACTER at key: ' + charId)
+      if (charId) {
+        this.$store.commit('cb/DELETE_CHARACTER', charId)
+        this.goHome()
+      }
+    },
     goHome () {
-      this.$store.commit('pageTitle', 'Character Builder')
-      this.$router.push({ query: { cid: undefined } })
+      this.$router.replace({ query: { cid: undefined } })
     }
   }
 }

@@ -85,7 +85,7 @@ export default {
       return rid
     },
     goToCharacter (charId) {
-      this.$router.push({ query: { cid: charId } })
+      this.$router.replace({ query: { cid: charId } })
     },
     getCharInfo (char) {
       let output = ''
