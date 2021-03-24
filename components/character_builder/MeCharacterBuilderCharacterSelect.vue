@@ -12,9 +12,17 @@
       </v-row>
       <v-row
         v-else
+        class="d-flex justify-center"
       >
         <v-col
-          cols="6"
+          cols="12"
+          class="text-center"
+        >
+          <h2>My Characters</h2>
+        </v-col>
+        <v-col
+          sm="8"
+          md="6"
           v-for="(char, index) in characters"
           :key="index"
         >
@@ -35,9 +43,8 @@
                   lazy-src="https://static.wikia.nocookie.net/masseffect/images/"
                 />
                 <div class="text-left ps-3">
-                  <h3>
-                    {{char.character.name || "New Character"}}
-                  </h3>
+                  <div v-html="getCharInfo(char.character)">
+                  </div>
                 </div>
               </div>
             </v-sheet>
@@ -79,6 +86,26 @@ export default {
     },
     goToCharacter (charId) {
       this.$router.push({ query: { cid: charId } })
+    },
+    getCharInfo (char) {
+      let output = ''
+      const name = char.name || 'New Character'
+      const species = char.species.name
+      const classes = char.classes
+      output += '<h3>' + name + '</h3>'
+      if (species) {
+        output += '<small class="p-0"><i>' + species + '</i></small>'
+      }
+      output += '<br>'
+      let count = 0
+      for (const c of classes) {
+        output += (count++ > 0 ? ', ' : '') + c.name + ' '
+        if (c.subclass) {
+          output += '(' + c.subclass.name + ') '
+        }
+        output += c.levels
+      }
+      return output
     }
   },
   computed: {
