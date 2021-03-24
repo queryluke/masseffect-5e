@@ -88,7 +88,7 @@ export default {
     },
     chosenClasses: {
       get () {
-        return this.$store.getters['user/character'].classes
+        return this.$store.getters['cb/character'].classes
       }
     },
     filteredClasses () {

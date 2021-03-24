@@ -50,7 +50,7 @@ export default {
   },
   computed: {
     character () {
-      return this.$store.getters['user/character']
+      return this.$store.getters['cb/character']
     }
   },
   methods: {

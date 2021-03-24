@@ -2,6 +2,7 @@ import cloneDeep from 'lodash/cloneDeep'
 
 export const state = () => ({
   // Default "empty" character data model
+  characters: [],
   character: {
     name: '',
     id: '',

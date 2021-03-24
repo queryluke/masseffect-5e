@@ -48,7 +48,7 @@ export default {
     },
     model: {
       get () {
-        return this.$store.getters['user/character'].species
+        return this.$store.getters['cb/character'].species
       }
     }
   }

@@ -154,10 +154,10 @@ export default {
     },
     abilityScoreImprovements: {
       get () {
-        return this.$store.getters['user/character'].classes[this.classIndex].abilityScoreImprovements
+        return this.$store.getters['cb/character'].classes[this.classIndex].abilityScoreImprovements
       },
       set (value) {
-        return this.$store.commit('user/UPDATE_CHARACTER', { attr: 'classes.' + this.classIndex.toString() + '.abilityScoreImprovements', value })
+        return this.$store.commit('cb/UPDATE_CHARACTER', { attr: 'classes.' + this.classIndex.toString() + '.abilityScoreImprovements', value })
       }
     }
   }

@@ -1,58 +1,74 @@
 <template>
-  <v-stepper :value="currentStep" @change="newStep => $emit('goToStep', newStep)">
-    <v-stepper-header>
-      <template v-for="n in numSteps">
-        <v-stepper-step
-          :key="`${n}-step`"
-          :complete="steps[n].isComplete"
-          :step="n"
-          editable="editable"
-          edit-icon="fa-check"
-          @click="currentStep = n"
-        >
-          {{ steps[n].name }}
-        </v-stepper-step>
-        <v-divider v-if="n !== numSteps" :key="n" :class="$style.divider" />
-      </template>
-    </v-stepper-header>
-    <v-stepper-items>
-      <v-stepper-content v-for="n in numSteps" :key="`${n}-content`" :step="n">
-        <component
-          :is="steps[n].component"
-          v-bind="steps[n].props"
-          @updateCharacter="newCharacter => $emit('updateCharacter', newCharacter)"
-        />
-        <div class="d-flex justify-space-around flex-wrap mt-5">
-          <v-btn v-if="currentStep > 1" outlined="outlined" width="140" @click="prevStep">
-            <v-icon class="mr-2 fa-cheveron-left" />
-            Back
-          </v-btn>
-          <!--CharacterBuilderViewSheet(v-bind="{ characterValidation }", @click="$emit('viewSheet')").d-none.d-sm-flex-->
-          <v-btn v-if="currentStep < numSteps" color="primary" width="140" @click="nextStep">
-            Continue
-            <v-icon class="ml-2 fa-chevron-right" />
-          </v-btn>
-        </div>
-        <!--CharacterBuilderViewSheet(v-bind="{ characterValidation }", @click="$emit('viewSheet')").d-flex.d-sm-none.justify-center.mt-5-->
-      </v-stepper-content>
-    </v-stepper-items>
-  </v-stepper>
+  <div>
+    <me-character-builder-character-select
+      v-if="!character"
+    />
+    <v-stepper
+      v-if="character"
+      :value="currentStep"
+    >
+      <v-stepper-header>
+        <template v-for="n in numSteps">
+          <v-stepper-step
+            :key="`${n}-step`"
+            :complete="steps[n].isComplete"
+            :step="n"
+            editable="editable"
+            edit-icon="mdi-check"
+            @click="currentStep = n"
+          >
+            {{ steps[n].name }}
+          </v-stepper-step>
+          <v-divider v-if="n !== numSteps" :key="n" :class="$style.divider" />
+        </template>
+      </v-stepper-header>
+      <v-stepper-items>
+        <v-stepper-content v-for="n in numSteps" :key="`${n}-content`" :step="n">
+          <component
+            :is="steps[n].component"
+            v-bind="steps[n].props"
+            @updateCharacter="newCharacter => $emit('updateCharacter', newCharacter)"
+          />
+          <div class="d-flex justify-space-around flex-wrap mt-5">
+            <v-btn v-if="currentStep > 1" outlined="outlined" width="140" @click="prevStep">
+              <v-icon class="mr-2">mdi-chevron-left</v-icon>
+              Back
+            </v-btn>
+            <!--CharacterBuilderViewSheet(v-bind="{ characterValidation }", @click="$emit('viewSheet')").d-none.d-sm-flex-->
+            <v-btn v-if="currentStep < numSteps" color="primary" width="140" @click="nextStep">
+              Continue
+              <v-icon class="ml-2">mdi-chevron-right</v-icon>
+            </v-btn>
+          </div>
+          <!--CharacterBuilderViewSheet(v-bind="{ characterValidation }", @click="$emit('viewSheet')").d-flex.d-sm-none.justify-center.mt-5-->
+        </v-stepper-content>
+      </v-stepper-items>
+    </v-stepper>
+  </div>
 </template>
 
 <script>
+import MeCharacterBuilderCharacterSelect from './MeCharacterBuilderCharacterSelect.vue'
 export default {
+  components: { MeCharacterBuilderCharacterSelect },
   computed: {
+    character () {
+      return this.$store.getters['cb/characters'][this.$route.query.cid].character
+    },
     currentStep: {
       get () {
-        return this.$store.getters['user/character'].builder.currentStep
+        if (!this.character) {
+          return 0
+        }
+        console.log({ ...this.character }.builder)
+        return this.character.builder.currentStep
       },
       set (value) {
-        console.log(value)
-        return this.$store.commit('user/UPDATE_CHARACTER', { attr: 'builder.currentStep', value })
+        return this.$store.commit('cb/UPDATE_CHARACTER', {
+          attr: 'builder.currentStep',
+          value
+        })
       }
-    },
-    character () {
-      return this.$store.getters['user/character']
     },
     species () {
       return this.$store.getters.getData('species')
@@ -116,9 +132,8 @@ export default {
     },
 
     prevStep () {
-      this.currentStep = Math.max(this.currentStep - 1, 1)
+      this.currentStep = Math.max(this.currentStep - 1, 0)
     },
-
     checkAbs () {
       for (const char in this.character.baseAbilityScores) {
         if (this.character.baseAbilityScores[char] === 0) {

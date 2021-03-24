@@ -167,7 +167,7 @@ export default {
     },
     classData: {
       get () {
-        return this.$store.getters['user/character'].classes
+        return this.$store.getters['cb/character'].classes
       },
       set (value) {
         this.$store.commit('user/UPDATE_CHARACTER', {

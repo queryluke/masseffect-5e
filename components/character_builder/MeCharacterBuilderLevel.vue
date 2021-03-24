@@ -14,14 +14,14 @@ export default {
   computed: {
     level: {
       get () {
-        return this.$store.getters['user/character'].level
+        return this.$store.getters['cb/character'].level
       },
       set (value) {
         const prog = this.cProg.find(i => i.level === parseInt(value))
         if (prog) {
           this.$store.commit('user/UPDATE_CHARACTER', { attr: 'proficiencyBonus', value: prog.bonus })
         }
-        return this.$store.commit('user/UPDATE_CHARACTER', { attr: 'level', value })
+        return this.$store.commit('cb/UPDATE_CHARACTER', { attr: 'level', value })
       }
     },
     cProg () {

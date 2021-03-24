@@ -26,8 +26,6 @@ export default {
       value = value || 0
       const ta = { ...this.scores }
       ta[attr] = value
-      console.log(value)
-      console.log(ta)
       this.scores = ta
     },
     filterStandardArray (val) {
@@ -46,10 +44,10 @@ export default {
   computed: {
     scores: {
       get () {
-        return this.$store.getters['user/character'].baseAbilityScores
+        return this.$store.getters['cb/character'].baseAbilityScores
       },
       set (value) {
-        return this.$store.commit('user/UPDATE_CHARACTER', { attr: 'baseAbilityScores', value })
+        return this.$store.commit('cb/UPDATE_CHARACTER', { attr: 'baseAbilityScores', value })
       }
     },
     possibleValues () {

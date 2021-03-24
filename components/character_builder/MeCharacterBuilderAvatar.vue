@@ -36,10 +36,10 @@ export default {
   computed: {
     image: {
       get () {
-        return this.$store.getters['user/character'].image
+        return this.$store.getters['cb/character'].image
       },
       set (value) {
-        return this.$store.commit('user/UPDATE_CHARACTER', { attr: 'image', value })
+        return this.$store.commit('cb/UPDATE_CHARACTER', { attr: 'image', value })
       }
     },
     size () {

@@ -75,10 +75,10 @@ export default {
     },
     hitPoints: {
       get () {
-        return this.$store.getters['user/character'].classes[this.classIndex].hitPoints
+        return this.$store.getters['cb/character'].classes[this.classIndex].hitPoints
       },
       set (value) {
-        return this.$store.commit('user/UPDATE_CHARACTER', { attr: 'classes.' + this.classIndex.toString() + '.hitPoints', value })
+        return this.$store.commit('cb/UPDATE_CHARACTER', { attr: 'classes.' + this.classIndex.toString() + '.hitPoints', value })
       }
     },
     hpArray () {

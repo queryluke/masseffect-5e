@@ -123,34 +123,34 @@ export default {
     },
     background: {
       get () {
-        return this.$store.getters['user/character'].background
+        return this.$store.getters['cb/character'].background
       },
       set (value) {
-        return this.$store.commit('user/UPDATE_CHARACTER', { attr: 'background', value })
+        return this.$store.commit('cb/UPDATE_CHARACTER', { attr: 'background', value })
       }
     },
     characteristics: {
       get () {
-        return this.$store.getters['user/character'].characteristics
+        return this.$store.getters['cb/character'].characteristics
       },
       set (value) {
-        return this.$store.commit('user/UPDATE_CHARACTER', { attr: 'characteristics', value })
+        return this.$store.commit('cb/UPDATE_CHARACTER', { attr: 'characteristics', value })
       }
     },
     name: {
       get () {
-        return this.$store.getters['user/character'].name
+        return this.$store.getters['cb/character'].name
       },
       set (value) {
-        return this.$store.commit('user/UPDATE_CHARACTER', { attr: 'name', value })
+        return this.$store.commit('cb/UPDATE_CHARACTER', { attr: 'name', value })
       }
     },
     image: {
       get () {
-        return this.$store.getters['user/character'].image
+        return this.$store.getters['cb/character'].image
       },
       set (value) {
-        return this.$store.commit('user/UPDATE_CHARACTER', { attr: 'image', value })
+        return this.$store.commit('cb/UPDATE_CHARACTER', { attr: 'image', value })
       }
     }
   },

@@ -27,10 +27,10 @@ export default {
   computed: {
     model: {
       get () {
-        return this.$store.getters['user/character'][this.attr]
+        return this.$store.getters['cb/character'][this.attr]
       },
       set (value) {
-        return this.$store.commit('user/UPDATE_CHARACTER', { attr: this.attr, value })
+        return this.$store.commit('cb/UPDATE_CHARACTER', { attr: this.attr, value })
       }
     }
   }

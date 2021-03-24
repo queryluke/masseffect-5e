@@ -7,12 +7,15 @@
 <script>
 export default {
   async fetch () {
-    this.$store.commit('pageTitle', this.$store.getters['user/character'].name)
+    /* TODO: Move this to character select
+    this.$store.commit('pageTitle', this.$store.getters['cb/character'].name)
+    */
+    this.$store.commit('pageTitle', 'Character Builder')
     await this.$store.dispatch('FETCH_LOTS', ['species', 'weapons', 'armor', 'powers', 'feats', 'backgrounds', 'classes', 'class-features', 'subclasses', 'character-progression'])
   },
   computed: {
     character () {
-      return this.$store.getters['user/character']
+      return this.$store.getters['cb/character']
     },
     species () {
       return this.$store.getters.getData('species')
