@@ -101,12 +101,12 @@ export const getters = {
 }
 
 export const mutations = {
-  UPDATE_CHARACTER (state, { attr, value }, charId) {
-    if (!state.characters[charId]) {
+  UPDATE_CHARACTER (state, { cid, attr, value }) {
+    if (!state.characters[cid]) {
       console.error('Unable to assign values to selected character. Please make sure the character id is set in the state and is defined')
       return
     }
-    const character = cloneDeep(state.characters[charId])
+    const character = cloneDeep(state.characters[cid].character)
     if (typeof attr === 'string' && attr.includes('.')) {
       let schema = character // a moving reference to internal objects within obj
       const pList = attr.split('.')
@@ -123,7 +123,7 @@ export const mutations = {
       character[attr] = value
     }
     character.changedAt = new Date().getTime()
-    state.characters[charId] = character
+    state.characters[cid].character = character
   },
   UPDATE_CHARACTERS (state, obj) {
     // if obj with matching id exists, update it. If not, insert it

@@ -67,7 +67,7 @@ export default {
   },
   computed: {
     character () {
-      return this.$store.getters['cb/character']
+      return this.$store.getters['cb/characters'][this.$route.query.cid].character
     },
     species () {
       return this.$store.getters.getData('species')

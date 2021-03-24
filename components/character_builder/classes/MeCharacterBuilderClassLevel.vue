@@ -58,7 +58,7 @@ export default {
       this.hitPoints = tempArr
     },
     updateHpField (index, value) {
-      console.log(index + 1, value)
+      // console.log(index + 1, value)
       const tempArr = [...this.hitPoints]
       tempArr[index + 1] = value
       this.hitPoints = tempArr
@@ -67,11 +67,11 @@ export default {
   computed: {
     levels: {
       get () {
-        return this.$store.getters['cb/character'].classes[this.classIndex].levels
+        return this.$store.getters['cb/characters'][this.$route.query.cid].character.classes[this.classIndex].levels
       },
       set (value) {
         this.setHpSlots(value)
-        return this.$store.commit('cb/UPDATE_CHARACTER', { attr: 'classes.' + this.classIndex.toString() + '.levels', value })
+        return this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.$route.query.cid, attr: 'classes.' + this.classIndex.toString() + '.levels', value })
       }
     },
     classInfo () {
@@ -86,10 +86,10 @@ export default {
     },
     charSubclass: {
       get () {
-        return this.$store.getters['cb/character'].classes[this.classIndex].subclass
+        return this.$store.getters['cb/characters'][this.$route.query.cid].character.classes[this.classIndex].subclass
       },
       set (value) {
-        return this.$store.commit('cb/UPDATE_CHARACTER', { attr: 'classes.' + this.classIndex.toString() + '.subclass', value })
+        return this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.$route.query.cid, attr: 'classes.' + this.classIndex.toString() + '.subclass', value })
       }
     },
     hitDie () {
@@ -97,10 +97,10 @@ export default {
     },
     hitPoints: {
       get () {
-        return this.$store.getters['cb/character'].classes[this.classIndex].hitPoints
+        return this.$store.getters['cb/characters'][this.$route.query.cid].character.classes[this.classIndex].hitPoints
       },
       set (value) {
-        return this.$store.commit('cb/UPDATE_CHARACTER', { attr: 'classes.' + this.classIndex.toString() + '.hitPoints', value })
+        return this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.$route.query.cid, attr: 'classes.' + this.classIndex.toString() + '.hitPoints', value })
       }
     },
     levelArray () {

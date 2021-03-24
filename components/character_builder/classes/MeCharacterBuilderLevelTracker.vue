@@ -23,7 +23,7 @@ export default {
   computed: {
     xp: {
       get () {
-        return this.$store.getters['cb/character'].xp
+        return this.$store.getters['cb/characters'][this.$route.query.cid].character.xp
       }
     },
     currentLevelInfo () {

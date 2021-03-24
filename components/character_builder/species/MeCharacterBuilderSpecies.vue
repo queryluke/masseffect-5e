@@ -48,7 +48,7 @@ export default {
     },
     model: {
       get () {
-        return this.$store.getters['cb/character'].species
+        return this.$store.getters['cb/characters'][this.$route.query.cid].character.species
       }
     }
   }

@@ -44,10 +44,10 @@ export default {
   computed: {
     scores: {
       get () {
-        return this.$store.getters['cb/character'].baseAbilityScores
+        return this.$store.getters['cb/characters'][this.$route.query.cid].character.baseAbilityScores
       },
       set (value) {
-        return this.$store.commit('cb/UPDATE_CHARACTER', { attr: 'baseAbilityScores', value })
+        return this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.$route.query.cid, attr: 'baseAbilityScores', value })
       }
     },
     possibleValues () {

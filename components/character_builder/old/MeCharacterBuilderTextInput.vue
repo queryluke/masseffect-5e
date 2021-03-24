@@ -25,10 +25,10 @@ export default {
   computed: {
     model: {
       get () {
-        return this.$store.getters['cb/character'][this.attr]
+        return this.$store.getters['cb/characters'][this.$route.query.cid].character[this.attr]
       },
       set (value) {
-        return this.$store.commit('cb/UPDATE_CHARACTER', { attr: this.attr, value })
+        return this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.$route.query.cid, attr: this.attr, value })
       }
     }
   }

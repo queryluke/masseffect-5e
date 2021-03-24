@@ -88,7 +88,7 @@ export default {
     },
     chosenClasses: {
       get () {
-        return this.$store.getters['cb/character'].classes
+        return this.$store.getters['cb/characters'][this.$route.query.cid].character.classes
       }
     },
     filteredClasses () {

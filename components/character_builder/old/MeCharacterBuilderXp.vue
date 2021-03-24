@@ -10,7 +10,7 @@ export default {
   computed: {
     xp: {
       get () {
-        return this.$store.getters['cb/character'].xp
+        return this.$store.getters['cb/characters'][this.$route.query.cid].character.xp
       },
       set (value) {
         if (value && !isNaN(value)) {
@@ -27,9 +27,9 @@ export default {
             level = 20
           }
           if (level) {
-            this.$store.commit('user/UPDATE_CHARACTER', { attr: 'level', value: level })
+            this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.$route.query.cid, attr: 'level', value: level })
           }
-          this.$store.commit('user/UPDATE_CHARACTER', { attr: 'xp', value: val })
+          this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.$route.query.cid, attr: 'xp', value: val })
         }
       }
     },

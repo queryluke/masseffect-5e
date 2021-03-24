@@ -123,34 +123,34 @@ export default {
     },
     background: {
       get () {
-        return this.$store.getters['cb/character'].background
+        return this.$store.getters['cb/characters'][this.$route.query.cid].character.background
       },
       set (value) {
-        return this.$store.commit('cb/UPDATE_CHARACTER', { attr: 'background', value })
+        return this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.$route.query.cid, attr: 'background', value })
       }
     },
     characteristics: {
       get () {
-        return this.$store.getters['cb/character'].characteristics
+        return this.$store.getters['cb/characters'][this.$route.query.cid].character.characteristics
       },
       set (value) {
-        return this.$store.commit('cb/UPDATE_CHARACTER', { attr: 'characteristics', value })
+        return this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.$route.query.cid, attr: 'characteristics', value })
       }
     },
     name: {
       get () {
-        return this.$store.getters['cb/character'].name
+        return this.$store.getters['cb/characters'][this.$route.query.cid].character.name
       },
       set (value) {
-        return this.$store.commit('cb/UPDATE_CHARACTER', { attr: 'name', value })
+        return this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.$route.query.cid, attr: 'name', value })
       }
     },
     image: {
       get () {
-        return this.$store.getters['cb/character'].image
+        return this.$store.getters['cb/characters'][this.$route.query.cid].character.image
       },
       set (value) {
-        return this.$store.commit('cb/UPDATE_CHARACTER', { attr: 'image', value })
+        return this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.$route.query.cid, attr: 'image', value })
       }
     }
   },

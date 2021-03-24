@@ -167,10 +167,11 @@ export default {
     },
     classData: {
       get () {
-        return this.$store.getters['cb/character'].classes
+        return this.$store.getters['cb/characters'][this.$route.query.cid].character.classes
       },
       set (value) {
-        this.$store.commit('user/UPDATE_CHARACTER', {
+        this.$store.commit('cb/UPDATE_CHARACTER', {
+          cid: this.$route.query.cid,
           attr: 'classes',
           value
         })

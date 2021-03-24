@@ -14,11 +14,32 @@
         v-else
       >
         <v-col
-          cols="4"
+          cols="6"
           v-for="(char, index) in characters"
           :key="index"
         >
-          {{char.character.name || "New Character"}} {{char.character.id}}
+          <v-sheet
+            class="d-flex flex-wrap"
+            elevation="1"
+          >
+            <div
+              @click="goToCharacter(char.character.id)"
+              class="d-flex justify-left pa-3 ma-3 text-left"
+            >
+              <v-img
+                v-if="char.character.image"
+                :src="char.character.image"
+                max-width="100px"
+                height="80px"
+                lazy-src="https://static.wikia.nocookie.net/masseffect/images/"
+              />
+              <div class="text-left ps-3">
+                <h3>
+                  {{char.character.name || "New Character"}}
+                </h3>
+              </div>
+            </div>
+          </v-sheet>
         </v-col>
       </v-row>
       <v-row>
@@ -43,7 +64,7 @@ export default {
       model.createdAt = new Date().getTime()
       model.changedAt = new Date().getTime()
       this.characters = model
-      this.$router.push({ query: { cid: model.id } })
+      this.goToCharacter(model.id)
     },
     createRandomId () {
       let rid = 0
@@ -53,6 +74,9 @@ export default {
         }
       }
       return rid
+    },
+    goToCharacter (charId) {
+      this.$router.push({ query: { cid: charId } })
     }
   },
   computed: {
