@@ -18,28 +18,30 @@
           v-for="(char, index) in characters"
           :key="index"
         >
-          <v-sheet
-            class="d-flex flex-wrap"
-            elevation="1"
-          >
-            <div
-              @click="goToCharacter(char.character.id)"
-              class="d-flex justify-left pa-3 ma-3 text-left"
+          <a @click="goToCharacter(char.character.id)">
+            <v-sheet
+              class="d-flex flex-wrap"
+              elevation="1"
             >
-              <v-img
-                v-if="char.character.image"
-                :src="char.character.image"
-                max-width="100px"
-                height="80px"
-                lazy-src="https://static.wikia.nocookie.net/masseffect/images/"
-              />
-              <div class="text-left ps-3">
-                <h3>
-                  {{char.character.name || "New Character"}}
-                </h3>
+              <div
+                class="d-flex justify-left pa-3 ma-3 text-left"
+              >
+                <v-img
+                  v-if="char.character.image"
+                  :src="char.character.image"
+                  contain
+                  max-width="100px"
+                  height="80px"
+                  lazy-src="https://static.wikia.nocookie.net/masseffect/images/"
+                />
+                <div class="text-left ps-3">
+                  <h3>
+                    {{char.character.name || "New Character"}}
+                  </h3>
+                </div>
               </div>
-            </div>
-          </v-sheet>
+            </v-sheet>
+          </a>
         </v-col>
       </v-row>
       <v-row>
