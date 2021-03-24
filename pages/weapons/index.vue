@@ -10,7 +10,7 @@
       default-sort="name"
       :custom-sort="customSort"
     >
-      <template v-slot:list="{ displayItems }">
+      <template #list="{ displayItems }">
         <me-weapon-list :items="displayItems" />
       </template>
     </me-list-page>
@@ -22,10 +22,7 @@ import { AverageFromDie } from '~/mixins/averageFromDie'
 
 export default {
   mixins: [AverageFromDie],
-  async fetch () {
-    this.$store.commit('pageTitle', 'Weapons')
-    this.items = await this.$store.dispatch('FETCH_DATA', 'weapons')
-  },
+  layout: 'list',
   data () {
     return {
       items: [],
@@ -33,6 +30,18 @@ export default {
         to: '/manual/equipment#weapons',
         name: 'Weapon Rules'
       }
+    }
+  },
+  async fetch () {
+    this.$store.commit('pageTitle', 'Weapons')
+    this.items = await this.$store.dispatch('FETCH_DATA', 'weapons')
+  },
+  head () {
+    return {
+      title: 'Weapons - Equipment | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'The Mass Effect 5e arsenal has over 80 unique weapons designed to match the game\'s weaponry' }
+      ]
     }
   },
   computed: {
@@ -74,8 +83,16 @@ export default {
             bVal = this.averageFromDie(b.damage)
             break
           default:
-            aVal = a[sortBy] ? parseInt(a[sortBy].replace(/\D/, ''), 10) : 0
-            bVal = b[sortBy] ? parseInt(b[sortBy].replace(/\D/, ''), 10) : 0
+            aVal = a[sortBy]
+              ? typeof a[sortBy] === 'number'
+                ? a[sortBy]
+                : parseInt(a[sortBy].replace(/\D/, ''), 10)
+              : 0
+            bVal = b[sortBy]
+              ? typeof b[sortBy] === 'number'
+                ? b[sortBy]
+                : parseInt(b[sortBy].replace(/\D/, ''), 10)
+              : 0
         }
         return aVal === bVal
           ? a.id > b.id ? desc : desc * -1
@@ -83,15 +100,6 @@ export default {
       })
       return items
     }
-  },
-  head () {
-    return {
-      title: 'Weapons - Equipment | Mass Effect 5e',
-      meta: [
-        { hid: 'description', name: 'description', content: 'The Mass Effect 5e arsenal has over 80 unique weapons designed to match the game\'s weaponry' }
-      ]
-    }
-  },
-  layout: 'list'
+  }
 }
 </script>
