@@ -166,10 +166,10 @@ export default {
       }
       return true
     },
-    deleteCharacter (charId) {
-      console.log('DELETING CHARACTER at key: ' + charId)
-      if (charId) {
-        this.$store.commit('cb/DELETE_CHARACTER', charId)
+    deleteCharacter (char) {
+      console.log('DELETING CHARACTER at key: ' + char.id)
+      if (char.id) {
+        this.$store.commit('cb/DELETE_CHARACTER', { name: char.name, cid: char.id })
         this.goHome()
       }
     },

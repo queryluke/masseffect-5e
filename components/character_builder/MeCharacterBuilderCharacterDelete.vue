@@ -67,9 +67,9 @@ export default {
     }
   },
   methods: {
-    removeCharacter (charId) {
+    removeCharacter () {
       // console.log('EMMITING deleteCharacter with id: ' + charId)
-      this.$emit('deleteCharacter', charId)
+      this.$emit('deleteCharacter', this.character)
     }
   },
   data () {

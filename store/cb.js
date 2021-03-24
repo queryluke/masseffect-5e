@@ -1,6 +1,7 @@
 import cloneDeep from 'lodash/cloneDeep'
 
 export const state = () => ({
+  characterIdIndex: 0,
   characters: {},
   characterStartState: {
     name: '',
@@ -125,13 +126,16 @@ export const mutations = {
     character.changedAt = new Date().getTime()
     state.characters[cid].character = character
   },
-  DELETE_CHARACTER (state, cid) {
+  DELETE_CHARACTER (state, { name, cid }) {
     // if obj with matching id exists, update it. If not, insert it
-    if (state.characters[cid]) {
-      delete state.characters[cid]
-    } else {
-      console.error('Unable to remove character with id: ' + cid)
+    console.log({ name, cid })
+    if (state.characters[cid] && state.characters[cid].character) {
+      if (name === state.characters[cid].character.name) {
+        delete state.characters[cid]
+        return
+      }
     }
+    console.error('Unable to remove character with id: ' + cid)
   },
   UPDATE_CHARACTERS (state, obj) {
     // if obj with matching id exists, update it. If not, insert it

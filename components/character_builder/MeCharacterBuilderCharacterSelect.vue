@@ -35,8 +35,8 @@
                 class="d-flex justify-left pa-3 ma-3 text-left"
               >
                 <v-img
-                  v-if="char.character.image"
-                  :src="char.character.image"
+                  v-if="getImage(char.character)"
+                  :src="getImage(char.character)"
                   contain
                   max-width="100px"
                   height="80px"
@@ -69,19 +69,27 @@ export default {
   methods: {
     createNewCharacter () {
       const model = { ...this.characterModel }
-      model.id = this.createRandomId()
+      // model.id = this.createRandomId()
       model.createdAt = new Date().getTime()
       model.changedAt = new Date().getTime()
+      model.id = model.createdAt
       this.characters = model
       this.goToCharacter(model.id)
     },
+    getImage (c) {
+      return c.image || c.species.bodyImg
+    },
     createRandomId () {
       let rid = 0
-      for (const char in this.characters) {
+      const chars = this.$store.getters['cb/characters'] // Get the live value in case it's changed
+      /*
+      for (const char in chars) {
         if (char + '' === rid + '') {
           rid++
         }
       }
+      */
+      rid = Object.keys(chars).length
       return rid
     },
     goToCharacter (charId) {
