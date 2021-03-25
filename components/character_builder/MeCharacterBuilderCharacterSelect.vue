@@ -40,7 +40,8 @@
                   contain
                   max-width="100px"
                   height="80px"
-                  lazy-src="https://static.wikia.nocookie.net/masseffect/images/"
+                  @error="setPlaceholder(char.character)"
+                  :lazy-src="require('~/assets/images/me5e_logo_450w.png')"
                 />
                 <div class="text-left ps-3">
                   <div v-html="getCharInfo(char.character)">
@@ -77,7 +78,10 @@ export default {
       this.goToCharacter(model.id)
     },
     getImage (c) {
-      return c.image || c.species.bodyImg
+      return c.image || c.species.bodyImg || require('~/assets/images/me5e_logo_450w.png')
+    },
+    setPlaceholder () {
+      return require('~/assets/images/me5e_logo_450w.png')
     },
     createRandomId () {
       let rid = 0
