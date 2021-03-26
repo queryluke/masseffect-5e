@@ -40,7 +40,8 @@
     div(v-if="item.weapons").mb-2
       p.title Weapons
       ul.mb-2
-        li(v-for="weapon in item.weapons" v-bind:key="weapon.name") #[strong {{ weapon.name }}.] {{ weapon.damage }}
+        li(v-for="weapon in item.weapons" v-bind:key="weapon.name") #[strong {{ weapon.name }}.]
+          me-html(:content="weapon.damage")
     div
       p.title Description
       me-html(:content="item.html")
