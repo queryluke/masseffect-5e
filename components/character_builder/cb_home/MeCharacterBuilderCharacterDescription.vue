@@ -17,14 +17,9 @@
               v-model="image"
             />
         </div>
-        <v-img
+        <me-character-builder-avatar
           v-if="image"
-          :src="image"
-          contain
-          max-height="175"
-          max-width="175"
-          min-width="100"
-          alt="Character Image" />
+        />
     </div>
     <v-select
       :value="characteristics.alignment"
@@ -81,7 +76,9 @@
 </template>
 
 <script>
+import MeCharacterBuilderAvatar from '../MeCharacterBuilderAvatar.vue'
 export default {
+  components: { MeCharacterBuilderAvatar },
   data () {
     return {
       alignmentOptions: [

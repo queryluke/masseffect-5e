@@ -1,7 +1,9 @@
 <template>
   <div>
     <h2 class="text-center">Choose a Class</h2>
-    <me-character-builder-level-tracker :level="level" :c-prog="cProg"/>
+    <div class="d-flex align-center justify-center">
+      <me-character-builder-level-tracker :level="level" :c-prog="cProg"/>
+    </div>
     <v-row>
       <v-col>
         <v-expansion-panels v-if="classData">

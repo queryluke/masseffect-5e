@@ -98,7 +98,15 @@ export const state = () => ({
 
 export const getters = {
   characters: state => state.characters,
-  characterStartState: state => state.characterStartState
+  characterStartState: state => state.characterStartState,
+  getCharacterLevel: state => (cid) => {
+    const c = state.characters[cid].character
+    let level = 0
+    for (const cls of c.classes) {
+      level += cls.levels
+    }
+    return level
+  }
 }
 
 export const mutations = {

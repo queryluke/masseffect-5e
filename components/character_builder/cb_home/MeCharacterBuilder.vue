@@ -19,10 +19,14 @@
             :character="character"
             @deleteCharacter="deleteCharacter"
           />
+          <v-btn
+            v-if="showCharacterSheet"
+            @click="showCharacterSheet = false"
+          >Edit Character</v-btn>
         </v-col>
       </v-row>
       <v-stepper
-        v-if="character"
+        v-if="character && !character.builder.showCharacterSheet"
         :value="currentStep"
       >
         <v-stepper-header>
@@ -31,7 +35,7 @@
               :key="`${n}-step`"
               :complete="steps[n].isComplete"
               :step="n"
-              editable="editable"
+              editable
               edit-icon="mdi-check"
               @click="currentStep = n"
             >
@@ -52,6 +56,9 @@
                 <v-icon class="mr-2">mdi-chevron-left</v-icon>
                 Back
               </v-btn>
+              <v-btn @click="showCharacterSheet=true">
+                Go to Character Sheet
+              </v-btn>
               <!--CharacterBuilderViewSheet(v-bind="{ characterValidation }", @click="$emit('viewSheet')").d-none.d-sm-flex-->
               <v-btn v-if="currentStep < numSteps" color="primary" width="140" @click="nextStep">
                 Continue
@@ -62,15 +69,17 @@
           </v-stepper-content>
         </v-stepper-items>
       </v-stepper>
+      <me-character-sheet v-if="showCharacterSheet"/>
     </div>
   </div>
 </template>
 
 <script>
+import MeCharacterSheet from '../charactersheet/MeCharacterSheet.vue'
 import MeCharacterBuilderCharacterDelete from './MeCharacterBuilderCharacterDelete.vue'
 import MeCharacterBuilderCharacterSelect from './MeCharacterBuilderCharacterSelect.vue'
 export default {
-  components: { MeCharacterBuilderCharacterSelect, MeCharacterBuilderCharacterDelete },
+  components: { MeCharacterBuilderCharacterSelect, MeCharacterBuilderCharacterDelete, MeCharacterSheet },
   computed: {
     character () {
       const char = this.$store.getters['cb/characters'][this.$route.query.cid] || {}
@@ -90,6 +99,21 @@ export default {
         return this.$store.commit('cb/UPDATE_CHARACTER', {
           cid: this.$route.query.cid,
           attr: 'builder.currentStep',
+          value
+        })
+      }
+    },
+    showCharacterSheet: {
+      get () {
+        if (!this.character) {
+          return false
+        }
+        return this.character.builder.showCharacterSheet
+      },
+      set (value) {
+        return this.$store.commit('cb/UPDATE_CHARACTER', {
+          cid: this.$route.query.cid,
+          attr: 'builder.showCharacterSheet',
           value
         })
       }

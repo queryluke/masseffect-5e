@@ -44,8 +44,7 @@
                   :lazy-src="require('~/assets/images/me5e_logo_450w.png')"
                 />
                 <div class="text-left ps-3">
-                  <div v-html="getCharInfo(char.character)">
-                  </div>
+                  <me-character-sheet-character-name :character="char.character"/>
                 </div>
               </div>
             </v-sheet>
@@ -66,7 +65,9 @@
 </template>
 
 <script>
+import MeCharacterSheetCharacterName from '../charactersheet/MeCharacterSheetCharacterName.vue'
 export default {
+  components: { MeCharacterSheetCharacterName },
   methods: {
     createNewCharacter () {
       const model = { ...this.characterModel }
@@ -98,26 +99,6 @@ export default {
     },
     goToCharacter (charId) {
       this.$router.replace({ query: { cid: charId } })
-    },
-    getCharInfo (char) {
-      let output = ''
-      const name = char.name || 'New Character'
-      const species = char.species.name
-      const classes = char.classes
-      output += '<h3>' + name + '</h3>'
-      if (species) {
-        output += '<small class="p-0"><i>' + species + '</i></small>'
-      }
-      output += '<br>'
-      let count = 0
-      for (const c of classes) {
-        output += (count++ > 0 ? ', ' : '') + c.name + ' '
-        if (c.subclass) {
-          output += '(' + c.subclass.name + ') '
-        }
-        output += c.levels
-      }
-      return output
     }
   },
   computed: {
