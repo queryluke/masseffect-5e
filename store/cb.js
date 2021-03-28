@@ -106,6 +106,21 @@ export const getters = {
       level += cls.levels
     }
     return level
+  },
+  getCharacterHealth: state => (cid) => {
+    const c = state.characters[cid].character
+    const health = {
+      hitPointsMax: 0
+    }
+    for (const cls of c.classes) {
+      for (const hp of cls.hitPoints) {
+        health.hitPointsMax += hp
+      }
+    }
+    health.hitPointsLost = c.currentStats.hitPointsLost
+    health.temporaryHitPoints = c.currentStats.temporaryHitPoints
+    health.deathSaves = c.currentStats.deathSaves
+    return health
   }
 }
 
