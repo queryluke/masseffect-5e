@@ -120,6 +120,7 @@ export const getters = {
     health.hitPointsLost = c.currentStats.hitPointsLost
     health.temporaryHitPoints = c.currentStats.temporaryHitPoints
     health.deathSaves = c.currentStats.deathSaves
+    health.shields = c.currentStats.shields
     return health
   }
 }

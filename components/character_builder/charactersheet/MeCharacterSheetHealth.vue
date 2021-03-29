@@ -2,7 +2,7 @@
   <div>
     <v-row>
       <v-col>
-        <me-character-sheet-health-circle v-bind="{ ...hpData, current, maximum, temporary }" />
+        <me-character-sheet-health-circle v-bind="{ ...hpData, current, maximum, temporary, shields }" />
       </v-col>
       <v-col>
         <div class="d-flex flex-column align-center mr-4" style="max-width: 130px;">
@@ -67,6 +67,12 @@ export default {
         val: this.healthMod + this.temporary
       }
     },
+    addShields () {
+      this.hpData = {
+        attr: 'currentStats.temporaryHitPoints',
+        val: this.healthMod + this.temporary
+      }
+    },
     subtractHitPoints () {
       let hpDown = this.healthMod // 5 down, 10 thp 40 hp
       if (this.temporary > 0) {
@@ -110,7 +116,10 @@ export default {
       return this.hpData.hitPointsMax
     },
     temporary () {
-      return this.hpData.temporaryHitPoints
+      return this.hpData.temporaryHitPoints || 0
+    },
+    shields () {
+      return this.hpData.shields || 10
     }
   }
 }
