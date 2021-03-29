@@ -19,7 +19,7 @@
               :disabled="!healthMod"
               color="green accent-3"
               small="small"
-              @click="/* addTHP */"
+              @click="addTHP"
             >THP</v-btn>
           </div>
           <v-text-field
@@ -61,8 +61,24 @@ export default {
         val: missingHp
       }
     },
+    addTHP () {
+      this.hpData = {
+        attr: 'currentStats.temporaryHitPoints',
+        val: this.healthMod + this.temporary
+      }
+    },
     subtractHitPoints () {
-      const totalHp = Math.max(0, this.current - this.healthMod)
+      let hpDown = this.healthMod // 5 down, 10 thp 40 hp
+      if (this.temporary > 0) {
+        const tempDiff = this.temporary - hpDown
+        this.hpData = {
+          attr: 'currentStats.temporaryHitPoints',
+          val: Math.max(0, tempDiff)
+        }
+        console.log(tempDiff)
+        hpDown = tempDiff < 0 ? -tempDiff : 0
+      }
+      const totalHp = Math.max(0, this.current - hpDown)
       const missingHp = this.maximum - totalHp
       this.hpData = {
         attr: 'currentStats.hitPointsLost',
@@ -94,7 +110,7 @@ export default {
       return this.hpData.hitPointsMax
     },
     temporary () {
-      return this.hpData.temporaryHitPoints || 0
+      return this.hpData.temporaryHitPoints
     }
   }
 }
