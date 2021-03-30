@@ -47,6 +47,10 @@ export const mutations = {
   },
   SET_SEARCH (state, value) {
     state.search = value
+  },
+  // TODO: temp
+  RESET_BOOKMARKS (state, value) {
+    state.bookmarks = { ...value }
   }
 }
 
@@ -65,5 +69,11 @@ export const actions = {
     const isDark = !getters.darkMode
     commit('SET_DARK_MODE', isDark)
     dispatch('tabbedPage/SET_THEME_MODE', isDark, { root: true })
+  },
+  // TODO: temp
+  REMOVE_BOOKMARK_KEY ({ getters, commit }, key) {
+    const bookmarks = { ...getters.bookmarks }
+    delete bookmarks[key]
+    commit('RESET_BOOKMARKS', bookmarks)
   }
 }
