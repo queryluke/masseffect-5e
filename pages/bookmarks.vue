@@ -57,9 +57,12 @@ export default {
   computed: {
     bookmarks () {
       // TODO: this is temporary (L59-68)
-      const marks = { ...this.$store.getters['user/bookmarks'] }
+      const marks = this.$store.getters['user/bookmarks']
       if (marks.npc) {
-        for (const npc of marks.npc) {
+        const freezeNpcs = marks.npc.slice()
+        console.log(freezeNpcs)
+        for (const npc of freezeNpcs) {
+          console.log(npc)
           this.$store.dispatch('user/TOGGLE_BOOKMARK', { type: 'npc', item: npc })
           this.$store.dispatch('user/TOGGLE_BOOKMARK', { type: 'bestiary', item: npc })
         }
