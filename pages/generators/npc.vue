@@ -79,7 +79,7 @@
             <me-stat-block :stats="grunt" :title="true" />
           </v-card-text>
           <v-card-actions>
-            <me-bookmark :item="grunt" type="npc" />
+            <me-bookmark :item="grunt" type="bestiary" />
           </v-card-actions>
         </v-card>
       </v-col>
