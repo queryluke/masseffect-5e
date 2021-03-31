@@ -44,7 +44,18 @@
               development of the game. Not everyone on this list is still actively involved and these people are presented in
               no particular order.
         v-row(justify="center")
-          v-col(v-for="person in people" :key="person.name" cols="12" sm="6" md="4" lg="3")
+          v-col(v-for="person in current" :key="person.name" cols="12" sm="6" md="4" lg="3")
+            v-card.elevation-0.transparent.text-center
+              v-card-text
+                v-avatar(size="92")
+                  v-img(:src="person.image" v-bind:alt="person.name")
+                p.text-center.text-h6.mb-1 {{ person.name }}
+                p.text-subtitle-1 {{ person.roles }}
+        v-row(justify="center")
+          v-col(cols="12")
+            p.text-h5 Former Contributors
+        v-row(justify="center")
+          v-col(v-for="person in former" :key="person.name" cols="12" sm="6" md="4" lg="3")
             v-card.elevation-0.transparent.text-center
               v-card-text
                 v-avatar(size="92")
@@ -83,13 +94,15 @@ export default {
       this.$store.dispatch('FETCH_DATA', 'attributions')
     ])
     this.shoutouts = data[0].shoutouts
-    this.people = data[0].people
+    this.current = data[0].current
+    this.former = data[0].former
     this.attributions = data[1]
   },
   data () {
     return {
       attributions: [],
-      people: [],
+      current: [],
+      former: [],
       shoutouts: [],
       communities: [
         {
