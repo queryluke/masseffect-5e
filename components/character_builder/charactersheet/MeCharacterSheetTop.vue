@@ -1,21 +1,21 @@
 <template>
-  <div class="d-flex justify-center">
+  <div>
     <v-row>
-      <v-col md="2">
-        <me-character-builder-avatar />
+      <v-col sm="12" md="6">
+        <me-character-builder-level-tracker :level="character.level"/>
+        <v-row>
+          <v-col>
+            <me-character-builder-avatar />
+          </v-col>
+          <v-col>
+            <me-character-sheet-character-name
+              :character="character"
+            />
+          </v-col>
+        </v-row>
       </v-col>
-      <v-col md="4">
-        <div>
-          <me-character-sheet-character-name
-            :character="character"
-          />
-          <me-character-builder-level-tracker :level="character.level"/>
-        </div>
-      </v-col>
-      <v-col md="6">
-        <div>
-          <me-character-sheet-health />
-        </div>
+      <v-col sm="12" md="6">
+        <me-character-sheet-health />
       </v-col>
     </v-row>
   </div>

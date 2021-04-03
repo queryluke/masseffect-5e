@@ -1,9 +1,9 @@
 <template>
   <div
     v-if="level"
-    class="d-flex justify-center xpBar mb-2"
+    class="xpBar mb-2"
   >
-    <v-btn>
+    <v-btn style="width: 100%;">
       <v-chip
         small
         class="mr-2 ml-0"
@@ -12,10 +12,9 @@
       </v-chip>
       <v-progress-linear
         class="ma-0 text-center"
-        :value="xp"
+        :value="xp / nextLevelInfo.xp"
         height="20"
         rounded
-        style="min-width: 150px;"
       >
         {{xp}} / {{nextLevelInfo.xp}}
       </v-progress-linear>
