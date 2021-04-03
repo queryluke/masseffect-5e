@@ -33,7 +33,9 @@ export default {
   computed: {
     image: {
       get () {
-        return this.$store.getters['cb/characters'][this.$route.query.cid].character.image
+        const char = this.$store.getters['cb/characters'][this.$route.query.cid].character
+        const img = char.image || char.species.bodyImg
+        return img
       },
       set (value) {
         return this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.$route.query.cid, attr: 'image', value })

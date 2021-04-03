@@ -37,7 +37,7 @@
       <v-progress-circular
         class="greenCircle"
         :value="100 * temporary / maximum"
-        :color="'#FF6600'"
+        :color="'green'"
         :class="$style.circle"
         :size="circleSize"
         :rotate="360 * current / maximum - 90"

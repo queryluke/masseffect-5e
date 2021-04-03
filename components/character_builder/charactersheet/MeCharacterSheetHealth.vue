@@ -8,7 +8,16 @@
         <div class="btn-stack">
           <v-btn
             class="white--text ma-1"
-            :disabled="!healthMod"
+            :disabled="disableBtns"
+            color="blue accent-3"
+            small="small"
+            @click="addShields"
+          >
+            Shields
+          </v-btn>
+          <v-btn
+            class="white--text ma-1"
+            :disabled="disableBtns"
             color="secondary accent-3"
             small="small"
             @click="addHitPoints"
@@ -17,25 +26,25 @@
           </v-btn>
           <v-btn
             class="white--text ma-1"
-            :disabled="!healthMod"
-            color="#FF6600"
+            :disabled="disableBtns"
+            color="green"
             small="small"
             @click="addTHP"
           >
             THP
           </v-btn>
-          <v-btn
-            class="white--text ma-1"
-            :disabled="!healthMod"
-            color="blue accent-3"
-            small="small"
-            @click="addShields"
-          >
-            Shields
-          </v-btn>
         </div>
       </v-col>
       <v-col class="text-center">
+        <v-btn-toggle>
+          <v-btn
+            @click="healthMod--"
+            :disabled="healthMod <= 0"
+          ><v-icon>mdi-chevron-down</v-icon></v-btn>
+          <v-btn
+            @click="healthMod = Math.max(0, healthMod + 1)"
+          ><v-icon>mdi-chevron-up</v-icon></v-btn>
+        </v-btn-toggle>
         <v-text-field
           class="my-2"
           outlined
@@ -47,7 +56,7 @@
         ></v-text-field>
         <v-btn
           class="white--text"
-          :disabled="!healthMod"
+          :disabled="disableBtns"
           color="secondary accent-3"
           small
           @click="subtractHitPoints"
@@ -58,9 +67,6 @@
           label="Bypass Shields"
           v-model="bypassShields"
         >Bypass Shields</v-checkbox>
-      </v-col>
-      <v-col>
-        Barrier Ticks
       </v-col>
     </v-row>
   </div>
@@ -128,6 +134,9 @@ export default {
       const char = this.$store.getters['cb/characters'][this.$route.query.cid] || {}
       return char.character
     },
+    disableBtns () {
+      return this.healthMod <= 0
+    },
     hpData: {
       get () {
         return this.$store.getters['cb/getCharacterHealth'](this.$route.query.cid)
@@ -164,6 +173,7 @@ export default {
   .heal-btns {
     .v-btn {
       width: 80px;
+      height: 60px !important;
     }
   }
 </style>

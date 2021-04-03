@@ -71,6 +71,20 @@ export const state = () => ({
         level7: false,
         level8: false,
         level9: false
+      },
+      shields: {
+        value: 0,
+        max: 5
+      },
+      barrier: {
+        uses: {
+          value: 5,
+          max: 5
+        },
+        ticks: {
+          value: 5,
+          max: 5
+        }
       }
     },
     tweaks: {},
@@ -121,6 +135,7 @@ export const getters = {
     health.temporaryHitPoints = c.currentStats.temporaryHitPoints
     health.deathSaves = c.currentStats.deathSaves
     health.shields = c.currentStats.shields
+    health.barrier = c.currentStats.barrier
     return health
   }
 }
