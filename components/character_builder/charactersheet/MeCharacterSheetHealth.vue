@@ -1,43 +1,66 @@
 <template>
   <div>
-    <v-row>
+    <v-row class="pt-5">
       <v-col>
         <me-character-sheet-health-circle v-bind="{ ...hpData, current, maximum, temporary, shields }" />
       </v-col>
-      <v-col>
-        <div class="d-flex flex-column align-center mr-4" style="max-width: 130px;">
-          <div class="d-flex">
-            <v-btn
-              class="white--text mr-2"
-              :disabled="!healthMod"
-              color="green accent-3"
-              small="small"
-              @click="addHitPoints"
-            >Heal</v-btn>
-            <v-btn
-              class="white--text"
-              :disabled="!healthMod"
-              color="green accent-3"
-              small="small"
-              @click="addTHP"
-            >THP</v-btn>
-          </div>
-          <v-text-field
-            class="my-2"
-            outlined
-            single-line
-            hide-details
-            type="number"
-            v-model.number="healthMod"
-          ></v-text-field>
+      <v-col class="heal-btns d-flex justify-center">
+        <div class="btn-stack">
           <v-btn
-            class="white--text"
+            class="white--text ma-1"
             :disabled="!healthMod"
-            color="red accent-3"
+            color="secondary accent-3"
             small="small"
-            @click="subtractHitPoints"
-          >Damage</v-btn>
+            @click="addHitPoints"
+          >
+            Heal
+          </v-btn>
+          <v-btn
+            class="white--text ma-1"
+            :disabled="!healthMod"
+            color="#FF6600"
+            small="small"
+            @click="addTHP"
+          >
+            THP
+          </v-btn>
+          <v-btn
+            class="white--text ma-1"
+            :disabled="!healthMod"
+            color="blue accent-3"
+            small="small"
+            @click="addShields"
+          >
+            Shields
+          </v-btn>
         </div>
+      </v-col>
+      <v-col class="text-center">
+        <v-text-field
+          class="my-2"
+          outlined
+          single-line
+          hide-details
+          type="number"
+          min="0"
+          v-model.number="healthMod"
+        ></v-text-field>
+        <v-btn
+          class="white--text"
+          :disabled="!healthMod"
+          color="secondary accent-3"
+          small
+          @click="subtractHitPoints"
+        >
+          <v-icon>mdi-skull</v-icon> Damage
+        </v-btn>
+        <v-checkbox
+          label="Bypass Shields"
+          v-model="bypassShields"
+        >Bypass Shields</v-checkbox>
+      </v-col>
+      <v-col>
+        Barrier Ticks
       </v-col>
     </v-row>
   </div>
@@ -49,7 +72,8 @@ export default {
   components: { MeCharacterSheetHealthCircle },
   data () {
     return {
-      healthMod: 0
+      healthMod: 0,
+      bypassShields: false
     }
   },
   methods: {
@@ -69,19 +93,26 @@ export default {
     },
     addShields () {
       this.hpData = {
-        attr: 'currentStats.temporaryHitPoints',
-        val: this.healthMod + this.temporary
+        attr: 'currentStats.shields.value',
+        val: Math.min(this.shields.value + this.healthMod, this.shields.max)
       }
     },
     subtractHitPoints () {
-      let hpDown = this.healthMod // 5 down, 10 thp 40 hp
+      let hpDown = this.healthMod // Shields, then THP, then HP
+      if (this.shields.value > 0 && !this.bypassShields) {
+        const shieldsDiff = this.shields.value - hpDown
+        this.hpData = {
+          attr: 'currentStats.shields.value',
+          val: Math.max(0, shieldsDiff)
+        }
+        hpDown = shieldsDiff < 0 ? -shieldsDiff : 0
+      }
       if (this.temporary > 0) {
         const tempDiff = this.temporary - hpDown
         this.hpData = {
           attr: 'currentStats.temporaryHitPoints',
           val: Math.max(0, tempDiff)
         }
-        console.log(tempDiff)
         hpDown = tempDiff < 0 ? -tempDiff : 0
       }
       const totalHp = Math.max(0, this.current - hpDown)
@@ -119,8 +150,20 @@ export default {
       return this.hpData.temporaryHitPoints || 0
     },
     shields () {
-      return this.hpData.shields || 10
+      return this.hpData.shields
     }
   }
 }
 </script>
+
+<style lang="scss">
+  .btn-stack {
+    display: flex;
+    flex-direction: column;
+  }
+  .heal-btns {
+    .v-btn {
+      width: 80px;
+    }
+  }
+</style>

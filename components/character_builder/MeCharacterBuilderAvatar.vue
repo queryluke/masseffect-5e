@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="d-flex justify-center">
     <v-dialog v-model="dialog" max-width="500">
       <template #activator="{ on, attrs }">
         <v-avatar
@@ -41,10 +41,10 @@ export default {
     },
     size () {
       return this.$vuetify.breakpoint.xs
-        ? 75
+        ? 150
         : this.$vuetify.breakpoint.smAndDown
           ? 125
-          : 200
+          : 150
     }
   }
 }

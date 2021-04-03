@@ -1,16 +1,18 @@
 <template>
-  <div>
+  <div class="d-flex justify-center">
     <v-row>
-      <v-col>
+      <v-col md="2">
         <me-character-builder-avatar />
       </v-col>
-      <v-col>
+      <v-col md="4">
         <div>
-          <me-character-sheet-character-name :character="character"/>
+          <me-character-sheet-character-name
+            :character="character"
+          />
           <me-character-builder-level-tracker :level="character.level"/>
         </div>
       </v-col>
-      <v-col>
+      <v-col md="6">
         <div>
           <me-character-sheet-health />
         </div>

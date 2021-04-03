@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="level"
-    class="d-flex align-center xpBar mb-2"
+    class="d-flex justify-center xpBar mb-2"
   >
     <v-btn>
       <v-chip
@@ -15,7 +15,7 @@
         :value="xp"
         height="20"
         rounded
-        style="min-width: 200px;"
+        style="min-width: 150px;"
       >
         {{xp}} / {{nextLevelInfo.xp}}
       </v-progress-linear>
@@ -70,7 +70,7 @@ export default {
 
 <style lang="scss">
   .xpBar {
-    min-width: 250px;
+    min-width: 100px;
 
     .v-chip__content {
       display: flex;

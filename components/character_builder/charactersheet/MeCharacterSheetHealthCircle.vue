@@ -1,23 +1,27 @@
 <template>
   <div>
-    {{shieldWidth}}
-    {{shieldPad}}
-    <div style="max-width: 130px; text-align: center;">
+    <div class="d-flex flex-column align-center text-center">
       <v-progress-circular
         :value="100 * current / maximum"
-        color="red"
+        color="secondary"
         :class="[$style.circle, $style.red]"
         :size="circleSize"
         rotate="270"
         width="10"
       >
         <div :class="$style.circle">
-          <h2>{{ current }}<span class="text-caption text--accent-3 blue--text" v-if="shields">
-              ({{ shields }})
-            </span><span class="text-caption text--accent-3 green--text" v-if="temporary">
+          <h2>{{ current }}</h2>
+          <div
+            v-if="shields || temporary"
+            style="margin-top: -10px;"
+          >
+            <span class="text-caption text--accent-3 blue--text" v-if="shields">
+              ({{ shields.value }})
+            </span>
+            <span class="text-caption text--accent-3 green--text" v-if="temporary">
               ({{ temporary }})
             </span>
-          </h2>
+          </div>
           <v-divider width="80" :class="$style.divider"></v-divider>
           <h2>{{ maximum }}</h2>
         </div>
@@ -27,18 +31,19 @@
         :color="'blue accent-3'"
         :class="[$style.circle, $style.blue]"
         :size="shieldSize"
-        :style="'opacity: '+ (0.5 + flicker) +'; margin-left: '+shieldPad.toString()+'; margin-top: '+shieldPad.toString()+';'"
+        :style="'opacity: '+ (0.5 + flicker) +'; margin-left: '+(shieldPad + shieldWidth).toString()+'px; margin-top: '+shieldPad.toString()+'px;'"
         :width="shieldWidth">
       </v-progress-circular>
       <v-progress-circular
         class="greenCircle"
         :value="100 * temporary / maximum"
-        :color="'green accent-3'"
+        :color="'#FF6600'"
         :class="$style.circle"
         :size="circleSize"
         :rotate="360 * current / maximum - 90"
         width="10">
       </v-progress-circular>
+      <v-btn class="mt-4">Rest</v-btn>
     </div>
   </div>
 </template>
@@ -61,10 +66,10 @@ export default {
   },
   computed: {
     shieldWidth () {
-      return 15 * this.shields / 10
+      return 10 * this.shields.value / this.shields.max
     },
     shieldPad () {
-      return (this.circleSize - this.shieldSize) / 2 + 'px' // this.shieldWidth / 2
+      return (this.circleSize - this.shieldSize) / 2 // this.shieldWidth / 2
     },
     shieldSize () {
       return this.circleSize + this.shieldWidth * 2
@@ -74,7 +79,7 @@ export default {
     }
   },
   created () {
-    this.pollData()
+    // this.pollData()
   }
 }
 </script>
