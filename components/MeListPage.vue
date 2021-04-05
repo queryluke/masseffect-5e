@@ -161,7 +161,7 @@ export default {
       default: (item, search = null, filters = [], selectedFilters = {}) => {
         const matches = []
         if (search && search.length > 0) {
-          matches.push(item.name.toLowerCase().includes(search))
+          matches.push(item.name.toLowerCase().includes(search.toLowerCase()))
         }
         for (const filter of filters) {
           // filter value
