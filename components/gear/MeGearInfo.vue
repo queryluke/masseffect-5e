@@ -3,6 +3,9 @@
     <me-gear-title v-if="title" :item="item" />
     <v-row>
       <v-col cols="12" :md="item.image ? 8 : 12" class="text-body-2">
+        <div v-if="item.type === 'Heavy Weapon'" class="font-italic font-weight-light">
+          Charges: {{ item.stats.rounds }}
+        </div>
         <me-html :content="item.html" />
       </v-col>
       <v-col cols="12" md="4" class="text-sm-center">
