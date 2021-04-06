@@ -45,15 +45,13 @@ export default {
           convertsTo: 'm',
           conversion: (value) => {
             const converted = (parseInt(value, 10) / 5) * 2
-            return converted > 20
-              ? (Math.round(converted / 10) * 10)
-              : converted < 2 && converted !== 0
-                ? converted === 0.4
-                  ? 0.5
-                  : converted === 0.8
-                    ? 1
-                    : 1.5
-                : converted
+            return converted >= 2 || converted === 0
+              ? converted
+              : converted === 0.4
+                ? 0.5
+                : converted === 0.8
+                  ? 1
+                  : 1.5
           }
         },
         {
@@ -162,19 +160,28 @@ export default {
         const conversionSearch = this.isImperial ? this.metrics : this.imperials
         const conversionObject = conversionSearch.find(i => i.abbr === this.unitObject.convertsTo)
         value = this.unitObject.conversion(this.value)
-        unitText = this.abbr ? conversionObject.abbr
-          : this.adj || value === 1 ? conversionObject.singular : conversionObject.plural
+        unitText = this.abbr
+          ? conversionObject.abbr
+          : this.adj || value === 1
+            ? conversionObject.singular
+            : conversionObject.plural
       } else {
         value = parseInt(this.value, 10)
-        unitText = this.abbr ? this.unitObject.abbr
-          : this.adj || value === 1 ? this.unitObject.singular : this.unitObject.plural
+        unitText = this.abbr
+          ? this.unitObject.abbr
+          : this.adj || value === 1
+            ? this.unitObject.singular
+            : this.unitObject.plural
       }
       if (this.numOnly) {
         return value
       }
       text = this.override ? this.override.replace('{metric}', unitText) : unitText
-      hyphen = this.adj ? '-'
-        : this.abbr ? '' : ' '
+      hyphen = this.adj
+        ? '-'
+        : this.abbr
+          ? ''
+          : ' '
       if (value === 0) {
         value = ''
       }

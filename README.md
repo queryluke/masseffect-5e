@@ -51,7 +51,7 @@ __Windows__ (note: you'll probably need to run the cmd as an administrator)
 mklink /D $PATH_TO_THIS_REPO\static\.data $PATH_TO_DATA_REPO\docs\$VERISON
 
 ## e.g.
-mklink /D E:\Sites\masseffect-5e\static\.data E:\Sites\masseffect-5e-data\docs\v130
+mklink /D E:\Sites\mass-effect\masseffect-5e\static\.data E:\Sites\mass-effect\masseffect-5e-data\docs\v130
 ```
 
 __Linux/Mac__
