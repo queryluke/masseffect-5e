@@ -134,11 +134,14 @@ export const getters = {
   drawer: state => state.drawer,
   jumpNav: state => state.jumpNav,
   rules: state => state.rules,
-  getData: state => (endpoint) => {
-    return typeof state.data[endpoint] === 'undefined' ? false : state.data[endpoint]
+  isLocaleSet: state => (locale) => {
+    return typeof state.data[locale] !== 'undefined'
   },
-  getItem: (state, getters) => (endpoint, id) => {
-    const data = getters.getData(endpoint)
+  getData: state => (locale, endpoint) => {
+    return typeof state.data[locale][endpoint] === 'undefined' ? false : state.data[locale][endpoint]
+  },
+  getItem: (state, getters) => (locale, endpoint, id) => {
+    const data = getters.getData(locale, endpoint)
     return data === false ? false : data.find(d => d.id === id)
   },
   pageTitle: state => state.pageTitle,
@@ -148,8 +151,12 @@ export const getters = {
 }
 
 export const mutations = {
-  setData (state, { endpoint, data }) {
-    state.data = { ...state.data, [endpoint]: data }
+  setData (state, { locale, endpoint, data }) {
+    const localeData = { ...state.data[locale], [endpoint]: data }
+    state.data = { ...state.data, [locale]: localeData }
+  },
+  initLocale (state, locale) {
+    state.data = { ...state.data, [locale]: {} }
   },
   drawer (state, value) {
     state.drawer = value
@@ -170,15 +177,24 @@ export const actions = {
     return await Promise.all(endpoints.map(i => dispatch('FETCH_DATA', i)))
   },
   async FETCH_DATA ({ getters, commit }, endpoint) {
-    let data = getters.getData(endpoint)
+    const locale = this.$i18n.locale
+    if (!getters.isLocaleSet()) {
+      commit('initLocale', locale)
+    }
+    let data = getters.getData(locale, endpoint)
     if (!data) {
-      data = await this.$http.$get(`${endpoint}.json`)
-      commit('setData', { endpoint, data })
+      try {
+        data = await this.$http.$get(`${locale}/${endpoint}.json`)
+        commit('setData', { locale, endpoint, data })
+      } catch (e) {
+        data = await this.$http.$get(`en/${endpoint}.json`)
+        commit('setData', { locale: 'en', endpoint, data })
+      }
     }
     return data
   },
   async FETCH_ITEM ({ getters, dispatch, commit }, { endpoint, id }) {
-    let data = getters.getData(endpoint)
+    let data = getters.getData(this.$i18n.locale, endpoint)
     if (!data) {
       data = await dispatch('FETCH_DATA', endpoint)
     }

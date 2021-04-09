@@ -1,5 +1,24 @@
 import colors from 'vuetify/es5/util/colors'
 
+const locales = [
+  {
+    code: 'en',
+    iso: 'en-US'
+  },
+  {
+    code: 'fr',
+    iso: 'fr-FR'
+  }
+]
+
+const messages = {}
+// TODO: would really like to lazy load i18n files, but it's not possible to import a .js file
+// TODO: alternaively should compile with webpack in the data repo
+const localeBase = `${process.env.DATA_PATH}/${process.env.VERSION.replace(/\./g, '')}`
+for (const locale of locales) {
+  messages[locale.code] = require(`${localeBase}/${locale.code}/messages`).messages
+}
+
 export default {
   ssr: false,
   /*
@@ -63,10 +82,28 @@ export default {
   */
   modules: [
     // Doc: https://http.nuxtjs.org/usage
+    'nuxt-i18n',
     '@nuxt/http'
   ],
   googleAnalytics: {
     id: 'UA-83740704-2'
+  },
+  /*
+  ** i18n
+  ** See https://i18n.nuxtjs.org/options-reference
+  */
+  i18n: {
+    locales,
+    defaultLocale: 'en',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      onlyOnRoot: true
+    },
+    vueI18n: {
+      fallbackLocale: 'en',
+      messages
+    }
   },
   /*
   ** http module configuration
@@ -75,6 +112,18 @@ export default {
   http: {
     baseURL: `${process.env.API_BASE_URL}/${process.env.VERSION.replace(/\./g, '')}`
     // baseURL: '/.me5e/'
+  },
+  /*
+  ** PWA
+  ** See https://pwa.nuxtjs.org/
+  */
+  pwa: {
+    manifest: {
+      name: 'Mass Effect 5e',
+      lang: 'en',
+      theme_color: colors.red.darken4,
+      short_name: 'Mass Effect 5e'
+    }
   },
   /*
   ** vuetify module configuration
@@ -125,17 +174,5 @@ export default {
   },
   publicRuntimeConfig: {
     version: process.env.VERSION
-  },
-  /*
-  ** PWA
-  ** See https://pwa.nuxtjs.org/
-  */
-  pwa: {
-    manifest: {
-      name: 'Mass Effect 5e',
-      lang: 'en',
-      theme_color: colors.red.darken4,
-      short_name: 'Mass Effect 5e'
-    }
   }
 }
