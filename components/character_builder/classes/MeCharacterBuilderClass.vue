@@ -2,7 +2,7 @@
   <div>
     <h2 class="text-center">Choose a Class</h2>
     <div class="d-flex align-center justify-center">
-      <me-character-builder-level-tracker :level="level" :c-prog="cProg"/>
+      <me-character-builder-level-tracker style="width: 100%;" :level="level" :c-prog="cProg"/>
     </div>
     <v-row>
       <v-col>
@@ -28,6 +28,7 @@
                 :class-index="index"
                 :id="item.id"
               />
+              <me-character-builder-class-prof-picker />
               <me-character-builder-class-features
                 :class-index="index"
                 :id="item.id"
