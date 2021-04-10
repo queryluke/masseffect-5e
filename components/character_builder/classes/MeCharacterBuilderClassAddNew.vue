@@ -98,7 +98,7 @@ export default {
     },
     filteredPowers () {
       return this.$store.getters.getData('powers')
-        .filter(i => i.availableClasses.includes(this.selectedClass.id))
+        .filter(i => i.classes.includes(this.selectedClass.id))
         .sort((a, b) => {
           return a.level === b.level
             ? a.id > b.id ? 1 : -1

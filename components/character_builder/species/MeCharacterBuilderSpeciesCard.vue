@@ -1,73 +1,6 @@
-<script>
-export default {
-  async fetch () {
-    this.heightWeightData = await this.$store.dispatch('FETCH_ITEM', {
-      endpoint: 'random-height-weight',
-      id: this.speciesData.id
-    })
-  },
-  data () {
-    return {
-      heightWeightData: {}
-    }
-  },
-  watch: {
-    speciesData (newVal, oldVal) {
-      this.$fetch()
-    }
-  },
-  computed: {
-    imperial () {
-      return this.$store.getters['user/imperial']
-    },
-    weight () {
-      return function () {
-        const hwd = {
-          val: '',
-          mod: ''
-        }
-        if (!this.heightWeightData) {
-          return hwd
-        } else if (this.imperial) {
-          hwd.val = this.heightWeightData.baseWeight
-          hwd.mod = this.heightWeightData.weightModifier
-        } else {
-          hwd.val = this.heightWeightData.weightKg + ' kg'
-          hwd.mod = this.heightWeightData.weightModifierKg
-        }
-        return hwd
-      }
-    },
-    height () {
-      return function () {
-        const hwd = {
-          val: '',
-          mod: ''
-        }
-        if (!this.heightWeightData) {
-          return hwd
-        } else if (this.imperial) {
-          hwd.val = this.heightWeightData.base
-          hwd.mod = this.heightWeightData.heightModifier
-        } else {
-          hwd.val = this.heightWeightData.baseCm + ' cm'
-          hwd.mod = this.heightWeightData.heightModifierCm
-        }
-        return hwd
-      }
-    }
-  },
-  props: {
-    speciesData: {
-      type: Object,
-      required: true
-    }
-  }
-}
-</script>
-
 <template lang="pug">
   div
+    div {{heightWeightData || speciesData || "not found"}}
     div(v-if="speciesData").text-left
       div(:class="$style.topSection")
         div(:class="$style.bioBlock").block
@@ -99,12 +32,15 @@ export default {
             tbody
               tr
                 td #[strong #[em Height] ]
-                td {{ height().val }}
-                td {{ height().mod }}
+                td {{ height.val }}
+                td {{ height.mod }}
               tr
                 td #[strong #[em Weight] ]
-                td {{ weight().val }}
-                td {{ weight().mod }}
+                td {{ weight.val }}
+                td {{ weight.mod }}
+              tr(v-if="speciesData.bioticPotential")
+                td #[strong #[em Biotic Potential] ]
+                td {{ speciesData.bioticPotential }}
           hr
 
           h4 Sociocultural Characteristics
@@ -122,14 +58,48 @@ export default {
               tr(v-if="speciesData.language")
                 td #[strong #[em Language] ]
                 td {{ speciesData.language }}
-              tr(v-if="speciesData.bioticPotential")
-                td #[strong #[em Biotic Potential] ]
-                td {{ speciesData.bioticPotential }}
         div
           small
             i {{speciesData.snippet}}
 
 </template>
+
+<script>
+export default {
+  computed: {
+    heightWeightData () {
+      return this.speciesData.randomDimensions
+    },
+    unitSystem () {
+      return this.$store.getters['user/imperial'] ? 'imperial' : 'metric'
+    },
+    weight () {
+      const base = this.heightWeightData.weight.base[this.unitSystem]
+      const mod = this.heightWeightData.weight.mod[this.unitSystem]
+      const units = this.unitSystem === 'imperial' ? ' lbs' : ' kg'
+      return {
+        val: base + units,
+        mod: mod.dieCount + 'd' + mod.dieType + (mod.divisor ? ' / ' + mod.divisor : '') + units
+      }
+    },
+    height () {
+      const base = this.heightWeightData.height.base[this.unitSystem]
+      const mod = this.heightWeightData.height.mod[this.unitSystem]
+      const units = this.unitSystem === 'imperial' ? '"' : ' cm'
+      return {
+        val: base + units,
+        mod: mod.dieCount + 'd' + mod.dieType + (mod.divisor ? ' / ' + mod.divisor : '') + units
+      }
+    }
+  },
+  props: {
+    speciesData: {
+      type: Object,
+      required: true
+    }
+  }
+}
+</script>
 
 <style module lang="scss">
   .topSection {
