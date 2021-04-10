@@ -8,7 +8,7 @@
           class="my-10"
         />
         <div class="display-2">
-          Player's Manual
+          {{ $t('site.players_manual') }}
         </div>
         <p class="title">
           {{ version }}
@@ -16,54 +16,53 @@
         <v-row justify="center">
           <v-col>
             <v-btn color="secondary" to="/changelog" nuxt>
-              Changelog
+              {{ $t('site.changelog') }}
             </v-btn>
           </v-col>
           <v-col>
             <v-btn color="secondary" to="/about" nuxt>
-              Join the community
+              {{ $t('site.join_community') }}
             </v-btn>
           </v-col>
           <v-col>
             <v-btn color="secondary" to="/license" nuxt>
-              License
+              {{ $t('site.license') }}
             </v-btn>
           </v-col>
         </v-row>
       </v-col>
     </v-row>
     <me-page-title v-else :title="pageTitle" />
-    <me-rule-card v-for="rule in rules" :key="rule.id" :item="rule" />
+    <me-manual-card v-for="section in sections" :key="section.id" :item="section" />
   </v-container>
 </template>
 
 <script>
 
 export default {
-  async fetch () {
-    this.$store.commit('pageTitle', this.pageTitle)
-    await this.$store.dispatch('FETCH_DATA', 'rules')
-    this.rules = this.$store.getters.getData('rules')
-      .filter(rule => rule.section === this.$route.params.id)
-      .sort((a, b) => a.order > b.order ? 1 : -1)
-    this.$store.commit('setCurrentRules', this.rules)
-  },
+  layout: 'manual',
   data () {
     return {
-      titles: {
-        intro: 'Introduction',
-        'character-creation': 'Step-By-Step Characters',
-        'beyond-first-level': 'Beyond 1st Level',
-        'using-ability-scores': 'Using Ability Scores',
-        missions: 'Missions',
-        equipment: 'Equipment',
-        finances: 'Finances',
-        vehicles: 'Vehicles',
-        combat: 'Combat',
-        powercasting: 'Powercasting',
-        bestiary: 'Bestiary'
-      },
-      rules: []
+      page: null,
+      sections: []
+    }
+  },
+  async fetch () {
+    const data = await this.$store.dispatch('FETCH_LOTS', ['manual', 'manual-index'])
+    this.page = data[1].find(i => i.id === this.$route.params.id)
+    this.$store.commit('pageTitle', this.pageTitle)
+    this.sections = this.page.sections.map((section) => {
+      const sectionText = data[0].find(i => i.id === section.id)
+      return { ...section, ...sectionText }
+    })
+    this.$store.commit('setCurrentRules', this.sections)
+  },
+  head () {
+    return {
+      title: `${this.pageTitle} | Mass Effect 5e`,
+      meta: [
+        { hid: 'description', name: 'description', content: 'Want to play D&D in the Mass Effect Universe? This manual has everything you need!' }
+      ]
     }
   },
   computed: {
@@ -74,17 +73,8 @@ export default {
       return this.$config.version
     },
     pageTitle () {
-      return this.titles[this.$route.params.id]
+      return this.page ? this.$t(`site.${this.page.title}`) : null
     }
-  },
-  head () {
-    return {
-      title: `${this.pageTitle} | Mass Effect 5e`,
-      meta: [
-        { hid: 'description', name: 'description', content: 'Want to play D&D in the Mass Effect Universe? This manual has everything you need!' }
-      ]
-    }
-  },
-  layout: 'manual'
+  }
 }
 </script>

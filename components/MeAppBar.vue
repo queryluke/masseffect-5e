@@ -23,15 +23,16 @@
     <v-spacer />
     <v-toolbar-items v-if="$vuetify.breakpoint.lgAndUp">
       <v-btn
-        v-for="item in mainNavigation"
+        v-for="item in navigation"
         :key="item.name"
-        :to="item.to"
+        :to="localePath(item.to)"
         text
         nuxt
         :href="item.href"
       >
-        {{ item.name }}
+        {{ $t(item.name) }}
       </v-btn>
+      <me-lang-picker />
     </v-toolbar-items>
     <!-- jumplink nav -->
     <v-toolbar-items v-if="$vuetify.breakpoint.mdAndDown">
@@ -39,7 +40,7 @@
         <v-icon>mdi-page-layout-sidebar-right</v-icon>
       </v-btn>
     </v-toolbar-items>
-    <template v-if="tabbed && $vuetify.breakpoint.smAndDown" v-slot:extension>
+    <template v-if="tabbed && $vuetify.breakpoint.smAndDown" #extension>
       <v-tabs
         v-model="tab"
         align-with-title
@@ -75,7 +76,14 @@ export default {
   },
   data () {
     return {
-      mobileSearchDialog: false
+      mobileSearchDialog: false,
+      navigation: [
+        { to: '/manual/intro', name: 'site.players_manual' },
+        { to: '/assets', name: 'site.assets' },
+        { to: '/changelog', name: 'site.changelog' },
+        { to: '/about', name: 'site.about' },
+        { href: 'https://versions.n7.world/v120/character-builder', name: 'site.character_builder' }
+      ]
     }
   },
   computed: {
@@ -83,7 +91,7 @@ export default {
       return this.$store.getters.mainNavigation
     },
     pageTitle () {
-      return this.$vuetify.breakpoint.smAndDown ? this.$store.getters.pageTitle : 'Mass Effect 5e'
+      return this.$vuetify.breakpoint.smAndDown ? this.$store.getters.pageTitle : this.$t('title')
     },
     drawer: {
       get () {
