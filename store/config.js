@@ -152,7 +152,8 @@ export const state = () => ({
       light: 'deep-purple lighten-2'
     },
     engineer: {
-      dark: 'amber darken-1'
+      dark: 'amber darken-1',
+      light: 'amber darken-1'
     },
     infiltrator: {
       dark: 'deep-orange darken-4',
@@ -195,12 +196,17 @@ export const getters = {
   rarityTextColors: state => state.rarityTextColors,
   classThemes: state => state.classThemes,
   darkMode: (state, getters, rootState, rootGetters) => rootGetters['user/darkMode'],
-  isDarkOnlyClassTheme: state => klass => typeof state.classThemes[klass].light === 'undefined',
+  isDarkOnlyClassTheme: state => klass => console.log(klass, state.classThemes[klass]) && state.classThemes[klass] && typeof state.classThemes[klass].light === 'undefined',
   classThemeHrColor: (state, getters) => (klass) => {
     if (getters.isDarkOnlyClassTheme(klass)) {
       return state.classThemes[klass].dark
     }
-    return state.classThemes[klass][getters.darkMode ? 'light' : 'dark']
+    return state.classThemes[klass]
+      ? state.classThemes[klass][getters.darkMode
+        ? 'light'
+        : 'dark'
+      ]
+      : 'dark'
   },
   classThemeTabColor: (state, getters) => (klass) => {
     if (getters.isDarkOnlyClassTheme(klass)) {
@@ -220,15 +226,18 @@ export const getters = {
   classThemeLight: (state, getters) => (klass) => {
     if (getters.isDarkOnlyClassTheme(klass)) {
       return state.classThemes[klass].dark
+    } else if (state.classThemes[klass]) {
+      return state.classThemes[klass].light
     }
-    return state.classThemes[klass].light
+    return 'dark'
   },
   classThemeTextOnDark: (state, getters) => klass => getters.isDarkOnlyClassTheme(klass) ? 'light' : 'dark',
   classThemeTabsMode: (state, getters) => (klass) => {
     return getters.isDarkOnlyClassTheme(klass)
       ? 'light'
       : getters.darkMode
-        ? 'dark' : 'light'
+        ? 'dark'
+        : 'light'
   },
   sklTypes: state => state.sklTypes,
   searchFilters: state => state.searchFilters,

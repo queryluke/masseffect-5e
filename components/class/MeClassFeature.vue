@@ -34,7 +34,8 @@ export default {
   },
   computed: {
     hrColor () {
-      return this.$store.getters['config/classThemeHrColor'](this.item.class)
+      // console.log(this.item)
+      return this.$store.getters['config/classThemeHrColor'](this.item.klass)
     }
   }
 }

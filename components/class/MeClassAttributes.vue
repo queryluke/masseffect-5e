@@ -26,7 +26,7 @@
         :key="prof.key"
         :label="prof.label"
       >
-        {{ item[prof.key].text }}
+        {{ item.profs[prof.key].text }}
       </me-stat-list-item>
     </me-stat-list>
     <me-hr
@@ -66,23 +66,23 @@ export default {
       profs: [
         {
           label: 'Armor',
-          key: 'armorProfs'
+          key: 'armor'
         },
         {
           label: 'Tools',
-          key: 'toolProfs'
+          key: 'tool'
         },
         {
           label: 'Weapons',
-          key: 'weaponProfs'
+          key: 'weapon'
         },
         {
           label: 'Saving throws',
-          key: 'savingThrows'
+          key: 'savingThrow'
         },
         {
           label: 'Skills',
-          key: 'skillProfs'
+          key: 'skill'
         }
       ]
     }

@@ -75,11 +75,12 @@ export default {
       return this.$store.getters.getItem('classes', this.classId)
     },
     subclasses () {
-      return this.$store.getters.getData('subclasses').filter(i => i.class === this.item.id)
+      return this.$store.getters.getData('subclasses').filter(i => i.klass === this.item.id)
     },
     classFeatures () {
+      // console.log(this.subclasses)
       // all class features
-      let features = this.$store.getters.getData('class-features').filter(i => i.class === this.item.id)
+      let features = this.$store.getters.getData('class-features').filter(i => i.klass === this.item.id)
       // filtered by level
       if (this.level) {
         features = features.filter(i => i.level === parseInt(this.level, 10))
@@ -88,7 +89,7 @@ export default {
         }
       } else {
         // add ABIs
-        for (const level of this.item.abiLevels) {
+        for (const level of this.item.progression.abi) {
           features.push(this.createAbi(level))
         }
       }
@@ -117,7 +118,7 @@ export default {
       return `${level}${this.$options.filters.ordinal(level)}`
     },
     createAbi (level) {
-      const addLevel = this.item.abiLevels.slice(this.item.abiLevels.indexOf(level) + 1).map(i => this.oLevel(i))
+      const addLevel = this.item.progression.abi.slice(this.item.progression.abi.indexOf(level) + 1).map(i => this.oLevel(i))
       const addLevelText = addLevel.length > 0 ? `and again at ${addLevel.join(', ')}, ` : ''
       let text = `<p>At ${this.oLevel(level)} level, ${addLevelText}you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. You can't increase an ability score above 20 using this feature.</p>`
       text += '<p>Using the optional feats rule, you can forgo taking this feature to take a feat of your choice instead.</p>'

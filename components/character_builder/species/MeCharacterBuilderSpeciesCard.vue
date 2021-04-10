@@ -1,6 +1,5 @@
 <template lang="pug">
   div
-    div {{heightWeightData || speciesData || "not found"}}
     div(v-if="speciesData").text-left
       div(:class="$style.topSection")
         div(:class="$style.bioBlock").block
