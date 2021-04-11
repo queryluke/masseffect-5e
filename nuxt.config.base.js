@@ -1,24 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
 
-const locales = [
-  {
-    code: 'en',
-    iso: 'en-US'
-  },
-  {
-    code: 'fr',
-    iso: 'fr-FR'
-  }
-]
-
-const messages = {}
-// TODO: would really like to lazy load i18n files, but it's not possible to import a .js file
-// TODO: alternaively should compile with webpack in the data repo
-const localeBase = `${process.env.DATA_PATH}/${process.env.VERSION.replace(/\./g, '')}`
-for (const locale of locales) {
-  messages[locale.code] = require(`${localeBase}/${locale.code}/messages`).messages
-}
-
 export default {
   ssr: false,
   /*
@@ -93,7 +74,20 @@ export default {
   ** See https://i18n.nuxtjs.org/options-reference
   */
   i18n: {
-    locales,
+    locales: [
+      {
+        code: 'en',
+        iso: 'en-US',
+        file: 'loader.js'
+      },
+      {
+        code: 'fr',
+        iso: 'fr-FR',
+        file: 'loader.js'
+      }
+    ],
+    lazy: true,
+    langDir: 'lang',
     defaultLocale: 'en',
     detectBrowserLanguage: {
       useCookie: true,
@@ -101,8 +95,7 @@ export default {
       onlyOnRoot: true
     },
     vueI18n: {
-      fallbackLocale: 'en',
-      messages
+      fallbackLocale: 'en'
     }
   },
   /*

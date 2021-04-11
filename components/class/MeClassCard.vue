@@ -39,9 +39,9 @@ export default {
   computed: {
     stats () {
       return [
-        { title: 'Hit Dice', value: `1d${this.item.hitDice}` },
-        { title: 'Primary Ability', value: this.item.primaryAbility },
-        { title: 'Saves', value: this.item.savingThrows.text }
+        { title: this.$t('classes.hit_dice'), value: this.$t('dice', { dieCount: 1, dieType: this.item.hitDie }) },
+        { title: this.$t('classes.primary_ability'), value: this.$t('lists.short_or_list', this.item.primaryAbility.length, this.item.primaryAbility) },
+        { title: this.$t('classes.saves'), value: this.$t('lists.short_comma_list', this.item.profs.savingThrow.has.length, this.item.profs.savingThrow.has) }
       ]
     }
   }

@@ -93,10 +93,10 @@ export default {
       settingsDialog: false,
       nav: [
         {
-          header: 'site.players_manual'
+          header: 'manual.title'
         },
         {
-          name: 'site.intro',
+          name: 'manual.intro',
           icon: 'mdi-book-open-variant',
           to: '/manual/intro'
         },
@@ -104,62 +104,61 @@ export default {
           name: 'site.rules',
           icon: 'mdi-gavel',
           items: [
-            { name: 'site.character_creation', icon: 'supervised_user_circle', to: '/manual/character-creation' },
-            { name: 'site.beyond_first_level', icon: 'tending_up', to: '/manual/beyond-first-level' },
-            { name: 'site.using_ability_scores', icon: 'gamepad', to: '/manual/using-ability-scores' },
-            { name: 'site.missions', icon: 'map', to: '/manual/missions' },
-            { name: 'site.equipment', icon: 'category', to: '/manual/equipment' },
-            { name: 'site.finances', icon: 'money', to: '/manual/finances' },
-            { name: 'site.vehicles', icon: '', to: '/manual/vehicles' },
-            { name: 'site.combat', icon: '', to: '/manual/combat' },
-            { name: 'site.powercasting', icon: '', to: '/manual/powercasting' },
-            { name: 'site.about_bestiary', icon: '', to: '/manual/bestiary' }
+            { name: 'manual.character_creation', icon: 'supervised_user_circle', to: '/manual/character-creation' },
+            { name: 'manual.beyond_first_level', icon: 'tending_up', to: '/manual/beyond-first-level' },
+            { name: 'manual.using_ability_scores', icon: 'gamepad', to: '/manual/using-ability-scores' },
+            { name: 'manual.missions', icon: 'map', to: '/manual/missions' },
+            { name: 'manual.equipment', icon: 'category', to: '/manual/equipment' },
+            { name: 'manual.finances', icon: 'money', to: '/manual/finances' },
+            { name: 'manual.vehicles', icon: '', to: '/manual/vehicles' },
+            { name: 'manual.combat', icon: '', to: '/manual/combat' },
+            { name: 'manual.powercasting', icon: '', to: '/manual/powercasting' },
+            { name: 'manual.about_bestiary', icon: '', to: '/manual/bestiary' }
           ]
         },
         {
-          name: 'site.characters',
+          name: 'character.title',
           icon: 'mdi-face-agent',
           items: [
-            { to: '/classes', name: 'site.classes' },
-            { to: '/species', name: 'site.species' },
-            { to: '/feats', name: 'site.feats' },
-            { to: '/backgrounds', name: 'site.backgrounds' }
+            { to: '/classes', name: { key: 'character.klass.title', count: 2 } },
+            { to: '/species', name: 'character.species.title' },
+            { to: '/feats', name: 'character.feat.title' },
+            { to: '/backgrounds', name: { key: 'character.background.title', count: 2 } }
           ]
         },
         {
-          name: 'site.equipment',
+          name: 'equipment.title',
           icon: 'mdi-hammer-wrench',
           items: [
-            { to: '/weapons', name: 'site.weapons' },
-            { to: '/armor', name: 'site.armor' },
-            { to: '/mods', name: 'site.mods' },
-            { to: '/gear', name: 'site.gear' },
-            { to: '/vehicles', name: 'site.vehicles' }
+            { to: '/weapons', name: { key: 'equipment.weapons.title', count: 2 } },
+            { to: '/armor', name: 'equipment.armor.title' },
+            { to: '/mods', name: { key: 'equipment.mods.title', count: 2 } },
+            { to: '/gear', name: 'equipment.gear.title' },
+            { to: '/vehicles', name: { key: 'equipment.vehicles.title', count: 2 } }
           ]
         },
         {
-          name: 'site.powers',
+          name: 'powers.title',
           icon: 'mdi-fire',
           to: '/powers'
         },
         {
-          name: 'site.bestiary',
+          name: 'bestiary.title',
           icon: 'mdi-paw',
           to: '/bestiary'
         },
         {
-          name: 'site.appendix',
+          name: 'appendix.title',
           icon: 'mdi-view-split-vertical',
           items: [
-            { to: '/appendix/conditions', name: 'site.conditions' },
-            { to: '/appendix/random-height-weight', name: 'site.random_height_weight' },
-            { to: '/appendix/skills', name: 'site.skills' },
-            { to: '/appendix/tool-profs', name: 'site.tool_profs' },
-            { to: '/appendix/weapon-properties', name: 'site.weapon_props' }
+            { to: '/appendix/conditions', name: 'conditions.title' },
+            { to: '/appendix/skills', name: 'skills.title' },
+            { to: '/appendix/tool-profs', name: 'tool_profs.title' },
+            { to: '/appendix/weapon-properties', name: 'equipment.weapons.properties.title' }
           ]
         },
         {
-          name: 'site.bookmarks',
+          name: 'site.pages.bookmarks.title',
           icon: 'mdi-book',
           to: '/bookmarks'
         },
@@ -170,27 +169,27 @@ export default {
           header: 'site.tools_guides'
         },
         {
-          name: 'site.character_builder',
-          to: '/',
+          name: 'site.generators.character_builder',
+          to: '/character-builder',
           icon: 'mdi-clipboard-account'
         },
         {
-          name: 'site.generators',
+          name: 'site.generators.title',
           icon: 'mdi-cog-sync',
           group: 'generator',
           items: [
-            { to: '/generators/loot', name: 'site.loot_generator' },
-            { to: '/generators/npc', name: 'site.npc_generator' }
+            { to: '/generators/loot', name: 'site.generators.loot_generator' },
+            { to: '/generators/npc', name: 'site.generators.npc_generator' }
           ]
         },
         {
-          name: 'site.guides',
+          name: 'guide.title',
           icon: 'mdi-puzzle',
           group: 'guide',
           items: [
-            { to: '/guide/armor-creation', name: 'site.creating_armor' },
-            { to: '/guide/vehicle-creation', name: 'site.creating_vehicles' },
-            { to: '/guide/encounter-creation', name: 'site.creating_encounters' }
+            { to: '/guide/armor-creation', name: 'guide.creating_armor' },
+            { to: '/guide/vehicle-creation', name: 'guide.creating_vehicles' },
+            { to: '/guide/encounter-creation', name: 'guide.creating_encounters' }
           ]
         }
       ]
@@ -210,10 +209,10 @@ export default {
       if (this.$vuetify.breakpoint.mdAndDown) {
         navigation.push({ divider: true })
         navigation.push({ header: 'title' })
-        navigation.push({ to: '/assets', name: 'site.assets' })
-        navigation.push({ to: '/changelog', name: 'site.changelog' })
-        navigation.push({ to: '/about', name: 'site.about' })
-        navigation.push({ to: '/license', name: 'site.license' })
+        navigation.push({ to: '/assets', name: 'site.pages.assets.title' })
+        navigation.push({ to: '/changelog', name: 'site.pages.changelog.title' })
+        navigation.push({ to: '/about', name: 'site.pages.about.title' })
+        navigation.push({ to: '/license', name: 'site.pages.license.title' })
       }
       return navigation
     },

@@ -13,7 +13,7 @@
     <!-- ME5e Icon -->
     <nuxt-link to="/">
       <v-avatar tile size="24">
-        <img src="/icon.png" :alt="`Mass Effect 5e icon`">
+        <img src="/static/icon.png" :alt="`Mass Effect 5e icon`">
       </v-avatar>
     </nuxt-link>
     <!-- Page Title -->
@@ -78,11 +78,11 @@ export default {
     return {
       mobileSearchDialog: false,
       navigation: [
-        { to: '/manual/intro', name: 'site.players_manual' },
-        { to: '/assets', name: 'site.assets' },
-        { to: '/changelog', name: 'site.changelog' },
-        { to: '/about', name: 'site.about' },
-        { href: 'https://versions.n7.world/v120/character-builder', name: 'site.character_builder' }
+        { to: '/manual/intro', name: 'manual.title' },
+        { to: '/assets', name: 'site.pages.assets.title' },
+        { to: '/changelog', name: 'site.pages.changelog.title' },
+        { to: '/about', name: 'site.pages.about.title' },
+        { href: 'https://versions.n7.world/v120/character-builder', name: 'site.generators.character_builder' }
       ]
     }
   },

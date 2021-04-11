@@ -53,7 +53,7 @@ export const mutations = {
     state.jumpNav = value
   },
   pageTitle (state, value) {
-    state.pageTitle = value
+    state.pageTitle = typeof value === 'object' ? this.$i18n.tc(...value) : this.$i18n.t(value)
   },
   setCurrentRules (state, value) {
     state.rules = value

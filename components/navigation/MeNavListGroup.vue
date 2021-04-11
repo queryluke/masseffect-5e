@@ -2,7 +2,9 @@
   <v-list-group :prepend-icon="icon" :group="group" no-action>
     <template #activator>
       <v-list-item-content>
-        <v-list-item-title>{{ $t(text) }}</v-list-item-title>
+        <v-list-item-title>
+          {{ displayText }}
+        </v-list-item-title>
       </v-list-item-content>
     </template>
     <template v-for="subItem in items">
@@ -20,7 +22,7 @@ export default {
   name: 'MeNavListGroup',
   props: {
     text: {
-      type: String,
+      type: [String, Object],
       required: true
     },
     icon: {
@@ -39,6 +41,9 @@ export default {
   computed: {
     group () {
       return `(${this.items.map(i => `(^${this.localePath(i.to)}$|^${this.localePath(i.to)}/.*?)`).join('|')})`
+    },
+    displayText () {
+      return this.text.count ? this.$tc(this.text.key, this.text.count) : this.$t(this.text)
     }
   }
 }

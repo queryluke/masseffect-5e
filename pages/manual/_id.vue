@@ -1,5 +1,5 @@
 <template>
-  <v-container v-if="!$fetchState.pending">
+  <v-container>
     <v-row v-if="manualIntroduction && $vuetify.breakpoint.mdAndUp" justify="center">
       <v-col cols="12" sm="10" md="8" lg="6" class="text-center">
         <v-img
@@ -8,7 +8,7 @@
           class="my-10"
         />
         <div class="display-2">
-          {{ $t('site.players_manual') }}
+          {{ $t('manual.title') }}
         </div>
         <p class="title">
           {{ version }}
@@ -16,7 +16,7 @@
         <v-row justify="center">
           <v-col>
             <v-btn color="secondary" to="/changelog" nuxt>
-              {{ $t('site.changelog') }}
+              {{ $t('site.pages.changelog.title') }}
             </v-btn>
           </v-col>
           <v-col>
@@ -26,13 +26,13 @@
           </v-col>
           <v-col>
             <v-btn color="secondary" to="/license" nuxt>
-              {{ $t('site.license') }}
+              {{ $t('site.pages.license.title') }}
             </v-btn>
           </v-col>
         </v-row>
       </v-col>
     </v-row>
-    <me-page-title v-else :title="pageTitle" />
+    <me-page-title v-else />
     <me-manual-card v-for="section in sections" :key="section.id" :item="section" />
   </v-container>
 </template>
@@ -41,25 +41,23 @@
 
 export default {
   layout: 'manual',
-  data () {
-    return {
-      page: null,
-      sections: []
-    }
-  },
-  async fetch () {
-    const data = await this.$store.dispatch('FETCH_LOTS', ['manual', 'manual-index'])
-    this.page = data[1].find(i => i.id === this.$route.params.id)
-    this.$store.commit('pageTitle', this.pageTitle)
-    this.sections = this.page.sections.map((section) => {
+  async asyncData ({ params, store }) {
+    const data = await store.dispatch('FETCH_LOTS', ['manual', 'manual-index'])
+    const page = data[1].find(i => i.id === params.id)
+    const sections = page.sections.map((section) => {
       const sectionText = data[0].find(i => i.id === section.id)
       return { ...section, ...sectionText }
     })
-    this.$store.commit('setCurrentRules', this.sections)
+    store.commit('pageTitle', page.title)
+    store.commit('setCurrentRules', sections)
+    return {
+      page,
+      sections
+    }
   },
   head () {
     return {
-      title: `${this.pageTitle} | Mass Effect 5e`,
+      title: `${this.$store.getters.pageTitle} | Mass Effect 5e`,
       meta: [
         { hid: 'description', name: 'description', content: 'Want to play D&D in the Mass Effect Universe? This manual has everything you need!' }
       ]
@@ -71,9 +69,6 @@ export default {
     },
     version () {
       return this.$config.version
-    },
-    pageTitle () {
-      return this.page ? this.$t(`site.${this.page.title}`) : null
     }
   }
 }

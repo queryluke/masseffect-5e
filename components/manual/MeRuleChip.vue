@@ -1,26 +1,34 @@
 <template>
-  <div :id="item.id" class="mb-10">
-    <h2 class="text-h4 my-3">
-      {{ item.title }}
-      <me-rule-chip small :item="item" />
-    </h2>
-    <me-hr />
-    <div>
-      <me-html :content="item.html" />
-    </div>
-  </div>
+  <v-chip
+    v-if="hasChip"
+    :color="chipColor"
+    :text-color="chipTextColor"
+    class="ml-3"
+    :small="small"
+    :x-small="xSmall"
+  >
+    {{ chipText }}
+  </v-chip>
 </template>
 
 <script>
 
 export default {
-  name: 'MeManualCard',
+  name: 'MeRuleChip',
   props: {
     item: {
       type: Object,
       default: () => {
         return {}
       }
+    },
+    small: {
+      type: Boolean,
+      default: false
+    },
+    xSmall: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {

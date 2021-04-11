@@ -14,12 +14,7 @@
           </v-list-item-title>
         </v-list-item-content>
         <v-list-item-action>
-          <v-chip v-if="rule.new" x-small color="info">
-            new
-          </v-chip>
-          <v-chip v-if="rule.change" x-small color="warning" text-color="black">
-            change
-          </v-chip>
+          <me-rule-chip x-small :item="rule" />
         </v-list-item-action>
       </v-list-item>
     </v-list>
