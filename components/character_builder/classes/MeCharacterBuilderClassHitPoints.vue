@@ -3,6 +3,7 @@
     <v-row>
       <v-col>
         <h3>Hit Points</h3>
+        {{hitPoints}}
       </v-col>
     </v-row>
     <v-row class="hpSlots">
@@ -71,7 +72,7 @@ export default {
   },
   computed: {
     hitDie () {
-      return this.$store.getters.getData('classes').find(this.getClassById).hitDice
+      return this.$store.getters.getData('classes').find(this.getClassById).hitDie
     },
     hitPoints: {
       get () {

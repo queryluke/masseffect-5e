@@ -70,7 +70,7 @@ export default {
       return (_inputData.id === this.id)
     },
     filterByClass (_inputData) {
-      return (_inputData.class === this.id)
+      return (_inputData.klass === this.id)
     },
     filterBySubclass (_inputData) {
       return (this.charSubclass && _inputData.subclass === this.charSubclass.id)
@@ -84,10 +84,11 @@ export default {
       return this.$store.getters.getData('classes').find(this.filterById)
     },
     subclassData () {
+      console.log(this.classData)
       return {
         list: this.$store.getters.getData('subclasses').filter(this.filterByClass),
-        levels: this.classData.subclassProgression,
-        first: this.classData.subclassProgression.level[0]
+        levels: this.classData.progression.subclass,
+        first: this.classData.progression.subclass[0]
       }
     },
     featureData () {

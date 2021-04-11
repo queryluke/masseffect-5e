@@ -146,7 +146,7 @@ export default {
       return this.$store.getters.getData('feats')
     },
     abiLevels () {
-      const abiLevels = this.$store.getters.getData('classes').find(this.filterById).abiLevels
+      const abiLevels = this.$store.getters.getData('classes').find(this.filterById).progression.abi
       return abiLevels.filter(this.filterByAbiLevel)
     },
     abiArray () {

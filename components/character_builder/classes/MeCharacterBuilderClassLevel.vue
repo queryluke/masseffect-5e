@@ -80,8 +80,8 @@ export default {
     subclassInfo () {
       return {
         list: this.$store.getters.getData('subclasses').filter(this.getClassById),
-        levels: this.classInfo.subclassProgression,
-        first: this.classInfo.subclassProgression.level[0]
+        levels: this.classInfo.progression.subclass,
+        first: this.classInfo.progression.subclass[0]
       }
     },
     charSubclass: {
@@ -93,7 +93,7 @@ export default {
       }
     },
     hitDie () {
-      return this.classInfo.hitDice
+      return this.classInfo.hitDie
     },
     hitPoints: {
       get () {

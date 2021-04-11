@@ -135,7 +135,7 @@ export default {
         id: sc.id,
         name: sc.name,
         subclass: '',
-        hitPoints: [sc.hitDice],
+        hitPoints: [sc.hitDie],
         abilityScoreImprovements: [],
         levels: 1
       }
