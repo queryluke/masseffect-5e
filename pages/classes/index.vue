@@ -26,7 +26,7 @@ export default {
     }
   },
   async fetch () {
-    this.$store.commit('pageTitle', this.$t('site.classes'))
+    this.$store.commit('pageTitle', this.$tc('character.klass.title', 2))
     this.items = await this.$store.dispatch('FETCH_DATA', 'classes')
   },
   head () {

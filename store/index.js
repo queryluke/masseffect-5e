@@ -53,7 +53,7 @@ export const mutations = {
     state.jumpNav = value
   },
   pageTitle (state, value) {
-    state.pageTitle = typeof value === 'object' ? this.$i18n.tc(...value) : this.$i18n.t(value)
+    state.pageTitle = value
   },
   setCurrentRules (state, value) {
     state.rules = value
@@ -66,18 +66,17 @@ export const actions = {
   },
   async FETCH_DATA ({ getters, commit }, endpoint) {
     const locale = this.$i18n.locale
-    if (!getters.isLocaleSet()) {
+    if (!getters.isLocaleSet(locale)) {
       commit('initLocale', locale)
     }
     let data = getters.getData(locale, endpoint)
     if (!data) {
       try {
         data = await this.$http.$get(`${locale}/${endpoint}.json`)
-        commit('setData', { locale, endpoint, data })
       } catch (e) {
         data = await this.$http.$get(`en/${endpoint}.json`)
-        commit('setData', { locale: 'en', endpoint, data })
       }
+      commit('setData', { locale, endpoint, data })
     }
     return data
   },

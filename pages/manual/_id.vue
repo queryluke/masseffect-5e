@@ -41,14 +41,14 @@
 
 export default {
   layout: 'manual',
-  async asyncData ({ params, store }) {
+  async asyncData ({ params, store, i18n }) {
     const data = await store.dispatch('FETCH_LOTS', ['manual', 'manual-index'])
     const page = data[1].find(i => i.id === params.id)
     const sections = page.sections.map((section) => {
       const sectionText = data[0].find(i => i.id === section.id)
       return { ...section, ...sectionText }
     })
-    store.commit('pageTitle', page.title)
+    store.commit('pageTitle', i18n.t(page.title))
     store.commit('setCurrentRules', sections)
     return {
       page,

@@ -1,13 +1,9 @@
 <template>
   <div>
-    <p
-      class="text-h6"
-    >
-      {{ item.name }}
+    <p class="text-h6">
+      <slot name="title" />
     </p>
-    <me-html
-      :content="item.html"
-    />
+    <slot />
     <me-hr
       v-if="hr"
       :size="hrSize"
@@ -19,9 +15,9 @@
 <script>
 export default {
   props: {
-    item: {
-      type: Object,
-      default: () => {}
+    klassId: {
+      type: String,
+      default: null
     },
     hr: {
       type: Boolean,
@@ -34,7 +30,7 @@ export default {
   },
   computed: {
     hrColor () {
-      return this.$store.getters['config/classThemeHrColor'](this.item.class)
+      return this.$store.getters['config/classThemeHrColor'](this.klassId)
     }
   }
 }
