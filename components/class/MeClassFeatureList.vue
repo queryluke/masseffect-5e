@@ -1,36 +1,32 @@
 <template>
   <div v-if="!$fetchState.pending">
-    <template v-for="(feature, index) in features">
+    <template v-for="(feature, index) in displayFeatures">
       <me-class-feature-item
         :key="feature.id"
         :item="feature"
-        :hr="index !== features.length - 1"
+        :hr="index !== displayFeatures.length - 1"
         :hr-size="hrSize"
       />
     </template>
-    <div v-if="includeSubclass">
-      <me-subclass-feature-list :klass-id="item.id" :level="level" />
-    </div>
   </div>
 </template>
 
 <script>
+import { KlassMixins } from '~/mixins/klassMixins'
+
 export default {
+  mixins: [KlassMixins],
   props: {
     klassId: {
       type: String,
       required: true
     },
-    abiArray: {
+    abis: {
       type: [Array, Boolean],
       default: () => false
     },
     level: {
       type: [Number, Boolean],
-      default: false
-    },
-    includeSubclass: {
-      type: Boolean,
       default: false
     },
     subclass: {
@@ -49,41 +45,25 @@ export default {
   },
   async fetch () {
     const data = await this.$store.dispatch('FETCH_DATA', 'class-features')
-    const features = data.slice()
-    if (this.abiArray) {
-      features.concat(this.abis)
-    }
-    this.features = features.filter((i) => {
-      const levelTest = this.level ? i.level === this.level : true
-      const subclassTest = this.subclass ? i.subclass === this.subclass : !i.subclass
-      return i.klass === this.klassId && subclassTest && levelTest
-    }).sort((a, b) => {
-      return a.level === b.level
-        ? a.id > b.id ? -1 : 1
-        : a.level > b.level ? 1 : -1
-    })
+    this.features = data.slice().filter(i => i.klass === this.klassId)
   },
   computed: {
-    abis () {
-      if (!this.abiArray) {
-        return false
-      }
-      const abiLevels = this.abiArray.slice()
-      const first = abiLevels.shift
-      const abiText = this.$t('character.klass.progression.abi.text', {
-        level: this.$t('level.nth', {
-          level: this.$t(`numbers.ordinal[${first}]`)
-        }),
-        and_list: this.$t('lists.and_list', abiLevels.map(i => this.$t(`numbers.ordinal[${i}]`)))
+    displayFeatures () {
+      const features = this.features.filter((i) => {
+        const levelTest = this.level ? i.level === this.level : true
+        const subclassTest = this.subclass ? i.subclass === this.subclass : !i.subclass
+        return levelTest && subclassTest
       })
-      return this.item.progression.abi.map((i) => {
-        return {
-          name: this.$t('character.klass.progression.abi.title'),
-          id: `${this.item.id}-ability-score-increase-${i}`,
-          i,
-          class: this.item.id,
-          html: `<p>${abiText}</p><p>${this.$t('character.klass.abi.progression.feat_text')}</p>`
+      if (this.abis && !this.subclass) {
+        const pushAbi = this.createAbiFeatures(this.abis, this.level || this.abis[0])
+        if (pushAbi) {
+          features.push(pushAbi)
         }
+      }
+      return features.sort((a, b) => {
+        return a.level === b.level
+          ? a.id > b.id ? -1 : 1
+          : a.level > b.level ? 1 : -1
       })
     }
   }

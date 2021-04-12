@@ -13,7 +13,7 @@
     <!-- ME5e Icon -->
     <nuxt-link to="/">
       <v-avatar tile size="24">
-        <img src="/static/icon.png" :alt="`Mass Effect 5e icon`">
+        <img src="/icon.png" :alt="`Mass Effect 5e icon`">
       </v-avatar>
     </nuxt-link>
     <!-- Page Title -->

@@ -63,7 +63,7 @@
     </me-class-feature>
 
     <!-- Features -->
-    <me-class-feature-list :klass-id="item.id" />
+    <me-class-feature-list :klass-id="item.id" :abis="item.progression.abi" />
   </div>
 </template>
 
@@ -76,32 +76,6 @@ export default {
     item: {
       type: Object,
       required: true
-    }
-  },
-  data () {
-    return {
-      profs: [
-        {
-          label: 'Armor',
-          key: 'armorProfs'
-        },
-        {
-          label: 'Tools',
-          key: 'toolProfs'
-        },
-        {
-          label: 'Weapons',
-          key: 'weaponProfs'
-        },
-        {
-          label: 'Saving throws',
-          key: 'savingThrows'
-        },
-        {
-          label: 'Skills',
-          key: 'skillProfs'
-        }
-      ]
     }
   }
 }

@@ -71,6 +71,7 @@ export const actions = {
     }
     let data = getters.getData(locale, endpoint)
     if (!data) {
+      console.log(`getting ${endpoint}`)
       try {
         data = await this.$http.$get(`${locale}/${endpoint}.json`)
       } catch (e) {

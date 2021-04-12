@@ -20,7 +20,7 @@
           <tr v-if="powerCastingColumnCount > 0 && $vuetify.breakpoint.mdAndUp">
             <th :colspan="powerCastingHeaderOffset" />
             <th :colspan="powerCastingColumnCount" class="text-center">
-              {{ $t('character.klass.progression.columns.power_slots') }}
+              {{ $t('character.klass.progression.columns.power_slots_by_power_level') }}
             </th>
           </tr>
         </thead>
@@ -76,6 +76,15 @@
       </template>
 
       <template
+        #[`item.power_level`]="{ item: featureItem }"
+      >
+        <span class="text-center">
+          {{ $t(`numbers.ordinal[${featureItem.power_level}]`) }}
+        </span>
+      </template>
+
+      <!--
+      <template
         #[`header.psByPl`]="{ header: psByPlHeader }"
       >
         <tr v-if="$vuetify.breakpoint.xs">
@@ -92,6 +101,7 @@
           v-intersect="{ handler: onIntersect, threshold: [1] }"
         />
       </template>
+      -->
     </v-data-table>
 
     <v-footer
@@ -132,7 +142,7 @@
           :color="classFillDark"
         >
           <v-toolbar-title>
-            {{ selectedRow.level }} Level
+            {{ $t('level.nth', { level: selectedRow.level }) }}
           </v-toolbar-title>
           <v-spacer />
           <v-btn
@@ -145,11 +155,11 @@
         </v-toolbar>
         <v-card-text>
           <me-class-feature-list
-            :class-id="item.id"
+            :klass-id="item.id"
+            :abis="item.progression.abi"
             :level="selectedLevel"
-            include-subclass
-            show-subclass-header
           />
+          <me-subclass-feature-list v-if="isSubclassLevel" :klass-id="item.id" :level="selectedLevel" />
         </v-card-text>
       </v-card>
     </v-dialog>
@@ -185,6 +195,9 @@ export default {
   computed: {
     selectedLevel () {
       return this.selectedRow ? this.selectedRow.id : false
+    },
+    isSubclassLevel () {
+      return this.item.progression.subclass.includes(this.selectedLevel)
     },
     classFillDark () {
       return this.$store.getters['config/classThemeDark'](this.item.id)

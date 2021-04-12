@@ -1,6 +1,6 @@
 <template>
   <v-card
-    :to="{ name: 'species-id', params: { id: item.id } }"
+    :to="localePath({ name: 'species-id', params: { id: item.id } })"
     nuxt
     hover
     class="flex-grow-1"
@@ -17,19 +17,31 @@
         Racial Traits
       </p>
       <p>
-        <me-species-ability-score-increase-summary :data="item.abilityScoreIncrease" />, {{ item.traits.map(i => i.name).join(', ') }}
+        {{ traitsPreview }}
       </p>
     </v-card-text>
   </v-card>
 </template>
 
 <script>
+import { SpeciesMixins } from '~/mixins/speciesMixins'
+
 export default {
+  mixins: [SpeciesMixins],
   props: {
     item: {
       type: Object,
       default: () => {}
     }
+  },
+  data () {
+    return {
+      traits: []
+    }
+  },
+  async fetch () {
+    const data = await this.$store.dispatch('FETCH_DATA', 'traits')
+    this.traits = data.filter(i => i.species === this.item.id)
   }
 }
 </script>

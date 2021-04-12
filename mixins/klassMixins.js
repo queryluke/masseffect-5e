@@ -1,7 +1,8 @@
 export const KlassMixins = {
   computed: {
     powerCastingColumnCount () {
-      return this.item.progression.columns.find(p => p.label === 'power_slots').values.length
+      const ps = this.item.progression.columns.find(p => p.label === 'power_slots_by_power_level')
+      return ps ? ps.values.length : 0
     },
     powerCastingHeaderOffset () {
       return this.headerArray.length - this.powerCastingColumnCount
@@ -20,7 +21,7 @@ export const KlassMixins = {
         }
       ]
       for (const p of this.item.progression.columns) {
-        if (p.label === 'power_slots') {
+        if (p.label === 'power_slots_by_power_level') {
           for (let l = 0; l < p.values.length; l++) {
             array.push({
               text: this.$t(`numbers.ordinal[${l + 1}]`),
@@ -50,7 +51,7 @@ export const KlassMixins = {
         for (const p of this.item.progression.columns) {
           if (typeof p.values === 'undefined') {
             output[p.label] = this.getFeatureTextByLevel(row.level)
-          } else if (p.label === 'power_slots') {
+          } else if (p.label === 'power_slots_by_power_level') {
             for (let l = 0; l < p.values.length; l++) {
               const val = p.values[l][row.level - 1]
               output[`powerSlots${l}`] = val === 0 ? '-' : val
@@ -65,6 +66,26 @@ export const KlassMixins = {
     }
   },
   methods: {
+    createAbiFeatures (abis, level) {
+      if (!abis.includes(level)) {
+        return false
+      }
+      const abiLevels = abis.slice(abis.indexOf(level))
+      const first = abiLevels.shift()
+      const abiText = this.$t('character.klass.progression.abi.text', {
+        level: this.$t('level.nth', {
+          level: this.$t(`numbers.ordinal[${first}]`)
+        }),
+        and_list: this.$t(`lists.and_list[${abiLevels.length}]`, abiLevels.map(i => this.$t(`numbers.ordinal[${i}]`)))
+      })
+      return {
+        name: this.$t('character.klass.progression.abi.title'),
+        id: `${this.klassId}-ability-score-increase-${first}`,
+        level: first,
+        klass: this.klassId,
+        html: `<p>${abiText}</p><p>${this.$t('character.klass.progression.abi.feat_text')}</p>`
+      }
+    },
     minHitDieRoll (hitDie) {
       return Math.ceil((hitDie + 1) / 2)
     },

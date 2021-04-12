@@ -14,14 +14,14 @@
 <script>
 
 export default {
-  async fetch () {
-    this.$store.commit('pageTitle', 'Species')
-    this.items = await this.$store.dispatch('FETCH_DATA', 'species')
-  },
   data () {
     return {
       items: [...Array(9).keys()]
     }
+  },
+  async fetch () {
+    this.$store.commit('pageTitle', this.$t('character.species.title'))
+    this.items = await this.$store.dispatch('FETCH_DATA', 'species')
   },
   head () {
     return {
