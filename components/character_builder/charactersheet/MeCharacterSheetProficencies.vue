@@ -16,7 +16,7 @@ export default {
     },
     profs () {
       const startingClass = this.character.classes[0]
-      const startingClassData = startingClass && this.classes.find(({ name }) => name === startingClass.name)
+      const startingClassData = startingClass && this.classes.find(({ id }) => id === startingClass.id)
       const fromStartingClass = startingClassData && [
         startingClassData.weaponProfs.mandatory.map(name => ({
           name,

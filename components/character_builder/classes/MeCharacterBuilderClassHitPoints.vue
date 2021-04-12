@@ -3,7 +3,6 @@
     <v-row>
       <v-col>
         <h3>Hit Points</h3>
-        {{hitPoints}}
       </v-col>
     </v-row>
     <v-row class="hpSlots">
@@ -64,7 +63,6 @@ export default {
       this.hitPoints = tempArr
     },
     updateHpField (index, value) {
-      // console.log(index + 1, value)
       const tempArr = [...this.hitPoints]
       tempArr[index + 1] = value
       this.hitPoints = tempArr

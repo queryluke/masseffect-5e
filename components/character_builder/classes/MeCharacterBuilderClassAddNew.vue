@@ -54,7 +54,6 @@ export default {
   },
   methods: {
     changeTab (value) {
-      // console.log(value)
       this.tab = value
     },
     changeTabByIndex (tabId) {

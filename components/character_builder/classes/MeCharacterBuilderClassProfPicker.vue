@@ -19,10 +19,26 @@ export default {
       return this.character.classes[0]
     },
     startingClassData () {
-      return this.startingClass && this.classes.find(({ name }) => name === this.startingClass.name)
+      return this.startingClass && this.classes.find(({ id }) => id === this.startingClass.id)
     },
     weaponProfs () {
-      return this.startingClassData.weaponProfs
+      return {
+        ...this.startingClassData.profs.weapon,
+        title: 'Weapons',
+        visible: this.startingClassData.profs.weapon.has.length
+      }
+    },
+    armorProfs () {
+      return {
+        ...this.startingClassData.profs.armor,
+        title: 'Armor'
+      }
+    },
+    toolProfs () {
+      return this.startingClassData.profs.tool
+    },
+    skillProfs () {
+      return this.startingClassData.profs.skill
     },
     profs () {
       const fromStartingClass = this.startingClassData && [

@@ -34,22 +34,17 @@
           <template
             v-if="abilityScoreImprovements[index] && abilityScoreImprovements[index].type === 'Ability Score Improvement'"
           >
-            <v-col cols="4">
+            <v-col
+              cols="4"
+              v-for="(abi, indexx) in abilityScoreImprovements[index].abilitiesIncreased || 2"
+              :key="indexx"
+            >
               <v-autocomplete
                 class="flex"
                 :items="abiArray"
                 label="Chosen Ability Score Improvement"
-                :value="getAbiValue(abilityScoreImprovements[index], index, 0)"
-                @change="updateAbiScore(abilityScoreImprovements[index], $event, index, 0)"
-              />
-            </v-col>
-            <v-col cols="4">
-              <v-autocomplete
-                class="flex"
-                :items="abiArray"
-                label="Chosen Ability Score Improvement"
-                :value="getAbiValue(abilityScoreImprovements[index], index, 1)"
-                @change="updateAbiScore(abilityScoreImprovements[index], $event, index, 1)"
+                :value="abi.name/* getAbiValue(abilityScoreImprovements[index], index, 1) */"
+                @change="updateAbiScore(abilityScoreImprovements[index], $event, index, indexx)"
               />
             </v-col>
           </template>
@@ -84,7 +79,6 @@ export default {
     cleanAbi () {
       let ta = [...this.abilityScoreImprovements]
       const abl = [...this.abiLevels]
-      // console.log(abl, ta)
       ta = ta.slice(0, abl.length)
       this.abilityScoreImprovements = ta
     },
@@ -117,22 +111,20 @@ export default {
       const ta = [...this.abilityScoreImprovements]
       const abiType = 'Ability Score Improvement'
       if (!asiObj.abilitiesIncreased) {
-        console.log('init asi object at index ')
         ta[asiIndex] = { // this particular level's asi values
           type: abiType,
-          abilitiesIncreased: [{ [scoreVal]: 1 }] // {Strength: 2} or {Strength: 1, Wisdom: 1}
+          abilitiesIncreased: { [scoreVal]: 1 } // {Strength: 2} or {Strength: 1, Wisdom: 1}
         }
       }
       if (scoreIndex > ta[asiIndex].abilitiesIncreased.length) {
         scoreIndex = 0
       }
-      console.log('setting value at index ' + scoreIndex)
-      ta[asiIndex].abilitiesIncreased[scoreIndex] = [
-        {
-          name: scoreVal,
-          value: 1
-        }
-      ]
+      const abIncrease = {
+        name: scoreVal,
+        value: 1
+      }
+      // TODO: find a way to not mutate .abilitiesIncreased directly
+      ta[asiIndex].abilitiesIncreased[scoreIndex] = abIncrease
       this.abilityScoreImprovements = ta
     }
   },
