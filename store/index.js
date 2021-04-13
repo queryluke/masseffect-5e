@@ -27,7 +27,10 @@ export const getters = {
   isLocaleSet: state => (locale) => {
     return typeof state.data[locale] !== 'undefined'
   },
-  getData: state => (locale, endpoint) => {
+  getData: (state, getters) => (locale, endpoint) => {
+    if (!getters.isLocaleSet(locale)) {
+      return false
+    }
     return typeof state.data[locale][endpoint] === 'undefined' ? false : state.data[locale][endpoint]
   },
   getItem: (state, getters) => (locale, endpoint, id) => {

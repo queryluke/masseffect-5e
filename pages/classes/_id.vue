@@ -57,7 +57,7 @@ export default {
   data () {
     return {
       id: this.$route.params.id,
-      items: [],
+      // items: [],
       powers: [],
       tabs: [
         this.$t('character.klass.progression_table'),
@@ -69,7 +69,7 @@ export default {
   },
   async fetch () {
     const data = await this.$store.dispatch('FETCH_LOTS', ['classes', 'powers'])
-    this.items = data[0]
+    // this.items = data[0]
     this.powers = data[1].filter(i => i.classes.includes(this.item.id)).sort((a, b) => {
       return a.level === b.level
         ? a.id > b.id ? 1 : -1
@@ -88,6 +88,10 @@ export default {
     }
   },
   computed: {
+    items () {
+      console.log('computing items')
+      return this.$store.getters.getData(this.$i18n.locale, 'classes')
+    },
     item () {
       return this.items.find(i => i.id === this.$route.params.id)
     },

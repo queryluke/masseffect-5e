@@ -55,7 +55,7 @@
       <v-col md="3" class="hidden-sm-and-down">
         <div class="text-right">
           <v-menu>
-            <template v-slot:activator="{ on, attrs }">
+            <template #activator="{ on, attrs }">
               <v-btn
                 color="secondary"
                 v-bind="attrs"
@@ -82,21 +82,30 @@
 <script>
 
 export default {
-  async fetch () {
-    this.items = await this.$store.dispatch('FETCH_DATA', 'species')
-    this.$store.commit('pageTitle', this.item.name)
-    this.$store.commit('tabbedPage/SET_TABS', this.tabs)
-    this.$store.dispatch('tabbedPage/INIT_THEME')
-  },
+  layout: 'tabbed',
   data () {
     return {
       items: [],
       id: this.$route.params.id
     }
   },
+  async fetch () {
+    this.items = await this.$store.dispatch('FETCH_DATA', 'species')
+    this.$store.commit('pageTitle', this.item.name)
+    this.$store.commit('tabbedPage/SET_TABS', this.tabs)
+    this.$store.dispatch('tabbedPage/INIT_THEME')
+  },
+  head () {
+    return {
+      title: `${this.item.name} - Races | Mass Effect 5e`,
+      meta: [
+        { hid: 'description', name: 'description', content: this.item.snippet }
+      ]
+    }
+  },
   computed: {
     item () {
-      return this.$store.getters.getItem('species', this.id)
+      return this.$store.getters.getItem(this.$i18n.locale, 'species', this.id)
     },
     hasVariants () {
       return this.item.variants.length > 0
@@ -116,15 +125,6 @@ export default {
       }
       return tabs
     }
-  },
-  head () {
-    return {
-      title: `${this.item.name} - Races | Mass Effect 5e`,
-      meta: [
-        { hid: 'description', name: 'description', content: this.item.snippet }
-      ]
-    }
-  },
-  layout: 'tabbed'
+  }
 }
 </script>
