@@ -82,7 +82,7 @@ export default {
         { to: '/assets', name: 'site.pages.assets.title' },
         { to: '/changelog', name: 'site.pages.changelog.title' },
         { to: '/about', name: 'site.pages.about.title' },
-        { href: 'https://versions.n7.world/v120/character-builder', name: 'site.generators.character_builder' }
+        { href: 'https://versions.n7.world/v120/character-builder', name: 'site.pages.character_builder.title' }
       ]
     }
   },

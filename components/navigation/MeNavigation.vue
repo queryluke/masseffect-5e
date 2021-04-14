@@ -55,7 +55,7 @@
               v-bind="attrs"
               v-on="on"
             >
-              {{ $t('site.version') }} {{ version }}
+              {{ $t('site.labels.version') }} {{ version }}
               <v-icon>
                 mdi-menu-up
               </v-icon>
@@ -101,7 +101,7 @@ export default {
           to: '/manual/intro'
         },
         {
-          name: 'site.rules',
+          name: 'site.labels.rules',
           icon: 'mdi-gavel',
           items: [
             { name: 'manual.character_creation', icon: 'supervised_user_circle', to: '/manual/character-creation' },
@@ -166,20 +166,20 @@ export default {
           divider: true
         },
         {
-          header: 'site.tools_guides'
+          header: 'site.labels.tools_guides'
         },
         {
-          name: 'site.generators.character_builder',
+          name: 'site.pages.character_builder.title',
           to: '/character-builder',
           icon: 'mdi-clipboard-account'
         },
         {
-          name: 'site.generators.title',
+          name: 'site.labels.generators',
           icon: 'mdi-cog-sync',
           group: 'generator',
           items: [
-            { to: '/generators/loot', name: 'site.generators.loot_generator' },
-            { to: '/generators/npc', name: 'site.generators.npc_generator' }
+            { to: '/generators/loot', name: 'site.pages.loot_generator.title' },
+            { to: '/generators/npc', name: 'site.pages.npc_generator.title' }
           ]
         },
         {

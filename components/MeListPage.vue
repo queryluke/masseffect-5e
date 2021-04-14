@@ -57,13 +57,13 @@
               small
               @click="updateSortBy(header)"
             >
-              {{ header.label }}
+              {{ $t(`site.stat_headers.${header.label}`) }}
               <v-icon small>
                 {{ icon(header) }}
               </v-icon>
             </v-btn>
             <span v-else class="text-caption text-uppercase font-weight-bold pt-1 pl-3">
-              {{ header.label }}
+              {{ $t(`site.stat_headers.${header.label}`) }}
             </span>
           </v-col>
         </v-row>

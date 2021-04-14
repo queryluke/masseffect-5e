@@ -3,7 +3,7 @@
     <v-card>
       <v-card-text>
         <div class="text-overline text--primary">
-          {{ type }}
+          {{ $t(type) }}
         </div>
         <me-skeleton-loader :pending="pending" type="heading">
           <div class="mb-3">
