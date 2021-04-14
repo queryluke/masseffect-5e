@@ -24,17 +24,17 @@ export const getters = {
   drawer: state => state.drawer,
   jumpNav: state => state.jumpNav,
   rules: state => state.rules,
-  isLocaleSet: state => (locale) => {
-    return typeof state.data[locale] !== 'undefined'
-  },
-  getData: (state, getters) => (locale, endpoint) => {
-    if (!getters.isLocaleSet(locale)) {
+  isLocaleSet: state => typeof state.data[state.i18n.locale] !== 'undefined',
+  // TODO: interpolate non-translated data
+  getData: (state, getters) => (endpoint) => {
+    const locale = state.i18n.locale
+    if (!getters.isLocaleSet) {
       return false
     }
     return typeof state.data[locale][endpoint] === 'undefined' ? false : state.data[locale][endpoint]
   },
-  getItem: (state, getters) => (locale, endpoint, id) => {
-    const data = getters.getData(locale, endpoint)
+  getItem: (state, getters) => (endpoint, id) => {
+    const data = getters.getData(endpoint)
     return data === false ? false : data.find(d => d.id === id)
   },
   pageTitle: state => state.pageTitle,
@@ -69,10 +69,10 @@ export const actions = {
   },
   async FETCH_DATA ({ getters, commit }, endpoint) {
     const locale = this.$i18n.locale
-    if (!getters.isLocaleSet(locale)) {
+    if (!getters.isLocaleSet) {
       commit('initLocale', locale)
     }
-    let data = getters.getData(locale, endpoint)
+    let data = getters.getData(endpoint)
     if (!data) {
       console.log(`getting ${endpoint}`)
       try {

@@ -66,20 +66,20 @@ export const KlassMixins = {
     }
   },
   methods: {
-    createAbiFeatures (abis, level) {
-      if (!abis.includes(level)) {
-        return false
-      }
-      const abiLevels = abis.slice(abis.indexOf(level))
-      const first = abiLevels.shift()
-      const abiText = this.$t('character.klass.progression.abi.text', {
+    createAbiFeatures (first, rest) {
+      const atLevel = {
         level: this.$t('level.nth', {
           level: this.$t(`numbers.ordinal[${first}]`)
-        }),
-        and_list: this.$t(`lists.and_list[${abiLevels.length}]`, abiLevels.map(i => this.$t(`numbers.ordinal[${i}]`)))
+        })
+      }
+      if (rest) {
+        atLevel.and_list = this.$t(`lists.and_list[${rest.length}]`, rest.map(i => this.$t(`numbers.ordinal[${i}]`)))
+      }
+      const abiText = this.$t('character.klass.progression.abi.text', {
+        at_level: this.$tc('character.klass.progression.abi.at_level', rest ? 2 : 1, atLevel)
       })
       return {
-        name: this.$t('character.klass.progression.abi.title'),
+        name: this.$t('character.abi_title'),
         id: `${this.klassId}-ability-score-increase-${first}`,
         level: first,
         klass: this.klassId,
@@ -88,6 +88,20 @@ export const KlassMixins = {
     },
     minHitDieRoll (hitDie) {
       return Math.ceil((hitDie + 1) / 2)
+    },
+    featuresByLevel (level) {
+      const features = this.classFeatures.filter(i => i.level === level && !i.subclass)
+      if (this.item.progression.abi.includes(level)) {
+        features.push({ name: this.$t('character.abi_title'), id: 'ability-score-increase' })
+      }
+      if (this.item.progression.subclass.includes(level)) {
+        features.push({ name: this.$t(`character.klass.progression.subclass.${this.item.id}`), id: `subclass-feature-${level}` })
+      }
+      return features
+    },
+    getFeatureTextByLevel (level) {
+      const features = this.featuresByLevel(level).map(i => i.name)
+      return features.length === 0 ? '-' : features.join(', ')
     },
     profLabel (prof) {
       switch (prof) {
@@ -102,68 +116,6 @@ export const KlassMixins = {
         case 'savingThrow':
           return this.$t('saving_throws')
       }
-    },
-    featuresByLevel (level) {
-      const features = this.classFeatures.filter(i => i.level === level && !i.subclass)
-      if (this.item.progression.abi.includes(level)) {
-        features.push({ name: this.$t('character.klass.progression.abi.title'), id: 'ability-score-increase' })
-      }
-      if (this.item.progression.subclass.includes(level)) {
-        features.push({ name: this.$t(`character.klass.progression.subclass.${this.item.id}`), id: `subclass-feature-${level}` })
-      }
-      return features
-    },
-    getFeatureTextByLevel (level) {
-      const features = this.featuresByLevel(level).map(i => i.name)
-      return features.length === 0 ? '-' : features.join(', ')
     }
-    /*
-    profText (prof, values) {
-      let tPath = false
-      switch (prof) {
-        case false:
-          return this.$t('none')
-        case 'weapon':
-          tPath = 'equipment.weapons.types'
-          break
-        case 'armor':
-          tPath = 'equipment.armor.types'
-          break
-        case 'tool':
-          tPath = 'tool_profs.types'
-          break
-        case 'savingThrow':
-          tPath = 'abilities'
-          break
-      }
-      const has = values.has ? this.$tc('lists.comma_list', values.has.length, this.translateProfList(values.has, tPath)) : false
-      const chooseObject = values.choices
-        ? {
-            number: this.$t(`numbers.base[${values.choices.count}]`),
-            list: this.$tc('lists.and_list', values.choices.length, this.translateProfList(values.choices.items, tPath))
-          }
-        : false
-      if (has && chooseObject) {
-        return this.$t('character.klass.profs.selection_w_options', {
-          has,
-          choose: this.$t('character.klass.choose', chooseObject)
-        })
-      }
-      if (!has && chooseObject) {
-        return this.$t('character.klass.selection_option_only', chooseObject)
-      }
-      return has
-    },
-    translateProfList (list, path) {
-      return list.map((i) => {
-        const fullPath = `${path}.${i}`
-        const translation = this.$t(fullPath)
-        if (translation === fullPath) {
-          // TODO: get the item from an endpoint
-        }
-        return translation
-      })
-    },
-    */
   }
 }

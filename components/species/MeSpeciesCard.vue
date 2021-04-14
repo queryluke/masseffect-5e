@@ -14,7 +14,7 @@
         {{ item.snippet }}
       </p>
       <p class="text-subtitle-1 mb-0">
-        Racial Traits
+        {{ $t('character.species.traits') }}
       </p>
       <p>
         {{ traitsPreview }}
@@ -34,14 +34,10 @@ export default {
       default: () => {}
     }
   },
-  data () {
-    return {
-      traits: []
+  computed: {
+    traits () {
+      return this.$store.getters.getData('traits').filter(i => i.species === this.item.id)
     }
-  },
-  async fetch () {
-    const data = await this.$store.dispatch('FETCH_DATA', 'traits')
-    this.traits = data.filter(i => i.species === this.item.id)
   }
 }
 </script>

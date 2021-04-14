@@ -1,10 +1,10 @@
 <template>
-  <div v-if="!$fetchState.pending">
-    <template v-for="(feature, index) in displayFeatures">
+  <div>
+    <template v-for="(feature, index) in features">
       <me-class-feature-item
         :key="feature.id"
         :item="feature"
-        :hr="index !== displayFeatures.length - 1"
+        :hr="index !== features.length - 1"
         :hr-size="hrSize"
       />
     </template>
@@ -21,10 +21,6 @@ export default {
       type: String,
       required: true
     },
-    abis: {
-      type: [Array, Boolean],
-      default: () => false
-    },
     level: {
       type: [Number, Boolean],
       default: false
@@ -38,27 +34,32 @@ export default {
       default: 4
     }
   },
-  data () {
-    return {
-      features: []
-    }
-  },
-  async fetch () {
-    const data = await this.$store.dispatch('FETCH_DATA', 'class-features')
-    this.features = data.slice().filter(i => i.klass === this.klassId)
-  },
   computed: {
-    displayFeatures () {
-      const features = this.features.filter((i) => {
+    item () {
+      return this.$store.getters.getItem('classes', this.klassId)
+    },
+    abis () {
+      if (this.subclass) {
+        return false
+      }
+      const abis = this.item.progression.abi.slice()
+      if (this.level) {
+        if (!abis.includes(this.level)) {
+          return false
+        }
+        return [abis[abis.indexOf(this.level)], false]
+      }
+      const first = abis.shift()
+      return [first, abis]
+    },
+    features () {
+      const features = this.$store.getters.getData('class-features').filter((i) => {
         const levelTest = this.level ? i.level === this.level : true
         const subclassTest = this.subclass ? i.subclass === this.subclass : !i.subclass
-        return levelTest && subclassTest
+        return i.klass === this.klassId && levelTest && subclassTest
       })
-      if (this.abis && !this.subclass) {
-        const pushAbi = this.createAbiFeatures(this.abis, this.level || this.abis[0])
-        if (pushAbi) {
-          features.push(pushAbi)
-        }
+      if (this.abis) {
+        features.push(this.createAbiFeatures(...this.abis))
       }
       return features.sort((a, b) => {
         return a.level === b.level

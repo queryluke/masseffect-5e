@@ -94,6 +94,12 @@ export default {
       cookieKey: 'i18n_redirected',
       onlyOnRoot: true
     },
+    vuex: {
+      moduleName: 'i18n',
+      syncLocale: true,
+      syncMessages: false,
+      syncRouteParams: true
+    },
     vueI18n: {
       fallbackLocale: 'en'
     }

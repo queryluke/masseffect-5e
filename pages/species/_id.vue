@@ -1,5 +1,5 @@
 <template>
-  <v-container v-if="!$fetchState.pending">
+  <v-container>
     <v-row>
       <v-col md="9">
         <me-page-title />
@@ -16,33 +16,33 @@
               target="_blank"
               color="secondary"
             >
-              Read More <v-icon>mdi-chevron-right</v-icon>
+              {{ $t('site.read_more') }} <v-icon>mdi-chevron-right</v-icon>
             </v-btn>
           </v-tab-item>
           <v-tab-item class="pa-3">
-            <me-species-trait label="Ability Score Increase">
-              <me-species-ability-score-increase-summary :data="item.abilityScoreIncrease" />
+            <me-species-trait :label="$t('character.abi_title')">
+              {{ abilityScoreIncreaseText }}
             </me-species-trait>
-            <me-species-trait label="Age">
+            <me-species-trait :label="$t('character.species.age')">
               {{ item.age }}
             </me-species-trait>
-            <me-species-trait label="Alignment">
+            <me-species-trait :label="$t('alignments.title')">
               {{ item.alignment }}
             </me-species-trait>
-            <me-species-trait label="Size">
+            <me-species-trait :label="$t('sizes.title')">
               {{ item.size }}
             </me-species-trait>
-            <me-species-trait label="Speed">
-              <me-species-speed :data="item.speed" />
+            <me-species-trait :label="$t('speeds.title')">
+              <me-html :content="speedText" />
             </me-species-trait>
-            <template v-for="trait in item.traits">
+            <template v-for="trait in traits">
               <me-species-trait :key="trait.id" :label="trait.name">
                 <me-html :content="trait.html" />
               </me-species-trait>
             </template>
           </v-tab-item>
           <v-tab-item class="pa-3">
-            <div v-for="variant in item.variants" :key="variant.id" class="mb-4">
+            <div v-for="variant in variants" :key="variant.id" class="mb-4">
               <p class="text-h6 text-md-h4">
                 {{ variant.name }}
               </p>
@@ -61,11 +61,11 @@
                 v-bind="attrs"
                 v-on="on"
               >
-                Change Species <v-icon>mdi-menu-down</v-icon>
+                {{ $t('site.change_species') }} <v-icon>mdi-menu-down</v-icon>
               </v-btn>
             </template>
             <v-list>
-              <v-list-item v-for="i in items" :key="i.id" :to="{ name: 'species-id', params: { id: i.id }}">
+              <v-list-item v-for="i in items" :key="i.id" :to="localePath({ name: 'species-id', params: { id: i.id }})">
                 <v-list-item-title>
                   {{ i.name }}
                 </v-list-item-title>
@@ -80,35 +80,42 @@
 </template>
 
 <script>
+import { SpeciesMixins } from '~/mixins/speciesMixins'
 
 export default {
+  mixins: [SpeciesMixins],
   layout: 'tabbed',
+  async asyncData ({ store }) {
+    await store.dispatch('FETCH_LOTS', ['species', 'traits', 'species-variants'])
+  },
   data () {
     return {
-      items: [],
       id: this.$route.params.id
     }
   },
-  async fetch () {
-    this.items = await this.$store.dispatch('FETCH_DATA', 'species')
-    this.$store.commit('pageTitle', this.item.name)
-    this.$store.commit('tabbedPage/SET_TABS', this.tabs)
-    this.$store.dispatch('tabbedPage/INIT_THEME')
-  },
   head () {
     return {
-      title: `${this.item.name} - Races | Mass Effect 5e`,
+      title: `${this.item.name} - Species | Mass Effect 5e`,
       meta: [
         { hid: 'description', name: 'description', content: this.item.snippet }
       ]
     }
   },
   computed: {
+    items () {
+      return this.$store.getters.getData('species')
+    },
     item () {
-      return this.$store.getters.getItem(this.$i18n.locale, 'species', this.id)
+      return this.$store.getters.getItem('species', this.id)
+    },
+    variants () {
+      return this.$store.getters.getData('species-variants').filter(i => i.species === this.id)
+    },
+    traits () {
+      return this.$store.getters.getData('traits').filter(i => i.species.includes(this.id))
     },
     hasVariants () {
-      return this.item.variants.length > 0
+      return this.variants.length > 0
     },
     tab: {
       get () {
@@ -119,12 +126,17 @@ export default {
       }
     },
     tabs () {
-      const tabs = ['background', 'traits']
+      const tabs = [this.$tc('character.background.title', 1), this.$t('character.species.traits')]
       if (this.hasVariants) {
-        tabs.push('variants')
+        tabs.push(this.$t('character.species.variants'))
       }
       return tabs
     }
+  },
+  created () {
+    this.$store.commit('pageTitle', this.item.name)
+    this.$store.commit('tabbedPage/SET_TABS', this.tabs)
+    this.$store.dispatch('tabbedPage/INIT_THEME')
   }
 }
 </script>

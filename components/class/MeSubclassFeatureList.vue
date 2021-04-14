@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!$fetchState.pending">
+  <div>
     <template v-for="(subclass, index) in subclasses">
       <me-class-feature :key="subclass.id" :hr="index < subclasses.length - 1" :klass-id="klassId">
         <template #title>
@@ -27,14 +27,10 @@ export default {
       default: false
     }
   },
-  data () {
-    return {
-      subclasses: []
+  computed: {
+    subclasses () {
+      return this.$store.getters.getData('subclasses').filter(i => i.klass === this.klassId)
     }
-  },
-  async fetch () {
-    const data = await this.$store.dispatch('FETCH_DATA', 'subclasses')
-    this.subclasses = data.filter(i => i.klass === this.klassId)
   }
 }
 </script>

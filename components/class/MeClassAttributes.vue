@@ -30,7 +30,7 @@
     <!--- Proficiencies --->
     <me-class-feature :klass-id="item.id">
       <template #title>
-        {{ $t('character.klass.profs.title') }}
+        {{ $t('character.klass.proficiencies') }}
       </template>
       <me-stat-list>
         <template v-for="(prof, key) in item.profs">
@@ -63,7 +63,7 @@
     </me-class-feature>
 
     <!-- Features -->
-    <me-class-feature-list :klass-id="item.id" :abis="item.progression.abi" />
+    <me-class-feature-list :klass-id="item.id" />
   </div>
 </template>
 

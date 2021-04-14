@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!$fetchState.pending">
+  <div>
     <v-data-table
       :headers="headerArray"
       :items="progression"
@@ -156,7 +156,6 @@
         <v-card-text>
           <me-class-feature-list
             :klass-id="item.id"
-            :abis="item.progression.abi"
             :level="selectedLevel"
           />
           <me-subclass-feature-list v-if="isSubclassLevel" :klass-id="item.id" :level="selectedLevel" />
@@ -182,17 +181,16 @@ export default {
       dialog: false,
       selectedRow: null,
       levelTab: null,
-      goingTo: false,
-      characterProgression: [],
-      classFeatures: []
+      goingTo: false
     }
   },
-  async fetch () {
-    const data = await this.$store.dispatch('FETCH_LOTS', ['class-features', 'character-progression'])
-    this.classFeatures = data[0].filter(i => i.klass === this.item.id)
-    this.characterProgression = data[1]
-  },
   computed: {
+    characterProgression () {
+      return this.$store.getters.getData('character-progression')
+    },
+    classFeatures () {
+      return this.$store.getters.getData('class-features').filter(i => i.klass === this.item.id)
+    },
     selectedLevel () {
       return this.selectedRow ? this.selectedRow.id : false
     },

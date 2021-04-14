@@ -57,8 +57,6 @@ export default {
   data () {
     return {
       id: this.$route.params.id,
-      // items: [],
-      powers: [],
       tabs: [
         this.$t('character.klass.progression_table'),
         this.$t('character.klass.class_features'),
@@ -68,13 +66,7 @@ export default {
     }
   },
   async fetch () {
-    const data = await this.$store.dispatch('FETCH_LOTS', ['classes', 'powers'])
-    // this.items = data[0]
-    this.powers = data[1].filter(i => i.classes.includes(this.item.id)).sort((a, b) => {
-      return a.level === b.level
-        ? a.id > b.id ? 1 : -1
-        : a.level > b.level ? 1 : -1
-    })
+    await this.$store.dispatch('FETCH_LOTS', ['classes', 'powers', 'class-features', 'character-progression', 'subclasses'])
     this.$store.commit('pageTitle', this.item.name)
     this.$store.commit('tabbedPage/SET_TABS', this.tabs)
     this.$store.dispatch('tabbedPage/INIT_THEME', this.item.id)
@@ -89,11 +81,17 @@ export default {
   },
   computed: {
     items () {
-      console.log('computing items')
-      return this.$store.getters.getData(this.$i18n.locale, 'classes')
+      return this.$store.getters.getData('classes')
     },
     item () {
-      return this.items.find(i => i.id === this.$route.params.id)
+      return this.$store.getters.getItem('classes', this.$route.params.id)
+    },
+    powers () {
+      return this.$store.getters.getData('powers').filter(i => i.classes.includes(this.item.id)).sort((a, b) => {
+        return a.level === b.level
+          ? a.id > b.id ? 1 : -1
+          : a.level > b.level ? 1 : -1
+      })
     },
     tab: {
       get () {
