@@ -17,10 +17,10 @@
         #header
       >
         <thead>
-          <tr v-if="item.powercasting && $vuetify.breakpoint.mdAndUp">
+          <tr v-if="powerCastingColumnCount > 0 && $vuetify.breakpoint.mdAndUp">
             <th :colspan="powerCastingHeaderOffset" />
             <th :colspan="powerCastingColumnCount" class="text-center">
-              Power Slots by Power Level
+              {{ $t('character.klass.progression.columns.power_slots_by_power_level') }}
             </th>
           </tr>
         </thead>
@@ -76,6 +76,15 @@
       </template>
 
       <template
+        #[`item.power_level`]="{ item: featureItem }"
+      >
+        <span class="text-center">
+          {{ $t(`numbers.ordinal[${featureItem.power_level}]`) }}
+        </span>
+      </template>
+
+      <!--
+      <template
         #[`header.psByPl`]="{ header: psByPlHeader }"
       >
         <tr v-if="$vuetify.breakpoint.xs">
@@ -92,6 +101,7 @@
           v-intersect="{ handler: onIntersect, threshold: [1] }"
         />
       </template>
+      -->
     </v-data-table>
 
     <v-footer
@@ -132,7 +142,7 @@
           :color="classFillDark"
         >
           <v-toolbar-title>
-            {{ selectedRow.level }} Level
+            {{ $t('level.nth', { level: selectedRow.level }) }}
           </v-toolbar-title>
           <v-spacer />
           <v-btn
@@ -145,11 +155,10 @@
         </v-toolbar>
         <v-card-text>
           <me-class-feature-list
-            :class-id="item.id"
+            :klass-id="item.id"
             :level="selectedLevel"
-            include-subclass
-            show-subclass-header
           />
+          <me-subclass-feature-list v-if="isSubclassLevel" :klass-id="item.id" :level="selectedLevel" />
         </v-card-text>
       </v-card>
     </v-dialog>
@@ -157,10 +166,13 @@
 </template>
 
 <script>
+import { KlassMixins } from '~/mixins/klassMixins'
+
 export default {
+  mixins: [KlassMixins],
   props: {
-    id: {
-      type: String,
+    item: {
+      type: Object,
       required: true
     }
   },
@@ -169,81 +181,21 @@ export default {
       dialog: false,
       selectedRow: null,
       levelTab: null,
-      stringIds: [
-        'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve',
-        'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty'
-      ],
       goingTo: false
     }
   },
   computed: {
-    item () {
-      return this.$store.getters.getItem('classes', this.id)
-    },
     characterProgression () {
-      return this.$store.getters.getData('character-progression').slice().sort((a, b) => a.level > b.level ? 1 : -1)
+      return this.$store.getters.getData('character-progression')
     },
     classFeatures () {
-      return this.$store.getters.getData('class-features').filter(i => i.class === this.item.id)
-    },
-    subclasses () {
-      return this.$store.getters.getData('subclasses').filter(i => i.class === this.item.id)
-    },
-    powerCastingColumnCount () {
-      return this.item.progressionColumns.filter(p => p.ps).length
-    },
-    powerCastingHeaderOffset () {
-      return this.headerArray.length - this.powerCastingColumnCount
-    },
-    headerArray () {
-      const array = [
-        {
-          text: 'Level',
-          value: 'level',
-          class: 'text-center'
-        },
-        {
-          text: 'Proficiency Bonus',
-          value: 'proficiencyBonus',
-          class: 'text-center'
-        }
-      ]
-      for (const p of this.item.progressionColumns) {
-        array.push({ text: p.name, value: p.key, class: 'text-center' })
-      }
-      // Inject powerslotheader
-      if (this.powerCastingColumnCount > 0) {
-        array.splice(array.length - this.powerCastingColumnCount, 0, { text: 'Power Slots by Power Level', value: 'psByPl', class: 'text-center' })
-      }
-      return array
-    },
-    progression () {
-      const progression = []
-      for (const row of this.characterProgression) {
-        const output = {}
-        output.cssId = `${this.stringIds[row.level - 1]}Level`
-        output.id = row.level
-        output.level = `${row.level}${this.$options.filters.ordinal(row.level)}`
-        output.proficiencyBonus = `+${row.bonus}`
-        for (const p of this.item.progressionColumns) {
-          let ps = false
-          if (typeof p.values === 'undefined') {
-            output[p.key] = this.getFeatureTextByLevel(row.level)
-          } else {
-            const text = p.values[row.level - 1]
-            if (!p.ps) {
-              ps = true
-              output.psByPl = ps
-            }
-            output[p.key] = p.ps && text === 0 ? '-' : text
-          }
-        }
-        progression.push(output)
-      }
-      return progression
+      return this.$store.getters.getData('class-features').filter(i => i.klass === this.item.id)
     },
     selectedLevel () {
       return this.selectedRow ? this.selectedRow.id : false
+    },
+    isSubclassLevel () {
+      return this.item.progression.subclass.includes(this.selectedLevel)
     },
     classFillDark () {
       return this.$store.getters['config/classThemeDark'](this.item.id)
@@ -259,20 +211,6 @@ export default {
     }
   },
   methods: {
-    featuresByLevel (level) {
-      const features = this.classFeatures.filter(i => i.level === level)
-      if (this.item.abiLevels.includes(level)) {
-        features.push({ name: 'Ability Score Increase', id: 'ability-score-increase' })
-      }
-      return features
-    },
-    getFeatureTextByLevel (level) {
-      if (this.item.subclassProgression.level.includes(level)) {
-        return this.item.subclassProgression.label
-      }
-      const features = this.featuresByLevel(level).map(i => i.name)
-      return features.length === 0 ? '-' : features.join(', ')
-    },
     onIntersect (entries) {
       if (this.goingTo) {
         return

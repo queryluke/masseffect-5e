@@ -24,14 +24,17 @@ export const getters = {
   drawer: state => state.drawer,
   jumpNav: state => state.jumpNav,
   rules: state => state.rules,
-  isLocaleSet: state => (locale) => {
-    return typeof state.data[locale] !== 'undefined'
-  },
-  getData: state => (locale, endpoint) => {
+  isLocaleSet: state => typeof state.data[state.i18n.locale] !== 'undefined',
+  // TODO: interpolate non-translated data
+  getData: (state, getters) => (endpoint) => {
+    const locale = state.i18n.locale
+    if (!getters.isLocaleSet) {
+      return false
+    }
     return typeof state.data[locale][endpoint] === 'undefined' ? false : state.data[locale][endpoint]
   },
-  getItem: (state, getters) => (locale, endpoint, id) => {
-    const data = getters.getData(locale, endpoint)
+  getItem: (state, getters) => (endpoint, id) => {
+    const data = getters.getData(endpoint)
     return data === false ? false : data.find(d => d.id === id)
   },
   pageTitle: state => state.pageTitle,
@@ -53,7 +56,7 @@ export const mutations = {
     state.jumpNav = value
   },
   pageTitle (state, value) {
-    state.pageTitle = typeof value === 'object' ? this.$i18n.tc(...value) : this.$i18n.t(value)
+    state.pageTitle = value
   },
   setCurrentRules (state, value) {
     state.rules = value
@@ -66,18 +69,18 @@ export const actions = {
   },
   async FETCH_DATA ({ getters, commit }, endpoint) {
     const locale = this.$i18n.locale
-    if (!getters.isLocaleSet()) {
+    if (!getters.isLocaleSet) {
       commit('initLocale', locale)
     }
-    let data = getters.getData(locale, endpoint)
+    let data = getters.getData(endpoint)
     if (!data) {
+      console.log(`getting ${endpoint}`)
       try {
         data = await this.$http.$get(`${locale}/${endpoint}.json`)
-        commit('setData', { locale, endpoint, data })
       } catch (e) {
         data = await this.$http.$get(`en/${endpoint}.json`)
-        commit('setData', { locale: 'en', endpoint, data })
       }
+      commit('setData', { locale, endpoint, data })
     }
     return data
   },

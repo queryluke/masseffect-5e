@@ -33,28 +33,16 @@
         </v-tabs>
         <v-tabs-items v-model="tab">
           <v-tab-item class="pa-3">
-            <me-progression-table :id="item.id" />
+            <me-progression-table :item="item" />
           </v-tab-item>
           <v-tab-item class="pa-3">
-            <me-class-attributes :id="item.id" />
+            <me-class-attributes :item="item" />
           </v-tab-item>
           <v-tab-item class="pa-3">
-            <div
-              v-for="(subclass, subIndex) in subclasses"
-              :key="subclass.id"
-            >
-              <me-class-feature-list
-                :class-id="item.id"
-                :subclass-filter="subclass.id"
-                include-subclass
-                show-subclass-desc
-                show-subclass-header
-              />
-              <me-hr v-if="subIndex !== subclasses.length -1" :color="hrColor" :size="6" class="mt-10" />
-            </div>
+            <me-subclass-feature-list :klass-id="item.id" flavor />
           </v-tab-item>
           <v-tab-item class="pa-3">
-            <me-power-list :items="filteredPowers" />
+            <me-power-list :items="powers" />
           </v-tab-item>
         </v-tabs-items>
       </v-col>
@@ -65,16 +53,30 @@
 <script>
 
 export default {
+  layout: 'tabbed',
+  data () {
+    return {
+      id: this.$route.params.id,
+      tabs: [
+        this.$t('character.klass.progression_table'),
+        this.$t('character.klass.class_features'),
+        this.$t('character.klass.subclasses'),
+        this.$t('powers.title')
+      ]
+    }
+  },
   async fetch () {
-    await this.$store.dispatch('FETCH_LOTS', ['classes', 'class-features', 'subclasses', 'powers', 'character-progression'])
+    await this.$store.dispatch('FETCH_LOTS', ['classes', 'powers', 'class-features', 'character-progression', 'subclasses'])
     this.$store.commit('pageTitle', this.item.name)
     this.$store.commit('tabbedPage/SET_TABS', this.tabs)
     this.$store.dispatch('tabbedPage/INIT_THEME', this.item.id)
   },
-  data () {
+  head () {
     return {
-      id: this.$route.params.id,
-      tabs: ['progression table', 'class features', 'subclasses', 'powers']
+      title: `${this.item ? this.item.name : ''} - Classes | Mass Effect 5e`,
+      meta: [
+        { hid: 'description', name: 'description', content: `Learn more about the ${this.item ? this.item.name : ''} class, including Progression table, subclasses, proficiencies, and starting equipment` }
+      ]
     }
   },
   computed: {
@@ -82,10 +84,14 @@ export default {
       return this.$store.getters.getData('classes')
     },
     item () {
-      return this.$store.getters.getItem('classes', this.id)
+      return this.$store.getters.getItem('classes', this.$route.params.id)
     },
-    subclasses () {
-      return this.$store.getters.getData('subclasses').filter(i => i.class === this.item.id)
+    powers () {
+      return this.$store.getters.getData('powers').filter(i => i.classes.includes(this.item.id)).sort((a, b) => {
+        return a.level === b.level
+          ? a.id > b.id ? 1 : -1
+          : a.level > b.level ? 1 : -1
+      })
     },
     tab: {
       get () {
@@ -106,25 +112,7 @@ export default {
     },
     hrColor () {
       return this.$store.getters['config/classThemeHrColor'](this.item.id)
-    },
-    filteredPowers () {
-      return this.$store.getters.getData('powers')
-        .filter(i => i.availableClasses.includes(this.item.id))
-        .sort((a, b) => {
-          return a.level === b.level
-            ? a.id > b.id ? 1 : -1
-            : a.level > b.level ? 1 : -1
-        })
     }
-  },
-  head () {
-    return {
-      title: `${this.item.name} - Classes | Mass Effect 5e`,
-      meta: [
-        { hid: 'description', name: 'description', content: `Learn more about the ${this.item.name} class, including Progression table, subclasses, proficiencies, and starting equipment` }
-      ]
-    }
-  },
-  layout: 'tabbed'
+  }
 }
 </script>

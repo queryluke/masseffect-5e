@@ -1,98 +1,81 @@
 <template>
   <div>
-    <p class="text-h6 mb-0">
-      Hit Points
-    </p>
-    <me-stat-list>
-      <me-stat-list-item label="Hit dice">
-        1d{{ item.hitDice }} per level
-      </me-stat-list-item>
-      <me-stat-list-item label="Hit Points at 1st level">
-        {{ item.hitDice }} + Constitution modifier
-      </me-stat-list-item>
-      <me-stat-list-item label="Hit Points at higher levels">
-        1d{{ item.hitDice }} (or {{ item.minHitDiceRoll }}) + Constitution modifier
-      </me-stat-list-item>
-    </me-stat-list>
-    <me-hr
-      :color="hrColor"
-    />
-    <p class="text-h6 mb-0">
-      Proficiencies
-    </p>
-    <me-stat-list>
-      <me-stat-list-item
-        v-for="prof in profs"
-        :key="prof.key"
-        :label="prof.label"
-      >
-        {{ item[prof.key].text }}
-      </me-stat-list-item>
-    </me-stat-list>
-    <me-hr
-      :color="hrColor"
-    />
-    <p class="text-h6 mb-0">
-      Starting Equipment
-    </p>
-    <p class="text-body-2">
-      You start with the following equipment, in addition to the equipment granted by your background:
-    </p>
-    <ul class="text-body-2">
-      <li
-        v-for="(eq, index) in item.startingEquipment"
-        :key="`eq${index}`"
-      >
-        {{ eq.text }}
-      </li>
-    </ul>
-    <me-hr
-      :color="hrColor"
-    />
-    <me-class-feature-list :class-id="item.id" />
+    <!--- Hit Points --->
+    <me-class-feature :klass-id="item.id">
+      <template #title>
+        {{ $t('character.klass.hit_points.title') }}
+      </template>
+      <me-stat-list>
+        <me-stat-list-item :label="$t('character.klass.hit_dice.title')">
+          {{ $t('character.klass.hit_dice.per_level', {hitDice: $t('dice', { dieCount: 1, dieType: item.hitDie })}) }}
+        </me-stat-list-item>
+        <me-stat-list-item :label="$t('character.klass.hit_points.first.title')">
+          {{ $t('character.klass.hit_points.first.text', {die: item.hitDie, mod: $t('abilities.con.title')}) }}
+        </me-stat-list-item>
+        <me-stat-list-item :label="$t('character.klass.hit_points.higher.title')">
+          {{
+            $t(
+              'character.klass.hit_points.first.text',
+              {
+                die: item.hitDie,
+                min: minHitDieRoll(item.hitDie),
+                mod: $t('abilities.con.title')
+              }
+            )
+          }}
+        </me-stat-list-item>
+      </me-stat-list>
+    </me-class-feature>
+
+    <!--- Proficiencies --->
+    <me-class-feature :klass-id="item.id">
+      <template #title>
+        {{ $t('character.klass.proficiencies') }}
+      </template>
+      <me-stat-list>
+        <template v-for="(prof, key) in item.profs">
+          <me-stat-list-item
+            :key="key"
+            :label="profLabel(key)"
+          >
+            {{ prof.text }}
+          </me-stat-list-item>
+        </template>
+      </me-stat-list>
+    </me-class-feature>
+
+    <!-- Starting equipment -->
+    <me-class-feature :klass-id="item.id">
+      <template #title>
+        {{ $t('character.klass.starting_equipment.title') }}
+      </template>
+      <p class="text-body-2">
+        {{ $t('character.klass.starting_equipment.text') }}
+      </p>
+      <ul class="text-body-2">
+        <li
+          v-for="(eq, index) in item.startingEquipment"
+          :key="`eq${index}`"
+        >
+          {{ eq.text }}
+        </li>
+      </ul>
+    </me-class-feature>
+
+    <!-- Features -->
+    <me-class-feature-list :klass-id="item.id" />
   </div>
 </template>
 
 <script>
+import { KlassMixins } from '~/mixins/klassMixins'
+
 export default {
+  mixins: [KlassMixins],
   props: {
-    id: {
-      type: String,
+    item: {
+      type: Object,
       required: true
-    }
-  },
-  data () {
-    return {
-      profs: [
-        {
-          label: 'Armor',
-          key: 'armorProfs'
-        },
-        {
-          label: 'Tools',
-          key: 'toolProfs'
-        },
-        {
-          label: 'Weapons',
-          key: 'weaponProfs'
-        },
-        {
-          label: 'Saving throws',
-          key: 'savingThrows'
-        },
-        {
-          label: 'Skills',
-          key: 'skillProfs'
-        }
-      ]
-    }
-  },
-  computed: {
-    item () {
-      return this.$store.getters.getItem('classes', this.id)
-    },
-    hrColor () {
-      return this.$store.getters['config/classThemeHrColor'](this.id)
     }
   }
 }
