@@ -1,17 +1,17 @@
 <template>
-  <me-item-page :pending="$fetchState.pending" :item="item" type="background" />
+  <me-item-page :pending="$fetchState.pending" :item="item" :type="$tc('character.background.title', 1)" />
 </template>
 
 <script>
 export default {
-  async fetch () {
-    this.item = await this.$store.dispatch('FETCH_ITEM', { endpoint: 'backgrounds', id: this.$route.params.id })
-    this.$store.commit('pageTitle', 'Backgrounds')
-  },
   data () {
     return {
       item: {}
     }
+  },
+  async fetch () {
+    this.item = await this.$store.dispatch('FETCH_ITEM', { endpoint: 'backgrounds', id: this.$route.params.id })
+    this.$store.commit('pageTitle', this.item.name)
   },
   head () {
     return {

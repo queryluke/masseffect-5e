@@ -1,5 +1,5 @@
 <template>
-  <me-item-page :pending="$fetchState.pending" :item="item" type="character.feat.title" />
+  <me-item-page :pending="$fetchState.pending" :item="item" :type="$t('character.feat.title')" />
 </template>
 
 <script>
