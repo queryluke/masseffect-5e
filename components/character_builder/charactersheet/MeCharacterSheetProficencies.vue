@@ -1,11 +1,26 @@
 <template>
   <div>
+    Proficent in: {{weaponTypes[profs.has[0]]}}
     {{profs}}
+    <v-select
+    />
   </div>
 </template>
 
 <script>
 export default {
+  data () {
+    return {
+      weaponTypes: {
+        melee: 'Melee Weapons',
+        assault_rifle: 'Assault Rifles',
+        shotgun: 'Shotguns',
+        smg: 'SMGs',
+        sniper_rifles: 'Sniper Rifles',
+        heavy_pistol: 'Heavy Pistols'
+      }
+    }
+  },
   computed: {
     character () {
       const char = this.$store.getters['cb/characters'][this.$route.query.cid] || {}

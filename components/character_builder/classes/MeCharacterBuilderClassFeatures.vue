@@ -95,6 +95,7 @@ export default {
       const cfd = this.$store.getters.getData('class-features')
         .filter(this.filterByClass)
         .filter(this.filterByLevel)
+        .sort((a, b) => (a.level > b.level) ? 1 : -1)
       const scfd = cfd.filter(this.filterBySubclass)
       return {
         classItems: cfd.filter(function (_cfd) { // filter out anything with a subclass tab
