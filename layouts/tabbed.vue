@@ -17,5 +17,9 @@
 </template>
 
 <script>
-export default {}
+import { MetaHead } from '~/mixins/MetaHead'
+
+export default {
+  mixins: [MetaHead]
+}
 </script>

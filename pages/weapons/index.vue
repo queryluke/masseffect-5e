@@ -2,18 +2,12 @@
   <v-container>
     <me-list-page
       :pending="$fetchState.pending"
-      :title="pageTitle"
-      :rule-link="ruleLink"
-      :filters="filters"
-      :headers="headers"
-      :items="items"
+      rule-link="/manual/equipment#weapons"
+      model="weapons"
+      component="MeWeaponList"
       default-sort="name"
       :custom-sort="customSort"
-    >
-      <template #list="{ displayItems }">
-        <me-weapon-list :items="displayItems" />
-      </template>
-    </me-list-page>
+    />
   </v-container>
 </template>
 
@@ -23,50 +17,13 @@ import { AverageFromDie } from '~/mixins/averageFromDie'
 export default {
   mixins: [AverageFromDie],
   layout: 'list',
-  data () {
-    return {
-      items: [],
-      ruleLink: {
-        to: '/manual/equipment#weapons',
-        name: 'Weapon Rules'
-      }
-    }
-  },
   async fetch () {
-    this.$store.commit('pageTitle', 'Weapons')
-    this.items = await this.$store.dispatch('FETCH_DATA', 'weapons')
-  },
-  head () {
-    return {
-      title: 'Weapons - Equipment | Mass Effect 5e',
-      meta: [
-        { hid: 'description', name: 'description', content: 'The Mass Effect 5e arsenal has over 80 unique weapons designed to match the game\'s weaponry' }
-      ]
-    }
-  },
-  computed: {
-    filters () {
-      const rarityOptions = this.$store.getters['config/rarityOptions']
-      return [
-        rarityOptions,
-        {
-          name: 'Type',
-          key: 'type',
-          options: [...new Set(this.items.map(i => i.type))].sort()
-        },
-        {
-          name: 'Properties',
-          key: 'properties',
-          options: [...new Set(this.items.map(i => i.properties).flat())].sort()
-        }
-      ]
-    },
-    pageTitle () {
-      return this.$store.getters.pageTitle
-    },
-    headers () {
-      return this.$store.getters['config/weaponHeaders']
-    }
+    this.$store.dispatch('SET_META', {
+      title: this.$tc('weapon_title', 2),
+      subTitle: this.$tc('equipment_title', 2),
+      description: this.$t('meta.weapons')
+    })
+    await this.$store.dispatch('FETCH_LOTS', ['weapons', 'weapon-properties'])
   },
   methods: {
     customSort (items, sortBy, sortDesc) {
@@ -79,8 +36,8 @@ export default {
           case 'name':
             break
           case 'damage':
-            aVal = this.averageFromDie(a.damage)
-            bVal = this.averageFromDie(b.damage)
+            aVal = this.averageFromDie(a.damage.dieType, a.damage.dieCount)
+            bVal = this.averageFromDie(b.damage.dieType, b.damage.dieCount)
             break
           default:
             aVal = a[sortBy]

@@ -1,25 +1,23 @@
 <template>
-  <me-item-page :pending="$fetchState.pending" :item="item" :type="$t('character.feat.title')" />
+  <me-item-page :item="item" :label="$tc('feat_title')" />
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      item: {}
+  async asyncData ({ store }) {
+    await store.dispatch('FETCH_DATA', 'feats')
+  },
+  computed: {
+    item () {
+      return this.$store.getters.getItem('feats', this.$route.params.id)
     }
   },
-  async fetch () {
-    this.item = await this.$store.dispatch('FETCH_ITEM', { endpoint: 'feats', id: this.$route.params.id })
-    this.$store.commit('pageTitle', this.item.name)
-  },
-  head () {
-    return {
-      title: `${this.item.name} - Feats | Mass Effect 5e`,
-      meta: [
-        { hid: 'description', name: 'description', content: `Information about the ${this.item.name} feat` }
-      ]
-    }
+  created () {
+    this.$store.dispatch('SET_META', {
+      title: this.item.name,
+      subTitle: this.$tc('feat_title', 2),
+      description: this.$t('meta.info', { name: this.item.name })
+    })
   }
 }
 </script>

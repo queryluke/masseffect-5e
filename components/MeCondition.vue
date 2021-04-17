@@ -1,12 +1,13 @@
 <template>
   <v-dialog
+    v-if="!$fetchState.pending"
     v-model="dialog"
-    :fullscreen="this.$vuetify.breakpoint.xsOnly"
+    :fullscreen="$vuetify.breakpoint.xsOnly"
     :transition="transition"
     width="70vw"
     scrollable
   >
-    <template v-slot:activator="{ on }">
+    <template #activator="{ on }">
       <a
         :class="stringCss"
         v-on="on"
@@ -46,14 +47,16 @@ export default {
   },
   data () {
     return {
-      dialog: false,
-      item: {
-        name: '',
-        html: ''
-      }
+      dialog: false
     }
   },
+  async fetch () {
+    await this.$store.dispatch('FETCH_DATA', 'conditions')
+  },
   computed: {
+    item () {
+      return this.$store.getters.getItem('conditions', this.id)
+    },
     text () {
       return this.sub !== '' ? `${this.id}: ${this.sub}` : this.id
     },
@@ -67,9 +70,6 @@ export default {
     transition () {
       return this.$vuetify.breakpoint.xsOnly ? 'dialog-bottom-transition' : 'dialog-transition'
     }
-  },
-  async created () {
-    this.item = await this.$store.dispatch('FETCH_ITEM', { endpoint: 'conditions', id: this.id })
   }
 }
 </script>

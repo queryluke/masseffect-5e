@@ -7,7 +7,7 @@
     </v-list-item-action>
     <v-list-item-content>
       <v-list-item-title>
-        {{ displayText }}
+        {{ text }}
       </v-list-item-title>
     </v-list-item-content>
     <v-list-item-avatar v-if="avatar" :size="20" color="secondary">
@@ -23,7 +23,7 @@ export default {
   name: 'MeNavListItem',
   props: {
     text: {
-      type: [String, Object],
+      type: String,
       required: true
     },
     to: {
@@ -37,11 +37,6 @@ export default {
     avatar: {
       type: [Number, Boolean],
       default: false
-    }
-  },
-  computed: {
-    displayText () {
-      return this.text.count ? this.$tc(this.text.key, this.text.count) : this.$t(this.text)
     }
   }
 }

@@ -1,13 +1,13 @@
 <template>
   <span>
     <span>
-      <me-distance v-if="numericRange" :length="item.distance.range" abbr />
-      <span v-else>{{ item.distance.range }}</span>
+      <me-distance v-if="numericRange" :length="range" abbr />
+      <span v-else>{{ textRange }}</span>
     </span>
-    <span v-if="item.distance.aoeDistance" class="ml-1 text-caption">
-      (<me-distance :length="item.distance.aoeDistance" abbr />
+    <span v-if="aoe" class="ml-1 text-caption">
+      (<me-distance :length="aoe.size" abbr />
       <v-avatar :size="size" tile class="ml-1">
-        <v-img :src="require(`~/assets/images/aoe/${filename}.svg`)" :alt="item.distance.aoeType" />
+        <v-img :src="require(`~/assets/images/aoe/${filename}.svg`)" :alt="$t(`aoe_types.${aoe.type}`)" />
       </v-avatar>)
     </span>
   </span>
@@ -17,16 +17,13 @@
 export default {
   name: 'MePowerRange',
   props: {
-    item: {
-      type: Object,
-      default: () => {
-        return {
-          distance: {
-            range: '',
-            aoeDistance: null
-          }
-        }
-      }
+    range: {
+      type: [Number, String, Boolean],
+      default: false
+    },
+    aoe: {
+      type: [Object, Boolean],
+      default: false
     },
     size: {
       type: Number,
@@ -35,10 +32,15 @@ export default {
   },
   computed: {
     filename () {
-      return this.$vuetify.theme.dark ? `${this.item.distance.aoeType}-white` : this.item.distance.aoeType
+      return this.$vuetify.theme.dark ? `${this.aoe.type}-white` : this.aoe.type
     },
     numericRange () {
-      return !isNaN(this.item.distance.range)
+      return this.range > 1
+    },
+    textRange () {
+      return this.range === 0
+        ? this.$t('self_title')
+        : this.$t('touch_title')
     }
   }
 }

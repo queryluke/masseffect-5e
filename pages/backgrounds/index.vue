@@ -1,15 +1,14 @@
 <template>
   <v-container>
     <me-page-title />
-    <p v-for="(para, index) in $t('character.background.intro')" :key="index">
+    <p v-for="(para, index) in $t('background_intro')" :key="index">
       {{ para }}
     </p>
     <me-skeleton-loader :pending="$fetchState.pending" type="expansionList">
       <me-expansion-list
         :items="items"
-        :headers="[{ label: 'Name', key: 'name' }]"
         :bookmarkable="false"
-        type="backgrounds"
+        model="backgrounds"
       />
     </me-skeleton-loader>
   </v-container>
@@ -18,16 +17,11 @@
 <script>
 export default {
   async fetch () {
+    this.$store.dispatch('SET_META', {
+      title: this.$tc('background_title', 2),
+      description: this.$t('meta.backgrounds')
+    })
     await this.$store.dispatch('FETCH_DATA', 'backgrounds')
-    this.$store.commit('pageTitle', this.$tc('character.background.title', 2))
-  },
-  head () {
-    return {
-      title: 'Backgrounds | Mass Effect 5e',
-      meta: [
-        { hid: 'description', name: 'description', content: 'Backgrounds provide additional flavor and benefits to your character.' }
-      ]
-    }
   },
   computed: {
     items () {

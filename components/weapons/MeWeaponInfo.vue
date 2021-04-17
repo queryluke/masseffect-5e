@@ -5,30 +5,32 @@
       <v-col cols="12" md="8">
         <v-row>
           <v-col>
-            <span v-for="(prop, index) in item.properties" :key="index">
+            <div v-for="(prop, index) in item.properties" :key="index" class="text-body-2 d-inline-block">
               <me-weapon-prop :id="prop" />
-              <span v-if="index + 1 < item.properties.length" class="pa-2">|</span>
-            </span>
+              <div v-if="index + 1 < item.properties.length" class="px-2 d-inline-block">
+                |
+              </div>
+            </div>
           </v-col>
         </v-row>
         <v-row>
           <v-col cols="6" lg="3">
-            <me-item-stat label="Damage">
-              {{ item.damage }} {{ item.dmgType }}
+            <me-item-stat :label="$t('damage_title')">
+              {{ $t('dice', {dieType: item.damage.dieType, dieCount: item.damage.dieCount}) }} {{ $t(`damage_types.${item.damage.type}`) }}
             </me-item-stat>
           </v-col>
           <v-col cols="6" lg="3">
-            <me-item-stat label="Range">
+            <me-item-stat :label="$t('range_title')">
               <me-weapon-range :item="item" />
             </me-item-stat>
           </v-col>
           <v-col cols="6" lg="3">
-            <me-item-stat label="Heat">
+            <me-item-stat :label="$t('heat_title')">
               {{ item.heat }}
             </me-item-stat>
           </v-col>
           <v-col cols="6" lg="3">
-            <me-item-stat label="Weight">
+            <me-item-stat :label="$t('weight_title')">
               <me-weight :amount="item.weight" num-only />
             </me-item-stat>
           </v-col>

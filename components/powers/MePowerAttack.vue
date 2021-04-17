@@ -8,11 +8,25 @@
 export default {
   name: 'MePowerAttack',
   props: {
-    item: {
+    attack: {
       type: Object,
       default: () => {
         return {
-          attackType: []
+          melee: false,
+          ranged: false
+        }
+      }
+    },
+    save: {
+      type: Object,
+      default: () => {
+        return {
+          dex: false,
+          str: false,
+          con: false,
+          int: false,
+          wis: false,
+          cha: false
         }
       }
     },
@@ -23,15 +37,24 @@ export default {
   },
   computed: {
     text () {
-      if (typeof this.item.attackType === 'undefined' || this.item.attackType.length === 0) {
-        return this.abbr ? '-' : 'None'
+      const array = []
+      for (const key in this.attack) {
+        if (this.attack[key]) {
+          array.push(this.$t(`attack_types.${key}`))
+        }
+      }
+      for (const key in this.save) {
+        if (this.save[key]) {
+          array.push(this.$t('save_text', { type: this.$t(`abilities.${key}.abbr`) }))
+        }
+      }
+      if (array.length === 0) {
+        return '-'
       }
       if (this.abbr) {
-        const first = this.item.attackType[0]
-        const additional = this.item.attackType.length > 1 ? ' (...)' : ''
-        return `${first}${additional}`
+        return `${array[0]} (...)`
       } else {
-        return this.item.attackType.join(', ')
+        return this.$t(`lists.comma_list[${array.length}]`, array)
       }
     }
   }

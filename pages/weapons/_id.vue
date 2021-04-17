@@ -1,5 +1,5 @@
 <template>
-  <me-item-page :pending="$fetchState.pending" :item="item" type="weapon">
+  <me-item-page :item="item" :label="$tc('weapon_title', 1)">
     <template #header>
       <me-weapon-title :item="item" />
     </template>
@@ -9,14 +9,8 @@
 
 <script>
 export default {
-  async fetch () {
-    this.item = await this.$store.dispatch('FETCH_ITEM', { endpoint: 'weapons', id: this.$route.params.id })
-    this.$store.commit('pageTitle', 'Weapons')
-  },
-  data () {
-    return {
-      item: {}
-    }
+  async asyncData ({ store }) {
+    await store.dispatch('FETCH_DATA', 'weapons')
   },
   head () {
     return {
@@ -25,6 +19,14 @@ export default {
         { hid: 'description', name: 'description', content: `Information about ${this.item.name}` }
       ]
     }
+  },
+  computed: {
+    item () {
+      return this.$store.getters.getItem('weapons', this.$route.params.id)
+    }
+  },
+  created () {
+    this.$store.commit('pageTitle', this.item.name)
   }
 }
 </script>

@@ -42,7 +42,7 @@ export default {
       return this.item.is_new ? 'white' : 'black'
     },
     chipText () {
-      return this.item.is_new ? this.$t('chips.new') : this.$t('chips.change')
+      return this.item.is_new ? this.$t('new') : this.$t('change')
     }
   }
 }

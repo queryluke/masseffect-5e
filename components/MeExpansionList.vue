@@ -5,7 +5,7 @@
       :key="item.id"
     >
       <v-expansion-panel-header>
-        <template v-slot:default="{ open }">
+        <template #default="{ open }">
           <v-slide-x-transition leave-absolute hide-on-leave>
             <span v-if="open" key="1">
               <slot name="header.expanded" :item="item">
@@ -41,10 +41,10 @@
         <me-hr color="black" :size="1" />
         <v-row justify="space-between">
           <v-col>
-            <me-bookmark v-if="bookmarkable" :type="type" :item="item" />
+            <me-bookmark v-if="bookmarkable" :type="model" :item="item" />
           </v-col>
           <v-col class="text-right">
-            <me-permalink :item-id="item.id" :type="type" />
+            <me-permalink :item-id="item.id" :type="model" />
           </v-col>
         </v-row>
       </v-expansion-panel-content>
@@ -53,22 +53,19 @@
 </template>
 
 <script>
+import { ListPageHeaders } from '~/mixins/ListPageHeaders'
+
 export default {
   name: 'MeExpansionList',
+  mixins: [ListPageHeaders],
   props: {
-    headers: {
-      type: Array,
-      default: () => {
-        return []
-      }
-    },
     items: {
       type: Array,
       default: () => {
         return []
       }
     },
-    type: {
+    model: {
       type: String,
       required: true
     },

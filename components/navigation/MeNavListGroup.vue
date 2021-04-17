@@ -3,7 +3,7 @@
     <template #activator>
       <v-list-item-content>
         <v-list-item-title>
-          {{ displayText }}
+          {{ text }}
         </v-list-item-title>
       </v-list-item-content>
     </template>
@@ -22,7 +22,7 @@ export default {
   name: 'MeNavListGroup',
   props: {
     text: {
-      type: [String, Object],
+      type: String,
       required: true
     },
     icon: {
@@ -41,9 +41,6 @@ export default {
   computed: {
     group () {
       return `(${this.items.map(i => `(^${this.localePath(i.to)}$|^${this.localePath(i.to)}/.*?)`).join('|')})`
-    },
-    displayText () {
-      return this.text.count ? this.$tc(this.text.key, this.text.count) : this.$t(this.text)
     }
   }
 }

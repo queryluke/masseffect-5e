@@ -4,7 +4,7 @@
       <v-list-item v-if="activator === 'listItem'" v-bind="attrs" v-on="on">
         <v-list-item-content>
           <v-list-item-title class="text-uppercase">
-            {{ $t('site.settings.language') }}: {{ currentLocale }}
+            {{ $t('settings.language') }}: {{ currentLocale }}
           </v-list-item-title>
         </v-list-item-content>
         <v-list-item-action>

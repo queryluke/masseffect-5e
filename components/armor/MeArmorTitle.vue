@@ -3,10 +3,8 @@
     :title="item.name"
     subtitle
   >
-    <template v-slot:subtitle>
-      <div :class="textColor(item.rarity)">
-        {{ item.rarity }} {{ item.armorType }} armor, {{ item.type }} {{ bodyArmorQualifier }}
-      </div>
+    <template #subtitle>
+      <me-equipment-subtitle :rarity="item.rarity" :text="subtitle" />
       <div class="text-caption">
         {{ item.cost | groupDigits(',') }}
       </div>
@@ -31,17 +29,12 @@ export default {
     }
   },
   computed: {
-    rarityTextColors () {
-      const mode = this.$vuetify.theme.dark ? 'dark' : 'light'
-      return this.$store.getters['config/rarityTextColors'][mode]
-    },
-    bodyArmorQualifier () {
-      return this.item.type === 'Body Armor' ? '(chest, arms, legs)' : ''
-    }
-  },
-  methods: {
-    textColor (rarity) {
-      return this.rarityTextColors[rarity]
+    subtitle () {
+      return this.$t('armor_item_subtitle', {
+        rarity: this.$t(`rarities.${this.item.rarity}`),
+        armorType: this.$t(`armor_types.${this.item.type}_armor`),
+        placement: this.$t(`armor_placements.${this.item.placement}`)
+      })
     }
   }
 }

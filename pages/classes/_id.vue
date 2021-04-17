@@ -1,5 +1,5 @@
 <template>
-  <v-container v-if="!$fetchState.pending">
+  <v-container>
     <v-row>
       <v-col cols="9" class="d-none d-md-flex">
         <div class="d-flex">
@@ -54,22 +54,19 @@
 
 export default {
   layout: 'tabbed',
+  async asyncData ({ store }) {
+    await store.dispatch('FETCH_LOTS', ['classes', 'powers', 'class-features', 'character-progression', 'subclasses'])
+  },
   data () {
     return {
       id: this.$route.params.id,
       tabs: [
-        this.$t('character.klass.progression_table'),
-        this.$t('character.klass.class_features'),
-        this.$t('character.klass.subclasses'),
-        this.$t('powers.title')
+        this.$t('progression_table_title'),
+        this.$t('class_features_title'),
+        this.$tc('subclass_title', 2),
+        this.$tc('power_title', 2)
       ]
     }
-  },
-  async fetch () {
-    await this.$store.dispatch('FETCH_LOTS', ['classes', 'powers', 'class-features', 'character-progression', 'subclasses'])
-    this.$store.commit('pageTitle', this.item.name)
-    this.$store.commit('tabbedPage/SET_TABS', this.tabs)
-    this.$store.dispatch('tabbedPage/INIT_THEME', this.item.id)
   },
   head () {
     return {
@@ -113,6 +110,16 @@ export default {
     hrColor () {
       return this.$store.getters['config/classThemeHrColor'](this.item.id)
     }
+  },
+  created () {
+    this.$store.dispatch('SET_META', {
+      title: this.item.name,
+      subTitle: this.$tc('class_title', 2),
+      description: this.$t('meta.class_info', { name: this.item.name })
+    })
+    this.$store.commit('pageTitle', this.item.name)
+    this.$store.commit('tabbedPage/SET_TABS', this.tabs)
+    this.$store.dispatch('tabbedPage/INIT_THEME', this.item.id)
   }
 }
 </script>

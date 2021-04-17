@@ -3,7 +3,7 @@
     <v-card>
       <v-card-text>
         <div class="text-overline text--primary">
-          {{ type }}
+          {{ label }}
         </div>
         <me-skeleton-loader :pending="pending" type="heading">
           <div class="mb-3">
@@ -33,7 +33,7 @@ export default {
       type: Object,
       default: () => { return {} }
     },
-    type: {
+    label: {
       type: String,
       default: ''
     }

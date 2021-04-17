@@ -87,7 +87,10 @@
 </template>
 
 <script>
+import { MetaHead } from '~/mixins/MetaHead'
+
 export default {
+  mixins: [MetaHead],
   computed: {
     search: {
       get () {

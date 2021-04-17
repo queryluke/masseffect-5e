@@ -1,5 +1,5 @@
 <template>
-  <me-item-page :pending="$fetchState.pending" :item="item" type="mod">
+  <me-item-page :item="item" :label="$tc('mod_title', 1)">
     <template #header>
       <me-mod-title :item="item" />
     </template>
@@ -9,22 +9,20 @@
 
 <script>
 export default {
-  async fetch () {
-    this.item = await this.$store.dispatch('FETCH_ITEM', { endpoint: 'mods', id: this.$route.params.id })
-    this.$store.commit('pageTitle', 'Mods')
+  async asyncData ({ store }) {
+    await store.dispatch('FETCH_DATA', 'mods')
   },
-  data () {
-    return {
-      item: {}
+  computed: {
+    item () {
+      return this.$store.getters.getItem('mods', this.$route.params.id)
     }
   },
-  head () {
-    return {
-      title: `${this.item.name} - Mods | Mass Effect 5e`,
-      meta: [
-        { hid: 'description', name: 'description', content: `Information about ${this.item.name}` }
-      ]
-    }
+  created () {
+    this.$store.dispatch('SET_META', {
+      title: this.item.name,
+      subTitle: this.$tc('mod_title', 2),
+      description: this.$t('meta.info', { name: this.item.name })
+    })
   }
 }
 </script>

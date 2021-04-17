@@ -1,6 +1,6 @@
 <template>
   <v-btn :to="localePath(`/${type}/${itemId}`)" right>
-    {{ $t('site.buttons.view_details') }}
+    {{ $t('buttons.view_details') }}
   </v-btn>
 </template>
 

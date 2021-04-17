@@ -20,7 +20,7 @@
           <tr v-if="powerCastingColumnCount > 0 && $vuetify.breakpoint.mdAndUp">
             <th :colspan="powerCastingHeaderOffset" />
             <th :colspan="powerCastingColumnCount" class="text-center">
-              {{ $t('character.klass.progression.columns.power_slots_by_power_level') }}
+              {{ $t('class_feature_columns.power_slots_by_power_level') }}
             </th>
           </tr>
         </thead>
@@ -142,7 +142,7 @@
           :color="classFillDark"
         >
           <v-toolbar-title>
-            {{ $t('level.nth', { level: selectedRow.level }) }}
+            {{ $t('level_nth', { nth: selectedRow.level }) }}
           </v-toolbar-title>
           <v-spacer />
           <v-btn
@@ -166,10 +166,7 @@
 </template>
 
 <script>
-import { KlassMixins } from '~/mixins/klassMixins'
-
 export default {
-  mixins: [KlassMixins],
   props: {
     item: {
       type: Object,
@@ -208,9 +205,83 @@ export default {
     },
     levelTabsActiveClass () {
       return this.$store.getters['config/isDarkOnlyClassTheme'](this.item.id) ? 'grey--text text--darken-3' : 'white--text'
+    },
+    progression () {
+      const progression = []
+      for (const row of this.characterProgression) {
+        const output = {
+          cssId: `Level${row.level}`,
+          id: row.level,
+          level: this.$t(`ordinal_numbers[${row.level}]`),
+          proficiencyBonus: `+${row.profBonus}`
+        }
+        for (const p of this.item.progression.columns) {
+          if (typeof p.values === 'undefined') {
+            output[p.label] = this.getFeatureTextByLevel(row.level)
+          } else if (p.label === 'power_slots_by_power_level') {
+            for (let l = 0; l < p.values.length; l++) {
+              const val = p.values[l][row.level - 1]
+              output[`powerSlots${l}`] = val === 0 ? '-' : val
+            }
+          } else {
+            output[p.label] = p.values[row.level - 1]
+          }
+        }
+        progression.push(output)
+      }
+      return progression
+    },
+    powerCastingColumnCount () {
+      const ps = this.item.progression.columns.find(p => p.label === 'power_slots_by_power_level')
+      return ps ? ps.values.length : 0
+    },
+    powerCastingHeaderOffset () {
+      return this.headerArray.length - this.powerCastingColumnCount
+    },
+    headerArray () {
+      const array = [
+        {
+          text: this.$tc('level_title', 1),
+          value: 'level',
+          class: 'text-center'
+        },
+        {
+          text: this.$t('class_feature_columns.prof_bonus'),
+          value: 'proficiencyBonus',
+          class: 'text-center'
+        }
+      ]
+      for (const p of this.item.progression.columns) {
+        if (p.label === 'power_slots_by_power_level') {
+          for (let l = 0; l < p.values.length; l++) {
+            array.push({
+              text: this.$t(`ordinal_numbers[${l + 1}]`),
+              value: `powerSlots${l}`,
+              class: 'text-center'
+            })
+          }
+        } else {
+          array.push({
+            text: this.$t(`class_feature_columns.${p.label}`),
+            value: p.label,
+            class: 'text-center'
+          })
+        }
+      }
+      return array
     }
   },
   methods: {
+    getFeatureTextByLevel (level) {
+      const features = this.classFeatures.filter(i => i.level === level && !i.subclass).map(i => i.name)
+      if (this.item.progression.abi.includes(level)) {
+        features.push(this.$t('ability_score_increase_title'))
+      }
+      if (this.item.progression.subclass.includes(level)) {
+        features.push(this.$t(`subclass_feature_titles.${this.item.id}`))
+      }
+      return features.length === 0 ? '-' : this.$t(`lists.comma_list[${features.length}]`, features)
+    },
     onIntersect (entries) {
       if (this.goingTo) {
         return

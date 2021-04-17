@@ -79,10 +79,10 @@ export default {
       mobileSearchDialog: false,
       navigation: [
         { to: '/manual/intro', name: 'manual.title' },
-        { to: '/assets', name: 'site.pages.assets.title' },
-        { to: '/changelog', name: 'site.pages.changelog.title' },
-        { to: '/about', name: 'site.pages.about.title' },
-        { href: 'https://versions.n7.world/v120/character-builder', name: 'site.pages.character_builder.title' }
+        { to: '/assets', name: 'assets_title' },
+        { to: '/changelog', name: 'changelog_title' },
+        { to: '/about', name: 'about_title' },
+        { href: 'https://versions.n7.world/v120/character-builder', name: 'character_builder_title' }
       ]
     }
   },

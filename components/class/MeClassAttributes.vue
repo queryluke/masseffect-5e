@@ -3,22 +3,22 @@
     <!--- Hit Points --->
     <me-class-feature :klass-id="item.id">
       <template #title>
-        {{ $t('character.klass.hit_points.title') }}
+        {{ $t('hit_points_title') }}
       </template>
       <me-stat-list>
-        <me-stat-list-item :label="$t('character.klass.hit_dice.title')">
-          {{ $t('character.klass.hit_dice.per_level', {hitDice: $t('dice', { dieCount: 1, dieType: item.hitDie })}) }}
+        <me-stat-list-item :label="$t('hit_dice_title')">
+          {{ $t('hit_dice_per_level', {hitDice: $t('dice', { dieCount: 1, dieType: item.hitDie })}) }}
         </me-stat-list-item>
-        <me-stat-list-item :label="$t('character.klass.hit_points.first.title')">
-          {{ $t('character.klass.hit_points.first.text', {die: item.hitDie, mod: $t('abilities.con.title')}) }}
+        <me-stat-list-item :label="$t('hit_points_at_first_title')">
+          {{ $t('hit_points_at_first_text', {die: item.hitDie, mod: $t('abilities.con.title')}) }}
         </me-stat-list-item>
-        <me-stat-list-item :label="$t('character.klass.hit_points.higher.title')">
+        <me-stat-list-item :label="$t('hit_points_at_higher_title')">
           {{
             $t(
-              'character.klass.hit_points.first.text',
+              'hit_points_at_higher_text',
               {
                 die: item.hitDie,
-                min: minHitDieRoll(item.hitDie),
+                min: minHitDieRoll,
                 mod: $t('abilities.con.title')
               }
             )
@@ -30,7 +30,7 @@
     <!--- Proficiencies --->
     <me-class-feature :klass-id="item.id">
       <template #title>
-        {{ $t('character.klass.proficiencies') }}
+        {{ $t('proficiencies_title') }}
       </template>
       <me-stat-list>
         <template v-for="(prof, key) in item.profs">
@@ -47,10 +47,10 @@
     <!-- Starting equipment -->
     <me-class-feature :klass-id="item.id">
       <template #title>
-        {{ $t('character.klass.starting_equipment.title') }}
+        {{ $t('starting_equipment_title') }}
       </template>
       <p class="text-body-2">
-        {{ $t('character.klass.starting_equipment.text') }}
+        {{ $t('starting_equipment_info') }}
       </p>
       <ul class="text-body-2">
         <li
@@ -68,14 +68,33 @@
 </template>
 
 <script>
-import { KlassMixins } from '~/mixins/klassMixins'
 
 export default {
-  mixins: [KlassMixins],
   props: {
     item: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    minHitDieRoll () {
+      return Math.ceil((this.item.hitDie + 1) / 2)
+    }
+  },
+  methods: {
+    profLabel (prof) {
+      switch (prof) {
+        case 'weapon':
+          return this.$tc('weapon_title', 2)
+        case 'armor':
+          return this.$tc('armor_title', 2)
+        case 'tool':
+          return this.$t('gear_types.tool')
+        case 'skill':
+          return this.$t('skills_title')
+        case 'savingThrow':
+          return this.$t('saving_throws_title')
+      }
     }
   }
 }

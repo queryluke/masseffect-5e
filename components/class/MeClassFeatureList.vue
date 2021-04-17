@@ -12,10 +12,7 @@
 </template>
 
 <script>
-import { KlassMixins } from '~/mixins/klassMixins'
-
 export default {
-  mixins: [KlassMixins],
   props: {
     klassId: {
       type: String,
@@ -66,6 +63,28 @@ export default {
           ? a.id > b.id ? -1 : 1
           : a.level > b.level ? 1 : -1
       })
+    }
+  },
+  methods: {
+    createAbiFeatures (first, rest) {
+      const atLevel = {
+        level: this.$t('level_nth', {
+          level: this.$t(`ordinal_numbers[${first}]`)
+        })
+      }
+      if (rest) {
+        atLevel.and_list = this.$t(`lists.and_list[${rest.length}]`, rest.map(i => this.$t(`ordinal_numbers[${i}]`)))
+      }
+      const abiText = this.$t('abi_feature.text', {
+        at_level: this.$tc('abi_feature.at_level', rest ? 2 : 1, atLevel)
+      })
+      return {
+        name: this.$t('ability_score_increase_title'),
+        id: `${this.klassId}-ability-score-increase-${first}`,
+        level: first,
+        klass: this.klassId,
+        html: `<p>${abiText}</p><p>${this.$t('abi_feature.feat_text')}</p>`
+      }
     }
   }
 }

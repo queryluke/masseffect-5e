@@ -14,7 +14,7 @@
         {{ item.snippet }}
       </p>
       <p class="text-subtitle-1 mb-0">
-        {{ $t('character.species.traits') }}
+        {{ $t('traits_title') }}
       </p>
       <p>
         {{ traitsPreview }}
@@ -24,10 +24,8 @@
 </template>
 
 <script>
-import { SpeciesMixins } from '~/mixins/speciesMixins'
 
 export default {
-  mixins: [SpeciesMixins],
   props: {
     item: {
       type: Object,
@@ -36,7 +34,16 @@ export default {
   },
   computed: {
     traits () {
-      return this.$store.getters.getData('traits').filter(i => i.species === this.item.id)
+      return this.$store.getters.getData('traits').filter(i => i.species.includes(this.item.id))
+    },
+    traitsPreview () {
+      let textArray = this.item.abilityScoreIncrease.map((i) => {
+        return `+${i.amount} ${this.$t(`abilities.${i.ability}.title`)}`
+      })
+      if (this.traits.length > 0) {
+        textArray = textArray.concat(this.traits.map(i => i.name))
+      }
+      return this.$t(`lists.comma_list[${textArray.length}]`, textArray)
     }
   }
 }

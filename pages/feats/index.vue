@@ -1,24 +1,23 @@
 <template>
   <v-container>
     <me-page-title />
-    <p v-for="(para, index) in $t('character.feat.intro')" :key="index">
+    <p v-for="(para, index) in $t('feat_intro')" :key="index">
       {{ para }}
     </p>
     <me-skeleton-loader :pending="$fetchState.pending" type="expansionList">
       <me-expansion-list
         :items="items"
-        :headers="headers"
-        type="feats"
+        model="feats"
         :bookmarkable="false"
       >
         <template #[`header.indicator`]="{ item }">
           <v-avatar :class="item.new ? 'deep-purple' : 'deep-orange'" size="30px" class="white--text text-caption my-n2">
-            {{ item.new ? $t('chips.new') : $t('chips.phb') }}
+            {{ item.new ? $t('new_title') : $t('phb') }}
           </v-avatar>
         </template>
         <template #body="{ item }">
           <p v-if="item.prerequisite">
-            <strong>{{ $t('character.feat.prereq') }}</strong>
+            <strong>{{ $t('prerequisite_title') }}</strong>
             <em class="pl-1">
               {{ item.prerequisite }}
             </em>
@@ -35,21 +34,13 @@
 <script>
 export default {
   async fetch () {
-    this.$store.commit('pageTitle', this.$t('character.feat.title'))
+    this.$store.dispatch('SET_META', {
+      title: this.$tc('feat_title', 2),
+      description: this.$t('meta.feats')
+    })
     await this.$store.dispatch('FETCH_DATA', 'feats')
   },
-  head () {
-    return {
-      title: 'Feats | Mass Effect 5e',
-      meta: [
-        { hid: 'description', name: 'description', content: 'New feats available! Plus a curated list of D&D 5th edition feats.' }
-      ]
-    }
-  },
   computed: {
-    headers () {
-      return this.$store.getters['config/featHeaders']
-    },
     items () {
       return this.$store.getters.getData('feats')
     }

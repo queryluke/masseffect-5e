@@ -30,7 +30,7 @@
           :avatar="page.name === 'site.bookmarks' ? bookmarkCount : false"
         />
         <v-subheader v-if="page.header" :key="index">
-          {{ $t(page.header) }}
+          {{ page.header }}
         </v-subheader>
         <me-nav-list-group
           v-if="page.items"
@@ -55,7 +55,7 @@
               v-bind="attrs"
               v-on="on"
             >
-              {{ $t('site.labels.version') }} {{ version }}
+              {{ $t('version') }} {{ version }}
               <v-icon>
                 mdi-menu-up
               </v-icon>
@@ -93,72 +93,72 @@ export default {
       settingsDialog: false,
       nav: [
         {
-          header: 'manual.title'
+          header: this.$t('manual.title')
         },
         {
-          name: 'manual.intro',
+          name: this.$t('manual.intro'),
           icon: 'mdi-book-open-variant',
           to: '/manual/intro'
         },
         {
-          name: 'site.labels.rules',
+          name: this.$t('rules_title'),
           icon: 'mdi-gavel',
           items: [
-            { name: 'manual.character_creation', icon: 'supervised_user_circle', to: '/manual/character-creation' },
-            { name: 'manual.beyond_first_level', icon: 'tending_up', to: '/manual/beyond-first-level' },
-            { name: 'manual.using_ability_scores', icon: 'gamepad', to: '/manual/using-ability-scores' },
-            { name: 'manual.missions', icon: 'map', to: '/manual/missions' },
-            { name: 'manual.equipment', icon: 'category', to: '/manual/equipment' },
-            { name: 'manual.finances', icon: 'money', to: '/manual/finances' },
-            { name: 'manual.vehicles', icon: '', to: '/manual/vehicles' },
-            { name: 'manual.combat', icon: '', to: '/manual/combat' },
-            { name: 'manual.powercasting', icon: '', to: '/manual/powercasting' },
-            { name: 'manual.about_bestiary', icon: '', to: '/manual/bestiary' }
+            { name: this.$t('manual.character_creation'), icon: 'supervised_user_circle', to: '/manual/character-creation' },
+            { name: this.$t('manual.beyond_first_level'), icon: 'tending_up', to: '/manual/beyond-first-level' },
+            { name: this.$t('manual.using_ability_scores'), icon: 'gamepad', to: '/manual/using-ability-scores' },
+            { name: this.$t('manual.missions'), icon: 'map', to: '/manual/missions' },
+            { name: this.$t('manual.equipment'), icon: 'category', to: '/manual/equipment' },
+            { name: this.$t('manual.finances'), icon: 'money', to: '/manual/finances' },
+            { name: this.$t('manual.vehicles'), icon: '', to: '/manual/vehicles' },
+            { name: this.$t('manual.combat'), icon: '', to: '/manual/combat' },
+            { name: this.$t('manual.powercasting'), icon: '', to: '/manual/powercasting' },
+            { name: this.$t('manual.about_bestiary'), icon: '', to: '/manual/bestiary' }
           ]
         },
         {
-          name: 'character.title',
+          name: this.$tc('character_title', 1),
           icon: 'mdi-face-agent',
           items: [
-            { to: '/classes', name: { key: 'character.klass.title', count: 2 } },
-            { to: '/species', name: 'character.species.title' },
-            { to: '/feats', name: 'character.feat.title' },
-            { to: '/backgrounds', name: { key: 'character.background.title', count: 2 } }
+            { to: '/classes', name: this.$tc('class_title', 2) },
+            { to: '/species', name: this.$tc('species_title', 2) },
+            { to: '/feats', name: this.$tc('feat_title', 2) },
+            { to: '/backgrounds', name: this.$tc('background_title', 2) }
           ]
         },
         {
-          name: 'equipment.title',
+          name: this.$tc('equipment_title', 2),
           icon: 'mdi-hammer-wrench',
           items: [
-            { to: '/weapons', name: { key: 'equipment.weapons.title', count: 2 } },
-            { to: '/armor', name: 'equipment.armor.title' },
-            { to: '/mods', name: { key: 'equipment.mods.title', count: 2 } },
-            { to: '/gear', name: 'equipment.gear.title' },
-            { to: '/vehicles', name: { key: 'equipment.vehicles.title', count: 2 } }
+            { to: '/weapons', name: this.$tc('weapon_title', 2) },
+            { to: '/armor', name: this.$tc('armor_title', 2) },
+            { to: '/mods', name: this.$tc('mod_title', 2) },
+            { to: '/gear', name: this.$tc('gear_title', 2) },
+            { to: '/vehicles', name: this.$tc('vehicle_title', 2) }
           ]
         },
         {
-          name: 'powers.title',
+          name: this.$tc('power_title', 2),
           icon: 'mdi-fire',
           to: '/powers'
         },
         {
-          name: 'bestiary.title',
+          name: this.$tc('bestiary_title', 2),
           icon: 'mdi-paw',
           to: '/bestiary'
         },
         {
-          name: 'appendix.title',
+          name: this.$t('appendix_title'),
           icon: 'mdi-view-split-vertical',
           items: [
-            { to: '/appendix/conditions', name: 'conditions.title' },
-            { to: '/appendix/skills', name: 'skills.title' },
-            { to: '/appendix/tool-profs', name: 'tool_profs.title' },
-            { to: '/appendix/weapon-properties', name: 'equipment.weapons.properties.title' }
+            { to: '/appendix/conditions', name: this.$t('conditions_title') },
+            { to: '/appendix/skills', name: this.$t('skills_title') },
+            { to: '/appendix/tool-profs', name: this.$t('tool_profs_title') },
+            { to: '/appendix/weapon-properties', name: this.$t('weapon_props_title') }
           ]
         },
         {
-          name: 'site.pages.bookmarks.title',
+          name: this.$t('bookmarks_title'),
           icon: 'mdi-book',
           to: '/bookmarks'
         },
@@ -166,30 +166,30 @@ export default {
           divider: true
         },
         {
-          header: 'site.labels.tools_guides'
+          header: this.$t('tools_guides_title')
         },
         {
-          name: 'site.pages.character_builder.title',
+          name: this.$t('character_builder_title'),
           to: '/character-builder',
           icon: 'mdi-clipboard-account'
         },
         {
-          name: 'site.labels.generators',
+          name: this.$t('generators_title'),
           icon: 'mdi-cog-sync',
           group: 'generator',
           items: [
-            { to: '/generators/loot', name: 'site.pages.loot_generator.title' },
-            { to: '/generators/npc', name: 'site.pages.npc_generator.title' }
+            { to: '/generators/loot', name: this.$t('loot_generator_title') },
+            { to: '/generators/npc', name: this.$t('npc_generator_title') }
           ]
         },
         {
-          name: 'guide.title',
+          name: this.$t('guide.title'),
           icon: 'mdi-puzzle',
           group: 'guide',
           items: [
-            { to: '/guide/armor-creation', name: 'guide.creating_armor' },
-            { to: '/guide/vehicle-creation', name: 'guide.creating_vehicles' },
-            { to: '/guide/encounter-creation', name: 'guide.creating_encounters' }
+            { to: '/guide/armor-creation', name: this.$t('guide.creating_armor') },
+            { to: '/guide/vehicle-creation', name: this.$t('guide.creating_vehicles') },
+            { to: '/guide/encounter-creation', name: this.$t('guide.creating_encounters') }
           ]
         }
       ]
@@ -208,11 +208,11 @@ export default {
       const navigation = this.nav.slice()
       if (this.$vuetify.breakpoint.mdAndDown) {
         navigation.push({ divider: true })
-        navigation.push({ header: 'title' })
-        navigation.push({ to: '/assets', name: 'site.pages.assets.title' })
-        navigation.push({ to: '/changelog', name: 'site.pages.changelog.title' })
-        navigation.push({ to: '/about', name: 'site.pages.about.title' })
-        navigation.push({ to: '/license', name: 'site.pages.license.title' })
+        navigation.push({ header: this.$t('title') })
+        navigation.push({ to: '/assets', name: this.$t('assets_title') })
+        navigation.push({ to: '/changelog', name: this.$t('changelog_title') })
+        navigation.push({ to: '/about', name: this.$t('about_title') })
+        navigation.push({ to: '/license', name: this.$t('license_title') })
       }
       return navigation
     },

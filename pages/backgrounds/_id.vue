@@ -1,25 +1,23 @@
 <template>
-  <me-item-page :pending="$fetchState.pending" :item="item" :type="$tc('character.background.title', 1)" />
+  <me-item-page :item="item" :label="$tc('background_title', 1)" />
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      item: {}
+  async asyncData ({ store }) {
+    await store.dispatch('FETCH_DATA', 'backgrounds')
+  },
+  computed: {
+    item () {
+      return this.$store.getters.getItem('backgrounds', this.$route.params.id)
     }
   },
-  async fetch () {
-    this.item = await this.$store.dispatch('FETCH_ITEM', { endpoint: 'backgrounds', id: this.$route.params.id })
-    this.$store.commit('pageTitle', this.item.name)
-  },
-  head () {
-    return {
-      title: `${this.item.name} - Backgrounds | Mass Effect 5e`,
-      meta: [
-        { hid: 'description', name: 'description', content: `Information about the ${this.item.name} background` }
-      ]
-    }
+  created () {
+    this.$store.dispatch('SET_META', {
+      title: this.item.name,
+      subTitle: this.$tc('background_title', 2),
+      description: this.$t('meta.info', { name: this.item.name })
+    })
   }
 }
 </script>

@@ -4,20 +4,20 @@
     <div v-if="$vuetify.breakpoint.mdAndUp">
       <!-- Rule link -->
       <slot name="ruleLink">
-        <div v-if="ruleLink.hasOwnProperty('to')" class="text-md-right">
-          <v-btn :to="ruleLink.to" nuxt outlined color="primary">
-            {{ ruleLink.name }}
+        <div v-if="ruleLink" class="text-md-right">
+          <v-btn :to="localePath(ruleLink)" nuxt outlined color="primary">
+            {{ $t('buttons.view_rules') }}
           </v-btn>
         </div>
       </slot>
       <slot name="pageHeader">
-        <me-page-title :title="title" />
+        <me-page-title />
         <v-row>
           <v-col cols="12">
             <v-text-field
               v-model="search"
               append-icon="mdi-magnify"
-              label="Search"
+              :label="$t('search')"
               single-line
               hide-details
               clearable
@@ -26,7 +26,7 @@
           <v-col v-for="filter in filters" :key="filter.name">
             <v-select
               :items="filter.options"
-              :label="filter.name"
+              :label="filter.label"
               multiple
               clearable
               @change="updateSelectedFilters(filter.key, $event)"
@@ -57,13 +57,13 @@
               small
               @click="updateSortBy(header)"
             >
-              {{ $t(`site.stat_headers.${header.label}`) }}
+              {{ $t(header.label) }}
               <v-icon small>
                 {{ icon(header) }}
               </v-icon>
             </v-btn>
             <span v-else class="text-caption text-uppercase font-weight-bold pt-1 pl-3">
-              {{ $t(`site.stat_headers.${header.label}`) }}
+              {{ $t(header.label) }}
             </span>
           </v-col>
         </v-row>
@@ -72,17 +72,17 @@
 
     <!-- list -->
     <me-skeleton-loader :pending="pending" type="listPage">
-      <slot name="list" :display-items="sortedItems" />
+      <component :is="component" :items="sortedItems" />
     </me-skeleton-loader>
 
     <!-- mobile filter dialog -->
-    <me-mobile-filters :title="`Filter ${title}`">
+    <me-mobile-filters :title="$t('buttons.filter')">
       <template #filters>
         <v-row class="my-5">
           <v-col v-for="filter in filters" :key="filter.name" cols="12">
             <v-select
               :items="filter.options"
-              :label="filter.name"
+              :label="filter.label"
               multiple
               clearable
               @change="updateSelectedFilters(filter.key, $event)"
@@ -123,38 +123,28 @@
 </template>
 
 <script>
+import { ListPageFilters } from '~/mixins/ListPageFilters'
+import { ListPageHeaders } from '~/mixins/ListPageHeaders'
+
 export default {
   name: 'MeListPage',
+  mixins: [ListPageFilters, ListPageHeaders],
   props: {
     pending: {
       type: Boolean,
       default: true
     },
-    items: {
-      type: Array,
-      required: true
-    },
-    ruleLink: {
-      type: Object,
-      default: () => {
-        return {}
-      }
-    },
-    title: {
+    model: {
       type: String,
       required: true
     },
-    filters: {
-      type: Array,
-      default: () => {
-        return []
-      }
+    component: {
+      type: String,
+      required: true
     },
-    headers: {
-      type: Array,
-      default: () => {
-        return []
-      }
+    ruleLink: {
+      type: [String, Boolean],
+      default: false
     },
     customFilter: {
       type: Function,
@@ -217,6 +207,9 @@ export default {
     }
   },
   computed: {
+    items () {
+      return this.$store.getters.getData(this.model)
+    },
     search: {
       get () {
         return this.$store.getters['listPage/search']

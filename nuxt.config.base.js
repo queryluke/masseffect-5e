@@ -12,12 +12,14 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-    titleTemplate: '%s - ' + 'Mass Effect 5e',
-    title: 'Mass Effect 5e' || '',
+    titleTemplate: (titleChunk) => {
+      // If undefined or blank then we don't need the hyphen
+      return titleChunk ? `${titleChunk} | Mass Effect 5e` : 'Mass Effect 5e'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'keywords', content: 'mass effect, d&d, dnd, Dungeons & Dragons, 5e, 5th Edition, TRPG, RPG, d20, homebrew, conversion, tabletop' },
+      { hid: 'keywords', name: 'keywords', content: 'mass effect, d&d, dnd, Dungeons & Dragons, 5e, 5th Edition, TRPG, RPG, d20, homebrew, conversion, tabletop' },
       { hid: 'description', name: 'description', content: 'D&D 5th Edition Homebrew featuring the Mass Effect Universe' }
     ],
     link: [
@@ -90,10 +92,13 @@ export default {
     langDir: 'lang',
     defaultLocale: 'en',
     detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'i18n_redirected',
+      // TODO: this is less performant, but bypasses GDPR
+      useCookie: false,
+      // cookieKey: 'i18n_redirected',
       onlyOnRoot: true
     },
+    seo: true,
+    baseUrl: 'https://n7.world',
     vuex: {
       moduleName: 'i18n',
       syncLocale: true,

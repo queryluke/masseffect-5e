@@ -6,7 +6,7 @@
     right
   >
     <v-list dense>
-      <v-subheader>Jump to</v-subheader>
+      <v-subheader>{{ $t('buttons.go_to') }}</v-subheader>
       <v-list-item v-for="rule in rules" :key="rule.id" @click="goToRule(`#${rule.id}`)">
         <v-list-item-content>
           <v-list-item-title>

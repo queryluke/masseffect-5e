@@ -20,21 +20,16 @@
 
 <script>
 export default {
-  data () {
-    return {
-      items: [...Array(6).keys()]
-    }
-  },
   async fetch () {
-    this.$store.commit('pageTitle', this.$tc('character.klass.title', 2))
-    this.items = await this.$store.dispatch('FETCH_DATA', 'classes')
+    this.$store.dispatch('SET_META', {
+      title: this.$tc('class_title', 2),
+      description: this.$t('meta.classes')
+    })
+    await this.$store.dispatch('FETCH_DATA', 'classes')
   },
-  head () {
-    return {
-      title: 'Classes | Mass Effect 5e',
-      meta: [
-        { hid: 'description', name: 'description', content: 'Choose your favorite Mass Effect class, each with 3 subclasses to provide variety to the game.' }
-      ]
+  computed: {
+    items () {
+      return this.$fetchState.pending ? [...Array(6).keys()] : this.$store.getters.getData('classes')
     }
   }
 }

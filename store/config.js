@@ -1,76 +1,28 @@
 export const state = () => ({
-  featHeaders: [
-    { label: 'indicator', key: 'indicator', cols: 2, sm: 1, sortable: false },
-    { label: 'name', key: 'name', cols: 10, sm: 5, lg: 2 },
-    { label: 'prereq', key: 'prerequisite', cols: 3, classes: 'd-none d-lg-flex', sortable: false },
-    { label: 'notes', key: 'note', cols: 6, classes: 'd-none d-sm-flex', sortable: false }
-  ],
-  powerHeaders: [
-    { label: 'type_level', key: 'level', cols: 4, sm: 3, md: 2 },
-    { label: 'name', key: 'name', cols: 8, sm: 9, md: 4, lg: 2 },
-    { label: 'duration', key: 'duration', cols: 3, lg: 2, classes: 'd-none d-md-flex', sortable: false },
-    { label: 'range_area', key: 'range', cols: 3, lg: 2, classes: 'd-none d-md-flex', sortable: false },
-    { label: 'attack', key: 'attack', cols: 2, classes: 'd-none d-lg-flex', sortable: false },
-    { label: 'damage_effect', key: 'effect', cols: 2, classes: 'd-none d-lg-flex', sortable: false }
-  ],
-  weaponHeaders: [
-    { key: 'name', label: 'name', cols: 8, sm: 9, lg: 3 },
-    { key: 'damage', label: 'damage', cols: 4, sm: 3, lg: 2 },
-    { key: 'heat', label: 'heat', cols: 1, classes: 'd-none d-lg-flex' },
-    { key: 'range', label: 'range', cols: 2, classes: 'd-none d-lg-flex' },
-    { key: 'weight', label: 'weight', cols: 2, classes: 'd-none d-lg-flex' },
-    { key: 'cost', label: 'cost', cols: 2, classes: 'd-none d-lg-flex' }
-  ],
-  armorHeaders: [
-    { key: 'name', label: 'name', cols: 6, sm: 5, md: 4, lg: 3 },
-    { key: 'cost', label: 'cost', cols: 2, sm: 2, md: 1, classes: 'd-none d-sm-flex' },
-    { key: 'armorType', label: 'armor_type', cols: 3, sm: 2 },
-    { key: 'type', label: 'type', cols: 3, md: 2 },
-    { key: 'notes', label: 'notes', cols: 3, lg: 4, classes: 'd-none d-md-flex', sortable: false }
-  ],
-  modHeaders: [
-    { key: 'name', label: 'name', cols: 6, sm: 5, md: 4, lg: 3 },
-    { key: 'cost', label: 'cost', cols: 3, sm: 2, md: 1, classes: 'd-none d-sm-flex' },
-    { key: 'placement', label: 'placement', cols: 3, sm: 2 },
-    { key: 'availability', label: 'for', cols: 3, sortable: false },
-    { key: 'notes', label: 'notes', cols: 3, classes: 'd-none d-md-flex', sortable: false }
-  ],
-  gearHeaders: [
-    { key: 'name', label: 'name', cols: 6 },
-    { key: 'cost', label: 'cost', cols: 3 },
-    { key: 'weight', label: 'weight', cols: 3 }
-  ],
-  npcHeaders: [
-    { key: 'name', label: 'name', cols: 6 },
-    { key: 'unit', label: 'faction', cols: 3 },
-    { key: 'cr', label: 'cr', cols: 3 }
-  ],
-  rarityOptions: {
-    name: 'Rarity',
-    key: 'rarity',
-    options: ['Varies', 'Common', 'Uncommon', 'Rare', 'Spectre']
-  },
   rarityColors: {
-    Varies: 'grey darken-3',
-    Common: 'grey darken-3',
-    Uncommon: 'green darken-3',
-    Rare: 'blue darken-2',
-    Spectre: 'purple'
+    varies: 'grey darken-3',
+    common: 'grey darken-3',
+    uncommon: 'green darken-3',
+    rare: 'blue darken-2',
+    very_rare: 'purple',
+    spectre: 'red'
   },
   rarityTextColors: {
     light: {
-      Varies: 'grey--text text--darken-4',
-      Common: 'grey--text text--darken-4',
-      Uncommon: 'green--text text--darken-3',
-      Rare: 'blue--text text--darken-2',
-      Spectre: 'purple--text'
+      varies: 'grey--text text--darken-4',
+      common: 'grey--text text--darken-4',
+      uncommon: 'green--text text--darken-3',
+      rare: 'blue--text text--darken-2',
+      very_rare: 'purple--text',
+      spectre: 'red--text text--darken-4'
     },
     dark: {
-      Varies: 'grey--text',
-      Common: 'grey--text',
-      Uncommon: 'green--text text--accent-4',
-      Rare: 'blue--text',
-      Spectre: 'purple--text text--accent-2'
+      varies: 'grey--text',
+      common: 'grey--text',
+      uncommon: 'green--text text--accent-4',
+      rare: 'blue--text',
+      very_rare: 'purple--text text--accent-2',
+      spectre: 'red--text'
     }
   },
   primeTypeText: {
@@ -173,16 +125,9 @@ export const state = () => ({
 })
 
 export const getters = {
-  armorHeaders: state => state.armorHeaders,
-  featHeaders: state => state.featHeaders,
-  gearHeaders: state => state.gearHeaders,
-  modHeaders: state => state.modHeaders,
-  npcHeaders: state => state.npcHeaders,
-  powerHeaders: state => state.powerHeaders,
   primeTypeText: state => state.primeTypeText,
-  weaponHeaders: state => state.weaponHeaders,
-  rarityOptions: state => state.rarityOptions,
   rarityTextColors: state => state.rarityTextColors,
+  rarityTextColor: (state, getters) => rarity => state.rarityTextColors[getters.darkMode ? 'dark' : 'light'][rarity],
   classThemes: state => state.classThemes,
   darkMode: (state, getters, rootState, rootGetters) => rootGetters['user/darkMode'],
   isDarkOnlyClassTheme: state => klass => typeof state.classThemes[klass].light === 'undefined',

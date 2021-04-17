@@ -1,6 +1,6 @@
 <template>
   <span>
-    {{ level }}
+    {{ text }}
   </span>
 </template>
 
@@ -8,18 +8,16 @@
 export default {
   name: 'MePowerType',
   props: {
-    item: {
-      type: Object,
-      default: () => {
-        return {
-          level: 0
-        }
-      }
+    level: {
+      type: [Number, String],
+      default: 0
     }
   },
   computed: {
-    level () {
-      return this.item.level === 0 ? 'cantrip' : `${this.item.level}${this.$options.filters.ordinal(this.item.level)}`
+    text () {
+      return this.level === 0
+        ? this.$t('cantrip')
+        : this.$t(`ordinal_numbers[${this.level}]`)
     }
   }
 }

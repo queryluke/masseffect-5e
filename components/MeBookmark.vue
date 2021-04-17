@@ -27,7 +27,7 @@ export default {
       return this.isBookmarked ? 'grey darken-3' : 'secondary'
     },
     text () {
-      return this.isBookmarked ? 'site.bookmarks.remove_bookmark' : 'site.bookmarks.add_bookmark'
+      return this.isBookmarked ? 'buttons.remove_bookmark' : 'buttons.add_bookmark'
     },
     icon () {
       return this.isBookmarked ? 'mdi-delete' : 'mdi-bookmark'

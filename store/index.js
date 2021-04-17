@@ -1,9 +1,10 @@
 export const state = () => ({
   data: {},
   pageTitle: null,
+  metaSubtitle: null,
+  pageMetaDescription: null,
   drawer: null,
   jumpNav: null,
-  rules: [],
   pastVersions: [
     {
       name: 'v1.2.0',
@@ -29,15 +30,20 @@ export const getters = {
   getData: (state, getters) => (endpoint) => {
     const locale = state.i18n.locale
     if (!getters.isLocaleSet) {
-      return false
+      return []
     }
-    return typeof state.data[locale][endpoint] === 'undefined' ? false : state.data[locale][endpoint]
+    return typeof state.data[locale][endpoint] === 'undefined' ? [] : state.data[locale][endpoint]
   },
   getItem: (state, getters) => (endpoint, id) => {
     const data = getters.getData(endpoint)
-    return data === false ? false : data.find(d => d.id === id)
+    return data.length === 0 ? false : data.find(d => d.id === id)
+  },
+  listFilters: state => (endpoint) => {
+    return state.listPage.filters[endpoint]
   },
   pageTitle: state => state.pageTitle,
+  metaDescription: state => state.pageMetaDescription,
+  metaTitle: state => state.metaSubtitle ? `${state.pageTitle} - ${state.metaSubtitle}` : state.pageTitle,
   pastVersions: state => state.pastVersions
 }
 
@@ -58,12 +64,23 @@ export const mutations = {
   pageTitle (state, value) {
     state.pageTitle = value
   },
+  metaDescription (state, value) {
+    state.pageMetaDescription = value
+  },
+  metaSubtitle (state, value) {
+    state.metaSubtitle = value
+  },
   setCurrentRules (state, value) {
     state.rules = value
   }
 }
 
 export const actions = {
+  SET_META ({ commit }, { title, subTitle = false, description }) {
+    commit('pageTitle', title)
+    commit('metaSubtitle', subTitle || null)
+    commit('metaDescription', description)
+  },
   async FETCH_LOTS ({ getters, commit, dispatch }, endpoints) {
     return await Promise.all(endpoints.map(i => dispatch('FETCH_DATA', i)))
   },
@@ -73,8 +90,7 @@ export const actions = {
       commit('initLocale', locale)
     }
     let data = getters.getData(endpoint)
-    if (!data) {
-      console.log(`getting ${endpoint}`)
+    if (data.length === 0) {
       try {
         data = await this.$http.$get(`${locale}/${endpoint}.json`)
       } catch (e) {

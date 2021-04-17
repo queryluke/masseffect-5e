@@ -23,13 +23,13 @@
               {{ $t('title') }}
             </h1>
             <h2 class="black--text text-h6 mt-10">
-              {{ $t('site.pages.home.title') }}
+              {{ $t('homepage.title') }}
             </h2>
             <p class="black--text text-subtitle-2">
-              {{ $t('site.pages.home.subtitle') }}
+              {{ $t('homepage.subtitle') }}
             </p>
             <v-btn :to="localePath('/manual/intro')" large color="secondary" class="my-3">
-              {{ $t('site.pages.home.get_started') }}
+              {{ $t('homepage.get_started') }}
             </v-btn>
           </v-col>
         </v-row>
@@ -41,10 +41,10 @@
         <v-row justify="center" class="mt-5">
           <v-col cols="12" sm="10" md="8" class="my-3 text-center">
             <h3 class="text-h6">
-              {{ $t('site.pages.home.begin') }}
+              {{ $t('homepage.begin') }}
             </h3>
             <p>
-              {{ $t('site.pages.home.begin_text') }}
+              {{ $t('homepage.begin_text') }}
             </p>
           </v-col>
         </v-row>
@@ -61,10 +61,10 @@
                 </v-avatar>
               </v-card-text>
               <v-card-title class="layout justify-center">
-                {{ $t('site.pages.home.info[0].title') }}
+                {{ $t('homepage.info[0].title') }}
               </v-card-title>
               <v-card-text>
-                {{ $t('site.pages.home.info[0].text') }}
+                {{ $t('homepage.info[0].text') }}
               </v-card-text>
             </v-card>
           </v-col>
@@ -78,10 +78,10 @@
                 </slot>
               </v-card-text>
               <v-card-title class="layout justify-center">
-                {{ $t('site.pages.home.info[1].title') }}
+                {{ $t('homepage.info[1].title') }}
               </v-card-title>
               <v-card-text>
-                {{ $t('site.pages.home.info[1].text') }}
+                {{ $t('homepage.info[1].text') }}
               </v-card-text>
             </v-card>
           </v-col>
@@ -95,10 +95,10 @@
                 </slot>
               </v-card-text>
               <v-card-title class="layout justify-center">
-                {{ $t('site.pages.home.info[2].title') }}
+                {{ $t('homepage.info[2].title') }}
               </v-card-title>
               <v-card-text>
-                {{ $t('site.pages.home.info[2].text') }}
+                {{ $t('homepage.info[2].text') }}
               </v-card-text>
             </v-card>
           </v-col>
@@ -120,7 +120,7 @@
             xl="4"
           >
             <h2 class="white--text text--shadow font-weight-bold text-h4 m-auto text-center">
-              {{ $t('site.pages.home.play_text') }}
+              {{ $t('homepage.play_text') }}
             </h2>
           </v-col>
         </v-row>
@@ -135,14 +135,14 @@
               <div class="d-flex flex-no-wrap justify-space-between">
                 <div>
                   <v-card-title>
-                    {{ $t('site.pages.home.features[0].title') }}
+                    {{ $t('homepage.features[0].title') }}
                   </v-card-title>
                   <v-card-text>
-                    {{ $t('site.pages.home.features[0].text') }}
+                    {{ $t('homepage.features[0].text') }}
                   </v-card-text>
                   <v-card-actions>
                     <v-btn :to="localePath('/manual/intro')" text>
-                      {{ $t('site.pages.home.features[0].button') }} <v-icon>mdi-chevron-right</v-icon>
+                      {{ $t('homepage.features[0].button') }} <v-icon>mdi-chevron-right</v-icon>
                     </v-btn>
                   </v-card-actions>
                 </div>
@@ -172,14 +172,14 @@
                 </v-avatar>
                 <div>
                   <v-card-title>
-                    {{ $t('site.pages.home.features[1].title') }}
+                    {{ $t('homepage.features[1].title') }}
                   </v-card-title>
                   <v-card-text>
-                    {{ $t('site.pages.home.features[1].text') }}
+                    {{ $t('homepage.features[1].text') }}
                   </v-card-text>
                   <v-card-actions>
                     <v-btn :to="localePath('/assets')" text>
-                      {{ $t('site.pages.home.features[1].button') }} <v-icon>mdi-chevron-right</v-icon>
+                      {{ $t('homepage.features[1].button') }} <v-icon>mdi-chevron-right</v-icon>
                     </v-btn>
                   </v-card-actions>
                 </div>
@@ -193,14 +193,14 @@
               <div class="d-flex flex-no-wrap justify-space-between">
                 <div>
                   <v-card-title>
-                    {{ $t('site.pages.home.features[2].title') }}
+                    {{ $t('homepage.features[2].title') }}
                   </v-card-title>
                   <v-card-text>
-                    {{ $t('site.pages.home.features[2].text') }}
+                    {{ $t('homepage.features[2].text') }}
                   </v-card-text>
                   <v-card-actions>
                     <v-btn :to="localePath('/about' )" text>
-                      {{ $t('site.pages.home.features[2].button') }} <v-icon>mdi-chevron-right</v-icon>
+                      {{ $t('homepage.features[2].button') }} <v-icon>mdi-chevron-right</v-icon>
                     </v-btn>
                   </v-card-actions>
                 </div>
@@ -233,7 +233,7 @@
             xl="4"
           >
             <h2 class="white--text text--shadow font-weight-bold text-h4 m-auto text-center">
-              {{ $t('site.pages.home.news') }}
+              {{ $t('homepage.news') }}
             </h2>
           </v-col>
         </v-row>

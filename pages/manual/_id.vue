@@ -15,18 +15,18 @@
         </p>
         <v-row justify="center">
           <v-col>
-            <v-btn color="secondary" to="/changelog" nuxt>
-              {{ $t('site.pages.changelog.title') }}
+            <v-btn color="secondary" :to="localePath('/changelog')" nuxt>
+              {{ $t('changelog_title') }}
             </v-btn>
           </v-col>
           <v-col>
-            <v-btn color="secondary" to="/about" nuxt>
-              {{ $t('site.join_community') }}
+            <v-btn color="secondary" :to="localePath('/about')" nuxt>
+              {{ $t('buttons.join_community') }}
             </v-btn>
           </v-col>
           <v-col>
-            <v-btn color="secondary" to="/license" nuxt>
-              {{ $t('site.pages.license.title') }}
+            <v-btn color="secondary" :to="localePath('/license')" nuxt>
+              {{ $t('license_title') }}
             </v-btn>
           </v-col>
         </v-row>
@@ -48,7 +48,7 @@ export default {
       const sectionText = data[0].find(i => i.id === section.id)
       return { ...section, ...sectionText }
     })
-    store.commit('pageTitle', i18n.t(page.title))
+    store.dispatch('SET_META', { title: i18n.t(page.title), description: i18n.t('meta.manual') })
     store.commit('setCurrentRules', sections)
     return {
       page,
@@ -59,7 +59,7 @@ export default {
     return {
       title: `${this.$store.getters.pageTitle} | Mass Effect 5e`,
       meta: [
-        { hid: 'description', name: 'description', content: 'Want to play D&D in the Mass Effect Universe? This manual has everything you need!' }
+        { hid: 'description', name: 'description', content: '' }
       ]
     }
   },
