@@ -1,7 +1,8 @@
 <template>
   <me-expansion-list
     :items="items"
-    model="powers"
+    :headers="headers"
+    :type="model"
   >
     <template #[`header.expanded`]="{ item }">
       <me-item-title
@@ -46,14 +47,22 @@
 </template>
 
 <script>
+import { ListPageHelpers } from '~/mixins/list_page/ListPageHelpers'
+
 export default {
   name: 'MePowerList',
+  mixins: [ListPageHelpers],
   props: {
     items: {
       type: Array,
       default: () => {
         return []
       }
+    }
+  },
+  data () {
+    return {
+      model: 'powers'
     }
   }
 }

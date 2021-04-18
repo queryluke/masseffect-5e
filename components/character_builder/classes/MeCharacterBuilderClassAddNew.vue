@@ -1,12 +1,12 @@
 <template>
   <div>
     <v-select
+      v-model="selectedClass"
       :items="filteredClasses"
       label="Class"
       return-object
       item-text="name"
-      v-model="selectedClass"
-    ></v-select>
+    />
     <v-row>
       <v-col>
         <me-class-tabs
@@ -22,17 +22,17 @@
             :items="tabs"
             label="Class Info"
             @change="changeTabByIndex"
-          ></v-select>
+          />
         </div>
-        <v-tabs-items v-model="tab" v-if="selectedClass">
+        <v-tabs-items v-if="selectedClass" v-model="tab">
           <v-tab-item class="pa-3">
-            <me-class-attributes :id="selectedClass.id" />
+            <me-class-attributes :item="selectedClass" />
           </v-tab-item>
           <v-tab-item class="pa-3">
             <me-subclass-feature-list :id="selectedClass.id" />
           </v-tab-item>
           <v-tab-item class="pa-3">
-            <me-progression-table :id="selectedClass.id" />
+            <me-progression-table :item="selectedClass" />
           </v-tab-item>
           <v-tab-item class="pa-3">
             <me-power-list :items="filteredPowers" />
@@ -50,26 +50,6 @@ export default {
       selectedClass: null,
       tab: null, // so, v-tabs-items uses this as the model. on the class PAGE I use the state of the app
       tabs: ['class features', 'subclasses', 'progression table', 'powers'] // you can adjust these as needed
-    }
-  },
-  methods: {
-    changeTab (value) {
-      this.tab = value
-    },
-    changeTabByIndex (tabId) {
-      this.tab = this.tabs.indexOf(tabId)
-    }
-  },
-  watch: {
-    selectedClass (newVal, oldVal) {
-      this.$emit('classSelected', {
-        selectedClass: this.selectedClass,
-        color: {
-          back: this.backColor,
-          text: this.textColor
-        }
-      })
-      this.$route.params.id = newVal.id
     }
   },
   computed: {
@@ -103,6 +83,26 @@ export default {
             ? a.id > b.id ? 1 : -1
             : a.level > b.level ? 1 : -1
         })
+    }
+  },
+  watch: {
+    selectedClass (newVal, oldVal) {
+      this.$emit('classSelected', {
+        selectedClass: this.selectedClass,
+        color: {
+          back: this.backColor,
+          text: this.textColor
+        }
+      })
+      this.$route.params.id = newVal.id
+    }
+  },
+  methods: {
+    changeTab (value) {
+      this.tab = value
+    },
+    changeTabByIndex (tabId) {
+      this.tab = this.tabs.indexOf(tabId)
     }
   }
 }

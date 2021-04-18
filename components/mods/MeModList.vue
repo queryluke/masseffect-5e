@@ -1,7 +1,8 @@
 <template>
   <me-expansion-list
     :items="items"
-    model="mods"
+    :headers="headers"
+    :type="model"
   >
     <template #[`header.expanded`]="{ item }">
       <me-mod-title :item="item" />
@@ -34,8 +35,11 @@
 
 <script>
 
+import { ListPageHelpers } from '~/mixins/list_page/ListPageHelpers'
+
 export default {
   name: 'MeModList',
+  mixins: [ListPageHelpers],
   props: {
     items: {
       type: Array,
@@ -44,12 +48,9 @@ export default {
       }
     }
   },
-  methods: {
-    textColor (rarity) {
-      return this.$store.getters['config/rarityTextColor'](rarity)
-    },
-    tagsText (tags) {
-      return this.$t(`lists.comma_list[${tags.length}]`, tags.map(i => this.$t(`tags.${i}`)))
+  data () {
+    return {
+      model: 'mods'
     }
   }
 }

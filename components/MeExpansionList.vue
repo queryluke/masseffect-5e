@@ -38,40 +38,54 @@
             <me-html :content="item.html" />
           </div>
         </slot>
-        <me-hr color="black" :size="1" />
-        <v-row justify="space-between">
-          <v-col>
-            <me-bookmark v-if="bookmarkable" :type="model" :item="item" />
-          </v-col>
-          <v-col class="text-right">
-            <me-permalink :item-id="item.id" :type="model" />
-          </v-col>
-        </v-row>
+        <div v-if="showBar">
+          <me-hr color="black" :size="1" />
+          <v-row justify="space-between">
+            <v-col>
+              <me-bookmark v-if="bookmarkable" :type="type" :item="item" />
+            </v-col>
+            <v-col class="text-right">
+              <me-permalink v-if="linkable" :item-id="item.id" :type="type" />
+            </v-col>
+          </v-row>
+        </div>
       </v-expansion-panel-content>
     </v-expansion-panel>
   </v-expansion-panels>
 </template>
 
 <script>
-import { ListPageHeaders } from '~/mixins/ListPageHeaders'
-
 export default {
   name: 'MeExpansionList',
-  mixins: [ListPageHeaders],
   props: {
+    headers: {
+      type: Array,
+      default: () => {
+        return []
+      }
+    },
     items: {
       type: Array,
       default: () => {
         return []
       }
     },
-    model: {
+    type: {
       type: String,
-      required: true
+      default: ''
     },
     bookmarkable: {
       type: Boolean,
       default: true
+    },
+    linkable: {
+      type: Boolean,
+      default: true
+    }
+  },
+  computed: {
+    showBar () {
+      return this.linkable || this.bookmarkable
     }
   },
   methods: {

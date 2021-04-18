@@ -123,12 +123,11 @@
 </template>
 
 <script>
-import { ListPageFilters } from '~/mixins/ListPageFilters'
-import { ListPageHeaders } from '~/mixins/ListPageHeaders'
+import { ListPageHelpers } from '~/mixins/list_page/ListPageHelpers'
 
 export default {
   name: 'MeListPage',
-  mixins: [ListPageFilters, ListPageHeaders],
+  mixins: [ListPageHelpers],
   props: {
     pending: {
       type: Boolean,

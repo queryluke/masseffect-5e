@@ -1,7 +1,8 @@
 <template>
   <me-expansion-list
     :items="items"
-    model="armor"
+    :headers="headers"
+    :type="model"
   >
     <template #[`header.expanded`]="{ item }">
       <me-armor-title :item="item" />
@@ -30,8 +31,11 @@
 </template>
 
 <script>
+import { ListPageHelpers } from '~/mixins/list_page/ListPageHelpers'
+
 export default {
   name: 'MeArmorList',
+  mixins: [ListPageHelpers],
   props: {
     items: {
       type: Array,
@@ -40,12 +44,9 @@ export default {
       }
     }
   },
-  methods: {
-    textColor (rarity) {
-      return this.$store.getters['config/rarityTextColor'](rarity)
-    },
-    tagsText (tags) {
-      return this.$t(`lists.comma_list[${tags.length}]`, tags.map(i => this.$t(`tags.${i}`)))
+  data () {
+    return {
+      model: 'armor'
     }
   }
 }

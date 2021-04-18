@@ -1,7 +1,8 @@
 <template>
   <me-expansion-list
     :items="items"
-    model="gear"
+    :headers="headers"
+    :type="model"
   >
     <template #[`header.expanded`]="{ item }">
       <me-gear-title :item="item" />
@@ -24,8 +25,11 @@
 </template>
 
 <script>
+import { ListPageHelpers } from '~/mixins/list_page/ListPageHelpers'
+
 export default {
   name: 'MeGearList',
+  mixins: [ListPageHelpers],
   props: {
     items: {
       type: Array,
@@ -34,10 +38,12 @@ export default {
       }
     }
   },
+  data () {
+    return {
+      model: 'gear'
+    }
+  },
   methods: {
-    textColor (rarity) {
-      return this.$store.getters['config/rarityTextColor'](rarity)
-    },
     cost (cost) {
       return cost === 0 ? '-' : this.$options.filters.groupDigits(cost, ',')
     }
