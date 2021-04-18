@@ -8,7 +8,7 @@ A homebrew conversion of Dungeons & Dragons 5th Edition into the Mass Effect Uni
 2. Web App created with [Vue.js](http://vuejs.org/), [Vuetify.js](https://vuetifyjs.com), and [Nuxt.js](https://nuxtjs.org/)
 3. [Hosted by Github Pages](https://pages.github.com/)
 
-### Working on the site
+## Working on the site
 Requirements: [Node.js](https://nodejs.org/)
 
 ``` bash
@@ -37,7 +37,7 @@ $ npm run dev
 
 For detailed explanation on how things work, check out the [Nuxt.js](https://github.com/nuxt/nuxt.js) and [Vuetify.js](https://vuetifyjs.com/) documentation.
 
-### Mass Effect 5e Data
+## Mass Effect 5e Data
 The data api is located at https://data.n7.world/[VERSION] (starting from v130)
 
 If you want to edit and work on the data locally and see how it renders in the site, you can clone that repo: https://github.com/queryluke/masseffect-5e-data
@@ -63,3 +63,101 @@ ln -s ~/Sites/masseffect-5e-data/docs/v130 ~/Sites/masseffect-5e/static/.data
 ```
 
 __NOTE!__ You will need to remove the symlink before running `nuxt generate`, Windows `rmdir static/.data` or Linux/Mac `unlink static/.data`
+
+## Translations
+
+__TODO: UPDATE LINKS IN THIS SECTION__
+
+Starting with v131, we now support translations. Translations are handled in two ways.
+
+### Rule translations
+"Rule" translations mark up the bulk of the translation files. The [`text` directory](https://github.com/queryluke/masseffect-5e-data/tree/i18n-prep/text) in the data repo
+has a language directory for each translation. These are copies of everything in the `en` directory, but translated into
+the corresponding language. For the most part, you'll never have to worry about these translations, because the data fetchers
+look at the current locale and grab the corresponding language file.
+
+### Messages
+There is one special directory, called [`messages`](https://github.com/queryluke/masseffect-5e-data/tree/i18n-prep/text/en/messages).
+Messages are reusable labels and text for things like buttons, list headers, and labels. These messages are incorporated into
+the site using [`nuxt-i18n`](https://i18n.nuxtjs.org/).
+
+#### Conventions
+
+All of these conventions are rules of thumb, so take this documentation with a grain of salt.
+
+|Type|Description|Key|Examples|
+|---|---|---|---|
+|Titles|Title case messages|`*_title`|`ability_score_increase_title: 'Ability Score Increase'`|
+|Text|messages that generally have additional interpolation|`*_text`|`concentration_text: 'Concentration, up to {time}'`|
+|Types|Type qualifiers for a model, an object of key=>value pairs for each type|`*_types`|`armor_types: {light: 'light', medium:'medium' ...}`|
+|-|Additionally, root level 'types' like `sizes` or `tags`, don't have `_type` appended to the key|-|-|
+
+
+#### Usage
+
+##### Basic
+Use for key=>value pairs with a single entry (i.e. no vertical pipe)
+
+`$t('key')`
+e.g. `$t('ability_score_increase_title')`
+
+##### Plurals
+Use when the value has a vertical pipe, like `Weapon | Weapons`
+
+`$tc('key', count)`
+e.g. `$tc('weapon_title', 1)` = Weapon
+e.g. `$tc('weapon_title', 2)` = Weapons
+
+If the value supports plural with a counter, pass an object with the count as `n`
+
+e.g. `$tc('credits', 10, {n: 10})` = 10 credits
+
+##### Lists
+Occasionally, we use lists are used to make it easier to pick the correct translation
+
+`$t('key[index]')`
+e.g. `$t('ordinal_numbers[2]')` = 2nd
+
+##### Objects
+Key can also be a dot-notation path, generally used for types
+
+`$t('key.nextKey')`
+e.g. `$t('gear_types.ammo')` = Ammo
+
+Note, this can be combined with anything above
+e.g. `$tc('weapon_types.assault_rifle', 2)` = Assault Rifles
+
+##### Message Interpolation
+When a message value has `{...}` within the string, you can pass the value as a key
+
+e.g. 
+__Key/Value pair:__ `concentration_text: 'Concentration, up to {time}'`
+__Usage:__ `$t('concentration_text', {time: '10 minute'})`
+
+However, in the above example, you'll also probably want to translate `time`. Time is a plural, thus:
+
+__Usage:__ `$t('concentration_text', {time: $tc('times.minute', 10, {n: 10})})`
+
+##### Interpolation in the code
+Finally, you can interpolate dot-notation paths, array index, pluralities, etc. within your javascript
+
+```javascript
+let timeType = 'minute'
+let numMinutes = 5
+
+$tc(`times.${timeType}`, numMinutes, {n: numMinutes})
+// results in '5 minutes'
+```
+
+## `asyncData` vs `fetch`
+
+First read nuxt's [official documentation](https://nuxtjs.org/docs/2.x/features/data-fetching/).
+
+The conventions of this site are designed for SEO. For example, using `fetch` on a `_id` results in the page not being
+fully rendered when a bot/crawler hits it (Bots and crawlers don't wait for the fetch to complete). Thus, `asyncData`
+is more appropriate because it prevents the route from loading until the data is fetched.
+
+So, the general rule of thumb is:
+
+Can/should ___parts___ of the page load before all of the data is fetched? Then use `fetch` and a skeleton loader.
+Else, use `asyncData`
