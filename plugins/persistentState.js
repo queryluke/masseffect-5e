@@ -4,10 +4,11 @@ export default ({ app, store }) => {
   createPersistedState({
     key: app.$config.version.replace(/\./g, ''),
     paths: [
-      'characterBuilder.character',
       'user.bookmarks',
       'user.darkMode',
-      'user.imperial'
+      'user.imperial',
+      'cb.character',
+      'cb.characters'
     ]
   })(store)
 }

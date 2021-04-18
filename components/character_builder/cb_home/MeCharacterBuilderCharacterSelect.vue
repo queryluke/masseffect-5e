@@ -1,0 +1,118 @@
+<template>
+  <div>
+    <v-container>
+      <v-row v-if="!Object.keys(characters).length">
+        <v-col
+          cols="12"
+          class="text-center"
+        >
+          <h3>Welcome to the ME5e Character Builder!</h3>
+          <p>Click the button below to get started</p>
+        </v-col>
+      </v-row>
+      <v-row
+        v-else
+        class="d-flex justify-center"
+      >
+        <v-col
+          cols="12"
+          class="text-center"
+        >
+          <h2>My Characters</h2>
+        </v-col>
+        <v-col
+          sm="8"
+          md="6"
+          v-for="(char, index) in characters"
+          :key="index"
+        >
+          <a @click="goToCharacter(char.character.id)">
+            <v-sheet
+              class="d-flex flex-wrap"
+              elevation="1"
+            >
+              <div
+                class="d-flex justify-left pa-3 ma-3 text-left"
+              >
+                <v-img
+                  v-if="getImage(char.character)"
+                  :src="getImage(char.character)"
+                  contain
+                  max-width="100px"
+                  height="80px"
+                  @error="setPlaceholder(char.character)"
+                  :lazy-src="require('~/assets/images/me5e_logo_450w.png')"
+                />
+                <div class="text-left ps-3">
+                  <me-character-sheet-character-name :character="char.character"/>
+                </div>
+              </div>
+            </v-sheet>
+          </a>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col class="text-center">
+          <v-btn
+            @click="createNewCharacter()"
+          >
+            Create a New Character
+          </v-btn>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
+</template>
+
+<script>
+import MeCharacterSheetCharacterName from '../charactersheet/MeCharacterSheetCharacterName.vue'
+export default {
+  components: { MeCharacterSheetCharacterName },
+  methods: {
+    createNewCharacter () {
+      const model = { ...this.characterModel }
+      // model.id = this.createRandomId()
+      model.createdAt = new Date().getTime()
+      model.changedAt = new Date().getTime()
+      model.id = model.createdAt
+      this.characters = model
+      this.goToCharacter(model.id)
+    },
+    getImage (c) {
+      return c.image || c.species.bodyImg || require('~/assets/images/me5e_logo_450w.png')
+    },
+    setPlaceholder () {
+      return require('~/assets/images/me5e_logo_450w.png')
+    },
+    createRandomId () {
+      let rid = 0
+      const chars = this.$store.getters['cb/characters'] // Get the live value in case it's changed
+      /*
+      for (const char in chars) {
+        if (char + '' === rid + '') {
+          rid++
+        }
+      }
+      */
+      rid = Object.keys(chars).length
+      return rid
+    },
+    goToCharacter (charId) {
+      this.$router.replace({ query: { cid: charId } })
+    }
+  },
+  computed: {
+    characterModel () {
+      return this.$store.getters['cb/characterStartState']
+    },
+    characters: {
+      get () {
+        return this.$store.getters['cb/characters']
+      },
+      set (obj) {
+        return this.$store.commit('cb/UPDATE_CHARACTERS', obj)
+      }
+    }
+  }
+}
+</script>
