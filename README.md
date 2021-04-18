@@ -104,39 +104,71 @@ e.g. `$t('ability_score_increase_title')`
 ##### Plurals
 Use when the value has a vertical pipe, like `Weapon | Weapons`
 
+e.g.
+
 `$tc('key', count)`
-e.g. `$tc('weapon_title', 1)` = Weapon
-e.g. `$tc('weapon_title', 2)` = Weapons
+
+```javascript
+$tc('weapon_title', 1)
+// = Weapon
+
+$tc('weapon_title', 2)
+// = Weapons
+```
 
 If the value supports plural with a counter, pass an object with the count as `n`
 
-e.g. `$tc('credits', 10, {n: 10})` = 10 credits
+e.g.
+
+```javascript
+$tc('credits', 10, {n: 10})
+// = 10 credits
+```
 
 ##### Lists
 Occasionally, we use lists are used to make it easier to pick the correct translation
 
+e.g.
+
 `$t('key[index]')`
-e.g. `$t('ordinal_numbers[2]')` = 2nd
+
+```javascript
+$t('ordinal_numbers[2]')
+// = 2nd
+```
 
 ##### Objects
 Key can also be a dot-notation path, generally used for types
 
-`$t('key.nextKey')`
-e.g. `$t('gear_types.ammo')` = Ammo
+e.g.
 
-Note, this can be combined with anything above
-e.g. `$tc('weapon_types.assault_rifle', 2)` = Assault Rifles
+`$t('key.nextKey')`
+
+```javascript
+$t('gear_types.ammo')
+// = Ammo
+
+// Note, this can be combined with anything above
+$tc('weapon_types.assault_rifle', 2)
+// = Assault Rifles
+```
 
 ##### Message Interpolation
 When a message value has `{...}` within the string, you can pass the value as a key
 
-e.g. 
-__Key/Value pair:__ `concentration_text: 'Concentration, up to {time}'`
-__Usage:__ `$t('concentration_text', {time: '10 minute'})`
+e.g.
 
-However, in the above example, you'll also probably want to translate `time`. Time is a plural, thus:
+```javascript
+// If the key value pair is: `concentration_text: 'Concentration, up to {time}'`
 
-__Usage:__ `$t('concentration_text', {time: $tc('times.minute', 10, {n: 10})})`
+$t('concentration_text', {time: '10 minutes'})
+// = Concentration, up to 10 minute
+  
+// However, in the above example, you'll also probably want to translate `time`. Time is a plural, thus:
+
+$t('concentration_text', {time: $tc('times.minute', 10, {n: 10})})
+// = Concentration, up to 10 minute
+```
 
 ##### Interpolation in the code
 Finally, you can interpolate dot-notation paths, array index, pluralities, etc. within your javascript
@@ -146,7 +178,7 @@ let timeType = 'minute'
 let numMinutes = 5
 
 $tc(`times.${timeType}`, numMinutes, {n: numMinutes})
-// results in '5 minutes'
+// = 5 minutes
 ```
 
 ## `asyncData` vs `fetch`
