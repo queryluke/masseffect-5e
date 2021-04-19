@@ -8,7 +8,8 @@
       <me-expansion-list
         :items="items"
         :bookmarkable="false"
-        model="backgrounds"
+        :headers="headers"
+        type="backgrounds"
       />
     </me-skeleton-loader>
   </v-container>
@@ -16,6 +17,13 @@
 
 <script>
 export default {
+  data () {
+    return {
+      headers: [
+        { label: 'Name', key: 'name' }
+      ]
+    }
+  },
   async fetch () {
     this.$store.dispatch('SET_META', {
       title: this.$tc('background_title', 2),

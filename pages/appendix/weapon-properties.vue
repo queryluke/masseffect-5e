@@ -8,9 +8,11 @@
           :key="item.name"
         >
           <v-list-item-content>
-            <v-list-item-title>{{ item.name }}</v-list-item-title>
+            <v-list-item-title>
+              {{ item.name }}<me-rule-chip :item="item" x-small />
+            </v-list-item-title>
             <div class="text-body-2 font-weight-light">
-              <me-html :content="item.description" />
+              <me-html :content="item.html" />
             </div>
           </v-list-item-content>
         </v-list-item>
@@ -22,20 +24,16 @@
 <script>
 export default {
   async fetch () {
-    this.$store.commit('pageTitle', 'Weapon Properties')
-    this.items = await this.$store.dispatch('FETCH_DATA', 'weapon-properties')
+    this.$store.dispatch('SET_META', {
+      title: this.$t('weapon_props_title'),
+      subtitle: this.$t('appendix_title'),
+      description: this.$t('meta.weapon_props')
+    })
+    await this.$store.dispatch('FETCH_DATA', 'weapon-properties')
   },
-  data () {
-    return {
-      items: []
-    }
-  },
-  head () {
-    return {
-      title: 'Weapon Properties - Appendix | Mass Effect 5e',
-      meta: [
-        { hid: 'description', name: 'description', content: 'Mass Effect 5e comes with some new and fun weapon properties!' }
-      ]
+  computed: {
+    items () {
+      return this.$store.getters.getData('weapon-properties')
     }
   }
 }
