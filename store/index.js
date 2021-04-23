@@ -2,6 +2,7 @@ export const state = () => ({
   data: {},
   pageTitle: null,
   metaSubtitle: null,
+  rules: [],
   pageMetaDescription: null,
   drawer: null,
   jumpNav: null,
@@ -24,7 +25,9 @@ export const state = () => ({
 export const getters = {
   drawer: state => state.drawer,
   jumpNav: state => state.jumpNav,
-  rules: state => state.rules,
+  rules: (state) => {
+    return state.rules
+  },
   isLocaleSet: state => typeof state.data[state.i18n.locale] !== 'undefined',
   // TODO: interpolate non-translated data
   getData: (state, getters) => (endpoint) => {

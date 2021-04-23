@@ -21,13 +21,11 @@
 
 <script>
 export default {
-  head () {
-    return {
-      title: 'License | Mass Effect 5e',
-      meta: [
-        { hid: 'description', name: 'description', content: 'Mass Effect 5e License' }
-      ]
-    }
+  created () {
+    this.$store.dispatch('SET_META', {
+      title: this.$t('license_title'),
+      description: 'Mass Effect 5e License'
+    })
   }
 }
 </script>

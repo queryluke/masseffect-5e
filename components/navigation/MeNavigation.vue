@@ -27,7 +27,7 @@
           :to="page.to"
           :text="page.name"
           :icon="page.icon"
-          :avatar="page.name === 'site.bookmarks' ? bookmarkCount : false"
+          :avatar="page.to === '/bookmarks' ? bookmarkCount : false"
         />
         <v-subheader v-if="page.header" :key="index">
           {{ page.header }}

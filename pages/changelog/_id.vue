@@ -2,52 +2,43 @@
   <v-container>
     <div class="news-post mb-5">
       <h1 class="text-h2">
-        {{ post.title }}
+        {{ item.title }}
       </h1>
       <p class="text-subtitle-1">
         <em>
           {{ parsedDate }}
         </em>
       </p>
-      <me-html v-if="!$fetchState.pending" :content="post.html" />
+      <me-html :content="item.html" />
     </div>
-    <v-btn to="/changelog" nuxt color="secondary">
+    <v-btn :to="localePath('/changelog')" nuxt color="secondary">
       <v-icon>
         mdi-arrow-left
       </v-icon>
-      Back to changelog
+      {{ $t('buttons.back_to_changelog') }}
     </v-btn>
   </v-container>
 </template>
 
 <script>
 export default {
-  async fetch () {
-    this.post = await this.$store.dispatch('FETCH_ITEM', { endpoint: 'changelog', id: this.$route.params.id })
-    this.$store.commit('pageTitle', this.post.title)
-  },
-  data () {
-    return {
-      post: {
-        title: '',
-        date: '',
-        description: '',
-        html: ''
-      }
-    }
+  async asyncData ({ store }) {
+    await store.dispatch('FETCH_DATA', 'changelog')
   },
   computed: {
+    item () {
+      return this.$store.getters.getItem('changelog', this.$route.params.id)
+    },
     parsedDate () {
-      return new Date(this.post.date)
+      return new Date(this.item.date)
     }
   },
-  head () {
-    return {
-      title: `${this.post.title} - Changelog | Mass Effect 5e`,
-      meta: [
-        { hid: 'description', name: 'description', content: this.post.description }
-      ]
-    }
+  created () {
+    this.$store.dispatch('SET_META', {
+      title: this.item.title,
+      subTitle: this.$t('changelog_title'),
+      description: this.item.description
+    })
   }
 }
 </script>

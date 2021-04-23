@@ -34,12 +34,12 @@
       </v-col>
       <v-col cols="6" md="3">
         <me-item-stat :label="$t('attack_type_title')">
-          <me-power-attack :attack="item.attack" :save="item.save" abbr />
+          <me-power-attack :attack="item.attack" :save="item.save" />
         </me-item-stat>
       </v-col>
       <v-col cols="6" md="3">
         <me-item-stat :label="$t('damage_effect_title')">
-          <me-power-effect :damage-types="item.damageTypes" :tags="item.tags" abbr />
+          <me-power-effect :damage-types="item.damageTypes" :tags="item.tags" />
         </me-item-stat>
       </v-col>
       <v-col cols="6" md="3">
