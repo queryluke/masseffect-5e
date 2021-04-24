@@ -63,7 +63,7 @@ export const state = () => ({
       icon: 'mdi-hammer-wrench'
     },
     {
-      id: 'rule',
+      id: 'manual',
       color: {
         base: 'indigo',
         dark: 'accent-1',
