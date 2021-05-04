@@ -3,20 +3,20 @@
     <template #header>
       <me-npc-title :item="item" />
     </template>
-    <me-stat-block :stats="item" />
+    <me-npc-stat-block :stats="item" />
   </me-item-page>
 </template>
 
 <script>
 export default {
-  async fetch () {
-    this.item = await this.$store.dispatch('FETCH_ITEM', { endpoint: 'bestiary', id: this.$route.params.id })
-    this.$store.commit('pageTitle', 'Bestiary')
-  },
   data () {
     return {
       item: {}
     }
+  },
+  async fetch () {
+    this.item = await this.$store.dispatch('FETCH_ITEM', { endpoint: 'bestiary', id: this.$route.params.id })
+    this.$store.commit('pageTitle', 'Bestiary')
   },
   head () {
     return {

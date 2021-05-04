@@ -3,14 +3,14 @@
     :title="item.name"
     subtitle
   >
-    <template v-slot:title>
+    <template #title>
       <span :class="textColor">
         {{ item.name }}
       </span>
     </template>
-    <template v-slot:subtitle>
+    <template #subtitle>
       <div class="font-italic">
-        {{ item.size }} {{ item.type.toLowerCase() }}, {{ item.alignment.toLowerCase() }}
+        {{ $t(`sizes.${item.size}`) }} {{ $t(`npc.types.${item.type}`) }}, {{ $t(`alignments.${item.alignment}`) }}
       </div>
     </template>
   </me-item-title>

@@ -76,7 +76,7 @@
       >
         <v-card v-if="generated">
           <v-card-text>
-            <me-stat-block :stats="grunt" :title="true" />
+            <me-npc-stat-block :stats="grunt" :title="true" />
           </v-card-text>
           <v-card-actions>
             <me-bookmark :item="grunt" type="bestiary" />

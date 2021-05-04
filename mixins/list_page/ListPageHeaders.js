@@ -39,8 +39,8 @@ export const ListPageHeaders = {
         ],
         bestiary: [
           { key: 'name', label: 'name_title', cols: 6 },
-          { key: 'unit', label: 'faction_title', cols: 3 },
-          { key: 'cr', label: 'cr_title', cols: 3 }
+          { key: 'unit', label: 'npc.faction_title', cols: 3 },
+          { key: 'cr', label: 'npc.cr_title', cols: 3 }
         ]
       }
     }
