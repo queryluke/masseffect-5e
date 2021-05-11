@@ -28,7 +28,9 @@
                 :class-index="index"
                 :id="item.id"
               />
-              <me-character-builder-class-prof-picker />
+              <me-character-builder-class-prof-picker
+                :class-index="index"
+              />
               <me-character-builder-class-features
                 :class-index="index"
                 :id="item.id"

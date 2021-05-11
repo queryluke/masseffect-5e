@@ -1,13 +1,16 @@
 {
 	"folders": [
 		{
+			"name": "masseffect-5e",
 			"path": ".."
 		},
 		{
-			"path": "../../StarWars5e.Site"
+			"name": "masseffect-5e-data",
+			"path": "../../masseffect-5e-data"
 		},
 		{
-			"path": "../../masseffect-5e-data"
+			"name": "StarWars5e.Site",
+			"path": "../../StarWars5e.Site"
 		}
 	],
 	"settings": {}

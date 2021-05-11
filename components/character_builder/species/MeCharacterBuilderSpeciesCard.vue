@@ -47,7 +47,7 @@
             tbody
               tr(v-if="speciesData.galaxy")
                 td #[strong #[em Galaxy] ]
-                td {{ speciesData.galaxy }}
+                td {{ $t(speciesData.galaxy) }}
               tr(v-if="speciesData.homeworld")
                 td #[strong #[em Homeworld] ]
                 td {{ speciesData.homeworld }}
