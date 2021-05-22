@@ -1,5 +1,5 @@
 <template>
-  <me-npc-attack v-if="!$fetchState.pending" :feature="feature" :ability-scores="abilityScores" />
+  <me-npc-attack v-if="!$fetchState.pending" :feature="feature" :ability-scores="abilityScores" :prof-bonus="proficient ? profBonus : 0" />
 </template>
 
 <script>
@@ -24,6 +24,10 @@ export default {
           dex: 10
         }
       }
+    },
+    profBonus: {
+      type: Number,
+      required: true
     }
   },
   async fetch () {
@@ -41,7 +45,7 @@ export default {
         range: this.weapon.range,
         dc: false,
         proficient: this.proficient,
-        damage: this.weapon.damage,
+        damage: [this.weapon.damage],
         name: this.weapon.name,
         mod: this.mod,
         hit: this.weapon.npcHit || false,
@@ -58,7 +62,7 @@ export default {
       let abilityMod = 0
       const strMod = this.abilityScoreBonus(this.abilityScores.str)
       const dexMod = this.abilityScoreBonus(this.abilityScores.dex)
-      if (this.weapon.props.includes('finesse') || this.weapon.props.includes('recoil')) {
+      if (this.weapon.properties.includes('finesse') || this.weapon.properties.includes('recoil')) {
         abilityMod = strMod > dexMod ? 'str' : 'dex'
       } else {
         abilityMod = this.attackType === 'melee' ? 'str' : 'dex'

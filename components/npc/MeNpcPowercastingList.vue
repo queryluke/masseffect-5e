@@ -27,10 +27,10 @@ export default {
   },
   computed: {
     slotProgression () {
-      return this.store.getters.getItem('classes', 'adept').progression.find(i => i.label === 'power_slots_by_power_level')
+      return this.$store.getters.getItem('classes', 'adept').progression.columns.find(i => i.label === 'power_slots_by_power_level').values
     },
     powers () {
-      return this.store.getters.getData('powers')
+      return this.$store.getters.getData('powers')
     },
     innateList () {
       if (!this.innate) {
@@ -44,14 +44,16 @@ export default {
           if (!group[power.perDay]) {
             group[power.perDay] = []
           }
-          const string = power.level ? `${p.name.toLowerCase()} (${this.$t('npc.higher_power_level', { level_adj: this.$t('level_adj', { nth: this.$t('ordinal_numbers', power.level) }) })})` : p.name.toLowerCase()
+          const string = power.level ? `${p.name.toLowerCase()} (${this.$t('npc.higher_power_level', { level_adj: this.$t('level_adj', { nth: this.$t(`ordinal_numbers[${power.level}]`) }) })})` : p.name.toLowerCase()
           group[power.perDay].push(string)
         }
       }
       for (const key in group) {
+        const label = key === 'at_will' ? this.$t('npc.at_will') : this.$t('npc.uses_per_day', { amount: key })
+        const name = this.$t('npc.attack_part_label', { label })
         const obj = {
-          name: key === 'at_will' ? this.$t('npc.at_will') : this.$t('uses_per_day', { amount: key }),
-          text: this.$t('lists.comma_list', group[key].length, group[key])
+          name,
+          text: this.$t(`lists.comma_list[${group[key].length}]`, group[key])
         }
         list.push(obj)
       }
@@ -66,23 +68,28 @@ export default {
       if (powers.length > 0) {
         const cantrips = powers.filter(i => i.level === 0)
         if (cantrips.length > 0) {
+          const cantripLabel = `${this.$t('class_feature_columns.cantrips')} (${this.$t('npc.at_will')})`
           list.push(
             {
-              name: `${this.$t('class_feature_columns.cantrips')} (${this.$t('npc.at_will')}):`,
-              text: this.$t('lists.comma_list', cantrips.length, cantrips.map(i => i.name.toLowerCase()))
+              name: this.$t('npc.attack_part_label', { label: cantripLabel }),
+              text: this.$t(`lists.comma_list[${cantrips.length}]`, cantrips.map(i => i.name.toLowerCase()))
             }
           )
         }
         for (const index in this.slotProgression) {
-          const slotLevel = index + 1
+          const slotLevel = parseInt(index) + 1
           const slotCount = this.slotProgression[index][this.feature.casterLevel - 1]
+          if (slotCount === 0) {
+            continue
+          }
           const pList = powers.filter(i => i.level === slotLevel)
-          const level = this.$t('level_nth', { nth: this.$t('ordinal_numbers', slotLevel) })
+          const level = this.$t('level_nth', { nth: this.$t(`ordinal_numbers[${slotLevel}]`) })
           const slots = this.$tc('npc.slots', slotCount)
+          const label = `${level} (${slots})`
           list.push(
             {
-              name: `${level} (${slots}):`,
-              text: this.$t('lists.comma_list', pList.length, pList.map(i => i.name.toLowerCase()))
+              name: this.$t('npc.attack_part_label', { label }),
+              text: this.$t(`lists.comma_list[${pList.length}]`, pList.map(i => i.name.toLowerCase()))
             }
           )
         }
@@ -90,7 +97,7 @@ export default {
       return list
     },
     list () {
-      return this.feature.innate ? this.innateList : this.levelList
+      return this.innate ? this.innateList : this.levelList
     }
   }
 }

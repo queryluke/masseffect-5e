@@ -1,22 +1,7 @@
 <template>
   <me-npc-feature :feature="feature">
     <template #description>
-      <span class="font-italic font-weight-light">
-        {{ $t(`npc.attack_types.${feature.attack}`) }}
-      </span>
-      <me-html :content="attackIntro" inline />
-      <span class="font-italic">
-        Hit:
-      </span>
-      <span>
-        {{ attack.hit }}
-      </span>
-      <span v-if="attack.miss" class="font-italic">
-        Miss:
-      </span>
-      <span v-if="attack.miss">
-        {{ attack.miss }}
-      </span>
+      <me-html :content="description" inline />
     </template>
   </me-npc-feature>
 </template>
@@ -42,33 +27,54 @@ export default {
     }
   },
   computed: {
+    description () {
+      const sentences = []
+      const attackType = this.attackPartLabel(`attack_types.${this.feature.attack}`)
+      // attack type & description
+      sentences.push(`${attackType} ${this.attackText}`)
+      // hit
+      sentences.push(`${this.attackPartLabel('hit_title')} ${this.hitText}`)
+      // hit augment
+      if (this.feature.hit) {
+        sentences.push(this.feature.hit)
+      }
+      // miss
+      if (this.feature.miss) {
+        sentences.push(`${this.attackPartLabel('miss_title')} ${this.feature.miss}`)
+      }
+      return this.$t(`lists.sentences[${sentences.length}]`, sentences)
+    },
     modBonus () {
-      return this.abilityScoreBonus(this.feature.mod)
+      return this.abilityScoreBonus(this.abilityScores[this.feature.mod])
     },
     hitBonus () {
-      let bonus = this.modBonus
+      let n = this.modBonus
+      let bonusType = 'positive'
       if (this.feature.proficient) {
-        bonus = bonus + this.profBonus
+        n += this.profBonus
       }
-      return bonus >= 0 ? `+${bonus}` : bonus
+      if (n < 0) {
+        n *= -1
+        bonusType = 'negative'
+      }
+      return this.$t(`npc.to_hit.${bonusType}`, { n })
     },
     rangeText () {
       return this.feature.attack === 'melee'
-        ? this.$t('range_types.reach', { range: `<me-distance :length="${this.range}" abbr />` })
-        : this.$t('range_types.range', { short: `<me-distance :length="${this.range}" abbr />`, long: `<me-distance :length="${this.range * 3}" abbr />` })
+        ? this.$t('npc.range_types.reach', { range: `<me-distance :length="${this.feature.range}" abbr />` })
+        : this.$t('npc.range_types.range', { short: `<me-distance :length="${this.feature.range}" abbr />`, long: `<me-distance :length="${this.feature.range * 3}" abbr />` })
     },
     hitText () {
-      const damages = this.feature.damage.map(i => this.damagePart(i))
-      const hitText = this.$t('lists.and_list', damages.length, damages)
-      return this.feature.hit ? `${hitText}. ${this.feature.hit}.` : ''
+      const damages = this.feature.damage.map(i => `${this.damageFormula(i)} ${this.$t(`damage_types.${i.type}_damage`)}`)
+      return this.$t(`lists.and_list[${damages.length}]`, damages)
     },
     attackText () {
-      const elements = {
-        toHit: this.$t('npc.to_hit', { bonus: this.hitBonus }),
-        range: this.rangeText,
-        target: this.$t(`target_types.${this.feature.target}`)
-      }
-      return this.$t('npx.attack_text', elements)
+      const array = [
+        this.hitBonus,
+        this.rangeText,
+        this.$t(`npc.target_types.${this.feature.target}`)
+      ]
+      return this.$t(`lists.comma_list[${array.length}]`, array)
     },
     range () {
       return Number.parseInt(this.attack.range, 10)
@@ -78,27 +84,24 @@ export default {
     }
   },
   methods: {
+    attackPartLabel (key) {
+      const label = this.$t(`npc.${key}`)
+      const labelText = this.$t('npc.attack_part_label', { label })
+      return `<span class="font-italic font-weight-light">${labelText}</span>`
+    },
     averageDamage (damage) {
-      let base = this.averageFromDie(damage.dieType, damage.dieCount)
+      let base = this.roundedAverageFromDie(damage.dieType, damage.dieCount)
       if (damage.mod) {
         base += this.modBonus
       }
       return base
     },
     damageFormula (damage) {
-      let operator = false
-      if (damage.mod) {
-        operator = this.modBonus === 0 ? false : this.modBonus > 0 ? '+' : '-'
-      }
       const dice = this.$t('dice', { dieType: damage.dieType, dieCount: damage.dieCount })
-      return `(${operator ? `(${dice} ${operator} ${this.modBonus})` : dice})`
-    },
-    damagePart (damage) {
-      return this.$t('npc.damage_text', {
-        avg: this.averageDamage(damage),
-        formula: this.damageFormula(damage),
-        damageType: this.$t(`damage_types.${damage.type}_damage`)
-      })
+      const avg = this.averageDamage(damage)
+      const formulaType = damage.mod || this.modBonus !== 0 ? this.modBonus > 0 ? 'plus' : 'minus' : 'base'
+      const formula = this.$t(`dice_formulas.${formulaType}`, { dice, n: this.modBonus })
+      return this.$t('dice_average', { avg, formula })
     }
   }
 }

@@ -23,7 +23,7 @@ export default {
   },
   computed: {
     grenades () {
-      return this.store.getters.getData('gear').filter(i => i.type === 'grenade')
+      return this.$store.getters.getData('gear').filter(i => i.type === 'grenade')
     },
     list () {
       const group = {}
@@ -41,7 +41,7 @@ export default {
       for (const key in group) {
         const obj = {
           name: `${this.$t('npc.uses', { amount: key })}:`,
-          text: this.$t('lists.comma_list', group[key].length, group[key])
+          text: this.$t(`lists.comma_list[${group[key].length}]`, group[key])
         }
         list.push(obj)
       }

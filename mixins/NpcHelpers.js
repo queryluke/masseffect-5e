@@ -11,14 +11,15 @@ export const NpcHelpers = {
     },
     crXp () {
       const cr = this.$store.getters.getData('npc-stats').find(i => i.id === this.stats.cr)
-      return this.$t('npc.cr_text', { n: cr.cr, xp: this.$options.filters.groupDigits(cr.xp) })
+      return this.$t('npc.cr_text', { n: cr.cr, xp: this.$options.filters.groupDigits(cr.xp, this.$t('digit_separator')) })
     },
     hitPoints () {
       const mod = this.abilityScoreBonus(this.stats.abilityScores.con) * this.stats.hp.dieCount
-      const avg = this.averageFromDie(this.stats.hp.dieType, this.stats.hp.dieCount) + mod
-      const displayMod = mod < 0 ? mod * -1 : mod
+      const avg = this.roundedAverageFromDie(this.stats.hp.dieType, this.stats.hp.dieCount) + mod
+      const n = mod < 0 ? mod * -1 : mod
       const formulaType = mod === 0 ? 'base' : mod > 0 ? 'plus' : 'minus'
-      const formula = this.$t(`dice_formulas.${formulaType}`, { bonus: displayMod })
+      const dice = this.$t('dice', { dieType: this.stats.hp.dieType, dieCount: this.stats.hp.dieCount })
+      const formula = this.$t(`dice_formulas.${formulaType}`, { dice, n })
       return this.$t('dice_average', { avg, formula })
     },
     passivePerception () {
@@ -88,10 +89,10 @@ export const NpcHelpers = {
   },
   methods: {
     createList (array) {
-      return this.$t(`'lists.comma_list[${array.length}]`, array)
+      return this.$t(`lists.comma_list[${array.length}]`, array)
     },
     hasIrv (key) {
-      return this.stats.irv && this.stats.irv[key]
+      return this.stats.irv && this.stats.irv[key] && this.stats.irv[key].length > 0
     },
     abilityBonus (score) {
       const abilityScoreBonus = this.abilityScoreBonus(score)

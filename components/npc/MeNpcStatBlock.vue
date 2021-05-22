@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="!$fetchState.pending">
     <!-- TITLE -->
     <me-npc-title v-if="title" :item="stats" />
     <v-row>
@@ -17,7 +17,7 @@
             {{ shields }}
           </me-stat-list-item>
           <me-stat-list-item v-if="stats.speed" :label="$t('speed_title')">
-            <me-html :content="speeds" />
+            <me-html :content="speeds" inline />
           </me-stat-list-item>
         </me-stat-list>
 
@@ -50,20 +50,20 @@
           <me-stat-list-item v-if="stats.skills" :label="$t('skills_title')">
             {{ skills }}
           </me-stat-list-item>
-          <me-stat-list-item v-if="hasIrv('vul')" :label="$t('damage_vulnerabilities')">
+          <me-stat-list-item v-if="hasIrv('vul')" :label="$t('npc.damage_vulnerabilities')">
             {{ damageList(stats.irv.vul) }}
           </me-stat-list-item>
-          <me-stat-list-item v-if="hasIrv('res')" :label="$t('damage_resistances')">
+          <me-stat-list-item v-if="hasIrv('res')" :label="$t('npc.damage_resistances')">
             {{ damageList(stats.irv.res) }}
           </me-stat-list-item>
-          <me-stat-list-item v-if="hasIrv('damImm')" :label="$t('damage_immunities')">
+          <me-stat-list-item v-if="hasIrv('damImm')" :label="$t('npc.damage_immunities')">
             {{ damageList(stats.irv.damImm) }}
           </me-stat-list-item>
-          <me-stat-list-item v-if="hasIrv('conImm')" :label="$('condition_immunities')">
+          <me-stat-list-item v-if="hasIrv('conImm')" :label="$t('npc.condition_immunities')">
             {{ conditionImmunities }}
           </me-stat-list-item>
           <me-stat-list-item :label="$t('senses_title')">
-            {{ senses }}
+            <me-html :content="senses" inline />
           </me-stat-list-item>
           <me-stat-list-item :label="$t('cr_title')">
             {{ crXp }}
@@ -89,55 +89,41 @@
           <div v-for="(action, key) in stats.entries.actions" :key="key">
             <me-npc-weapon-attack
               v-if="action.ref && action.ref === 'weapon'"
-              :id="action.ref"
+              :id="key"
               :proficient="action.proficient"
-              :ability-scores="stats.abilities"
+              :ability-scores="stats.abilityScores"
+              :prof-bonus="stats.profBonus"
             />
             <me-npc-attack
-              v-else
-              :attack="action"
+              v-else-if="action.attack"
+              :feature="action"
               :ability-scores="stats.abilityScores"
               :prof-bonus="stats.profBonus"
             />
             <me-npc-feature v-else :feature="action" />
           </div>
         </div>
+
         <!-- LEGENDARY ACTIONS -->
-        <div v-if="hasFeature('legendaryActions')">
+        <div v-if="stats.entries.legendary">
           <me-npc-set-title>
-            Legendary Actions
+            {{ $t('npc.legendary_title') }}
           </me-npc-set-title>
           <p class="body-2">
-            The {{ lcName }} can take 3 legendary actions, choosing from the options below. Only one legendary action can
-            be used at a time and only at the end of another creature's turn. The {{ lcName }} regains spent legendary
-            actions at the start of its turn.
+            {{ stats.entries.legendary.text }}
           </p>
-          <p v-for="feature in stats.legendaryActions" :key="feature.name">
-            <me-npc-feature :feature="legendaryFeature(feature)" />
+          <p v-for="(action, lgIndex) in sortedLegendaryActions" :key="`legendaryAction-${lgIndex}`">
+            <me-npc-feature :feature="action" />
           </p>
         </div>
-        <!-- LAIR -->
-        <div v-if="hasFeature('lairActions')" class="text-body-2">
-          <me-npc-set-title>
-            Lair Actions
-          </me-npc-set-title>
-          <p>
-            On initiative count 20 (losing initiative ties), the {{ lcName }} takes a lair action to cause one of the
-            following effects; it can't use the same effect two rounds in a row:
-          </p>
-          <ul>
-            <li v-for="(action, index) in stats.lairActions" :key="index">
-              {{ action.description }}
-            </li>
-          </ul>
-        </div>
+
         <!-- REACTIONS -->
-        <div v-if="hasFeature('reactions')">
+        <div v-if="stats.entries.reactions">
           <me-npc-set-title>
-            Reactions
+            {{ $t('npc.reactions_title') }}
           </me-npc-set-title>
-          <p v-for="feature in stats.reactions" :key="feature.id">
-            <me-npc-feature :feature="feature" />
+          <p v-for="(reaction, key) in stats.entries.reactions" :key="key">
+            <me-npc-feature :feature="reaction" />
           </p>
         </div>
       </v-col>
@@ -149,6 +135,7 @@
         />
       </v-col>
     </v-row>
+    <me-html :content="stats.html" />
   </div>
 </template>
 
@@ -169,41 +156,22 @@ export default {
       default: false
     }
   },
+  async fetch () {
+    await this.$store.dispatch('FETCH_LOTS', ['skills', 'conditions'])
+  },
   computed: {
     lcName () {
       return this.stats.name.toLowerCase()
     },
-    legendaryActions () {
-      if (this.stats.legendaryActions) {
-        const actions = this.stats.legendaryActions
-        return actions.sort((a, b) => {
+    sortedLegendaryActions () {
+      if (this.stats.entries.legendary) {
+        return Object.keys(this.stats.entries.legendary.actions).map(key => this.stats.entries.legendary.actions[key]).sort((a, b) => {
           return a.cost === b.cost
             ? a.name > b.name ? 1 : -1
             : a.cost > b.cost ? 1 : -1
         })
       }
-      return []
-    },
-    regen () {
-      if (this.stats.sp && this.stats.sp.regen) {
-        const regen = parseInt(this.stats.sp.regen, 10)
-        if (regen > 0) {
-          return regen
-        }
-      }
-      return 0
-    }
-  },
-  methods: {
-    hasFeature (feature) {
-      return this.stats[feature] && this.stats[feature].length > 0
-    },
-    legendaryFeature (feature) {
-      return {
-        name: feature.name,
-        recharge: feature.cost > 1 ? `Costs ${feature.cost} ${this.$options.filters.pluralize(feature.cost, 'Action')}` : false,
-        description: feature.description
-      }
+      return false
     }
   }
 }
