@@ -73,12 +73,12 @@
         <!-- FEATURES -->
         <me-hr />
         <div v-if="stats.entries.features">
-          <p v-for="(feature, key) in stats.entries.features" :key="key">
+          <div v-for="(feature, key) in stats.entries.features" :key="key">
             <me-npc-feature :feature="feature" />
             <me-npc-powercasting-list v-if="key === 'powercasting'" :feature="feature" />
             <me-npc-powercasting-list v-if="key === 'innate-powercasting'" :feature="feature" innate />
             <me-npc-grenade-list v-if="key === 'grenades'" :feature="feature" />
-          </p>
+          </div>
         </div>
 
         <!-- ACTIONS -->

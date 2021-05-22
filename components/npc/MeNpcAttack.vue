@@ -32,12 +32,17 @@ export default {
       const attackType = this.attackPartLabel(`attack_types.${this.feature.attack}`)
       // attack type & description
       sentences.push(`${attackType} ${this.attackText}`)
-      // hit
-      sentences.push(`${this.attackPartLabel('hit_title')} ${this.hitText}`)
-      // hit augment
-      if (this.feature.hit) {
-        sentences.push(this.feature.hit)
+      // hit & damage
+      if (this.hitText) {
+        sentences.push(`${this.attackPartLabel('hit_title')} ${this.hitText}`)
+        // hit augment
+        if (this.feature.hit) {
+          sentences.push(this.feature.hit)
+        }
+      } else if (this.feature.hit) {
+        sentences.push(`${this.attackPartLabel('hit_title')} ${this.feature.hit}`)
       }
+
       // miss
       if (this.feature.miss) {
         sentences.push(`${this.attackPartLabel('miss_title')} ${this.feature.miss}`)
@@ -65,8 +70,11 @@ export default {
         : this.$t('npc.range_types.range', { short: `<me-distance :length="${this.feature.range}" abbr />`, long: `<me-distance :length="${this.feature.range * 3}" abbr />` })
     },
     hitText () {
-      const damages = this.feature.damage.map(i => `${this.damageFormula(i)} ${this.$t(`damage_types.${i.type}_damage`)}`)
-      return this.$t(`lists.and_list[${damages.length}]`, damages)
+      if (this.feature.damage) {
+        const damages = this.feature.damage.map(i => `${this.damageFormula(i)} ${this.$t(`damage_types.${i.type}_damage`)}`)
+        return this.$t(`lists.and_list[${damages.length}]`, damages)
+      }
+      return false
     },
     attackText () {
       const array = [
@@ -99,7 +107,7 @@ export default {
     damageFormula (damage) {
       const dice = this.$t('dice', { dieType: damage.dieType, dieCount: damage.dieCount })
       const avg = this.averageDamage(damage)
-      const formulaType = damage.mod || this.modBonus !== 0 ? this.modBonus > 0 ? 'plus' : 'minus' : 'base'
+      const formulaType = damage.mod && this.modBonus !== 0 ? this.modBonus > 0 ? 'plus' : 'minus' : 'base'
       const formula = this.$t(`dice_formulas.${formulaType}`, { dice, n: this.modBonus })
       return this.$t('dice_average', { avg, formula })
     }

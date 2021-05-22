@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!$fetchState.pending" class="mb-3 text-body-2">
+  <div v-if="!$fetchState.pending" class="mb-3 mt-n2 text-body-2">
     <p v-for="(powerList, index) in list" :key="index" class="my-0">
       {{ powerList.name }} <span class="font-italic">{{ powerList.text }}</span>
     </p>
@@ -50,14 +50,16 @@ export default {
       }
       for (const key in group) {
         const label = key === 'at_will' ? this.$t('npc.at_will') : this.$t('npc.uses_per_day', { amount: key })
+        const sort = key === 'at_will' ? 0 : key
         const name = this.$t('npc.attack_part_label', { label })
         const obj = {
           name,
+          sort,
           text: this.$t(`lists.comma_list[${group[key].length}]`, group[key])
         }
         list.push(obj)
       }
-      return list
+      return list.sort((a, b) => a.sort > b.sort ? 1 : -1)
     },
     levelList () {
       if (this.innate) {
