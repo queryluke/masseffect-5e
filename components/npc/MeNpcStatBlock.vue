@@ -135,7 +135,11 @@
         />
       </v-col>
     </v-row>
-    <me-html :content="stats.html" />
+    <v-card v-if="hasNotes" class="ma-3">
+      <v-card-text>
+        <me-html :content="stats.html" />
+      </v-card-text>
+    </v-card>
   </div>
 </template>
 
@@ -172,6 +176,9 @@ export default {
         })
       }
       return false
+    },
+    hasNotes () {
+      return this.stats.html && !['', null].includes(this.stats.html)
     }
   }
 }

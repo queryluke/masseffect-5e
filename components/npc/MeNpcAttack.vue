@@ -108,7 +108,8 @@ export default {
       const dice = this.$t('dice', { dieType: damage.dieType, dieCount: damage.dieCount })
       const avg = this.averageDamage(damage)
       const formulaType = damage.mod && this.modBonus !== 0 ? this.modBonus > 0 ? 'plus' : 'minus' : 'base'
-      const formula = this.$t(`dice_formulas.${formulaType}`, { dice, n: this.modBonus })
+      const n = this.modBonus < 0 ? this.modBonus * -1 : this.modBonus
+      const formula = this.$t(`dice_formulas.${formulaType}`, { dice, n })
       return this.$t('dice_average', { avg, formula })
     }
   }

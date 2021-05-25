@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!$fetchState.pending" class="mb-3 mt-n2 text-body-2">
+  <div v-if="!$fetchState.pending" class="mb-3 mt-n3 text-body-2">
     <p v-for="(grenadeList, index) in list" :key="index" class="my-0">
       {{ grenadeList.name }} <me-html :content="grenadeList.text" inline />
     </p>
