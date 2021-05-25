@@ -1,7 +1,7 @@
 <template>
   <div v-if="!$fetchState.pending" class="mb-3 mt-n2 text-body-2">
     <p v-for="(powerList, index) in list" :key="index" class="my-0">
-      {{ powerList.name }} <span class="font-italic">{{ powerList.text }}</span>
+      {{ powerList.name }} <me-html :content="powerList.text" inline />
     </p>
   </div>
 </template>
@@ -44,14 +44,15 @@ export default {
           if (!group[power.perDay]) {
             group[power.perDay] = []
           }
-          const string = power.level ? `${p.name.toLowerCase()} (${this.$t('npc.higher_power_level', { level_adj: this.$t('level_adj', { nth: this.$t(`ordinal_numbers[${power.level}]`) }) })})` : p.name.toLowerCase()
+          const powerDialog = `<me-power-dialog id="${power.id}" hide-advancements />`
+          const string = power.level ? `${powerDialog} (${this.$t('npc.higher_power_level', { level_adj: this.$t('level_adj', { nth: this.$t(`ordinal_numbers[${power.level}]`) }) })})` : powerDialog
           group[power.perDay].push(string)
         }
       }
       for (const key in group) {
         const label = key === 'at_will' ? this.$t('npc.at_will') : this.$t('npc.uses_per_day', { amount: key })
         const sort = key === 'at_will' ? 0 : key
-        const name = this.$t('npc.attack_part_label', { label })
+        const name = this.$t('markdown_label', { label })
         const obj = {
           name,
           sort,
@@ -73,8 +74,8 @@ export default {
           const cantripLabel = `${this.$t('class_feature_columns.cantrips')} (${this.$t('npc.at_will')})`
           list.push(
             {
-              name: this.$t('npc.attack_part_label', { label: cantripLabel }),
-              text: this.$t(`lists.comma_list[${cantrips.length}]`, cantrips.map(i => i.name.toLowerCase()))
+              name: this.$t('markdown_label', { label: cantripLabel }),
+              text: this.$t(`lists.comma_list[${cantrips.length}]`, cantrips.map(i => `<me-power-dialog id="${i.id}" hide-advancements />`))
             }
           )
         }
@@ -90,8 +91,8 @@ export default {
           const label = `${level} (${slots})`
           list.push(
             {
-              name: this.$t('npc.attack_part_label', { label }),
-              text: this.$t(`lists.comma_list[${pList.length}]`, pList.map(i => i.name.toLowerCase()))
+              name: this.$t('markdown_label', { label }),
+              text: this.$t(`lists.comma_list[${pList.length}]`, pList.map(i => `<me-power-dialog id="${i.id}" hide-advancements />`))
             }
           )
         }

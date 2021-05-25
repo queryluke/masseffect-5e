@@ -1,7 +1,7 @@
 <template>
   <div v-if="!$fetchState.pending" class="mb-3 mt-n2 text-body-2">
     <p v-for="(grenadeList, index) in list" :key="index" class="my-0">
-      {{ grenadeList.name }} <span class="font-italic">{{ grenadeList.text }}</span>
+      {{ grenadeList.name }} <me-html :content="grenadeList.text" inline />
     </p>
   </div>
 </template>
@@ -34,7 +34,8 @@ export default {
           if (!group[grenade.uses]) {
             group[grenade.uses] = []
           }
-          const string = `${p.name.toLowerCase()} ${this.$t(`marks.${grenade.mark}`)}`
+          const mark = grenade.mark ? `mark="${grenade.mark}"` : ''
+          const string = `<me-grenade-dialog id="${p.id}" ${mark} />`
           group[grenade.uses].push(string)
         }
       }

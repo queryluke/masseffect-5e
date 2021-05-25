@@ -94,7 +94,7 @@ export default {
   methods: {
     attackPartLabel (key) {
       const label = this.$t(`npc.${key}`)
-      const labelText = this.$t('npc.attack_part_label', { label })
+      const labelText = this.$t('markdown_label', { label })
       return `<span class="font-italic font-weight-light">${labelText}</span>`
     },
     averageDamage (damage) {

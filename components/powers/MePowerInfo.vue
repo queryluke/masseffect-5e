@@ -64,18 +64,18 @@
     />
     <me-html :content="item.html" />
     <!-- TODO: Move Advancements into the markdown via custom content (:::) -->
-    <div v-if="item.advancementOptions">
+    <div v-if="item.advancements && !hideAdvancements">
       <p class="text-h6 mb-0">
         {{ $t('advancement_options_title') }}
       </p>
       <v-row justify="center">
-        <v-col v-for="opt in item.advancementOptions" :key="opt.name" cols="12" md="6">
+        <v-col v-for="(opt, id) in item.advancements" :key="id" cols="12" md="6">
           <v-card outlined>
             <v-card-title class="text-subtitle-1">
               {{ opt.name }}
             </v-card-title>
             <v-card-text>
-              <me-html :content="opt.description" />
+              <me-html :content="opt.text" />
             </v-card-text>
           </v-card>
         </v-col>
@@ -93,6 +93,10 @@ export default {
       default: () => { return {} }
     },
     title: {
+      type: Boolean,
+      default: false
+    },
+    hideAdvancements: {
       type: Boolean,
       default: false
     }
