@@ -18,24 +18,24 @@
 
 <script>
 export default {
-  async fetch () {
-    this.$store.commit('pageTitle', 'Conditions')
-    this.items = await this.$store.dispatch('FETCH_DATA', 'conditions')
-  },
   data () {
     return {
-      items: [],
       headers: [
         { label: 'Name', key: 'name' }
       ]
     }
   },
-  head () {
-    return {
-      title: 'Conditions - Appendix | Mass Effect 5e',
-      meta: [
-        { hid: 'description', name: 'description', content: 'There are new conditions in Mass Effect 5e that add variety to combat.' }
-      ]
+  async fetch () {
+    this.$store.dispatch('SET_META', {
+      title: this.$t('conditions_title'),
+      subtitle: this.$t('appendix_title'),
+      description: this.$t('meta.conditions')
+    })
+    await this.$store.dispatch('FETCH_DATA', 'conditions')
+  },
+  computed: {
+    items () {
+      return this.$store.getters.getData('conditions')
     }
   }
 }

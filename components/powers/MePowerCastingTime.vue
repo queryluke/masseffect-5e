@@ -17,7 +17,7 @@ export default {
     text () {
       const array = []
       for (const time of this.castingTimes) {
-        array.push(this.$t(`times.${time}`))
+        array.push(this.$t(`times.${time}_title`))
       }
       return array.length === 0
         ? '-'

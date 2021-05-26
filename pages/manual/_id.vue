@@ -55,14 +55,6 @@ export default {
       sections
     }
   },
-  head () {
-    return {
-      title: `${this.$store.getters.pageTitle} | Mass Effect 5e`,
-      meta: [
-        { hid: 'description', name: 'description', content: '' }
-      ]
-    }
-  },
   computed: {
     manualIntroduction () {
       return this.$route.params.id === 'intro'
@@ -70,6 +62,7 @@ export default {
     version () {
       return this.$config.version
     }
-  }
+  },
+  watchQuery: ['page']
 }
 </script>

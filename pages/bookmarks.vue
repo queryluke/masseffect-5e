@@ -1,12 +1,14 @@
 <template>
   <v-container>
     <me-page-title />
-    <div v-for="(items, type) of bookmarks" :key="type" class="mt-5">
-      <p class="text-subtitle mb-1">
-        {{ types[type].label }}
-      </p>
-      <component :is="`me-${types[type].component}-list`" :items="items" />
-    </div>
+    <template v-for="(items, type) of bookmarks">
+      <div v-if="items.length > 0" :key="type" class="mt-5">
+        <p class="text-subtitle mb-1">
+          {{ types[type].label }}
+        </p>
+        <component :is="types[type].component" :items="items" />
+      </div>
+    </template>
   </v-container>
 </template>
 
@@ -16,68 +18,46 @@ export default {
     return {
       types: {
         weapons: {
-          label: 'Weapons',
-          component: 'weapon'
+          label: this.$tc('weapon_title', 2),
+          component: 'MeWeaponList'
         },
         armor: {
-          label: 'Armor',
-          component: 'armor'
+          label: this.$tc('armor_title', 2),
+          component: 'MeArmorList'
         },
         gear: {
-          label: 'Gear',
-          component: 'gear'
+          label: this.$tc('gear_title', 2),
+          component: 'MeGearList'
         },
         mods: {
-          label: 'Mods',
-          component: 'mod'
+          label: this.$tc('mod_title', 2),
+          component: 'MeModList'
         },
         vehicle: {
-          label: 'Vehicles',
-          component: 'vehicle'
+          label: this.$tc('vehicle_title', 2),
+          component: 'MeVehicleList'
         },
         powers: {
-          label: 'Powers',
-          component: 'power'
+          label: this.$tc('power_title', 2),
+          component: 'MePowerList'
         },
         bestiary: {
-          label: 'Npcs',
-          component: 'npc'
+          label: this.$tc('npc_title', 2),
+          component: 'MeNpcList'
         }
       }
-    }
-  },
-  head () {
-    return {
-      title: 'Bookmarks | Mass Effect 5e',
-      meta: [
-        { hid: 'description', name: 'description', content: 'Keep your favorite weapons, enemies, and spells close at hand with our nifty bookmark tool.' }
-      ]
     }
   },
   computed: {
     bookmarks () {
-      // TODO: this is temporary (L59-68)
-      const marks = this.$store.getters['user/bookmarks']
-      if (marks.npc) {
-        const freezeNpcs = marks.npc.slice()
-        console.log(freezeNpcs)
-        for (const npc of freezeNpcs) {
-          console.log(npc)
-          this.$store.dispatch('user/TOGGLE_BOOKMARK', { type: 'npc', item: npc })
-          this.$store.dispatch('user/TOGGLE_BOOKMARK', { type: 'bestiary', item: npc })
-        }
-        this.$store.dispatch('user/REMOVE_BOOKMARK_KEY', 'npc')
-      }
       return this.$store.getters['user/bookmarks']
     }
   },
   created () {
-    this.$store.commit('pageTitle', 'Bookmarks')
-  },
-  methods: {
-    goToMark (id) {
-      this.$vuetify.goTo(id, { offset: -68 })
-    }
+    this.$store.dispatch('SET_META', {
+      title: this.$t('bookmarks_title'),
+      description: this.$t('meta.bookmarks')
+    })
   }
 }
 </script>

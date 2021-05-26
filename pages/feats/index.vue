@@ -7,8 +7,9 @@
     <me-skeleton-loader :pending="$fetchState.pending" type="expansionList">
       <me-expansion-list
         :items="items"
-        model="feats"
+        :headers="headers"
         :bookmarkable="false"
+        type="feats"
       >
         <template #[`header.indicator`]="{ item }">
           <v-avatar :class="item.new ? 'deep-purple' : 'deep-orange'" size="30px" class="white--text text-caption my-n2">
@@ -33,6 +34,16 @@
 
 <script>
 export default {
+  data () {
+    return {
+      headers: [
+        { label: false, key: 'indicator', cols: 2, sm: 1, sortable: false },
+        { label: 'name_title', key: 'name', cols: 10, sm: 5, lg: 2 },
+        { label: 'prerequisite_title', key: 'prerequisite', cols: 3, classes: 'd-none d-lg-flex', sortable: false },
+        { label: 'notes_title', key: 'note', cols: 6, classes: 'd-none d-sm-flex', sortable: false }
+      ]
+    }
+  },
   async fetch () {
     this.$store.dispatch('SET_META', {
       title: this.$tc('feat_title', 2),

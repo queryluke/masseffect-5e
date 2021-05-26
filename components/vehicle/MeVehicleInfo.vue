@@ -2,8 +2,8 @@
   div
     p.display-1.font-weight-thin.mb-2
       span(v-if="title") {{ item.name }}
-    p.title {{ item.size | capitalize }} {{ item.vehicle.type | capitalize }}
-      span(v-if="item.vehicle.subtype").ml-1 ({{ item.vehicle.subtype }})
+    p.title {{ item.size | capitalize }} {{ item.type | capitalize }}
+      span(v-if="item.subtype").ml-1 ({{ item.subtype }})
     v-layout(align-center justify-space-between row)
       p.subheading CR: {{ item.cr }}
       p.subheading Cost: {{ item.cost | groupDigits(',') }}
