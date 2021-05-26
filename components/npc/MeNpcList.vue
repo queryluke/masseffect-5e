@@ -8,7 +8,7 @@
       <me-npc-title :item="item" />
     </template>
     <template #[`header.cr`]="{ item }">
-      {{ cr(item.cr) }}
+      <me-npc-cr-text :cr-id="item.cr" />
     </template>
     <template #[`header.unit`]="{ item }">
       {{ $t(`npc.unit_types.${item.unit}`) }}
@@ -35,16 +35,6 @@ export default {
   data () {
     return {
       model: 'bestiary'
-    }
-  },
-  computed: {
-    crs () {
-      return this.$store.getters.getData('npc-stats')
-    }
-  },
-  methods: {
-    cr (crId) {
-      return this.crs.find(i => i.id === crId).cr
     }
   }
 }
