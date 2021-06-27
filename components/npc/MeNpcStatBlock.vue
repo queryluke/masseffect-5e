@@ -28,8 +28,7 @@
             v-for="(score, ability) in stats.abilityScores"
             :key="ability"
             cols="6"
-            sm="4"
-            md="2"
+            sm="2"
             class="text-center"
           >
             <div class="text-button">
@@ -73,11 +72,11 @@
         <!-- FEATURES -->
         <me-hr />
         <div v-if="stats.entries.features">
-          <div v-for="(feature, key) in stats.entries.features" :key="key">
+          <div v-for="feature in stats.entries.features" :key="feature.id">
             <me-npc-feature :feature="feature" />
-            <me-npc-powercasting-list v-if="key === 'powercasting'" :feature="feature" />
-            <me-npc-powercasting-list v-if="key === 'innate-powercasting'" :feature="feature" innate />
-            <me-npc-grenade-list v-if="key === 'grenades'" :feature="feature" />
+            <me-npc-powercasting-list v-if="feature.id === 'powercasting'" :feature="feature" />
+            <me-npc-powercasting-list v-if="feature.id === 'innate-powercasting'" :feature="feature" innate />
+            <me-npc-grenade-list v-if="feature.id === 'grenades'" :feature="feature" />
           </div>
         </div>
 
@@ -86,11 +85,10 @@
           <me-npc-set-title>
             {{ $t('npc.actions_title') }}
           </me-npc-set-title>
-          <div v-for="(action, key) in stats.entries.actions" :key="key">
+          <div v-for="action in sortedActions" :key="action.id">
             <me-npc-weapon-attack
               v-if="action.ref && action.ref === 'weapon'"
-              :id="key"
-              :proficient="action.proficient"
+              :feature="action"
               :ability-scores="stats.abilityScores"
               :prof-bonus="stats.profBonus"
             />
@@ -112,8 +110,8 @@
           <p class="body-2">
             {{ stats.entries.legendary.text }}
           </p>
-          <p v-for="(action, lgIndex) in sortedLegendaryActions" :key="`legendaryAction-${lgIndex}`">
-            <me-npc-feature :feature="action" />
+          <p v-for="lgAction in sortedLegendaryActions" :key="`legendary-${lgAction.id}`">
+            <me-npc-feature :feature="lgAction" />
           </p>
         </div>
 
@@ -122,7 +120,7 @@
           <me-npc-set-title>
             {{ $t('npc.reactions_title') }}
           </me-npc-set-title>
-          <p v-for="(reaction, key) in stats.entries.reactions" :key="key">
+          <p v-for="reaction in stats.entries.reactions" :key="reaction.id">
             <me-npc-feature :feature="reaction" />
           </p>
         </div>
@@ -167,15 +165,25 @@ export default {
     lcName () {
       return this.stats.name.toLowerCase()
     },
+    sortedActions () {
+      if (this.stats.entries.actions) {
+        return [...this.stats.entries.actions].sort((a, b) => {
+          return a.id === 'multiattack' || b.id === 'multiattack'
+            ? -1
+            : 1
+        })
+      }
+      return []
+    },
     sortedLegendaryActions () {
       if (this.stats.entries.legendary) {
-        return Object.keys(this.stats.entries.legendary.actions).map(key => this.stats.entries.legendary.actions[key]).sort((a, b) => {
+        return [...this.stats.entries.legendary.actions].sort((a, b) => {
           return a.cost === b.cost
             ? a.name > b.name ? 1 : -1
             : a.cost > b.cost ? 1 : -1
         })
       }
-      return false
+      return []
     },
     hasNotes () {
       return this.stats.html && !['', null].includes(this.stats.html)

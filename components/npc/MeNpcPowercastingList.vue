@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import { groupBy } from 'lodash'
 export default {
   props: {
     feature: {
@@ -27,7 +28,8 @@ export default {
   },
   computed: {
     slotProgression () {
-      return this.$store.getters.getItem('classes', 'adept').progression.columns.find(i => i.label === 'power_slots_by_power_level').values
+      const lookupId = this.feature.half ? 'vanguard' : 'adept'
+      return this.$store.getters.getItem('classes', lookupId).progression.columns.find(i => i.label === 'power_slots_by_power_level').values
     },
     powers () {
       return this.$store.getters.getData('powers')
@@ -79,22 +81,58 @@ export default {
             }
           )
         }
-        for (const index in this.slotProgression) {
-          const slotLevel = parseInt(index) + 1
-          const slotCount = this.slotProgression[index][this.feature.casterLevel - 1]
-          if (slotCount === 0) {
-            continue
+        if (this.feature.tech) {
+          const group = groupBy(powers, 'level')
+          for (const key in group) {
+            const level = this.$t('level_nth', { nth: this.$t(`ordinal_numbers[${key}]`) })
+            let limitation
+            if (parseInt(key) === this.feature.tech.limit) {
+              limitation = this.$tc('point', key)
+            } else {
+              const pointRange = this.$t('number_range', [key, this.feature.tech.limit])
+              limitation = this.$tc('point', 2, { n: pointRange })
+            }
+            const label = this.$t('npc.feature_w_limitation', { name: level, limitation })
+            list.push(
+              {
+                name: this.$t('markdown_label', { label }),
+                text: this.$t(`lists.comma_list[${group[key].length}]`, group[key].map(i => `<me-power-dialog id="${i.id}" hide-advancements />`))
+              }
+            )
           }
-          const pList = powers.filter(i => i.level === slotLevel)
-          const level = this.$t('level_nth', { nth: this.$t(`ordinal_numbers[${slotLevel}]`) })
-          const slots = this.$tc('npc.slots', slotCount)
-          const label = `${level} (${slots})`
+        } else if (this.feature.pact) {
+          const start = this.$t('ordinal_numbers[1]')
+          const end = this.$t('level_nth', { nth: this.$t(`ordinal_numbers[${this.feature.pact.maxLevel}]`) })
+          const endAdj = this.$t('level_adj', { nth: this.$t(`ordinal_numbers[${this.feature.pact.maxLevel}]`) })
+          const numDesc = `${this.feature.pact.numSlots} ${endAdj}`
+          const range = this.feature.pact.maxLevel > 1 ? this.$t('number_range', [start, end]) : start
+          const limitation = this.$tc('slot', this.feature.pact.numSlots, { n: numDesc })
+          const label = this.$t('npc.feature_w_limitation', { name: range, limitation })
+          const nonCantrips = powers.filter(i => i.level > 0)
           list.push(
             {
               name: this.$t('markdown_label', { label }),
-              text: this.$t(`lists.comma_list[${pList.length}]`, pList.map(i => `<me-power-dialog id="${i.id}" hide-advancements />`))
+              text: this.$t(`lists.comma_list[${nonCantrips.length}]`, nonCantrips.map(i => `<me-power-dialog id="${i.id}" hide-advancements />`))
             }
           )
+        } else {
+          for (const index in this.slotProgression) {
+            const slotLevel = parseInt(index) + 1
+            const slotCount = this.slotProgression[index][this.feature.casterLevel - 1]
+            if (slotCount === 0) {
+              continue
+            }
+            const pList = powers.filter(i => i.level === slotLevel)
+            const level = this.$t('level_nth', { nth: this.$t(`ordinal_numbers[${slotLevel}]`) })
+            const slots = this.$tc('npc.slots', slotCount)
+            const label = this.$t('npc.feature_w_limitation', { name: level, limitation: slots })
+            list.push(
+              {
+                name: this.$t('markdown_label', { label }),
+                text: this.$t(`lists.comma_list[${pList.length}]`, pList.map(i => `<me-power-dialog id="${i.id}" hide-advancements />`))
+              }
+            )
+          }
         }
       }
       return list

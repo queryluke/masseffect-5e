@@ -98,14 +98,14 @@ export default {
       return `<span class="font-italic font-weight-light">${labelText}</span>`
     },
     averageDamage (damage) {
-      let base = this.roundedAverageFromDie(damage.dieType, damage.dieCount)
+      let base = damage.flat ? damage.flat : this.roundedAverageFromDie(damage.dieType, damage.dieCount)
       if (damage.mod) {
         base += this.modBonus
       }
       return base
     },
     damageFormula (damage) {
-      const dice = this.$t('dice', { dieType: damage.dieType, dieCount: damage.dieCount })
+      const dice = damage.flat ? damage.flat : this.$t('dice', { dieType: damage.dieType, dieCount: damage.dieCount })
       const avg = this.averageDamage(damage)
       const formulaType = damage.mod && this.modBonus !== 0 ? this.modBonus > 0 ? 'plus' : 'minus' : 'base'
       const n = this.modBonus < 0 ? this.modBonus * -1 : this.modBonus
