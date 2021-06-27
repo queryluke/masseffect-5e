@@ -1,30 +1,26 @@
 export const Ac = {
   methods: {
-    setGruntAc () {
-      this.grunt.ac = 10
-      const acModArray = [-2, -1, -1, 0, 1, 1, 2]
-
-      if (this.options.species.id === 'geth') {
-        this.grunt.ac = 13 + this.abilityScoreBonus(this.grunt.abilityScores.dex) + this.options.cr.profBonus
-        return
+    setAc () {
+      this.npc.ac = 10
+      let acModArray = []
+      switch (this.options.offensiveScale) {
+        case -2:
+          acModArray = [3, 3, 2, 2, 1]
+          break
+        case -1:
+          acModArray = [2, 2, 1, 1, 0]
+          break
+        case 0:
+          acModArray = [1, 1, 0, 0, 0, -1, -1]
+          break
+        case 1:
+          acModArray = [0, -1, -1, -2, -2]
+          break
+        case 2:
+          acModArray = [-1, -2, -2, -3, -3]
       }
-      if (['adept', 'infiltrator'].includes(this.options.klass.id)) {
-        acModArray.push(-2)
-        acModArray.push(-2)
-      } else if (['soldier', 'sentinel'].includes(this.options.klass.id)) {
-        acModArray.push(2)
-        acModArray.push(2)
-      } else {
-        acModArray.push(0)
-        acModArray.push(0)
-      }
-
-      let acMod = this.randomValue(acModArray)
-
-      if (this.options.species.id === 'krogan') {
-        acMod++
-      }
-      this.grunt.ac = this.options.cr.acDc + acMod
+      const acMod = this.randomValue(acModArray)
+      this.npc.ac = this.options.cr.ac + acMod
     }
   }
 }

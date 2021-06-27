@@ -1,7 +1,7 @@
 export const Id = {
   methods: {
-    setGruntId () {
-      this.grunt.id = `${this.grunt.name.replace(' ', '_').toLowerCase()}_${Date.now()}`
+    setId () {
+      this.npc.id = `generated-${this.npc.name.replace('-', '-').toLowerCase()}-${Date.now()}`
     }
   }
 }

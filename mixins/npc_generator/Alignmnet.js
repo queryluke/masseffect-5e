@@ -1,15 +1,15 @@
 export const Alignment = {
   data () {
     return {
-      trans: ['lawful', 'neutral', 'chaotic'],
-      morality: ['good', 'neutral', 'evil']
+      trans: ['l', 'n', 'c'],
+      morality: ['g', 'n', 'e']
     }
   },
   methods: {
-    setGruntAlignment () {
+    setAlignment () {
       const morality = this.randomValue(this.morality)
       const trans = this.randomValue(this.trans)
-      this.grunt.alignment = morality === 'neutral' && trans === 'neutral' ? 'unaligned' : `${trans} ${morality}`
+      this.npc.alignment = `${trans}${morality}`
     }
   }
 }

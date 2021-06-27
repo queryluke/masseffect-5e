@@ -1,104 +1,106 @@
 export const Features = {
-  computed: {
-    vanguard () {
-      return this.$store.getters.getItem('classes', 'vanguard')
-    },
-    aggressive () {
-      this.adjustments.dpr += 2
-      return {
-        name: 'Aggressive',
-        recharge: null,
-        description: `As a bonus action, the ${this.options.klass.id} can move up to its speed toward a hostile creature that it can see.`
-      }
-    },
-    ambusher () {
-      this.adjustments.hit += 1
-      return {
-        name: 'Ambusher',
-        recharge: null,
-        description: `The ${this.options.klass.id} has advantage on attack rolls against any creature it has surprised.`
-      }
-    },
-    amphibious () {
-      return {
-        name: 'Amphibious',
-        recharge: null,
-        description: 'Can breathe both air and water.'
-      }
-    },
-    darkvision () {
-      return {
-        name: 'darkvision',
-        range: 20
-      }
-    },
+  methods: {
     barrier () {
-      const spellcastingLevelIndex = this.options.cr.powercastingLevel
-        ? this.options.klass.id === 'vanguard'
-          ? parseInt(this.options.cr.powercastingLevel, 10)
-          : Math.ceil(parseInt(this.options.cr.powercastingLevel, 10) / 2) - 1
-        : 0
-      const barrierTicksArray = this.vanguard.progressionColumns.find(p => p.key === 'barrierTicks')
-      const barrierTicks = barrierTicksArray.values[spellcastingLevelIndex]
-      const barrierUsesArray = this.vanguard.progressionColumns.find(p => p.key === 'barrierUses')
-      this.grunt.barrier = barrierTicks
-      const feature = {
-        name: 'Barrier',
-        recharge: `${barrierUsesArray.values[spellcastingLevelIndex]}/Day`,
-        description: `As an action or bonus action, the ${this.options.klass.id} gains ${barrierTicks} barrier ticks.`
+      const numTicks = this.progression.find(i => i.label === 'barrier_ticks').values[this.metaLevel - 1]
+      const bonus = Math.floor(numTicks * 4.5)
+      if (this.isHpBonusAddable(bonus)) {
+        this.npc.entries.features.push({
+          name: 'Barrier',
+          uses: this.progression.find(i => i.label === 'barrier_uses').values[this.metaLevel - 1],
+          perDay: true,
+          text: `As an action or bonus action, the ${this.options.klass.id} gains ${numTicks} barrier ticks. When the ${this.options.klass.id} is dealt damage, remove one barrier tick and reduce the damage by 1d8.`,
+          id: 'barrier'
+        })
+        this.healthBonus += bonus
       }
-      this.adjustments.hp += (4 * barrierTicks)
-      return feature
+    },
+    drone () {
+      const bonus = (2 * this.metaTier)
+      const dmg = {
+        type: 'bonus',
+        damage: 2,
+        uses: 5
+      }
+      if (this.isHpBonusAddable(bonus) && this.isDamageAddable(dmg)) {
+        const drones = ['assault', 'combat', 'defense', 'disruption', 'recon', 'rocket']
+        this.npc.entries.actions.push({
+          name: 'Summon Drone',
+          uses: this.metaTier,
+          perDay: true,
+          text: `The ${this.lcName} summons a ${this.randomValue(drones)} drone in a unoccupied space within <me-distance length="30" />.`,
+          id: 'summonDrone'
+        })
+        this.healthBonus += (5 * this.metaTier)
+        this.addDamage(dmg)
+      }
     },
     tacticalCloak () {
-      this.adjustments.ac += 1
-      return {
-        name: 'Tactical Cloak',
-        recharge: `${this.crMetaLevel + 1}/Day`,
-        description: 'As a bonus action, the infiltrator may cast Tactical Cloak, becoming invisible. When it makes a melee, ranged, or tech attack, tactical cloak ends.'
+      const numUses = this.progression.find(i => i.label === 'tactical_cloak_uses').values[this.metaLevel - 1]
+      const bonus = (5 * numUses)
+      if (this.isHpBonusAddable(bonus)) {
+        this.npc.entries.features.push({
+          name: 'Tactical Cloak',
+          uses: numUses,
+          perDay: true,
+          text: `As a bonus action, the ${this.lcName} may cast Tactical Cloak, becoming invisible. When it makes an attack roll, casts a power, or users a grenade or heavy weapon, tactical cloak ends.`,
+          id: 'tacticalCloak'
+        })
+        this.healthBonus += (10 * numUses)
       }
     },
     sneakAttack () {
-      const sneakAttackDie = `${(1 + this.crMetaLevel) + Math.floor(this.crMetaLevel / 2)}d6`
-      const extraDmg = this.averageFromDie(sneakAttackDie)
-      this.adjustments.dpr += extraDmg
-      return {
-        name: 'Sneak Attack',
-        recharge: '1/Turn',
-        description: `The infiltrator deals an extra ${extraDmg} (${sneakAttackDie}) damage when it hits a target with a weapon attack and has advantage on the attack roll, ` +
-        'or when the target is within 5 feet of an ally of the infiltrator that isn\'t incapacitated and the infiltrator doesn\'t have disadvantage on the attack roll.'
+      const dmg = this.progression.find(i => i.label === 'sneak_attack_damage').values[this.metaLevel - 1]
+      const [dieCount, dieType] = dmg.split('d')
+      const extraDmg = Math.floor(this.averageFromDie(dieType, dieCount))
+      const dmgObject = {
+        type: 'bonus',
+        damage: extraDmg,
+        uses: 5
       }
-    }
-  },
-  methods: {
-    setGruntFeatures () {
-      this.grunt.features = []
-      this.grunt.reactions = []
-      this.grunt.senses = []
-      this.grunt.barrier = null
-      // mandatory
-      if (this.options.klass.id === 'infiltrator') {
-        this.addFeature('tacticalCloak', 'features')
-        this.addFeature('sneakAttack', 'features')
-      }
-      if (['vanguard', 'adept', 'sentinel'].includes(this.options.klass.id) && this.options.cr.spellcastingLevel !== false) {
-        this.addFeature('barrier', 'features')
-      }
-      if (this.options.species.id === 'drell') {
-        this.addFeature('darkvision', 'senses')
+      if (this.isDamageAddable(dmgObject)) {
+        this.npc.entries.features.push({
+          name: 'Sneak Attack',
+          uses: 1,
+          perTurn: true,
+          text: `The ${this.lcName} deals an extra ${extraDmg} (${dmg}) damage when it hits a target with a weapon attack and has advantage on the attack roll,
+                or when the target is within <me-distance length="5" /> of an ally of the ${this.lcName} that isn't incapacitated and the infiltrator doesn't have disadvantage on the attack roll.`,
+          id: 'sneakAttack'
+        })
+        this.addDamage(dmgObject)
       }
     },
-    addFeature (name, type) {
-      this.grunt[type].push(this[name])
-    }
-  },
-  data () {
-    return {
-      numFeatureWeights: {
-        0: [0, 0, 0, 1, 1],
-        1: [0, 1, 1, 1, 2],
-        2: [1, 1, 1, 2, 2],
-        3: [1, 2, 2, 3, 3]
+    techArmor () {
+      const addPoints = (this.metaLevel + this.abilityScoreBonus(this.npc.abilityScores.cha)) * 2
+      if (this.isHpBonusAddable(addPoints * 2)) {
+        this.npc.entries.features.push({
+          name: 'Tech Armor',
+          uses: 2,
+          perDay: true,
+          text: `As a bonus action, the ${this.lcName} can activate its Tech Armor. It immediately gains ${addPoints} temporary hit points. Any damage is dealt to these temporary hit points first.`,
+          id: 'techArmor'
+        })
+        this.healthBonus += (addPoints * 2)
+      }
+    },
+    setFeatures () {
+      switch (this.klass.id) {
+        case 'sentinel':
+          this.barrier()
+          this.techArmor()
+          break
+        case 'infiltrator':
+          this.tacticalCloak()
+          this.sneakAttack()
+          break
+        case 'adept':
+        case 'vanguard':
+          this.barrier()
+          break
+        case 'engineer':
+          this.drone()
+          break
+        default:
+          break
       }
     }
   }

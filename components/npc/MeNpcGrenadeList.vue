@@ -41,7 +41,7 @@ export default {
       }
       for (const key in group) {
         const obj = {
-          name: `${this.$t('npc.uses', { amount: key })}:`,
+          name: `${this.$tc('npc.uses', key)}:`,
           text: this.$t(`lists.comma_list[${group[key].length}]`, group[key])
         }
         list.push(obj)

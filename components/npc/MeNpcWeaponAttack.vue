@@ -1,5 +1,5 @@
 <template>
-  <me-npc-attack v-if="!$fetchState.pending" :feature="feature" :ability-scores="abilityScores" :prof-bonus="proficient ? profBonus : 0" />
+  <me-npc-attack v-if="!$fetchState.pending" :feature="weaponFeature" :ability-scores="abilityScores" :prof-bonus="feature.proficient ? profBonus : 0" />
 </template>
 
 <script>
@@ -8,13 +8,9 @@ import { AbilityScoreBonus } from '~/mixins/abilityScoreBonus'
 export default {
   mixins: [AbilityScoreBonus],
   props: {
-    id: {
-      type: String,
+    feature: {
+      type: Object,
       required: true
-    },
-    proficient: {
-      type: Boolean,
-      default: true
     },
     abilityScores: {
       type: Object,
@@ -35,17 +31,17 @@ export default {
   },
   computed: {
     weapon () {
-      return this.$store.getters.getItem('weapons', this.id)
+      return this.$store.getters.getItem('weapons', this.feature.weaponId)
     },
-    feature () {
+    weaponFeature () {
       // TODO: This could be stored on the weapon itself since when dice rolls are introduced, most of it already is
       return {
         attack: this.attackType,
         props: this.featureProps,
         range: this.weapon.range,
         dc: false,
-        proficient: this.proficient,
-        damage: [this.weapon.damage],
+        proficient: this.feature.proficient,
+        damage: [this.damage],
         name: this.weapon.name,
         mod: this.mod,
         hit: this.weapon.npcHit || false,
@@ -54,11 +50,19 @@ export default {
       }
     },
     featureProps () {
-      const notable = this.$store.getters.getData('weapon-properties').filter(i => ['two-handed', 'double-tap', 'hip-fire', 'burst-fire'].includes(i))
-      const props = this.weapon.properties.filter(t => notable.includes(t))
+      const notable = this.$store.getters.getData('weapon-properties').filter(i => ['two-handed', 'double-tap', 'hip-fire', 'burst-fire'].includes(i.id))
+      const props = this.weapon.properties.filter(t => notable.map(i => i.id).includes(t))
       return props.length > 0 ? props : false
     },
+    damage () {
+      const clone = JSON.parse(JSON.stringify(this.weapon.damage))
+      clone.mod = true
+      return clone
+    },
     mod () {
+      if (this.feature.mod) {
+        return this.feature.mod
+      }
       let abilityMod = 0
       const strMod = this.abilityScoreBonus(this.abilityScores.str)
       const dexMod = this.abilityScoreBonus(this.abilityScores.dex)

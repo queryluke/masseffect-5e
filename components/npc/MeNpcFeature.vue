@@ -37,7 +37,7 @@ export default {
         if (this.feature.perTurn) {
           return this.$t('npc.uses_per_turn', { amount: this.feature.uses })
         }
-        return this.$t('npc.uses', { amount: this.feature.uses })
+        return this.$tc('npc.uses', this.feature.uses)
       }
       if (this.feature.recharge) {
         if (this.feature.recharge === 'short') {
