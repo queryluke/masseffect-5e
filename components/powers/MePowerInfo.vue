@@ -55,7 +55,7 @@
       </v-col>
     </v-row>
     <div v-if="item.reactionQualifier" class="font-italic body-2 pt-2">
-      * - {{ item.reactionQualifier }}
+      * - <me-html :content="item.reactionQualifier" inline />
     </div>
     <v-progress-linear
       :value="100"

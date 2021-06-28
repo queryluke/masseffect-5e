@@ -167,11 +167,7 @@ export default {
     },
     sortedActions () {
       if (this.stats.entries.actions) {
-        return [...this.stats.entries.actions].sort((a, b) => {
-          return a.id === 'multiattack' || b.id === 'multiattack'
-            ? -1
-            : 1
-        })
+        return [...this.stats.entries.actions.filter(i => i.id === 'multiattack'), ...this.stats.entries.actions.filter(i => i.id !== 'multiattack')]
       }
       return []
     },

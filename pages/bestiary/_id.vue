@@ -1,5 +1,5 @@
 <template>
-  <me-item-page :pending="$fetchState.pending" :item="item" type="bestiary">
+  <me-item-page :item="item" type="bestiary">
     <template #header>
       <me-npc-title :item="item" />
     </template>
@@ -9,22 +9,20 @@
 
 <script>
 export default {
-  data () {
-    return {
-      item: {}
+  async asyncData ({ store }) {
+    await store.dispatch('FETCH_LOTS', ['bestiary', 'npc-stats'])
+  },
+  computed: {
+    item () {
+      return this.$store.getters.getItem('bestiary', this.$route.params.id)
     }
   },
-  async fetch () {
-    this.item = await this.$store.dispatch('FETCH_ITEM', { endpoint: 'bestiary', id: this.$route.params.id })
-    this.$store.commit('pageTitle', 'Bestiary')
-  },
-  head () {
-    return {
-      title: `${this.item.name} - Bestiary | Mass Effect 5e`,
-      meta: [
-        { hid: 'description', name: 'description', content: `Information about ${this.item.name}` }
-      ]
-    }
+  created () {
+    this.$store.dispatch('SET_META', {
+      title: this.item.name,
+      subTitle: this.$tc('bestiary_title', 2),
+      description: this.$t('meta.info', { name: this.item.name })
+    })
   }
 }
 </script>

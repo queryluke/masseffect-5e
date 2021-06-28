@@ -80,7 +80,7 @@ export default {
       const array = [
         this.hitBonus,
         this.rangeText,
-        this.$t(`npc.target_types.${this.feature.target}`)
+        this.$te(`npc.target_types.${this.feature.target}`) ? this.$t(`npc.target_types.${this.feature.target}`) : this.feature.target
       ]
       return this.$t(`lists.comma_list[${array.length}]`, array)
     },
