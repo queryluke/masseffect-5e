@@ -1,5 +1,5 @@
 <template>
-  <me-item-page :item="item" :label="$tc('weapon_title', 1)">
+  <me-item-page :item="item" :type="$tc('weapon_title', 1)">
     <template #header>
       <me-weapon-title :item="item" />
     </template>
@@ -12,21 +12,17 @@ export default {
   async asyncData ({ store }) {
     await store.dispatch('FETCH_DATA', 'weapons')
   },
-  head () {
-    return {
-      title: `${this.item.name} - Weapons | Mass Effect 5e`,
-      meta: [
-        { hid: 'description', name: 'description', content: `Information about ${this.item.name}` }
-      ]
-    }
-  },
   computed: {
     item () {
       return this.$store.getters.getItem('weapons', this.$route.params.id)
     }
   },
   created () {
-    this.$store.commit('pageTitle', this.item.name)
+    this.$store.dispatch('SET_META', {
+      title: this.item.name,
+      subTitle: this.$tc('weapon_title', 2),
+      description: this.$t('meta.info', { name: this.item.name })
+    })
   }
 }
 </script>
