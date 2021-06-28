@@ -27,7 +27,7 @@
           :to="page.to"
           :text="page.name"
           :icon="page.icon"
-          :avatar="page.name === 'site.bookmarks' ? bookmarkCount : false"
+          :avatar="page.to === '/bookmarks' ? bookmarkCount : false"
         />
         <v-subheader v-if="page.header" :key="index">
           {{ page.header }}
@@ -152,6 +152,7 @@ export default {
           icon: 'mdi-view-split-vertical',
           items: [
             { to: '/appendix/conditions', name: this.$t('conditions_title') },
+            { to: '/appendix/random-height-weight', name: this.$t('random_height_weight_title') },
             { to: '/appendix/skills', name: this.$t('skills_title') },
             { to: '/appendix/tool-profs', name: this.$t('tool_profs_title') },
             { to: '/appendix/weapon-properties', name: this.$t('weapon_props_title') }

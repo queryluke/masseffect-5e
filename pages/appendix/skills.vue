@@ -1,24 +1,6 @@
 <template>
   <v-container>
     <me-page-title />
-    <v-row>
-      <v-col cols="12" md="6">
-        <p class="text-h6">
-          New
-        </p>
-        <p class="text-body-2">
-          Electronics, Engineering, Science, Vehicle Handling
-        </p>
-      </v-col>
-      <v-col cols="12" md="6">
-        <p class="text-h6">
-          Removed
-        </p>
-        <p class="text-body-2">
-          Animal Handling, Arcana, Nature, Religion
-        </p>
-      </v-col>
-    </v-row>
     <me-skeleton-loader :pending="$fetchState.pending" type="articleList">
       <v-list>
         <v-list-item
@@ -26,10 +8,14 @@
           :key="item.name"
         >
           <v-list-item-content>
-            <v-list-item-title>{{ item.name }}</v-list-item-title>
-            <v-list-item-subtitle>{{ item.link }}</v-list-item-subtitle>
+            <v-list-item-title>
+              {{ item.name }}<me-rule-chip :item="item" x-small />
+            </v-list-item-title>
+            <v-list-item-subtitle>
+              {{ $t(`abilities.${item.link}.title`) }}
+            </v-list-item-subtitle>
             <div class="text-body-2 font-weight-light">
-              {{ item.description }}
+              <me-html :content="item.html" />
             </div>
           </v-list-item-content>
         </v-list-item>
@@ -41,20 +27,16 @@
 <script>
 export default {
   async fetch () {
-    this.$store.commit('pageTitle', 'Skills')
-    this.items = await this.$store.dispatch('FETCH_DATA', 'skills')
+    this.$store.dispatch('SET_META', {
+      title: this.$t('skills_title'),
+      subtitle: this.$t('appendix_title'),
+      description: this.$t('meta.skills')
+    })
+    await this.$store.dispatch('FETCH_DATA', 'skills')
   },
-  data () {
-    return {
-      items: []
-    }
-  },
-  head () {
-    return {
-      title: 'Skills - Appendix | Mass Effect 5e',
-      meta: [
-        { hid: 'description', name: 'description', content: 'Mass Effect 5e comes with a few futuristic skill options!' }
-      ]
+  computed: {
+    items () {
+      return this.$store.getters.getData('skills')
     }
   }
 }

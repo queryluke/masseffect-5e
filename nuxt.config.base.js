@@ -148,7 +148,8 @@ export default {
           info: colors.lightBlue.darken3,
           warning: colors.amber.lighten1,
           error: colors.pink.lighten1,
-          success: colors.lightGreen.lighten1
+          success: colors.lightGreen.lighten1,
+          tertiary: colors.black
         },
         dark: {
           primary: colors.lightBlue.darken1,
@@ -157,7 +158,8 @@ export default {
           info: colors.lightBlue.darken3,
           warning: colors.amber.lighten1,
           error: colors.pink.lighten1,
-          success: colors.lightGreen.lighten1
+          success: colors.lightGreen.lighten1,
+          tertiary: colors.white
         }
       }
     }

@@ -2,15 +2,6 @@ export const ListPageHeaders = {
   data () {
     return {
       listPageHeaders: {
-        feats: [
-          { label: false, key: 'indicator', cols: 2, sm: 1, sortable: false },
-          { label: 'name_title', key: 'name', cols: 10, sm: 5, lg: 2 },
-          { label: 'prerequisite_title', key: 'prerequisite', cols: 3, classes: 'd-none d-lg-flex', sortable: false },
-          { label: 'notes_title', key: 'note', cols: 6, classes: 'd-none d-sm-flex', sortable: false }
-        ],
-        backgrounds: [
-          { label: 'Name', key: 'name' }
-        ],
         powers: [
           { label: 'type_level_title', key: 'level', cols: 4, sm: 3, md: 2 },
           { label: 'name_title', key: 'name', cols: 8, sm: 9, md: 4, lg: 2 },
@@ -48,8 +39,8 @@ export const ListPageHeaders = {
         ],
         bestiary: [
           { key: 'name', label: 'name_title', cols: 6 },
-          { key: 'unit', label: 'faction_title', cols: 3 },
-          { key: 'cr', label: 'cr_title', cols: 3 }
+          { key: 'unit', label: 'npc.faction_title', cols: 3 },
+          { key: 'cr', label: 'npc.cr_title', cols: 3 }
         ]
       }
     }

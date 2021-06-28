@@ -283,22 +283,12 @@ export default {
     }
   },
   async fetch () {
-    this.$store.commit('pageTitle', 'Mass Effect 5e')
+    this.$store.dispatch('SET_META', {
+      title: false,
+      description: this.$t('meta.home')
+    })
     const recentPosts = await this.$store.dispatch('FETCH_DATA', 'changelog')
     this.recentPosts = [...recentPosts].reverse().slice(0, 6)
-  },
-  head () {
-    // const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
-    return {
-      title: 'Mass Effect 5e',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'Ever wanted to play D&D in the Mass Effect Universe? Mass Effect 5e has you covered.'
-        }
-      ]
-    }
   }
 }
 </script>

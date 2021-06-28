@@ -1,35 +1,11 @@
 <template>
-  <v-dialog
+  <me-more-info-dialog
     v-if="!$fetchState.pending"
-    v-model="dialog"
-    :fullscreen="$vuetify.breakpoint.xsOnly"
-    :transition="transition"
-    width="70vw"
-    scrollable
-  >
-    <template #activator="{ on }">
-      <a
-        :class="stringCss"
-        v-on="on"
-      >{{ text }}</a>
-    </template>
-    <v-card>
-      <v-card-title>
-        {{ item.name }}
-      </v-card-title>
-      <v-card-text>
-        <me-html :content="item.html" />
-      </v-card-text>
-      <v-card-actions>
-        <v-btn
-          text
-          @click.native="dialog = false"
-        >
-          Close
-        </v-btn>
-      </v-card-actions>
-    </v-card>
-  </v-dialog>
+    :title="item.name"
+    :text="text"
+    :content="item.html"
+    :link-css="linkCss"
+  />
 </template>
 
 <script>
@@ -45,11 +21,6 @@ export default {
       default: ''
     }
   },
-  data () {
-    return {
-      dialog: false
-    }
-  },
   async fetch () {
     await this.$store.dispatch('FETCH_DATA', 'conditions')
   },
@@ -63,12 +34,9 @@ export default {
     primeTypeText () {
       return this.$store.getters['config/primeTypeText']
     },
-    stringCss () {
+    linkCss () {
       const mode = this.$vuetify.theme.dark ? 'dark' : 'light'
       return this.id === 'primed' ? this.primeTypeText[mode][this.sub] : ''
-    },
-    transition () {
-      return this.$vuetify.breakpoint.xsOnly ? 'dialog-bottom-transition' : 'dialog-transition'
     }
   }
 }

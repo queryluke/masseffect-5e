@@ -27,6 +27,10 @@ export const ListPageFilters = {
         powers: [
           { key: 'type', textPath: 'power_types.{i}' },
           { key: 'classes' }
+        ],
+        bestiary: [
+          { key: 'unit', label: 'npc.faction_title', textPath: 'npc.unit_types.{i}' },
+          { key: 'cr' }
         ]
       }
     }
@@ -52,6 +56,9 @@ export const ListPageFilters = {
       }
       if (filterOptions.key === 'classes' && model === 'powers') {
         return this.createClassFilter()
+      }
+      if (filterOptions.key === 'cr' && model === 'bestiary') {
+        return this.createCrFilter()
       }
       const label = this.$t(filterOptions.label) || this.$t(`${filterOptions.key}_title`)
       const key = filterOptions.key
@@ -143,6 +150,22 @@ export const ListPageFilters = {
             text: i.name
           }
         })
+      }
+    },
+    createCrFilter () {
+      const stats = this.$store.getters.getData('npc-stats')
+      const availableCrs = [...new Set(this.items.map(i => i.cr))]
+      return {
+        key: 'cr',
+        label: this.$t('npc.cr_title'),
+        options: stats.filter(i => availableCrs.includes(i.id))
+          .map((i) => {
+            return {
+              value: i.id,
+              text: i.cr
+            }
+          })
+          .sort((a, b) => a.id > b.id ? 1 : -1)
       }
     }
   }

@@ -1,41 +1,26 @@
 <template>
-  <v-container v-if="!$fetchState.pending">
-    <me-page-title :title="pageTitle" />
-    <me-rule-card v-for="item in items" :key="item.id" :item="item" />
+  <v-container>
+    <me-page-title />
+    <me-rule-card v-for="item in sections" :key="item.id" :item="item" />
   </v-container>
 </template>
 
 <script>
 
 export default {
-  data () {
+  layout: 'manual',
+  async asyncData ({ params, store, i18n }) {
+    const data = await store.dispatch('FETCH_LOTS', ['guide', 'guides-index'])
+    const page = data[1].find(i => i.id === params.id)
+    const sections = page.sections.map((section) => {
+      const sectionText = data[0].find(i => i.id === section.id)
+      return { ...section, ...sectionText }
+    })
+    store.commit('setCurrentRules', sections)
+    store.dispatch('SET_META', { title: i18n.t(page.title), description: i18n.t('meta.guide') })
     return {
-      titles: {
-        'armor-creation': 'Creating Armor',
-        'vehicle-creation': 'Creating New Vehicles',
-        'encounter-creation': 'Creating Encounters'
-      },
-      items: []
-    }
-  },
-  async fetch () {
-    this.$store.commit('pageTitle', this.pageTitle)
-    await this.$store.dispatch('FETCH_DATA', 'gmg')
-    this.items = this.$store.getters.getData('gmg')
-      .filter(item => item.section === this.$route.params.id)
-      .sort((a, b) => a.order > b.order ? 1 : -1)
-  },
-  head () {
-    return {
-      title: `${this.pageTitle} | Mass Effect 5e`,
-      meta: [
-        { hid: 'description', name: 'description', content: 'The Galaxy Masters section has handy tools and guides for expanding your campaign' }
-      ]
-    }
-  },
-  computed: {
-    pageTitle () {
-      return this.titles[this.$route.params.id]
+      page,
+      sections
     }
   }
 }

@@ -10,7 +10,7 @@
         {{ text }}
       </v-list-item-title>
     </v-list-item-content>
-    <v-list-item-avatar v-if="avatar" :size="20" color="secondary">
+    <v-list-item-avatar v-if="avatar !== false" :size="20" color="secondary">
       <span class="text-caption white--text" style="padding-left: 6px;">
         {{ avatar }}
       </span>

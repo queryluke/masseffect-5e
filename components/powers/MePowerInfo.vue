@@ -34,12 +34,12 @@
       </v-col>
       <v-col cols="6" md="3">
         <me-item-stat :label="$t('attack_type_title')">
-          <me-power-attack :attack="item.attack" :save="item.save" abbr />
+          <me-power-attack :attack="item.attack" :save="item.save" />
         </me-item-stat>
       </v-col>
       <v-col cols="6" md="3">
         <me-item-stat :label="$t('damage_effect_title')">
-          <me-power-effect :damage-types="item.damageTypes" :tags="item.tags" abbr />
+          <me-power-effect :damage-types="item.damageTypes" :tags="item.tags" />
         </me-item-stat>
       </v-col>
       <v-col cols="6" md="3">
@@ -55,7 +55,7 @@
       </v-col>
     </v-row>
     <div v-if="item.reactionQualifier" class="font-italic body-2 pt-2">
-      * - {{ item.reactionQualifier }}
+      * - <me-html :content="item.reactionQualifier" inline />
     </div>
     <v-progress-linear
       :value="100"
@@ -64,18 +64,18 @@
     />
     <me-html :content="item.html" />
     <!-- TODO: Move Advancements into the markdown via custom content (:::) -->
-    <div v-if="item.advancementOptions">
+    <div v-if="item.advancements && !hideAdvancements">
       <p class="text-h6 mb-0">
         {{ $t('advancement_options_title') }}
       </p>
       <v-row justify="center">
-        <v-col v-for="opt in item.advancementOptions" :key="opt.name" cols="12" md="6">
+        <v-col v-for="(opt, id) in item.advancements" :key="id" cols="12" md="6">
           <v-card outlined>
             <v-card-title class="text-subtitle-1">
               {{ opt.name }}
             </v-card-title>
             <v-card-text>
-              <me-html :content="opt.description" />
+              <me-html :content="opt.text" />
             </v-card-text>
           </v-card>
         </v-col>
@@ -93,6 +93,10 @@ export default {
       default: () => { return {} }
     },
     title: {
+      type: Boolean,
+      default: false
+    },
+    hideAdvancements: {
       type: Boolean,
       default: false
     }
