@@ -4,12 +4,13 @@
     width="500"
   >
     <template
-      v-slot:activator="{ on, attrs }"
+      #activator="{ on, attrs }"
     >
       <v-btn
         class="mx-2"
         color="red"
         v-bind="attrs"
+        :icon="$vuetify.breakpoint.smAndUp"
         v-on="on"
       >
         <v-icon dark>
@@ -22,14 +23,15 @@
       <v-card-title>
         <v-row>
           <v-col>
-            Delete {{item.name}} Class
+            Delete {{ klassData.name }} Class
           </v-col>
           <v-col class="text-right">
             <v-btn
               color=""
               small
               icon
-              @click="dialog=false">
+              @click="dialog=false"
+            >
               <v-icon>
                 mdi-close
               </v-icon>
@@ -42,16 +44,16 @@
         Are you sure you want to delete this class? This action cannot be undone.
       </v-card-text>
 
-      <v-divider></v-divider>
+      <v-divider />
 
       <v-card-actions>
-        <v-spacer></v-spacer>
+        <v-spacer />
         <v-btn
           color="red"
           text
-          @click="removeClass(index)"
+          @click="removeClass"
         >
-          Yes, remove my {{item.name}} class
+          Yes, remove my {{ klassData.name }} class
         </v-btn>
       </v-card-actions>
     </v-card>
@@ -59,25 +61,26 @@
 </template>
 
 <script>
+import { CharacterBuilderHelpers } from '~/mixins/character_builder'
+
 export default {
+  mixins: [CharacterBuilderHelpers],
   props: {
-    item: {
-      type: Object,
-      required: true
-    },
-    index: {
+    classIndex: {
       type: Number,
       required: true
-    }
-  },
-  methods: {
-    removeClass () {
-      this.$emit('deleteClass', this.index)
     }
   },
   data () {
     return {
       dialog: false
+    }
+  },
+  methods: {
+    removeClass () {
+      const tempArr = this.characterClasses.slice()
+      tempArr.splice(this.classIndex, 1)
+      this.characterClasses = tempArr
     }
   }
 }

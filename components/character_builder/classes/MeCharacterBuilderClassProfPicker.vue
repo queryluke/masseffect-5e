@@ -1,133 +1,119 @@
 <template>
-  <v-container>
-    <h3>Proficencies</h3>
-    <br/>
-    <v-row v-for="(profObj, profKey) in profs" :key="profKey">
-      <v-col cols="12" v-if="profObj.has || profObj.choices">
-        <h4>{{profTitles[profKey] || profKey}}</h4>
-        <div class="d-flex">
-          <template v-for="(startingProf,startProfKey) in profObj.has">
-            <v-chip
-              :key="startProfKey"
-              class="mr-3 mt-5"
-            >
-              {{startingProf}}
-            </v-chip>
-          </template>
-          <v-autocomplete
-            v-if="profObj.choices"
-            item-text="text"
-            item-value="value"
-            :items="profsAsItems[profKey]"
-            :label="profObj.text"
-            :counter="profObj.choices.count"
-            chips
-            multiple
-            @change="writeProps($event, profObj, profKey)"
-            v-model="profSelectModel[profKey]"
-          />
-        </div>
-      </v-col>
-    </v-row>
-  </v-container>
+  <div>
+    <div class="text-subtitle">
+      {{ profLabel(type) }}
+    </div>
+    <div class="d-flex">
+      <div v-if="options.has">
+        <template v-for="prof in options.has">
+          <v-chip
+            :key="prof"
+            class="mr-3 mt-5"
+          >
+            {{ profText(type, prof) }}
+          </v-chip>
+        </template>
+      </div>
+      <v-autocomplete
+        v-if="options.choices"
+        v-model="profs"
+        item-text="text"
+        item-value="value"
+        :items="items"
+        :label="options.text"
+        :counter="options.choices.count"
+        chips
+        deletable-chips
+        multiple
+      >
+        <template #selection="data">
+          <v-chip
+            v-bind="data.attrs"
+            :input-value="data.selected"
+            close
+            @click:close="remove(data.item)"
+          >
+            {{ data.item.text }}
+          </v-chip>
+        </template>
+        <template #item="data">
+          <v-list-item-icon v-if="alreadyAcquired(data.item.value)">
+            <v-icon color="warning">
+              mdi-alert-circle
+            </v-icon>
+          </v-list-item-icon>
+          <v-list-item-icon v-else-if="isSelected(data.item.value)">
+            <v-icon color="primary">
+              mdi-checkbox-marked
+            </v-icon>
+          </v-list-item-icon>
+          <v-list-item-icon v-else>
+            <v-icon>mdi-checkbox-blank-outline</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>
+              {{ data.item.text }}
+            </v-list-item-title>
+            <v-list-item-subtitle v-if="alreadyAcquired(data.item.value)">
+              Already acquired
+            </v-list-item-subtitle>
+          </v-list-item-content>
+        </template>
+      </v-autocomplete>
+    </div>
+  </div>
 </template>
 
 <script>
+import { CharacterBuilderHelpers } from '~/mixins/character_builder'
 export default {
-  data () {
-    return {
-      profTitles: {
-        armor: 'Armor',
-        tool: 'Tools',
-        weapon: 'Weapons',
-        skill: 'Skills',
-        savingThrow: 'Saving Throws'
-      }
-    }
-  },
+  mixins: [CharacterBuilderHelpers],
   props: {
     classIndex: {
-      mandatory: true
-    }
-  },
-  methods: {
-    writeProps (selectedProfs, profObj, profKey) {
-      const mandProfs = profObj.has ? profObj.has : []
-      const newProfs = selectedProfs.concat(mandProfs)
-      const newProfObj = {}
-      for (const prof in newProfs) {
-        newProfObj[newProfs[prof]] = {
-          expert: false
-        }
-      }
-      this.profs = {
-        type: profKey,
-        profs: newProfObj
-      }
+      type: Number,
+      required: true
+    },
+    type: {
+      type: String,
+      required: true
+    },
+    options: {
+      type: Object,
+      required: true
     }
   },
   computed: {
-    character () {
-      const char = this.$store.getters['cb/characters'][this.$route.query.cid] || {}
-      return char.character
+    disableItems () {
+      return this.profs.length === this.options.choices.count
     },
-    classes () {
-      return this.$store.getters.getData('classes')
-    },
-    selectedClassProfs: {
-      get () {
-        return this.character.classes[this.classIndex].profs
-      }
-    },
-    profSelectModel () {
-      const model = {}
-      for (const p in this.selectedClassProfs) {
-        const t = this.selectedClassProfs[p]
-        for (const v in t) {
-          console.log(v, 'ignore me')
-          model[p] = []
-          for (const key in Object.keys(t)) {
-            model[p].push({
-              value: Object.keys(t)[key],
-              text: Object.keys(t)[key].toUpperCase()
-            })
-          }
-        }
-      }
-      return model
-    },
-    startingClass () {
-      return this.character.classes[this.classIndex]
-    },
-    startingClassData () {
-      return this.startingClass && this.classes.find(({ id }) => id === this.startingClass.id)
+    items () {
+      return this.options.choices.items.map((i) => {
+        return { text: this.profText(this.type, i), value: i, disabled: this.alreadyAcquired(i) ? true : this.isSelected(i) ? false : this.disableItems }
+      })
     },
     profs: {
       get () {
-        return this.startingClassData.profs
+        return this.getKlassProfSelections(this.type)
       },
       set (value) {
-        return this.$store.commit('cb/UPDATE_CHARACTER', {
-          cid: this.$route.query.cid,
-          attr: 'classes.' + this.classIndex.toString() + '.profs.' + value.type.toString(),
-          value: value.profs
-        })
+        this.setKlassProfSelections({ type: this.type, value })
+      }
+    }
+  },
+  methods: {
+    remove (item) {
+      const index = this.profs.indexOf(item.value)
+      if (index >= 0) {
+        const newProfs = [...this.profs]
+        newProfs.splice(index, 1)
+        this.profs = newProfs
       }
     },
-    profsAsItems () {
-      const o = {}
-      for (const prof in this.profs) {
-        o[prof] = []
-        if (this.profs[prof].choices && this.profs[prof].choices.items) {
-          this.profs[prof].choices.items.forEach(function (c) {
-            o[prof].push({
-              text: c.toUpperCase(),
-              value: c
-            })
-          })
-        }
-      }
-      return o
+    alreadyAcquired (prof) {
+      return this.proficiencies[this.type].includes(prof) && !this.profs.includes(prof)
+    },
+    isSelected (prof) {
+      return this.profs.includes(prof)
     }
   }
 }

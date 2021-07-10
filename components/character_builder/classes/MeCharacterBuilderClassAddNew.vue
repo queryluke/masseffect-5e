@@ -1,117 +1,61 @@
 <template>
   <div>
-    <v-select
-      v-model="selectedClass"
-      :items="filteredClasses"
-      label="Class"
-      return-object
-      item-text="name"
-    />
-    <v-row>
-      <v-col>
-        <me-class-tabs
-          v-if="selectedClass && $vuetify.breakpoint.smAndUp"
-          :id="selectedClass.id"
-          :tabs="tabs"
-          :value="tab"
-          @change="changeTab"
-        />
-        <div class="classInfoSelect">
-          <v-select
-            v-if="selectedClass && $vuetify.breakpoint.xs"
-            :items="tabs"
-            label="Class Info"
-            @change="changeTabByIndex"
-          />
-        </div>
-        <v-tabs-items v-if="selectedClass" v-model="tab">
-          <v-tab-item class="pa-3">
-            <me-class-attributes :item="selectedClass" />
-          </v-tab-item>
-          <v-tab-item class="pa-3">
-            <me-subclass-feature-list :id="selectedClass.id" />
-          </v-tab-item>
-          <v-tab-item class="pa-3">
-            <me-progression-table :item="selectedClass" />
-          </v-tab-item>
-          <v-tab-item class="pa-3">
-            <me-power-list :items="filteredPowers" />
-          </v-tab-item>
-        </v-tabs-items>
-      </v-col>
-    </v-row>
+    <v-list>
+      <template v-for="item in availableClasses">
+        <v-list-item :key="item.id" two-line>
+          <v-list-item-avatar v-if="$vuetify.breakpoint.smAndUp" tile>
+            <v-img :src="require(`~/assets/images/classes/${item.id}.svg`)" />
+          </v-list-item-avatar>
+          <v-list-item-content>
+            <v-list-item-title>
+              {{ item.name }}
+            </v-list-item-title>
+            <v-list-item-subtitle>
+              <a :href="`/classes/${item.id}`" target="_blank">
+                View class details
+              </a>
+            </v-list-item-subtitle>
+          </v-list-item-content>
+          <v-list-item-action>
+            <v-btn icon color="primary" @click="addClassToCharacter(item)">
+              <v-icon>mdi-plus</v-icon>
+            </v-btn>
+          </v-list-item-action>
+        </v-list-item>
+      </template>
+    </v-list>
   </div>
 </template>
 
 <script>
+import { CharacterBuilderHelpers } from '~/mixins/character_builder'
 export default {
-  data () {
-    return {
-      selectedClass: null,
-      tab: null, // so, v-tabs-items uses this as the model. on the class PAGE I use the state of the app
-      tabs: ['class features', 'subclasses', 'progression table', 'powers'] // you can adjust these as needed
-    }
-  },
+  mixins: [CharacterBuilderHelpers],
   computed: {
-    classes () {
-      return this.$store.getters.getData('classes')
-    },
-    classData () {
-      return this.$store.getters.getData('class-features')
-    },
-    textColor () {
-      return this.$store.getters['config/classThemeTabColor'](this.selectedClass.id) || 'primary'
-    },
-    backColor () {
-      return this.$store.getters['config/classThemeTabsColor'](this.selectedClass.id) || 'none'
-    },
-    chosenClasses: {
-      get () {
-        return this.$store.getters['cb/characters'][this.$route.query.cid].character.classes
-      }
-    },
-    filteredClasses () {
-      const b1 = this.classes
-      const b2 = this.chosenClasses
-      return b1.filter(item1 => !b2.some(item2 => (item2.id === item1.id && item2.name === item1.name)))
-    },
-    filteredPowers () {
-      return this.$store.getters.getData('powers')
-        .filter(i => i.classes.includes(this.selectedClass.id))
-        .sort((a, b) => {
-          return a.level === b.level
-            ? a.id > b.id ? 1 : -1
-            : a.level > b.level ? 1 : -1
-        })
-    }
-  },
-  watch: {
-    selectedClass (newVal, oldVal) {
-      this.$emit('classSelected', {
-        selectedClass: this.selectedClass,
-        color: {
-          back: this.backColor,
-          text: this.textColor
-        }
-      })
-      this.$route.params.id = newVal.id
+    availableClasses () {
+      // TODO: enforce multi-classing requirements when classes are redone
+      // not worth it to do now because of asari confusion with mc requirements, i.e. asari use CHA but mc req for
+      // biotic class is WIS
+      return this.classes.filter(i => !this.characterClasses.map(j => j.id).includes(i.id))
     }
   },
   methods: {
-    changeTab (value) {
-      this.tab = value
+    cleanSelectedClass (klass) {
+      return { // variables to write to the character object for the character sheet
+        id: klass.id,
+        hitPoints: [klass.hitDie],
+        hpOverride: false,
+        profSelections: {},
+        featureSelections: {},
+        levels: 1
+      }
     },
-    changeTabByIndex (tabId) {
-      this.tab = this.tabs.indexOf(tabId)
+    addClassToCharacter (klass) {
+      const tempArr = this.characterClasses.slice()
+      tempArr.push(this.cleanSelectedClass(klass))
+      this.characterClasses = tempArr
+      this.$emit('added-class')
     }
   }
 }
 </script>
-
-<style lang="scss">
-  .classInfoSelect {
-    .v-list-item {
-      text-transform: uppercase;
-    }
-  }
-</style>

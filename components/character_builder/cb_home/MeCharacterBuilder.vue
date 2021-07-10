@@ -10,7 +10,9 @@
             text
             @click="goHome()"
           >
-            <v-icon class="mdi mdi-cheveron-left">mdi-chevron-left</v-icon>
+            <v-icon class="mdi mdi-cheveron-left">
+              mdi-chevron-left
+            </v-icon>
             My Characters
           </v-btn>
         </v-col>
@@ -22,7 +24,9 @@
           <v-btn
             v-if="showCharacterSheet"
             @click="showCharacterSheet = false"
-          >Edit Character</v-btn>
+          >
+            Edit Character
+          </v-btn>
         </v-col>
       </v-row>
       <v-stepper
@@ -53,41 +57,35 @@
             />
             <div class="d-flex justify-space-around flex-wrap mt-5">
               <v-btn v-if="currentStep > 1" outlined="outlined" width="140" @click="prevStep">
-                <v-icon class="mr-2">mdi-chevron-left</v-icon>
+                <v-icon class="mr-2">
+                  mdi-chevron-left
+                </v-icon>
                 Back
               </v-btn>
               <v-btn @click="showCharacterSheet=true">
                 Go to Character Sheet
               </v-btn>
-              <!--CharacterBuilderViewSheet(v-bind="{ characterValidation }", @click="$emit('viewSheet')").d-none.d-sm-flex-->
               <v-btn v-if="currentStep < numSteps" color="primary" width="140" @click="nextStep">
                 Continue
-                <v-icon class="ml-2">mdi-chevron-right</v-icon>
+                <v-icon class="ml-2">
+                  mdi-chevron-right
+                </v-icon>
               </v-btn>
             </div>
-            <!--CharacterBuilderViewSheet(v-bind="{ characterValidation }", @click="$emit('viewSheet')").d-flex.d-sm-none.justify-center.mt-5-->
           </v-stepper-content>
         </v-stepper-items>
       </v-stepper>
-      <me-character-sheet v-if="showCharacterSheet"/>
+      <me-character-sheet v-if="showCharacterSheet" />
     </div>
   </div>
 </template>
 
 <script>
-import MeCharacterSheet from '../charactersheet/MeCharacterSheet.vue'
-import MeCharacterBuilderCharacterDelete from './MeCharacterBuilderCharacterDelete.vue'
-import MeCharacterBuilderCharacterSelect from './MeCharacterBuilderCharacterSelect.vue'
+import { CharacterBuilderHelpers } from '~/mixins/character_builder'
+
 export default {
-  components: { MeCharacterBuilderCharacterSelect, MeCharacterBuilderCharacterDelete, MeCharacterSheet },
+  mixins: [CharacterBuilderHelpers],
   computed: {
-    character () {
-      const char = this.$store.getters['cb/characters'][this.$route.query.cid] || {}
-      if (char.character && char.character.name) {
-        this.$store.commit('pageTitle', char.character.name)
-      }
-      return char.character
-    },
     currentStep: {
       get () {
         if (!this.character) {
@@ -118,17 +116,8 @@ export default {
         })
       }
     },
-    species () {
-      return this.$store.getters.getData('species')
-    },
-    classes () {
-      return this.$store.getters.getData('classes')
-    },
     abilityScores () {
       return this.character.baseAbilityScores
-    },
-    backgrounds () {
-      return this.$store.getters.getData('backgrounds')
     },
     steps () {
       return [
@@ -169,16 +158,19 @@ export default {
         }
       ]
     },
-
     numSteps () {
       return this.steps.length - 1
+    }
+  },
+  created () {
+    if (this.character && this.character.name) {
+      this.$store.commit('pageTitle', this.character.name)
     }
   },
   methods: {
     nextStep () {
       this.currentStep = Math.min(this.numSteps, this.currentStep + 1)
     },
-
     prevStep () {
       this.currentStep = Math.max(this.currentStep - 1, 0)
     },

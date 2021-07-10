@@ -113,14 +113,6 @@ export const state = () => ({
 export const getters = {
   characters: state => state.characters,
   characterStartState: state => state.characterStartState,
-  getCharacterLevel: state => (cid) => {
-    const c = state.characters[cid].character
-    let level = 0
-    for (const cls of c.classes) {
-      level += cls.levels
-    }
-    return level
-  },
   getCharacterHealth: state => (cid) => {
     const c = state.characters[cid].character
     const health = {
@@ -178,10 +170,7 @@ export const mutations = {
   },
   UPDATE_CHARACTERS (state, obj) {
     // if obj with matching id exists, update it. If not, insert it
-    state.characters[obj.id] = {
-      character: obj,
-      order: state.characters.length
-    }
+    state.characters = { ...state.characters, [obj.id]: { character: obj, order: state.characters.length } }
   },
   LOAD_CHARACTER_FROM_FILE (state, data) {
     state.character = cloneDeep(data)

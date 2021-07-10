@@ -1,9 +1,11 @@
 <template>
-  <v-expansion-panels multiple>
-    <template v-for="feature in availableKlassFeatures">
-      <me-character-builder-class-feature :key="feature.id" :feature="feature" :class-index="classIndex" />
-    </template>
-  </v-expansion-panels>
+  <v-select
+    v-model="subklass"
+    :items="subklassOptions"
+    item-text="name"
+    item-value="id"
+    label="Subclass"
+  />
 </template>
 
 <script>
