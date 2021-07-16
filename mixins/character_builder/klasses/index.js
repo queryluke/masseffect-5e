@@ -10,7 +10,7 @@ export const Klasses = {
       },
       set (value) {
         this.$store.commit('cb/UPDATE_CHARACTER', {
-          cid: this.$route.query.cid,
+          cid: this.cid,
           attr: 'classes',
           value
         })

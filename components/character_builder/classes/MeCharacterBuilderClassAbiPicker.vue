@@ -1,5 +1,9 @@
 <template>
   <v-row>
+    <v-col cols="12">
+      <p>{{ abiText }}</p>
+      <p>{{ $t('abi_feature.feat_text') }}</p>
+    </v-col>
     <v-col sm="4">
       <v-select
         v-model="typeSelection"
@@ -44,8 +48,8 @@ export default {
       type: Number,
       required: true
     },
-    featureSelectionId: {
-      type: String,
+    abiLevel: {
+      type: Number,
       required: true
     }
   },
@@ -58,6 +62,9 @@ export default {
     }
   },
   computed: {
+    featureSelectionId () {
+      return `${this.klass.id}-abi-${this.abiLevel}`
+    },
     featSelected () {
       return this.typeSelection && this.typeSelection === 'feat'
     },
@@ -79,6 +86,9 @@ export default {
       set (value) {
         this.featureSelection = { value: value === 'abi' ? [null, null] : null, type: value }
       }
+    },
+    abiText () {
+      return this.$t('abi_feature.text', { at_level: this.$tc('abi_feature.at_level', 1, { level: this.$t('level_nth', { level: this.$t(`ordinal_numbers[${this.abiLevel}]`) }) }) })
     }
   },
   methods: {

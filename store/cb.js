@@ -2,117 +2,11 @@ import cloneDeep from 'lodash/cloneDeep'
 
 export const state = () => ({
   characterIdIndex: 0,
-  characters: {},
-  characterStartState: {
-    name: '',
-    id: '',
-    userId: '',
-    builderVersion: '0.5.12',
-    image: '',
-    user: '',
-    experiencePoints: 0,
-    species: {
-      name: '',
-      abilityScoreImprovementSelectedOption: 0,
-      abilityScoreImprovement: {}
-    },
-    classes: [],
-    baseAbilityScores: {
-      Strength: 0,
-      Dexterity: 0,
-      Constitution: 0,
-      Intelligence: 0,
-      Wisdom: 0,
-      Charisma: 0
-    },
-    background: {
-      name: '',
-      feat: {
-        name: '',
-        type: 'Feat'
-      }
-    },
-    characteristics: {
-      alignment: '',
-      'Personality Traits': '',
-      Ideal: '',
-      Bond: '',
-      Flaw: '',
-      Gender: '',
-      'Place of Birth': '',
-      Age: '',
-      Height: '',
-      Weight: '',
-      Hair: '',
-      Eyes: '',
-      Skin: '',
-      Appearance: '',
-      Backstory: ''
-    },
-    credits: 0,
-    equipment: [],
-    currentStats: {
-      hitPointsLost: 0,
-      temporaryHitPoints: 0,
-      techPointsUsed: 0,
-      forcePointsUsed: 0,
-      superiorityDiceUsed: 0,
-      hitDiceUsed: {},
-      deathSaves: {
-        successes: 0,
-        failures: 0
-      },
-      hasInspiration: false,
-      featuresTimesUsed: {},
-      conditions: [],
-      exhaustion: 0,
-      highLevelCasting: {
-        level6: false,
-        level7: false,
-        level8: false,
-        level9: false
-      },
-      shields: {
-        value: 0,
-        max: 5
-      },
-      barrier: {
-        uses: {
-          value: 5,
-          max: 5
-        },
-        ticks: {
-          value: 5,
-          max: 5
-        }
-      }
-    },
-    tweaks: {},
-    customProficiencies: [],
-    customLanguages: [],
-    customFeatures: [],
-    customFeats: [],
-    customTechPowers: [],
-    customForcePowers: [],
-    customEquipment: [],
-    settings: {
-      isEnforcingForcePrerequisites: true,
-      isFixedHitPoints: false,
-      abilityScoreMethod: 'Standard Array'
-    },
-    builder: {
-      currentStep: 1
-    },
-    notes: '',
-    createdAt: 1615572574654,
-    changedAt: 1615572574654,
-    localId: 'temp-x7vniqzfa'
-  }
+  characters: {}
 })
 
 export const getters = {
   characters: state => state.characters,
-  characterStartState: state => state.characterStartState,
   getCharacterHealth: state => (cid) => {
     const c = state.characters[cid].character
     const health = {

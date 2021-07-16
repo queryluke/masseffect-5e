@@ -57,45 +57,20 @@ export const Klass = {
     },
     availableKlassFeatures () {
       // TODO: Translate these
-      let features = [
-        {
-          name: 'Hit Points',
-          level: 1,
-          id: 'hit-points',
-          klass: this.klass.id,
-          component: 'me-character-builder-class-hit-points'
-        },
-        {
-          name: 'Proficiencies',
-          level: 1,
-          id: 'proficiencies',
-          klass: this.klass.id,
-          component: 'me-character-builder-class-profs'
-        }
-      ]
+      let features = []
       for (let level = 1; level <= this.klass.levels; level++) {
-        const atLevel = this.$t('level_nth', { level: this.$t(`ordinal_numbers[${level}]`) })
         if (level === this.firstSubklassLevel) {
           features.push({
             name: 'Select Subclass',
             id: 'subclass',
-            level,
-            klass: this.klass.id,
-            html: `<p>At ${atLevel}, you can select your subclass from the options below.</p>`,
-            component: 'me-character-builder-class-subclass-picker'
+            level
           })
         }
         if (this.abiLevels.includes(level)) {
-          const abiText = this.$t('abi_feature.text', {
-            at_level: this.$tc('abi_feature.at_level', 1, { level: atLevel })
-          })
           features.push({
             name: this.$t('ability_score_increase_title'),
-            id: `${this.klass.id}-abi-${level}`,
-            level,
-            klass: this.klass.id,
-            html: `<p>${abiText}</p><p>${this.$t('abi_feature.feat_text')}</p>`,
-            component: 'me-character-builder-class-abi-picker'
+            id: 'abi',
+            level
           })
         }
         const featuresAtLevel = this.features.filter((i) => {
@@ -145,14 +120,6 @@ export const Klass = {
       } else {
         return this.multiclassProficiencies[this.klass.id]
       }
-    }
-  },
-  methods: {
-    getKlassProfSelections (type) {
-      return this.klass.profSelections[type] || []
-    },
-    setKlassProfSelections ({ type, value }) {
-      this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.$route.query.cid, attr: `classes.${this.classIndex}.profSelections.${type}`, value })
     }
   }
 }

@@ -47,7 +47,7 @@
             tbody
               tr(v-if="speciesData.galaxy")
                 td #[strong #[em Galaxy] ]
-                td {{ $t(speciesData.galaxy) }}
+                td {{ $t(`galaxies.${speciesData.galaxy}`) }}
               tr(v-if="speciesData.homeworld")
                 td #[strong #[em Homeworld] ]
                 td {{ speciesData.homeworld }}
@@ -65,6 +65,12 @@
 
 <script>
 export default {
+  props: {
+    speciesData: {
+      type: Object,
+      required: true
+    }
+  },
   computed: {
     heightWeightData () {
       return this.speciesData.randomDimensions
@@ -89,12 +95,6 @@ export default {
         val: base + units,
         mod: mod.dieCount + 'd' + mod.dieType + (mod.divisor ? ' / ' + mod.divisor : '') + units
       }
-    }
-  },
-  props: {
-    speciesData: {
-      type: Object,
-      required: true
     }
   }
 }

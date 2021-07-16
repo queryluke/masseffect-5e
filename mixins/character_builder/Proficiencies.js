@@ -8,6 +8,25 @@ export const Proficiencies = {
         skill: [],
         savingThrow: []
       }
+      // get species profs
+      if (this.speciesId) {
+        for (const trait of this.speciesTraits) {
+          if (trait.mechanics) {
+            for (const mechanic of trait.mechanics) {
+              if (mechanic.type === 'profs') {
+                // add the mandatory profs
+                if (mechanic.has) {
+                  profs[mechanic.profType] = profs[mechanic.profType].concat(mechanic.has)
+                }
+                // add the chosen profs
+                if (mechanic.choices && this.character.species.traitSelections[mechanic.id]) {
+                  profs[mechanic.profType] = profs[mechanic.profType].concat(this.character.species.traitSelections[mechanic.id])
+                }
+              }
+            }
+          }
+        }
+      }
       if (!this.startingClass) {
         return profs
       }

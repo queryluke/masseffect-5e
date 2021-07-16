@@ -1,4 +1,4 @@
-export const Profs = {
+export const ProfLabels = {
   methods: {
     profLabel (type) {
       switch (type) {

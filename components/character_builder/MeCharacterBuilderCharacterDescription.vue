@@ -1,25 +1,28 @@
 <template>
   <div>
-    <h2 class="text-center">Describe Your Character</h2>
+    <!--
+    <h2 class="text-center">
+      Describe Your Character
+    </h2>
     <div class="d-flex mt-5">
-        <div class="flex-grow-1">
-            <v-text-field
-              :value="name"
-              outlined
-              label="Name"
-              v-model="name"
-              @change="updateNameInPage"
-            />
-            <v-text-field
-              :value="image"
-              outlined
-              label="Image URL"
-              v-model="image"
-            />
-        </div>
-        <me-character-builder-avatar
-          v-if="image"
+      <div class="flex-grow-1">
+        <v-text-field
+          v-model="name"
+          :value="name"
+          outlined
+          label="Name"
+          @change="updateNameInPage"
         />
+        <v-text-field
+          v-model="image"
+          :value="image"
+          outlined
+          label="Image URL"
+        />
+      </div>
+      <me-character-builder-avatar
+        v-if="image"
+      />
     </div>
     <v-select
       :value="characteristics.alignment"
@@ -28,13 +31,13 @@
       @change="newAlignment => handleChangeCharacteristic('alignment', newAlignment)"
     />
     <div class="d-flex align-center">
-        <v-autocomplete
-          :value="background.name"
-          :items="backgrounds"
-          item-text="name"
-          label="Choose a background"
-          @change="handleChangeBackground"
-        />
+      <v-autocomplete
+        :value="background.name"
+        :items="backgrounds"
+        item-text="name"
+        label="Choose a background"
+        @change="handleChangeBackground"
+      />
     </div>
     <v-select
       v-if="background || background.name === 'Custom'"
@@ -45,7 +48,6 @@
       label="Choose a feat"
       @change="handleChangeBackgroundFeat"
     />
-    <!-- VueMarkdown(:source="featText").text-caption-->
     <v-select
       v-if="background.name ==='Custom'"
       :value="background.feature"
@@ -55,11 +57,13 @@
       label="Choose a background feature"
       @change="handleChangeBackgroundFeature"
     />
-    <h3 class="my-3">Characteristics</h3>
+    <h3 class="my-3">
+      Characteristics
+    </h3>
     <v-text-field
-      class="mb-2"
       v-for="(characteristic, index) in characteristicsList"
       :key="index"
+      class="mb-2"
       :value="characteristics[characteristic]"
       outlined
       hide-details
@@ -68,17 +72,16 @@
     />
     <v-textarea
       :value="characteristics.Backstory"
-      @change="newCharacteristic => handleChangeCharacteristic('Backstory', newCharacteristic)"
       auto-grow
       label="Backstory"
+      @change="newCharacteristic => handleChangeCharacteristic('Backstory', newCharacteristic)"
     />
+    -->
   </div>
 </template>
 
 <script>
-import MeCharacterBuilderAvatar from '../MeCharacterBuilderAvatar.vue'
 export default {
-  components: { MeCharacterBuilderAvatar },
   data () {
     return {
       alignmentOptions: [

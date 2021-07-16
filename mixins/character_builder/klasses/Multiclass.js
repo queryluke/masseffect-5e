@@ -41,7 +41,7 @@ export const Multiclass = {
               items: ['assault_rifle', 'heavy_pistol', 'melee', 'shotgun', 'smg', 'sniper_rifle'],
               count: 2
             },
-            text: 'Choose one from Assault Rifles, Heavy Pistols, Melee, Shotguns, SMGs, or Sniper Rifles'
+            text: 'Choose two from Assault Rifles, Heavy Pistols, Melee, Shotguns, SMGs, or Sniper Rifles'
           }
         },
         vanguard: {

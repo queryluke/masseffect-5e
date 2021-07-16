@@ -5,7 +5,7 @@
     </div>
     <v-row v-for="(profObj, profKey) in klassProficiencyOptions" :key="profKey">
       <v-col>
-        <me-character-builder-class-prof-picker v-if="profObj" :type="profKey" :options="profObj" :class-index="classIndex" />
+        <me-character-builder-prof-picker v-if="profObj" :options="{...profObj, profType: profKey}" :path="`classes.${classIndex}.profSelections.${profKey}`" />
       </v-col>
     </v-row>
   </div>

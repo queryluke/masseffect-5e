@@ -65,20 +65,17 @@
 </template>
 
 <script>
+import { get as lodashGet } from 'lodash'
 import { CharacterBuilderHelpers } from '~/mixins/character_builder'
 export default {
   mixins: [CharacterBuilderHelpers],
   props: {
-    classIndex: {
-      type: Number,
-      required: true
-    },
-    type: {
-      type: String,
-      required: true
-    },
     options: {
       type: Object,
+      required: true
+    },
+    path: {
+      type: String,
       required: true
     }
   },
@@ -93,11 +90,14 @@ export default {
     },
     profs: {
       get () {
-        return this.getKlassProfSelections(this.type)
+        return lodashGet(this.character, this.path) || []
       },
       set (value) {
-        this.setKlassProfSelections({ type: this.type, value })
+        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: this.path, value })
       }
+    },
+    type () {
+      return this.options.profType
     }
   },
   methods: {

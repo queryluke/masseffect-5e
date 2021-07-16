@@ -1,9 +1,9 @@
 <template>
   <div>
     <div v-if="characterClasses.length === 0 || addingClass">
-      <h2 class="text-center mb-3">
+      <div class="text-subtitle text-center mb-3">
         Choose a Class
-      </h2>
+      </div>
       <div v-if="characterClasses.length > 0" class="d-flex justify-center mb-2">
         <v-btn color="error" small @click="addingClass = false">
           Cancel
@@ -72,17 +72,7 @@ export default {
   mixins: [CharacterBuilderHelpers],
   data () {
     return {
-      addingClass: false,
-      editingClass: false,
-      addBtnColor: {
-        back: 'primary',
-        text: 'primary--text'
-      },
-      classHeaders: [
-        { label: false, key: 'icon', cols: 2, md: 1, sortable: false, classes: 'd-none d-sm-flex' },
-        { label: 'name_title', key: 'name', cols: 6, sm: 7, md: 8, sortable: false },
-        { label: false, key: 'remove', cols: 6, sm: 3, sortable: false }
-      ]
+      addingClass: false
     }
   }
 }
