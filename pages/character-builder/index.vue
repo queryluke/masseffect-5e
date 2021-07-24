@@ -14,32 +14,8 @@
           My Characters
         </div>
       </v-col>
-      <v-col v-for="(char, index) in characters" :key="index" sm="8" md="6">
-        <v-card>
-          <v-card-text class="d-flex flex-wrap">
-            <v-img
-              :src="char.character.image"
-              contain
-              max-width="100px"
-              height="80px"
-              :lazy-src="require('~/assets/images/me5e_logo_450w.png')"
-              @error="require('~/assets/images/me5e_logo_450w.png')"
-            />
-            <div>
-              {{ char.character.name }}
-            </div>
-          </v-card-text>
-          <v-card-actions>
-            <v-btn text :to="`/character-builder/${char.character.id}`">
-              View
-            </v-btn>
-            <v-btn text :to="`/character-builder/${char.character.id}/edit`">
-              Edit
-            </v-btn>
-            <v-spacer />
-            <me-character-builder-character-delete :id="char.character.id" :name="char.character.name" text-btn />
-          </v-card-actions>
-        </v-card>
+      <v-col v-for="characterId in characters" :key="characterId" sm="8" lg="6">
+        <me-character-builder-index-card :character-id="characterId" />
       </v-col>
     </v-row>
     <v-row>
@@ -54,20 +30,21 @@
 
 <script>
 export default {
+  async asyncData ({ store }) {
+    await store.dispatch('FETCH_LOTS', ['species', 'classes', 'subclasses'])
+    store.dispatch('SET_META', {
+      title: 'Character Builder',
+      description: 'Build your own ME5e Character'
+    })
+  },
   data () {
     return {
       characterStartState: {
-        name: '',
+        name: null,
         id: '',
-        userId: '',
-        builderVersion: '0.5.12',
         image: null,
-        user: '',
         experiencePoints: 0,
-        species: {
-          id: null,
-          traitSelections: {}
-        },
+        species: null,
         classes: [],
         abilityScores: {
           genMethod: null,
@@ -174,7 +151,7 @@ export default {
             }
           }
         },
-        tweaks: {},
+        selections: [],
         customProficiencies: [],
         customLanguages: [],
         customFeatures: [],
@@ -182,37 +159,25 @@ export default {
         customTechPowers: [],
         customForcePowers: [],
         customEquipment: [],
-        settings: {
-          isEnforcingForcePrerequisites: true,
-          isFixedHitPoints: false,
-          abilityScoreMethod: 'Standard Array'
-        },
+        notes: '',
         builder: {
           currentStep: 1,
           showCharacterSheet: false
         },
-        notes: '',
         createdAt: 1615572574654,
-        changedAt: 1615572574654,
-        localId: 'temp-x7vniqzfa'
+        changedAt: 1615572574654
       }
     }
   },
   computed: {
     characters: {
       get () {
-        return Object.values(this.$store.getters['cb/characters'])
+        return Object.keys(this.$store.getters['cb/characters'])
       },
       set (value) {
         return this.$store.commit('cb/UPDATE_CHARACTERS', value)
       }
     }
-  },
-  created () {
-    this.$store.dispatch('SET_META', {
-      title: 'Character Builder',
-      description: 'Build your own ME5e Character'
-    })
   },
   methods: {
     createNewCharacter () {
@@ -227,6 +192,9 @@ export default {
     },
     characterImage (character) {
       return character.image || require('~/assets/images/me5e_logo_450w.png')
+    },
+    characterName (character) {
+      return character.name || 'Unnamed Character'
     }
   }
 }

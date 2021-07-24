@@ -19,7 +19,7 @@
       <div class="mt-3">
         <slot>
           <me-html v-if="aspect.html" :content="aspect.html" />
-          <me-character-builder-selectable v-for="mechanic in mechanicsWithOptions" :key="mechanic.id" :parent-path="path" :selectable="mechanic" />
+          <me-character-builder-selectable v-for="mechanic in mechanicsWithOptions" :key="mechanic.id" :source="source" :selectable="mechanic" />
         </slot>
       </div>
     </v-expansion-panel-content>
@@ -40,7 +40,7 @@ export default {
       type: [String, Boolean],
       default: false
     },
-    path: {
+    parentSource: {
       type: String,
       default: 'wastebin'
     },
@@ -50,11 +50,14 @@ export default {
     }
   },
   computed: {
+    source () {
+      return `${this.parentSource}-${this.aspect.id}`
+    },
     mechanicsWithOptions () {
       if (!this.aspect.mechanics) {
         return []
       }
-      return this.aspect.mechanics.filter(i => i.id)
+      return this.aspect.mechanics.filter(i => i.choices)
     },
     aspectHasSelections () {
       if (this.hasSelections) {
@@ -63,7 +66,7 @@ export default {
       if (this.mechanicsWithOptions.length === 0) {
         return false
       }
-      return this.mechanicsWithOptions.some(i => this.checkAspectSelections(i, `${this.path}.${i.id}`) === true)
+      return this.mechanicsWithOptions.some(i => this.mechanicNeedsSelection(i, this.source, i.choices.count) === true)
     }
   }
 }

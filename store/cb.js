@@ -32,7 +32,7 @@ export const mutations = {
       console.error('Unable to assign values to selected character. Please make sure the character id is set in the state and is defined')
       return
     }
-    const character = cloneDeep(state.characters[cid].character)
+    const character = cloneDeep(state.characters[cid])
     if (typeof attr === 'string' && attr.includes('.')) {
       let schema = character // a moving reference to internal objects within obj
       const pList = attr.split('.')
@@ -49,22 +49,18 @@ export const mutations = {
       character[attr] = value
     }
     character.changedAt = new Date().getTime()
-    state.characters[cid].character = character
+    state.characters = { ...state.characters, [cid]: character }
   },
   DELETE_CHARACTER (state, { name, cid }) {
-    // if obj with matching id exists, update it. If not, insert it
-    console.log({ name, cid })
-    if (state.characters[cid] && state.characters[cid].character) {
-      if (name === state.characters[cid].character.name) {
-        delete state.characters[cid]
-        return
-      }
+    if (state.characters[cid]) {
+      const characters = JSON.parse(JSON.stringify(state.characters))
+      delete characters[cid]
+      state.characters = characters
     }
-    console.error('Unable to remove character with id: ' + cid)
   },
   UPDATE_CHARACTERS (state, obj) {
     // if obj with matching id exists, update it. If not, insert it
-    state.characters = { ...state.characters, [obj.id]: { character: obj, order: state.characters.length } }
+    state.characters = { ...state.characters, [obj.id]: obj }
   },
   LOAD_CHARACTER_FROM_FILE (state, data) {
     state.character = cloneDeep(data)
@@ -74,5 +70,19 @@ export const mutations = {
 export const actions = {
   async FETCH_CB_DATA ({ dispatch }) {
     await dispatch('FETCH_LOTS', ['species', 'traits', 'weapons', 'armor', 'powers', 'feats', 'backgrounds', 'classes', 'class-features', 'subclasses', 'character-progression', 'skills', 'gear', 'tool-profs'], { root: true })
+  },
+  DELETE_SELECTIONS ({ commit, getters }, { cid, id }) {
+    const newSelections = getters.characters[cid].selections.filter(i => !i.source.startsWith(id))
+    commit('UPDATE_CHARACTER', { cid, attr: 'selections', value: newSelections })
+  },
+  UPDATE_SELECTIONS ({ commit, getters }, { cid, source, value }) {
+    const newSelections = JSON.parse(JSON.stringify(getters.characters[cid].selections))
+    const index = newSelections.findIndex(i => i.source === source)
+    if (index > -1) {
+      newSelections.splice(index, 1, value)
+    } else {
+      newSelections.push(value)
+    }
+    commit('UPDATE_CHARACTER', { cid, attr: 'selections', value: newSelections })
   }
 }

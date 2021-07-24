@@ -78,6 +78,7 @@ export default {
       this.$router.push({
         path: '/character-builder'
       })
+      this.dialog = false
     }
   }
 }

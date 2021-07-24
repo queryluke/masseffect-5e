@@ -65,7 +65,6 @@
 </template>
 
 <script>
-import { get as lodashGet } from 'lodash'
 import { CharacterBuilderHelpers } from '~/mixins/character_builder'
 export default {
   mixins: [CharacterBuilderHelpers],
@@ -74,18 +73,37 @@ export default {
       type: Object,
       required: true
     },
-    path: {
+    source: {
       type: String,
       required: true
     }
   },
   computed: {
+    type () {
+      return this.options.profType || this.options.subType
+    },
+    profs: {
+      get () {
+        const selection = this.selections.find(i => i.source === this.source)
+        return selection?.value || []
+      },
+      set (value) {
+        const selectionObj = {
+          type: 'profs',
+          subType: this.type,
+          value,
+          has: this.options.has || null,
+          source: this.source
+        }
+        this.$store.dispatch('cb/UPDATE_SELECTIONS', { cid: this.cid, source: this.source, value: selectionObj })
+      }
+    },
     disableItems () {
       return this.profs.length === this.options.choices.count
     },
     items () {
       const items = []
-      for (const item in this.options.choices.items) {
+      for (const item of this.options.choices.items) {
         // special multi-use cases
         if (['vehicles', 'starship', 'artisan'].includes(item)) {
           if (item === 'vehicles') {
@@ -104,20 +122,9 @@ export default {
           items.push(item)
         }
       }
-      return this.items.map((i) => {
+      return items.map((i) => {
         return { text: this.profText(this.type, i), value: i, disabled: this.alreadyAcquired(i) ? true : this.isSelected(i) ? false : this.disableItems }
       })
-    },
-    profs: {
-      get () {
-        return lodashGet(this.character, this.path) || []
-      },
-      set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: this.path, value })
-      }
-    },
-    type () {
-      return this.options.profType
     }
   },
   methods: {

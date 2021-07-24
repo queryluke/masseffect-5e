@@ -1,4 +1,3 @@
-import { get as getCharacterValue } from 'lodash'
 import { ProfLabels } from '../labels/ProfLabels'
 import { AbilityScoreBonus } from '../abilityScoreBonus'
 import { Klasses } from './klasses'
@@ -7,26 +6,27 @@ import { Proficiencies } from './Proficiencies'
 import { Species } from './Species'
 import { AbilityScores } from './AbilityScores'
 import { Background } from './Background'
+import { Selections } from './Selections'
+
+/*
+ * Aspect Schema
+ * species-batarian
+ * species-batarian-shrewd-negotiator
+ * species-batarian-shrewd-negotiator-profs-skill
+ */
 
 export const CharacterBuilderHelpers = {
-  mixins: [Klasses, Proficiencies, Level, Species, ProfLabels, AbilityScoreBonus, AbilityScores, Background],
+  mixins: [Klasses, Proficiencies, Level, Species, ProfLabels, AbilityScoreBonus, AbilityScores, Background, Selections],
   computed: {
     cid () {
       return this.$route.params.id || false
     },
     character () {
-      if (!this.cid) {
-        return false
-      }
-      const char = this.$store.getters['cb/characters'][this.cid]
-      if (!char) {
-        return false
-      }
-      return char.character
+      return this.$store.getters['cb/characters'][this.cid]
     },
     characterImage: {
       get () {
-        return this.character.image || (this.speciesData ? this.speciesData.bodyImg : false) || require('~/assets/images/me5e_logo_450w.png')
+        return this.character.image || (this.speciesId ? this.speciesData.bodyImg : false) || require('~/assets/images/me5e_logo_450w.png')
       },
       set (value) {
         this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'image', value })
@@ -39,6 +39,15 @@ export const CharacterBuilderHelpers = {
       set (value) {
         this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'name', value })
       }
+    },
+    identString () {
+      const species = this.speciesId ? this.speciesData.name : ''
+      const classes = this.classes.length > 0 ? this.classesString : ''
+      return `${species} ${classes}`
+    },
+    classesString () {
+      const classStrings = this.character.classes.map(i => this.classString(i))
+      return this.$t(`lists.comma_list[${classStrings.length}]`, classStrings)
     },
     // Data fetchers
     species () {
@@ -73,15 +82,17 @@ export const CharacterBuilderHelpers = {
     classData (id) {
       return this.$store.getters.getItem('classes', id)
     },
-    checkAspectSelections (mechanic, path) {
-      const value = getCharacterValue(this.character, path)
-      if (!value) {
-        return true
+    classString (klass) {
+      const name = []
+      if (klass.subclass) {
+        const subclassData = this.subclasses.find(i => i.id === klass.subclass)
+        if (subclassData) {
+          name.push(subclassData.name)
+        }
       }
-      if (mechanic.choices) {
-        return value.length < mechanic.choices.count
-      }
-      return false
+      name.push(this.classData(klass.id).name)
+      const level = this.$t('level_nth', { nth: this.$t(`ordinal_numbers[${klass.levels}]`) })
+      return `${level} ${name.join(' ')}`
     }
   }
 }

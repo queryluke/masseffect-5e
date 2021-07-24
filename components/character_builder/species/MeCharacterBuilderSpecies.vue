@@ -41,7 +41,7 @@
           </div>
           <v-expansion-panels multiple class="mt-3">
             <template v-for="trait in speciesTraits">
-              <me-character-builder-aspect :key="trait.id" :aspect="trait" path="species.traitSelections" />
+              <me-character-builder-aspect :key="trait.id" :aspect="trait" :parent-source="`species-${speciesId}`" />
             </template>
           </v-expansion-panels>
         </v-col>

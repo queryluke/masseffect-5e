@@ -1,6 +1,10 @@
 <template>
   <div>
-    <component :is="components[selectable.type].component" :options="selectable" :path="path" />
+    <component
+      :is="components[selectable.type].component"
+      :options="selectable"
+      :source="source"
+    />
   </div>
 </template>
 
@@ -14,7 +18,7 @@ export default {
       type: Object,
       required: true
     },
-    parentPath: {
+    source: {
       type: String,
       required: true
     }
@@ -29,11 +33,6 @@ export default {
           component: 'MeCharacterBuilderGenPicker'
         }
       }
-    }
-  },
-  computed: {
-    path () {
-      return `${this.parentPath}.${this.selectable.id}`
     }
   }
 }
