@@ -52,7 +52,7 @@ export default {
   mixins: [CharacterBuilderHelpers],
   async asyncData ({ store }) {
     store.commit('pageTitle', 'Character Builder')
-    await store.dispatch('FETCH_LOTS', ['species', 'traits', 'weapons', 'armor', 'powers', 'feats', 'backgrounds', 'classes', 'class-features', 'subclasses', 'character-progression', 'skills', 'gear'])
+    await store.dispatch('cb/FETCH_CB_DATA')
   },
   computed: {
     builder () {

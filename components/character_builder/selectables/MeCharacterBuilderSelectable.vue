@@ -24,6 +24,9 @@ export default {
       components: {
         profs: {
           component: 'MeCharacterBuilderProfPicker'
+        },
+        picker: {
+          component: 'MeCharacterBuilderGenPicker'
         }
       }
     }

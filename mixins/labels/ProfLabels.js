@@ -16,15 +16,16 @@ export const ProfLabels = {
       return ''
     },
     profText (type, id) {
-      let item
+      let item, lookupId
       switch (type) {
         case 'weapon':
           return this.$tc(`weapon_types.${id}`, 2)
         case 'armor':
           return this.$t(`armor_types.${id}`)
         case 'tool':
-          item = this.$store.getters.getItem('gear', id)
-          return item ? item.name : id
+          lookupId = item.id.startsWith('vehicles') ? 'vehicles' : id
+          item = this.$store.getters.getItem('tool-profs', lookupId)
+          return item ? item.name : lookupId
         case 'skill':
           item = this.$store.getters.getItem('skills', id)
           return item ? item.name : id

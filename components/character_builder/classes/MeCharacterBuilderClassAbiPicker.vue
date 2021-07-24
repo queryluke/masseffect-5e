@@ -95,10 +95,11 @@ export default {
     updateSelection (value, index) {
       let newValue = value
       if (this.typeSelection === 'abi') {
+        // TODO: prevent selection if it goes over 20 (unless there is a class feature)
         if (index === 0) {
-          newValue = [value, this.featureSelection[1]]
+          newValue = [value, this.featureSelection.value[1] || null]
         } else {
-          newValue = [this.featureSelection[0], value]
+          newValue = [this.featureSelection.value[0] || null, value]
         }
       }
       this.featureSelection = { ...this.featureSelection, value: newValue }

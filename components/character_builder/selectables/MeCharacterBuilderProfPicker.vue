@@ -84,7 +84,27 @@ export default {
       return this.profs.length === this.options.choices.count
     },
     items () {
-      return this.options.choices.items.map((i) => {
+      const items = []
+      for (const item in this.options.choices.items) {
+        // special multi-use cases
+        if (['vehicles', 'starship', 'artisan'].includes(item)) {
+          if (item === 'vehicles') {
+            // TODO: these should be in the data
+            for (const vehicleType of ['air', 'land', 'space', 'water']) {
+              const id = `vehicle-${vehicleType}`
+              items.push(id)
+            }
+          } else {
+            const matchingTools = this.toolProfs.filter(i => i.type === item)
+            for (const match of matchingTools) {
+              items.push(match.id)
+            }
+          }
+        } else {
+          items.push(item)
+        }
+      }
+      return this.items.map((i) => {
         return { text: this.profText(this.type, i), value: i, disabled: this.alreadyAcquired(i) ? true : this.isSelected(i) ? false : this.disableItems }
       })
     },

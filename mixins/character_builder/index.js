@@ -4,10 +4,12 @@ import { AbilityScoreBonus } from '../abilityScoreBonus'
 import { Klasses } from './klasses'
 import { Level } from './Level'
 import { Proficiencies } from './Proficiencies'
-import { Species } from './species'
-import { Info } from './Info'
+import { Species } from './Species'
+import { AbilityScores } from './AbilityScores'
+import { Background } from './Background'
+
 export const CharacterBuilderHelpers = {
-  mixins: [Klasses, Proficiencies, Level, Species, ProfLabels, AbilityScoreBonus, Info],
+  mixins: [Klasses, Proficiencies, Level, Species, ProfLabels, AbilityScoreBonus, AbilityScores, Background],
   computed: {
     cid () {
       return this.$route.params.id || false
@@ -16,7 +18,6 @@ export const CharacterBuilderHelpers = {
       if (!this.cid) {
         return false
       }
-
       const char = this.$store.getters['cb/characters'][this.cid]
       if (!char) {
         return false
@@ -25,7 +26,7 @@ export const CharacterBuilderHelpers = {
     },
     characterImage: {
       get () {
-        return this.character.image || this.speciesData.bodyImg || require('~/assets/images/me5e_logo_450w.png')
+        return this.character.image || (this.speciesData ? this.speciesData.bodyImg : false) || require('~/assets/images/me5e_logo_450w.png')
       },
       set (value) {
         this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'image', value })
@@ -63,6 +64,9 @@ export const CharacterBuilderHelpers = {
     },
     feats () {
       return this.$store.getters.getData('feats')
+    },
+    toolProfs () {
+      return this.$store.getters.getData('tool-profs')
     }
   },
   methods: {

@@ -1,5 +1,6 @@
 <template>
   <v-container>
+    <!-- TODO: character unready -->
     <me-character-sheet />
   </v-container>
 </template>
@@ -11,7 +12,12 @@ export default {
   mixins: [CharacterBuilderHelpers],
   async asyncData ({ store }) {
     store.commit('pageTitle', 'Character Builder')
-    await store.dispatch('FETCH_LOTS', ['species', 'weapons', 'armor', 'powers', 'feats', 'backgrounds', 'classes', 'class-features', 'subclasses', 'character-progression', 'skills', 'gear'])
+    await store.dispatch('cb/FETCH_CB_DATA')
+  },
+  computed: {
+    characterReady () {
+      return this.speciesId && this.characterClasses.length > 0 && this.allAbilityScoresSet
+    }
   }
 }
 </script>

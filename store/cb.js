@@ -71,8 +71,8 @@ export const mutations = {
   }
 }
 
-/*
 export const actions = {
-
+  async FETCH_CB_DATA ({ dispatch }) {
+    await dispatch('FETCH_LOTS', ['species', 'traits', 'weapons', 'armor', 'powers', 'feats', 'backgrounds', 'classes', 'class-features', 'subclasses', 'character-progression', 'skills', 'gear', 'tool-profs'], { root: true })
+  }
 }
-*/
