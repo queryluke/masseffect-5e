@@ -4,15 +4,7 @@
       Describe your character
     </div>
     <v-row>
-      <v-col order-md="1" cols="12" md="9">
-        <v-text-field
-          v-model="characterName"
-          outlined
-          dense
-          label="Name"
-          hide-details
-          class="my-3"
-        />
+      <v-col cols="12">
         <v-expansion-panels multiple>
           <!-- Physical -->
           <v-expansion-panel class="mb-3">
@@ -22,22 +14,14 @@
                   Physical Characteristics
                 </div>
                 <div class="text-caption font-italic">
-                  {{ physicalCharacteristics.join(', ') }}
+                  {{ physicalCharText }}
                 </div>
               </div>
             </v-expansion-panel-header>
             <v-expansion-panel-content>
-              <v-text-field
-                v-for="(characteristic, index) in physicalCharacteristics"
-                :key="index"
-                class="mb-2"
-                :value="characteristics[characteristic]"
-                outlined
-                hide-details
-                dense
-                :label="characteristic"
-                @change="newCharacteristic => handleChangeCharacteristic(characteristic, newCharacteristic)"
-              />
+              <div v-for="characteristic in physicalCharacteristics" :key="characteristic" class="mb-2">
+                <me-character-builder-debounced-input :path="`characteristics.${characteristic}`" :label="$t(`character.${characteristic}`)" />
+              </div>
             </v-expansion-panel-content>
           </v-expansion-panel>
 
@@ -49,129 +33,55 @@
                   Personal Characteristics
                 </div>
                 <div class="text-caption font-italic">
-                  Alignment, {{ personalCharacteristics.join(', ') }}
+                  {{ personalCharText }}
                 </div>
               </div>
             </v-expansion-panel-header>
             <v-expansion-panel-content>
               <v-row justify="center" class="mb-3" no-gutters>
                 <v-col
-                  v-for="alignment in alignmentOptions"
-                  :key="alignment"
+                  v-for="al in alignmentOptions"
+                  :key="al"
                   cols="4"
                   class="d-flex pa-1"
-                  :class="{ 'justify-end': alignment.endsWith('g'), 'justify-center': alignment.endsWith('n'), 'justfiy-start': alignment.endsWith('e') }"
+                  :class="{ 'justify-end': al.endsWith('g'), 'justify-center': al.endsWith('n'), 'justfiy-start': al.endsWith('e') }"
                 >
                   <v-card
                     hover
                     height="75"
                     width="75"
-                    :class="character.alignment === alignment ? 'primary' : 'secondary'"
-                    @click="setAlignment(alignment)"
+                    :class="alignment === al ? 'primary' : 'secondary'"
+                    @click="alignment = al"
                   >
                     <v-row justify="center" align="center" class="fill-height text-caption">
                       <v-col class="text-center pt-8">
-                        {{ $t(`alignments.${alignment}`) }}
+                        {{ $t(`alignments.${al}`) }}
                       </v-col>
                     </v-row>
                   </v-card>
                 </v-col>
               </v-row>
-              <v-text-field
-                v-for="(characteristic, index) in personalCharacteristics"
-                :key="index"
-                class="mb-2"
-                :value="characteristics[characteristic]"
-                outlined
-                hide-details
-                dense
-                :label="characteristic"
-                @change="newCharacteristic => handleChangeCharacteristic(characteristic, newCharacteristic)"
-              />
-            </v-expansion-panel-content>
-          </v-expansion-panel>
-
-          <!-- Background -->
-          <v-expansion-panel class="mb-3">
-            <v-expansion-panel-header>
-              Background
-            </v-expansion-panel-header>
-            <v-expansion-panel-content>
-              <v-autocomplete v-model="backgroundId" :items="backgrounds" item-value="id" item-text="name" />
-              <div v-if="backgroundId">
-                <v-expansion-panels multiple class="mt-3">
-                  <me-character-builder-aspect :aspect="{name: 'Proficiencies', mechanics: backgroundData.mechanics }" path="background.selections" />
-                </v-expansion-panels>
-                <me-html :content="backgroundData.html" class="mt-3" />
+              <div v-for="characteristic in personalCharacteristics" :key="characteristic" class="mb-2">
+                <me-character-builder-debounced-input :path="`characteristics.${characteristic}`" :label="$t(`character.${characteristic}`)" />
               </div>
             </v-expansion-panel-content>
           </v-expansion-panel>
 
+          <!-- Background -->
+          <me-character-builder-character-background />
+
           <!-- Back story -->
           <v-expansion-panel class="mb-3">
             <v-expansion-panel-header>
-              Back story
+              {{ $t('character.backstory') }}
             </v-expansion-panel-header>
             <v-expansion-panel-content>
-              <v-textarea
-                :value="characteristics.Backstory"
-                auto-grow
-                label="Backstory"
-                @change="newCharacteristic => handleChangeCharacteristic('Backstory', newCharacteristic)"
-              />
+              <me-character-builder-debounced-input label="Backstory" path="characteristics.backstory" input-type="textarea" />
             </v-expansion-panel-content>
           </v-expansion-panel>
         </v-expansion-panels>
       </v-col>
-      <v-col order-md="2" cols="12" md="3" class="d-flex justify-center justify-md-end">
-        <me-character-builder-avatar />
-      </v-col>
     </v-row>
-
-    <div class="d-flex mt-5" />
-    <!--
-    <v-select
-      :value="characteristics.alignment"
-      :items="alignmentOptions"
-      label="Choose an Alignment"
-      @change="newAlignment => handleChangeCharacteristic('alignment', newAlignment)"
-    />
-    <div class="d-flex align-center">
-
-    </div>
-    <v-select
-      v-if="background || background.name === 'Custom'"
-      :value="background.feat.name"
-      :items="feats"
-      item-text="name"
-      clearable
-      label="Choose a feat"
-      @change="handleChangeBackgroundFeat"
-    />
-    <v-select
-      v-if="background.name ==='Custom'"
-      :value="background.feature"
-      :items="feats"
-      item-text="name"
-      clearable
-      label="Choose a background feature"
-      @change="handleChangeBackgroundFeature"
-    />
-    <h3 class="my-3">
-      Characteristics
-    </h3>
-    <v-text-field
-      v-for="(characteristic, index) in characteristicsList"
-      :key="index"
-      class="mb-2"
-      :value="characteristics[characteristic]"
-      outlined
-      hide-details
-      :label="characteristic"
-      @change="newCharacteristic => handleChangeCharacteristic(characteristic, newCharacteristic)"
-    />
-
-    -->
   </v-container>
 </template>
 
@@ -182,7 +92,6 @@ export default {
   mixins: [CharacterBuilderHelpers],
   data () {
     return {
-      expandBackgroundDesc: false,
       alignmentOptions: [
         'lg',
         'ln',
@@ -195,67 +104,42 @@ export default {
         'ce'
       ],
       physicalCharacteristics: [
-        'Gender',
-        'Place of Birth',
-        'Age',
-        'Height',
-        'Weight',
-        'Hair',
-        'Eyes',
-        'Skin',
-        'Appearance'
+        'gender',
+        'age',
+        'height',
+        'weight',
+        'hair',
+        'eyes',
+        'skin',
+        'appearance'
       ],
       personalCharacteristics: [
-        'Personality Traits',
-        'Ideal',
-        'Bond',
-        'Flaw'
+        'place_of_birth',
+        'personality_traits',
+        'ideal',
+        'bond',
+        'flaw'
       ]
     }
   },
   computed: {
-    characteristics: {
+    alignment: {
       get () {
-        return this.character.characteristics
+        return this.character.characteristics.alignment
       },
       set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'characteristics', value })
+        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'characteristics.alignment', value })
       }
     },
-    name: {
-      get () {
-        return this.character.name
-      },
-      set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'name', value })
-      }
+    physicalCharText () {
+      const array = this.physicalCharacteristics.map(i => this.$t(`character.${i}`))
+      return this.$t(`lists.comma_list[${array.length}]`, array)
     },
-    profsHasSelections () {
-      const profTypes = this.backgroundData.profs ? Object.keys(this.backgroundData.profs) : false
-      if (!profTypes) {
-        return false
-      }
-      const checks = []
-      for (const profType of profTypes) {
-        if (this.backgroundData.profs[profType].choices && this.character.background.profSelections) {
-          const selections = this.character.background.profSelections[profType]
-          const count = this.backgroundData.profs[profType].choices.count
-          if (!selections || selections.length < count) {
-            checks.push(true)
-          }
-        }
-      }
-      return checks.some(i => i === true)
-    }
-  },
-  methods: {
-    setAlignment (value) {
-      this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'alignment', value })
-    },
-    handleChangeCharacteristic (characteristic, newCharacteristic) {
-      const to = { ...this.characteristics }
-      to[characteristic] = newCharacteristic
-      this.characteristics = to
+    personalCharText () {
+      let array = [this.$t('character.alignment')]
+      array = array.concat(this.personalCharacteristics.map(i => this.$t(`character.${i}`)))
+      array.push(this.$tc('background_title', 1))
+      return this.$t(`lists.comma_list[${array.length}]`, array)
     }
   }
 }

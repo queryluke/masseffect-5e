@@ -41,17 +41,28 @@ export default {
   },
   methods: {
     cleanSelectedClass (klass) {
-      return { // variables to write to the character object for the character sheet
+      return {
+        // variables to write to the character object for the character sheet
         id: klass.id,
         hitPoints: [klass.hitDie],
+        subclass: null,
         hpOverride: false,
-        profSelections: {},
-        featureSelections: {},
         levels: 1
       }
     },
     addClassToCharacter (klass) {
       const tempArr = this.characterClasses.slice()
+      const newSelections = []
+      for (const profKey in klass.profs) {
+        if (klass.profs.has) {
+          newSelections.push({
+            source: `klass-${klass.id}-1-profs-${profKey}`,
+            has: klass.profs[profKey].has,
+            type: 'profs',
+            subType: profKey
+          })
+        }
+      }
       tempArr.push(this.cleanSelectedClass(klass))
       this.characterClasses = tempArr
       this.$emit('added-class')

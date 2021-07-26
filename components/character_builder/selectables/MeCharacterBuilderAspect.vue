@@ -15,7 +15,7 @@
         </v-icon>
       </template>
     </v-expansion-panel-header>
-    <v-expansion-panel-content>
+    <v-expansion-panel-content eager>
       <div class="mt-3">
         <slot>
           <me-html v-if="aspect.html" :content="aspect.html" />
@@ -66,7 +66,7 @@ export default {
       if (this.mechanicsWithOptions.length === 0) {
         return false
       }
-      return this.mechanicsWithOptions.some(i => this.mechanicNeedsSelection(i, this.source, i.choices.count) === true)
+      return this.mechanicsWithOptions.some(i => this.mechanicNeedsSelection(i, this.source, i.choices.count))
     }
   }
 }

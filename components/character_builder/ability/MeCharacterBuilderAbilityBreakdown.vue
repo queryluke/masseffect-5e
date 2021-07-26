@@ -97,14 +97,14 @@ export default {
       }
     },
     modText () {
-      if (this.getAbsBase(this.ability) === 0 && !this.getAbsOverride(this.ability)) {
+      if (!this.getAbsBase(this.ability) && !this.getAbsOverride(this.ability)) {
         return '--'
       }
       const mod = this.absMod(this.ability)
       return mod >= 0 ? `+${mod}` : `-${mod * -1}`
     },
     totalText () {
-      if (this.getAbsBase(this.ability) === 0 && !this.getAbsOverride(this.ability)) {
+      if (!this.getAbsBase(this.ability) && !this.getAbsOverride(this.ability)) {
         return '--'
       }
       return this.absTotal(this.ability)

@@ -23,7 +23,7 @@ export const ProfLabels = {
         case 'armor':
           return this.$t(`armor_types.${id}`)
         case 'tool':
-          lookupId = item.id.startsWith('vehicles') ? 'vehicles' : id
+          lookupId = id.startsWith('vehicles') ? 'vehicles' : id
           item = this.$store.getters.getItem('tool-profs', lookupId)
           return item ? item.name : lookupId
         case 'skill':

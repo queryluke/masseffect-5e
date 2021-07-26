@@ -15,17 +15,14 @@ export const Selections = {
     }
   },
   methods: {
-    mechanicNeedsSelection (mechanic, source, count) {
+    mechanicNeedsSelection (mechanic, source, count = 1) {
       // NOTE: if we need a multipicker, need to iterate on choices.count not use index!!!
       const selection = this.selections.find(i => i.source === source)
-      console.log(source)
-      console.log(selection)
-      console.log(this.selections)
       if (!selection) {
         return true
       }
-      if (!mechanic.count || mechanic.count === 1) {
-        return !selection.value
+      if (!selection.value || (Array.isArray(selection.value) && selection.value.length === 0)) {
+        return true
       }
       return selection.value.length !== count
     },

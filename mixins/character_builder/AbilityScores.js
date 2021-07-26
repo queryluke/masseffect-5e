@@ -44,17 +44,19 @@ export const AbilityScores = {
     },
     absAbis (ability) {
       let final = 0
-      for (const klass of this.characterClasses) {
-        const abis = Object.values(klass.featureSelections).filter(i => i.type === 'abi')
-        for (const abi of abis) {
-          if (abi.value[0] === ability && (abi.value[1] === ability || abi.value[1] === null)) {
-            final += 2
-            continue
-          }
-          if (abi.value[0] === ability || abi.value[1] === ability) {
-            final += 1
-            continue
-          }
+      const abis = this.selections.filter(i => i.source.endsWith('abi') && i.type === 'abi')
+      console.log(abis)
+      for (const abi of abis) {
+        if (!abi.value) {
+          continue
+        }
+        if (abi.value[0] === ability && !abi.value[1]) {
+          final += 2
+          continue
+        }
+        if (abi.value.includes(ability)) {
+          final += 1
+          continue
         }
       }
       return final

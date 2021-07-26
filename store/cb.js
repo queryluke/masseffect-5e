@@ -75,14 +75,18 @@ export const actions = {
     const newSelections = getters.characters[cid].selections.filter(i => !i.source.startsWith(id))
     commit('UPDATE_CHARACTER', { cid, attr: 'selections', value: newSelections })
   },
-  UPDATE_SELECTIONS ({ commit, getters }, { cid, source, value }) {
+  UPDATE_SELECTIONS ({ commit, getters }, { cid, selection }) {
     const newSelections = JSON.parse(JSON.stringify(getters.characters[cid].selections))
-    const index = newSelections.findIndex(i => i.source === source)
+    const index = newSelections.findIndex(i => i.source === selection.source)
     if (index > -1) {
-      newSelections.splice(index, 1, value)
+      newSelections.splice(index, 1, selection)
     } else {
-      newSelections.push(value)
+      newSelections.push(selection)
     }
+    commit('UPDATE_CHARACTER', { cid, attr: 'selections', value: newSelections })
+  },
+  ADD_SELECTIONS ({ commit, getters }, { cid, selections }) {
+    const newSelections = [...getters.characters[cid].selections, ...selections]
     commit('UPDATE_CHARACTER', { cid, attr: 'selections', value: newSelections })
   }
 }

@@ -79,7 +79,7 @@ export default {
         {
           name: 'Character Description',
           component: 'MeCharacterBuilderCharacterDescription',
-          isComplete: this.character.name !== ''
+          isComplete: this.character.name !== null
         }
       ]
     },

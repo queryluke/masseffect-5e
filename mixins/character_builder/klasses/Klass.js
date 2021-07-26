@@ -1,6 +1,6 @@
 export const Klass = {
   watch: {
-    'klass.levels' (level) {
+    'klass.levels' (level, oldLevel) {
       // update hp
       const hpLength = this.klassHitPoints.length
       const clonedHp = [...this.klassHitPoints]
@@ -14,15 +14,25 @@ export const Klass = {
         }
         this.klassHitPoints = clonedHp
       }
-      // update features
-      const clonedFeatureSelections = JSON.parse(JSON.stringify(this.klass.featureSelections))
-      const availableFeatureIds = this.availableKlassFeatures.map(i => i.id)
-      for (const featureId in this.klass.featureSelections) {
-        if (!availableFeatureIds.includes(featureId)) {
-          delete clonedFeatureSelections[featureId]
+      if (level < oldLevel) {
+        // remove features no longer at level
+        const klassFeatures = this.selections.filter(i => i.source.startsWith(`klass-${this.klass.id}`))
+        for (const feature of klassFeatures) {
+          const featureLevel = Number.parseInt(feature.source.split('-')[2])
+          if (featureLevel >= level) {
+            this.$store.dispatch('cb/DELETE_SELECTIONS', { cid: this.cid, id: feature.source })
+          }
         }
+      } else {
+        // add all features from old to new level
+        let newSelections = []
+        for (const feature of this.availableKlassFeatures) {
+          if (feature.level > oldLevel && feature.mechanics) {
+            newSelections = newSelections.concat(this.getMechanicsWithoutChoices(`klass-${this.klass.id}-${feature.level}`, feature))
+          }
+        }
+        this.$store.dispatch('cb/ADD_SELECTIONS', { cid: this.cid, selections: newSelections })
       }
-      this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `classes.${this.classIndex}.featureSelections`, value: clonedFeatureSelections })
     }
   },
   computed: {
@@ -37,10 +47,20 @@ export const Klass = {
     },
     subklass: {
       get () {
-        return this.klass.featureSelections.subclass
+        return this.klass.subclass
       },
       set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `classes.${this.classIndex}.featureSelections.subclass`, value })
+        const subklassFeaturesToDelete = this.selections.filter((i) => {
+          if (!i.source.startsWith(`klass-${this.klass.id}`)) {
+            return false
+          }
+          const subklassId = i.source.split('-')[3]
+          return subklassId === this.subklass
+        })
+        for (const sftd of subklassFeaturesToDelete) {
+          this.$store.dispatch('cb/DELETE_SELECTIONS', { cid: this.cid, id: sftd.source })
+        }
+        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `classes.${this.classIndex}.subclass`, value })
       }
     },
     firstSubklassLevel () {
@@ -96,14 +116,6 @@ export const Klass = {
       },
       set (value) {
         this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `classes.${this.classIndex}.hitPoints`, value })
-      }
-    },
-    featureSelection: {
-      get () {
-        return this.klass.featureSelections[this.featureSelectionId]
-      },
-      set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `classes.${this.classIndex}.featureSelections.${this.featureSelectionId}`, value })
       }
     },
     klassLevel: {

@@ -48,7 +48,9 @@
             </v-icon>
           </v-list-item-icon>
           <v-list-item-icon v-else>
-            <v-icon>mdi-checkbox-blank-outline</v-icon>
+            <v-icon :color="data.item.disabled ? 'grey darken-2' : undefined">
+              mdi-checkbox-blank-outline
+            </v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>
@@ -88,14 +90,7 @@ export default {
         return selection?.value || []
       },
       set (value) {
-        const selectionObj = {
-          type: 'profs',
-          subType: this.type,
-          value,
-          has: this.options.has || null,
-          source: this.source
-        }
-        this.$store.dispatch('cb/UPDATE_SELECTIONS', { cid: this.cid, source: this.source, value: selectionObj })
+        this.setProfObject(value)
       }
     },
     disableItems () {
@@ -127,7 +122,22 @@ export default {
       })
     }
   },
+  mounted () {
+    if (!this.selections.find(i => i.source === this.source)) {
+      this.setProfObject([])
+    }
+  },
   methods: {
+    setProfObject (value) {
+      const selection = {
+        type: 'profs',
+        subType: this.type,
+        value,
+        has: this.options.has || null,
+        source: this.source
+      }
+      this.$store.dispatch('cb/UPDATE_SELECTIONS', { cid: this.cid, selection })
+    },
     remove (item) {
       const index = this.profs.indexOf(item.value)
       if (index >= 0) {

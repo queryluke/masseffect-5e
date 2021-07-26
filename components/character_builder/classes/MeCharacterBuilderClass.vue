@@ -26,7 +26,7 @@
                 <v-expansion-panel-header>
                   <me-character-builder-class-list-item :class-index="classIndex" />
                 </v-expansion-panel-header>
-                <v-expansion-panel-content>
+                <v-expansion-panel-content eager>
                   <v-row>
                     <v-col>
                       <v-btn class="mr-2" :to="`/classes/${item.id}`" target="_blank">

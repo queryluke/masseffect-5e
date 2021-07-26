@@ -47,7 +47,10 @@ export default {
         species: null,
         classes: [],
         abilityScores: {
-          genMethod: null,
+          genMethod: {
+            text: 'Standard Array',
+            value: 'standard'
+          },
           standard: {
             str: null,
             con: null,
@@ -89,29 +92,23 @@ export default {
             cha: null
           }
         },
-        background: {
-          name: '',
-          feat: {
-            name: '',
-            type: 'Feat'
-          }
-        },
+        background: null,
         characteristics: {
           alignment: '',
-          'Personality Traits': '',
-          Ideal: '',
-          Bond: '',
-          Flaw: '',
-          Gender: '',
-          'Place of Birth': '',
-          Age: '',
-          Height: '',
-          Weight: '',
-          Hair: '',
-          Eyes: '',
-          Skin: '',
-          Appearance: '',
-          Backstory: ''
+          personality_traits: '',
+          ideal: '',
+          bond: '',
+          flaw: '',
+          gender: '',
+          place_of_birth: '',
+          age: '',
+          height: '',
+          weight: '',
+          hair: '',
+          eyes: '',
+          skin: '',
+          appearance: '',
+          backstory: ''
         },
         credits: 0,
         equipment: [],
