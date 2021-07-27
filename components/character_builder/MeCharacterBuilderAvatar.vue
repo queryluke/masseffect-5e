@@ -2,8 +2,8 @@
   <div>
     <v-hover>
       <template #default="{hover}">
-        <v-card elevation="0" :height="size" :width="size" @click="dialog = true">
-          <v-img :src="characterImage" alt="Character Image" contain :height="size" :width="size" />
+        <v-card elevation="0" :height="defaultSize" :width="defaultSize" @click="dialog = true">
+          <v-img :src="characterImage" alt="Character Image" contain :height="defaultSize" :width="defaultSize" />
           <v-fade-transition>
             <v-overlay
               v-if="hover"
@@ -28,6 +28,9 @@
           </v-icon>
         </v-card-title>
         <v-card-text>
+          <div class="d-flex justify-center">
+            <v-img :src="characterImage" alt="Character Image" contain :height="250" :width="250" />
+          </div>
           <v-text-field v-model="characterImage" />
         </v-card-text>
         <v-card-actions>
@@ -46,13 +49,22 @@ import { CharacterBuilderHelpers } from '~/mixins/character_builder'
 
 export default {
   mixins: [CharacterBuilderHelpers],
+  props: {
+    size: {
+      type: [String, Number, Boolean],
+      default: false
+    }
+  },
   data () {
     return {
       dialog: false
     }
   },
   computed: {
-    size () {
+    defaultSize () {
+      if (this.size) {
+        return this.size
+      }
       return this.$vuetify.breakpoint.xs
         ? 150
         : this.$vuetify.breakpoint.smAndDown

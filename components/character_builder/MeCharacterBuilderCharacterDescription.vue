@@ -5,6 +5,21 @@
     </div>
     <v-row>
       <v-col cols="12">
+        <v-card elevation="0">
+          <v-card-title>Name & Image</v-card-title>
+          <v-card-text>
+            <v-row align="center">
+              <v-col cols="12" sm="3" class="d-flex justify-center justify-sm-start">
+                <me-character-builder-avatar />
+              </v-col>
+              <v-col cols="12" sm="9" class="text-center text-sm-left">
+                <me-character-builder-debounced-input path="name" :label="$t(`character.name`)" />
+              </v-col>
+            </v-row>
+          </v-card-text>
+        </v-card>
+      </v-col>
+      <v-col cols="12">
         <v-expansion-panels multiple>
           <!-- Physical -->
           <v-expansion-panel class="mb-3">

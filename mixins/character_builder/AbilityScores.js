@@ -45,7 +45,6 @@ export const AbilityScores = {
     absAbis (ability) {
       let final = 0
       const abis = this.selections.filter(i => i.source.endsWith('abi') && i.type === 'abi')
-      console.log(abis)
       for (const abi of abis) {
         if (!abi.value) {
           continue
