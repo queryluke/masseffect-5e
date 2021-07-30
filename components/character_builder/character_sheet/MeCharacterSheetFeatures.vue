@@ -29,10 +29,15 @@
         </template>
       </v-tab-item>
       <v-tab-item>
-        <div class="text-h6">
-          {{ backgroundData.name }}
+        <div v-if="backgroundData">
+          <div class="text-h6">
+            {{ backgroundData.name }}
+          </div>
+          <me-html :content="backgroundData.html" />
         </div>
-        <me-html :content="backgroundData.html" />
+        <div v-else>
+          Please select a background.
+        </div>
       </v-tab-item>
     </v-tabs-items>
   </div>

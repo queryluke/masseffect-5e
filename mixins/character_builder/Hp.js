@@ -51,7 +51,7 @@ export const Hp = {
     },
     csMaxShields: {
       get () {
-        return this.character.currentStats.shields.max
+        return this.character.settings.shields
       },
       set (value) {
         this.$store.commit('cb/UPDATE_CHARACTER', {

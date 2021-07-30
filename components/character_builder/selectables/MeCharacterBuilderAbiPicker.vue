@@ -3,7 +3,7 @@
     <v-col cols="12">
       <slot />
     </v-col>
-    <v-col sm="4">
+    <v-col cols="12" sm="4">
       <v-select
         v-model="typeSelection"
         :items="improvementOptions"
@@ -11,7 +11,7 @@
         label="Choose an option..."
       />
     </v-col>
-    <v-col v-if="featSelected">
+    <v-col v-if="featSelected" cols="12" sm="8">
       <v-autocomplete
         v-model="featureSelection"
         :items="feats"
@@ -20,7 +20,7 @@
         item-value="id"
       />
     </v-col>
-    <v-col v-if="abiSelected">
+    <v-col v-if="abiSelected" cols="12" sm="8">
       <v-autocomplete
         v-model="featureSelection"
         item-text="text"

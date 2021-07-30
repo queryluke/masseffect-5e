@@ -112,8 +112,9 @@ export default {
         },
         credits: 0,
         equipment: [],
+        powers: [],
+        selections: [],
         currentStats: {
-          ac: 10,
           hitPointsLost: 0,
           tempHp: {
             max: 0,
@@ -133,9 +134,6 @@ export default {
               max: 5
             }
           },
-          techPointsUsed: 0,
-          forcePointsUsed: 0,
-          superiorityDiceUsed: 0,
           hitDiceUsed: {},
           deathSaves: {
             successes: 0,
@@ -144,16 +142,35 @@ export default {
           hasInspiration: false,
           featuresTimesUsed: {},
           conditions: [],
-          exhaustion: 0
+          exhaustion: 0,
+          indoctrination: 0
         },
-        selections: [],
-        customProficiencies: [],
-        customLanguages: [],
-        customFeatures: [],
-        customFeats: [],
-        customTechPowers: [],
-        customForcePowers: [],
-        customEquipment: [],
+        settings: {
+          acOverride: null,
+          acBonus: 0,
+          shields: 5,
+          regen: 5,
+          speedBonus: 0,
+          senses: {
+            darkvision: false,
+            tremorsense: false,
+            blindsight: false,
+            infrared_vision: false,
+            truesight: false
+          },
+          attackMod: 0,
+          attackMeleeMod: 0,
+          attackRangedMod: 0,
+          attackSpellMod: 0,
+          damageMod: 0,
+          damageMeleeMod: 0,
+          damageRangedMod: 0,
+          damageSpellMod: 0,
+          damageRes: [],
+          damageImm: [],
+          damageVul: [],
+          conditionImm: []
+        },
         notes: '',
         builder: {
           currentStep: 1,

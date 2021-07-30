@@ -57,7 +57,7 @@ export const mutations = {
 
 export const actions = {
   async FETCH_CB_DATA ({ dispatch }) {
-    await dispatch('FETCH_LOTS', ['species', 'traits', 'weapons', 'armor', 'powers', 'feats', 'backgrounds', 'classes', 'class-features', 'subclasses', 'character-progression', 'skills', 'gear', 'tool-profs'], { root: true })
+    await dispatch('FETCH_LOTS', ['species', 'traits', 'weapons', 'armor', 'mods', 'powers', 'feats', 'backgrounds', 'classes', 'class-features', 'subclasses', 'character-progression', 'skills', 'gear', 'tool-profs', 'weapon-properties', 'conditions'], { root: true })
   },
   DELETE_SELECTIONS ({ commit, getters }, { cid, id }) {
     const newSelections = getters.characters[cid].selections.filter(i => !i.source.startsWith(id))

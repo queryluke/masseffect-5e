@@ -6,16 +6,32 @@
     </v-col>
     <v-col cols="12">
       <v-row>
-        <v-col cols="12" class="d-flex justify-center">
-          <v-btn
-            :color="csBgColor('damage')"
-            small
-            :dark="!dark"
-            :light="dark"
-            @click="execDamage"
-          >
-            Damage
-          </v-btn>
+        <v-col cols="12">
+          <div class="d-flex justify-center">
+            <v-btn
+              :color="csBgColor('damage')"
+              small
+              :dark="!dark"
+              :light="dark"
+              @click="execDamage"
+            >
+              Damage
+            </v-btn>
+          </div>
+          <div class="d-flex justify-space-around">
+            <v-switch
+              v-model="bypassShields"
+              hint="Bypass Shields"
+              dense
+              persistent-hint
+            />
+            <v-switch
+              v-model="doubleShields"
+              hint="2x Shields"
+              dense
+              persistent-hint
+            />
+          </div>
         </v-col>
         <v-col cols="6" offset="3">
           <v-text-field
@@ -46,7 +62,7 @@
             :light="dark"
             @click="execRegen"
           >
-            Regen
+            Regen ({{ character.settings.regen }})
           </v-btn>
           <v-btn
             :color="csBgColor('temp')"
@@ -57,17 +73,6 @@
           >
             Temp HP
           </v-btn>
-        </v-col>
-        <v-col class="text-center">
-          <v-slider
-            v-model="csMaxShields"
-            :color="csBgColor('shields')"
-            label="Max Shields"
-            step="5"
-            max="30"
-          >
-            Max Shields
-          </v-slider>
         </v-col>
       </v-row>
     </v-col>
@@ -82,8 +87,8 @@ export default {
   data () {
     return {
       bypassShields: false,
-      modder: 0,
-      showEditMaxShields: false
+      doubleShields: false,
+      modder: 0
     }
   },
   methods: {
@@ -95,7 +100,7 @@ export default {
       this.csCurrentTempHp = this.csCurrentTempHp + this.modder
     },
     execRegen () {
-      this.csCurrentShields = Math.min(this.csMaxShields, this.modder + this.csCurrentShields)
+      this.csCurrentShields = Math.min(this.csMaxShields, this.character.settings.regen + this.csCurrentShields)
     },
     execHeal () {
       this.csHitPointsLost = Math.max(0, this.csHitPointsLost - this.modder)
@@ -110,10 +115,10 @@ export default {
         }
         dmgLeft -= potentialTempHpDmg
       }
-      if (this.csCurrentShields > 0) {
-        const potentialShieldDmg = Math.min(this.csCurrentShields, dmgLeft)
-        this.csCurrentShields = Math.max(this.csCurrentShields - dmgLeft, 0)
-        dmgLeft -= potentialShieldDmg
+      if (this.csCurrentShields > 0 && !this.bypassShields) {
+        const potentialShieldDmg = Math.min(this.csCurrentShields, (this.doubleShields ? dmgLeft * 2 : dmgLeft))
+        this.csCurrentShields = Math.max(this.csCurrentShields - potentialShieldDmg, 0)
+        dmgLeft = this.doubleShields ? Math.floor(((dmgLeft * 2) - potentialShieldDmg) / 2) : dmgLeft - potentialShieldDmg
       }
       if (dmgLeft > 0) {
         this.csHitPointsLost = Math.min(this.csMaxHp, this.csHitPointsLost + dmgLeft)

@@ -40,6 +40,9 @@ export const Barrier = {
     },
     csCurrentBarrierTicks: {
       get () {
+        if (!this.hasBarrier) {
+          return 0
+        }
         return this.character.currentStats.barrier.ticks.value
       },
       set (value) {

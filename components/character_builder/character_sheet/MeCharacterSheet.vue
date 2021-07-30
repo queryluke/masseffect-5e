@@ -22,6 +22,31 @@
           <me-character-sheet-features />
         </me-character-sheet-card>
       </div>
+      <div v-if="mobileView === 'notes'">
+        <me-character-sheet-card>
+          <me-character-sheet-notes />
+        </me-character-sheet-card>
+      </div>
+      <div v-if="mobileView === 'details'">
+        <me-character-sheet-card>
+          <me-character-sheet-details />
+        </me-character-sheet-card>
+      </div>
+      <div v-if="mobileView === 'equipment'">
+        <me-character-sheet-card>
+          <me-character-sheet-equipment />
+        </me-character-sheet-card>
+      </div>
+      <div v-if="mobileView === 'settings'">
+        <me-character-sheet-card>
+          <me-character-sheet-settings />
+        </me-character-sheet-card>
+      </div>
+      <div v-if="mobileView === 'actions'">
+        <me-character-sheet-card>
+          <me-character-sheet-actions />
+        </me-character-sheet-card>
+      </div>
     </div>
   </div>
 </template>

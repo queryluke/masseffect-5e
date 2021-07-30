@@ -12,6 +12,7 @@ import { Barrier } from './Barrier'
 import { Ac } from './Ac'
 import { Speed } from './Speed'
 import { Skills } from './Skills'
+import { Equipment } from './Equipment'
 
 /*
  * Aspect Schema
@@ -22,7 +23,7 @@ import { Skills } from './Skills'
  */
 
 export const CharacterBuilderHelpers = {
-  mixins: [Klasses, Proficiencies, Level, Species, ProfLabels, AbilityScoreBonus, AbilityScores, Background, Selections, Hp, Barrier, Ac, Speed, Skills],
+  mixins: [Klasses, Proficiencies, Level, Species, ProfLabels, AbilityScoreBonus, AbilityScores, Background, Selections, Hp, Barrier, Ac, Speed, Skills, Equipment],
   data () {
     return {
       csColors: {
@@ -141,6 +142,63 @@ export const CharacterBuilderHelpers = {
     },
     skills () {
       return this.$store.getters.getData('skills')
+    },
+    weapons () {
+      return this.$store.getters.getData('weapons')
+    },
+    armor () {
+      return this.$store.getters.getData('armor')
+    },
+    gear () {
+      return this.$store.getters.getData('gear')
+    },
+    mods () {
+      return this.$store.getters.getData('mods')
+    },
+    conditions () {
+      return this.$store.getters.getData('conditions')
+    },
+    weaponProperties () {
+      return this.$store.getters.getData('weapon-properties')
+    },
+    damageTypes () {
+      const items = []
+      for (const key in this.$i18n.messages.en.damage_types) {
+        if (key.endsWith('_damage') || key.endsWith('_title')) {
+          continue
+        }
+        items.push({
+          text: this.$t(`damage_types.${key}_title`),
+          value: key
+        })
+      }
+      return items
+    },
+    armorPlacements () {
+      const items = []
+      for (const key in this.$i18n.messages.en.armor_placements) {
+        if (key.endsWith('_title')) {
+          continue
+        }
+        items.push({
+          text: this.$t(`armor_placements.${key}_title`),
+          value: key
+        })
+      }
+      return items
+    },
+    armorTypes () {
+      const items = []
+      for (const key in this.$i18n.messages.en.armor_types) {
+        if (key.endsWith('_title') || key.endsWith('_armor')) {
+          continue
+        }
+        items.push({
+          text: this.$t(`armor_types.${key}`),
+          value: key
+        })
+      }
+      return items
     },
     dark () {
       return this.$store.getters['user/darkMode']

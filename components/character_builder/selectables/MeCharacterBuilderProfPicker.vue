@@ -3,7 +3,7 @@
     <div class="text-subtitle">
       {{ profLabel(type) }}
     </div>
-    <div class="d-flex">
+    <div class="d-flex flex-wrap">
       <div v-if="options.has">
         <template v-for="prof in options.has">
           <v-chip

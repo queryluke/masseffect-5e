@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <!-- START: APP BAR -->
-    <me-app-bar :extended="characterReady && $vuetify.breakpoint.xsOnly" :extension-height="140">
+    <me-app-bar :extended="characterReady && $vuetify.breakpoint.smAndDown" :extension-height="140">
       <template #appBarExtension>
         <div style="width: 100%">
           <me-character-sheet-main-menu />
@@ -30,7 +30,7 @@
           {{ mobileMenu ? 'mdi-close' : 'mdi-dots-grid' }}
         </v-icon>
       </v-btn>
-      <v-dialog v-if="$vuetify.breakpoint.xsOnly" v-model="mobileMenu">
+      <v-dialog v-if="$vuetify.breakpoint.xsOnly" v-model="mobileMenu" overlay-opacity=".9">
         <v-container fluid>
           <v-row>
             <v-col cols="12">
@@ -44,8 +44,38 @@
               </v-btn>
             </v-col>
             <v-col cols="6">
+              <v-btn block x-large color="primary" @click="mobileView = 'actions'; mobileMenu = false">
+                Actions
+              </v-btn>
+            </v-col>
+            <v-col cols="12">
               <v-btn block x-large color="primary" @click="mobileView = 'features'; mobileMenu = false">
-                Features
+                Features & Traits
+              </v-btn>
+            </v-col>
+            <v-col cols="6">
+              <v-btn block x-large color="primary" @click="mobileView = 'powers'; mobileMenu = false">
+                Powers
+              </v-btn>
+            </v-col>
+            <v-col cols="6">
+              <v-btn block x-large color="primary" @click="mobileView = 'equipment'; mobileMenu = false">
+                Gear
+              </v-btn>
+            </v-col>
+            <v-col cols="6">
+              <v-btn block x-large color="primary" @click="mobileView = 'details'; mobileMenu = false">
+                Details
+              </v-btn>
+            </v-col>
+            <v-col cols="6">
+              <v-btn block x-large color="primary" @click="mobileView = 'notes'; mobileMenu = false">
+                Notes
+              </v-btn>
+            </v-col>
+            <v-col cols="12">
+              <v-btn block x-large color="primary" @click="mobileView = 'settings'; mobileMenu = false">
+                Settings
               </v-btn>
             </v-col>
           </v-row>
