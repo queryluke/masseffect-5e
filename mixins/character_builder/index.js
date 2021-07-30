@@ -7,16 +7,78 @@ import { Species } from './Species'
 import { AbilityScores } from './AbilityScores'
 import { Background } from './Background'
 import { Selections } from './Selections'
+import { Hp } from './Hp'
+import { Barrier } from './Barrier'
+import { Ac } from './Ac'
+import { Speed } from './Speed'
+import { Skills } from './Skills'
 
 /*
  * Aspect Schema
  * species-batarian
  * species-batarian-shrewd-negotiator
  * species-batarian-shrewd-negotiator-profs-skill
+ * background-criminal-specialty
  */
 
 export const CharacterBuilderHelpers = {
-  mixins: [Klasses, Proficiencies, Level, Species, ProfLabels, AbilityScoreBonus, AbilityScores, Background, Selections],
+  mixins: [Klasses, Proficiencies, Level, Species, ProfLabels, AbilityScoreBonus, AbilityScores, Background, Selections, Hp, Barrier, Ac, Speed, Skills],
+  data () {
+    return {
+      csColors: {
+        hp: {
+          dark: {
+            bg: 'green',
+            text: 'green--text'
+          },
+          light: {
+            bg: 'green darken-3',
+            text: 'green--text text--darken-3'
+          }
+        },
+        shields: {
+          dark: {
+            bg: 'blue',
+            text: 'blue--text'
+          },
+          light: {
+            bg: 'blue accent-4',
+            text: 'blue--text text--accent-4'
+          }
+        },
+        temp: {
+          dark: {
+            bg: 'blue-grey lighten-1',
+            text: 'blue-grey--text text--lighten-1'
+          },
+          light: {
+            bg: 'blue-grey darken-2',
+            text: 'blue-grey--text text--darken-2'
+          }
+        },
+        damage: {
+          dark: {
+            bg: 'red',
+            text: 'red--text'
+          },
+          light: {
+            bg: 'red accent-4',
+            text: 'red--text text--accent-4'
+          }
+        },
+        barrier: {
+          dark: {
+            bg: 'purple accent-2',
+            text: 'purple--text text--accent-2'
+          },
+          light: {
+            bg: 'purple darken-3',
+            text: 'purple--text text--darken-3'
+          }
+        }
+      }
+    }
+  },
   computed: {
     cid () {
       return this.$route.params.id || false
@@ -76,6 +138,15 @@ export const CharacterBuilderHelpers = {
     },
     toolProfs () {
       return this.$store.getters.getData('tool-profs')
+    },
+    skills () {
+      return this.$store.getters.getData('skills')
+    },
+    dark () {
+      return this.$store.getters['user/darkMode']
+    },
+    characterReady () {
+      return this.speciesId && this.characterClasses.length > 0 && this.allAbilityScoresSet
     }
   },
   methods: {
@@ -91,8 +162,15 @@ export const CharacterBuilderHelpers = {
         }
       }
       name.push(this.classData(klass.id).name)
-      const level = this.$t('level_nth', { nth: this.$t(`ordinal_numbers[${klass.levels}]`) })
-      return `${level} ${name.join(' ')}`
+      return `${name.join(' ')} ${klass.levels}`
+    },
+    csBgColor (key) {
+      const modeKey = this.$store.getters['user/darkMode'] ? 'dark' : 'light'
+      return this.csColors[key][modeKey].bg
+    },
+    csTextColor (key) {
+      const modeKey = this.$store.getters['user/darkMode'] ? 'dark' : 'light'
+      return this.csColors[key][modeKey].text
     }
   }
 }

@@ -2,31 +2,19 @@ import cloneDeep from 'lodash/cloneDeep'
 
 export const state = () => ({
   characterIdIndex: 0,
-  characters: {}
+  characters: {},
+  mobileView: 'abilities'
 })
 
 export const getters = {
   characters: state => state.characters,
-  getCharacterHealth: state => (cid) => {
-    const c = state.characters[cid].character
-    const health = {
-      hitPointsMax: 0
-    }
-    for (const cls of c.classes) {
-      for (const hp of cls.hitPoints) {
-        health.hitPointsMax += hp
-      }
-    }
-    health.hitPointsLost = c.currentStats.hitPointsLost
-    health.temporaryHitPoints = c.currentStats.temporaryHitPoints
-    health.deathSaves = c.currentStats.deathSaves
-    health.shields = c.currentStats.shields
-    health.barrier = c.currentStats.barrier
-    return health
-  }
+  mobileView: state => state.mobileView
 }
 
 export const mutations = {
+  SET_MOBILE_VIEW (state, view) {
+    state.mobileView = view
+  },
   UPDATE_CHARACTER (state, { cid, attr, value }) {
     if (!state.characters[cid]) {
       console.error('Unable to assign values to selected character. Please make sure the character id is set in the state and is defined')

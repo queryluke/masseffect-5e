@@ -42,6 +42,10 @@ export const AbilityScores = {
     absMod (ability) {
       return this.abilityScoreBonus(this.absTotal(ability))
     },
+    absModText (ability) {
+      const mod = this.absMod(ability)
+      return mod >= 0 ? `+${mod}` : `-${mod * -1}`
+    },
     absAbis (ability) {
       let final = 0
       const abis = this.selections.filter(i => i.source.endsWith('abi') && i.type === 'abi')

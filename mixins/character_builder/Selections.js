@@ -12,6 +12,9 @@ export const Selections = {
     },
     speciesSource () {
       return `species-${this.speciesId}`
+    },
+    csFeats () {
+      return this.selections.filter(i => i.type === 'feat').map(i => this.feats.find(j => j.id === i.value))
     }
   },
   methods: {
@@ -21,10 +24,10 @@ export const Selections = {
       if (!selection) {
         return true
       }
-      if (!selection.value || (Array.isArray(selection.value) && selection.value.length === 0)) {
+      if (!selection.value) {
         return true
       }
-      return selection.value.length !== count
+      return Array.isArray(selection.value) ? selection.value.length !== count : false
     },
     getMechanicsWithoutChoices (sourceId, mechanics) {
       const collection = []

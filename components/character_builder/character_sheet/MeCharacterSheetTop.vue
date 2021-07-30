@@ -3,7 +3,7 @@
     <v-card-text>
       <v-row>
         <v-col sm="12" md="6">
-          <me-character-builder-level-tracker :level="character.level"/>
+          <me-character-builder-level-tracker :level="character.level" />
           <v-row>
             <v-col>
               <me-character-builder-avatar />

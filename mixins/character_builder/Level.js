@@ -15,6 +15,9 @@ export const Level = {
     },
     xp () {
       return this.character.experiencePoints || 0
+    },
+    profBonus () {
+      return this.levelInfo.profBonus
     }
   }
 }

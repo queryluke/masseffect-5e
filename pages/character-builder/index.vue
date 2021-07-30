@@ -113,8 +113,26 @@ export default {
         credits: 0,
         equipment: [],
         currentStats: {
+          ac: 10,
           hitPointsLost: 0,
-          temporaryHitPoints: 0,
+          tempHp: {
+            max: 0,
+            value: 0
+          },
+          shields: {
+            value: 0,
+            max: 0
+          },
+          barrier: {
+            uses: {
+              value: 5,
+              max: 5
+            },
+            ticks: {
+              value: 5,
+              max: 5
+            }
+          },
           techPointsUsed: 0,
           forcePointsUsed: 0,
           superiorityDiceUsed: 0,
@@ -126,27 +144,7 @@ export default {
           hasInspiration: false,
           featuresTimesUsed: {},
           conditions: [],
-          exhaustion: 0,
-          highLevelCasting: {
-            level6: false,
-            level7: false,
-            level8: false,
-            level9: false
-          },
-          shields: {
-            value: 0,
-            max: 5
-          },
-          barrier: {
-            uses: {
-              value: 5,
-              max: 5
-            },
-            ticks: {
-              value: 5,
-              max: 5
-            }
-          }
+          exhaustion: 0
         },
         selections: [],
         customProficiencies: [],
