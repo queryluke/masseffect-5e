@@ -10,10 +10,14 @@
     </v-list-item-action>
     <v-list-item-content>
       <v-list-item-title>
-        {{ title }}
+        <slot name="title">
+          {{ title }}
+        </slot>
       </v-list-item-title>
       <v-list-item-subtitle>
-        {{ subtitle }}
+        <slot name="subtitle">
+          {{ subtitle }}
+        </slot>
       </v-list-item-subtitle>
     </v-list-item-content>
     <v-list-item-action @click="equipmentDialog = true">

@@ -4,6 +4,9 @@
     <v-list dense two-line>
       <template v-for="item in csGear">
         <me-character-sheet-equipment-list-item :key="`gear-${item.id}`" :item="item" :tabs="[{ title: 'Details', slot: 'infoTab' }]" no-equip>
+          <template #subtitle>
+            Remaining Uses: {{ item.uses }}
+          </template>
           <template #infoTab>
             <v-row>
               <v-col cols="4">

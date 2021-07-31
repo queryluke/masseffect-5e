@@ -13,6 +13,7 @@ import { Ac } from './Ac'
 import { Speed } from './Speed'
 import { Skills } from './Skills'
 import { Equipment } from './Equipment'
+import { Powers } from './Powers'
 
 /*
  * Aspect Schema
@@ -23,7 +24,7 @@ import { Equipment } from './Equipment'
  */
 
 export const CharacterBuilderHelpers = {
-  mixins: [Klasses, Proficiencies, Level, Species, ProfLabels, AbilityScoreBonus, AbilityScores, Background, Selections, Hp, Barrier, Ac, Speed, Skills, Equipment],
+  mixins: [Klasses, Proficiencies, Level, Species, ProfLabels, AbilityScoreBonus, AbilityScores, Background, Selections, Hp, Barrier, Ac, Speed, Skills, Equipment, Powers],
   data () {
     return {
       csColors: {
@@ -154,6 +155,9 @@ export const CharacterBuilderHelpers = {
     },
     mods () {
       return this.$store.getters.getData('mods')
+    },
+    powers () {
+      return this.$store.getters.getData('powers')
     },
     conditions () {
       return this.$store.getters.getData('conditions')

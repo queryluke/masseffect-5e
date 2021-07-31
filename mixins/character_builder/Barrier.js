@@ -1,7 +1,7 @@
 export const Barrier = {
   computed: {
     hasBarrier () {
-      return this.characterClasses.some(i => ['adept', 'sentinel', 'vanguard'].includes(i.id))
+      return this.hasSomeClasses(['adept', 'sentinel', 'vanguard'])
     },
     csBarrierDieType () {
       if (!this.hasBarrier) {
@@ -26,17 +26,12 @@ export const Barrier = {
       }
       return `${num}d${type}`
     },
-    csMaxBarrierTicks: {
-      get () {
-        return this.character.currentStats.barrier.ticks.max
-      },
-      set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', {
-          cid: this.cid,
-          attr: 'currentStats.barrier.ticks.max',
-          value
-        })
+    csMaxBarrierTicks () {
+      if (!this.hasBarrier) {
+        return 0
       }
+      const [klassId, level] = this.mcClassAndLevel('vanguard', ['vanguard', 'adept', 'sentinel'])
+      return this.getProgressionValue(klassId, 'barrier_ticks', level)
     },
     csCurrentBarrierTicks: {
       get () {
@@ -53,17 +48,12 @@ export const Barrier = {
         })
       }
     },
-    csMaxBarrierUses: {
-      get () {
-        return this.character.currentStats.barrier.uses.max
-      },
-      set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', {
-          cid: this.cid,
-          attr: 'currentStats.barrier.uses.max',
-          value
-        })
+    csMaxBarrierUses () {
+      if (!this.hasBarrier) {
+        return 0
       }
+      const [klassId, level] = this.mcClassAndLevel('vanguard', ['vanguard', 'adept', 'sentinel'])
+      return this.getProgressionValue(klassId, 'barrier_uses', level)
     },
     csCurrentBarrierUses: {
       get () {
@@ -80,45 +70,5 @@ export const Barrier = {
     csRemainingBarrierUses () {
       return this.hasBarrier ? Math.max(0, this.csMaxBarrierUses - this.csCurrentBarrierUses) : '-'
     }
-  },
-  methods: {
-    setBarrierMaxes () {
-      if (!this.hasBarrier) {
-        return 0
-      }
-      const klasses = []
-      for (const klass of this.characterClasses) {
-        if (['adept', 'vanguard', 'sentinel'].includes(klass.id)) {
-          klasses.push({ id: klass.id, levels: klass.levels })
-        }
-      }
-      let klassId, level
-      // Multiclassing
-      if (klasses.length > 1) {
-        klassId = 'vanguard'
-        let totalLevels = 0
-        for (const klass of klasses) {
-          if (klass.id === 'vanguard') {
-            totalLevels += klass.levels
-          } else {
-            totalLevels += (klass.levels / 2)
-          }
-        }
-        level = Math.floor(totalLevels)
-      } else {
-        klassId = klasses[0].id
-        level = klasses[0].levels
-      }
-      const [maxTicks, maxUses] = this.getBarrierValues(klassId, level)
-      this.csMaxBarrierTicks = maxTicks
-      this.csMaxBarrierUses = maxUses
-    },
-    getBarrierValues (id, level) {
-      const prog = this.classData(id).progression.columns
-      const ticks = prog.find(i => i.label === 'barrier_ticks').values
-      const uses = prog.find(i => i.label === 'barrier_uses').values
-      return [ticks[level - 1], uses[level - 1]]
-    }
   }
-
 }

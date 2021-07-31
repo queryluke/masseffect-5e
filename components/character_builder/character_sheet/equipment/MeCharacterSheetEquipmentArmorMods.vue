@@ -1,5 +1,9 @@
 <template>
   <div>
+    <v-alert dense value="info">
+      Adding mods does not automatically update the armor's stats. If you need to adjust your shields, ac, speed, etc.,
+      you can do so in the Character Sheet Settings.
+    </v-alert>
     <v-autocomplete
       v-model="itemMods"
       label="Mods"

@@ -47,6 +47,11 @@
           <me-character-sheet-actions />
         </me-character-sheet-card>
       </div>
+      <div v-if="mobileView === 'powers'">
+        <me-character-sheet-card>
+          <me-character-sheet-powers />
+        </me-character-sheet-card>
+      </div>
     </div>
   </div>
 </template>

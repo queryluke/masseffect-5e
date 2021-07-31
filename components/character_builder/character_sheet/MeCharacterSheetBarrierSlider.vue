@@ -36,9 +36,6 @@ import { CharacterBuilderHelpers } from '~/mixins/character_builder'
 
 export default {
   mixins: [CharacterBuilderHelpers],
-  created () {
-    this.setBarrierMaxes()
-  },
   methods: {
     addBarrier () {
       this.csCurrentBarrierTicks = Math.min(this.csMaxBarrierTicks, this.csCurrentBarrierTicks + 1)
