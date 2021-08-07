@@ -11,13 +11,13 @@
               {{ itemData.name }}
             </v-list-item-title>
             <v-list-item-subtitle>
-              <me-power-level :item="itemData.level" />
+              <me-power-level :level="itemData.level" />
             </v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
       </v-list>
       <v-btn
-        v-if="deletable"
+        v-if="deletable && !noDelete"
         color="error"
         text
         class="mt-3"
@@ -30,10 +30,10 @@
       </v-btn>
     </div>
     <v-card-actions class="mt-n5">
-      <v-btn v-if="prepareable" color="primary" text @click="addPower(item.id)">
+      <v-btn v-if="prepareable" color="primary" text @click="addPower(item)">
         Prepare
       </v-btn>
-      <v-btn v-if="learnable" color="primary" text @click="addPower(item.id, true)">
+      <v-btn v-if="learnable" color="primary" text @click="addPower(item, true)">
         Learn
       </v-btn>
       <v-menu v-if="deletable && itemData.advancements" offset-y>
@@ -101,11 +101,7 @@ export default {
       type: Object,
       required: true
     },
-    addable: {
-      type: Boolean,
-      default: false
-    },
-    deletable: {
+    noDelete: {
       type: Boolean,
       default: false
     }
@@ -116,14 +112,20 @@ export default {
     }
   },
   computed: {
+    deletable () {
+      return Object.prototype.hasOwnProperty.call(this.item, 'learned')
+    },
     itemData () {
+      if (Object.prototype.hasOwnProperty.call(this.item, 'html')) {
+        return this.item
+      }
       return this.powers.find(i => i.id === this.item.id)
     },
     prepareable () {
-      return this.addable && this.hasSomeClasses(['engineer', 'infiltrator']) && this.item.type === 'tech'
+      return !this.deletable && this.hasSomeClasses(['engineer', 'infiltrator']) && this.itemData.type === 'tech'
     },
     learnable () {
-      return this.addable && this.hasSomeClasses(['adept', 'sentinel', 'infiltrator', 'vanguard', 'soldier']) && (this.hasClass('sentinel') ? true : this.item.type !== 'tech')
+      return !this.deletable && this.hasSomeClasses(['adept', 'sentinel', 'infiltrator', 'vanguard', 'soldier']) && (this.hasClass('sentinel') ? true : this.itemData.type !== 'tech')
     }
   }
 }

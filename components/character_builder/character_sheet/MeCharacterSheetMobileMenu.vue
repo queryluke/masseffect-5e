@@ -29,7 +29,7 @@
         <small>Barrier Ticks</small>
       </div>
       <div class="text-h6">
-        {{ csCurrentBarrierTicks }}
+        {{ csMaxBarrierTicks - csBarrierTicksUsed || '-' }}
       </div>
     </v-col>
   </v-row>

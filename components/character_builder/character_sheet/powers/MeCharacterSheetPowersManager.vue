@@ -10,35 +10,25 @@
       <div v-if="csMaxPowersPrepared">
         <me-character-sheet-powers-known-counter :count="preparedPowersCount" :max="csMaxPowersPrepared" label="Prepared Powers" />
       </div>
+      <v-row class="mt-5">
+        <v-col>
+          <div>
+            <v-text-field
+              v-model="search"
+              append-icon="mdi-magnify"
+              clearable
+              dense
+            />
+            <v-checkbox v-model="knownFilter" :label="`Known/Prepared`" />
+          </div>
+          <div>
+            <template v-for="item in powersList">
+              <me-character-sheet-powers-add-card :key="item.id" :item="item" />
+            </template>
+          </div>
+        </v-col>
+      </v-row>
     </v-card-text>
-    <v-expansion-panels flat>
-      <v-expansion-panel>
-        <v-expansion-panel-header>
-          Available ({{ availablePowers.length }})
-        </v-expansion-panel-header>
-        <v-expansion-panel-content>
-          <v-text-field
-            v-model="search"
-            append-icon="mdi-magnify"
-            clearable
-            dense
-          />
-          <template v-for="item in availablePowers">
-            <me-character-sheet-powers-add-card :key="item.id" :item="{id: item.id}" addable />
-          </template>
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-      <v-expansion-panel class="mt-5">
-        <v-expansion-panel-header>
-          Known / Prepared ({{ character.powers.length }})
-        </v-expansion-panel-header>
-        <v-expansion-panel-content>
-          <template v-for="kItem in character.powers">
-            <me-character-sheet-powers-add-card :key="kItem.id" :item="kItem" deletable />
-          </template>
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-    </v-expansion-panels>
   </div>
 </template>
 
@@ -50,7 +40,8 @@ export default {
   data () {
     return {
       search: null,
-      debouncedSearch: null
+      debouncedSearch: null,
+      knownFilter: false
     }
   },
   computed: {
@@ -58,12 +49,11 @@ export default {
       return this.characterClasses.map(i => i.id)
     },
     tpMaxCheck () {
-      console.log(this.csTechPointLimit)
       return this.csTechPointLimit || 0
     },
     psMaxCheck () {
-      const powerSlots = this.csPowerSlots
-      return powerSlots ? powerSlots.findIndex(i => i > 0) + 1 : 0
+      const powerSlots = [...this.csPowerSlots].reverse()
+      return powerSlots ? 5 - powerSlots.findIndex(i => i > 0) : 0
     },
     knownPowersCount () {
       let cantripCount = 0
@@ -91,13 +81,21 @@ export default {
     },
     availablePowers () {
       return this.powers.filter((i) => {
+        console.log(this.psMaxCheck)
         const searchCheck = this.debouncedSearch && this.debouncedSearch.length > 0 ? i.name.toLowerCase().includes(this.debouncedSearch) : true
         const klassCheck = this.ccIds.some(cId => i.classes.includes(cId))
         const tpCheck = this.hasTechPoints ? i.level <= this.tpMaxCheck : true
         const psCheck = this.hasPowerSlots ? i.level <= this.psMaxCheck : true
         const knownCheck = !this.knownPowerIds.includes(i.id)
-        return searchCheck && klassCheck && (tpCheck || psCheck) && knownCheck
-      })
+        return searchCheck && klassCheck && tpCheck && psCheck && knownCheck
+      }).concat()
+    },
+    powersList () {
+      if (this.knownFilter) {
+        return this.character.powers
+      }
+      const list = this.availablePowers.concat(this.character.powers)
+      return list.sort((a, b) => a.level - b.level)
     }
   },
   watch: {

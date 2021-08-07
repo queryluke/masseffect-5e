@@ -25,12 +25,13 @@
         fixed
         style="z-index: 1000"
         @click="mobileMenu = !mobileMenu"
+        v-if="$vuetify.breakpoint.smAndDown"
       >
         <v-icon>
           {{ mobileMenu ? 'mdi-close' : 'mdi-dots-grid' }}
         </v-icon>
       </v-btn>
-      <v-dialog v-if="$vuetify.breakpoint.xsOnly" v-model="mobileMenu" overlay-opacity=".9">
+      <v-dialog v-if="$vuetify.breakpoint.smAndDown" v-model="mobileMenu" overlay-opacity=".9">
         <v-container fluid>
           <v-row>
             <v-col cols="12">

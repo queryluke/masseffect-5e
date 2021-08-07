@@ -24,6 +24,7 @@
           :label="$t(`abilities.${ability}.title`)"
           :value="selectedAbilityScores[ability]"
           @change="setAbsBase({ability, value: $event})"
+          clearable
         />
       </v-col>
     </v-row>
@@ -53,6 +54,7 @@
           :label="$t(`abilities.${ability}.title`)"
           :value="selectedAbilityScores[ability]"
           @change="setAbsBase({ability, value: $event})"
+          clearable
         />
       </v-col>
     </v-row>
@@ -70,6 +72,7 @@
           outlined
           dense
           @change="setAbsBase({ability, value: $event})"
+          clearable
         />
       </v-col>
     </v-row>

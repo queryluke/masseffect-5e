@@ -30,8 +30,11 @@ export const Powers = {
       if (!this.hasPowerSlots) {
         return false
       }
+      let ps = [0, 0, 0, 0, 0]
       const [klassId, level] = this.csBioticKlassAndLevel
-      const ps = this.getProgressionValue(klassId, 'power_slots_by_power_level', level)
+      if (klassId) {
+        ps = this.getProgressionValue(klassId, 'power_slots_by_power_level', level)
+      }
       const sentinelClass = this.characterClasses.find(i => i.id === 'sentinel')
       if (sentinelClass) {
         const numSlots = this.getProgressionValue('sentinel', 'power_slots', sentinelClass.levels)
@@ -62,9 +65,53 @@ export const Powers = {
       const cantrips = this.getCombinedProgressionValues(['adept', 'vanguard', 'sentinel'], 'cantrips')
       const combat = this.getCombinedProgressionValues(['soldier', 'infiltrator'], 'combat_powers')
       return cantrips + combat
+    },
+    csStartingClassPowerAbility () {
+      let chaTotal, wisTotal, dexTotal, intTotal, strTotal
+      const startingKlassId = this.characterClasses[0].id || 'adept'
+      switch (startingKlassId) {
+        case 'adept':
+        case 'vanguard':
+          return this.speciesId === 'asari' ? 'cha' : 'wis'
+        case 'engineer':
+        case 'infiltrator':
+          return 'int'
+        case 'sentinel':
+          chaTotal = this.absTotal('cha')
+          wisTotal = this.absTotal('wis')
+          intTotal = this.absTotal('int')
+          return chaTotal >= wisTotal && chaTotal >= intTotal
+            ? 'cha'
+            : wisTotal >= intTotal
+              ? 'wis'
+              : 'int'
+        case 'soldier':
+          dexTotal = this.absTotal('dex')
+          strTotal = this.absTotal('str')
+          return dexTotal >= strTotal ? 'dex' : 'str'
+      }
+    },
+    csTechPointsUsed: {
+      get () {
+        return this.character.currentStats.tpUsed
+      },
+      set (value) {
+        console.log(value, this.csMaxTechPoints)
+        const nonMaxZeroValue = value >= this.csMaxTechPoints ? this.csMaxTechPoints : value <= 0 ? 0 : value
+        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'currentStats.tpUsed', value: nonMaxZeroValue })
+      }
     }
   },
   methods: {
+    csGetPowerSlotsUsed (psIndex) {
+      return this.character.currentStats.psUsed[psIndex]
+    },
+    csSetPowerSlotsUsed (psIndex, value) {
+      const nonMaxZeroValue = value >= this.csPowerSlots[psIndex] ? this.csPowerSlots[psIndex] : value <= 0 ? 0 : value
+      const values = [...this.character.currentStats.psUsed]
+      values.splice(psIndex, 1, nonMaxZeroValue)
+      this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'currentStats.psUsed', value: values })
+    },
     getCombinedProgressionValues (klasses, column) {
       let value = 0
       for (const klass of klasses) {
@@ -75,14 +122,16 @@ export const Powers = {
       }
       return value
     },
-    addPower (id, learned = false) {
+    addPower (item, learned = false) {
       const powers = [...this.character.powers]
+      const id = item.id
       if (powers.findIndex(i => i.id === id) > -1) {
         return
       }
       powers.push({
         id,
         learned,
+        level: item.level,
         advancement: false
       })
       this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'powers', value: powers })

@@ -125,20 +125,16 @@ export default {
             max: 0
           },
           barrier: {
-            uses: {
-              value: 5,
-              max: 5
-            },
-            ticks: {
-              value: 5,
-              max: 5
-            }
+            used: 0,
+            ticksUsed: 0
           },
           hitDiceUsed: {},
           deathSaves: {
             successes: 0,
             failures: 0
           },
+          tpUsed: 0,
+          psUsed: [0, 0, 0, 0, 0],
           hasInspiration: false,
           featuresTimesUsed: {},
           conditions: [],
@@ -169,7 +165,8 @@ export default {
           damageRes: [],
           damageImm: [],
           damageVul: [],
-          conditionImm: []
+          conditionImm: [],
+          powerModAbility: null
         },
         notes: '',
         builder: {

@@ -1,8 +1,10 @@
 <template>
   <div>
-    <v-alert dense value="info">
-      Adding mods does not automatically update the armor's stats. If you need to adjust your shields, ac, speed, etc.,
-      you can do so in the Character Sheet Settings.
+    <v-alert dense type="info">
+      <small>
+        Adding mods does not automatically update the armor's stats. If you need to adjust your shields, ac, speed, etc.,
+        you can do so in the Character Sheet Settings.
+      </small>
     </v-alert>
     <v-autocomplete
       v-model="itemMods"
@@ -11,6 +13,9 @@
       item-text="name"
       item-value="id"
       multiple
+      chips
+      small-chips
+      deletable-chips
     />
     <template v-for="mod in item.mods">
       <div v-if="mod" :key="`selected-armor-mod-${mod}`">

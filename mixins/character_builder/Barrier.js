@@ -33,18 +33,19 @@ export const Barrier = {
       const [klassId, level] = this.mcClassAndLevel('vanguard', ['vanguard', 'adept', 'sentinel'])
       return this.getProgressionValue(klassId, 'barrier_ticks', level)
     },
-    csCurrentBarrierTicks: {
+    csBarrierTicksUsed: {
       get () {
         if (!this.hasBarrier) {
           return 0
         }
-        return this.character.currentStats.barrier.ticks.value
+        return this.character.currentStats.barrier.ticksUsed
       },
       set (value) {
+        const nonMaxZeroValue = value > this.csMaxBarrierTicks ? this.csMaxBarrierTicks : value < 0 ? 0 : value
         this.$store.commit('cb/UPDATE_CHARACTER', {
           cid: this.cid,
-          attr: 'currentStats.barrier.ticks.value',
-          value
+          attr: 'currentStats.barrier.ticksUsed',
+          value: nonMaxZeroValue
         })
       }
     },
@@ -55,20 +56,18 @@ export const Barrier = {
       const [klassId, level] = this.mcClassAndLevel('vanguard', ['vanguard', 'adept', 'sentinel'])
       return this.getProgressionValue(klassId, 'barrier_uses', level)
     },
-    csCurrentBarrierUses: {
+    csBarrierUsed: {
       get () {
-        return this.character.currentStats.barrier.uses.value
+        return this.character.currentStats.barrier.used
       },
       set (value) {
+        const nonMaxZeroValue = value > this.csMaxBarrierUses ? this.csMaxBarrierUses : value < 0 ? 0 : value
         this.$store.commit('cb/UPDATE_CHARACTER', {
           cid: this.cid,
-          attr: 'currentStats.barrier.uses.value',
-          value
+          attr: 'currentStats.barrier.used',
+          value: nonMaxZeroValue
         })
       }
-    },
-    csRemainingBarrierUses () {
-      return this.hasBarrier ? Math.max(0, this.csMaxBarrierUses - this.csCurrentBarrierUses) : '-'
     }
   }
 }

@@ -41,6 +41,9 @@ export const Klasses = {
           klasses.push({ id: klass.id, levels: klass.levels })
         }
       }
+      if (klasses.length === 0) {
+        return [false, 0]
+      }
       let klassId, level
       // Multiclassing
       if (klasses.length > 1) {

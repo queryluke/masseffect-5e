@@ -1,11 +1,11 @@
 <template>
   <div>
     <v-row>
-      <v-col v-for="ability in ['str', 'dex', 'con', 'int', 'wis', 'cha']" :key="ability" cols="4">
+      <v-col v-for="ability in ['str', 'dex', 'con', 'int', 'wis', 'cha']" :key="ability" cols="4" lg="2">
         <v-card outlined elevation="0">
           <v-card-text class="pa-2 text-center">
             <div class="text-caption">
-              {{ $t(`abilities.${ability}.title`) }}
+              {{ $t(`abilities.${ability}.abbr`) }}
             </div>
             <div class="text-h6">
               {{ absModText(ability) }}
