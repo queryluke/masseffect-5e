@@ -90,9 +90,11 @@
 
     <v-row>
       <v-col>
-        <div>
-          Powers
-          <v-btn small color="primary" @click="managerDialog = true">
+        <div class="d-flex justify-space-between">
+          <div>
+            Powers
+          </div>
+          <v-btn x-small color="primary" @click="managerDialog = true">
             Manage
           </v-btn>
         </div>

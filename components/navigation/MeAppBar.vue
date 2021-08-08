@@ -34,7 +34,9 @@
       >
         {{ $t(item.name) }}
       </v-btn>
+      <!--
       <me-lang-picker />
+      -->
     </v-toolbar-items>
     <!-- jumplink nav -->
     <v-toolbar-items v-if="$vuetify.breakpoint.mdAndDown">

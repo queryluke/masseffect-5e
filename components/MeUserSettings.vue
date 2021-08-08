@@ -19,7 +19,9 @@
         <v-switch v-model="imperial" inset dense />
       </v-list-item-action>
     </v-list-item>
+    <!--
     <me-lang-picker activator="listItem" />
+    -->
   </v-list>
 </template>
 

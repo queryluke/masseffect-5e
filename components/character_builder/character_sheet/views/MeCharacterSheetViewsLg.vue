@@ -3,6 +3,7 @@
     <v-row>
       <v-col cols="4">
         <me-character-sheet-main-menu />
+        <me-character-sheet-mobile-menu />
         <me-character-sheet-health />
       </v-col>
       <v-col cols="8">
@@ -64,7 +65,9 @@
 </template>
 
 <script>
+import MeCharacterSheetMobileMenu from '~/components/character_builder/character_sheet/MeCharacterSheetMobileMenu'
 export default {
+  components: { MeCharacterSheetMobileMenu },
   data () {
     return {
       tab: null,
