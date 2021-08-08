@@ -1,39 +1,57 @@
 <template>
   <div>
-    <h2 class="text-center">Choose a Species</h2>
-    <me-character-builder-select
+    <div class="text-subtitle text-center mb-3">
+      Choose a Species
+    </div>
+    <v-autocomplete
+      v-model="speciesId"
+      item-text="name"
+      item-value="id"
       :items="species"
-      label="Species"
-      attr="species"
-    />
-    <v-container v-if="model.name">
+    >
+      <template #item="data">
+        <v-list-item-avatar>
+          <v-img :src="data.item.bodyImg" :position="data.item.id === 'volus' ? 'center center' : 'top center'" />
+        </v-list-item-avatar>
+        <v-list-item-content>
+          <v-list-item-title>
+            {{ data.item.name }}
+          </v-list-item-title>
+        </v-list-item-content>
+      </template>
+    </v-autocomplete>
+    <v-container v-if="speciesId">
       <v-row>
         <v-col>
-          <me-character-builder-species-card :speciesData="model" />
+          <me-character-builder-species-card :species-data="speciesData" />
         </v-col>
         <v-col>
           <div>
-            <v-img :src="model.bodyImg" width="200px" position="center center" style="margin: auto;"/>
+            <v-img :src="speciesData.bodyImg" width="200px" position="center center" style="margin: auto;" />
           </div>
         </v-col>
       </v-row>
       <v-row>
         <v-col>
-          <h3>{{ model.name }} Traits</h3>
-          <p>As a {{ model.name }}, you have the following special traits.</p>
-          <v-expansion-panels>
-              <v-expansion-panel v-for="trait in model.traits" :key="trait.name">
-                  <v-expansion-panel-header>{{trait.name}}</v-expansion-panel-header>
-                  <v-expansion-panel-content>
-                      <div v-html="trait.html"></div>
-                  </v-expansion-panel-content>
-              </v-expansion-panel>
+          <div class="text-h4">
+            Traits
+          </div>
+          <div>
+            {{ abiText }}
+          </div>
+          <v-expansion-panels multiple class="mt-3">
+            <template v-for="trait in speciesTraits">
+              <me-character-builder-aspect :key="trait.id" :aspect="trait" :parent-source="`species-${speciesId}`" />
+            </template>
           </v-expansion-panels>
         </v-col>
       </v-row>
       <v-row>
         <v-col>
-        <div v-html="model.html" />
+          <div class="text-h4">
+            Species Information
+          </div>
+          <me-html :content="speciesData.html" />
         </v-col>
       </v-row>
     </v-container>
@@ -41,15 +59,15 @@
 </template>
 
 <script>
+import { CharacterBuilderHelpers } from '~/mixins/character_builder'
 export default {
+  mixins: [CharacterBuilderHelpers],
   computed: {
-    species () {
-      return this.$store.getters.getData('species')
-    },
-    model: {
-      get () {
-        return this.$store.getters['cb/characters'][this.$route.query.cid].character.species
-      }
+    abiText () {
+      const array = this.speciesData.abilityScoreIncrease.map((i) => {
+        return `+${i.amount} ${this.$t(`abilities.${i.ability}.title`)}`
+      })
+      return this.$t(`lists.comma_list[${array.length}]`, array)
     }
   }
 }

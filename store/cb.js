@@ -3,150 +3,24 @@ import cloneDeep from 'lodash/cloneDeep'
 export const state = () => ({
   characterIdIndex: 0,
   characters: {},
-  characterStartState: {
-    name: '',
-    id: '',
-    userId: '',
-    builderVersion: '0.5.12',
-    image: '',
-    user: '',
-    experiencePoints: 0,
-    species: {
-      name: '',
-      abilityScoreImprovementSelectedOption: 0,
-      abilityScoreImprovement: {}
-    },
-    classes: [],
-    baseAbilityScores: {
-      Strength: 0,
-      Dexterity: 0,
-      Constitution: 0,
-      Intelligence: 0,
-      Wisdom: 0,
-      Charisma: 0
-    },
-    background: {
-      name: '',
-      feat: {
-        name: '',
-        type: 'Feat'
-      }
-    },
-    characteristics: {
-      alignment: '',
-      'Personality Traits': '',
-      Ideal: '',
-      Bond: '',
-      Flaw: '',
-      Gender: '',
-      'Place of Birth': '',
-      Age: '',
-      Height: '',
-      Weight: '',
-      Hair: '',
-      Eyes: '',
-      Skin: '',
-      Appearance: '',
-      Backstory: ''
-    },
-    credits: 0,
-    equipment: [],
-    currentStats: {
-      hitPointsLost: 0,
-      temporaryHitPoints: 0,
-      techPointsUsed: 0,
-      forcePointsUsed: 0,
-      superiorityDiceUsed: 0,
-      hitDiceUsed: {},
-      deathSaves: {
-        successes: 0,
-        failures: 0
-      },
-      hasInspiration: false,
-      featuresTimesUsed: {},
-      conditions: [],
-      exhaustion: 0,
-      highLevelCasting: {
-        level6: false,
-        level7: false,
-        level8: false,
-        level9: false
-      },
-      shields: {
-        value: 0,
-        max: 5
-      },
-      barrier: {
-        uses: {
-          value: 5,
-          max: 5
-        },
-        ticks: {
-          value: 5,
-          max: 5
-        }
-      }
-    },
-    tweaks: {},
-    customProficiencies: [],
-    customLanguages: [],
-    customFeatures: [],
-    customFeats: [],
-    customTechPowers: [],
-    customForcePowers: [],
-    customEquipment: [],
-    settings: {
-      isEnforcingForcePrerequisites: true,
-      isFixedHitPoints: false,
-      abilityScoreMethod: 'Standard Array'
-    },
-    builder: {
-      currentStep: 1
-    },
-    notes: '',
-    createdAt: 1615572574654,
-    changedAt: 1615572574654,
-    localId: 'temp-x7vniqzfa'
-  }
+  mobileView: 'abilities'
 })
 
 export const getters = {
   characters: state => state.characters,
-  characterStartState: state => state.characterStartState,
-  getCharacterLevel: state => (cid) => {
-    const c = state.characters[cid].character
-    let level = 0
-    for (const cls of c.classes) {
-      level += cls.levels
-    }
-    return level
-  },
-  getCharacterHealth: state => (cid) => {
-    const c = state.characters[cid].character
-    const health = {
-      hitPointsMax: 0
-    }
-    for (const cls of c.classes) {
-      for (const hp of cls.hitPoints) {
-        health.hitPointsMax += hp
-      }
-    }
-    health.hitPointsLost = c.currentStats.hitPointsLost
-    health.temporaryHitPoints = c.currentStats.temporaryHitPoints
-    health.deathSaves = c.currentStats.deathSaves
-    health.shields = c.currentStats.shields
-    health.barrier = c.currentStats.barrier
-    return health
-  }
+  mobileView: state => state.mobileView
 }
 
 export const mutations = {
+  SET_MOBILE_VIEW (state, view) {
+    state.mobileView = view
+  },
   UPDATE_CHARACTER (state, { cid, attr, value }) {
     if (!state.characters[cid]) {
       console.error('Unable to assign values to selected character. Please make sure the character id is set in the state and is defined')
       return
     }
-    const character = cloneDeep(state.characters[cid].character)
+    const character = cloneDeep(state.characters[cid])
     if (typeof attr === 'string' && attr.includes('.')) {
       let schema = character // a moving reference to internal objects within obj
       const pList = attr.split('.')
@@ -163,33 +37,44 @@ export const mutations = {
       character[attr] = value
     }
     character.changedAt = new Date().getTime()
-    state.characters[cid].character = character
+    state.characters = { ...state.characters, [cid]: character }
   },
   DELETE_CHARACTER (state, { name, cid }) {
-    // if obj with matching id exists, update it. If not, insert it
-    console.log({ name, cid })
-    if (state.characters[cid] && state.characters[cid].character) {
-      if (name === state.characters[cid].character.name) {
-        delete state.characters[cid]
-        return
-      }
+    if (state.characters[cid]) {
+      const characters = JSON.parse(JSON.stringify(state.characters))
+      delete characters[cid]
+      state.characters = characters
     }
-    console.error('Unable to remove character with id: ' + cid)
   },
   UPDATE_CHARACTERS (state, obj) {
     // if obj with matching id exists, update it. If not, insert it
-    state.characters[obj.id] = {
-      character: obj,
-      order: state.characters.length
-    }
+    state.characters = { ...state.characters, [obj.id]: obj }
   },
   LOAD_CHARACTER_FROM_FILE (state, data) {
     state.character = cloneDeep(data)
   }
 }
 
-/*
 export const actions = {
-
+  async FETCH_CB_DATA ({ dispatch }) {
+    await dispatch('FETCH_LOTS', ['species', 'traits', 'weapons', 'armor', 'mods', 'powers', 'feats', 'backgrounds', 'classes', 'class-features', 'subclasses', 'character-progression', 'skills', 'gear', 'tool-profs', 'weapon-properties', 'conditions'], { root: true })
+  },
+  DELETE_SELECTIONS ({ commit, getters }, { cid, id }) {
+    const newSelections = getters.characters[cid].selections.filter(i => !i.source.startsWith(id))
+    commit('UPDATE_CHARACTER', { cid, attr: 'selections', value: newSelections })
+  },
+  UPDATE_SELECTIONS ({ commit, getters }, { cid, selection }) {
+    const newSelections = JSON.parse(JSON.stringify(getters.characters[cid].selections))
+    const index = newSelections.findIndex(i => i.source === selection.source)
+    if (index > -1) {
+      newSelections.splice(index, 1, selection)
+    } else {
+      newSelections.push(selection)
+    }
+    commit('UPDATE_CHARACTER', { cid, attr: 'selections', value: newSelections })
+  },
+  ADD_SELECTIONS ({ commit, getters }, { cid, selections }) {
+    const newSelections = [...getters.characters[cid].selections, ...selections]
+    commit('UPDATE_CHARACTER', { cid, attr: 'selections', value: newSelections })
+  }
 }
-*/

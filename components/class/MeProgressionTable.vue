@@ -79,7 +79,7 @@
         #[`item.power_level`]="{ item: featureItem }"
       >
         <span class="text-center">
-          {{ $t(`numbers.ordinal[${featureItem.power_level}]`) }}
+          {{ $t(`ordinal_numbers[${featureItem.power_level}]`) }}
         </span>
       </template>
 

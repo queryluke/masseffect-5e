@@ -4,6 +4,8 @@
     dark
     clipped-left
     :clipped-right="clippedRight"
+    :extended="extended"
+    :extension-height="extensionHeight"
   >
     <!-- Drawer Icon -->
     <v-app-bar-nav-icon
@@ -54,6 +56,9 @@
         </v-tab>
       </v-tabs>
     </template>
+    <template v-else-if="extended && $vuetify.breakpoint.smAndDown" #extension>
+      <slot name="appBarExtension" />
+    </template>
   </v-app-bar>
 </template>
 
@@ -72,6 +77,14 @@ export default {
     tabbed: {
       type: Boolean,
       default: false
+    },
+    extended: {
+      type: Boolean,
+      default: false
+    },
+    extensionHeight: {
+      type: [Number, String],
+      default: '48'
     }
   },
   data () {

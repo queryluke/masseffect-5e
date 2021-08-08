@@ -8,54 +8,37 @@
         small
         class="mr-2 ml-0"
       >
-        <h3>{{level}}</h3>
+        <h3>{{ level }}</h3>
       </v-chip>
       <v-progress-linear
         class="ma-0 text-center"
-        :value="xp / nextLevelInfo.xp"
+        :value="nextLevelInfo.xp ? xp / nextLevelInfo.xp : 100"
         height="20"
         rounded
       >
-        {{xp}} / {{nextLevelInfo.xp}}
+        {{ xpProgressText }}
       </v-progress-linear>
       <v-chip
         small
         class="mr-0 ml-2"
       >
-        <h3>{{level + 1}}</h3>
+        <h3>{{ nextLevelText }}</h3>
       </v-chip>
     </v-btn>
   </div>
-  <!--v-row class="text-center">
-      <v-col>
-        Current Level: {{level || "None"}}
-      </v-col>
-      <v-col>
-        Current Experience: {{xp ? xp : level >= 20 ? "MAX" : 0}}{{nextLevelInfo ? ' / '+nextLevelInfo.xp : ''}}
-      </v-col>
-    </v-row-->
 </template>
 
 <script>
+import { CharacterBuilderHelpers } from '~/mixins/character_builder'
+
 export default {
+  mixins: [CharacterBuilderHelpers],
   computed: {
-    level () {
-      const lvl = this.$store.getters['cb/getCharacterLevel'](this.$route.query.cid)
-      return lvl
+    nextLevelText () {
+      return this.level + 1 > 20 ? 'Max' : this.level + 1
     },
-    xp: {
-      get () {
-        return this.$store.getters['cb/characters'][this.$route.query.cid].character.experiencePoints || 0
-      }
-    },
-    cProg () {
-      return this.$store.getters.getData('character-progression') || {}
-    },
-    currentLevelInfo () {
-      return this.cProg[this.level - 1]
-    },
-    nextLevelInfo () {
-      return this.cProg[this.level]
+    xpProgressText () {
+      return this.nextLevelInfo ? `${this.xp} / ${this.nextLevelInfo.xp}` : 'Max'
     },
     showLevelUpBtn () {
       if (!this.nextLevelInfo) {

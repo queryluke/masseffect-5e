@@ -284,7 +284,7 @@ export default {
   },
   async fetch () {
     this.$store.dispatch('SET_META', {
-      title: false,
+      title: 'Mass Effect 5e',
       description: this.$t('meta.home')
     })
     const recentPosts = await this.$store.dispatch('FETCH_DATA', 'changelog')

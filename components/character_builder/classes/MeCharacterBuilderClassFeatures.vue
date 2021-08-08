@@ -1,119 +1,82 @@
 <template>
-  <div>
-    <v-row>
-      <v-col cols="8" v-if="level >= subclassData.first">
-        <h3>Choose a Subclass</h3>
-        <v-select
-          :items="subclassData.list"
-          return-object
-          item-text="name"
-          label="Subclass"
-          v-model="charSubclass"
-        />
-      </v-col>
-      <v-col v-if="charSubclass" cols="4">
-        <v-btn>View Subclass Details</v-btn>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col>
-        <h3>{{classData.name}} Features (Class)</h3>
-        <me-expansion-list
-          :items="featureData.classItems"
-          :headers="featureData.headers"
-          :bookmarkable="false"
-          :linkable="false"
-          :show-bar="false"
-        />
-      </v-col>
-    </v-row>
-    <v-row v-if="featureData.subclassItems.length">
-      <v-col>
-        <h3>{{charSubclass.name}} Features (Subclass)</h3>
-        <me-expansion-list
-          :items="featureData.subclassItems"
-          :headers="featureData.headers"
-          :bookmarkable="false"
-          :linkable="false"
-          :show-bar="false"
-        />
-      </v-col>
-    </v-row>
-  </div>
+  <v-expansion-panels multiple>
+    <!-- Hit points -->
+    <me-character-builder-aspect :aspect="hitPointFeature" :subtitle="nthLevelText(1)">
+      <me-character-builder-class-hit-points :class-index="classIndex" />
+    </me-character-builder-aspect>
+
+    <!-- Profs -->
+    <me-character-builder-aspect :aspect="profFeature" :subtitle="nthLevelText(1)" :has-selections="profsHasSelections">
+      <me-character-builder-class-profs :class-index="classIndex" />
+    </me-character-builder-aspect>
+
+    <template v-for="feature in availableKlassFeatures">
+      <!-- Subclass -->
+      <me-character-builder-aspect v-if="feature.id === 'subclass'" :key="feature.id" :aspect="feature" :subtitle="nthLevelText(feature.level)" :has-selections="!subklass">
+        <me-character-builder-class-subclass-picker :class-index="classIndex" />
+      </me-character-builder-aspect>
+
+      <!-- Ability score increase -->
+      <me-character-builder-aspect v-else-if="feature.id === 'abi'" :key="`${feature.id}-${feature.level}`" :aspect="feature" :subtitle="nthLevelText(feature.level)" :has-selections="abiHasSelections(feature.level)">
+        <me-character-builder-abi-picker :source="`klass-${klass.id}-${feature.level}-abi`">
+          <p>{{ abiText(feature.level) }}</p>
+          <p>{{ $t('abi_feature.feat_text') }}</p>
+        </me-character-builder-abi-picker>
+      </me-character-builder-aspect>
+
+      <!-- everything else -->
+      <me-character-builder-aspect v-else :key="feature.id" :aspect="feature" :parent-source="`klass-${klass.id}-${feature.level}${feature.subclass ? `-${feature.subclass}` : ''}`" :subtitle="nthLevelText(feature.level)" />
+    </template>
+  </v-expansion-panels>
 </template>
 
 <script>
-import MeExpansionList from '~/components/MeExpansionList.vue'
+import { CharacterBuilderHelpers } from '~/mixins/character_builder'
+
 export default {
-  components: { MeExpansionList },
+  mixins: [CharacterBuilderHelpers],
   props: {
     classIndex: {
       type: Number,
       required: true
-    },
-    id: {
-      type: String,
-      required: true
-    },
-    level: {
-      type: Number,
-      requried: true
-    }
-  },
-  methods: {
-    cleanSubclass (level) {
-      if (level < this.subclassData.first) {
-        this.charSubclass = undefined
-      }
-    },
-    filterById (_inputData) {
-      return (_inputData.id === this.id)
-    },
-    filterByClass (_inputData) {
-      return (_inputData.klass === this.id)
-    },
-    filterBySubclass (_inputData) {
-      return (this.charSubclass && _inputData.subclass === this.charSubclass.id)
-    },
-    filterByLevel (_inputData) {
-      return (_inputData.level <= this.level)
     }
   },
   computed: {
-    classData () {
-      return this.$store.getters.getData('classes').find(this.filterById)
-    },
-    subclassData () {
-      console.log(this.classData)
+    hitPointFeature () {
       return {
-        list: this.$store.getters.getData('subclasses').filter(this.filterByClass),
-        levels: this.classData.progression.subclass,
-        first: this.classData.progression.subclass[0]
+        name: 'Hit Points'
       }
     },
-    featureData () {
-      const cfd = this.$store.getters.getData('class-features')
-        .filter(this.filterByClass)
-        .filter(this.filterByLevel)
-        .sort((a, b) => (a.level > b.level) ? 1 : -1)
-      const scfd = cfd.filter(this.filterBySubclass)
+    profFeature () {
       return {
-        classItems: cfd.filter(function (_cfd) { // filter out anything with a subclass tab
-          return _cfd.subclass === undefined
-        }),
-        subclassItems: scfd,
-        headers: [
-          { label: 'Name', key: 'name' }
-        ]
+        name: 'Proficiencies'
       }
     },
-    charSubclass: {
-      get () {
-        return this.$store.getters['cb/characters'][this.$route.query.cid].character.classes[this.classIndex].subclass
-      },
-      set (value) {
-        return this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.$route.query.cid, attr: 'classes.' + this.classIndex.toString() + '.subclass', value })
+    profsHasSelections () {
+      const profTypes = Object.keys(this.klassProficiencyOptions)
+      const checks = []
+      for (const profType of profTypes) {
+        if (this.klassProficiencyOptions[profType].choices) {
+          const selection = this.selections.find(i => i.source === `klass-${this.klass.id}-profs-${profType}`)
+          const count = this.klassProficiencyOptions[profType].choices.count
+          if (!selection || selection.value.length < count) {
+            checks.push(true)
+          }
+        }
       }
+      return checks.some(i => i === true)
+    }
+  },
+  methods: {
+    nthLevelText (level) {
+      return this.$t('level_nth', { nth: this.$t(`ordinal_numbers[${level}]`) })
+    },
+    abiHasSelections (level) {
+      const selection = this.selections.find(i => i.source === `klass-${this.klass.id}-${level}-abi`)
+      return !selection || !selection.value
+    },
+    abiText (level) {
+      return this.$t('abi_feature.text', { at_level: this.$tc('abi_feature.at_level', 1, { level: this.$t('level_nth', { level: this.$t(`ordinal_numbers[${level}]`) }) }) })
     }
   }
 }
