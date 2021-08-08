@@ -6,20 +6,21 @@ export default {
   ...base,
   generate: {
     async routes () {
-      const endpoints = ['conditions', 'tool-profs', 'armor', 'backgrounds', 'bestiary', 'changelog', 'classes', 'feats', 'gmg', 'rules', 'powers', 'species', 'weapons']
+      const endpoints = ['conditions', 'tool-profs', 'armor', 'backgrounds', 'bestiary', 'changelog', 'classes', 'feats', 'guides-index', 'manual-index', 'powers', 'species', 'weapons']
       const urls = []
       for (const endpoint of endpoints) {
-        urls.push(axios.get(`${baseUrl}/${endpoint}.json`))
+        // TODO: need to do this for every lang
+        urls.push(axios.get(`${baseUrl}/en/${endpoint}.json`))
       }
       const data = await Promise.all(urls)
       const routes = []
       for (let i = 0; i < data.length; i++) {
         const endpoint = endpoints[i]
         const path = ['conditions', 'tool-profs'].includes(endpoint) ? `appendix/${endpoint}` : endpoint
-        if (['rules', 'gmg'].includes(endpoint)) {
-          const pages = [...new Set(data[i].data.map(j => j.section))]
+        if (['manual-index', 'guides-index'].includes(endpoint)) {
+          const pages = [...new Set(data[i].data.map(j => j.id))]
           for (const page of pages) {
-            const rPath = endpoint === 'rules' ? 'manual' : 'guide'
+            const rPath = endpoint === 'manual-index' ? 'manual' : 'guide'
             routes.push(`/${rPath}/${page}`)
           }
         } else {
