@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-alert dense value="info">
+    <v-alert dense type="info">
       Adding mods does not automatically update the weapon's stats. You can adjust the stats in the "Stat Override" Tab.
     </v-alert>
     <template v-for="(mod, modType) in item.mods">

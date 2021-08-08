@@ -7,33 +7,37 @@
     <v-col cols="12">
       <v-row>
         <v-col cols="12">
-          <div class="d-flex justify-center">
-            <v-btn
-              :color="csBgColor('damage')"
-              small
-              :dark="!dark"
-              :light="dark"
-              @click="execDamage"
-            >
-              Damage
-            </v-btn>
-          </div>
-          <div class="d-flex justify-space-around">
+          <div class="d-flex justify-space-around align-content-start">
             <v-switch
               v-model="bypassShields"
               hint="Bypass Shields"
               dense
               persistent-hint
+              class="mt-0"
             />
+
+            <v-btn
+              :color="csBgColor('damage')"
+              small
+              :dark="!dark"
+              :light="dark"
+              class="mr-5"
+              @click="execDamage"
+            >
+              Damage
+            </v-btn>
             <v-switch
               v-model="doubleShields"
               hint="2x Shields"
               dense
               persistent-hint
+              class="mt-0"
             />
           </div>
         </v-col>
-        <v-col cols="6" offset="3">
+      </v-row>
+      <v-row>
+        <v-col cols="6" md="8" offset="3" offset-md="2">
           <v-text-field
             v-model="modder"
             outlined
@@ -45,12 +49,15 @@
             @click:prepend="reduceModder"
           />
         </v-col>
-        <v-col cols="12" class="d-flex justify-space-between px-12">
+      </v-row>
+      <v-row>
+        <v-col cols="12" class="d-flex justify-space-around">
           <v-btn
             :color="csBgColor('hp')"
             small
             :dark="!dark"
             :light="dark"
+            class="mx-1"
             @click="execHeal"
           >
             Heal
@@ -60,6 +67,7 @@
             small
             :dark="!dark"
             :light="dark"
+            class="mx-1"
             @click="execRegen"
           >
             Regen ({{ character.settings.regen }})
@@ -69,6 +77,7 @@
             small
             :dark="!dark"
             :light="dark"
+            class="mx-1"
             @click="execTempHp"
           >
             Temp HP

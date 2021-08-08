@@ -3,7 +3,7 @@
     <me-character-sheet-card-title>Senses</me-character-sheet-card-title>
     <v-list dense>
       <v-list-item v-for="passive in passives" :key="passive.skill">
-        <v-list-item-avatar size="15">
+        <v-list-item-avatar size="17" tile>
           {{ csPassiveScore(passive.skill) }}
         </v-list-item-avatar>
         <v-list-item-content>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <me-character-sheet-card-title>
+    <me-character-sheet-card-title v-if="$vuetify.breakpoint.smAndDown">
       Character Details
     </me-character-sheet-card-title>
     <v-chip-group v-model="tab" active-class="primary--text">
@@ -64,7 +64,7 @@
         </v-list>
       </v-tab-item>
     </v-tabs-items>
-    <v-dialog v-model="backstoryDialog" fullscreen>
+    <v-dialog v-model="backstoryDialog" :fullscreen="$vuetify.breakpoint.xsOnly" max-width="500">
       <v-card>
         <v-toolbar flat>
           <v-toolbar-title>

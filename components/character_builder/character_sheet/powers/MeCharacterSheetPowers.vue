@@ -1,10 +1,10 @@
 <template>
   <div>
-    <me-character-sheet-card-title>
+    <me-character-sheet-card-title v-if="$vuetify.breakpoint.smAndDown">
       Powers
     </me-character-sheet-card-title>
     <v-row>
-      <v-col cols="12" class="d-flex justify-space-between">
+      <v-col cols="12" md="3">
         <v-select
           v-model="powerModAbility"
           hint="Powercasting Ability"
@@ -15,70 +15,64 @@
           dense
           class="mr-3"
         />
-        <v-btn small color="primary" @click="managerDialog = true">
-          Manage
-        </v-btn>
       </v-col>
-      <v-col cols="12">
-        <v-row>
-          <v-col cols="4">
-            <v-card outlined flat>
-              <div class="ma-auto text-center">
-                <div class="text-caption">
-                  <small>Mod</small>
-                </div>
-                <div class="text-h6">
-                  {{ absModText(powerModAbility) }}
-                </div>
-              </div>
-            </v-card>
-          </v-col>
-          <v-col cols="4">
-            <v-card outlined flat>
-              <div class="ma-auto text-center">
-                <div class="text-caption">
-                  <small>Attack</small>
-                </div>
-                <div class="text-h6">
-                  +{{ powerAttackMod }}
-                </div>
-              </div>
-            </v-card>
-          </v-col>
-          <v-col cols="4">
-            <v-card outlined flat>
-              <div class="ma-auto text-center">
-                <div class="text-caption">
-                  <small>DC</small>
-                </div>
-                <div class="text-h6">
-                  {{ powerDc }}
-                </div>
-              </div>
-            </v-card>
-          </v-col>
-        </v-row>
+      <v-col cols="4" md="3">
+        <v-card outlined flat>
+          <div class="ma-auto text-center">
+            <div class="text-caption">
+              <small>Mod</small>
+            </div>
+            <div class="text-h6">
+              {{ absModText(powerModAbility) }}
+            </div>
+          </div>
+        </v-card>
+      </v-col>
+      <v-col cols="4" md="3">
+        <v-card outlined flat>
+          <div class="ma-auto text-center">
+            <div class="text-caption">
+              <small>Attack</small>
+            </div>
+            <div class="text-h6">
+              +{{ powerAttackMod }}
+            </div>
+          </div>
+        </v-card>
+      </v-col>
+      <v-col cols="4" md="3">
+        <v-card outlined flat>
+          <div class="ma-auto text-center">
+            <div class="text-caption">
+              <small>DC</small>
+            </div>
+            <div class="text-h6">
+              {{ powerDc }}
+            </div>
+          </div>
+        </v-card>
       </v-col>
     </v-row>
-
     <v-row>
       <v-col v-if="hasPowerSlots" cols="12">
         <div>
           Power Slots
         </div>
-        <template v-for="(psMax, psIndex) of csPowerSlots">
-          <div v-if="psMax > 0" :key="`ps-uses-${psIndex}`">
-            <div class="text-caption">
-              {{ $t('level_nth', {nth: $t(`ordinal_numbers[${psIndex + 1}]`)}) }}
-            </div>
-            <me-character-sheet-use-tracker
-              :uses="psMax"
-              :used="csGetPowerSlotsUsed(psIndex)"
-              @increment="csSetPowerSlotsUsed(psIndex, csGetPowerSlotsUsed(psIndex) + 1)"
-              @decrement="csSetPowerSlotsUsed(psIndex, csGetPowerSlotsUsed(psIndex) - 1)"
-            />
-          </div>
-        </template>
+        <v-row justify="space-around">
+          <template v-for="(psMax, psIndex) of csPowerSlots">
+            <v-col v-if="psMax > 0" :key="`ps-uses-${psIndex}`" cols="12" md="4">
+              <div class="text-caption">
+                {{ $t('level_nth', {nth: $t(`ordinal_numbers[${psIndex + 1}]`)}) }}
+              </div>
+              <me-character-sheet-use-tracker
+                :uses="psMax"
+                :used="csGetPowerSlotsUsed(psIndex)"
+                @increment="csSetPowerSlotsUsed(psIndex, csGetPowerSlotsUsed(psIndex) + 1)"
+                @decrement="csSetPowerSlotsUsed(psIndex, csGetPowerSlotsUsed(psIndex) - 1)"
+              />
+            </v-col>
+          </template>
+        </v-row>
       </v-col>
       <v-col v-if="hasTechPoints" cols="12">
         <div>
@@ -98,13 +92,16 @@
       <v-col>
         <div>
           Powers
+          <v-btn small color="primary" @click="managerDialog = true">
+            Manage
+          </v-btn>
         </div>
         <template v-for="item in character.powers">
           <me-character-sheet-powers-add-card :key="item.id" :item="item" no-delete />
         </template>
       </v-col>
     </v-row>
-    <v-dialog v-model="managerDialog" fullscreen>
+    <v-dialog v-model="managerDialog" :fullscreen="$vuetify.breakpoint.xsOnly" max-width="500">
       <v-card>
         <v-toolbar flat>
           <v-toolbar-title>

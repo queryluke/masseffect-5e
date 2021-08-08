@@ -11,8 +11,15 @@
           {{ itemData.name }}
         </v-list-item-title>
         <v-list-item-subtitle>
-          <small>
+          <small class="d-flex align-end">
             <me-weapon-range :item="{...itemData, ...item.stats}" />
+            <span v-if="notifyProps.length > 0">
+              <template v-for="notifyProp in notifyProps">
+                <span :key="notifyProp" class="ml-2">
+                  <me-weapon-prop :id="notifyProp" />
+                </span>
+              </template>
+            </span>
           </small>
         </v-list-item-subtitle>
       </v-list-item-content>
@@ -25,11 +32,12 @@
         </div>
       </v-list-item-action-text>
     </div>
-    <div class="d-flex align-start mx-6 mb-2">
-      <v-btn x-small class="mr-1" color="primary" icon @click="reloadWeapon">
-        <v-icon v-if="$vuetify.breakpoint.smAndDown" size="18">
+    <div v-if="itemData.type !== 'melee'" class="d-flex align-start mx-6 mb-2">
+      <v-btn x-small class="mr-1" color="primary" :icon="$vuetify.breakpoint.xsOnly" @click="reloadWeapon">
+        <v-icon size="18">
           mdi-refresh
         </v-icon>
+        <span v-if="$vuetify.breakpoint.smAndUp">Reload</span>
       </v-btn>
       <div style="width: 200px">
         <v-progress-linear
@@ -37,6 +45,7 @@
           height="6"
           class="mt-1"
           :color="`${heatColor}`"
+          background-color="grey darken-2"
         />
         <div class="text-caption text-center">
           <small>
@@ -44,10 +53,11 @@
           </small>
         </div>
       </div>
-      <v-btn x-small class="ml-1 mr-2" color="secondary" icon>
-        <v-icon v-if="$vuetify.breakpoint.smAndDown" size="18" :disabled="item.heat >= item.stats.heat" @click="fireWeapon">
+      <v-btn x-small class="ml-1 mr-2" color="secondary" :icon="$vuetify.breakpoint.xsOnly" @click="fireWeapon">
+        <v-icon size="18" :disabled="item.heat >= item.stats.heat">
           mdi-lightning-bolt
         </v-icon>
+        <span v-if="$vuetify.breakpoint.smAndUp">Fire</span>
       </v-btn>
     </div>
   </div>
@@ -66,6 +76,7 @@ export default {
   },
   data () {
     return {
+      importantProps: ['arc', 'burst-fire', 'double-tap', 'hip-fire', 'thrown'],
       heatColors: [
         'indigo darken-4',
         'blue darken-4',
@@ -101,6 +112,9 @@ export default {
     },
     finesse () {
       return this.item.stats.properties.includes('finesse')
+    },
+    notifyProps () {
+      return this.item.stats.properties.filter(i => this.importantProps.includes(i))
     },
     abilityBonus () {
       return this.itemData.type === 'melee'

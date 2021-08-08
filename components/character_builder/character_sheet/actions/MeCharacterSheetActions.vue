@@ -1,6 +1,6 @@
 <template>
   <div>
-    <me-character-sheet-card-title>
+    <me-character-sheet-card-title v-if="$vuetify.breakpoint.smAndDown">
       Actions
     </me-character-sheet-card-title>
     <v-chip-group v-model="tab" active-class="primary--text" column>

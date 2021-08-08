@@ -81,21 +81,20 @@ export default {
     },
     availablePowers () {
       return this.powers.filter((i) => {
-        console.log(this.psMaxCheck)
         const searchCheck = this.debouncedSearch && this.debouncedSearch.length > 0 ? i.name.toLowerCase().includes(this.debouncedSearch) : true
         const klassCheck = this.ccIds.some(cId => i.classes.includes(cId))
         const tpCheck = this.hasTechPoints ? i.level <= this.tpMaxCheck : true
         const psCheck = this.hasPowerSlots ? i.level <= this.psMaxCheck : true
         const knownCheck = !this.knownPowerIds.includes(i.id)
         return searchCheck && klassCheck && tpCheck && psCheck && knownCheck
-      }).concat()
+      })
     },
     powersList () {
       if (this.knownFilter) {
         return this.character.powers
       }
       const list = this.availablePowers.concat(this.character.powers)
-      return list.sort((a, b) => a.level - b.level)
+      return list.sort((a, b) => a.level === b.level ? a.name - b.name : a.level - b.level)
     }
   },
   watch: {

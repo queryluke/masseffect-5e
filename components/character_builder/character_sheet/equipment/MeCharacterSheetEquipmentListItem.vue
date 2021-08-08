@@ -25,7 +25,7 @@
         mdi-cog
       </v-icon>
     </v-list-item-action>
-    <v-dialog v-model="equipmentDialog" fullscreen>
+    <v-dialog v-model="equipmentDialog" :fullscreen="$vuetify.breakpoint.xsOnly" max-width="500">
       <v-card>
         <v-toolbar flat>
           <v-toolbar-title>

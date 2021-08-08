@@ -1,6 +1,6 @@
 <template>
   <div>
-    <me-character-sheet-card-title>
+    <me-character-sheet-card-title v-if="$vuetify.breakpoint.smAndDown">
       Settings
     </me-character-sheet-card-title>
     <v-chip-group v-model="tab" active-class="primary--text">
@@ -14,8 +14,8 @@
     </v-chip-group>
     <v-tabs-items v-model="tab" class="mt-5">
       <v-tab-item>
-        <v-row>
-          <v-col cols="4">
+        <v-row class="mt-8 mt-md-0">
+          <v-col cols="4" md="2">
             <v-text-field
               :value="character.settings.acOverride"
               hint="AC Override"
@@ -26,16 +26,18 @@
               @change="change('acOverride', $event)"
             />
           </v-col>
-          <v-col cols="8" class="d-flex align-end">
+          <v-col cols="8" md="4" class="d-flex d-md-block align-end">
             <v-slider
               :value="character.settings.acBonus"
               max="5"
               hint="AC Bonus"
               persistent-hint
+              :thumb-label="$vuetify.breakpoint.smAndDown ? 'always' : undefined"
+              :tick-labels="$vuetify.breakpoint.smAndDown ? undefined : [0, '+1', '+2', '+3', '+4', '+5']"
               @change="change('acBonus', $event)"
             />
           </v-col>
-          <v-col cols="4">
+          <v-col cols="4" md="2">
             <v-text-field
               outlined
               dense
@@ -45,16 +47,19 @@
               @change="change('regen', $event)"
             />
           </v-col>
-          <v-col cols="8" class="d-flex align-end">
+          <v-col cols="8" md="4" class="d-flex d-md-block align-end">
             <v-slider
               :value="character.settings.shields"
-              max="5"
+              max="30"
               hint="Max Shields"
               persistent-hint
+              :thumb-label="$vuetify.breakpoint.smAndDown ? 'always' : undefined"
+              :tick-labels="$vuetify.breakpoint.smAndDown ? undefined : [0, 5, 10, 15, 20, 25, 30]"
+              :step="5"
               @change="change('shields', $event)"
             />
           </v-col>
-          <v-col cols="12">
+          <v-col cols="12" md="6">
             <v-autocomplete
               label="Damage Resistances"
               :items="damageTypes"
@@ -66,7 +71,7 @@
               @change="change('damageRes', $event)"
             />
           </v-col>
-          <v-col cols="12">
+          <v-col cols="12" md="6">
             <v-autocomplete
               label="Damage Immunities"
               :items="damageTypes"
@@ -78,7 +83,7 @@
               @change="change('damageImm', $event)"
             />
           </v-col>
-          <v-col cols="12">
+          <v-col cols="12" md="6">
             <v-autocomplete
               label="Condition Immunities"
               :items="conditions"
@@ -92,7 +97,7 @@
               @change="change('conditionImm', $event)"
             />
           </v-col>
-          <v-col cols="12">
+          <v-col cols="12" md="6">
             <v-autocomplete
               label="Damage Vulnerabilities"
               :items="damageTypes"

@@ -3,7 +3,7 @@
     <me-character-sheet-card-title>
       Saving Throws
     </me-character-sheet-card-title>
-    <v-row>
+    <v-row no-gutters>
       <v-col cols="6">
         <v-list dense>
           <v-list-item v-for="ability in ['str', 'dex', 'con']" :key="ability">
