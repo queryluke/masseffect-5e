@@ -171,7 +171,7 @@ export default {
         },
         {
           name: this.$t('character_builder_title'),
-          to: '/character-builder',
+          to: '/characters',
           icon: 'mdi-clipboard-account'
         },
         {

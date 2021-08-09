@@ -1,7 +1,7 @@
 <template>
   <v-row>
     <v-col class="text-left">
-      <v-btn text to="/character-builder" nuxt>
+      <v-btn text to="/characters" nuxt>
         <v-icon class="mdi mdi-cheveron-left">
           mdi-chevron-left
         </v-icon>

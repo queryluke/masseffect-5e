@@ -35,7 +35,7 @@
                 <v-list-item-title>Edit</v-list-item-title>
               </v-list-item>
               <v-divider />
-              <v-list-item to="/character-builder" nuxt>
+              <v-list-item to="/characters" nuxt>
                 <v-list-item-icon>
                   <v-icon>
                     mdi-home

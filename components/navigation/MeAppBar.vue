@@ -96,8 +96,7 @@ export default {
         { to: '/manual/intro', name: 'manual.title' },
         { to: '/assets', name: 'assets_title' },
         { to: '/changelog', name: 'changelog_title' },
-        { to: '/about', name: 'about_title' },
-        { href: 'https://versions.n7.world/v120/character-builder', name: 'character_builder_title' }
+        { to: '/about', name: 'about_title' }
       ]
     }
   },

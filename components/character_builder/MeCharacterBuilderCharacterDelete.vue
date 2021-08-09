@@ -76,7 +76,7 @@ export default {
     removeCharacter () {
       this.$store.commit('cb/DELETE_CHARACTER', { name: this.name, cid: this.id })
       this.$router.push({
-        path: '/character-builder'
+        path: '/characters'
       })
       this.dialog = false
     }
