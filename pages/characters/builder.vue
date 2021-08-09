@@ -31,7 +31,7 @@
           </v-icon>
           Back
         </v-btn>
-        <v-btn :to="`/character-builder/${cid}`">
+        <v-btn :to="`/characters/sheet?id=${cid}`">
           Go to Character Sheet
         </v-btn>
         <v-btn v-if="currentStep < builderSteps.length - 1" color="primary" width="140" @click="goToNextStep">
@@ -50,7 +50,10 @@ import { CharacterBuilderHelpers } from '~/mixins/character_builder'
 
 export default {
   mixins: [CharacterBuilderHelpers],
-  async asyncData ({ store }) {
+  async asyncData ({ store, redirect, route }) {
+    if (!route.query.id) {
+      redirect('/characters')
+    }
     store.commit('pageTitle', 'Character Builder')
     await store.dispatch('cb/FETCH_CB_DATA')
   },

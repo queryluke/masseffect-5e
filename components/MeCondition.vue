@@ -19,6 +19,10 @@ export default {
     sub: {
       type: String,
       default: ''
+    },
+    label: {
+      type: [String, Boolean],
+      default: false
     }
   },
   async fetch () {
@@ -29,7 +33,7 @@ export default {
       return this.$store.getters.getItem('conditions', this.id)
     },
     text () {
-      return this.sub !== '' ? `${this.id}: ${this.sub}` : this.id
+      return this.label ? this.label : this.sub !== '' ? `${this.id}: ${this.sub}` : this.id
     },
     primeTypeText () {
       return this.$store.getters['config/primeTypeText']

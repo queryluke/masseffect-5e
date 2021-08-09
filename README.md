@@ -66,18 +66,16 @@ __NOTE!__ You will need to remove the symlink before running `nuxt generate`, Wi
 
 ## Translations
 
-__TODO: UPDATE LINKS IN THIS SECTION__
-
 Starting with v131, we now support translations. Translations are handled in two ways.
 
 ### Rule translations
-"Rule" translations mark up the bulk of the translation files. The [`text` directory](https://github.com/queryluke/masseffect-5e-data/tree/i18n-prep/text) in the data repo
+"Rule" translations mark up the bulk of the translation files. The [`text` directory](https://github.com/queryluke/masseffect-5e-data/tree/master/text) in the data repo
 has a language directory for each translation. These are copies of everything in the `en` directory, but translated into
 the corresponding language. For the most part, you'll never have to worry about these translations, because the data fetchers
 look at the current locale and grab the corresponding language file.
 
 ### Messages
-There is one special directory, called [`messages`](https://github.com/queryluke/masseffect-5e-data/tree/i18n-prep/text/en/messages).
+There is one special directory, called [`messages`](https://github.com/queryluke/masseffect-5e-data/tree/master/text/en/messages).
 Messages are reusable labels and text for things like buttons, list headers, and labels. These messages are incorporated into
 the site using [`nuxt-i18n`](https://i18n.nuxtjs.org/).
 

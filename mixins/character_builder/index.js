@@ -83,7 +83,7 @@ export const CharacterBuilderHelpers = {
   },
   computed: {
     cid () {
-      return this.$route.params.id || false
+      return this.$route.query.id || false
     },
     character () {
       return this.$store.getters['cb/characters'][this.cid]

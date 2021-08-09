@@ -26,7 +26,7 @@
               </v-icon>
             </template>
             <v-list dense>
-              <v-list-item :to="`/character-builder/${cid}/edit`" nuxt>
+              <v-list-item :to="`/characters/builder?id=${cid}`" nuxt>
                 <v-list-item-icon>
                   <v-icon>
                     mdi-pencil

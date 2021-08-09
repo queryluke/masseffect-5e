@@ -1,5 +1,5 @@
 <template>
-  <v-row justify="space-between" class="mx-n4">
+  <v-row justify="space-between" class="mx-n4" :no-gutters="$vuetify.breakpoint.mdAndUp">
     <v-col cols="3" class="text-center">
       <div class="text-caption">
         <small>AC</small>

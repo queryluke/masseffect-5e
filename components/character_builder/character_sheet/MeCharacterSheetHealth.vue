@@ -2,7 +2,12 @@
   <v-row>
     <v-col cols="12" class="d-flex justify-center">
       <me-character-sheet-barrier-slider />
-      <me-character-sheet-health-circle />
+      <div>
+        <me-character-sheet-health-circle />
+        <div class="mt-7">
+          <me-character-sheet-def-con />
+        </div>
+      </div>
     </v-col>
     <v-col cols="12">
       <v-row>
@@ -102,22 +107,22 @@ export default {
   },
   methods: {
     reduceModder () {
-      this.modder = Math.max(0, Number.parseInt(this.modder) - 1)
+      this.modder = Math.max(0, Number.parseInt(this.modder, 10) - 1)
     },
     execTempHp () {
-      this.csTempHp = Math.max(this.csTempHp, this.modder, this.csCurrentTempHp + this.modder)
-      this.csCurrentTempHp = this.csCurrentTempHp + this.modder
+      this.csTempHp = Math.max(this.csTempHp, this.modder, this.csCurrentTempHp + Number.parseInt(this.modder, 10))
+      this.csCurrentTempHp = this.csCurrentTempHp + Number.parseInt(this.modder, 10)
     },
     execRegen () {
       this.csCurrentShields = Math.min(this.csMaxShields, this.character.settings.regen + this.csCurrentShields)
     },
     execHeal () {
-      this.csHitPointsLost = Math.max(0, this.csHitPointsLost - this.modder)
+      this.csHitPointsLost = Math.max(0, this.csHitPointsLost - Number.parseInt(this.modder, 10))
     },
     execDamage () {
       let dmgLeft = Number.parseInt(this.modder, 10)
       if (this.csTempHp > 0) {
-        const potentialTempHpDmg = Math.min(this.csCurrentTempHp, this.modder)
+        const potentialTempHpDmg = Math.min(this.csCurrentTempHp, dmgLeft)
         this.csCurrentTempHp = Math.max(0, this.csCurrentTempHp - potentialTempHpDmg)
         if (this.csCurrentTempHp === 0) {
           this.csTempHp = 0

@@ -4,7 +4,7 @@
       You're character still need some key selections!
     </div>
     <v-list>
-      <v-list-item :color="speciesId ? 'primary' : 'warning'" :to="`/character-builder/${cid}/edit`" nuxt>
+      <v-list-item :color="speciesId ? 'primary' : 'warning'" :to="`/characters/builder?id=${cid}`" nuxt>
         <v-list-item-avatar>
           <v-icon>
             {{ speciesId ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
@@ -14,7 +14,7 @@
           {{ speciesId ? 'Species selected' : 'Choose your species' }}
         </v-list-item-content>
       </v-list-item>
-      <v-list-item :color="characterClasses.length > 0 ? 'primary' : 'warning'" :to="`/character-builder/${cid}/edit`" nuxt>
+      <v-list-item :color="characterClasses.length > 0 ? 'primary' : 'warning'" :to="`/characters/builder?id=${cid}`" nuxt>
         <v-list-item-avatar>
           <v-icon>
             {{ characterClasses.length > 0 ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
@@ -24,7 +24,7 @@
           {{ characterClasses.length > 0 ? 'Starting class selections' : 'Select a starting class' }}
         </v-list-item-content>
       </v-list-item>
-      <v-list-item :color="allAbilityScoresSet ? 'primary' : 'warning'" :to="`/character-builder/${cid}/edit`" nuxt>
+      <v-list-item :color="allAbilityScoresSet ? 'primary' : 'warning'" :to="`/characters/builder?id=${cid}`" nuxt>
         <v-list-item-avatar>
           <v-icon>
             {{ allAbilityScoresSet ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}

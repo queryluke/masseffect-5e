@@ -166,7 +166,9 @@ export default {
           damageImm: [],
           damageVul: [],
           conditionImm: [],
-          powerModAbility: null
+          powerModAbility: null,
+          skills: [],
+          expertise: []
         },
         notes: '',
         builder: {
@@ -196,7 +198,7 @@ export default {
       model.id = model.createdAt
       this.characters = model
       this.$router.push({
-        path: `/character-builder/${model.id}/edit`
+        path: `/characters/builder?id=${model.id}`
       })
     },
     characterImage (character) {

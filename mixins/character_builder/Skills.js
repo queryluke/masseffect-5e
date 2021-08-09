@@ -1,10 +1,10 @@
 export const Skills = {
   methods: {
     csSkillProficient (skill) {
-      return this.proficiencies.skill.includes(skill)
+      return this.character.settings.skills?.includes(skill) || this.proficiencies.skill.includes(skill)
     },
     csSkillExpertise (skill) {
-      return this.selections.filter(i => i.type === 'expertise')
+      return this.character.settings.expertise?.includes(skill) || this.selections.filter(i => i.type === 'expertise')
         .reduce((acc, curr) => {
           if (curr.has) {
             return acc.concat(curr.has)

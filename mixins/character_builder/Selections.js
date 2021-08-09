@@ -30,6 +30,7 @@ export const Selections = {
       return Array.isArray(selection.value) ? selection.value.length !== count : false
     },
     getMechanicsWithoutChoices (sourceId, mechanics) {
+      console.log(sourceId, mechanics)
       const collection = []
       for (const mechanic of mechanics) {
         // mechanics with choices use pickers, and it is the pickers job to add the selection

@@ -12,6 +12,8 @@
         {{ cTab }}
       </v-chip>
     </v-chip-group>
+
+    <!-- defensive -->
     <v-tabs-items v-model="tab" class="mt-5">
       <v-tab-item>
         <v-row class="mt-8 mt-md-0">
@@ -111,6 +113,8 @@
           </v-col>
         </v-row>
       </v-tab-item>
+
+      <!-- offensive -->
       <v-tab-item>
         <v-row>
           <v-col cols="12">
@@ -211,6 +215,32 @@
           </v-col>
         </v-row>
       </v-tab-item>
+
+      <!-- skills -->
+      <v-tab-item>
+        <v-autocomplete
+          v-model="customSkills"
+          item-text="name"
+          item-value="id"
+          :items="skills"
+          label="Custom Skill Proficiencies"
+          chips
+          deletable-chips
+          multiple
+        />
+        <v-autocomplete
+          v-model="customExpertise"
+          item-text="name"
+          item-value="id"
+          :items="skills"
+          label="Custom Expertise"
+          chips
+          deletable-chips
+          multiple
+        />
+      </v-tab-item>
+
+      <!-- misc -->
       <v-tab-item>
         <v-text-field
           v-model="speedBonus"
@@ -255,7 +285,7 @@ export default {
   data () {
     return {
       tab: 0,
-      tabs: ['Defensive', 'Offensive', 'Misc']
+      tabs: ['Defensive', 'Offensive', 'Skills', 'Misc']
     }
   },
   computed: {
@@ -273,6 +303,22 @@ export default {
         } else {
           this.change('speedBonus', this.mToFt(value))
         }
+      }
+    },
+    customSkills: {
+      get () {
+        return this.character.settings.skills
+      },
+      set (value) {
+        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'settings.skills', value })
+      }
+    },
+    customExpertise: {
+      get () {
+        return this.character.settings.expertise
+      },
+      set (value) {
+        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'settings.expertise', value })
       }
     }
   },
