@@ -14,9 +14,10 @@
           </v-chip>
         </template>
       </div>
-      <v-autocomplete
+      <v-select
         v-if="options.choices"
         v-model="profs"
+        n
         item-text="text"
         item-value="value"
         :items="items"
@@ -61,7 +62,7 @@
             </v-list-item-subtitle>
           </v-list-item-content>
         </template>
-      </v-autocomplete>
+      </v-select>
     </div>
   </div>
 </template>
@@ -84,9 +85,12 @@ export default {
     type () {
       return this.options.profType || this.options.subType
     },
+    selectionId () {
+      return `${this.source}-${this.type}`
+    },
     profs: {
       get () {
-        const selection = this.selections.find(i => i.source === this.source)
+        const selection = this.selections.find(i => i.source === this.selectionId)
         return selection?.value || []
       },
       set (value) {
@@ -123,7 +127,7 @@ export default {
     }
   },
   mounted () {
-    if (!this.selections.find(i => i.source === this.source)) {
+    if (!this.selections.find(i => i.source === this.selectionId)) {
       this.setProfObject([])
     }
   },
@@ -134,7 +138,7 @@ export default {
         subType: this.type,
         value,
         has: this.options.has || null,
-        source: this.source
+        source: this.selectionId
       }
       this.$store.dispatch('cb/UPDATE_SELECTIONS', { cid: this.cid, selection })
     },

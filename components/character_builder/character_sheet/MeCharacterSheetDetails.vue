@@ -63,6 +63,17 @@
           </v-list-item>
         </v-list>
       </v-tab-item>
+      <v-tab-item>
+        <div v-if="backgroundData">
+          <div class="text-h6">
+            {{ backgroundData.name }}
+          </div>
+          <me-html :content="backgroundData.html" />
+        </div>
+        <div v-else>
+          Please select a background.
+        </div>
+      </v-tab-item>
     </v-tabs-items>
     <v-dialog v-model="backstoryDialog" :fullscreen="$vuetify.breakpoint.xsOnly" max-width="500">
       <v-card>
@@ -95,7 +106,7 @@ export default {
   data () {
     return {
       tab: 0,
-      tabs: ['Personal', 'Physical'],
+      tabs: ['Personal', 'Physical', 'Background'],
       backstoryDialog: false,
       physicalCharacteristics: [
         'gender',

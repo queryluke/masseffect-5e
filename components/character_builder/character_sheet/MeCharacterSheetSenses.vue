@@ -45,7 +45,6 @@ export default {
     csSenses () {
       const settingSenses = { ...this.character.settings.senses }
       const selections = this.selections.filter(i => i.type === 'sense')
-      console.log(selections)
       for (const selection of selections) {
         if (!settingSenses[selection.has.id] || selection.has.distance > settingSenses[selection.has.id]) {
           settingSenses[selection.has.id] = selection.has.distance

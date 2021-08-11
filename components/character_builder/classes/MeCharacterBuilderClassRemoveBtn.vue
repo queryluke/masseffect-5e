@@ -80,8 +80,9 @@ export default {
     removeClass () {
       const tempArr = this.characterClasses.slice()
       tempArr.splice(this.classIndex, 1)
-      this.$store.dispatch('cb/DELETE_SELECTIONS', { cid: this.cid, id: `klass-${this.klass}` })
+      this.$store.dispatch('cb/DELETE_SELECTIONS', { cid: this.cid, id: `klass-${this.klass.id}` })
       this.characterClasses = tempArr
+      this.dialog = false
     }
   }
 }

@@ -20,7 +20,12 @@ export const Selections = {
   methods: {
     mechanicNeedsSelection (mechanic, source, count = 1) {
       // NOTE: if we need a multipicker, need to iterate on choices.count not use index!!!
-      const selection = this.selections.find(i => i.source === source || i.source === `${source}-${mechanic.id}`)
+      // possible iterations, todo: better docs about this
+      // source: e.g., species-quarian-cybernetic_augmentation
+      // source-mechanic.id: e.g., idk?
+      // source-mechanic.subType: e.g., species-drell-natural-hunters-skill && species-salarian-twice-as-bright-skill
+      const sourceIterations = [source, `${source}-${mechanic.id}`, `${source}-${mechanic.subType}`]
+      const selection = this.selections.find(i => sourceIterations.includes(i.source))
       if (!selection) {
         return true
       }
@@ -30,6 +35,8 @@ export const Selections = {
       return Array.isArray(selection.value) ? selection.value.length !== count : false
     },
     getMechanicsWithoutChoices (sourceId, mechanics) {
+      // TODO: stop using this...if there are choices, look in selections for the choice, then look back
+      // at the source data for the mechanics
       const collection = []
       for (const mechanic of mechanics) {
         // mechanics with choices use pickers, and it is the pickers job to add the selection

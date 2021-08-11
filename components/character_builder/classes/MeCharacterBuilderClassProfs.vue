@@ -2,7 +2,7 @@
   <div>
     <v-row v-for="(profObj, profKey) in klassProficiencyOptions" :key="profKey">
       <v-col v-if="profObj.has || profObj.choices">
-        <me-character-builder-prof-picker v-if="profObj" :options="{...profObj, profType: profKey}" :source="`klass-${klass.id}-profs-${profKey}`" />
+        <me-character-builder-prof-picker v-if="profObj" :options="{...profObj, profType: profKey}" :source="`klass-${klass.id}-profs`" />
       </v-col>
     </v-row>
   </div>

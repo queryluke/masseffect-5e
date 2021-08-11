@@ -16,12 +16,7 @@
         <me-character-sheet-skills />
       </me-character-sheet-card>
       <me-character-sheet-card>
-        <me-character-sheet-p />
-      </me-character-sheet-card>
-    </div>
-    <div v-if="mobileView === 'features'">
-      <me-character-sheet-card>
-        <me-character-sheet-features />
+        <me-character-sheet-proficiencies />
       </me-character-sheet-card>
     </div>
     <div v-if="mobileView === 'notes'">

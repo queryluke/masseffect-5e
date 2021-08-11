@@ -1,54 +1,49 @@
 <template>
-  <v-card outlined class="pl-2 pt-1">
-    <v-row align="center" :no-gutters="$vuetify.breakpoint.smAndDown">
-      <v-col cols="4" md="3">
-        <div class="text-truncate d-inline-block mt-1">
-          {{ item.power.name }}
-        </div>
-        <div v-if="item.csData.advancement && $vuetify.breakpoint.mdAndUp" class="text-caption mt-n2 font-italic">
-          Adv: {{ item.power.advancements[item.csData.advancement].name }}
-        </div>
-      </v-col>
-      <v-col v-if="$vuetify.breakpoint.mdAndUp" cols="3">
-        <me-character-sheet-use-tracker v-if="uses" :used="timesUsed" :uses="uses" @increment="timesUsed++" @decrement="timesUsed--" />
-      </v-col>
-      <v-col cols="3" md="2" class="text-center">
-        <div v-if="isAttackPower" class="text-h6">
-          +{{ toHit }}
-        </div>
-        <div v-else-if="isSavePower">
-          <div class="text-overline mt-n2">
-            <small>
-              {{ powerSaveType }}
-            </small>
+  <v-card outlined class="my-2" elevation="0">
+    <v-card class="pa-2" elevation="0" color="transparent" @click="showPower = !showPower">
+      <v-row align="center" :no-gutters="$vuetify.breakpoint.smAndDown">
+        <v-col cols="6">
+          <div>
+            {{ item.power.name }}
           </div>
-          <div class="text-body-2 mt-n2">
-            DC {{ saveMod }}
+          <div v-if="item.csData.advancement" class="text-caption mt-n2 font-italic">
+            Adv: {{ item.power.advancements[item.csData.advancement].name }}
           </div>
-        </div>
-      </v-col>
-      <v-col cols="4" md="3" class="text-subtitle-2">
-        <me-power-range :range="item.power.range" :aoe="item.power.aoe" :size="10" />
-      </v-col>
-      <v-col cols="1">
-        <v-icon size="18" class="mt-n1" @click="powerInfoDialog = true">
-          mdi-information-outline
-        </v-icon>
-      </v-col>
-    </v-row>
-    <v-row v-if="$vuetify.breakpoint.smAndDown" justify="space-between" no-gutters>
-      <v-col cols="auto">
-        <div v-if="item.csData.advancement" class="text-caption font-italic">
-          Adv: {{ item.power.advancements[item.csData.advancement].name }}
-        </div>
-      </v-col>
-      <v-col cols="auto" class="text-right">
-        <me-character-sheet-use-tracker v-if="uses" :used="timesUsed" :uses="uses" @increment="timesUsed++" @decrement="timesUsed--" />
-      </v-col>
-    </v-row>
-    <me-standard-dialog :title="item.power.name" :shown="powerInfoDialog" @close="powerInfoDialog = false">
-      <me-power-info :item="item.power" />
-    </me-standard-dialog>
+        </v-col>
+        <v-col cols="3" class="text-center">
+          <div v-if="isAttackPower" class="text-h6">
+            +{{ toHit }}
+          </div>
+          <div v-else-if="isSavePower">
+            <div class="text-overline mt-n2">
+              <small>
+                {{ powerSaveType }}
+              </small>
+            </div>
+            <div class="text-body-2 mt-n2">
+              DC {{ saveMod }}
+            </div>
+          </div>
+          <div v-else>
+            -
+          </div>
+        </v-col>
+        <v-col cols="4" md="3" class="text-subtitle-2">
+          <me-power-range :range="item.power.range" :aoe="item.power.aoe" :size="10" />
+        </v-col>
+      </v-row>
+    </v-card>
+    <div class="d-flex justify-end">
+      <me-character-sheet-use-tracker v-if="uses" :used="timesUsed" :uses="uses" @increment="timesUsed++" @decrement="timesUsed--" />
+    </div>
+    <v-expand-transition>
+      <div v-if="showPower">
+        <v-divider />
+        <v-card-text class="mb-0">
+          <me-power-info :item="item.power" />
+        </v-card-text>
+      </div>
+    </v-expand-transition>
   </v-card>
 </template>
 
@@ -65,7 +60,7 @@ export default {
   },
   data () {
     return {
-      powerInfoDialog: false
+      showPower: false
     }
   },
   computed: {

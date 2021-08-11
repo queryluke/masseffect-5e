@@ -39,19 +39,14 @@
                 Abilities, Saves, Senses
               </v-btn>
             </v-col>
-            <v-col cols="6">
+            <v-col cols="12">
               <v-btn block x-large color="primary" @click="mobileView = 'skills'; mobileMenu = false">
-                Profs
-              </v-btn>
-            </v-col>
-            <v-col cols="6">
-              <v-btn block x-large color="primary" @click="mobileView = 'actions'; mobileMenu = false">
-                Actions
+                Proficiencies
               </v-btn>
             </v-col>
             <v-col cols="12">
-              <v-btn block x-large color="primary" @click="mobileView = 'features'; mobileMenu = false">
-                Features & Traits
+              <v-btn block x-large color="primary" @click="mobileView = 'actions'; mobileMenu = false">
+                Actions & Features
               </v-btn>
             </v-col>
             <v-col cols="6">
