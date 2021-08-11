@@ -7,7 +7,14 @@ export const Hp = {
           max += hp
         }
       }
-      // TODO: additional health for things like Krogan additional health
+      max += (this.level * this.absMod('con'))
+      // TODO: these should be on the species
+      if (this.speciesId === 'hanar') {
+        max -= (this.level)
+      }
+      if (this.speciesId === 'krogan') {
+        max += (this.level)
+      }
       return max
     },
     csCurrentHp () {

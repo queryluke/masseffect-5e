@@ -28,7 +28,14 @@ export const NpcGenerator = {
       legendary: [],
       damageTarget: 1,
       healthBonus: 0,
-      generated: false
+      generated: false,
+      percentMods: {
+        0: [0.05, 0.1, 0.15],
+        1: [0.1, 0.2, 0.3],
+        2: [0.1, 0.25, 0.5],
+        3: [0.1, 0.25, 0.5],
+        4: [0.1, 0.25, 0.5]
+      }
     }
   },
   mixins: [
@@ -70,12 +77,12 @@ export const NpcGenerator = {
       return this.crMeta + mod < 0 ? 0 : this.crMeta + mod
     },
     percentileMod () {
-      return this.options.offensiveScale === 0 ? 0.1 : this.options.offensiveScale % 2 === 0 ? 0.5 : 0.25
+      return this.options.offensiveScale === 0 ? this.percentMods[this.crMeta][0] : this.options.offensiveScale % 2 === 0 ? this.percentMods[this.crMeta][2] : this.percentMods[this.crMeta][1]
     },
     minHp () {
       const recommendedHp = this.options.cr.hp
       const minHpMod = this.options.offensiveScale >= 0 ? this.percentileMod : 0
-      return Math.floor((recommendedHp - (recommendedHp * minHpMod)) - this.healthBonus)
+      return Math.max(Math.floor((recommendedHp - (recommendedHp * minHpMod)) - this.healthBonus), 5)
     },
     maxHp () {
       const recommendedHp = this.options.cr.hp

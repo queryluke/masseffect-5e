@@ -8,7 +8,7 @@
 <script>
 export default {
   created () {
-    console.log(this.$store.getters['cb/characters'][this.$route.params.id])
+    console.log(this.$store.getters['cb/characters'][this.$route.query.id])
   }
 }
 </script>

@@ -2,14 +2,16 @@
   <v-container>
     <me-page-title />
     <p>
-      This generator creates disposable NPCs based on the Mass Effect archetypes. The Monster Manual outlines adjusting
-      the provided NPC Archetypes with various races, weapons, and abilities, but this can be rather time consuming.
+      This generator creates disposable NPCs based on the Mass Effect archetypes. Your options for NPC generation are:
     </p>
-    <p>
-      This generator enables you to quickly create random NPCs with a given Challenge Rating (CR). CRs only go up to 12
-      because higher CRs represent much more powerful monsters. As a point of reference, a Banshee has a CR of 13, so
-      a grunt with a CR of 12 would represent a   very experienced and deadly NPC.
-    </p>
+    <ul class="text-body-2">
+      <li>Offensive vs Defensive: Offensive increase damage per round, but reduces AC, Shields, and Hit Points. Defensive does the opposite.</li>
+      <li>Damage Priority: When randomly generating attack, the generator will attempt to have the highest damage source be the selected type, either powers, weapons, or grenades.</li>
+      <li>
+        Grenade Toggle: Whether or not you want the NPC to use grenades
+      </li>
+      <li>Species Traits: Whether or not you want the NPC to gain any special species traits.</li>
+    </ul>
     <v-card class="mt-8">
       <v-card-text>
         <v-row>

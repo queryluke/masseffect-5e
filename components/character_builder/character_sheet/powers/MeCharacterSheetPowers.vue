@@ -3,8 +3,10 @@
     <me-character-sheet-card-title v-if="$vuetify.breakpoint.smAndDown">
       Powers
     </me-character-sheet-card-title>
+
+    <!-- Power Mod -->
     <v-row>
-      <v-col cols="12" md="3">
+      <v-col cols="12" md="4">
         <v-select
           v-model="powerModAbility"
           hint="Powercasting Ability"
@@ -16,7 +18,7 @@
           class="mr-3"
         />
       </v-col>
-      <v-col cols="4" md="3">
+      <v-col cols="4" md="2" offset-md="1">
         <v-card outlined flat>
           <div class="ma-auto text-center">
             <div class="text-caption">
@@ -28,7 +30,7 @@
           </div>
         </v-card>
       </v-col>
-      <v-col cols="4" md="3">
+      <v-col cols="4" md="2">
         <v-card outlined flat>
           <div class="ma-auto text-center">
             <div class="text-caption">
@@ -40,7 +42,7 @@
           </div>
         </v-card>
       </v-col>
-      <v-col cols="4" md="3">
+      <v-col cols="4" md="2">
         <v-card outlined flat>
           <div class="ma-auto text-center">
             <div class="text-caption">
@@ -53,27 +55,9 @@
         </v-card>
       </v-col>
     </v-row>
+
+    <!-- Tech points -->
     <v-row>
-      <v-col v-if="hasPowerSlots" cols="12">
-        <div>
-          Power Slots
-        </div>
-        <v-row justify="space-around">
-          <template v-for="(psMax, psIndex) of csPowerSlots">
-            <v-col v-if="psMax > 0" :key="`ps-uses-${psIndex}`" cols="12" md="4">
-              <div class="text-caption">
-                {{ $t('level_nth', {nth: $t(`ordinal_numbers[${psIndex + 1}]`)}) }}
-              </div>
-              <me-character-sheet-use-tracker
-                :uses="psMax"
-                :used="csGetPowerSlotsUsed(psIndex)"
-                @increment="csSetPowerSlotsUsed(psIndex, csGetPowerSlotsUsed(psIndex) + 1)"
-                @decrement="csSetPowerSlotsUsed(psIndex, csGetPowerSlotsUsed(psIndex) - 1)"
-              />
-            </v-col>
-          </template>
-        </v-row>
-      </v-col>
       <v-col v-if="hasTechPoints" cols="12">
         <div>
           Tech Points
@@ -88,22 +72,25 @@
       </v-col>
     </v-row>
 
+    <!-- powers -->
     <v-row>
       <v-col>
         <div class="d-flex justify-space-between">
-          <div>
+          <div class="text-subtitle-1">
             Powers
           </div>
           <v-btn x-small color="primary" @click="managerDialog = true">
             Manage
           </v-btn>
         </div>
-        <template v-for="item in character.powers">
-          <me-character-sheet-powers-add-card :key="item.id" :item="item" no-delete />
+        <template v-for="powerLevel in [0, 1, 2, 3, 4, 5]">
+          <me-character-sheet-powers-at-level-list :key="`powers-at-level-${powerLevel}`" :power-level="powerLevel" />
         </template>
       </v-col>
     </v-row>
-    <v-dialog v-model="managerDialog" :fullscreen="$vuetify.breakpoint.xsOnly" max-width="500">
+
+    <!-- manage dialog -->
+    <v-dialog v-model="managerDialog" :fullscreen="$vuetify.breakpoint.xsOnly" max-width="500" scrollable>
       <v-card>
         <v-toolbar flat>
           <v-toolbar-title>
@@ -158,9 +145,6 @@ export default {
       set (value) {
         this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'settings.powerModAbility', value })
       }
-    },
-    powersList () {
-      return this.character.powers.map(i => this.powers.find(j => j.id === i.id)).sort((a, b) => a.level - b.level)
     }
   }
 }

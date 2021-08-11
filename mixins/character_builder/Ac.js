@@ -45,8 +45,10 @@ export const Ac = {
         numHeavy += head.stats.type === 'heavy' ? 1 : 0
       }
       const dexMax = numHeavy > 0 ? 0 : numMed > 0 ? 2 : 999
-      const dexMod = Math.min(dexMax, this.absMod('dex'))
-      return runningAc + dexMod + this.character.settings.acBonus
+      const dexMod = this.speciesId === 'elcor' ? this.absMod('con') : this.absMod('dex')
+      const appliedDex = Math.min(dexMax, dexMod)
+      const selectionsAc = this.selections.filter(i => i.type === 'ac').reduce((acc, curr) => acc + curr.has.bonus, 0)
+      return runningAc + appliedDex + selectionsAc + this.character.settings.acBonus
     }
   }
 

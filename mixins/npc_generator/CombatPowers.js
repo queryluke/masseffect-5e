@@ -38,7 +38,7 @@ export const CombatPowers = {
         entry: {
           name: 'Beehive',
           uses: 1,
-          text: `The ${this.lcName} shoots shrapnel in a <me-distance length="15" adj /> cone. Each creature in the area must make a DC ${this.calcDc('dex')} Dexterity saving throw, taking ${this.damageString(6, dieCount)} piercing damage, or half as much damage on a successful one.`
+          text: `The ${this.lcName} shoots shrapnel in a <me-distance length="15" adj /> cone. Each creature in the area must make a DC ${this.calcDc('dex')} Dexterity saving throw, taking ${this.damageString(dieCount, 6)} piercing damage, or half as much damage on a successful one.`
         }
       }
     },
@@ -64,7 +64,7 @@ export const CombatPowers = {
         entry: {
           name: 'Flak Cannon',
           uses: 3,
-          text: `The ${this.lcName} targets an area within <me-distance length="30" />. Each creature in a <me-distance length="10" adj />-radius sphere centered on the target must make a DC ${this.calcDc('dex')} Dexterity saving throw, taking ${this.damageString(6, dieCount)} piercing damage, or half as much damage on a successful one.`
+          text: `The ${this.lcName} targets an area within <me-distance length="30" />. Each creature in a <me-distance length="10" adj />-radius sphere centered on the target must make a DC ${this.calcDc('dex')} Dexterity saving throw, taking ${this.damageString(dieCount, 6)} piercing damage, or half as much damage on a successful one.`
         }
       }
     },
@@ -89,7 +89,7 @@ export const CombatPowers = {
         entry: {
           name: 'Havoc Strike',
           uses: 2,
-          text: `The ${this.lcName} moves to an unoccupied space within <me-distance length="20" />. Each creature within <me-distance length="5" adj /> from where its movement ends must make a DC ${this.calcDc('str')} Dexterity saving throw, taking ${this.damageString(8, dieCount)} piercing damage, or half as much damage on a successful one.`
+          text: `The ${this.lcName} moves to an unoccupied space within <me-distance length="20" />. Each creature within <me-distance length="5" adj /> from where its movement ends must make a DC ${this.calcDc('str')} Dexterity saving throw, taking ${this.damageString(dieCount, 8)} piercing damage, or half as much damage on a successful one.`
         }
       }
     },
@@ -102,7 +102,7 @@ export const CombatPowers = {
         entry: {
           name: 'Hawk Missile Launcher',
           uses: 1,
-          text: `The ${this.lcName} targets a creature or object it can see within <me-distance length="150" />. The target suffers ${this.damageString(6, dieCount)} thunder damage.`
+          text: `The ${this.lcName} targets a creature or object it can see within <me-distance length="150" />. The target suffers ${this.damageString(dieCount, 6)} thunder damage.`
         }
       }
     },

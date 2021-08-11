@@ -19,6 +19,21 @@ export const AbilityScores = {
         return false
       }
       return this.selectedAbilityScores && Object.values(this.selectedAbilityScores).every(abs => abs !== null)
+    },
+    selectionBonuses () {
+      const bonuses = {
+        str: 0,
+        dex: 0,
+        con: 0,
+        int: 0,
+        wis: 0,
+        cha: 0
+      }
+      const selections = this.selections.filter(i => i.type === 'ability')
+      for (const selection of selections) {
+        bonuses[selection.has.ability] += selection.has.bonus
+      }
+      return bonuses
     }
   },
   methods: {
@@ -65,7 +80,7 @@ export const AbilityScores = {
       return final
     },
     absMisc (ability) {
-      return 0
+      return this.selectionBonuses[ability]
     },
     absTotal (ability) {
       const override = this.getAbsOverride(ability) || 0
@@ -76,7 +91,8 @@ export const AbilityScores = {
       const species = this.absSpeciesBonus(ability)
       const abis = this.absAbis(ability)
       const other = this.getAbsOther(ability) || 0
-      return base + species + abis + Number.parseInt(other, 10)
+      const misc = this.absMisc(ability)
+      return base + species + abis + Number.parseInt(other, 10) + misc
     },
     getAbsOther (ability) {
       return this.character.abilityScores.other[ability]

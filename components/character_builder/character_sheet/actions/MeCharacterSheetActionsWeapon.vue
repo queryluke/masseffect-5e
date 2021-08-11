@@ -1,66 +1,37 @@
 <template>
-  <div>
-    <div class="d-flex align-center">
-      <v-list-item-avatar class="mr-2">
-        <v-list-item-action-text class="text-h6 d-flex align-center">
-          +{{ toHit }}
-        </v-list-item-action-text>
-      </v-list-item-avatar>
-      <v-list-item-content>
-        <v-list-item-title>
-          {{ itemData.name }}
-        </v-list-item-title>
-        <v-list-item-subtitle>
-          <small class="d-flex align-end">
-            <me-weapon-range :item="{...itemData, ...item.stats}" />
-            <span v-if="notifyProps.length > 0">
-              <template v-for="notifyProp in notifyProps">
-                <span :key="notifyProp" class="ml-2">
-                  <me-weapon-prop :id="notifyProp" />
-                </span>
-              </template>
-            </span>
-          </small>
-        </v-list-item-subtitle>
-      </v-list-item-content>
-      <v-list-item-action-text>
-        <div class="text-caption">
-          {{ weaponDamage }}
-        </div>
-        <div class="mt-n2">
-          {{ item.stats.damage.type }}
-        </div>
-      </v-list-item-action-text>
-    </div>
-    <div v-if="itemData.type !== 'melee'" class="d-flex align-start mx-6 mb-2">
-      <v-btn x-small class="mr-1" color="primary" :icon="$vuetify.breakpoint.xsOnly" @click="reloadWeapon">
-        <v-icon size="18">
-          mdi-refresh
-        </v-icon>
-        <span v-if="$vuetify.breakpoint.smAndUp">Reload</span>
-      </v-btn>
-      <div style="width: 200px">
-        <v-progress-linear
-          :value="currentHeatPercent"
-          height="6"
-          class="mt-1"
-          :color="`${heatColor}`"
-          background-color="grey darken-2"
-        />
-        <div class="text-caption text-center">
-          <small>
-            {{ item.heat }} / {{ item.stats.heat }}
-          </small>
-        </div>
-      </div>
-      <v-btn x-small class="ml-1 mr-2" color="secondary" :icon="$vuetify.breakpoint.xsOnly" @click="fireWeapon">
-        <v-icon size="18" :disabled="item.heat >= item.stats.heat">
-          mdi-lightning-bolt
-        </v-icon>
-        <span v-if="$vuetify.breakpoint.smAndUp">Fire</span>
-      </v-btn>
-    </div>
-  </div>
+  <me-character-sheet-actions-weapon-card>
+    <template #name>
+      {{ itemData.name }}
+    </template>
+    <template #range>
+      <me-weapon-range :item="{...itemData, ...item.stats}" />
+    </template>
+    <template #mRange>
+      <me-weapon-range :item="{...itemData, ...item.stats}" />
+    </template>
+    <template #props>
+      <template v-for="notifyProp in notifyProps">
+        <span :key="notifyProp" class="ml-2 ml-md-0">
+          <me-weapon-prop :id="notifyProp" />
+        </span>
+      </template>
+    </template>
+    <template #heat>
+      <me-character-sheet-actions-weapon-heat-tracker v-if="itemData.type !== 'melee'" :item="item" />
+    </template>
+    <template #mHeat>
+      <me-character-sheet-actions-weapon-heat-tracker v-if="itemData.type !== 'melee'" :item="item" />
+    </template>
+    <template #hit>
+      +{{ toHit }}
+    </template>
+    <template #damage>
+      {{ weaponDamage }}
+    </template>
+    <template #damageType>
+      {{ item.stats.damage.type }}
+    </template>
+  </me-character-sheet-actions-weapon-card>
 </template>
 
 <script>
@@ -117,12 +88,13 @@ export default {
       return this.item.stats.properties.filter(i => this.importantProps.includes(i))
     },
     abilityBonus () {
+      const dexMod = this.speciesId === 'elcor' ? this.absMod('int') : this.dexMod
       return this.itemData.type === 'melee'
         ? this.finesse ? Math.max(this.dexMod, this.strMod) : this.strMod
-        : this.recoil ? Math.max(this.dexMod, this.strMod) : this.dexMod
+        : this.recoil ? Math.max(dexMod, this.strMod) : dexMod
     },
     toHit () {
-      const profBonus = this.proficiencies.weapon.includes(this.item.type) ? this.profBonus : 0
+      const profBonus = this.proficiencies.weapon.includes(this.itemData.type) ? this.profBonus : 0
       const weaponBonus = this.item.bonusHit || 0
       const globalBonus = this.character.settings.attackMod
         ? this.character.settings.attackMod

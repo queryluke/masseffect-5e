@@ -96,10 +96,29 @@ export const Powers = {
         return this.character.currentStats.tpUsed
       },
       set (value) {
-        console.log(value, this.csMaxTechPoints)
         const nonMaxZeroValue = value >= this.csMaxTechPoints ? this.csMaxTechPoints : value <= 0 ? 0 : value
         this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'currentStats.tpUsed', value: nonMaxZeroValue })
       }
+    },
+    csAllPowers () {
+      const selectionPowers = this.selections.filter(i => i.subType === 'power').map(i => i.has)
+      const allPowers = this.character.powers.concat(selectionPowers)
+      return allPowers.map((i) => {
+        const power = this.powers.find(j => j.id === i.id)
+        if (power) {
+          return {
+            power,
+            csData: i
+          }
+        }
+        return null
+      }).filter(i => i !== null)
+    },
+    csAttackPowers () {
+      return this.csAllPowers.filter(i => i.power.castingTimes.includes('attack'))
+    },
+    csActionPowers () {
+      return this.csAllPowers.filter(i => i.power.castingTimes.includes('action'))
     }
   },
   methods: {

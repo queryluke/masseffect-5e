@@ -19,13 +19,13 @@
     <v-main>
       <nuxt />
       <v-btn
+        v-if="$vuetify.breakpoint.smAndDown"
         fab
         bottom
         right
         fixed
         style="z-index: 1000"
         @click="mobileMenu = !mobileMenu"
-        v-if="$vuetify.breakpoint.smAndDown"
       >
         <v-icon>
           {{ mobileMenu ? 'mdi-close' : 'mdi-dots-grid' }}
@@ -41,7 +41,7 @@
             </v-col>
             <v-col cols="6">
               <v-btn block x-large color="primary" @click="mobileView = 'skills'; mobileMenu = false">
-                Skills
+                Profs
               </v-btn>
             </v-col>
             <v-col cols="6">

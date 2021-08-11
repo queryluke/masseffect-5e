@@ -29,7 +29,7 @@
               <v-subheader>
                 {{ defenseTypes[defenseType] }}
               </v-subheader>
-              <v-list-item v-for="defense of defenseValues" :key="`def-${defense}-${defenseType}`">
+              <v-list-item v-for="defense of defenseValues" :key="`def-${defense.id}-${defenseType}`">
                 <v-list-item-content>
                   <v-list-item-title>
                     {{ defenseTypeText(defenseType, defense.id) }}
@@ -166,11 +166,12 @@ export default {
       }
       for (const key in defenses) {
         if (this.character.settings[key] && this.character.settings[key].length > 0) {
-          defenses[key] = defenses.key.concat(this.character.settings[key].map((i) => {
+          const settingDefenses = this.character.settings[key].map((i) => {
             return {
-              id: i.id
+              id: i
             }
-          }))
+          })
+          defenses[key] = defenses[key].concat(settingDefenses)
         }
       }
       return defenses

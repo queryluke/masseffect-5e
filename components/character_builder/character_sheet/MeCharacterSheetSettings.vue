@@ -254,7 +254,7 @@
           <v-row :key="`switch-${senseKey}`">
             <v-col cols="6">
               <v-switch
-                :value="senseValue"
+                :input-value="senseValue > 0"
                 :label="$t(`senses.${senseKey}_title`)"
                 @change="toggleSense(senseKey, $event)"
               />

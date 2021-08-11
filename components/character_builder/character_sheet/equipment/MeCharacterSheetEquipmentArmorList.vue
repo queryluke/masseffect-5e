@@ -39,7 +39,7 @@
               <v-text-field v-model="customArmor.name" label="Name" />
             </v-col>
             <v-col cols="6">
-              <v-select v-model="customArmor.placement" :items="armorPlacements" label="Placement" />
+              <v-select v-model="customArmor.placement" :items="armorPlacements.filter(i => i.value !== 'body_armor')" label="Placement" />
             </v-col>
             <v-col cols="6">
               <v-select v-model="customArmor.type" :items="armorTypes" label="Type" />

@@ -63,8 +63,8 @@ export default {
     }
   },
   methods: {
-    availableMods (type, placement, availability) {
-      return this.mods.filter(i => i.type === type && i.placement === placement && i.availability.includes(availability))
+    availableMods (type, placement) {
+      return this.mods.filter(i => i.type === type && i.placement === placement)
     },
     modData (id) {
       return this.mods.find(i => i.id === id)

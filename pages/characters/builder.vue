@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container style="max-width: 1200px">
     <v-stepper :value="currentStep">
       <v-stepper-header>
         <template v-for="(step, index) in builderSteps">

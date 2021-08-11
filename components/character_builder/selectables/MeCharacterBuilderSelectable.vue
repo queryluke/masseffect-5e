@@ -32,6 +32,9 @@ export default {
         },
         picker: {
           component: 'MeCharacterBuilderGenPicker'
+        },
+        innateBioticsPicker: {
+          component: 'MeCharacterBuilderInnateBioticsPicker'
         }
       }
     }

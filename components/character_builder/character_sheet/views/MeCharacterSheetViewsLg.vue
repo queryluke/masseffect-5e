@@ -26,7 +26,7 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col cols="12">
+      <v-col cols="9">
         <v-card outlined>
           <v-tabs v-model="tab">
             <template v-for="t in tabs">
@@ -60,6 +60,13 @@
           <v-card-actions />
         </v-card>
       </v-col>
+      <v-col cols="3">
+        <v-card outlined>
+          <v-card-text>
+            <me-character-sheet-proficiencies />
+          </v-card-text>
+        </v-card>
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -71,7 +78,7 @@ export default {
   data () {
     return {
       tab: null,
-      tabs: ['Actions', 'Powers', 'Gear', 'Character Details', 'Settings', 'Notes']
+      tabs: ['Actions', 'Powers', 'Gear', 'Details', 'Settings', 'Notes']
     }
   }
 }

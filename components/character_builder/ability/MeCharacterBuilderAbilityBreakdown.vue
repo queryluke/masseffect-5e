@@ -33,14 +33,12 @@
         </template>
         +{{ absAbis(ability) }}
       </me-character-builder-ability-line-item>
-      <!--
       <me-character-builder-ability-line-item>
         <template #title>
           Misc Bonus
         </template>
         +{{ absMisc(ability) }}
       </me-character-builder-ability-line-item>
-      -->
       <v-divider class="my-3" />
       <me-character-builder-ability-line-item>
         <template #title>

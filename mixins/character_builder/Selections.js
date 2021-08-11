@@ -20,7 +20,7 @@ export const Selections = {
   methods: {
     mechanicNeedsSelection (mechanic, source, count = 1) {
       // NOTE: if we need a multipicker, need to iterate on choices.count not use index!!!
-      const selection = this.selections.find(i => i.source === source)
+      const selection = this.selections.find(i => i.source === source || i.source === `${source}-${mechanic.id}`)
       if (!selection) {
         return true
       }
@@ -30,7 +30,6 @@ export const Selections = {
       return Array.isArray(selection.value) ? selection.value.length !== count : false
     },
     getMechanicsWithoutChoices (sourceId, mechanics) {
-      console.log(sourceId, mechanics)
       const collection = []
       for (const mechanic of mechanics) {
         // mechanics with choices use pickers, and it is the pickers job to add the selection
