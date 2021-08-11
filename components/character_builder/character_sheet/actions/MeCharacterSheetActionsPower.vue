@@ -2,15 +2,18 @@
   <v-card outlined class="my-2" elevation="0">
     <v-card class="pa-2" elevation="0" color="transparent" @click="showPower = !showPower">
       <v-row align="center" :no-gutters="$vuetify.breakpoint.smAndDown">
-        <v-col cols="6">
-          <div>
+        <v-col cols="5">
+          <div class="text-truncate">
             {{ item.power.name }}
           </div>
-          <div v-if="item.csData.advancement" class="text-caption mt-n2 font-italic">
+          <div v-if="item.csData.advancement" class="text-caption mt-n2 font-italic text-truncate">
             Adv: {{ item.power.advancements[item.csData.advancement].name }}
           </div>
         </v-col>
-        <v-col cols="3" class="text-center">
+        <v-col cols="2" class="text-center">
+          {{ castingTime }}
+        </v-col>
+        <v-col cols="2" class="text-center">
           <div v-if="isAttackPower" class="text-h6">
             +{{ toHit }}
           </div>
@@ -28,8 +31,8 @@
             -
           </div>
         </v-col>
-        <v-col cols="4" md="3" class="text-subtitle-2">
-          <me-power-range :range="item.power.range" :aoe="item.power.aoe" :size="10" />
+        <v-col cols="3" md="3" class="text-subtitle-2 text-center">
+          <me-power-range :range="item.power.range" :aoe="item.power.aoe" :size="10" :split="$vuetify.breakpoint.smAndDown" />
         </v-col>
       </v-row>
     </v-card>
@@ -64,6 +67,9 @@ export default {
     }
   },
   computed: {
+    castingTime () {
+      return this.item.power.castingTimes.map(i => this.$t(`times.${i}_abbr`)).join(' | ')
+    },
     uses () {
       return this.item.csData.max || this.item.power.uses || 0
     },

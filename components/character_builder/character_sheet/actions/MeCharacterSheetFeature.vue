@@ -38,7 +38,7 @@ export default {
   computed: {
     uses () {
       if (this.feature.mechanics) {
-        const useObj = this.feature.mechanics.find(i => i.has.uses)
+        const useObj = this.feature.mechanics.find(i => i.has?.uses)
         if (useObj) {
           return useObj.has.uses
         }

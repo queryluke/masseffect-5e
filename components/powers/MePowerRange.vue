@@ -4,9 +4,9 @@
       <me-distance v-if="numericRange" :length="range" abbr />
       <span v-else>{{ textRange }}</span>
     </span>
-    <span v-if="aoe" class="ml-1 text-caption">
+    <span v-if="aoe" class="text-caption" :class="{'d-block': split, 'ml-1': !split, 'mt-n1': split}">
       (<me-distance :length="aoe.size" abbr />
-      <v-avatar :size="size" tile class="ml-1">
+      <v-avatar :size="size" tile style="margin-left: 2px">
         <v-img :src="require(`~/assets/images/aoe/${filename}.svg`)" :alt="$t(`aoe_types.${aoe.type}`)" />
       </v-avatar>)
     </span>
@@ -28,6 +28,10 @@ export default {
     size: {
       type: Number,
       default: 14
+    },
+    split: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
