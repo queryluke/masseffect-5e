@@ -247,7 +247,10 @@
 
       <!-- other profs -->
       <v-tab-item>
-        TODO
+        <me-character-builder-prof-picker source="custom" :options="{ profType: 'armor', choices: { items: ['light', 'medium', 'heavy'], count: 999 }}" no-counter />
+        <me-character-builder-prof-picker source="custom" :options="{ profType: 'weapon', choices: { items: ['assault_rifle', 'heavy_pistol', 'melee', 'shotgun', 'smg', 'sniper_rifle'], count: 999 }}" no-counter />
+        <me-character-builder-prof-picker source="custom" :options="{ profType: 'tool', choices: { items: toolProfs.map(i => i.id), count: 999 }}" no-counter />
+        <me-character-builder-prof-picker source="custom" :options="{ profType: 'savingThrow', choices: { items: ['str', 'dex', 'con', 'int', 'wis', 'cha'], count: 999 }}" no-counter />
       </v-tab-item>
 
       <!-- Speed and senses -->

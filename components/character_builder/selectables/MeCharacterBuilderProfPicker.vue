@@ -22,7 +22,7 @@
         item-value="value"
         :items="items"
         :label="options.text"
-        :counter="options.choices.count"
+        :counter="noCounter ? false : options.choices.count"
         chips
         deletable-chips
         multiple
@@ -79,6 +79,10 @@ export default {
     source: {
       type: String,
       required: true
+    },
+    noCounter: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
