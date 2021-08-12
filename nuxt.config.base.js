@@ -81,11 +81,6 @@ export default {
         code: 'en',
         iso: 'en-US',
         file: 'loader.js'
-      },
-      {
-        code: 'fr',
-        iso: 'fr-FR',
-        file: 'loader.js'
       }
     ],
     lazy: true,

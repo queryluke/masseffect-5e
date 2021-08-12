@@ -218,7 +218,13 @@
 
       <!-- Ability scores -->
       <v-tab-item>
-        TODO
+        <v-row>
+          <template v-for="ability in ['str', 'dex', 'con', 'int', 'wis', 'cha']">
+            <v-col :key="ability" cols="12" sm="6" md="4">
+              <me-character-sheet-ability-edit :ability="ability" />
+            </v-col>
+          </template>
+        </v-row>
       </v-tab-item>
 
       <!-- skills -->
