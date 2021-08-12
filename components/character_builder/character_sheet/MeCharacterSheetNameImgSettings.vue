@@ -34,6 +34,14 @@
                 </v-list-item-icon>
                 <v-list-item-title>Edit</v-list-item-title>
               </v-list-item>
+              <v-list-item @click="saveFile">
+                <v-list-item-icon>
+                  <v-icon>
+                    mdi-download
+                  </v-icon>
+                </v-list-item-icon>
+                <v-list-item-title>Export</v-list-item-title>
+              </v-list-item>
               <v-divider />
               <v-list-item to="/characters" nuxt>
                 <v-list-item-icon>
@@ -63,6 +71,21 @@
 import { CharacterBuilderHelpers } from '~/mixins/character_builder'
 
 export default {
-  mixins: [CharacterBuilderHelpers]
+  mixins: [CharacterBuilderHelpers],
+  methods: {
+    saveFile () {
+      const data = JSON.stringify(this.character)
+      const blob = new Blob([data], { type: 'text/plain' })
+      const e = document.createEvent('MouseEvents')
+      const a = document.createElement('a')
+      const filename = this.character.name.replace(/[^a-z0-9]/gi, '')// .toLowerCase()
+
+      a.download = `${filename}-${this.cid}.json`
+      a.href = window.URL.createObjectURL(blob)
+      a.dataset.downloadurl = ['text/json', a.download, a.href].join(':')
+      e.initEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
+      a.dispatchEvent(e)
+    }
+  }
 }
 </script>

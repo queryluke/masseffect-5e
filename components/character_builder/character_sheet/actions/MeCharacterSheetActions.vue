@@ -42,18 +42,16 @@
           Traits
         </div>
         <template v-for="trait of speciesTraits">
-          <me-character-sheet-feature :key="`species-trait-${trait.id}`" :feature="trait" />
+          <me-character-sheet-feature :key="`species-trait-${trait.id}`" :feature="trait" type="traits" />
         </template>
       </v-tab-item>
       <v-tab-item>
-        <v-tab-item>
-          <div class="text-subtitle-1 mt-3">
-            Feats
-          </div>
-          <template v-for="feat of csFeats">
-            <me-character-sheet-feature :key="`selected-feat-${feat.id}`" :feature="feat" />
-          </template>
-        </v-tab-item>
+        <div class="text-subtitle-1 mt-3">
+          Feats
+        </div>
+        <template v-for="feat of csFeats">
+          <me-character-sheet-feature :key="`selected-feat-${feat.id}`" :feature="feat" type="feats" />
+        </template>
       </v-tab-item>
     </v-tabs-items>
   </div>

@@ -2,7 +2,9 @@
   <v-card outlined class="my-2">
     <div class="d-flex justify-space-between">
       <v-card elevation="0" color="transparent" class="flex-grow-1 pa-2" :ripple="false" @click="showFeature = !showFeature">
-        {{ feature.name }}
+        <div>
+          {{ feature.name }}
+        </div>
       </v-card>
       <div v-if="uses" class="flex-shrink-0 pa-2">
         <me-character-sheet-use-tracker :used="timesUsed" :uses="uses" @increment="timesUsed++" @decrement="timesUsed--" />
@@ -28,6 +30,10 @@ export default {
     feature: {
       type: Object,
       required: true
+    },
+    type: {
+      type: String,
+      required: true
     }
   },
   data () {
@@ -38,13 +44,35 @@ export default {
   computed: {
     uses () {
       if (this.feature.mechanics) {
-        const useObj = this.feature.mechanics.find(i => i.has?.uses)
-        if (useObj) {
-          return useObj.has.uses
+        console.log(this.feature.mechanics)
+        if (this.type === 'trait') {
+          const useObj = this.feature.mechanics.find(i => i.has?.uses)
+          if (useObj) {
+            return useObj.has.uses
+          }
+        } else if (this.feature.mechanics?.uses) {
+          return this.feature.mechanics?.uses
         }
       }
       return false
     },
+    /*
+    playerSelections () {
+      const selections = []
+      if (this.feature.mechanics) {
+        const mechanicsWithChoices = this.feature.mechanics.filter(i => i.type === 'picker')
+        for (const mechanic of mechanicsWithChoices) {
+          const regexpTest1 = new RegExp(`${this.type}(.*?)${mechanic.id}`)
+          const regexpTest2 = new RegExp(`${this.type}(.*?)${this.feature.id}`)
+          const matches = this.selections.filter(i => (regexpTest1.test(i.source) || regexpTest2.test(i.source)) && i.value && i.type !== 'profs')
+          for (const match of matches) {
+            selections.push(this.$t(`misc.${match.value}`))
+          }
+        }
+      }
+      return [...new Set(selections)]
+    },
+    */
     timesUsed: {
       get () {
         return this.character.currentStats.featuresTimesUsed[this.feature.id] || 0

@@ -5,7 +5,7 @@
     </div>
     <me-hr :size="2" />
     <template v-for="feature in klassFeaturesToDisplay">
-      <me-character-sheet-feature :key="`klass-feature-${feature.id}`" :feature="feature" />
+      <me-character-sheet-feature :key="`klass-feature-${feature.id}`" :feature="feature" type="class-features" />
     </template>
   </div>
 </template>

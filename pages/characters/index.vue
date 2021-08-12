@@ -1,11 +1,11 @@
 <template>
   <v-container>
+    <me-character-builder-psa />
     <v-row v-if="characters.length === 0">
       <v-col cols="12" class="text-center">
         <div class="text-h4">
           Welcome to the ME5e Character Builder!
         </div>
-        <p>Click the button below to get started</p>
       </v-col>
     </v-row>
     <v-row v-else class="d-flex justify-center">
@@ -15,14 +15,18 @@
         </div>
       </v-col>
       <v-col v-for="characterId in characters" :key="characterId" sm="8" lg="6">
+        <div class="text-right mb-2">
+          <me-character-builder-import />
+        </div>
         <me-character-builder-index-card :character-id="characterId" />
       </v-col>
     </v-row>
     <v-row>
-      <v-col class="text-center">
+      <v-col class="text-center d-flex justify-space-around">
         <v-btn @click="createNewCharacter">
           Create a New Character
         </v-btn>
+        <me-character-builder-import v-if="characters.length === 0" />
       </v-col>
     </v-row>
   </v-container>

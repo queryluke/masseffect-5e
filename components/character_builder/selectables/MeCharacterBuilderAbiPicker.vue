@@ -1,67 +1,69 @@
 <template>
-  <v-row align-content="end">
-    <v-col cols="12">
-      <slot />
-    </v-col>
-    <v-col cols="12" sm="4">
-      <v-select
-        v-model="typeSelection"
-        :items="improvementOptions"
-        item-value="type"
-        label="Choose an option..."
-      />
-    </v-col>
-    <v-col v-if="featSelected" cols="12" sm="8">
-      <v-autocomplete
-        v-model="featureSelection"
-        :items="feats"
-        label="Choose a feat..."
-        item-text="name"
-        item-value="id"
-      />
-    </v-col>
-    <v-col v-if="abiSelected" cols="12" sm="8">
-      <v-autocomplete
-        v-model="featureSelection"
-        item-text="text"
-        item-value="value"
-        :items="abiArray"
-        label="Choose up to two abilities..."
-        :counter="2"
-        height="32px"
-        chips
-        deletable-chips
-        multiple
-      >
-        <template #selection="data">
-          <v-chip
-            small
-            v-bind="data.attrs"
-            :input-value="data.selected"
-            close
-            @click:close="remove(data.item)"
-          >
-            {{ data.item.text }} {{ abilityBonusTotal }}
-          </v-chip>
-        </template>
-        <template #item="data">
-          <v-list-item-icon v-if="isSelected(data.item.value)">
-            <v-icon color="primary">
-              mdi-checkbox-marked
-            </v-icon>
-          </v-list-item-icon>
-          <v-list-item-icon v-else>
-            <v-icon>mdi-checkbox-blank-outline</v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title>
-              {{ data.item.text }}
-            </v-list-item-title>
-          </v-list-item-content>
-        </template>
-      </v-autocomplete>
-    </v-col>
-  </v-row>
+  <div>
+    <v-row align-content="end">
+      <v-col cols="12">
+        <slot />
+      </v-col>
+      <v-col cols="12" sm="4">
+        <v-select
+          v-model="typeSelection"
+          :items="improvementOptions"
+          item-value="type"
+          label="Choose an option..."
+        />
+      </v-col>
+      <v-col v-if="featSelected" cols="12" sm="8">
+        <v-autocomplete
+          v-model="featureSelection"
+          :items="feats"
+          label="Choose a feat..."
+          item-text="name"
+          item-value="id"
+        />
+      </v-col>
+      <v-col v-if="abiSelected" cols="12" sm="8">
+        <v-autocomplete
+          v-model="featureSelection"
+          item-text="text"
+          item-value="value"
+          :items="abiArray"
+          label="Choose up to two abilities..."
+          :counter="2"
+          height="32px"
+          chips
+          deletable-chips
+          multiple
+        >
+          <template #selection="data">
+            <v-chip
+              small
+              v-bind="data.attrs"
+              :input-value="data.selected"
+              close
+              @click:close="remove(data.item)"
+            >
+              {{ data.item.text }} {{ abilityBonusTotal }}
+            </v-chip>
+          </template>
+          <template #item="data">
+            <v-list-item-icon v-if="isSelected(data.item.value)">
+              <v-icon color="primary">
+                mdi-checkbox-marked
+              </v-icon>
+            </v-list-item-icon>
+            <v-list-item-icon v-else>
+              <v-icon>mdi-checkbox-blank-outline</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title>
+                {{ data.item.text }}
+              </v-list-item-title>
+            </v-list-item-content>
+          </template>
+        </v-autocomplete>
+      </v-col>
+    </v-row>
+  </div>
 </template>
 
 <script>
@@ -113,7 +115,7 @@ export default {
         return this.selection.type
       },
       set (type) {
-        this.$store.dispatch('cb/UPDATE_SELECTIONS', { cid: this.cid, selection: { ...this.selection, type } })
+        this.$store.dispatch('cb/UPDATE_SELECTIONS', { cid: this.cid, selection: { type, value: [] } })
       }
     },
     featureSelection: {

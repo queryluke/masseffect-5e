@@ -5,6 +5,35 @@
  * species-batarian-shrewd-negotiator-profs-skill
  */
 
+/*
+  TODO: There are some major discrepancies with aspects, selectables, and pickers
+  the source ids sometimes use hyphens from the feat-id and
+  sometimes use underscores from the picker id
+
+  the ideal situation is that we only store selections that actually have choices
+  if there is a nested choices we need a recursive
+
+  and all potential selections are their own data model, sans a few outliers like profs
+
+  example
+  - cybernetic augmentation would have an option of 4 other species traits: muscular, ocular, cerebral, visceral
+  mechanics:
+    - type: picker
+      choices:
+        items:
+          - trait/cybernetic-augmentation-muscular // the reference to another trait as string or object
+          ...
+        count: 1
+
+  the reference is stored in the character.selections model
+  selections: [
+    'trait/cybernetic-augmentation-muscular'
+  ]
+
+  - should the abi selections go on the class model, tying the to a level? If so, how to easily remove/add based on level?
+  - how to test if a selection is needed?
+ */
+
 export const Selections = {
   computed: {
     selections () {
