@@ -3,7 +3,7 @@
     <me-character-sheet-card-title v-if="$vuetify.breakpoint.smAndDown">
       Settings
     </me-character-sheet-card-title>
-    <v-chip-group v-model="tab" active-class="primary--text">
+    <v-chip-group v-model="tab" active-class="primary--text" column>
       <v-chip
         v-for="(cTab, index) in tabs"
         :key="`feature-chip-tab-${index}`"
@@ -62,7 +62,7 @@
             />
           </v-col>
           <v-col cols="12" md="6">
-            <v-autocomplete
+            <v-select
               label="Damage Resistances"
               :items="damageTypes"
               multiple
@@ -74,7 +74,7 @@
             />
           </v-col>
           <v-col cols="12" md="6">
-            <v-autocomplete
+            <v-select
               label="Damage Immunities"
               :items="damageTypes"
               multiple
@@ -86,7 +86,7 @@
             />
           </v-col>
           <v-col cols="12" md="6">
-            <v-autocomplete
+            <v-select
               label="Condition Immunities"
               :items="conditions"
               item-text="name"
@@ -100,7 +100,7 @@
             />
           </v-col>
           <v-col cols="12" md="6">
-            <v-autocomplete
+            <v-select
               label="Damage Vulnerabilities"
               :items="damageTypes"
               multiple
@@ -216,6 +216,11 @@
         </v-row>
       </v-tab-item>
 
+      <!-- Ability scores -->
+      <v-tab-item>
+        TODO
+      </v-tab-item>
+
       <!-- skills -->
       <v-tab-item>
         <v-autocomplete
@@ -240,7 +245,12 @@
         />
       </v-tab-item>
 
-      <!-- misc -->
+      <!-- other profs -->
+      <v-tab-item>
+        TODO
+      </v-tab-item>
+
+      <!-- Speed and senses -->
       <v-tab-item>
         <v-text-field
           v-model="speedBonus"
@@ -273,6 +283,10 @@
           </v-row>
         </template>
       </v-tab-item>
+
+      <v-tab-item>
+        <me-character-sheet-homebrew />
+      </v-tab-item>
     </v-tabs-items>
   </div>
 </template>
@@ -285,7 +299,7 @@ export default {
   data () {
     return {
       tab: 0,
-      tabs: ['Defensive', 'Offensive', 'Skills', 'Misc']
+      tabs: ['Defensive', 'Offensive', 'Ability Scores', 'Skills', 'Other Profs', 'Speed & Senses', 'Custom']
     }
   },
   computed: {

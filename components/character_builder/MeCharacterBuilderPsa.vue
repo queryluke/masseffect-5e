@@ -43,7 +43,11 @@
                 Overall, selecting a species will apply any necessary modifiers to your character. But bespoke traits (Geth's Innate Shielding)
                 and multipart traits (Hanar's Tentacles, which has an attack, bonus action, action and limitation) are not accounted for.
               </p>
-              <p><strong>Fix by:</strong> Overriding stats or creating new attack, actions, etc. in the Settings.</p>
+              <p>
+                <strong>Workaround:</strong> Overriding stats or creating custom features in the Custom tab of the
+                Settings. For example, for a Hanar's Tentacle attack you can create a Custom Bonus Action for the grapple
+                and a Custom Action for the Secret Toxin
+              </p>
             </v-card-text>
           </v-card>
 
@@ -55,7 +59,7 @@
                 for keeping track of uses but nothing else. For example, it will not keep track of which metabiotics a Nemesis
                 Vanguard has selected. The only exception is Fighting Style selection.
               </p>
-              <p><strong>Fix by:</strong> Using the Notes or creating new custom features.</p>
+              <p><strong>Workaround:</strong> Using the Notes or creating custom features in the Custom tab of the Settings.</p>
             </v-card-text>
           </v-card>
 
@@ -66,7 +70,7 @@
                 Feats are the least developed feature. The few that are limited use have couters. Otherwise, you
                 will need to add any ability score improvements, proficiencies, and other features using the Settings.
               </p>
-              <p><strong>Fix by:</strong> Adding ability score bonues and proficiences in the Settings tab. Creating custom features, attacks, etc.</p>
+              <p><strong>Workaround:</strong> Adding ability score bonues and proficiences in the Settings tab. Creating custom features in the Custom tab of the Settings.</p>
             </v-card-text>
           </v-card>
 
@@ -77,7 +81,7 @@
                 Weapon attacks should be properly calculated. However, adding mods has no effect on the weapon's stats.
               </p>
               <p>
-                <strong>Fix by:</strong> Click on the <v-icon>mdi-cog</v-icon> icon for the weapon, and use the
+                <strong>Workaround:</strong> Click on the <v-icon>mdi-cog</v-icon> icon for the weapon, and use the
                 Override Stats tab to add any additional stats from the mods.
               </p>
             </v-card-text>
@@ -91,7 +95,7 @@
                 anything else that adds to your AC or defenses.
               </p>
               <p>
-                <strong>Fix by:</strong> Use the Defensive tab in Settings to add a bonus or completely override your AC.
+                <strong>Workaround:</strong> Use the Defensive tab in Settings to add a bonus or completely override your AC.
               </p>
             </v-card-text>
           </v-card>
@@ -104,7 +108,23 @@
                 sheet do not display damage (this is not yet in a machine-readable format).
               </p>
               <p>
-                <strong>Fix by:</strong> Clicking on the power for its full description.
+                <strong>Workaround:</strong> Clicking on the power for its full description.
+              </p>
+            </v-card-text>
+          </v-card>
+
+          <v-card outlined>
+            <v-card-title>Homebrew</v-card-title>
+            <v-card-text>
+              <p>
+                The Custom option in the Settings menu <em>only supports a few data types</em>: Class Features, Traits, Feats, and Actions
+                (including Bonus and Reactions). <strong>These are mostly text-based features with limited character sheet interaction.</strong> Thus,
+                if you create a custom feat that gives you a new proficiency or adds to an ability score, you'll need to
+                manually adjust/override those settings.
+              </p>
+              <p>
+                <strong>Workaround:</strong> For weapons, see Weapon Mods above, you can completely override a weapons stats (including it's name)
+                to create a homebrewed weapon. For Armor see above as well.
               </p>
             </v-card-text>
           </v-card>
@@ -123,7 +143,7 @@
                 <li>Inspiration</li>
               </ul>
               <p>
-                <strong>Fix by:</strong> Liberal use of the notes? ¯\_(ツ)_/¯
+                <strong>Workaround:</strong> Liberal use of the notes? ¯\_(ツ)_/¯
               </p>
             </v-card-text>
           </v-card>

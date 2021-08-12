@@ -30,9 +30,18 @@
         </template>
       </v-tab-item>
       <v-tab-item>
+        <p v-if="!hasActionBrews" class="mt-4">
+          You can add custom actions, bonus actions, and reactions in the Custom tab of the Settings.
+        </p>
+        <me-character-sheet-actions-brews type="action" title="Actions" />
+        <me-character-sheet-actions-brews type="bonus-action" title="Bonus Actions" />
+        <me-character-sheet-actions-brews type="reaction" title="Reactions" />
+      </v-tab-item>
+      <v-tab-item>
         <div class="text-subtitle-1 mt-3">
           Class Features
         </div>
+        <me-character-sheet-actions-brews type="class-feature" />
         <template v-for="(klass, index) of characterClasses">
           <me-character-sheet-class-features :key="`klass-features-for-${klass.id}`" :class-index="index" />
         </template>
@@ -41,6 +50,7 @@
         <div class="text-subtitle-1 mt-3">
           Traits
         </div>
+        <me-character-sheet-actions-brews type="trait" />
         <template v-for="trait of speciesTraits">
           <me-character-sheet-feature :key="`species-trait-${trait.id}`" :feature="trait" type="traits" />
         </template>
@@ -49,6 +59,7 @@
         <div class="text-subtitle-1 mt-3">
           Feats
         </div>
+        <me-character-sheet-actions-brews type="feat" />
         <template v-for="feat of csFeats">
           <me-character-sheet-feature :key="`selected-feat-${feat.id}`" :feature="feat" type="feats" />
         </template>
@@ -65,7 +76,7 @@ export default {
   data () {
     return {
       tab: 0,
-      tabs: ['Attacks', 'Class Features', 'Traits', 'Feats'],
+      tabs: ['Attacks', 'Actions', 'Class Features', 'Traits', 'Feats'],
       unarmedStrike: {
         name: 'Unarmed Strike',
         range: 5,
@@ -95,6 +106,12 @@ export default {
     },
     otherAttacks () {
       return this.selections.filter(i => i.type === 'attack')
+    },
+    brews () {
+      return this.character.brews || []
+    },
+    hasActionBrews () {
+      return this.brews.filter(i => ['action', 'bonus-action', 'reaction'].includes(i.type))
     }
   }
 }

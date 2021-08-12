@@ -1,5 +1,8 @@
 <template>
   <v-row>
+    <v-col cols="12">
+      <v-text-field :value="item.stats.name" label="Custom Name" @change="changeItemStat('name', $event)" />
+    </v-col>
     <v-col cols="6">
       <v-text-field :disabled="itemData.type === 'melee'" :value="item.stats.heat" label="Heat" @change="changeItemStat('heat', $event)" />
     </v-col>

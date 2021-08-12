@@ -177,6 +177,7 @@ export default {
           expertise: []
         },
         notes: '',
+        brews: [],
         builder: {
           currentStep: 1,
           showCharacterSheet: false

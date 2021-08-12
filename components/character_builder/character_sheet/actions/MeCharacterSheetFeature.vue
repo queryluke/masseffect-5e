@@ -44,7 +44,6 @@ export default {
   computed: {
     uses () {
       if (this.feature.mechanics) {
-        console.log(this.feature.mechanics)
         if (this.type === 'trait') {
           const useObj = this.feature.mechanics.find(i => i.has?.uses)
           if (useObj) {
