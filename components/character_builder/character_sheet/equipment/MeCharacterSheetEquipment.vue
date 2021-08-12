@@ -3,6 +3,44 @@
     <me-character-sheet-card-title v-if="$vuetify.breakpoint.smAndDown">
       Equipment
     </me-character-sheet-card-title>
+    <v-row class="my-2">
+      <v-col cols="12" md="4">
+        <v-text-field
+          v-model="credits"
+          label="Credits"
+          outlined
+          dense
+          hide-details
+        />
+      </v-col>
+      <v-col cols="12" md="4">
+        <v-text-field
+          v-model="medigel"
+          outlined
+          label="Medi-gel"
+          dense
+          hide-details
+          append-outer-icon="mdi-plus"
+          prepend-icon="mdi-minus"
+          @click:append-outer="medigel++"
+          @click:prepend="medigel--"
+        />
+      </v-col>
+      <v-col cols="12" md="4">
+        <v-text-field
+          v-model="omnigel"
+          label="Omni-gel"
+          outlined
+          dense
+          hide-details
+          append-outer-icon="mdi-plus"
+          prepend-icon="mdi-minus"
+          @click:append-outer="omnigel++"
+          @click:prepend="omnigel--"
+        />
+      </v-col>
+    </v-row>
+
     <v-chip-group v-model="tab" active-class="primary--text">
       <v-chip
         v-for="(cTab, index) in tabs"
@@ -44,6 +82,32 @@ export default {
       }
     }
   },
+  computed: {
+    credits: {
+      get () {
+        return this.character.credits
+      },
+      set (value) {
+        this.setMinZeroInt(value, 'credits')
+      }
+    },
+    medigel: {
+      get () {
+        return this.character.medigel
+      },
+      set (value) {
+        this.setMinZeroInt(value, 'medigel')
+      }
+    },
+    omnigel: {
+      get () {
+        return this.character.omnigel
+      },
+      set (value) {
+        this.setMinZeroInt(value, 'omnigel')
+      }
+    }
+  },
   methods: {
     createCustomArmor () {
       this.creatingArmor = true
@@ -63,6 +127,14 @@ export default {
       }
       this.addEquipment('armor', customArmor)
       this.creatingArmor = false
+    },
+    setMinZeroInt (input, attr) {
+      const number = Number.parseInt(input, 10)
+      if (Number.isNaN(number)) {
+        return
+      }
+      const value = Math.max(number, 0)
+      this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr, value })
     }
   }
 }

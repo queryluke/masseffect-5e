@@ -115,6 +115,8 @@ export default {
           backstory: ''
         },
         credits: 0,
+        omnigel: 0,
+        medigel: 0,
         equipment: [],
         powers: [],
         selections: [],
