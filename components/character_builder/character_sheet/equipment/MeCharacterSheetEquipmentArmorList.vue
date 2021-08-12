@@ -45,7 +45,7 @@
               <v-select v-model="customArmor.type" :items="armorTypes" label="Type" />
             </v-col>
             <v-col cols="12">
-              <v-textarea v-model="customArmor.notes" rows="1" auto-grow />
+              <v-textarea v-model="customArmor.notes" rows="1" auto-grow label="Notes / Description" />
             </v-col>
           </v-row>
         </v-card-text>
