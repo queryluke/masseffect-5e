@@ -152,13 +152,19 @@ export default {
           acBonus: 0,
           shields: 5,
           regen: 5,
-          speedBonus: 0,
+          speeds: {
+            walk: 0,
+            swim: 0,
+            fly: 0,
+            burrow: 0,
+            climb: 0
+          },
           senses: {
-            darkvision: false,
-            tremorsense: false,
-            blindsight: false,
-            infrared_vision: false,
-            truesight: false
+            darkvision: 0,
+            tremorsense: 0,
+            blindsight: 0,
+            infrared_vision: 0,
+            truesight: 0
           },
           attackMod: 0,
           attackMeleeMod: 0,

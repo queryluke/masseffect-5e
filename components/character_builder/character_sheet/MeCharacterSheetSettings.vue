@@ -261,35 +261,18 @@
 
       <!-- Speed and senses -->
       <v-tab-item>
-        <v-text-field
-          v-model="speedBonus"
-          hint="Speed Bonus"
-          clearable
-          persistent-hint
-          outlined
-          dense
-        />
-        <template v-for="(senseValue, senseKey) of character.settings.senses">
-          <v-row :key="`switch-${senseKey}`">
-            <v-col cols="6">
-              <v-switch
-                :input-value="senseValue > 0"
-                :label="$t(`senses.${senseKey}_title`)"
-                @change="toggleSense(senseKey, $event)"
-              />
-            </v-col>
-            <v-col cols="6">
-              <v-text-field
-                v-if="character.settings.senses[senseKey]"
-                :value="$store.getters['user/imperial'] ? character.settings.senses[senseKey] : ftToM(character.settings.senses[senseKey])"
-                :hint="`${$t(`senses.${senseKey}_title`)} Distance`"
-                persistent-hint
-                outlined
-                dense
-                @change="changeSense(senseKey, $event)"
-              />
-            </v-col>
-          </v-row>
+        <div class="text-subtitle-2 mb-3">
+          Speed Overrides
+        </div>
+        <template v-for="(labels, key) in $i18n.messages.en.speeds">
+          <me-character-sheet-settings-distance-slider :key="`speed-slider-${key}`" :label="labels.title" :attr="`speeds.${key}`" :max="60" :tick-size="5" />
+        </template>
+
+        <div class="text-subtitle-2 mb-3">
+          Sense Overrides
+        </div>
+        <template v-for="key in senses">
+          <me-character-sheet-settings-distance-slider :key="`sense-slider-${key}`" :label="$t(`senses.${key}_title`)" :attr="`senses.${key}`" :max="120" :tick-size="30" />
         </template>
       </v-tab-item>
 

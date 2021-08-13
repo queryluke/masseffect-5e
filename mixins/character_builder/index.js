@@ -204,6 +204,16 @@ export const CharacterBuilderHelpers = {
       }
       return items
     },
+    senses () {
+      const items = []
+      for (const key in this.$i18n.messages.en.senses) {
+        if (key.endsWith('_title')) {
+          continue
+        }
+        items.push(key)
+      }
+      return items
+    },
     dark () {
       return this.$store.getters['user/darkMode']
     },

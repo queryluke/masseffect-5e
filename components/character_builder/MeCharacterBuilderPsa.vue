@@ -37,6 +37,16 @@
           <p>The following outlines features that are still in development and potential workarounds.</p>
 
           <v-card outlined>
+            <v-card-title>Importing v1.2 Characters</v-card-title>
+            <v-card-text>
+              <p>
+                The underlying data models are too different and it would have taken a significant amount of hours to develop this feature.
+                Unfortunately, there is no workaround for this except for recreating your old character in the new builder.
+              </p>
+            </v-card-text>
+          </v-card>
+
+          <v-card outlined>
             <v-card-title>Bespoke Species Traits</v-card-title>
             <v-card-text>
               <p>

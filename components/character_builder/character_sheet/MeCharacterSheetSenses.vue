@@ -20,7 +20,7 @@
     <v-col cols="12">
       <v-row no-gutters class="px-5">
         <v-col v-for="(sense, index) in csSenses" :key="`sense-${index}`" cols="6" class="text-caption">
-          <me-html :content="senseText(sense[0], sense[1])" inline />
+          {{ $t(`senses.${sense[0]}_title`) }} <me-distance :length="sense[1]" abbr />
         </v-col>
       </v-row>
     </v-col>
@@ -46,16 +46,11 @@ export default {
       const settingSenses = { ...this.character.settings.senses }
       const selections = this.selections.filter(i => i.type === 'sense')
       for (const selection of selections) {
-        if (!settingSenses[selection.has.id] || selection.has.distance > settingSenses[selection.has.id]) {
+        if (!settingSenses[selection.has.id] || settingSenses[selection.has.id] === 0) {
           settingSenses[selection.has.id] = selection.has.distance
         }
       }
       return Object.entries(settingSenses).filter(i => i[1])
-    }
-  },
-  methods: {
-    senseText (sense, distance) {
-      return `${this.$t(`senses.${sense}_title`)} <me-distance length="${distance}" abbr />`
     }
   }
 }
