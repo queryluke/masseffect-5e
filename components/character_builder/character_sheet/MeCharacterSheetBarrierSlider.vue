@@ -21,17 +21,12 @@
       </template>
     </v-slider>
     <div>
-      <v-btn x-small :color="csBgColor('barrier')" @click="csBarrierTicksUsed = 0">
-        Barrier <span class="text-lowercase pl-1">({{ csBarrierDieType }})</span>
-      </v-btn>
-      <!--
-      <v-btn x-small :color="csBgColor('barrier')" :disabled="remainingUses === 0" @click="csBarrierUsed++">
+      <v-btn x-small :color="csBgColor('barrier')" :disabled="remainingUses === 0" @click="useBarrier">
         Barrier <span class="text-lowercase pl-1">({{ csBarrierDieType }})</span>
       </v-btn>
       <div class="text-caption text-center">
         <small>Uses: {{ remainingUses }}</small>
       </div>
-      -->
     </div>
   </div>
 </template>
@@ -49,6 +44,15 @@ export default {
       set (value) {
         this.csBarrierTicksUsed = this.csMaxBarrierTicks - value
       }
+    },
+    remainingUses () {
+      return this.character.currentStats.featuresTimesUsed.barrier ? this.csMaxBarrierUses - this.character.currentStats.featuresTimesUsed.barrier : this.csMaxBarrierUses
+    }
+  },
+  methods: {
+    useBarrier () {
+      const value = (this.character.currentStats.featuresTimesUsed.barrier || 0) + 1
+      this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'currentStats.featuresTimesUsed.barrier', value })
     }
   }
 }

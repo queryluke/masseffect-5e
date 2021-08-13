@@ -42,9 +42,16 @@ export default {
     }
   },
   computed: {
+    isBarrier () {
+      return this.type === 'class-features' && ['barrier-adept', 'barrier-sentinel', 'barrier-vanguard'].includes(this.feature.id)
+    },
     uses () {
+      // TODO: the singular 'class-feature' vs 'class-features' is used in the custom adder, should be fixed
       if (this.feature.mechanics) {
-        if (this.type === 'trait') {
+        if (this.isBarrier) {
+          return this.csMaxBarrierUses
+        }
+        if (this.type === 'traits') {
           const useObj = this.feature.mechanics.find(i => i.has?.uses)
           if (useObj) {
             return useObj.has.uses
@@ -74,11 +81,13 @@ export default {
     */
     timesUsed: {
       get () {
-        return this.character.currentStats.featuresTimesUsed[this.feature.id] || 0
+        const id = this.isBarrier ? 'barrier' : this.feature.id
+        return this.character.currentStats.featuresTimesUsed[id] || 0
       },
       set (value) {
         const setValue = value > this.uses ? this.uses : value < 0 ? 0 : value
-        return this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `currentStats.featuresTimesUsed.${this.feature.id}`, value: setValue })
+        const id = this.isBarrier ? 'barrier' : this.feature.id
+        return this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `currentStats.featuresTimesUsed.${id}`, value: setValue })
       }
     }
   }
