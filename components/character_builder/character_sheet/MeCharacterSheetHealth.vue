@@ -51,7 +51,7 @@
             append-outer-icon="mdi-plus"
             prepend-icon="mdi-minus"
             @click:append-outer="modder++"
-            @click:prepend="reduceModder"
+            @click:prepend="modder--"
           />
         </v-col>
       </v-row>
@@ -106,21 +106,30 @@ export default {
     }
   },
   methods: {
-    reduceModder () {
-      this.modder = Math.max(0, Number.parseInt(this.modder, 10) - 1)
+    getModder () {
+      let value = Number.parseInt(this.modder, 10)
+      if (Number.isNaN(value)) {
+        this.modder = 0
+        return 0
+      }
+      value = Math.max(value, 0)
+      this.modder = value
+      return value
     },
     execTempHp () {
-      this.csTempHp = Math.max(this.csTempHp, this.modder, this.csCurrentTempHp + Number.parseInt(this.modder, 10))
-      this.csCurrentTempHp = this.csCurrentTempHp + Number.parseInt(this.modder, 10)
+      const modder = this.getModder()
+      this.csTempHp = Math.max(this.csTempHp, modder, this.csCurrentTempHp + modder)
+      this.csCurrentTempHp = this.csCurrentTempHp + modder
     },
     execRegen () {
       this.csCurrentShields = Math.min(this.csMaxShields, this.character.settings.regen + this.csCurrentShields)
     },
     execHeal () {
-      this.csHitPointsLost = Math.max(0, this.csHitPointsLost - Number.parseInt(this.modder, 10))
+      const modder = this.getModder()
+      this.csHitPointsLost -= Math.min(modder, this.csHitPointsLost)
     },
     execDamage () {
-      let dmgLeft = Number.parseInt(this.modder, 10)
+      let dmgLeft = this.getModder()
       if (this.csTempHp > 0) {
         const potentialTempHpDmg = Math.min(this.csCurrentTempHp, dmgLeft)
         this.csCurrentTempHp = Math.max(0, this.csCurrentTempHp - potentialTempHpDmg)
