@@ -8,6 +8,7 @@ export default ({ app, store }) => {
       'user.darkMode',
       'user.imperial',
       'cb.characters'
+      // 'migrator.migrated'
     ]
   })(store)
 }

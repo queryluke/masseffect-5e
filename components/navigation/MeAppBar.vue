@@ -137,6 +137,10 @@ export default {
     tabColor () {
       return this.$store.getters['tabbedPage/mobileTabColor']
     }
+  },
+  created () {
+    this.$store.dispatch('migrator/MIGRATE', 'characters')
+    this.$store.dispatch('migrator/MIGRATE', 'bookmarks')
   }
 }
 </script>

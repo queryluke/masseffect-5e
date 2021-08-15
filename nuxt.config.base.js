@@ -41,7 +41,6 @@ export default {
   */
   plugins: [
     '@/plugins/persistentState.client.js',
-    '@/plugins/persistentStatePrevious.client.js',
     '@/plugins/filters/index.js',
     '@/plugins/vue2-filters',
     '@/plugins/globals'
