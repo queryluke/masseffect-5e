@@ -54,7 +54,7 @@ export default {
       return `${this.parentSource}-${this.aspect.id}`
     },
     mechanicsWithOptions () {
-      if (!this.aspect.mechanics) {
+      if (!this.aspect.mechanics || !Array.isArray(this.aspect.mechanics)) {
         return []
       }
       return this.aspect.mechanics.filter(i => i.choices)

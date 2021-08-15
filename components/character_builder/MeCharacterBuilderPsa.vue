@@ -69,7 +69,11 @@
                 for keeping track of uses but nothing else. For example, it will not keep track of which metabiotics a Nemesis
                 Vanguard has selected. The only exception is Fighting Style selection.
               </p>
-              <p><strong>Workaround:</strong> Using the Notes or creating custom features in the Custom tab of the Settings.</p>
+              <p>
+                <strong>Workaround:</strong> Using the Notes or creating custom features in the Custom tab of the Settings.
+                For example, if you're a 20th-level adept you could make a custom class feature named "Signature Biotics: Lance"
+                with 1 use on a short rest recharge, with a description "Cast at 2nd level".
+              </p>
             </v-card-text>
           </v-card>
 

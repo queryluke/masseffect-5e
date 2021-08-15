@@ -7,7 +7,6 @@ export default ({ app, store }) => {
       'user.bookmarks',
       'user.darkMode',
       'user.imperial',
-      'cb.character',
       'cb.characters'
     ]
   })(store)

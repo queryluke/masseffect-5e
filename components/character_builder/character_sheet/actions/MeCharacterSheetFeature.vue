@@ -51,6 +51,9 @@ export default {
         if (this.isBarrier) {
           return this.csMaxBarrierUses
         }
+        if (typeof this.feature.mechanics.uses === 'object') {
+          return this.usesMethods[this.feature.mechanics.uses.method](...this.feature.mechanics.uses.params)
+        }
         if (this.type === 'traits') {
           const useObj = this.feature.mechanics.find(i => i.has?.uses)
           if (useObj) {
@@ -88,6 +91,18 @@ export default {
         const setValue = value > this.uses ? this.uses : value < 0 ? 0 : value
         const id = this.isBarrier ? 'barrier' : this.feature.id
         return this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `currentStats.featuresTimesUsed.${id}`, value: setValue })
+      }
+    },
+    usesMethods () {
+      return {
+        halfKlassLevel: (klass, minimum = 1) => {
+          const klassStats = this.characterClasses.find(i => i.id === klass)
+          if (!klass) {
+            return minimum
+          } else {
+            return Math.max(Math.floor(klassStats.levels / 2), minimum)
+          }
+        }
       }
     }
   }

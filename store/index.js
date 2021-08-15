@@ -8,6 +8,10 @@ export const state = () => ({
   jumpNav: null,
   pastVersions: [
     {
+      name: 'v1.3.0',
+      link: 'http://versions.n7.world/v130'
+    },
+    {
       name: 'v1.2.0',
       link: 'http://versions.n7.world/v120'
     },

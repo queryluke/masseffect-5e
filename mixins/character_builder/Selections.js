@@ -67,6 +67,9 @@ export const Selections = {
       // TODO: stop using this...if there are choices, look in selections for the choice, then look back
       // at the source data for the mechanics
       const collection = []
+      if (!Array.isArray(mechanics)) {
+        return collection
+      }
       for (const mechanic of mechanics) {
         // mechanics with choices use pickers, and it is the pickers job to add the selection
         if (mechanic.choices) {
