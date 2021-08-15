@@ -16,6 +16,12 @@
         <me-character-builder-class-subclass-picker :class-index="classIndex" />
       </me-character-builder-aspect>
 
+      <!-- fighting style -->
+      <me-character-builder-aspect v-else-if="feature.id.includes('fighting-style')" :key="feature.id" :aspect="feature" :has-selections="!character.fightingStyles || !character.fightingStyles.find(i => i.id === feature.id)">
+        <me-character-builder-fighting-style-picker :id="feature.id" />
+        <me-html :content="feature.html" />
+      </me-character-builder-aspect>
+
       <!-- Ability score increase -->
       <me-character-builder-aspect v-else-if="feature.id === 'abi'" :key="`${feature.id}-${feature.level}`" :aspect="feature" :subtitle="nthLevelText(feature.level)" :has-selections="abiHasSelections(feature.level)">
         <me-character-builder-abi-picker :source="`klass-${klass.id}-${feature.level}-abi`">

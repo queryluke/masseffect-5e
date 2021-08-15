@@ -50,6 +50,8 @@ export default {
         experiencePoints: 0,
         species: null,
         classes: [],
+        // TODO: this should be in the selections
+        fightingStyles: [],
         abilityScores: {
           genMethod: {
             text: 'Standard Array',

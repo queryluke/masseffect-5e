@@ -97,10 +97,31 @@ export default {
       return {
         halfKlassLevel: (klass, minimum = 1) => {
           const klassStats = this.characterClasses.find(i => i.id === klass)
-          if (!klass) {
+          if (!klassStats) {
             return minimum
           } else {
             return Math.max(Math.floor(klassStats.levels / 2), minimum)
+          }
+        },
+        equalToAbilityMod: (ability, minimum = 1) => {
+          const mod = this.absMod(ability) || 0
+          return Math.max(mod, minimum)
+        },
+        klassProgressionColumn: (klass, column) => {
+          const klassStats = this.characterClasses.find(i => i.id === klass)
+          if (!klassStats) {
+            return 0
+          } else {
+            return this.getProgressionValue(klass, column, klassStats.levels)
+          }
+        },
+        byLevel: (klass, levels) => {
+          const klassStats = this.characterClasses.find(i => i.id === klass)
+          if (!klassStats) {
+            return 0
+          } else {
+            const availableLevels = levels.filter(i => i.level <= klassStats.levels)
+            return availableLevels[availableLevels.length - 1].uses
           }
         }
       }

@@ -28,6 +28,16 @@
         <template v-for="(atkPower, index) in csAttackPowers">
           <me-character-sheet-actions-power :key="`power-attack-${atkPower.power.id}-${index}`" :item="atkPower" />
         </template>
+        <div v-if="csFightingStyles.length > 0">
+          <div class="text-overline mt-3">
+            Fighting Styles
+          </div>
+          <template v-for="fs in character.fightingStyles || []">
+            <div :key="fs.id">
+              <strong>{{ fs.name }}</strong> <me-html :content="fs.description" inline />
+            </div>
+          </template>
+        </div>
       </v-tab-item>
       <v-tab-item>
         <p v-if="!hasActionBrews" class="mt-4">
@@ -112,6 +122,9 @@ export default {
     },
     hasActionBrews () {
       return this.brews.filter(i => ['action', 'bonus-action', 'reaction'].includes(i.type))
+    },
+    csFightingStyles () {
+      return this.character.fightingStyles || []
     }
   }
 }
