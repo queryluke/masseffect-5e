@@ -61,6 +61,9 @@
         </v-card>
       </v-col>
       <v-col cols="3">
+        <div class="mb-5">
+          <me-character-sheet-short-long-rest />
+        </div>
         <v-card outlined>
           <v-card-text>
             <me-character-sheet-proficiencies />

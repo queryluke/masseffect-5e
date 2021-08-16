@@ -163,7 +163,7 @@ export default {
       if (!this.brew.type || !this.brew.name) {
         return
       }
-      const id = this.brew.id ? this.brew.id : `${this.brew.name.toLowerCase().replaceAll(/\W\s/g, '')}-${new Date().toISOString()}`
+      const id = this.brew.id ? this.brew.id : `${this.brew.name.toLowerCase().replaceAll(/\W\s/g, '')}-${new Date().getTime()}`
       const description = this.brew.description ? `<p>${this.brew.description.split('\n').join('</p><p>')}</p>` : ''
       const brews = [...this.brews]
       const index = brews.findIndex(i => i.id === id)

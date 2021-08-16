@@ -91,7 +91,7 @@ export default {
         type: this.customArmor.type,
         notes: this.customArmor.notes,
         custom: true,
-        id: this.customArmor.name.replaceAll(/\W/g, '-') + new Date().toISOString()
+        id: this.customArmor.name.replaceAll(/\W/g, '-') + new Date().getTime()
       }
       this.addEquipment('armor', customArmor)
       this.creatingArmor = false

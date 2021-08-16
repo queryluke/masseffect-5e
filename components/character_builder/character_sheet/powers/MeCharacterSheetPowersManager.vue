@@ -94,7 +94,7 @@ export default {
         return this.character.powers
       }
       const list = this.availablePowers.concat(this.character.powers)
-      return list.sort((a, b) => a.level === b.level ? a.name - b.name : a.level - b.level)
+      return list.sort((a, b) => a.level === b.level ? a.id > b.id ? 1 : -1 : a.level - b.level)
     }
   },
   watch: {

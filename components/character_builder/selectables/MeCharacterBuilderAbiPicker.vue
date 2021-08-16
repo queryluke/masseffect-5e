@@ -115,7 +115,7 @@ export default {
         return this.selection.type
       },
       set (type) {
-        this.$store.dispatch('cb/UPDATE_SELECTIONS', { cid: this.cid, selection: { type, value: [] } })
+        this.$store.dispatch('cb/UPDATE_SELECTIONS', { cid: this.cid, selection: { ...this.selection, type, value: [] } })
       }
     },
     featureSelection: {

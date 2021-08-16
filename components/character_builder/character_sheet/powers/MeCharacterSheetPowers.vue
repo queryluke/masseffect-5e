@@ -90,7 +90,7 @@
     </v-row>
 
     <!-- manage dialog -->
-    <v-dialog v-model="managerDialog" :fullscreen="$vuetify.breakpoint.xsOnly" max-width="500" scrollable>
+    <v-dialog v-model="managerDialog" fullscreen>
       <v-card>
         <v-toolbar flat>
           <v-toolbar-title>
@@ -106,7 +106,9 @@
           </v-toolbar-items>
         </v-toolbar>
         <div class="mt-5">
-          <me-character-sheet-powers-manager />
+          <v-container class="max-width: 1200px">
+            <me-character-sheet-powers-manager />
+          </v-container>
         </div>
       </v-card>
     </v-dialog>
