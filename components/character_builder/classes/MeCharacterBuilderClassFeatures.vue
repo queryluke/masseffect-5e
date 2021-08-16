@@ -17,7 +17,13 @@
       </me-character-builder-aspect>
 
       <!-- fighting style -->
-      <me-character-builder-aspect v-else-if="feature.id.includes('fighting-style')" :key="feature.id" :aspect="feature" :has-selections="!character.fightingStyles || !character.fightingStyles.find(i => i.id === feature.id)">
+      <me-character-builder-aspect
+        v-else-if="feature.id.includes('fighting-style')"
+        :key="feature.id"
+        :aspect="feature"
+        :has-selections="!character.fightingStyles || !character.fightingStyles.find(i => i.id === feature.id)"
+        :subtitle="nthLevelText(feature.level)"
+      >
         <me-character-builder-fighting-style-picker :id="feature.id" />
         <me-html :content="feature.html" />
       </me-character-builder-aspect>

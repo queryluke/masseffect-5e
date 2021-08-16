@@ -23,6 +23,16 @@ export const Klass = {
             this.$store.dispatch('cb/DELETE_SELECTIONS', { cid: this.cid, id: feature.source })
           }
         }
+        // remove fighting styles
+        // FIXME
+        if (this.klass.id === 'sentinel' && this.klass.levels < 2) {
+          const oldFs = [...this.character.fightingStyles]
+          const sentIndex = oldFs.findIndex(i => i.id === 'fighting-style-sentinel')
+          if (sentIndex > -1) {
+            oldFs.splice(sentIndex, 1)
+            this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'fightingStyles', value: oldFs })
+          }
+        }
       } else {
         // add all features from old to new level
         let newSelections = []
@@ -50,6 +60,15 @@ export const Klass = {
         return this.klass.subclass
       },
       set (value) {
+        // FIXME: fold this into the other selection workflows
+        if (this.subklass === 'gladiator') {
+          const oldFs = [...this.character.fightingStyles]
+          const gladIndex = oldFs.findIndex(i => i.id === 'additional-fighting-style')
+          if (gladIndex > -1) {
+            oldFs.splice(gladIndex, 1)
+            this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'fightingStyles', value: oldFs })
+          }
+        }
         const subklassFeaturesToDelete = this.selections.filter((i) => {
           if (!i.source.startsWith(`klass-${this.klass.id}`)) {
             return false
