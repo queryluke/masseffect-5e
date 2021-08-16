@@ -13,11 +13,11 @@
         <div class="text-h5">
           My Characters
         </div>
-      </v-col>
-      <v-col v-for="characterId in characters" :key="characterId" sm="8" lg="6">
         <div class="text-right mb-2">
           <me-character-builder-import />
         </div>
+      </v-col>
+      <v-col v-for="characterId in characters" :key="characterId" sm="8" lg="6">
         <me-character-builder-index-card :character-id="characterId" />
       </v-col>
     </v-row>

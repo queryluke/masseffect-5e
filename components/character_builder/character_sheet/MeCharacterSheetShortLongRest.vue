@@ -184,7 +184,7 @@ export default {
       if (this.nemesisLevel) {
         maxSlotRecovery += Math.floor(this.nemesisLevel / 3)
       }
-      return maxSlotRecovery
+      return Math.max(1, maxSlotRecovery)
     },
     bioticRecoveryTotal () {
       return this.bioticRecovery.reduce((a, c, i) => a + (c * (i + 1)), 0)
