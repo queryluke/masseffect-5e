@@ -20,6 +20,7 @@
     </v-slide-y-transition>
     <!-- END: APP BAR -->
 
+    <me-version-snackbar />
     <!-- START: NAV DRAWER -->
     <me-navigation />
     <!-- END: NAV DRAWER -->

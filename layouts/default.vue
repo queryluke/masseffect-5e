@@ -3,7 +3,7 @@
     <!-- START: APP BAR -->
     <me-app-bar />
     <!-- END: APP BAR -->
-
+    <me-version-snackbar />
     <!-- START: NAV DRAWER -->
     <me-navigation />
     <!-- END: NAV DRAWER -->
@@ -17,5 +17,6 @@
 </template>
 
 <script>
-export default {}
+export default {
+}
 </script>

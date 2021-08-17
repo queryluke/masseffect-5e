@@ -4,6 +4,7 @@
     <me-app-bar clipped-right has-jump-nav />
     <!-- END: APP BAR -->
 
+    <me-version-snackbar />
     <!-- START: NAV DRAWER -->
     <me-jump-nav />
     <!-- END: NAV DRAWER -->
