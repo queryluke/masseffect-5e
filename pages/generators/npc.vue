@@ -27,6 +27,7 @@
               menu-props="bottom"
               hint="Challenge Rating"
               persistent-hint
+              clearable
             />
           </v-col>
           <v-col cols="12" sm="4">
@@ -41,6 +42,7 @@
               menu-props="bottom"
               hint="Class"
               persistent-hint
+              clearable
             />
           </v-col>
           <v-col cols="12" sm="4">
@@ -55,6 +57,7 @@
               menu-props="bottom"
               hint="Species"
               persistent-hint
+              clearable
             />
           </v-col>
         </v-row>

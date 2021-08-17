@@ -86,13 +86,12 @@ export const Weapons = {
       return weapon
     },
     setWeaponActions () {
-      const options = this.attackOptions.filter(i => this.isDamageAddable({ type: 'weapon', damage: i.damage, uses: 5 }))
+      let options = this.attackOptions.filter(i => this.isDamageAddable({ type: 'weapon', damage: i.damage, uses: 5 }))
       if (options.length === 0) {
+        options = [...this.attackOptions].slice(-5)
+        /*
         if (this.options.traits && ['hanar', 'vorcha'].includes(this.options.species.id)) {
           return
-        }
-        if (this.npc.abilityScores.str < 10) {
-          this.npc.abilityScores.str = 10
         }
         this.npc.entries.actions['unarmed-strike'] = {
           name: 'Unarmed Strike',
@@ -111,7 +110,7 @@ export const Weapons = {
           target: 'one'
         }
         this.addDamage({ type: 'weapon', damage: 1, uses: 5 })
-        return
+       */
       }
       const minDmgOptions = options.filter(i => i.damage >= this.minDmg)
       const finalOptions = minDmgOptions.length === 0 ? options.slice(0, 20) : minDmgOptions

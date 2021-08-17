@@ -45,8 +45,6 @@
 
     <!-- Settings -->
     <template #append>
-      <v-divider />
-      <me-user-settings v-if="$vuetify.breakpoint.mdAndUp" />
       <v-toolbar dense>
         <v-menu offset-y top>
           <template #activator="{ on, attrs }">
@@ -64,7 +62,7 @@
           <me-version-menu />
         </v-menu>
         <v-spacer />
-        <v-toolbar-items v-if="$vuetify.breakpoint.mdAndDown">
+        <v-toolbar-items>
           <v-btn small text @click="settingsDialog = !settingsDialog">
             <v-icon small>
               mdi-cog
@@ -75,7 +73,7 @@
     </template>
 
     <!-- Settings Dialog -->
-    <v-dialog v-if="$vuetify.breakpoint.smAndDown" v-model="settingsDialog">
+    <v-dialog v-model="settingsDialog" max-width="500">
       <v-card>
         <v-card-text>
           <me-user-settings />
