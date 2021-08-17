@@ -10,6 +10,7 @@
     "start": "nuxt start",
     "generate": "nuxt generate -c nuxt.config.prod",
     "qa": "nuxt generate -c nuxt.config.qa",
+    "version": "nuxt generate -c nuxt.config.version",
     "local": "nuxt -c nuxt.config.local-data",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup --verbose",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
