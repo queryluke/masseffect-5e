@@ -4,6 +4,7 @@
     <me-app-bar tabbed />
     <!-- END: APP BAR -->
 
+    <me-version-snackbar />
     <!-- START: NAV DRAWER -->
     <me-navigation />
     <!-- END: NAV DRAWER -->

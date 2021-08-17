@@ -6,6 +6,7 @@ export const state = () => ({
   pageMetaDescription: null,
   drawer: null,
   jumpNav: null,
+  versionSnackbar: true,
   pastVersions: [
     {
       name: 'v1.3.0',
@@ -51,7 +52,8 @@ export const getters = {
   pageTitle: state => state.pageTitle,
   metaDescription: state => state.pageMetaDescription,
   metaTitle: state => state.metaSubtitle ? `${state.pageTitle} - ${state.metaSubtitle}` : state.pageTitle,
-  pastVersions: state => state.pastVersions
+  pastVersions: state => state.pastVersions,
+  versionSnackbar: state => state.versionSnackbar
 }
 
 export const mutations = {
@@ -79,6 +81,9 @@ export const mutations = {
   },
   setCurrentRules (state, value) {
     state.rules = value
+  },
+  closeVersionSnackbar (state) {
+    state.versionSnackbar = false
   }
 }
 
