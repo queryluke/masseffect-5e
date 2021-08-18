@@ -50,7 +50,7 @@
           </v-col>
         </v-row>
         <v-row justify="space-around" class="mt-5">
-          <v-col cols="12" md="8" lg="6" xl="4">
+          <v-col cols="12" md="8" lg="6">
             <v-alert type="info" prominent>
               <v-row align="center">
                 <v-col class="grow">
