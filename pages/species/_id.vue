@@ -21,6 +21,7 @@
           </v-tab-item>
           <v-tab-item class="pa-3">
             <me-species-traits-list :item="item" />
+            <me-source-reference v-if="rorReference[item.id]" :pages="rorReference[item.id]" source="races" />
           </v-tab-item>
           <v-tab-item class="pa-3">
             <div v-for="variant in variants" :key="variant.id" class="mb-4">
@@ -66,6 +67,18 @@ export default {
   layout: 'tabbed',
   async asyncData ({ store }) {
     await store.dispatch('FETCH_LOTS', ['species', 'traits', 'species-variants'])
+  },
+  data () {
+    return {
+      rorReference: {
+        asari: '2-3',
+        geth: '3-4',
+        krogan: '5-6',
+        quarian: '7-8',
+        salarian: '9-10',
+        turian: '11-12'
+      }
+    }
   },
   head () {
     return {

@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container style="max-width: 1200px">
     <v-row v-if="manualIntroduction && $vuetify.breakpoint.mdAndUp" justify="center">
       <v-col cols="12" sm="10" md="8" lg="6" class="text-center">
         <v-img
