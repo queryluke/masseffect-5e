@@ -15,7 +15,7 @@ export const Hp = {
       if (this.speciesId === 'krogan') {
         max += (this.level)
       }
-      return max
+      return Math.max(this.level, max)
     },
     csCurrentHp () {
       return Math.max(this.csMaxHp - this.csHitPointsLost, 0)

@@ -12,6 +12,7 @@
       v-model="restBar"
       elevation="24"
       max-width="500"
+      :fullscreen="$vuetify.breakpoint.xsOnly"
     >
       <v-card :loading="working">
         <v-card-title class="text-h5">
@@ -228,14 +229,14 @@ export default {
       const featsToProcess = this.selections
         .filter(i => i.type === 'feat')
         .map(i => this.$store.getters.getItem('feats', i.value))
-        .filter(i => i.mechanics?.uses && i.mechanics?.recharge === type)
+        .filter(i => i.mechanics?.uses && (type === 'short' ? i.mechanics?.recharge === 'short' : true))
         .map(i => i.id)
       toProcess = toProcess.concat(featsToProcess)
       /*
       CUSTOM
        */
       const brewsToProcess = (this.character.brews || [])
-        .filter(i => i.mechanics?.uses && i.mechanics?.recharge === type)
+        .filter(i => i.mechanics?.uses && (type === 'short' ? i.mechanics?.recharge === 'short' : true))
         .map(i => i.id)
       toProcess = toProcess.concat(brewsToProcess)
       /*
@@ -247,7 +248,7 @@ export default {
             (!i.subclass || (klass.subklass ? i.subclass === klass.subklass : false)) &&
             i.level <= klass.levels &&
             i.mechanics?.uses &&
-            i.mechanics?.recharge === type
+            (type === 'short' ? i.mechanics?.recharge === 'short' : true)
         })
       })
         .reduce((a, c) => a.concat(c), [])
@@ -259,7 +260,7 @@ export default {
       const speciesTraitsToProcess = this.speciesTraits.map((i) => {
         const group = []
         for (const mechanic of i.mechanics) {
-          if (mechanic.has?.uses && mechanic.has?.recharge === type) {
+          if (mechanic.has?.uses && (type === 'short' ? mechanic.has?.recharge === 'short' : true)) {
             group.push(mechanic.has.id)
           }
         }
@@ -269,7 +270,7 @@ export default {
       /*
       POWERS
        */
-      const powersToProcess = this.csAllPowers.filter(i => i.power.uses && i.power.recharge === type)
+      const powersToProcess = this.csAllPowers.filter(i => i.power.uses && (type === 'short' ? i.power.recharge === 'short' : true))
         .map(i => i.power.id)
       toProcess = toProcess.concat(powersToProcess)
       if (type === 'long') {

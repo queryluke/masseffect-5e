@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container style="max-width: 1200px">
     <me-character-builder-psa />
     <v-row v-if="characters.length === 0">
       <v-col cols="12" class="text-center">

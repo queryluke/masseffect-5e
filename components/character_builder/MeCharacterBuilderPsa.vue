@@ -13,7 +13,7 @@
         </v-col>
       </v-row>
     </v-alert>
-    <v-dialog v-model="showPsa" :fullscreen="$vuetify.breakpoint.xsOnly">
+    <v-dialog v-model="showPsa" :fullscreen="$vuetify.breakpoint.xsOnly" max-width="700">
       <v-card>
         <v-toolbar flat color="info">
           <v-toolbar-title>
