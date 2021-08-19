@@ -22,7 +22,7 @@
         />
       </v-col>
       <v-col v-if="abiSelected" cols="12" sm="8">
-        <v-autocomplete
+        <v-select
           v-model="featureSelection"
           item-text="text"
           item-value="value"
@@ -60,7 +60,7 @@
               </v-list-item-title>
             </v-list-item-content>
           </template>
-        </v-autocomplete>
+        </v-select>
       </v-col>
     </v-row>
   </div>

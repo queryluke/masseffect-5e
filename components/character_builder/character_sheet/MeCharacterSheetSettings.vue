@@ -229,7 +229,7 @@
 
       <!-- skills -->
       <v-tab-item>
-        <v-autocomplete
+        <v-select
           v-model="customSkills"
           item-text="name"
           item-value="id"
@@ -239,7 +239,7 @@
           deletable-chips
           multiple
         />
-        <v-autocomplete
+        <v-select
           v-model="customExpertise"
           item-text="name"
           item-value="id"

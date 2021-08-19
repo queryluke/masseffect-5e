@@ -33,7 +33,7 @@
       </v-col>
     </v-row>
     <div v-if="$vuetify.breakpoint.smAndDown">
-      <slot name="mHear" />
+      <slot name="mHeat" />
     </div>
   </v-card>
 </template>

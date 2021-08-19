@@ -2,12 +2,12 @@
   <div>
     <v-alert type="info" prominent>
       <v-row align="center">
-        <v-col class="grow">
+        <v-col cols="12" sm="auto" class="grow" :class="{'text-caption': $vuetify.breakpoint.xsOnly}">
           The Character Builder and Sheet are still in BETA development. Please click on
           the LEARN MORE button to the right to review what features are working and what have not yet been developed.
         </v-col>
-        <v-col class="shrink">
-          <v-btn @click="showPsa = true">
+        <v-col cols="12" sm="auto" class="shrink">
+          <v-btn :small="$vuetify.breakpoint.xsOnly" @click="showPsa = true">
             Learn More
           </v-btn>
         </v-col>

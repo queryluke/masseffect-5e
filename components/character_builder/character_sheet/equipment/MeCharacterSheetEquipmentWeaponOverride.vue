@@ -35,7 +35,7 @@
       <v-text-field :value="item.bonusHit" label="+ Hit" @change="changeRootStat('bonusHit', $event || 0)" />
     </v-col>
     <v-col cols="12">
-      <v-autocomplete
+      <v-select
         :items="weaponProperties"
         :value="item.stats.properties"
         item-text="name"

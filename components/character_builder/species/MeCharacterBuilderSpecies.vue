@@ -3,7 +3,7 @@
     <div class="text-subtitle text-center mb-3">
       Choose a Species
     </div>
-    <v-autocomplete
+    <v-select
       v-model="speciesId"
       item-text="name"
       item-value="id"
@@ -19,7 +19,7 @@
           </v-list-item-title>
         </v-list-item-content>
       </template>
-    </v-autocomplete>
+    </v-select>
     <v-container v-if="speciesId">
       <v-row>
         <v-col>
