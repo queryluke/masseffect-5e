@@ -38,8 +38,11 @@ export const Weapons = {
         // each possible off-hand
         for (const off of dualOpts) {
           // Only allow melee/weapon combos if ranged has hip fire
-          if ((main.type === 'melee' && (off.type !== 'melee' && !off.properties.includes('hip-fire'))) ||
-            (off.type === 'melee' && (main.type !== 'melee' && !main.properties.includes('hip-fire')))) {
+          if (
+            (main.type === 'melee' && (off.type !== 'melee' && !off.properties.includes('hip-fire'))) ||
+            (off.type === 'melee' && (main.type !== 'melee' && !main.properties.includes('hip-fire'))) ||
+            (main.type === 'melee' && (main.id === off.id))
+          ) {
             continue
           }
           // filter out existing combos

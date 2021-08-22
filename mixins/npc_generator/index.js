@@ -246,7 +246,9 @@ export const NpcGenerator = {
       this.npc.cr = this.options.cr.id
       // console.log(`hp budget: target = ${this.options.cr.hp} min = ${this.minHp}, max = ${this.maxHp}, bonuses: ${this.healthBonus}`)
       // console.log(`damage budget: target = ${this.damageTarget} min = ${this.minDmg}, max = ${this.maxDmg} avgDmg: ${this.calcAvgDamage(this.damage, this.legendary, true)}`)
-      this.setLegendary()
+      if (this.metaTier > 2) {
+        this.setLegendary()
+      }
       // console.log(this.npc)
       // console.log(`damage budget: target = ${this.damageTarget} min = ${this.minDmg}, max = ${this.maxDmg} avgDmg: ${this.calcAvgDamage(this.damage, this.legendary, true)}`)
       for (const key of ['features', 'actions', 'legendary', 'reactions']) {

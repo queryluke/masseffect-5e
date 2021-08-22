@@ -176,7 +176,7 @@ export const CombatPowers = {
       return initial + (increase * (this.metaTier - 1))
     },
     damageString (dieCount, dieType) {
-      return `${this.averageFromDie(dieType, dieCount)} (${dieCount}d${dieType})`
+      return `${Math.floor(this.averageFromDie(dieType, dieCount))} (${dieCount}d${dieType})`
     },
     setCombatPowers () {
       const numOptions = this.options.klass.id === 'soldier' ? Math.ceil(this.metaLevel / 4) : Math.ceil(this.metaLevel / 8)
