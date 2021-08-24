@@ -100,7 +100,7 @@
             <v-card elevation="0" color="transparent" class="text-center">
               <v-card-text>
                 <v-avatar size="92">
-                  <v-image :src="person.image" :alt="person.name" />
+                  <v-img :src="person.image" :alt="person.name" />
                 </v-avatar>
                 <p class="text-center text-h6 mb-1">
                   {{ person.name }}
@@ -132,7 +132,7 @@
             <v-card elevation="0" color="transparent" class="text-center">
               <v-card-text>
                 <v-avatar size="92">
-                  <v-image :src="person.image" :alt="person.name" />
+                  <v-img :src="person.image" :alt="person.name" />
                 </v-avatar>
                 <p class="text-center text-h6 mb-1">
                   {{ person.name }}
