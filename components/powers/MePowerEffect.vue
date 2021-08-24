@@ -8,14 +8,13 @@
 export default {
   name: 'MePowerEffect',
   props: {
-    item: {
-      type: Object,
-      default: () => {
-        return {
-          effect: [],
-          damageType: []
-        }
-      }
+    damageTypes: {
+      type: Array,
+      default: () => []
+    },
+    tags: {
+      type: Array,
+      default: () => []
     },
     abbr: {
       type: Boolean,
@@ -23,23 +22,24 @@ export default {
     }
   },
   computed: {
-    isDamage () {
-      return this.item.effect.includes('damage')
-    },
     text () {
-      if (
-        (typeof this.item.effect === 'undefined' || this.item.effect.length === 0) &&
-        (typeof this.item.damageType === 'undefined' || this.item.damageType.length === 0)
-      ) { return this.abbr ? '-' : 'None' }
-      if (this.abbr) {
-        let first = this.item.effect[0]
-        if (this.isDamage) {
-          first = this.item.damageType[0]
+      const array = []
+      for (const dmg of this.damageTypes) {
+        array.push(this.$t(`damage_types.${dmg}_damage`))
+      }
+      for (const tag of this.tags) {
+        if (tag === 'damage') {
+          continue
         }
-        const additional = (this.item.damageType.length > 1 || this.item.effect.length > 1) ? ' (...)' : ''
-        return `${first}${additional}`
+        array.push(this.$t(`tags.${tag}`))
+      }
+      if (array.length === 0) {
+        return this.abbr ? '-' : this.$t('none')
+      }
+      if (this.abbr) {
+        return `${array[0]} (...)`
       } else {
-        return [...this.item.damageType, ...this.item.effect].join(', ')
+        return this.$t(`lists.comma_list[${array.length}]`, array)
       }
     }
   }

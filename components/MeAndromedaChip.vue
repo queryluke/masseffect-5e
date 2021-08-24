@@ -1,6 +1,6 @@
 <template>
   <v-chip x-small color="primary" outlined>
-    Andromeda
+    {{ $t('galaxies.andromeda') }}
   </v-chip>
 </template>
 

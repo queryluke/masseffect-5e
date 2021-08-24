@@ -13,25 +13,21 @@
 <script>
 
 export default {
-  async fetch () {
-    this.changelog = await this.$store.dispatch('FETCH_DATA', 'changelog')
-  },
   data () {
     return {
       changelog: [...Array(9).keys()]
     }
   },
+  async fetch () {
+    this.$store.dispatch('SET_META', {
+      title: this.$t('changelog_title'),
+      description: this.$t('meta.changelog')
+    })
+    this.changelog = await this.$store.dispatch('FETCH_DATA', 'changelog')
+  },
   computed: {
     items () {
       return this.changelog.slice().reverse()
-    }
-  },
-  head () {
-    return {
-      title: 'Changelog | Mass Effect 5e',
-      meta: [
-        { hid: 'description', name: 'description', content: 'Keep up-to-date with all the Mass Effect 5e system rule additions and updates.' }
-      ]
     }
   }
 }

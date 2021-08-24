@@ -9,7 +9,10 @@
 
 <script>
 
+import { MetaHead } from '~/mixins/MetaHead'
+
 export default {
+  mixins: MetaHead,
   props: {
     error: {
       type: Object,

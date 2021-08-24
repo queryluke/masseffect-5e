@@ -1,6 +1,6 @@
 <template>
   <v-card
-    :to="{ name: 'classes-id', params: { id: item.id }}"
+    :to="localePath({ name: 'classes-id', params: { id: item.id }})"
     hover
     class="ma-2"
   >
@@ -39,10 +39,16 @@ export default {
   computed: {
     stats () {
       return [
-        { title: 'Hit Dice', value: `1d${this.item.hitDice}` },
-        { title: 'Primary Ability', value: this.item.primaryAbility },
-        { title: 'Saves', value: this.item.savingThrows.text }
+        { title: this.$t('hit_dice_title'), value: this.$t('dice', { dieCount: 1, dieType: this.item.hitDie }) },
+        { title: this.$t('primary_ability_title'), value: this.$t(`lists.short_or_list[${this.item.primaryAbility.length}]`, this.primaryAbilityTextArray) },
+        { title: this.$t('saves_title'), value: this.$t(`lists.short_comma_list[${this.item.profs.savingThrow.has.length}]`, this.savingThrowsTextArray) }
       ]
+    },
+    primaryAbilityTextArray () {
+      return this.item.primaryAbility.map(i => this.$t(`abilities.${i}.title`))
+    },
+    savingThrowsTextArray () {
+      return this.item.profs.savingThrow.has.map(i => this.$t(`abilities.${i}.title`))
     }
   }
 }

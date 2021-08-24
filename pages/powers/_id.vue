@@ -1,5 +1,5 @@
 <template>
-  <me-item-page :pending="$fetchState.pending" :item="item" type="power">
+  <me-item-page :item="item" :type="$tc('power_title', 1)">
     <template #header>
       <me-item-title
         :title="item.name"
@@ -13,22 +13,20 @@
 
 <script>
 export default {
-  async fetch () {
-    this.item = await this.$store.dispatch('FETCH_ITEM', { endpoint: 'powers', id: this.$route.params.id })
-    this.$store.commit('pageTitle', 'Powers')
+  async asyncData ({ store }) {
+    await store.dispatch('FETCH_DATA', 'powers')
   },
-  data () {
-    return {
-      item: {}
+  computed: {
+    item () {
+      return this.$store.getters.getItem('powers', this.$route.params.id)
     }
   },
-  head () {
-    return {
-      title: `${this.item.name} - Powers | Mass Effect 5e`,
-      meta: [
-        { hid: 'description', name: 'description', content: `Information about ${this.item.name}` }
-      ]
-    }
+  created () {
+    this.$store.dispatch('SET_META', {
+      title: this.item.name,
+      subTitle: this.$tc('power_title', 2),
+      description: this.$t('meta.info', { name: this.item.name })
+    })
   }
 }
 </script>

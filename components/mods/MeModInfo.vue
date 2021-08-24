@@ -12,12 +12,12 @@
       <v-row>
         <v-col cols="6">
           <me-item-stat label="Placement">
-            {{ item.placement }}
+            {{ $t(`mod_placements.${item.placement}`) }}
           </me-item-stat>
         </v-col>
         <v-col cols="6">
           <me-item-stat label="Available For">
-            {{ item.availability.join(', ') }}
+            <me-mod-availability :item="item" />
           </me-item-stat>
         </v-col>
       </v-row>

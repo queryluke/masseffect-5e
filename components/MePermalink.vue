@@ -1,6 +1,6 @@
 <template>
-  <v-btn :to="`/${type}/${itemId}`" right>
-    View Details Page
+  <v-btn :to="localePath(`/${type}/${itemId}`)" right>
+    {{ $t('buttons.view_details') }}
   </v-btn>
 </template>
 

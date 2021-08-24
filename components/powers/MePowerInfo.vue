@@ -8,49 +8,38 @@
     />
     <v-row>
       <v-col cols="6" md="3">
-        <me-item-stat label="Level">
-          <me-power-level :item="item" />
+        <me-item-stat :label="$tc('level_title', 1)">
+          <me-power-level :level="item.level" />
         </me-item-stat>
       </v-col>
       <v-col cols="6" md="3">
-        <me-item-stat label="Casting Time">
-          {{ item.castingTime }}
+        <me-item-stat :label="$t('casting_time_title')">
+          <me-power-casting-time :casting-times="item.castingTimes" />
         </me-item-stat>
       </v-col>
       <v-col cols="6" md="3">
-        <me-item-stat label="Duration">
-          <me-power-duration :item="item" />
+        <me-item-stat :label="$t('duration_title')">
+          <me-power-duration :duration="item.duration" :concentration="item.concentration" abbr />
         </me-item-stat>
       </v-col>
       <v-col cols="6" md="3">
-        <me-item-stat label="Range / Area">
-          <me-power-range :item="item" />
+        <me-item-stat :label="$t('range_area_title')">
+          <me-power-range :range="item.range" :aoe="item.aoe" />
         </me-item-stat>
       </v-col>
       <v-col cols="6" md="3">
-        <me-item-stat label="Primes / Detonates">
-          <span v-if="item.primes" :class="pdCss(item.primes)">
-            Primes ({{ item.primes }})
-          </span>
-          <span v-if="item.primes && item.detonates" class="mx-1">
-            |
-          </span>
-          <span v-if="item.detonates" :class="pdCss('detonates')">
-            Detonates
-          </span>
-          <span v-if="!item.detonates && !item.primes">
-            -
-          </span>
+        <me-item-stat :label="$t('primes_detonates_title')">
+          <me-power-primes-detonates :primes="item.primes" :detonates="item.detonates" />
         </me-item-stat>
       </v-col>
       <v-col cols="6" md="3">
-        <me-item-stat label="Attack Type">
-          <me-power-attack :item="item" />
+        <me-item-stat :label="$t('attack_type_title')">
+          <me-power-attack :attack="item.attack" :save="item.save" />
         </me-item-stat>
       </v-col>
       <v-col cols="6" md="3">
-        <me-item-stat label="Damage / Effect">
-          <me-power-effect :item="item" />
+        <me-item-stat :label="$t('damage_effect_title')">
+          <me-power-effect :damage-types="item.damageTypes" :tags="item.tags" />
         </me-item-stat>
       </v-col>
       <v-col cols="6" md="3">
@@ -65,21 +54,28 @@
         </div>
       </v-col>
     </v-row>
-    <v-progress-linear :value="100" color="secondary" class="my-3" />
+    <div v-if="item.reactionQualifier" class="font-italic body-2 pt-2">
+      * - <me-html :content="item.reactionQualifier" inline />
+    </div>
+    <v-progress-linear
+      :value="100"
+      color="secondary"
+      class="my-3"
+    />
     <me-html :content="item.html" />
     <!-- TODO: Move Advancements into the markdown via custom content (:::) -->
-    <div v-if="item.advancementOptions">
+    <div v-if="item.advancements && !hideAdvancements">
       <p class="text-h6 mb-0">
-        Advancement Options
+        {{ $t('advancement_options_title') }}
       </p>
       <v-row justify="center">
-        <v-col v-for="opt in item.advancementOptions" :key="opt.name" cols="12" md="6">
+        <v-col v-for="(opt, id) in item.advancements" :key="id" cols="12" md="6">
           <v-card outlined>
             <v-card-title class="text-subtitle-1">
               {{ opt.name }}
             </v-card-title>
             <v-card-text>
-              <me-html :content="opt.description" />
+              <me-html :content="opt.text" />
             </v-card-text>
           </v-card>
         </v-col>
@@ -99,17 +95,10 @@ export default {
     title: {
       type: Boolean,
       default: false
-    }
-  },
-  computed: {
-    primeTypeText () {
-      return this.$store.getters['config/primeTypeText']
-    }
-  },
-  methods: {
-    pdCss (string) {
-      const mode = this.$vuetify.theme.dark ? 'dark' : 'light'
-      return this.primeTypeText[mode][string]
+    },
+    hideAdvancements: {
+      type: Boolean,
+      default: false
     }
   }
 }

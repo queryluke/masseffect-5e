@@ -1,6 +1,6 @@
 <template>
   <v-card
-    :to="{ name: 'species-id', params: { id: item.id } }"
+    :to="localePath({ name: 'species-id', params: { id: item.id } })"
     nuxt
     hover
     class="flex-grow-1"
@@ -14,21 +14,36 @@
         {{ item.snippet }}
       </p>
       <p class="text-subtitle-1 mb-0">
-        Racial Traits
+        {{ $t('traits_title') }}
       </p>
       <p>
-        <me-species-ability-score-increase-summary :data="item.abilityScoreIncrease" />, {{ item.traits.map(i => i.name).join(', ') }}
+        {{ traitsPreview }}
       </p>
     </v-card-text>
   </v-card>
 </template>
 
 <script>
+
 export default {
   props: {
     item: {
       type: Object,
       default: () => {}
+    }
+  },
+  computed: {
+    traits () {
+      return this.$store.getters.getData('traits').filter(i => i.species.includes(this.item.id))
+    },
+    traitsPreview () {
+      let textArray = this.item.abilityScoreIncrease.map((i) => {
+        return `+${i.amount} ${this.$t(`abilities.${i.ability}.title`)}`
+      })
+      if (this.traits.length > 0) {
+        textArray = textArray.concat(this.traits.map(i => i.name))
+      }
+      return this.$t(`lists.comma_list[${textArray.length}]`, textArray)
     }
   }
 }

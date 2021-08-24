@@ -1,162 +1,294 @@
-<template lang="pug">
-  div
-    // Main Parallax
-    section
-      v-parallax(:src="require(`~/assets/images/parallax/citadel.jpg`)" alt="Mass Effect // The Citadel by grndayfrk14")
-        v-row(justify="center")
-          v-col(cols="12" sm="10" md="8" lg="6" xl="4").black--text.text-center.mt-10
-            v-img(
+<template>
+  <div>
+    <section>
+      <v-parallax
+        :src="require(`~/assets/images/parallax/citadel.jpg`)"
+        alt="Mass Effect // The Citadel by grndayfrk14"
+      >
+        <v-row justify="center">
+          <v-col
+            cols="12"
+            sm="10"
+            md="8"
+            lg="6"
+            xl="4"
+            class="black--text text-center mt-10"
+          >
+            <v-img
               :src="require('~/assets/images/me5e_logo_1200w.png')"
               alt="Mass Effect 5e logo"
-            ).mt-10
-            h1.sr-only Mass Effect 5e
-            h2.black--text.headline.mt-10 Mass Effect + D&D 5th Edition
-            p.black--text.subheading An Unofficial D&D 5th Edition homebrew for Mass Effect
-            v-btn(to="/manual/intro" large color="secondary").my-3 Get Started
-    // Intro Section
-    section
-      v-container
-        v-row(justify="center").mt-5
-          v-col(cols="12" sm="10" md="8").my-3
-            div.text-center
-              h3.headline Begin your journey
-              p.
-                Mass Effect 5e lets you take the immersive and cooperative story-telling gameplay of Dungeons & Dragons 5th edition
-                and experience new adventures in the Mass Effect universe. Go exploring in the Outer Terminus. Stop a political assassination
-                on Thessia. Battle the Reaper invasion on Earth, Palavan, or Sur'Kesh. Solve crimes as a C-SEC officer on the Citadel.
-                With Mass Effect 5e, the adventure is in your hands. You can play anywhere in the Mass Effect timeline, create
-                new worlds, or revisit old ones. So, gear up and start making your own journey.
-        v-row(justify="center")
-          v-col(cols="12")
-            v-row(justify="center")
-              // Races and classes
-              v-col(cols="12" md="4")
-                v-card.elevation-0.transparent
-                  v-card-text.text-center
-                    v-avatar(size="60px")
-                      v-img(:src="require('~/assets/images/misc/sys_alliance.png')" alt="Systems Alliance Symbol by Engorn on DeviantArt")
-                    span.mx-2.headline +
-                    v-avatar(size="60px" tile)
-                      v-img(:src="require('~/assets/images/classes/vanguard.svg')" alt="Vanguard Symbol")
-                  v-card-title(primary-title).layout.justify-center
-                    div.headline.text-center Mix & Match
-                  v-card-text.
-                    Mass Effect 5e lets you mix and match a variety of classic alien races with your favorite Mass Effect class.
-                    Wreak havoc on the front lines as a Krogan Shocktrooper. Crush your enemies like a biotic god as a
-                    Volus Commando. With 12 races, 6 classes, and 18 specializations, Mass Effect 5e has options to fit any
-                    play style.
-              // Weapons and armor
-              v-col(cols="12" md="4")
-                v-card.elevation-0.transparent
-                  v-card-text.text-center
-                    v-avatar(size="60px" tile).primary
-                      v-img(:src="require('~/assets/images/misc/assault_rifle.svg')" alt="Assault Rifle SVG")
-                  v-card-title(primary-title).layout.justify-center
-                    div.headline.text-center Weapons & Armor
-                  v-card-text.
-                    Magic is just science we don't understand yet, so we've replaced the plethora of magical items
-                    found in D&D 5th edition with unique weapons and armor. You'll also find a full modification system for upgrading
-                    and customizing your gear.
-              // Enemies
-              v-col(cols="12" md="4")
-                v-card.elevation-0.transparent
-                  v-card-text.text-center
-                    v-avatar(size="60px").primary
-                      v-img(:src="require('~/assets/images/misc/reaper_avatar.jpg')" alt="Reaper swarm")
-                  v-card-title(primary-title).layout.justify-center
-                    div.headline.text-center Unique Enemies
-                  v-card-text.
-                    Our bestiary is filled with iconic Mass Effect enemies custom-made using D&D's Dungeon Master Guide
-                    to ensure balanced combat. From Reaper forces to Blue Sun grunts, we've got enough monsters to keep your
-                    players engaged and challenged.
-    section
-      v-parallax(:src="require('~/assets/images/parallax/joker.jpg')" alt="mass effect 2 by libbabink")
-        v-layout(column align-center justify-center).white--text
-          h2.display-3.font-weight-bold.text--shadow Play with the best tech
-    section
-      v-container(grid-list-xl).mt-5
-        v-layout(row align-center wrap)
-          v-flex(xs12 md7)
-            v-card.elevation-0.transparent
-              v-card-title(primary-title)
-                div.headline Interactive Manual
-              v-card-text.
-                Our player's manual is more than a PDF. It's a fully navigable web app that allows you to browse rules, search for items and spells,
-                and create bookmarks for frequently used information.
-              v-card-actions
-                v-btn(to="/manual/intro" text) Get Started #[v-icon mdi-chevron-right]
-          v-flex(md5).hidden-sm-and-down.text-center
-            v-img(:src="require('~/assets/images/misc/datapad.png')" height="300" contain alt="data pad").px-5
-          // Printables
-          v-flex(md5).hidden-sm-and-down
-            v-img(:src="require('~/assets/images/misc/tt_assets.png')" height="300" contain alt="grunt").px-5
-          v-flex(xs12 md7)
-            v-card.elevation-0.transparent
-              v-card-title(primary-title)
-                div.headline At-the-table Assets
-              v-card-text.
-                We offer a few at-the-table assets like custom-made character sheets, printable spell cards, and Roll20 tokens.
-              v-card-actions
-                v-spacer
-                v-btn(to="/assets" text) View #[v-icon mdi-chevron-right]
-          // Collaborate
-          v-flex(xs12 md7)
-            v-card.elevation-0.transparent
-              v-card-title(primary-title)
-                div.headline Contributors Welcome!
-              v-card-text.
-                Want to get involved? We're always open to content suggestions, feedback, and ideas from the community.
-                Come join the conversation!
-              v-card-actions
-                v-btn(to="/about" text) Contribute #[v-icon mdi-chevron-right]
-          v-flex(md5).hidden-sm-and-down.text-center
-            v-img(:src="require('~/assets/images/misc/grunts.png')" contain height="300").px-5
-    section
-      v-parallax(:src="require('~/assets/images/parallax/illusive.jpg')" alt="The Illusive Man by libbabink")
-        v-layout(column align-center justify-center)
-          h2.parallax-title Latest News
-    section
-      v-container(grid-list-md).my-5
-        v-row
-          v-col(cols="12" md="7")
-            me-news-card(:news="recentPosts[0]" height="450px")
-          v-col(cols="12" md="5")
-            v-row
-              v-col(cols="12")
-                me-news-card(:news="recentPosts[1]" height="150px")
-              v-col(cols="12")
-                me-news-card(:news="recentPosts[2]" height="150px")
-        v-row
-          v-col(cols="12" md="4")
-            me-news-card(:news="recentPosts[3]" height="200px")
-          v-col(cols="12" md="4")
-            me-news-card(:news="recentPosts[4]" height="200px")
-          v-col(cols="12" md="4")
-            me-news-card(:news="recentPosts[5]" height="200px")
+              class="mt-10"
+            />
+            <h1 class="sr-only">
+              {{ $t('title') }}
+            </h1>
+            <h2 class="black--text text-h6 mt-10">
+              {{ $t('homepage.title') }}
+            </h2>
+            <p class="black--text text-subtitle-2">
+              {{ $t('homepage.subtitle') }}
+            </p>
+            <v-btn :to="localePath('/manual/intro')" large color="secondary" class="my-3">
+              {{ $t('homepage.get_started') }}
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-parallax>
+    </section>
 
+    <section>
+      <v-container>
+        <v-row justify="center" class="mt-5">
+          <v-col cols="12" sm="10" md="8" class="my-3 text-center">
+            <h3 class="text-h6">
+              {{ $t('homepage.begin') }}
+            </h3>
+            <p>
+              {{ $t('homepage.begin_text') }}
+            </p>
+          </v-col>
+        </v-row>
+        <v-row justify="center" class="mt-5">
+          <v-col cols="12" md="4">
+            <v-card elevation="0" class="transparent">
+              <v-card-text class="text-center">
+                <v-avatar size="60px">
+                  <v-img :src="require('~/assets/images/misc/sys_alliance.png')" alt="Systems Alliance Symbol by Engorn on DeviantArt" />
+                </v-avatar>
+                <span class="mx-2 text-h6"> + </span>
+                <v-avatar size="60px" tile>
+                  <v-img :src="require('~/assets/images/classes/vanguard.svg')" alt="Vanguard Symbol" />
+                </v-avatar>
+              </v-card-text>
+              <v-card-title class="layout justify-center">
+                {{ $t('homepage.info[0].title') }}
+              </v-card-title>
+              <v-card-text>
+                {{ $t('homepage.info[0].text') }}
+              </v-card-text>
+            </v-card>
+          </v-col>
+          <v-col cols="12" md="4">
+            <v-card elevation="0" class="transparent">
+              <v-card-text class="text-center">
+                <slot name="avatar">
+                  <v-avatar size="60px" color="primary">
+                    <v-img :src="require('~/assets/images/misc/assault_rifle.svg')" alt="Assault Rifle SVG" />
+                  </v-avatar>
+                </slot>
+              </v-card-text>
+              <v-card-title class="layout justify-center">
+                {{ $t('homepage.info[1].title') }}
+              </v-card-title>
+              <v-card-text>
+                {{ $t('homepage.info[1].text') }}
+              </v-card-text>
+            </v-card>
+          </v-col>
+          <v-col cols="12" md="4">
+            <v-card elevation="0" class="transparent">
+              <v-card-text class="text-center">
+                <slot name="avatar">
+                  <v-avatar size="60px">
+                    <v-img :src="require('~/assets/images/misc/reaper_avatar.jpg')" alt="Reaper swarm" />
+                  </v-avatar>
+                </slot>
+              </v-card-text>
+              <v-card-title class="layout justify-center">
+                {{ $t('homepage.info[2].title') }}
+              </v-card-title>
+              <v-card-text>
+                {{ $t('homepage.info[2].text') }}
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
+
+    <section>
+      <v-parallax
+        :src="require('~/assets/images/parallax/joker.jpg')"
+        alt="mass effect 2 by libbabink"
+      >
+        <v-row justify="center" align="center">
+          <v-col
+            cols="12"
+            sm="10"
+            md="8"
+            lg="6"
+            xl="4"
+          >
+            <h2 class="white--text text--shadow font-weight-bold text-h4 m-auto text-center">
+              {{ $t('homepage.play_text') }}
+            </h2>
+          </v-col>
+        </v-row>
+      </v-parallax>
+    </section>
+
+    <section>
+      <v-container>
+        <v-row justify="start" class="mt-5">
+          <v-col cols="12" class="my-3">
+            <v-card elevation="0" class="transparent">
+              <div class="d-flex flex-no-wrap justify-space-between">
+                <div>
+                  <v-card-title>
+                    {{ $t('homepage.features[0].title') }}
+                  </v-card-title>
+                  <v-card-text>
+                    {{ $t('homepage.features[0].text') }}
+                  </v-card-text>
+                  <v-card-actions>
+                    <v-btn :to="localePath('/manual/intro')" text>
+                      {{ $t('homepage.features[0].button') }} <v-icon>mdi-chevron-right</v-icon>
+                    </v-btn>
+                  </v-card-actions>
+                </div>
+                <v-avatar
+                  v-if="$vuetify.breakpoint.mdAndUp"
+                  class="ma-3"
+                  size="300"
+                  tile
+                >
+                  <v-img :src="require('~/assets/images/misc/datapad.png')" contain alt="data pad" />
+                </v-avatar>
+              </div>
+            </v-card>
+          </v-col>
+        </v-row>
+        <v-row justify="end" class="mt-5">
+          <v-col cols="12" class="my-3">
+            <v-card elevation="0" class="transparent">
+              <div class="d-flex flex-no-wrap justify-space-between">
+                <v-avatar
+                  v-if="$vuetify.breakpoint.mdAndUp"
+                  class="ma-3"
+                  size="300"
+                  tile
+                >
+                  <v-img :src="require('~/assets/images/misc/tt_assets.png')" contain alt="assets preview" />
+                </v-avatar>
+                <div>
+                  <v-card-title>
+                    {{ $t('homepage.features[1].title') }}
+                  </v-card-title>
+                  <v-card-text>
+                    {{ $t('homepage.features[1].text') }}
+                  </v-card-text>
+                  <v-card-actions>
+                    <v-btn :to="localePath('/assets')" text>
+                      {{ $t('homepage.features[1].button') }} <v-icon>mdi-chevron-right</v-icon>
+                    </v-btn>
+                  </v-card-actions>
+                </div>
+              </div>
+            </v-card>
+          </v-col>
+        </v-row>
+        <v-row justify="start" class="mt-5">
+          <v-col cols="12" class="my-3">
+            <v-card elevation="0" class="transparent">
+              <div class="d-flex flex-no-wrap justify-space-between">
+                <div>
+                  <v-card-title>
+                    {{ $t('homepage.features[2].title') }}
+                  </v-card-title>
+                  <v-card-text>
+                    {{ $t('homepage.features[2].text') }}
+                  </v-card-text>
+                  <v-card-actions>
+                    <v-btn :to="localePath('/about' )" text>
+                      {{ $t('homepage.features[2].button') }} <v-icon>mdi-chevron-right</v-icon>
+                    </v-btn>
+                  </v-card-actions>
+                </div>
+                <v-avatar
+                  v-if="$vuetify.breakpoint.mdAndUp"
+                  class="ma-3"
+                  size="300"
+                  tile
+                >
+                  <v-img :src="require('~/assets/images/misc/grunts.png')" contain alt="swarm of people" />
+                </v-avatar>
+              </div>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
+
+    <section>
+      <v-parallax
+        :src="require('~/assets/images/parallax/illusive.jpg')"
+        alt="The Illusive Man by libbabink"
+      >
+        <v-row justify="center" align="center">
+          <v-col
+            cols="12"
+            sm="10"
+            md="8"
+            lg="6"
+            xl="4"
+          >
+            <h2 class="white--text text--shadow font-weight-bold text-h4 m-auto text-center">
+              {{ $t('homepage.news') }}
+            </h2>
+          </v-col>
+        </v-row>
+      </v-parallax>
+    </section>
+
+    <section>
+      <v-container class="my-5">
+        <v-row>
+          <v-col cols="12" md="7">
+            <me-news-card :news="recentPosts[0]" height="450px" />
+          </v-col>
+          <v-col cols="12" md="5">
+            <v-row>
+              <v-col cols="12">
+                <me-news-card :news="recentPosts[1]" height="150px" />
+              </v-col>
+              <v-col cols="12">
+                <me-news-card :news="recentPosts[2]" height="150px" />
+              </v-col>
+            </v-row>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="12" md="4">
+            <me-news-card :news="recentPosts[3]" height="200px" />
+          </v-col>
+          <v-col cols="12" md="4">
+            <me-news-card :news="recentPosts[4]" height="200px" />
+          </v-col>
+          <v-col cols="12" md="4">
+            <me-news-card :news="recentPosts[5]" height="200px" />
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
+  </div>
 </template>
 
 <script>
 
 export default {
-  async fetch () {
-    this.$store.commit('pageTitle', 'Mass Effect 5e')
-    await this.$store.dispatch('FETCH_DATA', 'changelog')
-    this.recentPosts = [...this.$store.getters.getData('changelog')].reverse().slice(0, 6)
-  },
   data () {
     return {
       alert: true,
       recentPosts: []
     }
   },
-  head () {
-    return {
+  async fetch () {
+    this.$store.dispatch('SET_META', {
       title: 'Mass Effect 5e',
-      meta: [
-        { hid: 'description', name: 'description', content: 'Ever wanted to play D&D in the Mass Effect Universe? Mass Effect 5e has you covered.' }
-      ]
-    }
+      description: this.$t('meta.home')
+    })
+    const recentPosts = await this.$store.dispatch('FETCH_DATA', 'changelog')
+    this.recentPosts = [...recentPosts].reverse().slice(0, 6)
   }
 }
 </script>

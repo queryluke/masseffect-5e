@@ -24,30 +24,21 @@
 <script>
 export default {
   async fetch () {
-    this.$store.commit('pageTitle', 'Vehicles')
-    this.items = await this.$store.dispatch('FETCH_DATA', 'vehicles')
-    this.loading = false
-  },
-  data () {
-    return {
-      items: [],
-      loading: true
-    }
+    this.$store.dispatch('SET_META', {
+      title: this.$tc('vehicle_title', 2),
+      description: this.$t('meta.vehicles')
+    })
+    await this.$store.dispatch('FETCH_DATA', 'vehicles')
   },
   computed: {
+    items () {
+      return this.$store.getters.getData('vehicles')
+    },
     transports () {
-      return this.items.filter(v => v.vehicle.type === 'transport')
+      return this.items.filter(v => v.type === 'transport')
     },
     starships () {
-      return this.items.filter(v => v.vehicle.type === 'starship')
-    }
-  },
-  head () {
-    return {
-      title: 'Vehicles | Mass Effect 5e',
-      meta: [
-        { hid: 'description', name: 'description', content: 'A list of unique vehicles to use in your Mass Effect 5e game.' }
-      ]
+      return this.items.filter(v => v.type === 'starship')
     }
   }
 }

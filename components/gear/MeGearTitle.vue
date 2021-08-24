@@ -3,9 +3,9 @@
     :title="item.name"
     subtitle
   >
-    <template v-slot:subtitle>
+    <template #subtitle>
       <div :class="textColor(item.rarity)">
-        {{ item.rarity }} {{ item.type }} <span v-if="item.subType">({{ item.subType }})</span>
+        {{ item.rarity }} {{ item.type }} <span v-if="item.subType">({{ $t(`gear_types.${item.subType}`) }})</span>
       </div>
       <div v-if="item.cost !== 0" class="text-caption">
         {{ item.cost | groupDigits(',') }} credits

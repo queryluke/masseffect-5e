@@ -1,35 +1,24 @@
 <template>
   <v-container>
-    <me-page-title title="Feats" />
-    <p>
-      A feat represents a talent or an area of expertise that gives a character special capabilities. It embodies
-      training, experience, and abilities beyond what a class provides. Mass Effect 5e uses a number of feats in the
-      Player's Manual, providing page numbers for reference.
-    </p>
-    <p>
-      At certain levels, your class gives you the Ability Score Improvement feature. Using the optional feats rule, you
-      can forgo taking that feature to take a feat of your choice instead. You can take each feat only once, unless
-      the feat’s description says otherwise.
-    </p>
-    <p>
-      You must meet any prerequisite specified in a feat to take that feat. If you ever lose a feat’s prerequisite,
-      you can’t use that feat until you regain the prerequisite.
+    <me-page-title />
+    <p v-for="(para, index) in $t('feat_intro')" :key="index">
+      {{ para }}
     </p>
     <me-skeleton-loader :pending="$fetchState.pending" type="expansionList">
       <me-expansion-list
         :items="items"
         :headers="headers"
-        type="feats"
         :bookmarkable="false"
+        type="feats"
       >
-        <template v-slot:header.indicator="{ item }">
-          <v-avatar :class="[item.new ? 'deep-purple' : 'deep-orange']" size="30px" class="white--text text-caption my-n2">
-            {{ item.new ? 'New' : 'PHB' }}
+        <template #[`header.indicator`]="{ item }">
+          <v-avatar :class="item.new ? 'deep-purple' : 'deep-orange'" size="30px" class="white--text text-caption my-n2">
+            {{ item.new ? $t('new_title') : $t('phb') }}
           </v-avatar>
         </template>
-        <template v-slot:body="{ item }">
+        <template #body="{ item }">
           <p v-if="item.prerequisite">
-            <strong>Prerequisite:</strong>
+            <strong>{{ $t('prerequisite_title') }}</strong>
             <em class="pl-1">
               {{ item.prerequisite }}
             </em>
@@ -45,26 +34,26 @@
 
 <script>
 export default {
-  async fetch () {
-    this.items = await this.$store.dispatch('FETCH_DATA', 'feats')
-    this.$store.commit('pageTitle', 'Feats')
-  },
   data () {
     return {
-      items: []
+      headers: [
+        { label: false, key: 'indicator', cols: 2, sm: 1, sortable: false },
+        { label: 'name_title', key: 'name', cols: 10, sm: 5, lg: 2 },
+        { label: 'prerequisite_title', key: 'prerequisite', cols: 3, classes: 'd-none d-lg-flex', sortable: false },
+        { label: 'notes_title', key: 'note', cols: 6, classes: 'd-none d-sm-flex', sortable: false }
+      ]
     }
+  },
+  async fetch () {
+    this.$store.dispatch('SET_META', {
+      title: this.$tc('feat_title', 2),
+      description: this.$t('meta.feats')
+    })
+    await this.$store.dispatch('FETCH_DATA', 'feats')
   },
   computed: {
-    headers () {
-      return this.$store.getters['config/featHeaders']
-    }
-  },
-  head () {
-    return {
-      title: 'Feats | Mass Effect 5e',
-      meta: [
-        { hid: 'description', name: 'description', content: 'New feats available! Plus a curated list of D&D 5th edition feats.' }
-      ]
+    items () {
+      return this.$store.getters.getData('feats')
     }
   }
 }

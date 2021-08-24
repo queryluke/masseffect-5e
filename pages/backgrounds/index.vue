@@ -1,15 +1,14 @@
 <template>
   <v-container>
-    <me-page-title title="Backgrounds" />
-    <p>
-      The sample backgrounds presented here provide both concrete benefits (features, proficiencies, and languages) and
-      roleplaying suggestions.
+    <me-page-title />
+    <p v-for="(para, index) in $t('background_intro')" :key="index">
+      {{ para }}
     </p>
     <me-skeleton-loader :pending="$fetchState.pending" type="expansionList">
       <me-expansion-list
         :items="items"
-        :headers="[{ label: 'Name', key: 'name' }]"
         :bookmarkable="false"
+        :headers="headers"
         type="backgrounds"
       />
     </me-skeleton-loader>
@@ -18,21 +17,23 @@
 
 <script>
 export default {
-  async fetch () {
-    this.items = await this.$store.dispatch('FETCH_DATA', 'backgrounds')
-    this.$store.commit('pageTitle', 'Backgrounds')
-  },
   data () {
     return {
-      items: []
+      headers: [
+        { label: 'Name', key: 'name' }
+      ]
     }
   },
-  head () {
-    return {
-      title: 'Backgrounds | Mass Effect 5e',
-      meta: [
-        { hid: 'description', name: 'description', content: 'Backgrounds provide additional flavor and benefits to your character.' }
-      ]
+  async fetch () {
+    this.$store.dispatch('SET_META', {
+      title: this.$tc('background_title', 2),
+      description: this.$t('meta.backgrounds')
+    })
+    await this.$store.dispatch('FETCH_DATA', 'backgrounds')
+  },
+  computed: {
+    items () {
+      return this.$store.getters.getData('backgrounds')
     }
   }
 }

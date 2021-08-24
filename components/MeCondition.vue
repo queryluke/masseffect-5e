@@ -1,34 +1,11 @@
 <template>
-  <v-dialog
-    v-model="dialog"
-    :fullscreen="this.$vuetify.breakpoint.xsOnly"
-    :transition="transition"
-    width="70vw"
-    scrollable
-  >
-    <template v-slot:activator="{ on }">
-      <a
-        :class="stringCss"
-        v-on="on"
-      >{{ text }}</a>
-    </template>
-    <v-card>
-      <v-card-title>
-        {{ item.name }}
-      </v-card-title>
-      <v-card-text>
-        <me-html :content="item.html" />
-      </v-card-text>
-      <v-card-actions>
-        <v-btn
-          text
-          @click.native="dialog = false"
-        >
-          Close
-        </v-btn>
-      </v-card-actions>
-    </v-card>
-  </v-dialog>
+  <me-more-info-dialog
+    v-if="!$fetchState.pending"
+    :title="item.name"
+    :text="text"
+    :content="item.html"
+    :link-css="linkCss"
+  />
 </template>
 
 <script>
@@ -42,34 +19,29 @@ export default {
     sub: {
       type: String,
       default: ''
+    },
+    label: {
+      type: [String, Boolean],
+      default: false
     }
   },
-  data () {
-    return {
-      dialog: false,
-      item: {
-        name: '',
-        html: ''
-      }
-    }
+  async fetch () {
+    await this.$store.dispatch('FETCH_DATA', 'conditions')
   },
   computed: {
+    item () {
+      return this.$store.getters.getItem('conditions', this.id)
+    },
     text () {
-      return this.sub !== '' ? `${this.id}: ${this.sub}` : this.id
+      return this.label ? this.label : this.sub !== '' ? `${this.id}: ${this.sub}` : this.id
     },
     primeTypeText () {
       return this.$store.getters['config/primeTypeText']
     },
-    stringCss () {
+    linkCss () {
       const mode = this.$vuetify.theme.dark ? 'dark' : 'light'
       return this.id === 'primed' ? this.primeTypeText[mode][this.sub] : ''
-    },
-    transition () {
-      return this.$vuetify.breakpoint.xsOnly ? 'dialog-bottom-transition' : 'dialog-transition'
     }
-  },
-  async created () {
-    this.item = await this.$store.dispatch('FETCH_ITEM', { endpoint: 'conditions', id: this.id })
   }
 }
 </script>

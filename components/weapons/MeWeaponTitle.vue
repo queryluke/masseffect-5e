@@ -3,10 +3,8 @@
     :title="item.name"
     subtitle
   >
-    <template v-slot:subtitle>
-      <div :class="textColor(item.rarity)">
-        {{ item.rarity }} {{ item.type }}
-      </div>
+    <template #subtitle>
+      <me-equipment-subtitle :rarity="item.rarity" :text="subtitle" />
       <div class="text-caption">
         {{ item.cost | groupDigits(',') }}
       </div>
@@ -31,14 +29,11 @@ export default {
     }
   },
   computed: {
-    rarityTextColors () {
-      const mode = this.$vuetify.theme.dark ? 'dark' : 'light'
-      return this.$store.getters['config/rarityTextColors'][mode]
-    }
-  },
-  methods: {
-    textColor (rarity) {
-      return this.rarityTextColors[rarity]
+    subtitle () {
+      return this.$t('weapon_item_subtitle', {
+        rarity: this.$t(`rarities.${this.item.rarity}`),
+        weaponType: this.$tc(`weapon_types.${this.item.type}`, 1)
+      })
     }
   }
 }

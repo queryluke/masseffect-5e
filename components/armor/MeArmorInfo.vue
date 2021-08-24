@@ -4,16 +4,20 @@
     <v-row>
       <v-col cols="12" md="9" lg="10" class="text-body-2">
         <div class="text-caption">
-          <em>{{ item.description }}</em>
+          <em>{{ item.flavor }}</em>
         </div>
         <v-progress-linear :value="100" color="secondary" :height="2" class="my-2" />
-        <div v-for="(feature, index) in item.features" :key="index">
-          <me-html :content="feature" />
+        <div>
+          <me-html :content="item.html" />
         </div>
-        <div v-if="item.setBonus.length > 0">
-          <ul>
-            <li v-for="(bonus, index) in item.setBonus" :key="index">
-              {{ bonus }}
+        <div v-if="item.set">
+          <span class="text-overline">
+            {{ $t('set_bonus') }}
+          </span>
+          <ul v-if="!$fetchState.pending">
+            <li v-for="(bonus, index) in setBonus.bonuses" :key="index">
+              <span class="pr-1">{{ $t('set_bonus_range', {min: bonus.threshold, max: setBonus.max}) }}</span>
+              <me-html :content="bonus.text" inline />
             </li>
           </ul>
         </div>
@@ -40,6 +44,14 @@ export default {
     title: {
       type: Boolean,
       default: false
+    }
+  },
+  async fetch () {
+    await this.$store.dispatch('FETCH_DATA', 'set-bonuses')
+  },
+  computed: {
+    setBonus () {
+      return this.$store.getters.getData('set-bonuses').find(i => i.id === this.item.set)
     }
   }
 }
