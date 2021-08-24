@@ -1,5 +1,5 @@
 <template>
-  <v-container v-if="!$fetchState.pending">
+  <v-container>
     <v-row>
       <v-col md="9">
         <me-page-title />
@@ -16,33 +16,15 @@
               target="_blank"
               color="secondary"
             >
-              Read More <v-icon>mdi-chevron-right</v-icon>
+              {{ $t('buttons.read_more') }} <v-icon>mdi-chevron-right</v-icon>
             </v-btn>
           </v-tab-item>
           <v-tab-item class="pa-3">
-            <me-species-trait label="Ability Score Increase">
-              <me-species-ability-score-increase-summary :data="item.abilityScoreIncrease" />
-            </me-species-trait>
-            <me-species-trait label="Age">
-              {{ item.age }}
-            </me-species-trait>
-            <me-species-trait label="Alignment">
-              {{ item.alignment }}
-            </me-species-trait>
-            <me-species-trait label="Size">
-              {{ item.size }}
-            </me-species-trait>
-            <me-species-trait label="Speed">
-              <me-species-speed :data="item.speed" />
-            </me-species-trait>
-            <template v-for="trait in item.traits">
-              <me-species-trait :key="trait.id" :label="trait.name">
-                <me-html :content="trait.html" />
-              </me-species-trait>
-            </template>
+            <me-species-traits-list :item="item" />
+            <me-source-reference v-if="rorReference[item.id]" :pages="rorReference[item.id]" source="races" />
           </v-tab-item>
           <v-tab-item class="pa-3">
-            <div v-for="variant in item.variants" :key="variant.id" class="mb-4">
+            <div v-for="variant in variants" :key="variant.id" class="mb-4">
               <p class="text-h6 text-md-h4">
                 {{ variant.name }}
               </p>
@@ -55,17 +37,17 @@
       <v-col md="3" class="hidden-sm-and-down">
         <div class="text-right">
           <v-menu>
-            <template v-slot:activator="{ on, attrs }">
+            <template #activator="{ on, attrs }">
               <v-btn
                 color="secondary"
                 v-bind="attrs"
                 v-on="on"
               >
-                Change Species <v-icon>mdi-menu-down</v-icon>
+                {{ $t('buttons.change_species') }} <v-icon>mdi-menu-down</v-icon>
               </v-btn>
             </template>
             <v-list>
-              <v-list-item v-for="i in items" :key="i.id" :to="{ name: 'species-id', params: { id: i.id }}">
+              <v-list-item v-for="i in items" :key="i.id" :to="localePath({ name: 'species-id', params: { id: i.id }})">
                 <v-list-item-title>
                   {{ i.name }}
                 </v-list-item-title>
@@ -82,24 +64,42 @@
 <script>
 
 export default {
-  async fetch () {
-    this.items = await this.$store.dispatch('FETCH_DATA', 'species')
-    this.$store.commit('pageTitle', this.item.name)
-    this.$store.commit('tabbedPage/SET_TABS', this.tabs)
-    this.$store.dispatch('tabbedPage/INIT_THEME')
+  layout: 'tabbed',
+  async asyncData ({ store }) {
+    await store.dispatch('FETCH_LOTS', ['species', 'traits', 'species-variants'])
   },
   data () {
     return {
-      items: [],
-      id: this.$route.params.id
+      rorReference: {
+        asari: '2-3',
+        geth: '3-4',
+        krogan: '5-6',
+        quarian: '7-8',
+        salarian: '9-10',
+        turian: '11-12'
+      }
+    }
+  },
+  head () {
+    return {
+      title: `${this.item.name} - Species | Mass Effect 5e`,
+      meta: [
+        { hid: 'description', name: 'description', content: this.item.snippet }
+      ]
     }
   },
   computed: {
+    items () {
+      return this.$store.getters.getData('species')
+    },
     item () {
-      return this.$store.getters.getItem('species', this.id)
+      return this.$store.getters.getItem('species', this.$route.params.id)
+    },
+    variants () {
+      return this.$store.getters.getData('species-variants').filter(i => i.species === this.$route.params.id)
     },
     hasVariants () {
-      return this.item.variants.length > 0
+      return this.variants.length > 0
     },
     tab: {
       get () {
@@ -110,21 +110,17 @@ export default {
       }
     },
     tabs () {
-      const tabs = ['background', 'traits']
+      const tabs = [this.$tc('background_title', 1), this.$t('traits_title')]
       if (this.hasVariants) {
-        tabs.push('variants')
+        tabs.push(this.$t('variants_title'))
       }
       return tabs
     }
   },
-  head () {
-    return {
-      title: `${this.item.name} - Races | Mass Effect 5e`,
-      meta: [
-        { hid: 'description', name: 'description', content: this.item.snippet }
-      ]
-    }
-  },
-  layout: 'tabbed'
+  created () {
+    this.$store.commit('pageTitle', this.item.name)
+    this.$store.commit('tabbedPage/SET_TABS', this.tabs)
+    this.$store.dispatch('tabbedPage/INIT_THEME')
+  }
 }
 </script>

@@ -1,56 +1,52 @@
 <template>
   <me-expansion-list
-    :headers="headers"
     :items="items"
-    type="armor"
+    :headers="headers"
+    :type="model"
   >
-    <template v-slot:header.expanded="{ item }">
+    <template #[`header.expanded`]="{ item }">
       <me-armor-title :item="item" />
     </template>
-    <template v-slot:header.name="{ item }">
+    <template #[`header.name`]="{ item }">
       <div class="font-weight-bold" :class="textColor(item.rarity)">
         {{ item.name }}
       </div>
     </template>
-    <template v-slot:header.notes="{ item }">
-      {{ item.notes.join(', ') }}
+    <template #[`header.placement`]="{ item }">
+      {{ $t(`armor_placements.${item.placement}_title`) }}
     </template>
-    <template v-slot:header.cost="{ item }">
+    <template #[`header.type`]="{ item }">
+      {{ $t(`armor_types.${item.type}`) }}
+    </template>
+    <template #[`header.notes`]="{ item }">
+      {{ tagsText(item.tags) }}
+    </template>
+    <template #[`header.cost`]="{ item }">
       {{ item.cost | groupDigits(',') }}
     </template>
-    <template v-slot:body="{ item }">
+    <template #body="{ item }">
       <me-armor-info :item="item" />
     </template>
   </me-expansion-list>
 </template>
 
 <script>
+import { ListPageHelpers } from '~/mixins/list_page/ListPageHelpers'
+
 export default {
   name: 'MeArmorList',
+  mixins: [ListPageHelpers],
   props: {
     items: {
       type: Array,
       default: () => {
         return []
       }
-    },
-    bookmarkable: {
-      type: Boolean,
-      default: true
     }
   },
-  computed: {
-    headers () {
-      return this.$store.getters['config/armorHeaders']
-    },
-    rarityTextColors () {
-      const mode = this.$vuetify.theme.dark ? 'dark' : 'light'
-      return this.$store.getters['config/rarityTextColors'][mode]
-    }
-  },
-  methods: {
-    textColor (rarity) {
-      return this.rarityTextColors[rarity]
+  data () {
+    return {
+      model: 'armor'
     }
   }
 }

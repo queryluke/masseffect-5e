@@ -12,12 +12,14 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-    titleTemplate: '%s - ' + 'Mass Effect 5e',
-    title: 'Mass Effect 5e' || '',
+    titleTemplate: (titleChunk) => {
+      // If undefined or blank then we don't need the hyphen
+      return titleChunk ? `${titleChunk} | Mass Effect 5e` : 'Mass Effect 5e'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'keywords', content: 'mass effect, d&d, dnd, Dungeons & Dragons, 5e, 5th Edition, TRPG, RPG, d20, homebrew, conversion, tabletop' },
+      { hid: 'keywords', name: 'keywords', content: 'mass effect, d&d, dnd, Dungeons & Dragons, 5e, 5th Edition, TRPG, RPG, d20, homebrew, conversion, tabletop' },
       { hid: 'description', name: 'description', content: 'D&D 5th Edition Homebrew featuring the Mass Effect Universe' }
     ],
     link: [
@@ -38,7 +40,7 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    { src: '@/plugins/persistentState.js', ssr: false },
+    '@/plugins/persistentState.client.js',
     '@/plugins/filters/index.js',
     '@/plugins/vue2-filters',
     '@/plugins/globals'
@@ -63,10 +65,44 @@ export default {
   */
   modules: [
     // Doc: https://http.nuxtjs.org/usage
+    'nuxt-i18n',
     '@nuxt/http'
   ],
   googleAnalytics: {
     id: 'UA-83740704-2'
+  },
+  /*
+  ** i18n
+  ** See https://i18n.nuxtjs.org/options-reference
+  */
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        iso: 'en-US',
+        file: 'loader.js'
+      }
+    ],
+    lazy: true,
+    langDir: 'lang',
+    defaultLocale: 'en',
+    detectBrowserLanguage: {
+      // TODO: this is less performant, but bypasses GDPR
+      useCookie: false,
+      // cookieKey: 'i18n_redirected',
+      onlyOnRoot: true
+    },
+    seo: true,
+    baseUrl: 'https://n7.world',
+    vuex: {
+      moduleName: 'i18n',
+      syncLocale: true,
+      syncMessages: false,
+      syncRouteParams: true
+    },
+    vueI18n: {
+      fallbackLocale: 'en'
+    }
   },
   /*
   ** http module configuration
@@ -75,6 +111,18 @@ export default {
   http: {
     baseURL: `${process.env.API_BASE_URL}/${process.env.VERSION.replace(/\./g, '')}`
     // baseURL: '/.me5e/'
+  },
+  /*
+  ** PWA
+  ** See https://pwa.nuxtjs.org/
+  */
+  pwa: {
+    manifest: {
+      name: 'Mass Effect 5e',
+      lang: 'en',
+      theme_color: colors.red.darken4,
+      short_name: 'Mass Effect 5e'
+    }
   },
   /*
   ** vuetify module configuration
@@ -95,7 +143,8 @@ export default {
           info: colors.lightBlue.darken3,
           warning: colors.amber.lighten1,
           error: colors.pink.lighten1,
-          success: colors.lightGreen.lighten1
+          success: colors.lightGreen.lighten1,
+          tertiary: colors.black
         },
         dark: {
           primary: colors.lightBlue.darken1,
@@ -104,7 +153,8 @@ export default {
           info: colors.lightBlue.darken3,
           warning: colors.amber.lighten1,
           error: colors.pink.lighten1,
-          success: colors.lightGreen.lighten1
+          success: colors.lightGreen.lighten1,
+          tertiary: colors.white
         }
       }
     }
@@ -125,17 +175,5 @@ export default {
   },
   publicRuntimeConfig: {
     version: process.env.VERSION
-  },
-  /*
-  ** PWA
-  ** See https://pwa.nuxtjs.org/
-  */
-  pwa: {
-    manifest: {
-      name: 'Mass Effect 5e',
-      lang: 'en',
-      theme_color: colors.red.darken4,
-      short_name: 'Mass Effect 5e'
-    }
   }
 }

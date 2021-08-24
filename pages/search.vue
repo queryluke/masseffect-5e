@@ -4,7 +4,7 @@
       <v-col cols="12" lg="8" offset-lg="2" xl="6" offset-xl="3">
         <v-card>
           <v-card-text>
-            <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" clearable autofocus />
+            <v-text-field v-model="search" append-icon="mdi-magnify" :label="$t('buttons.search')" clearable autofocus />
             <v-row justify="space-around">
               <v-col v-for="sf in searchFilters" :key="sf.id" cols="2" class="text-center">
                 <v-btn
@@ -40,12 +40,12 @@
         <v-progress-circular v-if="searching" size="70" width="7" color="primary" indeterminate />
         <div v-else-if="search === '' || search === null">
           <p class="text-h5">
-            Enter a search term
+            {{ $t('buttons.enter_search') }}
           </p>
         </div>
         <div v-else>
           <p class="text-h5">
-            No results found
+            {{ $t('buttons.no_results') }}
           </p>
         </div>
       </div>
@@ -58,11 +58,7 @@ import lunr from 'lunr'
 import { debounce } from 'lodash'
 
 export default {
-  async fetch () {
-    this.$store.commit('pageTitle', 'Search')
-    this.docs = await this.$store.dispatch('FETCH_DATA', 'search-index')
-    this.index = await this.createIndex(this.docs.slice())
-  },
+  layout: 'phb',
   data () {
     return {
       index: null,
@@ -70,6 +66,19 @@ export default {
       docs: [],
       filters: [],
       results: []
+    }
+  },
+  async fetch () {
+    this.$store.commit('pageTitle', 'Search')
+    this.docs = await this.$store.dispatch('FETCH_DATA', 'search-index')
+    this.index = await this.createIndex(this.docs.slice())
+  },
+  head () {
+    return {
+      title: 'Search | Mass Effect 5e',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Search Mass Effect 5e rules, spells, class features, etc.' }
+      ]
     }
   },
   computed: {
@@ -117,7 +126,6 @@ export default {
         this.ref('id')
         this.field('title', { boost: 3 })
         this.field('type')
-        this.field('subType')
         this.field('qualifiers')
         this.field('body')
         this.metadataWhitelist = ['position']
@@ -151,15 +159,6 @@ export default {
     getDoc (ref) {
       return this.docs.find(d => d.id === ref)
     }
-  },
-  head () {
-    return {
-      title: 'Search | Mass Effect 5e',
-      meta: [
-        { hid: 'description', name: 'description', content: 'Search Mass Effect 5e rules, spells, class features, etc.' }
-      ]
-    }
-  },
-  layout: 'phb'
+  }
 }
 </script>

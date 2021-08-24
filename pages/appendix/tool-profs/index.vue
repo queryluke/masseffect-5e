@@ -2,11 +2,11 @@
   <v-container>
     <v-row align-content="space-around">
       <v-col>
-        <me-page-title title="Tool Proficiencies" />
+        <me-page-title />
       </v-col>
       <v-col class="text-right">
         <v-btn to="/manual/equipment#tools-kits" nuxt outlined color="primary">
-          Tools Proficiency Rules
+          {{ $t('rules_title') }}
         </v-btn>
       </v-col>
     </v-row>
@@ -17,12 +17,12 @@
         type="appendix/tool-profs"
         :bookmarkable="false"
       >
-        <template v-slot:header.name="{ item }">
+        <template #[`header.name`]="{ item }">
           <div>
             {{ item.name }}
           </div>
-          <div class="text-caption">
-            {{ item.type }}
+          <div v-if="item.type" class="text-caption">
+            {{ $t(`tool_prof_types.${item.type}`) }}
           </div>
         </template>
       </me-expansion-list>
@@ -32,24 +32,24 @@
 
 <script>
 export default {
-  async fetch () {
-    this.$store.commit('pageTitle', 'Tool Proficiencies')
-    this.items = await this.$store.dispatch('FETCH_DATA', 'tool-profs')
-  },
   data () {
     return {
-      items: [],
       headers: [
         { label: 'Name', key: 'name' }
       ]
     }
   },
-  head () {
-    return {
-      title: 'Tools Proficiencies - Appendix | Mass Effect 5e',
-      meta: [
-        { hid: 'description', name: 'description', content: 'Tools Proficiences provide additional benefits when combined with certain skills.' }
-      ]
+  async fetch () {
+    this.$store.dispatch('SET_META', {
+      title: this.$t('tool_profs_title'),
+      subtitle: this.$t('appendix_title'),
+      description: this.$t('meta.tool_profs')
+    })
+    await this.$store.dispatch('FETCH_DATA', 'tool-profs')
+  },
+  computed: {
+    items () {
+      return this.$store.getters.getData('tool-profs')
     }
   }
 }

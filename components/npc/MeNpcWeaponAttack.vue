@@ -1,16 +1,15 @@
 <template>
-  <me-npc-attack v-if="!loading" :attack="attack" :recharge="recharge" />
+  <me-npc-attack v-if="!$fetchState.pending" :feature="weaponFeature" :ability-scores="abilityScores" :prof-bonus="feature.proficient ? profBonus : 0" />
 </template>
 
 <script>
 import { AbilityScoreBonus } from '~/mixins/abilityScoreBonus'
-import { AverageFromDie } from '~/mixins/averageFromDie'
 
 export default {
-  mixins: [AbilityScoreBonus, AverageFromDie],
+  mixins: [AbilityScoreBonus],
   props: {
-    id: {
-      type: String,
+    feature: {
+      type: Object,
       required: true
     },
     abilityScores: {
@@ -24,71 +23,59 @@ export default {
     },
     profBonus: {
       type: Number,
-      default: 2
+      required: true
     }
   },
-  data () {
-    return {
-      loading: true,
-      weapon: {
-        name: 'NOT FOUND',
-        tags: '',
-        type: '',
-        damage: '1d4',
-        range: 2,
-        properties: []
-      }
-    }
+  async fetch () {
+    await this.$store.dispatch('FETCH_LOTS', ['weapons', 'weapon-properties'])
   },
   computed: {
-    attack () {
+    weapon () {
+      return this.$store.getters.getItem('weapons', this.feature.weaponId)
+    },
+    weaponFeature () {
+      // TODO: This could be stored on the weapon itself since when dice rolls are introduced, most of it already is
       return {
-        name: this.weapon.name,
-        type: this.attackType,
-        attackMod: this.attackMod + this.profBonus,
+        attack: this.attackType,
+        props: this.featureProps,
         range: this.weapon.range,
-        hit: this.damageText,
-        target: 'one target',
-        miss: this.weapon.npcMiss ? this.weapon.npcMiss : false
+        dc: false,
+        proficient: this.feature.proficient,
+        damage: [this.damage],
+        name: this.weapon.name,
+        mod: this.mod,
+        hit: this.weapon.npcHit || false,
+        miss: this.weapon.npcMiss || false,
+        target: 'one'
       }
     },
-    recharge () {
-      return this.notableTags.length > 0 ? this.notableTags.join(', ') : false
+    featureProps () {
+      const notable = this.$store.getters.getData('weapon-properties').filter(i => ['two-handed', 'double-tap', 'hip-fire', 'burst-fire'].includes(i.id))
+      const props = this.weapon.properties.filter(t => notable.map(i => i.id).includes(t))
+      return props.length > 0 ? props : false
     },
-    attackMod () {
-      const tags = this.tags
+    damage () {
+      const clone = JSON.parse(JSON.stringify(this.weapon.damage))
+      clone.mod = true
+      return clone
+    },
+    mod () {
+      if (this.feature.mod) {
+        return this.feature.mod
+      }
       let abilityMod = 0
       const strMod = this.abilityScoreBonus(this.abilityScores.str)
       const dexMod = this.abilityScoreBonus(this.abilityScores.dex)
-      if (tags.includes('finesse') || tags.includes('recoil')) {
-        abilityMod = strMod > dexMod ? strMod : dexMod
+      if (this.weapon.properties.includes('finesse') || this.weapon.properties.includes('recoil')) {
+        abilityMod = strMod > dexMod ? 'str' : 'dex'
       } else {
-        abilityMod = this.weapon.type === 'Melee' ? strMod : dexMod
+        abilityMod = this.attackType === 'melee' ? 'str' : 'dex'
       }
       return abilityMod
     },
     attackType () {
-      return this.weapon.type === 'Melee' ? 'melee' : 'ranged'
-    },
-    tags () {
-      return this.weapon.properties.map(t => t.toLowerCase().trim())
-    },
-    notableTags () {
-      const notableTags = ['two-handed', 'double tap', 'hip fire', 'burst fire']
-      return this.tags.filter(t => notableTags.includes(t))
-    },
-    damage () {
-      return this.averageFromDie(this.weapon.damage) + this.attackMod
-    },
-    damageText () {
-      const npcHit = this.weapon.npcHit ? ` and ${this.weapon.npcHit}` : ''
-      const attackModText = this.attackMod > 0 ? ` + ${this.attackMod}` : ''
-      return `${this.damage} (${this.weapon.damage}${attackModText}) ${this.weapon.dmgType} damage${npcHit}.`
+      return ['assault_rifle', 'heavy_pistol', 'smg', 'shotgun', 'sniper_rifle'].includes(this.weapon.type) ? 'ranged' : 'melee'
     }
-  },
-  async created () {
-    this.weapon = await this.$store.dispatch('FETCH_ITEM', { endpoint: 'weapons', id: this.id })
-    this.loading = false
   }
 }
 </script>

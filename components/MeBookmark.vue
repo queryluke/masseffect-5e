@@ -3,7 +3,7 @@
     <v-icon left>
       {{ icon }}
     </v-icon>
-    {{ text }}
+    {{ $t(text) }}
   </v-btn>
 </template>
 
@@ -27,7 +27,7 @@ export default {
       return this.isBookmarked ? 'grey darken-3' : 'secondary'
     },
     text () {
-      return this.isBookmarked ? 'Remove Bookmark' : 'Bookmark'
+      return this.isBookmarked ? 'buttons.remove_bookmark' : 'buttons.add_bookmark'
     },
     icon () {
       return this.isBookmarked ? 'mdi-delete' : 'mdi-bookmark'

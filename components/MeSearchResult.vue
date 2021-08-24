@@ -2,7 +2,7 @@
   <v-card hover class="search-result mt-5" @click="show()">
     <v-card-text>
       <div class="text-overline" :class="textColor">
-        <span v-for="(q, i) in breadcrumbs" :key="q">
+        <span v-for="(q, i) in result.doc.qualifiers" :key="q">
           <v-icon v-if="i !== 0" small class="mb-1">
             mdi-chevron-right
           </v-icon>
@@ -51,13 +51,6 @@ export default {
     }
   },
   computed: {
-    breadcrumbs () {
-      const crumbs = [this.result.doc.type]
-      if (this.result.doc.subType) {
-        crumbs.push(this.result.doc.subType)
-      }
-      return crumbs.concat(this.result.doc.qualifiers)
-    },
     searchFilters () {
       return this.$store.getters['config/searchFilters']
     },
@@ -163,7 +156,7 @@ export default {
     show () {
       if (this.result.doc.link) {
         this.$router.push({
-          path: this.result.doc.link
+          path: this.localePath(this.result.doc.link)
         })
       } else {
         this.showFull = !this.showFull

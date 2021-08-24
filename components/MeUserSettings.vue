@@ -1,9 +1,9 @@
 <template>
   <v-list dense>
-    <v-subheader>Settings</v-subheader>
+    <v-subheader>{{ $t('settings.label') }}</v-subheader>
     <v-list-item>
       <v-list-item-content>
-        <v-list-item-title>Mode: {{ darkMode ? 'Dark' : 'Light' }}</v-list-item-title>
+        <v-list-item-title>{{ $t('settings.mode') }}: {{ darkMode ? $t('settings.dark') : $t('settings.light') }}</v-list-item-title>
       </v-list-item-content>
       <v-list-item-action>
         <v-btn icon @click="toggleDarkMode">
@@ -13,12 +13,15 @@
     </v-list-item>
     <v-list-item>
       <v-list-item-content>
-        <v-list-item-title>Units: {{ imperial ? 'Imperial' : 'Metric' }}</v-list-item-title>
+        <v-list-item-title>{{ $t('settings.units') }}: {{ imperial ? $t('settings.imperial') : $t('settings.metric') }}</v-list-item-title>
       </v-list-item-content>
       <v-list-item-action>
         <v-switch v-model="imperial" inset dense />
       </v-list-item-action>
     </v-list-item>
+    <!--
+    <me-lang-picker activator="listItem" />
+    -->
   </v-list>
 </template>
 

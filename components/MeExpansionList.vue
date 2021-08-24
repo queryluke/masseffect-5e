@@ -1,14 +1,14 @@
 <template>
   <v-expansion-panels>
     <v-expansion-panel
-      v-for="item in items"
+      v-for="(item, index) in items"
       :key="item.id"
     >
       <v-expansion-panel-header>
-        <template v-slot:default="{ open }">
+        <template #default="{ open }">
           <v-slide-x-transition leave-absolute hide-on-leave>
             <span v-if="open" key="1">
-              <slot name="header.expanded" :item="item">
+              <slot name="header.expanded" :item="item" :index="index">
                 <me-item-title :title="item.name" />
               </slot>
             </span>
@@ -23,7 +23,7 @@
                   :xl="xl(header)"
                   :class="header.classes"
                 >
-                  <slot :name="`header.${header.key}`" :item="item">
+                  <slot :name="`header.${header.key}`" :item="item" :index="index">
                     {{ item[header.key] }}
                   </slot>
                 </v-col>
@@ -33,20 +33,22 @@
         </template>
       </v-expansion-panel-header>
       <v-expansion-panel-content>
-        <slot name="body" :item="item">
+        <slot name="body" :item="item" :index="index">
           <div v-if="item.html" class="text-body-2">
             <me-html :content="item.html" />
           </div>
         </slot>
-        <me-hr color="black" :size="1" />
-        <v-row justify="space-between">
-          <v-col>
-            <me-bookmark v-if="bookmarkable" :type="type" :item="item" />
-          </v-col>
-          <v-col class="text-right">
-            <me-permalink :item-id="item.id" :type="type" />
-          </v-col>
-        </v-row>
+        <div v-if="showBar">
+          <me-hr color="black" :size="1" />
+          <v-row justify="space-between">
+            <v-col>
+              <me-bookmark v-if="bookmarkable" :type="type" :item="item" />
+            </v-col>
+            <v-col class="text-right">
+              <me-permalink v-if="linkable" :item-id="item.id" :type="type" :target="newWindow ? '_blank' : '_self' " />
+            </v-col>
+          </v-row>
+        </div>
       </v-expansion-panel-content>
     </v-expansion-panel>
   </v-expansion-panels>
@@ -70,11 +72,24 @@ export default {
     },
     type: {
       type: String,
-      required: true
+      default: ''
     },
     bookmarkable: {
       type: Boolean,
       default: true
+    },
+    linkable: {
+      type: Boolean,
+      default: true
+    },
+    newWindow: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    showBar () {
+      return this.linkable || this.bookmarkable
     }
   },
   methods: {

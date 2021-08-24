@@ -24,11 +24,11 @@ export default {
   },
   computed: {
     meleeWeapon () {
-      return this.item.type === 'Melee'
+      return this.item.type === 'melee'
     },
     extendedRange () {
       const rangeNum = Number.parseInt(this.item.range, 10)
-      const multiplier = this.item.type === 'Shotgun' ? 2 : 3
+      const multiplier = this.item.type === 'shotgun' ? 2 : 3
       return rangeNum * multiplier
     }
   }

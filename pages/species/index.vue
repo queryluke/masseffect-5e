@@ -15,20 +15,18 @@
 
 export default {
   async fetch () {
-    this.$store.commit('pageTitle', 'Species')
-    this.items = await this.$store.dispatch('FETCH_DATA', 'species')
+    this.$store.dispatch('SET_META', {
+      title: this.$tc('species_title', 2),
+      description: this.$t('meta.species')
+    })
+    await this.$store.dispatch('FETCH_LOTS', ['species', 'traits'])
   },
-  data () {
-    return {
-      items: [...Array(9).keys()]
-    }
-  },
-  head () {
-    return {
-      title: 'Species | Mass Effect 5e',
-      meta: [
-        { hid: 'description', name: 'description', content: 'Every species you need for a deeply involved Mass Effect Campaign.' }
-      ]
+  computed: {
+    items () {
+      if (this.$fetchState.pending) {
+        return [...Array(9).keys()]
+      }
+      return this.$store.getters.getData('species')
     }
   }
 }
