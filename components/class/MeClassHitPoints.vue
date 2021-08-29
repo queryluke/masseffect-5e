@@ -11,7 +11,7 @@
         $t(
           'hit_points_at_higher_text',
           {
-            die: item.hitDie,
+            die: $t('dice', {dieCount: 1, dieType: item.hitDie}),
             min: minHitDieRoll,
             mod: $t('abilities.con.title')
           }
