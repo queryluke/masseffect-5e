@@ -11,23 +11,25 @@ export const Background = {
           cid: this.cid,
           id: `background-${oldBgId}`
         })
-        // set the species id
+        // set the background id
         this.$store.commit('cb/UPDATE_CHARACTER', {
           cid: this.cid,
           attr: 'background',
           value
         })
         // add any mandatory selections
-        let currSelections = JSON.parse(JSON.stringify(this.selections))
-        if (this.backgroundData.mechanics) {
-          const bgSourceId = `background-${this.backgroundId}`
-          currSelections = currSelections.concat(this.getMechanicsWithoutChoices(bgSourceId, this.backgroundData.mechanics))
+        if (value) {
+          let currSelections = JSON.parse(JSON.stringify(this.selections))
+          if (this.backgroundData.mechanics) {
+            const bgSourceId = `background-${this.backgroundId}`
+            currSelections = currSelections.concat(this.getMechanicsWithoutChoices(bgSourceId, this.backgroundData.mechanics))
+          }
+          this.$store.commit('cb/UPDATE_CHARACTER', {
+            cid: this.cid,
+            attr: 'selections',
+            value: currSelections
+          })
         }
-        this.$store.commit('cb/UPDATE_CHARACTER', {
-          cid: this.cid,
-          attr: 'selections',
-          value: currSelections
-        })
       }
     },
     backgroundData () {

@@ -1,6 +1,6 @@
 <template>
   <me-character-builder-aspect :aspect="{name: $tc('background_title', 1) }" :has-selections="backgroundHasSelections" class="mb-3">
-    <v-select v-model="backgroundId" :items="backgrounds" item-value="id" item-text="name" />
+    <v-select v-model="backgroundId" :items="backgrounds" item-value="id" item-text="name" clearable />
     <div v-if="backgroundId">
       <template v-for="mechanic in backgroundData.mechanics.filter(i => i.choices)">
         <me-character-builder-selectable :key="mechanic.id" :selectable="mechanic" :source="`background-${backgroundId}-${mechanic.id}`" />
