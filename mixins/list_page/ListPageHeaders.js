@@ -33,9 +33,9 @@ export const ListPageHeaders = {
           { key: 'notes', label: 'notes_title', cols: 3, classes: 'd-none d-md-flex', sortable: false }
         ],
         gear: [
-          { key: 'name', label: 'name_title', cols: 6 },
+          { key: 'name', label: 'name_title', cols: 9, sm: 6 },
           { key: 'cost', label: 'cost_title', cols: 3 },
-          { key: 'weight', label: 'weight_title', cols: 3 }
+          { key: 'weight', label: 'weight_title', cols: 3, classes: 'd-none d-sm-flex' }
         ],
         bestiary: [
           { key: 'name', label: 'name_title', cols: 6 },

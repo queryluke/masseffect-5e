@@ -8,7 +8,7 @@
       <me-gear-title :item="item" />
     </template>
     <template #[`header.name`]="{ item }">
-      <div class="font-weight-bold" :class="textColor(item.rarity)">
+      <div class="font-weight-bold text-truncate" :class="textColor(item.rarity)">
         {{ item.name }}
       </div>
       <small>
