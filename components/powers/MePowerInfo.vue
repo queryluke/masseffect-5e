@@ -45,7 +45,7 @@
       <v-col cols="6" md="3">
         <div>
           <v-row justify="start" align-content="center" no-gutters>
-            <v-col v-for="klass in item.availableClasses" :key="klass" cols="auto">
+            <v-col v-for="klass in item.classes" :key="klass" cols="auto">
               <v-avatar size="45" tile>
                 <v-img :src="require(`~/assets/images/classes/${klass}.svg`)" :alt="klass" />
               </v-avatar>
