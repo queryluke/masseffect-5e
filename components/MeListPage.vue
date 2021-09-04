@@ -107,7 +107,7 @@
           >
             <v-list-item-content>
               <v-list-item-title>
-                {{ sortable.label }}
+                {{ $t(sortable.label) }}
               </v-list-item-title>
             </v-list-item-content>
             <v-list-item-icon v-if="sortable.key === sortBy">

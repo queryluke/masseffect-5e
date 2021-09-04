@@ -72,7 +72,7 @@
                   small
                   @click="showSortDialog = true"
                 >
-                  <span class="mr-1">{{ mobileSortLabel }}</span>
+                  <span class="mr-1">{{ $t(mobileSortLabel) }}</span>
                   <v-icon size="18">
                     {{ mobileSortDesc ? 'mdi-sort-ascending' : 'mdi-sort-descending' }}
                   </v-icon>
