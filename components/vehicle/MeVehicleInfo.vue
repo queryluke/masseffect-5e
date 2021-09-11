@@ -24,7 +24,7 @@
           p.ma-0 {{ item.speed }}
         v-flex(xs6 md4 lg2).text-xs-center.my-2
           p.ma-0 #[strong Range]
-          p.ma-0 {{ item.range }}
+          p.ma-0 {{ item.range.distance }} {{ item.range.units }}
         v-flex(xs6 md4 lg2).text-xs-center.my-2
           p.ma-0 #[strong Crew]
           p.ma-0 min: {{ item.crew.min }} | max: {{ item.crew.max }}
