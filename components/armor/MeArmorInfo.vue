@@ -20,6 +20,7 @@
               <me-html :content="bonus.text" inline />
             </li>
           </ul>
+          <me-andromeda-chip v-if="item.andromeda" />
         </div>
       </v-col>
       <v-col cols="12" md="3" lg="2" class="text-sm-center">

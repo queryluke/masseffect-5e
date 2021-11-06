@@ -69,7 +69,7 @@ export default {
     createAbiFeatures (first, rest) {
       const atLevel = {
         level: this.$t('level_nth', {
-          level: this.$t(`ordinal_numbers[${first}]`)
+          nth: this.$t(`ordinal_numbers[${first}]`)
         })
       }
       if (rest) {
