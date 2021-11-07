@@ -9,6 +9,10 @@ export const state = () => ({
   versionSnackbar: false,
   pastVersions: [
     {
+      name: 'v1.3.1',
+      link: 'http://versions.n7.world/v131'
+    },
+    {
       name: 'v1.3.0',
       link: 'http://versions.n7.world/v130'
     },

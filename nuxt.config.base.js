@@ -65,7 +65,7 @@ export default {
   */
   modules: [
     // Doc: https://http.nuxtjs.org/usage
-    'nuxt-i18n',
+    '@nuxtjs/i18n',
     '@nuxt/http'
   ],
   googleAnalytics: {
@@ -92,12 +92,9 @@ export default {
       // cookieKey: 'i18n_redirected',
       onlyOnRoot: true
     },
-    seo: true,
     baseUrl: 'https://n7.world',
     vuex: {
       moduleName: 'i18n',
-      syncLocale: true,
-      syncMessages: false,
       syncRouteParams: true
     },
     vueI18n: {
