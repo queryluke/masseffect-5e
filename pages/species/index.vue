@@ -26,6 +26,7 @@ export default {
       if (this.$fetchState.pending) {
         return [...Array(9).keys()]
       }
+      console.log(this.$store.getters.getData('species'))
       return this.$store.getters.getData('species')
     }
   }

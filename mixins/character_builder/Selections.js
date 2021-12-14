@@ -1,6 +1,6 @@
 /*
  * Selection Source Schema
- *
+ * this is something...
  * {
  *   model: [class, subclass, species, subspecies, species-variant, feat, background, power] (power will only come into play with the new powercasting mode)
  *   modelId: [the id of the model]

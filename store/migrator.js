@@ -65,9 +65,14 @@ export const actions = {
     for (const endpoint of bookmarkables) {
       const bookmarksOfType = bookmarks[endpoint] || []
       for (const bm of bookmarksOfType) {
-        const data = rootGetters.getItem(endpoint, bm.id)
-        if (data) {
-          dispatch('user/TOGGLE_BOOKMARK', { type: endpoint, item: data }, { root: true })
+        // npc generated
+        if (endpoint === 'bestiary' && bm.id.startsWith('generated')) {
+          dispatch('user/TOGGLE_BOOKMARK', { type: endpoint, item: bm }, { root: true })
+        } else {
+          const data = rootGetters.getItem(endpoint, bm.id)
+          if (data) {
+            dispatch('user/TOGGLE_BOOKMARK', { type: endpoint, item: data }, { root: true })
+          }
         }
       }
     }
