@@ -21,6 +21,19 @@
           </v-tab-item>
           <v-tab-item class="pa-3">
             <me-species-traits-list :item="item" />
+            <div v-if="subspecies">
+              <me-tpg s="h3">
+                {{ subspecies.name }}
+              </me-tpg>
+              <me-html :content="subspecies.html" class="mt-1" />
+              <div v-for="sub of subspeciesOptions" :key="sub.id">
+                <me-tpg s="h4">
+                  {{ sub.name }}
+                </me-tpg>
+                <me-hr size="1" class="mt-n1" color="primary" />
+                <me-species-traits-list :item="sub" />
+              </div>
+            </div>
             <me-source-reference v-if="rorReference[item.id]" :pages="rorReference[item.id]" source="races" />
           </v-tab-item>
           <v-tab-item class="pa-3">
@@ -63,10 +76,12 @@
 
 <script>
 
+import MeTpg from '~/components/MeTpg'
 export default {
+  components: { MeTpg },
   layout: 'tabbed',
   async asyncData ({ store }) {
-    await store.dispatch('FETCH_LOTS', ['species', 'traits', 'species-variants'])
+    await store.dispatch('FETCH_LOTS', ['species', 'traits', 'subspecies', 'subspecies-options'])
   },
   data () {
     return {
@@ -96,10 +111,16 @@ export default {
       return this.$store.getters.getItem('species', this.$route.params.id)
     },
     variants () {
-      return this.$store.getters.getData('species-variants').filter(i => i.species === this.$route.params.id)
+      return this.$store.getters.getData('species').filter(i => i.type === 'variant' && i.species === this.$route.params.id)
     },
     hasVariants () {
       return this.variants.length > 0
+    },
+    subspecies () {
+      return this.$store.getters.getData('subspecies').find(i => i.species === this.$route.params.id)
+    },
+    subspeciesOptions () {
+      return this.$store.getters.getData('subspecies-options').filter(i => i.species === this.$route.params.id)
     },
     tab: {
       get () {

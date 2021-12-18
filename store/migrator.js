@@ -79,5 +79,10 @@ export const actions = {
   },
   MIGRATE_CHARACTERS ({ commit }, characters) {
     // TODO: any necessary migrations
+    // bump version
+    // add "po" (player options) array
+    // move species selection into po array
+    // move class selections into po array (feats, asi, subclasses)
+    //  - the class selection should have attributes like { level: 1, primary: true/false }
   }
 }

@@ -1,50 +1,34 @@
 <template>
-  <div>
-    <span>
-      {{ walking.text }} <me-distance :length="walking.speed" />.
-    </span>
-    <span
-      v-for="(add, i) in additional"
-      :key="i"
-      class="pl-2"
-    >
-      {{ add.text }} <me-distance :length="add.speed" />.
-    </span>
-  </div>
+  <me-species-trait v-if="displaySpeed" :label="$t('speed_title')">
+    <me-html :content="speedText" />
+  </me-species-trait>
 </template>
 
 <script>
 export default {
   props: {
-    data: {
-      type: Array,
-      default: () => {
-        return []
-      }
+    item: {
+      type: Object,
+      required: true
     }
   },
   computed: {
-    walking () {
-      const walking = this.data.find(i => i.type === 'walk')
-      return this.createText(walking)
+    displaySpeed () {
+      return (this.speeds && this.speeds.length) || this.item.speedColor
     },
-    hasAdditional () {
-      return this.data.length > 1
+    speeds () {
+      return this.item.mechanics?.filter(i => i.type === 'speed')
     },
-    additional () {
-      return this.data.filter(i => i.type !== 'walk').map(i => this.createText(i))
-    }
-  },
-  methods: {
-    createText (object) {
-      let text = ''
-      if (object.color) {
-        text = `${object.color} `
-      }
-      return {
-        text: `${text}Your base ${object.type}ing speed is `,
-        speed: object.speed
-      }
+    speedText () {
+      const speedsTextArray = this.speeds.map((i) => {
+        return this.$t('speed_trait', {
+          type: this.$t(`speeds.${i.speed}.text`),
+          distance: `<me-distance length="${i.distance}" />`
+        })
+      })
+      const list = this.$t(`lists.comma_list[${speedsTextArray.length}]`, speedsTextArray)
+      const text = this.item.speedColor ? `${this.item.speedColor} ` : ''
+      return `${text}${list}`
     }
   }
 }
