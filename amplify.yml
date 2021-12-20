@@ -9,10 +9,10 @@ frontend:
   phases:
     preBuild:
       commands:
-        - yarn install
+        - npm install
     build:
       commands:
-        - yarn run generate
+        - npm run generate
   artifacts:
     # IMPORTANT - Please verify your build output directory
     baseDirectory: dist
