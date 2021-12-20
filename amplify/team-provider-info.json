@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-masseffect5e-dev-221657-authRole",
+      "UnauthRoleArn": "arn:aws:iam::168036140514:role/amplify-masseffect5e-dev-221657-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::168036140514:role/amplify-masseffect5e-dev-221657-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-masseffect5e-dev-221657-deployment",
+      "UnauthRoleName": "amplify-masseffect5e-dev-221657-unauthRole",
+      "StackName": "amplify-masseffect5e-dev-221657",
+      "StackId": "arn:aws:cloudformation:us-east-1:168036140514:stack/amplify-masseffect5e-dev-221657/4b80fb50-6143-11ec-857f-0a32c11045d3",
+      "AmplifyAppId": "dqx4jr4x8mav"
+    }
+  }
+}

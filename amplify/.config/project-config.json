@@ -1,0 +1,17 @@
+{
+  "projectName": "masseffect5e",
+  "version": "3.1",
+  "frontend": "javascript",
+  "javascript": {
+    "framework": "vue",
+    "config": {
+      "SourceDir": "/",
+      "DistributionDir": "dist",
+      "BuildCommand": "npm.cmd run-script generate -c nuxt.config.prod",
+      "StartCommand": ""
+    }
+  },
+  "providers": [
+    "awscloudformation"
+  ]
+}
