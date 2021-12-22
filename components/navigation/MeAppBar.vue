@@ -23,7 +23,7 @@
       {{ pageTitle }}
     </v-toolbar-title>
     <v-spacer />
-    <v-toolbar-items v-if="$vuetify.breakpoint.lgAndUp">
+    <v-toolbar-items v-if="$vuetify.breakpoint.mdAndUp">
       <v-btn
         v-for="item in navigation"
         :key="item.name"
@@ -38,6 +38,44 @@
       <me-lang-picker />
       -->
     </v-toolbar-items>
+
+    <!-- USER MENU -->
+    <v-toolbar-items>
+      <v-menu v-if="user" offset-y bottom>
+        <template #activator="{ on, attrs }">
+          <v-btn
+            text
+            v-bind="attrs"
+            v-on="on"
+          >
+            <v-avatar :size="$vuetify.breakpoint.smAndDown ? 30 : 36" color="secondary">
+              <v-icon>mdi-account</v-icon>
+            </v-avatar>
+          </v-btn>
+        </template>
+        <v-list>
+          <v-list-item to="/profile">
+            Profile
+          </v-list-item>
+          <v-list-item to="/characters">
+            Characters
+          </v-list-item>
+          <v-list-item to="/bookmarks">
+            Bookmarks
+          </v-list-item>
+          <v-list-item @click="logout()">
+            Sign Out
+          </v-list-item>
+        </v-list>
+      </v-menu>
+      <v-btn v-else :icon="$vuetify.breakpoint.smAndDown" @click="login()">
+        <span v-if="$vuetify.breakpoint.mdAndUp">Sign In</span>
+        <v-icon v-else>
+          mdi-login
+        </v-icon>
+      </v-btn>
+    </v-toolbar-items>
+
     <!-- jumplink nav -->
     <v-toolbar-items v-if="$vuetify.breakpoint.mdAndDown">
       <v-btn v-if="$vuetify.breakpoint.mdAndDown && hasJumpNav" icon @click.stop="jumpNav = !jumpNav">
@@ -65,8 +103,11 @@
 </template>
 
 <script>
+import { authUrls } from '~/mixins/authUrls'
+
 export default {
   name: 'MeAppBar',
+  mixins: [authUrls],
   props: {
     clippedRight: {
       type: Boolean,
@@ -101,6 +142,9 @@ export default {
     }
   },
   computed: {
+    user () {
+      return this.$store.state.auth.cognitoUser
+    },
     mainNavigation () {
       return this.$store.getters.mainNavigation
     },

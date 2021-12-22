@@ -7,7 +7,7 @@
     "config": {
       "SourceDir": "/",
       "DistributionDir": "dist",
-      "BuildCommand": "npm.cmd run-script generate -c nuxt.config.prod",
+      "BuildCommand": "npm run generate",
       "StartCommand": ""
     }
   },

@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
+import awsmobile from './aws-exports'
 
 export default {
   ssr: false,
@@ -43,7 +44,8 @@ export default {
     '@/plugins/persistentState.client.js',
     '@/plugins/filters/index.js',
     '@/plugins/vue2-filters',
-    '@/plugins/globals'
+    '@/plugins/globals',
+    '@/plugins/amplify.client.js'
   ],
   /*
   ** Auto import components
@@ -173,7 +175,13 @@ export default {
       }
     }
   },
+  router: {
+    middleware: 'auth'
+  },
   publicRuntimeConfig: {
-    version: process.env.VERSION
+    version: process.env.VERSION || 'v1.3.0',
+    cognito_client: awsmobile.aws_user_pools_web_client_id || '',
+    sign_in_url: process.env.SIGN_IN_URL || '',
+    base_url: process.env.BASE_URL || 'http://localhost:3000/'
   }
 }

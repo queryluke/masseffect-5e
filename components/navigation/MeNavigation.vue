@@ -4,6 +4,26 @@
     app
     clipped
   >
+    <!-- MIGHT KEEP THIS FOR LATER
+    <template v-if="$vuetify.breakpoint.smAndDown" #prepend>
+      <v-list class="pa-0">
+        <v-list-item @click="drawer = false">
+          <v-list-item-action>
+            <v-icon>mdi-chevron-left</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title class="text-right text-h6">
+              Mass Effect
+            </v-list-item-title>
+          </v-list-item-content>
+          <v-list-item-avatar tile size="23" class="ml-1">
+            <img :src="require('~/assets/images/me5e.svg')">
+          </v-list-item-avatar>
+        </v-list-item>
+      </v-list>
+      <v-divider />
+    </template>
+    -->
     <!-- SEARCH -->
     <v-text-field
       v-model="search"
@@ -53,13 +73,22 @@
               v-bind="attrs"
               v-on="on"
             >
-              {{ $t('version') }} {{ version }}
+              {{ $config.version }}
               <v-icon>
                 mdi-menu-up
               </v-icon>
             </v-toolbar-title>
           </template>
-          <me-version-menu />
+          <v-list>
+            <v-list-item
+              v-for="item in pastVersions"
+              :key="item.name"
+              :href="item.link"
+              target="_blank"
+            >
+              <v-list-item-title>{{ item.name }}</v-list-item-title>
+            </v-list-item>
+          </v-list>
         </v-menu>
         <v-spacer />
         <v-toolbar-items>
@@ -195,6 +224,9 @@ export default {
     }
   },
   computed: {
+    isAuthenticated () {
+      return this.$store.state.auth.isAuthenticated
+    },
     search: {
       get () {
         return this.$store.getters['user/search']
@@ -205,13 +237,14 @@ export default {
     },
     navigation () {
       const navigation = this.nav.slice()
-      if (this.$vuetify.breakpoint.mdAndDown) {
+      if (this.$vuetify.breakpoint.smAndDown) {
         navigation.push({ divider: true })
         navigation.push({ header: this.$t('title') })
         navigation.push({ to: '/assets', name: this.$t('assets_title') })
         navigation.push({ to: '/changelog', name: this.$t('changelog_title') })
         navigation.push({ to: '/about', name: this.$t('about_title') })
         navigation.push({ to: '/license', name: this.$t('license_title') })
+        navigation.push({ to: '/versions', name: 'Past Versions' })
       }
       return navigation
     },

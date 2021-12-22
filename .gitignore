@@ -93,6 +93,8 @@ sw.*
 # me data files
 static/.data
 
+amplify/team-provider-info.json
+
 #amplify-do-not-edit-begin
 amplify/\#current-cloud-backend
 amplify/.config/local-*

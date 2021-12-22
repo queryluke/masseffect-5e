@@ -66,7 +66,7 @@ This is only required if you plan on working on aspects of the site that utilize
 1. Install the [Amplify CLI](https://docs.amplify.aws/cli/)
 2. [Configure your account](https://docs.amplify.aws/cli/start/install/#option-2-follow-the-instructions) (will need to contact the ME5e developers for an AWS account)
   - Note, if you already have an amplify profile configured, [see this guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
-3. In the root of this repo: `amplify pull` 
+3. In the root of this repo: `amplify pull --appId dqx4jr4x8mav --envName dev` 
 
 ## Translations
 
