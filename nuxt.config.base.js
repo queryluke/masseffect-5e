@@ -1,5 +1,4 @@
 import colors from 'vuetify/es5/util/colors'
-import awsmobile from './aws-exports'
 
 export default {
   ssr: false,
@@ -180,7 +179,7 @@ export default {
   },
   publicRuntimeConfig: {
     version: process.env.VERSION || 'v1.3.0',
-    cognito_client: awsmobile.aws_user_pools_web_client_id || '',
+    cognito_client: process.env.AMPLIFY_WEBCLIENT_ID || '',
     sign_in_url: process.env.SIGN_IN_URL || '',
     base_url: process.env.BASE_URL || 'http://localhost:3000/'
   }
