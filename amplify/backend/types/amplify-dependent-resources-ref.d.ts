@@ -12,5 +12,11 @@ export type AmplifyDependentResourcesAttributes = {
             "AppClientID": "string",
             "GoogleWebClient": "string"
         }
+    },
+    "api": {
+        "masseffect5e": {
+            "GraphQLAPIIdOutput": "string",
+            "GraphQLAPIEndpointOutput": "string"
+        }
     }
 }

@@ -21,8 +21,6 @@ export const actions = {
     if (!state.isAuthenticated) {
       try {
         const user = await Auth.currentAuthenticatedUser()
-        console.log(await Auth.currentUserInfo())
-        console.log(user)
         commit('SET_USER', user)
       } catch (error) {
         commit('SET_USER', null)
