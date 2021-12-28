@@ -45,5 +45,12 @@
         }
       }
     }
+  },
+  "storage": {
+    "me5estorage": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": []
+    }
   }
 }

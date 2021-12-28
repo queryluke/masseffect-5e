@@ -6,6 +6,10 @@ export const state = () => ({
   redirect: null
 })
 
+export const getters = {
+  sub: state => state.isAuthenticated ? state.cognitoUser.attributes.sub : false
+}
+
 export const mutations = {
   SET_USER (state, user) {
     state.isAuthenticated = !!user
@@ -17,20 +21,16 @@ export const mutations = {
 }
 
 export const actions = {
-  async LOAD_USER ({ commit, state }) {
+  async LOAD_USER ({ commit, state, dispatch }) {
     if (!state.isAuthenticated) {
       try {
         const user = await Auth.currentAuthenticatedUser()
         commit('SET_USER', user)
+        dispatch('user/LOAD_USER_SETTINGS', null, { root: true })
       } catch (error) {
         commit('SET_USER', null)
       }
     }
-  },
-
-  async ATTRIBUTES () {
-    const { attributes } = await Auth.currentAuthenticatedUser()
-    return attributes
   },
 
   async LOG_OUT ({ commit }) {

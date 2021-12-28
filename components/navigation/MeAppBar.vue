@@ -41,7 +41,7 @@
 
     <!-- USER MENU -->
     <v-toolbar-items>
-      <v-menu v-if="user" offset-y bottom>
+      <v-menu v-if="isAuthenticated" offset-y bottom>
         <template #activator="{ on, attrs }">
           <v-btn
             text
@@ -49,8 +49,14 @@
             v-on="on"
           >
             <v-avatar :size="$vuetify.breakpoint.smAndDown ? 30 : 36" color="secondary">
-              <v-icon>mdi-account</v-icon>
+              <v-img v-if="avatar" :src="avatar" />
+              <v-icon v-else>
+                mdi-account
+              </v-icon>
             </v-avatar>
+            <span v-if="username && $vuetify.breakpoint.smAndUp" class="text-overline ml-2">
+              {{ username }}
+            </span>
           </v-btn>
         </template>
         <v-list>
@@ -142,8 +148,14 @@ export default {
     }
   },
   computed: {
-    user () {
-      return this.$store.state.auth.cognitoUser
+    isAuthenticated () {
+      return this.$store.state.auth.isAuthenticated
+    },
+    avatar () {
+      return this.$store.state.user.avatar
+    },
+    username () {
+      return this.$store.state.user.username
     },
     mainNavigation () {
       return this.$store.getters.mainNavigation

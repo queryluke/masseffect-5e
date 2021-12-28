@@ -15,6 +15,9 @@
       "auth": {
         "me5eauth": {
           "googleClientId": "508866812450-4n7bfin1a459e5754q81bs3jjv1op91s.apps.googleusercontent.com"
+        },
+        "true": {
+          "googleClientId": "508866812450-4n7bfin1a459e5754q81bs3jjv1op91s.apps.googleusercontent.com"
         }
       }
     }

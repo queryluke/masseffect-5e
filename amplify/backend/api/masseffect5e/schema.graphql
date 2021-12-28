@@ -10,3 +10,14 @@ type Bookmark @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"}
   model: String!
   modelId: String!
 }
+
+type Profile @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"}, subscriptions: null)
+@auth(rules: [
+  { allow: private, operations: [read, create, update, delete] }
+]) {
+  id: ID!
+  username: String
+  profileImg: String
+  imperial: Boolean!
+  darkMode: Boolean!
+}
