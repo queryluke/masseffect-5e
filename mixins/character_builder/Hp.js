@@ -25,7 +25,7 @@ export const Hp = {
         return this.character.currentStats.hitPointsLost
       },
       set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', {
+        this.$store.dispatch('cb/UPDATE_CHARACTER', {
           cid: this.cid,
           attr: 'currentStats.hitPointsLost',
           value
@@ -37,7 +37,7 @@ export const Hp = {
         return this.character.currentStats.tempHp.max
       },
       set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', {
+        this.$store.dispatch('cb/UPDATE_CHARACTER', {
           cid: this.cid,
           attr: 'currentStats.tempHp.max',
           value
@@ -49,7 +49,7 @@ export const Hp = {
         return this.character.currentStats.tempHp.value
       },
       set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', {
+        this.$store.dispatch('cb/UPDATE_CHARACTER', {
           cid: this.cid,
           attr: 'currentStats.tempHp.value',
           value
@@ -61,7 +61,7 @@ export const Hp = {
         return this.character.settings.shields
       },
       set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', {
+        this.$store.dispatch('cb/UPDATE_CHARACTER', {
           cid: this.cid,
           attr: 'currentStats.shields.max',
           value
@@ -73,7 +73,7 @@ export const Hp = {
         return this.character.currentStats.shields.value
       },
       set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', {
+        this.$store.dispatch('cb/UPDATE_CHARACTER', {
           cid: this.cid,
           attr: 'currentStats.shields.value',
           value

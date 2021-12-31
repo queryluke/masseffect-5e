@@ -42,7 +42,7 @@ export const Barrier = {
       },
       set (value) {
         const nonMaxZeroValue = value > this.csMaxBarrierTicks ? this.csMaxBarrierTicks : value < 0 ? 0 : value
-        this.$store.commit('cb/UPDATE_CHARACTER', {
+        this.$store.dispatch('cb/UPDATE_CHARACTER', {
           cid: this.cid,
           attr: 'currentStats.barrier.ticksUsed',
           value: nonMaxZeroValue
@@ -62,7 +62,7 @@ export const Barrier = {
       },
       set (value) {
         const nonMaxZeroValue = value > this.csMaxBarrierUses ? this.csMaxBarrierUses : value < 0 ? 0 : value
-        this.$store.commit('cb/UPDATE_CHARACTER', {
+        this.$store.dispatch('cb/UPDATE_CHARACTER', {
           cid: this.cid,
           attr: 'currentStats.barrier.used',
           value: nonMaxZeroValue

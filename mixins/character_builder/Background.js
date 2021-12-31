@@ -12,7 +12,7 @@ export const Background = {
           id: `background-${oldBgId}`
         })
         // set the background id
-        this.$store.commit('cb/UPDATE_CHARACTER', {
+        this.$store.dispatch('cb/UPDATE_CHARACTER', {
           cid: this.cid,
           attr: 'background',
           value
@@ -24,7 +24,7 @@ export const Background = {
             const bgSourceId = `background-${this.backgroundId}`
             currSelections = currSelections.concat(this.getMechanicsWithoutChoices(bgSourceId, this.backgroundData.mechanics))
           }
-          this.$store.commit('cb/UPDATE_CHARACTER', {
+          this.$store.dispatch('cb/UPDATE_CHARACTER', {
             cid: this.cid,
             attr: 'selections',
             value: currSelections

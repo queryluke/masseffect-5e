@@ -19,12 +19,11 @@ export default {
 
       if (!file) { return }
       reader.readAsText(file)
-
-      reader.onload = (e) => {
+      reader.onload = async (e) => {
         const dataDump = e.target.result
         if (dataDump && dataDump !== '') {
           const char = JSON.parse(e.target.result)
-          this.$store.commit('cb/UPDATE_CHARACTERS', char)
+          await this.$store.dispatch('cb/CREATE_CHARACTER', char)
         }
       }
     }

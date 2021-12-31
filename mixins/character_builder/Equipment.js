@@ -5,7 +5,7 @@ export const Equipment = {
         return this.character.equipment
       },
       set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'equipment', value })
+        this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'equipment', value })
       }
     },
     csWeapons () {

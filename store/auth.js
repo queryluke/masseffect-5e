@@ -10,7 +10,7 @@ export const state = () => ({
 
 export const getters = {
   isAuthenticated: state => state.isAuthenticated,
-  sub: state => state.isAuthenticated ? state.cognitoUser.attributes.sub : false
+  sub: state => state.isAuthenticated ? state.cognitoUser?.attributes?.sub : false
 }
 
 export const mutations = {
@@ -31,22 +31,36 @@ export const mutations = {
 
 export const actions = {
   async LOAD_USER ({ commit, getters, dispatch }) {
-    if (!getters.isAuthenticated) {
-      try {
-        const user = await Auth.currentAuthenticatedUser()
-        commit('SET_USER', user)
-      } catch (error) {
-        console.error(error)
-        commit('SET_USER', null)
+    let syncBookmarks = false
+    try {
+      const user = await Auth.currentAuthenticatedUser()
+      if (user && !getters.isAuthenticated) {
+        // i.e., user was not logged in, but now they are so we need to load their user settings
+        // but need to commit the user first
+        syncBookmarks = true
       }
+      commit('SET_USER', user)
+      await dispatch('user/SYNC_PROFILE', null, { root: true })
+    } catch (error) {
+      // i.e., user WAS logged in, but now is NOT
       if (getters.isAuthenticated) {
-        try {
-          await dispatch('user/LOAD_USER_SETTINGS', null, { root: true })
-        } catch (e) {
-          console.error(e)
-        }
+        dispatch('LOGOUT_CLEAN_UP')
+      }
+      // console.error(error)
+      commit('SET_USER', null)
+    }
+    if (syncBookmarks) {
+      try {
+        await dispatch('user/SYNC_BOOKMARKS', null, { root: true })
+      } catch (e) {
+        console.error(e)
       }
     }
+  },
+
+  LOGOUT_CLEAN_UP ({ commit }) {
+    commit('user/RESET_BOOKMARKS', null, { root: true })
+    commit('cb/SET_CHARACTERS', {}, { root: true })
   },
 
   LOG_OUT ({ commit, dispatch }) {
@@ -67,11 +81,11 @@ export const actions = {
             setTimeout(() => {
               const frame = document.getElementById('logoutIframe')
               frame.remove()
-              // all other clean-up
-              commit('user/RESET_BOOKMARKS', null, { root: true })
               commit('SET_USER', null)
               commit('SET_LOGOUT_STATE', 0)
               commit('SET_LOGOUT_OVERLAY', false)
+              // all other clean-up
+              dispatch('LOGOUT_CLEAN_UP')
             }, 1500)
           }, 3000)
         }, 1000)

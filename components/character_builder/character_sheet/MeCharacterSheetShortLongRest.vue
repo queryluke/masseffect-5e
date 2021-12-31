@@ -341,7 +341,7 @@ export default {
         }
       }
 
-      this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'currentStats', value: currentStatsClone })
+      this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'currentStats', value: currentStatsClone })
 
       this.working = false
       this.restBar = false

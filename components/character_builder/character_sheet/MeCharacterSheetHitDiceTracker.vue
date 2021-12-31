@@ -29,7 +29,7 @@ export default {
         return this.character.currentStats.hitDiceUsed[this.klass.id] || 0
       },
       set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `currentStats.hitDiceUsed.${this.klass.id}`, value })
+        this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `currentStats.hitDiceUsed.${this.klass.id}`, value })
       }
     }
   }

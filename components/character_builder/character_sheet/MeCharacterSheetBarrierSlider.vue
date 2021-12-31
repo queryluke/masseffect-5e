@@ -52,7 +52,7 @@ export default {
   methods: {
     useBarrier () {
       const value = (this.character.currentStats.featuresTimesUsed.barrier || 0) + 1
-      this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'currentStats.featuresTimesUsed.barrier', value })
+      this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'currentStats.featuresTimesUsed.barrier', value })
     }
   }
 }

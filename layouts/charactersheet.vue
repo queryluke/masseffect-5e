@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <!-- START: APP BAR -->
-    <me-app-bar :extended="characterReady && $vuetify.breakpoint.smAndDown" :extension-height="140">
+    <me-app-bar :extended="characterReady && $vuetify.breakpoint.smAndDown" :extension-height="140" show-character-cloud-status>
       <template #appBarExtension>
         <div style="width: 100%">
           <me-character-sheet-main-menu />

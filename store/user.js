@@ -7,7 +7,6 @@ export const state = () => ({
   username: null,
   avatar: null,
   profileImg: null,
-  loadingUser: false,
   search: null
 })
 
@@ -30,14 +29,10 @@ export const getters = {
     const lookupModel = model === 'bestiary' && id.startsWith('generated') ? 'genpc' : model
     return typeof state.bookmarks.find(i => i.modelId === id && i.model === lookupModel) !== 'undefined'
   },
-  search: state => state.search,
-  loadingUser: state => state.loadingUser
+  search: state => state.search
 }
 
 export const mutations = {
-  SET_LOADING_USER (state, value) {
-    state.loadingUser = value
-  },
   SET_USER_SETTINGS (state, value) {
     if (!value) {
       return
@@ -83,6 +78,9 @@ export const actions = {
   async ADD_BOOKMARK ({ dispatch, commit, getters, rootGetters }, { type, item }) {
     const data = type === 'genpc' ? jsonpack.pack(JSON.stringify(item)) : null
     const modelId = item.id
+    if (getters.isBookmarked(type, modelId)) {
+      return
+    }
     if (rootGetters['auth/isAuthenticated']) {
       await dispatch('api/MUTATE', { mutation: 'createBookmark', input: { userId: getters.profile.id, model: type, modelId, data } }, { root: true })
     } else {
@@ -105,6 +103,18 @@ export const actions = {
       await dispatch('REMOVE_BOOKMARK', { type, item })
     } else {
       await dispatch('ADD_BOOKMARK', { type, item })
+    }
+  },
+  async SYNC_PROFILE ({ getters, dispatch, commit }) {
+    const profile = getters.profile
+    const user = await dispatch('api/QUERY', { query: 'getProfile', variables: { id: profile.id } }, { root: true })
+    if (user) {
+      commit('SET_USER_SETTINGS', user)
+      if (user.profileImg) {
+        await dispatch('api/GET_IMAGE', { fileName: user.profileImg, action: 'user/SET_AVATAR' }, { root: true })
+      }
+    } else {
+      await dispatch('api/MUTATE', { mutation: 'createProfile', input: profile }, { root: true })
     }
   },
   async SYNC_BOOKMARKS ({ getters, dispatch, commit }) {
@@ -130,6 +140,9 @@ export const actions = {
     const remoteOnly = remoteBookmarks.filter(i => !localLookup.includes(`${i.model}-${i.modelId}`))
     const localAndRemote = remoteBookmarks.filter(i => localLookup.includes(`${i.model}-${i.modelId}`))
     for (const lob of localOnly) {
+      if (lob.id) {
+        continue
+      }
       commit('REMOVE_BOOKMARK', lob)
       const response = await dispatch('api/MUTATE', { mutation: 'createBookmark', input: { userId: getters.profile.id, model: lob.model, modelId: lob.modelId, data: lob.data } }, { root: true })
       commit('ADD_BOOKMARK', response)
@@ -147,24 +160,6 @@ export const actions = {
     commit('SET_DARK_MODE', isDark)
     dispatch('tabbedPage/SET_THEME_MODE', isDark, { root: true })
     await dispatch('UPDATE_PROFILE')
-  },
-  async LOAD_USER_SETTINGS ({ dispatch, commit, getters }) {
-    if (getters.loadingUser) {
-      return
-    }
-    commit('SET_LOADING_USER', true)
-    const profile = getters.profile
-    const user = await dispatch('api/QUERY', { query: 'getProfile', variables: { id: profile.id } }, { root: true })
-    if (user) {
-      commit('SET_USER_SETTINGS', user)
-      await dispatch('SYNC_BOOKMARKS')
-      if (user.profileImg) {
-        await dispatch('api/GET_IMAGE', { fileName: user.profileImg, action: 'user/SET_AVATAR' }, { root: true })
-      }
-    } else {
-      await dispatch('api/MUTATE', { mutation: 'createProfile', input: profile }, { root: true })
-    }
-    commit('SET_LOADING_USER', false)
   },
   async UPDATE_PROFILE ({ dispatch, getters, rootGetters }, update = false) {
     if (rootGetters['auth/isAuthenticated']) {

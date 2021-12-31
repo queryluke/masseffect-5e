@@ -152,7 +152,7 @@ export default {
       const index = brews.findIndex(i => i.id === id)
       if (index > -1) {
         brews.splice(index, 1)
-        this.$store.commit('cb/UPDATE_CHARACTER', {
+        this.$store.dispatch('cb/UPDATE_CHARACTER', {
           cid: this.cid,
           attr: 'brews',
           value: brews
@@ -173,7 +173,7 @@ export default {
       } else {
         brews.push(newBrew)
       }
-      this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'brews', value: brews })
+      this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'brews', value: brews })
       this.brew = this.emptyBrew
     },
     loadBrew (brew) {

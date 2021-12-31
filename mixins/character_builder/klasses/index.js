@@ -9,7 +9,7 @@ export const Klasses = {
         return this.character.classes
       },
       set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', {
+        this.$store.dispatch('cb/UPDATE_CHARACTER', {
           cid: this.cid,
           attr: 'classes',
           value

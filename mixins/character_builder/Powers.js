@@ -97,7 +97,7 @@ export const Powers = {
       },
       set (value) {
         const nonMaxZeroValue = value >= this.csMaxTechPoints ? this.csMaxTechPoints : value <= 0 ? 0 : value
-        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'currentStats.tpUsed', value: nonMaxZeroValue })
+        this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'currentStats.tpUsed', value: nonMaxZeroValue })
       }
     },
     csAllPowers () {
@@ -129,7 +129,7 @@ export const Powers = {
       const nonMaxZeroValue = value >= this.csPowerSlots[psIndex] ? this.csPowerSlots[psIndex] : value <= 0 ? 0 : value
       const values = [...this.character.currentStats.psUsed]
       values.splice(psIndex, 1, nonMaxZeroValue)
-      this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'currentStats.psUsed', value: values })
+      this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'currentStats.psUsed', value: values })
     },
     getCombinedProgressionValues (klasses, column) {
       let value = 0
@@ -153,7 +153,7 @@ export const Powers = {
         level: item.level,
         advancement: false
       })
-      this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'powers', value: powers })
+      this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'powers', value: powers })
     },
     togglePowerAdvancement (id, advId) {
       const powers = [...this.character.powers]
@@ -167,7 +167,7 @@ export const Powers = {
         }
         powers.splice(index, 1, currPower)
       }
-      this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'powers', value: powers })
+      this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'powers', value: powers })
     },
     removePower (id) {
       const powers = [...this.character.powers]
@@ -175,7 +175,7 @@ export const Powers = {
       if (index > -1) {
         powers.splice(index, 1)
       }
-      this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'powers', value: powers })
+      this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'powers', value: powers })
     }
   }
 }

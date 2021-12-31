@@ -5,7 +5,7 @@ export const AbilityScores = {
         return this.character.abilityScores.genMethod
       },
       set (value) {
-        return this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'abilityScores.genMethod', value })
+        return this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'abilityScores.genMethod', value })
       }
     },
     selectedAbilityScores () {
@@ -52,7 +52,7 @@ export const AbilityScores = {
     },
     setAbsBase ({ ability, value }) {
       const val = value === null ? null : Number.parseInt(value, 10)
-      this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `abilityScores.${this.absGenMethod.value}.${ability}`, value: val })
+      this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `abilityScores.${this.absGenMethod.value}.${ability}`, value: val })
     },
     absMod (ability) {
       return this.abilityScoreBonus(this.absTotal(ability))
@@ -98,13 +98,13 @@ export const AbilityScores = {
       return this.character.abilityScores.other[ability]
     },
     setAbsOther ({ ability, value }) {
-      return this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `abilityScores.other.${ability}`, value })
+      return this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `abilityScores.other.${ability}`, value })
     },
     getAbsOverride (ability) {
       return this.character.abilityScores.override[ability]
     },
     setAbsOverride ({ ability, value }) {
-      return this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `abilityScores.override.${ability}`, value })
+      return this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `abilityScores.override.${ability}`, value })
     }
   }
 

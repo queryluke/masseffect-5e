@@ -134,7 +134,7 @@ export default {
         return
       }
       const value = Math.max(number, 0)
-      this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr, value })
+      this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr, value })
     }
   }
 }

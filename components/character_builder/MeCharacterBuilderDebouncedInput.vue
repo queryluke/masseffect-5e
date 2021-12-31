@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     updateAttr () {
-      this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: this.path, value: this.cachedValue })
+      this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: this.path, value: this.cachedValue })
     }
   }
 }

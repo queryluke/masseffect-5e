@@ -143,7 +143,7 @@ export default {
         return this.character.characteristics.alignment
       },
       set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'characteristics.alignment', value })
+        this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'characteristics.alignment', value })
       }
     },
     physicalCharText () {

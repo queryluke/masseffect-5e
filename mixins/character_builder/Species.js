@@ -12,7 +12,7 @@ export const Species = {
           id: `species-${oldSpeciesId}`
         })
         // set the species id
-        this.$store.commit('cb/UPDATE_CHARACTER', {
+        this.$store.dispatch('cb/UPDATE_CHARACTER', {
           cid: this.cid,
           attr: 'species',
           value
@@ -25,7 +25,7 @@ export const Species = {
             currSelections = currSelections.concat(this.getMechanicsWithoutChoices(traitSourceId, trait.mechanics))
           }
         }
-        this.$store.commit('cb/UPDATE_CHARACTER', {
+        this.$store.dispatch('cb/UPDATE_CHARACTER', {
           cid: this.cid,
           attr: 'selections',
           value: currSelections

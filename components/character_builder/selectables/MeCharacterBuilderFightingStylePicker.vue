@@ -88,13 +88,13 @@ export default {
         } else {
           currentStyles.push(value)
         }
-        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'fightingStyles', value: currentStyles })
+        this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'fightingStyles', value: currentStyles })
       }
     }
   },
   created () {
     if (!this.character.fightingStyles) {
-      this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'fightingStyles', value: [] })
+      this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'fightingStyles', value: [] })
     }
   }
 }

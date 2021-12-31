@@ -93,7 +93,7 @@ export default {
               oldFs.splice(gladIndex, 1)
             }
           }
-          this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'fightingStyles', value: oldFs })
+          this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'fightingStyles', value: oldFs })
         }
       }
       this.characterClasses = tempArr

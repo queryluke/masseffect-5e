@@ -316,7 +316,7 @@ export default {
         return this.character.settings.skills
       },
       set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'settings.skills', value })
+        this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'settings.skills', value })
       }
     },
     customExpertise: {
@@ -324,21 +324,21 @@ export default {
         return this.character.settings.expertise
       },
       set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'settings.expertise', value })
+        this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'settings.expertise', value })
       }
     }
   },
   methods: {
     change (stat, value) {
-      this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `settings.${stat}`, value })
+      this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `settings.${stat}`, value })
     },
     toggleSense (key, value) {
       const newValue = value ? 30 : false
-      this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `settings.senses.${key}`, value: newValue })
+      this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `settings.senses.${key}`, value: newValue })
     },
     changeSense (key, value) {
       const newValue = this.$store.getters['user/imperial'] ? value : this.mToFt(value)
-      this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `settings.senses.${key}`, value: newValue })
+      this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `settings.senses.${key}`, value: newValue })
     },
     ftToM (value) {
       if (value) {

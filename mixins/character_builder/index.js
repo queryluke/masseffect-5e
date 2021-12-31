@@ -93,7 +93,7 @@ export const CharacterBuilderHelpers = {
         return this.character.image || (this.speciesId ? this.speciesData.bodyImg : false) || require('~/assets/images/me5e_logo_450w.png')
       },
       set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'image', value })
+        this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'image', value })
       }
     },
     characterName: {
@@ -101,7 +101,7 @@ export const CharacterBuilderHelpers = {
         return this.character.name || 'Unnamed Character'
       },
       set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'name', value })
+        this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'name', value })
       }
     },
     identString () {

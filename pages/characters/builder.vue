@@ -31,7 +31,7 @@
           </v-icon>
           Back
         </v-btn>
-        <v-btn :to="`/characters/sheet?id=${cid}`">
+        <v-btn :loading="loading" @click="goToSheet()">
           Go to Character Sheet
         </v-btn>
         <v-btn v-if="currentStep < builderSteps.length - 1" color="primary" width="140" @click="goToNextStep">
@@ -50,12 +50,21 @@ import { CharacterBuilderHelpers } from '~/mixins/character_builder'
 
 export default {
   mixins: [CharacterBuilderHelpers],
+  layout: 'characterbuilder',
   async asyncData ({ store, redirect, route }) {
     if (!route.query.id) {
       redirect('/characters')
     }
+    if (!store.state.cb.characters[route.query.id]) {
+      redirect('/characters')
+    }
     store.commit('pageTitle', 'Character Builder')
     await store.dispatch('cb/FETCH_CB_DATA')
+  },
+  data () {
+    return {
+      loading: false
+    }
   },
   computed: {
     builder () {
@@ -91,7 +100,7 @@ export default {
         return this.builder.currentStep
       },
       set (value) {
-        return this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'builder.currentStep', value })
+        return this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'builder.currentStep', value })
       }
     }
   },
@@ -101,6 +110,14 @@ export default {
     },
     goToPrevStep () {
       this.currentStep = Math.max(this.currentStep - 1, 0)
+    },
+    async goToSheet () {
+      this.loading = true
+      await this.$store.dispatch('cb/REMOTE_UPDATE', this.cid)
+      await this.$router.push({
+        path: `/characters/sheet?id=${this.cid}`
+      })
+      this.loading = false
     }
   }
 }

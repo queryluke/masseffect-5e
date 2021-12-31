@@ -23,7 +23,7 @@
     </v-row>
     <v-row>
       <v-col class="text-center d-flex justify-space-around">
-        <v-btn @click="createNewCharacter">
+        <v-btn :loading="loading" @click="createNewCharacter">
           Create a New Character
         </v-btn>
         <me-character-builder-import v-if="characters.length === 0" />
@@ -35,6 +35,7 @@
 <script>
 export default {
   async asyncData ({ store }) {
+    await store.dispatch('cb/LOAD_CHARACTERS_FROM_SERVER')
     await store.dispatch('FETCH_LOTS', ['species', 'classes', 'subclasses'])
     store.dispatch('SET_META', {
       title: 'Character Builder',
@@ -43,6 +44,7 @@ export default {
   },
   data () {
     return {
+      loading: false,
       characterStartState: {
         name: null,
         id: '',
@@ -190,30 +192,26 @@ export default {
           currentStep: 1,
           showCharacterSheet: false
         },
-        createdAt: 1615572574654,
-        changedAt: 1615572574654
+        meta: {
+          remote: false
+        }
       }
     }
   },
   computed: {
-    characters: {
-      get () {
-        return Object.keys(this.$store.getters['cb/characters'])
-      },
-      set (value) {
-        return this.$store.commit('cb/UPDATE_CHARACTERS', value)
-      }
+    characters () {
+      return Object.keys(this.$store.getters['cb/characters'])
     }
   },
   methods: {
-    createNewCharacter () {
+    async createNewCharacter () {
+      this.loading = true
       const model = { ...this.characterStartState }
-      model.createdAt = new Date().getTime()
-      model.changedAt = new Date().getTime()
-      model.id = model.createdAt
-      this.characters = model
-      this.$router.push({
-        path: `/characters/builder?id=${model.id}`
+      model.id = new Date().getTime()
+      model.meta.version = this.$store.getters['cb/currentVersion']
+      const id = await this.$store.dispatch('cb/CREATE_CHARACTER', model)
+      await this.$router.push({
+        path: `/characters/builder?id=${id}`
       })
     },
     characterImage (character) {

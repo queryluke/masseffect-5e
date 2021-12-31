@@ -30,7 +30,7 @@ export const Klass = {
           const sentIndex = oldFs.findIndex(i => i.id === 'fighting-style-sentinel')
           if (sentIndex > -1) {
             oldFs.splice(sentIndex, 1)
-            this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'fightingStyles', value: oldFs })
+            this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'fightingStyles', value: oldFs })
           }
         }
       } else {
@@ -66,7 +66,7 @@ export const Klass = {
           const gladIndex = oldFs.findIndex(i => i.id === 'additional-fighting-style')
           if (gladIndex > -1) {
             oldFs.splice(gladIndex, 1)
-            this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'fightingStyles', value: oldFs })
+            this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'fightingStyles', value: oldFs })
           }
         }
         const subklassFeaturesToDelete = this.selections.filter((i) => {
@@ -79,7 +79,7 @@ export const Klass = {
         for (const sftd of subklassFeaturesToDelete) {
           this.$store.dispatch('cb/DELETE_SELECTIONS', { cid: this.cid, id: sftd.source })
         }
-        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `classes.${this.classIndex}.subclass`, value })
+        this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `classes.${this.classIndex}.subclass`, value })
       }
     },
     firstSubklassLevel () {
@@ -126,7 +126,7 @@ export const Klass = {
         return this.klass.hpOverride
       },
       set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `classes.${this.classIndex}.hpOverride`, value })
+        this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `classes.${this.classIndex}.hpOverride`, value })
       }
     },
     klassHitPoints: {
@@ -134,7 +134,7 @@ export const Klass = {
         return this.klass.hitPoints
       },
       set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `classes.${this.classIndex}.hitPoints`, value })
+        this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `classes.${this.classIndex}.hitPoints`, value })
       }
     },
     klassLevel: {
@@ -142,7 +142,7 @@ export const Klass = {
         return this.klass.levels
       },
       set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `classes.${this.classIndex}.levels`, value })
+        this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `classes.${this.classIndex}.levels`, value })
       }
     },
     klassProficiencyOptions () {

@@ -145,7 +145,7 @@ export default {
         return this.character.settings.powerModAbility || this.csStartingClassPowerAbility
       },
       set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'settings.powerModAbility', value })
+        this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'settings.powerModAbility', value })
       }
     }
   }

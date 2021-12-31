@@ -42,6 +42,7 @@
         <v-btn
           color="red"
           text
+          :loading="deleting"
           @click="removeCharacter"
         >
           Yes, permenantly delete {{ name }}
@@ -55,7 +56,7 @@
 export default {
   props: {
     id: {
-      type: Number,
+      type: [Number, String],
       required: true
     },
     name: {
@@ -69,16 +70,19 @@ export default {
   },
   data () {
     return {
-      dialog: false
+      dialog: false,
+      deleting: false
     }
   },
   methods: {
-    removeCharacter () {
-      this.$store.commit('cb/DELETE_CHARACTER', { name: this.name, cid: this.id })
+    async removeCharacter () {
+      this.deleting = true
+      await this.$store.dispatch('cb/REMOVE_CHARACTER', this.id)
       this.$router.push({
         path: '/characters'
       })
       this.dialog = false
+      this.deleting = false
     }
   }
 }

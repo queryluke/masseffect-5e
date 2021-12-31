@@ -90,7 +90,7 @@ export default {
       set (value) {
         const setValue = value > this.uses ? this.uses : value < 0 ? 0 : value
         const id = this.isBarrier ? 'barrier' : this.feature.id
-        return this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `currentStats.featuresTimesUsed.${id}`, value: setValue })
+        return this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `currentStats.featuresTimesUsed.${id}`, value: setValue })
       }
     },
     usesMethods () {

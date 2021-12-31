@@ -191,7 +191,7 @@ export default {
         return this.character.currentStats.exhaustion
       },
       set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'currentStats.exhaustion', value })
+        this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'currentStats.exhaustion', value })
       }
     },
     csIndoctrination: {
@@ -199,7 +199,7 @@ export default {
         return this.character.currentStats.indoctrination
       },
       set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'currentStats.indoctrination', value })
+        this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'currentStats.indoctrination', value })
       }
     }
   },
@@ -219,7 +219,7 @@ export default {
       if (existingIndex === -1 && toggle) {
         value.push(id)
       }
-      this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'currentStats.conditions', value })
+      this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'currentStats.conditions', value })
     }
   }
 }

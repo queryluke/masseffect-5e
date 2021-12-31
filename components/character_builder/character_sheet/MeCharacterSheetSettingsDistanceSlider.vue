@@ -44,7 +44,7 @@ export default {
         return getAttr(this.character.settings, this.attr) || 0
       },
       set (value) {
-        this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `settings.${this.attr}`, value })
+        this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: `settings.${this.attr}`, value })
       }
     }
   }
