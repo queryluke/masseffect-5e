@@ -1,7 +1,6 @@
-import cloneDeep from 'lodash/clonedeep'
+import cloneDeep from 'lodash/cloneDeep'
 import debounce from 'lodash/debounce'
 import jsonpack from 'jsonpack/main'
-// import jsonpack from 'jsonpack/main'
 
 export const state = () => ({
   characterIdIndex: 0,
