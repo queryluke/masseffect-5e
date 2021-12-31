@@ -113,8 +113,10 @@
 </template>
 
 <script>
+import { subscriptions } from '~/mixins/subscriptions'
 export default {
   name: 'MeNavigation',
+  mixins: [subscriptions],
   data () {
     return {
       settingsDialog: false,
@@ -244,23 +246,8 @@ export default {
         navigation.push({ to: '/changelog', name: this.$t('changelog_title') })
         navigation.push({ to: '/about', name: this.$t('about_title') })
         navigation.push({ to: '/license', name: this.$t('license_title') })
-        navigation.push({ to: '/versions', name: 'Past Versions' })
       }
       return navigation
-    },
-    darkModeIcon () {
-      return this.darkMode ? 'mdi-brightness-4' : 'mdi-brightness-5'
-    },
-    darkMode () {
-      return this.$store.getters['user/darkMode']
-    },
-    imperial: {
-      get () {
-        return this.$store.getters['user/imperial']
-      },
-      set (value) {
-        this.$store.commit('user/SET_IMPERIAL', value)
-      }
     },
     drawer: {
       get () {
@@ -285,12 +272,9 @@ export default {
   },
   created () {
     this.$vuetify.theme.dark = this.$store.getters['user/darkMode']
+    this.subscribe(['bookmarks'])
   },
   methods: {
-    toggleDarkMode () {
-      this.$store.dispatch('user/TOGGLE_DARK_MODE')
-      this.$vuetify.theme.dark = this.$store.getters['user/darkMode']
-    },
     submit () {
       this.$router.push({
         path: '/search'

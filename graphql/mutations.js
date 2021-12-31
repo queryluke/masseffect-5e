@@ -11,6 +11,7 @@ export const createBookmark = /* GraphQL */ `
       userId
       model
       modelId
+      data
       createdOn
       updatedOn
     }
@@ -26,6 +27,7 @@ export const updateBookmark = /* GraphQL */ `
       userId
       model
       modelId
+      data
       createdOn
       updatedOn
     }
@@ -41,6 +43,7 @@ export const deleteBookmark = /* GraphQL */ `
       userId
       model
       modelId
+      data
       createdOn
       updatedOn
     }

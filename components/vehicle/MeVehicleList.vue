@@ -4,7 +4,7 @@
       v-expansion-panel-header {{ item.name }}
       v-expansion-panel-content.text-body-2
         me-vehicle-info(:item="item").mt-2
-        me-bookmark(type="vehicle" :item="item")
+        me-bookmark(type="vehicles" :item="item")
 </template>
 
 <script>

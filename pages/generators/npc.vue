@@ -126,7 +126,7 @@
             <me-npc-stat-block :stats="npc" :title="true" />
           </v-card-text>
           <v-card-actions>
-            <me-bookmark :item="npc" type="bestiary" />
+            <me-bookmark :item="npc" type="genpc" />
           </v-card-actions>
         </v-card>
       </v-col>

@@ -3,11 +3,10 @@
 </template>
 
 <script>
-
+import { Auth } from 'aws-amplify'
 export default {
   async beforeCreate () {
-    await this.$store.dispatch('auth/LOG_OUT')
-    this.$router.push(this.$store.state.auth.redirect || '/')
+    await Auth.signOut()
   }
 }
 </script>

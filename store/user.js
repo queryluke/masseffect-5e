@@ -1,3 +1,5 @@
+import jsonpack from 'jsonpack/main'
+
 export const state = () => ({
   darkMode: true,
   imperial: false,
@@ -5,6 +7,7 @@ export const state = () => ({
   username: null,
   avatar: null,
   profileImg: null,
+  loadingUser: false,
   search: null
 })
 
@@ -21,33 +24,28 @@ export const getters = {
   },
   darkMode: state => state.darkMode,
   imperial: state => state.imperial,
-  bookmarkCount: (state) => {
-    let count = 0
-    for (const key in state.bookmarks) {
-      count += state.bookmarks[key].length
-    }
-    return count
-  },
-  bookmarkBagExists: state => type => typeof state.bookmarks[type] !== 'undefined',
+  bookmarkCount: state => state.bookmarks.length,
   bookmarks: state => state.bookmarks,
-  isBookmarked: (state, getters) => (type, item) => {
-    if (!getters.bookmarkBagExists(type)) {
-      return false
-    }
-    return typeof state.bookmarks[type].find(i => i.id === item.id) !== 'undefined'
+  isBookmarked: state => (model, id) => {
+    const lookupModel = model === 'bestiary' && id.startsWith('generated') ? 'genpc' : model
+    return typeof state.bookmarks.find(i => i.modelId === id && i.model === lookupModel) !== 'undefined'
   },
-  search: state => state.search
+  search: state => state.search,
+  loadingUser: state => state.loadingUser
 }
 
 export const mutations = {
+  SET_LOADING_USER (state, value) {
+    state.loadingUser = value
+  },
   SET_USER_SETTINGS (state, value) {
     if (!value) {
       return
     }
-    state.username = value.username || state.username
-    state.darkMode = value.darkMode || state.darkMode
-    state.imperial = value.imperial || state.imperial
-    state.profileImg = value.profileImg || state.profileImg
+    state.username = value.username
+    state.darkMode = value.darkMode
+    state.imperial = value.imperial
+    state.profileImg = value.profileImg
   },
   SET_AVATAR (state, { value }) {
     state.avatar = value
@@ -58,61 +56,117 @@ export const mutations = {
   SET_IMPERIAL (state, value) {
     state.imperial = value
   },
-  CREATE_BOOKMARK_BAG (state, type) {
-    state.bookmarks = { ...state.bookmarks, [type]: [] }
+  ADD_BOOKMARK (state, bookmark) {
+    state.bookmarks.push(bookmark)
   },
-  ADD_BOOKMARK (state, { type, item }) {
-    state.bookmarks[type].push(item)
-  },
-  REMOVE_BOOKMARK (state, { type, item }) {
-    const index = state.bookmarks[type].findIndex(i => i.id === item.id)
+  REMOVE_BOOKMARK (state, { model, modelId }) {
+    const index = state.bookmarks.findIndex(i => i.modelId === modelId && i.model === model)
     if (index > -1) {
-      state.bookmarks[type].splice(index)
+      state.bookmarks.splice(index, 1)
     }
   },
   SET_SEARCH (state, value) {
     state.search = value
   },
   // TODO: temp
-  RESET_BOOKMARKS (state, value) {
-    state.bookmarks = { ...value }
+  RESET_BOOKMARKS (state) {
+    state.bookmarks = []
   }
 }
 
 export const actions = {
-  TOGGLE_BOOKMARK ({ getters, commit }, { type, item }) {
-    if (getters.isBookmarked(type, item)) {
-      commit('REMOVE_BOOKMARK', { type, item })
+  async SET_IMPERIAL ({ commit, dispatch }, value) {
+    commit('SET_IMPERIAL', value)
+    await dispatch('UPDATE_PROFILE')
+  },
+  async ADD_BOOKMARK ({ dispatch, commit, getters, rootGetters }, { type, item }) {
+    const data = type === 'genpc' ? jsonpack.pack(JSON.stringify(item)) : null
+    const modelId = item.id
+    if (rootGetters['auth/isAuthenticated']) {
+      await dispatch('api/MUTATE', { mutation: 'createBookmark', input: { userId: getters.profile.id, model: type, modelId, data } }, { root: true })
     } else {
-      if (!getters.bookmarkBagExists(type)) {
-        commit('CREATE_BOOKMARK_BAG', type)
-      }
-      commit('ADD_BOOKMARK', { type, item })
+      commit('ADD_BOOKMARK', { model: type, data, modelId })
     }
   },
-  TOGGLE_DARK_MODE ({ getters, commit, dispatch }) {
+  async REMOVE_BOOKMARK ({ dispatch, commit, rootGetters, getters }, { type, item }) {
+    // TODO: at this point, data is also the model, so if authenticated need to read current bookmarks to get aws id
+    if (rootGetters['auth/isAuthenticated']) {
+      const bookmark = getters.bookmarks.find(i => i.modelId === item.id && i.model === type)
+      if (bookmark) {
+        await dispatch('api/MUTATE', { mutation: 'deleteBookmark', input: { id: bookmark.id } }, { root: true })
+      }
+    } else {
+      commit('REMOVE_BOOKMARK', { model: type, modelId: item.id })
+    }
+  },
+  async TOGGLE_BOOKMARK ({ getters, commit, rootGetters, dispatch }, { type, item }) {
+    if (getters.isBookmarked(type, item.id)) {
+      await dispatch('REMOVE_BOOKMARK', { type, item })
+    } else {
+      await dispatch('ADD_BOOKMARK', { type, item })
+    }
+  },
+  async SYNC_BOOKMARKS ({ getters, dispatch, commit }) {
+    // GET bookmarks from AWS
+    let nextToken = null
+    const remoteBookmarks = []
+    do {
+      const response = await dispatch('api/QUERY', { query: 'bookmarkByUser', variables: { userId: getters.profile.id, limit: 100, nextToken } }, { root: true })
+      nextToken = response.nextToken
+      remoteBookmarks.push(...response.items)
+    } while (nextToken !== null)
+    // GET bookmarks from localStorage
+    const localBookmarks = getters.bookmarks.slice()
+    // create lookups
+    const remoteLookup = remoteBookmarks.map(i => `${i.model}-${i.modelId}`)
+    const localLookup = localBookmarks.map(i => `${i.model}-${i.modelId}`)
+    // create sync categories
+    const localOnly = localBookmarks.filter(i => !remoteLookup.includes(`${i.model}-${i.modelId}`))
+    const remoteOnly = remoteBookmarks.filter(i => !localLookup.includes(`${i.model}-${i.modelId}`))
+    const localAndRemote = remoteBookmarks.filter(i => localLookup.includes(`${i.model}-${i.modelId}`))
+    for (const lob of localOnly) {
+      commit('REMOVE_BOOKMARK', lob)
+      const response = await dispatch('api/MUTATE', { mutation: 'createBookmark', input: { userId: getters.profile.id, model: lob.model, modelId: lob.modelId, data: lob.data } }, { root: true })
+      commit('ADD_BOOKMARK', response)
+    }
+    for (const rob of remoteOnly) {
+      commit('ADD_BOOKMARK', rob)
+    }
+    for (const larb of localAndRemote) {
+      commit('REMOVE_BOOKMARK', larb)
+      commit('ADD_BOOKMARK', larb)
+    }
+  },
+  async TOGGLE_DARK_MODE ({ getters, commit, dispatch }) {
     const isDark = !getters.darkMode
     commit('SET_DARK_MODE', isDark)
     dispatch('tabbedPage/SET_THEME_MODE', isDark, { root: true })
+    await dispatch('UPDATE_PROFILE')
   },
   async LOAD_USER_SETTINGS ({ dispatch, commit, getters }) {
-    console.log('loading user settings')
+    if (getters.loadingUser) {
+      return
+    }
+    commit('SET_LOADING_USER', true)
     const profile = getters.profile
     const user = await dispatch('api/QUERY', { query: 'getProfile', variables: { id: profile.id } }, { root: true })
     if (user) {
       commit('SET_USER_SETTINGS', user)
+      await dispatch('SYNC_BOOKMARKS')
       if (user.profileImg) {
         await dispatch('api/GET_IMAGE', { fileName: user.profileImg, action: 'user/SET_AVATAR' }, { root: true })
       }
     } else {
       await dispatch('api/MUTATE', { mutation: 'createProfile', input: profile }, { root: true })
     }
+    commit('SET_LOADING_USER', false)
   },
-  async UPDATE_PROFILE ({ dispatch, getters }, update = false) {
-    console.log(getters.profile)
-    await dispatch('api/MUTATE', { mutation: 'updateProfile', input: getters.profile }, { root: true })
-    if (update) {
-      await dispatch('LOAD_USER_SETTINGS')
+  async UPDATE_PROFILE ({ dispatch, getters, rootGetters }, update = false) {
+    if (rootGetters['auth/isAuthenticated']) {
+      await dispatch('api/MUTATE', { mutation: 'updateProfile', input: getters.profile }, { root: true })
+      if (update) {
+        await dispatch('LOAD_USER_SETTINGS')
+      }
     }
   },
   // TODO: temp

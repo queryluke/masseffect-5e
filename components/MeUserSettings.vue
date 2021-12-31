@@ -38,14 +38,14 @@ export default {
       get () {
         return this.$store.getters['user/imperial']
       },
-      set (value) {
-        this.$store.commit('user/SET_IMPERIAL', value)
+      async set (value) {
+        await this.$store.dispatch('user/SET_IMPERIAL', value)
       }
     }
   },
   methods: {
-    toggleDarkMode () {
-      this.$store.dispatch('user/TOGGLE_DARK_MODE')
+    async toggleDarkMode () {
+      await this.$store.dispatch('user/TOGGLE_DARK_MODE')
       this.$vuetify.theme.dark = this.$store.getters['user/darkMode']
     }
   }

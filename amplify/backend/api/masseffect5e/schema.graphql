@@ -4,11 +4,12 @@
 type Bookmark @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"}, subscriptions: null)
 @auth(rules: [
   { allow: private, operations: [read, create, update, delete] }
-]) {
+]){
   id: ID!
-  userId: ID!
+  userId: ID! @index(name: "byUser", queryField: "bookmarkByUser")
   model: String!
   modelId: String!
+  data: String
 }
 
 type Profile @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"}, subscriptions: null)
@@ -20,4 +21,11 @@ type Profile @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"},
   profileImg: String
   imperial: Boolean!
   darkMode: Boolean!
+}
+
+type Subscription {
+  onCreateBookmarkByUserId(userId: ID!): Bookmark
+    @aws_subscribe(mutations: ["createBookmark"])
+  onDeleteBookmarkByUserId(userId: ID!): Bookmark
+    @aws_subscribe(mutations: ["deleteBookmark"])
 }

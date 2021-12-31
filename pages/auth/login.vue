@@ -5,9 +5,13 @@
 <script>
 
 export default {
-  async created () {
+  async beforeCreate () {
     await this.$store.dispatch('auth/LOAD_USER')
-    this.$router.push(this.$store.state.auth.redirect || '/profile')
+    if (!this.$store.state.auth.isAuthenticated) {
+      await this.$store.dispatch('auth/LOG_IN')
+    } else {
+      this.$router.push(this.$store.state.auth.redirect || '/')
+    }
   }
 }
 </script>

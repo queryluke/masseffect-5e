@@ -41,6 +41,7 @@
 
     <!-- USER MENU -->
     <v-toolbar-items>
+      <v-divider v-if="$vuetify.breakpoint.mdAndUp" vertical />
       <v-menu v-if="isAuthenticated" offset-y bottom>
         <template #activator="{ on, attrs }">
           <v-btn
@@ -54,7 +55,7 @@
                 mdi-account
               </v-icon>
             </v-avatar>
-            <span v-if="username && $vuetify.breakpoint.smAndUp" class="text-overline ml-2">
+            <span v-if="username && ($vuetify.breakpoint.lgAndUp || $vuetify.breakpoint.sm)" class="text-overline ml-2">
               {{ username }}
             </span>
           </v-btn>
@@ -69,12 +70,12 @@
           <v-list-item to="/bookmarks">
             Bookmarks
           </v-list-item>
-          <v-list-item @click="logout()">
+          <v-list-item @click="$store.dispatch('auth/LOG_OUT')">
             Sign Out
           </v-list-item>
         </v-list>
       </v-menu>
-      <v-btn v-else :icon="$vuetify.breakpoint.smAndDown" @click="login()">
+      <v-btn v-else :icon="$vuetify.breakpoint.smAndDown" @click="$store.dispatch('auth/LOG_IN')">
         <span v-if="$vuetify.breakpoint.mdAndUp">Sign In</span>
         <v-icon v-else>
           mdi-login
@@ -82,12 +83,6 @@
       </v-btn>
     </v-toolbar-items>
 
-    <!-- jumplink nav -->
-    <v-toolbar-items v-if="$vuetify.breakpoint.mdAndDown">
-      <v-btn v-if="$vuetify.breakpoint.mdAndDown && hasJumpNav" icon @click.stop="jumpNav = !jumpNav">
-        <v-icon>mdi-page-layout-sidebar-right</v-icon>
-      </v-btn>
-    </v-toolbar-items>
     <template v-if="tabbed && $vuetify.breakpoint.smAndDown" #extension>
       <v-tabs
         v-model="tab"
@@ -109,17 +104,10 @@
 </template>
 
 <script>
-import { authUrls } from '~/mixins/authUrls'
-
 export default {
   name: 'MeAppBar',
-  mixins: [authUrls],
   props: {
     clippedRight: {
-      type: Boolean,
-      default: false
-    },
-    hasJumpNav: {
       type: Boolean,
       default: false
     },
@@ -171,14 +159,6 @@ export default {
         this.$store.commit('drawer', value)
       }
     },
-    jumpNav: {
-      get () {
-        return this.$store.getters.jumpNav
-      },
-      set (value) {
-        this.$store.commit('jumpNav', value)
-      }
-    },
     tab: {
       get () {
         return this.$store.getters['tabbedPage/activeTab']
@@ -195,8 +175,17 @@ export default {
     }
   },
   created () {
-    this.$store.dispatch('migrator/MIGRATE', 'characters')
-    this.$store.dispatch('migrator/MIGRATE', 'bookmarks')
+    // TODO: typically only run MIGRATE, but in the aws switch need to manually run v131 and change the migration state
+    if (typeof this.$store.state.migrator.isMigrated === 'object') {
+      this.$store.commit('migrator/SET_MIGRATED', false)
+    }
+    if (!this.$store.state.migrator.migrated) {
+      this.$store.dispatch('migrator/v131', { bookmarks: this.$store.state.user.bookmarks })
+      this.$store.commit('migrator/SET_MIGRATED', true)
+    }
+    if (this.$store.state.user.darkMode !== this.$vuetify.theme.dark) {
+      this.$vuetify.theme.dark = this.$store.getters['user/darkMode']
+    }
   }
 }
 </script>

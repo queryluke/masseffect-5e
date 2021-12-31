@@ -17,6 +17,7 @@
 
     <!-- START: CONTENT -->
     <v-main>
+      <me-logout />
       <nuxt />
       <v-btn
         v-if="$vuetify.breakpoint.smAndDown"

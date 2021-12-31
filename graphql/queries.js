@@ -8,6 +8,7 @@ export const getBookmark = /* GraphQL */ `
       userId
       model
       modelId
+      data
       createdOn
       updatedOn
     }
@@ -25,6 +26,7 @@ export const listBookmarks = /* GraphQL */ `
         userId
         model
         modelId
+        data
         createdOn
         updatedOn
       }
@@ -58,6 +60,34 @@ export const listProfiles = /* GraphQL */ `
         profileImg
         imperial
         darkMode
+        createdOn
+        updatedOn
+      }
+      nextToken
+    }
+  }
+`;
+export const bookmarkByUser = /* GraphQL */ `
+  query BookmarkByUser(
+    $userId: ID
+    $sortDirection: ModelSortDirection
+    $filter: ModelBookmarkFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    bookmarkByUser(
+      userId: $userId
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        userId
+        model
+        modelId
+        data
         createdOn
         updatedOn
       }

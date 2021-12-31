@@ -1,5 +1,5 @@
 <template>
-  <v-btn :color="color" dark @click="toggleBookmark">
+  <v-btn :color="color" dark :loading="loading" @click="toggleBookmark">
     <v-icon left>
       {{ icon }}
     </v-icon>
@@ -19,9 +19,14 @@ export default {
       default: ''
     }
   },
+  data () {
+    return {
+      loading: false
+    }
+  },
   computed: {
     isBookmarked () {
-      return this.$store.getters['user/isBookmarked'](this.type, this.item)
+      return this.$store.getters['user/isBookmarked'](this.type, this.item.id)
     },
     color () {
       return this.isBookmarked ? 'grey darken-3' : 'secondary'
@@ -34,8 +39,10 @@ export default {
     }
   },
   methods: {
-    toggleBookmark () {
-      this.$store.dispatch('user/TOGGLE_BOOKMARK', { type: this.type, item: this.item })
+    async toggleBookmark () {
+      this.loading = true
+      await this.$store.dispatch('user/TOGGLE_BOOKMARK', { type: this.type, item: this.item })
+      this.loading = false
     }
   }
 }
