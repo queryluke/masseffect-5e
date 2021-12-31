@@ -31,7 +31,9 @@ export const mutations = {
 
 export const actions = {
   async LOAD_USER ({ commit, getters, dispatch }) {
+    console.log('auth?', getters.isAuthenticated)
     if (!getters.isAuthenticated) {
+      console.log('loading user')
       try {
         const user = await Auth.currentAuthenticatedUser()
         commit('SET_USER', user)

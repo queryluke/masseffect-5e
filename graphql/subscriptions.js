@@ -27,3 +27,16 @@ export const onDeleteBookmarkByUserId = /* GraphQL */ `
     }
   }
 `;
+export const onUpdateProfileByUserId = /* GraphQL */ `
+  subscription OnUpdateProfileByUserId($id: ID!) {
+    onUpdateProfileByUserId(id: $id) {
+      id
+      username
+      profileImg
+      imperial
+      darkMode
+      createdOn
+      updatedOn
+    }
+  }
+`;

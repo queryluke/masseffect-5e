@@ -149,7 +149,9 @@ export const actions = {
     }
     commit('SET_LOADING_USER', true)
     const profile = getters.profile
+    console.log('getting user')
     const user = await dispatch('api/QUERY', { query: 'getProfile', variables: { id: profile.id } }, { root: true })
+    console.log(user)
     if (user) {
       commit('SET_USER_SETTINGS', user)
       await dispatch('SYNC_BOOKMARKS')

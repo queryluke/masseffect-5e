@@ -3,6 +3,6 @@ export default async function ({ store, route }) {
   const isLoginPage = route.fullPath === '/auth/login'
   const isLogoutPage = route.fullPath === '/auth/logout'
   if (!isLoginPage && !isLogoutPage) {
-    return await store.dispatch('auth/LOAD_USER')
+    await store.dispatch('auth/LOAD_USER')
   }
 }

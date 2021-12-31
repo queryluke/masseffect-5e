@@ -28,4 +28,6 @@ type Subscription {
     @aws_subscribe(mutations: ["createBookmark"])
   onDeleteBookmarkByUserId(userId: ID!): Bookmark
     @aws_subscribe(mutations: ["deleteBookmark"])
+  onUpdateProfileByUserId(id: ID!): Profile
+    @aws_subscribe(mutations: ["updateProfile"])
 }
