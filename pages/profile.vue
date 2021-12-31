@@ -9,7 +9,7 @@
             </p>
           </v-card-text>
           <v-card-actions>
-            <v-btn text @click="login">
+            <v-btn text @click="$store.dispatch('auth/LOG_IN', $nuxt.$route.path)">
               Sign In
             </v-btn>
           </v-card-actions>
@@ -53,9 +53,7 @@
 </template>
 
 <script>
-import { authUrls } from '~/mixins/authUrls'
 export default {
-  mixins: [authUrls],
   data () {
     return {
       error: false,
@@ -120,7 +118,7 @@ export default {
         let change = false
         if (this.image) {
           const response = await this.$store.dispatch('api/STORE_IMAGE', { file: this.image, qualifier: 'profile' })
-          this.profileImg = response.key
+          this.$store.commit('user/SET_USER_SETTINGS', { profileImg: response.key })
           change = true
         }
         if (this.username !== this.$refs.username.$refs.input.value) {
@@ -131,7 +129,7 @@ export default {
           await this.$store.dispatch('user/UPDATE_PROFILE', true)
         }
       } catch (e) {
-        console.log(e)
+        console.error(e)
         this.error = 'There was an error saving your profile.'
       }
       this.loading = false

@@ -11,6 +11,7 @@ export const getBookmark = /* GraphQL */ `
       data
       createdOn
       updatedOn
+      owner
     }
   }
 `;
@@ -29,6 +30,7 @@ export const listBookmarks = /* GraphQL */ `
         data
         createdOn
         updatedOn
+        owner
       }
       nextToken
     }
@@ -44,6 +46,7 @@ export const getProfile = /* GraphQL */ `
       darkMode
       createdOn
       updatedOn
+      owner
     }
   }
 `;
@@ -62,6 +65,38 @@ export const listProfiles = /* GraphQL */ `
         darkMode
         createdOn
         updatedOn
+        owner
+      }
+      nextToken
+    }
+  }
+`;
+export const getCharacter = /* GraphQL */ `
+  query GetCharacter($id: ID!) {
+    getCharacter(id: $id) {
+      id
+      userId
+      data
+      createdOn
+      updatedOn
+      owner
+    }
+  }
+`;
+export const listCharacters = /* GraphQL */ `
+  query ListCharacters(
+    $filter: ModelCharacterFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listCharacters(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        userId
+        data
+        createdOn
+        updatedOn
+        owner
       }
       nextToken
     }
@@ -90,6 +125,34 @@ export const bookmarkByUser = /* GraphQL */ `
         data
         createdOn
         updatedOn
+        owner
+      }
+      nextToken
+    }
+  }
+`;
+export const characterByUser = /* GraphQL */ `
+  query CharacterByUser(
+    $userId: ID
+    $sortDirection: ModelSortDirection
+    $filter: ModelCharacterFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    characterByUser(
+      userId: $userId
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        userId
+        data
+        createdOn
+        updatedOn
+        owner
       }
       nextToken
     }

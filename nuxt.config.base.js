@@ -178,9 +178,6 @@ export default {
     middleware: 'auth'
   },
   publicRuntimeConfig: {
-    version: process.env.VERSION || 'v1.3.0',
-    cognito_client: process.env.AMPLIFY_WEBCLIENT_ID || '',
-    sign_in_url: process.env.SIGN_IN_URL || '',
-    base_url: process.env.BASE_URL || 'http://localhost:3000/'
+    version: process.env.VERSION || 'v1.3.0'
   }
 }

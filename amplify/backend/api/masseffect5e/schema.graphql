@@ -3,7 +3,7 @@
 
 type Bookmark @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"}, subscriptions: null)
 @auth(rules: [
-  { allow: private, operations: [read, create, update, delete] }
+  { allow: owner }
 ]){
   id: ID!
   userId: ID! @index(name: "byUser", queryField: "bookmarkByUser")
@@ -14,7 +14,7 @@ type Bookmark @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"}
 
 type Profile @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"}, subscriptions: null)
 @auth(rules: [
-  { allow: private, operations: [read, create, update, delete] }
+  { allow: owner }
 ]) {
   id: ID!
   username: String
@@ -23,11 +23,19 @@ type Profile @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"},
   darkMode: Boolean!
 }
 
+type Character @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"}, subscriptions: null)
+@auth(rules: [
+  { allow: private, operations: [read] }
+  { allow: owner }
+]){
+  id: ID!
+  userId: ID! @index(name: "byUser", queryField: "characterByUser")
+  data: String
+}
+
 type Subscription {
   onCreateBookmarkByUserId(userId: ID!): Bookmark
     @aws_subscribe(mutations: ["createBookmark"])
   onDeleteBookmarkByUserId(userId: ID!): Bookmark
     @aws_subscribe(mutations: ["deleteBookmark"])
-  onUpdateProfileByUserId(id: ID!): Profile
-    @aws_subscribe(mutations: ["updateProfile"])
 }

@@ -14,6 +14,7 @@ export const createBookmark = /* GraphQL */ `
       data
       createdOn
       updatedOn
+      owner
     }
   }
 `;
@@ -30,6 +31,7 @@ export const updateBookmark = /* GraphQL */ `
       data
       createdOn
       updatedOn
+      owner
     }
   }
 `;
@@ -46,6 +48,7 @@ export const deleteBookmark = /* GraphQL */ `
       data
       createdOn
       updatedOn
+      owner
     }
   }
 `;
@@ -62,6 +65,7 @@ export const createProfile = /* GraphQL */ `
       darkMode
       createdOn
       updatedOn
+      owner
     }
   }
 `;
@@ -78,6 +82,7 @@ export const updateProfile = /* GraphQL */ `
       darkMode
       createdOn
       updatedOn
+      owner
     }
   }
 `;
@@ -94,6 +99,52 @@ export const deleteProfile = /* GraphQL */ `
       darkMode
       createdOn
       updatedOn
+      owner
+    }
+  }
+`;
+export const createCharacter = /* GraphQL */ `
+  mutation CreateCharacter(
+    $input: CreateCharacterInput!
+    $condition: ModelCharacterConditionInput
+  ) {
+    createCharacter(input: $input, condition: $condition) {
+      id
+      userId
+      data
+      createdOn
+      updatedOn
+      owner
+    }
+  }
+`;
+export const updateCharacter = /* GraphQL */ `
+  mutation UpdateCharacter(
+    $input: UpdateCharacterInput!
+    $condition: ModelCharacterConditionInput
+  ) {
+    updateCharacter(input: $input, condition: $condition) {
+      id
+      userId
+      data
+      createdOn
+      updatedOn
+      owner
+    }
+  }
+`;
+export const deleteCharacter = /* GraphQL */ `
+  mutation DeleteCharacter(
+    $input: DeleteCharacterInput!
+    $condition: ModelCharacterConditionInput
+  ) {
+    deleteCharacter(input: $input, condition: $condition) {
+      id
+      userId
+      data
+      createdOn
+      updatedOn
+      owner
     }
   }
 `;

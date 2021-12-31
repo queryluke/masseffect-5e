@@ -11,6 +11,7 @@ export const onCreateBookmarkByUserId = /* GraphQL */ `
       data
       createdOn
       updatedOn
+      owner
     }
   }
 `;
@@ -24,19 +25,7 @@ export const onDeleteBookmarkByUserId = /* GraphQL */ `
       data
       createdOn
       updatedOn
-    }
-  }
-`;
-export const onUpdateProfileByUserId = /* GraphQL */ `
-  subscription OnUpdateProfileByUserId($id: ID!) {
-    onUpdateProfileByUserId(id: $id) {
-      id
-      username
-      profileImg
-      imperial
-      darkMode
-      createdOn
-      updatedOn
+      owner
     }
   }
 `;

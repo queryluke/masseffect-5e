@@ -75,7 +75,7 @@
           </v-list-item>
         </v-list>
       </v-menu>
-      <v-btn v-else :icon="$vuetify.breakpoint.smAndDown" @click="$store.dispatch('auth/LOG_IN')">
+      <v-btn v-else :icon="$vuetify.breakpoint.smAndDown" @click="$store.dispatch('auth/LOG_IN', $nuxt.$route.path)">
         <span v-if="$vuetify.breakpoint.mdAndUp">Sign In</span>
         <v-icon v-else>
           mdi-login
@@ -175,14 +175,7 @@ export default {
     }
   },
   created () {
-    // TODO: typically only run MIGRATE, but in the aws switch need to manually run v131 and change the migration state
-    if (typeof this.$store.state.migrator.isMigrated === 'object') {
-      this.$store.commit('migrator/SET_MIGRATED', false)
-    }
-    if (!this.$store.state.migrator.migrated) {
-      this.$store.dispatch('migrator/v131', { bookmarks: this.$store.state.user.bookmarks })
-      this.$store.commit('migrator/SET_MIGRATED', true)
-    }
+    this.$store.dispatch('migrator/awsMigrate')
     if (this.$store.state.user.darkMode !== this.$vuetify.theme.dark) {
       this.$vuetify.theme.dark = this.$store.getters['user/darkMode']
     }

@@ -56,14 +56,24 @@ export const actions = {
       console.error(e)
     }
   },
+  awsMigrate ({ getters, dispatch, commit, rootGetters }) {
+    // TODO: typically only run MIGRATE, but in the aws switch need to manually run v131 and change the migration state
+    if (typeof getters.isMigrated === 'object') {
+      commit('SET_MIGRATED', false)
+    }
+    if (!getters.isMigrated) {
+      dispatch('v131', { bookmarks: rootGetters['user/bookmarks'] })
+      commit('SET_MIGRATED', true)
+    }
+  },
   async v130 ({ dispatch, rootGetters, commit }, { bookmarks, characters }) {
     if (bookmarks) {
       await dispatch('v131', { bookmarks, characters })
     }
   },
   v131 ({ dispatch, commit, rootGetters }, { bookmarks, characters }) {
+    commit('user/RESET_BOOKMARKS', null, { root: true })
     if (bookmarks) {
-      commit('user/RESET_BOOKMARKS', null, { root: true })
       const bookmarkables = ['armor', 'bestiary', 'gear', 'mods', 'powers', 'vehicles', 'weapons']
       for (const type of bookmarkables) {
         const bookmarksOfType = bookmarks[type] || []

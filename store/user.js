@@ -42,10 +42,11 @@ export const mutations = {
     if (!value) {
       return
     }
-    state.username = value.username
-    state.darkMode = value.darkMode
-    state.imperial = value.imperial
-    state.profileImg = value.profileImg
+    for (const key of ['username', 'darkMode', 'imperial', 'profileImg']) {
+      if (value[key] || value[key] === false) {
+        state[key] = value[key]
+      }
+    }
   },
   SET_AVATAR (state, { value }) {
     state.avatar = value
@@ -107,6 +108,10 @@ export const actions = {
     }
   },
   async SYNC_BOOKMARKS ({ getters, dispatch, commit }) {
+    // TODO: TEMPORARY CHECK
+    if (!Array.isArray(getters.bookmarks)) {
+      dispatch('migrator/awsMigrate', null, { root: true })
+    }
     // GET bookmarks from AWS
     let nextToken = null
     const remoteBookmarks = []
@@ -149,9 +154,7 @@ export const actions = {
     }
     commit('SET_LOADING_USER', true)
     const profile = getters.profile
-    console.log('getting user')
     const user = await dispatch('api/QUERY', { query: 'getProfile', variables: { id: profile.id } }, { root: true })
-    console.log(user)
     if (user) {
       commit('SET_USER_SETTINGS', user)
       await dispatch('SYNC_BOOKMARKS')

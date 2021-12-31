@@ -31,15 +31,20 @@ export const mutations = {
 
 export const actions = {
   async LOAD_USER ({ commit, getters, dispatch }) {
-    console.log('auth?', getters.isAuthenticated)
     if (!getters.isAuthenticated) {
-      console.log('loading user')
       try {
         const user = await Auth.currentAuthenticatedUser()
         commit('SET_USER', user)
-        await dispatch('user/LOAD_USER_SETTINGS', null, { root: true })
       } catch (error) {
+        console.error(error)
         commit('SET_USER', null)
+      }
+      if (getters.isAuthenticated) {
+        try {
+          await dispatch('user/LOAD_USER_SETTINGS', null, { root: true })
+        } catch (e) {
+          console.error(e)
+        }
       }
     }
   },
@@ -76,7 +81,8 @@ export const actions = {
     }
   },
 
-  async LOG_IN ({ commit }) {
+  async LOG_IN ({ commit }, redirect) {
+    commit('SET_REDIRECT', redirect)
     try {
       await Auth.federatedSignIn()
     } catch (e) {
