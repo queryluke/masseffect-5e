@@ -7,7 +7,7 @@ export default {
   name: 'MeHr',
   props: {
     size: {
-      type: Number,
+      type: [Number, String],
       default: 4
     },
     color: {

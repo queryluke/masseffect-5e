@@ -1,7 +1,7 @@
 <template>
-  <h2 v-if="$vuetify.breakpoint.mdAndUp" class="text-h2">
+  <me-tpg v-if="$vuetify.breakpoint.mdAndUp" e="h2" s="h1">
     {{ pageTitle }}
-  </h2>
+  </me-tpg>
 </template>
 
 <script>
