@@ -24,7 +24,6 @@ export default {
   },
   computed: {
     items () {
-      console.log(this.$store.getters.getData('species'))
       return this.$store.getters.getData('species').filter(i => i.type === this.type)
     }
   }

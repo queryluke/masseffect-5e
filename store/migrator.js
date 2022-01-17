@@ -5,7 +5,7 @@ export const state = () => ({
 })
 
 export const getters = {
-  isMigrated: state => state.migrated
+  isMigrated: state => typeof state.migrated !== 'boolean' ? false : state.migrated
 }
 
 export const mutations = {
@@ -90,12 +90,22 @@ export const actions = {
       }
     }
     if (characters) {
+      const newCharacters = {}
+      for (const [id, character] in Object.entries(characters)) {
+        if (typeof character.meta === 'undefined') {
+          character.meta = {
+            remote: false,
+            version: '1.0.1'
+          }
+          character.selectedOptions = []
+          character.subspecies = null
+          character.builder.tashas = false
+        }
+        newCharacters[id] = character
+      }
+      commit('cb/SET_CHARACTERS', newCharacters, { root: true })
       // TODO: any necessary migrations
-      // bump version
-      // add "po" (player options) array
       // move species selection into po array
-      // move class selections into po array (feats, asi, subclasses)
-      //  - the class selection should have attributes like { level: 1, primary: true/false }
     }
   }
 }

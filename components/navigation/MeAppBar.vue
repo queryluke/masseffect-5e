@@ -180,7 +180,7 @@ export default {
     }
   },
   created () {
-    this.$store.dispatch('migrator/awsMigrate')
+    this.$store.dispatch('migrator/MIGRATE')
     if (this.$store.state.user.darkMode !== this.$vuetify.theme.dark) {
       this.$vuetify.theme.dark = this.$store.getters['user/darkMode']
     }

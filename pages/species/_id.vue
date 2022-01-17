@@ -9,6 +9,7 @@
           </v-tab>
         </v-tabs>
         <v-tabs-items v-model="tab">
+          <!-- BACKGROUND -->
           <v-tab-item class="pa-3">
             <me-html :content="item.html" />
             <v-btn
@@ -18,31 +19,34 @@
             >
               {{ $t('buttons.read_more') }} <v-icon>mdi-chevron-right</v-icon>
             </v-btn>
-          </v-tab-item>
-          <v-tab-item class="pa-3">
-            <me-species-traits-list :item="item" />
-            <div v-if="subspecies">
-              <me-tpg s="h3">
-                {{ subspecies.name }}
-              </me-tpg>
-              <me-html :content="subspecies.html" class="mt-1" />
-              <div v-for="sub of subspeciesOptions" :key="sub.id">
-                <me-tpg s="h4">
-                  {{ sub.name }}
-                </me-tpg>
-                <me-hr size="1" class="mt-n1" color="primary" />
-                <me-species-traits-list :item="sub" />
-              </div>
-            </div>
             <me-source-reference v-if="rorReference[item.id]" :pages="rorReference[item.id]" source="races" />
           </v-tab-item>
+          <!-- TRAITS -->
           <v-tab-item class="pa-3">
+            <me-species-traits-list :item="item" />
+          </v-tab-item>
+          <!-- SUBSPECIES -->
+          <v-tab-item v-if="subspecies" class="pa-3">
+            <me-html :content="subspecies.html" class="mt-1" />
+            <div v-if="subspecies.id === 'avatar'" class="mt-1">
+              <me-tpg s="h5">
+                {{ avatarsInspiration.name }}
+              </me-tpg>
+              <me-html :content="avatarsInspiration.html" />
+            </div>
+            <div v-for="sub of subspeciesOptions" :key="sub.id">
+              <me-tpg s="h4">
+                {{ sub.name }}
+              </me-tpg>
+              <me-hr size="1" class="mt-n1" color="primary" />
+              <me-html :content="sub.html" />
+              <me-species-traits-list v-if="subspecies.id !== 'avatar'" :item="sub" />
+            </div>
+          </v-tab-item>
+          <!-- VARIANTS -->
+          <v-tab-item v-if="hasVariants" class="pa-3">
             <div v-for="variant in variants" :key="variant.id" class="mb-4">
-              <p class="text-h6 text-md-h4">
-                {{ variant.name }}
-              </p>
-              <me-hr />
-              <me-html :content="variant.html" />
+              <me-species-variant :item="variant" />
             </div>
           </v-tab-item>
         </v-tabs-items>
@@ -86,7 +90,6 @@ export default {
   data () {
     return {
       rorReference: {
-        asari: '2-3',
         geth: '3-4',
         krogan: '5-6',
         quarian: '7-8',
@@ -105,7 +108,7 @@ export default {
   },
   computed: {
     items () {
-      return this.$store.getters.getData('species')
+      return this.$store.getters.getData('species').filter(i => i.type !== 'variant')
     },
     item () {
       return this.$store.getters.getItem('species', this.$route.params.id)
@@ -114,13 +117,19 @@ export default {
       return this.$store.getters.getData('species').filter(i => i.type === 'variant' && i.species === this.$route.params.id)
     },
     hasVariants () {
-      return this.variants.length > 0
+      return this.variants.length
     },
     subspecies () {
       return this.$store.getters.getData('subspecies').find(i => i.species === this.$route.params.id)
     },
     subspeciesOptions () {
-      return this.$store.getters.getData('subspecies-options').filter(i => i.species === this.$route.params.id)
+      if (!this.subspecies) {
+        return []
+      }
+      return this.$store.getters.getData('subspecies-options').filter(i => i.subspecies === this.subspecies.id)
+    },
+    avatarsInspiration () {
+      return this.$store.getters.getItem('traits', 'avatars-inspiration')
     },
     tab: {
       get () {
@@ -132,6 +141,9 @@ export default {
     },
     tabs () {
       const tabs = [this.$tc('background_title', 1), this.$t('traits_title')]
+      if (this.subspecies) {
+        tabs.push(this.subspecies.name)
+      }
       if (this.hasVariants) {
         tabs.push(this.$t('variants_title'))
       }
