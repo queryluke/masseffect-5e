@@ -51,6 +51,7 @@ export default {
         image: null,
         experiencePoints: 0,
         species: null,
+        subspecies: null,
         classes: [],
         // TODO: this should be in the selections
         fightingStyles: [],
@@ -124,6 +125,7 @@ export default {
         equipment: [],
         powers: [],
         selections: [],
+        selected: [], // new selection bag
         currentStats: {
           hitPointsLost: 0,
           tempHp: {
@@ -188,6 +190,9 @@ export default {
         },
         notes: '',
         brews: [],
+        options: {
+          tashas: false
+        },
         builder: {
           currentStep: 1,
           showCharacterSheet: false

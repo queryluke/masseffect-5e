@@ -75,7 +75,7 @@ export default {
         {},
         {
           name: 'Species',
-          component: 'MeCharacterBuilderSpecies',
+          component: 'MeCbSelectSpecies',
           isComplete: this.speciesId !== null
         },
         {

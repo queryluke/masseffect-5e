@@ -30,7 +30,7 @@ export const actions = {
         previous = localStorage.getItem(previousVersion)
       }
       if (!previous) {
-        commit('SET_MIGRATED')
+        commit('SET_MIGRATED', true)
         return
       }
       let previousState
@@ -43,27 +43,17 @@ export const actions = {
       const mostRecentBookmarks = previousState.user?.bookmarks
       const mostRecentCharacters = previousState.cb?.characters
       if (!mostRecentBookmarks && !mostRecentCharacters) {
-        commit('SET_MIGRATED')
+        commit('SET_MIGRATED', true)
         return
       }
       try {
         await dispatch(previousVersion, { characters: mostRecentCharacters, bookmarks: mostRecentBookmarks })
-        commit('SET_MIGRATED')
+        commit('SET_MIGRATED', true)
       } catch (e) {
         console.error(e)
       }
     } catch (e) {
       console.error(e)
-    }
-  },
-  awsMigrate ({ getters, dispatch, commit, rootGetters }) {
-    // TODO: typically only run MIGRATE, but in the aws switch need to manually run v131 and change the migration state
-    if (typeof getters.isMigrated === 'object') {
-      commit('SET_MIGRATED', false)
-    }
-    if (!getters.isMigrated) {
-      dispatch('v131', { bookmarks: rootGetters['user/bookmarks'] })
-      commit('SET_MIGRATED', true)
     }
   },
   async v130 ({ dispatch, rootGetters, commit }, { bookmarks, characters }) {
@@ -90,22 +80,24 @@ export const actions = {
       }
     }
     if (characters) {
+      console.log(characters)
       const newCharacters = {}
-      for (const [id, character] in Object.entries(characters)) {
+      for (const [id, character] of Object.entries(characters)) {
+        console.log(id, character)
         if (typeof character.meta === 'undefined') {
           character.meta = {
             remote: false,
             version: '1.0.1'
           }
-          character.selectedOptions = []
+          character.selected = []
           character.subspecies = null
-          character.builder.tashas = false
+          character.options = {
+            tashas: false
+          }
         }
         newCharacters[id] = character
       }
       commit('cb/SET_CHARACTERS', newCharacters, { root: true })
-      // TODO: any necessary migrations
-      // move species selection into po array
     }
   }
 }

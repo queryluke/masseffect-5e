@@ -38,12 +38,13 @@ export const AbilityScores = {
   },
   methods: {
     absSpeciesBonus (ability) {
+      /*
       if (this.speciesData) {
         const base = this.speciesData.abilityScoreIncrease.find(i => i.ability === ability)
         if (base) {
           return base.amount
         }
-      }
+      } */
       return 0
       // TODO: other abs increases like quarian option
     },

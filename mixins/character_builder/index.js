@@ -117,6 +117,12 @@ export const CharacterBuilderHelpers = {
     species () {
       return this.$store.getters.getData('species')
     },
+    subspecies () {
+      return this.$store.getters.getData('subspecies')
+    },
+    subspeciesOptions () {
+      return this.$store.getters.getData('subspecies-options')
+    },
     classes () {
       return this.$store.getters.getData('classes')
     },

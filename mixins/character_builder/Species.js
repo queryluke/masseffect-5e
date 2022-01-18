@@ -5,6 +5,7 @@ export const Species = {
         return this.character.species
       },
       set (value) {
+        console.log(value)
         const oldSpeciesId = this.speciesId
         // delete any old selections
         this.$store.dispatch('cb/DELETE_SELECTIONS', {
@@ -30,13 +31,33 @@ export const Species = {
           attr: 'selections',
           value: currSelections
         })
+        console.log(this.speciesId)
+      }
+    },
+    subspeciesId: {
+      get () {
+        return this.character.subspecies
+      },
+      set (value) {
+        this.changeSubspecies(value)
       }
     },
     speciesData () {
-      return this.speciesId ? this.species.find(i => i.id === this.speciesId) : null
+      if (!this.speciesId) {
+        return null
+      }
+      const species = this.species.find(i => i.id === this.speciesId)
+      if (!species) {
+        return null
+      }
+      if (species.type === 'variant') {
+        const parentSpecies = this.species.find(i => i.id === species.species)
+        return { ...parentSpecies, ...species }
+      }
+      return species
     },
     speciesTraits () {
-      return this.traits.filter(i => i.species.includes(this.speciesId))
+      return this.traits.filter(i => i.species.includes(this.speciesId) || i.species.includes(this.subspeciesId))
     }
   }
 }
