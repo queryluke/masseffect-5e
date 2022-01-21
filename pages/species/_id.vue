@@ -3,11 +3,7 @@
     <v-row>
       <v-col md="9">
         <me-page-title />
-        <v-tabs v-model="tab" class="hidden-sm-and-down mt-5">
-          <v-tab v-for="tabItem in tabs" :key="tabItem">
-            {{ tabItem }}
-          </v-tab>
-        </v-tabs>
+        <me-tabbed-page-tabs class="hidden-sm-and-down mt-5" />
         <v-tabs-items v-model="tab">
           <!-- BACKGROUND -->
           <v-tab-item class="pa-3">
@@ -153,7 +149,6 @@ export default {
   created () {
     this.$store.commit('pageTitle', this.item.name)
     this.$store.commit('tabbedPage/SET_TABS', this.tabs)
-    this.$store.dispatch('tabbedPage/INIT_THEME')
   }
 }
 </script>

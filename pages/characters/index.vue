@@ -10,12 +10,9 @@
     </v-row>
     <v-row v-else class="d-flex justify-center">
       <v-col cols="12" class="text-center">
-        <div class="text-h5">
+        <me-tpg s="h2">
           My Characters
-        </div>
-        <div class="text-right mb-2">
-          <me-character-builder-import />
-        </div>
+        </me-tpg>
       </v-col>
       <v-col v-for="characterId in characters" :key="characterId" sm="8" lg="6">
         <me-character-builder-index-card :character-id="characterId" />
@@ -24,9 +21,9 @@
     <v-row>
       <v-col class="text-center d-flex justify-space-around">
         <v-btn :loading="loading" @click="createNewCharacter">
-          Create a New Character
+          New Character
         </v-btn>
-        <me-character-builder-import v-if="characters.length === 0" />
+        <me-character-builder-import />
       </v-col>
     </v-row>
   </v-container>
@@ -192,10 +189,6 @@ export default {
         brews: [],
         options: {
           tashas: false
-        },
-        builder: {
-          currentStep: 1,
-          showCharacterSheet: false
         },
         meta: {
           remote: false

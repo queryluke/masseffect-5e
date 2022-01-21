@@ -4,10 +4,10 @@
     <me-species-trait v-if="item.age" :label="$t('age_title')">
       {{ item.age }}
     </me-species-trait>
-    <me-species-trait v-if="item.age" :label="$t('alignment_title')">
+    <me-species-trait v-if="item.alignment" :label="$t('alignment_title')">
       {{ item.alignment }}
     </me-species-trait>
-    <me-species-trait v-if="item.age" :label="$t('size_title')">
+    <me-species-trait v-if="item.size" :label="$t('size_title')">
       {{ item.size }}
     </me-species-trait>
     <me-species-speed :item="item" />

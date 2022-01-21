@@ -158,13 +158,17 @@ export const actions = {
     commit('DELETE_CHARACTER', id)
   },
   async FETCH_CB_DATA ({ dispatch }) {
-    await dispatch('FETCH_LOTS', ['species', 'traits', 'weapons', 'armor', 'mods', 'powers', 'feats', 'backgrounds', 'classes', 'class-features', 'subclasses', 'character-progression', 'skills', 'gear', 'tool-profs', 'weapon-properties', 'conditions'], { root: true })
+    await dispatch('FETCH_LOTS', [
+      'species', 'traits', 'weapons', 'armor', 'mods', 'powers', 'feats', 'backgrounds', 'classes', 'class-features',
+      'subclasses', 'character-progression', 'skills', 'gear', 'tool-profs', 'weapon-properties', 'conditions',
+      'subspecies', 'subspecies-options'
+    ], { root: true })
   },
-  DELETE_SELECTIONS ({ commit, getters }, { cid, id }) {
+  DELETE_SELECTIONS ({ dispatch, getters }, { cid, id }) {
     const newSelections = getters.characters[cid].selections.filter(i => !i.source.startsWith(id))
-    commit('UPDATE_CHARACTER', { cid, attr: 'selections', value: newSelections })
+    dispatch('UPDATE_CHARACTER', { cid, attr: 'selections', value: newSelections })
   },
-  UPDATE_SELECTIONS ({ commit, getters }, { cid, selection }) {
+  UPDATE_SELECTIONS ({ dispatch, getters }, { cid, selection }) {
     const newSelections = JSON.parse(JSON.stringify(getters.characters[cid].selections))
     const index = newSelections.findIndex(i => i.source === selection.source)
     if (index > -1) {
@@ -172,10 +176,10 @@ export const actions = {
     } else {
       newSelections.push(selection)
     }
-    commit('UPDATE_CHARACTER', { cid, attr: 'selections', value: newSelections })
+    dispatch('UPDATE_CHARACTER', { cid, attr: 'selections', value: newSelections })
   },
-  ADD_SELECTIONS ({ commit, getters }, { cid, selections }) {
+  ADD_SELECTIONS ({ dispatch, getters }, { cid, selections }) {
     const newSelections = [...getters.characters[cid].selections, ...selections]
-    commit('UPDATE_CHARACTER', { cid, attr: 'selections', value: newSelections })
+    dispatch('UPDATE_CHARACTER', { cid, attr: 'selections', value: newSelections })
   }
 }

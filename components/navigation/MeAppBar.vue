@@ -85,18 +85,7 @@
     </v-toolbar-items>
 
     <template v-if="tabbed && $vuetify.breakpoint.smAndDown" #extension>
-      <v-tabs
-        v-model="tab"
-        align-with-title
-        center-active
-        centered
-        show-arrows
-        :color="tabColor"
-      >
-        <v-tab v-for="item in tabs" :key="item">
-          {{ item }}
-        </v-tab>
-      </v-tabs>
+      <me-tabbed-page-tabs />
     </template>
     <template v-else-if="extended && $vuetify.breakpoint.smAndDown" #extension>
       <slot name="appBarExtension" />
@@ -163,27 +152,10 @@ export default {
       set (value) {
         this.$store.commit('drawer', value)
       }
-    },
-    tab: {
-      get () {
-        return this.$store.getters['tabbedPage/activeTab']
-      },
-      set (value) {
-        this.$store.commit('tabbedPage/SET_ACTIVE_TAB', value)
-      }
-    },
-    tabs () {
-      return this.$store.getters['tabbedPage/tabs']
-    },
-    tabColor () {
-      return this.$store.getters['tabbedPage/mobileTabColor']
     }
   },
   created () {
     this.$store.dispatch('migrator/MIGRATE')
-    if (this.$store.state.user.darkMode !== this.$vuetify.theme.dark) {
-      this.$vuetify.theme.dark = this.$store.getters['user/darkMode']
-    }
   }
 }
 </script>

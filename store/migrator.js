@@ -95,6 +95,8 @@ export const actions = {
             tashas: false
           }
         }
+        const newSelections = character.selections.filter(i => !i.source.startsWith('species'))
+        character.selections = newSelections
         newCharacters[id] = character
       }
       commit('cb/SET_CHARACTERS', newCharacters, { root: true })
