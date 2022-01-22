@@ -15,7 +15,7 @@
       </v-card-text>
     </div>
     <v-card-actions>
-      <v-btn text plain :to="`/species/${item.id}`" target="_blank">
+      <v-btn v-if="item.id !== 'custom'" text plain :to="`/species/${item.id}`" target="_blank">
         More Details
       </v-btn>
       <v-spacer />

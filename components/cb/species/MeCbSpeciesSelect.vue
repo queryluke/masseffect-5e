@@ -63,7 +63,7 @@
           </v-expansion-panels>
         </v-card-text>
       </v-card>
-      <me-cb-species-additional-traits />
+      <me-cb-species-additional-traits v-if="speciesId !== 'custom'" />
     </div>
   </div>
 </template>

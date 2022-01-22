@@ -25,7 +25,7 @@
           {{ change ? 'Change' : 'Keep' }}
         </v-btn>
         <v-btn
-          v-if="change"
+          v-if="change && speciesId !== 'custom'"
           x-small
           plain
           color="primary"

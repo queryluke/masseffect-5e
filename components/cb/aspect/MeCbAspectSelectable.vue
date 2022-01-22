@@ -29,7 +29,7 @@ export default {
     return {
       subPaths: {
         prof: 'profType',
-        power: 'id'
+        power: 'label'
       }
     }
   },
@@ -46,7 +46,6 @@ export default {
     },
     id () {
       const subPath = this.mechanic[this.subPaths[this.type]] || null
-      console.log([this.path, this.type, subPath].filter(i => i).join('/'))
       return [this.path, this.type, subPath].filter(String).join('/')
     }
   },

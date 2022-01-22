@@ -21,7 +21,7 @@
       </v-chip>
     </template>
     <template #item="{ item }">
-      <v-list-item-icon v-if="item.acquired">
+      <v-list-item-icon v-if="alreadyAcquired(item.value)">
         <v-icon color="warning">
           mdi-alert-circle
         </v-icon>
@@ -40,7 +40,7 @@
         <v-list-item-title>
           {{ item.text }}
         </v-list-item-title>
-        <v-list-item-subtitle v-if="item.acquired">
+        <v-list-item-subtitle v-if="alreadyAcquired(item.value)">
           Already acquired
         </v-list-item-subtitle>
       </v-list-item-content>
@@ -69,6 +69,12 @@ export default {
     value: {
       type: Array,
       required: true
+    },
+    acquired: {
+      type: Function,
+      default: () => {
+        return false
+      }
     }
   },
   computed: {
@@ -85,17 +91,20 @@ export default {
     }
   },
   methods: {
+    alreadyAcquired (value) {
+      return this.acquired(value) && !this.isSelected(value)
+    },
     disabled (item) {
-      return item.acquired || (this.isSelected(item.value) ? false : this.disableItems)
+      return (item.acquired && !this.isSelected(item.value)) || (this.isSelected(item.value) ? false : this.disableItems)
     },
     isSelected (value) {
       return this.value.includes(value)
     },
     removeSelection (value) {
-      const newValue = this.selection.slice()
-      const currentIndex = newValue.findIndex(i => i.value === value)
+      const newValue = this.selections.slice()
+      const currentIndex = newValue.indexOf(value)
       newValue.splice(currentIndex, 1)
-      this.selection = newValue
+      this.selections = newValue
     }
   }
 }

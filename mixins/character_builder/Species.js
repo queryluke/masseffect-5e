@@ -1,4 +1,25 @@
 export const Species = {
+  data () {
+    return {
+      customSpecies: {
+        id: 'custom',
+        type: 'homebrew',
+        name: 'Custom Species',
+        bodyImg: '/images/species/custom_species.png',
+        mechanics: [
+          {
+            type: 'asi-choice',
+            options: true,
+            selections: 3,
+            max: 2,
+            total: 3
+          }
+        ],
+        snippet: 'Create your own using the character sheet Settings tab',
+        html: '<p>For additional traits, use the <strong>Settings</strong> tab on the character sheet.</p>'
+      }
+    }
+  },
   computed: {
     speciesId: {
       get () {

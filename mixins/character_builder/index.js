@@ -116,7 +116,9 @@ export const CharacterBuilderHelpers = {
     },
     // Data fetchers
     species () {
-      return this.$store.getters.getData('species')
+      const official = this.$store.getters.getData('species')
+      const homebrew = [this.customSpecies]
+      return [...official, ...homebrew]
     },
     subspecies () {
       return this.$store.getters.getData('subspecies')

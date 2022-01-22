@@ -1,9 +1,9 @@
 <template>
   <me-cb-choices-v-select
     :items="items"
-    label="Choose Powers"
+    :label="label"
     :total-selections="selections"
-    :value="currentValue.map(i => i.id)"
+    :value="currentValue.map(i => i.value)"
     @change="upsert"
   />
 </template>
@@ -24,7 +24,7 @@ export default {
   },
   computed: {
     label () {
-      return this.options.id.startsWith('cantrip') ? 'Cantrip' : '1st-Level Power'
+      return this.mechanic.label || (this.selections > 1 ? 'Select powers' : 'Select power')
     },
     limits () {
       return Object.entries(this.mechanic.limit || {})
@@ -56,7 +56,7 @@ export default {
     },
     upsert (value) {
       this.$emit('upsert', value.map((i) => {
-        return { id: i, ...this.appended }
+        return { value: i, ...this.appended }
       }))
     }
   }
