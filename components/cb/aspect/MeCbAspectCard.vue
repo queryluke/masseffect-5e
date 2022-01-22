@@ -21,10 +21,10 @@
         </slot>
         <slot>
           <me-cb-aspect-selectable
-            v-for="(mechanic, index) of aspect.mechanics"
+            v-for="(mechanic, index) of options"
             :key="index"
             :mechanic="mechanic"
-            :path="`${path}/${aspect.id}`"
+            :path="path"
           />
         </slot>
       </div>
@@ -71,7 +71,7 @@ export default {
       const selectionsCount = selections.reduce((acc, curr) => {
         const addition = !curr.value
           ? 0
-          : curr.value.reduce((a, c) => a + c.amount || 1, 0)
+          : curr.value.reduce((a, c) => a + (c.amount || 1), 0)
         return acc + addition
       }, 0)
       return selectionsCount >= this.optionsCount

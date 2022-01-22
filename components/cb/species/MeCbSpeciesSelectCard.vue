@@ -107,6 +107,12 @@ export default {
             selection: { speciesId: this.item.id, subspeciesId: sub.id }
           })
         }
+      } else {
+        options.push({
+          subtitle: '',
+          title: this.item.name,
+          selection: { speciesId: this.item.id, subspeciesId: null }
+        })
       }
       // deal w/ variant
       for (const variant of this.itemVariants) {

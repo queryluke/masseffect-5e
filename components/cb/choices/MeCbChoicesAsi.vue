@@ -11,7 +11,7 @@
         small
         :color="chip.color"
         class="ma-1"
-        @click="upsertSelection(chip.ability)"
+        @click="updateSelection(chip.ability)"
       >
         <span v-if="chip.prepend" class="pr-1">
           +{{ chip.prepend }}
@@ -95,7 +95,7 @@ export default {
     }
   },
   methods: {
-    upsertSelection (value) {
+    updateSelection (value) {
       const currentValue = this.currentValue.slice()
       const currentIndex = currentValue.findIndex(i => i.ability === value)
       if (currentIndex > -1) {

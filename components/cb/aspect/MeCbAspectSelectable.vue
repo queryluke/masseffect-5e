@@ -1,7 +1,7 @@
 <template>
   <div>
     <component
-      :is="components[type].component"
+      :is="component"
       :mechanic="mechanic"
       :current-value="currentValue"
       @upsert="upsert"
@@ -27,13 +27,9 @@ export default {
   },
   data () {
     return {
-      components: {
-        prof: {
-          component: 'MeCbChoicesProf'
-        },
-        asi: {
-          component: 'MeCbChoicesAsi'
-        }
+      subPaths: {
+        prof: 'profType',
+        power: 'id'
       }
     }
   },
@@ -41,20 +37,27 @@ export default {
     type () {
       return this.mechanic.type.replace('-choice', '')
     },
+    component () {
+      return `me-cb-choices-${this.type}`
+    },
     currentValue () {
-      const selectObj = this.character.selected.find(i => i.path.startsWith(`${this.path}/${this.type}`))
+      const selectObj = this.character.selected.find(i => i.path === this.id)
       return selectObj?.value || []
+    },
+    id () {
+      const subPath = this.mechanic[this.subPaths[this.type]] || null
+      console.log([this.path, this.type, subPath].filter(i => i).join('/'))
+      return [this.path, this.type, subPath].filter(String).join('/')
     }
   },
   methods: {
     upsert (value) {
-      const path = `${this.path}/${this.type}`
       const selectObj = {
-        path,
+        path: this.id,
         value
       }
       const newSelections = JSON.parse(JSON.stringify(this.character.selected))
-      const index = newSelections.findIndex(i => i.path === path)
+      const index = newSelections.findIndex(i => i.path === this.id)
       if (index > -1) {
         newSelections.splice(index, 1, selectObj)
       } else {

@@ -211,6 +211,16 @@ export const CharacterBuilderHelpers = {
       }
       return items
     },
+    weaponTypes () {
+      const items = []
+      for (const key in this.$i18n.messages.en.weapon_types) {
+        items.push({
+          text: this.$tc(`weapon_types.${key}`, 2),
+          value: key
+        })
+      }
+      return items
+    },
     senses () {
       const items = []
       for (const key in this.$i18n.messages.en.senses) {

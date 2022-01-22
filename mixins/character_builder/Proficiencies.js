@@ -9,10 +9,15 @@ export const Proficiencies = {
         savingThrow: []
       }
       for (const key in profs) {
-        const selected = this.selections.filter(i => i.type === 'profs' && i.subType === key)
-        for (const selection of selected) {
+        // Temp
+        const oldSelected = this.character.selections.filter(i => i.type === 'profs' && i.subType === key)
+        for (const selection of oldSelected) {
           profs[key] = profs[key].concat(selection.has || null)
           profs[key] = profs[key].concat(selection.value || null)
+        }
+        const selected = this.mechanicBag.filter(i => i.type === 'prof' && i.profType === key)
+        for (const selection of selected) {
+          profs[key] = profs[key].concat(selection.value)
         }
       }
       // create uniques

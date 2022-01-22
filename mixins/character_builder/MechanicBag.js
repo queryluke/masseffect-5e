@@ -2,16 +2,11 @@ export const MechanicBag = {
   computed: {
     mechanicBag () {
       return [
-        ...(this.speciesTraits.reduce((acc, curr) => acc.concat(curr.mechanics || []), []))
+        ...this.rootSpeciesMechanics,
+        ...(this.speciesTraits.reduce((acc, curr) => acc.concat(curr.mechanics || []), [])),
+        // selections
+        ...this.character.selected.reduce((acc, curr) => acc.concat(curr.value || []), [])
       ]
-    }
-  },
-  methods: {
-    mechanicSelection (path) {
-
-    },
-    mechanicSelectionsMade (path, count) {
-
     }
   }
 }

@@ -4,60 +4,50 @@
       {{ profLabel(type) }}
     </div>
     <div class="d-flex flex-wrap">
-      <div v-if="options.has">
-        <template v-for="prof in options.has">
-          <v-chip
-            :key="prof"
-            class="mr-3 mt-5"
-          >
-            {{ profText(type, prof) }}
-          </v-chip>
-        </template>
-      </div>
       <v-select
-        v-if="options.choices"
-        v-model="profs"
-        n
         item-text="text"
         item-value="value"
         :items="items"
-        :label="options.text"
-        :counter="noCounter ? false : options.choices.count"
+        :label="`Choose ${$tc(`string_numbers[${selections}]`)}...`"
+        :counter="selections"
         chips
         deletable-chips
         multiple
+        :value="vSelectCurrentValue"
+        @change="updateSelection"
       >
         <template #selection="data">
           <v-chip
             v-bind="data.attrs"
             :input-value="data.selected"
             close
-            @click:close="remove(data.item)"
+            small
+            @click:close="removeSelection(data.item.value)"
           >
             {{ data.item.text }}
           </v-chip>
         </template>
-        <template #item="data">
-          <v-list-item-icon v-if="alreadyAcquired(data.item.value)">
+        <template #item="{ item }">
+          <v-list-item-icon v-if="alreadyAcquired(item.value)">
             <v-icon color="warning">
               mdi-alert-circle
             </v-icon>
           </v-list-item-icon>
-          <v-list-item-icon v-else-if="isSelected(data.item.value)">
+          <v-list-item-icon v-else-if="isSelected(item.value)">
             <v-icon color="primary">
               mdi-checkbox-marked
             </v-icon>
           </v-list-item-icon>
           <v-list-item-icon v-else>
-            <v-icon :color="data.item.disabled ? 'grey darken-2' : undefined">
+            <v-icon :color="item.disabled ? 'grey darken-2' : undefined">
               mdi-checkbox-blank-outline
             </v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>
-              {{ data.item.text }}
+              {{ item.text }}
             </v-list-item-title>
-            <v-list-item-subtitle v-if="alreadyAcquired(data.item.value)">
+            <v-list-item-subtitle v-if="alreadyAcquired(item.value)">
               Already acquired
             </v-list-item-subtitle>
           </v-list-item-content>
@@ -75,82 +65,122 @@ export default {
     mechanic: {
       type: Object,
       required: true
+    },
+    currentValue: {
+      type: Array,
+      required: true
     }
   },
   computed: {
+    selections () {
+      return this.mechanic.selections || 1
+    },
+    expertise () {
+      return this.mechanic.expertise || false
+    },
+    profOptions () {
+      if (this.type === 'skill') {
+        return this.skills.map((i) => {
+          return {
+            text: i.name,
+            value: i.id
+          }
+        })
+      }
+      if (this.type === 'weapon') {
+        return this.weaponTypes
+      }
+      if (this.type === 'armor') {
+        return this.armorTypes
+      }
+      if (this.type === 'savingThrows') {
+        return ['str', 'dex', 'con', 'int', 'wis', 'cha'].map((i) => {
+          return {
+            text: this.$t(`abilities.${i}.title`),
+            value: i
+          }
+        })
+      }
+      if (this.type === 'tool') {
+        // TODO: clean this up, should be as simple as the other
+        const items = []
+        for (const prof of this.toolProfs) {
+          if (prof.id === 'vehicles') {
+            for (const vehicleType of ['air', 'land', 'space', 'water']) {
+              const id = `vehicle-${vehicleType}`
+              items.push({
+                value: id,
+                group: 'vehicle',
+                text: `Vehicles: ${this.$options.filters.titlecase(vehicleType)}`
+              })
+            }
+          } else {
+            items.push({
+              value: prof.id,
+              text: prof.name,
+              group: prof.type
+            })
+          }
+        }
+        return items
+      }
+      return []
+    },
     type () {
       return this.mechanic.profType
     },
-    selectionId () {
-      return `${this.source}-${this.type}`
-    },
-    profs: {
-      get () {
-        const selection = this.selections.find(i => i.source === this.selectionId)
-        return selection?.value || []
-      },
-      set (value) {
-        this.setProfObject(value)
-      }
-    },
     disableItems () {
-      return this.profs.length === this.options.choices.count
+      return this.currentValue.length === this.selections
     },
     items () {
-      const items = []
-      for (const item of this.options.choices.items) {
-        // special multi-use cases
-        if (['vehicles', 'starship', 'artisan'].includes(item)) {
-          if (item === 'vehicles') {
-            // TODO: these should be in the data
-            for (const vehicleType of ['air', 'land', 'space', 'water']) {
-              const id = `vehicle-${vehicleType}`
-              items.push(id)
-            }
-          } else {
-            const matchingTools = this.toolProfs.filter(i => i.type === item)
-            for (const match of matchingTools) {
-              items.push(match.id)
-            }
-          }
-        } else {
-          items.push(item)
-        }
+      let items = []
+      if (this.mechanic.limit) {
+        items = this.profOptions.filter((i) => {
+          return this.type === 'tool'
+            ? this.mechanic.limit.includes(i.value) || this.mechanic.limit.includes(i.group)
+            : this.mechanic.limit.includes(i.value)
+        })
+      } else {
+        items = this.profOptions
       }
       return items.map((i) => {
-        return { text: this.profText(this.type, i), value: i, disabled: this.alreadyAcquired(i) ? true : this.isSelected(i) ? false : this.disableItems }
+        return { ...i, disabled: this.disabled(i.value) }
       })
-    }
-  },
-  mounted () {
-    if (!this.selections.find(i => i.source === this.selectionId)) {
-      this.setProfObject([])
+    },
+    vSelectCurrentValue () {
+      return this.currentValue.map(i => i.value)
     }
   },
   methods: {
-    setProfObject (value) {
-      const selection = {
-        type: 'profs',
-        subType: this.type,
-        value,
-        has: this.options.has || null,
-        source: this.selectionId
-      }
-      this.$store.dispatch('cb/UPDATE_SELECTIONS', { cid: this.cid, selection })
+    disabled (value) {
+      return this.alreadyAcquired(value)
+        ? true
+        : this.isSelected(value)
+          ? false
+          : this.disableItems
     },
-    remove (item) {
-      const index = this.profs.indexOf(item.value)
-      if (index >= 0) {
-        const newProfs = [...this.profs]
-        newProfs.splice(index, 1)
-        this.profs = newProfs
-      }
+    alreadyAcquired (value) {
+      return this.proficiencies[this.type].includes(value) && !this.isSelected(value)
     },
-    alreadyAcquired (prof) {
-      return this.proficiencies[this.type].includes(prof) && !this.profs.includes(prof)
+    isSelected (value) {
+      return this.currentValue.map(i => i.value).includes(value)
     },
-    isSelected (prof) {
-      return this.profs.includes(prof)
+    removeSelection (value) {
+      const currentValue = this.currentValue.slice()
+      const currentIndex = currentValue.findIndex(i => i.value === value)
+      currentValue.splice(currentIndex, 1)
+      this.$emit('upsert', currentValue)
+    },
+    updateSelection (value) {
+      const newValue = value.map((i) => {
+        return {
+          type: 'prof',
+          profType: this.type,
+          value: i,
+          expertise: this.expertise
+        }
+      })
+      this.$emit('upsert', newValue)
     }
   }
 }

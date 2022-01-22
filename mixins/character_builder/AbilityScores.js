@@ -38,15 +38,16 @@ export const AbilityScores = {
   },
   methods: {
     absSpeciesBonus (ability) {
-      /*
-      if (this.speciesData) {
-        const base = this.speciesData.abilityScoreIncrease.find(i => i.ability === ability)
-        if (base) {
-          return base.amount
-        }
-      } */
-      return 0
-      // TODO: other abs increases like quarian option
+      let base = 0
+      if (!this.character.options.tashas) {
+        const additions = this.speciesAsis.filter(i => i.ability === ability)
+        const totalAddition = additions.reduce((acc, curr) => acc + curr.amount, 0)
+        base += totalAddition
+      }
+      const selections = this.character.selected.find(i => i.path.startsWith('species/asi')) || { value: [] }
+      const abilitySelected = selections.value.find(i => i.ability === ability) || { amount: 0 }
+      base += abilitySelected.amount
+      return base
     },
     getAbsBase (ability) {
       return this.selectedAbilityScores ? this.selectedAbilityScores[ability] : 0

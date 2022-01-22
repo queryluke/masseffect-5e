@@ -45,16 +45,20 @@ export const Species = {
     speciesTraits () {
       return this.traits.filter(i => i.species.includes(this.speciesId) || i.species.includes(this.subspeciesId))
     },
-    speciesOptionalAsis () {
-      return [...(this.speciesData?.mechanics || []), ...(this.subspeciesData?.mechanics || [])].filter(i => i.type === 'asi-choice')
+    rootSpeciesMechanics () {
+      return [...(this.speciesData?.mechanics || []), ...(this.subspeciesData?.mechanics || [])]
+    },
+    speciesAsis () {
+      return this.rootSpeciesMechanics.filter(i => i.type === 'asi')
+    },
+    speciesAsiOptions () {
+      return this.rootSpeciesMechanics.filter(i => i.type === 'asi-choice')
     },
     speciesSetAsiText () {
-      const setAsis = [...(this.speciesData?.mechanics || []), ...(this.subspeciesData?.mechanics || [])]
-        .filter(i => i.type === 'asi')
-        .reduce((acc, curr) => {
-          acc[curr.ability] += curr.amount
-          return acc
-        }, { str: 0, dex: 0, con: 0, int: 0, wis: 0, cha: 0 })
+      const setAsis = this.rootSpeciesMechanics.reduce((acc, curr) => {
+        acc[curr.ability] += curr.amount
+        return acc
+      }, { str: 0, dex: 0, con: 0, int: 0, wis: 0, cha: 0 })
       const list = []
       for (const [key, value] of Object.entries(setAsis)) {
         if (value > 0) {

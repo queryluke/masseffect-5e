@@ -51,7 +51,7 @@
                 Ability Score Increase
               </template>
             </me-cb-aspect-card>
-            <me-cb-aspect-card v-else root-path="species" :aspect="{ id: 'asi', mechanics: speciesOptionalAsis }">
+            <me-cb-aspect-card v-else root-path="species" :aspect="{ id: 'asi', mechanics: speciesAsiOptions }">
               <template #title>
                 Ability Score Increase
               </template>
@@ -59,6 +59,7 @@
                 {{ speciesSetAsiText }}
               </template>
             </me-cb-aspect-card>
+            <me-cb-aspect-card v-for="trait in speciesTraits" :key="trait.id" root-path="species" :aspect="trait" />
           </v-expansion-panels>
         </v-card-text>
       </v-card>
