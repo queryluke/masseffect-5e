@@ -20,9 +20,23 @@
           </me-tpg>
         </div>
       </div>
-      <v-btn outlined small @click="keepOrChange">
-        {{ change ? 'Change' : 'Keep' }}
-      </v-btn>
+      <div class="d-flex flex-column align-center justify-space-around">
+        <v-btn outlined small @click="keepOrChange">
+          {{ change ? 'Change' : 'Keep' }}
+        </v-btn>
+        <v-btn
+          v-if="change"
+          x-small
+          plain
+          color="primary"
+          text
+          class="mt-3"
+          :to="`/species/${isVariantSpeciesId ? speciesData.species : speciesId}`"
+          target="_blank"
+        >
+          View Species Info
+        </v-btn>
+      </div>
     </div>
   </v-card>
 </template>

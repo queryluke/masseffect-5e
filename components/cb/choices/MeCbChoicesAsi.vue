@@ -9,12 +9,13 @@
         :key="chip.label"
         :disabled="chip.disabled"
         small
+        :color="chip.color"
         class="ma-1"
         @click="upsertSelection(chip.ability)"
       >
-        <v-avatar v-if="chip.prepend">
+        <span v-if="chip.prepend" class="pr-1">
           +{{ chip.prepend }}
-        </v-avatar>
+        </span>
         {{ chip.label }}
       </v-chip>
     </div>
@@ -45,8 +46,9 @@ export default {
         return {
           ability: i,
           label: this.$t(`abilities.${i}.title`),
-          disabled: this.selections > 1 && !currentValue && !this.selectionsActive,
-          prepend: currentValue?.amount || null
+          disabled: !currentValue && !this.selectionsActive,
+          prepend: currentValue?.amount || null,
+          color: currentValue ? 'primary' : undefined
         }
       })
     },
@@ -70,7 +72,7 @@ export default {
         return `+${this.max} to one ability from the following`
       }
       if (this.max === 1) {
-        return `+${this.max} to ${this.selections} different abilities from the following`
+        return `+${this.max} to ${this.$tc(`string_numbers[${this.selections}]`)} different abilities from the following`
       }
       const options = []
       let selections = 1
@@ -86,10 +88,10 @@ export default {
         }
       }
       const textBag = []
-      for (const index of options) {
-        textBag.push(`+${options[index]} to ${index === 0 ? 'one' : 'another'} ability`)
+      for (const index in options) {
+        textBag.push(`+${options[index]} to ${index.toString() === '0' ? 'one' : 'another'} ability`)
       }
-      return `${textBag.join(' and ')}, or +1 to ${this.selections} different abilities from the following`
+      return `${textBag.join(' and ')}, or +1 to ${this.$tc(`string_numbers[${this.selections}]`)} different abilities from the following`
     }
   },
   methods: {
@@ -97,9 +99,12 @@ export default {
       const currentValue = this.currentValue.slice()
       const currentIndex = currentValue.findIndex(i => i.ability === value)
       if (currentIndex > -1) {
+        const currentTotal = currentValue.reduce((acc, curr) => acc + curr.amount, 0)
         const currentAmount = currentValue[currentIndex].amount
-        if (currentAmount < this.max) {
-          currentValue[currentIndex].amount++
+        if (currentTotal + 1 > this.total) {
+          currentValue.splice(currentIndex, 1)
+        } else if (currentAmount < this.max) {
+          currentValue.splice(currentIndex, 1, { type: 'asi', ability: value, amount: currentAmount + 1 })
         } else {
           currentValue.splice(currentIndex, 1)
         }

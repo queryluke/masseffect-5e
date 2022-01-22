@@ -48,7 +48,6 @@ export default {
   },
   methods: {
     upsert (value) {
-      console.log(value)
       const path = `${this.path}/${this.type}`
       const selectObj = {
         path,
@@ -62,7 +61,6 @@ export default {
         newSelections.push(selectObj)
       }
       this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'selected', value: newSelections })
-      console.log(this.character.selected)
     }
   }
 }

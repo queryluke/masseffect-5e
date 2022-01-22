@@ -41,8 +41,12 @@
           </me-tpg>
         </v-card-title>
         <v-card-text>
+          <v-switch
+            v-model="tashas"
+            label="Custom Ability Score Increase"
+          />
           <v-expansion-panels focusable multiple>
-            <me-cb-aspect-card v-if="character.options.tashas" path="species">
+            <me-cb-aspect-card v-if="character.options.tashas" root-path="species" :aspect="{ id: 'asi', mechanics: tashasMechanics }">
               <template #title>
                 Ability Score Increase
               </template>
@@ -71,7 +75,16 @@ export default {
   data () {
     return {
       search: null,
-      changeSpecies: false
+      changeSpecies: false,
+      tashasMechanics: [
+        {
+          type: 'asi-choice',
+          options: true,
+          selections: 3,
+          max: 2,
+          total: 3
+        }
+      ]
     }
   },
   computed: {
@@ -81,6 +94,15 @@ export default {
         return baseSpecies
       }
       return baseSpecies.filter(i => i.name.toLowerCase().includes(this.search.toLowerCase()))
+    },
+    tashas: {
+      get () {
+        return this.character.options.tashas
+      },
+      set (value) {
+        this.deleteSelections('species/asi')
+        this.updateCharacter('options.tashas', value)
+      }
     }
   },
   methods: {

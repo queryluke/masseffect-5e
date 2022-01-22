@@ -250,6 +250,15 @@ export const CharacterBuilderHelpers = {
     csTextColor (key) {
       const modeKey = this.$store.getters['user/darkMode'] ? 'dark' : 'light'
       return this.csColors[key][modeKey].text
+    },
+    async deleteSelections (path) {
+      await this.$store.dispatch('cb/DELETE_SELECTED', {
+        cid: this.cid,
+        path
+      })
+    },
+    async updateCharacter (attr, value) {
+      await this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr, value })
     }
   }
 }

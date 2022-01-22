@@ -5,33 +5,10 @@ export const Species = {
         return this.character.species
       },
       set (value) {
-        console.log(value)
-        const oldSpeciesId = this.speciesId
         // delete any old selections
-        this.$store.dispatch('cb/DELETE_SELECTIONS', {
-          cid: this.cid,
-          id: `species-${oldSpeciesId}`
-        })
+        this.deleteSelections('species')
         // set the species id
-        this.$store.dispatch('cb/UPDATE_CHARACTER', {
-          cid: this.cid,
-          attr: 'species',
-          value
-        })
-        // add any mandatory selections
-        let currSelections = JSON.parse(JSON.stringify(this.selections))
-        for (const trait of this.speciesTraits) {
-          if (trait.mechanics) {
-            const traitSourceId = `${this.speciesSource}-${trait.id}`
-            currSelections = currSelections.concat(this.getMechanicsWithoutChoices(traitSourceId, trait.mechanics))
-          }
-        }
-        this.$store.dispatch('cb/UPDATE_CHARACTER', {
-          cid: this.cid,
-          attr: 'selections',
-          value: currSelections
-        })
-        console.log(this.speciesId)
+        this.updateCharacter('species', value)
       }
     },
     subspeciesId: {
@@ -39,13 +16,7 @@ export const Species = {
         return this.character.subspecies
       },
       set (value) {
-        // set the species id
-        this.$store.dispatch('cb/UPDATE_CHARACTER', {
-          cid: this.cid,
-          attr: 'subspecies',
-          value
-        })
-        console.log(this.subspeciesId)
+        this.updateCharacter('subspecies', value)
       }
     },
     speciesData () {

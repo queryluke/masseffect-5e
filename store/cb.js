@@ -168,6 +168,11 @@ export const actions = {
     const newSelections = getters.characters[cid].selections.filter(i => !i.source.startsWith(id))
     dispatch('UPDATE_CHARACTER', { cid, attr: 'selections', value: newSelections })
   },
+  // New Selection interface, adds should be done in components (maybe?)
+  DELETE_SELECTED ({ dispatch, getters }, { cid, path }) {
+    const newSelections = getters.characters[cid].selected.filter(i => !i.path.startsWith(path))
+    dispatch('UPDATE_CHARACTER', { cid, attr: 'selected', value: newSelections })
+  },
   UPDATE_SELECTIONS ({ dispatch, getters }, { cid, selection }) {
     const newSelections = JSON.parse(JSON.stringify(getters.characters[cid].selections))
     const index = newSelections.findIndex(i => i.source === selection.source)

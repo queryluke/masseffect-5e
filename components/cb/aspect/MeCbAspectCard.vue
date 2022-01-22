@@ -67,7 +67,14 @@ export default {
       if (this.options.length === 0) {
         return true
       }
-      return this.character.selected.filter(i => i.path.startsWith(this.path)).reduce((acc, curr) => acc + curr.value?.length || 0, 0) >= this.optionsCount
+      const selections = this.character.selected.filter(i => i.path.startsWith(this.path))
+      const selectionsCount = selections.reduce((acc, curr) => {
+        const addition = !curr.value
+          ? 0
+          : curr.value.reduce((a, c) => a + c.amount || 1, 0)
+        return acc + addition
+      }, 0)
+      return selectionsCount >= this.optionsCount
     }
   }
 }
