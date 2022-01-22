@@ -2,6 +2,7 @@
   <div>
     <component
       :is="component"
+      :id="id"
       :mechanic="mechanic"
       :current-value="currentValue"
       @upsert="upsert"
@@ -34,9 +35,6 @@ export default {
     }
   },
   computed: {
-    type () {
-      return this.mechanic.type.replace('-choice', '')
-    },
     component () {
       return `me-cb-choices-${this.type}`
     },
@@ -47,6 +45,9 @@ export default {
     id () {
       const subPath = this.mechanic[this.subPaths[this.type]] || null
       return [this.path, this.type, subPath].filter(String).join('/')
+    },
+    type () {
+      return this.mechanic.type.replace('-choice', '')
     }
   },
   methods: {

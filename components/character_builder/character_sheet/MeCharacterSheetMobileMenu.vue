@@ -1,61 +1,61 @@
 <template>
   <v-row justify="space-between" class="mx-n4" :no-gutters="$vuetify.breakpoint.mdAndUp">
     <v-col cols="3" class="text-center">
-      <div class="text-caption">
-        <small>AC</small>
-      </div>
-      <div class="text-h6">
-        {{ csAc }}
-      </div>
+      <v-card color="transparent" elevation="0" outlined>
+        <div class="text-caption">
+          <small>AC</small>
+        </div>
+        <div class="text-h6">
+          {{ csAc }}
+        </div>
+      </v-card>
     </v-col>
     <v-col cols="3" class="text-center">
-      <div class="text-caption">
-        <small>Prof Bonus</small>
-      </div>
-      <div class="text-h6">
-        +{{ profBonus }}
-      </div>
+      <v-card color="transparent" elevation="0" outlined>
+        <div class="text-caption">
+          <small>Prof Bonus</small>
+        </div>
+        <div class="text-h6">
+          +{{ profBonus }}
+        </div>
+      </v-card>
     </v-col>
     <v-col cols="3" class="text-center">
       <v-card
-        v-if="csAddlSpeeds.length > 0"
         color="transparent"
         elevation="0"
         outlined
-        class="primary--text"
+        hover
         @click="addlSpeedDialog = true"
       >
         <div class="text-caption">
-          <small>Speed*</small>
+          <small>Speed{{ allCsSpeeds.length > 1 ? '*' : '' }}</small>
         </div>
         <div class="text-h6">
-          <me-distance :length="csSpeed" abbr />
+          <me-distance :length="csSpeed.distance" abbr />
         </div>
       </v-card>
-      <div v-else>
-        <div class="text-caption">
-          <small>Speed</small>
-        </div>
-        <div class="text-h6">
-          <me-distance :length="csSpeed" abbr />
-        </div>
-      </div>
     </v-col>
     <v-col cols="3" class="text-center">
-      <div class="text-caption">
-        <small>Barrier Ticks</small>
-      </div>
-      <div class="text-h6">
-        {{ csMaxBarrierTicks - csBarrierTicksUsed || '-' }}
-      </div>
+      <v-card color="transparent" elevation="0" outlined>
+        <div class="text-caption">
+          <small>Barrier Ticks</small>
+        </div>
+        <div class="text-h6">
+          {{ csMaxBarrierTicks - csBarrierTicksUsed || '-' }}
+        </div>
+      </v-card>
     </v-col>
-    <me-standard-dialog :shown="addlSpeedDialog" title="Additional Speeds" @close="addlSpeedDialog = false">
-      <v-list dense>
-        <v-list-item v-for="speed of csAddlSpeeds" :key="`speed-${speed.type}`">
+    <me-standard-dialog :shown="addlSpeedDialog" title="Speeds" @close="addlSpeedDialog = false">
+      <v-list dense two-line>
+        <v-list-item v-for="speed of allCsSpeeds" :key="`speed-${speed.speed}`">
           <v-list-item-content>
             <v-list-item-title>
-              {{ $t(`speeds.${speed.type}.title`) }} <me-distance :length="speed.speed" abbr />
+              {{ $t(`speeds.${speed.speed}.title`) }} <me-distance :length="speed.distance" abbr />
             </v-list-item-title>
+            <v-list-item-subtitle>
+              {{ speed.note }}
+            </v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
       </v-list>

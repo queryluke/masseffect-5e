@@ -1,4 +1,15 @@
 export const Background = {
+  data () {
+    return {
+      customBackground: {
+        id: 'custom',
+        type: 'homebrew',
+        name: 'Custom/No Background',
+        html: '<p>Use the Custom tab to add additional proficiencies.</p>',
+        mechanics: []
+      }
+    }
+  },
   computed: {
     backgroundId: {
       get () {

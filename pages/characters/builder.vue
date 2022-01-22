@@ -67,12 +67,14 @@ export default {
   },
   methods: {
     async goToSheet () {
-      this.loading = true
-      await this.$store.dispatch('cb/REMOTE_UPDATE', this.cid)
+      if (this.$store.getters['auth/isAuthenticated']) {
+        this.loading = true
+        await this.$store.dispatch('cb/REMOTE_UPDATE', this.cid)
+        this.loading = false
+      }
       await this.$router.push({
         path: `/characters/sheet?id=${this.cid}`
       })
-      this.loading = false
     }
   }
 }

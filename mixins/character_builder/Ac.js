@@ -4,6 +4,20 @@ export const Ac = {
       if (this.character.settings.acOverride) {
         return this.character.settings.acOverride
       }
+
+      const selectionsAc = this.selections.filter(i => i.type === 'ac').reduce((acc, curr) => acc + curr.has.bonus, 0)
+      const selectedAc = this.mechanicBag.filter(i => i.type === 'ac').reduce((acc, curr) => acc + this.mcBonus(curr.bonus), 0)
+      const flatBonus = selectionsAc + selectedAc
+      const dexMod = this.absMod('dex')
+
+      // natural armor
+      const naturalArmorBase = this.mechanicBag
+        .filter(i => i.type === 'natural-armor')
+        .map(i => i.base + this.absMod(i.mod))
+        .sort((a, b) => b - a)
+      const naturalArmor = naturalArmorBase[0] || 0
+
+      // equipped armor
       const equippedArmor = this.csArmor.filter(i => i.equipped)
       const head = equippedArmor.find(i => i.stats.placement === 'head')
       const body = equippedArmor.find(i => i.stats.placement === 'body_armor')
@@ -45,10 +59,11 @@ export const Ac = {
         numHeavy += head.stats.type === 'heavy' ? 1 : 0
       }
       const dexMax = numHeavy > 0 ? 0 : numMed > 0 ? 2 : 999
-      const dexMod = this.speciesId === 'elcor' ? this.absMod('con') : this.absMod('dex')
       const appliedDex = Math.min(dexMax, dexMod)
-      const selectionsAc = this.selections.filter(i => i.type === 'ac').reduce((acc, curr) => acc + curr.has.bonus, 0)
-      return runningAc + appliedDex + selectionsAc + this.character.settings.acBonus
+      const equippedAc = runningAc + appliedDex
+
+      const bestAc = Math.max(equippedAc, naturalArmor)
+      return bestAc + flatBonus + this.character.settings.acBonus
     }
   }
 

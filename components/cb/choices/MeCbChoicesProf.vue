@@ -97,9 +97,7 @@ export default {
       } else {
         items = this.profOptions
       }
-      return items.map((i) => {
-        return { ...i, acquired: this.alreadyAcquired(i.value) }
-      })
+      return items
     },
     appended () {
       return {

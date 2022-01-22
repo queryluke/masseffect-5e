@@ -15,6 +15,7 @@ import { Skills } from './Skills'
 import { Equipment } from './Equipment'
 import { Powers } from './Powers'
 import { MechanicBag } from '~/mixins/character_builder/MechanicBag'
+import { Feats } from '~/mixins/character_builder/Feats'
 
 /*
  * Aspect Schema
@@ -25,7 +26,8 @@ import { MechanicBag } from '~/mixins/character_builder/MechanicBag'
  */
 
 export const CharacterBuilderHelpers = {
-  mixins: [Klasses, Proficiencies, Level, Species, ProfLabels, AbilityScoreBonus, AbilityScores, Background, Selections, Hp, Barrier, Ac, Speed, Skills, Equipment, Powers, MechanicBag],
+  mixins: [Klasses, Proficiencies, Level, Species, ProfLabels, AbilityScoreBonus, AbilityScores, Background, Selections,
+    Hp, Barrier, Ac, Speed, Skills, Equipment, Powers, MechanicBag, Feats],
   data () {
     return {
       csColors: {
@@ -139,7 +141,9 @@ export const CharacterBuilderHelpers = {
       return this.$store.getters.getData('traits')
     },
     backgrounds () {
-      return this.$store.getters.getData('backgrounds')
+      const official = this.$store.getters.getData('backgrounds')
+      const homebrew = [this.customBackground]
+      return [...official, ...homebrew]
     },
     progression () {
       return [...this.$store.getters.getData('character-progression')].sort((a, b) => a.level - b.level)

@@ -5,6 +5,9 @@
     :label="label"
     :counter="totalSelections"
     :item-disabled="disabled"
+    :menu-props="{
+      closeOnContentClick: disableItems
+    }"
     chips
     deletable-chips
     multiple
@@ -95,7 +98,7 @@ export default {
       return this.acquired(value) && !this.isSelected(value)
     },
     disabled (item) {
-      return (item.acquired && !this.isSelected(item.value)) || (this.isSelected(item.value) ? false : this.disableItems)
+      return this.alreadyAcquired(item.value) || (this.isSelected(item.value) ? false : this.disableItems)
     },
     isSelected (value) {
       return this.value.includes(value)

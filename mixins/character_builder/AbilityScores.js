@@ -33,6 +33,14 @@ export const AbilityScores = {
       for (const selection of selections) {
         bonuses[selection.has.ability] += selection.has.bonus
       }
+      const selected = this.mechanicBag.filter(i => i.type === 'asi')
+      for (const s of selected) {
+        bonuses[s.ability] += s.amount
+      }
+      // need to remove species for breakdown
+      for (const a of ['str', 'dex', 'con', 'int', 'wis', 'cha']) {
+        bonuses[a] -= this.absSpeciesBonus(a)
+      }
       return bonuses
     }
   },

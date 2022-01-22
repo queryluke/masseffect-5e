@@ -50,7 +50,12 @@ export default {
   },
   data () {
     return {
-      showAspect: false
+      subOptions: {
+        'feat-choice': {
+          model: 'feats',
+          type: 'feat'
+        }
+      }
     }
   },
   computed: {
@@ -61,20 +66,33 @@ export default {
       return (this.aspect?.mechanics || []).filter(i => i.options)
     },
     optionsCount () {
-      return this.options.reduce((acc, curr) => acc + (curr.selections || 1), 0)
+      return this.options.reduce(this.optionsCountReduction, 0)
+    },
+    selectedCount () {
+      return this.selectedAspectValues.reduce((acc, curr) => acc + (curr.amount || 1), 0)
+    },
+    selectedAspectValues () {
+      return this.character.selected.filter(i => i.path.startsWith(this.path)).reduce((acc, curr) => acc.concat(curr.value), [])
     },
     allSelectionsMade () {
       if (this.options.length === 0) {
         return true
       }
-      const selections = this.character.selected.filter(i => i.path.startsWith(this.path))
-      const selectionsCount = selections.reduce((acc, curr) => {
-        const addition = !curr.value
-          ? 0
-          : curr.value.reduce((a, c) => a + (c.amount || 1), 0)
-        return acc + addition
-      }, 0)
-      return selectionsCount >= this.optionsCount
+      return this.selectedCount >= this.optionsCount
+    }
+  },
+  methods: {
+    optionsCountReduction (acc, curr) {
+      let total = curr.selections || 1
+      const subTypeObject = this.subOptions[curr.type]
+      if (subTypeObject) {
+        const baseSelections = this.selectedAspectValues.filter(i => i.type === subTypeObject.type)
+        const arrayOfAllMatchingBaseSelectionValues = baseSelections.reduce((acc, curr) => acc.concat(curr.value), [])
+        const matchingModels = this[subTypeObject.model].filter(i => arrayOfAllMatchingBaseSelectionValues.includes(i.id))
+        const mechanicsToParse = matchingModels.reduce((acc, curr) => acc.concat(curr.mechanics || []), []).filter(i => i.options)
+        total += mechanicsToParse.reduce(this.optionsCountReduction, 0)
+      }
+      return acc + total
     }
   }
 }

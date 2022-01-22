@@ -1,47 +1,34 @@
 export const Speed = {
   computed: {
     csSpeed () {
-      if (this.character.settings.speeds?.walk) {
-        return this.character.settings.speeds?.walk
-      }
-      let speed = 30
-      // TODO: This should incorporate equipment data
-      if (this.speciesId !== 'hanar') {
-        speed = this.speciesData.speed.find(i => i.type === 'walk').speed
-      }
-      return speed
+      return this.maxSpeedOfType('walk')
     },
-    csAddlSpeeds () {
-      const selections = this.selections.filter(i => i.type === 'speed').map(i => i.has)
-      const speciesSpeeds = this.speciesData.speed
-      const overrides = Object.entries(this.character.settings.speeds || {}).filter(i => i[1] > 0).map((i) => {
+    allCsSpeeds () {
+      const allSpeeds = []
+      for (const type of ['walk', 'swim', 'fly', 'climb', 'burrow']) {
+        const highest = this.maxSpeedOfType(type)
+        if (highest) {
+          allSpeeds.push(highest)
+        }
+      }
+      return allSpeeds
+    }
+  },
+  methods: {
+    maxSpeedOfType (speedType) {
+      if (this.character.settings.speeds[speedType] > 0) {
         return {
-          type: i[0],
-          speed: i[1]
-        }
-      })
-      const allSpeeds = selections.concat([...speciesSpeeds])
-      const allButWalking = allSpeeds.filter(i => i.type !== 'walk')
-      const finalSpeeds = []
-      for (const speed of allButWalking) {
-        const existingIndex = finalSpeeds.findIndex(i => i.type === speed.type)
-        if (existingIndex > -1) {
-          if (finalSpeeds[existingIndex].speed < speed.speed) {
-            finalSpeeds.splice(existingIndex, 1, speed)
-          }
-        } else {
-          finalSpeeds.push(speed)
+          type: 'speed',
+          speed: speedType,
+          distance: this.character.settings.speeds[speedType],
+          note: 'overridden'
         }
       }
-      for (const speed of overrides) {
-        const existingIndex = finalSpeeds.findIndex(i => i.type === speed.type)
-        if (existingIndex > -1) {
-          finalSpeeds.splice(existingIndex, 1, speed)
-        } else {
-          finalSpeeds.push(speed)
-        }
+      const selectedSpeeds = this.mechanicBag.filter(i => i.type === 'speed' && i.speed === speedType)
+      if (selectedSpeeds.length > 0) {
+        return selectedSpeeds.sort((a, b) => b.distance - a.distance)[0]
       }
-      return finalSpeeds
+      return false
     }
   }
 }
