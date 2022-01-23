@@ -1,9 +1,9 @@
 <template>
   <div>
     <v-row>
-      <v-col cols="12" class="d-flex justify-center">
+      <v-col cols="12" class="d-flex justify-center justify-md-space-between justify-lg-space-around">
         <me-cs-health-barrier-slider />
-        <div class="ml-5">
+        <div>
           <me-cs-health-circle />
           <div class="text-center">
             <v-btn
@@ -15,7 +15,7 @@
               regen ({{ character.settings.regen }})
             </v-btn>
           </div>
-          <div class="d-flex justify-end align-center mt-5">
+          <div class="d-flex justify-end justify-md-space-around justify-lg-end align-center mt-5">
             <div style="max-width: 125px">
               <v-text-field
                 v-model="modder"
@@ -29,7 +29,7 @@
                 @focus="healthTrigger = true"
               />
             </div>
-            <v-btn id="healthTriggerMenu" fab x-small class="ml-6 mr-n2" @click="healthTrigger = !healthTrigger">
+            <v-btn id="healthTriggerMenu" fab x-small class="ml-6 ml-md-0 ml-lg-6 mr-n2 mr-md-0 mr-lg-n2" @click="healthTrigger = !healthTrigger">
               <v-icon>
                 {{ healthTrigger ? 'mdi-close' : 'mdi-chevron-down' }}
               </v-icon>
@@ -102,20 +102,24 @@
         </div>
       </v-col>
       <v-col cols="12">
-        <v-card outlined>
-          <v-row no-gutters>
-            <v-col cols="6">
-              <v-card-text class="pl-2 pr-1 py-0">
-                <me-cs-defenses />
-              </v-card-text>
-            </v-col>
-            <v-col cols="6" class="d-flex">
-              <v-divider vertical />
-              <v-card-text class="pl-2 pr-1 py-0">
-                <me-cs-conditions />
-              </v-card-text>
-            </v-col>
-          </v-row>
+        <v-card
+          outlined
+          min-height="100px"
+          class="d-flex justify-space-around mx-auto"
+          :min-width="$vuetify.breakpoint.mdOnly ? 280 : undefined"
+          max-width="500"
+        >
+          <div style="width: 49%">
+            <v-card-text class="pl-2 pr-1 pt-0 pb-3">
+              <me-cs-defenses />
+            </v-card-text>
+          </div>
+          <v-divider vertical />
+          <div style="width: 49%">
+            <v-card-text class="pl-2 pr-1 pt-0 pb-3">
+              <me-cs-conditions />
+            </v-card-text>
+          </div>
         </v-card>
       </v-col>
     </v-row>

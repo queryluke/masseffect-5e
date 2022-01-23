@@ -87,6 +87,19 @@ export const Species = {
         }
       }
       return list.join(', ')
+    },
+    variantTitle () {
+      if (this.isVariantSpeciesId) {
+        const parent = this.species.find(i => i.id === this.speciesData.species)
+        return `Variant ${parent.name}`
+      }
+      return false
+    },
+    speciesSubName () {
+      return this.subspeciesData?.name || this.variantTitle || false
+    },
+    speciesFullName () {
+      return [this.speciesSubName, this.speciesData?.name].filter(i => i).join(' ')
     }
   }
 }

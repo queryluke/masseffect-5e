@@ -4,7 +4,7 @@
       Defenses
     </div>
     <template v-for="type of ['resistance', 'immunity', 'vulnerability']">
-      <v-divider v-if="type === 'vulnerability'" :key="`${type}-divider`" class="my-2" />
+      <v-divider v-if="type === 'vulnerability' && defenses[type].text.length" :key="`${type}-divider`" class="my-2" />
       <me-cs-defense-item :key="type" :item="defenses[type]" class="my-1" />
     </template>
   </div>

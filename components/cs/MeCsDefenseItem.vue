@@ -3,8 +3,8 @@
     <div class="d-flex align-center">
       <v-tooltip bottom>
         <template #activator="{ on, attrs }">
-          <div v-bind="attrs" v-on="on">
-            <v-icon v-if="item.subIcon" :color="item.subIconColor" style="z-index: 1; position: absolute; margin-left: -3px">
+          <div v-bind="attrs" class="d-flex justify-center align-center" style="height: 18px" v-on="on">
+            <v-icon v-if="item.subIcon" :color="item.subIconColor" style="z-index: 1; position: absolute" size="18">
               {{ item.subIcon }}
             </v-icon>
             <v-icon :color="item.iconColor" :title="item.title" size="18">
@@ -29,9 +29,6 @@
           </span>
         </span>
       </div>
-    </div>
-    <div v-for="(special, index) of item.special" :key="`special-${index}`">
-      {{ special }}
     </div>
   </div>
 </template>

@@ -11,7 +11,7 @@
         <v-row>
           <v-col cols="6">
             <v-card outlined>
-              <me-character-sheet-saving-throws />
+              <me-cs-saving-throws />
             </v-card>
           </v-col>
           <v-col cols="6">

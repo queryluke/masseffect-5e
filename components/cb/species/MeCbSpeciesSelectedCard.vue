@@ -9,11 +9,8 @@
           <v-img :src="speciesData.bodyImg" :position="avatarPosition" />
         </v-avatar>
         <div>
-          <div v-if="subspeciesData" class="text-overline">
-            {{ subspeciesData.name }}
-          </div>
-          <div v-else-if="variantTitle" class="text-overline">
-            {{ variantTitle }}
+          <div v-if="speciesSubName" class="text-overline">
+            {{ speciesSubName }}
           </div>
           <me-tpg s="h4">
             {{ speciesData.name }}
@@ -55,13 +52,6 @@ export default {
   computed: {
     avatarPosition () {
       return ['volus'].includes(this.speciesId) ? 'center center' : 'top center'
-    },
-    variantTitle () {
-      if (this.isVariantSpeciesId) {
-        const parent = this.species.find(i => i.id === this.speciesData.species)
-        return `Variant ${parent.name}`
-      }
-      return false
     }
   },
   methods: {

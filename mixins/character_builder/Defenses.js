@@ -59,7 +59,7 @@ export const Defenses = {
       for (const def of allDefenses) {
         if (!def.value) {
           if (def.note) {
-            falsyDefs.push(def.note)
+            textArray.push({ text: def.note })
           }
           continue
         }
@@ -81,7 +81,6 @@ export const Defenses = {
         } else {
           textArray.push({ text })
         }
-        console.log(textArray)
       }
       return { ...irv, text: textArray, special: falsyDefs, values: typeCache }
     },

@@ -5,7 +5,7 @@
         <me-character-sheet-abilities />
       </me-character-sheet-card>
       <me-character-sheet-card>
-        <me-character-sheet-saving-throws />
+        <me-cs-saving-throws />
       </me-character-sheet-card>
       <me-character-sheet-card>
         <me-character-sheet-senses />

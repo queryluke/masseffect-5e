@@ -109,7 +109,7 @@ export const CharacterBuilderHelpers = {
       }
     },
     identString () {
-      const species = this.speciesId ? this.speciesData.name : ''
+      const species = this.speciesFullName
       const classes = this.classes.length > 0 ? this.classesString : ''
       return `${species} ${classes}`
     },
