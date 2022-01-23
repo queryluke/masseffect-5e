@@ -1,5 +1,5 @@
 <template>
-  <v-row justify="space-between" class="mx-n4" :no-gutters="$vuetify.breakpoint.mdAndUp">
+  <v-row justify="space-between" class="mx-n4 my-1" no-gutters>
     <v-col cols="3" class="text-center">
       <v-card color="transparent" elevation="0" outlined>
         <div class="text-caption">
@@ -39,10 +39,16 @@
     <v-col cols="3" class="text-center">
       <v-card color="transparent" elevation="0" outlined>
         <div class="text-caption">
-          <small>Barrier Ticks</small>
+          <small>Initiative</small>
         </div>
-        <div class="text-h6">
-          {{ csMaxBarrierTicks - csBarrierTicksUsed || '-' }}
+        <div class="text-h6 d-flex justify-center align-center">
+          <me-cs-ad-icon
+            v-if="(csInitiativeAdvantage && !csInitiativeDisadvantage) || (!csInitiativeAdvantage && csInitiativeDisadvantage)"
+            :type="csInitiativeAdvantage ? 'a' : 'd'"
+          />
+          <span class="ml-1">
+            {{ csInitiativeBonus }}
+          </span>
         </div>
       </v-card>
     </v-col>
@@ -67,6 +73,7 @@
 import { CharacterBuilderHelpers } from '~/mixins/character_builder'
 
 export default {
+  name: 'MeCsBlocksApsi',
   mixins: [CharacterBuilderHelpers],
   data () {
     return {

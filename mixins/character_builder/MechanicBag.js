@@ -12,17 +12,25 @@ export const MechanicBag = {
   methods: {
     mcBonus (bonus) {
       const multiplier = bonus.multiplier || 1
+      const min = bonus.min || 0
+      let b = 0
       switch (bonus.type) {
         case 'flat':
-          return bonus.value
+          b = bonus.value
+          break
         case 'mod':
-          return this.absMod(bonus.value) * multiplier
+          b = this.absMod(bonus.value) * multiplier
+          break
         case 'proficiency':
-          return this.profBonus * multiplier
+          b = this.profBonus * multiplier
+          break
         case 'level':
-          return this.level * multiplier
+          b = this.level * multiplier
+          break
+        default:
+          b = 0
       }
-      return 0
+      return Math.max(min, b)
     }
   }
 }

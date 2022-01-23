@@ -5,7 +5,7 @@
       <template #appBarExtension>
         <div style="width: 100%">
           <me-character-sheet-main-menu />
-          <me-character-sheet-mobile-menu />
+          <me-cs-blocks-apsi />
         </div>
       </template>
     </me-app-bar>

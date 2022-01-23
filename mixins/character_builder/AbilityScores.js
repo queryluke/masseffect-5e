@@ -42,6 +42,17 @@ export const AbilityScores = {
         bonuses[a] -= this.absSpeciesBonus(a)
       }
       return bonuses
+    },
+    csInitiativeBonus () {
+      const base = this.absMod('dex')
+      const bonus = this.mechanicBag.filter(i => i.type === 'initiative' && typeof i.effect === 'object').reduce((acc, curr) => acc + this.mcBonus(curr.effect), 0)
+      return `+${base + bonus}`
+    },
+    csInitiativeAdvantage () {
+      return this.mechanicBag.filter(i => i.type === 'initiative' && i.effect === 'advantage').length > 0
+    },
+    csInitiativeDisadvantage () {
+      return this.mechanicBag.filter(i => i.type === 'initiative' && i.effect === 'disadvantage').length > 0
     }
   },
   methods: {

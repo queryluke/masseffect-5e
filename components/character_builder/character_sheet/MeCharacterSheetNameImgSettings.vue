@@ -6,7 +6,7 @@
       </v-avatar>
     </v-col>
     <v-col cols="9">
-      <v-row align="center">
+      <v-row align="center" no-gutters>
         <v-col cols="10">
           <div class="text-truncate text-h6">
             <small>
@@ -55,7 +55,7 @@
           </v-menu>
         </v-col>
       </v-row>
-      <div class="text-caption text-truncate blue-grey--text text--lighten-3 mt-n5">
+      <div class="text-caption text-truncate blue-grey--text text--lighten-3 mt-n2">
         <small>
           {{ identString }}
         </small>

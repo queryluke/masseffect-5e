@@ -3,7 +3,7 @@
     <template #activator="{ on, attrs }">
       <div class="d-flex justify-center align-center" v-bind="attrs" :style="{ 'height': size }" v-on="on">
         <v-icon
-          :color="dark ? 'white' : 'grey darken-3'"
+          :color="(dark || type === 'd') ? 'white' : 'grey darken-3'"
           style="position: absolute; z-index: 1;"
           :size="size"
         >

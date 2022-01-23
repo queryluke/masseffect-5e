@@ -13,7 +13,7 @@
     </div>
     <div v-if="mobileView === 'skills'">
       <me-character-sheet-card>
-        <me-character-sheet-skills />
+        <me-cs-skills />
       </me-character-sheet-card>
       <me-character-sheet-card>
         <me-character-sheet-proficiencies />

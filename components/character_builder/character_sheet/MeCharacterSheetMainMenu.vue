@@ -1,12 +1,12 @@
 <template>
   <div>
-    <v-row justify="space-between">
-      <v-col cols="9" md="12">
+    <v-row justify="space-between" no-gutters>
+      <v-col cols="8" md="12">
         <me-character-sheet-name-img-settings />
       </v-col>
-      <v-col v-if="$vuetify.breakpoint.smAndDown" cols="3">
+      <v-col v-if="$vuetify.breakpoint.smAndDown" cols="4">
         <v-card elevation="0" outlined @click="healthDialog = true">
-          <me-cs-health-text />
+          <me-cs-health-text barrier />
         </v-card>
       </v-col>
     </v-row>

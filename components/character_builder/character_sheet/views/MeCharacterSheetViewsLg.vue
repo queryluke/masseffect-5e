@@ -3,7 +3,7 @@
     <v-row>
       <v-col cols="4">
         <me-character-sheet-main-menu />
-        <me-character-sheet-mobile-menu />
+        <me-cs-blocks-apsi />
         <me-cs-health />
       </v-col>
       <v-col cols="8">
@@ -21,7 +21,7 @@
           </v-col>
         </v-row>
         <v-card outlined class="mt-3">
-          <me-character-sheet-skills />
+          <me-cs-skills />
         </v-card>
       </v-col>
     </v-row>
