@@ -16,6 +16,7 @@ import { Equipment } from './Equipment'
 import { Powers } from './Powers'
 import { MechanicBag } from '~/mixins/character_builder/MechanicBag'
 import { Feats } from '~/mixins/character_builder/Feats'
+import { Defenses } from '~/mixins/character_builder/Defenses'
 
 /*
  * Aspect Schema
@@ -27,7 +28,7 @@ import { Feats } from '~/mixins/character_builder/Feats'
 
 export const CharacterBuilderHelpers = {
   mixins: [Klasses, Proficiencies, Level, Species, ProfLabels, AbilityScoreBonus, AbilityScores, Background, Selections,
-    Hp, Barrier, Ac, Speed, Skills, Equipment, Powers, MechanicBag, Feats],
+    Hp, Barrier, Ac, Speed, Skills, Equipment, Powers, MechanicBag, Feats, Defenses],
   data () {
     return {
       csColors: {

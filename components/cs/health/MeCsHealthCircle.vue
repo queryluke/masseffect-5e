@@ -20,7 +20,7 @@
         rotate="270"
         width="20"
       >
-        <me-character-sheet-health-text />
+        <me-cs-health-text />
       </v-progress-circular>
     </v-progress-circular>
   </v-progress-circular>

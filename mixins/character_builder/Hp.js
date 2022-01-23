@@ -8,13 +8,7 @@ export const Hp = {
         }
       }
       max += (this.level * this.absMod('con'))
-      // TODO: these should be on the species
-      if (this.speciesId === 'hanar') {
-        max -= (this.level)
-      }
-      if (this.speciesId === 'krogan') {
-        max += (this.level)
-      }
+      max += this.mechanicBag.filter(i => i.type === 'hp').reduce((acc, curr) => acc + this.mcBonus(curr.bonus), 0)
       return Math.max(this.level, max)
     },
     csCurrentHp () {
