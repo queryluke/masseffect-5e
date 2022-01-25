@@ -29,8 +29,12 @@ export default {
   data () {
     return {
       subPaths: {
-        prof: 'profType',
-        power: 'label'
+        prof: () => {
+          return `${this.mechanic.profType}${this.mechanic.expertise ? '-expertise' : ''}`
+        },
+        power: () => {
+          return this.mechanic.label
+        }
       }
     }
   },
@@ -39,11 +43,14 @@ export default {
       return `me-cb-choices-${this.type}`
     },
     currentValue () {
+      // NOTE...currentValue is always an array since the selectable component always returns an array of selections
+      // even if there is only 1 selection, its always an array
       const selectObj = this.character.selected.find(i => i.path === this.id)
       return selectObj?.value || []
     },
     id () {
-      const subPath = this.mechanic[this.subPaths[this.type]] || null
+      const subPathFunction = this.subPaths[this.type]
+      const subPath = subPathFunction ? subPathFunction() : null
       return [this.path, this.type, subPath].filter(String).join('/')
     },
     type () {

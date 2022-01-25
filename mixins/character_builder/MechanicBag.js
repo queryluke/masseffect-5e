@@ -4,9 +4,12 @@ export const MechanicBag = {
       return [
         ...this.rootSpeciesMechanics,
         ...(this.speciesTraits.reduce((acc, curr) => acc.concat(curr.mechanics || []), [])),
-        // selections
-        ...this.character.selected.reduce((acc, curr) => acc.concat(curr.value || []), [])
+        ...this.csFightingStyles.reduce((acc, curr) => acc.concat(curr.mechanics || []), []),
+        ...this.mechanicBagSelections
       ]
+    },
+    mechanicBagSelections () {
+      return this.character.selected.reduce((acc, curr) => acc.concat(curr.value || []), [])
     }
   },
   methods: {

@@ -271,8 +271,8 @@
         <div class="text-subtitle-2 mb-3">
           Sense Overrides
         </div>
-        <template v-for="key in senses">
-          <me-character-sheet-settings-distance-slider :key="`sense-slider-${key}`" :label="$t(`senses.${key}_title`)" :attr="`senses.${key}`" :max="120" :tick-size="30" />
+        <template v-for="sense in senses">
+          <me-character-sheet-settings-distance-slider :key="`sense-slider-${sense.id}`" :label="sense.title" :attr="`senses.${sense.id}`" :max="120" :tick-size="30" />
         </template>
       </v-tab-item>
 

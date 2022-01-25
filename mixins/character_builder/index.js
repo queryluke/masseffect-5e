@@ -17,6 +17,8 @@ import { Powers } from './Powers'
 import { MechanicBag } from '~/mixins/character_builder/MechanicBag'
 import { Feats } from '~/mixins/character_builder/Feats'
 import { Defenses } from '~/mixins/character_builder/Defenses'
+import { FightingStyles } from '~/mixins/character_builder/FightingStyles'
+import { Senses } from '~/mixins/character_builder/Senses'
 
 /*
  * Aspect Schema
@@ -28,7 +30,7 @@ import { Defenses } from '~/mixins/character_builder/Defenses'
 
 export const CharacterBuilderHelpers = {
   mixins: [Klasses, Proficiencies, Level, Species, ProfLabels, AbilityScoreBonus, AbilityScores, Background, Selections,
-    Hp, Barrier, Ac, Speed, Skills, Equipment, Powers, MechanicBag, Feats, Defenses],
+    Hp, Barrier, Ac, Speed, Skills, Equipment, Powers, MechanicBag, Feats, Defenses, FightingStyles, Senses],
   data () {
     return {
       csColors: {
@@ -225,16 +227,6 @@ export const CharacterBuilderHelpers = {
           text: this.$tc(`weapon_types.${key}`, 2),
           value: key
         })
-      }
-      return items
-    },
-    senses () {
-      const items = []
-      for (const key in this.$i18n.messages.en.senses) {
-        if (key.endsWith('_title')) {
-          continue
-        }
-        items.push(key)
       }
       return items
     },

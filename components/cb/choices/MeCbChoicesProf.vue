@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="text-subtitle">
-      {{ profLabel(type) }}
+      {{ profLabel(type) }} {{ mechanic.expertise ? '(Expertise)' : '' }}
     </div>
     <me-cb-choices-v-select
       :items="items"

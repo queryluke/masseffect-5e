@@ -32,9 +32,9 @@
           <div class="text-overline mt-3">
             Fighting Styles
           </div>
-          <template v-for="fs in character.fightingStyles || []">
+          <template v-for="fs in csFightingStyles || []">
             <div :key="fs.id">
-              <strong>{{ fs.name }}</strong> <me-html :content="fs.description" inline />
+              <strong>{{ fs.name }}</strong> <me-html :content="fs.html" inline />
             </div>
           </template>
         </div>
@@ -122,9 +122,6 @@ export default {
     },
     hasActionBrews () {
       return this.brews.filter(i => ['action', 'bonus-action', 'reaction'].includes(i.type))
-    },
-    csFightingStyles () {
-      return this.character.fightingStyles || []
     }
   }
 }

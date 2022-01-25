@@ -95,13 +95,20 @@
             <v-card-text text="px-3 py-0">
               <v-text-field v-if="type === 'short'" v-model="hpFromHitDice" label="Total HP recovered from Hit Dice" dense />
               <div v-if="type === 'long'">
-                You can regain {{ Math.floor(level / 2) }} hit dice. Use the <v-icon size="18">
-                  mdi-minus
-                </v-icon> button to regain them.
+                <div v-if="regainAllHitDice">
+                  You will regain all your hit dice.
+                </div>
+                <div v-else>
+                  You can regain {{ Math.floor(level / 2) }} hit dice. Use the <v-icon size="18">
+                    mdi-minus
+                  </v-icon> button to regain them.
+                </div>
               </div>
-              <template v-for="(klass, index) in characterClasses">
-                <me-character-sheet-hit-dice-tracker :key="`klass-hit-dice-${klass.id}`" :class-index="index" />
-              </template>
+              <div v-if="type === 'short' || !regainAllHitDice">
+                <template v-for="(klass, index) in characterClasses">
+                  <me-character-sheet-hit-dice-tracker :key="`klass-hit-dice-${klass.id}`" :class-index="index" />
+                </template>
+              </div>
             </v-card-text>
           </v-card>
 
@@ -208,6 +215,9 @@ export default {
         const newValue = i * 3
         return (this.bioticRecoveryTotal - currentValue) + newValue <= this.maxBioticRecoverySlots
       })
+    },
+    regainAllHitDice () {
+      return this.mechanicBag.find(i => i.type === 'regain-all-hit-dice')
     }
   },
   methods: {
@@ -319,6 +329,12 @@ export default {
       if (type === 'long') {
         // recover all
         currentStatsClone.hitPointsLost = 0
+        // hit dice
+        if (this.regainAllHitDice) {
+          for (const klass in currentStatsClone.hitDiceUsed) {
+            currentStatsClone.hitDiceUsed[klass] = 0
+          }
+        }
       }
       if (type === 'short') {
         // hit dice

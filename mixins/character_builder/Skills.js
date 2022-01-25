@@ -21,7 +21,7 @@ export const Skills = {
       const selected = [
         ...(this.character.settings.expertise || []),
         ...this.csDeprecatedSkillExpertise,
-        ...this.mechanicBag.filter(i => i.type === 'prof' && i.profType === 'skill' && i.expertise)
+        ...this.mechanicBag.filter(i => i.type === 'prof' && i.profType === 'skill' && i.expertise).map(i => i.value)
       ]
       return [...new Set(selected)]
     },
@@ -60,7 +60,8 @@ export const Skills = {
           advantage: advantages.length > 0,
           advantageNotes,
           disadvantage: disadvantages.length > 0,
-          disadvantageNotes
+          disadvantageNotes,
+          passive: 10 + mod
         }
         skills.push(returnObj)
       }
@@ -79,9 +80,6 @@ export const Skills = {
     },
     csSkillModText (mod) {
       return mod >= 0 ? `+${mod}` : `-${mod * -1}`
-    },
-    csPassiveScore (skill) {
-      return 10 + this.csSkillMod(skill)
     }
   }
 }

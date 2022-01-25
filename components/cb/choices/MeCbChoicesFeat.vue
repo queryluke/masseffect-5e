@@ -54,7 +54,6 @@ export default {
       })
     },
     feat () {
-      console.log(this.currentValue)
       if (this.currentValue[0]?.value) {
         return this.feats.find(i => this.currentValue[0].value === i.id)
       }

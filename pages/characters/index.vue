@@ -166,7 +166,7 @@ export default {
             darkvision: 0,
             tremorsense: 0,
             blindsight: 0,
-            infrared_vision: 0,
+            'infrared-vision': 0,
             truesight: 0
           },
           attackMod: 0,

@@ -13,7 +13,7 @@
       </v-card-title>
       <v-card-text>
         <slot>
-          <me-html :content="content" />
+          <me-html v-if="shown" :content="content" />
         </slot>
       </v-card-text>
       <v-card-actions>

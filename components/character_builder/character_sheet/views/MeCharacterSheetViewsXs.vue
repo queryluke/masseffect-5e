@@ -8,7 +8,7 @@
         <me-cs-saving-throws />
       </me-character-sheet-card>
       <me-character-sheet-card>
-        <me-character-sheet-senses />
+        <me-cs-senses />
       </me-character-sheet-card>
     </div>
     <div v-if="mobileView === 'skills'">

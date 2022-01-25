@@ -16,7 +16,7 @@
           </v-col>
           <v-col cols="6">
             <v-card outlined>
-              <me-character-sheet-senses />
+              <me-cs-senses />
             </v-card>
           </v-col>
         </v-row>
