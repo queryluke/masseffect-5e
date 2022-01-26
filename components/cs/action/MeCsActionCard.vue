@@ -27,7 +27,9 @@
     </v-row>
     <v-row no-gutters>
       <v-col>
-        <me-html :content="item.shortDesc" />
+        <small>
+          <me-html :content="item.shortDesc" />
+        </small>
       </v-col>
     </v-row>
     <v-row no-gutters>
@@ -37,7 +39,8 @@
     </v-row>
     <v-expand-transition v-if="item.moreInfo">
       <div v-show="moreInfo">
-        <component :is="item.moreInfo.component" :item="item.moreInfo.bind" />
+        <component :is="item.moreInfo.component" v-if="item.moreInfo.component" :item="item.moreInfo.bind" />
+        <me-html v-else :content="itemHtml" />
       </div>
     </v-expand-transition>
   </v-card>
@@ -61,6 +64,12 @@ export default {
   computed: {
     mobile () {
       return this.$vuetify.breakpoint.smAndDown
+    },
+    itemHtml () {
+      if (this.item.moreInfo?.model) {
+        return this.$store.getters.getItem(this.item.moreInfo.model, this.item.moreInfo.id).html
+      }
+      return this.item.moreInfo.bind
     }
   }
 }

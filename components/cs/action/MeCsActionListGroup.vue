@@ -1,6 +1,6 @@
 <template>
   <div v-if="items.length" class="mb-4">
-    <div class="text-body-2 font-weight-bold">
+    <div class="text-body-2 font-weight-bold" @click="moreInfo = !moreInfo">
       <slot />
     </div>
     <v-card flat class="px-1 pt-1" @click="moreInfo = !moreInfo">
@@ -8,7 +8,7 @@
         mdi-chevron-right
       </v-icon>
       <span class="text-caption font-italic pl-2">
-        {{ items.map(i => i.name).join(',') }}
+        {{ items.map(i => i.name).join(', ') }}
       </span>
     </v-card>
     <v-expand-transition>

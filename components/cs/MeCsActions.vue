@@ -80,21 +80,31 @@ export default {
     },
     csActions () {
       return [
-        {
+        ...[{
           group: true,
           title: 'Burst Fire',
           items: this.csWeaponsAsAttacks.bf
-        }
+        },
+        {
+          group: true,
+          title: 'Powers',
+          items: this.csPowersAsActions.action
+        }].filter(i => i.items.length),
+        ...this.mechanicBag.filter(i => i.type === 'action'),
+        ...this.csCustomAsAsctions.action
       ]
     },
     csAttacks () {
       return [
-        ...this.csWeaponsAsAttacks.attacks
+        ...this.csWeaponsAsAttacks.attacks,
+        ...this.csPowersAsActions.attack,
+        ...this.mechanicBag.filter(i => i.type === 'attack'),
+        ...this.unarmedAndGunStrike
       ]
     },
     csBonusActions () {
       return [
-        {
+        ...[{
           group: true,
           title: 'Two Weapon Fighting',
           items: this.csWeaponsAsAttacks.twf
@@ -103,23 +113,116 @@ export default {
           group: true,
           title: 'Double Tap',
           items: this.csWeaponsAsAttacks.dt
-        }
+        },
+        {
+          group: true,
+          title: 'Powers',
+          items: this.csPowersAsActions.bonus_action
+        }].filter(i => i.items.length),
+        ...this.mechanicBag.filter(i => i.type === 'bonus-action'),
+        ...this.csCustomAsAsctions.bonus
       ]
     },
     csReactions () {
-      return []
+      return [
+        ...[{
+          group: true,
+          title: 'Powers',
+          items: this.csPowersAsActions.reaction
+        }].filter(i => i.items.length),
+        ...this.mechanicBag.filter(i => i.type === 'reaction'),
+        ...this.csCustomAsAsctions.reaction
+      ]
     },
     csOtherActions () {
       return []
     },
+    csCustomAsAsctions () {
+      const brew = this.character.brews
+        .filter(i => ['action', 'reaction', 'bonus-action'].includes(i.type))
+        .map((i) => {
+          return {
+            name: i.name,
+            type: i.type,
+            resource: i.mechanics.uses
+              ? { displayType: 'checkbox', reset: i.mechanics.recharge, max: { type: 'flat', value: i.mechanics.uses }, id: i.id }
+              : false,
+            moreInfo: {
+              bind: i.html
+            }
+          }
+        })
+      return {
+        action: brew.filter(i => i.type === 'action'),
+        bonus: brew.filter(i => i.type === 'bonus-action'),
+        reaction: brew.filter(i => i.type === 'reaction')
+      }
+    },
     csPowersAsActions () {
       const powers = {
-        actions: [],
-        bonusActions: [],
-        reactions: [],
-        attacks: []
+        action: [],
+        bonus_action: [],
+        reaction: [],
+        attack: []
       }
-      console.log(this.csAllPowers)
+      const allPowers = this.csAllPowers
+      for (const p of allPowers) {
+        const levelText = p.power.level
+          ? this.$tc(`ordinal_numbers[${p.power.level}]`)
+          : 'cantrip'
+        // TODO: overrides?
+        const mod = p.power.type === 'tech'
+          ? 'int'
+          : p.power.type === 'biotic'
+            ? 'wis'
+            : p.power.mod === 'noMod'
+              ? false
+              : p.power.mod
+        let toHit = false
+        if (p.power.attack.melee || p.power.attack.ranged) {
+          toHit = {
+            proficient: true,
+            mod: p.power.id === 'hawk-missile-launcher' ? false : mod
+          }
+        }
+        const resource = p.power.type === 'combat'
+          ? { reset: p.power.recharge, max: { type: 'flat', value: p.power.uses }, id: p.power.id }
+          : p.csData.resource || false
+        let dc = false
+        if (!toHit) {
+          const powerSaves = Object.entries(p.power.save)
+          if (powerSaves.some(i => i[1])) {
+            dc = {
+              base: 8,
+              proficient: true,
+              mod,
+              save: powerSaves.find(i => i[1])[0]
+            }
+          }
+        }
+
+        const base = {
+          name: p.power.name,
+          resource,
+          range: {
+            short: p.power.range,
+            aoe: p.power.aoe
+          },
+          attack: toHit,
+          notes: p.csData.advancement ? [`Adv: ${p.csData.advancement}`] : [],
+          properties: [p.power.type, levelText],
+          dc,
+          moreInfo: {
+            component: 'me-power-info',
+            bind: p.power
+          }
+        }
+        for (const casting of ['action', 'bonus_action', 'reaction', 'attack']) {
+          if (p.power.castingTimes.includes(casting)) {
+            powers[casting].push({ ...base, type: casting })
+          }
+        }
+      }
       return powers
     },
     csWeaponsAsAttacks () {
@@ -184,25 +287,31 @@ export default {
           attacks.dt.push({ ...base, attack: toHit, properties: [...base.properties, 'Double Tap'], damage })
         }
       }
-      attacks.attacks.push({
-        name: 'Unarmed Strike',
-        range: {
-          short: 5
-        },
-        attack: {
-          proficient: true,
-          mod: 'str'
-        },
-        damage: [
-          {
-            dieCount: 1,
-            type: 'bludgeoning',
+      return attacks
+    },
+    unarmedAndGunStrike () {
+      const atks = [
+        {
+          name: 'Unarmed Strike',
+          range: {
+            short: 5
+          },
+          attack: {
+            proficient: true,
             mod: 'str'
-          }
-        ]
-      })
-      if (equippedWeapons.length) {
-        attacks.attacks.push({
+          },
+          damage: [
+            {
+              dieCount: 1,
+              type: 'bludgeoning',
+              mod: 'str'
+            }
+          ],
+          properties: ['Melee']
+        }
+      ]
+      if (this.csWeapons.filter(i => i.equipped && i.stats.type === 'ranged')) {
+        atks.push({
           name: 'Gun Strike',
           range: {
             short: 5
@@ -218,10 +327,11 @@ export default {
               type: 'bludgeoning',
               mod: 'str'
             }
-          ]
+          ],
+          properties: ['Melee']
         })
       }
-      return attacks
+      return atks
     }
   },
   methods: {

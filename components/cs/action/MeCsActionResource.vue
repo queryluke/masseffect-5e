@@ -7,6 +7,7 @@
     @add="add"
     @remove="remove"
     @reset="reset"
+    @set="set"
   />
 </template>
 <script>
@@ -77,6 +78,9 @@ export default {
         return
       }
       this.count--
+    },
+    set (value) {
+      this.count = value
     },
     reset () {
       this.count = this.item.resetTo === 'max' ? this.max : 0

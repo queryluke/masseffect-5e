@@ -3,7 +3,7 @@ export const MechanicBag = {
     mechanicBag () {
       return [
         ...this.rootSpeciesMechanics,
-        ...(this.speciesTraits.reduce((acc, curr) => acc.concat(curr.mechanics || []), [])),
+        ...this.speciesTraits.reduce((acc, curr) => acc.concat(curr.mechanics || []), []),
         ...this.csFightingStyles.reduce((acc, curr) => acc.concat(curr.mechanics || []), []),
         ...this.mechanicBagSelections
       ]

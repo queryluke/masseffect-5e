@@ -101,10 +101,10 @@ export const Powers = {
       }
     },
     csAllPowers () {
-      const selectionPowers = this.selections.filter(i => i.subType === 'power').map(i => i.has)
-      const allPowers = this.character.powers.concat(selectionPowers)
+      const selectedPowers = this.mechanicBag.filter(i => i.type === 'power').reduce((acc, curr) => acc.concat(curr), [])
+      const allPowers = this.character.powers.concat(selectedPowers)
       return allPowers.map((i) => {
-        const power = this.powers.find(j => j.id === i.id)
+        const power = this.powers.find(j => (j.id === i.id) || (j.id === i.value))
         if (power) {
           return {
             power,

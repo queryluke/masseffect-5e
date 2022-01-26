@@ -2,7 +2,13 @@
   <v-card flat class="text-center" color="transparent">
     <div class="text-subtitle-2">
       <span v-if="!item.long">
-        <me-distance :length="item.short" abbr />
+        <span v-if="item.short === 0">
+          Self
+        </span>
+        <span v-else-if="item.short === 1">
+          Touch
+        </span>
+        <me-distance v-else :length="item.short" abbr />
       </span>
       <span v-else>
         <span>
