@@ -148,7 +148,8 @@ export default {
           featuresTimesUsed: {},
           conditions: [],
           exhaustion: 0,
-          indoctrination: 0
+          indoctrination: 0,
+          resources: {}
         },
         settings: {
           acOverride: null,

@@ -42,7 +42,7 @@
     <div v-if="mobileView === 'actions'">
       <me-character-sheet-short-long-rest />
       <me-character-sheet-card>
-        <me-character-sheet-actions />
+        <me-cs-actions />
       </me-character-sheet-card>
     </div>
     <div v-if="mobileView === 'powers'">

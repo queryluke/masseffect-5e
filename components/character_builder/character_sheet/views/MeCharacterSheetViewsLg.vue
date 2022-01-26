@@ -38,7 +38,7 @@
           <v-card-text>
             <v-tabs-items v-model="tab">
               <v-tab-item>
-                <me-character-sheet-actions />
+                <me-cs-actions />
               </v-tab-item>
               <v-tab-item>
                 <me-character-sheet-powers />

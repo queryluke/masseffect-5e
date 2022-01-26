@@ -8,6 +8,11 @@ export const AbilityScores = {
         return this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'abilityScores.genMethod', value })
       }
     },
+    csHigherOfStrOrDex () {
+      const dex = this.absTotal('dex')
+      const str = this.absTotal('str')
+      return dex > str ? 'dex' : 'str'
+    },
     selectedAbilityScores () {
       if (!this.absGenMethod) {
         return false

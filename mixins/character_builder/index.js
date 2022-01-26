@@ -268,6 +268,9 @@ export const CharacterBuilderHelpers = {
     },
     async updateCharacter (attr, value) {
       await this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr, value })
+    },
+    async setResource (id, value) {
+      await this.$store.dispatch('cb/SET_RESOURCE', { cid: this.cid, id, value })
     }
   }
 }
