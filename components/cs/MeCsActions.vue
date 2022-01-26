@@ -8,14 +8,34 @@
         v-for="(cTab, index) in tabs"
         :key="`action-chip-tab-${index}`"
         small
-        :disabled="disableActionTab(cTab.type)"
+        :disabled="disableActionTab(cTab)"
       >
-        {{ cTab.title }}
+        {{ cTab }}
       </v-chip>
     </v-chip-group>
-    <div v-for="(contentTab, index) in tabs" :key="`action-content-tab-${index}`">
-      <me-cs-action-list v-if="contentTab.type && (tab === 0 || index === tab)" :items="csAllActions[contentTab.type]">
-        {{ contentTab.title }}
+    <div v-show="showTab(1)">
+      <me-cs-action-list :items="csAllActions.attacks">
+        Attacks
+      </me-cs-action-list>
+    </div>
+    <div v-show="showTab(2)">
+      <me-cs-action-list :items="csAllActions.actions">
+        Actions
+      </me-cs-action-list>
+    </div>
+    <div v-show="showTab(3)">
+      <me-cs-action-list :items="csAllActions.bonusActions">
+        Bonus Actions
+      </me-cs-action-list>
+    </div>
+    <div v-show="showTab(4)">
+      <me-cs-action-list :items="csAllActions.reactions">
+        Reactions
+      </me-cs-action-list>
+    </div>
+    <div v-show="showTab(5)">
+      <me-cs-action-list :items="csAllActions.other">
+        Other Actions
       </me-cs-action-list>
     </div>
   </div>
@@ -29,14 +49,7 @@ export default {
   data () {
     return {
       tab: 0,
-      tabs: [
-        { title: 'All', type: false },
-        { title: 'Attacks', type: 'attack' },
-        { title: 'Actions', type: 'action' },
-        { title: 'Bonus Actions', type: 'bonusAction' },
-        { title: 'Reactions', type: 'reaction' },
-        { title: 'Other', type: 'other' }
-      ]
+      tabs: ['All', 'Attacks', 'Actions', 'Bonus Actions', 'Reactions', 'Other']
     }
   },
   /*
@@ -58,16 +71,20 @@ export default {
   computed: {
     csAllActions () {
       return {
-        attack: this.csAttacks,
-        action: this.csActions,
-        bonusAction: this.csBonusActions,
-        reaction: this.csReactions,
+        attacks: this.csAttacks,
+        actions: this.csActions,
+        bonusActions: this.csBonusActions,
+        reactions: this.csReactions,
         other: this.csOtherActions
       }
     },
     csActions () {
       return [
-        ...this.csWeaponsAsAttacks.actions
+        {
+          group: true,
+          title: 'Burst Fire',
+          items: this.csWeaponsAsAttacks.bf
+        }
       ]
     },
     csAttacks () {
@@ -77,7 +94,16 @@ export default {
     },
     csBonusActions () {
       return [
-        ...this.csWeaponsAsAttacks.bonusActions
+        {
+          group: true,
+          title: 'Two Weapon Fighting',
+          items: this.csWeaponsAsAttacks.twf
+        },
+        {
+          group: true,
+          title: 'Double Tap',
+          items: this.csWeaponsAsAttacks.dt
+        }
       ]
     },
     csReactions () {
@@ -86,10 +112,21 @@ export default {
     csOtherActions () {
       return []
     },
+    csPowersAsActions () {
+      const powers = {
+        actions: [],
+        bonusActions: [],
+        reactions: [],
+        attacks: []
+      }
+      console.log(this.csAllPowers)
+      return powers
+    },
     csWeaponsAsAttacks () {
       const attacks = {
-        bonusActions: [],
-        actions: [],
+        twf: [],
+        dt: [],
+        bf: [],
         attacks: []
       }
       const weaponProps = {}
@@ -108,30 +145,23 @@ export default {
         // TODO: arc
         // const thrown = weapon.stats.properties.includes('thrown')
         const type = weapon.stats.type === 'melee' ? 'Melee' : 'Ranged'
+        let damage = this.getWeaponDamage(weapon)
         const base = {
           type: 'attack',
           name: weapon.stats.name,
           resource: this.getWeaponResource(weapon),
           range: this.getWeaponRange(weapon),
-          damage: this.getWeaponDamage(weapon),
           notes: [...(weapon.stats.notes || []), ...weapon.stats.properties.map(i => weaponProps[i])],
-          properties: [type]
+          properties: [type],
+          moreInfo: {
+            component: 'me-weapon-info',
+            bind: weapon.stats
+          }
         }
-
-        attacks.attacks.push({ ...base, attack: toHit })
-
-        if (light || dt) {
-          const twfText = this.$vuetify.breakpoint.xsOnly ? '2W-Fight' : 'Two-Weapon Fighting'
-          const baProps = light && dt
-            ? [twfText, 'Double Tap']
-            : light
-              ? [twfText]
-              : ['Double Tap']
-          attacks.bonusActions.push({ ...base, attack: toHit, properties: [...base.properties, baProps] })
-        }
+        attacks.attacks.push({ ...base, attack: toHit, damage })
 
         if (bf) {
-          attacks.actions.push({
+          attacks.bf.push({
             ...base,
             range: this.getWeaponRange(weapon, true),
             resource: { ...base.resource, increment: 3 },
@@ -141,8 +171,17 @@ export default {
               mod: false,
               save: 'dex'
             },
-            properties: [...base.properties, 'Burst First']
+            damage,
+            properties: [...base.properties, 'Burst Fire']
           })
+        }
+        damage = this.getWeaponDamage(weapon, true)
+        if (light) {
+          const twfText = this.$vuetify.breakpoint.xsOnly ? '2W-Fight' : 'Two-Weapon Fighting'
+          attacks.twf.push({ ...base, attack: toHit, properties: [...base.properties, twfText], damage })
+        }
+        if (dt) {
+          attacks.dt.push({ ...base, attack: toHit, properties: [...base.properties, 'Double Tap'], damage })
         }
       }
       attacks.attacks.push({
@@ -186,6 +225,22 @@ export default {
     }
   },
   methods: {
+    disableActionTab (typeString) {
+      if (typeString === 'All') {
+        return false
+      }
+      const type = typeString === 'Bonus Actions' ? 'bonusActions' : typeString.toLowerCase()
+      if (type) {
+        return this.csAllActions[type].length < 1
+      }
+      return false
+    },
+    showTab (index) {
+      if (this.tab === 0) {
+        return true
+      }
+      return this.tab === index
+    },
     getWeaponResource (weapon) {
       // Resource (i.e. Heat)
       let resource = null
@@ -249,7 +304,7 @@ export default {
           ? 'str'
           : 'dex'
     },
-    getWeaponDamage (weapon) {
+    getWeaponDamage (weapon, negativeModOnly) {
       const type = weapon.stats.type
       const weaponBonus = weapon.bonusDamage || 0
       const globalBonus = this.character.settings.damageMod
@@ -257,22 +312,23 @@ export default {
         : type === 'melee' && this.character.settings.damageMeleeMod
           ? this.character.settings.damageMeleeMod
           : this.character.settings.damageRangedMod || 0
+      let mod = this.getWeaponAbilityMod(weapon)
+      if (negativeModOnly) {
+        const modScore = this.absMod(mod)
+        if (modScore > 0) {
+          mod = false
+        }
+      }
       return [
         {
           ...weapon.stats.damage,
-          mod: this.getWeaponAbilityMod(weapon),
+          mod,
           bonus: {
             type: 'flat',
             value: weaponBonus + globalBonus
           }
         }
       ]
-    },
-    disableActionTab (type) {
-      if (type) {
-        return this.csAllActions[type].length < 1
-      }
-      return false
     }
   }
 }

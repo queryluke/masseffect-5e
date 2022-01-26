@@ -1,11 +1,13 @@
 <template>
-  <v-card outlined class="px-1 px-md-3 pt-1">
+  <v-card outlined class="px-1 px-md-3 pt-1" @click="moreInfo = !moreInfo">
     <v-row align="start" no-gutters>
       <v-col cols="5" md="3">
-        <div class="text-truncate mb-n1">
-          {{ item.name }}
-        </div>
-        <me-cs-action-properties :properties="item.properties" />
+        <v-card flat color="transparent">
+          <div class="text-truncate mb-n1">
+            {{ item.name }}
+          </div>
+          <me-cs-action-properties :properties="item.properties" />
+        </v-card>
       </v-col>
       <v-col cols="2" class="text-center">
         <me-cs-action-range :range="item.range" />
@@ -15,7 +17,7 @@
         <me-cs-action-dc v-if="item.dc" :dc="item.dc" />
       </v-col>
       <v-col cols="3" md="2">
-        <v-card flat>
+        <v-card flat color="transparent">
           <me-cs-action-damage v-for="(damage, index) in item.damage" :key="`damage-${index}`" :damage="damage" />
         </v-card>
       </v-col>
@@ -33,6 +35,11 @@
         <me-cs-action-resource :id="item.resource.id" :resource="item.resource" />
       </v-col>
     </v-row>
+    <v-expand-transition v-if="item.moreInfo">
+      <div v-show="moreInfo">
+        <component :is="item.moreInfo.component" :item="item.moreInfo.bind" />
+      </div>
+    </v-expand-transition>
   </v-card>
 </template>
 
@@ -44,6 +51,11 @@ export default {
     item: {
       type: Object,
       required: true
+    }
+  },
+  data () {
+    return {
+      moreInfo: false
     }
   },
   computed: {

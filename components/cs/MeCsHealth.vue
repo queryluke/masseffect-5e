@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-row>
-      <v-col cols="12" class="d-flex justify-center justify-md-space-between justify-lg-space-around">
+      <v-col cols="12" class="d-flex justify-center justify-md-space-around justify-lg-space-around" :class="{'justify-md-space-between': hasBarrier }">
         <me-cs-health-barrier-slider />
         <div>
           <me-cs-health-circle />

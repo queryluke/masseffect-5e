@@ -1,7 +1,7 @@
 <template>
   <v-tooltip bottom :disabled="!item.note">
     <template #activator="{ on, attrs }">
-      <v-card flat class="text-center" v-bind="attrs" v-on="on">
+      <v-card flat class="text-center" v-bind="attrs" color="transparent" v-on="on">
         <div class="text-subtitle-2 mb-n1">
           {{ save }}<span v-if="item.note">*</span>
         </div>

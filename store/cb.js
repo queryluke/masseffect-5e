@@ -188,9 +188,7 @@ export const actions = {
     dispatch('UPDATE_CHARACTER', { cid, attr: 'selections', value: newSelections })
   },
   SET_RESOURCE ({ dispatch, getters }, { cid, id, value }) {
-    console.log(cid, id, value)
     const newResources = { ...getters.characters[cid].currentStats.resources, [id]: value }
-    console.log(newResources)
     dispatch('UPDATE_CHARACTER', { cid, attr: 'currentStats.resources', value: newResources })
   }
 }

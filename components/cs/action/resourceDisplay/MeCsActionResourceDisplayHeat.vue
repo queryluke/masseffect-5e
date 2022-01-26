@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex align-start justify-center justify-md-start">
-    <v-btn x-small class="mr-1" color="primary" icon @click="reloadWeapon">
+    <v-btn x-small class="mr-1" color="primary" icon @click.stop="reloadWeapon">
       <v-icon size="18">
         mdi-refresh
       </v-icon>
@@ -19,7 +19,7 @@
         </small>
       </div>
     </div>
-    <v-btn x-small class="ml-1 mr-2" color="secondary" icon @click="fireWeapon">
+    <v-btn x-small class="ml-1 mr-2" color="secondary" icon @click.stop="fireWeapon">
       <v-icon size="18" :disabled="current >= max">
         mdi-lightning-bolt
       </v-icon>

@@ -1,5 +1,5 @@
 <template>
-  <v-card flat class="text-center">
+  <v-card flat class="text-center" color="transparent">
     <div class="text-subtitle-2">
       <span v-if="!item.long">
         <me-distance :length="item.short" abbr />

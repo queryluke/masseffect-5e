@@ -1,5 +1,5 @@
 <template>
-  <v-card flat class="text-subtitle-2 text-md-h6 text-center">
+  <v-card flat class="text-subtitle-2 text-md-h6 text-center" color="transparent">
     {{ toHit >= 0 ? '+' : '-' }} {{ toHit }}
   </v-card>
 </template>
