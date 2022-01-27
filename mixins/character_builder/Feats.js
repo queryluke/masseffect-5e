@@ -1,7 +1,7 @@
 export const Feats = {
   computed: {
     selectedFeats () {
-      return this.mechanicBagSelections.filter(i => i.type === 'feat').map(i => i.value)
+      return this.mechanicBagSelections.filter(i => i.type === 'feats').map(i => i.value)
     }
   }
 }

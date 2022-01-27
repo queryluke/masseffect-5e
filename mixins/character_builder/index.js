@@ -181,6 +181,9 @@ export const CharacterBuilderHelpers = {
     weaponProperties () {
       return this.$store.getters.getData('weapon-properties')
     },
+    benefits () {
+      return this.$store.getters.getData('benefits')
+    },
     damageTypes () {
       const items = []
       for (const key in this.$i18n.messages.en.damage_types) {

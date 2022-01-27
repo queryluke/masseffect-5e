@@ -161,7 +161,7 @@ export const actions = {
     await dispatch('FETCH_LOTS', [
       'species', 'traits', 'weapons', 'armor', 'mods', 'powers', 'feats', 'backgrounds', 'classes', 'class-features',
       'subclasses', 'character-progression', 'skills', 'gear', 'tool-profs', 'weapon-properties', 'conditions',
-      'subspecies', 'subspecies-options'
+      'subspecies', 'subspecies-options', 'benefits'
     ], { root: true })
   },
   DELETE_SELECTIONS ({ dispatch, getters }, { cid, id }) {

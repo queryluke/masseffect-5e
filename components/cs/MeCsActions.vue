@@ -54,6 +54,7 @@ export default {
   },
   computed: {
     csAllActions () {
+      console.log(this.mechanicBag)
       return {
         attacks: this.csAttacks,
         actions: this.csActions,

@@ -1,5 +1,5 @@
 <template>
-  <v-card outlined class="px-1 px-md-3 pt-1" @click="moreInfo = !moreInfo">
+  <v-card outlined class="pa-1 px-md-3" @click="moreInfo = !moreInfo">
     <v-row align="start" no-gutters>
       <v-col cols="5" md="3">
         <v-card flat color="transparent">
@@ -10,7 +10,7 @@
         </v-card>
       </v-col>
       <v-col cols="2" class="text-center">
-        <me-cs-action-range :range="item.range" />
+        <me-cs-action-range v-if="item.range" :range="item.range" />
       </v-col>
       <v-col cols="2">
         <me-cs-action-hit v-if="item.attack" :hit="item.attack" />
@@ -28,7 +28,7 @@
     <v-row no-gutters>
       <v-col>
         <small>
-          <me-html :content="item.shortDesc" />
+          <me-html :content="item.shortDesc" classes="text-caption" />
         </small>
       </v-col>
     </v-row>

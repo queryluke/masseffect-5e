@@ -61,7 +61,7 @@ export default {
     },
     appended () {
       return {
-        type: 'feat'
+        type: 'feats'
       }
     }
   },

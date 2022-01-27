@@ -26,6 +26,9 @@
     </div>
     <div v-if="mobileView === 'details'">
       <me-character-sheet-card>
+        <me-cs-reputation />
+      </me-character-sheet-card>
+      <me-character-sheet-card>
         <me-character-sheet-details />
       </me-character-sheet-card>
     </div>
@@ -59,7 +62,9 @@
 </template>
 
 <script>
+import MeCsReputation from '~/components/cs/MeCsReputation'
 export default {
+  components: { MeCsReputation },
   computed: {
     mobileView () {
       return this.$store.getters['cb/mobileView']

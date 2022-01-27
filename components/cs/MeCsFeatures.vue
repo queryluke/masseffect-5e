@@ -64,11 +64,12 @@ export default {
     csReputationBenefits () {
       // TODO
       return [
+        ...this.mechanicBagSelections.filter(i => i.type === 'benefits').map(i => i.value).map(i => this.$store.getters.getItem('benefits', i))
       ]
     },
     csSelectedFeats () {
       return [
-        ...this.selectedFeats.map(i => this.$store.getters.getData('feats', i)),
+        ...this.selectedFeats.map(i => this.$store.getters.getItem('feats', i)),
         ...this.csFeats,
         ...this.csCustomAsFeature.feat
       ]

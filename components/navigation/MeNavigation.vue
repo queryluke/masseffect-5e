@@ -181,6 +181,7 @@ export default {
           icon: 'mdi-view-split-vertical',
           items: [
             { to: '/appendix/conditions', name: this.$t('conditions_title') },
+            { to: '/appendix/benefits', name: 'Reputation Benefits' },
             { to: '/appendix/random-height-weight', name: this.$t('random_height_weight_title') },
             { to: '/appendix/skills', name: this.$t('skills_title') },
             { to: '/appendix/tool-profs', name: this.$t('tool_profs_title') },

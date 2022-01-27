@@ -5,10 +5,10 @@
     </v-card-title>
     <v-card-text>
       <me-html :content="item.html" />
+      <div v-if="resources.length">
+        <me-cs-action-resource v-for="(mechanic, index) of resources" :id="mechanic.resource.id" :key="index" :resource="mechanic.resource" />
+      </div>
     </v-card-text>
-    <v-card-actions v-if="resources.length">
-      <me-cs-action-resource v-for="(resource, index) of resources" :id="resource.id" :key="index" :resource="resource" />
-    </v-card-actions>
   </v-card>
 </template>
 
@@ -23,7 +23,9 @@ export default {
   },
   computed: {
     resources () {
-      return (this.item.mechanics || []).filter(i => i.resource)
+      const resources = (this.item.mechanics || []).filter(i => i.resource)
+      const unique = [...new Set(resources.map(i => i.resource.id))]
+      return unique.map(i => resources.find(j => j.id === i.id))
     }
   }
 }

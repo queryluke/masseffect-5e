@@ -43,7 +43,7 @@ export default {
   },
   computed: {
     item () {
-      return { ...this.defaults, ...this.resource }
+      return { ...this.defaults, ...this.resource, max: { ...this.defaults.max, ...this.resource.max } }
     },
     count: {
       get () {

@@ -5,11 +5,17 @@ export const MechanicBag = {
         ...this.rootSpeciesMechanics,
         ...this.speciesTraits.reduce((acc, curr) => acc.concat(curr.mechanics || []), []),
         ...this.csFightingStyles.reduce((acc, curr) => acc.concat(curr.mechanics || []), []),
-        ...this.mechanicBagSelections
+        ...this.hydratedMbs.reduce((acc, curr) => acc.concat(curr.mechanics || []), [])
       ]
     },
+    // Technically this is mechanicBagWithSubSelections
     mechanicBagSelections () {
       return this.character.selected.reduce((acc, curr) => acc.concat(curr.value || []), [])
+    },
+    hydratedMbs () {
+      return this.mechanicBagSelections
+        .filter(i => ['feats', 'benefits'].includes(i.type))
+        .map(i => this.$store.getters.getItem(i.type, i.value))
     }
   },
   methods: {

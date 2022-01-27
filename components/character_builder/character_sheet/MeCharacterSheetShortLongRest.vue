@@ -138,6 +138,7 @@
 
 <script>
 import { CharacterBuilderHelpers } from '~/mixins/character_builder'
+// TODO: remove rep benefits on long rest
 
 export default {
   mixins: [CharacterBuilderHelpers],

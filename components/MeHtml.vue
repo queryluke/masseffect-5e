@@ -15,6 +15,10 @@ export default {
     inline: {
       type: Boolean,
       default: false
+    },
+    classes: {
+      type: String,
+      default: ''
     }
   },
   data () {
@@ -39,7 +43,7 @@ export default {
   },
   methods: {
     generateTemplate () {
-      const template = `<div ${this.inline ? 'class="me-html inline-html"' : 'class="me-html text-body-2"'}>${this.content}</div>`
+      const template = `<div ${this.inline ? `class="me-html inline-html ${this.classes}"` : `class="me-html text-body-2 ${this.classes}"`}>${this.content}</div>`
       const { render, staticRenderFns } = compileToFunctions(template)
       this.templateRender = render
       this.$options.staticRenderFns = staticRenderFns

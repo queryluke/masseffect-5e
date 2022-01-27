@@ -97,7 +97,7 @@ export const actions = {
         }
         const newSelections = character.selections.filter(i => !i.source.startsWith('species'))
         character.selections = newSelections
-        character.currentStats = { ...character.currentStats, resources: {} }
+        character.currentStats = { ...character.currentStats, resources: {}, paragon: 0, renegade: 0 }
         newCharacters[id] = character
       }
       commit('cb/SET_CHARACTERS', newCharacters, { root: true })

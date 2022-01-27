@@ -149,7 +149,9 @@ export default {
           conditions: [],
           exhaustion: 0,
           indoctrination: 0,
-          resources: {}
+          resources: {},
+          paragon: 0,
+          renegade: 0
         },
         settings: {
           acOverride: null,
