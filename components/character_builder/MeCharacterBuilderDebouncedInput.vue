@@ -58,7 +58,7 @@ export default {
   created () {
     this.debouncedUpdate = debounce(() => {
       this.updateAttr()
-    }, 500)
+    }, 5000)
   },
   methods: {
     updateAttr () {

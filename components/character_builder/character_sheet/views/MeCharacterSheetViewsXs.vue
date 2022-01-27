@@ -45,6 +45,11 @@
         <me-cs-actions />
       </me-character-sheet-card>
     </div>
+    <div v-if="mobileView === 'features'">
+      <me-character-sheet-card>
+        <me-cs-features />
+      </me-character-sheet-card>
+    </div>
     <div v-if="mobileView === 'powers'">
       <me-character-sheet-card>
         <me-character-sheet-powers />

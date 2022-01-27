@@ -1,7 +1,7 @@
 <template>
   <div class="mx-n3 mx-sm-4">
     <me-character-sheet-card-title v-if="$vuetify.breakpoint.smAndDown">
-      Actions & Features
+      Actions
     </me-character-sheet-card-title>
     <v-chip-group v-model="tab" active-class="primary--text" column>
       <v-chip
@@ -52,22 +52,6 @@ export default {
       tabs: ['All', 'Attacks', 'Actions', 'Bonus Actions', 'Reactions', 'Other']
     }
   },
-  /*
-  computed: {
-    hasGunStrike () {
-      return this.csEquippedWeapons.filter(i => !Object.keys(i.mods).includes('grip')).length > 0
-    },
-    otherAttacks () {
-      return this.selections.filter(i => i.type === 'attack')
-    },
-    brews () {
-      return this.character.brews || []
-    },
-    hasActionBrews () {
-      return this.brews.filter(i => ['action', 'bonus-action', 'reaction'].includes(i.type))
-    }
-  },
-  */
   computed: {
     csAllActions () {
       return {

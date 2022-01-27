@@ -45,9 +45,14 @@
                 Proficiencies
               </v-btn>
             </v-col>
-            <v-col cols="12">
+            <v-col cols="6">
               <v-btn block x-large color="primary" @click="mobileView = 'actions'; mobileMenu = false">
-                Actions & Features
+                Actions
+              </v-btn>
+            </v-col>
+            <v-col cols="6">
+              <v-btn block x-large color="primary" @click="mobileView = 'features'; mobileMenu = false">
+                Features
               </v-btn>
             </v-col>
             <v-col cols="6">
