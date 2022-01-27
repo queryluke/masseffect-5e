@@ -35,7 +35,7 @@
     </div>
     <div v-show="showTab(5)">
       <me-cs-action-list :items="csAllActions.other">
-        Other Actions
+        Other Features
       </me-cs-action-list>
     </div>
   </div>
@@ -120,7 +120,9 @@ export default {
       ]
     },
     csOtherActions () {
-      return []
+      return [
+        ...this.mechanicBag.filter(i => i.type === 'other')
+      ]
     },
     csCustomAsAsctions () {
       const brew = this.character.brews
