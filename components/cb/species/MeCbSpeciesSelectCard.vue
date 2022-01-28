@@ -62,14 +62,21 @@
 </template>
 
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
 export default {
   name: 'MeCbSpeciesSelectCard',
-  mixins: [CharacterBuilderHelpers],
   props: {
     item: {
       type: Object,
       required: true
+    },
+    currentValue: {
+      type: Object,
+      default: () => {
+        return {
+          species: false,
+          subspecies: false
+        }
+      }
     }
   },
   data () {
@@ -78,20 +85,23 @@ export default {
     }
   },
   computed: {
+    species () {
+      return this.$store.getters.getData('species')
+    },
     isCurrent () {
-      return this.item.id === this.speciesId
+      return this.item.id === this.currentValue.species
     },
     itemVariants () {
       return this.species.filter(i => i.type === 'variant' && i.species === this.item.id)
     },
     itemSubspecies () {
-      return this.subspecies.find(i => i.species === this.item.id)
+      return this.$store.getters.getData('subspecies').find(i => i.species === this.item.id)
     },
     itemSubspeciesOptions () {
       if (!this.itemSubspecies) {
         return false
       }
-      return this.subspeciesOptions.filter(i => i.subspecies === this.itemSubspecies.id)
+      return this.$store.getters.getData('subspecies-options').filter(i => i.subspecies === this.itemSubspecies.id)
     },
     hasVariantsOrSubspecies () {
       return this.itemVariants.length > 0 || this.itemSubspeciesOptions.length > 0
@@ -116,9 +126,9 @@ export default {
       }
       // deal w/ variant
       for (const variant of this.itemVariants) {
-        const variantSubspecies = this.subspecies.find(i => i.species === variant.id)
+        const variantSubspecies = this.$store.getters.getData('subspecies').find(i => i.species === variant.id)
         if (variantSubspecies) {
-          const variantSubspeciesOptions = this.subspeciesOptions.filter(i => i.subspecies === variantSubspecies.id)
+          const variantSubspeciesOptions = this.$store.getters.getData('subspecies-options').filter(i => i.subspecies === variantSubspecies.id)
           if (variantSubspeciesOptions.length > 0) {
             for (const subvar of variantSubspeciesOptions) {
               options.push({
@@ -159,11 +169,12 @@ export default {
     }
   },
   methods: {
-    select ({ speciesId = null, subspeciesId = null }) {
-      this.$emit('selectSpecies', { speciesId, subspeciesId })
+    select (payload) {
+      console.log(payload)
+      this.$emit('selectSpecies', payload)
     },
     isCurrentSelection ({ speciesId, subspeciesId }) {
-      return this.speciesId === speciesId && this.subspeciesId === subspeciesId
+      return this.currentValue.id === speciesId && this.currentValue.subspecies === subspeciesId
     }
   }
 }

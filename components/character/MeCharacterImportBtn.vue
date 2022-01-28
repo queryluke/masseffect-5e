@@ -23,7 +23,7 @@ export default {
         const dataDump = e.target.result
         if (dataDump && dataDump !== '') {
           const char = JSON.parse(e.target.result)
-          await this.$store.dispatch('cb/CREATE_CHARACTER', char)
+          await this.$store.dispatch('characters/CREATE_CHARACTER', char)
         }
       }
     }

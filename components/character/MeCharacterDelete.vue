@@ -77,7 +77,7 @@ export default {
   methods: {
     async removeCharacter () {
       this.deleting = true
-      await this.$store.dispatch('cb/REMOVE_CHARACTER', this.id)
+      await this.$store.dispatch('characters/DELETE_CHARACTER', this.id)
       this.$router.push({
         path: '/characters'
       })

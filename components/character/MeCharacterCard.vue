@@ -7,20 +7,19 @@
         tile
       >
         <v-img
-          :src="characterImage"
+          :src="character.image"
           contain
-          :lazy-src="require('~/assets/images/me5e_logo_450w.png')"
-          @error="require('~/assets/images/me5e_logo_450w.png')"
+          @error="require('~/assets/images/me5e.png')"
         />
       </v-avatar>
       <div>
         <v-card-title
           class="text-h5"
         >
-          {{ characterName }}
+          {{ name }}
         </v-card-title>
         <v-card-subtitle v-if="character.species && character.classes.length > 0">
-          {{ identString }}
+          {{ identString(character) }}
         </v-card-subtitle>
       </div>
     </div>
@@ -32,25 +31,25 @@
         Edit
       </v-btn>
       <v-spacer />
-      <me-character-builder-character-delete :id="character.id" :name="characterName" text-btn />
+      <me-character-delete :id="character.id" :name="name" text-btn />
     </v-card-actions>
   </v-card>
 </template>
 
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
+import { CharacterHelpers } from '~/mixins/character'
 
 export default {
-  mixins: [CharacterBuilderHelpers],
+  mixins: [CharacterHelpers],
   props: {
-    characterId: {
-      type: [Number, String],
+    character: {
+      type: Object,
       required: true
     }
   },
   computed: {
-    cid () {
-      return this.characterId
+    name () {
+      return this.character.name || 'Unnamed Character'
     }
   }
 }

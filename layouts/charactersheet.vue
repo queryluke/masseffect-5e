@@ -17,6 +17,9 @@
 
     <!-- START: CONTENT -->
     <v-main>
+      <div class="mt-20">
+        {{ $store.getters['cb/activeCharacter'] }}
+      </div>
       <me-logout />
       <nuxt />
       <v-btn
@@ -108,6 +111,9 @@ export default {
         this.$store.commit('cb/SET_MOBILE_VIEW', value)
       }
     }
+  },
+  created () {
+    this.$store.commit('cs/SET_ACTIVE_CHARACTER', this.$route.query.id)
   }
 }
 </script>

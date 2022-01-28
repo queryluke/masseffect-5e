@@ -6,14 +6,14 @@
     <div class="d-flex justify-space-between align-center">
       <div class="d-flex align-center">
         <v-avatar size="64">
-          <v-img :src="speciesData.bodyImg" :position="avatarPosition" />
+          <v-img :src="species.bodyImg" :position="avatarPosition" />
         </v-avatar>
         <div>
-          <div v-if="speciesSubName" class="text-overline">
-            {{ speciesSubName }}
+          <div v-if="subName" class="text-overline">
+            {{ subName }}
           </div>
           <me-tpg s="h4">
-            {{ speciesData.name }}
+            {{ species.name }}
           </me-tpg>
         </div>
       </div>
@@ -22,13 +22,13 @@
           {{ change ? 'Change' : 'Keep' }}
         </v-btn>
         <v-btn
-          v-if="change && speciesId !== 'custom'"
+          v-if="change && species.id !== 'custom'"
           x-small
           plain
           color="primary"
           text
           class="mt-3"
-          :to="`/species/${isVariantSpeciesId ? speciesData.species : speciesId}`"
+          :to="`/species/${variant ? species.species : species.id}`"
           target="_blank"
         >
           View Species Info
@@ -39,10 +39,10 @@
 </template>
 
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
+import { createNamespacedHelpers } from 'vuex'
+const { mapGetters } = createNamespacedHelpers('character/species')
 export default {
   name: 'MeCbSpeciesSelectedCard',
-  mixins: [CharacterBuilderHelpers],
   props: {
     change: {
       type: Boolean,
@@ -50,8 +50,9 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['species', 'subName', 'variant']),
     avatarPosition () {
-      return ['volus'].includes(this.speciesId) ? 'center center' : 'top center'
+      return ['volus'].includes(this.species.id) ? 'center center' : 'top center'
     }
   },
   methods: {

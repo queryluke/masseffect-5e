@@ -33,11 +33,10 @@
 </template>
 
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
-
+import { createNamespacedHelpers } from 'vuex'
+const { mapGetters } = createNamespacedHelpers('character/selections')
 export default {
   name: 'MeCbAspectCard',
-  mixins: [CharacterBuilderHelpers],
   props: {
     aspect: {
       type: Object,
@@ -48,17 +47,8 @@ export default {
       default: 'wastebin'
     }
   },
-  data () {
-    return {
-      subOptions: {
-        'feat-choice': {
-          model: 'feats',
-          type: 'feat'
-        }
-      }
-    }
-  },
   computed: {
+    ...mapGetters(['selected']),
     path () {
       return `${this.rootPath}/${this.aspect.id}`
     },
@@ -72,7 +62,7 @@ export default {
       return this.selectedAspectValues.reduce((acc, curr) => acc + (curr.amount || 1), 0)
     },
     selectedAspectValues () {
-      return this.character.selected.filter(i => i.path.startsWith(this.path)).reduce((acc, curr) => acc.concat(curr.value), [])
+      return this.selected.filter(i => i.path.startsWith(this.path)).reduce((acc, curr) => acc.concat(curr.value), [])
     },
     allSelectionsMade () {
       if (this.options.length === 0) {
@@ -84,11 +74,12 @@ export default {
   methods: {
     optionsCountReduction (acc, curr) {
       let total = curr.selections || 1
-      const subTypeObject = this.subOptions[curr.type]
-      if (subTypeObject) {
-        const baseSelections = this.selectedAspectValues.filter(i => i.type === subTypeObject.type)
+      const isModel = curr.type === 'model-choice'
+      if (isModel) {
+        const baseSelections = this.selectedAspectValues.filter(i => i.type === curr.model)
         const arrayOfAllMatchingBaseSelectionValues = baseSelections.reduce((acc, curr) => acc.concat(curr.value), [])
-        const matchingModels = this[subTypeObject.model].filter(i => arrayOfAllMatchingBaseSelectionValues.includes(i.id))
+        const models = this.$store.getters.getData(curr.model)
+        const matchingModels = models.filter(i => arrayOfAllMatchingBaseSelectionValues.includes(i.id))
         const mechanicsToParse = matchingModels.reduce((acc, curr) => acc.concat(curr.mechanics || []), []).filter(i => i.options)
         total += mechanicsToParse.reduce(this.optionsCountReduction, 0)
       }

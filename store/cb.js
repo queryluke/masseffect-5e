@@ -7,17 +7,22 @@ export const state = () => ({
   characters: {},
   mobileView: 'abilities',
   syncStatus: 'saved',
-  currentVersion: '1.0.1'
+  currentVersion: '1.0.1',
+  activeCharacterId: null
 })
 
 export const getters = {
   characters: state => state.characters,
   mobileView: state => state.mobileView,
   syncStatus: state => state.syncStatus,
-  currentVersion: state => state.currentVersion
+  currentVersion: state => state.currentVersion,
+  activeCharacter: state => state.activeCharacterId
 }
 
 export const mutations = {
+  SET_ACTIVE_CHARACTER (state, value) {
+    state.activeCharacterId = value
+  },
   SET_SYNC_STATUS (state, value) {
     state.syncStatus = value
   },

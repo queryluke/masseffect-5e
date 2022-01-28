@@ -23,8 +23,8 @@
           :items="availableStandard(ability)"
           :label="$t(`abilities.${ability}.title`)"
           :value="selectedAbilityScores[ability]"
-          @change="setAbsBase({ability, value: $event})"
           clearable
+          @change="setAbsBase({ability, value: $event})"
         />
       </v-col>
     </v-row>
@@ -53,8 +53,8 @@
           :items="availableBuy(ability)"
           :label="$t(`abilities.${ability}.title`)"
           :value="selectedAbilityScores[ability]"
-          @change="setAbsBase({ability, value: $event})"
           clearable
+          @change="setAbsBase({ability, value: $event})"
         />
       </v-col>
     </v-row>
@@ -71,8 +71,8 @@
           :value="selectedAbilityScores[ability]"
           outlined
           dense
-          @change="setAbsBase({ability, value: $event})"
           clearable
+          @change="setAbsBase({ability, value: $event})"
         />
       </v-col>
     </v-row>

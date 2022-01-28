@@ -5,17 +5,17 @@
       :id="id"
       :mechanic="mechanic"
       :current-value="currentValue"
+      :expertise="type === 'expertise'"
       @upsert="upsert"
     />
   </div>
 </template>
 
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
-
+import { createNamespacedHelpers } from 'vuex'
+const { mapGetters } = createNamespacedHelpers('character/selections')
 export default {
   name: 'MeCbAspectSelectable',
-  mixins: [CharacterBuilderHelpers],
   props: {
     mechanic: {
       type: Object,
@@ -26,32 +26,19 @@ export default {
       required: true
     }
   },
-  data () {
-    return {
-      subPaths: {
-        prof: () => {
-          return `${this.mechanic.profType}${this.mechanic.expertise ? '-expertise' : ''}`
-        },
-        power: () => {
-          return this.mechanic.label
-        }
-      }
-    }
-  },
   computed: {
+    ...mapGetters(['selected']),
     component () {
-      return `me-cb-choices-${this.type}`
+      return this.type === 'expertise' ? 'me-cb-choices-skill' : `me-cb-choices-${this.type}`
     },
     currentValue () {
       // NOTE...currentValue is always an array since the selectable component always returns an array of selections
       // even if there is only 1 selection, its always an array
-      const selectObj = this.character.selected.find(i => i.path === this.id)
+      const selectObj = this.selected.find(i => i.path === this.id)
       return selectObj?.value || []
     },
     id () {
-      const subPathFunction = this.subPaths[this.type]
-      const subPath = subPathFunction ? subPathFunction() : null
-      return [this.path, this.type, subPath].filter(String).join('/')
+      return `${this.path}/${this.type === 'model' ? this.mechanic.modelId : this.type}`
     },
     type () {
       return this.mechanic.type.replace('-choice', '')
@@ -59,18 +46,7 @@ export default {
   },
   methods: {
     upsert (value) {
-      const selectObj = {
-        path: this.id,
-        value
-      }
-      const newSelections = JSON.parse(JSON.stringify(this.character.selected))
-      const index = newSelections.findIndex(i => i.path === this.id)
-      if (index > -1) {
-        newSelections.splice(index, 1, selectObj)
-      } else {
-        newSelections.push(selectObj)
-      }
-      this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'selected', value: newSelections })
+      this.$store.dispatch('character/selections/UPSERT_SELECTION', { path: this.id, value })
     }
   }
 }

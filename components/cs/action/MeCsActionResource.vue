@@ -11,11 +11,10 @@
   />
 </template>
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
-
+import { createNamespacedHelpers } from 'vuex'
+const { mapGetters, mapActions } = createNamespacedHelpers('cs')
 export default {
   name: 'MeCsActionResource',
-  mixins: [CharacterBuilderHelpers],
   props: {
     id: {
       type: String,
@@ -42,6 +41,7 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['character']),
     item () {
       return { ...this.defaults, ...this.resource, max: { ...this.defaults.max, ...this.resource.max } }
     },
@@ -50,27 +50,30 @@ export default {
         return this.character.currentStats.resources[this.id] || 0
       },
       set (value) {
-        this.setResource(this.id, value)
+        console.log(this.id)
+        this.setResource({ id: this.id, value })
       }
     },
     component () {
       return `me-cs-action-resource-display-${this.item.displayType}`
     },
     max () {
-      return this.mcBonus(this.item.max)
+      return 1 // this.mcBonus(this.item.max)
     },
     mod () {
       if (this.item.mod) {
-        return this.absMod(this.item.mod)
+        return 0 // this.absMod(this.item.mod)
       }
       return 0
     }
   },
   methods: {
+    ...mapActions(['setResource']),
     add () {
       if (this.count + this.item.increment > this.max) {
         return
       }
+      console.log(this.item.increment)
       this.count += this.item.increment
     },
     remove () {

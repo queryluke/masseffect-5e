@@ -1,8 +1,8 @@
 <template>
   <v-container style="max-width: 1200px">
-    <v-card>
+    <v-card :loading="$fetchState.pending">
       <me-tabbed-page-tabs grow class="hidden-sm-and-down mt-5" />
-      <v-card-text>
+      <v-card-text v-if="!$fetchState.pending">
         <v-tabs-items v-model="tab">
           <v-tab-item>
             <me-cb-species-select />
@@ -29,20 +29,14 @@
 </template>
 
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
 
 export default {
-  mixins: [CharacterBuilderHelpers],
   layout: 'characterbuilder',
-  async asyncData ({ store, redirect, route }) {
+  asyncData ({ store, redirect, route }) {
     if (!route.query.id) {
       redirect('/characters')
     }
-    if (!store.state.cb.characters[route.query.id]) {
-      redirect('/characters')
-    }
     store.commit('pageTitle', 'Character Builder')
-    await store.dispatch('cb/FETCH_CB_DATA')
     const tabs = ['Species', 'Class', 'Abilities', 'Description']
     store.commit('tabbedPage/SET_TABS', tabs)
     store.dispatch('tabbedPage/INIT_THEME')
@@ -53,6 +47,14 @@ export default {
   data () {
     return {
       loading: false
+    }
+  },
+  async fetch () {
+    await this.$store.dispatch('character/FETCH_CB_DATA')
+    // TODO: check that character is editable
+    const character = await this.$store.dispatch('character/LOAD_CHARACTER', this.$route.query.id)
+    if (!character) {
+      await this.$router.push('/characters')
     }
   },
   computed: {

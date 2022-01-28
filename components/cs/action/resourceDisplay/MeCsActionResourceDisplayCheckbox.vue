@@ -13,11 +13,15 @@
     <v-icon @click.stop="$emit('add')">
       mdi-plus
     </v-icon>
+    <div>
+      {{ character.currentStats.resources }}
+    </div>
   </div>
 </template>
 
 <script>
-
+import { createNamespacedHelpers } from 'vuex'
+const { mapGetters } = createNamespacedHelpers('cs')
 export default {
   props: {
     current: {
@@ -28,6 +32,9 @@ export default {
       type: Number,
       required: true
     }
+  },
+  computed: {
+    ...mapGetters(['character'])
   },
   methods: {
     set (value) {

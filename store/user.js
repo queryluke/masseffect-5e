@@ -7,7 +7,8 @@ export const state = () => ({
   username: null,
   avatar: null,
   profileImg: null,
-  search: null
+  search: null,
+  syncStatus: 'saved'
 })
 
 export const getters = {
@@ -29,7 +30,8 @@ export const getters = {
     const lookupModel = model === 'bestiary' && id.startsWith('generated') ? 'genpc' : model
     return typeof state.bookmarks.find(i => i.modelId === id && i.model === lookupModel) !== 'undefined'
   },
-  search: state => state.search
+  search: state => state.search,
+  syncStatus: state => state.syncStatus
 }
 
 export const mutations = {
@@ -174,5 +176,8 @@ export const actions = {
     const bookmarks = { ...getters.bookmarks }
     delete bookmarks[key]
     commit('RESET_BOOKMARKS', bookmarks)
+  },
+  SET_SYNC_STATUS (state, value) {
+    state.syncStatus = value
   }
 }

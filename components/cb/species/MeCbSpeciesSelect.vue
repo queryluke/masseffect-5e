@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div v-if="changeSpecies || !speciesId">
+    <div v-if="changeSpecies || !character.species">
       <me-tpg s="h3" class="text-center">
         {{ changeSpecies ? 'Change' : 'Choose a' }} Species
       </me-tpg>
-      <v-row v-if="speciesId">
+      <v-row v-if="character.species">
         <v-col>
           <me-cb-species-selected-card @keepSpecies="changeSpecies = false" />
         </v-col>
@@ -28,11 +28,11 @@
           cols="12"
           md="6"
         >
-          <me-cb-species-select-card :item="sp" @selectSpecies="selectSpecies" />
+          <me-cb-species-select-card :item="sp" :current-value="{ species: character.species, subspecies: character.subspecies }" @selectSpecies="selectSpecies" />
         </v-col>
       </v-row>
     </div>
-    <div v-if="speciesId && !changeSpecies">
+    <div v-if="character.species && !changeSpecies">
       <me-cb-species-selected-card change @changeSpecies="changeSpecies = true" />
       <v-card max-width="800px" flat class="mx-auto mt-3">
         <v-card-title>
@@ -51,31 +51,33 @@
                 Ability Score Increase
               </template>
             </me-cb-aspect-card>
-            <me-cb-aspect-card v-else root-path="species" :aspect="{ id: 'asi', mechanics: speciesAsiOptions }">
+            <me-cb-aspect-card v-else root-path="species" :aspect="{ id: 'asi', mechanics: asiAsOptions }">
               <template #title>
                 Ability Score Increase
               </template>
               <template #description>
-                {{ speciesSetAsiText }}
+                {{ asiText }}
               </template>
             </me-cb-aspect-card>
-            <me-cb-aspect-card v-for="trait in speciesTraits" :key="trait.id" root-path="species" :aspect="trait" />
+            <me-cb-aspect-card v-for="trait in traits" :key="trait.id" root-path="species" :aspect="trait" />
           </v-expansion-panels>
         </v-card-text>
       </v-card>
+      <!--
       <me-cb-species-additional-traits v-if="speciesId !== 'custom'" />
+      -->
     </div>
   </div>
 </template>
 
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
+import { createNamespacedHelpers } from 'vuex'
+const { mapGetters } = createNamespacedHelpers('character')
 export default {
   name: 'MeCbSpeciesSelect',
-  mixins: [CharacterBuilderHelpers],
   data () {
     return {
-      search: null,
+      search: '',
       changeSpecies: false,
       tashasMechanics: [
         {
@@ -89,27 +91,48 @@ export default {
     }
   },
   computed: {
-    speciesOptions () {
-      const baseSpecies = this.species.filter(i => i.type !== 'variant')
-      if (!this.search) {
-        return baseSpecies
+    ...mapGetters({
+      character: 'character',
+      traits: 'species/traits',
+      asiAsOptions: 'species/asiAsOptions',
+      speciesMechanics: 'species/speciesMechanics'
+    }),
+    asiText () {
+      const setAsis = this.speciesMechanics.reduce((acc, curr) => {
+        acc[curr.ability] += curr.amount
+        return acc
+      }, { str: 0, dex: 0, con: 0, int: 0, wis: 0, cha: 0 })
+      const list = []
+      for (const [key, value] of Object.entries(setAsis)) {
+        if (value > 0) {
+          list.push(`+${value} ${this.$t(`abilities.${key}.title`)}`)
+        }
       }
-      return baseSpecies.filter(i => i.name.toLowerCase().includes(this.search.toLowerCase()))
+      return list.join(', ')
+    },
+    baseSpecies () {
+      return this.$store.getters.getData('species').filter(i => i.type !== 'variant')
+    },
+    homebrewSpecies () {
+      return [this.$store.state.character.species.customSpecies]
+    },
+    speciesOptions () {
+      return [...this.baseSpecies, ...this.homebrewSpecies].filter(i => i.name.toLowerCase().includes(this.search.toLowerCase()))
     },
     tashas: {
       get () {
         return this.character.options.tashas
       },
       set (value) {
-        this.deleteSelections('species/asi')
-        this.updateCharacter('options.tashas', value)
+        this.$store.dispatch('character/selections/BULK_DELETE', 'species/asi')
+        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'options.tashas', value })
       }
     }
   },
   methods: {
     selectSpecies ({ speciesId, subspeciesId }) {
-      this.speciesId = speciesId
-      this.subspeciesId = subspeciesId
+      this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'species', value: speciesId })
+      this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'subspecies', value: subspeciesId })
       this.changeSpecies = false
     }
   }

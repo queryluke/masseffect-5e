@@ -5,14 +5,14 @@ export const MechanicBag = {
         1. All Models that have static (options = false) mechanics on them (traits, fighting styles, species, etc)
         2. All Models that have optional (options = true) mechanics on them (traits, fighting styles, species, etc)
           a. further hydrated by character.selected where path = model = model && modelId = modelId && type = (type with '-choice' removed) && (todo: break out prof choices)
-            example = trait-[traitId]-skill, value: [{type: 'skill', value: 'acrobatics'}]
+            example = trait/skill-profs/skill, value: [{type: 'skill', value: 'acrobatics'}]
           b. when a is a model itself (feat, benefit, etc)
-            example = trait-[traitId]-feat, value: [{type: 'feat', value: 'living-turret'}]
+            example = trait/feat/feats, value: [{type: 'feats', value: 'living-turret'}]
            - THEN, recursively look for 1 & 2???
               example
-                - 1. feat-living-turret-action
-                - 2. feat-living-turret-fighting-style-choice
-                  - 1. fighting-style-action
+                - 1. trait/feat/feats/living-turret/action
+                - 2. trait/feat/feats/living-turret/fighting-styles
+                  - 1. trait/feat/feats/living-turret/fighting-styles/dual-wielder
         3. Then! Delete any unfound character.selected
        */
       // DISCUSSION: should we only get things from the mechanic bag that are still valid
