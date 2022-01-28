@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="text-subtitle">
-      {{ expertise ? 'Skill Expertise' : 'Skill Proficiency' }}
+      Weapon Proficiency
     </div>
     <me-cb-choices-v-select
       :items="items"
@@ -26,10 +26,6 @@ export default {
     currentValue: {
       type: Array,
       required: true
-    },
-    expertise: {
-      type: Boolean,
-      default: false
     }
   },
   computed: {
@@ -41,10 +37,10 @@ export default {
       return `Choose ${this.$tc(`string_numbers[${this.selections}]`)}...`
     },
     profOptions () {
-      return this.$store.getters.getData('skills').map((i) => {
+      return this.$i18n.messages.en.weapon_types.map((i) => {
         return {
-          text: i.name,
-          value: i.id
+          text: this.$tc(`weapon_types.${i}`, 2),
+          value: i
         }
       })
     },
@@ -57,14 +53,13 @@ export default {
     },
     appended () {
       return {
-        type: 'skill',
-        expertise: this.expertise
+        type: 'weapon'
       }
     }
   },
   methods: {
     alreadyAcquired (value) {
-      return this.profs.skill.includes(value)
+      return this.profs.weapon.includes(value)
     },
     upsert (value) {
       this.$emit('upsert', value.map((i) => {

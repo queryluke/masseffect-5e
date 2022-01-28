@@ -22,21 +22,21 @@
             <me-species-traits-list :item="item" />
           </v-tab-item>
           <!-- SUBSPECIES -->
-          <v-tab-item v-if="subspecies" class="pa-3">
-            <me-html :content="subspecies.html" class="mt-1" />
-            <div v-if="subspecies.id === 'avatar'" class="mt-1">
+          <v-tab-item v-if="item.subspecies" class="pa-3">
+            <me-html :content="item.subspecies.html" class="mt-1" />
+            <div v-if="item.subspecies.id === 'avatar'" class="mt-1">
               <me-tpg s="h5">
                 {{ avatarsInspiration.name }}
               </me-tpg>
               <me-html :content="avatarsInspiration.html" />
             </div>
-            <div v-for="sub of subspeciesOptions" :key="sub.id">
+            <div v-for="sub of subspecies" :key="sub.id">
               <me-tpg s="h4">
                 {{ sub.name }}
               </me-tpg>
               <me-hr size="1" class="mt-n1" color="primary" />
               <me-html :content="sub.html" />
-              <me-species-traits-list v-if="subspecies.id !== 'avatar'" :item="sub" />
+              <me-species-traits-list v-if="item.subspecies.name !== 'Avatar'" :item="sub" />
             </div>
           </v-tab-item>
           <!-- VARIANTS -->
@@ -81,7 +81,7 @@ export default {
   components: { MeTpg },
   layout: 'tabbed',
   async asyncData ({ store }) {
-    await store.dispatch('FETCH_LOTS', ['species', 'traits', 'subspecies', 'subspecies-options'])
+    await store.dispatch('FETCH_LOTS', ['species', 'traits'])
   },
   data () {
     return {
@@ -104,7 +104,7 @@ export default {
   },
   computed: {
     items () {
-      return this.$store.getters.getData('species').filter(i => i.type !== 'variant')
+      return this.$store.getters.getData('species').filter(i => i.type !== 'variant' && i.type !== 'subspecies')
     },
     item () {
       return this.$store.getters.getItem('species', this.$route.params.id)
@@ -116,13 +116,7 @@ export default {
       return this.variants.length
     },
     subspecies () {
-      return this.$store.getters.getData('subspecies').find(i => i.species === this.$route.params.id)
-    },
-    subspeciesOptions () {
-      if (!this.subspecies) {
-        return []
-      }
-      return this.$store.getters.getData('subspecies-options').filter(i => i.subspecies === this.subspecies.id)
+      return this.$store.getters.getData('species').filter(i => i.type === 'subspecies' && i.species === this.$route.params.id)
     },
     avatarsInspiration () {
       return this.$store.getters.getItem('traits', 'avatars-inspiration')
@@ -137,8 +131,8 @@ export default {
     },
     tabs () {
       const tabs = [this.$tc('background_title', 1), this.$t('traits_title')]
-      if (this.subspecies) {
-        tabs.push(this.subspecies.name)
+      if (this.item.subspecies) {
+        tabs.push(this.item.subspecies.name)
       }
       if (this.hasVariants) {
         tabs.push(this.$t('variants_title'))

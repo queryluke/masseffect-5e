@@ -23,10 +23,8 @@
 </template>
 
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
 
 export default {
-  mixins: [CharacterBuilderHelpers],
   props: {
     mechanic: {
       type: Object,

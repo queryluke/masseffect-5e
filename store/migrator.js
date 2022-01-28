@@ -80,10 +80,8 @@ export const actions = {
       }
     }
     if (characters) {
-      console.log(characters)
       const newCharacters = {}
       for (const [id, character] of Object.entries(characters)) {
-        console.log(id, character)
         if (typeof character.meta === 'undefined') {
           character.meta = {
             remote: false,
@@ -95,8 +93,13 @@ export const actions = {
             tashas: false
           }
         }
-        const newSelections = character.selections.filter(i => !i.source.startsWith('species'))
-        character.selections = newSelections
+        const klassSelections = character.selections.filter(i => i.source.startsWith('klass'))
+        for (const ks of klassSelections) {
+          if (ks.value.length) {
+
+          }
+        }
+        // TODO: custom
         character.currentStats = { ...character.currentStats, resources: {}, paragon: 0, renegade: 0 }
         newCharacters[id] = character
       }

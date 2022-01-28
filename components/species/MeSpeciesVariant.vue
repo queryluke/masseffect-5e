@@ -5,12 +5,12 @@
     </me-tpg>
     <me-html :content="item.html" />
     <me-species-traits-list :item="item" />
-    <div v-if="subspecies">
+    <div v-if="item.subspecies">
       <me-tpg s="h3">
-        {{ subspecies.name }}
+        {{ item.subspecies.name }}
       </me-tpg>
-      <me-html :content="subspecies.html" class="mt-1" />
-      <div v-for="sub of subspeciesOptions" :key="sub.id">
+      <me-html :content="item.subspecies.html" class="mt-1" />
+      <div v-for="sub of subspecies" :key="sub.id">
         <me-tpg s="h4">
           {{ sub.name }}
         </me-tpg>
@@ -32,13 +32,7 @@ export default {
   },
   computed: {
     subspecies () {
-      return this.$store.getters.getData('subspecies').find(i => i.species === this.item.id)
-    },
-    subspeciesOptions () {
-      if (!this.subspecies) {
-        return []
-      }
-      return this.$store.getters.getData('subspecies-options').filter(i => i.subspecies === this.subspecies.id)
+      return this.$store.getters.getData('species').filter(i => i.type === 'subspecies' && i.species === this.item.id)
     }
   }
 }

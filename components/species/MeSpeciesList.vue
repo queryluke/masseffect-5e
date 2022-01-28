@@ -24,7 +24,7 @@ export default {
   },
   computed: {
     items () {
-      return this.$store.getters.getData('species').filter(i => i.type === this.type)
+      return this.$store.getters.getData('species').filter(i => i.group === this.type)
     }
   }
 }

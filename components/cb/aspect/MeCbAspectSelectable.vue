@@ -4,6 +4,7 @@
       :is="component"
       :id="id"
       :mechanic="mechanic"
+      :hide-selected-models="mechanic.hide"
       :current-value="currentValue"
       :expertise="type === 'expertise'"
       @upsert="upsert"
@@ -38,7 +39,7 @@ export default {
       return selectObj?.value || []
     },
     id () {
-      return `${this.path}/${this.type === 'model' ? this.mechanic.modelId : this.type}`
+      return `${this.path}/${this.type === 'model' ? this.mechanic.model : this.type}`
     },
     type () {
       return this.mechanic.type.replace('-choice', '')

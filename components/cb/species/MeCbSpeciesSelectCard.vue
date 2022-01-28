@@ -50,8 +50,8 @@
               </v-list-item-subtitle>
             </v-list-item-content>
             <v-list-item-action>
-              <v-btn x-small :disabled="isCurrentSelection(option.selection)" @click="select(option.selection)">
-                {{ isCurrentSelection(option.selection) ? 'Selected' : 'Select' }}
+              <v-btn x-small :disabled="isCurrent" @click="select(option.selection)">
+                {{ isCurrent ? 'Selected' : 'Select' }}
               </v-btn>
             </v-list-item-action>
           </v-list-item>
@@ -70,13 +70,8 @@ export default {
       required: true
     },
     currentValue: {
-      type: Object,
-      default: () => {
-        return {
-          species: false,
-          subspecies: false
-        }
-      }
+      type: String,
+      default: ''
     }
   },
   data () {
@@ -89,57 +84,45 @@ export default {
       return this.$store.getters.getData('species')
     },
     isCurrent () {
-      return this.item.id === this.currentValue.species
+      return this.item.id === this.currentValue
     },
     itemVariants () {
       return this.species.filter(i => i.type === 'variant' && i.species === this.item.id)
     },
     itemSubspecies () {
-      return this.$store.getters.getData('subspecies').find(i => i.species === this.item.id)
-    },
-    itemSubspeciesOptions () {
-      if (!this.itemSubspecies) {
-        return false
-      }
-      return this.$store.getters.getData('subspecies-options').filter(i => i.subspecies === this.itemSubspecies.id)
+      return this.item.subspecies ? this.species.filter(i => i.type === 'subspecies' && i.species === this.item.id) : []
     },
     hasVariantsOrSubspecies () {
-      return this.itemVariants.length > 0 || this.itemSubspeciesOptions.length > 0
+      return this.itemVariants.length > 0 || this.itemSubspecies.length > 0
     },
     optionsList () {
       const options = []
       // deal w/ subspecies
-      if (this.itemSubspeciesOptions) {
-        for (const sub of this.itemSubspeciesOptions) {
+      if (this.itemSubspecies) {
+        for (const sub of this.itemSubspecies) {
           options.push({
             subtitle: sub.name,
             title: this.item.name,
-            selection: { speciesId: this.item.id, subspeciesId: sub.id }
+            selection: sub.id
           })
         }
       } else {
         options.push({
           subtitle: '',
           title: this.item.name,
-          selection: { speciesId: this.item.id, subspeciesId: null }
+          selection: this.item.id
         })
       }
       // deal w/ variant
       for (const variant of this.itemVariants) {
-        const variantSubspecies = this.$store.getters.getData('subspecies').find(i => i.species === variant.id)
-        if (variantSubspecies) {
-          const variantSubspeciesOptions = this.$store.getters.getData('subspecies-options').filter(i => i.subspecies === variantSubspecies.id)
-          if (variantSubspeciesOptions.length > 0) {
-            for (const subvar of variantSubspeciesOptions) {
-              options.push({
-                subtitle: subvar.name,
-                title: variant.name,
-                selection: {
-                  speciesId: variant.id,
-                  subspeciesId: subvar.id
-                }
-              })
-            }
+        if (variant.subspecies) {
+          const variantSubspecies = this.species.filter(i => i.type === 'subspecies' && i.species === variant.id)
+          for (const subvar of variantSubspecies) {
+            options.push({
+              subtitle: subvar.name,
+              title: variant.name,
+              selection: subvar.id
+            })
           }
         } else {
           const ident = variant.name.toLowerCase().includes(this.item.name.toLowerCase())
@@ -148,7 +131,7 @@ export default {
           options.push({
             subtitle,
             title,
-            selection: { speciesId: variant.id }
+            selection: variant.id
           })
         }
       }
@@ -160,21 +143,17 @@ export default {
           ? `${this.itemVariants.length} variants`
           : '1 variant'
         : null
-      const subText = this.itemSubspeciesOptions.length > 0
-        ? this.itemSubspeciesOptions.length > 1
-          ? `${this.itemSubspeciesOptions.length} species options`
+      const subText = this.itemSubspecies.length > 0
+        ? this.itemSubspecies.length > 1
+          ? `${this.itemSubspecies.length} species options`
           : '1 subspecies'
         : null
       return varText && subText ? `${subText}, ${varText}` : `${varText || ''}${subText || ''}`
     }
   },
   methods: {
-    select (payload) {
-      console.log(payload)
-      this.$emit('selectSpecies', payload)
-    },
-    isCurrentSelection ({ speciesId, subspeciesId }) {
-      return this.currentValue.id === speciesId && this.currentValue.subspecies === subspeciesId
+    select (id) {
+      this.$emit('selectSpecies', id)
     }
   }
 }

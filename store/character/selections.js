@@ -17,11 +17,15 @@ export const actions = {
     const newSelections = cloneDeep(getters.selected)
     const index = newSelections.findIndex(i => i.path === payload.path)
     if (index > -1) {
-      newSelections.splice(index, 1, payload)
+      let newPayload
+      if (payload.value.some(i => i.limit)) {
+        const limit = payload.value[0].limit
+        newPayload = { ...payload, value: [...newSelections[index].value.filter(i => i.limit !== limit), ...payload.value] }
+      }
+      newSelections.splice(index, 1, newPayload || payload)
     } else {
       newSelections.push(payload)
     }
-    console.log(newSelections)
     dispatch('character/UPDATE_CHARACTER', { attr: 'selected', value: newSelections }, { root: true })
   },
   BULK_DELETE ({ dispatch, getters }, path) {

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="text-subtitle">
-      {{ expertise ? 'Skill Expertise' : 'Skill Proficiency' }}
+      Tool Proficiency
     </div>
     <me-cb-choices-v-select
       :items="items"
@@ -26,10 +26,6 @@ export default {
     currentValue: {
       type: Array,
       required: true
-    },
-    expertise: {
-      type: Boolean,
-      default: false
     }
   },
   computed: {
@@ -41,30 +37,47 @@ export default {
       return `Choose ${this.$tc(`string_numbers[${this.selections}]`)}...`
     },
     profOptions () {
-      return this.$store.getters.getData('skills').map((i) => {
-        return {
-          text: i.name,
-          value: i.id
+      const items = []
+      for (const prof of this.$store.getters.getData('tool-profs')) {
+        if (prof.id === 'vehicles') {
+          for (const vehicleType of ['air', 'land', 'space', 'water']) {
+            const id = `vehicle-${vehicleType}`
+            items.push({
+              value: id,
+              group: 'vehicle',
+              text: `Vehicles: ${this.$options.filters.titlecase(vehicleType)}`
+            })
+          }
+        } else {
+          items.push({
+            value: prof.id,
+            text: prof.name,
+            group: prof.type
+          })
         }
-      })
+      }
+      return items
     },
     items () {
       if (this.mechanic.limit) {
-        return this.profOptions.filter(i => this.mechanic.limit.includes(i.value))
+        return this.profOptions.filter((i) => {
+          return this.type === 'tool'
+            ? this.mechanic.limit.includes(i.value) || this.mechanic.limit.includes(i.group)
+            : this.mechanic.limit.includes(i.value)
+        })
       } else {
         return this.profOptions
       }
     },
     appended () {
       return {
-        type: 'skill',
-        expertise: this.expertise
+        type: 'tool'
       }
     }
   },
   methods: {
     alreadyAcquired (value) {
-      return this.profs.skill.includes(value)
+      return this.profs.tool.includes(value)
     },
     upsert (value) {
       this.$emit('upsert', value.map((i) => {

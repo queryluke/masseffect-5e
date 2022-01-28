@@ -41,7 +41,11 @@ export const getters = {
   currentLocale: state => state.currentLocale,
   isLocaleSet: state => typeof state.data[state.currentLocale] !== 'undefined',
   // TODO: interpolate non-translated data
-  getData: (state, getters) => (endpoint) => {
+  getData: (state, getters, rootState) => (endpoint) => {
+    const hcModels = ['fighting-styles']
+    if (hcModels.includes(endpoint)) {
+      return rootState.hcModels[endpoint]
+    }
     if (!getters.isLocaleSet) {
       return []
     }
@@ -112,6 +116,7 @@ export const actions = {
     }
     const locale = getters.currentLocale
     let data = getters.getData(endpoint)
+    // TODO: we will eventually need to support grabbing homebrew during this call
     if (data.length === 0) {
       try {
         data = await this.$http.$get(`${locale}/${endpoint}.json`)

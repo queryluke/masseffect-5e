@@ -28,7 +28,7 @@
           cols="12"
           md="6"
         >
-          <me-cb-species-select-card :item="sp" :current-value="{ species: character.species, subspecies: character.subspecies }" @selectSpecies="selectSpecies" />
+          <me-cb-species-select-card :item="sp" :current-value="character.species" @selectSpecies="selectSpecies" />
         </v-col>
       </v-row>
     </div>
@@ -46,12 +46,12 @@
             label="Custom Ability Score Increase"
           />
           <v-expansion-panels focusable multiple>
-            <me-cb-aspect-card v-if="character.options.tashas" root-path="species" :aspect="{ id: 'asi', mechanics: tashasMechanics }">
+            <me-cb-aspect-card v-if="character.options.tashas" :root-path="`${rootPath}/traits`" :aspect="{ id: 'asi', mechanics: tashasMechanics }">
               <template #title>
                 Ability Score Increase
               </template>
             </me-cb-aspect-card>
-            <me-cb-aspect-card v-else root-path="species" :aspect="{ id: 'asi', mechanics: asiAsOptions }">
+            <me-cb-aspect-card v-else :root-path="`${rootPath}/traits`" :aspect="{ id: 'asi', mechanics: asiAsOptions }">
               <template #title>
                 Ability Score Increase
               </template>
@@ -59,7 +59,7 @@
                 {{ asiText }}
               </template>
             </me-cb-aspect-card>
-            <me-cb-aspect-card v-for="trait in traits" :key="trait.id" root-path="species" :aspect="trait" />
+            <me-cb-aspect-card v-for="trait in traits" :key="trait.id" :root-path="`${rootPath}/traits`" :aspect="trait" />
           </v-expansion-panels>
         </v-card-text>
       </v-card>
@@ -111,7 +111,7 @@ export default {
       return list.join(', ')
     },
     baseSpecies () {
-      return this.$store.getters.getData('species').filter(i => i.type !== 'variant')
+      return this.$store.getters.getData('species').filter(i => i.type !== 'variant' && i.type !== 'subspecies')
     },
     homebrewSpecies () {
       return [this.$store.state.character.species.customSpecies]
@@ -124,15 +124,18 @@ export default {
         return this.character.options.tashas
       },
       set (value) {
-        this.$store.dispatch('character/selections/BULK_DELETE', 'species/asi')
+        this.$store.dispatch('character/selections/BULK_DELETE', `${this.rootPath}/traits/asi`)
         this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'options.tashas', value })
       }
+    },
+    rootPath () {
+      return `species/${this.character.species}`
     }
   },
   methods: {
-    selectSpecies ({ speciesId, subspeciesId }) {
-      this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'species', value: speciesId })
-      this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'subspecies', value: subspeciesId })
+    selectSpecies (value) {
+      this.$store.dispatch('character/selections/BULK_DELETE', 'species')
+      this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'species', value })
       this.changeSpecies = false
     }
   }
