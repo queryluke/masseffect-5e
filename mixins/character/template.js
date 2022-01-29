@@ -6,49 +6,35 @@ export const characterTemplate = {
   species: null,
   classes: [],
   abilityScores: {
-    genMethod: {
-      text: 'Standard Array',
-      value: 'standard'
+    str: {
+      value: null,
+      other: null,
+      override: null
     },
-    standard: {
-      str: null,
-      con: null,
-      dex: null,
-      wis: null,
-      int: null,
-      cha: null
+    dex: {
+      value: null,
+      other: null,
+      override: null
     },
-    buy: {
-      str: null,
-      con: null,
-      dex: null,
-      wis: null,
-      int: null,
-      cha: null
+    con: {
+      value: null,
+      other: null,
+      override: null
     },
-    manual: {
-      str: null,
-      con: null,
-      dex: null,
-      wis: null,
-      int: null,
-      cha: null
+    int: {
+      value: null,
+      other: null,
+      override: null
     },
-    other: {
-      str: null,
-      con: null,
-      dex: null,
-      wis: null,
-      int: null,
-      cha: null
+    wis: {
+      value: null,
+      other: null,
+      override: null
     },
-    override: {
-      str: null,
-      con: null,
-      dex: null,
-      wis: null,
-      int: null,
-      cha: null
+    cha: {
+      value: null,
+      other: null,
+      override: null
     }
   },
   background: null,
@@ -147,7 +133,8 @@ export const characterTemplate = {
   notes: '',
   brews: [],
   options: {
-    tashas: false
+    tashas: false,
+    asiGenMethod: 'standard'
   },
   meta: {
     remote: false,

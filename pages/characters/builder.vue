@@ -11,7 +11,7 @@
             <me-cb-classes-select />
           </v-tab-item>
           <v-tab-item>
-            <me-character-builder-ability-scores />
+            <me-cb-abilities-select />
           </v-tab-item>
           <v-tab-item>
             <me-character-builder-character-description />

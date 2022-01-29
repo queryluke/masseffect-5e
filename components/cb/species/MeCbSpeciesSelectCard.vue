@@ -98,7 +98,7 @@ export default {
     optionsList () {
       const options = []
       // deal w/ subspecies
-      if (this.itemSubspecies) {
+      if (this.itemSubspecies.length) {
         for (const sub of this.itemSubspecies) {
           options.push({
             subtitle: sub.name,

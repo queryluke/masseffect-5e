@@ -40,6 +40,7 @@ export const getters = {
     }
     return null
   },
+  tashas: (state, getters, rootState, rootGetters) => rootGetters['character/character'].options.tashas,
   traits: (state, getters) => {
     return getters.traitList.filter(i => i.species.includes(getters.species?.id) || i.species.includes(getters.species?.parentId))
   },
@@ -58,29 +59,51 @@ export const getters = {
   fullName: (state, getters) => {
     return [getters.subName, getters.species.name].filter(i => i).join(' ')
   },
-  speciesMechanics: (state, getters, rootState, rootGetters) => {
+  speciesMechanics: (state, getters) => {
     // if tashas is on, ignore the ASIs
-    return (getters.species?.mechanics || []).filter(i => rootGetters['character/character'].options.tashas ? !i.type.startsWith('asi') : true)
+    return (getters.species?.mechanics || []).filter(i => getters.tashas ? !i.type.startsWith('asi') : true)
   },
   asiAsOptions: (state, getters) => {
-    return getters.speciesMechanics.filter(i => i.type === 'asi-choice')
+    return getters.tashas ? [] : getters.speciesMechanics.filter(i => i.type === 'asi-choice')
   },
   mechanics: (state, getters) => {
     if (!getters.species) {
       return []
     }
-    const speciesM = getters.speciesMechanics
+    const allSpeciesMechanics = []
+    const path = `species/${getters.species.id}`
+    // base
+    allSpeciesMechanics.push({
+      path,
+      // have to ignore asi-choices cause of the weird selection path
+      mechanics: getters.speciesMechanics.filter(i => i.type !== 'asi-choice')
+    })
+    // tashas
+    if (getters.tashas) {
+      allSpeciesMechanics.push({
+        path: `${path}/traits/asi`,
+        mechanics: [
+          {
+            type: 'asi-choice',
+            options: true
+          }
+        ]
+      })
+    }
+    if (getters.asiAsOptions.length) {
+      allSpeciesMechanics.push({
+        path: `${path}/traits/asi`,
+        mechanics: getters.asiAsOptions
+      })
+    }
     const traitsM = getters.traits.map((i) => {
       return {
-        path: `species/${getters.species.id}/traits/${i.id}`,
+        path: `${path}/traits/${i.id}`,
         mechanics: i.mechanics
       }
     })
     return [
-      {
-        path: `species/${getters.species.id}`,
-        mechanics: speciesM
-      },
+      ...allSpeciesMechanics,
       ...traitsM
     ]
   },

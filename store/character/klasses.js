@@ -78,37 +78,76 @@ export const getters = {
     return getters.selectedKlasses.reduce((acc, curr) => acc + curr.levels, 0)
   },
   klassesMechanics: (state, getters) => {
-    return getters.klasses.map((klass) => {
-      return {
-        path: `klass/${klass.id}`,
-        mechanics: ['skill', 'savingThrow', 'tool', 'weapon', 'armor']
-          .map((prof) => {
-            const mArray = []
-            const klassProfs = klass.data.profs
-            if (klassProfs[prof]) {
-              const type = prof === 'savingThrow' ? 'saving-throw' : prof
-              if (klassProfs[prof].has) {
-                mArray.push(...klassProfs[prof].has.map((value) => {
-                  return {
-                    type,
-                    value
-                  }
-                }))
-              }
-              if (klassProfs[prof].choices) {
-                mArray.push({
-                  type: `${type}-choice`,
-                  limit: klassProfs[prof].choices.items,
-                  selections: klassProfs[prof].choices.count,
-                  options: true
-                })
-              }
+    const allKlassMechanics = []
+    for (const [index, klass] of getters.klasses.entries()) {
+      // Prof mechanics
+      const profMechanics = ['skill', 'savingThrow', 'tool', 'weapon', 'armor']
+        .map((prof) => {
+          const mArray = []
+          const klassProfs = klass.data.profs
+          if (klassProfs[prof]) {
+            const type = prof === 'savingThrow' ? 'saving-throw' : prof
+            if (klassProfs[prof].has) {
+              mArray.push(...klassProfs[prof].has.map((value) => {
+                return {
+                  type,
+                  value
+                }
+              }))
             }
-            return mArray
+            if (klassProfs[prof].choices) {
+              mArray.push({
+                type: `${type}-choice`,
+                limit: klassProfs[prof].choices.items,
+                selections: klassProfs[prof].choices.count,
+                options: true
+              })
+            }
+          }
+          return mArray
+        })
+        .reduce((acc, curr) => acc.concat(curr), [])
+      allKlassMechanics.push({
+        path: `klass/${klass.id}`,
+        mechanics: profMechanics
+      })
+
+      // ASIs
+      for (const asi of Object.entries(klass.asi).filter(asi => asi[0] <= klass.levels)) {
+        const path = `klass/${klass.id}/${asi[0]}`
+        if (asi[1] === 'asi') {
+          allKlassMechanics.push({
+            path,
+            mechanics: [
+              {
+                type: 'asi-choice',
+                options: true
+              }
+            ]
           })
-          .reduce((acc, curr) => acc.concat(curr), [])
+        }
+        if (asi[1] === 'feat') {
+          allKlassMechanics.push({
+            path,
+            mechanics: [
+              {
+                type: 'model-choice',
+                model: 'feats',
+                options: true
+              }
+            ]
+          })
+        }
       }
-    })
+      // All other features
+      for (const feature of getters.klassesFeatures[index]) {
+        allKlassMechanics.push({
+          path: `klass/${feature.klass}/${feature.id}`,
+          mechanics: feature.mechanics || []
+        })
+      }
+    }
+    return allKlassMechanics
   },
   klassesFeatures: (state, getters) => {
     return getters.selectedKlasses.map((klass) => {

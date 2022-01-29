@@ -47,6 +47,7 @@ export const getters = {
     for (const item of mechanics) {
       finalMechanics.push(...hydrate(item))
     }
+    console.log('unused', selected)
     return {
       mechanics: finalMechanics,
       unusedSelections: selected

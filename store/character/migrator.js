@@ -24,6 +24,52 @@ export const actions = {
     character.currentStats.renegade = 0
     character.currentStats.paragon = 0
     character.currentStats.resources = []
+    // abilityScores
+    const abilityScores = {
+      str: {
+        value: null,
+        other: null,
+        override: null
+      },
+      dex: {
+        value: null,
+        other: null,
+        override: null
+      },
+      con: {
+        value: null,
+        other: null,
+        override: null
+      },
+      int: {
+        value: null,
+        other: null,
+        override: null
+      },
+      wis: {
+        value: null,
+        other: null,
+        override: null
+      },
+      cha: {
+        value: null,
+        other: null,
+        override: null
+      }
+    }
+    const type = character.abilityScores.genMethod.value
+    for (const [key, score] of character.abilityScores[type]) {
+      abilityScores[key].value = score
+      if (character.abilityScores.other[key]) {
+        abilityScores[key].other = character.abilityScores.other[key]
+      }
+      if (character.abilityScores.override[key]) {
+        abilityScores[key].other = character.abilityScores.override[key]
+      }
+    }
+    character.options.asiGenMethod = character.abilityScores.genMethod.value
+    character.abilityScores = abilityScores
+
     // fighting styles
     if (character.fightingStyles.length) {
       for (const fs of character.fightingStyles) {
