@@ -80,30 +80,11 @@ export const actions = {
       }
     }
     if (characters) {
-      const newCharacters = {}
-      for (const [id, character] of Object.entries(characters)) {
-        if (typeof character.meta === 'undefined') {
-          character.meta = {
-            remote: false,
-            version: '1.0.1'
-          }
-          character.selected = []
-          character.subspecies = null
-          character.options = {
-            tashas: false
-          }
-        }
-        const klassSelections = character.selections.filter(i => i.source.startsWith('klass'))
-        for (const ks of klassSelections) {
-          if (ks.value.length) {
-
-          }
-        }
-        // TODO: custom
-        character.currentStats = { ...character.currentStats, resources: {}, paragon: 0, renegade: 0 }
-        newCharacters[id] = character
+      const newCharacters = []
+      for (const character of Object.values(characters)) {
+        newCharacters.push(dispatch('character/migrator/migrate'), character, { root: true })
       }
-      commit('cb/SET_CHARACTERS', newCharacters, { root: true })
+      commit('characters/SET_CHARACTERS', newCharacters, { root: true })
     }
   }
 }

@@ -142,7 +142,11 @@ export const characterTemplate = {
     conditionImm: [],
     powerModAbility: null,
     skills: [],
-    expertise: []
+    expertise: [],
+    armor: [],
+    savingThrow: [],
+    weapon: [],
+    tool: []
   },
   notes: '',
   brews: [],

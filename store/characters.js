@@ -49,16 +49,13 @@ export const actions = {
   async NEW_CHARACTER ({ dispatch }) {
     return await dispatch('CREATE_CHARACTER', cloneDeep(characterTemplate))
   },
-  async CREATE_CHARACTER ({ dispatch, commit, rootGetters, getters }, character) {
+  async CREATE_CHARACTER ({ dispatch, commit, rootGetters, getters }, c) {
+    let character = c
+    if (character.meta?.version !== characterTemplate.meta.version) {
+      character = dispatch('character/migrator/migrate', character)
+    }
     if (rootGetters['auth/isAuthenticated']) {
       try {
-        if (!character.meta) {
-          character.meta = {
-            remote: true,
-            version: '1.0.1'
-          }
-        }
-        // NEED TO RUN MIGRATORS HERE TOO
         character.meta.remote = true
         delete character.id
         const response = await dispatch('api/MUTATE', { mutation: 'createCharacter', input: { userId: rootGetters['auth/sub'], data: jsonpack.pack(character) } }, { root: true })
