@@ -7,6 +7,7 @@
       :hide-selected-models="mechanic.hide"
       :current-value="currentValue"
       :expertise="type === 'expertise'"
+      :no-label="noLabel"
       @upsert="upsert"
     />
   </div>
@@ -25,6 +26,10 @@ export default {
     path: {
       type: String,
       required: true
+    },
+    noLabel: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {

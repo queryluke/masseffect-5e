@@ -31,7 +31,7 @@
         plain
         color="primary"
         :disabled="isCurrent"
-        @click="select({ speciesId: item.id })"
+        @click="select(item.id)"
       >
         {{ isCurrent ? 'Selected' : 'Select' }}
       </v-btn>

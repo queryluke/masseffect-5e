@@ -23,19 +23,24 @@ function updateCharacter ({ oldValue, attr, value }) {
 }
 
 export const state = () => ({
-  character: null
+  character: null,
+  id: null
 })
 
 export const getters = {
   character: (state) => {
     console.log('getting')
     return state.character
-  }
+  },
+  id: state => state.id
 }
 
 export const mutations = {
-  SET_CHARACTER (state, value) {
-    state.character = value
+  SET_CHARACTER (state, character) {
+    state.character = character
+  },
+  SET_CHARACTER_ID (state, value) {
+    state.id = value
   }
 }
 
@@ -50,7 +55,9 @@ export const actions = {
   async LOAD_CHARACTER ({ dispatch, commit, rootGetters, getters }, id) {
     if (rootGetters['auth/isAuthenticated']) {
       const character = await dispatch('api/QUERY', { query: 'getCharacter', variables: { id } }, { root: true })
-      commit('SET_CHARACTER', character)
+      // TODO: migrate on load for future versions
+      commit('SET_CHARACTER', jsonpack.unpack(character.data))
+      commit('SET_CHARACTER_ID', character.id)
     } else {
       console.log('loading local')
       await dispatch('local/LOAD_CHARACTER', id)
@@ -58,27 +65,34 @@ export const actions = {
     return getters.character
   },
   UPDATE_CHARACTER ({ dispatch, rootGetters, commit, getters }, { attr, value }) {
+    // TODO: bulk update for things like deleting selections when classes/species change...but may not be necessary
+    // as it doesn't happen often
     const newValue = updateCharacter({ oldValue: getters.character, attr, value })
     commit('SET_CHARACTER', newValue)
     if (rootGetters['auth/isAuthenticated']) {
       if (rootGetters['user/search'] !== 'syncing') {
         commit('user/SET_SYNC_STATUS', 'editing', { root: true })
       }
-      dispatch('DEBOUNCED_REMOTE_UPDATE_CHARACTER', getters.character.id)
+      dispatch('DEBOUNCED_REMOTE_UPDATE_CHARACTER')
     } else {
       dispatch('characters/UPSERT_LOCAL_CHARACTER', newValue, { root: true })
     }
   },
-  DEBOUNCED_REMOTE_UPDATE_CHARACTER: debounce(({ dispatch }, id) => {
-    dispatch('REMOTE_UPDATE_CHARACTER', id)
+  DEBOUNCED_REMOTE_UPDATE_CHARACTER: debounce(({ dispatch }) => {
+    dispatch('REMOTE_UPDATE_CHARACTER')
   }, 10000
   ),
-  async REMOTE_UPDATE_CHARACTER ({ dispatch, commit, rootGetters, getters }, id) {
-    console.log('updating on aws')
+  async REMOTE_UPDATE_CHARACTER ({ dispatch, commit, rootGetters, getters }) {
     try {
-      const character = getters.characters[id]
       commit('user/SET_SYNC_STATUS', 'syncing', { root: true })
-      await dispatch('api/MUTATE', { mutation: 'updateCharacter', input: { id, userId: rootGetters['auth/sub'], data: jsonpack.pack(character) } }, { root: true })
+      await dispatch('api/MUTATE', {
+        mutation: 'updateCharacter',
+        input: {
+          id: getters.id,
+          userId: rootGetters['auth/sub'],
+          data: jsonpack.pack(getters.character)
+        }
+      }, { root: true })
       commit('SET_SYNC_STATUS', 'saved', { root: true })
     } catch (e) {
       commit('SET_SYNC_STATUS', 'error', { root: true })

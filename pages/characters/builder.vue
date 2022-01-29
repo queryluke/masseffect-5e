@@ -8,7 +8,7 @@
             <me-cb-species-select />
           </v-tab-item>
           <v-tab-item>
-            <me-character-builder-class />
+            <me-cb-classes-select />
           </v-tab-item>
           <v-tab-item>
             <me-character-builder-ability-scores />

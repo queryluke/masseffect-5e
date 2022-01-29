@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-subtitle">
+    <div v-if="!noLabel" class="text-subtitle">
       {{ expertise ? 'Skill Expertise' : 'Skill Proficiency' }}
     </div>
     <me-cb-choices-v-select
@@ -28,6 +28,10 @@ export default {
       required: true
     },
     expertise: {
+      type: Boolean,
+      default: false
+    },
+    noLabel: {
       type: Boolean,
       default: false
     }

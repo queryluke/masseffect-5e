@@ -7,6 +7,11 @@
             {{ aspect.name }}
           </slot>
         </me-tpg>
+        <div class="text-caption">
+          <slot name="subtitle">
+            {{ aspect.subtitle }}
+          </slot>
+        </div>
       </div>
       <template v-if="!allSelectionsMade" #actions>
         <v-icon>
@@ -40,11 +45,22 @@ export default {
   props: {
     aspect: {
       type: Object,
-      default: () => {}
+      default: () => {
+        return {}
+      }
     },
     rootPath: {
       type: String,
       default: 'wastebin'
+    },
+    asmOverride: {
+      type: Object,
+      default: () => {
+        return {
+          has: false,
+          value: false
+        }
+      }
     }
   },
   computed: {
@@ -65,6 +81,9 @@ export default {
       return this.selected.filter(i => i.path.startsWith(this.path)).reduce((acc, curr) => acc.concat(curr.value), [])
     },
     allSelectionsMade () {
+      if (this.asmOverride.has) {
+        return this.asmOverride.value
+      }
       if (this.options.length === 0) {
         return true
       }

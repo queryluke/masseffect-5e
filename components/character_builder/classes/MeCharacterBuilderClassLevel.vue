@@ -1,14 +1,5 @@
 <template>
-  <div>
-    <div class="text-h6">
-      Number of Levels in this Class
-    </div>
-    <v-select
-      v-model="klassLevel"
-      class="ms-2 flex"
-      :items="levelArray"
-    />
-  </div>
+  <div />
 </template>
 
 <script>

@@ -41,7 +41,7 @@ export const getters = {
     return null
   },
   traits: (state, getters) => {
-    return getters.traitList.filter(i => i.species.includes(getters.species.id) || i.species.includes(getters.species.parentId))
+    return getters.traitList.filter(i => i.species.includes(getters.species?.id) || i.species.includes(getters.species?.parentId))
   },
   variant: (state, getters) => {
     return getters.species.type === 'variant'
@@ -66,6 +66,9 @@ export const getters = {
     return getters.speciesMechanics.filter(i => i.type === 'asi-choice')
   },
   mechanics: (state, getters) => {
+    if (!getters.species) {
+      return []
+    }
     const speciesM = getters.speciesMechanics
     const traitsM = getters.traits.map((i) => {
       return {

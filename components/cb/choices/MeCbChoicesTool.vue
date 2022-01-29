@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-subtitle">
+    <div v-if="!noLabel" class="text-subtitle">
       Tool Proficiency
     </div>
     <me-cb-choices-v-select
@@ -26,6 +26,10 @@ export default {
     currentValue: {
       type: Array,
       required: true
+    },
+    noLabel: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {

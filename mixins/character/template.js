@@ -4,10 +4,7 @@ export const characterTemplate = {
   image: null,
   experiencePoints: 0,
   species: null,
-  subspecies: null,
   classes: [],
-  // TODO: this should be in the selections
-  fightingStyles: [],
   abilityScores: {
     genMethod: {
       text: 'Standard Array',
@@ -72,13 +69,9 @@ export const characterTemplate = {
     appearance: '',
     backstory: ''
   },
-  credits: 0,
-  omnigel: 0,
-  medigel: 0,
   equipment: [],
   powers: [],
-  selections: [],
-  selected: [], // new selection bag
+  selected: [],
   currentStats: {
     hitPointsLost: 0,
     tempHp: {
@@ -107,7 +100,10 @@ export const characterTemplate = {
     indoctrination: 0,
     resources: {},
     paragon: 0,
-    renegade: 0
+    renegade: 0,
+    credits: 0,
+    omnigel: 0,
+    medigel: 0
   },
   settings: {
     acOverride: null,

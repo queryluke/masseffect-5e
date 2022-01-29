@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-subtitle">
+    <div v-if="!noLabel" class="text-subtitle">
       Weapon Proficiency
     </div>
     <me-cb-choices-v-select
@@ -26,6 +26,10 @@ export default {
     currentValue: {
       type: Array,
       required: true
+    },
+    noLabel: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -37,7 +41,7 @@ export default {
       return `Choose ${this.$tc(`string_numbers[${this.selections}]`)}...`
     },
     profOptions () {
-      return this.$i18n.messages.en.weapon_types.map((i) => {
+      return Object.keys(this.$i18n.messages.en.weapon_types).map((i) => {
         return {
           text: this.$tc(`weapon_types.${i}`, 2),
           value: i

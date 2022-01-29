@@ -31,7 +31,7 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
-const { mapGetters } = createNamespacedHelpers('character/mechanics')
+const { mapGetters } = createNamespacedHelpers('character/selections')
 export default {
   props: {
     id: {
@@ -52,7 +52,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['mechanics']),
+    ...mapGetters(['selected']),
     type () {
       return this.mechanic.model
     },
@@ -93,7 +93,13 @@ export default {
       return this.hideSelectedModels ? [] : this.models.filter(i => this.selectedModelIds.includes(i.id))
     },
     selectedModelIdsFromAnyWhere () {
-      return this.mechanics.filter(i => i.type === this.type && !this.selectedModelIds.includes(i.value)).map(i => i.value)
+      const matches = []
+      for (let i = 0; i < this.selected.length; i++) {
+        if (this.selected[i]?.value[0]?.type === this.type) {
+          matches.push(...this.selected[i].value.map(j => j.value))
+        }
+      }
+      return matches.filter(i => !this.selectedModelIds.includes(i))
     },
     appended () {
       const appended = {

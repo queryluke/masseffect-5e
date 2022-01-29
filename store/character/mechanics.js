@@ -29,7 +29,7 @@ export const getters = {
             if (type === 'model') {
               hydratedMechanics.push(...hydrateSelection(type, selection, path))
             } else {
-              hydratedMechanics.push(...selection)
+              hydratedMechanics.push(...selection.value)
             }
           }
         } else {
@@ -41,7 +41,8 @@ export const getters = {
     const finalMechanics = []
     const mechanics = [
       // ADD ADDITIONAL MECHANICS HERE
-      ...rootGetters['character/species/mechanics']
+      ...rootGetters['character/species/mechanics'],
+      ...rootGetters['character/klasses/klassesMechanics']
     ]
     for (const item of mechanics) {
       finalMechanics.push(...hydrate(item))

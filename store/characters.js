@@ -17,7 +17,7 @@ export const mutations = {
 }
 
 export const actions = {
-  async FETCH_CHARACTERS ({ dispatch, getters, commit, rootGetters }) {
+  async FETCH_CHARACTERS ({ dispatch, getters, commit, rootGetters, rootState }) {
     // if not authenticated, do nothing
     if (!rootGetters['auth/isAuthenticated']) {
       return
@@ -25,15 +25,13 @@ export const actions = {
     // get the current local characters and attempt to store on AWS, falling back to local as needed
     const unSynced = []
     for (const character of getters.characters) {
-      if (!character.meta || character.meta.remote === false) {
-        const clone = cloneDeep(character)
-        clone.meta = { ...clone.meta, remote: true }
-        try {
-          await dispatch('api/MUTATE', { mutation: 'createCharacter', input: { userId: rootGetters['auth/sub'], data: jsonpack.pack(clone) } }, { root: true })
-        } catch (e) {
-          clone.meta = { ...clone.meta, remote: false }
-          unSynced.push(clone)
-        }
+      const clone = cloneDeep(character)
+      clone.meta.remote = true
+      try {
+        await dispatch('api/MUTATE', { mutation: 'createCharacter', input: { userId: rootGetters['auth/sub'], data: jsonpack.pack(clone) } }, { root: true })
+      } catch (e) {
+        clone.meta.remote = false
+        unSynced.push(clone)
       }
     }
     // get the aws characters
@@ -42,16 +40,22 @@ export const actions = {
     do {
       const response = await dispatch('api/QUERY', { query: 'characterByUser', variables: { userId: rootGetters['auth/sub'], limit: 100, nextToken } }, { root: true })
       nextToken = response.nextToken
-      remoteChars.push(...response.items.map(i => jsonpack.unpack(i.data)))
+      remoteChars.push(...response.items.map((i) => {
+        const data = jsonpack.unpack(i.data)
+        data.id = i.id
+        return data
+      }))
     } while (nextToken !== null)
     commit('SET_CHARACTERS', [...unSynced, ...remoteChars])
   },
-  async NEW_CHARACTER ({ dispatch }) {
-    return await dispatch('CREATE_CHARACTER', cloneDeep(characterTemplate))
+  async NEW_CHARACTER ({ dispatch, rootState }) {
+    const character = cloneDeep(characterTemplate)
+    character.meta.version = rootState.cbVersion
+    return await dispatch('CREATE_CHARACTER', character)
   },
-  async CREATE_CHARACTER ({ dispatch, commit, rootGetters, getters }, c) {
+  async CREATE_CHARACTER ({ dispatch, commit, rootGetters, getters, rootState }, c) {
     let character = c
-    if (character.meta?.version !== characterTemplate.meta.version) {
+    if (character.meta?.version !== rootState.cbVersion) {
       character = dispatch('character/migrator/migrate', character)
     }
     if (rootGetters['auth/isAuthenticated']) {
@@ -59,7 +63,7 @@ export const actions = {
         character.meta.remote = true
         delete character.id
         const response = await dispatch('api/MUTATE', { mutation: 'createCharacter', input: { userId: rootGetters['auth/sub'], data: jsonpack.pack(character) } }, { root: true })
-        return response.id
+        character.id = response.id
       } catch (e) {
         character.meta.remote = false
         console.log(e)
