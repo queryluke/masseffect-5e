@@ -1,7 +1,14 @@
 <template>
-  <div @click="conditionDialog = true ">
-    <div class="text-overline">
-      Conditions
+  <div>
+    <div class="d-flex justify-space-between align-center">
+      <div class="text-overline">
+        Conditions
+      </div>
+      <v-btn v-if="!viewOnly" icon flat x-small @click="conditionDialog = true">
+        <v-icon size="16">
+          mdi-pencil
+        </v-icon>
+      </v-btn>
     </div>
     <me-cs-defense-item :item="immunities" class="my-1" />
     <div v-if="hasActiveConditions">
@@ -134,6 +141,9 @@ export default {
       set (value) {
         this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.indoctrination', value })
       }
+    },
+    viewOnly () {
+      return this.$store.state.character.viewOnly
     }
   },
   methods: {

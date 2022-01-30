@@ -58,6 +58,31 @@ export const getters = {
   profBonus: (state, getters, rootState, rootGetters) => {
     return [0, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6][rootGetters['character/klasses/level']]
   },
+  speeds: (state, getters, rootState, rootGetters) => {
+    const speeds = {
+      walk: null,
+      swim: null,
+      fly: null,
+      climb: null,
+      burrow: null
+    }
+    for (const speed of Object.keys(speeds)) {
+      if (getters.character.settings.speeds[speed]) {
+        speeds[speed] = {
+          type: 'speed',
+          speed,
+          distance: getters.character.settings.speeds[speed],
+          note: 'overridden'
+        }
+        continue
+      }
+      const mSpeeds = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'speed' && i.speed === speed)
+      if (mSpeeds.length) {
+        speeds[speed] = mSpeeds.sort((a, b) => b.distance - a.distance)[0]
+      }
+    }
+    return speeds
+  },
   backgroundsList: (state, getters, rootState, rootGetters) => {
     const official = rootGetters.getData('backgrounds')
     const homebrew = [state.customBackground]

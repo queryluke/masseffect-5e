@@ -3,9 +3,7 @@
     <v-row>
       <v-col cols="4">
         <me-cs-main-menu />
-        <!--
         <me-cs-blocks-apsi />
-        -->
         <me-cs-health />
       </v-col>
       <!--

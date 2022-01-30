@@ -231,8 +231,10 @@ export const actions = {
     // TODO: currentStats featuresTimesUsed to resources
     // barrier is done
 
+    // TODO: equipment
+    // Do not store base model, hydrate on load
+
     delete character.selections
-    // TODO: background
     character.currentStats = {
       ...character.currentStats,
       resources: {},

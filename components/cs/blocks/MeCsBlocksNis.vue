@@ -26,7 +26,7 @@
               </v-icon>
             </template>
             <v-list dense>
-              <v-list-item :to="`/characters/builder?id=${id}`" nuxt>
+              <v-list-item v-if="!viewOnly" :to="`/characters/builder?id=${id}`" nuxt>
                 <v-list-item-icon>
                   <v-icon>
                     mdi-pencil
@@ -72,7 +72,10 @@ import { createNamespacedHelpers } from 'vuex'
 const { mapGetters } = createNamespacedHelpers('character')
 export default {
   computed: {
-    ...mapGetters({ character: 'character', level: 'klasses/level', image: 'image', identString: 'identString', id: 'id' })
+    ...mapGetters({ character: 'character', level: 'klasses/level', image: 'image', identString: 'identString', id: 'id' }),
+    viewOnly () {
+      return this.$store.state.character.viewOnly
+    }
   },
   methods: {
     saveFile () {

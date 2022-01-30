@@ -6,7 +6,7 @@
           <small>AC</small>
         </div>
         <div class="text-h6">
-          {{ csAc }}
+          {{ ac }}
         </div>
       </v-card>
     </v-col>
@@ -29,10 +29,10 @@
         @click="addlSpeedDialog = true"
       >
         <div class="text-caption">
-          <small>Speed{{ allCsSpeeds.length > 1 ? '*' : '' }}</small>
+          <small>Speed{{ additionalSpeeds ? '*' : '' }}</small>
         </div>
         <div class="text-h6">
-          <me-distance :length="csSpeed.distance" abbr />
+          <me-distance :length="speeds.walk.distance || 0" abbr />
         </div>
       </v-card>
     </v-col>
@@ -43,35 +43,33 @@
         </div>
         <div class="text-h6 d-flex justify-center align-center">
           <me-cs-ad-icon
-            v-if="(csInitiativeAdvantage && !csInitiativeDisadvantage) || (!csInitiativeAdvantage && csInitiativeDisadvantage)"
-            :type="csInitiativeAdvantage ? 'a' : 'd'"
+            v-if="(initiativeAd && !initiativeDis) || (!initiativeAd && initiativeDis)"
+            :type="initiativeAd ? 'a' : 'd'"
           />
           <span class="ml-1">
-            {{ csInitiativeBonus }}
+            {{ initiativeBonus > 0 ? '+' : '' }}{{ initiativeBonus }}
           </span>
         </div>
       </v-card>
     </v-col>
     <me-standard-dialog :shown="addlSpeedDialog" title="Speeds" @close="addlSpeedDialog = false">
-      <v-list dense two-line>
-        <v-list-item v-for="speed of allCsSpeeds" :key="`speed-${speed.speed}`">
-          <v-list-item-content>
-            <v-list-item-title>
-              {{ $t(`speeds.${speed.speed}.title`) }} <me-distance :length="speed.distance" abbr />
-            </v-list-item-title>
-            <v-list-item-subtitle>
-              {{ speed.note }}
-            </v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
+      <template v-for="(value, speed) of speeds">
+        <v-card v-if="value" :key="`speed-${speed}`" outlined flat class="px-3 pa-2 my-1">
+          <div class="text-subtitle-1">
+            <strong>{{ $t(`speeds.${speed}.title`) }}</strong> <me-distance :length="value.distance" abbr />
+          </div>
+          <div v-if="value.note" class="text-caption">
+            {{ value.note }}
+          </div>
+        </v-card>
+      </template>
     </me-standard-dialog>
   </v-row>
 </template>
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
-const { mapGetters } = createNamespacedHelpers('character/hp')
+const { mapGetters } = createNamespacedHelpers('character')
 export default {
   name: 'MeCsBlocksApsi',
   data () {
@@ -80,7 +78,28 @@ export default {
     }
   },
   computed: {
-    ...mapGetters([])
+    ...mapGetters({
+      ac: 'ac/ac',
+      profBonus: 'profBonus',
+      speeds: 'speeds',
+      mechanics: 'mechanics/mechanics',
+      dexMod: 'abilities/dexMod'
+    }),
+    additionalSpeeds () {
+      return Object.values(this.speeds).length > 1
+    },
+    initiativeBonus () {
+      const bonus = this.mechanics
+        .filter(i => i.type === 'initiative' && typeof i.effect === 'object')
+        .reduce((acc, curr) => acc + this.$store.getters['character/mechanics/mcBonus'](curr.effect), 0)
+      return this.dexMod + bonus
+    },
+    initiativeAd () {
+      return this.mechanics.filter(i => i.type === 'initiative' && i.effect === 'advantage').length > 0
+    },
+    initiativeDis () {
+      return this.mechanics.filter(i => i.type === 'initiative' && i.effect === 'disadvantage').length > 0
+    }
   }
 }
 </script>

@@ -8,6 +8,7 @@
       thumb-label="always"
       :max="barrier.ticks.max"
       :color="csBgColor('barrier')"
+      :disabled="viewOnly"
     >
       <template #append>
         <v-icon class="d-block" :color="csBgColor('barrier')" @click="setTicks(barrier.ticks.used - 1)">
@@ -21,7 +22,7 @@
       </template>
     </v-slider>
     <div>
-      <v-btn x-small :color="csBgColor('barrier')" :disabled="remainingUses === 0" @click="useBarrier">
+      <v-btn x-small :color="csBgColor('barrier')" :disabled="viewOnly || remainingUses === 0" @click="useBarrier">
         Barrier <span class="text-lowercase pl-1">({{ barrierDie }})</span>
       </v-btn>
       <div class="text-caption text-center">
@@ -67,10 +68,16 @@ export default {
     },
     remainingUses () {
       return this.barrier.uses.max - this.barrier.uses.used
+    },
+    viewOnly () {
+      return this.$store.state.character.viewOnly
     }
   },
   methods: {
     setTicks (value) {
+      if (this.viewOnly) {
+        return
+      }
       if (value < 0 || value > this.barrier.ticks.max) {
         return
       }
