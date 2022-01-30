@@ -52,6 +52,7 @@ export default {
   },
   methods: {
     upsert (value) {
+      console.log('upset', value, this.id)
       this.$store.dispatch('character/selections/UPSERT_SELECTION', { path: this.id, value })
     }
   }

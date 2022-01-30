@@ -96,7 +96,7 @@
               label="Choose a background"
             />
             <div v-if="selectedBackground">
-              <me-cb-aspect-card root-path="background" :aspect="{ ...background, html: null }" />
+              <me-cb-aspect-card v-if="background.mechanics.some(i => i.options)" root-path="background" :aspect="{ ...background, html: null }" />
               <div class="mt-5">
                 <me-html :content="background.html" />
               </div>

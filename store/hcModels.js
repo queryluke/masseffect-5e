@@ -115,6 +115,86 @@ export const state = () => ({
       id: 'weaponsmith',
       name: 'Weaponsmith',
       mechanics: [{ type: 'tool', value: 'weaponsmiths-workbench' }]
+    },
+    {
+      id: 'assassin',
+      name: 'Assassin',
+      mechanics: [{ type: 'skill', value: 'acrobatics' }, { type: 'skill', value: 'stealth' }]
+    },
+    {
+      id: 'blackmailer',
+      name: 'Blackmailer',
+      mechanics: [{ type: 'skill', value: 'deception' }, { type: 'skill', value: 'intimidation' }]
+    },
+    {
+      id: 'fence',
+      name: 'Fence',
+      mechanics: [{ type: 'skill', value: 'deception' }, { type: 'skill', value: 'persuasion' }]
+    },
+    {
+      id: 'gambler',
+      name: 'Gambler',
+      mechanics: [{ type: 'skill', value: 'deception' }, { type: 'skill', value: 'sleight-of-hand' }]
+    },
+    {
+      id: 'gang-member',
+      name: 'Gang Member',
+      mechanics: [{ type: 'skill', value: 'intimidation' }, { type: 'skill', value: 'stealth' }]
+    },
+    {
+      id: 'pickpocket',
+      name: 'Pickpocket',
+      mechanics: [{ type: 'skill', value: 'stealth' }, { type: 'skill', value: 'sleight-of-hand' }]
+    },
+    {
+      id: 'smuggler',
+      name: 'Smuggler',
+      mechanics: [{ type: 'skill', value: 'sleight-of-hand' }, { type: 'skill', value: 'vehicle-handling' }]
+    },
+    {
+      id: 'thief',
+      name: 'Thief',
+      mechanics: [{ type: 'skill', value: 'perception' }, { type: 'skill', value: 'stealth' }]
+    },
+    {
+      id: 'chemistry',
+      name: 'Chemistry',
+      mechanics: [{ type: 'tool-choice', limit: ['chemists-supplies', 'brewers-supplies'], options: true }]
+    },
+    {
+      id: 'astronomy',
+      name: 'Astronomy',
+      mechanics: [{ type: 'tool', value: 'starship-system-navigation' }]
+    },
+    {
+      id: 'engineering',
+      name: 'Engineering',
+      mechanics: [{ type: 'tool', value: 'tinkers-tools' }]
+    },
+    {
+      id: 'physics',
+      name: 'Physics',
+      mechanics: [{ type: 'tool', value: 'starship-system-drive' }]
+    },
+    {
+      id: 'computer-science',
+      name: 'Computer Science',
+      mechanics: [{ type: 'tool', value: 'starship-system-ews' }]
+    },
+    {
+      id: 'biology',
+      name: 'Biology',
+      mechanics: [{ type: 'tool', value: 'medical-kit' }]
+    },
+    {
+      id: 'philosophy',
+      name: 'Philosophy',
+      mechanics: [{ type: 'tool-choice', limit: ['musical-instrument', 'gaming-set'], options: true }]
+    },
+    {
+      id: 'general-studies',
+      name: 'General Studies',
+      mechanics: [{ type: 'tool-choice', limit: ['brewers-supplies', 'hacking-tools', 'starship-system-ssc'], options: true }]
     }
   ]
 })

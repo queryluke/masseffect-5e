@@ -146,6 +146,88 @@ export const actions = {
       const p = character.selections.find(i => i.source === `custom-${prof}`)
       character.settings[prof] = p?.value || []
     }
+
+    // backgrounds
+    function processSubgrounds (basePath, stuff, limit) {
+      const resultedSelected = []
+      for (const bgs of stuff) {
+        // eslint-disable-next-line no-unused-vars
+        const [root, id, oldSubground, subground, swsProfType] = bgs.source.split('-')
+        if (oldSubground && !subground) {
+          resultedSelected.push({
+            path: `${basePath}/subgrounds`,
+            value: [{
+              value: bgs.value,
+              type: 'subgrounds',
+              limit
+            }]
+          })
+        }
+        if (subground && !swsProfType) {
+          if (['skill', 'tool'].includes(bgs.subType) && bgs.value.length) {
+            character.selected.push({
+              path: `${basePath}/subgrounds/${subground.replace('_', '-')}/${swsProfType}`,
+              value: bgs.value.map((i) => {
+                return {
+                  type: swsProfType,
+                  value: i
+                }
+              })
+            })
+          }
+        }
+        if (swsProfType && bgs.value.length) {
+          character.selected.push({
+            path: `${basePath}/subgrounds/${subground.replace('_', '-')}/${swsProfType}`,
+            value: bgs.value.map((i) => {
+              return {
+                type: swsProfType,
+                value: i
+              }
+            })
+          })
+        }
+      }
+      return resultedSelected
+    }
+    try {
+      if (character.background) {
+        const selectedBgStuff = character.selections.find(i => i.source.startsWith(`background-${character.background}`))
+        const basePath = `background/${character.background}`
+        let limit
+        switch (character.background) {
+          case 'artisan':
+            limit = '[{"attr":"id","value":["armorsmith","brewer","chemist","cook","mechanic","painter","tailor","weaponsmith"]}]'
+            character.selected.push(...processSubgrounds(basePath, selectedBgStuff, limit))
+            break
+          case 'criminal':
+            limit = '[{"attr":"id","value":["assassin","blackmailer","fence","gambler","gang-member","pickpocket","smuggler","thief"]}]'
+            character.selected.push(...processSubgrounds(basePath, selectedBgStuff, limit))
+            break
+          case 'scholar':
+            limit = '[{"attr":"id","value":["chemistry","astronomy","engineering","physics","computer-science","biology","philosophy","general-studies"]}]'
+            character.selected.push(...processSubgrounds(basePath, selectedBgStuff, limit))
+            break
+          default:
+            for (const stuff of selectedBgStuff) {
+              if (stuff.value.length) {
+                character.selected.push({
+                  path: `${basePath}/${stuff.subType}`,
+                  value: stuff.value.map((i) => {
+                    return { type: stuff.subType, value: i }
+                  })
+                })
+              }
+            }
+            break
+        }
+      }
+    } catch (e) {
+      console.log(e.message)
+    }
+
+    // TODO: innate biotics
+
     delete character.selections
     // TODO: background
     character.currentStats = { ...character.currentStats, resources: {}, paragon: 0, renegade: 0 }
