@@ -14,7 +14,7 @@
             <me-cb-abilities-select />
           </v-tab-item>
           <v-tab-item>
-            <me-cb-description-select />
+            <me-cb-description />
           </v-tab-item>
         </v-tabs-items>
       </v-card-text>

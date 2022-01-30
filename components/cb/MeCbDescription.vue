@@ -82,9 +82,26 @@
             </v-expansion-panel-content>
           </v-expansion-panel>
 
-          <!-- Background
-          <me-character-builder-character-background />
-          --->
+          <!--  Background -->
+          <me-cb-aspect-card :asm-override="{ has: true, value: !!background }" class="mb-3">
+            <template #title>
+              Background
+            </template>
+            <v-select
+              v-model="selectedBackground"
+              :items="backgroundsList"
+              item-value="id"
+              item-text="name"
+              clearable
+              label="Choose a background"
+            />
+            <div v-if="selectedBackground">
+              <me-cb-aspect-card root-path="background" :aspect="{ ...background, html: null }" />
+              <div class="mt-5">
+                <me-html :content="background.html" />
+              </div>
+            </div>
+          </me-cb-aspect-card>
 
           <!-- Back story -->
           <v-expansion-panel class="mb-3">
@@ -106,7 +123,7 @@ import { createNamespacedHelpers } from 'vuex'
 const { mapGetters } = createNamespacedHelpers('character')
 
 export default {
-  name: 'MeCbDescriptionSelect',
+  name: 'MeCbDescription',
   data () {
     return {
       alignmentOptions: [
@@ -140,13 +157,22 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['character']),
+    ...mapGetters(['character', 'background', 'backgroundsList']),
     alignment: {
       get () {
         return this.character.characteristics.alignment
       },
       set (value) {
         this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'characteristics.alignment', value })
+      }
+    },
+    selectedBackground: {
+      get () {
+        return this.background?.id
+      },
+      set (value) {
+        this.$store.dispatch('character/selections/BULK_DELETE', 'background')
+        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'background', value })
       }
     },
     physicalCharText () {

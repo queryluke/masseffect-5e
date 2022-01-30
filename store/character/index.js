@@ -1,6 +1,7 @@
 import cloneDeep from 'lodash/cloneDeep'
 import debounce from 'lodash/debounce'
 import jsonpack from 'jsonpack/main'
+import identString from '~/mixins/indentString'
 
 function updateCharacter ({ oldValue, attr, value }) {
   const character = cloneDeep(oldValue)
@@ -24,7 +25,13 @@ function updateCharacter ({ oldValue, attr, value }) {
 
 export const state = () => ({
   character: null,
-  id: null
+  id: null,
+  customBackground: {
+    id: 'custom-background',
+    name: 'Custom Background',
+    mechanics: [],
+    html: '<p>Use the character sheet settings to add any proficiencies</p>'
+  }
 })
 
 export const getters = {
@@ -33,7 +40,33 @@ export const getters = {
     return state.character
   },
   id: state => state.id,
-  image: (state, getters) => getters.character.image || (getters.character.species ? getters['species/species'].bodyImg : false) || require('~/assets/images/me5e_logo_450w.png')
+  image: (state, getters) => getters.character.image || (getters.character.species ? getters['species/species'].bodyImg : false) || require('~/assets/images/me5e_logo_450w.png'),
+  identString: (state, getters, rootState, rootGetters) => {
+    const classes = rootGetters['character/klasses/klassesList']
+    const subclasses = rootGetters['character/klasses/subklassesList']
+    const species = rootGetters['character/species/speciesList']
+    return identString(this.character, classes, species, subclasses).replace(/(\{\{ ordinal_levels-\d\d? }})/, (sub) => {
+      const level = sub.split(' ')[1].split('-')[1]
+      return this.$i18n.t(`ordinal_numbers[${level}]`)
+    })
+  },
+  backgroundsList: (state, getters, rootState, rootGetters) => {
+    const official = rootGetters.getData('backgrounds')
+    const homebrew = [state.customBackground]
+    return [...official, ...homebrew]
+  },
+  background: (state, getters) => {
+    return getters.backgroundsList.find(i => i.id === getters.character.background)
+  },
+  backgroundMechanics: (state, getters) => {
+    if (!getters.background) {
+      return []
+    }
+    return [{
+      path: `background/${getters.background.id}`,
+      mechanics: getters.background.mechanics
+    }]
+  }
 }
 
 export const mutations = {

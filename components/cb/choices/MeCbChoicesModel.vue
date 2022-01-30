@@ -8,6 +8,7 @@
       :acquired="alreadyAcquired"
       @change="upsert"
     />
+    {{ id }}
     <div v-if="!hideSelectedModels">
       <template v-for="mod of selectedModelsData">
         <div :key="mod.id">
@@ -18,9 +19,10 @@
         </div>
         <v-card v-for="(mechanic, index) of (mod.mechanics || []).filter(i => i.options)" :key="index" outlined class="mb-2">
           <div class="pa-2">
+            {{ `${id}/${mod.id}` }}
             <me-cb-aspect-selectable
               :mechanic="mechanic"
-              :path="id"
+              :path="`${id}/${mod.id}`"
             />
           </div>
         </v-card>

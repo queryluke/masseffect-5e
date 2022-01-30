@@ -65,11 +65,7 @@ export default {
     },
     items () {
       if (this.mechanic.limit) {
-        return this.profOptions.filter((i) => {
-          return this.type === 'tool'
-            ? this.mechanic.limit.includes(i.value) || this.mechanic.limit.includes(i.group)
-            : this.mechanic.limit.includes(i.value)
-        })
+        return this.profOptions.filter(i => this.mechanic.limit.includes(i.value) || this.mechanic.limit.includes(i.group))
       } else {
         return this.profOptions
       }

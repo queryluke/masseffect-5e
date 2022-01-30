@@ -74,11 +74,54 @@ export const state = () => ({
         'made with a sniper rifle.',
       mechanics: []
     }
+  ],
+  subgrounds: [
+    {
+      id: 'armorsmith',
+      name: 'Armorsmith',
+      mechanics: [{ type: 'tool', value: 'armorsmiths-workbench' }]
+    },
+    {
+      id: 'brewer',
+      name: 'Brewer',
+      mechanics: [{ type: 'tool', value: 'brewers-supplies' }]
+    },
+    {
+      id: 'chemist',
+      name: 'Chemist',
+      mechanics: [{ type: 'tool', value: 'chemists-supplies' }]
+    },
+    {
+      id: 'cook',
+      name: 'Cook',
+      mechanics: [{ type: 'tool', value: 'cooks-utensils' }]
+    },
+    {
+      id: 'mechanic',
+      name: 'Mechanic',
+      mechanics: [{ type: 'tool-choice', limit: ['tinkers-tools', 'starship'], options: true }]
+    },
+    {
+      id: 'painter',
+      name: 'Painter',
+      mechanics: [{ type: 'tool', value: 'painters-supplies' }]
+    },
+    {
+      id: 'tailor',
+      name: 'Tailor',
+      mechanics: [{ type: 'tool', value: 'tailors-tools' }]
+    },
+    {
+      id: 'weaponsmith',
+      name: 'Weaponsmith',
+      mechanics: [{ type: 'tool', value: 'weaponsmiths-workbench' }]
+    }
   ]
 })
 
 export const getters = {
-  fightingStyles: state => state.fightingStyles
+  fightingStyles: state => state.fightingStyles,
+  subgrounds: state => state.subgrounds
 }
 
 export const mutations = {

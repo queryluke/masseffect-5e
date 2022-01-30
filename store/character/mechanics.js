@@ -9,25 +9,35 @@ export const getters = {
       // console.log(model, selection, path)
       const selectedModelIds = selection.value.map(i => i.value)
       // TODO: This is where we can do appends, like power resources
+      // console.log(model)
       const selectedModels = rootGetters.getData(model).filter(i => selectedModelIds.includes(i.id))
-      return selectedModels.map(i => hydrate({ mechanics: i.mechanics, path: `${path}/${i.id}` }))
+      // console.log(selectedModels)
+      return selectedModels.map(i => hydrate({ mechanics: i.mechanics, path: `${path}/${model}/${i.id}` }))
+        .reduce((acc, curr) => acc.concat(curr), [])
     }
 
     function hydrate ({ mechanics, path }) {
-      // console.log(modelData, path)
       const hydratedMechanics = []
+      // console.log('hydrate', path, mechanics)
+      if (!mechanics) {
+        return hydratedMechanics
+      }
       for (const mechanic of mechanics) {
         if (mechanic.options) {
           // replace('-choice') might be unnecessary
           const type = mechanic.type.replace('-choice', '')
           const suffix = type === 'model' ? mechanic.model : type
+          // console.log('path', `${path}/${suffix}`)
           const sIndex = selected.findIndex(i => i.path === `${path}/${suffix}`)
           if (sIndex > -1) {
             const selection = selected[sIndex]
+            // console.log('selection', selection)
+            // console.log(type)
             // do we need to remove the selected so we have a way to delete "bad" selections
             selected.splice(sIndex, 1)
             if (type === 'model') {
-              hydratedMechanics.push(...hydrateSelection(type, selection, path))
+              const hydrated = hydrateSelection(suffix, selection, path)
+              hydratedMechanics.push(...hydrated)
             } else {
               hydratedMechanics.push(...selection.value)
             }
@@ -42,7 +52,8 @@ export const getters = {
     const mechanics = [
       // ADD ADDITIONAL MECHANICS HERE
       ...rootGetters['character/species/mechanics'],
-      ...rootGetters['character/klasses/klassesMechanics']
+      ...rootGetters['character/klasses/klassesMechanics'],
+      ...rootGetters['character/backgroundMechanics']
     ]
     for (const item of mechanics) {
       finalMechanics.push(...hydrate(item))

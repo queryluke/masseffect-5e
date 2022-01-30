@@ -43,7 +43,7 @@ export const getters = {
   isLocaleSet: state => typeof state.data[state.currentLocale] !== 'undefined',
   // TODO: interpolate non-translated data
   getData: (state, getters, rootState) => (endpoint) => {
-    const hcModels = ['fighting-styles']
+    const hcModels = ['fighting-styles', 'subgrounds']
     if (hcModels.includes(endpoint)) {
       return rootState.hcModels[endpoint]
     }
