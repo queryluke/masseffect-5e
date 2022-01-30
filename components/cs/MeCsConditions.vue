@@ -9,7 +9,7 @@
         <me-condition id="exhaustion" label="Exhaustion" />: {{ csExhaustion }}
       </div>
       <div v-if="csIndoctrination">
-        <me-condition id="indoctrination" label="Indoctrination" />: {{ csIndoctrination }}
+        <me-condition id="indoctrinated" label="Indoctrination" />: {{ csIndoctrination }}
       </div>
       <div v-for="cond in character.currentStats.conditions" :key="`active-condition-${cond}`">
         <me-condition :id="cond" :label="conditionsTextMap[cond]" />
@@ -34,11 +34,12 @@
           <v-row>
             <v-col cols="6">
               <v-slider
-                v-model="csExhaustion"
+                :value="csExhaustion"
                 max="6"
                 thumb-label="always"
                 thumb-size="19"
                 messages="{}"
+                @end="csExhaustion = $event"
               >
                 <template #message>
                   <div class="mt-n3 text-body-2">
@@ -49,12 +50,13 @@
             </v-col>
             <v-col cols="6">
               <v-slider
-                v-model="csIndoctrination"
+                :value="csIndoctrination"
                 max="6"
                 thumb-label="always"
                 thumb-size="19"
                 messages="{}"
                 class="mb-0"
+                @end="csIndoctrination = $event"
               >
                 <template #message>
                   <div class="mt-n3 text-body-2">
@@ -92,18 +94,24 @@
 </template>
 
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
-
+import { createNamespacedHelpers } from 'vuex'
+const { mapGetters } = createNamespacedHelpers('character')
 export default {
-  mixins: [CharacterBuilderHelpers],
   data () {
     return {
       conditionDialog: false
     }
   },
   computed: {
+    ...mapGetters({ character: 'character', defenses: 'defenses/defenses', conditionsTextMap: 'defenses/conditionsTextMap' }),
+    conditions () {
+      return this.$store.getters.getData('conditions')
+    },
     immunities () {
-      return this.getIrvObject('condition-immunity')
+      return this.defenses['condition-immunity']
+    },
+    immunityIds () {
+      return this.immunities.text.map(i => i.id)
     },
     hasActiveConditions () {
       return this.character.currentStats.conditions.length > 0 || this.csExhaustion > 0 || this.csIndoctrination > 0
@@ -116,7 +124,7 @@ export default {
         return this.character.currentStats.exhaustion
       },
       set (value) {
-        this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'currentStats.exhaustion', value })
+        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.exhaustion', value })
       }
     },
     csIndoctrination: {
@@ -124,7 +132,7 @@ export default {
         return this.character.currentStats.indoctrination
       },
       set (value) {
-        this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'currentStats.indoctrination', value })
+        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.indoctrination', value })
       }
     }
   },
@@ -133,7 +141,7 @@ export default {
       return this.character.currentStats.conditions.includes(id) ? 1 : 0
     },
     hasImmunity (id) {
-      return this.immunities.values.includes(id)
+      return this.immunityIds.includes(id)
     },
     toggleCondition (id, toggle) {
       const value = [...this.character.currentStats.conditions]
@@ -144,7 +152,7 @@ export default {
       if (existingIndex === -1 && toggle) {
         value.push(id)
       }
-      this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'currentStats.conditions', value })
+      this.$store.dispatch('character/UPDATE_CHARACTER', { cid: this.cid, attr: 'currentStats.conditions', value })
     }
   }
 }

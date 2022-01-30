@@ -31,7 +31,8 @@ export const state = () => ({
     name: 'Custom Background',
     mechanics: [],
     html: '<p>Use the character sheet settings to add any proficiencies</p>'
-  }
+  },
+  viewOnly: false
 })
 
 export const getters = {
@@ -39,16 +40,23 @@ export const getters = {
     console.log('getting')
     return state.character
   },
+  characterReady: (state, getters) => {
+    return getters.character.species && getters.character.classes.length > 0 && Object.entries(getters.character.abilityScores).every(i => i[1].value)
+  },
   id: state => state.id,
   image: (state, getters) => getters.character.image || (getters.character.species ? getters['species/species'].bodyImg : false) || require('~/assets/images/me5e_logo_450w.png'),
   identString: (state, getters, rootState, rootGetters) => {
     const classes = rootGetters['character/klasses/klassesList']
     const subclasses = rootGetters['character/klasses/subklassesList']
     const species = rootGetters['character/species/speciesList']
-    return identString(this.character, classes, species, subclasses).replace(/(\{\{ ordinal_levels-\d\d? }})/, (sub) => {
+    return identString(getters.character, classes, species, subclasses).replace(/(\{\{ ordinal_levels-\d\d? }})/g, (sub) => {
       const level = sub.split(' ')[1].split('-')[1]
-      return this.$i18n.t(`ordinal_numbers[${level}]`)
+      const ordinals = [null, '1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th', '13th', '14th', '15th', '16th', '17th', '18th', '19th', '20th']
+      return ordinals[level]
     })
+  },
+  profBonus: (state, getters, rootState, rootGetters) => {
+    return [0, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6][rootGetters['character/klasses/level']]
   },
   backgroundsList: (state, getters, rootState, rootGetters) => {
     const official = rootGetters.getData('backgrounds')

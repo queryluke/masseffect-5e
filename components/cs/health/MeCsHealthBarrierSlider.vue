@@ -1,28 +1,28 @@
 <template>
-  <div v-if="hasBarrier">
+  <div v-if="barrier.uses.max">
     <v-slider
       v-model="remainingTicks"
       vertical
       hide-details
       append-icon="mdi-plus"
       thumb-label="always"
-      :max="csMaxBarrierTicks"
+      :max="barrier.ticks.max"
       :color="csBgColor('barrier')"
     >
       <template #append>
-        <v-icon class="d-block" :color="csBgColor('barrier')" @click="csBarrierTicksUsed--">
+        <v-icon class="d-block" :color="csBgColor('barrier')" @click="setTicks(barrier.ticks.used - 1)">
           mdi-plus
         </v-icon>
       </template>
       <template #prepend>
-        <v-icon class="mt-n2" :color="csBgColor('barrier')" @click="csBarrierTicksUsed++">
+        <v-icon class="mt-n2" :color="csBgColor('barrier')" @click="setTicks(barrier.ticks.used + 1)">
           mdi-minus
         </v-icon>
       </template>
     </v-slider>
     <div>
       <v-btn x-small :color="csBgColor('barrier')" :disabled="remainingUses === 0" @click="useBarrier">
-        Barrier <span class="text-lowercase pl-1">({{ csBarrierDieType }})</span>
+        Barrier <span class="text-lowercase pl-1">({{ barrierDie }})</span>
       </v-btn>
       <div class="text-caption text-center">
         <small>Uses: {{ remainingUses }}</small>
@@ -32,27 +32,56 @@
 </template>
 
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
-
+import { createNamespacedHelpers } from 'vuex'
+import { CsColors } from '~/mixins/character/csColors'
+const { mapGetters } = createNamespacedHelpers('character/hp')
 export default {
-  mixins: [CharacterBuilderHelpers],
+  name: 'MeCsHealthBarrierSlider',
+  mixins: [CsColors],
+  props: {
+    barrier: {
+      type: Object,
+      default: () => {
+        return {
+          ticks: {
+            max: 0,
+            used: 0
+          },
+          uses: {
+            max: 0,
+            used: 0
+          }
+        }
+      }
+    }
+  },
   computed: {
+    ...mapGetters(['barrierDie']),
     remainingTicks: {
       get () {
-        return this.csMaxBarrierTicks - this.csBarrierTicksUsed
+        return this.barrier.ticks.max - this.barrier.ticks.used
       },
       set (value) {
-        this.csBarrierTicksUsed = this.csMaxBarrierTicks - value
+        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.barrier.ticksUsed', value: this.barrier.ticks.max - value })
       }
     },
     remainingUses () {
-      return this.character.currentStats.featuresTimesUsed.barrier ? this.csMaxBarrierUses - this.character.currentStats.featuresTimesUsed.barrier : this.csMaxBarrierUses
+      return this.barrier.uses.max - this.barrier.uses.used
     }
   },
   methods: {
+    setTicks (value) {
+      if (value < 0 || value > this.barrier.ticks.max) {
+        return
+      }
+      this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.barrier.ticksUsed', value })
+    },
     useBarrier () {
-      const value = (this.character.currentStats.featuresTimesUsed.barrier || 0) + 1
-      this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'currentStats.featuresTimesUsed.barrier', value })
+      const value = {
+        used: (this.barrier.uses.used || 0) + 1,
+        ticksUsed: 0
+      }
+      this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.barrier', value })
     }
   }
 }

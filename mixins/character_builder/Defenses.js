@@ -1,35 +1,7 @@
 export const Defenses = {
   data () {
     return {
-      defenseTypes: {
-        resistance: {
-          title: 'Resistances',
-          iconColor: 'lime darken-2',
-          icon: 'mdi-shield',
-          subIcon: 'mdi-alpha-r',
-          subIconColor: 'black',
-          setting: 'damageRes'
-        },
-        immunity: {
-          title: 'Immunities',
-          iconColor: 'green',
-          icon: 'mdi-shield-lock',
-          setting: 'damageImm'
-        },
-        'condition-immunity': {
-          title: 'Condition Immunities',
-          iconColor: 'green',
-          icon: 'mdi-shield-lock',
-          setting: 'conditionImm'
-        },
-        vulnerability: {
-          title: 'Vulnerabilities',
-          iconColor: 'red darken-4',
-          icon: 'mdi-shield-remove-outline',
-          subIcon: 'mdi-alpha-v',
-          setting: 'damageVul'
-        }
-      }
+
     }
   },
   computed: {

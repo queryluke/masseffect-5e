@@ -11,18 +11,11 @@
 </template>
 
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
-
+import { createNamespacedHelpers } from 'vuex'
+const { mapGetters } = createNamespacedHelpers('character/defenses')
 export default {
-  mixins: [CharacterBuilderHelpers],
   computed: {
-    defenses () {
-      return {
-        resistance: this.getIrvObject('resistance'),
-        immunity: this.getIrvObject('immunity'),
-        vulnerability: this.getIrvObject('vulnerability')
-      }
-    }
+    ...mapGetters(['defenses'])
   }
 }
 </script>

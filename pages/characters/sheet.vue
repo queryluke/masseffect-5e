@@ -1,7 +1,10 @@
 <template>
   <v-container>
     <me-character-not-ready v-if="!characterReady" />
-    <me-character-sheet v-else />
+    <div v-else>
+      <me-cs-views-xs v-if="$vuetify.breakpoint.smAndDown" />
+      <me-cs-views-lg v-if="$vuetify.breakpoint.mdAndUp" />
+    </div>
   </v-container>
 </template>
 
@@ -15,11 +18,17 @@ export default {
     if (!route.query.id) {
       redirect('/characters')
     }
-    if (!store.state.cb.characters[route.query.id]) {
-      redirect('/characters')
-    }
     store.commit('pageTitle', 'Mass Effect 5e')
-    await store.dispatch('cb/FETCH_CB_DATA')
+    await store.dispatch('character/FETCH_CB_DATA')
+    const character = await store.dispatch('character/LOAD_CHARACTER', route.query.id)
+    if (!character) {
+      await redirect('/characters')
+    }
+  },
+  computed: {
+    characterReady () {
+      return this.$store.getters['character/characterReady']
+    }
   }
 }
 </script>

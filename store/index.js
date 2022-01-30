@@ -127,12 +127,5 @@ export const actions = {
       commit('setData', { locale, endpoint, data })
     }
     return data
-  },
-  async FETCH_ITEM ({ getters, dispatch, commit }, { endpoint, id }) {
-    let data = getters.getData(this.$i18n.locale, endpoint)
-    if (!data) {
-      data = await dispatch('FETCH_DATA', endpoint)
-    }
-    return data.find(i => i.id === id)
   }
 }

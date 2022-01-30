@@ -81,7 +81,7 @@
           mdi-login
         </v-icon>
       </v-btn>
-      <me-character-builder-sync-status v-if="showCharacterCloudStatus" />
+      <me-character-sync-status v-if="showCharacterCloudStatus" />
     </v-toolbar-items>
 
     <template v-if="tabbed && $vuetify.breakpoint.smAndDown" #extension>

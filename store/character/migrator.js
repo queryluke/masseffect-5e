@@ -228,9 +228,23 @@ export const actions = {
 
     // TODO: innate biotics
 
+    // TODO: currentStats featuresTimesUsed to resources
+    // barrier is done
+
     delete character.selections
     // TODO: background
-    character.currentStats = { ...character.currentStats, resources: {}, paragon: 0, renegade: 0 }
+    character.currentStats = {
+      ...character.currentStats,
+      resources: {},
+      paragon: 0,
+      renegade: 0,
+      shieldsLost: character.settings.shields - character.currentStats.shields.value,
+      barrier: {
+        used: character.currentStats.featuresTimesUsed.barrier || character.currentStats.barrier.used,
+        ticksUsed: character.currentStats.barrier.ticksUsed
+      }
+    }
+    // delete character.currentStats.featuresTimesUsed
     character.settings = { ...character.settings, armor: [], savingThrow: [], weapon: [], tool: [], skill: character.settings.skill, hp: 0 }
     delete character.settings.skills
     return character

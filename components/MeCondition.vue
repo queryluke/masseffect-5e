@@ -30,6 +30,7 @@ export default {
   },
   computed: {
     item () {
+      console.log(this.id)
       return this.$store.getters.getItem('conditions', this.id)
     },
     text () {

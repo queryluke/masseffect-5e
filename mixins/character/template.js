@@ -64,10 +64,7 @@ export const characterTemplate = {
       max: 0,
       value: 0
     },
-    shields: {
-      value: 0,
-      max: 0
-    },
+    shieldsLost: 0,
     barrier: {
       used: 0,
       ticksUsed: 0

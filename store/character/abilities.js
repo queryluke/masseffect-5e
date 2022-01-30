@@ -76,6 +76,24 @@ export const getters = {
       }
     }
     return breakdown
+  },
+  dexMod: (state, getters) => {
+    return getters.abilityBreakdown.dex.mod
+  },
+  strMod: (state, getters) => {
+    return getters.abilityBreakdown.str.mod
+  },
+  conMod: (state, getters) => {
+    return getters.abilityBreakdown.con.mod
+  },
+  intMod: (state, getters) => {
+    return getters.abilityBreakdown.int.mod
+  },
+  wisMod: (state, getters) => {
+    return getters.abilityBreakdown.wis.mod
+  },
+  chaMod: (state, getters) => {
+    return getters.abilityBreakdown.cha.mod
   }
 }
 

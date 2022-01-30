@@ -70,15 +70,17 @@
 </template>
 
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
-
+import { createNamespacedHelpers } from 'vuex'
+const { mapGetters } = createNamespacedHelpers('character/hp')
 export default {
   name: 'MeCsBlocksApsi',
-  mixins: [CharacterBuilderHelpers],
   data () {
     return {
       addlSpeedDialog: false
     }
+  },
+  computed: {
+    ...mapGetters([])
   }
 }
 </script>

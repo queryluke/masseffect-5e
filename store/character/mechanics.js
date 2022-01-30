@@ -70,6 +70,28 @@ export const getters = {
   unusedSelections: (state, getters) => {
     return getters.mechanicAnalysis.unusedSelections
   },
+  mcBonus: (state, getters, rootState, rootGetters, bonus) => {
+    const multiplier = bonus.multiplier || 1
+    const min = bonus.min || 0
+    let b = 0
+    switch (bonus.type) {
+      case 'flat':
+        b = bonus.value
+        break
+      case 'mod':
+        b = rootGetters['character/abilities/abilityBreakdown'][bonus.value].mod * multiplier
+        break
+      case 'proficiency':
+        b = rootGetters['character/profBonus'] * multiplier
+        break
+      case 'level':
+        b = rootGetters['character/klasses/level'] * multiplier
+        break
+      default:
+        b = 0
+    }
+    return Math.max(min, b)
+  },
   fightingStyles: (state, getters) => {
     return getters.mechanics.filter(i => i.type === 'fighting-style')
   }

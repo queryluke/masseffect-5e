@@ -1,21 +1,22 @@
 <template>
   <div>
     <v-row>
-      <v-col cols="12" class="d-flex justify-center justify-md-space-around justify-lg-space-around" :class="{'justify-md-space-between': hasBarrier }">
-        <me-cs-health-barrier-slider />
+      <v-col cols="12" class="d-flex justify-center justify-md-space-around justify-lg-space-around" :class="{'justify-md-space-between': barrier.uses.max }">
+        <me-cs-health-barrier-slider :barrier="barrier" />
         <div>
-          <me-cs-health-circle />
+          <me-cs-health-circle :hp="hp" :shields="shields" :temp-hp="tempHp" />
           <div class="text-center">
             <v-btn
               x-small
               color="blue"
               class="mt-1"
+              :disabled="viewOnly"
               @click="execRegen"
             >
-              regen ({{ character.settings.regen }})
+              regen ({{ shields.regen }})
             </v-btn>
           </div>
-          <div class="d-flex justify-end justify-md-space-around justify-lg-end align-center mt-5">
+          <div v-if="!viewOnly" class="d-flex justify-end justify-md-space-around justify-lg-end align-center mt-5">
             <div style="max-width: 125px">
               <v-text-field
                 v-model="modder"
@@ -127,10 +128,11 @@
 </template>
 
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
-
+import { createNamespacedHelpers } from 'vuex'
+import { CsColors } from '~/mixins/character/csColors'
+const { mapGetters } = createNamespacedHelpers('character/hp')
 export default {
-  mixins: [CharacterBuilderHelpers],
+  mixins: [CsColors],
   data () {
     return {
       bypassShields: false,
@@ -141,6 +143,10 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['hp', 'barrier', 'tempHp', 'shields']),
+    viewOnly () {
+      return this.$store.state.character.viewOnly
+    },
     modder: {
       get () {
         return this.modderState
@@ -158,6 +164,9 @@ export default {
     },
     doubleShieldsNumberColor () {
       return this.$store.getters['user/darkMode'] ? ['grey darken-2', 'white'] : ['black', 'black']
+    },
+    currentStats () {
+      return this.$store.getters['character/character'].currentStats
     }
   },
   methods: {
@@ -173,40 +182,59 @@ export default {
     },
     execTempHp () {
       const modder = this.getModder()
-      this.csTempHp = Math.max(this.csTempHp, modder, this.csCurrentTempHp + modder)
-      this.csCurrentTempHp = this.csCurrentTempHp + modder
+      if (modder) {
+        const max = Math.max(this.tempHp.max, modder, this.tempHp.max + modder)
+        const value = this.tempHp.value + modder
+        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.tempHp', value: { max, value } })
+      }
       this.modderState = 0
     },
     execRegen () {
-      this.csCurrentShields = Math.min(this.csMaxShields, this.character.settings.regen + this.csCurrentShields)
+      // const value = this.shields.max - Math.min(this.shields.max, this.shields.current + this.shields.regen)
+      const value = Math.max(0, this.currentStats.shieldsLost - this.shields.regen)
+      this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.shieldsLost', value })
     },
     execCustomRegen () {
       const modder = this.getModder()
-      this.csCurrentShields = Math.min(this.csMaxShields, modder + this.csCurrentShields)
+      if (modder) {
+        const value = Math.max(0, this.currentStats.shieldsLost - modder)
+        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.shieldsLost', value })
+      }
       this.modderState = 0
     },
     execHeal () {
       const modder = this.getModder()
-      this.csHitPointsLost -= Math.min(modder, this.csHitPointsLost)
-      this.modderState = 0
+      if (modder) {
+        const value = Math.max(0, this.currentStats.hitPointsLost - modder)
+        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.hitPointsLost', value })
+        this.modderState = 0
+      }
     },
     execDamage () {
       let dmgLeft = this.getModder()
-      if (this.csTempHp > 0) {
-        const potentialTempHpDmg = Math.min(this.csCurrentTempHp, dmgLeft)
-        this.csCurrentTempHp = Math.max(0, this.csCurrentTempHp - potentialTempHpDmg)
-        if (this.csCurrentTempHp === 0) {
-          this.csTempHp = 0
-        }
-        dmgLeft -= potentialTempHpDmg
-      }
-      if (this.csCurrentShields > 0 && !this.bypassShields) {
-        const potentialShieldDmg = Math.min(this.csCurrentShields, (this.doubleShields ? dmgLeft * 2 : dmgLeft))
-        this.csCurrentShields = Math.max(this.csCurrentShields - potentialShieldDmg, 0)
-        dmgLeft = this.doubleShields ? Math.floor(((dmgLeft * 2) - potentialShieldDmg) / 2) : dmgLeft - potentialShieldDmg
-      }
+      const newStats = {}
       if (dmgLeft > 0) {
-        this.csHitPointsLost = Math.min(this.csMaxHp, this.csHitPointsLost + dmgLeft)
+        if (this.tempHp.value > 0) {
+          const potentialTempHpDmg = Math.min(this.tempHp.value, dmgLeft)
+          const newTempHp = Math.max(0, this.tempHp.value - potentialTempHpDmg)
+          if (newTempHp === 0) {
+            this.csTempHp = 0
+          }
+          newStats.tempHp = {
+            max: newTempHp === 0 ? 0 : this.currentStats.tempHp.max,
+            value: newTempHp
+          }
+          dmgLeft -= potentialTempHpDmg
+        }
+        if (this.shields.current > 0 && !this.bypassShields) {
+          const potentialShieldDmg = Math.min(this.shields.current, (this.doubleShields ? dmgLeft * 2 : dmgLeft))
+          newStats.shieldsLost = Math.min(this.currentStats.shieldsLost + potentialShieldDmg, this.shields.max)
+          dmgLeft = this.doubleShields ? Math.floor(((dmgLeft * 2) - potentialShieldDmg) / 2) : dmgLeft - potentialShieldDmg
+        }
+        if (dmgLeft > 0) {
+          newStats.hitPointsLost = Math.min(this.hp.max, this.currentStats.hitPointsLost + dmgLeft)
+        }
+        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats', value: { ...this.currentStats, ...newStats } })
       }
       this.modderState = 0
     }

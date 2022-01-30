@@ -68,7 +68,7 @@ export default {
       const classes = this.$store.getters.getData('classes')
       const subclasses = this.$store.getters.getData('subclasses')
       const species = this.$store.getters.getData('species')
-      return identString(this.character, classes, species, subclasses).replace(/(\{\{ ordinal_levels-\d\d? }})/, (sub) => {
+      return identString(this.character, classes, species, subclasses).replace(/(\{\{ ordinal_levels-\d\d? }})/g, (sub) => {
         const level = sub.split(' ')[1].split('-')[1]
         return this.$t(`ordinal_numbers[${level}]`)
       })

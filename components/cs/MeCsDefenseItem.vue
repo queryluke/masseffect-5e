@@ -16,16 +16,16 @@
       </v-tooltip>
       <div class="text-caption d-flex pl-1 flex-wrap">
         <span v-for="(text, index) of item.text" :key="`text-${index}`" class="pl-1">
-          <v-tooltip v-if="text.note" bottom>
+          <v-tooltip v-if="text.noteIndex" bottom>
             <template #activator="{ on, attrs }">
               <div v-bind="attrs" v-on="on">
-                {{ text.text }}{{ item.text.length > index + 1 ? ',' : '' }}
+                {{ defenseTypeText(text) }}{{ item.text.length > index + 1 ? ',' : '' }}
               </div>
             </template>
-            <span>{{ text.note }}</span>
+            <span>{{ asters(text.noteIndex) }} - {{ item.notes[text.noteIndex] }}</span>
           </v-tooltip>
           <span v-else>
-            {{ text.text }}{{ item.text.length > index + 1 ? ',' : '' }}
+            {{ defenseTypeText(text) }}{{ item.text.length > index + 1 ? ',' : '' }}
           </span>
         </span>
       </div>
@@ -34,7 +34,8 @@
 </template>
 
 <script>
-
+import { createNamespacedHelpers } from 'vuex'
+const { mapGetters } = createNamespacedHelpers('character/defenses')
 export default {
   props: {
     item: {
@@ -43,8 +44,22 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['conditionsTextMap']),
     hasValues () {
       return this.item.text.length > 0 || this.item.special.length > 0
+    }
+  },
+  methods: {
+    asters (index = null) {
+      if (!index) {
+        return ''
+      }
+      return ''.padStart(index, '*')
+    },
+    defenseTypeText ({ id, noteIndex = null }) {
+      const text = this.item.type === 'condition-immunity' ? this.conditionsTextMap[id] : this.$t(`damage_types.${id}_title`)
+      const asters = this.asters(noteIndex)
+      return `${text}${asters}`
     }
   }
 }
