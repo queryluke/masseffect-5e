@@ -25,6 +25,7 @@
 <script>
 
 export default {
+  name: 'MeCbChoicesAsi',
   props: {
     mechanic: {
       type: Object,

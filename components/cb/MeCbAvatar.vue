@@ -3,7 +3,7 @@
     <v-hover>
       <template #default="{hover}">
         <v-card elevation="0" :height="defaultSize" :width="defaultSize" @click="dialog = true">
-          <v-img :src="characterImage" alt="Character Image" contain :height="defaultSize" :width="defaultSize" />
+          <v-img :src="image" alt="Character Image" contain :height="defaultSize" :width="defaultSize" />
           <v-fade-transition>
             <v-overlay
               v-if="hover"
@@ -29,9 +29,9 @@
         </v-card-title>
         <v-card-text>
           <div class="d-flex justify-center">
-            <v-img :src="characterImage" alt="Character Image" contain :height="250" :width="250" />
+            <v-img :src="image" alt="Character Image" contain :height="250" :width="250" />
           </div>
-          <v-text-field v-model="characterImage" />
+          <me-cb-debounced-input path="image" />
         </v-card-text>
         <v-card-actions>
           <v-spacer />
@@ -45,10 +45,9 @@
 </template>
 
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
-
+import { createNamespacedHelpers } from 'vuex'
+const { mapGetters } = createNamespacedHelpers('character')
 export default {
-  mixins: [CharacterBuilderHelpers],
   props: {
     size: {
       type: [String, Number, Boolean],
@@ -61,6 +60,7 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['image']),
     defaultSize () {
       if (this.size) {
         return this.size

@@ -7,9 +7,8 @@
         tile
       >
         <v-img
-          :src="character.image"
+          :src="image"
           contain
-          @error="require('~/assets/images/me5e.png')"
         />
       </v-avatar>
       <div>
@@ -19,7 +18,7 @@
           {{ name }}
         </v-card-title>
         <v-card-subtitle v-if="character.species && character.classes.length > 0">
-          {{ identString(character) }}
+          {{ ident }}
         </v-card-subtitle>
       </div>
     </div>
@@ -37,10 +36,9 @@
 </template>
 
 <script>
-import { CharacterHelpers } from '~/mixins/character'
+import identString from '~/mixins/indentString'
 
 export default {
-  mixins: [CharacterHelpers],
   props: {
     character: {
       type: Object,
@@ -50,6 +48,30 @@ export default {
   computed: {
     name () {
       return this.character.name || 'Unnamed Character'
+    },
+    image () {
+      const species = this.$store.getters.getData('species')
+      if (this.character.image) {
+        return this.character.image
+      }
+      if (this.character.species) {
+        const s = species.find(i => i.id === this.character.species)
+        if (s.type === 'variant' || s.type === 'subspecies') {
+          return species.find(i => i.id === s.species)?.bodyImg
+        } else {
+          return s.bodyImg
+        }
+      }
+      return '/images/icon.png'
+    },
+    ident () {
+      const classes = this.$store.getters.getData('classes')
+      const subclasses = this.$store.getters.getData('subclasses')
+      const species = this.$store.getters.getData('species')
+      return identString(this.character, classes, species, subclasses).replace(/(\{\{ ordinal_levels-\d\d? }})/, (sub) => {
+        const level = sub.split(' ')[1].split('-')[1]
+        return this.$t(`ordinal_numbers[${level}]`)
+      })
     }
   }
 }

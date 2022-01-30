@@ -36,6 +36,7 @@
 import { createNamespacedHelpers } from 'vuex'
 const { mapGetters } = createNamespacedHelpers('character/klasses')
 export default {
+  name: 'MeCbClassesAddNew',
   computed: {
     ...mapGetters(['selectedKlassesIds', 'klassesList']),
     availableClasses () {

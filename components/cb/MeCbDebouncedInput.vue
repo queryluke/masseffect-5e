@@ -22,10 +22,9 @@
 
 <script>
 import { debounce, get as attrGetter } from 'lodash'
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
-
+import { createNamespacedHelpers } from 'vuex'
+const { mapGetters } = createNamespacedHelpers('character')
 export default {
-  mixins: [CharacterBuilderHelpers],
   props: {
     path: {
       type: String,
@@ -46,6 +45,7 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['character']),
     attrValue: {
       get () {
         return attrGetter(this.character, this.path)
@@ -58,11 +58,11 @@ export default {
   created () {
     this.debouncedUpdate = debounce(() => {
       this.updateAttr()
-    }, 5000)
+    }, 1000)
   },
   methods: {
     updateAttr () {
-      this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: this.path, value: this.cachedValue })
+      this.$store.dispatch('character/UPDATE_CHARACTER', { attr: this.path, value: this.cachedValue })
     }
   }
 }

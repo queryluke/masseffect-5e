@@ -33,6 +33,7 @@
 import { createNamespacedHelpers } from 'vuex'
 const { mapGetters } = createNamespacedHelpers('character/selections')
 export default {
+  name: 'MeCbChoicesModel',
   props: {
     id: {
       type: String,

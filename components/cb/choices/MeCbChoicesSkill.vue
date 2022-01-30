@@ -18,6 +18,7 @@
 import { createNamespacedHelpers } from 'vuex'
 const { mapGetters } = createNamespacedHelpers('character/profs')
 export default {
+  name: 'MeCbChoicesSkill',
   props: {
     mechanic: {
       type: Object,

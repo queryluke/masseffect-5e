@@ -32,7 +32,8 @@ export const getters = {
     console.log('getting')
     return state.character
   },
-  id: state => state.id
+  id: state => state.id,
+  image: (state, getters) => getters.character.image || (getters.character.species ? getters['species/species'].bodyImg : false) || require('~/assets/images/me5e_logo_450w.png')
 }
 
 export const mutations = {

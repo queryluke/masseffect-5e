@@ -80,6 +80,7 @@
 import { createNamespacedHelpers } from 'vuex'
 const { mapGetters } = createNamespacedHelpers('character/abilities')
 export default {
+  name: 'MeCbAbilityBreakdown',
   props: {
     ability: {
       type: String,

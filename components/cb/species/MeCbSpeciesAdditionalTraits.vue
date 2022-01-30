@@ -6,25 +6,25 @@
       </me-tpg>
     </v-card-title>
     <v-card-text>
-      <me-species-trait v-if="speciesData.age" :label="$t('age_title')">
-        {{ speciesData.age }}
+      <me-species-trait v-if="species.age" :label="$t('age_title')">
+        {{ species.age }}
       </me-species-trait>
-      <me-species-trait v-if="speciesData.alignment" :label="$t('alignment_title')">
-        {{ speciesData.alignment }}
+      <me-species-trait v-if="species.alignment" :label="$t('alignment_title')">
+        {{ species.alignment }}
       </me-species-trait>
-      <me-species-trait v-if="speciesData.size" :label="$t('size_title')">
-        {{ speciesData.size }}
+      <me-species-trait v-if="species.size" :label="$t('size_title')">
+        {{ species.size }}
       </me-species-trait>
-      <me-species-speed :item="speciesData" />
+      <me-species-speed :item="species" />
       <me-species-trait label="Visual Characteristics">
         <v-simple-table>
           <tbody>
             <template v-for="vis of visualProps">
-              <tr v-if="speciesData[vis.key]" :key="vis.key">
+              <tr v-if="species[vis.key]" :key="vis.key">
                 <td class="font-weight-bold">
                   {{ vis.label }}
                 </td>
-                <td>{{ speciesData[vis.key] }}</td>
+                <td>{{ species[vis.key] }}</td>
               </tr>
             </template>
           </tbody>
@@ -54,10 +54,10 @@
               <td>{{ weight.val }}</td>
               <td>{{ weight.mod }}</td>
             </tr>
-            <tr v-if="speciesData.bioticPotential">
+            <tr v-if="species.bioticPotential">
               <td>Biotic Potential</td>
               <td colspan="2">
-                {{ speciesData.bioticPotential }}
+                {{ species.bioticPotential }}
               </td>
             </tr>
           </tbody>
@@ -67,11 +67,11 @@
         <v-simple-table>
           <tbody>
             <template v-for="vis of socioProps">
-              <tr v-if="speciesData[vis.key]" :key="vis.key">
+              <tr v-if="species[vis.key]" :key="vis.key">
                 <td class="font-weight-bold">
                   {{ vis.label }}
                 </td>
-                <td>{{ vis.key === 'galaxy' ? $t(`galaxies.${speciesData[vis.key]}`) : speciesData[vis.key] }}</td>
+                <td>{{ vis.key === 'galaxy' ? $t(`galaxies.${species[vis.key]}`) : species[vis.key] }}</td>
               </tr>
             </template>
           </tbody>
@@ -82,10 +82,10 @@
 </template>
 
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
+import { createNamespacedHelpers } from 'vuex'
+const { mapGetters } = createNamespacedHelpers('character/species')
 export default {
   name: 'MeCbSpeciesAdditionalTraits',
-  mixins: [CharacterBuilderHelpers],
   data () {
     return {
       search: null,
@@ -106,8 +106,9 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['species']),
     heightWeightData () {
-      return this.speciesData.randomDimensions
+      return this.species.randomDimensions
     },
     unitSystem () {
       return this.$store.getters['user/imperial'] ? 'imperial' : 'metric'

@@ -90,8 +90,9 @@ export const mutations = {
 
 export const actions = {
   SET_SCORE ({ commit, dispatch, getters }, { ability, value }) {
+    const val = value ? parseInt(value) : null
     commit('SET_SCORE', { ability, value, method: getters.selectedMethod })
-    dispatch('character/UPDATE_CHARACTER', { attr: `abilityScores.${ability}.value`, value }, { root: true })
+    dispatch('character/UPDATE_CHARACTER', { attr: `abilityScores.${ability}.value`, value: val }, { root: true })
   },
   SET_METHOD ({ commit, dispatch, getters }, method) {
     dispatch('character/UPDATE_CHARACTER', { attr: 'options.asiGenMethod', value: method }, { root: true })

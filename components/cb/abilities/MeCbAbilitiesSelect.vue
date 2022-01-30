@@ -71,6 +71,7 @@
           outlined
           dense
           clearable
+          type="number"
           @change="setScore({ability, value: $event})"
         />
       </v-col>
@@ -120,13 +121,6 @@ export default {
       ]
     }
   },
-  created () {
-    const scores = {}
-    for (const key of this.absKeys) {
-      scores[key] = this.characterAbilityScores[key].value
-    }
-    this.$store.commit('character/abilities/SET_SCORES', { method: this.selectedMethod, scores })
-  },
   computed: {
     ...mapGetters(['selectedMethod', 'selectedScores', 'characterAbilityScores']),
     absGenMethod: {
@@ -154,6 +148,13 @@ export default {
     pointsRemainingPercent () {
       return this.pointsSpent === 0 ? 0 : Math.floor((this.pointsRemaining / this.maxPoints) * 100)
     }
+  },
+  created () {
+    const scores = {}
+    for (const key of this.absKeys) {
+      scores[key] = this.characterAbilityScores[key].value
+    }
+    this.$store.commit('character/abilities/SET_SCORES', { method: this.selectedMethod, scores })
   },
   methods: {
     ...mapActions({ setScore: 'SET_SCORE' }),
