@@ -42,10 +42,9 @@
 </template>
 
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
-
+import { createNamespacedHelpers } from 'vuex'
+const { mapGetters } = createNamespacedHelpers('character')
 export default {
-  mixins: [CharacterBuilderHelpers],
   data () {
     return {
       tab: 0,
@@ -53,8 +52,8 @@ export default {
     }
   },
   computed: {
+    ...mapGetters({ mechanics: 'mechanics/mechanics', character: 'character' }),
     csAllActions () {
-      console.log(this.mechanicBag)
       return {
         attacks: this.csAttacks,
         actions: this.csActions,
@@ -83,7 +82,7 @@ export default {
       return [
         ...this.csWeaponsAsAttacks.attacks,
         ...this.csPowersAsActions.attack,
-        ...this.mechanicBag.filter(i => i.type === 'attack'),
+        ...this.mechanics.filter(i => i.type === 'attack'),
         ...this.unarmedAndGunStrike
       ]
     },
@@ -104,7 +103,7 @@ export default {
           title: 'Powers',
           items: this.csPowersAsActions.bonus_action
         }].filter(i => i.items.length),
-        ...this.mechanicBag.filter(i => i.type === 'bonus-action'),
+        ...this.mechanics.filter(i => i.type === 'bonus-action'),
         ...this.csCustomAsAsctions.bonus
       ]
     },
@@ -115,13 +114,13 @@ export default {
           title: 'Powers',
           items: this.csPowersAsActions.reaction
         }].filter(i => i.items.length),
-        ...this.mechanicBag.filter(i => i.type === 'reaction'),
+        ...this.mechanics.filter(i => i.type === 'reaction'),
         ...this.csCustomAsAsctions.reaction
       ]
     },
     csOtherActions () {
       return [
-        ...this.mechanicBag.filter(i => i.type === 'other')
+        ...this.mechanics.filter(i => i.type === 'other')
       ]
     },
     csCustomAsAsctions () {

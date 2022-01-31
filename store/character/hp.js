@@ -1,4 +1,6 @@
 export const state = () => ({
+  mcBarrier: [3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 9, 9, 10],
+  mcBarrierUses: [2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 6]
 })
 
 export const getters = {
@@ -32,31 +34,33 @@ export const getters = {
   tempHp: (state, getters, rootState, rootGetters) => {
     return rootGetters['character/character'].currentStats.tempHp
   },
-  hasBarrier: (state, getters, rootState, rootGetters) => {
-    // TODO: should be in the mechanics
-    return rootGetters['character/klasses/selectedKlassesIds'].some(i => ['adept', 'sentinel', 'vanguard'].includes(i))
-  },
-  barrier (stat, getters, rootState, rootGetters) {
-    // TODO: probably need a multiclassing mechanic for these type features?
-    const progression = rootGetters['character/klasses/klassesList'].find(i => i.id === 'vanguard').progression.columns
-    const level = rootGetters['character/klasses/selectedKlasses'].reduce((acc, curr) => {
-      const adder = curr.id === 'vanguard'
-        ? curr.levels
-        : ['adept', 'sentinel'].includes(curr.id)
-            ? Math.floor(curr.levels / 2)
-            : 0
-      return acc + adder
-    }, 0)
-    return {
+  barrier: (state, getters, rootState, rootGetters) => {
+    const base = {
       ticks: {
-        max: progression.find(i => i.label === 'barrier_ticks').values[level - 1],
+        max: 0,
         used: rootGetters['character/character'].currentStats.barrier.ticksUsed
       },
       uses: {
-        max: progression.find(i => i.label === 'barrier_uses').values[level - 1],
+        max: 0,
         used: rootGetters['character/character'].currentStats.barrier.used
       }
     }
+    const klasses = rootGetters['character/klasses/klasses']
+    if (klasses.some(i => ['vanguard', 'sentinel', 'adept'].includes(i.id))) {
+      let level, barrierP, barrierUsesP
+      if (klasses.length > 1) {
+        barrierP = state.mcBarrier
+        barrierUsesP = state.mcBarrier
+        level = rootGetters['character/klasses/mcLevels']('vanguard', ['adept', 'sentinel'])
+      } else {
+        barrierP = klasses[0].data.progression.columns.find(i => i.label === 'barrier_ticks')?.values || []
+        barrierUsesP = klasses[0].data.progression.columns.find(i => i.label === 'barrier_uses')?.values || []
+        level = klasses[0].levels
+      }
+      base.ticks.max = barrierP[level - 1]
+      base.uses.max = barrierUsesP[level - 1]
+    }
+    return base
   },
   barrierDie: (state, getters, rootState, rootGetters) => {
     if (!rootGetters['character/klasses/selectedKlassesIds'].includes('vanguard')) {

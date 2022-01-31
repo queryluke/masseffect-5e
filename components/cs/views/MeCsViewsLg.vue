@@ -25,7 +25,6 @@
         </v-card>
       </v-col>
     </v-row>
-    <!--
     <v-row>
       <v-col cols="9">
         <v-card outlined height="500px">
@@ -42,29 +41,39 @@
             <div style="flex: 1 1 auto; position: relative; height: 452px" class="overflow-y-auto pt-3 pb-5">
               <v-tabs-items v-model="tab">
                 <v-tab-item>
+                  <!--
                   <me-cs-actions />
+                  -->
                 </v-tab-item>
                 <v-tab-item>
                   <v-card-text>
-                    <me-character-sheet-powers />
+                    <me-cs-powers />
                   </v-card-text>
                 </v-tab-item>
                 <v-tab-item>
                   <v-card-text>
+                    <!--
                     <me-character-sheet-equipment />
+                    -->
                   </v-card-text>
                 </v-tab-item>
                 <v-tab-item>
+                  <!--
                   <me-cs-features />
+                  -->
                 </v-tab-item>
                 <v-tab-item>
                   <v-card-text>
+                    <!--
                     <me-character-sheet-details />
+                    -->
                   </v-card-text>
                 </v-tab-item>
                 <v-tab-item>
                   <v-card-text>
+                    <!--
                     <me-character-sheet-notes />
+                    -->
                   </v-card-text>
                 </v-tab-item>
               </v-tabs-items>
@@ -74,14 +83,20 @@
       </v-col>
       <v-col cols="3">
         <div class="mb-5">
+          <!--
           <me-cs-reputation />
+          -->
         </div>
         <div class="mb-5">
+          <!--
           <me-character-sheet-short-long-rest />
+          -->
         </div>
         <v-card outlined>
           <v-card-text>
+            <!--
             <me-character-sheet-proficiencies />
+            -->
           </v-card-text>
         </v-card>
         <div class="mt-5 d-flex justify-center">
@@ -108,13 +123,13 @@
         </v-toolbar>
         <v-card-text class="d-flex justify-center">
           <div style="max-width: 700px">
+            <!--
             <me-character-sheet-settings />
+            -->
           </div>
         </v-card-text>
       </v-card>
     </v-dialog>
-    -->
-    </v-row>
   </v-container>
 </template>
 

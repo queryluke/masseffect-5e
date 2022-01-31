@@ -155,6 +155,16 @@ export const getters = {
         .sort((a, b) => a.level - b.level)
     })
   },
+  mcLevels: (state, getters) => (base, others) => {
+    return getters.selectedKlasses.reduce((acc, curr) => {
+      const adder = curr.id === base
+        ? curr.levels
+        : others.includes(curr.id)
+          ? Math.floor(curr.levels / 2)
+          : 0
+      return acc + adder
+    }, 0)
+  },
   klassesList: (state, getters, rootState, rootGetters) => rootGetters.getData('classes'),
   subklassesList: (state, getters, rootState, rootGetters) => rootGetters.getData('subclasses'),
   klassFeaturesList: (state, getters, rootState, rootGetters) => rootGetters.getData('class-features')
