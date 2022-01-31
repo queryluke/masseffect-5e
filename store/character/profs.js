@@ -4,9 +4,11 @@ export const state = () => ({
 export const getters = {
   profs: (state, getters, rootState, rootGetters) => {
     const profs = {}
-    for (const type of ['skill', 'weapon', 'armor', 'tool']) {
+    for (const type of ['skill', 'weapon', 'armor', 'tool', 'savingThrow']) {
       const matchingProfs = rootGetters['character/mechanics/mechanics'].filter(i => i.type === type)
-      profs[type] = [...new Set(matchingProfs.map(i => i.value))]
+      const customProfs = rootGetters['character/character'].settings[type] || []
+      const combined = [...matchingProfs.map(i => i.value), ...customProfs]
+      profs[type] = [...new Set(combined)]
     }
     return profs
   }

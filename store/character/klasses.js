@@ -86,18 +86,17 @@ export const getters = {
           const mArray = []
           const klassProfs = klass.data.profs
           if (klassProfs[prof]) {
-            const type = prof === 'savingThrow' ? 'saving-throw' : prof
             if (klassProfs[prof].has) {
               mArray.push(...klassProfs[prof].has.map((value) => {
                 return {
-                  type,
+                  type: prof,
                   value
                 }
               }))
             }
             if (klassProfs[prof].choices) {
               mArray.push({
-                type: `${type}-choice`,
+                type: `${prof}-choice`,
                 limit: klassProfs[prof].choices.items,
                 selections: klassProfs[prof].choices.count,
                 options: true

@@ -70,7 +70,8 @@ export const getters = {
   unusedSelections: (state, getters) => {
     return getters.mechanicAnalysis.unusedSelections
   },
-  mcBonus: (state, getters, rootState, rootGetters, bonus) => {
+  mcBonus: (state, getters, rootState, rootGetters) => (bonus) => {
+    console.log(bonus)
     const multiplier = bonus.multiplier || 1
     const min = bonus.min || 0
     let b = 0

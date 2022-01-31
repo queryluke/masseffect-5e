@@ -71,6 +71,7 @@
 import { createNamespacedHelpers } from 'vuex'
 const { mapGetters } = createNamespacedHelpers('character')
 export default {
+  name: 'MeCsNis',
   computed: {
     ...mapGetters({ character: 'character', level: 'klasses/level', image: 'image', identString: 'identString', id: 'id' }),
     viewOnly () {

@@ -71,7 +71,7 @@
 import { createNamespacedHelpers } from 'vuex'
 const { mapGetters } = createNamespacedHelpers('character')
 export default {
-  name: 'MeCsBlocksApsi',
+  name: 'MeCsApsi',
   data () {
     return {
       addlSpeedDialog: false

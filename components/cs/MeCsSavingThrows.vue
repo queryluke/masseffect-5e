@@ -7,19 +7,19 @@
       <template v-for="(item, index) of items">
         <v-col :key="`st-${index}`" cols="6">
           <v-list dense class="pa-0">
-            <v-list-item v-for="ability in item" :key="ability" style="min-height: 28px">
-              <v-list-item-avatar :color="proficient(ability) ? `blue` : 'transparent'" size="12" class="my-1" />
+            <v-list-item v-for="abilityItem in item" :key="abilityItem.ability" style="min-height: 28px">
+              <v-list-item-avatar :color="abilityItem.proficient ? `blue` : 'transparent'" size="12" class="my-1" />
               <v-list-item-content class="ml-n2 py-1">
                 <v-list-item-title>
-                  {{ $t(`abilities.${ability}.abbr`) }}
+                  {{ $t(`abilities.${abilityItem.ability}.abbr`) }}
                 </v-list-item-title>
               </v-list-item-content>
               <v-list-item-action class="my-1">
                 <v-list-item-action-text class="d-flex align-center">
-                  <me-cs-ad-icon v-if="hasAdOrDis(ability, 'advantage') && !hasAdOrDis(ability, 'disadvantage')" small />
-                  <me-cs-ad-icon v-if="hasAdOrDis(ability, 'disadvantage') && !hasAdOrDis(ability, 'advantage')" small type="d" />
+                  <me-cs-ad-icon v-if="abilityItem.ad" small />
+                  <me-cs-ad-icon v-if="abilityItem.dis" small type="d" />
                   <span class="pl-1">
-                    {{ modText(ability) }}
+                    {{ abilityItem.score }}
                   </span>
                 </v-list-item-action-text>
               </v-list-item-action>
@@ -43,21 +43,37 @@
 </template>
 
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
-
+import { createNamespacedHelpers } from 'vuex'
+import { ScoreText } from '~/mixins/character/scoreText'
+const { mapGetters } = createNamespacedHelpers('character')
 export default {
-  mixins: [CharacterBuilderHelpers],
-  data () {
-    return {
-      items: [
-        ['str', 'dex', 'con'],
-        ['int', 'wis', 'cha']
-      ]
-    }
-  },
+  mixins: [ScoreText],
   computed: {
+    // TODO: this may be better off in the store
+    ...mapGetters({ mechanics: 'mechanics/mechanics', abilityBreakdown: 'abilities/abilityBreakdown', profBonus: 'profBonus' }),
     savingThrowMechanics () {
-      return this.mechanicBag.filter(i => i.type === 'saving-throw')
+      return this.mechanics.filter(i => i.type === 'savingThrow')
+    },
+    items () {
+      const items = []
+      const abilities = ['str', 'dex', 'con', 'int', 'wis', 'cha']
+      for (const ability of abilities) {
+        const proficient = this.savingThrowMechanics.find(i => i.value === ability && !i.effect)
+        const ad = this.savingThrowMechanics.find(i => i.value === ability && i.effect?.type === 'advantage')
+        const dis = this.savingThrowMechanics.find(i => i.value === ability && i.effect?.type === 'disadvantage')
+        let score = this.abilityBreakdown[ability].mod
+        if (proficient) {
+          score += this.profBonus
+        }
+        items.push({
+          ability,
+          ad: ad && !dis,
+          dis: !ad && dis,
+          proficient,
+          score: this.modText(score)
+        })
+      }
+      return [items.slice(0, 3), items.slice(3)]
     },
     hasAdditional () {
       return this.additionalBag.a || this.additionalBag.d
@@ -80,9 +96,6 @@ export default {
     }
   },
   methods: {
-    hasAdOrDis (ability, type) {
-      return !this.savingThrowMechanics.find(i => i.effect === type && i.ability === ability)
-    },
     adsOrDisesAgainst (type) {
       const bag = this.savingThrowMechanics.filter(i => i.effect === type && !i.ability && i.against?.length > 0)
       const reducedBag = bag.reduce((acc, curr) => acc.concat(curr.against), [])
@@ -94,21 +107,10 @@ export default {
       if (length === 0) {
         return false
       }
-      return `against being ${this.$t(`lists.and_list[${length}]`, array)}`
+      return `against being ${this.$t(`lists.or_list[${length}]`, array)}`
     },
     specialAdOrDis (type) {
-      return this.savingThrowMechanics.filter(i => i.effect === type && !i.ability && !i.against)
-    },
-    proficient (ability) {
-      return this.proficiencies.savingThrow.includes(ability)
-    },
-    modText (ability) {
-      // TODO: bonuses
-      let mod = this.absMod(ability)
-      if (this.proficient(ability)) {
-        mod += this.profBonus
-      }
-      return mod >= 0 ? `+${mod}` : `-${mod * -1}`
+      return this.savingThrowMechanics.filter(i => i.effect === type && !i.ability && !i.against).map(i => i.note)
     }
   }
 }

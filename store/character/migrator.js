@@ -247,7 +247,7 @@ export const actions = {
       }
     }
     // delete character.currentStats.featuresTimesUsed
-    character.settings = { ...character.settings, armor: [], savingThrow: [], weapon: [], tool: [], skill: character.settings.skill, hp: 0 }
+    character.settings = { ...character.settings, skill: character.settings.skills, hp: 0 }
     delete character.settings.skills
     return character
   }

@@ -2,7 +2,7 @@
   <div>
     <v-row justify="space-between" no-gutters>
       <v-col cols="8" md="12">
-        <me-cs-blocks-nis />
+        <me-cs-nis />
       </v-col>
       <v-col v-if="$vuetify.breakpoint.smAndDown" cols="4">
         <v-card elevation="0" outlined @click="healthDialog = true">

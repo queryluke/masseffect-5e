@@ -3,12 +3,11 @@
     <v-row>
       <v-col cols="4">
         <me-cs-main-menu />
-        <me-cs-blocks-apsi />
+        <me-cs-apsi />
         <me-cs-health />
       </v-col>
-      <!--
       <v-col cols="8">
-        <me-character-sheet-abilities />
+        <me-cs-abilities />
         <v-row>
           <v-col cols="6">
             <v-card outlined>
@@ -26,6 +25,7 @@
         </v-card>
       </v-col>
     </v-row>
+    <!--
     <v-row>
       <v-col cols="9">
         <v-card outlined height="500px">

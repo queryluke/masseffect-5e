@@ -7,6 +7,8 @@ export const getters = {
     if (character.settings.acOverride) {
       return character.settings.acOverride
     }
+    console.log(rootGetters['character/mechanics/mechanics']
+      .filter(i => i.type === 'ac'))
     const flatBonus = rootGetters['character/mechanics/mechanics']
       .filter(i => i.type === 'ac')
       .reduce((acc, curr) => acc + (curr.bonus ? rootGetters['character/mechanics/mcBonus'](curr.bonus) : 0), 0)

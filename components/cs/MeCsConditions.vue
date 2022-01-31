@@ -4,7 +4,7 @@
       <div class="text-overline">
         Conditions
       </div>
-      <v-btn v-if="!viewOnly" icon flat x-small @click="conditionDialog = true">
+      <v-btn v-if="!viewOnly" icon text x-small @click="conditionDialog = true">
         <v-icon size="16">
           mdi-pencil
         </v-icon>
