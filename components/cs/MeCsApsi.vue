@@ -1,57 +1,61 @@
 <template>
-  <v-row justify="space-between" class="mx-n4 my-1" no-gutters>
-    <v-col cols="3" class="text-center">
-      <v-card color="transparent" elevation="0" outlined>
-        <div class="text-caption">
-          <small>AC</small>
-        </div>
-        <div class="text-h6">
-          {{ ac }}
-        </div>
-      </v-card>
-    </v-col>
-    <v-col cols="3" class="text-center">
-      <v-card color="transparent" elevation="0" outlined>
-        <div class="text-caption">
-          <small>Prof Bonus</small>
-        </div>
-        <div class="text-h6">
-          +{{ profBonus }}
-        </div>
-      </v-card>
-    </v-col>
-    <v-col cols="3" class="text-center">
-      <v-card
-        color="transparent"
-        elevation="0"
-        outlined
-        hover
-        @click="addlSpeedDialog = true"
-      >
-        <div class="text-caption">
-          <small>Speed{{ additionalSpeeds ? '*' : '' }}</small>
-        </div>
-        <div class="text-h6">
-          <me-distance :length="speeds.walk.distance || 0" abbr />
-        </div>
-      </v-card>
-    </v-col>
-    <v-col cols="3" class="text-center">
-      <v-card color="transparent" elevation="0" outlined>
-        <div class="text-caption">
-          <small>Initiative</small>
-        </div>
-        <div class="text-h6 d-flex justify-center align-center">
-          <me-cs-ad-icon
-            v-if="(initiativeAd && !initiativeDis) || (!initiativeAd && initiativeDis)"
-            :type="initiativeAd ? 'a' : 'd'"
-          />
-          <span class="ml-1">
-            {{ initiativeBonus > 0 ? '+' : '' }}{{ initiativeBonus }}
-          </span>
-        </div>
-      </v-card>
-    </v-col>
+  <div>
+    <v-row no-gutters class="my-1">
+      <v-col cols="3">
+        <v-card flat color="transparent" class="text-center mx-auto" max-width="70px">
+          <div class="text-caption">
+            <small>AC</small>
+          </div>
+          <div class="text-h6">
+            {{ ac }}
+          </div>
+        </v-card>
+      </v-col>
+      <v-col cols="3">
+        <v-card flat color="transparent" class="text-center mx-auto" max-width="70px">
+          <div class="text-caption">
+            <small>Prof Bonus</small>
+          </div>
+          <div class="text-h6">
+            +{{ profBonus }}
+          </div>
+        </v-card>
+      </v-col>
+      <v-col cols="3">
+        <v-card
+          elevation="0"
+          color="transparent"
+          hover
+          class="text-center mx-auto"
+          max-width="70px"
+          @click="addlSpeedDialog = true"
+        >
+          <div class="text-caption">
+            <small>Speed{{ additionalSpeeds ? '*' : '' }}</small>
+          </div>
+          <div class="text-h6">
+            <me-distance :length="speeds.walk.distance || 0" abbr />
+          </div>
+        </v-card>
+      </v-col>
+      <v-col cols="3">
+        <v-card flat color="transparent" class="text-center mx-auto" max-width="70px">
+          <div class="text-caption">
+            <small>Initiative</small>
+          </div>
+          <div class="text-h6 d-flex justify-center align-center">
+            <me-cs-ad-icon
+              v-if="(initiativeAd && !initiativeDis) || (!initiativeAd && initiativeDis)"
+              :type="initiativeAd ? 'a' : 'd'"
+              class="mr-1"
+            />
+            <span>
+              {{ initiativeBonus > 0 ? '+' : '' }}{{ initiativeBonus }}
+            </span>
+          </div>
+        </v-card>
+      </v-col>
+    </v-row>
     <me-standard-dialog :shown="addlSpeedDialog" title="Speeds" @close="addlSpeedDialog = false">
       <template v-for="(value, speed) of speeds">
         <v-card v-if="value" :key="`speed-${speed}`" outlined flat class="px-3 pa-2 my-1">
@@ -64,7 +68,7 @@
         </v-card>
       </template>
     </me-standard-dialog>
-  </v-row>
+  </div>
 </template>
 
 <script>

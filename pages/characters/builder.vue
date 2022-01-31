@@ -65,17 +65,20 @@ export default {
       set (value) {
         this.$store.commit('tabbedPage/SET_ACTIVE_TAB', value)
       }
+    },
+    id () {
+      return this.$store.getters['character/id']
     }
   },
   methods: {
     async goToSheet () {
       if (this.$store.getters['auth/isAuthenticated']) {
         this.loading = true
-        await this.$store.dispatch('cb/REMOTE_UPDATE', this.cid)
+        await this.$store.dispatch('character/REMOTE_UPDATE')
         this.loading = false
       }
       await this.$router.push({
-        path: `/characters/sheet?id=${this.cid}`
+        path: `/characters/sheet?id=${this.id}`
       })
     }
   }

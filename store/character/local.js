@@ -18,6 +18,7 @@ export const actions = {
     if (index > -1) {
       commit('SET_LOCAL_CHARACTER_INDEX', index)
       commit('character/SET_CHARACTER', rootGetters['characters/characters'][index], { root: true })
+      commit('character/SET_CHARACTER_ID', id, { root: true })
     }
   }
 }

@@ -1,11 +1,11 @@
 <template>
-  <v-row no-gutters>
-    <v-col cols="3">
+  <v-row>
+    <v-col v-if="!$vuetify.breakpoint.xsOnly" cols="2">
       <v-avatar tile size="65">
         <v-img :src="image" contain />
       </v-avatar>
     </v-col>
-    <v-col cols="9">
+    <v-col cols="12" sm="10">
       <v-row align="center" no-gutters>
         <v-col cols="10">
           <div class="text-truncate text-h6">

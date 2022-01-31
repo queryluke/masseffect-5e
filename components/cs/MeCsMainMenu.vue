@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <v-row justify="space-between" no-gutters>
-      <v-col cols="8" md="12">
+  <div class="mx-2">
+    <v-row justify="space-around" no-gutters>
+      <v-col cols="8" sm="9" md="12">
         <me-cs-nis />
       </v-col>
-      <v-col v-if="$vuetify.breakpoint.smAndDown" cols="4">
+      <v-col v-if="$vuetify.breakpoint.smAndDown" cols="4" sm="3">
         <v-card elevation="0" outlined @click="healthDialog = true">
           <me-cs-health-text />
         </v-card>

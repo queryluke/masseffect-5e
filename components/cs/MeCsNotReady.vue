@@ -5,27 +5,27 @@
         You're character still need some key selections!
       </me-tpg>
       <v-list>
-        <v-list-item :color="speciesId ? 'primary' : 'warning'" :to="`/characters/builder?id=${cid}`" nuxt>
+        <v-list-item :color="character.species ? 'primary' : 'warning'" :to="`/characters/builder?id=${id}`" nuxt>
           <v-list-item-avatar>
             <v-icon>
-              {{ speciesId ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
+              {{ character.species ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
             </v-icon>
           </v-list-item-avatar>
           <v-list-item-content>
-            {{ speciesId ? 'Species selected' : 'Choose your species' }}
+            {{ character.species ? 'Species selected' : 'Choose your species' }}
           </v-list-item-content>
         </v-list-item>
-        <v-list-item :color="characterClasses.length > 0 ? 'primary' : 'warning'" :to="`/characters/builder?id=${cid}`" nuxt>
+        <v-list-item :color="character.classes.length > 0 ? 'primary' : 'warning'" :to="`/characters/builder?id=${id}`" nuxt>
           <v-list-item-avatar>
             <v-icon>
-              {{ characterClasses.length > 0 ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
+              {{ character.classes.length > 0 ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
             </v-icon>
           </v-list-item-avatar>
           <v-list-item-content>
-            {{ characterClasses.length > 0 ? 'Starting class selections' : 'Select a starting class' }}
+            {{ character.classes.length > 0 ? 'Starting class selections' : 'Select a starting class' }}
           </v-list-item-content>
         </v-list-item>
-        <v-list-item :color="allAbilityScoresSet ? 'primary' : 'warning'" :to="`/characters/builder?id=${cid}`" nuxt>
+        <v-list-item :color="allAbilityScoresSet ? 'primary' : 'warning'" :to="`/characters/builder?id=${id}`" nuxt>
           <v-list-item-avatar>
             <v-icon>
               {{ allAbilityScoresSet ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
@@ -41,9 +41,15 @@
 </template>
 
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
-
+import { createNamespacedHelpers } from 'vuex'
+const { mapGetters } = createNamespacedHelpers('character')
 export default {
-  mixins: [CharacterBuilderHelpers]
+  name: 'MeCsNotReady',
+  computed: {
+    ...mapGetters(['character', 'id']),
+    allAbilityScoresSet () {
+      return Object.entries(this.character.abilityScores).every(i => i[1].value)
+    }
+  }
 }
 </script>

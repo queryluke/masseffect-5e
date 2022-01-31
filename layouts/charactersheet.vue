@@ -4,8 +4,10 @@
     <me-app-bar :extended="characterReady && $vuetify.breakpoint.smAndDown" :extension-height="140" show-character-cloud-status>
       <template #appBarExtension>
         <div style="width: 100%">
-          <me-cs-main-menu />
-          <me-cs-blocks-apsi />
+          <div class="mx-n4">
+            <me-cs-main-menu />
+            <me-cs-apsi />
+          </div>
         </div>
       </template>
     </me-app-bar>

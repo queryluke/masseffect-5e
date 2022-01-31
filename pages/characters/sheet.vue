@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <me-character-not-ready v-if="!characterReady" />
+    <me-cs-not-ready v-if="!characterReady" />
     <div v-else>
       <me-cs-views-xs v-if="$vuetify.breakpoint.smAndDown" />
       <me-cs-views-lg v-if="$vuetify.breakpoint.mdAndUp" />
