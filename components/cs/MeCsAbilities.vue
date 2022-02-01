@@ -1,19 +1,17 @@
 <template>
   <div>
-    <v-row>
-      <v-col v-for="ability in ['str', 'dex', 'con', 'int', 'wis', 'cha']" :key="ability" cols="4" md="2" class="px-md-2">
-        <v-card outlined elevation="0">
-          <v-card-text class="pa-2 text-center">
-            <div class="text-caption">
-              {{ $t(`abilities.${ability}.abbr`) }}
-            </div>
-            <div class="text-h6">
-              {{ modText(abilityBreakdown[ability].mod) }}
-            </div>
-            <div>
-              {{ abilityBreakdown[ability].total }}
-            </div>
-          </v-card-text>
+    <v-row no-gutters>
+      <v-col v-for="ability in ['str', 'dex', 'con', 'int', 'wis', 'cha']" :key="ability" cols="4" md="2">
+        <v-card outlined flat class="pa-2 text-center ma-2 mx-md-1">
+          <div class="text-caption">
+            {{ $t(`abilities.${ability}.abbr`) }}
+          </div>
+          <div class="text-h6">
+            {{ modText(abilityBreakdown[ability].mod) }}
+          </div>
+          <div>
+            {{ abilityBreakdown[ability].total }}
+          </div>
         </v-card>
       </v-col>
     </v-row>

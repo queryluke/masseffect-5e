@@ -50,8 +50,8 @@
               </v-list-item-subtitle>
             </v-list-item-content>
             <v-list-item-action>
-              <v-btn x-small :disabled="isCurrent" @click="select(option.selection)">
-                {{ isCurrent ? 'Selected' : 'Select' }}
+              <v-btn x-small :disabled="currentValue === option.selection" @click="select(option.selection)">
+                {{ currentValue === option.selection ? 'Selected' : 'Select' }}
               </v-btn>
             </v-list-item-action>
           </v-list-item>

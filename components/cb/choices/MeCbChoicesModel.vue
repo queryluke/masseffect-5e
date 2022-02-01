@@ -80,15 +80,8 @@ export default {
         }
       })
     },
-    limitString () {
-      return this.mechanic.limits ? JSON.stringify(this.mechanic.limits) : false
-    },
     selectedModelIds () {
-      let current = this.currentValue
-      if (this.limitString) {
-        current = current.filter(i => i.limit === this.limitString)
-      }
-      return current.map(i => i.value)
+      return this.currentValue.map(i => i.value)
     },
     selectedModelsData () {
       return this.hideSelectedModels ? [] : this.models.filter(i => this.selectedModelIds.includes(i.id))
@@ -103,13 +96,9 @@ export default {
       return matches.filter(i => !this.selectedModelIds.includes(i))
     },
     appended () {
-      const appended = {
+      return {
         type: this.type
       }
-      if (this.limitString) {
-        appended.limit = this.limitString
-      }
-      return appended
     }
   },
   methods: {

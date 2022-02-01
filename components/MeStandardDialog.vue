@@ -7,9 +7,11 @@
     scrollable
     @click:outside="$emit('close')"
   >
-    <v-card>
+    <v-card :max-height="maxHeight || undefined">
       <v-card-title>
-        {{ title }}
+        <slot name="title">
+          {{ title }}
+        </slot>
       </v-card-title>
       <v-card-text>
         <slot>
@@ -34,7 +36,7 @@ export default {
   props: {
     title: {
       type: String,
-      required: true
+      default: ''
     },
     content: {
       type: String,
@@ -43,6 +45,10 @@ export default {
     shown: {
       type: Boolean,
       default: false
+    },
+    maxHeight: {
+      type: [Number, String],
+      default: 0
     }
   },
   computed: {

@@ -7,6 +7,7 @@
     prepend-icon="mdi-minus"
     append-outer-icon="mdi-plus"
     hide-details
+    :disabled="viewOnly"
     @input="debouncedUpdate()"
     @click:append-outer="$emit('add')"
     @click:prepend="$emit('remove')"
@@ -29,6 +30,11 @@ export default {
   data () {
     return {
       cachedValue: null
+    }
+  },
+  computed: {
+    viewOnly () {
+      return this.$store.state.character.viewOnly
     }
   },
   watch: {

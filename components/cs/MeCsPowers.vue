@@ -5,144 +5,158 @@
     </me-cs-card-title>
 
     <!-- Power Mod -->
-    <v-row>
-      <v-col cols="12" md="4">
-        <v-select
-          v-model="powerModAbility"
-          hint="Powercasting Ability"
-          :items="abilityOptions"
-          persistent-hint
-          outlined
-          :clearable="scPcModAb !== powerModAbility"
-          dense
-          class="mr-3"
-        />
-      </v-col>
-      <v-col cols="4" md="2" offset-md="1">
-        <v-card outlined flat>
-          <div class="ma-auto text-center">
+    <v-row no-gutters justify="space-around" justify-md="center">
+      <v-col v-for="stat in ['mod','attack','dc']" :key="`statDisplay-${stat}`" :cols="pcStatsCols" sm="4" class="d-flex mt-1">
+        <v-card outlined flat class="mx-auto">
+          <div class="text-center d-flex justify-center">
             <div class="text-caption">
-              <small>Mod</small>
-            </div>
-            <div class="text-h6 text-uppercase">
-              {{ modText(pcMod) }}
+              <small>{{ statTitles[stat] }}</small>
             </div>
           </div>
-        </v-card>
-      </v-col>
-      <v-col cols="4" md="2">
-        <v-card outlined flat>
-          <div class="ma-auto text-center">
-            <div class="text-caption">
-              <small>Attack</small>
-            </div>
-            <div class="text-h6">
-              {{ modText(powerAttackMod) }}
-            </div>
-          </div>
-        </v-card>
-      </v-col>
-      <v-col cols="4" md="2">
-        <v-card outlined flat>
-          <div class="ma-auto text-center">
-            <div class="text-caption">
-              <small>DC</small>
-            </div>
-            <div class="text-h6">
-              {{ powerDc }}
+          <div class="d-flex justify-center">
+            <div v-for="info of groupedPowercastingAbilityStats" :key="`${info.ability}-${stat}-display`" class="px-2">
+              <v-tooltip bottom>
+                <template #activator="{ on, attrs }">
+                  <div v-bind="attrs" class="d-flex align-center" v-on="on">
+                    <div class="text-h6 text-uppercase">
+                      {{ info[stat] }}
+                    </div>
+                    <div v-if="groupedPowercastingAbilityStats.length > 1">
+                      <v-avatar v-for="pcKlass in info.klasses" :key="`${info.ability}-${stat}-${pcKlass}-icon`" title size="22">
+                        <v-img :src="require(`~/assets/images/classes/${pcKlass}.svg`)" />
+                      </v-avatar>
+                    </div>
+                  </div>
+                </template>
+                <span class="text-capitalize">{{ info.klasses.join(', ') }}</span>
+              </v-tooltip>
             </div>
           </div>
         </v-card>
       </v-col>
     </v-row>
 
-    <!-- Tech points -->
-    <v-row>
-      <v-col v-if="powerSlots[1].max" cols="12" md="8">
-        <div>Power Slots</div>
-        <template v-for="(value, level) of powerSlots">
-          <v-row
-            v-if="value.max"
-            :key="`powerslots-${level}`"
-            align="center"
-          >
-            <v-col cols="2">
-              {{ $t(`ordinal_numbers[${level}]`) }}
-            </v-col>
-            <v-col cols="10">
-              <me-cs-action-resource-display-checkbox
-                :current="value.used"
-                :max="value.max"
-                @add="addPs(level)"
-                @remove="removePs(level)"
-                @set="setPs($event, level)"
-              />
-            </v-col>
-          </v-row>
-        </template>
-      </v-col>
-      <v-col v-if="techPoints.max" cols="12" md="4">
-        <div>
-          Tech Points
-        </div>
-        <me-cs-action-resource-display-counter
-          :current="currentTp"
-          :max="techPoints.max"
-          @add="addTp"
-          @remove="removeTp"
-          @set="setTp"
-        />
-        <div class="text-overline text-center">
-          <small>
-            Limit: {{ techPoints.limit }}
-          </small>
-        </div>
-      </v-col>
-    </v-row>
+    <!-- Points and slots -->
+    <v-container>
+      <v-row>
+        <v-col v-if="powerSlots[1].max" cols="12" md="8">
+          <div>Power Slots</div>
+          <template v-for="(value, level) of powerSlots">
+            <v-row
+              v-if="value.max"
+              :key="`powerslots-${level}`"
+              align="center"
+            >
+              <v-col cols="2">
+                {{ $t(`ordinal_numbers[${level}]`) }}
+              </v-col>
+              <v-col cols="10">
+                <me-cs-action-resource-display-checkbox
+                  :current="value.used"
+                  :max="value.max"
+                  @add="addPs(level)"
+                  @remove="removePs(level)"
+                  @set="setPs($event, level)"
+                />
+              </v-col>
+            </v-row>
+          </template>
+        </v-col>
+        <v-col v-if="techPoints.max" cols="12" md="4">
+          <div>
+            Tech Points (Limit {{ techPoints.limit }})
+          </div>
+          <me-cs-action-resource-display-counter
+            :current="currentTp"
+            :max="techPoints.max"
+            @add="addTp"
+            @remove="removeTp"
+            @set="setTp"
+          />
+        </v-col>
+      </v-row>
+    </v-container>
 
-    <!-- Power Slots -->
-    <v-row>
+    <!-- Powers -->
+    <v-row no-gutters>
       <v-col>
-        <div class="d-flex justify-space-between">
-          <div class="text-subtitle-1">
-            Powers
+        <template v-for="(powerList, index) in powersByLevel">
+          <div v-if="powerList.powers.length" :key="`powers-at-level-${index}`">
+            <div class="d-flex justify-space-between align-center">
+              <div class="text-subtitle-2 mt-5">
+                {{ powerList.title }}
+              </div>
+              <div>
+                <v-btn v-if="index === '0'" color="primary" class="ma-0" x-small @click="managerDialog = true">
+                  Manage
+                </v-btn>
+              </div>
+            </div>
+            <me-hr size="1" />
+            <me-cs-action-card
+              v-for="(item, itemIndex) in powerList.powers"
+              :key="`powerslist-at-level-${itemIndex}`"
+              show-casting-time
+              :item="item"
+              class="mt-1"
+            />
           </div>
-          <v-btn x-small color="primary" @click="managerDialog = true">
-            Manage
-          </v-btn>
-        </div>
-        <!--
-        <template v-for="powerLevel in [0, 1, 2, 3, 4, 5]">
-          <me-character-sheet-powers-at-level-list :key="`powers-at-level-${powerLevel}`" :power-level="powerLevel" />
         </template>
-        -->
       </v-col>
     </v-row>
 
-    <!-- manage dialog
-    <v-dialog v-model="managerDialog" fullscreen>
-      <v-card>
-        <v-toolbar flat>
-          <v-toolbar-title>
-            Manage Powers
-          </v-toolbar-title>
-          <v-spacer />
-          <v-toolbar-items>
-            <v-btn icon @click="managerDialog = false">
-              <v-icon>
-                mdi-close
-              </v-icon>
-            </v-btn>
-          </v-toolbar-items>
-        </v-toolbar>
-        <div class="mt-5">
-          <v-container class="max-width: 1200px">
-            <me-character-sheet-powers-manager />
-          </v-container>
-        </div>
-      </v-card>
-    </v-dialog>
-    -->
+    <!-- TODO: this in settings -->
+    <me-standard-dialog :shown="pcAdjustDialog" :max-height="600" @close="pcAdjustDialog = false">
+      <template #title>
+        Powercasting Ability Override
+      </template>
+      <v-row>
+        <v-col v-for="(ability, klass) of klassPowercastingAbilities" :key="`klass-pc-override-${klass}`" cols="12" sm="6">
+          <div class="d-flex">
+            <v-avatar tile>
+              <v-img
+                :src="require(`~/assets/images/classes/${klass}.svg`)"
+                position="right"
+              />
+            </v-avatar>
+            <v-select :value="ability" :items="powercastingAbilityOptions" @change="upsertKlassPowercastingAbility($event, klass)">
+              <template #label>
+                <span class="text-titlecase">
+                  {{ klass }}
+                </span>
+              </template>
+            </v-select>
+          </div>
+        </v-col>
+      </v-row>
+    </me-standard-dialog>
+
+    <!-- manage dialog -->
+    <me-standard-dialog :shown="managerDialog" max-height="700" @close="managerDialog = false">
+      <template #title>
+        Manage Powers
+      </template>
+      <v-expansion-panels>
+        <template v-for="klass in klasses">
+          <me-cs-klass-power-select :key="klass.id" :klass="klass" />
+        </template>
+        <!-- TEMP: old builder -->
+        <v-expansion-panel v-if="unlinkedPowers.length">
+          <v-expansion-panel-header>
+            Powers Not Linked To a Class ({{ unlinkedPowers.length }})
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <template v-for="item in unlinkedPowers">
+              <me-cs-power-select-card
+                :key="item.id"
+                :item="item"
+                @togglePower="removeUnlinkedPower"
+              />
+            </template>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
+    </me-standard-dialog>
   </div>
 </template>
 
@@ -155,27 +169,63 @@ export default {
   mixins: [ScoreText],
   data () {
     return {
-      managerDialog: false
+      managerDialog: false,
+      pcAdjustDialog: false,
+      statTitles: {
+        mod: 'Modifier',
+        attack: 'Power Attack',
+        dc: 'Save DC'
+      }
     }
   },
   computed: {
     ...mapGetters({
       character: 'character',
-      scPcModAb: 'powers/startingClassPowerModAbility',
-      pcModAb: 'powers/powerModAbility',
-      pcMod: 'powers/powercastingMod',
       profBonus: 'profBonus',
       techPoints: 'powers/techPoints',
       powerSlots: 'powers/powerSlots',
-      powers: 'powers/powers'
+      powers: 'powers/powers',
+      klassPowercastingAbilities: 'powers/klassPowercastingAbilities',
+      chaMod: 'abilities/chaMod',
+      intMod: 'abilities/intMod',
+      wisMod: 'abilities/wisMod',
+      klasses: 'klasses/klasses'
     }),
-    abilityOptions () {
-      return ['str', 'dex', 'con', 'wis', 'int', 'cha'].map((i) => {
+    viewOnly () {
+      return this.$store.state.character.viewOnly
+    },
+    powercastingAbilityOptions () {
+      return ['wis', 'int', 'cha'].map((i) => {
         return {
           text: this.$t(`abilities.${i}.title`),
           value: i
         }
       })
+    },
+    groupedPowercastingAbilityStats () {
+      const pca = {}
+      for (const [klass, ability] of Object.entries(this.klassPowercastingAbilities)) {
+        if (!ability) {
+          continue
+        }
+        if (pca[ability]) {
+          pca[ability].klasses.push(klass)
+        } else {
+          const base = this.profBonus + this[`${ability}Mod`]
+          pca[ability] = {
+            ability,
+            mod: this.modText(base),
+            attack: this.modText(base + this.character.settings.attackSpellMod),
+            dc: base + 8,
+            klasses: [klass]
+          }
+        }
+      }
+      return Object.values(pca)
+    },
+    pcStatsCols () {
+      const length = this.groupedPowercastingAbilityStats.length
+      return length > 2 ? 12 : length > 1 ? 6 : 4
     },
     powerAttackMod () {
       return this.profBonus + this.pcMod + this.character.settings.attackSpellMod
@@ -183,16 +233,21 @@ export default {
     powerDc () {
       return 8 + this.powerAttackMod
     },
-    powerModAbility: {
-      get () {
-        return this.pcModAb
-      },
-      set (value) {
-        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'settings.powerModAbility', value })
-      }
-    },
     currentTp () {
       return this.techPoints.max - this.techPoints.used
+    },
+    powersByLevel () {
+      const pbl = {}
+      for (const [level, title] of this.$store.state.character.powers.levelText.entries()) {
+        pbl[level] = {
+          title,
+          powers: this.powers.filter(i => i.level === level)
+        }
+      }
+      return pbl
+    },
+    unlinkedPowers () {
+      return this.character.powers.filter(i => !i.klass)
     }
   },
   methods: {
@@ -222,6 +277,17 @@ export default {
     },
     setPs (value, level) {
       this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `currentStats.psUsed.${level - 1}`, value })
+    },
+    upsertKlassPowercastingAbility (value, klass) {
+      this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `settings.powercasting.${klass}`, value })
+    },
+    removeUnlinkedPower (id) {
+      const cloned = this.character.powers.slice()
+      const index = cloned.findIndex(i => i.id === id && !i.klass)
+      if (index > -1) {
+        cloned.splice(index, 1)
+        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'powers', value: cloned })
+      }
     }
   }
 }

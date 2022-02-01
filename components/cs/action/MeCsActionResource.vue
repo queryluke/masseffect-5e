@@ -1,18 +1,23 @@
 <template>
-  <component
-    :is="component"
-    :reset="item.reset"
-    :current="count"
-    :max="max"
-    @add="add"
-    @remove="remove"
-    @reset="reset"
-    @set="set"
-  />
+  <div class="d-flex align-center">
+    <component
+      :is="component"
+      :reset="item.reset"
+      :current="count"
+      :max="max"
+      @add="add"
+      @remove="remove"
+      @reset="reset"
+      @set="set"
+    />
+    <div v-if="showPer" class="text-caption">
+      / {{ item.reset }} rest
+    </div>
+  </div>
 </template>
 <script>
 import { createNamespacedHelpers } from 'vuex'
-const { mapGetters, mapActions } = createNamespacedHelpers('cs')
+const { mapGetters, mapActions } = createNamespacedHelpers('character/resources')
 export default {
   name: 'MeCsActionResource',
   props: {
@@ -41,17 +46,16 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['character']),
+    ...mapGetters(['resources']),
     item () {
       return { ...this.defaults, ...this.resource, max: { ...this.defaults.max, ...this.resource.max } }
     },
     count: {
       get () {
-        return this.character.currentStats.resources[this.id] || 0
+        return this.resources[this.id] || 0
       },
       set (value) {
-        console.log(this.id)
-        this.setResource({ id: this.id, value })
+        this.SET_RESOURCE({ id: this.id, value })
       }
     },
     component () {
@@ -65,15 +69,17 @@ export default {
         return 0 // this.absMod(this.item.mod)
       }
       return 0
+    },
+    showPer () {
+      return ['short', 'long'].includes(this.item.reset)
     }
   },
   methods: {
-    ...mapActions(['setResource']),
+    ...mapActions(['SET_RESOURCE']),
     add () {
       if (this.count + this.item.increment > this.max) {
         return
       }
-      console.log(this.item.increment)
       this.count += this.item.increment
     },
     remove () {

@@ -15,14 +15,9 @@ export const mutations = {
 export const actions = {
   UPSERT_SELECTION ({ dispatch, getters }, payload) {
     const newSelections = cloneDeep(getters.selected)
-    const index = newSelections.findIndex(i => i.path === payload.path)
+    const index = newSelections.findIndex(i => i.path === payload.path && (payload.limit ? i.limit === payload.limit : true))
     if (index > -1) {
-      let newPayload
-      if (payload.value.some(i => i.limit)) {
-        const limit = payload.value[0].limit
-        newPayload = { ...payload, value: [...newSelections[index].value.filter(i => i.limit !== limit), ...payload.value] }
-      }
-      newSelections.splice(index, 1, newPayload || payload)
+      newSelections.splice(index, 1, payload)
     } else {
       newSelections.push(payload)
     }

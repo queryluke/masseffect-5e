@@ -1,7 +1,7 @@
 <template>
   <div v-if="barrier.uses.max">
     <v-slider
-      v-model="remainingTicks"
+      :value="remainingTicks"
       vertical
       hide-details
       append-icon="mdi-plus"
@@ -9,14 +9,15 @@
       :max="barrier.ticks.max"
       :color="csBgColor('barrier')"
       :disabled="viewOnly"
+      @end="remainingTicks = $event"
     >
       <template #append>
-        <v-icon class="d-block" :color="csBgColor('barrier')" @click="setTicks(barrier.ticks.used - 1)">
+        <v-icon class="d-block" :color="csBgColor('barrier')" @click="remainingTicks++">
           mdi-plus
         </v-icon>
       </template>
       <template #prepend>
-        <v-icon class="mt-n2" :color="csBgColor('barrier')" @click="setTicks(barrier.ticks.used + 1)">
+        <v-icon class="mt-n2" :color="csBgColor('barrier')" @click="remainingTicks--">
           mdi-minus
         </v-icon>
       </template>
@@ -63,6 +64,12 @@ export default {
         return this.barrier.ticks.max - this.barrier.ticks.used
       },
       set (value) {
+        if (this.viewOnly) {
+          return
+        }
+        if (value < 0 || value > this.barrier.ticks.max) {
+          return
+        }
         this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.barrier.ticksUsed', value: this.barrier.ticks.max - value })
       }
     },
@@ -74,15 +81,6 @@ export default {
     }
   },
   methods: {
-    setTicks (value) {
-      if (this.viewOnly) {
-        return
-      }
-      if (value < 0 || value > this.barrier.ticks.max) {
-        return
-      }
-      this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.barrier.ticksUsed', value })
-    },
     useBarrier () {
       const value = {
         used: (this.barrier.uses.used || 0) + 1,

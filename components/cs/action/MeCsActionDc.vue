@@ -15,12 +15,13 @@
     <span>{{ item.note }}</span>
   </v-tooltip>
 </template>
+
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
+import { createNamespacedHelpers } from 'vuex'
+const { mapGetters } = createNamespacedHelpers('character')
 
 export default {
   name: 'MeCsActionDc',
-  mixins: [CharacterBuilderHelpers],
   props: {
     dc: {
       type: Object,
@@ -39,12 +40,13 @@ export default {
     }
   },
   computed: {
+    ...mapGetters({ abilityBreakdown: 'abilities/abilityBreakdown', profBonus: 'profBonus' }),
     item () {
       return { ...this.defaults, ...this.dc }
     },
     mod () {
       if (this.item.mod) {
-        return this.absMod(this.item.mod)
+        return this.abilityBreakdown[this.item.mod].mod
       }
       return 0
     },

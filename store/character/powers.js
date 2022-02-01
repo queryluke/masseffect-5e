@@ -7,28 +7,25 @@ export const state = () => ({
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1]
   ],
   mcTp: [2, 4, 5, 7, 11, 13, 15, 17, 20, 23, 26, 26, 30, 30, 34, 34, 39, 42, 45, 50],
-  mcTpLimit: [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 6, 6]
+  mcTpLimit: [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 6, 6],
+  levelText: ['Cantrip', '1st Level', '2nd Level', '3rd Level', '4th Level', '5th Level'],
+  castingTimeText: {
+    action: '1A',
+    attack: 'Atk',
+    'bonus-action': '1BA',
+    reaction: '1R*'
+  },
+  baseKlassPowercastingAbility: {
+    adept: 'wis',
+    vanguard: 'wis',
+    engineer: 'int',
+    sentinel: 'wis',
+    infiltrator: 'int',
+    soldier: false
+  }
 })
 
 export const getters = {
-  startingClassPowerModAbility: (state, getters, rootState, rootGetters) => {
-    const pcMod = {
-      adept: 'wis',
-      vanguard: 'wis',
-      engineer: 'int',
-      sentinel: 'wis',
-      infiltrator: 'int',
-      soldier: 'dex'
-    }
-    const startingKlassId = rootGetters['character/klasses/selectedKlasses'][0].id
-    return pcMod[startingKlassId]
-  },
-  powerModAbility: (state, getters, rootState, rootGetters) => {
-    return rootGetters['character/character'].settings.powerModAbility || getters.startingClassPowerModAbility
-  },
-  powercastingMod: (state, getters, rootState, rootGetters) => {
-    return rootGetters[`character/abilities/${getters.powerModAbility}Mod`]
-  },
   techPoints: (state, getters, rootState, rootGetters) => {
     const base = {
       max: 0,
@@ -96,21 +93,34 @@ export const getters = {
     }
     return base
   },
-  powers: (state, getters, rootState, rootGetters) => {
+  klassPowercastingAbilities: (state, getters, rootState, rootGetters) => {
+    const kpca = {}
+    for (const klass of rootGetters['character/klasses/selectedKlasses']) {
+      kpca[klass.id] = rootGetters['character/character'].settings.powercasting[klass.id] || state.baseKlassPowercastingAbility[klass.id]
+    }
+    return kpca
+  },
+  powers: (state, getters) => {
     const powers = []
     const list = getters.powerList
-    const levelText = ['cantrip', '1st', '2nd', '3rd', '4th', '5th']
-    const modOverride = rootGetters['character/character'].settings.powerModAbility || false
+    const baseMods = {
+      tech: 'int',
+      biotic: 'wis'
+    }
     for (const p of getters.selectedPowers) {
       // i.value needed for selections/mechanicbag
-      const power = list.find(i => (i.id || i.value) === p.id)
-      const mod = modOverride || (power.type === 'tech'
-        ? 'int'
-        : power.type === 'biotic'
-          ? 'wis'
-          : power.mod === 'noMod'
-            ? false
-            : power.mod)
+      const power = list.find(i => i.id === (p.id || p.value))
+      // TODO. Interpolate power appends
+      // TODO: w/ gainedBy class (i.e. w/ sentinel it's a choice)
+      let mod
+      if (power.type === 'combat') {
+        mod = power.mod === 'noMod' ? false : power.mod
+      } else {
+        const appendedMod = p.mod || false
+        const baseMod = baseMods[power.type]
+        const klassMod = getters.klassPowercastingAbilities[p.klass]
+        mod = appendedMod || klassMod || baseMod
+      }
       let toHit = false
       if (power.attack.melee || power.attack.ranged) {
         toHit = {
@@ -133,13 +143,13 @@ export const getters = {
           }
         }
       }
-      const powerLevelText = levelText[power.level]
+      const castingTime = state.castingTimeText[power.castingTimes[0]]
 
-      power.push({
+      powers.push({
         id: power.id,
         name: power.name,
         level: power.level,
-        // icon: `/images/powers/${power.type}.svg`,
+        icon: `/images/powers/${power.type}.svg`,
         resource,
         range: {
           short: power.range,
@@ -147,9 +157,9 @@ export const getters = {
         },
         attack: toHit,
         notes: p.advancement ? [`Adv: ${p.advancement}`] : [],
-        properties: [power.type, powerLevelText],
+        properties: [state.levelText[power.level]],
         dc,
-        castingTime: power.castingTime,
+        castingTime,
         moreInfo: {
           component: 'me-power-info',
           bind: power
@@ -161,7 +171,9 @@ export const getters = {
   selectedPowers: (state, getters, rootState, rootGetters) => {
     return [
       ...rootGetters['character/character'].powers,
-      ...rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'power')
+      ...rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'powers')
+      // powers are unique, in that they can be selected, but will never have mechanics
+      // ...selected
     ]
   },
   powerList: (state, getters, rootState, rootGetters) => {

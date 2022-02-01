@@ -131,7 +131,11 @@ export const actions = {
     }
     return getters.character
   },
-  UPDATE_CHARACTER ({ dispatch, rootGetters, commit, getters }, { attr, value }) {
+  UPDATE_CHARACTER ({ dispatch, rootGetters, commit, getters, state }, { attr, value }) {
+    if (state.viewOnly) {
+      console.log('viewOnly')
+      return
+    }
     // TODO: bulk update for things like deleting selections when classes/species change...but may not be necessary
     // as it doesn't happen often
     const newValue = updateCharacter({ oldValue: getters.character, attr, value })

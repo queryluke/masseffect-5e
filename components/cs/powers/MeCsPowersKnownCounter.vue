@@ -4,21 +4,19 @@
       <v-icon v-if="count > max" class="mr-1" color="error" size="18">
         mdi-alert-octagram
       </v-icon>
-      <div class="text-button mt-1">
-        {{ label }}
-      </div>
       <v-icon v-if="count > max" class="ml-1" color="error" size="18">
         mdi-alert-octagram
       </v-icon>
     </div>
-    <v-progress-linear height="15" :value="pgValue" rounded :color="count > max ? 'error' : 'accent'">
-      {{ count }} / {{ max }}
+    <v-progress-linear height="15" :value="pgValue" rounded :color="count > max ? 'error' : count < max ? 'accent' : 'grey darken-2'">
+      <slot />: {{ count }} / {{ max }}
     </v-progress-linear>
   </div>
 </template>
 
 <script>
 export default {
+  name: 'MeCsPowersKnownCounter',
   props: {
     count: {
       type: Number,
@@ -27,10 +25,6 @@ export default {
     max: {
       type: Number,
       default: 0
-    },
-    label: {
-      type: String,
-      default: ''
     }
   },
   computed: {

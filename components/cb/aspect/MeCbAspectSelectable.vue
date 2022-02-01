@@ -40,7 +40,7 @@ export default {
     currentValue () {
       // NOTE...currentValue is always an array since the selectable component always returns an array of selections
       // even if there is only 1 selection, its always an array
-      const selectObj = this.selected.find(i => i.path === this.id)
+      const selectObj = this.selected.find(i => i.path === this.id && (this.limitString ? i.limit === this.limitString : true))
       return selectObj?.value || []
     },
     id () {
@@ -48,12 +48,15 @@ export default {
     },
     type () {
       return this.mechanic.type.replace('-choice', '')
+    },
+    limitString () {
+      return this.mechanic.limits ? JSON.stringify(this.mechanic.limits) : false
     }
   },
   methods: {
     upsert (value) {
-      console.log('upset', value, this.id)
-      this.$store.dispatch('character/selections/UPSERT_SELECTION', { path: this.id, value })
+      console.log('upsert', value, this.id)
+      this.$store.dispatch('character/selections/UPSERT_SELECTION', { path: this.id, value, limit: this.limitString })
     }
   }
 }

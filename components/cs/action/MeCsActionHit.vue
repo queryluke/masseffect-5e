@@ -4,11 +4,12 @@
   </v-card>
 </template>
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
+
+import { createNamespacedHelpers } from 'vuex'
+const { mapGetters } = createNamespacedHelpers('character')
 
 export default {
   name: 'MeCsActionHit',
-  mixins: [CharacterBuilderHelpers],
   props: {
     hit: {
       type: Object,
@@ -25,12 +26,13 @@ export default {
     }
   },
   computed: {
+    ...mapGetters({ mcBonus: 'mechanics/mcBonus', abilityBreakdown: 'abilities/abilityBreakdown', profBonus: 'profBonus' }),
     item () {
       return { ...this.defaults, ...this.hit }
     },
     mod () {
       if (this.item.mod) {
-        return this.absMod(this.item.mod)
+        return this.abilityBreakdown[this.item.mod].mod
       }
       return 0
     },

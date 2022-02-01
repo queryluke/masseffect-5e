@@ -116,6 +116,25 @@
                   </v-col>
                 </v-row>
               </me-cb-aspect-card>
+              <!-- Sentinel Pc Ability Choice -->
+              <me-cb-aspect-card :asm-override="{ has: true, value: sentinelPcSelection }">
+                <template #title>
+                  Sentinel Powercasting Ability
+                </template>
+                <template #subtitle>
+                  1st Level
+                </template>
+                <template #description>
+                  &nbsp;
+                </template>
+                <v-select
+                  v-model="sentinelPcSelection"
+                  :items=" [{ text: 'Intelligence', value: 'int'}, { text: 'Wisdom', value: 'wis'}]"
+                  dense
+                  label="Choose Intelligence or Wisdom"
+                />
+              </me-cb-aspect-card>
+
               <template v-for="(aspect, index) of klassAspects">
                 <me-cb-class-asi-picker
                   v-if="aspect.type === 'klass-asi'"
@@ -165,7 +184,8 @@ export default {
       level: 'klasses/level',
       selected: 'selections/selected',
       klassesFeatures: 'klasses/klassesFeatures',
-      subklassesList: 'klasses/subklassesList'
+      subklassesList: 'klasses/subklassesList',
+      character: 'character'
     }),
     klass () {
       return this.klasses[this.klassIndex]
@@ -274,6 +294,14 @@ export default {
         finalArray.push(...featuresAtLevel)
       }
       return finalArray
+    },
+    sentinelPcSelection: {
+      get () {
+        return this.character.settings.powercasting.sentinel
+      },
+      set (value) {
+        return this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'settings.powercasting.sentinel', value })
+      }
     }
   },
   methods: {

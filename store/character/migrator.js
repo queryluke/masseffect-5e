@@ -227,9 +227,14 @@ export const actions = {
     }
 
     // TODO: innate biotics
+    /*
+    source: "species-asari-innate-biotics-cantrip_1"
+    subType: "power"
+    type: "action"
+    value: "charge"
+     */
 
-    // TODO: currentStats featuresTimesUsed to resources
-    // barrier is done
+    // TODO: migrate powers for class selection...unlinked?
 
     // TODO: equipment
     // Do not store base model, hydrate on load
@@ -237,7 +242,9 @@ export const actions = {
     delete character.selections
     character.currentStats = {
       ...character.currentStats,
-      resources: {},
+      resources: {
+        ...character.featuresTimesUsed
+      },
       paragon: 0,
       renegade: 0,
       shieldsLost: character.settings.shields - character.currentStats.shields.value,
@@ -247,8 +254,9 @@ export const actions = {
       }
     }
     // delete character.currentStats.featuresTimesUsed
-    character.settings = { ...character.settings, skill: character.settings.skills, hp: 0 }
+    character.settings = { ...character.settings, skill: character.settings.skills, hp: 0, powercasting: {} }
     delete character.settings.skills
-    return character
+    delete character.settings.power
+    return character.powerModAbility
   }
 }

@@ -1,8 +1,5 @@
 <template>
   <div class="d-flex">
-    <v-icon @click.stop="$emit('remove')">
-      mdi-minus
-    </v-icon>
     <div>
       <template v-for="value in Array.from({length: max}, (x, i) => i)">
         <v-icon :key="`use-track-${value}`" :color="value >= current ? 'primary' : 'red'" @click.stop="set(value)">
@@ -10,9 +7,6 @@
         </v-icon>
       </template>
     </div>
-    <v-icon @click.stop="$emit('add')">
-      mdi-plus
-    </v-icon>
   </div>
 </template>
 

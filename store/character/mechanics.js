@@ -5,20 +5,29 @@ export const getters = {
   mechanicAnalysis: (state, getters, rootState, rootGetters) => {
     const selected = rootGetters['character/selections/selected'].slice()
 
-    function hydrateSelection (model, selection, path) {
-      // console.log(model, selection, path)
+    function hydrateSelection (model, selection, path, append) {
+      // console.log(model, selection, path, append)
+      // i.e. for powers or other models with appends, need hydrate the appended value
+      // do this by the parent object passing the appended values to the loop
+      // this is what allows us to update appends without caching the appended value
+      // on the actual store
+      const baseMechanics = selection.value.map((i) => {
+        return {
+          ...i,
+          ...append
+        }
+      })
       const selectedModelIds = selection.value.map(i => i.value)
-      // TODO: This is where we can do appends, like power resources
       // console.log(model)
       const selectedModels = rootGetters.getData(model).filter(i => selectedModelIds.includes(i.id))
       // console.log(selectedModels)
-      return selectedModels.map(i => hydrate({ mechanics: i.mechanics, path: `${path}/${model}/${i.id}` }))
+      const hydratedSubselections = selectedModels.map(i => hydrate({ mechanics: i.mechanics, path: `${path}/${model}/${i.id}` }))
         .reduce((acc, curr) => acc.concat(curr), [])
+      return [...baseMechanics, ...hydratedSubselections]
     }
 
     function hydrate ({ mechanics, path }) {
       const hydratedMechanics = []
-      // console.log('hydrate', path, mechanics)
       if (!mechanics) {
         return hydratedMechanics
       }
@@ -28,15 +37,20 @@ export const getters = {
           const type = mechanic.type.replace('-choice', '')
           const suffix = type === 'model' ? mechanic.model : type
           // console.log('path', `${path}/${suffix}`)
-          const sIndex = selected.findIndex(i => i.path === `${path}/${suffix}`)
+          // console.log(type)
+          const limitFilter = mechanic.type === 'model'
+            ? mechanic.limits
+              ? JSON.stringify(mechanic.limits)
+              : true
+            : true
+          const sIndex = selected.findIndex(i => i.path === `${path}/${suffix}` && limitFilter)
           if (sIndex > -1) {
             const selection = selected[sIndex]
             // console.log('selection', selection)
             // console.log(type)
-            // do we need to remove the selected so we have a way to delete "bad" selections
             selected.splice(sIndex, 1)
             if (type === 'model') {
-              const hydrated = hydrateSelection(suffix, selection, path)
+              const hydrated = hydrateSelection(suffix, selection, path, mechanic.append || {})
               hydratedMechanics.push(...hydrated)
             } else {
               hydratedMechanics.push(...selection.value)
@@ -71,7 +85,6 @@ export const getters = {
     return getters.mechanicAnalysis.unusedSelections
   },
   mcBonus: (state, getters, rootState, rootGetters) => (bonus) => {
-    console.log(bonus)
     const multiplier = bonus.multiplier || 1
     const min = bonus.min || 0
     let b = 0

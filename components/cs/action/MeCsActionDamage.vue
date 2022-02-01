@@ -11,11 +11,10 @@
   </div>
 </template>
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
-
+import { createNamespacedHelpers } from 'vuex'
+const { mapGetters } = createNamespacedHelpers('character')
 export default {
   name: 'MeCsActionDamage',
-  mixins: [CharacterBuilderHelpers],
   props: {
     damage: {
       type: Object,
@@ -34,12 +33,13 @@ export default {
     }
   },
   computed: {
+    ...mapGetters({ mcBonus: 'mechanics/mcBonus', abilityBreakdown: 'abilities/abilityBreakdown' }),
     item () {
       return { ...this.defaults, ...this.damage }
     },
     mod () {
       if (this.item.mod) {
-        return this.absMod(this.item.mod)
+        return this.abilityBreakdown[this.item.mod].mod
       }
       return 0
     },
