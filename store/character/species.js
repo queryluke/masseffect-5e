@@ -36,6 +36,7 @@ export const getters = {
           species = { ...parentSpecies, ...species, mechanics: [...parentSpecies.mechanics, ...species.mechanics], parentName: parentSpecies.name, parentId: parentSpecies.id }
         }
       }
+      console.log(species)
       return species
     }
     return null

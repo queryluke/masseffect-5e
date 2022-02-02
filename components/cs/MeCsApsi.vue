@@ -94,7 +94,7 @@ export default {
     },
     initiativeBonus () {
       const bonus = this.mechanics
-        .filter(i => i.type === 'initiative' && typeof i.effect === 'object')
+        .filter(i => i.type === 'initiative' && i.effect === 'bonus')
         .reduce((acc, curr) => acc + this.$store.getters['character/mechanics/mcBonus'](curr.effect), 0)
       return this.dexMod + bonus
     },
