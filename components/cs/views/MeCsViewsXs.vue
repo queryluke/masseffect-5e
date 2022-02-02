@@ -16,16 +16,12 @@
         <me-cs-skills />
       </me-cs-card>
       <me-cs-card>
-        <!--
-        <me-character-sheet-proficiencies />
-        -->
+        <me-cs-proficiencies />
       </me-cs-card>
     </div>
     <div v-if="mobileView === 'notes'">
       <me-cs-card>
-        <!--
         <me-cs-notes />
-        -->
       </me-cs-card>
     </div>
     <div v-if="mobileView === 'details'">
@@ -35,9 +31,7 @@
         -->
       </me-cs-card>
       <me-cs-card>
-        <!--
         <me-cs-details />
-        -->
       </me-cs-card>
     </div>
     <div v-if="mobileView === 'equipment'">

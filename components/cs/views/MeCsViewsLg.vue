@@ -64,16 +64,12 @@
                 </v-tab-item>
                 <v-tab-item>
                   <v-card-text>
-                    <!--
-                    <me-character-sheet-details />
-                    -->
+                    <me-cs-details />
                   </v-card-text>
                 </v-tab-item>
                 <v-tab-item>
                   <v-card-text>
-                    <!--
-                    <me-character-sheet-notes />
-                    -->
+                    <me-cs-notes />
                   </v-card-text>
                 </v-tab-item>
               </v-tabs-items>
@@ -94,9 +90,7 @@
         </div>
         <v-card outlined>
           <v-card-text>
-            <!--
-            <me-character-sheet-proficiencies />
-            -->
+            <me-cs-proficiencies />
           </v-card-text>
         </v-card>
         <div class="mt-5 d-flex justify-center">

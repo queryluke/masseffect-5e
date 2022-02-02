@@ -2,7 +2,7 @@
   <v-card outlined flat>
     <div class="d-flex justify-space-between">
       <div style="width: 100px">
-        <v-img :src="item.bodyImg" />
+        <v-img :src="item.bodyImg" contain />
       </div>
       <v-card-text>
         <me-tpg s="h4">
