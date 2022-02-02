@@ -49,9 +49,7 @@
     </div>
     <div v-if="mobileView === 'settings'">
       <me-cs-card>
-        <!--
         <me-cs-settings />
-        -->
       </me-cs-card>
     </div>
     <div v-if="mobileView === 'actions'">
@@ -115,7 +113,7 @@ export default {
         { view: 'equipment', title: 'Gear', size: 6 },
         { view: 'details', title: 'Details', size: 6 },
         { view: 'notes', title: 'Notes', size: 6 },
-        { view: 'settings', title: 'Setting', size: 6 }
+        { view: 'settings', title: 'Settings', size: 12 }
       ],
       mobileView: 'abilities',
       mobileMenu: false

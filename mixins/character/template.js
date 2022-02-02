@@ -119,7 +119,7 @@ export const characterTemplate = {
     damageVul: [],
     conditionImm: [],
     powercasting: {},
-    skills: [],
+    skill: [],
     expertise: [],
     armor: [],
     savingThrow: [],

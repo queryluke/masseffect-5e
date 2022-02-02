@@ -11,22 +11,6 @@
           </template>
         </v-list>
       </v-col>
-      <!--
-      <v-col cols="12" md="4">
-        <v-list dense>
-          <template v-for="skill in skills.slice(6,12)">
-            <me-cs-skill-item :key="skill.id" :item="skill" />
-          </template>
-        </v-list>
-      </v-col>
-      <v-col cols="12" md="4">
-        <v-list dense>
-          <template v-for="skill in skills.slice(12)">
-            <me-cs-skill-item :key="skill.id" :item="skill" />
-          </template>
-        </v-list>
-      </v-col>
-      -->
     </v-row>
   </div>
 </template>

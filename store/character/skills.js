@@ -6,7 +6,10 @@ export const getters = {
     const skills = {}
     const profs = rootGetters['character/profs/profs'].skill
     const allMechanics = rootGetters['character/mechanics/mechanics']
-    const expertises = allMechanics.filter(i => i.type === 'skill' && i.expertise).map(i => i.value)
+    const expertises = [
+      ...allMechanics.filter(i => i.type === 'skill' && i.expertise).map(i => i.value),
+      ...rootGetters['character/character'].settings.expertise
+    ]
     const scMechanics = allMechanics.filter(i => i.type === 'skill-check')
     for (const skill of getters.skillList) {
       const proficient = profs.includes(skill.id)

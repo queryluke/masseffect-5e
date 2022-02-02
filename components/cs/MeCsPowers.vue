@@ -7,7 +7,7 @@
     <!-- Power Mod -->
     <v-row no-gutters justify="space-around" justify-md="center">
       <v-col v-for="stat in ['mod','attack','dc']" :key="`statDisplay-${stat}`" :cols="pcStatsCols" sm="4" class="d-flex mt-1">
-        <v-card outlined flat class="mx-auto">
+        <v-card outlined flat class="mx-auto" min-width="100">
           <div class="text-center d-flex justify-center">
             <div class="text-caption">
               <small>{{ statTitles[stat] }}</small>
@@ -77,6 +77,18 @@
       </v-row>
     </v-container>
 
+    <div class="text-right">
+      <v-btn
+        color="primary"
+        class="ma-0"
+        x-small
+        :disabled="viewOnly"
+        @click="managerDialog = true"
+      >
+        Manage
+      </v-btn>
+    </div>
+
     <!-- Powers -->
     <v-row no-gutters>
       <v-col>
@@ -85,11 +97,6 @@
             <div class="d-flex justify-space-between align-center">
               <div class="text-subtitle-2 mt-5">
                 {{ powerList.title }}
-              </div>
-              <div>
-                <v-btn v-if="index === '0'" color="primary" class="ma-0" x-small @click="managerDialog = true">
-                  Manage
-                </v-btn>
               </div>
             </div>
             <me-hr size="1" />
@@ -104,32 +111,6 @@
         </template>
       </v-col>
     </v-row>
-
-    <!-- TODO: this in settings -->
-    <me-standard-dialog :shown="pcAdjustDialog" :max-height="600" @close="pcAdjustDialog = false">
-      <template #title>
-        Powercasting Ability Override
-      </template>
-      <v-row>
-        <v-col v-for="(ability, klass) of klassPowercastingAbilities" :key="`klass-pc-override-${klass}`" cols="12" sm="6">
-          <div class="d-flex">
-            <v-avatar tile>
-              <v-img
-                :src="require(`~/assets/images/classes/${klass}.svg`)"
-                position="right"
-              />
-            </v-avatar>
-            <v-select :value="ability" :items="powercastingAbilityOptions" @change="upsertKlassPowercastingAbility($event, klass)">
-              <template #label>
-                <span class="text-titlecase">
-                  {{ klass }}
-                </span>
-              </template>
-            </v-select>
-          </div>
-        </v-col>
-      </v-row>
-    </me-standard-dialog>
 
     <!-- manage dialog -->
     <me-standard-dialog :shown="managerDialog" max-height="700" @close="managerDialog = false">
@@ -170,7 +151,6 @@ export default {
   data () {
     return {
       managerDialog: false,
-      pcAdjustDialog: false,
       statTitles: {
         mod: 'Modifier',
         attack: 'Power Attack',

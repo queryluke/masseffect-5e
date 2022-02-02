@@ -103,10 +103,9 @@
 </template>
 
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
-
+import { createNamespacedHelpers } from 'vuex'
+const { mapGetters } = createNamespacedHelpers('character')
 export default {
-  mixins: [CharacterBuilderHelpers],
   data () {
     return {
       types: ['trait', 'class-feature', 'feat', 'action', 'bonus-action', 'reaction'],
@@ -122,6 +121,7 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['character']),
     brews () {
       return this.character.brews || []
     },
@@ -152,7 +152,7 @@ export default {
       const index = brews.findIndex(i => i.id === id)
       if (index > -1) {
         brews.splice(index, 1)
-        this.$store.dispatch('cb/UPDATE_CHARACTER', {
+        this.$store.dispatch('character/UPDATE_CHARACTER', {
           cid: this.cid,
           attr: 'brews',
           value: brews
@@ -173,7 +173,7 @@ export default {
       } else {
         brews.push(newBrew)
       }
-      this.$store.dispatch('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'brews', value: brews })
+      this.$store.dispatch('character/UPDATE_CHARACTER', { cid: this.cid, attr: 'brews', value: brews })
       this.brew = this.emptyBrew
     },
     loadBrew (brew) {

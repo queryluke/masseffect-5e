@@ -124,7 +124,7 @@ export default {
       const mechanics = this.mechanics.filter(i => i.type === 'sense')
       for (const sense of this.sensesList) {
         const senseDistances = mechanics.filter(i => i.sense === sense).map(i => i.distance)
-        const highest = Math.max(0, this.character.settings.senses[sense], ...senseDistances)
+        const highest = Math.max(0, this.character.settings.senses[sense.id], ...senseDistances)
         senses.push({ ...sense, distance: highest, html: sense.html(highest) })
       }
       return senses

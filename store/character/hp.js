@@ -6,17 +6,21 @@ export const state = () => ({
 export const getters = {
   hp: (state, getters, rootState, rootGetters) => {
     let max = 0
-    for (const klass of rootGetters['character/klasses/selectedKlasses']) {
-      for (const hp of klass.hitPoints) {
-        max += hp
+    if (rootGetters['character/character'].settings.hp) {
+      max = rootGetters['character/character'].settings.hp
+    } else {
+      for (const klass of rootGetters['character/klasses/selectedKlasses']) {
+        for (const hp of klass.hitPoints) {
+          max += hp
+        }
       }
+      const level = rootGetters['character/klasses/level']
+      max += (level * rootGetters['character/abilities/conMod'])
+      max += rootGetters['character/mechanics/mechanics']
+        .filter(i => i.type === 'hp')
+        .reduce((acc, curr) => acc + rootGetters['character/mechanics/mcBonus'](curr.bonus), 0)
+      max = Math.max(level, max)
     }
-    const level = rootGetters['character/klasses/level']
-    max += (level * rootGetters['character/abilities/conMod'])
-    max += rootGetters['character/mechanics/mechanics']
-      .filter(i => i.type === 'hp')
-      .reduce((acc, curr) => acc + rootGetters['character/mechanics/mcBonus'](curr.bonus), 0)
-    max = Math.max(level, max)
     return {
       max,
       current: Math.max(max - rootGetters['character/character'].currentStats.hitPointsLost, 0)

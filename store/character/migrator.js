@@ -20,7 +20,7 @@ export const actions = {
     delete character.credits
     character.currentStats.omnigel = character.omnigel
     delete character.omnigel
-    character.currentStats.medigel = []
+    character.currentStats.medigel = character.medigel
     character.currentStats.renegade = 0
     character.currentStats.paragon = 0
     character.currentStats.resources = []

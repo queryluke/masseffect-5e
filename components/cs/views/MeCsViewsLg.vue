@@ -123,9 +123,7 @@
         </v-toolbar>
         <v-card-text class="d-flex justify-center">
           <div style="max-width: 700px">
-            <!--
-            <me-character-sheet-settings />
-            -->
+            <me-cs-settings />
           </div>
         </v-card-text>
       </v-card>
