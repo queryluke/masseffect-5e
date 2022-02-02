@@ -2,14 +2,17 @@ export const state = () => ({
 })
 
 export const getters = {
+  expertises: (state, getters, rootState, rootGetters) => {
+    return [
+      ...rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'skill' && i.expertise).map(i => i.value),
+      ...rootGetters['character/character'].settings.expertise
+    ]
+  },
   skills: (state, getters, rootState, rootGetters) => {
     const skills = {}
     const profs = rootGetters['character/profs/profs'].skill
     const allMechanics = rootGetters['character/mechanics/mechanics']
-    const expertises = [
-      ...allMechanics.filter(i => i.type === 'skill' && i.expertise).map(i => i.value),
-      ...rootGetters['character/character'].settings.expertise
-    ]
+    const expertises = getters.expertises
     const scMechanics = allMechanics.filter(i => i.type === 'skill-check')
     for (const skill of getters.skillList) {
       const proficient = profs.includes(skill.id)

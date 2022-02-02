@@ -63,8 +63,8 @@ export default {
     }
   },
   methods: {
-    alreadyAcquired (value) {
-      return this.profs.weapon.includes(value)
+    alreadyAcquired (item) {
+      return this.profs.weapon.includes(item.value)
     },
     upsert (value) {
       this.$emit('upsert', value.map((i) => {

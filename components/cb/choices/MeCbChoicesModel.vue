@@ -102,8 +102,8 @@ export default {
     }
   },
   methods: {
-    alreadyAcquired (value) {
-      return this.selectedModelIdsFromAnyWhere.includes(value)
+    alreadyAcquired (item) {
+      return this.selectedModelIdsFromAnyWhere.includes(item.value)
     },
     modelFilter (item) {
       return this.mechanic.limits.every(({ attr, value }) => {

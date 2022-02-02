@@ -77,8 +77,8 @@ export default {
     }
   },
   methods: {
-    alreadyAcquired (value) {
-      return this.profs.tool.includes(value)
+    alreadyAcquired (item) {
+      return this.profs.tool.includes(item.value)
     },
     upsert (value) {
       this.$emit('upsert', value.map((i) => {

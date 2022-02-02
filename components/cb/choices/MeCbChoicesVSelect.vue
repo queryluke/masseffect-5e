@@ -24,7 +24,7 @@
       </v-chip>
     </template>
     <template #item="{ item }">
-      <v-list-item-icon v-if="alreadyAcquired(item.value)">
+      <v-list-item-icon v-if="alreadyAcquired(item)">
         <v-icon color="warning">
           mdi-alert-circle
         </v-icon>
@@ -43,8 +43,10 @@
         <v-list-item-title>
           {{ item.text }}
         </v-list-item-title>
-        <v-list-item-subtitle v-if="alreadyAcquired(item.value)">
-          Already acquired
+        <v-list-item-subtitle v-if="alreadyAcquired(item)">
+          <slot name="itemSubtitle" :item="item">
+            Already acquired
+          </slot>
         </v-list-item-subtitle>
       </v-list-item-content>
     </template>
@@ -94,11 +96,11 @@ export default {
     }
   },
   methods: {
-    alreadyAcquired (value) {
-      return this.acquired(value) && !this.isSelected(value)
+    alreadyAcquired (item) {
+      return this.acquired(item) && !this.isSelected(item.value)
     },
     disabled (item) {
-      return this.alreadyAcquired(item.value) || (this.isSelected(item.value) ? false : this.disableItems)
+      return this.alreadyAcquired(item) || (this.isSelected(item.value) ? false : this.disableItems)
     },
     isSelected (value) {
       return this.value.includes(value)

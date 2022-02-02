@@ -79,9 +79,7 @@
       </v-col>
       <v-col cols="3">
         <div class="mb-5">
-          <!--
           <me-cs-reputation />
-          -->
         </div>
         <div class="mb-5">
           <!--

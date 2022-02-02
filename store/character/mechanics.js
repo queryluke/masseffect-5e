@@ -67,7 +67,8 @@ export const getters = {
       // ADD ADDITIONAL MECHANICS HERE
       ...rootGetters['character/species/mechanics'],
       ...rootGetters['character/klasses/klassesMechanics'],
-      ...rootGetters['character/backgroundMechanics']
+      ...rootGetters['character/backgroundMechanics'],
+      ...rootGetters['character/reputation/benefitsMechanics']
     ]
     for (const item of mechanics) {
       finalMechanics.push(...hydrate(item))

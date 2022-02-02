@@ -68,8 +68,11 @@ export default {
     }
   },
   methods: {
-    alreadyAcquired (value) {
-      return this.profs.skill.includes(value)
+    alreadyAcquired (item) {
+      if (this.expertise) {
+        return this.$store.getters['character/skills/expertises'].includes(item.value)
+      }
+      return this.profs.skill.includes(item.value)
     },
     upsert (value) {
       this.$emit('upsert', value.map((i) => {
