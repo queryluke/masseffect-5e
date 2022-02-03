@@ -99,6 +99,31 @@ export const getters = {
       path: `background/${getters.background.id}`,
       mechanics: getters.background.mechanics
     }]
+  },
+  brewsAsFeatures: (state, getters) => {
+    return getters.character.brews.map((i) => {
+      return {
+        name: i.name,
+        type: i.type,
+        html: i.html,
+        mechanics: [
+          {
+            type: i.type,
+            resource: i.mechanics.uses
+              ? {
+                  displayType: 'checkbox',
+                  reset: i.mechanics.recharge,
+                  max: { type: 'flat', value: i.mechanics.uses },
+                  id: i.id
+                }
+              : false,
+            moreInfo: {
+              bind: i.html
+            }
+          }
+        ]
+      }
+    })
   }
 }
 

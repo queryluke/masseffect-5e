@@ -4,7 +4,12 @@
       <slot />
     </div>
     <me-hr size="1" />
-    <me-cs-feature-item v-for="(item, index) in items" :key="`action-${index}`" :item="item" />
+    <template v-for="(item, index) in items">
+      <me-tpg v-if="item.featureGroup" :key="`feature-group-title-${index}`" s="title">
+        {{ item.featureGroup }}
+      </me-tpg>
+      <me-cs-feature-item v-else :key="`feature-${index}`" :item="item" />
+    </template>
   </div>
 </template>
 

@@ -1,49 +1,32 @@
 <template>
-  <div class="mx-n3 mx-sm-4">
-    <me-character-sheet-card-title v-if="$vuetify.breakpoint.smAndDown">
+  <v-container>
+    <me-cs-card-title v-if="$vuetify.breakpoint.smAndDown">
       Features & Traits
-    </me-character-sheet-card-title>
+    </me-cs-card-title>
     <v-chip-group v-model="tab" active-class="primary--text" column>
       <v-chip
         v-for="(cTab, index) in tabs"
         :key="`action-chip-tab-${index}`"
         small
+        :disabled="index !== 0 && features[index].length === 0"
       >
         {{ cTab }}
       </v-chip>
     </v-chip-group>
-    <div v-show="showTab(1)">
-      <div class="text-subtitle-1 mt-3">
-        Class Features
+    <div v-for="(tabTitle, index) in tabs" :key="`feature-content-tab-${index}`">
+      <div v-show="showTab(index)" v-if="index !== 0 && features[index].length">
+        <me-cs-feature-list :items="features[index]">
+          {{ tabTitle }}
+        </me-cs-feature-list>
       </div>
-      <me-character-sheet-actions-brews type="class-feature" />
-      <template v-for="(klass, index) of characterClasses">
-        <me-character-sheet-class-features :key="`klass-features-for-${klass.id}`" :class-index="index" />
-      </template>
     </div>
-    <div v-show="showTab(2)">
-      <me-cs-feature-list :items="csSpeciesTraits">
-        Species Traits
-      </me-cs-feature-list>
-    </div>
-    <div v-show="showTab(3)">
-      <me-cs-feature-list :items="csReputationBenefits">
-        Reputation Benefits
-      </me-cs-feature-list>
-    </div>
-    <div v-show="showTab(4)">
-      <me-cs-feature-list :items="csSelectedFeats">
-        Feats
-      </me-cs-feature-list>
-    </div>
-  </div>
+  </v-container>
 </template>
 
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
-
+import { createNamespacedHelpers } from 'vuex'
+const { mapGetters } = createNamespacedHelpers('character')
 export default {
-  mixins: [CharacterBuilderHelpers],
   data () {
     return {
       tab: 0,
@@ -51,51 +34,53 @@ export default {
     }
   },
   computed: {
-    csClassFeatures () {
-      // TODO
-      return []
-    },
-    csSpeciesTraits () {
+    ...mapGetters({
+      brews: 'brewsAsFeatures',
+      traits: 'species/traits',
+      klassesFeatures: 'klasses/klassesFeatures',
+      klasses: 'klasses/klasses',
+      selections: 'selections/selected'
+    }),
+    features () {
       return [
-        ...this.speciesTraits,
-        ...this.csCustomAsFeature.trait
+        [], // index 0 = all
+        [
+          ...this.klassFeatures,
+          ...this.brews.filter(i => i.type === 'class-feature')
+        ], // class features
+        // species traits
+        [
+          ...this.traits,
+          ...this.brews.filter(i => i.type === 'trait')
+        ],
+        // benefits
+        [
+          ...this.getSelectionsOfType('benefits')
+        ],
+        // feats
+        [
+          ...this.getSelectionsOfType('feats'),
+          ...this.brews.filter(i => i.type === 'feat')
+        ]
       ]
     },
-    csReputationBenefits () {
-      // TODO
-      return [
-        ...this.mechanicBagSelections.filter(i => i.type === 'benefits').map(i => i.value).map(i => this.$store.getters.getItem('benefits', i))
-      ]
-    },
-    csSelectedFeats () {
-      return [
-        ...this.selectedFeats.map(i => this.$store.getters.getItem('feats', i)),
-        ...this.csFeats,
-        ...this.csCustomAsFeature.feat
-      ]
-    },
-    csCustomAsFeature () {
-      const brew = this.character.brews
-        .filter(i => ['feat', 'trait'].includes(i.type))
-        .map((i) => {
-          return {
-            name: i.name,
-            type: i.type,
-            resource: i.mechanics.uses
-              ? { displayType: 'checkbox', reset: i.mechanics.recharge, max: { type: 'flat', value: i.mechanics.uses }, id: i.id }
-              : false,
-            moreInfo: {
-              bind: i.html
-            }
-          }
-        })
-      return {
-        trait: brew.filter(i => i.type === 'trait'),
-        feat: brew.filter(i => i.type === 'feat')
+    klassFeatures () {
+      const klassFeatures = []
+      for (const [index, klass] of this.klasses.entries()) {
+        klassFeatures.push({ featureGroup: klass.data.name })
+        klassFeatures.push(...this.klassesFeatures[index])
       }
+      return klassFeatures
     }
   },
   methods: {
+    getSelectionsOfType (type) {
+      const ids = this.selections
+        .filter(i => i.path.endsWith(type))
+        .reduce((acc, curr) => acc.concat(...curr.value), [])
+        .map(i => i.value)
+      return this.$store.getters.getData(type).filter(i => ids.includes(i.id))
+    },
     showTab (index) {
       if (this.tab === 0) {
         return true

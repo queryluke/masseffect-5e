@@ -26,9 +26,7 @@
     </div>
     <div v-if="mobileView === 'details'">
       <me-cs-card>
-        <!--
         <me-cs-reputation />
-        -->
       </me-cs-card>
       <me-cs-card>
         <me-cs-details />
@@ -56,9 +54,7 @@
     </div>
     <div v-if="mobileView === 'features'">
       <me-cs-card>
-        <!--
         <me-cs-features />
-        -->
       </me-cs-card>
     </div>
     <div v-if="mobileView === 'powers'">

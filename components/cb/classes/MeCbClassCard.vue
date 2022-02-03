@@ -117,7 +117,7 @@
                 </v-row>
               </me-cb-aspect-card>
               <!-- Sentinel Pc Ability Choice -->
-              <me-cb-aspect-card :asm-override="{ has: true, value: sentinelPcSelection }">
+              <me-cb-aspect-card v-if="klass.id === 'sentinel'" :asm-override="{ has: true, value: sentinelPcSelection }">
                 <template #title>
                   Sentinel Powercasting Ability
                 </template>

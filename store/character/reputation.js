@@ -55,15 +55,15 @@ export const getters = {
               available: isAvailable(getters.reputation, i)
             }
           }),
-          selected: [],
+          selected: null,
           needsAttention: false
         }
         const selectedAtThreshold = getters.selectedBenefits.find(i => i.threshold === threshold)
         if (selectedAtThreshold) {
           // Always, only 1?
-          const selectedId = selectedAtThreshold.value[0].value[0]
+          const selectedId = selectedAtThreshold.value[0].value
           if (selectedId) {
-            thObject.selected = [selectedId]
+            thObject.selected = selectedId
             try {
               const benefit = getters.benefitsList.find(i => i.id === selectedId)
               thObject.needsAttention = !isAvailable(getters.reputation, benefit)

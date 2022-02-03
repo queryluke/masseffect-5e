@@ -58,9 +58,7 @@
                   </v-card-text>
                 </v-tab-item>
                 <v-tab-item>
-                  <!--
                   <me-cs-features />
-                  -->
                 </v-tab-item>
                 <v-tab-item>
                   <v-card-text>

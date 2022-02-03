@@ -11,6 +11,10 @@
     chips
     deletable-chips
     multiple
+    :append-icon="appendIcon"
+    :error="error"
+    persistent-hint
+    :hint="hint"
   >
     <template #selection="{ item, attrs, selected }">
       <v-chip
@@ -80,6 +84,18 @@ export default {
       default: () => {
         return false
       }
+    },
+    appendIcon: {
+      type: String,
+      default: undefined
+    },
+    error: {
+      type: Boolean,
+      default: false
+    },
+    hint: {
+      type: String,
+      default: undefined
     }
   },
   computed: {

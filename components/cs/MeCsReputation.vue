@@ -73,20 +73,15 @@
         />
       </div>
       <div v-for="th in thresholds" :key="`select-benefit-${th.threshold}`">
-        <div class="d-flex text-h6">
-          <v-icon v-if="!th.selected || th.needsAttention" :color="th.needsAttention ? 'warning' : 'info'">
-            mdi-alert-circle
-          </v-icon>
-          Threshold {{ th.threshold }}
-        </div>
-        <div v-if="th.needsAttention" class="text-caption">
-          You no longer meet the prerequisites for this threshold.
-        </div>
         <me-cb-choices-v-select
           :items="th.options"
           :acquired="notAvailable"
-          label="Choose a benefit..."
-          :value="th.selected"
+          :label="`Threshold ${th.threshold}`"
+          :value="th.selected ? [th.selected] : []"
+          persistent-hint
+          :append-icon="th.needsAttention ? 'mdi-alert-circle' : undefined"
+          :error="th.needsAttention"
+          :hint="th.needsAttention ? 'You no longer meet the prerequisites for this threshold.' : undefined"
           @change="changeSelection(th.threshold, $event)"
         >
           <template #itemSubtitle="{ item }">
@@ -117,7 +112,7 @@ export default {
       selectedBenefits: 'reputation/selectedBenefits'
     }),
     needSelection () {
-      return this.thresholds.some(i => i.selected.length === 0)
+      return this.thresholds.some(i => !i.selected)
     },
     needChange () {
       return this.thresholds.some(i => i.needsAttention)
@@ -140,7 +135,7 @@ export default {
       if (value) {
         const selectObj = {
           path,
-          value: [{ type: 'benefits', value }]
+          value: [{ type: 'benefits', value: value[0] }]
         }
         const index = newBenefits.findIndex(i => i.path === path)
         if (index > -1) {
