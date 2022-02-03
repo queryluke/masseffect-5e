@@ -4,10 +4,13 @@
     type="number"
     dense
     outlined
-    prepend-icon="mdi-minus"
-    append-outer-icon="mdi-plus"
+    :label="label || undefined"
+    :prepend-icon="!hideIcons ? 'mdi-minus' : undefined"
+    :append-outer-icon="!hideIcons ? 'mdi-plus' : undefined"
     hide-details
     :disabled="viewOnly"
+    :append-icon="clearable ? 'mdi-close' : undefined"
+    @click:append="$emit('clear')"
     @input="debouncedUpdate()"
     @click:append-outer="$emit('add')"
     @click:prepend="$emit('remove')"
@@ -25,6 +28,18 @@ export default {
     max: {
       type: Number,
       required: true
+    },
+    clearable: {
+      type: Boolean,
+      default: false
+    },
+    label: {
+      type: [String, Boolean],
+      default: false
+    },
+    hideIcons: {
+      type: Boolean,
+      default: false
     }
   },
   data () {

@@ -236,7 +236,48 @@ export const actions = {
 
     // TODO: migrate powers for class selection...unlinked?
 
-    // TODO: equipment
+    const newEquipment = []
+    const now = new Date().toISOString()
+    if (character.medigel && character.medigel > 0) {
+      newEquipment.push({
+        id: 'medi-gel',
+        notes: '',
+        subType: 'medi_gel',
+        type: 'gear',
+        uses: character.medigel,
+        uuid: `medi-gel_${now}`
+      })
+    }
+    if (character.omnigel && character.omnigel > 0) {
+      newEquipment.push({
+        id: 'omni-gel',
+        notes: '',
+        subType: 'omni-gel',
+        type: 'gear',
+        uses: character.omnigel,
+        uuid: `omni-gel_${now}`
+      })
+    }
+    for (const eq of character.equipment) {
+      if (eq.type === 'weapon') {
+        const replacedWeapon = {
+          ...eq,
+          overrides: eq.stats
+        }
+        delete replacedWeapon.stats
+        newEquipment.push(replacedWeapon)
+      } else if (eq.type === 'armor' && eq.custom) {
+        const replacementCustomArmor = {
+          custom: { ...eq.custom, ...eq.stats },
+          ...eq
+        }
+        delete replacementCustomArmor.stats
+        newEquipment.push(replacementCustomArmor)
+      } else {
+        newEquipment.push(eq)
+      }
+    }
+    character.equipment = newEquipment
     // Do not store base model, hydrate on load
 
     delete character.selections

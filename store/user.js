@@ -3,7 +3,7 @@ import jsonpack from 'jsonpack/main'
 export const state = () => ({
   darkMode: true,
   imperial: false,
-  bookmarks: {},
+  bookmarks: [],
   username: null,
   avatar: null,
   profileImg: null,
@@ -28,6 +28,7 @@ export const getters = {
   bookmarks: state => state.bookmarks,
   isBookmarked: state => (model, id) => {
     const lookupModel = model === 'bestiary' && id.startsWith('generated') ? 'genpc' : model
+    console.log(state.bookmarks)
     return typeof state.bookmarks.find(i => i.modelId === id && i.model === lookupModel) !== 'undefined'
   },
   search: state => state.search,
@@ -122,7 +123,7 @@ export const actions = {
   async SYNC_BOOKMARKS ({ getters, dispatch, commit }) {
     // TODO: TEMPORARY CHECK
     if (!Array.isArray(getters.bookmarks)) {
-      dispatch('migrator/awsMigrate', null, { root: true })
+      dispatch('migrator/v131', { bookmarks: getters.bookmarks, characters: null }, { root: true })
     }
     // GET bookmarks from AWS
     let nextToken = null

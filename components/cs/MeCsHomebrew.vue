@@ -74,7 +74,7 @@
         />
       </v-col>
       <v-col cols="12" class="d-flex justify-center">
-        <v-btn @click="saveHomebrewItem">
+        <v-btn :disabled="viewOnly" @click="saveHomebrewItem">
           Save
         </v-btn>
       </v-col>
@@ -82,7 +82,7 @@
     <v-list dense two-line>
       <template v-for="homebrew in brews">
         <v-list-item :key="homebrew.id">
-          <v-list-item-avatar @click="loadBrew(homebrew)">
+          <v-list-item-avatar v-if="!viewOnly" @click="loadBrew(homebrew)">
             <v-icon>mdi-pencil</v-icon>
           </v-list-item-avatar>
           <v-list-item-content>
@@ -91,7 +91,7 @@
               {{ homebrew.type.replace('-', ' ') }}
             </v-list-item-subtitle>
           </v-list-item-content>
-          <v-list-item-action @click="deleteHomebrewItem(homebrew.id)">
+          <v-list-item-action v-if="!viewOnly" @click="deleteHomebrewItem(homebrew.id)">
             <v-icon color="error">
               mdi-delete
             </v-icon>
@@ -122,6 +122,9 @@ export default {
   },
   computed: {
     ...mapGetters(['character']),
+    viewOnly () {
+      return this.$store.state.character.viewOnly
+    },
     brews () {
       return this.character.brews || []
     },

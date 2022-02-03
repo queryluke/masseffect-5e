@@ -83,9 +83,7 @@ export const characterTemplate = {
     resources: {},
     paragon: 0,
     renegade: 0,
-    credits: 0,
-    omnigel: 0,
-    medigel: 0
+    credits: 0
   },
   settings: {
     acOverride: null,

@@ -25,6 +25,7 @@ import { debounce, get as attrGetter } from 'lodash'
 import { createNamespacedHelpers } from 'vuex'
 const { mapGetters } = createNamespacedHelpers('character')
 export default {
+  name: 'MeCbDebouncedInput',
   props: {
     path: {
       type: String,

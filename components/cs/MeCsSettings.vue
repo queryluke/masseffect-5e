@@ -404,9 +404,12 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
+import { DamageTypes } from '~/mixins/labels/DamageTypes'
 const { mapGetters } = createNamespacedHelpers('character')
 
 export default {
+  name: 'MeCsSettings',
+  mixins: [DamageTypes],
   data () {
     return {
       tab: 0,
@@ -448,21 +451,7 @@ export default {
       }
       return items
     },
-    damageTypes () {
-      const items = []
-      for (const key in this.$i18n.messages.en.damage_types) {
-        if (key.endsWith('_damage') || key.endsWith('_title')) {
-          continue
-        }
-        items.push({
-          text: this.$t(`damage_types.${key}_title`),
-          value: key
-        })
-      }
-      return items
-    },
     profSettings () {
-      console.log(this.profs)
       return [
         {
           name: 'Skill',

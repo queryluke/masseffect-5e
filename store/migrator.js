@@ -15,6 +15,46 @@ export const mutations = {
 }
 
 export const actions = {
+  async TEST_MIGRATE ({ dispatch, commit }) {
+    const mostRecentBookmarks = {
+      bestiary: [],
+      weapons: [
+        {
+          rarity: 'uncommon',
+          type: 'shotgun',
+          cost: 19000,
+          manufacturer: 'batarian',
+          weight: 13,
+          heat: 2,
+          damage: {
+            dieCount: 2,
+            dieType: 8,
+            type: 'piercing'
+          },
+          range: 5,
+          image: 'http://vignette2.wikia.nocookie.net/masseffect/images/3/3f/ME3_Raider_Shotgun.png/revision/latest?cb=20120317200919',
+          andromeda: false,
+          properties: [
+            'double-tap',
+            'hip-fire',
+            'two-handed',
+            'recoil'
+          ],
+          name: 'AT-12 Raider',
+          html: '',
+          id: 'at-12-raider'
+        }
+      ]
+    }
+    const mostRecentCharacters = null
+    const previousVersion = 'v131'
+    try {
+      await dispatch(previousVersion, { characters: mostRecentCharacters, bookmarks: mostRecentBookmarks })
+      commit('SET_MIGRATED', true)
+    } catch (e) {
+      console.error(e)
+    }
+  },
   async MIGRATE ({ commit, rootGetters, getters, dispatch }) {
     if (getters.isMigrated) {
       return
@@ -42,6 +82,7 @@ export const actions = {
       }
       const mostRecentBookmarks = previousState.user?.bookmarks
       const mostRecentCharacters = previousState.cb?.characters
+
       if (!mostRecentBookmarks && !mostRecentCharacters) {
         commit('SET_MIGRATED', true)
         return

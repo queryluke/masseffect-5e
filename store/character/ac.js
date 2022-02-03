@@ -20,45 +20,45 @@ export const getters = {
     const naturalArmor = naturalArmorBase[0] || 0
 
     // equipped armor
-    const equippedArmor = rootGetters['character/equipment/armor']
-    const head = equippedArmor.find(i => i.placement === 'head')
-    const body = equippedArmor.find(i => i.placement === 'body_armor')
-    const chest = equippedArmor.find(i => i.placement === 'chest')
-    const arms = equippedArmor.find(i => i.placement === 'arms')
-    const legs = equippedArmor.find(i => i.placement === 'legs')
+    const equippedArmor = rootGetters['character/equipment/equippedArmor']
+    const head = equippedArmor.find(i => i.data.placement === 'head')
+    const body = equippedArmor.find(i => i.data.placement === 'body_armor')
+    const chest = equippedArmor.find(i => i.data.placement === 'chest')
+    const arms = equippedArmor.find(i => i.data.placement === 'arms')
+    const legs = equippedArmor.find(i => i.data.placement === 'legs')
     let runningAc = 10
     let numMed = 0
     let numHeavy = 0
     if (body) {
-      if (body.type === 'light') {
+      if (body.data.type === 'light') {
         runningAc += 1
-      } else if (body.type === 'medium') {
+      } else if (body.data.type === 'medium') {
         runningAc += 4
         numMed = 3
-      } else if (body.type === 'heavy') {
+      } else if (body.data.type === 'heavy') {
         runningAc += 7
         numHeavy = 3
       }
     } else {
       if (chest) {
-        numMed += chest.type === 'medium' ? 1 : 0
-        numHeavy += chest.type === 'heavy' ? 1 : 0
-        runningAc += chest.type === 'heavy' ? 3 : chest.type === 'medium' ? 2 : 1
+        numMed += chest.data.type === 'medium' ? 1 : 0
+        numHeavy += chest.data.type === 'heavy' ? 1 : 0
+        runningAc += chest.data.type === 'heavy' ? 3 : chest.data.type === 'medium' ? 2 : 1
       }
       if (arms) {
-        numMed += arms.type === 'medium' ? 1 : 0
-        numHeavy += arms.type === 'heavy' ? 1 : 0
-        runningAc += arms.type === 'heavy' ? 2 : arms.type === 'medium' ? 1 : 0
+        numMed += arms.data.type === 'medium' ? 1 : 0
+        numHeavy += arms.data.type === 'heavy' ? 1 : 0
+        runningAc += arms.data.type === 'heavy' ? 2 : arms.data.type === 'medium' ? 1 : 0
       }
       if (legs) {
-        numMed += legs.type === 'medium' ? 1 : 0
-        numHeavy += legs.type === 'heavy' ? 1 : 0
-        runningAc += legs.type === 'heavy' ? 2 : legs.type === 'medium' ? 1 : 0
+        numMed += legs.data.type === 'medium' ? 1 : 0
+        numHeavy += legs.data.type === 'heavy' ? 1 : 0
+        runningAc += legs.data.type === 'heavy' ? 2 : legs.data.type === 'medium' ? 1 : 0
       }
     }
     if (head) {
-      numMed += head.type === 'medium' ? 1 : 0
-      numHeavy += head.type === 'heavy' ? 1 : 0
+      numMed += head.data.type === 'medium' ? 1 : 0
+      numHeavy += head.data.type === 'heavy' ? 1 : 0
     }
     const dexMax = numHeavy > 0 ? 0 : numMed > 0 ? 2 : 999
     const appliedDex = Math.min(dexMax, dexMod)

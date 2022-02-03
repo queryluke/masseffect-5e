@@ -52,9 +52,7 @@
                 </v-tab-item>
                 <v-tab-item>
                   <v-card-text>
-                    <!--
-                    <me-character-sheet-equipment />
-                    -->
+                    <me-cs-equipment />
                   </v-card-text>
                 </v-tab-item>
                 <v-tab-item>
