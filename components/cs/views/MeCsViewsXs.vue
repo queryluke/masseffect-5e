@@ -34,9 +34,7 @@
     </div>
     <div v-if="mobileView === 'equipment'">
       <me-cs-card>
-        <!--
         <me-cs-equipment />
-        -->
       </me-cs-card>
     </div>
     <div v-if="mobileView === 'settings'">

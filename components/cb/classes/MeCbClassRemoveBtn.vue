@@ -78,6 +78,7 @@ export default {
   methods: {
     removeClass () {
       this.$store.dispatch('character/klasses/REMOVE_KLASS', this.item.id)
+      this.dialog = false
     }
   }
 }

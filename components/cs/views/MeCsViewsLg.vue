@@ -78,9 +78,7 @@
           <me-cs-reputation />
         </div>
         <div class="mb-5">
-          <!--
-          <me-character-sheet-short-long-rest />
-          -->
+          <me-cs-short-long-rest />
         </div>
         <v-card outlined>
           <v-card-text>

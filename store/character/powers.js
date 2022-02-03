@@ -64,7 +64,7 @@ export const getters = {
       let level, psP
       if (klasses.length > 1) {
         psP = state.mcPs
-        level = rootGetters['character/klasses/mcLevels']('adept', ['vangaurd'])
+        level = rootGetters['character/klasses/mcLevels']('adept', ['vanguard'])
       } else {
         level = klasses[0].levels
         psP = klasses[0].data.progression.columns.find(i => i.label === 'power_slots_by_power_level')?.values || []
