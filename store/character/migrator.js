@@ -2,11 +2,16 @@ export const actions = {
   migrate ({ dispatch, rootState }, character) {
     const version = character.meta?.version
     if (!version || version !== rootState.cbVersion) {
-      character = dispatch('toV101', character)
+      try {
+        return dispatch('toV101', character)
+      } catch (e) {
+        console.log(e.message)
+        return false
+      }
     }
-    return character
+    return false
   },
-  toV101 (character) {
+  toV101 (vuex, character) {
     character.meta = {
       remote: false,
       version: '1.0.1'
@@ -24,6 +29,7 @@ export const actions = {
     character.currentStats.renegade = 0
     character.currentStats.paragon = 0
     character.currentStats.resources = []
+    console.log('setup complete')
     // abilityScores
     const abilityScores = {
       str: {
@@ -58,7 +64,7 @@ export const actions = {
       }
     }
     const type = character.abilityScores.genMethod.value
-    for (const [key, score] of character.abilityScores[type]) {
+    for (const [key, score] of Object.entries(character.abilityScores[type])) {
       abilityScores[key].value = score
       if (character.abilityScores.other[key]) {
         abilityScores[key].other = character.abilityScores.other[key]
@@ -69,6 +75,7 @@ export const actions = {
     }
     character.options.asiGenMethod = character.abilityScores.genMethod.value
     character.abilityScores = abilityScores
+    console.log('abilities complete')
 
     // fighting styles
     if (character.fightingStyles.length) {
@@ -83,6 +90,8 @@ export const actions = {
       }
     }
     delete character.fightingStyles
+    console.log('fighting styles complete')
+
     // classes
     // const newClasses = []
     const classAsi = {
@@ -140,12 +149,14 @@ export const actions = {
         }
       }
     }
+    console.log('classes complete')
 
     // custom profs
     for (const prof of ['armor', 'weapon', 'savingThrow', 'tool']) {
       const p = character.selections.find(i => i.source === `custom-${prof}`)
       character.settings[prof] = p?.value || []
     }
+    console.log('profs complete')
 
     // backgrounds
     function processSubgrounds (basePath, stuff, limit) {
@@ -164,8 +175,8 @@ export const actions = {
           })
         }
         if (subground && !swsProfType) {
-          if (['skill', 'tool'].includes(bgs.subType) && bgs.value.length) {
-            character.selected.push({
+          if (['skill', 'tool'].includes(bgs.subType) && bgs.value?.length) {
+            resultedSelected.push({
               path: `${basePath}/subgrounds/${subground.replace('_', '-')}/${swsProfType}`,
               value: bgs.value.map((i) => {
                 return {
@@ -177,7 +188,7 @@ export const actions = {
           }
         }
         if (swsProfType && bgs.value.length) {
-          character.selected.push({
+          resultedSelected.push({
             path: `${basePath}/subgrounds/${subground.replace('_', '-')}/${swsProfType}`,
             value: bgs.value.map((i) => {
               return {
@@ -190,41 +201,38 @@ export const actions = {
       }
       return resultedSelected
     }
-    try {
-      if (character.background) {
-        const selectedBgStuff = character.selections.find(i => i.source.startsWith(`background-${character.background}`))
-        const basePath = `background/${character.background}`
-        let limit
-        switch (character.background) {
-          case 'artisan':
-            limit = '[{"attr":"id","value":["armorsmith","brewer","chemist","cook","mechanic","painter","tailor","weaponsmith"]}]'
-            character.selected.push(...processSubgrounds(basePath, selectedBgStuff, limit))
-            break
-          case 'criminal':
-            limit = '[{"attr":"id","value":["assassin","blackmailer","fence","gambler","gang-member","pickpocket","smuggler","thief"]}]'
-            character.selected.push(...processSubgrounds(basePath, selectedBgStuff, limit))
-            break
-          case 'scholar':
-            limit = '[{"attr":"id","value":["chemistry","astronomy","engineering","physics","computer-science","biology","philosophy","general-studies"]}]'
-            character.selected.push(...processSubgrounds(basePath, selectedBgStuff, limit))
-            break
-          default:
-            for (const stuff of selectedBgStuff) {
-              if (stuff.value.length) {
-                character.selected.push({
-                  path: `${basePath}/${stuff.subType}`,
-                  value: stuff.value.map((i) => {
-                    return { type: stuff.subType, value: i }
-                  })
+    if (character.background) {
+      const selectedBgStuff = character.selections.filter(i => i.source.startsWith(`background-${character.background}`))
+      const basePath = `background/${character.background}`
+      let limit
+      switch (character.background) {
+        case 'artisan':
+          limit = '[{"attr":"id","value":["armorsmith","brewer","chemist","cook","mechanic","painter","tailor","weaponsmith"]}]'
+          character.selected.push(...processSubgrounds(basePath, selectedBgStuff, limit))
+          break
+        case 'criminal':
+          limit = '[{"attr":"id","value":["assassin","blackmailer","fence","gambler","gang-member","pickpocket","smuggler","thief"]}]'
+          character.selected.push(...processSubgrounds(basePath, selectedBgStuff, limit))
+          break
+        case 'scholar':
+          limit = '[{"attr":"id","value":["chemistry","astronomy","engineering","physics","computer-science","biology","philosophy","general-studies"]}]'
+          character.selected.push(...processSubgrounds(basePath, selectedBgStuff, limit))
+          break
+        default:
+          for (const stuff of selectedBgStuff) {
+            if (stuff.value.length) {
+              character.selected.push({
+                path: `${basePath}/${stuff.subType}`,
+                value: stuff.value.map((i) => {
+                  return { type: stuff.subType, value: i }
                 })
-              }
+              })
             }
-            break
-        }
+          }
+          break
       }
-    } catch (e) {
-      console.log(e.message)
     }
+    console.log('backgrounds complete')
 
     // TODO: innate biotics
     /*
@@ -278,9 +286,10 @@ export const actions = {
       }
     }
     character.equipment = newEquipment
-    // Do not store base model, hydrate on load
+    console.log('equipment complete')
 
     delete character.selections
+
     character.currentStats = {
       ...character.currentStats,
       resources: {
@@ -288,7 +297,7 @@ export const actions = {
       },
       paragon: 0,
       renegade: 0,
-      shieldsLost: character.settings.shields - character.currentStats.shields.value,
+      shieldsLost: character.settings.shields - (character.currentStats.shields?.value || 0),
       barrier: {
         used: character.currentStats.featuresTimesUsed.barrier || character.currentStats.barrier.used,
         ticksUsed: character.currentStats.barrier.ticksUsed
@@ -298,6 +307,7 @@ export const actions = {
     character.settings = { ...character.settings, skill: character.settings.skills, hp: 0, powercasting: {} }
     delete character.settings.skills
     delete character.settings.power
-    return character.powerModAbility
+    console.log(character)
+    return character
   }
 }

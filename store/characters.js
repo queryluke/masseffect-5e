@@ -56,7 +56,10 @@ export const actions = {
   async CREATE_CHARACTER ({ dispatch, commit, rootGetters, getters, rootState }, c) {
     let character = c
     if (character.meta?.version !== rootState.cbVersion) {
-      character = dispatch('character/migrator/migrate', character, { root: true })
+      character = await dispatch('character/migrator/migrate', character, { root: true })
+    }
+    if (!character) {
+      return
     }
     if (rootGetters['auth/isAuthenticated']) {
       try {
@@ -69,6 +72,7 @@ export const actions = {
         console.log(e)
       }
     }
+    console.log(character)
     return dispatch('UPSERT_LOCAL_CHARACTER', character)
   },
   UPSERT_LOCAL_CHARACTER ({ commit, getters }, character) {
@@ -82,6 +86,7 @@ export const actions = {
     } else {
       characters.push(character)
     }
+    console.log('setting characters')
     commit('SET_CHARACTERS', characters)
     return character.id
   },
