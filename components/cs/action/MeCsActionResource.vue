@@ -17,7 +17,7 @@
 </template>
 <script>
 import { createNamespacedHelpers } from 'vuex'
-const { mapGetters, mapActions } = createNamespacedHelpers('character/resources')
+const { mapGetters, mapActions } = createNamespacedHelpers('character')
 export default {
   name: 'MeCsActionResource',
   props: {
@@ -46,7 +46,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['resources']),
+    ...mapGetters({ resources: 'resources/resources', mcBonus: 'mechanics/mcBonus' }),
     item () {
       return { ...this.defaults, ...this.resource, max: { ...this.defaults.max, ...this.resource.max } }
     },
@@ -62,20 +62,14 @@ export default {
       return `me-cs-action-resource-display-${this.item.displayType}`
     },
     max () {
-      return 1 // this.mcBonus(this.item.max)
-    },
-    mod () {
-      if (this.item.mod) {
-        return 0 // this.absMod(this.item.mod)
-      }
-      return 0
+      return this.mcBonus(this.item.max)
     },
     showPer () {
       return ['short', 'long'].includes(this.item.reset)
     }
   },
   methods: {
-    ...mapActions(['SET_RESOURCE']),
+    ...mapActions({ SET_RESOURCE: 'resources/SET_RESOURCE' }),
     add () {
       if (this.count + this.item.increment > this.max) {
         return

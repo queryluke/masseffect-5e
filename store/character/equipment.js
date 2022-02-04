@@ -91,6 +91,9 @@ export const getters = {
   equippedArmor: (state, getters) => {
     return getters.armor.filter(i => i.equipped)
   },
+  equippedWeapons: (state, getters) => {
+    return getters.weapons.filter(i => i.equipped)
+  },
   weaponsList: (state, getters, rootState, rootGetters) => {
     return rootGetters.getData('weapons')
   },

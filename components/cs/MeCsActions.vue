@@ -52,7 +52,17 @@ export default {
     }
   },
   computed: {
-    ...mapGetters({ mechanics: 'mechanics/mechanics', character: 'character' }),
+    ...mapGetters({
+      mechanics: 'mechanics/mechanics',
+      character: 'character',
+      powers: 'powers/powers',
+      equippedWeapons: 'equipment/equippedWeapons',
+      profs: 'profs/profs',
+      abilityBreakdown: 'abilities/abilityBreakdown'
+    }),
+    weaponProperties () {
+      return this.$store.getters.getData('weapon-properties')
+    },
     csAllActions () {
       return {
         attacks: this.csAttacks,
@@ -72,16 +82,16 @@ export default {
         {
           group: true,
           title: 'Powers',
-          items: this.csPowersAsActions.action
+          items: this.csPowersAsActions.actions
         }].filter(i => i.items.length),
-        ...this.mechanicBag.filter(i => i.type === 'action'),
-        ...this.csCustomAsAsctions.action
+        ...this.mechanics.filter(i => i.type === 'action'),
+        ...this.csCustomAsActions.actions
       ]
     },
     csAttacks () {
       return [
         ...this.csWeaponsAsAttacks.attacks,
-        ...this.csPowersAsActions.attack,
+        ...this.csPowersAsActions.attacks,
         ...this.mechanics.filter(i => i.type === 'attack'),
         ...this.unarmedAndGunStrike
       ]
@@ -101,10 +111,10 @@ export default {
         {
           group: true,
           title: 'Powers',
-          items: this.csPowersAsActions.bonus_action
+          items: this.csPowersAsActions.bonus_actions
         }].filter(i => i.items.length),
         ...this.mechanics.filter(i => i.type === 'bonus-action'),
-        ...this.csCustomAsAsctions.bonus
+        ...this.csCustomAsActions.bonus
       ]
     },
     csReactions () {
@@ -112,10 +122,10 @@ export default {
         ...[{
           group: true,
           title: 'Powers',
-          items: this.csPowersAsActions.reaction
+          items: this.csPowersAsActions.reactions
         }].filter(i => i.items.length),
         ...this.mechanics.filter(i => i.type === 'reaction'),
-        ...this.csCustomAsAsctions.reaction
+        ...this.csCustomAsActions.reactions
       ]
     },
     csOtherActions () {
@@ -123,7 +133,7 @@ export default {
         ...this.mechanics.filter(i => i.type === 'other')
       ]
     },
-    csCustomAsAsctions () {
+    csCustomAsActions () {
       const brew = this.character.brews
         .filter(i => ['action', 'reaction', 'bonus-action'].includes(i.type))
         .map((i) => {
@@ -139,77 +149,19 @@ export default {
           }
         })
       return {
-        action: brew.filter(i => i.type === 'action'),
+        actions: brew.filter(i => i.type === 'action'),
         bonus: brew.filter(i => i.type === 'bonus-action'),
-        reaction: brew.filter(i => i.type === 'reaction')
+        reactions: brew.filter(i => i.type === 'reaction')
       }
     },
     csPowersAsActions () {
-      const powers = {
-        action: [],
-        bonus_action: [],
-        reaction: [],
-        attack: []
+      const sortedPowers = this.powers.slice().sort((a, b) => a.level - b.level)
+      return {
+        actions: sortedPowers.filter(i => i.castingTimes.includes('1A')),
+        attacks: sortedPowers.filter(i => i.castingTimes.includes('Atk')),
+        bonus_actions: sortedPowers.filter(i => i.castingTimes.includes('1BA')),
+        reactions: sortedPowers.filter(i => i.castingTimes.includes('1R*'))
       }
-      const allPowers = this.csAllPowers
-      for (const p of allPowers) {
-        const levelText = p.power.level
-          ? this.$tc(`ordinal_numbers[${p.power.level}]`)
-          : 'cantrip'
-        // TODO: overrides?
-        const mod = p.power.type === 'tech'
-          ? 'int'
-          : p.power.type === 'biotic'
-            ? 'wis'
-            : p.power.mod === 'noMod'
-              ? false
-              : p.power.mod
-        let toHit = false
-        if (p.power.attack.melee || p.power.attack.ranged) {
-          toHit = {
-            proficient: true,
-            mod: p.power.id === 'hawk-missile-launcher' ? false : mod
-          }
-        }
-        const resource = p.power.type === 'combat'
-          ? { reset: p.power.recharge, max: { type: 'flat', value: p.power.uses }, id: p.power.id }
-          : p.csData.resource || false
-        let dc = false
-        if (!toHit) {
-          const powerSaves = Object.entries(p.power.save)
-          if (powerSaves.some(i => i[1])) {
-            dc = {
-              base: 8,
-              proficient: true,
-              mod,
-              save: powerSaves.find(i => i[1])[0]
-            }
-          }
-        }
-
-        const base = {
-          name: p.power.name,
-          resource,
-          range: {
-            short: p.power.range,
-            aoe: p.power.aoe
-          },
-          attack: toHit,
-          notes: p.csData.advancement ? [`Adv: ${p.csData.advancement}`] : [],
-          properties: [p.power.type, levelText],
-          dc,
-          moreInfo: {
-            component: 'me-power-info',
-            bind: p.power
-          }
-        }
-        for (const casting of ['action', 'bonus_action', 'reaction', 'attack']) {
-          if (p.power.castingTimes.includes(casting)) {
-            powers[casting].push({ ...base, type: casting })
-          }
-        }
-      }
-      return powers
     },
     csWeaponsAsAttacks () {
       const attacks = {
@@ -222,29 +174,27 @@ export default {
       for (const prop of this.weaponProperties) {
         weaponProps[prop.id] = prop.name
       }
-      const equippedWeapons = this.csWeapons.filter(i => i.equipped)
-      for (const w of equippedWeapons) {
-        const weapon = { ...w, stats: { ...this.equipmentData('weapons', w.id), ...w.stats } }
+      for (const weapon of this.equippedWeapons) {
         const toHit = this.getWeaponAttack(weapon)
-        const light = weapon.stats.properties.includes('light')
-        const dt = weapon.stats.properties.includes('double-tap')
-        const bf = weapon.stats.properties.includes('burst-fire')
+        const light = weapon.data.properties.includes('light')
+        const dt = weapon.data.properties.includes('double-tap')
+        const bf = weapon.data.properties.includes('burst-fire')
         // TODO: thrown
-        // const thrown = weapon.stats.properties.includes('thrown')
+        // const thrown = weapon.data.properties.includes('thrown')
         // TODO: arc
-        // const thrown = weapon.stats.properties.includes('thrown')
-        const type = weapon.stats.type === 'melee' ? 'Melee' : 'Ranged'
+        // const ar = weapon.data.properties.includes('arc')
+        const type = weapon.data.type === 'melee' ? 'Melee' : 'Ranged'
         let damage = this.getWeaponDamage(weapon)
         const base = {
           type: 'attack',
-          name: weapon.stats.name,
+          name: weapon.data.name,
           resource: this.getWeaponResource(weapon),
           range: this.getWeaponRange(weapon),
-          notes: [...(weapon.stats.notes || []), ...weapon.stats.properties.map(i => weaponProps[i])],
+          notes: [...(weapon.data.notes || []), ...weapon.data.properties.map(i => weaponProps[i])],
           properties: [type],
           moreInfo: {
             component: 'me-weapon-info',
-            bind: weapon.stats
+            bind: weapon.data
           }
         }
         attacks.attacks.push({ ...base, attack: toHit, damage })
@@ -266,8 +216,7 @@ export default {
         }
         damage = this.getWeaponDamage(weapon, true)
         if (light) {
-          const twfText = this.$vuetify.breakpoint.xsOnly ? '2W-Fight' : 'Two-Weapon Fighting'
-          attacks.twf.push({ ...base, attack: toHit, properties: [...base.properties, twfText], damage })
+          attacks.twf.push({ ...base, attack: toHit, properties: [...base.properties, '2W-Fight'], damage })
         }
         if (dt) {
           attacks.dt.push({ ...base, attack: toHit, properties: [...base.properties, 'Double Tap'], damage })
@@ -296,7 +245,7 @@ export default {
           properties: ['Melee']
         }
       ]
-      if (this.csWeapons.filter(i => i.equipped && i.stats.type === 'ranged')) {
+      if (this.equippedWeapons.filter(i => i.data.type === 'ranged')) {
         atks.push({
           name: 'Gun Strike',
           range: {
@@ -340,13 +289,13 @@ export default {
     getWeaponResource (weapon) {
       // Resource (i.e. Heat)
       let resource = null
-      if (weapon.stats.heat) {
+      if (weapon.data.heat) {
         resource = {
           displayType: 'heat',
           reset: 'manual',
           max: {
             type: 'flat',
-            value: weapon.stats.heat,
+            value: weapon.data.heat,
             min: 0
           },
           id: weapon.uuid
@@ -355,10 +304,10 @@ export default {
       return resource
     },
     getWeaponRange (weapon, bf = false) {
-      const type = weapon.stats.type
-      const reach = weapon.stats.properties.includes('reach')
-      const range = weapon.stats.range
-      const hf = weapon.stats.properties.includes('hip-fire')
+      const type = weapon.data.type
+      const reach = weapon.data.properties.includes('reach')
+      const range = weapon.data.range
+      const hf = weapon.data.properties.includes('hip-fire')
       const shortRange = type === 'melee'
         ? reach ? 10 : 5
         : range
@@ -374,7 +323,7 @@ export default {
       }
     },
     getWeaponAttack (weapon) {
-      const type = weapon.stats.type
+      const type = weapon.data.type
       const weaponBonus = weapon.bonusHit || 0
       const globalBonus = this.character.settings.attackMod
         ? this.character.settings.attackMod
@@ -382,7 +331,7 @@ export default {
           ? this.character.settings.attackMeleeMod
           : this.character.settings.attackRangedMod || 0
       return {
-        proficient: this.proficiencies.weapon.includes(type),
+        proficient: this.profs.weapon.includes(type),
         mod: this.getWeaponAbilityMod(weapon),
         bonus: {
           type: 'flat',
@@ -392,16 +341,17 @@ export default {
     },
     getWeaponAbilityMod (weapon) {
       // TODO: potential overrides like shoulder mounts
-      const finesse = weapon.stats.properties.includes('finesse')
-      const recoil = weapon.stats.properties.includes('recoil')
+      const finesse = weapon.data.properties.includes('finesse')
+      const recoil = weapon.data.properties.includes('recoil')
+      const dexOrStr = this.abilityBreakdown.dex.mod > this.abilityBreakdown.str.mod ? 'dex' : 'str'
       return recoil || finesse
-        ? this.csHigherOfStrOrDex
-        : weapon.stats.type === 'melee'
+        ? dexOrStr
+        : weapon.data.type === 'melee'
           ? 'str'
           : 'dex'
     },
     getWeaponDamage (weapon, negativeModOnly) {
-      const type = weapon.stats.type
+      const type = weapon.data.type
       const weaponBonus = weapon.bonusDamage || 0
       const globalBonus = this.character.settings.damageMod
         ? this.character.settings.damageMod
@@ -410,14 +360,14 @@ export default {
           : this.character.settings.damageRangedMod || 0
       let mod = this.getWeaponAbilityMod(weapon)
       if (negativeModOnly) {
-        const modScore = this.absMod(mod)
+        const modScore = this.abilityBreakdown[mod].mod
         if (modScore > 0) {
           mod = false
         }
       }
       return [
         {
-          ...weapon.stats.damage,
+          ...weapon.data.damage,
           mod,
           bonus: {
             type: 'flat',

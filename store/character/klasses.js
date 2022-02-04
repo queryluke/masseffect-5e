@@ -151,7 +151,7 @@ export const getters = {
   klassesFeatures: (state, getters) => {
     return getters.selectedKlasses.map((klass) => {
       return getters.klassFeaturesList
-        .filter(i => (i.klass === klass.id || (klass.subclass ? i.subclass === klass.subclass : false)) && i.level <= klass.levels)
+        .filter(i => ((i.klass === klass.id && !i.subclass) || (klass.subclass ? i.subclass === klass.subclass : false)) && i.level <= klass.levels)
         .sort((a, b) => a.level - b.level)
     })
   },

@@ -41,9 +41,7 @@
             <div style="flex: 1 1 auto; position: relative; height: 452px" class="overflow-y-auto pt-3 pb-5">
               <v-tabs-items v-model="tab">
                 <v-tab-item>
-                  <!--
                   <me-cs-actions />
-                  -->
                 </v-tab-item>
                 <v-tab-item>
                   <v-card-text>

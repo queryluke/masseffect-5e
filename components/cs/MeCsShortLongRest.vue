@@ -244,7 +244,7 @@ export default {
       const mechanicsToProcess = [
         ...this.mechanics.filter(i => i.resource?.reset ? i.resource?.reset === type : true),
         ...(this.character.brews || []).filter(i => i.mechanics?.uses && (type === 'short' ? i.mechanics?.recharge === 'short' : true)),
-        ...this.powers.filter(i => i.power.uses && (type === 'short' ? i.power.recharge === 'short' : true))
+        ...this.powers.filter(i => i.resource?.reset ? i.resource?.reset === type : true)
       ]
       if (type === 'long') {
         // LONG REST, all powers/tp, and barrier

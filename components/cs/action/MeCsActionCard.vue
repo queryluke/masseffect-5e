@@ -36,7 +36,7 @@
         <me-cs-action-notes :notes="item.notes" />
       </v-col>
     </v-row>
-    <v-row no-gutters>
+    <v-row v-if="item.shortDesc" no-gutters>
       <v-col>
         <small>
           <me-html :content="item.shortDesc" classes="text-caption" />
@@ -48,8 +48,8 @@
         <me-cs-action-resource :id="item.resource.id" :resource="item.resource" />
       </v-col>
     </v-row>
-    <me-standard-dialog :shown="moreInfo" :title="item.name" @close="moreInfo = false">
-      <component :is="item.moreInfo.component" v-if="item.moreInfo.component" :item="item.moreInfo.bind" />
+    <me-standard-dialog v-if="component || itemHtml" :shown="moreInfo" :title="item.name" @close="moreInfo = false">
+      <component :is="component" v-if="component" :item="item.moreInfo.bind" />
       <me-html v-else :content="itemHtml" />
     </me-standard-dialog>
   </v-card>
@@ -78,11 +78,14 @@ export default {
     mobile () {
       return this.$vuetify.breakpoint.smAndDown
     },
+    component () {
+      return this.item.moreInfo?.component
+    },
     itemHtml () {
       if (this.item.moreInfo?.model) {
         return this.$store.getters.getItem(this.item.moreInfo.model, this.item.moreInfo.id).html
       }
-      return this.item.moreInfo.bind
+      return this.item.moreInfo?.bind || false
     }
   }
 }

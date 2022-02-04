@@ -12,7 +12,7 @@ export const state = () => ({
   castingTimeText: {
     action: '1A',
     attack: 'Atk',
-    'bonus-action': '1BA',
+    bonus_action: '1BA',
     reaction: '1R*'
   },
   baseKlassPowercastingAbility: {
@@ -110,8 +110,6 @@ export const getters = {
     for (const p of getters.selectedPowers) {
       // i.value needed for selections/mechanicbag
       const power = list.find(i => i.id === (p.id || p.value))
-      // TODO. Interpolate power appends
-      // TODO: w/ gainedBy class (i.e. w/ sentinel it's a choice)
       let mod
       if (power.type === 'combat') {
         mod = power.mod === 'noMod' ? false : power.mod
@@ -129,7 +127,7 @@ export const getters = {
         }
       }
       const resource = power.type === 'combat'
-        ? { reset: power.recharge, max: { type: 'flat', value: power.uses }, id: power.id }
+        ? { reset: power.recharge || 'off', max: { type: 'flat', value: power.uses }, id: power.id }
         : p.resource || false
       let dc = false
       if (!toHit) {
@@ -143,7 +141,7 @@ export const getters = {
           }
         }
       }
-      const castingTime = state.castingTimeText[power.castingTimes[0]]
+      const castingTimes = power.castingTimes.map(i => state.castingTimeText[i])
 
       powers.push({
         id: power.id,
@@ -159,7 +157,7 @@ export const getters = {
         notes: p.advancement ? [`Adv: ${p.advancement}`] : [],
         properties: [state.levelText[power.level]],
         dc,
-        castingTime,
+        castingTimes,
         moreInfo: {
           component: 'me-power-info',
           bind: power
