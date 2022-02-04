@@ -58,10 +58,8 @@
 </template>
 
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
 export default {
   name: 'MeCbChoicesVSelect',
-  mixins: [CharacterBuilderHelpers],
   props: {
     items: {
       type: Array,

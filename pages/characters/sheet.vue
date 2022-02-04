@@ -9,10 +9,7 @@
 </template>
 
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
-
 export default {
-  mixins: [CharacterBuilderHelpers],
   layout: 'charactersheet',
   async asyncData ({ store, redirect, route }) {
     if (!route.query.id) {

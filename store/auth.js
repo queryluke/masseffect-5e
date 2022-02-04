@@ -60,7 +60,7 @@ export const actions = {
 
   LOGOUT_CLEAN_UP ({ commit }) {
     commit('user/RESET_BOOKMARKS', null, { root: true })
-    commit('cb/SET_CHARACTERS', {}, { root: true })
+    commit('characters/SET_CHARACTERS', [], { root: true })
   },
 
   LOG_OUT ({ commit, dispatch }) {
