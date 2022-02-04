@@ -22,9 +22,11 @@ export const actions = {
     if (!rootGetters['auth/isAuthenticated']) {
       return
     }
+    const nonRemote = getters.characters.filter(i => !i.meta.remote)
     // get the current local characters and attempt to store on AWS, falling back to local as needed
     const unSynced = []
-    for (const character of getters.characters) {
+    console.log('local characters', nonRemote)
+    for (const character of nonRemote) {
       const clone = cloneDeep(character)
       clone.meta.remote = true
       try {
@@ -94,7 +96,6 @@ export const actions = {
     if (rootGetters['auth/isAuthenticated']) {
       try {
         await dispatch('api/MUTATE', { mutation: 'deleteCharacter', input: { id } }, { root: true })
-        commit('SET_CHARACTER', null)
       } catch (e) {
         console.log(e)
       }

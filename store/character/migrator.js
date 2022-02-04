@@ -1,21 +1,45 @@
 export const actions = {
-  migrate ({ dispatch, rootState }, character) {
+  async migrate ({ dispatch, rootState }, character) {
     const version = character.meta?.version
-    if (!version || version !== rootState.cbVersion) {
+    let newCharacter = JSON.parse(JSON.stringify(character))
+    console.log(version)
+    if (!version) {
+      console.log('trying initial')
       try {
-        return dispatch('toV101', character)
+        newCharacter = await dispatch('toV101', newCharacter)
       } catch (e) {
         console.log(e.message)
         return false
       }
     }
-    return false
+    console.log('after v1', newCharacter)
+    const versions = ['1.0.1', '1.0.2']
+    if (newCharacter.meta.version !== rootState.cbVersion) {
+      const fromVersionIndex = versions.findIndex(i => i === newCharacter.meta.version)
+      for (let i = fromVersionIndex + 1; i < versions.length; i++) {
+        try {
+          const action = `toV${versions[i].replaceAll('.', '')}`
+          console.log(`trying ${action}`)
+          newCharacter = dispatch(`toV${versions[i].replaceAll('.', '')}`, newCharacter)
+          console.log(`result of ${action}`, newCharacter)
+        } catch (e) {
+          console.log(e.message)
+          return false
+        }
+      }
+    }
+    return newCharacter
   },
   toV101 (vuex, character) {
     character.meta = {
       remote: false,
       version: '1.0.1'
     }
+    console.log('within v1', character)
+    return character
+  },
+  toV102 (vuex, character) {
+    character.meta.version = '1.0.2'
     character.selected = []
     character.subspecies = null
     character.options = {

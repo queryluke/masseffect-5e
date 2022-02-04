@@ -30,7 +30,7 @@ export const state = () => ({
       link: 'http://versions.n7.world/v084'
     }
   ],
-  cbVersion: '1.0.1'
+  cbVersion: '1.0.2'
 })
 
 export const getters = {

@@ -144,12 +144,24 @@ export const actions = {
       'benefits'
     ], { root: true })
   },
-  async LOAD_CHARACTER ({ dispatch, commit, rootGetters, getters }, id) {
+  async LOAD_CHARACTER ({ dispatch, commit, rootGetters, getters, rootState }, id) {
     if (rootGetters['auth/isAuthenticated']) {
       const character = await dispatch('api/QUERY', { query: 'getCharacter', variables: { id } }, { root: true })
-      // TODO: migrate on load for future versions
-      commit('SET_CHARACTER', jsonpack.unpack(character.data))
       commit('SET_CHARACTER_ID', character.id)
+      console.log('awsInfo', character)
+      console.log(rootGetters['auth/sub'])
+      console.log(rootState.auth.cognitoUser)
+      let characterData = jsonpack.unpack(character.data)
+      let triggerMigration = false
+      if (characterData.meta.version !== rootState.cbVersion) {
+        characterData = await dispatch('character/migrator/migrate', characterData, { root: true })
+        triggerMigration = true
+      }
+      commit('SET_CHARACTER', characterData)
+      if (triggerMigration) {
+        console.log('triggering character migration')
+        await dispatch('REMOTE_UPDATE_CHARACTER')
+      }
     } else {
       console.log('loading local')
       await dispatch('local/LOAD_CHARACTER', id)
@@ -189,9 +201,9 @@ export const actions = {
           data: jsonpack.pack(getters.character)
         }
       }, { root: true })
-      commit('SET_SYNC_STATUS', 'saved', { root: true })
+      commit('user/SET_SYNC_STATUS', 'saved', { root: true })
     } catch (e) {
-      commit('SET_SYNC_STATUS', 'error', { root: true })
+      commit('user/SET_SYNC_STATUS', 'error', { root: true })
       console.log(e)
     }
   }

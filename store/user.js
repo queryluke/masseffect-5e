@@ -70,6 +70,9 @@ export const mutations = {
   // TODO: temp
   RESET_BOOKMARKS (state) {
     state.bookmarks = []
+  },
+  SET_SYNC_STATUS (state, value) {
+    state.syncStatus = value
   }
 }
 
@@ -177,8 +180,5 @@ export const actions = {
     const bookmarks = { ...getters.bookmarks }
     delete bookmarks[key]
     commit('RESET_BOOKMARKS', bookmarks)
-  },
-  SET_SYNC_STATUS (state, value) {
-    state.syncStatus = value
   }
 }

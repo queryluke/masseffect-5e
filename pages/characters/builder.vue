@@ -74,7 +74,7 @@ export default {
     async goToSheet () {
       if (this.$store.getters['auth/isAuthenticated']) {
         this.loading = true
-        await this.$store.dispatch('character/REMOTE_UPDATE')
+        await this.$store.dispatch('character/REMOTE_UPDATE_CHARACTER')
         this.loading = false
       }
       await this.$router.push({

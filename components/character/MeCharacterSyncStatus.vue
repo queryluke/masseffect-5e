@@ -40,7 +40,7 @@ export default {
       return this.$store.getters['auth/isAuthenticated']
     },
     status () {
-      return this.$store.getters['cb/syncStatus']
+      return this.$store.getters['user/syncStatus']
     }
   }
 }
