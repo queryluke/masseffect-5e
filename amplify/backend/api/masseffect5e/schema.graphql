@@ -6,7 +6,7 @@ type Bookmark @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"}
   { allow: owner }
 ]){
   id: ID!
-  userId: ID! @index(name: "byUser", queryField: "bookmarkByUser")
+  owner: ID! @index(name: "byUser", queryField: "bookmarkByUser")
   model: String!
   modelId: String!
   data: String
@@ -29,7 +29,7 @@ type Character @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"
   { allow: owner }
 ]){
   id: ID!
-  userId: ID! @index(name: "byUser", queryField: "characterByUser")
+  owner: ID! @index(name: "byUser", queryField: "characterByUser")
   data: String
 }
 

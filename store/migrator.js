@@ -5,7 +5,7 @@ export const state = () => ({
 })
 
 export const getters = {
-  isMigrated: state => state.migrated
+  isMigrated: state => typeof state.migrated !== 'boolean' ? false : state.migrated
 }
 
 export const mutations = {
@@ -15,6 +15,46 @@ export const mutations = {
 }
 
 export const actions = {
+  async TEST_MIGRATE ({ dispatch, commit }) {
+    const mostRecentBookmarks = {
+      bestiary: [],
+      weapons: [
+        {
+          rarity: 'uncommon',
+          type: 'shotgun',
+          cost: 19000,
+          manufacturer: 'batarian',
+          weight: 13,
+          heat: 2,
+          damage: {
+            dieCount: 2,
+            dieType: 8,
+            type: 'piercing'
+          },
+          range: 5,
+          image: 'http://vignette2.wikia.nocookie.net/masseffect/images/3/3f/ME3_Raider_Shotgun.png/revision/latest?cb=20120317200919',
+          andromeda: false,
+          properties: [
+            'double-tap',
+            'hip-fire',
+            'two-handed',
+            'recoil'
+          ],
+          name: 'AT-12 Raider',
+          html: '',
+          id: 'at-12-raider'
+        }
+      ]
+    }
+    const mostRecentCharacters = null
+    const previousVersion = 'v131'
+    try {
+      await dispatch(previousVersion, { characters: mostRecentCharacters, bookmarks: mostRecentBookmarks })
+      commit('SET_MIGRATED', true)
+    } catch (e) {
+      console.error(e)
+    }
+  },
   async MIGRATE ({ commit, rootGetters, getters, dispatch }) {
     if (getters.isMigrated) {
       return
@@ -30,7 +70,7 @@ export const actions = {
         previous = localStorage.getItem(previousVersion)
       }
       if (!previous) {
-        commit('SET_MIGRATED')
+        commit('SET_MIGRATED', true)
         return
       }
       let previousState
@@ -42,28 +82,19 @@ export const actions = {
       }
       const mostRecentBookmarks = previousState.user?.bookmarks
       const mostRecentCharacters = previousState.cb?.characters
+
       if (!mostRecentBookmarks && !mostRecentCharacters) {
-        commit('SET_MIGRATED')
+        commit('SET_MIGRATED', true)
         return
       }
       try {
         await dispatch(previousVersion, { characters: mostRecentCharacters, bookmarks: mostRecentBookmarks })
-        commit('SET_MIGRATED')
+        commit('SET_MIGRATED', true)
       } catch (e) {
         console.error(e)
       }
     } catch (e) {
       console.error(e)
-    }
-  },
-  awsMigrate ({ getters, dispatch, commit, rootGetters }) {
-    // TODO: typically only run MIGRATE, but in the aws switch need to manually run v131 and change the migration state
-    if (typeof getters.isMigrated === 'object') {
-      commit('SET_MIGRATED', false)
-    }
-    if (!getters.isMigrated) {
-      dispatch('v131', { bookmarks: rootGetters['user/bookmarks'] })
-      commit('SET_MIGRATED', true)
     }
   },
   async v130 ({ dispatch, rootGetters, commit }, { bookmarks, characters }) {
@@ -88,6 +119,13 @@ export const actions = {
           }
         }
       }
+    }
+    if (characters) {
+      const newCharacters = []
+      for (const character of Object.values(characters)) {
+        newCharacters.push(dispatch('character/migrator/migrate'), character, { root: true })
+      }
+      commit('characters/SET_CHARACTERS', newCharacters, { root: true })
     }
   }
 }

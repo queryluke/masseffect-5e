@@ -1,16 +1,18 @@
 <template>
   <div>
-    <div class="text-subtitle-1 text-md-h5 font-weight-medium">
+    <me-tpg s="h5">
       {{ label }}
-    </div>
-    <p>
+    </me-tpg>
+    <me-tpg e="p">
       <slot />
-    </p>
+    </me-tpg>
   </div>
 </template>
 
 <script>
+import MeTpg from '~/components/MeTpg'
 export default {
+  components: { MeTpg },
   props: {
     label: {
       type: String,

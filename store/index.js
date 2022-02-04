@@ -7,7 +7,12 @@ export const state = () => ({
   drawer: null,
   jumpNav: null,
   versionSnackbar: false,
+  currentLocale: 'en',
   pastVersions: [
+    {
+      name: 'v1.3.1',
+      link: 'http://versions.n7.world/v131'
+    },
     {
       name: 'v1.3.0',
       link: 'http://versions.n7.world/v130'
@@ -24,7 +29,8 @@ export const state = () => ({
       name: 'v0.8.4',
       link: 'http://versions.n7.world/v084'
     }
-  ]
+  ],
+  cbVersion: '1.0.2'
 })
 
 export const getters = {
@@ -33,13 +39,18 @@ export const getters = {
   rules: (state) => {
     return state.rules
   },
-  isLocaleSet: state => typeof state.data[state.i18n.locale] !== 'undefined',
+  currentLocale: state => state.currentLocale,
+  isLocaleSet: state => typeof state.data[state.currentLocale] !== 'undefined',
   // TODO: interpolate non-translated data
-  getData: (state, getters) => (endpoint) => {
-    const locale = state.i18n.locale
+  getData: (state, getters, rootState) => (endpoint) => {
+    const hcModels = ['fighting-styles', 'subgrounds']
+    if (hcModels.includes(endpoint)) {
+      return rootState.hcModels[endpoint]
+    }
     if (!getters.isLocaleSet) {
       return []
     }
+    const locale = 'en'
     return typeof state.data[locale][endpoint] === 'undefined' ? [] : state.data[locale][endpoint]
   },
   getItem: (state, getters) => (endpoint, id) => {
@@ -61,8 +72,8 @@ export const mutations = {
     const localeData = { ...state.data[locale], [endpoint]: data }
     state.data = { ...state.data, [locale]: localeData }
   },
-  initLocale (state, locale) {
-    state.data = { ...state.data, [locale]: {} }
+  initLocale (state) {
+    state.data = { ...state.data, [state.currentLocale]: {} }
   },
   drawer (state, value) {
     state.drawer = value
@@ -96,12 +107,17 @@ export const actions = {
   async FETCH_LOTS ({ getters, commit, dispatch }, endpoints) {
     return await Promise.all(endpoints.map(i => dispatch('FETCH_DATA', i)))
   },
+  /*
+   TODO: when a different locale is picked, need to change the current locale
+   */
   async FETCH_DATA ({ getters, commit }, endpoint) {
-    const locale = this.$i18n.locale
+    // see note above
     if (!getters.isLocaleSet) {
-      commit('initLocale', locale)
+      commit('initLocale')
     }
+    const locale = getters.currentLocale
     let data = getters.getData(endpoint)
+    // TODO: we will eventually need to support grabbing homebrew during this call
     if (data.length === 0) {
       try {
         data = await this.$http.$get(`${locale}/${endpoint}.json`)
@@ -111,12 +127,5 @@ export const actions = {
       commit('setData', { locale, endpoint, data })
     }
     return data
-  },
-  async FETCH_ITEM ({ getters, dispatch, commit }, { endpoint, id }) {
-    let data = getters.getData(this.$i18n.locale, endpoint)
-    if (!data) {
-      data = await dispatch('FETCH_DATA', endpoint)
-    }
-    return data.find(i => i.id === id)
   }
 }

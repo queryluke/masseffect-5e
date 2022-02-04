@@ -15,6 +15,9 @@ export const ProfLabels = {
       }
       return ''
     },
+    profString (type, idArray = []) {
+      return idArray.length ? idArray.map(i => this.profText(type, i)).join(', ') : 'None'
+    },
     profText (type, id) {
       let item, lookupId
       switch (type) {

@@ -20,17 +20,7 @@
     </v-row>
     <v-row>
       <v-col cols="12">
-        <v-tabs
-          v-model="tab"
-          class="hidden-sm-and-down mt-5"
-          :[tabsMode]="true"
-          :color="tabColor"
-          :background-color="tabsColor"
-        >
-          <v-tab v-for="tabItem in tabs" :key="tabItem">
-            {{ tabItem }}
-          </v-tab>
-        </v-tabs>
+        <me-tabbed-page-tabs class="hidden-sm-and-down mt-5" />
         <v-tabs-items v-model="tab">
           <v-tab-item class="pa-3">
             <me-progression-table :item="item" />
@@ -119,7 +109,6 @@ export default {
     })
     this.$store.commit('pageTitle', this.item.name)
     this.$store.commit('tabbedPage/SET_TABS', this.tabs)
-    this.$store.dispatch('tabbedPage/INIT_THEME', this.item.id)
   }
 }
 </script>

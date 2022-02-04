@@ -3,18 +3,19 @@ import jsonpack from 'jsonpack/main'
 export const state = () => ({
   darkMode: true,
   imperial: false,
-  bookmarks: {},
+  bookmarks: [],
   username: null,
   avatar: null,
   profileImg: null,
-  search: null
+  search: null,
+  syncStatus: 'saved'
 })
 
 export const getters = {
   avatar: state => state.avatar,
   profile: (state, getters, rootState, rootGetters) => {
     return {
-      id: rootGetters['auth/sub'],
+      id: rootGetters['auth/username'],
       darkMode: state.darkMode,
       imperial: state.imperial,
       username: state.username,
@@ -27,9 +28,11 @@ export const getters = {
   bookmarks: state => state.bookmarks,
   isBookmarked: state => (model, id) => {
     const lookupModel = model === 'bestiary' && id.startsWith('generated') ? 'genpc' : model
+    console.log(state.bookmarks)
     return typeof state.bookmarks.find(i => i.modelId === id && i.model === lookupModel) !== 'undefined'
   },
-  search: state => state.search
+  search: state => state.search,
+  syncStatus: state => state.syncStatus
 }
 
 export const mutations = {
@@ -67,6 +70,9 @@ export const mutations = {
   // TODO: temp
   RESET_BOOKMARKS (state) {
     state.bookmarks = []
+  },
+  SET_SYNC_STATUS (state, value) {
+    state.syncStatus = value
   }
 }
 
@@ -120,7 +126,7 @@ export const actions = {
   async SYNC_BOOKMARKS ({ getters, dispatch, commit }) {
     // TODO: TEMPORARY CHECK
     if (!Array.isArray(getters.bookmarks)) {
-      dispatch('migrator/awsMigrate', null, { root: true })
+      dispatch('migrator/v131', { bookmarks: getters.bookmarks, characters: null }, { root: true })
     }
     // GET bookmarks from AWS
     let nextToken = null

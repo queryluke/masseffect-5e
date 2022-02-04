@@ -5,13 +5,12 @@ export const getBookmark = /* GraphQL */ `
   query GetBookmark($id: ID!) {
     getBookmark(id: $id) {
       id
-      userId
+      owner
       model
       modelId
       data
       createdOn
       updatedOn
-      owner
     }
   }
 `;
@@ -24,13 +23,12 @@ export const listBookmarks = /* GraphQL */ `
     listBookmarks(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        userId
+        owner
         model
         modelId
         data
         createdOn
         updatedOn
-        owner
       }
       nextToken
     }
@@ -75,11 +73,10 @@ export const getCharacter = /* GraphQL */ `
   query GetCharacter($id: ID!) {
     getCharacter(id: $id) {
       id
-      userId
+      owner
       data
       createdOn
       updatedOn
-      owner
     }
   }
 `;
@@ -92,11 +89,10 @@ export const listCharacters = /* GraphQL */ `
     listCharacters(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        userId
+        owner
         data
         createdOn
         updatedOn
-        owner
       }
       nextToken
     }
@@ -104,14 +100,14 @@ export const listCharacters = /* GraphQL */ `
 `;
 export const bookmarkByUser = /* GraphQL */ `
   query BookmarkByUser(
-    $userId: ID
+    $owner: ID
     $sortDirection: ModelSortDirection
     $filter: ModelBookmarkFilterInput
     $limit: Int
     $nextToken: String
   ) {
     bookmarkByUser(
-      userId: $userId
+      owner: $owner
       sortDirection: $sortDirection
       filter: $filter
       limit: $limit
@@ -119,13 +115,12 @@ export const bookmarkByUser = /* GraphQL */ `
     ) {
       items {
         id
-        userId
+        owner
         model
         modelId
         data
         createdOn
         updatedOn
-        owner
       }
       nextToken
     }
@@ -133,14 +128,14 @@ export const bookmarkByUser = /* GraphQL */ `
 `;
 export const characterByUser = /* GraphQL */ `
   query CharacterByUser(
-    $userId: ID
+    $owner: ID
     $sortDirection: ModelSortDirection
     $filter: ModelCharacterFilterInput
     $limit: Int
     $nextToken: String
   ) {
     characterByUser(
-      userId: $userId
+      owner: $owner
       sortDirection: $sortDirection
       filter: $filter
       limit: $limit
@@ -148,11 +143,10 @@ export const characterByUser = /* GraphQL */ `
     ) {
       items {
         id
-        userId
+        owner
         data
         createdOn
         updatedOn
-        owner
       }
       nextToken
     }

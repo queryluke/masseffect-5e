@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <!-- START: APP BAR -->
-    <me-app-bar show-character-cloud-status />
+    <me-app-bar show-character-cloud-status tabbed />
     <!-- END: APP BAR -->
     <me-version-snackbar />
     <!-- START: NAV DRAWER -->

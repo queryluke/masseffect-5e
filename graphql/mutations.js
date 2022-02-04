@@ -8,13 +8,12 @@ export const createBookmark = /* GraphQL */ `
   ) {
     createBookmark(input: $input, condition: $condition) {
       id
-      userId
+      owner
       model
       modelId
       data
       createdOn
       updatedOn
-      owner
     }
   }
 `;
@@ -25,13 +24,12 @@ export const updateBookmark = /* GraphQL */ `
   ) {
     updateBookmark(input: $input, condition: $condition) {
       id
-      userId
+      owner
       model
       modelId
       data
       createdOn
       updatedOn
-      owner
     }
   }
 `;
@@ -42,13 +40,12 @@ export const deleteBookmark = /* GraphQL */ `
   ) {
     deleteBookmark(input: $input, condition: $condition) {
       id
-      userId
+      owner
       model
       modelId
       data
       createdOn
       updatedOn
-      owner
     }
   }
 `;
@@ -110,11 +107,10 @@ export const createCharacter = /* GraphQL */ `
   ) {
     createCharacter(input: $input, condition: $condition) {
       id
-      userId
+      owner
       data
       createdOn
       updatedOn
-      owner
     }
   }
 `;
@@ -125,11 +121,10 @@ export const updateCharacter = /* GraphQL */ `
   ) {
     updateCharacter(input: $input, condition: $condition) {
       id
-      userId
+      owner
       data
       createdOn
       updatedOn
-      owner
     }
   }
 `;
@@ -140,11 +135,10 @@ export const deleteCharacter = /* GraphQL */ `
   ) {
     deleteCharacter(input: $input, condition: $condition) {
       id
-      userId
+      owner
       data
       createdOn
       updatedOn
-      owner
     }
   }
 `;

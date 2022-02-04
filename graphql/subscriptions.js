@@ -5,13 +5,12 @@ export const onCreateBookmarkByUserId = /* GraphQL */ `
   subscription OnCreateBookmarkByUserId($userId: ID!) {
     onCreateBookmarkByUserId(userId: $userId) {
       id
-      userId
+      owner
       model
       modelId
       data
       createdOn
       updatedOn
-      owner
     }
   }
 `;
@@ -19,13 +18,12 @@ export const onDeleteBookmarkByUserId = /* GraphQL */ `
   subscription OnDeleteBookmarkByUserId($userId: ID!) {
     onDeleteBookmarkByUserId(userId: $userId) {
       id
-      userId
+      owner
       model
       modelId
       data
       createdOn
       updatedOn
-      owner
     }
   }
 `;

@@ -10,7 +10,8 @@ export const state = () => ({
 
 export const getters = {
   isAuthenticated: state => state.isAuthenticated,
-  sub: state => state.isAuthenticated ? state.cognitoUser?.attributes?.sub : false
+  sub: state => state.isAuthenticated ? state.cognitoUser?.attributes?.sub : false,
+  username: state => state.isAuthenticated ? state.cognitoUser?.username : false
 }
 
 export const mutations = {
@@ -60,7 +61,7 @@ export const actions = {
 
   LOGOUT_CLEAN_UP ({ commit }) {
     commit('user/RESET_BOOKMARKS', null, { root: true })
-    commit('cb/SET_CHARACTERS', {}, { root: true })
+    commit('characters/SET_CHARACTERS', [], { root: true })
   },
 
   LOG_OUT ({ commit, dispatch }) {
