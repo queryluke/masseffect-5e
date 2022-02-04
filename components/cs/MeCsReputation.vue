@@ -53,6 +53,7 @@
           thumb-label
           inverse-label
           :label="reputation.paragon.toString()"
+          :disabled="viewOnly"
           @end="updateScore('paragon', $event)"
         />
       </div>
@@ -69,6 +70,7 @@
           thumb-label
           inverse-label
           :label="reputation.renegade.toString()"
+          :disabled="viewOnly"
           @end="updateScore('renegade', $event)"
         />
       </div>
@@ -111,6 +113,9 @@ export default {
       selected: 'selections/selected',
       selectedBenefits: 'reputation/selectedBenefits'
     }),
+    viewOnly () {
+      return this.$store.state.character.viewOnly
+    },
     needSelection () {
       return this.thresholds.some(i => !i.selected)
     },

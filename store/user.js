@@ -15,7 +15,7 @@ export const getters = {
   avatar: state => state.avatar,
   profile: (state, getters, rootState, rootGetters) => {
     return {
-      id: rootGetters['auth/sub'],
+      id: rootGetters['auth/username'],
       darkMode: state.darkMode,
       imperial: state.imperial,
       username: state.username,

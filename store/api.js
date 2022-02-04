@@ -45,11 +45,11 @@ export const actions = {
   },
   async STORE_IMAGE ({ commit, rootGetters }, { file, qualifier }) {
     const extension = file.name.split('.').pop()
-    const sub = rootGetters['auth/sub']
-    if (!sub) {
-      throw new Error('sub not found')
+    const username = rootGetters['auth/username']
+    if (!username) {
+      throw new Error('username not found')
     }
-    const fileName = `${rootGetters['auth/sub']}-${qualifier}.${extension}`
+    const fileName = `${username}-${qualifier}.${extension}`
     return await Storage.put(fileName, file, { contentType: file.type })
   },
   async GET_IMAGE ({ commit }, { fileName, action, actionParams }) {

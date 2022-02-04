@@ -133,6 +133,9 @@ export const mutations = {
   },
   SET_CHARACTER_ID (state, value) {
     state.id = value
+  },
+  SET_VIEW_ONLY (state, value) {
+    state.viewOnly = value
   }
 }
 
@@ -148,18 +151,18 @@ export const actions = {
     if (rootGetters['auth/isAuthenticated']) {
       const character = await dispatch('api/QUERY', { query: 'getCharacter', variables: { id } }, { root: true })
       commit('SET_CHARACTER_ID', character.id)
-      console.log('awsInfo', character)
-      console.log(rootGetters['auth/sub'])
-      console.log(rootState.auth.cognitoUser)
       let characterData = jsonpack.unpack(character.data)
       let triggerMigration = false
+      const viewOnly = character.owner !== rootGetters['auth/username']
       if (characterData.meta.version !== rootState.cbVersion) {
         characterData = await dispatch('character/migrator/migrate', characterData, { root: true })
         triggerMigration = true
       }
+      commit('SET_VIEW_ONLY', viewOnly)
       commit('SET_CHARACTER', characterData)
-      if (triggerMigration) {
+      if (triggerMigration && !viewOnly) {
         console.log('triggering character migration')
+        characterData.meta.remote = true
         await dispatch('REMOTE_UPDATE_CHARACTER')
       }
     } else {
@@ -173,8 +176,6 @@ export const actions = {
       console.log('viewOnly')
       return
     }
-    // TODO: bulk update for things like deleting selections when classes/species change...but may not be necessary
-    // as it doesn't happen often
     const newValue = updateCharacter({ oldValue: getters.character, attr, value })
     commit('SET_CHARACTER', newValue)
     if (rootGetters['auth/isAuthenticated']) {
@@ -197,7 +198,7 @@ export const actions = {
         mutation: 'updateCharacter',
         input: {
           id: getters.id,
-          userId: rootGetters['auth/sub'],
+          owner: rootGetters['auth/username'],
           data: jsonpack.pack(getters.character)
         }
       }, { root: true })

@@ -38,7 +38,7 @@ export const subscriptions = {
     },
     bookmarksSubInit () {
       if (this.bookmarkCreateSub === null) {
-        this.bookmarkCreateSub = API.graphql(graphqlOperation(subs.onCreateBookmarkByUserId, { userId: this.$store.getters['auth/sub'] })).subscribe({
+        this.bookmarkCreateSub = API.graphql(graphqlOperation(subs.onCreateBookmarkByUserId, { userId: this.$store.getters['auth/username'] })).subscribe({
           next: (data) => {
             this.$store.commit('user/ADD_BOOKMARK', data.value?.data?.onCreateBookmarkByUserId)
           },
@@ -48,7 +48,7 @@ export const subscriptions = {
         })
       }
       if (this.bookmarkDeleteSub === null) {
-        this.bookmarkDeleteSub = API.graphql(graphqlOperation(subs.onDeleteBookmarkByUserId, { userId: this.$store.getters['auth/sub'] })).subscribe({
+        this.bookmarkDeleteSub = API.graphql(graphqlOperation(subs.onDeleteBookmarkByUserId, { userId: this.$store.getters['auth/username'] })).subscribe({
           next: (data) => {
             this.$store.commit('user/REMOVE_BOOKMARK', data.value?.data?.onDeleteBookmarkByUserId)
           },

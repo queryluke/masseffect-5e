@@ -20,7 +20,7 @@ export const actions = {
         try {
           const action = `toV${versions[i].replaceAll('.', '')}`
           console.log(`trying ${action}`)
-          newCharacter = dispatch(`toV${versions[i].replaceAll('.', '')}`, newCharacter)
+          newCharacter = await dispatch(`toV${versions[i].replaceAll('.', '')}`, newCharacter)
           console.log(`result of ${action}`, newCharacter)
         } catch (e) {
           console.log(e.message)
@@ -189,6 +189,7 @@ export const actions = {
         // eslint-disable-next-line no-unused-vars
         const [root, id, oldSubground, subground, swsProfType] = bgs.source.split('-')
         if (oldSubground && !subground) {
+          console.log('trying oldSubground, no subground')
           resultedSelected.push({
             path: `${basePath}/subgrounds`,
             value: [{
@@ -199,6 +200,7 @@ export const actions = {
           })
         }
         if (subground && !swsProfType) {
+          console.log('trying subgroun, no profType')
           if (['skill', 'tool'].includes(bgs.subType) && bgs.value?.length) {
             resultedSelected.push({
               path: `${basePath}/subgrounds/${subground.replace('_', '-')}/${swsProfType}`,
@@ -211,7 +213,8 @@ export const actions = {
             })
           }
         }
-        if (swsProfType && bgs.value.length) {
+        if (swsProfType && bgs.value?.length) {
+          console.log('trying profType and value')
           resultedSelected.push({
             path: `${basePath}/subgrounds/${subground.replace('_', '-')}/${swsProfType}`,
             value: bgs.value.map((i) => {
@@ -244,7 +247,7 @@ export const actions = {
           break
         default:
           for (const stuff of selectedBgStuff) {
-            if (stuff.value.length) {
+            if (stuff.value?.length) {
               character.selected.push({
                 path: `${basePath}/${stuff.subType}`,
                 value: stuff.value.map((i) => {

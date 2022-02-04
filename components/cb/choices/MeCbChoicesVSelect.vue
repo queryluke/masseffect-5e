@@ -15,6 +15,7 @@
     :error="error"
     persistent-hint
     :hint="hint"
+    :disabled="viewOnly"
   >
     <template #selection="{ item, attrs, selected }">
       <v-chip
@@ -97,6 +98,9 @@ export default {
     }
   },
   computed: {
+    viewOnly () {
+      return this.$store.state.character.viewOnly
+    },
     disableItems () {
       return this.value.length === this.totalSelections
     },

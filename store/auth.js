@@ -10,7 +10,8 @@ export const state = () => ({
 
 export const getters = {
   isAuthenticated: state => state.isAuthenticated,
-  sub: state => state.isAuthenticated ? state.cognitoUser?.attributes?.sub : false
+  sub: state => state.isAuthenticated ? state.cognitoUser?.attributes?.sub : false,
+  username: state => state.isAuthenticated ? state.cognitoUser?.username : false
 }
 
 export const mutations = {

@@ -30,7 +30,7 @@ export const actions = {
       const clone = cloneDeep(character)
       clone.meta.remote = true
       try {
-        await dispatch('api/MUTATE', { mutation: 'createCharacter', input: { userId: rootGetters['auth/sub'], data: jsonpack.pack(clone) } }, { root: true })
+        await dispatch('api/MUTATE', { mutation: 'createCharacter', input: { owner: rootGetters['auth/username'], data: jsonpack.pack(clone) } }, { root: true })
       } catch (e) {
         clone.meta.remote = false
         unSynced.push(clone)
@@ -40,7 +40,7 @@ export const actions = {
     let nextToken = null
     const remoteChars = []
     do {
-      const response = await dispatch('api/QUERY', { query: 'characterByUser', variables: { userId: rootGetters['auth/sub'], limit: 100, nextToken } }, { root: true })
+      const response = await dispatch('api/QUERY', { query: 'characterByUser', variables: { owner: rootGetters['auth/username'], limit: 100, nextToken } }, { root: true })
       nextToken = response.nextToken
       remoteChars.push(...response.items.map((i) => {
         const data = jsonpack.unpack(i.data)
@@ -67,7 +67,7 @@ export const actions = {
       try {
         character.meta.remote = true
         delete character.id
-        const response = await dispatch('api/MUTATE', { mutation: 'createCharacter', input: { userId: rootGetters['auth/sub'], data: jsonpack.pack(character) } }, { root: true })
+        const response = await dispatch('api/MUTATE', { mutation: 'createCharacter', input: { owner: rootGetters['auth/username'], data: jsonpack.pack(character) } }, { root: true })
         character.id = response.id
       } catch (e) {
         character.meta.remote = false

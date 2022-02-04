@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="d-flex justify-space-around">
-      <v-btn x-small @click="openRest('short')">
+      <v-btn x-small :disabled="viewOnly" @click="openRest('short')">
         Short Rest
       </v-btn>
-      <v-btn x-small @click="openRest('long')">
+      <v-btn x-small :disabled="viewOnly" @click="openRest('long')">
         Long Rest
       </v-btn>
     </div>
@@ -162,6 +162,9 @@ export default {
       powers: 'powers/powers',
       level: 'klasses/level'
     }),
+    viewOnly () {
+      return this.$store.state.character.viewOnly
+    },
     adeptLevel () {
       const adept = this.klasses.find(i => i.id === 'adept')
       return adept ? adept.levels : false
