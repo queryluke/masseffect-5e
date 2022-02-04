@@ -106,9 +106,6 @@ export const getters = {
         b = 0
     }
     return Math.max(min, b)
-  },
-  fightingStyles: (state, getters) => {
-    return getters.mechanics.filter(i => i.type === 'fighting-style')
   }
 }
 

@@ -45,9 +45,7 @@
     <div v-if="mobileView === 'actions'">
       <me-cs-short-long-rest />
       <me-cs-card>
-        <!--
         <me-cs-actions />
-        -->
       </me-cs-card>
     </div>
     <div v-if="mobileView === 'features'">

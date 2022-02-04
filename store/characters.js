@@ -56,7 +56,7 @@ export const actions = {
   async CREATE_CHARACTER ({ dispatch, commit, rootGetters, getters, rootState }, c) {
     let character = c
     if (character.meta?.version !== rootState.cbVersion) {
-      character = dispatch('character/migrator/migrate', character)
+      character = dispatch('character/migrator/migrate', character, { root: true })
     }
     if (rootGetters['auth/isAuthenticated']) {
       try {

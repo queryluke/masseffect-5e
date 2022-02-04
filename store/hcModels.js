@@ -1,6 +1,6 @@
 // TODO: all these hardcoded models eventually need to be retrieved from the API
 export const state = () => ({
-  fightingStyles: [
+  'fighting-styles': [
     {
       id: 'ambidextrous',
       name: 'Ambidextrous',
@@ -15,7 +15,7 @@ export const state = () => ({
     },
     {
       id: 'brawler',
-      name: 'brawler',
+      name: 'Brawler',
       html: 'Add your proficiency bonus to your melee attack damage rolls.',
       mechanics: []
     },
