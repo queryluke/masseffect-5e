@@ -11,6 +11,11 @@ export const state = () => ({
         selections: 3,
         max: 2,
         total: 3
+      },
+      {
+        type: 'speed',
+        speed: 'walk',
+        distance: 30
       }
     ],
     snippet: 'Create your own using the character sheet Settings tab',
