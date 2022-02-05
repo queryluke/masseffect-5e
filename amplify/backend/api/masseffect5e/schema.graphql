@@ -21,6 +21,7 @@ type Profile @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"},
   profileImg: String
   imperial: Boolean!
   darkMode: Boolean!
+  maxCharacters: Int
 }
 
 type Character @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"}, subscriptions: null)

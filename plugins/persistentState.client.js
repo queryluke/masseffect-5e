@@ -9,7 +9,7 @@ export default ({ app, store }) => {
       'user.bookmarks',
       'user.darkMode',
       'user.imperial',
-      'characters.characters',
+      'characters.localCharacters',
       'migrator.migrated'
     ]
   })(store)

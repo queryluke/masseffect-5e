@@ -148,7 +148,8 @@ export const actions = {
     ], { root: true })
   },
   async LOAD_CHARACTER ({ dispatch, commit, rootGetters, getters, rootState }, id) {
-    if (rootGetters['auth/isAuthenticated']) {
+    const lookup = rootGetters['characters/characters'].find(i => i.id === id)
+    if (rootGetters['auth/isAuthenticated'] && lookup?.meta?.remote) {
       const character = await dispatch('api/QUERY', { query: 'getCharacter', variables: { id } }, { root: true })
       commit('SET_CHARACTER_ID', character.id)
       let characterData = jsonpack.unpack(character.data)
@@ -178,7 +179,7 @@ export const actions = {
     }
     const newValue = updateCharacter({ oldValue: getters.character, attr, value })
     commit('SET_CHARACTER', newValue)
-    if (rootGetters['auth/isAuthenticated']) {
+    if (rootGetters['auth/isAuthenticated'] && newValue.meta.remote) {
       if (rootGetters['user/search'] !== 'syncing') {
         commit('user/SET_SYNC_STATUS', 'editing', { root: true })
       }
@@ -192,6 +193,9 @@ export const actions = {
   }, 10000
   ),
   async REMOTE_UPDATE_CHARACTER ({ dispatch, commit, rootGetters, getters }) {
+    if (!getters.character.meta.remote) {
+      return
+    }
     try {
       commit('user/SET_SYNC_STATUS', 'syncing', { root: true })
       await dispatch('api/MUTATE', {

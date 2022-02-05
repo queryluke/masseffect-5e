@@ -7,6 +7,7 @@ export const state = () => ({
   username: null,
   avatar: null,
   profileImg: null,
+  maxCharacters: 20,
   search: null,
   syncStatus: 'saved'
 })
@@ -28,9 +29,9 @@ export const getters = {
   bookmarks: state => state.bookmarks,
   isBookmarked: state => (model, id) => {
     const lookupModel = model === 'bestiary' && id.startsWith('generated') ? 'genpc' : model
-    console.log(state.bookmarks)
     return typeof state.bookmarks.find(i => i.modelId === id && i.model === lookupModel) !== 'undefined'
   },
+  maxCharacters: state => state.maxCharacters,
   search: state => state.search,
   syncStatus: state => state.syncStatus
 }
@@ -40,7 +41,7 @@ export const mutations = {
     if (!value) {
       return
     }
-    for (const key of ['username', 'darkMode', 'imperial', 'profileImg']) {
+    for (const key of ['username', 'darkMode', 'imperial', 'profileImg', 'maxCharacters']) {
       if (value[key] || value[key] === false) {
         state[key] = value[key]
       }

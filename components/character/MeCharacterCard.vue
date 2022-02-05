@@ -16,6 +16,20 @@
           class="text-h5"
         >
           {{ name }}
+          <v-tooltip v-if="notRemoteIndicator" bottom>
+            <template #activator="{ on, attrs }">
+              <v-icon
+                color="warning"
+                dark
+                v-bind="attrs"
+                class="ml-3"
+                v-on="on"
+              >
+                mdi-cloud-off-outline
+              </v-icon>
+            </template>
+            <span>Only available on this device</span>
+          </v-tooltip>
         </v-card-title>
         <v-card-subtitle v-if="character.species && character.classes.length > 0">
           {{ ident }}
@@ -62,7 +76,10 @@ export default {
           return s.bodyImg
         }
       }
-      return '/images/icon.png'
+      return '/icon.png'
+    },
+    notRemoteIndicator () {
+      return this.$store.getters['auth/isAuthenticated'] ? !this.character.meta.remote : false
     },
     ident () {
       const classes = this.$store.getters.getData('classes')

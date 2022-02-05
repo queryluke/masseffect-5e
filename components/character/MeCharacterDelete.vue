@@ -78,9 +78,6 @@ export default {
     async removeCharacter () {
       this.deleting = true
       await this.$store.dispatch('characters/DELETE_CHARACTER', this.id)
-      this.$router.push({
-        path: '/characters'
-      })
       this.dialog = false
       this.deleting = false
     }
