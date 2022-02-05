@@ -2,7 +2,7 @@
   <div>
     <v-row>
       <v-col cols="4">
-        <me-cs-action-resource-display-counter
+        <me-cb-debounced-number-input
           :current="item.uses"
           :max="999"
           label="Quantity"

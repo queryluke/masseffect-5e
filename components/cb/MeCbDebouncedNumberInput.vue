@@ -1,19 +1,20 @@
 <template>
-  <div class="d-flex">
-    <v-btn x-small text class="px-1" @click.stop="$emit('remove')">
-      <v-icon size="18">
-        mdi-minus
-      </v-icon>
-    </v-btn>
-    <div class="px-1">
-      {{ current }}
-    </div>
-    <v-btn x-small text @click.stop="$emit('add')">
-      <v-icon size="18">
-        mdi-plus
-      </v-icon>
-    </v-btn>
-  </div>
+  <v-text-field
+    v-model="cachedValue"
+    type="number"
+    dense
+    outlined
+    :label="label || undefined"
+    :prepend-icon="!hideIcons ? 'mdi-minus' : undefined"
+    :append-outer-icon="!hideIcons ? 'mdi-plus' : undefined"
+    hide-details
+    :disabled="viewOnly"
+    :append-icon="clearable ? 'mdi-close' : undefined"
+    @click:append="$emit('clear')"
+    @input="debouncedUpdate()"
+    @click:append-outer="$emit('add')"
+    @click:prepend="$emit('remove')"
+  />
 </template>
 
 <script>
@@ -21,7 +22,7 @@ import { debounce } from 'lodash'
 export default {
   props: {
     current: {
-      type: Number,
+      type: [Number, String],
       required: true
     },
     max: {
@@ -64,10 +65,12 @@ export default {
   },
   methods: {
     updateAttr () {
-      if (this.cachedValue >= 0 && this.cachedValue <= this.max) {
-        this.$emit('set', this.cachedValue)
+      const int = parseInt(this.cachedValue.replaceAll(',', ''), 10)
+      console.log(int)
+      if (isNaN(int) || int < 0 || int > this.max) {
+        this.cachedValue = int < 0 ? 0 : this.max
       } else {
-        this.cachedValue = this.cachedValue < 0 ? 0 : this.max
+        this.$emit('set', int)
       }
     }
   }

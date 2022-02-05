@@ -5,13 +5,10 @@
     </me-cs-card-title>
     <v-row class="my-2">
       <v-col cols="12" md="3">
-        <v-text-field
-          v-model="credits"
+        <me-cb-debounced-input
+          path="currentStats.credits"
           label="Credits"
-          outlined
-          dense
-          hide-details
-          :disabled="viewOnly"
+          hide-icons
         />
       </v-col>
       <v-col v-if="!viewOnly" class="text-right">
@@ -63,26 +60,9 @@ export default {
     ...mapGetters({ character: 'character', weapons: 'equipment/weapons', armor: 'equipment/armor', gear: 'equipment/gear' }),
     viewOnly () {
       return this.$store.state.character.viewOnly
-    },
-    credits: {
-      get () {
-        return this.$options.filters.groupDigits(this.character.currentStats.credits, ',')
-      },
-      set (value) {
-        this.setMinZeroInt(value, 'credits', 100000000000000)
-      }
     }
   },
   methods: {
-    setMinZeroInt (input, attr, max) {
-      let number = input.toString().replaceAll(',', '')
-      number = parseInt(number, 10)
-      if (isNaN(number) || number < 0 || number > max) {
-        number = 0
-      }
-      const value = Math.max(number, 0)
-      this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `currentStats.${attr}`, value })
-    },
     showTab (index) {
       if (this.tab === 0) {
         return true

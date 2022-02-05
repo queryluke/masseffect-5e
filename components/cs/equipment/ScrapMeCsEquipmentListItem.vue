@@ -56,7 +56,7 @@
             <v-row>
               <v-col cols="4">
                 <div>Uses / Charges / Quantity</div>
-                <me-cs-action-resource-display-counter
+                <me-cb-debounced-number-input
                   :current="item.uses"
                   :max="999"
                   @add="changeStat('uses', item.uses + 1)"

@@ -5,6 +5,7 @@
       :reset="item.reset"
       :current="count"
       :max="max"
+      :max-width="75"
       @add="add"
       @remove="remove"
       @reset="reset"
@@ -52,10 +53,14 @@ export default {
     },
     count: {
       get () {
-        return this.resources[this.id] || 0
+        return parseInt((this.resources[this.id] || 0), 10)
       },
       set (value) {
-        this.SET_RESOURCE({ id: this.id, value })
+        const int = parseInt(value, 10)
+        if (isNaN(int)) {
+          return
+        }
+        this.SET_RESOURCE({ id: this.id, value: int })
       }
     },
     component () {

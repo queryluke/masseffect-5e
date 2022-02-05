@@ -10,33 +10,35 @@
       />
     </v-col>
     <v-col cols="6">
-      <me-cs-action-resource-display-counter
+      <me-cb-debounced-number-input
         label="Heat"
         :current="itemData.heat"
         :max="999"
-        :clearable="item.overrides.heat"
+        :clearable="!!item.overrides.heat"
         hide-icons
         @set="changeStat('overrides.heat', $event)"
         @clear="clearOverride('heat')"
       />
     </v-col>
     <v-col cols="6">
-      <me-cs-action-resource-display-counter
+      <v-select
+        :items="rangeOptions"
+        :value="itemData.range"
         label="Range"
-        :current="weaponRange"
-        :max="999"
-        :clearable="item.overrides.range"
-        hide-icons
-        @set="weaponRange"
-        @clear="clearOverride('range')"
+        outlined
+        dense
+        hide-details
+        :append-icon="item.overrides.range ? 'mdi-close' : undefined"
+        @click:append="clearOverride('range')"
+        @change="changeStat('overrides.range', $event)"
       />
     </v-col>
     <v-col cols="3">
-      <me-cs-action-resource-display-counter
+      <me-cb-debounced-number-input
         :current="itemData.damage.dieCount"
         label="# Dice"
         :max="20"
-        :clearable="item.overrides.damage && item.overrides.damage.dieCount"
+        :clearable="item.overrides.damage && !!item.overrides.damage.dieCount"
         hide-icons
         @set="changeStat('overrides.damage.dieCount', $event)"
         @clear="clearOverride('damage.dieCount')"
@@ -69,7 +71,7 @@
       />
     </v-col>
     <v-col cols="6">
-      <me-cs-action-resource-display-counter
+      <me-cb-debounced-number-input
         label="+ Damage"
         :current="itemData.bonusDamage || 0"
         :max="999"
@@ -80,7 +82,7 @@
       />
     </v-col>
     <v-col cols="6">
-      <me-cs-action-resource-display-counter
+      <me-cb-debounced-number-input
         label="+ Hit"
         :current="itemData.bonusHit || 0"
         :max="999"
@@ -128,7 +130,24 @@ export default {
   },
   data () {
     return {
-      cachedName: null
+      cachedName: null,
+      ranges: [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        60,
+        75,
+        90,
+        120,
+        150,
+        300,
+        500
+      ]
     }
   },
   computed: {
@@ -146,30 +165,16 @@ export default {
         this.cachedName = value
       }
     },
-    weaponRange: {
-      get () {
-        if (this.$store.getters['user/imperial']) {
-          return this.item.overrides.range
-        } else {
-          const converted = (parseInt(this.item.overrides.range, 10) / 5) * 2
-          return converted >= 2 || converted === 0
-            ? converted
-            : converted === 0.4
-              ? 0.5
-              : converted === 0.8
-                ? 1
-                : 1.5
+    imperial () {
+      return this.$store.getters['user/imperial']
+    },
+    rangeOptions () {
+      return this.ranges.map((i) => {
+        return {
+          text: this.imperial ? `${i}ft` : `${(i / 5) * 2}m`,
+          value: i
         }
-      },
-      set (value) {
-        if (this.$store.getters['user/imperial']) {
-          this.changeStat('overrides.range', value)
-        } else {
-          const minVal = value < 2 ? 2 : value
-          const converted = Math.ceil((parseInt(minVal, 10) / 2) * 5)
-          this.changeStat('overrides.range', converted)
-        }
-      }
+      })
     }
   },
   created () {

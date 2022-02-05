@@ -50,7 +50,7 @@ export default {
       return this.character.name || 'Unnamed Character'
     },
     image () {
-      const species = this.$store.getters.getData('species')
+      const species = [...this.$store.getters.getData('species'), this.$store.state.character.species.customSpecies]
       if (this.character.image) {
         return this.character.image
       }

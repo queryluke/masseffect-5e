@@ -66,7 +66,7 @@
           <div>
             Tech Points (Limit {{ techPoints.limit }})
           </div>
-          <me-cs-action-resource-display-counter
+          <me-cb-debounced-number-input
             :current="currentTp"
             :max="techPoints.max"
             @add="addTp"
