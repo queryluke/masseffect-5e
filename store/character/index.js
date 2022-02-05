@@ -41,6 +41,9 @@ export const getters = {
     return state.character
   },
   characterReady: (state, getters) => {
+    if (!getters.character) {
+      return false
+    }
     return getters.character.species && getters.character.classes.length > 0 && Object.entries(getters.character.abilityScores).every(i => i[1].value)
   },
   id: state => state.id,
@@ -148,23 +151,27 @@ export const actions = {
     ], { root: true })
   },
   async LOAD_CHARACTER ({ dispatch, commit, rootGetters, getters, rootState }, id) {
-    const lookup = rootGetters['characters/characters'].find(i => i.id === id)
-    if (rootGetters['auth/isAuthenticated'] && lookup?.meta?.remote) {
-      const character = await dispatch('api/QUERY', { query: 'getCharacter', variables: { id } }, { root: true })
-      commit('SET_CHARACTER_ID', character.id)
-      let characterData = jsonpack.unpack(character.data)
-      let triggerMigration = false
-      const viewOnly = character.owner !== rootGetters['auth/username']
-      if (characterData.meta.version !== rootState.cbVersion) {
-        characterData = await dispatch('character/migrator/migrate', characterData, { root: true })
-        triggerMigration = true
-      }
-      commit('SET_VIEW_ONLY', viewOnly)
-      commit('SET_CHARACTER', characterData)
-      if (triggerMigration && !viewOnly) {
-        console.log('triggering character migration')
-        characterData.meta.remote = true
-        await dispatch('REMOTE_UPDATE_CHARACTER')
+    // TODO: need to try this and on a 404, try local, and if that also fails, return false
+    if (rootGetters['auth/isAuthenticated']) {
+      try {
+        const character = await dispatch('api/QUERY', { query: 'getCharacter', variables: { id } }, { root: true })
+        commit('SET_CHARACTER_ID', character.id)
+        let characterData = jsonpack.unpack(character.data)
+        let triggerMigration = false
+        const viewOnly = character.owner !== rootGetters['auth/username']
+        if (characterData.meta.version !== rootState.cbVersion) {
+          characterData = await dispatch('character/migrator/migrate', characterData, { root: true })
+          triggerMigration = true
+        }
+        commit('SET_VIEW_ONLY', viewOnly)
+        commit('SET_CHARACTER', characterData)
+        if (triggerMigration && !viewOnly) {
+          console.log('triggering character migration')
+          characterData.meta.remote = true
+          await dispatch('REMOTE_UPDATE_CHARACTER')
+        }
+      } catch (e) {
+        await dispatch('local/LOAD_CHARACTER', id)
       }
     } else {
       console.log('loading local')
