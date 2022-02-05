@@ -2,7 +2,7 @@
   "version": "1",
   "cognitoConfig": {
     "identityPoolName": "me5eauth_identity_pool",
-    "allowUnauthenticatedIdentities": true,
+    "allowUnauthenticatedIdentities": false,
     "resourceNameTruncated": "massefc20a998c",
     "userPoolName": "me5eauth_user_pool",
     "autoVerifiedAttributes": [
@@ -79,6 +79,6 @@
       "Ref": "AWS::StackId"
     },
     "permissions": [],
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"implicit\"],\"AllowedOAuthScopes\":[\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/auth/login/\",\"https://next.n7.world/auth/login/\",\"https://next.n7.world/auth/signin/\"],\"LogoutURLs\":[\"http://localhost:3000/auth/logout/\",\"https://next.n7.world/auth/logout/\",\"https://next.n7.world/auth/signout/\"]}"
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"implicit\"],\"AllowedOAuthScopes\":[\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/auth/login/\",\"https://next.n7.world/auth/login/\",\"https://n7.world/auth/login/\"],\"LogoutURLs\":[\"http://localhost:3000/auth/logout/\",\"https://next.n7.world/auth/logout/\",\"https://n7.world/auth/logout/\"]}"
   }
 }

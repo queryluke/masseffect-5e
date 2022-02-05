@@ -60,6 +60,7 @@ export const createProfile = /* GraphQL */ `
       profileImg
       imperial
       darkMode
+      maxCharacters
       createdOn
       updatedOn
       owner
@@ -77,6 +78,7 @@ export const updateProfile = /* GraphQL */ `
       profileImg
       imperial
       darkMode
+      maxCharacters
       createdOn
       updatedOn
       owner
@@ -94,6 +96,7 @@ export const deleteProfile = /* GraphQL */ `
       profileImg
       imperial
       darkMode
+      maxCharacters
       createdOn
       updatedOn
       owner

@@ -42,6 +42,7 @@ export const getProfile = /* GraphQL */ `
       profileImg
       imperial
       darkMode
+      maxCharacters
       createdOn
       updatedOn
       owner
@@ -61,6 +62,7 @@ export const listProfiles = /* GraphQL */ `
         profileImg
         imperial
         darkMode
+        maxCharacters
         createdOn
         updatedOn
         owner
@@ -100,7 +102,7 @@ export const listCharacters = /* GraphQL */ `
 `;
 export const bookmarkByUser = /* GraphQL */ `
   query BookmarkByUser(
-    $owner: ID
+    $owner: ID!
     $sortDirection: ModelSortDirection
     $filter: ModelBookmarkFilterInput
     $limit: Int
@@ -128,7 +130,7 @@ export const bookmarkByUser = /* GraphQL */ `
 `;
 export const characterByUser = /* GraphQL */ `
   query CharacterByUser(
-    $owner: ID
+    $owner: ID!
     $sortDirection: ModelSortDirection
     $filter: ModelCharacterFilterInput
     $limit: Int

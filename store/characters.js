@@ -30,7 +30,10 @@ export const actions = {
     }
     // get the aws characters
     const nextToken = null
+    console.log('fetching')
+    console.log(rootGetters['auth/username'])
     const response = await dispatch('api/QUERY', { query: 'characterByUser', variables: { owner: rootGetters['auth/username'], limit: 100, nextToken } }, { root: true })
+    console.log(response)
     const characters = response.items.map((i) => {
       const data = jsonpack.unpack(i.data)
       data.id = i.id
