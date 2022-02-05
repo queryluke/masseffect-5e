@@ -102,7 +102,7 @@ export const actions = {
       await dispatch('v131', { bookmarks, characters })
     }
   },
-  v131 ({ dispatch, commit, rootGetters }, { bookmarks, characters }) {
+  async v131 ({ dispatch, commit, rootGetters }, { bookmarks, characters }) {
     commit('user/RESET_BOOKMARKS', null, { root: true })
     if (bookmarks) {
       const bookmarkables = ['armor', 'bestiary', 'gear', 'mods', 'powers', 'vehicles', 'weapons']
@@ -123,7 +123,7 @@ export const actions = {
     if (characters) {
       const newCharacters = []
       for (const character of Object.values(characters)) {
-        newCharacters.push(dispatch('character/migrator/migrate'), character, { root: true })
+        newCharacters.push(await dispatch('character/migrator/migrate', character, { root: true }))
       }
       commit('characters/SET_CHARACTERS', newCharacters, { root: true })
     }

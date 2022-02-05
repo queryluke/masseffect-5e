@@ -23,10 +23,10 @@
       </div>
     </div>
     <v-card-actions>
-      <v-btn text :to="`/characters/sheet?id=${character.id}`">
+      <v-btn text :to="`/characters/sheet/?id=${character.id}`">
         View
       </v-btn>
-      <v-btn text :to="`/characters/builder?id=${character.id}`">
+      <v-btn text :to="`/characters/builder/?id=${character.id}`">
         Edit
       </v-btn>
       <v-spacer />

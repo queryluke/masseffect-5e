@@ -78,7 +78,7 @@ export default {
         this.loading = false
       }
       await this.$router.push({
-        path: `/characters/sheet?id=${this.id}`
+        path: `/characters/sheet/?id=${this.id}`
       })
     }
   }
