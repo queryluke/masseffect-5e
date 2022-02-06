@@ -227,7 +227,13 @@ export default {
       return pbl
     },
     unlinkedPowers () {
-      return this.character.powers.filter(i => !i.klass)
+      return this.character.powers.filter(i => !i.klass).map((i) => {
+        return {
+          ...this.$store.getters.getItem('powers', i.id),
+          ...i,
+          learned: true
+        }
+      })
     }
   },
   methods: {

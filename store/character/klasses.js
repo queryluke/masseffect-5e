@@ -179,13 +179,15 @@ export const actions = {
     value.push(klass)
     dispatch('character/UPDATE_CHARACTER', { attr: 'classes', value }, { root: true })
   },
-  REMOVE_KLASS ({ getters, dispatch }, id) {
+  REMOVE_KLASS ({ getters, dispatch, rootGetters }, id) {
     const value = getters.selectedKlasses.slice()
     const index = value.findIndex(i => i.id === id)
     if (index > -1) {
       value.splice(index, 1)
     }
     dispatch('character/selections/BULK_DELETE', `klass/${id}`, { root: true })
+    const removePowers = rootGetters['character/character'].powers.filter(i => i.klass !== id)
+    dispatch('character/UPDATE_CHARACTER', { attr: 'powers', value: removePowers }, { root: true })
     dispatch('character/UPDATE_CHARACTER', { attr: 'classes', value }, { root: true })
   }
 }
