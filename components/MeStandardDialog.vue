@@ -3,7 +3,7 @@
     :value="shown"
     :fullscreen="$vuetify.breakpoint.xsOnly"
     :transition="transition"
-    width="70vw"
+    :max-width="800"
     scrollable
     @click:outside="$emit('close')"
   >
