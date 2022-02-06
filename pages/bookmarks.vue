@@ -15,6 +15,11 @@ export default {
       types: ['weapons', 'armor', 'gear', 'mods', 'vehicles', 'powers', 'bestiary']
     }
   },
+  async fetch () {
+    if (this.$store.getters['auth/isAuthenticated']) {
+      await this.$store.dispatch('user/SYNC_BOOKMARKS')
+    }
+  },
   created () {
     this.$store.dispatch('SET_META', {
       title: this.$t('bookmarks_title'),

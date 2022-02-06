@@ -113,10 +113,8 @@
 </template>
 
 <script>
-import { subscriptions } from '~/mixins/subscriptions'
 export default {
   name: 'MeNavigation',
-  mixins: [subscriptions],
   data () {
     return {
       settingsDialog: false,
@@ -273,7 +271,6 @@ export default {
   },
   created () {
     this.$vuetify.theme.dark = this.$store.getters['user/darkMode']
-    this.subscribe(['bookmarks'])
   },
   methods: {
     submit () {

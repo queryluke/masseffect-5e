@@ -1,5 +1,7 @@
 import { API, graphqlOperation } from 'aws-amplify'
 import * as subs from '~/graphql/subscriptions'
+// TODO: subscriptions seem to have broken, not fixing since it seems a bit unecessary for bookmarks. Will sort out
+// later
 
 export const subscriptions = {
   data () {
@@ -38,8 +40,10 @@ export const subscriptions = {
     },
     bookmarksSubInit () {
       if (this.bookmarkCreateSub === null) {
+        console.log('bookmark sub')
         this.bookmarkCreateSub = API.graphql(graphqlOperation(subs.onCreateBookmarkByUserId, { userId: this.$store.getters['auth/username'] })).subscribe({
           next: (data) => {
+            console.log(data)
             this.$store.commit('user/ADD_BOOKMARK', data.value?.data?.onCreateBookmarkByUserId)
           },
           error: (error) => {

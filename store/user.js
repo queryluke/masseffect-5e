@@ -89,7 +89,8 @@ export const actions = {
       return
     }
     if (rootGetters['auth/isAuthenticated']) {
-      await dispatch('api/MUTATE', { mutation: 'createBookmark', input: { userId: getters.profile.id, model: type, modelId, data } }, { root: true })
+      const bookmark = await dispatch('api/MUTATE', { mutation: 'createBookmark', input: { owner: getters.profile.id, model: type, modelId, data } }, { root: true })
+      commit('ADD_BOOKMARK', bookmark)
     } else {
       commit('ADD_BOOKMARK', { model: type, data, modelId })
     }
@@ -101,9 +102,8 @@ export const actions = {
       if (bookmark) {
         await dispatch('api/MUTATE', { mutation: 'deleteBookmark', input: { id: bookmark.id } }, { root: true })
       }
-    } else {
-      commit('REMOVE_BOOKMARK', { model: type, modelId: item.id })
     }
+    commit('REMOVE_BOOKMARK', { model: type, modelId: item.id })
   },
   async TOGGLE_BOOKMARK ({ getters, commit, rootGetters, dispatch }, { type, item }) {
     if (getters.isBookmarked(type, item.id)) {
@@ -125,15 +125,12 @@ export const actions = {
     }
   },
   async SYNC_BOOKMARKS ({ getters, dispatch, commit }) {
-    // TODO: TEMPORARY CHECK
-    if (!Array.isArray(getters.bookmarks)) {
-      dispatch('migrator/v131', { bookmarks: getters.bookmarks, characters: null }, { root: true })
-    }
+    console.log('SYNCING bookmarks')
     // GET bookmarks from AWS
     let nextToken = null
     const remoteBookmarks = []
     do {
-      const response = await dispatch('api/QUERY', { query: 'bookmarkByUser', variables: { userId: getters.profile.id, limit: 100, nextToken } }, { root: true })
+      const response = await dispatch('api/QUERY', { query: 'bookmarkByUser', variables: { owner: getters.profile.id, limit: 100, nextToken } }, { root: true })
       nextToken = response.nextToken
       remoteBookmarks.push(...response.items)
     } while (nextToken !== null)
@@ -151,7 +148,7 @@ export const actions = {
         continue
       }
       commit('REMOVE_BOOKMARK', lob)
-      const response = await dispatch('api/MUTATE', { mutation: 'createBookmark', input: { userId: getters.profile.id, model: lob.model, modelId: lob.modelId, data: lob.data } }, { root: true })
+      const response = await dispatch('api/MUTATE', { mutation: 'createBookmark', input: { owner: getters.profile.id, model: lob.model, modelId: lob.modelId, data: lob.data } }, { root: true })
       commit('ADD_BOOKMARK', response)
     }
     for (const rob of remoteOnly) {

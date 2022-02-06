@@ -10,7 +10,7 @@ export default {
     if (!this.$store.state.auth.isAuthenticated) {
       await this.$store.dispatch('auth/LOG_IN')
     } else {
-      this.$router.push(this.$store.state.auth.redirect || '/')
+      this.$router.push('/')
     }
   }
 }
