@@ -12,8 +12,7 @@
     </v-list-item-content>
     <v-list-item-action class="d-flex justify-end">
       <v-list-item-action-text class="text-body-2 d-flex align-center">
-        <me-cs-ad-icon v-if="advantage" small :text="advantageText" />
-        <me-cs-ad-icon v-if="disadvantage" small :text="disadvantageText" />
+        <me-cs-ad-icons type="skill-check" :value="item.id" />
         <span class="pl-1">
           {{ modText(item.mod) }}
         </span>

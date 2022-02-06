@@ -42,16 +42,13 @@ export const getters = {
   currentLocale: state => state.currentLocale,
   isLocaleSet: state => typeof state.data[state.currentLocale] !== 'undefined',
   // TODO: interpolate non-translated data
-  getData: (state, getters, rootState) => (endpoint) => {
-    const hcModels = ['fighting-styles', 'subgrounds']
-    if (hcModels.includes(endpoint)) {
-      return rootState.hcModels[endpoint]
-    }
+  getData: (state, getters) => (endpoint) => {
     if (!getters.isLocaleSet) {
       return []
     }
     const locale = 'en'
-    return typeof state.data[locale][endpoint] === 'undefined' ? [] : state.data[locale][endpoint]
+    const models = state.data[locale][endpoint] || state.data[locale].edges?.filter(i => i.type === endpoint)
+    return typeof models === 'undefined' ? [] : models
   },
   getItem: (state, getters) => (endpoint, id) => {
     const data = getters.getData(endpoint)

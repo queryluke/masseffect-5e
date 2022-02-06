@@ -81,7 +81,7 @@ export const getters = {
     const allKlassMechanics = []
     for (const [index, klass] of getters.klasses.entries()) {
       // Prof mechanics
-      const profMechanics = ['skill', 'savingThrow', 'tool', 'weapon', 'armor']
+      const profMechanics = ['skill', 'saving-throw', 'tool', 'weapon', 'armor']
         .map((prof) => {
           const mArray = []
           const klassProfs = klass.data.profs

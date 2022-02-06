@@ -97,9 +97,7 @@ export default {
       if (isModel) {
         const baseSelections = this.selectedAspectValues.filter(i => i.type === curr.model)
         const arrayOfAllMatchingBaseSelectionValues = baseSelections.reduce((acc, curr) => acc.concat(curr.value), [])
-        console.log(curr.model)
         const models = this.$store.getters.getData(curr.model)
-        console.log(models)
         const matchingModels = models.filter(i => arrayOfAllMatchingBaseSelectionValues.includes(i.id))
         const mechanicsToParse = matchingModels.reduce((acc, curr) => acc.concat(curr.mechanics || []), []).filter(i => i.options)
         total += mechanicsToParse.reduce(this.optionsCountReduction, 0)

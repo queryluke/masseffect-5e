@@ -14,7 +14,14 @@
         </v-icon>
       </div>
     </template>
-    <span>{{ toolTipText }}</span>
+    <span>
+      <span>
+        {{ toolTipText }}
+      </span>
+      <span>
+        <slot />
+      </span>
+    </span>
   </v-tooltip>
 </template>
 

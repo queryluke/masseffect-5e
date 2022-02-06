@@ -16,8 +16,7 @@
               </v-list-item-content>
               <v-list-item-action class="my-1">
                 <v-list-item-action-text class="d-flex align-center">
-                  <me-cs-ad-icon v-if="abilityItem.ad" small />
-                  <me-cs-ad-icon v-if="abilityItem.dis" small type="d" />
+                  <me-cs-ad-icons type="saving-throw" :value="abilityItem.ability" />
                   <span class="pl-1">
                     {{ abilityItem.score }}
                   </span>
@@ -52,23 +51,19 @@ export default {
     // TODO: this may be better off in the store
     ...mapGetters({ mechanics: 'mechanics/mechanics', abilityBreakdown: 'abilities/abilityBreakdown', profBonus: 'profBonus' }),
     savingThrowMechanics () {
-      return this.mechanics.filter(i => i.type === 'savingThrow')
+      return this.mechanics.filter(i => i.type === 'saving-throw')
     },
     items () {
       const items = []
       const abilities = ['str', 'dex', 'con', 'int', 'wis', 'cha']
       for (const ability of abilities) {
-        const proficient = this.savingThrowMechanics.find(i => i.value === ability && !i.effect)
-        const ad = this.savingThrowMechanics.find(i => i.value === ability && i.effect?.type === 'advantage')
-        const dis = this.savingThrowMechanics.find(i => i.value === ability && i.effect?.type === 'disadvantage')
+        const proficient = this.savingThrowMechanics.find(i => i.value?.includes(ability) && !i.effect)
         let score = this.abilityBreakdown[ability].mod
         if (proficient) {
           score += this.profBonus
         }
         items.push({
           ability,
-          ad: ad && !dis,
-          dis: !ad && dis,
           proficient,
           score: this.modText(score)
         })

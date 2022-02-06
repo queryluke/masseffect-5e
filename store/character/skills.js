@@ -25,17 +25,14 @@ export const getters = {
           : 0
       const baseMod = rootGetters[`character/abilities/${skill.link}Mod`] + profBonusBonus
       const mechanics = scMechanics.filter(i => i.limit ? i.limit.includes(skill.id) : true)
-      const bonuses = mechanics.filter(i => i.effect.type === 'bonus').reduce((acc, curr) => acc + rootGetters['character/mechanics/mcBonus'](curr.effect.bonus), 0)
+      const bonuses = mechanics.filter(i => i.effect?.type === 'bonus').reduce((acc, curr) => acc + rootGetters['character/mechanics/mcBonus'](curr.effect.bonus), 0)
       const mod = baseMod + bonuses
-      const advantages = mechanics.filter(i => i.effect.type === 'advantage')
-      const disadvantages = mechanics.filter(i => i.effect.type === 'disadvantage')
       const returnObj = {
+        id: skill.id,
         name: skill.name,
         proficient,
         expertise,
         mod,
-        advantages,
-        disadvantages,
         passive: 10 + mod
       }
       skills[skill.id] = returnObj

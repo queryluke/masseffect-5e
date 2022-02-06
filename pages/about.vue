@@ -106,7 +106,7 @@
                   {{ person.name }}
                 </p>
                 <p class="text-subtitle-1">
-                  {{ $t(`aboutpage.roles.${person.roles}`) }}
+                  {{ aboutPageRoles(person) }}
                 </p>
               </v-card-text>
             </v-card>
@@ -254,6 +254,12 @@ export default {
     attributions () {
       return this.$store.getters.getData('attributions')
     }
+  },
+  methods: {
+    aboutPageRoles (person) {
+      return person.roles.map(i => this.$t(`aboutpage.roles.${i}`)).join(', ')
+    }
   }
+
 }
 </script>

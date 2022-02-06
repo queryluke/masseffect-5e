@@ -6,7 +6,7 @@
       </me-cs-card-title>
     </v-col>
     <v-col cols="12">
-      <v-list dense>
+      <v-list dense class="pb-0">
         <v-list-item v-for="passive in passiveScores" :key="passive.skill" class="mt-n2">
           <v-list-item-avatar size="17" tile>
             {{ passive.score }}
@@ -19,7 +19,7 @@
         </v-list-item>
       </v-list>
     </v-col>
-    <v-col cols="12">
+    <v-col cols="12" class="pb-4">
       <div class="d-flex justify-space-around flex-wrap">
         <template v-for="(sense, index) in senses">
           <v-btn
@@ -123,7 +123,7 @@ export default {
       const senses = []
       const mechanics = this.mechanics.filter(i => i.type === 'sense')
       for (const sense of this.sensesList) {
-        const senseDistances = mechanics.filter(i => i.sense === sense).map(i => i.distance)
+        const senseDistances = mechanics.filter(i => i.sense === sense.id).map(i => i.distance)
         const highest = Math.max(0, this.character.settings.senses[sense.id], ...senseDistances)
         senses.push({ ...sense, distance: highest, html: sense.html(highest) })
       }

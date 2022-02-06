@@ -108,7 +108,7 @@ export const actions = {
         character.selected.push({
           path: `klass/${klassId}/fighting-style/fighting-styles`,
           value: [
-            { type: 'fighting-styles', value: fs.name.toLowerCase().replaceAll(' ', '-') }
+            { type: 'fighting-styles', value: 'FS_' + fs.name.toLowerCase().replaceAll(' ', '-') }
           ]
         })
       }
@@ -193,7 +193,7 @@ export const actions = {
           resultedSelected.push({
             path: `${basePath}/subgrounds`,
             value: [{
-              value: bgs.value,
+              value: `BG_${bgs.value}`,
               type: 'subgrounds',
               limit
             }]
@@ -203,7 +203,7 @@ export const actions = {
           console.log('trying subgroun, no profType')
           if (['skill', 'tool'].includes(bgs.subType) && bgs.value?.length) {
             resultedSelected.push({
-              path: `${basePath}/subgrounds/${subground.replace('_', '-')}/${swsProfType}`,
+              path: `${basePath}/subgrounds/BG_${subground.replace('_', '-')}/${swsProfType}`,
               value: bgs.value.map((i) => {
                 return {
                   type: swsProfType,
@@ -216,7 +216,7 @@ export const actions = {
         if (swsProfType && bgs.value?.length) {
           console.log('trying profType and value')
           resultedSelected.push({
-            path: `${basePath}/subgrounds/${subground.replace('_', '-')}/${swsProfType}`,
+            path: `${basePath}/subgrounds/BG_${subground.replace('_', '-')}/${swsProfType}`,
             value: bgs.value.map((i) => {
               return {
                 type: swsProfType,
@@ -234,15 +234,15 @@ export const actions = {
       let limit
       switch (character.background) {
         case 'artisan':
-          limit = '[{"attr":"id","value":["armorsmith","brewer","chemist","cook","mechanic","painter","tailor","weaponsmith"]}]'
+          limit = '[{"attr":"id","value":["BG_armorsmith","BG_brewer","BG_chemist","BG_cook","BG_mechanic","BG_painter","BG_tailor","BG_weaponsmith"]}]'
           character.selected.push(...processSubgrounds(basePath, selectedBgStuff, limit))
           break
         case 'criminal':
-          limit = '[{"attr":"id","value":["assassin","blackmailer","fence","gambler","gang-member","pickpocket","smuggler","thief"]}]'
+          limit = '[{"attr":"id","value":["BG_assassin","BG_blackmailer","BG_fence","BG_gambler","BG_gang-member","BG_pickpocket","BG_smuggler","BG_thief"]}]'
           character.selected.push(...processSubgrounds(basePath, selectedBgStuff, limit))
           break
         case 'scholar':
-          limit = '[{"attr":"id","value":["chemistry","astronomy","engineering","physics","computer-science","biology","philosophy","general-studies"]}]'
+          limit = '[{"attr":"id","value":["BG_chemistry","BG_astronomy","BG_engineering","BG_physics","BG_computer-science","BG_biology","BG_philosophy","BG_general-studies"]}]'
           character.selected.push(...processSubgrounds(basePath, selectedBgStuff, limit))
           break
         default:
