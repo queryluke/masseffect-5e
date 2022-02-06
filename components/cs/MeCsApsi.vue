@@ -90,7 +90,7 @@ export default {
       dexMod: 'abilities/dexMod'
     }),
     additionalSpeeds () {
-      return Object.values(this.speeds).length > 1
+      return Object.values(this.speeds).filter(i => i).length > 1
     },
     initiativeBonus () {
       const bonus = this.mechanics
