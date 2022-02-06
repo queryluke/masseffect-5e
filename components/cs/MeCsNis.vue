@@ -26,6 +26,7 @@
               </v-icon>
             </template>
             <v-list dense>
+              <!-- edit -->
               <v-list-item v-if="!viewOnly" :to="`/characters/builder/?id=${id}`" nuxt>
                 <v-list-item-icon>
                   <v-icon>
@@ -34,6 +35,29 @@
                 </v-list-item-icon>
                 <v-list-item-title>Edit</v-list-item-title>
               </v-list-item>
+
+              <!-- share -->
+              <v-tooltip
+                v-if="character.meta.remote"
+                v-model="shareTooltip"
+                :disabled="!shareTooltip"
+                top
+                :close-delay="1000"
+              >
+                <template #activator="{on, attrs}">
+                  <v-list-item v-bind="attrs" v-on="on" @click.stop="copyLinkToClipboard">
+                    <v-list-item-icon>
+                      <v-icon>
+                        mdi-share
+                      </v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-title>Share</v-list-item-title>
+                  </v-list-item>
+                </template>
+                <span>{{ shareTooltipMessage }}</span>
+              </v-tooltip>
+
+              <!-- export -->
               <v-list-item @click="saveFile">
                 <v-list-item-icon>
                   <v-icon>
@@ -43,6 +67,8 @@
                 <v-list-item-title>Export</v-list-item-title>
               </v-list-item>
               <v-divider />
+
+              <!-- characters -->
               <v-list-item to="/characters" nuxt>
                 <v-list-item-icon>
                   <v-icon>
@@ -72,6 +98,12 @@ import { createNamespacedHelpers } from 'vuex'
 const { mapGetters } = createNamespacedHelpers('character')
 export default {
   name: 'MeCsNis',
+  data () {
+    return {
+      shareTooltip: false,
+      shareTooltipMessage: ''
+    }
+  },
   computed: {
     ...mapGetters({ character: 'character', level: 'klasses/level', image: 'image', identString: 'identString', id: 'id' }),
     viewOnly () {
@@ -91,6 +123,21 @@ export default {
       a.dataset.downloadurl = ['text/json', a.download, a.href].join(':')
       e.initEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
       a.dispatchEvent(e)
+    },
+    async copyLinkToClipboard () {
+      let timeout = 1000
+      if (!navigator.clipboard) {
+        this.shareTooltipMessage = 'Error copying, you can copy from the address bar'
+        timeout = 2000
+      } else {
+        await navigator.clipboard.writeText(window.location.href)
+        this.shareTooltipMessage = 'Link Copied!'
+      }
+      this.shareTooltip = true
+      setTimeout(() => {
+        console.log('setting to false')
+        this.shareTooltip = false
+      }, timeout)
     }
   }
 }
