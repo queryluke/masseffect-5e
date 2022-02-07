@@ -15,15 +15,29 @@
             {{ mod.name }}
           </div>
           <me-html :content="mod.html" />
+          <v-card v-for="(mechanic, index) of additionalMechanics(mod)" :key="`subMechanic-${index}`" outlined class="mb-2">
+            <div class="pa-2">
+              <me-cb-aspect-selectable
+                :mechanic="mechanic"
+                :path="`${id}/${mod.id}`"
+              />
+            </div>
+          </v-card>
+          <v-card v-for="(subM, index) of selectedModelsSubModels(mod)" :key="`subModel-${index}`" outlined class="mb-2">
+            <div class="pa-2">
+              <me-tpg s="title">
+                {{ subM.name }}
+              </me-tpg>
+              <me-html :content="subM.html" />
+              <me-cb-aspect-selectable
+                v-for="(subMechanic, mIndex) of (subM.mechanics || []).filter(i => i.options)"
+                :key="`subModel-${index}-mechanics-${mIndex}`"
+                :mechanic="subMechanic"
+                :path="`${id}/${mod.id}/${subM.id}`"
+              />
+            </div>
+          </v-card>
         </div>
-        <v-card v-for="(mechanic, index) of (mod.mechanics || []).filter(i => i.options)" :key="index" outlined class="mb-2">
-          <div class="pa-2">
-            <me-cb-aspect-selectable
-              :mechanic="mechanic"
-              :path="`${id}/${mod.id}`"
-            />
-          </div>
-        </v-card>
       </template>
     </div>
   </div>
@@ -102,6 +116,15 @@ export default {
     }
   },
   methods: {
+    additionalMechanics (mod) {
+      return (mod.mechanics || []).filter(i => i.options)
+    },
+    selectedModelsSubModels (mod) {
+      if (this.mechanic.model === 'species') {
+        return this.$store.getters.getData('traits').filter(i => i.species.includes(mod.id))
+      }
+      return []
+    },
     alreadyAcquired (item) {
       return this.selectedModelIdsFromAnyWhere.includes(item.value)
     },

@@ -5,7 +5,7 @@ export const getters = {
   mechanicAnalysis: (state, getters, rootState, rootGetters) => {
     const selected = rootGetters['character/selections/selected'].slice()
 
-    function hydrateSelection (model, selection, path, append) {
+    function hydrateSelection (modelType, selection, path, append) {
       // console.log(model, selection, path, append)
       // i.e. for powers or other models with appends, need hydrate the appended value
       // do this by the parent object passing the appended values to the loop
@@ -18,11 +18,28 @@ export const getters = {
         }
       })
       const selectedModelIds = selection.value.map(i => i.value)
+      // console.log(model, selectedModelIds)
       // console.log(model)
-      const selectedModels = rootGetters.getData(model).filter(i => selectedModelIds.includes(i.id))
+      const selectedModels = rootGetters.getData(modelType).filter(i => selectedModelIds.includes(i.id))
       // console.log(selectedModels)
-      const hydratedSubselections = selectedModels.map(i => hydrate({ mechanics: i.mechanics, path: `${path}/${model}/${i.id}` }))
+      const hydratedSubselections = selectedModels
+        .map((model) => {
+          const baseHydrates = hydrate({ mechanics: model.mechanics, path: `${path}/${modelType}/${model.id}` })
+          // needed nested hydrations
+          let subHydrates = []
+          if (modelType === 'species') {
+            // console.log('modelId', model.id)
+            const subsToHydrate = rootGetters.getData('traits').filter(i => i.species.includes(model.id))
+            // console.log(subsToHydrate)
+            subHydrates = subsToHydrate
+              .map(subModel => hydrate({ mechanics: subModel.mechanics, path: `${path}/${modelType}/${model.id}/${subModel.id}` }))
+              .reduce((acc, curr) => acc.concat(curr), [])
+            // console.log(subHydrates)
+          }
+          return [...baseHydrates, ...subHydrates]
+        })
         .reduce((acc, curr) => acc.concat(curr), [])
+
       return [...baseMechanics, ...hydratedSubselections]
     }
 
