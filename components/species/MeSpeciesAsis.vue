@@ -1,5 +1,5 @@
 <template>
-  <me-species-trait v-if="asis" :label="$t('ability_score_increase_title')">
+  <me-species-trait v-if="asis.length" :label="$t('ability_score_increase_title')">
     {{ abilityScoreIncreaseText }}
   </me-species-trait>
 </template>

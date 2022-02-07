@@ -1,6 +1,6 @@
 <template>
   <v-row>
-    <v-col v-for="item in items" :key="item.id" sm="6" md="4" class="d-flex flex-column">
+    <v-col v-for="item in items" :key="item.id" sm="6" lg="4" class="d-flex flex-column">
       <me-skeleton-loader :pending="loading" type="card" class="flex-grow-1 d-flex flex-column">
         <me-species-card :item="item" />
       </me-skeleton-loader>
