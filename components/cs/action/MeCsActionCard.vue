@@ -9,7 +9,7 @@
           </v-avatar>
           <v-card flat color="transparent">
             <div class="mb-n1 text-body-1">
-              <small class="text-truncate">
+              <small class="text-truncate font-weight-bold">
                 {{ item.name }}
               </small>
             </div>
@@ -39,7 +39,7 @@
     <v-row v-if="item.shortDesc" no-gutters>
       <v-col>
         <small>
-          <me-html :content="item.shortDesc" classes="text-caption" />
+          <me-html :content="interpolatedShortDesc" classes="text-caption" />
         </small>
       </v-col>
     </v-row>
@@ -57,6 +57,8 @@
 </template>
 
 <script>
+import { createNamespacedHelpers } from 'vuex'
+const { mapGetters } = createNamespacedHelpers('character')
 
 export default {
   name: 'MeCsActionCard',
@@ -76,8 +78,12 @@ export default {
     }
   },
   computed: {
+    ...mapGetters({ abilityBreakdown: 'abilities/abilityBreakdown', profBonus: 'profBonus' }),
     mobile () {
       return this.$vuetify.breakpoint.smAndDown
+    },
+    statsRight () {
+      return this.item.shortDesc && !this.item.attack
     },
     component () {
       return this.item.moreInfo?.component
@@ -87,6 +93,49 @@ export default {
         return this.$store.getters.getItem(this.item.moreInfo.model, this.item.moreInfo.id).html
       }
       return this.item.moreInfo?.bind || false
+    },
+    interpolatedShortDesc () {
+      return this.item.shortDesc ? this.interpolatedText(this.item.shortDesc) : false
+    },
+    dcObj () {
+      if (!this.item.dc) {
+        return false
+      }
+      const dcDefaults = {
+        base: 8,
+        proficient: true,
+        mod: false,
+        save: false,
+        textBonus: false
+      }
+      return { ...dcDefaults, ...this.item.dc }
+    },
+    dcMod () {
+      if (this.dcObj) {
+        return this.abilityBreakdown[this.dcObj.mod].mod
+      }
+      return 0
+    },
+    dc () {
+      return this.dcMod + this.dcObj.base + (this.dcObj.proficient ? this.profBonus : 0)
+    },
+    range () {
+      return this.item.range?.short ? `<me-distance length="${this.item.range.short}" />` : ''
+    }
+  },
+  methods: {
+    interpolatedText (text) {
+      const interpolations = ['dc', 'range']
+      const test = new RegExp(`{{ ?(${interpolations.join('|')}) ?}}`)
+      if (!test.test(text)) {
+        return text
+      }
+      let interpolated = text
+      for (const itp of interpolations) {
+        const regex = new RegExp(`{{ ?${itp} ?}}`, 'ig')
+        interpolated = interpolated.replace(regex, this[itp])
+      }
+      return interpolated
     }
   }
 }
