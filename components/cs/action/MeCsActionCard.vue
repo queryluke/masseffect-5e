@@ -46,6 +46,7 @@
     <v-row no-gutters>
       <v-col v-if="item.resource">
         <me-cs-action-resource :id="item.resource.id" :resource="item.resource" />
+        <me-cs-action-resource v-if="item.resource.resource" :id="item.resource.resource.id" :resource="item.resource.resource" />
       </v-col>
     </v-row>
     <me-standard-dialog v-if="component || itemHtml" :shown="moreInfo" :title="item.name" @close="moreInfo = false">

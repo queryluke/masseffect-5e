@@ -6,6 +6,13 @@ export const state = () => ({
 export const getters = {
   selected: (state, getters, rootState, rootGetters) => {
     return rootGetters['character/character'].selected
+  },
+  valueLookup: (state, getters) => ({ model, id, limit }) => {
+    const matches = getters.selected.filter(i => i.path.includes(`${model}/${id}`)).reduce((acc, curr) => acc.concat(curr.value), [])
+    if (limit) {
+      return matches.filter(i => limit.includes(i.type)).map(i => i.value)
+    }
+    return matches.map(i => i.value)
   }
 }
 

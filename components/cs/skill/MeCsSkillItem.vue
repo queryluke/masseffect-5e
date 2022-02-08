@@ -32,20 +32,6 @@ export default {
       type: Object,
       default: () => {}
     }
-  },
-  computed: {
-    advantage () {
-      return this.item.advantages.length > 0
-    },
-    advantageText () {
-      return this.advantage ? this.item.advantages.filter(i => i.effect.note).join(', ') : false
-    },
-    disadvantage () {
-      return this.item.disadvantages.length > 0
-    },
-    disadvantageText () {
-      return this.disadvantage ? this.item.disadvantages.filter(i => i.effect.note).join(', ') : false
-    }
   }
 }
 </script>

@@ -12,7 +12,7 @@
       @set="set"
     />
     <div v-if="showPer" class="text-caption">
-      / {{ item.reset }} rest
+      {{ resetText }}
     </div>
   </div>
 </template>
@@ -71,6 +71,9 @@ export default {
     },
     showPer () {
       return ['short', 'long'].includes(this.item.reset)
+    },
+    resetText () {
+      return this.item.label || `/ ${this.item.reset} rest`
     }
   },
   methods: {

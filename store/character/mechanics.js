@@ -1,3 +1,5 @@
+import { merge, cloneDeep } from 'lodash'
+
 export const state = () => ({
 })
 
@@ -14,7 +16,8 @@ export const getters = {
       const baseMechanics = selection.value.map((i) => {
         return {
           ...i,
-          ...append
+          ...append,
+          source: path
         }
       })
       const selectedModelIds = selection.value.map(i => i.value)
@@ -70,11 +73,17 @@ export const getters = {
               const hydrated = hydrateSelection(suffix, selection, path, mechanic.append || {})
               hydratedMechanics.push(...hydrated)
             } else {
-              hydratedMechanics.push(...selection.value)
+              const sourced = selection.value.map((i) => {
+                return {
+                  ...i,
+                  source: path
+                }
+              })
+              hydratedMechanics.push(...sourced)
             }
           }
         } else {
-          hydratedMechanics.push(mechanic)
+          hydratedMechanics.push({ ...mechanic, source: path })
         }
       }
       return hydratedMechanics
@@ -87,10 +96,33 @@ export const getters = {
       ...rootGetters['character/backgroundMechanics'],
       ...rootGetters['character/reputation/benefitsMechanics']
     ]
-    for (const item of mechanics) {
+    for (const item of cloneDeep(mechanics)) {
       finalMechanics.push(...hydrate(item))
     }
-    console.log('unused', selected)
+
+    // AUGMENTS
+    for (const augment of finalMechanics.filter(i => i.type === 'augment')) {
+      if (!augment.merge) {
+        continue
+      }
+      if (augment.value) {
+        let localMatchingIndex = 0
+        for (const [augmentIndex, augmentable] of finalMechanics.entries()) {
+          if (augmentable.source.endsWith(`${augment.value.model}/${augment.value.id}`)) {
+            continue
+          }
+          if (augment.value.limit && !augment.value.limit.includes(augmentable.type)) {
+            continue
+          }
+          if (augment.value.instances && !augment.value.instances.includes(localMatchingIndex)) {
+            localMatchingIndex += 1
+            continue
+          }
+          finalMechanics.splice(augmentIndex, 1, merge(augmentable, augment.merge))
+        }
+      }
+    }
+    // console.log(finalMechanics)
     return {
       mechanics: finalMechanics,
       unusedSelections: selected
