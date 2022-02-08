@@ -127,7 +127,7 @@ export const getters = {
         }
       }
       const resource = power.type === 'combat'
-        ? { reset: power.recharge || 'off', max: { type: 'flat', value: power.uses }, id: power.id }
+        ? { reset: power.recharge || 'manual', max: { type: 'flat', value: power.uses }, id: power.id }
         : p.resource || false
       let dc = false
       if (!toHit) {

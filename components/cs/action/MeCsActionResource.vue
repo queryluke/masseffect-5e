@@ -1,5 +1,17 @@
 <template>
   <div class="d-flex align-center">
+    <v-btn
+      v-if="item.reset === 'manual' && item.displayType !== 'heat'"
+      x-small
+      class="mr-1"
+      color="primary"
+      icon
+      @click.stop="reset"
+    >
+      <v-icon size="18">
+        mdi-refresh
+      </v-icon>
+    </v-btn>
     <component
       :is="component"
       :reset="item.reset"

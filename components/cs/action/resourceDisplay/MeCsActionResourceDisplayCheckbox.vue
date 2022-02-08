@@ -24,11 +24,10 @@ export default {
   },
   methods: {
     set (value) {
-      if (value === this.current) {
-        this.$emit('set', this.current + 1)
-      }
-      if (value + 1 === this.current) {
+      if (value + 1 === this.current || value < this.current) {
         this.$emit('set', this.current - 1)
+      } else {
+        this.$emit('set', this.current + 1)
       }
     }
   }
