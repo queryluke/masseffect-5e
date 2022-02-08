@@ -243,7 +243,6 @@ export default {
         }
         damage.bonus = bonus
         damage.text = text
-        console.log(damage)
         return damage
       })
     },

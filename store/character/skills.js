@@ -41,11 +41,15 @@ export const getters = {
         proficient,
         expertise,
         mod,
-        passive: 10 + mod
+        passive: 10 + mod,
+        otherBonuses: mechanics.filter(i => i.effect?.type !== 'bonus')
       }
       skills[skill.id] = returnObj
     }
     return skills
+  },
+  allSkillsBonus: (state, getters, rootState, rootGetters) => {
+    return rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'skill-check' && (!i.value && !i.valueLookup) && i.effect)
   },
   skillList: (state, getters, rootState, rootGetters) => {
     return rootGetters.getData('skills')
