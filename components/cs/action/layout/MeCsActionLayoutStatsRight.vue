@@ -1,7 +1,7 @@
 <template>
   <!-- TODO: add action type for spells, maybe show-action-type? -->
   <v-card outlined class="pa-1 px-md-3" @click="moreInfoDialog = !moreInfoDialog">
-    <div class="d-flex">
+    <div class="d-flex justify-space-between">
       <div>
         <div class="d-flex align-center">
           <slot name="icon" />

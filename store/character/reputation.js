@@ -4,7 +4,7 @@ export const state = () => ({
 
 export const getters = {
   benefitsList: (state, getters, rootState, rootGetters) => {
-    return rootGetters.getData('benefits')
+    return rootGetters.getData('edges').filter(i => i.type === 'benefits')
   },
   selectedBenefits: (state, getters, rootState, rootGetters) => {
     return rootGetters['character/character'].selected

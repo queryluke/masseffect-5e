@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex justify-space-between mx-3">
     <div class="d-flex align-center">
-      <v-avatar :color="item.proficient && !item.expertise ? `accent` : 'transparent'" size="12">
+      <v-avatar :color="item.proficient && !item.expertise ? 'primary' : 'transparent'" size="12">
         <v-icon v-if="item.expertise" size="16" color="orange">
           mdi-star
         </v-icon>

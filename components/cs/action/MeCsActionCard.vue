@@ -65,7 +65,7 @@
       </me-cs-action-stat>
     </template>
 
-    <template #dc>
+    <template v-if="dc" #dc>
       <me-cs-action-stat>
         <template v-if="layout !== 'attack'" #title>
           DC
