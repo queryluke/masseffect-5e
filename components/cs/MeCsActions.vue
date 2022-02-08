@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-n3 mx-sm-4">
+  <div class="mx-sm-4">
     <me-character-sheet-card-title v-if="$vuetify.breakpoint.smAndDown">
       Actions
     </me-character-sheet-card-title>

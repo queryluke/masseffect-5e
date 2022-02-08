@@ -1,8 +1,8 @@
 <template>
   <!-- TODO: add action type for spells, maybe show-action-type? -->
   <v-card outlined class="pa-1 px-md-3" @click="moreInfoDialog = !moreInfoDialog">
-    <v-row align="baseline" no-gutters>
-      <v-col cols="5" md="3">
+    <div class="d-flex">
+      <div>
         <div class="d-flex align-center">
           <slot name="icon" />
           <v-card flat color="transparent">
@@ -11,34 +11,16 @@
                 <slot name="name" />
               </small>
             </div>
-            <slot name="properties" />
           </v-card>
         </div>
-      </v-col>
-      <v-col v-if="showCastingTime" class="text-center" cols="1">
-        <slot name="castingTime" />
-      </v-col>
-      <v-col cols="2" class="text-center">
-        <slot name="range" />
-      </v-col>
-      <v-col :cols="showCastingTime ? 1 : 2">
-        <slot name="hit" />
-        <slot name="dc" />
-      </v-col>
-      <v-col cols="3" md="2">
-        <v-card flat color="transparent">
-          <slot name="damage" />
-        </v-card>
-      </v-col>
-      <v-col v-if="!mobile" cols="3">
-        <slot name="notes" />
-      </v-col>
-    </v-row>
-    <v-row no-gutters>
-      <v-col>
-        <slot name="resource" />
-      </v-col>
-    </v-row>
+        <div>
+          <slot name="shortDesc" />
+        </div>
+        <div>
+          <slot name="resource" />
+        </div>
+      </div>
+    </div>
     <me-standard-dialog v-if="moreInfo" :shown="moreInfoDialog" :title="moreInfo.title" @close="moreInfoDialog = false">
       <component :is="moreInfo.component" v-if="moreInfo.component" :item="moreInfo.bind" />
       <me-html v-else :content="moreInfo.html" />
@@ -48,7 +30,7 @@
 
 <script>
 export default {
-  name: 'MeCsActionLayoutAttack',
+  name: 'MeCsActionLayoutSimple',
   props: {
     moreInfo: {
       type: [Object, Boolean],
@@ -62,11 +44,6 @@ export default {
   data () {
     return {
       moreInfoDialog: false
-    }
-  },
-  computed: {
-    mobile () {
-      return this.$vuetify.breakpoint.smAndDown
     }
   }
 }
