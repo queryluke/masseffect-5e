@@ -57,7 +57,7 @@ export const CsColors = {
   },
   computed: {
     dark () {
-      return this.$store.getters['user/darkMode']
+      return this.$vuetify.theme.dark
     }
   },
   methods: {

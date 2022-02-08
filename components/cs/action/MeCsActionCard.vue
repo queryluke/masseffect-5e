@@ -81,9 +81,11 @@
 
     <template v-if="damages" #damage>
       <me-cs-action-stat v-for="(damage, index) in damages" :key="`damage-${index}`">
-        {{ damage.text }}
+        <span :class="`${damage.healing ? damage.color : ''}`">
+          {{ damage.text }}
+        </span>
         <template #subtitle>
-          <span>
+          <span :class="`${damage.healing ? damage.color : ''}`">
             {{ damage.type }}
           </span>
         </template>
@@ -110,11 +112,12 @@
 <script>
 import { createNamespacedHelpers } from 'vuex'
 import { ScoreText } from '~/mixins/character/scoreText'
+import { CsColors } from '~/mixins/character/csColors'
 const { mapGetters } = createNamespacedHelpers('character')
 
 export default {
   name: 'MeCsActionCard',
-  mixins: [ScoreText],
+  mixins: [ScoreText, CsColors],
   props: {
     item: {
       type: Object,
@@ -227,7 +230,8 @@ export default {
         dieType: false,
         type: false,
         mod: false,
-        bonus: false
+        bonus: false,
+        healing: false
       }
       return this.item.damage.map((i) => {
         const damage = { ...damageDefault, ...i }
@@ -243,6 +247,12 @@ export default {
         }
         damage.bonus = bonus
         damage.text = text
+        const healingTypes = ['shields', 'hp', 'temp']
+        if (healingTypes.includes(damage.type)) {
+          damage.healing = true
+          damage.color = this.csTextColor(damage.type)
+          damage.type = damage.type === 'temp' ? 'temp hp' : damage.type === 'shields' ? 'shield points' : 'hit points'
+        }
         return damage
       })
     },
@@ -250,13 +260,20 @@ export default {
       return {
         dc: this.dc.target,
         range: this.range?.short ? `<me-distance length="${this.range.short}" />` : '',
-        profBonus: this.profBonus
+        profBonus: this.profBonus,
+        strMod: this.abilityBreakdown.str.mod,
+        dexMod: this.abilityBreakdown.dex.mod,
+        conMod: this.abilityBreakdown.con.mod,
+        wisMod: this.abilityBreakdown.wis.mod,
+        intMod: this.abilityBreakdown.int.mod,
+        chaMod: this.abilityBreakdown.cha.mod
       }
     }
   },
   methods: {
     interpolatedText (text) {
-      const interpolations = ['dc', 'range']
+      // might be better to do this with attrGetters
+      const interpolations = ['dc', 'range', 'profBonus', 'strMod', 'conMod', 'wisMod', 'intMod', 'chaMod']
       const test = new RegExp(`{{ ?(${interpolations.join('|')}) ?}}`)
       if (!test.test(text)) {
         return text

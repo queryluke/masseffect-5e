@@ -102,27 +102,32 @@ export const getters = {
 
     // AUGMENTS
     for (const augment of finalMechanics.filter(i => i.type === 'augment')) {
+      console.log(augment)
       if (!augment.merge) {
         continue
       }
       if (augment.value) {
         let localMatchingIndex = 0
         for (const [augmentIndex, augmentable] of finalMechanics.entries()) {
-          if (augmentable.source.endsWith(`${augment.value.model}/${augment.value.id}`)) {
+          if (!augmentable.source.endsWith(`${augment.value.model}/${augment.value.id}`)) {
             continue
           }
+          console.log('found via source')
+          console.log(augment.value.limit, augmentable.type)
           if (augment.value.limit && !augment.value.limit.includes(augmentable.type)) {
             continue
           }
+          console.log('found via limit')
           if (augment.value.instances && !augment.value.instances.includes(localMatchingIndex)) {
             localMatchingIndex += 1
             continue
           }
+          console.log('augmenting', augmentable, augment)
           finalMechanics.splice(augmentIndex, 1, merge(augmentable, augment.merge))
         }
       }
     }
-    // console.log(finalMechanics)
+    console.log(finalMechanics)
     return {
       mechanics: finalMechanics,
       unusedSelections: selected
