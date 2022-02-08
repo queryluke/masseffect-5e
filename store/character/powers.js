@@ -70,7 +70,8 @@ export const getters = {
         psP = klasses[0].data.progression.columns.find(i => i.label === 'power_slots_by_power_level')?.values || []
       }
       for (const slot of slots) {
-        base[slot].max = psP[slot - 1][level - 1]
+        const progression = psP[slot - 1] || [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        base[slot].max = progression[level - 1]
       }
     }
     const sentinel = klasses.find(i => i.id === 'sentinel')
