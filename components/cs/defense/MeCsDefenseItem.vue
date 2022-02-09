@@ -28,6 +28,9 @@
             {{ defenseTypeText(text) }}{{ item.text.length > index + 1 ? ',' : '' }}
           </span>
         </span>
+        <span v-if="item.special">
+          {{ item.text.length ? ', ' : '' }}{{ item.special.join(', ') }}
+        </span>
       </div>
     </div>
   </div>
