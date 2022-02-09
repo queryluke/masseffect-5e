@@ -4,8 +4,11 @@
       <v-row justify="center">
         <v-col class="text-center">
           <v-img src="/images/species/custom_species.png" max-width="300" class="mx-auto" />
-          <p>
+          <p v-if="isAuthenticated">
             Sorry, we couldn't find that character
+          </p>
+          <p v-else>
+            To view other players' characters, you must have an account and be logged in.
           </p>
           <v-btn to="/characters">
             Back to Character List
@@ -38,6 +41,9 @@ export default {
     }
   },
   computed: {
+    isAuthenticated () {
+      return this.$store.getters['auth/isAuthenticated']
+    },
     characterReady () {
       return this.$store.getters['character/characterReady']
     }
