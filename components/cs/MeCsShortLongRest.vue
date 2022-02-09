@@ -99,9 +99,7 @@
                   You will regain all your hit dice.
                 </div>
                 <div v-else>
-                  You can regain {{ Math.max(Math.floor(level / 2), 1) }} hit dice. Use the <v-icon size="18">
-                    mdi-minus
-                  </v-icon> button to regain them.
+                  You can regain {{ Math.max(Math.floor(level / 2), 1) }} hit dice.
                 </div>
               </div>
               <div v-if="type === 'short' || !regainAllHitDice">

@@ -3,11 +3,12 @@
     <div>
       {{ klass.data.name }} (d{{ klass.data.hitDie }})
     </div>
-    <me-character-sheet-use-tracker
-      :uses="klass.levels"
-      :used="hitDiceUsed"
-      @increment="hitDiceUsed++"
-      @decrement="hitDiceUsed--"
+    <me-cs-action-resource-display-checkbox
+      :max="klass.levels"
+      :current="hitDiceUsed"
+      @add="hitDiceUsed++"
+      @remove="hitDiceUsed--"
+      @set="hitDiceUsed = $event"
     />
   </div>
 </template>
