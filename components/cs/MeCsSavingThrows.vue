@@ -6,28 +6,26 @@
     <v-row no-gutters>
       <template v-for="(item, index) of items">
         <v-col :key="`st-${index}`" cols="6">
-          <v-list dense class="pa-0">
-            <v-list-item v-for="abilityItem in item" :key="abilityItem.ability" style="min-height: 28px">
-              <v-list-item-avatar :color="abilityItem.proficient ? `blue` : 'transparent'" size="12" class="my-1" />
-              <v-list-item-content class="ml-n2 py-1">
-                <v-list-item-title>
+          <v-list>
+            <div v-for="abilityItem in item" :key="abilityItem.ability" class="d-flex justify-space-between mx-3">
+              <div class="d-flex align-center">
+                <v-avatar :color="abilityItem.proficient ? 'primary' : 'transparent'" size="12" />
+                <div class="text-body-2 pl-2">
                   {{ $t(`abilities.${abilityItem.ability}.abbr`) }}
-                </v-list-item-title>
-              </v-list-item-content>
-              <v-list-item-action class="my-1">
-                <v-list-item-action-text class="d-flex align-center">
-                  <me-cs-ad-icons type="saving-throw" :value="abilityItem.ability" />
-                  <span class="pl-1">
-                    {{ abilityItem.score }}
-                  </span>
-                </v-list-item-action-text>
-              </v-list-item-action>
-            </v-list-item>
+                </div>
+              </div>
+              <div class="text-h6 d-flex align-center">
+                <me-cs-ad-icons type="saving-throw" :value="abilityItem.ability" />
+                <span class="pl-1">
+                  {{ abilityItem.score }}
+                </span>
+              </div>
+            </div>
           </v-list>
         </v-col>
       </template>
     </v-row>
-    <div v-if="hasAdditional" class="mr-4 ml-8 mb-2">
+    <div v-if="hasAdditional" class="mx-3 mb-2">
       <div v-for="aord of ['a','d']" :key="`stAd-${aord}`">
         <v-divider v-if="aord === 'd' && additionalBag.d" />
         <div v-for="(aordItem, index) of additionalBag[aord]" :key="`stAdItem-${index}`" class="d-flex align-center">
@@ -92,7 +90,7 @@ export default {
   },
   methods: {
     adsOrDisesAgainst (type) {
-      const bag = this.savingThrowMechanics.filter(i => i.effect === type && !i.ability && i.against?.length > 0)
+      const bag = this.savingThrowMechanics.filter(i => i.effect?.type === type && !i.ability && i.against?.length)
       const reducedBag = bag.reduce((acc, curr) => acc.concat(curr.against), [])
       return [...new Set(reducedBag)]
     },
