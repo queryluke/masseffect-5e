@@ -143,7 +143,8 @@ export default {
     ...mapGetters({
       abilityBreakdown: 'abilities/abilityBreakdown',
       profBonus: 'profBonus',
-      mcBonus: 'mechanics/mcBonus'
+      mcBonus: 'mechanics/mcBonus',
+      mechanics: 'mechanics/mechanics'
     }),
     layout () {
       return this.item.layout ||
@@ -261,14 +262,15 @@ export default {
         conMod: this.abilityBreakdown.con.mod,
         wisMod: this.abilityBreakdown.wis.mod,
         intMod: this.abilityBreakdown.int.mod,
-        chaMod: this.abilityBreakdown.cha.mod
+        chaMod: this.abilityBreakdown.cha.mod,
+        avatarsDie: this.mechanics.find(i => i.type === 'improved-avatars-inspiration') ? 'd8' : 'd4'
       }
     }
   },
   methods: {
     interpolatedText (text) {
       // might be better to do this with attrGetters
-      const interpolations = ['dc', 'range', 'profBonus', 'strMod', 'conMod', 'wisMod', 'intMod', 'chaMod']
+      const interpolations = ['dc', 'range', 'profBonus', 'strMod', 'conMod', 'wisMod', 'intMod', 'chaMod', 'avatarsDie']
       const test = new RegExp(`{{ ?(${interpolations.join('|')}) ?}}`)
       if (!test.test(text)) {
         return text
