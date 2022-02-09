@@ -6,7 +6,7 @@
     <me-hr size="2" />
     <v-list dense two-line>
       <template v-for="item in items">
-        <me-cs-equipment-list-item :key="`gear-${item.id}`" :item="item" :tabs="[{ title: 'Details', slot: 'infoTab' }]" no-equip>
+        <me-cs-equipment-list-item :key="item.uuid" :item="item" :tabs="[{ title: 'Details', slot: 'infoTab' }]" no-equip>
           <template #subtitle>
             Remaining Uses: {{ item.uses }}
           </template>

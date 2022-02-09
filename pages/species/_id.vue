@@ -82,6 +82,7 @@ export default {
   layout: 'tabbed',
   async asyncData ({ store }) {
     await store.dispatch('FETCH_LOTS', ['species', 'traits'])
+    store.commit('tabbedPage/SET_ACTIVE_TAB', 0)
   },
   data () {
     return {

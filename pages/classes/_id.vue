@@ -46,6 +46,7 @@ export default {
   layout: 'tabbed',
   async asyncData ({ store }) {
     await store.dispatch('FETCH_LOTS', ['classes', 'powers', 'class-features', 'character-progression', 'subclasses'])
+    store.commit('tabbedPage/SET_ACTIVE_TAB', 0)
   },
   data () {
     return {

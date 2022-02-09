@@ -19,7 +19,7 @@
         </v-list-item>
       </v-list>
     </v-menu>
-    <v-btn class="ml-2" @click="saveAllCharacters">
+    <v-btn v-if="$store.getters['characters/characters'].length" class="ml-2" @click="saveAllCharacters">
       Export All
     </v-btn>
   </div>

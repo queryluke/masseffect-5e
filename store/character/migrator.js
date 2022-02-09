@@ -261,16 +261,6 @@ export const actions = {
     }
     console.log('backgrounds complete')
 
-    // TODO: innate biotics
-    /*
-    source: "species-asari-innate-biotics-cantrip_1"
-    subType: "power"
-    type: "action"
-    value: "charge"
-     */
-
-    // TODO: migrate powers for class selection...unlinked?
-
     const newEquipment = []
     const now = new Date().toISOString()
     if (character.medigel && character.medigel > 0) {
@@ -303,8 +293,8 @@ export const actions = {
         newEquipment.push(replacedWeapon)
       } else if (eq.type === 'armor' && eq.custom) {
         const replacementCustomArmor = {
-          custom: { ...eq.custom, ...eq.stats },
-          ...eq
+          ...eq,
+          custom: { ...eq.custom, ...eq.stats }
         }
         delete replacementCustomArmor.stats
         newEquipment.push(replacementCustomArmor)
