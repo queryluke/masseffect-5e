@@ -102,7 +102,6 @@ export const getters = {
 
     // AUGMENTS
     for (const augment of finalMechanics.filter(i => i.type === 'augment')) {
-      console.log(augment)
       if (!augment.merge) {
         continue
       }
@@ -112,22 +111,18 @@ export const getters = {
           if (!augmentable.source.endsWith(`${augment.value.model}/${augment.value.id}`)) {
             continue
           }
-          console.log('found via source')
-          console.log(augment.value.limit, augmentable.type)
           if (augment.value.limit && !augment.value.limit.includes(augmentable.type)) {
             continue
           }
-          console.log('found via limit')
           if (augment.value.instances && !augment.value.instances.includes(localMatchingIndex)) {
             localMatchingIndex += 1
             continue
           }
-          console.log('augmenting', augmentable, augment)
           finalMechanics.splice(augmentIndex, 1, merge(augmentable, augment.merge))
         }
       }
     }
-    console.log(finalMechanics)
+    // console.log(finalMechanics)
     return {
       mechanics: finalMechanics,
       unusedSelections: selected
@@ -154,7 +149,26 @@ export const getters = {
         b = rootGetters['character/profBonus'] * multiplier
         break
       case 'level':
-        b = rootGetters['character/klasses/level'] * multiplier
+        if (bonus.value) {
+          const klassLevels = rootGetters['character/klasses/selectedKlasses'].find(i => i.id === bonus.value)
+          b = klassLevels?.levels || 0
+        } else {
+          b = rootGetters['character/klasses/level']
+        }
+        b = b * multiplier
+        break
+      case 'progressive':
+        if (!bonus.value) {
+          break
+        }
+        if (bonus.limit) {
+          const klassLevels = rootGetters['character/klasses/selectedKlasses'].find(i => i.id === bonus.limit)
+          b = klassLevels?.levels || 0
+        } else {
+          b = rootGetters['character/klasses/level']
+        }
+        b = Object.keys(bonus.value).sort((a, b) => b - a).find(i => i <= b)
+        b = (bonus.value[b] || 0) * multiplier
         break
       default:
         b = 0

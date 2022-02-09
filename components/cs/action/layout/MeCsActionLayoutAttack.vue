@@ -1,6 +1,5 @@
 <template>
-  <!-- TODO: add action type for spells, maybe show-action-type? -->
-  <v-card outlined class="pa-1 px-md-3" @click="moreInfoDialog = !moreInfoDialog">
+  <div>
     <v-row align="baseline" no-gutters>
       <v-col cols="5" md="3">
         <div class="d-flex align-center">
@@ -39,29 +38,16 @@
         <slot name="resource" />
       </v-col>
     </v-row>
-    <me-standard-dialog v-if="moreInfo" :shown="moreInfoDialog" :title="moreInfo.title" @close="moreInfoDialog = false">
-      <component :is="moreInfo.component" v-if="moreInfo.component" :item="moreInfo.bind" />
-      <me-html v-else :content="moreInfo.html" />
-    </me-standard-dialog>
-  </v-card>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'MeCsActionLayoutAttack',
   props: {
-    moreInfo: {
-      type: [Object, Boolean],
-      default: false
-    },
     showCastingTime: {
       type: Boolean,
       default: false
-    }
-  },
-  data () {
-    return {
-      moreInfoDialog: false
     }
   },
   computed: {

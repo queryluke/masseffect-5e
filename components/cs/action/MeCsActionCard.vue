@@ -1,112 +1,118 @@
 <template>
   <!-- TODO: add action type for spells, maybe show-action-type? -->
-  <component :is="layoutComponent" v-bind="{showCastingTime, moreInfo}">
-    <template #icon>
-      <v-avatar v-if="item.icon" size="16" class="mr-1">
-        <v-img :src="item.icon" />
-      </v-avatar>
-    </template>
+  <v-card outlined class="pa-1 px-md-3" @click="moreInfoDialog = !moreInfoDialog">
+    <component :is="layoutComponent" v-bind="{showCastingTime}">
+      <template #icon>
+        <v-avatar v-if="item.icon" size="16" class="mr-1">
+          <v-img :src="item.icon" />
+        </v-avatar>
+      </template>
 
-    <template #name>
-      {{ item.name }}
-    </template>
+      <template #name>
+        {{ item.name }}
+      </template>
 
-    <template #properties>
-      <me-cs-action-properties :properties="item.properties" />
-    </template>
+      <template #properties>
+        <me-cs-action-properties :properties="item.properties" />
+      </template>
 
-    <template #castingTime>
-      <me-cs-action-stat>
-        {{ item.castingTimes.join('|') }}
-      </me-cs-action-stat>
-    </template>
+      <template #castingTime>
+        <me-cs-action-stat>
+          {{ item.castingTimes.join('|') }}
+        </me-cs-action-stat>
+      </template>
 
-    <template v-if="range" #range>
-      <me-cs-action-stat>
-        <template v-if="layout !== 'attack'" #title>
-          Range
-        </template>
-        <span v-if="!range.long">
-          <span v-if="range.short === 0">
-            Self
+      <template v-if="range" #range>
+        <me-cs-action-stat>
+          <template v-if="layout !== 'attack'" #title>
+            Range
+          </template>
+          <span v-if="!range.long">
+            <span v-if="range.short === 0">
+              Self
+            </span>
+            <span v-else-if="range.short === 1">
+              Touch
+            </span>
+            <me-distance v-else :length="range.short" abbr />
           </span>
-          <span v-else-if="range.short === 1">
-            Touch
+          <span v-else>
+            <span>
+              <me-distance :length="range.short" num-only />
+            </span>
+            <span class="text-caption font-weight-light">
+              (<me-distance :length="range.long" num-only />)
+            </span>
           </span>
-          <me-distance v-else :length="range.short" abbr />
-        </span>
-        <span v-else>
-          <span>
-            <me-distance :length="range.short" num-only />
-          </span>
-          <span class="text-caption font-weight-light">
-            (<me-distance :length="range.long" num-only />)
-          </span>
-        </span>
-        <template v-if="range.aoe || range.note" #subtitle>
-          <div v-if="range.aoe">
-            (<span>
-              <me-distance :length="range.aoe.size" abbr />
-              <v-avatar :size="9" tile style="margin-left: 1px">
-                <v-img :src="require(`~/assets/images/aoe/${range.aoe.filename}.svg`)" :alt="$t(`aoe_types.${range.aoe.type}`)" />
-              </v-avatar>
-            </span>)
-          </div>
-          <div v-else>
-            {{ range.note }}
-          </div>
-        </template>
-      </me-cs-action-stat>
-    </template>
+          <template v-if="range.aoe || range.note" #subtitle>
+            <div v-if="range.aoe">
+              (<span>
+                <me-distance :length="range.aoe.size" abbr />
+                <v-avatar :size="9" tile style="margin-left: 1px">
+                  <v-img :src="require(`~/assets/images/aoe/${range.aoe.filename}.svg`)" :alt="$t(`aoe_types.${range.aoe.type}`)" />
+                </v-avatar>
+              </span>)
+            </div>
+            <div v-else>
+              {{ range.note }}
+            </div>
+          </template>
+        </me-cs-action-stat>
+      </template>
 
-    <template v-if="hit" #hit>
-      <me-cs-action-stat>
-        {{ modText(hit.bonus) }}
-      </me-cs-action-stat>
-    </template>
+      <template v-if="hit" #hit>
+        <me-cs-action-stat>
+          {{ modText(hit.bonus) }}
+        </me-cs-action-stat>
+      </template>
 
-    <template v-if="dc" #dc>
-      <me-cs-action-stat>
-        <template v-if="layout !== 'attack'" #title>
-          DC
-        </template>
-        {{ dc.target }}
-        <template #subtitle>
-          <span class="text-uppercase">
-            {{ dc.save || '' }}
-          </span>
-        </template>
-      </me-cs-action-stat>
-    </template>
+      <template v-if="dc" #dc>
+        <me-cs-action-stat>
+          <template v-if="layout !== 'attack'" #title>
+            DC
+          </template>
+          {{ dc.target }}
+          <template #subtitle>
+            <span class="text-uppercase">
+              {{ dc.save || '' }}
+            </span>
+          </template>
+        </me-cs-action-stat>
+      </template>
 
-    <template v-if="damages" #damage>
-      <me-cs-action-stat v-for="(damage, index) in damages" :key="`damage-${index}`">
-        <span :class="`${damage.healing ? damage.color : ''}`">
-          {{ damage.text }}
-        </span>
-        <template #subtitle>
+      <template v-if="damages" #damage>
+        <me-cs-action-stat v-for="(damage, index) in damages" :key="`damage-${index}`">
           <span :class="`${damage.healing ? damage.color : ''}`">
-            {{ damage.type }}
+            {{ damage.text }}
           </span>
-        </template>
-      </me-cs-action-stat>
-    </template>
+          <template #subtitle>
+            <span :class="`${damage.healing ? damage.color : ''}`">
+              {{ damage.type }}
+            </span>
+          </template>
+        </me-cs-action-stat>
+      </template>
 
-    <template #notes>
-      <me-cs-action-notes :notes="item.notes" />
-    </template>
+      <template #notes>
+        <me-cs-action-notes :notes="item.notes" />
+      </template>
 
-    <template #shortDesc>
-      <small>
-        <me-html :content="interpolatedShortDesc" classes="text-caption" />
-      </small>
-    </template>
+      <template v-if="item.shortDesc" #shortDesc>
+        <small>
+          <me-html :content="interpolatedShortDesc" classes="text-caption" />
+        </small>
+      </template>
 
-    <template #resource>
-      <me-cs-action-resource v-if="item.resource" :id="item.resource.id" :resource="item.resource" />
-      <me-cs-action-resource v-if="item.resource && item.resource.resource" :id="item.resource.resource.id" :resource="item.resource.resource" />
-    </template>
-  </component>
+      <template #resource>
+        <me-cs-action-resource v-if="item.resource" :id="item.resource.id" :resource="item.resource" />
+        <me-cs-action-resource v-if="item.resource && item.resource.resource" :id="item.resource.resource.id" :resource="item.resource.resource" />
+      </template>
+    </component>
+    <me-standard-dialog v-if="hasMoreInfoDialog" :shown="moreInfoDialog" :title="item.name" @close="moreInfoDialog = false">
+      <component :is="item.moreInfo.component" v-if="item.moreInfo.component" :item="item.moreInfo.bind" />
+      <me-html v-else :content="itemHtml" />
+    </me-standard-dialog>
+  </v-card>
 </template>
 
 <script>
@@ -128,6 +134,11 @@ export default {
       default: false
     }
   },
+  data () {
+    return {
+      moreInfoDialog: false
+    }
+  },
   computed: {
     ...mapGetters({
       abilityBreakdown: 'abilities/abilityBreakdown',
@@ -147,30 +158,14 @@ export default {
     layoutComponent () {
       return `me-cs-action-layout-${this.layout}`
     },
-    component () {
-      return this.item.moreInfo?.component
+    hasMoreInfoDialog () {
+      return (this.item.moreInfo?.component && this.item.moreInfo?.bind) || this.item.moreInfo?.model
     },
     itemHtml () {
       if (this.item.moreInfo?.model) {
         return this.$store.getters.getItem(this.item.moreInfo.model, this.item.moreInfo.id).html
       }
       return this.item.moreInfo?.bind || false
-    },
-    moreInfo () {
-      const title = this.item.name || ''
-      if (this.item.moreInfo?.component) {
-        return {
-          ...this.item.moreInfo,
-          title
-        }
-      }
-      if (this.itemHtml) {
-        return {
-          html: this.itemHtml,
-          title
-        }
-      }
-      return false
     },
     interpolatedShortDesc () {
       return this.item.shortDesc ? this.interpolatedText(this.item.shortDesc) : false
