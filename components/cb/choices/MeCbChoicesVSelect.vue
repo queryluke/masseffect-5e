@@ -4,7 +4,7 @@
     :items="items"
     :label="label"
     :counter="totalSelections"
-    :item-disabled="disabled"
+    :item-disabled="itemIsDisabled"
     :menu-props="{
       closeOnContentClick: disableItems
     }"
@@ -15,7 +15,7 @@
     :error="error"
     persistent-hint
     :hint="hint"
-    :disabled="viewOnly"
+    :disabled="viewOnly || disabled"
   >
     <template #selection="{ item, attrs, selected }">
       <v-chip
@@ -40,7 +40,7 @@
         </v-icon>
       </v-list-item-icon>
       <v-list-item-icon v-else>
-        <v-icon :color="disabled(item) ? 'grey darken-2' : undefined">
+        <v-icon :color="itemIsDisabled(item) ? 'grey darken-2' : undefined">
           mdi-checkbox-blank-outline
         </v-icon>
       </v-list-item-icon>
@@ -95,6 +95,10 @@ export default {
     hint: {
       type: String,
       default: undefined
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -117,7 +121,7 @@ export default {
     alreadyAcquired (item) {
       return this.acquired(item) && !this.isSelected(item.value)
     },
-    disabled (item) {
+    itemIsDisabled (item) {
       return this.alreadyAcquired(item) || (this.isSelected(item.value) ? false : this.disableItems)
     },
     isSelected (value) {

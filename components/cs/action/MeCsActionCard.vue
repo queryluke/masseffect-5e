@@ -68,12 +68,17 @@
 
       <template v-if="dc" #dc>
         <me-cs-action-stat>
-          <template v-if="layout !== 'attack'" #title>
-            DC
+          <template v-if="layout !== 'attack' && dc.save" #title>
+            <span class="text-uppercase">
+              {{ dc.save || '' }}
+            </span>
           </template>
           {{ dc.target }}
           <template #subtitle>
-            <span class="text-uppercase">
+            <div v-if="dc.note && layout !== 'attack'">
+              {{ dc.note }}
+            </div>
+            <span v-else class="text-uppercase">
               {{ dc.save || '' }}
             </span>
           </template>

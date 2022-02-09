@@ -122,6 +122,8 @@ export const getters = {
         }
       }
     }
+    // console.log('unused', selected)
+    // console.log('final', finalMechanics)
     return {
       mechanics: finalMechanics,
       unusedSelections: selected

@@ -6,6 +6,7 @@
       :total-selections="totalSelections"
       :value="selectedModelIds"
       :acquired="alreadyAcquired"
+      :disabled="!!mechanic.set"
       @change="upsert"
     />
     <div v-if="!hideSelectedModels">
@@ -14,16 +15,16 @@
           <div v-if="mechanic.totalSelections > 1" class="text-subtitle-1">
             {{ mod.name }}
           </div>
-          <me-html :content="mod.html" />
-          <v-card v-for="(mechanic, index) of additionalMechanics(mod)" :key="`subMechanic-${index}`" outlined class="mb-2">
+
+          <div v-for="(mechanic, index) of additionalMechanics(mod)" :key="`subMechanic-${index}`" outlined class="mb-2">
             <div class="pa-2">
               <me-cb-aspect-selectable
                 :mechanic="mechanic"
                 :path="`${id}/${mod.id}`"
               />
             </div>
-          </v-card>
-          <v-card v-for="(subM, index) of selectedModelsSubModels(mod)" :key="`subModel-${index}`" outlined class="mb-2">
+          </div>
+          <div v-for="(subM, index) of selectedModelsSubModels(mod)" :key="`subModel-${index}`" outlined class="mb-2">
             <div class="pa-2">
               <me-tpg s="title">
                 {{ subM.name }}
@@ -36,7 +37,8 @@
                 :path="`${id}/${mod.id}/${subM.id}`"
               />
             </div>
-          </v-card>
+          </div>
+          <me-html :content="mod.html" />
         </div>
       </template>
     </div>
@@ -79,7 +81,7 @@ export default {
       return this.$store.getters.getData(this.type)
     },
     totalSelections () {
-      return this.mechanic.selections || 1
+      return this.mechanic.set ? this.mechanic.set.length : (this.mechanic.selections || 1)
     },
     items () {
       let models = this.models
@@ -95,6 +97,10 @@ export default {
       })
     },
     selectedModelIds () {
+      if (this.mechanic.set) {
+        this.upsert(this.mechanic.set)
+        return this.mechanic.set
+      }
       return this.currentValue.map(i => i.value)
     },
     selectedModelsData () {
