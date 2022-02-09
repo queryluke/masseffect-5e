@@ -143,11 +143,19 @@ export const getters = {
         }
       }
       const castingTimes = power.castingTimes.map(i => state.castingTimeText[i])
+      const notes = []
+      if (p.advancement) {
+        const adv = power.advancements[p.advancement]
+        if (adv) {
+          notes.push(`Adv: ${adv.name}`)
+        }
+      }
 
       powers.push({
         id: power.id,
         name: power.name,
         level: power.level,
+        layout: 'attack',
         icon: `/images/powers/${power.type}.svg`,
         resource,
         range: {
@@ -155,7 +163,7 @@ export const getters = {
           aoe: power.aoe
         },
         attack: toHit,
-        notes: p.advancement ? [`Adv: ${p.advancement}`] : [],
+        notes,
         properties: [state.levelText[power.level]],
         dc,
         castingTimes,
@@ -168,9 +176,17 @@ export const getters = {
     return powers
   },
   selectedPowers: (state, getters, rootState, rootGetters) => {
+    const advancements = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'advancement')
+    const mechanicPowers = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'powers').map((power) => {
+      const advancement = advancements.find(adv => power.value === adv.id)
+      return {
+        ...power,
+        advancement: advancement?.value
+      }
+    })
     return [
       ...rootGetters['character/character'].powers,
-      ...rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'powers')
+      ...mechanicPowers
       // powers are unique, in that they can be selected, but will never have mechanics
       // ...selected
     ]
