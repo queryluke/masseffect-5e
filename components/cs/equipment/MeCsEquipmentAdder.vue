@@ -39,6 +39,12 @@
       </v-card>
     </v-tab-item>
     <v-tab-item>
+      <v-btn small outlined @click="tab = 0">
+        <v-icon left>
+          mdi-chevron-left
+        </v-icon>
+        Back to Equipment List
+      </v-btn>
       <v-form ref="customArmorForm" lazy-validation @submit="submitCustomArmor">
         <v-row>
           <v-col cols="12">
