@@ -97,7 +97,7 @@
             />
             <div v-if="selectedBackground">
               <me-cb-aspect-card v-if="background.mechanics.some(i => i.options)" root-path="background" :aspect="{ ...background, html: null }" />
-              <div class="mt-5">
+              <div v-if="!loading" class="mt-5">
                 <me-html :content="background.html" />
               </div>
             </div>
@@ -126,6 +126,7 @@ export default {
   name: 'MeCbDescription',
   data () {
     return {
+      loading: false,
       alignmentOptions: [
         'lg',
         'ln',
@@ -184,6 +185,14 @@ export default {
       array = array.concat(this.personalCharacteristics.map(i => this.$t(`character.${i}`)))
       array.push(this.$tc('background_title', 1))
       return this.$t(`lists.comma_list[${array.length}]`, array)
+    }
+  },
+  watch: {
+    selectedBackground () {
+      this.loading = true
+      setTimeout(() => {
+        this.loading = false
+      }, 100)
     }
   }
 }
