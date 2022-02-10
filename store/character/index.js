@@ -147,7 +147,7 @@ export const actions = {
     await dispatch('FETCH_LOTS', [
       'species', 'traits', 'weapons', 'armor', 'mods', 'powers', 'feats', 'backgrounds', 'classes', 'class-features',
       'subclasses', 'character-progression', 'skills', 'gear', 'tool-profs', 'weapon-properties', 'conditions',
-      'edges'
+      'edges', 'actions'
     ], { root: true })
   },
   async LOAD_CHARACTER ({ dispatch, commit, rootGetters, getters, rootState }, id) {

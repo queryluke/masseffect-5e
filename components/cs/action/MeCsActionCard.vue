@@ -114,7 +114,7 @@
       </template>
     </component>
     <me-standard-dialog v-if="hasMoreInfoDialog" :shown="moreInfoDialog" :title="item.name" @close="moreInfoDialog = false">
-      <component :is="item.moreInfo.component" v-if="item.moreInfo.component" :item="item.moreInfo.bind" />
+      <component :is="item.moreInfo.component" v-if="item.moreInfo && item.moreInfo.component" :item="item.moreInfo.bind" />
       <me-html v-else :content="itemHtml" />
     </me-standard-dialog>
   </v-card>
@@ -165,13 +165,13 @@ export default {
       return `me-cs-action-layout-${this.layout}`
     },
     hasMoreInfoDialog () {
-      return (this.item.moreInfo?.component && this.item.moreInfo?.bind) || this.item.moreInfo?.model
+      return (this.item.moreInfo?.component && this.item.moreInfo?.bind) || this.item.moreInfo?.model || this.item.html
     },
     itemHtml () {
       if (this.item.moreInfo?.model) {
         return this.$store.getters.getItem(this.item.moreInfo.model, this.item.moreInfo.id).html
       }
-      return this.item.moreInfo?.bind || false
+      return this.item.moreInfo?.bind || this.item.html || false
     },
     interpolatedShortDesc () {
       return this.item.shortDesc ? this.interpolatedText(this.item.shortDesc) : false

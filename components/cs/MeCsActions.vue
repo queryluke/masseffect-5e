@@ -58,10 +58,14 @@ export default {
       powers: 'powers/powers',
       equippedWeapons: 'equipment/equippedWeapons',
       profs: 'profs/profs',
-      abilityBreakdown: 'abilities/abilityBreakdown'
+      abilityBreakdown: 'abilities/abilityBreakdown',
+      weaponAttacks: 'equipment/weaponAttacks'
     }),
     weaponProperties () {
       return this.$store.getters.getData('weapon-properties')
+    },
+    actionsList () {
+      return this.$store.getters.getData('actions')
     },
     csAllActions () {
       return {
@@ -74,10 +78,15 @@ export default {
     },
     csActions () {
       return [
+        {
+          base: true,
+          title: 'Actions in Combat',
+          items: this.actionsList.filter(i => i.type === 'action')
+        },
         ...[{
           group: true,
           title: 'Burst Fire',
-          items: this.csWeaponsAsAttacks.bf
+          items: this.weaponAttacks.bf
         },
         {
           group: true,
@@ -90,10 +99,8 @@ export default {
     },
     csAttacks () {
       return [
-        ...this.csWeaponsAsAttacks.attacks,
-        ...this.csPowersAsActions.attacks,
-        ...this.mechanics.filter(i => i.type === 'attack'),
-        ...this.unarmedAndGunStrike
+        ...this.weaponAttacks.attacks,
+        ...this.csPowersAsActions.attacks
       ]
     },
     csBonusActions () {
@@ -101,12 +108,12 @@ export default {
         ...[{
           group: true,
           title: 'Two Weapon Fighting',
-          items: this.csWeaponsAsAttacks.twf
+          items: this.weaponAttacks.twf
         },
         {
           group: true,
           title: 'Double Tap',
-          items: this.csWeaponsAsAttacks.dt
+          items: this.weaponAttacks.dt
         },
         {
           group: true,
@@ -119,6 +126,11 @@ export default {
     },
     csReactions () {
       return [
+        {
+          base: true,
+          title: 'Actions in Combat',
+          items: this.actionsList.filter(i => i.type === 'reaction')
+        },
         ...[{
           group: true,
           title: 'Powers',
@@ -141,7 +153,12 @@ export default {
             name: i.name,
             type: i.type,
             resource: i.mechanics.uses
-              ? { displayType: 'checkbox', reset: i.mechanics.recharge, max: { type: 'flat', value: i.mechanics.uses }, id: i.id }
+              ? {
+                  displayType: 'checkbox',
+                  reset: i.mechanics.recharge,
+                  max: { type: 'flat', value: i.mechanics.uses },
+                  id: i.id
+                }
               : false,
             moreInfo: {
               bind: i.html
@@ -162,111 +179,6 @@ export default {
         bonus_actions: sortedPowers.filter(i => i.castingTimes.includes('1BA')),
         reactions: sortedPowers.filter(i => i.castingTimes.includes('1R*'))
       }
-    },
-    csWeaponsAsAttacks () {
-      const attacks = {
-        twf: [],
-        dt: [],
-        bf: [],
-        attacks: []
-      }
-      const weaponProps = {}
-      for (const prop of this.weaponProperties) {
-        weaponProps[prop.id] = prop.name
-      }
-      for (const weapon of this.equippedWeapons) {
-        const toHit = this.getWeaponAttack(weapon)
-        const light = weapon.data.properties.includes('light')
-        const dt = weapon.data.properties.includes('double-tap')
-        const bf = weapon.data.properties.includes('burst-fire')
-        // TODO: thrown
-        // const thrown = weapon.data.properties.includes('thrown')
-        // TODO: arc
-        // const ar = weapon.data.properties.includes('arc')
-        const type = weapon.data.type === 'melee' ? 'Melee' : 'Ranged'
-        let damage = this.getWeaponDamage(weapon)
-        const base = {
-          type: 'attack',
-          name: weapon.data.name,
-          resource: this.getWeaponResource(weapon),
-          range: this.getWeaponRange(weapon),
-          notes: [...(weapon.data.notes || []), ...weapon.data.properties.map(i => weaponProps[i])],
-          properties: [type],
-          moreInfo: {
-            component: 'me-weapon-info',
-            bind: weapon.data
-          }
-        }
-        attacks.attacks.push({ ...base, attack: toHit, damage })
-
-        if (bf) {
-          attacks.bf.push({
-            ...base,
-            range: this.getWeaponRange(weapon, true),
-            resource: { ...base.resource, increment: 3 },
-            dc: {
-              base: 15,
-              proficient: false,
-              mod: false,
-              save: 'dex'
-            },
-            damage,
-            properties: [...base.properties, 'Burst Fire']
-          })
-        }
-        damage = this.getWeaponDamage(weapon, true)
-        if (light) {
-          attacks.twf.push({ ...base, attack: toHit, properties: [...base.properties, '2W-Fight'], damage })
-        }
-        if (dt) {
-          attacks.dt.push({ ...base, attack: toHit, properties: [...base.properties, 'Double Tap'], damage })
-        }
-      }
-      return attacks
-    },
-    unarmedAndGunStrike () {
-      const atks = [
-        {
-          name: 'Unarmed Strike',
-          range: {
-            short: 5
-          },
-          attack: {
-            proficient: true,
-            mod: 'str'
-          },
-          damage: [
-            {
-              dieCount: 1,
-              type: 'bludgeoning',
-              mod: 'str'
-            }
-          ],
-          properties: ['Melee']
-        }
-      ]
-      if (this.equippedWeapons.filter(i => i.data.type === 'ranged')) {
-        atks.push({
-          name: 'Gun Strike',
-          range: {
-            short: 5
-          },
-          attack: {
-            proficient: true,
-            mod: 'str'
-          },
-          damage: [
-            {
-              dieCount: 1,
-              dieType: 4,
-              type: 'bludgeoning',
-              mod: 'str'
-            }
-          ],
-          properties: ['Melee']
-        })
-      }
-      return atks
     }
   },
   methods: {
