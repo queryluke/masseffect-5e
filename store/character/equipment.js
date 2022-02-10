@@ -181,8 +181,8 @@ export const getters = {
       if (newGunStrike.damage?.dieType) {
         baseGunStrike.damage.dieType = Math.max(baseGunStrike.damage.dieType, newGunStrike.damage?.dieType)
       }
-      if (baseGunStrike.notes) {
-        baseGunStrike.notes = baseGunStrike.notes.concat(baseGunStrike.notes)
+      if (newGunStrike.notes) {
+        baseGunStrike.notes = baseGunStrike.notes.concat(newGunStrike.notes)
       }
     }
     return baseGunStrike

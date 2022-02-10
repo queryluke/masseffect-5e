@@ -19,7 +19,7 @@
         </v-icon>
       </template>
     </v-expansion-panel-header>
-    <v-expansion-panel-content eager>
+    <v-expansion-panel-content>
       <div class="mt-3">
         <slot name="description">
           <me-html v-if="aspect.html" :content="aspect.html" />

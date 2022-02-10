@@ -42,7 +42,7 @@
             <me-cb-class-remove-btn :item="klass" />
           </v-col>
         </v-row>
-        <v-row>
+        <v-row v-if="!loading">
           <v-col>
             <v-expansion-panels>
               <!-- levels -->
@@ -157,6 +157,12 @@
         </v-row>
       </v-card-text>
     </v-expand-transition>
+    <v-overlay :value="loading">
+      <v-progress-circular
+        indeterminate
+        size="64"
+      />
+    </v-overlay>
   </v-card>
 </template>
 
@@ -175,7 +181,8 @@ export default {
   },
   data () {
     return {
-      show: false
+      show: false,
+      loading: false
     }
   },
   computed: {
@@ -302,6 +309,14 @@ export default {
       set (value) {
         return this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'settings.powercasting.sentinel', value })
       }
+    }
+  },
+  watch: {
+    subklass () {
+      this.loading = true
+      setTimeout(() => {
+        this.loading = false
+      }, 1000)
     }
   },
   methods: {
