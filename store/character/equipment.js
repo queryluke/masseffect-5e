@@ -167,7 +167,6 @@ export const getters = {
         baseUnarmed.damageModOverride = newUnarmed.damageModOverride
       }
     }
-    console.log(baseUnarmed)
     return [baseUnarmed, ...naturalWeapons.filter(i => !i.replacesUnarmedStrike).map(i => i.value)]
   },
   baseGunStrike: (state, getters, rootState, rootGetters) => {
@@ -211,7 +210,11 @@ export const getters = {
       }
     }
     const weaponProfs = rootGetters['character/profs/profs'].weapon
-    const twfEligible = getters.equippedWeapons.filter(i => i.data.properties.includes('light')).length > 1
+    const twfEligible = getters.equippedWeapons.filter(i => i.data.properties.includes('light') && !i.data.properties.includes('two-handed')).length > 1
+    const attackTypes = {
+      melee: 'Melee',
+      ranged: 'Ranged'
+    }
 
     const weaponsToProcess = [
       ...getters.equippedWeapons,
@@ -240,6 +243,7 @@ export const getters = {
       const finesse = weapon.data.properties.includes('finesse')
       const recoil = weapon.data.properties.includes('recoil')
       const reach = weapon.data.properties.includes('reach')
+      const twoHanded = weapon.data.properties.includes('two-handed')
       const dexOrStr = rootGetters['character/abilities/dexMod'] > rootGetters['character/abilities/strMod'] ? 'dex' : 'str'
       // TODO: when new melee weapons arrive, need to change this...note that natural weapons are natural-ranged and natural-melee
       const attackType = ['melee', 'gun-strike', 'natural-melee'].includes(weapon.data.type) ? 'melee' : 'ranged'
@@ -252,7 +256,9 @@ export const getters = {
           : 'dex'
 
       // Get Matching Augments
+      console.log(weapon.data.id)
       const augments = getters.hydratedAttackAugments('attack-augment', attackType, 'weapons', weaponType, abilityMod)
+      console.log(augments)
 
       // WEAPON ATTACK
       const weaponBonusHit = weapon.bonusHit || 0
@@ -335,8 +341,9 @@ export const getters = {
         resource,
         range,
         notes,
-        properties: [attackType],
-        moreInfo: weapon.data.moreInfo || { component: 'me-weapon-info', bind: weapon.data }
+        properties: [attackTypes[attackType]],
+        moreInfo: weapon.data.moreInfo || { component: 'me-weapon-info', bind: weapon.data },
+        bonus: { type: 'flat', value: 0 }
       }
       attacks.attacks.push(base)
 
@@ -360,20 +367,21 @@ export const getters = {
           properties: [...base.properties, 'Burst Fire']
         })
       }
-      if (light && twfEligible) {
+      if (light && twfEligible && !twoHanded) {
         const twfAugments = getters.hydratedAttackAugments('twf-augment', attackType, 'weapons', weaponType, abilityMod)
         // TODO: will we ever need other augments besides damage?
         const twfDamage = base.damage.map((i) => {
+          const modRemoved = { ...i, mod: false }
           if (twfAugments.damage > 0) {
             return {
-              ...i,
+              ...modRemoved,
               bonus: {
                 ...i.bonus,
-                value: i.bonus + twfAugments.damage
+                value: i.bonus.value + twfAugments.damage
               }
             }
           }
-          return i
+          return modRemoved
         })
         attacks.twf.push({
           ...base,
@@ -385,18 +393,19 @@ export const getters = {
         const dtAugments = getters.hydratedAttackAugments('dt-augment', attackType, 'weapons', weaponType, abilityMod)
         // TODO: will we ever need other augments besides damage?
         const dtDamage = base.damage.map((i) => {
+          const modRemoved = { ...i, mod: false }
           if (dtAugments.damage > 0) {
             return {
-              ...i,
+              ...modRemoved,
               bonus: {
                 ...i.bonus,
-                value: i.bonus + dtAugments.damage
+                value: i.bonus.value + dtAugments.damage
               }
             }
           }
-          return i
+          return modRemoved
         })
-        attacks.twf.push({
+        attacks.dt.push({
           ...base,
           damage: dtDamage,
           properties: [...base.properties, 'Double Tap']
@@ -422,13 +431,14 @@ export const getters = {
       notes: []
     }
     for (const at of Object.keys(augmentTypes)) {
+      console.log(augmentTypes[at])
       augmentTypes[at] = matchingAugments.filter(i => i.augment === at)
         .reduce((acc, curr) => {
-          if (augmentType === 'notes') {
+          if (at === 'notes') {
             return acc.concat(curr.value)
           } else if (curr.value === 'abilityMod') {
             // for abilityMod, need to use the best mod for the weapon
-            return acc + rootGetters['character/mechanics/mcBonus']({ type: 'mod', mod: abilityMod })
+            return acc + rootGetters['character/mechanics/mcBonus']({ type: 'mod', value: abilityMod })
           } else {
             return acc + rootGetters['character/mechanics/mcBonus'](curr.value)
           }

@@ -150,7 +150,7 @@
                 >
                   <v-select v-model="subklass" :items="availableSubclasses" dense item-text="name" item-value="id" />
                 </me-cb-aspect-card>
-                <me-cb-aspect-card v-else :key="`aspect-${index}`" :aspect="aspect" />
+                <me-cb-aspect-card v-else :key="`aspect-${index}`" :aspect="aspect" :root-path="`klass/${klass.id}`" />
               </template>
             </v-expansion-panels>
           </v-col>

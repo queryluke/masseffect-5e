@@ -16,6 +16,16 @@
     <div v-show="showTab(1)">
       <me-cs-action-list :items="csAllActions.attacks">
         Attacks
+        <template #notes>
+          <div v-if="globalAttackNotes.length" class="mt-1 mb-2">
+            <div v-for="(gNote, index) in globalAttackNotes" :key="`gNote-${index}`" class="d-flex text-caption">
+              <v-icon size="16" class="mr-1">
+                {{ gNote.attack === 'ranged' ? 'mdi-target' : gNote === 'melee' ? 'mdi-sword' : 'mdi-octagram' }}
+              </v-icon>
+              <me-html inline :content="gNote.value" />
+            </div>
+          </div>
+        </template>
       </me-cs-action-list>
     </div>
     <div v-show="showTab(2)">
@@ -102,6 +112,9 @@ export default {
         ...this.weaponAttacks.attacks,
         ...this.csPowersAsActions.attacks
       ]
+    },
+    globalAttackNotes () {
+      return this.mechanics.filter(i => i.type === 'global-attack-note').sort((a, b) => a.attack > b.attack ? 1 : -1)
     },
     csBonusActions () {
       return [

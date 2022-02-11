@@ -4,6 +4,9 @@
       <slot />
     </div>
     <me-hr size="1" />
+    <div>
+      <slot name="notes" />
+    </div>
     <div v-for="(item, index) in items" :key="`action-${index}`">
       <me-cs-action-list-base v-if="item.base" :items="item.items">
         {{ item.title }}

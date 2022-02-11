@@ -101,12 +101,18 @@ export const getters = {
     }
     return kpca
   },
-  powers: (state, getters) => {
+  powers: (state, getters, rootState, rootGetters) => {
     const powers = []
     const list = getters.powerList
     const baseMods = {
       tech: 'int',
       biotic: 'wis'
+    }
+    let fhEligible = false
+    const hasFreeHand = rootGetters['character/mechanics/mechanics'].find(i => i.type === 'free-hand-fs')
+    if (hasFreeHand) {
+      const eqWeapons = rootGetters['character/equipment/equippedWeapons']
+      fhEligible = eqWeapons.length < 2 && eqWeapons.filter(i => i.data.properties.includes('light') && !i.data.properties.includes('two-handed')).length < 2
     }
     for (const p of getters.selectedPowers) {
       // i.value needed for selections/mechanicbag
@@ -124,7 +130,10 @@ export const getters = {
       if (power.attack.melee || power.attack.ranged) {
         toHit = {
           proficient: true,
-          mod: power.id === 'hawk-missile-launcher' ? false : mod
+          mod: power.id === 'hawk-missile-launcher' ? false : mod,
+          bonus: fhEligible && power.attack.ranged && power.type !== 'combat'
+            ? { type: 'flat', value: 2 }
+            : false
         }
       }
       const resource = power.type === 'combat'
@@ -173,6 +182,7 @@ export const getters = {
         }
       })
     }
+    console.log(powers)
     return powers
   },
   selectedPowers: (state, getters, rootState, rootGetters) => {
