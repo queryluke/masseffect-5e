@@ -85,6 +85,9 @@ export default {
       return ['short', 'long'].includes(this.item.reset)
     },
     resetText () {
+      if (this.item.label === false) {
+        return ''
+      }
       return this.item.label || `/ ${this.item.reset} rest`
     }
   },

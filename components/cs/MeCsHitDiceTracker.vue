@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div>
+  <div :class="{'d-flex align-center': small}">
+    <div :class="{'text-caption': small}">
       {{ klass.data.name }} (d{{ klass.data.hitDie }})
     </div>
     <me-cs-action-resource-display-checkbox
@@ -21,6 +21,10 @@ export default {
     classIndex: {
       type: Number,
       required: true
+    },
+    small: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
