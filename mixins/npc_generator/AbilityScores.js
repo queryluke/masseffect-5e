@@ -17,19 +17,6 @@ export const AbilityScores = {
         soldier: ['dex', 'str', 'con'],
         vanguard: ['str', 'wis', 'con']
       }
-      if (this.options.species.id === 'asari') {
-        classStats.adept = ['cha', 'dex', 'wis']
-        classStats.sentinel = ['cha', 'dex', 'int']
-        classStats.vanguard = ['str', 'cha', 'con']
-      }
-      if (this.options.species.id === 'elcor') {
-        classStats.adept = ['cha', 'int', 'wis']
-        classStats.sentinel = ['cha', 'int', 'str']
-        classStats.vanguard = ['int', 'cha', 'con']
-        classStats.engineer = ['int', 'con', 'str']
-        classStats.infiltrator = ['int', 'str', 'con']
-        classStats.soldier = ['int', 'str', 'con']
-      }
       const standardArray = this.options.cr.normalized <= 5
         ? [12, 11, 10, 10, 9, 8]
         : [15, 14, 13, 12, 10, 8]
@@ -46,19 +33,24 @@ export const AbilityScores = {
       }
 
       // add species attributes
-      switch (this.options.species.id) {
-        case 'human': {
-          for (const w in this.npc.abilityScores) {
-            this.npc.abilityScores[w]++
+      const species = this.$store.getters.getData('species')
+      const speciesData = species.find(i => i.id === this.options.species.id)
+      const increases = speciesData.mechanics.filter(i => i.type.startsWith('asi'))
+      if (speciesData.subspecies) {
+        const subspecies = species.filter(i => i.type === 'subspecies' && i.species === this.options.species.id)
+        const randomSubspecies = this.randomValue(subspecies)
+        increases.push(...randomSubspecies.mechanics.filter(i => i.type.startsWith('asi')))
+      }
+      for (const inc of increases) {
+        if (inc.type === 'asi-choice') {
+          if (inc.limit) {
+            this.npc.abilityScores[this.randomValue(inc.limit)] += 1
+          } else {
+            this.npc.abilityScores[this.randomValue(['str', 'dex', 'con', 'wis', 'int', 'cha'])] += 1
           }
-          break
-        }
-        default: {
-          const increases = this.options.species.abilityScoreIncrease
-          for (const inc of increases) {
-            const increase = parseInt(inc.amount, 10)
-            this.npc.abilityScores[inc.ability] += increase
-          }
+        } else {
+          const increase = parseInt(inc.amount, 10)
+          this.npc.abilityScores[inc.ability] += increase
         }
       }
 
