@@ -99,7 +99,7 @@
       </template>
 
       <template #notes>
-        <me-cs-action-notes :notes="item.notes" />
+        <me-cs-action-notes :notes="notes" />
       </template>
 
       <template v-if="item.shortDesc" #shortDesc>
@@ -257,6 +257,12 @@ export default {
         return damage
       })
     },
+    notes () {
+      if (Array.isArray(this.item.notes) && this.item.notes.length) {
+        return this.item.notes.map(i => this.interpolatedText(i))
+      }
+      return []
+    },
     interpolations () {
       return {
         dc: this.dc.target,
@@ -274,17 +280,28 @@ export default {
   },
   methods: {
     interpolatedText (text) {
-      // might be better to do this with attrGetters
+      // might be better to do this with attrGetters or put it in the HTML?
       const interpolations = ['dc', 'range', 'profBonus', 'strMod', 'conMod', 'wisMod', 'intMod', 'chaMod', 'avatarsDie']
-      const test = new RegExp(`{{ ?(${interpolations.join('|')}) ?}}`)
-      if (!test.test(text)) {
+      const regex = new RegExp(`{{ ?([0-9]{1,3}|[+ ]|${interpolations.join('|')})+ ?}}`, 'g')
+      if (!regex.test(text)) {
         return text
       }
-      let interpolated = text
-      for (const itp of interpolations) {
-        const regex = new RegExp(`{{ ?${itp} ?}}`, 'ig')
-        interpolated = interpolated.replace(regex, `<strong>${this.interpolations[itp]}</strong>`)
-      }
+      const interpolated = text.replace(regex, (match) => {
+        let replacement = match.replaceAll(/[{{}}]/g, '')
+        replacement = replacement.trim()
+        if (replacement.includes('+')) {
+          replacement = replacement.split('+').map(i => i.trim())
+          return replacement.reduce((acc, curr) => {
+            const int = parseInt(curr, 10)
+            if (isNaN(int)) {
+              return acc + parseInt(this.interpolations[curr], 10) || 0
+            } else {
+              return acc + int
+            }
+          }, 0)
+        }
+        return this.interpolations[replacement]
+      })
       return interpolated
     }
   }
