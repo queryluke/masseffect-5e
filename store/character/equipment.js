@@ -256,9 +256,7 @@ export const getters = {
           : 'dex'
 
       // Get Matching Augments
-      console.log(weapon.data.id)
       const augments = getters.hydratedAttackAugments('attack-augment', attackType, 'weapons', weaponType, abilityMod)
-      console.log(augments)
 
       // WEAPON ATTACK
       const weaponBonusHit = weapon.bonusHit || 0
@@ -431,7 +429,6 @@ export const getters = {
       notes: []
     }
     for (const at of Object.keys(augmentTypes)) {
-      console.log(augmentTypes[at])
       augmentTypes[at] = matchingAugments.filter(i => i.augment === at)
         .reduce((acc, curr) => {
           if (at === 'notes') {

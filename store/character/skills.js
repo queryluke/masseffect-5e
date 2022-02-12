@@ -13,6 +13,8 @@ export const getters = {
     const profs = rootGetters['character/profs/profs'].skill
     const allMechanics = rootGetters['character/mechanics/mechanics']
     const expertises = getters.expertises
+    const skillOrExpertises = allMechanics.filter(i => i.type === 'skill-or-expertise')
+    console.log(skillOrExpertises)
     const scMechanics = allMechanics.filter(i => i.type === 'skill-check').map((i) => {
       if (i.valueLookup) {
         return {
@@ -23,8 +25,8 @@ export const getters = {
       return i
     })
     for (const skill of getters.skillList) {
-      const proficient = profs.includes(skill.id)
-      const expertise = expertises.includes(skill.id)
+      const proficient = profs.includes(skill.id) || (skillOrExpertises.some(i => i.value.includes(skill.id)))
+      const expertise = expertises.includes(skill.id) || (skillOrExpertises.some(i => i.value.includes(skill.id)) && profs.includes(skill.id))
       const profBonus = rootGetters['character/profBonus']
       const profBonusBonus = expertise
         ? profBonus * 2

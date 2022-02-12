@@ -182,7 +182,6 @@ export const getters = {
         }
       })
     }
-    console.log(powers)
     return powers
   },
   selectedPowers: (state, getters, rootState, rootGetters) => {
