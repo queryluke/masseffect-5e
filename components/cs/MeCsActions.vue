@@ -87,11 +87,13 @@ export default {
       }
     },
     csActions () {
+      const baseActions = this.actionsList.filter(i => i.type === 'action')
+      baseActions.push(...this.mechanics.filter(i => i.type === 'action' && i.baseGroup === 'action'))
       return [
         {
           base: true,
           title: 'Actions in Combat',
-          items: this.actionsList.filter(i => i.type === 'action')
+          items: baseActions
         },
         ...[{
           group: true,
@@ -103,7 +105,7 @@ export default {
           title: 'Powers',
           items: this.csPowersAsActions.actions
         }].filter(i => i.items.length),
-        ...this.mechanics.filter(i => i.type === 'action'),
+        ...this.mechanics.filter(i => i.type === 'action' && !i.baseGroup),
         ...this.csCustomAsActions.actions
       ]
     },

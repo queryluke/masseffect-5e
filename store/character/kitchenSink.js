@@ -23,7 +23,8 @@ export const getters = {
         subclass: null,
         data: {
           name: 'C4Ks',
-          profs: {}
+          profs: {},
+          hitDie: 4
         }
       }
     ]

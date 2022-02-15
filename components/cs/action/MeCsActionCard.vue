@@ -78,7 +78,7 @@
             <div v-if="dc.note && layout !== 'attack'">
               {{ dc.note }}
             </div>
-            <span v-else class="text-uppercase">
+            <span v-else-if="layout === 'attack'" class="text-uppercase">
               {{ dc.save || '' }}
             </span>
           </template>
@@ -239,12 +239,17 @@ export default {
         let bonus = damage.bonus ? this.mcBonus(damage.bonus) : 0
         const mod = damage.mod ? this.abilityBreakdown[damage.mod].mod : 0
         bonus += mod
-        let text = `${damage.dieCount}`
-        if (damage.dieType) {
-          text += `d${damage.dieType}`
-        }
-        if (bonus !== 0) {
-          text += `${bonus > 0 ? ' +' : ' -'} ${bonus}`
+        let text = ''
+        if (damage.dieCount) {
+          text = `${damage.dieCount}`
+          if (damage.dieType) {
+            text += `d${damage.dieType}`
+          }
+          if (bonus !== 0) {
+            text += `${bonus > 0 ? ' +' : ' -'} ${bonus}`
+          }
+        } else {
+          text = bonus
         }
         damage.bonus = bonus
         damage.text = text

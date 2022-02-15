@@ -16,7 +16,7 @@
       </span>
     </v-card>
     <me-standard-dialog v-if="moreInfoDialog" :shown="moreInfoDialog" :title="item.name" @close="moreInfoDialog = false">
-      <me-html :content="item.html" />
+      <me-html :content="item.html || item.shortDesc" />
     </me-standard-dialog>
   </div>
 </template>
