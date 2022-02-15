@@ -66,6 +66,11 @@
                     <me-cs-notes />
                   </v-card-text>
                 </v-tab-item>
+                <v-tab-item>
+                  <v-card-text>
+                    <me-cs-logs />
+                  </v-card-text>
+                </v-tab-item>
               </v-tabs-items>
             </div>
           </div>
@@ -121,7 +126,7 @@ export default {
   data () {
     return {
       tab: null,
-      tabs: ['Actions', 'Powers', 'Gear', 'Features', 'Details', 'Notes'],
+      tabs: ['Actions', 'Powers', 'Gear', 'Features', 'Details', 'Notes', 'Logs'],
       showSettings: false
     }
   }
