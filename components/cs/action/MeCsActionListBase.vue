@@ -15,8 +15,8 @@
         </span>
       </span>
     </v-card>
-    <me-standard-dialog v-if="moreInfoDialog" :shown="moreInfoDialog" :title="item.name" @close="moreInfoDialog = false">
-      <me-html :content="item.html || item.shortDesc" />
+    <me-standard-dialog v-if="moreInfoDialog" :shown="moreInfoDialog" :title="shownItem.name" @close="moreInfoDialog = false">
+      <me-html :content="shownItem.html || shownItem.shortDesc" />
     </me-standard-dialog>
   </div>
 </template>
@@ -34,14 +34,14 @@ export default {
   data () {
     return {
       moreInfoDialog: false,
-      item: {}
+      shownItem: {}
     }
   },
   methods: {
     showItem (item) {
-      this.item = {}
+      this.shownItem = {}
       this.moreInfoDialog = true
-      this.item = item
+      this.shownItem = item
     }
   }
 }
