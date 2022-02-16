@@ -28,9 +28,6 @@
             {{ defenseTypeText(text) }}{{ item.text.length > index + 1 ? ',' : '' }}
           </span>
         </span>
-        <span v-if="item.special">
-          {{ item.text.length ? ', ' : '' }}{{ item.special.join(', ') }}
-        </span>
       </div>
     </div>
   </div>
@@ -49,7 +46,7 @@ export default {
   computed: {
     ...mapGetters(['conditionsTextMap']),
     hasValues () {
-      return this.item.text.length > 0 || this.item.special.length > 0
+      return this.item.text.length > 0
     }
   },
   methods: {

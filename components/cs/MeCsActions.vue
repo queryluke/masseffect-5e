@@ -87,13 +87,11 @@ export default {
       }
     },
     csActions () {
-      const baseActions = this.actionsList.filter(i => i.type === 'action')
-      baseActions.push(...this.mechanics.filter(i => i.type === 'action' && i.baseGroup === 'action'))
       return [
         {
           base: true,
           title: 'Actions in Combat',
-          items: baseActions
+          items: this.baseActions.action
         },
         ...[{
           group: true,
@@ -118,8 +116,33 @@ export default {
     globalAttackNotes () {
       return this.mechanics.filter(i => i.type === 'global-attack-note').sort((a, b) => a.attack > b.attack ? 1 : -1)
     },
+    baseActions () {
+      const baseActions = {}
+      for (const type of ['action', 'bonus-action', 'reaction']) {
+        const defaults = this.actionsList.filter(i => i.type === type)
+        const extras = this.mechanics.filter(i => i.type === type && i.baseGroup).map((i) => {
+          const isDefault = this.actionsList.find(j => j.name === i.name)
+          if (isDefault) {
+            return isDefault
+          }
+          return i
+        })
+        baseActions[type] = [...defaults, ...extras]
+      }
+      return baseActions
+    },
     csBonusActions () {
+      const baseActions = []
+      const baseBA = this.baseActions['bonus-action']
+      if (baseBA.length) {
+        baseActions.push({
+          base: true,
+          title: 'Bonus Actions in Combat',
+          items: baseBA
+        })
+      }
       return [
+        ...baseActions,
         ...[{
           group: true,
           title: 'Two Weapon Fighting',
@@ -135,7 +158,7 @@ export default {
           title: 'Powers',
           items: this.csPowersAsActions.bonus_actions
         }].filter(i => i.items.length),
-        ...this.mechanics.filter(i => i.type === 'bonus-action'),
+        ...this.mechanics.filter(i => i.type === 'bonus-action' && !i.baseGroup),
         ...this.csCustomAsActions.bonus
       ]
     },
@@ -144,7 +167,7 @@ export default {
         {
           base: true,
           title: 'Actions in Combat',
-          items: this.actionsList.filter(i => i.type === 'reaction')
+          items: this.baseActions.reaction
         },
         ...[{
           group: true,

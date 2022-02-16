@@ -75,13 +75,21 @@ export const getters = {
           type: 'speed',
           speed,
           distance: getters.character.settings.speeds[speed],
-          note: 'overridden'
+          note: 'overridden',
+          bonus: 0
         }
         continue
       }
       const mSpeeds = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'speed' && i.speed === speed)
       if (mSpeeds.length) {
-        speeds[speed] = mSpeeds.sort((a, b) => b.distance - a.distance)[0]
+        const highestSpeed = mSpeeds.sort((a, b) => b.distance - a.distance)[0]
+        const bonusSpeed = rootGetters['character/mechanics/mechanics']
+          .filter(i => i.type === 'speed-bonus' && i.value.includes(speed))
+          .reduce((acc, curr) => acc + rootGetters['character/mechanics/mcBonus'](curr.bonus), 0)
+        speeds[speed] = {
+          ...highestSpeed,
+          distance: highestSpeed.distance + bonusSpeed
+        }
       }
     }
     return speeds

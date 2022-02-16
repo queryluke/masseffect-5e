@@ -304,11 +304,12 @@ export const getters = {
         : null
 
       // RANGE
-      const shortRange = attackType === 'melee'
+      let shortRange = attackType === 'melee'
         ? reach
           ? 10
           : 5
         : weapon.data.range
+      shortRange += augments.range
       const longRange = attackType === 'ranged' && weapon.data.type !== 'natural-ranged'
         ? weaponType === 'shotgun'
           ? (weapon.data.range * 2)
@@ -426,6 +427,7 @@ export const getters = {
       attack: 0,
       damage: 0,
       dc: 0,
+      range: 0,
       notes: []
     }
     for (const at of Object.keys(augmentTypes)) {

@@ -103,9 +103,7 @@
       </template>
 
       <template v-if="item.shortDesc" #shortDesc>
-        <small>
-          <me-html :content="interpolatedShortDesc" classes="text-caption" />
-        </small>
+        <me-cs-action-short-desc :short-desc="interpolatedShortDesc" />
       </template>
 
       <template #resource>
