@@ -14,7 +14,6 @@ export const getters = {
     const allMechanics = rootGetters['character/mechanics/mechanics']
     const expertises = getters.expertises
     const skillOrExpertises = allMechanics.filter(i => i.type === 'skill-or-expertise')
-    console.log(skillOrExpertises)
     const scMechanics = allMechanics.filter(i => i.type === 'skill-check').map((i) => {
       if (i.valueLookup) {
         return {
@@ -37,13 +36,14 @@ export const getters = {
       const mechanics = scMechanics.filter(i => i.value?.includes(skill.id))
       const bonuses = mechanics.filter(i => i.effect?.type === 'bonus').reduce((acc, curr) => acc + rootGetters['character/mechanics/mcBonus'](curr.effect.bonus), 0)
       const mod = baseMod + bonuses
+      const passiveBonus = allMechanics.filter(i => i.type === 'passive' && i.value.includes(skill.id)).reduce((acc, curr) => acc + rootGetters['character/mechanics/mcBonus'](curr.bonus), 0)
       const returnObj = {
         id: skill.id,
         name: skill.name,
         proficient,
         expertise,
         mod,
-        passive: 10 + mod,
+        passive: 10 + mod + passiveBonus,
         otherBonuses: mechanics.filter(i => i.effect?.type !== 'bonus')
       }
       skills[skill.id] = returnObj

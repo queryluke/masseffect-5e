@@ -47,9 +47,17 @@ export default {
   mixins: [ScoreText],
   computed: {
     // TODO: this may be better off in the store
-    ...mapGetters({ mechanics: 'mechanics/mechanics', abilityBreakdown: 'abilities/abilityBreakdown', profBonus: 'profBonus' }),
+    ...mapGetters({ mechanics: 'mechanics/mechanics', abilityBreakdown: 'abilities/abilityBreakdown', profBonus: 'profBonus', valueLookup: 'selections/valueLookup' }),
     savingThrowMechanics () {
-      return this.mechanics.filter(i => i.type === 'saving-throw')
+      return this.mechanics.filter(i => i.type === 'saving-throw').map((i) => {
+        if (i.valueLookup) {
+          return {
+            ...i,
+            value: this.valueLookup(i.valueLookup)
+          }
+        }
+        return i
+      })
     },
     items () {
       const items = []
