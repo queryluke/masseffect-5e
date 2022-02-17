@@ -34,7 +34,7 @@ export const actions = {
     commit('characters/SET_LOCAL_LOGS', logs, { root: true })
   },
   LOCAL_LOG_DESTROY ({ rootGetters, commit }) {
-    const logs = []
+    const logs = cloneDeep(rootGetters['characters/localLogs'])
     const activeCharacterId = rootGetters['character/id']
     if (logs[activeCharacterId]) {
       logs[activeCharacterId] = []
