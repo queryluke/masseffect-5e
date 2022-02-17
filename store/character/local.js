@@ -1,3 +1,5 @@
+import cloneDeep from 'lodash/cloneDeep'
+
 export const state = () => ({
   localCharacterIndex: null
 })
@@ -20,5 +22,23 @@ export const actions = {
       commit('character/SET_CHARACTER', rootGetters['characters/characters'][index], { root: true })
       commit('character/SET_CHARACTER_ID', id, { root: true })
     }
+  },
+  LOCAL_LOG_WRITE ({ rootGetters, commit }, payload) {
+    const logs = cloneDeep(rootGetters['characters/localLogs'])
+    const activeCharacterId = rootGetters['character/id']
+    if (logs[activeCharacterId]) {
+      logs[activeCharacterId].push(payload)
+    } else {
+      logs[activeCharacterId] = [payload]
+    }
+    commit('characters/SET_LOCAL_LOGS', logs, { root: true })
+  },
+  LOCAL_LOG_DESTROY ({ rootGetters, commit }) {
+    const logs = []
+    const activeCharacterId = rootGetters['character/id']
+    if (logs[activeCharacterId]) {
+      logs[activeCharacterId] = []
+    }
+    commit('characters/SET_LOCAL_LOGS', logs, { root: true })
   }
 }

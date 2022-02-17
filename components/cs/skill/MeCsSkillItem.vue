@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex justify-space-between mx-3">
+  <div class="d-flex justify-space-between mx-3" v-on:click="rollSkill()" >
     <div class="d-flex align-center">
       <v-avatar :color="item.proficient && !item.expertise ? 'primary' : 'transparent'" size="12">
         <v-icon v-if="item.expertise" size="16" color="orange">
@@ -35,6 +35,20 @@ export default {
   computed: {
     dieBonus () {
       return this.item.otherBonuses.filter(i => i.effect?.type === 'die-bonus')
+    }
+  },
+  methods: {
+    rollSkill () {
+      console.log('rolling skill')
+      const roll = '1d20+' + this.item.mod + ''
+      console.log(roll)
+      this.$store.dispatch('character/ROLL',
+        {
+          title: 'Skill Check',
+          subtitle: this.item.name,
+          type: 'dice-roll',
+          roll
+        })
     }
   }
 }

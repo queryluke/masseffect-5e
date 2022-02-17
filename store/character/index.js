@@ -1,6 +1,7 @@
 import cloneDeep from 'lodash/cloneDeep'
 import debounce from 'lodash/debounce'
 import jsonpack from 'jsonpack/main'
+import { DiceRoll } from '@dice-roller/rpg-dice-roller'
 import identString from '~/mixins/indentString'
 
 function updateCharacter ({ oldValue, attr, value }) {
@@ -57,6 +58,13 @@ export const getters = {
       const ordinals = [null, '1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th', '12th', '13th', '14th', '15th', '16th', '17th', '18th', '19th', '20th']
       return ordinals[level]
     })
+  },
+  logs: (state, getters, rootState, rootGetters) => {
+    if (rootGetters['auth/isAuthenticated']) {
+      // some call to get logs from API
+    } else {
+      return rootState.characters.localLogs[getters.id]
+    }
   },
   profBonus: (state, getters, rootState, rootGetters) => {
     return [0, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6][rootGetters['character/klasses/level']]
@@ -217,6 +225,31 @@ export const actions = {
     } catch (e) {
       commit('user/SET_SYNC_STATUS', 'error', { root: true })
       console.log(e)
+    }
+  },
+  async ROLL ({ dispatch }, payload) {
+    // ...stuff that rolls the dice
+    const output = {
+      type: 'dice-roll',
+      title: payload.title,
+      subtitle: payload.subtitle,
+      data: new DiceRoll(payload.roll),
+      timestamp: new Date()
+    }
+    await dispatch('LOG_WRITE', output)
+  },
+  async LOG_WRITE ({ rootGetters, dispatch }, payload) {
+    if (rootGetters['auth/isAuthenticated']) {
+      // call API to write to DB
+    } else {
+      await dispatch('local/LOCAL_LOG_WRITE', payload) // note calling this from a separate vuex module
+    }
+  },
+  async LOG_DESTROY ({ rootGetters, dispatch }) {
+    if (rootGetters['auth/isAuthenticated']) {
+      // call API to write to DB
+    } else {
+      await dispatch('local/LOCAL_LOG_DESTROY') // note calling this from a separate vuex module
     }
   }
 }

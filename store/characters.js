@@ -4,13 +4,15 @@ import { characterTemplate } from '~/mixins/character/template'
 
 export const state = () => ({
   localCharacters: [],
-  remoteCharacters: []
+  remoteCharacters: [],
+  localLogs: {}
 })
 
 export const getters = {
   characters: state => [...state.remoteCharacters, ...state.localCharacters],
   remoteCharacters: state => state.remoteCharacters,
-  localCharacters: state => state.localCharacters
+  localCharacters: state => state.localCharacters,
+  localLogs: state => state.localLogs
 }
 
 export const mutations = {
@@ -19,6 +21,9 @@ export const mutations = {
   },
   SET_REMOTE_CHARACTERS (state, characters) {
     state.remoteCharacters = characters
+  },
+  SET_LOCAL_LOGS (state, logs) {
+    state.localLogs = logs
   }
 }
 

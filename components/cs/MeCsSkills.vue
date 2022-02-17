@@ -16,15 +16,8 @@
     <v-row no-gutters>
       <v-col v-for="(split, index) of splits" :key="`skill-split-${index}`" cols="12" md="4">
         <v-list dense>
-          <template v-for="(skill, skillIndex) in skillArray.slice(...split)">
-            <v-menu :key="skillIndex" v-model="skill.rollModel" absolute offset-y>
-              <template v-slot:activator="{ on, attrs }">
-                <me-cs-skill-item :key="skill[0]" :item="skill[1]" v-bind="attrs" v-on="on"/>
-              </template>
-              <v-alert type="success">
-                {{skill.roll}}
-              </v-alert>
-            </v-menu>
+          <template v-for="(skill) in skillArray.slice(...split)">
+            <me-cs-skill-item :key="skill[0]" :item="skill[1]" />
           </template>
         </v-list>
       </v-col>
@@ -34,6 +27,7 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
+// import * as RpgDiceRoller from '@dice-roller/rpg-dice-roller'
 const { mapGetters } = createNamespacedHelpers('character/skills')
 
 export default {
@@ -58,12 +52,6 @@ export default {
       min = Math.ceil(min)
       max = Math.floor(max)
       return Math.floor(Math.random() * (max - min + 1)) + min
-    },
-    rollSkill (skill) {
-      console.log(skill)
-      skill.showRoll = true
-      skill.roll = 0
-      alert((this.getRandomInt(1, 20) + skill[1].mod) + ', ' + (this.getRandomInt(1, 20) + skill[1].mod))
     }
   }
 }
