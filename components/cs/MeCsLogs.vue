@@ -7,26 +7,32 @@
       <template v-if="logs.length">
         <!--pre>{{JSON.stringify(logs, undefined, 4)}}</pre-->
         <v-list>
-          <v-list-item v-for="(entry, index) in logs" :key="index" class="pb-2">
-            <v-card v-if="entry.type == 'dice-roll' ">
-              <v-card-title class="pb-2">{{entry.title || 'Title Here'}}</v-card-title>
-              <v-card-subtitle >{{entry.subtitle}}</v-card-subtitle>
-              <v-card-text>
-                {{entry.data}}
-                  <!-- TODO: would be nice to have a fun UI... -->
-                  <!--template v-for="(roll, rollIndex) in entry.rolls">
-                    <v-col :key="index + ':' + rollIndex" class="text-center">
-                      <v-img
-                      :src="require('~/assets/images/misc/d20blank.png')"
-                      max-width="60"/>
-                      <div class="">
-                        <span>{{roll.value}}</span>
-                      </div>
-                    </v-col>
-                  </template-->
-              </v-card-text>
-            </v-card>
-          </v-list-item>
+            <v-list-item v-for="(entry, index) in logs.slice().reverse()" :key="index" class="pb-2" >
+              <me-cs-log-entry :data="entry.data" />
+              <!--component  v-if="entry.component" :is="entry.component" :v-bind="entry.attrs">
+                <template v-if="entry.component.subcomponents">
+                  <component
+                    v-for="(sc, subIndex) in entry.subcomponents"
+                    :key="index+':'+subIndex"
+                    :is="sc"
+                    :v-bind="sc.attrs">
+                  </component>
+                </template>
+              <v-card v-if="entry.type == 'dice-roll' ">
+                <v-card-title class="pb-2">{{entry.title || 'Title Here'}}</v-card-title>
+                <v-card-subtitle v-if="entry.skill">
+                  <me-cs-skill-item class="skill-compact" :key="index + ':' + entry.skill.id" :item="entry.skill" />
+                </v-card-subtitle>
+                <v-card-subtitle v-else>
+                  {{entry.subtitle}}
+                </v-card-subtitle>
+                <v-card-text>
+                  {{entry}}
+                  {{entry.data}}
+                </v-card-text>
+              </v-card>
+              </component-->
+            </v-list-item>
         </v-list>
         <v-btn @click="clearLogs()">Clear Logs</v-btn>
       </template>
@@ -36,7 +42,9 @@
 </template>
 
 <script>
+import MeCsLogEntry from './MeCsLogEntry.vue'
 export default {
+  components: { MeCsLogEntry },
   name: 'MeCsLogs',
   computed: {
     logs () {
@@ -51,18 +59,10 @@ export default {
 }
 </script>
 
-<style scoped>
-h2 {
-  white-space: nowrap;
-  height: 30px;
-}
-.die-container {
-  width: auto;
-  /*height: 70px;*/
-  margin: auto;
-}
-.log-entry-container {
-  width: 100%;
+<style lang="scss" scoped>
+.skill-compact {
+  margin: 0 !important;
+  max-width: 200px;
 }
 .v-card {
   width: 100%;

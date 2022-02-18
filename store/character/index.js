@@ -230,11 +230,12 @@ export const actions = {
   async ROLL ({ dispatch }, payload) {
     // ...stuff that rolls the dice
     const output = {
-      type: 'dice-roll',
-      title: payload.title,
-      subtitle: payload.subtitle,
-      data: new DiceRoll(payload.roll),
-      timestamp: new Date()
+      data: {
+        ...payload,
+        type: 'card',
+        text: new DiceRoll(payload.roll).output,
+        timestamp: new Date()
+      }
     }
     await dispatch('LOG_WRITE', output)
   },

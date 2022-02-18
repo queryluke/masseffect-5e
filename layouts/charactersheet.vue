@@ -23,6 +23,10 @@
       <nuxt />
     </v-main>
     <!-- END: CONTENT -->
+
+    <!-- START: SNACKBAR -->
+    <me-cs-log-snackbar />
+    <!-- END: SNACKBAR -->
   </v-app>
 </template>
 

@@ -41,12 +41,14 @@ export default {
     rollSkill () {
       console.log('rolling skill')
       const roll = '1d20+' + this.item.mod + ''
+      const modStr = '(' + (this.item.mod >= 0 ? '+' : '') + this.item.mod + ')'
       console.log(roll)
       this.$store.dispatch('character/ROLL',
         {
           title: 'Skill Check',
-          subtitle: this.item.name,
+          subtitle: this.item.name + ' ' + modStr,
           type: 'dice-roll',
+          skill: this.item,
           roll
         })
     }
