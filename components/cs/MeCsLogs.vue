@@ -5,6 +5,9 @@
     </me-cs-card-title>
     <div class="mt-3">
       <template v-if="logs.length">
+        <div class="text-center pb-4">
+          <v-btn @click="clearLogs()">Clear Logs</v-btn>
+        </div>
         <transition-group name="list" tag="div">
             <me-cs-log-entry :data="entry.data" v-for="(entry, index) in logs.slice()" :key="index" class="pb-2"/>
         </transition-group>
