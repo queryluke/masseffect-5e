@@ -5,36 +5,12 @@
     </me-cs-card-title>
     <div class="mt-3">
       <template v-if="logs.length">
-        <!--pre>{{JSON.stringify(logs, undefined, 4)}}</pre-->
-        <v-list>
-            <v-list-item v-for="(entry, index) in logs.slice().reverse()" :key="index" class="pb-2" >
-              <me-cs-log-entry :data="entry.data" />
-              <!--component  v-if="entry.component" :is="entry.component" :v-bind="entry.attrs">
-                <template v-if="entry.component.subcomponents">
-                  <component
-                    v-for="(sc, subIndex) in entry.subcomponents"
-                    :key="index+':'+subIndex"
-                    :is="sc"
-                    :v-bind="sc.attrs">
-                  </component>
-                </template>
-              <v-card v-if="entry.type == 'dice-roll' ">
-                <v-card-title class="pb-2">{{entry.title || 'Title Here'}}</v-card-title>
-                <v-card-subtitle v-if="entry.skill">
-                  <me-cs-skill-item class="skill-compact" :key="index + ':' + entry.skill.id" :item="entry.skill" />
-                </v-card-subtitle>
-                <v-card-subtitle v-else>
-                  {{entry.subtitle}}
-                </v-card-subtitle>
-                <v-card-text>
-                  {{entry}}
-                  {{entry.data}}
-                </v-card-text>
-              </v-card>
-              </component-->
-            </v-list-item>
-        </v-list>
-        <v-btn @click="clearLogs()">Clear Logs</v-btn>
+        <transition-group name="list" tag="div">
+            <me-cs-log-entry :data="entry.data" v-for="(entry, index) in logs.slice()" :key="index" class="pb-2"/>
+        </transition-group>
+        <div class="text-center pt-4">
+          <v-btn @click="clearLogs()">Clear Logs</v-btn>
+        </div>
       </template>
       <v-banner v-if="!logs.length">No Logs Found</v-banner>
     </div>
@@ -66,5 +42,16 @@ export default {
 }
 .v-card {
   width: 100%;
+}
+.list-enter, .list-leave-to {
+  opacity: 0;
+}
+
+.list-enter-active, .list-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.list-move {
+  transition: transform 0.5s ease-out;
 }
 </style>

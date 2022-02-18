@@ -1,14 +1,13 @@
 <template>
-  <div class="text-center ma-2">
+  <div class="text-center ma-2 snackbar-container">
     <v-snackbar
       v-model="snackbar"
       vertical
       right
       timeout="-1"
-      max-height="400px"
+      max-height="70vh"
     >
-      <me-cs-log-entry v-for="(log, index) in logs.slice().reverse()" :data="log.data" :key="index" />
-
+      <me-cs-logs />
       <template v-slot:action="{ attrs }">
         <v-btn
           color="pink"
@@ -37,8 +36,11 @@ export default {
     logs (newVal, oldVal) {
       if (newVal && newVal.length && newVal.length !== oldVal.length) {
         this.snackbar = true
-        const container = this.$el.querySelector('.v-snack__content')
-        container.scrollTop = 0
+        // need this to get the correct height after update
+        setTimeout(() => {
+          const container = this.$el.querySelector('.v-snack__content')
+          container.scrollTop = container.scrollHeight
+        }, 100)
       }
     }
   }
@@ -48,5 +50,10 @@ export default {
 <style lang="scss">
 .v-snack__content {
   width: 100%;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+.snackbar-container {
+  overflow: hidden;
 }
 </style>
