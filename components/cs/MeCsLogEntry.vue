@@ -8,9 +8,7 @@
         <v-card-subtitle>
           {{data.subtitle}}
         </v-card-subtitle>
-        <v-card-text>
-          {{data.text}}
-        </v-card-text>
+        <v-card-text v-html="data.text"></v-card-text>
         <v-card-actions>
           {{data.actions}}
         </v-card-actions>

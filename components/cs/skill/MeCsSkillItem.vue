@@ -45,8 +45,8 @@ export default {
       console.log(roll)
       this.$store.dispatch('character/ROLL',
         {
-          title: 'Skill Check',
-          subtitle: this.item.name + ' ' + modStr,
+          title: 'Skill Check - ' + this.item.name + ' ' + modStr,
+          subtitle: this.$store.getters['character/character'].name,
           type: 'dice-roll',
           skill: this.item,
           roll

@@ -229,11 +229,12 @@ export const actions = {
   },
   async ROLL ({ dispatch }, payload) {
     // ...stuff that rolls the dice
+    const roll = new DiceRoll(payload.roll)
     const output = {
       data: {
         ...payload,
         type: 'card',
-        text: new DiceRoll(payload.roll).output,
+        text: '<h2> Result: ' + roll.total + '</h2><div class="pt-2"><i>' + roll.output + '</i></div>',
         timestamp: new Date()
       }
     }
