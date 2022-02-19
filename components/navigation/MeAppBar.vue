@@ -32,7 +32,7 @@
         nuxt
         :href="item.href"
       >
-        {{ $t(item.name) }}
+        {{ item.nonTName || $t(item.name) }}
       </v-btn>
       <!--
       <me-lang-picker />
@@ -123,9 +123,8 @@ export default {
       mobileSearchDialog: false,
       navigation: [
         { to: '/manual/intro', name: 'manual.title' },
-        { to: '/assets', name: 'assets_title' },
-        { to: '/changelog', name: 'changelog_title' },
-        { to: '/about', name: 'about_title' }
+        { to: '/about', name: 'about_title' },
+        { to: '/characters', nonTName: 'My Characters' }
       ]
     }
   },

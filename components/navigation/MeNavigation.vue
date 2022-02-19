@@ -198,7 +198,7 @@ export default {
           header: this.$t('tools_guides_title')
         },
         {
-          name: this.$t('character_builder_title'),
+          name: 'My Characters',
           to: '/characters',
           icon: 'mdi-clipboard-account'
         },
@@ -220,6 +220,20 @@ export default {
             { to: '/guide/vehicle-creation', name: this.$t('guide.creating_vehicles') },
             { to: '/guide/encounter-creation', name: this.$t('guide.creating_encounters') }
           ]
+        },
+        {
+          divider: true
+        },
+        {
+          header: this.$t('title')
+        },
+        {
+          to: '/assets',
+          name: this.$t('assets_title')
+        },
+        {
+          to: '/changelog',
+          name: this.$t('changelog_title')
         }
       ]
     }
@@ -239,10 +253,6 @@ export default {
     navigation () {
       const navigation = this.nav.slice()
       if (this.$vuetify.breakpoint.smAndDown) {
-        navigation.push({ divider: true })
-        navigation.push({ header: this.$t('title') })
-        navigation.push({ to: '/assets', name: this.$t('assets_title') })
-        navigation.push({ to: '/changelog', name: this.$t('changelog_title') })
         navigation.push({ to: '/about', name: this.$t('about_title') })
         navigation.push({ to: '/license', name: this.$t('license_title') })
       }
