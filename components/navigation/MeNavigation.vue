@@ -217,8 +217,7 @@ export default {
           group: 'guide',
           items: [
             { to: '/guide/armor-creation', name: this.$t('guide.creating_armor') },
-            { to: '/guide/vehicle-creation', name: this.$t('guide.creating_vehicles') },
-            { to: '/guide/encounter-creation', name: this.$t('guide.creating_encounters') }
+            { to: '/guide/vehicle-creation', name: this.$t('guide.creating_vehicles') }
           ]
         },
         {
