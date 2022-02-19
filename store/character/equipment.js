@@ -444,6 +444,33 @@ export const getters = {
         }, augmentTypes[at])
     }
     return augmentTypes
+  },
+  tentacleBlenderText: (state, getters) => {
+    const tentacleBlender = [[1, 4, 'poison'], [1, 4, 'poison'], [1, 4, 'poison'], [1, 4, 'poison'], [1, 4, 'poison'], [1, 4, 'poison']]
+    let i = 0
+    for (const eqw of getters.equippedWeapons) {
+      // TODO: update when there are new melee weapons
+      if (eqw.data.type === 'melee') {
+        tentacleBlender[i] = [eqw.data.damage.dieCount, eqw.data.damage.dieType, eqw.data.damage.type]
+      } else {
+        tentacleBlender[i] = [1, 4, 'bludgeoning']
+      }
+      i++
+    }
+    const finalDamage = {}
+    for (const tbd of tentacleBlender) {
+      if (finalDamage[`${tbd[1]}-${tbd[2]}`]) {
+        finalDamage[`${tbd[1]}-${tbd[2]}`].dieCount += tbd[0]
+      } else {
+        finalDamage[`${tbd[1]}-${tbd[2]}`] = {
+          dieCount: tbd[0],
+          dieType: tbd[1],
+          type: tbd[2]
+        }
+      }
+    }
+    console.log(Object.values(finalDamage).map(i => `${i.dieCount}d${i.dieType} ${i.type}`).join(' + '))
+    return Object.values(finalDamage).map(i => `${i.dieCount}d${i.dieType} ${i.type}`).join(' + ')
   }
 }
 

@@ -147,7 +147,10 @@ export default {
       abilityBreakdown: 'abilities/abilityBreakdown',
       profBonus: 'profBonus',
       mcBonus: 'mechanics/mcBonus',
-      mechanics: 'mechanics/mechanics'
+      mechanics: 'mechanics/mechanics',
+      tentacleBlenderText: 'equipment/tentacleBlenderText',
+      hp: 'hp/hp',
+      level: 'klasses/level'
     }),
     layout () {
       return this.item.layout ||
@@ -277,14 +280,17 @@ export default {
         wisMod: this.abilityBreakdown.wis.mod,
         intMod: this.abilityBreakdown.int.mod,
         chaMod: this.abilityBreakdown.cha.mod,
-        avatarsDie: this.mechanics.find(i => i.type === 'improved-avatars-inspiration') ? 'd8' : 'd4'
+        avatarsDie: this.mechanics.find(i => i.type === 'improved-avatars-inspiration') ? 'd8' : 'd4',
+        tentacleBlender: this.tentacleBlenderText,
+        hp: this.hp.current,
+        level: this.level
       }
     }
   },
   methods: {
     interpolatedText (text) {
       // might be better to do this with attrGetters or put it in the HTML?
-      const interpolations = ['dc', 'range', 'profBonus', 'strMod', 'conMod', 'wisMod', 'intMod', 'chaMod', 'avatarsDie']
+      const interpolations = ['dc', 'range', 'profBonus', 'strMod', 'conMod', 'wisMod', 'intMod', 'chaMod', 'avatarsDie', 'tentacleBlender', 'hp', 'level']
       const regex = new RegExp(`{{ ?([0-9]{1,3}|[+ ]|${interpolations.join('|')})+ ?}}`, 'g')
       if (!regex.test(text)) {
         return text

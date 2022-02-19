@@ -1,6 +1,6 @@
 <template>
   <small>
-    <me-html :content="shortDesc" classes="text-caption" />
+    <me-html v-if="!loading" :content="shortDesc" classes="text-caption" />
   </small>
 </template>
 <script>
