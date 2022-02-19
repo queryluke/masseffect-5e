@@ -21,5 +21,25 @@
         }
       }
     }
+  },
+  "production": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-masseffect5e-production-194957-authRole",
+      "UnauthRoleArn": "arn:aws:iam::168036140514:role/amplify-masseffect5e-production-194957-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::168036140514:role/amplify-masseffect5e-production-194957-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-masseffect5e-production-194957-deployment",
+      "UnauthRoleName": "amplify-masseffect5e-production-194957-unauthRole",
+      "StackName": "amplify-masseffect5e-production-194957",
+      "StackId": "arn:aws:cloudformation:us-east-1:168036140514:stack/amplify-masseffect5e-production-194957/dcdcf4f0-911d-11ec-b157-12b72afe2377",
+      "AmplifyAppId": "d40caxicif4p7"
+    },
+    "categories": {
+      "auth": {
+        "me5eauth": {
+          "googleClientId": "508866812450-4n7bfin1a459e5754q81bs3jjv1op91s.apps.googleusercontent.com"
+        }
+      }
+    }
   }
 }
