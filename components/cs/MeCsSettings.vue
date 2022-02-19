@@ -518,7 +518,6 @@ export default {
   },
   methods: {
     change (stat, value) {
-      console.log(stat, value)
       this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `settings.${stat}`, value })
     },
     updateAbility (value, ability, which) {

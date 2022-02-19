@@ -37,7 +37,6 @@ export const state = () => ({
 
 export const getters = {
   character: (state) => {
-    console.log('getting')
     return state.character
   },
   characterReady: (state, getters) => {
@@ -174,7 +173,6 @@ export const actions = {
         commit('SET_VIEW_ONLY', viewOnly)
         commit('SET_CHARACTER', characterData)
         if (triggerMigration && !viewOnly) {
-          console.log('triggering character migration')
           characterData.meta.remote = true
           await dispatch('REMOTE_UPDATE_CHARACTER')
         }
@@ -182,14 +180,12 @@ export const actions = {
         await dispatch('local/LOAD_CHARACTER', id)
       }
     } else {
-      console.log('loading local')
       await dispatch('local/LOAD_CHARACTER', id)
     }
     return getters.character
   },
   UPDATE_CHARACTER ({ dispatch, rootGetters, commit, getters, state }, { attr, value }) {
     if (state.viewOnly) {
-      console.log('viewOnly')
       return
     }
     const newValue = updateCharacter({ oldValue: getters.character, attr, value })

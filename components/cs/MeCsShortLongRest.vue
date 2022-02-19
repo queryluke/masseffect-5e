@@ -276,7 +276,6 @@ export default {
       /*
       PROCESS Feats, Powers, Traits, Class Features, Custom
        */
-      console.log(mechanicsToProcess)
       for (const mechanic of mechanicsToProcess) {
         const id = mechanic.resource?.id || mechanic.id
         if (currentStatsClone.resources[id]) {

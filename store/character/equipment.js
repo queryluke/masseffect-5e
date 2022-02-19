@@ -469,7 +469,6 @@ export const getters = {
         }
       }
     }
-    console.log(Object.values(finalDamage).map(i => `${i.dieCount}d${i.dieType} ${i.type}`).join(' + '))
     return Object.values(finalDamage).map(i => `${i.dieCount}d${i.dieType} ${i.type}`).join(' + ')
   }
 }
