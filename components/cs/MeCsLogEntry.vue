@@ -13,7 +13,11 @@
           <div class="text-right"><small>{{timeString}}</small></div>
         </v-card-text>
         <v-card-actions>
-          {{data.actions}}
+          <template v-for="(action, index) in data.actions">
+            <v-btn v-if="action.type == 'btn'" @click="action.action(...action.params)" :key="index">
+              {{action.title}}
+            </v-btn>
+          </template>
         </v-card-actions>
       </v-card>
     </template>
