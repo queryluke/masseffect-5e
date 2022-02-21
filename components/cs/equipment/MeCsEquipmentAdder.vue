@@ -45,16 +45,16 @@
         </v-icon>
         Back to Equipment List
       </v-btn>
-      <v-form ref="customArmorForm" lazy-validation @submit="submitCustomArmor">
+      <v-form ref="customArmorForm" @submit="submitCustomArmor">
         <v-row>
           <v-col cols="12">
-            <v-text-field v-model="customArmor.name" label="Name" :rules="customArmorRules.name" />
+            <v-text-field v-model="customArmor.name" label="Name" />
           </v-col>
           <v-col cols="6">
-            <v-select v-model="customArmor.placement" :rules="customArmorRules.placement" :items="armorPlacements" label="Placement" />
+            <v-select v-model="customArmor.placement" :items="armorPlacements" label="Placement" />
           </v-col>
           <v-col cols="6">
-            <v-select v-model="customArmor.type" :rules="customArmorRules.type" :items="armorTypes" label="Type" />
+            <v-select v-model="customArmor.type" :items="armorTypes" label="Type" />
           </v-col>
           <v-col cols="12">
             <v-textarea v-model="customArmor.html" rows="1" auto-grow label="Notes / Description" />
@@ -93,6 +93,12 @@ export default {
         type: null,
         html: null
       },
+      defaultCustomArmor: {
+        name: null,
+        placement: null,
+        type: null,
+        html: null
+      },
       armorTypes: ['light', 'medium', 'heavy'],
       armorPlacements: ['head', 'chest', 'arms', 'legs'],
       tab: 0,
@@ -123,13 +129,14 @@ export default {
   },
   methods: {
     submitCustomArmor () {
-      if (this.$refs.customArmorForm.validate()) {
+      if (this.customArmor.name && this.customArmor.placement && this.customArmor.type) {
         const customArmor = {
           type: 'armor',
           custom: this.customArmor,
           equipped: false,
           mods: [],
-          id: this.customArmor.name.replaceAll(/\W/g, '-') + new Date().getTime()
+          id: this.customArmor.name.replaceAll(/\W/g, '-') + new Date().getTime(),
+          uuid: this.customArmor.name.replaceAll(/\W/g, '-') + new Date().getTime()
         }
         this.customArmorAdding = true
         this.$store.dispatch('character/equipment/ADD_EQUIPMENT', customArmor)
@@ -138,6 +145,7 @@ export default {
         setTimeout(() => {
           this.customArmorAdded = false
           this.tab = 0
+          this.customArmor = this.defaultCustomArmor
         }, 1000)
       }
     }

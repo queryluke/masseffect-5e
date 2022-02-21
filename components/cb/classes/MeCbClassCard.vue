@@ -241,16 +241,13 @@ export default {
       },
       set (value) {
         if (value === false) {
-          console.log('is false')
           const hp = this.klass.hitPoints.slice()
-          console.log('hp', hp)
           let i = 1
           const adder = Math.ceil((this.klass.data.hitDie + 1) / 2)
           while (i < this.klassLevel) {
             hp[i] = adder
             i++
           }
-          console.log('newHp', hp)
           this.updateKlass('hitPoints', hp)
         }
         this.updateKlass('hpOverride', value)
