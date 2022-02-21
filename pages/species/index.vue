@@ -26,7 +26,7 @@ export default {
           key: 'lesser_known'
         },
         {
-          title: 'Villains of the Milky Way',
+          title: 'Fringe Species',
           key: 'villainous'
         },
         {
