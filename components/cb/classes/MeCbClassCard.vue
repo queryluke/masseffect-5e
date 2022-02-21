@@ -224,7 +224,7 @@ export default {
         if (this.klassLevel < value) {
           let i = value
           const adder = Math.ceil((this.klass.data.hitDie + 1) / 2)
-          while (this.klassLevel <= i) {
+          while (this.klassLevel < i) {
             hp.push(adder)
             i--
           }
