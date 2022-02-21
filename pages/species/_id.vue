@@ -24,7 +24,7 @@
           <!-- SUBSPECIES -->
           <v-tab-item v-if="item.subspecies" class="pa-3">
             <me-html :content="item.subspecies.html" class="mt-1" />
-            <div v-if="item.subspecies.id === 'avatar'" class="mt-1">
+            <div v-if="item.subspecies.name === 'Avatar'" class="mt-1">
               <me-tpg s="h5">
                 {{ avatarsInspiration.name }}
               </me-tpg>
