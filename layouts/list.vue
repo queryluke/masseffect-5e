@@ -27,6 +27,7 @@
 
     <!-- START: CONTENT -->
     <v-main>
+      <me-logout />
       <nuxt />
     </v-main>
     <!-- END: CONTENT -->

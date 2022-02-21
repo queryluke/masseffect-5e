@@ -43,7 +43,8 @@ export default {
     '@/plugins/persistentState.client.js',
     '@/plugins/filters/index.js',
     '@/plugins/vue2-filters',
-    '@/plugins/globals'
+    '@/plugins/globals',
+    '@/plugins/amplify.client.js'
   ],
   /*
   ** Auto import components
@@ -65,7 +66,7 @@ export default {
   */
   modules: [
     // Doc: https://http.nuxtjs.org/usage
-    'nuxt-i18n',
+    '@nuxtjs/i18n',
     '@nuxt/http'
   ],
   googleAnalytics: {
@@ -92,12 +93,9 @@ export default {
       // cookieKey: 'i18n_redirected',
       onlyOnRoot: true
     },
-    seo: true,
     baseUrl: 'https://n7.world',
     vuex: {
       moduleName: 'i18n',
-      syncLocale: true,
-      syncMessages: false,
       syncRouteParams: true
     },
     vueI18n: {
@@ -173,7 +171,10 @@ export default {
       }
     }
   },
+  router: {
+    middleware: 'auth'
+  },
   publicRuntimeConfig: {
-    version: process.env.VERSION
+    version: process.env.VERSION || 'v1.3.0'
   }
 }

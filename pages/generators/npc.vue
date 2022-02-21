@@ -1,17 +1,43 @@
 <template>
   <v-container>
     <me-page-title />
-    <p>
-      This generator creates disposable NPCs based on the Mass Effect archetypes. Your options for NPC generation are:
-    </p>
-    <ul class="text-body-2">
-      <li>Offensive vs Defensive: Offensive increase damage per round, but reduces AC, Shields, and Hit Points. Defensive does the opposite.</li>
-      <li>Damage Priority: When randomly generating attack, the generator will attempt to have the highest damage source be the selected type, either powers, weapons, or grenades.</li>
-      <li>
-        Grenade Toggle: Whether or not you want the NPC to use grenades
-      </li>
-      <li>Species Traits: Whether or not you want the NPC to gain any special species traits.</li>
-    </ul>
+    <v-card>
+      <v-expand-transition>
+        <v-card-text v-show="showInfo">
+          <v-alert
+            border="top"
+            colored-border
+            type="info"
+            flat
+          >
+            <p>
+              The NPC Generator has not been updated with the latest species traits that were released with the v140 update, but it
+              is our current priority to get the traits into the generator.
+            </p>
+            <p>
+              If you leave the Species Traits switch ON, you will see old traits from v131 (though some are the same). You
+              should feel free to leave this OFF if you'd like to avoid any confusion at your table.
+            </p>
+          </v-alert>
+          <p>
+            This generator creates disposable NPCs based on the Mass Effect archetypes. Your options for NPC generation are:
+          </p>
+          <ul class="text-body-2">
+            <li>Offensive vs Defensive: Offensive increase damage per round, but reduces AC, Shields, and Hit Points. Defensive does the opposite.</li>
+            <li>Damage Priority: When randomly generating attack, the generator will attempt to have the highest damage source be the selected type, either powers, weapons, or grenades.</li>
+            <li>
+              Grenade Toggle: Whether or not you want the NPC to use grenades
+            </li>
+            <li>Species Traits: Whether or not you want the NPC to gain any special species traits.</li>
+          </ul>
+        </v-card-text>
+      </v-expand-transition>
+      <v-card-actions>
+        <v-btn text @click="showInfo = !showInfo">
+          {{ showInfo ? 'Hide' : 'Show Generator Details' }}
+        </v-btn>
+      </v-card-actions>
+    </v-card>
     <v-card class="mt-8">
       <v-card-text>
         <v-row>
@@ -126,7 +152,7 @@
             <me-npc-stat-block :stats="npc" :title="true" />
           </v-card-text>
           <v-card-actions>
-            <me-bookmark :item="npc" type="bestiary" />
+            <me-bookmark :item="npc" type="genpc" />
           </v-card-actions>
         </v-card>
       </v-col>
@@ -149,6 +175,7 @@ export default {
   },
   data () {
     return {
+      showInfo: true,
       selectedCr: null,
       selectedSp: null,
       selectedCl: null,
@@ -180,7 +207,7 @@ export default {
       return this.$store.getters.getData('classes')
     },
     species () {
-      return this.$store.getters.getData('species')
+      return this.$store.getters.getData('species').filter(i => !['subspecies', 'variant'].includes(i.type))
     },
     spells () {
       return this.$store.getters.getData('powers')

@@ -1,0 +1,121 @@
+<template>
+  <v-list-item dense style="min-height: 48px">
+    <v-list-item-action v-if="!noEquip && !viewOnly" class="my-0" @click="toggleEquipped">
+      <v-icon v-if="item.equipped" color="primary">
+        mdi-checkbox-marked
+      </v-icon>
+      <v-icon v-else>
+        mdi-checkbox-blank-outline
+      </v-icon>
+    </v-list-item-action>
+    <v-list-item-content class="py-0">
+      <v-list-item-title>
+        <slot name="title">
+          {{ title }}
+        </slot>
+      </v-list-item-title>
+      <v-list-item-subtitle>
+        <slot name="subtitle">
+          {{ subtitle }}
+        </slot>
+      </v-list-item-subtitle>
+    </v-list-item-content>
+    <v-list-item-action v-if="!viewOnly" class="my-0" @click="equipmentDialog = true">
+      <v-icon>
+        mdi-cog
+      </v-icon>
+    </v-list-item-action>
+    <me-standard-dialog :shown="equipmentDialog" :max-height="500" @close="equipmentDialog = false">
+      <template #title>
+        {{ title }}
+      </template>
+      <v-row justify="space-between">
+        <v-col>
+          <v-chip-group v-model="tab" active-class="primary--text">
+            <v-chip
+              v-for="cTab in tabs"
+              :key="`feature-chip-tab-${cTab.slot}`"
+              small
+            >
+              {{ cTab.title }}
+            </v-chip>
+          </v-chip-group>
+        </v-col>
+        <v-col class="d-flex justify-end">
+          <v-chip-group>
+            <v-chip small color="error" @click="equipmentDialog = false; removeEquipment()">
+              <v-icon>
+                mdi-delete
+              </v-icon>
+            </v-chip>
+          </v-chip-group>
+        </v-col>
+      </v-row>
+      <v-tabs-items v-model="tab">
+        <template v-for="tTab in tabs">
+          <v-tab-item :key="`tTab-${tTab.slot}`">
+            <v-card-text>
+              <slot :name="tTab.slot" />
+            </v-card-text>
+          </v-tab-item>
+        </template>
+        <!-- info -->
+      </v-tabs-items>
+    </me-standard-dialog>
+  </v-list-item>
+</template>
+
+<script>
+export default {
+  props: {
+    item: {
+      type: Object,
+      required: true
+    },
+    noEquip: {
+      type: Boolean,
+      default: false
+    },
+    tabs: {
+      type: Array,
+      default: () => [{ title: 'Info', slot: 'infoTab' }, { title: 'Mods', slot: 'modTab' }, { title: 'Stat Overrides', slot: 'overrideTab' }]
+    }
+  },
+  data () {
+    return {
+      equipmentDialog: false,
+      loading: false,
+      tab: 0
+    }
+  },
+  computed: {
+    viewOnly () {
+      return this.$store.state.character.viewOnly
+    },
+    itemData () {
+      return this.item.data
+    },
+    title () {
+      return this.itemData.name
+    },
+    subtitle () {
+      switch (this.item.type) {
+        case 'weapon':
+          return this.$tc(`weapon_types.${this.itemData.type}`, 1)
+        case 'armor':
+          return `${this.$t(`armor_types.${this.itemData.type}`)} ${this.$t(`armor_placements.${this.itemData.placement}_title`)}`
+        default:
+          return ''
+      }
+    }
+  },
+  methods: {
+    toggleEquipped () {
+      this.$store.dispatch('character/equipment/TOGGLE_EQUIPPED', this.item.uuid)
+    },
+    removeEquipment () {
+      this.$store.dispatch('character/equipment/REPLACE_EQUIPMENT', { uuid: this.item.uuid })
+    }
+  }
+}
+</script>

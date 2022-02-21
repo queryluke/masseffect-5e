@@ -270,6 +270,32 @@
         </v-row>
       </v-container>
     </section>
+
+    <v-footer
+      padless
+    >
+      <v-row
+        justify="center"
+        no-gutters
+      >
+        <v-btn
+          v-for="link in links"
+          :key="link.to"
+          text
+          rounded
+          class="my-2"
+          :to="link.to"
+        >
+          {{ link.text }}
+        </v-btn>
+        <v-col
+          class="py-4 text-center"
+          cols="12"
+        >
+          {{ new Date().getFullYear() }} — <strong>N7 World</strong>
+        </v-col>
+      </v-row>
+    </v-footer>
   </div>
 </template>
 
@@ -279,7 +305,14 @@ export default {
   data () {
     return {
       alert: true,
-      recentPosts: []
+      recentPosts: [],
+      links: [
+        { to: '/legal/privacy', text: 'Privacy Policy' },
+        { to: '/legal/terms', text: 'Terms of Service' },
+        { to: '/legal/cookies', text: 'Cookie Policy' },
+        { to: '/legal/acceptable-use', text: 'Acceptable Use' },
+        { to: '/license', text: 'License' }
+      ]
     }
   },
   async fetch () {

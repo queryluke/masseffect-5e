@@ -1,0 +1,42 @@
+# This "input" configures a global authorization rule to enable public access to
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+
+type Bookmark @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"}, subscriptions: null)
+@auth(rules: [
+  { allow: owner }
+]){
+  id: ID!
+  owner: ID! @index(name: "byUser", queryField: "bookmarkByUser")
+  model: String!
+  modelId: String!
+  data: String
+}
+
+type Profile @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"}, subscriptions: null)
+@auth(rules: [
+  { allow: owner }
+]) {
+  id: ID!
+  username: String
+  profileImg: String
+  imperial: Boolean!
+  darkMode: Boolean!
+  maxCharacters: Int
+}
+
+type Character @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"}, subscriptions: null)
+@auth(rules: [
+  { allow: private, operations: [read] }
+  { allow: owner }
+]){
+  id: ID!
+  owner: ID! @index(name: "byUser", queryField: "characterByUser")
+  data: String
+}
+
+type Subscription {
+  onCreateBookmarkByUserId(userId: ID!): Bookmark
+    @aws_subscribe(mutations: ["createBookmark"])
+  onDeleteBookmarkByUserId(userId: ID!): Bookmark
+    @aws_subscribe(mutations: ["deleteBookmark"])
+}

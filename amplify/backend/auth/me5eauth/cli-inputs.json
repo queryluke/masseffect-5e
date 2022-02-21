@@ -1,0 +1,84 @@
+{
+  "version": "1",
+  "cognitoConfig": {
+    "identityPoolName": "me5eauth_identity_pool",
+    "allowUnauthenticatedIdentities": false,
+    "resourceNameTruncated": "massefc20a998c",
+    "userPoolName": "me5eauth_user_pool",
+    "autoVerifiedAttributes": [
+      "email"
+    ],
+    "mfaConfiguration": "OFF",
+    "mfaTypes": [
+      "SMS Text Message"
+    ],
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your Mass Effect 5e verification code",
+    "emailVerificationMessage": "Use the following verification code to verify your email: {####}",
+    "defaultPasswordPolicy": false,
+    "passwordPolicyMinLength": 8,
+    "passwordPolicyCharacters": [],
+    "requiredAttributes": [
+      "email"
+    ],
+    "aliasAttributes": [],
+    "userpoolClientGenerateSecret": false,
+    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientWriteAttributes": [
+      "preferred_username",
+      "picture",
+      "email"
+    ],
+    "userpoolClientReadAttributes": [
+      "email",
+      "preferred_username",
+      "picture"
+    ],
+    "userpoolClientLambdaRole": "me5eauc20a998c_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": false,
+    "sharedId": "c20a998c",
+    "resourceName": "me5eauth",
+    "authSelections": "identityPoolAndUserPool",
+    "useDefault": "manual",
+    "thirdPartyAuth": true,
+    "authProviders": [
+      "accounts.google.com"
+    ],
+    "usernameAttributes": [
+      "email"
+    ],
+    "userPoolGroups": false,
+    "adminQueries": false,
+    "triggers": {},
+    "hostedUI": true,
+    "hostedUIDomainName": "masseffect5e",
+    "authProvidersUserPool": [
+      "Google"
+    ],
+    "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
+    "userPoolGroupList": [],
+    "serviceName": "Cognito",
+    "usernameCaseSensitive": false,
+    "useEnabledMfas": true,
+    "authRoleArn": {
+      "Fn::GetAtt": [
+        "AuthRole",
+        "Arn"
+      ]
+    },
+    "unauthRoleArn": {
+      "Fn::GetAtt": [
+        "UnauthRole",
+        "Arn"
+      ]
+    },
+    "breakCircularDependency": true,
+    "dependsOn": [],
+    "parentStack": {
+      "Ref": "AWS::StackId"
+    },
+    "permissions": [],
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"implicit\"],\"AllowedOAuthScopes\":[\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/auth/login/\",\"https://next.n7.world/auth/login/\",\"https://n7.world/auth/login/\"],\"LogoutURLs\":[\"http://localhost:3000/auth/logout/\",\"https://next.n7.world/auth/logout/\",\"https://n7.world/auth/logout/\"]}"
+  }
+}

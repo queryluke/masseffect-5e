@@ -1,106 +1,85 @@
 <template>
   <v-container style="max-width: 1200px">
-    <v-stepper :value="currentStep">
-      <v-stepper-header>
-        <template v-for="(step, index) in builderSteps">
-          <v-stepper-step
-            v-if="index !== 0"
-            :key="`${index}-step`"
-            :complete="step.isComplete"
-            :step="index"
-            editable
-            edit-icon="mdi-check"
-            @click="currentStep = index"
-          >
-            {{ step.name }}
-          </v-stepper-step>
-          <v-divider v-if="index !== 0 && index < builderSteps.length - 1" :key="`divider-${index}`" />
-        </template>
-      </v-stepper-header>
-      <v-stepper-items>
-        <v-stepper-content v-for="(step, index) in builderSteps" :key="`${index}-content`" :step="index">
-          <component :is="step.component" />
-        </v-stepper-content>
-      </v-stepper-items>
-    </v-stepper>
-    <v-row>
-      <v-col class="d-flex justify-space-around flex-wrap mt-5">
-        <v-btn v-if="currentStep > 1" outlined="outlined" width="140" @click="goToPrevStep">
-          <v-icon class="mr-2">
-            mdi-chevron-left
-          </v-icon>
-          Back
-        </v-btn>
-        <v-btn :to="`/characters/sheet?id=${cid}`">
-          Go to Character Sheet
-        </v-btn>
-        <v-btn v-if="currentStep < builderSteps.length - 1" color="primary" width="140" @click="goToNextStep">
-          Continue
-          <v-icon class="ml-2">
-            mdi-chevron-right
-          </v-icon>
-        </v-btn>
-      </v-col>
-    </v-row>
+    <v-card :loading="$fetchState.pending">
+      <me-tabbed-page-tabs grow class="hidden-sm-and-down mt-5" />
+      <v-card-text v-if="!$fetchState.pending">
+        <v-tabs-items v-model="tab">
+          <v-tab-item>
+            <me-cb-species-select />
+          </v-tab-item>
+          <v-tab-item>
+            <me-cb-classes-select />
+          </v-tab-item>
+          <v-tab-item>
+            <me-cb-abilities-select />
+          </v-tab-item>
+          <v-tab-item>
+            <me-cb-description />
+          </v-tab-item>
+        </v-tabs-items>
+      </v-card-text>
+      <v-card-actions v-if="$vuetify.breakpoint.mdAndUp">
+        <me-cb-nav @goToSheet="goToSheet" />
+      </v-card-actions>
+    </v-card>
+    <v-footer v-if="$vuetify.breakpoint.smAndDown" app class="px-0">
+      <me-cb-nav @goToSheet="goToSheet" />
+    </v-footer>
   </v-container>
 </template>
 
 <script>
-import { CharacterBuilderHelpers } from '~/mixins/character_builder'
 
 export default {
-  mixins: [CharacterBuilderHelpers],
-  async asyncData ({ store, redirect, route }) {
+  layout: 'characterbuilder',
+  asyncData ({ store, redirect, route }) {
     if (!route.query.id) {
       redirect('/characters')
     }
     store.commit('pageTitle', 'Character Builder')
-    await store.dispatch('cb/FETCH_CB_DATA')
+    const tabs = ['Species', 'Class', 'Abilities', 'Description']
+    store.commit('tabbedPage/SET_TABS', tabs)
+    store.dispatch('tabbedPage/INIT_THEME')
+    return {
+      tabs
+    }
+  },
+  data () {
+    return {
+      loading: false
+    }
+  },
+  async fetch () {
+    await this.$store.dispatch('character/FETCH_CB_DATA')
+    // TODO: check that character is editable
+    const character = await this.$store.dispatch('character/LOAD_CHARACTER', this.$route.query.id)
+    if (!character) {
+      await this.$router.push('/characters')
+    }
   },
   computed: {
-    builder () {
-      return this.character.builder
-    },
-    builderSteps () {
-      return [
-        {},
-        {
-          name: 'Species',
-          component: 'MeCharacterBuilderSpecies',
-          isComplete: this.speciesId !== null
-        },
-        {
-          name: 'Class',
-          component: 'MeCharacterBuilderClass',
-          isComplete: this.characterClasses?.length > 0
-        },
-        {
-          name: 'Ability Scores',
-          component: 'MeCharacterBuilderAbilityScores',
-          isComplete: this.allAbilityScoresSet
-        },
-        {
-          name: 'Character Description',
-          component: 'MeCharacterBuilderCharacterDescription',
-          isComplete: this.character.background !== null && this.character.name !== null
-        }
-      ]
-    },
-    currentStep: {
+    tab: {
       get () {
-        return this.builder.currentStep
+        return this.$store.getters['tabbedPage/activeTab']
       },
       set (value) {
-        return this.$store.commit('cb/UPDATE_CHARACTER', { cid: this.cid, attr: 'builder.currentStep', value })
+        this.$store.commit('tabbedPage/SET_ACTIVE_TAB', value)
       }
+    },
+    id () {
+      return this.$store.getters['character/id']
     }
   },
   methods: {
-    goToNextStep () {
-      this.currentStep = Math.min(this.builderSteps.length, this.currentStep + 1)
-    },
-    goToPrevStep () {
-      this.currentStep = Math.max(this.currentStep - 1, 0)
+    async goToSheet () {
+      if (this.$store.getters['auth/isAuthenticated']) {
+        this.loading = true
+        await this.$store.dispatch('character/REMOTE_UPDATE_CHARACTER')
+        this.loading = false
+      }
+      await this.$router.push({
+        path: `/characters/sheet/?id=${this.id}`
+      })
     }
   }
 }

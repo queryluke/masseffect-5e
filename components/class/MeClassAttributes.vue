@@ -73,7 +73,7 @@ export default {
           return this.$t('gear_types.tool')
         case 'skill':
           return this.$t('skills_title')
-        case 'savingThrow':
+        case 'saving-throw':
           return this.$t('saving_throws_title')
       }
     }

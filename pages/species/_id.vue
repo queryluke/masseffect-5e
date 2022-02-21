@@ -3,12 +3,9 @@
     <v-row>
       <v-col md="9">
         <me-page-title />
-        <v-tabs v-model="tab" class="hidden-sm-and-down mt-5">
-          <v-tab v-for="tabItem in tabs" :key="tabItem">
-            {{ tabItem }}
-          </v-tab>
-        </v-tabs>
+        <me-tabbed-page-tabs class="hidden-sm-and-down mt-5" />
         <v-tabs-items v-model="tab">
+          <!-- BACKGROUND -->
           <v-tab-item class="pa-3">
             <me-html :content="item.html" />
             <v-btn
@@ -18,18 +15,34 @@
             >
               {{ $t('buttons.read_more') }} <v-icon>mdi-chevron-right</v-icon>
             </v-btn>
-          </v-tab-item>
-          <v-tab-item class="pa-3">
-            <me-species-traits-list :item="item" />
             <me-source-reference v-if="rorReference[item.id]" :pages="rorReference[item.id]" source="races" />
           </v-tab-item>
+          <!-- TRAITS -->
           <v-tab-item class="pa-3">
+            <me-species-traits-list :item="item" />
+          </v-tab-item>
+          <!-- SUBSPECIES -->
+          <v-tab-item v-if="item.subspecies" class="pa-3">
+            <me-html :content="item.subspecies.html" class="mt-1" />
+            <div v-if="item.subspecies.id === 'avatar'" class="mt-1">
+              <me-tpg s="h5">
+                {{ avatarsInspiration.name }}
+              </me-tpg>
+              <me-html :content="avatarsInspiration.html" />
+            </div>
+            <div v-for="sub of subspecies" :key="sub.id">
+              <me-tpg s="h4">
+                {{ sub.name }}
+              </me-tpg>
+              <me-hr size="1" class="mt-n1" color="primary" />
+              <me-html :content="sub.html" />
+              <me-species-traits-list v-if="item.subspecies.name !== 'Avatar'" :item="sub" />
+            </div>
+          </v-tab-item>
+          <!-- VARIANTS -->
+          <v-tab-item v-if="hasVariants" class="pa-3">
             <div v-for="variant in variants" :key="variant.id" class="mb-4">
-              <p class="text-h6 text-md-h4">
-                {{ variant.name }}
-              </p>
-              <me-hr />
-              <me-html :content="variant.html" />
+              <me-species-variant :item="variant" />
             </div>
           </v-tab-item>
         </v-tabs-items>
@@ -63,15 +76,17 @@
 
 <script>
 
+import MeTpg from '~/components/MeTpg'
 export default {
+  components: { MeTpg },
   layout: 'tabbed',
   async asyncData ({ store }) {
-    await store.dispatch('FETCH_LOTS', ['species', 'traits', 'species-variants'])
+    await store.dispatch('FETCH_LOTS', ['species', 'traits'])
+    store.commit('tabbedPage/SET_ACTIVE_TAB', 0)
   },
   data () {
     return {
       rorReference: {
-        asari: '2-3',
         geth: '3-4',
         krogan: '5-6',
         quarian: '7-8',
@@ -90,16 +105,22 @@ export default {
   },
   computed: {
     items () {
-      return this.$store.getters.getData('species')
+      return this.$store.getters.getData('species').filter(i => i.type !== 'variant' && i.type !== 'subspecies')
     },
     item () {
       return this.$store.getters.getItem('species', this.$route.params.id)
     },
     variants () {
-      return this.$store.getters.getData('species-variants').filter(i => i.species === this.$route.params.id)
+      return this.$store.getters.getData('species').filter(i => i.type === 'variant' && i.species === this.$route.params.id)
     },
     hasVariants () {
-      return this.variants.length > 0
+      return this.variants.length
+    },
+    subspecies () {
+      return this.$store.getters.getData('species').filter(i => i.type === 'subspecies' && i.species === this.$route.params.id)
+    },
+    avatarsInspiration () {
+      return this.$store.getters.getItem('traits', 'avatars-inspiration')
     },
     tab: {
       get () {
@@ -111,6 +132,9 @@ export default {
     },
     tabs () {
       const tabs = [this.$tc('background_title', 1), this.$t('traits_title')]
+      if (this.item.subspecies) {
+        tabs.push(this.item.subspecies.name)
+      }
       if (this.hasVariants) {
         tabs.push(this.$t('variants_title'))
       }
@@ -120,7 +144,6 @@ export default {
   created () {
     this.$store.commit('pageTitle', this.item.name)
     this.$store.commit('tabbedPage/SET_TABS', this.tabs)
-    this.$store.dispatch('tabbedPage/INIT_THEME')
   }
 }
 </script>

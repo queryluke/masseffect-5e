@@ -1,0 +1,15 @@
+{
+  "resourceName": "me5estorage",
+  "policyUUID": "9a8ee557",
+  "bucketName": "me5estorage",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "groupAccess": {}
+}

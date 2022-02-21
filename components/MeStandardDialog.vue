@@ -3,17 +3,19 @@
     :value="shown"
     :fullscreen="$vuetify.breakpoint.xsOnly"
     :transition="transition"
-    width="70vw"
+    :max-width="800"
     scrollable
     @click:outside="$emit('close')"
   >
-    <v-card>
+    <v-card :max-height="maxHeight || undefined">
       <v-card-title>
-        {{ title }}
+        <slot name="title">
+          {{ title }}
+        </slot>
       </v-card-title>
       <v-card-text>
         <slot>
-          <me-html :content="content" />
+          <me-html v-if="shown" :content="content" />
         </slot>
       </v-card-text>
       <v-card-actions>
@@ -34,7 +36,7 @@ export default {
   props: {
     title: {
       type: String,
-      required: true
+      default: ''
     },
     content: {
       type: String,
@@ -43,6 +45,10 @@ export default {
     shown: {
       type: Boolean,
       default: false
+    },
+    maxHeight: {
+      type: [Number, String],
+      default: 0
     }
   },
   computed: {

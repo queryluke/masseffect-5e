@@ -4,6 +4,26 @@
     app
     clipped
   >
+    <!-- MIGHT KEEP THIS FOR LATER
+    <template v-if="$vuetify.breakpoint.smAndDown" #prepend>
+      <v-list class="pa-0">
+        <v-list-item @click="drawer = false">
+          <v-list-item-action>
+            <v-icon>mdi-chevron-left</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title class="text-right text-h6">
+              Mass Effect
+            </v-list-item-title>
+          </v-list-item-content>
+          <v-list-item-avatar tile size="23" class="ml-1">
+            <img :src="require('~/assets/images/me5e.svg')">
+          </v-list-item-avatar>
+        </v-list-item>
+      </v-list>
+      <v-divider />
+    </template>
+    -->
     <!-- SEARCH -->
     <v-text-field
       v-model="search"
@@ -53,13 +73,22 @@
               v-bind="attrs"
               v-on="on"
             >
-              {{ $t('version') }} {{ version }}
+              {{ $config.version }}
               <v-icon>
                 mdi-menu-up
               </v-icon>
             </v-toolbar-title>
           </template>
-          <me-version-menu />
+          <v-list>
+            <v-list-item
+              v-for="item in pastVersions"
+              :key="item.name"
+              :href="item.link"
+              target="_blank"
+            >
+              <v-list-item-title>{{ item.name }}</v-list-item-title>
+            </v-list-item>
+          </v-list>
         </v-menu>
         <v-spacer />
         <v-toolbar-items>
@@ -150,6 +179,7 @@ export default {
           icon: 'mdi-view-split-vertical',
           items: [
             { to: '/appendix/conditions', name: this.$t('conditions_title') },
+            { to: '/appendix/benefits', name: 'Reputation Benefits' },
             { to: '/appendix/random-height-weight', name: this.$t('random_height_weight_title') },
             { to: '/appendix/skills', name: this.$t('skills_title') },
             { to: '/appendix/tool-profs', name: this.$t('tool_profs_title') },
@@ -168,7 +198,7 @@ export default {
           header: this.$t('tools_guides_title')
         },
         {
-          name: this.$t('character_builder_title'),
+          name: 'My Characters',
           to: '/characters',
           icon: 'mdi-clipboard-account'
         },
@@ -187,14 +217,30 @@ export default {
           group: 'guide',
           items: [
             { to: '/guide/armor-creation', name: this.$t('guide.creating_armor') },
-            { to: '/guide/vehicle-creation', name: this.$t('guide.creating_vehicles') },
-            { to: '/guide/encounter-creation', name: this.$t('guide.creating_encounters') }
+            { to: '/guide/vehicle-creation', name: this.$t('guide.creating_vehicles') }
           ]
+        },
+        {
+          divider: true
+        },
+        {
+          header: this.$t('title')
+        },
+        {
+          to: '/assets',
+          name: this.$t('assets_title')
+        },
+        {
+          to: '/changelog',
+          name: this.$t('changelog_title')
         }
       ]
     }
   },
   computed: {
+    isAuthenticated () {
+      return this.$store.state.auth.isAuthenticated
+    },
     search: {
       get () {
         return this.$store.getters['user/search']
@@ -205,29 +251,11 @@ export default {
     },
     navigation () {
       const navigation = this.nav.slice()
-      if (this.$vuetify.breakpoint.mdAndDown) {
-        navigation.push({ divider: true })
-        navigation.push({ header: this.$t('title') })
-        navigation.push({ to: '/assets', name: this.$t('assets_title') })
-        navigation.push({ to: '/changelog', name: this.$t('changelog_title') })
+      if (this.$vuetify.breakpoint.smAndDown) {
         navigation.push({ to: '/about', name: this.$t('about_title') })
         navigation.push({ to: '/license', name: this.$t('license_title') })
       }
       return navigation
-    },
-    darkModeIcon () {
-      return this.darkMode ? 'mdi-brightness-4' : 'mdi-brightness-5'
-    },
-    darkMode () {
-      return this.$store.getters['user/darkMode']
-    },
-    imperial: {
-      get () {
-        return this.$store.getters['user/imperial']
-      },
-      set (value) {
-        this.$store.commit('user/SET_IMPERIAL', value)
-      }
     },
     drawer: {
       get () {
@@ -254,10 +282,6 @@ export default {
     this.$vuetify.theme.dark = this.$store.getters['user/darkMode']
   },
   methods: {
-    toggleDarkMode () {
-      this.$store.dispatch('user/TOGGLE_DARK_MODE')
-      this.$vuetify.theme.dark = this.$store.getters['user/darkMode']
-    },
     submit () {
       this.$router.push({
         path: '/search'

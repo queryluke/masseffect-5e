@@ -4,7 +4,7 @@ export const SavingThrows = {
       this.npc.savingThrows = []
       let numSavingThrows = this.randomValue(this.savingThrowWeights[this.defensiveCrMeta])
       const savingThrows = this.savingThrows.slice()
-      const classSavingThrows = this.options.klass.profs.savingThrow.has.slice()
+      const classSavingThrows = this.options.klass.profs['saving-throw'].has.slice()
       for (const classSt of classSavingThrows) {
         if (numSavingThrows > 0) {
           savingThrows.splice(savingThrows.indexOf(classSt), 1)

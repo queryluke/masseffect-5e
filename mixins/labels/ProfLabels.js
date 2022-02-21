@@ -10,10 +10,13 @@ export const ProfLabels = {
           return this.$t('gear_types.tool')
         case 'skill':
           return this.$t('skills_title')
-        case 'savingThrow':
+        case 'saving-throw':
           return this.$t('saving_throws_title')
       }
       return ''
+    },
+    profString (type, idArray = []) {
+      return idArray.length ? idArray.map(i => this.profText(type, i)).join(', ') : 'None'
     },
     profText (type, id) {
       let item, lookupId
@@ -33,7 +36,7 @@ export const ProfLabels = {
         case 'skill':
           item = this.$store.getters.getItem('skills', id)
           return item ? item.name : id
-        case 'savingThrow':
+        case 'saving-throw':
           return this.$t(`abilities.${id}.title`)
       }
       return ''

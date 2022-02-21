@@ -3,11 +3,6 @@ A homebrew conversion of Dungeons & Dragons 5th Edition into the Mass Effect Uni
 
 [View the Site](http://n7.world/)
  
-## How it's made
-1. Majority of info is stored on a variety of Google Sheets, converted to json with ruby
-2. Web App created with [Vue.js](http://vuejs.org/), [Vuetify.js](https://vuetifyjs.com), and [Nuxt.js](https://nuxtjs.org/)
-3. [Hosted by Github Pages](https://pages.github.com/)
-
 ## Working on the site
 Requirements: [Node.js](https://nodejs.org/)
 
@@ -29,10 +24,10 @@ API_BASE_URL=https://data.n7.world
 ```
 
 # install dependencies
-$ npm install # Or yarn install
+$ yarn install
 
 # serve with hot reload at localhost:3000
-$ npm run dev
+$ yarn run dev
 
 
 For detailed explanation on how things work, check out the [Nuxt.js](https://github.com/nuxt/nuxt.js) and [Vuetify.js](https://vuetifyjs.com/) documentation.
@@ -44,7 +39,7 @@ If you want to edit and work on the data locally and see how it renders in the s
 
 To see your changes locally, you'll want to symlink the data repo into this repo __IN THE `static` dir!!!__.
 
-Then you can load the site with `npm run local`
+Then you can load the site with `yarn run local`
 
 __Windows__ (note: you'll probably need to run the cmd as an administrator)
 ```bash
@@ -63,6 +58,15 @@ ln -s ~/Sites/masseffect-5e-data/docs/v130 ~/Sites/masseffect-5e/static/.data
 ```
 
 __NOTE!__ You will need to remove the symlink before running `nuxt generate`, Windows `rmdir static/.data` or Linux/Mac `unlink static/.data`
+
+## Amplify (AWS Hosting)
+
+This is only required if you plan on working on aspects of the site that utilize the MassEffect5e AWS hosted components.
+
+1. Install the [Amplify CLI](https://docs.amplify.aws/cli/)
+2. [Configure your account](https://docs.amplify.aws/cli/start/install/#option-2-follow-the-instructions) (will need to contact the ME5e developers for an AWS account)
+  - Note, if you already have an amplify profile configured, [see this guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
+3. In the root of this repo: `amplify pull --appId dqx4jr4x8mav --envName dev` 
 
 ## Translations
 
