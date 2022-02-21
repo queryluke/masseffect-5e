@@ -24,10 +24,10 @@ API_BASE_URL=https://data.n7.world
 ```
 
 # install dependencies
-$ npm install # Or yarn install
+$ yarn install
 
 # serve with hot reload at localhost:3000
-$ npm run dev
+$ yarn run dev
 
 
 For detailed explanation on how things work, check out the [Nuxt.js](https://github.com/nuxt/nuxt.js) and [Vuetify.js](https://vuetifyjs.com/) documentation.
@@ -39,7 +39,7 @@ If you want to edit and work on the data locally and see how it renders in the s
 
 To see your changes locally, you'll want to symlink the data repo into this repo __IN THE `static` dir!!!__.
 
-Then you can load the site with `npm run local`
+Then you can load the site with `yarn run local`
 
 __Windows__ (note: you'll probably need to run the cmd as an administrator)
 ```bash
