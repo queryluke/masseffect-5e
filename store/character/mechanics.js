@@ -122,14 +122,17 @@ export const getters = {
         }
       }
     }
-    console.log('unused', selected)
-    console.log('final', finalMechanics)
+    // console.log('unused', selected)
+    // console.log('final', finalMechanics)
     return {
       mechanics: finalMechanics,
       unusedSelections: selected
     }
   },
-  mechanics: (state, getters) => {
+  mechanics: (state, getters, rootState, rootGetters) => {
+    if (rootGetters['character/id'] === 'kitchenSink') {
+      return rootGetters['character/kitchenSink/mechanics']
+    }
     return getters.mechanicAnalysis.mechanics
   },
   unusedSelections: (state, getters) => {
@@ -145,6 +148,13 @@ export const getters = {
         break
       case 'mod':
         b = rootGetters['character/abilities/abilityBreakdown'][bonus.value].mod * multiplier
+        break
+      case 'modComparison':
+        b = []
+        for (const ability of bonus.value) {
+          b.push(rootGetters['character/abilities/abilityBreakdown'][ability].mod)
+        }
+        b = Math.max(...b) * multiplier
         break
       case 'proficiency':
         b = rootGetters['character/profBonus'] * multiplier

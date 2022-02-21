@@ -10,7 +10,7 @@ export const getters = {
   valueLookup: (state, getters) => ({ model, id, limit }) => {
     const matches = getters.selected.filter(i => i.path.includes(`${model}/${id}`)).reduce((acc, curr) => acc.concat(curr.value), [])
     if (limit) {
-      return matches.filter(i => limit.includes(i.type)).map(i => i.value)
+      return matches.filter(i => limit.includes(i.type)).map(i => i.value || i.ability)
     }
     return matches.map(i => i.value)
   }

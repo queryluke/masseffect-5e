@@ -125,7 +125,6 @@ export const actions = {
     }
   },
   async SYNC_BOOKMARKS ({ getters, dispatch, commit }) {
-    console.log('SYNCING bookmarks')
     // GET bookmarks from AWS
     let nextToken = null
     const remoteBookmarks = []

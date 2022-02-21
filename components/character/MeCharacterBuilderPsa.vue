@@ -47,44 +47,18 @@
           </v-card>
 
           <v-card outlined>
-            <v-card-title>Bespoke Species Traits</v-card-title>
-            <v-card-text>
-              <p>
-                Overall, selecting a species will apply any necessary modifiers to your character. But bespoke traits (Geth's Innate Shielding)
-                and multipart traits (Hanar's Tentacles, which has an attack, bonus action, action and limitation) are not accounted for.
-              </p>
-              <p>
-                <strong>Workaround:</strong> Overriding stats or creating custom features in the Custom tab of the
-                Settings. For example, for a Hanar's Tentacle attack you can create a Custom Bonus Action for the grapple
-                and a Custom Action for the Secret Toxin
-              </p>
-            </v-card-text>
-          </v-card>
-
-          <v-card outlined>
             <v-card-title>Class Features</v-card-title>
             <v-card-text>
               <p>
-                Ability Score Improvements and Proficiencies are working. Beyond that, limited use feature will have a counter
+                Ability Score Improvements, Fighting Styles, and Proficiencies are working. Beyond that, limited use features will have a counter
                 for keeping track of uses but nothing else. For example, it will not keep track of which metabiotics a Nemesis
-                Vanguard has selected. The only exception is Fighting Style selection.
+                Vanguard has selected.
               </p>
               <p>
                 <strong>Workaround:</strong> Using the Notes or creating custom features in the Custom tab of the Settings.
                 For example, if you're a 20th-level adept you could make a custom class feature named "Signature Biotics: Lance"
                 with 1 use on a short rest recharge, with a description "Cast at 2nd level".
               </p>
-            </v-card-text>
-          </v-card>
-
-          <v-card outlined>
-            <v-card-title>Feats</v-card-title>
-            <v-card-text>
-              <p>
-                Feats are the least developed feature. The few that are limited use have couters. Otherwise, you
-                will need to add any ability score improvements, proficiencies, and other features using the Settings.
-              </p>
-              <p><strong>Workaround:</strong> Adding ability score bonues and proficiences in the Settings tab. Creating custom features in the Custom tab of the Settings.</p>
             </v-card-text>
           </v-card>
 
@@ -105,8 +79,8 @@
             <v-card-title>Armor & AC</v-card-title>
             <v-card-text>
               <p>
-                Your AC is calculated based on the armor you have equipped! ... eeeeeexcept for mods and set bonuses and/or
-                anything else that adds to your AC or defenses.
+                Your AC is calculated based on the armor you have equipped! ... eeeeeexcept for mods and set bonuses. It
+                does include any species/feat bonuses.
               </p>
               <p>
                 <strong>Workaround:</strong> Use the Defensive tab in Settings to add a bonus or completely override your AC.
@@ -151,9 +125,6 @@
               </p>
               <ul>
                 <li>Death Saves</li>
-                <li>Hit Dice tracking</li>
-                <li>Advantage/Disadvantage notifications on saves/checks</li>
-                <li>Initiative</li>
                 <li>Inspiration</li>
               </ul>
               <p>

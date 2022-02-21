@@ -42,17 +42,10 @@ export const getters = {
       })
       const mDefenses = rootGetters['character/mechanics/mechanics'].filter(i => i.type === type)
       const allDefenses = oDefenses.concat(mDefenses)
-      const special = []
       const noteCache = [null]
       const typeCache = []
       const text = []
       for (const def of allDefenses) {
-        if (!def.value) {
-          if (def.note) {
-            special.push(def.note)
-          }
-          continue
-        }
         if (typeCache.includes(def.value)) {
           continue
         }
@@ -69,7 +62,7 @@ export const getters = {
           text.push({ id: def.value })
         }
       }
-      defenses[type] = { ...irv, type, text, special, notes: noteCache }
+      defenses[type] = { ...irv, type, text, notes: noteCache }
     }
     return defenses
   },

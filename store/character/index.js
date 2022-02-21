@@ -38,7 +38,6 @@ export const state = () => ({
 
 export const getters = {
   character: (state) => {
-    console.log('getting')
     return state.character
   },
   characterReady: (state, getters) => {
@@ -83,13 +82,21 @@ export const getters = {
           type: 'speed',
           speed,
           distance: getters.character.settings.speeds[speed],
-          note: 'overridden'
+          note: 'overridden',
+          bonus: 0
         }
         continue
       }
       const mSpeeds = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'speed' && i.speed === speed)
       if (mSpeeds.length) {
-        speeds[speed] = mSpeeds.sort((a, b) => b.distance - a.distance)[0]
+        const highestSpeed = mSpeeds.sort((a, b) => b.distance - a.distance)[0]
+        const bonusSpeed = rootGetters['character/mechanics/mechanics']
+          .filter(i => i.type === 'speed-bonus' && i.value.includes(speed))
+          .reduce((acc, curr) => acc + rootGetters['character/mechanics/mcBonus'](curr.bonus), 0)
+        speeds[speed] = {
+          ...highestSpeed,
+          distance: highestSpeed.distance + bonusSpeed
+        }
       }
     }
     return speeds
@@ -174,7 +181,6 @@ export const actions = {
         commit('SET_VIEW_ONLY', viewOnly)
         commit('SET_CHARACTER', characterData)
         if (triggerMigration && !viewOnly) {
-          console.log('triggering character migration')
           characterData.meta.remote = true
           await dispatch('REMOTE_UPDATE_CHARACTER')
         }
@@ -182,14 +188,12 @@ export const actions = {
         await dispatch('local/LOAD_CHARACTER', id)
       }
     } else {
-      console.log('loading local')
       await dispatch('local/LOAD_CHARACTER', id)
     }
     return getters.character
   },
   UPDATE_CHARACTER ({ dispatch, rootGetters, commit, getters, state }, { attr, value }) {
     if (state.viewOnly) {
-      console.log('viewOnly')
       return
     }
     const newValue = updateCharacter({ oldValue: getters.character, attr, value })

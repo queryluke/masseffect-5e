@@ -63,7 +63,6 @@ export default {
               subTitle.push(...selections.value.map(i => `+${i.amount} ${this.$t(`abilities.${i.ability}.title`)}`))
             }
             if (option.type === 'model-choice') {
-              console.log(selections)
               const selectionNames = selections.value
                 .map((i) => {
                   return this.$store.getters.getItem(i.type, i.value)?.name || false

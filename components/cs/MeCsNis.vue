@@ -135,7 +135,6 @@ export default {
       }
       this.shareTooltip = true
       setTimeout(() => {
-        console.log('setting to false')
         this.shareTooltip = false
       }, timeout)
     }

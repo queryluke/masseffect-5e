@@ -304,11 +304,12 @@ export const getters = {
         : null
 
       // RANGE
-      const shortRange = attackType === 'melee'
+      let shortRange = attackType === 'melee'
         ? reach
           ? 10
           : 5
         : weapon.data.range
+      shortRange += augments.range
       const longRange = attackType === 'ranged' && weapon.data.type !== 'natural-ranged'
         ? weaponType === 'shotgun'
           ? (weapon.data.range * 2)
@@ -426,6 +427,7 @@ export const getters = {
       attack: 0,
       damage: 0,
       dc: 0,
+      range: 0,
       notes: []
     }
     for (const at of Object.keys(augmentTypes)) {
@@ -442,6 +444,32 @@ export const getters = {
         }, augmentTypes[at])
     }
     return augmentTypes
+  },
+  tentacleBlenderText: (state, getters) => {
+    const tentacleBlender = [[1, 4, 'poison'], [1, 4, 'poison'], [1, 4, 'poison'], [1, 4, 'poison'], [1, 4, 'poison'], [1, 4, 'poison']]
+    let i = 0
+    for (const eqw of getters.equippedWeapons) {
+      // TODO: update when there are new melee weapons
+      if (eqw.data.type === 'melee') {
+        tentacleBlender[i] = [eqw.data.damage.dieCount, eqw.data.damage.dieType, eqw.data.damage.type]
+      } else {
+        tentacleBlender[i] = [1, 4, 'bludgeoning']
+      }
+      i++
+    }
+    const finalDamage = {}
+    for (const tbd of tentacleBlender) {
+      if (finalDamage[`${tbd[1]}-${tbd[2]}`]) {
+        finalDamage[`${tbd[1]}-${tbd[2]}`].dieCount += tbd[0]
+      } else {
+        finalDamage[`${tbd[1]}-${tbd[2]}`] = {
+          dieCount: tbd[0],
+          dieType: tbd[1],
+          type: tbd[2]
+        }
+      }
+    }
+    return Object.values(finalDamage).map(i => `${i.dieCount}d${i.dieType} ${i.type}`).join(' + ')
   }
 }
 

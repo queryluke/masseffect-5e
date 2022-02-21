@@ -78,7 +78,7 @@
             <div v-if="dc.note && layout !== 'attack'">
               {{ dc.note }}
             </div>
-            <span v-else class="text-uppercase">
+            <span v-else-if="layout === 'attack'" class="text-uppercase">
               {{ dc.save || '' }}
             </span>
           </template>
@@ -105,9 +105,7 @@
       </template>
 
       <template v-if="item.shortDesc" #shortDesc>
-        <small>
-          <me-html :content="interpolatedShortDesc" classes="text-caption" />
-        </small>
+        <me-cs-action-short-desc :short-desc="interpolatedShortDesc" />
       </template>
 
       <template #resource>
@@ -151,7 +149,10 @@ export default {
       abilityBreakdown: 'abilities/abilityBreakdown',
       profBonus: 'profBonus',
       mcBonus: 'mechanics/mcBonus',
-      mechanics: 'mechanics/mechanics'
+      mechanics: 'mechanics/mechanics',
+      tentacleBlenderText: 'equipment/tentacleBlenderText',
+      hp: 'hp/hp',
+      level: 'klasses/level'
     }),
     layout () {
       return this.item.layout ||
@@ -258,12 +259,17 @@ export default {
         let bonus = damage.bonus ? this.mcBonus(damage.bonus) : 0
         const mod = damage.mod ? this.abilityBreakdown[damage.mod].mod : 0
         bonus += mod
-        let text = `${damage.dieCount}`
-        if (damage.dieType) {
-          text += `d${damage.dieType}`
-        }
-        if (bonus !== 0) {
-          text += `${bonus > 0 ? ' +' : ' -'} ${Math.abs(bonus)}`
+        let text = ''
+        if (damage.dieCount) {
+          text = `${damage.dieCount}`
+          if (damage.dieType) {
+            text += `d${damage.dieType}`
+          }
+          if (bonus !== 0) {
+            text += `${bonus > 0 ? ' +' : ' -'} ${Math.abs(bonus)}`
+          }
+        } else {
+          text = bonus
         }
         damage.bonus = bonus
         damage.text = text
@@ -293,14 +299,17 @@ export default {
         wisMod: this.abilityBreakdown.wis.mod,
         intMod: this.abilityBreakdown.int.mod,
         chaMod: this.abilityBreakdown.cha.mod,
-        avatarsDie: this.mechanics.find(i => i.type === 'improved-avatars-inspiration') ? 'd8' : 'd4'
+        avatarsDie: this.mechanics.find(i => i.type === 'improved-avatars-inspiration') ? 'd8' : 'd4',
+        tentacleBlender: this.tentacleBlenderText,
+        hp: this.hp.current,
+        level: this.level
       }
     }
   },
   methods: {
     interpolatedText (text) {
       // might be better to do this with attrGetters or put it in the HTML?
-      const interpolations = ['dc', 'range', 'profBonus', 'strMod', 'conMod', 'wisMod', 'intMod', 'chaMod', 'avatarsDie']
+      const interpolations = ['dc', 'range', 'profBonus', 'strMod', 'conMod', 'wisMod', 'intMod', 'chaMod', 'avatarsDie', 'tentacleBlender', 'hp', 'level']
       const regex = new RegExp(`{{ ?([0-9]{1,3}|[+ ]|${interpolations.join('|')})+ ?}}`, 'g')
       if (!regex.test(text)) {
         return text

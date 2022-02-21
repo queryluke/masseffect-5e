@@ -62,6 +62,9 @@ export const getters = {
   },
   klasses: (state, getters) => {
     return getters.selectedKlasses.map((i, index) => {
+      if (i.id.startsWith('custom')) {
+        return i
+      }
       let data = getters.klassesList.find(j => j.id === i.id)
       if (index > 0) {
         data = { ...data, profs: state.multiclassProficiencies[i.id] }
