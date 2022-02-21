@@ -8,8 +8,8 @@
           </v-col>
           <v-col cols="12">
             <v-chip-group v-model="filter" active-class="primary--text">
-              <v-chip v-for="filter in filters" :key="filter" class="text-uppercase" small>
-                {{ filter }}
+              <v-chip v-for="filterChip in filters" :key="filterChip" class="text-uppercase" small>
+                {{ filterChip }}
               </v-chip>
             </v-chip-group>
           </v-col>

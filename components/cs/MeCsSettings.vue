@@ -521,10 +521,8 @@ export default {
       this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `settings.${stat}`, value })
     },
     updateAbility (value, ability, which) {
-      console.log(value)
       let intVal = parseInt(value, 10)
       intVal = isNaN(intVal) ? 0 : intVal
-      console.log(intVal)
       this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `abilityScores.${ability}.${which}`, value: intVal })
     }
   }
