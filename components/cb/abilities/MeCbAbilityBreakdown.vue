@@ -97,8 +97,9 @@ export default {
         return this.breakdown.other
       },
       set (val) {
-        const value = val ? parseInt(val) : null
-        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `abilityScores.${this.ability}.other`, value })
+        let intVal = parseInt(val, 10)
+        intVal = isNaN(intVal) ? 0 : intVal
+        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `abilityScores.${this.ability}.other`, value: intVal })
       }
     },
     override: {
@@ -106,8 +107,9 @@ export default {
         return this.breakdown.override
       },
       set (val) {
-        const value = val ? parseInt(val) : null
-        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `abilityScores.${this.ability}.override`, value })
+        let intVal = parseInt(val, 10)
+        intVal = isNaN(intVal) ? 0 : intVal
+        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `abilityScores.${this.ability}.override`, value: intVal })
       }
     },
     modText () {
