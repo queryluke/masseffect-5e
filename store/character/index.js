@@ -231,12 +231,13 @@ export const actions = {
       console.log(e)
     }
   },
-  async ROLL ({ dispatch }, payload) {
+  async ROLL ({ dispatch, rootGetters }, payload) {
     // ...stuff that rolls the dice
     const roll = new DiceRoll(payload.roll)
     const output = {
       data: {
         ...payload,
+        subtitle: payload.subtitle || rootGetters['character/character'].name,
         type: 'card',
         text: '<h2> Result: ' + roll.total + '</h2><div class="pt-2"><i>' + roll.output + '</i></div>',
         timestamp: new Date()

@@ -62,7 +62,14 @@
 
       <template v-if="hit" #hit>
         <me-cs-action-stat>
-          {{ modText(hit.bonus) }}
+          <me-cs-die-roller
+          :input="'1d20'+modText(hit.bonus)+''"
+          :data="{
+          ...hit,
+          title: item.name + ' - To Hit'
+          }">
+              {{ modText(hit.bonus) }}
+            </me-cs-die-roller>
         </me-cs-action-stat>
       </template>
 
@@ -88,7 +95,7 @@
       <template v-if="damages" #damage>
         <me-cs-action-stat v-for="(damage, index) in damages" :key="`damage-${index}`">
           <span :class="`${damage.healing ? damage.color : ''}`">
-            <me-cs-die-roller :input="damage.text" :data="{...damage, title: item.name}">
+            <me-cs-die-roller :input="damage.text" :data="{...damage, title: item.name + ' - Damage'}">
               {{ damage.text }}
             </me-cs-die-roller>
           </span>
@@ -207,6 +214,16 @@ export default {
       const bonus = hit.bonus ? this.mcBonus(hit.bonus) : 0
       const mod = hit.mod ? this.abilityBreakdown[hit.mod].mod : 0
       hit.bonus = bonus + mod + (hit.proficient ? this.profBonus : 0)
+      /* TODO: Add logic for multiple damage rolls */
+      const dmgRoll = this.damages && this.damages[0]
+      hit.actions = {
+        rollDamage: {
+          title: 'Roll Damage',
+          action: this.rollDamage,
+          params: [dmgRoll],
+          type: 'btn'
+        }
+      }
       return hit
     },
     range () {
@@ -235,24 +252,7 @@ export default {
         type: false,
         mod: false,
         bonus: false,
-        healing: false,
-        rollDamage () {
-          console.log('rolling damage...', this)
-          const roll = this.text
-          this.$store.dispatch('character/ROLL',
-            {
-              title: this.name || 'Attack Roll',
-              subtitle: this.$store.getters['character/character'].name,
-              type: 'dice-roll',
-              actions: [{
-                title: 'Roll Again',
-                action: this.rollDamage,
-                params: [this],
-                type: 'btn'
-              }],
-              roll
-            })
-        }
+        healing: false
       }
       return this.item.damage.map((i) => {
         const damage = { ...damageDefault, ...i }
@@ -331,6 +331,15 @@ export default {
         return this.interpolations[replacement]
       })
       return interpolated
+    },
+    rollDamage (dmgRoll) {
+      console.log('rolling damage from to-hit...', { dmgRoll })
+      this.$store.dispatch('character/ROLL',
+        {
+          title: this.item.name ? this.item.name + ' - Damage' : 'Damage Roll',
+          type: 'dice-roll',
+          roll: dmgRoll.text
+        })
     }
   }
 }

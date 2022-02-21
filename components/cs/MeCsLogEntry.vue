@@ -10,7 +10,6 @@
         </v-card-subtitle>
         <v-card-text>
           <div v-html="data.text"></div>
-          <div class="text-right"><small>{{timeString}}</small></div>
         </v-card-text>
         <v-card-actions>
           <template v-for="(action, index) in data.actions">
@@ -21,6 +20,7 @@
         </v-card-actions>
       </v-card>
     </template>
+    <div class="text-right"><small>{{timeString}}</small></div>
   </div>
 </template>
 
@@ -34,16 +34,18 @@ export default {
     }
   },
   computed: {
+    isMetric () {
+      return this.$store.getters['user/imperial']
+    },
     timeString () {
-      console.log(this.data)
       if (!this.data.timestamp) { return '' }
       const ts = new Date(this.data.timestamp)
       const dateObj = ts
-      const month = dateObj.getUTCMonth() + 1 // months from 1-12
-      const day = dateObj.getUTCDate()
-      const year = dateObj.getUTCFullYear()
-
-      return year + '/' + month + '/' + day + ' ' + ts.toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, '$1$3')
+      const month = dateObj.getMonth() + 1 // months from 1-12
+      const day = dateObj.getDate()
+      const year = dateObj.getFullYear()
+      const mdy = !this.isMetric ? day + '/' + month + '/' + year : month + '/' + day + '/' + year
+      return mdy + ' ' + ts.toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, '$1$3') // don't ask
     }
   }
 }

@@ -10,7 +10,7 @@
         v-model="snackbar"
         vertical
         right
-        :timeout="persist ? -1 : 8000"
+        :timeout="persist ? -1 : timeoutMax"
         max-height="70vh"
         @click="persist = true"
       >
@@ -43,7 +43,8 @@
 export default {
   data: () => ({
     snackbar: false,
-    persist: false
+    persist: false,
+    timeoutMax: 8000
   }),
   computed: {
     logs () {

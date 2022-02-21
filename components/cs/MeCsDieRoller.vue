@@ -1,6 +1,6 @@
 <template>
   <div :class="'roll-container' + slotState ">
-    <v-icon :class="'die-icon'" @click.stop="roll">{{icon}}</v-icon>
+    <v-icon :class="'die-icon'" @click.stop="rollMe">{{icon}}</v-icon>
     <span class="roll-text">
       <slot />
     </span>
@@ -28,24 +28,31 @@ export default {
   computed: {
     slotState () {
       return this.$slots.default ? '' : '-empty'
+    },
+    actions () {
+      // Setting this up so we can expand on this to control / exclude certain actions later if needed
+      const _actions = {
+        rollAgain: {
+          title: 'Roll Again',
+          action: this.rollMe,
+          type: 'btn'
+        }
+      }
+      return {
+        ..._actions,
+        ...this.data.actions
+      }
     }
   },
   methods: {
-    roll () {
-      console.log('rolling damage', this.data)
+    rollMe (newRoll) {
+      console.log('rolling...', { actions: this.actions, data: this.data })
       const roll = this.input
       this.$store.dispatch('character/ROLL',
         {
           title: this.data.title || 'Roll',
-          subtitle: this.data.subtitle || this.$store.getters['character/character'].name,
           type: 'dice-roll',
-          /*
-          actions: [{
-            title: 'Roll Again',
-            action: this.roll,
-            params: [this],
-            type: 'btn'
-          }], */
+          actions: this.actions,
           roll
         })
     }
