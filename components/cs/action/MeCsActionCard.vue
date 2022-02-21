@@ -88,7 +88,9 @@
       <template v-if="damages" #damage>
         <me-cs-action-stat v-for="(damage, index) in damages" :key="`damage-${index}`">
           <span :class="`${damage.healing ? damage.color : ''}`">
-            {{ damage.text }}
+            <me-cs-die-roller :input="damage.text" :data="{...damage, title: item.name}">
+              {{ damage.text }}
+            </me-cs-die-roller>
           </span>
           <template #subtitle>
             <span :class="`${damage.healing ? damage.color : ''}`">
@@ -232,7 +234,24 @@ export default {
         type: false,
         mod: false,
         bonus: false,
-        healing: false
+        healing: false,
+        rollDamage () {
+          console.log('rolling damage...', this)
+          const roll = this.text
+          this.$store.dispatch('character/ROLL',
+            {
+              title: this.name || 'Attack Roll',
+              subtitle: this.$store.getters['character/character'].name,
+              type: 'dice-roll',
+              actions: [{
+                title: 'Roll Again',
+                action: this.rollDamage,
+                params: [this],
+                type: 'btn'
+              }],
+              roll
+            })
+        }
       }
       return this.item.damage.map((i) => {
         const damage = { ...damageDefault, ...i }
