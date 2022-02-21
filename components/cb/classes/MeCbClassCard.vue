@@ -240,6 +240,16 @@ export default {
         return this.klass.hpOverride
       },
       set (value) {
+        if (value === false) {
+          const hp = this.klass.hitPoints.slice()
+          let i = 1
+          const adder = Math.ceil((this.klass.data.hitDie + 1) / 2)
+          while (i < this.klassLevel) {
+            hp[i] = adder
+            i++
+          }
+          this.updateKlass('hitPoints', hp)
+        }
         this.updateKlass('hpOverride', value)
       }
     },
