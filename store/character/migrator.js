@@ -91,10 +91,10 @@ export const actions = {
     for (const [key, score] of Object.entries(character.abilityScores[type])) {
       abilityScores[key].value = score
       if (character.abilityScores.other[key]) {
-        abilityScores[key].other = character.abilityScores.other[key]
+        abilityScores[key].other = parseInt(character.abilityScores.other[key], 10) || null
       }
       if (character.abilityScores.override[key]) {
-        abilityScores[key].other = character.abilityScores.override[key]
+        abilityScores[key].override = parseInt(character.abilityScores.override[key], 10) || null
       }
     }
     character.options.asiGenMethod = character.abilityScores.genMethod.value
