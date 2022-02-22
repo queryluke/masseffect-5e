@@ -106,7 +106,7 @@ export const actions = {
       for (const fs of character.fightingStyles) {
         const klassId = fs.id.split('-').slice(-1)
         character.selected.push({
-          path: `klass/${klassId}/fighting-style/fighting-styles`,
+          path: `klass/${klassId}/fighting-style-${klassId}/fighting-styles`,
           value: [
             { type: 'fighting-styles', value: 'FS_' + fs.name.toLowerCase().replaceAll(' ', '-') }
           ]

@@ -19,10 +19,12 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col class="text-center d-flex justify-space-around">
+      <v-col class="text-center">
         <v-btn :loading="loading" @click="createNewCharacter">
           New Character
         </v-btn>
+      </v-col>
+      <v-col class="text-center d-flex justify-space-around">
         <me-character-import-btn />
       </v-col>
     </v-row>
