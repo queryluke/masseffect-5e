@@ -145,7 +145,7 @@ export default {
         setTimeout(() => {
           this.customArmorAdded = false
           this.tab = 0
-          this.customArmor = this.defaultCustomArmor
+          this.customArmor = { ...this.defaultCustomArmor }
         }, 1000)
       }
     }
