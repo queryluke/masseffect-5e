@@ -1,5 +1,5 @@
 <template>
-  <me-species-trait v-if="asis.length" :label="$t('ability_score_increase_title')">
+  <me-species-trait v-if="asis.length || item.abilityScoreIncrease" :label="$t('ability_score_increase_title')">
     {{ abilityScoreIncreaseText }}
   </me-species-trait>
 </template>
@@ -14,7 +14,7 @@ export default {
   },
   computed: {
     asis () {
-      return this.item.mechanics?.filter(i => i.type === 'asi')
+      return (this.item.mechanics || []).filter(i => i.type === 'asi')
     },
     abilityScoreIncreaseText () {
       if (this.item.abilityScoreIncrease) {
