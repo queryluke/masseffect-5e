@@ -1,10 +1,20 @@
 <template>
-  <v-card outlined flat :color="item.disabled && item.learned ? 'error' : undefined">
+  <v-card outlined flat>
     <div class="d-flex justify-space-between align-start">
       <div class="d-flex align-center px-2">
-        <v-icon v-if="item.disabled && item.learned" color="error">
-          mdi-alert
-        </v-icon>
+        <v-tooltip v-if="item.disabled && item.learned" bottom>
+          <template #activator="{ on, attrs }">
+            <v-icon
+              color="error"
+              v-bind="attrs"
+              v-on="on"
+            >
+              mdi-alert
+            </v-icon>
+          </template>
+          <span>You no longer meet the requirements for this power</span>
+        </v-tooltip>
+
         <v-avatar size="22">
           <v-img :src="require(`~/assets/images/powers/${item.type}.svg`)" />
         </v-avatar>
