@@ -1,5 +1,6 @@
 <template>
   <div>
+    <me-cs-radial-menu />
     <div class="open-log-btn">
       <!--v-btn @click="snackbar = true">
         LOGS
@@ -10,7 +11,7 @@
         v-model="snackbar"
         vertical
         right
-        :timeout="persist ? -1 : timeoutMax"
+        :timeout="-1"
         max-height="70vh"
         @click="persist = true"
       >
@@ -43,7 +44,7 @@
 export default {
   data: () => ({
     snackbar: false,
-    persist: false,
+    persist: true,
     timeoutMax: 8000
   }),
   computed: {

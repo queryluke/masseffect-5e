@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     rollMe (newRoll) {
-      console.log('rolling...', { actions: this.actions, data: this.data })
+      console.log('rolling...', { actions: this.actions, data: this.data, input: this.input })
       const roll = this.input
       this.$store.dispatch('character/ROLL',
         {

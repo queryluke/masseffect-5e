@@ -13029,6 +13029,13 @@ vue-no-ssr@^1.1.1:
   resolved "https://registry.yarnpkg.com/vue-no-ssr/-/vue-no-ssr-1.1.1.tgz#875f3be6fb0ae41568a837f3ac1a80eaa137b998"
   integrity sha512-ZMjqRpWabMPqPc7gIrG0Nw6vRf1+itwf0Itft7LbMXs2g3Zs/NFmevjZGN1x7K3Q95GmIjWbQZTVerxiBxI+0g==
 
+vue-radial-menu@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/vue-radial-menu/-/vue-radial-menu-1.1.1.tgz#a955c856284d726077e83d490e4446acba3fd765"
+  integrity sha512-SySXDESYZPxOe4mxOWp77qUOJUW9o2n7co1Po9NSiEkfoZsPVtVK7iH/I4fBnGAN+ltGDcUYqiQ0Q7A8qggYQA==
+  dependencies:
+    vue "^2.5.17"
+
 vue-router@^3.5.1:
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.5.3.tgz#041048053e336829d05dafacf6a8fb669a2e7999"
@@ -13074,7 +13081,7 @@ vue2-filters@^0.12.0:
   resolved "https://registry.yarnpkg.com/vue2-filters/-/vue2-filters-0.12.0.tgz#6b90e8ed2104d3590d498d7d26fbb43c12af940d"
   integrity sha512-9t70uXg1Pvf9ZF4tun2ZZVcv5+qd+0JJLBuAKUy4Nm0Ihaxo5Nn6iiMsBzuzwUyQIGPq3bSnk4boEVQJFN1DlQ==
 
-vue@^2.6.12:
+vue@^2.5.17, vue@^2.6.12:
   version "2.6.14"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.14.tgz#e51aa5250250d569a3fbad3a8a5a687d6036e235"
   integrity sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==

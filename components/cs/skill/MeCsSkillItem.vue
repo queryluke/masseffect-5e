@@ -15,7 +15,7 @@
       <me-cs-die-bonus-icon v-for="(db, index) of dieBonus" :key="`die-bonus-${index}`" :bonus="db.effect" />
       <v-card outlined class="text-center" min-width="40px">
         <me-cs-die-roller
-        :input="'1d20' + modText(item.mod)"
+        :input="'1d20' + rollText(item.mod)"
         :data="rollInfo">
           {{ modText(item.mod) }}
         </me-cs-die-roller>

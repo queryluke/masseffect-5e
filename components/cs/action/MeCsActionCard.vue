@@ -63,7 +63,7 @@
       <template v-if="hit" #hit>
         <me-cs-action-stat>
           <me-cs-die-roller
-          :input="'1d20'+modText(hit.bonus)+''"
+          :input="'1d20'+rollText(hit.bonus)+''"
           :data="{
           ...hit,
           title: item.name + ' - To Hit'
@@ -216,12 +216,14 @@ export default {
       hit.bonus = bonus + mod + (hit.proficient ? this.profBonus : 0)
       /* TODO: Add logic for multiple damage rolls */
       const dmgRoll = this.damages && this.damages[0]
-      hit.actions = {
-        rollDamage: {
-          title: 'Roll Damage',
-          action: this.rollDamage,
-          params: [dmgRoll],
-          type: 'btn'
+      if (dmgRoll) {
+        hit.actions = {
+          rollDamage: {
+            title: 'Roll Damage',
+            action: this.rollDamage,
+            params: [dmgRoll],
+            type: 'btn'
+          }
         }
       }
       return hit
