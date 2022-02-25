@@ -1,6 +1,6 @@
 <template>
   <div>
-    <me-cs-radial-menu />
+    <!--me-cs-radial-menu /-->
     <div class="open-log-btn">
       <!--v-btn @click="snackbar = true">
         LOGS

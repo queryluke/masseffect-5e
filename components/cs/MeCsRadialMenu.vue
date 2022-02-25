@@ -1,7 +1,8 @@
-<template>
-  <div class="me-cs-radial-menu" :style="'bottom:'+this.yPos+'px; left: '+this.xPos+'px;'">
+<!--template :style="'display: ' + showMenu ? 'inherit' : 'inherit' ">
+  <div class="me-cs-radial-menu-container">
     <radial-menu
-      style="margin: auto; margin-top: 300px; background-color: white"
+      class="me-cs-radial-menu"
+      :style="'top:'+this.yPos+'px; left: '+this.xPos+'px; z-index: 200;'"
       :itemSize="50"
       :radius="120"
       :angle-restriction="180">
@@ -38,51 +39,17 @@ export default {
     },
     moveToPress (event) {
       console.log(event)
-      this.xPos = event.layerX
-      this.yPos = event.layerY
+      this.showMenu = true
+      this.xPos = event.view.innerWidth / 2 - 30
+      this.yPos = event.view.innerHeight / 2 - 30
     }
   },
   mounted () {
-    // Define variable
-    let pressTimer = null
-
-    // Define funtion handlers
-    // Create timeout ( run function after 1s )
-    const start = (e) => {
-      if (e.type === 'click' && e.button !== 0) {
-        return
+    window.addEventListener('keydown', (e) => {
+      if (e.key === '\\') {
+        this.moveToPress(e)
       }
-
-      if (pressTimer === null) {
-        pressTimer = setTimeout(() => {
-          // Run function
-          handler(e)
-        }, 1000)
-      }
-    }
-
-    // Cancel Timeout
-    const cancel = (e) => {
-      // Check if timer has a value or not
-      if (pressTimer !== null) {
-        clearTimeout(pressTimer)
-        pressTimer = null
-      }
-    }
-    // Run Function
-    const handler = (e) => {
-      this.moveToPress(e)
-      cancel()
-    }
-
-    // Add Event listeners
-    document.addEventListener('mousedown', start)
-    document.addEventListener('touchstart', start)
-    // Cancel timeouts if this events happen
-    document.addEventListener('click', cancel)
-    // el.addEventListener('mouseout', cancel)
-    document.addEventListener('touchend', cancel)
-    document.addEventListener('touchcancel', cancel)
+    })
   }
 }
 </script>
@@ -91,4 +58,4 @@ export default {
 .me-cs-radial-menu {
   position: fixed;
 }
-</style>
+</style-->
