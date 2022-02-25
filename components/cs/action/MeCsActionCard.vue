@@ -268,7 +268,7 @@ export default {
             text += `d${damage.dieType}`
           }
           if (bonus !== 0) {
-            text += `${bonus > 0 ? ' +' : ' -'} ${Math.abs(bonus)}`
+            text += this.damageText(bonus)
           }
         } else {
           text = bonus
