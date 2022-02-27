@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div class="fixed-menu">
+    <div class="fixed-menu" :style="'left: ' + left + 'px;'">
       <v-row>
         <v-col class="pa-0">
           <me-cs-die-roller-menu />
         </v-col>
         <v-col class="pa-0">
-          <v-btn class="mt-1 ml-2" fab color="secondary" @click.stop="snackbar = true">
-            <v-icon>mdi-text</v-icon>
+          <v-btn class="mt-1 ml-2" fab color="secondary" @click.stop="snackbar = !snackbar">
+            <v-icon>{{snackbar ? 'mdi-close' : 'mdi-text'}}</v-icon>
           </v-btn>
         </v-col>
       </v-row>
@@ -16,6 +16,7 @@
       <v-snackbar
         v-model="snackbar"
         vertical
+        right
         :timeout="-1"
         max-height="70vh"
         @click="persist = true"
@@ -45,6 +46,12 @@ export default {
     persist: true,
     timeoutMax: 8000
   }),
+  props: {
+    left: {
+      type: Number,
+      default: () => 300
+    }
+  },
   computed: {
     logs () {
       return this.$store.getters['character/logs'] || []

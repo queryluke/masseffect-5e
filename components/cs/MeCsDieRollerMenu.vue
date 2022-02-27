@@ -49,10 +49,10 @@
     <v-dialog
       v-model="customRollerDialog.open"
       persistent
-      width="500"
+      width="300"
     >
       <v-card>
-        <v-card-title>Specify a custom roll below</v-card-title>
+        <v-card-title>Specify a Custom Roll</v-card-title>
         <v-card-subtitle>For example: 1d20 - 1d4 + 2</v-card-subtitle>
         <v-card-text>
           <v-text-field v-model="customRollerDialog.roll" placeholder="1d20 - 1d4 + 2" prepend-icon="mdi-dice-multiple">

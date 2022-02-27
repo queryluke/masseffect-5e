@@ -237,6 +237,7 @@ export const actions = {
     const output = {
       data: {
         ...payload,
+        result: roll.total,
         subtitle: payload.subtitle || rootGetters['character/character'].name,
         type: 'card',
         text: '<h2> Result: ' + roll.total + '</h2><div class="pt-2"><i>' + roll.output + '</i></div>',

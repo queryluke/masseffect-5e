@@ -1,5 +1,6 @@
 <template>
   <v-container style="max-width: 1200px">
+    <me-cs-log-snackbar />
     <v-row>
       <v-col cols="4">
         <me-cs-main-menu />
@@ -66,11 +67,6 @@
                     <me-cs-notes />
                   </v-card-text>
                 </v-tab-item>
-                <v-tab-item>
-                  <v-card-text>
-                    <me-cs-logs />
-                  </v-card-text>
-                </v-tab-item>
               </v-tabs-items>
             </div>
           </div>
@@ -126,7 +122,7 @@ export default {
   data () {
     return {
       tab: null,
-      tabs: ['Actions', 'Powers', 'Gear', 'Features', 'Details', 'Notes', 'Logs'],
+      tabs: ['Actions', 'Powers', 'Gear', 'Features', 'Details', 'Notes'],
       showSettings: false
     }
   }

@@ -1,7 +1,17 @@
 <template>
-  <div class="log-entry pa-2">
+  <div class="log-entry pa-2" @click="showTimestamp = !showTimestamp">
     <template v-if="data.type == 'card' " class="">
-      <v-card class="card-log-entry" width="100%">
+      <v-simple-table>
+        <template v-slot:default>
+          <tbody>
+            <tr>
+              <td>{{ data.title }}</td>
+              <td class="text-right">Result: {{ data.result || data.text }}</td>
+            </tr>
+          </tbody>
+        </template>
+      </v-simple-table>
+      <!--v-card class="card-log-entry" width="100%">
         <v-card-title>
           {{data.title}}
         </v-card-title>
@@ -18,9 +28,11 @@
             </v-btn>
           </template>
         </v-card-actions>
-      </v-card>
+      </v-card-->
     </template>
-    <div class="text-right"><small>{{timeString}}</small></div>
+    <div v-show="showTimestamp" transition="scroll-y-transition" class="text-right">
+      <small>{{timeString}}</small>
+    </div>
   </div>
 </template>
 
@@ -31,6 +43,11 @@ export default {
     data: {
       type: Object,
       default: () => {}
+    }
+  },
+  data () {
+    return {
+      showTimestamp: false
     }
   },
   computed: {
