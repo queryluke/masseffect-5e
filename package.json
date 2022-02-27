@@ -19,12 +19,13 @@
     "test": "jest"
   },
   "dependencies": {
+    "@dice-roller/rpg-dice-roller": "^5.1.0",
     "@nuxt/http": "^0.6.4",
     "@nuxtjs/i18n": "^7.2.0",
     "@nuxtjs/pwa": "^3.3.5",
     "aws-amplify": "^4.3.11",
-    "jsonpack": "^1.1.5",
     "core-js": "^3.19.1",
+    "jsonpack": "^1.1.5",
     "lodash": "^4.17.21",
     "lunr": "^2.3.9",
     "nuxt": "^2.15.8",

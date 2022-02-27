@@ -13,9 +13,13 @@
     <div class="text-h6 d-flex align-center">
       <me-cs-ad-icons type="skill-check" :value="item.id" />
       <me-cs-die-bonus-icon v-for="(db, index) of dieBonus" :key="`die-bonus-${index}`" :bonus="db.effect" />
-      <span class="pl-1">
-        {{ modText(item.mod) }}
-      </span>
+      <v-card outlined class="text-center" min-width="40px">
+        <me-cs-die-roller
+        :input="'1d20' + rollText(item.mod)"
+        :data="rollInfo">
+          {{ modText(item.mod) }}
+        </me-cs-die-roller>
+      </v-card>
     </div>
   </div>
 </template>
@@ -35,6 +39,13 @@ export default {
   computed: {
     dieBonus () {
       return this.item.otherBonuses.filter(i => i.effect?.type === 'die-bonus')
+    },
+    rollInfo () {
+      const modStr = '(' + this.modText(this.item.mod) + ')'
+      return {
+        roll: '1d20+' + this.item.mod + '',
+        title: 'Skill Check: ' + this.item.name + ' ' + modStr
+      }
     }
   }
 }

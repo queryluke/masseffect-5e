@@ -1,5 +1,6 @@
 <template>
   <v-container style="max-width: 1200px">
+    <me-cs-log-snackbar />
     <v-row>
       <v-col cols="4">
         <me-cs-main-menu />
