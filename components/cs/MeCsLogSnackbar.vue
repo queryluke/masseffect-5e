@@ -1,16 +1,21 @@
 <template>
   <div>
-    <!--me-cs-radial-menu /-->
-    <div>
-      <me-cs-die-roller-menu />
-    </div>
-    <div class="open-log-btn">
+    <div class="fixed-menu">
+      <v-row>
+        <v-col class="pa-0">
+          <me-cs-die-roller-menu />
+        </v-col>
+        <v-col class="pa-0">
+          <v-btn class="mt-1 ml-2" fab color="secondary" @click.stop="snackbar = true">
+            <v-icon>mdi-text</v-icon>
+          </v-btn>
+        </v-col>
+      </v-row>
     </div>
     <div class="text-center ma-2 snackbar-container" >
       <v-snackbar
         v-model="snackbar"
         vertical
-        right
         :timeout="-1"
         max-height="70vh"
         @click="persist = true"
@@ -18,21 +23,14 @@
         <me-cs-logs />
         <template v-slot:action="{ attrs }">
           <div>
-          <!--v-checkbox
-            class="text-left"
-            v-model="persist"
-            :label="'Keep Log Open'"
-          ></v-checkbox-->
-          </div>
-          <div>
-          <v-btn
-            color="pink"
-            text
-            v-bind="attrs"
-            @click="snackbar = false; persist=false;"
-          >
-            Close
-          </v-btn>
+            <v-btn
+              color="pink"
+              text
+              v-bind="attrs"
+              @click="snackbar = false; persist=false;"
+            >
+              Close
+            </v-btn>
           </div>
         </template>
       </v-snackbar>
@@ -68,6 +66,12 @@ export default {
 </script>
 
 <style lang="scss">
+.fixed-menu {
+  position: fixed;
+  left: 300px;
+  bottom: 16px;
+  z-index: 300;
+}
 .v-snack__content {
   width: 100%;
   overflow: auto;
