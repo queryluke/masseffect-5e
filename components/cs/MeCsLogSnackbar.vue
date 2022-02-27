@@ -1,10 +1,10 @@
 <template>
   <div>
     <!--me-cs-radial-menu /-->
+    <div>
+      <me-cs-die-roller-menu />
+    </div>
     <div class="open-log-btn">
-      <!--v-btn @click="snackbar = true">
-        LOGS
-      </v-btn-->
     </div>
     <div class="text-center ma-2 snackbar-container" >
       <v-snackbar

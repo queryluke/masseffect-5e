@@ -8,7 +8,7 @@
         <v-card-subtitle>
           {{data.subtitle}}
         </v-card-subtitle>
-        <v-card-text>
+        <v-card-text class="card-text">
           <div v-html="data.text"></div>
         </v-card-text>
         <v-card-actions>
@@ -57,5 +57,6 @@ export default {
 }
 .v-card__text {
   padding-bottom: 0;
+  max-width: 300px;
 }
 </style>
