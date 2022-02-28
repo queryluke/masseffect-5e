@@ -46,11 +46,7 @@
         </v-row>
       </template>
     </v-speed-dial>
-    <v-dialog
-      v-model="customRollerDialog.open"
-      persistent
-      width="300"
-    >
+    <v-dialog v-model="customRollerDialog.open" persistent width="300">
       <v-card>
         <v-card-title>Specify a Custom Roll</v-card-title>
         <v-card-subtitle>For example: 1d20 - 1d4 + 2</v-card-subtitle>
@@ -104,6 +100,7 @@ export default {
     chunkedArr () {
       const a = chunk(this.dice, 2)
       a.pop()
+      a.reverse()
       return a
     },
     rollControllerEmpty () {
