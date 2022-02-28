@@ -1,18 +1,19 @@
 <template>
   <div>
-    <div class="fixed-menu" :style="'left: ' + left + 'px;'">
+    <div :class="'fixed-menu ' + (leftNav ? 'fixed-menu-with-nav' : '') ">
+      {{leftNav}}
       <v-row>
         <v-col class="pa-0">
           <me-cs-die-roller-menu />
         </v-col>
         <v-col class="pa-0">
-          <v-btn class="mt-1 ml-2" fab color="secondary" @click.stop="snackbar = !snackbar">
-            <v-icon>{{snackbar ? 'mdi-close' : 'mdi-text'}}</v-icon>
+          <v-btn class="mt-1 ml-2" fab color="secondary" @click.stop="logNav = !logNav">
+            <v-icon>{{logNav ? 'mdi-close' : 'mdi-text'}}</v-icon>
           </v-btn>
         </v-col>
       </v-row>
     </div>
-    <div class="text-center ma-2 snackbar-container" >
+    <!--div class="text-center ma-2 snackbar-container" >
       <v-snackbar
         v-model="snackbar"
         vertical
@@ -35,7 +36,7 @@
           </div>
         </template>
       </v-snackbar>
-    </div>
+    </div-->
   </div>
 </template>
 
@@ -55,18 +56,18 @@ export default {
   computed: {
     logs () {
       return this.$store.getters['character/logs'] || []
-    }
-  },
-  watch: {
-    logs (newVal, oldVal) {
-      if (newVal && newVal.length && newVal.length !== oldVal.length) {
-        this.snackbar = true
-        // need this to get the correct height after update
-        setTimeout(() => {
-          const container = this.$el.querySelector('.v-snack__content')
-          container.scrollTop = container.scrollHeight
-        }, 100)
+    },
+    logNav: {
+      get () {
+        return this.$store.getters['character/logNav']
+      },
+      set (value) {
+        this.$store.commit('character/logNav', value)
       }
+    },
+    leftNav () {
+      const d = this.$store.getters.drawer
+      return d
     }
   }
 }
@@ -75,9 +76,12 @@ export default {
 <style lang="scss">
 .fixed-menu {
   position: fixed;
-  left: 300px;
-  bottom: 16px;
+  left: 30px;
+  bottom: 24px;
   z-index: 300;
+}
+.fixed-menu-with-nav {
+  left: 300px;
 }
 .v-snack__content {
   width: 100%;

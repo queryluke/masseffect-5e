@@ -25,10 +25,19 @@ export default {
   computed: {
     logs () {
       return this.$store.getters['character/logs'] || []
+    },
+    logNav: {
+      get () {
+        return this.$store.getters['character/logNav']
+      },
+      set (value) {
+        this.$store.commit('character/logNav', value)
+      }
     }
   },
   methods: {
     clearLogs () {
+      this.logNav = false
       return this.$store.dispatch('character/LOG_DESTROY')
     }
   }
@@ -39,9 +48,6 @@ export default {
 .skill-compact {
   margin: 0 !important;
   max-width: 200px;
-}
-.v-card {
-  width: 100%;
 }
 .list-enter, .list-leave-to {
   opacity: 0;

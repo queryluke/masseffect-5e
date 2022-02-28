@@ -33,6 +33,7 @@ export const state = () => ({
     mechanics: [],
     html: '<p>Use the character sheet settings to add any proficiencies</p>'
   },
+  logNav: false,
   viewOnly: false
 })
 
@@ -65,6 +66,7 @@ export const getters = {
       return rootState.characters.localLogs[getters.id]
     }
   },
+  logNav: state => state.logNav,
   profBonus: (state, getters, rootState, rootGetters) => {
     return [0, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6][rootGetters['character/klasses/level']]
   },
@@ -154,6 +156,9 @@ export const mutations = {
   },
   SET_VIEW_ONLY (state, value) {
     state.viewOnly = value
+  },
+  logNav (state, value) {
+    state.logNav = value
   }
 }
 
@@ -240,7 +245,7 @@ export const actions = {
         result: roll.total,
         subtitle: payload.subtitle || rootGetters['character/character'].name,
         type: 'card',
-        text: '<h2> Result: ' + roll.total + '</h2><div class="pt-2"><i>' + roll.output + '</i></div>',
+        text: '<div><strong>Result: ' + roll.total + '</strong></div><div class="pt-1"><i>' + roll.output + '</i></div>',
         timestamp: new Date()
       }
     }

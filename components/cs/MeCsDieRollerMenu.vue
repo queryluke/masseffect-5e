@@ -109,7 +109,6 @@ export default {
   },
   methods: {
     addToDie (die) {
-      console.log('adding to die', die, this.roll)
       this.$set(this.rollController, die, this.rollController[die] + 1 || 0)
     },
     closeMenu () {
@@ -122,6 +121,7 @@ export default {
     customRoll (roll) {
       try {
         this.postRollResults(roll)
+        this.customRollerDialog.open = false
       } catch (e) {
         alert('Something went wrong... Are you sure you typed your roll out correctly?')
       }
@@ -138,7 +138,6 @@ export default {
       }
       this.rollController = {}
       this.menu.open = false
-      console.log(output)
       if (output !== '') { return this.postRollResults(output) }
     },
     postRollResults (roll) {
@@ -153,7 +152,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="css">
 .v-speed-dial__list {
   align-items: flex-start;
 }
