@@ -1,6 +1,6 @@
 <template>
   <div class="mb-16 mx-1">
-    <me-cs-log-snackbar left="30"/>
+    <me-cs-log-snackbar :left="30" />
     <div v-if="mobileView === 'abilities'">
       <me-cs-card>
         <me-cs-abilities />

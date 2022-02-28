@@ -1,8 +1,8 @@
 <template>
   <div class="mx-sm-4">
-    <me-character-sheet-card-title v-if="$vuetify.breakpoint.smAndDown">
+    <me-cs-card-title v-if="$vuetify.breakpoint.smAndDown">
       Actions
-    </me-character-sheet-card-title>
+    </me-cs-card-title>
     <v-chip-group v-model="tab" active-class="primary--text" column>
       <v-chip
         v-for="(cTab, index) in tabs"
