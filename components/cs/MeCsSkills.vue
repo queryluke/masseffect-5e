@@ -16,7 +16,7 @@
     <v-row no-gutters>
       <v-col v-for="(split, index) of splits" :key="`skill-split-${index}`" cols="12" md="4">
         <v-list dense>
-          <template v-for="skill in skillArray.slice(...split)">
+          <template v-for="(skill) in skillArray.slice(...split)">
             <me-cs-skill-item :key="skill[0]" :item="skill[1]" />
           </template>
         </v-list>
@@ -27,6 +27,7 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
+// import * as RpgDiceRoller from '@dice-roller/rpg-dice-roller'
 const { mapGetters } = createNamespacedHelpers('character/skills')
 
 export default {
@@ -44,6 +45,13 @@ export default {
     ...mapGetters(['skills', 'allSkillsBonus']),
     skillArray () {
       return Object.entries(this.skills)
+    }
+  },
+  methods: {
+    getRandomInt (min, max) {
+      min = Math.ceil(min)
+      max = Math.floor(max)
+      return Math.floor(Math.random() * (max - min + 1)) + min
     }
   }
 }

@@ -44,14 +44,16 @@
             <small>Initiative</small>
           </div>
           <div class="text-h6 d-flex justify-center align-center">
-            <me-cs-ad-icon
-              v-if="(initiativeAd && !initiativeDis) || (!initiativeAd && initiativeDis)"
-              :type="initiativeAd ? 'a' : 'd'"
-              class="mr-1"
-            />
-            <span>
-              {{ initiativeBonus > 0 ? '+' : '' }}{{ initiativeBonus }}
-            </span>
+            <me-cs-die-roller :input="'1d20' + rollText(initiativeBonus)" :data="{title: 'Initiative Roll'}">
+              <me-cs-ad-icon
+                v-if="(initiativeAd && !initiativeDis) || (!initiativeAd && initiativeDis)"
+                :type="initiativeAd ? 'a' : 'd'"
+                class="mr-1"
+              />
+              <span>
+                {{ initiativeBonus > 0 ? '+' : '' }}{{ initiativeBonus }}
+              </span>
+            </me-cs-die-roller>
           </div>
         </v-card>
       </v-col>
@@ -73,9 +75,11 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
+import { ScoreText } from '~/mixins/character/scoreText'
 const { mapGetters } = createNamespacedHelpers('character')
 export default {
   name: 'MeCsApsi',
+  mixins: [ScoreText],
   data () {
     return {
       addlSpeedDialog: false

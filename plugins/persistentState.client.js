@@ -10,6 +10,7 @@ export default ({ app, store }) => {
       'user.darkMode',
       'user.imperial',
       'characters.localCharacters',
+      'characters.localLogs',
       'migrator.migrated'
     ]
   })(store)

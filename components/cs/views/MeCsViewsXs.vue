@@ -1,5 +1,6 @@
 <template>
   <div class="mb-16 mx-1">
+    <me-cs-log-snackbar/>
     <div v-if="mobileView === 'abilities'">
       <me-cs-card>
         <me-cs-abilities />
