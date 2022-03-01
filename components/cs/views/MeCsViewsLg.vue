@@ -1,6 +1,5 @@
 <template>
-  <v-container style="max-width: 1200px">
-    <me-cs-log-snackbar />
+  <v-container :style="{'max-width': maxWidth}">
     <v-row>
       <v-col cols="4">
         <me-cs-main-menu />
@@ -124,6 +123,15 @@ export default {
       tab: null,
       tabs: ['Actions', 'Powers', 'Gear', 'Features', 'Details', 'Notes'],
       showSettings: false
+    }
+  },
+  computed: {
+    maxWidth () {
+      return this.$vuetify.breakpoint.md
+        ? '900px'
+        : this.$vuetify.breakpoint.lg
+          ? '1000px'
+          : '1200px'
     }
   }
 }

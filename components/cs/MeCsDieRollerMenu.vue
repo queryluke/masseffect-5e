@@ -1,19 +1,31 @@
 <template>
   <div>
-    <v-speed-dial v-model="menu.open" color="green" v-bind="$attrs" :value="menu.open">
+    <v-speed-dial
+      v-model="menu.open"
+      color="green"
+      v-bind="$attrs"
+      :value="menu.open"
+      fixed
+      bottom
+      left
+      :style="nudgeMenu"
+    >
       <template #activator>
         <v-chip x-large :class="!menu.open ? 'chip-hide-bg' : '' ">
           <template v-if="menu.open">
             <v-btn fab color="secondary">
               <v-btn
-              fab
-              color="secondary"
-              @click.stop="closeMenu()"
-              class="die-cancel-btn">
-              <v-icon>{{!rollControllerEmpty ? 'mdi-delete' : 'mdi-close'}}</v-icon>
+                fab
+                color="secondary"
+                class="die-cancel-btn"
+                @click.stop="closeMenu()"
+              >
+                <v-icon>{{ !rollControllerEmpty ? 'mdi-delete' : 'mdi-close' }}</v-icon>
               </v-btn>
             </v-btn>
-            <v-btn class="ml-3" @click.stop="rollAllDice">Roll</v-btn>
+            <v-btn class="ml-3" @click.stop="rollAllDice">
+              Roll
+            </v-btn>
           </template>
           <template v-else>
             <v-btn fab color="green">
@@ -26,8 +38,8 @@
         <v-row v-for="(dieGroup, index) in chunkedArr" :key="index">
           <v-col v-for="(die, dieIndex) in dieGroup" :key="dieIndex + ':' + index" class="die-col">
             <v-btn fab @click.stop="addToDie(die)">
-              <v-icon>{{index == dice.length - 1 ? 'mdi-percent' : 'mdi-dice-' + die}}</v-icon>
-              <v-badge v-if="rollController[die]" color="secondary" :content="rollController[die]"></v-badge>
+              <v-icon>{{ index == dice.length - 1 ? 'mdi-percent' : 'mdi-dice-' + die }}</v-icon>
+              <v-badge v-if="rollController[die]" color="secondary" :content="rollController[die]" />
             </v-btn>
           </v-col>
         </v-row>
@@ -35,7 +47,7 @@
           <v-col class="die-col">
             <v-btn fab @click.stop="addToDie('d100')">
               <v-icon>mdi-percent</v-icon>
-              <v-badge v-if="rollController['d100']" color="secondary" :content="rollController['d100']"></v-badge>
+              <v-badge v-if="rollController['d100']" color="secondary" :content="rollController['d100']" />
             </v-btn>
           </v-col>
           <v-col class="die-col">
@@ -51,10 +63,8 @@
         <v-card-title>Specify a Custom Roll</v-card-title>
         <v-card-subtitle>For example: 1d20 - 1d4 + 2</v-card-subtitle>
         <v-card-text>
-          <v-text-field v-model="customRollerDialog.roll" placeholder="1d20 - 1d4 + 2" prepend-icon="mdi-dice-multiple">
-
-          </v-text-field>
-          <v-btn color="green" @click="customRoll(customRollerDialog.roll)" block>
+          <v-text-field v-model="customRollerDialog.roll" placeholder="1d20 - 1d4 + 2" prepend-icon="mdi-dice-multiple" />
+          <v-btn color="green" block @click="customRoll(customRollerDialog.roll)">
             Roll
           </v-btn>
         </v-card-text>
@@ -88,6 +98,13 @@ export default {
     }
   },
   computed: {
+    nudgeMenu () {
+      return this.$vuetify.breakpoint.lgAndUp && this.$store.getters.drawer
+        ? 'margin-left: 240px'
+        : this.$vuetify.breakpoint.md
+          ? 'margin-left: -24px'
+          : ''
+    },
     roll () {
       const o = {}
       this.dice.forEach((die) => {

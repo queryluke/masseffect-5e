@@ -9,7 +9,7 @@
       class="me-log-nav"
       disable-resize-watcher
     >
-    <!--div class="me-log-nav-close-icon">
+      <!--div class="me-log-nav-close-icon">
       <v-icon>mdi-close</v-icon>
     </div-->
       <me-cs-logs />

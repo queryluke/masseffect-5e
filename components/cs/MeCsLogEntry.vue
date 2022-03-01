@@ -1,44 +1,46 @@
 <template>
   <div class="log-entry pa-2">
     <!--v-hover v-slot="{ hover }" open-delay="1000"-->
-      <div>
-        <template v-if="data.type == 'card' " class="">
-          <v-sheet rounded class="pl-1 pr-3 log-entry-sheet" :title="data.title">
-            <v-row @click.stop="moreInfo = !moreInfo" class="d-flex align-center">
-              <v-col cols="9" class="d-flex align-center">
-                <v-icon color="info" class="pr-2 log-info-icon">
-                  {{moreInfo ? 'mdi-chevron-down' : 'mdi-chevron-right'}}
-                </v-icon>
-                <span class="log-entry-min-title">{{ data.title }}</span>
-              </v-col>
-              <v-col cols="3" class="text-right"><strong>Result: {{ data.result || data.text }}</strong></v-col>
-            </v-row>
-          </v-sheet>
-          <v-expand-transition>
-            <v-card v-if="moreInfo" class="justify-space-between transition-ease-in-out">
-              <v-card-title class="log-card-title">
-                <span class="log-entry-min-title">{{data.title}}</span>
-              </v-card-title>
-              <v-card-subtitle>
-                {{data.subtitle}}
-              </v-card-subtitle>
-              <v-card-text class="log-card-text">
-                <div v-html="data.text"></div>
-              </v-card-text>
-              <v-card-actions>
-                <template v-for="(action, index) in data.actions">
-                  <v-btn v-if="action.type == 'btn'" @click="action.action(...action.params); moreInfo = false;" :key="index">
-                    {{action.title}}
-                  </v-btn>
-                </template>
-              </v-card-actions>
-            </v-card>
-          </v-expand-transition>
-          <div v-if="moreInfo" class="d-flex justify-end pt-1">
-            <small>{{timeString}}</small>
-          </div>
-        </template>
-      </div>
+    <div>
+      <template v-if="data.type == 'card' " class="">
+        <v-sheet rounded class="pl-1 pr-3 log-entry-sheet" :title="data.title">
+          <v-row class="d-flex align-center" @click.stop="moreInfo = !moreInfo">
+            <v-col cols="9" class="d-flex align-center">
+              <v-icon color="info" class="pr-2 log-info-icon">
+                {{ moreInfo ? 'mdi-chevron-down' : 'mdi-chevron-right' }}
+              </v-icon>
+              <span class="log-entry-min-title">{{ data.title }}</span>
+            </v-col>
+            <v-col cols="3" class="text-right">
+              <strong>Result: {{ data.result || data.text }}</strong>
+            </v-col>
+          </v-row>
+        </v-sheet>
+        <v-expand-transition>
+          <v-card v-if="moreInfo" class="justify-space-between transition-ease-in-out">
+            <v-card-title class="log-card-title">
+              <span class="log-entry-min-title">{{ data.title }}</span>
+            </v-card-title>
+            <v-card-subtitle>
+              {{ data.subtitle }}
+            </v-card-subtitle>
+            <v-card-text class="log-card-text">
+              <me-html inline :content="data.text" />
+            </v-card-text>
+            <v-card-actions>
+              <template v-for="(action, index) in data.actions">
+                <v-btn v-if="action.type == 'btn'" :key="index" @click="action.action(...action.params); moreInfo = false;">
+                  {{ action.title }}
+                </v-btn>
+              </template>
+            </v-card-actions>
+          </v-card>
+        </v-expand-transition>
+        <div v-if="moreInfo" class="d-flex justify-end pt-1">
+          <small>{{ timeString }}</small>
+        </div>
+      </template>
+    </div>
   </div>
 </template>
 

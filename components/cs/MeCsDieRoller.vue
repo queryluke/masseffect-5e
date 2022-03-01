@@ -1,6 +1,8 @@
 <template>
   <div :class="'roll-container' + slotState ">
-    <v-icon :class="'die-icon'" @click.stop="rollMe">{{icon}}</v-icon>
+    <v-icon :class="'die-icon'" @click.stop="rollMe">
+      {{ icon }}
+    </v-icon>
     <span class="roll-text">
       <slot />
     </span>

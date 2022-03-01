@@ -6,13 +6,17 @@
     <div class="mt-3">
       <template v-if="logs.length">
         <transition-group name="list" tag="div">
-            <me-cs-log-entry :data="entry.data" v-for="(entry, index) in logs.slice()" :key="index" class="pb-2"/>
+          <me-cs-log-entry v-for="(entry, index) in logs.slice()" :key="index" :data="entry.data" class="pb-2" />
         </transition-group>
         <div class="text-center pt-4">
-          <v-btn @click="clearLogs()" small color="secondary">Clear Logs</v-btn>
+          <v-btn small color="secondary" @click="clearLogs()">
+            Clear Logs
+          </v-btn>
         </div>
       </template>
-      <v-banner v-if="!logs.length">No Logs Found</v-banner>
+      <v-banner v-if="!logs.length">
+        No Logs Found
+      </v-banner>
     </div>
   </div>
 </template>
@@ -20,8 +24,8 @@
 <script>
 import MeCsLogEntry from './MeCsLogEntry.vue'
 export default {
-  components: { MeCsLogEntry },
   name: 'MeCsLogs',
+  components: { MeCsLogEntry },
   computed: {
     logs () {
       return this.$store.getters['character/logs'] || []

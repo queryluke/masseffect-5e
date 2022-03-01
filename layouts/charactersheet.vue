@@ -13,6 +13,8 @@
     </me-app-bar>
     <!-- END: APP BAR -->
 
+    <me-cs-die-roller-menu />
+
     <!-- START: NAV DRAWER -->
     <me-navigation />
     <!-- END: NAV DRAWER -->
