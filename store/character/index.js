@@ -59,12 +59,16 @@ export const getters = {
       return ordinals[level]
     })
   },
-  logs: (state, getters, rootState, rootGetters) => {
+  logs: (state, getters, rootState) => {
+    /*
     if (rootGetters['auth/isAuthenticated']) {
       // some call to get logs from API
     } else {
       return rootState.characters.localLogs[getters.id]
     }
+    */
+    // Only local logs for now
+    return rootState.characters.localLogs[getters.id]
   },
   logNav: state => state.logNav,
   profBonus: (state, getters, rootState, rootGetters) => {
@@ -252,17 +256,24 @@ export const actions = {
     await dispatch('LOG_WRITE', output)
   },
   async LOG_WRITE ({ rootGetters, dispatch }, payload) {
+    /*
     if (rootGetters['auth/isAuthenticated']) {
       // call API to write to DB
     } else {
-      await dispatch('local/LOCAL_LOG_WRITE', payload) // note calling this from a separate vuex module
+      await dispatch('local/LOCAL_LOG_WRITE', payload)
     }
+    */
+    // local logs for now only
+    await dispatch('local/LOCAL_LOG_WRITE', payload)
   },
   async LOG_DESTROY ({ rootGetters, dispatch }) {
+    /*
     if (rootGetters['auth/isAuthenticated']) {
       // call API to write to DB
     } else {
       await dispatch('local/LOCAL_LOG_DESTROY') // note calling this from a separate vuex module
     }
+    */
+    await dispatch('local/LOCAL_LOG_DESTROY')
   }
 }

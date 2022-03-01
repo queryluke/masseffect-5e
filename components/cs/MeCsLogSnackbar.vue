@@ -1,14 +1,13 @@
 <template>
   <div>
     <div :class="'fixed-menu ' + (leftNav ? 'fixed-menu-with-nav' : '') ">
-      {{leftNav}}
       <v-row>
         <v-col class="pa-0">
           <me-cs-die-roller-menu />
         </v-col>
         <v-col class="pa-0">
           <v-btn class="mt-1 ml-2" fab color="secondary" @click.stop="logNav = !logNav">
-            <v-icon>{{logNav ? 'mdi-close' : 'mdi-text'}}</v-icon>
+            <v-icon>{{ logNav ? 'mdi-close' : 'mdi-text' }}</v-icon>
           </v-btn>
         </v-col>
       </v-row>
@@ -42,17 +41,17 @@
 
 <script>
 export default {
-  data: () => ({
-    snackbar: false,
-    persist: true,
-    timeoutMax: 8000
-  }),
   props: {
     left: {
       type: Number,
       default: () => 300
     }
   },
+  data: () => ({
+    snackbar: false,
+    persist: true,
+    timeoutMax: 8000
+  }),
   computed: {
     logs () {
       return this.$store.getters['character/logs'] || []
