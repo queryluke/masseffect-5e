@@ -63,13 +63,14 @@
       <template v-if="hit" #hit>
         <me-cs-action-stat>
           <me-cs-die-roller
-          :input="'1d20'+rollText(hit.bonus)+''"
-          :data="{
+            :input="'1d20'+rollText(hit.bonus)+''"
+            :data="{
           ...hit,
           title: item.name + ' - To Hit'
-          }">
-              {{ modText(hit.bonus) }}
-            </me-cs-die-roller>
+            }"
+          >
+            {{ modText(hit.bonus) }}
+          </me-cs-die-roller>
         </me-cs-action-stat>
       </template>
 

@@ -1,62 +1,33 @@
 <template>
-  <div>
+  <div style="position: fixed; bottom: 16px; right: 16px; z-index: 4;">
+    <v-btn fab :color="menu ? 'black' : 'red darken-4'" @click="menu = !menu">
+      <v-icon>
+        {{ menu ? 'mdi-close' : 'mdi-dice-multiple' }}
+      </v-icon>
+    </v-btn>
+
     <v-speed-dial
-      v-model="menu.open"
-      color="green"
-      v-bind="$attrs"
-      :value="menu.open"
+      v-model="menu"
       fixed
       bottom
       left
+      transition="slide-y-reverse-transition"
       :style="nudgeMenu"
     >
-      <template #activator>
-        <v-chip x-large :class="!menu.open ? 'chip-hide-bg' : '' ">
-          <template v-if="menu.open">
-            <v-btn fab color="secondary">
-              <v-btn
-                fab
-                color="secondary"
-                class="die-cancel-btn"
-                @click.stop="closeMenu()"
-              >
-                <v-icon>{{ !rollControllerEmpty ? 'mdi-delete' : 'mdi-close' }}</v-icon>
-              </v-btn>
-            </v-btn>
-            <v-btn class="ml-3" @click.stop="rollAllDice">
-              Roll
-            </v-btn>
-          </template>
-          <template v-else>
-            <v-btn fab color="green">
-              <v-icon>mdi-dice-multiple</v-icon>
-            </v-btn>
-          </template>
-        </v-chip>
-      </template>
-      <template #default>
-        <v-row v-for="(dieGroup, index) in chunkedArr" :key="index">
-          <v-col v-for="(die, dieIndex) in dieGroup" :key="dieIndex + ':' + index" class="die-col">
-            <v-btn fab @click.stop="addToDie(die)">
-              <v-icon>{{ index == dice.length - 1 ? 'mdi-percent' : 'mdi-dice-' + die }}</v-icon>
-              <v-badge v-if="rollController[die]" color="secondary" :content="rollController[die]" />
-            </v-btn>
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col class="die-col">
-            <v-btn fab @click.stop="addToDie('d100')">
-              <v-icon>mdi-percent</v-icon>
-              <v-badge v-if="rollController['d100']" color="secondary" :content="rollController['d100']" />
-            </v-btn>
-          </v-col>
-          <v-col class="die-col">
-            <v-btn fab color="secondary" @click="customRollerDialog.open = true">
-              <v-icon>mdi-wrench</v-icon>
-            </v-btn>
-          </v-col>
-        </v-row>
-      </template>
+      <template #activator />
+      <v-btn
+        v-for="die in dice"
+        :key="die"
+        fab
+        small
+        color="black"
+        @click.stop="addToDie(die)"
+      >
+        <v-icon>
+          {{ die === 'd100' ? 'mdi-percent' : `mdi-dice-${die}` }}
+        </v-icon>
+        <v-badge v-if="rollController[die]" color="red darken-4" :content="rollController[die]" />
+      </v-btn>
     </v-speed-dial>
     <v-dialog v-model="customRollerDialog.open" persistent width="300">
       <v-card>
@@ -85,9 +56,8 @@ export default {
   mixins: [ScoreText],
   data () {
     return {
-      menu: {
-        open: false
-      },
+      menu: false,
+      sideMenu: false,
       chunk,
       dice: ['d4', 'd6', 'd8', 'd10', 'd12', 'd20', 'd100'],
       rollController: {},
@@ -122,11 +92,33 @@ export default {
     },
     rollControllerEmpty () {
       return Object.keys(this.rollController).length === 0
+    },
+    hasRolls () {
+      return Object.keys(this.rollController).length > 0
+    }
+  },
+  watch: {
+    menu (newVal) {
+      if (!newVal) {
+        this.rollController = {}
+      }
+      this.sideMenu = newVal
     }
   },
   methods: {
+    openMenu ($event) {
+      console.log('opening')
+      console.log(this.menu)
+      this.menu = !this.menu
+      $event.stopPropagation()
+    },
+    executeMenuClick () {
+      if (!this.menu) {
+        this.menu = true
+      }
+    },
     addToDie (die) {
-      this.$set(this.rollController, die, this.rollController[die] + 1 || 0)
+      this.$set(this.rollController, die, (this.rollController[die] || 0) + 1)
     },
     closeMenu () {
       if (!this.rollControllerEmpty) {
@@ -168,21 +160,3 @@ export default {
   }
 }
 </script>
-
-<style lang="css">
-.v-speed-dial__list {
-  align-items: flex-start;
-}
-.die-cancel-btn:not(.v-btn--text):not(.v-btn--outlined):focus:before {
-  opacity: 0!important;
-}
-.chip-hide-bg, .chip-hide-bg:hover {
-  background: none !important;
-}
-.row {
-  margin-top: 0 !important;
-}
-.die-col {
-  padding: 4px;
-}
-</style>
