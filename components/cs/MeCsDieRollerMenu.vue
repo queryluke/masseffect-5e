@@ -46,11 +46,7 @@
         </v-row>
       </template>
     </v-speed-dial>
-    <v-dialog
-      v-model="customRollerDialog.open"
-      persistent
-      width="300"
-    >
+    <v-dialog v-model="customRollerDialog.open" persistent width="300">
       <v-card>
         <v-card-title>Specify a Custom Roll</v-card-title>
         <v-card-subtitle>For example: 1d20 - 1d4 + 2</v-card-subtitle>
@@ -104,6 +100,7 @@ export default {
     chunkedArr () {
       const a = chunk(this.dice, 2)
       a.pop()
+      a.reverse()
       return a
     },
     rollControllerEmpty () {
@@ -112,7 +109,6 @@ export default {
   },
   methods: {
     addToDie (die) {
-      console.log('adding to die', die, this.roll)
       this.$set(this.rollController, die, this.rollController[die] + 1 || 0)
     },
     closeMenu () {
@@ -125,6 +121,7 @@ export default {
     customRoll (roll) {
       try {
         this.postRollResults(roll)
+        this.customRollerDialog.open = false
       } catch (e) {
         alert('Something went wrong... Are you sure you typed your roll out correctly?')
       }
@@ -141,7 +138,6 @@ export default {
       }
       this.rollController = {}
       this.menu.open = false
-      console.log(output)
       if (output !== '') { return this.postRollResults(output) }
     },
     postRollResults (roll) {
@@ -156,7 +152,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="css">
 .v-speed-dial__list {
   align-items: flex-start;
 }

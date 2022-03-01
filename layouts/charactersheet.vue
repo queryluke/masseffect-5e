@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <!-- START: APP BAR -->
-    <me-app-bar :extended="characterReady && $vuetify.breakpoint.smAndDown" :extension-height="140" show-character-cloud-status>
+    <me-app-bar :extended="characterReady && $vuetify.breakpoint.smAndDown" :extension-height="140" show-character-cloud-status clipped-right>
       <template #appBarExtension>
         <div style="width: 100%">
           <div class="mx-n4">
@@ -15,6 +15,10 @@
 
     <!-- START: NAV DRAWER -->
     <me-navigation />
+    <!-- END: NAV DRAWER -->
+
+    <!-- START: NAV DRAWER -->
+    <me-log-nav />
     <!-- END: NAV DRAWER -->
 
     <!-- START: CONTENT -->
