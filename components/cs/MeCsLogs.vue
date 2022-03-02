@@ -6,7 +6,12 @@
     <div class="mt-3">
       <template v-if="logs.length">
         <transition-group name="list" tag="div">
-            <me-cs-log-entry :data="entry.data" v-for="(entry, index) in logs.slice()" :key="index" class="pb-2"/>
+            <me-cs-log-entry
+            :entry="entry"
+            v-for="entry in logs"
+            :key="entry.index"
+            :is-last-entry="entry.index === logs.length - 1"
+            class="pb-2"/>
         </transition-group>
         <div class="text-center pt-4">
           <v-btn @click="clearLogs()" small color="secondary">Clear Logs</v-btn>

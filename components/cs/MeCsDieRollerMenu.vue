@@ -109,7 +109,9 @@ export default {
   },
   methods: {
     addToDie (die) {
-      this.$set(this.rollController, die, this.rollController[die] + 1 || 0)
+      console.log(die, this.rollController)
+      this.$set(this.rollController, die, this.rollController[die] + 1 || 1)
+      console.log(die, this.rollController)
     },
     closeMenu () {
       if (!this.rollControllerEmpty) {

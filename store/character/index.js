@@ -247,7 +247,9 @@ export const actions = {
         type: 'card',
         text: '<div><strong>Result: ' + roll.total + '</strong></div><div class="pt-1"><i>' + roll.output + '</i></div>',
         timestamp: new Date()
-      }
+      },
+      id: rootGetters['character/character'] + ':' + rootGetters['character/logs'].length,
+      index: rootGetters['character/logs'].length
     }
     await dispatch('LOG_WRITE', output)
   },
