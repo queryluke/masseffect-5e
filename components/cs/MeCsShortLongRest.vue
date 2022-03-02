@@ -1,12 +1,17 @@
 <template>
   <div>
-    <div class="d-flex justify-space-around">
-      <v-btn x-small :disabled="viewOnly" @click="openRest('short')">
-        Short Rest
-      </v-btn>
-      <v-btn x-small :disabled="viewOnly" @click="openRest('long')">
-        Long Rest
-      </v-btn>
+    <div>
+      <div class="text-center text-overline">
+        Rest
+      </div>
+      <div class="d-flex justify-space-around">
+        <v-btn :x-small="$vuetify.breakpoint.smAndUp" :disabled="viewOnly" @click="openRest('short')">
+          Short{{ $vuetify.breakpoint.smAndUp ? ' Rest' : '' }}
+        </v-btn>
+        <v-btn :x-small="$vuetify.breakpoint.smAndUp" :disabled="viewOnly" @click="openRest('long')">
+          Long{{ $vuetify.breakpoint.smAndUp ? ' Rest' : '' }}
+        </v-btn>
+      </div>
     </div>
     <v-dialog
       v-model="restBar"

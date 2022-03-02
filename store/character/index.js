@@ -1,7 +1,6 @@
 import cloneDeep from 'lodash/cloneDeep'
 import debounce from 'lodash/debounce'
 import jsonpack from 'jsonpack/main'
-import { DiceRoll } from '@dice-roller/rpg-dice-roller'
 import identString from '~/mixins/indentString'
 
 function updateCharacter ({ oldValue, attr, value }) {
@@ -33,7 +32,6 @@ export const state = () => ({
     mechanics: [],
     html: '<p>Use the character sheet settings to add any proficiencies</p>'
   },
-  logNav: false,
   viewOnly: false
 })
 
@@ -66,7 +64,6 @@ export const getters = {
       return rootState.characters.localLogs[getters.id]
     }
   },
-  logNav: state => state.logNav,
   profBonus: (state, getters, rootState, rootGetters) => {
     return [0, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6][rootGetters['character/klasses/level']]
   },
@@ -156,9 +153,6 @@ export const mutations = {
   },
   SET_VIEW_ONLY (state, value) {
     state.viewOnly = value
-  },
-  logNav (state, value) {
-    state.logNav = value
   }
 }
 
@@ -234,35 +228,6 @@ export const actions = {
     } catch (e) {
       commit('user/SET_SYNC_STATUS', 'error', { root: true })
       console.log(e)
-    }
-  },
-  async ROLL ({ dispatch, rootGetters }, payload) {
-    // ...stuff that rolls the dice
-    const roll = new DiceRoll(payload.roll)
-    const output = {
-      data: {
-        ...payload,
-        result: roll.total,
-        subtitle: payload.subtitle || rootGetters['character/character'].name,
-        type: 'card',
-        text: '<div><strong>Result: ' + roll.total + '</strong></div><div class="pt-1"><i>' + roll.output + '</i></div>',
-        timestamp: new Date()
-      }
-    }
-    await dispatch('LOG_WRITE', output)
-  },
-  async LOG_WRITE ({ rootGetters, dispatch }, payload) {
-    if (rootGetters['auth/isAuthenticated']) {
-      // call API to write to DB
-    } else {
-      await dispatch('local/LOCAL_LOG_WRITE', payload) // note calling this from a separate vuex module
-    }
-  },
-  async LOG_DESTROY ({ rootGetters, dispatch }) {
-    if (rootGetters['auth/isAuthenticated']) {
-      // call API to write to DB
-    } else {
-      await dispatch('local/LOCAL_LOG_DESTROY') // note calling this from a separate vuex module
     }
   }
 }
