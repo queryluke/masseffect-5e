@@ -5,9 +5,19 @@
     left
     overlap
     icon="mdi-close"
-    @click.native="count = 0"
+    :offset-x="overlay ? 17 : undefined"
+    :offset-y="overlay ? 17 : undefined"
+    @click.native.stop="count = 0"
   >
-    <v-badge :value="count > 0" color="red darken-4" :content="count" overlap bottom>
+    <v-badge
+      :value="count > 0"
+      color="red darken-4"
+      :content="count"
+      overlap
+      bottom
+      :offset-x="overlay ? 17 : undefined"
+      :offset-y="overlay ? 16 : undefined"
+    >
       <v-btn
         fab
         :small="!large"
@@ -33,6 +43,10 @@ export default {
     dieType: {
       type: String,
       required: true
+    },
+    overlay: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {

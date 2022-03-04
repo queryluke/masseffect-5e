@@ -1,19 +1,19 @@
 <template>
   <v-dialog
-    v-model="mobileSettingsMenu"
+    v-model="settingsMenu"
     fullscreen
     transition="dialog-bottom-transition"
     scrollable
   >
     <v-card>
       <v-card-title class="pa-0">
-        <v-toolbar flat>
+        <v-toolbar flat :extended="$vuetify.breakpoint.smAndUp">
           <v-toolbar-title>
             Settings
           </v-toolbar-title>
           <v-spacer />
           <v-toolbar-items>
-            <v-menu offset-y>
+            <v-menu v-if="$vuetify.breakpoint.smAndDown" offset-y>
               <template #activator="{ on, attrs }">
                 <v-btn
                   text
@@ -38,16 +38,24 @@
                 </v-list-item>
               </v-list>
             </v-menu>
+            <v-btn v-else icon @click="settingsMenu = false">
+              <v-icon>mdi-close</v-icon>
+            </v-btn>
           </v-toolbar-items>
+          <template v-if="$vuetify.breakpoint.smAndUp" #extension>
+            <me-cs-card-nav-chips chip-set="settings" />
+          </template>
         </v-toolbar>
       </v-card-title>
       <v-card-text>
-        <me-cs-settings />
+        <v-container style="max-width: 800px">
+          <me-cs-settings />
+        </v-container>
       </v-card-text>
       <v-card-actions>
         <v-btn
           text
-          @click="mobileSettingsMenu = false"
+          @click="settingsMenu = false"
         >
           {{ $t('buttons.close') }}
         </v-btn>
@@ -60,12 +68,12 @@
 export default {
   name: 'MeCsMobileSettings',
   computed: {
-    mobileSettingsMenu: {
+    settingsMenu: {
       get () {
-        return this.$store.getters['character/navigation/mobileSettingsMenu']
+        return this.$store.getters['character/navigation/settingsMenu']
       },
       set (value) {
-        return this.$store.commit('character/navigation/SET', { key: 'mobileSettingsMenu', value })
+        return this.$store.commit('character/navigation/SET', { key: 'settingsMenu', value })
       }
     },
     activeSettingsTabTitle () {

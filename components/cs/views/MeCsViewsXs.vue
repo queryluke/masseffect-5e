@@ -16,7 +16,9 @@
         <me-cs-skills />
       </me-cs-card>
       <me-cs-card title="Proficiencies">
-        <me-cs-proficiencies />
+        <div class="px-4">
+          <me-cs-proficiencies />
+        </div>
       </me-cs-card>
     </div>
     <div v-if="mobileView === 'notes'">

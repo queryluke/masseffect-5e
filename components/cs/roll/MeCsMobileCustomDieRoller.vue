@@ -23,7 +23,7 @@
           </v-row>
           <v-row>
             <v-col v-for="dieType in dieTypes" :key="dieType" cols="4" class="text-center">
-              <me-cs-roll-die-select :die-type="dieType" />
+              <me-cs-roll-die-select :die-type="dieType" large />
             </v-col>
           </v-row>
         </v-container>

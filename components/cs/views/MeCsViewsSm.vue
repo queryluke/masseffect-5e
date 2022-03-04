@@ -21,7 +21,9 @@
             </v-card>
             <v-card class="pa-1 pb-4" outlined>
               <me-cs-card-title>Proficiencies</me-cs-card-title>
-              <me-cs-proficiencies />
+              <div class="px-4">
+                <me-cs-proficiencies />
+              </div>
             </v-card>
             <div class="ma-3">
               <v-btn small block @click="$store.commit('character/navigation/SET', { key: 'smDetailsNotes', value: true })">

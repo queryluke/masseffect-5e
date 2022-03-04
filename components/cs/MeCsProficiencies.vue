@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4">
+  <div>
     <template v-for="type in profTypes">
       <div :key="`prof-${type}`">
         <div class="text-body-1">

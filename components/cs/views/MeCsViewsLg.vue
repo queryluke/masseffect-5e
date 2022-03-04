@@ -11,22 +11,77 @@
         <v-row>
           <v-col cols="6">
             <v-card outlined>
+              <me-cs-card-title>
+                Saving Throws
+              </me-cs-card-title>
               <me-cs-saving-throws />
             </v-card>
           </v-col>
           <v-col cols="6">
             <v-card outlined>
+              <me-cs-card-title>
+                Senses
+              </me-cs-card-title>
               <me-cs-senses />
             </v-card>
           </v-col>
         </v-row>
         <v-card outlined class="mt-3">
+          <me-cs-card-title>
+            Skills
+          </me-cs-card-title>
           <me-cs-skills />
         </v-card>
       </v-col>
     </v-row>
     <v-row>
       <v-col cols="9">
+        <me-cs-card-sticky-header :height="500" outlined hide-divider>
+          <template #header>
+            <v-tabs v-model="tab">
+              <template v-for="t in tabs">
+                <v-tab :key="t">
+                  {{ t }}
+                </v-tab>
+              </template>
+            </v-tabs>
+          </template>
+          <v-tabs-items v-model="tab" class="mb-3">
+            <v-tab-item>
+              <div class="px-4">
+                <me-cs-card-nav-chips chip-set="actions" />
+                <me-cs-actions />
+              </div>
+            </v-tab-item>
+            <v-tab-item>
+              <v-card-text>
+                <me-cs-powers />
+              </v-card-text>
+            </v-tab-item>
+            <v-tab-item>
+              <v-card-text>
+                <me-cs-equipment />
+              </v-card-text>
+            </v-tab-item>
+            <v-tab-item>
+              <div class="px-4">
+                <me-cs-card-nav-chips chip-set="features" />
+                <me-cs-features />
+              </div>
+            </v-tab-item>
+            <v-tab-item>
+              <v-card-text>
+                <me-cs-details />
+              </v-card-text>
+            </v-tab-item>
+            <v-tab-item>
+              <v-card-text>
+                <me-cs-notes />
+              </v-card-text>
+            </v-tab-item>
+          </v-tabs-items>
+        </me-cs-card-sticky-header>
+        <!--
         <v-card outlined height="500px">
           <div class="d-flex flex-column">
             <div style="flex: 0 0 auto">
@@ -39,99 +94,66 @@
               </v-tabs>
             </div>
             <div style="flex: 1 1 auto; position: relative; height: 452px" class="overflow-y-auto pt-3 pb-5">
-              <v-tabs-items v-model="tab">
-                <v-tab-item>
-                  <me-cs-actions />
-                </v-tab-item>
-                <v-tab-item>
-                  <v-card-text>
-                    <me-cs-powers />
-                  </v-card-text>
-                </v-tab-item>
-                <v-tab-item>
-                  <v-card-text>
-                    <me-cs-equipment />
-                  </v-card-text>
-                </v-tab-item>
-                <v-tab-item>
-                  <me-cs-features />
-                </v-tab-item>
-                <v-tab-item>
-                  <v-card-text>
-                    <me-cs-details />
-                  </v-card-text>
-                </v-tab-item>
-                <v-tab-item>
-                  <v-card-text>
-                    <me-cs-notes />
-                  </v-card-text>
-                </v-tab-item>
-              </v-tabs-items>
+
             </div>
           </div>
         </v-card>
+        -->
       </v-col>
       <v-col cols="3">
         <div class="mb-5">
+          <me-cs-card-title>
+            Reputation
+          </me-cs-card-title>
           <me-cs-reputation />
         </div>
         <div class="mb-5">
-          <me-cs-short-long-rest />
+          <div class="d-flex justify-space-around">
+            <me-cs-rest-btn type="short" :props="{ 'x-small': true }" />
+            <me-cs-rest-btn type="long" :props="{ 'x-small': true }" />
+          </div>
         </div>
         <v-card outlined>
-          <v-card-text>
+          <me-cs-card-title>
+            Proficiencies
+          </me-cs-card-title>
+          <div class="px-4">
             <me-cs-proficiencies />
-          </v-card-text>
+          </div>
         </v-card>
         <div class="mt-5 d-flex justify-center">
-          <v-btn @click="showSettings = true">
+          <v-btn @click="showSettings">
             Settings
           </v-btn>
         </div>
       </v-col>
     </v-row>
-    <v-dialog v-model="showSettings" fullscreen transition="dialog-bottom-transition">
-      <v-card>
-        <v-toolbar flat>
-          <v-toolbar-title>
-            Settings
-          </v-toolbar-title>
-          <v-spacer />
-          <v-toolbar-items>
-            <v-btn text @click="showSettings = false">
-              <v-icon>
-                mdi-close
-              </v-icon>
-            </v-btn>
-          </v-toolbar-items>
-        </v-toolbar>
-        <v-card-text class="d-flex justify-center">
-          <div style="max-width: 700px">
-            <me-cs-settings />
-          </div>
-        </v-card-text>
-      </v-card>
-    </v-dialog>
   </v-container>
 </template>
 
 <script>
+import MeCsCardStickyHeader from '~/components/cs/card/MeCsCardStickyHeader'
 export default {
   name: 'MeCsViewsLg',
+  components: { MeCsCardStickyHeader },
   data () {
     return {
       tab: null,
-      tabs: ['Actions', 'Powers', 'Gear', 'Features', 'Details', 'Notes'],
-      showSettings: false
+      tabs: ['Actions', 'Powers', 'Gear', 'Features', 'Details', 'Notes']
     }
   },
   computed: {
     maxWidth () {
       return this.$vuetify.breakpoint.md
-        ? '900px'
+        ? '860px'
         : this.$vuetify.breakpoint.lg
           ? '1000px'
           : '1200px'
+    }
+  },
+  methods: {
+    showSettings () {
+      this.$store.commit('character/navigation/SET', { key: 'settingsMenu', value: true })
     }
   }
 }

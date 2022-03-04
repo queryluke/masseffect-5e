@@ -10,6 +10,7 @@
           </div>
         </div>
         <v-btn
+          v-if="$vuetify.breakpoint.smOnly"
           fab
           bottom
           left
@@ -49,11 +50,14 @@
     <!-- Mobile Menu -->
     <me-cs-mobile-navigation />
 
-    <!-- Mobile Settings Menu -->
-    <me-cs-mobile-settings />
+    <!-- Settings Dialog -->
+    <me-cs-settings-dialog />
 
     <!-- Mobile Die Menu -->
     <me-cs-mobile-custom-die-roller />
+
+    <!-- Die Speed Dial for larger screens -->
+    <me-cs-roll-speed-dial />
 
     <!-- Small Screen details and notes -->
     <me-standard-dialog :shown="smDetailsNotes" @close="smDetailsNotes = false">
@@ -84,7 +88,7 @@
         <span>Menu</span>
         <v-icon>mdi-dots-grid</v-icon>
       </v-btn>
-      <v-btn @click="mobileSettingsMenu = !mobileSettingsMenu">
+      <v-btn @click="settingsMenu = !settingsMenu">
         <span>Settings</span>
         <v-icon>mdi-cog</v-icon>
       </v-btn>
@@ -149,7 +153,7 @@ export default {
         return this.$store.getters['character/navigation/mobileMenu']
       },
       set (value) {
-        return this.$store.commit('character/navigation/SET', { key: 'mobileMenu', value })
+        this.$store.commit('character/navigation/SET', { key: 'mobileMenu', value })
       }
     },
     mobileView: {
@@ -157,15 +161,15 @@ export default {
         return this.$store.getters['character/navigation/mobileView']
       },
       set (value) {
-        return this.$store.commit('character/navigation/SET', { key: 'mobileView', value })
+        this.$store.commit('character/navigation/SET', { key: 'mobileView', value })
       }
     },
-    mobileSettingsMenu: {
+    settingsMenu: {
       get () {
-        return this.$store.getters['character/navigation/mobileSettingsMenu']
+        return this.$store.getters['character/navigation/settingsMenu']
       },
       set (value) {
-        return this.$store.commit('character/navigation/SET', { key: 'mobileSettingsMenu', value })
+        this.$store.commit('character/navigation/SET', { key: 'settingsMenu', value })
       }
     },
     mobileRoller: {
@@ -173,7 +177,7 @@ export default {
         return this.$store.getters['character/navigation/mobileRoller']
       },
       set (value) {
-        return this.$store.commit('character/navigation/SET', { key: 'mobileRoller', value })
+        this.$store.commit('character/navigation/SET', { key: 'mobileRoller', value })
       }
     },
     smDetailsNotes: {
@@ -181,14 +185,22 @@ export default {
         return this.$store.getters['character/navigation/smDetailsNotes']
       },
       set (value) {
-        return this.$store.commit('character/navigation/SET', { key: 'smDetailsNotes', value })
+        this.$store.commit('character/navigation/SET', { key: 'smDetailsNotes', value })
       }
+    },
+    xsOnly () {
+      return this.$vuetify.breakpoint.xsOnly
     }
   },
   watch: {
     mobileView (newVal, oldVal) {
       if (newVal !== oldVal) {
         this.$vuetify.goTo(0)
+      }
+    },
+    xsOnly (newVal) {
+      if (newVal && this.mobileView === 'settings') {
+        this.mobileView = 'abilities'
       }
     }
   }

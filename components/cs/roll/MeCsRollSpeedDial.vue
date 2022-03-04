@@ -1,37 +1,44 @@
 <template>
-  <v-speed-dial
-    v-model="menu"
-    fixed
-    bottom
-    left
-    transition="slide-y-reverse-transition"
-    :style="nudgeMenu"
-  >
-    <template #activator>
-      <v-btn fab :small="$vuetify.breakpoint.smOnly" color="red darken-4">
-        <v-icon>
-          mdi-dice-multiple
-        </v-icon>
-      </v-btn>
-    </template>
-    <v-btn
-      v-for="die in dice"
-      :key="die"
-      fab
-      small
-      color="black"
-      @click.stop="addToDie(die)"
+  <div>
+    <v-speed-dial
+      v-model="menu"
+      fixed
+      bottom
+      left
+      transition="slide-y-reverse-transition"
+      :style="nudge"
     >
-      <v-icon>
-        {{ die === 'd100' ? 'mdi-percent' : `mdi-dice-${die}` }}
-      </v-icon>
-      <v-badge v-if="rollController[die]" color="red darken-4" :content="rollController[die]" />
-    </v-btn>
-  </v-speed-dial>
+      <template #activator>
+        <v-btn v-model="menu" fab color="red darken-4" :elevation="menu ? 0 : 24">
+          <v-icon>
+            {{ menu ? 'mdi-close' : 'mdi-dice-multiple' }}
+          </v-icon>
+        </v-btn>
+      </template>
+      <me-cs-roll-die-select v-for="dieType in dieTypes" :key="dieType" :die-type="dieType" overlay />
+    </v-speed-dial>
+    <v-fade-transition>
+      <v-btn
+        v-show="menu"
+        fixed
+        bottom
+        left
+        rounded
+        x-large
+        :style="nudge"
+        color="red darken-4"
+        height="56"
+        @click="roll"
+      >
+        <span class="pl-11">
+          Roll
+        </span>
+      </v-btn>
+    </v-fade-transition>
+  </div>
 </template>
 
 <script>
-import chunk from 'lodash/chunk'
 import { ScoreText } from '~/mixins/character/scoreText'
 export default {
   name: 'MeCsRollSpeedDial',
@@ -40,7 +47,6 @@ export default {
     return {
       menu: false,
       sideMenu: false,
-      chunk,
       dice: ['d4', 'd6', 'd8', 'd10', 'd12', 'd20', 'd100'],
       rollController: {},
       customRollerDialog: {
@@ -50,94 +56,53 @@ export default {
     }
   },
   computed: {
-    nudgeMenu () {
-      return this.$vuetify.breakpoint.lgAndUp && this.$store.getters.drawer
-        ? 'margin-left: 240px'
-        : this.$vuetify.breakpoint.md
-          ? 'margin-left: -24px'
-          : ''
+    nudge () {
+      if (this.$store.getters.drawer && this.$vuetify.breakpoint.lgAndUp) {
+        return {
+          'margin-left': '246px'
+        }
+      }
+      return undefined
     },
-    roll () {
-      const o = {}
-      this.dice.forEach((die) => {
-        o[die] = 0
-        // need this to map the responsiveness
-        this.$set(this.rollController, die, this.rollController[die] + 1 || 0)
-      })
-      return o
+    nudgeRoll () {
+      if (this.nudge) {
+        return {
+          'margin-left': '286px'
+        }
+      }
+      return undefined
     },
-    chunkedArr () {
-      const a = chunk(this.dice, 2)
-      a.pop()
-      a.reverse()
-      return a
+    dieTypes () {
+      return this.$store.state.character.roller.dieTypes
     },
-    rollControllerEmpty () {
-      return Object.keys(this.rollController).length === 0
-    },
-    hasRolls () {
-      return Object.keys(this.rollController).length > 0
+    rollable () {
+      return Object.values(this.$store.getters['character/roller/rollController']).some(i => i) || this.$store.getters['character/roller/customTextRoll']
     }
   },
   watch: {
     menu (newVal) {
-      if (!newVal) {
-        this.rollController = {}
+      if (newVal === false) {
+        this.closeRoller()
       }
-      this.sideMenu = newVal
     }
   },
   methods: {
-    openMenu ($event) {
-      console.log('opening')
-      console.log(this.menu)
-      this.menu = !this.menu
-      $event.stopPropagation()
-    },
-    executeMenuClick () {
-      if (!this.menu) {
-        this.menu = true
+    roll () {
+      if (this.rollable) {
+        this.$store.dispatch('character/roller/CUSTOM_ROLL')
       }
+      this.closeRoller()
     },
-    addToDie (die) {
-      this.$set(this.rollController, die, (this.rollController[die] || 0) + 1)
+    closeRoller () {
+      this.$store.commit('character/roller/RESET_CONTROLLER')
+      this.$store.commit('character/roller/SET_CUSTOM_TEXT_ROLL', null)
+      this.mobileRoller = false
     },
-    closeMenu () {
-      if (!this.rollControllerEmpty) {
-        this.rollController = {}
-      } else {
-        this.menu.open = false
-      }
-    },
-    customRoll (roll) {
-      try {
-        this.postRollResults(roll)
-        this.customRollerDialog.open = false
-      } catch (e) {
-        alert('Something went wrong... Are you sure you typed your roll out correctly?')
-      }
-    },
-    rollAllDice () {
-      let output = ''
-      let currentRoll = false
-      for (let i = 0; i < this.dice.length; i++) {
-        const d = this.dice[i]
-        if (this.rollController[d]) {
-          output += (currentRoll ? '+' : '') + this.rollController[d] + d
-          currentRoll = this.rollController[d]
-        }
-      }
-      this.rollController = {}
-      this.menu.open = false
-      if (output !== '') { return this.postRollResults(output) }
-    },
-    postRollResults (roll) {
-      this.$store.dispatch('character/ROLL',
-        {
-          title: 'Custom Roll',
-          type: 'dice-roll',
-          roll
-        })
+    viewLogs () {
+      this.closeRoller()
+      this.$nextTick(() => {
+        this.$store.dispatch('character/navigation/SHOW_SIDE_NAVBAR', 'me-cs-logs-list')
+      })
     }
   }
 }

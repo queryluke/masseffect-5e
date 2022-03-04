@@ -1,7 +1,7 @@
 export const state = () => ({
   mobileMenu: false,
   mobileView: 'abilities',
-  mobileSettingsMenu: false,
+  settingsMenu: false,
   mobileRoller: false,
   settingsTabs: ['Defensive', 'Offensive', 'Powercasting', 'Ability Scores', 'Proficiencies', 'Speed & Senses', 'Custom'],
   actionsTabs: ['All', 'Attacks', 'Actions', 'Bonus Actions', 'Reactions', 'Other'],
@@ -18,7 +18,7 @@ export const state = () => ({
 export const getters = {
   mobileMenu: state => state.mobileMenu,
   mobileView: state => state.mobileView,
-  mobileSettingsMenu: state => state.mobileSettingsMenu,
+  settingsMenu: state => state.settingsMenu,
   mobileRoller: state => state.mobileRoller,
   sideNavbar: state => state.sideNavbar,
   sideNavbarComponent: state => state.sideNavbarComponent,

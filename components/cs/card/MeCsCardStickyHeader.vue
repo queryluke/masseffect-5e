@@ -1,10 +1,10 @@
 <template>
-  <v-card elevation="0" class="my-3">
+  <v-card elevation="0" class="my-3" outlined>
     <div class="d-flex flex-column">
       <div style="flex: 0 0 auto">
         <slot name="header" />
       </div>
-      <v-divider />
+      <v-divider v-if="!hideDivider" />
       <div style="flex: 1 1 auto; position: relative;" :style="{ height: contentHeight }" class="overflow-y-auto">
         <slot />
       </div>
@@ -19,6 +19,14 @@ export default {
     height: {
       type: Number,
       default: 0
+    },
+    outlined: {
+      type: Boolean,
+      default: false
+    },
+    hideDivider: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
