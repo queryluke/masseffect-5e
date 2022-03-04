@@ -1,142 +1,128 @@
 <template>
-  <div>
-    <div>
-      <div class="text-center text-overline">
-        Rest
-      </div>
-      <div class="d-flex justify-space-around">
-        <v-btn :x-small="$vuetify.breakpoint.smAndUp" :disabled="viewOnly" @click="openRest('short')">
-          Short{{ $vuetify.breakpoint.smAndUp ? ' Rest' : '' }}
+  <v-dialog
+    v-model="shown"
+    max-width="500"
+    scrollable
+    :fullscreen="$vuetify.breakpoint.xsOnly"
+    :transition="$vuetify.breakpoint.xsOnly ? 'dialog-bottom-transition' : 'dialog-transition'"
+  >
+    <v-card :loading="working">
+      <v-card-title class="text-h5">
+        Take a {{ type }} rest?
+      </v-card-title>
+      <v-card-text>
+        <!-- biotic recovery -->
+        <v-card v-if="(adeptLevel || nemesisLevel) && type === 'short' && character.currentStats.psUsed.some(i => i > 0)" shaped outlined elevation="0">
+          <v-card-title class="text-subtitle-2">
+            Biotic Recovery: {{ maxBioticRecoverySlots }} levels worth of power slots
+          </v-card-title>
+          <v-card-text class="px-3 py-0">
+            <div>
+              {{ bioticRecoveryTotal }} of {{ maxBioticRecoverySlots }} remaining
+            </div>
+            <div v-if="sentinelLevel && type === 'short' && sentinelSlotRecoveryNumber > 0" class="text-caption font-weight-bold">
+              Note: You will regain {{ $t(`string_numbers[${sentinelSlotRecoveryNumber}]`) }}
+              {{ $tc('slot', sentinelSlotRecoveryNumber, { n: `${nthLevelLabel(sentinelSlotRecovery.slotLvl, true)} power ` }) }} from your Sentinel class.
+            </div>
+            <v-row>
+              <v-col cols="4">
+                <v-select
+                  v-if="character.currentStats.psUsed[0] > 0"
+                  :label="nthLevelLabel(1)"
+                  :items="brFirstItems"
+                  :value="bioticRecovery[0]"
+                  clearable
+                  :disabled="brFirstItems.length === 0"
+                  @change="updateBioticRecovery(0, $event)"
+                />
+              </v-col>
+              <v-col cols="4">
+                <v-select
+                  v-if="character.currentStats.psUsed[1] > 0"
+                  :label="nthLevelLabel(2)"
+                  :items="brSecondItems"
+                  :value="bioticRecovery[1]"
+                  clearable
+                  :disabled="brSecondItems.length === 0"
+                  @change="updateBioticRecovery(1, $event)"
+                />
+              </v-col>
+              <v-col cols="4">
+                <v-select
+                  v-if="character.currentStats.psUsed[2] > 0"
+                  :label="nthLevelLabel(3)"
+                  :items="brThirdItems"
+                  :value="bioticRecovery[2]"
+                  clearable
+                  :disabled="brThirdItems.length === 0"
+                  @change="updateBioticRecovery(2, $event)"
+                />
+              </v-col>
+            </v-row>
+          </v-card-text>
+        </v-card>
+
+        <!-- recharge -->
+        <v-card v-if="engineerLevel && type === 'short'" shaped outlined class="mt-2" elevation="0">
+          <v-card-title class="text-subtitle-2">
+            Engineer Recharge: 1d{{ maxEngineerRecharge }}
+          </v-card-title>
+          <v-card-text class="px-3 py-0">
+            <v-slider
+              v-model="engineerRecharge"
+              :label="engineerRecharge.toString()"
+              ticks="always"
+              tick-size="6"
+              :tick-labels="engineerRechargeTickLabels"
+              :max="maxEngineerRecharge"
+            />
+          </v-card-text>
+        </v-card>
+
+        <!-- hit dice -->
+        <v-card outlined shaped elevation="0" class="mt-3">
+          <v-card-title class="text-subtitle-2">
+            Hit Dice
+          </v-card-title>
+          <v-card-text text="px-3 py-0">
+            <v-text-field v-if="type === 'short'" v-model="hpFromHitDice" label="Total HP recovered from Hit Dice" dense />
+            <div v-if="type === 'long'">
+              <div v-if="regainAllHitDice">
+                You will regain all your hit dice.
+              </div>
+              <div v-else>
+                You can regain {{ Math.max(Math.floor(level / 2), 1) }} hit dice.
+              </div>
+            </div>
+            <div v-if="type === 'short' || !regainAllHitDice">
+              <template v-for="(klass, index) in klasses">
+                <me-cs-hit-dice-tracker :key="`klass-hit-dice-${klass.id}`" :class-index="index" />
+              </template>
+            </div>
+          </v-card-text>
+        </v-card>
+
+        <!-- indoctrination / exhaustion -->
+        <v-row>
+          <v-col>
+            <v-checkbox v-if="character.currentStats.indoctrination" v-model="reduceIndoctrination" label="Reduce Indoctrination?" />
+          </v-col>
+          <v-col>
+            <v-checkbox v-if="character.currentStats.exhaustion" v-model="reduceExhaustion" label="Reduce Exhaustion?" />
+          </v-col>
+        </v-row>
+      </v-card-text>
+      <v-card-actions>
+        <v-btn text @click="shown = false">
+          Cancel
         </v-btn>
-        <v-btn :x-small="$vuetify.breakpoint.smAndUp" :disabled="viewOnly" @click="openRest('long')">
-          Long{{ $vuetify.breakpoint.smAndUp ? ' Rest' : '' }}
+        <v-spacer />
+        <v-btn text color="primary" @click="execRest(type)">
+          Take {{ type }} rest
         </v-btn>
-      </div>
-    </div>
-    <v-dialog
-      v-model="restBar"
-      elevation="24"
-      max-width="500"
-      :fullscreen="$vuetify.breakpoint.xsOnly"
-    >
-      <v-card :loading="working">
-        <v-card-title class="text-h5">
-          Take a {{ type }} rest?
-        </v-card-title>
-        <v-card-text>
-          <!-- biotic recovery -->
-          <v-card v-if="(adeptLevel || nemesisLevel) && type === 'short' && character.currentStats.psUsed.some(i => i > 0)" shaped outlined elevation="0">
-            <v-card-title class="text-subtitle-2">
-              Biotic Recovery: {{ maxBioticRecoverySlots }} levels worth of power slots
-            </v-card-title>
-            <v-card-text class="px-3 py-0">
-              <div>
-                {{ bioticRecoveryTotal }} of {{ maxBioticRecoverySlots }} remaining
-              </div>
-              <div v-if="sentinelLevel && type === 'short' && sentinelSlotRecoveryNumber > 0" class="text-caption font-weight-bold">
-                Note: You will regain {{ $t(`string_numbers[${sentinelSlotRecoveryNumber}]`) }}
-                {{ $tc('slot', sentinelSlotRecoveryNumber, { n: `${nthLevelLabel(sentinelSlotRecovery.slotLvl, true)} power ` }) }} from your Sentinel class.
-              </div>
-              <v-row>
-                <v-col cols="4">
-                  <v-select
-                    v-if="character.currentStats.psUsed[0] > 0"
-                    :label="nthLevelLabel(1)"
-                    :items="brFirstItems"
-                    :value="bioticRecovery[0]"
-                    clearable
-                    :disabled="brFirstItems.length === 0"
-                    @change="updateBioticRecovery(0, $event)"
-                  />
-                </v-col>
-                <v-col cols="4">
-                  <v-select
-                    v-if="character.currentStats.psUsed[1] > 0"
-                    :label="nthLevelLabel(2)"
-                    :items="brSecondItems"
-                    :value="bioticRecovery[1]"
-                    clearable
-                    :disabled="brSecondItems.length === 0"
-                    @change="updateBioticRecovery(1, $event)"
-                  />
-                </v-col>
-                <v-col cols="4">
-                  <v-select
-                    v-if="character.currentStats.psUsed[2] > 0"
-                    :label="nthLevelLabel(3)"
-                    :items="brThirdItems"
-                    :value="bioticRecovery[2]"
-                    clearable
-                    :disabled="brThirdItems.length === 0"
-                    @change="updateBioticRecovery(2, $event)"
-                  />
-                </v-col>
-              </v-row>
-            </v-card-text>
-          </v-card>
-
-          <!-- recharge -->
-          <v-card v-if="engineerLevel && type === 'short'" shaped outlined class="mt-2" elevation="0">
-            <v-card-title class="text-subtitle-2">
-              Engineer Recharge: 1d{{ maxEngineerRecharge }}
-            </v-card-title>
-            <v-card-text class="px-3 py-0">
-              <v-slider
-                v-model="engineerRecharge"
-                :label="engineerRecharge.toString()"
-                ticks="always"
-                tick-size="6"
-                :tick-labels="engineerRechargeTickLabels"
-                :max="maxEngineerRecharge"
-              />
-            </v-card-text>
-          </v-card>
-
-          <!-- hit dice -->
-          <v-card outlined shaped elevation="0" class="mt-3">
-            <v-card-title class="text-subtitle-2">
-              Hit Dice
-            </v-card-title>
-            <v-card-text text="px-3 py-0">
-              <v-text-field v-if="type === 'short'" v-model="hpFromHitDice" label="Total HP recovered from Hit Dice" dense />
-              <div v-if="type === 'long'">
-                <div v-if="regainAllHitDice">
-                  You will regain all your hit dice.
-                </div>
-                <div v-else>
-                  You can regain {{ Math.max(Math.floor(level / 2), 1) }} hit dice.
-                </div>
-              </div>
-              <div v-if="type === 'short' || !regainAllHitDice">
-                <template v-for="(klass, index) in klasses">
-                  <me-cs-hit-dice-tracker :key="`klass-hit-dice-${klass.id}`" :class-index="index" />
-                </template>
-              </div>
-            </v-card-text>
-          </v-card>
-
-          <!-- indoctrination / exhaustion -->
-          <v-row>
-            <v-col>
-              <v-checkbox v-if="character.currentStats.indoctrination" v-model="reduceIndoctrination" label="Reduce Indoctrination?" />
-            </v-col>
-            <v-col>
-              <v-checkbox v-if="character.currentStats.exhaustion" v-model="reduceExhaustion" label="Reduce Exhaustion?" />
-            </v-col>
-          </v-row>
-        </v-card-text>
-        <v-card-actions>
-          <v-btn text outlined @click="restBar = false">
-            Cancel
-          </v-btn>
-          <v-spacer />
-          <v-btn color="secondary" elevation="0" @click="execRest(type)">
-            Take {{ type }} rest
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-  </div>
+      </v-card-actions>
+    </v-card>
+  </v-dialog>
 </template>
 
 <script>
@@ -145,9 +131,9 @@ import { createNamespacedHelpers } from 'vuex'
 import cloneDeep from 'lodash/cloneDeep'
 const { mapGetters } = createNamespacedHelpers('character')
 export default {
+  name: 'MeCsRestDialog',
   data () {
     return {
-      restBar: false,
       type: 'short',
       working: false,
       bioticRecovery: [0, 0, 0],
@@ -163,8 +149,17 @@ export default {
       klasses: 'klasses/selectedKlasses',
       mechanics: 'mechanics/mechanics',
       powers: 'powers/powers',
-      level: 'klasses/level'
+      level: 'klasses/level',
+      restMenu: 'navigation/restMenu'
     }),
+    shown: {
+      get () {
+        return !!this.restMenu
+      },
+      set (value) {
+        this.$store.commit('character/navigation/SET', { key: 'restMenu', value })
+      }
+    },
     viewOnly () {
       return this.$store.state.character.viewOnly
     },
@@ -235,14 +230,21 @@ export default {
       return this.mechanics.find(i => i.type === 'regain-all-hit-dice')
     }
   },
+  watch: {
+    restMenu (newVal) {
+      if (newVal) {
+        this.type = newVal
+      } else {
+        this.reset()
+      }
+    }
+  },
   methods: {
-    openRest (type) {
-      this.working = false
-      this.type = type
+    reset () {
       this.bioticRecovery = [0, 0, 0]
       this.engineerRecharge = 0
       this.hpFromHitDice = null
-      this.restBar = true
+      this.working = false
     },
     execRest (type) {
       this.working = true
@@ -330,8 +332,7 @@ export default {
         }
       }
       this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats', value: currentStatsClone })
-      this.working = false
-      this.restBar = false
+      this.restMenu = false
     },
     nthLevelLabel (level, adj = false) {
       return this.$t(adj ? 'level_adj' : 'level_nth', { nth: this.$t(`ordinal_numbers[${level}]`) })

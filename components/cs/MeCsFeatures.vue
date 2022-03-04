@@ -1,18 +1,5 @@
 <template>
-  <v-container>
-    <me-cs-card-title v-if="$vuetify.breakpoint.smAndDown">
-      Features & Traits
-    </me-cs-card-title>
-    <v-chip-group v-model="tab" active-class="primary--text" column>
-      <v-chip
-        v-for="(cTab, index) in tabs"
-        :key="`action-chip-tab-${index}`"
-        small
-        :disabled="index !== 0 && features[index].length === 0"
-      >
-        {{ cTab }}
-      </v-chip>
-    </v-chip-group>
+  <div>
     <div v-for="(tabTitle, index) in tabs" :key="`feature-content-tab-${index}`">
       <div v-show="showTab(index)" v-if="index !== 0 && features[index].length">
         <me-cs-feature-list :items="features[index]">
@@ -20,27 +7,26 @@
         </me-cs-feature-list>
       </div>
     </div>
-  </v-container>
+  </div>
 </template>
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
 const { mapGetters } = createNamespacedHelpers('character')
 export default {
-  data () {
-    return {
-      tab: 0,
-      tabs: ['All', 'Class Features', 'Species Traits', 'Reputation Benefits', 'Feats']
-    }
-  },
+  name: 'MeCsFeatures',
   computed: {
     ...mapGetters({
       brews: 'brewsAsFeatures',
       traits: 'species/traits',
       klassesFeatures: 'klasses/klassesFeatures',
       klasses: 'klasses/klasses',
-      selections: 'selections/selected'
+      selections: 'selections/selected',
+      tab: 'navigation/featuresTab'
     }),
+    tabs () {
+      return this.$store.state.character.navigation.featuresTabs
+    },
     features () {
       return [
         [], // index 0 = all

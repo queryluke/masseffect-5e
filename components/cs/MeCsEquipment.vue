@@ -1,8 +1,5 @@
 <template>
   <div>
-    <me-cs-card-title v-if="$vuetify.breakpoint.smAndDown">
-      Equipment
-    </me-cs-card-title>
     <v-row class="my-2">
       <v-col cols="12" md="3">
         <me-cb-debounced-input

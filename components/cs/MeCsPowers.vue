@@ -1,9 +1,5 @@
 <template>
   <div>
-    <me-cs-card-title v-if="$vuetify.breakpoint.smAndDown">
-      Powers
-    </me-cs-card-title>
-
     <!-- Power Mod -->
     <v-row no-gutters justify="space-around" justify-md="center">
       <v-col v-for="stat in ['mod','attack','dc']" :key="`statDisplay-${stat}`" :cols="pcStatsCols" sm="4" class="d-flex mt-1">

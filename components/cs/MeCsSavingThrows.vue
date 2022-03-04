@@ -1,8 +1,5 @@
 <template>
   <div>
-    <me-cs-card-title>
-      Saving Throws
-    </me-cs-card-title>
     <v-row no-gutters>
       <template v-for="(item, index) of items">
         <v-col :key="`st-${index}`" cols="6">

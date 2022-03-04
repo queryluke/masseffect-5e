@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex justify-space-between mx-3">
+  <div class="d-flex justify-space-between mx-3 mt-2">
     <div class="d-flex align-center">
       <v-avatar :color="item.proficient && !item.expertise ? 'primary' : 'transparent'" size="12">
         <v-icon v-if="item.expertise" size="16" color="orange">
@@ -15,8 +15,9 @@
       <me-cs-die-bonus-icon v-for="(db, index) of dieBonus" :key="`die-bonus-${index}`" :bonus="db.effect" />
       <v-card outlined class="text-center" min-width="40px">
         <me-cs-die-roller
-        :input="'1d20' + rollText(item.mod)"
-        :data="rollInfo">
+          :input="'1d20' + rollText(item.mod)"
+          :data="rollInfo"
+        >
           {{ modText(item.mod) }}
         </me-cs-die-roller>
       </v-card>

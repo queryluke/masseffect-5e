@@ -1,8 +1,5 @@
 <template>
-  <div>
-    <me-cs-card-title>
-      Proficiencies
-    </me-cs-card-title>
+  <div class="px-4">
     <template v-for="type in profTypes">
       <div :key="`prof-${type}`">
         <div class="text-body-1">

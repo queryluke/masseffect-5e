@@ -1,21 +1,39 @@
 <template>
-  <v-dialog v-model="mobileMenu" overlay-opacity=".9">
+  <v-dialog
+    v-model="mobileMenu"
+    fullscreen
+    transition="dialog-bottom-transition"
+    scrollable
+  >
     <v-card>
-      <v-container fluid>
-        <v-row>
-          <v-col>
-            <me-cs-short-long-rest />
-            <v-divider class="mt-2" />
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col v-for="nav in mobileNav" :key="nav.view" :cols="nav.size">
-            <v-btn block x-large color="primary" :outlined="nav.view === mobileView" @click="show(nav.view)">
-              {{ nav.title }}
-            </v-btn>
-          </v-col>
-        </v-row>
-      </v-container>
+      <v-card-text>
+        <v-container class="mt-16">
+          <v-row>
+            <v-col>
+              <div class="d-flex justify-space-around">
+                <me-cs-rest-btn type="short" :props="{ outlined: true }" />
+                <me-cs-rest-btn type="long" :props="{ outlined: true }" />
+              </div>
+              <v-divider class="mt-2" />
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col v-for="nav in mobileNav" :key="nav.view" :cols="nav.size">
+              <v-btn block x-large color="primary" :outlined="nav.view === mobileView" @click="show(nav.view)">
+                {{ nav.title }}
+              </v-btn>
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-card-text>
+      <v-card-actions>
+        <v-btn
+          text
+          @click="mobileMenu = false"
+        >
+          Close
+        </v-btn>
+      </v-card-actions>
     </v-card>
   </v-dialog>
 </template>

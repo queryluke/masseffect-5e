@@ -9,6 +9,21 @@
             <me-cs-apsi />
           </div>
         </div>
+        <v-btn
+          fab
+          bottom
+          left
+          absolute
+          style="margin-left: -12px"
+          color="red darken-2"
+          small
+          elevation="0"
+          @click="mobileRoller = true"
+        >
+          <v-icon>
+            mdi-dice-multiple
+          </v-icon>
+        </v-btn>
       </template>
     </me-app-bar>
     <!-- END: APP BAR -->
@@ -28,6 +43,9 @@
     </v-main>
     <!-- END: CONTENT -->
 
+    <!-- Short/long rest Menu -->
+    <me-cs-rest-dialog />
+
     <!-- Mobile Menu -->
     <me-cs-mobile-navigation />
 
@@ -36,6 +54,26 @@
 
     <!-- Mobile Die Menu -->
     <me-cs-mobile-custom-die-roller />
+
+    <!-- Small Screen details and notes -->
+    <me-standard-dialog :shown="smDetailsNotes" @close="smDetailsNotes = false">
+      <v-tabs v-model="smDetailsNotesTab">
+        <v-tab>
+          Notes
+        </v-tab>
+        <v-tab>
+          Details
+        </v-tab>
+      </v-tabs>
+      <v-tabs-items v-model="smDetailsNotesTab">
+        <v-tab-item>
+          <me-cs-notes />
+        </v-tab-item>
+        <v-tab-item>
+          <me-cs-details />
+        </v-tab-item>
+      </v-tabs-items>
+    </me-standard-dialog>
 
     <v-bottom-navigation v-if="$vuetify.breakpoint.xsOnly" app grow>
       <v-btn @click="mobileRoller = !mobileRoller">
@@ -51,14 +89,57 @@
         <v-icon>mdi-cog</v-icon>
       </v-btn>
     </v-bottom-navigation>
+
+    <v-bottom-navigation v-if="$vuetify.breakpoint.smOnly" v-model="mobileView" app grow color="primary">
+      <template v-for="item in smMenuItems">
+        <v-btn :key="item.view" :value="item.view">
+          <span>{{ item.name }}</span>
+          <v-icon>{{ item.icon }}</v-icon>
+        </v-btn>
+      </template>
+    </v-bottom-navigation>
   </v-app>
 </template>
 
 <script>
 import { MetaHead } from '~/mixins/MetaHead'
+import MeStandardDialog from '~/components/MeStandardDialog'
 
 export default {
+  components: { MeStandardDialog },
   mixins: [MetaHead],
+  data () {
+    return {
+      smDetailsNotesTab: 0,
+      smMenuItems: [
+        {
+          name: 'Character',
+          icon: 'mdi-head-cog',
+          view: 'abilities'
+        },
+        {
+          name: 'Actions',
+          icon: 'mdi-sword',
+          view: 'actions'
+        },
+        {
+          name: 'Powers',
+          icon: 'mdi-fire',
+          view: 'powers'
+        },
+        {
+          name: 'Gear',
+          icon: 'mdi-sack',
+          view: 'gear'
+        },
+        {
+          name: 'Settings',
+          icon: 'mdi-cog',
+          view: 'settings'
+        }
+      ]
+    }
+  },
   computed: {
     characterReady () {
       return this.$store.getters['character/characterReady']
@@ -93,6 +174,14 @@ export default {
       },
       set (value) {
         return this.$store.commit('character/navigation/SET', { key: 'mobileRoller', value })
+      }
+    },
+    smDetailsNotes: {
+      get () {
+        return this.$store.getters['character/navigation/smDetailsNotes']
+      },
+      set (value) {
+        return this.$store.commit('character/navigation/SET', { key: 'smDetailsNotes', value })
       }
     }
   },
