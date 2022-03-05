@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex justify-space-between mx-3">
+  <div class="d-flex justify-space-between mx-3 mt-2">
     <div class="d-flex align-center">
       <v-avatar :color="item.proficient && !item.expertise ? 'primary' : 'transparent'" size="12">
         <v-icon v-if="item.expertise" size="16" color="orange">
@@ -13,13 +13,11 @@
     <div class="text-h6 d-flex align-center">
       <me-cs-ad-icons type="skill-check" :value="item.id" />
       <me-cs-die-bonus-icon v-for="(db, index) of dieBonus" :key="`die-bonus-${index}`" :bonus="db.effect" />
-      <v-card outlined class="text-center" min-width="40px">
-        <me-cs-die-roller
-        :input="'1d20' + rollText(item.mod)"
-        :data="rollInfo">
+      <me-cs-roll-card :roll="roll">
+        <div class="text-h6">
           {{ modText(item.mod) }}
-        </me-cs-die-roller>
-      </v-card>
+        </div>
+      </me-cs-roll-card>
     </div>
   </div>
 </template>
@@ -40,11 +38,11 @@ export default {
     dieBonus () {
       return this.item.otherBonuses.filter(i => i.effect?.type === 'die-bonus')
     },
-    rollInfo () {
-      const modStr = '(' + this.modText(this.item.mod) + ')'
+    roll () {
       return {
-        roll: '1d20+' + this.item.mod + '',
-        title: 'Skill Check: ' + this.item.name + ' ' + modStr
+        notation: `1d20${this.rollText(this.item.mod)}`,
+        detail: this.item.name,
+        type: 'check'
       }
     }
   }

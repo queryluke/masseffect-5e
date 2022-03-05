@@ -44,16 +44,16 @@
             <small>Initiative</small>
           </div>
           <div class="text-h6 d-flex justify-center align-center">
-            <me-cs-die-roller :input="'1d20' + rollText(initiativeBonus)" :data="{title: 'Initiative Roll'}">
-              <me-cs-ad-icon
-                v-if="(initiativeAd && !initiativeDis) || (!initiativeAd && initiativeDis)"
-                :type="initiativeAd ? 'a' : 'd'"
-                class="mr-1"
-              />
-              <span>
+            <me-cs-ad-icon
+              v-if="(initiativeAd && !initiativeDis) || (!initiativeAd && initiativeDis)"
+              :type="initiativeAd ? 'a' : 'd'"
+              class="mr-1"
+            />
+            <me-cs-roll-card :roll="{ type: 'roll', detail: 'initiative', notation: `1d20${rollText(initiativeBonus)}`}">
+              <div class="py-1">
                 {{ initiativeBonus > 0 ? '+' : '' }}{{ initiativeBonus }}
-              </span>
-            </me-cs-die-roller>
+              </div>
+            </me-cs-roll-card>
           </div>
         </v-card>
       </v-col>

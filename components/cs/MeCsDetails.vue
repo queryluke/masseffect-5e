@@ -1,8 +1,5 @@
 <template>
   <div>
-    <me-cs-card-title v-if="$vuetify.breakpoint.smAndDown">
-      Character Details
-    </me-cs-card-title>
     <v-chip-group v-model="tab" active-class="primary--text">
       <v-chip
         v-for="(cTab, index) in tabs"

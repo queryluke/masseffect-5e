@@ -125,7 +125,7 @@ export const actions = {
       for (const character of Object.values(characters)) {
         newCharacters.push(await dispatch('character/migrator/migrate', character, { root: true }))
       }
-      commit('characters/SET_CHARACTERS', newCharacters, { root: true })
+      commit('characters/SET_LOCAL_CHARACTERS', newCharacters, { root: true })
     }
   }
 }

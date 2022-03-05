@@ -1,115 +1,80 @@
 <template>
-  <div class="mb-16 mx-1">
-    <me-cs-log-snackbar/>
+  <v-container>
     <div v-if="mobileView === 'abilities'">
-      <me-cs-card>
+      <me-cs-card title="Abilities">
         <me-cs-abilities />
       </me-cs-card>
-      <me-cs-card>
+      <me-cs-card title="Saving Throws">
         <me-cs-saving-throws />
       </me-cs-card>
-      <me-cs-card>
+      <me-cs-card title="Senses">
         <me-cs-senses />
       </me-cs-card>
     </div>
     <div v-if="mobileView === 'skills'">
-      <me-cs-card>
+      <me-cs-card title="Skills">
         <me-cs-skills />
       </me-cs-card>
-      <me-cs-card>
-        <me-cs-proficiencies />
+      <me-cs-card title="Proficiencies">
+        <div class="px-4">
+          <me-cs-proficiencies />
+        </div>
       </me-cs-card>
     </div>
     <div v-if="mobileView === 'notes'">
-      <me-cs-card>
+      <me-cs-card title="Notes">
         <me-cs-notes />
       </me-cs-card>
     </div>
     <div v-if="mobileView === 'details'">
-      <me-cs-card>
+      <me-cs-card title="Reputation">
         <me-cs-reputation />
       </me-cs-card>
-      <me-cs-card>
+      <me-cs-card title="Character Details">
         <me-cs-details />
       </me-cs-card>
     </div>
     <div v-if="mobileView === 'equipment'">
-      <me-cs-card>
+      <me-cs-card title="Equipment">
         <me-cs-equipment />
       </me-cs-card>
     </div>
-    <div v-if="mobileView === 'settings'">
-      <me-cs-card>
-        <me-cs-settings />
-      </me-cs-card>
-    </div>
     <div v-if="mobileView === 'actions'">
-      <me-cs-short-long-rest />
-      <me-cs-card>
-        <me-cs-actions />
-      </me-cs-card>
+      <me-cs-card-sticky-header>
+        <template #header>
+          <me-cs-card-title>Actions</me-cs-card-title>
+          <me-cs-card-nav-chips chip-set="actions" />
+        </template>
+        <v-card-text class="px-2">
+          <me-cs-actions />
+        </v-card-text>
+      </me-cs-card-sticky-header>
     </div>
     <div v-if="mobileView === 'features'">
-      <me-cs-card>
-        <me-cs-features />
-      </me-cs-card>
+      <me-cs-card-sticky-header>
+        <template #header>
+          <me-cs-card-title>Features & Traits</me-cs-card-title>
+          <me-cs-card-nav-chips chip-set="features" />
+        </template>
+        <v-card-text class="px-2">
+          <me-cs-features />
+        </v-card-text>
+      </me-cs-card-sticky-header>
     </div>
     <div v-if="mobileView === 'powers'">
-      <me-cs-card>
+      <me-cs-card title="Powers">
         <me-cs-powers />
       </me-cs-card>
     </div>
-    <v-btn
-      v-if="$vuetify.breakpoint.smAndDown"
-      fab
-      bottom
-      right
-      fixed
-      style="z-index: 1000"
-      @click="mobileMenu = !mobileMenu"
-    >
-      <v-icon>
-        {{ mobileMenu ? 'mdi-close' : 'mdi-dots-grid' }}
-      </v-icon>
-    </v-btn>
-    <v-dialog v-if="$vuetify.breakpoint.smAndDown" v-model="mobileMenu" overlay-opacity=".9">
-      <v-container fluid>
-        <v-row>
-          <v-col v-for="nav in mobileNav" :key="nav.view" :cols="nav.size">
-            <v-btn block x-large color="primary" @click="show(nav.view)">
-              {{ nav.title }}
-            </v-btn>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-dialog>
-  </div>
+  </v-container>
 </template>
 
 <script>
 export default {
   name: 'MeCsViewsXs',
-  data () {
-    return {
-      mobileNav: [
-        { view: 'abilities', title: 'Abilities, Saves, Senses', size: 12 },
-        { view: 'skills', title: 'Proficiencies', size: 12 },
-        { view: 'actions', title: 'Actions', size: 6 },
-        { view: 'features', title: 'Features', size: 6 },
-        { view: 'powers', title: 'Powers', size: 6 },
-        { view: 'equipment', title: 'Gear', size: 6 },
-        { view: 'details', title: 'Details', size: 6 },
-        { view: 'notes', title: 'Notes', size: 6 },
-        { view: 'settings', title: 'Settings', size: 12 }
-      ],
-      mobileView: 'abilities',
-      mobileMenu: false
-    }
-  },
-  methods: {
-    show (value) {
-      this.mobileView = value
-      this.mobileMenu = false
+  computed: {
+    mobileView () {
+      return this.$store.getters['character/navigation/mobileView']
     }
   }
 }

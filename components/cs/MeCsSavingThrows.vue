@@ -1,8 +1,5 @@
 <template>
   <div>
-    <me-cs-card-title>
-      Saving Throws
-    </me-cs-card-title>
     <v-row no-gutters>
       <template v-for="(item, index) of items">
         <v-col :key="`st-${index}`" cols="6">
@@ -15,12 +12,14 @@
                 </div>
               </div>
               <div class="text-h6 d-flex align-center">
-                <me-cs-die-roller :input="'1d20' + rollText(abilityItem.score) + ''" :data="{title: abilityItem.ability.toUpperCase() + ' Saving Throw'}">
-                  <me-cs-ad-icons type="saving-throw" :value="abilityItem.ability" />
-                  <span class="pl-1">
-                    {{ abilityItem.score }}
-                  </span>
-                </me-cs-die-roller>
+                <me-cs-ad-icons type="saving-throw" :value="abilityItem.ability" />
+                <div class="pl-1 mb-1 text-center">
+                  <me-cs-roll-card :roll="roll(abilityItem.ability)">
+                    <div class="py-1">
+                      {{ abilityItem.score }}
+                    </div>
+                  </me-cs-roll-card>
+                </div>
               </div>
             </div>
           </v-list>
@@ -43,11 +42,9 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
-import MeCsDieRoller from './MeCsDieRoller.vue'
 import { ScoreText } from '~/mixins/character/scoreText'
 const { mapGetters } = createNamespacedHelpers('character')
 export default {
-  components: { MeCsDieRoller },
   mixins: [ScoreText],
   computed: {
     // TODO: this may be better off in the store
@@ -116,6 +113,13 @@ export default {
     },
     specialAdOrDis (type) {
       return this.savingThrowMechanics.filter(i => i.effect === type && !i.ability && !i.against).map(i => i.note)
+    },
+    roll (ability) {
+      return {
+        notation: `1d20${this.rollText(this.abilityBreakdown[ability].mod)}`,
+        detail: this.$t(`abilities.${ability}.abbr`),
+        type: 'save'
+      }
     }
   }
 }
