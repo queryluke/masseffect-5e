@@ -34,7 +34,7 @@
     <!-- END: NAV DRAWER -->
 
     <!-- START: NAV DRAWER -->
-    <me-cs-side-navbar />
+    <me-cs-side-nav />
     <!-- END: NAV DRAWER -->
 
     <!-- START: CONTENT -->

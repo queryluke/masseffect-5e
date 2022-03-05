@@ -28,7 +28,7 @@ export default {
   },
   watch: {
     logsLength () {
-      const parentElement = document.getElementById('meCsSideNavbar')
+      const parentElement = document.getElementById('meCsSideNav')
       const [element] = parentElement.getElementsByClassName('v-navigation-drawer__content')
       setTimeout(() => {
         element.scrollTop = 9999999

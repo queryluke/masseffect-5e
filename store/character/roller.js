@@ -56,7 +56,7 @@ export const actions = {
       timestamp: new Date()
     }
 
-    dispatch('character/navigation/SHOW_SIDE_NAVBAR', 'me-cs-logs-list', { root: true })
+    dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-logs-list', { root: true })
     dispatch('character/logs/LOG_WRITE', entry, { root: true })
   }
 }

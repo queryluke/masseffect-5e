@@ -88,7 +88,7 @@ export default {
     viewLogs () {
       this.closeRoller()
       this.$nextTick(() => {
-        this.$store.dispatch('character/navigation/SHOW_SIDE_NAVBAR', 'me-cs-logs-list')
+        this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-logs-list')
       })
     }
   }

@@ -113,7 +113,7 @@ export default {
       return Object.values(this.$store.getters['character/roller/rollController']).some(i => i) || this.$store.getters['character/roller/customTextRoll']
     },
     logsShown () {
-      return this.$store.getters['character/navigation/sideNavbar']
+      return this.$store.getters['character/navigation/sideNav']
     }
   },
   watch: {
@@ -142,9 +142,9 @@ export default {
     },
     toggleLogs () {
       if (this.logsShown) {
-        this.$store.commit('character/navigation/SET', { key: 'sideNavbar', value: false })
+        this.$store.commit('character/navigation/SET', { key: 'sideNav', value: false })
       } else {
-        this.$store.dispatch('character/navigation/SHOW_SIDE_NAVBAR', 'me-cs-logs-list')
+        this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-logs-list')
       }
     }
   }
