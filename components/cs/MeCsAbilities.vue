@@ -6,9 +6,11 @@
           <div class="text-caption">
             {{ $t(`abilities.${ability}.abbr`) }}
           </div>
-          <div class="text-h6">
-            {{ modText(abilityBreakdown[ability].mod) }}
-          </div>
+          <me-cs-roll-card :roll="roll(ability)">
+            <div class="text-h6">
+              {{ modText(abilityBreakdown[ability].mod) }}
+            </div>
+          </me-cs-roll-card>
           <div>
             {{ abilityBreakdown[ability].total }}
           </div>
@@ -24,8 +26,26 @@ import { ScoreText } from '~/mixins/character/scoreText'
 const { mapGetters } = createNamespacedHelpers('character/abilities')
 export default {
   mixins: [ScoreText],
+  data () {
+    return {
+      rollCardProps: {
+        outlined: true,
+        flat: true,
+        class: 'pa-2 text-center ma-2 mx-sm-1'
+      }
+    }
+  },
   computed: {
     ...mapGetters(['abilityBreakdown'])
+  },
+  methods: {
+    roll (ability) {
+      return {
+        notation: `1d20${this.rollText(this.abilityBreakdown[ability].mod)}`,
+        detail: this.$t(`abilities.${ability}.abbr`),
+        type: 'check'
+      }
+    }
   }
 }
 </script>

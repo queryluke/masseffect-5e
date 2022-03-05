@@ -1,84 +1,56 @@
 <template>
-  <div :class="'roll-container' + slotState ">
-    <v-icon :class="'die-icon'" @click.stop="rollMe">
-      {{ icon }}
-    </v-icon>
-    <span class="roll-text">
-      <slot />
-    </span>
-  </div>
+  <v-hover v-slot="{ hover }">
+    <v-badge
+      :value="hover"
+      :icon="icon"
+      overlap
+      bottom
+      color="red darken-4"
+      @click.native.stop="rollMe"
+    >
+      <v-card outlined flat min-width="48" class="text-center" @click.stop="rollMe">
+        <slot />
+      </v-card>
+    </v-badge>
+  </v-hover>
 </template>
 
 <script>
 export default {
   props: {
-    input: {
-      type: String,
-      required: true
-    },
     icon: {
       type: String,
-      required: false,
-      default () { return 'mdi-dice-multiple' }
+      default: 'mdi-dice-multiple'
     },
-    data: {
+    roll: {
       type: Object,
-      required: false,
-      default () { return {} }
+      required: true
     }
   },
   computed: {
-    slotState () {
-      return this.$slots.default ? '' : '-empty'
-    },
     actions () {
       // Setting this up so we can expand on this to control / exclude certain actions later if needed
       const _actions = {
         rollAgain: {
           title: 'Roll Again',
-          action: this.rollMe,
+          action: this.roll,
           type: 'btn'
         }
       }
       return {
         ..._actions,
-        ...this.data.actions
+        ...this.roll.actions || {}
       }
     }
   },
   methods: {
-    rollMe (newRoll) {
-      const roll = this.input
-      this.$store.dispatch('character/ROLL',
+    rollMe () {
+      this.$store.dispatch('character/roller/ROLL',
         {
-          title: this.data.title || 'Roll',
-          type: 'dice-roll',
-          actions: this.actions,
-          roll
+          ...this.roll,
+          actions: this.actions
         })
     }
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.die-icon {
-  display: inline;
-}
-.roll-text {
-  display: inline;
-}
-.roll-container {
-  .die-icon {
-    display: none;
-  }
-}
-.roll-container:hover {
-  .roll-text {
-    display: none;
-  }
-  .die-icon {
-    display: inline;
-  }
-}
-</style>

@@ -5,8 +5,8 @@
         <v-icon v-if="!isLastEntry" color="primary">
           mdi-chevron-{{ show ? 'up' : 'down' }}
         </v-icon>
-        <div class="ml-1 text-body-2">
-          {{ data.title }}
+        <div class="ml-1 text-body-2 text-capitalize">
+          {{ data.detail }}: {{ data.type }}
         </div>
       </div>
       <div class="text-h5 ma-1 mr-2">
@@ -44,6 +44,17 @@
         </v-list>
         <v-divider />
         <v-card-actions>
+          <!-- TODO: color based on next roll -->
+          <v-btn
+            v-for="(roll, index) of entry.nextRolls"
+            :key="`add-roll-${index}`"
+            text
+            small
+            color="red darken-4"
+            @click.stop="makeNextRoll(index)"
+          >
+            {{ roll.text }}
+          </v-btn>
           <v-spacer />
           <v-btn text small color="primary" @click.stop="reroll()">
             reroll
@@ -86,11 +97,17 @@ export default {
     }
   },
   methods: {
+    makeNextRoll (index) {
+      const nextRoll = this.entry.nextRolls[index]?.roll
+      if (nextRoll?.notation) {
+        this.$store.dispatch('character/roller/ROLL', nextRoll)
+      }
+    },
     reroll () {
       const payload = {
-        title: this.data.title,
+        detail: this.data.detail,
         type: this.data.type,
-        roll: this.data.notation
+        notation: this.data.notation
       }
       this.$store.dispatch('character/roller/ROLL', payload)
     }

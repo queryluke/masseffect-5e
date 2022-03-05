@@ -25,30 +25,23 @@ export const mutations = {
 
 export const actions = {
   CUSTOM_ROLL ({ dispatch, getters }) {
-    const roll = Object.entries(getters.rollController)
+    const notation = Object.entries(getters.rollController)
       .map(([dieType, count]) => `${count}${dieType}`)
       .join('+')
-    const notation = getters.customTextRoll
+    const customNotation = getters.customTextRoll
     dispatch('ROLL', {
-      title: 'Custom Roll',
-      type: 'custom',
-      roll: notation || roll
+      type: 'roll',
+      detail: 'custom',
+      notation: notation || customNotation
     })
   },
   ROLL ({ dispatch, rootGetters }, payload) {
-    const roll = new DiceRoll(payload.roll)
-    // TODO: investigate a better display for notation, or better way to get it
-    /*
-    const results = roll.output.split(/[:=]/)[1].trim()
-      .replaceAll(/[[\]]/g, '')
-      .replaceAll(/, /g, ' + ')
-    */
+    const roll = new DiceRoll(payload.notation)
     const results = roll.output.split(/[:=]/)[1].trim()
     const entry = {
       data: {
-        title: payload.title,
         type: payload.type,
-        subtitle: payload.subtitle || rootGetters['character/character'].name,
+        detail: payload.detail,
         notation: roll.notation,
         total: roll.total,
         results
@@ -58,6 +51,7 @@ export const actions = {
         id: rootGetters['character/id'],
         name: rootGetters['character/character'].name
       },
+      nextRolls: payload.nextRolls || [],
       component: 'me-cs-logs-roll-entry',
       timestamp: new Date()
     }

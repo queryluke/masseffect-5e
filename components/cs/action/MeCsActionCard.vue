@@ -62,15 +62,11 @@
 
       <template v-if="hit" #hit>
         <me-cs-action-stat>
-          <me-cs-die-roller
-            :input="'1d20'+rollText(hit.bonus)+''"
-            :data="{
-          ...hit,
-          title: item.name + ' - To Hit'
-            }"
-          >
-            {{ modText(hit.bonus) }}
-          </me-cs-die-roller>
+          <me-cs-roll-card :roll="hitRoll">
+            <div class="my-1">
+              {{ modText(hit.bonus) }}
+            </div>
+          </me-cs-roll-card>
         </me-cs-action-stat>
       </template>
 
@@ -96,14 +92,19 @@
       <template v-if="damages" #damage>
         <me-cs-action-stat v-for="(damage, index) in damages" :key="`damage-${index}`">
           <span :class="`${damage.healing ? damage.color : ''}`">
-            <me-cs-die-roller :input="damage.text" :data="{...damage, title: item.name + ' - Damage'}">
+            <me-cs-roll-card v-if="damageRoll(damage)" :roll="damageRoll(damage)">
+              <div class="ma-1">
+                {{ damage.text }}
+              </div>
+            </me-cs-roll-card>
+            <div v-else class="ma-1">
               {{ damage.text }}
-            </me-cs-die-roller>
+            </div>
           </span>
           <template #subtitle>
-            <span :class="`${damage.healing ? damage.color : ''}`">
+            <div :class="`${damage.healing ? damage.color : ''}`" class="mt-1">
               {{ damage.type }}
-            </span>
+            </div>
           </template>
         </me-cs-action-stat>
       </template>
@@ -215,18 +216,6 @@ export default {
       const bonus = hit.bonus ? this.mcBonus(hit.bonus) : 0
       const mod = hit.mod ? this.abilityBreakdown[hit.mod].mod : 0
       hit.bonus = bonus + mod + (hit.proficient ? this.profBonus : 0)
-      /* TODO: Add logic for multiple damage rolls */
-      const dmgRoll = this.damages && this.damages[0]
-      if (dmgRoll) {
-        hit.actions = {
-          rollDamage: {
-            title: 'Roll Damage',
-            action: this.rollDamage,
-            params: [dmgRoll],
-            type: 'btn'
-          }
-        }
-      }
       return hit
     },
     range () {
@@ -307,6 +296,27 @@ export default {
         hp: this.hp.current,
         level: this.level
       }
+    },
+    hitRoll () {
+      const hitRoll = {
+        notation: `1d20${this.rollText(this.hit.bonus)}`,
+        detail: this.item.name,
+        type: 'to hit'
+      }
+      // TODO: Add logic for multiple damage rolls
+      if (this.damages && this.damages[0]) {
+        hitRoll.nextRolls = [
+          {
+            text: 'Roll Damage',
+            roll: {
+              detail: this.item.name || 'Damage Roll',
+              type: 'damage',
+              notation: this.damages[0].text
+            }
+          }
+        ]
+      }
+      return hitRoll
     }
   },
   methods: {
@@ -335,14 +345,18 @@ export default {
       })
       return interpolated
     },
-    rollDamage (dmgRoll) {
-      console.log('rolling damage from to-hit...', { dmgRoll })
-      this.$store.dispatch('character/ROLL',
-        {
-          title: this.item.name ? this.item.name + ' - Damage' : 'Damage Roll',
-          type: 'dice-roll',
-          roll: dmgRoll.text
-        })
+    damageRoll (damage) {
+      if (!damage.text.toString().includes('d')) {
+        return false
+      }
+      const type = damage.type === 'shield points'
+        ? 'shields'
+        : damage.type
+      return {
+        notation: damage.text,
+        detail: this.item.name,
+        type
+      }
     }
   }
 }

@@ -15,12 +15,7 @@
                 <template #activator="{ on, attrs }">
                   <div v-bind="attrs" class="d-flex align-center" v-on="on">
                     <div class="text-h6 text-uppercase">
-                      <me-cs-die-roller v-if="stat == 'attack'" :input="'1d20'+rollText(info[stat])" :data="{title: statTitles[stat]}">
-                        {{ info[stat] }}
-                      </me-cs-die-roller>
-                      <template v-else>
-                        {{ info[stat] }}
-                      </template>
+                      {{ info[stat] }}
                     </div>
                     <div v-if="groupedPowercastingAbilityStats.length > 1">
                       <v-avatar v-for="pcKlass in info.klasses" :key="`${info.ability}-${stat}-${pcKlass}-icon`" title size="22">
