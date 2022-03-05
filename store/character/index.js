@@ -57,13 +57,6 @@ export const getters = {
       return ordinals[level]
     })
   },
-  logs: (state, getters, rootState, rootGetters) => {
-    if (rootGetters['auth/isAuthenticated']) {
-      // some call to get logs from API
-    } else {
-      return rootState.characters.localLogs[getters.id]
-    }
-  },
   profBonus: (state, getters, rootState, rootGetters) => {
     return [0, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6][rootGetters['character/klasses/level']]
   },
