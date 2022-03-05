@@ -16,7 +16,7 @@
       <component :is="sideNavbarComponent" id="testing" />
     </template>
 
-    <template #append>
+    <template v-if="$vuetify.breakpoint.mdAndUp" #append>
       <v-divider />
       <v-btn text block @click="sideNavbar = false">
         Close

@@ -57,7 +57,7 @@
     <me-cs-mobile-custom-die-roller />
 
     <!-- Die Speed Dial for larger screens -->
-    <me-cs-roll-speed-dial />
+    <me-cs-roll-speed-dial v-if="$vuetify.breakpoint.mdAndUp" />
 
     <!-- Small Screen details and notes -->
     <me-standard-dialog :shown="smDetailsNotes" @close="smDetailsNotes = false">

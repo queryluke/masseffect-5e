@@ -17,6 +17,23 @@
       </template>
       <me-cs-roll-die-select v-for="dieType in dieTypes" :key="dieType" :die-type="dieType" overlay />
     </v-speed-dial>
+
+    <v-btn
+      fab
+      shaped
+      small
+      fixed
+      bottom
+      right
+      color="red darken-4"
+      :style="nudgeLogButton"
+      @click="toggleLogs"
+    >
+      <v-icon>
+        mdi-chevron-{{ logsShown ? 'right' : 'left' }}
+      </v-icon>
+    </v-btn>
+
     <v-fade-transition>
       <v-btn
         v-show="menu"
@@ -64,10 +81,10 @@ export default {
       }
       return undefined
     },
-    nudgeRoll () {
-      if (this.nudge) {
+    nudgeLogButton () {
+      if (this.logsShown && this.$vuetify.breakpoint.lgAndUp) {
         return {
-          'margin-left': '286px'
+          'margin-right': '246px'
         }
       }
       return undefined
@@ -77,6 +94,9 @@ export default {
     },
     rollable () {
       return Object.values(this.$store.getters['character/roller/rollController']).some(i => i) || this.$store.getters['character/roller/customTextRoll']
+    },
+    logsShown () {
+      return this.$store.getters['character/navigation/sideNavbar']
     }
   },
   watch: {
@@ -98,11 +118,12 @@ export default {
       this.$store.commit('character/roller/SET_CUSTOM_TEXT_ROLL', null)
       this.mobileRoller = false
     },
-    viewLogs () {
-      this.closeRoller()
-      this.$nextTick(() => {
+    toggleLogs () {
+      if (this.logsShown) {
+        this.$store.commit('character/navigation/SET', { key: 'sideNavbar', value: false })
+      } else {
         this.$store.dispatch('character/navigation/SHOW_SIDE_NAVBAR', 'me-cs-logs-list')
-      })
+      }
     }
   }
 }
