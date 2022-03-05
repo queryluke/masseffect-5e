@@ -1,11 +1,6 @@
 <template>
   <v-row no-gutters>
     <v-col cols="12">
-      <me-cs-card-title>
-        Senses
-      </me-cs-card-title>
-    </v-col>
-    <v-col cols="12">
       <v-list dense class="pb-0">
         <v-list-item v-for="passive in passiveScores" :key="passive.skill" class="mt-n2">
           <v-list-item-avatar size="17" tile>

@@ -94,7 +94,11 @@ export default {
           let base = {
             ...i,
             learned: false,
-            disabled: this.klass.id === 'soldier' ? false : this.techClass ? i.level > this.tpMaxCheck : i.level > this.psMaxCheck
+            disabled: i.level === 0
+              ? this.learnedCantripsMax === 0
+              : this.techClass
+                ? i.level > this.tpMaxCheck
+                : i.level > this.psMaxCheck
           }
           if (learned) {
             base = {

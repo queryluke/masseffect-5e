@@ -4,7 +4,7 @@
       {{ item.name }}
     </me-tpg>
     <me-html :content="item.html" />
-    <me-species-traits-list :item="item" />
+    <me-species-traits-list :item="item" variant />
     <div v-if="item.subspecies">
       <me-tpg s="h3">
         {{ item.subspecies.name }}

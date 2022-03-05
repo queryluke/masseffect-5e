@@ -49,9 +49,11 @@
               :type="initiativeAd ? 'a' : 'd'"
               class="mr-1"
             />
-            <span>
-              {{ initiativeBonus > 0 ? '+' : '' }}{{ initiativeBonus }}
-            </span>
+            <me-cs-roll-card :roll="{ type: 'roll', detail: 'initiative', notation: `1d20${rollText(initiativeBonus)}`}">
+              <div class="py-1">
+                {{ initiativeBonus > 0 ? '+' : '' }}{{ initiativeBonus }}
+              </div>
+            </me-cs-roll-card>
           </div>
         </v-card>
       </v-col>
@@ -73,9 +75,11 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
+import { ScoreText } from '~/mixins/character/scoreText'
 const { mapGetters } = createNamespacedHelpers('character')
 export default {
   name: 'MeCsApsi',
+  mixins: [ScoreText],
   data () {
     return {
       addlSpeedDialog: false

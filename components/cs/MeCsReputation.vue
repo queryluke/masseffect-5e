@@ -1,11 +1,5 @@
 <template>
   <v-card flat color="transparent" @click="repDialog = true">
-    <me-cs-card-title>
-      <v-icon v-if="needSelection || needChange" :color="needChange ? 'warning' : 'info'" class="ml-n6">
-        mdi-alert-circle
-      </v-icon>
-      Reputation
-    </me-cs-card-title>
     <div class="d-flex justify-space-between mx-6">
       <v-avatar size="24">
         <v-img :src="require('~/assets/images/misc/paragon.png')" />
@@ -33,7 +27,11 @@
           width="15"
           rotate="90"
           style="margin-left: -6px"
-        />
+        >
+          <v-icon v-if="needSelection || needChange" :color="needChange ? 'warning' : 'info'" style="margin-left: 6px;" size="36">
+            mdi-alert-circle
+          </v-icon>
+        </v-progress-circular>
       </div>
     </div>
     <me-standard-dialog :shown="repDialog" @close="repDialog = false">

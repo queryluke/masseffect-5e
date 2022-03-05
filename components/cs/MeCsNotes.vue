@@ -1,8 +1,5 @@
 <template>
   <div>
-    <me-cs-card-title v-if="$vuetify.breakpoint.smAndDown">
-      Notes
-    </me-cs-card-title>
     <div v-if="!viewOnly" class="d-flex justify-center">
       <v-btn :disabled="!saveable" color="primary" :loading="loading" @click="updateAttr()">
         {{ saveable ? 'save' : 'saved' }}

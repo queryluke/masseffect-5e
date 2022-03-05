@@ -62,7 +62,11 @@
 
       <template v-if="hit" #hit>
         <me-cs-action-stat>
-          {{ modText(hit.bonus) }}
+          <me-cs-roll-card :roll="hitRoll">
+            <div class="my-1">
+              {{ modText(hit.bonus) }}
+            </div>
+          </me-cs-roll-card>
         </me-cs-action-stat>
       </template>
 
@@ -88,12 +92,19 @@
       <template v-if="damages" #damage>
         <me-cs-action-stat v-for="(damage, index) in damages" :key="`damage-${index}`">
           <span :class="`${damage.healing ? damage.color : ''}`">
-            {{ damage.text }}
+            <me-cs-roll-card v-if="damageRoll(damage)" :roll="damageRoll(damage)">
+              <div class="ma-1">
+                {{ damage.text }}
+              </div>
+            </me-cs-roll-card>
+            <div v-else class="ma-1">
+              {{ damage.text }}
+            </div>
           </span>
           <template #subtitle>
-            <span :class="`${damage.healing ? damage.color : ''}`">
+            <div :class="`${damage.healing ? damage.color : ''}`" class="mt-1">
               {{ damage.type }}
-            </span>
+            </div>
           </template>
         </me-cs-action-stat>
       </template>
@@ -285,6 +296,27 @@ export default {
         hp: this.hp.current,
         level: this.level
       }
+    },
+    hitRoll () {
+      const hitRoll = {
+        notation: `1d20${this.rollText(this.hit.bonus)}`,
+        detail: this.item.name,
+        type: 'to hit'
+      }
+      // TODO: Add logic for multiple damage rolls
+      if (this.damages && this.damages[0]) {
+        hitRoll.nextRolls = [
+          {
+            text: 'Roll Damage',
+            roll: {
+              detail: this.item.name || 'Damage Roll',
+              type: 'damage',
+              notation: this.damages[0].text
+            }
+          }
+        ]
+      }
+      return hitRoll
     }
   },
   methods: {
@@ -312,6 +344,19 @@ export default {
         return this.interpolations[replacement]
       })
       return interpolated
+    },
+    damageRoll (damage) {
+      if (!damage.text.toString().includes('d')) {
+        return false
+      }
+      const type = damage.type === 'shield points'
+        ? 'shields'
+        : damage.type
+      return {
+        notation: damage.text,
+        detail: this.item.name,
+        type
+      }
     }
   }
 }

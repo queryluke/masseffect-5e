@@ -1,18 +1,5 @@
 <template>
-  <div class="mx-sm-4">
-    <me-character-sheet-card-title v-if="$vuetify.breakpoint.smAndDown">
-      Actions
-    </me-character-sheet-card-title>
-    <v-chip-group v-model="tab" active-class="primary--text" column>
-      <v-chip
-        v-for="(cTab, index) in tabs"
-        :key="`action-chip-tab-${index}`"
-        small
-        :disabled="disableActionTab(cTab)"
-      >
-        {{ cTab }}
-      </v-chip>
-    </v-chip-group>
+  <div>
     <div v-show="showTab(1)">
       <me-cs-action-list :items="csAllActions.attacks">
         Attacks
@@ -55,12 +42,7 @@
 import { createNamespacedHelpers } from 'vuex'
 const { mapGetters } = createNamespacedHelpers('character')
 export default {
-  data () {
-    return {
-      tab: 0,
-      tabs: ['All', 'Attacks', 'Actions', 'Bonus Actions', 'Reactions', 'Other']
-    }
-  },
+  name: 'MeCsActions',
   computed: {
     ...mapGetters({
       mechanics: 'mechanics/mechanics',
@@ -69,7 +51,8 @@ export default {
       equippedWeapons: 'equipment/equippedWeapons',
       profs: 'profs/profs',
       abilityBreakdown: 'abilities/abilityBreakdown',
-      weaponAttacks: 'equipment/weaponAttacks'
+      weaponAttacks: 'equipment/weaponAttacks',
+      tab: 'navigation/actionsTab'
     }),
     weaponProperties () {
       return this.$store.getters.getData('weapon-properties')
@@ -220,111 +203,11 @@ export default {
     }
   },
   methods: {
-    disableActionTab (typeString) {
-      if (typeString === 'All') {
-        return false
-      }
-      const type = typeString === 'Bonus Actions' ? 'bonusActions' : typeString.toLowerCase()
-      if (type) {
-        return this.csAllActions[type].length < 1
-      }
-      return false
-    },
     showTab (index) {
       if (this.tab === 0) {
         return true
       }
       return this.tab === index
-    },
-    getWeaponResource (weapon) {
-      // Resource (i.e. Heat)
-      let resource = null
-      if (weapon.data.heat) {
-        resource = {
-          displayType: 'heat',
-          reset: 'manual',
-          max: {
-            type: 'flat',
-            value: weapon.data.heat,
-            min: 0
-          },
-          id: weapon.uuid
-        }
-      }
-      return resource
-    },
-    getWeaponRange (weapon, bf = false) {
-      const type = weapon.data.type
-      const reach = weapon.data.properties.includes('reach')
-      const range = weapon.data.range
-      const hf = weapon.data.properties.includes('hip-fire')
-      const shortRange = type === 'melee'
-        ? reach ? 10 : 5
-        : range
-      const longRange = type === 'melee' ? null : type === 'shotgun' ? (range * 2) : (range * 3)
-      const aoe = bf
-        ? { type: 'cube', size: 10 }
-        : false
-      return {
-        short: shortRange,
-        long: bf ? null : longRange,
-        aoe,
-        note: hf ? 'Hip Fire' : false
-      }
-    },
-    getWeaponAttack (weapon) {
-      const type = weapon.data.type
-      const weaponBonus = weapon.bonusHit || 0
-      const globalBonus = this.character.settings.attackMod
-        ? this.character.settings.attackMod
-        : type === 'melee' && this.character.settings.attackMeleeMod
-          ? this.character.settings.attackMeleeMod
-          : this.character.settings.attackRangedMod || 0
-      return {
-        proficient: this.profs.weapon.includes(type),
-        mod: this.getWeaponAbilityMod(weapon),
-        bonus: {
-          type: 'flat',
-          value: weaponBonus + globalBonus
-        }
-      }
-    },
-    getWeaponAbilityMod (weapon) {
-      // TODO: potential overrides like shoulder mounts
-      const finesse = weapon.data.properties.includes('finesse')
-      const recoil = weapon.data.properties.includes('recoil')
-      const dexOrStr = this.abilityBreakdown.dex.mod > this.abilityBreakdown.str.mod ? 'dex' : 'str'
-      return recoil || finesse
-        ? dexOrStr
-        : weapon.data.type === 'melee'
-          ? 'str'
-          : 'dex'
-    },
-    getWeaponDamage (weapon, negativeModOnly) {
-      const type = weapon.data.type
-      const weaponBonus = weapon.bonusDamage || 0
-      const globalBonus = this.character.settings.damageMod
-        ? this.character.settings.damageMod
-        : type === 'melee' && this.character.settings.damageMeleeMod
-          ? this.character.settings.damageMeleeMod
-          : this.character.settings.damageRangedMod || 0
-      let mod = this.getWeaponAbilityMod(weapon)
-      if (negativeModOnly) {
-        const modScore = this.abilityBreakdown[mod].mod
-        if (modScore > 0) {
-          mod = false
-        }
-      }
-      return [
-        {
-          ...weapon.data.damage,
-          mod,
-          bonus: {
-            type: 'flat',
-            value: weaponBonus + globalBonus
-          }
-        }
-      ]
     }
   }
 }
