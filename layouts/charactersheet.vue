@@ -44,64 +44,67 @@
     </v-main>
     <!-- END: CONTENT -->
 
-    <!-- Short/long rest Menu -->
-    <me-cs-rest-dialog />
+    <!-- don't show anything unless character is ready -->
+    <template v-if="characterReady">
+      <!-- Short/long rest Menu -->
+      <me-cs-rest-dialog />
 
-    <!-- Mobile Menu -->
-    <me-cs-mobile-navigation />
+      <!-- Settings Dialog -->
+      <me-cs-settings-dialog />
 
-    <!-- Settings Dialog -->
-    <me-cs-settings-dialog />
+      <!-- Small Screen details and notes -->
+      <me-standard-dialog :shown="smDetailsNotes" @close="smDetailsNotes = false">
+        <v-tabs v-model="smDetailsNotesTab">
+          <v-tab>
+            Notes
+          </v-tab>
+          <v-tab>
+            Details
+          </v-tab>
+        </v-tabs>
+        <v-tabs-items v-model="smDetailsNotesTab">
+          <v-tab-item>
+            <me-cs-notes />
+          </v-tab-item>
+          <v-tab-item>
+            <me-cs-details />
+          </v-tab-item>
+        </v-tabs-items>
+      </me-standard-dialog>
 
-    <!-- Mobile Die Menu -->
-    <me-cs-mobile-custom-die-roller />
+      <!-- Mobile Menu -->
+      <me-cs-mobile-navigation />
 
-    <!-- Die Speed Dial for larger screens -->
-    <me-cs-roll-speed-dial v-if="$vuetify.breakpoint.mdAndUp" />
+      <!-- Mobile Die Menu -->
+      <me-cs-mobile-custom-die-roller />
 
-    <!-- Small Screen details and notes -->
-    <me-standard-dialog :shown="smDetailsNotes" @close="smDetailsNotes = false">
-      <v-tabs v-model="smDetailsNotesTab">
-        <v-tab>
-          Notes
-        </v-tab>
-        <v-tab>
-          Details
-        </v-tab>
-      </v-tabs>
-      <v-tabs-items v-model="smDetailsNotesTab">
-        <v-tab-item>
-          <me-cs-notes />
-        </v-tab-item>
-        <v-tab-item>
-          <me-cs-details />
-        </v-tab-item>
-      </v-tabs-items>
-    </me-standard-dialog>
+      <!-- Die Speed Dial for larger screens -->
+      <me-cs-roll-speed-dial v-if="$vuetify.breakpoint.mdAndUp" />
 
-    <v-bottom-navigation v-if="$vuetify.breakpoint.xsOnly" app grow>
-      <v-btn @click="mobileRoller = !mobileRoller">
-        <span>Roll</span>
-        <v-icon>mdi-dice-multiple</v-icon>
-      </v-btn>
-      <v-btn @click="mobileMenu = !mobileMenu">
-        <span>Menu</span>
-        <v-icon>mdi-dots-grid</v-icon>
-      </v-btn>
-      <v-btn @click="settingsMenu = !settingsMenu">
-        <span>Settings</span>
-        <v-icon>mdi-cog</v-icon>
-      </v-btn>
-    </v-bottom-navigation>
-
-    <v-bottom-navigation v-if="$vuetify.breakpoint.smOnly" v-model="mobileView" app grow color="primary">
-      <template v-for="item in smMenuItems">
-        <v-btn :key="item.view" :value="item.view">
-          <span>{{ item.name }}</span>
-          <v-icon>{{ item.icon }}</v-icon>
+      <v-bottom-navigation v-if="$vuetify.breakpoint.xsOnly" app grow>
+        <v-btn @click="mobileRoller = !mobileRoller">
+          <span>Roll</span>
+          <v-icon>mdi-dice-multiple</v-icon>
         </v-btn>
-      </template>
-    </v-bottom-navigation>
+        <v-btn @click="mobileMenu = !mobileMenu">
+          <span>Menu</span>
+          <v-icon>mdi-dots-grid</v-icon>
+        </v-btn>
+        <v-btn @click="settingsMenu = !settingsMenu">
+          <span>Settings</span>
+          <v-icon>mdi-cog</v-icon>
+        </v-btn>
+      </v-bottom-navigation>
+
+      <v-bottom-navigation v-if="$vuetify.breakpoint.smOnly" v-model="mobileView" app grow color="primary">
+        <template v-for="item in smMenuItems">
+          <v-btn :key="item.view" :value="item.view">
+            <span>{{ item.name }}</span>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-btn>
+        </template>
+      </v-bottom-navigation>
+    </template>
   </v-app>
 </template>
 
@@ -206,7 +209,8 @@ export default {
   },
   created () {
     if (this.characterReady) {
-      this.$store.dispatch('SET_META', { title: this.$store.getters['character/character'].name })
+      const name = this.$store.getters['character/character']?.name || 'Unnamed Character'
+      this.$store.dispatch('SET_META', { title: name })
     }
   }
 }
