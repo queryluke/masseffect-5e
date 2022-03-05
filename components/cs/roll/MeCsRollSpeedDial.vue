@@ -15,6 +15,11 @@
           </v-icon>
         </v-btn>
       </template>
+      <v-btn outlined fab small @click="customRoll = true">
+        <v-icon>
+          mdi-wrench
+        </v-icon>
+      </v-btn>
       <me-cs-roll-die-select v-for="dieType in dieTypes" :key="dieType" :die-type="dieType" overlay />
     </v-speed-dial>
 
@@ -52,6 +57,24 @@
         </span>
       </v-btn>
     </v-fade-transition>
+
+    <v-dialog v-model="customRoll" max-width="500">
+      <v-card max-width="500">
+        <v-card-title>Custom Roll</v-card-title>
+        <v-card-text>
+          <me-cs-roll-custom-text />
+        </v-card-text>
+        <v-card-actions>
+          <v-btn text @click="customRoll = false">
+            Close
+          </v-btn>
+          <v-spacer />
+          <v-btn text color="primary" @click="roll">
+            Roll
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
@@ -63,13 +86,7 @@ export default {
   data () {
     return {
       menu: false,
-      sideMenu: false,
-      dice: ['d4', 'd6', 'd8', 'd10', 'd12', 'd20', 'd100'],
-      rollController: {},
-      customRollerDialog: {
-        open: false,
-        roll: ''
-      }
+      customRoll: false
     }
   },
   computed: {
@@ -102,7 +119,12 @@ export default {
   watch: {
     menu (newVal) {
       if (newVal === false) {
-        this.closeRoller()
+        this.$store.commit('character/roller/RESET_CONTROLLER')
+      }
+    },
+    customRoll (newVal) {
+      if (newVal === false) {
+        this.$store.commit('character/roller/SET_CUSTOM_TEXT_ROLL', null)
       }
     }
   },
@@ -111,12 +133,12 @@ export default {
       if (this.rollable) {
         this.$store.dispatch('character/roller/CUSTOM_ROLL')
       }
-      this.closeRoller()
-    },
-    closeRoller () {
-      this.$store.commit('character/roller/RESET_CONTROLLER')
-      this.$store.commit('character/roller/SET_CUSTOM_TEXT_ROLL', null)
-      this.mobileRoller = false
+      if (this.menu) {
+        this.menu = false
+      }
+      if (this.customRoll) {
+        this.customRoll = false
+      }
     },
     toggleLogs () {
       if (this.logsShown) {
