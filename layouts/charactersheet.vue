@@ -203,6 +203,11 @@ export default {
         this.mobileView = 'abilities'
       }
     }
+  },
+  created () {
+    if (this.characterReady) {
+      this.$store.dispatch('SET_META', { title: this.$store.getters['character/character'].name })
+    }
   }
 }
 </script>
