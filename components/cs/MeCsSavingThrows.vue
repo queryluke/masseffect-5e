@@ -14,7 +14,7 @@
               <div class="text-h6 d-flex align-center">
                 <me-cs-ad-icons type="saving-throw" :value="abilityItem.ability" />
                 <div class="pl-1 mb-1 text-center">
-                  <me-cs-roll-card :roll="roll(abilityItem.ability)">
+                  <me-cs-roll-card :roll="{ notation: `1d20${rollText(abilityItem.score)}`, detail: $t(`abilities.${abilityItem.ability}.abbr`), type: 'save' }">
                     <div class="py-1">
                       {{ abilityItem.score }}
                     </div>
@@ -113,13 +113,6 @@ export default {
     },
     specialAdOrDis (type) {
       return this.savingThrowMechanics.filter(i => i.effect === type && !i.ability && !i.against).map(i => i.note)
-    },
-    roll (ability) {
-      return {
-        notation: `1d20${this.rollText(this.abilityBreakdown[ability].mod)}`,
-        detail: this.$t(`abilities.${ability}.abbr`),
-        type: 'save'
-      }
     }
   }
 }
