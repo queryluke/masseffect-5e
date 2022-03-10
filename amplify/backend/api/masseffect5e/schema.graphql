@@ -27,11 +27,39 @@ type Profile @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"},
 type Character @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"}, subscriptions: null)
 @auth(rules: [
   { allow: private, operations: [read] }
-  { allow: owner }
+  { allow: owner },
+  { allow: public, provider: apiKey, operations: [read] }
 ]){
   id: ID!
   owner: ID! @index(name: "byUser", queryField: "characterByUser")
   data: String
+}
+
+type Model @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"}, subscriptions: null)
+@auth(rules: [
+  { allow: public, operations: [read] },
+  { allow: groups, groups: ["admins"], operations: [read, update, create] }
+]){
+  id: ID!
+  data: String!
+  type: String! @index(name: "byTypeAndVersion", sortKeyFields: ["version"], queryField: "listModelsByVersionAndType")
+  version: String!
+  language: String!
+}
+
+type Homebrew @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"}, subscriptions: null)
+@auth(rules: [
+  { allow: private, operations: [read] },
+  { allow: owner },
+  { allow: groups, groups: ["admins"], operations: [read, update, create, delete] }
+]){
+  id: ID!
+  owner: ID! @index(name: "byUser", queryField: "homebrewByUser")
+  data: String!
+  type: String! @index(name: "byTypeAndVersion", sortKeyFields: ["version"], queryField: "listHomebrewsByVersionAndType")
+  version: String! # only 1 or 2, major updates which might effect data models
+  certified: Boolean!
+  language: String!
 }
 
 type Subscription {

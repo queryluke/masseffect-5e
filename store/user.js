@@ -118,7 +118,11 @@ export const actions = {
     if (user) {
       commit('SET_USER_SETTINGS', user)
       if (user.profileImg) {
-        await dispatch('api/GET_IMAGE', { fileName: user.profileImg, action: 'user/SET_AVATAR' }, { root: true })
+        try {
+          await dispatch('api/GET_IMAGE', { fileName: user.profileImg, action: 'user/SET_AVATAR' }, { root: true })
+        } catch (e) {
+          console.log(e)
+        }
       }
     } else {
       await dispatch('api/MUTATE', { mutation: 'createProfile', input: profile }, { root: true })

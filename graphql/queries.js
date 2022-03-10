@@ -71,28 +71,36 @@ export const listProfiles = /* GraphQL */ `
     }
   }
 `;
-export const getCharacter = /* GraphQL */ `
-  query GetCharacter($id: ID!) {
-    getCharacter(id: $id) {
+export const getHomebrew = /* GraphQL */ `
+  query GetHomebrew($id: ID!) {
+    getHomebrew(id: $id) {
       id
       owner
       data
+      type
+      version
+      certified
+      language
       createdOn
       updatedOn
     }
   }
 `;
-export const listCharacters = /* GraphQL */ `
-  query ListCharacters(
-    $filter: ModelCharacterFilterInput
+export const listHomebrews = /* GraphQL */ `
+  query ListHomebrews(
+    $filter: ModelHomebrewFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listCharacters(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listHomebrews(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         owner
         data
+        type
+        version
+        certified
+        language
         createdOn
         updatedOn
       }
@@ -128,6 +136,97 @@ export const bookmarkByUser = /* GraphQL */ `
     }
   }
 `;
+export const homebrewByUser = /* GraphQL */ `
+  query HomebrewByUser(
+    $owner: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelHomebrewFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    homebrewByUser(
+      owner: $owner
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        owner
+        data
+        type
+        version
+        certified
+        language
+        createdOn
+        updatedOn
+      }
+      nextToken
+    }
+  }
+`;
+export const listHomebrewsByVersionAndType = /* GraphQL */ `
+  query ListHomebrewsByVersionAndType(
+    $type: String!
+    $version: ModelStringKeyConditionInput
+    $sortDirection: ModelSortDirection
+    $filter: ModelHomebrewFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listHomebrewsByVersionAndType(
+      type: $type
+      version: $version
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        owner
+        data
+        type
+        version
+        certified
+        language
+        createdOn
+        updatedOn
+      }
+      nextToken
+    }
+  }
+`;
+export const getCharacter = /* GraphQL */ `
+  query GetCharacter($id: ID!) {
+    getCharacter(id: $id) {
+      id
+      owner
+      data
+      createdOn
+      updatedOn
+    }
+  }
+`;
+export const listCharacters = /* GraphQL */ `
+  query ListCharacters(
+    $filter: ModelCharacterFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listCharacters(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        owner
+        data
+        createdOn
+        updatedOn
+      }
+      nextToken
+    }
+  }
+`;
 export const characterByUser = /* GraphQL */ `
   query CharacterByUser(
     $owner: ID!
@@ -147,6 +246,69 @@ export const characterByUser = /* GraphQL */ `
         id
         owner
         data
+        createdOn
+        updatedOn
+      }
+      nextToken
+    }
+  }
+`;
+export const getModel = /* GraphQL */ `
+  query GetModel($id: ID!) {
+    getModel(id: $id) {
+      id
+      data
+      type
+      version
+      language
+      createdOn
+      updatedOn
+    }
+  }
+`;
+export const listModels = /* GraphQL */ `
+  query ListModels(
+    $filter: ModelModelFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listModels(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        data
+        type
+        version
+        language
+        createdOn
+        updatedOn
+      }
+      nextToken
+    }
+  }
+`;
+export const listModelsByVersionAndType = /* GraphQL */ `
+  query ListModelsByVersionAndType(
+    $type: String!
+    $version: ModelStringKeyConditionInput
+    $sortDirection: ModelSortDirection
+    $filter: ModelModelFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listModelsByVersionAndType(
+      type: $type
+      version: $version
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        data
+        type
+        version
+        language
         createdOn
         updatedOn
       }

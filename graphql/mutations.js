@@ -145,3 +145,105 @@ export const deleteCharacter = /* GraphQL */ `
     }
   }
 `;
+export const createModel = /* GraphQL */ `
+  mutation CreateModel(
+    $input: CreateModelInput!
+    $condition: ModelModelConditionInput
+  ) {
+    createModel(input: $input, condition: $condition) {
+      id
+      data
+      type
+      version
+      language
+      createdOn
+      updatedOn
+    }
+  }
+`;
+export const updateModel = /* GraphQL */ `
+  mutation UpdateModel(
+    $input: UpdateModelInput!
+    $condition: ModelModelConditionInput
+  ) {
+    updateModel(input: $input, condition: $condition) {
+      id
+      data
+      type
+      version
+      language
+      createdOn
+      updatedOn
+    }
+  }
+`;
+export const deleteModel = /* GraphQL */ `
+  mutation DeleteModel(
+    $input: DeleteModelInput!
+    $condition: ModelModelConditionInput
+  ) {
+    deleteModel(input: $input, condition: $condition) {
+      id
+      data
+      type
+      version
+      language
+      createdOn
+      updatedOn
+    }
+  }
+`;
+export const createHomebrew = /* GraphQL */ `
+  mutation CreateHomebrew(
+    $input: CreateHomebrewInput!
+    $condition: ModelHomebrewConditionInput
+  ) {
+    createHomebrew(input: $input, condition: $condition) {
+      id
+      owner
+      data
+      type
+      version
+      certified
+      language
+      createdOn
+      updatedOn
+    }
+  }
+`;
+export const updateHomebrew = /* GraphQL */ `
+  mutation UpdateHomebrew(
+    $input: UpdateHomebrewInput!
+    $condition: ModelHomebrewConditionInput
+  ) {
+    updateHomebrew(input: $input, condition: $condition) {
+      id
+      owner
+      data
+      type
+      version
+      certified
+      language
+      createdOn
+      updatedOn
+    }
+  }
+`;
+export const deleteHomebrew = /* GraphQL */ `
+  mutation DeleteHomebrew(
+    $input: DeleteHomebrewInput!
+    $condition: ModelHomebrewConditionInput
+  ) {
+    deleteHomebrew(input: $input, condition: $condition) {
+      id
+      owner
+      data
+      type
+      version
+      certified
+      language
+      createdOn
+      updatedOn
+    }
+  }
+`;

@@ -5,7 +5,8 @@ export const state = () => ({
   cognitoUser: null,
   redirect: null,
   logoutOverlay: false,
-  logoutState: 0
+  logoutState: 0,
+  isAdmin: false
 })
 
 export const getters = {
@@ -27,6 +28,9 @@ export const mutations = {
   },
   SET_REDIRECT (state, redirect) {
     state.redirect = redirect
+  },
+  SET_ADMIN (state) {
+    state.isAdmin = true
   }
 }
 
@@ -42,6 +46,7 @@ export const actions = {
       }
       commit('SET_USER', user)
       await dispatch('user/SYNC_PROFILE', null, { root: true })
+      await dispatch('SET_PERMISSIONS')
     } catch (error) {
       // i.e., user WAS logged in, but now is NOT
       if (getters.isAuthenticated) {
@@ -102,6 +107,18 @@ export const actions = {
       await Auth.federatedSignIn()
     } catch (e) {
       console.error(e)
+    }
+  },
+
+  async SET_PERMISSIONS ({ commit }) {
+    try {
+      const data = (await Auth.currentSession()).getIdToken().payload['cognito:groups']
+      if (data.includes('admins')) {
+        console.log('setting admin')
+        commit('SET_ADMIN')
+      }
+    } catch (e) {
+      console.log(e)
     }
   },
 

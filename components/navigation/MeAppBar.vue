@@ -70,6 +70,9 @@
           <v-list-item to="/bookmarks">
             Bookmarks
           </v-list-item>
+          <v-list-item v-if="$store.state.auth.isAdmin" to="/admin">
+            Admin
+          </v-list-item>
           <v-list-item @click="$store.dispatch('auth/LOG_OUT')">
             Sign Out
           </v-list-item>
