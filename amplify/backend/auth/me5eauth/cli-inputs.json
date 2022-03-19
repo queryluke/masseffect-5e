@@ -79,6 +79,8 @@
       "Ref": "AWS::StackId"
     },
     "permissions": [],
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"implicit\"],\"AllowedOAuthScopes\":[\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/auth/login/\",\"https://next.n7.world/auth/login/\",\"https://n7.world/auth/login/\"],\"LogoutURLs\":[\"http://localhost:3000/auth/logout/\",\"https://next.n7.world/auth/logout/\",\"https://n7.world/auth/logout/\"]}"
+    "googleClientId": "508866812450-4n7bfin1a459e5754q81bs3jjv1op91s.apps.googleusercontent.com",
+    "hostedUIProviderCreds": "[]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"implicit\"],\"AllowedOAuthScopes\":[\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/auth/login/\",\"https://next.n7.world/auth/login/\",\"https://n7.world/auth/login/\",\"https://www.n7.world/auth/login/\"],\"LogoutURLs\":[\"http://localhost:3000/auth/logout/\",\"https://next.n7.world/auth/logout/\",\"https://n7.world/auth/logout/\",\"https://www.n7.world/auth/logout/\"]}"
   }
 }
