@@ -44,7 +44,8 @@ export default {
     '@/plugins/filters/index.js',
     '@/plugins/vue2-filters',
     '@/plugins/globals',
-    '@/plugins/amplify.client.js'
+    '@/plugins/amplify.client.js',
+    '@/plugins/gtag.client.js'
   ],
   /*
   ** Auto import components
