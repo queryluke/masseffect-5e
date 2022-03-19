@@ -118,10 +118,11 @@ export const actions = {
     const user = await dispatch('api/QUERY', { query: 'getProfile', variables: { id: profile.id } }, { root: true })
     if (user) {
       commit('SET_USER_SETTINGS', user)
-      if (user.profileImg) {
+      if (user.profileImg && getters.avatar === null) {
         try {
           await dispatch('api/GET_IMAGE', { fileName: user.profileImg, action: 'user/SET_AVATAR' }, { root: true })
         } catch (e) {
+          commit('SET_AVATAR', false)
           console.error('could not find user image')
         }
       }
