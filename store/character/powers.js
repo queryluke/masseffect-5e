@@ -8,6 +8,8 @@ export const state = () => ({
   ],
   mcTp: [2, 4, 5, 7, 11, 13, 15, 17, 20, 23, 26, 26, 30, 30, 34, 34, 39, 42, 45, 50],
   mcTpLimit: [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 6, 6],
+  mcPactSlotLevel: [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+  mcPactNumSlots: [1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4],
   levelText: ['Cantrip', '1st Level', '2nd Level', '3rd Level', '4th Level', '5th Level'],
   castingTimeText: {
     action: '1A',
@@ -26,26 +28,38 @@ export const state = () => ({
 })
 
 export const getters = {
+  klassesPowercastingMechanics: (state, getters, rootState, rootGetters) => {
+    return rootGetters['character/klasses/klassesFeatures']
+      .reduce((acc, curr) => acc.concat(curr.mechanics || []), [])
+      .filter(i => i.type.startsWith('powercasting'))
+  },
   techPoints: (state, getters, rootState, rootGetters) => {
     const base = {
       max: 0,
       used: rootGetters['character/character'].currentStats.tpUsed,
       limit: 0
     }
-    const klasses = rootGetters['character/klasses/klasses']
-    if (klasses.some(i => ['engineer', 'infiltrator'].includes(i.id))) {
-      let level, tpP, tpLimitP
-      if (klasses.length > 1) {
-        tpP = state.mcTp
-        tpLimitP = state.mcTpLimit
-        level = rootGetters['character/klasses/mcLevels']('engineer', ['infiltrator'])
-      } else {
-        tpP = klasses[0].data.progression.columns.find(i => i.label === 'tech_points')?.values || []
-        tpLimitP = klasses[0].data.progression.columns.find(i => i.label === 'tech_point_limit')?.values || []
-        level = klasses[0].levels
+    if (rootGetters['character/klasses/isMulticlassed']) {
+      let multiclassPointcastingLevel = 0
+      for (const feature of rootGetters['character/klasses/klassesFeatures']) {
+        const pointcastingFeature = feature.mechanics?.find(i => i.type === 'powercasting-points')
+        if (pointcastingFeature) {
+          const multiplier = pointcastingFeature.multiclassConversion
+          const levels = rootGetters['character/klasses/selectedKlasses'].find(i => i.id === feature.klass).levels
+          multiclassPointcastingLevel += Math.floor(levels * multiplier)
+        }
       }
-      base.max = tpP[level - 1]
-      base.limit = tpLimitP[level - 1]
+      if (multiclassPointcastingLevel > 0) {
+        base.max = state.mcTp[multiclassPointcastingLevel - 1]
+        base.limit = state.mcTpLimit[multiclassPointcastingLevel - 1]
+      }
+    } else {
+      const pointCasting = getters.klassesPowercastingMechanics.find(i => i.type === 'powercasting-points')
+      if (pointCasting) {
+        const klassLevel = rootGetters['character/klasses/level']
+        base.max = pointCasting.points[klassLevel - 1]
+        base.limit = pointCasting.limit[klassLevel - 1]
+      }
     }
     return base
   },
@@ -59,37 +73,61 @@ export const getters = {
         used: current[slot - 1]
       }
     }
-    const klasses = rootGetters['character/klasses/klasses']
-    if (klasses.some(i => ['adept', 'vanguard'].includes(i.id))) {
-      let level, psP
-      if (klasses.length > 1) {
-        psP = state.mcPs
-        level = rootGetters['character/klasses/mcLevels']('adept', ['vanguard'])
-      } else {
-        level = klasses[0].levels
-        psP = klasses[0].data.progression.columns.find(i => i.label === 'power_slots_by_power_level')?.values || []
+    if (rootGetters['character/klasses/isMulticlassed']) {
+      let multiclassSlotcastingLevel = 0
+      for (const feature of rootGetters['character/klasses/klassesFeatures']) {
+        const slotcastingFeature = feature.mechanics?.find(i => i.type === 'powercasting-slots')
+        if (slotcastingFeature) {
+          const multiplier = slotcastingFeature.multiclassConversion
+          const levels = rootGetters['character/klasses/selectedKlasses'].find(i => i.id === feature.klass).levels
+          multiclassSlotcastingLevel += Math.floor(levels * multiplier)
+        }
       }
-      for (const slot of slots) {
-        const progression = psP[slot - 1] || [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        base[slot].max = progression[level - 1]
+      if (multiclassSlotcastingLevel > 0) {
+        for (const slot of slots) {
+          base[slot].max = state.mcPs[slot - 1][multiclassSlotcastingLevel - 1]
+        }
+      }
+    } else {
+      const slotCasting = getters.klassesPowercastingMechanics.find(i => i.type === 'powercasting-slots')
+      if (slotCasting) {
+        const klassLevel = rootGetters['character/klasses/level']
+        for (const slot of slots) {
+          base[slot].max = slotCasting[slot][klassLevel - 1]
+        }
       }
     }
-    const sentinel = klasses.find(i => i.id === 'sentinel')
-    if (sentinel) {
-      const numSlots = sentinel.data.progression.columns.find(i => i.label === 'power_slots').values[sentinel.levels - 1]
-      const atLevel = sentinel.data.progression.columns.find(i => i.label === 'power_level').values[sentinel.levels - 1]
-      base[atLevel].max += numSlots
-      if (sentinel.levels >= 11) {
-        base[3].max += 1
+    const pactCasting = getters.pactSlots
+    if (pactCasting.slotLevel > 0) {
+      base[pactCasting].max += pactCasting.numSlots
+    }
+    return base
+  },
+  pactSlots: (state, getters, rootState, rootGetters) => {
+    const base = {
+      slotLevel: 0,
+      numSlots: 0
+    }
+    if (rootGetters['character/klasses/isMulticlassed']) {
+      let multiclassPactcastingLevel = 0
+      for (const feature of rootGetters['character/klasses/klassesFeatures']) {
+        const pactcastingFeature = feature.mechanics?.find(i => i.type === 'powercasting-pact')
+        if (pactcastingFeature) {
+          const multiplier = pactcastingFeature.multiclassConversion
+          const levels = rootGetters['character/klasses/selectedKlasses'].find(i => i.id === feature.klass).levels
+          multiclassPactcastingLevel += Math.floor(levels * multiplier)
+        }
       }
-      if (sentinel.levels >= 13) {
-        base[4].max += 1
+      if (multiclassPactcastingLevel > 0) {
+        base.slotLevel = state.mcPactSlotLevel[multiclassPactcastingLevel - 1]
+        base.numSlots = state.mcPactNumSlots[multiclassPactcastingLevel - 1]
       }
-      if (sentinel.levels >= 15) {
-        base[4].max += 1
-      }
-      if (sentinel.levels >= 17) {
-        base[5].max += 1
+    } else {
+      const pactCasting = getters.klassesPowercastingMechanics.find(i => i.type === 'powercasting-pact')
+      if (pactCasting) {
+        const klassLevel = rootGetters['character/klasses/level']
+        base.slotLevel = pactCasting.slotLevel[klassLevel - 1]
+        base.numSlots = pactCasting.numSlots[klassLevel - 1]
       }
     }
     return base

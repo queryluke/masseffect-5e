@@ -117,7 +117,7 @@
                 </v-row>
               </me-cb-aspect-card>
               <!-- Sentinel Pc Ability Choice -->
-              <me-cb-aspect-card v-if="klass.id === 'sentinel'" :asm-override="{ has: true, value: sentinelPcSelection }">
+              <me-cb-aspect-card v-if="powercastingModChoices" :asm-override="{ has: true, value: klassPcSelection }">
                 <template #title>
                   Sentinel Powercasting Ability
                 </template>
@@ -128,10 +128,10 @@
                   &nbsp;
                 </template>
                 <v-select
-                  v-model="sentinelPcSelection"
-                  :items=" [{ text: 'Intelligence', value: 'int'}, { text: 'Wisdom', value: 'wis'}]"
+                  v-model="klassPcSelection"
+                  :items="powercastingModChoices"
                   dense
-                  label="Choose Intelligence or Wisdom"
+                  :label="`Choose ${$t(`lists.or_list[${powercastingModChoices.length}]`, powercastingModChoices.map(i => i.text))}`"
                 />
               </me-cb-aspect-card>
 
@@ -200,6 +200,20 @@ export default {
     availableLevels () {
       const posLevels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
       return posLevels.slice(0, posLevels.length - this.level + this.klassLevel)
+    },
+    powercastingModChoices () {
+      const pcMechanics = this.features
+        .reduce((acc, curr) => acc.concat(curr.mechanics), [])
+        .find(i => i.type.startsWith('powercasting') && Array.isArray(i.mod))
+      if (pcMechanics) {
+        return pcMechanics.mod.map((i) => {
+          return {
+            text: this.$t(`abilities.${i}.title`),
+            value: i
+          }
+        })
+      }
+      return false
     },
     allProfSelectionsMade () {
       const profs = ['skill', 'weapon', 'tool']
@@ -312,12 +326,12 @@ export default {
       }
       return finalArray
     },
-    sentinelPcSelection: {
+    klassPcSelection: {
       get () {
-        return this.character.settings.powercasting.sentinel
+        return this.character.settings.powercasting[this.klass.id]
       },
       set (value) {
-        return this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'settings.powercasting.sentinel', value })
+        return this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `settings.powercasting.${this.klass.id}`, value })
       }
     }
   },

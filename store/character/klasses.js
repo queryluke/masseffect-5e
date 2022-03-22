@@ -57,6 +57,9 @@ export const getters = {
   selectedKlasses: (state, getters, rootState, rootGetters) => {
     return rootGetters['character/character'].classes
   },
+  isMulticlassed: (state, getters) => {
+    return getters.selectedKlasses.length > 1
+  },
   selectedKlassesIds: (state, getters) => {
     return getters.selectedKlasses.map(i => i.id)
   },

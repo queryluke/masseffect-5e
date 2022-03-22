@@ -39,9 +39,9 @@
         <me-cs-power-select-card
           :key="item.id"
           :item="item"
-          :prepared="isPrepared(item)"
-          @togglePower="togglePower"
-          @setPowerAdv="setPowerAdv"
+          @addPower="addPower(item)"
+          @removePower="removePower(item)"
+          @setPowerAdv="setAdvancement(item)"
         />
       </template>
     </v-expansion-panel-content>
@@ -67,28 +67,36 @@ export default {
     }
   },
   computed: {
-    ...mapGetters({ powerList: 'powers/powerList', character: 'character', intMod: 'abilities/intMod' }),
-    techClass () {
-      return ['engineer', 'infiltrator'].includes(this.klass.id)
+    ...mapGetters({ powerList: 'powers/powerList', character: 'character', intMod: 'abilities/intMod', klasses: 'klasses/selectedKlasses', klassesFeatures: 'klasses/klassesFeatures' }),
+    klassIndex () {
+      return this.klasses.findIndex(i => i.id === this.klass.id)
     },
-    tpMaxCheck () {
-      return this.techClass ? this.progressionValues('tech_point_limit', this.klass.levels) : 0
+    powercastingMechanics () {
+      return this.klassesFeatures[this.klassIndex].reduce((acc, curr) => acc.concat(curr.mechanics || []), []).filter(i => i.type.startsWith('powercasting'))
     },
-    psMaxCheck () {
-      if (['adept', 'vanguard'].includes(this.klass.id)) {
-        const pses = this.progressionValues('power_slots_by_power_level').slice()
-        const pslots = pses.reverse()
-        return pslots ? 5 - pslots.findIndex(i => i[this.klass.levels] > 0) : 0
-      } else if (this.klass.id === 'sentinel') {
-        return this.progressionValues('power_level', this.klass.levels)
+    maxPowerLevel () {
+      const pointcasting = this.powercastingMechanics.find(i => i.type === 'powercasting-points')
+      const pointmax = pointcasting?.limit[this.klass.levels - 1] || -1
+      const pactcasting = this.powercastingMechanics.find(i => i.type === 'powercasting-pact')
+      const pactmax = pactcasting?.slotLevel[this.klass.levels - 1] || -1
+      const slotcasting = this.powercastingMechanics.find(i => i.type === 'powercasting-slots')
+      let slotmax = -1
+      if (slotcasting) {
+        for (const [level, values] of Object.entries(slotcasting.slots)) {
+          if (values[this.klass.levels - 1] > 0) {
+            slotmax = level
+          }
+        }
       }
-      return 0
-    },
-    powersLearnedForClass () {
-      return this.character.powers.filter(i => i.klass === this.klass.id)
+      return Math.max(pointmax, pactmax, slotmax)
+    }
+    /*
+    availablePowers () {
+      return this.powerList.filter(i => i.classes.includes(this.klass.id)) // TODO: need a way to not filter for homebrew classes
+        .filter(i => i.level <= this.maxPowerLevel)
     },
     availableForKlass () {
-      return this.powerList.filter(i => i.classes.includes(this.klass.id))
+      return this.powerList.filter(i => i.classes.includes(this.klass.id)) // TODO: need a way to not filter for homebrew classes
         .map((i) => {
           const learned = this.powersLearnedForClass.find(j => j.id === i.id)
           let base = {
@@ -148,6 +156,7 @@ export default {
     filteredPowers () {
       return this.availableForKlass.filter(i => (this.search && this.search !== '' ? i.name.toLowerCase().includes(this.search.toLowerCase()) : true) && (this.learned ? i.learned : true))
     }
+    */
   },
   methods: {
     isPrepared (item) {
