@@ -11,10 +11,15 @@ export type AmplifyDependentResourcesAttributes = {
             "AppClientIDWeb": "string",
             "AppClientID": "string",
             "GoogleWebClient": "string"
+        },
+        "userPoolGroups": {
+            "adminsGroupRole": "string",
+            "translatorsGroupRole": "string"
         }
     },
     "api": {
         "masseffect5e": {
+            "GraphQLAPIKeyOutput": "string",
             "GraphQLAPIIdOutput": "string",
             "GraphQLAPIEndpointOutput": "string"
         }
