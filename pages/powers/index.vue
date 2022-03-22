@@ -18,7 +18,7 @@ export default {
       title: this.$tc('power_title', 2),
       description: this.$t('meta.powers')
     })
-    await this.$store.dispatch('FETCH_DATA', 'powers')
+    await this.$store.dispatch('FETCH_LOTS', ['powers', 'classes'])
   }
 }
 </script>

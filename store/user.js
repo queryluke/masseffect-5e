@@ -97,13 +97,14 @@ export const actions = {
   },
   async REMOVE_BOOKMARK ({ dispatch, commit, rootGetters, getters }, { type, item }) {
     // TODO: at this point, data is also the model, so if authenticated need to read current bookmarks to get aws id
+    const lookupType = type === 'bestiary' && item.id.startsWith('generated') ? 'genpc' : type
     if (rootGetters['auth/isAuthenticated']) {
-      const bookmark = getters.bookmarks.find(i => i.modelId === item.id && i.model === type)
+      const bookmark = getters.bookmarks.find(i => i.modelId === item.id && i.model === lookupType)
       if (bookmark) {
         await dispatch('api/MUTATE', { mutation: 'deleteBookmark', input: { id: bookmark.id } }, { root: true })
       }
     }
-    commit('REMOVE_BOOKMARK', { model: type, modelId: item.id })
+    commit('REMOVE_BOOKMARK', { model: lookupType, modelId: item.id })
   },
   async TOGGLE_BOOKMARK ({ getters, commit, rootGetters, dispatch }, { type, item }) {
     if (getters.isBookmarked(type, item.id)) {
@@ -117,8 +118,13 @@ export const actions = {
     const user = await dispatch('api/QUERY', { query: 'getProfile', variables: { id: profile.id } }, { root: true })
     if (user) {
       commit('SET_USER_SETTINGS', user)
-      if (user.profileImg) {
-        await dispatch('api/GET_IMAGE', { fileName: user.profileImg, action: 'user/SET_AVATAR' }, { root: true })
+      if (user.profileImg && getters.avatar === null) {
+        try {
+          await dispatch('api/GET_IMAGE', { fileName: user.profileImg, action: 'user/SET_AVATAR' }, { root: true })
+        } catch (e) {
+          commit('SET_AVATAR', false)
+          console.error('could not find user image')
+        }
       }
     } else {
       await dispatch('api/MUTATE', { mutation: 'createProfile', input: profile }, { root: true })

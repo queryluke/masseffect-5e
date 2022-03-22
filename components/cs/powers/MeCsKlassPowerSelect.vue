@@ -78,7 +78,7 @@ export default {
       if (['adept', 'vanguard'].includes(this.klass.id)) {
         const pses = this.progressionValues('power_slots_by_power_level').slice()
         const pslots = pses.reverse()
-        return pslots ? 5 - pslots.findIndex(i => i[this.klass.levels] > 0) : 0
+        return pslots ? 5 - pslots.findIndex(i => i[this.klass.levels - 1] > 0) : 0
       } else if (this.klass.id === 'sentinel') {
         return this.progressionValues('power_level', this.klass.levels)
       }
