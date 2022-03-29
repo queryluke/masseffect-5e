@@ -1,5 +1,6 @@
 <template>
   <v-expansion-panel>
+    <!--
     <v-expansion-panel-header>
       <div>
         <div class="d-flex">
@@ -25,7 +26,6 @@
       </div>
     </v-expansion-panel-header>
     <v-expansion-panel-content>
-      <!-- filters -->
       <v-row>
         <v-col cols="12" sm="6" md="8">
           <v-text-field v-model="search" clearable append-icon="mdi-magnify" label="Search" />
@@ -45,6 +45,7 @@
         />
       </template>
     </v-expansion-panel-content>
+    -->
   </v-expansion-panel>
 </template>
 
