@@ -6,7 +6,7 @@ export const state = () => ({
   pageMetaDescription: null,
   drawer: null,
   jumpNav: null,
-  versionSnackbar: true,
+  versionSnackbar: false,
   currentLocale: 'en',
   pastVersions: [
     {

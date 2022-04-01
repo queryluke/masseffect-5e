@@ -34,6 +34,22 @@
           </v-col>
         </v-row>
         <v-row justify="space-around" class="mt-5">
+          <v-col cols="12" md="8" lg="6">
+            <v-alert type="info" prominent>
+              <v-row align="center">
+                <v-col class="grow">
+                  Version 1 Content Issues & Concerns
+                </v-col>
+                <v-col class="shrink">
+                  <v-btn href="https://forms.gle/XxyMKYarrSGf4DKaA" target="_blank">
+                    Submit Yours
+                  </v-btn>
+                </v-col>
+              </v-row>
+            </v-alert>
+          </v-col>
+        </v-row>
+        <v-row justify="space-around" class="mt-5">
           <v-col
             v-for="community in communities"
             :key="community.name"
@@ -51,7 +67,7 @@
         </v-row>
         <v-row justify="space-around" class="mt-5">
           <v-col cols="12" md="8" lg="6">
-            <v-alert type="info" prominent>
+            <v-alert type="error" prominent>
               <v-row align="center">
                 <v-col class="grow">
                   {{ $t('aboutpage.bug_text') }}
