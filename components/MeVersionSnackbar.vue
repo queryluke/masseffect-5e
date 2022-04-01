@@ -13,13 +13,16 @@
     >
       <v-icon>mdi-close</v-icon>
     </v-btn>
+    <!--
     You are viewing an older version of Mass Effect 5e
+    -->
+    A 100% legitimate update just dropped *wink*, *wink*
     <v-btn
       color="light-blue"
       text
-      href="https://n7.world/"
+      href="/changelog/1-4-1-a"
     >
-      Latest release
+      View
     </v-btn>
   </v-snackbar>
 </template>
