@@ -248,7 +248,7 @@
     <v-tab-item>
       <p>Assign whatever powercasting abilities you want to each class</p>
       <v-row>
-        <v-col v-for="klass of character.classes.filter(i => i.id !== 'soldier')" :key="`klass-pc-override-${klass.id}`" cols="12" sm="6">
+        <v-col v-for="klass of character.classes" :key="`klass-pc-override-${klass.id}`" cols="12" sm="6">
           <div class="d-flex">
             <v-avatar tile size="52">
               <v-img
@@ -261,6 +261,7 @@
               :items="powercastingOptions"
               :disabled="viewOnly"
               class="pl-2"
+              clearable
               @change="change(`powercasting.${klass.id}`, $event)"
             >
               <template #label>

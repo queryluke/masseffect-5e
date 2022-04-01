@@ -134,8 +134,12 @@ export const getters = {
   },
   klassPowercastingAbilities: (state, getters, rootState, rootGetters) => {
     const kpca = {}
+    const selectedPowercasting = rootGetters['character/selections/selected'].filter(i => i.path.includes('powercasting'))
     for (const klass of rootGetters['character/klasses/selectedKlasses']) {
-      kpca[klass.id] = rootGetters['character/character'].settings.powercasting[klass.id] || state.baseKlassPowercastingAbility[klass.id]
+      const override = rootGetters['character/character'].settings.powercasting[klass.id] || false
+      const klassSelected = selectedPowercasting.find(i => i.path.includes(klass.id))?.value || []
+      const base = state.baseKlassPowercastingAbility[klass.id]
+      kpca[klass.id] = override || klassSelected[0] || base
     }
     return kpca
   },
