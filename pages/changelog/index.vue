@@ -27,7 +27,7 @@ export default {
   },
   computed: {
     items () {
-      return this.changelog.slice().reverse()
+      return this.changelog.filter(i => !i.id?.startsWith('april')).reverse()
     }
   }
 }
