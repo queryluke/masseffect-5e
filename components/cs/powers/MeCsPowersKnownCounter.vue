@@ -8,7 +8,7 @@
         mdi-alert-octagram
       </v-icon>
     </div>
-    <v-progress-linear height="15" :value="pgValue" rounded :color="count > max ? 'error' : count < max ? 'accent' : 'grey darken-2'">
+    <v-progress-linear height="15" :value="pgValue" rounded :color="count > max ? 'error' : count < max ? 'accent' : 'grey darken-2'" class="text-caption">
       <slot />: {{ count }} / {{ max }}
     </v-progress-linear>
   </div>

@@ -1,7 +1,7 @@
 <template>
-  <v-card outlined flat>
-    <div class="d-flex justify-space-between align-start">
-      <div class="d-flex align-center px-2">
+  <v-card flat class="mb-1" @click="showInfo = !showInfo">
+    <div class="d-flex justify-space-between align-start py-1">
+      <div class="d-flex align-center text-truncate">
         <v-tooltip v-if="item.disabled && item.learned" bottom>
           <template #activator="{ on, attrs }">
             <v-icon
@@ -16,48 +16,47 @@
         </v-tooltip>
 
         <v-avatar size="22">
-          <v-img :src="require(`~/assets/images/powers/${item.type}.svg`)" />
+          <v-img :src="require(`~/assets/images/powers/${item.data.type}.svg`)" />
         </v-avatar>
         <div class="pl-1">
-          <div class="mb-0">
-            {{ item.name }}
-          </div>
-          <div class="mt-n1 text-caption">
-            <me-power-level :level="item.level" />
+          <div class="mb-0 text-caption">
+            {{ item.data.name }} <small class="font-weight-thin"><me-power-level :level="item.data.level" /></small>
           </div>
         </div>
       </div>
       <div class="d-flex justify-end align-center">
         <!-- Advancement Menu -->
-        <v-menu v-if="item.advancements && item.learned" offset-y>
+        <v-menu v-if="item.data.advancements && item.learned" offset-y>
           <template #activator="{ on, attrs }">
             <v-btn
               color="primary"
               v-bind="attrs"
               x-small
               outlined
-              class="mx-1"
+              class="mr-1"
               :disabled="!item.learned"
               v-on="on"
             >
-              {{ item.advancement ? item.advancements[item.advancement].name : 'Advance' }}
+              {{ item.data.advancement ? item.data.advancements[item.advancement].name : 'Adv' }}
               <v-icon right>
                 mdi-menu-down
               </v-icon>
             </v-btn>
           </template>
-          <v-list>
+          <v-list dense>
             <v-list-item
-              v-for="(adv, advId) in item.advancements"
+              v-for="(adv, advId) in item.data.advancements"
               :key="advId"
-              @click="$emit('setPowerAdv', { id: item.id, advId })"
+              @click="$emit('setPowerAdv', { id: item.data.id, advId })"
             >
               <v-list-item-icon>
-                <v-icon :color="item.advancement === advId ? 'primary' : undefined">
+                <v-icon :color="item.advancement === advId ? 'primary' : undefined" size="16">
                   {{ item.advancement === advId ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
                 </v-icon>
               </v-list-item-icon>
-              <v-list-item-title>{{ adv.name }}</v-list-item-title>
+              <v-list-item-title class="text-caption">
+                {{ adv.name }}
+              </v-list-item-title>
             </v-list-item>
           </v-list>
         </v-menu>
@@ -67,16 +66,17 @@
           x-small
           outlined
           :color="item.learned ? 'error' : 'primary'"
-          class="mx-1"
-          @click.stop="$emit('togglePower', item.id)"
+          max-width="52"
+          @click.stop="$emit('togglePower', item.data.id)"
         >
           {{ item.learned ? 'Remove' : `${prepared ? 'Prepare' : 'Learn'}` }}
         </v-btn>
 
         <!-- more info -->
         <v-btn
+          x-small
           icon
-          class="mx-1"
+          class="ml-1"
           @click="showInfo = !showInfo"
         >
           <v-icon>

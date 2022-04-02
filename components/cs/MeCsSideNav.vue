@@ -5,7 +5,7 @@
     app
     clipped
     right
-    width="280"
+    :width="$vuetify.breakpoint.xsOnly ? 280 : 340"
     disable-resize-watcher
   >
     <template #prepend>
@@ -43,3 +43,27 @@ export default {
   }
 }
 </script>
+
+<style>
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+#meCsSideNav * {
+  scrollbar-width: thin;
+  scrollbar-color: transparent;
+}
+
+/* Chrome, Edge, and Safari */
+#meCsSideNav *::-webkit-scrollbar {
+  width: 4px;
+}
+
+#meCsSideNav *::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#meCsSideNav *::-webkit-scrollbar-thumb {
+  background-color: #303030;
+  border-radius: 10px;
+  border: 3px solid transparent;
+}
+</style>

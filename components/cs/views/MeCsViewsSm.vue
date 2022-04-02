@@ -64,6 +64,19 @@
         <v-row>
           <v-col>
             <me-cs-card title="Powers">
+              <div class="mt-1">
+                <me-cs-powers-mods />
+              </div>
+              <v-row class="mx-4 mt-2">
+                <v-col cols="8">
+                  <me-cs-powers-level-filter />
+                </v-col>
+                <v-col cols="4" class="text-right">
+                  <v-btn x-small outlined color="primary" @click="$store.dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-powers-manager')">
+                    Manage
+                  </v-btn>
+                </v-col>
+              </v-row>
               <me-cs-powers />
             </me-cs-card>
           </v-col>

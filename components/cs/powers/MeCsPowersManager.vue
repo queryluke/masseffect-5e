@@ -1,26 +1,24 @@
 <template>
-  <div>
+  <v-expansion-panels flat tile>
     <template v-for="klass in klasses">
       <me-cs-klass-power-select :key="klass.id" :klass="klass" />
     </template>
-    <v-expansion-panels>
-      <!-- TEMP: old builder -->
-      <v-expansion-panel v-if="unlinkedPowers.length">
-        <v-expansion-panel-header>
-          Powers Not Linked To a Class ({{ unlinkedPowers.length }})
-        </v-expansion-panel-header>
-        <v-expansion-panel-content>
-          <template v-for="item in unlinkedPowers">
-            <me-cs-power-select-card
-              :key="item.id"
-              :item="item"
-              @togglePower="removeUnlinkedPower"
-            />
-          </template>
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-    </v-expansion-panels>
-  </div>
+    <!-- TEMP: old builder -->
+    <v-expansion-panel v-if="unlinkedPowers.length">
+      <v-expansion-panel-header>
+        Powers Not Linked To a Class ({{ unlinkedPowers.length }})
+      </v-expansion-panel-header>
+      <v-expansion-panel-content>
+        <template v-for="item in unlinkedPowers">
+          <me-cs-power-select-card
+            :key="item.id"
+            :item="item"
+            @togglePower="removeUnlinkedPower"
+          />
+        </template>
+      </v-expansion-panel-content>
+    </v-expansion-panel>
+  </v-expansion-panels>
 </template>
 
 <script>
