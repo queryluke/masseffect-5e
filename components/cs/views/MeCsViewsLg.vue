@@ -45,6 +45,21 @@
                 </v-tab>
               </template>
             </v-tabs>
+            <div v-if="tab === 1">
+              <div class="mt-1">
+                <me-cs-powers-mods />
+              </div>
+              <v-row class="mx-4 mt-2">
+                <v-col cols="8">
+                  <me-cs-powers-level-filter />
+                </v-col>
+                <v-col cols="4" class="text-right">
+                  <v-btn x-small outlined color="primary" @click="$store.dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-powers-manager')">
+                    Manage
+                  </v-btn>
+                </v-col>
+              </v-row>
+            </div>
           </template>
           <v-tabs-items v-model="tab" class="mb-3">
             <v-tab-item>
@@ -81,24 +96,6 @@
             </v-tab-item>
           </v-tabs-items>
         </me-cs-card-sticky-header>
-        <!--
-        <v-card outlined height="500px">
-          <div class="d-flex flex-column">
-            <div style="flex: 0 0 auto">
-              <v-tabs v-model="tab">
-                <template v-for="t in tabs">
-                  <v-tab :key="t">
-                    {{ t }}
-                  </v-tab>
-                </template>
-              </v-tabs>
-            </div>
-            <div style="flex: 1 1 auto; position: relative; height: 452px" class="overflow-y-auto pt-3 pb-5">
-
-            </div>
-          </div>
-        </v-card>
-        -->
       </v-col>
       <v-col cols="3">
         <div class="mb-5">
@@ -133,9 +130,10 @@
 
 <script>
 import MeCsCardStickyHeader from '~/components/cs/card/MeCsCardStickyHeader'
+import MeCsPowersMods from '~/components/cs/powers/MeCsPowersMods'
 export default {
   name: 'MeCsViewsLg',
-  components: { MeCsCardStickyHeader },
+  components: { MeCsPowersMods, MeCsCardStickyHeader },
   data () {
     return {
       tab: null,

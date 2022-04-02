@@ -1,37 +1,5 @@
 <template>
   <div>
-    <!-- Power Mod -->
-    <v-row no-gutters justify="space-around" justify-md="center">
-      <v-col v-for="stat in ['mod','attack','dc']" :key="`statDisplay-${stat}`" :cols="pcStatsCols" sm="4" class="d-flex mt-1">
-        <v-card outlined flat class="mx-auto" min-width="100">
-          <div class="text-center d-flex justify-center">
-            <div class="text-caption">
-              <small>{{ statTitles[stat] }}</small>
-            </div>
-          </div>
-          <div class="d-flex justify-center">
-            <div v-for="info of groupedPowercastingAbilityStats" :key="`${info.ability}-${stat}-display`" class="px-2">
-              <v-tooltip bottom>
-                <template #activator="{ on, attrs }">
-                  <div v-bind="attrs" class="d-flex align-center" v-on="on">
-                    <div class="text-h6 text-uppercase">
-                      {{ info[stat] }}
-                    </div>
-                    <div v-if="groupedPowercastingAbilityStats.length > 1">
-                      <v-avatar v-for="pcKlass in info.klasses" :key="`${info.ability}-${stat}-${pcKlass}-icon`" title size="22">
-                        <v-img :src="require(`~/assets/images/classes/${pcKlass}.svg`)" />
-                      </v-avatar>
-                    </div>
-                  </div>
-                </template>
-                <span class="text-capitalize">{{ info.klasses.join(', ') }}</span>
-              </v-tooltip>
-            </div>
-          </div>
-        </v-card>
-      </v-col>
-    </v-row>
-
     <!-- Points and slots -->
     <v-container>
       <v-row>
@@ -72,18 +40,6 @@
         </v-col>
       </v-row>
     </v-container>
-
-    <div class="text-right">
-      <v-btn
-        color="primary"
-        class="ma-0"
-        x-small
-        :disabled="viewOnly"
-        @click="managerDialog = true"
-      >
-        Manage
-      </v-btn>
-    </div>
 
     <!-- Powers -->
     <v-row no-gutters>

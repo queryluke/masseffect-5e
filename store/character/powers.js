@@ -143,6 +143,55 @@ export const getters = {
     }
     return kpca
   },
+  klassPowercastingMaxes: (state, getters, rootState, rootGetters) => {
+    const kpcms = {}
+    const allKlassFeatures = rootGetters['character/klasses/klassesFeatures']
+    for (const [index, klass] of rootGetters['character/klasses/selectedKlasses'].entries()) {
+      const defaults = {
+        numPowers: 0,
+        maxPowerLevel: -1,
+        numCantrips: 0,
+        learned: true
+      }
+      // powers
+      const powercastingFeature = allKlassFeatures[index].find(i => i.klass === klass.id && i.mechanics.some(j => j.type.startsWith('powercasting')))
+      if (powercastingFeature) {
+        const powercasting = powercastingFeature.mechanics.find(i => i.type.startsWith('powercasting'))
+        // numPowers
+        if (powercasting.known) {
+          defaults.numPowers = powercasting.known[klass.levels - 1]
+        }
+        if (powercasting.prepared) {
+          let numPowers = Math.floor(powercasting.prepared.levelMultiplier * klass.levels)
+          if (powercasting.prepared.modBonus) {
+            const mod = getters.klassPowercastingAbilities[klass.id]
+            numPowers += rootGetters[`character/abilities/${mod}Mod`]
+          }
+          defaults.numPowers = Math.max(1, numPowers)
+          defaults.learned = false
+        }
+        // maxPowerLevel
+        if (powercasting.type.endsWith('pact')) {
+          defaults.maxPowerLevel = powercasting.slotLevel[klass.levels - 1]
+        }
+        if (powercasting.type.endsWith('points')) {
+          defaults.maxPowerLevel = powercasting.limit[klass.levels - 1]
+        }
+        if (powercasting.type.endsWith('slots')) {
+          defaults.maxPowerLevel = Math.max(Object.entries(powercasting.slots).filter(i => i[1][klass.levels - 1] > 0).map(i => i[0]))
+        }
+      }
+      //
+      const cantripsFeatures = allKlassFeatures[index].find(i => i.klass === klass.id && i.mechanics.some(j => j.type === 'cantrips'))
+      if (cantripsFeatures) {
+        const cantrips = cantripsFeatures.mechanics.find(i => i.type === 'cantrips')
+        defaults.numCantrips = cantrips.known[klass.levels - 1]
+      }
+      kpcms[klass.id] = defaults
+    }
+    console.log(kpcms)
+    return kpcms
+  },
   powers: (state, getters, rootState, rootGetters) => {
     const powers = []
     const list = getters.powerList

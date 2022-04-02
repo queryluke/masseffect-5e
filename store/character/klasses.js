@@ -171,6 +171,14 @@ export const getters = {
       return acc + adder
     }, 0)
   },
+  klassIcons: (state, getters) => {
+    const icons = {}
+    for (const klass of getters.selectedKlasses) {
+      // TODO: check if a homebrew class
+      icons[klass.id] = `/images/classes/${klass.id}.svg`
+    }
+    return icons
+  },
   klassesList: (state, getters, rootState, rootGetters) => rootGetters.getData('classes'),
   subklassesList: (state, getters, rootState, rootGetters) => rootGetters.getData('subclasses'),
   klassFeaturesList: (state, getters, rootState, rootGetters) => rootGetters.getData('class-features')

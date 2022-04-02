@@ -12,7 +12,10 @@ export const state = () => ({
   settingsTab: 0,
   actionsTab: 0,
   featuresTab: 0,
-  smDetailsNotes: false
+  smDetailsNotes: false,
+  learnedPowersLevelFilter: null,
+  powersSearch: null,
+  powersLevelFilter: null
 })
 
 export const getters = {
@@ -26,7 +29,10 @@ export const getters = {
   settingsTab: state => state.settingsTab,
   actionsTab: state => state.actionsTab,
   featuresTab: state => state.featuresTab,
-  smDetailsNotes: state => state.smDetailsNotes
+  smDetailsNotes: state => state.smDetailsNotes,
+  learnedPowersLevelFilter: state => state.learnedPowersLevelFilter,
+  powersSearch: state => state.powersSearch,
+  powersLevelFilter: state => state.powersLevelFilter
 }
 
 export const mutations = {

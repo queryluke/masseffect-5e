@@ -1,52 +1,62 @@
 <template>
-  <v-expansion-panel>
-    <!--
-    <v-expansion-panel-header>
-      <div>
-        <div class="d-flex">
-          <v-avatar tile size="32">
-            <v-img :src="require(`~/assets/images/classes/${klass.id}.svg`)" />
-          </v-avatar>
-          <div class="text-subtitle-1">
-            {{ klass.data.name }}
-          </div>
-        </div>
-        <v-row>
-          <v-col v-if="learnedCantripsMax > 0" cols="6">
-            <me-cs-powers-known-counter :count="learnedCantripsCount" :max="learnedCantripsMax">
-              Cantrips
-            </me-cs-powers-known-counter>
-          </v-col>
-          <v-col v-if="learnedPowersMax > 0" cols="6">
-            <me-cs-powers-known-counter :count="learnedPowersCount" :max="learnedPowersMax">
-              {{ techClass ? 'Prepared' : 'Known' }}
-            </me-cs-powers-known-counter>
-          </v-col>
-        </v-row>
-      </div>
-    </v-expansion-panel-header>
-    <v-expansion-panel-content>
-      <v-row>
-        <v-col cols="12" sm="6" md="8">
-          <v-text-field v-model="search" clearable append-icon="mdi-magnify" label="Search" />
-        </v-col>
-        <v-col cols="12" sm="6" md="4">
-          <v-checkbox v-model="learned" label="Learned / Prepared" />
-        </v-col>
-      </v-row>
+  <div>
+    <v-divider />
+    <v-list-item>
+      <v-list-item-avatar tile>
+        <v-img :src="klassIcon" />
+      </v-list-item-avatar>
+      <v-list-item-content>
+        <v-list-item-title>
+          {{ klass.data.name }}
+        </v-list-item-title>
+      </v-list-item-content>
+    </v-list-item>
+    <v-expansion-panels flat tile>
+      <!-- cantrips -->
+      <v-expansion-panel>
+        <v-expansion-panel-header>
+          Add Powers
+        </v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <me-cs-powers-known-counter :count="1" :max="pcMaxes.numCantrips">
+            Cantrips
+          </me-cs-powers-known-counter>
+          <me-cs-powers-known-counter :count="learnedCantripsCount" :max="learnedCantripsMax">
+            Powers
+          </me-cs-powers-known-counter>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
 
-      <template v-for="item in filteredPowers">
-        <me-cs-power-select-card
-          :key="item.id"
-          :item="item"
-          @addPower="addPower(item)"
-          @removePower="removePower(item)"
-          @setPowerAdv="setAdvancement(item)"
-        />
-      </template>
-    </v-expansion-panel-content>
-    -->
-  </v-expansion-panel>
+      <!-- powers -->
+      <v-expansion-panel>
+        <v-expansion-panel-header>
+          {{ pcMaxes.learned ? 'Known' : 'Prepared' }} Powers
+        </v-expansion-panel-header>
+      </v-expansion-panel>
+      <!--
+        <v-expansion-panel-content>
+          <v-row>
+            <v-col cols="12" sm="6" md="8">
+              <v-text-field v-model="search" clearable append-icon="mdi-magnify" label="Search" />
+            </v-col>
+            <v-col cols="12" sm="6" md="4">
+              <v-checkbox v-model="learned" label="Learned / Prepared" />
+            </v-col>
+          </v-row>
+
+          <template v-for="item in filteredPowers">
+            <me-cs-power-select-card
+              :key="item.id"
+              :item="item"
+              @addPower="addPower(item)"
+              @removePower="removePower(item)"
+              @setPowerAdv="setAdvancement(item)"
+            />
+          </template>
+        </v-expansion-panel-content>
+        -->
+    </v-expansion-panels>
+  </div>
 </template>
 
 <script>
@@ -68,9 +78,23 @@ export default {
     }
   },
   computed: {
-    ...mapGetters({ powerList: 'powers/powerList', character: 'character', intMod: 'abilities/intMod', klasses: 'klasses/selectedKlasses', klassesFeatures: 'klasses/klassesFeatures' }),
+    ...mapGetters({
+      powerList: 'powers/powerList',
+      character: 'character',
+      klasses: 'klasses/selectedKlasses',
+      klassIcons: 'klasses/klassIcons',
+      klassPowercastingMaxes: 'powers/klassPowercastingMaxes'
+    }),
     klassIndex () {
       return this.klasses.findIndex(i => i.id === this.klass.id)
+    },
+    pcMaxes () {
+      console.log(this.klassPowercastingMaxes[this.klass.id])
+      return this.klassPowercastingMaxes[this.klass.id]
+    },
+    klassIcon () {
+      console.log(this.klassIcons)
+      return this.klassIcons[this.klass.id]
     },
     powercastingMechanics () {
       return this.klassesFeatures[this.klassIndex].reduce((acc, curr) => acc.concat(curr.mechanics || []), []).filter(i => i.type.startsWith('powercasting'))
