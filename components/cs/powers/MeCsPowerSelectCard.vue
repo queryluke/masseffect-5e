@@ -1,5 +1,5 @@
 <template>
-  <v-card flat class="mb-1" @click="showInfo = !showInfo">
+  <v-card tile outlined flat class="mb-1" @click="showInfo = !showInfo">
     <div class="d-flex justify-space-between align-start py-1">
       <div class="d-flex align-center text-truncate">
         <v-tooltip v-if="item.disabled && item.learned" bottom>
@@ -25,42 +25,6 @@
         </div>
       </div>
       <div class="d-flex justify-end align-center">
-        <!-- Advancement Menu -->
-        <v-menu v-if="item.data.advancements && item.learned" offset-y>
-          <template #activator="{ on, attrs }">
-            <v-btn
-              color="primary"
-              v-bind="attrs"
-              x-small
-              outlined
-              class="mr-1"
-              :disabled="!item.learned"
-              v-on="on"
-            >
-              {{ item.data.advancement ? item.data.advancements[item.advancement].name : 'Adv' }}
-              <v-icon right>
-                mdi-menu-down
-              </v-icon>
-            </v-btn>
-          </template>
-          <v-list dense>
-            <v-list-item
-              v-for="(adv, advId) in item.data.advancements"
-              :key="advId"
-              @click="$emit('setPowerAdv', { id: item.data.id, advId })"
-            >
-              <v-list-item-icon>
-                <v-icon :color="item.advancement === advId ? 'primary' : undefined" size="16">
-                  {{ item.advancement === advId ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
-                </v-icon>
-              </v-list-item-icon>
-              <v-list-item-title class="text-caption">
-                {{ adv.name }}
-              </v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
-
         <!-- add/remove button -->
         <v-btn
           x-small
@@ -71,7 +35,6 @@
         >
           {{ item.learned ? 'Remove' : `${prepared ? 'Prepare' : 'Learn'}` }}
         </v-btn>
-
         <!-- more info -->
         <v-btn
           x-small
@@ -85,11 +48,76 @@
         </v-btn>
       </div>
     </div>
+    <v-card-actions v-if="item.data.advancements && item.learned" class="pt-0">
+      <!-- Advancement Menu -->
+      <v-menu offset-y>
+        <template #activator="{ on, attrs }">
+          <v-btn
+            color="primary"
+            v-bind="attrs"
+            x-small
+            outlined
+            class="mr-1"
+            :disabled="!item.learned"
+            v-on="on"
+          >
+            {{ item.advancement ? item.data.advancements[item.advancement].name : 'Advance' }}
+            <v-icon right>
+              mdi-menu-down
+            </v-icon>
+          </v-btn>
+        </template>
+        <v-list dense>
+          <v-list-item
+            v-for="(adv, advId) in item.data.advancements"
+            :key="advId"
+            @click="$emit('setPowerAdv', { id: item.data.id, advId })"
+          >
+            <v-list-item-icon>
+              <v-icon :color="item.advancement === advId ? 'primary' : undefined" size="16">
+                {{ item.advancement === advId ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
+              </v-icon>
+            </v-list-item-icon>
+            <v-list-item-title class="text-caption">
+              {{ adv.name }}
+            </v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+      <v-spacer />
+    </v-card-actions>
     <v-expand-transition>
       <div v-show="showInfo">
         <v-divider />
         <v-card-text>
-          <me-power-info :item="item" />
+          <div class="text-caption">
+            <span class="font-weight-bold pr-1">Casting Time:</span>
+            <me-power-casting-time :casting-times="item.data.castingTimes" />
+          </div>
+          <div class="text-caption">
+            <span class="font-weight-bold pr-1">Duration:</span>
+            <me-power-duration :duration="item.data.duration" :concentration="item.data.concentration" />
+          </div>
+          <div class="text-caption">
+            <span class="font-weight-bold pr-1">Range/AoE:</span>
+            <me-power-range :range="item.data.range" :aoe="item.data.aoe" />
+          </div>
+          <div class="text-caption">
+            <span class="font-weight-bold pr-1">Primes/Detonates:</span>
+            <me-power-primes-detonates :primes="item.data.primes" :detonates="item.data.detonates" />
+          </div>
+          <div class="mt-1">
+            <me-html :content="item.data.html" :classes="'text-caption'" />
+          </div>
+          <div class="text-caption mt-1">
+            <div class="font-weight-bold">
+              Advancements
+            </div>
+            <div v-for="(opt, id) in item.data.advancements" :key="id" class="mb-1">
+              <span class="font-weight-medium font-italic">> {{ opt.name }}.</span>
+              <me-html :content="opt.text" inline :classes="'text-caption'" />
+            </div>
+          </div>
         </v-card-text>
       </div>
     </v-expand-transition>

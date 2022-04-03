@@ -43,7 +43,7 @@
         <div class="text-subtitle-1 mt-2">
           Filter by Level
         </div>
-        <me-cs-powers-level-filter />
+        <me-cs-powers-level-filter learned />
         <v-switch v-model="learnedFilter" dense hide-details class="v-input--reverse">
           <template #label>
             <span class="text-caption">
@@ -54,7 +54,7 @@
       </div>
       <div class="mx-n6">
         <template v-for="power in filteredPowers">
-          <me-cs-power-select-card :key="power.data.id" :item="power" :prepared="power.data.level === 0 ? false : !pcMaxes.learned" @togglePower="togglePower" />
+          <me-cs-power-select-card :key="power.data.id" :item="power" :prepared="power.data.level === 0 ? false : !pcMaxes.learned" @togglePower="togglePower" @setPowerAdv="setPowerAdv" />
         </template>
       </div>
     </v-expansion-panel-content>
@@ -76,8 +76,7 @@ export default {
   data () {
     return {
       search: null,
-      learnedFilter: false,
-      levelFilter: false
+      learnedFilter: false
     }
   },
   computed: {
@@ -87,7 +86,7 @@ export default {
       klasses: 'klasses/selectedKlasses',
       klassIcons: 'klasses/klassIcons',
       klassPowercastingMaxes: 'powers/klassPowercastingMaxes',
-      selectedPowers: 'powers/selectedPowers'
+      levelFilter: 'navigation/learnedPowersLevelFilter'
     }),
     klassIndex () {
       return this.klasses.findIndex(i => i.id === this.klass.id)
@@ -135,9 +134,9 @@ export default {
     },
     filteredPowers () {
       return this.availablePowersAndCantrips.filter((i) => {
-        const searchFilter = this.search && this.search !== '' ? i.name.toLowerCase().includes(this.search.toLowerCase()) : true
+        const searchFilter = this.search && this.search !== '' ? i.data.name.toLowerCase().includes(this.search.toLowerCase()) : true
         const learnedFilter = this.learnedFilter ? i.learned : true
-        const levelFilter = this.levelFilter ? i.data.level === this.levelFilter : true
+        const levelFilter = this.levelFilter !== 'all' ? i.data.level === this.levelFilter : true
         return [searchFilter, learnedFilter, levelFilter].every(i => i)
       })
     },

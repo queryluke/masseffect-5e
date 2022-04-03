@@ -13,9 +13,9 @@ export const state = () => ({
   actionsTab: 0,
   featuresTab: 0,
   smDetailsNotes: false,
-  learnedPowersLevelFilter: null,
+  learnedPowersLevelFilter: 'all',
   powersSearch: null,
-  powersLevelFilter: null
+  powersLevelFilter: 'all'
 })
 
 export const getters = {

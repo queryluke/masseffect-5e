@@ -154,7 +154,7 @@ export const getters = {
         learned: true
       }
       // powers
-      const powercastingFeature = allKlassFeatures[index].find(i => i.klass === klass.id && i.mechanics.some(j => j.type.startsWith('powercasting')))
+      const powercastingFeature = allKlassFeatures[index].find(i => i.klass === klass.id && i.mechanics?.some(j => j.type.startsWith('powercasting')))
       if (powercastingFeature) {
         const powercasting = powercastingFeature.mechanics.find(i => i.type.startsWith('powercasting'))
         // numPowers
@@ -182,7 +182,7 @@ export const getters = {
         }
       }
       //
-      const cantripsFeatures = allKlassFeatures[index].find(i => i.klass === klass.id && i.mechanics.some(j => j.type === 'cantrips'))
+      const cantripsFeatures = allKlassFeatures[index].find(i => i.klass === klass.id && i.mechanics?.some(j => j.type === 'cantrips'))
       if (cantripsFeatures) {
         const cantrips = cantripsFeatures.mechanics.find(i => i.type === 'cantrips')
         defaults.numCantrips = cantrips.known[klass.levels - 1]

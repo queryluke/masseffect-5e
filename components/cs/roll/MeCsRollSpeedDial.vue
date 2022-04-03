@@ -101,7 +101,7 @@ export default {
     nudgeLogButton () {
       if (this.logsShown && this.$vuetify.breakpoint.lgAndUp) {
         return {
-          'margin-right': '246px'
+          'margin-right': '304px'
         }
       }
       return undefined
