@@ -27,13 +27,17 @@
 export default {
   name: 'MePowerDuration',
   props: {
-    duration: {
-      type: [Object, Boolean],
-      default: false
-    },
-    concentration: {
-      type: Boolean,
-      default: true
+    mechanic: {
+      type: Object,
+      default: () => {
+        return {
+          duration: {
+            length: 0,
+            unit: 'instant'
+          },
+          concentration: false
+        }
+      }
     },
     showDuration: {
       type: Boolean,
@@ -49,9 +53,15 @@ export default {
     }
   },
   computed: {
+    duration () {
+      return this.mechanic.duration
+    },
+    concentration () {
+      return this.mechanic.concentration
+    },
     durationText () {
       return this.duration
-        ? this.$tc(`times.${this.duration.time}`, this.duration.length, { n: this.duration.length })
+        ? this.$tc(`times.${this.duration.unit}`, this.duration.length, { n: this.duration.length })
         : '-'
     },
     cBackgroundColor () {

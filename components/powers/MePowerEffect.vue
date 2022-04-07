@@ -8,10 +8,6 @@
 export default {
   name: 'MePowerEffect',
   props: {
-    damageTypes: {
-      type: Array,
-      default: () => []
-    },
     tags: {
       type: Array,
       default: () => []
@@ -23,23 +19,13 @@ export default {
   },
   computed: {
     text () {
-      const array = []
-      for (const dmg of this.damageTypes) {
-        array.push(this.$t(`damage_types.${dmg}_damage`))
-      }
-      for (const tag of this.tags) {
-        if (tag === 'damage') {
-          continue
-        }
-        array.push(this.$t(`tags.${tag}`))
-      }
-      if (array.length === 0) {
+      if (this.tags.length === 0) {
         return this.abbr ? '-' : this.$t('none')
       }
       if (this.abbr) {
-        return `${array[0]} (...)`
+        return `${this.tags[0]}${this.tags.length > 1 ? ' (...)' : ''}`
       } else {
-        return this.$t(`lists.comma_list[${array.length}]`, array)
+        return this.$t(`lists.comma_list[${this.tags.length}]`, this.tags)
       }
     }
   }

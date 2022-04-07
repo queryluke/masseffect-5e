@@ -17,13 +17,17 @@
 export default {
   name: 'MePowerRange',
   props: {
-    range: {
-      type: [Number, String, Boolean],
-      default: false
-    },
-    aoe: {
-      type: [Object, Boolean],
-      default: false
+    mechanic: {
+      type: Object,
+      default: () => {
+        return {
+          range: {
+            short: 0,
+            long: false,
+            aoe: false
+          }
+        }
+      }
     },
     size: {
       type: Number,
@@ -35,6 +39,12 @@ export default {
     }
   },
   computed: {
+    range () {
+      return this.mechanic.range.short
+    },
+    aoe () {
+      return this.mechanic.range.aoe
+    },
     filename () {
       return this.$vuetify.theme.dark ? `${this.aoe.type}-white` : this.aoe.type
     },
