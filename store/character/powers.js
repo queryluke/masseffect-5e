@@ -1,3 +1,6 @@
+import merge from 'lodash/merge'
+import cloneDeep from 'lodash/cloneDeep'
+
 export const state = () => ({
   mcPs: [
     [2, 4, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7],
@@ -26,6 +29,10 @@ export const state = () => ({
     soldier: false
   }
 })
+
+function upcastPower (base, upcast, advancement) {
+  return merge(cloneDeep(base), (upcast || {}), (advancement || {}))
+}
 
 export const getters = {
   klassesPowercastingMechanics: (state, getters, rootState, rootGetters) => {
@@ -195,83 +202,88 @@ export const getters = {
   powers: (state, getters, rootState, rootGetters) => {
     const powers = []
     const list = getters.powerList
-    const baseMods = {
+    // TODO: global overrides
+    const defaultPcAbility = {
       tech: 'int',
-      biotic: 'wis'
+      biotic: 'wis',
+      combat: 'dex'
     }
+    /*
+      TODO: Freehand and other bonuses should be on the component
     let fhEligible = false
     const hasFreeHand = rootGetters['character/mechanics/mechanics'].find(i => i.type === 'free-hand-fs')
     if (hasFreeHand) {
       const eqWeapons = rootGetters['character/equipment/equippedWeapons']
       fhEligible = eqWeapons.length < 2 && eqWeapons.filter(i => i.data.properties.includes('light') && !i.data.properties.includes('two-handed')).length < 2
     }
+    */
     for (const p of getters.selectedPowers) {
       // i.value needed for selections/mechanicbag
       const power = list.find(i => i.id === (p.id || p.value))
-      let mod
-      if (power.type === 'combat') {
-        mod = power.mod === 'noMod' ? false : power.mod
-      } else {
-        const appendedMod = p.mod || false
-        const baseMod = baseMods[power.type]
-        const klassMod = getters.klassPowercastingAbilities[p.klass]
-        mod = appendedMod || klassMod || baseMod
-      }
-      let toHit = false
-      if (power.attack.melee || power.attack.ranged) {
-        toHit = {
-          proficient: true,
-          mod: power.id === 'hawk-missile-launcher' ? false : mod,
-          bonus: fhEligible && power.attack.ranged && power.type !== 'combat'
-            ? { type: 'flat', value: 2 }
-            : false
-        }
-      }
-      const resource = power.type === 'combat'
-        ? { reset: power.recharge || 'manual', max: { type: 'flat', value: power.uses }, id: power.id }
-        : p.resource || false
-      let dc = false
-      if (!toHit) {
-        const powerSaves = Object.entries(power.save)
-        if (powerSaves.some(i => i[1])) {
-          dc = {
-            base: 8,
-            proficient: true,
-            mod,
-            save: powerSaves.find(i => i[1])[0]
-          }
-        }
-      }
-      const castingTimes = power.castingTimes.map(i => state.castingTimeText[i])
-      const notes = []
-      if (p.advancement) {
-        const adv = power.advancements[p.advancement]
-        if (adv) {
-          notes.push(`Adv: ${adv.name}`)
-        }
-      }
-
-      powers.push({
+      // TODO: global override here
+      console.log(power, p.id, p.value)
+      const baseMechanics = power.mechanics[0]
+      // TODO: either-or mods like str or dex (if they exist)
+      const mod = p.mod || getters.klassPowercastingAbilities[p.klass] || defaultPcAbility[power.type]
+      const attack = baseMechanics.attack
+        ? { ...baseMechanics.attack, mod: baseMechanics.attack?.mod || mod }
+        : false
+      const dc = baseMechanics.dc
+        ? { ...baseMechanics.dc, mod: baseMechanics.dc?.mod || mod }
+        : false
+      const basePower = {
         id: power.id,
         name: power.name,
         level: power.level,
-        layout: 'attack',
+        layout: 'power',
         icon: `/images/powers/${power.type}.svg`,
-        resource,
-        range: {
-          short: power.range,
-          aoe: power.aoe
-        },
-        attack: toHit,
-        notes,
-        properties: [state.levelText[power.level]],
-        dc,
-        castingTimes,
+        effect: power.tags.filter(i => i !== 'damage'),
+        source: p.klass, // TODO: p.source, like asari cantrips
+        type: power.type,
+        properties: [(p.klass || p.source), state.levelText[power.level], power.type],
         moreInfo: {
           component: 'me-power-info',
           bind: power
+        },
+        ...baseMechanics,
+        attack,
+        dc
+      }
+      // upcast cantrips
+      if (basePower.level === 0) {
+        const upcastLevel = Math.ceil(rootGetters['character/klasses/level'] / 4) - 1
+        if (upcastLevel > 0) {
+          const upcastMechanics = power.mechanics[upcastLevel]
+          let advancementMechanics = null
+          if (p.advancement) {
+            const advancement = power.advancements.find(i => i.id === p.advancement)
+            if (advancement) {
+              advancementMechanics = advancement.mechanics[upcastLevel] || advancement.mechanics[0]
+            }
+          }
+          powers.push(upcastPower(basePower, upcastMechanics, advancementMechanics))
+        } else {
+          powers.push(basePower)
         }
-      })
+      } else {
+        let advancement = null
+        if (p.advancement) {
+          advancement = power.advancements.find(i => i.id === p.advancement)
+        }
+        for (let i = 0; i < 5; i++) {
+          let advancementMechanics = null
+          const upcastMechanics = i === 0 ? {} : power.mechanics[i]
+          if (advancement) {
+            advancementMechanics = advancement.mechanics[i] || advancement.mechanics[0]
+          }
+          const properties = basePower.properties.slice()
+          const level = i + basePower.level
+          if (i > 0) {
+            properties.splice(1, 1, state.levelText[level])
+          }
+          powers.push(upcastPower({ ...basePower, level, upcast: true, properties }, upcastMechanics, advancementMechanics, i))
+        }
+      }
     }
     return powers
   },

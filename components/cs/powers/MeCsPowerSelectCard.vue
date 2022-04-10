@@ -61,7 +61,7 @@
             :disabled="!item.learned"
             v-on="on"
           >
-            {{ item.advancement ? item.data.advancements[item.advancement].name : 'Advance' }}
+            {{ advMenuText }}
             <v-icon right>
               mdi-menu-down
             </v-icon>
@@ -69,13 +69,13 @@
         </template>
         <v-list dense>
           <v-list-item
-            v-for="(adv, advId) in item.data.advancements"
-            :key="advId"
-            @click="$emit('setPowerAdv', { id: item.data.id, advId })"
+            v-for="adv in item.data.advancements"
+            :key="adv.id"
+            @click="$emit('setPowerAdv', { id: item.data.id, advId: adv.id })"
           >
             <v-list-item-icon>
-              <v-icon :color="item.advancement === advId ? 'primary' : undefined" size="16">
-                {{ item.advancement === advId ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
+              <v-icon :color="item.advancement === adv.id? 'primary' : undefined" size="16">
+                {{ item.advancement === adv.id ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
               </v-icon>
             </v-list-item-icon>
             <v-list-item-title class="text-caption">
@@ -141,6 +141,11 @@ export default {
   data () {
     return {
       showInfo: false
+    }
+  },
+  computed: {
+    advMenuText () {
+      return this.item.advancement ? this.item.data.advancements.find(i => i.id === this.item.advancement)?.name || '- unknown -' : 'Advance'
     }
   }
 }

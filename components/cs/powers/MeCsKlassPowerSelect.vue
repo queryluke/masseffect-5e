@@ -97,9 +97,6 @@ export default {
     klassIcon () {
       return this.klassIcons[this.klass.id]
     },
-    powercastingMechanics () {
-      return this.klassesFeatures[this.klassIndex].reduce((acc, curr) => acc.concat(curr.mechanics || []), []).filter(i => i.type.startsWith('powercasting'))
-    },
     powersAvailableToKlass () {
       return this.powerList.filter(i => i.classes.includes(this.klass.id)) // TODO: need a way to not filter for homebrew classes
     },
@@ -151,20 +148,6 @@ export default {
     }
   },
   methods: {
-    isPrepared (item) {
-      return this.techClass
-        ? this.klass.id === 'engineer'
-          ? true
-          : item.level !== 0
-        : false
-    },
-    progressionValues (column, level = null) {
-      const values = (this.klass.data.progression.columns.find(i => i.label === column) || { values: [] }).values
-      if (level) {
-        return values[level - 1]
-      }
-      return values
-    },
     setPowerAdv ({ id, advId }) {
       const cloned = this.character.powers.slice()
       const index = cloned.findIndex(i => i.id === id && i.klass === this.klass.id)

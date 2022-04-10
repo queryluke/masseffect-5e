@@ -193,12 +193,13 @@ export default {
       }
     },
     csPowersAsActions () {
-      const sortedPowers = this.powers.slice().sort((a, b) => a.level - b.level)
+      const sortedPowers = this.powers.filter(i => !i.upcast).sort((a, b) => a.level - b.level)
+      console.log(sortedPowers)
       return {
-        actions: sortedPowers.filter(i => i.castingTimes.includes('1A')),
-        attacks: sortedPowers.filter(i => i.castingTimes.includes('Atk')),
-        bonus_actions: sortedPowers.filter(i => i.castingTimes.includes('1BA')),
-        reactions: sortedPowers.filter(i => i.castingTimes.includes('1R*'))
+        actions: sortedPowers.filter(i => i.castingTime.unit === 'action'),
+        attacks: sortedPowers.filter(i => i.castingTime.unit === 'attack'),
+        bonus_actions: sortedPowers.filter(i => i.castingTime.unit === 'bonus_action'),
+        reactions: sortedPowers.filter(i => i.castingTime.unit === 'reaction')
       }
     }
   },

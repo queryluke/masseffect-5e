@@ -17,47 +17,11 @@
       </template>
 
       <template #castingTime>
-        <me-cs-action-stat>
-          {{ item.castingTimes.join('|') }}
-        </me-cs-action-stat>
+        <me-cs-action-casting-time :casting-time="item.castingTime" :alt-casting="item.altCasting" />
       </template>
 
       <template v-if="range" #range>
-        <me-cs-action-stat>
-          <template v-if="layout !== 'attack'" #title>
-            Range
-          </template>
-          <span v-if="!range.long">
-            <span v-if="range.short === 0">
-              Self
-            </span>
-            <span v-else-if="range.short === 1">
-              Touch
-            </span>
-            <me-distance v-else :length="range.short" abbr />
-          </span>
-          <span v-else>
-            <span>
-              <me-distance :length="range.short" num-only />
-            </span>
-            <span class="text-caption font-weight-light">
-              (<me-distance :length="range.long" num-only />)
-            </span>
-          </span>
-          <template v-if="range.aoe || range.note" #subtitle>
-            <div v-if="range.aoe">
-              (<span>
-                <me-distance :length="range.aoe.size" abbr />
-                <v-avatar :size="9" tile style="margin-left: 1px">
-                  <v-img :src="require(`~/assets/images/aoe/${range.aoe.filename}.svg`)" :alt="$t(`aoe_types.${range.aoe.type}`)" />
-                </v-avatar>
-              </span>)
-            </div>
-            <div v-else>
-              {{ range.note }}
-            </div>
-          </template>
-        </me-cs-action-stat>
+        <me-cs-action-range :layout="layout" :range="range" />
       </template>
 
       <template v-if="hit" #hit>
@@ -71,22 +35,7 @@
       </template>
 
       <template v-if="dc" #dc>
-        <me-cs-action-stat>
-          <template v-if="layout !== 'attack' && dc.save" #title>
-            <span class="text-uppercase">
-              {{ dc.save || '' }}
-            </span>
-          </template>
-          {{ dc.target }}
-          <template #subtitle>
-            <div v-if="dc.note && layout !== 'attack'">
-              {{ dc.note }}
-            </div>
-            <span v-else-if="layout === 'attack'" class="text-uppercase">
-              {{ dc.save || '' }}
-            </span>
-          </template>
-        </me-cs-action-stat>
+        <me-cs-action-dc :dc="dc" :layout="layout" />
       </template>
 
       <template v-if="damages" #damage>
@@ -109,8 +58,16 @@
         </me-cs-action-stat>
       </template>
 
+      <template v-if="!damages && layout === 'power'" #effect>
+        <me-cs-action-stat>
+          <span class="text-caption text-capitalize">
+            {{ (item.effect || []).join(', ') }}
+          </span>
+        </me-cs-action-stat>
+      </template>
+
       <template #notes>
-        <me-cs-action-notes :notes="notes" />
+        <me-cs-action-notes-list :notes="notes" />
       </template>
 
       <template v-if="item.shortDesc" #shortDesc>
@@ -122,6 +79,8 @@
         <me-cs-action-resource v-if="item.resource && item.resource.resource" :id="item.resource.resource.id" :resource="item.resource.resource" />
       </template>
     </component>
+
+    <!-- more info dialog -->
     <me-standard-dialog v-if="hasMoreInfoDialog" :shown="moreInfoDialog" :title="item.name" @close="moreInfoDialog = false">
       <component :is="item.moreInfo.component" v-if="item.moreInfo && item.moreInfo.component" :item="item.moreInfo.bind" />
       <me-html v-else :content="itemHtml" />
@@ -275,10 +234,39 @@ export default {
       })
     },
     notes () {
+      const notes = []
+      if (this.item.duration?.length) {
+        notes.push({
+          type: 'duration',
+          duration: this.item.duration,
+          concentration: this.item.concentration || false
+        })
+      }
+      if (this.item.primes) {
+        notes.push({
+          type: 'tooltip',
+          tooltipText: `Primes (${this.item.primes})`,
+          text: `P: ${this.item.primes}`
+        })
+      }
+      if (this.item.detonates) {
+        notes.push({
+          type: 'text',
+          text: 'Detonates'
+        })
+      }
       if (Array.isArray(this.item.notes) && this.item.notes.length) {
+        for (const note of this.item.notes) {
+          const interpolated = this.interpolatedText(note)
+          const hasHtml = /<.+?>/g.test(interpolated)
+          notes.push({
+            type: hasHtml ? 'html' : 'text',
+            text: interpolated
+          })
+        }
         return this.item.notes.map(i => this.interpolatedText(i))
       }
-      return []
+      return notes
     },
     interpolations () {
       return {

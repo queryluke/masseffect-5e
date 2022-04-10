@@ -1,6 +1,6 @@
 <template>
   <div class="text-caption font-weight-light">
-    <small>
+    <small class="text-capitalize">
       {{ properties.join(' ∙ ') }}
     </small>
   </div>

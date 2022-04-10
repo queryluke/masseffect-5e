@@ -1,11 +1,13 @@
 <template>
-  <me-more-info-dialog
-    v-if="!$fetchState.pending"
-    :title="item.name"
-    :text="text"
-    :content="item.html"
-    :link-css="linkCss"
-  />
+  <span v-if="!$fetchState.pending">
+    <me-standard-dialog :shown="show" @close="show = false">
+      <template #title>
+        {{ item.name }}
+      </template>
+      <me-conditions-info :item="item" />
+    </me-standard-dialog>
+    <a :class="linkCss" @click.stop="show = true">{{ text }}</a>
+  </span>
 </template>
 
 <script>
@@ -25,6 +27,11 @@ export default {
       default: false
     }
   },
+  data () {
+    return {
+      show: false
+    }
+  },
   async fetch () {
     await this.$store.dispatch('FETCH_DATA', 'conditions')
   },
@@ -33,7 +40,7 @@ export default {
       return this.$store.getters.getItem('conditions', this.id)
     },
     text () {
-      return this.label ? this.label : this.sub !== '' ? `${this.id}: ${this.sub}` : this.id
+      return this.label || (this.sub !== '' ? `${this.id}: ${this.sub}` : this.id)
     },
     primeTypeText () {
       return this.$store.getters['config/primeTypeText']
