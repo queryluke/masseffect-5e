@@ -67,7 +67,7 @@
               <div class="mt-1">
                 <me-cs-powers-mods />
               </div>
-              <v-row class="mx-4 mt-2">
+              <v-row class="mt-2">
                 <v-col cols="8">
                   <me-cs-powers-level-filter />
                 </v-col>
@@ -77,7 +77,9 @@
                   </v-btn>
                 </v-col>
               </v-row>
-              <me-cs-powers />
+              <template v-for="powerLevel in [0, 1, 2, 3, 4, 5]">
+                <me-cs-powers-by-level :key="`powerLevel-${powerLevel}`" :level="powerLevel" />
+              </template>
             </me-cs-card>
           </v-col>
         </v-row>

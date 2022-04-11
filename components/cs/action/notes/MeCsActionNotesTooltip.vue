@@ -1,8 +1,10 @@
 <template>
   <v-tooltip bottom>
     <template #activator="{ on, attrs }">
-      <span v-bind="attrs" class="" v-on="on">
-        {{ note.text }}
+      <span v-bind="attrs" v-on="on">
+        <slot>
+          {{ note.text }}
+        </slot>
       </span>
     </template>
     <span>

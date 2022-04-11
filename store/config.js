@@ -1,4 +1,19 @@
 export const state = () => ({
+  damageTypeAttributes: {
+    acid: { icon: 'liquid-spot', color: 'light-green darken-1' },
+    bludgeoning: { icon: 'hammer', color: 'blue-grey lighten-3' },
+    cold: { icon: 'snowflake', color: 'cyan lighten-3' },
+    fire: { icon: 'fire', color: 'orange darken-1' },
+    force: { icon: 'heat-pump', color: 'purple lighten-1' },
+    lightning: { icon: 'flash', color: 'blue darken-2' },
+    necrotic: { icon: 'chemical-weapon', color: 'deep-purple darken-3' },
+    piercing: { icon: 'target', color: 'red darken-4' },
+    poison: { icon: 'skull', color: 'lime lighten-1' },
+    psychic: { icon: 'head-snowflake', color: 'pink lighten-1' },
+    radiant: { icon: 'radioactive-circle', color: 'brown lighten-1' },
+    slashing: { icon: 'sword', color: 'grey darken-1' },
+    thunder: { icon: 'nuke', color: 'indigo darken-3' }
+  },
   rarityColors: {
     varies: 'grey darken-3',
     common: 'grey darken-3',

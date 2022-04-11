@@ -36,9 +36,17 @@ function upcastPower (base, upcast, advancement) {
 
 export const getters = {
   klassesPowercastingMechanics: (state, getters, rootState, rootGetters) => {
-    return rootGetters['character/klasses/klassesFeatures']
-      .reduce((acc, curr) => acc.concat(curr.mechanics || []), [])
-      .filter(i => i.type.startsWith('powercasting'))
+    const pcFeatures = []
+    for (const kFeatures of rootGetters['character/klasses/klassesFeatures']) {
+      const pcFeature = kFeatures.find(i => (i.mechanics || []).some(j => j.type.startsWith('powercasting')))
+      if (pcFeature) {
+        pcFeatures.push({
+          klassId: pcFeature.klass,
+          powercasting: pcFeature.mechanics.find(i => i.type.startsWith('powercasting'))
+        })
+      }
+    }
+    return pcFeatures
   },
   techPoints: (state, getters, rootState, rootGetters) => {
     const base = {
@@ -48,20 +56,17 @@ export const getters = {
     }
     if (rootGetters['character/klasses/isMulticlassed']) {
       let multiclassPointcastingLevel = 0
-      for (const feature of rootGetters['character/klasses/klassesFeatures']) {
-        const pointcastingFeature = feature.mechanics?.find(i => i.type === 'powercasting-points')
-        if (pointcastingFeature) {
-          const multiplier = pointcastingFeature.multiclassConversion
-          const levels = rootGetters['character/klasses/selectedKlasses'].find(i => i.id === feature.klass).levels
-          multiclassPointcastingLevel += Math.floor(levels * multiplier)
-        }
+      for (const feature of getters.klassesPowercastingMechanics.filter(i => i.powercasting.type === 'powercasting-points')) {
+        const multiplier = feature.powercasting.multiclassConversion
+        const levels = rootGetters['character/klasses/selectedKlasses'].find(i => i.id === feature.klassId).levels
+        multiclassPointcastingLevel += Math.floor(levels * multiplier)
       }
       if (multiclassPointcastingLevel > 0) {
         base.max = state.mcTp[multiclassPointcastingLevel - 1]
         base.limit = state.mcTpLimit[multiclassPointcastingLevel - 1]
       }
     } else {
-      const pointCasting = getters.klassesPowercastingMechanics.find(i => i.type === 'powercasting-points')
+      const pointCasting = getters.klassesPowercastingMechanics.find(i => i.powercasting.type === 'powercasting-points')
       if (pointCasting) {
         const klassLevel = rootGetters['character/klasses/level']
         base.max = pointCasting.points[klassLevel - 1]
@@ -82,13 +87,10 @@ export const getters = {
     }
     if (rootGetters['character/klasses/isMulticlassed']) {
       let multiclassSlotcastingLevel = 0
-      for (const feature of rootGetters['character/klasses/klassesFeatures']) {
-        const slotcastingFeature = feature.mechanics?.find(i => i.type === 'powercasting-slots')
-        if (slotcastingFeature) {
-          const multiplier = slotcastingFeature.multiclassConversion
-          const levels = rootGetters['character/klasses/selectedKlasses'].find(i => i.id === feature.klass).levels
-          multiclassSlotcastingLevel += Math.floor(levels * multiplier)
-        }
+      for (const feature of getters.klassesPowercastingMechanics.filter(i => i.powercasting.type === 'powercasting-slots')) {
+        const multiplier = feature.powercasting.multiclassConversion
+        const levels = rootGetters['character/klasses/selectedKlasses'].find(i => i.id === feature.klassId).levels
+        multiclassSlotcastingLevel += Math.floor(levels * multiplier)
       }
       if (multiclassSlotcastingLevel > 0) {
         for (const slot of slots) {
@@ -96,7 +98,7 @@ export const getters = {
         }
       }
     } else {
-      const slotCasting = getters.klassesPowercastingMechanics.find(i => i.type === 'powercasting-slots')
+      const slotCasting = getters.klassesPowercastingMechanics.find(i => i.powercasting.type === 'powercasting-slots')
       if (slotCasting) {
         const klassLevel = rootGetters['character/klasses/level']
         for (const slot of slots) {
@@ -117,20 +119,17 @@ export const getters = {
     }
     if (rootGetters['character/klasses/isMulticlassed']) {
       let multiclassPactcastingLevel = 0
-      for (const feature of rootGetters['character/klasses/klassesFeatures']) {
-        const pactcastingFeature = feature.mechanics?.find(i => i.type === 'powercasting-pact')
-        if (pactcastingFeature) {
-          const multiplier = pactcastingFeature.multiclassConversion
-          const levels = rootGetters['character/klasses/selectedKlasses'].find(i => i.id === feature.klass).levels
-          multiclassPactcastingLevel += Math.floor(levels * multiplier)
-        }
+      for (const feature of getters.klassesPowercastingMechanics.filter(i => i.powercasting.type === 'powercasting-pact')) {
+        const multiplier = feature.powercasting.multiclassConversion
+        const levels = rootGetters['character/klasses/selectedKlasses'].find(i => i.id === feature.klassId).levels
+        multiclassPactcastingLevel += Math.floor(levels * multiplier)
       }
       if (multiclassPactcastingLevel > 0) {
         base.slotLevel = state.mcPactSlotLevel[multiclassPactcastingLevel - 1]
         base.numSlots = state.mcPactNumSlots[multiclassPactcastingLevel - 1]
       }
     } else {
-      const pactCasting = getters.klassesPowercastingMechanics.find(i => i.type === 'powercasting-pact')
+      const pactCasting = getters.klassesPowercastingMechanics.find(i => i.powercasting.type === 'powercasting-pact')
       if (pactCasting) {
         const klassLevel = rootGetters['character/klasses/level']
         base.slotLevel = pactCasting.slotLevel[klassLevel - 1]
@@ -185,7 +184,7 @@ export const getters = {
           defaults.maxPowerLevel = powercasting.limit[klass.levels - 1]
         }
         if (powercasting.type.endsWith('slots')) {
-          defaults.maxPowerLevel = Math.max(Object.entries(powercasting.slots).filter(i => i[1][klass.levels - 1] > 0).map(i => i[0]))
+          defaults.maxPowerLevel = Math.max(...Object.entries(powercasting.slots).filter(i => i[1][klass.levels - 1] > 0).map(i => parseInt(i[0], 10)))
         }
       }
       //
@@ -239,12 +238,8 @@ export const getters = {
         icon: `/images/powers/${power.type}.svg`,
         effect: power.tags.filter(i => i !== 'damage'),
         source: p.klass, // TODO: p.source, like asari cantrips
+        advancement: p.advancement ? power.advancements.find(i => i.id === p.advancement) : false,
         type: power.type,
-        properties: [(p.klass || p.source), state.levelText[power.level], power.type],
-        moreInfo: {
-          component: 'me-power-info',
-          bind: power
-        },
         ...baseMechanics,
         attack,
         dc
@@ -276,12 +271,8 @@ export const getters = {
           if (advancement) {
             advancementMechanics = advancement.mechanics[i] || advancement.mechanics[0]
           }
-          const properties = basePower.properties.slice()
           const level = i + basePower.level
-          if (i > 0) {
-            properties.splice(1, 1, state.levelText[level])
-          }
-          powers.push(upcastPower({ ...basePower, level, upcast: true, properties }, upcastMechanics, advancementMechanics, i))
+          powers.push(upcastPower({ ...basePower, level, upcast: i !== 0 }, upcastMechanics, advancementMechanics, i))
         }
       }
     }
