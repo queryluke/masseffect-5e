@@ -2,18 +2,24 @@
   <v-card outlined class="pa-1 px-md-1">
     <v-row align="baseline" no-gutters>
       <v-col v-if="$vuetify.breakpoint.smAndUp" cols="1" align-self="center">
-        <v-badge
-          bordered
-          color="primary"
-          offset-y="5"
-          offset-x="5"
-          dot
-          :value="item.upcast"
-        >
-          <v-btn x-small depressed color="secondary">
-            <small>cast</small>
-          </v-btn>
-        </v-badge>
+        <div v-if="item.level > 0">
+          <v-badge
+            bordered
+            color="primary"
+            offset-y="5"
+            offset-x="5"
+            dot
+            :value="item.upcast"
+          >
+            <v-btn x-small depressed color="secondary">
+              <small>cast</small>
+            </v-btn>
+          </v-badge>
+        </div>
+        <div v-else>
+          At Will
+          <!-- TODO: combat uses -->
+        </div>
       </v-col>
       <v-col cols="5" sm="3">
         <div class="d-flex align-center">
@@ -97,7 +103,8 @@ export default {
   },
   computed: {
     properties () {
-      return [this.$t(`ordinal_numbers[${this.item.level}]`), this.item.source].join(' ∙ ')
+      const level = this.item.level === 0 ? 'Cantrip' : this.$t(`ordinal_numbers[${this.item.level}]`)
+      return [level, this.item.source].join(' ∙ ')
     },
     notesList () {
       const notes = this.notes.slice()

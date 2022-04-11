@@ -110,16 +110,20 @@ export default {
           advancement: learned?.advancement,
           notAvailable: false
         }
-        // if power level is greater than what they can learn....
-        if (p.level > this.pcMaxes.maxPowerLevel) {
-          // check it hasn't already bean learned (in the case where they learn and reduce level)
-          if (base.learned) {
-            base.notAvailable = true
-          } else {
-            continue
+        if (p.level === 0 && this.pcMaxes.numCantrips > 0) {
+          powers.push(base)
+        } else {
+          // if power level is greater than what they can learn....
+          if (p.level > this.pcMaxes.maxPowerLevel) {
+            // check it hasn't already bean learned (in the case where they learn and reduce level)
+            if (base.learned || (p.level === 0 && this.pcMaxes.numCantrips > 0)) {
+              base.notAvailable = true
+            } else {
+              continue
+            }
           }
+          powers.push(base)
         }
-        powers.push(base)
       }
       return powers.sort((a, b) => a.data.level - b.data.level)
     },
