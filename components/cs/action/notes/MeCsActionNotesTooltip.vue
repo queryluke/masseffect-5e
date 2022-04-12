@@ -1,5 +1,5 @@
 <template>
-  <v-tooltip bottom>
+  <v-tooltip bottom max-width="200">
     <template #activator="{ on, attrs }">
       <span v-bind="attrs" v-on="on">
         <slot>
@@ -7,7 +7,8 @@
         </slot>
       </span>
     </template>
-    <span>
+    <me-html v-if="note.isHtml" :content="note.tooltipText" inline />
+    <span v-else>
       {{ note.tooltipText }}
     </span>
   </v-tooltip>
@@ -22,7 +23,8 @@ export default {
       default: () => {
         return {
           text: '',
-          tooltipText: ''
+          tooltipText: '',
+          isHtml: false
         }
       }
     }

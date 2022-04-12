@@ -12,7 +12,11 @@ export const state = () => ({
     psychic: { icon: 'head-snowflake', color: 'pink lighten-1' },
     radiant: { icon: 'radioactive-circle', color: 'brown lighten-1' },
     slashing: { icon: 'sword', color: 'grey darken-1' },
-    thunder: { icon: 'nuke', color: 'indigo darken-3' }
+    thunder: { icon: 'nuke', color: 'indigo darken-3' },
+    bleeding: { icon: 'water', color: 'red darken-4' },
+    hp: { icon: 'heart-plus', color: 'green' },
+    shields: { icon: 'shield-plus', color: 'blue' },
+    temp: { icon: 'heart-flash', color: 'blue-grey lighten-1' }
   },
   rarityColors: {
     varies: 'grey darken-3',

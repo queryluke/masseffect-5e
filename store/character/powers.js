@@ -157,7 +157,8 @@ export const getters = {
         numPowers: 0,
         maxPowerLevel: -1,
         numCantrips: 0,
-        learned: true
+        learned: true,
+        powercastingType: null
       }
       // powers
       const powercastingFeature = allKlassFeatures[index].find(i => i.klass === klass.id && i.mechanics?.some(j => j.type.startsWith('powercasting')))
@@ -179,12 +180,15 @@ export const getters = {
         // maxPowerLevel
         if (powercasting.type.endsWith('pact')) {
           defaults.maxPowerLevel = powercasting.slotLevel[klass.levels - 1]
+          defaults.powercastingType = 'slots'
         }
         if (powercasting.type.endsWith('points')) {
           defaults.maxPowerLevel = powercasting.limit[klass.levels - 1]
+          defaults.powercastingType = 'points'
         }
         if (powercasting.type.endsWith('slots')) {
           defaults.maxPowerLevel = Math.max(...Object.entries(powercasting.slots).filter(i => i[1][klass.levels - 1] > 0).map(i => parseInt(i[0], 10)))
+          defaults.powercastingType = 'slots'
         }
       }
       //
@@ -220,7 +224,6 @@ export const getters = {
       // i.value needed for selections/mechanicbag
       const power = list.find(i => i.id === (p.id || p.value))
       // TODO: global override here
-      console.log(power, p.id, p.value)
       const baseMechanics = power.mechanics[0]
       // TODO: either-or mods like str or dex (if they exist)
       const mod = p.mod || getters.klassPowercastingAbilities[p.klass] || defaultPcAbility[power.type]
@@ -240,6 +243,7 @@ export const getters = {
         source: p.klass, // TODO: p.source, like asari cantrips
         advancement: p.advancement ? power.advancements.find(i => i.id === p.advancement) : false,
         type: power.type,
+        upcast: false,
         ...baseMechanics,
         attack,
         dc
