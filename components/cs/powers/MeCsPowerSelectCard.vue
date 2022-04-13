@@ -1,5 +1,11 @@
 <template>
-  <v-card tile outlined flat class="mb-1" @click="showInfo = !showInfo">
+  <v-card
+    tile
+    outlined
+    flat
+    class="mb-1 power-select-card"
+    @click="showInfo = !showInfo"
+  >
     <div class="d-flex justify-space-between align-start py-1">
       <div class="d-flex align-center text-truncate">
         <v-tooltip v-if="item.disabled && item.learned" bottom>
@@ -92,20 +98,21 @@
         <v-card-text>
           <div class="text-caption">
             <span class="font-weight-bold pr-1">Casting Time:</span>
-            <me-power-casting-time :casting-times="item.data.castingTimes" />
+            <me-power-casting-time :mechanic="mechanic" />
           </div>
           <div class="text-caption">
             <span class="font-weight-bold pr-1">Duration:</span>
-            <me-power-duration :duration="item.data.duration" :concentration="item.data.concentration" />
+            <me-power-duration :mechanic="mechanic" />
           </div>
           <div class="text-caption">
             <span class="font-weight-bold pr-1">Range/AoE:</span>
-            <me-power-range :range="item.data.range" :aoe="item.data.aoe" />
+            <me-power-range :mechanic="mechanic" />
           </div>
           <div class="text-caption">
             <span class="font-weight-bold pr-1">Primes/Detonates:</span>
-            <me-power-primes-detonates :primes="item.data.primes" :detonates="item.data.detonates" />
+            <me-power-primes-detonates :mechanic="mechanic" />
           </div>
+          <me-hr size="2" />
           <div class="mt-1">
             <me-html :content="item.data.html" :classes="'text-caption'" />
           </div>
@@ -113,9 +120,15 @@
             <div class="font-weight-bold">
               Advancements
             </div>
-            <div v-for="(opt, id) in item.data.advancements" :key="id" class="mb-1">
-              <span class="font-weight-medium font-italic">> {{ opt.name }}.</span>
-              <me-html :content="opt.text" inline :classes="'text-caption'" />
+            <div v-for="opt in item.data.advancements" :key="opt.id" class="mb-1 mx-n2">
+              <v-card :outlined="opt.id === item.advancement" flat>
+                <div class="pa-2">
+                  <v-badge tile :value="opt.id === item.advancement" content="Selected" offset-x="60" offset-y="2">
+                    <span class="font-weight-medium font-italic">> {{ opt.name }}.</span>
+                    <me-html :content="opt.text" inline :classes="'text-caption'" />
+                  </v-badge>
+                </div>
+              </v-card>
             </div>
           </div>
         </v-card-text>
@@ -144,9 +157,18 @@ export default {
     }
   },
   computed: {
+    mechanic () {
+      return this.item.data.mechanics[0]
+    },
     advMenuText () {
       return this.item.advancement ? this.item.data.advancements.find(i => i.id === this.item.advancement)?.name || '- unknown -' : 'Advance'
     }
   }
 }
 </script>
+
+<style>
+.power-select-card.v-card--link:focus:before {
+  opacity: 0;
+}
+</style>

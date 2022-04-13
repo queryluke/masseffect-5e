@@ -14,7 +14,7 @@
       </v-col>
       <v-col cols="6" md="3">
         <me-item-stat :label="$t('casting_time_title')">
-          <me-power-casting-time :mechanic="baseMechanic" :additional="item.additionalCastingTimes" />
+          <me-power-casting-time :mechanic="baseMechanic" />
         </me-item-stat>
       </v-col>
       <v-col cols="6" md="3">

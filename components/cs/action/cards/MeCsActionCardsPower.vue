@@ -1,5 +1,5 @@
 <template>
-  <v-card outlined class="pa-1 px-md-1">
+  <v-card outlined class="pa-1 px-md-1" @click="showInfo = !showInfo">
     <v-row no-gutters>
       <v-col cols="12" sm="9">
         <v-row no-gutters align="baseline">
@@ -35,6 +35,9 @@
                       <small class="text-truncate font-weight-bold" :class="{'primary--text': item.upcast }">
                         {{ item.name }}
                       </small>
+                      <v-icon v-if="item.concentration" size="12" style="position: absolute; top: 2px;">
+                        mdi-alpha-c-circle
+                      </v-icon>
                     </div>
                     <div class="text-caption font-weight-light d-flex align-center">
                       <v-avatar size="16" class="pr-1">
@@ -112,11 +115,26 @@
         <me-cs-action-notes-list :notes="notesList" />
       </v-col>
     </v-row>
+
+    <!-- DETAILS -->
+    <v-expand-transition>
+      <div v-show="showInfo">
+        <v-divider />
+        <div class="mt-3">
+          <me-html :content="item.html" :classes="'text-caption'" />
+        </div>
+        <div v-if="item.advancement">
+          <div>Advancement: {{ item.advancement.name }}</div>
+          <me-html :content="item.advancement.text" :classes="'text-caption'" />
+        </div>
+      </div>
+    </v-expand-transition>
   </v-card>
 </template>
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
+
 import { CsActions } from '~/mixins/character/csActions'
 const { mapGetters } = createNamespacedHelpers('character/powers')
 
@@ -129,8 +147,32 @@ export default {
       required: true
     }
   },
+  data () {
+    return {
+      showInfo: false
+    }
+  },
   computed: {
     ...mapGetters(['klassPowercastingMaxes', 'techPoints', 'powerSlots']),
+    powercastingType () {
+      return this.klassPowercastingMaxes[this.item.source]?.powercastingType || this.item.resource?.id
+    },
+    powerSlotAtLevel () {
+      return this.powerSlots[this.item.level]
+    },
+    castable () {
+      if (!this.powercastingType) {
+        return false
+      }
+      switch (this.powercastingType) {
+        case 'slots':
+          return this.powerSlotAtLevel.used < this.powerSlotAtLevel.max
+        case 'points':
+          return this.techPoints.used + this.item.level <= this.techPoints.max
+        default:
+          return false
+      }
+    },
     properties () {
       const level = this.item.level === 0 ? 'Cantrip' : this.$t(`ordinal_numbers[${this.item.level}]`)
       return [level, this.item.source].join(' ∙ ')
@@ -151,14 +193,6 @@ export default {
           text: `P: ${this.item.primes}`
         })
       }
-      if (this.item.detonates) {
-        notes.unshift({
-          type: 'icon',
-          text: 'Detonates',
-          icon: 'mdi-alert-octagram',
-          color: 'red darken-4'
-        })
-      }
       if (this.item.advancement) {
         notes.unshift({
           type: 'tooltip',
@@ -167,29 +201,22 @@ export default {
           isHtml: true
         })
       }
+      if (this.item.detonates) {
+        notes.unshift({
+          type: 'icon',
+          text: 'Detonates',
+          icon: 'mdi-alert-octagram',
+          color: 'red darken-4'
+        })
+      }
       return notes
-    },
-    powercastingType () {
-      return this.klassPowercastingMaxes[this.item.source]?.powercastingType || this.item.resource?.id
-    },
-    powerSlotAtLevel () {
-      return this.powerSlots[this.item.level]
-    },
-    castable () {
-      if (!this.powercastingType) {
-        return false
-      }
-      switch (this.powercastingType) {
-        case 'slots':
-          return this.powerSlotAtLevel.used < this.powerSlotAtLevel.max
-        case 'points':
-          return this.techPoints.used + this.item.level <= this.techPoints.max
-        default:
-          return false
-      }
     }
   },
   methods: {
+    showPower () {
+      this.$store.commit('character/navigation/SET', { key: 'powerToDisplay', value: { id: this.item.id, source: this.item.source } })
+      this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-powers-display')
+    },
     castPower () {
       if (!this.powercastingType) {
         return

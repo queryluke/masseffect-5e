@@ -2,7 +2,7 @@
   <me-cs-roll-card v-if="damageRoll" :roll="damageRoll">
     <div class="ma-1">
       {{ damage.text }}
-      <v-tooltip bottom>
+      <v-tooltip bottom open-delay="200">
         <template #activator="{ on, attrs }">
           <v-icon
             size="12"

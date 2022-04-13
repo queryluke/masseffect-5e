@@ -15,7 +15,8 @@ export const state = () => ({
   smDetailsNotes: false,
   learnedPowersLevelFilter: 'all',
   powersSearch: null,
-  powersLevelFilter: 'all'
+  powersLevelFilter: 'all',
+  powerToDisplay: false
 })
 
 export const getters = {
@@ -32,7 +33,8 @@ export const getters = {
   smDetailsNotes: state => state.smDetailsNotes,
   learnedPowersLevelFilter: state => state.learnedPowersLevelFilter,
   powersSearch: state => state.powersSearch,
-  powersLevelFilter: state => state.powersLevelFilter
+  powersLevelFilter: state => state.powersLevelFilter,
+  powerToDisplay: state => state.powerToDisplay
 }
 
 export const mutations = {
