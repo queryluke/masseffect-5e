@@ -242,7 +242,6 @@ export const getters = {
         effect: power.tags.filter(i => i !== 'damage'),
         source: p.klass, // TODO: p.source, like asari cantrips
         advancement: p.advancement ? power.advancements.find(i => i.id === p.advancement) : false,
-        html: power.html,
         type: power.type,
         upcast: false,
         ...baseMechanics,

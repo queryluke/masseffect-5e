@@ -95,43 +95,7 @@
     <v-expand-transition>
       <div v-show="showInfo">
         <v-divider />
-        <v-card-text>
-          <div class="text-caption">
-            <span class="font-weight-bold pr-1">Casting Time:</span>
-            <me-power-casting-time :mechanic="mechanic" />
-          </div>
-          <div class="text-caption">
-            <span class="font-weight-bold pr-1">Duration:</span>
-            <me-power-duration :mechanic="mechanic" />
-          </div>
-          <div class="text-caption">
-            <span class="font-weight-bold pr-1">Range/AoE:</span>
-            <me-power-range :mechanic="mechanic" />
-          </div>
-          <div class="text-caption">
-            <span class="font-weight-bold pr-1">Primes/Detonates:</span>
-            <me-power-primes-detonates :mechanic="mechanic" />
-          </div>
-          <me-hr size="2" />
-          <div class="mt-1">
-            <me-html :content="item.data.html" :classes="'text-caption'" />
-          </div>
-          <div class="text-caption mt-1">
-            <div class="font-weight-bold">
-              Advancements
-            </div>
-            <div v-for="opt in item.data.advancements" :key="opt.id" class="mb-1 mx-n2">
-              <v-card :outlined="opt.id === item.advancement" flat>
-                <div class="pa-2">
-                  <v-badge tile :value="opt.id === item.advancement" content="Selected" offset-x="60" offset-y="2">
-                    <span class="font-weight-medium font-italic">> {{ opt.name }}.</span>
-                    <me-html :content="opt.text" inline :classes="'text-caption'" />
-                  </v-badge>
-                </div>
-              </v-card>
-            </div>
-          </div>
-        </v-card-text>
+        <me-cs-powers-info :item="mechanic" :html="item.data.html" :advancements="item.data.advancements" :selected-advancement="item.advancement" />
       </div>
     </v-expand-transition>
   </v-card>

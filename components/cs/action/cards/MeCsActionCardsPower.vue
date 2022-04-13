@@ -1,5 +1,5 @@
 <template>
-  <v-card outlined class="pa-1 px-md-1" @click="showInfo = !showInfo">
+  <v-card outlined class="pa-1 px-md-1" @click="showPower">
     <v-row no-gutters>
       <v-col cols="12" sm="9">
         <v-row no-gutters align="baseline">
@@ -7,24 +7,7 @@
             <v-row no-gutters>
               <!-- CAST BUTTON -->
               <v-col v-if="$vuetify.breakpoint.smAndUp && item.level > 0" cols="4" align-self="center" class="pl-1">
-                <v-badge
-                  bordered
-                  color="primary"
-                  offset-y="5"
-                  offset-x="5"
-                  dot
-                  :value="item.upcast"
-                >
-                  <v-btn
-                    x-small
-                    depressed
-                    color="secondary"
-                    :disabled="!castable"
-                    @click.stop="castPower"
-                  >
-                    <small>cast</small>
-                  </v-btn>
-                </v-badge>
+                <me-cs-powers-cast-btn :item="item" small />
               </v-col>
 
               <!-- TITLE & PROPERTIES -->
@@ -115,28 +98,11 @@
         <me-cs-action-notes-list :notes="notesList" />
       </v-col>
     </v-row>
-
-    <!-- DETAILS -->
-    <v-expand-transition>
-      <div v-show="showInfo">
-        <v-divider />
-        <div class="mt-3">
-          <me-html :content="item.html" :classes="'text-caption'" />
-        </div>
-        <div v-if="item.advancement">
-          <div>Advancement: {{ item.advancement.name }}</div>
-          <me-html :content="item.advancement.text" :classes="'text-caption'" />
-        </div>
-      </div>
-    </v-expand-transition>
   </v-card>
 </template>
 
 <script>
-import { createNamespacedHelpers } from 'vuex'
-
 import { CsActions } from '~/mixins/character/csActions'
-const { mapGetters } = createNamespacedHelpers('character/powers')
 
 export default {
   name: 'MeCsActionCardsPower',
@@ -153,26 +119,6 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['klassPowercastingMaxes', 'techPoints', 'powerSlots']),
-    powercastingType () {
-      return this.klassPowercastingMaxes[this.item.source]?.powercastingType || this.item.resource?.id
-    },
-    powerSlotAtLevel () {
-      return this.powerSlots[this.item.level]
-    },
-    castable () {
-      if (!this.powercastingType) {
-        return false
-      }
-      switch (this.powercastingType) {
-        case 'slots':
-          return this.powerSlotAtLevel.used < this.powerSlotAtLevel.max
-        case 'points':
-          return this.techPoints.used + this.item.level <= this.techPoints.max
-        default:
-          return false
-      }
-    },
     properties () {
       const level = this.item.level === 0 ? 'Cantrip' : this.$t(`ordinal_numbers[${this.item.level}]`)
       return [level, this.item.source].join(' ∙ ')
@@ -214,26 +160,8 @@ export default {
   },
   methods: {
     showPower () {
-      this.$store.commit('character/navigation/SET', { key: 'powerToDisplay', value: { id: this.item.id, source: this.item.source } })
-      this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-powers-display')
-    },
-    castPower () {
-      if (!this.powercastingType) {
-        return
-      }
-      let value = 0
-      switch (this.powercastingType) {
-        case 'slots':
-          value = this.powerSlotAtLevel.used + 1
-          this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `currentStats.psUsed.${this.item.level - 1}`, value })
-          break
-        case 'points':
-          value = this.techPoints.used + this.item.level
-          this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.tpUsed', value })
-          break
-        default:
-          break
-      }
+      this.$store.commit('character/navigation/SET', { key: 'toDisplay', value: { id: this.item.id, source: this.item.source, level: this.item.level } })
+      this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-powers-side-nav')
     }
   }
 }

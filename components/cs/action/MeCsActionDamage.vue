@@ -1,11 +1,11 @@
 <template>
   <me-cs-roll-card v-if="damageRoll" :roll="damageRoll">
-    <div class="ma-1">
+    <div class="ma-1" :class="{'text-body-1': large, 'font-weight-bold': large }">
       {{ damage.text }}
       <v-tooltip bottom open-delay="200">
         <template #activator="{ on, attrs }">
           <v-icon
-            size="12"
+            :size="large ? 16 : 12"
             v-bind="attrs"
             v-on="on"
           >
@@ -27,6 +27,10 @@ export default {
     damage: {
       type: Object,
       required: true
+    },
+    large: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
