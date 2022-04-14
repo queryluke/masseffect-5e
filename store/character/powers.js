@@ -237,7 +237,7 @@ export const getters = {
         id: power.id,
         name: power.name,
         level: power.level,
-        layout: 'power',
+        model: 'power',
         icon: `/images/powers/${power.type}.svg`,
         effect: power.tags.filter(i => i !== 'damage'),
         source: p.klass, // TODO: p.source, like asari cantrips
@@ -280,6 +280,7 @@ export const getters = {
         }
       }
     }
+    console.log(powers)
     return powers
   },
   selectedPowers: (state, getters, rootState, rootGetters) => {

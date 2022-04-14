@@ -7,7 +7,7 @@
         </slot>
       </span>
     </template>
-    <me-html v-if="note.isHtml" :content="note.tooltipText" inline />
+    <me-cs-action-notes-html v-if="note.isHtml" :note="{ text: note.tooltipText }" />
     <span v-else>
       {{ note.tooltipText }}
     </span>
@@ -16,7 +16,7 @@
 <script>
 
 export default {
-  name: 'MeCsActionNotesText',
+  name: 'MeCsActionNotesTooltip',
   props: {
     note: {
       type: Object,

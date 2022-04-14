@@ -1,5 +1,5 @@
 <template>
-  <span class="text-caption font-weight-thin">
+  <span class="text-caption font-weight-light">
     {{ note.text }}
   </span>
 </template>

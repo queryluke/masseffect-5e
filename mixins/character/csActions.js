@@ -110,7 +110,6 @@ export const CsActions = {
             text: interpolated
           })
         }
-        return this.item.notes.map(i => this.interpolatedText(i))
       }
       return notes
     },
