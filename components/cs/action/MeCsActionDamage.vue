@@ -35,15 +35,12 @@ export default {
   },
   computed: {
     icon () {
-      return 'mdi-' + this.$store.state.config.damageTypeAttributes[this.damage.type].icon
+      return 'mdi-' + this.$store.state.config.damageTypeAttributes[this.damage.type]?.icon
     },
     color () {
-      return this.$store.state.config.damageTypeAttributes[this.damage.type].color
+      return this.$store.state.config.damageTypeAttributes[this.damage.type]?.color
     },
     damageRoll () {
-      if (!this.damage.text.toString().includes('d')) {
-        return false
-      }
       const type = this.damage.type === 'temp'
         ? 'temp hp'
         : this.damage.type

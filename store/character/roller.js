@@ -36,7 +36,7 @@ export const actions = {
     })
   },
   ROLL ({ dispatch, rootGetters }, payload) {
-    const roll = new DiceRoll(payload.notation)
+    const roll = new DiceRoll(payload.notation.toString())
     const results = roll.output.split(/[:=]/)[1].trim()
     const entry = {
       data: {
