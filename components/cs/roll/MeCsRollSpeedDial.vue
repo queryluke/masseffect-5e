@@ -6,6 +6,7 @@
       bottom
       left
       transition="slide-y-reverse-transition"
+      style="transition: margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1); z-index: 10"
       :style="nudge"
     >
       <template #activator>
@@ -22,22 +23,6 @@
       </v-btn>
       <me-cs-roll-die-select v-for="dieType in dieTypes" :key="dieType" :die-type="dieType" overlay />
     </v-speed-dial>
-
-    <v-btn
-      fab
-      shaped
-      small
-      fixed
-      bottom
-      right
-      color="red darken-4"
-      :style="nudgeLogButton"
-      @click="toggleLogs"
-    >
-      <v-icon>
-        mdi-chevron-{{ logsShown ? 'right' : 'left' }}
-      </v-icon>
-    </v-btn>
 
     <v-fade-transition>
       <v-btn
@@ -98,22 +83,11 @@ export default {
       }
       return undefined
     },
-    nudgeLogButton () {
-      if (this.logsShown && this.$vuetify.breakpoint.lgAndUp) {
-        return {
-          'margin-right': '304px'
-        }
-      }
-      return undefined
-    },
     dieTypes () {
       return this.$store.state.character.roller.dieTypes
     },
     rollable () {
       return Object.values(this.$store.getters['character/roller/rollController']).some(i => i) || this.$store.getters['character/roller/customTextRoll']
-    },
-    logsShown () {
-      return this.$store.getters['character/navigation/sideNav']
     }
   },
   watch: {
@@ -138,13 +112,6 @@ export default {
       }
       if (this.customRoll) {
         this.customRoll = false
-      }
-    },
-    toggleLogs () {
-      if (this.logsShown) {
-        this.$store.commit('character/navigation/SET', { key: 'sideNav', value: false })
-      } else {
-        this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-logs-list')
       }
     }
   }

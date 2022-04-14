@@ -132,11 +132,8 @@
 </template>
 
 <script>
-import MeCsCardStickyHeader from '~/components/cs/card/MeCsCardStickyHeader'
-import MeCsPowersMods from '~/components/cs/powers/MeCsPowersMods'
 export default {
   name: 'MeCsViewsLg',
-  components: { MeCsPowersMods, MeCsCardStickyHeader },
   data () {
     return {
       tab: null,

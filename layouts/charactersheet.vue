@@ -81,6 +81,8 @@
       <!-- Die Speed Dial for larger screens -->
       <me-cs-roll-speed-dial v-if="$vuetify.breakpoint.mdAndUp" />
 
+      <me-cs-side-nav-toggle />
+
       <v-bottom-navigation v-if="$vuetify.breakpoint.xsOnly" app grow>
         <v-btn @click="mobileRoller = !mobileRoller">
           <span>Roll</span>

@@ -13,14 +13,7 @@
       <v-divider />
     </template>
     <template id="texting" #default>
-      <component :is="sideNavComponent" id="testing" />
-    </template>
-
-    <template v-if="$vuetify.breakpoint.mdAndDown" #append>
-      <v-divider />
-      <v-btn text block @click="sideNav = false">
-        Close
-      </v-btn>
+      <component :is="sideNavComponent" />
     </template>
   </v-navigation-drawer>
 </template>
