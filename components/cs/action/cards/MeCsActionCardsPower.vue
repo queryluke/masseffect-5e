@@ -1,103 +1,95 @@
 <template>
-  <v-card outlined class="pa-1 px-md-1" @click="showPower">
-    <v-row no-gutters>
-      <v-col cols="12" sm="9">
-        <v-row no-gutters align="baseline">
-          <v-col cols="5">
-            <v-row no-gutters>
-              <!-- CAST BUTTON -->
-              <v-col v-if="$vuetify.breakpoint.smAndUp && item.level > 0" cols="4" align-self="center" class="pl-1">
-                <me-cs-powers-cast-btn :item="item" small />
-              </v-col>
+  <v-card outlined class="pa-1 px-md-1" min-height="64" @click="showPower">
+    <v-row no-gutters align="baseline">
+      <v-col cols="4">
+        <v-row no-gutters align="center">
+          <!-- CAST BUTTON -->
+          <v-col v-if="$vuetify.breakpoint.smAndUp && item.level > 0" cols="4" class="pl-1">
+            <me-cs-powers-cast-btn :item="item" small />
+          </v-col>
 
-              <!-- TITLE & PROPERTIES -->
-              <v-col cols="8">
-                <div class="d-flex align-center">
-                  <v-card flat color="transparent">
-                    <div class="mb-n1 text-body-1">
-                      <small class="text-truncate font-weight-bold" :class="{'primary--text': item.upcast }">
-                        {{ item.name }}
-                      </small>
-                      <v-icon v-if="item.concentration" size="12" style="position: absolute; top: 2px;">
-                        mdi-alpha-c-circle
-                      </v-icon>
-                    </div>
-                    <div class="text-caption font-weight-light d-flex align-center">
-                      <v-avatar size="16" class="pr-1">
-                        <v-img :src="require(`~/assets/images/powers/${item.type}.svg`)" />
-                      </v-avatar>
-                      <small class="text-capitalize">
-                        {{ properties }}
-                      </small>
-                    </div>
-                  </v-card>
+          <!-- TITLE & PROPERTIES -->
+          <v-col cols="8">
+            <div class="d-flex">
+              <v-card flat color="transparent">
+                <div class="mb-n1 text-body-1">
+                  <small class="text-truncate font-weight-bold" :class="{'primary--text': item.upcast }">
+                    {{ item.name }}
+                  </small>
+                  <v-icon v-if="item.concentration" size="12" style="position: absolute; top: 2px;">
+                    mdi-alpha-c-circle
+                  </v-icon>
                 </div>
-              </v-col>
-            </v-row>
-          </v-col>
-
-          <!-- CASTING TIME -->
-          <v-col class="text-center" cols="1">
-            <me-cs-action-casting-time :casting-time="item.castingTime" :alt-casting="item.altCasting" />
-          </v-col>
-
-          <!-- RANGE -->
-          <v-col cols="2" class="text-center">
-            <me-cs-action-range :range="range" />
-          </v-col>
-
-          <!-- HIT/DC -->
-          <v-col cols="1">
-            <me-cs-action-stat v-if="hit">
-              <me-cs-roll-card :roll="hitRoll" min-width="36">
-                <div class="my-1">
-                  {{ modText(hit.bonus) }}
+                <div class="text-caption font-weight-light d-flex align-center">
+                  <v-avatar size="16" class="pr-1">
+                    <v-img :src="require(`~/assets/images/powers/${item.type}.svg`)" />
+                  </v-avatar>
+                  <small class="text-capitalize">
+                    {{ properties }}
+                  </small>
                 </div>
-              </me-cs-roll-card>
-            </me-cs-action-stat>
-            <me-cs-action-stat v-else>
-              {{ dc.target }}
-              <template #subtitle>
-                <span class="text-uppercase">
-                  {{ dc.save }}
-                </span>
-              </template>
-            </me-cs-action-stat>
-          </v-col>
-
-          <!-- DAMAGE -->
-          <v-col cols="3">
-            <div v-if="damages.length">
-              <me-cs-action-stat>
-                <me-cs-action-damage :damage="damages[0]" />
-              </me-cs-action-stat>
-            </div>
-            <me-cs-action-stat v-else>
-              <span class="text-caption text-capitalize">
-                {{ (item.effect || []).join(', ') }}
-              </span>
-            </me-cs-action-stat>
-          </v-col>
-        </v-row>
-        <!-- resource -->
-        <v-row v-if="item.resource" no-gutters>
-          <v-col cols="9">
-            <me-cs-action-resource :id="item.resource.id" :resource="item.resource" />
-          </v-col>
-          <v-col cols="3">
-            <div v-if="damages.length > 1">
-              <me-cs-action-stat>
-                <me-cs-action-damage :damage="damages[1]" />
-              </me-cs-action-stat>
+              </v-card>
             </div>
           </v-col>
         </v-row>
       </v-col>
+
+      <!-- CASTING TIME -->
+      <v-col cols="1" class="text-center">
+        <me-cs-action-casting-time :casting-time="item.castingTime" :alt-casting="item.altCasting" />
+      </v-col>
+
+      <!-- RANGE -->
+      <v-col cols="1" class="text-center">
+        <me-cs-action-range :range="range" />
+      </v-col>
+
+      <!-- HIT/DC -->
+      <v-col cols="1" class="pt-2">
+        <me-cs-action-stat v-if="hit">
+          <me-cs-roll-card :roll="hitRoll" min-width="36">
+            <div class="my-1">
+              {{ modText(hit.bonus) }}
+            </div>
+          </me-cs-roll-card>
+        </me-cs-action-stat>
+        <me-cs-action-stat v-if="dc">
+          {{ dc.target }}
+          <template #subtitle>
+            <span class="text-uppercase">
+              {{ dc.save }}
+            </span>
+          </template>
+        </me-cs-action-stat>
+        <me-cs-action-stat v-if="!dc && !hit">
+          --
+        </me-cs-action-stat>
+      </v-col>
+
+      <!-- Damages -->
+      <v-col cols="2">
+        <div v-if="damages.length">
+          <div v-for="(damage, index) in damages" :key="`damage-${index}`" style="min-height: 30px">
+            <me-cs-action-stat>
+              <me-cs-action-damage :damage="damage" />
+            </me-cs-action-stat>
+          </div>
+        </div>
+        <me-cs-action-stat v-else>
+          <span class="text-caption text-capitalize">
+            {{ (item.effect || []).join(', ') }}
+          </span>
+        </me-cs-action-stat>
+      </v-col>
+
       <!-- NOTES -->
-      <v-col v-if="$vuetify.breakpoint.smAndUp" cols="3" align-self="center">
+      <v-col v-if="$vuetify.breakpoint.smAndUp" cols="3" align-self="start" class="pt-1">
         <me-cs-action-notes-list :notes="notesList" />
       </v-col>
     </v-row>
+    <v-card v-if="item.resource" style="position: absolute; bottom: -12px" outlined>
+      <me-cs-action-resource :id="item.resource.id" :resource="item.resource" />
+    </v-card>
   </v-card>
 </template>
 

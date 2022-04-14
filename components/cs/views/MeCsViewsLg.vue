@@ -59,6 +59,7 @@
                   </v-btn>
                 </v-col>
               </v-row>
+              <v-divider class="mt-2" />
             </div>
           </template>
           <v-tabs-items v-model="tab" class="mb-3">
@@ -69,7 +70,6 @@
               </div>
             </v-tab-item>
             <v-tab-item>
-              <v-divider class="mt-2" />
               <v-card-text>
                 <template v-for="powerLevel in [0, 1, 2, 3, 4, 5]">
                   <me-cs-powers-by-level :key="`powerLevel-${powerLevel}`" :level="powerLevel" />

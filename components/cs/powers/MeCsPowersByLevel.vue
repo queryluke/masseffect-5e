@@ -25,7 +25,7 @@
       v-for="(item, itemIndex) in powersAtLevel"
       :key="`powerslist-at-level-${itemIndex}`"
       :item="item"
-      class="mt-1"
+      :class="powersAtLevel[itemIndex - 1] && powersAtLevel[itemIndex - 1].resource ? 'mt-4' : 'mt-1'"
     />
   </div>
 </template>
