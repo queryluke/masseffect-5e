@@ -69,42 +69,50 @@
         </small>
       </div>
     </v-card-text>
-    <v-divider />
 
     <!-- Hit/DC/Damage -->
-    <v-card-text class="d-flex justify-space-around text-center">
-      <div>
-        <div class="text-caption">
-          {{ hit ? 'To Hit' : 'DC' }}
+    <div v-if="hit || damages.length || dc">
+      <v-divider />
+      <v-card-text class="d-flex justify-space-around text-center">
+        <div v-if="hit">
+          <div class="text-caption">
+            To Hit
+          </div>
+          <me-cs-roll-card v-if="hit" :roll="hitRoll">
+            <div class="my-1 text-body-1 font-weight-bold">
+              {{ modText(hit.bonus) }}
+            </div>
+          </me-cs-roll-card>
         </div>
-        <me-cs-roll-card v-if="hit" :roll="hitRoll">
-          <div class="my-1 text-body-1 font-weight-bold">
-            {{ modText(hit.bonus) }}
-          </div>
-        </me-cs-roll-card>
-        <me-cs-action-stat v-else>
-          <div class="text-body-1 font-weight-bold">
-            {{ dc.target }}
-          </div>
-          <template #subtitle>
-            <span class="text-uppercase">
-              {{ dc.save }}
-            </span>
-          </template>
-        </me-cs-action-stat>
-      </div>
 
-      <div v-if="damages.length">
-        <div class="text-caption">
-          Damage
-        </div>
-        <div class="d-flex justify-space-around">
-          <me-cs-action-stat v-for="(damage, damageIndex) in damages" :key="`damage-${damageIndex}`" class="ma-1">
-            <me-cs-action-damage :damage="damage" large />
+        <div v-if="dc">
+          <div class="text-caption">
+            DC
+          </div>
+          <me-cs-action-stat>
+            <div class="text-body-1 font-weight-bold">
+              {{ dc.target }}
+            </div>
+            <template #subtitle>
+              <span class="text-uppercase">
+                {{ dc.save }}
+              </span>
+            </template>
           </me-cs-action-stat>
         </div>
-      </div>
-    </v-card-text>
+
+        <div v-if="damages.length">
+          <div class="text-caption">
+            Damage
+          </div>
+          <div class="d-flex justify-space-around">
+            <me-cs-action-stat v-for="(damage, damageIndex) in damages" :key="`damage-${damageIndex}`" class="ma-1">
+              <me-cs-action-damage :damage="damage" large />
+            </me-cs-action-stat>
+          </div>
+        </div>
+      </v-card-text>
+    </div>
 
     <v-divider />
     <me-cs-powers-info :item="item" :html="powerData.html" :advancements="powerData.advancements" :selected-advancement="item.advancement.id" />
