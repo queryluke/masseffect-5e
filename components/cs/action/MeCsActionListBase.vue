@@ -15,33 +15,23 @@
         </span>
       </span>
     </v-card>
-    <me-standard-dialog v-if="moreInfoDialog" :shown="moreInfoDialog" :title="shownItem.name" @close="moreInfoDialog = false">
-      <me-html :content="shownItem.html || shownItem.shortDesc" />
-    </me-standard-dialog>
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'MeCsActionListGroup',
+  name: 'MeCsActionListBase',
   props: {
     items: {
       type: Array,
       required: true
     }
   },
-  data () {
-    return {
-      moreInfoDialog: false,
-      shownItem: {}
-    }
-  },
   methods: {
     showItem (item) {
-      this.shownItem = {}
-      this.moreInfoDialog = true
-      this.shownItem = item
+      this.$store.commit('character/navigation/SET', { key: 'toDisplay', value: item })
+      this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', (item.component || 'me-cs-more-info'))
     }
   }
 }

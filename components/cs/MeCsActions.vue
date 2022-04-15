@@ -193,13 +193,14 @@ export default {
       }
     },
     csPowersAsActions () {
-      const sortedPowers = this.powers.filter(i => !i.upcast).sort((a, b) => a.level - b.level)
-      console.log(sortedPowers)
+      const sortedPowers = this.powers.filter(i => !i.upcast).sort((a, b) => a.level - b.level).map((i) => {
+        return { ...i, component: 'me-cs-powers-side-nav' }
+      })
       return {
-        actions: sortedPowers.filter(i => i.castingTime.unit === 'action'),
-        attacks: sortedPowers.filter(i => i.castingTime.unit === 'attack'),
-        bonus_actions: sortedPowers.filter(i => i.castingTime.unit === 'bonus_action'),
-        reactions: sortedPowers.filter(i => i.castingTime.unit === 'reaction')
+        actions: sortedPowers.filter(i => i.castingTime.unit === 'action' || i.altCasting?.filter(i => i.unit === 'action').length),
+        attacks: sortedPowers.filter(i => i.castingTime.unit === 'attack' || i.altCasting?.filter(i => i.unit === 'attack').length),
+        bonus_actions: sortedPowers.filter(i => i.castingTime.unit === 'bonus_action' || i.altCasting?.filter(i => i.unit === 'bonus_action').length),
+        reactions: sortedPowers.filter(i => i.castingTime.unit === 'reaction' || i.altCasting?.filter(i => i.unit === 'reaction').length)
       }
     }
   },
