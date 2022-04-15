@@ -16,6 +16,9 @@
       <span class="font-weight-bold pr-1">Primes/Detonates:</span>
       <me-power-primes-detonates :mechanic="item" />
     </div>
+    <div v-if="reaction">
+      * - <me-html v-if="!loading" :content="reaction" inline classes="text-caption" />
+    </div>
     <me-hr size="2" />
     <div class="mt-1">
       <me-html v-if="!loading" :content="html" :classes="'text-caption'" />
@@ -63,6 +66,11 @@ export default {
   data () {
     return {
       loading: false
+    }
+  },
+  computed: {
+    reaction () {
+      return this.item.castingTime.reaction || this.item.altCasting?.find(i => i.unit === 'reaction')?.reaction
     }
   },
   watch: {
