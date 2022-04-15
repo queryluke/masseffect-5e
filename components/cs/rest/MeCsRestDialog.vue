@@ -332,7 +332,7 @@ export default {
         }
       }
       this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats', value: currentStatsClone })
-      this.restMenu = false
+      this.shown = false
     },
     nthLevelLabel (level, adj = false) {
       return this.$t(adj ? 'level_adj' : 'level_nth', { nth: this.$t(`ordinal_numbers[${level}]`) })
