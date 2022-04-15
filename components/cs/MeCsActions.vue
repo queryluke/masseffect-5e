@@ -84,7 +84,8 @@ export default {
         {
           group: true,
           title: 'Powers',
-          items: this.csPowersAsActions.actions
+          items: this.csPowersAsActions.actions,
+          component: 'me-cs-action-cards-power'
         }].filter(i => i.items.length),
         ...this.mechanics.filter(i => i.type === 'action' && !i.baseGroup),
         ...this.csCustomAsActions.actions
@@ -139,7 +140,8 @@ export default {
         {
           group: true,
           title: 'Powers',
-          items: this.csPowersAsActions.bonus_actions
+          items: this.csPowersAsActions.bonus_actions,
+          component: 'me-cs-action-cards-power'
         }].filter(i => i.items.length),
         ...this.mechanics.filter(i => i.type === 'bonus-action' && !i.baseGroup),
         ...this.csCustomAsActions.bonus
@@ -155,7 +157,8 @@ export default {
         ...[{
           group: true,
           title: 'Powers',
-          items: this.csPowersAsActions.reactions
+          items: this.csPowersAsActions.reactions,
+          component: 'me-cs-action-cards-power'
         }].filter(i => i.items.length),
         ...this.mechanics.filter(i => i.type === 'reaction'),
         ...this.csCustomAsActions.reactions

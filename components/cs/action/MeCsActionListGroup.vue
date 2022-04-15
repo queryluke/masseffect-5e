@@ -13,7 +13,9 @@
     </v-card>
     <v-expand-transition>
       <div v-show="moreInfo">
-        <me-cs-action-card v-for="(item, index) in items" :key="`action-${index}`" :item="item" />
+        <div v-for="(item, index) in items" :key="`action-${index}`" :class="items[index - 1] && items[index - 1].resource ? 'mt-4' : 'mt-1'">
+          <component :is="component" :item="item" />
+        </div>
       </div>
     </v-expand-transition>
   </div>
@@ -27,6 +29,10 @@ export default {
     items: {
       type: Array,
       required: true
+    },
+    component: {
+      type: String,
+      default: 'me-cs-action-card'
     }
   },
   data () {

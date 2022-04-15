@@ -11,7 +11,7 @@
       <me-cs-action-list-base v-if="item.base" :items="item.items">
         {{ item.title }}
       </me-cs-action-list-base>
-      <me-cs-action-list-group v-else-if="item.group" :items="item.items">
+      <me-cs-action-list-group v-else-if="item.group" :items="item.items" :component="item.component || false">
         {{ item.title }}
       </me-cs-action-list-group>
       <me-cs-action-card v-else :item="item" />
