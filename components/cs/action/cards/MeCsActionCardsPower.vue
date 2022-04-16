@@ -87,7 +87,7 @@
         <me-cs-action-notes-list :notes="notesList" />
       </v-col>
     </v-row>
-    <v-card v-if="item.resource" style="position: absolute; bottom: -9px" outlined>
+    <v-card v-if="item.resource" style="position: absolute; bottom: -9px" outlined @click.stop>
       <me-cs-action-resource :id="item.resource.id" :resource="item.resource" />
     </v-card>
   </v-card>

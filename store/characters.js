@@ -61,7 +61,7 @@ export const actions = {
         await dispatch('CREATE_CHARACTER', character)
         await dispatch('DELETE_LOCAL_CHARACTER', character.id)
       } catch (e) {
-        console.log(`Could not create character, ${e.message}`)
+        console.error(`Could not create character, ${e.message}`)
       }
     }
   },
@@ -86,7 +86,7 @@ export const actions = {
         commit('SET_REMOTE_CHARACTERS', [...getters.remoteCharacters, character])
         return character.id
       } catch (e) {
-        console.log(e)
+        console.error(e)
         return dispatch('UPSERT_LOCAL_CHARACTER', character)
       }
     } else {

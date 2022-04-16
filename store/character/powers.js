@@ -136,7 +136,6 @@ export const getters = {
         base.numSlots = pactCasting.numSlots[klassLevel - 1]
       }
     }
-    console.log('pactSlots', base)
     return base
   },
   klassPowercastingAbilities: (state, getters, rootState, rootGetters) => {
@@ -200,7 +199,6 @@ export const getters = {
       }
       kpcms[klass.id] = defaults
     }
-    console.log(kpcms)
     return kpcms
   },
   powers: (state, getters, rootState, rootGetters) => {
@@ -286,7 +284,6 @@ export const getters = {
         }
       }
     }
-    console.log(powers)
     return powers
   },
   selectedPowers: (state, getters, rootState, rootGetters) => {
@@ -300,7 +297,7 @@ export const getters = {
         const baseSource = rootGetters.getItem(sources[0], sources[1])
         source = baseSource.species || baseSource.name
       } catch (e) {
-        console.log(`could not find source ${power.source}`)
+        console.error(`could not find source ${power.source}`)
       }
       return {
         ...power,
@@ -308,7 +305,6 @@ export const getters = {
         advancement: advancement?.value
       }
     })
-    console.log(mechanicPowers)
     return [
       ...rootGetters['character/character'].powers,
       ...mechanicPowers

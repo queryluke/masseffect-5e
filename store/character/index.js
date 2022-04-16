@@ -221,7 +221,7 @@ export const actions = {
       commit('user/SET_SYNC_STATUS', 'saved', { root: true })
     } catch (e) {
       commit('user/SET_SYNC_STATUS', 'error', { root: true })
-      console.log(e)
+      console.error(e)
     }
   }
 }

@@ -46,7 +46,6 @@ export default {
           : this.powersLevelFilter
       },
       set (value) {
-        console.log(value)
         this.learned
           ? this.$store.commit('character/navigation/SET', { key: 'learnedPowersLevelFilter', value })
           : this.$store.commit('character/navigation/SET', { key: 'powersLevelFilter', value })
