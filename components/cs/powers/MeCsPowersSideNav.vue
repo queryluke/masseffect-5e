@@ -1,74 +1,80 @@
 <template>
   <v-card flat tile>
-    <v-card-text class="d-flex justify-space-between align-center">
-      <!-- CAST BTN -->
-      <div>
-        <me-cs-powers-cast-btn v-if="powerLevel > 0 && !item.resource" :item="item" />
-        <me-cs-action-resource v-if="item.resource" :id="item.resource.id" :resource="item.resource" />
-      </div>
-
-      <!-- LEVEL CHANGER -->
-      <div v-if="powerLevel > 0">
-        <div class="d-flex align-center">
-          <v-btn
-            v-if="levelOptions.length > 1"
-            icon
-            :disabled="powerLevel === minLevel"
-            color="primary"
-            @click="powerLevel--"
-          >
-            <v-icon>mdi-minus-box</v-icon>
-          </v-btn>
-          <div class="text-center" style="width: 30px">
-            {{ $t(`ordinal_numbers[${powerLevel}]`) }}
-          </div>
-          <v-btn
-            v-if="levelOptions.length > 1"
-            icon
-            :disabled="powerLevel === maxLevel"
-            color="primary"
-            @click="powerLevel++"
-          >
-            <v-icon>mdi-plus-box</v-icon>
-          </v-btn>
+    <v-card flat color="transparent">
+      <v-card-text class="d-flex justify-space-between align-center">
+        <!-- CAST BTN -->
+        <div>
+          <me-cs-powers-cast-btn :item="item" />
         </div>
-      </div>
 
-      <!-- source changer -->
-      <v-menu v-if="sources.length > 1" offset-y>
-        <template #activator="{ on, attrs }">
-          <v-btn
-            color="primary"
-            v-bind="attrs"
-            x-small
-            outlined
-            :disabled="sources.length === 1"
-            v-on="on"
-          >
+        <!-- LEVEL CHANGER -->
+        <div v-if="powerLevel > 0">
+          <div class="d-flex align-center">
+            <v-btn
+              v-if="levelOptions.length > 1"
+              icon
+              :disabled="powerLevel === minLevel"
+              color="primary"
+              @click="powerLevel--"
+            >
+              <v-icon>mdi-minus-box</v-icon>
+            </v-btn>
+            <div class="text-center" style="width: 30px">
+              {{ $t(`ordinal_numbers[${powerLevel}]`) }}
+            </div>
+            <v-btn
+              v-if="levelOptions.length > 1"
+              icon
+              :disabled="powerLevel === maxLevel"
+              color="primary"
+              @click="powerLevel++"
+            >
+              <v-icon>mdi-plus-box</v-icon>
+            </v-btn>
+          </div>
+        </div>
+
+        <!-- source changer -->
+        <v-menu v-if="sources.length > 1" offset-y>
+          <template #activator="{ on, attrs }">
+            <v-btn
+              color="primary"
+              v-bind="attrs"
+              x-small
+              outlined
+              :disabled="sources.length === 1"
+              v-on="on"
+            >
+              {{ powerSource }}
+              <v-icon right>
+                mdi-menu-down
+              </v-icon>
+            </v-btn>
+          </template>
+          <v-list dense>
+            <v-list-item
+              v-for="sourceOption in sources"
+              :key="sourceOption"
+              @click="powerSource = sourceOption"
+            >
+              <v-list-item-title class="text-caption text-capitalize">
+                {{ sourceOption }}
+              </v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+        <div v-else class="text-button">
+          <small>
             {{ powerSource }}
-            <v-icon right>
-              mdi-menu-down
-            </v-icon>
-          </v-btn>
-        </template>
-        <v-list dense>
-          <v-list-item
-            v-for="sourceOption in sources"
-            :key="sourceOption"
-            @click="powerSource = sourceOption"
-          >
-            <v-list-item-title class="text-caption text-capitalize">
-              {{ sourceOption }}
-            </v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu>
-      <div v-else class="text-button">
-        <small>
-          {{ powerSource }}
-        </small>
-      </div>
-    </v-card-text>
+          </small>
+        </div>
+      </v-card-text>
+      <v-card-actions>
+        <v-spacer />
+        <me-cs-action-resource v-if="item.resource" :id="item.resource.id" :resource="item.resource" />
+        <v-spacer />
+      </v-card-actions>
+    </v-card>
 
     <!-- Hit/DC/Damage -->
     <div v-if="hit || damages.length || dc">

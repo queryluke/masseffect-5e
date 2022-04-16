@@ -4,7 +4,7 @@
       <v-col cols="4">
         <v-row no-gutters align="center">
           <!-- CAST BUTTON -->
-          <v-col v-if="$vuetify.breakpoint.smAndUp && item.level > 0" cols="4" class="pl-1">
+          <v-col v-if="$vuetify.breakpoint.smAndUp" cols="4" class="pl-1">
             <me-cs-powers-cast-btn :item="item" small />
           </v-col>
 
@@ -87,7 +87,7 @@
         <me-cs-action-notes-list :notes="notesList" />
       </v-col>
     </v-row>
-    <v-card v-if="item.resource" style="position: absolute; bottom: -12px" outlined>
+    <v-card v-if="item.resource" style="position: absolute; bottom: -9px" outlined>
       <me-cs-action-resource :id="item.resource.id" :resource="item.resource" />
     </v-card>
   </v-card>

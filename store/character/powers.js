@@ -108,7 +108,7 @@ export const getters = {
     }
     const pactCasting = getters.pactSlots
     if (pactCasting.slotLevel > 0) {
-      base[pactCasting].max += pactCasting.numSlots
+      base[pactCasting.slotLevel].max += pactCasting.numSlots
     }
     return base
   },
@@ -136,6 +136,7 @@ export const getters = {
         base.numSlots = pactCasting.numSlots[klassLevel - 1]
       }
     }
+    console.log('pactSlots', base)
     return base
   },
   klassPowercastingAbilities: (state, getters, rootState, rootGetters) => {
@@ -233,6 +234,7 @@ export const getters = {
       const dc = baseMechanics.dc
         ? { ...baseMechanics.dc, mod: baseMechanics.dc?.mod || mod }
         : false
+      const resource = p.resource || baseMechanics.resource
       const basePower = {
         id: power.id,
         name: power.name,
@@ -240,11 +242,12 @@ export const getters = {
         model: 'power',
         icon: `/images/powers/${power.type}.svg`,
         effect: power.tags.filter(i => i !== 'damage'),
-        source: p.klass, // TODO: p.source, like asari cantrips
+        source: p.klass || p.source, // TODO: p.source, like asari cantrips
         advancement: p.advancement ? power.advancements.find(i => i.id === p.advancement) : false,
         type: power.type,
         upcast: false,
         ...baseMechanics,
+        resource,
         attack,
         dc
       }
@@ -270,6 +273,9 @@ export const getters = {
           advancement = power.advancements.find(i => i.id === p.advancement)
         }
         for (let i = 0; i < 5; i++) {
+          if (p.preventUpcast && i > 0) {
+            continue
+          }
           let advancementMechanics = null
           const upcastMechanics = i === 0 ? {} : power.mechanics[i]
           if (advancement) {
@@ -287,11 +293,22 @@ export const getters = {
     const advancements = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'advancement')
     const mechanicPowers = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'powers').map((power) => {
       const advancement = advancements.find(adv => power.value === adv.id)
+      // attempt to find source
+      let source = ''
+      try {
+        const sources = power.source.split('/')
+        const baseSource = rootGetters.getItem(sources[0], sources[1])
+        source = baseSource.species || baseSource.name
+      } catch (e) {
+        console.log(`could not find source ${power.source}`)
+      }
       return {
         ...power,
+        source,
         advancement: advancement?.value
       }
     })
+    console.log(mechanicPowers)
     return [
       ...rootGetters['character/character'].powers,
       ...mechanicPowers

@@ -6,18 +6,19 @@
     :offset-x="small ? 5 : undefined"
     :overlap="!small"
     :dot="small"
-    :value="item.upcast"
+    :value="!atWill && item.upcast"
     :icon="!small ? 'mdi-chevron-double-up' : undefined"
   >
     <v-btn
       :x-small="small"
       :small="!small"
       depressed
+      :text="atWill"
       color="secondary"
       :disabled="!castable"
       @click.stop="castPower"
     >
-      <small>cast</small>
+      <small>{{ atWill ? 'at will' : 'cast' }}</small>
     </v-btn>
   </v-badge>
 </template>
@@ -46,9 +47,16 @@ export default {
     powerSlotAtLevel () {
       return this.powerSlots[this.item.level]
     },
+    atWill () {
+      return (this.item.level === 0 && !this.item.resource) || (this.item.level > 0 && this.item.resource && this.item.resource.reset !== 'cast')
+    },
     castable () {
-      if (!this.powercastingType) {
+      if (this.atWill || !this.powercastingType) {
         return false
+      }
+      if (this.item.resource && this.item.resource.reset !== 'cast') {
+        const max = this.$store.getters['character/mechanics/mcBonus'](this.item.resource.max || { type: 'flat', value: 1 })
+        return (this.$store.getters['character/resources/resources'][this.item.id] || 0) < max
       }
       switch (this.powercastingType) {
         case 'slots':
@@ -66,6 +74,22 @@ export default {
         return
       }
       let value = 0
+      if (this.item.resource) {
+        // reset 'cast' resources need to reset the resource on a cast
+        if (this.item.resource.reset === 'cast') {
+          let resetTo = 1
+          if (this.item.resource.resetTo === 'max') {
+            resetTo = this.$store.getters['character/mechanics/mcBonus'](this.item.resource.max || { type: 'flat', value: 1 })
+          } else {
+            resetTo = this.item.resource.min || 0
+          }
+          this.$store.dispatch('character/resources/SET_RESOURCE', { id: this.item.id, value: resetTo })
+        } else {
+          // otherwise decrement the resource
+          const currentValue = this.$store.getters['character/resources/resources'][this.item.id] || 0
+          this.$store.dispatch('character/resources/SET_RESOURCE', { id: this.item.id, value: currentValue + 1 })
+        }
+      }
       switch (this.powercastingType) {
         case 'slots':
           value = this.powerSlotAtLevel.used + 1
