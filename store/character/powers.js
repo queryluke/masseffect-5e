@@ -210,15 +210,6 @@ export const getters = {
       biotic: 'wis',
       combat: 'dex'
     }
-    /*
-      TODO: Freehand and other bonuses should be on the component
-    let fhEligible = false
-    const hasFreeHand = rootGetters['character/mechanics/mechanics'].find(i => i.type === 'free-hand-fs')
-    if (hasFreeHand) {
-      const eqWeapons = rootGetters['character/equipment/equippedWeapons']
-      fhEligible = eqWeapons.length < 2 && eqWeapons.filter(i => i.data.properties.includes('light') && !i.data.properties.includes('two-handed')).length < 2
-    }
-    */
     for (const p of getters.selectedPowers) {
       // i.value needed for selections/mechanicbag
       const power = list.find(i => i.id === (p.id || p.value))
@@ -282,6 +273,24 @@ export const getters = {
           const level = i + basePower.level
           powers.push(upcastPower({ ...basePower, level, upcast: i !== 0 }, upcastMechanics, advancementMechanics, i))
         }
+      }
+    }
+    // additional bonuses
+    let fhEligible = false
+    const hasFreeHand = rootGetters['character/mechanics/mechanics'].find(i => i.type === 'free-hand-fs')
+    if (hasFreeHand) {
+      const eqWeapons = rootGetters['character/equipment/equippedWeapons']
+      fhEligible = eqWeapons.length < 2 && eqWeapons.filter(i => i.data.properties.includes('light') && !i.data.properties.includes('two-handed')).length < 2
+    }
+    for (const power of powers) {
+      // attack bonuses
+      if (power.attack) {
+        let runningBonus = 0
+        if (power.attack.bonus) {
+          runningBonus = rootGetters['character/mechanics/mcBonus'](power.attack.bonus)
+        }
+        runningBonus += (fhEligible && power.attack.type === 'ranged' ? 2 : 0)
+        power.attack.bonus = { type: 'flat', value: runningBonus }
       }
     }
     return powers
