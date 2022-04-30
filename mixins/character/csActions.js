@@ -103,12 +103,16 @@ export const CsActions = {
       const notes = []
       if (Array.isArray(this.item.notes) && this.item.notes.length) {
         for (const note of this.item.notes) {
-          const interpolated = this.interpolatedText(note)
-          const hasHtml = /<.+?>/g.test(interpolated)
-          notes.push({
-            type: hasHtml ? 'html' : 'text',
-            text: interpolated
-          })
+          if (typeof note === 'string') {
+            const interpolated = this.interpolatedText(note)
+            const hasHtml = /<.+?>/g.test(interpolated)
+            notes.push({
+              type: hasHtml ? 'html' : 'text',
+              text: interpolated
+            })
+          } else {
+            notes.push(note)
+          }
         }
       }
       return notes

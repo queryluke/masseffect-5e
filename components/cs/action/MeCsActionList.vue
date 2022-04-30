@@ -1,5 +1,5 @@
 <template>
-  <div v-if="items.length">
+  <div v-if="items.length" class="mb-2">
     <div class="text-subtitle-1 mt-3 mb-n3">
       <slot />
     </div>
@@ -8,13 +8,10 @@
       <slot name="notes" />
     </div>
     <div v-for="(item, index) in items" :key="`action-${index}`">
-      <me-cs-action-list-base v-if="item.base" :items="item.items">
-        {{ item.title }}
-      </me-cs-action-list-base>
-      <me-cs-action-list-group v-else-if="item.group" :items="item.items" :component="item.component || false">
+      <me-cs-action-list-group v-if="item.group" :items="item.items" :component="item.component">
         {{ item.title }}
       </me-cs-action-list-group>
-      <me-cs-action-card v-else :item="item" />
+      <me-cs-action-card v-else :item="item" :class="items[index - 1] && items[index - 1].resource ? 'mt-4' : 'mt-1'" />
     </div>
   </div>
 </template>

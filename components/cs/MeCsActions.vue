@@ -72,7 +72,7 @@ export default {
     csActions () {
       return [
         {
-          base: true,
+          group: true,
           title: 'Actions in Combat',
           items: this.baseActions.action
         },
@@ -120,7 +120,7 @@ export default {
       const baseBA = this.baseActions['bonus-action']
       if (baseBA.length) {
         baseActions.push({
-          base: true,
+          group: true,
           title: 'Bonus Actions in Combat',
           items: baseBA
         })
@@ -150,7 +150,7 @@ export default {
     csReactions () {
       return [
         {
-          base: true,
+          group: true,
           title: 'Actions in Combat',
           items: this.baseActions.reaction
         },
@@ -184,9 +184,7 @@ export default {
                   id: i.id
                 }
               : false,
-            moreInfo: {
-              bind: i.html
-            }
+            html: i.html
           }
         })
       return {

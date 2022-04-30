@@ -1,26 +1,27 @@
 <template>
   <div class="d-flex align-start justify-center justify-md-start">
     <v-btn x-small class="mr-1" color="primary" icon @click.stop="reloadWeapon">
-      <v-icon size="18">
+      <v-icon size="14">
         mdi-refresh
       </v-icon>
     </v-btn>
-    <div style="width: 200px">
+    <div style="width: 125px">
       <v-progress-linear
         :value="currentHeatPercent"
-        height="6"
+        height="11"
         class="mt-1"
         :color="`${heatColor}`"
         background-color="grey darken-2"
-      />
-      <div class="text-caption text-center mt-n1">
-        <small>
-          {{ current }} / {{ max }}
-        </small>
-      </div>
+      >
+        <div class="text-caption text-center">
+          <small>
+            {{ current }} / {{ max }}
+          </small>
+        </div>
+      </v-progress-linear>
     </div>
     <v-btn x-small class="ml-1 mr-2" color="secondary" icon @click.stop="fireWeapon">
-      <v-icon size="18" :disabled="current >= max">
+      <v-icon size="14" :disabled="current >= max">
         mdi-lightning-bolt
       </v-icon>
     </v-btn>
@@ -40,25 +41,9 @@ export default {
       required: true
     }
   },
-  data () {
-    return {
-      heatColors: [
-        'indigo darken-4',
-        'blue darken-4',
-        'cyan darken-3',
-        'green',
-        'light-green',
-        'lime',
-        'amber accent-4',
-        'orange darken-1',
-        'deep-orange darken-1',
-        'red darken-4'
-      ]
-    }
-  },
   computed: {
     heatColor () {
-      return this.heatColors[Math.ceil(this.currentHeatPercent / 10) - 1]
+      return `rgba(183, 28, 28, ${this.currentHeatPercent * 0.01})`
     },
     currentHeatPercent () {
       return Math.ceil((this.current * 100) / this.max)

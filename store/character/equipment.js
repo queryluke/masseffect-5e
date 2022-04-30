@@ -37,7 +37,6 @@ export const state = () => ({
     html: ''
   },
   unarmedStrike: {
-    rarity: 'common',
     type: 'natural-melee',
     name: 'Unarmed Strike',
     damage: {
@@ -48,10 +47,11 @@ export const state = () => ({
     range: 5,
     properties: [],
     notes: [],
-    moreInfo: {}
+    html: 'Instead of using a weapon to make a melee weapon attack, you can use an unarmed strike: a punch, kick, head-butt, or similar\n' +
+      'forceful blow. On a hit, an unarmed strike deals bludgeoning damage equal to 1 + your\n' +
+      'Strength modifier. You are proficient with your unarmed strikes and your unarmed strikes count as weapons.'
   },
   gunStrike: {
-    rarity: 'common',
     type: 'gun-strike',
     name: 'Gun Strike',
     damage: {
@@ -61,7 +61,9 @@ export const state = () => ({
     },
     properties: [],
     notes: [],
-    moreInfo: {}
+    html: 'Instead of using a melee weapon to make a melee weapon attack, you can use your ranged weapon, hitting a target with the butt of\n' +
+      'the gun. On a hit, a gun strike deals bludgeoning damage equal to 1d4 + your Strength modifier. You are proficient with\n' +
+      'gun strikes if you are proficient with the type of ranged weapon.'
   }
 })
 
@@ -322,18 +324,27 @@ export const getters = {
 
       // NOTES
       const notes = [
-        ...weapon.data.properties.map(i => weaponProps[i]),
+        ...getters.weaponPropertiesList.filter(i => weapon.data.properties.includes(i.id)).map((i) => {
+          return {
+            type: 'tooltip',
+            text: i.name,
+            tooltipText: i.html,
+            isHtml: true
+          }
+        }),
         ...(weapon.data.notes || []),
         ...(augments.notes || [])
       ]
+      console.log(notes)
 
       // TODO: thrown
       // const thrown = weapon.data.properties.includes('thrown')
       // TODO: arc
-      // const ar = weapon.data.properties.includes('arc')
+      // const arc = weapon.data.properties.includes('arc')
 
       const base = {
         type: 'attack',
+        attackType,
         attack,
         name: weapon.data.name,
         damage,
@@ -341,7 +352,8 @@ export const getters = {
         range,
         notes,
         properties: [attackTypes[attackType]],
-        moreInfo: weapon.data.moreInfo || { component: 'me-weapon-info', bind: weapon.data },
+        component: 'me-cs-details-weapon',
+        data: weapon.data,
         bonus: { type: 'flat', value: 0 }
       }
       attacks.attacks.push(base)

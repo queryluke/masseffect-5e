@@ -46,6 +46,7 @@ export default {
       techPoints: 'powers/techPoints',
       powerSlots: 'powers/powerSlots',
       levelFilter: 'navigation/powersLevelFilter',
+      klassPowercastingMaxes: 'powers/klassPowercastingMaxes',
       powers: 'powers/powers'
     }),
     levelIndex () {
@@ -57,15 +58,35 @@ export default {
     psAtLevel () {
       return this.powerSlots[this.level] || this.powerSlots[this.levelIndex]
     },
+    hasPowerSlotAtLevel () {
+      return Object.entries(this.powerSlots).filter(i => i[1].max > 0).map(i => parseInt(i[0], 10)).includes(this.levelIndex)
+    },
     isCastableLevel () {
       if (this.levelIndex === 0) {
         return true
       }
-      return this.levelIndex <= this.techPoints.limit ||
-        Object.entries(this.powerSlots).filter(i => i[1].max > 0).map(i => parseInt(i[0], 10)).includes(this.levelIndex)
+      return this.levelIndex <= this.techPoints.limit || this.hasPowerSlotAtLevel
     },
     powersAtLevel () {
-      return this.powers.filter(i => i.level === this.levelIndex)
+      return this.powers.filter((i) => {
+        // of level
+        if (i.level !== this.levelIndex) {
+          return false
+        }
+        // cantrips always return true
+        if (i.level === 0) {
+          return true
+        }
+        // castable at this level
+        const pcType = this.klassPowercastingMaxes[i.source]?.powercastingType
+        if (pcType === 'slots') {
+          return this.hasPowerSlotAtLevel
+        } else if (pcType === 'points') {
+          return this.levelIndex <= this.techPoints.limit
+        } else {
+          return true
+        }
+      })
     }
   },
   methods: {

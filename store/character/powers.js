@@ -223,6 +223,13 @@ export const getters = {
       const dc = baseMechanics.dc
         ? { ...baseMechanics.dc, mod: baseMechanics.dc?.mod || mod }
         : false
+      const damage = baseMechanics.damage
+        ? baseMechanics.damage.map((i) => {
+          return i.mod && i.mod === 'pc'
+            ? { ...i, mod }
+            : i
+        })
+        : false
       const resource = p.resource || baseMechanics.resource
       const basePower = {
         id: power.id,
@@ -231,14 +238,15 @@ export const getters = {
         model: 'power',
         icon: `/images/powers/${power.type}.svg`,
         effect: power.tags.filter(i => i !== 'damage'),
-        source: p.klass || p.source, // TODO: p.source, like asari cantrips
+        source: p.klass || p.source,
         advancement: p.advancement ? power.advancements.find(i => i.id === p.advancement) : false,
         type: power.type,
         upcast: false,
         ...baseMechanics,
         resource,
         attack,
-        dc
+        dc,
+        damage
       }
       // upcast cantrips
       if (basePower.level === 0) {

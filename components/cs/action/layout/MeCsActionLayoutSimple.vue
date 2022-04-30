@@ -1,24 +1,17 @@
 <template>
   <div>
-    <div class="d-flex">
-      <div>
-        <div class="d-flex align-center">
-          <slot name="icon" />
-          <v-card flat color="transparent">
-            <div class="mb-n1 text-body-1">
-              <small class="text-truncate font-weight-bold">
-                <slot name="name" />
-              </small>
-            </div>
-          </v-card>
+    <div class="d-flex align-center">
+      <slot name="icon" />
+      <v-card flat color="transparent">
+        <div class="mb-n1 text-body-1">
+          <small class="text-truncate font-weight-bold">
+            <slot name="name" />
+          </small>
         </div>
-        <div>
-          <slot name="shortDesc" />
-        </div>
-        <div>
-          <slot name="resource" />
-        </div>
-      </div>
+      </v-card>
+    </div>
+    <div>
+      <slot name="shortDesc" />
     </div>
   </div>
 </template>

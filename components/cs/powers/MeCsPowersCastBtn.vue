@@ -62,7 +62,7 @@ export default {
         case 'slots':
           return this.powerSlotAtLevel.used < this.powerSlotAtLevel.max
         case 'points':
-          return this.techPoints.used + this.item.level <= this.techPoints.max
+          return this.item.level <= this.techPoints.limit && this.techPoints.used + this.item.level <= this.techPoints.max
         default:
           return false
       }
