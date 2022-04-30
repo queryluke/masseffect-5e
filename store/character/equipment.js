@@ -335,7 +335,6 @@ export const getters = {
         ...(weapon.data.notes || []),
         ...(augments.notes || [])
       ]
-      console.log(notes)
 
       // TODO: thrown
       // const thrown = weapon.data.properties.includes('thrown')

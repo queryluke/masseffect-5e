@@ -75,6 +75,13 @@
             </me-cs-action-stat>
           </div>
         </div>
+        <div v-else-if="item.conditions">
+          <me-cs-action-stat>
+            <span class="text-caption text-capitalize">
+              <me-cs-condition v-for="condition in item.conditions" :id="condition" :key="condition" />
+            </span>
+          </me-cs-action-stat>
+        </div>
         <me-cs-action-stat v-else>
           <span class="text-caption text-capitalize">
             {{ (item.effect || []).join(', ') }}

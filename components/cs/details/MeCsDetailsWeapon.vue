@@ -116,7 +116,6 @@ export default {
       })
     },
     html () {
-      console.log(this.item)
       if (this.item.data.moreInfo?.model) {
         return this.$store.getters.getItem(this.item.data.moreInfo.model, this.item.data.moreInfo.id)?.html
       }

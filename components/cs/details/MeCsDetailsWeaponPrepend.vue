@@ -23,7 +23,6 @@ export default {
       return this.$store.getters['character/navigation/toDisplay']
     },
     subtitle () {
-      console.log(this.item)
       return this.$t('weapon_item_subtitle', {
         rarity: this.$t(`rarities.${this.item.data.rarity}`),
         weaponType: this.$tc(`weapon_types.${this.item.data.type}`, 1)
