@@ -1,36 +1,29 @@
 <template>
   <div>
     <v-row no-gutters align="baseline">
-      <v-col cols="5">
-        <v-row no-gutters align="center">
-          <!-- TITLE & PROPERTIES -->
-          <v-col cols="10">
-            <div class="d-flex">
-              <v-card flat color="transparent">
-                <div class="mb-n1 text-body-1">
-                  <small class="text-truncate font-weight-bold">
-                    <slot name="name" />
-                  </small>
-                </div>
-              </v-card>
-            </div>
-          </v-col>
-        </v-row>
+      <v-col cols="4">
+        <v-card flat color="transparent">
+          <div class="mb-n1 text-body-1">
+            <small class="text-truncate font-weight-bold">
+              <slot name="name" />
+            </small>
+          </div>
+        </v-card>
       </v-col>
 
       <!-- RANGE -->
-      <v-col cols="1" class="text-center">
+      <v-col cols="3" sm="2" class="text-center">
         <slot name="range" />
       </v-col>
 
       <!-- HIT/DC -->
-      <v-col cols="1" class="text-center">
+      <v-col cols="2" sm="1" class="text-center">
         <slot name="hit" />
         <slot name="dc" />
       </v-col>
 
       <!-- Damages -->
-      <v-col cols="2">
+      <v-col cols="3" sm="2">
         <slot name="damage" />
       </v-col>
 

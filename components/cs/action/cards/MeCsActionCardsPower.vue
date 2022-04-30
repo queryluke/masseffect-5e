@@ -9,7 +9,7 @@
           </v-col>
 
           <!-- TITLE & PROPERTIES -->
-          <v-col cols="8">
+          <v-col cols="12" sm="8">
             <div class="d-flex">
               <v-card flat color="transparent">
                 <div class="mb-n1 text-body-1">
@@ -21,7 +21,7 @@
                   </v-icon>
                 </div>
                 <div class="text-caption font-weight-light d-flex align-center">
-                  <v-avatar size="16" class="pr-1">
+                  <v-avatar v-if="$vuetify.breakpoint.smAndUp" size="16" class="pr-1">
                     <v-img :src="require(`~/assets/images/powers/${item.type}.svg`)" />
                   </v-avatar>
                   <small class="text-capitalize">
@@ -40,12 +40,12 @@
       </v-col>
 
       <!-- RANGE -->
-      <v-col cols="1" class="text-center">
+      <v-col cols="2" sm="1" class="text-center">
         <me-cs-action-range :range="range" />
       </v-col>
 
       <!-- HIT/DC -->
-      <v-col cols="1" class="pt-2">
+      <v-col cols="2" sm="1" class="pt-2">
         <me-cs-action-stat v-if="hit">
           <me-cs-roll-card :roll="hitRoll" min-width="36">
             <div class="my-1">
@@ -67,7 +67,7 @@
       </v-col>
 
       <!-- Damages -->
-      <v-col cols="2">
+      <v-col cols="3" sm="2">
         <div v-if="damages.length">
           <div v-for="(damage, index) in damages" :key="`damage-${index}`" style="min-height: 30px">
             <me-cs-action-stat>
@@ -75,16 +75,9 @@
             </me-cs-action-stat>
           </div>
         </div>
-        <div v-else-if="item.conditions">
-          <me-cs-action-stat>
-            <span class="text-caption text-capitalize">
-              <me-cs-condition v-for="condition in item.conditions" :id="condition" :key="condition" />
-            </span>
-          </me-cs-action-stat>
-        </div>
         <me-cs-action-stat v-else>
           <span class="text-caption text-capitalize">
-            {{ (item.effect || []).join(', ') }}
+            {{ (item.conditions || item.effect || []).join(', ') }}
           </span>
         </me-cs-action-stat>
       </v-col>
