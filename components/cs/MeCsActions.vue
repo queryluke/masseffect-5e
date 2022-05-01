@@ -52,13 +52,32 @@ export default {
       profs: 'profs/profs',
       abilityBreakdown: 'abilities/abilityBreakdown',
       weaponAttacks: 'equipment/weaponAttacks',
-      tab: 'navigation/actionsTab'
+      tab: 'navigation/actionsTab',
+      barrier: 'hp/barrier'
     }),
     weaponProperties () {
       return this.$store.getters.getData('weapon-properties')
     },
     actionsList () {
       return this.$store.getters.getData('actions')
+    },
+    barrierAction () {
+      if (this.barrier.uses.max === 0) {
+        return false
+      }
+      return {
+        name: 'Barrier',
+        shortDesc: `Gain ${this.barrier.ticks.max} barrier ticks (to a maximum of ${this.barrier.ticks.max})`,
+        resource: {
+          displayType: 'barrier',
+          reset: 'short',
+          id: 'barrier'
+        },
+        moreInfo: {
+          model: 'class-features',
+          id: 'barrier-vanguard'
+        }
+      }
     },
     csAllActions () {
       return {
@@ -70,26 +89,39 @@ export default {
       }
     },
     csActions () {
-      return [
+      const actions = [
         {
           group: true,
           title: 'Actions in Combat',
           items: this.baseActions.action
-        },
-        ...[{
+        }
+      ]
+      if (this.weaponAttacks.bf.length) {
+        actions.push({
           group: true,
           title: 'Burst Fire',
           items: this.weaponAttacks.bf
-        },
-        {
+        })
+      }
+      if (this.csPowersAsActions.actions.length) {
+        actions.push({
           group: true,
           title: 'Powers',
           items: this.csPowersAsActions.actions,
           component: 'me-cs-action-cards-power'
-        }].filter(i => i.items.length),
-        ...this.mechanics.filter(i => i.type === 'action' && !i.baseGroup),
-        ...this.csCustomAsActions.actions
-      ]
+        })
+      }
+      if (this.barrierAction) {
+        actions.push(this.barrierAction)
+      }
+      const regularActions = this.mechanics.filter(i => i.type === 'action' && !i.baseGroup)
+      if (regularActions.length) {
+        actions.push(...regularActions)
+      }
+      if (this.csCustomAsActions.actions.length) {
+        actions.push(...this.csCustomAsActions.actions)
+      }
+      return actions
     },
     csAttacks () {
       return [
@@ -116,36 +148,54 @@ export default {
       return baseActions
     },
     csBonusActions () {
-      const baseActions = []
+      const bonusActions = []
+      // base
       const baseBA = this.baseActions['bonus-action']
       if (baseBA.length) {
-        baseActions.push({
+        bonusActions.push({
           group: true,
           title: 'Bonus Actions in Combat',
           items: baseBA
         })
       }
-      return [
-        ...baseActions,
-        ...[{
+      // two-weapon fighting
+      if (this.weaponAttacks.twf.length) {
+        bonusActions.push({
           group: true,
           title: 'Two Weapon Fighting',
           items: this.weaponAttacks.twf
-        },
-        {
+        })
+      }
+      // double tap
+      if (this.weaponAttacks.dt) {
+        bonusActions.push({
           group: true,
           title: 'Double Tap',
           items: this.weaponAttacks.dt
-        },
-        {
+        })
+      }
+      // powers
+      if (this.csPowersAsActions.bonus_actions.length) {
+        bonusActions.push({
           group: true,
           title: 'Powers',
           items: this.csPowersAsActions.bonus_actions,
           component: 'me-cs-action-cards-power'
-        }].filter(i => i.items.length),
-        ...this.mechanics.filter(i => i.type === 'bonus-action' && !i.baseGroup),
-        ...this.csCustomAsActions.bonus
-      ]
+        })
+      }
+      // barrier
+      if (this.barrierAction) {
+        bonusActions.push(this.barrierAction)
+      }
+      // regular
+      const regularActions = this.mechanics.filter(i => i.type === 'bonus-action' && !i.baseGroup)
+      if (regularActions.length) {
+        bonusActions.push(...regularActions)
+      }
+      if (this.csCustomAsActions.bonus.length) {
+        bonusActions.push(...this.csCustomAsActions.bonus)
+      }
+      return bonusActions
     },
     csReactions () {
       return [

@@ -20,7 +20,7 @@
     </v-col>
     <v-divider v-if="showBarrier" vertical />
     <v-col v-if="showBarrier" cols="6" class="text-caption text-md-subtitle-2 d-flex align-center justify-center" :class="csTextColor('barrier')">
-      {{ `${barrier.ticks.used} / ${barrier.ticks.max}` }}
+      {{ `${ticksRemaining} / ${barrier.ticks.max}` }}
       <v-icon :color="csBgColor('barrier')" size="12" class="pl-1">
         mdi-shield-sun-outline
       </v-icon>
@@ -45,6 +45,9 @@ export default {
     ...mapGetters(['hp', 'hasBarrier', 'barrier', 'tempHp', 'shields']),
     showBarrier () {
       return !this.hideBarrier && this.barrier.uses.max
+    },
+    ticksRemaining () {
+      return this.barrier.ticks.max - this.barrier.ticks.used
     }
   }
 }

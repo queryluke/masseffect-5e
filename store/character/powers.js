@@ -59,8 +59,9 @@ export const getters = {
       for (const feature of getters.klassesPowercastingMechanics.filter(i => i.powercasting.type === 'powercasting-points')) {
         const multiplier = feature.powercasting.multiclassConversion
         const levels = rootGetters['character/klasses/selectedKlasses'].find(i => i.id === feature.klassId).levels
-        multiclassPointcastingLevel += Math.floor(levels * multiplier)
+        multiclassPointcastingLevel += (levels * multiplier)
       }
+      multiclassPointcastingLevel = Math.floor(multiclassPointcastingLevel)
       if (multiclassPointcastingLevel > 0) {
         base.max = state.mcTp[multiclassPointcastingLevel - 1]
         base.limit = state.mcTpLimit[multiclassPointcastingLevel - 1]
@@ -69,8 +70,8 @@ export const getters = {
       const pointCasting = getters.klassesPowercastingMechanics.find(i => i.powercasting.type === 'powercasting-points')
       if (pointCasting) {
         const klassLevel = rootGetters['character/klasses/level']
-        base.max = pointCasting.points[klassLevel - 1]
-        base.limit = pointCasting.limit[klassLevel - 1]
+        base.max = pointCasting.powercasting.points[klassLevel - 1]
+        base.limit = pointCasting.powercasting.limit[klassLevel - 1]
       }
     }
     return base
@@ -90,8 +91,9 @@ export const getters = {
       for (const feature of getters.klassesPowercastingMechanics.filter(i => i.powercasting.type === 'powercasting-slots')) {
         const multiplier = feature.powercasting.multiclassConversion
         const levels = rootGetters['character/klasses/selectedKlasses'].find(i => i.id === feature.klassId).levels
-        multiclassSlotcastingLevel += Math.floor(levels * multiplier)
+        multiclassSlotcastingLevel += (levels * multiplier)
       }
+      multiclassSlotcastingLevel = Math.floor(multiclassSlotcastingLevel)
       if (multiclassSlotcastingLevel > 0) {
         for (const slot of slots) {
           base[slot].max = state.mcPs[slot - 1][multiclassSlotcastingLevel - 1]
@@ -102,7 +104,7 @@ export const getters = {
       if (slotCasting) {
         const klassLevel = rootGetters['character/klasses/level']
         for (const slot of slots) {
-          base[slot].max = slotCasting[slot][klassLevel - 1]
+          base[slot].max = slotCasting.powercasting[slot][klassLevel - 1]
         }
       }
     }
@@ -122,8 +124,9 @@ export const getters = {
       for (const feature of getters.klassesPowercastingMechanics.filter(i => i.powercasting.type === 'powercasting-pact')) {
         const multiplier = feature.powercasting.multiclassConversion
         const levels = rootGetters['character/klasses/selectedKlasses'].find(i => i.id === feature.klassId).levels
-        multiclassPactcastingLevel += Math.floor(levels * multiplier)
+        multiclassPactcastingLevel += (levels * multiplier)
       }
+      multiclassPactcastingLevel = Math.floor(multiclassPactcastingLevel)
       if (multiclassPactcastingLevel > 0) {
         base.slotLevel = state.mcPactSlotLevel[multiclassPactcastingLevel - 1]
         base.numSlots = state.mcPactNumSlots[multiclassPactcastingLevel - 1]
@@ -132,8 +135,8 @@ export const getters = {
       const pactCasting = getters.klassesPowercastingMechanics.find(i => i.powercasting.type === 'powercasting-pact')
       if (pactCasting) {
         const klassLevel = rootGetters['character/klasses/level']
-        base.slotLevel = pactCasting.slotLevel[klassLevel - 1]
-        base.numSlots = pactCasting.numSlots[klassLevel - 1]
+        base.slotLevel = pactCasting.powercasting.slotLevel[klassLevel - 1]
+        base.numSlots = pactCasting.powercasting.numSlots[klassLevel - 1]
       }
     }
     return base
@@ -191,11 +194,20 @@ export const getters = {
           defaults.powercastingType = 'slots'
         }
       }
-      //
+      // cantrips
       const cantripsFeatures = allKlassFeatures[index].find(i => i.klass === klass.id && i.mechanics?.some(j => j.type === 'cantrips'))
       if (cantripsFeatures) {
         const cantrips = cantripsFeatures.mechanics.find(i => i.type === 'cantrips')
         defaults.numCantrips = cantrips.known[klass.levels - 1]
+        // cantrip mechanics
+        const additionalCantrips = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'additional-cantrips')
+        if (additionalCantrips.length) {
+          let additional = 0
+          for (const addition of additionalCantrips) {
+            additional += rootGetters['character/mechanics/mcBonus'](addition.bonus)
+          }
+          defaults.numCantrips += additional
+        }
       }
       kpcms[klass.id] = defaults
     }

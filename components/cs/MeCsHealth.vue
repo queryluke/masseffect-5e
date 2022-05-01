@@ -2,7 +2,7 @@
   <div>
     <v-row>
       <v-col cols="12" class="d-flex justify-center justify-md-space-around justify-lg-space-around" :class="{'justify-md-space-between': barrier.uses.max }">
-        <me-cs-health-barrier-slider :barrier="barrier" />
+        <me-cs-health-barrier-slider />
         <div>
           <me-cs-health-circle :hp="hp" :shields="shields" :temp-hp="tempHp" />
           <div class="text-center">

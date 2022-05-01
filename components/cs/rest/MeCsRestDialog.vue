@@ -254,11 +254,12 @@ export default {
         ...(this.character.brews || []).filter(i => i.mechanics?.uses && (type === 'short' ? i.mechanics?.recharge === 'short' : true)),
         ...this.powers.filter(i => i.resource?.reset ? i.resource?.reset === type : true)
       ]
+      // barrier
+      currentStatsClone.barrier.used = 0
       if (type === 'long') {
-        // LONG REST, all powers/tp, and barrier
+        // LONG REST, all powers/tp
         currentStatsClone.psUsed = [0, 0, 0, 0, 0]
         currentStatsClone.tpUsed = 0
-        currentStatsClone.barrier.used = 0
       } else if (type === 'short') {
         // SHORT REST, biotic recovery, sentinel
         const slotsToRecover = [0, 0, 0, 0, 0]
