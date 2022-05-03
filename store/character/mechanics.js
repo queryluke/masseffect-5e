@@ -142,6 +142,7 @@ export const getters = {
     const multiplier = bonus.multiplier || 1
     const min = bonus.min || 0
     let b = 0
+    let mod = null
     switch (bonus.type) {
       case 'flat':
         b = bonus.value
@@ -195,6 +196,26 @@ export const getters = {
           }
           b = column.values[klassData.levels - 1]
         }
+        break
+      case 'multi':
+        if (!Array.isArray(bonus.value)) {
+          break
+        }
+        for (const multiBonus of bonus.value) {
+          b += getters.mcBonus(multiBonus) * multiplier
+        }
+        break
+      case 'powercastingMod':
+        if (!bonus.value) {
+          break
+        }
+        mod = rootGetters['character/powers/klassPowercastingAbilities'][bonus.value]
+        if (mod) {
+          b += rootGetters[`character/abilities/${mod}Mod`]
+        }
+        break
+      case 'resource':
+        b += (rootGetters['character/character'].currentStats.resources[bonus.value] || 0) * multiplier
         break
       default:
         b = 0

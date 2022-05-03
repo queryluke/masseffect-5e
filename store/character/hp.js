@@ -86,8 +86,10 @@ export const getters = {
         base.dieCount = barrierMechanic.dieCount
       }
     }
-    console.log(base)
     return base
+  },
+  techArmor: (state, getters, rootState, rootGetters) => {
+    return rootGetters['character/character'].currentStats.resources['tech-armor-hp'] || 0
   }
 }
 

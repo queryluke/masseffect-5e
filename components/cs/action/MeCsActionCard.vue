@@ -1,6 +1,8 @@
 <template>
   <v-card outlined class="pa-1 px-md-3" :min-height="minHeight" @click="showItem">
     <component :is="layoutComponent" v-bind="{showCastingTime}">
+      <template v-if="item.toggle" #toggle />
+
       <template #icon>
         <v-avatar v-if="item.icon" size="16" class="mr-1">
           <v-img :src="item.icon" />
@@ -62,7 +64,15 @@
       </template>
     </component>
 
-    <v-card v-if="item.resource" style="position: absolute; bottom: -9px" outlined @click.stop>
+    <v-card v-if="item.resource || item.toggle" style="position: absolute; bottom: -9px" outlined class="d-flex" @click.stop>
+      <v-switch
+        v-if="item.toggle"
+        v-model="toggle"
+        dense
+        hide-details
+        :disabled="toggleDisabled"
+        class="mt-0 px-1"
+      />
       <me-cs-action-resource v-if="item.resource" :id="item.resource.id" :resource="item.resource" />
       <me-cs-action-resource v-if="item.resource && item.resource.resource" :id="item.resource.resource.id" :resource="item.resource.resource" />
     </v-card>
@@ -70,15 +80,11 @@
 </template>
 
 <script>
-import { createNamespacedHelpers } from 'vuex'
-import { ScoreText } from '~/mixins/character/scoreText'
-import { CsColors } from '~/mixins/character/csColors'
 import { CsActions } from '~/mixins/character/csActions'
-const { mapGetters } = createNamespacedHelpers('character')
 
 export default {
   name: 'MeCsActionCard',
-  mixins: [ScoreText, CsColors, CsActions],
+  mixins: [CsActions],
   props: {
     item: {
       type: Object,
@@ -90,22 +96,13 @@ export default {
     }
   },
   computed: {
-    ...mapGetters({
-      abilityBreakdown: 'abilities/abilityBreakdown',
-      profBonus: 'profBonus',
-      mcBonus: 'mechanics/mcBonus',
-      mechanics: 'mechanics/mechanics',
-      tentacleBlenderText: 'equipment/tentacleBlenderText',
-      hp: 'hp/hp',
-      level: 'klasses/level'
-    }),
     layout () {
       return this.item.layout ||
         (this.item.attack
           ? 'attack'
           : this.item.damage?.length && this.item.dc && this.item.range
             ? 'attack'
-            : this.item.damage?.length || this.item.dc || this.item.range
+            : this.item.damage?.length || this.item.dc || this.item.range || this.item.toggle
               ? 'stats-right'
               : 'simple')
     },

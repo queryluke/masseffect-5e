@@ -6,6 +6,8 @@ export const CsActions = {
   mixins: [ScoreText, CsColors],
   computed: {
     ...mapGetters({
+      toggles: 'resources/toggles',
+      resources: 'resources/resources',
       abilityBreakdown: 'abilities/abilityBreakdown',
       profBonus: 'profBonus',
       mcBonus: 'mechanics/mcBonus',
@@ -154,6 +156,25 @@ export const CsActions = {
         ]
       }
       return hitRoll
+    },
+    toggleDisabled () {
+      if (!this.item.resource || this.toggle) {
+        return false
+      }
+      const resourceMax = this.mcBonus(this.item.resource.max)
+      return this.resources[this.item.resource.id] >= resourceMax
+    },
+    toggle: {
+      get () {
+        return (this.toggles || {})[this.item.toggle.id] || false
+      },
+      set (value) {
+        this.$store.dispatch('character/resources/SET_TOGGLE', { id: this.item.toggle.id, value })
+        const which = value ? 'whenOn' : 'whenOff'
+        for (const whenable of (this.item.toggle[which] || [])) {
+          this.executeToggle(whenable)
+        }
+      }
     }
   },
   methods: {
@@ -181,6 +202,17 @@ export const CsActions = {
         return this.interpolations[replacement]
       })
       return interpolated
+    },
+    executeToggle (toggle) {
+      if (toggle.type !== 'resource' || !toggle.value) {
+        return
+      }
+      let value = this.mcBonus(toggle.value)
+      if (toggle.method !== 'set') {
+        const currentValue = this.resources[toggle.id]
+        value = toggle.method === 'add' ? currentValue + value : currentValue - value
+      }
+      this.$store.dispatch('character/resources/SET_RESOURCE', { id: toggle.id, value })
     }
   }
 }

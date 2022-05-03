@@ -32,6 +32,16 @@ export const CsColors = {
             text: 'blue-grey--text text--darken-2'
           }
         },
+        techArmor: {
+          dark: {
+            bg: 'yellow lighten-1',
+            text: 'yellow--text'
+          },
+          light: {
+            bg: 'lime darken-4',
+            text: 'lime--text text--darken-4'
+          }
+        },
         damage: {
           dark: {
             bg: 'red',
