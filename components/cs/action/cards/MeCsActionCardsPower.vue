@@ -24,7 +24,7 @@
                   <v-avatar v-if="$vuetify.breakpoint.smAndUp" size="16" class="pr-1">
                     <v-img :src="require(`~/assets/images/powers/${item.type}.svg`)" />
                   </v-avatar>
-                  <small class="text-capitalize">
+                  <small class="text-capitalize text-truncate">
                     {{ properties }}
                   </small>
                 </div>

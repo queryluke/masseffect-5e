@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-card flat max-width="700px" class="mx-auto">
     <me-tpg s="h3" class="text-center">
       Description
     </me-tpg>
@@ -115,7 +115,7 @@
         </v-expansion-panels>
       </v-col>
     </v-row>
-  </div>
+  </v-card>
 </template>
 
 <script>

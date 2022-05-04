@@ -137,7 +137,12 @@ export default {
     modelFilter (item) {
       return this.mechanic.limits.every(({ attr, value }) => {
         const comparitor = value || []
-        return comparitor.includes(item[attr])
+        const itemValue = item[attr]
+        if (Array.isArray(itemValue)) {
+          return item[attr].some(i => comparitor.includes(i))
+        } else {
+          return comparitor.includes(item[attr])
+        }
       })
     },
     upsert (value) {

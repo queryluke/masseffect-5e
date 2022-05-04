@@ -164,11 +164,15 @@ export const CsActions = {
       const resourceMax = this.mcBonus(this.item.resource.max)
       return this.resources[this.item.resource.id] >= resourceMax
     },
+    toggleOptions () {
+      return this.item.toggle.options || []
+    },
     toggle: {
       get () {
         return (this.toggles || {})[this.item.toggle.id] || false
       },
       set (value) {
+        console.log(this.item.toggle.options)
         this.$store.dispatch('character/resources/SET_TOGGLE', { id: this.item.toggle.id, value })
         const which = value ? 'whenOn' : 'whenOff'
         for (const whenable of (this.item.toggle[which] || [])) {
@@ -209,7 +213,7 @@ export const CsActions = {
       }
       let value = this.mcBonus(toggle.value)
       if (toggle.method !== 'set') {
-        const currentValue = this.resources[toggle.id]
+        const currentValue = this.resources[toggle.id] || 0
         value = toggle.method === 'add' ? currentValue + value : currentValue - value
       }
       this.$store.dispatch('character/resources/SET_RESOURCE', { id: toggle.id, value })

@@ -150,12 +150,11 @@ export default {
       doubleShields: false,
       modderState: 0,
       healthTrigger: false,
-      htState: false,
-      techArmorMax: 0
+      htState: false
     }
   },
   computed: {
-    ...mapGetters(['hp', 'barrier', 'tempHp', 'shields', 'techArmor']),
+    ...mapGetters(['hp', 'barrier', 'tempHp', 'shields', 'techArmor', 'techArmorMax']),
     viewOnly () {
       return this.$store.state.character.viewOnly
     },
@@ -179,6 +178,14 @@ export default {
     },
     currentStats () {
       return this.$store.getters['character/character'].currentStats
+    },
+    techArmorMax: {
+      get () {
+        return this.currentStats.techArmorMax || 0
+      },
+      set (value) {
+        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.techArmorMax', value })
+      }
     }
   },
   watch: {
@@ -211,7 +218,7 @@ export default {
     execTechArmor () {
       const modder = this.getModder()
       if (modder) {
-        const max = Math.max(this.tempHp.max, modder, this.tempHp.max + modder)
+        const max = Math.max(this.techArmorMax, modder, this.tempHp.max + modder)
         this.techArmorMax = max
         const value = Math.max(this.techArmor + modder, 0)
         this.$store.dispatch('character/resources/SET_RESOURCE', { id: 'tech-armor-hp', value })
@@ -246,6 +253,7 @@ export default {
         if (this.techArmor > 0) {
           const potentialTaDmg = Math.min(this.techArmor, dmgLeft)
           const newTa = Math.max(0, this.techArmor - potentialTaDmg)
+          newStats.techArmorMax = newTa === 0 ? 0 : this.techArmorMax
           this.$store.dispatch('character/resources/SET_RESOURCE', { id: 'tech-armor-hp', value: newTa })
           dmgLeft -= potentialTaDmg
         }

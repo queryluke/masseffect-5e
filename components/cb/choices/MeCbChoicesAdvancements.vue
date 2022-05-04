@@ -42,7 +42,7 @@ export default {
       }
       if (this.mechanic.limit.valueLookup) {
         const ids = this.selected
-          .filter(i => i.path.endsWith(`${this.mechanic.limit.valueLookup.model}/${this.mechanic.limit.valueLookup.id}/powers`))
+          .filter(i => i.path.endsWith(`${this.mechanic.limit.valueLookup.model}/${this.mechanic.limit.valueLookup.id}/powers`) || i.path.endsWith(`${this.mechanic.limit.valueLookup.id}/powers`))
           .reduce((acc, curr) => acc.concat(...curr.value), [])
           .filter(i => i.type === 'powers')
           .map(i => i.value)
@@ -53,21 +53,19 @@ export default {
   },
   methods: {
     advaAsOption (item) {
-      return item.advancements
-        ? Object.entries(item.advancements).map((i) => {
-          return {
-            value: i[0],
-            text: i[1].name
-          }
-        })
-        : []
+      return item.advancements.map((i) => {
+        return {
+          value: i.id,
+          text: i.name
+        }
+      })
     },
     advCurrentValue (item) {
-      this.currentValue.find(i => i.id === item.id)
+      return this.currentValue.find(i => i.id === item.id)
     },
     upsert (id, value) {
       const newValues = this.currentValue.slice()
-      const existing = newValues.find(i => i.id === id)
+      const existing = newValues.findIndex(i => i.id === id)
       const upsertValue = { type: 'advancement', value, id }
       if (existing > -1) {
         newValues.splice(existing, 1, upsertValue)

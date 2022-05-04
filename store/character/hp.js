@@ -90,6 +90,9 @@ export const getters = {
   },
   techArmor: (state, getters, rootState, rootGetters) => {
     return rootGetters['character/character'].currentStats.resources['tech-armor-hp'] || 0
+  },
+  techArmorMax: (state, getters, rootState, rootGetters) => {
+    return rootGetters['character/character'].currentStats.techArmorMax || 0
   }
 }
 

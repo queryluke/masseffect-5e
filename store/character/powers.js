@@ -250,10 +250,14 @@ export const getters = {
         model: 'power',
         icon: `/images/powers/${power.type}.svg`,
         effect: power.tags.filter(i => i !== 'damage'),
-        source: p.klass || p.source,
-        advancement: p.advancement ? power.advancements.find(i => i.id === p.advancement) : false,
+        source: p.source || p.klass,
+        advancement: p.advancement
+          // TODO: advancement selections used to be arrays
+          ? power.advancements.find(i => i.id === p.advancement) || power.advancements[p.advancement]
+          : false,
         type: power.type,
         upcast: false,
+        alwaysCastable: p.alwaysCastable,
         ...baseMechanics,
         resource,
         attack,
@@ -281,8 +285,9 @@ export const getters = {
         if (p.advancement) {
           advancement = power.advancements.find(i => i.id === p.advancement)
         }
-        for (let i = 0; i < 5; i++) {
-          if (p.preventUpcast && i > 0) {
+        for (let i = 0; i <= (5 - basePower.level); i++) {
+          const level = i + basePower.level
+          if (p.castAt && level !== p.castAt) {
             continue
           }
           let advancementMechanics = null
@@ -290,7 +295,6 @@ export const getters = {
           if (advancement) {
             advancementMechanics = advancement.mechanics[i] || advancement.mechanics[0]
           }
-          const level = i + basePower.level
           powers.push(upcastPower({ ...basePower, level, upcast: i !== 0 }, upcastMechanics, advancementMechanics, i))
         }
       }
@@ -319,12 +323,15 @@ export const getters = {
     const advancements = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'advancement')
     const mechanicPowers = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'powers').map((power) => {
       const advancement = advancements.find(adv => power.value === adv.id)
+      // const advancementId
       // attempt to find source
       let source = ''
       try {
-        const sources = power.source.split('/')
-        const baseSource = rootGetters.getItem(sources[0], sources[1])
-        source = baseSource.species || baseSource.name
+        // TODO: for these, should probably set source in the data
+        if (power.provider) {
+          const data = rootGetters.getItem(power.provider.model, power.provider.id)
+          source = data.name
+        }
       } catch (e) {
         console.error(`could not find source ${power.source}`)
       }

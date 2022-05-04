@@ -102,13 +102,14 @@ export const getters = {
 
     // AUGMENTS
     for (const augment of finalMechanics.filter(i => i.type === 'augment')) {
+      console.log(augment)
       if (!augment.merge) {
         continue
       }
       if (augment.value) {
         let localMatchingIndex = 0
         for (const [augmentIndex, augmentable] of finalMechanics.entries()) {
-          if (!augmentable.source.endsWith(`${augment.value.model}/${augment.value.id}`)) {
+          if (!augmentable.source.includes(`${augment.value.model}/${augment.value.id}`)) {
             continue
           }
           if (augment.value.limit && !augment.value.limit.includes(augmentable.type)) {
@@ -118,8 +119,17 @@ export const getters = {
             localMatchingIndex += 1
             continue
           }
-          finalMechanics.splice(augmentIndex, 1, merge(augmentable, augment.merge))
+          finalMechanics.splice(augmentIndex, 1, merge(cloneDeep(augmentable), augment.merge))
         }
+      }
+    }
+
+    // TOGGLES
+    // MUST be after augments
+    const toggleState = rootGetters['character/resources/toggles'] || {}
+    for (const { toggle } of finalMechanics.filter(i => i.toggle)) {
+      if (toggleState[toggle.id] && toggle.whenOn) {
+        finalMechanics.push(...(toggle.whenOn).filter(i => i.type !== 'resource'))
       }
     }
     // console.log('unused', selected)
@@ -139,6 +149,9 @@ export const getters = {
     return getters.mechanicAnalysis.unusedSelections
   },
   mcBonus: (state, getters, rootState, rootGetters) => (bonus) => {
+    if (!bonus) {
+      return 0
+    }
     const multiplier = bonus.multiplier || 1
     const min = bonus.min || 0
     let b = 0

@@ -56,14 +56,14 @@ export default {
       }
       return ''.padStart(index, '*')
     },
-    defenseTypeText ({ id, noteIndex = null }) {
-      const text = this.item.type === 'condition-immunity'
+    defenseTypeText ({ id, label, noteIndex = null }) {
+      const text = label || (this.item.type === 'condition-immunity'
         ? id === 'disease'
           ? 'Disease'
           : this.conditionsTextMap[id]
         : id === 'fall'
           ? 'Falling Damage'
-          : this.$t(`damage_types.${id}_title`)
+          : this.$t(`damage_types.${id}_title`))
       const asters = this.asters(noteIndex)
       return `${text}${asters}`
     }

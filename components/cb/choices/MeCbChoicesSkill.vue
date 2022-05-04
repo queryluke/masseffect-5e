@@ -55,6 +55,11 @@ export default {
     },
     items () {
       if (this.mechanic.limit) {
+        // for expertise, if limit === acquired, only current profs
+        if (this.expertise && this.mechanic.limit === 'acquired') {
+          const acquired = this.$store.getters['character/profs/profs'].skill
+          return this.profOptions.filter(i => acquired.includes(i.value))
+        }
         return this.profOptions.filter(i => this.mechanic.limit.includes(i.value))
       } else {
         return this.profOptions

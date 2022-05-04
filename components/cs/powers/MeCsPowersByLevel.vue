@@ -65,6 +65,9 @@ export default {
       if (this.levelIndex === 0) {
         return true
       }
+      if (this.powersAtLevel.filter(i => i.alwaysCastable).length) {
+        return true
+      }
       return this.levelIndex <= this.techPoints.limit || this.hasPowerSlotAtLevel
     },
     powersAtLevel () {
