@@ -1,8 +1,6 @@
 <template>
   <v-card outlined class="pa-1 px-md-3" :min-height="minHeight" @click="showItem">
     <component :is="layoutComponent" v-bind="{showCastingTime}">
-      <template v-if="item.toggle" #toggle />
-
       <template #icon>
         <v-avatar v-if="item.icon" size="16" class="mr-1">
           <v-img :src="item.icon" />
@@ -65,6 +63,32 @@
     </component>
 
     <v-card v-if="item.resource || item.toggle" style="position: absolute; bottom: -9px" outlined class="d-flex" @click.stop>
+      <v-menu v-if="toggleOptions" offset-y>
+        <template #activator="{ on, attrs }">
+          <v-btn
+            color="primary"
+            outlined
+            x-small
+            v-bind="attrs"
+            class="mt-1 mr-2"
+            v-on="on"
+          >
+            {{ toggleSelection.name }}
+            <V-icon right>
+              mdi-menu-down
+            </V-icon>
+          </v-btn>
+        </template>
+        <v-list dense>
+          <v-list-item
+            v-for="toggleItem in toggleOptions"
+            :key="toggleItem.id"
+            @click="toggleSelection = toggleItem.id"
+          >
+            <v-list-item-title>{{ toggleItem.name }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
       <v-switch
         v-if="item.toggle"
         v-model="toggle"

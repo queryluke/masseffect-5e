@@ -201,7 +201,7 @@ export default {
       return [
         {
           group: true,
-          title: 'Actions in Combat',
+          title: 'Reactions in Combat',
           items: this.baseActions.reaction
         },
         ...[{
@@ -210,7 +210,7 @@ export default {
           items: this.csPowersAsActions.reactions,
           component: 'me-cs-action-cards-power'
         }].filter(i => i.items.length),
-        ...this.mechanics.filter(i => i.type === 'reaction'),
+        ...this.mechanics.filter(i => i.type === 'reaction' && !i.baseGroup),
         ...this.csCustomAsActions.reactions
       ]
     },

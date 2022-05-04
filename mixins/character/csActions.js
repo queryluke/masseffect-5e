@@ -4,6 +4,11 @@ import { CsColors } from '~/mixins/character/csColors'
 const { mapGetters } = createNamespacedHelpers('character')
 export const CsActions = {
   mixins: [ScoreText, CsColors],
+  data () {
+    return {
+      showToggleOptionMenu: false
+    }
+  },
   computed: {
     ...mapGetters({
       toggles: 'resources/toggles',
@@ -165,19 +170,44 @@ export const CsActions = {
       return this.resources[this.item.resource.id] >= resourceMax
     },
     toggleOptions () {
-      return this.item.toggle.options || []
+      return this.item.toggle?.options || false
     },
     toggle: {
       get () {
-        return (this.toggles || {})[this.item.toggle.id] || false
+        if (!this.item.toggle) {
+          return false
+        }
+        return this.toggles[this.item.toggle.id] || false
       },
       set (value) {
-        console.log(this.item.toggle.options)
         this.$store.dispatch('character/resources/SET_TOGGLE', { id: this.item.toggle.id, value })
         const which = value ? 'whenOn' : 'whenOff'
-        for (const whenable of (this.item.toggle[which] || [])) {
+        const whenables = this.item.toggle[which] || []
+        if (this.toggleOptions && this.toggleSelection) {
+          whenables.push(...(this.toggleSelection[which] || []))
+        }
+        for (const whenable of whenables) {
           this.executeToggle(whenable)
         }
+      }
+    },
+    toggleSelection: {
+      get () {
+        if (!this.toggleOptions) {
+          return false
+        }
+        const selectionId = this.toggles[`${this.item.toggle.id}-selection`]
+        if (!selectionId) {
+          return this.toggleOptions[0]
+        }
+        const selection = this.toggleOptions.find(i => i.id === selectionId)
+        if (!selection) {
+          return this.toggleOptions[0]
+        }
+        return selection
+      },
+      set (value) {
+        this.$store.dispatch('character/resources/SET_TOGGLE', { id: `${this.item.toggle.id}-selection`, value })
       }
     }
   },
@@ -211,6 +241,7 @@ export const CsActions = {
       if (toggle.type !== 'resource' || !toggle.value) {
         return
       }
+      console.log('executing', toggle)
       let value = this.mcBonus(toggle.value)
       if (toggle.method !== 'set') {
         const currentValue = this.resources[toggle.id] || 0

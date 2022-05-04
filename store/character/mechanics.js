@@ -102,13 +102,15 @@ export const getters = {
 
     // AUGMENTS
     for (const augment of finalMechanics.filter(i => i.type === 'augment')) {
-      console.log(augment)
       if (!augment.merge) {
         continue
       }
       if (augment.value) {
         let localMatchingIndex = 0
         for (const [augmentIndex, augmentable] of finalMechanics.entries()) {
+          if (!augmentable.source) {
+            continue
+          }
           if (!augmentable.source.includes(`${augment.value.model}/${augment.value.id}`)) {
             continue
           }
@@ -128,8 +130,17 @@ export const getters = {
     // MUST be after augments
     const toggleState = rootGetters['character/resources/toggles'] || {}
     for (const { toggle } of finalMechanics.filter(i => i.toggle)) {
-      if (toggleState[toggle.id] && toggle.whenOn) {
-        finalMechanics.push(...(toggle.whenOn).filter(i => i.type !== 'resource'))
+      if (toggleState[toggle.id]) {
+        if (toggle.whenOn) {
+          finalMechanics.push(...(toggle.whenOn).filter(i => i.type !== 'resource'))
+        }
+        if (toggle.options) {
+          const selectionId = toggleState[`${toggle.id}-selection`]
+          const selection = toggle.options.find(i => i.id === selectionId) || toggle.options[0]
+          if (selection?.whenOn) {
+            finalMechanics.push(...(selection.whenOn.filter(i => i.type && i.type !== 'resource')))
+          }
+        }
       }
     }
     // console.log('unused', selected)

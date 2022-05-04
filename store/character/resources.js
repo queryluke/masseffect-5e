@@ -8,7 +8,7 @@ export const getters = {
     return rootGetters['character/character'].currentStats.resources
   },
   toggles: (state, getters, rootState, rootGetters) => {
-    return rootGetters['character/character'].currentStats.toggles
+    return rootGetters['character/character'].currentStats.toggles || {}
   }
 }
 
