@@ -215,7 +215,7 @@ export const CsActions = {
     interpolatedText (text) {
       // might be better to do this with attrGetters or put it in the HTML?
       const interpolations = ['dc', 'range', 'profBonus', 'strMod', 'conMod', 'wisMod', 'intMod', 'chaMod', 'avatarsDie', 'tentacleBlender', 'hp', 'level']
-      const regex = new RegExp(`{{ ?([0-9]{1,3}|[+ ]|${interpolations.join('|')})+ ?}}`, 'g')
+      const regex = new RegExp(`{{ ?([0-9]{1,3}|[+ ]|${interpolations.join('|')}|powercastingMod:[a-z]+)+ ?}}`, 'g')
       if (!regex.test(text)) {
         return text
       }
@@ -227,15 +227,28 @@ export const CsActions = {
           return replacement.reduce((acc, curr) => {
             const int = parseInt(curr, 10)
             if (isNaN(int)) {
-              return acc + parseInt(this.interpolations[curr], 10) || 0
+              return acc + parseInt(this.interpolatedReplacement(curr), 10) || 0
             } else {
               return acc + int
             }
           }, 0)
         }
-        return this.interpolations[replacement]
+        return this.interpolatedReplacement(replacement)
       })
       return interpolated
+    },
+    interpolatedReplacement (replacementKey) {
+      try {
+        if (replacementKey.includes(':')) {
+          const [type, value] = replacementKey.split(':')
+          return this.mcBonus({ type, value })
+        } else {
+          return this.interpolations[replacementKey]
+        }
+      } catch (e) {
+        console.error(e.message)
+        return replacementKey
+      }
     },
     executeToggle (toggle) {
       if (toggle.type !== 'resource' || !toggle.value) {
