@@ -88,7 +88,7 @@ export const getters = {
       }
       return hydratedMechanics
     }
-    const finalMechanics = []
+    const preAugmentMechanics = []
     const mechanics = [
       // ADD ADDITIONAL MECHANICS HERE
       ...rootGetters['character/species/mechanics'],
@@ -97,52 +97,62 @@ export const getters = {
       ...rootGetters['character/reputation/benefitsMechanics']
     ]
     for (const item of cloneDeep(mechanics)) {
-      finalMechanics.push(...hydrate(item))
+      preAugmentMechanics.push(...hydrate(item))
     }
 
     // AUGMENTS
-    for (const augment of finalMechanics.filter(i => i.type === 'augment')) {
-      if (!augment.merge) {
-        continue
-      }
-      if (augment.value) {
-        let localMatchingIndex = 0
-        for (const [augmentIndex, augmentable] of finalMechanics.entries()) {
-          if (!augmentable.source) {
-            continue
+    function hydrateAugments (finalMechanics = []) {
+      const augments = finalMechanics.filter(i => i.type === 'augment')
+      const nonAugments = finalMechanics.filter(i => i.type !== 'augment')
+      const newMechanics = []
+      for (const augment of augments) {
+        if (!augment.merge) {
+          continue
+        }
+        if (augment.value) {
+          let localMatchingIndex = 0
+          for (const [augmentIndex, augmentable] of nonAugments.entries()) {
+            if (!augmentable.source) {
+              continue
+            }
+            if (!augmentable.source.includes(`${augment.value.model}/${augment.value.id}`)) {
+              continue
+            }
+            if (augment.value.limit && !augment.value.limit.includes(augmentable.type)) {
+              continue
+            }
+            if (augment.value.instances && !augment.value.instances.includes(localMatchingIndex)) {
+              localMatchingIndex += 1
+              continue
+            }
+            newMechanics.push(merge(cloneDeep(augmentable), augment.merge))
+            nonAugments.splice(augmentIndex, 1)
           }
-          if (!augmentable.source.includes(`${augment.value.model}/${augment.value.id}`)) {
-            continue
-          }
-          if (augment.value.limit && !augment.value.limit.includes(augmentable.type)) {
-            continue
-          }
-          if (augment.value.instances && !augment.value.instances.includes(localMatchingIndex)) {
-            localMatchingIndex += 1
-            continue
-          }
-          finalMechanics.splice(augmentIndex, 1, merge(cloneDeep(augmentable), augment.merge))
         }
       }
+      newMechanics.push(...nonAugments)
+      return newMechanics
     }
 
+    const preToggleMechanics = hydrateAugments(preAugmentMechanics)
     // TOGGLES
-    // MUST be after augments
     const toggleState = rootGetters['character/resources/toggles'] || {}
-    for (const { toggle } of finalMechanics.filter(i => i.toggle)) {
+    for (const { toggle } of preToggleMechanics.filter(i => i.toggle)) {
       if (toggleState[toggle.id]) {
         if (toggle.whenOn) {
-          finalMechanics.push(...(toggle.whenOn).filter(i => i.type !== 'resource'))
+          preToggleMechanics.push(...(toggle.whenOn).filter(i => i.type !== 'resource'))
         }
         if (toggle.options) {
           const selectionId = toggleState[`${toggle.id}-selection`]
           const selection = toggle.options.find(i => i.id === selectionId) || toggle.options[0]
           if (selection?.whenOn) {
-            finalMechanics.push(...(selection.whenOn.filter(i => i.type && i.type !== 'resource')))
+            preToggleMechanics.push(...(selection.whenOn.filter(i => i.type && i.type !== 'resource')))
           }
         }
       }
     }
+
+    const finalMechanics = hydrateAugments(preToggleMechanics)
     // console.log('unused', selected)
     // console.log('final', finalMechanics)
     return {
