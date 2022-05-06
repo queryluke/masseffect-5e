@@ -103,6 +103,7 @@ export const getters = {
     // AUGMENTS
     function hydrateAugments (finalMechanics = []) {
       const augments = finalMechanics.filter(i => i.type === 'augment')
+      console.log(augments)
       const nonAugments = finalMechanics.filter(i => i.type !== 'augment')
       for (const augment of augments) {
         if (!augment.merge) {
@@ -128,6 +129,7 @@ export const getters = {
           }
         }
       }
+      console.log(nonAugments)
       return nonAugments
     }
 
