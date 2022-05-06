@@ -8,6 +8,11 @@
               <slot name="name" />
             </small>
           </div>
+          <div class="text-caption font-weight-light d-flex align-center">
+            <small class="text-capitalize text-truncate">
+              <slot name="properties" />
+            </small>
+          </div>
         </v-card>
       </v-col>
 

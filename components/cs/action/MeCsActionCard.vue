@@ -94,7 +94,6 @@
         v-model="toggle"
         dense
         hide-details
-        :disabled="toggleDisabled"
         class="mt-0 px-1"
       />
       <me-cs-action-resource v-if="item.resource" :id="item.resource.id" :resource="item.resource" />
@@ -135,7 +134,7 @@ export default {
     },
     minHeight () {
       return this.item.resource
-        ? this.item.shortDesc
+        ? this.item.shortDesc || this.item.properties?.length
           ? 64
           : 52
         : undefined

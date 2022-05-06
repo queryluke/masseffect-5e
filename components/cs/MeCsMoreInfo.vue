@@ -3,16 +3,20 @@
     <v-card-text v-if="!loading">
       <component :is="toDisplay.moreInfo.component" v-if="toDisplay.moreInfo && toDisplay.moreInfo.component" :item="toDisplay.moreInfo.bind" />
       <me-html v-else-if="html" :content="html" />
-      <div v-if="additional">
-        <template v-for="(add, index) in additional">
-          <div v-if="add" :key="`addinfo-${index}`" class="mt-2">
-            <div class="text-subtitle-1">
-              {{ add.name }}
-            </div>
-            <me-html :content="add.html" />
-          </div>
-        </template>
-      </div>
+      <v-row>
+        <v-expansion-panels v-if="additional">
+          <template v-for="(add, index) in additional">
+            <v-expansion-panel v-if="add" :key="`addinfo-${index}`">
+              <v-expansion-panel-header>
+                {{ add.name }}
+              </v-expansion-panel-header>
+              <v-expansion-panel-content>
+                <me-html :content="add.html" />
+              </v-expansion-panel-content>
+            </v-expansion-panel>
+          </template>
+        </v-expansion-panels>
+      </v-row>
     </v-card-text>
   </v-card>
 </template>
@@ -41,7 +45,7 @@ export default {
           const item = this.$store.getters.getItem(i.model, i.id)
           if (item) {
             return {
-              name: item.name,
+              name: i.name || item.name,
               html: item.html
             }
           }

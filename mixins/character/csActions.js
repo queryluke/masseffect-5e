@@ -162,13 +162,6 @@ export const CsActions = {
       }
       return hitRoll
     },
-    toggleDisabled () {
-      if (!this.item.resource || this.toggle) {
-        return false
-      }
-      const resourceMax = this.mcBonus(this.item.resource.max)
-      return this.resources[this.item.resource.id] >= resourceMax
-    },
     toggleOptions () {
       return this.item.toggle?.options || false
     },
@@ -254,7 +247,6 @@ export const CsActions = {
       if (toggle.type !== 'resource' || !toggle.value) {
         return
       }
-      console.log('executing', toggle)
       let value = this.mcBonus(toggle.value)
       if (toggle.method !== 'set') {
         const currentValue = this.resources[toggle.id] || 0

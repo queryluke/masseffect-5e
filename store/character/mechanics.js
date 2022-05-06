@@ -104,7 +104,6 @@ export const getters = {
     function hydrateAugments (finalMechanics = []) {
       const augments = finalMechanics.filter(i => i.type === 'augment')
       const nonAugments = finalMechanics.filter(i => i.type !== 'augment')
-      const newMechanics = []
       for (const augment of augments) {
         if (!augment.merge) {
           continue
@@ -125,13 +124,11 @@ export const getters = {
               localMatchingIndex += 1
               continue
             }
-            newMechanics.push(merge(cloneDeep(augmentable), augment.merge))
-            nonAugments.splice(augmentIndex, 1)
+            nonAugments.splice(augmentIndex, 1, merge(cloneDeep(augmentable), augment.merge))
           }
         }
       }
-      newMechanics.push(...nonAugments)
-      return newMechanics
+      return nonAugments
     }
 
     const preToggleMechanics = hydrateAugments(preAugmentMechanics)

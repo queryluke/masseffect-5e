@@ -49,7 +49,7 @@
               <div class="mt-1">
                 <me-cs-powers-mods />
               </div>
-              <v-row class="mx-4 mt-2">
+              <v-row class="mx-4 mt-2" no-gutters>
                 <v-col cols="8">
                   <me-cs-powers-level-filter />
                 </v-col>
@@ -57,6 +57,9 @@
                   <v-btn x-small outlined color="primary" @click="$store.dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-powers-manager')">
                     Manage
                   </v-btn>
+                </v-col>
+                <v-col cols="12" class="mt-2">
+                  <me-cs-powers-global-notes />
                 </v-col>
               </v-row>
               <v-divider class="mt-2" />
@@ -132,8 +135,10 @@
 </template>
 
 <script>
+import MeCsPowersGlobalNotes from '~/components/cs/powers/MeCsPowersGlobalNotes'
 export default {
   name: 'MeCsViewsLg',
+  components: { MeCsPowersGlobalNotes },
   data () {
     return {
       tab: null,
