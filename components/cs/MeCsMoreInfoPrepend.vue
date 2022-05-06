@@ -1,7 +1,7 @@
 <template>
   <v-list-item>
     <v-list-item-content>
-      <v-list-item-title>{{ toDisplay.name }}</v-list-item-title>
+      <v-list-item-title>{{ name }}</v-list-item-title>
     </v-list-item-content>
   </v-list-item>
 </template>
@@ -10,11 +10,15 @@
 export default {
   name: 'MeCsMoreInfo',
   computed: {
-    sideNav () {
-      return this.$store.getters['character/navigation/sideNav']
-    },
     toDisplay () {
       return this.$store.getters['character/navigation/toDisplay']
+    },
+    name () {
+      let model = false
+      if (this.toDisplay.moreInfo?.model) {
+        model = this.$store.getters.getItem(this.toDisplay.moreInfo.model, this.toDisplay.moreInfo.id)
+      }
+      return model?.name || this.toDisplay.name
     }
   }
 }

@@ -103,7 +103,6 @@ export const getters = {
     // AUGMENTS
     function hydrateAugments (finalMechanics = []) {
       const augments = finalMechanics.filter(i => i.type === 'augment')
-      console.log(augments)
       const nonAugments = finalMechanics.filter(i => i.type !== 'augment')
       for (const augment of augments) {
         if (!augment.merge) {
@@ -129,7 +128,6 @@ export const getters = {
           }
         }
       }
-      console.log(nonAugments)
       return nonAugments
     }
 
@@ -244,7 +242,7 @@ export const getters = {
         }
         mod = rootGetters['character/powers/klassPowercastingAbilities'][bonus.value]
         if (mod) {
-          b += rootGetters[`character/abilities/${mod}Mod`]
+          b += (rootGetters[`character/abilities/${mod}Mod`] * multiplier)
         }
         break
       case 'resource':

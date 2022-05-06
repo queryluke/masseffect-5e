@@ -189,8 +189,8 @@ export default {
     }
   },
   watch: {
-    techArmor (newVal) {
-      if (newVal > this.techArmorMax) {
+    techArmor (newVal, oldVal) {
+      if (newVal > this.techArmorMax || oldVal === 0) {
         this.techArmorMax = newVal
       }
     }
