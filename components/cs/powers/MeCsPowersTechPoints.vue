@@ -1,5 +1,6 @@
 <template>
   <me-cb-debounced-number-input
+    v-if="techPoints.max > 0"
     :current="currentTp"
     :max="techPoints.max"
     label="Tech Points"

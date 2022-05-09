@@ -104,7 +104,10 @@ export const getters = {
       if (slotCasting) {
         const klassLevel = rootGetters['character/klasses/level']
         for (const slot of slots) {
-          base[slot].max = slotCasting.powercasting[slot][klassLevel - 1]
+          const klassSlot = slotCasting.powercasting.slots[slot]
+          if (klassSlot) {
+            base[slot].max = slotCasting.powercasting.slots[slot][klassLevel - 1]
+          }
         }
       }
     }
@@ -266,7 +269,14 @@ export const getters = {
       }
       // upcast cantrips
       if (basePower.level === 0) {
-        const upcastLevel = Math.ceil(rootGetters['character/klasses/level'] / 4) - 1
+        const level = rootGetters['character/klasses/level']
+        const upcastLevel = level < 5
+          ? 0
+          : level < 11
+            ? 1
+            : level < 17
+              ? 2
+              : 3
         if (upcastLevel > 0) {
           const upcastMechanics = power.mechanics[upcastLevel]
           let advancementMechanics = null

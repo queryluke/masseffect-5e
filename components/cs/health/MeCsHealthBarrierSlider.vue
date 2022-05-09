@@ -26,7 +26,7 @@
       <v-btn
         x-small
         :color="csBgColor('barrier')"
-        :disabled="viewOnly || remainingUses === 0"
+        :disabled="viewOnly || remainingTicks === 0"
         @click="useBarrier"
       >
         Roll

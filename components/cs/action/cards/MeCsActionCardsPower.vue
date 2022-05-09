@@ -53,7 +53,7 @@
             </div>
           </me-cs-roll-card>
         </me-cs-action-stat>
-        <me-cs-action-stat v-if="dc">
+        <me-cs-action-stat v-if="!hit && dc">
           {{ dc.target }}
           <template #subtitle>
             <span class="text-uppercase">

@@ -85,6 +85,16 @@ export const CsActions = {
       }
       return this.item.damage.map((i) => {
         const damage = { ...damageDefault, ...i }
+        if (damage.dieCount.toString().startsWith('barrierRemaining')) {
+          const barrier = this.$store.getters['character/hp/barrier']
+          const ticksRemaining = barrier.ticks.max - barrier.ticks.used
+          damage.dieCount = damage.dieCount.split('+').reduce((acc, curr) => {
+            console.log(curr)
+            return curr.trim() === 'barrierRemaining'
+              ? acc + ticksRemaining
+              : acc + (parseInt(curr.trim(), 10) || 0)
+          }, 0)
+        }
         let bonus = damage.bonus ? this.mcBonus(damage.bonus) : 0
         const mod = damage.mod ? this.abilityBreakdown[damage.mod].mod : 0
         bonus += mod

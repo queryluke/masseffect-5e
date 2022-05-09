@@ -29,7 +29,10 @@ export default {
         array.push(this.$t(`attack_types.${this.mechanic.attack.type}`))
       }
       if (this.mechanic.dc?.save) {
-        array.push(this.$t('save_text', { type: this.$t(`abilities.${this.mechanic.dc.save}.abbr`) }))
+        const text = ['str', 'dex', 'con', 'int', 'wis', 'cha'].includes(this.mechanic.dc.save)
+          ? this.$t('save_text', { type: this.$t(`abilities.${this.mechanic.dc.save}.abbr`) })
+          : this.mechanic.dc.save
+        array.push(text)
       }
       if (array.length === 0) {
         return '-'

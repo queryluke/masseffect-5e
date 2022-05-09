@@ -1,5 +1,5 @@
 <template>
-  <v-card flat tile>
+  <v-card v-if="item" flat tile>
     <v-card flat color="transparent">
       <v-card-text class="d-flex justify-space-between align-center">
         <!-- CAST BTN -->
