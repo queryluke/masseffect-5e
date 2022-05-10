@@ -90,17 +90,19 @@ export default {
           this.$store.dispatch('character/resources/SET_RESOURCE', { id: this.item.id, value: currentValue + 1 })
         }
       }
-      switch (this.powercastingType) {
-        case 'slots':
-          value = this.powerSlotAtLevel.used + 1
-          this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `currentStats.psUsed.${this.item.level - 1}`, value })
-          break
-        case 'points':
-          value = this.techPoints.used + this.item.level
-          this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.tpUsed', value })
-          break
-        default:
-          break
+      if (this.item.type !== 'combat') {
+        switch (this.powercastingType) {
+          case 'slots':
+            value = this.powerSlotAtLevel.used + 1
+            this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `currentStats.psUsed.${this.item.level - 1}`, value })
+            break
+          case 'points':
+            value = this.techPoints.used + this.item.level
+            this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.tpUsed', value })
+            break
+          default:
+            break
+        }
       }
     }
   }
