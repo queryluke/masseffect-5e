@@ -87,8 +87,7 @@ export default {
       klassIcons: 'klasses/klassIcons',
       klassPowercastingMaxes: 'powers/klassPowercastingMaxes',
       levelFilter: 'navigation/learnedPowersLevelFilter',
-      selectedPowers: 'powers/selectedPowers',
-      mechanics: 'mechanics/mechanics'
+      selectedPowers: 'powers/selectedPowers'
     }),
     klassIndex () {
       return this.klasses.findIndex(i => i.id === this.klass.id)
@@ -105,15 +104,14 @@ export default {
     availablePowersAndCantrips () {
       const powers = []
       for (const p of this.powersAvailableToKlass) {
-        const learned = this.character.powers.find(i => i.id === p.id && i.klass === this.klass.id)
-        console.log(this.mechanics)
-        const learnedFromFeature = this.mechanics.filter(i => i.type === 'power')
-        console.log(learnedFromFeature)
+        const learned = this.selectedPowers.find(i => i.id === p.id && i.klass === this.klass.id)
+        console.log(learned)
         const base = {
           data: p,
           learned: !!learned,
           advancement: learned?.advancement,
-          notAvailable: false
+          notAvailable: false,
+          fromFeature: learned?.source || false
         }
         if (p.level === 0 && this.pcMaxes.numCantrips > 0) {
           powers.push(base)
@@ -133,10 +131,18 @@ export default {
       return powers.sort((a, b) => a.data.level - b.data.level)
     },
     learnedCantripsCount () {
-      return this.availablePowersAndCantrips.filter(i => i.learned && i.data.level === 0).reduce((acc, curr) => acc + (curr.advancement ? 2 : 1), 0)
+      return this.availablePowersAndCantrips.filter(i => (i.learned || i.fromFeature) && i.data.level === 0).reduce((acc, curr) => {
+        const adder = curr.fromFeature ? 0 : 1
+        const adv = curr.advancement ? 1 : 0
+        return acc + adder + adv
+      }, 0)
     },
     learnedPowersCount () {
-      return this.availablePowersAndCantrips.filter(i => i.learned && i.data.level > 0).reduce((acc, curr) => acc + (curr.advancement ? 2 : 1), 0)
+      return this.availablePowersAndCantrips.filter(i => (i.learned || i.fromFeature) && i.data.level > 0).reduce((acc, curr) => {
+        const adder = curr.fromFeature ? 0 : 1
+        const adv = curr.advancement ? 1 : 0
+        return acc + adder + adv
+      }, 0)
     },
     filteredPowers () {
       return this.availablePowersAndCantrips.filter((i) => {
@@ -157,13 +163,17 @@ export default {
     }
   },
   methods: {
-    setPowerAdv ({ id, advId }) {
-      const cloned = this.character.powers.slice()
-      const index = cloned.findIndex(i => i.id === id && i.klass === this.klass.id)
-      if (index > -1) {
-        const match = cloned[index]
-        cloned.splice(index, 1, { ...cloned[index], advancement: match.advancement === advId ? null : advId })
-        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'powers', value: cloned })
+    setPowerAdv ({ id, advId, fromFeature }) {
+      if (fromFeature) {
+        this.$store.dispatch('character/selections/UPSERT_SELECTION', { limit: false, path: `${fromFeature}/advancements`, value: [{ id, type: 'advancement', value: advId }] })
+      } else {
+        const cloned = this.character.powers.slice()
+        const index = cloned.findIndex(i => i.id === id && i.klass === this.klass.id)
+        if (index > -1) {
+          const match = cloned[index]
+          cloned.splice(index, 1, { ...cloned[index], advancement: match.advancement === advId ? null : advId })
+          this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'powers', value: cloned })
+        }
       }
     },
     togglePower (id) {

@@ -18,7 +18,7 @@
       :disabled="!castable"
       @click.stop="castPower"
     >
-      <small>{{ atWill ? 'at will' : 'cast' }}</small>
+      <small>{{ atWill ? 'at will' : useable ? 'use' : 'cast' }}</small>
     </v-btn>
   </v-badge>
 </template>
@@ -48,7 +48,10 @@ export default {
       return this.powerSlots[this.item.level]
     },
     atWill () {
-      return (this.item.level === 0 && !this.item.resource) || (this.item.level > 0 && this.item.resource && this.item.resource.reset !== 'cast')
+      return (this.item.level === 0 && !this.item.resource) || (this.item.alwaysCastable && this.item.alwaysCastable === this.item.level)
+    },
+    useable () {
+      return this.item.resource && this.item.resource.reset !== 'cast'
     },
     castable () {
       if (this.atWill || !this.powercastingType) {
@@ -56,7 +59,7 @@ export default {
       }
       if (this.item.resource && this.item.resource.reset !== 'cast') {
         const max = this.$store.getters['character/mechanics/mcBonus'](this.item.resource.max || { type: 'flat', value: 1 })
-        return (this.$store.getters['character/resources/resources'][this.item.id] || 0) < max
+        return (this.$store.getters['character/resources/resources'][this.item.resource.id] || 0) < max
       }
       switch (this.powercastingType) {
         case 'slots':
@@ -83,11 +86,11 @@ export default {
           } else {
             resetTo = this.item.resource.min || 0
           }
-          this.$store.dispatch('character/resources/SET_RESOURCE', { id: this.item.id, value: resetTo })
+          this.$store.dispatch('character/resources/SET_RESOURCE', { id: this.item.resource.id, value: resetTo })
         } else {
           // otherwise decrement the resource
-          const currentValue = this.$store.getters['character/resources/resources'][this.item.id] || 0
-          this.$store.dispatch('character/resources/SET_RESOURCE', { id: this.item.id, value: currentValue + 1 })
+          const currentValue = this.$store.getters['character/resources/resources'][this.item.resource.id] || 0
+          this.$store.dispatch('character/resources/SET_RESOURCE', { id: this.item.resource.id, value: currentValue + 1 })
         }
       }
       if (this.item.type !== 'combat') {

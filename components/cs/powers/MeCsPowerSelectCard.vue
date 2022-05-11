@@ -33,6 +33,16 @@
       <div class="d-flex justify-end align-center">
         <!-- add/remove button -->
         <v-btn
+          v-if="item.fromFeature"
+          x-small
+          text
+          disabled
+          max-width="52"
+        >
+          {{ prepared ? 'Prepared' : 'Learned' }}
+        </v-btn>
+        <v-btn
+          v-else
           x-small
           outlined
           :color="item.learned ? 'error' : 'primary'"
@@ -54,7 +64,7 @@
         </v-btn>
       </div>
     </div>
-    <v-card-actions v-if="item.data.advancements && item.learned" class="pt-0">
+    <v-card-actions v-if="item.data.advancements && (item.learned || item.fromFeature)" class="pt-0">
       <!-- Advancement Menu -->
       <v-menu offset-y>
         <template #activator="{ on, attrs }">
@@ -64,7 +74,7 @@
             x-small
             outlined
             class="mr-1"
-            :disabled="!item.learned"
+            :disabled="!item.learned && !item.fromFeature"
             v-on="on"
           >
             {{ advMenuText }}
@@ -77,7 +87,7 @@
           <v-list-item
             v-for="adv in item.data.advancements"
             :key="adv.id"
-            @click="$emit('setPowerAdv', { id: item.data.id, advId: adv.id })"
+            @click="$emit('setPowerAdv', { id: item.data.id, advId: adv.id, fromFeature: item.fromFeature })"
           >
             <v-list-item-icon>
               <v-icon :color="item.advancement === adv.id? 'primary' : undefined" size="16">

@@ -2,7 +2,7 @@ import createPersistedState from 'vuex-persistedstate'
 
 export default ({ app, store }) => {
   createPersistedState({
-    key: app.$config.version.replace(/\./g, ''),
+    key: 'v140',
     paths: [
       'auth.isAuthenticated',
       'auth.redirect',
