@@ -226,8 +226,7 @@ export const getters = {
       combat: 'dex'
     }
     for (const p of getters.selectedPowers) {
-      // i.value needed for selections/mechanicbag
-      const power = list.find(i => i.id === (p.id || p.value))
+      const power = list.find(i => i.id === p.id)
       // TODO: global override here
       const baseMechanics = power.mechanics[0]
       // TODO: either-or mods like str or dex (if they exist)
@@ -347,6 +346,7 @@ export const getters = {
       }
       return {
         ...power,
+        id: power.value,
         source,
         advancement: advancement?.value
       }

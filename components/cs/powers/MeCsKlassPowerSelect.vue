@@ -86,7 +86,9 @@ export default {
       klasses: 'klasses/selectedKlasses',
       klassIcons: 'klasses/klassIcons',
       klassPowercastingMaxes: 'powers/klassPowercastingMaxes',
-      levelFilter: 'navigation/learnedPowersLevelFilter'
+      levelFilter: 'navigation/learnedPowersLevelFilter',
+      selectedPowers: 'powers/selectedPowers',
+      mechanics: 'mechanics/mechanics'
     }),
     klassIndex () {
       return this.klasses.findIndex(i => i.id === this.klass.id)
@@ -104,6 +106,9 @@ export default {
       const powers = []
       for (const p of this.powersAvailableToKlass) {
         const learned = this.character.powers.find(i => i.id === p.id && i.klass === this.klass.id)
+        console.log(this.mechanics)
+        const learnedFromFeature = this.mechanics.filter(i => i.type === 'power')
+        console.log(learnedFromFeature)
         const base = {
           data: p,
           learned: !!learned,
