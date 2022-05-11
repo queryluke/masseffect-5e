@@ -11,8 +11,8 @@
         Take a {{ type }} rest?
       </v-card-title>
       <v-card-text>
-        <!-- biotic recovery -->
-        <v-card v-if="(adeptLevel || nemesisLevel) && type === 'short' && character.currentStats.psUsed.some(i => i > 0)" shaped outlined elevation="0">
+        <!-- biotic recovery
+        <v-card v-if="type === 'short' && character.currentStats.psUsed.some(i => i > 0)" shaped outlined elevation="0">
           <v-card-title class="text-subtitle-2">
             Biotic Recovery: {{ maxBioticRecoverySlots }} levels worth of power slots
           </v-card-title>
@@ -61,21 +61,15 @@
             </v-row>
           </v-card-text>
         </v-card>
+        -->
 
         <!-- recharge -->
-        <v-card v-if="engineerLevel && type === 'short'" shaped outlined class="mt-2" elevation="0">
-          <v-card-title class="text-subtitle-2">
-            Engineer Recharge: 1d{{ maxEngineerRecharge }}
+        <v-card v-if="type === 'short' && tpRecharges.length" shaped outlined class="mt-2" elevation="0">
+          <v-card-title>
+            Tech Point Recharge
           </v-card-title>
-          <v-card-text class="px-3 py-0">
-            <v-slider
-              v-model="engineerRecharge"
-              :label="engineerRecharge.toString()"
-              ticks="always"
-              tick-size="6"
-              :tick-labels="engineerRechargeTickLabels"
-              :max="maxEngineerRecharge"
-            />
+          <v-card-text text="px-3 py-0">
+            <me-cs-rest-tp-recharge v-for="(recharge, index) of tpRecharges" :key="`recharge-${index}`" :recharge="recharge" :reset="resetting" @recharge="setRecharge($event)" />
           </v-card-text>
         </v-card>
 
@@ -137,21 +131,26 @@ export default {
       type: 'short',
       working: false,
       bioticRecovery: [0, 0, 0],
-      engineerRecharge: 0,
+      tpRecharge: 0,
       hpFromHitDice: null,
       reduceIndoctrination: false,
-      reduceExhaustion: false
+      reduceExhaustion: false,
+      resetting: false
     }
   },
   computed: {
     ...mapGetters({
       character: 'character',
       klasses: 'klasses/selectedKlasses',
+      pactSlots: 'powers/pactSlots',
       mechanics: 'mechanics/mechanics',
       powers: 'powers/powers',
       level: 'klasses/level',
       restMenu: 'navigation/restMenu'
     }),
+    tpRecharges () {
+      return this.mechanics.filter(i => i.type === 'tp-recharge')
+    },
     shown: {
       get () {
         return !!this.restMenu
@@ -163,69 +162,6 @@ export default {
     viewOnly () {
       return this.$store.state.character.viewOnly
     },
-    adeptLevel () {
-      const adept = this.klasses.find(i => i.id === 'adept')
-      return adept ? adept.levels : false
-    },
-    engineerLevel () {
-      const engineer = this.klasses.find(i => i.id === 'engineer')
-      return engineer ? engineer.levels : false
-    },
-    sentinelLevel () {
-      const sentinel = this.klasses.find(i => i.id === 'sentinel')
-      return sentinel ? sentinel.levels : false
-    },
-    sentinelSlotRecoveryNumber () {
-      return Math.min(this.sentinelSlotRecovery.numSlots, this.character.currentStats.psUsed[this.sentinelSlotRecovery.slotLvl - 1])
-    },
-    sentinelSlotRecovery () {
-      // FIXME: ugly hardcoded
-      const numSlots = [1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4][this.sentinelLevel - 1]
-      const slotLvl = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3][this.sentinelLevel - 1]
-      return { numSlots, slotLvl }
-    },
-    maxEngineerRecharge () {
-      return this.engineerLevel >= 15 ? 8 : this.engineerRecharge >= 11 ? 6 : 4
-    },
-    engineerRechargeTickLabels () {
-      return [...Array(this.maxEngineerRecharge + 1).keys()]
-    },
-    nemesisLevel () {
-      const nemesis = this.klasses.find(i => i.id === 'vanguard' && i.subclass === 'nemesis')
-      return nemesis ? nemesis.levels : false
-    },
-    maxBioticRecoverySlots () {
-      let maxSlotRecovery = 0
-      if (this.adeptLevel) {
-        maxSlotRecovery += Math.floor(this.adeptLevel / 2)
-      }
-      if (this.nemesisLevel) {
-        maxSlotRecovery += Math.floor(this.nemesisLevel / 3)
-      }
-      return Math.max(1, maxSlotRecovery)
-    },
-    bioticRecoveryTotal () {
-      return this.bioticRecovery.reduce((a, c, i) => a + (c * (i + 1)), 0)
-    },
-    brFirstItems () {
-      return [...Array(Math.max(0, this.maxBioticRecoverySlots)).keys()].map(i => i + 1).filter((i) => {
-        return (this.bioticRecoveryTotal - this.bioticRecovery[0]) + i <= this.maxBioticRecoverySlots
-      })
-    },
-    brSecondItems () {
-      return [...Array(Math.max(0, this.maxBioticRecoverySlots)).keys()].map(i => i + 1).filter((i) => {
-        const currentValue = this.bioticRecovery[1] * 2
-        const newValue = i * 2
-        return (this.bioticRecoveryTotal - currentValue) + newValue <= this.maxBioticRecoverySlots
-      })
-    },
-    brThirdItems () {
-      return [...Array(Math.max(0, this.maxBioticRecoverySlots)).keys()].map(i => i + 1).filter((i) => {
-        const currentValue = this.bioticRecovery[2] * 3
-        const newValue = i * 3
-        return (this.bioticRecoveryTotal - currentValue) + newValue <= this.maxBioticRecoverySlots
-      })
-    },
     regainAllHitDice () {
       return this.mechanics.find(i => i.type === 'regain-all-hit-dice')
     }
@@ -234,6 +170,7 @@ export default {
     restMenu (newVal) {
       if (newVal) {
         this.type = newVal
+        this.resetting = false
       } else {
         this.reset()
       }
@@ -242,9 +179,14 @@ export default {
   methods: {
     reset () {
       this.bioticRecovery = [0, 0, 0]
-      this.engineerRecharge = 0
+      this.tpRecharge = 0
       this.hpFromHitDice = null
       this.working = false
+      this.resetting = true
+    },
+    setRecharge (value) {
+      this.tpRecharge += value
+      console.log(this.tpRecharge)
     },
     execRest (type) {
       this.working = true
@@ -261,23 +203,17 @@ export default {
         currentStatsClone.psUsed = [0, 0, 0, 0, 0]
         currentStatsClone.tpUsed = 0
       } else if (type === 'short') {
-        // SHORT REST, biotic recovery, sentinel
-        const slotsToRecover = [0, 0, 0, 0, 0]
-        // sentinel all slots
-        if (this.sentinelLevel) {
-          const { numSlots, slotLvl } = this.sentinelSlotRecovery
-          currentStatsClone.psUsed[slotLvl - 1] -= numSlots
+        // SHORT REST
+        // pactCastings
+        if (this.pactSlots.slotLevel > 0) {
+          currentStatsClone.psUsed[this.pactSlots.slotLevel - 1] = Math.max(0, currentStatsClone.psUsed[this.pactSlots.slotLevel - 1] - this.pactSlots.numSlots)
         }
         // biotic recovery
-        for (const [slotLvlIndex, value] of this.bioticRecovery.entries()) {
-          slotsToRecover[slotLvlIndex] += value
-        }
-        for (const [slotLvlIndex, currVal] of currentStatsClone.psUsed.entries()) {
-          currentStatsClone.psUsed[slotLvlIndex] = Math.max(0, currVal - slotsToRecover[slotLvlIndex])
-        }
+        // TODO: this
+
         // tech points
-        if (this.engineerLevel && this.engineerLevel >= 7) {
-          currentStatsClone.tpUsed = Math.max(0, currentStatsClone.tpUsed - this.engineerRecharge)
+        if (this.tpRecharge > 0) {
+          currentStatsClone.tpUsed = Math.max(0, currentStatsClone.tpUsed - this.tpRecharge)
         }
       }
 

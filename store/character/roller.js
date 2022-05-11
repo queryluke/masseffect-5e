@@ -35,6 +35,15 @@ export const actions = {
       notation: notation || customNotation
     })
   },
+  INTERNAL_ROLL (ctx, notation) {
+    console.log(notation)
+    const roll = new DiceRoll(notation.toString())
+    const results = roll.output.split(/[:=]/)[1].trim()
+    return {
+      results,
+      total: roll.total
+    }
+  },
   ROLL ({ dispatch, rootGetters }, payload) {
     const roll = new DiceRoll(payload.notation.toString())
     const results = roll.output.split(/[:=]/)[1].trim()

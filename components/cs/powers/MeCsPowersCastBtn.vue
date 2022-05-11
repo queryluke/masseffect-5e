@@ -48,7 +48,14 @@ export default {
       return this.powerSlots[this.item.level]
     },
     atWill () {
-      return (this.item.level === 0 && !this.item.resource) || (this.item.alwaysCastable && this.item.alwaysCastable === this.item.level)
+      const isCantrip = this.item.level === 0 && !this.item.resource
+      let alwaysCastable = false
+      if (typeof this.item.alwaysCastable === 'object') {
+        alwaysCastable = this.$store.getters['character/mechanics/mcBonus'](this.item.alwaysCastable)
+      } else if (typeof this.item.alwaysCastable === 'number') {
+        alwaysCastable = this.item.alwaysCastable
+      }
+      return isCantrip || (alwaysCastable && alwaysCastable >= this.item.level)
     },
     useable () {
       return this.item.resource && this.item.resource.reset !== 'cast'

@@ -105,13 +105,12 @@ export default {
       const powers = []
       for (const p of this.powersAvailableToKlass) {
         const learned = this.selectedPowers.find(i => i.id === p.id && i.klass === this.klass.id)
-        console.log(learned)
         const base = {
           data: p,
           learned: !!learned,
           advancement: learned?.advancement,
           notAvailable: false,
-          fromFeature: learned?.source || false
+          fromFeature: learned?.path || false
         }
         if (p.level === 0 && this.pcMaxes.numCantrips > 0) {
           powers.push(base)

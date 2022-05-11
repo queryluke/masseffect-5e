@@ -330,7 +330,6 @@ export const getters = {
   },
   selectedPowers: (state, getters, rootState, rootGetters) => {
     const advancements = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'advancement')
-    console.log(advancements)
     const mechanicPowers = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'powers').map((power) => {
       const advancement = advancements.find(adv => power.value === adv.id)
       // const advancementId
@@ -348,6 +347,7 @@ export const getters = {
       return {
         ...power,
         id: power.value,
+        path: power.source,
         source,
         advancement: advancement?.value
       }
