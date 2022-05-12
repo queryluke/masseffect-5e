@@ -49,6 +49,9 @@
                 <me-cs-card-title>Actions</me-cs-card-title>
                 <div class="mx-2">
                   <me-cs-card-nav-chips chip-set="actions" />
+                  <div class="mt-1">
+                    <me-cs-global-notes sub-type="action" />
+                  </div>
                 </div>
               </template>
               <v-card-text class="px-2">
@@ -75,6 +78,9 @@
                   <v-btn x-small outlined color="primary" @click="$store.dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-powers-manager')">
                     Manage
                   </v-btn>
+                </v-col>
+                <v-col cols="12">
+                  <me-cs-global-notes sub-type="power" />
                 </v-col>
               </v-row>
               <template v-for="powerLevel in [0, 1, 2, 3, 4, 5]">

@@ -45,6 +45,17 @@
                 </v-tab>
               </template>
             </v-tabs>
+            <!-- Action section prepends -->
+            <div v-if="tab === 0">
+              <div class="mt-1 mx-1">
+                <me-cs-card-nav-chips chip-set="actions" />
+                <div class="mt-1">
+                  <me-cs-global-notes sub-type="action" />
+                </div>
+              </div>
+              <v-divider class="mt-2" />
+            </div>
+            <!-- Power section prepends -->
             <div v-if="tab === 1">
               <div class="mt-1">
                 <me-cs-powers-mods />
@@ -59,7 +70,7 @@
                   </v-btn>
                 </v-col>
                 <v-col cols="12" class="mt-2">
-                  <me-cs-powers-global-notes />
+                  <me-cs-global-notes sub-type="power" />
                 </v-col>
               </v-row>
               <v-divider class="mt-2" />
@@ -68,7 +79,6 @@
           <v-tabs-items v-model="tab" class="mb-3">
             <v-tab-item>
               <div class="px-4">
-                <me-cs-card-nav-chips chip-set="actions" />
                 <me-cs-actions />
               </div>
             </v-tab-item>
@@ -135,10 +145,8 @@
 </template>
 
 <script>
-import MeCsPowersGlobalNotes from '~/components/cs/powers/MeCsPowersGlobalNotes'
 export default {
   name: 'MeCsViewsLg',
-  components: { MeCsPowersGlobalNotes },
   data () {
     return {
       tab: null,

@@ -2,17 +2,7 @@
   <div>
     <div v-show="showTab(1)">
       <me-cs-action-list :items="csAllActions.attacks">
-        Attacks
-        <template #notes>
-          <div v-if="globalAttackNotes.length" class="mt-1 mb-2">
-            <div v-for="(gNote, index) in globalAttackNotes" :key="`gNote-${index}`" class="d-flex text-caption">
-              <v-icon size="16" class="mr-1">
-                {{ gNote.attack === 'ranged' ? 'mdi-target' : gNote === 'melee' ? 'mdi-sword' : 'mdi-octagram' }}
-              </v-icon>
-              <me-html inline :content="gNote.value" />
-            </div>
-          </div>
-        </template>
+        Attacks <span v-if="extraAttacks" class="text-body-2"><small>({{ extraAttacks }} attacks per action)</small></span>
       </me-cs-action-list>
     </div>
     <div v-show="showTab(2)">
@@ -60,6 +50,13 @@ export default {
     },
     actionsList () {
       return this.$store.getters.getData('actions')
+    },
+    extraAttacks () {
+      const extraAttackMechanics = this.mechanics.filter(i => i.type === 'extra-attack')
+      if (extraAttackMechanics.length) {
+        return Math.max(...extraAttackMechanics.map(i => i.value))
+      }
+      return false
     },
     barrierAction () {
       if (this.barrier.uses.max === 0) {

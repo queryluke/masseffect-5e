@@ -44,6 +44,9 @@
         <template #header>
           <me-cs-card-title>Actions</me-cs-card-title>
           <me-cs-card-nav-chips chip-set="actions" />
+          <div class="mt-1">
+            <me-cs-global-notes sub-type="action" />
+          </div>
         </template>
         <v-card-text class="px-2">
           <me-cs-actions />
@@ -78,6 +81,9 @@
         </v-row>
         <div class="my-2">
           <me-cs-powers-level-filter />
+          <div class="mt-1">
+            <me-cs-global-notes sub-type="power" />
+          </div>
         </div>
         <template v-for="powerLevel in [0, 1, 2, 3, 4, 5]">
           <me-cs-powers-by-level :key="`powerLevel-${powerLevel}`" :level="powerLevel" />

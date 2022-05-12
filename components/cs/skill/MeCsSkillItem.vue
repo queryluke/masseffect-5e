@@ -1,9 +1,9 @@
 <template>
   <div class="d-flex justify-space-between mx-3 mt-2">
     <div class="d-flex align-center">
-      <v-avatar :color="item.proficient && !item.expertise ? 'primary' : 'transparent'" size="12">
-        <v-icon v-if="item.expertise" size="16" color="orange">
-          mdi-star
+      <v-avatar color="transparent" size="12">
+        <v-icon v-if="someProf" size="16" :color="color">
+          {{ icon }}
         </v-icon>
       </v-avatar>
       <div class="text-body-2 pl-2">
@@ -44,6 +44,19 @@ export default {
         detail: this.item.name,
         type: 'check'
       }
+    },
+    someProf () {
+      return this.item.expertise || this.item.halfProf || this.item.proficient
+    },
+    color () {
+      return this.item.expertise ? 'orange' : 'primary'
+    },
+    icon () {
+      return this.item.expertise
+        ? 'mdi-star'
+        : this.item.halfProf
+          ? 'mdi-circle-half-full'
+          : 'mdi-checkbox-blank-circle'
     }
   }
 }
