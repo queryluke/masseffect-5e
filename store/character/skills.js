@@ -37,7 +37,7 @@ export const getters = {
             ? Math.floor(profBonus / 2)
             : 0
       const baseMod = rootGetters[`character/abilities/${skill.link}Mod`] + profBonusBonus
-      const mechanics = scMechanics.filter(i => i.value?.includes(skill.id))
+      const mechanics = scMechanics.filter(i => i.value?.includes(skill.id) || (i.value === 'proficient' && proficient))
       const bonuses = mechanics.filter(i => i.effect?.type === 'bonus').reduce((acc, curr) => acc + rootGetters['character/mechanics/mcBonus'](curr.effect.bonus), 0)
       const mod = baseMod + bonuses
       const passiveBonus = allMechanics.filter(i => i.type === 'passive' && i.value.includes(skill.id)).reduce((acc, curr) => acc + rootGetters['character/mechanics/mcBonus'](curr.bonus), 0)

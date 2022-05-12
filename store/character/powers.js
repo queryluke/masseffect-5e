@@ -245,6 +245,7 @@ export const getters = {
         })
         : false
       const resource = p.resource || baseMechanics.resource
+      const newBm = p.merge ? merge(baseMechanics, p.merge) : baseMechanics
       const basePower = {
         id: power.id,
         name: power.name,
@@ -260,7 +261,7 @@ export const getters = {
         type: power.type,
         upcast: false,
         alwaysCastable: p.alwaysCastable,
-        ...baseMechanics,
+        ...newBm,
         resource,
         attack,
         dc,

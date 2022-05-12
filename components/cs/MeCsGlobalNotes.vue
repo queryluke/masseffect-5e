@@ -12,7 +12,7 @@
       <v-icon left size="14">
         {{ note.attack ? note.attack === 'ranged' ? 'mdi-target' : 'mdi-sword' : 'mdi-alert-circle' }}
       </v-icon>
-      <me-html :content="note.value" class="text-caption" />
+      <me-html :content="value(note)" class="text-caption" />
     </v-chip>
   </div>
 </template>
@@ -43,6 +43,18 @@ export default {
       const component = note.component || 'me-cs-more-info'
       this.$store.commit('character/navigation/SET', { key: 'toDisplay', value: note })
       this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', component)
+    },
+    value (note) {
+      if (note.value === 'Sneak Attack') {
+        const infil = this.$store.getters['character/klasses/selectedKlasses'].find(i => i.id === 'infiltrator')
+        const levels = infil.levels
+        const numDice = Math.floor(levels / 2) || 1
+        const shadow = infil.subclass === 'shadow' ? ' (d8 w/ melee)' : ''
+        const sniper = infil.subclass === 'sniper' ? ` (${numDice + 3}d6 w/ sniper rifles)` : ''
+        return `Sneak Attack: ${numDice}d6${shadow}${sniper}`
+      } else {
+        return note.value
+      }
     }
   }
 }
