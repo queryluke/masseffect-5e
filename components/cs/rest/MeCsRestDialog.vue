@@ -11,8 +11,8 @@
         Take a {{ type }} rest?
       </v-card-title>
       <v-card-text>
-        <!-- biotic recovery
-        <v-card v-if="type === 'short' && character.currentStats.psUsed.some(i => i > 0)" shaped outlined elevation="0">
+        <!-- biotic recovery -->
+        <v-card v-if="type === 'short' && maxBioticRecoverySlots" shaped outlined elevation="0">
           <v-card-title class="text-subtitle-2">
             Biotic Recovery: {{ maxBioticRecoverySlots }} levels worth of power slots
           </v-card-title>
@@ -20,14 +20,9 @@
             <div>
               {{ bioticRecoveryTotal }} of {{ maxBioticRecoverySlots }} remaining
             </div>
-            <div v-if="sentinelLevel && type === 'short' && sentinelSlotRecoveryNumber > 0" class="text-caption font-weight-bold">
-              Note: You will regain {{ $t(`string_numbers[${sentinelSlotRecoveryNumber}]`) }}
-              {{ $tc('slot', sentinelSlotRecoveryNumber, { n: `${nthLevelLabel(sentinelSlotRecovery.slotLvl, true)} power ` }) }} from your Sentinel class.
-            </div>
             <v-row>
               <v-col cols="4">
                 <v-select
-                  v-if="character.currentStats.psUsed[0] > 0"
                   :label="nthLevelLabel(1)"
                   :items="brFirstItems"
                   :value="bioticRecovery[0]"
@@ -38,7 +33,6 @@
               </v-col>
               <v-col cols="4">
                 <v-select
-                  v-if="character.currentStats.psUsed[1] > 0"
                   :label="nthLevelLabel(2)"
                   :items="brSecondItems"
                   :value="bioticRecovery[1]"
@@ -49,7 +43,6 @@
               </v-col>
               <v-col cols="4">
                 <v-select
-                  v-if="character.currentStats.psUsed[2] > 0"
                   :label="nthLevelLabel(3)"
                   :items="brThirdItems"
                   :value="bioticRecovery[2]"
@@ -61,7 +54,6 @@
             </v-row>
           </v-card-text>
         </v-card>
-        -->
 
         <!-- recharge -->
         <v-card v-if="type === 'short' && tpRecharges.length" shaped outlined class="mt-2" elevation="0">
@@ -146,10 +138,38 @@ export default {
       mechanics: 'mechanics/mechanics',
       powers: 'powers/powers',
       level: 'klasses/level',
-      restMenu: 'navigation/restMenu'
+      restMenu: 'navigation/restMenu',
+      mcBonus: 'mechanics/mcBonus'
     }),
     tpRecharges () {
       return this.mechanics.filter(i => i.type === 'tp-recharge')
+    },
+    maxBioticRecoverySlots () {
+      return this.mechanics.filter(i => i.type === 'ps-recovery').reduce((acc, curr) => {
+        return acc + this.mcBonus(curr.max)
+      }, 0)
+    },
+    bioticRecoveryTotal () {
+      return this.bioticRecovery.reduce((a, c, i) => a + (c * (i + 1)), 0)
+    },
+    brFirstItems () {
+      return [...Array(Math.max(0, this.maxBioticRecoverySlots)).keys()].map(i => i + 1).filter((i) => {
+        return (this.bioticRecoveryTotal - this.bioticRecovery[0]) + i <= this.maxBioticRecoverySlots
+      })
+    },
+    brSecondItems () {
+      return [...Array(Math.max(0, this.maxBioticRecoverySlots)).keys()].map(i => i + 1).filter((i) => {
+        const currentValue = this.bioticRecovery[1] * 2
+        const newValue = i * 2
+        return (this.bioticRecoveryTotal - currentValue) + newValue <= this.maxBioticRecoverySlots
+      })
+    },
+    brThirdItems () {
+      return [...Array(Math.max(0, this.maxBioticRecoverySlots)).keys()].map(i => i + 1).filter((i) => {
+        const currentValue = this.bioticRecovery[2] * 3
+        const newValue = i * 3
+        return (this.bioticRecoveryTotal - currentValue) + newValue <= this.maxBioticRecoverySlots
+      })
     },
     shown: {
       get () {

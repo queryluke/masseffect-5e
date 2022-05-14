@@ -198,7 +198,7 @@ export const getters = {
         } else {
           b = rootGetters['character/klasses/level']
         }
-        b = b * multiplier
+        b = Math.floor(b * multiplier)
         break
       case 'progressive':
         if (!bonus.value) {

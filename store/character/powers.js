@@ -228,7 +228,8 @@ export const getters = {
     for (const p of getters.selectedPowers) {
       const power = list.find(i => i.id === p.id)
       // TODO: global override here
-      const baseMechanics = power.mechanics[0]
+      let baseMechanics = power.mechanics[0]
+      baseMechanics = p.merge ? merge(cloneDeep(baseMechanics), cloneDeep(p.merge)) : baseMechanics
       // TODO: either-or mods like str or dex (if they exist)
       const mod = p.mod || getters.klassPowercastingAbilities[p.klass] || defaultPcAbility[power.type]
       const attack = baseMechanics.attack
@@ -245,7 +246,6 @@ export const getters = {
         })
         : false
       const resource = p.resource || baseMechanics.resource
-      const newBm = p.merge ? merge(baseMechanics, p.merge) : baseMechanics
       const basePower = {
         id: power.id,
         name: power.name,
@@ -261,7 +261,7 @@ export const getters = {
         type: power.type,
         upcast: false,
         alwaysCastable: p.alwaysCastable,
-        ...newBm,
+        ...baseMechanics,
         resource,
         attack,
         dc,
