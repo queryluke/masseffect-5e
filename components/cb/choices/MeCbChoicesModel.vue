@@ -123,7 +123,10 @@ export default {
   },
   methods: {
     additionalMechanics (mod) {
-      return (mod.mechanics || []).filter(i => i.options)
+      if (Array.isArray(mod?.mechanics)) {
+        return mod.mechanics.filter(i => i.options)
+      }
+      return []
     },
     selectedModelsSubModels (mod) {
       if (this.mechanic.model === 'species') {

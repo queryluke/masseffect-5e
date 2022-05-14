@@ -188,6 +188,9 @@ export const getters = {
         }
         b = Math.max(...b) * multiplier
         break
+      case 'hp':
+        b = Math.floor(rootGetters['character/hp/hp'].max * multiplier)
+        break
       case 'proficiency':
         b = rootGetters['character/profBonus'] * multiplier
         break
