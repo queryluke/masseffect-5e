@@ -316,6 +316,7 @@ export const getters = {
       const eqWeapons = rootGetters['character/equipment/equippedWeapons']
       fhEligible = eqWeapons.length < 2 && eqWeapons.filter(i => i.data.properties.includes('light') && !i.data.properties.includes('two-handed')).length < 2
     }
+    const augments = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'power-augment')
     for (const power of powers) {
       // attack bonuses
       if (power.attack) {
@@ -324,7 +325,53 @@ export const getters = {
           runningBonus = rootGetters['character/mechanics/mcBonus'](power.attack.bonus)
         }
         runningBonus += (fhEligible && power.attack.type === 'ranged' ? 2 : 0)
+        const attackAugmentBonus = augments
+          .filter(i => (i.limits ? (i.limits.type === power.type) : true) && i.augment === 'attack')
+          .reduce((acc, curr) => acc + rootGetters['character/mechanics/mcBonus'](curr.value), 0)
+        runningBonus += attackAugmentBonus
         power.attack.bonus = { type: 'flat', value: runningBonus }
+      }
+      // damage bonuses
+      if (power.damage.length) {
+        const newDamages = []
+        for (const dmg of power.damage) {
+          let runningBonus = 0
+          if (dmg.bonus) {
+            runningBonus = rootGetters['character/mechanics/mcBonus'](dmg.bonus)
+          }
+          const dmgAugmentBonuses = augments
+            .filter(i => (i.limits ? (i.limits.type === power.type) : true) && i.augment === 'damage' && i.value.type !== 'dieIncrease')
+            .reduce((acc, curr) => acc + rootGetters['character/mechanics/mcBonus'](curr.value), 0)
+          runningBonus += dmgAugmentBonuses
+          const dieIncreases = augments
+            .filter(i => (i.limits ? (i.limits.type === power.type) : true) && i.augment === 'damage' && i.value.type === 'dieIncrease')
+          let newDieType = dmg.dieType
+          for (let i = 0; i < dieIncreases.length; i++) {
+            if (newDieType === 12) {
+              runningBonus += 1
+            } else {
+              newDieType += 2
+            }
+          }
+          newDamages.push({
+            ...dmg,
+            dieType: newDieType,
+            bonus: { type: 'flat', value: runningBonus }
+          })
+        }
+        power.damage = newDamages
+      }
+      // dc bonuses
+      if (power.dc) {
+        let runningBonus = 0
+        if (power.dc.bonus) {
+          runningBonus = rootGetters['character/mechanics/mcBonus'](power.dc.bonus)
+        }
+        const dcAugmentBonus = augments
+          .filter(i => (i.limits ? (i.limits.type === power.type) : true) && i.augment === 'dc')
+          .reduce((acc, curr) => acc + rootGetters['character/mechanics/mcBonus'](curr.value), 0)
+        runningBonus += dcAugmentBonus
+        power.dc.bonus = { type: 'flat', value: runningBonus }
       }
     }
     return powers

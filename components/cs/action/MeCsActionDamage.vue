@@ -46,6 +46,8 @@ export default {
       const type = this.damage.type === 'temp'
         ? 'temp hp'
         : this.damage.type
+          ? this.damage.type
+          : 'Damage'
       return {
         notation: this.damage.text,
         detail: this.damage.detail,

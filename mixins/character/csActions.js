@@ -32,11 +32,13 @@ export const CsActions = {
         base: 8,
         proficient: true,
         mod: false,
-        save: false
+        save: false,
+        bonus: false
       }
       const dc = { ...dcDefaults, ...this.item.dc }
+      const bonus = dc.bonus ? this.mcBonus(dc.bonus) : 0
       const mod = dc.mod ? this.abilityBreakdown[dc.mod].mod : 0
-      dc.target = mod + dc.base + (dc.proficient ? this.profBonus : 0)
+      dc.target = bonus + mod + dc.base + (dc.proficient ? this.profBonus : 0)
       return dc
     },
     hit () {
@@ -85,11 +87,14 @@ export const CsActions = {
       }
       return this.item.damage.map((i) => {
         const damage = { ...damageDefault, ...i }
-        if (damage.dieCount.toString().startsWith('barrierRemaining')) {
+        if (damage.dieCount.toString() === 'barrierDie') {
+          const barrier = this.$store.getters['character/hp/barrier']
+          damage.dieCount = barrier.dieCount
+          damage.dieType = barrier.dieType
+        } else if (damage.dieCount.toString().startsWith('barrierRemaining')) {
           const barrier = this.$store.getters['character/hp/barrier']
           const ticksRemaining = barrier.ticks.max - barrier.ticks.used
           damage.dieCount = damage.dieCount.split('+').reduce((acc, curr) => {
-            console.log(curr)
             return curr.trim() === 'barrierRemaining'
               ? acc + ticksRemaining
               : acc + (parseInt(curr.trim(), 10) || 0)
@@ -149,7 +154,7 @@ export const CsActions = {
         tentacleBlender: this.tentacleBlenderText,
         hp: this.hp.current,
         level: this.level,
-        damage: this.damages[0].text
+        damage: this.damages[0]?.text
       }
     },
     hitRoll () {

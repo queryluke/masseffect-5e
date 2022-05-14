@@ -7,7 +7,7 @@
       </v-icon>
     </v-col>
     <v-col cols="12" class="text-body-1 font-weight-bold text-md-h6 d-flex align-center justify-center" :class="csTextColor('hp')">
-      {{ hp.current }} / {{ hp.max }}
+      {{ hp.current }}/{{ hp.max }}
       <v-icon :color="csBgColor('hp')" size="18" class="pl-1">
         mdi-heart-pulse
       </v-icon>

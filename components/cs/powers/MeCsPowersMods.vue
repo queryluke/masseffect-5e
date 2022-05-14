@@ -72,7 +72,7 @@ export default {
           const base = this.profBonus + this[`${ability}Mod`]
           pca[ability] = {
             ability,
-            mod: this.modText(base),
+            mod: this.modText(this[`${ability}Mod`]),
             attack: this.modText(base + this.character.settings.attackSpellMod),
             dc: base + 8,
             klasses: [klass]

@@ -53,10 +53,12 @@ export default {
     },
     extraAttacks () {
       const extraAttackMechanics = this.mechanics.filter(i => i.type === 'extra-attack')
+      let max = 0
       if (extraAttackMechanics.length) {
-        return Math.max(...extraAttackMechanics.map(i => i.value))
+        max = Math.max(...extraAttackMechanics.map(i => i.value))
       }
-      return false
+      const adds = this.mechanics.filter(i => i.type === 'extra-attack-add').length
+      return max + adds
     },
     barrierAction () {
       if (this.barrier.uses.max === 0) {

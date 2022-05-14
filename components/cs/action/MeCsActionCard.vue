@@ -34,12 +34,15 @@
       </template>
 
       <template v-if="damages.length" #damage>
-        <div v-if="damages.length">
-          <div v-for="(damage, index) in damages" :key="`damage-${index}`" style="min-height: 30px">
-            <me-cs-action-stat>
-              <me-cs-action-damage :damage="damage" />
-            </me-cs-action-stat>
-          </div>
+        <div v-if="layout !== 'attack'" class="text-caption font-weight-light text-center">
+          <small>
+            Damage
+          </small>
+        </div>
+        <div v-for="(damage, index) in damages" :key="`damage-${index}`" style="min-height: 30px">
+          <me-cs-action-stat>
+            <me-cs-action-damage :damage="damage" />
+          </me-cs-action-stat>
         </div>
       </template>
 
