@@ -83,7 +83,8 @@ export const CsActions = {
         mod: false,
         bonus: false,
         healing: false,
-        detail: this.item.name
+        detail: this.item.name,
+        label: false
       }
       return this.item.damage.map((i) => {
         const damage = { ...damageDefault, ...i }
@@ -99,6 +100,9 @@ export const CsActions = {
               ? acc + ticksRemaining
               : acc + (parseInt(curr.trim(), 10) || 0)
           }, 0)
+        }
+        if (typeof damage.dieType === 'object') {
+          damage.dieType = this.mcBonus(damage.dieType)
         }
         let bonus = damage.bonus ? this.mcBonus(damage.bonus) : 0
         const mod = damage.mod ? this.abilityBreakdown[damage.mod].mod : 0

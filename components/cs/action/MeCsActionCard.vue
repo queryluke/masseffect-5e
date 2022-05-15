@@ -38,7 +38,7 @@
           <me-cs-action-stat>
             <template v-if="layout !== 'attack'" #title>
               <span v-if="damage.healing" class="text-capitalize">{{ damage.type === 'temp' ? 'temp hp' : damage.type }}</span>
-              <span v-else>Damage</span>
+              <span v-else>{{ damage.label || 'Damage' }}</span>
             </template>
             <me-cs-action-damage :damage="damage" />
           </me-cs-action-stat>

@@ -51,7 +51,7 @@ export default {
       return {
         notation: this.damage.text,
         detail: this.damage.detail,
-        type
+        type: this.damage.label || type
       }
     }
   }
