@@ -58,15 +58,21 @@ export default {
       return isCantrip || (alwaysCastable && alwaysCastable >= this.item.level)
     },
     useable () {
-      return this.item.resource && this.item.resource.reset !== 'cast'
+      return this.item.resource && this.item.resource.reset !== 'cast' && !this.item.isCastableWithoutResource
     },
     castable () {
       if (this.atWill || !this.powercastingType) {
         return false
       }
-      if (this.item.resource && this.item.resource.reset !== 'cast') {
+      if (this.item.resource && this.item.resource.reset !== 'cast' && !this.item.isCastableWithoutResource) {
         const max = this.$store.getters['character/mechanics/mcBonus'](this.item.resource.max || { type: 'flat', value: 1 })
         return (this.$store.getters['character/resources/resources'][this.item.resource.id] || 0) < max
+      }
+      if (this.item.resource && this.item.resource.reset !== 'cast' && this.item.isCastableWithoutResource) {
+        const max = this.$store.getters['character/mechanics/mcBonus'](this.item.resource.max || { type: 'flat', value: 1 })
+        if ((this.$store.getters['character/resources/resources'][this.item.resource.id] || 0) < max) {
+          return true
+        }
       }
       switch (this.powercastingType) {
         case 'slots':
@@ -79,11 +85,25 @@ export default {
     }
   },
   methods: {
+    consumePowerSlotOrPoint () {
+      let value = 0
+      switch (this.powercastingType) {
+        case 'slots':
+          value = this.powerSlotAtLevel.used + 1
+          this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `currentStats.psUsed.${this.item.level - 1}`, value })
+          break
+        case 'points':
+          value = this.techPoints.used + this.item.level
+          this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.tpUsed', value })
+          break
+        default:
+          break
+      }
+    },
     castPower () {
       if (!this.powercastingType) {
         return
       }
-      let value = 0
       if (this.item.resource) {
         // reset 'cast' resources need to reset the resource on a cast
         if (this.item.resource.reset === 'cast') {
@@ -97,22 +117,15 @@ export default {
         } else {
           // otherwise decrement the resource
           const currentValue = this.$store.getters['character/resources/resources'][this.item.resource.id] || 0
-          this.$store.dispatch('character/resources/SET_RESOURCE', { id: this.item.resource.id, value: currentValue + 1 })
+          const max = this.$store.getters['character/mechanics/mcBonus'](this.item.resource.max || { type: 'flat', value: 1 })
+          if (currentValue + 1 > max) {
+            this.consumePowerSlotOrPoint()
+          } else {
+            this.$store.dispatch('character/resources/SET_RESOURCE', { id: this.item.resource.id, value: currentValue + 1 })
+          }
         }
-      }
-      if (this.item.type !== 'combat') {
-        switch (this.powercastingType) {
-          case 'slots':
-            value = this.powerSlotAtLevel.used + 1
-            this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `currentStats.psUsed.${this.item.level - 1}`, value })
-            break
-          case 'points':
-            value = this.techPoints.used + this.item.level
-            this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.tpUsed', value })
-            break
-          default:
-            break
-        }
+      } else if (this.item.type !== 'combat') {
+        this.consumePowerSlotOrPoint()
       }
     }
   }

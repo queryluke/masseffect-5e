@@ -317,7 +317,33 @@ export const getters = {
       fhEligible = eqWeapons.length < 2 && eqWeapons.filter(i => i.data.properties.includes('light') && !i.data.properties.includes('two-handed')).length < 2
     }
     const augments = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'power-augment')
+    const powersAsAttacks = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'power-attack').map(i => i.value)
+    const powersAtWill = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'power-at-will')
+    const powerResource = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'power-resource')
     for (const power of powers) {
+      // as attacks
+      if (powersAsAttacks.length && powersAsAttacks.includes(power.id)) {
+        if (power.altCasting && !power.altCasting.map(i => i.unit).includes('attack')) {
+          power.altCasting.push({ length: 1, unit: 'attack' })
+        } else {
+          power.altCasting = [{ length: 1, unit: 'attack' }]
+        }
+      }
+      // at will
+      if (powersAtWill.length) {
+        const atWillMechanic = powersAtWill.find(i => i.value === power.id && i.levels.includes(power.level))
+        if (atWillMechanic) {
+          power.alwaysCastable = power.level
+        }
+      }
+      // at will
+      if (powerResource.length) {
+        const resourceMechanic = powerResource.find(i => i.value === power.id && i.levels.includes(power.level))
+        if (resourceMechanic) {
+          power.resource = { ...resourceMechanic.resource, id: `${resourceMechanic.resource.id}-${power.id}` }
+          power.isCastableWithoutResource = true
+        }
+      }
       // attack bonuses
       if (power.attack) {
         let runningBonus = 0
@@ -374,6 +400,7 @@ export const getters = {
         power.dc.bonus = { type: 'flat', value: runningBonus }
       }
     }
+    console.log(powers)
     return powers
   },
   selectedPowers: (state, getters, rootState, rootGetters) => {

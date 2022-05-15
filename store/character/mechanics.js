@@ -170,7 +170,6 @@ export const getters = {
     if (!bonus) {
       return 0
     }
-    const multiplier = bonus.multiplier || 1
     const min = bonus.min || 0
     let b = 0
     let mod = null
@@ -179,20 +178,20 @@ export const getters = {
         b = bonus.value
         break
       case 'mod':
-        b = rootGetters['character/abilities/abilityBreakdown'][bonus.value].mod * multiplier
+        b = rootGetters['character/abilities/abilityBreakdown'][bonus.value].mod
         break
       case 'modComparison':
         b = []
         for (const ability of bonus.value) {
           b.push(rootGetters['character/abilities/abilityBreakdown'][ability].mod)
         }
-        b = Math.max(...b) * multiplier
+        b = Math.max(...b)
         break
       case 'hp':
-        b = Math.floor(rootGetters['character/hp/hp'].max * multiplier)
+        b = rootGetters['character/hp/hp'].max
         break
       case 'proficiency':
-        b = rootGetters['character/profBonus'] * multiplier
+        b = rootGetters['character/profBonus']
         break
       case 'level':
         if (bonus.value) {
@@ -201,7 +200,6 @@ export const getters = {
         } else {
           b = rootGetters['character/klasses/level']
         }
-        b = Math.floor(b * multiplier)
         break
       case 'progressive':
         if (!bonus.value) {
@@ -214,7 +212,7 @@ export const getters = {
           b = rootGetters['character/klasses/level']
         }
         b = Object.keys(bonus.value).sort((a, b) => b - a).find(i => i <= b)
-        b = (bonus.value[b] || 0) * multiplier
+        b = bonus.value[b] || 0
         break
       case 'progressionColumn':
         if (!bonus.value || !bonus.value.klass || !bonus.value.column) {
@@ -236,7 +234,7 @@ export const getters = {
           break
         }
         for (const multiBonus of bonus.value) {
-          b += getters.mcBonus(multiBonus) * multiplier
+          b += getters.mcBonus(multiBonus)
         }
         break
       case 'powercastingMod':
@@ -245,15 +243,19 @@ export const getters = {
         }
         mod = rootGetters['character/powers/klassPowercastingAbilities'][bonus.value]
         if (mod) {
-          b += (rootGetters[`character/abilities/${mod}Mod`] * multiplier)
+          b += rootGetters[`character/abilities/${mod}Mod`]
         }
         break
       case 'resource':
-        b += (rootGetters['character/character'].currentStats.resources[bonus.value] || 0) * multiplier
+        b += rootGetters['character/character'].currentStats.resources[bonus.value] || 0
         break
       default:
         b = 0
     }
+    if (bonus.multiplier) {
+      b = b * bonus.multiplier
+    }
+    b = bonus.ceil ? Math.ceil(b) : Math.floor(b)
     return Math.max(min, b)
   }
 }
