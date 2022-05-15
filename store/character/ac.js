@@ -9,7 +9,17 @@ export const getters = {
     }
     const flatBonus = rootGetters['character/mechanics/mechanics']
       .filter(i => i.type === 'ac')
-      .reduce((acc, curr) => acc + (curr.bonus ? rootGetters['character/mechanics/mcBonus'](curr.bonus) : 0), 0)
+      .reduce((acc, curr) => {
+        let bonus = (curr.bonus ? rootGetters['character/mechanics/mcBonus'](curr.bonus) : 0)
+        if (curr.condition === 'barrier-active') {
+          const barrierState = rootGetters['character/hp/barrier']
+          const remainingTicks = barrierState.ticks.max - barrierState.ticks.used
+          if (remainingTicks <= 0) {
+            bonus = 0
+          }
+        }
+        return acc + bonus
+      }, 0)
     const dexMod = rootGetters['character/abilities/dexMod']
 
     // natural armor
