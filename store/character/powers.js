@@ -400,7 +400,7 @@ export const getters = {
         power.dc.bonus = { type: 'flat', value: runningBonus }
       }
     }
-    console.log(powers)
+    // console.log(powers)
     return powers
   },
   selectedPowers: (state, getters, rootState, rootGetters) => {

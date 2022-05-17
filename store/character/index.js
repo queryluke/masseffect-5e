@@ -62,7 +62,7 @@ export const getters = {
   },
   speeds: (state, getters, rootState, rootGetters) => {
     const speeds = {
-      walk: null,
+      walk: 0,
       swim: null,
       fly: null,
       climb: null,
