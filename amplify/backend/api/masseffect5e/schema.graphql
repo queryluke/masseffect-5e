@@ -27,7 +27,8 @@ type Profile @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"},
 type Character @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"}, subscriptions: null)
 @auth(rules: [
   { allow: private, operations: [read] }
-  { allow: owner }
+  { allow: owner },
+  { allow: public, provider: apiKey, operations: [read] }
 ]){
   id: ID!
   owner: ID! @index(name: "byUser", queryField: "characterByUser")

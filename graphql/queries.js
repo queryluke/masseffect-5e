@@ -71,6 +71,34 @@ export const listProfiles = /* GraphQL */ `
     }
   }
 `;
+export const bookmarkByUser = /* GraphQL */ `
+  query BookmarkByUser(
+    $owner: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelBookmarkFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    bookmarkByUser(
+      owner: $owner
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        owner
+        model
+        modelId
+        data
+        createdOn
+        updatedOn
+      }
+      nextToken
+    }
+  }
+`;
 export const getCharacter = /* GraphQL */ `
   query GetCharacter($id: ID!) {
     getCharacter(id: $id) {
@@ -92,34 +120,6 @@ export const listCharacters = /* GraphQL */ `
       items {
         id
         owner
-        data
-        createdOn
-        updatedOn
-      }
-      nextToken
-    }
-  }
-`;
-export const bookmarkByUser = /* GraphQL */ `
-  query BookmarkByUser(
-    $owner: ID!
-    $sortDirection: ModelSortDirection
-    $filter: ModelBookmarkFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    bookmarkByUser(
-      owner: $owner
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        owner
-        model
-        modelId
         data
         createdOn
         updatedOn

@@ -17,9 +17,9 @@
     <v-btn
       color="light-blue"
       text
-      href="https://n7.world/"
+      href="https://www.n7.world"
     >
-      Latest release
+      View
     </v-btn>
   </v-snackbar>
 </template>

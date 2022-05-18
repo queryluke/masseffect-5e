@@ -321,7 +321,7 @@ export default {
       description: this.$t('meta.home')
     })
     const recentPosts = await this.$store.dispatch('FETCH_DATA', 'changelog')
-    this.recentPosts = [...recentPosts].reverse().slice(0, 6)
+    this.recentPosts = recentPosts.filter(i => !i.id.startsWith('april')).reverse().slice(0, 6)
   }
 }
 </script>
