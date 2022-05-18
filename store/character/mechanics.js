@@ -150,8 +150,8 @@ export const getters = {
     }
 
     const finalMechanics = hydrateAugments(preToggleMechanics)
-    console.log('unused', selected)
-    console.log('final', finalMechanics)
+    // console.log('unused', selected)
+    // console.log('final', finalMechanics)
     return {
       mechanics: finalMechanics,
       unusedSelections: selected

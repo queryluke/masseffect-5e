@@ -36,7 +36,14 @@ export const getters = {
     }
   },
   tempHp: (state, getters, rootState, rootGetters) => {
-    return rootGetters['character/character'].currentStats.tempHp
+    const tempHp = rootGetters['character/character'].currentStats.tempHp
+    if (!tempHp) {
+      return {
+        max: 0,
+        value: 0
+      }
+    }
+    return tempHp
   },
   barrier: (state, getters, rootState, rootGetters) => {
     const base = {

@@ -92,6 +92,7 @@ sw.*
 
 # me data files
 static/.data
+static/characters.json
 
 # amplify/team-provider-info.json
 

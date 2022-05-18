@@ -158,7 +158,7 @@ export default {
     hasPowerIssues () {
       return this.learnedCantripsCount > this.pcMaxes.numCantrips ||
         this.learnedPowersCount > this.pcMaxes.numPowers ||
-        this.availablePowersAndCantrips.filter(i => i.notAvailable).length
+        this.availablePowersAndCantrips.filter(i => i.notAvailable).length > 0
     }
   },
   methods: {
