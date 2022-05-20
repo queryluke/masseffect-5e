@@ -35,7 +35,11 @@ export default {
   computed: {
     ...mapGetters(['selected']),
     component () {
-      return this.type === 'expertise' ? 'me-cb-choices-skill' : `me-cb-choices-${this.type}`
+      return this.type.startsWith('powercasting')
+        ? 'me-cb-choices-powercasting'
+        : this.type === 'expertise'
+          ? 'me-cb-choices-skill'
+          : `me-cb-choices-${this.type}`
     },
     currentValue () {
       // NOTE...currentValue is always an array since the selectable component always returns an array of selections

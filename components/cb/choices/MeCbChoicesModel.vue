@@ -89,6 +89,10 @@ export default {
         // TODO: how to handle feat prereqs
         models = models.filter(this.modelFilter)
       }
+      if (this.mechanic.model === 'powers' && this.mechanic.known) {
+        const knownPowers = (this.$store.getters['character/character'].powers || []).map(i => i.id)
+        models = models.filter(i => knownPowers.includes(i.id))
+      }
       return models.map((i) => {
         return {
           text: i.name,
@@ -107,6 +111,9 @@ export default {
       return this.hideSelectedModels ? [] : this.models.filter(i => this.selectedModelIds.includes(i.id))
     },
     selectedModelIdsFromAnyWhere () {
+      if (this.mechanic.isolated) {
+        return []
+      }
       const matches = []
       for (let i = 0; i < this.selected.length; i++) {
         if (this.selected[i]?.value[0]?.type === this.type) {
@@ -137,7 +144,12 @@ export default {
     modelFilter (item) {
       return this.mechanic.limits.every(({ attr, value }) => {
         const comparitor = value || []
-        return comparitor.includes(item[attr])
+        const itemValue = item[attr]
+        if (Array.isArray(itemValue)) {
+          return item[attr].some(i => comparitor.includes(i))
+        } else {
+          return comparitor.includes(item[attr])
+        }
       })
     },
     upsert (value) {

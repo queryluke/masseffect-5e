@@ -8,7 +8,7 @@
       color="red darken-4"
       @click.native.stop="rollMe"
     >
-      <v-card outlined flat min-width="48" class="text-center" @click.stop="rollMe">
+      <v-card outlined flat :min-width="minWidth" class="text-center" @click.stop="rollMe">
         <slot />
       </v-card>
     </v-badge>
@@ -25,6 +25,10 @@ export default {
     roll: {
       type: Object,
       required: true
+    },
+    minWidth: {
+      type: [Number, String],
+      default: 48
     }
   },
   computed: {

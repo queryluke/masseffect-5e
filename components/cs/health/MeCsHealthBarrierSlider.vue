@@ -23,12 +23,15 @@
       </template>
     </v-slider>
     <div>
-      <v-btn x-small :color="csBgColor('barrier')" :disabled="viewOnly || remainingUses === 0" @click="useBarrier">
-        Barrier <span class="text-lowercase pl-1">({{ barrierDie }})</span>
+      <v-btn
+        x-small
+        :color="csBgColor('barrier')"
+        :disabled="viewOnly || remainingTicks === 0"
+        @click="useBarrier"
+      >
+        Roll
+        (<span class="text-lowercase">{{ barrierDie }}</span>)
       </v-btn>
-      <div class="text-caption text-center">
-        <small>Uses: {{ remainingUses }}</small>
-      </div>
     </div>
   </div>
 </template>
@@ -40,25 +43,8 @@ const { mapGetters } = createNamespacedHelpers('character/hp')
 export default {
   name: 'MeCsHealthBarrierSlider',
   mixins: [CsColors],
-  props: {
-    barrier: {
-      type: Object,
-      default: () => {
-        return {
-          ticks: {
-            max: 0,
-            used: 0
-          },
-          uses: {
-            max: 0,
-            used: 0
-          }
-        }
-      }
-    }
-  },
   computed: {
-    ...mapGetters(['barrierDie']),
+    ...mapGetters(['barrier']),
     remainingTicks: {
       get () {
         return this.barrier.ticks.max - this.barrier.ticks.used
@@ -73,6 +59,9 @@ export default {
         this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.barrier.ticksUsed', value: this.barrier.ticks.max - value })
       }
     },
+    barrierDie () {
+      return `${this.barrier.dieCount}d${this.barrier.dieType}`
+    },
     remainingUses () {
       return this.barrier.uses.max - this.barrier.uses.used
     },
@@ -82,11 +71,13 @@ export default {
   },
   methods: {
     useBarrier () {
-      const value = {
-        used: (this.barrier.uses.used || 0) + 1,
-        ticksUsed: 0
-      }
-      this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.barrier', value })
+      this.remainingTicks--
+      this.$store.dispatch('character/roller/ROLL',
+        {
+          notation: this.barrierDie,
+          detail: 'Barrier',
+          type: 'damage reduction'
+        })
     }
   }
 }

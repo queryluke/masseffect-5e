@@ -5,7 +5,7 @@
     app
     clipped
     right
-    width="280"
+    :width="$vuetify.breakpoint.xsOnly ? 280 : 340"
     disable-resize-watcher
   >
     <template #prepend>
@@ -13,14 +13,7 @@
       <v-divider />
     </template>
     <template id="texting" #default>
-      <component :is="sideNavComponent" id="testing" />
-    </template>
-
-    <template v-if="$vuetify.breakpoint.mdAndDown" #append>
-      <v-divider />
-      <v-btn text block @click="sideNav = false">
-        Close
-      </v-btn>
+      <component :is="sideNavComponent" />
     </template>
   </v-navigation-drawer>
 </template>
@@ -43,3 +36,27 @@ export default {
   }
 }
 </script>
+
+<style>
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+#meCsSideNav * {
+  scrollbar-width: thin;
+  scrollbar-color: transparent;
+}
+
+/* Chrome, Edge, and Safari */
+#meCsSideNav *::-webkit-scrollbar {
+  width: 4px;
+}
+
+#meCsSideNav *::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#meCsSideNav *::-webkit-scrollbar-thumb {
+  background-color: #303030;
+  border-radius: 10px;
+  border: 3px solid transparent;
+}
+</style>

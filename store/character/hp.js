@@ -36,10 +36,19 @@ export const getters = {
     }
   },
   tempHp: (state, getters, rootState, rootGetters) => {
-    return rootGetters['character/character'].currentStats.tempHp
+    const tempHp = rootGetters['character/character'].currentStats.tempHp
+    if (!tempHp) {
+      return {
+        max: 0,
+        value: 0
+      }
+    }
+    return tempHp
   },
   barrier: (state, getters, rootState, rootGetters) => {
     const base = {
+      dieType: 0,
+      dieCount: 0,
       ticks: {
         max: 0,
         used: rootGetters['character/character'].currentStats.barrier.ticksUsed
@@ -49,42 +58,48 @@ export const getters = {
         used: rootGetters['character/character'].currentStats.barrier.used
       }
     }
-    const klasses = rootGetters['character/klasses/klasses']
-    if (klasses.some(i => ['vanguard', 'sentinel', 'adept'].includes(i.id))) {
-      let level, barrierP, barrierUsesP
-      if (klasses.length > 1) {
-        barrierP = state.mcBarrier
-        barrierUsesP = state.mcBarrier
-        level = rootGetters['character/klasses/mcLevels']('vanguard', ['adept', 'sentinel'])
-      } else {
-        barrierP = klasses[0].data.progression.columns.find(i => i.label === 'barrier_ticks')?.values || []
-        barrierUsesP = klasses[0].data.progression.columns.find(i => i.label === 'barrier_uses')?.values || []
-        level = klasses[0].levels
+    if (rootGetters['character/klasses/isMulticlassed']) {
+      let multiclassBarrierTickLevel = 0
+      let multiclassBarrierUsesLevel = 0
+      let dieCount = 0
+      let dieType = 0
+      let maxTicksOfKlass = 0
+      for (const [index, klass] of Object.entries(rootGetters['character/klasses/klasses'])) {
+        const barrierMechanic = (rootGetters['character/klasses/klassesFeatures'][index] || []).reduce((a, c) => a.concat((c.mechanics || [])), []).find(i => i.type === 'barrier')
+        if (!barrierMechanic) {
+          continue
+        }
+        const multiplier = barrierMechanic.multiclassConversion
+        multiclassBarrierTickLevel += (klass.levels * multiplier)
+        multiclassBarrierUsesLevel += klass.levels
+        maxTicksOfKlass = Math.max(maxTicksOfKlass, barrierMechanic.ticks[klass.levels - 1])
+        dieType = Math.max(dieType, barrierMechanic.dieType)
+        dieCount = Math.max(dieCount, barrierMechanic.dieCount)
       }
-      base.ticks.max = barrierP[level - 1]
-      base.uses.max = barrierUsesP[level - 1]
+      multiclassBarrierTickLevel = Math.floor(multiclassBarrierTickLevel)
+      if (multiclassBarrierTickLevel > 0 && multiclassBarrierUsesLevel > 0) {
+        base.dieType = dieType
+        base.dieCount = dieCount
+        base.ticks.max = Math.max(state.mcBarrier[multiclassBarrierTickLevel - 1], maxTicksOfKlass)
+        base.uses.max = state.mcBarrierUses[multiclassBarrierUsesLevel - 1]
+      }
+    } else {
+      const barrierMechanic = rootGetters['character/mechanics/mechanics'].find(i => i.type === 'barrier')
+      if (barrierMechanic) {
+        const klassLevel = rootGetters['character/klasses/level']
+        base.ticks.max = barrierMechanic.ticks[klassLevel - 1]
+        base.uses.max = barrierMechanic.uses[klassLevel - 1]
+        base.dieType = barrierMechanic.dieType
+        base.dieCount = barrierMechanic.dieCount
+      }
     }
     return base
   },
-  barrierDie: (state, getters, rootState, rootGetters) => {
-    if (!rootGetters['character/klasses/selectedKlassesIds'].includes('vanguard')) {
-      return '1d8'
-    }
-    const vanguardClass = rootGetters['character/klasses/selectedKlasses'].find(i => i.id === 'vanguard')
-    let num = 1
-    let type = 8
-    if (vanguardClass.levels >= 11) {
-      num = 2
-    }
-    if (vanguardClass.subclass === 'battle-master') {
-      if (vanguardClass.levels >= 10) {
-        type = 10
-      }
-      if (vanguardClass.levels >= 18) {
-        type = 12
-      }
-    }
-    return `${num}d${type}`
+  techArmor: (state, getters, rootState, rootGetters) => {
+    return rootGetters['character/character'].currentStats.resources['tech-armor-hp'] || 0
+  },
+  techArmorMax: (state, getters, rootState, rootGetters) => {
+    return rootGetters['character/character'].currentStats.techArmorMax || 0
   }
 }
 

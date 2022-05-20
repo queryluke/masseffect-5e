@@ -53,13 +53,13 @@ export const getters = {
         if (def.note) {
           const noteIndex = noteCache.indexOf(def.note)
           if (noteIndex > -1) {
-            text.push({ id: def.value, noteIndex })
+            text.push({ id: def.value, noteIndex, label: def.label || false })
           } else {
             noteCache.push(def.note)
-            text.push({ id: def.value, noteIndex: noteCache.length - 1 })
+            text.push({ id: def.value, noteIndex: noteCache.length - 1, label: def.label || false })
           }
         } else {
-          text.push({ id: def.value })
+          text.push({ id: def.value, label: def.label || false })
         }
       }
       defenses[type] = { ...irv, type, text, notes: noteCache }

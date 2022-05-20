@@ -8,16 +8,30 @@
 export default {
   name: 'MePowerCastingTime',
   props: {
-    castingTimes: {
-      type: Array,
-      default: () => []
+    mechanic: {
+      type: Object,
+      default: () => {
+        return {
+          castingTime: {
+            unit: 'action'
+          },
+          altCasting: []
+        }
+      }
     }
   },
   computed: {
+    castingTimes () {
+      return [this.mechanic.castingTime, ...(this.mechanic.altCasting || [])]
+    },
     text () {
       const array = []
-      for (const time of this.castingTimes) {
-        array.push(this.$t(`times.${time}_title`))
+      for (const timeObj of this.castingTimes) {
+        if (['action', 'reaction', 'attack', 'bonus_action'].includes(timeObj.unit)) {
+          array.push(this.$t(`times.${timeObj.unit}_title`))
+        } else {
+          this.$tc(`times.${timeObj.unit}`, timeObj.length, { n: timeObj.length })
+        }
       }
       return array.length === 0
         ? '-'

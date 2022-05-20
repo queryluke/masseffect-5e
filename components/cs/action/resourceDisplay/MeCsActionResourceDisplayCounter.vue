@@ -1,14 +1,22 @@
 <template>
   <div class="d-flex">
-    <v-btn x-small text class="px-1" @click.stop="$emit('remove')">
+    <v-btn x-small text class="px-1" :disabled="viewOnly" @click.stop="remove()">
       <v-icon size="18">
         mdi-minus
       </v-icon>
     </v-btn>
     <div class="px-1">
-      {{ current }}
+      <input
+        v-model.number="cachedValue"
+        :class="textColor"
+        :disabled="viewOnly"
+        style="width: 30px; text-align: center"
+        @focus.stop
+        @click.stop
+        @input="debouncedUpdate()"
+      >
     </div>
-    <v-btn x-small text @click.stop="$emit('add')">
+    <v-btn x-small text :disabled="viewOnly" @click.stop="add()">
       <v-icon size="18">
         mdi-plus
       </v-icon>
@@ -49,6 +57,9 @@ export default {
   computed: {
     viewOnly () {
       return this.$store.state.character.viewOnly
+    },
+    textColor () {
+      return this.$vuetify.theme.dark ? 'white--text' : 'grey--text text--darken-4'
     }
   },
   watch: {
@@ -63,7 +74,22 @@ export default {
     }, 500)
   },
   methods: {
+    add () {
+      if (this.cachedValue + 1 <= this.max) {
+        this.cachedValue++
+        this.debouncedUpdate()
+      }
+    },
+    remove () {
+      if (this.cachedValue - 1 >= 0) {
+        this.cachedValue--
+        this.debouncedUpdate()
+      }
+    },
     updateAttr () {
+      if (isNaN(parseInt(this.cachedValue, 10))) {
+        this.cachedValue = this.current
+      }
       if (this.cachedValue >= 0 && this.cachedValue <= this.max) {
         this.$emit('set', this.cachedValue)
       } else {

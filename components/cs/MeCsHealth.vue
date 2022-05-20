@@ -2,9 +2,9 @@
   <div>
     <v-row>
       <v-col cols="12" class="d-flex justify-center justify-md-space-around justify-lg-space-around" :class="{'justify-md-space-between': barrier.uses.max }">
-        <me-cs-health-barrier-slider :barrier="barrier" />
+        <me-cs-health-barrier-slider />
         <div>
-          <me-cs-health-circle :hp="hp" :shields="shields" :temp-hp="tempHp" />
+          <me-cs-health-circle :hp="hp" :shields="shields" :temp-hp="tempHp" :tech-armor="{ value: techArmor, max: techArmorMax }" />
           <div class="text-center">
             <v-btn
               x-small
@@ -97,6 +97,17 @@
                     Temp HP
                   </v-btn>
                 </div>
+                <div v-if="techArmor" class="text-center my-2">
+                  <v-btn
+                    :color="csBgColor('techArmor')"
+                    small
+                    :dark="!dark"
+                    :light="dark"
+                    @click="execTechArmor"
+                  >
+                    Tech Armor
+                  </v-btn>
+                </div>
               </v-card-text>
             </v-card>
           </v-scale-transition>
@@ -143,7 +154,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['hp', 'barrier', 'tempHp', 'shields']),
+    ...mapGetters(['hp', 'barrier', 'tempHp', 'shields', 'techArmor', 'techArmorMax']),
     viewOnly () {
       return this.$store.state.character.viewOnly
     },
@@ -167,6 +178,21 @@ export default {
     },
     currentStats () {
       return this.$store.getters['character/character'].currentStats
+    },
+    techArmorMax: {
+      get () {
+        return this.currentStats.techArmorMax || 0
+      },
+      set (value) {
+        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.techArmorMax', value })
+      }
+    }
+  },
+  watch: {
+    techArmor (newVal, oldVal) {
+      if (newVal > this.techArmorMax || oldVal === 0) {
+        this.techArmorMax = newVal
+      }
     }
   },
   methods: {
@@ -186,6 +212,16 @@ export default {
         const max = Math.max(this.tempHp.max, modder, this.tempHp.max + modder)
         const value = this.tempHp.value + modder
         this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.tempHp', value: { max, value } })
+      }
+      this.modderState = 0
+    },
+    execTechArmor () {
+      const modder = this.getModder()
+      if (modder) {
+        const max = Math.max(this.techArmorMax, modder, this.tempHp.max + modder)
+        this.techArmorMax = max
+        const value = Math.max(this.techArmor + modder, 0)
+        this.$store.dispatch('character/resources/SET_RESOURCE', { id: 'tech-armor-hp', value })
       }
       this.modderState = 0
     },
@@ -214,22 +250,26 @@ export default {
       let dmgLeft = this.getModder()
       const newStats = {}
       if (dmgLeft > 0) {
-        if (this.tempHp.value > 0) {
+        if (this.techArmor > 0) {
+          const potentialTaDmg = Math.min(this.techArmor, dmgLeft)
+          const newTa = Math.max(0, this.techArmor - potentialTaDmg)
+          newStats.techArmorMax = newTa === 0 ? 0 : this.techArmorMax
+          this.$store.dispatch('character/resources/SET_RESOURCE', { id: 'tech-armor-hp', value: newTa })
+          dmgLeft -= potentialTaDmg
+        }
+        if (dmgLeft > 0 && this.shields.current > 0 && !this.bypassShields) {
+          const potentialShieldDmg = Math.min(this.shields.current, (this.doubleShields ? dmgLeft * 2 : dmgLeft))
+          newStats.shieldsLost = Math.min(this.currentStats.shieldsLost + potentialShieldDmg, this.shields.max)
+          dmgLeft = this.doubleShields ? Math.floor(((dmgLeft * 2) - potentialShieldDmg) / 2) : dmgLeft - potentialShieldDmg
+        }
+        if (dmgLeft > 0 && this.tempHp.value > 0) {
           const potentialTempHpDmg = Math.min(this.tempHp.value, dmgLeft)
           const newTempHp = Math.max(0, this.tempHp.value - potentialTempHpDmg)
-          if (newTempHp === 0) {
-            this.csTempHp = 0
-          }
           newStats.tempHp = {
             max: newTempHp === 0 ? 0 : this.currentStats.tempHp.max,
             value: newTempHp
           }
           dmgLeft -= potentialTempHpDmg
-        }
-        if (this.shields.current > 0 && !this.bypassShields) {
-          const potentialShieldDmg = Math.min(this.shields.current, (this.doubleShields ? dmgLeft * 2 : dmgLeft))
-          newStats.shieldsLost = Math.min(this.currentStats.shieldsLost + potentialShieldDmg, this.shields.max)
-          dmgLeft = this.doubleShields ? Math.floor(((dmgLeft * 2) - potentialShieldDmg) / 2) : dmgLeft - potentialShieldDmg
         }
         if (dmgLeft > 0) {
           newStats.hitPointsLost = Math.min(this.hp.max, this.currentStats.hitPointsLost + dmgLeft)

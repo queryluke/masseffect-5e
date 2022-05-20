@@ -2,17 +2,7 @@
   <div>
     <div v-show="showTab(1)">
       <me-cs-action-list :items="csAllActions.attacks">
-        Attacks
-        <template #notes>
-          <div v-if="globalAttackNotes.length" class="mt-1 mb-2">
-            <div v-for="(gNote, index) in globalAttackNotes" :key="`gNote-${index}`" class="d-flex text-caption">
-              <v-icon size="16" class="mr-1">
-                {{ gNote.attack === 'ranged' ? 'mdi-target' : gNote === 'melee' ? 'mdi-sword' : 'mdi-octagram' }}
-              </v-icon>
-              <me-html inline :content="gNote.value" />
-            </div>
-          </div>
-        </template>
+        Attacks <span v-if="extraAttacks" class="text-body-2"><small>({{ extraAttacks }} attacks per action)</small></span>
       </me-cs-action-list>
     </div>
     <div v-show="showTab(2)">
@@ -52,13 +42,41 @@ export default {
       profs: 'profs/profs',
       abilityBreakdown: 'abilities/abilityBreakdown',
       weaponAttacks: 'equipment/weaponAttacks',
-      tab: 'navigation/actionsTab'
+      tab: 'navigation/actionsTab',
+      barrier: 'hp/barrier'
     }),
     weaponProperties () {
       return this.$store.getters.getData('weapon-properties')
     },
     actionsList () {
       return this.$store.getters.getData('actions')
+    },
+    extraAttacks () {
+      const extraAttackMechanics = this.mechanics.filter(i => i.type === 'extra-attack')
+      let max = 0
+      if (extraAttackMechanics.length) {
+        max = Math.max(...extraAttackMechanics.map(i => i.value))
+      }
+      const adds = this.mechanics.filter(i => i.type === 'extra-attack-add').length
+      return max + adds
+    },
+    barrierAction () {
+      if (this.barrier.uses.max === 0) {
+        return false
+      }
+      return {
+        name: 'Barrier',
+        shortDesc: `Gain ${this.barrier.ticks.max} barrier ticks (to a maximum of ${this.barrier.ticks.max})`,
+        resource: {
+          displayType: 'barrier',
+          reset: 'short',
+          id: 'barrier'
+        },
+        moreInfo: {
+          model: 'class-features',
+          id: 'barrier-vanguard'
+        }
+      }
     },
     csAllActions () {
       return {
@@ -70,25 +88,39 @@ export default {
       }
     },
     csActions () {
-      return [
+      const actions = [
         {
-          base: true,
+          group: true,
           title: 'Actions in Combat',
           items: this.baseActions.action
-        },
-        ...[{
+        }
+      ]
+      if (this.weaponAttacks.bf.length) {
+        actions.push({
           group: true,
           title: 'Burst Fire',
           items: this.weaponAttacks.bf
-        },
-        {
+        })
+      }
+      if (this.csPowersAsActions.actions.length) {
+        actions.push({
           group: true,
           title: 'Powers',
-          items: this.csPowersAsActions.actions
-        }].filter(i => i.items.length),
-        ...this.mechanics.filter(i => i.type === 'action' && !i.baseGroup),
-        ...this.csCustomAsActions.actions
-      ]
+          items: this.csPowersAsActions.actions,
+          component: 'me-cs-action-cards-power'
+        })
+      }
+      if (this.barrierAction) {
+        actions.push(this.barrierAction)
+      }
+      const regularActions = this.mechanics.filter(i => i.type === 'action' && !i.baseGroup)
+      if (regularActions.length) {
+        actions.push(...regularActions)
+      }
+      if (this.csCustomAsActions.actions.length) {
+        actions.push(...this.csCustomAsActions.actions)
+      }
+      return actions
     },
     csAttacks () {
       return [
@@ -115,49 +147,69 @@ export default {
       return baseActions
     },
     csBonusActions () {
-      const baseActions = []
+      const bonusActions = []
+      // base
       const baseBA = this.baseActions['bonus-action']
       if (baseBA.length) {
-        baseActions.push({
-          base: true,
+        bonusActions.push({
+          group: true,
           title: 'Bonus Actions in Combat',
           items: baseBA
         })
       }
-      return [
-        ...baseActions,
-        ...[{
+      // two-weapon fighting
+      if (this.weaponAttacks.twf.length) {
+        bonusActions.push({
           group: true,
           title: 'Two Weapon Fighting',
           items: this.weaponAttacks.twf
-        },
-        {
+        })
+      }
+      // double tap
+      if (this.weaponAttacks.dt) {
+        bonusActions.push({
           group: true,
           title: 'Double Tap',
           items: this.weaponAttacks.dt
-        },
-        {
+        })
+      }
+      // powers
+      if (this.csPowersAsActions.bonus_actions.length) {
+        bonusActions.push({
           group: true,
           title: 'Powers',
-          items: this.csPowersAsActions.bonus_actions
-        }].filter(i => i.items.length),
-        ...this.mechanics.filter(i => i.type === 'bonus-action' && !i.baseGroup),
-        ...this.csCustomAsActions.bonus
-      ]
+          items: this.csPowersAsActions.bonus_actions,
+          component: 'me-cs-action-cards-power'
+        })
+      }
+      // barrier
+      if (this.barrierAction) {
+        bonusActions.push(this.barrierAction)
+      }
+      // regular
+      const regularActions = this.mechanics.filter(i => i.type === 'bonus-action' && !i.baseGroup)
+      if (regularActions.length) {
+        bonusActions.push(...regularActions)
+      }
+      if (this.csCustomAsActions.bonus.length) {
+        bonusActions.push(...this.csCustomAsActions.bonus)
+      }
+      return bonusActions
     },
     csReactions () {
       return [
         {
-          base: true,
-          title: 'Actions in Combat',
+          group: true,
+          title: 'Reactions in Combat',
           items: this.baseActions.reaction
         },
         ...[{
           group: true,
           title: 'Powers',
-          items: this.csPowersAsActions.reactions
+          items: this.csPowersAsActions.reactions,
+          component: 'me-cs-action-cards-power'
         }].filter(i => i.items.length),
-        ...this.mechanics.filter(i => i.type === 'reaction'),
+        ...this.mechanics.filter(i => i.type === 'reaction' && !i.baseGroup),
         ...this.csCustomAsActions.reactions
       ]
     },
@@ -181,9 +233,7 @@ export default {
                   id: i.id
                 }
               : false,
-            moreInfo: {
-              bind: i.html
-            }
+            html: i.html
           }
         })
       return {
@@ -193,12 +243,14 @@ export default {
       }
     },
     csPowersAsActions () {
-      const sortedPowers = this.powers.slice().sort((a, b) => a.level - b.level)
+      const sortedPowers = this.powers.filter(i => !i.upcast).sort((a, b) => a.level - b.level).map((i) => {
+        return { ...i, component: 'me-cs-powers-side-nav' }
+      })
       return {
-        actions: sortedPowers.filter(i => i.castingTimes.includes('1A')),
-        attacks: sortedPowers.filter(i => i.castingTimes.includes('Atk')),
-        bonus_actions: sortedPowers.filter(i => i.castingTimes.includes('1BA')),
-        reactions: sortedPowers.filter(i => i.castingTimes.includes('1R*'))
+        actions: sortedPowers.filter(i => i.castingTime.unit === 'action' || i.altCasting?.filter(i => i.unit === 'action').length),
+        attacks: sortedPowers.filter(i => i.castingTime.unit === 'attack' || i.altCasting?.filter(i => i.unit === 'attack').length),
+        bonus_actions: sortedPowers.filter(i => i.castingTime.unit === 'bonus_action' || i.altCasting?.filter(i => i.unit === 'bonus_action').length),
+        reactions: sortedPowers.filter(i => i.castingTime.unit === 'reaction' || i.altCasting?.filter(i => i.unit === 'reaction').length)
       }
     }
   },

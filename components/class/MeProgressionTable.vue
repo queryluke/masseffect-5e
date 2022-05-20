@@ -45,63 +45,14 @@
       </template>
 
       <template
-        #[`item.features`]="{ item: featureItem, isMobile }"
+        #[`item.features`]="{ item: featureItem }"
       >
         <td
-          v-if="isMobile"
-          class="px-0"
-        >
-          <v-btn
-            v-if="featureItem.features !== '-'"
-            :color="classFillDark"
-            x-small
-            :[textMode]="true"
-            block
-            @click="selectedRow = featureItem"
-          >
-            {{ featureItem.features }}
-          </v-btn>
-          <span
-            v-else
-          >
-            -
-          </span>
-        </td>
-        <td
-          v-else
           class="text-left"
         >
           {{ featureItem.features }}
         </td>
       </template>
-
-      <template
-        #[`item.power_level`]="{ item: featureItem }"
-      >
-        <span class="text-center">
-          {{ $t(`ordinal_numbers[${featureItem.power_level}]`) }}
-        </span>
-      </template>
-
-      <!--
-      <template
-        #[`header.psByPl`]="{ header: psByPlHeader }"
-      >
-        <tr v-if="$vuetify.breakpoint.xs">
-          {{ psByPlHeader.text }}
-        </tr>
-      </template>
-
-      <template
-        #[`item.psByPl`]="{ item: psByPlItem }"
-      >
-        <td
-          v-if="$vuetify.breakpoint.smAndDown"
-          :id="`${psByPlItem.cssId}Intersect`"
-          v-intersect="{ handler: onIntersect, threshold: [1] }"
-        />
-      </template>
-      -->
     </v-data-table>
 
     <v-footer
@@ -188,6 +139,183 @@ export default {
     classFeatures () {
       return this.$store.getters.getData('class-features').filter(i => i.klass === this.item.id)
     },
+    cfMechanics () {
+      return this.classFeatures.reduce((acc, curr) => acc.concat(curr.mechanics || []), [])
+    },
+    pcLevelAndProfBonus () {
+      return [
+        {
+          header: {
+            text: 'Level',
+            value: 'level',
+            align: 'center'
+          },
+          values: this.characterProgression.map(i => this.$t(`ordinal_numbers[${i.level}]`))
+        },
+        {
+          header: {
+            text: 'Prof Bonus',
+            value: 'profBonus',
+            align: 'center'
+          },
+          values: this.characterProgression.map(i => `+${i.profBonus}`)
+        }
+      ]
+    },
+    pcFeatures () {
+      return [
+        {
+          header: { text: 'Features', value: 'features', align: 'start' },
+          values: this.characterProgression.map(i => this.getFeatureTextByLevel(i.level))
+        }
+      ]
+    },
+    pcFromMechanics () {
+      return this.cfMechanics
+        .filter(i => !!i.progressionColumn)
+        .sort((a, b) => a.progressionColumn.order - b.progressionColumn.order)
+        .map((i) => {
+          return {
+            order: i.progressionColumn.order,
+            header: {
+              text: i.progressionColumn.label,
+              value: i.progressionColumn.label.toLowerCase().replaceAll(' ', '-'),
+              align: 'center'
+            },
+            values: i.progressionColumn.values
+          }
+        })
+    },
+    pcCantrips () {
+      const cantrips = this.cfMechanics.find(i => i.type === 'cantrips')
+      if (!cantrips) {
+        return false
+      }
+      return [
+        {
+          header: { text: cantrips.columnName || 'Cantrips', value: 'cantrips', align: 'center' },
+          values: cantrips.known.map(i => i || '-')
+        }
+      ]
+    },
+    pcPowersKnown () {
+      const known = this.cfMechanics.find(i => i.type.startsWith('powercasting') && !!i.known)
+      if (!known) {
+        return false
+      }
+      return [
+        {
+          header: { text: 'Powers Known', value: 'powersKnown', align: 'center' },
+          values: known.known
+        }
+      ]
+    },
+    pcPact () {
+      const pcPact = this.cfMechanics.find(i => i.type === 'powercasting-pact')
+      if (!pcPact) {
+        return false
+      }
+      return [
+        {
+          header: {
+            text: 'Power Slots',
+            value: 'powerNumSlots',
+            align: 'center'
+          },
+          values: pcPact.numSlots
+        },
+        {
+          header: {
+            text: 'Power Level',
+            value: 'powerSlotLevel',
+            align: 'center'
+          },
+          values: pcPact.slotLevel
+        }
+      ]
+    },
+    pcSlots () {
+      const pcSlots = this.cfMechanics.find(i => i.type === 'powercasting-slots')
+      if (!pcSlots) {
+        return false
+      }
+      const output = []
+      for (let i = 1; i < 6; i++) {
+        if (pcSlots.slots[i]) {
+          output.push(
+            {
+              header: { text: this.$t(`ordinal_numbers[${i}]`), value: `powerSlots${i}`, align: 'center' },
+              values: pcSlots.slots[i].map(j => j || '-')
+            }
+          )
+        }
+      }
+      return output
+    },
+    pcPoints () {
+      const pcPoints = this.cfMechanics.find(i => i.type === 'powercasting-points')
+      if (!pcPoints) {
+        return false
+      }
+      return [
+        {
+          header: {
+            text: 'Tech Points',
+            value: 'techPoints',
+            align: 'center'
+          },
+          values: pcPoints.points
+        },
+        {
+          header: {
+            text: 'Tech Point Limit',
+            value: 'techPointLimit',
+            align: 'center'
+          },
+          values: pcPoints.limit
+        }
+      ]
+    },
+    pcBarrier () {
+      const barrier = this.cfMechanics.find(i => i.type === 'barrier')
+      if (!barrier) {
+        return false
+      }
+      return [
+        {
+          header: {
+            text: 'Barrier Uses',
+            value: 'barrierUses',
+            align: 'center'
+          },
+          values: barrier.uses
+        },
+        {
+          header: {
+            text: 'Barrier Ticks',
+            value: 'barrierTicks',
+            align: 'center'
+          },
+          values: barrier.ticks
+        }
+      ]
+    },
+    progressionColumns () {
+      return [
+        ...this.pcLevelAndProfBonus,
+        ...(this.pcFromMechanics.filter(i => i.order > 1 && i.order < 5) || []),
+        ...this.pcFeatures,
+        ...(this.pcFromMechanics.filter(i => i.order > 5 && i.order < 10) || []),
+        ...(this.pcBarrier || []),
+        ...(this.pcFromMechanics.filter(i => i.order > 10 && i.order < 14) || []),
+        ...(this.pcCantrips || []),
+        ...(this.pcFromMechanics.filter(i => i.order > 15 && i.order < 20) || []),
+        ...(this.pcPowersKnown || []),
+        ...(this.pcPoints || []),
+        ...(this.pcPact || []),
+        ...(this.pcSlots || [])
+      ]
+    },
     selectedLevel () {
       return this.selectedRow ? this.selectedRow.id : false
     },
@@ -207,68 +335,27 @@ export default {
       return this.$store.getters['config/isDarkOnlyClassTheme'](this.item.id) ? 'grey--text text--darken-3' : 'white--text'
     },
     progression () {
-      const progression = []
+      const items = []
       for (const row of this.characterProgression) {
         const output = {
           cssId: `Level${row.level}`,
-          id: row.level,
-          level: this.$t(`ordinal_numbers[${row.level}]`),
-          proficiencyBonus: `+${row.profBonus}`
+          id: row.level
         }
-        for (const p of this.item.progression.columns) {
-          if (typeof p.values === 'undefined') {
-            output[p.label] = this.getFeatureTextByLevel(row.level)
-          } else if (p.label === 'power_slots_by_power_level') {
-            for (let l = 0; l < p.values.length; l++) {
-              const val = p.values[l][row.level - 1]
-              output[`powerSlots${l}`] = val === 0 ? '-' : val
-            }
-          } else {
-            output[p.label] = p.values[row.level - 1]
-          }
+        for (const p of this.progressionColumns) {
+          output[p.header.value] = p.values[row.level - 1]
         }
-        progression.push(output)
+        items.push(output)
       }
-      return progression
+      return items
     },
     powerCastingColumnCount () {
-      const ps = this.item.progression.columns.find(p => p.label === 'power_slots_by_power_level')
-      return ps ? ps.values.length : 0
+      return this.pcSlots ? this.pcSlots.length : 0
     },
     powerCastingHeaderOffset () {
       return this.headerArray.length - this.powerCastingColumnCount
     },
     headerArray () {
-      const array = [
-        {
-          text: this.$tc('level_title', 1),
-          value: 'level',
-          class: 'text-center'
-        },
-        {
-          text: this.$t('class_feature_columns.prof_bonus'),
-          value: 'proficiencyBonus',
-          class: 'text-center'
-        }
-      ]
-      for (const p of this.item.progression.columns) {
-        if (p.label === 'power_slots_by_power_level') {
-          for (let l = 0; l < p.values.length; l++) {
-            array.push({
-              text: this.$t(`ordinal_numbers[${l + 1}]`),
-              value: `powerSlots${l}`,
-              class: 'text-center'
-            })
-          }
-        } else {
-          array.push({
-            text: this.$t(`class_feature_columns.${p.label}`),
-            value: p.label,
-            class: 'text-center'
-          })
-        }
-      }
-      return array
+      return this.progressionColumns.map(i => i.header)
     }
   },
   methods: {

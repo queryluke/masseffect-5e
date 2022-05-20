@@ -1,8 +1,8 @@
 <template>
-  <v-container>
-    <div class="text-center text-h4 mb-3">
-      Describe your character
-    </div>
+  <v-card flat max-width="700px" class="mx-auto">
+    <me-tpg s="h3" class="text-center">
+      Description
+    </me-tpg>
     <v-row>
       <v-col cols="12">
         <v-card elevation="0">
@@ -115,7 +115,7 @@
         </v-expansion-panels>
       </v-col>
     </v-row>
-  </v-container>
+  </v-card>
 </template>
 
 <script>

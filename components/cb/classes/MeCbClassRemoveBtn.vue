@@ -9,8 +9,9 @@
       <v-btn
         class="mx-2"
         color="red"
+        small
+        icon
         v-bind="attrs"
-        :icon="$vuetify.breakpoint.smAndUp"
         v-on="on"
       >
         <v-icon dark>
@@ -22,10 +23,10 @@
     <v-card>
       <v-card-title>
         <v-row>
-          <v-col>
+          <v-col cols="10">
             Delete {{ item.data.name }} Class
           </v-col>
-          <v-col class="text-right">
+          <v-col class="text-right" cols="2">
             <v-btn
               color=""
               small

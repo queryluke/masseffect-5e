@@ -15,20 +15,13 @@
         <div>
           <slot name="shortDesc" />
         </div>
-        <div>
-          <slot name="resource" />
-        </div>
       </div>
       <div v-if="!$vuetify.breakpoint.xsOnly" class="d-flex flex-column" style="min-width: 68px">
-        <div class="py-1">
-          <slot name="range" />
-        </div>
+        <slot name="range" />
         <div class="py-1">
           <slot name="dc" />
         </div>
-        <div class="py-1">
-          <slot name="damage" />
-        </div>
+        <slot name="damage" />
       </div>
     </div>
   </div>

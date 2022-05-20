@@ -62,7 +62,7 @@ export const getters = {
   },
   speeds: (state, getters, rootState, rootGetters) => {
     const speeds = {
-      walk: null,
+      walk: 0,
       swim: null,
       fly: null,
       climb: null,
@@ -188,6 +188,7 @@ export const actions = {
     if (state.viewOnly) {
       return
     }
+    console.log({ attr, value })
     const newValue = updateCharacter({ oldValue: getters.character, attr, value })
     commit('SET_CHARACTER', newValue)
     if (rootGetters['auth/isAuthenticated'] && newValue.meta.remote) {
@@ -220,7 +221,7 @@ export const actions = {
       commit('user/SET_SYNC_STATUS', 'saved', { root: true })
     } catch (e) {
       commit('user/SET_SYNC_STATUS', 'error', { root: true })
-      console.log(e)
+      console.error(e)
     }
   }
 }

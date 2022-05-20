@@ -54,7 +54,18 @@ export default {
       })
     },
     items () {
-      if (this.mechanic.limit) {
+      if (this.mechanic.newIf) {
+        if (!this.currentValue.find(i => i.value === this.mechanic.newIf) && this.alreadyAcquired({ value: this.mechanic.newIf })) {
+          return this.profOptions.filter(i => i.value !== this.mechanic.newIf)
+        } else {
+          return this.profOptions.filter(i => i.value === this.mechanic.newIf)
+        }
+      } else if (this.mechanic.limit) {
+        // for expertise, if limit === acquired, only current profs
+        if (this.expertise && this.mechanic.limit === 'acquired') {
+          const acquired = this.$store.getters['character/profs/profs'].skill
+          return this.profOptions.filter(i => acquired.includes(i.value))
+        }
         return this.profOptions.filter(i => this.mechanic.limit.includes(i.value))
       } else {
         return this.profOptions

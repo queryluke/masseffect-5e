@@ -24,7 +24,6 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
-// import * as RpgDiceRoller from '@dice-roller/rpg-dice-roller'
 const { mapGetters } = createNamespacedHelpers('character/skills')
 
 export default {

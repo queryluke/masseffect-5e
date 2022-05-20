@@ -1,161 +1,146 @@
 <template>
   <v-card flat outlined max-width="700px" class="mx-auto">
-    <v-card flat color="transparent" @click="show = !show">
-      <v-card-text>
-        <v-list-item two-line class="px-0 px-sm-3">
-          <v-list-item-avatar v-if="$vuetify.breakpoint.smAndUp" tile>
+    <v-card-text class="px-1 py-1">
+      <div class="d-flex align-center justify-space-between">
+        <div class="d-flex">
+          <v-avatar tile size="36">
             <v-img :src="require(`~/assets/images/classes/${klass.id}.svg`)" />
-          </v-list-item-avatar>
-          <v-list-item-content>
-            <v-list-item-title>
-              {{ klass.data.name }}
-            </v-list-item-title>
-            <v-list-item-subtitle>
-              {{ $t('level_nth', { nth: $t(`ordinal_numbers[${klassLevel}]`) }) }}{{ subclassLabel }}
-            </v-list-item-subtitle>
-          </v-list-item-content>
-          <v-list-item-action v-if="$vuetify.breakpoint.smAndUp">
-            <me-cb-class-remove-btn :item="klass" />
-          </v-list-item-action>
-        </v-list-item>
-      </v-card-text>
-    </v-card>
-    <v-expand-transition>
-      <v-card-text v-show="show">
-        <v-row>
-          <v-col>
-            <v-btn class="mr-2" :to="`/classes/${klass.id}`" target="_blank">
-              View Class Details
-            </v-btn>
-          </v-col>
-          <v-col>
-            <div class="text-h6">
-              Number of Levels in this Class
-            </div>
+          </v-avatar>
+          <div class="text-h6 mx-1">
+            {{ klass.data.name }}
+          </div>
+        </div>
+        <div class="d-flex align-baseline">
+          <div class="text-subtitle-1 mr-2">
+            Level
+          </div>
+          <div style="width: 50px">
             <v-select
               v-model="klassLevel"
-              class="ms-2 flex"
+              dense
+              hide-details
               :items="availableLevels"
             />
-          </v-col>
-          <v-col v-if="$vuetify.breakpoint.xsOnly" class="text-right">
+          </div>
+          <div class="ml-4">
             <me-cb-class-remove-btn :item="klass" />
-          </v-col>
-        </v-row>
-        <v-row v-if="!loading">
-          <v-col>
-            <v-expansion-panels>
-              <!-- levels -->
-              <me-cb-aspect-card>
-                <template #title>
-                  Hit Points
-                </template>
-                <template #subtitle>
-                  1st Level
-                </template>
-                <template #description>
-                  <me-class-hit-points :item="klass.data" />
-                </template>
-                <v-switch
-                  v-model="klassHpOverride"
-                  label="Rolled HP"
-                />
-                <div v-if="klassHpOverride">
-                  <v-row class="hpSlots">
-                    <v-col
-                      v-for="(hp, index) in klass.hitPoints"
-                      :key="index"
-                      cols="2"
-                    >
-                      <v-select
-                        :items="hpArray"
-                        :value="klass.hitPoints[index]"
-                        :label="'Lvl. ' + (index + 1)"
-                        :readonly="index === 0"
-                        :disabled="index === 0"
-                        @change="updateHp($event, index)"
-                      />
+          </div>
+        </div>
+      </div>
+    </v-card-text>
+    <v-card-actions>
+      <v-btn text small @click.stop="show = !show">
+        Class Features
+        <v-icon right>
+          {{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}
+        </v-icon>
+      </v-btn>
+      <v-spacer />
+      <v-btn :to="`/classes/${klass.id}`" target="_blank" text small color="primary">
+        Details
+      </v-btn>
+    </v-card-actions>
+    <v-expand-transition>
+      <div v-show="show">
+        <v-divider />
+        <v-card-text class="px-0 px-sm-4">
+          <v-row v-if="!loading">
+            <v-col>
+              <v-expansion-panels>
+                <!-- levels -->
+                <me-cb-aspect-card>
+                  <template #title>
+                    Hit Points
+                  </template>
+                  <template #subtitle>
+                    1st Level
+                  </template>
+                  <template #description>
+                    <me-class-hit-points :item="klass.data" />
+                  </template>
+                  <v-switch
+                    v-model="klassHpOverride"
+                    label="Rolled HP"
+                  />
+                  <div v-if="klassHpOverride">
+                    <v-row class="hpSlots">
+                      <v-col
+                        v-for="(hp, index) in klass.hitPoints"
+                        :key="index"
+                        cols="2"
+                      >
+                        <v-select
+                          :items="hpArray"
+                          :value="klass.hitPoints[index]"
+                          :label="'Lvl. ' + (index + 1)"
+                          :readonly="index === 0"
+                          :disabled="index === 0"
+                          @change="updateHp($event, index)"
+                        />
+                      </v-col>
+                    </v-row>
+                  </div>
+                </me-cb-aspect-card>
+                <!-- Profs -->
+                <me-cb-aspect-card :asm-override="{ has: true, value: allProfSelectionsMade }">
+                  <template #title>
+                    Proficiencies
+                  </template>
+                  <template #subtitle>
+                    1st Level
+                  </template>
+                  <v-row v-for="(profObj, profKey) in klass.data.profs" :key="profKey">
+                    <v-col v-if="profObj.has || profObj.choices">
+                      <div class="text-subtitle">
+                        {{ profLabel(profKey) }}
+                      </div>
+                      <div class="d-flex flex-wrap align-">
+                        <div v-if="profObj.has">
+                          <template v-for="prof in profObj.has">
+                            <v-chip
+                              :key="prof"
+                              class="mr-3 mt-5"
+                              small
+                            >
+                              {{ profText(profKey, prof) }}
+                            </v-chip>
+                          </template>
+                        </div>
+                        <div class="flex-grow-1 mt-n1">
+                          <me-cb-aspect-selectable
+                            v-if="profObj.choices"
+                            :mechanic="{type: `${profKey}-choice`, limit: profObj.choices.items, selections: profObj.choices.count}"
+                            :path="`klass/${klass.id}`"
+                            no-label
+                          />
+                        </div>
+                      </div>
                     </v-col>
                   </v-row>
-                </div>
-              </me-cb-aspect-card>
-              <!-- Profs -->
-              <me-cb-aspect-card :asm-override="{ has: true, value: allProfSelectionsMade }">
-                <template #title>
-                  Proficiencies
-                </template>
-                <template #subtitle>
-                  1st Level
-                </template>
-                <v-row v-for="(profObj, profKey) in klass.data.profs" :key="profKey">
-                  <v-col v-if="profObj.has || profObj.choices">
-                    <div class="text-subtitle">
-                      {{ profLabel(profKey) }}
-                    </div>
-                    <div class="d-flex flex-wrap align-">
-                      <div v-if="profObj.has">
-                        <template v-for="prof in profObj.has">
-                          <v-chip
-                            :key="prof"
-                            class="mr-3 mt-5"
-                            small
-                          >
-                            {{ profText(profKey, prof) }}
-                          </v-chip>
-                        </template>
-                      </div>
-                      <div class="flex-grow-1 mt-n1">
-                        <me-cb-aspect-selectable
-                          v-if="profObj.choices"
-                          :mechanic="{type: `${profKey}-choice`, limit: profObj.choices.items, selections: profObj.choices.count}"
-                          :path="`klass/${klass.id}`"
-                          no-label
-                        />
-                      </div>
-                    </div>
-                  </v-col>
-                </v-row>
-              </me-cb-aspect-card>
-              <!-- Sentinel Pc Ability Choice -->
-              <me-cb-aspect-card v-if="klass.id === 'sentinel'" :asm-override="{ has: true, value: sentinelPcSelection }">
-                <template #title>
-                  Sentinel Powercasting Ability
-                </template>
-                <template #subtitle>
-                  1st Level
-                </template>
-                <template #description>
-                  &nbsp;
-                </template>
-                <v-select
-                  v-model="sentinelPcSelection"
-                  :items=" [{ text: 'Intelligence', value: 'int'}, { text: 'Wisdom', value: 'wis'}]"
-                  dense
-                  label="Choose Intelligence or Wisdom"
-                />
-              </me-cb-aspect-card>
-
-              <template v-for="(aspect, index) of klassAspects">
-                <me-cb-class-asi-picker
-                  v-if="aspect.type === 'klass-asi'"
-                  :key="`api-picker-${index}`"
-                  :klass-index="klassIndex"
-                  :level="aspect.level"
-                />
-                <me-cb-aspect-card
-                  v-else-if="aspect.type === 'klass-subclass'"
-                  :key="`subclass-picker-${index}`"
-                  :asm-override="{ has: true, value: !!subklass }"
-                  :aspect="aspect"
-                >
-                  <v-select v-model="subklass" :items="availableSubclasses" dense item-text="name" item-value="id" />
                 </me-cb-aspect-card>
-                <me-cb-aspect-card v-else :key="`aspect-${index}`" :aspect="aspect" :root-path="`klass/${klass.id}`" />
-              </template>
-            </v-expansion-panels>
-          </v-col>
-        </v-row>
-      </v-card-text>
+
+                <template v-for="(aspect, index) of klassAspects">
+                  <me-cb-class-asi-picker
+                    v-if="aspect.type === 'klass-asi'"
+                    :key="`api-picker-${index}`"
+                    :klass-index="klassIndex"
+                    :level="aspect.level"
+                  />
+                  <me-cb-aspect-card
+                    v-else-if="aspect.type === 'klass-subclass'"
+                    :key="`subclass-picker-${index}`"
+                    :asm-override="{ has: true, value: !!subklass }"
+                    :aspect="aspect"
+                  >
+                    <v-select v-model="subklass" :items="availableSubclasses" dense item-text="name" item-value="id" />
+                  </me-cb-aspect-card>
+                  <me-cb-aspect-card v-else :key="`aspect-${index}`" :aspect="aspect" :root-path="`klass/${klass.id}`" />
+                </template>
+              </v-expansion-panels>
+            </v-col>
+          </v-row>
+        </v-card-text>
+      </div>
     </v-expand-transition>
     <v-overlay :value="loading">
       <v-progress-circular
@@ -312,12 +297,12 @@ export default {
       }
       return finalArray
     },
-    sentinelPcSelection: {
+    klassPcSelection: {
       get () {
-        return this.character.settings.powercasting.sentinel
+        return this.character.settings.powercasting[this.klass.id]
       },
       set (value) {
-        return this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'settings.powercasting.sentinel', value })
+        return this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `settings.powercasting.${this.klass.id}`, value })
       }
     }
   },

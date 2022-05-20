@@ -88,7 +88,7 @@ export const getters = {
       }
       return hydratedMechanics
     }
-    const finalMechanics = []
+    const preAugmentMechanics = []
     const mechanics = [
       // ADD ADDITIONAL MECHANICS HERE
       ...rootGetters['character/species/mechanics'],
@@ -97,31 +97,59 @@ export const getters = {
       ...rootGetters['character/reputation/benefitsMechanics']
     ]
     for (const item of cloneDeep(mechanics)) {
-      finalMechanics.push(...hydrate(item))
+      preAugmentMechanics.push(...hydrate(item))
     }
 
     // AUGMENTS
-    for (const augment of finalMechanics.filter(i => i.type === 'augment')) {
-      if (!augment.merge) {
-        continue
+    function hydrateAugments (finalMechanics = []) {
+      const augments = finalMechanics.filter(i => i.type === 'augment')
+      const nonAugments = finalMechanics.filter(i => i.type !== 'augment')
+      for (const augment of augments) {
+        if (!augment.merge) {
+          continue
+        }
+        if (augment.value) {
+          let localMatchingIndex = 0
+          for (const [augmentIndex, augmentable] of nonAugments.entries()) {
+            if (!augmentable.source) {
+              continue
+            }
+            if (!augmentable.source.includes(`${augment.value.model}/${augment.value.id}`)) {
+              continue
+            }
+            if (augment.value.limit && !augment.value.limit.includes(augmentable.type)) {
+              continue
+            }
+            if (augment.value.instances && !augment.value.instances.includes(localMatchingIndex)) {
+              localMatchingIndex += 1
+              continue
+            }
+            nonAugments.splice(augmentIndex, 1, merge(cloneDeep(augmentable), augment.merge))
+          }
+        }
       }
-      if (augment.value) {
-        let localMatchingIndex = 0
-        for (const [augmentIndex, augmentable] of finalMechanics.entries()) {
-          if (!augmentable.source.endsWith(`${augment.value.model}/${augment.value.id}`)) {
-            continue
+      return nonAugments
+    }
+
+    const preToggleMechanics = hydrateAugments(preAugmentMechanics)
+    // TOGGLES
+    const toggleState = rootGetters['character/resources/toggles'] || {}
+    for (const { toggle } of preToggleMechanics.filter(i => i.toggle)) {
+      if (toggleState[toggle.id]) {
+        if (toggle.whenOn) {
+          preToggleMechanics.push(...(toggle.whenOn).filter(i => i.type !== 'resource'))
+        }
+        if (toggle.options) {
+          const selectionId = toggleState[`${toggle.id}-selection`]
+          const selection = toggle.options.find(i => i.id === selectionId) || toggle.options[0]
+          if (selection?.whenOn) {
+            preToggleMechanics.push(...(selection.whenOn.filter(i => i.type && i.type !== 'resource')))
           }
-          if (augment.value.limit && !augment.value.limit.includes(augmentable.type)) {
-            continue
-          }
-          if (augment.value.instances && !augment.value.instances.includes(localMatchingIndex)) {
-            localMatchingIndex += 1
-            continue
-          }
-          finalMechanics.splice(augmentIndex, 1, merge(augmentable, augment.merge))
         }
       }
     }
+
+    const finalMechanics = hydrateAugments(preToggleMechanics)
     // console.log('unused', selected)
     // console.log('final', finalMechanics)
     return {
@@ -139,25 +167,31 @@ export const getters = {
     return getters.mechanicAnalysis.unusedSelections
   },
   mcBonus: (state, getters, rootState, rootGetters) => (bonus) => {
-    const multiplier = bonus.multiplier || 1
+    if (!bonus) {
+      return 0
+    }
     const min = bonus.min || 0
     let b = 0
+    let mod = null
     switch (bonus.type) {
       case 'flat':
         b = bonus.value
         break
       case 'mod':
-        b = rootGetters['character/abilities/abilityBreakdown'][bonus.value].mod * multiplier
+        b = rootGetters['character/abilities/abilityBreakdown'][bonus.value].mod
         break
       case 'modComparison':
         b = []
         for (const ability of bonus.value) {
           b.push(rootGetters['character/abilities/abilityBreakdown'][ability].mod)
         }
-        b = Math.max(...b) * multiplier
+        b = Math.max(...b)
+        break
+      case 'hp':
+        b = rootGetters['character/hp/hp'].max
         break
       case 'proficiency':
-        b = rootGetters['character/profBonus'] * multiplier
+        b = rootGetters['character/profBonus']
         break
       case 'level':
         if (bonus.value) {
@@ -166,7 +200,6 @@ export const getters = {
         } else {
           b = rootGetters['character/klasses/level']
         }
-        b = b * multiplier
         break
       case 'progressive':
         if (!bonus.value) {
@@ -179,7 +212,7 @@ export const getters = {
           b = rootGetters['character/klasses/level']
         }
         b = Object.keys(bonus.value).sort((a, b) => b - a).find(i => i <= b)
-        b = (bonus.value[b] || 0) * multiplier
+        b = bonus.value[b] || 0
         break
       case 'progressionColumn':
         if (!bonus.value || !bonus.value.klass || !bonus.value.column) {
@@ -196,9 +229,33 @@ export const getters = {
           b = column.values[klassData.levels - 1]
         }
         break
+      case 'multi':
+        if (!Array.isArray(bonus.value)) {
+          break
+        }
+        for (const multiBonus of bonus.value) {
+          b += getters.mcBonus(multiBonus)
+        }
+        break
+      case 'powercastingMod':
+        if (!bonus.value) {
+          break
+        }
+        mod = rootGetters['character/powers/klassPowercastingAbilities'][bonus.value]
+        if (mod) {
+          b += rootGetters[`character/abilities/${mod}Mod`]
+        }
+        break
+      case 'resource':
+        b += rootGetters['character/character'].currentStats.resources[bonus.value] || 0
+        break
       default:
         b = 0
     }
+    if (bonus.multiplier) {
+      b = b * bonus.multiplier
+    }
+    b = bonus.ceil ? Math.ceil(b) : Math.floor(b)
     return Math.max(min, b)
   }
 }

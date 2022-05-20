@@ -14,32 +14,32 @@
       </v-col>
       <v-col cols="6" md="3">
         <me-item-stat :label="$t('casting_time_title')">
-          <me-power-casting-time :casting-times="item.castingTimes" />
+          <me-power-casting-time :mechanic="baseMechanic" />
         </me-item-stat>
       </v-col>
       <v-col cols="6" md="3">
         <me-item-stat :label="$t('duration_title')">
-          <me-power-duration :duration="item.duration" :concentration="item.concentration" abbr />
+          <me-power-duration :mechanic="baseMechanic" abbr />
         </me-item-stat>
       </v-col>
       <v-col cols="6" md="3">
         <me-item-stat :label="$t('range_area_title')">
-          <me-power-range :range="item.range" :aoe="item.aoe" />
+          <me-power-range :mechanic="baseMechanic" />
         </me-item-stat>
       </v-col>
       <v-col cols="6" md="3">
         <me-item-stat :label="$t('primes_detonates_title')">
-          <me-power-primes-detonates :primes="item.primes" :detonates="item.detonates" />
+          <me-power-primes-detonates :mechanic="baseMechanic" />
         </me-item-stat>
       </v-col>
       <v-col cols="6" md="3">
         <me-item-stat :label="$t('attack_type_title')">
-          <me-power-attack :attack="item.attack" :save="item.save" />
+          <me-power-attack :mechanic="baseMechanic" />
         </me-item-stat>
       </v-col>
       <v-col cols="6" md="3">
         <me-item-stat :label="$t('damage_effect_title')">
-          <me-power-effect :damage-types="item.damageTypes" :tags="item.tags" />
+          <me-power-effect :tags="item.tags" />
         </me-item-stat>
       </v-col>
       <v-col cols="6" md="3">
@@ -54,8 +54,8 @@
         </div>
       </v-col>
     </v-row>
-    <div v-if="item.reactionQualifier" class="font-italic body-2 pt-2">
-      * - <me-html :content="item.reactionQualifier" inline />
+    <div v-if="reactionQualifier" class="font-italic body-2 pt-2">
+      * - <me-html :content="reactionQualifier" inline />
     </div>
     <v-progress-linear
       :value="100"
@@ -63,19 +63,18 @@
       class="my-3"
     />
     <me-html :content="item.html" />
-    <!-- TODO: Move Advancements into the markdown via custom content (:::) -->
-    <div v-if="item.advancements && !hideAdvancements">
+    <div v-if="item.advancements.length && !hideAdvancements">
       <p class="text-h6 mb-0">
         {{ $t('advancement_options_title') }}
       </p>
       <v-row justify="center">
-        <v-col v-for="(opt, id) in item.advancements" :key="id" cols="12" md="6">
+        <v-col v-for="adv in item.advancements" :key="adv.id" cols="12" md="6">
           <v-card outlined>
             <v-card-title class="text-subtitle-1">
-              {{ opt.name }}
+              {{ adv.name }}
             </v-card-title>
             <v-card-text>
-              <me-html :content="opt.text" />
+              <me-html :content="adv.text" />
             </v-card-text>
           </v-card>
         </v-col>
@@ -99,6 +98,17 @@ export default {
     hideAdvancements: {
       type: Boolean,
       default: false
+    }
+  },
+  computed: {
+    baseMechanic () {
+      return (this.item.mechanics || [])[0]
+    },
+    reactionQualifier () {
+      return [
+        this.baseMechanic.castingTime.reaction,
+        ...(this.baseMechanic.altCasting || []).map(i => i.reaction)
+      ].find(i => !!i)
     }
   }
 }

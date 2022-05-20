@@ -29,16 +29,16 @@
       </strong>
     </template>
     <template #[`header.duration`]="{ item }">
-      <me-power-duration :duration="item.duration" :concentration="item.concentration" abbr />
+      <me-power-duration :mechanic="item.mechanics[0]" abbr />
     </template>
     <template #[`header.range`]="{ item }">
-      <me-power-range :range="item.range" :aoe="item.aoe" />
+      <me-power-range :mechanic="item.mechanics[0]" />
     </template>
     <template #[`header.attack`]="{ item }">
-      <me-power-attack :attack="item.attack" :save="item.save" abbr />
+      <me-power-attack :mechanic="item.mechanics[0]" abbr />
     </template>
     <template #[`header.effect`]="{ item }">
-      <me-power-effect :damage-types="item.damageTypes" :tags="item.tags" abbr />
+      <me-power-effect :tags="item.tags" abbr />
     </template>
     <template #body="{ item }">
       <me-power-info :item="item" />

@@ -8,25 +8,12 @@
 export default {
   name: 'MePowerAttack',
   props: {
-    attack: {
+    mechanic: {
       type: Object,
       default: () => {
         return {
-          melee: false,
-          ranged: false
-        }
-      }
-    },
-    save: {
-      type: Object,
-      default: () => {
-        return {
-          dex: false,
-          str: false,
-          con: false,
-          int: false,
-          wis: false,
-          cha: false
+          attack: false,
+          dc: false
         }
       }
     },
@@ -38,21 +25,20 @@ export default {
   computed: {
     text () {
       const array = []
-      for (const key in this.attack) {
-        if (this.attack[key]) {
-          array.push(this.$t(`attack_types.${key}`))
-        }
+      if (this.mechanic.attack) {
+        array.push(this.$t(`attack_types.${this.mechanic.attack.type}`))
       }
-      for (const key in this.save) {
-        if (this.save[key]) {
-          array.push(this.$t('save_text', { type: this.$t(`abilities.${key}.abbr`) }))
-        }
+      if (this.mechanic.dc?.save) {
+        const text = ['str', 'dex', 'con', 'int', 'wis', 'cha'].includes(this.mechanic.dc.save)
+          ? this.$t('save_text', { type: this.$t(`abilities.${this.mechanic.dc.save}.abbr`) })
+          : this.mechanic.dc.save
+        array.push(text)
       }
       if (array.length === 0) {
         return '-'
       }
       if (this.abbr) {
-        return `${array[0]} (...)`
+        return `${array[0]}${array.length > 1 ? ' (...)' : ''}`
       } else {
         return this.$t(`lists.comma_list[${array.length}]`, array)
       }

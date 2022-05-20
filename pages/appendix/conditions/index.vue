@@ -11,7 +11,11 @@
         :headers="headers"
         type="appendix/conditions"
         :bookmarkable="false"
-      />
+      >
+        <template #body="{ item }">
+          <me-conditions-info :item="item" />
+        </template>
+      </me-expansion-list>
     </me-skeleton-loader>
   </v-container>
 </template>

@@ -2,9 +2,11 @@
   <div class="d-flex">
     <div>
       <template v-for="value in Array.from({length: max}, (x, i) => i)">
-        <v-icon :key="`use-track-${value}`" :color="value >= current ? 'primary' : 'red'" @click.stop="set(value)">
-          {{ value >= current ? 'mdi-checkbox-blank-outline' : 'mdi-minus-box' }}
-        </v-icon>
+        <v-btn :key="`use-track-${value}`" icon x-small>
+          <v-icon :color="value >= current ? 'primary' : 'red'" @click.stop="set(value)">
+            {{ value >= current ? 'mdi-checkbox-blank-outline' : 'mdi-minus-box' }}
+          </v-icon>
+        </v-btn>
       </template>
     </div>
   </div>

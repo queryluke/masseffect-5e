@@ -19,16 +19,23 @@
 export default {
   name: 'MePowerCastingTime',
   props: {
-    primes: {
-      type: [String, Boolean],
-      default: false
-    },
-    detonates: {
-      type: Boolean,
-      default: false
+    mechanic: {
+      type: Object,
+      default: () => {
+        return {
+          primes: false,
+          detonates: false
+        }
+      }
     }
   },
   computed: {
+    primes () {
+      return this.mechanic.primes
+    },
+    detonates () {
+      return this.mechanic.detonates
+    },
     primeTypeText () {
       return this.$store.getters['config/primeTypeText']
     }

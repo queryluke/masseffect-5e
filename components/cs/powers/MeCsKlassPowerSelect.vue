@@ -1,49 +1,62 @@
 <template>
   <v-expansion-panel>
-    <v-expansion-panel-header>
-      <div>
-        <div class="d-flex">
-          <v-avatar tile size="32">
-            <v-img :src="require(`~/assets/images/classes/${klass.id}.svg`)" />
-          </v-avatar>
-          <div class="text-subtitle-1">
+    <v-expansion-panel-header class="pl-0 py-2" :disable-icon-rotate="hasPowerIssues || hasPowersToLearn">
+      <v-list-item>
+        <v-list-item-avatar tile>
+          <v-img :src="klassIcon" />
+        </v-list-item-avatar>
+        <v-list-item-content>
+          <v-list-item-title>
             {{ klass.data.name }}
-          </div>
-        </div>
-        <v-row>
-          <v-col v-if="learnedCantripsMax > 0" cols="6">
-            <me-cs-powers-known-counter :count="learnedCantripsCount" :max="learnedCantripsMax">
-              Cantrips
-            </me-cs-powers-known-counter>
-          </v-col>
-          <v-col v-if="learnedPowersMax > 0" cols="6">
-            <me-cs-powers-known-counter :count="learnedPowersCount" :max="learnedPowersMax">
-              {{ techClass ? 'Prepared' : 'Known' }}
-            </me-cs-powers-known-counter>
-          </v-col>
-        </v-row>
-      </div>
+          </v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+      <template v-if="hasPowerIssues || hasPowersToLearn" #actions>
+        <v-icon :color="hasPowerIssues ? 'error' : 'info'">
+          mdi-{{ hasPowerIssues ? 'alert-octagram' : 'alert-circle' }}
+        </v-icon>
+      </template>
     </v-expansion-panel-header>
     <v-expansion-panel-content>
-      <!-- filters -->
-      <v-row>
-        <v-col cols="12" sm="6" md="8">
-          <v-text-field v-model="search" clearable append-icon="mdi-magnify" label="Search" />
-        </v-col>
-        <v-col cols="12" sm="6" md="4">
-          <v-checkbox v-model="learned" label="Learned / Prepared" />
-        </v-col>
-      </v-row>
-
-      <template v-for="item in filteredPowers">
-        <me-cs-power-select-card
-          :key="item.id"
-          :item="item"
-          :prepared="isPrepared(item)"
-          @togglePower="togglePower"
-          @setPowerAdv="setPowerAdv"
+      <div class="mx-n4">
+        <div class="my-2">
+          <me-cs-powers-known-counter :count="learnedCantripsCount" :max="pcMaxes.numCantrips">
+            Cantrips
+          </me-cs-powers-known-counter>
+        </div>
+        <div class="my-2">
+          <me-cs-powers-known-counter :count="learnedPowersCount" :max="pcMaxes.numPowers">
+            Powers
+          </me-cs-powers-known-counter>
+        </div>
+        <div class="text-subtitle-1 mt-2">
+          Filter by Name
+        </div>
+        <v-text-field
+          v-model="search"
+          clearable
+          dense
+          hide-details
+          outlined
+          prepend-inner-icon="mdi-magnify"
         />
-      </template>
+        <div class="text-subtitle-1 mt-2">
+          Filter by Level
+        </div>
+        <me-cs-powers-level-filter learned />
+        <v-switch v-model="learnedFilter" dense hide-details class="v-input--reverse">
+          <template #label>
+            <span class="text-caption">
+              Learned / Prepared
+            </span>
+          </template>
+        </v-switch>
+      </div>
+      <div class="mx-n6">
+        <template v-for="power in filteredPowers">
+          <me-cs-power-select-card :key="power.data.id" :item="power" :prepared="power.data.level === 0 ? false : !pcMaxes.learned" @togglePower="togglePower" @setPowerAdv="setPowerAdv" />
+        </template>
+      </div>
     </v-expansion-panel-content>
   </v-expansion-panel>
 </template>
@@ -63,114 +76,103 @@ export default {
   data () {
     return {
       search: null,
-      learned: false
+      learnedFilter: false
     }
   },
   computed: {
-    ...mapGetters({ powerList: 'powers/powerList', character: 'character', intMod: 'abilities/intMod' }),
-    techClass () {
-      return ['engineer', 'infiltrator'].includes(this.klass.id)
+    ...mapGetters({
+      powerList: 'powers/powerList',
+      character: 'character',
+      klasses: 'klasses/selectedKlasses',
+      klassIcons: 'klasses/klassIcons',
+      klassPowercastingMaxes: 'powers/klassPowercastingMaxes',
+      levelFilter: 'navigation/learnedPowersLevelFilter',
+      selectedPowers: 'powers/selectedPowers'
+    }),
+    klassIndex () {
+      return this.klasses.findIndex(i => i.id === this.klass.id)
     },
-    tpMaxCheck () {
-      return this.techClass ? this.progressionValues('tech_point_limit', this.klass.levels) : 0
+    pcMaxes () {
+      return this.klassPowercastingMaxes[this.klass.id]
     },
-    psMaxCheck () {
-      if (['adept', 'vanguard'].includes(this.klass.id)) {
-        const pses = this.progressionValues('power_slots_by_power_level').slice()
-        const pslots = pses.reverse()
-        return pslots ? 5 - pslots.findIndex(i => i[this.klass.levels - 1] > 0) : 0
-      } else if (this.klass.id === 'sentinel') {
-        return this.progressionValues('power_level', this.klass.levels)
-      }
-      return 0
+    klassIcon () {
+      return this.klassIcons[this.klass.id]
     },
-    powersLearnedForClass () {
-      return this.character.powers.filter(i => i.klass === this.klass.id)
+    powersAvailableToKlass () {
+      return this.powerList.filter(i => i.classes.includes(this.klass.id)) // TODO: need a way to not filter for homebrew classes
     },
-    availableForKlass () {
-      return this.powerList.filter(i => i.classes.includes(this.klass.id))
-        .map((i) => {
-          const learned = this.powersLearnedForClass.find(j => j.id === i.id)
-          let base = {
-            ...i,
-            learned: false,
-            disabled: i.level === 0
-              ? this.learnedCantripsMax === 0
-              : this.techClass
-                ? i.level > this.tpMaxCheck
-                : i.level > this.psMaxCheck
-          }
-          if (learned) {
-            base = {
-              ...learned,
-              ...base,
-              learned: true
+    availablePowersAndCantrips () {
+      const powers = []
+      for (const p of this.powersAvailableToKlass) {
+        const learned = this.selectedPowers.find(i => i.id === p.id && i.klass === this.klass.id)
+        const base = {
+          data: p,
+          learned: !!learned,
+          advancement: learned?.advancement,
+          notAvailable: false,
+          fromFeature: learned?.path || false
+        }
+        if (p.level === 0 && this.pcMaxes.numCantrips > 0) {
+          powers.push(base)
+        } else {
+          // if power level is greater than what they can learn....
+          if (p.level > this.pcMaxes.maxPowerLevel) {
+            // check it hasn't already bean learned (in the case where they learn and reduce level)
+            if (base.learned || (p.level === 0 && this.pcMaxes.numCantrips > 0)) {
+              base.notAvailable = true
+            } else {
+              continue
             }
           }
-          return base
-        })
-        // disabled means not available anymore...i.e., power is above the class's available powers
-        // but they could learn, then reduce class levels, if so...show alert
-        // this type of logic should probably be on the klass
-        .filter(i => (i.disabled && i.learned) || !i.disabled)
-        .sort((a, b) => a.level - b.level)
-    },
-    availableCantrips () {
-      return this.availableForKlass.filter(i => i.level === 0)
-    },
-    learnedCantripsMax () {
-      return this.klass.id === 'engineer'
-        ? 0
-        : ['soldier', 'infiltrator'].includes(this.klass.id)
-            ? this.progressionValues('combat_powers', this.klass.levels)
-            : this.progressionValues('cantrips', this.klass.levels)
+          powers.push(base)
+        }
+      }
+      return powers.sort((a, b) => a.data.level - b.data.level)
     },
     learnedCantripsCount () {
-      return this.availableCantrips.filter(i => i.learned).reduce((acc, curr) => acc + (curr.advancement ? 2 : 1), 0)
-    },
-    availablePowers () {
-      return this.availableForKlass.filter(i => i.level !== 0)
-    },
-    learnedPowersMax () {
-      if (this.klass.id === 'engineer') {
-        return Math.max(this.klass.levels + this.intMod, 1)
-      } else if (this.klass.id === 'infiltrator') {
-        return Math.max((Math.floor(this.klass.levels / 2) + this.intMod), 1)
-      } else if (this.klass.id === 'soldier') {
-        return 0
-      } else {
-        return this.progressionValues('powers_known', this.klass.levels)
-      }
+      return this.availablePowersAndCantrips.filter(i => (i.learned || i.fromFeature) && i.data.level === 0).reduce((acc, curr) => {
+        const adder = curr.fromFeature ? 0 : 1
+        const adv = curr.advancement ? 1 : 0
+        return acc + adder + adv
+      }, 0)
     },
     learnedPowersCount () {
-      return this.availablePowers.filter(i => i.learned).reduce((acc, curr) => acc + (curr.advancement ? 2 : 1), 0)
+      return this.availablePowersAndCantrips.filter(i => (i.learned || i.fromFeature) && i.data.level > 0).reduce((acc, curr) => {
+        const adder = curr.fromFeature ? 0 : 1
+        const adv = curr.advancement ? 1 : 0
+        return acc + adder + adv
+      }, 0)
     },
     filteredPowers () {
-      return this.availableForKlass.filter(i => (this.search && this.search !== '' ? i.name.toLowerCase().includes(this.search.toLowerCase()) : true) && (this.learned ? i.learned : true))
+      return this.availablePowersAndCantrips.filter((i) => {
+        const searchFilter = this.search && this.search !== '' ? i.data.name.toLowerCase().includes(this.search.toLowerCase()) : true
+        const learnedFilter = this.learnedFilter ? i.learned : true
+        const levelFilter = this.levelFilter !== 'all' ? i.data.level === this.levelFilter : true
+        return [searchFilter, learnedFilter, levelFilter].every(i => i)
+      })
+    },
+    hasPowersToLearn () {
+      return this.learnedCantripsCount < this.pcMaxes.numCantrips ||
+        this.learnedPowersCount < this.pcMaxes.numPowers
+    },
+    hasPowerIssues () {
+      return this.learnedCantripsCount > this.pcMaxes.numCantrips ||
+        this.learnedPowersCount > this.pcMaxes.numPowers ||
+        this.availablePowersAndCantrips.filter(i => i.notAvailable).length > 0
     }
   },
   methods: {
-    isPrepared (item) {
-      return this.techClass
-        ? this.klass.id === 'engineer'
-          ? true
-          : item.level !== 0
-        : false
-    },
-    progressionValues (column, level = null) {
-      const values = (this.klass.data.progression.columns.find(i => i.label === column) || { values: [] }).values
-      if (level) {
-        return values[level - 1]
-      }
-      return values
-    },
-    setPowerAdv ({ id, advId }) {
-      const cloned = this.character.powers.slice()
-      const index = cloned.findIndex(i => i.id === id && i.klass === this.klass.id)
-      if (index > -1) {
-        const match = cloned[index]
-        cloned.splice(index, 1, { ...cloned[index], advancement: match.advancement === advId ? null : advId })
-        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'powers', value: cloned })
+    setPowerAdv ({ id, advId, fromFeature }) {
+      if (fromFeature) {
+        this.$store.dispatch('character/selections/UPSERT_SELECTION', { limit: false, path: `${fromFeature}/advancements`, value: [{ id, type: 'advancement', value: advId }] })
+      } else {
+        const cloned = this.character.powers.slice()
+        const index = cloned.findIndex(i => i.id === id && i.klass === this.klass.id)
+        if (index > -1) {
+          const match = cloned[index]
+          cloned.splice(index, 1, { ...cloned[index], advancement: match.advancement === advId ? null : advId })
+          this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'powers', value: cloned })
+        }
       }
     },
     togglePower (id) {
@@ -186,3 +188,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.v-input--reverse .v-input__slot {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+</style>

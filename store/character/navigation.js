@@ -5,14 +5,18 @@ export const state = () => ({
   mobileRoller: false,
   settingsTabs: ['Defensive', 'Offensive', 'Powercasting', 'Ability Scores', 'Proficiencies', 'Speed & Senses', 'Custom'],
   actionsTabs: ['All', 'Attacks', 'Actions', 'Bonus Actions', 'Reactions', 'Other'],
+  actionsTab: 0,
   featuresTabs: ['All', 'Class Features', 'Species Traits', 'Reputation Benefits', 'Feats'],
   sideNav: false,
   sideNavComponent: 'me-cs-logs-list',
   restMenu: false,
   settingsTab: 0,
-  actionsTab: 0,
   featuresTab: 0,
-  smDetailsNotes: false
+  smDetailsNotes: false,
+  learnedPowersLevelFilter: 'all',
+  powersSearch: null,
+  powersLevelFilter: 'all',
+  toDisplay: false
 })
 
 export const getters = {
@@ -26,7 +30,11 @@ export const getters = {
   settingsTab: state => state.settingsTab,
   actionsTab: state => state.actionsTab,
   featuresTab: state => state.featuresTab,
-  smDetailsNotes: state => state.smDetailsNotes
+  smDetailsNotes: state => state.smDetailsNotes,
+  learnedPowersLevelFilter: state => state.learnedPowersLevelFilter,
+  powersSearch: state => state.powersSearch,
+  powersLevelFilter: state => state.powersLevelFilter,
+  toDisplay: state => state.toDisplay
 }
 
 export const mutations = {

@@ -68,7 +68,7 @@ export const getters = {
               const benefit = getters.benefitsList.find(i => i.id === selectedId)
               thObject.needsAttention = !isAvailable(getters.reputation, benefit)
             } catch (e) {
-              console.log(`could not find ${selectedId}`)
+              console.error(`could not find ${selectedId}`)
             }
           }
         }

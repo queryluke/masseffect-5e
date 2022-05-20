@@ -2,18 +2,18 @@
   <v-container style="max-width: 1200px">
     <v-card :loading="$fetchState.pending">
       <me-tabbed-page-tabs grow class="hidden-sm-and-down mt-5" />
-      <v-card-text v-if="!$fetchState.pending">
+      <v-card-text v-if="!$fetchState.pending" class="px-0">
         <v-tabs-items v-model="tab">
-          <v-tab-item>
+          <v-tab-item class="px-4">
             <me-cb-species-select />
           </v-tab-item>
-          <v-tab-item>
+          <v-tab-item class="px-0">
             <me-cb-classes-select />
           </v-tab-item>
-          <v-tab-item>
+          <v-tab-item class="px-4">
             <me-cb-abilities-select />
           </v-tab-item>
-          <v-tab-item>
+          <v-tab-item class="px-0">
             <me-cb-description />
           </v-tab-item>
         </v-tabs-items>

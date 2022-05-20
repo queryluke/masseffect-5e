@@ -57,6 +57,9 @@ export const getters = {
   selectedKlasses: (state, getters, rootState, rootGetters) => {
     return rootGetters['character/character'].classes
   },
+  isMulticlassed: (state, getters) => {
+    return getters.selectedKlasses.length > 1
+  },
   selectedKlassesIds: (state, getters) => {
     return getters.selectedKlasses.map(i => i.id)
   },
@@ -167,6 +170,14 @@ export const getters = {
           : 0
       return acc + adder
     }, 0)
+  },
+  klassIcons: (state, getters) => {
+    const icons = {}
+    for (const klass of getters.selectedKlasses) {
+      // TODO: check if a homebrew class
+      icons[klass.id] = `/images/classes/${klass.id}.svg`
+    }
+    return icons
   },
   klassesList: (state, getters, rootState, rootGetters) => rootGetters.getData('classes'),
   subklassesList: (state, getters, rootState, rootGetters) => rootGetters.getData('subclasses'),
