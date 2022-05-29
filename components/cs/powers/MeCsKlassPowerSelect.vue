@@ -164,7 +164,16 @@ export default {
   methods: {
     setPowerAdv ({ id, advId, fromFeature }) {
       if (fromFeature) {
-        this.$store.dispatch('character/selections/UPSERT_SELECTION', { limit: false, path: `${fromFeature}/advancements`, value: [{ id, type: 'advancement', value: advId }] })
+        const path = `${fromFeature}/advancements`
+        let value = [{ id, type: 'advancement', value: advId }]
+        const alreadySelected = this.$store.getters['character/selections/selected'].find(i => i.path === path)
+        if (alreadySelected) {
+          const oldValue = alreadySelected.value[0]
+          if (oldValue?.id === id) {
+            value = []
+          }
+        }
+        this.$store.dispatch('character/selections/UPSERT_SELECTION', { limit: false, path, value })
       } else {
         const cloned = this.character.powers.slice()
         const index = cloned.findIndex(i => i.id === id && i.klass === this.klass.id)
