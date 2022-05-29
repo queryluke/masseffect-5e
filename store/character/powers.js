@@ -295,7 +295,7 @@ export const getters = {
         if (p.advancement) {
           advancement = power.advancements.find(i => i.id === p.advancement)
         }
-        for (let i = 0; i <= (5 - basePower.level); i++) {
+        for (let i = 0; i <= (6 - basePower.level); i++) {
           const level = i + basePower.level
           if (p.castAt && level !== p.castAt) {
             continue

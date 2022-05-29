@@ -83,7 +83,7 @@
                   <me-cs-global-notes sub-type="power" />
                 </v-col>
               </v-row>
-              <template v-for="powerLevel in [0, 1, 2, 3, 4, 5]">
+              <template v-for="powerLevel in [0, 1, 2, 3, 4, 5, 6]">
                 <me-cs-powers-by-level :key="`powerLevel-${powerLevel}`" :level="powerLevel" />
               </template>
             </me-cs-card>

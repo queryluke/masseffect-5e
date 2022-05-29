@@ -84,7 +84,7 @@
             </v-tab-item>
             <v-tab-item>
               <v-card-text>
-                <template v-for="powerLevel in [0, 1, 2, 3, 4, 5]">
+                <template v-for="powerLevel in [0, 1, 2, 3, 4, 5, 6]">
                   <me-cs-powers-by-level :key="`powerLevel-${powerLevel}`" :level="powerLevel" />
                 </template>
               </v-card-text>
