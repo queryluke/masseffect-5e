@@ -94,7 +94,8 @@ export const getters = {
       ...rootGetters['character/species/mechanics'],
       ...rootGetters['character/klasses/klassesMechanics'],
       ...rootGetters['character/backgroundMechanics'],
-      ...rootGetters['character/reputation/benefitsMechanics']
+      ...rootGetters['character/reputation/benefitsMechanics'],
+      ...rootGetters['character/equipment/armorMechanics']
     ]
     for (const item of cloneDeep(mechanics)) {
       preAugmentMechanics.push(...hydrate(item))

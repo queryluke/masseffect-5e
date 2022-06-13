@@ -136,6 +136,9 @@ export const getters = {
   gearList: (state, getters, rootState, rootGetters) => {
     return rootGetters.getData('gear')
   },
+  modsList: (state, getters, rootState, rootGetters) => {
+    return rootGetters.getData('mods')
+  },
   naturalWeapons: (state, getters, rootState, rootGetters) => {
     const naturalWeapons = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'natural-weapon')
     const baseUnarmed = cloneDeep(state.unarmedStrike)
@@ -481,6 +484,20 @@ export const getters = {
       }
     }
     return Object.values(finalDamage).map(i => `${i.dieCount}d${i.dieType} ${i.type}`).join(' + ')
+  },
+  armorMechanics: (state, getters) => {
+    // custom armor mechanics
+    const caMods = getters.equippedArmor.filter(i => i.custom).reduce((a, c) => a.concat(c.mods || []), [])
+    const caMechanics = getters.modsList.filter(i => caMods.includes(i.id) && i.type === 'armor').reduce((a, c) => a.concat(c.mechanics || []), [])
+    console.log(caMechanics)
+    const customArmorMechanics = {
+      path: 'customArmor',
+      mechanics: caMechanics
+    }
+    // set bonuses
+    return [
+      customArmorMechanics
+    ]
   }
 }
 
