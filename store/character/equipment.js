@@ -254,11 +254,16 @@ export const getters = {
       const attackType = ['melee', 'gun-strike', 'natural-melee'].includes(weapon.data.type) ? 'melee' : 'ranged'
       const weaponType = ['melee', 'gun-strike', 'natural-melee'].includes(weapon.data.type) ? 'melee' : weapon.data.type
       // TODO: potential overrides like shoulder mounts
-      const abilityMod = recoil || finesse
-        ? dexOrStr
-        : weaponType === 'melee'
-          ? 'str'
-          : 'dex'
+      const smWeapons = rootGetters['character/character'].currentStats.shoulderMounts?.weapons || []
+      const isSmWeapon = smWeapons.includes(weapon.uuid)
+      const hasShoulderMounts = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'shoulder-mounts').length
+      const abilityMod = isSmWeapon && hasShoulderMounts
+        ? 'int'
+        : recoil || finesse
+          ? dexOrStr
+          : weaponType === 'melee'
+            ? 'str'
+            : 'dex'
 
       // Get Matching Augments
       const augments = getters.hydratedAttackAugments('attack-augment', attackType, 'weapons', weaponType, abilityMod)

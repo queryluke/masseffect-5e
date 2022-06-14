@@ -16,7 +16,20 @@
       </v-list-item-title>
       <v-list-item-subtitle>
         <slot name="subtitle">
-          {{ subtitle }}
+          <div class="d-flex">
+            <div style="width: 100px">
+              {{ subtitle }}
+            </div>
+            <div v-if="shoulderMountable">
+              <v-switch v-model="smStatus" dense class="mt-n1 pt-0 ml-4" :disabled="smDisabled" hide-details>
+                <template #label>
+                  <span class="text-caption">
+                    Shoulder Mounts
+                  </span>
+                </template>
+              </v-switch>
+            </div>
+          </div>
         </slot>
       </v-list-item-subtitle>
     </v-list-item-content>
@@ -106,6 +119,59 @@ export default {
           return `${this.$t(`armor_types.${this.itemData.type}`)} ${this.$t(`armor_placements.${this.itemData.placement}_title`)}`
         default:
           return ''
+      }
+    },
+    shoulderMountable () {
+      if (this.item.type !== 'weapon') {
+        return false
+      }
+      if (this.item.data.type === 'melee') {
+        return false
+      }
+      if (!this.item.equipped) {
+        return false
+      }
+      const shoulderMounts = this.$store.getters['character/mechanics/mechanics'].find(i => i.type === 'shoulder-mounts')
+      if (!shoulderMounts) {
+        return false
+      }
+      if (shoulderMounts.proficient) {
+        const weaponProfs = this.$store.getters['character/profs/profs']
+        const weaponType = this.item.data.type
+        if (!weaponProfs.weapon.includes(weaponType)) {
+          return false
+        }
+      }
+      return true
+    },
+    smDisabled () {
+      if (this.smStatus) {
+        return false
+      }
+      const shoulderMounts = this.$store.getters['character/mechanics/mechanics'].find(i => i.type === 'shoulder-mounts')
+      const weaponSlots = this.item.data.properties.includes('two-handed') ? 2 : 1
+      const smStats = this.$store.getters['character/character'].currentStats.shoulderMounts || { weapons: [], slots: 0 }
+      if ((smStats.slots + weaponSlots > shoulderMounts.slots) || (smStats.weapons.length + 1 > shoulderMounts.max)) {
+        return true
+      }
+      return false
+    },
+    smStatus: {
+      get () {
+        return (this.$store.getters['character/character'].currentStats.shoulderMounts || { weapons: [], slots: 0 }).weapons.includes(this.item.uuid)
+      },
+      set (value) {
+        const currentStats = JSON.parse(JSON.stringify(this.$store.getters['character/character'].currentStats.shoulderMounts || { weapons: [], slots: 0 }))
+        const weaponSlots = this.item.data.properties.includes('two-handed') ? 2 : 1
+        if (value) {
+          currentStats.weapons.push(this.item.uuid)
+          currentStats.slots += weaponSlots
+        } else {
+          const currIndex = currentStats.weapons.indexOf(this.item.uuid)
+          currentStats.weapons.splice(currIndex, 1)
+          currentStats.slots = Math.max(0, currentStats.slots - weaponSlots)
+        }
+        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.shoulderMounts', value: currentStats })
       }
     }
   },
