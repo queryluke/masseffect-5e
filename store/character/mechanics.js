@@ -171,7 +171,6 @@ export const getters = {
     if (!bonus) {
       return 0
     }
-    const min = bonus.min || 0
     let b = 0
     let mod = null
     switch (bonus.type) {
@@ -257,7 +256,8 @@ export const getters = {
       b = b * bonus.multiplier
     }
     b = bonus.ceil ? Math.ceil(b) : Math.floor(b)
-    return Math.max(min, b)
+    b = bonus.min || bonus.min === 0 ? Math.max(bonus.min, b) : b
+    return b
   }
 }
 

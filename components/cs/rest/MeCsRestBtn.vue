@@ -24,6 +24,9 @@ export default {
   methods: {
     open () {
       this.$store.commit('character/navigation/SET', { key: 'restMenu', value: this.type })
+      this.$nextTick(() => {
+        this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-rest-menu')
+      })
     }
   }
 }

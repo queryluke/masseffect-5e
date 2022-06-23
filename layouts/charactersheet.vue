@@ -46,9 +46,6 @@
 
     <!-- don't show anything unless character is ready -->
     <template v-if="characterReady">
-      <!-- Short/long rest Menu -->
-      <me-cs-rest-dialog />
-
       <!-- Settings Dialog -->
       <me-cs-settings-dialog />
 
