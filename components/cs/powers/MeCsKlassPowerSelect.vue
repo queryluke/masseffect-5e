@@ -105,6 +105,7 @@ export default {
       const powers = []
       for (const p of this.powersAvailableToKlass) {
         const learned = this.selectedPowers.find(i => i.id === p.id && i.klass === this.klass.id)
+        console.log(learned)
         const base = {
           data: p,
           learned: !!learned,
@@ -169,7 +170,7 @@ export default {
         const alreadySelected = this.$store.getters['character/selections/selected'].find(i => i.path === path)
         if (alreadySelected) {
           const oldValue = alreadySelected.value[0]
-          if (oldValue?.id === id) {
+          if (oldValue?.value === advId) {
             value = []
           }
         }

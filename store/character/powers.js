@@ -404,7 +404,10 @@ export const getters = {
     return powers
   },
   selectedPowers: (state, getters, rootState, rootGetters) => {
-    const advancements = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'advancement')
+    // hack for auto-learned power advancements
+    const unusedAdvancements = rootGetters['character/mechanics/unusedSelections'].reduce((a, c) => a.concat(c.value), []).filter(i => i.type === 'advancement')
+    const hydratedAdvancements = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'advancement')
+    const advancements = [...hydratedAdvancements, ...unusedAdvancements]
     const mechanicPowers = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'powers').map((power) => {
       const advancement = advancements.find(adv => power.value === adv.id)
       // const advancementId
