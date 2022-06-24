@@ -45,6 +45,7 @@
                 </v-tab>
               </template>
             </v-tabs>
+
             <!-- Action section prepends -->
             <div v-if="tab === 0">
               <div class="mt-1 mx-1">
@@ -55,6 +56,7 @@
               </div>
               <v-divider class="mt-2" />
             </div>
+
             <!-- Power section prepends -->
             <div v-if="tab === 1">
               <div class="mt-1">
@@ -71,6 +73,21 @@
                 </v-col>
                 <v-col cols="12" class="mt-2">
                   <me-cs-global-notes sub-type="power" />
+                </v-col>
+              </v-row>
+              <v-divider class="mt-2" />
+            </div>
+
+            <!-- Equipment section prepends -->
+            <div v-if="tab === 2">
+              <v-row class="mx-4 mt-2" no-gutters>
+                <v-col cols="8">
+                  <me-cs-equipment-filter />
+                </v-col>
+                <v-col cols="4" class="text-right">
+                  <v-btn x-small outlined color="primary" @click="$store.dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-equipment-manager')">
+                    Add Equipment
+                  </v-btn>
                 </v-col>
               </v-row>
               <v-divider class="mt-2" />

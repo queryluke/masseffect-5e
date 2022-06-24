@@ -113,7 +113,7 @@
       </v-row>
     </div>
 
-    <v-card-actions class="pb-12">
+    <v-card-actions class="py-12">
       <v-spacer />
       <v-btn color="primary" @click="execRest(type)">
         Take {{ type }} rest

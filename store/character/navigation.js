@@ -17,6 +17,8 @@ export const state = () => ({
   learnedPowersLevelFilter: 'all',
   powersSearch: null,
   powersLevelFilter: 'all',
+  equipmentFilter: 'all',
+  equipmentAdderFilter: 'all',
   toDisplay: false
 })
 
@@ -36,6 +38,8 @@ export const getters = {
   learnedPowersLevelFilter: state => state.learnedPowersLevelFilter,
   powersSearch: state => state.powersSearch,
   powersLevelFilter: state => state.powersLevelFilter,
+  equipmentFilter: state => state.equipmentFilter,
+  equipmentAdderFilter: state => state.equipmentAdderFilter,
   toDisplay: state => state.toDisplay
 }
 

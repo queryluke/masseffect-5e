@@ -109,7 +109,7 @@ export default {
   computed: {
     items () {
       const items = []
-      for (const type of ['weapons', 'armor', 'gear']) {
+      for (const type of ['weapons', 'armor']) {
         const models = this.$store.getters.getData(type).map((i) => {
           return {
             ...i,
@@ -118,7 +118,7 @@ export default {
         })
         items.push(...models)
       }
-      return items
+      return [...items, ...this.$store.getters['character/equipment/gearList']]
     },
     filteredItems () {
       return this.items.filter((i) => {

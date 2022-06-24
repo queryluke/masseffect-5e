@@ -134,7 +134,17 @@ export const getters = {
     return rootGetters.getData('armor')
   },
   gearList: (state, getters, rootState, rootGetters) => {
-    return rootGetters.getData('gear')
+    const items = []
+    for (const gear of rootGetters.getData('gear')) {
+      if (gear.subsets) {
+        for (const subset of gear.subsets) {
+          items.push({ ...gear, ...subset, modelType: 'gear' })
+        }
+      } else {
+        items.push({ ...gear, modelType: 'gear' })
+      }
+    }
+    return items
   },
   modsList: (state, getters, rootState, rootGetters) => {
     return rootGetters.getData('mods')
