@@ -1,32 +1,25 @@
 <template>
-  <div>
-    <v-row>
-      <v-col cols="4">
-        <me-cb-debounced-number-input
-          :current="item.uses"
-          :max="999"
-          label="Quantity"
-          @add="changeStat('uses', item.uses + 1)"
-          @remove="changeStat('uses', item.uses - 1)"
-          @set="changeStat('uses', $event)"
-        />
-      </v-col>
-      <v-col cols="8">
-        <v-text-field
-          v-model="notes"
-          label="Notes"
-          hint="e.g. Grenade mark, medi-gel type"
-          persistent-hint
-          @change="debouncedNoteChange()"
-        />
-      </v-col>
-    </v-row>
-    <me-gear-info :item="itemData" />
-  </div>
+  <v-card-text>
+    <div class="text-body-2 font-italic">
+      {{ $t(`gear_types.${item.type}`) }}<span v-if="item.subType" class="pl-1">({{ $t(`gear_types.${item.subType}`) }})</span>, {{ $t(`rarities.${item.rarity}`) }}
+    </div>
+    <v-divider class="my-1" />
+    <div v-if="item.weight" class="text-caption">
+      <span class="font-weight-bold pr-1">Weight:</span>
+      <me-weight :amount="item.weight" num-only />
+    </div>
+    <div class="text-caption">
+      <span class="font-weight-bold pr-1">Cost:</span>
+      {{ cost }}
+    </div>
+    <me-hr size="2" />
+    <div class="mt-1">
+      <me-html v-if="!loading" :content="item.html" :classes="'text-caption'" />
+    </div>
+  </v-card-text>
 </template>
 
 <script>
-import { cloneDeep, debounce, set as setAttr } from 'lodash'
 
 export default {
   name: 'MeCsEquipmentGearInfo',
@@ -38,35 +31,20 @@ export default {
   },
   data () {
     return {
-      cachedNotes: ''
+      loading: false
     }
   },
   computed: {
-    itemData () {
-      return this.item.data
-    },
-    notes: {
-      get () {
-        return this.item.notes
-      },
-      set (value) {
-        this.cachedNotes = value
-      }
+    cost () {
+      return this.item.cost === 0 ? '-' : this.$options.filters.groupDigits(this.item.cost, ',')
     }
   },
-  created () {
-    this.debouncedNoteChange = debounce(() => {
-      this.noteChange()
-    }, 1000)
-  },
-  methods: {
-    noteChange () {
-      this.changeStat('notes', this.cachedNotes)
-    },
-    changeStat (path, value) {
-      const replacement = cloneDeep(this.item)
-      setAttr(replacement, path, value)
-      this.$store.dispatch('character/equipment/REPLACE_EQUIPMENT', { uuid: this.item.uuid, replacement })
+  watch: {
+    item () {
+      this.loading = true
+      setTimeout(() => {
+        this.loading = false
+      }, 10)
     }
   }
 }

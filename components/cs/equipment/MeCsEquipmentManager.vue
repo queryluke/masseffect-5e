@@ -22,9 +22,7 @@
     >
       <template #[`item.actions`]="{ item }">
         <div style="max-width: 30px">
-          <v-btn outlined color="primary" x-small @click="addItem(item)">
-            Add
-          </v-btn>
+          <me-cs-equipment-add-btn :item="item" />
         </div>
       </template>
       <template #[`item.name`]="{ item }">
@@ -32,7 +30,7 @@
           <me-cs-equipment-title :item="item" />
           <div class="mt-n1">
             <small>
-              <me-cs-equipment-subtitle :item="item" />
+              <me-cs-equipment-subtitle :item="item" :type="item.modelType" />
             </small>
           </div>
         </div>
@@ -49,7 +47,9 @@
       </template>
       <template #expanded-item="{ headers, item }">
         <td :colspan="headers.length">
-          More info about {{ item.name }}
+          <v-card flat color="transparent" width="300">
+            <component :is="`me-cs-equipment-${item.modelType === 'weapons' ? 'weapon' : item.modelType}-info`" :item="item" />
+          </v-card>
         </td>
       </template>
     </v-data-table>
@@ -66,6 +66,8 @@
 </template>
 
 <script>
+import { createNamespacedHelpers } from 'vuex'
+const { mapGetters } = createNamespacedHelpers('character')
 export default {
   data () {
     return {
@@ -79,40 +81,20 @@ export default {
         { text: 'Name', value: 'name', align: 'start' },
         { text: 'Cost', value: 'cost', filterable: false, align: 'center' }
       ],
-      expanded: [],
-      rarity: null,
-      customArmorRules: {
-        name: [v => !!v || 'Name is required'],
-        placement: [v => !!v || 'Placement is required'],
-        type: [v => !!v || 'Type is required']
-      },
-      customArmor: {
-        name: null,
-        placement: null,
-        type: null,
-        html: null
-      },
-      defaultCustomArmor: {
-        name: null,
-        placement: null,
-        type: null,
-        html: null
-      },
-      armorTypes: ['light', 'medium', 'heavy'],
-      armorPlacements: ['head', 'chest', 'arms', 'legs'],
-      tab: 0,
-      customArmorAdded: false,
-      customArmorAdding: false
+      expanded: []
     }
   },
   computed: {
-    filter () {
-      return this.$store.getters['character/navigation/equipmentAdderFilter']
-    },
+    ...mapGetters({
+      filter: 'navigation/equipmentAdderFilter',
+      weapons: 'equipment/weaponsList',
+      armor: 'equipment/armorList',
+      gear: 'equipment/gearList'
+    }),
     items () {
       const items = []
-      for (const type of ['weapons', 'armor']) {
-        const models = this.$store.getters.getData(type).map((i) => {
+      for (const type of ['weapons', 'armor', 'gear']) {
+        const models = this[type].map((i) => {
           return {
             ...i,
             modelType: type
@@ -120,7 +102,7 @@ export default {
         })
         items.push(...models)
       }
-      return [...items, ...this.$store.getters['character/equipment/gearList']]
+      return items
     },
     filteredItems () {
       return this.items.filter((i) => {
@@ -129,35 +111,11 @@ export default {
     }
   },
   methods: {
-    addItem (item) {
-      console.log(item)
-    },
     expandItem (event, attrs) {
       if (attrs.isExpanded) {
         this.expanded = []
       } else {
         this.expanded.splice(0, 1, attrs.item)
-      }
-    },
-    submitCustomArmor () {
-      if (this.customArmor.name && this.customArmor.placement && this.customArmor.type) {
-        const customArmor = {
-          type: 'armor',
-          custom: this.customArmor,
-          equipped: false,
-          mods: [],
-          id: this.customArmor.name.replaceAll(/\W/g, '-') + new Date().getTime(),
-          uuid: this.customArmor.name.replaceAll(/\W/g, '-') + new Date().getTime()
-        }
-        this.customArmorAdding = true
-        this.$store.dispatch('character/equipment/ADD_EQUIPMENT', customArmor)
-        this.customArmorAdding = false
-        this.customArmorAdded = true
-        setTimeout(() => {
-          this.customArmorAdded = false
-          this.tab = 0
-          this.customArmor = { ...this.defaultCustomArmor }
-        }, 1000)
       }
     }
   }

@@ -1,25 +1,13 @@
 <template>
-  <v-list-item :key="`${item.modelType}-${item.id}`" dense>
-    <v-list-item-content>
-      <v-list-item-title>
-        {{ item.name }}
-      </v-list-item-title>
-      <v-list-item-subtitle>
-        <me-cs-equipment-subtitle :item="item" />
-      </v-list-item-subtitle>
-    </v-list-item-content>
-    <v-list-item-action>
-      <v-btn
-        small
-        outlined
-        :color="added ? 'success' : 'primary'"
-        :loading="adding"
-        @click="addEquipment()"
-      >
-        {{ added ? 'Added' : 'Add' }}
-      </v-btn>
-    </v-list-item-action>
-  </v-list-item>
+  <v-btn
+    outlined
+    :color="added ? 'success' : 'primary'"
+    :loading="adding"
+    x-small
+    @click.stop="addItem()"
+  >
+    {{ added ? 'Added' : 'Add' }}
+  </v-btn>
 </template>
 
 <script>
@@ -36,29 +24,8 @@ export default {
       added: false
     }
   },
-  computed: {
-    subtitle () {
-      switch (this.item.modelType) {
-        case 'weapons':
-          return this.$t('weapon_item_subtitle', {
-            rarity: this.$t(`rarities.${this.item.rarity}`),
-            weaponType: this.$tc(`weapon_types.${this.item.type}`, 1)
-          })
-        case 'armor':
-          return this.$t('armor_item_subtitle', {
-            rarity: this.$t(`rarities.${this.item.rarity}`),
-            armorType: this.$t(`armor_types.${this.item.type}_armor`),
-            placement: this.$t(`armor_placements.${this.item.placement}`)
-          })
-        case 'gear':
-          return `${this.item.rarity} ${this.$t(`gear_types.${this.item.type}`)}`
-        default:
-          return ''
-      }
-    }
-  },
   methods: {
-    addEquipment () {
+    addItem () {
       let newItem = false
       let mods
       const now = new Date().toISOString()
@@ -102,7 +69,6 @@ export default {
       }
       if (newItem) {
         this.adding = true
-        // this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'equipment', value: [] })
         this.$store.dispatch('character/equipment/ADD_EQUIPMENT', newItem)
         this.adding = false
         this.added = true

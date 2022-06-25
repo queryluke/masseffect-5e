@@ -10,6 +10,10 @@ export default {
     item: {
       type: Object,
       required: true
+    },
+    type: {
+      type: String,
+      required: true
     }
   },
   computed: {

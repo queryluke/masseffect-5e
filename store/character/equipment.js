@@ -36,6 +36,35 @@ export const state = () => ({
     flavor: '',
     html: ''
   },
+  customArmor: [
+    // chest
+    { id: 'ca-chest-light-2', name: 'Light Chest Armor II', rarity: 'uncommon', placement: 'chest', type: 'light', cost: 8000, slots: 2 },
+    { id: 'ca-chest-medium-2', name: 'Medium Chest Armor II', rarity: 'uncommon', placement: 'chest', type: 'medium', cost: 10000, slots: 2 },
+    { id: 'ca-chest-heavy-2', name: 'Heavy Chest Armor II', rarity: 'uncommon', placement: 'chest', type: 'heavy', cost: 12000, slots: 2 },
+    { id: 'ca-chest-light-3', name: 'Light Chest Armor III', rarity: 'rare', placement: 'chest', type: 'light', cost: 28000, slots: 3 },
+    { id: 'ca-chest-medium-3', name: 'Medium Chest Armor III', rarity: 'rare', placement: 'chest', type: 'medium', cost: 30000, slots: 3 },
+    { id: 'ca-chest-heavy-3', name: 'Heavy Chest Armor III', rarity: 'rare', placement: 'chest', type: 'heavy', cost: 32000, slots: 3 },
+    // legs (arms auto generated)
+    { id: 'ca-legs-light-0', name: 'Light Leg Armor', rarity: 'common', placement: 'legs', type: 'light', cost: 2000, slots: 0 },
+    { id: 'ca-legs-medium-0', name: 'Medium Leg Armor', rarity: 'common', placement: 'legs', type: 'medium', cost: 3000, slots: 0 },
+    { id: 'ca-legs-heavy-0', name: 'Heavy Leg Armor', rarity: 'common', placement: 'legs', type: 'heavy', cost: 4000, slots: 0 },
+    { id: 'ca-legs-light-1', name: 'Light Leg Armor I', rarity: 'uncommon', placement: 'legs', type: 'light', cost: 22000, slots: 1 },
+    { id: 'ca-legs-medium-1', name: 'Medium Leg Armor I', rarity: 'uncommon', placement: 'legs', type: 'medium', cost: 23000, slots: 1 },
+    { id: 'ca-legs-heavy-1', name: 'Heavy Leg Armor I', rarity: 'uncommon', placement: 'legs', type: 'heavy', cost: 24000, slots: 1 },
+    { id: 'ca-legs-light-2', name: 'Light Leg Armor II', rarity: 'rare', placement: 'legs', type: 'light', cost: 42000, slots: 2 },
+    { id: 'ca-legs-medium-2', name: 'Medium Leg Armor II', rarity: 'rare', placement: 'legs', type: 'medium', cost: 43000, slots: 2 },
+    { id: 'ca-legs-heavy-2', name: 'Heavy Leg Armor II', rarity: 'rare', placement: 'legs', type: 'heavy', cost: 44000, slots: 2 },
+    // head
+    { id: 'ca-head-light-1', name: 'Light Helmet I', rarity: 'uncommon', placement: 'head', type: 'light', cost: 5000, slots: 1 },
+    { id: 'ca-head-medium-1', name: 'Medium Helmet I', rarity: 'uncommon', placement: 'head', type: 'medium', cost: 5000, slots: 1 },
+    { id: 'ca-head-heavy-1', name: 'Heavy Helmet I', rarity: 'uncommon', placement: 'head', type: 'heavy', cost: 5000, slots: 1 },
+    { id: 'ca-head-light-2', name: 'Light Helmet II', rarity: 'rare', placement: 'head', type: 'light', cost: 25000, slots: 2 },
+    { id: 'ca-head-medium-2', name: 'Medium Helmet II', rarity: 'rare', placement: 'head', type: 'medium', cost: 25000, slots: 2 },
+    { id: 'ca-head-heavy-2', name: 'Heavy Helmet II', rarity: 'rare', placement: 'head', type: 'heavy', cost: 25000, slots: 2 },
+    { id: 'ca-head-light-3', name: 'Light Helmet III', rarity: 'spectre', placement: 'head', type: 'light', cost: 45000, slots: 3 },
+    { id: 'ca-head-medium-3', name: 'Medium Helmet III', rarity: 'spectre', placement: 'head', type: 'medium', cost: 45000, slots: 3 },
+    { id: 'ca-head-heavy-4', name: 'Heavy Helmet III', rarity: 'spectre', placement: 'head', type: 'heavy', cost: 45000, slots: 3 }
+  ],
   unarmedStrike: {
     type: 'natural-melee',
     name: 'Unarmed Strike',
@@ -125,23 +154,63 @@ export const getters = {
     return getters.weapons.filter(i => i.equipped)
   },
   weaponsList: (state, getters, rootState, rootGetters) => {
-    return rootGetters.getData('weapons')
+    return rootGetters.getData('weapons').map((i) => {
+      const properties = []
+      for (const prop of (i.properties || [])) {
+        const matchingProp = getters.weaponPropertiesList.find(wp => wp.id === prop)
+        if (matchingProp) {
+          properties.push(matchingProp)
+        }
+      }
+      return {
+        ...i,
+        properties
+      }
+    })
   },
   weaponPropertiesList: (state, getters, rootState, rootGetters) => {
     return rootGetters.getData('weapon-properties')
   },
+  setBonusesList: (state, getters, rootState, rootGetters) => {
+    return rootGetters.getData('set-bonuses')
+  },
   armorList: (state, getters, rootState, rootGetters) => {
-    return rootGetters.getData('armor')
+    const items = []
+    const armorSets = rootGetters.getData('armor').map((i) => {
+      let setBonus = false
+      if (i.set) {
+        setBonus = getters.setBonusesList.find(sb => sb.id === i.set) || false
+      }
+      return {
+        ...i,
+        setBonus
+      }
+    })
+    const customArmor = state.customArmor.map((i) => {
+      const armor = { ...state.customArmorStub, ...i }
+      if (armor.slots > 0) {
+        armor.html = `You may add ${armor.slots} armor mod${armor.slots > 1 ? 's' : ''} to this custom armor piece`
+      }
+      if (armor.type === 'legs') {
+        const armArmor = Object.assign({}, armor)
+        armArmor.id = armArmor.id.replace('-legs-', '-arms-')
+        armArmor.name = armArmor.name.replace(' Leg ', ' Arm ')
+        armArmor.placement = 'arms'
+        items.push(armArmor)
+      }
+      return armor
+    })
+    return [...items, ...customArmor, ...armorSets]
   },
   gearList: (state, getters, rootState, rootGetters) => {
     const items = []
     for (const gear of rootGetters.getData('gear')) {
       if (gear.subsets) {
         for (const subset of gear.subsets) {
-          items.push({ ...gear, ...subset, modelType: 'gear' })
+          items.push({ ...gear, ...subset })
         }
       } else {
-        items.push({ ...gear, modelType: 'gear' })
+        items.push(gear)
       }
     }
     return items
