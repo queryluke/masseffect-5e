@@ -16,7 +16,14 @@
           </span>
         </div>
       </div>
-      <v-btn x-small color="error" outlined icon @click.stop="$emit('remove')">
+      <v-btn
+        v-if="item"
+        x-small
+        color="error"
+        outlined
+        icon
+        @click.stop="expanded = false; $emit('remove')"
+      >
         <v-icon>
           mdi-close
         </v-icon>
@@ -24,7 +31,7 @@
     </v-card-text>
     <v-expand-transition>
       <v-card-text v-show="expanded">
-        <me-html :content="item.html" :classes="'text-caption'" />
+        <me-html v-if="!loading" :content="item.html" :classes="'text-caption'" />
       </v-card-text>
     </v-expand-transition>
   </v-card>
@@ -40,7 +47,8 @@ export default {
   },
   data () {
     return {
-      expanded: false
+      expanded: false,
+      loading: false
     }
   },
   computed: {
@@ -52,6 +60,14 @@ export default {
     },
     textColor () {
       return this.$store.getters['config/rarityTextColor'](this.item.rarity)
+    }
+  },
+  watch: {
+    id () {
+      this.loading = true
+      setTimeout(() => {
+        this.loading = false
+      }, 100)
     }
   },
   methods: {

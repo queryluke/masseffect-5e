@@ -12,7 +12,7 @@
     <v-col cols="6">
       <me-cb-debounced-number-input
         label="Heat"
-        :current="itemData.heat"
+        :current="itemData.heat || 0"
         :max="999"
         :clearable="!!item.overrides.heat"
         hide-icons

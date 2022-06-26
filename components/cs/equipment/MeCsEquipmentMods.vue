@@ -26,8 +26,13 @@
     >
       <template #[`item.actions`]="{ item }">
         <div style="max-width: 30px">
-          <v-btn x-small color="primary" outlined @click.stop="add(item)">
-            Add
+          <v-btn x-small color="primary" outlined :disabled="isSelected(item.id)" @click.stop="add(item)">
+            <v-icon v-if="isSelected(item.id)">
+              mdi-check
+            </v-icon>
+            <span v-else>
+              Add
+            </span>
           </v-btn>
         </div>
       </template>
@@ -81,6 +86,10 @@ export default {
     secondaryFilter: {
       type: [Object, Boolean],
       default: false
+    },
+    current: {
+      type: Array,
+      default: () => []
     }
   },
   data () {
@@ -136,6 +145,9 @@ export default {
       } else {
         this.expanded.splice(0, 1, attrs.item)
       }
+    },
+    isSelected (id) {
+      return this.current.includes(id)
     }
   }
 }

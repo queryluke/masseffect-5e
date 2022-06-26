@@ -1,5 +1,17 @@
 <template>
   <v-card v-if="item" flat tile>
+    <div v-if="shoulderMountable">
+      <v-card flat tile>
+        <v-card-text class="d-flex justify-space-between align-center">
+          <div>
+            Equip in Shoulder Mounts
+          </div>
+          <v-switch v-model="smStatus" dense class="mt-n1 pt-0 ml-4" :disabled="smDisabled" hide-details />
+        </v-card-text>
+      </v-card>
+      <v-divider />
+    </div>
+
     <me-cs-equipment-weapon-info :item="info" />
     <v-card-text class="pt-0">
       <div class="font-weight-bold">
@@ -27,7 +39,7 @@
     <v-expand-transition>
       <div v-show="mods">
         <v-card-text class="px-2 py-0">
-          <me-cs-equipment-mods :filters="modFilters" :secondary-filter="modSecondaryFilter" @add="changeWeaponMod" />
+          <me-cs-equipment-mods :filters="modFilters" :secondary-filter="modSecondaryFilter" :current="currentMods" @add="changeWeaponMod" />
         </v-card-text>
       </div>
     </v-expand-transition>
@@ -88,7 +100,58 @@ export default {
         attr: 'placement',
         options: this.modPlacements
       }
+    },
+    currentMods () {
+      return Object.values(this.item.mods)
+    },
+    shoulderMountable () {
+      if (this.info.type === 'melee') {
+        return false
+      }
+      if (!this.item.equipped) {
+        return false
+      }
+      const shoulderMounts = this.$store.getters['character/mechanics/mechanics'].find(i => i.type === 'shoulder-mounts')
+      if (!shoulderMounts) {
+        return false
+      }
+      if (shoulderMounts.proficient) {
+        const weaponProfs = this.$store.getters['character/profs/profs']
+        const weaponType = this.info.type
+        if (!weaponProfs.weapon.includes(weaponType)) {
+          return false
+        }
+      }
+      return true
+    },
+    smDisabled () {
+      if (this.smStatus) {
+        return false
+      }
+      const shoulderMounts = this.$store.getters['character/mechanics/mechanics'].find(i => i.type === 'shoulder-mounts')
+      const weaponSlots = this.info.properties.includes('two-handed') ? 2 : 1
+      const smStats = this.$store.getters['character/character'].currentStats.shoulderMounts || { weapons: [], slots: 0 }
+      return ((smStats.slots + weaponSlots > shoulderMounts.slots) || (smStats.weapons.length + 1 > shoulderMounts.max))
+    },
+    smStatus: {
+      get () {
+        return (this.$store.getters['character/character'].currentStats.shoulderMounts || { weapons: [], slots: 0 }).weapons.includes(this.item.uuid)
+      },
+      set (value) {
+        const currentStats = JSON.parse(JSON.stringify(this.$store.getters['character/character'].currentStats.shoulderMounts || { weapons: [], slots: 0 }))
+        const weaponSlots = this.info.properties.includes('two-handed') ? 2 : 1
+        if (value) {
+          currentStats.weapons.push(this.item.uuid)
+          currentStats.slots += weaponSlots
+        } else {
+          const currIndex = currentStats.weapons.indexOf(this.item.uuid)
+          currentStats.weapons.splice(currIndex, 1)
+          currentStats.slots = Math.max(0, currentStats.slots - weaponSlots)
+        }
+        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.shoulderMounts', value: currentStats })
+      }
     }
+
   },
   methods: {
     changeWeaponMod (mod) {
