@@ -2,8 +2,12 @@
   <v-card height="100%" flat>
     <v-card-text class="px-3">
       <v-text-field v-model="search" append-icon="mdi-magnify" dense label="Search" hide-details />
-      <div class="d-flex justify-center mt-3">
-        <me-cs-equipment-filter adder />
+      <div v-if="sfOptions.length" class="mt-2">
+        <v-btn-toggle v-model="sfValue" color="primary" borderless>
+          <v-btn v-for="sf in sfOptions" :key="`sf-${sf}`" x-small :value="sf">
+            {{ sf }}
+          </v-btn>
+        </v-btn-toggle>
       </div>
     </v-card-text>
     <v-data-table
@@ -22,7 +26,9 @@
     >
       <template #[`item.actions`]="{ item }">
         <div style="max-width: 30px">
-          <me-cs-equipment-add-btn :item="item" />
+          <v-btn x-small color="primary" outlined @click.stop="add(item)">
+            Add
+          </v-btn>
         </div>
       </template>
       <template #[`item.name`]="{ item }">
@@ -30,9 +36,9 @@
           <me-cs-equipment-title :rarity="item.rarity">
             {{ item.name }}
           </me-cs-equipment-title>
-          <div class="mt-n1">
+          <div class="mt-n1 text-capitalize">
             <small>
-              <me-cs-equipment-subtitle :model="item.modelType" :type="item.type" :additional="{ placement: item.placement }" />
+              {{ item.placement }}
             </small>
           </div>
         </div>
@@ -49,9 +55,7 @@
       </template>
       <template #expanded-item="{ headers, item }">
         <td :colspan="headers.length">
-          <v-card flat color="transparent" :width="$vuetify.breakpoint.xsOnly ? 240 : 300">
-            <component :is="`me-cs-equipment-${item.modelType === 'weapons' ? 'weapon' : item.modelType}-info`" :item="item" />
-          </v-card>
+          <me-html :content="item.html" :classes="'text-caption'" />
         </td>
       </template>
     </v-data-table>
@@ -68,9 +72,17 @@
 </template>
 
 <script>
-import { createNamespacedHelpers } from 'vuex'
-const { mapGetters } = createNamespacedHelpers('character')
 export default {
+  props: {
+    filters: {
+      type: Array,
+      required: true
+    },
+    secondaryFilter: {
+      type: [Object, Boolean],
+      default: false
+    }
+  },
   data () {
     return {
       search: null,
@@ -83,36 +95,41 @@ export default {
         { text: 'Name', value: 'name', align: 'start' },
         { text: 'Cost', value: 'cost', filterable: false, align: 'center' }
       ],
-      expanded: []
+      expanded: [],
+      sfValue: 'all'
     }
   },
   computed: {
-    ...mapGetters({
-      filter: 'navigation/equipmentAdderFilter',
-      weapons: 'equipment/weaponsList',
-      armor: 'equipment/armorList',
-      gear: 'equipment/gearList'
-    }),
     items () {
-      const items = []
-      for (const type of ['weapons', 'armor', 'gear']) {
-        const models = this[type].map((i) => {
-          return {
-            ...i,
-            modelType: type
-          }
-        })
-        items.push(...models)
-      }
-      return items
+      return this.$store.getters.getData('mods')
     },
     filteredItems () {
       return this.items.filter((i) => {
-        return this.filter && this.filter !== 'all' ? i.modelType === this.filter : true
+        const tests = []
+        for (const filter of this.filters) {
+          tests.push(i[filter.attr].includes(filter.value))
+        }
+        if (this.secondaryFilter) {
+          if (this.sfValue === 'all') {
+            tests.push(true)
+          } else {
+            tests.push(i[this.secondaryFilter.attr] === this.sfValue)
+          }
+        }
+        return tests.every(i => i)
       })
+    },
+    sfOptions () {
+      if (!this.secondaryFilter) {
+        return []
+      }
+      return ['all', ...this.secondaryFilter.options]
     }
   },
   methods: {
+    add (item) {
+      this.$emit('add', item)
+    },
     expandItem (event, attrs) {
       if (attrs.isExpanded) {
         this.expanded = []

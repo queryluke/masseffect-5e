@@ -1,21 +1,21 @@
 <template>
   <div :class="textColor" class="d-block text-truncate">
-    {{ item.name }}
+    <slot />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'MeCsEquipementTitle',
+  name: 'MeCsEquipmentTitle',
   props: {
-    item: {
-      type: Object,
+    rarity: {
+      type: String,
       required: true
     }
   },
   computed: {
     textColor () {
-      return this.$store.getters['config/rarityTextColor'](this.item.rarity)
+      return this.$store.getters['config/rarityTextColor'](this.rarity)
     }
   }
 }

@@ -7,24 +7,28 @@
 <script>
 export default {
   props: {
-    item: {
-      type: Object,
+    model: {
+      type: String,
       required: true
     },
     type: {
       type: String,
       required: true
+    },
+    additional: {
+      type: Object,
+      default: () => {}
     }
   },
   computed: {
     subtitle () {
-      switch (this.item.modelType) {
+      switch (this.model) {
         case 'weapons':
-          return this.$tc(`weapon_types.${this.item.type}`, 1)
+          return this.$tc(`weapon_types.${this.type}`, 1)
         case 'armor':
-          return `${this.$t(`armor_types.${this.item.type}_armor_title`)} (${this.$t(`armor_placements.${this.item.placement}_title`)})`
+          return `${this.$t(`armor_types.${this.type}_armor_title`)} (${this.$t(`armor_placements.${this.additional.placement}_title`)})`
         case 'gear':
-          return `${this.$t(`gear_types.${this.item.type}`)}`
+          return `${this.$t(`gear_types.${this.type}`)}`
         default:
           return ''
       }

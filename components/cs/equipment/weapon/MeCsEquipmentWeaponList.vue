@@ -6,15 +6,12 @@
     <me-hr size="2" />
     <v-list dense two-line>
       <template v-for="item in items">
-        <me-cs-equipment-list-item :key="item.uuid" :item="item">
-          <template #infoTab>
-            <me-cs-equipment-weapon-info :item="item" />
+        <me-cs-equipment-list-item :key="item.uuid" :item="item" type="weapon">
+          <template #title>
+            {{ item.overrides.name || item.data.name }}
           </template>
-          <template #modTab>
-            <me-cs-equipment-weapon-mods :item="item" />
-          </template>
-          <template #overrideTab>
-            <me-cs-equipment-weapon-override :item="item" />
+          <template #subtitle>
+            <me-cs-equipment-subtitle :type="item.data.type" model="weapons" />
           </template>
         </me-cs-equipment-list-item>
         <v-divider :key="`divider-${item.uuid}`" />

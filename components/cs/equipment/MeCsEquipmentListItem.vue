@@ -1,6 +1,6 @@
 <template>
-  <v-list-item dense style="min-height: 48px">
-    <v-list-item-action v-if="!noEquip && !viewOnly" class="my-0" @click="toggleEquipped">
+  <v-list-item dense style="min-height: 38px" @click="showItem">
+    <v-list-item-action v-if="!noEquip && !viewOnly" class="my-0" @click.stop="toggleEquipped">
       <v-icon v-if="item.equipped" color="primary">
         mdi-checkbox-marked
       </v-icon>
@@ -10,34 +10,34 @@
     </v-list-item-action>
     <v-list-item-content class="py-0">
       <v-list-item-title>
-        <slot name="title">
-          {{ title }}
-        </slot>
+        <slot name="title" />
       </v-list-item-title>
-      <v-list-item-subtitle>
-        <slot name="subtitle">
-          <div class="d-flex">
-            <div style="width: 100px">
-              {{ subtitle }}
+      <v-list-item-subtitle class="mt-n1">
+        <small>
+          <slot name="subtitle" />
+          <!--
+              <div v-if="shoulderMountable">
+                <v-switch v-model="smStatus" dense class="mt-n1 pt-0 ml-4" :disabled="smDisabled" hide-details>
+                  <template #label>
+                    <span class="text-caption">
+                      Shoulder Mounts
+                    </span>
+                  </template>
+                </v-switch>
+              </div>
             </div>
-            <div v-if="shoulderMountable">
-              <v-switch v-model="smStatus" dense class="mt-n1 pt-0 ml-4" :disabled="smDisabled" hide-details>
-                <template #label>
-                  <span class="text-caption">
-                    Shoulder Mounts
-                  </span>
-                </template>
-              </v-switch>
-            </div>
-          </div>
-        </slot>
+            -->
+        </small>
       </v-list-item-subtitle>
     </v-list-item-content>
+    <!--
     <v-list-item-action v-if="!viewOnly" class="my-0" @click="equipmentDialog = true">
       <v-icon>
         mdi-cog
       </v-icon>
     </v-list-item-action>
+    -->
+    <!--
     <me-standard-dialog :shown="equipmentDialog" :max-height="500" @close="equipmentDialog = false">
       <template #title>
         {{ title }}
@@ -72,17 +72,29 @@
             </v-card-text>
           </v-tab-item>
         </template>
-        <!-- info -->
       </v-tabs-items>
     </me-standard-dialog>
+    -->
+    <v-list-item-action>
+      <v-btn x-small outlined color="error" @click.stop="removeEquipment">
+        <v-icon size="16">
+          mdi-delete
+        </v-icon>
+      </v-btn>
+    </v-list-item-action>
   </v-list-item>
 </template>
 
 <script>
 export default {
+  name: 'MeCsEquipmentListItem',
   props: {
     item: {
       type: Object,
+      required: true
+    },
+    type: {
+      type: String,
       required: true
     },
     noEquip: {
@@ -181,6 +193,10 @@ export default {
     },
     removeEquipment () {
       this.$store.dispatch('character/equipment/REPLACE_EQUIPMENT', { uuid: this.item.uuid })
+    },
+    showItem () {
+      this.$store.commit('character/navigation/SET', { key: 'toDisplay', value: this.item.uuid })
+      this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', `me-cs-equipment-${this.type}-side-nav`)
     }
   }
 }

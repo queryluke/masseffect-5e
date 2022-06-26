@@ -96,6 +96,17 @@
         <v-row>
           <v-col>
             <me-cs-card title="Equipment">
+              <v-row class="mx-4 mt-2" no-gutters>
+                <v-col cols="8">
+                  <me-cs-equipment-filter />
+                </v-col>
+                <v-col cols="4" class="text-right">
+                  <v-btn x-small outlined color="primary" @click="$store.dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-equipment-manager')">
+                    Add Equipment
+                  </v-btn>
+                </v-col>
+              </v-row>
+              <v-divider class="my-2" />
               <me-cs-equipment />
             </me-cs-card>
           </v-col>
