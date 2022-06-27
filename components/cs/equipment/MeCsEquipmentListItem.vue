@@ -1,13 +1,15 @@
 <template>
   <v-list-item dense style="min-height: 38px" @click="showItem">
-    <v-list-item-action v-if="!noEquip && !viewOnly" class="my-0" @click.stop="toggleEquipped">
-      <v-icon v-if="item.equipped" color="primary">
-        mdi-checkbox-marked
-      </v-icon>
-      <v-icon v-else>
-        mdi-checkbox-blank-outline
-      </v-icon>
-    </v-list-item-action>
+    <slot name="action">
+      <v-list-item-action class="my-0" @click.stop="toggleEquipped">
+        <v-icon v-if="item.equipped" :color="viewOnly ? 'grey darken-2' : 'primary'">
+          mdi-checkbox-marked
+        </v-icon>
+        <v-icon v-else>
+          mdi-checkbox-blank-outline
+        </v-icon>
+      </v-list-item-action>
+    </slot>
     <v-list-item-content class="py-0">
       <v-list-item-title>
         <slot name="title" />
@@ -15,18 +17,6 @@
       <v-list-item-subtitle class="mt-n1">
         <small>
           <slot name="subtitle" />
-          <!--
-              <div v-if="shoulderMountable">
-                <v-switch v-model="smStatus" dense class="mt-n1 pt-0 ml-4" :disabled="smDisabled" hide-details>
-                  <template #label>
-                    <span class="text-caption">
-                      Shoulder Mounts
-                    </span>
-                  </template>
-                </v-switch>
-              </div>
-            </div>
-            -->
         </small>
       </v-list-item-subtitle>
     </v-list-item-content>
@@ -76,7 +66,7 @@
     </me-standard-dialog>
     -->
     <v-list-item-action>
-      <v-btn x-small outlined color="error" @click.stop="removeEquipment">
+      <v-btn x-small outlined color="error" :disabled="viewOnly" @click.stop="removeEquipment">
         <v-icon size="16">
           mdi-delete
         </v-icon>
@@ -189,6 +179,9 @@ export default {
   },
   methods: {
     toggleEquipped () {
+      if (this.viewOnly) {
+        return
+      }
       this.$store.dispatch('character/equipment/TOGGLE_EQUIPPED', this.item.uuid)
     },
     removeEquipment () {

@@ -8,7 +8,9 @@
       <template v-for="item in items">
         <me-cs-equipment-list-item :key="item.uuid" :item="item" type="weapon">
           <template #title>
-            {{ item.overrides.name || item.data.name }}
+            <me-cs-equipment-title :rarity="item.data.rarity">
+              {{ item.overrides.name || item.data.name }}
+            </me-cs-equipment-title>
           </template>
           <template #subtitle>
             <me-cs-equipment-subtitle :type="item.data.type" model="weapons" />
