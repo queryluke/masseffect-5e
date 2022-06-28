@@ -105,16 +105,18 @@ export const getters = {
       .filter(i => i.type === 'weapon')
       .map((i) => {
         const weapon = getters.weaponsList.find(j => j.id === i.id) || state.nullWeapon
+        const data = {
+          ...weapon,
+          ...i.overrides,
+          damage: {
+            ...weapon.damage,
+            ...(i.overrides?.damage || {})
+          }
+        }
         return {
-          data: {
-            ...weapon,
-            ...i.overrides,
-            damage: {
-              ...weapon.damage,
-              ...(i.overrides?.damage || {})
-            }
-          },
-          ...i
+          data,
+          ...i,
+          slots: data.properties.includes('two-handed') ? 2 : 1
         }
       })
   },
@@ -154,19 +156,7 @@ export const getters = {
     return getters.weapons.filter(i => i.equipped)
   },
   weaponsList: (state, getters, rootState, rootGetters) => {
-    return rootGetters.getData('weapons').map((i) => {
-      const properties = []
-      for (const prop of (i.properties || [])) {
-        const matchingProp = getters.weaponPropertiesList.find(wp => wp.id === prop)
-        if (matchingProp) {
-          properties.push(matchingProp)
-        }
-      }
-      return {
-        ...i,
-        properties
-      }
-    })
+    return rootGetters.getData('weapons')
   },
   weaponPropertiesList: (state, getters, rootState, rootGetters) => {
     return rootGetters.getData('weapon-properties')
@@ -332,8 +322,8 @@ export const getters = {
       // TODO: when new melee weapons arrive, need to change this...note that natural weapons are natural-ranged and natural-melee
       const attackType = ['melee', 'gun-strike', 'natural-melee'].includes(weapon.data.type) ? 'melee' : 'ranged'
       const weaponType = ['melee', 'gun-strike', 'natural-melee'].includes(weapon.data.type) ? 'melee' : weapon.data.type
-      // TODO: potential overrides like shoulder mounts
-      const smWeapons = rootGetters['character/character'].currentStats.shoulderMounts?.weapons || []
+      // shoulder mounts
+      const smWeapons = rootGetters['character/character'].currentStats.shoulderMounts || []
       const isSmWeapon = smWeapons.includes(weapon.uuid)
       const hasShoulderMounts = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'shoulder-mounts').length
       const abilityMod = isSmWeapon && hasShoulderMounts
@@ -611,6 +601,14 @@ export const actions = {
         items.splice(index, 1)
       }
       dispatch('character/UPDATE_CHARACTER', { attr: 'equipment', value: items }, { root: true })
+    }
+  },
+  REMOVE_FROM_SHOULDER_MOUNTS ({ dispatch, rootGetters }, uuid) {
+    const sm = JSON.parse(JSON.stringify(rootGetters['character/character'].currentStats.shoulderMounts || []))
+    const smIndex = sm.indexOf(uuid)
+    if (smIndex > -1) {
+      sm.splice(smIndex, 1)
+      dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.shoulderMounts', value: sm }, { root: true })
     }
   }
 }

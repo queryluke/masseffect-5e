@@ -58,8 +58,11 @@ export default {
     proficient () {
       return this.$store.getters['character/profs/profs'].weapon.includes(this.item.type) ? 'Yes' : 'No'
     },
+    weaponProperties () {
+      return this.$store.getters['character/equipment/weaponPropertiesList']
+    },
     properties () {
-      return this.item.properties.map(i => i.name).join(', ')
+      return this.item.properties.map(i => this.weaponProperties.find(j => j.id === i)?.name).join(', ')
     }
   },
   watch: {

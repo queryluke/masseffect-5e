@@ -2,11 +2,8 @@
   <v-list-item dense style="min-height: 38px" @click="showItem">
     <slot name="action">
       <v-list-item-action class="my-0" @click.stop="toggleEquipped">
-        <v-icon v-if="item.equipped" :color="viewOnly ? 'grey darken-2' : 'primary'">
-          mdi-checkbox-marked
-        </v-icon>
-        <v-icon v-else>
-          mdi-checkbox-blank-outline
+        <v-icon :color="iconColor">
+          {{ item.equipped ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
         </v-icon>
       </v-list-item-action>
     </slot>
@@ -87,7 +84,7 @@ export default {
       type: String,
       required: true
     },
-    noEquip: {
+    equipDisabled: {
       type: Boolean,
       default: false
     },
@@ -106,6 +103,13 @@ export default {
   computed: {
     viewOnly () {
       return this.$store.state.character.viewOnly
+    },
+    iconColor () {
+      return this.viewOnly || this.equipDisabled
+        ? 'grey darken-2'
+        : this.item.equipped
+          ? 'primary'
+          : 'grey lighten-1'
     },
     itemData () {
       return this.item.data
@@ -179,13 +183,16 @@ export default {
   },
   methods: {
     toggleEquipped () {
-      if (this.viewOnly) {
+      if (this.viewOnly || this.equipDisabled) {
         return
       }
       this.$store.dispatch('character/equipment/TOGGLE_EQUIPPED', this.item.uuid)
     },
     removeEquipment () {
       this.$store.dispatch('character/equipment/REPLACE_EQUIPMENT', { uuid: this.item.uuid })
+      if (this.type === 'weapon') {
+        this.$store.dispatch('character/equipment/REMOVE_FROM_SHOULDER_MOUNTS', this.item.uuid)
+      }
     },
     showItem () {
       this.$store.commit('character/navigation/SET', { key: 'toDisplay', value: this.item.uuid })
