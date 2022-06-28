@@ -1,6 +1,6 @@
 <template>
   <v-card v-if="item" flat tile>
-    <me-cs-equipment-armor-info :item="item.data" />
+    <me-cs-equipment-armor-info :item="item.data" :set-eq-count="setEqCount" />
     <v-card-text v-if="legacyCustom || item.data.slots > 0" class="pt-0">
       <div class="font-weight-bold">
         Mods
@@ -36,29 +36,6 @@
         </div>
       </v-expand-transition>
     </div>
-
-    <!--
-    <v-divider />
-    <v-list-item @click="customize = !customize">
-      <v-list-item-content>
-        <v-list-item-title class="text-caption">
-          Customize
-        </v-list-item-title>
-      </v-list-item-content>
-      <v-list-item-action>
-        <v-icon>
-          {{ customize ? 'mdi-chevron-up' : 'mdi-chevron-down' }}
-        </v-icon>
-      </v-list-item-action>
-    </v-list-item>
-    <v-expand-transition>
-      <div v-show="customize">
-        <v-card-text class="px-4">
-          <me-cs-equipment-weapon-override :item="item" />
-        </v-card-text>
-      </div>
-    </v-expand-transition>
-    -->
   </v-card>
 </template>
 
@@ -75,7 +52,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['armor', 'armorList']),
+    ...mapGetters(['armor', 'armorList', 'equippedArmor']),
     toDisplay () {
       return this.$store.getters['character/navigation/toDisplay']
     },
@@ -93,6 +70,14 @@ export default {
     },
     modFilters () {
       return [{ attr: 'type', value: 'armor' }, { attr: 'availability', value: this.item.data.type, array: true }, { attr: 'placement', value: this.item.data.placement }]
+    },
+    setEqCount () {
+      console.log(this.item.data.set)
+      if (this.item.set) {
+        return 0
+      } else {
+        return this.equippedArmor.filter(i => i.data.set === this.item.data.set).length
+      }
     }
   },
   methods: {
