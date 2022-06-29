@@ -577,8 +577,13 @@ export const getters = {
       let toConcat = []
       if (c.data.mechanics) {
         toConcat = c.data.mechanics.map((i) => {
+          let resource = false
+          if (i.resource) {
+            resource = { ...i.resource, id: c.uuid }
+          }
           return {
             ...i,
+            resource,
             moreInfo: {
               toDisplay: c.uuid,
               component: 'me-cs-equipment-gear-side-nav'

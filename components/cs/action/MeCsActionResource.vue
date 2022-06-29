@@ -14,6 +14,7 @@
     </v-btn>
     <component
       :is="component"
+      :id="id"
       :reset="item.reset"
       :current="count"
       :max="max"

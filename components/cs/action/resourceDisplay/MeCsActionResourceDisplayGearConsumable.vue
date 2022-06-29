@@ -1,63 +1,27 @@
 <template>
   <div class="d-flex">
-    <v-btn x-small text class="px-1" :disabled="viewOnly" @click.stop="remove()">
-      <v-icon size="18">
-        mdi-minus
-      </v-icon>
-    </v-btn>
     <div class="px-1">
-      <input
-        v-model.number="cachedValue"
-        :class="textColor"
-        :disabled="viewOnly"
-        style="width: 30px; text-align: center"
-        @focus.stop
-        @click.stop
-        @input="debouncedUpdate()"
-      >
+      Remaining Uses: {{ item.equippedAmount }}
     </div>
-    <v-btn x-small text :disabled="viewOnly" @click.stop="add()">
-      <v-icon size="18">
-        mdi-plus
-      </v-icon>
-    </v-btn>
   </div>
 </template>
 
 <script>
-import { debounce } from 'lodash'
 export default {
-  name: 'MeCsActionResourceDisplayOmniGel',
-  data () {
-    return {
-      cachedValue: null,
-      max: 999
+  name: 'MeCsActionResourceDisplayGearConsumable',
+  props: {
+    id: {
+      type: String,
+      required: true
     }
   },
   computed: {
     viewOnly () {
       return this.$store.state.character.viewOnly
     },
-    textColor () {
-      return this.$vuetify.theme.dark ? 'white--text' : 'grey--text text--darken-4'
-    },
-    equippedGel () {
-      return this.$store.getters['character/equipment/gear'].filter(i => i.id === 'omni-gel')
-    },
-    current () {
-      return this.equippedGel.reduce((a, c) => a + c.uses, 0)
+    item () {
+      return this.$store.getters['character/equipment/equipment'].find(i => i.uuid === this.id)
     }
-  },
-  watch: {
-    current (newVal) {
-      this.cachedValue = newVal
-    }
-  },
-  created () {
-    this.cachedValue = this.current
-    this.debouncedUpdate = debounce(() => {
-      this.updateAttr()
-    }, 500)
   },
   methods: {
     add () {
