@@ -17,10 +17,10 @@
       </v-col>
     </v-row>
 
-    <div class="mt-3">
-      <me-cs-equipment-weapon-list v-if="['all', 'weapons'].includes(tab)" :items="weapons" />
-      <me-cs-equipment-armor-list v-if="['all', 'armor'].includes(tab)" :items="armor" />
-      <me-cs-equipment-gear-list v-if="['all', 'gear'].includes(tab)" :items="gear" />
+    <div>
+      <me-cs-equipment-weapon-list v-if="['all', 'weapons'].includes(tab)" :items="weapons" class="mt-3" />
+      <me-cs-equipment-armor-list v-if="['all', 'armor'].includes(tab)" :items="armor" class="mt-3" />
+      <me-cs-equipment-gear-list v-if="['all', 'gear'].includes(tab)" :items="gear" class="mt-3" />
     </div>
   </div>
 </template>

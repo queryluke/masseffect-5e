@@ -58,7 +58,7 @@
       </template>
 
       <template v-if="item.shortDesc" #shortDesc>
-        <div :class="{'pb-4': !!item.resource}">
+        <div :class="{'pb-4': !!item.resource || !!item.toggle}">
           <me-cs-action-short-desc :short-desc="interpolatedShortDesc" />
         </div>
       </template>
@@ -135,7 +135,7 @@ export default {
       return `me-cs-action-layout-${this.layout}`
     },
     minHeight () {
-      return this.item.resource
+      return this.item.resource || this.item.toggle
         ? this.item.shortDesc || this.item.properties?.length
           ? 64
           : 52
@@ -143,15 +143,17 @@ export default {
     }
   },
   methods: {
-    showItem (item) {
+    showItem () {
       if (!this.item.moreInfo?.component && !this.item.moreInfo?.bind && !this.item.component && !this.item.html && !this.item.moreInfo?.model) {
         return
       }
       // TODO: need to figure out the best place to conditionally display this type of information
       // perhaps it would be easiest if the me-cs-more-info component did all the work
       // right now, just check whether or not its a power
-      const component = this.item.component || 'me-cs-more-info'
-      this.$store.commit('character/navigation/SET', { key: 'toDisplay', value: this.item })
+      // item.component for powers, item.moreInfo.component for gear/weapons, default is everything else
+      const component = this.item.component || this.item.moreInfo.component || 'me-cs-more-info'
+      const value = this.item.moreInfo?.toDisplay || this.item
+      this.$store.commit('character/navigation/SET', { key: 'toDisplay', value })
       this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', component)
     }
   }

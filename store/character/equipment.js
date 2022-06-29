@@ -196,6 +196,11 @@ export const getters = {
     const items = []
     for (const gear of rootGetters.getData('gear')) {
       if (gear.subsets) {
+        // Temp to avoid not showing added old gear
+        items.push({
+          ...gear,
+          notAddable: true
+        })
         for (const subset of gear.subsets) {
           items.push({ ...gear, ...subset })
         }
@@ -559,18 +564,33 @@ export const getters = {
     }
     return Object.values(finalDamage).map(i => `${i.dieCount}d${i.dieType} ${i.type}`).join(' + ')
   },
-  armorMechanics: (state, getters) => {
+  equipmentMechanics: (state, getters) => {
     // custom armor mechanics
     const caMods = getters.equippedArmor.filter(i => i.custom).reduce((a, c) => a.concat(c.mods || []), [])
     const caMechanics = getters.modsList.filter(i => caMods.includes(i.id) && i.type === 'armor').reduce((a, c) => a.concat(c.mechanics || []), [])
-    console.log(caMechanics)
     const customArmorMechanics = {
       path: 'customArmor',
       mechanics: caMechanics
     }
-    // set bonuses
+    // TODO: set bonuses
+    const gearMechanics = getters.gear.filter(i => i.equipped).reduce((a, c) => {
+      let toConcat = []
+      if (c.data.mechanics) {
+        toConcat = c.data.mechanics.map((i) => {
+          return {
+            ...i,
+            moreInfo: {
+              toDisplay: c.uuid,
+              component: 'me-cs-equipment-gear-side-nav'
+            }
+          }
+        })
+      }
+      return a.concat(toConcat)
+    }, [])
     return [
-      customArmorMechanics
+      customArmorMechanics,
+      { path: 'gear', mechanics: gearMechanics }
     ]
   }
 }

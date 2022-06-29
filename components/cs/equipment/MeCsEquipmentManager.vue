@@ -108,6 +108,9 @@ export default {
     },
     filteredItems () {
       return this.items.filter((i) => {
+        if (i.notAddable) {
+          return false
+        }
         return this.filter && this.filter !== 'all' ? i.modelType === this.filter : true
       })
     }

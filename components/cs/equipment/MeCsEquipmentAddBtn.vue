@@ -58,10 +58,12 @@ export default {
           newItem = {
             id: this.item.id,
             uuid: `${this.item.id}_${now}`,
-            uses: 1,
+            uses: this.item.charges || 1,
             notes: '',
             type: 'gear',
-            subType: this.item.type
+            subType: this.item.type,
+            equipped: false,
+            equippedAmount: 0
           }
           break
         default:

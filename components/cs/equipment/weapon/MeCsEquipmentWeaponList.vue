@@ -10,6 +10,7 @@
         <div class="text-caption">
           Weapon Slots: {{ currentSlots }} of {{ maxSlots }}
         </div>
+        <v-divider v-if="smMechanic" vertical class="ml-2" />
         <div v-if="smMechanic" class="ml-2">
           <v-menu offset-y>
             <template #activator="{ on, attrs }">

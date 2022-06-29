@@ -3,11 +3,11 @@
     <v-list-item-content>
       <v-list-item-title>
         <me-cs-equipment-title :rarity="item.data.rarity">
-          {{ name }}
+          {{ item.data.name }}
         </me-cs-equipment-title>
       </v-list-item-title>
       <v-list-item-subtitle class="text-caption text-capitalize">
-        <me-cs-equipment-subtitle :type="item.data.type" model="weapons" />
+        <me-cs-equipment-subtitle :type="item.data.type" model="gear" />
       </v-list-item-subtitle>
     </v-list-item-content>
     <v-list-item-action>
@@ -21,23 +21,19 @@
 <script>
 
 export default {
-  name: 'MeCsEquipmentWeaponSideNavPrepend',
+  name: 'MeCsEquipmentGearSideNavPrepend',
   computed: {
     toDisplay () {
       return this.$store.getters['character/navigation/toDisplay']
     },
     item () {
-      return this.$store.getters['character/equipment/weapons'].find(i => i.uuid === this.toDisplay)
-    },
-    name () {
-      return this.item.overrides.name || this.item.data.name
+      return this.$store.getters['character/equipment/gear'].find(i => i.uuid === this.toDisplay)
     }
   },
   methods: {
     removeEquipment () {
       this.$store.commit('character/navigation/SET', { key: 'sideNav', value: false })
       this.$store.dispatch('character/equipment/REPLACE_EQUIPMENT', { uuid: this.item.uuid })
-      this.$store.dispatch('character/equipment/REMOVE_FROM_SHOULDER_MOUNTS', this.item.uuid)
       this.$store.commit('character/navigation/SET', { key: 'toDisplay', value: null })
     }
   }
