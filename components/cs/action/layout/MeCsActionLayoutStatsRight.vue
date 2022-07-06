@@ -18,7 +18,7 @@
       </div>
       <div v-if="!$vuetify.breakpoint.xsOnly" class="d-flex flex-column" style="min-width: 68px">
         <slot name="range" />
-        <div class="py-1">
+        <div class="pb-1">
           <slot name="dc" />
         </div>
         <slot name="damage" />

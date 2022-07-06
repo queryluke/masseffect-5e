@@ -117,20 +117,24 @@
         <v-card
           outlined
           min-height="100px"
-          class="d-flex justify-space-around mx-auto"
           :min-width="$vuetify.breakpoint.mdOnly ? 280 : undefined"
           max-width="500"
         >
-          <div style="width: 49%">
-            <v-card-text class="pl-2 pr-1 pt-0 pb-3">
-              <me-cs-defenses />
-            </v-card-text>
+          <div class="d-flex justify-space-around mx-auto">
+            <div style="width: 49%">
+              <v-card-text class="pl-2 pr-1 pt-0 pb-3">
+                <me-cs-defenses />
+              </v-card-text>
+            </div>
+            <v-divider vertical />
+            <div style="width: 49%">
+              <v-card-text class="pl-2 pr-1 pt-0 pb-3">
+                <me-cs-conditions />
+              </v-card-text>
+            </div>
           </div>
-          <v-divider vertical />
-          <div style="width: 49%">
-            <v-card-text class="pl-2 pr-1 pt-0 pb-3">
-              <me-cs-conditions />
-            </v-card-text>
+          <div class="pa-1">
+            <me-cs-global-notes sub-type="defenses" />
           </div>
         </v-card>
       </v-col>

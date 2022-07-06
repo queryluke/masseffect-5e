@@ -2,7 +2,7 @@
   <v-card v-if="item" flat tile>
     <me-cs-equipment-gear-info :item="item.data" />
     <!-- quantity -->
-    <v-card-text v-if="useTypes.includes(item.data.type)">
+    <v-card-text v-if="item.data.consumable">
       <me-cb-debounced-number-input
         :current="item.uses"
         :max="99"

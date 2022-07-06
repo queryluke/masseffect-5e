@@ -1,7 +1,7 @@
 <template>
   <v-btn
     v-if="item"
-    small
+    x-small
     depressed
     color="secondary"
     :disabled="viewOnly || !item.equippedAmount"
@@ -31,7 +31,8 @@ export default {
   methods: {
     consume () {
       const equippedAmount = Math.max(0, (this.item.equippedAmount - 1))
-      const changeItem = { ...this.item, equippedAmount }
+      const totalAmount = Math.max(0, (this.item.uses - 1))
+      const changeItem = { ...this.item, equippedAmount, uses: totalAmount }
       this.$store.dispatch('character/equipment/REPLACE_EQUIPMENT', { uuid: this.item.uuid, replacement: changeItem })
     }
   }

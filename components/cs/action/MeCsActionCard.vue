@@ -1,13 +1,6 @@
 <template>
   <v-card outlined class="pa-1 px-md-3" :min-height="minHeight" @click="showItem">
     <component :is="layoutComponent" v-bind="{showCastingTime}">
-      <template #icon>
-        <v-avatar v-if="item.icon" size="16" class="mr-1">
-          <v-img :src="item.icon" />
-        </v-avatar>
-        <me-cs-action-consume-btn v-if="item.resource" :id="item.resource.id" />
-      </template>
-
       <template #name>
         {{ item.name }}
       </template>

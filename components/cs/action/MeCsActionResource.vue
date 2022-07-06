@@ -86,7 +86,9 @@ export default {
       return ['short', 'long'].includes(this.item.reset)
     },
     resetText () {
-      return this.item.label || (this.showPer ? `/ ${this.item.reset} rest` : false)
+      return this.item.displayType === 'gear-consumable'
+        ? false
+        : this.item.label || (this.showPer ? `/ ${this.item.reset} rest` : false)
     }
   },
   methods: {

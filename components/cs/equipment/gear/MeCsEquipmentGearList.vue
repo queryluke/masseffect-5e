@@ -105,8 +105,8 @@
     <me-hr size="2" />
     <v-list dense two-line>
       <template v-for="item in items">
-        <me-cs-equipment-list-item :key="item.uuid" :item="item" type="gear" :equip-disabled="item.data.type === 'omni_tool_program' && equippedPrograms.length === 3">
-          <template v-if="!equippable.includes(item.data.type)" #action>
+        <me-cs-equipment-list-item :key="item.uuid" :item="item" type="gear" :equip-disabled="(item.data.type === 'omni_tool_program' && equippedPrograms.length === 3 && !item.equipped)">
+          <template v-if="!item.data.equippable" #action>
             <v-list-item-action class="mr-8">
               <v-chip color="grey darken-2" x-small style="width: 24px" class="px-0 d-flex justify-center">
                 {{ item.uses }}
@@ -138,11 +138,6 @@ export default {
       required: true
     }
   },
-  data () {
-    return {
-      equippable: ['device', 'heavy_weapon', 'omni_tool_program', 'shield']
-    }
-  },
   computed: {
     viewOnly () {
       return this.$store.state.character.viewOnly
@@ -161,7 +156,6 @@ export default {
       return 4
     },
     currentMedigel () {
-      console.log(this.medigel)
       return this.medigel.filter(i => i.equipped).reduce((a, c) => a + (c.equippedAmount || 0), 0)
     },
     grenades () {

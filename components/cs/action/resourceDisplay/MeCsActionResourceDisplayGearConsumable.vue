@@ -1,7 +1,8 @@
 <template>
-  <div class="d-flex">
-    <div class="px-1">
-      Remaining Uses: {{ item.equippedAmount }}
+  <div class="d-flex align-center">
+    <me-cs-action-consume-btn :id="id" class="ma-1" />
+    <div class="text-caption font-italic mr-1">
+      {{ item.equippedAmount }} remaining
     </div>
   </div>
 </template>

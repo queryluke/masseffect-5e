@@ -7,19 +7,6 @@ export const getters = {
     if (character.settings.acOverride) {
       return character.settings.acOverride
     }
-    const flatBonus = rootGetters['character/mechanics/mechanics']
-      .filter(i => i.type === 'ac')
-      .reduce((acc, curr) => {
-        let bonus = (curr.bonus ? rootGetters['character/mechanics/mcBonus'](curr.bonus) : 0)
-        if (curr.condition === 'barrier-active') {
-          const barrierState = rootGetters['character/hp/barrier']
-          const remainingTicks = barrierState.ticks.max - barrierState.ticks.used
-          if (remainingTicks <= 0) {
-            bonus = 0
-          }
-        }
-        return acc + bonus
-      }, 0)
     const dexMod = rootGetters['character/abilities/dexMod']
 
     // natural armor
@@ -75,6 +62,27 @@ export const getters = {
     const equippedAc = runningAc + appliedDex
 
     const bestAc = Math.max(equippedAc, naturalArmor)
+
+    const equippedTypes = [head, body, chest, legs, arms].map(i => i?.data?.type || 'none')
+    const flatBonus = rootGetters['character/mechanics/mechanics']
+      .filter(i => i.type === 'ac')
+      .reduce((acc, curr) => {
+        let bonus = (curr.bonus ? rootGetters['character/mechanics/mcBonus'](curr.bonus) : 0)
+        if (curr.condition === 'barrier-active') {
+          const barrierState = rootGetters['character/hp/barrier']
+          const remainingTicks = barrierState.ticks.max - barrierState.ticks.used
+          if (remainingTicks <= 0) {
+            bonus = 0
+          }
+        }
+        if (curr.limit) {
+          const limits = [...curr.limit, 'none']
+          if (!equippedTypes.every(type => limits.includes(type))) {
+            bonus = 0
+          }
+        }
+        return acc + bonus
+      }, 0)
     return bestAc + flatBonus + character.settings.acBonus
   }
 }

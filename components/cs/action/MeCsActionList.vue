@@ -11,7 +11,7 @@
       <me-cs-action-list-group v-if="item.group" :items="item.items" :component="item.component">
         {{ item.title }}
       </me-cs-action-list-group>
-      <me-cs-action-card v-else :item="item" :class="items[index - 1] && (items[index - 1].resource || items[index - 1].toggle) ? 'mt-4' : 'mt-1'" />
+      <me-cs-action-card v-else :item="item" :class="paddingClass(index)" />
     </div>
   </div>
 </template>
@@ -23,6 +23,11 @@ export default {
     items: {
       type: Array,
       required: true
+    }
+  },
+  methods: {
+    paddingClass (index) {
+      return this.items[index - 1] && (this.items[index - 1].resource || this.items[index - 1].toggle) ? 'mt-4' : 'mt-1'
     }
   }
 }
