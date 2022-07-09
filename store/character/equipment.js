@@ -289,6 +289,7 @@ export const getters = {
       }
     }
     const weaponProfs = rootGetters['character/profs/profs'].weapon
+    console.log(weaponProfs)
     const twfEligible = getters.equippedWeapons.filter(i => i.data.properties.includes('light') && !i.data.properties.includes('two-handed')).length > 1
     const attackTypes = {
       melee: 'Melee',
@@ -354,6 +355,7 @@ export const getters = {
           value: weaponBonusHit + globalBonusHit + augmentBonusHit
         }
       }
+      console.log(attack)
 
       // WEAPON DAMAGE
       const weaponBonusDamage = weapon.bonusDamage || 0

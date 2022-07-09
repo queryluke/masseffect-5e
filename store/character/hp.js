@@ -27,12 +27,34 @@ export const getters = {
     }
   },
   shields: (state, getters, rootState, rootGetters) => {
-    const max = rootGetters['character/character'].settings.shields
+    const overrideCapacity = parseInt(rootGetters['character/character'].settings.shields) || 0
+    const overrideRegen = parseInt(rootGetters['character/character'].settings.regen) || 0
+    const possibleSources = rootGetters['character/mechanics/mechanics']
+      .filter(i => i.type === 'shields' && i.additive === false)
+      .map((i) => {
+        return {
+          capacity: rootGetters['character/mechanics/mcBonus'](i.capacity),
+          regen: rootGetters['character/mechanics/mcBonus'](i.regen)
+        }
+      })
+      .sort((a, b) => {
+        return a.capacity === b.capacity
+          ? b.regen - a.regen
+          : b.capacity - a.capacity
+      })
+    const source = possibleSources[0] || { capacity: 0, regen: 0 }
+    const bonuses = rootGetters['character/mechanics/mechanics']
+      .filter(i => i.type === 'shields' && i.additive)
+    for (const bonus of bonuses) {
+      source.capacity += bonus.capacity || 0
+      source.regen += bonus.regen || 0
+    }
+    const max = overrideCapacity || source.capacity
     return {
       // TODO: settings.shields is the override, eventually need to calculate shields
-      max: rootGetters['character/character'].settings.shields,
+      max,
       current: Math.max(max - rootGetters['character/character'].currentStats.shieldsLost, 0),
-      regen: rootGetters['character/character'].settings.regen
+      regen: overrideRegen || source.regen
     }
   },
   tempHp: (state, getters, rootState, rootGetters) => {
