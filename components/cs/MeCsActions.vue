@@ -23,6 +23,13 @@
     <div v-show="showTab(5)">
       <me-cs-action-list :items="csAllActions.other">
         Other Features
+        <template v-if="csSetBonuses.length > 0" #append>
+          <me-cs-action-cards-set-bonus
+            v-for="(item, itemIndex) in csSetBonuses"
+            :key="`set-bonus-${itemIndex}`"
+            :item="item"
+          />
+        </template>
       </me-cs-action-list>
     </div>
   </div>
@@ -30,9 +37,11 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
+import MeCsActionCardsSetBonus from '~/components/cs/action/cards/MeCsActionCardsSetBonus'
 const { mapGetters } = createNamespacedHelpers('character')
 export default {
   name: 'MeCsActions',
+  components: { MeCsActionCardsSetBonus },
   computed: {
     ...mapGetters({
       mechanics: 'mechanics/mechanics',
@@ -43,7 +52,8 @@ export default {
       abilityBreakdown: 'abilities/abilityBreakdown',
       weaponAttacks: 'equipment/weaponAttacks',
       tab: 'navigation/actionsTab',
-      barrier: 'hp/barrier'
+      barrier: 'hp/barrier',
+      setBonuses: 'equipment/activeSetBonuses'
     }),
     weaponProperties () {
       return this.$store.getters.getData('weapon-properties')
@@ -284,6 +294,9 @@ export default {
         bonus_actions: sortedPowers.filter(i => i.castingTime.unit === 'bonus_action' || i.altCasting?.filter(i => i.unit === 'bonus_action').length),
         reactions: sortedPowers.filter(i => i.castingTime.unit === 'reaction' || i.altCasting?.filter(i => i.unit === 'reaction').length)
       }
+    },
+    csSetBonuses () {
+      return this.setBonuses.filter(i => i.activeBonuses.some(j => j.showNote))
     }
   },
   methods: {

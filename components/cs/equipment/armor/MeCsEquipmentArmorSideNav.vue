@@ -72,7 +72,6 @@ export default {
       return [{ attr: 'type', value: 'armor' }, { attr: 'availability', value: this.item.data.type, array: true }, { attr: 'placement', value: this.item.data.placement }]
     },
     setEqCount () {
-      console.log(this.item.data.set)
       if (this.item.set) {
         return 0
       } else {

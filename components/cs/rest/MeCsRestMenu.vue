@@ -203,7 +203,7 @@ export default {
         return v - reducedBucket[i]
       })
       if (this.pactSlots?.slotLevel) {
-        available[this.pactSlots.slotLevel] -= this.pactSlots.numSlots
+        available[this.pactSlots.slotLevel] = Math.max(0, available[this.pactSlots.slotLevel] - this.pactSlots.numSlots)
       }
       return available
     },

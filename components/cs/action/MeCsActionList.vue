@@ -13,6 +13,7 @@
       </me-cs-action-list-group>
       <me-cs-action-card v-else :item="item" :class="paddingClass(index)" />
     </div>
+    <slot name="append" />
   </div>
 </template>
 

@@ -270,11 +270,14 @@ export const getters = {
       // upcast cantrips
       if (basePower.level === 0) {
         const level = rootGetters['character/klasses/level']
-        const upcastLevel = level < 5
+        const levels = rootGetters['character/mechanics/mechanics'].find(i => i.type === 'cantrip-boost')
+          ? [0, 5, 11]
+          : [5, 11, 17]
+        const upcastLevel = level < levels[0]
           ? 0
-          : level < 11
+          : level < levels[1]
             ? 1
-            : level < 17
+            : level < levels[2]
               ? 2
               : 3
         if (upcastLevel > 0) {
@@ -352,7 +355,7 @@ export const getters = {
         }
         runningBonus += (fhEligible && power.attack.type === 'ranged' ? 2 : 0)
         const attackAugmentBonus = augments
-          .filter(i => (i.limits ? (i.limits.type === power.type) : true) && i.augment === 'attack')
+          .filter(i => (i.limits ? (i.limits.type.includes(power.type)) : true) && i.augment === 'attack')
           .reduce((acc, curr) => acc + rootGetters['character/mechanics/mcBonus'](curr.value), 0)
         runningBonus += attackAugmentBonus
         power.attack.bonus = { type: 'flat', value: runningBonus }
@@ -366,7 +369,7 @@ export const getters = {
             runningBonus = rootGetters['character/mechanics/mcBonus'](dmg.bonus)
           }
           const dmgAugmentBonuses = augments
-            .filter(i => (i.limits ? (i.limits.type === power.type) : true) && i.augment === 'damage' && i.value.type !== 'dieIncrease')
+            .filter(i => (i.limits ? (i.limits.type.includes(power.type)) : true) && i.augment === 'damage' && i.value.type !== 'dieIncrease')
             .reduce((acc, curr) => acc + rootGetters['character/mechanics/mcBonus'](curr.value), 0)
           runningBonus += dmgAugmentBonuses
           const dieIncreases = augments
@@ -394,7 +397,7 @@ export const getters = {
           runningBonus = rootGetters['character/mechanics/mcBonus'](power.dc.bonus)
         }
         const dcAugmentBonus = augments
-          .filter(i => (i.limits ? (i.limits.type === power.type) : true) && i.augment === 'dc')
+          .filter(i => (i.limits ? (i.limits.type.includes(power.type)) : true) && i.augment === 'dc')
           .reduce((acc, curr) => acc + rootGetters['character/mechanics/mcBonus'](curr.value), 0)
         runningBonus += dcAugmentBonus
         power.dc.bonus = { type: 'flat', value: runningBonus }

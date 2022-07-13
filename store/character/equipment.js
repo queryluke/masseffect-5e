@@ -289,7 +289,6 @@ export const getters = {
       }
     }
     const weaponProfs = rootGetters['character/profs/profs'].weapon
-    console.log(weaponProfs)
     const twfEligible = getters.equippedWeapons.filter(i => i.data.properties.includes('light') && !i.data.properties.includes('two-handed')).length > 1
     const attackTypes = {
       melee: 'Melee',
@@ -355,7 +354,6 @@ export const getters = {
           value: weaponBonusHit + globalBonusHit + augmentBonusHit
         }
       }
-      console.log(attack)
 
       // WEAPON DAMAGE
       const weaponBonusDamage = weapon.bonusDamage || 0
@@ -566,7 +564,40 @@ export const getters = {
     }
     return Object.values(finalDamage).map(i => `${i.dieCount}d${i.dieType} ${i.type}`).join(' + ')
   },
-  equipmentMechanics: (state, getters) => {
+  activeSetBonuses: (state, getters) => {
+    const bonuses = {}
+    for (const armor of getters.equippedArmor) {
+      if (armor.data.set) {
+        if (bonuses[armor.data.set]) {
+          bonuses[armor.data.set].count += 1
+          bonuses[armor.data.set].items.push({ uuid: armor.uuid, name: armor.data.name })
+        } else {
+          bonuses[armor.data.set] = {
+            items: [{ uuid: armor.uuid, name: armor.data.name }],
+            count: 1
+          }
+        }
+      }
+    }
+    const setBonuses = getters.setBonusesList
+    return Object.entries(bonuses).map((i) => {
+      const bonus = setBonuses.find(sb => sb.id === i[0])
+      if (!bonus) {
+        return null
+      }
+      const activeBonuses = bonus.bonuses.filter(sbb => sbb.threshold <= i[1].count)
+      if (activeBonuses.length === 0) {
+        return null
+      }
+      return {
+        name: i[0],
+        activeBonuses,
+        items: i[1].items,
+        max: bonus.max
+      }
+    }).filter(i => !!i)
+  },
+  armorMechanics: (state, getters) => {
     // custom armor mechanics
     const caMods = getters.equippedArmor.filter(i => i.custom).reduce((a, c) => a.concat(c.mods || []), [])
     const caMechanics = getters.modsList.filter(i => caMods.includes(i.id) && i.type === 'armor').reduce((a, c) => a.concat(c.mechanics || []), [])
@@ -574,7 +605,38 @@ export const getters = {
       path: 'customArmor',
       mechanics: caMechanics
     }
-    // TODO: set bonuses
+    // regular armor mechanics
+    const armorMechanics = getters.equippedArmor.filter(i => !i.custom).reduce((a, c) => {
+      let toConcat = []
+      if (c.data.mechanics) {
+        toConcat = c.data.mechanics.map((i) => {
+          let resource = false
+          if (i.resource) {
+            resource = { ...i.resource, id: c.uuid }
+          }
+          return {
+            ...i,
+            resource,
+            moreInfo: {
+              toDisplay: c.uuid,
+              component: 'me-cs-equipment-armor-side-nav'
+            }
+          }
+        })
+      }
+      return a.concat(toConcat)
+    }, [])
+    const setBonusMechanics = getters.activeSetBonuses.reduce((a, c) => {
+      const mechanics = c.activeBonuses.map(i => i.mechanics).flat()
+      return a.concat(mechanics)
+    }, [])
+    return [
+      customArmorMechanics,
+      { path: 'armor', mechanics: armorMechanics },
+      { path: 'armorSetBonus', mechanics: setBonusMechanics }
+    ]
+  },
+  equipmentMechanics: (state, getters) => {
     const gearMechanics = getters.gear.filter(i => i.equipped).reduce((a, c) => {
       let toConcat = []
       if (c.data.mechanics) {
@@ -596,8 +658,8 @@ export const getters = {
       return a.concat(toConcat)
     }, [])
     return [
-      customArmorMechanics,
-      { path: 'gear', mechanics: gearMechanics }
+      { path: 'gear', mechanics: gearMechanics },
+      ...getters.armorMechanics
     ]
   }
 }
