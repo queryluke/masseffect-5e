@@ -55,7 +55,8 @@ export default {
           value: 1,
           min: 1
         },
-        increment: 1
+        increment: 1,
+        trigger: false
       }
     }
   },

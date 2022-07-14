@@ -19,6 +19,7 @@ export const CsActions = {
       mechanics: 'mechanics/mechanics',
       tentacleBlenderText: 'equipment/tentacleBlenderText',
       hp: 'hp/hp',
+      shields: 'hp/shields',
       level: 'klasses/level'
     }),
     interpolatedShortDesc () {
@@ -177,7 +178,8 @@ export const CsActions = {
         tentacleBlender: this.tentacleBlenderText,
         hp: this.hp.current,
         level: this.level,
-        damage: this.damages[0]?.text
+        damage: this.damages[0]?.text,
+        shieldRegen: this.shields.regen
       }
     },
     hitRoll () {
@@ -246,7 +248,7 @@ export const CsActions = {
   methods: {
     interpolatedText (text) {
       // might be better to do this with attrGetters or put it in the HTML?
-      const interpolations = ['dc', 'range', 'profBonus', 'strMod', 'conMod', 'wisMod', 'intMod', 'chaMod', 'avatarsDie', 'tentacleBlender', 'hp', 'level', 'damage']
+      const interpolations = Object.keys(this.interpolations)
       const regex = new RegExp(`{{ ?([0-9]{1,3}|[+ ]|${interpolations.join('|')}|powercastingMod:[a-z]+)+ ?}}`, 'g')
       if (!regex.test(text)) {
         return text
