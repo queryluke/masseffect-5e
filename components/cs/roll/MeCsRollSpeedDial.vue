@@ -16,6 +16,11 @@
           </v-icon>
         </v-btn>
       </template>
+      <v-btn fab x-small color="secondary" @click="showLogs">
+        <v-icon>
+          mdi-math-log
+        </v-icon>
+      </v-btn>
       <v-btn outlined fab small @click="customRoll = true">
         <v-icon>
           mdi-wrench
@@ -113,6 +118,9 @@ export default {
       if (this.customRoll) {
         this.customRoll = false
       }
+    },
+    showLogs () {
+      this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-logs-list')
     }
   }
 }

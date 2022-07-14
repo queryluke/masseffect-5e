@@ -1,5 +1,5 @@
 <template>
-  <me-cs-action-notes-tooltip v-if="durationStrings" :note="durationNote" />
+  <me-cs-action-notes-tooltip v-if="durationStrings" :note="durationNote" :has-next="hasNext" />
 </template>
 
 <script>
@@ -17,6 +17,10 @@ export default {
           concentration: false
         }
       }
+    },
+    hasNext: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {

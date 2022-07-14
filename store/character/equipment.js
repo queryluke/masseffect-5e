@@ -314,6 +314,8 @@ export const getters = {
       })
     }
 
+    const rerollDamage = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'reroll-damage' && ['weapon', 'attack', null].includes(i.limits?.source))
+
     for (const weapon of weaponsToProcess) {
       // assess properties
       const light = weapon.data.properties.includes('light')
@@ -356,6 +358,23 @@ export const getters = {
       }
 
       // WEAPON DAMAGE
+      // reroll damage
+      const matchingRerolls = rerollDamage.filter((i) => {
+        if (!i.limits || !i.limits.source) {
+          return true
+        }
+        if (i.limits.source === 'attack') {
+          if (!i.limits.types) {
+            return true
+          }
+          return i.limits.types.includes(attackType)
+        }
+        // else this is a power source
+        if (!i.limits.types) {
+          return true
+        }
+        return i.limits.types.includes(weaponType)
+      }).sort((a, b) => b.ifLessThan - a.ifLessThan)
       const weaponBonusDamage = weapon.bonusDamage || 0
       const globalBonusDamage = globalMods.damage.all + globalMods.damage[attackType]
       const augmentBonusDamage = augments.damage
@@ -369,7 +388,8 @@ export const getters = {
           bonus: {
             type: 'flat',
             value: weaponBonusDamage + globalBonusDamage + augmentBonusDamage
-          }
+          },
+          reroll: matchingRerolls[0]?.ifLessThan || false
         }
       ]
 

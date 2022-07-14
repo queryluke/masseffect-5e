@@ -31,29 +31,9 @@ export default {
       default: 48
     }
   },
-  computed: {
-    actions () {
-      // Setting this up so we can expand on this to control / exclude certain actions later if needed
-      const _actions = {
-        rollAgain: {
-          title: 'Roll Again',
-          action: this.roll,
-          type: 'btn'
-        }
-      }
-      return {
-        ..._actions,
-        ...this.roll.actions || {}
-      }
-    }
-  },
   methods: {
     rollMe () {
-      this.$store.dispatch('character/roller/ROLL',
-        {
-          ...this.roll,
-          actions: this.actions
-        })
+      this.$store.dispatch('character/roller/ROLL', this.roll)
     }
   }
 }

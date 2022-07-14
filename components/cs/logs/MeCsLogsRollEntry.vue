@@ -16,32 +16,32 @@
 
     <v-expand-transition>
       <div v-show="show" class="justify-space-between transition-ease-in-out">
-        <v-list dense>
-          <v-list-item dense>
-            <v-list-item-icon>
-              <v-icon>
-                mdi-dice-multiple
-              </v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <v-list-item-title>
-                {{ data.notation }}
-              </v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-          <v-list-item dense>
-            <v-list-item-icon>
-              <v-icon>
-                mdi-equal
-              </v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <v-list-item-title class="font-weight-bold text-subtitle-1">
-                {{ data.results }}
-              </v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list>
+        <div class="d-flex mx-2">
+          <v-icon size="26">
+            mdi-dice-multiple
+          </v-icon>
+          <!-- Machine Readable Results -->
+          <div v-if="data.mrResults" class="d-flex mx-3 align-center font-weight-medium" style="font-size: 1.2em">
+            <template v-for="(result, index) of data.mrResults">
+              <div v-if="typeof result === 'object'" :key="`roll-result-${index}`" class="d-flex align-center">
+                <template v-for="(diceResult, drIndex) of result">
+                  <me-cs-roll-result :key="`dice-result-${drIndex}`" :result="diceResult" />
+                  <span v-if="drIndex + 1 < result.length" :key="`dice-result-adder-${drIndex}`">+</span>
+                </template>
+              </div>
+              <div v-else :key="`non-roll-${index}`">
+                {{ result }}
+              </div>
+            </template>
+          </div>
+          <!-- Old Results -->
+          <div v-else>
+            {{ data.results }}
+          </div>
+        </div>
+        <div class="mx-3 my-1 text-body-2">
+          {{ data.text || data.notation }}
+        </div>
         <v-divider />
         <v-card-actions>
           <!-- TODO: color based on next roll -->
@@ -107,7 +107,8 @@ export default {
       const payload = {
         detail: this.data.detail,
         type: this.data.type,
-        notation: this.data.notation
+        notation: this.data.notation,
+        text: this.data.text
       }
       this.$store.dispatch('character/roller/ROLL', payload)
     }

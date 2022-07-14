@@ -49,9 +49,10 @@ export default {
           ? this.damage.type
           : 'Damage'
       return {
-        notation: this.damage.text,
+        notation: this.damage.notation,
         detail: this.damage.detail,
-        type: this.damage.label || type
+        type: this.damage.label || type,
+        text: this.damage.text
       }
     }
   }

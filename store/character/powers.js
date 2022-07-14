@@ -227,10 +227,8 @@ export const getters = {
     }
     for (const p of getters.selectedPowers) {
       const power = list.find(i => i.id === p.id)
-      // TODO: global override here
       let baseMechanics = power.mechanics[0]
       baseMechanics = p.merge ? merge(cloneDeep(baseMechanics), cloneDeep(p.merge)) : baseMechanics
-      // TODO: either-or mods like str or dex (if they exist)
       const mod = p.mod || getters.klassPowercastingAbilities[p.klass] || defaultPcAbility[power.type]
       const attack = baseMechanics.attack
         ? { ...baseMechanics.attack, mod: baseMechanics.attack?.mod || mod }
@@ -255,7 +253,7 @@ export const getters = {
         effect: power.tags.filter(i => i !== 'damage'),
         source: p.source || p.klass,
         advancement: p.advancement
-          // TODO: advancement selections used to be arrays
+          // advancement selections used to be objects
           ? power.advancements.find(i => i.id === p.advancement) || power.advancements[p.advancement]
           : false,
         type: power.type,
@@ -323,6 +321,7 @@ export const getters = {
     const powersAsAttacks = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'power-attack').map(i => i.value)
     const powersAtWill = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'power-at-will')
     const powerResource = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'power-resource')
+    const rerollDamage = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'reroll-damage' && ['power', 'attack', null].includes(i.limits?.source))
     for (const power of powers) {
       // as attacks
       if (powersAsAttacks.length && powersAsAttacks.includes(power.id)) {
@@ -363,6 +362,26 @@ export const getters = {
       // damage bonuses
       if (power.damage.length) {
         const newDamages = []
+        // reroll damage
+        const matchingRerolls = rerollDamage.filter((i) => {
+          if (!i.limits || !i.limits.source) {
+            return true
+          }
+          if (i.limits.source === 'attack') {
+            if (!power.attack) {
+              return false
+            }
+            if (!i.limits.types) {
+              return true
+            }
+            return i.limits.types.includes(power.attack.type)
+          }
+          // else this is a power source
+          if (!i.limits.types) {
+            return true
+          }
+          return i.limits.types.includes(power.type)
+        }).sort((a, b) => b.ifLessThan - a.ifLessThan)
         for (const dmg of power.damage) {
           let runningBonus = 0
           if (dmg.bonus) {
@@ -385,7 +404,8 @@ export const getters = {
           newDamages.push({
             ...dmg,
             dieType: newDieType,
-            bonus: { type: 'flat', value: runningBonus }
+            bonus: { type: 'flat', value: runningBonus },
+            reroll: matchingRerolls[0]?.ifLessThan || false
           })
         }
         power.damage = newDamages

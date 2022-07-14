@@ -84,7 +84,8 @@ export const CsActions = {
         bonus: false,
         healing: false,
         detail: this.item.name,
-        label: false
+        label: false,
+        reroll: false
       }
       return this.item.damage.map((i) => {
         const damage = { ...damageDefault, ...i }
@@ -108,18 +109,26 @@ export const CsActions = {
         const mod = damage.mod ? this.abilityBreakdown[damage.mod].mod : 0
         bonus += mod
         let text = ''
+        let notation = ''
         if (damage.dieCount) {
           text = `${damage.dieCount}`
           if (damage.dieType) {
             text += `d${damage.dieType}`
           }
+          // rerolls
+          if (text.includes('d') && damage.reroll) {
+            notation = `${text}ro<${damage.reroll}`
+          }
           if (bonus !== 0) {
             text += this.damageText(bonus)
+            notation += this.damageText(bonus)
           }
         } else {
           text = bonus
+          notation = bonus
         }
         damage.bonus = bonus
+        damage.notation = notation
         damage.text = text
         damage.healing = ['shields', 'hp', 'temp'].includes(damage.type)
         return damage
@@ -127,6 +136,14 @@ export const CsActions = {
     },
     notes () {
       const notes = []
+      const rerolls = this.damages.map(i => i.reroll).filter(i => !!i).sort((a, b) => b - a)
+      if (rerolls.length) {
+        notes.push({
+          type: 'icon',
+          icon: `mdi-numeric-${rerolls[0] - 1}-box-multiple-outline`,
+          text: rerolls[0] === 3 ? 'Reroll 1s & 2s' : 'Reroll 1s'
+        })
+      }
       if (Array.isArray(this.item.notes) && this.item.notes.length) {
         for (const note of this.item.notes) {
           if (typeof note === 'string') {

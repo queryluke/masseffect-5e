@@ -3,7 +3,7 @@
     <template #activator="{ on, attrs }">
       <span v-bind="attrs" v-on="on">
         <slot>
-          {{ note.text }}
+          {{ note.text }}{{ hasNext ? ',' : '' }}
         </slot>
       </span>
     </template>
@@ -27,6 +27,10 @@ export default {
           isHtml: false
         }
       }
+    },
+    hasNext: {
+      type: Boolean,
+      default: false
     }
   }
 }
