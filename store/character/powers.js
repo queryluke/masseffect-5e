@@ -278,18 +278,18 @@ export const getters = {
             : level < levels[2]
               ? 2
               : 3
+        let advancementMechanics = null
+        if (p.advancement) {
+          const advancement = power.advancements.find(i => i.id === p.advancement)
+          if (advancement) {
+            advancementMechanics = advancement.mechanics[upcastLevel] || advancement.mechanics[0]
+          }
+        }
         if (upcastLevel > 0) {
           const upcastMechanics = power.mechanics[upcastLevel]
-          let advancementMechanics = null
-          if (p.advancement) {
-            const advancement = power.advancements.find(i => i.id === p.advancement)
-            if (advancement) {
-              advancementMechanics = advancement.mechanics[upcastLevel] || advancement.mechanics[0]
-            }
-          }
           powers.push(upcastPower(basePower, upcastMechanics, advancementMechanics))
         } else {
-          powers.push(basePower)
+          powers.push(upcastPower(basePower, null, advancementMechanics))
         }
       } else {
         let advancement = null

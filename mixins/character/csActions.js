@@ -136,13 +136,15 @@ export const CsActions = {
     },
     notes () {
       const notes = []
-      const rerolls = this.damages.map(i => i.reroll).filter(i => !!i).sort((a, b) => b - a)
-      if (rerolls.length) {
-        notes.push({
-          type: 'icon',
-          icon: `mdi-numeric-${rerolls[0] - 1}-box-multiple-outline`,
-          text: rerolls[0] === 3 ? 'Reroll 1s & 2s' : 'Reroll 1s'
-        })
+      if (this.damages) {
+        const rerolls = this.damages.map(i => i.reroll).filter(i => !!i).sort((a, b) => b - a)
+        if (rerolls.length) {
+          notes.push({
+            type: 'icon',
+            icon: `mdi-numeric-${rerolls[0] - 1}-box-multiple-outline`,
+            text: rerolls[0] === 3 ? 'Reroll 1s & 2s' : 'Reroll 1s'
+          })
+        }
       }
       if (Array.isArray(this.item.notes) && this.item.notes.length) {
         for (const note of this.item.notes) {

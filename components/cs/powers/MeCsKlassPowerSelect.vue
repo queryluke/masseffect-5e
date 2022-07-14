@@ -105,7 +105,6 @@ export default {
       const powers = []
       for (const p of this.powersAvailableToKlass) {
         const learned = this.selectedPowers.find(i => i.id === p.id && i.klass === this.klass.id)
-        console.log(learned)
         const base = {
           data: p,
           learned: !!learned,
