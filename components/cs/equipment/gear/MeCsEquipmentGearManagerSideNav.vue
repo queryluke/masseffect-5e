@@ -6,14 +6,14 @@
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title>
-            Equipped: {{ currentThermalClips }} of {{ maxThermalClips }}
+            Equipped: {{ thermalClips.equipped }} of {{ thermalClips.max }}
           </v-list-item-title>
           <v-list-item-subtitle>
-            Available: {{ availableThermalClips }}
+            Available: {{ thermalClips.available }}
           </v-list-item-subtitle>
         </v-list-item-content>
         <v-list-item-action>
-          <v-btn x-small outlined :disabled="currentThermalClips === maxThermalClips || availableThermalClips === 0" color="primary" @click="setThermalClips">
+          <v-btn x-small outlined :disabled="thermalClips.equipped === thermalClips.max || thermalClips.available === 0" color="primary" @click="setThermalClips">
             Equip
           </v-btn>
         </v-list-item-action>
@@ -105,12 +105,9 @@ const { mapGetters } = createNamespacedHelpers('character/equipment')
 export default {
   name: 'MeCsEquipmentGearManagerSideNav',
   computed: {
-    ...mapGetters(['gear']),
+    ...mapGetters(['gear', 'capacities', 'thermalClips']),
     viewOnly () {
       return this.$store.state.character.viewOnly
-    },
-    capacities () {
-      return this.$store.getters['character/equipment/capacities']
     },
     settings () {
       const preferences = {}
@@ -141,18 +138,6 @@ export default {
     },
     currentGrenades () {
       return this.grenades.filter(i => i.equipped).reduce((a, c) => a + (c.equippedAmount || 0), 0)
-    },
-    thermalClips () {
-      return this.gear.filter(i => i.data.id === 'thermal-clip')
-    },
-    currentThermalClips () {
-      return this.thermalClips.reduce((a, c) => a + (c.equippedAmount || 0), 0)
-    },
-    availableThermalClips () {
-      return this.thermalClips.reduce((a, c) => a + (c.uses || 0), 0)
-    },
-    maxThermalClips () {
-      return this.capacities.thermalClips
     }
   },
   methods: {
@@ -168,25 +153,7 @@ export default {
       this.$store.dispatch('character/equipment/REPLACE_EQUIPMENT', { uuid: item.uuid, replacement: changeItem })
     },
     setThermalClips () {
-      const max = this.maxThermalClips
-      let runningTotal = 0
-      for (const th of this.thermalClips) {
-        if (runningTotal === max) {
-          continue
-        }
-        const newTh = {
-          ...th
-        }
-        if (newTh.uses > 0) {
-          const amountToEquip = Math.min(th.uses, max - runningTotal)
-          newTh.equippedAmount = amountToEquip
-          newTh.equipped = true
-          runningTotal += amountToEquip
-        } else {
-          newTh.equipped = false
-        }
-        this.$store.dispatch('character/equipment/REPLACE_EQUIPMENT', { uuid: newTh.uuid, replacement: newTh })
-      }
+      this.$store.dispatch('character/equipment/SET_THERMAL_CLIPS')
     }
   }
 }

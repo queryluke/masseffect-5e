@@ -2,7 +2,14 @@
   <div>
     <div v-show="showTab(1)">
       <me-cs-action-list :items="csAllActions.attacks">
-        Attacks <span v-if="extraAttacks" class="text-body-2"><small>({{ extraAttacks }} attacks per action)</small></span>
+        <div class="d-flex justify-space-between">
+          <div>
+            Attacks <span v-if="extraAttacks" class="text-body-2"><small>({{ extraAttacks }} attacks per action)</small></span>
+          </div>
+          <div v-if="showThermalClips">
+            <span class="text-body-2"><small>Thermal Clips: {{ thermalClips.equipped }} of {{ thermalClips.max }}</small></span>
+          </div>
+        </div>
       </me-cs-action-list>
     </div>
     <div v-show="showTab(2)">
@@ -53,7 +60,8 @@ export default {
       weaponAttacks: 'equipment/weaponAttacks',
       tab: 'navigation/actionsTab',
       barrier: 'hp/barrier',
-      setBonuses: 'equipment/activeSetBonuses'
+      setBonuses: 'equipment/activeSetBonuses',
+      thermalClips: 'equipment/thermalClips'
     }),
     weaponProperties () {
       return this.$store.getters.getData('weapon-properties')
@@ -69,6 +77,9 @@ export default {
       }
       const adds = this.mechanics.filter(i => i.type === 'extra-attack-add').length
       return max + adds
+    },
+    showThermalClips () {
+      return this.character.options.thermalClips || false
     },
     barrierAction () {
       if (this.barrier.uses.max === 0) {

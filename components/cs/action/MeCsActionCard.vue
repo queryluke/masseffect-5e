@@ -146,6 +146,7 @@ export default {
       // right now, just check whether or not its a power
       // item.component for powers, item.moreInfo.component for gear/weapons, default is everything else
       const component = this.item.component || this.item.moreInfo.component || 'me-cs-more-info'
+      console.log(component)
       const value = this.item.moreInfo?.toDisplay || this.item
       this.$store.commit('character/navigation/SET', { key: 'toDisplay', value })
       this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', component)

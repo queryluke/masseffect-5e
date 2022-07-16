@@ -315,6 +315,7 @@ export const getters = {
     }
 
     const rerollDamage = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'reroll-damage' && ['weapon', 'attack', null].includes(i.limits?.source))
+    const heatIncrease = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'weapon-heat-increase')
 
     for (const weapon of weaponsToProcess) {
       // assess properties
@@ -324,6 +325,7 @@ export const getters = {
       const finesse = weapon.data.properties.includes('finesse')
       const recoil = weapon.data.properties.includes('recoil')
       const reach = weapon.data.properties.includes('reach')
+      const vented = weapon.data.properties.includes('vented')
       const twoHanded = weapon.data.properties.includes('two-handed')
       const dexOrStr = rootGetters['character/abilities/dexMod'] > rootGetters['character/abilities/strMod'] ? 'dex' : 'str'
       // TODO: when new melee weapons arrive, need to change this...note that natural weapons are natural-ranged and natural-melee
@@ -394,18 +396,22 @@ export const getters = {
       ]
 
       // HEAT
-      const resource = weapon.data.heat
-        ? {
-            displayType: 'heat',
-            reset: 'manual',
-            max: {
-              type: 'flat',
-              value: weapon.data.heat,
-              min: 0
-            },
-            id: weapon.uuid
-          }
-        : null
+      let resource = null
+      if (weapon.data.heat) {
+        // TODO: add from mods
+        const applicableHeatIncreases = [...heatIncrease].reduce((a, c) => a + (Math.max(Math.floor(weapon.data.heat * c.multiplier), 1)), 0)
+        resource = {
+          displayType: 'heat',
+          reset: 'manual',
+          vented,
+          max: {
+            type: 'flat',
+            value: weapon.data.heat + applicableHeatIncreases,
+            min: 0
+          },
+          id: weapon.uuid
+        }
+      }
 
       // RANGE
       let shortRange = attackType === 'melee'
@@ -697,6 +703,15 @@ export const getters = {
       }
     }
     return capacities
+  },
+  thermalClips: (state, getters) => {
+    const thermalClips = getters.gear.filter(i => i.data.id === 'thermal-clip')
+    return {
+      max: getters.capacities.thermalClips,
+      equipped: thermalClips.reduce((a, c) => a + (c.equippedAmount || 0), 0),
+      available: thermalClips.reduce((a, c) => a + (c.uses || 0), 0),
+      items: thermalClips
+    }
   }
 }
 
@@ -713,6 +728,31 @@ export const actions = {
     const item = getters.equipment.find(i => i.uuid === uuid)
     if (item) {
       dispatch('REPLACE_EQUIPMENT', { uuid, replacement: { ...item, equipped: !item.equipped, equippedAmount: 0 } })
+    }
+    if (getters.thermalClips.equipped > getters.thermalClips.max) {
+      dispatch('SET_THERMAL_CLIPS')
+    }
+  },
+  SET_THERMAL_CLIPS ({ dispatch, getters }) {
+    const thermalClips = getters.thermalClips
+    const max = thermalClips.max
+    let runningTotal = 0
+    for (const th of thermalClips.items) {
+      if (runningTotal === max) {
+        continue
+      }
+      const newTh = {
+        ...th
+      }
+      if (newTh.uses > 0) {
+        const amountToEquip = Math.min(th.uses, max - runningTotal)
+        newTh.equippedAmount = amountToEquip
+        newTh.equipped = true
+        runningTotal += amountToEquip
+      } else {
+        newTh.equipped = false
+      }
+      dispatch('REPLACE_EQUIPMENT', { uuid: newTh.uuid, replacement: newTh })
     }
   },
   REPLACE_EQUIPMENT ({ dispatch, getters }, { uuid, replacement = null }) {

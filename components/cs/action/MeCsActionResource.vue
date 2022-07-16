@@ -18,6 +18,7 @@
       :reset="item.reset"
       :current="count"
       :max="max"
+      :vented="item.vented"
       :max-width="75"
       @add="add"
       @remove="remove"
@@ -55,6 +56,7 @@ export default {
           value: 1,
           min: 1
         },
+        vented: false,
         increment: 1,
         trigger: false
       }

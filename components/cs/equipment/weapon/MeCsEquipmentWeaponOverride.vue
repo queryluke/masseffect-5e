@@ -4,7 +4,7 @@
       <v-text-field
         v-model="name"
         label="Custom Name"
-        :append-icon="item.overrides.name"
+        :append-icon="!!item.overrides.name ? 'mdi-close' : undefined"
         @click:append="clearOverride('name')"
         @change="debouncedNameChange()"
       />

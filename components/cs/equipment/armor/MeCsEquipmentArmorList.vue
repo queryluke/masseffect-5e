@@ -80,8 +80,9 @@ export default {
     },
     shieldSource: {
       get () {
-        const source = this.$store.getters['character/character'].settings.shieldSource
-        return source ? this.shieldSources.find(i => i.id === source) : this.shieldSources[0]
+        const sourceSelection = this.$store.getters['character/character'].settings.shieldSource
+        const source = this.shieldSources.find(i => i.id === sourceSelection)
+        return source || this.shieldSources[0]
       },
       set (value) {
         this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'settings.shieldSource', value })

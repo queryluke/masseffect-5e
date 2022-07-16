@@ -1,19 +1,5 @@
 <template>
   <v-card v-if="item" flat tile>
-    <!--
-    <div v-if="shoulderMountable">
-      <v-card flat tile>
-        <v-card-text class="d-flex justify-space-between align-center">
-          <div>
-            Equip in Shoulder Mounts
-          </div>
-          <v-switch v-model="smStatus" dense class="mt-n1 pt-0 ml-4" :disabled="smDisabled" hide-details />
-        </v-card-text>
-      </v-card>
-      <v-divider />
-    </div>
-    -->
-
     <me-cs-equipment-weapon-info :item="info" />
     <v-card-text class="pt-0">
       <div class="font-weight-bold">
