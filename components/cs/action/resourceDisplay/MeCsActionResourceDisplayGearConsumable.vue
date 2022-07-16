@@ -1,8 +1,8 @@
 <template>
   <div class="d-flex align-center">
-    <me-cs-action-consume-btn :id="id" class="ma-1" />
+    <me-cs-action-consume-btn :id="id" :use-equipped-amount="useEquippedAmount" class="ma-1" />
     <div class="text-caption font-italic mr-1">
-      {{ item.equippedAmount }} remaining
+      {{ equippedAmount }} remaining
     </div>
   </div>
 </template>
@@ -22,44 +22,17 @@ export default {
     },
     item () {
       return this.$store.getters['character/equipment/equipment'].find(i => i.uuid === this.id)
-    }
-  },
-  methods: {
-    add () {
-      if (this.cachedValue + 1 <= this.max) {
-        this.cachedValue++
-        this.debouncedUpdate()
-      }
     },
-    remove () {
-      if (this.cachedValue - 1 >= 0) {
-        this.cachedValue--
-        this.debouncedUpdate()
-      }
+    useEquippedAmount () {
+      const option = this.item.subType === 'grenade'
+        ? 'grenadeSlots'
+        : this.item.subType === 'medi_gel'
+          ? 'medigelSlots'
+          : null
+      return option ? this.$store.getters['character/character'].options[option] : false
     },
-    updateAttr () {
-      if (isNaN(parseInt(this.cachedValue, 10))) {
-        this.cachedValue = this.current
-      }
-      if (this.cachedValue >= 0 && this.cachedValue <= this.max) {
-        const firstGel = this.equippedGel[0]
-        if (!firstGel) {
-          this.$store.dispatch('character/equipment/ADD_EQUIPMENT',
-            {
-              id: 'omni-gel',
-              notes: '',
-              subType: 'omni_gel',
-              type: 'gear',
-              uses: this.cachedValue,
-              uuid: `omni-gel_${Date.now()}`
-            }
-          )
-        } else {
-          this.$store.dispatch('character/equipment/REPLACE_EQUIPMENT', { uuid: firstGel.uuid, replacement: { ...firstGel, uses: this.cachedValue } })
-        }
-      } else {
-        this.cachedValue = this.cachedValue < 0 ? 0 : this.max
-      }
+    equippedAmount () {
+      return this.useEquippedAmount ? this.item.equippedAmount : this.item.uses
     }
   }
 }

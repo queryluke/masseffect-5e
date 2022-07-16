@@ -40,7 +40,6 @@ export const getters = {
       }
     }
     const armorSource = { id: 'armor', name: 'Armor', capacity: 0, regen: 0 }
-    // if need be, we can only calc this when an armor chest piece is equipped
     const armorMehcanics = rootGetters['character/equipment/armorMechanics'].reduce((a, c) => a.concat(c.mechanics || []), [])
     for (const am of armorMehcanics.filter(i => i.type === 'shields')) {
       armorSource.capacity += rootGetters['character/mechanics/mcBonus'](am.capacity)

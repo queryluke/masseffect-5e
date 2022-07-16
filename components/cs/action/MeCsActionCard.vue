@@ -130,7 +130,7 @@ export default {
     },
     minHeight () {
       return this.item.resource || this.item.toggle
-        ? this.item.shortDesc || this.item.properties?.length
+        ? this.item.shortDesc || this.item.properties?.length || (this.item.range || this.item.dc || this.item.damages)
           ? 64
           : 52
         : undefined

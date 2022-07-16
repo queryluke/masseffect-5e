@@ -28,7 +28,7 @@
           Set Bonus
         </div>
         <div v-for="(bonus, index) in item.setBonus.bonuses" :key="`sb-${index}`">
-          <v-card :outlined="setEqCount >= bonus.threshold" flat>
+          <v-card :outlined="setEqCount >= bonus.threshold" flat :class="setEqCount >= bonus.threshold ? 'mt-4' : ''">
             <div class="px-1 py-2">
               <v-badge tile :value="setEqCount >= bonus.threshold" content="Active" offset-x="60" offset-y="2">
                 <span class="font-weight-medium font-italic">> {{ bonus.threshold }} of {{ item.setBonus.max }}.</span>

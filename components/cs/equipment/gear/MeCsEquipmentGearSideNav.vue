@@ -1,6 +1,5 @@
 <template>
   <v-card v-if="item" flat tile>
-    <me-cs-equipment-gear-info :item="item.data" />
     <!-- quantity -->
     <v-card-text v-if="item.data.consumable">
       <me-cb-debounced-number-input
@@ -13,6 +12,7 @@
       />
     </v-card-text>
     <!-- NOTES -->
+    <v-divider v-if="item.data.consumable" />
     <v-list-item @click="showNotes = !showNotes">
       <v-list-item-content>
         <v-list-item-title class="text-caption">
@@ -36,6 +36,8 @@
         </v-card-text>
       </div>
     </v-expand-transition>
+    <v-divider />
+    <me-cs-equipment-gear-info :item="item.data" />
   </v-card>
 </template>
 
@@ -45,7 +47,7 @@ import { cloneDeep, debounce, set as setAttr } from 'lodash'
 const { mapGetters } = createNamespacedHelpers('character/equipment')
 
 export default {
-  name: 'MeCsEquipmentArmorSideNav',
+  name: 'MeCsEquipmentGearSideNav',
   data () {
     return {
       cachedNotes: '',

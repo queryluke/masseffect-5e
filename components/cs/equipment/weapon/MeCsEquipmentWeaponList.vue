@@ -7,7 +7,7 @@
         </me-tpg>
       </div>
       <div class="d-flex align-center">
-        <div class="text-caption">
+        <div v-if="maxSlots < 99" class="text-caption">
           Weapon Slots: {{ currentSlots }} of {{ maxSlots }}
         </div>
         <v-divider v-if="smMechanic" vertical class="ml-2" />
@@ -93,7 +93,9 @@ export default {
     },
     maxSlots () {
       // TODO: armor mods that increase slots && override setting
-      return 4
+      return !this.$store.getters['character/character'].options.weaponSlots
+        ? 99
+        : this.$store.getters['character/mechanics/mechanics'].filter(i => i.type === 'weapon-slots').reduce((a, c) => a + c.value, 4)
     },
     currentSlots () {
       return this.items.filter(i => i.equipped).reduce((a, c) => a + c.slots, 0)

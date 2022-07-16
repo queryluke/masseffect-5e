@@ -118,7 +118,7 @@ export const getters = {
           ...i,
           slots: data.properties.includes('two-handed') ? 2 : 1
         }
-      })
+      }).sort((a, b) => a.uuid > b.uuid ? 1 : -1)
   },
   armor: (state, getters) => {
     return getters.equipment
@@ -136,7 +136,7 @@ export const getters = {
             ...i
           }
         }
-      })
+      }).sort((a, b) => a.uuid > b.uuid ? 1 : -1)
   },
   gear: (state, getters) => {
     return getters.equipment
@@ -147,7 +147,7 @@ export const getters = {
           data: gearData,
           ...i
         }
-      })
+      }).sort((a, b) => a.uuid > b.uuid ? 1 : -1)
   },
   equippedArmor: (state, getters) => {
     return getters.armor.filter(i => i.equipped)
@@ -681,6 +681,22 @@ export const getters = {
       { path: 'gear', mechanics: gearMechanics },
       ...getters.armorMechanics
     ]
+  },
+  capacities: (state, getters, rootState, rootGetters) => {
+    const capacities = {}
+    for (const key of ['grenadeSlots', 'medigelSlots', 'thermalClips', 'weaponSlots']) {
+      if (!rootGetters['character/character'].options[key]) {
+        capacities[key] = 99
+      } else {
+        const mechanicType = key === 'grenadeSlots'
+          ? 'grenade-capacity'
+          : key === 'medigelSlots'
+            ? 'medi-gel-capacity'
+            : 'thermal-clip-capacity'
+        capacities[key] = rootGetters['character/mechanics/mechanics'].filter(i => i.type === mechanicType).reduce((a, c) => a + c.value, 0)
+      }
+    }
+    return capacities
   }
 }
 
@@ -696,7 +712,7 @@ export const actions = {
   TOGGLE_EQUIPPED ({ dispatch, getters }, uuid) {
     const item = getters.equipment.find(i => i.uuid === uuid)
     if (item) {
-      dispatch('REPLACE_EQUIPMENT', { uuid, replacement: { ...item, equipped: !item.equipped } })
+      dispatch('REPLACE_EQUIPMENT', { uuid, replacement: { ...item, equipped: !item.equipped, equippedAmount: 0 } })
     }
   },
   REPLACE_EQUIPMENT ({ dispatch, getters }, { uuid, replacement = null }) {

@@ -1,130 +1,56 @@
 <template>
   <div>
-    <div class="d-flex justify-space-between">
+    <div class="d-flex justify-space-between align-center">
       <div>
         <me-tpg s="6">
           Gear
         </me-tpg>
       </div>
-
-      <div class="d-flex align-center">
-        <!-- Medi-Gel -->
-        <v-menu v-if="medigel.length" offset-y :close-on-content-click="false">
-          <template #activator="{ on, attrs }">
-            <v-card outlined v-bind="attrs" class="pl-1" v-on="on">
-              <span class="text-caption">
-                Medi-gel: {{ currentMedigel }} of {{ maxMedigel }}
-              </span>
-              <v-icon size="16">
-                mdi-menu-down
-              </v-icon>
-            </v-card>
-          </template>
-          <v-card>
-            <v-list dense>
-              <template v-for="gel of medigel">
-                <v-subheader :key="`${gel.uuid}-header`" style="height: 25px">
-                  {{ gel.data.name }}
-                </v-subheader>
-                <v-list-item :key="gel.uuid" :disabled="viewOnly" style="min-height: 30px" class="mb-2">
-                  <v-list-item-action class="mr-2 my-0">
-                    <v-btn x-small icon :disabled="gel.equippedAmount === 0" @click="updateEqAmount('decrement', gel.uuid)">
-                      <v-icon>
-                        mdi-minus
-                      </v-icon>
-                    </v-btn>
-                  </v-list-item-action>
-                  <v-list-item-content class="py-0">
-                    <v-list-item-title style="min-width: 50px" class="text-center">
-                      {{ gel.equippedAmount }}
-                    </v-list-item-title>
-                  </v-list-item-content>
-                  <v-list-item-action class="ml-2 my-0">
-                    <v-btn x-small icon :disabled="currentMedigel + 1 > maxMedigel || gel.equippedAmount === gel.uses" @click="updateEqAmount('increment', gel.uuid)">
-                      <v-icon>
-                        mdi-plus
-                      </v-icon>
-                    </v-btn>
-                  </v-list-item-action>
-                </v-list-item>
-              </template>
-            </v-list>
-          </v-card>
-        </v-menu>
-        <v-divider v-if="grenades.length && medigel.length" vertical class="ml-2" />
-        <!-- Grenades -->
-        <v-menu v-if="grenades.length" offset-y :close-on-content-click="false">
-          <template #activator="{ on, attrs }">
-            <v-card outlined v-bind="attrs" class="pl-1" v-on="on">
-              <span class="text-caption">
-                Grenades: {{ currentGrenades }} of {{ maxGrenades }}
-              </span>
-              <v-icon size="16">
-                mdi-menu-down
-              </v-icon>
-            </v-card>
-          </template>
-          <v-card>
-            <v-list dense>
-              <template v-for="grenade of grenades">
-                <v-subheader :key="`${grenade.uuid}-header`" style="height: 25px">
-                  {{ grenade.data.name }}
-                </v-subheader>
-                <v-list-item :key="grenade.uuid" :disabled="viewOnly" style="min-height: 30px" class="mb-2">
-                  <v-list-item-action class="mr-2 my-0">
-                    <v-btn x-small icon :disabled="grenade.equippedAmount === 0" @click="updateEqAmount('decrement', grenade.uuid)">
-                      <v-icon>
-                        mdi-minus
-                      </v-icon>
-                    </v-btn>
-                  </v-list-item-action>
-                  <v-list-item-content class="py-0">
-                    <v-list-item-title style="min-width: 50px" class="text-center">
-                      {{ grenade.equippedAmount }}
-                    </v-list-item-title>
-                  </v-list-item-content>
-                  <v-list-item-action class="ml-2 my-0">
-                    <v-btn x-small icon :disabled="currentGrenades + 1 > maxGrenades || grenade.equippedAmount === grenade.uses" @click="updateEqAmount('increment', grenade.uuid)">
-                      <v-icon>
-                        mdi-plus
-                      </v-icon>
-                    </v-btn>
-                  </v-list-item-action>
-                </v-list-item>
-              </template>
-            </v-list>
-          </v-card>
-        </v-menu>
-        <v-divider v-if="programs.length && (medigel.length || grenades.length)" vertical class="ml-2" />
-        <!-- Omni-Tool Programs -->
-        <div v-if="programs.length" class="text-caption ml-2">
-          Omni-Tool Programs: {{ equippedPrograms.length }} of 3
-        </div>
-      </div>
+      <v-card v-if="hasSettings && !viewOnly" outlined class="text-caption px-1" @click="showGearManager">
+        Manage Gear
+      </v-card>
     </div>
     <me-hr size="2" />
-    <v-list dense two-line>
-      <template v-for="item in items">
-        <me-cs-equipment-list-item :key="item.uuid" :item="item" type="gear" :equip-disabled="(item.data.type === 'omni_tool_program' && equippedPrograms.length === 3 && !item.equipped)">
-          <template v-if="!item.data.equippable" #action>
-            <v-list-item-action class="mr-8">
+    <div v-for="type of types" :key="`gear-${type}`">
+      <v-list dense two-line>
+        <v-subheader>
+          <span>
+            {{ $t(`gear_types.${type}`) }}{{ type.endsWith('gel') || type === 'ammo' ? '' : 's' }}
+          </span>
+          <span v-if="type === 'omni_tool_program' && enforcePrograms">
+            <span>:</span>
+            <span class="ml-1">
+              {{ equippedPrograms }} of 3
+            </span>
+          </span>
+        </v-subheader>
+        <template v-for="item in items.filter(i => i.data.type === type)">
+          <me-cs-equipment-list-item :key="item.uuid" :item="item" type="gear" :equip-disabled="(item.data.type === 'omni_tool_program' && (enforcePrograms && equippedPrograms === 3) && !item.equipped)">
+            <template v-if="!item.data.equippable" #equip>
+              <v-list-item-action>
+                <v-chip color="grey darken-2" x-small style="width: 24px" class="px-0 d-flex justify-center">
+                  {{ item.uses }}
+                </v-chip>
+              </v-list-item-action>
+            </template>
+            <template #title>
+              <me-cs-equipment-title :rarity="item.data.rarity">
+                {{ item.data.name }}
+              </me-cs-equipment-title>
+            </template>
+            <template #subtitle>
+              <me-cs-equipment-subtitle :type="item.data.type" model="gear" />
+            </template>
+            <template v-if="item.data.consumable && item.data.equippable" #action>
               <v-chip color="grey darken-2" x-small style="width: 24px" class="px-0 d-flex justify-center">
                 {{ item.uses }}
               </v-chip>
-            </v-list-item-action>
-          </template>
-          <template #title>
-            <me-cs-equipment-title :rarity="item.data.rarity">
-              {{ item.data.name }}
-            </me-cs-equipment-title>
-          </template>
-          <template #subtitle>
-            <me-cs-equipment-subtitle :type="item.data.type" model="gear" />
-          </template>
-        </me-cs-equipment-list-item>
-        <v-divider :key="`divider-${item.uuid}`" />
-      </template>
-    </v-list>
+            </template>
+          </me-cs-equipment-list-item>
+          <v-divider :key="`divider-${item.uuid}`" />
+        </template>
+      </v-list>
+    </div>
   </div>
 </template>
 
@@ -142,43 +68,40 @@ export default {
     viewOnly () {
       return this.$store.state.character.viewOnly
     },
+    medigel () {
+      // TEMP: notAddable filter to prevent people from interacting with the base model
+      return this.items.filter(i => i.data.type === 'medi_gel' && !i.data.notAddable)
+    },
+    grenades () {
+      return this.items.filter(i => i.data.type === 'grenade' && !i.data.notAddable)
+    },
     programs () {
       return this.items.filter(i => i.data.type === 'omni_tool_program')
     },
     equippedPrograms () {
-      return this.programs.filter(i => i.equipped)
+      return this.programs.filter(i => i.equipped).length
     },
-    medigel () {
-      // TEMP: notAddable filter to prevent people from interacting with the base model
-      return this.items.filter(i => i.data.type === 'medi_gel' && !i.notAddable)
+    types () {
+      return [...new Set(this.items.map(i => i.data.type))].sort()
     },
-    maxMedigel () {
-      return 4
+    enforcePrograms () {
+      return this.$store.getters['character/character'].options.programInstall
     },
-    currentMedigel () {
-      return this.medigel.filter(i => i.equipped).reduce((a, c) => a + (c.equippedAmount || 0), 0)
-    },
-    grenades () {
-      return this.items.filter(i => i.data.type === 'grenade' && !i.notAddable)
-    },
-    maxGrenades () {
-      return 2
-    },
-    currentGrenades () {
-      return this.grenades.filter(i => i.equipped).reduce((a, c) => a + (c.equippedAmount || 0), 0)
+    hasSettings () {
+      const preferences = {}
+      for (const key of ['thermalClips', 'medigelSlots', 'grenadeSlots']) {
+        preferences[key] = this.$store.getters['character/character'].options[key] || false
+      }
+      return [
+        preferences.medigelSlots && this.medigel.length,
+        preferences.thermalClips,
+        preferences.grenadeSlots && this.grenades.length
+      ].some(i => i)
     }
   },
   methods: {
-    updateEqAmount (which, uuid) {
-      const item = this.items.find(i => i.uuid === uuid)
-      if (!item) {
-        return
-      }
-      const equippedAmount = which === 'increment'
-        ? Math.min(item.uses, (item.equippedAmount + 1))
-        : Math.max(0, (item.equippedAmount - 1))
-      const changeItem = { ...item, equippedAmount, equipped: equippedAmount > 0 }
-      this.$store.dispatch('character/equipment/REPLACE_EQUIPMENT', { uuid: item.uuid, replacement: changeItem })
+    showGearManager () {
+      this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-equipment-gear-manager-side-nav')
     }
   }
 }

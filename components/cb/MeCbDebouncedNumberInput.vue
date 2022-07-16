@@ -67,7 +67,8 @@ export default {
     updateAttr () {
       const int = parseInt(this.cachedValue.replaceAll(',', ''), 10)
       if (isNaN(int) || int < 0 || int > this.max) {
-        this.cachedValue = int < 0 ? 0 : this.max
+        // this.cachedValue = int < 0 ? 0 : this.max
+
       } else {
         this.$emit('set', int)
       }

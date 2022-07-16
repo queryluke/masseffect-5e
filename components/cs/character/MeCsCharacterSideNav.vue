@@ -4,7 +4,7 @@
       Character
     </v-subheader>
     <!-- edit -->
-    <v-list-item v-if="!viewOnly" :to="`/characters/builder/?id=${id}`" nuxt>
+    <v-list-item :disabled="viewOnly" :to="`/characters/builder/?id=${id}`" nuxt>
       <v-list-item-icon>
         <v-icon>
           mdi-pencil
@@ -14,7 +14,7 @@
     </v-list-item>
 
     <!-- preferences -->
-    <v-list-item v-if="!viewOnly">
+    <v-list-item @click="showPreferences">
       <v-list-item-icon>
         <v-icon>
           mdi-toggle-switch-off
@@ -29,7 +29,7 @@
       Gameplay
     </v-subheader>
     <!-- short rest -->
-    <v-list-item v-if="!viewOnly">
+    <v-list-item v-if="!viewOnly" @click="showRest('short')">
       <v-list-item-icon>
         <v-icon>
           mdi-campfire
@@ -39,7 +39,7 @@
     </v-list-item>
 
     <!-- long rest -->
-    <v-list-item v-if="!viewOnly">
+    <v-list-item v-if="!viewOnly" @click="showRest('long')">
       <v-list-item-icon>
         <v-icon>
           mdi-weather-night
@@ -49,7 +49,7 @@
     </v-list-item>
 
     <!-- overrides -->
-    <v-list-item v-if="!viewOnly">
+    <v-list-item v-if="!viewOnly" @click="showSettings">
       <v-list-item-icon>
         <v-icon>
           mdi-cog
@@ -114,6 +114,19 @@ export default {
     }
   },
   methods: {
+    showRest (type) {
+      this.$store.commit('character/navigation/SET', { key: 'restMenu', value: type })
+      this.$store.commit('character/navigation/SET', { key: 'mobileMenu', value: false })
+      this.$nextTick(() => {
+        this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-rest-menu')
+      })
+    },
+    showSettings () {
+      this.$store.commit('character/navigation/SET', { key: 'settingsMenu', value: true })
+    },
+    showPreferences () {
+      this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-character-preferences-side-nav')
+    },
     saveFile () {
       const data = JSON.stringify(this.character)
       const blob = new Blob([data], { type: 'text/plain' })

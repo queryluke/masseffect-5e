@@ -1,6 +1,6 @@
 <template>
   <v-list-item dense style="min-height: 38px" @click="showItem">
-    <slot name="action">
+    <slot name="equip">
       <v-list-item-action class="my-0" @click.stop="toggleEquipped">
         <v-icon :color="iconColor">
           {{ item.equipped ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
@@ -17,15 +17,9 @@
         </small>
       </v-list-item-subtitle>
     </v-list-item-content>
-    <!--
     <v-list-item-action>
-      <v-btn x-small outlined color="error" :disabled="viewOnly" @click.stop="removeEquipment">
-        <v-icon size="16">
-          mdi-delete
-        </v-icon>
-      </v-btn>
+      <slot name="action" />
     </v-list-item-action>
-    -->
   </v-list-item>
 </template>
 
