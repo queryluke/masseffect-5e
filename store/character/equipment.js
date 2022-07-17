@@ -1,5 +1,20 @@
 import cloneDeep from 'lodash/cloneDeep'
 
+function getDieIncrease (dieType, increase) {
+  let dieIncreaseOverflow = 0
+  let newDieType = false
+  if (increase) {
+    const dice = [1, 4, 6, 8, 10, 12]
+    const increaseIndex = dice.indexOf(dieType) + increase
+    if (increaseIndex >= dice.length) {
+      dieIncreaseOverflow = dice.length - 1 - increaseIndex
+      newDieType = 12
+    }
+    newDieType = dice[increaseIndex]
+  }
+  return { newDieType, dieIncreaseOverflow }
+}
+
 export const state = () => ({
   nullArmor: {
     placement: 'none',
@@ -314,7 +329,7 @@ export const getters = {
       })
     }
 
-    const rerollDamage = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'reroll-damage' && ['weapon', 'attack', null].includes(i.limits?.source))
+    // other augments
     const heatIncrease = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'weapon-heat-increase')
 
     for (const weapon of weaponsToProcess) {
@@ -344,12 +359,22 @@ export const getters = {
             : 'dex'
 
       // Get Matching Augments
-      const augments = getters.hydratedAttackAugments('attack-augment', attackType, 'weapons', weaponType, abilityMod)
+      const augmentQualities = {
+        weaponType,
+        attackType,
+        abilityMod,
+        specialAttacks: {
+          bf,
+          dt,
+          twf: twfEligible
+        }
+      }
+      const augments = getters.hydratedAttackAugments('attack-augment', augmentQualities)
 
       // WEAPON ATTACK
       const weaponBonusHit = weapon.bonusHit || 0
       const globalBonusHit = globalMods.hit.all + globalMods.hit[attackType]
-      const augmentBonusHit = augments.attack
+      const augmentBonusHit = augments.base.hit
       const attack = {
         proficient: ['natural-melee', 'natural-ranged', 'gun-strike'].includes(weapon.data.type) || weaponProfs.includes(weaponType),
         mod: abilityMod,
@@ -360,38 +385,23 @@ export const getters = {
       }
 
       // WEAPON DAMAGE
-      // reroll damage
-      const matchingRerolls = rerollDamage.filter((i) => {
-        if (!i.limits || !i.limits.source) {
-          return true
-        }
-        if (i.limits.source === 'attack') {
-          if (!i.limits.types) {
-            return true
-          }
-          return i.limits.types.includes(attackType)
-        }
-        // else this is a power source
-        if (!i.limits.types) {
-          return true
-        }
-        return i.limits.types.includes(weaponType)
-      }).sort((a, b) => b.ifLessThan - a.ifLessThan)
       const weaponBonusDamage = weapon.bonusDamage || 0
       const globalBonusDamage = globalMods.damage.all + globalMods.damage[attackType]
-      const augmentBonusDamage = augments.damage
+      const augmentBonusDamage = augments.base.damage
       const damageMod = weapon.data.damageModOverride === 'noMod'
         ? false
         : weapon.data.damageModOverride || abilityMod
+      // TODO: versatile
+      const { newDieType, dieIncreaseOverflow } = getDieIncrease(weapon.data.damage.dieType, augments.base.dieIncrease)
       const damage = [
         {
-          ...weapon.data.damage,
+          ...{ ...weapon.data.damage, dieType: newDieType || weapon.data.damage.dieType },
           mod: damageMod,
           bonus: {
             type: 'flat',
-            value: weaponBonusDamage + globalBonusDamage + augmentBonusDamage
+            value: weaponBonusDamage + globalBonusDamage + augmentBonusDamage + dieIncreaseOverflow
           },
-          reroll: matchingRerolls[0]?.ifLessThan || false
+          reroll: augments.base.reroll || false
         }
       ]
 
@@ -419,7 +429,7 @@ export const getters = {
           ? 10
           : 5
         : weapon.data.range
-      shortRange += augments.range
+      shortRange += augments.base.range
       const longRange = attackType === 'ranged' && weapon.data.type !== 'natural-ranged'
         ? weaponType === 'shotgun'
           ? (weapon.data.range * 2)
@@ -440,8 +450,7 @@ export const getters = {
             isHtml: true
           }
         }),
-        ...(weapon.data.notes || []),
-        ...(augments.notes || [])
+        ...(weapon.data.notes || [])
       ]
 
       // TODO: thrown
@@ -466,14 +475,27 @@ export const getters = {
       attacks.attacks.push(base)
 
       if (bf) {
-        const bfAugments = getters.hydratedAttackAugments('bf-augment', attackType, 'weapons', weaponType, abilityMod)
+        const bfAugments = augments.bf
+        const { newDieType, dieIncreaseOverflow } = getDieIncrease(base.damage, bfAugments.dieIncrease)
+        const newDamage = base.damage.map((i) => {
+          return {
+            ...i,
+            dieType: newDieType || i.dieType,
+            bonus: {
+              ...i.bonus,
+              value: i.bonus.value + dieIncreaseOverflow + bfAugments.damage
+            },
+            reroll: bfAugments.reroll || i.reroll
+          }
+        })
         attacks.bf.push({
           ...base,
           attack: null,
           range: {
-            short: base.range.short,
+            short: base.range.short + bfAugments.range,
             aoe: { type: 'cube', size: 10 }
           },
+          damage: newDamage,
           resource: { ...base.resource, increment: 3 },
           dc: {
             // TODO: when bf is adjusted, improve this
@@ -486,45 +508,62 @@ export const getters = {
         })
       }
       if (light && twfEligible && !twoHanded) {
-        const twfAugments = getters.hydratedAttackAugments('twf-augment', attackType, 'weapons', weaponType, abilityMod)
+        const twfAugments = augments.twf
         // TODO: will we ever need other augments besides damage?
+        const { newDieType, dieIncreaseOverflow } = getDieIncrease(base.damage, twfAugments.dieIncrease)
         const twfDamage = base.damage.map((i) => {
           const modRemoved = { ...i, mod: false }
-          if (twfAugments.damage > 0) {
-            return {
-              ...modRemoved,
-              bonus: {
-                ...i.bonus,
-                value: i.bonus.value + twfAugments.damage
-              }
-            }
+          return {
+            ...modRemoved,
+            dieType: newDieType || i.dieType,
+            bonus: {
+              ...i.bonus,
+              value: i.bonus.value + twfAugments.damage + dieIncreaseOverflow
+            },
+            reroll: twfAugments.reroll || i.reroll
           }
-          return modRemoved
         })
         attacks.twf.push({
           ...base,
           damage: twfDamage,
+          attack: {
+            ...base.attack,
+            bonus: {
+              type: 'flat',
+              value: base.attack.bonus.value + twfAugments.hit
+            }
+          },
           properties: [...base.properties, '2W-Fight']
         })
       }
       if (dt) {
-        const dtAugments = getters.hydratedAttackAugments('dt-augment', attackType, 'weapons', weaponType, abilityMod)
+        const dtAugments = augments.dt
         // TODO: will we ever need other augments besides damage?
+        const { newDieType, dieIncreaseOverflow } = getDieIncrease(base.damage, dtAugments.dieIncrease)
         const dtDamage = base.damage.map((i) => {
           const modRemoved = { ...i, mod: false }
           if (dtAugments.damage > 0) {
             return {
               ...modRemoved,
+              dieType: newDieType || i.dieType,
               bonus: {
                 ...i.bonus,
-                value: i.bonus.value + dtAugments.damage
-              }
+                value: i.bonus.value + dtAugments.damage + dieIncreaseOverflow
+              },
+              reroll: dtAugments.reroll || i.reroll
             }
           }
           return modRemoved
         })
         attacks.dt.push({
           ...base,
+          attack: {
+            ...base.attack,
+            bonus: {
+              type: 'flat',
+              value: base.attack.bonus.value + dt.hit
+            }
+          },
           damage: dtDamage,
           properties: [...base.properties, 'Double Tap']
         })
@@ -532,37 +571,53 @@ export const getters = {
     }
     return attacks
   },
-  hydratedAttackAugments: (state, getters, rootState, rootGetters) => (augmentType, attackType, model, modelType, abilityMod = 'str') => {
-    const allAttackAugments = rootGetters['character/mechanics/mechanics'].filter(i => i.type === augmentType)
-    const matchingAugments = allAttackAugments.filter((i) => {
-      if (!i.limits) {
-        return true
+  hydratedAttackAugments: (state, getters, rootState, rootGetters) => (augmentType, { attackType, weaponType, abilityMod, specialAttacks }) => {
+    const matchingAttackAugments = rootGetters['character/mechanics/mechanics']
+      .filter((i) => {
+        return i.type === 'attack-augment' &&
+          (i.attackLimit?.type ? i.attackLimit.type === attackType : true) &&
+          (i.attackLimit?.model ? i.attackLimit.model === 'weapon' : true) &&
+          (i.attackLimit?.modelTypes ? i.attackLimit.modelTypes.includes(weaponType) : true)
+      })
+    const hydrated = {
+      base: {
+        hit: 0,
+        damage: 0,
+        dc: 0,
+        range: 0,
+        reroll: 0,
+        dieIncrease: 0
       }
-      return (i.limits.attack ? i.limits.attack === attackType : true) &&
-        (i.limits.model ? i.limits.model === model : true) &&
-        (i.limits.modelType ? i.limits.modelType === modelType : true)
-    })
-    const augmentTypes = {
-      attack: 0,
-      damage: 0,
-      dc: 0,
-      range: 0,
-      notes: []
     }
-    for (const at of Object.keys(augmentTypes)) {
-      augmentTypes[at] = matchingAugments.filter(i => i.augment === at)
-        .reduce((acc, curr) => {
-          if (at === 'notes') {
-            return acc.concat(curr.value)
-          } else if (curr.value === 'abilityMod') {
-            // for abilityMod, need to use the best mod for the weapon
-            return acc + rootGetters['character/mechanics/mcBonus']({ type: 'mod', value: abilityMod })
-          } else {
-            return acc + rootGetters['character/mechanics/mcBonus'](curr.value)
-          }
-        }, augmentTypes[at])
+    for (const specialKey of ['bf', 'twf', 'dt']) {
+      hydrated[specialKey] = Object.assign({}, hydrated.base)
     }
-    return augmentTypes
+    for (const maa of matchingAttackAugments) {
+      // get the resulting bonus
+      const bonus = maa.abilityMod
+        ? rootGetters['character/mechanics/mcBonus']({ type: 'mod', value: abilityMod })
+        : rootGetters['character/mechanics/mcBonus'](maa.bonus)
+      const reroll = maa.rerollIfLessThan || 0
+      const dieIncrease = maa.dieIncrease || 0
+      let applicator = 'base'
+      if (maa.attackLimit?.special) {
+        const special = maa.attackLimit?.special
+        // ignore if this weapon doesn't have that special attack available
+        if (!specialAttacks[special]) {
+          continue
+        }
+        // change the applicators
+        applicator = special
+      }
+      for (const at of maa.augmentTypes) {
+        if (at === 'damage' && (reroll || dieIncrease)) {
+          hydrated[applicator].reroll = Math.max(reroll, hydrated[applicator].reroll)
+          hydrated[applicator].dieIncrease += dieIncrease
+        }
+        hydrated[applicator][at] += bonus
+      }
+    }
+    return hydrated
   },
   tentacleBlenderText: (state, getters) => {
     const tentacleBlender = [[1, 4, 'poison'], [1, 4, 'poison'], [1, 4, 'poison'], [1, 4, 'poison'], [1, 4, 'poison'], [1, 4, 'poison']]

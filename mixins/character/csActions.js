@@ -119,6 +119,8 @@ export const CsActions = {
           // rerolls
           if (text.includes('d') && damage.reroll) {
             notation = `${text}ro<${damage.reroll}`
+          } else {
+            notation = text
           }
           if (bonus !== 0) {
             text += this.damageText(bonus)
