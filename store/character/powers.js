@@ -353,8 +353,19 @@ export const getters = {
           runningBonus = rootGetters['character/mechanics/mcBonus'](power.attack.bonus)
         }
         runningBonus += (fhEligible && power.attack.type === 'ranged' ? 2 : 0)
+        // TODO: refactor attack bonuses
         const attackAugmentBonus = augments
-          .filter(i => (i.limits ? (i.limits.type.includes(power.type)) : true) && i.augment === 'attack')
+          .filter((i) => {
+            let typeCheck = true
+            let attackTypeCheck = true
+            if (i.limits?.type) {
+              typeCheck = (i.limits.type || []).includes(power.type)
+            }
+            if (i.limits?.attackType) {
+              attackTypeCheck = i.limits.attackType === power.attack?.type && power.attack?.wp === 'power'
+            }
+            return typeCheck && attackTypeCheck && i.augment === 'attack'
+          })
           .reduce((acc, curr) => acc + rootGetters['character/mechanics/mcBonus'](curr.value), 0)
         runningBonus += attackAugmentBonus
         power.attack.bonus = { type: 'flat', value: runningBonus }
