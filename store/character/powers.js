@@ -1,6 +1,25 @@
 import merge from 'lodash/merge'
 import cloneDeep from 'lodash/cloneDeep'
 
+function getDieIncrease (dieType, increase) {
+  let dieIncreaseOverflow = 0
+  let newDieType = false
+  if (increase) {
+    const dice = [1, 4, 6, 8, 10, 12]
+    const increaseIndex = dice.indexOf(dieType) + increase
+    if (increaseIndex >= dice.length) {
+      dieIncreaseOverflow = dice.length - 1 - increaseIndex
+      newDieType = 12
+    }
+    newDieType = dice[increaseIndex]
+  }
+  return { newDieType, dieIncreaseOverflow }
+}
+
+function upcastPower (base, upcast, advancement) {
+  return merge(cloneDeep(base), (upcast || {}), (advancement || {}))
+}
+
 export const state = () => ({
   mcPs: [
     [2, 4, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7],
@@ -29,10 +48,6 @@ export const state = () => ({
     soldier: false
   }
 })
-
-function upcastPower (base, upcast, advancement) {
-  return merge(cloneDeep(base), (upcast || {}), (advancement || {}))
-}
 
 export const getters = {
   klassesPowercastingMechanics: (state, getters, rootState, rootGetters) => {
@@ -257,6 +272,7 @@ export const getters = {
           ? power.advancements.find(i => i.id === p.advancement) || power.advancements[p.advancement]
           : false,
         type: power.type,
+        mod,
         upcast: false,
         alwaysCastable: p.alwaysCastable,
         ...baseMechanics,
@@ -311,17 +327,9 @@ export const getters = {
       }
     }
     // additional bonuses
-    let fhEligible = false
-    const hasFreeHand = rootGetters['character/mechanics/mechanics'].find(i => i.type === 'free-hand-fs')
-    if (hasFreeHand) {
-      const eqWeapons = rootGetters['character/equipment/equippedWeapons']
-      fhEligible = eqWeapons.length < 2 && eqWeapons.filter(i => i.data.properties.includes('light') && !i.data.properties.includes('two-handed')).length < 2
-    }
-    const augments = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'power-augment')
     const powersAsAttacks = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'power-attack').map(i => i.value)
     const powersAtWill = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'power-at-will')
     const powerResource = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'power-resource')
-    const rerollDamage = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'reroll-damage' && ['power', 'attack', null].includes(i.limits?.source))
     for (const power of powers) {
       // as attacks
       if (powersAsAttacks.length && powersAsAttacks.includes(power.id)) {
@@ -338,7 +346,7 @@ export const getters = {
           power.alwaysCastable = power.level
         }
       }
-      // at will
+      // resource
       if (powerResource.length) {
         const resourceMechanic = powerResource.find(i => i.value === power.id && i.levels.includes(power.level))
         if (resourceMechanic) {
@@ -346,96 +354,98 @@ export const getters = {
           power.isCastableWithoutResource = true
         }
       }
-      // attack bonuses
-      if (power.attack) {
-        let runningBonus = 0
-        if (power.attack.bonus) {
-          runningBonus = rootGetters['character/mechanics/mcBonus'](power.attack.bonus)
-        }
-        runningBonus += (fhEligible && power.attack.type === 'ranged' ? 2 : 0)
-        // TODO: refactor attack bonuses
-        const attackAugmentBonus = augments
-          .filter((i) => {
-            let typeCheck = true
-            let attackTypeCheck = true
-            if (i.limits?.type) {
-              typeCheck = (i.limits.type || []).includes(power.type)
-            }
-            if (i.limits?.attackType) {
-              attackTypeCheck = i.limits.attackType === power.attack?.type && power.attack?.wp === 'power'
-            }
-            return typeCheck && attackTypeCheck && i.augment === 'attack'
-          })
-          .reduce((acc, curr) => acc + rootGetters['character/mechanics/mcBonus'](curr.value), 0)
-        runningBonus += attackAugmentBonus
-        power.attack.bonus = { type: 'flat', value: runningBonus }
+      // augments
+      const augmentQualities = {
+        name: power.name,
+        attackType: power.attack?.type,
+        weaponOrPower: power.attack?.wp,
+        powerType: power.type,
+        abilityMod: power.mod
       }
-      // damage bonuses
-      if (power.damage.length) {
-        const newDamages = []
-        // reroll damage
-        const matchingRerolls = rerollDamage.filter((i) => {
-          if (!i.limits || !i.limits.source) {
-            return true
+      const augments = getters.hydratedAttackAugments(augmentQualities)
+      // ATTACK
+      if (augments.hit && power.attack) {
+        const baseAttackBonus = power.attack.bonus ? rootGetters['character/mechanics/mcBonus'](power.attack.bonus) : 0
+        power.attack = {
+          ...power.attack,
+          bonus: {
+            type: 'flat',
+            value: baseAttackBonus + augments.hit
           }
-          if (i.limits.source === 'attack') {
-            if (!power.attack) {
-              return false
-            }
-            if (!i.limits.types) {
-              return true
-            }
-            return i.limits.types.includes(power.attack.type)
-          }
-          // else this is a power source
-          if (!i.limits.types) {
-            return true
-          }
-          return i.limits.types.includes(power.type)
-        }).sort((a, b) => b.ifLessThan - a.ifLessThan)
-        for (const dmg of power.damage) {
-          let runningBonus = 0
-          if (dmg.bonus) {
-            runningBonus = rootGetters['character/mechanics/mcBonus'](dmg.bonus)
-          }
-          const dmgAugmentBonuses = augments
-            .filter(i => (i.limits ? (i.limits.type.includes(power.type)) : true) && i.augment === 'damage' && i.value.type !== 'dieIncrease')
-            .reduce((acc, curr) => acc + rootGetters['character/mechanics/mcBonus'](curr.value), 0)
-          runningBonus += dmgAugmentBonuses
-          const dieIncreases = augments
-            .filter(i => (i.limits ? (i.limits.type === power.type) : true) && i.augment === 'damage' && i.value.type === 'dieIncrease')
-          let newDieType = dmg.dieType
-          for (let i = 0; i < dieIncreases.length; i++) {
-            if (newDieType === 12) {
-              runningBonus += 1
-            } else {
-              newDieType += 2
-            }
-          }
-          newDamages.push({
-            ...dmg,
-            dieType: newDieType,
-            bonus: { type: 'flat', value: runningBonus },
-            reroll: matchingRerolls[0]?.ifLessThan || false
-          })
         }
-        power.damage = newDamages
       }
-      // dc bonuses
-      if (power.dc) {
-        let runningBonus = 0
-        if (power.dc.bonus) {
-          runningBonus = rootGetters['character/mechanics/mcBonus'](power.dc.bonus)
+
+      // DC
+      if (augments.dc && power.dc) {
+        const baseDcBonus = power.dc.bonus ? rootGetters['character/mechanics/mcBonus'](power.dc.bonus) : 0
+        power.dc = {
+          ...power.dc,
+          bonus: {
+            type: 'flat',
+            value: baseDcBonus + augments.dc
+          }
         }
-        const dcAugmentBonus = augments
-          .filter(i => (i.limits ? (i.limits.type.includes(power.type)) : true) && i.augment === 'dc')
-          .reduce((acc, curr) => acc + rootGetters['character/mechanics/mcBonus'](curr.value), 0)
-        runningBonus += dcAugmentBonus
-        power.dc.bonus = { type: 'flat', value: runningBonus }
+      }
+
+      // DAMAGE
+      if (power.damage && (augments.damage || augments.reroll || augments.dieIncrease)) {
+        power.damage = power.damage.map((baseDamage) => {
+          if (['temp', 'hp', 'shields'].includes(baseDamage.type)) {
+            return baseDamage
+          }
+          const baseDamageBonus = baseDamage.bonus ? rootGetters['character/mechanics/mcBonus'](baseDamage.bonus) : 0
+          const { newDieType, dieIncreaseOverflow } = getDieIncrease(baseDamage.dieType, augments.dieIncrease)
+          return {
+            ...baseDamage,
+            dieType: newDieType || baseDamage.dieType,
+            bonus: {
+              type: 'flat',
+              value: baseDamageBonus + augments.damage + dieIncreaseOverflow
+            },
+            reroll: augments.reroll
+          }
+        })
       }
     }
     // console.log(powers)
     return powers
+  },
+  hydratedAttackAugments: (state, getters, rootState, rootGetters) => ({ attackType, weaponOrPower = 'power', powerType, abilityMod }) => {
+    // By default weaponOrPower = power, it is overridden by the wp property on the attack
+    // When wp property is 'weapon' (i.e., for combat powers), an attackLimit.model === 'power' will be skipped
+    const matchingAttackAugments = rootGetters['character/mechanics/mechanics']
+      .filter((i) => {
+        return i.type === 'attack-augment' &&
+          (i.attackLimit?.type ? i.attackLimit.type === attackType : true) &&
+          (i.attackLimit?.model ? i.attackLimit.model === weaponOrPower : true) &&
+          (i.attackLimit?.modelTypes ? i.attackLimit.modelTypes.includes(powerType) : true) &&
+          // remove any dt, bf, twf
+          !i.attackLimit?.special
+      })
+    const hydrated = {
+      hit: 0,
+      damage: 0,
+      dc: 0,
+      range: 0,
+      reroll: 0,
+      dieIncrease: 0
+    }
+    for (const maa of matchingAttackAugments) {
+      // get the resulting bonus
+      const bonus = maa.abilityMod
+        ? rootGetters['character/mechanics/mcBonus']({ type: 'mod', value: abilityMod })
+        : rootGetters['character/mechanics/mcBonus'](maa.bonus)
+      const reroll = maa.rerollIfLessThan || 0
+      const dieIncrease = maa.dieIncrease || 0
+      for (const at of maa.augmentTypes) {
+        if (at === 'damage' && (reroll || dieIncrease)) {
+          hydrated.reroll = Math.max(reroll, hydrated.reroll)
+          hydrated.dieIncrease += dieIncrease
+        }
+        hydrated[at] += bonus
+      }
+    }
+    return hydrated
   },
   selectedPowers: (state, getters, rootState, rootGetters) => {
     // hack for auto-learned power advancements

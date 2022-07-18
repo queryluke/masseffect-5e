@@ -369,7 +369,7 @@ export const getters = {
           twf: twfEligible
         }
       }
-      const augments = getters.hydratedAttackAugments('attack-augment', augmentQualities)
+      const augments = getters.hydratedAttackAugments(augmentQualities)
 
       // WEAPON ATTACK
       const weaponBonusHit = weapon.bonusHit || 0
@@ -571,7 +571,7 @@ export const getters = {
     }
     return attacks
   },
-  hydratedAttackAugments: (state, getters, rootState, rootGetters) => (augmentType, { attackType, weaponType, abilityMod, specialAttacks }) => {
+  hydratedAttackAugments: (state, getters, rootState, rootGetters) => ({ attackType, weaponType, abilityMod, specialAttacks }) => {
     const matchingAttackAugments = rootGetters['character/mechanics/mechanics']
       .filter((i) => {
         return i.type === 'attack-augment' &&
