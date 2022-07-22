@@ -129,11 +129,21 @@ export default {
       return `me-cs-action-layout-${this.layout}`
     },
     minHeight () {
-      return this.item.resource || this.item.toggle
-        ? this.item.shortDesc || this.item.properties?.length || (this.item.range || this.item.dc || this.item.damages)
-          ? 64
-          : 52
-        : undefined
+      const truths = [!!this.range, !!this.dc, !!this.damages, !!this.hit].filter(i => i).length
+      if (this.item.resource || this.item.toggle || this.layout === 'stats-right') {
+        if (this.item.shortDesc || this.item.properties?.length || truths) {
+          if (this.layout === 'stats-right') {
+            return truths > 2
+              ? 136
+              : truths > 1
+                ? 86
+                : 64
+          }
+          return 64
+        }
+        return 52
+      }
+      return undefined
     }
   },
   methods: {
@@ -146,7 +156,6 @@ export default {
       // right now, just check whether or not its a power
       // item.component for powers, item.moreInfo.component for gear/weapons, default is everything else
       const component = this.item.component || this.item.moreInfo.component || 'me-cs-more-info'
-      console.log(component)
       const value = this.item.moreInfo?.toDisplay || this.item
       this.$store.commit('character/navigation/SET', { key: 'toDisplay', value })
       this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', component)

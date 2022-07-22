@@ -15,6 +15,10 @@ export default {
     adder: {
       type: Boolean,
       default: false
+    },
+    manager: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -24,19 +28,24 @@ export default {
   },
   computed: {
     ...mapGetters({
-      equipementFilter: 'navigation/equipmentFilter',
-      equipmentAdderFilter: 'navigation/equipmentAdderFilter'
+      equipmentFilter: 'navigation/equipmentFilter',
+      equipmentAdderFilter: 'navigation/equipmentAdderFilter',
+      equipmentManagerFilter: 'navigation/equipmentManagerFilter'
     }),
     filterValue: {
       get () {
-        return this.adder
-          ? this.equipmentAdderFilter
-          : this.equipementFilter
+        return this.manager
+          ? this.equipmentManagerFilter
+          : this.adder
+            ? this.equipmentAdderFilter
+            : this.equipmentFilter
       },
       set (value) {
-        this.adder
-          ? this.$store.commit('character/navigation/SET', { key: 'equipmentAdderFilter', value })
-          : this.$store.commit('character/navigation/SET', { key: 'equipmentFilter', value })
+        this.manager
+          ? this.$store.commit('character/navigation/SET', { key: 'equipmentManagerFilter', value })
+          : this.adder
+            ? this.$store.commit('character/navigation/SET', { key: 'equipmentAdderFilter', value })
+            : this.$store.commit('character/navigation/SET', { key: 'equipmentFilter', value })
       }
     }
   }

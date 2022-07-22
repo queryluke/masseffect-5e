@@ -103,7 +103,7 @@ import { createNamespacedHelpers } from 'vuex'
 const { mapGetters } = createNamespacedHelpers('character/equipment')
 
 export default {
-  name: 'MeCsEquipmentGearManagerSideNav',
+  name: 'MeCsEquipmentConsumables',
   computed: {
     ...mapGetters(['gear', 'capacities', 'thermalClips']),
     viewOnly () {

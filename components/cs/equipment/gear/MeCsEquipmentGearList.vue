@@ -6,9 +6,6 @@
           Gear
         </me-tpg>
       </div>
-      <v-card v-if="hasSettings && !viewOnly" outlined class="text-caption px-1" @click="showGearManager">
-        Manage Gear
-      </v-card>
     </div>
     <me-hr size="2" />
     <div v-for="type of types" :key="`gear-${type}`">

@@ -99,14 +99,14 @@ export default {
     initiativeBonus () {
       const bonus = this.mechanics
         .filter(i => i.type === 'initiative' && i.effect === 'bonus')
-        .reduce((acc, curr) => acc + this.$store.getters['character/mechanics/mcBonus'](curr.effect), 0)
+        .reduce((acc, curr) => acc + this.$store.getters['character/mechanics/mcBonus'](curr.bonus), 0)
       return this.dexMod + bonus
     },
     initiativeAd () {
-      return this.mechanics.filter(i => i.type === 'initiative' && i.effect === 'advantage').length > 0
+      return this.mechanics.filter(i => i.type === 'initiative' && i.effect?.type === 'advantage').length > 0
     },
     initiativeDis () {
-      return this.mechanics.filter(i => i.type === 'initiative' && i.effect === 'disadvantage').length > 0
+      return this.mechanics.filter(i => i.type === 'initiative' && i.effect?.type === 'disadvantage').length > 0
     }
   }
 }

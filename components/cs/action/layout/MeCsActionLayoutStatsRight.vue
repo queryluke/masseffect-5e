@@ -16,7 +16,7 @@
           <slot name="shortDesc" />
         </div>
       </div>
-      <div v-if="!$vuetify.breakpoint.xsOnly" class="d-flex flex-column" style="min-width: 68px">
+      <div v-if="!$vuetify.breakpoint.xsOnly" class="d-flex flex-column" style="min-width: 90px">
         <slot name="range" />
         <div class="pb-1">
           <slot name="dc" />

@@ -38,7 +38,7 @@
       <me-cs-card title="Equipment">
         <div class="text-center">
           <v-btn small outlined color="primary" @click="$store.dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-equipment-manager')">
-            Add Equipment
+            Manage
           </v-btn>
         </div>
         <div class="mt-2">

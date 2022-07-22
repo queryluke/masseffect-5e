@@ -86,7 +86,7 @@
                 </v-col>
                 <v-col cols="4" class="text-right">
                   <v-btn x-small outlined color="primary" @click="$store.dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-equipment-manager')">
-                    Add Equipment
+                    Manage
                   </v-btn>
                 </v-col>
               </v-row>

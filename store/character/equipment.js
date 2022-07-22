@@ -681,39 +681,39 @@ export const getters = {
   armorMechanics: (state, getters) => {
     // custom armor mechanics
     const caMods = getters.equippedArmor.filter(i => i.custom).reduce((a, c) => a.concat(c.mods || []), [])
-    const caMechanics = getters.modsList.filter(i => caMods.includes(i.id) && i.type === 'armor').reduce((a, c) => a.concat(c.mechanics || []), [])
-    const customArmorMechanics = {
-      path: 'customArmor',
-      mechanics: caMechanics
-    }
+    const modMechanics = getters.modsList.filter(i => caMods.includes(i.id) && i.type === 'armor').map((i) => {
+      return {
+        path: `armor/mod/${i.data.id}`,
+        mechanics: i.data.mechanics
+      }
+    })
     // regular armor mechanics
-    const armorMechanics = getters.equippedArmor.filter(i => !i.custom).reduce((a, c) => {
-      let toConcat = []
-      if (c.data.mechanics) {
-        toConcat = c.data.mechanics.map((i) => {
+    const armorMechanics = getters.equippedArmor.filter(i => !i.custom).map((armor) => {
+      return {
+        path: `armor/${armor.data.id}`,
+        mechanics: armor.data.mechanics.map((mechanic) => {
           let resource = false
-          if (i.resource) {
-            resource = { ...i.resource, id: c.uuid }
+          if (mechanic.resource) {
+            resource = { ...mechanic.resource, id: armor.uuid }
           }
           return {
-            ...i,
+            ...mechanic,
             resource,
             moreInfo: {
-              toDisplay: c.uuid,
+              toDisplay: armor.uuid,
               component: 'me-cs-equipment-armor-side-nav'
             }
           }
         })
       }
-      return a.concat(toConcat)
-    }, [])
+    })
     const setBonusMechanics = getters.activeSetBonuses.reduce((a, c) => {
       const mechanics = c.activeBonuses.map(i => i.mechanics).flat()
       return a.concat(mechanics)
     }, [])
     return [
-      customArmorMechanics,
-      { path: 'armor', mechanics: armorMechanics },
+      ...modMechanics,
+      ...armorMechanics,
       { path: 'armorSetBonus', mechanics: setBonusMechanics }
     ]
   },
@@ -774,10 +774,68 @@ export const mutations = {
 }
 
 export const actions = {
-  ADD_EQUIPMENT ({ dispatch, getters }, item) {
-    const value = getters.equipment.slice()
-    value.push(item)
-    dispatch('character/UPDATE_CHARACTER', { attr: 'equipment', value }, { root: true })
+  async ADD_EQUIPMENT ({ dispatch, getters }, item) {
+    let newItem = false
+    let mods
+    const now = new Date().toISOString()
+    switch (item.modelType) {
+      case 'weapons':
+        mods = item.type === 'melee'
+          ? { grip: null, strike: null }
+          : { magazine: null, body: null, ammo: null, barrel: null }
+        newItem = {
+          id: item.id,
+          uuid: `${item.id}_${now}`,
+          type: 'weapon',
+          mods,
+          overrides: {},
+          equipped: false,
+          bonusDamage: 0,
+          bonusHit: 0
+        }
+        break
+      case 'armor':
+        newItem = {
+          id: item.id,
+          uuid: `${item.id}_${now}`,
+          type: 'armor',
+          mods: [],
+          equipped: false
+        }
+        break
+      case 'gear':
+        newItem = {
+          id: item.id,
+          uuid: `${item.id}_${now}`,
+          uses: item.charges || 1,
+          notes: '',
+          type: 'gear',
+          subType: item.type,
+          equipped: false,
+          equippedAmount: 0
+        }
+        break
+      default:
+        break
+    }
+    if (newItem) {
+      const value = getters.equipment.slice()
+      if (item.consumable) {
+        const existingIndex = value.findIndex(i => i.id === newItem.id)
+        if (existingIndex > -1) {
+          const adder = { ...value[existingIndex], uses: value[existingIndex].uses + newItem.uses }
+          value.splice(existingIndex, 1, adder)
+        } else {
+          value.push(newItem)
+        }
+      } else {
+        value.push(newItem)
+      }
+      await dispatch('character/UPDATE_CHARACTER', { attr: 'equipment', value }, { root: true })
+      return true
+    } else {
+      return false
+    }
   },
   TOGGLE_EQUIPPED ({ dispatch, getters }, uuid) {
     const item = getters.equipment.find(i => i.uuid === uuid)
@@ -829,6 +887,18 @@ export const actions = {
     if (smIndex > -1) {
       sm.splice(smIndex, 1)
       dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.shoulderMounts', value: sm }, { root: true })
+    }
+  },
+  ADD_OMNI_GEL ({ dispatch, getters }, amount) {
+    const currentGel = getters.equipment.find(i => i.id === 'omni-gel')
+    if (currentGel) {
+      const newGel = { ...currentGel, uses: currentGel.uses + amount }
+      dispatch('REPLACE_EQUIPMENT', { uuid: currentGel.uuid, replacement: newGel })
+    } else {
+      const newGel = getters.gearList.find(i => i.id === 'omni-gel')
+      newGel.charges = amount
+      newGel.modelType = 'gear'
+      dispatch('ADD_EQUIPMENT', newGel)
     }
   }
 }
