@@ -50,7 +50,7 @@
       <div v-if="manageKey === 'toGel'">
         <div class="d-flex justify-space-between">
           <div>
-            Omni-Gel: {{ toGel.length }} item{{ toGel.length === 1 ? '' : 's' }}
+            Break down: {{ toGel.length }} item{{ toGel.length === 1 ? '' : 's' }}
           </div>
           <v-btn
             outlined
@@ -64,9 +64,36 @@
           </v-btn>
         </div>
         <div class="text-center">
-          {{ gainedGel }} omni-gel
+          = {{ gainedGel }} omni-gel
         </div>
       </div>
+    </v-card-text>
+
+    <v-card-text class="px-3">
+      <v-row no-gutters align="center" justify="space-between">
+        <v-col cols="7">
+          <v-text-field v-model="search" append-icon="mdi-magnify" dense label="Search" hide-details />
+        </v-col>
+        <v-col cols="5" class="text-right">
+          <v-btn-toggle v-model="manageKey" mandatory>
+            <v-btn x-small value="toDel" :color="manageKey === 'toDel' ? 'red darken-4' : undefined">
+              <v-icon x-small>
+                mdi-delete
+              </v-icon>
+            </v-btn>
+            <v-btn x-small value="toSell" :color="manageKey === 'toSell' ? 'green darken-2' : undefined">
+              <v-icon x-small light>
+                mdi-currency-eur
+              </v-icon>
+            </v-btn>
+            <v-btn x-small value="toGel" :color="manageKey === 'toGel' ? 'yellow darken-4' : undefined">
+              <v-icon x-small>
+                mdi-liquid-spot
+              </v-icon>
+            </v-btn>
+          </v-btn-toggle>
+        </v-col>
+      </v-row>
     </v-card-text>
 
     <v-data-table
@@ -79,33 +106,12 @@
       :items-per-page="10"
       :page.sync="page"
       item-key="uuid"
+      hide-default-header
       @page-count="pageCount = $event"
       @click:row="manageThis"
     >
-      <template #[`header.data.name`]>
-        <v-text-field v-model="search" append-icon="mdi-magnify" dense label="Search" hide-details />
-      </template>
-      <template #[`header.actions`]>
-        <v-btn-toggle v-model="manageKey" mandatory>
-          <v-btn x-small value="toDel" :color="manageKey === 'toDel' ? 'red darken-4' : undefined">
-            <v-icon x-small>
-              mdi-delete
-            </v-icon>
-          </v-btn>
-          <v-btn x-small value="toSell" :color="manageKey === 'toSell' ? 'green darken-2' : undefined">
-            <v-icon x-small light>
-              mdi-currency-eur
-            </v-icon>
-          </v-btn>
-          <v-btn x-small value="toGel" :color="manageKey === 'toGel' ? 'yellow darken-4' : undefined">
-            <v-icon x-small>
-              mdi-liquid-spot
-            </v-icon>
-          </v-btn>
-        </v-btn-toggle>
-      </template>
       <template #[`item.data.name`]="{ item }">
-        <div style="max-width: 125px" class="text-caption">
+        <div style="max-width: 150px" class="text-caption">
           <div class="d-flex">
             <me-cs-equipment-title :rarity="item.data.rarity">
               {{ item.data.name }}

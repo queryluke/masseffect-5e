@@ -60,7 +60,7 @@
                   Total: {{ totalPurchase | groupDigits(',') }}
                 </span>
                 <span class="font-italic">
-                  (credits remaining {{ creditsAfterPurchase | groupDigits(',') }})
+                  (credits remaining after purchase {{ creditsAfterPurchase | groupDigits(',') }})
                 </span>
               </v-list-item-action-text>
             </v-list-item>
