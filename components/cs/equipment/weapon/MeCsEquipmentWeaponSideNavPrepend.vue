@@ -37,7 +37,6 @@ export default {
     removeEquipment () {
       this.$store.commit('character/navigation/SET', { key: 'sideNav', value: false })
       this.$store.dispatch('character/equipment/REPLACE_EQUIPMENT', { uuid: this.item.uuid })
-      this.$store.dispatch('character/equipment/REMOVE_FROM_SHOULDER_MOUNTS', this.item.uuid)
       this.$store.commit('character/navigation/SET', { key: 'toDisplay', value: null })
     }
   }

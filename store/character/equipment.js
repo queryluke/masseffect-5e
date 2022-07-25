@@ -4,7 +4,7 @@ function getDieIncrease (dieType, increase) {
   let dieIncreaseOverflow = 0
   let newDieType = false
   if (increase) {
-    const dice = [1, 4, 6, 8, 10, 12]
+    const dice = [1, 2, 4, 6, 8, 10, 12]
     const increaseIndex = dice.indexOf(dieType) + increase
     if (increaseIndex >= dice.length) {
       dieIncreaseOverflow = dice.length - 1 - increaseIndex
@@ -25,7 +25,8 @@ export const state = () => ({
     tags: [],
     andromeda: false,
     set: false,
-    rarity: 'common'
+    rarity: 'common',
+    mechanics: []
   },
   nullWeapon: {
     rarity: 'common',
@@ -49,7 +50,8 @@ export const state = () => ({
     set: false,
     rarity: 'common',
     flavor: '',
-    html: ''
+    html: '',
+    mechanics: []
   },
   customArmor: [
     // chest
@@ -120,6 +122,10 @@ export const getters = {
       .filter(i => i.type === 'weapon')
       .map((i) => {
         const weapon = getters.weaponsList.find(j => j.id === i.id) || state.nullWeapon
+        const modIds = Object.values(i.mods || {}).filter(i => i)
+        const mods = getters.modsList.filter(i => modIds.includes(i.id))
+        const modMechanics = mods.reduce((a, c) => a.concat(c.mechanics || []), [])
+
         const data = {
           ...weapon,
           ...i.overrides,
@@ -128,10 +134,24 @@ export const getters = {
             ...(i.overrides?.damage || {})
           }
         }
+
+        // remove/add props from mods
+        let properties = data.properties.slice()
+        const adjustProps = modMechanics.filter(i => i.type === 'adjust-weapon-props')
+        if (adjustProps.length) {
+          const toRemove = adjustProps.reduce((a, c) => a.concat(c.remove || []), [])
+          const toAdd = adjustProps.reduce((a, c) => a.concat(c.add || []), [])
+          properties = properties.concat(toAdd)
+          properties = properties.filter(i => !toRemove.includes(i))
+          properties = [...new Set(properties)]
+        }
+
         return {
           data,
           ...i,
-          slots: data.properties.includes('two-handed') ? 2 : 1
+          slots: data.properties.includes('two-handed') ? 2 : 1,
+          mechanics: modMechanics.filter(i => i.type !== 'adjust-weapon-props'),
+          properties
         }
       }).sort((a, b) => a.uuid > b.uuid ? 1 : -1)
   },
@@ -139,6 +159,7 @@ export const getters = {
     return getters.equipment
       .filter(i => i.type === 'armor')
       .map((i) => {
+        // TEMP for old custom armor
         if (i.custom) {
           return {
             data: { ...state.customArmorStub, ...i.custom },
@@ -192,15 +213,23 @@ export const getters = {
       }
     })
     const customArmor = state.customArmor.map((i) => {
-      const armor = { ...state.customArmorStub, ...i }
+      const armor = { ...state.customArmorStub, ...i, mechanics: [] }
       if (armor.slots > 0) {
         armor.html = `You may add ${armor.slots} armor mod${armor.slots > 1 ? 's' : ''} to this custom armor piece`
       }
-      if (armor.type === 'legs') {
+      if (armor.placement === 'chest') {
+        armor.mechanics = [
+          { type: 'thermal-clip-capacity', value: 10 },
+          { type: 'shields', capacity: { type: 'flat', value: 5 }, regen: { type: 'flat', value: 5 } },
+          { type: 'medi-gel-capacity', value: 2 }
+        ]
+      } else if (armor.placement === 'legs') {
         const armArmor = Object.assign({}, armor)
+        armor.mechanics = [{ type: 'thermal-clip-capacity', value: 2 }, { type: 'grenade-capacity', value: 2 }]
         armArmor.id = armArmor.id.replace('-legs-', '-arms-')
         armArmor.name = armArmor.name.replace(' Leg ', ' Arm ')
         armArmor.placement = 'arms'
+        armArmor.mechanics = [{ type: 'thermal-clip-capacity', value: 2 }, { type: 'medi-gel-capacity', value: 2 }]
         items.push(armArmor)
       }
       return armor
@@ -316,7 +345,10 @@ export const getters = {
         return {
           data: i,
           bonusHit: 0,
-          bonusDamage: 0
+          bonusDamage: 0,
+          component: 'me-cs-details-weapon',
+          properties: [],
+          mechanics: []
         }
       })
     ]
@@ -325,7 +357,10 @@ export const getters = {
       weaponsToProcess.push({
         data: getters.baseGunStrike,
         bonusHit: 0,
-        bonusDamage: 0
+        bonusDamage: 0,
+        component: 'me-cs-details-weapon',
+        properties: [],
+        mechanics: []
       })
     }
 
@@ -334,14 +369,14 @@ export const getters = {
 
     for (const weapon of weaponsToProcess) {
       // assess properties
-      const light = weapon.data.properties.includes('light')
-      const dt = weapon.data.properties.includes('double-tap')
-      const bf = weapon.data.properties.includes('burst-fire')
-      const finesse = weapon.data.properties.includes('finesse')
-      const recoil = weapon.data.properties.includes('recoil')
-      const reach = weapon.data.properties.includes('reach')
-      const vented = weapon.data.properties.includes('vented')
-      const twoHanded = weapon.data.properties.includes('two-handed')
+      const light = weapon.properties.includes('light')
+      const dt = weapon.properties.includes('double-tap')
+      const bf = weapon.properties.includes('burst-fire')
+      const finesse = weapon.properties.includes('finesse')
+      const recoil = weapon.properties.includes('recoil')
+      const reach = weapon.properties.includes('reach')
+      const vented = weapon.properties.includes('vented')
+      const twoHanded = weapon.properties.includes('two-handed')
       const dexOrStr = rootGetters['character/abilities/dexMod'] > rootGetters['character/abilities/strMod'] ? 'dex' : 'str'
       // TODO: when new melee weapons arrive, need to change this...note that natural weapons are natural-ranged and natural-melee
       const attackType = ['melee', 'gun-strike', 'natural-melee'].includes(weapon.data.type) ? 'melee' : 'ranged'
@@ -369,7 +404,7 @@ export const getters = {
           twf: twfEligible
         }
       }
-      const augments = getters.hydratedAttackAugments(augmentQualities)
+      const augments = getters.hydratedAttackAugments(augmentQualities, weapon.mechanics || [])
 
       // WEAPON ATTACK
       const weaponBonusHit = weapon.bonusHit || 0
@@ -381,7 +416,8 @@ export const getters = {
         bonus: {
           type: 'flat',
           value: weaponBonusHit + globalBonusHit + augmentBonusHit
-        }
+        },
+        crit: augments.base.crit || 20
       }
 
       // WEAPON DAMAGE
@@ -401,7 +437,8 @@ export const getters = {
             type: 'flat',
             value: weaponBonusDamage + globalBonusDamage + augmentBonusDamage + dieIncreaseOverflow
           },
-          reroll: augments.base.reroll || false
+          reroll: augments.base.reroll || false,
+          addCritDie: augments.base.addCritDie || false
         }
       ]
 
@@ -409,14 +446,17 @@ export const getters = {
       let resource = null
       if (weapon.data.heat) {
         // TODO: add from mods
-        const applicableHeatIncreases = [...heatIncrease].reduce((a, c) => a + (Math.max(Math.floor(weapon.data.heat * c.multiplier), 1)), 0)
+        const weaponModHeatIncrease = weapon.mechanics.filter(i => i.type === 'weapon-heat-increase')
+        const multiplierIncreases = weaponModHeatIncrease.filter(i => i.multiplier)
+        const applicableHeatIncreases = [...heatIncrease, ...multiplierIncreases].reduce((a, c) => a + (Math.max(Math.floor(weapon.data.heat * c.multiplier), 1)), 0)
+        const staticIncreases = weaponModHeatIncrease.filter(i => i.value).reduce((a, c) => a + c.value, 0)
         resource = {
           displayType: 'heat',
           reset: 'manual',
           vented,
           max: {
             type: 'flat',
-            value: weapon.data.heat + applicableHeatIncreases,
+            value: weapon.data.heat + applicableHeatIncreases + staticIncreases,
             min: 0
           },
           id: weapon.uuid
@@ -442,7 +482,7 @@ export const getters = {
 
       // NOTES
       const notes = [
-        ...getters.weaponPropertiesList.filter(i => weapon.data.properties.includes(i.id)).map((i) => {
+        ...getters.weaponPropertiesList.filter(i => weapon.properties.includes(i.id)).map((i) => {
           return {
             type: 'tooltip',
             text: i.name,
@@ -454,9 +494,9 @@ export const getters = {
       ]
 
       // TODO: thrown
-      // const thrown = weapon.data.properties.includes('thrown')
+      // const thrown = weapon.properties.includes('thrown')
       // TODO: arc
-      // const arc = weapon.data.properties.includes('arc')
+      // const arc = weapon.properties.includes('arc')
 
       const base = {
         type: 'attack',
@@ -468,9 +508,10 @@ export const getters = {
         range,
         notes,
         properties: [attackTypes[attackType]],
-        component: 'me-cs-details-weapon',
         data: weapon.data,
-        bonus: { type: 'flat', value: 0 }
+        bonus: { type: 'flat', value: 0 },
+        component: weapon.component || false,
+        moreInfo: weapon.component ? false : { component: 'me-cs-equipment-weapon-side-nav', toDisplay: weapon.uuid }
       }
       attacks.attacks.push(base)
 
@@ -571,8 +612,9 @@ export const getters = {
     }
     return attacks
   },
-  hydratedAttackAugments: (state, getters, rootState, rootGetters) => ({ attackType, weaponType, abilityMod, specialAttacks }) => {
-    const matchingAttackAugments = rootGetters['character/mechanics/mechanics']
+  hydratedAttackAugments: (state, getters, rootState, rootGetters) => ({ attackType, weaponType, abilityMod, specialAttacks }, additionalMechanics = []) => {
+    const allAugments = [...rootGetters['character/mechanics/mechanics'], ...additionalMechanics]
+    const matchingAttackAugments = allAugments
       .filter((i) => {
         return i.type === 'attack-augment' &&
           (i.attackLimit?.type ? i.attackLimit.type === attackType : true) &&
@@ -586,7 +628,9 @@ export const getters = {
         dc: 0,
         range: 0,
         reroll: 0,
-        dieIncrease: 0
+        crit: 20,
+        dieIncrease: 0,
+        addCritDie: 0
       }
     }
     for (const specialKey of ['bf', 'twf', 'dt']) {
@@ -599,6 +643,8 @@ export const getters = {
         : rootGetters['character/mechanics/mcBonus'](maa.bonus)
       const reroll = maa.rerollIfLessThan || 0
       const dieIncrease = maa.dieIncrease || 0
+      const crit = maa.crit || 20
+      const addCritDie = maa.addCritDie || 20
       let applicator = 'base'
       if (maa.attackLimit?.special) {
         const special = maa.attackLimit?.special
@@ -613,6 +659,10 @@ export const getters = {
         if (at === 'damage' && (reroll || dieIncrease)) {
           hydrated[applicator].reroll = Math.max(reroll, hydrated[applicator].reroll)
           hydrated[applicator].dieIncrease += dieIncrease
+          hydrated[applicator].addCritDie += addCritDie
+        }
+        if (at === 'hit') {
+          hydrated[applicator].crit = Math.min(crit, hydrated[applicator].crit)
         }
         hydrated[applicator][at] += bonus
       }
@@ -678,13 +728,22 @@ export const getters = {
       }
     }).filter(i => !!i)
   },
+  weaponMechanics: (state, getters) => {
+    const excludedMechanicTypes = ['attack-augment', 'weapon-heat-increase', 'adjust-weapon-props']
+    return getters.equippedWeapons.map((i) => {
+      return {
+        path: `weapon/${i.data.id}`,
+        mechanics: i.mechanics.filter(i => !excludedMechanicTypes.includes(i.type))
+      }
+    })
+  },
   armorMechanics: (state, getters) => {
     // custom armor mechanics
-    const caMods = getters.equippedArmor.filter(i => i.custom).reduce((a, c) => a.concat(c.mods || []), [])
+    const caMods = getters.equippedArmor.reduce((a, c) => a.concat(c.mods || []), [])
     const modMechanics = getters.modsList.filter(i => caMods.includes(i.id) && i.type === 'armor').map((i) => {
       return {
-        path: `armor/mod/${i.data.id}`,
-        mechanics: i.data.mechanics
+        path: `armor/mod/${i.id}`,
+        mechanics: i.mechanics
       }
     })
     // regular armor mechanics
@@ -712,6 +771,7 @@ export const getters = {
       return a.concat(mechanics)
     }, [])
     return [
+      ...getters.weaponMechanics,
       ...modMechanics,
       ...armorMechanics,
       { path: 'armorSetBonus', mechanics: setBonusMechanics }
@@ -878,6 +938,7 @@ export const actions = {
       } else {
         items.splice(index, 1)
       }
+      dispatch('REMOVE_FROM_SHOULDER_MOUNTS', uuid)
       dispatch('character/UPDATE_CHARACTER', { attr: 'equipment', value: items }, { root: true })
     }
   },

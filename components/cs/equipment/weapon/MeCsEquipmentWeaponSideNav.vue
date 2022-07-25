@@ -1,7 +1,7 @@
 <template>
   <v-card v-if="item" flat tile>
     <me-cs-equipment-weapon-info :item="info" />
-    <v-card-text class="pt-0">
+    <v-card-text v-if="moddable" class="pt-0">
       <div class="font-weight-bold">
         Mods
       </div>
@@ -11,8 +11,8 @@
         </me-cs-equipment-mod-card>
       </template>
     </v-card-text>
-    <v-divider />
-    <v-list-item @click="mods = !mods">
+    <v-divider v-if="moddable" />
+    <v-list-item v-if="moddable" @click="mods = !mods">
       <v-list-item-content>
         <v-list-item-title class="text-caption">
           Add Mods
@@ -91,6 +91,9 @@ export default {
     },
     currentMods () {
       return Object.values(this.item.mods)
+    },
+    moddable () {
+      return !this.item.data.properties.includes('special')
     }
   },
   methods: {

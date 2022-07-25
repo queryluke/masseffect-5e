@@ -38,7 +38,7 @@
     <v-list-item @click="manager = !manager; adder = false; consumables = false">
       <v-list-item-content>
         <v-list-item-title>
-          Remove, Sell, Breakdown
+          Remove, Sell, Omni-gel
         </v-list-item-title>
       </v-list-item-content>
       <v-list-item-icon>

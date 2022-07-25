@@ -49,7 +49,8 @@ export const CsActions = {
       const hitDefaults = {
         mod: false,
         proficient: false,
-        bonus: false
+        bonus: false,
+        crit: 20
       }
       const hit = { ...hitDefaults, ...this.item.attack }
       const bonus = hit.bonus ? this.mcBonus(hit.bonus) : 0
@@ -148,6 +149,12 @@ export const CsActions = {
             text: rerolls[0] === 3 ? 'Reroll 1s & 2s' : 'Reroll 1s'
           })
         }
+      }
+      if (this.hit && this.hit.crit < 20) {
+        notes.push({
+          type: 'text',
+          text: `Crit: ${this.hit.crit}+`
+        })
       }
       if (Array.isArray(this.item.notes) && this.item.notes.length) {
         for (const note of this.item.notes) {

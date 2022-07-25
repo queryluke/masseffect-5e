@@ -2,38 +2,29 @@
   <div>
     <v-card-text class="px-3">
       <!-- DELETE -->
-      <div v-if="manageKey === 'toDel'" class="d-flex justify-space-between">
-        <div>
-          Remove: {{ toDel.length }} item{{ toDel.length === 1 ? '' : 's' }}
-        </div>
-        <v-btn
-          outlined
-          x-small
-          color="red darken-4"
-          :disabled="!toDel.length"
-          :loading="loading"
-          @click="execute"
-        >
-          Remove
-        </v-btn>
+      <div v-if="manageKey === 'toDel'">
+        Remove: {{ toDel.length }} item{{ toDel.length === 1 ? '' : 's' }}
       </div>
 
       <!-- SELL -->
       <div v-if="manageKey === 'toSell'">
-        <div class="d-flex justify-space-between">
-          <div>
+        <div>
+          <span>
             Sell: {{ toSell.length }} item{{ toSell.length === 1 ? '' : 's' }}
+          </span>
+          <span v-if="includedMods">
+            (includes {{ includedMods }} mod{{ includedMods === 1 ? '' : '' }})
+          </span>
+        </div>
+        <div class="my-2">
+          <div class="d-flex text-caption align-center" @click="includeMods = !includeMods">
+            <v-icon color="primary" x-small>
+              {{ includeMods ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
+            </v-icon>
+            <span class="pl-1">
+              Include Mods?
+            </span>
           </div>
-          <v-btn
-            outlined
-            x-small
-            color="green darken-2"
-            :disabled="!toSell.length"
-            :loading="loading"
-            @click="execute"
-          >
-            Sell
-          </v-btn>
         </div>
         <v-slider v-model="adjustment" min="-100" max="100" step="5" label="% Adjustment" />
         <div class="text-center">
@@ -48,24 +39,40 @@
 
       <!-- OMNI_GEL -->
       <div v-if="manageKey === 'toGel'">
-        <div class="d-flex justify-space-between">
-          <div>
+        <div>
+          <span>
             Break down: {{ toGel.length }} item{{ toGel.length === 1 ? '' : 's' }}
+          </span>
+          <span v-if="includedMods">
+            (includes {{ includedMods }} mod{{ includedMods === 1 ? '' : '' }})
+          </span>
+        </div>
+        <div class="mt-2">
+          <div class="d-flex text-caption align-center" @click="includeMods = !includeMods">
+            <v-icon color="primary" x-small>
+              {{ includeMods ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
+            </v-icon>
+            <span class="pl-1">
+              Include Mods?
+            </span>
           </div>
-          <v-btn
-            outlined
-            x-small
-            color="yellow darken-4"
-            :disabled="!toGel.length"
-            :loading="loading"
-            @click="execute"
-          >
-            Convert
-          </v-btn>
         </div>
         <div class="text-center">
           = {{ gainedGel }} omni-gel
         </div>
+      </div>
+
+      <div class="text-center mt-2">
+        <v-btn
+          outlined
+          small
+          :color="execColor"
+          :disabled="(!toDel.length && !toSell.length && !toGel.length) || viewOnly"
+          :loading="loading"
+          @click="execute"
+        >
+          {{ execText }}
+        </v-btn>
       </div>
     </v-card-text>
 
@@ -196,13 +203,35 @@ export default {
       adjustment: 0,
       expanded: [],
       manageKey: 'toDel',
-      loading: false
+      loading: false,
+      includeMods: true
     }
   },
   computed: {
-    ...mapGetters({ character: 'character', weapons: 'equipment/weapons', armor: 'equipment/armor', gear: 'equipment/gear', filter: 'navigation/equipmentManagerFilter' }),
+    ...mapGetters({
+      character: 'character',
+      weapons: 'equipment/weapons',
+      armor: 'equipment/armor',
+      gear: 'equipment/gear',
+      mods: 'equipment/modsList',
+      filter: 'navigation/equipmentManagerFilter'
+    }),
     viewOnly () {
       return this.$store.state.character.viewOnly
+    },
+    execText () {
+      return this.manageKey === 'toDel'
+        ? 'Remove'
+        : this.manageKey === 'toSell'
+          ? 'Sell'
+          : 'Convert'
+    },
+    execColor () {
+      return this.manageKey === 'toDel'
+        ? 'red darken-4'
+        : this.manageKey === 'toSell'
+          ? 'green darken-2'
+          : 'yellow darken-4'
     },
     items () {
       return [...this.weapons, ...this.armor, ...this.gear]
@@ -238,6 +267,8 @@ export default {
       for (const uuid of this[this.manageKey]) {
         const match = this.items.find(i => i.uuid === uuid)
         let gel = 0
+        let modCount = 0
+        let modCosts = 0
         const consumable = match?.data.consumable
         if (consumable) {
           const existingIndex = items.findIndex(i => i.uuid === uuid)
@@ -245,7 +276,7 @@ export default {
             items[existingIndex].count += 1
             continue
           }
-        } else if (['gear', 'mod'].includes(match.type)) {
+        } else if (match.type === 'gear') {
           if (match.subType === 'heavy_weapon') {
             gel = 10
           } else {
@@ -259,11 +290,30 @@ export default {
           } else {
             gel = 3
           }
+          if (match.mods?.length) {
+            modCount = match.mods.length
+            for (const mod of match.mods) {
+              const modMatch = this.mods.find(i => i.id === mod)
+              if (modMatch) {
+                modCosts += modMatch.cost
+              }
+            }
+          }
         } else if (match.type === 'weapon') {
           if (['melee', 'heavy_pistol', 'smg'].includes(match.data.type)) {
             gel = 3
           } else {
             gel = 6
+          }
+          const mods = Object.values(match.mods).filter(i => i)
+          if (mods.length) {
+            modCount = mods.length
+            for (const mod of mods) {
+              const modMatch = this.mods.find(i => i.id === mod)
+              if (modMatch) {
+                modCosts += modMatch.cost
+              }
+            }
           }
         }
         items.push({
@@ -271,6 +321,8 @@ export default {
           uuid,
           count: 1,
           cost: match?.data.cost || 0,
+          modCosts,
+          modCount,
           uses: match?.uses || 0,
           gel
         })
@@ -281,7 +333,7 @@ export default {
       if (this.manageKey !== 'toSell') {
         return 0
       }
-      return this.groupedItems.reduce((a, c) => a + (c.cost * c.count), 0)
+      return this.groupedItems.reduce((a, c) => a + (c.cost * c.count) + (this.includeMods ? (c.modCosts || 0) : 0), 0)
     },
     adjustedCredits () {
       if (this.totalCredits < 0) {
@@ -300,7 +352,10 @@ export default {
       return this.totalCredits + this.adjustedCredits
     },
     gainedGel () {
-      return this.groupedItems.reduce((a, c) => a + c.gel, 0)
+      return this.groupedItems.reduce((a, c) => a + c.gel + (this.includeMods ? (c.modCount || 0) : 0), 0)
+    },
+    includedMods () {
+      return this.includeMods ? this.groupedItems.reduce((a, c) => a + (c.modCount || 0), 0) : 0
     }
   },
   watch: {
@@ -313,6 +368,7 @@ export default {
       this.toDel = []
       this.toGel = []
       this.toSell = []
+      this.includeMods = true
     },
     manageThis (item) {
       if (item.data.consumable) {
