@@ -406,16 +406,30 @@ export const getters = {
       }
       const augments = getters.hydratedAttackAugments(augmentQualities, weapon.mechanics || [])
 
+      // WEAPON AUGMENT TOGGLE
+      const toggle = (weapon.mechanics || []).find(i => i.type === 'toggle-weapon-augment')
+      let toggleOn = false
+      let toggleMechanic = false
+      if (toggle) {
+        toggleOn = rootGetters['character/toggles'][weapon.uuid] || false
+        toggleMechanic = {
+          id: weapon.uuid,
+          showLabel: true,
+          name: toggle.name
+        }
+      }
+
       // WEAPON ATTACK
       const weaponBonusHit = weapon.bonusHit || 0
       const globalBonusHit = globalMods.hit.all + globalMods.hit[attackType]
       const augmentBonusHit = augments.base.hit
+      const toggleHit = toggleOn ? (toggle.hitBonus || 0) : 0
       const attack = {
         proficient: ['natural-melee', 'natural-ranged', 'gun-strike'].includes(weapon.data.type) || weaponProfs.includes(weaponType),
         mod: abilityMod,
         bonus: {
           type: 'flat',
-          value: weaponBonusHit + globalBonusHit + augmentBonusHit
+          value: weaponBonusHit + globalBonusHit + augmentBonusHit + toggleHit
         },
         crit: augments.base.crit || 20
       }
@@ -429,18 +443,29 @@ export const getters = {
         : weapon.data.damageModOverride || abilityMod
       // TODO: versatile
       const { newDieType, dieIncreaseOverflow } = getDieIncrease(weapon.data.damage.dieType, augments.base.dieIncrease)
+      const toggleDamageType = toggleOn ? toggle.damageType : false
+      const toggleAddDamage = toggleOn ? toggle.addDamage : false
       const damage = [
         {
-          ...{ ...weapon.data.damage, dieType: newDieType || weapon.data.damage.dieType },
+          dieType: newDieType || weapon.data.damage.dieType,
+          dieCount: weapon.data.damage.dieCount,
+          type: toggleDamageType || weapon.data.damage.type,
           mod: damageMod,
           bonus: {
             type: 'flat',
             value: weaponBonusDamage + globalBonusDamage + augmentBonusDamage + dieIncreaseOverflow
           },
           reroll: augments.base.reroll || false,
-          addCritDie: augments.base.addCritDie || false
+          addCritDie: augments.base.addCritDie || false,
+          addDamage: toggleAddDamage
         }
       ]
+      if (toggleAddDamage) {
+        damage.push({
+          ...toggleAddDamage,
+          reroll: augments.base.reroll || false
+        })
+      }
 
       // HEAT
       let resource = null
@@ -450,6 +475,7 @@ export const getters = {
         const multiplierIncreases = weaponModHeatIncrease.filter(i => i.multiplier)
         const applicableHeatIncreases = [...heatIncrease, ...multiplierIncreases].reduce((a, c) => a + (Math.max(Math.floor(weapon.data.heat * c.multiplier), 1)), 0)
         const staticIncreases = weaponModHeatIncrease.filter(i => i.value).reduce((a, c) => a + c.value, 0)
+        const toggleHeatConsumption = toggleOn ? toggle.heatConsumption : 1
         resource = {
           displayType: 'heat',
           reset: 'manual',
@@ -457,7 +483,8 @@ export const getters = {
           max: {
             type: 'flat',
             value: weapon.data.heat + applicableHeatIncreases + staticIncreases,
-            min: 0
+            min: 0,
+            increment: toggleHeatConsumption
           },
           id: weapon.uuid
         }
@@ -490,8 +517,26 @@ export const getters = {
             isHtml: true
           }
         }),
-        ...(weapon.data.notes || [])
+        ...(weapon.data.notes || []),
+        ...(toggleOn && toggle.notes ? toggle.notes : [])
       ]
+      if (toggleOn) {
+        if (toggle.primes) {
+          notes.unshift({
+            type: 'tooltip',
+            tooltipText: `Primes ${toggle.primes} ${toggle.primesLength || 'until the start of your next turn'}`,
+            text: `P: ${toggle.primes}`
+          })
+        }
+        if (toggle.detonates) {
+          notes.unshift({
+            type: 'icon',
+            text: 'Detonates',
+            icon: 'mdi-alert-octagram',
+            color: 'red darken-4'
+          })
+        }
+      }
 
       // TODO: thrown
       // const thrown = weapon.properties.includes('thrown')
@@ -511,7 +556,8 @@ export const getters = {
         data: weapon.data,
         bonus: { type: 'flat', value: 0 },
         component: weapon.component || false,
-        moreInfo: weapon.component ? false : { component: 'me-cs-equipment-weapon-side-nav', toDisplay: weapon.uuid }
+        moreInfo: weapon.component ? false : { component: 'me-cs-equipment-weapon-side-nav', toDisplay: weapon.uuid },
+        toggle: toggleMechanic
       }
       attacks.attacks.push(base)
 
@@ -937,6 +983,7 @@ export const actions = {
         items.splice(index, 1, replacement)
       } else {
         items.splice(index, 1)
+        dispatch('REMOVE_FROM_TOGGLES', uuid)
       }
       dispatch('REMOVE_FROM_SHOULDER_MOUNTS', uuid)
       dispatch('character/UPDATE_CHARACTER', { attr: 'equipment', value: items }, { root: true })
@@ -948,6 +995,13 @@ export const actions = {
     if (smIndex > -1) {
       sm.splice(smIndex, 1)
       dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.shoulderMounts', value: sm }, { root: true })
+    }
+  },
+  REMOVE_FROM_TOGGLES ({ dispatch, rootGetters }, uuid) {
+    const toggles = JSON.parse(JSON.stringify(rootGetters['character/toggles']))
+    if (toggles[uuid]) {
+      delete toggles[uuid]
+      dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.toggles', value: toggles }, { root: true })
     }
   },
   ADD_OMNI_GEL ({ dispatch, getters }, amount) {

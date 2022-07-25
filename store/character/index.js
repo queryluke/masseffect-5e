@@ -93,6 +93,9 @@ export const getters = {
     }
     return speeds
   },
+  toggles: (state, getters) => {
+    return getters.character.currentStats.toggles || {}
+  },
   backgroundsList: (state, getters, rootState, rootGetters) => {
     const official = rootGetters.getData('backgrounds')
     const homebrew = [state.customBackground]

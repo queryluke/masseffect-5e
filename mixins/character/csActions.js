@@ -75,6 +75,7 @@ export const CsActions = {
       return range
     },
     damages () {
+      // FUTURE: these types of calculations should probably be in the component
       if (!this.item.damage?.length) {
         return false
       }
@@ -91,11 +92,11 @@ export const CsActions = {
       }
       return this.item.damage.map((i) => {
         const damage = { ...damageDefault, ...i }
-        if (damage.dieCount.toString() === 'barrierDie') {
+        if (damage.dieCount?.toString() === 'barrierDie') {
           const barrier = this.$store.getters['character/hp/barrier']
           damage.dieCount = barrier.dieCount
           damage.dieType = barrier.dieType
-        } else if (damage.dieCount.toString().startsWith('barrierRemaining')) {
+        } else if (damage.dieCount?.toString().startsWith('barrierRemaining')) {
           const barrier = this.$store.getters['character/hp/barrier']
           const ticksRemaining = barrier.ticks.max - barrier.ticks.used
           damage.dieCount = damage.dieCount.split('+').reduce((acc, curr) => {

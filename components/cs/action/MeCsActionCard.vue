@@ -91,7 +91,13 @@
         dense
         hide-details
         class="mt-0 px-1"
-      />
+      >
+        <template v-if="item.toggle.showLabel" #label>
+          <span class="text-caption mr-1" style="margin-top: -2px; margin-left: -6px;">
+            {{ item.toggle.name }}
+          </span>
+        </template>
+      </v-switch>
       <me-cs-action-resource v-if="item.resource" :id="item.resource.id" :resource="item.resource" />
       <me-cs-action-resource v-if="item.resource && item.resource.resource" :id="item.resource.resource.id" :resource="item.resource.resource" />
     </v-card>
