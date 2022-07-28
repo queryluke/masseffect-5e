@@ -77,7 +77,7 @@ export default {
   },
   computed: {
     species () {
-      return this.$store.getters.getData('species')
+      return this.$store.getters.getData('species').filter(i => i.type !== 'subspecies' && i.type !== 'variant')
     },
     headers () {
       return [
@@ -97,6 +97,7 @@ export default {
   },
   methods: {
     displayBase (species, which) {
+      console.log(species)
       const base = species.randomDimensions[which].base[this.impOrMet]
       if (which === 'height' || which === 'length') {
         if (this.imperial) {
