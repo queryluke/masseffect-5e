@@ -93,8 +93,14 @@ export const getters = {
     }
     return speeds
   },
+  currentStats: (state, getters) => {
+    return getters.character.currentStats
+  },
   toggles: (state, getters) => {
-    return getters.character.currentStats.toggles || {}
+    return getters.currentStats.toggles || {}
+  },
+  credits: (state, getters) => {
+    return getters.currentStats.credits
   },
   backgroundsList: (state, getters, rootState, rootGetters) => {
     const official = rootGetters.getData('backgrounds')

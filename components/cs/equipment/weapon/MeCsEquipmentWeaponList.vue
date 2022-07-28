@@ -11,7 +11,7 @@
           <v-icon v-if="currentSlots > maxSlots" color="error" small>
             mdi-alert-octagram
           </v-icon>
-          Weapon Slots: {{ currentSlots }} of {{ maxSlots }}
+          Slots: {{ currentSlots }} of {{ maxSlots }}
         </div>
         <v-divider v-if="smMechanic" vertical class="ml-2" />
         <div v-if="smMechanic" class="ml-2">

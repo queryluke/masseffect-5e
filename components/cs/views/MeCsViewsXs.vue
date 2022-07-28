@@ -36,14 +36,7 @@
     </div>
     <div v-if="mobileView === 'equipment'">
       <me-cs-card title="Equipment">
-        <div class="text-center">
-          <v-btn small outlined color="primary" @click="$store.dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-equipment-manager')">
-            Manage
-          </v-btn>
-        </div>
-        <div class="mt-2">
-          <me-cs-equipment-filter />
-        </div>
+        <me-cs-equipment-header />
         <v-divider class="my-2" />
         <me-cs-equipment />
       </me-cs-card>
