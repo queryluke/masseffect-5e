@@ -140,7 +140,13 @@ export const getters = {
         const adjustProps = modMechanics.filter(i => i.type === 'adjust-weapon-props')
         if (adjustProps.length) {
           const toRemove = adjustProps.reduce((a, c) => a.concat(c.remove || []), [])
-          const toAdd = adjustProps.reduce((a, c) => a.concat(c.add || []), [])
+          let toAdd = adjustProps.reduce((a, c) => a.concat(c.add || []), [])
+          if (toAdd.includes('light')) {
+            if (properties.includes('heavy')) {
+              toRemove.push('heavy')
+              toAdd = toAdd.filter(i => i !== 'light')
+            }
+          }
           properties = properties.concat(toAdd)
           properties = properties.filter(i => !toRemove.includes(i))
           properties = [...new Set(properties)]
@@ -377,6 +383,7 @@ export const getters = {
       const reach = weapon.properties.includes('reach')
       const vented = weapon.properties.includes('vented')
       const twoHanded = weapon.properties.includes('two-handed')
+      const versatile = weapon.properties.includes('versatile')
       const dexOrStr = rootGetters['character/abilities/dexMod'] > rootGetters['character/abilities/strMod'] ? 'dex' : 'str'
       // TODO: when new melee weapons arrive, need to change this...note that natural weapons are natural-ranged and natural-melee
       const attackType = ['melee', 'gun-strike', 'natural-melee'].includes(weapon.data.type) ? 'melee' : 'ranged'
@@ -406,32 +413,40 @@ export const getters = {
       }
       const augments = getters.hydratedAttackAugments(augmentQualities, weapon.mechanics || [])
 
-      // WEAPON AUGMENT TOGGLE
-      const toggle = (weapon.mechanics || []).find(i => i.type === 'toggle-weapon-augment')
+      // WEAPON AUGMENTS
+      const toggle = (weapon.mechanics || []).find(i => i.type === 'weapon-augment')
       let toggleOn = false
       let toggleMechanic = false
       if (toggle) {
-        toggleOn = rootGetters['character/toggles'][weapon.uuid] || false
-        toggleMechanic = {
-          id: weapon.uuid,
-          showLabel: true,
-          name: toggle.name
+        toggleOn = toggle.toggle ? (rootGetters['character/toggles'][weapon.uuid] || false) : true
+        if (toggle.toggle) {
+          toggleMechanic = {
+            id: weapon.uuid,
+            showLabel: true,
+            name: toggle.name
+          }
         }
       }
 
       // WEAPON ATTACK
-      const weaponBonusHit = weapon.bonusHit || 0
-      const globalBonusHit = globalMods.hit.all + globalMods.hit[attackType]
-      const augmentBonusHit = augments.base.hit
-      const toggleHit = toggleOn ? (toggle.hitBonus || 0) : 0
-      const attack = {
-        proficient: ['natural-melee', 'natural-ranged', 'gun-strike'].includes(weapon.data.type) || weaponProfs.includes(weaponType),
-        mod: abilityMod,
-        bonus: {
-          type: 'flat',
-          value: weaponBonusHit + globalBonusHit + augmentBonusHit + toggleHit
-        },
-        crit: augments.base.crit || 20
+      let dc = false
+      let attack = false
+      if (toggleOn && toggle.dc) {
+        dc = toggle.dc
+      } else {
+        const weaponBonusHit = weapon.bonusHit || 0
+        const globalBonusHit = globalMods.hit.all + globalMods.hit[attackType]
+        const augmentBonusHit = augments.base.hit
+        const toggleHit = toggleOn ? (toggle.hitBonus || 0) : 0
+        attack = {
+          proficient: ['natural-melee', 'natural-ranged', 'gun-strike'].includes(weapon.data.type) || weaponProfs.includes(weaponType),
+          mod: abilityMod,
+          bonus: {
+            type: 'flat',
+            value: weaponBonusHit + globalBonusHit + augmentBonusHit + toggleHit
+          },
+          crit: augments.base.crit || 20
+        }
       }
 
       // WEAPON DAMAGE
@@ -441,14 +456,14 @@ export const getters = {
       const damageMod = weapon.data.damageModOverride === 'noMod'
         ? false
         : weapon.data.damageModOverride || abilityMod
-      // TODO: versatile
       const { newDieType, dieIncreaseOverflow } = getDieIncrease(weapon.data.damage.dieType, augments.base.dieIncrease)
       const toggleDamageType = toggleOn ? toggle.damageType : false
-      const toggleAddDamage = toggleOn ? toggle.addDamage : false
+      const toggleAddDamage = toggleOn ? (toggle.addDamage || false) : false
+      const toggleDamageMultiplier = toggleOn ? (toggle.damageMultiplier || 1) : 1
       const damage = [
         {
           dieType: newDieType || weapon.data.damage.dieType,
-          dieCount: weapon.data.damage.dieCount,
+          dieCount: weapon.data.damage.dieCount * toggleDamageMultiplier,
           type: toggleDamageType || weapon.data.damage.type,
           mod: damageMod,
           bonus: {
@@ -456,8 +471,7 @@ export const getters = {
             value: weaponBonusDamage + globalBonusDamage + augmentBonusDamage + dieIncreaseOverflow
           },
           reroll: augments.base.reroll || false,
-          addCritDie: augments.base.addCritDie || false,
-          addDamage: toggleAddDamage
+          addCritDie: augments.base.addCritDie || false
         }
       ]
       if (toggleAddDamage) {
@@ -466,11 +480,21 @@ export const getters = {
           reroll: augments.base.reroll || false
         })
       }
+      if (versatile) {
+        const { newDieType: versaDie, dieIncreaseOverflow: versaOverflow } = getDieIncrease(damage[0].dieType, 1)
+        damage.push({
+          ...damage[0],
+          dieType: versaDie,
+          bonus: {
+            type: 'flat',
+            value: damage[0].bonus?.value + versaOverflow
+          }
+        })
+      }
 
       // HEAT
       let resource = null
       if (weapon.data.heat) {
-        // TODO: add from mods
         const weaponModHeatIncrease = weapon.mechanics.filter(i => i.type === 'weapon-heat-increase')
         const multiplierIncreases = weaponModHeatIncrease.filter(i => i.multiplier)
         const applicableHeatIncreases = [...heatIncrease, ...multiplierIncreases].reduce((a, c) => a + (Math.max(Math.floor(weapon.data.heat * c.multiplier), 1)), 0)
@@ -483,9 +507,9 @@ export const getters = {
           max: {
             type: 'flat',
             value: weapon.data.heat + applicableHeatIncreases + staticIncreases,
-            min: 0,
-            increment: toggleHeatConsumption
+            min: 0
           },
+          increment: toggleHeatConsumption,
           id: weapon.uuid
         }
       }
@@ -499,12 +523,40 @@ export const getters = {
       shortRange += augments.base.range
       const longRange = attackType === 'ranged' && weapon.data.type !== 'natural-ranged'
         ? weaponType === 'shotgun'
-          ? (weapon.data.range * 2)
-          : (weapon.data.range * 3)
+          ? (shortRange * 2)
+          : (shortRange * 3)
         : null
-      const range = {
+      let range = {
         short: shortRange,
         long: longRange
+      }
+      const maxRanges = (weapon.mechanics || []).filter(i => i.type === 'weapon-range-maximum')
+      if (maxRanges.length) {
+        const shortestRangeMechanic = maxRanges.sort((a, b) => b.shortRange - a.shortRange)[0]
+        range = {
+          short: shortestRangeMechanic.short,
+          long: shortestRangeMechanic.long
+        }
+      }
+      if (toggleOn) {
+        if (toggle.shortRangeMultiplier) {
+          range.short *= toggle.shortRangeMultiplier
+        }
+        if (toggle.longRangeMultiplier && range.long) {
+          range.long *= toggle.longRangeMultiplier
+        }
+        if (toggle.shortRangeMax) {
+          range.short = Math.min(range.short, toggle.shortRangeMax)
+        }
+        if (toggle.longRangeMax && range.long) {
+          range.long = Math.min(range.long, toggle.longRangeMax)
+        }
+        if (toggle.addAoe) {
+          range.aoe = toggle.addAoe
+        }
+        if (toggle.onlyShortRange) {
+          range.long = null
+        }
       }
 
       // NOTES
@@ -537,6 +589,9 @@ export const getters = {
           })
         }
       }
+      if (augments.base.notes.length) {
+        notes.push(...augments.base.notes)
+      }
 
       // TODO: thrown
       // const thrown = weapon.properties.includes('thrown')
@@ -547,6 +602,7 @@ export const getters = {
         type: 'attack',
         attackType,
         attack,
+        dc,
         name: weapon.data.name,
         damage,
         resource,
@@ -569,8 +625,8 @@ export const getters = {
             ...i,
             dieType: newDieType || i.dieType,
             bonus: {
-              ...i.bonus,
-              value: i.bonus.value + dieIncreaseOverflow + bfAugments.damage
+              type: 'flat',
+              value: (i.bonus?.value || 0) + bfAugments.damage + dieIncreaseOverflow
             },
             reroll: bfAugments.reroll || i.reroll
           }
@@ -583,7 +639,7 @@ export const getters = {
             aoe: { type: 'cube', size: 10 }
           },
           damage: newDamage,
-          resource: { ...base.resource, increment: 3 },
+          resource: { ...base.resource, increment: base.resource.increment + 2 },
           dc: {
             // TODO: when bf is adjusted, improve this
             base: 15 + bfAugments.dc,
@@ -604,8 +660,8 @@ export const getters = {
             ...modRemoved,
             dieType: newDieType || i.dieType,
             bonus: {
-              ...i.bonus,
-              value: i.bonus.value + twfAugments.damage + dieIncreaseOverflow
+              type: 'flat',
+              value: (i.bonus?.value || 0) + twfAugments.damage + dieIncreaseOverflow
             },
             reroll: twfAugments.reroll || i.reroll
           }
@@ -634,8 +690,8 @@ export const getters = {
               ...modRemoved,
               dieType: newDieType || i.dieType,
               bonus: {
-                ...i.bonus,
-                value: i.bonus.value + dtAugments.damage + dieIncreaseOverflow
+                type: 'flat',
+                value: (i.bonus?.value || 0) + dtAugments.damage + dieIncreaseOverflow
               },
               reroll: dtAugments.reroll || i.reroll
             }
@@ -676,7 +732,8 @@ export const getters = {
         reroll: 0,
         crit: 20,
         dieIncrease: 0,
-        addCritDie: 0
+        addCritDie: 0,
+        notes: []
       }
     }
     for (const specialKey of ['bf', 'twf', 'dt']) {
@@ -691,6 +748,7 @@ export const getters = {
       const dieIncrease = maa.dieIncrease || 0
       const crit = maa.crit || 20
       const addCritDie = maa.addCritDie || 20
+      const notes = maa.notes || []
       let applicator = 'base'
       if (maa.attackLimit?.special) {
         const special = maa.attackLimit?.special
@@ -702,6 +760,10 @@ export const getters = {
         applicator = special
       }
       for (const at of maa.augmentTypes) {
+        if (at === 'notes') {
+          hydrated[applicator].notes.push(...notes)
+          continue
+        }
         if (at === 'damage' && (reroll || dieIncrease)) {
           hydrated[applicator].reroll = Math.max(reroll, hydrated[applicator].reroll)
           hydrated[applicator].dieIncrease += dieIncrease
@@ -775,7 +837,7 @@ export const getters = {
     }).filter(i => !!i)
   },
   weaponMechanics: (state, getters) => {
-    const excludedMechanicTypes = ['attack-augment', 'weapon-heat-increase', 'adjust-weapon-props']
+    const excludedMechanicTypes = ['attack-augment', 'weapon-heat-increase', 'adjust-weapon-props', 'weapon-range-maximum']
     return getters.equippedWeapons.map((i) => {
       return {
         path: `weapon/${i.data.id}`,
