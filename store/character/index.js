@@ -102,6 +102,9 @@ export const getters = {
   credits: (state, getters) => {
     return getters.currentStats.credits
   },
+  settings: (state, getters) => {
+    return getters.character.settings
+  },
   backgroundsList: (state, getters, rootState, rootGetters) => {
     const official = rootGetters.getData('backgrounds')
     const homebrew = [state.customBackground]
