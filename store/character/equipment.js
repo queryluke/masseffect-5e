@@ -192,7 +192,18 @@ export const getters = {
       }).sort((a, b) => a.uuid > b.uuid ? 1 : -1)
   },
   equippedArmor: (state, getters) => {
-    return getters.armor.filter(i => i.equipped)
+    return getters.armor.filter(armor => armor.equipped).map((armor) => {
+      const mechanics = armor.mechanics || []
+      if (armor.mods?.length) {
+        const equippedMods = getters.modsList.filter(i => armor.mods.includes(i.id) && i.type === 'armor')
+        const modMechanics = equippedMods.reduce((a, c) => a.concat(c.mechanics || []), [])
+        mechanics.push(...modMechanics)
+      }
+      return {
+        ...armor,
+        mechanics
+      }
+    })
   },
   equippedWeapons: (state, getters) => {
     return getters.weapons.filter(i => i.equipped)
@@ -225,7 +236,7 @@ export const getters = {
       }
       if (armor.placement === 'chest') {
         armor.mechanics = [
-          { type: 'thermal-clip-capacity', value: 10 },
+          { type: 'thermal-clip-capacity', value: 6 },
           { type: 'shields', capacity: { type: 'flat', value: 5 }, regen: { type: 'flat', value: 5 } },
           { type: 'medi-gel-capacity', value: 2 }
         ]
@@ -851,24 +862,11 @@ export const getters = {
     })
   },
   armorMechanics: (state, getters) => {
-    // custom armor mechanics
-    const caMods = getters.equippedArmor.reduce((a, c) => a.concat(c.mods || []), [])
-    const modMechanics = getters.modsList.filter(i => caMods.includes(i.id) && i.type === 'armor').map((armor) => {
-      return {
-        path: `armor/mod/${armor.id}`,
-        mechanics: armor.mechanics.map((i) => {
-          return {
-            ...i,
-            equipmentId: armor.uuid
-          }
-        })
-      }
-    })
-    // regular armor mechanics
-    const armorMechanics = getters.equippedArmor.filter(i => !i.custom).map((armor) => {
+    // armor mechanics
+    return getters.equippedArmor.filter(i => !i.custom).map((armor) => {
       return {
         path: `armor/${armor.data.id}`,
-        mechanics: armor.data.mechanics.map((mechanic) => {
+        mechanics: armor.mechanics.map((mechanic) => {
           let resource = false
           if (mechanic.resource) {
             resource = { ...mechanic.resource, id: armor.uuid }
@@ -885,21 +883,21 @@ export const getters = {
         })
       }
     })
-    const setBonusMechanics = getters.activeSetBonuses.reduce((a, c) => {
-      const mechanics = c.activeBonuses.map(i => i.mechanics).flat().map((i) => {
-        return {
-          equipmentId: c.uuid,
-          ...i
-        }
-      })
-      return a.concat(mechanics)
-    }, [])
-    return [
-      ...getters.weaponMechanics,
-      ...modMechanics,
-      ...armorMechanics,
-      { path: 'armorSetBonus', mechanics: setBonusMechanics }
-    ]
+  },
+  setBonusMechanics: (state, getters) => {
+    return getters.activeSetBonuses.map((i) => {
+      return {
+        path: `armor-set-bonus/${i.name}`,
+        mechanics: i.activeBonuses.reduce((a, c) => {
+          return a.concat(c.mechanics.map((abMechanic) => {
+            return {
+              ...abMechanic,
+              setBonusId: `${i.name}-${c.threshold}`
+            }
+          }))
+        }, [])
+      }
+    })
   },
   gearMechanics: (state, getters) => {
     const gearMechanics = getters.gear.filter(i => i.equipped).reduce((a, c) => {
@@ -931,6 +929,7 @@ export const getters = {
     return [
       ...getters.weaponMechanics,
       ...getters.armorMechanics,
+      ...getters.setBonusMechanics,
       ...getters.gearMechanics
     ]
   },
@@ -1032,7 +1031,6 @@ export const actions = {
     const item = getters.equipment.find(i => i.uuid === uuid)
     if (item) {
       dispatch('REPLACE_EQUIPMENT', { uuid, replacement: { ...item, equipped: !item.equipped, equippedAmount: 0 } })
-      dispatch('character/mechanics/EQUIPMENT_MECHANIC', { uuid: item.uuid, equipped: !item.equipped }, { root: true })
     }
     if (getters.thermalClips.equipped > getters.thermalClips.max) {
       dispatch('SET_THERMAL_CLIPS')
@@ -1073,6 +1071,7 @@ export const actions = {
       }
       dispatch('REMOVE_FROM_SHOULDER_MOUNTS', uuid)
       dispatch('character/UPDATE_CHARACTER', { attr: 'equipment', value: items }, { root: true })
+      dispatch('character/mechanics/EQUIPMENT_MECHANIC', { uuid, equipped: replacement?.equipped || false }, { root: true })
     }
   },
   REMOVE_FROM_SHOULDER_MOUNTS ({ dispatch, rootGetters }, uuid) {

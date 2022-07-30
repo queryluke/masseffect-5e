@@ -332,18 +332,18 @@ export const actions = {
     commit('setMechanics', newMechanics)
   },
   EQUIPMENT_MECHANIC ({ dispatch, getters, rootGetters, commit }, { uuid, equipped }) {
-    console.log(uuid, equipped)
     let cloned = getters.mechanics.slice()
     if (equipped) {
       const toPush = rootGetters['character/equipment/equipmentMechanics'].reduce((a, c) => a.concat(c.mechanics || []), []).filter(i => i.equipmentId === uuid)
+      const alreadyAppliedSetBonuses = cloned.filter(i => i.setBonusId).map(i => i.setBonusId)
+      const setBonusesToApply = rootGetters['character/equipment/setBonusMechanics'].reduce((a, c) => a.concat(c.mechanics || []), []).filter(i => !alreadyAppliedSetBonuses.includes(i.setBonusId))
+      toPush.push(...setBonusesToApply)
       const mechanics = hydrateAugments(toPush)
       cloned.push(...mechanics)
     } else {
-      console.log(cloned)
-      cloned = cloned.filter(i => !i.equipmentId || i.equipmentId !== uuid)
-      console.log(cloned)
+      const activeSetBonusIds = rootGetters['character/equipment/setBonusMechanics'].reduce((a, c) => a.concat(c.mechanics || []), []).map(i => i.setBonusId)
+      cloned = cloned.filter(i => !i.equipmentId || i.equipmentId !== uuid).filter(i => !i.setBonusId || activeSetBonusIds.includes(i.setBonusId))
     }
-    console.log(cloned)
     commit('setMechanics', cloned)
   }
 }
