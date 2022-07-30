@@ -225,6 +225,7 @@ export const CsActions = {
       },
       set (value) {
         this.$store.dispatch('character/resources/SET_TOGGLE', { id: this.item.toggle.id, value })
+        this.$store.dispatch('character/mechanics/TOGGLE_MECHANIC', { toggle: this.item.toggle, value })
         const which = value ? 'whenOn' : 'whenOff'
         const whenables = this.item.toggle[which] || []
         if (this.toggleOptions && this.toggleSelection) {
@@ -252,6 +253,9 @@ export const CsActions = {
       },
       set (value) {
         this.$store.dispatch('character/resources/SET_TOGGLE', { id: `${this.item.toggle.id}-selection`, value })
+        if (this.toggle) {
+          this.$store.dispatch('character/mechanics/CHANGE_TOGGLE_SELECTION', { toggle: this.item.toggle })
+        }
       }
     }
   },

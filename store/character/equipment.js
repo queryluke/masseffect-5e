@@ -838,20 +838,30 @@ export const getters = {
   },
   weaponMechanics: (state, getters) => {
     const excludedMechanicTypes = ['attack-augment', 'weapon-heat-increase', 'adjust-weapon-props', 'weapon-range-maximum']
-    return getters.equippedWeapons.map((i) => {
+    return getters.equippedWeapons.map((weapon) => {
       return {
-        path: `weapon/${i.data.id}`,
-        mechanics: i.mechanics.filter(i => !excludedMechanicTypes.includes(i.type))
+        path: `weapon/${weapon.data.id}`,
+        mechanics: weapon.mechanics.filter(i => !excludedMechanicTypes.includes(i.type)).map((i) => {
+          return {
+            ...i,
+            equipmentId: weapon.uuid
+          }
+        })
       }
     })
   },
   armorMechanics: (state, getters) => {
     // custom armor mechanics
     const caMods = getters.equippedArmor.reduce((a, c) => a.concat(c.mods || []), [])
-    const modMechanics = getters.modsList.filter(i => caMods.includes(i.id) && i.type === 'armor').map((i) => {
+    const modMechanics = getters.modsList.filter(i => caMods.includes(i.id) && i.type === 'armor').map((armor) => {
       return {
-        path: `armor/mod/${i.id}`,
-        mechanics: i.mechanics
+        path: `armor/mod/${armor.id}`,
+        mechanics: armor.mechanics.map((i) => {
+          return {
+            ...i,
+            equipmentId: armor.uuid
+          }
+        })
       }
     })
     // regular armor mechanics
@@ -866,6 +876,7 @@ export const getters = {
           return {
             ...mechanic,
             resource,
+            equipmentId: armor.uuid,
             moreInfo: {
               toDisplay: armor.uuid,
               component: 'me-cs-equipment-armor-side-nav'
@@ -875,7 +886,12 @@ export const getters = {
       }
     })
     const setBonusMechanics = getters.activeSetBonuses.reduce((a, c) => {
-      const mechanics = c.activeBonuses.map(i => i.mechanics).flat()
+      const mechanics = c.activeBonuses.map(i => i.mechanics).flat().map((i) => {
+        return {
+          equipmentId: c.uuid,
+          ...i
+        }
+      })
       return a.concat(mechanics)
     }, [])
     return [
@@ -885,7 +901,7 @@ export const getters = {
       { path: 'armorSetBonus', mechanics: setBonusMechanics }
     ]
   },
-  equipmentMechanics: (state, getters) => {
+  gearMechanics: (state, getters) => {
     const gearMechanics = getters.gear.filter(i => i.equipped).reduce((a, c) => {
       let toConcat = []
       if (c.data.mechanics) {
@@ -896,6 +912,7 @@ export const getters = {
           }
           return {
             ...i,
+            equipmentId: c.uuid,
             resource,
             moreInfo: {
               toDisplay: c.uuid,
@@ -907,8 +924,14 @@ export const getters = {
       return a.concat(toConcat)
     }, [])
     return [
-      { path: 'gear', mechanics: gearMechanics },
-      ...getters.armorMechanics
+      { path: 'gear', mechanics: gearMechanics }
+    ]
+  },
+  equipmentMechanics: (state, getters) => {
+    return [
+      ...getters.weaponMechanics,
+      ...getters.armorMechanics,
+      ...getters.gearMechanics
     ]
   },
   capacities: (state, getters, rootState, rootGetters) => {
@@ -1009,6 +1032,7 @@ export const actions = {
     const item = getters.equipment.find(i => i.uuid === uuid)
     if (item) {
       dispatch('REPLACE_EQUIPMENT', { uuid, replacement: { ...item, equipped: !item.equipped, equippedAmount: 0 } })
+      dispatch('character/mechanics/EQUIPMENT_MECHANIC', { uuid: item.uuid, equipped: !item.equipped }, { root: true })
     }
     if (getters.thermalClips.equipped > getters.thermalClips.max) {
       dispatch('SET_THERMAL_CLIPS')
