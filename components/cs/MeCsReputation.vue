@@ -155,6 +155,7 @@ export default {
         ...newBenefits
       ]
       this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'selected', value })
+      this.$store.dispatch('character/mechanics/REPUTATION_MECHANIC', value)
     },
     updateScore (which, value) {
       this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `currentStats.${which}`, value })

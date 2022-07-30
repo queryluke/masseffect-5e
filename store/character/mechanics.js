@@ -143,7 +143,7 @@ export const mutations = {
 }
 
 export const actions = {
-  INIT_MECHANICS ({ rootGetters, commit }) {
+  INIT_MECHANICS ({ rootGetters, commit, getters }, partial) {
     const selected = rootGetters['character/selections/selected'].slice()
     function hydrateSelection (modelType, selection, path, append) {
       // console.log(model, selection, path, append)
@@ -227,14 +227,19 @@ export const actions = {
       return hydratedMechanics
     }
     const preAugmentMechanics = []
-    const mechanics = [
-      // ADD ADDITIONAL MECHANICS HERE
-      ...rootGetters['character/species/mechanics'],
-      ...rootGetters['character/klasses/klassesMechanics'],
-      ...rootGetters['character/backgroundMechanics'],
-      ...rootGetters['character/reputation/benefitsMechanics'],
-      ...rootGetters['character/equipment/equipmentMechanics']
-    ]
+    let mechanics = []
+    if (partial) {
+      mechanics = [...rootGetters[partial]]
+    } else {
+      mechanics = [
+        // ADD ADDITIONAL MECHANICS HERE
+        ...rootGetters['character/species/mechanics'],
+        ...rootGetters['character/klasses/klassesMechanics'],
+        ...rootGetters['character/backgroundMechanics'],
+        ...rootGetters['character/reputation/benefitsMechanics'],
+        ...rootGetters['character/equipment/equipmentMechanics']
+      ]
+    }
     for (const item of cloneDeep(mechanics)) {
       preAugmentMechanics.push(...hydrate(item))
     }
@@ -271,7 +276,11 @@ export const actions = {
     const finalMechanics = hydrateAugments(preToggleMechanics)
     // console.log('unused', selected)
     // console.log('final', finalMechanics)
-    commit('setMechanics', finalMechanics)
+    if (partial) {
+      commit('setMechanics', [...getters.mechanics, ...finalMechanics])
+    } else {
+      commit('setMechanics', finalMechanics)
+    }
     commit('setUnused', selected)
   },
   TOGGLE_MECHANIC ({ dispatch, commit, getters, rootGetters }, { toggle, value }) {
@@ -345,5 +354,10 @@ export const actions = {
       cloned = cloned.filter(i => !i.equipmentId || i.equipmentId !== uuid).filter(i => !i.setBonusId || activeSetBonusIds.includes(i.setBonusId))
     }
     commit('setMechanics', cloned)
+  },
+  REPUTATION_MECHANIC ({ dispatch, getters, rootGetters, commit }, value) {
+    const cleanedMechanics = getters.mechanics.filter(i => !i.source?.startsWith('reputation'))
+    commit('setMechanics', cleanedMechanics)
+    dispatch('INIT_MECHANICS', 'character/reputation/benefitsMechanics')
   }
 }
