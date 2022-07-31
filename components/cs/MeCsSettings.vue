@@ -5,7 +5,7 @@
       <v-row>
         <v-col>
           <v-text-field
-            :value="character.settings.acOverride"
+            :value="character.settings.hp"
             hint="HP Override"
             clearable
             persistent-hint

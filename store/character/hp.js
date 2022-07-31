@@ -40,8 +40,10 @@ export const getters = {
       }
     }
     const armorSource = { id: 'armor', name: 'Armor', capacity: 0, regen: 0 }
-    const armorMehcanics = rootGetters['character/equipment/armorMechanics'].reduce((a, c) => a.concat(c.mechanics || []), [])
-    for (const am of armorMehcanics.filter(i => i.type === 'shields')) {
+    const armorMechanics = rootGetters['character/equipment/armorMechanics'].reduce((a, c) => a.concat(c.mechanics || []), [])
+    const setBonusMechanics = rootGetters['character/equipment/setBonusMechanics'].reduce((a, c) => a.concat(c.mechanics || []), [])
+    const mechanicsToProcess = [...armorMechanics, ...setBonusMechanics].filter(i => i.type === 'shields')
+    for (const am of mechanicsToProcess) {
       armorSource.capacity += rootGetters['character/mechanics/mcBonus'](am.capacity)
       armorSource.regen += rootGetters['character/mechanics/mcBonus'](am.regen)
     }

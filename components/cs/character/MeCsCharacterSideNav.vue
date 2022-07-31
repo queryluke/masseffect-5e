@@ -55,7 +55,7 @@
           mdi-cog
         </v-icon>
       </v-list-item-icon>
-      <v-list-item-title>Overrides</v-list-item-title>
+      <v-list-item-title>Settings & Overrides</v-list-item-title>
     </v-list-item>
 
     <v-divider />
@@ -122,7 +122,8 @@ export default {
       })
     },
     showSettings () {
-      this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-character-override-side-nav')
+      this.$store.commit('character/navigation/SET', { key: 'settingsMenu', value: true })
+      // this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-character-override-side-nav')
     },
     showPreferences () {
       this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-character-preferences-side-nav')

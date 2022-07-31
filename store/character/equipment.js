@@ -193,7 +193,7 @@ export const getters = {
   },
   equippedArmor: (state, getters) => {
     return getters.armor.filter(armor => armor.equipped).map((armor) => {
-      const mechanics = armor.mechanics || []
+      const mechanics = armor.data.mechanics || []
       if (armor.mods?.length) {
         const equippedMods = getters.modsList.filter(i => armor.mods.includes(i.id) && i.type === 'armor')
         const modMechanics = equippedMods.reduce((a, c) => a.concat(c.mechanics || []), [])

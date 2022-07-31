@@ -17,17 +17,29 @@
               dense
               :type="item.type"
               :disabled="viewOnly"
-              @change="change(item.key, $event)"
+              @change="change(item, $event)"
             />
-            <v-slider
-              v-if="item.type === 'slider'"
-              :value="settings[item.key]"
-              :max="item.max"
-              :hint="item.label"
-              persistent-hint
-              :disabled="viewOnly"
-              @end="change('acBonus', $event)"
-            />
+            <div v-if="item.type === 'slider'" class="d-flex mt-6 align-center">
+              <!--
+              <v-switch
+                :input-value="settings[item.key] !== null"
+                :hint="item.label"
+                persistent-hint
+                class="pt-2"
+                @change="change(item.key, ($event === true ? item.min : null))"
+              />
+              -->
+              <v-slider
+                :value="settings[item.key]"
+                :max="item.max"
+                :disabled="viewOnly || settings[item.key] === null"
+                hide-details
+                :step="item.step"
+                thumb-label="always"
+                thumb-size="20"
+                @end="change(item.key, $event)"
+              />
+            </div>
           </div>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -191,7 +203,20 @@ export default {
       return this[key]
     },
     change (stat, value) {
-      this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `settings.${stat}`, value })
+      let updateValue = value
+      if (stat.type === 'number') {
+        if (value === null) {
+          updateValue = null
+        } else {
+          const parsed = parseInt(value)
+          if (isNaN(parsed)) {
+            updateValue = false
+          } else if (parsed < (stat.min || -99)) {
+            updateValue = false
+          }
+        }
+      }
+      this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `settings.${stat.key}`, value: updateValue })
     },
     updateAbility (value, ability, which) {
       let intVal = parseInt(value, 10)

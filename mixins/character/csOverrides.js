@@ -5,10 +5,10 @@ export const CsOverrides = {
         {
           name: 'Defenses',
           items: [
-            { key: 'hp', type: 'number', label: 'Hit Points', default: null },
-            { key: 'acOverride', type: 'number', label: 'Armor Class (AC)', default: null },
-            { key: 'shields', type: 'slider', label: 'Shield Capacity', min: 0, max: 50, steps: 5, default: 0 },
-            { key: 'regen', type: 'slider', label: 'Shield Regen', min: 0, max: 50, steps: 5, default: 0 },
+            { key: 'hp', type: 'number', label: 'Hit Points', min: 1, default: null },
+            { key: 'acOverride', type: 'number', label: 'Armor Class (AC)', min: 1, default: null },
+            { key: 'shields', type: 'number', label: 'Shield Capacity', min: 5, default: null },
+            { key: 'regen', type: 'number', label: 'Shield Regen', min: 5, default: null },
             { key: 'damageRes', type: 'select', label: 'Damage Resistances', items: 'damageTypes', default: [] },
             { key: 'damageImm', type: 'select', label: 'Damage Immunities', items: 'damageTypes', default: [] },
             { key: 'conditionImm', type: 'select', label: 'Condition Immunities', items: 'conditions', default: [] },
