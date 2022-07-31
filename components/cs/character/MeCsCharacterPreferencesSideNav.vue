@@ -11,7 +11,7 @@
         {{ eqItem.label }}
       </v-list-item-title>
       <v-list-item-icon>
-        <v-tooltip bottom>
+        <v-tooltip bottom max-width="200">
           <template #activator="{ on, attrs }">
             <v-icon
               color="primary"
@@ -40,7 +40,7 @@ export default {
         { key: 'weaponSlots', label: 'Enforce Weapon Slots', note: 'You have 4 weapon slots. Two-handed weapons use two slots. Disable to equip more weapons.' },
         { key: 'grenadeSlots', label: 'Enforce Grenade Capacity', note: 'Leg armor provides grenade slots. Disable to equip more grenades or equip grenades without wearing leg armor.' },
         { key: 'medigelSlots', label: 'Enforce Medi-gel Slots', note: 'Chest and arm armor provide medi-gel slots. Disable to equip more medi-gel or equip medi-gel without wearing armor.' },
-        { key: 'thermalClips', label: 'Enforce Thermal Clips', note: 'Chest and leg armor provide thermal clip slots. To reload weapons, you must have thermal clips equipped. Click the reload icon will consume a thermal clip. Disable to equip more thermal clips or ignore these settings.' },
+        { key: 'thermalClips', label: 'Enforce Thermal Clips', note: 'Chest and leg armor provide thermal clip slots. To reload weapons, you must have thermal clips equipped. Clicking the reload icon will consume a thermal clip. Disable to ignore these settings.' },
         { key: 'programInstall', label: 'Omni-Tool Programs Limits', note: 'By default, you may only have 3 programs equipped. Disable to equip more.' }
       ]
     }

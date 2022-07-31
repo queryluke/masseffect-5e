@@ -227,7 +227,7 @@ export const CsActions = {
         this.$store.dispatch('character/resources/SET_TOGGLE', { id: this.item.toggle.id, value })
         this.$store.dispatch('character/mechanics/TOGGLE_MECHANIC', { toggle: this.item.toggle, value })
         const which = value ? 'whenOn' : 'whenOff'
-        const whenables = this.item.toggle[which] || []
+        const whenables = (this.item.toggle[which] || []).slice()
         if (this.toggleOptions && this.toggleSelection) {
           whenables.push(...(this.toggleSelection[which] || []))
         }

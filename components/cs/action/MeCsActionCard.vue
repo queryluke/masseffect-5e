@@ -23,7 +23,7 @@
         </me-cs-action-stat>
       </template>
 
-      <template v-if="dc" #dc>
+      <template v-if="dc && !hit" #dc>
         <me-cs-action-dc :dc="dc" :layout="layout" />
       </template>
 
