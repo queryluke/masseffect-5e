@@ -36,7 +36,6 @@ export const actions = {
     })
   },
   INTERNAL_ROLL (ctx, notation) {
-    console.log(notation)
     const roll = new DiceRoll(notation.toString())
     const results = roll.output.split(/[:=]/)[1].trim()
     return {

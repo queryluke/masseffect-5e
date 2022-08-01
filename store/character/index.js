@@ -188,7 +188,7 @@ export const actions = {
     if (state.viewOnly) {
       return
     }
-    console.log({ attr, value })
+    // console.log({ attr, value })
     const newValue = updateCharacter({ oldValue: getters.character, attr, value })
     commit('SET_CHARACTER', newValue)
     if (rootGetters['auth/isAuthenticated'] && newValue.meta.remote) {

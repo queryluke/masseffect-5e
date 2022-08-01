@@ -56,7 +56,7 @@ export default {
       return this.levelIndex === 0 ? 'Cantrips' : this.$t('level_nth', { nth: this.$t(`ordinal_numbers[${this.levelIndex}]`) })
     },
     psAtLevel () {
-      return this.powerSlots[this.level] || this.powerSlots[this.levelIndex]
+      return this.powerSlots[this.level] || this.powerSlots[this.levelIndex] || { max: 0, used: 0 }
     },
     hasPowerSlotAtLevel () {
       return Object.entries(this.powerSlots).filter(i => i[1].max > 0).map(i => parseInt(i[0], 10)).includes(this.levelIndex)

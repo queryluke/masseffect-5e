@@ -1,5 +1,17 @@
 <template>
-  <me-item-page :item="item" :label="$t('conditions_title')" />
+  <v-container>
+    <v-card>
+      <v-card-text>
+        <div class="text-overline text--primary">
+          Conditions
+        </div>
+        <div class="mb-3">
+          <me-item-title :title="item.name" />
+        </div>
+        <me-conditions-info :item="item" />
+      </v-card-text>
+    </v-card>
+  </v-container>
 </template>
 
 <script>

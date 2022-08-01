@@ -17,11 +17,11 @@ export default {
       subtitle: this.$t('appendix_title'),
       description: 'Information about Paragon and Renegade benefits'
     })
-    await this.$store.dispatch('FETCH_DATA', 'benefits')
+    await this.$store.dispatch('FETCH_DATA', 'edges')
   },
   computed: {
     items () {
-      return this.$store.getters.getData('benefits').slice().sort((a, b) => a.threshold - b.threshold)
+      return this.$store.getters.getData('edges').filter(i => i.type === 'benefits').slice().sort((a, b) => a.threshold - b.threshold)
     }
   },
   methods: {

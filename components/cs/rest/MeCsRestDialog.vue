@@ -206,18 +206,19 @@ export default {
     },
     setRecharge (value) {
       this.tpRecharge += value
-      console.log(this.tpRecharge)
     },
     execRest (type) {
       this.working = true
       const currentStatsClone = cloneDeep(this.character.currentStats)
       const mechanicsToProcess = [
-        ...this.mechanics.filter(i => i.resource?.reset ? i.resource?.reset === type : true),
+        ...this.mechanics.filter(i => type === 'short' ? (i.resource?.reset && i.resource?.reset === type) : (i.resource && [null, undefined, 'short', 'long'].includes(i.resource.reset))),
         ...(this.character.brews || []).filter(i => i.mechanics?.uses && (type === 'short' ? i.mechanics?.recharge === 'short' : true)),
-        ...this.powers.filter(i => i.resource?.reset ? i.resource?.reset === type : true)
+        ...this.powers.filter(i => type === 'short' ? (i.resource?.reset && i.resource?.reset === type) : (i.resource && [null, undefined, 'short', 'long'].includes(i.resource.reset)))
       ]
       // barrier
       currentStatsClone.barrier.used = 0
+
+      // powercasting resources
       if (type === 'long') {
         // LONG REST, all powers/tp
         currentStatsClone.psUsed = [0, 0, 0, 0, 0]
@@ -229,7 +230,13 @@ export default {
           currentStatsClone.psUsed[this.pactSlots.slotLevel - 1] = Math.max(0, currentStatsClone.psUsed[this.pactSlots.slotLevel - 1] - this.pactSlots.numSlots)
         }
         // biotic recovery
-        // TODO: this
+        if (this.bioticRecovery.some(i => i > 0)) {
+          for (let i = 0; i < 3; i++) {
+            if (this.bioticRecovery[i] > 0) {
+              currentStatsClone.psUsed[i] = Math.max(0, currentStatsClone.psUsed[i] - this.bioticRecovery[i])
+            }
+          }
+        }
 
         // tech points
         if (this.tpRecharge > 0) {
