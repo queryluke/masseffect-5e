@@ -17,7 +17,7 @@
 <script>
 
 export default {
-  name: 'MeCsPowerSelectPrepend',
+  name: 'MeCsPowerSideNavPrepend',
   computed: {
     powerToDisplay () {
       return this.$store.getters['character/navigation/toDisplay']

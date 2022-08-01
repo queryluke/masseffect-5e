@@ -4,7 +4,7 @@
     <v-row>
       <v-col cols="12" :md="item.image ? 8 : 12" class="text-body-2">
         <div v-if="item.type === 'heavy_weapon'" class="font-italic font-weight-light">
-          Charges: {{ item.mechanics.rounds }}
+          Charges: {{ item.charges }}
         </div>
         <me-html :content="item.html" />
       </v-col>

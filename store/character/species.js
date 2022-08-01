@@ -54,7 +54,7 @@ export const getters = {
   },
   variantTitle: (state, getters) => {
     if (getters.variant) {
-      return `Variant ${getters.species.ParentName}`
+      return `Variant ${getters.species.parentName}`
     }
     return false
   },

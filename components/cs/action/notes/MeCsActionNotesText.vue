@@ -1,6 +1,6 @@
 <template>
   <span class="text-caption font-weight-light">
-    {{ note.text }}
+    {{ note.text }}{{ hasNext ? ',' : '' }}
   </span>
 </template>
 <script>
@@ -15,6 +15,10 @@ export default {
           text: ''
         }
       }
+    },
+    hasNext: {
+      type: Boolean,
+      default: false
     }
   }
 }

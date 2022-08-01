@@ -17,6 +17,7 @@ import { createNamespacedHelpers } from 'vuex'
 // import { CsColors } from '~/mixins/character/csColors'
 const { mapGetters } = createNamespacedHelpers('character/hp')
 export default {
+  name: 'MeCsActionResourceDisplayBarrier',
   computed: {
     ...mapGetters(['barrier']),
     current: {

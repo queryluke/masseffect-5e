@@ -14,9 +14,11 @@
     </v-btn>
     <component
       :is="component"
+      :id="id"
       :reset="item.reset"
       :current="count"
       :max="max"
+      :vented="item.vented"
       :max-width="75"
       @add="add"
       @remove="remove"
@@ -54,7 +56,9 @@ export default {
           value: 1,
           min: 1
         },
-        increment: 1
+        vented: false,
+        increment: 1,
+        trigger: false
       }
     }
   },
@@ -85,7 +89,9 @@ export default {
       return ['short', 'long'].includes(this.item.reset)
     },
     resetText () {
-      return this.item.label || (this.showPer ? `/ ${this.item.reset} rest` : false)
+      return this.item.displayType === 'gear-consumable'
+        ? false
+        : this.item.label || (this.showPer ? `/ ${this.item.reset} rest` : false)
     }
   },
   methods: {

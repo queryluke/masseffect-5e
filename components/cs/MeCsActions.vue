@@ -2,7 +2,14 @@
   <div>
     <div v-show="showTab(1)">
       <me-cs-action-list :items="csAllActions.attacks">
-        Attacks <span v-if="extraAttacks" class="text-body-2"><small>({{ extraAttacks }} attacks per action)</small></span>
+        <div class="d-flex justify-space-between">
+          <div>
+            Attacks <span v-if="extraAttacks" class="text-body-2"><small>({{ extraAttacks }} attacks per action)</small></span>
+          </div>
+          <div v-if="showThermalClips">
+            <span class="text-body-2"><small>Thermal Clips: {{ thermalClips.equipped }} of {{ thermalClips.max }}</small></span>
+          </div>
+        </div>
       </me-cs-action-list>
     </div>
     <div v-show="showTab(2)">
@@ -23,6 +30,13 @@
     <div v-show="showTab(5)">
       <me-cs-action-list :items="csAllActions.other">
         Other Features
+        <template v-if="csSetBonuses.length > 0" #append>
+          <me-cs-action-cards-set-bonus
+            v-for="(item, itemIndex) in csSetBonuses"
+            :key="`set-bonus-${itemIndex}`"
+            :item="item"
+          />
+        </template>
       </me-cs-action-list>
     </div>
   </div>
@@ -30,9 +44,11 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
+import MeCsActionCardsSetBonus from '~/components/cs/action/cards/MeCsActionCardsSetBonus'
 const { mapGetters } = createNamespacedHelpers('character')
 export default {
   name: 'MeCsActions',
+  components: { MeCsActionCardsSetBonus },
   computed: {
     ...mapGetters({
       mechanics: 'mechanics/mechanics',
@@ -43,13 +59,15 @@ export default {
       abilityBreakdown: 'abilities/abilityBreakdown',
       weaponAttacks: 'equipment/weaponAttacks',
       tab: 'navigation/actionsTab',
-      barrier: 'hp/barrier'
+      barrier: 'hp/barrier',
+      setBonuses: 'equipment/activeSetBonuses',
+      thermalClips: 'equipment/thermalClips'
     }),
     weaponProperties () {
       return this.$store.getters.getData('weapon-properties')
     },
-    actionsList () {
-      return this.$store.getters.getData('actions')
+    globalAttackNotes () {
+      return this.mechanics.filter(i => i.type === 'global-attack-note').sort((a, b) => a.attack > b.attack ? 1 : -1)
     },
     extraAttacks () {
       const extraAttackMechanics = this.mechanics.filter(i => i.type === 'extra-attack')
@@ -59,6 +77,9 @@ export default {
       }
       const adds = this.mechanics.filter(i => i.type === 'extra-attack-add').length
       return max + adds
+    },
+    showThermalClips () {
+      return this.character.options.thermalClips || false
     },
     barrierAction () {
       if (this.barrier.uses.max === 0) {
@@ -78,58 +99,8 @@ export default {
         }
       }
     },
-    csAllActions () {
-      return {
-        attacks: this.csAttacks,
-        actions: this.csActions,
-        bonusActions: this.csBonusActions,
-        reactions: this.csReactions,
-        other: this.csOtherActions
-      }
-    },
-    csActions () {
-      const actions = [
-        {
-          group: true,
-          title: 'Actions in Combat',
-          items: this.baseActions.action
-        }
-      ]
-      if (this.weaponAttacks.bf.length) {
-        actions.push({
-          group: true,
-          title: 'Burst Fire',
-          items: this.weaponAttacks.bf
-        })
-      }
-      if (this.csPowersAsActions.actions.length) {
-        actions.push({
-          group: true,
-          title: 'Powers',
-          items: this.csPowersAsActions.actions,
-          component: 'me-cs-action-cards-power'
-        })
-      }
-      if (this.barrierAction) {
-        actions.push(this.barrierAction)
-      }
-      const regularActions = this.mechanics.filter(i => i.type === 'action' && !i.baseGroup)
-      if (regularActions.length) {
-        actions.push(...regularActions)
-      }
-      if (this.csCustomAsActions.actions.length) {
-        actions.push(...this.csCustomAsActions.actions)
-      }
-      return actions
-    },
-    csAttacks () {
-      return [
-        ...this.weaponAttacks.attacks,
-        ...this.csPowersAsActions.attacks
-      ]
-    },
-    globalAttackNotes () {
-      return this.mechanics.filter(i => i.type === 'global-attack-note').sort((a, b) => a.attack > b.attack ? 1 : -1)
+    actionsList () {
+      return this.$store.getters.getData('actions')
     },
     baseActions () {
       const baseActions = {}
@@ -145,6 +116,88 @@ export default {
         baseActions[type] = [...defaults, ...extras]
       }
       return baseActions
+    },
+    mechanicActions () {
+      return this.mechanics.filter(i => ['attack', 'action', 'bonus-action', 'reaction', 'other'].includes(i.type))
+    },
+    groupedActions () {
+      const groups = {
+        action: [],
+        'bonus-action': [],
+        reaction: [],
+        other: []
+      }
+      const mechanicActionsInGroup = this.mechanicActions.filter(i => i.group)
+      for (const action of mechanicActionsInGroup) {
+        const groupIndex = groups[action.type].findIndex(i => i.title === action.group)
+        if (groupIndex > -1) {
+          groups[action.type].splice(groupIndex, 1, { ...groups[action.type][groupIndex], items: [...groups[action.type][groupIndex].items, action] })
+        } else {
+          groups[action.type].push({
+            group: true,
+            title: action.group,
+            items: [action]
+          })
+        }
+      }
+      return groups
+    },
+    csAllActions () {
+      return {
+        attacks: this.csAttacks,
+        actions: this.csActions,
+        bonusActions: this.csBonusActions,
+        reactions: this.csReactions,
+        other: this.csOtherActions
+      }
+    },
+    csActions () {
+      // base
+      const actions = [
+        {
+          group: true,
+          title: 'Actions in Combat',
+          items: this.baseActions.action
+        }
+      ]
+      // burst fire
+      if (this.weaponAttacks.bf.length) {
+        actions.push({
+          group: true,
+          title: 'Burst Fire',
+          items: this.weaponAttacks.bf
+        })
+      }
+      // powers
+      if (this.csPowersAsActions.actions.length) {
+        actions.push({
+          group: true,
+          title: 'Powers',
+          items: this.csPowersAsActions.actions,
+          component: 'me-cs-action-cards-power'
+        })
+      }
+      // other groups
+      if (this.groupedActions.action) {
+        actions.push(...this.groupedActions.action)
+      }
+      if (this.barrierAction) {
+        actions.push(this.barrierAction)
+      }
+      const regularActions = this.mechanics.filter(i => i.type === 'action' && !i.group && !i.baseGroup)
+      if (regularActions.length) {
+        actions.push(...regularActions)
+      }
+      if (this.csCustomAsActions.actions.length) {
+        actions.push(...this.csCustomAsActions.actions)
+      }
+      return actions
+    },
+    csAttacks () {
+      return [
+        ...this.weaponAttacks.attacks,
+        ...this.csPowersAsActions.attacks
+      ]
     },
     csBonusActions () {
       const bonusActions = []
@@ -252,6 +305,9 @@ export default {
         bonus_actions: sortedPowers.filter(i => i.castingTime.unit === 'bonus_action' || i.altCasting?.filter(i => i.unit === 'bonus_action').length),
         reactions: sortedPowers.filter(i => i.castingTime.unit === 'reaction' || i.altCasting?.filter(i => i.unit === 'reaction').length)
       }
+    },
+    csSetBonuses () {
+      return this.setBonuses.filter(i => i.activeBonuses.some(j => j.showNote))
     }
   },
   methods: {

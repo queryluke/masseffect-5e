@@ -20,11 +20,10 @@
         View
       </v-btn>
     </v-col>
-    <v-col class="text-right" cols="3">
+    <v-col v-if="tab !== 3" class="text-right" cols="3">
       <v-btn
         text
         plain
-        :disabled="tab === 3"
         color="primary"
         tile
         @click="tab += 1"

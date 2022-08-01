@@ -128,7 +128,13 @@ export const characterTemplate = {
   brews: [],
   options: {
     tashas: false,
-    asiGenMethod: 'standard'
+    asiGenMethod: 'standard',
+    weaponSlots: true,
+    grenadeSlots: true,
+    medigelSlots: true,
+    thermalClipSlots: true,
+    programInstall: true,
+    consumeThermalClips: true
   },
   meta: {
     remote: false,

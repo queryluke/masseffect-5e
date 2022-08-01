@@ -45,6 +45,7 @@
                 </v-tab>
               </template>
             </v-tabs>
+
             <!-- Action section prepends -->
             <div v-if="tab === 0">
               <div class="mt-1 mx-1">
@@ -55,6 +56,7 @@
               </div>
               <v-divider class="mt-2" />
             </div>
+
             <!-- Power section prepends -->
             <div v-if="tab === 1">
               <div class="mt-1">
@@ -73,6 +75,12 @@
                   <me-cs-global-notes sub-type="power" />
                 </v-col>
               </v-row>
+              <v-divider class="mt-2" />
+            </div>
+
+            <!-- Equipment section prepends -->
+            <div v-if="tab === 2">
+              <me-cs-equipment-header />
               <v-divider class="mt-2" />
             </div>
           </template>

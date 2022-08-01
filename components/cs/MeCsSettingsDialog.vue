@@ -9,7 +9,7 @@
       <v-card-title class="pa-0">
         <v-toolbar flat :extended="$vuetify.breakpoint.smAndUp">
           <v-toolbar-title>
-            Settings
+            Settings & Overrides
           </v-toolbar-title>
           <v-spacer />
           <v-toolbar-items>

@@ -1,96 +1,55 @@
 <template>
-  <v-list-item dense style="min-height: 48px">
-    <v-list-item-action v-if="!noEquip && !viewOnly" class="my-0" @click="toggleEquipped">
-      <v-icon v-if="item.equipped" color="primary">
-        mdi-checkbox-marked
-      </v-icon>
-      <v-icon v-else>
-        mdi-checkbox-blank-outline
-      </v-icon>
-    </v-list-item-action>
+  <v-list-item dense style="min-height: 38px" @click="showItem">
+    <slot name="equip">
+      <v-list-item-action class="my-0" @click.stop="toggleEquipped">
+        <v-icon :color="iconColor">
+          {{ item.equipped ? 'mdi-checkbox-marked' : 'mdi-checkbox-blank-outline' }}
+        </v-icon>
+      </v-list-item-action>
+    </slot>
     <v-list-item-content class="py-0">
       <v-list-item-title>
-        <slot name="title">
-          {{ title }}
-        </slot>
+        <slot name="title" />
       </v-list-item-title>
-      <v-list-item-subtitle>
-        <slot name="subtitle">
-          {{ subtitle }}
-        </slot>
+      <v-list-item-subtitle class="mt-n1">
+        <small>
+          <slot name="subtitle" />
+        </small>
       </v-list-item-subtitle>
     </v-list-item-content>
-    <v-list-item-action v-if="!viewOnly" class="my-0" @click="equipmentDialog = true">
-      <v-icon>
-        mdi-cog
-      </v-icon>
+    <v-list-item-action>
+      <slot name="action" />
     </v-list-item-action>
-    <me-standard-dialog :shown="equipmentDialog" :max-height="500" @close="equipmentDialog = false">
-      <template #title>
-        {{ title }}
-      </template>
-      <v-row justify="space-between">
-        <v-col>
-          <v-chip-group v-model="tab" active-class="primary--text">
-            <v-chip
-              v-for="cTab in tabs"
-              :key="`feature-chip-tab-${cTab.slot}`"
-              small
-            >
-              {{ cTab.title }}
-            </v-chip>
-          </v-chip-group>
-        </v-col>
-        <v-col class="d-flex justify-end">
-          <v-chip-group>
-            <v-chip small color="error" @click="equipmentDialog = false; removeEquipment()">
-              <v-icon>
-                mdi-delete
-              </v-icon>
-            </v-chip>
-          </v-chip-group>
-        </v-col>
-      </v-row>
-      <v-tabs-items v-model="tab">
-        <template v-for="tTab in tabs">
-          <v-tab-item :key="`tTab-${tTab.slot}`">
-            <v-card-text>
-              <slot :name="tTab.slot" />
-            </v-card-text>
-          </v-tab-item>
-        </template>
-        <!-- info -->
-      </v-tabs-items>
-    </me-standard-dialog>
   </v-list-item>
 </template>
 
 <script>
 export default {
+  name: 'MeCsEquipmentListItem',
   props: {
     item: {
       type: Object,
       required: true
     },
-    noEquip: {
+    type: {
+      type: String,
+      required: true
+    },
+    equipDisabled: {
       type: Boolean,
       default: false
-    },
-    tabs: {
-      type: Array,
-      default: () => [{ title: 'Info', slot: 'infoTab' }, { title: 'Mods', slot: 'modTab' }, { title: 'Stat Overrides', slot: 'overrideTab' }]
-    }
-  },
-  data () {
-    return {
-      equipmentDialog: false,
-      loading: false,
-      tab: 0
     }
   },
   computed: {
     viewOnly () {
       return this.$store.state.character.viewOnly
+    },
+    iconColor () {
+      return this.viewOnly || this.equipDisabled
+        ? 'grey darken-2'
+        : this.item.equipped
+          ? 'primary'
+          : 'grey lighten-1'
     },
     itemData () {
       return this.item.data
@@ -111,10 +70,14 @@ export default {
   },
   methods: {
     toggleEquipped () {
+      if (this.viewOnly || this.equipDisabled) {
+        return
+      }
       this.$store.dispatch('character/equipment/TOGGLE_EQUIPPED', this.item.uuid)
     },
-    removeEquipment () {
-      this.$store.dispatch('character/equipment/REPLACE_EQUIPMENT', { uuid: this.item.uuid })
+    showItem () {
+      this.$store.commit('character/navigation/SET', { key: 'toDisplay', value: this.item.uuid })
+      this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', `me-cs-equipment-${this.type}-side-nav`)
     }
   }
 }

@@ -169,7 +169,7 @@ export default {
         const alreadySelected = this.$store.getters['character/selections/selected'].find(i => i.path === path)
         if (alreadySelected) {
           const oldValue = alreadySelected.value[0]
-          if (oldValue?.id === id) {
+          if (oldValue?.value === advId) {
             value = []
           }
         }

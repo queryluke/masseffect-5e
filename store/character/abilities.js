@@ -56,6 +56,11 @@ export const getters = {
     for (const value of allMechanicsScores) {
       allAsiScores[value.ability] = (allAsiScores[value.ability] || 0) + value.amount
     }
+    const allMinimumMechanics = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'asi-minimum')
+    const minimums = {}
+    for (const minimum of allMinimumMechanics) {
+      minimums[minimum.ability] = Math.max((minimums[minimum.ability] || 0), minimum.minimum)
+    }
     for (const key of ['str', 'dex', 'con', 'int', 'wis', 'cha']) {
       const base = getters.characterAbilityScores[key].value
       const other = getters.characterAbilityScores[key].other
@@ -63,7 +68,8 @@ export const getters = {
       const species = speciesAsiScores[key] || 0
       const klass = klassAsiScores[key] || 0
       const all = allAsiScores[key] || 0
-      const total = override || (base ? base + all + (other || 0) : base)
+      const minimum = minimums[key] || 0
+      const total = override || minimum || (base ? base + all + (other || 0) : base)
       breakdown[key] = {
         total,
         mod: total ? Math.floor((total - 10) / 2) : null,
