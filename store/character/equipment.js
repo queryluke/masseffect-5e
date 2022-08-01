@@ -652,10 +652,9 @@ export const getters = {
           damage: newDamage,
           resource: { ...base.resource, increment: base.resource.increment + 2 },
           dc: {
-            // TODO: when bf is adjusted, improve this
-            base: 15 + bfAugments.dc,
-            proficient: false,
-            mod: false,
+            base: 8 + bfAugments.dc,
+            proficient: weaponProfs.includes(weaponType),
+            mod: 'dex',
             save: 'dex'
           },
           properties: [...base.properties, 'Burst Fire']
