@@ -211,7 +211,6 @@ export default {
       this.expanded = this.expanded === value ? null : value
     },
     addToCart (item) {
-      console.log(item)
       this.cart.push(item)
     },
     deleteCartItem (id) {

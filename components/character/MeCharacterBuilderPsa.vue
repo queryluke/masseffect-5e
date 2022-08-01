@@ -3,8 +3,8 @@
     <v-alert type="info" prominent>
       <v-row align="center">
         <v-col cols="12" sm="auto" class="grow" :class="{'text-caption': $vuetify.breakpoint.xsOnly}">
-          The Character Builder and Sheet are still in BETA development. Please click on
-          the LEARN MORE button to the right to review what features are working and what have not yet been developed.
+          Over the past year, we've made some great strides towards a fully-functioning, modern character sheet. Please click on
+          the LEARN MORE button for more information about what is still being developed.
         </v-col>
         <v-col cols="12" sm="auto" class="shrink">
           <v-btn :small="$vuetify.breakpoint.xsOnly" @click="showPsa = true">
@@ -29,74 +29,23 @@
           </v-toolbar-items>
         </v-toolbar>
         <v-card-text class="mt-6">
-          <p>
-            Although we hope to eventually achieve the level of complexity and coverage of other online character sheets,
-            we still have a long way to go. Thus, before sending any bug reports or feature requests, please review
-            the following information.
-          </p>
-          <p>The following outlines features that are still in development and potential workarounds.</p>
-
           <v-card outlined>
-            <v-card-title>Importing v1.2 Characters</v-card-title>
+            <v-card-title>Class Features, Racial Traits, and Feats</v-card-title>
             <v-card-text>
               <p>
-                The underlying data models are too different and it would have taken a significant amount of hours to develop this feature.
-                Unfortunately, there is no workaround for this except for recreating your old character in the new builder.
+                99% of class features, racial traits, and feats are covered in the character sheet. There are still a
+                few "oddballs" left to sort out (like makeshift grenades and dual wielder). In addition, we are
+                constantly making minor improvements to how class features interact with the sheet.
               </p>
             </v-card-text>
           </v-card>
 
           <v-card outlined>
-            <v-card-title>Class Features</v-card-title>
+            <v-card-title>Equipment</v-card-title>
             <v-card-text>
               <p>
-                Ability Score Improvements, Fighting Styles, and Proficiencies are working. Beyond that, limited use features will have a counter
-                for keeping track of uses but nothing else. For example, it will not keep track of which metabiotics a Nemesis
-                Vanguard has selected.
-              </p>
-              <p>
-                <strong>Workaround:</strong> Using the Notes or creating custom features in the Custom tab of the Settings.
-                For example, if you're a 20th-level adept you could make a custom class feature named "Signature Biotics: Lance"
-                with 1 use on a short rest recharge, with a description "Cast at 2nd level".
-              </p>
-            </v-card-text>
-          </v-card>
-
-          <v-card outlined>
-            <v-card-title>Weapon Mods</v-card-title>
-            <v-card-text>
-              <p>
-                Weapon attacks should be properly calculated. However, adding mods has no effect on the weapon's stats.
-              </p>
-              <p>
-                <strong>Workaround:</strong> Click on the <v-icon>mdi-cog</v-icon> icon for the weapon, and use the
-                Override Stats tab to add any additional stats from the mods.
-              </p>
-            </v-card-text>
-          </v-card>
-
-          <v-card outlined>
-            <v-card-title>Armor & AC</v-card-title>
-            <v-card-text>
-              <p>
-                Your AC is calculated based on the armor you have equipped! ... eeeeeexcept for mods and set bonuses. It
-                does include any species/feat bonuses.
-              </p>
-              <p>
-                <strong>Workaround:</strong> Use the Defensive tab in Settings to add a bonus or completely override your AC.
-              </p>
-            </v-card-text>
-          </v-card>
-
-          <v-card outlined>
-            <v-card-title>Power Damage</v-card-title>
-            <v-card-text>
-              <p>
-                Powers are almost complete, but the "quick cards" that show information about the power on your character
-                sheet do not display damage (this is not yet in a machine-readable format).
-              </p>
-              <p>
-                <strong>Workaround:</strong> Clicking on the power for its full description.
+                99% of weapons, mods, armor bonuses, and gear are covered. Like features, feats, and traits, there are
+                a few remaining to figure out.
               </p>
             </v-card-text>
           </v-card>
@@ -111,8 +60,8 @@
                 manually adjust/override those settings.
               </p>
               <p>
-                <strong>Workaround:</strong> For weapons, see Weapon Mods above, you can completely override a weapons stats (including it's name)
-                to create a homebrewed weapon. For Armor see above as well.
+                Our next development task is to provide a fully-fledged homebrew system which allows players to make their
+                own weapons, powers, subclasses, races, and more!
               </p>
             </v-card-text>
           </v-card>
@@ -126,9 +75,19 @@
               <ul>
                 <li>Death Saves</li>
                 <li>Inspiration</li>
+                <li>Crit roll notifications & crit damage</li>
+                <li>Advantage and Disadvantage on rolls</li>
+                <li>XP & Milestone Tracking</li>
               </ul>
+            </v-card-text>
+          </v-card>
+
+          <v-card outlined>
+            <v-card-title>Importing v1.2 Characters</v-card-title>
+            <v-card-text>
               <p>
-                <strong>Workaround:</strong> Liberal use of the notes? ¯\_(ツ)_/¯
+                The underlying data models are too different and it would have taken a significant amount of hours to develop this feature.
+                Unfortunately, there is no workaround for this except for recreating your old character in the new builder.
               </p>
             </v-card-text>
           </v-card>
