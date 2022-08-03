@@ -51,7 +51,7 @@
                 Ability Score Increase
               </template>
             </me-cb-aspect-card>
-            <me-cb-aspect-card v-else :root-path="`${rootPath}/traits`" :aspect="{ id: 'asi', mechanics: asiAsOptions }">
+            <me-cb-aspect-card v-else-if="asiAsOptions.length" :root-path="`${rootPath}/traits`" :aspect="{ id: 'asi', mechanics: asiAsOptions }">
               <template #title>
                 Ability Score Increase
               </template>
@@ -134,6 +134,7 @@ export default {
     selectSpecies (value) {
       this.$store.dispatch('character/selections/BULK_DELETE', 'species')
       this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'species', value })
+      this.$store.dispatch('character/mechanics/INIT_MECHANICS', null, { root: true })
       this.changeSpecies = false
     }
   }

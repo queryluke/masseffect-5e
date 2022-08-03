@@ -34,15 +34,14 @@ export const getters = {
   abilityBreakdown: (state, getters, rootState, rootGetters) => {
     const breakdown = {}
     const speciesAsiScores = {}
-    const baseSpeciesAsiScores = rootGetters['character/species/speciesMechanics'].filter(i => i.type === 'asi')
+    const tashas = rootGetters['character/character'].options.tashas
+    const baseSpeciesAsiScores = rootGetters['character/mechanics/mechanics'].filter((i) => {
+      return i.type === 'asi' &&
+      i.source.startsWith('species') &&
+      !(tashas && i.source.includes('exalted-lineages'))
+    })
     for (const value of baseSpeciesAsiScores) {
       speciesAsiScores[value.ability] = (speciesAsiScores[value.ability] || 0) + value.amount
-    }
-    const selectedSpeciesAsis = rootGetters['character/selections/selected'].filter(i => i.path === `species/${rootGetters['character/character'].species}/traits/asi/asi`)
-    for (const selected of selectedSpeciesAsis) {
-      for (const value of selected.value) {
-        speciesAsiScores[value.ability] = (speciesAsiScores[value.ability] || 0) + value.amount
-      }
     }
     const selectedKlassAsis = rootGetters['character/selections/selected'].filter(i => /klass\/\w+?\/\d\d?\/asi/.test(i.path))
     const klassAsiScores = {}
@@ -52,7 +51,7 @@ export const getters = {
       }
     }
     const allAsiScores = {}
-    const allMechanicsScores = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'asi')
+    const allMechanicsScores = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'asi' && !(tashas && i.source.includes('exalted-lineages')))
     for (const value of allMechanicsScores) {
       allAsiScores[value.ability] = (allAsiScores[value.ability] || 0) + value.amount
     }
