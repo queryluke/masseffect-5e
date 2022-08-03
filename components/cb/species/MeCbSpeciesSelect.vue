@@ -124,6 +124,7 @@ export default {
       set (value) {
         this.$store.dispatch('character/selections/BULK_DELETE', `${this.rootPath}/traits/asi`)
         this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'options.tashas', value })
+        this.$store.dispatch('character/mechanics/INIT_MECHANICS')
       }
     },
     rootPath () {
@@ -134,7 +135,7 @@ export default {
     selectSpecies (value) {
       this.$store.dispatch('character/selections/BULK_DELETE', 'species')
       this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'species', value })
-      this.$store.dispatch('character/mechanics/INIT_MECHANICS', null, { root: true })
+      this.$store.dispatch('character/mechanics/INIT_MECHANICS')
       this.changeSpecies = false
     }
   }

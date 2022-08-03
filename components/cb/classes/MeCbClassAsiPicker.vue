@@ -79,6 +79,7 @@ export default {
       set (value) {
         this.$store.dispatch('character/selections/BULK_DELETE', `klass/${this.klass.id}/${this.level}/${this.choice}`)
         this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `classes.${this.klassIndex}.asi.${this.level}`, value })
+        this.$store.dispatch('character/mechanics/INIT_MECHANICS')
       }
     }
   }
