@@ -6,8 +6,8 @@ export const Grenades = {
     grenadeOptions () {
       const options = []
       for (const g of this.$store.getters.getData('gear').filter(i => i.type === 'grenade')) {
-        if (g.mechanics && g.mechanics.marks) {
-          for (const m of g.mechanics.marks) {
+        if (g.marks) {
+          for (const m of g.marks) {
             if (!this.maxGrenadeTier.includes(m.mark)) {
               continue
             }

@@ -18,8 +18,12 @@
       <me-cs-notes />
       <me-cs-reputation />
       <me-cs-proficiencies />
-      <me-cs-rest-dialog />
       <me-cs-powers-manager />
+      <me-cs-equipment-manager />
+      <me-cs-rest-menu />
+      <me-cs-character-preferences-side-nav />
+      <me-cs-character-side-nav />
+      <me-cs-equipment-credits />
     </div>
   </div>
 </template>

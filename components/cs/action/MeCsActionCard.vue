@@ -1,12 +1,6 @@
 <template>
   <v-card outlined class="pa-1 px-md-3" :min-height="minHeight" @click="showItem">
     <component :is="layoutComponent" v-bind="{showCastingTime}">
-      <template #icon>
-        <v-avatar v-if="item.icon" size="16" class="mr-1">
-          <v-img :src="item.icon" />
-        </v-avatar>
-      </template>
-
       <template #name>
         {{ item.name }}
       </template>
@@ -29,7 +23,7 @@
         </me-cs-action-stat>
       </template>
 
-      <template v-if="dc" #dc>
+      <template v-if="dc && !hit" #dc>
         <me-cs-action-dc :dc="dc" :layout="layout" />
       </template>
 
@@ -58,7 +52,7 @@
       </template>
 
       <template v-if="item.shortDesc" #shortDesc>
-        <div :class="{'pb-4': !!item.resource}">
+        <div :class="{'pb-4': !!item.resource || !!item.toggle}">
           <me-cs-action-short-desc :short-desc="interpolatedShortDesc" />
         </div>
       </template>
@@ -97,7 +91,13 @@
         dense
         hide-details
         class="mt-0 px-1"
-      />
+      >
+        <template v-if="item.toggle.showLabel" #label>
+          <span class="text-caption mr-1" style="margin-top: -2px; margin-left: -6px;">
+            {{ item.toggle.name }}
+          </span>
+        </template>
+      </v-switch>
       <me-cs-action-resource v-if="item.resource" :id="item.resource.id" :resource="item.resource" />
       <me-cs-action-resource v-if="item.resource && item.resource.resource" :id="item.resource.resource.id" :resource="item.resource.resource" />
     </v-card>
@@ -135,23 +135,35 @@ export default {
       return `me-cs-action-layout-${this.layout}`
     },
     minHeight () {
-      return this.item.resource
-        ? this.item.shortDesc || this.item.properties?.length
-          ? 64
-          : 52
-        : undefined
+      const truths = [!!this.range, !!this.dc, !!this.damages, !!this.hit].filter(i => i).length
+      if (this.item.resource || this.item.toggle || this.layout === 'stats-right') {
+        if (this.item.shortDesc || this.item.properties?.length || truths) {
+          if (this.layout === 'stats-right') {
+            return truths > 2
+              ? 136
+              : truths > 1
+                ? 86
+                : 64
+          }
+          return 64
+        }
+        return 52
+      }
+      return undefined
     }
   },
   methods: {
-    showItem (item) {
+    showItem () {
       if (!this.item.moreInfo?.component && !this.item.moreInfo?.bind && !this.item.component && !this.item.html && !this.item.moreInfo?.model) {
         return
       }
       // TODO: need to figure out the best place to conditionally display this type of information
       // perhaps it would be easiest if the me-cs-more-info component did all the work
       // right now, just check whether or not its a power
-      const component = this.item.component || 'me-cs-more-info'
-      this.$store.commit('character/navigation/SET', { key: 'toDisplay', value: this.item })
+      // item.component for powers, item.moreInfo.component for gear/weapons, default is everything else
+      const component = this.item.component || this.item.moreInfo.component || 'me-cs-more-info'
+      const value = this.item.moreInfo?.toDisplay || this.item
+      this.$store.commit('character/navigation/SET', { key: 'toDisplay', value })
       this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', component)
     }
   }

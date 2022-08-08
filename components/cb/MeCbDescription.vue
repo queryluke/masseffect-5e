@@ -174,6 +174,7 @@ export default {
       set (value) {
         this.$store.dispatch('character/selections/BULK_DELETE', 'background')
         this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'background', value })
+        this.$store.dispatch('character/mechanics/INIT_MECHANICS')
       }
     },
     physicalCharText () {

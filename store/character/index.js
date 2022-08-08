@@ -93,6 +93,18 @@ export const getters = {
     }
     return speeds
   },
+  currentStats: (state, getters) => {
+    return getters.character.currentStats
+  },
+  toggles: (state, getters) => {
+    return getters.currentStats.toggles || {}
+  },
+  credits: (state, getters) => {
+    return getters.currentStats.credits
+  },
+  settings: (state, getters) => {
+    return getters.character.settings
+  },
   backgroundsList: (state, getters, rootState, rootGetters) => {
     const official = rootGetters.getData('backgrounds')
     const homebrew = [state.customBackground]
@@ -154,7 +166,7 @@ export const actions = {
     await dispatch('FETCH_LOTS', [
       'species', 'traits', 'weapons', 'armor', 'mods', 'powers', 'feats', 'backgrounds', 'classes', 'class-features',
       'subclasses', 'character-progression', 'skills', 'gear', 'tool-profs', 'weapon-properties', 'conditions',
-      'edges', 'actions'
+      'edges', 'actions', 'set-bonuses'
     ], { root: true })
   },
   async LOAD_CHARACTER ({ dispatch, commit, rootGetters, getters, rootState }, id) {
@@ -182,6 +194,7 @@ export const actions = {
     } else {
       await dispatch('local/LOAD_CHARACTER', id)
     }
+    dispatch('mechanics/INIT_MECHANICS')
     return getters.character
   },
   UPDATE_CHARACTER ({ dispatch, rootGetters, commit, getters, state }, { attr, value }) {

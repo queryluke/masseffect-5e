@@ -28,20 +28,6 @@
 import { debounce } from 'lodash'
 export default {
   name: 'MeCsActionResourceDisplayOmniGel',
-  props: {
-    clearable: {
-      type: Boolean,
-      default: false
-    },
-    label: {
-      type: [String, Boolean],
-      default: false
-    },
-    hideIcons: {
-      type: Boolean,
-      default: false
-    }
-  },
   data () {
     return {
       cachedValue: null,

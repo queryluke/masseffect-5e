@@ -320,6 +320,7 @@ export default {
     },
     updateKlass (attr, value) {
       this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `classes.${this.klassIndex}.${attr}`, value })
+      this.$store.dispatch('character/mechanics/INIT_MECHANICS')
     }
   }
 }

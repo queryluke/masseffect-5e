@@ -1,116 +1,130 @@
 <template>
-  <v-tabs-items v-model="tab">
-    <v-tab-item>
-      <v-card :max-width="700" flat>
-        <v-row no-gutters>
-          <v-col cols="12">
-            <v-text-field v-model="search" append-icon="mdi-magnify" dense label="Search" hide-details />
-          </v-col>
-          <v-col cols="12">
-            <v-chip-group v-model="filter" active-class="primary--text">
-              <v-chip v-for="filterChip in filters" :key="filterChip" class="text-uppercase" small>
-                {{ filterChip }}
-              </v-chip>
-            </v-chip-group>
-          </v-col>
-        </v-row>
-        <div class="d-flex justify-space-between align-center">
-          <div class="text-subtitle-1 mt-2">
-            Equipment
-          </div>
-          <v-btn small outlined color="primary" @click="tab = 1">
-            <v-icon left>
-              mdi-plus
-            </v-icon>
-            Custom Armor
+  <div>
+    <v-card-text class="px-3">
+      <v-text-field v-model="search" append-icon="mdi-magnify" dense label="Search" hide-details />
+      <div class="d-flex justify-center mt-3">
+        <me-cs-equipment-filter adder />
+      </div>
+    </v-card-text>
+
+    <v-data-table
+      :items="filteredItems"
+      :headers="tableHeaders"
+      :search="search"
+      single-expand
+      :expanded.sync="expanded"
+      :sort-by.sync="sortBy"
+      :sort-desc.sync="sortDesc"
+      hide-default-footer
+      :items-per-page="10"
+      :page.sync="page"
+      :mobile-breakpoint="1"
+      @click:row="expandItem"
+      @page-count="pageCount = $event"
+    >
+      <template #[`item.actions`]="{ item }">
+        <div style="max-width: 20px">
+          <v-btn
+            v-if="vendor"
+            color="error"
+            x-small
+            icon
+            @click.stop="$emit('add-to-cart', item)"
+          >
+            <v-badge dot :value="cartIds.filter(i => i === item.id).length">
+              <v-icon>
+                mdi-cart-plus
+              </v-icon>
+            </v-badge>
           </v-btn>
+          <me-cs-equipment-add-btn v-else :item="item" />
         </div>
-        <me-hr :size="1" />
-        <v-virtual-scroll
-          :items="filteredItems"
-          height="300"
-          item-height="64"
-        >
-          <template #default="{ item }">
-            <me-cs-equipment-adder-item :item="item" />
-            <v-divider />
-          </template>
-        </v-virtual-scroll>
-      </v-card>
-    </v-tab-item>
-    <v-tab-item>
-      <v-btn small outlined @click="tab = 0">
-        <v-icon left>
-          mdi-chevron-left
-        </v-icon>
-        Back to Equipment List
-      </v-btn>
-      <v-form ref="customArmorForm" @submit="submitCustomArmor">
-        <v-row>
-          <v-col cols="12">
-            <v-text-field v-model="customArmor.name" label="Name" />
-          </v-col>
-          <v-col cols="6">
-            <v-select v-model="customArmor.placement" :items="armorPlacements" label="Placement" />
-          </v-col>
-          <v-col cols="6">
-            <v-select v-model="customArmor.type" :items="armorTypes" label="Type" />
-          </v-col>
-          <v-col cols="12">
-            <v-textarea v-model="customArmor.html" rows="1" auto-grow label="Notes / Description" />
-          </v-col>
-        </v-row>
-        <v-btn
-          small
-          outlined
-          :color="customArmorAdded ? 'success' : 'primary'"
-          :loading="customArmorAdding"
-          @click="submitCustomArmor"
-        >
-          {{ customArmorAdded ? 'Added' : 'Add' }}
-        </v-btn>
-      </v-form>
-    </v-tab-item>
-  </v-tabs-items>
+      </template>
+      <template #[`item.name`]="{ item }">
+        <div style="max-width: 125px" class="text-caption">
+          <me-cs-equipment-title :rarity="item.rarity">
+            {{ item.name }}
+          </me-cs-equipment-title>
+          <div class="mt-n1">
+            <small>
+              <me-cs-equipment-subtitle :model="item.modelType" :type="item.type" :additional="{ placement: item.placement }" />
+            </small>
+          </div>
+        </div>
+      </template>
+      <template #[`item.cost`]="{ item }">
+        <div class="text-caption">
+          <span v-if="isNaN(item.cost) || item.cost === 0">
+            -
+          </span>
+          <span v-else>
+            {{ item.cost | groupDigits(',') }}
+          </span>
+        </div>
+      </template>
+      <template #expanded-item="{ headers, item }">
+        <td :colspan="headers.length">
+          <v-card flat color="transparent" :width="$vuetify.breakpoint.xsOnly ? 240 : 300">
+            <component :is="`me-cs-equipment-${item.modelType === 'weapons' ? 'weapon' : item.modelType}-info`" :item="item" />
+          </v-card>
+        </td>
+      </template>
+    </v-data-table>
+    <div class="text-center pt-2">
+      <v-pagination
+        v-model="page"
+        :length="pageCount"
+        :total-visible="0"
+        circle
+        color="primary"
+      />
+    </div>
+  </div>
 </template>
 
 <script>
+import { createNamespacedHelpers } from 'vuex'
+const { mapGetters } = createNamespacedHelpers('character')
 export default {
+  name: 'MeCsEquipmentAdder',
+  props: {
+    vendor: {
+      type: Boolean,
+      default: false
+    },
+    cartIds: {
+      type: Array,
+      default: () => []
+    }
+  },
   data () {
     return {
       search: null,
-      filter: null,
-      rarity: null,
-      filters: ['weapons', 'armor', 'gear'],
-      customArmorRules: {
-        name: [v => !!v || 'Name is required'],
-        placement: [v => !!v || 'Placement is required'],
-        type: [v => !!v || 'Type is required']
-      },
-      customArmor: {
-        name: null,
-        placement: null,
-        type: null,
-        html: null
-      },
-      defaultCustomArmor: {
-        name: null,
-        placement: null,
-        type: null,
-        html: null
-      },
-      armorTypes: ['light', 'medium', 'heavy'],
-      armorPlacements: ['head', 'chest', 'arms', 'legs'],
-      tab: 0,
-      customArmorAdded: false,
-      customArmorAdding: false
+      sortBy: 'name',
+      sortDesc: false,
+      page: 1,
+      pageCount: 0,
+      tableHeaders: [
+        { text: '', value: 'actions', filterable: false, sortable: false, cellClass: 'pr-0 pl-3' },
+        { text: 'Name', value: 'name', align: 'start' },
+        { text: 'Cost', value: 'cost', filterable: false, align: 'center' }
+      ],
+      expanded: [],
+      loading: false
     }
   },
   computed: {
+    ...mapGetters({
+      character: 'character',
+      filter: 'navigation/equipmentAdderFilter',
+      weapons: 'equipment/weaponsList',
+      armor: 'equipment/armorList',
+      gear: 'equipment/gearList'
+    }),
     items () {
       const items = []
       for (const type of ['weapons', 'armor', 'gear']) {
-        const models = this.$store.getters.getData(type).map((i) => {
+        const models = this[type].map((i) => {
           return {
             ...i,
             modelType: type
@@ -122,31 +136,22 @@ export default {
     },
     filteredItems () {
       return this.items.filter((i) => {
-        return (this.search && this.search !== '' ? i.name.toLowerCase().includes(this.search.toLowerCase()) : true) &&
-          (this.filter ? i.modelType === this.filters[this.filter] : true)
+        if (i.notAddable) {
+          return false
+        }
+        if (this.vendor && (isNaN(i.cost) || i.cost === 0)) {
+          return false
+        }
+        return this.filter && this.filter !== 'all' ? i.modelType === this.filter : true
       })
     }
   },
   methods: {
-    submitCustomArmor () {
-      if (this.customArmor.name && this.customArmor.placement && this.customArmor.type) {
-        const customArmor = {
-          type: 'armor',
-          custom: this.customArmor,
-          equipped: false,
-          mods: [],
-          id: this.customArmor.name.replaceAll(/\W/g, '-') + new Date().getTime(),
-          uuid: this.customArmor.name.replaceAll(/\W/g, '-') + new Date().getTime()
-        }
-        this.customArmorAdding = true
-        this.$store.dispatch('character/equipment/ADD_EQUIPMENT', customArmor)
-        this.customArmorAdding = false
-        this.customArmorAdded = true
-        setTimeout(() => {
-          this.customArmorAdded = false
-          this.tab = 0
-          this.customArmor = { ...this.defaultCustomArmor }
-        }, 1000)
+    expandItem (event, attrs) {
+      if (attrs.isExpanded) {
+        this.expanded = []
+      } else {
+        this.expanded.splice(0, 1, attrs.item)
       }
     }
   }

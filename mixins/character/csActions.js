@@ -19,6 +19,7 @@ export const CsActions = {
       mechanics: 'mechanics/mechanics',
       tentacleBlenderText: 'equipment/tentacleBlenderText',
       hp: 'hp/hp',
+      shields: 'hp/shields',
       level: 'klasses/level'
     }),
     interpolatedShortDesc () {
@@ -48,7 +49,8 @@ export const CsActions = {
       const hitDefaults = {
         mod: false,
         proficient: false,
-        bonus: false
+        bonus: false,
+        crit: 20
       }
       const hit = { ...hitDefaults, ...this.item.attack }
       const bonus = hit.bonus ? this.mcBonus(hit.bonus) : 0
@@ -73,6 +75,7 @@ export const CsActions = {
       return range
     },
     damages () {
+      // FUTURE: these types of calculations should probably be in the component
       if (!this.item.damage?.length) {
         return false
       }
@@ -84,15 +87,16 @@ export const CsActions = {
         bonus: false,
         healing: false,
         detail: this.item.name,
-        label: false
+        label: false,
+        reroll: false
       }
       return this.item.damage.map((i) => {
         const damage = { ...damageDefault, ...i }
-        if (damage.dieCount.toString() === 'barrierDie') {
+        if (damage.dieCount?.toString() === 'barrierDie') {
           const barrier = this.$store.getters['character/hp/barrier']
           damage.dieCount = barrier.dieCount
           damage.dieType = barrier.dieType
-        } else if (damage.dieCount.toString().startsWith('barrierRemaining')) {
+        } else if (damage.dieCount?.toString().startsWith('barrierRemaining')) {
           const barrier = this.$store.getters['character/hp/barrier']
           const ticksRemaining = barrier.ticks.max - barrier.ticks.used
           damage.dieCount = damage.dieCount.split('+').reduce((acc, curr) => {
@@ -108,18 +112,28 @@ export const CsActions = {
         const mod = damage.mod ? this.abilityBreakdown[damage.mod].mod : 0
         bonus += mod
         let text = ''
+        let notation = ''
         if (damage.dieCount) {
           text = `${damage.dieCount}`
           if (damage.dieType) {
             text += `d${damage.dieType}`
           }
+          // rerolls
+          if (text.includes('d') && damage.reroll) {
+            notation = `${text}ro<${damage.reroll}`
+          } else {
+            notation = text
+          }
           if (bonus !== 0) {
             text += this.damageText(bonus)
+            notation += this.damageText(bonus)
           }
         } else {
           text = bonus
+          notation = bonus
         }
         damage.bonus = bonus
+        damage.notation = notation
         damage.text = text
         damage.healing = ['shields', 'hp', 'temp'].includes(damage.type)
         return damage
@@ -127,6 +141,22 @@ export const CsActions = {
     },
     notes () {
       const notes = []
+      if (this.damages) {
+        const rerolls = this.damages.map(i => i.reroll).filter(i => !!i).sort((a, b) => b - a)
+        if (rerolls.length) {
+          notes.push({
+            type: 'icon',
+            icon: `mdi-numeric-${rerolls[0] - 1}-box-multiple-outline`,
+            text: rerolls[0] === 3 ? 'Reroll 1s & 2s' : 'Reroll 1s'
+          })
+        }
+      }
+      if (this.hit && this.hit.crit < 20) {
+        notes.push({
+          type: 'text',
+          text: `Crit: ${this.hit.crit}+`
+        })
+      }
       if (Array.isArray(this.item.notes) && this.item.notes.length) {
         for (const note of this.item.notes) {
           if (typeof note === 'string') {
@@ -158,7 +188,8 @@ export const CsActions = {
         tentacleBlender: this.tentacleBlenderText,
         hp: this.hp.current,
         level: this.level,
-        damage: this.damages[0]?.text
+        damage: this.damages[0]?.text,
+        shieldRegen: this.shields.regen
       }
     },
     hitRoll () {
@@ -194,8 +225,9 @@ export const CsActions = {
       },
       set (value) {
         this.$store.dispatch('character/resources/SET_TOGGLE', { id: this.item.toggle.id, value })
+        this.$store.dispatch('character/mechanics/TOGGLE_MECHANIC', { toggle: this.item.toggle, value })
         const which = value ? 'whenOn' : 'whenOff'
-        const whenables = this.item.toggle[which] || []
+        const whenables = (this.item.toggle[which] || []).slice()
         if (this.toggleOptions && this.toggleSelection) {
           whenables.push(...(this.toggleSelection[which] || []))
         }
@@ -221,13 +253,16 @@ export const CsActions = {
       },
       set (value) {
         this.$store.dispatch('character/resources/SET_TOGGLE', { id: `${this.item.toggle.id}-selection`, value })
+        if (this.toggle) {
+          this.$store.dispatch('character/mechanics/CHANGE_TOGGLE_SELECTION', { toggle: this.item.toggle })
+        }
       }
     }
   },
   methods: {
     interpolatedText (text) {
       // might be better to do this with attrGetters or put it in the HTML?
-      const interpolations = ['dc', 'range', 'profBonus', 'strMod', 'conMod', 'wisMod', 'intMod', 'chaMod', 'avatarsDie', 'tentacleBlender', 'hp', 'level', 'damage']
+      const interpolations = Object.keys(this.interpolations)
       const regex = new RegExp(`{{ ?([0-9]{1,3}|[+ ]|${interpolations.join('|')}|powercastingMod:[a-z]+)+ ?}}`, 'g')
       if (!regex.test(text)) {
         return text

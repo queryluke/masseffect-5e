@@ -37,12 +37,12 @@ export default {
   },
   methods: {
     showItem (note) {
-      if (!note.moreInfo?.model || !note.moreInfo?.id) {
-        return
+      if ((note.moreInfo?.model && note.moreInfo?.id) || note.moreInfo?.toDisplay) {
+        const component = note.component || note.moreInfo?.component || 'me-cs-more-info'
+        const value = note.moreInfo?.toDisplay || note
+        this.$store.commit('character/navigation/SET', { key: 'toDisplay', value })
+        this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', component)
       }
-      const component = note.component || 'me-cs-more-info'
-      this.$store.commit('character/navigation/SET', { key: 'toDisplay', value: note })
-      this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', component)
     },
     value (note) {
       if (note.value === 'Sneak Attack') {

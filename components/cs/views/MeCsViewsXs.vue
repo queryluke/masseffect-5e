@@ -36,6 +36,8 @@
     </div>
     <div v-if="mobileView === 'equipment'">
       <me-cs-card title="Equipment">
+        <me-cs-equipment-header />
+        <v-divider class="my-2" />
         <me-cs-equipment />
       </me-cs-card>
     </div>

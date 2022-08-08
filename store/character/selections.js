@@ -29,6 +29,7 @@ export const actions = {
       newSelections.push(payload)
     }
     dispatch('character/UPDATE_CHARACTER', { attr: 'selected', value: newSelections }, { root: true })
+    dispatch('character/mechanics/INIT_MECHANICS', null, { root: true })
   },
   BULK_DELETE ({ dispatch, getters }, path) {
     const newSelections = getters.selected.filter(i => !i.path.startsWith(path))

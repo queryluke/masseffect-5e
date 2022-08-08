@@ -9,6 +9,6 @@
 <script>
 
 export default {
-  name: 'MeCsPowerSelectPrepend'
+  name: 'MeCsPowersManagerPrepend'
 }
 </script>

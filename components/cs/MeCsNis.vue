@@ -15,70 +15,9 @@
           </div>
         </v-col>
         <v-col cols="2">
-          <v-menu offset-y left>
-            <template #activator="{ on, attrs }">
-              <v-icon
-                size="20"
-                v-bind="attrs"
-                v-on="on"
-              >
-                mdi-cog
-              </v-icon>
-            </template>
-            <v-list dense>
-              <!-- edit -->
-              <v-list-item v-if="!viewOnly" :to="`/characters/builder/?id=${id}`" nuxt>
-                <v-list-item-icon>
-                  <v-icon>
-                    mdi-pencil
-                  </v-icon>
-                </v-list-item-icon>
-                <v-list-item-title>Edit</v-list-item-title>
-              </v-list-item>
-
-              <!-- share -->
-              <v-tooltip
-                v-if="character.meta.remote"
-                v-model="shareTooltip"
-                :disabled="!shareTooltip"
-                top
-                :close-delay="1000"
-              >
-                <template #activator="{on, attrs}">
-                  <v-list-item v-bind="attrs" v-on="on" @click.stop="copyLinkToClipboard">
-                    <v-list-item-icon>
-                      <v-icon>
-                        mdi-share
-                      </v-icon>
-                    </v-list-item-icon>
-                    <v-list-item-title>Share</v-list-item-title>
-                  </v-list-item>
-                </template>
-                <span>{{ shareTooltipMessage }}</span>
-              </v-tooltip>
-
-              <!-- export -->
-              <v-list-item @click="saveFile">
-                <v-list-item-icon>
-                  <v-icon>
-                    mdi-download
-                  </v-icon>
-                </v-list-item-icon>
-                <v-list-item-title>Export</v-list-item-title>
-              </v-list-item>
-              <v-divider />
-
-              <!-- characters -->
-              <v-list-item to="/characters" nuxt>
-                <v-list-item-icon>
-                  <v-icon>
-                    mdi-home
-                  </v-icon>
-                </v-list-item-icon>
-                <v-list-item-title>Character List</v-list-item-title>
-              </v-list-item>
-            </v-list>
-          </v-menu>
+          <v-icon size="20" @click="showCharacterMenu">
+            mdi-cog
+          </v-icon>
         </v-col>
       </v-row>
       <div class="text-caption text-truncate blue-grey--text text--lighten-3 mt-n2">
@@ -105,38 +44,14 @@ export default {
     }
   },
   computed: {
-    ...mapGetters({ character: 'character', level: 'klasses/level', image: 'image', identString: 'identString', id: 'id' }),
+    ...mapGetters({ character: 'character', level: 'klasses/level', image: 'image', identString: 'identString' }),
     viewOnly () {
       return this.$store.state.character.viewOnly
     }
   },
   methods: {
-    saveFile () {
-      const data = JSON.stringify(this.character)
-      const blob = new Blob([data], { type: 'text/plain' })
-      const e = document.createEvent('MouseEvents')
-      const a = document.createElement('a')
-      const filename = (this.character.name || 'Unnamed').replace(/[^a-z0-9]/gi, '')// .toLowerCase()
-
-      a.download = `${filename}-${this.id}.json`
-      a.href = window.URL.createObjectURL(blob)
-      a.dataset.downloadurl = ['text/json', a.download, a.href].join(':')
-      e.initEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
-      a.dispatchEvent(e)
-    },
-    async copyLinkToClipboard () {
-      let timeout = 1000
-      if (!navigator.clipboard) {
-        this.shareTooltipMessage = 'Error copying, you can copy from the address bar'
-        timeout = 2000
-      } else {
-        await navigator.clipboard.writeText(window.location.href)
-        this.shareTooltipMessage = 'Link Copied!'
-      }
-      this.shareTooltip = true
-      setTimeout(() => {
-        this.shareTooltip = false
-      }, timeout)
+    showCharacterMenu () {
+      this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-character-side-nav')
     }
   }
 }

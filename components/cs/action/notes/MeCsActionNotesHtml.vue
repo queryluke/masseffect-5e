@@ -13,6 +13,10 @@ export default {
           text: ''
         }
       }
+    },
+    hasNext: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -20,8 +24,13 @@ export default {
       loading: false
     }
   },
+  computed: {
+    text () {
+      return this.hasNext ? `${this.note.text},` : this.note.text
+    }
+  },
   watch: {
-    note () {
+    text () {
       this.loading = true
       setTimeout(() => {
         this.loading = false

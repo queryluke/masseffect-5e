@@ -4,7 +4,7 @@
       <v-text-field
         v-model="name"
         label="Custom Name"
-        :append-icon="item.overrides.name"
+        :append-icon="!!item.overrides.name ? 'mdi-close' : undefined"
         @click:append="clearOverride('name')"
         @change="debouncedNameChange()"
       />
@@ -12,7 +12,7 @@
     <v-col cols="6">
       <me-cb-debounced-number-input
         label="Heat"
-        :current="itemData.heat"
+        :current="itemData.heat || 0"
         :max="999"
         :clearable="!!item.overrides.heat"
         hide-icons

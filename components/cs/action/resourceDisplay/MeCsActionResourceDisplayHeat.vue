@@ -39,6 +39,10 @@ export default {
     max: {
       type: Number,
       required: true
+    },
+    vented: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -47,6 +51,12 @@ export default {
     },
     currentHeatPercent () {
       return Math.ceil((this.current * 100) / this.max)
+    },
+    thermalClips () {
+      return this.$store.getters['character/equipment/thermalClips']
+    },
+    enforceThermalClips () {
+      return this.$store.getters['character/character'].options.thermalClips
     }
   },
   methods: {
@@ -55,6 +65,12 @@ export default {
     },
     reloadWeapon () {
       this.$emit('reset')
+      if (this.enforceThermalClips && this.thermalClips.equipped > 0 && this.current > 0 && !this.vented) {
+        const newTh = { ...this.thermalClips.items.find(i => i.equippedAmount > 0) }
+        newTh.equippedAmount = Math.max(0, newTh.equippedAmount - 1)
+        newTh.uses = Math.max(0, newTh.uses - 1)
+        this.$store.dispatch('character/equipment/REPLACE_EQUIPMENT', { uuid: newTh.uuid, replacement: newTh })
+      }
     }
   }
 }

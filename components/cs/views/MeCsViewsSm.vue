@@ -96,6 +96,8 @@
         <v-row>
           <v-col>
             <me-cs-card title="Equipment">
+              <me-cs-equipment-header />
+              <v-divider class="my-2" />
               <me-cs-equipment />
             </me-cs-card>
           </v-col>

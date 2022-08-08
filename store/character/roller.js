@@ -45,14 +45,22 @@ export const actions = {
   },
   ROLL ({ dispatch, rootGetters }, payload) {
     const roll = new DiceRoll(payload.notation.toString())
+    const mrResults = roll.rolls.map((i) => {
+      if (typeof i === 'object') {
+        return i.rolls.map(roll => [roll.initialValue, roll.value || false])
+      }
+      return i
+    })
     const results = roll.output.split(/[:=]/)[1].trim()
     const entry = {
       data: {
         type: payload.type,
         detail: payload.detail,
         notation: roll.notation,
+        text: payload.text,
         total: roll.total,
-        results
+        results,
+        mrResults
       },
       // Source will be used when campaign logs are introduced
       source: {
