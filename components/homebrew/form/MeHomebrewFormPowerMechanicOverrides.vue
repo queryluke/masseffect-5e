@@ -1,18 +1,32 @@
 <template>
   <v-card outlined flat>
     <v-tabs v-model="tab">
-      <v-tab>Base Mechanics</v-tab>
-      <v-tab>Attack</v-tab>
-      <v-tab>DC</v-tab>
-      <v-tab>Damage</v-tab>
-      <v-tab>Limited Uses</v-tab>
+      <v-tab>
+        <v-badge dot color="secondary" :value="overrides['castingTime'] || overrides['duration'] || overrides['primes'] || overrides['range']">
+          Base Mechanics
+        </v-badge>
+      </v-tab>
+      <v-tab>
+        <v-badge dot color="secondary" :value="overrides['attack']">
+          Attack
+        </v-badge>
+      </v-tab>
+      <v-tab>
+        <v-badge dot color="secondary" :value="overrides['dc']">
+          DC
+        </v-badge>
+      </v-tab>
+      <v-tab>
+        <v-badge dot color="secondary" :value="overrides['damage']">
+          Damage
+        </v-badge>
+      </v-tab>
+      <v-tab>
+        <v-badge dot color="secondary" :value="overrides['resource']">
+          Uses / Pool
+        </v-badge>
+      </v-tab>
     </v-tabs>
-    <v-card class="ma-3" outlined>
-      <v-card-text>
-        Note: For every higher level or advancement, you can adjust the underlying mechanics of the power. All changes made at
-        a <em>lower level</em> take effect at <em>higher levels</em> as well. For example, if you changed a power's damage to
-      </v-card-text>
-    </v-card>
     <v-tabs-items v-model="tab">
       <v-tab-item>
         <v-card-text>

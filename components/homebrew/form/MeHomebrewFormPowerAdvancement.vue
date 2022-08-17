@@ -11,10 +11,10 @@
     <v-expansion-panels accordion>
       <v-expansion-panel v-for="(mechanicLevel, index) in higherLevels" :key="`advOverrides-${index}`">
         <v-expansion-panel-header>
-          {{ $t(`ordinal_numbers[${mechanicLevel}]`) }} level (changes)
+          {{ $t(`ordinal_numbers[${mechanicLevel}]`) }} level (advancement changes)
         </v-expansion-panel-header>
         <v-expansion-panel-content>
-          <me-homebrew-form-power-mechanic-overrides :base-mechanics="baseMechanics" :override-mechanics="mechanics[index + 1]" @update="updateMechanics(index + 1, $event)" />
+          <me-homebrew-form-power-mechanic-overrides :base-mechanics="baseMechanics[index]" :override-mechanics="mechanics[index]" @update="updateMechanics(index, $event)" />
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>

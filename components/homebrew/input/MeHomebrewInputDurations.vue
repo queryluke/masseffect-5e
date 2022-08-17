@@ -1,9 +1,21 @@
 <template>
-  <v-select
-    v-model="duration"
-    :items="durations"
-    label="Duration"
-  />
+  <v-row>
+    <v-col cols="12" sm="5">
+      <v-text-field
+        v-model="length"
+        type="number"
+        min="0"
+        label="Length of Time"
+      />
+    </v-col>
+    <v-col cols="12" sm="7">
+      <v-select
+        v-model="unit"
+        :items="units"
+        label="Unit"
+      />
+    </v-col>
+  </v-row>
 </template>
 
 <script>
@@ -19,26 +31,37 @@ export default {
   },
   data () {
     return {
-      durations: [
-        { value: 0, text: 'Instantaneous', objectValue: { length: 0, unit: 'instant' } },
-        { value: 1, text: '1 Turn', objectValue: { length: 1, unit: 'turn' } },
-        { value: 6, text: '1 Round', objectValue: { length: 1, unit: 'round' } },
-        { value: 60, text: '1 Minute', objectValue: { length: 1, unit: 'minute' } },
-        { value: 600, text: '10 Minutes', objectValue: { length: 10, unit: 'minute' } },
-        { value: 3600, text: '1 Hour', objectValue: { length: 1, unit: 'hour' } },
-        { value: 99999, text: '1 day', objectValue: { length: 24, unit: 'hour' } }
+      units: [
+        { value: 'instant', text: 'Instantaneous' },
+        { value: 'turn', text: 'Turn' },
+        { value: 'round', text: 'Round' },
+        { value: 'minute', text: 'Minute' },
+        { value: 'hour', text: 'Hour' },
+        { value: 'day', text: 'Day' }
       ]
     }
   },
   computed: {
-    duration: {
+    length: {
       get () {
-        return this.durations.find(i => i.objectValue.length === this.selectedDuration.length && i.objectValue.unit === this.selectedDuration.unit)
+        return this.duration?.length
       },
       set (value) {
-        const selected = this.durations.find(i => i.value === value)
-        if (selected) {
-          this.$emit('update', selected.objectValue)
+        const parsed = parseInt(value)
+        if (parsed) {
+          this.$emit('update', { ...this.duration, length: parsed })
+        }
+      }
+    },
+    unit: {
+      get () {
+        return this.duration?.unit
+      },
+      set (value) {
+        if (value === 'instant') {
+          this.$emit('update', { length: 0, unit: 'instant' })
+        } else {
+          this.$emit('update', { length: this.length || 1, unit: value })
         }
       }
     }

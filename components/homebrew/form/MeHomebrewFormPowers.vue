@@ -60,6 +60,24 @@
       </v-expansion-panel>
     </v-expansion-panels>
     <v-divider />
+    <v-card-title>
+      Advancements
+    </v-card-title>
+    <v-expansion-panels accordion>
+      <v-expansion-panel v-for="(advancement, index) in advancements" :key="`advancement-${index}`">
+        <v-expansion-panel-header>
+          {{ advancement.title }}
+        </v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <me-homebrew-form-power-advancement :advancement="advancement" :higher-levels="higherLevels" :base-mechanics="mechanics" @update="updateAdvancement(index, $event)" />
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+    </v-expansion-panels>
+    <div class="text-center">
+      <v-btn color="primary" @click="addAdvancement">
+        Add Advancement
+      </v-btn>
+    </div>
   </div>
 </template>
 
@@ -168,7 +186,7 @@ export default {
     },
     advancements: {
       get () {
-        return this.item.advancements
+        return this.item.advancements || []
       },
       set (value) {
         this.$emit('update', Object.assign({}, { ...this.item, advancements: value }))
@@ -209,6 +227,22 @@ export default {
       const newMechanics = this.mechanics.slice()
       newMechanics.splice(index, 1, value)
       this.mechanics = newMechanics
+    },
+    addAdvancement () {
+      const advNum = (this.advancements || []).length + 1
+      const newAdvs = this.advancements.slice()
+      newAdvs.push({ title: `Advancement #${advNum}`, id: `advancement--${advNum}`, text: '', mechanics: [] })
+      this.advancements = newAdvs
+    },
+    removeAdvancement (index) {
+      const newAdvs = this.advancements.slice()
+      newAdvs.splice(index, 1)
+      this.advancements = newAdvs
+    },
+    updateAdvancement (index, value) {
+      const newAdvs = this.advancements.slice()
+      newAdvs.splice(index, 1, value)
+      this.advancements = newAdvs
     }
   }
 }

@@ -5,7 +5,7 @@
       <v-tab>Attack</v-tab>
       <v-tab>DC</v-tab>
       <v-tab>Damage</v-tab>
-      <v-tab>Limited Uses</v-tab>
+      <v-tab>Uses / Pool</v-tab>
     </v-tabs>
     <v-tabs-items v-model="tab">
       <v-tab-item>
