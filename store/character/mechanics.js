@@ -86,21 +86,6 @@ export const getters = {
         b = Object.keys(bonus.value).sort((a, b) => b - a).find(i => i <= b)
         b = bonus.value[b] || 0
         break
-      case 'progressionColumn':
-        if (!bonus.value || !bonus.value.klass || !bonus.value.column) {
-          break
-        } else {
-          const klassData = rootGetters['character/klasses/klasses'].find(i => i.id === bonus.value.klass)
-          if (!klassData) {
-            break
-          }
-          const column = klassData.data.progression.columns.find(i => i.label === bonus.value.column)
-          if (!column || !column.values) {
-            break
-          }
-          b = column.values[klassData.levels - 1]
-        }
-        break
       case 'multi':
         if (!Array.isArray(bonus.value)) {
           break

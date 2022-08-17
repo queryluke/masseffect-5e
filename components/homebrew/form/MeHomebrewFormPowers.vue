@@ -1,0 +1,215 @@
+<template>
+  <div>
+    <v-card-title>
+      Basic Details
+    </v-card-title>
+    <v-card-text>
+      <v-row>
+        <v-col cols="12" sm="6" md="3">
+          <v-select
+            v-model="type"
+            :items="powerTypeItems"
+            label="Type"
+          />
+        </v-col>
+        <v-col cols="12" sm="6" md="3">
+          <v-select
+            v-model="level"
+            :items="levelItems"
+            label="Level"
+            :disabled="type === 'combat'"
+          />
+        </v-col>
+        <v-col cols="12" sm="6" md="3">
+          <me-homebrew-input-classes-select :selected="classes" multiple @update="classes = $event" />
+        </v-col>
+        <v-col cols="12" sm="6" md="3">
+          <v-select
+            v-model="tags"
+            :items="tagItems"
+            label="Tags"
+            multiple
+            small-chips
+          />
+        </v-col>
+        <v-col cols="12">
+          <me-homebrew-input-description :content="html" @update="html = $event" />
+        </v-col>
+      </v-row>
+    </v-card-text>
+    <v-divider />
+    <v-card-title>
+      Mechanics
+    </v-card-title>
+    <v-expansion-panels accordion>
+      <v-expansion-panel>
+        <v-expansion-panel-header>
+          {{ $t(`ordinal_numbers[${higherLevels[0]}]`) }} level (base)
+        </v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <me-homebrew-form-power-mechanics :mechanics="baseMechanics" is-base @update="updateMechanics(0, $event)" />
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+      <v-expansion-panel v-for="(mechanicLevel, index) in higherLevelOptions" :key="`higherLevel-${index}`">
+        <v-expansion-panel-header>
+          {{ $t(`ordinal_numbers[${mechanicLevel}]`) }} level (overrides)
+        </v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <me-homebrew-form-power-mechanic-overrides :base-mechanics="baseMechanics" :override-mechanics="mechanics[index + 1]" @update="updateMechanics(index + 1, $event)" />
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+    </v-expansion-panels>
+    <v-divider />
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'MeHomebrewFormPowers',
+  props: {
+    item: {
+      type: Object,
+      required: true
+    }
+  },
+  data () {
+    return {
+      cachedItem: {},
+      levelItemsUnfiltered: [
+        { value: 0, text: 'Cantrip' },
+        { value: 1, text: '1st' },
+        { value: 2, text: '2nd' },
+        { value: 3, text: '3rd' },
+        { value: 4, text: '4th' },
+        { value: 5, text: '5th' }
+      ],
+      powerTypeItems: [
+        { value: 'biotic', text: 'Biotic' },
+        { value: 'tech', text: 'Tech' },
+        { value: 'combat', text: 'Combat' }
+      ],
+      tagItems: [
+        'buff',
+        'control',
+        'damage',
+        'debuff',
+        'heal',
+        'movement',
+        'protection',
+        'summon'
+      ]
+    }
+  },
+  computed: {
+    level: {
+      get () {
+        return this.item.level || 0
+      },
+      set (value) {
+        this.$emit('update', Object.assign({}, { ...this.item, level: value }))
+      }
+    },
+    levelItems () {
+      return this.levelItemsUnfiltered.filter((i) => {
+        if (this.type === 'tech' && i.value === 0) {
+          return false
+        } else if (this.type === 'combat' && i.value > 0) {
+          return false
+        }
+        return true
+      })
+    },
+    higherLevels () {
+      if (this.level === 0) {
+        return [1, 5, 11, 17]
+      } else {
+        const max = this.type === 'tech' ? 7 : 6
+        return [...Array(max - this.level).keys()].map(i => i + this.level)
+      }
+    },
+    type: {
+      get () {
+        return this.item.type
+      },
+      set (value) {
+        const newObject = Object.assign({}, { ...this.item, type: value })
+        if (value === 'combat') {
+          newObject.level = 0
+        }
+        if (value === 'tech' && this.level === 0) {
+          this.level = 1
+        }
+        this.$emit('update', newObject)
+      }
+    },
+    classes: {
+      get () {
+        return this.item.classes || []
+      },
+      set (value) {
+        this.$emit('update', Object.assign({}, { ...this.item, classes: value }))
+      }
+    },
+    tags: {
+      get () {
+        return this.item.tags || []
+      },
+      set (value) {
+        this.$emit('update', Object.assign({}, { ...this.item, tags: value }))
+      }
+    },
+    html: {
+      get () {
+        return this.item.html || ''
+      },
+      set (value) {
+        this.$emit('update', Object.assign({}, { ...this.item, html: value }))
+      }
+    },
+    advancements: {
+      get () {
+        return this.item.advancements
+      },
+      set (value) {
+        this.$emit('update', Object.assign({}, { ...this.item, advancements: value }))
+      }
+    },
+    mechanics: {
+      get () {
+        return this.item.mechanics || []
+      },
+      set (value) {
+        this.$emit('update', Object.assign({}, { ...this.item, mechanics: value }))
+      }
+    },
+    baseMechanics () {
+      return this.mechanics[0] || {}
+    },
+    higherLevelOptions () {
+      return this.higherLevels.slice(1)
+    }
+  },
+  watch: {
+    level () {
+      const higherLevelsLength = this.higherLevels.length
+      let newMechanics = (this.mechanics || []).slice()
+      const mechanicsLength = newMechanics.length
+      if (higherLevelsLength > mechanicsLength) {
+        for (let i = 0; i < higherLevelsLength - mechanicsLength; i++) {
+          newMechanics.push({})
+        }
+      } else if (mechanicsLength > higherLevelsLength) {
+        newMechanics = newMechanics.slice(0, higherLevelsLength)
+      }
+      this.mechanics = newMechanics
+    }
+  },
+  methods: {
+    updateMechanics (index, value) {
+      const newMechanics = this.mechanics.slice()
+      newMechanics.splice(index, 1, value)
+      this.mechanics = newMechanics
+    }
+  }
+}
+</script>

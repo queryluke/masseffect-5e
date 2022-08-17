@@ -35,6 +35,45 @@ type Character @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"
   data: String
 }
 
+type Homebrew
+@model
+@auth(rules: [
+  { allow: private, operations: [read] },
+  { allow: owner }
+]) {
+  id: ID!
+  owner: ID! @index(name: "byUser", queryField: "homebrewByUser")
+  title: String!
+  titleId: String! @index(name: "byTitleId", queryField: "homebrewByTitleId")
+  data: AWSJSON!
+  model: String! @index(name: "byModel", queryField: "homebrewByModelByStatus", sortKeyFields: ["publicationStatus"])
+  usageCount: Int @default(value: "0")
+  voteCount: Int @default(value: "0")
+  publicationStatus: String! @index(name: "byPublicationStatus", queryField: "homebrewSearch", sortKeyFields: ["model", "title", "createdAt", "usageCount", "voteCount"])
+  createdAt: AWSDateTime!
+}
+
+type HomebrewUse
+@model
+@auth(rules: [
+  { allow: owner }
+]) {
+  id: ID!
+  owner: ID! @index(name: "byUser", queryField: "homebrewUseByUser")
+  homebrewId: ID!
+  homebrew: Homebrew @hasOne(fields: ["homebrewId"])
+}
+
+type HomebrewVote
+@model
+@auth(rules: [
+  { allow: owner }
+]) {
+  id: ID!
+  owner: ID! @index(name: "byUser", queryField: "homebrewVoteByUserByHomebrew", sortKeyFields: ["homebrewId"])
+  homebrewId: ID!
+}
+
 type Subscription {
   onCreateBookmarkByUserId(userId: ID!): Bookmark
     @aws_subscribe(mutations: ["createBookmark"])

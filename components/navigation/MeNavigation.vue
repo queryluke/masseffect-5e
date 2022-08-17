@@ -227,6 +227,10 @@ export default {
           header: this.$t('title')
         },
         {
+          to: '/homebrew',
+          name: 'Community Homebrew'
+        },
+        {
           to: '/assets',
           name: this.$t('assets_title')
         },
@@ -250,7 +254,9 @@ export default {
       }
     },
     navigation () {
-      const navigation = this.nav.slice()
+      const navigation = this.isAuthenticated
+        ? this.nav.slice()
+        : this.nav.filter(i => i.to !== '/homebrew')
       if (this.$vuetify.breakpoint.smAndDown) {
         navigation.push({ to: '/about', name: this.$t('about_title') })
         navigation.push({ to: '/license', name: this.$t('license_title') })

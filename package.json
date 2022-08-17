@@ -30,6 +30,7 @@
     "lunr": "^2.3.9",
     "nuxt": "^2.15.8",
     "vue-gtag": "1",
+    "vue2-editor": "^2.10.3",
     "vue2-filters": "^0.12.0",
     "vuex-persistedstate": "^4.1.0"
   },
