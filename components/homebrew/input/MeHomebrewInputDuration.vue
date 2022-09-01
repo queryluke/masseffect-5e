@@ -3,6 +3,7 @@
     <v-col cols="12" sm="5">
       <v-text-field
         v-model="length"
+        :disabled="unit === 'instant'"
         type="number"
         min="0"
         label="Length of Time"
@@ -20,9 +21,9 @@
 
 <script>
 export default {
-  name: 'MeHomebrewInputDurations',
+  name: 'MeHomebrewInputDuration',
   props: {
-    selectedDuration: {
+    duration: {
       type: Object,
       default: () => {
         return { length: 0, unit: 'instant' }

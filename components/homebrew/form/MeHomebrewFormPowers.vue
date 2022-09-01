@@ -1,83 +1,89 @@
 <template>
   <div>
-    <v-card-title>
-      Basic Details
-    </v-card-title>
-    <v-card-text>
-      <v-row>
-        <v-col cols="12" sm="6" md="3">
-          <v-select
-            v-model="type"
-            :items="powerTypeItems"
-            label="Type"
-          />
-        </v-col>
-        <v-col cols="12" sm="6" md="3">
-          <v-select
-            v-model="level"
-            :items="levelItems"
-            label="Level"
-            :disabled="type === 'combat'"
-          />
-        </v-col>
-        <v-col cols="12" sm="6" md="3">
-          <me-homebrew-input-classes-select :selected="classes" multiple @update="classes = $event" />
-        </v-col>
-        <v-col cols="12" sm="6" md="3">
-          <v-select
-            v-model="tags"
-            :items="tagItems"
-            label="Tags"
-            multiple
-            small-chips
-          />
-        </v-col>
-        <v-col cols="12">
-          <me-homebrew-input-description :content="html" @update="html = $event" />
-        </v-col>
-      </v-row>
-    </v-card-text>
-    <v-divider />
-    <v-card-title>
-      Mechanics
-    </v-card-title>
-    <v-expansion-panels accordion>
-      <v-expansion-panel>
-        <v-expansion-panel-header>
-          {{ $t(`ordinal_numbers[${higherLevels[0]}]`) }} level (base)
-        </v-expansion-panel-header>
-        <v-expansion-panel-content>
-          <me-homebrew-form-power-mechanics :mechanics="baseMechanics" is-base @update="updateMechanics(0, $event)" />
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-      <v-expansion-panel v-for="(mechanicLevel, index) in higherLevelOptions" :key="`higherLevel-${index}`">
-        <v-expansion-panel-header>
-          {{ $t(`ordinal_numbers[${mechanicLevel}]`) }} level (overrides)
-        </v-expansion-panel-header>
-        <v-expansion-panel-content>
-          <me-homebrew-form-power-mechanic-overrides :base-mechanics="baseMechanics" :override-mechanics="mechanics[index + 1]" @update="updateMechanics(index + 1, $event)" />
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-    </v-expansion-panels>
-    <v-divider />
-    <v-card-title>
-      Advancements
-    </v-card-title>
-    <v-expansion-panels accordion>
-      <v-expansion-panel v-for="(advancement, index) in advancements" :key="`advancement-${index}`">
-        <v-expansion-panel-header>
-          {{ advancement.title }}
-        </v-expansion-panel-header>
-        <v-expansion-panel-content>
-          <me-homebrew-form-power-advancement :advancement="advancement" :higher-levels="higherLevels" :base-mechanics="mechanics" @update="updateAdvancement(index, $event)" />
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-    </v-expansion-panels>
-    <div class="text-center">
-      <v-btn color="primary" @click="addAdvancement">
-        Add Advancement
-      </v-btn>
-    </div>
+    <v-tabs v-model="tab">
+      <v-tab>Information</v-tab>
+      <v-tab>At Higher Levels</v-tab>
+      <v-tab>Advancements</v-tab>
+    </v-tabs>
+    <v-tabs-items v-model="tab">
+      <!-- MAIN INFO -->
+      <v-tab-item>
+        <v-card-text>
+          <v-row>
+            <v-col cols="12">
+              <me-homebrew-input-legend id="info">
+                Basic Information
+              </me-homebrew-input-legend>
+            </v-col>
+            <v-col cols="12" sm="6" md="3">
+              <v-select
+                v-model="type"
+                :items="powerTypeItems"
+                label="Type"
+              />
+            </v-col>
+            <v-col cols="12" sm="6" md="3">
+              <v-select
+                v-model="level"
+                :items="levelItems"
+                label="Level"
+                :disabled="type === 'combat'"
+              />
+            </v-col>
+            <v-col cols="12" sm="6" md="3">
+              <me-homebrew-input-classes-select :selected="classes" multiple @update="classes = $event" />
+            </v-col>
+            <v-col cols="12" sm="6" md="3">
+              <v-select
+                v-model="tags"
+                :items="tagItems"
+                label="Tags"
+                multiple
+                small-chips
+              />
+            </v-col>
+            <v-col cols="12">
+              <me-homebrew-input-description :content="html" @update="html = $event" />
+            </v-col>
+            <v-col cols="12" />
+          </v-row>
+        </v-card-text>
+        <me-homebrew-form-power-mechanics :mechanics="baseMechanics" is-base @update="updateMechanics(0, $event)" />
+      </v-tab-item>
+
+      <!-- HIGHER LEVELS -->
+      <v-tab-item />
+    </v-tabs-items>
+    <v-speed-dial
+      v-if="tab === 0"
+      v-model="quickNav"
+      bottom
+      right
+      direction="top"
+      fixed
+    >
+      <template #activator>
+        <v-btn
+          v-model="quickNav"
+          color="blue darken-2"
+          dark
+          fab
+          small
+        >
+          <v-icon v-if="quickNav">
+            mdi-close
+          </v-icon>
+          <v-icon v-else>
+            mdi-menu-open
+          </v-icon>
+        </v-btn>
+      </template>
+      <template v-for="nav in navOptions">
+        <v-btn :key="`nav-option-${nav}`" small @click="$vuetify.goTo(`#${nav}`)">
+          {{ nav }}
+        </v-btn>
+      </template>
+    </v-speed-dial>
   </div>
 </template>
 
@@ -92,7 +98,9 @@ export default {
   },
   data () {
     return {
-      cachedItem: {},
+      tab: 0,
+      quickNav: true,
+      navOptions: ['uses', 'damage', 'dc', 'attack', 'conditions', 'range', 'duration', 'cast', 'info'],
       levelItemsUnfiltered: [
         { value: 0, text: 'Cantrip' },
         { value: 1, text: '1st' },

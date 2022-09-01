@@ -1,6 +1,8 @@
 <template>
-  <div class="grey--text text-darken-2 text-subtitle-1">
-    <slot />
+  <div class="font-weight-thin mx-n3">
+    <span style="font-size: 1.4em">
+      <slot />
+    </span>
     <v-divider />
   </div>
 </template>

@@ -2,9 +2,6 @@
   <div>
     <v-switch v-model="isAttack" label="Attack?" />
     <v-row v-if="isAttack" no-gutters>
-      <v-col cols="12">
-        <me-homebrew-input-legend>Type</me-homebrew-input-legend>
-      </v-col>
       <v-col cols="12" sm="6">
         <v-radio-group v-model="attackType" mandatory row hide-details label="Attack Type">
           <v-radio label="Melee" value="melee" />
@@ -17,8 +14,8 @@
           <v-radio label="Power" value="power" />
         </v-radio-group>
       </v-col>
-      <v-col cols="12" class="mt-5 mb-3">
-        <me-homebrew-input-legend>Attack Bonus</me-homebrew-input-legend>
+      <v-col cols="12">
+        &nbsp;
       </v-col>
       <v-col cols="12" sm="6">
         <v-checkbox v-model="proficient" label="Proficient?" />
@@ -28,7 +25,7 @@
       </v-col>
       <v-col cols="12">
         <v-divider />
-        <me-homebrew-input-bonus :bonus="bonus" label="Additional Bonus?" @update="bonus = $event" />
+        <me-homebrew-input-bonus :bonus="bonus" label="Additional Attack Bonus?" @update="bonus = $event" />
       </v-col>
     </v-row>
   </div>
