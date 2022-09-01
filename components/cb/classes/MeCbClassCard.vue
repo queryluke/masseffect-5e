@@ -1,7 +1,7 @@
 <template>
   <v-card flat outlined max-width="700px" class="mx-auto">
     <v-card-text class="px-1 py-1">
-      <div class="d-flex align-center justify-space-between">
+      <div class="d-flex align-center justify-space-between flex-wrap">
         <div class="d-flex">
           <v-avatar tile size="36">
             <v-img :src="require(`~/assets/images/classes/${klass.id}.svg`)" />

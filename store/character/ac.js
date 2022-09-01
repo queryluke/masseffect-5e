@@ -58,7 +58,10 @@ export const getters = {
       numHeavy += head.data.type === 'heavy' ? 1 : 0
     }
     const dexMax = numHeavy > 0 ? 0 : numMed > 0 ? 2 : 999
-    const appliedDex = Math.min(dexMax, dexMod)
+    let appliedDex = Math.min(dexMax, dexMod)
+    if (numHeavy > 0) {
+      appliedDex = 0
+    }
     const equippedAc = runningAc + appliedDex
 
     const bestAc = Math.max(equippedAc, naturalArmor)
