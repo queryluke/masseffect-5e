@@ -56,7 +56,7 @@
           x-small
           icon
           class="ml-1"
-          @click="showInfo = !showInfo"
+          @click.stop="showInfo = !showInfo"
         >
           <v-icon>
             {{ showInfo ? 'mdi-chevron-up' : 'mdi-chevron-down' }}

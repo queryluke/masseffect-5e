@@ -492,15 +492,37 @@ export const getters = {
         })
       }
       if (versatile) {
-        const { newDieType: versaDie, dieIncreaseOverflow: versaOverflow } = getDieIncrease(damage[0].dieType, 1)
-        damage.push({
-          ...damage[0],
-          dieType: versaDie,
-          bonus: {
-            type: 'flat',
-            value: damage[0].bonus?.value + versaOverflow
-          }
-        })
+        if (weapon.id === 'krogan-warhammer') {
+          damage.push({
+            ...damage[0],
+            dieCount: 1,
+            dieType: 12,
+            bonus: {
+              type: 'flat',
+              value: damage[0].bonus?.value
+            }
+          })
+        } else if (weapon.id === 'monomolecular-blade') {
+          damage.push({
+            ...damage[0],
+            dieCount: 2,
+            dieType: 6,
+            bonus: {
+              type: 'flat',
+              value: damage[0].bonus?.value
+            }
+          })
+        } else {
+          const { newDieType: versaDie, dieIncreaseOverflow: versaOverflow } = getDieIncrease(damage[0].dieType, 1)
+          damage.push({
+            ...damage[0],
+            dieType: versaDie,
+            bonus: {
+              type: 'flat',
+              value: damage[0].bonus?.value + versaOverflow
+            }
+          })
+        }
       }
 
       // HEAT
