@@ -1,66 +1,103 @@
 <template>
   <div>
     <v-row class="mt-2">
-      <v-col cols="12" sm="6">
+      <v-col cols="12" sm="4">
         <v-switch v-if="!alwaysOn" v-model="hasResource" :label="label" />
       </v-col>
-      <v-col cols="12" :sm="alwaysOn ? 12 : 6">
-        <v-select
-          v-if="hasResource"
-          v-model="displayType"
-          :items="displayTypeOptions"
-          label="Display Type"
-          :hint="displayTypeHint"
-          persistent-hint
-        />
+      <v-col cols="12" :sm="alwaysOn ? 12 : 8">
+        <v-row v-if="hasResource">
+          <v-col>
+            <v-select
+              v-model="displayType"
+              :items="displayTypeOptions"
+              label="Display Type"
+              :hint="displayTypeHint"
+              persistent-hint
+              filled
+              dense
+            />
+          </v-col>
+          <v-col>
+            <v-select
+              v-if="hasResource && ['counter', 'checkbox'].includes(displayType)"
+              v-model="reset"
+              :items="resetOptions"
+              label="Reset"
+              :hint="resetHint"
+              persistent-hint
+              filled
+              dense
+            />
+          </v-col>
+        </v-row>
       </v-col>
     </v-row>
-    <v-row v-if="hasResource && ['counter', 'checkbox'].includes(displayType)">
-      <v-col cols="12" sm="6">
-        <v-select
-          v-model="reset"
-          :items="resetOptions"
-          label="Reset"
-          :hint="resetHint"
-          persistent-hint
-        />
-      </v-col>
-      <v-col v-if="displayType === 'counter'" cols="12" sm="6">
-        <v-radio-group v-model="resetTo" row mandatory hide-details label="Reset To">
+    <div v-if="hasResource && ['counter'].includes(displayType)" class="d-flex align-center px-8 mt-8 mb-2">
+      <v-divider />
+      <div class="px-4 text-caption">
+        Display Options
+      </div>
+      <v-divider />
+    </div>
+    <!-- Counter Display Options -->
+    <v-row v-if="hasResource">
+      <v-col v-if="displayType === 'counter'" cols="12" sm="4">
+        <v-radio-group v-model="resetTo" column mandatory hide-details label="Reset To">
           <v-radio label="Minimum" value="min" />
           <v-radio label="Max" value="max" />
+          <template #prepend>
+            <v-tooltip bottom max-width="200">
+              <template #activator="{ on, attrs }">
+                <v-icon
+                  color="primary"
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  mdi-help-circle
+                </v-icon>
+              </template>
+              <span>
+                Choose Max when you want the number of resources available to reset to their maximum. For example,
+                Hex Shield has 50 hit points. When it resets, it should go to 50 hit points instead of 0.
+              </span>
+            </v-tooltip>
+          </template>
         </v-radio-group>
-        <p class="text-caption">
-          Choose Max when you want the number of resources available to reset to their maximum. For example,
-          Hex Shield has 50 hit points. When reset it should go to 50 hit points instead of 0.
-        </p>
       </v-col>
-      <v-col cols="12">
-        <v-card outlined class="pa-3">
-          <slot name="resourceMaxDescription" />
-          <me-homebrew-input-bonus :bonus="max" always-on @update="max = $event" />
-        </v-card>
-      </v-col>
-      <v-col v-if="displayType === 'counter'" cols="12">
+      <v-col v-if="displayType === 'counter'" cols="12" sm="4">
         <v-text-field
           v-model="increment"
           type="number"
           min="1"
           label="Increment"
           hint="When clicking the + or - button of the counter display, this will add/remove the increment amount"
+          dense
+          filled
           persistent-hint
         />
       </v-col>
-      <v-col cols="12">
+      <v-col cols="12" sm="4">
         <v-text-field
           v-model="resourceLabel"
           label="Custom Label Text"
           clearable
+          filled
+          dense
+          persistent-hint
+          hint="By default, will display '/ long rest' or ' / short rest' if you have the long or short selected as the reset. Otherwise, no label will be shown. You may customize the text here."
         />
-        <p class="text-caption">
-          By default, a resource will show " / long rest" or " / short rest" if you have the long or short selected as
-          the reset. Otherwise, no label will be shown. You may customize the text here.
-        </p>
+      </v-col>
+    </v-row>
+    <div v-if="hasResource" class="d-flex align-center px-8 mt-8 mb-2">
+      <v-divider />
+      <div class="px-4 text-caption">
+        Number of Uses
+      </div>
+      <v-divider />
+    </div>
+    <v-row v-if="hasResource">
+      <v-col cols="12">
+        <me-homebrew-input-bonus :bonus="max" always-on @update="max = $event" />
       </v-col>
     </v-row>
   </div>
@@ -172,7 +209,7 @@ export default {
       }
     },
     resetOptions () {
-      return this.castable ? [{ value: 'cast', text: 'On Cast', help: 'Resets when the power is cast' }, ...this.baseResetTypes] : this.baseResetTypes
+      return this.castable ? [{ value: 'cast', text: 'On Cast', help: 'Resets when the cast button is clicked' }, ...this.baseResetTypes] : this.baseResetTypes
     },
     resetHint () {
       return this.resetOptions.find(i => i.value === this.reset)?.help || ''

@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container style="max-width: 1200px">
     <div v-if="!isAuthenticated">
       <p>
         You must sign in to view, edit, and create homebrew

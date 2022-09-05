@@ -10,6 +10,10 @@
     :hint="hint"
     :persistent-hint="hint !== ''"
     :clearable="clearable"
+    filled
+    dense
+    :chips="multiple"
+    :small-chips="multiple"
   />
 </template>
 

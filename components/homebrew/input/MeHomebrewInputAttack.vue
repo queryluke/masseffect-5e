@@ -1,30 +1,26 @@
 <template>
   <div>
-    <v-switch v-model="isAttack" label="Attack?" />
-    <v-row v-if="isAttack" no-gutters>
-      <v-col cols="12" sm="6">
-        <v-radio-group v-model="attackType" mandatory row hide-details label="Attack Type">
-          <v-radio label="Melee" value="melee" />
-          <v-radio label="Ranged" value="ranged" />
-        </v-radio-group>
+    <v-row>
+      <v-col cols="12" md="2">
+        <v-switch v-model="isAttack" label="Attack?" />
       </v-col>
-      <v-col cols="12" sm="6">
-        <v-radio-group v-model="wpType" row mandatory hide-details label="Attack Source">
+      <v-col v-if="isAttack" cols="12" sm="4" md="3">
+        <v-radio-group v-model="wpType" mandatory hide-details label="Attack Source">
           <v-radio label="Weapon" value="weapon" />
           <v-radio label="Power" value="power" />
         </v-radio-group>
       </v-col>
-      <v-col cols="12">
-        &nbsp;
+      <v-col v-if="isAttack" cols="12" sm="4" md="3">
+        <v-radio-group v-model="attackType" mandatory hide-details label="Attack Type">
+          <v-radio label="Melee" value="melee" />
+          <v-radio label="Ranged" value="ranged" />
+        </v-radio-group>
       </v-col>
-      <v-col cols="12" sm="6">
+      <v-col v-if="isAttack" cols="12" sm="4">
         <v-checkbox v-model="proficient" label="Proficient?" />
-      </v-col>
-      <v-col cols="12" sm="6">
         <me-homebrew-input-ability :ability="mod" include-pc-mod label="Add Ability Mod to Attack Roll" @update="mod = $event" />
       </v-col>
-      <v-col cols="12">
-        <v-divider />
+      <v-col v-if="isAttack" cols="12">
         <me-homebrew-input-bonus :bonus="bonus" label="Additional Attack Bonus?" @update="bonus = $event" />
       </v-col>
     </v-row>

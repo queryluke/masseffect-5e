@@ -1,44 +1,46 @@
 <template>
   <div>
-    <v-tabs v-model="tab">
-      <v-tab>Information</v-tab>
-      <v-tab>At Higher Levels</v-tab>
+    <v-tabs v-model="tab" vertical>
+      <v-tab>Basic Info</v-tab>
+      <v-tab>Mechanics</v-tab>
+      <v-tab>Atk, DC, Dmg</v-tab>
+      <v-tab>Uses/Resource</v-tab>
+      <v-tab>Higher Levels</v-tab>
       <v-tab>Advancements</v-tab>
-    </v-tabs>
-    <v-tabs-items v-model="tab">
       <!-- MAIN INFO -->
       <v-tab-item>
         <v-card-text>
           <v-row>
-            <v-col cols="12">
-              <me-homebrew-input-legend id="info">
-                Basic Information
-              </me-homebrew-input-legend>
-            </v-col>
-            <v-col cols="12" sm="6" md="3">
+            <v-col cols="12" sm="6">
               <v-select
                 v-model="type"
                 :items="powerTypeItems"
+                filled
+                dense
                 label="Type"
               />
             </v-col>
-            <v-col cols="12" sm="6" md="3">
+            <v-col cols="12" sm="6">
               <v-select
                 v-model="level"
                 :items="levelItems"
                 label="Level"
+                filled
+                dense
                 :disabled="type === 'combat'"
               />
             </v-col>
-            <v-col cols="12" sm="6" md="3">
+            <v-col cols="12" sm="6">
               <me-homebrew-input-classes-select :selected="classes" multiple @update="classes = $event" />
             </v-col>
-            <v-col cols="12" sm="6" md="3">
+            <v-col cols="12" sm="6">
               <v-select
                 v-model="tags"
                 :items="tagItems"
                 label="Tags"
                 multiple
+                filled
+                dense
                 small-chips
               />
             </v-col>
@@ -48,42 +50,59 @@
             <v-col cols="12" />
           </v-row>
         </v-card-text>
-        <me-homebrew-form-power-mechanics :mechanics="baseMechanics" is-base @update="updateMechanics(0, $event)" />
+      </v-tab-item>
+
+      <!-- BASE MECHANICS -->
+      <v-tab-item>
+        <me-homebrew-form-power-base-mechanics :mechanics="baseMechanics" @update="updateMechanics(0, $event)" />
+      </v-tab-item>
+
+      <!-- ATTACK/DC/DAMAGE -->
+      <v-tab-item>
+        <me-homebrew-form-power-base-attack-dc-damage :mechanics="baseMechanics" @update="updateMechanics(0, $event)" />
+      </v-tab-item>
+
+      <!-- RESOURCES -->
+      <v-tab-item>
+        <v-alert type="info" :value="true" class="mt-4">
+          <p>
+            A "use" or "resource" can be one of two things. It can either be a number of uses per short or long rest (for combat powers).
+            Or it could be a usage counter indicating uses <em>while the power is active</em>. For example, when Biotic
+            Orbs is <em>active</em>, it summons 3 orbs, therefore has 3 uses.
+          </p>
+          <p>
+            You can use the other types of calculated bonuses like proficiency bonus, ability mods, level, etc to
+            customize the number of uses. However, this is rare for powers.
+          </p>
+        </v-alert>
+        <me-homebrew-input-resource
+          :resource="baseMechanics.resource"
+          castable
+          label="Has Uses?"
+          :excluded-display-types="['gear-consumable', 'hit-dice', 'omni-gel', 'barrier-ticks']"
+          @update="updateMechanics(0, {...baseMechanics, resource: $event })"
+        >
+          <template #resourceMaxDescription>
+            <div>
+              # of Uses or Resource Amount
+            </div>
+            <div class="text-caption">
+              Most powers (especially combat powers) do not require anything beyond the a simple flat number of uses per short/long rest.
+              However, it is possible to set up resources of other types of powers. For example, the hex shield and biotic sphere have hit points
+              which you can define as a "resource" with a custom label "Hit Points". You <em>can</em> use the other types of calculated bonuses
+              like proficiency bonus, ability mods, level, etc to customize the # of uses. However, this is rare for powers.
+            </div>
+          </template>
+        </me-homebrew-input-resource>
       </v-tab-item>
 
       <!-- HIGHER LEVELS -->
+      <v-tab-item>
+        <me-homebrew-form-power-at-higher-levels :level="level" :mechanics="mechanics" @update="mechanics = $event" />
+      </v-tab-item>
+      <!-- Advancements -->
       <v-tab-item />
-    </v-tabs-items>
-    <v-speed-dial
-      v-if="tab === 0"
-      v-model="quickNav"
-      bottom
-      right
-      direction="top"
-      fixed
-    >
-      <template #activator>
-        <v-btn
-          v-model="quickNav"
-          color="blue darken-2"
-          dark
-          fab
-          small
-        >
-          <v-icon v-if="quickNav">
-            mdi-close
-          </v-icon>
-          <v-icon v-else>
-            mdi-menu-open
-          </v-icon>
-        </v-btn>
-      </template>
-      <template v-for="nav in navOptions">
-        <v-btn :key="`nav-option-${nav}`" small @click="$vuetify.goTo(`#${nav}`)">
-          {{ nav }}
-        </v-btn>
-      </template>
-    </v-speed-dial>
+    </v-tabs>
   </div>
 </template>
 
@@ -145,14 +164,6 @@ export default {
         return true
       })
     },
-    higherLevels () {
-      if (this.level === 0) {
-        return [1, 5, 11, 17]
-      } else {
-        const max = this.type === 'tech' ? 7 : 6
-        return [...Array(max - this.level).keys()].map(i => i + this.level)
-      }
-    },
     type: {
       get () {
         return this.item.type
@@ -210,9 +221,6 @@ export default {
     },
     baseMechanics () {
       return this.mechanics[0] || {}
-    },
-    higherLevelOptions () {
-      return this.higherLevels.slice(1)
     }
   },
   watch: {

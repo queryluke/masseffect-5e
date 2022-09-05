@@ -4,6 +4,10 @@
     :items="options"
     :label="label"
     :multiple="multiple"
+    filled
+    dense
+    :chips="multiple"
+    :small-chips="multiple"
   />
 </template>
 

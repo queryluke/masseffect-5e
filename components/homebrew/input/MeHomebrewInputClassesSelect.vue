@@ -9,6 +9,10 @@
     :label="label"
     :hint="hint"
     :persistent-hint="hint !== ''"
+    filled
+    dense
+    :chips="multiple"
+    :small-chips="multiple"
     :clearable="clearable"
   />
 </template>

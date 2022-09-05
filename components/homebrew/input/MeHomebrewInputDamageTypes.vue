@@ -7,6 +7,10 @@
     :hint="hint"
     :persistent-hint="hint !== ''"
     :clearable="clearable"
+    :chips="multiple"
+    :small-chips="multiple"
+    filled
+    dense
   />
 </template>
 

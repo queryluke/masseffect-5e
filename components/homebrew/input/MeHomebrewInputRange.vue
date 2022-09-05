@@ -1,40 +1,52 @@
 <template>
-  <v-row>
-    <v-col cols="12" :sm="ignoreLong ? 6 : 3">
-      <v-select
-        v-model="short"
-        :items="ranges"
-        :item-text="imperial ? 'imperialText' : 'metricText'"
-        label="Range"
-      />
-    </v-col>
-    <v-col v-if="!ignoreLong" cols="12" sm="3">
-      <v-select
-        v-model="long"
-        :items="ranges"
-        :item-text="imperial ? 'imperialText' : 'metricText'"
-        label="Long Range"
-      />
-    </v-col>
-    <v-col cols="12" :sm="ignoreLong ? 6 : 3">
-      <v-switch v-model="aoe" label="AoE?" />
-    </v-col>
-    <v-col v-if="aoe" cols="12" sm="6">
-      <v-select
-        v-model="aoeSize"
-        :items="aoeRanges"
-        :item-text="imperial ? 'imperialText' : 'metricText'"
-        label="AoE Size/Distance"
-      />
-    </v-col>
-    <v-col v-if="aoe" cols="12" sm="6">
-      <v-select
-        v-model="aoeShape"
-        :items="aoeTypes"
-        label="AoE Shape"
-      />
-    </v-col>
-  </v-row>
+  <div>
+    <v-row>
+      <v-col cols="12" sm="6">
+        <v-select
+          v-model="short"
+          :items="ranges"
+          :item-text="imperial ? 'imperialText' : 'metricText'"
+          :label="ignoreLong ? 'Range' : 'Short Range'"
+          filled
+          dense
+        />
+      </v-col>
+      <v-col v-if="!ignoreLong" cols="12" sm="6">
+        <v-select
+          v-model="long"
+          :items="ranges"
+          :item-text="imperial ? 'imperialText' : 'metricText'"
+          label="Long Range"
+          filled
+          dense
+        />
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col cols="12" sm="2">
+        <v-switch v-model="aoe" label="AoE?" />
+      </v-col>
+      <v-col v-if="aoe" cols="12" sm="5">
+        <v-select
+          v-model="aoeSize"
+          :items="aoeRanges"
+          :item-text="imperial ? 'imperialText' : 'metricText'"
+          filled
+          dense
+          label="AoE Size/Distance"
+        />
+      </v-col>
+      <v-col v-if="aoe" cols="12" sm="5">
+        <v-select
+          v-model="aoeShape"
+          :items="aoeTypes"
+          filled
+          dense
+          label="AoE Shape"
+        />
+      </v-col>
+    </v-row>
+  </div>
 </template>
 
 <script>

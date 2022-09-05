@@ -6,6 +6,8 @@
         :disabled="unit === 'instant'"
         type="number"
         min="0"
+        filled
+        dense
         label="Length of Time"
       />
     </v-col>
@@ -13,6 +15,8 @@
       <v-select
         v-model="unit"
         :items="units"
+        filled
+        dense
         label="Unit"
       />
     </v-col>

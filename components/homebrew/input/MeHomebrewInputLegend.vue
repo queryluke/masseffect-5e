@@ -1,9 +1,9 @@
 <template>
-  <div class="font-weight-thin mx-n3">
+  <div class="font-weight-light mt-4 mb-n4">
     <span style="font-size: 1.4em">
       <slot />
     </span>
-    <v-divider />
+    <me-hr size="1" />
   </div>
 </template>
 

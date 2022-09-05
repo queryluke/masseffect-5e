@@ -5,6 +5,10 @@
         v-model="selectedCastingTimes"
         :items="castingTimes"
         label="Casting Time(s)"
+        filled
+        chips
+        small-chips
+        dense
         multiple
       />
     </v-col>
@@ -13,6 +17,8 @@
         v-if="reactionIndex > -1"
         v-model="reactionQualifier"
         label="Reaction Qualifier"
+        filled
+        dense
         hint="e.g. When you take damage"
       />
     </v-col>
