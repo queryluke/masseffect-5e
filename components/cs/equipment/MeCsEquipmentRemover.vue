@@ -427,7 +427,8 @@ export default {
       }
       this.loading = true
       if (this.manageKey === 'toSell') {
-        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.credits', value: this.gainedCredits })
+        const currentCredits = this.$store.getters['character/credits']
+        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.credits', value: this.gainedCredits + currentCredits })
       }
       if (this.manageKey === 'toGel') {
         this.$store.dispatch('character/equipment/ADD_OMNI_GEL', this.gainedGel)
