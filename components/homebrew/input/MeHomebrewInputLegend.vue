@@ -1,14 +1,27 @@
 <template>
-  <div class="font-weight-light mt-4 mb-n4">
-    <span style="font-size: 1.4em">
+  <div class="font-weight-light mt-4">
+    <span :style="style">
       <slot />
     </span>
-    <me-hr size="1" />
+    <me-hr :size="small ? 1 : 4" class="mt-n1" />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'MeHomebrewInputLegend'
+  name: 'MeHomebrewInputLegend',
+  props: {
+    small: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    style () {
+      return {
+        'font-size': this.small ? '1em' : '1.4em'
+      }
+    }
+  }
 }
 </script>

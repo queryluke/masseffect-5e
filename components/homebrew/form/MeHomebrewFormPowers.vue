@@ -66,13 +66,17 @@
       <v-tab-item>
         <v-alert type="info" :value="true" class="mt-4">
           <p>
-            A "use" or "resource" can be one of two things. It can either be a number of uses per short or long rest (for combat powers).
-            Or it could be a usage counter indicating uses <em>while the power is active</em>. For example, when Biotic
-            Orbs is <em>active</em>, it summons 3 orbs, therefore has 3 uses.
+            <small>
+              A "use" or "resource" can be one of two things. Either be a number of uses per short or long rest (for combat powers)
+              or it could be a usage counter indicating uses <em>while the power is active</em>. For example, when Biotic
+              Orbs is <em>active</em>, it summons 3 orbs, therefore has 3 uses.
+            </small>
           </p>
           <p>
-            You can use the other types of calculated bonuses like proficiency bonus, ability mods, level, etc to
-            customize the number of uses. However, this is rare for powers.
+            <small>
+              You can use other types of calculated bonuses like proficiency bonus, ability mods, level, etc to
+              customize the number of uses. However, this is rare for powers.
+            </small>
           </p>
         </v-alert>
         <me-homebrew-input-resource
@@ -101,7 +105,9 @@
         <me-homebrew-form-power-at-higher-levels :level="level" :mechanics="mechanics" @update="mechanics = $event" />
       </v-tab-item>
       <!-- Advancements -->
-      <v-tab-item />
+      <v-tab-item>
+        <me-homebrew-form-power-advancements :advancements="advancements" :level="level" :mechanics="mechanics" @update="advancements = $event" />
+      </v-tab-item>
     </v-tabs>
   </div>
 </template>
@@ -224,18 +230,11 @@ export default {
     }
   },
   watch: {
-    level () {
-      const higherLevelsLength = this.higherLevels.length
-      let newMechanics = (this.mechanics || []).slice()
-      const mechanicsLength = newMechanics.length
-      if (higherLevelsLength > mechanicsLength) {
-        for (let i = 0; i < higherLevelsLength - mechanicsLength; i++) {
-          newMechanics.push({})
-        }
-      } else if (mechanicsLength > higherLevelsLength) {
-        newMechanics = newMechanics.slice(0, higherLevelsLength)
-      }
-      this.mechanics = newMechanics
+    level (newVal) {
+      this.updateHigherLevelMechanics(newVal)
+    },
+    type () {
+      this.updateHigherLevelMechanics(this.level)
     }
   },
   methods: {
@@ -259,6 +258,42 @@ export default {
       const newAdvs = this.advancements.slice()
       newAdvs.splice(index, 1, value)
       this.advancements = newAdvs
+    },
+    updateHigherLevelMechanics (newLevel) {
+      // FIXME: this should be inclusive of the first level
+      let higherLevelsLength = 0
+      if (newLevel === 0) {
+        higherLevelsLength = 3
+      } else {
+        const max = this.type === 'tech' ? 6 : 5
+        higherLevelsLength = max - newLevel
+      }
+      // update the powers mechanics
+      let newMechanics = (this.mechanics || []).slice()
+      const mechanicsLength = newMechanics.length
+      if (higherLevelsLength > mechanicsLength) {
+        for (let i = 0; i < higherLevelsLength - mechanicsLength; i++) {
+          newMechanics.push({})
+        }
+      } else if (mechanicsLength > higherLevelsLength) {
+        newMechanics = newMechanics.slice(0, higherLevelsLength)
+      }
+      console.log(newMechanics)
+      this.mechanics = newMechanics
+
+      // update the advancement mechanics
+      const newAdvancements = (this.advancements || []).slice()
+      const totalLevels = higherLevelsLength + 1
+      for (const [index, adv] of newAdvancements.entries) {
+        let newAdvMechanics = (adv.mechanics || []).slice()
+        if (totalLevels < newAdvancements.length) {
+          newAdvMechanics = newAdvMechanics.slice(0, totalLevels)
+          adv.mechanics = newAdvMechanics
+          newAdvancements.splice(index, 1, adv)
+        }
+      }
+      console.log(newAdvancements)
+      this.advancements = newAdvancements
     }
   }
 }

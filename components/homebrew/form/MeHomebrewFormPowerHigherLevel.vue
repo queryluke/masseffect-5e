@@ -14,28 +14,28 @@
         hide-details
       />
     </v-col>
-    <v-col v-if="overrides.includes('damage')" cols="12">
-      <me-homebrew-input-sub-legend>
+    <v-col v-if="overrides.includes('damage')" cols="12" class="px-3">
+      <me-homebrew-input-legend small>
         Damage
-      </me-homebrew-input-sub-legend>
+      </me-homebrew-input-legend>
       <me-homebrew-input-damages :damages="damages" @update="damages = $event" />
     </v-col>
     <v-col v-if="overrides.includes('range')" cols="12">
-      <me-homebrew-input-sub-legend>
+      <me-homebrew-input-legend small>
         Range
-      </me-homebrew-input-sub-legend>
+      </me-homebrew-input-legend>
       <me-homebrew-input-range :range="range" ignore-long @update="range = $event" />
     </v-col>
     <v-col v-if="overrides.includes('duration')" cols="12">
-      <me-homebrew-input-sub-legend>
+      <me-homebrew-input-legend small>
         Duration
-      </me-homebrew-input-sub-legend>
+      </me-homebrew-input-legend>
       <me-homebrew-input-duration :duration="duration" @update="duration = $event" />
     </v-col>
     <v-col v-if="overrides.includes('resource')" cols="12">
-      <me-homebrew-input-sub-legend>
+      <me-homebrew-input-legend small>
         Uses
-      </me-homebrew-input-sub-legend>
+      </me-homebrew-input-legend>
       <me-homebrew-input-resource
         :resource="resource"
         castable

@@ -25,10 +25,10 @@ export default {
   computed: {
     higherLevels () {
       if (this.level === 0) {
-        return [1, 5, 11, 17]
+        return [5, 11, 17]
       } else {
         const max = this.type === 'tech' ? 7 : 6
-        return [...Array(max - this.level).keys()].map(i => i + this.level)
+        return [...Array(max - (this.level + 1)).keys()].map(i => i + this.level + 1)
       }
     }
   },

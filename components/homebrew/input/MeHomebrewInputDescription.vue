@@ -12,7 +12,7 @@
     </div>
     <div>
       <client-only>
-        <vue-editor v-model="html" :editor-toolbar="customToolbar" />
+        <vue-editor v-model="html" :editor-toolbar="customToolbar" @blur="$emit('blur')" />
       </client-only>
     </div>
     <me-standard-dialog :shown="showHelp" @close="showHelp = false">
