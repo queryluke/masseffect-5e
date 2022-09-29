@@ -133,7 +133,7 @@ export default {
             ...i,
             smData: {
               equipped: this.equippedInShoulderMount(i.uuid),
-              equippable: (this.currentShoulderMounts + 1 <= this.smMechanic.max && otherSmWeaponSlotTotal + i.slots <= this.smMechanic.slots)
+              equippable: ((this.currentShoulderMounts.length + 1 <= this.smMechanic.max) && (otherSmWeaponSlotTotal + i.slots <= this.smMechanic.slots))
             }
           }
         })

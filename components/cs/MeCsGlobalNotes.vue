@@ -48,7 +48,7 @@ export default {
       if (note.value === 'Sneak Attack') {
         const infil = this.$store.getters['character/klasses/selectedKlasses'].find(i => i.id === 'infiltrator')
         const levels = infil.levels
-        const numDice = Math.floor(levels / 2) || 1
+        const numDice = Math.floor((levels + 1) / 2) || 1
         const shadow = infil.subclass === 'shadow' ? ' (d8 w/ melee)' : ''
         const sniper = infil.subclass === 'sniper' && levels >= 17 ? ` (${numDice + 3}d6 w/ sniper rifles)` : ''
         return `Sneak Attack: ${numDice}d6${shadow}${sniper}`
