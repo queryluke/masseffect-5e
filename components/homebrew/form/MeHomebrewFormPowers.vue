@@ -7,6 +7,7 @@
       <v-tab>Uses/Resource</v-tab>
       <v-tab>Higher Levels</v-tab>
       <v-tab>Advancements</v-tab>
+      <v-tab>Preview</v-tab>
       <!-- MAIN INFO -->
       <v-tab-item>
         <v-card-text>
@@ -102,11 +103,14 @@
 
       <!-- HIGHER LEVELS -->
       <v-tab-item>
-        <me-homebrew-form-power-at-higher-levels :level="level" :mechanics="mechanics" @update="mechanics = $event" />
+        <me-homebrew-form-power-at-higher-levels :level="level" :mechanics="mechanics" :type="type" @update="mechanics = $event" />
       </v-tab-item>
       <!-- Advancements -->
       <v-tab-item>
-        <me-homebrew-form-power-advancements :advancements="advancements" :level="level" :mechanics="mechanics" @update="advancements = $event" />
+        <me-homebrew-form-power-advancements :advancements="advancements" :level="level" :mechanics="mechanics" :type="type" @update="advancements = $event" />
+      </v-tab-item>
+      <v-tab-item>
+        <me-homebrew-preview-power :item="item" />
       </v-tab-item>
     </v-tabs>
   </div>
@@ -180,7 +184,7 @@ export default {
           newObject.level = 0
         }
         if (value === 'tech' && this.level === 0) {
-          this.level = 1
+          newObject.level = 1
         }
         this.$emit('update', newObject)
       }
@@ -232,9 +236,6 @@ export default {
   watch: {
     level (newVal) {
       this.updateHigherLevelMechanics(newVal)
-    },
-    type () {
-      this.updateHigherLevelMechanics(this.level)
     }
   },
   methods: {
@@ -260,39 +261,35 @@ export default {
       this.advancements = newAdvs
     },
     updateHigherLevelMechanics (newLevel) {
-      // FIXME: this should be inclusive of the first level
-      let higherLevelsLength = 0
+      let levelsLength = 0
       if (newLevel === 0) {
-        higherLevelsLength = 3
+        levelsLength = 4
       } else {
-        const max = this.type === 'tech' ? 6 : 5
-        higherLevelsLength = max - newLevel
+        const max = this.type === 'tech' ? 7 : 6
+        levelsLength = max - newLevel
       }
       // update the powers mechanics
       let newMechanics = (this.mechanics || []).slice()
       const mechanicsLength = newMechanics.length
-      if (higherLevelsLength > mechanicsLength) {
-        for (let i = 0; i < higherLevelsLength - mechanicsLength; i++) {
+      if (levelsLength > mechanicsLength) {
+        for (let i = 0; i < levelsLength - mechanicsLength; i++) {
           newMechanics.push({})
         }
-      } else if (mechanicsLength > higherLevelsLength) {
-        newMechanics = newMechanics.slice(0, higherLevelsLength)
+      } else if (mechanicsLength > levelsLength) {
+        newMechanics = newMechanics.slice(0, levelsLength)
       }
-      console.log(newMechanics)
       this.mechanics = newMechanics
 
       // update the advancement mechanics
       const newAdvancements = (this.advancements || []).slice()
-      const totalLevels = higherLevelsLength + 1
-      for (const [index, adv] of newAdvancements.entries) {
+      for (const [index, adv] of newAdvancements.entries()) {
         let newAdvMechanics = (adv.mechanics || []).slice()
-        if (totalLevels < newAdvancements.length) {
-          newAdvMechanics = newAdvMechanics.slice(0, totalLevels)
+        if (newAdvancements.length > levelsLength) {
+          newAdvMechanics = newAdvMechanics.slice(0, levelsLength)
           adv.mechanics = newAdvMechanics
           newAdvancements.splice(index, 1, adv)
         }
       }
-      console.log(newAdvancements)
       this.advancements = newAdvancements
     }
   }

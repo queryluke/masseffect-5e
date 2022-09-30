@@ -17,9 +17,9 @@
     </div>
     <me-standard-dialog :shown="showHelp" @close="showHelp = false">
       <!-- DISTANCE -->
-      <me-tpg s="h4">
+      <me-homebrew-input-legend>
         Distance
-      </me-tpg>
+      </me-homebrew-input-legend>
       <p>
         Use the following tool to generate the code for distances
       </p>
@@ -83,9 +83,9 @@
         </v-col>
       </v-row>
       <!-- CONDITIONS -->
-      <me-tpg s="h4" class="mt-5">
+      <me-homebrew-input-legend>
         Conditions
-      </me-tpg>
+      </me-homebrew-input-legend>
       <p>Use the following tool to generate the code for condition tooltips</p>
       <v-row>
         <v-col cols="12" sm="6">
@@ -129,6 +129,7 @@
 <script>
 import { debounce } from 'lodash'
 import { Metrics } from '~/mixins/metrics'
+
 export default {
   name: 'MeHomebrewInputDescription',
   mixins: [Metrics],
@@ -168,10 +169,10 @@ export default {
   computed: {
     html: {
       get () {
-        return this.content
+        return this.meTagsToHtmlCode(this.content)
       },
       set (value) {
-        this.cachedHtml = value
+        this.cachedHtml = this.htmlCodeToMeTags(value)
         this.debouncedUpdate()
       }
     },
@@ -233,7 +234,7 @@ export default {
   created () {
     this.debouncedUpdate = debounce(() => {
       this.update()
-    }, 1500)
+    }, 500)
   },
   methods: {
     copyDistance () {
@@ -254,6 +255,20 @@ export default {
     },
     update () {
       this.$emit('update', this.cachedHtml)
+    },
+    meTagsToHtmlCode (text) {
+      if (!text) {
+        return text
+      }
+      const regexp = /<(me-(?:condition|distance).*?) \/>/g
+      return text.replaceAll(regexp, '&lt;$1&nbsp;/&gt;')
+    },
+    htmlCodeToMeTags (text) {
+      if (!text) {
+        return text
+      }
+      const regexp = /&lt;(me-(?:condition|distance).*?)(?:&nbsp;| )\/&gt;/g
+      return text.replaceAll(regexp, '<$1 />')
     }
   }
 }

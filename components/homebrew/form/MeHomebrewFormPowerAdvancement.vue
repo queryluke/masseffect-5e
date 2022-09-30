@@ -1,17 +1,25 @@
 <template>
   <v-card-text>
-    <v-text-field
-      v-model="cachedName"
-      label="Advancement Name"
-      filled
-      dense
-      @blur="updateName"
-    />
-    <me-homebrew-input-description :content="cachedText" @update="cachedText = $event" @blur="updateText" />
+    <v-row no-gutters>
+      <v-col cols="10">
+        <v-text-field
+          v-model="cachedName"
+          label="Advancement Name"
+          filled
+          dense
+          @blur="updateName"
+        />
+      </v-col>
+      <v-col cols="2" class="d-flex justify-end">
+        <v-btn small color="error" outlined @click="$emit('delete')">
+          <v-icon>mdi-delete</v-icon>
+        </v-btn>
+      </v-col>
+    </v-row>
+    <me-homebrew-input-description :content="text" @update="text = $event" />
     <me-homebrew-input-sub-legend class="mt-6">
       Mechanic Changes
     </me-homebrew-input-sub-legend>
-    {{ levels }}
     <v-expansion-panels accordion>
       <v-expansion-panel v-for="(mechanicLevel, index) in levels" :key="`advOverrides-${index}`">
         <v-expansion-panel-header>
@@ -39,6 +47,10 @@ export default {
     },
     level: {
       type: Number,
+      required: true
+    },
+    type: {
+      type: String,
       required: true
     },
     mechanics: {
@@ -92,7 +104,7 @@ export default {
     active (newVal) {
       if (newVal) {
         this.cachedName = this.name
-        this.cacheText = this.text
+        this.cachedText = this.text
       } else {
         this.name = this.cachedName
         this.text = this.cachedText
@@ -101,7 +113,7 @@ export default {
   },
   created () {
     this.cachedName = this.name
-    this.cacheText = this.text
+    this.cachedText = this.text
   },
   methods: {
     updateName () {

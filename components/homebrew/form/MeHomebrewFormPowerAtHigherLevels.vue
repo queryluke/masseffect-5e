@@ -17,6 +17,10 @@ export default {
       type: Number,
       default: 0
     },
+    type: {
+      type: String,
+      required: true
+    },
     mechanics: {
       type: Array,
       default: () => []
