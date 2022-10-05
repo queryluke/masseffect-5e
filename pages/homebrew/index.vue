@@ -13,13 +13,14 @@
         <v-col>
           <me-page-title />
         </v-col>
-        <v-col>
-          <v-btn large @click="createNewDialog = true">
+        <v-col class="text-right">
+          <v-btn large color="primary" @click="createNewDialog = true">
             Create
           </v-btn>
         </v-col>
       </v-row>
       <me-homebrew-create-dialog :shown="createNewDialog" @close="createNewDialog = false" />
+      <me-homebrew-table />
     </div>
   </v-container>
 </template>

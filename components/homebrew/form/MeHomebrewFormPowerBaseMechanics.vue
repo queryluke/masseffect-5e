@@ -21,7 +21,7 @@
         <me-homebrew-input-duration :duration="duration" @update="duration = $event" />
       </v-col>
       <v-col cols="12" sm="4">
-        <v-checkbox v-if="duration.unit !== 'instant'" v-model="concentration" label="Concentration?" />
+        <v-checkbox v-if="duration && duration.unit !== 'instant'" v-model="concentration" label="Concentration?" />
       </v-col>
 
       <!-- RANGE -->
@@ -59,7 +59,9 @@ export default {
   props: {
     mechanics: {
       type: Object,
-      default: () => {}
+      default: () => {
+        return {}
+      }
     }
   },
   data () {

@@ -15,7 +15,15 @@
       <v-card-text>
         <v-select v-model="type" :items="types" label="Type" :error-messages="typeErrorMessages" @change="loadBasedOnOptions" />
         <v-text-field v-model="title" label="Title" :error-messages="titleErrorMessages" />
-        <v-autocomplete v-if="type" v-model="basedOn" label="Based On" :items="modelsOfType" />
+        <v-autocomplete
+          v-if="type"
+          v-model="basedOn"
+          label="Based On"
+          :items="modelsOfType"
+          item-text="name"
+          item-value="id"
+          return-object
+        />
       </v-card-text>
       <v-card-actions>
         <v-btn
@@ -39,8 +47,10 @@
 </template>
 
 <script>
+import { homebrewDefaults } from '~/mixins/homebrewDefaults'
 export default {
   name: 'MeHomebrewCreateDialog',
+  mixins: [homebrewDefaults],
   props: {
     shown: {
       type: Boolean,
@@ -77,13 +87,7 @@ export default {
         return
       }
       this.loadingBasedOn = true
-      const options = await this.$store.dispatch('FETCH_DATA', this.type)
-      this.modelsOfType = options.map((i) => {
-        return {
-          value: i.id,
-          text: i.name
-        }
-      })
+      this.modelsOfType = await this.$store.dispatch('FETCH_DATA', this.type)
     },
     async submit () {
       this.typeErrorMessages = []
@@ -113,9 +117,14 @@ export default {
         this.loading = false
         return
       }
-      const data = {
-        name: this.title
+      let data = {}
+      if (this.basedOn) {
+        data = Object.assign({}, this.basedOn)
+        delete data.id
+      } else {
+        data = this.homebrewDefaults[this.type]
       }
+      data.name = this.title
       const newHomebrewItem = {
         title: this.title,
         titleId,
