@@ -40,6 +40,21 @@ export const onCreateHomebrew = /* GraphQL */ `
       voteCount
       publicationStatus
       createdAt
+      sortHackUsage
+      sortHackVotes
+      sortHackTitle
+      sortHackCreatedAt
+      profile {
+        id
+        username
+        profileImg
+        imperial
+        darkMode
+        maxCharacters
+        createdOn
+        updatedOn
+        owner
+      }
       updatedAt
     }
   }
@@ -57,6 +72,21 @@ export const onUpdateHomebrew = /* GraphQL */ `
       voteCount
       publicationStatus
       createdAt
+      sortHackUsage
+      sortHackVotes
+      sortHackTitle
+      sortHackCreatedAt
+      profile {
+        id
+        username
+        profileImg
+        imperial
+        darkMode
+        maxCharacters
+        createdOn
+        updatedOn
+        owner
+      }
       updatedAt
     }
   }
@@ -74,6 +104,21 @@ export const onDeleteHomebrew = /* GraphQL */ `
       voteCount
       publicationStatus
       createdAt
+      sortHackUsage
+      sortHackVotes
+      sortHackTitle
+      sortHackCreatedAt
+      profile {
+        id
+        username
+        profileImg
+        imperial
+        darkMode
+        maxCharacters
+        createdOn
+        updatedOn
+        owner
+      }
       updatedAt
     }
   }
@@ -95,6 +140,21 @@ export const onCreateHomebrewUse = /* GraphQL */ `
         voteCount
         publicationStatus
         createdAt
+        sortHackUsage
+        sortHackVotes
+        sortHackTitle
+        sortHackCreatedAt
+        profile {
+          id
+          username
+          profileImg
+          imperial
+          darkMode
+          maxCharacters
+          createdOn
+          updatedOn
+          owner
+        }
         updatedAt
       }
       createdAt
@@ -119,6 +179,21 @@ export const onUpdateHomebrewUse = /* GraphQL */ `
         voteCount
         publicationStatus
         createdAt
+        sortHackUsage
+        sortHackVotes
+        sortHackTitle
+        sortHackCreatedAt
+        profile {
+          id
+          username
+          profileImg
+          imperial
+          darkMode
+          maxCharacters
+          createdOn
+          updatedOn
+          owner
+        }
         updatedAt
       }
       createdAt
@@ -143,6 +218,21 @@ export const onDeleteHomebrewUse = /* GraphQL */ `
         voteCount
         publicationStatus
         createdAt
+        sortHackUsage
+        sortHackVotes
+        sortHackTitle
+        sortHackCreatedAt
+        profile {
+          id
+          username
+          profileImg
+          imperial
+          darkMode
+          maxCharacters
+          createdOn
+          updatedOn
+          owner
+        }
         updatedAt
       }
       createdAt

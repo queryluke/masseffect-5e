@@ -15,7 +15,7 @@
     </div>
     <div v-else>
       <v-row>
-        <v-col cols="12">
+        <v-col cols="8">
           <div class="d-flex mb-5">
             <me-tpg s="h3">
               {{ title }}
@@ -23,10 +23,12 @@
             <v-chip class="ml-2" :color="typeColor">
               {{ typeName }}
             </v-chip>
-            <v-chip class="ml-2 text-capitalize" :color="statusColor" outlined>
-              Publication Status: {{ item.publicationStatus }}
-            </v-chip>
           </div>
+        </v-col>
+        <v-col class="text-right" cols="4">
+          <v-btn large to="/homebrew/my-homebrew" exact>
+            My Homebrew
+          </v-btn>
         </v-col>
       </v-row>
       <v-card flat outlined>
@@ -76,14 +78,6 @@ export default {
       return {
         powers: 'purple'
       }[this.type]
-    },
-    statusColor () {
-      return {
-        private: 'error',
-        campaign: 'warning',
-        develop: 'info',
-        public: 'success'
-      }[this.item.publicationStatus]
     },
     form () {
       return `me-homebrew-form-${this.type}`

@@ -14,8 +14,8 @@
           <me-page-title />
         </v-col>
         <v-col class="text-right">
-          <v-btn large to="/homebrew/my-homebrew" exact>
-            My Homebrew
+          <v-btn large to="/homebrew" exact>
+            Community Homebrew
           </v-btn>
           <v-btn large color="primary" @click="createNewDialog = true">
             Create
@@ -23,7 +23,7 @@
         </v-col>
       </v-row>
       <me-homebrew-create-dialog :shown="createNewDialog" @close="createNewDialog = false" />
-      <me-homebrew-table />
+      <me-homebrew-table mine />
     </div>
   </v-container>
 </template>
@@ -42,7 +42,7 @@ export default {
   },
   created () {
     this.$store.dispatch('SET_META', {
-      title: 'Homebrew',
+      title: 'My Homebrew',
       description: 'Community created homebrew'
     })
   }

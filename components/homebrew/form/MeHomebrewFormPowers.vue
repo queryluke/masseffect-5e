@@ -110,7 +110,7 @@
         <me-homebrew-form-power-advancements :advancements="advancements" :level="level" :mechanics="mechanics" :type="type" @update="advancements = $event" />
       </v-tab-item>
       <v-tab-item>
-        <me-homebrew-preview-power :item="item" />
+        <me-homebrew-preview-powers :item="item" />
       </v-tab-item>
     </v-tabs>
   </div>

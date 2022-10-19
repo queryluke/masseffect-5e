@@ -254,9 +254,7 @@ export default {
       }
     },
     navigation () {
-      const navigation = this.isAuthenticated
-        ? this.nav.slice()
-        : this.nav.filter(i => i.to !== '/homebrew')
+      const navigation = this.nav.slice()
       if (this.$vuetify.breakpoint.smAndDown) {
         navigation.push({ to: '/about', name: this.$t('about_title') })
         navigation.push({ to: '/license', name: this.$t('license_title') })

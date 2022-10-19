@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: 'MeHomebrewPreviewPower',
+  name: 'MeHomebrewPreviewPowers',
   props: {
     item: {
       type: Object,

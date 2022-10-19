@@ -14,7 +14,7 @@
       </v-card-title>
       <v-card-text>
         <v-select v-model="type" :items="types" label="Type" :error-messages="typeErrorMessages" @change="loadBasedOnOptions" />
-        <v-text-field v-model="title" label="Title" :error-messages="titleErrorMessages" />
+        <v-text-field v-model="title" label="Title" :error-messages="titleErrorMessages" persistent-hint messages="You cannot change the title after the homebrew has been created." />
         <v-autocomplete
           v-if="type"
           v-model="basedOn"
@@ -23,6 +23,8 @@
           item-text="name"
           item-value="id"
           return-object
+          persistent-hint
+          messages="You cannot base your homebrew on other people's homebrew."
         />
       </v-card-text>
       <v-card-actions>
@@ -78,7 +80,7 @@ export default {
       return this.$vuetify.breakpoint.xsOnly ? 'dialog-bottom-transition' : 'dialog-transition'
     },
     myId () {
-      return this.$store.getters['auth/sub']
+      return this.$store.getters['auth/username']
     }
   },
   methods: {
@@ -131,7 +133,11 @@ export default {
         owner: this.myId,
         model: this.type,
         data: JSON.stringify(data),
-        publicationStatus: 'private'
+        publicationStatus: 'private',
+        sortHackUsage: 1,
+        sortHackVotes: 2,
+        sortHackTitle: 3,
+        sortHackCreatedAt: 4
       }
       const { id } = await this.$store.dispatch('api/MUTATE', { mutation: 'createHomebrew', input: newHomebrewItem })
       await this.$router.push({

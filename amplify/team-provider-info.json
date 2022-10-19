@@ -20,6 +20,12 @@
           "googleClientId": "508866812450-4n7bfin1a459e5754q81bs3jjv1op91s.apps.googleusercontent.com"
         },
         "userPoolGroups": {}
+      },
+      "api": {
+        "masseffect5e": {}
+      },
+      "storage": {
+        "me5estorage": {}
       }
     }
   },
