@@ -33,7 +33,7 @@
       </v-row>
       <v-card flat outlined>
         <component :is="form" :item="itemData" @update="itemData = $event" />
-        <me-homebrew-editor-actions :saving="saving" @save="updateData" />
+        <me-homebrew-editor-actions :saving="saving" :publication-status="item.publicationStatus" @save="updateData" @updateStatus="updateStatus($event)" />
       </v-card>
     </div>
   </v-container>
@@ -111,6 +111,17 @@ export default {
         data: JSON.stringify(this.itemData)
       }
       await this.$store.dispatch('api/MUTATE', { mutation: 'updateHomebrew', input })
+      this.saving = false
+    },
+    async updateStatus (status) {
+      this.saving = true
+      const input = {
+        id: this.item.id,
+        publicationStatus: status
+      }
+      const newItem = await this.$store.dispatch('api/MUTATE', { mutation: 'updateHomebrew', input })
+      newItem.data = JSON.parse(newItem.data)
+      this.item = newItem
       this.saving = false
     }
   }

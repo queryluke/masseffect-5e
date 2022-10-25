@@ -5,6 +5,7 @@
     :loading="loading"
     :options.sync="options"
     :expanded.sync="expanded"
+    show-expand
     class="mt-5"
     @click:row="(item, slot) => slot.expand(!slot.isExpanded)"
     @update:options="getItems"
@@ -13,6 +14,41 @@
       <v-row class="px-3">
         <v-col cols="8">
           <v-text-field v-model="search" hide-details label="Search" />
+        </v-col>
+        <v-col cols="4">
+          <v-select
+            v-model="modelType"
+            hide-details
+            label="Filter by type"
+            :items="modelTypes"
+            :menu-props="{offsetY: true}"
+            clearable
+          >
+            <template #selection="{ item: selection }">
+              <v-list-item-action class="my-0 py-0">
+                <v-icon :color="typeMap[selection].color">
+                  {{ typeMap[selection].icon }}
+                </v-icon>
+              </v-list-item-action>
+              <v-list-item-content class="my-0 py-0">
+                <v-list-item-title class="text-capitalize">
+                  {{ selection }}
+                </v-list-item-title>
+              </v-list-item-content>
+            </template>
+            <template #item="{ item: selectItem }">
+              <v-list-item-action>
+                <v-icon :color="typeMap[selectItem].color">
+                  {{ typeMap[selectItem].icon }}
+                </v-icon>
+              </v-list-item-action>
+              <v-list-item-content>
+                <v-list-item-title class="text-capitalize">
+                  {{ selectItem }}
+                </v-list-item-title>
+              </v-list-item-content>
+            </template>
+          </v-select>
         </v-col>
       </v-row>
     </template>
@@ -32,17 +68,23 @@
         </div>
       </div>
     </template>
+    <template #[`item.publicationStatus`]="{ item }">
+      <v-chip x-small :color="statusColors[item.publicationStatus]" outlined>
+        <span class="text-uppercase">
+          {{ item.publicationStatus }}
+        </span>
+      </v-chip>
+    </template>
     <template #[`item.actions`]="{ item }">
-      <v-btn v-if="mine" icon :to="`/homebrew/edit/?id=${item.id}`" exact small>
-        <v-icon small>
-          mdi-pencil
-        </v-icon>
-      </v-btn>
-      <v-btn icon small>
-        <v-icon small>
-          mdi-eye
-        </v-icon>
-      </v-btn>
+      <div class="d-flex justify-space-around">
+        <me-homebrew-vote-btn :homebrew="item" @voted="updateItemCounts(item, 1, 'voteCount')" @voteRemoved="updateItemCounts(item, -1, 'voteCount')" />
+        <me-homebrew-add-btn :homebrew="item" @added="updateItemCounts(item, 1, 'usageCount')" @removed="updateItemCounts(item, -1, 'usageCount')" />
+        <v-btn v-if="mine" icon :to="`/homebrew/edit/?id=${item.id}`" exact small>
+          <v-icon small>
+            mdi-pencil
+          </v-icon>
+        </v-btn>
+      </div>
     </template>
     <template #expanded-item="{ headers, item }">
       <td :colspan="headers.length">
@@ -64,12 +106,18 @@ export default {
   data () {
     return {
       search: null,
+      modelTypes: [
+        'powers'
+      ],
+      modelType: null,
+      myHbOnly: false,
       headers: [
-        { text: '', value: 'type', sortable: false },
+        { text: '', value: 'data-table-expand' },
+        { text: 'Type', value: 'type', sortable: false },
         { text: 'Name', value: 'title', align: 'start' },
         { text: 'Status', value: 'publicationStatus', sortable: false },
-        { text: 'Votes', value: 'voteCount' },
-        { text: 'Adds', value: 'usageCount' },
+        { text: 'Votes', value: 'voteCount', align: 'center' },
+        { text: 'Adds', value: 'usageCount', align: 'center' },
         { text: '', value: 'actions', sortable: false }
       ],
       typeMap: {
@@ -90,7 +138,13 @@ export default {
         sortBy: [],
         sortDesc: []
       },
-      loading: true
+      loading: true,
+      statusColors: {
+        private: 'error',
+        campaign: 'warning',
+        development: 'info',
+        published: 'success'
+      }
     }
   },
   computed: {
@@ -107,6 +161,15 @@ export default {
     }
   },
   methods: {
+    updateItemCounts (item, increment, key) {
+      const newItems = this.items.slice()
+      const index = newItems.findIndex(i => i.id === item.id)
+      if (index > -1) {
+        const newItem = { ...item, [key]: Math.max(0, (item[key] + increment)) }
+        newItems.splice(index, 1, newItem)
+      }
+      this.items = newItems
+    },
     async getItems () {
       this.loading = true
       this.expanded = []

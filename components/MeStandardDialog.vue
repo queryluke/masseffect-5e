@@ -25,6 +25,8 @@
         >
           {{ $t('buttons.close') }}
         </v-btn>
+        <v-spacer />
+        <slot name="addActions" />
       </v-card-actions>
     </v-card>
   </v-dialog>

@@ -61,6 +61,8 @@ export const createProfile = /* GraphQL */ `
       imperial
       darkMode
       maxCharacters
+      contactMethod
+      contactValue
       createdOn
       updatedOn
       owner
@@ -79,6 +81,8 @@ export const updateProfile = /* GraphQL */ `
       imperial
       darkMode
       maxCharacters
+      contactMethod
+      contactValue
       createdOn
       updatedOn
       owner
@@ -97,6 +101,8 @@ export const deleteProfile = /* GraphQL */ `
       imperial
       darkMode
       maxCharacters
+      contactMethod
+      contactValue
       createdOn
       updatedOn
       owner
@@ -172,6 +178,8 @@ export const createHomebrew = /* GraphQL */ `
         imperial
         darkMode
         maxCharacters
+        contactMethod
+        contactValue
         createdOn
         updatedOn
         owner
@@ -207,6 +215,8 @@ export const updateHomebrew = /* GraphQL */ `
         imperial
         darkMode
         maxCharacters
+        contactMethod
+        contactValue
         createdOn
         updatedOn
         owner
@@ -242,6 +252,8 @@ export const deleteHomebrew = /* GraphQL */ `
         imperial
         darkMode
         maxCharacters
+        contactMethod
+        contactValue
         createdOn
         updatedOn
         owner
@@ -281,6 +293,8 @@ export const createHomebrewUse = /* GraphQL */ `
           imperial
           darkMode
           maxCharacters
+          contactMethod
+          contactValue
           createdOn
           updatedOn
           owner
@@ -323,6 +337,8 @@ export const updateHomebrewUse = /* GraphQL */ `
           imperial
           darkMode
           maxCharacters
+          contactMethod
+          contactValue
           createdOn
           updatedOn
           owner
@@ -365,6 +381,8 @@ export const deleteHomebrewUse = /* GraphQL */ `
           imperial
           darkMode
           maxCharacters
+          contactMethod
+          contactValue
           createdOn
           updatedOn
           owner

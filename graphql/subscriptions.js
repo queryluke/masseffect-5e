@@ -27,102 +27,6 @@ export const onDeleteBookmarkByUserId = /* GraphQL */ `
     }
   }
 `;
-export const onCreateHomebrew = /* GraphQL */ `
-  subscription OnCreateHomebrew($owner: String) {
-    onCreateHomebrew(owner: $owner) {
-      id
-      owner
-      title
-      titleId
-      data
-      model
-      usageCount
-      voteCount
-      publicationStatus
-      createdAt
-      sortHackUsage
-      sortHackVotes
-      sortHackTitle
-      sortHackCreatedAt
-      profile {
-        id
-        username
-        profileImg
-        imperial
-        darkMode
-        maxCharacters
-        createdOn
-        updatedOn
-        owner
-      }
-      updatedAt
-    }
-  }
-`;
-export const onUpdateHomebrew = /* GraphQL */ `
-  subscription OnUpdateHomebrew($owner: String) {
-    onUpdateHomebrew(owner: $owner) {
-      id
-      owner
-      title
-      titleId
-      data
-      model
-      usageCount
-      voteCount
-      publicationStatus
-      createdAt
-      sortHackUsage
-      sortHackVotes
-      sortHackTitle
-      sortHackCreatedAt
-      profile {
-        id
-        username
-        profileImg
-        imperial
-        darkMode
-        maxCharacters
-        createdOn
-        updatedOn
-        owner
-      }
-      updatedAt
-    }
-  }
-`;
-export const onDeleteHomebrew = /* GraphQL */ `
-  subscription OnDeleteHomebrew($owner: String) {
-    onDeleteHomebrew(owner: $owner) {
-      id
-      owner
-      title
-      titleId
-      data
-      model
-      usageCount
-      voteCount
-      publicationStatus
-      createdAt
-      sortHackUsage
-      sortHackVotes
-      sortHackTitle
-      sortHackCreatedAt
-      profile {
-        id
-        username
-        profileImg
-        imperial
-        darkMode
-        maxCharacters
-        createdOn
-        updatedOn
-        owner
-      }
-      updatedAt
-    }
-  }
-`;
 export const onCreateHomebrewUse = /* GraphQL */ `
   subscription OnCreateHomebrewUse($owner: String) {
     onCreateHomebrewUse(owner: $owner) {
@@ -151,6 +55,8 @@ export const onCreateHomebrewUse = /* GraphQL */ `
           imperial
           darkMode
           maxCharacters
+          contactMethod
+          contactValue
           createdOn
           updatedOn
           owner
@@ -190,6 +96,8 @@ export const onUpdateHomebrewUse = /* GraphQL */ `
           imperial
           darkMode
           maxCharacters
+          contactMethod
+          contactValue
           createdOn
           updatedOn
           owner
@@ -229,6 +137,8 @@ export const onDeleteHomebrewUse = /* GraphQL */ `
           imperial
           darkMode
           maxCharacters
+          contactMethod
+          contactValue
           createdOn
           updatedOn
           owner

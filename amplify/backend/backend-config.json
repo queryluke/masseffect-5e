@@ -65,6 +65,9 @@
                 "apiKeyExpirationDate": "2023-03-07T12:31:13.189Z",
                 "description": "admin_utils"
               }
+            },
+            {
+              "authenticationType": "AWS_IAM"
             }
           ]
         }
@@ -76,6 +79,32 @@
       "service": "S3",
       "providerPlugin": "awscloudformation",
       "dependsOn": []
+    }
+  },
+  "function": {
+    "me5eHomebrewTallies": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "api",
+          "resourceName": "masseffect5e",
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ]
+        },
+        {
+          "category": "api",
+          "resourceName": "masseffect5e",
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
+          ]
+        }
+      ]
     }
   }
 }
