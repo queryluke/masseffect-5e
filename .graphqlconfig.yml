@@ -1,6 +1,6 @@
 projects:
   masseffect5e:
-    schemaPath: './graphql/schema.json'
+    schemaPath: ./graphql/schema.json
     includes:
       - ./graphql/**/*.js
     excludes:
@@ -9,7 +9,8 @@ projects:
       amplify:
         codeGenTarget: javascript
         generatedFileName: ''
-        docsFilePath: graphql
+        docsFilePath: ./graphql
+        maxDepth: 4
 extensions:
   amplify:
     version: 3

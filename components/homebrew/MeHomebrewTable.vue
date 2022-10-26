@@ -138,7 +138,7 @@ export default {
         sortBy: [],
         sortDesc: []
       },
-      loading: true,
+      loading: false,
       statusColors: {
         private: 'error',
         campaign: 'warning',
@@ -171,6 +171,9 @@ export default {
       this.items = newItems
     },
     async getItems () {
+      if (this.loading) {
+        return
+      }
       this.loading = true
       this.expanded = []
       const sortBy = this.options.sortBy[0]

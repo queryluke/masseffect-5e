@@ -3,6 +3,7 @@ export const state = () => ({
   pageTitle: null,
   metaSubtitle: null,
   rules: [],
+  homebrew: [],
   pageMetaDescription: null,
   drawer: null,
   jumpNav: null,
@@ -41,14 +42,17 @@ export const getters = {
   },
   currentLocale: state => state.currentLocale,
   isLocaleSet: state => typeof state.data[state.currentLocale] !== 'undefined',
-  // TODO: interpolate non-translated data
-  getData: (state, getters) => (endpoint) => {
+  baseData: (state, getters) => (endpoint) => {
     if (!getters.isLocaleSet) {
       return []
     }
     const locale = 'en'
-    const models = state.data[locale][endpoint] || state.data[locale].edges?.filter(i => i.type === endpoint)
-    return typeof models === 'undefined' ? [] : models
+    const baseModels = state.data[locale][endpoint] || state.data[locale].edges?.filter(i => i.type === endpoint)
+    return baseModels || []
+  },
+  getData: (state, getters) => (endpoint) => {
+    const homebrewModels = state.homebrew.filter(i => i.homebrew.model === endpoint)
+    return getters.baseData(endpoint).concat(homebrewModels)
   },
   getItem: (state, getters) => (endpoint, id) => {
     const data = getters.getData(endpoint)
@@ -92,6 +96,9 @@ export const mutations = {
   },
   closeVersionSnackbar (state) {
     state.versionSnackbar = false
+  },
+  setHomebrew (state, value) {
+    state.homebrew = value
   }
 }
 
@@ -113,7 +120,7 @@ export const actions = {
       commit('initLocale')
     }
     const locale = getters.currentLocale
-    let data = getters.getData(endpoint)
+    let data = getters.baseData(endpoint)
     // TODO: we will eventually need to support grabbing homebrew during this call
     if (data.length === 0) {
       try {
@@ -124,5 +131,38 @@ export const actions = {
       commit('setData', { locale, endpoint, data })
     }
     return data
+  },
+  async FETCH_HOMEBREW_DATA ({ rootGetters, dispatch, commit }) {
+    if (!rootGetters['auth/isAuthenticated']) {
+      return
+    }
+    const myId = rootGetters['auth/username']
+    let nextToken = null
+    const query = 'homebrewUseByUser'
+    const homebrew = []
+    do {
+      const variables = {
+        owner: myId,
+        limit: 100,
+        nextToken
+      }
+      const { items, nextToken: newNextToken } = await dispatch('api/QUERY', { query, variables }, { root: true })
+      homebrew.push(...items)
+      nextToken = newNextToken
+    } while (nextToken)
+    const models = homebrew.map((i) => {
+      const data = JSON.parse(i.homebrew.data)
+      console.log(i.homebrew)
+      return {
+        ...data,
+        id: i.homebrew.id,
+        homebrew: {
+          createdBy: i.homebrew.profile.username || 'anonymous',
+          model: i.homebrew.model
+        }
+      }
+    })
+    console.log(models)
+    commit('setHomebrew', models)
   }
 }

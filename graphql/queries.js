@@ -651,6 +651,19 @@ export const listHomebrewUses = /* GraphQL */ `
           sortHackVotes
           sortHackTitle
           sortHackCreatedAt
+          profile {
+            id
+            username
+            profileImg
+            imperial
+            darkMode
+            maxCharacters
+            contactMethod
+            contactValue
+            createdOn
+            updatedOn
+            owner
+          }
           updatedAt
         }
         createdAt
@@ -694,6 +707,19 @@ export const homebrewUseByUser = /* GraphQL */ `
           sortHackVotes
           sortHackTitle
           sortHackCreatedAt
+          profile {
+            id
+            username
+            profileImg
+            imperial
+            darkMode
+            maxCharacters
+            contactMethod
+            contactValue
+            createdOn
+            updatedOn
+            owner
+          }
           updatedAt
         }
         createdAt
