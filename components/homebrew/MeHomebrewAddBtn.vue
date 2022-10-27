@@ -2,7 +2,6 @@
   <v-tooltip bottom>
     <template #activator="{ on, attrs }" open-delay="1000">
       <v-btn
-        v-if="!mine"
         small
         icon
         :color="isAdded ? 'error' : 'primary'"
@@ -68,11 +67,13 @@ export default {
     },
     async addItem () {
       const response = await this.$store.dispatch('api/MUTATE', { mutation: 'createHomebrewUse', input: { homebrewId: this.homebrewId, owner: this.myId } })
+      await this.$store.dispatch('FETCH_HOMEBREW_DATA')
       this.isAdded = response.id
       this.$emit('added')
     },
     async removeItem () {
       await this.$store.dispatch('api/MUTATE', { mutation: 'deleteHomebrewUse', input: { id: this.isAdded } })
+      await this.$store.dispatch('FETCH_HOMEBREW_DATA')
       this.isAdded = false
       this.$emit('removed')
     }

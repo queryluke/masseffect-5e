@@ -3,7 +3,7 @@ export const state = () => ({
   pageTitle: null,
   metaSubtitle: null,
   rules: [],
-  homebrew: [],
+  rawHomebrew: [],
   pageMetaDescription: null,
   drawer: null,
   jumpNav: null,
@@ -50,8 +50,22 @@ export const getters = {
     const baseModels = state.data[locale][endpoint] || state.data[locale].edges?.filter(i => i.type === endpoint)
     return baseModels || []
   },
+  rawHomebrew: state => state.rawHomebrew,
+  homebrew: (state, getters) => {
+    return getters.rawHomebrew.map((i) => {
+      const data = JSON.parse(i.data)
+      return {
+        ...data,
+        id: i.id,
+        homebrew: {
+          createdBy: i.profile.username || 'anonymous',
+          model: i.model
+        }
+      }
+    })
+  },
   getData: (state, getters) => (endpoint) => {
-    const homebrewModels = state.homebrew.filter(i => i.homebrew.model === endpoint)
+    const homebrewModels = getters.homebrew.filter(i => i.homebrew.model === endpoint)
     return getters.baseData(endpoint).concat(homebrewModels)
   },
   getItem: (state, getters) => (endpoint, id) => {
@@ -97,8 +111,8 @@ export const mutations = {
   closeVersionSnackbar (state) {
     state.versionSnackbar = false
   },
-  setHomebrew (state, value) {
-    state.homebrew = value
+  setRawHomebrew (state, value) {
+    state.rawHomebrew = value
   }
 }
 
@@ -147,22 +161,9 @@ export const actions = {
         nextToken
       }
       const { items, nextToken: newNextToken } = await dispatch('api/QUERY', { query, variables }, { root: true })
-      homebrew.push(...items)
+      homebrew.push(...items.map(i => i.homebrew))
       nextToken = newNextToken
     } while (nextToken)
-    const models = homebrew.map((i) => {
-      const data = JSON.parse(i.homebrew.data)
-      console.log(i.homebrew)
-      return {
-        ...data,
-        id: i.homebrew.id,
-        homebrew: {
-          createdBy: i.homebrew.profile.username || 'anonymous',
-          model: i.homebrew.model
-        }
-      }
-    })
-    console.log(models)
-    commit('setHomebrew', models)
+    commit('setRawHomebrew', homebrew)
   }
 }

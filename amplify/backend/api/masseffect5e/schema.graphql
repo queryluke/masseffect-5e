@@ -50,8 +50,8 @@ type Homebrew
   titleId: String! @index(name: "byTitleId", queryField: "homebrewByTitleId")
   data: AWSJSON!
   model: String! @index(name: "byModel", queryField: "homebrewByModelByStatus")
-  usageCount: Int @default(value: "0") @auth(rules: [{ allow: private, operations: [read] }, { allow: private, provider: iam, operations: [update, read] }])
-  voteCount: Int @default(value: "0") @auth(rules: [{ allow: private, operations: [read] }, { allow: private, provider: iam, operations: [update, read] }])
+  usageCount: Int @default(value: "0") @auth(rules: [{ allow: private, operations: [read, create] }, { allow: private, provider: iam, operations: [update, read] }])
+  voteCount: Int @default(value: "0") @auth(rules: [{ allow: private, operations: [read, create] }, { allow: private, provider: iam, operations: [update, read] }])
   publicationStatus: String!
   createdAt: AWSDateTime!
   sortHackUsage: Int @default(value: "1") @index(name: "homebrewSortedByUsage", queryField: "homebrewSortedByUsage", sortKeyFields: ["usageCount"])

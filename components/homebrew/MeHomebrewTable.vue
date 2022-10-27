@@ -11,11 +11,11 @@
     @update:options="getItems"
   >
     <template #top>
-      <v-row class="px-3">
-        <v-col cols="8">
+      <v-row class="px-3 mb-2">
+        <v-col cols="7">
           <v-text-field v-model="search" hide-details label="Search" />
         </v-col>
-        <v-col cols="4">
+        <v-col cols="4" offset="1">
           <v-select
             v-model="modelType"
             hide-details
@@ -76,14 +76,20 @@
       </v-chip>
     </template>
     <template #[`item.actions`]="{ item }">
-      <div class="d-flex justify-space-around">
-        <me-homebrew-vote-btn :homebrew="item" @voted="updateItemCounts(item, 1, 'voteCount')" @voteRemoved="updateItemCounts(item, -1, 'voteCount')" />
-        <me-homebrew-add-btn :homebrew="item" @added="updateItemCounts(item, 1, 'usageCount')" @removed="updateItemCounts(item, -1, 'usageCount')" />
-        <v-btn v-if="mine" icon :to="`/homebrew/edit/?id=${item.id}`" exact small>
-          <v-icon small>
-            mdi-pencil
-          </v-icon>
-        </v-btn>
+      <div class="d-flex justify-end">
+        <div class="mx-3">
+          <me-homebrew-vote-btn :homebrew="item" @voted="updateItemCounts(item, 1, 'voteCount')" @voteRemoved="updateItemCounts(item, -1, 'voteCount')" />
+        </div>
+        <div class="mx-3">
+          <me-homebrew-add-btn :homebrew="item" @added="updateItemCounts(item, 1, 'usageCount')" @removed="updateItemCounts(item, -1, 'usageCount')" />
+        </div>
+        <div class="mx-3">
+          <v-btn v-if="mine" icon :to="`/homebrew/edit/?id=${item.id}`" exact small>
+            <v-icon small>
+              mdi-pencil
+            </v-icon>
+          </v-btn>
+        </div>
       </div>
     </template>
     <template #expanded-item="{ headers, item }">
@@ -99,6 +105,10 @@ export default {
   name: 'MeHomebrewTable',
   props: {
     mine: {
+      type: Boolean,
+      default: false
+    },
+    collection: {
       type: Boolean,
       default: false
     }
@@ -144,7 +154,8 @@ export default {
         campaign: 'warning',
         development: 'info',
         published: 'success'
-      }
+      },
+      myCollection: false
     }
   },
   computed: {
@@ -176,62 +187,75 @@ export default {
       }
       this.loading = true
       this.expanded = []
-      const sortBy = this.options.sortBy[0]
-      let sortDesc = this.options.sortDesc[0]
-      const variables = {}
-      let query = ''
-      switch (sortBy) {
-        case 'usageCount':
-          query = 'homebrewSortedByUsage'
-          variables.sortHackUsage = 1
-          break
-        case 'voteCount':
-          query = 'homebrewSortedByVotes'
-          variables.sortHackVotes = 2
-          break
-        case 'title':
-          query = 'homebrewSortedByTitle'
-          variables.sortHackTitle = 3
-          sortDesc = !!sortDesc
-          break
-        default:
-          query = 'homebrewSortedByCreatedAt'
-          variables.sortHackCreatedAt = 4
-          break
-      }
-      variables.sortDirection = sortDesc ? 'ASC' : 'DESC'
-      const filters = { and: {} }
-      if (this.mine) {
-        filters.and = {
-          owner: {
-            eq: this.myId
-          }
+      if (this.collection) {
+        await this.$store.dispatch('FETCH_HOMEBREW_DATA')
+        let items = this.$store.getters.rawHomebrew.slice()
+        const search = this.search && this.search !== '' ? this.search : null
+        if (search) {
+          items = items.filter(i => i.title.contains(search))
         }
+        if (this.model) {
+          items = items.filter(i => i.model === this.model)
+        }
+        this.items = items
       } else {
-        filters.and = {
-          publicationStatus: {
-            ne: 'private'
+        const sortBy = this.options.sortBy[0]
+        let sortDesc = this.options.sortDesc[0]
+        const variables = {}
+        let query = ''
+        switch (sortBy) {
+          case 'usageCount':
+            query = 'homebrewSortedByUsage'
+            variables.sortHackUsage = 1
+            break
+          case 'voteCount':
+            query = 'homebrewSortedByVotes'
+            variables.sortHackVotes = 2
+            break
+          case 'title':
+            query = 'homebrewSortedByTitle'
+            variables.sortHackTitle = 3
+            sortDesc = !!sortDesc
+            break
+          default:
+            query = 'homebrewSortedByCreatedAt'
+            variables.sortHackCreatedAt = 4
+            break
+        }
+        variables.sortDirection = sortDesc ? 'ASC' : 'DESC'
+        const filters = { and: {} }
+        if (this.mine) {
+          filters.and = {
+            owner: {
+              eq: this.myId
+            }
+          }
+        } else {
+          filters.and = {
+            publicationStatus: {
+              ne: 'private'
+            }
           }
         }
-      }
-      if (this.model) {
-        filters.and = {
-          model: {
-            eq: this.model
+        if (this.model) {
+          filters.and = {
+            model: {
+              eq: this.model
+            }
           }
         }
-      }
-      const search = this.search && this.search !== '' ? this.search : null
-      if (search) {
-        filters.and = {
-          title: {
-            contains: this.search
+        const search = this.search && this.search !== '' ? this.search : null
+        if (search) {
+          filters.and = {
+            title: {
+              contains: this.search
+            }
           }
         }
+        variables.filter = filters
+        const response = await this.$store.dispatch('api/QUERY', { query, variables })
+        this.items = response?.items || []
       }
-      variables.filter = filters
-      const response = await this.$store.dispatch('api/QUERY', { query, variables })
-      this.items = response?.items || []
       this.loading = false
     }
   }

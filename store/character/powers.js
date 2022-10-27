@@ -242,6 +242,9 @@ export const getters = {
     }
     for (const p of getters.selectedPowers) {
       const power = list.find(i => i.id === p.id)
+      if (!power) {
+        continue
+      }
       let baseMechanics = power.mechanics[0]
       baseMechanics = p.merge ? merge(cloneDeep(baseMechanics), cloneDeep(p.merge)) : baseMechanics
       const mod = p.mod || getters.klassPowercastingAbilities[p.klass] || defaultPcAbility[power.type]
@@ -265,7 +268,7 @@ export const getters = {
         level: power.level,
         model: 'power',
         icon: `/images/powers/${power.type}.svg`,
-        effect: power.tags.filter(i => i !== 'damage'),
+        effect: (power.tags || []).filter(i => i !== 'damage'),
         source: p.source || p.klass,
         advancement: p.advancement
           // advancement selections used to be objects
