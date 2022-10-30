@@ -133,6 +133,7 @@ export const getters = {
       default:
         b = 0
     }
+    console.log(b)
     if (bonus.multiplier) {
       b = b * bonus.multiplier
     }

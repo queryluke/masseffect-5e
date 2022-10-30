@@ -40,6 +40,7 @@
           :clearable="['level', 'progressive'].includes(type)"
           @update="classStringValue = $event"
         />
+        <v-switch v-if="['hp', 'shields', 'barrierTicks'].includes(type)" v-model="hpValue" :label="hpValue ? 'Current' : 'Max'" />
       </v-col>
     </v-row>
 
@@ -120,6 +121,7 @@
         </div>
       </v-col>
     </v-row>
+
     <!-- ADVANCED OPTIONS -->
     <div v-if="hasBonus" class="d-flex my-3 align-center">
       <v-divider class="ml-8" />
@@ -207,14 +209,19 @@ export default {
       defaultBonus: { type: 'flat', value: 1, multiplier: 1, min: 1, round: 'down', limit: null },
       bonusTypes: [
         { value: 'flat', text: 'Flat', help: 'A flat numeric value, e.g. +1, +5, or +10', defaultValue: 1, label: 'Amount' },
-        { value: 'mod', text: 'Ability Mod', help: 'One of +STR, +DEX, +CON, +INT, +WIS, +CHA', defaultValue: 'str', label: 'Ability Mod' },
-        { value: 'modComparison', text: 'Ability Mod Comparison', help: 'Equals the higher of the selected abilities', defaultValue: [], label: 'Ability Mods' },
-        { value: 'proficiency', text: 'Proficiency Bonus', help: 'Equals the character\'s proficiency bonus', defaultValue: null },
-        { value: 'level', text: 'Level', help: 'Equals the character\'s total levels, or total levels of an indicated class', defaultValue: null },
-        { value: 'hp', text: 'Hit Points', help: 'Equals the character\'s hit points', defaultValue: null },
-        { value: 'progressive', text: 'Progressive', help: 'Manual set the amount at specific levels', defaultValue: { 1: 1 } },
-        { value: 'powercastingMod', text: 'Powercasting Mod', help: 'Equals the powercasting modifier of the selected class', defaultValue: 'adept' },
-        { value: 'multi', text: 'Multiple', help: 'The summation of multiple values', defaultValue: [{ type: 'flat', value: 1, multiplier: 1, min: 1, round: 'down', limit: null }] }
+        { value: 'mod', text: 'Ability Mod', help: 'A value equal to the characters STR, DEX, CON, INT, WIS, or CHA', defaultValue: 'str', label: 'Ability Mod' },
+        { value: 'modComparison', text: 'Ability Mod Comparison', help: 'Look at two ability score mods from a character and take the higher of the two', defaultValue: [], label: 'Ability Mods' },
+        { value: 'powercastingMod', text: 'Powercasting Mod', help: 'Equal to the powercasting modifier of the selected class', defaultValue: 'adept' },
+        { value: 'proficiency', text: 'Proficiency Bonus', help: 'Equal to the character\'s proficiency bonus', defaultValue: null },
+        { value: 'level', text: 'Level', help: 'Equal to the character\'s total levels, or total levels of an indicated class', defaultValue: null },
+        { value: 'hp', text: 'Hit Points', help: 'Equal to character\'s current or maximum hit points', defaultValue: 'max' },
+        { value: 'shields', text: 'Shields', help: 'Equal to the character\'s current or maximum shield points', defaultValue: 'max' },
+        { value: 'barrierTicks', text: 'Barrier Ticks', help: 'Equal to the character\'s current or maximum barrier ticks', defaultValue: 'max' },
+        { value: 'barrierDieCount', text: 'Barrier Dice Count', help: 'Equal to the character\'s default barrier dice count', defaultValue: null },
+        { value: 'barrierDieType', text: 'Barrier Dice Type', help: 'Equal to the character\'s default barrier dice type (e.g. d8, d10, etc)', defaultValue: null },
+        { value: 'progressive', text: 'Progressive', help: 'Manually set a flat numeric amount at specific levels', defaultValue: { 1: 1 } },
+        { value: 'multi', text: 'Multiple', help: 'The summation of multiple bonuses', defaultValue: [{ type: 'flat', value: 1, multiplier: 1, min: 1, round: 'down', limit: null }] }
+        // { value: 'resource', text: 'Resource', help: 'Equal to the amount remaining in a resource pool, such as tech armor hit points', defaultValue: null, label: 'Resource' }
       ],
       pvLevels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
       anotherPvLevel: null
@@ -287,6 +294,15 @@ export default {
       },
       set (value) {
         this.$emit('update', { ...this.bonus, value })
+      }
+    },
+    hpValue: {
+      get () {
+        return this.bonus?.value !== 'max'
+      },
+      set (value) {
+        const trueValue = value ? 'current' : 'max'
+        this.$emit('update', { ...this.bonus, value: trueValue })
       }
     },
     modValue: {

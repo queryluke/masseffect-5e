@@ -11,7 +11,7 @@
           </v-icon>
         </v-btn>
       </div>
-      <me-homebrew-input-damage :damage="damage" @update="updateDamage(index, $event)" />
+      <me-homebrew-input-damage :damage="damage" :addable="index > 0" :allow-custom-die-type="allowCustomDieType" @update="updateDamage(index, $event)" />
     </v-card>
     <div class="text-center">
       <v-btn color="primary" @click="addDamage">
@@ -27,6 +27,10 @@ export default {
   props: {
     damages: {
       type: [Boolean, Array],
+      default: false
+    },
+    allowCustomDieType: {
+      type: Boolean,
       default: false
     }
   },

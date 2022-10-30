@@ -259,13 +259,13 @@ export const CsActions = {
     },
     getDamageValues (damage) {
       // the dieCount & dieType are either an int or bonus object
-      const dieType = damage.dieType
+      let dieType = damage.dieType
       if (typeof damage.dieType === 'object') {
-        damage.dieType = this.mcBonus(damage.dieType)
+        dieType = this.mcBonus(damage.dieType)
       }
-      const dieCount = damage.dieCount
+      let dieCount = damage.dieCount
       if (typeof damage.dieCount === 'object') {
-        damage.dieCount = this.mcBonus(damage.dieType)
+        dieCount = this.mcBonus(damage.dieCount)
       }
       // get the bonus
       let bonus = damage.bonus ? this.mcBonus(damage.bonus) : 0
