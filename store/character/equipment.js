@@ -486,10 +486,13 @@ export const getters = {
         }
       ]
       if (toggleAddDamage) {
-        damage.push({
-          ...toggleAddDamage,
-          reroll: augments.base.reroll || false
+        const toggleDamagesToPush = toggleAddDamage.map((i) => {
+          return {
+            ...i,
+            reroll: augments.base.reroll || false
+          }
         })
+        damage.push(...toggleDamagesToPush)
       }
       if (versatile) {
         if (weapon.id === 'krogan-warhammer') {

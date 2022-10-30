@@ -60,7 +60,31 @@ export const getters = {
         b = Math.max(...b)
         break
       case 'hp':
-        b = rootGetters['character/hp/hp'].max
+        if (bonus.value === 'current') {
+          b = rootGetters['character/hp/hp'].current
+        } else {
+          b = rootGetters['character/hp/hp'].max
+        }
+        break
+      case 'shields':
+        if (bonus.value === 'current') {
+          b = rootGetters['character/hp/shields'].current
+        } else {
+          b = rootGetters['character/hp/shields'].max
+        }
+        break
+      case 'barrierDieCount':
+        b = rootGetters['character/hp/barrier'].dieCount
+        break
+      case 'barrierDieType':
+        b = rootGetters['character/hp/barrier'].dieType
+        break
+      case 'barrierTicks':
+        if (bonus.value === 'current') {
+          b = rootGetters['character/hp/barrier'].ticks.max - rootGetters['character/hp/barrier'].ticks.used
+        } else {
+          b = rootGetters['character/hp/barrier'].ticks.max
+        }
         break
       case 'proficiency':
         b = rootGetters['character/profBonus']

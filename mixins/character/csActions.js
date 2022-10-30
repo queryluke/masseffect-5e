@@ -85,59 +85,34 @@ export const CsActions = {
         type: false,
         mod: false,
         bonus: false,
-        healing: false,
-        detail: this.item.name,
-        label: false,
-        reroll: false
+        reroll: false,
+        label: false
       }
-      return this.item.damage.map((i) => {
-        const damage = { ...damageDefault, ...i }
-        if (damage.dieCount?.toString() === 'barrierDie') {
-          const barrier = this.$store.getters['character/hp/barrier']
-          damage.dieCount = barrier.dieCount
-          damage.dieType = barrier.dieType
-        } else if (damage.dieCount?.toString().startsWith('barrierRemaining')) {
-          const barrier = this.$store.getters['character/hp/barrier']
-          const ticksRemaining = barrier.ticks.max - barrier.ticks.used
-          damage.dieCount = damage.dieCount.split('+').reduce((acc, curr) => {
-            return curr.trim() === 'barrierRemaining'
-              ? acc + ticksRemaining
-              : acc + (parseInt(curr.trim(), 10) || 0)
-          }, 0)
+      let initialDamages = []
+      const damages = this.item.damage || []
+      const baseDamages = damages.filter(i => !i.addTo)
+      const addToDamages = damages.filter(i => i.addTo)
+      for (const rawDamage of baseDamages) {
+        // create a standard damage
+        initialDamages.push(this.getDamageValues({ ...damageDefault, ...rawDamage }))
+      }
+      for (const rawAddToDamage of addToDamages) {
+        const addToDamage = this.getDamageValues({ ...damageDefault, ...rawAddToDamage })
+        if (rawAddToDamage.addTo === 'base') {
+          initialDamages[0] = this.mergeDamages(initialDamages[0], addToDamage)
+        } else if (rawAddToDamage.addTo === 'all') {
+          initialDamages = initialDamages.map(i => this.mergeDamages(i, addToDamage))
         }
-        if (typeof damage.dieType === 'object') {
-          damage.dieType = this.mcBonus(damage.dieType)
-        }
-        let bonus = damage.bonus ? this.mcBonus(damage.bonus) : 0
-        const mod = damage.mod ? this.abilityBreakdown[damage.mod].mod : 0
-        bonus += mod
-        let text = ''
-        let notation = ''
-        if (damage.dieCount) {
-          text = `${damage.dieCount}`
-          if (damage.dieType) {
-            text += `d${damage.dieType}`
-          }
-          // rerolls
-          if (text.includes('d') && damage.reroll) {
-            notation = `${text}ro<${damage.reroll}`
-          } else {
-            notation = text
-          }
-          if (bonus !== 0) {
-            text += this.damageText(bonus)
-            notation += this.damageText(bonus)
-          }
-        } else {
-          text = bonus
-          notation = bonus
-        }
-        damage.bonus = bonus
-        damage.notation = notation
-        damage.text = text
-        damage.healing = ['shields', 'hp', 'temp'].includes(damage.type)
-        return damage
-      })
+      }
+
+      const finalDamages = []
+      for (const damage of initialDamages) {
+        damage.detail = this.item.name
+        damage.text = this.fullDamageString(damage)
+        damage.healing = ['shields', 'hp', 'temp'].some(j => Object.keys(damage.types).includes(j))
+        finalDamages.push(damage)
+      }
+      return finalDamages
     },
     notes () {
       const notes = []
@@ -260,6 +235,58 @@ export const CsActions = {
     }
   },
   methods: {
+    mergeDamages (damage, addToDamage) {
+      const mergedDamage = { label: damage.label, types: damage.types }
+      for (const [type, values] of Object.entries(addToDamage.types)) {
+        // if the damage type already exists
+        if (mergedDamage.types[type]) {
+          for (const [dieType, dieCount] of Object.entries(values)) {
+            // check for an existing dieType
+            if (mergedDamage.types[type][dieType]) {
+              mergedDamage.types[type][dieType] += dieCount || 0
+            } else {
+              // else, create a new dieType key
+              mergedDamage.types[type][dieType] = dieCount
+            }
+          }
+        } else {
+          // if there is no matching damage type
+          mergedDamage.types[type] = values
+        }
+      }
+      mergedDamage.reroll = Math.max(damage.reroll, addToDamage.reroll)
+      return mergedDamage
+    },
+    getDamageValues (damage) {
+      // the dieCount & dieType are either an int or bonus object
+      const dieType = damage.dieType
+      if (typeof damage.dieType === 'object') {
+        damage.dieType = this.mcBonus(damage.dieType)
+      }
+      const dieCount = damage.dieCount
+      if (typeof damage.dieCount === 'object') {
+        damage.dieCount = this.mcBonus(damage.dieType)
+      }
+      // get the bonus
+      let bonus = damage.bonus ? this.mcBonus(damage.bonus) : 0
+      // get the mod
+      const mod = damage.mod ? this.abilityBreakdown[damage.mod].mod : 0
+      // combine bonus and mod
+      bonus += mod
+      // return object
+      const type = damage.type || 'damage'
+      const finalDieType = dieType || 'none'
+      return {
+        types: {
+          [type]: {
+            [finalDieType]: dieCount,
+            bonus
+          }
+        },
+        reroll: damage.reroll || 0,
+        label: damage.label
+      }
+    },
     interpolatedText (text) {
       // might be better to do this with attrGetters or put it in the HTML?
       const interpolations = Object.keys(this.interpolations)

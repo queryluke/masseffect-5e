@@ -393,7 +393,7 @@ export const getters = {
       // DAMAGE
       if (power.damage && (augments.damage || augments.reroll || augments.dieIncrease)) {
         power.damage = power.damage.map((baseDamage) => {
-          if (['temp', 'hp', 'shields'].includes(baseDamage.type)) {
+          if (['temp', 'hp', 'shields'].includes(baseDamage.type) || baseDamage.addTo) {
             return baseDamage
           }
           const baseDamageBonus = baseDamage.bonus ? rootGetters['character/mechanics/mcBonus'](baseDamage.bonus) : 0
