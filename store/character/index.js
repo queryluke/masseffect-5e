@@ -188,6 +188,7 @@ export const actions = {
           characterData.meta.remote = true
           await dispatch('REMOTE_UPDATE_CHARACTER')
         }
+        await dispatch('homebrew/SYNC_HOMEBREW')
       } catch (e) {
         await dispatch('local/LOAD_CHARACTER', id)
       }

@@ -485,7 +485,7 @@ export const getters = {
     ]
   },
   powerList: (state, getters, rootState, rootGetters) => {
-    return rootGetters.getData('powers')
+    return rootGetters.getData('powers').concat(rootGetters['character/homebrew/powers'])
   }
 }
 
