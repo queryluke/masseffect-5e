@@ -59,7 +59,13 @@ export default {
       return this.$store.getters['user/bookmarks']
     },
     items () {
-      let ofType = this.bookmarks.filter(i => i.model === this.type).map(i => this.$store.getters.getItem(this.type, i.modelId))
+      let ofType = this.bookmarks.filter(i => i.model === this.type).map((i) => {
+        try {
+          return this.$store.getters.getItem(this.type, i.modelId)
+        } catch (e) {
+          return null
+        }
+      }).filter(i => i)
       if (this.type === 'bestiary') {
         const genpcs = this.bookmarks.filter(i => i.model === 'genpc').map((i) => {
           return jsonpack.unpack(i.data)

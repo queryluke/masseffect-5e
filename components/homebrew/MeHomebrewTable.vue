@@ -1,103 +1,113 @@
 <template>
-  <v-data-table
-    :headers="headers"
-    :items="items"
-    :loading="loading"
-    :options.sync="options"
-    :expanded.sync="expanded"
-    show-expand
-    class="mt-5"
-    @click:row="(item, slot) => slot.expand(!slot.isExpanded)"
-    @update:options="getItems"
-  >
-    <template #top>
-      <v-row class="px-3 mb-2">
-        <v-col cols="7">
-          <v-text-field v-model="search" hide-details label="Search" />
-        </v-col>
-        <v-col cols="4" offset="1">
-          <v-select
-            v-model="modelType"
-            hide-details
-            label="Filter by type"
-            :items="modelTypes"
-            :menu-props="{offsetY: true}"
-            clearable
-          >
-            <template #selection="{ item: selection }">
-              <v-list-item-action class="my-0 py-0">
-                <v-icon :color="typeMap[selection].color">
-                  {{ typeMap[selection].icon }}
-                </v-icon>
-              </v-list-item-action>
-              <v-list-item-content class="my-0 py-0">
-                <v-list-item-title class="text-capitalize">
-                  {{ selection }}
-                </v-list-item-title>
-              </v-list-item-content>
-            </template>
-            <template #item="{ item: selectItem }">
-              <v-list-item-action>
-                <v-icon :color="typeMap[selectItem].color">
-                  {{ typeMap[selectItem].icon }}
-                </v-icon>
-              </v-list-item-action>
-              <v-list-item-content>
-                <v-list-item-title class="text-capitalize">
-                  {{ selectItem }}
-                </v-list-item-title>
-              </v-list-item-content>
-            </template>
-          </v-select>
-        </v-col>
-      </v-row>
-    </template>
+  <div>
+    <v-data-table
+      :headers="headers"
+      :items="items"
+      :loading="loading"
+      :options.sync="options"
+      :expanded.sync="expanded"
+      show-expand
+      class="mt-5"
+      @click:row="(item, slot) => slot.expand(!slot.isExpanded)"
+      @update:options="getItems"
+    >
+      <template #top>
+        <v-row class="px-3 mb-2">
+          <v-col cols="7">
+            <v-text-field v-model="search" hide-details label="Search" />
+          </v-col>
+          <v-col cols="4" offset="1">
+            <v-select
+              v-model="modelType"
+              hide-details
+              label="Filter by type"
+              :items="modelTypes"
+              :menu-props="{offsetY: true}"
+              clearable
+            >
+              <template #selection="{ item: selection }">
+                <v-list-item-action class="my-0 py-0">
+                  <v-icon :color="typeMap[selection].color">
+                    {{ typeMap[selection].icon }}
+                  </v-icon>
+                </v-list-item-action>
+                <v-list-item-content class="my-0 py-0">
+                  <v-list-item-title class="text-capitalize">
+                    {{ selection }}
+                  </v-list-item-title>
+                </v-list-item-content>
+              </template>
+              <template #item="{ item: selectItem }">
+                <v-list-item-action>
+                  <v-icon :color="typeMap[selectItem].color">
+                    {{ typeMap[selectItem].icon }}
+                  </v-icon>
+                </v-list-item-action>
+                <v-list-item-content>
+                  <v-list-item-title class="text-capitalize">
+                    {{ selectItem }}
+                  </v-list-item-title>
+                </v-list-item-content>
+              </template>
+            </v-select>
+          </v-col>
+        </v-row>
+      </template>
 
-    <template #[`item.type`]="{ item }">
-      <v-avatar :color="typeMap[item.model].color" size="26">
-        <v-icon>
-          {{ typeMap[item.model].icon }}
-        </v-icon>
-      </v-avatar>
-    </template>
-    <template #[`item.title`]="{ item }">
-      <div>
-        <div>{{ item.title }}</div>
-        <div class="text-caption font-italic">
-          {{ item.profile.username }}
+      <template #[`item.type`]="{ item }">
+        <v-avatar :color="typeMap[item.model].color" size="26">
+          <v-icon>
+            {{ typeMap[item.model].icon }}
+          </v-icon>
+        </v-avatar>
+      </template>
+      <template #[`item.title`]="{ item }">
+        <div>
+          <div>{{ item.title }}</div>
+          <div class="text-caption font-italic">
+            {{ item.profile.username }}
+          </div>
         </div>
-      </div>
-    </template>
-    <template #[`item.publicationStatus`]="{ item }">
-      <v-chip x-small :color="statusColors[item.publicationStatus]" outlined>
-        <span class="text-uppercase">
-          {{ item.publicationStatus }}
-        </span>
-      </v-chip>
-    </template>
-    <template #[`item.actions`]="{ item }">
-      <div class="d-flex justify-end">
-        <div class="mx-3">
-          <me-homebrew-vote-btn :homebrew="item" @voted="updateItemCounts(item, 1, 'voteCount')" @voteRemoved="updateItemCounts(item, -1, 'voteCount')" />
+      </template>
+      <template #[`item.publicationStatus`]="{ item }">
+        <v-chip x-small :color="statusColors[item.publicationStatus]" outlined>
+          <span class="text-uppercase">
+            {{ item.publicationStatus }}
+          </span>
+        </v-chip>
+      </template>
+      <template #[`item.actions`]="{ item }">
+        <div class="d-flex justify-end">
+          <div class="mx-3">
+            <me-homebrew-vote-btn :homebrew="item" @voted="updateItemCounts(item, 1, 'voteCount')" @voteRemoved="updateItemCounts(item, -1, 'voteCount')" />
+          </div>
+          <div class="mx-3">
+            <me-homebrew-add-btn :homebrew="item" @added="updateItemCounts(item, 1, 'usageCount')" @removed="updateItemCounts(item, -1, 'usageCount')" />
+          </div>
+          <div class="mx-3">
+            <v-btn v-if="mine" icon :to="`/homebrew/edit/?id=${item.id}`" exact small>
+              <v-icon small>
+                mdi-pencil
+              </v-icon>
+            </v-btn>
+          </div>
+          <div class="mx-3">
+            <v-btn v-if="mine" icon small color="error" @click.stop="deleteHomebrew(item)">
+              <v-icon small>
+                mdi-delete
+              </v-icon>
+            </v-btn>
+          </div>
         </div>
-        <div class="mx-3">
-          <me-homebrew-add-btn :homebrew="item" @added="updateItemCounts(item, 1, 'usageCount')" @removed="updateItemCounts(item, -1, 'usageCount')" />
-        </div>
-        <div class="mx-3">
-          <v-btn v-if="mine" icon :to="`/homebrew/edit/?id=${item.id}`" exact small>
-            <v-icon small>
-              mdi-pencil
-            </v-icon>
-          </v-btn>
-        </div>
-      </div>
-    </template>
-    <template #expanded-item="{ headers, item }">
-      <td :colspan="headers.length">
-        <component :is="`me-homebrew-preview-${item.model}`" :item="JSON.parse(item.data)" />
-      </td>
-    </template>
-  </v-data-table>
+      </template>
+      <template #expanded-item="{ headers, item }">
+        <td :colspan="headers.length">
+          <component :is="`me-homebrew-preview-${item.model}`" :item="JSON.parse(item.data)" />
+        </td>
+      </template>
+    </v-data-table>
+    <me-homebrew-delete-dialog :show="confirmDeleteDialog" :item="confirmDeleteItem" @close="cancelDelete" @deleted="deleted" />
+  </div>
 </template>
 
 <script>
@@ -155,7 +165,9 @@ export default {
         development: 'info',
         published: 'success'
       },
-      myCollection: false
+      myCollection: false,
+      confirmDeleteItem: {},
+      confirmDeleteDialog: false
     }
   },
   computed: {
@@ -257,6 +269,18 @@ export default {
         this.items = response?.items || []
       }
       this.loading = false
+    },
+    deleteHomebrew (item) {
+      this.confirmDeleteItem = item
+      this.confirmDeleteDialog = true
+    },
+    async deleted () {
+      this.cancelDelete()
+      await this.getItems()
+    },
+    cancelDelete () {
+      this.confirmDeleteItem = {}
+      this.confirmDeleteDialog = false
     }
   }
 }

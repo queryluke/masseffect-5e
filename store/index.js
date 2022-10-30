@@ -50,7 +50,7 @@ export const getters = {
     const baseModels = state.data[locale][endpoint] || state.data[locale].edges?.filter(i => i.type === endpoint)
     return baseModels || []
   },
-  rawHomebrew: state => state.rawHomebrew,
+  rawHomebrew: state => state.rawHomebrew.filter(i => i),
   homebrew: (state, getters) => {
     return getters.rawHomebrew.map((i) => {
       const data = JSON.parse(i.data)

@@ -25,11 +25,11 @@ export const getters = {
   },
   darkMode: state => state.darkMode,
   imperial: state => state.imperial,
-  bookmarkCount: state => state.bookmarks.length,
+  bookmarkCount: (state, getters) => getters.bookmarks.length,
   bookmarks: state => state.bookmarks,
-  isBookmarked: state => (model, id) => {
+  isBookmarked: (state, getters) => (model, id) => {
     const lookupModel = model === 'bestiary' && id.startsWith('generated') ? 'genpc' : model
-    return typeof state.bookmarks.find(i => i.modelId === id && i.model === lookupModel) !== 'undefined'
+    return typeof getters.bookmarks.find(i => i.modelId === id && i.model === lookupModel) !== 'undefined'
   },
   maxCharacters: state => state.maxCharacters,
   search: state => state.search,
@@ -83,7 +83,7 @@ export const actions = {
     await dispatch('UPDATE_PROFILE')
   },
   async ADD_BOOKMARK ({ dispatch, commit, getters, rootGetters }, { type, item }) {
-    const data = type === 'genpc' ? jsonpack.pack(JSON.stringify(item)) : null
+    const data = (type === 'genpc' || item.homebrew) ? jsonpack.pack(JSON.stringify(item)) : null
     const modelId = item.id
     if (getters.isBookmarked(type, modelId)) {
       return
