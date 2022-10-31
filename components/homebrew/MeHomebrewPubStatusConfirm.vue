@@ -17,6 +17,7 @@
             </nuxt-link>, players may contact you with feedback.
           </li>
           <li>You will NOT be able to change this item back to the private status.</li>
+          <li>You can only delete the item if it is not being used by any other accounts.</li>
         </ol>
       </div>
     </div>
@@ -40,6 +41,7 @@
           </li>
           <li>You will NOT be able to make any edits to this item. Instead, you will need to make a copy of it.</li>
           <li>You will NOT be able to change this item back to the private or development status.</li>
+          <li>You can only delete the item if it is not being used by any other accounts.</li>
         </ol>
       </div>
     </div>
