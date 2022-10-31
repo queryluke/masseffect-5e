@@ -8,7 +8,7 @@
     </div>
     <p>
       A homebrew item in the <span class="error--text">private</span> status can only be seen and used by you. However, if you
-      use a private homebrew item on a character in the online character sheet, anyone who views that character will
+      use a private homebrew item on a online character sheet and share that sheet, anyone who views that character will
       be able to see it.
     </p>
     <div class="text-subtitle-1 info--text">
@@ -34,7 +34,7 @@
       In the future, we will work on a more streamlined process to request wording changes (but not mechanic changes) for
       published content (i.e. for typos or clarifications) and/or for the removal on homebrew. For now, if you would
       like a typo or clarification fixed for one of your published items, please submit a
-      <a href="https://forms.gle/JtGQqS9KxVFQGtAq7">bug report</a>. But note, it could take up to 1 week to process your request.
+      <a href="https://forms.gle/JtGQqS9KxVFQGtAq7">bug report</a>. But note, it could take up to 2 weeks to process your request.
     </p>
     <v-simple-table>
       <thead>
@@ -52,6 +52,9 @@
           </td>
           <td>
             Viewed
+          </td>
+          <td>
+            Deleted
           </td>
           <td>
             Used
@@ -75,6 +78,11 @@
             <v-icon color="error">
               mdi-close
             </v-icon>*
+          </td>
+          <td>
+            <v-icon color="success">
+              mdi-check
+            </v-icon>
           </td>
           <td>
             <v-icon color="error">
@@ -102,6 +110,11 @@
             </v-icon>
           </td>
           <td>
+            <v-icon color="error">
+              mdi-close
+            </v-icon>***
+          </td>
+          <td>
             <v-icon color="success">
               mdi-check
             </v-icon>
@@ -127,6 +140,11 @@
             </v-icon>
           </td>
           <td>
+            <v-icon color="error">
+              mdi-close
+            </v-icon>***
+          </td>
+          <td>
             <v-icon color="success">
               mdi-check
             </v-icon>
@@ -138,13 +156,16 @@
           </td>
         </tr>
       </tbody>
-      <div class="text-caption">
-        * - visible on shared character sheets
-      </div>
-      <div class="text-caption">
-        ** - usable on your own characters only
-      </div>
     </v-simple-table>
+    <div class="text-caption">
+      * - visible on shared character sheets
+    </div>
+    <div class="text-caption">
+      ** - usable on your own characters only
+    </div>
+    <div class="text-caption">
+      *** - You can delete the item if it is not being used by any other accounts. We will release a new feature at a later date which allows deleting Development and Published content even if they are in use.
+    </div>
   </div>
 </template>
 
