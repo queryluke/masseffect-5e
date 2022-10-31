@@ -42,16 +42,13 @@
         Confirm Publication Status Change
       </template>
       <me-homebrew-pub-status-confirm :change-to="changeToStatus" />
-      <div class="mt-3">
-        <v-checkbox v-model="agreement">
-          <template #label>
-            <span class="mr-1">I confirm that this homebrew does not violate any</span>
-            <nuxt-link to="/legal/acceptable-use" target="_blank">
-              Acceptable Use
-            </nuxt-link>
-            <span class="ml-1">policies.</span>
-          </template>
-        </v-checkbox>
+      <div class="mt-3 d-flex align-center">
+        <v-checkbox v-model="agreement" />
+        <span class="mr-1">I confirm that this homebrew does not violate any</span>
+        <nuxt-link to="/legal/acceptable-use" target="_blank">
+          Acceptable Use
+        </nuxt-link>
+        <span class="ml-1">policies.</span>
       </div>
       <template #addActions>
         <v-btn :disabled="!agreement" text color="success" @click="executeChange">
