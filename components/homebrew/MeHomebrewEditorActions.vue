@@ -41,6 +41,13 @@
       <template #title>
         Confirm Publication Status Change
       </template>
+      <v-alert v-if="noUsername" value type="error">
+        Before you publish, consider adding a username to your
+        <nuxt-link to="/profile" target="_blank">
+          profile
+        </nuxt-link>.
+        Otherwise, all of your creations will show up as "anonymous".
+      </v-alert>
       <me-homebrew-pub-status-confirm :change-to="changeToStatus" />
       <div class="mt-3 d-flex align-center">
         <v-checkbox v-model="agreement" />
@@ -102,6 +109,9 @@ export default {
     },
     noEdit () {
       return this.publicationStatus === 'published'
+    },
+    noUsername () {
+      return !this.$store.getters['user/profile'].username
     }
   },
   methods: {

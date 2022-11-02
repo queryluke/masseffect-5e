@@ -174,7 +174,7 @@ export const actions = {
     if (rootGetters['auth/isAuthenticated']) {
       await dispatch('api/MUTATE', { mutation: 'updateProfile', input: getters.profile }, { root: true })
       if (update) {
-        await dispatch('LOAD_USER_SETTINGS')
+        await dispatch('SYNC_PROFILE')
       }
     }
   },

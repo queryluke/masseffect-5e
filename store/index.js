@@ -65,8 +65,13 @@ export const getters = {
     })
   },
   getData: (state, getters) => (endpoint) => {
-    const homebrewModels = getters.homebrew.filter(i => i.homebrew.model === endpoint)
-    return getters.baseData(endpoint).concat(homebrewModels)
+    const potentialHomebrew = ['powers']
+    if (potentialHomebrew.includes(endpoint)) {
+      const homebrewModels = getters.homebrew.filter(i => i.homebrew.model === endpoint)
+      return getters.baseData(endpoint).concat(homebrewModels)
+    } else {
+      return getters.baseData(endpoint)
+    }
   },
   getItem: (state, getters) => (endpoint, id) => {
     const data = getters.getData(endpoint)
@@ -135,7 +140,6 @@ export const actions = {
     }
     const locale = getters.currentLocale
     let data = getters.baseData(endpoint)
-    // TODO: we will eventually need to support grabbing homebrew during this call
     if (data.length === 0) {
       try {
         data = await this.$http.$get(`${locale}/${endpoint}.json`)

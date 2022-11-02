@@ -36,7 +36,7 @@
         <div>
           <div>{{ item.title }}</div>
           <div class="text-caption font-italic">
-            {{ item.profile.username }}
+            {{ item.profile.username || 'anonymous' }}
           </div>
         </div>
       </template>
@@ -56,8 +56,8 @@
           </div>
         </div>
       </template>
-      <template #expanded-item="{ headers, item }">
-        <td :colspan="headers.length">
+      <template #expanded-item="{ eiHeaders, item }">
+        <td :colspan="eiHeaders.length">
           <component :is="`me-homebrew-preview-${item.model}`" :item="JSON.parse(item.data)" />
         </td>
       </template>
