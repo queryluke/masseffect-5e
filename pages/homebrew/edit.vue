@@ -25,7 +25,15 @@
             </v-chip>
           </div>
         </v-col>
-        <v-col class="text-right" cols="4">
+        <v-col class="justify-end d-flex" cols="4">
+          <div class="mx-3">
+            <v-btn large color="error" @click="confirmDeleteDialog = true">
+              <v-icon left>
+                mdi-delete
+              </v-icon>
+              Delete
+            </v-btn>
+          </div>
           <v-btn large to="/homebrew/my-homebrew" exact>
             My Homebrew
           </v-btn>
@@ -36,6 +44,7 @@
         <me-homebrew-editor-actions :saving="saving" :publication-status="publicationStatus" @save="updateData" @updateStatus="updateStatus($event)" />
       </v-card>
     </div>
+    <me-homebrew-delete-dialog :show="confirmDeleteDialog" :item="item" @close="confirmDeleteDialog = false" @deleted="confirmDeleteDialog = false" />
   </v-container>
 </template>
 
@@ -58,7 +67,8 @@ export default {
   },
   data () {
     return {
-      saving: false
+      saving: false,
+      confirmDeleteDialog: false
     }
   },
   computed: {

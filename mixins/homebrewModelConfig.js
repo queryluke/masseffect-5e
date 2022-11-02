@@ -4,7 +4,9 @@ export const homebrewModelConfig = {
       modelConfig: {
         powers: {
           icon: 'mdi-fire',
-          color: 'purple lighten-1'
+          color: 'purple lighten-1',
+          name: 'Powers',
+          nameSingular: 'Power'
         }
       }
     }

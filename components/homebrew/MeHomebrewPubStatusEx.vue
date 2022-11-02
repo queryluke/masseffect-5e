@@ -7,9 +7,10 @@
       Private
     </div>
     <p>
-      A homebrew item in the <span class="error--text">private</span> status can only be seen and used by you. However, if you
+      A homebrew item in the <span class="error--text">private</span> status can only be discovered by you. However, if you
       use a private homebrew item on a online character sheet and share that sheet, anyone who views that character will
-      be able to see it.
+      be able to see it. Additionally, if you share the homebrew with others, they can add it to their collection and use
+      it as well.
     </p>
     <div class="text-subtitle-1 info--text">
       Development
@@ -158,7 +159,7 @@
       </tbody>
     </v-simple-table>
     <div class="text-caption">
-      * - visible on shared character sheets
+      * - visible on shared character sheets or if you shared it with others
     </div>
     <div class="text-caption">
       ** - usable on your own characters only

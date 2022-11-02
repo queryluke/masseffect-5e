@@ -3,7 +3,7 @@
     <template #activator="{ on, attrs }" open-delay="1000">
       <v-btn
         v-if="!mine"
-        small
+        :small="!large"
         icon
         :color="isVoted ? 'success' : 'grey'"
         :loading="isLoading"
@@ -27,6 +27,10 @@ export default {
     homebrew: {
       type: Object,
       required: true
+    },
+    large: {
+      type: Boolean,
+      default: false
     }
   },
   data () {

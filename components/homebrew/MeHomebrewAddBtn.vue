@@ -1,18 +1,22 @@
 <template>
-  <v-tooltip bottom>
+  <v-tooltip bottom :disabled="large">
     <template #activator="{ on, attrs }" open-delay="1000">
       <v-btn
-        small
-        icon
+        :small="!large"
+        :icon="!large"
         :color="isAdded ? 'error' : 'primary'"
+        :outlined="large"
         :loading="isLoading"
         v-bind="attrs"
         @click.stop="execute"
         v-on="on"
       >
-        <v-icon>
+        <v-icon :left="!large">
           {{ isAdded ? 'mdi-minus' : 'mdi-plus' }}
         </v-icon>
+        <span v-if="large">
+          {{ isAdded ? 'Remove from' : 'Add to' }} my collection
+        </span>
       </v-btn>
     </template>
     {{ isAdded ? 'Remove from' : 'Add to' }} my collection
@@ -26,6 +30,10 @@ export default {
     homebrew: {
       type: Object,
       required: true
+    },
+    large: {
+      type: Boolean,
+      default: false
     }
   },
   data () {

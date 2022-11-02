@@ -82,18 +82,14 @@
             <me-homebrew-add-btn :homebrew="item" @added="updateItemCounts(item, 1, 'usageCount')" @removed="updateItemCounts(item, -1, 'usageCount')" />
           </div>
           <div v-if="!collection" class="mx-3">
-            <v-btn icon :to="`/homebrew/edit/?id=${item.id}`" exact small>
+            <v-btn icon small @click.stop="edit(item.id)">
               <v-icon small>
                 mdi-pencil
               </v-icon>
             </v-btn>
           </div>
           <div v-if="!collection" class="mx-3">
-            <v-btn icon small color="error" @click.stop="deleteHomebrew(item)">
-              <v-icon small>
-                mdi-delete
-              </v-icon>
-            </v-btn>
+            <me-homebrew-share-btn :id="item.id" />
           </div>
         </div>
       </template>
@@ -103,7 +99,6 @@
         </td>
       </template>
     </v-data-table>
-    <me-homebrew-delete-dialog :show="confirmDeleteDialog" :item="confirmDeleteItem" @close="cancelDelete" @deleted="deleted" />
   </div>
 </template>
 
@@ -141,8 +136,8 @@ export default {
       items: [],
       expanded: [],
       loading: false,
-      confirmDeleteItem: {},
-      confirmDeleteDialog: false
+      shareTooltip: false,
+      shareTooltipMessage: ''
     }
   },
   async fetch () {
@@ -195,17 +190,8 @@ export default {
       this.items = allItems
       this.loading = false
     },
-    deleteHomebrew (item) {
-      this.confirmDeleteItem = item
-      this.confirmDeleteDialog = true
-    },
-    async deleted () {
-      this.cancelDelete()
-      await this.getItems()
-    },
-    cancelDelete () {
-      this.confirmDeleteItem = {}
-      this.confirmDeleteDialog = false
+    edit (id) {
+      this.$router.push(`/homebrew/edit/?id=${id}`)
     }
   }
 }

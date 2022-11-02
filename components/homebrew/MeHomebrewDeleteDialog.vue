@@ -1,7 +1,6 @@
 <template>
   <v-dialog :value="show" max-width="500">
     <v-card :loading="loading">
-      {{ inUse }}
       <v-card-title>
         <span v-if="inUse">
           You're homebrew is in use!!
@@ -60,6 +59,10 @@ export default {
       loading: false
     }
   },
+  async fetch () {
+    await this.checkSelfInUse()
+    this.loading = false
+  },
   computed: {
     id () {
       return this.item.id
@@ -76,12 +79,6 @@ export default {
       } else {
         return `Are you sure you want to delete ${this.item.title}?`
       }
-    }
-  },
-  watch: {
-    async id () {
-      await this.checkSelfInUse()
-      this.loading = false
     }
   },
   methods: {
