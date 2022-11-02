@@ -26,7 +26,14 @@
         </v-avatar>
         <div class="pl-1">
           <div class="mb-0 text-caption">
-            {{ item.data.name }} <small class="font-weight-thin"><me-power-level :level="item.data.level" /></small>
+            <v-badge v-if="!!item.data.homebrew" inline dot>
+              <span>
+                {{ item.data.name }} <small class="font-weight-thin"><me-power-level :level="item.data.level" /></small>
+              </span>
+            </v-badge>
+            <span v-else>
+              {{ item.data.name }} <small class="font-weight-thin"><me-power-level :level="item.data.level" /></small>
+            </span>
           </div>
         </div>
       </div>
@@ -105,6 +112,9 @@
     <v-expand-transition>
       <div v-show="showInfo">
         <v-divider />
+        <div v-if="item.data.homebrew" class="text-caption pl-4 pt-1">
+          <em>homebrew by {{ item.data.homebrew.createdBy }}</em>
+        </div>
         <me-cs-powers-info :item="mechanic" :html="item.data.html" :advancements="item.data.advancements" :selected-advancement="item.advancement" />
       </div>
     </v-expand-transition>
