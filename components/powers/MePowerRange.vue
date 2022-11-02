@@ -5,8 +5,8 @@
       <span v-else>{{ textRange }}</span>
     </span>
     <span v-if="aoe" class="text-caption" :class="{'d-block': split, 'ml-1': !split, 'mt-n1': split}">
-      (<me-distance :length="aoe.size" abbr />
-      <v-avatar :size="size" tile style="margin-left: 2px">
+      (<me-distance v-if="aoeSize" :length="aoe.size" abbr />
+      <v-avatar v-if="filename" :size="size" tile style="margin-left: 2px">
         <v-img :src="require(`~/assets/images/aoe/${filename}.svg`)" :alt="$t(`aoe_types.${aoe.type}`)" />
       </v-avatar>)
     </span>
@@ -40,13 +40,19 @@ export default {
   },
   computed: {
     range () {
-      return this.mechanic.range.short
+      return this.mechanic?.range?.short
     },
     aoe () {
-      return this.mechanic.range.aoe
+      return this.mechanic?.range?.aoe
     },
     filename () {
+      if (!this.aoe?.type) {
+        return false
+      }
       return this.$vuetify.theme.dark ? `${this.aoe.type}-white` : this.aoe.type
+    },
+    aoeSize () {
+      return this.aoe?.size
     },
     numericRange () {
       return this.range > 1
