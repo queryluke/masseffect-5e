@@ -36,12 +36,12 @@
             </v-tab-item>
             <v-tab-item>
               <me-my-homebrew-table collection />
-              <v-alert type="info" class="my-5">
-                Items in your collection will show up throughout the site (for your account only) and can be used on your character sheets.
-                <strong>Note: You must add your own items to your collection for them to show up.</strong>
-              </v-alert>
             </v-tab-item>
           </v-tabs-items>
+          <v-alert type="info" class="my-5">
+            Items in your collection will show up throughout the site (for your account only) and can be used on your character sheets.
+            <strong>Note: You must add your own items to your collection for them to show up.</strong>
+          </v-alert>
         </v-card-text>
       </v-card>
       <me-homebrew-create-dialog :shown="createNewDialog" @close="createNewDialog = false" />

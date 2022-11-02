@@ -132,7 +132,7 @@ export default {
         return this.range.aoe?.size
       },
       set (value) {
-        this.$emit('update', { ...this.range, aoe: { ...this.aoe, size: value } })
+        this.$emit('update', { ...this.range, aoe: { type: this.aoeShape, size: value } })
       }
     },
     aoeShape: {
@@ -140,7 +140,7 @@ export default {
         return this.range.aoe?.type
       },
       set (value) {
-        this.$emit('update', { ...this.range, aoe: { ...this.aoe, type: value } })
+        this.$emit('update', { ...this.range, aoe: { size: this.aoeSize, type: value } })
       }
     }
   }
