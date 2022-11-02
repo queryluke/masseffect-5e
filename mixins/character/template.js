@@ -88,8 +88,8 @@ export const characterTemplate = {
   settings: {
     acOverride: null,
     acBonus: 0,
-    shields: 5,
-    regen: 5,
+    shields: null,
+    regen: null,
     speeds: {
       walk: 0,
       swim: 0,
