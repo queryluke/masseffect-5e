@@ -141,6 +141,19 @@
       </div>
     </v-expand-transition>
     <v-divider />
+    <v-list-item @click="showEquipment">
+      <v-list-item-content>
+        <v-list-item-title>
+          Equipment
+        </v-list-item-title>
+      </v-list-item-content>
+      <v-list-item-icon>
+        <v-icon>
+          mdi-chevron-right
+        </v-icon>
+      </v-list-item-icon>
+    </v-list-item>
+    <v-divider />
   </v-card>
 </template>
 
@@ -235,6 +248,9 @@ export default {
       this.purchaseDialog = false
       this.cart = []
       this.discount = 0
+    },
+    showEquipment () {
+      this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-equipment-manager')
     }
   }
 }

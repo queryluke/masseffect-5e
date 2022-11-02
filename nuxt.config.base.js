@@ -60,7 +60,8 @@ export default {
     '@nuxtjs/eslint-module',
     '@nuxtjs/vuetify',
     '@nuxtjs/pwa',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/moment'
   ],
   /*
   ** Nuxt.js modules
@@ -68,7 +69,8 @@ export default {
   modules: [
     // Doc: https://http.nuxtjs.org/usage
     '@nuxtjs/i18n',
-    '@nuxt/http'
+    '@nuxt/http',
+    'vue2-editor/nuxt'
   ],
   googleAnalytics: {
     id: 'UA-83740704-2'

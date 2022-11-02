@@ -57,11 +57,13 @@ export const actions = {
         console.error(e)
       }
     }
+    await dispatch('FETCH_HOMEBREW_DATA', null, { root: true })
   },
 
   LOGOUT_CLEAN_UP ({ commit }) {
     commit('user/RESET_BOOKMARKS', [], { root: true })
     commit('characters/SET_REMOTE_CHARACTERS', [], { root: true })
+    commit('setHomebrew', [], { root: true })
   },
 
   LOG_OUT ({ commit, dispatch }) {

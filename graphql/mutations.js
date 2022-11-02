@@ -61,6 +61,8 @@ export const createProfile = /* GraphQL */ `
       imperial
       darkMode
       maxCharacters
+      contactMethod
+      contactValue
       createdOn
       updatedOn
       owner
@@ -79,6 +81,8 @@ export const updateProfile = /* GraphQL */ `
       imperial
       darkMode
       maxCharacters
+      contactMethod
+      contactValue
       createdOn
       updatedOn
       owner
@@ -97,6 +101,8 @@ export const deleteProfile = /* GraphQL */ `
       imperial
       darkMode
       maxCharacters
+      contactMethod
+      contactValue
       createdOn
       updatedOn
       owner
@@ -142,6 +148,285 @@ export const deleteCharacter = /* GraphQL */ `
       data
       createdOn
       updatedOn
+    }
+  }
+`;
+export const createHomebrew = /* GraphQL */ `
+  mutation CreateHomebrew(
+    $input: CreateHomebrewInput!
+    $condition: ModelHomebrewConditionInput
+  ) {
+    createHomebrew(input: $input, condition: $condition) {
+      id
+      owner
+      title
+      titleId
+      data
+      model
+      usageCount
+      voteCount
+      createdAt
+      development
+      published
+      private
+      official
+      profile {
+        id
+        username
+        profileImg
+        imperial
+        darkMode
+        maxCharacters
+        contactMethod
+        contactValue
+        createdOn
+        updatedOn
+        owner
+      }
+      updatedAt
+    }
+  }
+`;
+export const updateHomebrew = /* GraphQL */ `
+  mutation UpdateHomebrew(
+    $input: UpdateHomebrewInput!
+    $condition: ModelHomebrewConditionInput
+  ) {
+    updateHomebrew(input: $input, condition: $condition) {
+      id
+      owner
+      title
+      titleId
+      data
+      model
+      usageCount
+      voteCount
+      createdAt
+      development
+      published
+      private
+      official
+      profile {
+        id
+        username
+        profileImg
+        imperial
+        darkMode
+        maxCharacters
+        contactMethod
+        contactValue
+        createdOn
+        updatedOn
+        owner
+      }
+      updatedAt
+    }
+  }
+`;
+export const deleteHomebrew = /* GraphQL */ `
+  mutation DeleteHomebrew(
+    $input: DeleteHomebrewInput!
+    $condition: ModelHomebrewConditionInput
+  ) {
+    deleteHomebrew(input: $input, condition: $condition) {
+      id
+      owner
+      title
+      titleId
+      data
+      model
+      usageCount
+      voteCount
+      createdAt
+      development
+      published
+      private
+      official
+      profile {
+        id
+        username
+        profileImg
+        imperial
+        darkMode
+        maxCharacters
+        contactMethod
+        contactValue
+        createdOn
+        updatedOn
+        owner
+      }
+      updatedAt
+    }
+  }
+`;
+export const createHomebrewUse = /* GraphQL */ `
+  mutation CreateHomebrewUse(
+    $input: CreateHomebrewUseInput!
+    $condition: ModelHomebrewUseConditionInput
+  ) {
+    createHomebrewUse(input: $input, condition: $condition) {
+      id
+      owner
+      homebrewId
+      homebrew {
+        id
+        owner
+        title
+        titleId
+        data
+        model
+        usageCount
+        voteCount
+        createdAt
+        development
+        published
+        private
+        official
+        profile {
+          id
+          username
+          profileImg
+          imperial
+          darkMode
+          maxCharacters
+          contactMethod
+          contactValue
+          createdOn
+          updatedOn
+          owner
+        }
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateHomebrewUse = /* GraphQL */ `
+  mutation UpdateHomebrewUse(
+    $input: UpdateHomebrewUseInput!
+    $condition: ModelHomebrewUseConditionInput
+  ) {
+    updateHomebrewUse(input: $input, condition: $condition) {
+      id
+      owner
+      homebrewId
+      homebrew {
+        id
+        owner
+        title
+        titleId
+        data
+        model
+        usageCount
+        voteCount
+        createdAt
+        development
+        published
+        private
+        official
+        profile {
+          id
+          username
+          profileImg
+          imperial
+          darkMode
+          maxCharacters
+          contactMethod
+          contactValue
+          createdOn
+          updatedOn
+          owner
+        }
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteHomebrewUse = /* GraphQL */ `
+  mutation DeleteHomebrewUse(
+    $input: DeleteHomebrewUseInput!
+    $condition: ModelHomebrewUseConditionInput
+  ) {
+    deleteHomebrewUse(input: $input, condition: $condition) {
+      id
+      owner
+      homebrewId
+      homebrew {
+        id
+        owner
+        title
+        titleId
+        data
+        model
+        usageCount
+        voteCount
+        createdAt
+        development
+        published
+        private
+        official
+        profile {
+          id
+          username
+          profileImg
+          imperial
+          darkMode
+          maxCharacters
+          contactMethod
+          contactValue
+          createdOn
+          updatedOn
+          owner
+        }
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createHomebrewVote = /* GraphQL */ `
+  mutation CreateHomebrewVote(
+    $input: CreateHomebrewVoteInput!
+    $condition: ModelHomebrewVoteConditionInput
+  ) {
+    createHomebrewVote(input: $input, condition: $condition) {
+      id
+      owner
+      homebrewId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateHomebrewVote = /* GraphQL */ `
+  mutation UpdateHomebrewVote(
+    $input: UpdateHomebrewVoteInput!
+    $condition: ModelHomebrewVoteConditionInput
+  ) {
+    updateHomebrewVote(input: $input, condition: $condition) {
+      id
+      owner
+      homebrewId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteHomebrewVote = /* GraphQL */ `
+  mutation DeleteHomebrewVote(
+    $input: DeleteHomebrewVoteInput!
+    $condition: ModelHomebrewVoteConditionInput
+  ) {
+    deleteHomebrewVote(input: $input, condition: $condition) {
+      id
+      owner
+      homebrewId
+      createdAt
+      updatedAt
     }
   }
 `;

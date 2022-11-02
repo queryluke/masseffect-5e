@@ -14,7 +14,8 @@ type Bookmark @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"}
 
 type Profile @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"}, subscriptions: null)
 @auth(rules: [
-  { allow: owner }
+  { allow: owner },
+  { allow: private, operations: [read]}
 ]) {
   id: ID!
   username: String
@@ -22,6 +23,8 @@ type Profile @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"},
   imperial: Boolean!
   darkMode: Boolean!
   maxCharacters: Int
+  contactMethod: String
+  contactValue: String
 }
 
 type Character @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"}, subscriptions: null)
@@ -33,6 +36,51 @@ type Character @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"
   id: ID!
   owner: ID! @index(name: "byUser", queryField: "characterByUser")
   data: String
+}
+
+type Homebrew
+@model(subscriptions: null)
+@auth(rules: [
+  { allow: private, operations: [read] },
+  { allow: owner }
+]) {
+  id: ID!
+  owner: ID! @index(name: "byUser", queryField: "homebrewByUser")
+  title: String!
+  titleId: String!
+  data: AWSJSON!
+  model: String! @index(name: "byModel", queryField: "homebrewByModel", sortKeyFields: ["private"])
+  usageCount: Int @default(value: "0")
+  voteCount: Int @default(value: "0")
+  createdAt: AWSDateTime!
+  development: Int! @default(value: "0")
+  published: Int! @default(value: "0")
+  private: Int! @default(value: "1")
+  official: Int! @default(value: "0") @index(name: "byOfficial", queryField: "officialHomebrew", sortKeyFields: ["model"])
+  profile: Profile @hasOne(fields: ["owner"])
+}
+
+type HomebrewUse
+@model
+@auth(rules: [
+  { allow: owner },
+  { allow: private, provider: iam, operations: [read] }
+]) {
+  id: ID!
+  owner: ID! @index(name: "byUser", queryField: "homebrewUseByUser")
+  homebrewId: ID!
+  homebrew: Homebrew @hasOne(fields: ["homebrewId"])
+}
+
+type HomebrewVote
+@model
+@auth(rules: [
+  { allow: owner },
+  { allow: private, provider: iam, operations: [read] }
+]) {
+  id: ID!
+  owner: ID! @index(name: "byUser", queryField: "homebrewVoteByUserByHomebrew", sortKeyFields: ["homebrewId"])
+  homebrewId: ID!
 }
 
 type Subscription {

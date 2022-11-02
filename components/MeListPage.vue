@@ -184,8 +184,8 @@ export default {
       default: (items, sortBy, sortDesc) => {
         const desc = sortDesc ? 1 : -1
         items.sort((a, b) => {
-          const aVal = a[sortBy]
-          const bVal = b[sortBy]
+          const aVal = typeof a[sortBy] === 'string' ? a[sortBy].toUpperCase() : a[sortBy]
+          const bVal = typeof b[sortBy] === 'string' ? b[sortBy].toUpperCase() : b[sortBy]
           return aVal === bVal
             ? a.id > b.id ? desc : desc * -1
             : aVal > bVal ? desc : desc * -1

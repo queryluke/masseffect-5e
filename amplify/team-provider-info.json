@@ -20,6 +20,22 @@
           "googleClientId": "508866812450-4n7bfin1a459e5754q81bs3jjv1op91s.apps.googleusercontent.com"
         },
         "userPoolGroups": {}
+      },
+      "api": {
+        "masseffect5e": {}
+      },
+      "storage": {
+        "me5estorage": {}
+      },
+      "function": {
+        "me5eHomebrewTallies": {
+          "deploymentBucketName": "amplify-masseffect5e-dev-54917-deployment",
+          "s3Key": "amplify-builds/me5eHomebrewTallies-6b3647305570626a6234-build.zip"
+        },
+        "masseffect5eHomebrewTallies": {
+          "deploymentBucketName": "amplify-masseffect5e-dev-54917-deployment",
+          "s3Key": "amplify-builds/masseffect5eHomebrewTallies-4a774a41365853455348-build.zip"
+        }
       }
     }
   },

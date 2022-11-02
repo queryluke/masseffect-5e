@@ -11,6 +11,9 @@
               <slot name="header.expanded" :item="item" :index="index">
                 <me-item-title :title="item.name" />
               </slot>
+              <span v-if="item.homebrew" class="text-caption">
+                <em>by {{ item.homebrew.createdBy }}</em>
+              </span>
             </span>
             <v-row v-else no-gutters>
               <slot v-for="header in headers" :name="`header.${header.key}.col`">
@@ -23,7 +26,14 @@
                   :xl="xl(header)"
                   :class="header.classes"
                 >
-                  <slot :name="`header.${header.key}`" :item="item" :index="index">
+                  <span v-if="header.key === 'name'" :index="index" :item="item">
+                    <v-badge :value="!!item.homebrew" dot inline>
+                      <slot name="header.name" :item="item" :index="index">
+                        {{ item[header.key] }}
+                      </slot>
+                    </v-badge>
+                  </span>
+                  <slot v-else :name="`header.${header.key}`" :item="item" :index="index">
                     {{ item[header.key] }}
                   </slot>
                 </v-col>
@@ -45,7 +55,7 @@
               <me-bookmark v-if="bookmarkable" :type="type" :item="item" />
             </v-col>
             <v-col class="text-right">
-              <me-permalink v-if="linkable" :item-id="item.id" :type="type" :target="newWindow ? '_blank' : '_self' " />
+              <me-permalink v-if="linkable" :item-id="item.id" :type="type" :homebrew="!!item.homebrew" :target="newWindow ? '_blank' : '_self' " />
             </v-col>
           </v-row>
         </div>

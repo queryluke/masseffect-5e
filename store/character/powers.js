@@ -242,6 +242,9 @@ export const getters = {
     }
     for (const p of getters.selectedPowers) {
       const power = list.find(i => i.id === p.id)
+      if (!power) {
+        continue
+      }
       let baseMechanics = power.mechanics[0]
       baseMechanics = p.merge ? merge(cloneDeep(baseMechanics), cloneDeep(p.merge)) : baseMechanics
       const mod = p.mod || getters.klassPowercastingAbilities[p.klass] || defaultPcAbility[power.type]
@@ -265,7 +268,7 @@ export const getters = {
         level: power.level,
         model: 'power',
         icon: `/images/powers/${power.type}.svg`,
-        effect: power.tags.filter(i => i !== 'damage'),
+        effect: (power.tags || []).filter(i => i !== 'damage'),
         source: p.source || p.klass,
         advancement: p.advancement
           // advancement selections used to be objects
@@ -390,7 +393,7 @@ export const getters = {
       // DAMAGE
       if (power.damage && (augments.damage || augments.reroll || augments.dieIncrease)) {
         power.damage = power.damage.map((baseDamage) => {
-          if (['temp', 'hp', 'shields'].includes(baseDamage.type)) {
+          if (['temp', 'hp', 'shields'].includes(baseDamage.type) || baseDamage.addTo) {
             return baseDamage
           }
           const baseDamageBonus = baseDamage.bonus ? rootGetters['character/mechanics/mcBonus'](baseDamage.bonus) : 0
@@ -482,7 +485,7 @@ export const getters = {
     ]
   },
   powerList: (state, getters, rootState, rootGetters) => {
-    return rootGetters.getData('powers')
+    return rootGetters.getData('powers').concat(rootGetters['character/homebrew/powers'])
   }
 }
 

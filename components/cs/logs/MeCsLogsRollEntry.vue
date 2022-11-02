@@ -6,7 +6,7 @@
           mdi-chevron-{{ show ? 'up' : 'down' }}
         </v-icon>
         <div class="ml-1 text-body-2 text-capitalize">
-          {{ data.detail }}: {{ data.type }}
+          {{ data.detail }}: {{ type }}
         </div>
       </div>
       <div class="text-h5 ma-1 mr-2">
@@ -16,26 +16,32 @@
 
     <v-expand-transition>
       <div v-show="show" class="justify-space-between transition-ease-in-out">
-        <div class="d-flex mx-2">
+        <!-- Machine Readable Results -->
+        <div v-if="data.mrResults" class="mx-2 d-flex">
+          <v-icon size="26" class="mr-2">
+            mdi-dice-multiple
+          </v-icon>
+          <div class="flex-grow-1">
+            <template v-for="(result, index) of data.mrResults" class="d-flex mx-3 align-center font-weight-medium" style="font-size: 1.2em">
+              <me-cs-roll-group-entry
+                v-if="typeof result === 'object'"
+                :key="`roll-group-entry-${index}`"
+                :roll-group="result"
+                :show-subtotals="data.mrResults.length > 1"
+                :index="index"
+                :types="entry.data.type"
+              />
+            </template>
+          </div>
+        </div>
+        <!-- Old Results -->
+
+        <!-- old results -->
+        <div v-else class="d-flex mx-2">
           <v-icon size="26">
             mdi-dice-multiple
           </v-icon>
-          <!-- Machine Readable Results -->
-          <div v-if="data.mrResults" class="d-flex mx-3 align-center font-weight-medium" style="font-size: 1.2em">
-            <template v-for="(result, index) of data.mrResults">
-              <div v-if="typeof result === 'object'" :key="`roll-result-${index}`" class="d-flex align-center">
-                <template v-for="(diceResult, drIndex) of result">
-                  <me-cs-roll-result :key="`dice-result-${drIndex}`" :result="diceResult" />
-                  <span v-if="drIndex + 1 < result.length" :key="`dice-result-adder-${drIndex}`">+</span>
-                </template>
-              </div>
-              <div v-else :key="`non-roll-${index}`">
-                {{ result }}
-              </div>
-            </template>
-          </div>
-          <!-- Old Results -->
-          <div v-else>
+          <div>
             {{ data.results }}
           </div>
         </div>
@@ -87,6 +93,9 @@ export default {
   computed: {
     show () {
       return this.open || this.isLastEntry
+    },
+    type () {
+      return typeof this.entry.data.type === 'object' ? this.entry.data.type.join(', ') : this.entry.data.type
     }
   },
   watch: {

@@ -1,5 +1,16 @@
 import { DiceRoll } from '@dice-roller/rpg-dice-roller'
 
+function extractRolls (value) {
+  if (value.constructor.name === 'ResultGroup') {
+    return value.results.map(i => extractRolls(i)).flat()
+  } else if (value.constructor.name === 'RollResults') {
+    return value.rolls.map(roll => [roll.initialValue, roll.value || false])
+  } else {
+    return value
+  }
+}
+// const expressionsSymbol = Symbol('expressions')
+
 export const state = () => ({
   rollController: {},
   dieTypes: ['d4', 'd6', 'd8', 'd10', 'd12', 'd20', 'd100'],
@@ -44,20 +55,20 @@ export const actions = {
     }
   },
   ROLL ({ dispatch, rootGetters }, payload) {
-    const roll = new DiceRoll(payload.notation.toString())
-    const mrResults = roll.rolls.map((i) => {
-      if (typeof i === 'object') {
-        return i.rolls.map(roll => [roll.initialValue, roll.value || false])
-      }
-      return i
-    })
-    const results = roll.output.split(/[:=]/)[1].trim()
+    let notation = payload.notation.toString()
+    if (!notation.includes('{')) {
+      notation = `{${notation}}`
+    }
+    const roll = new DiceRoll(notation)
+    let mrResults = false
+    mrResults = roll.rolls.map(i => extractRolls(i))
+    const results = roll.output.split(/[:=]/)[1].trim().replaceAll(/[{}]/g, '')
     const entry = {
       data: {
         type: payload.type,
         detail: payload.detail,
         notation: roll.notation,
-        text: payload.text,
+        text: payload.text || roll.notation.replaceAll(/[{}]/g, ''),
         total: roll.total,
         results,
         mrResults

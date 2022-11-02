@@ -67,6 +67,9 @@
           <v-list-item to="/characters">
             Characters
           </v-list-item>
+          <v-list-item to="/homebrew">
+            Homebrew
+          </v-list-item>
           <v-list-item to="/bookmarks">
             Bookmarks
           </v-list-item>

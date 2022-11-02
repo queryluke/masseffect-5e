@@ -227,6 +227,10 @@ export default {
           header: this.$t('title')
         },
         {
+          to: '/homebrew',
+          name: 'Community Homebrew'
+        },
+        {
           to: '/assets',
           name: this.$t('assets_title')
         },

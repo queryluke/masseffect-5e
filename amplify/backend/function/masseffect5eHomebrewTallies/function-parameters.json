@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "api": {
+      "masseffect5e": [
+        "Query",
+        "Mutation"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

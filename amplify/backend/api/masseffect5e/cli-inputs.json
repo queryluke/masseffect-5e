@@ -3,7 +3,6 @@
   "serviceConfiguration": {
     "apiName": "masseffect5e",
     "serviceName": "AppSync",
-    "gqlSchemaPath": "/Users/luaeschleman/Sites/masseffect-5e/masseffect-5e/amplify/backend/api/masseffect5e/schema.graphql",
     "defaultAuthType": {
       "mode": "AMAZON_COGNITO_USER_POOLS",
       "cognitoUserPoolId": "authme5eauth"
@@ -15,6 +14,9 @@
         "expirationTime": 365,
         "apiKeyExpirationDate": "2023-03-07T12:31:13.189Z",
         "keyDescription": "admin_utils"
+      },
+      {
+        "mode": "AWS_IAM"
       }
     ]
   }
