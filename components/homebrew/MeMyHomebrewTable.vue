@@ -2,7 +2,7 @@
   <div>
     <v-data-table
       :headers="headers"
-      :items="items"
+      :items="filteredItems"
       :loading="loading"
       :expanded.sync="expanded"
       :search="search"
@@ -14,13 +14,43 @@
     >
       <template #top>
         <v-row class="px-3 mb-2">
-          <v-col cols="12" md="6">
+          <v-col cols="7">
             <v-text-field v-model="search" hide-details label="Search" />
           </v-col>
-          <v-col cols="12" md="6">
-            <v-alert value type="info" dense>
-              Items with the <em><strong>DEVELOPMENT</strong></em> status can be updated by the creator and might change without warning.
-            </v-alert>
+          <v-col cols="4" offset="1">
+            <v-select
+              v-model="modelType"
+              hide-details
+              label="Filter by type"
+              :items="modelTypes"
+              :menu-props="{offsetY: true}"
+              clearable
+            >
+              <template #selection="{ item: selection }">
+                <v-list-item-action class="my-0 py-0">
+                  <v-icon :color="modelConfig[selection].color">
+                    {{ modelConfig[selection].icon }}
+                  </v-icon>
+                </v-list-item-action>
+                <v-list-item-content class="my-0 py-0">
+                  <v-list-item-title class="text-capitalize">
+                    {{ selection }}
+                  </v-list-item-title>
+                </v-list-item-content>
+              </template>
+              <template #item="{ item: selectItem }">
+                <v-list-item-action>
+                  <v-icon :color="modelConfig[selectItem].color">
+                    {{ modelConfig[selectItem].icon }}
+                  </v-icon>
+                </v-list-item-action>
+                <v-list-item-content>
+                  <v-list-item-title class="text-capitalize">
+                    {{ selectItem }}
+                  </v-list-item-title>
+                </v-list-item-content>
+              </template>
+            </v-select>
           </v-col>
         </v-row>
       </template>
@@ -51,8 +81,19 @@
           <div class="mx-3">
             <me-homebrew-add-btn :homebrew="item" @added="updateItemCounts(item, 1, 'usageCount')" @removed="updateItemCounts(item, -1, 'usageCount')" />
           </div>
-          <div class="mx-3">
-            <me-homebrew-vote-btn :homebrew="item" @voted="updateItemCounts(item, 1, 'voteCount')" @voteRemoved="updateItemCounts(item, -1, 'voteCount')" />
+          <div v-if="!collection" class="mx-3">
+            <v-btn icon :to="`/homebrew/edit/?id=${item.id}`" exact small>
+              <v-icon small>
+                mdi-pencil
+              </v-icon>
+            </v-btn>
+          </div>
+          <div v-if="!collection" class="mx-3">
+            <v-btn icon small color="error" @click.stop="deleteHomebrew(item)">
+              <v-icon small>
+                mdi-delete
+              </v-icon>
+            </v-btn>
           </div>
         </div>
       </template>
@@ -62,6 +103,7 @@
         </td>
       </template>
     </v-data-table>
+    <me-homebrew-delete-dialog :show="confirmDeleteDialog" :item="confirmDeleteItem" @close="cancelDelete" @deleted="deleted" />
   </div>
 </template>
 
@@ -71,14 +113,18 @@ export default {
   name: 'MeMyHomebrewTable',
   mixins: [homebrewModelConfig],
   props: {
-    selectedModel: {
-      type: String,
-      default: ''
+    collection: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
     return {
       search: null,
+      modelTypes: [
+        'powers'
+      ],
+      modelType: null,
       headers: [
         { text: '', value: 'data-table-expand' },
         { text: 'Type', value: 'type' },
@@ -90,7 +136,7 @@ export default {
         { text: '', value: 'actions', sortable: false }
       ],
       footerProps: {
-        itemsPerPageOptions: [10, 20, 50]
+        itemsPerPageOptions: [20, 50, 100]
       },
       items: [],
       expanded: [],
@@ -99,18 +145,18 @@ export default {
       confirmDeleteDialog: false
     }
   },
+  async fetch () {
+    await this.getItems()
+  },
   computed: {
     myId () {
       return this.$store.getters['auth/username']
-    }
-  },
-  watch: {
-    selectedModel: {
-      async handler () {
-        if (Object.keys(this.modelConfig).includes(this.selectedModel)) {
-          await this.getItems()
-        }
+    },
+    filteredItems () {
+      if (this.modelType) {
+        return this.items.filter(i => i.model === this.modelType)
       }
+      return this.items
     }
   },
   methods: {
@@ -127,25 +173,39 @@ export default {
       if (this.loading) {
         return
       }
-      if (!Object.keys(this.modelConfig).includes(this.selectedModel)) {
-        return
-      }
       this.loading = true
       this.expanded = []
-      const allItems = []
-      const query = 'homebrewByModel'
-      const variables = { model: this.selectedModel, private: { eq: 0 } }
-      let nextToken = null
-      do {
-        variables.nextToken = nextToken
-        const response = await this.$store.dispatch('api/QUERY', { query, variables })
-        if (response?.items?.length) {
-          allItems.push(...response.items)
-        }
-        nextToken = response?.nextToken || null
-      } while (nextToken !== null)
+      let allItems = []
+      if (this.collection) {
+        await this.$store.dispatch('FETCH_HOMEBREW_DATA')
+        allItems = this.$store.getters.rawHomebrew.slice()
+      } else {
+        const query = 'homebrewByUser'
+        const variables = { owner: this.myId }
+        let nextToken = null
+        do {
+          variables.nextToken = nextToken
+          const response = await this.$store.dispatch('api/QUERY', { query, variables })
+          if (response?.items?.length) {
+            allItems.push(...response.items)
+          }
+          nextToken = response?.nextToken || null
+        } while (nextToken !== null)
+      }
       this.items = allItems
       this.loading = false
+    },
+    deleteHomebrew (item) {
+      this.confirmDeleteItem = item
+      this.confirmDeleteDialog = true
+    },
+    async deleted () {
+      this.cancelDelete()
+      await this.getItems()
+    },
+    cancelDelete () {
+      this.confirmDeleteItem = {}
+      this.confirmDeleteDialog = false
     }
   }
 }

@@ -165,12 +165,11 @@ export const createHomebrew = /* GraphQL */ `
       model
       usageCount
       voteCount
-      publicationStatus
       createdAt
-      sortHackUsage
-      sortHackVotes
-      sortHackTitle
-      sortHackCreatedAt
+      development
+      published
+      private
+      official
       profile {
         id
         username
@@ -202,12 +201,11 @@ export const updateHomebrew = /* GraphQL */ `
       model
       usageCount
       voteCount
-      publicationStatus
       createdAt
-      sortHackUsage
-      sortHackVotes
-      sortHackTitle
-      sortHackCreatedAt
+      development
+      published
+      private
+      official
       profile {
         id
         username
@@ -239,12 +237,11 @@ export const deleteHomebrew = /* GraphQL */ `
       model
       usageCount
       voteCount
-      publicationStatus
       createdAt
-      sortHackUsage
-      sortHackVotes
-      sortHackTitle
-      sortHackCreatedAt
+      development
+      published
+      private
+      official
       profile {
         id
         username
@@ -280,12 +277,11 @@ export const createHomebrewUse = /* GraphQL */ `
         model
         usageCount
         voteCount
-        publicationStatus
         createdAt
-        sortHackUsage
-        sortHackVotes
-        sortHackTitle
-        sortHackCreatedAt
+        development
+        published
+        private
+        official
         profile {
           id
           username
@@ -324,12 +320,11 @@ export const updateHomebrewUse = /* GraphQL */ `
         model
         usageCount
         voteCount
-        publicationStatus
         createdAt
-        sortHackUsage
-        sortHackVotes
-        sortHackTitle
-        sortHackCreatedAt
+        development
+        published
+        private
+        official
         profile {
           id
           username
@@ -368,12 +363,11 @@ export const deleteHomebrewUse = /* GraphQL */ `
         model
         usageCount
         voteCount
-        publicationStatus
         createdAt
-        sortHackUsage
-        sortHackVotes
-        sortHackTitle
-        sortHackCreatedAt
+        development
+        published
+        private
+        official
         profile {
           id
           username

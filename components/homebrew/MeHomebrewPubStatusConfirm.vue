@@ -11,11 +11,6 @@
         <ol>
           <li>Your item will appear in the community homebrew list.</li>
           <li>Community members will be able to add your homebrew to their collection and use it on their characters.</li>
-          <li>
-            If you have added a contact method on your <nuxt-link to="/profile" target="_blank">
-              profile
-            </nuxt-link>, players may contact you with feedback.
-          </li>
           <li>You will NOT be able to change this item back to the private status.</li>
           <li>You can only delete the item if it is not being used by any other accounts.</li>
         </ol>
@@ -32,13 +27,7 @@
         <ol>
           <li>Your item will appear in the community homebrew list.</li>
           <li>Community members will be able to add your homebrew to their collection and use it on their characters.</li>
-          <li>Community members will be able to up vote your creation.</li>
-          <li>
-            If you have added a contact method on your
-            <nuxt-link to="/profile" target="_blank">
-              profile
-            </nuxt-link>, players may contact you with feedback.
-          </li>
+          <li>Community members will be able to up-vote your creation.</li>
           <li>You will NOT be able to make any edits to this item. Instead, you will need to make a copy of it.</li>
           <li>You will NOT be able to change this item back to the private or development status.</li>
           <li>You can only delete the item if it is not being used by any other accounts.</li>

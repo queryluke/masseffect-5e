@@ -1,6 +1,12 @@
 export const homebrewDefaults = {
   data () {
     return {
+      modelConig: {
+        powers: {
+          icon: 'mdi-fire',
+          color: 'purple lighten-1'
+        }
+      },
       homebrewDefaults: {
         powers: {
           name: null,

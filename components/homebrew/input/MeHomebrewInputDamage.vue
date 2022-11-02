@@ -84,6 +84,7 @@ export default {
   computed: {
     dieCount: {
       get () {
+        console.log(this.damage.dieCount)
         return typeof this.damage.dieCount === 'object' ? 'X' : this.damage.dieCount
       },
       set (value) {
@@ -135,6 +136,11 @@ export default {
     },
     addToHint () {
       return (this.addToOptions.find(i => i.value === this.addTo) || { hint: '' }).hint
+    }
+  },
+  created () {
+    if (this.dieCount === 'X') {
+      this.customDieCount = this.damage.dieCount
     }
   },
   methods: {

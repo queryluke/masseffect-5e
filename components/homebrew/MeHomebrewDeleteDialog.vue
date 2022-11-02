@@ -91,7 +91,6 @@ export default {
       if (this.inUse) {
         return
       }
-      console.log(this.myId, this.item.id)
       await this.$store.dispatch('api/MUTATE', { mutation: 'deleteHomebrew', input: { id: this.item.id } })
       this.loading = false
       this.$emit('deleted')

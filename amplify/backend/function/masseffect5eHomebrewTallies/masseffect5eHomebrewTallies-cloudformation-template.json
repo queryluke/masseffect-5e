@@ -1,6 +1,6 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "{\"createdOn\":\"Windows\",\"createdBy\":\"Amplify\",\"createdWith\":\"10.2.3\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
+  "Description": "Lambda Function resource stack creation using Amplify CLI",
   "Parameters": {
     "CloudWatchRule": {
       "Type": "String",
@@ -59,12 +59,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "me5eHomebrewTallies",
+            "masseffect5eHomebrewTallies",
             {
               "Fn::Join": [
                 "",
                 [
-                  "me5eHomebrewTallies",
+                  "masseffect5eHomebrewTallies",
                   "-",
                   {
                     "Ref": "env"
@@ -110,12 +110,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "masseffect5eLambdaRole56512932",
+            "masseffect5eLambdaRole99a8d2b3",
             {
               "Fn::Join": [
                 "",
                 [
-                  "masseffect5eLambdaRole56512932",
+                  "masseffect5eLambdaRole99a8d2b3",
                   "-",
                   {
                     "Ref": "env"

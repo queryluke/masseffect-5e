@@ -12,6 +12,9 @@
       <v-tab-item>
         <v-card-text>
           <v-row>
+            <v-col cols="12">
+              <v-text-field v-model="title" filled label="Title" />
+            </v-col>
             <v-col cols="12" sm="6">
               <v-select
                 v-model="type"
@@ -156,6 +159,14 @@ export default {
     }
   },
   computed: {
+    title: {
+      get () {
+        return this.item.name
+      },
+      set (value) {
+        this.$emit('updateTitle', value)
+      }
+    },
     level: {
       get () {
         return this.item.level || 0

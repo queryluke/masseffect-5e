@@ -31,7 +31,7 @@ export type AmplifyDependentResourcesAttributes = {
         }
     },
     "function": {
-        "me5eHomebrewTallies": {
+        "masseffect5eHomebrewTallies": {
             "Name": "string",
             "Arn": "string",
             "Region": "string",

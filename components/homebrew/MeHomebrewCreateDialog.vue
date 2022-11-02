@@ -14,7 +14,7 @@
       </v-card-title>
       <v-card-text>
         <v-select v-model="type" :items="types" label="Type" :error-messages="typeErrorMessages" @change="loadBasedOnOptions" />
-        <v-text-field v-model="title" label="Title" :error-messages="titleErrorMessages" persistent-hint messages="You cannot change the title after the homebrew has been created." />
+        <v-text-field v-model="title" label="Title" />
         <v-autocomplete
           v-if="type"
           v-model="basedOn"
@@ -93,32 +93,12 @@ export default {
     },
     async submit () {
       this.typeErrorMessages = []
-      this.titleErrorMessages = []
       if (!this.type) {
         this.typeErrorMessages = 'You must select a homebrew type'
         return
       }
-      if (!this.title) {
-        this.titleErrorMessages = 'Required'
-        return
-      }
       this.loading = true
-      await this.loadBasedOnOptions()
-      const errorMessage = 'That name already exists. All homebrew names of a specific type must be unique.'
-      const official = await this.$store.getters.getData(this.type)
       const titleId = this.title.trim().toLowerCase().replaceAll(/\W/g, '-')
-      const matchingTitleInOfficial = official.find(i => i.id === titleId)
-      if (matchingTitleInOfficial) {
-        this.titleErrorMessages = errorMessage
-        this.loading = false
-        return
-      }
-      const { items } = await this.$store.dispatch('api/QUERY', { query: 'homebrewByTitleId', variables: { titleId } })
-      if (items.length) {
-        this.titleErrorMessages = errorMessage
-        this.loading = false
-        return
-      }
       let data = {}
       if (this.basedOn) {
         data = Object.assign({}, this.basedOn)
@@ -133,11 +113,10 @@ export default {
         owner: this.myId,
         model: this.type,
         data: JSON.stringify(data),
-        publicationStatus: 'private',
-        sortHackUsage: 1,
-        sortHackVotes: 2,
-        sortHackTitle: 3,
-        sortHackCreatedAt: 4
+        private: 1,
+        published: 0,
+        development: 0,
+        official: 0
       }
       const { id } = await this.$store.dispatch('api/MUTATE', { mutation: 'createHomebrew', input: newHomebrewItem })
       await this.$router.push({

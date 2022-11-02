@@ -169,12 +169,11 @@ export const getHomebrew = /* GraphQL */ `
       model
       usageCount
       voteCount
-      publicationStatus
       createdAt
-      sortHackUsage
-      sortHackVotes
-      sortHackTitle
-      sortHackCreatedAt
+      development
+      published
+      private
+      official
       profile {
         id
         username
@@ -208,12 +207,11 @@ export const listHomebrews = /* GraphQL */ `
         model
         usageCount
         voteCount
-        publicationStatus
         createdAt
-        sortHackUsage
-        sortHackVotes
-        sortHackTitle
-        sortHackCreatedAt
+        development
+        published
+        private
+        official
         profile {
           id
           username
@@ -257,12 +255,11 @@ export const homebrewByUser = /* GraphQL */ `
         model
         usageCount
         voteCount
-        publicationStatus
         createdAt
-        sortHackUsage
-        sortHackVotes
-        sortHackTitle
-        sortHackCreatedAt
+        development
+        published
+        private
+        official
         profile {
           id
           username
@@ -282,16 +279,18 @@ export const homebrewByUser = /* GraphQL */ `
     }
   }
 `;
-export const homebrewByTitleId = /* GraphQL */ `
-  query HomebrewByTitleId(
-    $titleId: String!
+export const homebrewByModel = /* GraphQL */ `
+  query HomebrewByModel(
+    $model: String!
+    $private: ModelIntKeyConditionInput
     $sortDirection: ModelSortDirection
     $filter: ModelHomebrewFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    homebrewByTitleId(
-      titleId: $titleId
+    homebrewByModel(
+      model: $model
+      private: $private
       sortDirection: $sortDirection
       filter: $filter
       limit: $limit
@@ -306,12 +305,11 @@ export const homebrewByTitleId = /* GraphQL */ `
         model
         usageCount
         voteCount
-        publicationStatus
         createdAt
-        sortHackUsage
-        sortHackVotes
-        sortHackTitle
-        sortHackCreatedAt
+        development
+        published
+        private
+        official
         profile {
           id
           username
@@ -331,15 +329,17 @@ export const homebrewByTitleId = /* GraphQL */ `
     }
   }
 `;
-export const homebrewByModelByStatus = /* GraphQL */ `
-  query HomebrewByModelByStatus(
-    $model: String!
+export const officialHomebrew = /* GraphQL */ `
+  query OfficialHomebrew(
+    $official: Int!
+    $model: ModelStringKeyConditionInput
     $sortDirection: ModelSortDirection
     $filter: ModelHomebrewFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    homebrewByModelByStatus(
+    officialHomebrew(
+      official: $official
       model: $model
       sortDirection: $sortDirection
       filter: $filter
@@ -355,216 +355,11 @@ export const homebrewByModelByStatus = /* GraphQL */ `
         model
         usageCount
         voteCount
-        publicationStatus
         createdAt
-        sortHackUsage
-        sortHackVotes
-        sortHackTitle
-        sortHackCreatedAt
-        profile {
-          id
-          username
-          profileImg
-          imperial
-          darkMode
-          maxCharacters
-          contactMethod
-          contactValue
-          createdOn
-          updatedOn
-          owner
-        }
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const homebrewSortedByUsage = /* GraphQL */ `
-  query HomebrewSortedByUsage(
-    $sortHackUsage: Int!
-    $usageCount: ModelIntKeyConditionInput
-    $sortDirection: ModelSortDirection
-    $filter: ModelHomebrewFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    homebrewSortedByUsage(
-      sortHackUsage: $sortHackUsage
-      usageCount: $usageCount
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        owner
-        title
-        titleId
-        data
-        model
-        usageCount
-        voteCount
-        publicationStatus
-        createdAt
-        sortHackUsage
-        sortHackVotes
-        sortHackTitle
-        sortHackCreatedAt
-        profile {
-          id
-          username
-          profileImg
-          imperial
-          darkMode
-          maxCharacters
-          contactMethod
-          contactValue
-          createdOn
-          updatedOn
-          owner
-        }
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const homebrewSortedByVotes = /* GraphQL */ `
-  query HomebrewSortedByVotes(
-    $sortHackVotes: Int!
-    $voteCount: ModelIntKeyConditionInput
-    $sortDirection: ModelSortDirection
-    $filter: ModelHomebrewFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    homebrewSortedByVotes(
-      sortHackVotes: $sortHackVotes
-      voteCount: $voteCount
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        owner
-        title
-        titleId
-        data
-        model
-        usageCount
-        voteCount
-        publicationStatus
-        createdAt
-        sortHackUsage
-        sortHackVotes
-        sortHackTitle
-        sortHackCreatedAt
-        profile {
-          id
-          username
-          profileImg
-          imperial
-          darkMode
-          maxCharacters
-          contactMethod
-          contactValue
-          createdOn
-          updatedOn
-          owner
-        }
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const homebrewSortedByTitle = /* GraphQL */ `
-  query HomebrewSortedByTitle(
-    $sortHackTitle: Int!
-    $title: ModelStringKeyConditionInput
-    $sortDirection: ModelSortDirection
-    $filter: ModelHomebrewFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    homebrewSortedByTitle(
-      sortHackTitle: $sortHackTitle
-      title: $title
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        owner
-        title
-        titleId
-        data
-        model
-        usageCount
-        voteCount
-        publicationStatus
-        createdAt
-        sortHackUsage
-        sortHackVotes
-        sortHackTitle
-        sortHackCreatedAt
-        profile {
-          id
-          username
-          profileImg
-          imperial
-          darkMode
-          maxCharacters
-          contactMethod
-          contactValue
-          createdOn
-          updatedOn
-          owner
-        }
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const homebrewSortedByCreatedAt = /* GraphQL */ `
-  query HomebrewSortedByCreatedAt(
-    $sortHackCreatedAt: Int!
-    $createdAt: ModelStringKeyConditionInput
-    $sortDirection: ModelSortDirection
-    $filter: ModelHomebrewFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    homebrewSortedByCreatedAt(
-      sortHackCreatedAt: $sortHackCreatedAt
-      createdAt: $createdAt
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        owner
-        title
-        titleId
-        data
-        model
-        usageCount
-        voteCount
-        publicationStatus
-        createdAt
-        sortHackUsage
-        sortHackVotes
-        sortHackTitle
-        sortHackCreatedAt
+        development
+        published
+        private
+        official
         profile {
           id
           username
@@ -599,12 +394,11 @@ export const getHomebrewUse = /* GraphQL */ `
         model
         usageCount
         voteCount
-        publicationStatus
         createdAt
-        sortHackUsage
-        sortHackVotes
-        sortHackTitle
-        sortHackCreatedAt
+        development
+        published
+        private
+        official
         profile {
           id
           username
@@ -645,12 +439,11 @@ export const listHomebrewUses = /* GraphQL */ `
           model
           usageCount
           voteCount
-          publicationStatus
           createdAt
-          sortHackUsage
-          sortHackVotes
-          sortHackTitle
-          sortHackCreatedAt
+          development
+          published
+          private
+          official
           profile {
             id
             username
@@ -701,12 +494,11 @@ export const homebrewUseByUser = /* GraphQL */ `
           model
           usageCount
           voteCount
-          publicationStatus
           createdAt
-          sortHackUsage
-          sortHackVotes
-          sortHackTitle
-          sortHackCreatedAt
+          development
+          published
+          private
+          official
           profile {
             id
             username

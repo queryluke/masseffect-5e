@@ -32,8 +32,8 @@
         </v-col>
       </v-row>
       <v-card flat outlined>
-        <component :is="form" :item="itemData" @update="itemData = $event" />
-        <me-homebrew-editor-actions :saving="saving" :publication-status="item.publicationStatus" @save="updateData" @updateStatus="updateStatus($event)" />
+        <component :is="form" :item="itemData" @update="itemData = $event" @updateTitle="updateTitle" />
+        <me-homebrew-editor-actions :saving="saving" :publication-status="publicationStatus" @save="updateData" @updateStatus="updateStatus($event)" />
       </v-card>
     </div>
   </v-container>
@@ -54,7 +54,6 @@ export default {
     } catch (e) {
       console.error(e)
     }
-    console.log(item)
     return { item }
   },
   data () {
@@ -95,6 +94,9 @@ export default {
       set (value) {
         this.item.data = value
       }
+    },
+    publicationStatus () {
+      return this.item.published ? 'published' : this.item.development ? 'development' : 'private'
     }
   },
   created () {
@@ -104,6 +106,9 @@ export default {
     })
   },
   methods: {
+    updateTitle (title) {
+      this.item = { ...this.item, title, data: { ...this.itemData, name: title } }
+    },
     async updateData () {
       this.saving = true
       const input = {
@@ -115,9 +120,14 @@ export default {
     },
     async updateStatus (status) {
       this.saving = true
+      const statuses = {
+        private: status === 'private' ? 1 : 0,
+        development: status === 'development' ? 1 : 0,
+        published: status === 'published' ? 1 : 0
+      }
       const input = {
         id: this.item.id,
-        publicationStatus: status
+        ...statuses
       }
       const newItem = await this.$store.dispatch('api/MUTATE', { mutation: 'updateHomebrew', input })
       newItem.data = JSON.parse(newItem.data)

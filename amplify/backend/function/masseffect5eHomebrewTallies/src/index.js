@@ -18,7 +18,8 @@ const getHomebrew = /* GraphQL */ `
       id
       usageCount
       voteCount
-      publicationStatus
+      model
+      private
     }
   }
 `
@@ -83,15 +84,7 @@ exports.handler = async (event) => {
       continue
     }
     const dbModel = data.__typename
-    if (!dbModel) {
-      continue
-    }
-    const countType = dbModel === 'HomebrewUse'
-      ? 'usageCount'
-      : dbModel === 'HomebrewVote'
-        ? 'voteCount'
-        : false
-    if (!countType) {
+    if (!dbModel || !['HomebrewVote', 'HomebrewUse'].includes(dbModel)) {
       continue
     }
     const { data: { getHomebrew: homebrew } } = await graphqlRequest(
@@ -105,20 +98,27 @@ exports.handler = async (event) => {
     if (!homebrew) {
       continue
     }
-    if (homebrew.publicationStatus !== 'published' && countType === 'vote') {
+    if (!homebrew.published && dbModel === 'HomebrewVote') {
       continue
     }
 
-    homebrew[countType] = Math.max(0, homebrew[countType] + adder)
-
+    const input = {
+      id: data.homebrewId,
+      model: homebrew.model,
+      private: homebrew.private
+    }
+    if (dbModel === 'HomebrewVote') {
+      input.voteCount = Math.max(0, homebrew.voteCount + adder)
+      input.usageCount = homebrew.usageCount
+    } else {
+      input.usageCount = Math.max(0, homebrew.usageCount + adder)
+      input.voteCount = homebrew.voteCount
+    }
     await graphqlRequest(
       {
         query: updateHomebrew,
         variables: {
-          input: {
-            id: data.homebrewId,
-            [countType]: homebrew[countType]
-          }
+          input
         }
       }
     )

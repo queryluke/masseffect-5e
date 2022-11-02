@@ -42,12 +42,11 @@ export const onCreateHomebrewUse = /* GraphQL */ `
         model
         usageCount
         voteCount
-        publicationStatus
         createdAt
-        sortHackUsage
-        sortHackVotes
-        sortHackTitle
-        sortHackCreatedAt
+        development
+        published
+        private
+        official
         profile {
           id
           username
@@ -83,12 +82,11 @@ export const onUpdateHomebrewUse = /* GraphQL */ `
         model
         usageCount
         voteCount
-        publicationStatus
         createdAt
-        sortHackUsage
-        sortHackVotes
-        sortHackTitle
-        sortHackCreatedAt
+        development
+        published
+        private
+        official
         profile {
           id
           username
@@ -124,12 +122,11 @@ export const onDeleteHomebrewUse = /* GraphQL */ `
         model
         usageCount
         voteCount
-        publicationStatus
         createdAt
-        sortHackUsage
-        sortHackVotes
-        sortHackTitle
-        sortHackCreatedAt
+        development
+        published
+        private
+        official
         profile {
           id
           username
