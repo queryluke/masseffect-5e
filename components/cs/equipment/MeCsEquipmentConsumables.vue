@@ -1,5 +1,14 @@
 <template>
   <v-card flat>
+    <v-card-text v-if="settingsOff">
+      <p class="text-caption">
+        To track your consumables (grenades, medi-gel, and thermal clips), you must turn these options on in your
+        character preferences.
+      </p>
+      <v-btn small @click="showCharacterMenu">
+        Edit Preferences
+      </v-btn>
+    </v-card-text>
     <!-- Thermal Clips -->
     <v-list v-if="settings.clips" two-line dense>
       <v-subheader>Thermal Clips</v-subheader>
@@ -115,10 +124,13 @@ export default {
         preferences[key] = this.$store.getters['character/character'].options[key] || false
       }
       return {
-        medigel: preferences.medigelSlots && this.medigel.length,
+        medigel: preferences.medigelSlots,
         clips: preferences.thermalClips,
-        grenades: preferences.grenadeSlots && this.grenades.length
+        grenades: preferences.grenadeSlots
       }
+    },
+    settingsOff () {
+      return !this.settings.medigel && !this.settings.clips && !this.settings.grenades
     },
     medigel () {
       // TEMP: notAddable filter to prevent people from interacting with the base model
@@ -154,6 +166,9 @@ export default {
     },
     setThermalClips () {
       this.$store.dispatch('character/equipment/SET_THERMAL_CLIPS')
+    },
+    showCharacterMenu () {
+      this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-character-side-nav')
     }
   }
 }

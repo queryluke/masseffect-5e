@@ -31,6 +31,7 @@
         text
         nuxt
         :href="item.href"
+        exact
       >
         {{ item.nonTName || $t(item.name) }}
       </v-btn>
@@ -64,10 +65,10 @@
           <v-list-item to="/profile">
             Profile
           </v-list-item>
-          <v-list-item to="/characters">
+          <v-list-item to="/characters" exact>
             Characters
           </v-list-item>
-          <v-list-item to="/homebrew">
+          <v-list-item to="/homebrew" exact>
             Homebrew
           </v-list-item>
           <v-list-item to="/bookmarks">
