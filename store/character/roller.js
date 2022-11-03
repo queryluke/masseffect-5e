@@ -1,10 +1,10 @@
 import { DiceRoll } from '@dice-roller/rpg-dice-roller'
 
 function extractRolls (value) {
-  if (value.constructor.name === 'ResultGroup') {
-    return value.results.map(i => extractRolls(i)).flat()
-  } else if (value.constructor.name === 'RollResults') {
+  if (value.rolls) {
     return value.rolls.map(roll => [roll.initialValue, roll.value || false])
+  } else if (typeof value === 'object' && value.results && Array.isArray(value.results)) {
+    return value.results.map(i => extractRolls(i)).flat()
   } else {
     return value
   }

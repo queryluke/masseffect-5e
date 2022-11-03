@@ -2959,7 +2959,7 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@dice-roller/rpg-dice-roller@^5.1.0":
+"@dice-roller/rpg-dice-roller@^5.2.0":
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/@dice-roller/rpg-dice-roller/-/rpg-dice-roller-5.2.1.tgz#2516eb9f0664a41b5ead1528f5f4520f7bb13f77"
   integrity sha512-6GBwrsu6iKS7n+tJENm6PCflrEQdmF49XnCDRZLunYFS7Bx4WwNLL/GNei/CeWclZChmgcVysmpN12ftVuEISQ==

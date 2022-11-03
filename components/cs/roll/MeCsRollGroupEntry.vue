@@ -104,7 +104,6 @@ export default {
       }
     },
     isObject (thing) {
-      console.log(thing)
       return typeof thing === 'object'
     }
   }
