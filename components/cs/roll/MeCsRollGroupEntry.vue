@@ -1,10 +1,10 @@
 <template>
   <div class="d-flex justify-space-between mt-1">
-    <div v-if="typeof rollGroup === 'object'" class="d-flex align-center">
+    <div v-if="isObject(rollGroup)" class="d-flex align-center">
       <template v-for="(rollGroupResult, rgIndex) of rollGroup">
-        <div v-if="typeof rollGroupResult === 'object'" :key="`roll-group-result-${rgIndex}`" class="d-flex align-center">
+        <div v-if="isObject(rollGroupResult)" :key="`roll-group-result-${rgIndex}`" class="d-flex align-center">
           <me-cs-roll-result :key="`dice-result-${rgIndex}`" :result="rollGroupResult" />
-          <span v-if="typeof rollGroup[rgIndex + 1] === 'object'" :key="`dice-result-adder-${rgIndex}`">+</span>
+          <span v-if="isObject(rollGroup[rgIndex + 1])" :key="`dice-result-adder-${rgIndex}`">+</span>
         </div>
         <div v-else :key="`non-roll-${rgIndex}`">
           {{ rollGroupResult }}
@@ -102,6 +102,10 @@ export default {
         default:
           return acc
       }
+    },
+    isObject (thing) {
+      console.log(thing)
+      return typeof thing === 'object'
     }
   }
 }

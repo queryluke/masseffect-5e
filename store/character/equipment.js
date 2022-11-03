@@ -155,7 +155,7 @@ export const getters = {
         return {
           data,
           ...i,
-          slots: data.properties.includes('two-handed') ? 2 : 1,
+          slots: data.slots,
           mechanics: modMechanics.filter(i => i.type !== 'adjust-weapon-props'),
           properties
         }
@@ -394,7 +394,7 @@ export const getters = {
       const reach = weapon.properties.includes('reach')
       const vented = weapon.properties.includes('vented')
       const twoHanded = weapon.properties.includes('two-handed')
-      const versatile = weapon.properties.includes('versatile')
+      const versatile = weapon.properties.includes('versatile') || !!weapon.versatile
       const dexOrStr = rootGetters['character/abilities/dexMod'] > rootGetters['character/abilities/strMod'] ? 'dex' : 'str'
       // TODO: when new melee weapons arrive, need to change this...note that natural weapons are natural-ranged and natural-melee
       const attackType = ['melee', 'gun-strike', 'natural-melee'].includes(weapon.data.type) ? 'melee' : 'ranged'
@@ -495,21 +495,10 @@ export const getters = {
         damage.push(...toggleDamagesToPush)
       }
       if (versatile) {
-        if (weapon.id === 'krogan-warhammer') {
+        if (weapon.data.versatile) {
           damage.push({
             ...damage[0],
-            dieCount: 1,
-            dieType: 12,
-            bonus: {
-              type: 'flat',
-              value: damage[0].bonus?.value
-            }
-          })
-        } else if (weapon.id === 'monomolecular-blade') {
-          damage.push({
-            ...damage[0],
-            dieCount: 2,
-            dieType: 6,
+            ...weapon.data.versatile,
             bonus: {
               type: 'flat',
               value: damage[0].bonus?.value
