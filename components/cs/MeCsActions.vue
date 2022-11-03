@@ -61,7 +61,8 @@ export default {
       tab: 'navigation/actionsTab',
       barrier: 'hp/barrier',
       setBonuses: 'equipment/activeSetBonuses',
-      thermalClips: 'equipment/thermalClips'
+      thermalClips: 'equipment/thermalClips',
+      mechanicActions: 'mechanics/mechanicActions'
     }),
     weaponProperties () {
       return this.$store.getters.getData('weapon-properties')
@@ -116,9 +117,6 @@ export default {
         baseActions[type] = [...defaults, ...extras]
       }
       return baseActions
-    },
-    mechanicActions () {
-      return this.mechanics.filter(i => ['attack', 'action', 'bonus-action', 'reaction', 'other'].includes(i.type))
     },
     groupedActions () {
       const groups = {
@@ -184,7 +182,7 @@ export default {
       if (this.barrierAction) {
         actions.push(this.barrierAction)
       }
-      const regularActions = this.mechanics.filter(i => i.type === 'action' && !i.group && !i.baseGroup)
+      const regularActions = this.mechanicActions.filter(i => i.type === 'action' && !i.group && !i.baseGroup)
       if (regularActions.length) {
         actions.push(...regularActions)
       }
@@ -196,6 +194,7 @@ export default {
     csAttacks () {
       return [
         ...this.weaponAttacks.attacks,
+        ...this.mechanicActions.filter(i => i.type === 'attack'),
         ...this.csPowersAsActions.attacks
       ]
     },
@@ -240,7 +239,7 @@ export default {
         bonusActions.push(this.barrierAction)
       }
       // regular
-      const regularActions = this.mechanics.filter(i => i.type === 'bonus-action' && !i.baseGroup)
+      const regularActions = this.mechanicActions.filter(i => i.type === 'bonus-action' && !i.baseGroup)
       if (regularActions.length) {
         bonusActions.push(...regularActions)
       }
@@ -262,13 +261,13 @@ export default {
           items: this.csPowersAsActions.reactions,
           component: 'me-cs-action-cards-power'
         }].filter(i => i.items.length),
-        ...this.mechanics.filter(i => i.type === 'reaction' && !i.baseGroup),
+        ...this.mechanicActions.filter(i => i.type === 'reaction' && !i.baseGroup),
         ...this.csCustomAsActions.reactions
       ]
     },
     csOtherActions () {
       return [
-        ...this.mechanics.filter(i => i.type === 'other')
+        ...this.mechanicActions.filter(i => i.type === 'other')
       ]
     },
     csCustomAsActions () {

@@ -370,7 +370,7 @@ export const getters = {
       })
     ]
 
-    if (getters.equippedWeapons.length) {
+    if (getters.equippedWeapons.filter(i => i.data.type !== 'melee').length) {
       weaponsToProcess.push({
         data: getters.baseGunStrike,
         bonusHit: 0,
@@ -396,7 +396,6 @@ export const getters = {
       const twoHanded = weapon.properties.includes('two-handed')
       const versatile = weapon.properties.includes('versatile') || !!weapon.versatile
       const dexOrStr = rootGetters['character/abilities/dexMod'] > rootGetters['character/abilities/strMod'] ? 'dex' : 'str'
-      // TODO: when new melee weapons arrive, need to change this...note that natural weapons are natural-ranged and natural-melee
       const attackType = ['melee', 'gun-strike', 'natural-melee'].includes(weapon.data.type) ? 'melee' : 'ranged'
       const weaponType = ['melee', 'gun-strike', 'natural-melee'].includes(weapon.data.type) ? 'melee' : weapon.data.type
       // shoulder mounts

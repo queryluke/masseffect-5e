@@ -31,6 +31,21 @@ function hydrateAugments (finalMechanics = []) {
   return nonAugments
 }
 
+function getDieIncrease (dieType, increase) {
+  let dieIncreaseOverflow = 0
+  let newDieType = false
+  if (increase) {
+    const dice = [1, 4, 6, 8, 10, 12]
+    const increaseIndex = dice.indexOf(dieType) + increase
+    if (increaseIndex >= dice.length) {
+      dieIncreaseOverflow = dice.length - 1 - increaseIndex
+      newDieType = 12
+    }
+    newDieType = dice[increaseIndex]
+  }
+  return { newDieType, dieIncreaseOverflow }
+}
+
 export const state = () => ({
   mechanics: [],
   unusedSelections: []
@@ -139,6 +154,98 @@ export const getters = {
     b = bonus.ceil ? Math.ceil(b) : Math.floor(b)
     b = bonus.min || bonus.min === 0 ? Math.max(bonus.min, b) : b
     return b
+  },
+  mechanicActions: (state, getters, rootState, rootGetters) => {
+    const mechanicActions = getters.mechanics.filter(i => ['attack', 'action', 'bonus-action', 'reaction', 'other'].includes(i.type))
+    const hydratedMechanicActions = []
+    for (const mechanicAction of mechanicActions) {
+      const ma = Object.assign({}, mechanicAction)
+      const attackType = ma.attack?.type
+      const model = ma.modelType?.model
+      const modelType = ma.modelType?.type
+      const abilityMod = ma.damage && ma.damage[0] ? ma.damage[0].mod : null
+      const augments = getters.hydratedAttackAugments({ attackType, model, modelType, abilityMod })
+      // ATTACK
+      if (augments.hit && ma.attack) {
+        const baseAttackBonus = ma.attack.bonus ? getters.mcBonus(ma.attack.bonus) : 0
+        ma.attack = {
+          ...ma.attack,
+          bonus: {
+            type: 'flat',
+            value: baseAttackBonus + augments.hit
+          }
+        }
+      }
+
+      // DC
+      if (augments.dc && ma.dc) {
+        const baseDcBonus = ma.dc.bonus ? getters.mcBonus(ma.dc.bonus) : 0
+        ma.dc = {
+          ...ma.dc,
+          bonus: {
+            type: 'flat',
+            value: baseDcBonus + augments.dc
+          }
+        }
+      }
+
+      // DAMAGE
+      if (ma.damage && (augments.damage || augments.reroll || augments.dieIncrease)) {
+        ma.damage = ma.damage.map((baseDamage) => {
+          if (['temp', 'hp', 'shields'].includes(baseDamage.type) || baseDamage.addTo) {
+            return baseDamage
+          }
+          const baseDamageBonus = baseDamage.bonus ? getters.mcBonus(baseDamage.bonus) : 0
+          const { newDieType, dieIncreaseOverflow } = getDieIncrease(baseDamage.dieType, augments.dieIncrease)
+          return {
+            ...baseDamage,
+            dieType: newDieType || baseDamage.dieType,
+            bonus: {
+              type: 'flat',
+              value: baseDamageBonus + augments.damage + dieIncreaseOverflow
+            },
+            reroll: augments.reroll
+          }
+        })
+      }
+      hydratedMechanicActions.push(ma)
+    }
+    return hydratedMechanicActions
+  },
+  hydratedAttackAugments: (state, getters) => ({ attackType, model, modelType, abilityMod }) => {
+    const matchingAttackAugments = getters.mechanics
+      .filter((i) => {
+        return i.type === 'attack-augment' &&
+          (i.attackLimit?.type ? i.attackLimit.type === attackType : true) &&
+          (i.attackLimit?.model ? i.attackLimit.model === model : true) &&
+          (i.attackLimit?.modelTypes ? i.attackLimit.modelTypes.includes(modelType) : true) &&
+          // remove any dt, bf, twf
+          !i.attackLimit?.special
+      })
+    const hydrated = {
+      hit: 0,
+      damage: 0,
+      dc: 0,
+      range: 0,
+      reroll: 0,
+      dieIncrease: 0
+    }
+    for (const maa of matchingAttackAugments) {
+      // get the resulting bonus
+      const bonus = maa.abilityMod
+        ? getters.mcBonus({ type: 'mod', value: abilityMod })
+        : getters.mcBonus(maa.bonus)
+      const reroll = maa.rerollIfLessThan || 0
+      const dieIncrease = maa.dieIncrease || 0
+      for (const at of maa.augmentTypes) {
+        if (at === 'damage' && (reroll || dieIncrease)) {
+          hydrated.reroll = Math.max(reroll, hydrated.reroll)
+          hydrated.dieIncrease += dieIncrease
+        }
+        hydrated[at] += bonus
+      }
+    }
+    return hydrated
   }
 }
 
