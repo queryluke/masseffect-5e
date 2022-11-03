@@ -56,7 +56,7 @@
           </div>
         </div>
       </template>
-      <template #expanded-item="{ eiHeaders, item }">
+      <template #expanded-item="{ headers: eiHeaders, item }">
         <td :colspan="eiHeaders.length">
           <component :is="`me-homebrew-preview-${item.model}`" :item="JSON.parse(item.data)" />
         </td>
