@@ -7,7 +7,7 @@ export const state = () => ({
   username: null,
   avatar: null,
   profileImg: null,
-  maxCharacters: 20,
+  maxCharacters: 50,
   search: null,
   syncStatus: 'saved'
 })
