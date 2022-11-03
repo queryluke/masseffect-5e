@@ -64,7 +64,7 @@ type HomebrewUse
 @model
 @auth(rules: [
   { allow: owner },
-  { allow: private, provider: iam, operations: [read] }
+  { allow: private, operations: [read] }
 ]) {
   id: ID!
   owner: ID! @index(name: "byUser", queryField: "homebrewUseByUser")

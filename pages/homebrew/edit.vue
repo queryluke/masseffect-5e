@@ -123,6 +123,7 @@ export default {
       this.saving = true
       const input = {
         id: this.item.id,
+        title: this.item.title,
         data: JSON.stringify(this.itemData)
       }
       await this.$store.dispatch('api/MUTATE', { mutation: 'updateHomebrew', input })
