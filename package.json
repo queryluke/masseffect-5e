@@ -19,7 +19,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@dice-roller/rpg-dice-roller": "^5.1.0",
+    "@dice-roller/rpg-dice-roller": "^5.2.0",
     "@nuxt/http": "^0.6.4",
     "@nuxtjs/i18n": "^7.2.0",
     "@nuxtjs/pwa": "^3.3.5",
