@@ -2,7 +2,7 @@
   <v-tooltip bottom>
     <template #activator="{ on, attrs }" open-delay="1000">
       <v-btn
-        v-if="!mine"
+        v-if="!mine && published"
         :small="!large"
         icon
         :color="isVoted ? 'success' : 'grey'"
@@ -54,6 +54,9 @@ export default {
     },
     mine () {
       return this.homebrew.owner === this.myId
+    },
+    published () {
+      return !!this.homebrew.published
     }
   },
   methods: {
