@@ -1,15 +1,9 @@
 export const homebrewDefaults = {
   data () {
     return {
-      modelConig: {
-        powers: {
-          icon: 'mdi-fire',
-          color: 'purple lighten-1'
-        }
-      },
       homebrewDefaults: {
         powers: {
-          name: null,
+          name: '',
           type: 'biotic',
           level: 0,
           classes: ['adept'],
@@ -34,6 +28,28 @@ export const homebrewDefaults = {
             }
           ],
           advancements: []
+        },
+        weapons: {
+          name: '',
+          rarity: 'common',
+          type: 'heavy_pistol',
+          cost: 1000,
+          weight: 1,
+          heat: 4,
+          damage: {
+            dieCount: 1,
+            dieType: 4,
+            type: 'piercing'
+          },
+          range: {
+            short: 30,
+            long: 90
+          },
+          imageUrl: false,
+          andromeda: false,
+          properties: [],
+          slots: 1,
+          versatile: false
         }
       }
     }

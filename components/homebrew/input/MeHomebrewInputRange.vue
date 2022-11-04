@@ -22,7 +22,7 @@
         />
       </v-col>
     </v-row>
-    <v-row>
+    <v-row v-if="!ignoreAoe">
       <v-col cols="12" sm="2">
         <v-switch v-model="aoe" label="AoE?" />
       </v-col>
@@ -60,6 +60,10 @@ export default {
       }
     },
     ignoreLong: {
+      type: Boolean,
+      default: false
+    },
+    ignoreAoe: {
       type: Boolean,
       default: false
     }

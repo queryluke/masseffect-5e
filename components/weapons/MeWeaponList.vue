@@ -9,11 +9,16 @@
     </template>
     <template #[`header.name`]="{ item }">
       <div class="font-weight-bold" :class="textColor(item.rarity)">
-        {{ item.name }} <me-andromeda-chip v-if="item.andromeda" />
+        {{ item.name }}
       </div>
-      <small>
-        {{ $tc(`weapon_types.${item.type}`, 1) }}
-      </small>
+    </template>
+    <template #[`header.name.subtitle`]="{ item }">
+      <div class="d-flex align-center">
+        <small class="mr-2">
+          {{ $tc(`weapon_types.${item.type}`, 1) }}
+        </small>
+        <me-andromeda-chip v-if="item.andromeda" />
+      </div>
     </template>
     <template #[`header.range`]="{ item }">
       <me-weapon-range :item="item" />

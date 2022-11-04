@@ -32,6 +32,9 @@
                         {{ item[header.key] }}
                       </slot>
                     </v-badge>
+                    <div>
+                      <slot name="header.name.subtitle" :item="item" />
+                    </div>
                   </span>
                   <slot v-else :name="`header.${header.key}`" :item="item" :index="index">
                     {{ item[header.key] }}

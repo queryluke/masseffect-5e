@@ -34,6 +34,8 @@ export default {
         switch (sortBy) {
           case 'type':
           case 'name':
+            aVal = aVal.toUpperCase()
+            bVal = bVal.toUpperCase()
             break
           case 'damage':
             aVal = this.averageFromDie(a.damage.dieType, a.damage.dieCount)

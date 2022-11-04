@@ -195,7 +195,9 @@ export const actions = {
     } else {
       await dispatch('local/LOAD_CHARACTER', id)
     }
-    dispatch('mechanics/INIT_MECHANICS')
+    if (getters.character) {
+      dispatch('mechanics/INIT_MECHANICS')
+    }
     return getters.character
   },
   UPDATE_CHARACTER ({ dispatch, rootGetters, commit, getters, state }, { attr, value }) {

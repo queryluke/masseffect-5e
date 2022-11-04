@@ -11,6 +11,8 @@
       <div class="font-weight-bold" :class="textColor(item.rarity)">
         {{ item.name }}
       </div>
+    </template>
+    <template #[`header.name.subtitle`]="{ item }">
       <small>
         {{ $t(`mod_types.${item.type}`) }}
       </small>

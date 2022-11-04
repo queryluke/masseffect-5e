@@ -4,7 +4,8 @@ export const state = () => ({
 
 export const getters = {
   characterHomebrew: state => state.characterHomebrew,
-  powers: (state, getters) => getters.characterHomebrew.filter(i => i.homebrew.model === 'powers')
+  powers: (state, getters) => getters.characterHomebrew.filter(i => i.homebrew.model === 'powers'),
+  weapons: (state, getters) => getters.characterHomebrew.filter(i => i.homebrew.model === 'weapons')
 }
 
 export const mutations = {
@@ -28,14 +29,28 @@ export const actions = {
     for (const selectedPower of rootGetters['character/powers/selectedPowers']) {
       const power = powerList.find(i => i.id === selectedPower.id)
       if (!power) {
-        homebrewPromises.push(
-          dispatch('api/QUERY', { query: 'getHomebrew', variables: { id: selectedPower.id } }, { root: true })
-        )
+        const homebrewPower = rootGetters.homebrew.find(i => i.id === selectedPower.id)
+        if (!homebrewPower) {
+          homebrewPromises.push(
+            dispatch('api/QUERY', { query: 'getHomebrew', variables: { id: selectedPower.id } }, { root: true })
+          )
+        }
       }
     }
-    homebrewPromises.push(
-      dispatch('api/QUERY', { query: 'getHomebrew', variables: { id: 'notfoundtest' } }, { root: true })
-    )
+
+    // sync weapons
+    const weaponList = rootGetters['character/equipment/weaponsList']
+    for (const selectedWeapon of rootGetters['character/equipment/equipment'].filter(i => i.type === 'weapon')) {
+      const weapon = weaponList.find(i => i.id === weaponList.id)
+      if (!weapon) {
+        const homebrewWeapon = rootGetters.homebrew.find(i => i.id === selectedWeapon.id)
+        if (!homebrewWeapon) {
+          homebrewPromises.push(
+            dispatch('api/QUERY', { query: 'getHomebrew', variables: { id: selectedWeapon.id } }, { root: true })
+          )
+        }
+      }
+    }
     const homebrewBatchResponse = await Promise.all(homebrewPromises)
     const characterSpecificHomebrew = homebrewBatchResponse.filter(i => i).map((i) => {
       const data = JSON.parse(i.data)

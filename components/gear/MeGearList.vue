@@ -11,6 +11,8 @@
       <div class="font-weight-bold text-truncate" :class="textColor(item.rarity)">
         {{ item.name }}
       </div>
+    </template>
+    <template #[`header.name.subtitle`]="{ item }">
       <small>
         {{ $t(`gear_types.${item.type}`) }} <span v-if="item.subType">({{ $t(`gear_types.${item.subType}`) }})</span>
       </small>

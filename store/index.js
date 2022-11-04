@@ -65,7 +65,7 @@ export const getters = {
     })
   },
   getData: (state, getters) => (endpoint) => {
-    const potentialHomebrew = ['powers']
+    const potentialHomebrew = ['powers', 'weapons']
     if (potentialHomebrew.includes(endpoint)) {
       const homebrewModels = getters.homebrew.filter(i => i.homebrew.model === endpoint)
       return getters.baseData(endpoint).concat(homebrewModels)

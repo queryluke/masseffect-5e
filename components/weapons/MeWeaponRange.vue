@@ -1,10 +1,10 @@
 <template>
   <span>
-    <span v-if="meleeWeapon">
-      <me-distance :length="item.range" abbr />
+    <span v-if="!item.range.long">
+      <me-distance :length="item.range.short" abbr />
     </span>
     <span v-else>
-      (<me-distance :length="item.range" num-only />/<me-distance :length="extendedRange" abbr />)
+      (<me-distance :length="item.range.short" num-only />/<me-distance :length="item.range.long" abbr />)
     </span>
   </span>
 </template>
@@ -16,20 +16,12 @@ export default {
       type: Object,
       default: () => {
         return {
-          range: 0,
+          range: {
+            short: 5
+          },
           type: null
         }
       }
-    }
-  },
-  computed: {
-    meleeWeapon () {
-      return this.item.type === 'melee'
-    },
-    extendedRange () {
-      const rangeNum = Number.parseInt(this.item.range, 10)
-      const multiplier = this.item.type === 'shotgun' ? 2 : 3
-      return rangeNum * multiplier
     }
   }
 }

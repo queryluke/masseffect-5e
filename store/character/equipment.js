@@ -35,6 +35,9 @@ export const state = () => ({
     manufacturer: '',
     weight: 0,
     heat: 0,
+    range: {
+      short: 5
+    },
     damage: {
       dieCount: 1,
       dieType: 4,
@@ -90,7 +93,9 @@ export const state = () => ({
       dieType: null,
       type: 'bludgeoning'
     },
-    range: 5,
+    range: {
+      short: 5
+    },
     properties: [],
     notes: [],
     html: 'Instead of using a weapon to make a melee weapon attack, you can use an unarmed strike: a punch, kick, head-butt, or similar\n' +
@@ -105,6 +110,9 @@ export const state = () => ({
       dieType: 4,
       type: 'bludgeoning'
     },
+    range: {
+      short: 5
+    },
     properties: [],
     notes: [],
     html: 'Instead of using a melee weapon to make a melee weapon attack, you can use your ranged weapon, hitting a target with the butt of\n' +
@@ -118,48 +126,52 @@ export const getters = {
     return rootGetters['character/character'].equipment
   },
   weapons: (state, getters) => {
-    return getters.equipment
-      .filter(i => i.type === 'weapon')
-      .map((i) => {
-        const weapon = getters.weaponsList.find(j => j.id === i.id) || state.nullWeapon
-        const modIds = Object.values(i.mods || {}).filter(i => i)
-        const mods = getters.modsList.filter(i => modIds.includes(i.id))
-        const modMechanics = mods.reduce((a, c) => a.concat(c.mechanics || []), [])
+    const weapons = getters.equipment.filter(i => i.type === 'weapon')
+    const finalWeapons = []
+    for (const w of weapons) {
+      const weapon = getters.weaponsList.find(i => i.id === w.id)
+      if (!weapon) {
+        continue
+      }
+      const modIds = Object.values(w.mods || {}).filter(i => i)
+      const mods = getters.modsList.filter(i => modIds.includes(i.id))
+      const modMechanics = mods.reduce((a, c) => a.concat(c.mechanics || []), [])
 
-        const data = {
-          ...weapon,
-          ...i.overrides,
-          damage: {
-            ...weapon.damage,
-            ...(i.overrides?.damage || {})
+      const data = {
+        ...weapon,
+        ...w.overrides,
+        damage: {
+          ...weapon.damage,
+          ...(w.overrides?.damage || {})
+        }
+      }
+
+      // remove/add props from mods
+      let properties = data.properties.slice()
+      const adjustProps = modMechanics.filter(i => i.type === 'adjust-weapon-props')
+      if (adjustProps.length) {
+        const toRemove = adjustProps.reduce((a, c) => a.concat(c.remove || []), [])
+        let toAdd = adjustProps.reduce((a, c) => a.concat(c.add || []), [])
+        if (toAdd.includes('light')) {
+          if (properties.includes('heavy')) {
+            toRemove.push('heavy')
+            toAdd = toAdd.filter(i => i !== 'light')
           }
         }
+        properties = properties.concat(toAdd)
+        properties = properties.filter(i => !toRemove.includes(i))
+        properties = [...new Set(properties)]
+      }
 
-        // remove/add props from mods
-        let properties = data.properties.slice()
-        const adjustProps = modMechanics.filter(i => i.type === 'adjust-weapon-props')
-        if (adjustProps.length) {
-          const toRemove = adjustProps.reduce((a, c) => a.concat(c.remove || []), [])
-          let toAdd = adjustProps.reduce((a, c) => a.concat(c.add || []), [])
-          if (toAdd.includes('light')) {
-            if (properties.includes('heavy')) {
-              toRemove.push('heavy')
-              toAdd = toAdd.filter(i => i !== 'light')
-            }
-          }
-          properties = properties.concat(toAdd)
-          properties = properties.filter(i => !toRemove.includes(i))
-          properties = [...new Set(properties)]
-        }
-
-        return {
-          data,
-          ...i,
-          slots: data.slots,
-          mechanics: modMechanics.filter(i => i.type !== 'adjust-weapon-props'),
-          properties
-        }
-      }).sort((a, b) => a.uuid > b.uuid ? 1 : -1)
+      finalWeapons.push({
+        data,
+        ...w,
+        slots: data.slots,
+        mechanics: modMechanics.filter(i => i.type !== 'adjust-weapon-props'),
+        properties
+      })
+    }
+    return finalWeapons.sort((a, b) => a.uuid > b.uuid ? 1 : -1)
   },
   armor: (state, getters) => {
     return getters.equipment
@@ -209,7 +221,7 @@ export const getters = {
     return getters.weapons.filter(i => i.equipped)
   },
   weaponsList: (state, getters, rootState, rootGetters) => {
-    return rootGetters.getData('weapons')
+    return rootGetters.getData('weapons').concat(rootGetters['character/homebrew/weapons'])
   },
   weaponPropertiesList: (state, getters, rootState, rootGetters) => {
     return rootGetters.getData('weapon-properties')
@@ -391,7 +403,6 @@ export const getters = {
       const bf = weapon.properties.includes('burst-fire')
       const finesse = weapon.properties.includes('finesse')
       const recoil = weapon.properties.includes('recoil')
-      const reach = weapon.properties.includes('reach')
       const vented = weapon.properties.includes('vented')
       const twoHanded = weapon.properties.includes('two-handed')
       const versatile = weapon.properties.includes('versatile') || !!weapon.versatile
@@ -484,6 +495,9 @@ export const getters = {
           addCritDie: augments.base.addCritDie || false
         }
       ]
+      if (weapon.data.addDamages) {
+        damage.push(...weapon.data.addDamages)
+      }
       if (toggleAddDamage) {
         const toggleDamagesToPush = toggleAddDamage.map((i) => {
           return {
@@ -539,17 +553,9 @@ export const getters = {
       }
 
       // RANGE
-      let shortRange = attackType === 'melee'
-        ? reach
-          ? 10
-          : 5
-        : weapon.data.range
+      let shortRange = weapon.data.range?.short || 0
       shortRange += augments.base.range
-      const longRange = attackType === 'ranged' && weapon.data.type !== 'natural-ranged'
-        ? weaponType === 'shotgun'
-          ? (shortRange * 2)
-          : (shortRange * 3)
-        : null
+      const longRange = weapon.data.range?.long || null
       let range = {
         short: shortRange,
         long: longRange

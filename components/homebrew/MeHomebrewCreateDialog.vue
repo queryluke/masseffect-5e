@@ -50,9 +50,11 @@
 
 <script>
 import { homebrewDefaults } from '~/mixins/homebrewDefaults'
+import { homebrewModelConfig } from '~/mixins/homebrewModelConfig'
+
 export default {
   name: 'MeHomebrewCreateDialog',
-  mixins: [homebrewDefaults],
+  mixins: [homebrewDefaults, homebrewModelConfig],
   props: {
     shown: {
       type: Boolean,
@@ -61,9 +63,6 @@ export default {
   },
   data () {
     return {
-      types: [
-        { text: 'Power', value: 'powers' }
-      ],
       type: null,
       title: null,
       basedOn: null,
@@ -76,6 +75,14 @@ export default {
     }
   },
   computed: {
+    types () {
+      return Object.entries(this.modelConfig).map((i) => {
+        return {
+          text: i[1].nameSingular,
+          value: i[0]
+        }
+      })
+    },
     transition () {
       return this.$vuetify.breakpoint.xsOnly ? 'dialog-bottom-transition' : 'dialog-transition'
     },

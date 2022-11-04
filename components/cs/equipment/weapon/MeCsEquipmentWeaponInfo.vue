@@ -1,5 +1,8 @@
 <template>
   <v-card-text>
+    <div v-if="item.homebrew" class="text-caption mb-2">
+      <em>homebrew by {{ item.homebrew.createdBy }}</em>
+    </div>
     <div class="text-body-2 font-italic">
       {{ $tc(`weapon_types.${item.type}`, 1) }}, {{ $t(`rarities.${item.rarity}`) }}
     </div>

@@ -1,6 +1,8 @@
 <template>
   <div :class="textColor" class="d-block text-truncate">
-    <slot />
+    <v-badge :value="homebrew" dot inline>
+      <slot />
+    </v-badge>
   </div>
 </template>
 
@@ -11,6 +13,10 @@ export default {
     rarity: {
       type: String,
       required: true
+    },
+    homebrew: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {

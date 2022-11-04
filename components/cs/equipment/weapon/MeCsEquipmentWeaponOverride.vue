@@ -23,14 +23,14 @@
     <v-col cols="6">
       <v-select
         :items="rangeOptions"
-        :value="itemData.range"
+        :value="itemData.range.short"
         label="Range"
         outlined
         dense
         hide-details
         :append-icon="item.overrides.range ? 'mdi-close' : undefined"
         @click:append="clearOverride('range')"
-        @change="changeStat('overrides.range', $event)"
+        @change="changeRange($event)"
       />
     </v-col>
     <v-col cols="3">
@@ -198,6 +198,17 @@ export default {
     changeStat (path, value) {
       const replacement = cloneDeep(this.item)
       setAttr(replacement, path, value)
+      this.updateWeapon(replacement)
+    },
+    changeRange (value) {
+      const replacement = cloneDeep(this.item)
+      const newRange = {
+        short: value
+      }
+      if (this.itemData.type !== 'melee') {
+        newRange.long = value * (this.itemData.type === 'shotgun' ? 2 : 3)
+      }
+      setAttr(replacement, 'overrides.range', newRange)
       this.updateWeapon(replacement)
     },
     updateWeapon (replacement) {

@@ -42,7 +42,7 @@
       </template>
       <template #[`item.name`]="{ item }">
         <div style="max-width: 125px" class="text-caption">
-          <me-cs-equipment-title :rarity="item.rarity">
+          <me-cs-equipment-title :rarity="item.rarity" :homebrew="!!item.homebrew">
             {{ item.name }}
           </me-cs-equipment-title>
           <div class="mt-n1">

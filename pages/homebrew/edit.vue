@@ -49,7 +49,9 @@
 </template>
 
 <script>
+import { homebrewModelConfig } from '~/mixins/homebrewModelConfig'
 export default {
+  mixins: [homebrewModelConfig],
   async asyncData ({ store, route, redirect }) {
     if (!route.query.id) {
       redirect('/homebrew')
@@ -79,14 +81,10 @@ export default {
       return this.item.model
     },
     typeName () {
-      return {
-        powers: 'Power'
-      }[this.type]
+      return this.modelConfig[this.type].nameSingular
     },
     typeColor () {
-      return {
-        powers: 'purple'
-      }[this.type]
+      return this.modelConfig[this.type].color
     },
     form () {
       return `me-homebrew-form-${this.type}`

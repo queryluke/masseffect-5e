@@ -36,6 +36,7 @@
                   :color="config.color"
                   large
                   v-bind="attrs"
+                  class="mx-3"
                   @click="selectedModel = modelKey"
                   v-on="on"
                 >

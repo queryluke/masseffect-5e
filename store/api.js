@@ -43,13 +43,18 @@ export const actions = {
     }
     return value
   },
-  async STORE_IMAGE ({ commit, rootGetters }, { file, qualifier }) {
+  async STORE_IMAGE ({ commit, rootGetters }, { file, qualifier, modelType }) {
     const extension = file.name.split('.').pop()
-    const username = rootGetters['auth/username']
-    if (!username) {
-      throw new Error('username not found')
+    let fileName = null
+    if (modelType) {
+      fileName = `${modelType}-${qualifier}.${extension}`
+    } else {
+      const username = rootGetters['auth/username']
+      if (!username) {
+        throw new Error('username not found')
+      }
+      fileName = `${username}-${qualifier}.${extension}`
     }
-    const fileName = `${username}-${qualifier}.${extension}`
     return await Storage.put(fileName, file, { contentType: file.type })
   },
   async GET_IMAGE ({ commit }, { fileName, action, actionParams }) {
@@ -59,7 +64,11 @@ export const actions = {
     const reader = new FileReader()
     reader.readAsDataURL(blob)
     reader.onloadend = () => {
-      commit(action, { ...actionParams, value: reader.result }, { root: true })
+      if (action) {
+        commit(action, { ...actionParams, value: reader.result }, { root: true })
+      } else {
+        return reader.result
+      }
     }
   }
 }
