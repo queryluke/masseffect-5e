@@ -48,7 +48,7 @@ export default {
   mixins: [ScoreText],
   computed: {
     // TODO: this may be better off in the store
-    ...mapGetters({ mechanics: 'mechanics/mechanics', abilityBreakdown: 'abilities/abilityBreakdown', profBonus: 'profBonus', valueLookup: 'selections/valueLookup', mcBonus: 'mechanics/mcBonus' }),
+    ...mapGetters({ mechanics: 'mechanics/mechanics', abilityBreakdown: 'abilities/abilityBreakdown', profBonus: 'profBonus', valueLookup: 'selections/valueLookup', mcBonus: 'mechanics/mcBonus', profs: 'profs/profs' }),
     savingThrowMechanics () {
       return this.mechanics.filter(i => i.type === 'saving-throw').map((i) => {
         if (i.valueLookup) {
@@ -64,7 +64,10 @@ export default {
       const items = []
       const abilities = ['str', 'dex', 'con', 'int', 'wis', 'cha']
       for (const ability of abilities) {
-        const proficient = this.savingThrowMechanics.find(i => i.value?.includes(ability) && !i.effect)
+        let proficient = this.savingThrowMechanics.find(i => i.value?.includes(ability) && !i.effect)
+        if (!proficient) {
+          proficient = this.profs.savingThrow.includes(ability)
+        }
         const bonuses = this.savingThrowMechanics.filter(i => i.value?.includes(ability) && i.effect?.type === 'bonus')
         const bonus = bonuses.reduce((a, c) => a + this.mcBonus(c.effect.bonus), 0)
         let score = this.abilityBreakdown[ability].mod
