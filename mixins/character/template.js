@@ -134,7 +134,9 @@ export const characterTemplate = {
     medigelSlots: true,
     thermalClipSlots: true,
     programInstall: true,
-    consumeThermalClips: true
+    consumeThermalClips: true,
+    armorSpeedPenalty: true,
+    armorProficiencyPenalty: true
   },
   meta: {
     remote: false,

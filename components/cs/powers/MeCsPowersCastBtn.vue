@@ -25,7 +25,7 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
-const { mapGetters } = createNamespacedHelpers('character/powers')
+const { mapGetters } = createNamespacedHelpers('character')
 
 export default {
   name: 'MeCsPowersCastBtn',
@@ -40,7 +40,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['klassPowercastingMaxes', 'techPoints', 'powerSlots']),
+    ...mapGetters({ klassPowercastingMaxes: 'powers/klassPowercastingMaxes', techPoints: 'powers/techPoints', powerSlots: 'powers/powerSlots', preventPowerCastingFromHeavierArmor: 'profs/disadvantageFromHeavierArmor' }),
     powercastingType () {
       return this.klassPowercastingMaxes[this.item.source]?.powercastingType || this.item.resource?.id
     },
@@ -61,6 +61,9 @@ export default {
       return this.item.resource && this.item.resource.reset !== 'cast' && !this.item.isCastableWithoutResource
     },
     castable () {
+      if (this.preventPowerCastingFromHeavierArmor) {
+        return false
+      }
       if (this.atWill || !this.powercastingType) {
         return false
       }

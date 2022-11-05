@@ -30,17 +30,16 @@ export default {
   },
   computed: {
     parsedDate () {
-      return new Date(this.news.date)
+      return this.$moment(this.news.date)
     },
     month () {
-      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-      return months[this.parsedDate.getMonth()]
+      return this.parsedDate.format('MMM')
     },
     year () {
-      return this.parsedDate.getFullYear()
+      return this.parsedDate.year()
     },
     day () {
-      return this.parsedDate.getDate()
+      return this.parsedDate.date()
     },
     url () {
       return `changelog/${this.news.id}`

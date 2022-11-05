@@ -184,7 +184,6 @@ export default {
     },
     damages: {
       get () {
-        console.log([this.item.damage, ...(this.item.addDamages || [])])
         return [this.item.damage, ...(this.item.addDamages || [])]
       },
       set (value) {

@@ -68,6 +68,22 @@ export const getters = {
       climb: null,
       burrow: null
     }
+    let heavierArmorSpeedReduction = false
+    const nullfiyArmorStrReq = rootGetters['character/mechanics/mechanics'].find(i => i.type === 'nullify-armor-str-restriction')
+    if (getters.character.options?.heavyArmor && !nullfiyArmorStrReq) {
+      const strScore = rootGetters['character/abilities/abilityBreakdown'].str.total
+      const { numMed, numHeavy } = rootGetters['character/ac/equippedArmorBreakdown']
+      const minStrRequired = numHeavy > 2
+        ? 16
+        : numHeavy > 1
+          ? 15
+          : (numHeavy > 0 || numMed > 2)
+              ? 13
+              : numMed > 1
+                ? 12
+                : -1
+      heavierArmorSpeedReduction = minStrRequired > strScore
+    }
     for (const speed of Object.keys(speeds)) {
       if (getters.character.settings.speeds[speed]) {
         speeds[speed] = {
@@ -82,12 +98,13 @@ export const getters = {
       const mSpeeds = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'speed' && i.speed === speed)
       if (mSpeeds.length) {
         const highestSpeed = mSpeeds.sort((a, b) => b.distance - a.distance)[0]
+        const penalty = heavierArmorSpeedReduction ? -10 : 0
         const bonusSpeed = rootGetters['character/mechanics/mechanics']
           .filter(i => i.type === 'speed-bonus' && i.value.includes(speed))
           .reduce((acc, curr) => acc + rootGetters['character/mechanics/mcBonus'](curr.bonus), 0)
         speeds[speed] = {
           ...highestSpeed,
-          distance: highestSpeed.distance + bonusSpeed
+          distance: highestSpeed.distance + bonusSpeed + penalty
         }
       }
     }

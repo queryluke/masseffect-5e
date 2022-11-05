@@ -2,20 +2,7 @@ export const state = () => ({
 })
 
 export const getters = {
-  ac: (state, getters, rootState, rootGetters) => {
-    const character = rootGetters['character/character']
-    if (character.settings.acOverride) {
-      return character.settings.acOverride
-    }
-    const dexMod = rootGetters['character/abilities/dexMod']
-
-    // natural armor
-    const naturalArmorBase = rootGetters['character/mechanics/mechanics']
-      .filter(i => i.type === 'natural-armor')
-      .map(i => i.base + rootGetters[`character/abilities/${i.mod}Mod`])
-      .sort((a, b) => b - a)
-    const naturalArmor = naturalArmorBase[0] || 0
-
+  equippedArmorBreakdown: (state, getters, rootState, rootGetters) => {
     // equipped armor
     const equippedArmor = rootGetters['character/equipment/equippedArmor']
     const head = equippedArmor.find(i => i.data.placement === 'head')
@@ -26,9 +13,11 @@ export const getters = {
     let runningAc = 10
     let numMed = 0
     let numHeavy = 0
+    let numLight = 0
     if (body) {
       if (body.data.type === 'light') {
         runningAc += 1
+        numLight = 3
       } else if (body.data.type === 'medium') {
         runningAc += 4
         numMed = 3
@@ -38,34 +27,29 @@ export const getters = {
       }
     } else {
       if (chest) {
+        numLight += chest.data.type === 'light' ? 1 : 0
         numMed += chest.data.type === 'medium' ? 1 : 0
         numHeavy += chest.data.type === 'heavy' ? 1 : 0
         runningAc += chest.data.type === 'heavy' ? 3 : chest.data.type === 'medium' ? 2 : 1
       }
       if (arms) {
+        numLight += arms.data.type === 'light' ? 1 : 0
         numMed += arms.data.type === 'medium' ? 1 : 0
         numHeavy += arms.data.type === 'heavy' ? 1 : 0
         runningAc += arms.data.type === 'heavy' ? 2 : arms.data.type === 'medium' ? 1 : 0
       }
       if (legs) {
+        numLight += legs.data.type === 'light' ? 1 : 0
         numMed += legs.data.type === 'medium' ? 1 : 0
         numHeavy += legs.data.type === 'heavy' ? 1 : 0
         runningAc += legs.data.type === 'heavy' ? 2 : legs.data.type === 'medium' ? 1 : 0
       }
     }
     if (head) {
+      numLight += head.data.type === 'light' ? 1 : 0
       numMed += head.data.type === 'medium' ? 1 : 0
       numHeavy += head.data.type === 'heavy' ? 1 : 0
     }
-    const dexMax = numHeavy > 0 ? 0 : numMed > 0 ? 2 : 999
-    let appliedDex = Math.min(dexMax, dexMod)
-    if (numHeavy > 0) {
-      appliedDex = 0
-    }
-    const equippedAc = runningAc + appliedDex
-
-    const bestAc = Math.max(equippedAc, naturalArmor)
-
     const equippedTypes = [head, body, chest, legs, arms].map(i => i?.data?.type || 'none')
     const flatBonus = rootGetters['character/mechanics/mechanics']
       .filter(i => i.type === 'ac')
@@ -86,6 +70,34 @@ export const getters = {
         }
         return acc + bonus
       }, 0)
+    return {
+      runningAc,
+      numLight,
+      numMed,
+      numHeavy,
+      flatBonus
+    }
+  },
+  ac: (state, getters, rootState, rootGetters) => {
+    const character = rootGetters['character/character']
+    if (character.settings.acOverride) {
+      return character.settings.acOverride
+    }
+    const dexMod = rootGetters['character/abilities/dexMod']
+    const { numHeavy, numMed, runningAc, flatBonus } = getters.equippedArmorBreakdown
+    const dexMax = numHeavy > 0 ? 0 : numMed > 0 ? 2 : 999
+    let appliedDex = Math.min(dexMax, dexMod)
+    if (numHeavy > 0) {
+      appliedDex = 0
+    }
+    // natural armor
+    const naturalArmorBase = rootGetters['character/mechanics/mechanics']
+      .filter(i => i.type === 'natural-armor')
+      .map(i => i.base + rootGetters[`character/abilities/${i.mod}Mod`])
+      .sort((a, b) => b - a)
+    const naturalArmor = naturalArmorBase[0] || 0
+    const equippedAc = runningAc + appliedDex
+    const bestAc = Math.max(equippedAc, naturalArmor)
     return bestAc + flatBonus + character.settings.acBonus
   }
 }

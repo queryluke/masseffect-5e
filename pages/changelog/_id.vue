@@ -30,7 +30,7 @@ export default {
       return this.$store.getters.getItem('changelog', this.$route.params.id)
     },
     parsedDate () {
-      return new Date(this.item.date)
+      return this.$moment(this.item.date).format('dddd, MMMM Do, YYYY')
     }
   },
   created () {

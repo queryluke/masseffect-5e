@@ -6,11 +6,18 @@
           <div class="text-caption">
             {{ $t(`abilities.${ability}.abbr`) }}
           </div>
-          <me-cs-roll-card :roll="roll(ability)">
-            <div class="text-h6">
-              {{ modText(abilityBreakdown[ability].mod) }}
+          <div class="d-flex justify-center align-center">
+            <div v-if="['str', 'dex'].includes(ability) && disadvantageFromHeavierArmor" class="ml-n5">
+              <me-cs-ad-icon type="d">
+                from Armor
+              </me-cs-ad-icon>
             </div>
-          </me-cs-roll-card>
+            <me-cs-roll-card :roll="roll(ability)">
+              <div class="text-h6">
+                {{ modText(abilityBreakdown[ability].mod) }}
+              </div>
+            </me-cs-roll-card>
+          </div>
           <div>
             {{ abilityBreakdown[ability].total }}
           </div>
@@ -18,12 +25,16 @@
       </v-col>
     </v-row>
   </div>
+  </v-card>
+  </v-col>
+  </v-row>
+  </div>
 </template>
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
 import { ScoreText } from '~/mixins/character/scoreText'
-const { mapGetters } = createNamespacedHelpers('character/abilities')
+const { mapGetters } = createNamespacedHelpers('character')
 export default {
   mixins: [ScoreText],
   data () {
@@ -36,7 +47,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['abilityBreakdown'])
+    ...mapGetters({ abilityBreakdown: 'abilities/abilityBreakdown', disadvantageFromHeavierArmor: 'profs/disadvantageFromHeavierArmor' })
   },
   methods: {
     roll (ability) {
