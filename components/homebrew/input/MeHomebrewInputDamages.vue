@@ -5,13 +5,19 @@
         <div class="text-caption mb-2">
           Damage #{{ index + 1 }}
         </div>
-        <v-btn icon small color="error" @click="removeDamage(index)">
+        <v-btn v-if="!preventDeleteZeroIndex && index === 0" icon small color="error" @click="removeDamage(index)">
           <v-icon small>
             mdi-delete
           </v-icon>
         </v-btn>
       </div>
-      <me-homebrew-input-damage :damage="damage" :addable="index > 0" :allow-custom-die-type="allowCustomDieType" @update="updateDamage(index, $event)" />
+      <me-homebrew-input-damage
+        :damage="damage"
+        :addable="index > 0"
+        :allow-custom-die-type="allowCustomDieType"
+        :prevent-ability-mod-override="preventAbilityModOverride"
+        @update="updateDamage(index, $event)"
+      />
     </v-card>
     <div class="text-center">
       <v-btn color="primary" @click="addDamage">
@@ -30,6 +36,14 @@ export default {
       default: false
     },
     allowCustomDieType: {
+      type: Boolean,
+      default: false
+    },
+    preventAbilityModOverride: {
+      type: [String, Boolean],
+      default: false
+    },
+    preventDeleteZeroIndex: {
       type: Boolean,
       default: false
     }
@@ -71,6 +85,7 @@ export default {
       }
     },
     updateDamage (index, value) {
+      console.log(index, value)
       const newDamages = this.damagesArray.slice()
       newDamages.splice(index, 1, value)
       this.damagesArray = newDamages

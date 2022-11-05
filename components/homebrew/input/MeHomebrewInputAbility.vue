@@ -8,6 +8,9 @@
     dense
     :chips="multiple"
     :small-chips="multiple"
+    :disabled="!!disabled"
+    :persistent-hint="!!disabled"
+    :hint="disabled || undefined"
   />
 </template>
 
@@ -33,6 +36,10 @@ export default {
     },
     excludeNone: {
       type: Boolean,
+      default: false
+    },
+    disabled: {
+      type: [Boolean, String],
       default: false
     }
   },

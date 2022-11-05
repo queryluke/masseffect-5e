@@ -89,7 +89,7 @@
             </v-col>
             <v-col cols="12">
               <me-homebrew-input-legend>Damage</me-homebrew-input-legend>
-              <me-homebrew-input-damages :damages="damages" @update="damages = $event" />
+              <me-homebrew-input-damages :damages="damages" :prevent-ability-mod-override="preventAbilityModReason" prevent-delete-zero-index @update="damages = $event" />
             </v-col>
             <v-col v-if="versatile" cols="12">
               <me-homebrew-input-legend>Versatile Damage</me-homebrew-input-legend>
@@ -124,7 +124,8 @@ export default {
         { text: 'SMG', value: 'smg' },
         { text: 'Shotgun', value: 'shotgun' },
         { text: 'Sniper Rifle', value: 'sniper_rifle' }
-      ]
+      ],
+      preventAbilityModReason: 'Melee = STR, Ranged = DEX. If Recoil or Finesse, the higher of DEX or STR will be used.'
     }
   },
   async fetch () {
@@ -188,10 +189,7 @@ export default {
       },
       set (value) {
         const [damage, ...addDamages] = value
-        this.$emit('update', Object.assign({}, { ...this.item, damage }))
-        if (addDamages) {
-          this.$emit('update', Object.assign({}, { ...this.item, addDamages }))
-        }
+        this.$emit('update', Object.assign({}, { ...this.item, damage, addDamages: (addDamages || []) }))
       }
     },
     range: {

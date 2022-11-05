@@ -16,10 +16,10 @@ export const mutations = {
 
 export const actions = {
   async SYNC_HOMEBREW ({ dispatch, commit, rootGetters }) {
-    await dispatch('FETCH_HOMEBREW_DATA', null, { root: true })
     if (!rootGetters['auth/isAuthenticated']) {
       return
     }
+    await dispatch('FETCH_HOMEBREW_DATA', null, { root: true })
     if (!rootGetters['character/characterReady']) {
       return
     }

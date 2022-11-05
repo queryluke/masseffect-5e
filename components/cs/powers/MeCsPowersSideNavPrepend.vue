@@ -23,7 +23,7 @@ export default {
       return this.$store.getters['character/navigation/toDisplay']
     },
     powerData () {
-      return this.$store.getters.getItem('powers', this.powerToDisplay.id)
+      return this.$store.getters['character/powers/powerList'].find(i => i.id === this.powerToDisplay.id)
     },
     subtitle () {
       if (this.powerData.level === 0) {

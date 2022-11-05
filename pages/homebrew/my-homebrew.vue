@@ -36,11 +36,16 @@
             </v-tab-item>
             <v-tab-item>
               <me-my-homebrew-table collection />
+              <v-alert type="warning" class="my-5" text>
+                When you remove an item from you collection, it will persist on all of your characters until it is removed
+                from that character. For example, if you have added a power, you will need to remove the power from the
+                powers manager on the character and then refresh the page.
+              </v-alert>
             </v-tab-item>
           </v-tabs-items>
-          <v-alert type="info" class="my-5">
+          <v-alert type="info" class="my-5 font-weight-bold" text>
             Items in your collection will show up throughout the site (for your account only) and can be used on your character sheets.
-            <strong>Note: You must add your own items to your collection for them to show up.</strong>
+            <em>Note: You must add your own items to your collection for them to show up.</em>
           </v-alert>
         </v-card-text>
       </v-card>

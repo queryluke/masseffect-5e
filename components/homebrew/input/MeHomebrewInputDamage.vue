@@ -22,7 +22,13 @@
         <me-homebrew-input-damage-types :selected="type" @update="type = $event" />
       </v-col>
       <v-col cols="12" sm="6" md="3">
-        <me-homebrew-input-ability :ability="mod" include-pc-mod label="+ Ability Mod" @update="mod = $event" />
+        <me-homebrew-input-ability
+          :ability="mod"
+          include-pc-mod
+          label="+ Ability Mod"
+          :disabled="preventAbilityModOverride"
+          @update="mod = $event"
+        />
       </v-col>
       <v-col cols="12" class="mt-n10">
         <me-homebrew-input-bonus :bonus="bonus" @update="bonus = $event" />
@@ -64,6 +70,10 @@ export default {
     },
     addable: {
       type: Boolean,
+      default: false
+    },
+    preventAbilityModOverride: {
+      type: [Boolean, String],
       default: false
     }
   },
@@ -119,9 +129,11 @@ export default {
     },
     bonus: {
       get () {
+        console.log(this.damage.bonus)
         return this.damage.bonus
       },
       set (value) {
+        console.log(value)
         this.$emit('update', { ...this.damage, bonus: value })
       }
     },

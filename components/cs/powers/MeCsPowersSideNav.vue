@@ -1,6 +1,9 @@
 <template>
   <v-card v-if="item" flat tile>
     <v-card flat color="transparent">
+      <div v-if="powerData.homebrew" class="text-caption pl-4 pt-1">
+        <em>homebrew by {{ powerData.homebrew.createdBy }}</em>
+      </div>
       <v-card-text class="d-flex justify-space-between align-center">
         <!-- CAST BTN -->
         <div>
