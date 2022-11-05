@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-row no-gutters class="my-1">
-      <v-col cols="3">
+      <v-col>
         <v-card flat color="transparent" class="text-center mx-auto" max-width="70px">
           <div class="text-caption">
             <small>AC</small>
@@ -11,7 +11,7 @@
           </div>
         </v-card>
       </v-col>
-      <v-col cols="3">
+      <v-col>
         <v-card flat color="transparent" class="text-center mx-auto" max-width="70px">
           <div class="text-caption">
             <small>Prof Bonus</small>
@@ -21,7 +21,7 @@
           </div>
         </v-card>
       </v-col>
-      <v-col cols="3">
+      <v-col>
         <v-card
           elevation="0"
           color="transparent"
@@ -38,7 +38,7 @@
           </div>
         </v-card>
       </v-col>
-      <v-col cols="3">
+      <v-col>
         <v-card flat color="transparent" class="text-center mx-auto" max-width="70px">
           <div class="text-caption">
             <small>Initiative</small>
@@ -56,6 +56,9 @@
             </me-cs-roll-card>
           </div>
         </v-card>
+      </v-col>
+      <v-col>
+        <me-cs-inspiration />
       </v-col>
     </v-row>
     <me-standard-dialog :shown="addlSpeedDialog" title="Speeds" @close="addlSpeedDialog = false">

@@ -1,12 +1,12 @@
 <template>
   <v-container :style="{'max-width': maxWidth}">
-    <v-row>
+    <v-row no-gutters>
       <v-col cols="4">
         <me-cs-main-menu />
         <me-cs-apsi />
         <me-cs-health />
       </v-col>
-      <v-col cols="8">
+      <v-col cols="8" class="px-4">
         <me-cs-abilities />
         <v-row>
           <v-col cols="6">
