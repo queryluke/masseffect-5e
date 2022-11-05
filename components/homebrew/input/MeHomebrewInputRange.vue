@@ -117,10 +117,10 @@ export default {
     },
     long: {
       get () {
-        return this.range.short
+        return this.range.long
       },
       set (value) {
-        this.$emit('update', { ...this.range, short: value })
+        this.$emit('update', { ...this.range, long: value })
       }
     },
     aoe: {
