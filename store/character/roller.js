@@ -85,5 +85,6 @@ export const actions = {
 
     dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-logs-list', { root: true })
     dispatch('character/logs/LOG_WRITE', entry, { root: true })
+    return entry
   }
 }

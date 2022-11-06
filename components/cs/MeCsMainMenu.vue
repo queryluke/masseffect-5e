@@ -10,6 +10,7 @@
       </v-col>
       <v-col v-if="$vuetify.breakpoint.smAndDown" cols="4" sm="3">
         <v-card elevation="0" outlined @click="healthDialog = true">
+          <me-cs-health-dead-stable-overlay small />
           <me-cs-health-text />
         </v-card>
       </v-col>

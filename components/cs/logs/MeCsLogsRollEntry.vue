@@ -6,7 +6,7 @@
           mdi-chevron-{{ show ? 'up' : 'down' }}
         </v-icon>
         <div class="ml-1 text-body-2 text-capitalize">
-          {{ data.detail }}: {{ type }}
+          {{ data.detail }}{{ type ? `: ${type}` : '' }}
         </div>
       </div>
       <div class="text-h5 ma-1 mr-2">
@@ -95,7 +95,10 @@ export default {
       return this.open || this.isLastEntry
     },
     type () {
-      return typeof this.entry.data.type === 'object' ? this.entry.data.type.join(', ') : this.entry.data.type
+      if (this.entry?.data?.type) {
+        return typeof this.entry.data.type === 'object' ? this.entry.data.type.join(', ') : this.entry.data.type
+      }
+      return null
     }
   },
   watch: {

@@ -4,9 +4,11 @@
       <v-col cols="12" class="d-flex justify-center justify-md-space-around justify-lg-space-around" :class="{'justify-md-space-between': barrier.uses.max }">
         <me-cs-health-barrier-slider />
         <div>
-          <me-cs-health-circle :hp="hp" :shields="shields" :temp-hp="tempHp" :tech-armor="{ value: techArmor, max: techArmorMax }" />
+          <me-cs-health-circle v-if="hp.current > 0" :hp="hp" :shields="shields" :temp-hp="tempHp" :tech-armor="{ value: techArmor, max: techArmorMax }" />
+          <me-cs-health-death-saves v-else />
           <div class="text-center">
             <v-btn
+              v-if="hp.current > 0"
               x-small
               color="blue"
               class="mt-1"
@@ -245,6 +247,9 @@ export default {
     execHeal () {
       const modder = this.getModder()
       if (modder) {
+        if (this.currentStats.hitPointsLost === this.hp.max) {
+          this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.deathSaves', value: { successes: 0, failures: 0 } })
+        }
         const value = Math.max(0, this.currentStats.hitPointsLost - modder)
         this.$store.dispatch('character/UPDATE_CHARACTER', { attr: 'currentStats.hitPointsLost', value })
         this.modderState = 0

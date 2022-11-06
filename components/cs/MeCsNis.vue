@@ -10,7 +10,7 @@
         <v-col cols="10">
           <div class="text-truncate text-h6">
             <small>
-              {{ character.name || 'Unnamed Character' }}
+              {{ dead ? '(Dead) ' : '' }}{{ character.name || 'Unnamed Character' }}
             </small>
           </div>
         </v-col>
@@ -47,6 +47,9 @@ export default {
     ...mapGetters({ character: 'character', level: 'klasses/level', image: 'image', identString: 'identString' }),
     viewOnly () {
       return this.$store.state.character.viewOnly
+    },
+    dead () {
+      return this.character.currentStats?.deathSaves?.failures === 3
     }
   },
   methods: {
