@@ -8,6 +8,11 @@
             <me-cb-species-select />
           </v-tab-item>
           <v-tab-item class="px-0">
+            <v-row class="px-5">
+              <v-col cols="12" md="6" offset-md="3">
+                <me-cb-xp-interface />
+              </v-col>
+            </v-row>
             <me-cb-classes-select />
           </v-tab-item>
           <v-tab-item class="px-4">

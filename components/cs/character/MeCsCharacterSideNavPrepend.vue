@@ -16,6 +16,9 @@
         {{ $t('level_nth', {nth: $t(`ordinal_numbers[${level}]`)}) }}
       </div>
     </div>
+    <div class="mx-2 mt-3">
+      <me-cb-xp-interface />
+    </div>
     <v-list two-line dense>
       <v-list-item v-for="(klass, index) in klasses" :key="`klass-${index}`" style="min-height: 48px">
         <v-list-item-avatar tile class="my-0">

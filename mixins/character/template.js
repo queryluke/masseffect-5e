@@ -2,7 +2,10 @@ export const characterTemplate = {
   name: null,
   id: '',
   image: null,
-  experiencePoints: 0,
+  experiencePoints: {
+    points: 0,
+    milestone: 1
+  },
   species: null,
   classes: [],
   abilityScores: {
@@ -136,7 +139,8 @@ export const characterTemplate = {
     programInstall: true,
     consumeThermalClips: true,
     armorSpeedPenalty: true,
-    armorProficiencyPenalty: true
+    armorProficiencyPenalty: true,
+    useMilestone: false
   },
   meta: {
     remote: false,

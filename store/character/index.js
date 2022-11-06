@@ -60,6 +60,8 @@ export const getters = {
   profBonus: (state, getters, rootState, rootGetters) => {
     return [0, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6][rootGetters['character/klasses/level']]
   },
+  xp: (state, getters) => getters.character.experiencePoints || { points: 0, milestone: 1 },
+  options: (state, getters) => getters.character.options,
   speeds: (state, getters, rootState, rootGetters) => {
     const speeds = {
       walk: 0,
