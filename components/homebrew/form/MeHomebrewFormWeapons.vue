@@ -165,6 +165,7 @@ export default {
         return this.item.weight
       },
       set (value) {
+        console.log(value)
         this.$emit('update', Object.assign({}, { ...this.item, weight: value }))
       }
     },
