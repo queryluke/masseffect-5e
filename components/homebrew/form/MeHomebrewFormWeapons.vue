@@ -29,7 +29,6 @@
           <v-row>
             <v-col cols="12" sm="6" md="3">
               <v-select
-                v-if="type !== 'melee'"
                 v-model="heat"
                 label="Heat"
                 filled
@@ -38,13 +37,7 @@
               />
             </v-col>
             <v-col cols="12" sm="6" md="3">
-              <v-select
-                v-model="weight"
-                filled
-                dense
-                label="Weight"
-                :items="[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
-              />
+              <me-homebrew-input-weight :weight="weight" @update="weight = $event" />
             </v-col>
             <v-col cols="12" sm="6" md="3">
               <v-select
@@ -172,6 +165,7 @@ export default {
         return this.item.weight
       },
       set (value) {
+        console.log(value)
         this.$emit('update', Object.assign({}, { ...this.item, weight: value }))
       }
     },
