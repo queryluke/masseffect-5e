@@ -34,34 +34,6 @@ export const listBookmarks = /* GraphQL */ `
     }
   }
 `;
-export const bookmarkByUser = /* GraphQL */ `
-  query BookmarkByUser(
-    $owner: ID!
-    $sortDirection: ModelSortDirection
-    $filter: ModelBookmarkFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    bookmarkByUser(
-      owner: $owner
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        owner
-        model
-        modelId
-        data
-        createdOn
-        updatedOn
-      }
-      nextToken
-    }
-  }
-`;
 export const getProfile = /* GraphQL */ `
   query GetProfile($id: ID!) {
     getProfile(id: $id) {
@@ -98,61 +70,6 @@ export const listProfiles = /* GraphQL */ `
         createdOn
         updatedOn
         owner
-      }
-      nextToken
-    }
-  }
-`;
-export const getCharacter = /* GraphQL */ `
-  query GetCharacter($id: ID!) {
-    getCharacter(id: $id) {
-      id
-      owner
-      data
-      createdOn
-      updatedOn
-    }
-  }
-`;
-export const listCharacters = /* GraphQL */ `
-  query ListCharacters(
-    $filter: ModelCharacterFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listCharacters(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        owner
-        data
-        createdOn
-        updatedOn
-      }
-      nextToken
-    }
-  }
-`;
-export const characterByUser = /* GraphQL */ `
-  query CharacterByUser(
-    $owner: ID!
-    $sortDirection: ModelSortDirection
-    $filter: ModelCharacterFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    characterByUser(
-      owner: $owner
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        owner
-        data
-        createdOn
-        updatedOn
       }
       nextToken
     }
@@ -226,6 +143,121 @@ export const listHomebrews = /* GraphQL */ `
           owner
         }
         updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getHomebrewUse = /* GraphQL */ `
+  query GetHomebrewUse($id: ID!) {
+    getHomebrewUse(id: $id) {
+      id
+      owner
+      homebrewId
+      homebrew {
+        id
+        owner
+        title
+        titleId
+        data
+        model
+        usageCount
+        voteCount
+        createdAt
+        development
+        published
+        private
+        official
+        profile {
+          id
+          username
+          profileImg
+          imperial
+          darkMode
+          maxCharacters
+          contactMethod
+          contactValue
+          createdOn
+          updatedOn
+          owner
+        }
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listHomebrewUses = /* GraphQL */ `
+  query ListHomebrewUses(
+    $filter: ModelHomebrewUseFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listHomebrewUses(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        owner
+        homebrewId
+        homebrew {
+          id
+          owner
+          title
+          titleId
+          data
+          model
+          usageCount
+          voteCount
+          createdAt
+          development
+          published
+          private
+          official
+          profile {
+            id
+            username
+            profileImg
+            imperial
+            darkMode
+            maxCharacters
+            contactMethod
+            contactValue
+            createdOn
+            updatedOn
+            owner
+          }
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const bookmarkByUser = /* GraphQL */ `
+  query BookmarkByUser(
+    $owner: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelBookmarkFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    bookmarkByUser(
+      owner: $owner
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        owner
+        model
+        modelId
+        data
+        createdOn
+        updatedOn
       }
       nextToken
     }
@@ -379,93 +411,6 @@ export const officialHomebrew = /* GraphQL */ `
     }
   }
 `;
-export const getHomebrewUse = /* GraphQL */ `
-  query GetHomebrewUse($id: ID!) {
-    getHomebrewUse(id: $id) {
-      id
-      owner
-      homebrewId
-      homebrew {
-        id
-        owner
-        title
-        titleId
-        data
-        model
-        usageCount
-        voteCount
-        createdAt
-        development
-        published
-        private
-        official
-        profile {
-          id
-          username
-          profileImg
-          imperial
-          darkMode
-          maxCharacters
-          contactMethod
-          contactValue
-          createdOn
-          updatedOn
-          owner
-        }
-        updatedAt
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listHomebrewUses = /* GraphQL */ `
-  query ListHomebrewUses(
-    $filter: ModelHomebrewUseFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listHomebrewUses(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        owner
-        homebrewId
-        homebrew {
-          id
-          owner
-          title
-          titleId
-          data
-          model
-          usageCount
-          voteCount
-          createdAt
-          development
-          published
-          private
-          official
-          profile {
-            id
-            username
-            profileImg
-            imperial
-            darkMode
-            maxCharacters
-            contactMethod
-            contactValue
-            createdOn
-            updatedOn
-            owner
-          }
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
 export const homebrewUseByUser = /* GraphQL */ `
   query HomebrewUseByUser(
     $owner: ID!
@@ -516,6 +461,61 @@ export const homebrewUseByUser = /* GraphQL */ `
         }
         createdAt
         updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getCharacter = /* GraphQL */ `
+  query GetCharacter($id: ID!) {
+    getCharacter(id: $id) {
+      id
+      owner
+      data
+      createdOn
+      updatedOn
+    }
+  }
+`;
+export const listCharacters = /* GraphQL */ `
+  query ListCharacters(
+    $filter: ModelCharacterFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listCharacters(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        owner
+        data
+        createdOn
+        updatedOn
+      }
+      nextToken
+    }
+  }
+`;
+export const characterByUser = /* GraphQL */ `
+  query CharacterByUser(
+    $owner: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelCharacterFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    characterByUser(
+      owner: $owner
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        owner
+        data
+        createdOn
+        updatedOn
       }
       nextToken
     }
