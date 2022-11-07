@@ -55,7 +55,10 @@
         "userPoolGroups": {}
       },
       "function": {
-        "masseffect5eHomebrewTallies": {}
+        "masseffect5eHomebrewTallies": {
+          "deploymentBucketName": "amplify-masseffect5e-production-194957-deployment",
+          "s3Key": "amplify-builds/masseffect5eHomebrewTallies-4a774a41365853455348-build.zip"
+        }
       },
       "api": {
         "masseffect5e": {}
