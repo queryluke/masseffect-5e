@@ -51,7 +51,7 @@
 
 <script>
 export default {
-  name: 'MeHomebrewInputDurations',
+  name: 'MeHomebrewInputRange',
   props: {
     range: {
       type: Object,

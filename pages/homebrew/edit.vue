@@ -39,8 +39,8 @@
           </v-btn>
         </v-col>
       </v-row>
-      <v-card flat outlined>
-        <component :is="form" :item="itemData" @update="itemData = $event" @updateTitle="updateTitle" />
+      <v-card flat outlined :loading="saving">
+        <component :is="form" :item="itemData" @update="update($event)" @updateTitle="updateTitle" />
         <me-homebrew-editor-actions :saving="saving" :publication-status="publicationStatus" @save="updateData" @updateStatus="updateStatus($event)" />
       </v-card>
     </div>
@@ -49,6 +49,7 @@
 </template>
 
 <script>
+import debounce from 'lodash/debounce'
 import { homebrewModelConfig } from '~/mixins/homebrewModelConfig'
 export default {
   mixins: [homebrewModelConfig],
@@ -112,10 +113,23 @@ export default {
       title: this.item?.title,
       description: 'Community created homebrew'
     })
+    this.debouncedUpdate = debounce(() => {
+      this.updateData()
+    }, 3000)
   },
   methods: {
+    update (data) {
+      const newData = JSON.stringify(data)
+      const oldData = JSON.stringify(this.itemData)
+      if (newData !== oldData) {
+        this.itemData = data
+        this.debouncedUpdate()
+      }
+    },
     updateTitle (title) {
       this.item = { ...this.item, title, data: { ...this.itemData, name: title } }
+      this.saving = true
+      this.debouncedUpdate()
     },
     async updateData () {
       this.saving = true

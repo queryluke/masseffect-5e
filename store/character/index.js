@@ -237,7 +237,7 @@ export const actions = {
   },
   DEBOUNCED_REMOTE_UPDATE_CHARACTER: debounce(({ dispatch }) => {
     dispatch('REMOTE_UPDATE_CHARACTER')
-  }, 10000
+  }, 5000
   ),
   async REMOTE_UPDATE_CHARACTER ({ dispatch, commit, rootGetters, getters }) {
     if (!getters.character.meta.remote) {
