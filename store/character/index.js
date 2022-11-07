@@ -71,8 +71,8 @@ export const getters = {
       burrow: null
     }
     let heavierArmorSpeedReduction = false
-    const nullfiyArmorStrReq = rootGetters['character/mechanics/mechanics'].find(i => i.type === 'nullify-armor-str-restriction')
-    if (getters.character.options?.heavyArmor && !nullfiyArmorStrReq) {
+    const nullifyArmorStrReq = rootGetters['character/mechanics/mechanics'].find(i => i.type === 'nullify-armor-str-restriction')
+    if (getters.character.options?.armorSpeedPenalty && !nullifyArmorStrReq) {
       const strScore = rootGetters['character/abilities/abilityBreakdown'].str.total
       const { numMed, numHeavy } = rootGetters['character/ac/equippedArmorBreakdown']
       const minStrRequired = numHeavy > 2

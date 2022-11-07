@@ -40,7 +40,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters({ klassPowercastingMaxes: 'powers/klassPowercastingMaxes', techPoints: 'powers/techPoints', powerSlots: 'powers/powerSlots', preventPowerCastingFromHeavierArmor: 'profs/disadvantageFromHeavierArmor' }),
+    ...mapGetters({ klassPowercastingMaxes: 'powers/klassPowercastingMaxes', techPoints: 'powers/techPoints', powerSlots: 'powers/powerSlots', preventPowerCastingFromHeavierArmor: 'profs/preventPowerCastingFromHeavierArmor' }),
     powercastingType () {
       return this.klassPowercastingMaxes[this.item.source]?.powercastingType || this.item.resource?.id
     },

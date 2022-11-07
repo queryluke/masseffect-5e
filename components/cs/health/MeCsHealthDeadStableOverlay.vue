@@ -1,5 +1,5 @@
 <template>
-  <v-overlay absolute :value="maxed" opacity="0.9" :color="color">
+  <v-overlay absolute :value="maxed" opacity="0.9" :color="color" z-index="4">
     <v-icon :size="small ? 56 : 100">
       {{ icon }}
     </v-icon>

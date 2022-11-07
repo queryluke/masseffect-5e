@@ -70,6 +70,7 @@
 import { createNamespacedHelpers } from 'vuex'
 const { mapGetters } = createNamespacedHelpers('character')
 export default {
+  name: 'MeCbXpBar',
   props: {
     showAlert: {
       type: Boolean,

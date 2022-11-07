@@ -24,6 +24,7 @@
       <me-cs-character-preferences-side-nav />
       <me-cs-character-side-nav />
       <me-cs-equipment-credits />
+      <me-cb-xp-interface />
     </div>
   </div>
 </template>

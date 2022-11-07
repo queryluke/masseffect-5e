@@ -129,11 +129,9 @@ export default {
     },
     bonus: {
       get () {
-        console.log(this.damage.bonus)
         return this.damage.bonus
       },
       set (value) {
-        console.log(value)
         this.$emit('update', { ...this.damage, bonus: value })
       }
     },

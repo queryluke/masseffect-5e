@@ -28,13 +28,13 @@ export const getters = {
     return numLacking
   },
   disadvantageFromHeavierArmor: (state, getters, rootState, rootGetters) => {
-    if (!rootGetters['character/character'].options?.armorProficiency) {
+    if (!rootGetters['character/character'].options?.armorProficiencyPenalty) {
       return false
     }
     return getters.equippedArmorLackingProficiency > 1
   },
   preventPowerCastingFromHeavierArmor: (state, getters, rootState, rootGetters) => {
-    if (!rootGetters.character.options?.armorProficiency) {
+    if (!rootGetters['character/character'].options?.armorProficiencyPenalty) {
       return false
     }
     return getters.equippedArmorLackingProficiency > 3

@@ -248,12 +248,13 @@ export const getters = {
       let baseMechanics = power.mechanics[0]
       baseMechanics = p.merge ? merge(cloneDeep(baseMechanics), cloneDeep(p.merge)) : baseMechanics
       const mod = p.mod || getters.klassPowercastingAbilities[p.klass] || defaultPcAbility[power.type]
-      const baseMechanicMod = baseMechanics.attack?.mod === 'pc' ? false : baseMechanics.attack?.mod
+      const baseAttackMod = baseMechanics.attack?.mod === 'pc' ? false : baseMechanics.attack?.mod
+      const baseDcMod = baseMechanics.dc?.mod === 'pc' ? false : baseMechanics.dc?.mod
       const attack = baseMechanics.attack
-        ? { ...baseMechanics.attack, mod: baseMechanicMod || mod }
+        ? { ...baseMechanics.attack, mod: baseAttackMod || mod }
         : false
       const dc = baseMechanics.dc
-        ? { ...baseMechanics.dc, mod: baseMechanics.dc?.mod || mod }
+        ? { ...baseMechanics.dc, mod: baseDcMod || mod }
         : false
       const damage = baseMechanics.damage
         ? baseMechanics.damage.map((i) => {

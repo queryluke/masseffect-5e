@@ -159,7 +159,6 @@ export default {
         return this.mechanics.duration
       },
       set (value) {
-        console.log(value)
         this.$emit('update', Object.assign({}, { ...this.mechanics, duration: value }))
       }
     },

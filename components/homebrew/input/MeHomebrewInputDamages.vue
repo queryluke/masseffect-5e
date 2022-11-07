@@ -85,7 +85,6 @@ export default {
       }
     },
     updateDamage (index, value) {
-      console.log(index, value)
       const newDamages = this.damagesArray.slice()
       newDamages.splice(index, 1, value)
       this.damagesArray = newDamages

@@ -76,7 +76,6 @@ export default {
     },
     text: {
       get () {
-        console.log(this.advancement.text)
         return this.advancement.text
       },
       set (value) {

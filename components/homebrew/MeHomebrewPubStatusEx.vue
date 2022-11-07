@@ -162,7 +162,7 @@
       * - visible on shared character sheets or if you shared it with others
     </div>
     <div class="text-caption">
-      ** - usable on your own characters only
+      ** - usable by you and anyone you've shared it with
     </div>
     <div class="text-caption">
       *** - You can delete the item if it is not being used by any other accounts. We will release a new feature at a later date which allows deleting Development and Published content even if they are in use.
