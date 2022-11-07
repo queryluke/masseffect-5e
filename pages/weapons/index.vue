@@ -41,6 +41,10 @@ export default {
             aVal = this.averageFromDie(a.damage.dieType, a.damage.dieCount)
             bVal = this.averageFromDie(b.damage.dieType, b.damage.dieCount)
             break
+          case 'range':
+            aVal = a.range.short
+            bVal = b.range.short
+            break
           default:
             aVal = a[sortBy]
               ? typeof a[sortBy] === 'number'

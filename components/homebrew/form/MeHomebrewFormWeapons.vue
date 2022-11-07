@@ -20,7 +20,7 @@
               />
             </v-col>
             <v-col cols="12" sm="4">
-              <me-homebrew-input-rarity :selected="rarity" @update="rarity = $event" />
+              <me-homebrew-input-rarity :rarity="rarity" @update="rarity = $event" />
             </v-col>
             <v-col cols="12" sm="4">
               <me-homebrew-input-cost :cost="cost" @update="cost = $event" />
@@ -78,7 +78,7 @@
           <v-row>
             <v-col cols="12">
               <me-homebrew-input-legend>Range</me-homebrew-input-legend>
-              <me-homebrew-input-range :range="range" :ignore-long="type === 'melee'" ignore-aoe @update="range = $event" />
+              <me-homebrew-input-free-range :range="range" @update="range = $event" />
             </v-col>
             <v-col cols="12">
               <me-homebrew-input-legend>Damage</me-homebrew-input-legend>
@@ -165,7 +165,6 @@ export default {
         return this.item.weight
       },
       set (value) {
-        console.log(value)
         this.$emit('update', Object.assign({}, { ...this.item, weight: value }))
       }
     },

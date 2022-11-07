@@ -123,6 +123,7 @@ export default {
       const oldData = JSON.stringify(this.itemData)
       if (newData !== oldData) {
         this.itemData = data
+        this.saving = true
         this.debouncedUpdate()
       }
     },
@@ -132,7 +133,6 @@ export default {
       this.debouncedUpdate()
     },
     async updateData () {
-      this.saving = true
       const input = {
         id: this.item.id,
         title: this.item.title,

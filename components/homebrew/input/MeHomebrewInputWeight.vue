@@ -27,11 +27,11 @@ export default {
     weightInput: {
       get () {
         const weight = parseInt(this.weight, 10) || 0
-        return this.imperial ? weight : Math.round(parseInt(weight, 10) * 2.204)
+        return this.imperial ? weight : Math.round(parseInt(weight, 10) / 2.204)
       },
       set (value) {
         const weight = parseInt(value) || 0
-        const converted = this.imperial ? weight : Math.round(parseInt(weight, 10) / 2.204)
+        const converted = this.imperial ? weight : Math.round(parseInt(weight, 10) * 2.204)
         this.$emit('update', converted)
       }
     }
