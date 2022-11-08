@@ -481,10 +481,11 @@ export const getters = {
       const toggleDamageType = toggleOn ? toggle.damageType : false
       const toggleAddDamage = toggleOn ? (toggle.addDamage || false) : false
       const toggleDamageMultiplier = toggleOn ? (toggle.damageMultiplier || 1) : 1
+      const dieCount = typeof weapon.data.damage.dieCount === 'object' ? rootGetters['character/mechanics/mcBonus'](weapon.data.damage.dieCount) : weapon.data.damage.dieCount
       const damage = [
         {
           dieType: newDieType || weapon.data.damage.dieType,
-          dieCount: weapon.data.damage.dieCount * toggleDamageMultiplier,
+          dieCount: dieCount * toggleDamageMultiplier,
           type: toggleDamageType || weapon.data.damage.type,
           mod: damageMod,
           bonus: {

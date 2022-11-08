@@ -16,7 +16,7 @@
         <v-row>
           <v-col cols="6" lg="3">
             <me-item-stat :label="$t('damage_title')">
-              {{ $t('dice', {dieType: item.damage.dieType, dieCount: item.damage.dieCount}) }} {{ $t(`damage_types.${item.damage.type}`) }}
+              {{ $t('dice', {dieType: item.damage.dieType, dieCount: dieCount}) }} {{ $t(`damage_types.${item.damage.type}`) }}
             </me-item-stat>
           </v-col>
           <v-col cols="6" lg="3">
@@ -59,6 +59,11 @@ export default {
     title: {
       type: Boolean,
       default: false
+    }
+  },
+  computed: {
+    dieCount () {
+      return typeof this.item.damage.dieCount === 'object' ? 'X' : this.item.dieCount
     }
   }
 }

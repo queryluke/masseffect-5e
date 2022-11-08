@@ -204,19 +204,19 @@ export default {
       return this.$store.getters.getData('npc-stats')
     },
     classes () {
-      return this.$store.getters.getData('classes')
+      return this.$store.getters.baseData('classes')
     },
     species () {
-      return this.$store.getters.getData('species').filter(i => !['subspecies', 'variant'].includes(i.type))
+      return this.$store.getters.baseData('species').filter(i => !['subspecies', 'variant'].includes(i.type))
     },
     spells () {
-      return this.$store.getters.getData('powers')
+      return this.$store.getters.baseData('powers')
     },
     weapons () {
-      return this.$store.getters.getData('weapons')
+      return this.$store.getters.baseData('weapons')
     },
     grenades () {
-      return this.$store.getters.getData('gear').filter(g => g.type === 'grenade')
+      return this.$store.getters.baseData('gear').filter(g => g.type === 'grenade')
     },
     sliderColor () {
       return this.offensiveScaleColors[this.scaleIndex.indexOf(this.selectedOffensiveScale)]

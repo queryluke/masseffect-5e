@@ -24,7 +24,7 @@
       <me-weapon-range :item="item" />
     </template>
     <template #[`header.damage`]="{ item }">
-      {{ $t('dice', {dieType: item.damage.dieType, dieCount: item.damage.dieCount}) }} {{ $t(`damage_types.${item.damage.type}`) }}
+      {{ $t('dice', {dieType: item.damage.dieType, dieCount: dieCount(item.damage.dieCount)}) }} {{ $t(`damage_types.${item.damage.type}`) }}
     </template>
     <template #[`header.cost`]="{ item }">
       {{ item.cost | groupDigits(',') }}
@@ -55,6 +55,11 @@ export default {
   data () {
     return {
       model: 'weapons'
+    }
+  },
+  methods: {
+    dieCount (dieCount) {
+      return typeof dieCount === 'object' ? 'X' : dieCount
     }
   }
 }
