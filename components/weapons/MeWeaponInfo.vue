@@ -63,7 +63,7 @@ export default {
   },
   computed: {
     dieCount () {
-      return typeof this.item.damage.dieCount === 'object' ? 'X' : this.item.dieCount
+      return typeof this.item.damage.dieCount === 'object' ? 'X' : this.item.damage.dieCount
     }
   }
 }
