@@ -49,6 +49,14 @@ export const state = () => ({
       weapon: {
         has: ['shotgun']
       }
+    },
+    tracker: {
+      armor: {
+        has: ['medium']
+      },
+      skill: {
+        has: ['perception']
+      }
     }
   }
 })

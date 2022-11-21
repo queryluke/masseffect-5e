@@ -137,7 +137,7 @@ export default {
       return this.$store.getters.getData('character-progression')
     },
     classFeatures () {
-      return this.$store.getters.getData('class-features').filter(i => i.klass === this.item.id)
+      return this.$store.getters.getData('class-features').filter(i => i.klass === this.item.id && !i.noFeatureDisplay)
     },
     cfMechanics () {
       return this.classFeatures.reduce((acc, curr) => acc.concat(curr.mechanics || []), [])
@@ -313,6 +313,7 @@ export default {
         ...(this.pcPowersKnown || []),
         ...(this.pcPoints || []),
         ...(this.pcPact || []),
+        ...(this.pcFromMechanics.filter(i => i.order > 20) || []),
         ...(this.pcSlots || [])
       ]
     },

@@ -1,45 +1,50 @@
 <template>
-  <div>
-    <div v-show="showTab(1)">
-      <me-cs-action-list :items="csAllActions.attacks">
-        <div class="d-flex justify-space-between">
-          <div>
-            Attacks <span v-if="extraAttacks" class="text-body-2"><small>({{ extraAttacks }} attacks per action)</small></span>
+  <v-tabs-items v-model="companionTab">
+    <v-tab-item>
+      <div v-show="showTab(1)">
+        <me-cs-action-list :items="csAllActions.attacks">
+          <div class="d-flex justify-space-between">
+            <div>
+              Attacks <span v-if="extraAttacks" class="text-body-2"><small>({{ extraAttacks }} attacks per action)</small></span>
+            </div>
+            <div v-if="showThermalClips">
+              <span class="text-body-2"><small>Thermal Clips: {{ thermalClips.equipped }} of {{ thermalClips.max }}</small></span>
+            </div>
           </div>
-          <div v-if="showThermalClips">
-            <span class="text-body-2"><small>Thermal Clips: {{ thermalClips.equipped }} of {{ thermalClips.max }}</small></span>
-          </div>
-        </div>
-      </me-cs-action-list>
-    </div>
-    <div v-show="showTab(2)">
-      <me-cs-action-list :items="csAllActions.actions">
-        Actions
-      </me-cs-action-list>
-    </div>
-    <div v-show="showTab(3)">
-      <me-cs-action-list :items="csAllActions.bonusActions">
-        Bonus Actions
-      </me-cs-action-list>
-    </div>
-    <div v-show="showTab(4)">
-      <me-cs-action-list :items="csAllActions.reactions">
-        Reactions
-      </me-cs-action-list>
-    </div>
-    <div v-show="showTab(5)">
-      <me-cs-action-list :items="csAllActions.other">
-        Other Features
-        <template v-if="csSetBonuses.length > 0" #append>
-          <me-cs-action-cards-set-bonus
-            v-for="(item, itemIndex) in csSetBonuses"
-            :key="`set-bonus-${itemIndex}`"
-            :item="item"
-          />
-        </template>
-      </me-cs-action-list>
-    </div>
-  </div>
+        </me-cs-action-list>
+      </div>
+      <div v-show="showTab(2)">
+        <me-cs-action-list :items="csAllActions.actions">
+          Actions
+        </me-cs-action-list>
+      </div>
+      <div v-show="showTab(3)">
+        <me-cs-action-list :items="csAllActions.bonusActions">
+          Bonus Actions
+        </me-cs-action-list>
+      </div>
+      <div v-show="showTab(4)">
+        <me-cs-action-list :items="csAllActions.reactions">
+          Reactions
+        </me-cs-action-list>
+      </div>
+      <div v-show="showTab(5)">
+        <me-cs-action-list :items="csAllActions.other">
+          Other Features
+          <template v-if="csSetBonuses.length > 0" #append>
+            <me-cs-action-cards-set-bonus
+              v-for="(item, itemIndex) in csSetBonuses"
+              :key="`set-bonus-${itemIndex}`"
+              :item="item"
+            />
+          </template>
+        </me-cs-action-list>
+      </div>
+    </v-tab-item>
+    <v-tab-item>
+      <me-cs-companion />
+    </v-tab-item>
+  </v-tabs-items>
 </template>
 
 <script>
@@ -64,6 +69,9 @@ export default {
       thermalClips: 'equipment/thermalClips',
       mechanicActions: 'mechanics/mechanicActions'
     }),
+    companionTab () {
+      return this.tab === 6 ? 1 : 0
+    },
     weaponProperties () {
       return this.$store.getters.getData('weapon-properties')
     },

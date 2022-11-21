@@ -129,6 +129,10 @@ export const state = () => ({
       dark: 'red darken-4',
       light: 'red accent-2'
     },
+    tracker: {
+      dark: 'green darken-4',
+      light: 'green accent-3'
+    },
     vanguard: {
       dark: 'pink darken-4',
       light: 'pink lighten-2'
