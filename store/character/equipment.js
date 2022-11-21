@@ -376,7 +376,7 @@ export const getters = {
           bonusHit: 0,
           bonusDamage: 0,
           component: 'me-cs-details-weapon',
-          properties: [],
+          properties: i.properties || [],
           mechanics: []
         }
       })
