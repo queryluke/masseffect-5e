@@ -49,22 +49,6 @@
             </v-card>
           </v-col>
         </v-row>
-        <v-row justify="space-around" class="mt-5">
-          <v-col cols="12" md="8" lg="6">
-            <v-alert type="error" prominent>
-              <v-row align="center">
-                <v-col class="grow">
-                  {{ $t('aboutpage.bug_text') }}
-                </v-col>
-                <v-col class="shrink">
-                  <v-btn href="https://forms.gle/JtGQqS9KxVFQGtAq7" target="_blank">
-                    {{ $t('buttons.bug') }}
-                  </v-btn>
-                </v-col>
-              </v-row>
-            </v-alert>
-          </v-col>
-        </v-row>
         <v-row justify="center" class="mt-15">
           <v-col cols="12" sm="10" md="8" class="my-3">
             <div class="text-center">
@@ -72,7 +56,11 @@
                 {{ $t('aboutpage.about_me5e_title') }}
               </h2>
               <p>
-                {{ $t('aboutpage.about_text') }}
+                Mass Effect 5e is a fan-made, D&D 5th Edition, homebrew project that started in early 2016. The core ruleset
+                was created by Luke Aeschleman with guidance from Hugh Thompson. Luke continues to maintain the website,
+                but is no longer responsible for content changes and updates. Instead, this has become a "living homebrew",
+                in which the community provides feedback and the following Discord moderators assess and make changes
+                as necessary.
               </p>
             </div>
           </v-col>
@@ -81,10 +69,7 @@
         <v-row justify="center">
           <v-col cols="12">
             <p class="text-h5">
-              {{ $t('aboutpage.contributors_title') }}
-            </p>
-            <p>
-              {{ $t('aboutpage.contributors_text') }}
+              Content Developers & Discord Moderators
             </p>
           </v-col>
         </v-row>
@@ -95,7 +80,7 @@
             cols="12"
             sm="6"
             md="4"
-            lg="3"
+            lg="2"
           >
             <v-card elevation="0" color="transparent" class="text-center">
               <v-card-text>
@@ -104,9 +89,6 @@
                 </v-avatar>
                 <p class="text-center text-h6 mb-1">
                   {{ person.name }}
-                </p>
-                <p class="text-subtitle-1">
-                  {{ aboutPageRoles(person) }}
                 </p>
               </v-card-text>
             </v-card>

@@ -13,6 +13,9 @@
           </v-avatar>
           <div>
             <me-page-title />
+            <div v-if="item.author" class="font-weight-thin font-italic">
+              by {{ item.author }}
+            </div>
             <me-html :content="item.html" />
           </div>
         </div>
