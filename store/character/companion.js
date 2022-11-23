@@ -18,7 +18,7 @@ export const state = () => ({
     shields: 0,
     regen: 0,
     senses: {},
-    currentShields: 10,
+    currentShields: 0,
     dmgVul: [],
     dmgRes: [],
     dmgImm: [],

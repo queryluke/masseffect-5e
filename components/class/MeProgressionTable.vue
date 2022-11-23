@@ -366,7 +366,7 @@ export default {
         features.push(this.$t('ability_score_increase_title'))
       }
       if (this.item.progression.subclass.includes(level)) {
-        features.push(this.$t(`subclass_feature_titles.${this.item.id}`))
+        features.push('Subclass Feature')
       }
       return features.length === 0 ? '-' : this.$t(`lists.comma_list[${features.length}]`, features)
     },

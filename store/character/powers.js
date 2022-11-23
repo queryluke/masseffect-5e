@@ -45,6 +45,8 @@ export const state = () => ({
     engineer: 'int',
     sentinel: 'wis',
     infiltrator: 'int',
+    explorer: 'int',
+    tracker: 'wis',
     soldier: false
   }
 })

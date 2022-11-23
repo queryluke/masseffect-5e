@@ -117,6 +117,10 @@ export const state = () => ({
     engineer: {
       dark: 'amber darken-1'
     },
+    explorer: {
+      dark: 'indigo darken-3',
+      light: 'indigo accent-2'
+    },
     infiltrator: {
       dark: 'deep-orange darken-4',
       light: 'deep-orange'

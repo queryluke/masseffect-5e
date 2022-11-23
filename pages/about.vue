@@ -94,6 +94,18 @@
             </v-card>
           </v-col>
         </v-row>
+        <v-row>
+          <v-col cols="12" md="8" offset-md="2" lg="6" offset-lg="3">
+            <v-alert type="error" outlined>
+              <div class="text-h6">
+                Found a bug?
+              </div>
+              <p>
+                Please report using the <code>#typos-and-errors</code> channel on <a href="https://discord.gg/c2UnqkH" target="_blank">Discord</a>
+              </p>
+            </v-alert>
+          </v-col>
+        </v-row>
         <!-- past -->
         <v-row justify="center">
           <v-col cols="12">

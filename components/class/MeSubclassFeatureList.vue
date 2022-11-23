@@ -17,6 +17,7 @@
           item-value="id"
           label="Choose a subclass"
           shaped
+          filled
         />
       </v-col>
     </v-row>

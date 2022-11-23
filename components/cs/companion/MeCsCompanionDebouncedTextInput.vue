@@ -62,8 +62,8 @@ export default {
       if (this.isInteger) {
         value = parseInt(value)
       }
-      if (!value) {
-        this.cachedValue = this.value
+      if (!value && value !== 0) {
+        // this.cachedValue = this.value
         return
       }
       this.$emit('set', value)
