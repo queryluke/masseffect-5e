@@ -125,7 +125,7 @@ export const getters = {
   equipment: (state, getters, rootState, rootGetters) => {
     return rootGetters['character/character'].equipment
   },
-  weapons: (state, getters) => {
+  weapons: (state, getters, rootState, rootGetters) => {
     const weapons = getters.equipment.filter(i => i.type === 'weapon')
     const finalWeapons = []
     for (const w of weapons) {
@@ -148,7 +148,9 @@ export const getters = {
 
       // remove/add props from mods
       let properties = data.properties.slice()
-      const adjustProps = modMechanics.filter(i => i.type === 'adjust-weapon-props')
+      let adjustProps = modMechanics.filter(i => i.type === 'adjust-weapon-props')
+      const adjustPropsFromClasses = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'adjust-weapon-props' && i.limit && i.limit.includes(data.type))
+      adjustProps = adjustProps.concat(adjustPropsFromClasses || [])
       if (adjustProps.length) {
         const toRemove = adjustProps.reduce((a, c) => a.concat(c.remove || []), [])
         let toAdd = adjustProps.reduce((a, c) => a.concat(c.add || []), [])
@@ -413,13 +415,41 @@ export const getters = {
       const smWeapons = rootGetters['character/character'].currentStats.shoulderMounts || []
       const isSmWeapon = smWeapons.includes(weapon.uuid)
       const hasShoulderMounts = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'shoulder-mounts').length
+      const overrideWeaponAttackModMechanics = rootGetters['character/mechanics/mechanics'].filter(i => i.type === 'override-weapon-attack-mod')
+      let overrideWeaponAttackMod = false
+
+      // standard mod
+      const standardMod = recoil || finesse
+        ? dexOrStr
+        : weaponType === 'melee'
+          ? 'str'
+          : 'dex'
+
+      // override
+      let finalMod = standardMod
+      if (overrideWeaponAttackModMechanics.length) {
+        overrideWeaponAttackMod = true
+        const possibleMods = []
+        for (const owam of overrideWeaponAttackModMechanics) {
+          if (!owam.limit || owam.limit === attackType) {
+            const modToAdd = owam.mod === 'pc' ? rootGetters['character/powers/klassPowercastingAbilities'][owam.klass] : owam.mod
+            possibleMods.push(modToAdd)
+          }
+        }
+        let maxModScore = rootGetters[`character/abilities/${standardMod}Mod`]
+        for (const atkMod of possibleMods) {
+          const comparingModScore = rootGetters[`character/abilities/${atkMod}Mod`]
+          if (comparingModScore > maxModScore) {
+            finalMod = atkMod
+            maxModScore = comparingModScore
+          }
+        }
+      }
       const abilityMod = isSmWeapon && hasShoulderMounts
         ? 'int'
-        : recoil || finesse
-          ? dexOrStr
-          : weaponType === 'melee'
-            ? 'str'
-            : 'dex'
+        : overrideWeaponAttackMod
+          ? finalMod
+          : standardMod
 
       // Get Matching Augments
       const augmentQualities = {

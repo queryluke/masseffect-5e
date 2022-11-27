@@ -66,8 +66,8 @@ export default {
     },
     rangeText () {
       return this.feature.attack === 'melee'
-        ? this.$t('npc.range_types.reach', { range: `<me-distance :length="${this.feature.range}" abbr />` })
-        : this.$t('npc.range_types.range', { short: `<me-distance :length="${this.feature.range}" abbr />`, long: `<me-distance :length="${this.feature.range * 3}" abbr />` })
+        ? this.$t('npc.range_types.reach', { range: `<me-distance :length="${this.feature.range.short}" abbr />` })
+        : this.$t('npc.range_types.range', { short: `<me-distance :length="${this.feature.range.short}" abbr />`, long: `<me-distance :length="${this.feature.range.long}" abbr />` })
     },
     hitText () {
       if (this.feature.damage) {

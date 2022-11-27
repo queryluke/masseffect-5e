@@ -57,7 +57,7 @@
               </h2>
               <p>
                 Mass Effect 5e is a fan-made, D&D 5th Edition, homebrew project that started in early 2016. The core ruleset
-                was created by Luke Aeschleman with guidance from Hugh Thompson. Luke continues to maintain the website,
+                was created by Luke Aeschleman with collaboration and editing by Hugh Thompson. Luke continues to maintain the website,
                 but is no longer responsible for content changes and updates. Instead, this has become a "living homebrew",
                 in which the community provides feedback and the following Discord moderators assess and make changes
                 as necessary.
@@ -119,19 +119,19 @@
             v-for="person in former"
             :key="person.name"
             cols="12"
-            sm="6"
-            md="4"
-            lg="3"
+            sm="4"
+            md="3"
+            lg="2"
           >
             <v-card elevation="0" color="transparent" class="text-center">
               <v-card-text>
-                <v-avatar size="92">
-                  <v-img :src="person.image" :alt="person.name" />
+                <v-avatar size="76">
+                  <v-img :src="person.image" :alt="person.name" style="-webkit-filter: grayscale(100%); filter: grayscale(100%)" />
                 </v-avatar>
-                <p class="text-center text-h6 mb-1">
+                <p class="text-center text-subtitle-2 mb-0">
                   {{ person.name }}
                 </p>
-                <p class="text-subtitle-1">
+                <p class="text-caption">
                   {{ $t(`aboutpage.roles.${person.roles}`) }}
                 </p>
               </v-card-text>

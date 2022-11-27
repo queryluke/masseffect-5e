@@ -89,9 +89,52 @@
         </v-col>
       </v-row>
       <!-- Senses, Skills, & Defenses -->
-      <v-row />
+      <me-hr />
+      <v-card color="transparent" class="pb-4">
+        <div v-if="savingThrows" class="text-body-2 d-flex align-center flex-wrap">
+          <div class="font-weight-bold">
+            Saving Throws
+          </div>
+          <div class="d-flex align-center">
+            <div v-for="(st, stAbility) in savingThrows" :key="`st-${stAbility}`" class="d-flex px-2 align-center flex-wrap">
+              <div class="mr-1">
+                {{ $t(`abilities.${stAbility}.title`) }}
+              </div>
+              <me-cs-roll-card :roll="rollSavingThrow(stAbility)" :min-width="24">
+                <div class="py-1">
+                  {{ st.modText }}
+                </div>
+              </me-cs-roll-card>
+            </div>
+          </div>
+        </div>
+        <div v-if="companionSkills" class="text-body-2 d-flex align-center flex-wrap">
+          <div class="font-weight-bold">
+            Skills
+          </div>
+          <div class="d-flex align-center flex-wrap">
+            <div v-for="(skillValues, skill) in companionSkills" :key="`skill-${skill}`" class="d-flex px-2 align-center">
+              <div class="mr-1">
+                {{ skillValues.name }}
+              </div>
+              <me-cs-roll-card :roll="rollSkill(skill)" :min-width="24">
+                <div class="py-1">
+                  {{ skillValues.modText }}
+                </div>
+              </me-cs-roll-card>
+            </div>
+          </div>
+        </div>
+        <!-- Senses -->
+        <div />
+        <!-- Defenses -->
+        <div />
+      </v-card>
+      <me-hr />
+
       <!-- Actions -->
       <v-row />
+      <me-hr />
       <!-- Notes -->
       <v-row />
     </div>
@@ -122,6 +165,9 @@ export default {
     viewOnly () {
       return this.$store.state.character.viewOnly
     },
+    skills () {
+      return this.$store.getters.getData('skills')
+    },
     abilities () {
       const abilities = {}
       for (const ability of ['str', 'dex', 'con', 'int', 'wis', 'cha']) {
@@ -130,10 +176,43 @@ export default {
         abilities[ability] = {
           score,
           mod,
-          modText: mod > 0 ? `+${mod}` : mod
+          modText: mod < 0 ? mod : `+${mod}`
         }
       }
       return abilities
+    },
+    savingThrows () {
+      if (!this.companion.savingThrows.length) {
+        return false
+      }
+      const sts = {}
+      for (const ability of ['str', 'dex', 'con', 'int', 'wis', 'cha']) {
+        if (this.companion.savingThrows.includes(ability)) {
+          const mod = this.companion.profBonus + this.abilities[ability].mod
+          sts[ability] = {
+            mod,
+            modText: mod > 0 ? `+${mod}` : mod
+          }
+        }
+      }
+      return sts
+    },
+    companionSkills () {
+      if (!this.companion.skills.length) {
+        return false
+      }
+      const skills = {}
+      for (const skill of this.skills) {
+        if (this.companion.skills.includes(skill.id)) {
+          const mod = this.companion.profBonus + this.abilities[skill.link].mod
+          skills[skill.id] = {
+            name: skill.name,
+            mod,
+            modText: mod > 0 ? `+${mod}` : mod
+          }
+        }
+      }
+      return skills
     }
   },
   methods: {
@@ -157,6 +236,34 @@ export default {
         detail: this.$t(`abilities.${ability}.abbr`),
         subDetail: `${this.companion.name} (companion)`,
         type: 'check'
+      }
+    },
+    rollSavingThrow (ability) {
+      if (!ability) {
+        return
+      }
+      const score = this.savingThrows[ability]
+      const append = score.mod !== 0 ? score.modText : ''
+      return {
+        notation: `1d20${append}`,
+        detail: this.$t(`abilities.${ability}.abbr`),
+        subDetail: `${this.companion.name} (companion)`,
+        type: 'Saving Throw'
+      }
+    },
+    rollSkill (skill) {
+      if (!skill) {
+        return
+      }
+      console.log(skill, this.companionSkills)
+      const score = this.companionSkills[skill]
+      console.log(score)
+      const append = score.mod !== 0 ? score.modText : ''
+      return {
+        notation: `1d20${append}`,
+        detail: score.name,
+        subDetail: `${this.companion.name} (companion)`,
+        type: 'Skill Check'
       }
     }
   }

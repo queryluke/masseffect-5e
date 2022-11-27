@@ -57,7 +57,8 @@ export const state = () => ({
       skill: {
         has: ['perception']
       }
-    }
+    },
+    explorer: {}
   }
 })
 

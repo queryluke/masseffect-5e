@@ -163,7 +163,6 @@ export default {
       // item.component for powers, item.moreInfo.component for gear/weapons, default is everything else
       const component = this.item.component || this.item.moreInfo.component || 'me-cs-more-info'
       const value = this.item.moreInfo?.toDisplay || this.item
-      console.log(value, component)
       this.$store.commit('character/navigation/SET', { key: 'toDisplay', value })
       this.$store.dispatch('character/navigation/SHOW_SIDE_NAV', component)
     }
