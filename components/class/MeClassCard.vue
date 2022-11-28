@@ -10,7 +10,7 @@
           :src="require(`~/assets/images/classes/${item.id}.svg`)"
           position="right"
         />
-        <div v-if="item.author" class="text-center font-weight-thin font-italic">
+        <div v-if="item.author" class="text-center font-weight-light font-italic primary--text">
           by {{ item.author }}
         </div>
       </v-col>
