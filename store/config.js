@@ -125,6 +125,10 @@ export const state = () => ({
       dark: 'deep-orange darken-4',
       light: 'deep-orange'
     },
+    musician: {
+      dark: 'teal darken-1',
+      light: 'teal accent-2'
+    },
     sentinel: {
       dark: 'brown',
       light: 'brown lighten-2'

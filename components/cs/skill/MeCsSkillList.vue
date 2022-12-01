@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="allSkillsBonus.length" class="d-flex justify-center">
+    <div v-if="allSkillsBonus.length" class="d-flex flex-column px-3">
       <div v-for="(asb, index) of allSkillsBonus" :key="`all-skill-bonus-${index}`">
         <div class="d-flex align-center">
           <me-cs-ad-icon v-if="asb.effect.type === 'advantage'" type="a" small />

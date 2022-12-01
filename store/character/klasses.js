@@ -58,7 +58,8 @@ export const state = () => ({
         has: ['perception']
       }
     },
-    explorer: {}
+    explorer: {},
+    musician: {}
   }
 })
 

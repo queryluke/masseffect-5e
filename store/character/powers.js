@@ -47,6 +47,7 @@ export const state = () => ({
     infiltrator: 'int',
     explorer: 'int',
     tracker: 'wis',
+    musician: 'cha',
     soldier: false
   }
 })
