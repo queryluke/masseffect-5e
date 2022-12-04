@@ -73,7 +73,7 @@
     </div>
     <v-card-actions v-if="item.data.advancements && (item.learned || item.fromFeature)" class="pt-0">
       <!-- Advancement Menu -->
-      <v-menu offset-y>
+      <v-menu v-if="!item.noAdvancements" offset-y>
         <template #activator="{ on, attrs }">
           <v-btn
             color="primary"
@@ -81,7 +81,7 @@
             x-small
             outlined
             class="mr-1"
-            :disabled="!item.learned && !item.fromFeature"
+            :disabled="!item.learned && !item.fromFeature && item.noAdvancements"
             v-on="on"
           >
             {{ advMenuText }}

@@ -474,13 +474,17 @@ export const getters = {
       } catch (e) {
         console.error(`could not find source ${power.source}`)
       }
-      return {
+      const returnData = {
         ...power,
         id: power.value,
         path: power.source,
         source,
         advancement: advancement?.value
       }
+      if (power.provider && power.provider.id === 'engi-knight') {
+        returnData.source = 'soldier'
+      }
+      return returnData
     })
     return [
       ...rootGetters['character/character'].powers,
