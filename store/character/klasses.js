@@ -59,7 +59,8 @@ export const state = () => ({
       }
     },
     explorer: {},
-    musician: {}
+    musician: {},
+    experiment: {}
   }
 })
 

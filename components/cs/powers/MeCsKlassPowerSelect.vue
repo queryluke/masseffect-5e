@@ -102,11 +102,22 @@ export default {
     powersAvailableToKlass () {
       const regular = this.powerList.filter(i => i.classes.includes(this.klass.id))
       const otherClassIds = this.mechanics.filter(i => i.type === 'use-class-for-power-list')
+      const otherClassCantripIds = this.mechanics.filter(i => i.type === 'use-class-for-cantrip-list')
+      const cantrips = []
+      if (otherClassCantripIds.length) {
+        for (const otherClassCantripId of otherClassCantripIds) {
+          cantrips.push(...this.powerList.filter(i => i.classes.includes(otherClassCantripId.klass) && i.level === 0))
+        }
+      } else {
+        for (const otherClassId of otherClassIds) {
+          cantrips.push(...this.powerList.filter(i => i.classes.includes(otherClassId.klass) && i.level === 0))
+        }
+      }
       const otherClassPowerList = []
       for (const otherClassId of otherClassIds) {
-        otherClassPowerList.push(...this.powerList.filter(i => i.classes.includes(otherClassId.klass)))
+        otherClassPowerList.push(...this.powerList.filter(i => i.classes.includes(otherClassId.klass) && i.level > 0))
       }
-      return [...regular, ...otherClassPowerList]
+      return [...regular, ...cantrips, ...otherClassPowerList]
     },
     noAdvancements () {
       return !!this.mechanics.find(i => i.type === 'prevent-advancements')

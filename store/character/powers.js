@@ -48,7 +48,8 @@ export const state = () => ({
     explorer: 'int',
     tracker: 'wis',
     musician: 'cha',
-    soldier: false
+    soldier: false,
+    experiment: false
   }
 })
 
@@ -169,7 +170,20 @@ export const getters = {
       const override = rootGetters['character/character'].settings.powercasting[klass.id] || false
       const klassSelected = selectedPowercasting.find(i => i.path.includes(klass.id))?.value || []
       const base = state.baseKlassPowercastingAbility[klass.id]
-      kpca[klass.id] = override || klassSelected[0] || base
+      let subclassPowercasting = null
+      if (klass.subclass) {
+        const pcFeature = rootGetters['character/klasses/klassesFeatures']
+          .reduce((a, c) => a.concat(c), [])
+          .filter(i => i.subclass === klass.subclass)
+          .find(i => (i.mechanics || []).map(j => j.type).filter(j => j.startsWith('powercasting')).length)
+        if (pcFeature) {
+          const pcMechanic = (pcFeature.mechanics || []).find(i => i.type.startsWith('powercasting'))
+          if (pcMechanic) {
+            subclassPowercasting = pcMechanic.mod
+          }
+        }
+      }
+      kpca[klass.id] = override || klassSelected[0] || subclassPowercasting || base
     }
     return kpca
   },

@@ -144,6 +144,10 @@ export const state = () => ({
     vanguard: {
       dark: 'pink darken-4',
       light: 'pink lighten-2'
+    },
+    experiment: {
+      dark: 'blue-grey darken-2',
+      light: 'blue-grey lighten-1'
     }
   },
   sklTypes: {
