@@ -59,10 +59,6 @@
                 if you create a custom feat that gives you a new proficiency or adds to an ability score, you'll need to
                 manually adjust/override those settings.
               </p>
-              <p>
-                Our next development task is to provide a fully-fledged homebrew system which allows players to make their
-                own weapons, powers, subclasses, races, and more!
-              </p>
             </v-card-text>
           </v-card>
 
@@ -73,11 +69,8 @@
                 Beyond that, other things not yet developed are:
               </p>
               <ul>
-                <li>Death Saves</li>
-                <li>Inspiration</li>
                 <li>Crit roll notifications & crit damage</li>
                 <li>Advantage and Disadvantage on rolls</li>
-                <li>XP & Milestone Tracking</li>
               </ul>
             </v-card-text>
           </v-card>

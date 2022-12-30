@@ -13,14 +13,9 @@
               Resume
             </v-btn>
           </v-col>
-          <v-col class="text-center">
-            <v-btn href="https://forms.gle/JtGQqS9KxVFQGtAq7" target="_blank">
-              {{ $t('buttons.bug') }}
-            </v-btn>
-          </v-col>
         </v-row>
         <div class="text-center text-caption mt-3">
-          (There was an issue with the website, please try refreshing the page or filling out a bug report)
+          (There was an issue with the website, please try refreshing the page or informing the discord team in the <code>#typos-and-errors</code> channel)
         </div>
       </v-container>
     </section>

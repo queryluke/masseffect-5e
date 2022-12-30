@@ -6,7 +6,7 @@
     dense
     :clearable="clearable"
     :label="label"
-    @input="debouncedUpdate()"
+    @click:clear="clear"
   />
 </template>
 
@@ -48,6 +48,7 @@ export default {
       },
       set (value) {
         this.cachedValue = value
+        this.debouncedUpdate()
       }
     }
   },
@@ -61,12 +62,16 @@ export default {
       let value = this.cachedValue
       if (this.isInteger) {
         value = parseInt(value)
-      }
-      if (!value && value !== 0) {
-        // this.cachedValue = this.value
-        return
+        if (!value && value !== 0) {
+          // this.cachedValue = this.value
+          return
+        }
       }
       this.$emit('set', value)
+    },
+    clear () {
+      this.cachedValue = null
+      this.$emit('clear', null)
     }
   }
 }

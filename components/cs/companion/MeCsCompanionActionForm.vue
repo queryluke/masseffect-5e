@@ -9,13 +9,30 @@
       <me-cs-companion-debounced-text-input :value="action.name" label="Name" clearable @set="updateFeature('name', $event)" />
     </v-col>
     <v-col cols="12" sm="6">
-      <me-cs-companion-select-input :value="action.type" label="Type" :items="['Attack', 'Action', 'Bonus Action', 'Reaction', 'Other']" multiple @set="updateFeature('name', $event)" />
+      <me-cs-companion-select-input :value="action.type" label="Type" :items="['Attack', 'Action', 'Bonus Action', 'Reaction', 'Other']" @set="updateFeature('type', $event)" />
     </v-col>
     <v-col cols="6" md="2">
-      <me-cs-companion-debounced-text-input :value="action.dc" label="DC" clearable is-integer @set="updateFeature('dc', $event)" />
+      <me-cs-companion-debounced-text-input
+        :value="action.dc"
+        label="DC"
+        clearable
+        is-integer
+        @set="updateFeature('dc', $event)"
+        @clear="updateFeature('dc', null)"
+      />
     </v-col>
     <v-col cols="6" md="2">
-      <me-cs-companion-debounced-text-input :value="action.hit" label="To Hit" clearable is-integer @set="updateFeature('hit', $event)" />
+      <me-cs-companion-select-input :value="action.dcSave" label="DC Save" :items="['str', 'dex', 'con', 'int', 'wis', 'cha']" @set="updateFeature('dcSave', $event)" />
+    </v-col>
+    <v-col cols="12">
+      <me-cs-companion-debounced-text-input
+        :value="action.hit"
+        label="To Hit"
+        clearable
+        is-integer
+        @set="updateFeature('hit', $event)"
+        @clear="updateFeature('hit', null)"
+      />
     </v-col>
     <v-col cols="6" md="4">
       <me-cs-companion-debounced-text-input
@@ -53,7 +70,7 @@
       </div>
       <v-divider class="mb-4" />
     </v-col>
-    <v-col cols="6" md="4">
+    <v-col cols="6" md="2">
       <me-cs-companion-debounced-text-input
         :value="action.dmgDieCount"
         label="# Dice"
@@ -62,11 +79,21 @@
         @set="updateFeature('dmgDieCount', $event)"
       />
     </v-col>
-    <v-col cols="6" md="4">
-      <me-cs-companion-select-input :value="action.dmgDieType" label="Die" :items="dieTypes" @set="updateFeature('dieType', $event)" />
+    <v-col cols="6" md="2">
+      <me-cs-companion-select-input :value="action.dmgDieType" label="Die" :items="dieTypes" @set="updateFeature('dmgDieType', $event)" />
     </v-col>
-    <v-col cols="6" md="4">
-      <me-cs-companion-select-input :items="damageTypes" label="Type" :value="action.dmgType" multiple @set="updateFeature('dmgType', $event)" />
+    <v-col cols="6" md="3">
+      <me-cs-companion-debounced-text-input
+        :value="action.dmgBonus"
+        label="DMG Bonus"
+        clearable
+        is-integer
+        @set="updateFeature('dmgBonus', $event)"
+        @clear="updateFeature('dmgBonus', null)"
+      />
+    </v-col>
+    <v-col cols="6" md="5">
+      <me-cs-companion-select-input :items="damageTypes" label="Type" :value="action.dmgType" @set="updateFeature('dmgType', $event)" />
     </v-col>
     <v-col cols="12">
       <me-cs-companion-debounced-text-area-input :value="action.description" label="Description" @set="updateFeature('description', $event)" />

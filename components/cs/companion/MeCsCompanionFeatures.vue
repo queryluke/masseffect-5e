@@ -18,12 +18,8 @@ export default {
     features () {
       const allClassesFeatures = this.$store.getters['character/klasses/klassesFeatures'].reduce((a, c) => a.concat(c), [])
       const companionFeatures = allClassesFeatures.filter((i) => {
-        console.log(i)
-        // console.log(i.mechanics)
-        // console.log(i.mechanics.map(j => j.type))
         return i.mechanics && i.mechanics.map(j => j.type).includes('companion')
       })
-      console.log(companionFeatures)
       return companionFeatures
     }
   }

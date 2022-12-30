@@ -56,9 +56,9 @@
                 {{ $t('aboutpage.about_me5e_title') }}
               </h2>
               <p>
-                Mass Effect 5e is a fan-made, D&D 5th Edition, homebrew project that started in early 2016. The core ruleset
+                Mass Effect 5e is a fan-made, D&D 5th Edition homebrew project that started in early 2016. The core ruleset
                 was created by Luke Aeschleman with collaboration and editing by Hugh Thompson. Luke continues to maintain the website,
-                but is no longer responsible for content changes and updates. Instead, this has become a "living homebrew",
+                but is no longer responsible for content changes or updates. Instead, this has become a "living homebrew",
                 in which the community provides feedback and the following Discord moderators assess and make changes
                 as necessary.
               </p>

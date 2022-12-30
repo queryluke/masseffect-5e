@@ -222,7 +222,7 @@ export default {
     updateSenses (key, value) {
       const updatedSenses = JSON.parse(JSON.stringify(this.companion.senses))
       updatedSenses[key] = value
-      this.updateCompanion('speed', updatedSenses)
+      this.updateCompanion('senses', updatedSenses)
     },
     updateFeatures (uuid, newFeature) {
       const updatedFeatures = JSON.parse(JSON.stringify(this.companion.features))

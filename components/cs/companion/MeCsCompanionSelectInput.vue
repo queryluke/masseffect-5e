@@ -19,7 +19,7 @@ export default {
   name: 'MeCsCompanionSelectInput',
   props: {
     value: {
-      type: [Array, String],
+      type: [Array, String, Number],
       default: null,
       nullable: true
     },
