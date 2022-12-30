@@ -53,7 +53,7 @@ export default {
       const features = this.$store.getters.getData('class-features').filter((i) => {
         const levelTest = this.level ? i.level === this.level : true
         const subclassTest = this.subclass ? i.subclass === this.subclass : !i.subclass
-        return i.klass === this.klassId && levelTest && subclassTest
+        return i.klass === this.klassId && levelTest && subclassTest && !i.noFeatureDisplay
       })
       if (this.abis) {
         features.push(this.createAbiFeatures(...this.abis))

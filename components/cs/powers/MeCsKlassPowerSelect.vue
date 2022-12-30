@@ -87,7 +87,8 @@ export default {
       klassIcons: 'klasses/klassIcons',
       klassPowercastingMaxes: 'powers/klassPowercastingMaxes',
       levelFilter: 'navigation/learnedPowersLevelFilter',
-      selectedPowers: 'powers/selectedPowers'
+      selectedPowers: 'powers/selectedPowers',
+      mechanics: 'mechanics/mechanics'
     }),
     klassIndex () {
       return this.klasses.findIndex(i => i.id === this.klass.id)
@@ -99,7 +100,27 @@ export default {
       return this.klassIcons[this.klass.id]
     },
     powersAvailableToKlass () {
-      return this.powerList.filter(i => i.classes.includes(this.klass.id)) // TODO: need a way to not filter for homebrew classes
+      const regular = this.powerList.filter(i => i.classes.includes(this.klass.id))
+      const otherClassIds = this.mechanics.filter(i => i.type === 'use-class-for-power-list')
+      const otherClassCantripIds = this.mechanics.filter(i => i.type === 'use-class-for-cantrip-list')
+      const cantrips = []
+      if (otherClassCantripIds.length) {
+        for (const otherClassCantripId of otherClassCantripIds) {
+          cantrips.push(...this.powerList.filter(i => i.classes.includes(otherClassCantripId.klass) && i.level === 0))
+        }
+      } else {
+        for (const otherClassId of otherClassIds) {
+          cantrips.push(...this.powerList.filter(i => i.classes.includes(otherClassId.klass) && i.level === 0))
+        }
+      }
+      const otherClassPowerList = []
+      for (const otherClassId of otherClassIds) {
+        otherClassPowerList.push(...this.powerList.filter(i => i.classes.includes(otherClassId.klass) && i.level > 0))
+      }
+      return [...regular, ...cantrips, ...otherClassPowerList]
+    },
+    noAdvancements () {
+      return !!this.mechanics.find(i => i.type === 'prevent-advancements')
     },
     availablePowersAndCantrips () {
       const powers = []
@@ -110,7 +131,8 @@ export default {
           learned: !!learned,
           advancement: learned?.advancement,
           notAvailable: false,
-          fromFeature: learned?.path || false
+          fromFeature: learned?.path || false,
+          noAdvancements: p.level > 0 ? this.noAdvancements : false
         }
         if (p.level === 0 && this.pcMaxes.numCantrips > 0) {
           powers.push(base)

@@ -116,8 +116,12 @@ export default {
       })
     },
     html () {
+      let html = ''
       if (this.item.data.moreInfo?.model) {
-        return this.$store.getters.getItem(this.item.data.moreInfo.model, this.item.data.moreInfo.id)?.html
+        html = this.$store.getters.getItem(this.item.data.moreInfo.model, this.item.data.moreInfo.id)?.html
+        if (html) {
+          return html
+        }
       }
       return this.item.data.html || ''
     }

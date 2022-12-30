@@ -6,10 +6,18 @@
   >
     <template #[`header.expanded`]="{ item }">
       <me-item-title
-        :title="item.name"
         avatar
         :avatar-src="require(`~/assets/images/powers/${item.type}.svg`)"
-      />
+      >
+        <template #title>
+          <span :class="textColor">
+            {{ item.name }}
+          </span>
+          <span v-if="item.author" class="text-caption font-italic">
+            by {{ item.author }}
+          </span>
+        </template>
+      </me-item-title>
     </template>
     <template #[`header.level`]="{ item }">
       <v-row no-gutters>

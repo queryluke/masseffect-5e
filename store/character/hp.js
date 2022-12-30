@@ -39,6 +39,19 @@ export const getters = {
         })
       }
     }
+    for (const klassFeatureArray of rootGetters['character/klasses/klassesFeatures']) {
+      for (const klassFeature of klassFeatureArray) {
+        const klassMc = ((klassFeature.mechanics || []).find(i => i.type === 'shields'))
+        if (klassMc) {
+          sources.push({
+            id: klassFeature.klass,
+            name: klassFeature.name,
+            capacity: rootGetters['character/mechanics/mcBonus'](klassMc.capacity),
+            regen: rootGetters['character/mechanics/mcBonus'](klassMc.regen)
+          })
+        }
+      }
+    }
     const armorSource = { id: 'armor', name: 'Armor', capacity: 0, regen: 0 }
     const armorMechanics = rootGetters['character/equipment/armorMechanics'].reduce((a, c) => a.concat(c.mechanics || []), [])
     const setBonusMechanics = rootGetters['character/equipment/setBonusMechanics'].reduce((a, c) => a.concat(c.mechanics || []), [])

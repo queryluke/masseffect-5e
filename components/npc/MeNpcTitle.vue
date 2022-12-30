@@ -7,6 +7,9 @@
       <span :class="textColor">
         {{ item.name }}
       </span>
+      <span v-if="item.author" class="text-caption font-italic">
+        by {{ item.author }}
+      </span>
     </template>
     <template #subtitle>
       <div class="font-italic">

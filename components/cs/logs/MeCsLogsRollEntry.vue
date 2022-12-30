@@ -13,6 +13,9 @@
         {{ data.total }}
       </div>
     </div>
+    <div v-if="data.subDetail" class="text-caption ml-2 mt-n2 font-italic">
+      {{ data.subDetail }}
+    </div>
 
     <v-expand-transition>
       <div v-show="show" class="justify-space-between transition-ease-in-out">
