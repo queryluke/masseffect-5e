@@ -15,7 +15,7 @@
                 <template #activator="{ on, attrs }">
                   <div v-bind="attrs" class="d-flex align-center" v-on="on">
                     <div class="text-h6 text-uppercase">
-                      {{ info[stat] }}
+                      {{ info[stat] === 0 ? '+0' : info[stat] || '' }}
                     </div>
                     <div v-if="groupedPowercastingAbilityStats.length > 1">
                       <v-avatar v-for="pcKlass in info.klasses" :key="`${info.ability}-${stat}-${pcKlass}-icon`" title size="22">
@@ -58,7 +58,10 @@ export default {
       klassPowercastingAbilities: 'powers/klassPowercastingAbilities',
       chaMod: 'abilities/chaMod',
       intMod: 'abilities/intMod',
-      wisMod: 'abilities/wisMod'
+      wisMod: 'abilities/wisMod',
+      conMod: 'abilities/conMod',
+      dexMod: 'abilities/dexMod',
+      strMod: 'abilities/strMod'
     }),
     groupedPowercastingAbilityStats () {
       const pca = {}

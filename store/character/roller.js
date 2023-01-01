@@ -67,6 +67,7 @@ export const actions = {
       data: {
         type: payload.type,
         detail: payload.detail,
+        subDetail: payload.subDetail || false,
         notation: roll.notation,
         text: payload.text || roll.notation.replaceAll(/[{}]/g, ''),
         total: roll.total,

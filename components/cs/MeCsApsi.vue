@@ -101,8 +101,8 @@ export default {
     },
     initiativeBonus () {
       const bonus = this.mechanics
-        .filter(i => i.type === 'initiative' && i.effect === 'bonus')
-        .reduce((acc, curr) => acc + this.$store.getters['character/mechanics/mcBonus'](curr.bonus), 0)
+        .filter(i => i.type === 'initiative' && i.effect.type === 'bonus')
+        .reduce((acc, curr) => acc + this.$store.getters['character/mechanics/mcBonus'](curr.effect.bonus), 0)
       return this.dexMod + bonus
     },
     initiativeAd () {

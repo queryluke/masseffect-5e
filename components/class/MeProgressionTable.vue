@@ -137,7 +137,7 @@ export default {
       return this.$store.getters.getData('character-progression')
     },
     classFeatures () {
-      return this.$store.getters.getData('class-features').filter(i => i.klass === this.item.id)
+      return this.$store.getters.getData('class-features').filter(i => i.klass === this.item.id && !i.noFeatureDisplay)
     },
     cfMechanics () {
       return this.classFeatures.reduce((acc, curr) => acc.concat(curr.mechanics || []), [])
@@ -313,6 +313,7 @@ export default {
         ...(this.pcPowersKnown || []),
         ...(this.pcPoints || []),
         ...(this.pcPact || []),
+        ...(this.pcFromMechanics.filter(i => i.order > 20) || []),
         ...(this.pcSlots || [])
       ]
     },
@@ -365,7 +366,7 @@ export default {
         features.push(this.$t('ability_score_increase_title'))
       }
       if (this.item.progression.subclass.includes(level)) {
-        features.push(this.$t(`subclass_feature_titles.${this.item.id}`))
+        features.push('Subclass Feature')
       }
       return features.length === 0 ? '-' : this.$t(`lists.comma_list[${features.length}]`, features)
     },

@@ -73,9 +73,13 @@ export const NpcHelpers = {
     speeds () {
       const speeds = []
       for (const key in this.stats.speed) {
-        const label = this.$t(`speeds.${key}.label`)
-        const value = `<me-distance :length="${this.stats.speed[key]}" abbr />`
-        speeds.push(`${label} ${value}`)
+        if (key === 'note') {
+          speeds.push(this.stats.speed[key])
+        } else {
+          const label = this.$t(`speeds.${key}.label`)
+          const value = `<me-distance :length="${this.stats.speed[key]}" abbr />`
+          speeds.push(`${label} ${value}`)
+        }
       }
       return this.createList(speeds)
     },

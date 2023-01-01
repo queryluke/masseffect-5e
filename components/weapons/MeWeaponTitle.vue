@@ -1,8 +1,15 @@
 <template>
   <me-item-title
-    :title="item.name"
     subtitle
   >
+    <template #title>
+      <span>
+        {{ item.name }}
+      </span>
+      <span v-if="item.author" class="text-caption font-italic">
+        by {{ item.author }}
+      </span>
+    </template>
     <template #subtitle>
       <me-equipment-subtitle :rarity="item.rarity" :text="subtitle" />
       <div class="text-caption">

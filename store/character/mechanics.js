@@ -9,7 +9,7 @@ function hydrateAugments (finalMechanics = []) {
       continue
     }
     if (augment.value) {
-      let localMatchingIndex = 0
+      let localMatchingIndex = -1
       for (const [augmentIndex, augmentable] of nonAugments.entries()) {
         if (!augmentable.source) {
           continue
@@ -20,8 +20,8 @@ function hydrateAugments (finalMechanics = []) {
         if (augment.value.limit && !augment.value.limit.includes(augmentable.type)) {
           continue
         }
+        localMatchingIndex += 1
         if (augment.value.instances && !augment.value.instances.includes(localMatchingIndex)) {
-          localMatchingIndex += 1
           continue
         }
         nonAugments.splice(augmentIndex, 1, merge(cloneDeep(augmentable), augment.merge))
@@ -143,7 +143,12 @@ export const getters = {
         }
         break
       case 'resource':
-        b += rootGetters['character/character'].currentStats.resources[bonus.value] || 0
+        if (bonus.useMax) {
+          const matchingResource = getters.mechanics.find(i => i.resource && i.resource.id === bonus.value)
+          b += getters.mcBonus(matchingResource?.resource?.max) || 0
+        } else {
+          b += rootGetters['character/character'].currentStats.resources[bonus.value] || 0
+        }
         break
       default:
         b = 0
@@ -400,6 +405,7 @@ export const actions = {
     commit('setUnused', selected)
   },
   TOGGLE_MECHANIC ({ dispatch, commit, getters, rootGetters }, { toggle, value }) {
+    /*
     if (value) {
       const cloned = getters.mechanics.slice()
       const newMechanics = []
@@ -432,8 +438,12 @@ export const actions = {
       const reducedMechanics = getters.mechanics.filter(i => !i.toggleId || i.toggleId !== toggle.id)
       commit('setMechanics', reducedMechanics)
     }
+   */
+    dispatch('INIT_MECHANICS')
   },
   CHANGE_TOGGLE_SELECTION ({ dispatch, getters, rootGetters, commit }, { toggle }) {
+    dispatch('INIT_MECHANICS')
+    /*
     if (!toggle.options) {
       return
     }
@@ -455,6 +465,7 @@ export const actions = {
     const finalMechanics = hydrateAugments(toAugment)
     newMechanics.push(...finalMechanics)
     commit('setMechanics', newMechanics)
+   */
   },
   EQUIPMENT_MECHANIC ({ dispatch, getters, rootGetters, commit }, { uuid, equipped }) {
     let cloned = getters.mechanics.slice()

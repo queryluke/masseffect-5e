@@ -117,9 +117,17 @@ export const state = () => ({
     engineer: {
       dark: 'amber darken-1'
     },
+    explorer: {
+      dark: 'indigo darken-3',
+      light: 'indigo accent-2'
+    },
     infiltrator: {
       dark: 'deep-orange darken-4',
       light: 'deep-orange'
+    },
+    musician: {
+      dark: 'teal darken-1',
+      light: 'teal accent-2'
     },
     sentinel: {
       dark: 'brown',
@@ -129,9 +137,17 @@ export const state = () => ({
       dark: 'red darken-4',
       light: 'red accent-2'
     },
+    tracker: {
+      dark: 'green darken-4',
+      light: 'green accent-3'
+    },
     vanguard: {
       dark: 'pink darken-4',
       light: 'pink lighten-2'
+    },
+    experiment: {
+      dark: 'blue-grey darken-2',
+      light: 'blue-grey lighten-1'
     }
   },
   sklTypes: {

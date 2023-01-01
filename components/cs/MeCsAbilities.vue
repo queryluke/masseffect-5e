@@ -25,10 +25,6 @@
       </v-col>
     </v-row>
   </div>
-  </v-card>
-  </v-col>
-  </v-row>
-  </div>
 </template>
 
 <script>
