@@ -137,7 +137,7 @@ export default {
       return this.$store.getters.getData('character-progression')
     },
     classFeatures () {
-      return this.$store.getters.getData('class-features').filter(i => i.klass === this.item.id && !i.noFeatureDisplay)
+      return this.$store.getters.getData('class-features').filter(i => !i.subclass).filter(i => i.klass === this.item.id && !i.noFeatureDisplay)
     },
     cfMechanics () {
       return this.classFeatures.reduce((acc, curr) => acc.concat(curr.mechanics || []), [])
