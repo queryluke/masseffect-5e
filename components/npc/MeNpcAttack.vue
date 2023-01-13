@@ -65,9 +65,11 @@ export default {
       return this.$t(`npc.to_hit.${bonusType}`, { n })
     },
     rangeText () {
+      const shortRange = typeof this.feature.range === 'object' ? this.feature.range.short : this.feature.range
+      const longRange = typeof this.feature.range === 'object' ? this.feature.range.long : this.feature.range * 3
       return this.feature.attack === 'melee'
-        ? this.$t('npc.range_types.reach', { range: `<me-distance :length="${this.feature.range.short}" abbr />` })
-        : this.$t('npc.range_types.range', { short: `<me-distance :length="${this.feature.range.short}" abbr />`, long: `<me-distance :length="${this.feature.range.long}" abbr />` })
+        ? this.$t('npc.range_types.reach', { range: `<me-distance :length="${shortRange}" abbr />` })
+        : this.$t('npc.range_types.range', { short: `<me-distance :length="${shortRange}" abbr />`, long: `<me-distance :length="${longRange}" abbr />` })
     },
     hitText () {
       if (this.feature.damage) {
