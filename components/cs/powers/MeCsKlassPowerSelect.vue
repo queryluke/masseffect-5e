@@ -136,16 +136,17 @@ export default {
         }
         if (p.level === 0 && this.pcMaxes.numCantrips > 0) {
           powers.push(base)
-        } else {
-          // if power level is greater than what they can learn....
-          if (p.level > this.pcMaxes.maxPowerLevel) {
-            // check it hasn't already bean learned (in the case where they learn and reduce level)
-            if (base.learned || (p.level === 0 && this.pcMaxes.numCantrips > 0)) {
-              base.notAvailable = true
-            } else {
-              continue
-            }
+        } else if (p.level > this.pcMaxes.maxPowerLevel) {
+          // check it hasn't already bean learned (in the case where they learn and reduce level)
+          if (base.learned || (p.level === 0 && this.pcMaxes.numCantrips > 0)) {
+            base.notAvailable = true
+            powers.push(base)
+          } else {
+            continue
           }
+        } else if (p.level === 0 && this.pcMaxes.numCantrips === 0) {
+          continue
+        } else {
           powers.push(base)
         }
       }
