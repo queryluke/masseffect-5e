@@ -53,7 +53,7 @@
         </div>
         <v-divider />
         <v-card-actions>
-          <!-- TODO: color based on next roll -->
+          <!-- TODO: color based on next roll
           <v-btn
             v-for="(roll, index) of entry.nextRolls"
             :key="`add-roll-${index}`"
@@ -64,6 +64,7 @@
           >
             {{ roll.text }}
           </v-btn>
+          -->
           <v-spacer />
           <v-btn text small color="primary" @click.stop="reroll()">
             reroll
