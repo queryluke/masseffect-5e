@@ -1,110 +1,144 @@
 {
+  "api": {
+    "masseffect5e": {
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [
+            {
+              "apiKeyConfig": {
+                "apiKeyExpirationDate": "2023-03-07T12:31:13.189Z",
+                "apiKeyExpirationDays": 365,
+                "description": "admin_utils"
+              },
+              "authenticationType": "API_KEY"
+            },
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ],
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authme5eauth"
+            }
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  },
   "auth": {
     "me5eauth": {
-      "service": "Cognito",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [],
       "customAuth": false,
+      "dependsOn": [],
       "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
         "socialProviders": [
           "GOOGLE"
         ],
         "usernameAttributes": [
           "EMAIL"
         ],
-        "signupAttributes": [
-          "EMAIL"
-        ],
-        "passwordProtectionSettings": {
-          "passwordPolicyMinLength": 8,
-          "passwordPolicyCharacters": []
-        },
-        "mfaConfiguration": "OFF",
-        "mfaTypes": [
-          "SMS"
-        ],
         "verificationMechanisms": [
           "EMAIL"
         ]
-      }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
     },
     "userPoolGroups": {
-      "service": "Cognito-UserPool-Groups",
-      "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
-          "category": "auth",
-          "resourceName": "me5eauth",
           "attributes": [
             "UserPoolId",
             "AppClientIDWeb",
             "AppClientID",
             "IdentityPoolId"
-          ]
+          ],
+          "category": "auth",
+          "resourceName": "me5eauth"
         }
-      ]
-    }
-  },
-  "api": {
-    "masseffect5e": {
-      "service": "AppSync",
+      ],
       "providerPlugin": "awscloudformation",
-      "output": {
-        "authConfig": {
-          "defaultAuthentication": {
-            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-            "userPoolConfig": {
-              "userPoolId": "authme5eauth"
-            }
-          },
-          "additionalAuthenticationProviders": [
-            {
-              "authenticationType": "API_KEY",
-              "apiKeyConfig": {
-                "apiKeyExpirationDays": 365,
-                "apiKeyExpirationDate": "2023-03-07T12:31:13.189Z",
-                "description": "admin_utils"
-              }
-            },
-            {
-              "authenticationType": "AWS_IAM"
-            }
-          ]
-        }
-      }
-    }
-  },
-  "storage": {
-    "me5estorage": {
-      "service": "S3",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": []
+      "service": "Cognito-UserPool-Groups"
     }
   },
   "function": {
     "masseffect5eHomebrewTallies": {
       "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda",
       "dependsOn": [
         {
-          "category": "api",
-          "resourceName": "masseffect5e",
           "attributes": [
             "GraphQLAPIIdOutput",
             "GraphQLAPIEndpointOutput"
-          ]
+          ],
+          "category": "api",
+          "resourceName": "masseffect5e"
         },
         {
-          "category": "api",
-          "resourceName": "masseffect5e",
           "attributes": [
             "GraphQLAPIIdOutput",
             "GraphQLAPIEndpointOutput",
             "GraphQLAPIKeyOutput"
-          ]
+          ],
+          "category": "api",
+          "resourceName": "masseffect5e"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_auth_me5eauth_googleClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "me5eauth"
         }
       ]
+    },
+    "AMPLIFY_auth_true_googleClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "true"
+        }
+      ]
+    },
+    "AMPLIFY_function_masseffect5eHomebrewTallies_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "masseffect5eHomebrewTallies"
+        }
+      ]
+    },
+    "AMPLIFY_function_masseffect5eHomebrewTallies_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "masseffect5eHomebrewTallies"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "me5estorage": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
     }
   }
 }

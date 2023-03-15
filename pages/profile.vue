@@ -39,15 +39,20 @@
             <v-file-input ref="profileImage" v-model="image" class="d-none" accept="image/*" @change="setPreview" />
             <v-text-field :value="email" disabled label="Email" hint="email cannot be updated" persistent-hint />
             <v-text-field ref="username" :value="username" label="Username" />
-            <!--v-text-field ref="webhooks" :value="webhooks" label="Discord Webhooks" /-->
-            <v-row>
-              <!--v-col cols="3">
-                <v-select :items="[{title: 'Dice Roller', value: 'dice_roller'}]" item-text="title" item-value="value" return-object  model="webhooks.type" />
-              </v-col-->
-              <v-col cols="12">
-                <v-text-field ref="discordWebhook" :value="discordWebhook" placeholder="Enter your Discord Webhook ID here (the stuff after the .com/)" label="Discord Webhook ID for Dice Roller" />
-              </v-col>
-            </v-row>
+            <v-btn color="secondary" @click="addWebhook"><v-icon>mdi-plus</v-icon> Add Webhook</v-btn>
+            <v-card v-for="(webhook, index) in webhooks" :key="index">
+              <v-card-title><v-text-field ref="webhook.name" :value="webhook.name" label="Webhook Name" /></v-card-title>
+              <v-card-text>
+                <v-row>
+                  <v-col cols="1">
+                    <v-checkbox :input-value="webhook.active"></v-checkbox>
+                  </v-col>
+                  <v-col cols="11">
+                    <v-text-field ref="webhook.link" :value="webhook.link" label="Webhook Link" />
+                  </v-col>
+                </v-row>
+              </v-card-text>
+          </v-card>
           </v-card-text>
           <v-card-actions>
             <v-spacer />
@@ -70,10 +75,10 @@ export default {
       preview: null,
       loading: false,
       profileImg: null,
-      discordWebhook: null,
       usernameRules: [
         v => !v.match(/^[a-z0-9]+$/i) || 'Username can only be alphanumeric'
-      ]
+      ],
+      webhooks: []
     }
   },
   computed: {
@@ -93,8 +98,8 @@ export default {
     avatar () {
       return this.preview || this.$store.getters['user/avatar']
     },
-    webhook () {
-      return this.discordWebhook || this.$store.getters['user/webhook']
+    owner () {
+      return this.attributes.sub
     }
   },
   created () {
@@ -103,6 +108,9 @@ export default {
     })
   },
   methods: {
+    addWebhook (event) {
+      this.webhooks.push({ active: true, link: null, owner: this.owner, name: 'My New Webhook' })
+    },
     setPreview (image) {
       this.error = false
       this.image = image
@@ -138,8 +146,8 @@ export default {
           this.$store.commit('user/SET_USER_SETTINGS', { username: this.$refs.username.$refs.input.value })
           change = true
         }
-        if (this.webhook !== this.$refs.discordWebhook.$refs.input.value) {
-          this.$store.commit('user/SET_USER_SETTINGS', { webhook: this.$refs.discordWebhook.$refs.input.value })
+        if (this.webhooks) {
+          this.$store.commit('user/SET_USER_SETTINGS', { webhooks: this.webhooks })
           change = true
         }
         if (change) {

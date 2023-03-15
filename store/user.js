@@ -10,7 +10,7 @@ export const state = () => ({
   maxCharacters: 50,
   search: null,
   syncStatus: 'saved',
-  webhook: null
+  webhooks: null
 })
 
 export const getters = {
@@ -22,7 +22,7 @@ export const getters = {
       imperial: state.imperial,
       username: state.username,
       profileImg: state.profileImg,
-      webhook: state.webhook
+      webhooks: state.webhooks
     }
   },
   darkMode: state => state.darkMode,
@@ -36,7 +36,7 @@ export const getters = {
   maxCharacters: state => state.maxCharacters,
   search: state => state.search,
   syncStatus: state => state.syncStatus,
-  webhook: state => state.webhook
+  webhooks: state => state.webhooks
 }
 
 export const mutations = {
@@ -44,7 +44,7 @@ export const mutations = {
     if (!value) {
       return
     }
-    for (const key of ['username', 'darkMode', 'imperial', 'profileImg', 'maxCharacters', 'webhook']) {
+    for (const key of ['username', 'darkMode', 'imperial', 'profileImg', 'maxCharacters', 'webhooks']) {
       if (value[key] || value[key] === false) {
         state[key] = value[key]
       }
