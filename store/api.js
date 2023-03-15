@@ -18,6 +18,7 @@ export const mutations = {
 export const actions = {
   // API HELPERS
   async QUERY ({ commit, getters }, { query, variables = {}, action = null }) {
+    console.log('QUERY', { commit, getters, query, variables })
     const { data } = await API.graphql({
       query: gqlQueries[query],
       variables,
@@ -31,6 +32,7 @@ export const actions = {
     return value
   },
   async MUTATE ({ commit, getters }, { mutation, input, action }) {
+    console.log('MUTATE', { commit, getters, mutation, input, action })
     const { data } = await API.graphql({
       query: gqlMutations[mutation],
       variables: { input },

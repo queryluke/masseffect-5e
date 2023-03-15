@@ -9,7 +9,8 @@ export const state = () => ({
   profileImg: null,
   maxCharacters: 50,
   search: null,
-  syncStatus: 'saved'
+  syncStatus: 'saved',
+  webhook: null
 })
 
 export const getters = {
@@ -20,7 +21,8 @@ export const getters = {
       darkMode: state.darkMode,
       imperial: state.imperial,
       username: state.username,
-      profileImg: state.profileImg
+      profileImg: state.profileImg,
+      webhook: state.webhook
     }
   },
   darkMode: state => state.darkMode,
@@ -33,7 +35,8 @@ export const getters = {
   },
   maxCharacters: state => state.maxCharacters,
   search: state => state.search,
-  syncStatus: state => state.syncStatus
+  syncStatus: state => state.syncStatus,
+  webhook: state => state.webhook
 }
 
 export const mutations = {
@@ -41,7 +44,7 @@ export const mutations = {
     if (!value) {
       return
     }
-    for (const key of ['username', 'darkMode', 'imperial', 'profileImg', 'maxCharacters']) {
+    for (const key of ['username', 'darkMode', 'imperial', 'profileImg', 'maxCharacters', 'webhook']) {
       if (value[key] || value[key] === false) {
         state[key] = value[key]
       }
@@ -114,6 +117,7 @@ export const actions = {
     }
   },
   async SYNC_PROFILE ({ getters, dispatch, commit }) {
+    console.log('Syncing Profile', { getters, dispatch, commit })
     const profile = getters.profile
     const user = await dispatch('api/QUERY', { query: 'getProfile', variables: { id: profile.id } }, { root: true })
     if (user) {
@@ -171,6 +175,7 @@ export const actions = {
     await dispatch('UPDATE_PROFILE')
   },
   async UPDATE_PROFILE ({ dispatch, getters, rootGetters }, update = false) {
+    console.log('UPDATE_PROFILE', { dispatch, getters, rootGetters })
     if (rootGetters['auth/isAuthenticated']) {
       await dispatch('api/MUTATE', { mutation: 'updateProfile', input: getters.profile }, { root: true })
       if (update) {

@@ -39,6 +39,15 @@
             <v-file-input ref="profileImage" v-model="image" class="d-none" accept="image/*" @change="setPreview" />
             <v-text-field :value="email" disabled label="Email" hint="email cannot be updated" persistent-hint />
             <v-text-field ref="username" :value="username" label="Username" />
+            <!--v-text-field ref="webhooks" :value="webhooks" label="Discord Webhooks" /-->
+            <v-row>
+              <!--v-col cols="3">
+                <v-select :items="[{title: 'Dice Roller', value: 'dice_roller'}]" item-text="title" item-value="value" return-object  model="webhooks.type" />
+              </v-col-->
+              <v-col cols="12">
+                <v-text-field ref="discordWebhook" :value="discordWebhook" placeholder="Enter your Discord Webhook ID here (the stuff after the .com/)" label="Discord Webhook ID for Dice Roller" />
+              </v-col>
+            </v-row>
           </v-card-text>
           <v-card-actions>
             <v-spacer />
@@ -61,6 +70,7 @@ export default {
       preview: null,
       loading: false,
       profileImg: null,
+      discordWebhook: null,
       usernameRules: [
         v => !v.match(/^[a-z0-9]+$/i) || 'Username can only be alphanumeric'
       ]
@@ -82,6 +92,9 @@ export default {
     },
     avatar () {
       return this.preview || this.$store.getters['user/avatar']
+    },
+    webhook () {
+      return this.discordWebhook || this.$store.getters['user/webhook']
     }
   },
   created () {
@@ -123,6 +136,10 @@ export default {
         }
         if (this.username !== this.$refs.username.$refs.input.value) {
           this.$store.commit('user/SET_USER_SETTINGS', { username: this.$refs.username.$refs.input.value })
+          change = true
+        }
+        if (this.webhook !== this.$refs.discordWebhook.$refs.input.value) {
+          this.$store.commit('user/SET_USER_SETTINGS', { webhook: this.$refs.discordWebhook.$refs.input.value })
           change = true
         }
         if (change) {

@@ -65,6 +65,9 @@
             {{ roll.text }}
           </v-btn>
           <v-spacer />
+          <v-btn text small color="primary" @click.stop="sendToDiscordWebhook()">
+            send to discord
+          </v-btn>
           <v-btn text small color="primary" @click.stop="reroll()">
             reroll
           </v-btn>
@@ -126,6 +129,33 @@ export default {
         text: this.data.text
       }
       this.$store.dispatch('character/roller/ROLL', payload)
+    },
+    sendToDiscordWebhook () {
+      // TODO: Get webhook(s) from user profile record
+      const webhookID = '1085299272142037163/VzcjRl4GIBbZNsu3QAU96wUqfwUdpz6MsEkp2zroILdxqjF3RcvbJfo5QeCYr584lmVp'
+      const URL = 'https://discord.com/api/webhooks/' + webhookID
+      const payload = {
+        name: this.entry.source.name || '',
+        roll: this.data
+      }
+      fetch(URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          embeds: [{
+            fields: [
+              {
+                name: payload.name,
+                value: '*' + payload.roll.detail + '*'
+              },
+              {
+                name: 'Result: ' + payload.roll.total,
+                value: '*' + payload.roll.notation + ': ' + payload.roll.results + ' = ' + payload.roll.total + '*'
+              }
+            ]
+          }]
+        })
+      })
     }
   }
 }
