@@ -181,7 +181,7 @@ export const CsActions = {
             roll: {
               detail: this.item.name || 'Damage Roll',
               type: 'damage',
-              notation: this.damages[0].text
+              damages: this.damages
             }
           }
         ]
