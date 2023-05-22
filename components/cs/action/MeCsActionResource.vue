@@ -97,10 +97,11 @@ export default {
   methods: {
     ...mapActions({ SET_RESOURCE: 'resources/SET_RESOURCE' }),
     add () {
-      if (this.count + this.item.increment > this.max) {
+      const increment = this.item.increment || 1
+      if (this.count + increment > this.max) {
         return
       }
-      this.count += this.item.increment
+      this.count += increment
     },
     remove () {
       if (this.count - 1 < 0) {

@@ -61,6 +61,7 @@ export default {
   },
   methods: {
     fireWeapon () {
+      console.log('fired')
       this.$emit('add')
     },
     reloadWeapon () {
