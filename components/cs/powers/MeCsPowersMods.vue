@@ -72,12 +72,13 @@ export default {
         if (pca[ability]) {
           pca[ability].klasses.push(klass)
         } else {
-          const base = this.profBonus + this[`${ability}Mod`]
+          const base = parseInt(this.profBonus + this[`${ability}Mod`])
+          const settingsMod = this.character.settings.attackSpellMod || 0
           pca[ability] = {
             ability,
             mod: this.modText(this[`${ability}Mod`]),
-            attack: this.modText(base + this.character.settings.attackSpellMod),
-            dc: base + 8,
+            attack: this.modText(base + parseInt(settingsMod)),
+            dc: base + 8 + parseInt(settingsMod),
             klasses: [klass]
           }
         }
