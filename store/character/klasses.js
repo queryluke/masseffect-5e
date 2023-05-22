@@ -214,5 +214,12 @@ export const actions = {
     const removePowers = rootGetters['character/character'].powers.filter(i => i.klass !== id)
     dispatch('character/UPDATE_CHARACTER', { attr: 'powers', value: removePowers }, { root: true })
     dispatch('character/UPDATE_CHARACTER', { attr: 'classes', value }, { root: true })
+    if (index === 0 && value.length) {
+      const startingKlass = getters.selectedKlasses[0]
+      const newStartingHp = (startingKlass.hitPoints[0] - 1) * 2
+      const newHitPoints = startingKlass.hitPoints.slice()
+      newHitPoints.splice(0, 1, newStartingHp)
+      dispatch('character/UPDATE_CHARACTER', { attr: 'classes.0.hitPoints', value: newHitPoints }, { root: true })
+    }
   }
 }

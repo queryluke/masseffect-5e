@@ -34,9 +34,12 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
+import { AverageFromDie } from '~/mixins/averageFromDie'
+
 const { mapGetters } = createNamespacedHelpers('character/klasses')
 export default {
   name: 'MeCbClassesAddNew',
+  mixins: [AverageFromDie],
   computed: {
     ...mapGetters(['selectedKlassesIds', 'klassesList']),
     availableClasses () {
@@ -50,10 +53,11 @@ export default {
       for (const asiLevel of klass.progression.abi) {
         asis[asiLevel] = null
       }
+      const startingHp = this.selectedKlassesIds.length ? ((klass.hitDie / 2) + 1) : klass.hitDie
       const cbKlass = {
         // variables to write to the character object for the character sheet
         id: klass.id,
-        hitPoints: [klass.hitDie],
+        hitPoints: [startingHp],
         subclass: null,
         hpOverride: false,
         levels: 1,

@@ -80,7 +80,7 @@ export const getters = {
         const levels = rootGetters['character/klasses/selectedKlasses'].find(i => i.id === feature.klassId).levels
         multiclassPointcastingLevel += (levels * multiplier)
       }
-      multiclassPointcastingLevel = Math.floor(multiclassPointcastingLevel) || 1
+      multiclassPointcastingLevel = Math.floor(multiclassPointcastingLevel)
       if (multiclassPointcastingLevel > 0) {
         base.max = state.mcTp[multiclassPointcastingLevel - 1]
         base.limit = state.mcTpLimit[multiclassPointcastingLevel - 1]
