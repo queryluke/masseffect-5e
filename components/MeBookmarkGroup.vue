@@ -40,6 +40,10 @@ export default {
           label: this.$tc('vehicle_title', 2),
           component: 'MeVehicleList'
         },
+        vehicles: {
+          label: this.$tc('vehicle_title', 2),
+          component: 'MeVehicleList'
+        },
         powers: {
           label: this.$tc('power_title', 2),
           component: 'MePowerList'
