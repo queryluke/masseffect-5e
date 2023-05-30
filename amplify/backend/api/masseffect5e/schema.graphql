@@ -25,6 +25,7 @@ type Profile @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"},
   maxCharacters: Int
   contactMethod: String
   contactValue: String
+  webhooks: String
 }
 
 type Character @model(timestamps:{createdAt: "createdOn", updatedAt: "updatedOn"}, subscriptions: null)
