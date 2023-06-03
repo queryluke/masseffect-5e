@@ -92,7 +92,14 @@ export const actions = {
   DISCORD_POST_ALL ({ dispatch, rootGetters }, payload) {
     const selectedWebhooks = rootGetters['character/character'].options.webhooks
     for (const id in selectedWebhooks) {
-      dispatch('character/roller/DISCORD_POST', { webhook: selectedWebhooks[id], entry: payload }, { root: true })
+      // check if hook exists and send if it does, otherwise remove it from the character
+      const webhooks = JSON.parse(rootGetters['user/profile'].webhooks)
+      if (webhooks.find(webhook => webhook.id === id) && selectedWebhooks[id]) {
+        dispatch('character/roller/DISCORD_POST', { webhook: selectedWebhooks[id], entry: payload }, { root: true })
+      } else {
+        delete selectedWebhooks[id]
+        dispatch('character/UPDATE_CHARACTER', { attr: 'options.webhooks', value: selectedWebhooks })
+      }
     }
   },
   DISCORD_POST ({ dispatch, rootGetters }, payload) {

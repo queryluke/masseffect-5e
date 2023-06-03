@@ -29,7 +29,7 @@
     <v-subheader>
       Webhooks
     </v-subheader>
-    <v-list-item v-for="webhook of webhooks" :key="webhook.link">
+    <v-list-item v-for="webhook of webhooks" :key="webhook.id">
       <v-list-item-action>
         <v-switch :input-value="!!webhookSelections[webhook.id]" :disabled="viewOnly" :false-value="false" :true-value="true" @change="toggleWebhook(webhook, $event)"/>
       </v-list-item-action>

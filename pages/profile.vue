@@ -210,7 +210,8 @@ export default {
     },
     deleteWebhook (webhookIndex) {
       const tempArr = [...this.myWebhooks]
-      tempArr.splice(webhookIndex, 1)
+      const hookToDelete = tempArr.splice(webhookIndex, 1)
+      console.log(hookToDelete)
       this.myWebhooks = tempArr
     },
     addWebhook () {
