@@ -65,9 +65,6 @@
             {{ roll.text }}
           </v-btn>
           <v-spacer />
-          <v-btn text small color="primary" @click.stop="sendToAllDiscordWebhooks()">
-            send to discord
-          </v-btn>
           <v-btn text small color="primary" @click.stop="reroll()">
             reroll
           </v-btn>
@@ -105,9 +102,6 @@ export default {
         return typeof this.entry.data.type === 'object' ? this.entry.data.type.join(', ') : this.entry.data.type
       }
       return null
-    },
-    selectedWebhooks () {
-      return this.$store.getters['character/character'].options.webhooks
     }
   },
   watch: {
@@ -132,39 +126,6 @@ export default {
         text: this.data.text
       }
       this.$store.dispatch('character/roller/ROLL', payload)
-    },
-    sendToAllDiscordWebhooks () {
-      debugger
-      for (const id in this.selectedWebhooks) {
-        console.log(id)
-        this.sendToDiscordWebhook(this.selectedWebhooks[id])
-      }
-    },
-    sendToDiscordWebhook (webhook) {
-      // TODO: Get webhook(s) from user profile record
-      const URL = webhook
-      const payload = {
-        name: this.entry.source.name || '',
-        roll: this.data
-      }
-      fetch(URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          embeds: [{
-            fields: [
-              {
-                name: payload.name,
-                value: '*' + payload.roll.detail + '*'
-              },
-              {
-                name: 'Result: ' + payload.roll.total,
-                value: '*' + payload.roll.notation + ': ' + payload.roll.results + ' = ' + payload.roll.total + '*'
-              }
-            ]
-          }]
-        })
-      })
     }
   }
 }

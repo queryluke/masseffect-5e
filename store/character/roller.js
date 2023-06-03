@@ -86,6 +86,40 @@ export const actions = {
 
     dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-logs-list', { root: true })
     dispatch('character/logs/LOG_WRITE', entry, { root: true })
+    dispatch('character/roller/DISCORD_POST_ALL', entry, { root: true })
     return entry
+  },
+  DISCORD_POST_ALL ({ dispatch, rootGetters }, payload) {
+    const selectedWebhooks = rootGetters['character/character'].options.webhooks
+    for (const id in selectedWebhooks) {
+      dispatch('character/roller/DISCORD_POST', { webhook: selectedWebhooks[id], entry: payload }, { root: true })
+    }
+  },
+  DISCORD_POST ({ dispatch, rootGetters }, payload) {
+    const URL = payload.webhook
+    /*
+    const payload = {
+      name: this.entry.source.name || '',
+      roll: this.data
+    }
+    */
+    fetch(URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        embeds: [{
+          fields: [
+            {
+              name: payload.entry.source.name,
+              value: '*' + payload.entry.data.detail + '*'
+            },
+            {
+              name: 'Result: ' + payload.entry.data.total,
+              value: '*' + payload.entry.data.notation + ': ' + payload.entry.data.results + ' = ' + payload.entry.data.total + '*'
+            }
+          ]
+        }]
+      })
+    })
   }
 }
