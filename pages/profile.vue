@@ -44,8 +44,8 @@
               <v-row>
                 <v-col>Webhooks</v-col>
                 <v-col class="text-right">
-                  <v-btn class="pull-right" small :disabled="loading || myWebhooks.length > 5" color="primary" @click="addWebhook()">
-                    {{ myWebhooks.length > 5 ? 'You can only have 5 webhooks at a time' : 'Add Webhook' }}
+                  <v-btn class="pull-right" small :disabled="loading || (myWebhooks && myWebhooks.length > 5)" color="primary" @click="addWebhook()">
+                    {{ myWebhooks && myWebhooks.length > 5 ? 'You can only have 5 webhooks at a time' : 'Add Webhook' }}
                   </v-btn>
                 </v-col>
               </v-row>
@@ -133,7 +133,7 @@ export default {
     },
     myWebhooks: {
       get () {
-        return this.webhookData.webhooks.length ? this.webhooks : JSON.parse(this.$store.state.user.webhooks)
+        return this.webhookData.webhooks.length ? this.webhookData.webhooks : JSON.parse(this.$store.state.user.webhooks)
       },
       set (webhooks) {
         this.saveWebhooks(webhooks)
@@ -216,7 +216,7 @@ export default {
     },
     addWebhook () {
       const tempArr = [...this.myWebhooks]
-      tempArr[tempArr.length] = { link: '', characters: [], id: 'webhook-' + tempArr.length }
+      tempArr[tempArr.length] = { link: '', characters: [], id: 'webhook-' + tempArr.length + '-' + new Date().getTime() + '-' + this.owner }
       this.myWebhooks = tempArr
     }
   }
