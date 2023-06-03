@@ -98,18 +98,12 @@ export const actions = {
         dispatch('character/roller/DISCORD_POST', { webhook: selectedWebhooks[id], entry: payload }, { root: true })
       } else {
         delete selectedWebhooks[id]
-        dispatch('character/UPDATE_CHARACTER', { attr: 'options.webhooks', value: selectedWebhooks })
+        dispatch('character/UPDATE_CHARACTER', { attr: 'options.webhooks', value: selectedWebhooks }, { root: true })
       }
     }
   },
   DISCORD_POST ({ dispatch, rootGetters }, payload) {
     const URL = payload.webhook
-    /*
-    const payload = {
-      name: this.entry.source.name || '',
-      roll: this.data
-    }
-    */
     fetch(URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
