@@ -133,7 +133,8 @@ export default {
     },
     myWebhooks: {
       get () {
-        return this.webhookData.webhooks.length ? this.webhookData.webhooks : JSON.parse(this.$store.state.user.webhooks)
+        console.log(JSON.parse(this.$store.state.user.webhooks))
+        return (this.webhookData.webhooks.length ? this.webhookData.webhooks : JSON.parse(this.$store.state.user.webhooks)) || []
       },
       set (webhooks) {
         this.saveWebhooks(webhooks)
