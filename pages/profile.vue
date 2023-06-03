@@ -181,6 +181,9 @@ export default {
           this.$store.commit('user/SET_USER_SETTINGS', { username: this.$refs.username.$refs.input.value })
           change = true
         }
+
+        await this.saveWebhooks(this.myWebhooks)
+
         if (change) {
           await this.$store.dispatch('user/UPDATE_PROFILE', true)
         }
@@ -212,7 +215,7 @@ export default {
     },
     addWebhook () {
       const tempArr = [...this.myWebhooks]
-      tempArr[tempArr.length] = { link: '', characters: [] }
+      tempArr[tempArr.length] = { link: '', characters: [], id: 'webhook-' + tempArr.length }
       this.myWebhooks = tempArr
     }
   }

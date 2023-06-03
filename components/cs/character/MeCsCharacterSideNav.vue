@@ -93,6 +93,16 @@
       </v-list-item-icon>
       <v-list-item-title>Export</v-list-item-title>
     </v-list-item>
+
+    <!-- webhooks -->
+    <v-list-item>
+      <v-list-item-icon>
+        <v-icon>
+          mdi-link
+        </v-icon>
+      </v-list-item-icon>
+      <v-list-item-title>Set Webhooks</v-list-item-title>
+    </v-list-item>
   </v-list>
 </template>
 

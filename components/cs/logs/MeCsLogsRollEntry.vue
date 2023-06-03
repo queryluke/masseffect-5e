@@ -65,7 +65,7 @@
             {{ roll.text }}
           </v-btn>
           <v-spacer />
-          <v-btn text small color="primary" @click.stop="sendToDiscordWebhook()">
+          <v-btn text small color="primary" @click.stop="sendToAllDiscordWebhooks()">
             send to discord
           </v-btn>
           <v-btn text small color="primary" @click.stop="reroll()">
@@ -105,6 +105,9 @@ export default {
         return typeof this.entry.data.type === 'object' ? this.entry.data.type.join(', ') : this.entry.data.type
       }
       return null
+    },
+    selectedWebhooks () {
+      return this.$store.getters['character/character'].options.webhooks
     }
   },
   watch: {
@@ -130,10 +133,16 @@ export default {
       }
       this.$store.dispatch('character/roller/ROLL', payload)
     },
-    sendToDiscordWebhook () {
+    sendToAllDiscordWebhooks () {
+      debugger
+      for (const id in this.selectedWebhooks) {
+        console.log(id)
+        this.sendToDiscordWebhook(this.selectedWebhooks[id])
+      }
+    },
+    sendToDiscordWebhook (webhook) {
       // TODO: Get webhook(s) from user profile record
-      const webhookID = '1085299272142037163/VzcjRl4GIBbZNsu3QAU96wUqfwUdpz6MsEkp2zroILdxqjF3RcvbJfo5QeCYr584lmVp'
-      const URL = 'https://discord.com/api/webhooks/' + webhookID
+      const URL = webhook
       const payload = {
         name: this.entry.source.name || '',
         roll: this.data

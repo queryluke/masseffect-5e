@@ -26,6 +26,17 @@
         </v-tooltip>
       </v-list-item-icon>
     </v-list-item>
+    <v-subheader>
+      Webhooks
+    </v-subheader>
+    <v-list-item v-for="webhook of webhooks" :key="webhook.link">
+      <v-list-item-action>
+        <v-switch :input-value="!!webhookSelections[webhook.id]" :disabled="viewOnly" :false-value="false" :true-value="true" @change="toggleWebhook(webhook, $event)"/>
+      </v-list-item-action>
+      <v-list-item-title>
+        {{ webhook.name }}
+      </v-list-item-title>
+    </v-list-item>
   </v-list>
 </template>
 
@@ -54,11 +65,29 @@ export default {
     },
     options () {
       return this.$store.getters['character/character'].options
+    },
+    webhookSelections: {
+      get () {
+        return this.options.webhooks || {}
+      },
+      set (webhookId) {
+        this.toggleWebhook(webhookId)
+      }
+    },
+    webhooks () {
+      return JSON.parse(this.$store.state.user.webhooks)
     }
   },
   methods: {
     change (stat, value) {
       this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `options.${stat}`, value: value || false })
+    },
+    toggleWebhook (webhook, value) {
+      if (value) {
+        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `options.webhooks.${webhook.id}`, value: webhook.link })
+      } else {
+        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `options.webhooks.${webhook.id}`, value: undefined })
+      }
     }
   }
 }
