@@ -41,31 +41,45 @@
             <v-text-field ref="username" :value="username" label="Username" />
             <!--v-textarea ref="webhooks" :value="JSON.stringify(myWebhooks)" label="Webhooks"></v-textarea-->
             <div class="text-left text-overline">
-              Webhooks
+              <v-row>
+                <v-col>Webhooks</v-col>
+                <v-col class="text-right">
+                  <v-btn class="pull-right" small :disabled="loading || myWebhooks.length > 5" color="primary" @click="addWebhook()">
+                    {{ myWebhooks.length > 5 ? 'You can only have 5 webhooks at a time' : 'Add Webhook' }}
+                  </v-btn>
+                </v-col>
+              </v-row>
             </div>
-            <v-list>
-              <v-list-group value="Discord Webhooks">
+            <v-list v-if="myWebhooks && myWebhooks.length" class="text-left">
+              <v-list-group>
+                <template v-slot:activator>
+                  <v-list-item-title>Discord Webhooks</v-list-item-title>
+                </template>
                 <template>
-                  <v-list-item  v-for="(webhook, index) in myWebhooks" :key="index" style="margin-bottom: 12px" title="Discord Webhooks" prepend-icon="mdi-account-circle">
-                  <v-card style="flex: auto;">
-                    <v-card-title> <v-text-field :value="webhook.name" v-model="webhook.name" :label=" webhook.name || ('Webhook #' + (index + 1))" hint="This is the name of your webhook that will be used when linking your characters."></v-text-field> </v-card-title>
-                    <v-card-text>
-                      <v-text-field :value="webhook.link" v-model="webhook.link" label="Webhook Link" hint="Add your Discord's webhook here: Server Settings > Integrations > New Webhook > Copy Webhook URL"></v-text-field>
-                      <!--v-text-field :value="getCharacterFromWebhook(webhook.id)" label="Characters Associated with this Webhook" readonly disabled></v-text-field-->
-                    </v-card-text>
-                    <v-card-actions>
-                      <v-btn text :disabled="loading" color="secondary" @click="deleteWebhook(index)">
-                        Delete Webhook
-                      </v-btn>
-                    </v-card-actions>
-                  </v-card>
-                  </v-list-item>
+                  <v-list-group no-action sub-group v-for="(webhook, index) in myWebhooks" :key="index">
+                    <template v-slot:activator>
+                      <v-list-item-content>
+                        <v-list-item-title>{{ webhook.name || ('Webhook #' + (index + 1)) }}</v-list-item-title>
+                      </v-list-item-content>
+                    </template>
+                    <v-list-item>
+                      <v-card style="flex: auto;">
+                        <v-card-title> <v-text-field :value="webhook.name" v-model="webhook.name" :label=" webhook.name || ('Webhook #' + (index + 1))" hint="This is the name of your webhook that will be used when linking your characters."></v-text-field> </v-card-title>
+                        <v-card-text>
+                          <v-text-field :value="webhook.link" v-model="webhook.link" label="Webhook Link" hint="Add your Discord's webhook here: Server Settings > Integrations > New Webhook > Copy Webhook URL"></v-text-field>
+                          <!--v-text-field :value="getCharacterFromWebhook(webhook.id)" label="Characters Associated with this Webhook" readonly disabled></v-text-field-->
+                        </v-card-text>
+                        <v-card-actions>
+                          <v-btn text :disabled="loading" color="secondary" @click="deleteWebhook(index)">
+                            Delete Webhook
+                          </v-btn>
+                        </v-card-actions>
+                      </v-card>
+                    </v-list-item>
+                  </v-list-group>
                 </template>
               </v-list-group>
             </v-list>
-            <v-btn text :disabled="loading || myWebhooks.length > 5" color="primary" @click="addWebhook()">
-              {{ myWebhooks.length > 5 ? 'You can only have 5 webhooks at a time' : 'Add Webhook' }}
-            </v-btn>
           </v-card-text>
           <v-card-actions>
             <v-spacer />
@@ -167,18 +181,6 @@ export default {
           this.$store.commit('user/SET_USER_SETTINGS', { username: this.$refs.username.$refs.input.value })
           change = true
         }
-        /*
-        // TODO: Add some kind of validation to check for any changes. For now, always write on save
-        if (this.webhooks !== this.$refs.webhooks.$refs.input.value) {
-          try {
-            const webhooks = JSON.stringify(this.myWebhooks)
-            this.$store.commit('user/SET_USER_SETTINGS', { webhooks })
-            change = true
-          } catch (e) {
-            console.error('JSON could not be parsed. Make sure the json is a valid format')
-          }
-        }
-        */
         if (change) {
           await this.$store.dispatch('user/UPDATE_PROFILE', true)
         }
