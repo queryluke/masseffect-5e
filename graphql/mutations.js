@@ -63,6 +63,7 @@ export const createProfile = /* GraphQL */ `
       maxCharacters
       contactMethod
       contactValue
+      webhooks
       createdOn
       updatedOn
       owner
@@ -83,6 +84,7 @@ export const updateProfile = /* GraphQL */ `
       maxCharacters
       contactMethod
       contactValue
+      webhooks
       createdOn
       updatedOn
       owner
@@ -103,6 +105,7 @@ export const deleteProfile = /* GraphQL */ `
       maxCharacters
       contactMethod
       contactValue
+      webhooks
       createdOn
       updatedOn
       owner
@@ -179,6 +182,7 @@ export const createHomebrew = /* GraphQL */ `
         maxCharacters
         contactMethod
         contactValue
+        webhooks
         createdOn
         updatedOn
         owner
@@ -215,6 +219,7 @@ export const updateHomebrew = /* GraphQL */ `
         maxCharacters
         contactMethod
         contactValue
+        webhooks
         createdOn
         updatedOn
         owner
@@ -251,6 +256,7 @@ export const deleteHomebrew = /* GraphQL */ `
         maxCharacters
         contactMethod
         contactValue
+        webhooks
         createdOn
         updatedOn
         owner
@@ -291,6 +297,7 @@ export const createHomebrewUse = /* GraphQL */ `
           maxCharacters
           contactMethod
           contactValue
+          webhooks
           createdOn
           updatedOn
           owner
@@ -334,6 +341,7 @@ export const updateHomebrewUse = /* GraphQL */ `
           maxCharacters
           contactMethod
           contactValue
+          webhooks
           createdOn
           updatedOn
           owner
@@ -377,6 +385,7 @@ export const deleteHomebrewUse = /* GraphQL */ `
           maxCharacters
           contactMethod
           contactValue
+          webhooks
           createdOn
           updatedOn
           owner

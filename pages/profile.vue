@@ -39,6 +39,47 @@
             <v-file-input ref="profileImage" v-model="image" class="d-none" accept="image/*" @change="setPreview" />
             <v-text-field :value="email" disabled label="Email" hint="email cannot be updated" persistent-hint />
             <v-text-field ref="username" :value="username" label="Username" />
+            <!--v-textarea ref="webhooks" :value="JSON.stringify(myWebhooks)" label="Webhooks"></v-textarea-->
+            <div class="text-left text-overline">
+              <v-row>
+                <v-col>Webhooks</v-col>
+                <v-col class="text-right">
+                  <v-btn class="pull-right" small :disabled="loading || myWebhooks.length > 5" color="primary" @click="addWebhook()">
+                    {{ myWebhooks.length > 5 ? 'You can only have 5 webhooks at a time' : 'Add Webhook' }}
+                  </v-btn>
+                </v-col>
+              </v-row>
+            </div>
+            <v-list v-if="myWebhooks && myWebhooks.length" class="text-left">
+              <v-list-group>
+                <template v-slot:activator>
+                  <v-list-item-title>Discord Webhooks</v-list-item-title>
+                </template>
+                <template>
+                  <v-list-group no-action sub-group v-for="(webhook, index) in myWebhooks" :key="index">
+                    <template v-slot:activator>
+                      <v-list-item-content>
+                        <v-list-item-title>{{ webhook.name || ('Webhook #' + (index + 1)) }}</v-list-item-title>
+                      </v-list-item-content>
+                    </template>
+                    <v-list-item>
+                      <v-card style="flex: auto;">
+                        <v-card-title> <v-text-field :value="webhook.name" v-model="webhook.name" :label=" webhook.name || ('Webhook #' + (index + 1))" hint="This is the name of your webhook that will be used when linking your characters."></v-text-field> </v-card-title>
+                        <v-card-text>
+                          <v-text-field :value="webhook.link" v-model="webhook.link" label="Webhook Link" hint="Add your Discord's webhook here: Server Settings > Integrations > New Webhook > Copy Webhook URL"></v-text-field>
+                          <!--v-text-field :value="getCharacterFromWebhook(webhook.id)" label="Characters Associated with this Webhook" readonly disabled></v-text-field-->
+                        </v-card-text>
+                        <v-card-actions>
+                          <v-btn text :disabled="loading" color="secondary" @click="deleteWebhook(index)">
+                            Delete Webhook
+                          </v-btn>
+                        </v-card-actions>
+                      </v-card>
+                    </v-list-item>
+                  </v-list-group>
+                </template>
+              </v-list-group>
+            </v-list>
           </v-card-text>
           <v-card-actions>
             <v-spacer />
@@ -63,7 +104,11 @@ export default {
       profileImg: null,
       usernameRules: [
         v => !v.match(/^[a-z0-9]+$/i) || 'Username can only be alphanumeric'
-      ]
+      ],
+      webhookData: {
+        webhooks: [],
+        characters: {}
+      }
     }
   },
   computed: {
@@ -82,6 +127,17 @@ export default {
     },
     avatar () {
       return this.preview || this.$store.getters['user/avatar']
+    },
+    owner () {
+      return this.attributes.sub
+    },
+    myWebhooks: {
+      get () {
+        return this.webhookData.webhooks.length ? this.webhooks : JSON.parse(this.$store.state.user.webhooks)
+      },
+      set (webhooks) {
+        this.saveWebhooks(webhooks)
+      }
     }
   },
   created () {
@@ -125,6 +181,9 @@ export default {
           this.$store.commit('user/SET_USER_SETTINGS', { username: this.$refs.username.$refs.input.value })
           change = true
         }
+
+        await this.saveWebhooks(this.myWebhooks)
+
         if (change) {
           await this.$store.dispatch('user/UPDATE_PROFILE', true)
         }
@@ -136,6 +195,29 @@ export default {
     },
     changeImage () {
       this.$refs.profileImage.$refs.input.click()
+    },
+    async saveWebhooks (webhooks) {
+      this.loading = true
+      try {
+        const newWebhooks = JSON.stringify(webhooks)
+        this.$store.commit('user/SET_USER_SETTINGS', { webhooks: newWebhooks })
+        await this.$store.dispatch('user/UPDATE_PROFILE', true)
+      } catch (e) {
+        console.error('JSON could not be parsed. Make sure the json is a valid format')
+      }
+      this.loading = false
+      return webhooks
+    },
+    deleteWebhook (webhookIndex) {
+      const tempArr = [...this.myWebhooks]
+      const hookToDelete = tempArr.splice(webhookIndex, 1)
+      console.log(hookToDelete)
+      this.myWebhooks = tempArr
+    },
+    addWebhook () {
+      const tempArr = [...this.myWebhooks]
+      tempArr[tempArr.length] = { link: '', characters: [], id: 'webhook-' + tempArr.length }
+      this.myWebhooks = tempArr
     }
   }
 }

@@ -30,7 +30,7 @@
       "function": {
         "masseffect5eHomebrewTallies": {
           "deploymentBucketName": "amplify-masseffect5e-dev-54917-deployment",
-          "s3Key": "amplify-builds/masseffect5eHomebrewTallies-4a774a41365853455348-build.zip"
+          "s3Key": "amplify-builds/masseffect5eHomebrewTallies-634b4633413573444e46-build.zip"
         }
       }
     }
