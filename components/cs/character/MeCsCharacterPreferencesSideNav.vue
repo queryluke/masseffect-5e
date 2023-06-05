@@ -31,7 +31,7 @@
     </v-subheader>
     <v-list-item v-for="webhook of webhooks" :key="webhook.id">
       <v-list-item-action>
-        <v-switch :input-value="!!webhookSelections[webhook.id]" :disabled="viewOnly" :false-value="false" :true-value="true" @change="toggleWebhook(webhook, $event)"/>
+        <v-switch :input-value="characterInWebhook(webhook) !== -1" :disabled="viewOnly || loading" :false-value="false" :true-value="true" @change="toggleWebhook(webhook, $event)"/>
       </v-list-item-action>
       <v-list-item-title>
         {{ webhook.name }}
@@ -47,6 +47,7 @@ export default {
   name: 'MeCsCharacterPreferencesSideNav',
   data () {
     return {
+      loading: false,
       equipmentToggles: [
         { key: 'weaponSlots', label: 'Enforce Weapon Slots', note: 'You have 4 weapon slots. Two-handed weapons use two slots. Disable to equip more weapons.' },
         { key: 'grenadeSlots', label: 'Enforce Grenade Capacity', note: 'Leg armor provides grenade slots. Disable to equip more grenades or equip grenades without wearing leg armor.' },
@@ -66,28 +67,53 @@ export default {
     options () {
       return this.$store.getters['character/character'].options
     },
-    webhookSelections: {
-      get () {
-        return this.options.webhooks || {}
-      },
-      set (webhookId) {
-        this.toggleWebhook(webhookId)
-      }
+    id () {
+      return this.$store.state.character.id
+    },
+    name () {
+      return this.$store.getters['character/character'].name
     },
     webhooks () {
-      return JSON.parse(this.$store.state.user.webhooks)
+      return JSON.parse(this.$store.state.user.webhooks) || []
     }
   },
   methods: {
     change (stat, value) {
       this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `options.${stat}`, value: value || false })
     },
-    toggleWebhook (webhook, value) {
-      if (value) {
-        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `options.webhooks.${webhook.id}`, value: webhook.link })
-      } else {
-        this.$store.dispatch('character/UPDATE_CHARACTER', { attr: `options.webhooks.${webhook.id}`, value: undefined })
+    async toggleWebhook (webhook, value) {
+      this.loading = true
+      try {
+        const mutatedWebhooks = [...this.webhooks]
+        const ind = this.webhooks.findIndex(hook => webhook.id === hook.id)
+        if (!mutatedWebhooks[ind] || !mutatedWebhooks[ind].characters) { return }
+        const characterIndex = this.characterInWebhook(mutatedWebhooks[ind])
+
+        if (mutatedWebhooks[ind] && characterIndex !== -1) {
+          // remove character from character array in the webhook
+          mutatedWebhooks[ind].characters.splice(mutatedWebhooks[ind].characters.splice(characterIndex, 1))
+        } else {
+          // add character
+          mutatedWebhooks[ind].characters.push({
+            name: this.name,
+            id: this.id
+          })
+        }
+
+        // save
+        this.$store.commit('user/SET_USER_SETTINGS', { webhooks: JSON.stringify(mutatedWebhooks) })
+        await this.$store.dispatch('user/UPDATE_PROFILE', true)
+        this.loading = false
+      } catch (e) {
+        this.loading = false
       }
+    },
+    characterInWebhook (webhook) {
+      if (webhook && webhook.characters && webhook.characters.length) {
+        const index = webhook.characters.findIndex(char => char.id === this.id)
+        return index !== -1 ? index : -1
+      }
+      return -1
     }
   }
 }

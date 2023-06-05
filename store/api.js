@@ -75,38 +75,29 @@ export const actions = {
   },
   // Discord Webhook APIs
   DISCORD_POST_ALL ({ dispatch, rootGetters }, payload) {
-    const selectedWebhooks = rootGetters['character/character'].options.webhooks
-    for (const id in selectedWebhooks) {
-      // check if hook exists and send if it does, otherwise remove it from the character
-      const webhooks = JSON.parse(rootGetters['user/profile'].webhooks)
-      const matchingWebhook = webhooks.find(webhook => webhook.id === id)
-      if (matchingWebhook) {
-        if (selectedWebhooks[id] === matchingWebhook.link) {
-          dispatch('api/DISCORD_POST', { webhook: selectedWebhooks[id], entry: payload }, { root: true })
-        } else {
-          const mutatedWebhooks = { ...selectedWebhooks }
-          mutatedWebhooks[id] = matchingWebhook.link
-          dispatch('character/UPDATE_CHARACTER', { attr: 'options.webhooks', value: mutatedWebhooks }, { root: true })
-          dispatch('api/DISCORD_POST', { webhook: matchingWebhook.link, entry: payload }, { root: true })
-        }
-      } else {
-        delete selectedWebhooks[id]
-        dispatch('character/UPDATE_CHARACTER', { attr: 'options.webhooks', value: selectedWebhooks }, { root: true })
+    const characterId = payload.source.id
+    const webhooks = JSON.parse(rootGetters['user/profile'].webhooks)
+    webhooks.forEach((hook) => {
+      if (hook.characters.find(char => char.id === characterId)) {
+        dispatch('api/DISCORD_POST', { webhook: hook.link, entry: payload }, { root: true })
       }
-    }
+    })
   },
   DISCORD_POST ({ dispatch, rootGetters }, payload) {
     const URL = payload.webhook
     const body = JSON.stringify({
+      username: (payload.entry.source.name || rootGetters['user/profile'].username || 'No Name'),
+      avatar_url: rootGetters['character/image'],
       embeds: [{
         fields: [
           {
             name: payload.entry.source.name || rootGetters['user/profile'].username || 'No Name',
-            value: '*' + payload.entry.data.detail + '*'
+            value: payload.entry.data.detail,
+            inline: true
           },
           {
             name: 'Result: ' + payload.entry.data.total,
-            value: '*' + payload.entry.data.notation + ': ' + payload.entry.data.results + ' = ' + payload.entry.data.total + '*'
+            value: '`' + payload.entry.data.text + ': ' + payload.entry.data.results + ' = ' + payload.entry.data.total + '`'
           }
         ]
       }]
