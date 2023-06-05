@@ -67,7 +67,7 @@
                         <v-card-title> <v-text-field :value="webhook.name" v-model="webhook.name" :label=" webhook.name || ('Webhook #' + (index + 1))" hint="This is the name of your webhook that will be used when linking your characters."></v-text-field> </v-card-title>
                         <v-card-text>
                           <v-text-field :value="webhook.link" v-model="webhook.link" label="Webhook Link" hint="Add your Discord's webhook here: Server Settings > Integrations > New Webhook > Copy Webhook URL"></v-text-field>
-                          <!--v-text-field :value="getCharacterFromWebhook(webhook.id)" label="Characters Associated with this Webhook" readonly disabled></v-text-field-->
+                          <v-text-field :v-if="webhook.characters && webhook.characters.length" :value="webhook.characters.map(char => char['name']).toString().replace(',', ', ')" :label="(!webhook.characters.length ? 'No ' : '') + 'Characters Associated with this Webhook'" readonly disabled></v-text-field>
                         </v-card-text>
                         <v-card-actions>
                           <v-btn text :disabled="loading" color="secondary" @click="deleteWebhook(index)">
@@ -133,7 +133,6 @@ export default {
     },
     myWebhooks: {
       get () {
-        console.log(JSON.parse(this.$store.state.user.webhooks))
         return (this.webhookData.webhooks.length ? this.webhookData.webhooks : JSON.parse(this.$store.state.user.webhooks)) || []
       },
       set (webhooks) {
@@ -211,8 +210,7 @@ export default {
     },
     deleteWebhook (webhookIndex) {
       const tempArr = [...this.myWebhooks]
-      const hookToDelete = tempArr.splice(webhookIndex, 1)
-      console.log(hookToDelete)
+      tempArr.splice(webhookIndex, 1)
       this.myWebhooks = tempArr
     },
     addWebhook () {
