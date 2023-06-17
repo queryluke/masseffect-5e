@@ -710,7 +710,7 @@ export const getters = {
           properties: [...base.properties, 'Burst Fire']
         })
       }
-      if (light && twfEligible && !twoHanded) {
+      if (light && twfEligible && !twoHanded && base.attack) {
         const twfAugments = augments.twf
         // TODO: will we ever need other augments besides damage?
         const { newDieType, dieIncreaseOverflow } = getDieIncrease(base.damage, twfAugments.dieIncrease)
