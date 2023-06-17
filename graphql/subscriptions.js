@@ -28,8 +28,11 @@ export const onDeleteBookmarkByUserId = /* GraphQL */ `
   }
 `;
 export const onCreateHomebrewUse = /* GraphQL */ `
-  subscription OnCreateHomebrewUse($owner: String) {
-    onCreateHomebrewUse(owner: $owner) {
+  subscription OnCreateHomebrewUse(
+    $filter: ModelSubscriptionHomebrewUseFilterInput
+    $owner: String
+  ) {
+    onCreateHomebrewUse(filter: $filter, owner: $owner) {
       id
       owner
       homebrewId
@@ -56,6 +59,7 @@ export const onCreateHomebrewUse = /* GraphQL */ `
           maxCharacters
           contactMethod
           contactValue
+          webhooks
           createdOn
           updatedOn
           owner
@@ -68,8 +72,11 @@ export const onCreateHomebrewUse = /* GraphQL */ `
   }
 `;
 export const onUpdateHomebrewUse = /* GraphQL */ `
-  subscription OnUpdateHomebrewUse($owner: String) {
-    onUpdateHomebrewUse(owner: $owner) {
+  subscription OnUpdateHomebrewUse(
+    $filter: ModelSubscriptionHomebrewUseFilterInput
+    $owner: String
+  ) {
+    onUpdateHomebrewUse(filter: $filter, owner: $owner) {
       id
       owner
       homebrewId
@@ -96,6 +103,7 @@ export const onUpdateHomebrewUse = /* GraphQL */ `
           maxCharacters
           contactMethod
           contactValue
+          webhooks
           createdOn
           updatedOn
           owner
@@ -108,8 +116,11 @@ export const onUpdateHomebrewUse = /* GraphQL */ `
   }
 `;
 export const onDeleteHomebrewUse = /* GraphQL */ `
-  subscription OnDeleteHomebrewUse($owner: String) {
-    onDeleteHomebrewUse(owner: $owner) {
+  subscription OnDeleteHomebrewUse(
+    $filter: ModelSubscriptionHomebrewUseFilterInput
+    $owner: String
+  ) {
+    onDeleteHomebrewUse(filter: $filter, owner: $owner) {
       id
       owner
       homebrewId
@@ -136,6 +147,7 @@ export const onDeleteHomebrewUse = /* GraphQL */ `
           maxCharacters
           contactMethod
           contactValue
+          webhooks
           createdOn
           updatedOn
           owner
@@ -148,8 +160,11 @@ export const onDeleteHomebrewUse = /* GraphQL */ `
   }
 `;
 export const onCreateHomebrewVote = /* GraphQL */ `
-  subscription OnCreateHomebrewVote($owner: String) {
-    onCreateHomebrewVote(owner: $owner) {
+  subscription OnCreateHomebrewVote(
+    $filter: ModelSubscriptionHomebrewVoteFilterInput
+    $owner: String
+  ) {
+    onCreateHomebrewVote(filter: $filter, owner: $owner) {
       id
       owner
       homebrewId
@@ -159,8 +174,11 @@ export const onCreateHomebrewVote = /* GraphQL */ `
   }
 `;
 export const onUpdateHomebrewVote = /* GraphQL */ `
-  subscription OnUpdateHomebrewVote($owner: String) {
-    onUpdateHomebrewVote(owner: $owner) {
+  subscription OnUpdateHomebrewVote(
+    $filter: ModelSubscriptionHomebrewVoteFilterInput
+    $owner: String
+  ) {
+    onUpdateHomebrewVote(filter: $filter, owner: $owner) {
       id
       owner
       homebrewId
@@ -170,8 +188,11 @@ export const onUpdateHomebrewVote = /* GraphQL */ `
   }
 `;
 export const onDeleteHomebrewVote = /* GraphQL */ `
-  subscription OnDeleteHomebrewVote($owner: String) {
-    onDeleteHomebrewVote(owner: $owner) {
+  subscription OnDeleteHomebrewVote(
+    $filter: ModelSubscriptionHomebrewVoteFilterInput
+    $owner: String
+  ) {
+    onDeleteHomebrewVote(filter: $filter, owner: $owner) {
       id
       owner
       homebrewId

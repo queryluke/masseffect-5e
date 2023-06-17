@@ -86,6 +86,7 @@ export const actions = {
 
     dispatch('character/navigation/SHOW_SIDE_NAV', 'me-cs-logs-list', { root: true })
     dispatch('character/logs/LOG_WRITE', entry, { root: true })
+    dispatch('api/DISCORD_POST_ALL', entry, { root: true })
     return entry
   }
 }
