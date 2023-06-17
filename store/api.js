@@ -18,6 +18,7 @@ export const mutations = {
 export const actions = {
   // API HELPERS
   async QUERY ({ commit, getters }, { query, variables = {}, action = null }) {
+    console.log('QUERY', { commit, getters, query, variables })
     const { data } = await API.graphql({
       query: gqlQueries[query],
       variables,
@@ -31,6 +32,7 @@ export const actions = {
     return value
   },
   async MUTATE ({ commit, getters }, { mutation, input, action }) {
+    console.log('MUTATE', { commit, getters, mutation, input, action })
     const { data } = await API.graphql({
       query: gqlMutations[mutation],
       variables: { input },
@@ -70,5 +72,40 @@ export const actions = {
         return reader.result
       }
     }
+  },
+  // Discord Webhook APIs
+  DISCORD_POST_ALL ({ dispatch, rootGetters }, payload) {
+    const characterId = payload.source.id
+    const webhooks = JSON.parse(rootGetters['user/profile'].webhooks)
+    webhooks.forEach((hook) => {
+      if (hook.characters.find(char => char.id === characterId)) {
+        dispatch('api/DISCORD_POST', { webhook: hook.link, entry: payload }, { root: true })
+      }
+    })
+  },
+  DISCORD_POST ({ dispatch, rootGetters }, payload) {
+    const URL = payload.webhook
+    const body = JSON.stringify({
+      username: (payload.entry.source.name || rootGetters['user/profile'].username || 'No Name'),
+      avatar_url: rootGetters['character/image'],
+      embeds: [{
+        fields: [
+          {
+            name: payload.entry.source.name || rootGetters['user/profile'].username || 'No Name',
+            value: payload.entry.data.detail,
+            inline: true
+          },
+          {
+            name: 'Result: ' + payload.entry.data.total,
+            value: '`' + payload.entry.data.text + ': ' + payload.entry.data.results + ' = ' + payload.entry.data.total + '`'
+          }
+        ]
+      }]
+    })
+    fetch(URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body
+    })
   }
 }
