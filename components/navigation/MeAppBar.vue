@@ -128,7 +128,8 @@ export default {
       navigation: [
         { to: '/manual/intro', name: 'manual.title' },
         { to: '/about', name: 'about_title' },
-        { to: '/characters', nonTName: 'My Characters' }
+        { to: '/characters', nonTName: 'My Characters' },
+        { to: '/campaigns', nonTName: 'My Campaigns' }
       ]
     }
   },

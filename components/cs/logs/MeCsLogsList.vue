@@ -18,9 +18,13 @@
 <script>
 export default {
   name: 'MeCsLogsList',
+  props: {
+    src: String,
+    data: Array
+  },
   computed: {
     logs () {
-      return (this.$store.getters['character/logs/logs'] || [])
+      return this.data || (this.$store.getters[(this.src || 'character/logs/logs')] || [])
     },
     logsLength () {
       return this.logs.length

@@ -11,7 +11,8 @@ export default ({ app, store }) => {
       'user.imperial',
       'characters.localCharacters',
       'characters.localLogs',
-      'migrator.migrated'
+      'migrator.migrated',
+      'campaigns.campaigns'
     ]
   })(store)
 }
