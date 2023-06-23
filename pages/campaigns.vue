@@ -14,35 +14,49 @@
       <section>
         <v-card v-for="campaign in myCampaigns" :key="campaign.id">
           <v-card-text>
-            {{ campaign.name }}
-            <v-card>
-              <v-card-text>
+            <h3>{{ campaign.name }}</h3>
+            <v-row>
+              <v-col cols="4">
                 <h4 v-if="campaign.characters">Characters in Campaign:</h4>
-                <v-list>
-                  <v-list-item v-for="character in campaign.characters" :key="character.id">
-                    <v-list-item-avatar><v-img :src="character.image" aspect-ratio="1" max-width="120px"></v-img></v-list-item-avatar>
-                    <v-list-item-content>
-                      <v-list-item-title>{{ character.name }}</v-list-item-title>
-                      <v-list-item-subtitle>{{ character.name }}</v-list-item-subtitle>
-                    </v-list-item-content>
-                    <v-list-item-action><v-btn @click="addRemoveCharacter(character, campaign, true)">Remove from Campaign</v-btn></v-list-item-action>
-                  </v-list-item>
-                </v-list>
-              </v-card-text>
-            </v-card>
-            <section>
-              <me-cs-logs-list :data="campaign.logs || []"></me-cs-logs-list>
-            </section>
+                <v-card>
+                  <v-card-text>
+                    <v-list>
+                      <v-list-item v-for="character in campaign.characters" :key="character.id">
+                        <v-list-item-avatar><v-img :src="character.image" aspect-ratio="1" max-width="120px"></v-img></v-list-item-avatar>
+                        <v-list-item-content>
+                          <v-list-item-title>{{ character.name }}</v-list-item-title>
+                          <v-list-item-subtitle>{{ character.name }}</v-list-item-subtitle>
+                          <v-btn max-width="200px" x-small @click="addRemoveCharacter(character, campaign, true)">Remove from Campaign</v-btn>
+                        </v-list-item-content>
+                        <!--v-list-item-action><v-btn x-small @click="addRemoveCharacter(character, campaign, true)">Remove from Campaign</v-btn></v-list-item-action-->
+                      </v-list-item>
+                    </v-list>
+                  </v-card-text>
+                </v-card>
+              </v-col>
+              <v-col cols="8">
+                <h4>Campaign Logs</h4>
+                <me-cs-logs-list :data="campaign.logs || []"></me-cs-logs-list>
+              </v-col>
+            </v-row>
           </v-card-text>
           <v-card-actions>
-            <v-card v-for="character in myCharacters" :key="character.id">
-              <v-card-text>
-                {{ character.name }}
-              </v-card-text>
-              <v-card-actions>
-                <v-btn @click="addRemoveCharacter(character, campaign)">Add Character to Campaign</v-btn>
-              </v-card-actions>
-            </v-card>
+            <v-list>
+              <v-list-item-group title="My Characters">
+                <v-list-item v-for="character in myCharacters" :key="character.id">
+                  <v-list-item-content>
+                    <v-card>
+                      <v-card-text>
+                        {{ character.name }}
+                      </v-card-text>
+                      <v-card-actions>
+                        <v-btn @click="addRemoveCharacter(character, campaign)">Add Character to Campaign</v-btn>
+                      </v-card-actions>
+                    </v-card>
+                  </v-list-item-content>
+                </v-list-item>
+              </v-list-item-group>
+            </v-list>
           </v-card-actions>
         </v-card>
       </section>
