@@ -161,7 +161,7 @@
           </div>
           <me-hr />
           <div v-for="(aot, index) of actions[actionType]" :key="`companion-${actionType.toLowerCase().replace(' ', '')}-${index}`">
-            <v-card outlined>
+            <v-card outlined class="mb-4">
               <div class="mx-1">
                 <v-row no-gutters align="baseline">
                   <v-col cols="4" sm="6">
@@ -179,7 +179,7 @@
 
                   <!-- RANGE -->
                   <v-col cols="3" sm="2" class="text-center">
-                    <me-cs-action-range v-if="aot.shortRange || aot.aoeSize" :range="{ short: aot.shortRange, long: aot.longRange, aoe: { size: aot.aoeSize, type: aot.aoeType, filename: $vuetify.theme.dark ? `${aot.aoeType}-white` : aot.aoeType } }" />
+                    <me-cs-action-range v-if="hasRange(aot)" :range="rangeObject(aot)" />
                   </v-col>
 
                   <!-- HIT/DC -->
@@ -233,8 +233,8 @@
                 <v-card v-if="aot.resourceMax || aot.resourceDisplay" style="position: absolute; bottom: -9px" outlined @click.stop>
                   <div class="d-flex align-center">
                     <component
-                      :is="`me-cs-action-resource-display-${resourceComponent[aot.resourceDisplay]}`"
-                      :current="aot.remainingResources"
+                      :is="aot.resourceDisplay ? `me-cs-action-resource-display-${resourceComponent[aot.resourceDisplay]}` : 'me-cs-action-resource-display-counter'"
+                      :current="aot.remainingResources || 0"
                       :max="aot.resourceMax"
                       :max-width="75"
                       @add="addResource(aot.uuid)"
@@ -437,6 +437,28 @@ export default {
           }
         }
       }
+    },
+    hasRange (action) {
+      return action.shortRange || action.aoeSize
+    },
+    rangeObject (action) {
+      if (!this.hasRange(action)) {
+        return { short: null, long: null, aoe: null }
+      }
+      const range = {
+        short: action.shortRange || 0,
+        long: action.longRange,
+        aoe: null
+      }
+      if (action.aoeSize) {
+        const type = action.aoeType || 'sphere'
+        range.aoe = {
+          size: action.aoeSize,
+          type,
+          filename: this.$vuetify.theme.dark ? `${type}-white` : type
+        }
+      }
+      return range
     },
     resetResource (uuid) {
       const matchingFeature = this.companion.features.find(i => i.uuid === uuid)

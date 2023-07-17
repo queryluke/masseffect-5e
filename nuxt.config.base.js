@@ -72,9 +72,6 @@ export default {
     '@nuxt/http',
     'vue2-editor/nuxt'
   ],
-  googleAnalytics: {
-    id: 'UA-83740704-2'
-  },
   /*
   ** i18n
   ** See https://i18n.nuxtjs.org/options-reference
